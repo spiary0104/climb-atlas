@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boulder Atlas — community-sourced climbing map</title>
+<meta name="description" content="A community-sourced map of bouldering and climbing gyms and crags across Australia and the United States.">
+<meta name="theme-color" content="#211f1b">
+<meta property="og:title" content="Boulder Atlas">
+<meta property="og:description" content="A community-sourced map of bouldering and climbing gyms and crags across Australia and the United States.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23211f1b'/%3E%3Cpath d='M16 5c5 0 8 4 8 8.5S20 26 16 27c-4-1-8-9.5-8-13.5S11 5 16 5z' fill='%23b8834a'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4/dist/maplibre-gl.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="app">
+  <header>
+    <div class="title-block">
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle sidebar">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      </button>
+      <h1>Boulder<span>Atlas</span></h1>
+      <span class="tagline">community-sourced map of AU &amp; US bouldering & climbing spots</span>
+    </div>
+    <div class="header-right">
+      <div class="count-badge"><b id="countNum">0</b>&nbsp;spots shown</div>
+      <button class="auth-btn" id="pendingReviewBtn" style="display:none;">Pending review</button>
+      <div class="auth-widget" id="authWidget"><button class="auth-btn" id="signInBtn">Sign in</button></div>
+    </div>
+  </header>
+  <div class="offline-banner hidden" id="offlineBanner">Showing offline seed data — Supabase isn't configured yet, so live data, sign-in, and marks are unavailable. See README.md.</div>
+
+  <div class="layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-controls">
+        <div class="search-row">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+          <input id="searchInput" type="text" placeholder="Search gym or suburb…">
+        </div>
+        <div id="stateChips">
+          <div class="chip-row">
+            <div class="chip active" data-state="ALL"><span>All</span></div>
+          </div>
+          <div class="section-label country-label">Australia</div>
+          <div class="chip-row">
+            <div class="chip" data-country="AU" data-state="NSW" style="color:var(--nsw)"><span class="dot"></span>NSW</div>
+            <div class="chip" data-country="AU" data-state="VIC" style="color:var(--vic)"><span class="dot"></span>VIC</div>
+            <div class="chip" data-country="AU" data-state="QLD" style="color:var(--qld)"><span class="dot"></span>QLD</div>
+            <div class="chip" data-country="AU" data-state="WA" style="color:var(--wa)"><span class="dot"></span>WA</div>
+            <div class="chip" data-country="AU" data-state="SA" style="color:var(--sa)"><span class="dot"></span>SA</div>
+            <div class="chip" data-country="AU" data-state="ACT" style="color:var(--act)"><span class="dot"></span>ACT</div>
+            <div class="chip" data-country="AU" data-state="TAS" style="color:var(--tas)"><span class="dot"></span>TAS</div>
+            <div class="chip" data-country="AU" data-state="NT" style="color:var(--nt)"><span class="dot"></span>NT</div>
+          </div>
+          <div class="section-label country-label">United States</div>
+          <div class="chip-row">
+            <div class="chip" data-country="US" data-state="CA" style="color:var(--us-ca)"><span class="dot"></span>CA</div>
+            <div class="chip" data-country="US" data-state="CO" style="color:var(--us-co)"><span class="dot"></span>CO</div>
+            <div class="chip" data-country="US" data-state="TX" style="color:var(--us-tx)"><span class="dot"></span>TX</div>
+            <div class="chip" data-country="US" data-state="WA" style="color:var(--us-wa)"><span class="dot"></span>WA</div>
+            <div class="chip" data-country="US" data-state="NY" style="color:var(--us-ny)"><span class="dot"></span>NY</div>
+            <div class="chip" data-country="US" data-state="NV" style="color:var(--us-nv)"><span class="dot"></span>NV</div>
+            <div class="chip" data-country="US" data-state="GA" style="color:var(--us-ga)"><span class="dot"></span>GA</div>
+            <div class="chip" data-country="US" data-state="UT" style="color:var(--us-ut)"><span class="dot"></span>UT</div>
+            <div class="chip" data-country="US" data-state="AL" style="color:var(--us-al)"><span class="dot"></span>AL</div>
+            <div class="chip" data-country="US" data-state="TN" style="color:var(--us-tn)"><span class="dot"></span>TN</div>
+            <div class="chip" data-country="US" data-state="MA" style="color:var(--us-ma)"><span class="dot"></span>MA</div>
+            <div class="chip" data-country="US" data-state="IL" style="color:var(--us-il)"><span class="dot"></span>IL</div>
+          </div>
+        </div>
+        <div class="type-filter" id="typeFilters">
+          <div class="section-label">Type</div>
+          <label class="type-check">
+            <input type="checkbox" class="chk-outdoor" data-type="outdoor-bouldering" checked>
+            <span class="dot" style="background:var(--t-outdoor)"></span>
+            Outdoor bouldering
+          </label>
+          <label class="type-check">
+            <input type="checkbox" class="chk-indoor" data-type="indoor-bouldering" checked>
+            <span class="dot" style="background:var(--t-indoor)"></span>
+            Indoor bouldering
+          </label>
+          <label class="type-check">
+            <input type="checkbox" class="chk-toprope" data-type="top-rope" checked>
+            <span class="dot" style="background:var(--t-toprope)"></span>
+            Top rope
+          </label>
+        </div>
+        <div class="type-filter" id="marksFilters">
+          <div class="section-label">My marks</div>
+          <label class="type-check">
+            <input type="checkbox" id="filterClimbed">
+            <span class="dot mark-dot climbed">✓</span>
+            Climbed
+          </label>
+          <label class="type-check">
+            <input type="checkbox" id="filterBookmarked">
+            <span class="dot mark-dot bookmarked">★</span>
+            Bookmarked
+          </label>
+        </div>
+      </div>
+      <div class="gym-list" id="gymList"></div>
+      <div class="sidebar-footer">
+        <button class="add-btn" id="addBtn">+ Add a spot</button>
+        <div class="footer-links">
+          <button id="openAbout">About</button>
+          <span style="color:var(--border)">·</span>
+          <button id="openPrivacy">Privacy</button>
+          <span style="color:var(--border)">·</span>
+          <button id="openTerms">Terms</button>
+        </div>
+      </div>
+    </aside>
+
+    <main class="map-wrap">
+      <div id="map"></div>
+      <div class="placing-banner" id="placingBanner">Click anywhere on the map to drop a pin for the gym</div>
+      <div class="toast" id="toast"></div>
+      <div class="legend">
+        <b>Colour = type</b>
+        <span style="color:var(--t-outdoor)">●</span> Outdoor bouldering &nbsp;
+        <span style="color:var(--t-indoor)">●</span> Indoor bouldering &nbsp;
+        <span style="color:var(--t-toprope)">●</span> Top rope<br>
+        Split markers = more than one type. A + means community-added, not yet verified.
+        A green ring means you've climbed it; a gold star means it's bookmarked.
+        Numbered circles are clusters — click or zoom in to split them apart.
+      </div>
+    </main>
+  </div>
+</div>
+
+<div class="modal-backdrop hidden" id="modalBackdrop">
+  <div class="modal">
+    <h2>Add a spot</h2>
+    <div class="sub">Submitted for review — it'll appear on the shared map once a moderator approves it.</div>
+    <div class="pin-status" id="pinStatus">No pin dropped yet — click "Drop pin" then tap the map.</div>
+    <button class="add-btn" id="dropPinBtn" style="margin-bottom:14px;">Drop pin</button>
+    <div class="field">
+      <label>Name</label>
+      <input id="fName" type="text" placeholder="e.g. Boulder Collective">
+    </div>
+    <div class="field">
+      <label>Suburb / nearest town</label>
+      <input id="fSuburb" type="text" placeholder="e.g. Marrickville">
+    </div>
+    <div class="field field-row">
+      <div>
+        <label>Country</label>
+        <select id="fCountry">
+          <option value="AU">Australia</option>
+          <option value="US">United States</option>
+        </select>
+      </div>
+      <div>
+        <label>State</label>
+        <select id="fState">
+          <option value="NSW">NSW</option>
+          <option value="VIC">VIC</option>
+          <option value="QLD">QLD</option>
+          <option value="WA">WA</option>
+          <option value="SA">SA</option>
+          <option value="ACT">ACT</option>
+          <option value="TAS">TAS</option>
+          <option value="NT">NT</option>
+        </select>
+      </div>
+    </div>
+    <div class="field">
+      <label>Type (select all that apply)</label>
+      <div class="type-filter" style="margin-top:2px;padding-top:0;border-top:none;">
+        <label class="type-check">
+          <input type="checkbox" class="chk-outdoor" id="fTypeOutdoor">
+          <span class="dot" style="background:var(--t-outdoor)"></span>
+          Outdoor bouldering
+        </label>
+        <label class="type-check">
+          <input type="checkbox" class="chk-indoor" id="fTypeIndoor">
+          <span class="dot" style="background:var(--t-indoor)"></span>
+          Indoor bouldering
+        </label>
+        <label class="type-check">
+          <input type="checkbox" class="chk-toprope" id="fTypeTopRope">
+          <span class="dot" style="background:var(--t-toprope)"></span>
+          Top rope
+        </label>
+      </div>
+    </div>
+    <div class="field">
+      <label>Notes (optional)</label>
+      <textarea id="fNotes" placeholder="Day pass price, opening hours, anything useful"></textarea>
+    </div>
+    <div class="field">
+      <label>Photo link (optional)</label>
+      <input id="fPhoto" type="text" placeholder="Link to a photo — their site, Instagram, Google Maps">
+    </div>
+    <div class="modal-actions">
+      <button class="btn-cancel" id="cancelBtn">Cancel</button>
+      <button class="btn-submit" id="submitBtn" disabled>Add to map</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop hidden" id="editModalBackdrop">
+  <div class="modal">
+    <h2>Edit this spot</h2>
+    <div class="sub">Submitted as a proposed change — the spot keeps showing its current info until a moderator approves it.</div>
+    <div class="pin-status" id="editPinStatus">Current pin: —</div>
+    <button class="add-btn" id="eDropPinBtn" style="margin-bottom:14px;">Move pin</button>
+    <div class="field">
+      <label>Name</label>
+      <input id="eName" type="text">
+    </div>
+    <div class="field">
+      <label>Suburb / nearest town</label>
+      <input id="eSuburb" type="text">
+    </div>
+    <div class="field field-row">
+      <div>
+        <label>Country</label>
+        <select id="eCountry">
+          <option value="AU">Australia</option>
+          <option value="US">United States</option>
+        </select>
+      </div>
+      <div>
+        <label>State</label>
+        <select id="eState">
+          <option value="NSW">NSW</option>
+          <option value="VIC">VIC</option>
+          <option value="QLD">QLD</option>
+          <option value="WA">WA</option>
+          <option value="SA">SA</option>
+          <option value="ACT">ACT</option>
+          <option value="TAS">TAS</option>
+          <option value="NT">NT</option>
+        </select>
+      </div>
+    </div>
+    <div class="field">
+      <label>Type (select all that apply)</label>
+      <div class="type-filter" style="margin-top:2px;padding-top:0;border-top:none;">
+        <label class="type-check">
+          <input type="checkbox" class="chk-outdoor" id="eTypeOutdoor">
+          <span class="dot" style="background:var(--t-outdoor)"></span>
+          Outdoor bouldering
+        </label>
+        <label class="type-check">
+          <input type="checkbox" class="chk-indoor" id="eTypeIndoor">
+          <span class="dot" style="background:var(--t-indoor)"></span>
+          Indoor bouldering
+        </label>
+        <label class="type-check">
+          <input type="checkbox" class="chk-toprope" id="eTypeTopRope">
+          <span class="dot" style="background:var(--t-toprope)"></span>
+          Top rope
+        </label>
+      </div>
+    </div>
+    <div class="field">
+      <label>Notes (optional)</label>
+      <textarea id="eNotes"></textarea>
+    </div>
+    <div class="field">
+      <label>Photo link (optional)</label>
+      <input id="ePhoto" type="text" placeholder="Link to a photo — their site, Instagram, Google Maps">
+    </div>
+    <div class="modal-actions">
+      <button class="btn-cancel" id="eCancelBtn">Cancel</button>
+      <button class="btn-submit" id="eSaveBtn">Save changes</button>
+    </div>
+    <button id="eRevertBtn" style="margin-top:10px;width:100%;background:transparent;border:1px dashed var(--border);color:var(--text-dim);padding:8px;border-radius:7px;font-family:'Space Mono',monospace;font-size:11.5px;cursor:pointer;display:none;">Revert to original data</button>
+  </div>
+</div>
+
+<div class="modal-backdrop hidden" id="authModalBackdrop">
+  <div class="modal">
+    <h2>Sign in</h2>
+    <div class="sub">Sign in to mark spots as climbed and bookmark ones you want to try.</div>
+    <button class="add-btn" id="googleSignInBtn" style="margin-bottom:14px;">Continue with Google</button>
+    <div class="auth-divider"><span>or</span></div>
+    <div class="field">
+      <label>Email</label>
+      <input id="authEmail" type="email" placeholder="you@example.com">
+    </div>
+    <div id="authStatus" class="auth-status"></div>
+    <div class="modal-actions">
+      <button class="btn-cancel" id="authCancelBtn">Cancel</button>
+      <button class="btn-submit" id="sendMagicLinkBtn">Send magic link</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop hidden" id="pendingModalBackdrop">
+  <div class="modal info-modal">
+    <h2>Pending review</h2>
+    <div class="sub">New spots and edits submitted by the community, awaiting approval.</div>
+    <div id="pendingList" class="pending-list"></div>
+    <div class="close-row"><button class="btn-submit info-close" style="padding:8px 18px;">Close</button></div>
+  </div>
+</div>
+
+<div class="modal-backdrop hidden" id="aboutModalBackdrop">
+  <div class="modal info-modal">
+    <h2>About Boulder Atlas</h2>
+    <div class="updated">A community-sourced map of Australian &amp; American bouldering &amp; climbing spots</div>
+
+    <p>Boulder Atlas is a free, crowd-built map of places to climb across Australia and the United States — indoor bouldering gyms, gyms with top-rope and lead walls, and outdoor bouldering and climbing areas. It's built in the spirit of sites like Track Atlas: instead of one team trying to track every gym forever, the map is kept current by the people who actually climb at these places.</p>
+
+    <h3>How the map works</h3>
+    <p>Each pin is colour-coded by what's on offer there — outdoor bouldering, indoor bouldering, or top rope. A pin split into wedges means a spot offers more than one. Use the checkboxes to filter by country/state, by type, or by your own climbed/bookmarked marks.</p>
+
+    <h3>Where the data comes from</h3>
+    <p>The initial set of spots was researched and cross-checked gym by gym — names, suburbs, and what kind of climbing is actually on offer — rather than pulled from one source and trusted blindly. It's still not exhaustive, and gyms open, close, move, and rebrand. From here, the map grows and gets corrected by the community.</p>
+
+    <h3>Adding &amp; fixing spots</h3>
+    <ul>
+      <li><b>Add a spot</b> — drop a pin for anywhere missing, indoor or outdoor.</li>
+      <li><b>Edit this spot</b> — on any pin, fix the name, location, climbing type, or add a photo link.</li>
+    </ul>
+    <p>New spots and edits go into a review queue — a moderator approves or rejects them before they're visible to everyone else. An edited spot keeps showing its current info on the map until that edit is approved, so nothing unreviewed goes live in the meantime.</p>
+
+    <h3>Tracking your own climbing</h3>
+    <p>Sign in (Google or an email magic link) to mark spots as <b>climbed</b> or <b>bookmarked</b>. These marks are private to your account — nobody else can see what you've climbed or saved.</p>
+
+    <div class="close-row"><button class="btn-submit info-close" style="padding:8px 18px;">Close</button></div>
+  </div>
+</div>
+
+<div class="modal-backdrop hidden" id="privacyModalBackdrop">
+  <div class="modal info-modal">
+    <h2>Privacy Policy</h2>
+    <div class="updated">Last updated: <span class="placeholder">[date]</span></div>
+    <div class="legal-note">This is a plain-language starting draft, not legal advice. Have it reviewed properly before relying on it — especially once accounts, ads, or payments are added.</div>
+
+    <h3>What we collect</h3>
+    <p>Two kinds of data: (1) Anything voluntarily entered into the "Add a spot" or "Edit this spot" forms — gym/crag details such as name, location, climbing type, notes, and an optional photo link. (2) If you sign in, your email address (and, for Google sign-in, whatever basic profile info Google shares) plus which spots you've privately marked as climbed or bookmarked.</p>
+
+    <h3>How submitted information is used</h3>
+    <p>Anything submitted through the "Add a spot" / "Edit this spot" forms is displayed publicly to all visitors — that's the whole point of a shared map. Don't include personal information in a submission that you don't want shown publicly. Climbed/bookmarked marks are private and tied to your account — only you can see them.</p>
+
+    <h3>Third parties</h3>
+    <p>Map tiles are served by OpenStreetMap and CARTO. Loading the map means your browser requests tiles from their servers directly; see their own privacy policies for how they handle that. Accounts and data storage are handled by Supabase; Google sign-in is handled by Google. See their respective privacy policies for how they handle your data.</p>
+
+    <h3>Requesting removal</h3>
+    <p>To have a submission corrected or removed, use the Edit function on the relevant pin, or contact <span class="placeholder">[your contact email]</span>.</p>
+
+    <h3>Changes to this policy</h3>
+    <p>This policy may be updated as the site adds features like accounts, analytics, or advertising. Material changes will be reflected here with an updated date.</p>
+
+    <div class="close-row"><button class="btn-submit info-close" style="padding:8px 18px;">Close</button></div>
+  </div>
+</div>
+
+<div class="modal-backdrop hidden" id="termsModalBackdrop">
+  <div class="modal info-modal">
+    <h2>Terms of Service</h2>
+    <div class="updated">Last updated: <span class="placeholder">[date]</span></div>
+    <div class="legal-note">This is a plain-language starting draft, not legal advice. Have it reviewed properly before relying on it — especially once accounts, ads, or payments are added.</div>
+
+    <h3>What this is</h3>
+    <p>Boulder Atlas is a free, informational, community-edited map of climbing spots in Australia and the United States. It isn't a booking, ticketing, or payment service, and using it doesn't create any relationship with the gyms or crags listed.</p>
+
+    <h3>Accuracy — please read this one</h3>
+    <p>Information on this map is submitted and edited by the public and may be incomplete, outdated, or wrong. Confirm details — especially opening hours, prices, and whether a gym is still open — directly with the venue before visiting. Outdoor climbing and bouldering carry inherent risk; you climb entirely at your own risk and are responsible for your own judgement, gear, and safety.</p>
+
+    <h3>Submitting content</h3>
+    <ul>
+      <li>By submitting a spot, edit, or photo link, you confirm you have the right to share it, and you grant Boulder Atlas a licence to display it on the map.</li>
+      <li>Don't submit false information, spam, offensive content, or anything you don't have the rights to.</li>
+      <li>New spots and proposed edits are reviewed by a moderator before they go live, and may be edited, corrected, rejected, or removed at any time by site administrators.</li>
+    </ul>
+
+    <h3>No warranty</h3>
+    <p>Boulder Atlas is provided "as is," with no guarantee of accuracy, availability, or fitness for any particular purpose. To the extent permitted by law, Boulder Atlas isn't liable for losses arising from reliance on information found here.</p>
+
+    <h3>Changes</h3>
+    <p>These terms may change as the site grows. Continued use after a change means you accept the updated terms.</p>
+
+    <h3>Contact &amp; jurisdiction</h3>
+    <p>Questions: <span class="placeholder">[your contact email]</span>. These terms are governed by the laws of <span class="placeholder">[your state]</span>, Australia.</p>
+
+    <div class="close-row"><button class="btn-submit info-close" style="padding:8px 18px;">Close</button></div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/maplibre-gl@4/dist/maplibre-gl.js"></script>
+<script src="https://unpkg.com/supercluster@8/dist/supercluster.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="js/supabase-init.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

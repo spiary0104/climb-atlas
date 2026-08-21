@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Boulder Atlas — seed Supabase</title>
+<style>
+  body{font-family:system-ui,sans-serif;background:#211f1b;color:#ece5d6;padding:40px;line-height:1.6;}
+  pre{background:#2b2822;padding:16px;border-radius:8px;overflow-x:auto;white-space:pre-wrap;}
+  button{font-size:15px;padding:10px 18px;border-radius:8px;border:none;background:#e2793f;color:#221a12;font-weight:700;cursor:pointer;}
+  button:disabled{opacity:0.5;cursor:not-allowed;}
+  .ok{color:#5aa373;}
+  .err{color:#c14f6b;}
+</style>
+</head>
+<body>
+
+<h1>Boulder Atlas — one-time seed</h1>
+<p>
+  Loads the ~70 starting spots from <code>js/data.js</code> and upserts them into your Supabase
+  <code>spots</code> table. Safe to run more than once — it matches on <code>id</code>, so re-running
+  just re-syncs the seed rows rather than duplicating them.
+</p>
+<p>
+  Before clicking the button: run <code>supabase/schema.sql</code> in your Supabase SQL Editor,
+  and make sure <code>js/supabase-init.js</code> has your real project URL and anon key filled in
+  (this page loads that same file).
+</p>
+<button id="seedBtn">Seed the spots table</button>
+<pre id="output">Waiting…</pre>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="../js/supabase-init.js"></script>
+<script src="../js/data.js"></script>
+<script>
+  const out = document.getElementById('output');
+  const btn = document.getElementById('seedBtn');
+
+  btn.addEventListener('click', async () => {
+    btn.disabled = true;
+    out.textContent = `Seeding ${window.SEED_GYMS.length} spots…`;
+    const rows = window.SEED_GYMS.map(g => ({
+      id: g.id,
+      name: g.name,
+      suburb: g.suburb,
+      state: g.state,
+      country: g.country,
+      lat: g.lat,
+      lng: g.lng,
+      types: g.types,
+      notes: g.notes || null,
+      photo: g.photo || null,
+      community: false,
+      edited: false
+    }));
+    const { error } = await window.sb.from('spots').upsert(rows, { onConflict: 'id' });
+    if (error) {
+      out.innerHTML = `<span class="err">Failed: ${error.message}</span>\n\nCheck that schema.sql has been run and supabase-init.js has the right URL/key.`;
+    } else {
+      out.innerHTML = `<span class="ok">Seeded ${rows.length} spots successfully.</span>\n\nYou can now open index.html — it reads from this same table.`;
+    }
+    btn.disabled = false;
+  });
+</script>
+</body>
+</html>
