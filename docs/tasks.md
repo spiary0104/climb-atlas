@@ -43,12 +43,37 @@ placeholder work just to fill this section)_
 
 ### Fix globe rendering, marker drag lag, remove outdoor-bouldering type
 - Branch: `fix/globe-render-perf-remove-outdoor-type`
-- Status: in progress (implemented + statically verified in worktree; not yet
-  smoke-tested in a real browser or merged)
+- Status: in progress (implemented + verified against a live served copy in a
+  headless browser tab; user still needs to confirm in their own browser,
+  not yet merged)
 - What: three issues reported together after the MapLibre globe migration:
   (1) globe wasn't rendering at all, (2) visible marker lag while dragging
   the map, (3) remove "outdoor bouldering" as a type/filter option per user
-  decision to delete rather than recategorize.
+  decision to delete rather than recategorize. A fourth, unrelated bug was
+  found and fixed while verifying (1)-(3): see below.
+- **(4) Zero markers ever rendered on load** — found while verifying the
+  globe fix by actually serving the worktree (via an ad hoc PowerShell
+  `HttpListener` static server, since neither `python`/`python3` nor
+  `node`/`npx` were on PATH in the sandbox) and inspecting the live DOM/
+  instrumenting `Supercluster.prototype.getClusters` from the browser
+  console. Root cause: `init()`'s `map.fitBounds()` built a
+  `maplibregl.LngLatBounds` by calling `.extend()` over every spot's
+  `[lng,lat]` — since `LngLatBounds` just tracks running min/max longitude,
+  and AU spots (~lng 113 to 153) and US spots (~lng -125 to -70) sit on
+  opposite sides of the Pacific, the resulting box spanned the *long* way
+  round through Africa (west -118.5°, east 151.2°, a ~270° span) instead of
+  the short ~90° span across the Pacific. `fitBounds` then centered the
+  camera near the Gulf of Guinea at a zoom tight enough to exclude every
+  real spot — confirmed directly: `supercluster.getClusters()` was being
+  called with a bbox that didn't overlap AU or US at all. Fixed by removing
+  the fitBounds-to-data-on-load behavior entirely (a tight fit doesn't
+  suit a globe view of two far-apart countries anyway) and picking a fixed,
+  deliberate starting camera (`center:[-162,10], zoom:1.3`, roughly
+  mid-Pacific) instead — see the comment above the `maplibregl.Map`
+  constructor in `js/app.js`. This bug predates this session's globe work
+  (the same naive `bounds.extend()` loop existed before), it just never
+  produced a *visibly broken* result until the globe projection actually
+  started working.
 - Notes:
   - (1) root cause confirmed by diffing actual unpkg bundles: `maplibre-gl@4`
     resolves to 4.7.1, whose code only has `globe` in the style-spec schema

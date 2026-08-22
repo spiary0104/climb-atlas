@@ -41,16 +41,23 @@
   let isPlacing = false;
   let placingMode = null; // 'add' | 'edit'
 
-  // Starting view is a placeholder — init() calls map.fitBounds() once spots
-  // are loaded, so this just needs to be roughly sane before that happens.
+  // Fixed starting view, not a fitBounds-to-data fit: AU and US spots sit on
+  // opposite sides of the Pacific, and LngLatBounds.extend() just tracks
+  // min/max longitude, so a bounds box built across both countries spans the
+  // long way round through Africa instead of the short way across the
+  // Pacific -- fitBounds then centers the camera there, zoomed in past the
+  // point where either country's spots are still in view (this is what
+  // silently produced zero markers on load before it was removed). Centered
+  // mid-Pacific/near-equatorial instead so both AU and US sit reasonably
+  // in view of the globe at a low zoom.
   // Style is CARTO's free, keyless "Dark Matter" vector basemap — the GL
   // sibling of the same dark tiles this app already used, so the globe keeps
   // the existing look instead of picking up a new visual identity.
   const map = new maplibregl.Map({
     container: 'map',
     style: 'https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json',
-    center: [-60, 20],
-    zoom: 1,
+    center: [-162, 10],
+    zoom: 1.3,
     attributionControl: {compact: true}
   });
   map.addControl(new maplibregl.NavigationControl({showCompass:false}), 'top-right');
@@ -896,11 +903,6 @@
     renderAuthUI(window.auth.user);
     renderPendingBadge();
     render();
-    if(spots.length){
-      const bounds = new maplibregl.LngLatBounds();
-      spots.forEach(g=>bounds.extend([g.lng, g.lat]));
-      map.fitBounds(bounds, {padding: 30, duration: 0});
-    }
     if(usingFallback){
       document.getElementById('offlineBanner').classList.remove('hidden');
     }

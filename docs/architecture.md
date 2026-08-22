@@ -59,11 +59,25 @@ never `state` alone. Keep this in mind before adding a third country.
   listener) and atmosphere glow (`map.setSky({...})`), without needing a
   Mapbox account/API key. Basemap is CARTO's free, keyless "Dark Matter"
   vector style. **CDN pin must be `maplibre-gl@5` or later** — `@4`'s
-  bundle only lists `globe` in the style-spec schema (validation only,
-  no rendering engine behind it), so `setProjection({type:'globe'})`
-  silently no-ops and the map stays flat mercator. Verified by diffing
-  occurrence counts of `globe`-related identifiers in the actual unpkg
-  bundles for 4.7.1 vs 5.24.0, not by version-number guessing.
+  bundle only lists `globe` in the style-spec schema (validation only, no
+  rendering engine behind it), so `map.setProjection` isn't even exposed as
+  a real method on that version's `Map` class — confirmed in the browser
+  console via `TypeError: map.setProjection is not a function`, not a
+  silent no-op as first assumed. Verified the actual fix by diffing
+  occurrence counts of `globe`-related identifiers in the real unpkg
+  bundles for 4.7.1 (1 occurrence) vs 5.24.0 (234, including real
+  `globe_extrude` shader code), not by version-number guessing.
+- **Don't `fitBounds` across the whole `spots` array** — AU (~lng 113 to
+  153) and US (~lng -125 to -70) sit on opposite sides of the Pacific.
+  `maplibregl.LngLatBounds.extend()` only tracks running min/max longitude,
+  so a bounds box built across both countries spans the *long* way round
+  through Africa (~270°) instead of the short ~90° span across the
+  Pacific, and `fitBounds` then centers the camera near the Gulf of Guinea
+  at a zoom tight enough to exclude every real spot — this silently
+  produced a map with zero markers for a while (see `docs/tasks.md`). The
+  starting camera is a fixed `center`/`zoom` picked once
+  (`js/app.js`, above the `maplibregl.Map` constructor), not computed from
+  the data.
 - Clustering is hand-rolled with `supercluster` because MapLibre only
   clusters GL-rendered symbol layers natively, not the custom
   hold-shaped DOM markers this app uses. `rebuildClusterIndex()` reloads
