@@ -1,8 +1,7 @@
 # Boulder Atlas
 
-A community-sourced map of bouldering and climbing spots across Australia and the United
-States — indoor gyms (bouldering, top rope) and outdoor bouldering/climbing areas —
-modelled on [Track Atlas](https://trackatlas.org).
+A community-sourced map of indoor climbing gyms (bouldering, top rope) across Australia
+and the United States, modelled on [Track Atlas](https://trackatlas.org).
 
 This is a static site: plain HTML/CSS/JS, no build step, no framework. Once Supabase is
 configured (see below), open `index.html` in a browser and it runs.
@@ -120,6 +119,11 @@ visible:
 - **"Revert to original data"** only works for un-edited seed spots (it looks up the
   original values in `js/data.js`). Community-submitted spots have no stored "original" to
   revert to, so the button is hidden for those even if they've since been edited.
+- **Outdoor bouldering was removed as a category** — the app now only tracks indoor gyms
+  (bouldering, top rope). The 23 seed spots that were outdoor-only (crags/climbing areas
+  researched from thecrag.com) were deleted outright rather than recategorized, per an
+  explicit decision when this was scoped — if outdoor coverage comes back later, that data
+  isn't sitting anywhere to restore from except old git history.
 
 ## Deploying
 
@@ -143,10 +147,22 @@ and add a custom domain from the host's dashboard once you've bought one.
   (MapLibre only clusters GL-rendered symbol layers natively, not arbitrary DOM markers
   like the ones this app uses for its custom hold-shaped icons) — `rebuildClusterIndex()`
   loads the currently-visible spots into a `Supercluster` instance whenever filters
-  change, and `paintMarkers()` repaints whatever's in the viewport on every `moveend`.
-- Marker/checkbox colour = climbing type (outdoor bouldering, indoor bouldering, top
-  rope). A pin split into colour wedges means more than one type applies. A green ring
-  means the signed-in user has marked it climbed; a gold star badge means bookmarked.
+  change, and `paintMarkers()` repaints whatever's in the viewport on every `moveend`,
+  reusing markers/clusters that are already correctly painted instead of tearing
+  everything down each time.
+  **The CDN pin must stay at `maplibre-gl@5` or later** — `@4` resolves to a 4.x release
+  whose bundle only lists `globe` in the style-spec schema (for validation) and has no
+  actual globe rendering engine, so `setProjection({type:'globe'})` silently does nothing
+  and the map stays flat. Real globe rendering isn't there until v5. Don't downgrade this
+  pin without re-checking that.
+  DOM markers also visibly lag MapLibre's WebGL render loop while the camera is moving —
+  a documented MapLibre/Mapbox limitation, not fixable from application code — so markers
+  are hidden for the duration of a drag/zoom gesture (`#map.is-moving .maplibregl-marker`)
+  and reappear once `moveend` repaints them, rather than visibly trailing the map.
+- Marker/checkbox colour = climbing type (indoor bouldering or top rope — outdoor
+  bouldering was removed as a category, see "Known gaps" below). A pin split into colour
+  wedges means more than one type applies. A green ring means the signed-in user has
+  marked it climbed; a gold star badge means bookmarked.
 - Country/state filter, type filter, and marks filter are independent (AND'd together);
   search matches name or suburb.
 - **`state` codes are only unique within a country** — e.g. AU's `WA` (Western Australia)
@@ -158,5 +174,8 @@ and add a custom domain from the host's dashboard once you've bought one.
 - Seed data in `data.js` was researched and cross-checked spot-by-spot rather than
   pulled from one source — see the in-app About section for the full story. It's not
   exhaustive; that's what the community add/edit flow is for. The US portion currently
-  covers 12 states with a mix of well-known outdoor bouldering areas and major-city
-  indoor gyms — nowhere near exhaustive either.
+  covers 12 states' worth of major-city indoor gyms — nowhere near exhaustive either.
+  Some listed states (e.g. AU's TAS, US's AL/GA/TN/UT) currently have zero spots, since
+  their only entries were outdoor-bouldering areas removed in the pass below — the chips
+  still show them since a future indoor gym in that state is entirely plausible, they'll
+  just filter to nothing until one's added.

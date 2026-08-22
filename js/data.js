@@ -2,7 +2,7 @@
 // This is exposed as a global so app.js can read it without a bundler/module step.
 // Add/rearrange entries here directly; app.js never needs to change for data edits.
 
-  const IB = 'indoor-bouldering', OB = 'outdoor-bouldering', TR = 'top-rope';
+  const IB = 'indoor-bouldering', TR = 'top-rope';
 
   window.SEED_GYMS = [
     // --- NSW / Sydney ---
@@ -77,20 +77,6 @@
     {name:"Vertical Reality Climbing", suburb:"Holden Hill", state:"SA", lat:-34.8560, lng:138.6583, types:[IB,TR], notes:"Adelaide's only rope-climbing gym."},
     {name:"Southern Boulder", suburb:"Hope Forest", state:"SA", lat:-35.2833, lng:138.6167, types:[IB]},
 
-    // --- Outdoor bouldering / climbing areas ---
-    {name:"Mount Arapiles", suburb:"Natimuk", state:"VIC", lat:-36.7444, lng:141.8272, types:[OB], notes:"World-renowned trad climbing, plus overlooked bouldering (Watchtower Faces, Golden Streak)."},
-    {name:"The Grampians – Mt Stapylton", suburb:"Grampians National Park", state:"VIC", lat:-37.1500, lng:142.4167, types:[OB], notes:"Often called the best bouldering on earth — hundreds of sandstone problems plus trad/sport routes."},
-    {name:"Blue Mountains – Blackheath", suburb:"Blackheath", state:"NSW", lat:-33.6333, lng:150.2833, types:[OB], notes:"Sandstone sport & trad climbing with solid bouldering, ~2hrs from Sydney."},
-    {name:"Nowra", suburb:"Nowra", state:"NSW", lat:-34.8809, lng:150.6014, types:[OB], notes:"Primarily sport/trad lead climbing, not bouldering — tagged as outdoor bouldering as a placeholder since this map no longer tracks lead climbing separately. Flag for a better category or removal."},
-    {name:"Frog Buttress", suburb:"Mount French", state:"QLD", lat:-28.0167, lng:152.5333, types:[OB], notes:"Primarily trad lead climbing, not bouldering — tagged as outdoor bouldering as a placeholder since this map no longer tracks lead climbing separately. Flag for a better category or removal."},
-    {name:"The You Yangs", suburb:"Little River", state:"VIC", lat:-37.9428, lng:144.4145, types:[OB], notes:"Granite regional park close to Melbourne — short face and slab boulders spread across several sectors (Saddle, Turntable, Lower Picnic Ground)."},
-    {name:"Mundaring Weir Bouldering", suburb:"Mundaring", state:"WA", lat:-31.9427, lng:116.1311, types:[OB], notes:"Granite bouldering in the Perth hills (Pipelines/Winjan/Trailblazer sectors) — roughly a 45min walk in from the Hardy Rd carpark."},
-    {name:"Oatlands", suburb:"Oatlands", state:"TAS", lat:-42.3059, lng:147.3776, types:[OB], notes:"Tasmania's best-developed bouldering venue — solid sandstone roofs and faces, about an hour north of Hobart."},
-    {name:"The Enchanted Forest", suburb:"Mount Crawford", state:"SA", lat:-34.5975, lng:138.9983, types:[OB], notes:"SA's largest dedicated bouldering venue, in the Kaiserstuhl Forestry Reserve north of Adelaide. Closes on days of extreme fire danger."},
-    {name:"Cooleman Ridge Bouldering", suburb:"Chapman", state:"ACT", lat:-35.3618, lng:149.0342, types:[OB], notes:"Canberra's main bouldering venue — six sectors from beginner-friendly slabs to steep highballs. (Black Mountain, ACT's other well-known boulder field, is currently closed to climbing by Parks ACT — not included here.)"},
-    {name:"Girraween National Park", suburb:"Wallangarra", state:"QLD", lat:-28.8515, lng:151.9647, types:[OB], notes:"Granite national park on the QLD/NSW border — mostly slab and face routes, but with genuine bouldering, notably around Castle Rock and Turtle Rock. Climbing is banned on First Pyramid and The Sphinx."},
-    {name:"Kurraba Point", suburb:"Kurraba Point", state:"NSW", lat:-33.8458, lng:151.2233, types:[OB], notes:"Sandstone harbourside bouldering in Sydney, part of the wider North Shore bouldering scene (one of roughly 40 North Shore bouldering spots)."},
-
     // --- US indoor gyms ---
     {name:"Movement Boulder", suburb:"Boulder", state:"CO", country:"US", lat:40.0177, lng:-105.2508, types:[IB,TR]},
     {name:"Movement Baker", suburb:"Denver", state:"CO", country:"US", lat:39.7211, lng:-104.9925, types:[IB,TR]},
@@ -101,18 +87,5 @@
     {name:"Sender One Climbing – LAX", suburb:"Los Angeles", state:"CA", country:"US", lat:33.9447, lng:-118.3859, types:[IB,TR]},
     {name:"Planet Granite San Francisco", suburb:"Presidio, San Francisco", state:"CA", country:"US", lat:37.8014, lng:-122.4668, types:[IB,TR]},
     {name:"The Cliffs at LIC", suburb:"Long Island City", state:"NY", country:"US", lat:40.7503, lng:-73.9425, types:[IB,TR], notes:"One of NYC's largest climbing gyms."},
-    {name:"Refuge Climbing & Fitness", suburb:"Las Vegas", state:"NV", country:"US", lat:36.1055, lng:-115.1919, types:[IB], notes:"Unverified this pass — flag if the type mix is off."},
-
-    // --- US outdoor bouldering / climbing areas ---
-    {name:"Hueco Tanks – North Mountain", suburb:"El Paso", state:"TX", country:"US", lat:31.9226, lng:-106.0449, types:[OB], notes:"Legendary desert bouldering. North Mountain is self-guided; the rest of the park requires a guided tour."},
-    {name:"Buttermilks", suburb:"Bishop", state:"CA", country:"US", lat:37.3182, lng:-118.5871, types:[OB], notes:"World-famous highball granite bouldering in the Eastern Sierra."},
-    {name:"Joshua Tree National Park", suburb:"Joshua Tree", state:"CA", country:"US", lat:34.0138, lng:-116.1713, types:[OB], notes:"Famous mostly for short face/crack routes on granite formations, but with real V-graded bouldering scattered through Hidden Valley and beyond."},
-    {name:"Kraft Boulders", suburb:"Red Rock Canyon", state:"NV", country:"US", lat:36.1601, lng:-115.4170, types:[OB], notes:"Dedicated sandstone bouldering area 20 minutes from Las Vegas."},
-    {name:"Rocktown", suburb:"Pigeon Mountain", state:"GA", country:"US", lat:34.6636, lng:-85.3923, types:[OB], notes:"Sandstone bouldering on the Appalachian Plateau, one of the best in the Southeast."},
-    {name:"Little Cottonwood Canyon", suburb:"Sandy", state:"UT", country:"US", lat:40.5943, lng:-111.7337, types:[OB], notes:"Granite bouldering minutes from Salt Lake City."},
-    {name:"Horse Pens 40", suburb:"Steele", state:"AL", country:"US", lat:33.9243, lng:-86.2802, types:[OB], notes:"Privately run sandstone bouldering park, longtime host of the Triple Crown Bouldering Series."},
-    {name:"Little Rock City (Stone Fort)", suburb:"South Pittsburg", state:"TN", country:"US", lat:35.2488, lng:-85.2063, types:[OB], notes:"Classic Southern sandstone bouldering near Chattanooga."},
-    {name:"Flagstaff Mountain", suburb:"Boulder", state:"CO", country:"US", lat:40.0040, lng:-105.2986, types:[OB], notes:"Dedicated bouldering venue minutes from downtown Boulder."},
-    {name:"Icicle Creek Bouldering", suburb:"Leavenworth", state:"WA", country:"US", lat:47.5575, lng:-120.7600, types:[OB], notes:"Granite bouldering in the Cascades, over 1,200 documented problems."},
-    {name:"Shawangunks – Sky Top", suburb:"New Paltz", state:"NY", country:"US", lat:41.7648, lng:-74.1540, types:[OB], notes:"World-renowned trad climbing (\"The Gunks\"), plus real documented bouldering nearby."}
+    {name:"Refuge Climbing & Fitness", suburb:"Las Vegas", state:"NV", country:"US", lat:36.1055, lng:-115.1919, types:[IB], notes:"Unverified this pass — flag if the type mix is off."}
   ].map((g,i)=>({...g, id:'seed-'+i, community:false, country: g.country || 'AU'}));

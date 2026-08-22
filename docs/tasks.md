@@ -41,7 +41,51 @@ placeholder work just to fill this section)_
 
 ## In Progress
 
-_(none)_
+### Fix globe rendering, marker drag lag, remove outdoor-bouldering type
+- Branch: `fix/globe-render-perf-remove-outdoor-type`
+- Status: in progress (implemented + statically verified in worktree; not yet
+  smoke-tested in a real browser or merged)
+- What: three issues reported together after the MapLibre globe migration:
+  (1) globe wasn't rendering at all, (2) visible marker lag while dragging
+  the map, (3) remove "outdoor bouldering" as a type/filter option per user
+  decision to delete rather than recategorize.
+- Notes:
+  - (1) root cause confirmed by diffing actual unpkg bundles: `maplibre-gl@4`
+    resolves to 4.7.1, whose code only has `globe` in the style-spec schema
+    (for validation), no real rendering engine — `setProjection` silently
+    no-ops. `@5` (5.24.0) has the real engine (234 `globe`-related
+    identifiers vs. 1). Bumped the CDN pin in `index.html` for both the JS
+    and CSS `<link>`. See `docs/architecture.md` "Map" section for the full
+    writeup — don't downgrade this pin without re-checking that.
+  - (2) DOM markers inherently lag MapLibre's WebGL render loop while the
+    camera moves (documented upstream limitation, confirmed via search, not
+    fixable in application code). Mitigated two ways: markers are hidden for
+    the duration of a drag/zoom via `#map.is-moving .maplibregl-marker`
+    (toggled on `movestart`/`moveend`) so the lag isn't visible; and
+    `paintMarkers()` was rewritten to diff against what's already painted
+    instead of clearing and rebuilding every marker/popup on every
+    `moveend`, removing real unnecessary work from the hot path.
+  - (3) User explicitly chose "delete the 23 outdoor-only seed spots
+    entirely" over recategorizing or just hiding the UI option (asked via
+    AskUserQuestion since it was destructive/ambiguous). Removed from
+    `js/data.js` (93 → 70 spots), `TYPE_COLORS`/`TYPE_LABELS`/`activeTypes`
+    in `js/app.js`, the three `chk-outdoor` checkboxes + legend swatch in
+    `index.html`, and the dead `.chk-outdoor` CSS rule. Some seed states
+    (AU TAS, US AL/GA/TN/UT) now have zero spots as a result — expected,
+    documented in `docs/architecture.md`, not a bug.
+  - Verified so far (all static, in the worktree): brace/paren balance on
+    `app.js`, every `getElementById` id resolves in `index.html`, every CSS
+    `var(--x)` resolves, no leftover `outdoor`/`Leaflet` references in code,
+    all MapLibre APIs the app calls (`setProjection`, `setSky`,
+    `LngLatBounds`, `flyTo`, `easeTo`, `fitBounds`, `getBounds`, `getZoom`,
+    `getContainer`, `togglePopup`, `getPopup`, `setLngLat`) confirmed
+    present in the 5.24.0 bundle, all MapLibre CSS class names our
+    stylesheet targets confirmed present in 5.24.0's CSS.
+  - **Not yet done**: real browser smoke test (globe actually renders/spins,
+    clustering, drag feel, add/edit flow, sign-in) — this environment can't
+    execute JS against `localhost` or a real `file://` load. Needs a human
+    to open `index.html` via `python3 -m http.server 8000` and check per
+    `Rules.md` §7 before merging this branch.
 
 ## Blocked
 

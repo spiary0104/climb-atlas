@@ -12,7 +12,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23211f1b'/%3E%3Cpath d='M16 5c5 0 8 4 8 8.5S20 26 16 27c-4-1-8-9.5-8-13.5S11 5 16 5z' fill='%23b8834a'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4/dist/maplibre-gl.css">
+<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5/dist/maplibre-gl.css">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -75,11 +75,6 @@
         <div class="type-filter" id="typeFilters">
           <div class="section-label">Type</div>
           <label class="type-check">
-            <input type="checkbox" class="chk-outdoor" data-type="outdoor-bouldering" checked>
-            <span class="dot" style="background:var(--t-outdoor)"></span>
-            Outdoor bouldering
-          </label>
-          <label class="type-check">
             <input type="checkbox" class="chk-indoor" data-type="indoor-bouldering" checked>
             <span class="dot" style="background:var(--t-indoor)"></span>
             Indoor bouldering
@@ -123,7 +118,6 @@
       <div class="toast" id="toast"></div>
       <div class="legend">
         <b>Colour = type</b>
-        <span style="color:var(--t-outdoor)">●</span> Outdoor bouldering &nbsp;
         <span style="color:var(--t-indoor)">●</span> Indoor bouldering &nbsp;
         <span style="color:var(--t-toprope)">●</span> Top rope<br>
         Split markers = more than one type. A + means community-added, not yet verified.
@@ -173,11 +167,6 @@
     <div class="field">
       <label>Type (select all that apply)</label>
       <div class="type-filter" style="margin-top:2px;padding-top:0;border-top:none;">
-        <label class="type-check">
-          <input type="checkbox" class="chk-outdoor" id="fTypeOutdoor">
-          <span class="dot" style="background:var(--t-outdoor)"></span>
-          Outdoor bouldering
-        </label>
         <label class="type-check">
           <input type="checkbox" class="chk-indoor" id="fTypeIndoor">
           <span class="dot" style="background:var(--t-indoor)"></span>
@@ -245,11 +234,6 @@
       <label>Type (select all that apply)</label>
       <div class="type-filter" style="margin-top:2px;padding-top:0;border-top:none;">
         <label class="type-check">
-          <input type="checkbox" class="chk-outdoor" id="eTypeOutdoor">
-          <span class="dot" style="background:var(--t-outdoor)"></span>
-          Outdoor bouldering
-        </label>
-        <label class="type-check">
           <input type="checkbox" class="chk-indoor" id="eTypeIndoor">
           <span class="dot" style="background:var(--t-indoor)"></span>
           Indoor bouldering
@@ -309,17 +293,17 @@
     <h2>About Boulder Atlas</h2>
     <div class="updated">A community-sourced map of Australian &amp; American bouldering &amp; climbing spots</div>
 
-    <p>Boulder Atlas is a free, crowd-built map of places to climb across Australia and the United States — indoor bouldering gyms, gyms with top-rope and lead walls, and outdoor bouldering and climbing areas. It's built in the spirit of sites like Track Atlas: instead of one team trying to track every gym forever, the map is kept current by the people who actually climb at these places.</p>
+    <p>Boulder Atlas is a free, crowd-built map of places to climb across Australia and the United States — indoor bouldering gyms and gyms with top-rope and lead walls. It's built in the spirit of sites like Track Atlas: instead of one team trying to track every gym forever, the map is kept current by the people who actually climb at these places.</p>
 
     <h3>How the map works</h3>
-    <p>Each pin is colour-coded by what's on offer there — outdoor bouldering, indoor bouldering, or top rope. A pin split into wedges means a spot offers more than one. Use the checkboxes to filter by country/state, by type, or by your own climbed/bookmarked marks.</p>
+    <p>Each pin is colour-coded by what's on offer there — indoor bouldering or top rope. A pin split into wedges means a spot offers more than one. Use the checkboxes to filter by country/state, by type, or by your own climbed/bookmarked marks.</p>
 
     <h3>Where the data comes from</h3>
     <p>The initial set of spots was researched and cross-checked gym by gym — names, suburbs, and what kind of climbing is actually on offer — rather than pulled from one source and trusted blindly. It's still not exhaustive, and gyms open, close, move, and rebrand. From here, the map grows and gets corrected by the community.</p>
 
     <h3>Adding &amp; fixing spots</h3>
     <ul>
-      <li><b>Add a spot</b> — drop a pin for anywhere missing, indoor or outdoor.</li>
+      <li><b>Add a spot</b> — drop a pin for any gym that's missing.</li>
       <li><b>Edit this spot</b> — on any pin, fix the name, location, climbing type, or add a photo link.</li>
     </ul>
     <p>New spots and edits go into a review queue — a moderator approves or rejects them before they're visible to everyone else. An edited spot keeps showing its current info on the map until that edit is approved, so nothing unreviewed goes live in the meantime.</p>
@@ -388,7 +372,7 @@
   </div>
 </div>
 
-<script src="https://unpkg.com/maplibre-gl@4/dist/maplibre-gl.js"></script>
+<script src="https://unpkg.com/maplibre-gl@5/dist/maplibre-gl.js"></script>
 <script src="https://unpkg.com/supercluster@8/dist/supercluster.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script src="js/supabase-init.js"></script>

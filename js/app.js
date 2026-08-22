@@ -1,7 +1,7 @@
 
 (function(){
 
-  const TYPE_COLORS = {'outdoor-bouldering':'#b8834a','indoor-bouldering':'#3fb8a6','top-rope':'#8a6bb0'};
+  const TYPE_COLORS = {'indoor-bouldering':'#3fb8a6','top-rope':'#8a6bb0'};
   // `state` codes collide across countries (AU's WA = Western Australia, US's WA = Washington),
   // so country+state together identify a region — never key off `state` alone.
   const STATES_BY_COUNTRY = {
@@ -9,7 +9,7 @@
     US: [['CA','California'],['CO','Colorado'],['TX','Texas'],['WA','Washington'],['NY','New York'],['NV','Nevada'],
          ['GA','Georgia'],['UT','Utah'],['AL','Alabama'],['TN','Tennessee'],['MA','Massachusetts'],['IL','Illinois']]
   };
-  const TYPE_LABELS = {'outdoor-bouldering':'Outdoor bouldering','indoor-bouldering':'Indoor bouldering','top-rope':'Top rope'};
+  const TYPE_LABELS = {'indoor-bouldering':'Indoor bouldering','top-rope':'Top rope'};
 
   function typeSwatch(types){
     const colors = (types&&types.length?types:['indoor-bouldering']).map(t=>TYPE_COLORS[t]||'#999');
@@ -27,7 +27,7 @@
   let pendingEdits = [];  // proposed edits to live spots awaiting approval (moderator-only)
 
   let activeStates = new Set(['ALL']);
-  let activeTypes = new Set(['outdoor-bouldering','indoor-bouldering','top-rope']);
+  let activeTypes = new Set(['indoor-bouldering','top-rope']);
   let showClimbedOnly = false;
   let showBookmarkedOnly = false;
   let searchTerm = '';
@@ -78,6 +78,14 @@
   // MapLibre doesn't cluster arbitrary DOM markers itself, so supercluster
   // computes the groups; we repaint plain maplibregl.Marker elements for
   // whatever's in the current viewport on every 'moveend'.
+  //
+  // DOM markers are inherently a frame or two behind MapLibre's own WebGL
+  // render loop while the camera is moving (a documented MapLibre/Mapbox GL
+  // limitation, not something fixable from application code) — with ~100
+  // markers that shows up as visible lag/jitter during a drag. We hide them
+  // for the duration of the gesture (movestart→moveend) rather than let them
+  // visibly trail the map, and skip repainting anything that's already
+  // correctly on screen so the moveend repaint itself stays cheap.
   function rebuildClusterIndex(visibleSpots){
     visibleIndex = {};
     visibleSpots.forEach(g=>{ visibleIndex[g.id] = g; });
@@ -86,6 +94,10 @@
       properties: {id: g.id},
       geometry: {type: 'Point', coordinates: [g.lng, g.lat]}
     })));
+    // A rebuilt index hands out fresh cluster ids that can coincidentally
+    // collide with old ones from the previous index but mean a different
+    // group, so anything already painted has to go before we query it.
+    clearPaintedMarkers();
     paintMarkers();
   }
 
@@ -97,14 +109,19 @@
   }
 
   function paintMarkers(){
-    clearPaintedMarkers();
     if(!supercluster) return;
     const b = map.getBounds();
     const bbox = [b.getWest(), b.getSouth(), b.getEast(), b.getNorth()];
     const zoom = Math.floor(map.getZoom());
+    const seenClusters = new Set();
+    const seenSpots = new Set();
+
     supercluster.getClusters(bbox, zoom).forEach(feature=>{
       const [lng, lat] = feature.geometry.coordinates;
       if(feature.properties.cluster){
+        const clusterId = feature.properties.cluster_id;
+        seenClusters.add(clusterId);
+        if(clusterMarkers[clusterId]) return; // same index, same id => already correctly painted
         const count = feature.properties.point_count;
         const size = count < 10 ? 34 : count < 50 ? 42 : 50;
         const el = document.createElement('div');
@@ -113,17 +130,29 @@
         el.style.height = size+'px';
         el.textContent = count;
         el.addEventListener('click', ()=>{
-          const targetZoom = Math.min(supercluster.getClusterExpansionZoom(feature.properties.cluster_id), 20);
+          const targetZoom = Math.min(supercluster.getClusterExpansionZoom(clusterId), 20);
           map.easeTo({center:[lng,lat], zoom: targetZoom});
         });
-        clusterMarkers[feature.properties.cluster_id] = new maplibregl.Marker({element: el}).setLngLat([lng,lat]).addTo(map);
+        clusterMarkers[clusterId] = new maplibregl.Marker({element: el}).setLngLat([lng,lat]).addTo(map);
       } else {
-        const g = visibleIndex[feature.properties.id];
-        if(g) markerEls[g.id] = buildSpotMarker(g);
+        const id = feature.properties.id;
+        seenSpots.add(id);
+        if(markerEls[id]) return; // already painted, leave it (mark state stays in sync via updateMarkUI)
+        const g = visibleIndex[id];
+        if(g) markerEls[id] = buildSpotMarker(g);
       }
+    });
+
+    Object.keys(clusterMarkers).forEach(idStr=>{
+      if(!seenClusters.has(Number(idStr))){ clusterMarkers[idStr].remove(); delete clusterMarkers[idStr]; }
+    });
+    Object.keys(markerEls).forEach(id=>{
+      if(!seenSpots.has(id)){ markerEls[id].marker.remove(); delete markerEls[id]; }
     });
   }
   map.on('moveend', paintMarkers);
+  map.on('movestart', ()=> map.getContainer().classList.add('is-moving'));
+  map.on('moveend', ()=> map.getContainer().classList.remove('is-moving'));
 
   function spotMarkerClasses(g){
     const cls = ['hold-marker'];
@@ -139,7 +168,11 @@
     el.style.width = '20px';
     el.style.height = '20px';
     el.style.background = typeSwatch(g.types);
-    const popup = new maplibregl.Popup({offset: 14, maxWidth: '240px'}).setHTML(popupHtml(g));
+    // Popup HTML is built lazily on first open, not here — this runs once per
+    // marker on every viewport repaint, and most painted markers never get
+    // clicked.
+    const popup = new maplibregl.Popup({offset: 14, maxWidth: '240px'});
+    popup.on('open', ()=> popup.setHTML(popupHtml(g)));
     const marker = new maplibregl.Marker({element: el}).setLngLat([g.lng, g.lat]).setPopup(popup).addTo(map);
     return {marker, el};
   }
@@ -440,7 +473,7 @@
     pinStatus.textContent = 'No pin dropped yet — click "Drop pin" then tap the map.';
     pinStatus.classList.remove('set');
     ['fName','fSuburb','fNotes','fPhoto'].forEach(id=>document.getElementById(id).value='');
-    ['fTypeOutdoor','fTypeIndoor','fTypeTopRope'].forEach(id=>document.getElementById(id).checked=false);
+    ['fTypeIndoor','fTypeTopRope'].forEach(id=>document.getElementById(id).checked=false);
     document.getElementById('fCountry').value = 'AU';
     populateStateSelect('fState', 'AU');
     modalBackdrop.classList.remove('hidden');
@@ -493,11 +526,11 @@
   ['fName','fSuburb'].forEach(id=>{
     document.getElementById(id).addEventListener('input', checkFormReady);
   });
-  ['fTypeOutdoor','fTypeIndoor','fTypeTopRope'].forEach(id=>{
+  ['fTypeIndoor','fTypeTopRope'].forEach(id=>{
     document.getElementById(id).addEventListener('change', checkFormReady);
   });
   function selectedTypes(){
-    const map = {fTypeOutdoor:'outdoor-bouldering', fTypeIndoor:'indoor-bouldering', fTypeTopRope:'top-rope'};
+    const map = {fTypeIndoor:'indoor-bouldering', fTypeTopRope:'top-rope'};
     return Object.keys(map).filter(id=>document.getElementById(id).checked).map(id=>map[id]);
   }
   function checkFormReady(){
@@ -553,7 +586,6 @@
     document.getElementById('eState').value = g.state;
     document.getElementById('eNotes').value = g.notes || '';
     document.getElementById('ePhoto').value = g.photo || '';
-    document.getElementById('eTypeOutdoor').checked = g.types.includes('outdoor-bouldering');
     document.getElementById('eTypeIndoor').checked = g.types.includes('indoor-bouldering');
     document.getElementById('eTypeTopRope').checked = g.types.includes('top-rope');
     editPinStatus.textContent = `Current pin: ${g.lat.toFixed(4)}, ${g.lng.toFixed(4)}`;
@@ -582,11 +614,11 @@
   ['eName','eSuburb'].forEach(id=>{
     document.getElementById(id).addEventListener('input', checkEditFormReady);
   });
-  ['eTypeOutdoor','eTypeIndoor','eTypeTopRope'].forEach(id=>{
+  ['eTypeIndoor','eTypeTopRope'].forEach(id=>{
     document.getElementById(id).addEventListener('change', checkEditFormReady);
   });
   function selectedEditTypes(){
-    const map = {eTypeOutdoor:'outdoor-bouldering', eTypeIndoor:'indoor-bouldering', eTypeTopRope:'top-rope'};
+    const map = {eTypeIndoor:'indoor-bouldering', eTypeTopRope:'top-rope'};
     return Object.keys(map).filter(id=>document.getElementById(id).checked).map(id=>map[id]);
   }
   function checkEditFormReady(){

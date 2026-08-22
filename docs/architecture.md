@@ -58,17 +58,32 @@ never `state` alone. Keep this in mind before adding a third country.
   (`map.setProjection({type:'globe'})`, set once in a `style.load`
   listener) and atmosphere glow (`map.setSky({...})`), without needing a
   Mapbox account/API key. Basemap is CARTO's free, keyless "Dark Matter"
-  vector style.
+  vector style. **CDN pin must be `maplibre-gl@5` or later** — `@4`'s
+  bundle only lists `globe` in the style-spec schema (validation only,
+  no rendering engine behind it), so `setProjection({type:'globe'})`
+  silently no-ops and the map stays flat mercator. Verified by diffing
+  occurrence counts of `globe`-related identifiers in the actual unpkg
+  bundles for 4.7.1 vs 5.24.0, not by version-number guessing.
 - Clustering is hand-rolled with `supercluster` because MapLibre only
   clusters GL-rendered symbol layers natively, not the custom
   hold-shaped DOM markers this app uses. `rebuildClusterIndex()` reloads
   the currently-visible spots into a `Supercluster` instance whenever
-  filters change; `paintMarkers()` repaints whatever's in the viewport on
-  every `moveend`.
-- Marker/checkbox colour = climbing type (outdoor bouldering, indoor
-  bouldering, top rope); a pin split into colour wedges means more than
-  one type applies. A green ring = signed-in user has marked it climbed;
-  a gold star badge = bookmarked.
+  filters change (and always fully clears old markers first, since a
+  rebuilt index's cluster ids aren't safe to compare against the old
+  one's); `paintMarkers()` repaints whatever's in the viewport on every
+  `moveend`, diffing against what's already painted so panning/zooming
+  without a filter change doesn't tear down and recreate markers that
+  are already correct.
+- DOM markers lag MapLibre's own WebGL render loop while the camera is
+  moving (a documented MapLibre/Mapbox limitation, not fixable from
+  application code) — markers are hidden for the duration of a
+  drag/zoom (`#map.is-moving .maplibregl-marker`, toggled on
+  `movestart`/`moveend`) rather than left to visibly trail the map.
+- Marker/checkbox colour = climbing type (indoor bouldering, top rope —
+  outdoor bouldering was removed as a category, see "Known gaps"); a pin
+  split into colour wedges means more than one type applies. A green
+  ring = signed-in user has marked it climbed; a gold star badge =
+  bookmarked.
 - Country/state filter, type filter, and marks filter are independent
   (AND'd together); search matches name or suburb.
 
@@ -81,6 +96,12 @@ never `state` alone. Keep this in mind before adding a third country.
   Cloudflare R2, or S3).
 - "Revert to original data" only works for un-edited seed spots — there's
   no stored "original" for community-submitted spots.
+- Outdoor bouldering was removed as a type/category entirely (indoor
+  gyms only now). The 23 outdoor-only seed spots were deleted rather than
+  recategorized — that data no longer exists in the app, only in git
+  history. Some seed states (AU's TAS, US's AL/GA/TN/UT) now have zero
+  spots as a result; their filter chips remain since a future indoor gym
+  there is plausible.
 
 ## Where to look first for a given change
 
