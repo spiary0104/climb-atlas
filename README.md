@@ -187,7 +187,19 @@ and add a custom domain from the host's dashboard once you've bought one.
   below — the chips still show them since a future indoor gym in that state is
   entirely plausible, they'll just filter to nothing until one's added.
 - Below HOLD_ICON_ZOOM (`js/app.js`), an ungrouped single spot marker paints as a
-  numbered badge (matching the look of a cluster) instead of the small hold-shaped
-  icon — a lone marker viewed from the globe's default zoomed-out camera reads as a
-  stray dot otherwise. It switches to the real icon once you zoom in past that
-  threshold, or click it to zoom straight there.
+  numbered badge — deliberately styled identically to a real cluster badge, not
+  colour-coded, so it reads as "just another badge" while zoomed out rather than a
+  third distinct marker style. It switches to the real hold-shaped icon once you
+  zoom in past that threshold, or click it to zoom straight there. The same zoomed-
+  out window also shows plain text city/state labels (`.region-label`) at each
+  visible region's centroid, for basic orientation on the globe without needing to
+  zoom in — see `docs/architecture.md` "Map" for both.
+- The country/state filter chips are grouped into a collapsible accordion per
+  country (collapsed by default) rather than one long always-expanded list — with
+  6+ countries the fully-expanded chip list ran the sidebar out of usable height
+  (see `docs/architecture.md` "Sidebar chip growth"). A filter chosen inside a
+  collapsed group stays applied and gets a small colour/dot indicator on that
+  group's label so it's never silently invisible. The gym list below the filters
+  is hidden (replaced by a one-line spot count) until you actually search by name
+  or suburb — at 500+ spots it was expensive to render and mostly just pushed the
+  map down for no benefit when nobody was scrolling through it anyway.

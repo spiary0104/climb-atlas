@@ -318,6 +318,75 @@ placeholder work just to fill this section)_
   with all 6 countries named, the layout fix confirmed on both desktop
   and mobile viewport sizes, no new console errors.
 
+### Collapsible sidebar accordion, hide gym list, region labels, uniform numbered badges
+- Branch: `fix/globe-render-perf-remove-outdoor-type` (same branch/worktree
+  as every task above — continued rather than starting fresh)
+- Status: in progress (implemented + verified live in a served copy; not
+  yet smoke-tested by a human)
+- What: four related UI requests in one message, direct fallout of the
+  sidebar-overflow bug found and band-aid-fixed (50vh scroll cap) in the
+  previous task:
+  1. Make the country sections in the sidebar collapsible, and hide the
+     gym list unless there's an active search.
+  2. Add basic city/state labels to the map when zoomed out.
+  3. Make the numbered singleton badges (from the "numbered markers at
+     low zoom" task) look like real cluster badges when zoomed out,
+     instead of being colour-coded by climbing type.
+- **(1) Accordion + hidden list**: every country's `.chip-row` in
+  `index.html` is now wrapped in `.country-group`, collapsed by default,
+  toggled by clicking its `.country-label` (now a `<button>` for
+  keyboard/screenreader access) — handled in the existing `#stateChips`
+  click listener in `js/app.js` (checked first, before the chip-filter
+  logic, so toggling a group never also changes the filter). A chip can
+  be `.active` while its group is `.collapsed` (the row is just
+  `display:none`), so the same click handler also toggles `.has-active`
+  on the group when it contains an active chip, with a small colour/dot
+  on the label so an applied filter doesn't silently vanish from view.
+  The 50vh scroll cap from the last task stays on as a backstop for when
+  several groups are expanded at once. `render()` in `js/app.js` now only
+  builds the actual `#gymList` DOM when `searchTerm` is set; otherwise it
+  shows a one-line "`N` spots shown on the map — search to list them
+  here" placeholder.
+- **(2) Region labels**: new `computeRegionCentroids()` in `js/app.js`
+  averages the lat/lng of every currently-visible `(country,state)`
+  group, recomputed in `rebuildClusterIndex()` whenever the filtered set
+  changes. `paintMarkers()` paints a plain-text `.region-label` (no
+  background, `pointer-events:none`) at each centroid that falls in the
+  current viewport, using the human-readable name from
+  `STATES_BY_COUNTRY` — same zoom window as the numbered badges
+  (`< HOLD_ICON_ZOOM`), gone once real markers take over. Deliberately
+  basic: no collision avoidance, so labels for nearby regions can
+  overlap.
+- **(3) Uniform numbered badges**: `buildSpotNumberMarker()` no longer
+  sets `background: typeSwatch(...)` — it's now plain `.cluster-marker`
+  styling (34px, matching a real cluster's smallest size tier), on
+  request, so it's indistinguishable from an actual cluster while zoomed
+  out except for reading "1".
+- **Verified live** (served copy, `python -m http.server` + browser JS
+  instrumentation — screenshots still don't composite in this sandbox):
+  all 6 country groups collapsed by default; clicking a label expands
+  without changing the filter count; clicking a chip inside filters
+  correctly (NSW → 28) and sets `.has-active`; re-collapsing keeps
+  `.has-active` and hides the row (`display:none` confirmed); searching
+  "boulder" renders 85 real list items, clearing the search reverts to
+  the placeholder; a monkeypatched single-feature test at zoom 5 near
+  Hokkaido showed a 34px neutral-background numbered badge plus three
+  region labels ("Tokyo", "Kanagawa (Yokohama)", "Hokkaido (Sapporo)")
+  simultaneously in view; jumping to zoom 12 made all three region labels
+  and the numbered badge disappear and the real hold-icon marker appear.
+  Sidebar height re-measured on both desktop (958px viewport: controls
+  463px / list 267px, all collapsed) and mobile (375×812: controls 406px
+  / list 318px). No new console errors beyond the pre-existing,
+  unrelated Supabase schema mismatch.
+- **Not yet done**: an actual human look in a real, visually-rendered
+  browser — same outstanding item as every task on this branch. Worth
+  doing now: six tasks deep on one branch (globe/marker fixes → Mountain
+  Project data → numbered markers + Japan → Canada/NZ → China → this),
+  and this task specifically touches visual polish that JS instrumentation
+  can measure but not really judge (does the collapsed accordion look
+  right, do the region labels read cleanly against the globe, does the
+  chevron rotate correctly).
+
 ## Blocked
 
 _(none)_

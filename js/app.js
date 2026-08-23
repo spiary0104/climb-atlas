@@ -49,6 +49,8 @@
   let clusterMarkers = {};  // cluster_id -> maplibregl.Marker for cluster badges currently painted
   let supercluster = null;
   let lastIconBucket = null; // 'icon' | 'number' | null -- which style ungrouped spot markers were last painted in
+  let regionCentroids = {}; // "country:state" -> {lat,lng,country,state}, recomputed whenever the filtered spot set changes
+  let regionLabelMarkers = {}; // "country:state" -> maplibregl.Marker, for the basic city/state labels shown below HOLD_ICON_ZOOM
   let placingPin = null; // {lat,lng} while add-modal open
   let currentEditId = null;
   let currentEditPin = null; // {lat,lng} while edit-modal open
@@ -115,6 +117,7 @@
       properties: {id: g.id},
       geometry: {type: 'Point', coordinates: [g.lng, g.lat]}
     })));
+    regionCentroids = computeRegionCentroids(visibleSpots);
     // A rebuilt index hands out fresh cluster ids that can coincidentally
     // collide with old ones from the previous index but mean a different
     // group, so anything already painted has to go before we query it.
@@ -122,11 +125,38 @@
     paintMarkers();
   }
 
+  // One label point per (country,state) that currently has at least one
+  // visible spot -- the centroid of that region's own spots, not anything
+  // geographically authoritative. "Basic" labelling: no collision avoidance,
+  // dense regions can overlap.
+  function computeRegionCentroids(visibleSpots){
+    const sums = {};
+    visibleSpots.forEach(g=>{
+      const key = g.country+':'+g.state;
+      if(!sums[key]) sums[key] = {latSum:0, lngSum:0, count:0, country:g.country, state:g.state};
+      sums[key].latSum += g.lat;
+      sums[key].lngSum += g.lng;
+      sums[key].count++;
+    });
+    const centroids = {};
+    Object.entries(sums).forEach(([key, s])=>{
+      centroids[key] = {lat: s.latSum/s.count, lng: s.lngSum/s.count, country: s.country, state: s.state};
+    });
+    return centroids;
+  }
+
+  function stateLabel(country, state){
+    const entry = (STATES_BY_COUNTRY[country]||[]).find(([code])=>code===state);
+    return entry ? entry[1] : state;
+  }
+
   function clearPaintedMarkers(){
     Object.values(markerEls).forEach(e=>e.marker.remove());
     Object.values(clusterMarkers).forEach(m=>m.remove());
+    Object.values(regionLabelMarkers).forEach(m=>m.remove());
     markerEls = {};
     clusterMarkers = {};
+    regionLabelMarkers = {};
   }
 
   function paintMarkers(){
@@ -179,6 +209,28 @@
     Object.keys(markerEls).forEach(id=>{
       if(!seenSpots.has(id)){ markerEls[id].marker.remove(); delete markerEls[id]; }
     });
+
+    // Basic city/state labels, same "zoomed out" window as the numbered
+    // badges -- once real markers take over (zoom >= HOLD_ICON_ZOOM) the
+    // labels aren't needed, you can already see individual gyms.
+    const showLabels = zoom < HOLD_ICON_ZOOM;
+    const seenLabels = new Set();
+    if(showLabels){
+      Object.entries(regionCentroids).forEach(([key, c])=>{
+        if(c.lng < bbox[0] || c.lng > bbox[2] || c.lat < bbox[1] || c.lat > bbox[3]) return;
+        seenLabels.add(key);
+        if(regionLabelMarkers[key]) return;
+        const el = document.createElement('div');
+        el.className = 'region-label';
+        el.textContent = stateLabel(c.country, c.state);
+        // Offset below the badge that would otherwise sit at this same
+        // point, so the label doesn't sit directly on top of it.
+        regionLabelMarkers[key] = new maplibregl.Marker({element: el, offset: [0, 24]}).setLngLat([c.lng, c.lat]).addTo(map);
+      });
+    }
+    Object.keys(regionLabelMarkers).forEach(key=>{
+      if(!showLabels || !seenLabels.has(key)){ regionLabelMarkers[key].remove(); delete regionLabelMarkers[key]; }
+    });
   }
   map.on('moveend', paintMarkers);
   map.on('movestart', ()=> map.getContainer().classList.add('is-moving'));
@@ -210,12 +262,16 @@
   // Zoomed-out stand-in for a lone spot marker -- see HOLD_ICON_ZOOM. No
   // popup (nothing to show beyond what the badge already implies); clicking
   // zooms in far enough to flip it over to the real hold-shaped marker.
+  // Deliberately styled identically to a real cluster badge (same size,
+  // same neutral colour) rather than colour-coded by type -- while zoomed
+  // out it should read as "one more badge on the globe", indistinguishable
+  // from an actual cluster except for the "1", not a visually distinct
+  // third marker style.
   function buildSpotNumberMarker(g){
     const el = document.createElement('div');
     el.className = 'cluster-marker spot-number-marker';
-    el.style.width = '26px';
-    el.style.height = '26px';
-    el.style.background = typeSwatch(g.types);
+    el.style.width = '34px';
+    el.style.height = '34px';
     el.textContent = '1';
     el.addEventListener('click', ()=>{
       map.easeTo({center:[g.lng, g.lat], zoom: Math.max(map.getZoom()+3, HOLD_ICON_ZOOM)});
@@ -263,57 +319,63 @@
     const visible = spots.filter(passesFilters);
     document.getElementById('countNum').textContent = visible.length;
 
-    if(visible.length === 0){
+    // The full list is expensive to render at 500+ spots and mostly just
+    // pushes the map down -- only build it once there's a search term
+    // narrow enough to make a list useful; otherwise the map (plus the
+    // spot count above) is the browsing surface.
+    if(!searchTerm){
+      list.innerHTML = `<div class="empty-state">${visible.length} spot${visible.length===1?'':'s'} shown on the map. Search by name or suburb to list them here.</div>`;
+    } else if(visible.length === 0){
       list.innerHTML = '<div class="empty-state">No spots match. Try clearing filters or search.</div>';
-    }
+    } else {
+      visible.sort((a,b)=>a.name.localeCompare(b.name));
+      visible.forEach(g=>{
+        const climbed = climbedIds.has(g.id);
+        const bookmarked = bookmarkedIds.has(g.id);
 
-    visible.sort((a,b)=>a.name.localeCompare(b.name));
-    visible.forEach(g=>{
-      const climbed = climbedIds.has(g.id);
-      const bookmarked = bookmarkedIds.has(g.id);
-
-      const item = document.createElement('div');
-      item.className = 'gym-item';
-      item.dataset.id = g.id;
-      item.innerHTML = `
-        <div class="swatch" style="background:${typeSwatch(g.types)}"></div>
-        <div class="info">
-          <div class="name">${escapeHtml(g.name)}</div>
-          <div class="meta">
-            <span>${escapeHtml(g.suburb)}, ${g.state}</span>
-            ${g.community?'<span class="tag-pill community">Community</span>':''}
-            ${g.edited?'<span class="tag-pill edited">Edited</span>':''}
+        const item = document.createElement('div');
+        item.className = 'gym-item';
+        item.dataset.id = g.id;
+        item.innerHTML = `
+          <div class="swatch" style="background:${typeSwatch(g.types)}"></div>
+          <div class="info">
+            <div class="name">${escapeHtml(g.name)}</div>
+            <div class="meta">
+              <span>${escapeHtml(g.suburb)}, ${g.state}</span>
+              ${g.community?'<span class="tag-pill community">Community</span>':''}
+              ${g.edited?'<span class="tag-pill edited">Edited</span>':''}
+            </div>
           </div>
-        </div>
-        <button class="mark-btn climbed-btn ${climbed?'active':''}" title="Mark as climbed" aria-label="Mark as climbed">✓</button>
-        <button class="mark-btn bookmark-btn ${bookmarked?'active':''}" title="Bookmark" aria-label="Bookmark">★</button>
-        <button class="edit-icon-btn" title="Edit this spot" aria-label="Edit this spot">✎</button>`;
-      item.addEventListener('click', ()=>{
-        const targetZoom = Math.max(map.getZoom(), 13);
-        map.flyTo({center:[g.lng, g.lat], zoom: targetZoom, duration: 800});
-        // paintMarkers() (bound to 'moveend' at setup, before this one-off
-        // listener exists) runs first and repopulates markerEls for the new
-        // viewport, so the lookup below sees the freshly painted marker.
-        map.once('moveend', ()=>{
-          const entry = markerEls[g.id];
-          if(entry) entry.marker.togglePopup();
+          <button class="mark-btn climbed-btn ${climbed?'active':''}" title="Mark as climbed" aria-label="Mark as climbed">✓</button>
+          <button class="mark-btn bookmark-btn ${bookmarked?'active':''}" title="Bookmark" aria-label="Bookmark">★</button>
+          <button class="edit-icon-btn" title="Edit this spot" aria-label="Edit this spot">✎</button>`;
+        item.addEventListener('click', ()=>{
+          const targetZoom = Math.max(map.getZoom(), 13);
+          map.flyTo({center:[g.lng, g.lat], zoom: targetZoom, duration: 800});
+          // paintMarkers() (bound to 'moveend' at setup, before this one-off
+          // listener exists) runs first and repopulates markerEls for the new
+          // viewport, so the lookup below sees the freshly painted marker.
+          map.once('moveend', ()=>{
+            const entry = markerEls[g.id];
+            if(entry) entry.marker.togglePopup();
+          });
+          if(window.innerWidth <= 760) document.getElementById('sidebar').classList.remove('open');
         });
-        if(window.innerWidth <= 760) document.getElementById('sidebar').classList.remove('open');
+        item.querySelector('.edit-icon-btn').addEventListener('click', (ev)=>{
+          ev.stopPropagation();
+          openEditModal(g.id);
+        });
+        item.querySelector('.climbed-btn').addEventListener('click', (ev)=>{
+          ev.stopPropagation();
+          toggleMark(g.id, 'climbed');
+        });
+        item.querySelector('.bookmark-btn').addEventListener('click', (ev)=>{
+          ev.stopPropagation();
+          toggleMark(g.id, 'bookmarked');
+        });
+        list.appendChild(item);
       });
-      item.querySelector('.edit-icon-btn').addEventListener('click', (ev)=>{
-        ev.stopPropagation();
-        openEditModal(g.id);
-      });
-      item.querySelector('.climbed-btn').addEventListener('click', (ev)=>{
-        ev.stopPropagation();
-        toggleMark(g.id, 'climbed');
-      });
-      item.querySelector('.bookmark-btn').addEventListener('click', (ev)=>{
-        ev.stopPropagation();
-        toggleMark(g.id, 'bookmarked');
-      });
-      list.appendChild(item);
-    });
+    }
 
     rebuildClusterIndex(visible);
   }
@@ -340,6 +402,8 @@
 
   // --- filter controls ---
   document.getElementById('stateChips').addEventListener('click', (e)=>{
+    const label = e.target.closest('.country-label');
+    if(label){ label.closest('.country-group').classList.toggle('collapsed'); return; }
     const chip = e.target.closest('.chip');
     if(!chip) return;
     const state = chip.dataset.state;
@@ -354,6 +418,13 @@
     document.querySelectorAll('.chip').forEach(c=>{
       const key = c.dataset.state === 'ALL' ? 'ALL' : c.dataset.country + ':' + c.dataset.state;
       c.classList.toggle('active', activeStates.has(key));
+    });
+    // A chip can be active while its own country group is collapsed (the
+    // chip-row is just display:none, its .active class is untouched) --
+    // flag the group itself so that filter doesn't silently disappear
+    // from view.
+    document.querySelectorAll('.country-group').forEach(group=>{
+      group.classList.toggle('has-active', !!group.querySelector('.chip.active'));
     });
     render();
   });

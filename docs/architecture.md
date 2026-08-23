@@ -143,22 +143,44 @@ from one source:
   third-party code from a site this project doesn't control, so treat it
   as a supply-chain risk and keep pulling data by reading the page
   directly (as done here), not by running anything it offers to install.
-- **Sidebar chip growth has a real height ceiling.** `.sidebar-controls`
-  (`css/style.css`) — the search box plus every country's chip row plus
-  type/marks filters — sits above `.gym-list` (`flex:1; overflow-y:auto`)
-  in a flex column. At 6 countries (45 chips) `.sidebar-controls` alone
-  is ~847px tall, taller than a typical sidebar; without its own
-  `max-height`/`overflow-y`, flexbox's automatic-minimum-size rule keeps
-  a visible-overflow block from shrinking below its content height, so it
-  was forcing `.gym-list` down to a few px of visible height. Fixed by
-  capping `.sidebar-controls` at `max-height:50vh` with its own
-  `overflow-y:auto`. **Adding a 7th country's chip row will make this
-  panel taller again** — re-measure both regions' real rendered height
-  (not just "does it look okay") before assuming it's still fine; the
-  50vh cap means chips will simply need more scrolling within their own
-  region, not that `.gym-list` will get squeezed again, but a
-  country/state UI redesign (accordion, dropdown, search-to-filter) is
-  worth considering if more countries keep getting added this way.
+- **Sidebar chip growth has a real height ceiling — mitigated, not solved,
+  by an accordion.** `.sidebar-controls` (`css/style.css`) — the search
+  box plus every country's chip row plus type/marks filters — sits above
+  `.gym-list` (`flex:1; overflow-y:auto`) in a flex column. At 6 countries
+  (45 chips) fully expanded, `.sidebar-controls` is ~847px tall, taller
+  than a typical sidebar; without its own `max-height`/`overflow-y`,
+  flexbox's automatic-minimum-size rule keeps a visible-overflow block
+  from shrinking below its content height, so it was forcing `.gym-list`
+  down to a few px of visible height (found by actually measuring
+  `getBoundingClientRect()` in a served copy, not by assuming the layout
+  was fine). Two fixes now stacked on top of each other:
+  1. `.sidebar-controls` still has `max-height:50vh; overflow-y:auto` as a
+     hard backstop, in case a user expands most/all groups at once.
+  2. Each country's chip row is now wrapped in `.country-group` and
+     collapsed by default (`js/app.js`'s `stateChips` click handler
+     toggles `.collapsed` on `.country-label` click) — see index.html's
+     `#stateChips` markup. A chip can be `.active` while its group is
+     `.collapsed` (the row is just `display:none`, the chip's own
+     `.active` class is untouched), so the click handler also toggles
+     `.has-active` on the group whenever any of its chips are active, and
+     `.country-group.has-active .country-label` gets a colour + dot so an
+     applied filter never silently disappears from view just because its
+     group is collapsed.
+  With everything collapsed by default, `.sidebar-controls` measured
+  ~463px on desktop / ~406px on mobile after this change (vs. 847px fully
+  expanded) — **adding a 7th country still adds one more collapsed label
+  row (~30px), not another full expanded chip row**, so this scales far
+  better than the flat chip-row layout did. Still worth re-measuring both
+  regions after a future country addition rather than assuming it's fine.
+- **The gym list is hidden unless there's an active search.** At 500+
+  spots, rendering every filtered spot as a `.gym-item` was expensive and
+  mostly just displaced the map — `render()` (`js/app.js`) now only
+  builds the real list when `searchTerm` is non-empty; otherwise
+  `#gymList` shows a one-line "`N` spots shown on the map — search by
+  name or suburb to list them here" placeholder. Chip/type/marks filters
+  still narrow what's on the map and in `countNum` either way — only the
+  *list rendering* is gated on search text, per the user's own framing of
+  the request ("the list of gyms (unless searched for)").
 
 ## Map
 
@@ -199,15 +221,37 @@ from one source:
 - Below `HOLD_ICON_ZOOM` (`js/app.js`, currently 9), an ungrouped single
   spot (one supercluster hands back as a lone point rather than a cluster,
   e.g. an isolated Japan gym viewed from the default mid-Pacific camera)
-  paints as a numbered badge (`buildSpotNumberMarker`, reusing the
-  `.cluster-marker` look with the spot's own type colour as background)
-  instead of the small hold-shaped icon, which is easy to miss at a wide
-  zoom. `paintMarkers()` tracks which "bucket" (icon vs. number) it last
-  painted in and clears every spot marker (not cluster badges) when the
-  zoom crosses that threshold, so painted markers don't get stuck in the
-  wrong style. `updateMarkUI()` only restyles `kind:'icon'` marker
-  entries for the same reason — a numbered badge has no climbed/bookmarked
-  state to reflect.
+  paints as a numbered badge (`buildSpotNumberMarker`) instead of the
+  small hold-shaped icon, which is easy to miss at a wide zoom. The badge
+  is now **plain `.cluster-marker` styling with no overrides** — same
+  size (34px, matching a real cluster's smallest tier) and same neutral
+  colour as an actual cluster, deliberately not colour-coded by climbing
+  type (an earlier version was type-coloured; changed on request so a
+  numbered badge reads as "just another badge on the globe" while zoomed
+  out, indistinguishable from a real cluster except for the "1", rather
+  than visually flagged as a third marker style). `paintMarkers()` tracks
+  which "bucket" (icon vs. number) it last painted in and clears every
+  spot marker (not cluster badges) when the zoom crosses that threshold,
+  so painted markers don't get stuck in the wrong style. `updateMarkUI()`
+  only restyles `kind:'icon'` marker entries for the same reason — a
+  numbered badge has no climbed/bookmarked state to reflect.
+- **Basic region labels**, same zoom window as the numbered badges: below
+  `HOLD_ICON_ZOOM`, `paintMarkers()` also paints a plain text `.region-
+  label` (no background box, `pointer-events:none` so it can't block map
+  drag) at the centroid of every `(country,state)` group that currently
+  has visible spots *and* falls within the current viewport bbox —
+  `computeRegionCentroids()`, recomputed in `rebuildClusterIndex()`
+  whenever the filtered spot set changes, not on every pan/zoom. The
+  label text is the human-readable name from `STATES_BY_COUNTRY` (e.g.
+  `TOKYO` → "Tokyo"), offset 24px below the point so it doesn't sit
+  directly on top of a badge at the same coordinate. This is deliberately
+  "basic": the centroid is just an average of that region's own spots'
+  lat/lng, not anything geographically authoritative, and there's no
+  collision avoidance — labels for geographically close regions (e.g.
+  several small AU states, or Tokyo/Kanagawa/Hokkaido all inside one wide
+  Japan viewport) can overlap. Labels and numbered badges disappear
+  together once you cross `HOLD_ICON_ZOOM` — real markers are visible by
+  then, so the orientation labels aren't needed.
 - DOM markers lag MapLibre's own WebGL render loop while the camera is
   moving (a documented MapLibre/Mapbox limitation, not fixable from
   application code) — markers are hidden for the duration of a

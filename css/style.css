@@ -257,6 +257,34 @@
 
   .section-label{font-size:10.5px;color:var(--text-dim);font-family:'Space Mono',monospace;text-transform:uppercase;letter-spacing:.5px;margin-bottom:1px;}
   .section-label.country-label{margin:10px 0 6px;}
+  /* Country groups collapse by default -- with 6 countries the fully
+     expanded chip list ran the filter panel out of usable height (see
+     docs/architecture.md "Sidebar chip growth"). The label is a <button>
+     for keyboard/screenreader operability; reset to look like the plain
+     .section-label it replaces. */
+  .country-label{
+    display:flex;align-items:center;gap:6px;
+    width:100%;background:none;border:none;padding:0;
+    font:inherit;text-align:left;cursor:pointer;
+  }
+  .country-label:hover{color:var(--text);}
+  .country-label::before{
+    content:"▸";
+    display:inline-block;
+    font-size:9px;
+    transition:transform .15s ease;
+  }
+  .country-group:not(.collapsed) .country-label::before{transform:rotate(90deg);}
+  .country-group.collapsed .chip-row{display:none;}
+  /* A chip can be active while its group is collapsed -- flag it so the
+     filter doesn't silently vanish from view. */
+  .country-group.has-active .country-label{color:var(--vic);}
+  .country-group.has-active .country-label::after{
+    content:"";
+    width:5px;height:5px;border-radius:50%;
+    background:var(--vic);
+    margin-left:1px;
+  }
   .type-filter{display:flex;flex-direction:column;gap:7px;margin-top:12px;padding-top:10px;border-top:1px solid var(--border);}
   .type-check{display:flex;align-items:center;gap:8px;font-size:12.5px;font-family:'Space Mono',monospace;color:var(--text);cursor:pointer;}
   .type-check .dot{width:9px;height:9px;flex-shrink:0;border-radius:40% 60% 55% 45%/50% 45% 55% 50%;border:1px solid rgba(0,0,0,0.35);}
@@ -669,14 +697,26 @@
   }
   .cluster-marker:hover{transform:scale(1.08);}
 
-  /* Lone spot marker shown below HOLD_ICON_ZOOM (js/app.js) -- reuses the
-     cluster badge shape but keeps the spot's own type colour as background
-     (clusters use a fixed neutral colour since they can mix types) so the
-     colour-coding survives even at low zoom. */
-  .spot-number-marker{
-    border-color:rgba(10,9,7,0.55);
-    color:#15120d;
-    font-weight:800;
+  /* Lone spot marker shown below HOLD_ICON_ZOOM (js/app.js) -- plain
+     .cluster-marker styling, deliberately: at a glance while zoomed out
+     it should be indistinguishable from a real cluster badge (same
+     neutral colour, same size) except for reading "1", not visually
+     flagged as different. */
+  .spot-number-marker{}
+
+  /* Basic region label shown below HOLD_ICON_ZOOM alongside cluster/number
+     badges (js/app.js computeRegionCentroids) -- just text, no background
+     box, so it doesn't compete with the badges for attention. */
+  .region-label{
+    color:var(--text);
+    font-family:'Space Grotesk',sans-serif;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:.03em;
+    text-transform:uppercase;
+    text-shadow:0 1px 3px rgba(10,9,7,0.9),0 0 6px rgba(10,9,7,0.75);
+    white-space:nowrap;
+    pointer-events:none;
   }
 
   @media (max-width:760px){
