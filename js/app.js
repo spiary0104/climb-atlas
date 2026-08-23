@@ -9,7 +9,9 @@
     US: [['CA','California'],['CO','Colorado'],['TX','Texas'],['WA','Washington'],['NY','New York'],['NV','Nevada'],
          ['GA','Georgia'],['UT','Utah'],['AL','Alabama'],['TN','Tennessee'],['MA','Massachusetts'],['IL','Illinois']],
     JP: [['TOKYO','Tokyo'],['OSAKA','Osaka'],['KYOTO','Kyoto'],['FUKUOKA','Fukuoka'],['AICHI','Aichi (Nagoya)'],
-         ['KANAGAWA','Kanagawa (Yokohama)'],['HOKKAIDO','Hokkaido (Sapporo)'],['HYOGO','Hyogo (Kobe)']]
+         ['KANAGAWA','Kanagawa (Yokohama)'],['HOKKAIDO','Hokkaido (Sapporo)'],['HYOGO','Hyogo (Kobe)']],
+    CA: [['ON','Ontario'],['BC','British Columbia'],['QC','Quebec'],['AB','Alberta']],
+    NZ: [['AUCKLAND','Auckland'],['WELLINGTON','Wellington'],['CANTERBURY','Canterbury (Christchurch)']]
   };
   const TYPE_LABELS = {'indoor-bouldering':'Indoor bouldering','top-rope':'Top rope'};
   // Below this zoom, a spot with no nearby neighbours (so supercluster hands

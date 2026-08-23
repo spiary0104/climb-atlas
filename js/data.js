@@ -496,5 +496,42 @@
     {name:"NAC Sapporo Climbing Gym", suburb:"Shiroishi, Sapporo", state:"HOKKAIDO", country:"JP", lat:43.0559, lng:141.4064, types:[IB], notes:"Sourced from web research — ward-level position, not an exact address."},
 
     {name:"Gravity Research Kobe", suburb:"Chuo, Kobe", state:"HYOGO", country:"JP", lat:34.6954, lng:135.1946, types:[IB], notes:"Sourced from web research — ward-level position, not an exact address."},
-    {name:"WAGOMU Climbing Gym", suburb:"Kobe", state:"HYOGO", country:"JP", lat:34.6889, lng:135.1833, types:[IB], notes:"Sourced from web research — city-level position, not an exact address."}
+    {name:"WAGOMU Climbing Gym", suburb:"Kobe", state:"HYOGO", country:"JP", lat:34.6889, lng:135.1833, types:[IB], notes:"Sourced from web research — city-level position, not an exact address."},
+
+    // --- CA indoor gyms ---
+    // Names sourced from general web search across each city's own climbing
+    // scene, same lighter-touch approach as the Japan pass above: real,
+    // named gyms, but no individual gym page was opened to confirm a street
+    // address. Positions are neighbourhood/city-level from general geography.
+    {name:"Boulderz Climbing Centre", suburb:"Toronto", state:"ON", country:"CA", lat:43.6629, lng:-79.3957, types:[IB,TR], notes:"Sourced from web research — neighbourhood-level position, not an exact address."},
+    {name:"The Rock Oasis", suburb:"Toronto", state:"ON", country:"CA", lat:43.6685, lng:-79.4235, types:[IB,TR], notes:"Sourced from web research — neighbourhood-level position, not an exact address."},
+    {name:"Basecamp Climbing", suburb:"Koreatown, Toronto", state:"ON", country:"CA", lat:43.6636, lng:-79.4189, types:[IB,TR], notes:"Sourced from web research — neighbourhood-level position, not an exact address."},
+    {name:"Joe Rockhead's", suburb:"Toronto", state:"ON", country:"CA", lat:43.6700, lng:-79.4750, types:[IB,TR], notes:"Canada's first climbing gym, opened 1990, per web research. City-level position, not an exact address."},
+
+    {name:"The Hive Bouldering Gym", suburb:"Vancouver", state:"BC", country:"CA", lat:49.2660, lng:-123.0850, types:[IB], notes:"Sourced from web research — city-level position, not an exact address."},
+    {name:"Progression Bouldering Gym", suburb:"Vancouver", state:"BC", country:"CA", lat:49.2620, lng:-123.0950, types:[IB], notes:"Sourced from web research — city-level position, not an exact address."},
+    {name:"Climb Base5", suburb:"North Vancouver", state:"BC", country:"CA", lat:49.3200, lng:-123.0724, types:[IB,TR], notes:"Sourced from web research — city-level position, not an exact address."},
+    {name:"Cliffhanger Climbing Gym", suburb:"Vancouver", state:"BC", country:"CA", lat:49.2810, lng:-123.0790, types:[IB,TR], notes:"Sourced from web research — city-level position, not an exact address."},
+
+    {name:"Bloc Shop", suburb:"Montreal", state:"QC", country:"CA", lat:45.5400, lng:-73.5800, types:[IB], notes:"Sourced from web research — city-level position, not an exact address."},
+    {name:"Allez Up", suburb:"Pointe-Saint-Charles, Montreal", state:"QC", country:"CA", lat:45.4700, lng:-73.5800, types:[IB,TR], notes:"Sourced from web research — neighbourhood-level position, not an exact address."},
+    {name:"Café Bloc", suburb:"Montreal", state:"QC", country:"CA", lat:45.5170, lng:-73.5640, types:[IB], notes:"Sourced from web research — city-level position, not an exact address."},
+    {name:"Cepsum Climbing Gym", suburb:"Montreal", state:"QC", country:"CA", lat:45.5048, lng:-73.6145, types:[IB,TR], notes:"Université de Montréal's climbing gym, per web research. City-level position, not an exact address."},
+
+    {name:"Bolder Climbing Community", suburb:"Calgary", state:"AB", country:"CA", lat:51.0300, lng:-114.0800, types:[IB], notes:"Sourced from web research — city-level position, not an exact address."},
+    {name:"Calgary Climbing Centre Chinook", suburb:"Calgary", state:"AB", country:"CA", lat:51.0080, lng:-114.0620, types:[IB,TR], notes:"Sourced from web research — city-level position, not an exact address."},
+    {name:"Calgary Climbing Centre SoCal Bouldering", suburb:"Calgary", state:"AB", country:"CA", lat:51.0000, lng:-114.0900, types:[IB], notes:"A different Calgary Climbing Centre location from Chinook, above. Sourced from web research — city-level position, not an exact address."},
+
+    // --- NZ indoor gyms ---
+    {name:"Boulder Co Auckland", suburb:"Westgate, Auckland", state:"AUCKLAND", country:"NZ", lat:-36.8080, lng:174.6280, types:[IB], notes:"Described as the Southern Hemisphere's largest indoor bouldering facility, per web research. Suburb-level position, not an exact address."},
+    {name:"Northern Rocks", suburb:"Wairau Valley, Auckland", state:"AUCKLAND", country:"NZ", lat:-36.7890, lng:174.7370, types:[IB], notes:"Sourced from web research — suburb-level position, not an exact address."},
+    {name:"Auckland Climbing Gym", suburb:"Auckland", state:"AUCKLAND", country:"NZ", lat:-36.8600, lng:174.7500, types:[IB], notes:"Sourced from web research — city-level position, not an exact address."},
+    {name:"Extreme Edge Panmure", suburb:"Panmure, Auckland", state:"AUCKLAND", country:"NZ", lat:-36.8940, lng:174.8420, types:[IB,TR], notes:"Described as New Zealand's largest indoor climbing centre, per web research. Suburb-level position, not an exact address."},
+
+    {name:"Fergs Wellington", suburb:"Wellington", state:"WELLINGTON", country:"NZ", lat:-41.2930, lng:174.7840, types:[IB,TR], notes:"On the waterfront; often cited as having the country's largest indoor real-rock wall, per web research. City-level position, not an exact address."},
+    {name:"HangDog", suburb:"Wellington", state:"WELLINGTON", country:"NZ", lat:-41.2900, lng:174.7750, types:[IB], notes:"Sourced from web research — city-level position, not an exact address."},
+    {name:"Willis Street Climbing Centre", suburb:"Wellington", state:"WELLINGTON", country:"NZ", lat:-41.2940, lng:174.7720, types:[IB], notes:"Sourced from web research — city-level position, not an exact address."},
+
+    {name:"Uprising Boulder Gym", suburb:"Waltham, Christchurch", state:"CANTERBURY", country:"NZ", lat:-43.5450, lng:172.6470, types:[IB], notes:"Sourced from web research — suburb-level position, not an exact address."},
+    {name:"Boulder Co Christchurch", suburb:"Riccarton, Christchurch", state:"CANTERBURY", country:"NZ", lat:-43.5320, lng:172.6000, types:[IB], notes:"Sourced from web research — suburb-level position, not an exact address."}
   ].map((g,i)=>({...g, id:'seed-'+i, community:false, country: g.country || 'AU'}));

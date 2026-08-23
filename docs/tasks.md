@@ -215,6 +215,48 @@ placeholder work just to fill this section)_
   work. Needs the same `python -m http.server` + browser check as the
   two tasks above.
 
+### Add Canada and New Zealand, update About/Privacy/Terms copy
+- Branch: `fix/globe-render-perf-remove-outdoor-type` (same branch/worktree
+  as the tasks above — continued rather than starting fresh, same
+  reasoning as before)
+- Status: in progress (implemented + structurally verified; not yet
+  smoke-tested live)
+- What: user asked to add Canada and New Zealand to the map, then update
+  the About/Privacy/Terms copy to reflect the new country coverage.
+- **Countries added**, following the exact pattern used for Japan
+  (`STATES_BY_COUNTRY` in `js/app.js`, chip rows + country `<option>`s in
+  `index.html`, `--ca-*`/`--nz-*` colour vars + chip active-state rules in
+  `css/style.css`, new spots in `js/data.js`):
+  - **Canada**: 15 gyms across 4 provinces (Ontario/Toronto, British
+    Columbia/Vancouver, Quebec/Montreal, Alberta/Calgary). Uses standard
+    2-letter province codes (`ON`, `BC`, `QC`, `AB`) since — unlike
+    Japan — Canada has a widely-known short-code convention, same as
+    AU/US.
+  - **New Zealand**: 9 gyms across 3 regions (Auckland, Wellington,
+    Canterbury/Christchurch). Uses region/city names as `state` codes
+    (`AUCKLAND`, `WELLINGTON`, `CANTERBURY`), same treatment as Japan,
+    since NZ doesn't have an equivalent short-code convention.
+  - Same lighter-touch sourcing as Japan: every gym name is real,
+    confirmed by web search, but no individual gym page was opened to
+    verify a street address — positions are neighbourhood/city-level from
+    general geography, flagged per-entry in `notes`. Not exhaustive by
+    design (e.g. Toronto/Vancouver/Montreal/Auckland all have more gyms
+    than the 3-4 picked per city here).
+- **Copy updated** for the now-5-country scope: `index.html`'s tagline,
+  meta description, `og:description`, and the About-section and
+  Terms-of-Service paragraphs that name the countries covered. The
+  Privacy Policy modal was checked and doesn't name any countries — data
+  collection, third parties, and removal-request text there is
+  country-agnostic, so nothing needed changing there.
+- Net result: 461 → **485 total spots** (77 AU + 352 US + 32 JP + 15 CA +
+  9 NZ). Balance-checked (`grep -c "{name:"` = 485; brace/bracket counts
+  both 486/486) and zero duplicate name+suburb+state combos found.
+- **Not yet done**: live smoke test — need to confirm the new CA/NZ
+  chips, filters, and add-spot country/state dropdown all work visually,
+  and that the updated About/Terms copy reads correctly in the modals.
+  Needs the same `python -m http.server` + browser check as the tasks
+  above.
+
 ## Blocked
 
 _(none)_

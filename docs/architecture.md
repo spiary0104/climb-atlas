@@ -50,13 +50,15 @@ are only unique within a country** (e.g. AU's `WA` vs US's `WA` are
 different regions). Anything that filters, colors, or edits by state —
 the chips in `index.html`, `STATES_BY_COUNTRY` in `app.js`, the RLS-safe
 columns in `schema.sql` — keys off the `(country, state)` pair together,
-never `state` alone. Keep this in mind before adding a third country.
+never `state` alone. Now 5 countries deep (AU, US, JP, CA, NZ), same
+pattern each time — keep this in mind before adding a 6th.
 
 ## Seed data sourcing
 
-`js/data.js` currently has 461 spots (77 AU, 352 US, 32 JP), all indoor
-gyms (bouldering and/or top rope — see "Known gaps" below on why outdoor
-areas were removed). It was built up in layers, not from one source:
+`js/data.js` currently has 485 spots (77 AU, 352 US, 32 JP, 15 CA, 9 NZ),
+all indoor gyms (bouldering and/or top rope — see "Known gaps" below on
+why outdoor areas were removed). It was built up in layers, not from one
+source:
 
 - The original AU set and the first US pass were researched and
   cross-checked gym-by-gym (see the in-app About section).
@@ -99,6 +101,18 @@ areas were removed). It was built up in layers, not from one source:
   exhaustive (Japan has 47 prefectures and Tokyo alone has 50+ gyms per
   the directory above) — treat it the same as the original, "not
   exhaustive" AU/US seed data, not as an MP-style complete sweep.
+- **Canada (15 gyms, 4 provinces: Ontario/Toronto, British Columbia/
+  Vancouver, Quebec/Montreal, Alberta/Calgary)** and **New Zealand (9
+  gyms, 3 regions: Auckland, Wellington, Canterbury/Christchurch)** came
+  from the same lighter-touch web-search approach as Japan — real, named
+  gyms confirmed by search results, but no individual gym page opened to
+  verify a street address, so positions are neighbourhood/city-level from
+  general geography (flagged per-entry in `notes`). Canada uses standard
+  2-letter province codes (`ON`, `BC`, `QC`, `AB`) since those are a
+  widely-known convention, the same as AU/US; New Zealand uses region/city
+  names (`AUCKLAND`, `WELLINGTON`, `CANTERBURY`) the same way Japan does,
+  since NZ doesn't have an equivalent short-code convention either. Both
+  are intentionally partial coverage, not exhaustive.
 
 ## Map
 

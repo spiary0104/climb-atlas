@@ -33,6 +33,13 @@
     --jp-kanagawa:#8a5fb0;
     --jp-hokkaido:#4aa3c9;
     --jp-hyogo:#c9648a;
+    --ca-on:#c0392b;
+    --ca-bc:#2e86ab;
+    --ca-qc:#6a4fb3;
+    --ca-ab:#d68910;
+    --nz-auckland:#1f8a70;
+    --nz-wellington:#8a3ffc;
+    --nz-canterbury:#e06b3f;
     --t-outdoor:#b8834a;
     --t-indoor:#3fb8a6;
     --t-toprope:#8a6bb0;
@@ -207,6 +214,13 @@
   .chip[data-country="JP"][data-state="KANAGAWA"].active{background:var(--jp-kanagawa);}
   .chip[data-country="JP"][data-state="HOKKAIDO"].active{background:var(--jp-hokkaido);}
   .chip[data-country="JP"][data-state="HYOGO"].active{background:var(--jp-hyogo);}
+  .chip[data-country="CA"][data-state="ON"].active{background:var(--ca-on);}
+  .chip[data-country="CA"][data-state="BC"].active{background:var(--ca-bc);}
+  .chip[data-country="CA"][data-state="QC"].active{background:var(--ca-qc);}
+  .chip[data-country="CA"][data-state="AB"].active{background:var(--ca-ab);}
+  .chip[data-country="NZ"][data-state="AUCKLAND"].active{background:var(--nz-auckland);}
+  .chip[data-country="NZ"][data-state="WELLINGTON"].active{background:var(--nz-wellington);}
+  .chip[data-country="NZ"][data-state="CANTERBURY"].active{background:var(--nz-canterbury);}
 
   .toggle-row{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-dim);font-family:'Space Mono',monospace;cursor:pointer;}
   .toggle-row input{accent-color:var(--vic);}
