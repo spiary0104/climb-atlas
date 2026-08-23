@@ -52,6 +52,37 @@ the chips in `index.html`, `STATES_BY_COUNTRY` in `app.js`, the RLS-safe
 columns in `schema.sql` — keys off the `(country, state)` pair together,
 never `state` alone. Keep this in mind before adding a third country.
 
+## Seed data sourcing
+
+`js/data.js` currently has 429 spots (77 AU, 352 US), all indoor gyms
+(bouldering and/or top rope — see "Known gaps" below on why outdoor
+areas were removed). It was built up in layers, not from one source:
+
+- The original AU set and the first US pass were researched and
+  cross-checked gym-by-gym (see the in-app About section).
+- A large batch (328 new gyms) came from an exhaustive pass over
+  Mountain Project's `mountainproject.com/gyms/<state>` directory —
+  covering all 8 AU states/territories and all 12 US states already in
+  the app, not all 50 US states. MP's directory is noisy (university rec
+  centers, YMCAs, generic fitness chains, gymnastics/kids facilities all
+  get listed alongside real dedicated gyms), so every entry was filtered
+  to genuine public climbing gyms, and every same-named or same-city pair
+  was checked by address before being treated as a duplicate or a
+  distinct location — see `docs/tasks.md` "Done"/history for the exact
+  filter criteria and the duplicates that were actually caught.
+- Positions from the MP pass are **city/suburb-level, not exact street
+  addresses** (MP's gym pages expose an address but not lat/lng, and
+  geocoding ~330 addresses individually wasn't done) — every such entry
+  says so in its own `notes` field, so this is visible in the app, not
+  just in git history. If a gym's exact address is ever looked up later,
+  update its `lat`/`lng` and drop the caveat from `notes`.
+- Mountain Project itself has essentially no coverage of Australia's
+  indoor-gym scene beyond a plain directory page (unlike outdoor
+  crag/route data, which is its actual specialty) and no coverage of
+  indoor gyms outside AU/US at all — don't expect it to be useful for a
+  third country without checking first, the way it wasn't useful for the
+  general site search when this was first tried.
+
 ## Map
 
 - MapLibre GL, not Leaflet — chosen for the 3D globe projection

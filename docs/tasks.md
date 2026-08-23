@@ -112,6 +112,59 @@ placeholder work just to fill this section)_
     to open `index.html` via `python3 -m http.server 8000` and check per
     `Rules.md` §7 before merging this branch.
 
+### Add indoor gyms from Mountain Project's gym directory
+- Branch: `fix/globe-render-perf-remove-outdoor-type` (same branch as the
+  bug-fix task above — continued in the same worktree rather than a
+  fresh one, since it builds directly on that branch's state; not yet
+  merged, so master still has neither)
+- Status: in progress (data added + structurally verified; not yet
+  smoke-tested live)
+- What: user asked to use mountainproject.com/gyms/<state> to add indoor
+  bouldering gyms to AU and US. Mountain Project's general site search is
+  not useful for gyms (confirmed — it's an outdoor-crag/route database),
+  but it has a dedicated `/gyms/<state-or-country>` directory that's
+  actually a real, if noisy, gym listing.
+- Scope decided with the user: exhaustive pass across all 8 AU
+  states/territories and all 12 US states already in the app (not all 50
+  US states) — cross-reference each state's MP gym list against
+  `js/data.js`, add genuinely new gyms, filter out non-gyms.
+- **Filter applied** (confirmed with the user after the first state
+  showed the scale of noise): exclude university/college recreation
+  center walls, municipal/county park-district recreation and community
+  centers, YMCAs, generic multi-location fitness chains (Life Time /
+  Lifetime Fitness, Crunch, XSport, athletic clubs) with no specific
+  climbing focus, gymnastics/kids-party facilities, dry-tooling-only gyms
+  (kept the few that also do rock climbing), multi-sport complexes/retail
+  demo walls (Bass Pro, REI, Sun & Ski), and team-only/members-only
+  training facilities. Every state's MP list needed this filter; noise
+  ratio varied a lot (Nevada was nearly all real gyms; Illinois and
+  California were the noisiest).
+- **Positioning**: city/suburb-level coordinates with a small per-gym
+  offset where multiple gyms share a city, not exact street addresses —
+  MP's gym pages only expose a street address, not lat/lng, and getting
+  exact coordinates for ~330 gyms would mean geocoding every single
+  address individually. Every added entry is flagged in its `notes`
+  field as "Sourced from Mountain Project's gym directory — city-level
+  position, not an exact address" so this is visible in-app, not just in
+  git history.
+- **Dedup discipline**: every same-named or same-city pair was checked by
+  opening both gym pages and comparing street addresses, not assumed from
+  the name alone. Real MP-side duplicates were found and skipped in AU,
+  TX, WA, NY, AL, MA, and CA (same gym listed twice under slightly
+  different names/IDs). Several apparent duplicates turned out to be
+  genuinely different locations on inspection (e.g. three separate
+  "Vertical Hold"-named gyms in the San Diego area, two "Rockreation"s,
+  two "Stronghold" gyms in LA) and were kept as separate entries.
+- Net result: 93 → 70 spots after the earlier outdoor-bouldering removal,
+  then +328 new gyms across this pass → **429 total spots** (77 AU + 352
+  US). Per-state breakdown of *new* gyms added: AU 17, CO 34, TX 39, WA
+  26, NY 41, NV 6, GA 17, UT 17, AL 7, TN 18, MA 22, IL 19, CA 95.
+- **Not yet done**: live smoke test of the new data (map still renders
+  correctly with ~5x the spots, clustering behaves reasonably at this
+  density, sidebar list still performs fine) — needs the same
+  `python -m http.server` + browser check as the bug-fix task above,
+  ideally in the same session since it's the same branch.
+
 ## Blocked
 
 _(none)_
