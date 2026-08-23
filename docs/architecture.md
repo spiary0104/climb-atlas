@@ -50,15 +50,21 @@ are only unique within a country** (e.g. AU's `WA` vs US's `WA` are
 different regions). Anything that filters, colors, or edits by state —
 the chips in `index.html`, `STATES_BY_COUNTRY` in `app.js`, the RLS-safe
 columns in `schema.sql` — keys off the `(country, state)` pair together,
-never `state` alone. Now 5 countries deep (AU, US, JP, CA, NZ), same
-pattern each time — keep this in mind before adding a 6th.
+never `state` alone. Now 6 countries deep (AU, US, JP, CA, NZ, CN), same
+pattern each time — keep this in mind before adding a 7th. One collision
+worth flagging: `US`'s state code for California is `CA`, and `CA` is
+also the top-level country code for Canada — not a real ambiguity since
+they're different object keys/fields (`STATES_BY_COUNTRY.US` contains
+`['CA','California']` as a *state*, while `STATES_BY_COUNTRY.CA` is a
+top-level *country*), but worth knowing before assuming a bare `"CA"`
+string always means the same thing while reading this codebase.
 
 ## Seed data sourcing
 
-`js/data.js` currently has 485 spots (77 AU, 352 US, 32 JP, 15 CA, 9 NZ),
-all indoor gyms (bouldering and/or top rope — see "Known gaps" below on
-why outdoor areas were removed). It was built up in layers, not from one
-source:
+`js/data.js` currently has 513 spots (77 AU, 352 US, 32 JP, 15 CA, 9 NZ,
+28 CN), all indoor gyms (bouldering and/or top rope — see "Known gaps"
+below on why outdoor areas were removed). It was built up in layers, not
+from one source:
 
 - The original AU set and the first US pass were researched and
   cross-checked gym-by-gym (see the in-app About section).
@@ -113,6 +119,46 @@ source:
   names (`AUCKLAND`, `WELLINGTON`, `CANTERBURY`) the same way Japan does,
   since NZ doesn't have an equivalent short-code convention either. Both
   are intentionally partial coverage, not exhaustive.
+- **China (28 gyms, 9 cities: Shenzhen, Guangzhou, Shanghai, Hangzhou,
+  Chengdu, Beijing, Wuhan, Changsha, Zhuhai)** is different from every
+  pass above: it's every currently-open location of one single chain,
+  Banana Climbing (bananaclimbing.com), read straight from that site's
+  own "Our Locations" list — not a multi-source sweep, so unlike the
+  other passes this genuinely is complete for that one brand (the site's
+  own "28 GYMS NATIONWIDE" stat matches exactly once its one `CLOSED`-
+  tagged location and its not-yet-open "coming soon" ones are excluded).
+  `state` uses the 9 city names the site itself groups locations by
+  (`SHENZHEN`, `GUANGZHOU`, etc. — see `STATES_BY_COUNTRY.CN` in
+  `js/app.js`), not a province grouping, since that's the source's own
+  categorization and gives more useful filter granularity than lumping
+  e.g. Shenzhen/Guangzhou/Zhuhai together under "Guangdong". Positions
+  are still district/city-level (the site gives district and mall names,
+  not coordinates), flagged per-entry in `notes`. The site's "Lead
+  Climbing"/"Top Rope"/"Auto-Belay" tags map to this app's `top-rope`
+  type; every location also has bouldering.
+  **Note**: bananaclimbing.com has a "Store Finder Tool" section that
+  markets an npm CLI, an MCP server, and a "Skill" install command
+  explicitly at AI agents, plus a public API "for AI Agents & third-party
+  integrations." None of that was installed or invoked — it's unverified
+  third-party code from a site this project doesn't control, so treat it
+  as a supply-chain risk and keep pulling data by reading the page
+  directly (as done here), not by running anything it offers to install.
+- **Sidebar chip growth has a real height ceiling.** `.sidebar-controls`
+  (`css/style.css`) — the search box plus every country's chip row plus
+  type/marks filters — sits above `.gym-list` (`flex:1; overflow-y:auto`)
+  in a flex column. At 6 countries (45 chips) `.sidebar-controls` alone
+  is ~847px tall, taller than a typical sidebar; without its own
+  `max-height`/`overflow-y`, flexbox's automatic-minimum-size rule keeps
+  a visible-overflow block from shrinking below its content height, so it
+  was forcing `.gym-list` down to a few px of visible height. Fixed by
+  capping `.sidebar-controls` at `max-height:50vh` with its own
+  `overflow-y:auto`. **Adding a 7th country's chip row will make this
+  panel taller again** — re-measure both regions' real rendered height
+  (not just "does it look okay") before assuming it's still fine; the
+  50vh cap means chips will simply need more scrolling within their own
+  region, not that `.gym-list` will get squeezed again, but a
+  country/state UI redesign (accordion, dropdown, search-to-filter) is
+  worth considering if more countries keep getting added this way.
 
 ## Map
 

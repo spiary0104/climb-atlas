@@ -533,5 +533,54 @@
     {name:"Willis Street Climbing Centre", suburb:"Wellington", state:"WELLINGTON", country:"NZ", lat:-41.2940, lng:174.7720, types:[IB], notes:"Sourced from web research — city-level position, not an exact address."},
 
     {name:"Uprising Boulder Gym", suburb:"Waltham, Christchurch", state:"CANTERBURY", country:"NZ", lat:-43.5450, lng:172.6470, types:[IB], notes:"Sourced from web research — suburb-level position, not an exact address."},
-    {name:"Boulder Co Christchurch", suburb:"Riccarton, Christchurch", state:"CANTERBURY", country:"NZ", lat:-43.5320, lng:172.6000, types:[IB], notes:"Sourced from web research — suburb-level position, not an exact address."}
+    {name:"Boulder Co Christchurch", suburb:"Riccarton, Christchurch", state:"CANTERBURY", country:"NZ", lat:-43.5320, lng:172.6000, types:[IB], notes:"Sourced from web research — suburb-level position, not an exact address."},
+
+    // --- CN indoor gyms ---
+    // All 28 currently-open Banana Climbing (香蕉攀岩) locations, read
+    // directly from bananaclimbing.com's own "Our Locations" list (which
+    // states "28 GYMS NATIONWIDE" -- matches exactly once the one location
+    // marked CLOSED and the "coming soon" ones are excluded). Single-brand
+    // chain, so unlike the multi-source passes above this is a genuinely
+    // complete, current snapshot of this one company's locations, not a
+    // partial sample. District/mall names come straight from the site;
+    // positions are city/district-level (the site gives no lat/lng),
+    // flagged per-entry in notes. "Lead Climbing"/"Top Rope"/"Auto-Belay"
+    // on the source page map to this app's top-rope type; every location
+    // also offers bouldering.
+    {name:"Banana Climbing (OCT PARK Happy Time)", suburb:"Nanshan District, Shenzhen", state:"SHENZHEN", country:"CN", lat:22.5330, lng:113.9310, types:[IB], notes:"Sourced from bananaclimbing.com — district-level position, not an exact address."},
+    {name:"Banana Climbing (Shangmeilin Zhuoyuehui)", suburb:"Futian District, Shenzhen", state:"SHENZHEN", country:"CN", lat:22.5480, lng:114.0570, types:[IB], notes:"Sourced from bananaclimbing.com — district-level position, not an exact address."},
+    {name:"Banana Climbing (Joyful Ave)", suburb:"Nanshan District, Shenzhen", state:"SHENZHEN", country:"CN", lat:22.5300, lng:113.9450, types:[IB], notes:"Sourced from bananaclimbing.com — district-level position, not an exact address."},
+    {name:"Banana Climbing (Nanshan Houhai)", suburb:"Nanshan District, Shenzhen", state:"SHENZHEN", country:"CN", lat:22.5150, lng:113.9450, types:[IB,TR], notes:"Also has a 12m outdoor auto-belay wall. Sourced from bananaclimbing.com — district-level position, not an exact address."},
+    {name:"Banana Climbing (iN City Plaza)", suburb:"Futian District, Shenzhen", state:"SHENZHEN", country:"CN", lat:22.5390, lng:114.0490, types:[IB,TR], notes:"Sourced from bananaclimbing.com — district-level position, not an exact address."},
+    {name:"Banana Climbing (Link Plaza)", suburb:"Futian District, Shenzhen", state:"SHENZHEN", country:"CN", lat:22.5350, lng:114.0610, types:[IB], notes:"Sourced from bananaclimbing.com — district-level position, not an exact address."},
+    {name:"Banana Climbing (Kingdee)", suburb:"Nanshan District, Shenzhen", state:"SHENZHEN", country:"CN", lat:22.5280, lng:113.9350, types:[IB,TR], notes:"18m lead/top-rope/auto-belay wall, in-store certification required per bananaclimbing.com. District-level position, not an exact address."},
+    {name:"Banana Climbing (Bao'an Center)", suburb:"Bao'an District, Shenzhen", state:"SHENZHEN", country:"CN", lat:22.5550, lng:113.8830, types:[IB], notes:"Sourced from bananaclimbing.com — district-level position, not an exact address."},
+
+    {name:"Banana Climbing (Kerry Centre)", suburb:"Jing'an District, Shanghai", state:"SHANGHAI", country:"CN", lat:31.2280, lng:121.4480, types:[IB], notes:"Sourced from bananaclimbing.com — district-level position, not an exact address."},
+    {name:"Banana Climbing (West Yan'an Road)", suburb:"Changning District, Shanghai", state:"SHANGHAI", country:"CN", lat:31.2200, lng:121.4200, types:[IB], notes:"Sourced from bananaclimbing.com — district-level position, not an exact address."},
+    {name:"Banana Climbing (Jinhongqiao)", suburb:"Changning District, Shanghai", state:"SHANGHAI", country:"CN", lat:31.2230, lng:121.4020, types:[IB], notes:"Sourced from bananaclimbing.com — district-level position, not an exact address."},
+
+    {name:"Banana Climbing (COSMO)", suburb:"Jinjiang District, Chengdu", state:"CHENGDU", country:"CN", lat:30.6480, lng:104.0810, types:[IB], notes:"Sourced from bananaclimbing.com — district-level position, not an exact address."},
+    {name:"Banana Climbing (ICD)", suburb:"Wuhou District, Chengdu", state:"CHENGDU", country:"CN", lat:30.6350, lng:104.0470, types:[IB], notes:"Sourced from bananaclimbing.com — district-level position, not an exact address."},
+    {name:"Banana Climbing (CapitaLand Tianfu)", suburb:"Hi-Tech Zone, Chengdu", state:"CHENGDU", country:"CN", lat:30.5700, lng:104.0650, types:[IB,TR], notes:"Sourced from bananaclimbing.com — district-level position, not an exact address."},
+
+    {name:"Banana Climbing (Dongsheng Xiaoyuehe)", suburb:"Haidian District, Beijing", state:"BEIJING", country:"CN", lat:39.9700, lng:116.2900, types:[IB,TR], notes:"Sourced from bananaclimbing.com — district-level position, not an exact address."},
+    {name:"Banana Climbing (Shangdi)", suburb:"Haidian District, Beijing", state:"BEIJING", country:"CN", lat:40.0330, lng:116.3080, types:[IB], notes:"A different Haidian District location from Dongsheng Xiaoyuehe, above. Sourced from bananaclimbing.com — district-level position, not an exact address."},
+
+    {name:"Banana Climbing (Huafa Midtown)", suburb:"Jianghan District, Wuhan", state:"WUHAN", country:"CN", lat:30.5960, lng:114.2720, types:[IB], notes:"Sourced from bananaclimbing.com — district-level position, not an exact address."},
+    {name:"Banana Climbing (Qincheng MixC World)", suburb:"Dongxihu District, Wuhan", state:"WUHAN", country:"CN", lat:30.6100, lng:114.1400, types:[IB,TR], notes:"Sourced from bananaclimbing.com — district-level position, not an exact address."},
+    {name:"Banana Climbing (Hang Lung Plaza)", suburb:"Wuchang District, Wuhan", state:"WUHAN", country:"CN", lat:30.5430, lng:114.3160, types:[IB,TR], notes:"Sourced from bananaclimbing.com — district-level position, not an exact address."},
+    {name:"Banana Climbing (Optics Valley K11)", suburb:"Hongshan District, Wuhan", state:"WUHAN", country:"CN", lat:30.5080, lng:114.4080, types:[IB,TR], notes:"Sourced from bananaclimbing.com — district-level position, not an exact address."},
+
+    {name:"Banana Climbing (Zhujiang Star Ring)", suburb:"Kaifu District, Changsha", state:"CHANGSHA", country:"CN", lat:28.2270, lng:112.9990, types:[IB,TR], notes:"Sourced from bananaclimbing.com — district-level position, not an exact address."},
+    {name:"Banana Climbing (Yuefang ID Mall)", suburb:"Tianxin District, Changsha", state:"CHANGSHA", country:"CN", lat:28.1730, lng:112.9780, types:[IB,TR], notes:"Sourced from bananaclimbing.com — district-level position, not an exact address."},
+    {name:"Banana Climbing (CapitaLand One)", suburb:"Furong District, Changsha", state:"CHANGSHA", country:"CN", lat:28.1930, lng:113.0180, types:[IB], notes:"Sourced from bananaclimbing.com — district-level position, not an exact address."},
+
+    {name:"Banana Climbing (Raffles City)", suburb:"Shangcheng District, Hangzhou", state:"HANGZHOU", country:"CN", lat:30.2450, lng:120.1830, types:[IB], notes:"Sourced from bananaclimbing.com — district-level position, not an exact address."},
+    {name:"Banana Climbing (Xixi Tianjie)", suburb:"Xihu District, Hangzhou", state:"HANGZHOU", country:"CN", lat:30.2620, lng:120.1150, types:[IB], notes:"Sourced from bananaclimbing.com — district-level position, not an exact address."},
+    {name:"Banana Climbing (Impression City Olympic)", suburb:"Xiaoshan District, Hangzhou", state:"HANGZHOU", country:"CN", lat:30.1670, lng:120.2650, types:[IB], notes:"Sourced from bananaclimbing.com — district-level position, not an exact address."},
+
+    {name:"Banana Climbing (Grantral Centre)", suburb:"Tianhe District, Guangzhou", state:"GUANGZHOU", country:"CN", lat:23.1360, lng:113.3620, types:[IB,TR], notes:"Sourced from bananaclimbing.com — district-level position, not an exact address."},
+
+    {name:"Banana Climbing (Le Shi)", suburb:"Xiangzhou District, Zhuhai", state:"ZHUHAI", country:"CN", lat:22.2790, lng:113.5680, types:[IB], notes:"Sourced from bananaclimbing.com — district-level position, not an exact address."}
   ].map((g,i)=>({...g, id:'seed-'+i, community:false, country: g.country || 'AU'}));

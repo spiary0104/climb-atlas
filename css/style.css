@@ -40,6 +40,15 @@
     --nz-auckland:#1f8a70;
     --nz-wellington:#8a3ffc;
     --nz-canterbury:#e06b3f;
+    --cn-shenzhen:#e0b400;
+    --cn-guangzhou:#c98f00;
+    --cn-shanghai:#4a90b8;
+    --cn-hangzhou:#5aab6e;
+    --cn-chengdu:#b85a8a;
+    --cn-beijing:#c0392b;
+    --cn-wuhan:#7a6bc4;
+    --cn-changsha:#3fae9e;
+    --cn-zhuhai:#d68910;
     --t-outdoor:#b8834a;
     --t-indoor:#3fb8a6;
     --t-toprope:#8a6bb0;
@@ -148,7 +157,19 @@
     flex-direction:column;
     min-height:0;
   }
-  .sidebar-controls{padding:14px 16px 10px;border-bottom:1px solid var(--border);}
+  .sidebar-controls{
+    padding:14px 16px 10px;
+    border-bottom:1px solid var(--border);
+    /* 6 countries' worth of chips (45+) made this taller than a typical
+       viewport can spare -- without its own scroll region it forced
+       .gym-list (flex:1, below) down to a sliver, since flex-shrink can't
+       shrink a visible-overflow block below its content height. Capped
+       and made independently scrollable so the gym list always keeps a
+       real, usable minimum height. */
+    max-height:50vh;
+    overflow-y:auto;
+    flex-shrink:0;
+  }
   .search-row{position:relative;margin-bottom:10px;}
   .search-row input{
     width:100%;
@@ -221,6 +242,15 @@
   .chip[data-country="NZ"][data-state="AUCKLAND"].active{background:var(--nz-auckland);}
   .chip[data-country="NZ"][data-state="WELLINGTON"].active{background:var(--nz-wellington);}
   .chip[data-country="NZ"][data-state="CANTERBURY"].active{background:var(--nz-canterbury);}
+  .chip[data-country="CN"][data-state="SHENZHEN"].active{background:var(--cn-shenzhen);}
+  .chip[data-country="CN"][data-state="GUANGZHOU"].active{background:var(--cn-guangzhou);}
+  .chip[data-country="CN"][data-state="SHANGHAI"].active{background:var(--cn-shanghai);}
+  .chip[data-country="CN"][data-state="HANGZHOU"].active{background:var(--cn-hangzhou);}
+  .chip[data-country="CN"][data-state="CHENGDU"].active{background:var(--cn-chengdu);}
+  .chip[data-country="CN"][data-state="BEIJING"].active{background:var(--cn-beijing);}
+  .chip[data-country="CN"][data-state="WUHAN"].active{background:var(--cn-wuhan);}
+  .chip[data-country="CN"][data-state="CHANGSHA"].active{background:var(--cn-changsha);}
+  .chip[data-country="CN"][data-state="ZHUHAI"].active{background:var(--cn-zhuhai);}
 
   .toggle-row{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-dim);font-family:'Space Mono',monospace;cursor:pointer;}
   .toggle-row input{accent-color:var(--vic);}

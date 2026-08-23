@@ -257,6 +257,67 @@ placeholder work just to fill this section)_
   Needs the same `python -m http.server` + browser check as the tasks
   above.
 
+### Add China (Banana Climbing chain)
+- Branch: `fix/globe-render-perf-remove-outdoor-type` (same branch/worktree
+  as the tasks above — continued rather than starting fresh)
+- Status: in progress (implemented + structurally verified; not yet
+  smoke-tested live)
+- What: user asked to use bananaclimbing.com and put it on the map. That
+  site is the marketing site for Banana Climbing (香蕉攀岩), a real
+  Chinese indoor bouldering chain — its "Our Locations" section lists
+  every current gym directly (name, mall/district, city, climbing types
+  offered, size), with a "28 GYMS NATIONWIDE" headline stat.
+- **Security note**: the site also has a "Store Finder Tool" section
+  explicitly marketed at AI agents — an `npm install -g climbing-go` CLI,
+  an MCP server (`climbing-go mcp-serve`), a "Skill" install command
+  (`npx skills add betly-ai/climbing-go`), and a public REST API pitched
+  "for AI Agents & third-party integrations." None of this was installed,
+  run, or called. It's unverified third-party code/API from a site this
+  project doesn't control — a supply-chain risk regardless of how
+  convenient it looks. Data was pulled the same way as every other
+  source this session: reading the rendered page directly.
+- **Data added**: all 28 currently-open locations (one listing was tagged
+  `CLOSED` and several "coming soon" ones aren't open yet — both
+  excluded; the remaining count matches the site's own "28 GYMS
+  NATIONWIDE" stat exactly, which is a good sign the parse was accurate).
+  Added `CN` to `STATES_BY_COUNTRY` in `js/app.js` using the 9 city names
+  the site itself groups locations by (Shenzhen, Guangzhou, Shanghai,
+  Hangzhou, Chengdu, Beijing, Wuhan, Changsha, Zhuhai) rather than
+  provinces — more useful filter granularity, and it's the source's own
+  categorization. Same file/pattern updates as every prior country
+  addition: `index.html` (chip row + country `<option>` + About/Terms/
+  tagline/meta copy), `css/style.css` (9 new `--cn-*` colour vars + chip
+  rules), `js/data.js` (+28 spots).
+- Unlike every prior pass, **this one is a complete single-brand
+  snapshot, not a partial multi-source sample** — worth knowing since it
+  reads differently from the "not exhaustive" framing used for every
+  other country. Positions are still district/city-level (the site gives
+  district and mall names, not lat/lng), flagged in each entry's `notes`.
+  The site's "Lead Climbing"/"Top Rope"/"Auto-Belay" tags were mapped to
+  this app's `top-rope` type; every location also has bouldering.
+- Net result: 485 → **513 total spots** (77 AU + 352 US + 32 JP + 15 CA +
+  9 NZ + 28 CN). Balance-checked (`grep -c "{name:"` = 513; brace/bracket
+  counts both 514/514) and zero duplicate name+suburb+state combos.
+- **Found and fixed a real layout bug while smoke testing**: with 6
+  countries' worth of chips (45 total), `.sidebar-controls` grew to 847px
+  tall — taller than a typical viewport's 818px sidebar — and had no
+  `overflow`, so per flexbox's automatic-minimum-size rule it refused to
+  shrink and forced its flex sibling `.gym-list` (`flex:1;
+  overflow-y:auto`) down to **12px of visible height**, making the gym
+  list effectively unusable below the fold. Not just cosmetic cramping —
+  confirmed via `getBoundingClientRect()` measurements in a served copy
+  before assuming it was fine. Fixed in `css/style.css`: gave
+  `.sidebar-controls` its own `max-height:50vh; overflow-y:auto;
+  flex-shrink:0`, so filters scroll independently and the gym list keeps
+  a guaranteed real chunk of the sidebar (measured 251px on a 958px-tall
+  desktop viewport, 318px on mobile 375×812 — both re-verified after the
+  fix, both real, usable areas).
+- Live-verified: China filter chip (Wuhan → 4 spots, matches), add-spot
+  country/state dropdown lists all 9 CN cities, all 6 country section
+  labels present in the sidebar, About/Terms modal text reads correctly
+  with all 6 countries named, the layout fix confirmed on both desktop
+  and mobile viewport sizes, no new console errors.
+
 ## Blocked
 
 _(none)_

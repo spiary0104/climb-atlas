@@ -1,7 +1,7 @@
 # Boulder Atlas
 
 A community-sourced map of indoor climbing gyms (bouldering, top rope) across Australia,
-the United States, Japan, Canada, and New Zealand, modelled on [Track Atlas](https://trackatlas.org).
+the United States, Japan, Canada, New Zealand, and China, modelled on [Track Atlas](https://trackatlas.org).
 
 This is a static site: plain HTML/CSS/JS, no build step, no framework. Once Supabase is
 configured (see below), open `index.html` in a browser and it runs.
@@ -170,16 +170,19 @@ and add a custom domain from the host's dashboard once you've bought one.
   spot has both a `country` and a `state` field, and anything that filters, colors, or
   edits by state (chips in `index.html`, `STATES_BY_COUNTRY` in `app.js`, the RLS-safe
   columns in `schema.sql`) keys off the pair together, never `state` alone. Japan,
-  Canada, and New Zealand were all added following this same pattern — see
+  Canada, New Zealand, and China were all added following this same pattern — see
   `docs/architecture.md` "Seed data sourcing" for how each one's region codes were
   chosen (Japan and NZ use city/region names since neither has a widely-known
-  short-code convention; Canada uses standard 2-letter province codes like AU/US).
+  short-code convention; Canada uses standard 2-letter province codes like AU/US;
+  China uses the 9 city names its one data source itself groups by).
 - Seed data in `data.js` was researched and cross-checked spot-by-spot rather than
   pulled from one source — see the in-app About section for the full story. It's not
   exhaustive; that's what the community add/edit flow is for. The US portion currently
   covers 12 states' worth of major-city indoor gyms, Japan covers 8 cities/prefectures,
-  Canada covers 4 provinces, and New Zealand covers 3 regions — nowhere near exhaustive
-  either. Some listed states (e.g. AU's TAS, US's AL/GA/TN/UT) currently have zero
+  Canada covers 4 provinces, New Zealand covers 3 regions, and China covers every
+  currently-open location of one single chain (Banana Climbing) across 9 cities —
+  nowhere near exhaustive for the country as a whole, though complete for that one
+  brand. Some listed states (e.g. AU's TAS, US's AL/GA/TN/UT) currently have zero
   spots, since their only entries were outdoor-bouldering areas removed in the pass
   below — the chips still show them since a future indoor gym in that state is
   entirely plausible, they'll just filter to nothing until one's added.
