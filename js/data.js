@@ -31,6 +31,9 @@
     {name:"Camp Street Climbing", suburb:"Katoomba", state:"NSW", lat:-33.7139, lng:150.3111, types:[IB], notes:"Unverified this pass — flag if the type mix is off."},
     {name:"Pulse Climbing", suburb:"Warners Bay", state:"NSW", lat:-32.9686, lng:151.6372, types:[IB], notes:"Unverified this pass — flag if the type mix is off."},
     {name:"Albury Indoor Rock Climbing", suburb:"Albury", state:"NSW", lat:-36.0737, lng:146.9135, types:[IB], notes:"Unverified this pass — flag if the type mix is off."},
+    {name:"Dymonite North Wollongong", suburb:"North Wollongong", state:"NSW", lat:-34.4210, lng:150.8930, types:[IB], notes:"Sourced from Mountain Project's gym directory — suburb-level position, not an exact address."},
+    {name:"Dynomite Albion Park Rail", suburb:"Albion Park Rail", state:"NSW", lat:-34.5680, lng:150.7890, types:[IB], notes:"Sourced from Mountain Project's gym directory — suburb-level position, not an exact address."},
+    {name:"Sandbox Bouldering Gym", suburb:"Silverwater", state:"NSW", lat:-33.8390, lng:151.0540, types:[IB], notes:"Boards-only gym. Sourced from Mountain Project's gym directory — suburb-level position, not an exact address."},
 
     // --- ACT ---
     {name:"Mountain Strong", suburb:"Fyshwick", state:"ACT", lat:-35.3336, lng:149.1642, types:[IB]},
@@ -51,6 +54,8 @@
     {name:"UP Climbing", suburb:"Balaclava", state:"VIC", lat:-37.8676, lng:145.0009, types:[IB]},
     {name:"La Roca Boulders", suburb:"Oakleigh South", state:"VIC", lat:-37.9245, lng:145.0919, types:[IB]},
     {name:"Boulder Project", suburb:"Prahran", state:"VIC", lat:-37.8501, lng:144.9909, types:[IB]},
+    {name:"Cliffhanger Climbing Gym", suburb:"Altona North", state:"VIC", lat:-37.8283, lng:144.8365, types:[IB], notes:"Sourced from Mountain Project's gym directory — suburb-level position, not an exact address."},
+    {name:"Rocket Climbing", suburb:"Footscray", state:"VIC", lat:-37.8009, lng:144.8994, types:[IB], notes:"Sourced from Mountain Project's gym directory — suburb-level position, not an exact address."},
 
     // --- QLD ---
     {name:"9 Degrees Bouldering", suburb:"Enoggera", state:"QLD", lat:-27.4167, lng:152.9833, types:[IB]},
@@ -61,6 +66,13 @@
     {name:"Rockit Climbing Gym", suburb:"Warana", state:"QLD", lat:-26.7716, lng:153.1235, types:[IB,TR]},
     {name:"Core Climbing", suburb:"Carrara", state:"QLD", lat:-28.0028, lng:153.3676, types:[IB], notes:"Queensland's largest dedicated bouldering gym."},
     {name:"Bould Move", suburb:"Birtinya", state:"QLD", lat:-26.7847, lng:153.1266, types:[IB]},
+    {name:"Alpine Indoor Climbing", suburb:"Robina", state:"QLD", lat:-28.0724, lng:153.3899, types:[IB], notes:"Sourced from Mountain Project's gym directory — suburb-level position, not an exact address."},
+    {name:"Climb Toowoomba", suburb:"Toowoomba", state:"QLD", lat:-27.5598, lng:151.9507, types:[IB], notes:"Sourced from Mountain Project's gym directory — suburb-level position, not an exact address."},
+    {name:"Crank", suburb:"Macgregor", state:"QLD", lat:-27.5470, lng:153.0530, types:[IB], notes:"Sourced from Mountain Project's gym directory — suburb-level position, not an exact address."},
+    {name:"Rocksports", suburb:"Fortitude Valley", state:"QLD", lat:-27.4560, lng:153.0345, types:[IB], notes:"Sourced from Mountain Project's gym directory — suburb-level position, not an exact address."},
+    {name:"Rocky Climb", suburb:"Rockhampton", state:"QLD", lat:-23.3791, lng:150.5100, types:[IB], notes:"Sourced from Mountain Project's gym directory — suburb-level position, not an exact address."},
+    {name:"SIX Degrees Bouldering Gym", suburb:"Atherton", state:"QLD", lat:-17.2667, lng:145.4800, types:[IB], notes:"Sourced from Mountain Project's gym directory — suburb-level position, not an exact address."},
+    {name:"Urban Xtreme", suburb:"Hendra", state:"QLD", lat:-27.4090, lng:153.0670, types:[IB], notes:"A different gym from BOUNCE Hendra, also in this suburb. Sourced from Mountain Project's gym directory — suburb-level position, not an exact address."},
 
     // --- WA / Perth ---
     {name:"Adrenaline Vault", suburb:"Belmont", state:"WA", lat:-31.9581, lng:115.9297, types:[IB,TR], notes:"Largest indoor climbing centre in Perth."},
@@ -68,6 +80,9 @@
     {name:"City Summit", suburb:"Malaga", state:"WA", lat:-31.8628, lng:115.8949, types:[IB]},
     {name:"Portside Boulders", suburb:"O'Connor", state:"WA", lat:-32.0525, lng:115.7883, types:[IB]},
     {name:"Portside Boulders", suburb:"Osborne Park", state:"WA", lat:-31.8945, lng:115.8202, types:[IB]},
+    {name:"Rockface", suburb:"Balcatta", state:"WA", lat:-31.8636, lng:115.8296, types:[IB], notes:"A different Rockface location from the Northbridge one above. Sourced from Mountain Project's gym directory — suburb-level position, not an exact address."},
+    {name:"The Boulder Hub", suburb:"Wangara", state:"WA", lat:-31.7910, lng:115.8250, types:[IB], notes:"Sourced from Mountain Project's gym directory — suburb-level position, not an exact address."},
+    {name:"Urban Jungle", suburb:"Spearwood", state:"WA", lat:-32.1150, lng:115.7690, types:[IB], notes:"Sourced from Mountain Project's gym directory — suburb-level position, not an exact address."},
 
     // --- SA / Adelaide ---
     {name:"Adelaide's Bouldering Club (BoulderZone)", suburb:"Thebarton", state:"SA", lat:-34.9186, lng:138.5749, types:[IB]},
@@ -76,6 +91,10 @@
     {name:"Beyond Bouldering", suburb:"Clovelly Park", state:"SA", lat:-35.0170, lng:138.5658, types:[IB]},
     {name:"Vertical Reality Climbing", suburb:"Holden Hill", state:"SA", lat:-34.8560, lng:138.6583, types:[IB,TR], notes:"Adelaide's only rope-climbing gym."},
     {name:"Southern Boulder", suburb:"Hope Forest", state:"SA", lat:-35.2833, lng:138.6167, types:[IB]},
+
+    // --- TAS ---
+    {name:"Beta Park", suburb:"Invermay", state:"TAS", lat:-41.4285, lng:147.1425, types:[IB], notes:"Launceston. Sourced from Mountain Project's gym directory — suburb-level position, not an exact address."},
+    {name:"Rock It Climbing Centre", suburb:"Hobart", state:"TAS", lat:-42.8806, lng:147.3250, types:[IB], notes:"Sourced from Mountain Project's gym directory — suburb-level position, not an exact address."},
 
     // --- US indoor gyms ---
     {name:"Movement Boulder", suburb:"Boulder", state:"CO", country:"US", lat:40.0177, lng:-105.2508, types:[IB,TR]},
