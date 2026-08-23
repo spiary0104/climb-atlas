@@ -448,5 +448,53 @@
     {name:"Vertical Hold Sport Climbing", suburb:"San Diego", state:"CA", country:"US", lat:32.9000, lng:-117.1400, types:[IB,TR], notes:"A third distinct location from the two other Vertical Hold entries above. Sourced from Mountain Project's gym directory — city-level position, not an exact address."},
     {name:"Vital Climbing Gym – Carlsbad", suburb:"Carlsbad", state:"CA", country:"US", lat:33.1581, lng:-117.3506, types:[IB], notes:"Sourced from Mountain Project's gym directory — city-level position, not an exact address."},
     {name:"VITAL Climbing Gym – Murrieta", suburb:"Murrieta", state:"CA", country:"US", lat:33.5539, lng:-117.2139, types:[IB], notes:"Sourced from Mountain Project's gym directory — city-level position, not an exact address."},
-    {name:"Vital Oceanside", suburb:"Oceanside", state:"CA", country:"US", lat:33.1959, lng:-117.3795, types:[IB], notes:"Sourced from Mountain Project's gym directory — city-level position, not an exact address."}
+    {name:"Vital Oceanside", suburb:"Oceanside", state:"CA", country:"US", lat:33.1959, lng:-117.3795, types:[IB], notes:"Sourced from Mountain Project's gym directory — city-level position, not an exact address."},
+
+    // --- JP indoor gyms ---
+    // Names sourced from climbingjapan.com's gym directory (Tokyo/Osaka/Kyoto)
+    // and general web search results for the other five cities -- all real,
+    // named gyms, but unlike the Mountain Project pass above, no individual
+    // gym page was opened to confirm a street address for each one. Positions
+    // are ward/neighbourhood-level from general geography, not geocoded
+    // addresses -- see the note on every entry below, and docs/tasks.md for
+    // the fuller writeup.
+    {name:"B-PUMP TOKYO Akihabara", suburb:"Akihabara, Tokyo", state:"TOKYO", country:"JP", lat:35.6984, lng:139.7731, types:[IB], notes:"Sourced from web research (climbingjapan.com gym directory) — ward-level position, not an exact address."},
+    {name:"B-PUMP Ogikubo", suburb:"Ogikubo, Tokyo", state:"TOKYO", country:"JP", lat:35.7048, lng:139.6198, types:[IB], notes:"Sourced from web research (climbingjapan.com gym directory) — ward-level position, not an exact address."},
+    {name:"BETA Climbing Gym", suburb:"Shibuya, Tokyo", state:"TOKYO", country:"JP", lat:35.6762, lng:139.6503, types:[IB], notes:"Sourced from web research (climbingjapan.com gym directory) — ward-level position, not an exact address."},
+    {name:"NOBOROCK Shibuya Bouldering GYM", suburb:"Shibuya, Tokyo", state:"TOKYO", country:"JP", lat:35.6580, lng:139.7016, types:[IB], notes:"A different gym from BETA Climbing Gym, also in Shibuya. Sourced from web research (climbingjapan.com gym directory) — ward-level position, not an exact address."},
+    {name:"Rocky Bouldering Gym Shinagawa", suburb:"Shinagawa, Tokyo", state:"TOKYO", country:"JP", lat:35.6285, lng:139.7387, types:[IB], notes:"Sourced from web research (climbingjapan.com gym directory) — ward-level position, not an exact address."},
+    {name:"Bouldering Gym Granny Higashi Ueno", suburb:"Ueno, Tokyo", state:"TOKYO", country:"JP", lat:35.7141, lng:139.7774, types:[IB], notes:"Sourced from web research (climbingjapan.com gym directory) — ward-level position, not an exact address."},
+    {name:"HEADROCK CLIMBING GYM", suburb:"Shinjuku, Tokyo", state:"TOKYO", country:"JP", lat:35.6938, lng:139.7034, types:[IB], notes:"Sourced from web research (climbingjapan.com gym directory) — ward-level position, not an exact address."},
+    {name:"ROCKLANDS", suburb:"Nakano, Tokyo", state:"TOKYO", country:"JP", lat:35.7056, lng:139.6658, types:[IB], notes:"Sourced from web research (climbingjapan.com gym directory) — ward-level position, not an exact address."},
+
+    {name:"Bouldering Gym Roca", suburb:"Namba, Osaka", state:"OSAKA", country:"JP", lat:34.6656, lng:135.5008, types:[IB], notes:"Sourced from web research (climbingjapan.com gym directory) — ward-level position, not an exact address."},
+    {name:"GRAVITY RESEARCH UMEDA", suburb:"Umeda, Osaka", state:"OSAKA", country:"JP", lat:34.7024, lng:135.4959, types:[IB], notes:"Sourced from web research (climbingjapan.com gym directory) — ward-level position, not an exact address."},
+    {name:"City Rock Gym Osaka Branch", suburb:"Osaka", state:"OSAKA", country:"JP", lat:34.6870, lng:135.5100, types:[IB,TR], notes:"Japan's first climbing gym, opened 1989. Sourced from web research — city-level position, not an exact address."},
+    {name:"Climbing Gym TOBITO", suburb:"Osaka", state:"OSAKA", country:"JP", lat:34.6790, lng:135.4950, types:[IB], notes:"Sourced from web research (climbingjapan.com gym directory) — city-level position, not an exact address."},
+    {name:"BOULDERING GYM CAL-COLO UMEDA", suburb:"Umeda, Osaka", state:"OSAKA", country:"JP", lat:34.6990, lng:135.4990, types:[IB], notes:"Sourced from web research (climbingjapan.com gym directory) — ward-level position, not an exact address."},
+
+    {name:"Climbing Gym Adsummum", suburb:"Kyoto", state:"KYOTO", country:"JP", lat:35.0116, lng:135.7681, types:[IB], notes:"Sourced from web research (climbingjapan.com gym directory) — city-level position, not an exact address."},
+    {name:"CAIRN Climbing Gym", suburb:"Kyoto", state:"KYOTO", country:"JP", lat:35.0050, lng:135.7600, types:[IB], notes:"Sourced from web research (climbingjapan.com gym directory) — city-level position, not an exact address."},
+    {name:"Ignis Climbing Gym", suburb:"Kyoto", state:"KYOTO", country:"JP", lat:35.0180, lng:135.7750, types:[IB], notes:"Sourced from web research (climbingjapan.com gym directory) — city-level position, not an exact address."},
+    {name:"Kyoto Bouldering Park Roches Momoyama", suburb:"Momoyama, Kyoto", state:"KYOTO", country:"JP", lat:34.9393, lng:135.7728, types:[IB], notes:"Sourced from web research (climbingjapan.com gym directory) — ward-level position, not an exact address."},
+
+    {name:"Mono Climbing Studio", suburb:"Hakata, Fukuoka", state:"FUKUOKA", country:"JP", lat:33.5890, lng:130.4180, types:[IB], notes:"Sourced from web research — ward-level position, not an exact address."},
+    {name:"Bare Hands Climbing Gym", suburb:"Jonan, Fukuoka", state:"FUKUOKA", country:"JP", lat:33.5657, lng:130.3711, types:[IB], notes:"One of the largest, most established bouldering gyms in Kyushu, per web research. Ward-level position, not an exact address."},
+    {name:"The Wall Bouldering Gym", suburb:"Hakata, Fukuoka", state:"FUKUOKA", country:"JP", lat:33.5950, lng:130.4230, types:[IB], notes:"Sourced from web research — ward-level position, not an exact address."},
+
+    {name:"Colorful Rock", suburb:"Minato, Nagoya", state:"AICHI", country:"JP", lat:35.1098, lng:136.8898, types:[IB], notes:"Sourced from web research — ward-level position, not an exact address."},
+    {name:"Pinnacle 2 Sakae", suburb:"Sakae, Nagoya", state:"AICHI", country:"JP", lat:35.1705, lng:136.9086, types:[IB], notes:"One of three Pinnacle 2 locations in Aichi Prefecture (also Toyota and Obu) — this is the Nagoya Sakae branch. Sourced from web research — ward-level position, not an exact address."},
+    {name:"Thumbs Up", suburb:"Naka, Nagoya", state:"AICHI", country:"JP", lat:35.1747, lng:136.9007, types:[IB], notes:"Sourced from web research — ward-level position, not an exact address."},
+
+    {name:"Big Rock Hiyoshi", suburb:"Kohoku, Yokohama", state:"KANAGAWA", country:"JP", lat:35.5546, lng:139.6469, types:[IB], notes:"Sourced from web research — ward-level position, not an exact address."},
+    {name:"ZEN", suburb:"Yokohama", state:"KANAGAWA", country:"JP", lat:35.5075, lng:139.6172, types:[IB], notes:"Between Shin-Yokohama and Kawasaki stations, per web research. City-level position, not an exact address."},
+    {name:"D.Bouldering Tsunashima", suburb:"Kohoku, Yokohama", state:"KANAGAWA", country:"JP", lat:35.5476, lng:139.6363, types:[IB], notes:"Sourced from web research — ward-level position, not an exact address."},
+    {name:"Climbing Bum Yokohama", suburb:"Tsuzuki, Yokohama", state:"KANAGAWA", country:"JP", lat:35.5389, lng:139.5893, types:[IB], notes:"Sourced from web research — ward-level position, not an exact address."},
+
+    {name:"Gravity Research Sapporo", suburb:"Sapporo", state:"HOKKAIDO", country:"JP", lat:43.0618, lng:141.3545, types:[IB], notes:"Sourced from web research — city-level position, not an exact address."},
+    {name:"Club Sol Station Sapporo", suburb:"Sapporo", state:"HOKKAIDO", country:"JP", lat:43.0700, lng:141.3450, types:[IB], notes:"Sourced from web research — city-level position, not an exact address."},
+    {name:"NAC Sapporo Climbing Gym", suburb:"Shiroishi, Sapporo", state:"HOKKAIDO", country:"JP", lat:43.0559, lng:141.4064, types:[IB], notes:"Sourced from web research — ward-level position, not an exact address."},
+
+    {name:"Gravity Research Kobe", suburb:"Chuo, Kobe", state:"HYOGO", country:"JP", lat:34.6954, lng:135.1946, types:[IB], notes:"Sourced from web research — ward-level position, not an exact address."},
+    {name:"WAGOMU Climbing Gym", suburb:"Kobe", state:"HYOGO", country:"JP", lat:34.6889, lng:135.1833, types:[IB], notes:"Sourced from web research — city-level position, not an exact address."}
   ].map((g,i)=>({...g, id:'seed-'+i, community:false, country: g.country || 'AU'}));

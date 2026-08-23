@@ -7,9 +7,18 @@
   const STATES_BY_COUNTRY = {
     AU: [['NSW','NSW'],['VIC','VIC'],['QLD','QLD'],['WA','WA'],['SA','SA'],['ACT','ACT'],['TAS','TAS'],['NT','NT']],
     US: [['CA','California'],['CO','Colorado'],['TX','Texas'],['WA','Washington'],['NY','New York'],['NV','Nevada'],
-         ['GA','Georgia'],['UT','Utah'],['AL','Alabama'],['TN','Tennessee'],['MA','Massachusetts'],['IL','Illinois']]
+         ['GA','Georgia'],['UT','Utah'],['AL','Alabama'],['TN','Tennessee'],['MA','Massachusetts'],['IL','Illinois']],
+    JP: [['TOKYO','Tokyo'],['OSAKA','Osaka'],['KYOTO','Kyoto'],['FUKUOKA','Fukuoka'],['AICHI','Aichi (Nagoya)'],
+         ['KANAGAWA','Kanagawa (Yokohama)'],['HOKKAIDO','Hokkaido (Sapporo)'],['HYOGO','Hyogo (Kobe)']]
   };
   const TYPE_LABELS = {'indoor-bouldering':'Indoor bouldering','top-rope':'Top rope'};
+  // Below this zoom, a spot with no nearby neighbours (so supercluster hands
+  // it back as a lone, unclustered point rather than grouping it) still paints
+  // as a small numbered badge instead of the hold-shaped icon -- at globe/
+  // country zoom a 20px icon for a single far-off spot (e.g. Japan, viewed
+  // from the default mid-Pacific camera) reads as a stray dot; a numbered
+  // badge matches the visual language clusters already use and stays legible.
+  const HOLD_ICON_ZOOM = 9;
 
   function typeSwatch(types){
     const colors = (types&&types.length?types:['indoor-bouldering']).map(t=>TYPE_COLORS[t]||'#999');
@@ -35,6 +44,7 @@
   let markerEls = {};       // id -> {marker, el} for individual spot markers currently painted on screen
   let clusterMarkers = {};  // cluster_id -> maplibregl.Marker for cluster badges currently painted
   let supercluster = null;
+  let lastIconBucket = null; // 'icon' | 'number' | null -- which style ungrouped spot markers were last painted in
   let placingPin = null; // {lat,lng} while add-modal open
   let currentEditId = null;
   let currentEditPin = null; // {lat,lng} while edit-modal open
@@ -120,6 +130,15 @@
     const b = map.getBounds();
     const bbox = [b.getWest(), b.getSouth(), b.getEast(), b.getNorth()];
     const zoom = Math.floor(map.getZoom());
+    const iconBucket = zoom >= HOLD_ICON_ZOOM ? 'icon' : 'number';
+    if(iconBucket !== lastIconBucket){
+      // Crossed the icon/number threshold since the last paint -- every
+      // already-painted spot marker (not cluster badge) is the wrong style
+      // now, so drop them and let the loop below repaint fresh.
+      Object.values(markerEls).forEach(e=>e.marker.remove());
+      markerEls = {};
+      lastIconBucket = iconBucket;
+    }
     const seenClusters = new Set();
     const seenSpots = new Set();
 
@@ -146,7 +165,7 @@
         seenSpots.add(id);
         if(markerEls[id]) return; // already painted, leave it (mark state stays in sync via updateMarkUI)
         const g = visibleIndex[id];
-        if(g) markerEls[id] = buildSpotMarker(g);
+        if(g) markerEls[id] = iconBucket === 'icon' ? buildSpotMarker(g) : buildSpotNumberMarker(g);
       }
     });
 
@@ -181,7 +200,24 @@
     const popup = new maplibregl.Popup({offset: 14, maxWidth: '240px'});
     popup.on('open', ()=> popup.setHTML(popupHtml(g)));
     const marker = new maplibregl.Marker({element: el}).setLngLat([g.lng, g.lat]).setPopup(popup).addTo(map);
-    return {marker, el};
+    return {marker, el, kind:'icon'};
+  }
+
+  // Zoomed-out stand-in for a lone spot marker -- see HOLD_ICON_ZOOM. No
+  // popup (nothing to show beyond what the badge already implies); clicking
+  // zooms in far enough to flip it over to the real hold-shaped marker.
+  function buildSpotNumberMarker(g){
+    const el = document.createElement('div');
+    el.className = 'cluster-marker spot-number-marker';
+    el.style.width = '26px';
+    el.style.height = '26px';
+    el.style.background = typeSwatch(g.types);
+    el.textContent = '1';
+    el.addEventListener('click', ()=>{
+      map.easeTo({center:[g.lng, g.lat], zoom: Math.max(map.getZoom()+3, HOLD_ICON_ZOOM)});
+    });
+    const marker = new maplibregl.Marker({element: el}).setLngLat([g.lng, g.lat]).addTo(map);
+    return {marker, el, kind:'number'};
   }
 
   function passesFilters(g){
@@ -284,7 +320,7 @@
     const g = spots.find(s=>s.id===spotId);
     if(!g) return;
     const entry = markerEls[spotId];
-    if(entry){
+    if(entry && entry.kind === 'icon'){
       entry.el.className = spotMarkerClasses(g);
       const popup = entry.marker.getPopup();
       if(popup) popup.setHTML(popupHtml(g));

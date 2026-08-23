@@ -165,6 +165,56 @@ placeholder work just to fill this section)_
   `python -m http.server` + browser check as the bug-fix task above,
   ideally in the same session since it's the same branch.
 
+### Numbered markers at low zoom + add Japan
+- Branch: `fix/globe-render-perf-remove-outdoor-type` (same branch/worktree
+  as the two tasks above — continued rather than starting fresh, same
+  reasoning as before: builds on this branch's state, not yet merged)
+- Status: in progress (implemented + structurally verified; not yet
+  smoke-tested live)
+- What: two requests from the user in one message: (1) ungrouped single
+  spot markers should show as a number until zoomed in, matching cluster
+  badges, instead of a small hold-shaped icon that's easy to miss when
+  zoomed out; (2) add Japan to the map.
+- **(1) Numbered markers**: added `HOLD_ICON_ZOOM = 9` in `js/app.js`.
+  Below that zoom, `paintMarkers()` builds ungrouped spots with
+  `buildSpotNumberMarker()` (a `.cluster-marker`-styled badge reading "1",
+  background = the spot's own type colour) instead of
+  `buildSpotMarker()`'s hold-shaped icon; at/above it, the normal icon.
+  `paintMarkers()` tracks the last-painted "bucket" (`icon`/`number`) and
+  clears all spot markers (cluster badges untouched) when the zoom crosses
+  the threshold, since a marker painted in the wrong style needs to be
+  rebuilt, not left alone. `updateMarkUI()` was guarded to only restyle
+  `kind:'icon'` entries — a numbered badge has no climbed/bookmarked state
+  to show. See `docs/architecture.md` "Map" section for the full writeup.
+- **(2) Add Japan**: added `JP` as a third country, following the existing
+  `country`+`state` pairing pattern (`docs/architecture.md` "Data model").
+  8 cities/prefectures seeded — Tokyo, Osaka, Kyoto, Fukuoka, Aichi
+  (Nagoya), Kanagawa (Yokohama), Hokkaido (Sapporo), Hyogo (Kobe) — with
+  32 real, named gyms total, sourced from climbingjapan.com's gym
+  directory (Tokyo/Osaka/Kyoto) and per-city web search (the other five).
+  This pass is **not exhaustive and lighter-touch than the Mountain
+  Project pass**: gym names are real and sourced, but unlike MP, no
+  individual gym page was opened to confirm a street address for each
+  one — positions are ward/city-level from general geography, flagged
+  per-entry in `notes`. Japan doesn't have a widely-known 2-letter state
+  code convention like AU/US, so `state` values are the prefecture/city
+  name itself (`TOKYO`, `OSAKA`, etc. — see `STATES_BY_COUNTRY.JP` in
+  `js/app.js`). Updated: `js/data.js` (+32 spots), `js/app.js`
+  (`STATES_BY_COUNTRY.JP`), `index.html` (Japan chip row + `<option>` in
+  both country `<select>`s + country-count copy), `css/style.css` (8 new
+  `--jp-*` colour vars + chip active-state rules), `README.md` and
+  `docs/architecture.md` (country-count copy, sourcing writeup).
+- Net result: 429 → **461 total spots** (77 AU + 352 US + 32 JP). Balance-
+  checked (`grep -c "{name:"` = 461; brace/bracket counts both 462/462)
+  and zero duplicate name+suburb+state combos found across the whole file.
+- **Not yet done**: live smoke test of both changes — need to actually
+  drag/zoom the globe and watch a lone marker (e.g. a Japan gym, viewed
+  from the default camera) switch from numbered badge to hold icon
+  around zoom 9, confirm clicking a numbered badge zooms in correctly,
+  and confirm the new Japan chips/filter/add-edit country dropdown all
+  work. Needs the same `python -m http.server` + browser check as the
+  two tasks above.
+
 ## Blocked
 
 _(none)_

@@ -54,8 +54,8 @@ never `state` alone. Keep this in mind before adding a third country.
 
 ## Seed data sourcing
 
-`js/data.js` currently has 429 spots (77 AU, 352 US), all indoor gyms
-(bouldering and/or top rope — see "Known gaps" below on why outdoor
+`js/data.js` currently has 461 spots (77 AU, 352 US, 32 JP), all indoor
+gyms (bouldering and/or top rope — see "Known gaps" below on why outdoor
 areas were removed). It was built up in layers, not from one source:
 
 - The original AU set and the first US pass were researched and
@@ -78,10 +78,27 @@ areas were removed). It was built up in layers, not from one source:
   update its `lat`/`lng` and drop the caveat from `notes`.
 - Mountain Project itself has essentially no coverage of Australia's
   indoor-gym scene beyond a plain directory page (unlike outdoor
-  crag/route data, which is its actual specialty) and no coverage of
-  indoor gyms outside AU/US at all — don't expect it to be useful for a
-  third country without checking first, the way it wasn't useful for the
-  general site search when this was first tried.
+  crag/route data, which is its actual specialty) and had no usable
+  Japan data at all — its general site search wasn't useful for Japan
+  gyms, and it has no `/gyms/japan` directory the way it does for
+  AU/US.
+- **Japan (32 gyms, 8 cities/prefectures: Tokyo, Osaka, Kyoto, Fukuoka,
+  Aichi/Nagoya, Kanagawa/Yokohama, Hokkaido/Sapporo, Hyogo/Kobe)** came
+  from general web search plus climbingjapan.com's gym directory (which
+  itself only covers Tokyo/Osaka/Kyoto — the other five cities came from
+  individual per-city searches). Every gym name is real and confirmed by
+  at least one source, but this pass is **lighter-touch than the MP
+  pass**: no individual gym page was opened to verify a street address
+  the way every MP entry was, so positions are ward/neighbourhood-level
+  from general geography rather than geocoded addresses — again flagged
+  per-entry in `notes`. Japan uses prefecture/city names as its `state`
+  codes (`TOKYO`, `OSAKA`, `KYOTO`, `FUKUOKA`, `AICHI`, `KANAGAWA`,
+  `HOKKAIDO`, `HYOGO` — see `STATES_BY_COUNTRY.JP` in `js/app.js`), not
+  abbreviations, since Japan doesn't have a widely-known equivalent to
+  AU/US two-letter state codes. This pass is intentionally not
+  exhaustive (Japan has 47 prefectures and Tokyo alone has 50+ gyms per
+  the directory above) — treat it the same as the original, "not
+  exhaustive" AU/US seed data, not as an MP-style complete sweep.
 
 ## Map
 
@@ -119,6 +136,18 @@ areas were removed). It was built up in layers, not from one source:
   `moveend`, diffing against what's already painted so panning/zooming
   without a filter change doesn't tear down and recreate markers that
   are already correct.
+- Below `HOLD_ICON_ZOOM` (`js/app.js`, currently 9), an ungrouped single
+  spot (one supercluster hands back as a lone point rather than a cluster,
+  e.g. an isolated Japan gym viewed from the default mid-Pacific camera)
+  paints as a numbered badge (`buildSpotNumberMarker`, reusing the
+  `.cluster-marker` look with the spot's own type colour as background)
+  instead of the small hold-shaped icon, which is easy to miss at a wide
+  zoom. `paintMarkers()` tracks which "bucket" (icon vs. number) it last
+  painted in and clears every spot marker (not cluster badges) when the
+  zoom crosses that threshold, so painted markers don't get stuck in the
+  wrong style. `updateMarkUI()` only restyles `kind:'icon'` marker
+  entries for the same reason — a numbered badge has no climbed/bookmarked
+  state to reflect.
 - DOM markers lag MapLibre's own WebGL render loop while the camera is
   moving (a documented MapLibre/Mapbox limitation, not fixable from
   application code) — markers are hidden for the duration of a

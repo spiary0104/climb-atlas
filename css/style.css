@@ -25,6 +25,14 @@
     --us-nv:#9a5fc9;
     --us-ma:#c95fae;
     --us-il:#c95f7a;
+    --jp-tokyo:#d1495b;
+    --jp-osaka:#e08e45;
+    --jp-kyoto:#c9a227;
+    --jp-fukuoka:#4c9a7c;
+    --jp-aichi:#5b7fc4;
+    --jp-kanagawa:#8a5fb0;
+    --jp-hokkaido:#4aa3c9;
+    --jp-hyogo:#c9648a;
     --t-outdoor:#b8834a;
     --t-indoor:#3fb8a6;
     --t-toprope:#8a6bb0;
@@ -191,6 +199,14 @@
   .chip[data-country="US"][data-state="TN"].active{background:var(--us-tn);}
   .chip[data-country="US"][data-state="MA"].active{background:var(--us-ma);}
   .chip[data-country="US"][data-state="IL"].active{background:var(--us-il);}
+  .chip[data-country="JP"][data-state="TOKYO"].active{background:var(--jp-tokyo);}
+  .chip[data-country="JP"][data-state="OSAKA"].active{background:var(--jp-osaka);}
+  .chip[data-country="JP"][data-state="KYOTO"].active{background:var(--jp-kyoto);}
+  .chip[data-country="JP"][data-state="FUKUOKA"].active{background:var(--jp-fukuoka);}
+  .chip[data-country="JP"][data-state="AICHI"].active{background:var(--jp-aichi);}
+  .chip[data-country="JP"][data-state="KANAGAWA"].active{background:var(--jp-kanagawa);}
+  .chip[data-country="JP"][data-state="HOKKAIDO"].active{background:var(--jp-hokkaido);}
+  .chip[data-country="JP"][data-state="HYOGO"].active{background:var(--jp-hyogo);}
 
   .toggle-row{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-dim);font-family:'Space Mono',monospace;cursor:pointer;}
   .toggle-row input{accent-color:var(--vic);}
@@ -608,6 +624,16 @@
     transition:transform .15s ease;
   }
   .cluster-marker:hover{transform:scale(1.08);}
+
+  /* Lone spot marker shown below HOLD_ICON_ZOOM (js/app.js) -- reuses the
+     cluster badge shape but keeps the spot's own type colour as background
+     (clusters use a fixed neutral colour since they can mix types) so the
+     colour-coding survives even at low zoom. */
+  .spot-number-marker{
+    border-color:rgba(10,9,7,0.55);
+    color:#15120d;
+    font-weight:800;
+  }
 
   @media (max-width:760px){
     .sidebar{position:absolute;left:0;top:0;bottom:0;z-index:600;transform:translateX(-100%);transition:transform .2s ease;width:82vw;min-width:0;}

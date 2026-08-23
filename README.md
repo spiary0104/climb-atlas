@@ -1,7 +1,7 @@
 # Boulder Atlas
 
-A community-sourced map of indoor climbing gyms (bouldering, top rope) across Australia
-and the United States, modelled on [Track Atlas](https://trackatlas.org).
+A community-sourced map of indoor climbing gyms (bouldering, top rope) across Australia,
+the United States, and Japan, modelled on [Track Atlas](https://trackatlas.org).
 
 This is a static site: plain HTML/CSS/JS, no build step, no framework. Once Supabase is
 configured (see below), open `index.html` in a browser and it runs.
@@ -169,13 +169,20 @@ and add a custom domain from the host's dashboard once you've bought one.
   and US's `WA` (Washington) are different regions that happen to share a code. Every
   spot has both a `country` and a `state` field, and anything that filters, colors, or
   edits by state (chips in `index.html`, `STATES_BY_COUNTRY` in `app.js`, the RLS-safe
-  columns in `schema.sql`) keys off the pair together, never `state` alone. Adding a
-  third country should follow the same pattern.
+  columns in `schema.sql`) keys off the pair together, never `state` alone. A third
+  country (Japan) was added following this same pattern — see `docs/architecture.md`
+  "Seed data sourcing" for how its region codes (Tokyo, Osaka, etc.) were chosen.
 - Seed data in `data.js` was researched and cross-checked spot-by-spot rather than
   pulled from one source — see the in-app About section for the full story. It's not
   exhaustive; that's what the community add/edit flow is for. The US portion currently
-  covers 12 states' worth of major-city indoor gyms — nowhere near exhaustive either.
-  Some listed states (e.g. AU's TAS, US's AL/GA/TN/UT) currently have zero spots, since
-  their only entries were outdoor-bouldering areas removed in the pass below — the chips
-  still show them since a future indoor gym in that state is entirely plausible, they'll
-  just filter to nothing until one's added.
+  covers 12 states' worth of major-city indoor gyms, and the Japan portion covers 8
+  cities/prefectures — nowhere near exhaustive either. Some listed states (e.g. AU's
+  TAS, US's AL/GA/TN/UT) currently have zero spots, since their only entries were
+  outdoor-bouldering areas removed in the pass below — the chips still show them since
+  a future indoor gym in that state is entirely plausible, they'll just filter to
+  nothing until one's added.
+- Below HOLD_ICON_ZOOM (`js/app.js`), an ungrouped single spot marker paints as a
+  numbered badge (matching the look of a cluster) instead of the small hold-shaped
+  icon — a lone marker viewed from the globe's default zoomed-out camera reads as a
+  stray dot otherwise. It switches to the real icon once you zoom in past that
+  threshold, or click it to zoom straight there.

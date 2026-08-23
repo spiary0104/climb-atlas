@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Boulder Atlas — community-sourced climbing map</title>
-<meta name="description" content="A community-sourced map of bouldering and climbing gyms and crags across Australia and the United States.">
+<meta name="description" content="A community-sourced map of bouldering and climbing gyms and crags across Australia, the United States, and Japan.">
 <meta name="theme-color" content="#211f1b">
 <meta property="og:title" content="Boulder Atlas">
-<meta property="og:description" content="A community-sourced map of bouldering and climbing gyms and crags across Australia and the United States.">
+<meta property="og:description" content="A community-sourced map of bouldering and climbing gyms and crags across Australia, the United States, and Japan.">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23211f1b'/%3E%3Cpath d='M16 5c5 0 8 4 8 8.5S20 26 16 27c-4-1-8-9.5-8-13.5S11 5 16 5z' fill='%23b8834a'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,7 +24,7 @@
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
       </button>
       <h1>Boulder<span>Atlas</span></h1>
-      <span class="tagline">community-sourced map of AU &amp; US bouldering & climbing spots</span>
+      <span class="tagline">community-sourced map of AU, US &amp; JP bouldering & climbing spots</span>
     </div>
     <div class="header-right">
       <div class="count-badge"><b id="countNum">0</b>&nbsp;spots shown</div>
@@ -70,6 +70,17 @@
             <div class="chip" data-country="US" data-state="TN" style="color:var(--us-tn)"><span class="dot"></span>TN</div>
             <div class="chip" data-country="US" data-state="MA" style="color:var(--us-ma)"><span class="dot"></span>MA</div>
             <div class="chip" data-country="US" data-state="IL" style="color:var(--us-il)"><span class="dot"></span>IL</div>
+          </div>
+          <div class="section-label country-label">Japan</div>
+          <div class="chip-row">
+            <div class="chip" data-country="JP" data-state="TOKYO" style="color:var(--jp-tokyo)"><span class="dot"></span>Tokyo</div>
+            <div class="chip" data-country="JP" data-state="OSAKA" style="color:var(--jp-osaka)"><span class="dot"></span>Osaka</div>
+            <div class="chip" data-country="JP" data-state="KYOTO" style="color:var(--jp-kyoto)"><span class="dot"></span>Kyoto</div>
+            <div class="chip" data-country="JP" data-state="FUKUOKA" style="color:var(--jp-fukuoka)"><span class="dot"></span>Fukuoka</div>
+            <div class="chip" data-country="JP" data-state="AICHI" style="color:var(--jp-aichi)"><span class="dot"></span>Aichi</div>
+            <div class="chip" data-country="JP" data-state="KANAGAWA" style="color:var(--jp-kanagawa)"><span class="dot"></span>Kanagawa</div>
+            <div class="chip" data-country="JP" data-state="HOKKAIDO" style="color:var(--jp-hokkaido)"><span class="dot"></span>Hokkaido</div>
+            <div class="chip" data-country="JP" data-state="HYOGO" style="color:var(--jp-hyogo)"><span class="dot"></span>Hyogo</div>
           </div>
         </div>
         <div class="type-filter" id="typeFilters">
@@ -148,6 +159,7 @@
         <select id="fCountry">
           <option value="AU">Australia</option>
           <option value="US">United States</option>
+          <option value="JP">Japan</option>
         </select>
       </div>
       <div>
@@ -214,6 +226,7 @@
         <select id="eCountry">
           <option value="AU">Australia</option>
           <option value="US">United States</option>
+          <option value="JP">Japan</option>
         </select>
       </div>
       <div>
@@ -293,7 +306,7 @@
     <h2>About Boulder Atlas</h2>
     <div class="updated">A community-sourced map of Australian &amp; American bouldering &amp; climbing spots</div>
 
-    <p>Boulder Atlas is a free, crowd-built map of places to climb across Australia and the United States — indoor bouldering gyms and gyms with top-rope and lead walls. It's built in the spirit of sites like Track Atlas: instead of one team trying to track every gym forever, the map is kept current by the people who actually climb at these places.</p>
+    <p>Boulder Atlas is a free, crowd-built map of places to climb across Australia, the United States, and Japan — indoor bouldering gyms and gyms with top-rope and lead walls. It's built in the spirit of sites like Track Atlas: instead of one team trying to track every gym forever, the map is kept current by the people who actually climb at these places.</p>
 
     <h3>How the map works</h3>
     <p>Each pin is colour-coded by what's on offer there — indoor bouldering or top rope. A pin split into wedges means a spot offers more than one. Use the checkboxes to filter by country/state, by type, or by your own climbed/bookmarked marks.</p>
@@ -347,7 +360,7 @@
     <div class="legal-note">This is a plain-language starting draft, not legal advice. Have it reviewed properly before relying on it — especially once accounts, ads, or payments are added.</div>
 
     <h3>What this is</h3>
-    <p>Boulder Atlas is a free, informational, community-edited map of climbing spots in Australia and the United States. It isn't a booking, ticketing, or payment service, and using it doesn't create any relationship with the gyms or crags listed.</p>
+    <p>Boulder Atlas is a free, informational, community-edited map of climbing spots in Australia, the United States, and Japan. It isn't a booking, ticketing, or payment service, and using it doesn't create any relationship with the gyms or crags listed.</p>
 
     <h3>Accuracy — please read this one</h3>
     <p>Information on this map is submitted and edited by the public and may be incomplete, outdated, or wrong. Confirm details — especially opening hours, prices, and whether a gym is still open — directly with the venue before visiting. Outdoor climbing and bouldering carry inherent risk; you climb entirely at your own risk and are responsible for your own judgement, gear, and safety.</p>
