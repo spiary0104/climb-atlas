@@ -20,7 +20,7 @@ js/supabase-init.js     Creates the shared Supabase client — project URL/key l
 js/auth.js              Thin wrapper around Supabase Auth (magic link + Google)
 js/data.js              The seed dataset — every gym/crag pin, as window.SEED_GYMS
 js/app.js               Everything else: map rendering, filters, add/edit, marks
-supabase/schema.sql      Run once in the Supabase SQL Editor — creates spots, pending_edits, moderators, marks
+supabase/schema.sql      Run once in the Supabase SQL Editor — creates spots, pending_edits, reports, moderators, marks
 supabase/seed.html       Run once in a browser — loads the spots table from js/data.js
 ```
 
@@ -34,10 +34,20 @@ depends on all of the above. Breaking this order breaks the app silently
 
 - **`spots`** — public read of `status = 'approved'` rows only. Inserts
   from the client are forced to `status = 'pending'` by RLS — a tampered
-  client can't insert a pre-approved row.
+  client can't insert a pre-approved row. Has an optional `address` text
+  column (street address) alongside the always-present `suburb`/`state`/
+  `country` — most seed spots don't have one yet (see "Seed data sourcing"
+  below), but the add/edit forms and popup both support it.
 - **`pending_edits`** — proposed edits to existing spots. The live `spots`
   row is untouched until a moderator approves; approving copies the
   proposed fields onto the live row and deletes the proposal.
+- **`reports`** — free-text "something's wrong with this spot" messages,
+  submitted via the popup's "Report incorrect info" link, insert-only for
+  the public (RLS `with check (true)`, no auth required — same as adding/
+  editing a spot). Not a structured edit proposal like `pending_edits`;
+  moderator-only to read or delete, never shown on the public map. A
+  moderator typically acts on one by using the existing "Edit this spot"
+  flow themselves, then dismissing the report (deletes the row).
 - **`moderators`** — accounts allowed to approve/reject. No public INSERT
   policy; adding a moderator is SQL-Editor-only by design (see README
   Setup step 7).

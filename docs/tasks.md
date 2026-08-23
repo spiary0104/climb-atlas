@@ -387,6 +387,84 @@ placeholder work just to fill this section)_
   right, do the region labels read cleanly against the globe, does the
   chevron rotate correctly).
 
+### Add address field, Google Maps directions button, report-incorrect-info flow
+- Branch: `fix/globe-render-perf-remove-outdoor-type` (same branch/worktree
+  as every task above — continued rather than starting fresh)
+- Status: in progress (schema + app feature implemented and verified live
+  in a served copy; **address data itself is NOT populated yet** — see
+  "Deliberately not done" below, this needs a scoping decision)
+- What: user asked for three things under each location: (1) an address,
+  double-checked for correctness, (2) a "get directions" button to
+  Google Maps, (3) a "report incorrect information" button.
+- **(2) Directions button** — shipped, needs no data backfill. Verified
+  the URL format against Google's own Maps URLs docs
+  (developers.google.com/maps/documentation/urls/get-started) rather than
+  guessing: `https://www.google.com/maps/dir/?api=1&destination=<lat>,<lng>`
+  with no `origin` (Maps fills the visitor's current location in
+  automatically). Built from each spot's existing `lat`/`lng` — works for
+  all 513 spots today regardless of whether they have an address on file.
+  `directionsUrl()` in `js/app.js`, rendered as a link in `popupHtml()`.
+- **(3) Report incorrect info** — shipped as a new, lightweight,
+  moderator-reviewed flow, deliberately separate from the existing
+  structured "Edit this spot" flow (a report is just free text about a
+  problem, not a corrected-fields proposal):
+  - New `reports` table in `supabase/schema.sql` (id, spot_id, message,
+    created_at) — public insert (no auth required, same as adding/editing
+    a spot), moderator-only select/delete. **The user needs to re-run the
+    updated schema.sql in their Supabase SQL Editor** for this table (and
+    the new `address` column, below) to exist on the live project — it's
+    idempotent/safe to re-run per the file's own header, but this session
+    can't run it against their live Supabase project itself.
+  - New "Report incorrect info" link in the popup (`popupHtml()`) opens a
+    small modal (`#reportModalBackdrop`, `index.html`) with a required
+    textarea; submits to `reports`.
+  - Extended the moderator "Pending review" panel (`renderPendingPanel()`,
+    `js/app.js`) to also list open reports, each with "Dismiss" (deletes
+    the report) and "Edit this spot" (closes the pending panel, opens the
+    real edit-spot modal for that spot pre-filled, so a moderator can
+    actually fix what was reported). `pendingReportsBadge` count and
+    `loadPending()`/`refreshAfterModeration()` all extended to include
+    reports alongside the existing pending-spots/pending-edits counts.
+- **(1) Address field** — the *display and editing* half is shipped: new
+  optional `address` column on `spots` and `pending_edits`
+  (`supabase/schema.sql`), a "Street address" field in both the add-spot
+  and edit-spot forms (`index.html`, `js/app.js`), and the popup shows it
+  (`.popup-address`) when present. Flows all the way through
+  submit/edit/revert/approve — verified with a served copy (address field
+  present in both forms, empty for a spot with no address on file,
+  correct placeholder text).
+  - **Deliberately NOT done: populating an address for any of the
+    existing 513 spots.** The user's ask was explicit that every address
+    needs to be "double-checked to make sure it's correct" — that's a
+    genuine per-spot verification effort, not something to guess at. Most
+    of the existing seed data is already disclosed as city/suburb/
+    district-level positioning, *not* an exact address (see "Seed data
+    sourcing" in `docs/architecture.md` — this was an explicit, disclosed
+    trade-off in every prior data-adding task this session, not an
+    oversight). Backfilling and verifying 513 real addresses is
+    comparable in scope to everything else done this session combined —
+    this needs the user to say how they want it scoped (all at once /
+    piloted on one country first / left to the community edit flow now
+    that the field exists) before starting, the same way "Go exhaustive,
+    accept the size" was confirmed before the original Mountain Project
+    pass.
+- **Also updated**: the Privacy Policy modal ("What we collect" / "How
+  submitted information is used") to describe the new report-submission
+  data path and that it's moderator-only, never public — and README's
+  "Moderation" section and file-map line for the same reason.
+- **Verified live** (served copy, browser JS instrumentation): directions
+  link href matches the exact expected Google Maps URL for a real spot;
+  report button opens the modal with the correct spot name, submit stays
+  disabled until text is entered, cancel closes it; address field present
+  and correctly empty/placeholder'd in both add and edit forms; no new
+  console errors. **Not verified**: the actual Supabase round-trip for
+  submitting a report or an address edit (this environment's Supabase
+  project has a pre-existing, unrelated schema mismatch — its live
+  `spots` table is missing `status`, so it was already falling back to
+  offline seed data before this task) — Rules.md §7's "adding/editing a
+  spot lands in pending" check needs a real Supabase project with the
+  schema actually applied, which only the user can do.
+
 ## Blocked
 
 _(none)_

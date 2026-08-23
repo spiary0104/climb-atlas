@@ -15,7 +15,7 @@ js/supabase-init.js     Creates the shared Supabase client — put your project 
 js/auth.js              Thin wrapper around Supabase Auth (magic link + Google)
 js/data.js              The seed dataset — every gym/crag pin, as window.SEED_GYMS
 js/app.js               Everything else: map rendering, filters, add/edit, marks
-supabase/schema.sql      Run once in the Supabase SQL Editor — creates spots, pending_edits, moderators, marks
+supabase/schema.sql      Run once in the Supabase SQL Editor — creates spots, pending_edits, reports, moderators, marks
 supabase/seed.html       Run once in a browser — loads the spots table from js/data.js
 ```
 
@@ -87,8 +87,8 @@ Adding and editing spots themselves does **not** require signing in — see "Mod
 
 ## Moderation
 
-New spots and edits to existing spots both go through review before they're publicly
-visible:
+New spots, edits to existing spots, and incorrect-info reports all go through review
+before they're publicly visible (or, for reports, before anyone acts on them):
 
 - **Adding a spot** inserts it into `spots` with `status = 'pending'` — the RLS policy
   forces this server-side, so a tampered client can't insert a pre-approved row. Pending
@@ -98,13 +98,19 @@ visible:
   data on the map until a moderator approves the proposal, at which point its fields are
   copied onto the live row and the proposal is removed. Reject just deletes the proposal;
   the live spot is untouched either way.
+- **Reporting incorrect information** (the popup's "Report incorrect info" link) inserts
+  a free-text message into `reports`, tied to that spot — not a structured edit proposal,
+  just a note for a moderator to read. It's never shown publicly. A moderator can dismiss
+  it, or use it as a prompt to make the actual correction themselves via "Edit this spot".
 - **Moderators** (accounts listed in the `moderators` table — see Setup step 7) get a
-  "Pending review" button in the header showing a live count. It opens a panel listing
-  every pending spot and edit with Approve/Reject buttons. Nobody can add themselves as a
-  moderator through the app — that table has no public INSERT policy, so it's SQL-Editor-only
-  by design.
-- Only `spots` and `pending_edits` are moderated. There's still no accuracy review beyond
-  that — a moderator can approve something wrong, and there's no edit history/audit log.
+  "Pending review" button in the header showing a live count (pending spots + pending
+  edits + open reports combined). It opens a panel listing all three, each with its own
+  actions (Approve/Reject for spots and edits, Dismiss/Edit this spot for reports).
+  Nobody can add themselves as a moderator through the app — that table has no public
+  INSERT policy, so it's SQL-Editor-only by design.
+- Only `spots`, `pending_edits`, and `reports` are moderated this way. There's still no
+  accuracy review beyond that — a moderator can approve something wrong, and there's no
+  edit history/audit log.
 
 ## Before it's actually public
 

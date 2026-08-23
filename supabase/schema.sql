@@ -47,6 +47,7 @@ create table if not exists public.spots (
   types text[] not null default '{}',
   notes text,
   photo text,
+  address text,
   community boolean not null default false,
   edited boolean not null default false,
   status text not null default 'approved' check (status in ('pending', 'approved')),
@@ -64,6 +65,7 @@ alter table public.spots add column if not exists country text not null default 
 alter table public.spots add column if not exists status text not null default 'approved';
 alter table public.spots drop constraint if exists spots_status_check;
 alter table public.spots add constraint spots_status_check check (status in ('pending', 'approved'));
+alter table public.spots add column if not exists address text;
 
 alter table public.spots enable row level security;
 
@@ -116,8 +118,12 @@ create table if not exists public.pending_edits (
   types text[] not null default '{}',
   notes text,
   photo text,
+  address text,
   submitted_at timestamptz not null default now()
 );
+
+-- If this table already existed from before the address field was added:
+alter table public.pending_edits add column if not exists address text;
 
 alter table public.pending_edits enable row level security;
 
@@ -134,6 +140,37 @@ create policy "moderators can view pending edits"
 drop policy if exists "moderators can remove pending edits" on public.pending_edits;
 create policy "moderators can remove pending edits"
   on public.pending_edits for delete
+  using (auth.uid() in (select user_id from public.moderators));
+
+-- ---------------------------------------------------------------------------
+-- reports: free-text "something's wrong with this spot" flags from anyone,
+-- signed in or not (same as adding/editing a spot). Deliberately not a
+-- structured edit proposal like pending_edits -- just a message a moderator
+-- reads and acts on manually (usually by using the existing "Edit this spot"
+-- flow themselves, then dismissing the report).
+-- ---------------------------------------------------------------------------
+create table if not exists public.reports (
+  id uuid primary key default gen_random_uuid(),
+  spot_id text not null references public.spots(id) on delete cascade,
+  message text not null,
+  created_at timestamptz not null default now()
+);
+
+alter table public.reports enable row level security;
+
+drop policy if exists "anyone can submit a report" on public.reports;
+create policy "anyone can submit a report"
+  on public.reports for insert
+  with check (true);
+
+drop policy if exists "moderators can view reports" on public.reports;
+create policy "moderators can view reports"
+  on public.reports for select
+  using (auth.uid() in (select user_id from public.moderators));
+
+drop policy if exists "moderators can dismiss reports" on public.reports;
+create policy "moderators can dismiss reports"
+  on public.reports for delete
   using (auth.uid() in (select user_id from public.moderators));
 
 -- ---------------------------------------------------------------------------

@@ -217,6 +217,10 @@
       </div>
     </div>
     <div class="field">
+      <label>Street address (optional)</label>
+      <input id="fAddress" type="text" placeholder="e.g. 12 Chalk St, Marrickville NSW 2204">
+    </div>
+    <div class="field">
       <label>Type (select all that apply)</label>
       <div class="type-filter" style="margin-top:2px;padding-top:0;border-top:none;">
         <label class="type-check">
@@ -287,6 +291,10 @@
       </div>
     </div>
     <div class="field">
+      <label>Street address (optional)</label>
+      <input id="eAddress" type="text" placeholder="e.g. 12 Chalk St, Marrickville NSW 2204">
+    </div>
+    <div class="field">
       <label>Type (select all that apply)</label>
       <div class="type-filter" style="margin-top:2px;padding-top:0;border-top:none;">
         <label class="type-check">
@@ -314,6 +322,21 @@
       <button class="btn-submit" id="eSaveBtn">Save changes</button>
     </div>
     <button id="eRevertBtn" style="margin-top:10px;width:100%;background:transparent;border:1px dashed var(--border);color:var(--text-dim);padding:8px;border-radius:7px;font-family:'Space Mono',monospace;font-size:11.5px;cursor:pointer;display:none;">Revert to original data</button>
+  </div>
+</div>
+
+<div class="modal-backdrop hidden" id="reportModalBackdrop">
+  <div class="modal">
+    <h2>Report incorrect information</h2>
+    <div class="sub">Not for full corrections — if you know the right details, use "Edit this spot" instead. This just flags something for a moderator to look into: <span id="reportSpotName"></span></div>
+    <div class="field">
+      <label>What's wrong?</label>
+      <textarea id="rMessage" placeholder="e.g. This gym closed down in 2025 / wrong suburb / name is misspelled"></textarea>
+    </div>
+    <div class="modal-actions">
+      <button class="btn-cancel" id="rCancelBtn">Cancel</button>
+      <button class="btn-submit" id="rSubmitBtn" disabled>Send report</button>
+    </div>
   </div>
 </div>
 
@@ -378,10 +401,10 @@
     <div class="legal-note">This is a plain-language starting draft, not legal advice. Have it reviewed properly before relying on it — especially once accounts, ads, or payments are added.</div>
 
     <h3>What we collect</h3>
-    <p>Two kinds of data: (1) Anything voluntarily entered into the "Add a spot" or "Edit this spot" forms — gym/crag details such as name, location, climbing type, notes, and an optional photo link. (2) If you sign in, your email address (and, for Google sign-in, whatever basic profile info Google shares) plus which spots you've privately marked as climbed or bookmarked.</p>
+    <p>Three kinds of data: (1) Anything voluntarily entered into the "Add a spot" or "Edit this spot" forms — gym/crag details such as name, location, address, climbing type, notes, and an optional photo link. (2) Anything entered into a "Report incorrect information" form — just a free-text message about a specific spot. (3) If you sign in, your email address (and, for Google sign-in, whatever basic profile info Google shares) plus which spots you've privately marked as climbed or bookmarked.</p>
 
     <h3>How submitted information is used</h3>
-    <p>Anything submitted through the "Add a spot" / "Edit this spot" forms is displayed publicly to all visitors — that's the whole point of a shared map. Don't include personal information in a submission that you don't want shown publicly. Climbed/bookmarked marks are private and tied to your account — only you can see them.</p>
+    <p>Anything submitted through the "Add a spot" / "Edit this spot" forms is displayed publicly to all visitors once a moderator approves it — that's the whole point of a shared map. Don't include personal information in a submission that you don't want shown publicly. "Report incorrect information" messages are different — they're only ever visible to moderators, reviewed to decide whether the spot needs correcting, and not displayed on the public map. Climbed/bookmarked marks are private and tied to your account — only you can see them.</p>
 
     <h3>Third parties</h3>
     <p>Map tiles are served by OpenStreetMap and CARTO. Loading the map means your browser requests tiles from their servers directly; see their own privacy policies for how they handle that. Accounts and data storage are handled by Supabase; Google sign-in is handled by Google. See their respective privacy policies for how they handle your data.</p>

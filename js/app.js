@@ -38,6 +38,7 @@
   let isModerator = false;
   let pendingSpots = [];  // new-spot submissions awaiting approval (moderator-only)
   let pendingEdits = [];  // proposed edits to live spots awaiting approval (moderator-only)
+  let pendingReports = []; // "report incorrect info" messages awaiting review (moderator-only)
 
   let activeStates = new Set(['ALL']);
   let activeTypes = new Set(['indoor-bouldering','top-rope']);
@@ -54,6 +55,7 @@
   let placingPin = null; // {lat,lng} while add-modal open
   let currentEditId = null;
   let currentEditPin = null; // {lat,lng} while edit-modal open
+  let currentReportId = null; // spot id being reported while report-modal open
   let isPlacing = false;
   let placingMode = null; // 'add' | 'edit'
 
@@ -298,6 +300,13 @@
     return d.innerHTML;
   }
 
+  // Deliberately just destination + lat/lng, no origin -- Google Maps fills
+  // the origin in as the visitor's current location. Works off coordinates
+  // alone so it doesn't depend on a spot having a verified street address.
+  function directionsUrl(g){
+    return `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(g.lat+','+g.lng)}`;
+  }
+
   function popupHtml(g){
     const typeLabel = g.types.map(t=>TYPE_LABELS[t]).join(' · ');
     const climbed = climbedIds.has(g.id);
@@ -305,12 +314,17 @@
     return `${g.photo?`<img class="popup-photo" src="${escapeHtml(g.photo)}" alt="${escapeHtml(g.name)}" onerror="this.style.display='none'">`:''}
        <div class="popup-name">${escapeHtml(g.name)}</div>
        <div class="popup-meta">${escapeHtml(g.suburb)}, ${g.state} · ${typeLabel}${g.community?' · community-added':''}${g.edited?' · edited':''}</div>
+       ${g.address?`<div class="popup-address">${escapeHtml(g.address)}</div>`:''}
        ${g.notes?`<div style="font-size:12px;color:var(--text-dim)">${escapeHtml(g.notes)}</div>`:''}
        <div class="popup-actions">
          <button class="mark-btn climbed-btn ${climbed?'active':''}" onclick="window.__toggleMark('${g.id}','climbed')">✓ Climbed</button>
          <button class="mark-btn bookmark-btn ${bookmarked?'active':''}" onclick="window.__toggleMark('${g.id}','bookmarked')">★ Save</button>
        </div>
-       <button class="popup-edit-btn" onclick="window.__editSpot('${g.id}')">Edit this spot</button>`;
+       <div class="popup-links">
+         <a class="popup-directions-btn" href="${directionsUrl(g)}" target="_blank" rel="noopener noreferrer">📍 Directions</a>
+         <button class="popup-edit-btn" onclick="window.__editSpot('${g.id}')">Edit this spot</button>
+       </div>
+       <button class="popup-report-btn" onclick="window.__reportSpot('${g.id}')">⚑ Report incorrect info</button>`;
   }
 
   function render(){
@@ -590,7 +604,7 @@
     submitBtn.disabled = true;
     pinStatus.textContent = 'No pin dropped yet — click "Drop pin" then tap the map.';
     pinStatus.classList.remove('set');
-    ['fName','fSuburb','fNotes','fPhoto'].forEach(id=>document.getElementById(id).value='');
+    ['fName','fSuburb','fAddress','fNotes','fPhoto'].forEach(id=>document.getElementById(id).value='');
     ['fTypeIndoor','fTypeTopRope'].forEach(id=>document.getElementById(id).checked=false);
     document.getElementById('fCountry').value = 'AU';
     populateStateSelect('fState', 'AU');
@@ -667,6 +681,7 @@
       state: document.getElementById('fState').value,
       country: document.getElementById('fCountry').value,
       types: selectedTypes(),
+      address: document.getElementById('fAddress').value.trim() || null,
       notes: document.getElementById('fNotes').value.trim() || null,
       photo: document.getElementById('fPhoto').value.trim() || null,
       lat: placingPin.lat,
@@ -702,6 +717,7 @@
     document.getElementById('eCountry').value = g.country;
     populateStateSelect('eState', g.country);
     document.getElementById('eState').value = g.state;
+    document.getElementById('eAddress').value = g.address || '';
     document.getElementById('eNotes').value = g.notes || '';
     document.getElementById('ePhoto').value = g.photo || '';
     document.getElementById('eTypeIndoor').checked = g.types.includes('indoor-bouldering');
@@ -755,6 +771,7 @@
       state: document.getElementById('eState').value,
       country: document.getElementById('eCountry').value,
       types: selectedEditTypes(),
+      address: document.getElementById('eAddress').value.trim() || null,
       notes: document.getElementById('eNotes').value.trim() || null,
       photo: document.getElementById('ePhoto').value.trim() || null,
       lat: currentEditPin.lat,
@@ -786,7 +803,7 @@
     const proposal = {
       spot_id: id,
       name: original.name, suburb: original.suburb, state: original.state, country: original.country,
-      types: original.types, notes: original.notes || null, photo: original.photo || null,
+      types: original.types, address: original.address || null, notes: original.notes || null, photo: original.photo || null,
       lat: original.lat, lng: original.lng
     };
     try{
@@ -797,6 +814,54 @@
     }catch(err){
       showToast('Could not submit revert — try again');
       console.error(err);
+    }
+  });
+
+  // --- report incorrect info flow ---
+  const reportModalBackdrop = document.getElementById('reportModalBackdrop');
+  const rMessage = document.getElementById('rMessage');
+  const rSubmitBtn = document.getElementById('rSubmitBtn');
+
+  function openReportModal(id){
+    const g = spots.find(x=>x.id===id);
+    if(!g) return;
+    currentReportId = id;
+    document.getElementById('reportSpotName').textContent = g.name;
+    rMessage.value = '';
+    rSubmitBtn.disabled = true;
+    reportModalBackdrop.classList.remove('hidden');
+  }
+  window.__reportSpot = openReportModal;
+
+  function closeReportModal(){
+    reportModalBackdrop.classList.add('hidden');
+    currentReportId = null;
+  }
+  document.getElementById('rCancelBtn').addEventListener('click', closeReportModal);
+
+  rMessage.addEventListener('input', ()=>{
+    rSubmitBtn.disabled = !rMessage.value.trim();
+  });
+
+  rSubmitBtn.addEventListener('click', async ()=>{
+    if(!currentReportId || !rMessage.value.trim()) return;
+    if(!window.sb){ showToast('Supabase is not configured — see README.md'); return; }
+    rSubmitBtn.disabled = true;
+    rSubmitBtn.textContent = 'Sending…';
+    try{
+      const {error} = await window.sb.from('reports').insert({
+        spot_id: currentReportId,
+        message: rMessage.value.trim()
+      });
+      if(error) throw error;
+      showToast('Report sent — thanks for the heads up.');
+      rSubmitBtn.textContent = 'Send report';
+      closeReportModal();
+    }catch(err){
+      showToast('Could not send report — try again');
+      console.error(err);
+      rSubmitBtn.textContent = 'Send report';
+      rSubmitBtn.disabled = false;
     }
   });
 
@@ -833,16 +898,20 @@
   async function loadPending(){
     pendingSpots = [];
     pendingEdits = [];
+    pendingReports = [];
     if(!isModerator || !window.sb) return;
     try{
-      const [{data: pSpots, error: e1}, {data: pEdits, error: e2}] = await Promise.all([
+      const [{data: pSpots, error: e1}, {data: pEdits, error: e2}, {data: pReports, error: e3}] = await Promise.all([
         window.sb.from('spots').select('*').eq('status','pending'),
-        window.sb.from('pending_edits').select('*')
+        window.sb.from('pending_edits').select('*'),
+        window.sb.from('reports').select('*')
       ]);
       if(e1) throw e1;
       if(e2) throw e2;
+      if(e3) throw e3;
       pendingSpots = pSpots || [];
       pendingEdits = pEdits || [];
+      pendingReports = pReports || [];
     }catch(err){
       console.error('Failed to load pending items', err);
     }
@@ -874,7 +943,7 @@
       pendingReviewBtn.style.display = 'none';
       return;
     }
-    const count = pendingSpots.length + pendingEdits.length;
+    const count = pendingSpots.length + pendingEdits.length + pendingReports.length;
     pendingReviewBtn.style.display = '';
     pendingReviewBtn.textContent = count ? `Pending review (${count})` : 'Pending review';
   }
@@ -887,6 +956,7 @@
         <div class="pending-kind">New spot</div>
         <div class="popup-name">${escapeHtml(g.name)}</div>
         <div class="popup-meta">${escapeHtml(g.suburb)}, ${g.state} (${g.country}) · ${g.types.map(t=>TYPE_LABELS[t]||t).join(' · ')}</div>
+        ${g.address?`<div class="pending-notes">${escapeHtml(g.address)}</div>`:''}
         ${g.notes?`<div class="pending-notes">${escapeHtml(g.notes)}</div>`:''}
         ${g.photo?`<div class="pending-notes">Photo: <a href="${escapeHtml(g.photo)}" target="_blank" rel="noopener noreferrer">${escapeHtml(g.photo)}</a></div>`:''}
         <div class="pending-actions">
@@ -901,11 +971,23 @@
         <div class="pending-kind">Edit to ${escapeHtml(target?target.name:pe.spot_id)}</div>
         <div class="popup-name">${escapeHtml(pe.name)}</div>
         <div class="popup-meta">${escapeHtml(pe.suburb)}, ${pe.state} (${pe.country}) · ${pe.types.map(t=>TYPE_LABELS[t]||t).join(' · ')}</div>
+        ${pe.address?`<div class="pending-notes">${escapeHtml(pe.address)}</div>`:''}
         ${pe.notes?`<div class="pending-notes">${escapeHtml(pe.notes)}</div>`:''}
         ${pe.photo?`<div class="pending-notes">Photo: <a href="${escapeHtml(pe.photo)}" target="_blank" rel="noopener noreferrer">${escapeHtml(pe.photo)}</a></div>`:''}
         <div class="pending-actions">
           <button class="btn-cancel pending-reject" data-kind="edit" data-id="${pe.id}">Reject</button>
           <button class="btn-submit pending-approve" data-kind="edit" data-id="${pe.id}">Approve</button>
+        </div>
+      </div>`);
+    });
+    pendingReports.forEach(r=>{
+      const target = spots.find(s=>s.id===r.spot_id) || (window.SEED_GYMS||[]).find(s=>s.id===r.spot_id);
+      cards.push(`<div class="pending-item">
+        <div class="pending-kind">Report on ${escapeHtml(target?target.name:r.spot_id)}</div>
+        <div class="pending-notes">${escapeHtml(r.message)}</div>
+        <div class="pending-actions">
+          <button class="btn-cancel pending-dismiss" data-kind="report" data-id="${r.id}">Dismiss</button>
+          <button class="btn-submit pending-edit-spot" data-kind="report" data-spot-id="${r.spot_id}">Edit this spot</button>
         </div>
       </div>`);
     });
@@ -956,7 +1038,7 @@
     try{
       const {error: e1} = await window.sb.from('spots').update({
         name: pe.name, suburb: pe.suburb, state: pe.state, country: pe.country,
-        types: pe.types, notes: pe.notes, photo: pe.photo, lat: pe.lat, lng: pe.lng,
+        types: pe.types, address: pe.address, notes: pe.notes, photo: pe.photo, lat: pe.lat, lng: pe.lng,
         edited: true, updated_at: new Date().toISOString()
       }).eq('id', pe.spot_id);
       if(e1) throw e1;
@@ -982,6 +1064,18 @@
     await refreshAfterModeration();
   }
 
+  async function dismissReport(id){
+    try{
+      const {error} = await window.sb.from('reports').delete().eq('id', id);
+      if(error) throw error;
+      showToast('Report dismissed');
+    }catch(err){
+      showToast('Could not dismiss — try again');
+      console.error(err);
+    }
+    await refreshAfterModeration();
+  }
+
   document.getElementById('pendingList').addEventListener('click', (e)=>{
     const btn = e.target.closest('button');
     if(!btn) return;
@@ -993,6 +1087,12 @@
     } else if(btn.classList.contains('pending-reject')){
       btn.closest('.pending-actions').querySelectorAll('button').forEach(b=>b.disabled=true);
       if(kind === 'spot') rejectSpot(id); else rejectEdit(id);
+    } else if(btn.classList.contains('pending-dismiss')){
+      btn.closest('.pending-actions').querySelectorAll('button').forEach(b=>b.disabled=true);
+      dismissReport(id);
+    } else if(btn.classList.contains('pending-edit-spot')){
+      pendingModalBackdrop.classList.add('hidden');
+      openEditModal(btn.dataset.spotId);
     }
   });
 
