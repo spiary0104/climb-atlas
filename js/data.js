@@ -246,5 +246,11 @@
     {name:"VITAL Climbing Gym – LES", suburb:"Manhattan", state:"NY", country:"US", lat:40.7180, lng:-73.9860, types:[IB], notes:"Lower East Side. Sourced from Mountain Project's gym directory — city-level position, not an exact address."},
     {name:"VITAL Manhattan – Upper East", suburb:"Manhattan", state:"NY", country:"US", lat:40.7735, lng:-73.9565, types:[IB,TR], notes:"Sourced from Mountain Project's gym directory — city-level position, not an exact address."},
     {name:"Niagara Climbing Center", suburb:"North Tonawanda", state:"NY", country:"US", lat:43.0387, lng:-78.8642, types:[IB,TR], notes:"Sourced from Mountain Project's gym directory — city-level position, not an exact address."},
-    {name:"Refuge Climbing & Fitness", suburb:"Las Vegas", state:"NV", country:"US", lat:36.1055, lng:-115.1919, types:[IB], notes:"Unverified this pass — flag if the type mix is off."}
+    {name:"Refuge Climbing & Fitness", suburb:"Las Vegas", state:"NV", country:"US", lat:36.1055, lng:-115.1919, types:[IB], notes:"Unverified this pass — flag if the type mix is off."},
+    {name:"BaseCamp at CommRow", suburb:"Reno", state:"NV", country:"US", lat:39.5296, lng:-119.8138, types:[IB,TR], notes:"Sourced from Mountain Project's gym directory — city-level position, not an exact address."},
+    {name:"Mesa Rim Climbing & Fitness", suburb:"Reno", state:"NV", country:"US", lat:39.5150, lng:-119.7950, types:[IB,TR], notes:"Sourced from Mountain Project's gym directory — city-level position, not an exact address."},
+    {name:"Nevada Climbing Center", suburb:"Las Vegas", state:"NV", country:"US", lat:36.0850, lng:-115.1050, types:[IB,TR], notes:"Sourced from Mountain Project's gym directory — city-level position, not an exact address."},
+    {name:"North Peak", suburb:"Reno", state:"NV", country:"US", lat:39.5450, lng:-119.7900, types:[IB,TR], notes:"Sourced from Mountain Project's gym directory — city-level position, not an exact address."},
+    {name:"Red Rock Climbing Center", suburb:"Las Vegas", state:"NV", country:"US", lat:36.1450, lng:-115.2600, types:[IB,TR], notes:"Sourced from Mountain Project's gym directory — city-level position, not an exact address."},
+    {name:"The Block", suburb:"Reno", state:"NV", country:"US", lat:39.5350, lng:-119.8000, types:[IB], notes:"Sourced from Mountain Project's gym directory — city-level position, not an exact address."}
   ].map((g,i)=>({...g, id:'seed-'+i, community:false, country: g.country || 'AU'}));
