@@ -465,6 +465,71 @@ placeholder work just to fill this section)_
   spot lands in pending" check needs a real Supabase project with the
   schema actually applied, which only the user can do.
 
+### AU address-verification pilot (74 spots)
+- Branch: `fix/globe-render-perf-remove-outdoor-type` (same branch/worktree
+  as every task above — continued rather than starting fresh)
+- Status: in progress (AU done and verified live; US/JP/CA/NZ/CN still
+  have no `address` data — awaiting the user's decision on whether/how to
+  continue, per the pilot they explicitly chose)
+- What: after shipping the `address` field/directions-button/report-info
+  feature (previous entry), the user was asked how to scope actually
+  populating real addresses for the 500+ existing spots, given "double-
+  checked to make sure it's correct" is a genuine per-spot verification
+  effort. They chose: pilot one country (AU) first, review the result,
+  then decide on the rest.
+- **Method**: for every one of the 77 AU spots, searched for that specific
+  gym by name + suburb, cross-checked the address against the gym's own
+  website where possible (Yelp/Whereis/Localsearch/Google Maps snippets
+  used to corroborate when no official site turned up first). No address
+  was guessed — one spot (Southern Boulder, Hope Forest, SA) has no
+  street number in any source and was deliberately left without an
+  `address` rather than invented.
+- **4 real data-quality problems found and fixed along the way** (not
+  just missing addresses — genuinely wrong/stale data, exactly the kind
+  of thing "double-check to make sure it's correct" was asking for):
+  1. **Boulder Project** (Prahran, VIC) — multiple sources confirm it
+     permanently closed 30 March 2024. Removed from `js/data.js` rather
+     than given a fake current address.
+  2. **BOUNCE Hendra** / **Urban Xtreme** (both listed at Hendra, QLD) —
+     confirmed via bounceinc.com and urban-xtreme.com.au that BOUNCE
+     Hendra *is* Urban Xtreme's current rebrand, same physical venue, not
+     two gyms (our own data already had a "Formerly Urban Xtreme" note on
+     the BOUNCE entry that contradicted the separate Urban Xtreme entry's
+     "a different gym" note — an internal inconsistency this pass caught).
+     Removed the stale "Urban Xtreme" duplicate, kept BOUNCE Hendra.
+  3. **Rockface Northbridge** / **Rockface Balcatta** (WA) — confirmed via
+     rockface.com.au that Rockface relocated from Northbridge to Balcatta
+     ("took a break to relocate... now back in Balcatta"), not two
+     current locations. Removed the stale Northbridge entry, kept Balcatta
+     with its real address (7B Ledgar Rd).
+  4. **Urban Jungle** (WA) — data said suburb `Spearwood`; the gym's own
+     site and every current listing puts it in `Jandakot` (83 Solomon Rd)
+     instead. Corrected the suburb and approximate lat/lng (exact
+     geocoding of the new address wasn't done — see below).
+  - Net effect: AU went from 77 → **74 spots**. Total dataset 513 → 510.
+- **Also fixed in passing**: a pre-existing spelling inconsistency —
+  "Dymonite North Wollongong" corrected to "Dynomite North Wollongong"
+  to match the brand's own spelling (dynomite.net.au), consistent with
+  the already-correctly-spelled "Dynomite Albion Park Rail" entry right
+  next to it.
+- **What "verified" means here, precisely**: every address was found via
+  general web search/business listings, not by opening a mapping API to
+  geocode it — so while the *address text* is real and cross-checked,
+  the existing `lat`/`lng` pin positions were generally left as-is
+  (already reasonably suburb-accurate from earlier passes) rather than
+  recomputed from the new address, except for Urban Jungle where the
+  suburb itself was wrong. If pixel-accurate pin placement ever matters,
+  that would need an actual geocoding step, not just an address string.
+- **Verified live** (served copy): 510 total spots, 74 AU, 73 with an
+  `address` (Southern Boulder is the one exception), zero duplicate
+  name+suburb+state combos, balanced braces/brackets, popup correctly
+  displays a real address (checked against 9 Degrees Alexandria). No new
+  console errors.
+- **Not yet done**: US (352), JP (32), CA (15), NZ (9), CN (28) — 436
+  spots — still have no `address` field populated. Waiting on the user
+  to say how to continue (exhaustive / another pilot / leave to the
+  community edit flow) before starting any of that.
+
 ## Blocked
 
 _(none)_

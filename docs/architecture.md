@@ -71,7 +71,7 @@ string always means the same thing while reading this codebase.
 
 ## Seed data sourcing
 
-`js/data.js` currently has 513 spots (77 AU, 352 US, 32 JP, 15 CA, 9 NZ,
+`js/data.js` currently has 510 spots (74 AU, 352 US, 32 JP, 15 CA, 9 NZ,
 28 CN), all indoor gyms (bouldering and/or top rope — see "Known gaps"
 below on why outdoor areas were removed). It was built up in layers, not
 from one source:
@@ -153,6 +153,27 @@ from one source:
   third-party code from a site this project doesn't control, so treat it
   as a supply-chain risk and keep pulling data by reading the page
   directly (as done here), not by running anything it offers to install.
+- **The `address` field (added alongside the directions-button/report-
+  spot features) is only populated for AU so far — a deliberate pilot,
+  not a partial oversight.** Given the scale of verifying 500+ real street
+  addresses, the user chose to pilot one country (AU, 77 spots at the
+  time) before deciding whether/how to continue to the rest. Every AU
+  address was checked individually against that gym's own website or
+  multiple agreeing business-listing sources (not guessed), which also
+  surfaced 4 real data-quality problems the address-only framing wouldn't
+  have caught on its own: **Boulder Project** (Prahran, VIC) had
+  permanently closed (removed); **BOUNCE Hendra** and **Urban Xtreme**
+  (also listed at Hendra) turned out to be the same physical venue under
+  its old and new branding, not two gyms (removed the stale "Urban
+  Xtreme" duplicate); **Rockface Northbridge** and **Rockface Balcatta**
+  were likewise the same gym after a relocation, not two locations
+  (removed the stale Northbridge one); and **Urban Jungle**'s suburb was
+  wrong (`Spearwood` → corrected to `Jandakot`, its actual current
+  location). AU went from 77 to 74 spots as a result — see
+  `docs/tasks.md` for the full per-gym source list. One AU spot (Southern
+  Boulder, Hope Forest) has no `address` at all: no source gave a street
+  number, only "at a winery near Hope Forest/McLaren Vale," so it was
+  left blank rather than invented.
 - **Sidebar chip growth has a real height ceiling — mitigated, not solved,
   by an accordion.** `.sidebar-controls` (`css/style.css`) — the search
   box plus every country's chip row plus type/marks filters — sits above
