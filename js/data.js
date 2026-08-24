@@ -136,7 +136,7 @@
     {name:"The Spot Thornton", suburb:"Thornton", state:"CO", country:"US", lat:39.8720, lng:-104.9650, address:"9499 Washington St C, Thornton, CO 80229", types:[IB]},
     {name:"Übergrippen Indoor Climbing Crag", suburb:"Castle Rock", state:"CO", country:"US", lat:39.3722, lng:-104.8561, address:"3690 Bilberry St, Castle Rock, CO 80109", types:[IB]},
     {name:"Whetstone", suburb:"Fort Collins", state:"CO", country:"US", lat:40.5800, lng:-105.0900, address:"220 Smokey St, Fort Collins, CO 80525", types:[IB]},
-    {name:"Bouldering Project Somerville", suburb:"Somerville", state:"MA", country:"US", lat:42.3876, lng:-71.0995, types:[IB,TR], notes:"Formerly Brooklyn Boulders Somerville, rebranded to Bouldering Project."},
+    {name:"Bouldering Project Somerville", suburb:"Somerville", state:"MA", country:"US", lat:42.3876, lng:-71.0995, address:"12A Tyler St, Somerville, MA 02143", types:[IB,TR], notes:"Formerly Brooklyn Boulders Somerville, rebranded to Bouldering Project."},
     {name:"Brooklyn Boulders Chicago", suburb:"West Loop, Chicago", state:"IL", country:"US", lat:41.8819, lng:-87.6648, address:"100 S Morgan St, Chicago, IL 60607", types:[IB,TR]},
     {name:"Boneyard Boulders", suburb:"Champaign", state:"IL", country:"US", lat:40.1164, lng:-88.2434, address:"119 E University Ave, Champaign, IL 61820", types:[IB]},
     {name:"Climb On", suburb:"Homewood", state:"IL", country:"US", lat:41.5586, lng:-87.6614, address:"18120 Harwood Ave, Homewood, IL 60430", types:[IB]},
