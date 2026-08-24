@@ -106,11 +106,14 @@
   //
   // DOM markers are inherently a frame or two behind MapLibre's own WebGL
   // render loop while the camera is moving (a documented MapLibre/Mapbox GL
-  // limitation, not something fixable from application code) — with ~100
-  // markers that shows up as visible lag/jitter during a drag. We hide them
-  // for the duration of the gesture (movestart→moveend) rather than let them
-  // visibly trail the map, and skip repainting anything that's already
-  // correctly on screen so the moveend repaint itself stays cheap.
+  // limitation, not something fixable from application code) — an earlier
+  // version of this hid every marker for the gesture's duration to avoid
+  // that lag being visible, but on the globe projection that gesture is
+  // also how you spin the globe, so markers vanishing mid-drag read as
+  // broken rather than intentional. Per explicit user preference, markers
+  // now stay visible (and briefly lag the camera) during a drag/rotate
+  // instead of disappearing. We still skip repainting anything that's
+  // already correctly on screen so the moveend repaint itself stays cheap.
   function rebuildClusterIndex(visibleSpots){
     visibleIndex = {};
     visibleSpots.forEach(g=>{ visibleIndex[g.id] = g; });
@@ -235,8 +238,6 @@
     });
   }
   map.on('moveend', paintMarkers);
-  map.on('movestart', ()=> map.getContainer().classList.add('is-moving'));
-  map.on('moveend', ()=> map.getContainer().classList.remove('is-moving'));
 
   function spotMarkerClasses(g){
     const cls = ['hold-marker'];
@@ -1119,9 +1120,8 @@
     }
   }
 
-  // --- info modals: about / privacy / terms ---
+  // --- info modals: privacy / terms (About is now a standalone page, about.html) ---
   const infoModals = {
-    openAbout: 'aboutModalBackdrop',
     openPrivacy: 'privacyModalBackdrop',
     openTerms: 'termsModalBackdrop'
   };
@@ -1135,7 +1135,7 @@
       e.target.closest('.modal-backdrop').classList.add('hidden');
     });
   });
-  ['aboutModalBackdrop','privacyModalBackdrop','termsModalBackdrop','pendingModalBackdrop'].forEach(id=>{
+  ['privacyModalBackdrop','termsModalBackdrop','pendingModalBackdrop'].forEach(id=>{
     document.getElementById(id).addEventListener('click', (e)=>{
       if(e.target.id === id) e.target.classList.add('hidden');
     });

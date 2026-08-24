@@ -28,6 +28,8 @@
     </div>
     <div class="header-right">
       <div class="count-badge"><b id="countNum">0</b>&nbsp;spots shown</div>
+      <a class="auth-btn" href="about.html">About</a>
+      <button class="auth-btn add-btn" id="addBtn">+ Add a location</button>
       <button class="auth-btn" id="pendingReviewBtn" style="display:none;">Pending review</button>
       <div class="auth-widget" id="authWidget"><button class="auth-btn" id="signInBtn">Sign in</button></div>
     </div>
@@ -149,10 +151,7 @@
       </div>
       <div class="gym-list" id="gymList"></div>
       <div class="sidebar-footer">
-        <button class="add-btn" id="addBtn">+ Add a spot</button>
         <div class="footer-links">
-          <button id="openAbout">About</button>
-          <span style="color:var(--border)">·</span>
           <button id="openPrivacy">Privacy</button>
           <span style="color:var(--border)">·</span>
           <button id="openTerms">Terms</button>
@@ -367,37 +366,11 @@
   </div>
 </div>
 
-<div class="modal-backdrop hidden" id="aboutModalBackdrop">
-  <div class="modal info-modal">
-    <h2>About Boulder Atlas</h2>
-    <div class="updated">A community-sourced map of Australian &amp; American bouldering &amp; climbing spots</div>
-
-    <p>Boulder Atlas is a free, crowd-built map of places to climb across Australia, the United States, Japan, Canada, New Zealand, and China — indoor bouldering gyms and gyms with top-rope and lead walls. It's built in the spirit of sites like Track Atlas: instead of one team trying to track every gym forever, the map is kept current by the people who actually climb at these places.</p>
-
-    <h3>How the map works</h3>
-    <p>Each pin is colour-coded by what's on offer there — indoor bouldering or top rope. A pin split into wedges means a spot offers more than one. Use the checkboxes to filter by country/state, by type, or by your own climbed/bookmarked marks.</p>
-
-    <h3>Where the data comes from</h3>
-    <p>The initial set of spots was researched and cross-checked gym by gym — names, suburbs, and what kind of climbing is actually on offer — rather than pulled from one source and trusted blindly. It's still not exhaustive, and gyms open, close, move, and rebrand. From here, the map grows and gets corrected by the community.</p>
-
-    <h3>Adding &amp; fixing spots</h3>
-    <ul>
-      <li><b>Add a spot</b> — drop a pin for any gym that's missing.</li>
-      <li><b>Edit this spot</b> — on any pin, fix the name, location, climbing type, or add a photo link.</li>
-    </ul>
-    <p>New spots and edits go into a review queue — a moderator approves or rejects them before they're visible to everyone else. An edited spot keeps showing its current info on the map until that edit is approved, so nothing unreviewed goes live in the meantime.</p>
-
-    <h3>Tracking your own climbing</h3>
-    <p>Sign in (Google or an email magic link) to mark spots as <b>climbed</b> or <b>bookmarked</b>. These marks are private to your account — nobody else can see what you've climbed or saved.</p>
-
-    <div class="close-row"><button class="btn-submit info-close" style="padding:8px 18px;">Close</button></div>
-  </div>
-</div>
 
 <div class="modal-backdrop hidden" id="privacyModalBackdrop">
   <div class="modal info-modal">
     <h2>Privacy Policy</h2>
-    <div class="updated">Last updated: <span class="placeholder">[date]</span></div>
+    <div class="updated">Last updated: 24 August 2026</div>
     <div class="legal-note">This is a plain-language starting draft, not legal advice. Have it reviewed properly before relying on it — especially once accounts, ads, or payments are added.</div>
 
     <h3>What we collect</h3>
@@ -422,7 +395,7 @@
 <div class="modal-backdrop hidden" id="termsModalBackdrop">
   <div class="modal info-modal">
     <h2>Terms of Service</h2>
-    <div class="updated">Last updated: <span class="placeholder">[date]</span></div>
+    <div class="updated">Last updated: 24 August 2026</div>
     <div class="legal-note">This is a plain-language starting draft, not legal advice. Have it reviewed properly before relying on it — especially once accounts, ads, or payments are added.</div>
 
     <h3>What this is</h3>
@@ -445,7 +418,7 @@
     <p>These terms may change as the site grows. Continued use after a change means you accept the updated terms.</p>
 
     <h3>Contact &amp; jurisdiction</h3>
-    <p>Questions: <span class="placeholder">[your contact email]</span>. These terms are governed by the laws of <span class="placeholder">[your state]</span>, Australia.</p>
+    <p>Questions: <span class="placeholder">[your contact email]</span>. These terms are governed by the laws of New South Wales, Australia.</p>
 
     <div class="close-row"><button class="btn-submit info-close" style="padding:8px 18px;">Close</button></div>
   </div>

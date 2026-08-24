@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Boulder Atlas</title>
+<meta name="description" content="What Boulder Atlas is, how the map works, and where the data comes from.">
+<meta name="theme-color" content="#211f1b">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23211f1b'/%3E%3Cpath d='M16 5c5 0 8 4 8 8.5S20 26 16 27c-4-1-8-9.5-8-13.5S11 5 16 5z' fill='%23b8834a'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  /* index.html's stylesheet assumes the single-screen app shell (fixed
+     height, overflow:hidden) — this is a normal scrolling page, so those
+     two rules are overridden here rather than touched globally. */
+  body{overflow:auto;height:auto;min-height:100vh;}
+  .static-page{max-width:640px;margin:0 auto;padding:32px 20px 60px;}
+  .static-page header{
+    position:static;border-bottom:none;background:none;padding:0 0 24px;
+    display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;
+  }
+  .static-page .modal.info-modal{
+    width:auto;max-width:none;max-height:none;overflow-y:visible;
+    position:static;transform:none;
+  }
+  .static-page .btn-submit{
+    border:none;border-radius:7px;cursor:pointer;
+    font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:13px;
+  }
+</style>
+</head>
+<body>
+
+<div class="static-page">
+  <header>
+    <div class="title-block">
+      <h1><a href="index.html" style="color:inherit;text-decoration:none;">Boulder<span>Atlas</span></a></h1>
+    </div>
+    <a class="auth-btn" href="index.html">&larr; Back to map</a>
+  </header>
+
+  <div class="modal info-modal">
+    <h2>About Boulder Atlas</h2>
+    <div class="updated">A community-sourced map of climbing spots across Australia, the United States, Japan, Canada, New Zealand, and China</div>
+
+    <p>Boulder Atlas is a free, crowd-built map of places to climb — indoor bouldering gyms and gyms with top-rope and lead walls. It's built in the spirit of sites like Track Atlas: instead of one team trying to track every gym forever, the map is kept current by the people who actually climb at these places.</p>
+
+    <h3>How the map works</h3>
+    <p>Each pin is colour-coded by what's on offer there — indoor bouldering or top rope. A pin split into wedges means a spot offers more than one. Use the checkboxes to filter by country/state, by type, or by your own climbed/bookmarked marks.</p>
+
+    <h3>Where the data comes from</h3>
+    <p>The initial set of spots was researched and cross-checked gym by gym — names, suburbs, addresses, and what kind of climbing is actually on offer — rather than pulled from one source and trusted blindly. It's still not exhaustive, and gyms open, close, move, and rebrand. From here, the map grows and gets corrected by the community.</p>
+
+    <h3>Adding &amp; fixing spots</h3>
+    <ul>
+      <li><b>+ Add a location</b> — drop a pin for any gym that's missing.</li>
+      <li><b>Edit this spot</b> — on any pin, fix the name, location, climbing type, or add a photo link.</li>
+      <li><b>Report incorrect info</b> — on any pin, flag something that looks wrong without editing it yourself.</li>
+    </ul>
+    <p>New spots and edits go into a review queue — a moderator approves or rejects them before they're visible to everyone else. An edited spot keeps showing its current info on the map until that edit is approved, so nothing unreviewed goes live in the meantime.</p>
+
+    <h3>Tracking your own climbing</h3>
+    <p>Sign in (Google or an email magic link) to mark spots as <b>climbed</b> or <b>bookmarked</b>. These marks are private to your account — nobody else can see what you've climbed or saved.</p>
+
+    <div class="close-row"><a class="btn-submit info-close" style="padding:8px 18px;display:inline-block;text-decoration:none;" href="index.html">Back to map</a></div>
+  </div>
+</div>
+
+</body>
+</html>

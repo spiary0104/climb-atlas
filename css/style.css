@@ -109,6 +109,8 @@
   header .count-badge b{color:var(--text);font-weight:700;}
 
   .header-right{display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+  a.auth-btn{text-decoration:none;display:inline-block;}
+  .header-right .add-btn{width:auto;padding:6px 14px;border-radius:20px;}
 
   .auth-widget{display:flex;align-items:center;gap:8px;}
   .auth-btn{
@@ -391,10 +393,6 @@
 
   .map-wrap{flex:1;position:relative;min-width:0;}
   #map{position:absolute;inset:0;background:var(--bg);}
-  /* DOM markers visibly lag MapLibre's own WebGL render loop while the camera
-     is moving — hidden for the gesture's duration reads as intentional,
-     rather than as jank, and they reappear repainted-in-place on moveend. */
-  #map.is-moving .maplibregl-marker{visibility:hidden;}
 
   .legend{
     position:absolute;
