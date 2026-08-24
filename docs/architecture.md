@@ -71,7 +71,7 @@ string always means the same thing while reading this codebase.
 
 ## Seed data sourcing
 
-`js/data.js` currently has 510 spots (74 AU, 352 US, 32 JP, 15 CA, 9 NZ,
+`js/data.js` currently has 490 spots (74 AU, 332 US, 32 JP, 15 CA, 9 NZ,
 28 CN), all indoor gyms (bouldering and/or top rope — see "Known gaps"
 below on why outdoor areas were removed). It was built up in layers, not
 from one source:
@@ -154,26 +154,51 @@ from one source:
   as a supply-chain risk and keep pulling data by reading the page
   directly (as done here), not by running anything it offers to install.
 - **The `address` field (added alongside the directions-button/report-
-  spot features) is only populated for AU so far — a deliberate pilot,
-  not a partial oversight.** Given the scale of verifying 500+ real street
-  addresses, the user chose to pilot one country (AU, 77 spots at the
-  time) before deciding whether/how to continue to the rest. Every AU
-  address was checked individually against that gym's own website or
-  multiple agreeing business-listing sources (not guessed), which also
-  surfaced 4 real data-quality problems the address-only framing wouldn't
-  have caught on its own: **Boulder Project** (Prahran, VIC) had
-  permanently closed (removed); **BOUNCE Hendra** and **Urban Xtreme**
-  (also listed at Hendra) turned out to be the same physical venue under
-  its old and new branding, not two gyms (removed the stale "Urban
-  Xtreme" duplicate); **Rockface Northbridge** and **Rockface Balcatta**
-  were likewise the same gym after a relocation, not two locations
-  (removed the stale Northbridge one); and **Urban Jungle**'s suburb was
-  wrong (`Spearwood` → corrected to `Jandakot`, its actual current
-  location). AU went from 77 to 74 spots as a result — see
-  `docs/tasks.md` for the full per-gym source list. One AU spot (Southern
-  Boulder, Hope Forest) has no `address` at all: no source gave a street
-  number, only "at a winery near Hope Forest/McLaren Vale," so it was
-  left blank rather than invented.
+  spot features) is now populated for AU and US — JP/CA/NZ/CN still have
+  none.** Given the scale of verifying 500+ real street addresses, the
+  user chose to pilot one country (AU, 77 spots at the time) first, then
+  after reviewing that result explicitly said "Apply locations for the
+  US" (352 spots at the time, across the same 12 states as the Mountain
+  Project pass). Both passes used the same method: every address checked
+  individually against that gym's own website or multiple agreeing
+  business-listing sources, never guessed — and both surfaced real
+  data-quality problems the address-only framing wouldn't have caught on
+  its own, not just missing addresses.
+  - **AU** (77 → 74 spots): **Boulder Project** (Prahran, VIC) had
+    permanently closed (removed); **BOUNCE Hendra** and **Urban Xtreme**
+    (also listed at Hendra) turned out to be the same physical venue
+    under its old and new branding, not two gyms (removed the stale
+    "Urban Xtreme" duplicate); **Rockface Northbridge** and **Rockface
+    Balcatta** were likewise the same gym after a relocation, not two
+    locations (removed the stale Northbridge one); and **Urban
+    Jungle**'s suburb was wrong (`Spearwood` → corrected to `Jandakot`,
+    its actual current location). One AU spot (Southern Boulder, Hope
+    Forest) has no `address` at all: no source gave a street number,
+    only "at a winery near Hope Forest/McLaren Vale," so it was left
+    blank rather than invented.
+  - **US** (352 → 332 spots): the same "chain acquires local gym,
+    Mountain Project keeps the old listing" pattern showed up repeatedly
+    — confirmed permanent closures were removed outright (e.g. Central
+    Rock Gym absorbing Stone Summit and Summit Climbing/Yoga/Fitness
+    locations in GA/TN; City Climbers Club in NY; The Rock Gym and
+    TruHold Climbing in CA, both now literally the same address as an
+    existing Hangar 18 entry); confirmed rebrands/relocations were
+    corrected in place rather than left as duplicates (The Cliffs at
+    LIC → Movement LIC; Steep Rock West → VITAL Climbing Gym – West
+    Harlem; Planet Granite San Francisco → Movement – San Francisco;
+    Rockface-style relocations elsewhere); and a few Mountain-Project-
+    sourced entries that couldn't be confirmed to still exist under
+    their listed name were flagged with an uncertainty note instead of
+    guessed or deleted (Old Town Indoor Rock Climbing, IL; The Wall at
+    Palisades, NY; The Climb'n Shop, GA — 3 of the 332 US spots
+    currently have no `address` for exactly this reason). Full per-state
+    detail and sourcing is in the git log on this branch (one commit per
+    state) and `docs/tasks.md`.
+  - **Positioning note carried over from the AU pilot still applies**:
+    verifying an address didn't mean re-geocoding it — `lat`/`lng` were
+    only touched where a spot's location was itself wrong (e.g. Urban
+    Jungle's suburb), not routinely recomputed from the new address
+    string.
 - **Sidebar chip growth has a real height ceiling — mitigated, not solved,
   by an accordion.** `.sidebar-controls` (`css/style.css`) — the search
   box plus every country's chip row plus type/marks filters — sits above

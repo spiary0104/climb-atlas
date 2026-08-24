@@ -530,6 +530,85 @@ placeholder work just to fill this section)_
   to say how to continue (exhaustive / another pilot / leave to the
   community edit flow) before starting any of that.
 
+### US address-verification pass (352 → 332 spots, complete)
+- Branch: `fix/globe-render-perf-remove-outdoor-type` (same branch/worktree
+  as every task above — continued rather than starting fresh)
+- Status: **complete** for all 12 US states (AL, CA, CO, GA, IL, MA, NV,
+  NY, TN, TX, UT, WA). JP/CA/NZ/CN still have no `address` data — not in
+  scope for this task, awaiting a future decision.
+- What: after the AU pilot above, the user said "Apply locations for the
+  US." Same method as AU: every gym searched by name + suburb, address
+  cross-checked against the gym's own site or multiple agreeing
+  business-directory listings, nothing guessed. One commit per state on
+  this branch, each documenting exactly what was found.
+- **Efficiency note for future passes**: chain operators with a real
+  "locations" page (Central Rock Gym, Movement, Touchstone Climbing,
+  Hangar 18, Sender One, Mesa Rim, VITAL, The Gravity Vault) were pulled
+  via `WebFetch` against that page — often several addresses in one
+  call — rather than searching each location individually. Worked well
+  for MA/NY (Central Rock Gym) and all of CA's chain gyms; some chain
+  sites 403/404'd WebFetch (Touchstone, Hangar 18, VITAL's own domain)
+  and fell back to per-location `WebSearch`.
+- **This pass caught real data-quality problems in every state it
+  touched, not just missing addresses** — full detail is in each state's
+  commit message on this branch; the recurring pattern worth knowing
+  about before trusting any Mountain-Project-sourced entry at face
+  value: a chain acquires a local/independent gym, keeps operating the
+  same physical address under the chain's brand, and the old
+  independent-gym listing lingers in MP's directory as a phantom
+  duplicate. Confirmed instances this pass, all merged into one entry
+  under the current name (old entry removed, not left as a duplicate):
+  - **NY**: The Cliffs at LIC → Movement LIC (Movement acquired The
+    Cliffs chain); Steep Rock West → VITAL Climbing Gym – West Harlem.
+  - **CA**: Planet Granite San Francisco → Movement – San Francisco
+    (Movement/El Cap absorbed Planet Granite's whole chain in 2021); The
+    Rock Gym (Signal Hill) and TruHold Climbing (Mission Viejo) both
+    confirmed permanently closed, with Hangar 18 now operating at their
+    *exact* street addresses; Vertical Hold Sport Climbing turned out to
+    be a same-address duplicate of the already-listed "Vertical Hold"
+    San Diego entry (Vertical Hold's own site lists only 3 real
+    locations: San Diego, Poway, San Marcos/Solid Rock Gym).
+  - **GA/TN**: Central Rock Gym absorbed Stone Summit and Summit
+    Climbing/Yoga/Fitness locations — stale entries removed.
+  - Plain confirmed closures (no successor gym) were removed outright:
+    City Climbers Club (NY, 59th Street), 6 in TX, 1 each in CO/MA, 2
+    each in AL/GA/TN.
+  - A handful of Mountain-Project-sourced entries could not be confirmed
+    to still exist under their listed name and were **flagged with an
+    uncertainty note instead of being deleted or given a guessed
+    address** (per `Rules.md` §1 — never guess either way on weak
+    evidence): **Old Town Indoor Rock Climbing** (IL), **The Wall at
+    Palisades** (NY — searches only surface ClimbZone Palisades at the
+    same mall, no confirmed link), **The Climb'n Shop** (GA). These 3
+    are the only US spots still without an `address`.
+  - One gap from an earlier state commit in this same pass was caught
+    and fixed while auditing the finished dataset: **Bouldering Project
+    Somerville** (MA) had been renamed from Brooklyn Boulders Somerville
+    but never got a street address at the time — filled in
+    (`js/data.js:139`).
+- **Environment note**: WebSearch has a session-level budget
+  (`CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION`, 200 by default) — hit
+  mid-way through NY in the session that started this pass. The partial
+  NY progress (18 of 42 gyms) was committed immediately rather than
+  lost, and NY was finished in a later session once the budget had
+  reset. Worth knowing if a future exhaustive pass this size needs more
+  than one sitting.
+- Net result: US went from 352 → **332 spots** (12 removed as confirmed
+  closures/duplicates across the states above, 8 renamed/merged in
+  place). Whole-file structural check after every commit (`node -e`
+  eval + `grep -c "{name:"` + brace/bracket balance + duplicate
+  name+suburb+state scan): final state is **490 total spots** (74 AU +
+  332 US + 32 JP + 15 CA + 9 NZ + 28 CN), 491/491 braces and brackets
+  balanced, zero duplicate name+suburb+state combos, only the 3
+  intentionally-flagged US spots above missing an `address`.
+- **Not yet done**: JP (32), CA-Canada (15), NZ (9), CN (28) — 84
+  spots — still have no `address` field populated; out of scope for
+  this task. Also still outstanding from every earlier task on this
+  branch: an actual human smoke test in a real browser (`Rules.md` §7) —
+  this environment can serve the site and instrument it via headless
+  browser JS, but a human needs to open it and look before this whole
+  branch is merged.
+
 ## Blocked
 
 _(none)_
