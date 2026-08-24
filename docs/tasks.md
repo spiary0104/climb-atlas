@@ -727,6 +727,77 @@ placeholder work just to fill this section)_
   dataset — see `docs/architecture.md` "Seed data sourcing" for the
   consolidated picture.
 
+### Legal doc fill-in, marker-hide-on-drag removal, About page + header Add-location button
+- Branch: `fix/globe-render-perf-remove-outdoor-type` (same branch/worktree
+  as every task above — continued rather than starting fresh)
+- Status: in progress (implemented + verified live in a served copy; user
+  had already run the app on localhost:8000 themselves before this — see
+  "smoke test" note below)
+- What: three small requests in one message, ahead of a possible domain
+  purchase/launch:
+  1. Fill in the Privacy/Terms placeholders — date and jurisdiction.
+  2. Stop markers from disappearing while rotating the globe.
+  3. Move About to a real page reachable from a header button, and add a
+     prominent "+ Add a location" button to the header.
+- **(1) Legal placeholders**: filled in "Last updated: 24 August 2026"
+  (both Privacy and Terms) and "governed by the laws of New South Wales,
+  Australia" in `index.html`. **The contact-email placeholder
+  (`[your contact email]`, both modals) is still unfilled** — the user
+  asked whether a placeholder is OK until the domain launches; agreed
+  that's reasonable, but a real, actually-monitored email address is
+  needed there (not a fabricated one) — waiting on the user to supply
+  it before this is fully done.
+- **(2) Markers no longer disappear on drag/rotate**: reverses part of
+  the earlier "globe render perf" fix from earlier in this branch. That
+  fix hid every DOM marker for the duration of any camera movement
+  (`movestart`→`moveend`) to avoid visible lag with ~490 markers — but
+  on the globe projection, dragging *is* how you spin it, so markers
+  vanishing mid-drag read as broken. Removed the `is-moving` class
+  toggling in `js/app.js` and the now-dead CSS rule in `css/style.css`.
+  Markers now stay visible (briefly lagging the camera) during a
+  drag/rotate instead of vanishing. See `docs/architecture.md` "Map"
+  section for the full writeup.
+- **(3) About page + header Add-location button**: new `about.html` —
+  a real standalone page (not a modal), reusing `css/style.css` and the
+  existing `.modal.info-modal` content styling with a small page-level
+  CSS override block (the main stylesheet assumes the single-screen app
+  shell — fixed height, `overflow:hidden` — which a normal scrolling
+  page needs to override). Header (`.header-right` in `index.html`)
+  gets two new buttons: "About" (links to `about.html`) and
+  "+ Add a location" — the *same* `id="addBtn"` element moved up from
+  the sidebar footer, so its existing click handler and pin-drop flow
+  in `js/app.js` needed zero changes. Removed the now-dead
+  `aboutModalBackdrop` markup and its `openAbout` wiring. Sidebar
+  footer now holds only Privacy/Terms.
+- **Note on "Add a location"**: this didn't need new pin-dropping
+  logic — the existing add-spot flow already supported name + drop-pin
+  (`dropPinBtn` → `startPlacing('add')` → click-the-map in
+  `js/app.js`), so the ask was really about *making it prominent in
+  the header*, not building new functionality.
+- **Verified live** (served copy, `localhost:8000`, browser + JS
+  instrumentation): About link navigates to `about.html`, full content
+  renders, no console errors; "+ Add a location" in the header opens
+  the same add-spot modal with all fields (name/suburb/country/state/
+  address/type/notes/photo) and a working "Drop pin" button; simulated
+  a map drag via dispatched mouse events and confirmed markers stay
+  `visibility:visible` mid-drag with the map container never getting
+  `is-moving`; both pages checked at 375px mobile width with no
+  horizontal overflow; no new console errors on either page beyond the
+  pre-existing, unrelated Supabase schema mismatch (see the "Add
+  address field..." task entry above).
+- **On the "does localhost:8000 count as the smoke test" question**:
+  the user had already run the app on localhost:8000 themselves before
+  asking for these three changes, but it wasn't confirmed which parts
+  of `Rules.md` §7's checklist were actually exercised (globe
+  rendering, drag/rotate feel, clustering, sign-in redirect,
+  add/edit-lands-in-pending). Told them directly rather than assuming
+  either way — running it is necessary but the specific checklist items
+  are what make it count as the full smoke test.
+- **Not yet done**: the contact email (see above); this branch (still
+  40+ commits ahead of `master`, unmerged) still needs the same
+  human-in-a-real-browser look that's been outstanding since the first
+  task on this branch, before it's ready to merge/deploy.
+
 ## Blocked
 
 _(none)_

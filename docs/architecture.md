@@ -14,7 +14,8 @@ clustering via `supercluster`.
 ## File map
 
 ```
-index.html             Page shell — header, sidebar, map container, all the modals
+index.html             Page shell — header, sidebar, map container, the add/edit/report/privacy/terms modals
+about.html              Standalone About page (real navigation, not a modal) — reuses css/style.css
 css/style.css           All styling (dark "chalk & rock" theme, MapLibre GL overrides)
 js/supabase-init.js     Creates the shared Supabase client — project URL/key live here
 js/auth.js              Thin wrapper around Supabase Auth (magic link + Google)
@@ -357,9 +358,14 @@ from one source:
   then, so the orientation labels aren't needed.
 - DOM markers lag MapLibre's own WebGL render loop while the camera is
   moving (a documented MapLibre/Mapbox limitation, not fixable from
-  application code) — markers are hidden for the duration of a
-  drag/zoom (`#map.is-moving .maplibregl-marker`, toggled on
-  `movestart`/`moveend`) rather than left to visibly trail the map.
+  application code). An earlier version hid every marker for the
+  duration of a drag/zoom (`#map.is-moving .maplibregl-marker`) to
+  avoid that lag being visible — removed per explicit user preference,
+  since on the globe projection dragging is also how you spin it, and
+  markers vanishing mid-drag read as broken rather than as an
+  intentional hide. Markers now stay visible and briefly lag the
+  camera during a drag/rotate instead; repainted correctly in place on
+  `moveend` as before.
 - Marker/checkbox colour = climbing type (indoor bouldering, top rope —
   outdoor bouldering was removed as a category, see "Known gaps"); a pin
   split into colour wedges means more than one type applies. A green
