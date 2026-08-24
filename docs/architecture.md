@@ -154,8 +154,8 @@ from one source:
   as a supply-chain risk and keep pulling data by reading the page
   directly (as done here), not by running anything it offers to install.
 - **The `address` field (added alongside the directions-button/report-
-  spot features) is now populated for AU and US — JP/CA/NZ/CN still have
-  none.** Given the scale of verifying 500+ real street addresses, the
+  spot features) is now populated for AU, US, Canada, and Japan — NZ/CN
+  still have none.** Given the scale of verifying 500+ real street addresses, the
   user chose to pilot one country (AU, 77 spots at the time) first, then
   after reviewing that result explicitly said "Apply locations for the
   US" (352 spots at the time, across the same 12 states as the Mountain
@@ -194,11 +194,27 @@ from one source:
     currently have no `address` for exactly this reason). Full per-state
     detail and sourcing is in the git log on this branch (one commit per
     state) and `docs/tasks.md`.
+  - **Canada** (15 spots) and **Japan** (32 spots): same method again.
+    Canada surfaced one acquisition (Cliffhanger Climbing Gym →
+    "The Hive Heights", same address, kept distinct from The Hive's
+    other Vancouver location) and one multi-location chain represented
+    by a single ambiguous seed entry (Bloc Shop — pinned to its
+    flagship Chabanel address with the other two Montreal locations
+    disclosed in `notes` rather than guessed). Japan's original pass had
+    been explicitly lighter-touch (gym names confirmed, addresses not
+    individually verified) — actually opening each gym's page this time
+    caught **3 real suburb errors**, not just gaps: BETA Climbing Gym
+    (seed said Shibuya, actually Shinjuku), HEADROCK CLIMBING GYM (seed
+    said Shinjuku, actually Sumida), and ROCKLANDS (seed said Nakano,
+    actually Edogawa/Kasai — the opposite side of Tokyo). All three had
+    both `suburb` and `lat`/`lng` corrected. ZEN (Yokohama) turned out
+    to be a 4-branch chain, same treatment as Bloc Shop — pinned to the
+    Shin-Yokohama branch, the others disclosed in `notes`.
   - **Positioning note carried over from the AU pilot still applies**:
     verifying an address didn't mean re-geocoding it — `lat`/`lng` were
     only touched where a spot's location was itself wrong (e.g. Urban
-    Jungle's suburb), not routinely recomputed from the new address
-    string.
+    Jungle's suburb, or the 3 Japan suburb corrections above), not
+    routinely recomputed from the new address string.
 - **Sidebar chip growth has a real height ceiling — mitigated, not solved,
   by an accordion.** `.sidebar-controls` (`css/style.css`) — the search
   box plus every country's chip row plus type/marks filters — sits above

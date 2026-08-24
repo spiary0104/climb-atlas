@@ -609,6 +609,64 @@ placeholder work just to fill this section)_
   browser JS, but a human needs to open it and look before this whole
   branch is merged.
 
+### Canada + Japan address-verification pass (47 spots, complete)
+- Branch: `fix/globe-render-perf-remove-outdoor-type` (same branch/worktree
+  as every task above — continued rather than starting fresh)
+- Status: **complete**. NZ (9) and CN (28) still have no `address` data —
+  not asked for in this task.
+- What: user asked to verify Canada and Japan locations next. Same
+  method as AU/US: every gym searched by name + city, address
+  cross-checked against the gym's own site or multiple agreeing
+  business-directory listings, nothing guessed.
+- **Canada** (15 gyms — Toronto, Vancouver, Montreal, Calgary):
+  - **Cliffhanger Climbing Gym** (Vancouver) was acquired by The Hive in
+    2021 and now operates as "The Hive Heights" at the same address
+    (670 Industrial Ave) — renamed in place, kept as a distinct entry
+    from the already-listed "The Hive Bouldering Gym" (a different Hive
+    location, 520 Industrial Ave — same operator, two real gyms).
+  - **Bloc Shop** (Montreal) turned out to be a 3-location chain
+    (Chabanel/Hochelaga/Mile-Ex) represented by one generic seed entry
+    whose rough city-level coordinates didn't clearly match any single
+    location. Rather than guess which one the original seed data meant,
+    it was pinned to the flagship Chabanel address with a `notes` field
+    disclosing the other two locations exist but aren't separately
+    listed — same "flag the ambiguity" approach used throughout this
+    whole address-verification effort.
+- **Japan** (32 gyms — Tokyo, Osaka, Kyoto, Fukuoka, Aichi, Kanagawa,
+  Hokkaido, Hyogo): the original Japan pass (see the "Numbered markers +
+  add Japan" entry above) was explicitly lighter-touch than the AU/US/CA
+  passes — gym names were confirmed but no individual gym page was
+  opened to verify an address. Actually opening every gym's page this
+  time surfaced **3 real suburb errors**, not just missing addresses:
+  - **BETA Climbing Gym** — seed data said `Shibuya`; verified address
+    is Shinjuku City (near Akebonobashi Station). Corrected suburb and
+    `lat`/`lng`.
+  - **HEADROCK CLIMBING GYM** — seed data said `Shinjuku`; verified
+    address is Sumida City (near Kikukawa Station) — nowhere near
+    Shinjuku. Corrected suburb and `lat`/`lng`.
+  - **ROCKLANDS** — seed data said `Nakano`; verified address is
+    Edogawa City / Kasai — the opposite side of Tokyo from Nakano.
+    Corrected suburb and `lat`/`lng`.
+  - **ZEN** (Yokohama) is also a multi-branch operator (4 locations
+    across Kanagawa: Shin-Yokohama, Yurigaoka, Center-Minami, Kawasaki).
+    Pinned to the Shin-Yokohama branch as the closest match to the
+    existing "between Shin-Yokohama and Kawasaki" note, with the other 3
+    disclosed in `notes` rather than guessed.
+  - Two gyms (Rocky Bouldering Gym Shinagawa, B-PUMP TOKYO Akihabara)
+    keep a station-name in their own branding even though they
+    technically sit in a neighbouring ward (Minato, Bunkyo) — kept the
+    gym's own branding as `suburb` with a clarifying note instead of
+    "correcting" it away from how the gym markets itself, since that's
+    what a visitor would actually search for.
+- Net result: **490 total spots, unchanged** — this pass only added
+  addresses and corrected suburb/lat/lng on already-existing entries, no
+  additions or removals (unlike the AU/US passes, which found real
+  closures/duplicates). Structural check (`node -e` eval): 491/491
+  braces and brackets balanced, zero duplicate name+suburb+state combos,
+  every CA and JP spot now has a verified `address`.
+- **Not yet done**: NZ (9), CN (28) — 37 spots — still have no `address`
+  field populated; not part of what was asked for this task.
+
 ## Blocked
 
 _(none)_
