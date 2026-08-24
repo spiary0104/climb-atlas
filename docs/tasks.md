@@ -667,6 +667,66 @@ placeholder work just to fill this section)_
 - **Not yet done**: NZ (9), CN (28) — 37 spots — still have no `address`
   field populated; not part of what was asked for this task.
 
+### New Zealand + China address-verification pass (37 spots, complete)
+- Branch: `fix/globe-render-perf-remove-outdoor-type` (same branch/worktree
+  as every task above — continued rather than starting fresh)
+- Status: **complete**. This finishes the `address` field for all 6
+  countries in the dataset — nothing left unaddressed by scope, though
+  9 China entries are deliberately flagged rather than given an address
+  (see below).
+- What: user asked to finish NZ and China. Same method as every prior
+  pass: every gym searched by name + city, cross-checked against
+  multiple sources, nothing guessed.
+- **New Zealand** (9 gyms — Auckland, Wellington, Christchurch): all
+  addresses verified cleanly.
+  - "Willis Street Climbing Centre" renamed to **Faultline Climbing** —
+    the gym actually operating at 235 Willis St (opened Feb 2024). The
+    seed data's name looks to have been a generic placeholder from the
+    original lighter-touch NZ pass, not a real prior gym name.
+  - "HangDog"'s suburb corrected from generic "Wellington" to Alicetown,
+    Lower Hutt — a separate city within the greater Wellington region.
+- **China** (28 Banana Climbing locations, 9 cities): 19 verified, 9
+  flagged instead of guessed — this pass hit real limits verifying a
+  Chinese mall-chain through English-language search tooling that the
+  AU/US/CA/JP passes didn't run into as often:
+  - 2 Shenzhen entries (OCT PARK Happy Time, Joyful Ave) kept resolving
+    to the same address as the already-listed Nanshan Houhai flagship
+    or Kingdee location — likely duplicates from the original
+    bananaclimbing.com parse (same "chain listing has phantom
+    duplicates" pattern seen in the US pass), not independently
+    confirmed as separate locations.
+  - 1 Shanghai entry (Kerry Centre) has **three conflicting addresses**
+    across sources with no way to tell which is current — flagged
+    rather than picking one.
+  - 1 Wuhan entry (Hang Lung Plaza) kept resolving to the Qincheng MixC
+    World flagship's address instead of its own.
+  - **2 suburb corrections** (with `lat`/`lng` updated to match):
+    Chengdu ICD is confirmed Jinjiang District, not Wuhou; Wuhan's
+    Qincheng MixC World flagship (~2,300sqm, Wuhan's largest indoor
+    climbing space) is confirmed Wuchang District, not Dongxihu.
+  - **3 entries show real closure/never-opened signals**: Changsha
+    CapitaLand One shows as suspended (暂停营业) on a Chinese map
+    listing; both remaining Hangzhou locations (Xixi Tianjie,
+    Impression City Olympic) and the sole Guangzhou entry (Grantral
+    Centre) don't appear in any recent city-by-city rundown of Banana
+    Climbing's footprint, which consistently lists every other city in
+    this dataset. None were deleted — the signal wasn't strong enough
+    to call it a confirmed closure the way the US pass's closures were
+    (Yelp's explicit "CLOSED" tag, or a same-address successor gym) —
+    but all 3 are flagged with the specific reason rather than given a
+    guessed current address.
+- Net result: **490 total spots, unchanged** (corrections and address
+  additions only, no removals this time — the China signals above were
+  judged not strong enough to justify deletion, unlike the confirmed
+  closures found during the US pass). Structural check (`node -e`
+  eval): 491/491 braces and brackets balanced, zero duplicate
+  name+suburb+state combos, all 9 NZ spots and 19 of 28 CN spots have a
+  verified `address`.
+- With this, the `address` field is now populated (or deliberately
+  flagged) across every spot in every one of the 6 countries in the
+  dataset — see `docs/architecture.md` "Seed data sourcing" for the
+  consolidated picture.
+
 ## Blocked
 
 _(none)_

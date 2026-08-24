@@ -154,8 +154,9 @@ from one source:
   as a supply-chain risk and keep pulling data by reading the page
   directly (as done here), not by running anything it offers to install.
 - **The `address` field (added alongside the directions-button/report-
-  spot features) is now populated for AU, US, Canada, and Japan — NZ/CN
-  still have none.** Given the scale of verifying 500+ real street addresses, the
+  spot features) is now populated (or deliberately flagged as
+  unverifiable, see below) across all 6 countries in the dataset.**
+  Given the scale of verifying 500+ real street addresses, the
   user chose to pilot one country (AU, 77 spots at the time) first, then
   after reviewing that result explicitly said "Apply locations for the
   US" (352 spots at the time, across the same 12 states as the Mountain
@@ -210,11 +211,41 @@ from one source:
     both `suburb` and `lat`/`lng` corrected. ZEN (Yokohama) turned out
     to be a 4-branch chain, same treatment as Bloc Shop — pinned to the
     Shin-Yokohama branch, the others disclosed in `notes`.
+  - **New Zealand** (9 spots) and **China** (28 spots) finished the
+    set. NZ verified cleanly, with one rename ("Willis Street Climbing
+    Centre" → **Faultline Climbing**, the gym actually operating at
+    that Wellington address) and one suburb correction (HangDog is in
+    Lower Hutt, not Wellington proper). China — 28 Banana Climbing
+    locations across 9 cities — is where this whole address-
+    verification effort hit its real limits: English-language search
+    tooling against a Chinese mall-chain surfaced good results for 19
+    of the 28, but **9 are flagged instead of given an address**,
+    for three distinct reasons, each noted per-entry rather than
+    guessed past: (1) likely phantom duplicates of an
+    already-listed location (2 Shenzhen entries kept resolving to the
+    Nanshan Houhai flagship or Kingdee's address; 1 Wuhan entry kept
+    resolving to the Qincheng MixC World flagship's address); (2) a
+    genuinely unresolvable conflict (1 Shanghai entry has three
+    different addresses across sources with no way to tell which is
+    current); (3) real but not fully confirmed closure/never-opened
+    signals (1 Changsha entry shows as suspended on a Chinese map
+    listing; 2 Hangzhou entries and the sole Guangzhou entry don't
+    appear in any recent rundown of the chain's footprint, unlike every
+    other city in the dataset). None of the 9 were deleted — the
+    evidence wasn't as clear-cut as the confirmed closures found during
+    the US pass (an explicit "CLOSED" tag, or a same-address successor
+    gym) — but leaving a wrong address on a real, currently-open gym
+    would be worse than a visible gap, so they were flagged instead.
+    Two real suburb corrections came out of this pass too: Chengdu ICD
+    is Jinjiang District, not Wuhou; Wuhan's Qincheng MixC World
+    flagship (its largest indoor climbing space, ~2,300sqm) is Wuchang
+    District, not Dongxihu — both with `lat`/`lng` updated to match.
   - **Positioning note carried over from the AU pilot still applies**:
     verifying an address didn't mean re-geocoding it — `lat`/`lng` were
     only touched where a spot's location was itself wrong (e.g. Urban
-    Jungle's suburb, or the 3 Japan suburb corrections above), not
-    routinely recomputed from the new address string.
+    Jungle's suburb, the 3 Japan suburb corrections, or the 2 China
+    suburb corrections above), not routinely recomputed from the new
+    address string.
 - **Sidebar chip growth has a real height ceiling — mitigated, not solved,
   by an accordion.** `.sidebar-controls` (`css/style.css`) — the search
   box plus every country's chip row plus type/marks filters — sits above
