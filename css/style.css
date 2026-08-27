@@ -49,6 +49,7 @@
     --cn-wuhan:#7a6bc4;
     --cn-changsha:#3fae9e;
     --cn-zhuhai:#d68910;
+    --cn-chongqing:#8e5b3a;
     --t-outdoor:#b8834a;
     --t-indoor:#3fb8a6;
     --t-toprope:#8a6bb0;
@@ -253,6 +254,7 @@
   .chip[data-country="CN"][data-state="WUHAN"].active{background:var(--cn-wuhan);}
   .chip[data-country="CN"][data-state="CHANGSHA"].active{background:var(--cn-changsha);}
   .chip[data-country="CN"][data-state="ZHUHAI"].active{background:var(--cn-zhuhai);}
+  .chip[data-country="CN"][data-state="CHONGQING"].active{background:var(--cn-chongqing);}
 
   .toggle-row{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-dim);font-family:'Space Mono',monospace;cursor:pointer;}
   .toggle-row input{accent-color:var(--vic);}
