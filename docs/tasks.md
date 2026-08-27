@@ -798,6 +798,77 @@ placeholder work just to fill this section)_
   human-in-a-real-browser look that's been outstanding since the first
   task on this branch, before it's ready to merge/deploy.
 
+### Add Shanghai/Beijing/Chongqing gyms from Dianping
+- Branch: `fix/globe-render-perf-remove-outdoor-type` (same branch/worktree
+  as every task above — continued rather than starting fresh)
+- Status: **complete** for the 3 cities asked for; not extended to other
+  Chinese cities already in the dataset.
+- What: user asked to check Dianping (大众点评) for gyms to add in
+  Shanghai, Beijing, and Chongqing (Chongqing had zero spots before this
+  task). Dianping itself blocks automated fetches (redirects to a
+  Meituan anti-bot verification page — confirmed directly, not assumed),
+  so gyms were found via web search referencing Dianping listings and
+  independently cross-checked against a second source each (a different
+  article, map listing, or the gym's own coverage), same standard as
+  every other address-verification pass on this branch.
+- **14 new gyms added**, all with a verified address and types:
+  - **Shanghai** (+5): Yanwu Kongjian (Rock Dance Space, Hongkou),
+    Jinfeng Climbing 189 (Putuo, bouldering-only), Benchmark Climbing Gym
+    (Putuo), Dayan Yuedong at Changfeng Joy City (Putuo — a combined
+    indoor bouldering room + 17m outdoor lead wall on a mall's 5th
+    floor), Climbing Factory (Baoshan — a converted former steel-factory
+    warehouse).
+  - **Beijing** (+4): Rock Time Climbing at Dawanglu (Chaoyang), Climbing
+    Favorite Changying (Chaoyang, bouldering-only — could only confirm
+    via one secondary source, flagged in its `notes`), Aopan Climbing
+    (Haidian — the district's only international-standard speed wall),
+    Haoshi Sports Climbing Space (Chaoyang, near 798 Art District,
+    bouldering-only).
+  - **Chongqing** (+5, new state added — city had zero spots before):
+    Bashan Tiger Climbing Club (Nan'an), Jihuayuan Extreme Sports Center
+    (Yubei/Longxing — a 2,110sqm indoor climbing hall inside a larger
+    indoor ski/surf complex, described as China's largest), Scream
+    Climbing at Guangdian Park (Yubei, bouldering-only), Black Ram
+    Climbing Gym (Nan'an), Zhongti · Bihuwang Climbing Gym (Jiangbei).
+  - Added `CHONGQING` to `STATES_BY_COUNTRY.CN` in `js/app.js`, a new
+    `--cn-chongqing` colour var + chip active-state rule in
+    `css/style.css`, and a new Chongqing chip in `index.html`'s China
+    filter group — same pattern as every prior country/city addition.
+- **One candidate deliberately skipped**: "768攀岩馆" / "All In Space"
+  (Beijing, Haidian) — its address (768 Creative Park, Building D, Unit
+  1, South Gate) is identical to the already-listed "Banana Climbing
+  (Dongsheng Xiaoyuehe)" entry. Rather than guess whether it's a genuinely
+  separate gym in the same complex or the same physical space under an
+  older/alternate name, it was left out to avoid a likely duplicate.
+- **One candidate deliberately excluded on scope grounds, not evidence
+  grounds**: Huayan Climbing Park (Jiulongpo District, Chongqing) — a
+  large (80,000sqm) outdoor artificial-wall park used for World Cup and
+  national-team training. `docs/architecture.md` "Known gaps" already
+  documents that outdoor bouldering/climbing was removed as a
+  type/category entirely earlier on this branch (indoor gyms only now,
+  23 outdoor-only seed spots deleted) — this park doesn't fit that
+  scope, so it wasn't added even though it's real and well-documented.
+- Net result: 490 → **504 total spots** (74 AU + 332 US + 32 JP + 15 CA +
+  9 NZ + 42 CN). Structural check (`node -e` eval + `grep -c "{name:"` +
+  brace/bracket balance + duplicate name+suburb+state scan): 504/504
+  matched, 505/505 braces and brackets balanced, zero duplicates.
+- **Verified live** (served via `npx serve .` on port 8000 — `python3`/
+  `python` aren't on PATH in this environment, `npx serve` was used
+  instead; browser + JS instrumentation, screenshots still don't
+  composite in this sandbox): `window.SEED_GYMS.length` = 504 in the
+  browser; all 5 Chongqing gyms present by name; the new Chongqing chip
+  renders in the correct colour, expands/collapses with its country
+  group, and correctly toggles `.active` + the map filter when clicked;
+  no horizontal overflow in the China chip row at 375px mobile width; no
+  new console errors beyond the pre-existing, unrelated Supabase schema
+  mismatch.
+- **Not yet done**: not extended to Guangzhou/Shenzhen/Hangzhou/Chengdu/
+  Wuhan/Changsha/Zhuhai (already have Banana Climbing entries, but a
+  Dianping pass the way Shanghai/Beijing/Chongqing just got could
+  surface more independent gyms there too) — out of scope for what was
+  asked. Same outstanding item as every task on this branch: a real
+  human-in-a-browser smoke test before merge.
+
 ## Blocked
 
 _(none)_

@@ -72,8 +72,8 @@ string always means the same thing while reading this codebase.
 
 ## Seed data sourcing
 
-`js/data.js` currently has 490 spots (74 AU, 332 US, 32 JP, 15 CA, 9 NZ,
-28 CN), all indoor gyms (bouldering and/or top rope — see "Known gaps"
+`js/data.js` currently has 504 spots (74 AU, 332 US, 32 JP, 15 CA, 9 NZ,
+42 CN), all indoor gyms (bouldering and/or top rope — see "Known gaps"
 below on why outdoor areas were removed). It was built up in layers, not
 from one source:
 
@@ -130,30 +130,45 @@ from one source:
   names (`AUCKLAND`, `WELLINGTON`, `CANTERBURY`) the same way Japan does,
   since NZ doesn't have an equivalent short-code convention either. Both
   are intentionally partial coverage, not exhaustive.
-- **China (28 gyms, 9 cities: Shenzhen, Guangzhou, Shanghai, Hangzhou,
-  Chengdu, Beijing, Wuhan, Changsha, Zhuhai)** is different from every
-  pass above: it's every currently-open location of one single chain,
-  Banana Climbing (bananaclimbing.com), read straight from that site's
-  own "Our Locations" list — not a multi-source sweep, so unlike the
-  other passes this genuinely is complete for that one brand (the site's
-  own "28 GYMS NATIONWIDE" stat matches exactly once its one `CLOSED`-
-  tagged location and its not-yet-open "coming soon" ones are excluded).
-  `state` uses the 9 city names the site itself groups locations by
-  (`SHENZHEN`, `GUANGZHOU`, etc. — see `STATES_BY_COUNTRY.CN` in
-  `js/app.js`), not a province grouping, since that's the source's own
-  categorization and gives more useful filter granularity than lumping
-  e.g. Shenzhen/Guangzhou/Zhuhai together under "Guangdong". Positions
-  are still district/city-level (the site gives district and mall names,
-  not coordinates), flagged per-entry in `notes`. The site's "Lead
-  Climbing"/"Top Rope"/"Auto-Belay" tags map to this app's `top-rope`
-  type; every location also has bouldering.
-  **Note**: bananaclimbing.com has a "Store Finder Tool" section that
-  markets an npm CLI, an MCP server, and a "Skill" install command
-  explicitly at AI agents, plus a public API "for AI Agents & third-party
-  integrations." None of that was installed or invoked — it's unverified
-  third-party code from a site this project doesn't control, so treat it
-  as a supply-chain risk and keep pulling data by reading the page
-  directly (as done here), not by running anything it offers to install.
+- **China (42 gyms, 10 cities: Shenzhen, Guangzhou, Shanghai, Hangzhou,
+  Chengdu, Beijing, Wuhan, Changsha, Zhuhai, Chongqing)** was built in two
+  layers:
+  - The original 28 gyms are every currently-open location of one single
+    chain, Banana Climbing (bananaclimbing.com), read straight from that
+    site's own "Our Locations" list — not a multi-source sweep, so unlike
+    every other pass this genuinely is complete for that one brand (the
+    site's own "28 GYMS NATIONWIDE" stat matches exactly once its one
+    `CLOSED`-tagged location and its not-yet-open "coming soon" ones are
+    excluded). The site's "Lead Climbing"/"Top Rope"/"Auto-Belay" tags map
+    to this app's `top-rope` type; every location also has bouldering.
+    **Note**: bananaclimbing.com has a "Store Finder Tool" section that
+    markets an npm CLI, an MCP server, and a "Skill" install command
+    explicitly at AI agents, plus a public API "for AI Agents & third-party
+    integrations." None of that was installed or invoked — it's unverified
+    third-party code from a site this project doesn't control, so treat it
+    as a supply-chain risk and keep pulling data by reading the page
+    directly (as done here), not by running anything it offers to install.
+  - A later pass added 14 more gyms across Shanghai, Beijing, and (newly)
+    Chongqing, sourced by searching for gyms referenced on Dianping
+    (大众点评) — Dianping itself blocks automated fetches (redirects to a
+    Meituan anti-bot verification page), so each candidate was found via
+    web search and independently cross-checked against a second source.
+    One candidate ("768攀岩馆"/"All In Space", Beijing) was skipped as a
+    likely duplicate of the already-listed Banana Climbing (Dongsheng
+    Xiaoyuehe) entry — same building/unit address, no way to confirm it's
+    a genuinely separate gym rather than the same space under an older
+    name. One real venue (Huayan Climbing Park, Chongqing) was excluded on
+    scope grounds, not evidence grounds — it's a large outdoor artificial-
+    wall park, and outdoor venues were removed from this app's scope
+    entirely (see "Known gaps" below).
+  - `state` uses city names rather than a province grouping for the whole
+    country (`SHENZHEN`, `GUANGZHOU`, `CHONGQING`, etc. — see
+    `STATES_BY_COUNTRY.CN` in `js/app.js`), consistent across both layers.
+  - Positions are still district/city-level, not geocoded exact
+    coordinates, flagged per-entry in `notes` where the sourcing pass
+    itself flagged something (an ambiguous address, an unconfirmed
+    single-source find, etc.) — see `docs/tasks.md` for the full per-gym
+    list from the Dianping pass.
 - **The `address` field (added alongside the directions-button/report-
   spot features) is now populated (or deliberately flagged as
   unverifiable, see below) across all 6 countries in the dataset.**
