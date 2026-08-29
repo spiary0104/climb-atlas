@@ -115,9 +115,10 @@ before they're publicly visible (or, for reports, before anyone acts on them):
 ## Before it's actually public
 
 - **Privacy Policy & Terms of Service** are already in the app (footer links → modals) and
-  now mention accounts, but are still a basic draft with placeholders (`[date]`,
-  `[your contact email]`, `[your state]`) — fill those in and get a proper review before
-  relying on them, especially given there are now real accounts and personal data (email
+  now mention accounts, but are still a basic draft — date, jurisdiction, and contact email
+  are filled in with real values (contact email is currently a placeholder inbox pending the
+  real domain launch) but the legal text itself hasn't had a proper review — get one before
+  relying on it, especially given there are now real accounts and personal data (email
   addresses, marks) involved.
 - **Photos are links, not uploads** — the photo field stores a URL to an existing image
   (their site, Instagram, etc.), not a file you host. A real upload flow needs object
