@@ -133,8 +133,8 @@
 
   // One label point per (country,state) that currently has at least one
   // visible spot -- the centroid of that region's own spots, not anything
-  // geographically authoritative. "Basic" labelling: no collision avoidance,
-  // dense regions can overlap.
+  // geographically authoritative. Keeps each region's spot count too, used
+  // by paintMarkers() to decide which label wins when two overlap on screen.
   function computeRegionCentroids(visibleSpots){
     const sums = {};
     visibleSpots.forEach(g=>{
@@ -146,7 +146,7 @@
     });
     const centroids = {};
     Object.entries(sums).forEach(([key, s])=>{
-      centroids[key] = {lat: s.latSum/s.count, lng: s.lngSum/s.count, country: s.country, state: s.state};
+      centroids[key] = {lat: s.latSum/s.count, lng: s.lngSum/s.count, country: s.country, state: s.state, count: s.count};
     });
     return centroids;
   }
@@ -219,19 +219,39 @@
     // Basic city/state labels, same "zoomed out" window as the numbered
     // badges -- once real markers take over (zoom >= HOLD_ICON_ZOOM) the
     // labels aren't needed, you can already see individual gyms.
+    //
+    // Nearby regions (e.g. AU's NSW/ACT/VIC, or several Chinese cities in
+    // the same province) can project to almost the same screen point while
+    // still zoomed out, which read as garbled/duplicated overlapping text.
+    // Collision avoidance: project every in-view candidate to screen space,
+    // let the region with more visible spots win a contested spot, and skip
+    // (not paint) any candidate that lands within MIN_LABEL_SPACING px of an
+    // already-accepted label -- same idea as label collision detection in
+    // any map renderer, just done by hand since these are plain DOM markers.
+    const MIN_LABEL_SPACING = 55;
     const showLabels = zoom < HOLD_ICON_ZOOM;
     const seenLabels = new Set();
     if(showLabels){
-      Object.entries(regionCentroids).forEach(([key, c])=>{
-        if(c.lng < bbox[0] || c.lng > bbox[2] || c.lat < bbox[1] || c.lat > bbox[3]) return;
-        seenLabels.add(key);
-        if(regionLabelMarkers[key]) return;
+      const candidates = Object.entries(regionCentroids)
+        .filter(([,c])=> !(c.lng < bbox[0] || c.lng > bbox[2] || c.lat < bbox[1] || c.lat > bbox[3]))
+        .map(([key,c])=>({key, c, pt: map.project([c.lng, c.lat])}))
+        .sort((a,b)=> b.c.count - a.c.count);
+      const accepted = [];
+      candidates.forEach(cand=>{
+        const collides = accepted.some(a=>{
+          const dx = a.pt.x - cand.pt.x, dy = a.pt.y - cand.pt.y;
+          return Math.sqrt(dx*dx + dy*dy) < MIN_LABEL_SPACING;
+        });
+        if(collides) return;
+        accepted.push(cand);
+        seenLabels.add(cand.key);
+        if(regionLabelMarkers[cand.key]) return;
         const el = document.createElement('div');
         el.className = 'region-label';
-        el.textContent = stateLabel(c.country, c.state);
+        el.textContent = stateLabel(cand.c.country, cand.c.state);
         // Offset below the badge that would otherwise sit at this same
         // point, so the label doesn't sit directly on top of it.
-        regionLabelMarkers[key] = new maplibregl.Marker({element: el, offset: [0, 24]}).setLngLat([c.lng, c.lat]).addTo(map);
+        regionLabelMarkers[cand.key] = new maplibregl.Marker({element: el, offset: [0, 24]}).setLngLat([cand.c.lng, cand.c.lat]).addTo(map);
       });
     }
     Object.keys(regionLabelMarkers).forEach(key=>{

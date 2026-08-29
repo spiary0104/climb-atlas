@@ -713,9 +713,14 @@
     font-weight:700;
     font-size:13px;
     box-shadow:0 2px 6px rgba(20,16,10,0.6);
-    transition:transform .15s ease;
+    /* Not transform -- MapLibre repositions this exact element via its own
+       inline transform on every render frame (it's the element passed to
+       maplibregl.Marker), so a transition on transform would CSS-ease every
+       single reposition over .15s instead of applying it instantly, reading
+       as a visible drag/rotate lag on top of the map's own render loop. */
+    transition:filter .15s ease;
   }
-  .cluster-marker:hover{transform:scale(1.08);}
+  .cluster-marker:hover{filter:brightness(1.18);}
 
   /* Lone spot marker shown below HOLD_ICON_ZOOM (js/app.js) -- plain
      .cluster-marker styling, deliberately: at a glance while zoomed out
