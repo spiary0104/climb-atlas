@@ -869,6 +869,81 @@ placeholder work just to fill this section)_
   asked. Same outstanding item as every task on this branch: a real
   human-in-a-browser smoke test before merge.
 
+### Fix marker-lag-on-drag root cause + region-label overlap, fill contact email
+- Branch: `fix/marker-lag-region-label-collisions` (new branch off `master`
+  — the previous branch was merged and cleaned up before this task started,
+  so this is the first task since the merge; per `Rules.md` §3-4 it gets
+  its own branch rather than being committed straight to `master`)
+- Status: in progress (implemented + verified live in a served copy; needs
+  the same human-in-a-real-browser look as everything before it)
+- What: three requests in one message: (1) markers visibly lag while
+  rotating the globe, (2) state/prefecture/city labels look duplicated
+  when zoomed in, (3) fill the Privacy/Terms contact-email placeholder
+  with a real placeholder address.
+- **(1) Marker drag lag — found a real, fixable CSS bug, not just the
+  known unfixable one**: `.cluster-marker` (used for both real cluster
+  badges and the numbered singleton badges shown below `HOLD_ICON_ZOOM`)
+  had `transition:transform .15s ease` for its hover-scale effect — but
+  this is the *exact same element* MapLibre repositions via inline
+  `style.transform` on every render frame (it's the element passed
+  straight into `new maplibregl.Marker({element: el})`). A CSS
+  `transition` on a property applies to *any* change to that property,
+  not just ones from `:hover` — so every single MapLibre reposition
+  during a drag/rotate was being eased over 150ms instead of applied
+  instantly, on top of the pre-existing (genuinely unfixable) WebGL/DOM
+  sync gap. Since most markers visible while zoomed out to rotate the
+  globe are exactly this `.cluster-marker` style, this was likely the
+  dominant, visible chunk of the reported lag. Fixed in `css/style.css`
+  by switching the hover feedback from `transform:scale()` to
+  `filter:brightness()` — same visual hover cue, but on a CSS property
+  MapLibre never touches, so it can't conflict with positioning.
+- **(2) Region-label overlap — confirmed empirically before touching
+  code, not assumed**: at the default world-zoom camera, measured actual
+  DOM positions of Australia's 7 state labels (NSW/ACT/VIC/QLD/WA/SA/TAS)
+  via `getBoundingClientRect()` — all 7 sat inside roughly a 40×40px box,
+  fully overlapping/illegible, exactly what "duplicated" describes. Root
+  cause: `computeRegionCentroids()` (added in an earlier task, see
+  "Collapsible sidebar accordion..." entry above) always placed one label
+  per `(country,state)` with its own comment already disclosing "no
+  collision avoidance, dense regions can overlap" — this task closes that
+  gap. Added basic label collision avoidance in `js/app.js`'s
+  `paintMarkers()`: every in-view region's centroid is projected to
+  screen space (`map.project`), candidates are sorted by their region's
+  spot count (denser region wins a contested spot), and any candidate
+  landing within 55px of an already-accepted label is skipped rather than
+  painted. `computeRegionCentroids()` now also returns each region's spot
+  `count` so the priority sort has something to sort by.
+  - **Verified live** (served copy, JS instrumentation — a temporary
+    `window.__debugMap = map` line was added to get a handle on the
+    MapLibre instance for testing, then removed before committing, `git
+    diff --stat` checked afterward to confirm nothing debug-only was
+    left in): world-zoom label count for AU/US/JP/CN went from 44
+    overlapping labels (7 of them crammed into one 40×40px box) down to
+    4 legible, well-separated ones (California/NSW/Tokyo/Auckland — the
+    biggest region in each cluster of contenders). Stepped through zoom
+    3→8 centered on Sydney: NSW alone shows at low zoom, ACT correctly
+    splits off into its own separate label once zoom 5 gives it enough
+    screen space to stop colliding with NSW — confirms the collision
+    logic reacts correctly to actual on-screen distance, not just
+    geographic distance.
+- **(3) Contact email**: filled in `3uphonium0104@gmail.com` as a real,
+  clickable `mailto:` link in both the Privacy Policy ("Requesting
+  removal") and Terms of Service ("Contact & jurisdiction") sections of
+  `index.html`, replacing the `[your contact email]` placeholder in both
+  — user confirmed this is fine as a placeholder until the real domain
+  launches, but must be an actual address they monitor, not invented.
+- **Verified live** (served copy, `python3`/`python` still not on PATH in
+  this environment — served via `npx serve .`): both Privacy and Terms
+  modals render the mailto link with the correct address and text; no
+  new console errors beyond the pre-existing, unrelated Supabase schema
+  mismatch; no horizontal overflow at 375px mobile width; `.cluster-marker`
+  computed `transition-property` confirmed as `filter`, not `transform`.
+- **Not yet done**: the residual, genuinely-unfixable WebGL/DOM
+  positioning gap (documented in `docs/architecture.md` "Map" section)
+  is still there — this task removed the *avoidable* CSS-introduced part
+  of the lag, not the inherent one. Same outstanding item as every prior
+  task: a real human-in-a-browser look before merging this branch.
+
 ## Blocked
 
 _(none)_

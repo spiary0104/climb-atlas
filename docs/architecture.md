@@ -371,6 +371,15 @@ from one source:
   Japan viewport) can overlap. Labels and numbered badges disappear
   together once you cross `HOLD_ICON_ZOOM` — real markers are visible by
   then, so the orientation labels aren't needed.
+  **Update**: basic collision avoidance was added — `paintMarkers()`
+  projects every in-view region's centroid to screen space, sorts
+  candidates by that region's spot count, and skips (doesn't paint) any
+  candidate within 55px of an already-accepted label, so a denser region
+  wins a contested spot instead of every nearby region's text piling up
+  illegibly. `computeRegionCentroids()` now carries each region's spot
+  `count` for that sort. Still "basic" in the same sense as before: no
+  attempt at optimal placement, just first-come (by count) collision
+  rejection.
 - DOM markers lag MapLibre's own WebGL render loop while the camera is
   moving (a documented MapLibre/Mapbox limitation, not fixable from
   application code). An earlier version hid every marker for the
@@ -381,6 +390,15 @@ from one source:
   intentional hide. Markers now stay visible and briefly lag the
   camera during a drag/rotate instead; repainted correctly in place on
   `moveend` as before.
+  **Update**: a second, avoidable source of drag lag was found and fixed
+  — `.cluster-marker` (`css/style.css`) had `transition:transform .15s
+  ease` for its hover-scale effect, but that's the same element MapLibre
+  repositions via inline `style.transform` every render frame, so every
+  reposition during a drag was being CSS-eased over 150ms on top of the
+  inherent WebGL/DOM gap above. Switched the hover effect to
+  `filter:brightness()` instead, which MapLibre never touches. The
+  inherent WebGL/DOM gap described above is unchanged and not fixable
+  from application code — this only removed the self-inflicted part.
 - Marker/checkbox colour = climbing type (indoor bouldering, top rope —
   outdoor bouldering was removed as a category, see "Known gaps"); a pin
   split into colour wedges means more than one type applies. A green
