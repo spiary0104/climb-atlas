@@ -21,10 +21,27 @@
   just re-syncs the seed rows rather than duplicating them.
 </p>
 <p>
-  Before clicking the button: run <code>supabase/schema.sql</code> in your Supabase SQL Editor,
-  and make sure <code>js/supabase-init.js</code> has your real project URL and anon key filled in
-  (this page loads that same file).
+  <b>This needs your project's <code>service_role</code> key, not the public anon key.</b>
+  The moderation policy in <code>schema.sql</code> deliberately only lets the public anon key
+  insert spots as <code>status = 'pending'</code> (so a random visitor can never insert a
+  pre-approved row) — but this seed script writes rows straight in as already-approved, which
+  is exactly what the service_role key is for: it bypasses row-level security entirely, the
+  same way the Supabase SQL Editor does.
 </p>
+<p>
+  Get it from Dashboard → Project Settings → API → <code>service_role</code> <i>(secret)</i>.
+  <b>Never</b> put this key in <code>js/supabase-init.js</code> or any file that ships to
+  visitors — paste it below only, run this page locally from your own machine, and never
+  deploy this file to a public host.
+</p>
+<p>
+  Before clicking the button: run <code>supabase/schema.sql</code> in your Supabase SQL Editor,
+  and make sure <code>js/supabase-init.js</code> has your real project URL filled in (this page
+  reuses that same URL).
+</p>
+<label for="serviceKey" style="display:block;margin-bottom:6px;">service_role key</label>
+<input type="password" id="serviceKey" autocomplete="off" style="width:100%;max-width:560px;padding:8px;border-radius:6px;border:1px solid #4a4438;background:#2b2822;color:#ece5d6;font-family:monospace;margin-bottom:14px;">
+<br>
 <button id="seedBtn">Seed the spots table</button>
 <pre id="output">Waiting…</pre>
 
@@ -34,10 +51,20 @@
 <script>
   const out = document.getElementById('output');
   const btn = document.getElementById('seedBtn');
+  const keyInput = document.getElementById('serviceKey');
 
   btn.addEventListener('click', async () => {
+    const serviceKey = keyInput.value.trim();
+    if (!serviceKey) {
+      out.innerHTML = `<span class="err">Paste your service_role key above first.</span>`;
+      return;
+    }
     btn.disabled = true;
     out.textContent = `Seeding ${window.SEED_GYMS.length} spots…`;
+    // Deliberately a separate, one-off client using the service_role key --
+    // window.sb (from supabase-init.js) is the public anon-key client used
+    // everywhere else, and must stay that way.
+    const admin = supabase.createClient(SUPABASE_URL, serviceKey);
     const rows = window.SEED_GYMS.map(g => ({
       id: g.id,
       name: g.name,
@@ -53,11 +80,12 @@
       community: false,
       edited: false
     }));
-    const { error } = await window.sb.from('spots').upsert(rows, { onConflict: 'id' });
+    const { error } = await admin.from('spots').upsert(rows, { onConflict: 'id' });
     if (error) {
-      out.innerHTML = `<span class="err">Failed: ${error.message}</span>\n\nCheck that schema.sql has been run and supabase-init.js has the right URL/key.`;
+      out.innerHTML = `<span class="err">Failed: ${error.message}</span>\n\nCheck that schema.sql has been run, supabase-init.js has the right URL, and the key above is the service_role key (not the anon key).`;
     } else {
-      out.innerHTML = `<span class="ok">Seeded ${rows.length} spots successfully.</span>\n\nYou can now open index.html — it reads from this same table.`;
+      out.innerHTML = `<span class="ok">Seeded ${rows.length} spots successfully.</span>\n\nYou can now open index.html — it reads from this same table. Clear the key field above before leaving this page.`;
+      keyInput.value = '';
     }
     btn.disabled = false;
   });
