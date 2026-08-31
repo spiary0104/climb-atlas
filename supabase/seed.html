@@ -2,92 +2,114 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Boulder Atlas — seed Supabase</title>
+<title>Boulder Atlas — one-time seed</title>
 <style>
-  body{font-family:system-ui,sans-serif;background:#211f1b;color:#ece5d6;padding:40px;line-height:1.6;}
-  pre{background:#2b2822;padding:16px;border-radius:8px;overflow-x:auto;white-space:pre-wrap;}
+  body{font-family:system-ui,sans-serif;background:#211f1b;color:#ece5d6;padding:40px;line-height:1.6;max-width:800px;}
+  pre{background:#2b2822;padding:16px;border-radius:8px;overflow-x:auto;white-space:pre-wrap;max-height:400px;overflow-y:auto;}
   button{font-size:15px;padding:10px 18px;border-radius:8px;border:none;background:#e2793f;color:#221a12;font-weight:700;cursor:pointer;}
   button:disabled{opacity:0.5;cursor:not-allowed;}
   .ok{color:#5aa373;}
-  .err{color:#c14f6b;}
+  code{background:#2b2822;padding:1px 5px;border-radius:4px;}
 </style>
 </head>
 <body>
 
 <h1>Boulder Atlas — one-time seed</h1>
 <p>
-  Loads every spot from <code>js/data.js</code> and upserts them into your Supabase
-  <code>spots</code> table. Safe to run more than once — it matches on <code>id</code>, so re-running
+  Generates a SQL script from every spot in <code>js/data.js</code> that upserts them into your
+  Supabase <code>spots</code> table. Safe to re-run — it matches on <code>id</code>, so re-running
   just re-syncs the seed rows rather than duplicating them.
 </p>
 <p>
-  <b>This needs your project's <code>service_role</code> key, not the public anon key.</b>
-  The moderation policy in <code>schema.sql</code> deliberately only lets the public anon key
-  insert spots as <code>status = 'pending'</code> (so a random visitor can never insert a
-  pre-approved row) — but this seed script writes rows straight in as already-approved, which
-  is exactly what the service_role key is for: it bypasses row-level security entirely, the
-  same way the Supabase SQL Editor does.
+  <b>This has to run in the Supabase SQL Editor, not from this page directly.</b> The seed rows
+  need to go in as already-approved, but <code>schema.sql</code>'s moderation policy deliberately
+  only lets the public anon key insert a spot as <code>status = 'pending'</code> — and Supabase's
+  secret/<code>service_role</code> key is flatly rejected the moment it's used from a browser
+  (a hard security check on Supabase's side, not something this page can work around). The SQL
+  Editor runs as the Postgres superuser and bypasses row-level security entirely, the same way a
+  service_role key would — without ever putting that key in a browser.
 </p>
-<p>
-  Get it from Dashboard → Project Settings → API → <code>service_role</code> <i>(secret)</i>.
-  <b>Never</b> put this key in <code>js/supabase-init.js</code> or any file that ships to
-  visitors — paste it below only, run this page locally from your own machine, and never
-  deploy this file to a public host.
-</p>
-<p>
-  Before clicking the button: run <code>supabase/schema.sql</code> in your Supabase SQL Editor,
-  and make sure <code>js/supabase-init.js</code> has your real project URL filled in (this page
-  reuses that same URL).
-</p>
-<label for="serviceKey" style="display:block;margin-bottom:6px;">service_role key</label>
-<input type="password" id="serviceKey" autocomplete="off" style="width:100%;max-width:560px;padding:8px;border-radius:6px;border:1px solid #4a4438;background:#2b2822;color:#ece5d6;font-family:monospace;margin-bottom:14px;">
-<br>
-<button id="seedBtn">Seed the spots table</button>
-<pre id="output">Waiting…</pre>
+<ol>
+  <li>Click "Generate SQL" below.</li>
+  <li>Click "Copy to clipboard."</li>
+  <li>In your Supabase project: Dashboard → SQL Editor → New query → paste → Run.</li>
+</ol>
+<button id="genBtn">Generate SQL</button>
+<button id="copyBtn" disabled>Copy to clipboard</button>
+<p id="status"></p>
+<pre id="output">Click "Generate SQL" to build the script.</pre>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
-<script src="../js/supabase-init.js"></script>
 <script src="../js/data.js"></script>
 <script>
   const out = document.getElementById('output');
-  const btn = document.getElementById('seedBtn');
-  const keyInput = document.getElementById('serviceKey');
+  const statusEl = document.getElementById('status');
+  const genBtn = document.getElementById('genBtn');
+  const copyBtn = document.getElementById('copyBtn');
+  let sql = '';
 
-  btn.addEventListener('click', async () => {
-    const serviceKey = keyInput.value.trim();
-    if (!serviceKey) {
-      out.innerHTML = `<span class="err">Paste your service_role key above first.</span>`;
-      return;
+  // Postgres single-quoted string literal, escaping embedded single quotes
+  // the standard SQL way (doubling them) -- notes/names in js/data.js do
+  // contain apostrophes and quoted phrases.
+  function sqlString(v) {
+    return "'" + String(v).replace(/'/g, "''") + "'";
+  }
+  function sqlNullableString(v) {
+    return (v === undefined || v === null || v === '') ? 'null' : sqlString(v);
+  }
+  function sqlTextArray(arr) {
+    return 'ARRAY[' + (arr || []).map(sqlString).join(',') + ']::text[]';
+  }
+
+  genBtn.addEventListener('click', () => {
+    const rows = window.SEED_GYMS.map(g => `  (${[
+      sqlString(g.id),
+      sqlString(g.name),
+      sqlString(g.suburb),
+      sqlString(g.state),
+      sqlString(g.country),
+      g.lat,
+      g.lng,
+      sqlTextArray(g.types),
+      sqlNullableString(g.notes),
+      sqlNullableString(g.photo),
+      sqlNullableString(g.address),
+      'false',
+      'false',
+      sqlString('approved')
+    ].join(', ')})`).join(',\n');
+
+    sql = `insert into public.spots
+  (id, name, suburb, state, country, lat, lng, types, notes, photo, address, community, edited, status)
+values
+${rows}
+on conflict (id) do update set
+  name = excluded.name,
+  suburb = excluded.suburb,
+  state = excluded.state,
+  country = excluded.country,
+  lat = excluded.lat,
+  lng = excluded.lng,
+  types = excluded.types,
+  notes = excluded.notes,
+  photo = excluded.photo,
+  address = excluded.address,
+  community = excluded.community,
+  edited = excluded.edited;
+-- status is deliberately not overwritten on conflict, so a spot a moderator
+-- has since changed (or a community edit already applied) isn't reset.
+`;
+    out.textContent = sql;
+    statusEl.innerHTML = `<span class="ok">Generated ${window.SEED_GYMS.length} rows. Copy this into the Supabase SQL Editor and run it.</span>`;
+    copyBtn.disabled = false;
+  });
+
+  copyBtn.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(sql);
+      statusEl.innerHTML = `<span class="ok">Copied to clipboard.</span>`;
+    } catch (err) {
+      statusEl.textContent = `Couldn't copy automatically (${err.message}) — click inside the box above, select all (Ctrl/Cmd+A), and copy manually.`;
     }
-    btn.disabled = true;
-    out.textContent = `Seeding ${window.SEED_GYMS.length} spots…`;
-    // Deliberately a separate, one-off client using the service_role key --
-    // window.sb (from supabase-init.js) is the public anon-key client used
-    // everywhere else, and must stay that way.
-    const admin = supabase.createClient(SUPABASE_URL, serviceKey);
-    const rows = window.SEED_GYMS.map(g => ({
-      id: g.id,
-      name: g.name,
-      suburb: g.suburb,
-      state: g.state,
-      country: g.country,
-      lat: g.lat,
-      lng: g.lng,
-      types: g.types,
-      notes: g.notes || null,
-      photo: g.photo || null,
-      address: g.address || null,
-      community: false,
-      edited: false
-    }));
-    const { error } = await admin.from('spots').upsert(rows, { onConflict: 'id' });
-    if (error) {
-      out.innerHTML = `<span class="err">Failed: ${error.message}</span>\n\nCheck that schema.sql has been run, supabase-init.js has the right URL, and the key above is the service_role key (not the anon key).`;
-    } else {
-      out.innerHTML = `<span class="ok">Seeded ${rows.length} spots successfully.</span>\n\nYou can now open index.html — it reads from this same table. Clear the key field above before leaving this page.`;
-      keyInput.value = '';
-    }
-    btn.disabled = false;
   });
 </script>
 </body>
