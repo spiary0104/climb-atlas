@@ -1,4 +1,4 @@
--- Boulder Atlas — Supabase schema
+-- Climb Atlas — Supabase schema
 -- ------------------------------------------------------------
 -- Run this once in your Supabase project's SQL Editor (Dashboard > SQL Editor > New query),
 -- before running supabase/seed.html. Safe to re-run — every statement is idempotent.

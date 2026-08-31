@@ -1,6 +1,6 @@
 # Current Development State
 
-This is the living task tracker for Boulder Atlas. The brain session reads
+This is the living task tracker for Climb Atlas. The brain session reads
 this first, every session, before deciding what to work on next or what
 to dispatch to a worker. Workers update their own task's entry when they
 finish (or get stuck) — this is the persistent-knowledge document

@@ -1,4 +1,4 @@
-# Boulder Atlas — Claude Code Workflow Guide
+# Climb Atlas — Claude Code Workflow Guide
 
 This sets up the workflow you described: Git + GitHub pushed constantly,
 worktrees for parallel work, one-task-one-chat kept under a token budget,
@@ -58,7 +58,7 @@ git branch --show-current
 git log --oneline -10
 ```
 
-Boulder Atlas already has a git history, so this should show your current
+Climb Atlas already has a git history, so this should show your current
 branch and recent commits. If `git status` shows uncommitted changes you
 don't recognize, stop and inspect before continuing — don't build on top
 of an unknown working-tree state.

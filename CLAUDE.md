@@ -1,4 +1,4 @@
-# Boulder Atlas — Project Instructions
+# Climb Atlas — Project Instructions
 
 @Rules.md
 
@@ -10,7 +10,7 @@ brief for everyone working on this project, human or not.
 
 ## Project Overview
 
-Boulder Atlas is a community-sourced map of bouldering/climbing spots
+Climb Atlas is a community-sourced map of bouldering/climbing spots
 (indoor gyms + outdoor areas) across Australia and the US, modelled on
 Track Atlas.
 

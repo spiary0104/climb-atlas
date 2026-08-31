@@ -1,4 +1,4 @@
-# Boulder Atlas
+# Climb Atlas
 
 A community-sourced map of indoor climbing gyms (bouldering, top rope) across Australia,
 the United States, Japan, Canada, New Zealand, and China, modelled on [Track Atlas](https://trackatlas.org).

@@ -1,4 +1,4 @@
-// Boulder Atlas seed data — the starting dataset of climbing spots.
+// Climb Atlas seed data — the starting dataset of climbing spots.
 // This is exposed as a global so app.js can read it without a bundler/module step.
 // Add/rearrange entries here directly; app.js never needs to change for data edits.
 
