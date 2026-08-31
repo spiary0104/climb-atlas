@@ -944,6 +944,92 @@ placeholder work just to fill this section)_
   of the lag, not the inherent one. Same outstanding item as every prior
   task: a real human-in-a-browser look before merging this branch.
 
+### Re-run schema.sql live, discover stale Supabase seed data, fix seed.html
+- Branch: `fix/marker-lag-region-label-collisions` (same branch/worktree as
+  the task above — continued rather than starting fresh)
+- Status: **seed.html itself is fixed and verified**; the user still needs
+  to actually paste the generated SQL into their Supabase SQL Editor and
+  run it — not done as of this entry, since only the user has access to
+  their live Supabase project.
+- What: this was a live troubleshooting thread with the user (not a
+  pre-planned task), working through getting their actual Supabase project
+  in sync with the app, one real error at a time:
+  1. User re-ran `supabase/schema.sql` in their SQL Editor (per the
+     project's own address-field/reports-table setup that had never been
+     applied to their live project) and got Supabase's generic "destructive
+     operation" warning. Read the full file to confirm nothing in it
+     actually deletes data (no `DROP TABLE`/`TRUNCATE`/`DELETE`, just
+     `create table if not exists`, `add column if not exists`, and
+     paired `drop policy`/`drop constraint` + immediate re-create, which
+     only touch access-control rules, not rows) — told the user it was
+     safe to proceed, grounded in having actually read the file rather
+     than asserting from the file's own "safe to re-run" header text alone.
+  2. After the schema fix, user reported only AU markers showing on the
+     map. Root cause: `supabase/seed.html` (the one-time script that
+     pushes `js/data.js` into the live `spots` table) still had a comment
+     saying "~70 starting spots" and had evidently only ever been run once,
+     back when the dataset really was AU-only — every country added since
+     (US/JP/CA/NZ/CN/Chongqing, now 504 spots total) was never pushed to
+     the live database. Before the schema fix this was invisible, because
+     Supabase was erroring out entirely and the app was silently using the
+     *offline bundled* `js/data.js` fallback (which does have all 504) —
+     so the user had been looking at fallback data without realizing it
+     wasn't live. Also found and fixed in the same pass: `seed.html`'s
+     upsert payload never included the `address` field at all, so even a
+     re-run would never have pushed verified addresses into Supabase.
+  3. User tried the fixed `seed.html` and got `new row violates row-level
+     security policy for table "spots"`. This is `schema.sql`'s own
+     moderation design working as intended, not a bug: the public anon key
+     is only allowed to insert a spot as `status = 'pending'` (so a random
+     site visitor can never insert a pre-approved row directly), but
+     `seed.html` was trying to write already-approved rows using that same
+     anon-key client. Confirmed via research (not assumed) that Supabase's
+     SQL Editor runs as the `postgres` superuser and bypasses RLS entirely.
+     First fix attempt: changed `seed.html` to build a one-off admin
+     client using the project's `service_role` key, entered at runtime
+     (never hardcoded/committed) — verified the request path worked end to
+     end against the real project (a deliberately-wrong test key correctly
+     came back with Supabase's own "Invalid API key," proving the
+     URL/client wiring was right).
+  4. That still failed: `Forbidden use of secret API key in browser`.
+     Researched and confirmed this is a hard, deliberate security check on
+     Supabase's side (not a bug or something a client-side workaround can
+     get around) — Supabase's newer API key system flatly rejects any
+     secret/`service_role`-class key when the request looks like it came
+     from a browser (matched on `User-Agent`, returns 401), specifically
+     to prevent the exact "paste the privileged key into a page" pattern
+     just attempted. Confirmed this project is already on the new key
+     format (`supabase-init.js`'s anon key is `sb_publishable_...`), so
+     this restriction unconditionally applies — no way to make the
+     browser-based approach work, full stop.
+  5. **Real fix**: reworked `seed.html` entirely — it no longer calls the
+     Supabase API at all. It now generates a plain SQL `insert ... on
+     conflict (id) do update set ...` statement client-side from every
+     `js/data.js` spot (proper single-quote escaping via doubling,
+     `ARRAY[...]::text[]` literals for the `types` column) and displays it
+     for the user to copy and run in the SQL Editor themselves — which
+     bypasses RLS via the superuser-connection mechanism confirmed in step
+     3, without ever putting a privileged key in a browser. `status` is
+     set to `'approved'` on insert but deliberately left out of the
+     `on conflict do update set` list, so a spot a moderator has since
+     changed isn't silently reset back by a future re-run.
+- **Verified live** (served copy): generated SQL contains exactly 504
+  value rows (`grep -c "^\s*('"` equivalent via JS); last row has no
+  trailing comma before `on conflict`; spot-checked an entry with a real
+  apostrophe ("Sydney Uni's climbing club gym...") escapes to `Uni''s`
+  correctly; spot-checked an entry with embedded double quotes (the
+  Chengdu ICD `notes` field) passes through unescaped, which is correct
+  inside a single-quoted SQL string; "Copy to clipboard" wrapped in
+  try/catch with a manual-copy fallback message after it threw an
+  uncaught `NotAllowedError` in this sandboxed test browser (a
+  non-focused-document artifact of the test environment, not expected to
+  happen in the user's own real, focused browser tab, but worth
+  degrading gracefully regardless).
+- **Not yet done**: the user needs to actually run the generated SQL in
+  their SQL Editor and confirm all 6 countries then show up on the live
+  map — this session can't do that step, it requires their own Supabase
+  dashboard access.
+
 ## Blocked
 
 _(none)_
