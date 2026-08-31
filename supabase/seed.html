@@ -16,7 +16,7 @@
 
 <h1>Boulder Atlas — one-time seed</h1>
 <p>
-  Loads the ~70 starting spots from <code>js/data.js</code> and upserts them into your Supabase
+  Loads every spot from <code>js/data.js</code> and upserts them into your Supabase
   <code>spots</code> table. Safe to run more than once — it matches on <code>id</code>, so re-running
   just re-syncs the seed rows rather than duplicating them.
 </p>
@@ -49,6 +49,7 @@
       types: g.types,
       notes: g.notes || null,
       photo: g.photo || null,
+      address: g.address || null,
       community: false,
       edited: false
     }));
