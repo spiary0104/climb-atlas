@@ -1059,10 +1059,46 @@ placeholder work just to fill this section)_
   ("United States"/"Australia"/"China"/"Japan") show at world zoom and
   correctly switch to city-level labels at zoom 5+; no mobile overflow;
   no new console errors.
-- **Not yet done**: merge into `master` and push (this branch isn't on
-  GitHub yet) — `master` auto-deploys to the live `climbatlas.org` site
-  via Vercel, so this needs a deliberate merge+push step, not an
-  automatic one.
+- **Done**: also added a "fly to country" behavior on the same branch —
+  clicking a country's sidebar label now calls `map.flyTo()` with a
+  fixed, hand-picked `{center,zoom}` per country (`COUNTRY_FLY_TARGETS`
+  in `js/app.js`), framing that country's actual spread of seed spots
+  rather than its true geographic center (Canada's real center is in the
+  Arctic, nowhere near its seed spots). Verified by intercepting
+  `map.flyTo` directly, since this sandboxed browser throttles the
+  animation's `requestAnimationFrame` loop in a background/automated
+  tab — the call itself (center/zoom/duration) was confirmed correct for
+  every country, which is what actually drives the camera.
+- Merged into `master` and pushed to `github.com/spiary0104/climb-atlas`
+  — live on `climbatlas.org` via Vercel's auto-deploy.
+
+### Mobile modal fix, alphabetical countries, Saved tab, broader search
+- Branch: `feature/mobile-modal-saved-tab-alpha-search` (new branch off
+  `master` — previous branch merged; not yet merged itself)
+- Status: implemented + verified live in a served copy; not yet merged.
+- What: five requests in one message — see the commit on this branch for
+  full detail. Summary:
+  1. **Real mobile bug, not a design nitpick**: the add/edit-spot
+     `.modal` had no `max-height`/`overflow-y` at all, unlike
+     `.modal.info-modal` which already had both. On a short viewport its
+     form content (872px measured) could exceed the visible area (713px)
+     with literally no way to scroll down to Cancel/Submit — confirmed
+     by measuring both before and after the fix, not assumed. Fixed by
+     adding the same `max-height:88vh; overflow-y:auto;` pattern.
+  2. Sorted the sidebar country groups and both country `<select>`s
+     alphabetically (was addition order: AU, US, JP, CA, NZ, CN).
+  3. Added a "Saved" header button next to About — reuses the existing
+     Bookmarked filter/checkbox rather than a new page (checks the box,
+     sets `showBookmarkedOnly`, opens the sidebar on mobile), prompting
+     sign-in via toast if clicked while signed out.
+  4. Removed the hardcoded "AU, US, JP, CA, NZ & CN" list from the
+     header tagline, since the country list is expected to keep growing.
+  5. Search now matches state/country too (code and human-readable
+     label), not just name/suburb — verified "Japan" returns exactly 32
+     and "chongqing" exactly 5, matching known per-region counts.
+- **Not yet done**: merge into `master` and push — same auto-deploy
+  caveat as every branch since the domain went live: `master` pushes
+  straight to `climbatlas.org` via Vercel, so this is a deliberate step.
 
 ## Blocked
 
