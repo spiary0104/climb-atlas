@@ -1025,10 +1025,44 @@ placeholder work just to fill this section)_
   non-focused-document artifact of the test environment, not expected to
   happen in the user's own real, focused browser tab, but worth
   degrading gracefully regardless).
-- **Not yet done**: the user needs to actually run the generated SQL in
-  their SQL Editor and confirm all 6 countries then show up on the live
-  map — this session can't do that step, it requires their own Supabase
-  dashboard access.
+- **Done**: user ran the generated SQL in their SQL Editor. Confirmed live
+  — the app now loads from Supabase with zero errors (previously always
+  fell back to offline seed data), all 6 countries render on the map.
+
+### Add outdoor bouldering type, fix mobile sidebar/legend, country-first labels
+- Branch: `feature/outdoor-type-mobile-fixes-country-labels` (new branch
+  off `master` — the previous branch is merged; not yet merged itself)
+- Status: implemented + verified live in a served copy; not yet merged.
+- What: six requests in one message — see the commit on this branch for
+  full detail. Summary: removed the Privacy Policy's placeholder legal
+  note (kept on Terms, not asked to remove there); updated both docs'
+  date to 1 September 2026 and contact email to
+  `climbatlas0104@gmail.com`; reverted the gym list to always render
+  (previously hidden unless searching); added "outdoor bouldering" back
+  as a third climbing type (removed earlier in the project, see
+  `docs/architecture.md` "Known gaps") — filter checkbox, legend entry,
+  add/edit-form checkboxes, reusing the leftover unused `--t-outdoor` CSS
+  var; fixed a real mobile bug where the hamburger toggle became
+  unclickable (covered by the open sidebar) by giving `.layout`
+  `position:relative` so the sidebar's mobile `position:absolute`
+  resolves against the right box instead of the viewport; made the map
+  legend collapsible and collapsed by default on mobile; added a
+  country-level label tier below a new `COUNTRY_LABEL_ZOOM` (5), so
+  zoomed-out labels show country names before switching to state/city
+  names at closer zoom — see `docs/architecture.md` "Map" section for
+  the full mechanism.
+- **Verified live**: gym list renders all 504 items; outdoor-bouldering
+  checkbox present and wired through sidebar/add-form/edit-form; mobile
+  toggle stays on top and clickable after opening the sidebar (confirmed
+  via `elementFromPoint`) and closes correctly; legend starts collapsed
+  at 375px width and toggles correctly; country labels
+  ("United States"/"Australia"/"China"/"Japan") show at world zoom and
+  correctly switch to city-level labels at zoom 5+; no mobile overflow;
+  no new console errors.
+- **Not yet done**: merge into `master` and push (this branch isn't on
+  GitHub yet) — `master` auto-deploys to the live `climbatlas.org` site
+  via Vercel, so this needs a deliberate merge+push step, not an
+  automatic one.
 
 ## Blocked
 
@@ -1036,6 +1070,18 @@ _(none)_
 
 ## Done (recent)
 
-_(none yet — once tasks start landing, log them here with the branch and
-a one-line summary, then trim old entries once they're no longer useful
-context)_
+### Domain launch: climbatlas.org live via Vercel, Supabase fully wired
+- Branch: `fix/marker-lag-region-label-collisions`, merged to `master`
+  and pushed to `github.com/spiary0104/climb-atlas`.
+- Summary: merged the marker-lag/region-label-collision/seed.html/
+  Climb-Atlas-rename branch into `master`, pushed to a newly-created
+  GitHub repo, deployed via Vercel (Framework Preset "Other", no build
+  step), and attached `climbatlas.org` (canonical `www.climbatlas.org`,
+  apex redirects to it) — DNS at Porkbun needed a plain A record
+  (`216.198.79.1`) and a project-specific CNAME for `www`, not the
+  generic legacy values first tried. Supabase's Site URL/Redirect URLs
+  updated to the real domain. Ran the seed.html-generated SQL in the
+  live project's SQL Editor — confirmed the app now loads live data with
+  zero errors instead of falling back to offline seed data. Verified the
+  moderator/pending-review pipeline end-to-end by finding and rejecting
+  a real test submission via a direct Supabase query.

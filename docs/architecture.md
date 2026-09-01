@@ -291,15 +291,13 @@ from one source:
   row (~30px), not another full expanded chip row**, so this scales far
   better than the flat chip-row layout did. Still worth re-measuring both
   regions after a future country addition rather than assuming it's fine.
-- **The gym list is hidden unless there's an active search.** At 500+
-  spots, rendering every filtered spot as a `.gym-item` was expensive and
-  mostly just displaced the map — `render()` (`js/app.js`) now only
-  builds the real list when `searchTerm` is non-empty; otherwise
-  `#gymList` shows a one-line "`N` spots shown on the map — search by
-  name or suburb to list them here" placeholder. Chip/type/marks filters
-  still narrow what's on the map and in `countNum` either way — only the
-  *list rendering* is gated on search text, per the user's own framing of
-  the request ("the list of gyms (unless searched for)").
+- **The gym list always renders the full filtered set.** An earlier
+  version hid it unless there was an active search term (to save render
+  cost at 500+ spots), showing a one-line placeholder instead — reverted
+  per explicit request to always show the list. `render()` (`js/app.js`)
+  builds every filtered spot as a `.gym-item` regardless of `searchTerm`
+  now; the placeholder only appears when the filtered set is genuinely
+  empty ("No spots match").
 
 ## Map
 
@@ -399,13 +397,30 @@ from one source:
   `filter:brightness()` instead, which MapLibre never touches. The
   inherent WebGL/DOM gap described above is unchanged and not fixable
   from application code — this only removed the self-inflicted part.
-- Marker/checkbox colour = climbing type (indoor bouldering, top rope —
-  outdoor bouldering was removed as a category, see "Known gaps"); a pin
-  split into colour wedges means more than one type applies. A green
-  ring = signed-in user has marked it climbed; a gold star badge =
+- Marker/checkbox colour = climbing type (indoor bouldering, top rope,
+  outdoor bouldering — the latter was removed as a category early in
+  this project, then reintroduced by explicit request; see "Known gaps");
+  a pin split into colour wedges means more than one type applies. A
+  green ring = signed-in user has marked it climbed; a gold star badge =
   bookmarked.
 - Country/state filter, type filter, and marks filter are independent
   (AND'd together); search matches name or suburb.
+- **Region labels are two-tiered**, controlled by `COUNTRY_LABEL_ZOOM`
+  (currently 5) alongside the existing `HOLD_ICON_ZOOM` (9): below
+  `COUNTRY_LABEL_ZOOM`, `paintMarkers()` shows one label per *country*
+  (`computeCountryCentroids()` + `COUNTRY_LABELS`, e.g. "Japan") rather
+  than per state/prefecture/city — at globe/continent zoom, several
+  same-country regions are usually still too close together on screen to
+  be worth distinguishing, and a country name orients a viewer faster.
+  From `COUNTRY_LABEL_ZOOM` up to `HOLD_ICON_ZOOM`, labels switch to the
+  finer state/city tier (`computeRegionCentroids()`) as before. Both
+  tiers share the same collision-avoidance logic and the same
+  `regionLabelMarkers` tracking dict — country-tier keys are bare country
+  codes (`"JP"`), state-tier keys are `"country:state"` (`"JP:TOKYO"`),
+  so there's no key collision between tiers, and a tier's stale markers
+  get cleaned up automatically by the existing per-frame diff once the
+  zoom crosses the threshold and that tier's keys stop appearing in
+  `seenLabels`.
 
 ## Known gaps (from README "Before it's actually public")
 
@@ -416,12 +431,17 @@ from one source:
   Cloudflare R2, or S3).
 - "Revert to original data" only works for un-edited seed spots — there's
   no stored "original" for community-submitted spots.
-- Outdoor bouldering was removed as a type/category entirely (indoor
-  gyms only now). The 23 outdoor-only seed spots were deleted rather than
-  recategorized — that data no longer exists in the app, only in git
-  history. Some seed states (AU's TAS, US's AL/GA/TN/UT) now have zero
-  spots as a result; their filter chips remain since a future indoor gym
-  there is plausible.
+- Outdoor bouldering was removed as a type/category early in this
+  project (the 23 outdoor-only seed spots at the time were deleted
+  rather than recategorized — that old data only exists in git history,
+  not restored), then **reintroduced as a type option by explicit
+  request** — `outdoor-bouldering` is now a normal third value in
+  `TYPE_COLORS`/`TYPE_LABELS`/`activeTypes` (`js/app.js`), with its own
+  sidebar filter checkbox, map legend entry, and add/edit-spot form
+  checkbox, reusing the `--t-outdoor` CSS variable that had been left
+  over (unused) since the original removal. No existing seed spot has
+  been retroactively tagged with this type — it only applies going
+  forward to new/edited submissions.
 
 ## Where to look first for a given change
 
