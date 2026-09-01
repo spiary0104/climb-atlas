@@ -695,7 +695,25 @@
   const editModalBackdrop = document.getElementById('editModalBackdrop');
   const editPinStatus = document.getElementById('editPinStatus');
 
-  document.getElementById('addBtn').addEventListener('click', ()=>{
+  // Signed-in only (per the RLS policy in schema.sql), and a client-side
+  // pre-check against the same rolling-24h/10-submission cap so someone
+  // who's already hit it gets told before filling out the whole form,
+  // not after. The actual limit is enforced server-side either way --
+  // this is just a nicer UX in front of it, and fails open (opens the
+  // form) if the count query itself errors.
+  document.getElementById('addBtn').addEventListener('click', async ()=>{
+    const user = window.auth.user;
+    if(!user){ showToast('Sign in to add a location'); openAuthModal(); return; }
+    if(!window.sb){ showToast('Supabase is not configured — see README.md'); return; }
+    const dayAgo = new Date(Date.now() - 24*60*60*1000).toISOString();
+    const {count, error} = await window.sb.from('spots')
+      .select('id', {count:'exact', head:true})
+      .eq('submitted_by', user.id)
+      .gte('created_at', dayAgo);
+    if(!error && count >= 10){
+      showToast("You've reached today's limit of 10 submissions — try again tomorrow.");
+      return;
+    }
     placingPin = null;
     submitBtn.disabled = true;
     pinStatus.textContent = 'No pin dropped yet — click "Drop pin" then tap the map.';
@@ -770,6 +788,8 @@
   document.getElementById('submitBtn').addEventListener('click', async ()=>{
     if(!placingPin) return;
     if(!window.sb){ showToast('Supabase is not configured — see README.md'); return; }
+    const user = window.auth.user;
+    if(!user){ showToast('Sign in to add a location'); closeModal(); openAuthModal(); return; }
     const gym = {
       id: 'community-' + (window.crypto && crypto.randomUUID ? crypto.randomUUID() : Date.now()),
       name: document.getElementById('fName').value.trim(),
@@ -782,6 +802,7 @@
       photo: document.getElementById('fPhoto').value.trim() || null,
       lat: placingPin.lat,
       lng: placingPin.lng,
+      submitted_by: user.id,
       community: true,
       edited: false,
       status: 'pending'
@@ -795,7 +816,11 @@
       submitBtn.textContent = 'Add to map';
       closeModal();
     }catch(err){
-      showToast('Could not save — try again');
+      // The RLS policy (schema.sql) is the real enforcement of the sign-in +
+      // 10/day rules -- this is just a clearer message for the rare case the
+      // client-side pre-check missed (a race, or its own query erroring).
+      const rlsRejected = /row-level security|permission denied/i.test(err.message||'');
+      showToast(rlsRejected ? "Couldn't save — you may have reached today's submission limit." : 'Could not save — try again');
       console.error(err);
       submitBtn.textContent = 'Add to map';
       submitBtn.disabled = false;

@@ -66,28 +66,53 @@ alter table public.spots add column if not exists status text not null default '
 alter table public.spots drop constraint if exists spots_status_check;
 alter table public.spots add constraint spots_status_check check (status in ('pending', 'approved'));
 alter table public.spots add column if not exists address text;
+-- Tracks who proposed a community spot, so the INSERT policy below can require
+-- sign-in and rate-limit per account. Null for seed/legacy rows (nobody "submitted"
+-- those) and for anything inserted before this column existed.
+alter table public.spots add column if not exists submitted_by uuid references auth.users(id);
 
 alter table public.spots enable row level security;
 
--- Moderation model: the public only ever sees approved spots. Anyone (signed in or
--- not) can propose a brand-new spot, but it's forced to land as 'pending' — the
--- INSERT policy's WITH CHECK makes it impossible for a client to insert a
--- pre-approved row. Only a moderator can flip it to 'approved' (via UPDATE) or
--- remove it entirely if rejected (via DELETE). Direct UPDATEs to an already-live
--- spot are moderators-only too — a normal user proposing an edit to an existing
--- spot goes through the separate `pending_edits` queue below instead, so the live
--- spot keeps showing its current approved data until that edit is approved.
+-- Moderation model: the public only ever sees approved spots. Only a signed-in user
+-- can propose a brand-new spot (rate-limited to 10 per rolling 24h, below), but it's
+-- forced to land as 'pending' regardless — the INSERT policy's WITH CHECK makes it
+-- impossible for a client to insert a pre-approved row. Only a moderator can flip it
+-- to 'approved' (via UPDATE) or remove it entirely if rejected (via DELETE). Direct
+-- UPDATEs to an already-live spot are moderators-only too — a normal user proposing
+-- an edit to an existing spot goes through the separate `pending_edits` queue below
+-- instead, so the live spot keeps showing its current approved data until that edit
+-- is approved.
 drop policy if exists "spots are publicly readable" on public.spots;
 drop policy if exists "approved spots are publicly readable, moderators see all" on public.spots;
-create policy "approved spots are publicly readable, moderators see all"
+drop policy if exists "approved spots are publicly readable, moderators see all, submitters see their own" on public.spots;
+create policy "approved spots are publicly readable, moderators see all, submitters see their own"
   on public.spots for select
-  using (status = 'approved' or auth.uid() in (select user_id from public.moderators));
+  using (
+    status = 'approved'
+    or auth.uid() in (select user_id from public.moderators)
+    or submitted_by = auth.uid()
+  );
 
+-- Signed-in only, and capped at 10 proposals per rolling 24h per account -- the
+-- subquery counts this same user's own recent submissions (visible to them under
+-- the SELECT policy just above) and the new row is rejected once that count already
+-- hits 10, same idea as any simple abuse-rate-limit. `submitted_by = auth.uid()`
+-- also stops one user from attributing a submission to somebody else's account.
 drop policy if exists "anyone can add spots" on public.spots;
 drop policy if exists "anyone can propose a new spot as pending" on public.spots;
-create policy "anyone can propose a new spot as pending"
+drop policy if exists "signed-in users can propose a new spot as pending, rate-limited" on public.spots;
+create policy "signed-in users can propose a new spot as pending, rate-limited"
   on public.spots for insert
-  with check (status = 'pending');
+  with check (
+    status = 'pending'
+    and auth.uid() is not null
+    and submitted_by = auth.uid()
+    and (
+      select count(*) from public.spots
+      where submitted_by = auth.uid()
+        and created_at > now() - interval '1 day'
+    ) < 10
+  );
 
 drop policy if exists "anyone can edit spots" on public.spots;
 drop policy if exists "moderators can update spots" on public.spots;
