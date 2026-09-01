@@ -356,7 +356,13 @@
     if(showClimbedOnly && !climbedIds.has(g.id)) return false;
     if(showBookmarkedOnly && !bookmarkedIds.has(g.id)) return false;
     if(searchTerm){
-      const hay = (g.name+' '+g.suburb).toLowerCase();
+      // Matches name/suburb as before, plus state/country by both their raw
+      // code (e.g. "NSW", "JP") and human-readable label (e.g. "New South
+      // Wales" -- well, just "NSW" here since AU doesn't expand, but
+      // "United States", "Japan", etc. do) so typing a country or state name
+      // finds every spot in it, not just ones whose suburb happens to match.
+      const hay = [g.name, g.suburb, g.state, stateLabel(g.country, g.state), g.country, COUNTRY_LABELS[g.country]]
+        .join(' ').toLowerCase();
       if(!hay.includes(searchTerm)) return false;
     }
     return true;
@@ -533,6 +539,18 @@
 
   document.getElementById('mobileToggle').addEventListener('click', ()=>{
     document.getElementById('sidebar').classList.toggle('open');
+  });
+
+  // "Saved" header button -- jumps straight to the existing Bookmarked
+  // filter rather than being a separate page, so it reuses the same
+  // marks/list/map rendering everything else already goes through.
+  document.getElementById('savedBtn').addEventListener('click', ()=>{
+    if(!window.auth.user){ showToast('Sign in to view your saved spots'); return; }
+    const bookmarkedFilter = document.getElementById('filterBookmarked');
+    bookmarkedFilter.checked = true;
+    showBookmarkedOnly = true;
+    render();
+    if(window.innerWidth <= 760) document.getElementById('sidebar').classList.add('open');
   });
 
   // Collapsed by default on narrow viewports, since the full legend text
