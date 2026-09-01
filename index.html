@@ -135,6 +135,11 @@
             <span class="dot" style="background:var(--t-toprope)"></span>
             Top rope
           </label>
+          <label class="type-check">
+            <input type="checkbox" class="chk-outdoor" data-type="outdoor-bouldering" checked>
+            <span class="dot" style="background:var(--t-outdoor)"></span>
+            Outdoor bouldering
+          </label>
         </div>
         <div class="type-filter" id="marksFilters">
           <div class="section-label">My marks</div>
@@ -164,13 +169,18 @@
       <div id="map"></div>
       <div class="placing-banner" id="placingBanner">Click anywhere on the map to drop a pin for the gym</div>
       <div class="toast" id="toast"></div>
-      <div class="legend">
-        <b>Colour = type</b>
-        <span style="color:var(--t-indoor)">●</span> Indoor bouldering &nbsp;
-        <span style="color:var(--t-toprope)">●</span> Top rope<br>
-        Split markers = more than one type. A + means community-added, not yet verified.
-        A green ring means you've climbed it; a gold star means it's bookmarked.
-        Numbered circles are clusters — click or zoom in to split them apart.
+      <div class="legend" id="legend">
+        <button class="legend-header" id="legendToggle" aria-expanded="true" aria-controls="legendBody">
+          <b>Colour = type</b><span class="legend-chevron">▴</span>
+        </button>
+        <div class="legend-body" id="legendBody">
+          <span style="color:var(--t-indoor)">●</span> Indoor bouldering &nbsp;
+          <span style="color:var(--t-toprope)">●</span> Top rope &nbsp;
+          <span style="color:var(--t-outdoor)">●</span> Outdoor bouldering<br>
+          Split markers = more than one type. A + means community-added, not yet verified.
+          A green ring means you've climbed it; a gold star means it's bookmarked.
+          Numbered circles are clusters — click or zoom in to split them apart.
+        </div>
       </div>
     </main>
   </div>
@@ -232,6 +242,11 @@
           <input type="checkbox" class="chk-toprope" id="fTypeTopRope">
           <span class="dot" style="background:var(--t-toprope)"></span>
           Top rope
+        </label>
+        <label class="type-check">
+          <input type="checkbox" class="chk-outdoor" id="fTypeOutdoor">
+          <span class="dot" style="background:var(--t-outdoor)"></span>
+          Outdoor bouldering
         </label>
       </div>
     </div>
@@ -307,6 +322,11 @@
           <span class="dot" style="background:var(--t-toprope)"></span>
           Top rope
         </label>
+        <label class="type-check">
+          <input type="checkbox" class="chk-outdoor" id="eTypeOutdoor">
+          <span class="dot" style="background:var(--t-outdoor)"></span>
+          Outdoor bouldering
+        </label>
       </div>
     </div>
     <div class="field">
@@ -371,8 +391,7 @@
 <div class="modal-backdrop hidden" id="privacyModalBackdrop">
   <div class="modal info-modal">
     <h2>Privacy Policy</h2>
-    <div class="updated">Last updated: 24 August 2026</div>
-    <div class="legal-note">This is a plain-language starting draft, not legal advice. Have it reviewed properly before relying on it — especially once accounts, ads, or payments are added.</div>
+    <div class="updated">Last updated: 1 September 2026</div>
 
     <h3>What we collect</h3>
     <p>Three kinds of data: (1) Anything voluntarily entered into the "Add a spot" or "Edit this spot" forms — gym/crag details such as name, location, address, climbing type, notes, and an optional photo link. (2) Anything entered into a "Report incorrect information" form — just a free-text message about a specific spot. (3) If you sign in, your email address (and, for Google sign-in, whatever basic profile info Google shares) plus which spots you've privately marked as climbed or bookmarked.</p>
@@ -384,7 +403,7 @@
     <p>Map tiles are served by OpenStreetMap and CARTO. Loading the map means your browser requests tiles from their servers directly; see their own privacy policies for how they handle that. Accounts and data storage are handled by Supabase; Google sign-in is handled by Google. See their respective privacy policies for how they handle your data.</p>
 
     <h3>Requesting removal</h3>
-    <p>To have a submission corrected or removed, use the Edit function on the relevant pin, or contact <a href="mailto:3uphonium0104@gmail.com">3uphonium0104@gmail.com</a>.</p>
+    <p>To have a submission corrected or removed, use the Edit function on the relevant pin, or contact <a href="mailto:climbatlas0104@gmail.com">climbatlas0104@gmail.com</a>.</p>
 
     <h3>Changes to this policy</h3>
     <p>This policy may be updated as the site adds features like accounts, analytics, or advertising. Material changes will be reflected here with an updated date.</p>
@@ -396,7 +415,7 @@
 <div class="modal-backdrop hidden" id="termsModalBackdrop">
   <div class="modal info-modal">
     <h2>Terms of Service</h2>
-    <div class="updated">Last updated: 24 August 2026</div>
+    <div class="updated">Last updated: 1 September 2026</div>
     <div class="legal-note">This is a plain-language starting draft, not legal advice. Have it reviewed properly before relying on it — especially once accounts, ads, or payments are added.</div>
 
     <h3>What this is</h3>
@@ -419,7 +438,7 @@
     <p>These terms may change as the site grows. Continued use after a change means you accept the updated terms.</p>
 
     <h3>Contact &amp; jurisdiction</h3>
-    <p>Questions: <a href="mailto:3uphonium0104@gmail.com">3uphonium0104@gmail.com</a>. These terms are governed by the laws of New South Wales, Australia.</p>
+    <p>Questions: <a href="mailto:climbatlas0104@gmail.com">climbatlas0104@gmail.com</a>. These terms are governed by the laws of New South Wales, Australia.</p>
 
     <div class="close-row"><button class="btn-submit info-close" style="padding:8px 18px;">Close</button></div>
   </div>

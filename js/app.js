@@ -1,7 +1,7 @@
 
 (function(){
 
-  const TYPE_COLORS = {'indoor-bouldering':'#3fb8a6','top-rope':'#8a6bb0'};
+  const TYPE_COLORS = {'indoor-bouldering':'#3fb8a6','top-rope':'#8a6bb0','outdoor-bouldering':'#b8834a'};
   // `state` codes collide across countries (AU's WA = Western Australia, US's WA = Washington),
   // so country+state together identify a region — never key off `state` alone.
   const STATES_BY_COUNTRY = {
@@ -16,7 +16,8 @@
          ['CHENGDU','Chengdu'],['BEIJING','Beijing'],['WUHAN','Wuhan'],['CHANGSHA','Changsha'],['ZHUHAI','Zhuhai'],
          ['CHONGQING','Chongqing']]
   };
-  const TYPE_LABELS = {'indoor-bouldering':'Indoor bouldering','top-rope':'Top rope'};
+  const TYPE_LABELS = {'indoor-bouldering':'Indoor bouldering','top-rope':'Top rope','outdoor-bouldering':'Outdoor bouldering'};
+  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China'};
   // Below this zoom, a spot with no nearby neighbours (so supercluster hands
   // it back as a lone, unclustered point rather than grouping it) still paints
   // as a small numbered badge instead of the hold-shaped icon -- at globe/
@@ -24,6 +25,11 @@
   // from the default mid-Pacific camera) reads as a stray dot; a numbered
   // badge matches the visual language clusters already use and stays legible.
   const HOLD_ICON_ZOOM = 9;
+  // Below this zoom, region labels show the country name (e.g. "Japan")
+  // rather than individual states/prefectures/cities (e.g. "Tokyo") --
+  // at globe/continent zoom, a country name orients a viewer faster than a
+  // handful of same-country city names clustered together would.
+  const COUNTRY_LABEL_ZOOM = 5;
 
   function typeSwatch(types){
     const colors = (types&&types.length?types:['indoor-bouldering']).map(t=>TYPE_COLORS[t]||'#999');
@@ -42,7 +48,7 @@
   let pendingReports = []; // "report incorrect info" messages awaiting review (moderator-only)
 
   let activeStates = new Set(['ALL']);
-  let activeTypes = new Set(['indoor-bouldering','top-rope']);
+  let activeTypes = new Set(['indoor-bouldering','top-rope','outdoor-bouldering']);
   let showClimbedOnly = false;
   let showBookmarkedOnly = false;
   let searchTerm = '';
@@ -52,6 +58,7 @@
   let supercluster = null;
   let lastIconBucket = null; // 'icon' | 'number' | null -- which style ungrouped spot markers were last painted in
   let regionCentroids = {}; // "country:state" -> {lat,lng,country,state}, recomputed whenever the filtered spot set changes
+  let countryCentroids = {}; // country code -> {lat,lng,country,count}, same idea one tier up
   let regionLabelMarkers = {}; // "country:state" -> maplibregl.Marker, for the basic city/state labels shown below HOLD_ICON_ZOOM
   let placingPin = null; // {lat,lng} while add-modal open
   let currentEditId = null;
@@ -124,6 +131,7 @@
       geometry: {type: 'Point', coordinates: [g.lng, g.lat]}
     })));
     regionCentroids = computeRegionCentroids(visibleSpots);
+    countryCentroids = computeCountryCentroids(visibleSpots);
     // A rebuilt index hands out fresh cluster ids that can coincidentally
     // collide with old ones from the previous index but mean a different
     // group, so anything already painted has to go before we query it.
@@ -147,6 +155,24 @@
     const centroids = {};
     Object.entries(sums).forEach(([key, s])=>{
       centroids[key] = {lat: s.latSum/s.count, lng: s.lngSum/s.count, country: s.country, state: s.state, count: s.count};
+    });
+    return centroids;
+  }
+
+  // One label point per country, same idea as computeRegionCentroids but
+  // one tier coarser -- shown at a wider zoom, before individual states/
+  // prefectures/cities are worth distinguishing (see COUNTRY_LABEL_ZOOM).
+  function computeCountryCentroids(visibleSpots){
+    const sums = {};
+    visibleSpots.forEach(g=>{
+      if(!sums[g.country]) sums[g.country] = {latSum:0, lngSum:0, count:0, country:g.country};
+      sums[g.country].latSum += g.lat;
+      sums[g.country].lngSum += g.lng;
+      sums[g.country].count++;
+    });
+    const centroids = {};
+    Object.entries(sums).forEach(([country, s])=>{
+      centroids[country] = {lat: s.latSum/s.count, lng: s.lngSum/s.count, country, count: s.count};
     });
     return centroids;
   }
@@ -216,9 +242,14 @@
       if(!seenSpots.has(id)){ markerEls[id].marker.remove(); delete markerEls[id]; }
     });
 
-    // Basic city/state labels, same "zoomed out" window as the numbered
-    // badges -- once real markers take over (zoom >= HOLD_ICON_ZOOM) the
-    // labels aren't needed, you can already see individual gyms.
+    // Two-tier basic labels, same "zoomed out" window as the numbered badges
+    // -- once real markers take over (zoom >= HOLD_ICON_ZOOM) labels aren't
+    // needed, you can already see individual gyms. Below COUNTRY_LABEL_ZOOM
+    // (globe/continent view) labels show the country name -- at that zoom,
+    // several same-country cities/states are usually still too close
+    // together on screen to be worth distinguishing, and a country name
+    // orients a viewer faster. From COUNTRY_LABEL_ZOOM up to HOLD_ICON_ZOOM,
+    // labels switch to the finer state/prefecture/city tier as before.
     //
     // Nearby regions (e.g. AU's NSW/ACT/VIC, or several Chinese cities in
     // the same province) can project to almost the same screen point while
@@ -230,9 +261,11 @@
     // any map renderer, just done by hand since these are plain DOM markers.
     const MIN_LABEL_SPACING = 55;
     const showLabels = zoom < HOLD_ICON_ZOOM;
+    const showCountryTier = zoom < COUNTRY_LABEL_ZOOM;
     const seenLabels = new Set();
     if(showLabels){
-      const candidates = Object.entries(regionCentroids)
+      const source = showCountryTier ? countryCentroids : regionCentroids;
+      const candidates = Object.entries(source)
         .filter(([,c])=> !(c.lng < bbox[0] || c.lng > bbox[2] || c.lat < bbox[1] || c.lat > bbox[3]))
         .map(([key,c])=>({key, c, pt: map.project([c.lng, c.lat])}))
         .sort((a,b)=> b.c.count - a.c.count);
@@ -248,7 +281,7 @@
         if(regionLabelMarkers[cand.key]) return;
         const el = document.createElement('div');
         el.className = 'region-label';
-        el.textContent = stateLabel(cand.c.country, cand.c.state);
+        el.textContent = showCountryTier ? (COUNTRY_LABELS[cand.c.country] || cand.c.country) : stateLabel(cand.c.country, cand.c.state);
         // Offset below the badge that would otherwise sit at this same
         // point, so the label doesn't sit directly on top of it.
         regionLabelMarkers[cand.key] = new maplibregl.Marker({element: el, offset: [0, 24]}).setLngLat([cand.c.lng, cand.c.lat]).addTo(map);
@@ -355,13 +388,7 @@
     const visible = spots.filter(passesFilters);
     document.getElementById('countNum').textContent = visible.length;
 
-    // The full list is expensive to render at 500+ spots and mostly just
-    // pushes the map down -- only build it once there's a search term
-    // narrow enough to make a list useful; otherwise the map (plus the
-    // spot count above) is the browsing surface.
-    if(!searchTerm){
-      list.innerHTML = `<div class="empty-state">${visible.length} spot${visible.length===1?'':'s'} shown on the map. Search by name or suburb to list them here.</div>`;
-    } else if(visible.length === 0){
+    if(visible.length === 0){
       list.innerHTML = '<div class="empty-state">No spots match. Try clearing filters or search.</div>';
     } else {
       visible.sort((a,b)=>a.name.localeCompare(b.name));
@@ -487,6 +514,16 @@
 
   document.getElementById('mobileToggle').addEventListener('click', ()=>{
     document.getElementById('sidebar').classList.toggle('open');
+  });
+
+  // Collapsed by default on narrow viewports, since the full legend text
+  // otherwise eats a meaningful chunk of a small map -- still expandable
+  // on tap, and left expanded by default on desktop where there's room.
+  const legendEl = document.getElementById('legend');
+  if(window.innerWidth <= 760) legendEl.classList.add('collapsed');
+  document.getElementById('legendToggle').addEventListener('click', ()=>{
+    const collapsed = legendEl.classList.toggle('collapsed');
+    document.getElementById('legendToggle').setAttribute('aria-expanded', String(!collapsed));
   });
 
   // --- toast ---
@@ -627,7 +664,7 @@
     pinStatus.textContent = 'No pin dropped yet — click "Drop pin" then tap the map.';
     pinStatus.classList.remove('set');
     ['fName','fSuburb','fAddress','fNotes','fPhoto'].forEach(id=>document.getElementById(id).value='');
-    ['fTypeIndoor','fTypeTopRope'].forEach(id=>document.getElementById(id).checked=false);
+    ['fTypeIndoor','fTypeTopRope','fTypeOutdoor'].forEach(id=>document.getElementById(id).checked=false);
     document.getElementById('fCountry').value = 'AU';
     populateStateSelect('fState', 'AU');
     modalBackdrop.classList.remove('hidden');
@@ -680,11 +717,11 @@
   ['fName','fSuburb'].forEach(id=>{
     document.getElementById(id).addEventListener('input', checkFormReady);
   });
-  ['fTypeIndoor','fTypeTopRope'].forEach(id=>{
+  ['fTypeIndoor','fTypeTopRope','fTypeOutdoor'].forEach(id=>{
     document.getElementById(id).addEventListener('change', checkFormReady);
   });
   function selectedTypes(){
-    const map = {fTypeIndoor:'indoor-bouldering', fTypeTopRope:'top-rope'};
+    const map = {fTypeIndoor:'indoor-bouldering', fTypeTopRope:'top-rope', fTypeOutdoor:'outdoor-bouldering'};
     return Object.keys(map).filter(id=>document.getElementById(id).checked).map(id=>map[id]);
   }
   function checkFormReady(){
@@ -744,6 +781,7 @@
     document.getElementById('ePhoto').value = g.photo || '';
     document.getElementById('eTypeIndoor').checked = g.types.includes('indoor-bouldering');
     document.getElementById('eTypeTopRope').checked = g.types.includes('top-rope');
+    document.getElementById('eTypeOutdoor').checked = g.types.includes('outdoor-bouldering');
     editPinStatus.textContent = `Current pin: ${g.lat.toFixed(4)}, ${g.lng.toFixed(4)}`;
     editPinStatus.classList.remove('set');
     // Revert only makes sense for un-edited-back-to seed spots — community
@@ -770,11 +808,11 @@
   ['eName','eSuburb'].forEach(id=>{
     document.getElementById(id).addEventListener('input', checkEditFormReady);
   });
-  ['eTypeIndoor','eTypeTopRope'].forEach(id=>{
+  ['eTypeIndoor','eTypeTopRope','eTypeOutdoor'].forEach(id=>{
     document.getElementById(id).addEventListener('change', checkEditFormReady);
   });
   function selectedEditTypes(){
-    const map = {eTypeIndoor:'indoor-bouldering', eTypeTopRope:'top-rope'};
+    const map = {eTypeIndoor:'indoor-bouldering', eTypeTopRope:'top-rope', eTypeOutdoor:'outdoor-bouldering'};
     return Object.keys(map).filter(id=>document.getElementById(id).checked).map(id=>map[id]);
   }
   function checkEditFormReady(){
