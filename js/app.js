@@ -14,10 +14,16 @@
     NZ: [['AUCKLAND','Auckland'],['WELLINGTON','Wellington'],['CANTERBURY','Canterbury (Christchurch)']],
     CN: [['SHENZHEN','Shenzhen'],['GUANGZHOU','Guangzhou'],['SHANGHAI','Shanghai'],['HANGZHOU','Hangzhou'],
          ['CHENGDU','Chengdu'],['BEIJING','Beijing'],['WUHAN','Wuhan'],['CHANGSHA','Changsha'],['ZHUHAI','Zhuhai'],
-         ['CHONGQING','Chongqing']]
+         ['CHONGQING','Chongqing']],
+    GB: [['ENGLAND','England'],['SCOTLAND','Scotland'],['WALES','Wales'],['NORTHERN_IRELAND','Northern Ireland']],
+    DE: [['BAYERN','Bayern'],['BERLIN','Berlin'],['NORDRHEIN_WESTFALEN','Nordrhein-Westfalen'],['HESSEN','Hessen'],
+         ['BADEN_WURTTEMBERG','Baden-Württemberg'],['BREMEN','Bremen'],['SCHLESWIG_HOLSTEIN','Schleswig-Holstein'],
+         ['SACHSEN','Sachsen'],['NIEDERSACHSEN','Niedersachsen'],['SACHSEN_ANHALT','Sachsen-Anhalt'],
+         ['BRANDENBURG','Brandenburg'],['RHEINLAND_PFALZ','Rheinland-Pfalz'],['HAMBURG','Hamburg'],
+         ['SAARLAND','Saarland'],['THURINGEN','Thüringen'],['MECKLENBURG_VORPOMMERN','Mecklenburg-Vorpommern']]
   };
   const TYPE_LABELS = {'indoor-bouldering':'Indoor bouldering','top-rope':'Top rope','outdoor-bouldering':'Outdoor bouldering'};
-  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China'};
+  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany'};
   // Fixed camera target per country for the "fly to this country" click on
   // its sidebar label -- picked to frame that country's actual spread of
   // seed spots (e.g. US needs a wide zoom to fit both NY and CA), not a
@@ -29,7 +35,9 @@
     JP: {center:[138,38], zoom:4.6},
     CA: {center:[-97,50], zoom:3.2},
     NZ: {center:[172,-41], zoom:4.6},
-    CN: {center:[110,32], zoom:3.6}
+    CN: {center:[110,32], zoom:3.6},
+    GB: {center:[-2.5,54.5], zoom:4.8},
+    DE: {center:[10.5,51], zoom:4.6}
   };
   // Below this zoom, a spot with no nearby neighbours (so supercluster hands
   // it back as a lone, unclustered point rather than grouping it) still paints

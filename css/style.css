@@ -50,6 +50,26 @@
     --cn-changsha:#3fae9e;
     --cn-zhuhai:#d68910;
     --cn-chongqing:#8e5b3a;
+    --gb-england:#c0392b;
+    --gb-scotland:#2e5fa3;
+    --gb-wales:#5aab6e;
+    --gb-northern-ireland:#d9a441;
+    --de-bayern:#4a90b8;
+    --de-berlin:#c0392b;
+    --de-nordrhein-westfalen:#5aab6e;
+    --de-hessen:#9a72cf;
+    --de-baden-wurttemberg:#d9b647;
+    --de-bremen:#dd6a97;
+    --de-schleswig-holstein:#7fb5a3;
+    --de-sachsen:#c47a4a;
+    --de-niedersachsen:#4aa3c9;
+    --de-sachsen-anhalt:#8a5fb0;
+    --de-brandenburg:#3fae9e;
+    --de-rheinland-pfalz:#c98f4a;
+    --de-hamburg:#6b6fc9;
+    --de-saarland:#c95f7a;
+    --de-thuringen:#e08e45;
+    --de-mecklenburg-vorpommern:#5b7fc4;
     --t-outdoor:#b8834a;
     --t-indoor:#3fb8a6;
     --t-toprope:#8a6bb0;
@@ -255,6 +275,26 @@
   .chip[data-country="CN"][data-state="CHANGSHA"].active{background:var(--cn-changsha);}
   .chip[data-country="CN"][data-state="ZHUHAI"].active{background:var(--cn-zhuhai);}
   .chip[data-country="CN"][data-state="CHONGQING"].active{background:var(--cn-chongqing);}
+  .chip[data-country="GB"][data-state="ENGLAND"].active{background:var(--gb-england);}
+  .chip[data-country="GB"][data-state="SCOTLAND"].active{background:var(--gb-scotland);}
+  .chip[data-country="GB"][data-state="WALES"].active{background:var(--gb-wales);}
+  .chip[data-country="GB"][data-state="NORTHERN_IRELAND"].active{background:var(--gb-northern-ireland);}
+  .chip[data-country="DE"][data-state="BAYERN"].active{background:var(--de-bayern);}
+  .chip[data-country="DE"][data-state="BERLIN"].active{background:var(--de-berlin);}
+  .chip[data-country="DE"][data-state="NORDRHEIN_WESTFALEN"].active{background:var(--de-nordrhein-westfalen);}
+  .chip[data-country="DE"][data-state="HESSEN"].active{background:var(--de-hessen);}
+  .chip[data-country="DE"][data-state="BADEN_WURTTEMBERG"].active{background:var(--de-baden-wurttemberg);}
+  .chip[data-country="DE"][data-state="BREMEN"].active{background:var(--de-bremen);}
+  .chip[data-country="DE"][data-state="SCHLESWIG_HOLSTEIN"].active{background:var(--de-schleswig-holstein);}
+  .chip[data-country="DE"][data-state="SACHSEN"].active{background:var(--de-sachsen);}
+  .chip[data-country="DE"][data-state="NIEDERSACHSEN"].active{background:var(--de-niedersachsen);}
+  .chip[data-country="DE"][data-state="SACHSEN_ANHALT"].active{background:var(--de-sachsen-anhalt);}
+  .chip[data-country="DE"][data-state="BRANDENBURG"].active{background:var(--de-brandenburg);}
+  .chip[data-country="DE"][data-state="RHEINLAND_PFALZ"].active{background:var(--de-rheinland-pfalz);}
+  .chip[data-country="DE"][data-state="HAMBURG"].active{background:var(--de-hamburg);}
+  .chip[data-country="DE"][data-state="SAARLAND"].active{background:var(--de-saarland);}
+  .chip[data-country="DE"][data-state="THURINGEN"].active{background:var(--de-thuringen);}
+  .chip[data-country="DE"][data-state="MECKLENBURG_VORPOMMERN"].active{background:var(--de-mecklenburg-vorpommern);}
 
   .toggle-row{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-dim);font-family:'Space Mono',monospace;cursor:pointer;}
   .toggle-row input{accent-color:var(--vic);}
