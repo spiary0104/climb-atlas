@@ -321,15 +321,34 @@ from one source:
   ~463px on desktop / ~406px on mobile at 6 countries (vs. 847px fully
   expanded) — **adding a country still adds one more collapsed label row
   (~30px), not another full expanded chip row**, so this scales far
-  better than the flat chip-row layout did. Re-measured at 8 countries
-  (adding GB/DE): desktop still fits without scrolling, but mobile
-  (375×812) now measures ~820px of actual content against the 406px
-  (50vh) cap — the `max-height:50vh; overflow-y:auto` backstop mentioned
-  above is now the thing actually keeping this usable on mobile, not
-  just a just-in-case safety net. Confirmed it's genuinely scrollable
-  (not a hard cutoff hiding the last few countries) rather than assumed.
-  Worth reconsidering the collapsed-row cost on mobile specifically
-  before a 9th country, since it's no longer comfortably under the cap.
+  better than the flat chip-row layout did. That held up to 6 countries,
+  but re-measured at 8 (adding GB/DE) mobile hit ~820px of content
+  against the 406px (50vh) cap — still technically fine (the cap's
+  `overflow-y:auto` backstop is genuinely scrollable, confirmed, not a
+  hard cutoff), but the per-country cost was still `O(countries)`, just
+  with a smaller constant than the original flat layout, so it would
+  keep growing indefinitely as more countries got added.
+  3. **Regional grouping**, added when this became a real problem instead
+     of a hypothetical one: one more accordion tier above `.country-group`
+     — `.region-group` (Asia, Europe, North America, Oceania in
+     `index.html`'s `#stateChips`, same collapsed-by-default/`.has-active`
+     mechanics as `.country-group`, handled by the same `stateChips` click
+     listener in `js/app.js` checking `.region-header` before
+     `.country-label`). This changes the growth shape entirely: adding a
+     country to an *existing* region (the common case — most future
+     additions are more cities in a country map already covers, or a new
+     country on a continent already represented) costs **zero** extra
+     always-visible height, since it nests inside that region's own
+     already-collapsed body. Only a genuinely new region — rare, bounded
+     to a handful total (this app will realistically never need more than
+     6-7: the inhabited continents) — adds a row. Re-measured after this
+     change, still at 8 countries: desktop ~222px (down from ~463px),
+     mobile ~428px (down from ~820px, and now fits the 406px cap on its
+     own in practice, just barely over in the worst case rather than
+     needing the scroll backstop to do real work). `has-active` now
+     propagates two levels — a filter applied inside a collapsed country
+     inside a collapsed region still shows the colour+dot at *both*
+     levels, not just the inner one, checked live after the change.
 - **The gym list always renders the full filtered set.** An earlier
   version hid it unless there was an active search term (to save render
   cost at 500+ spots), showing a one-line placeholder instead — reverted

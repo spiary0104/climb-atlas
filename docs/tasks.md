@@ -1155,6 +1155,24 @@ placeholder work just to fill this section)_
     task at 8 countries — see `docs/architecture.md` "Map" section,
     mobile now genuinely relies on the scroll backstop rather than
     comfortably fitting under it.
+- **(3) Fixed the sidebar height growth for good** (asked for explicitly
+  as a follow-up: "put something in place to resolve that as we add
+  more"), rather than leaving it as a documented-but-unsolved concern.
+  Added a region tier above the existing country accordion —
+  `.region-group` for Asia/Europe/North America/Oceania in
+  `index.html`, same collapse/`.has-active` mechanics one level up, in
+  `js/app.js`. This changes the growth shape: adding a country to an
+  *existing* region (the common case) now costs zero extra
+  always-visible sidebar height; only a genuinely new region (bounded to
+  a handful, ever) adds a row. Re-measured live: desktop ~463px → ~222px,
+  mobile ~820px → ~428px (now fits the 50vh/406px cap in practice
+  instead of relying on the scroll backstop to do real work). Verified
+  region toggle, country toggle+fly-to-country still correct (intercepted
+  `map.flyTo`, confirmed Germany's exact `{center,zoom}`), chip
+  filtering, and `.has-active` now correctly propagating through *both*
+  collapsed levels (country and region) — all still work after the
+  restructuring, no console errors. Full detail in
+  `docs/architecture.md` "Sidebar chip growth".
 
 ## Blocked
 
