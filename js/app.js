@@ -18,6 +18,19 @@
   };
   const TYPE_LABELS = {'indoor-bouldering':'Indoor bouldering','top-rope':'Top rope','outdoor-bouldering':'Outdoor bouldering'};
   const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China'};
+  // Fixed camera target per country for the "fly to this country" click on
+  // its sidebar label -- picked to frame that country's actual spread of
+  // seed spots (e.g. US needs a wide zoom to fit both NY and CA), not a
+  // geographic center of the whole country (Canada's real geographic
+  // center is in the Arctic, nowhere near where any of its seed spots are).
+  const COUNTRY_FLY_TARGETS = {
+    AU: {center:[134,-25], zoom:3.6},
+    US: {center:[-98,39], zoom:3.2},
+    JP: {center:[138,38], zoom:4.6},
+    CA: {center:[-97,50], zoom:3.2},
+    NZ: {center:[172,-41], zoom:4.6},
+    CN: {center:[110,32], zoom:3.6}
+  };
   // Below this zoom, a spot with no nearby neighbours (so supercluster hands
   // it back as a lone, unclustered point rather than grouping it) still paints
   // as a small numbered badge instead of the hold-shaped icon -- at globe/
@@ -466,7 +479,13 @@
   // --- filter controls ---
   document.getElementById('stateChips').addEventListener('click', (e)=>{
     const label = e.target.closest('.country-label');
-    if(label){ label.closest('.country-group').classList.toggle('collapsed'); return; }
+    if(label){
+      const group = label.closest('.country-group');
+      group.classList.toggle('collapsed');
+      const target = COUNTRY_FLY_TARGETS[group.dataset.country];
+      if(target) map.flyTo({center: target.center, zoom: target.zoom, duration: 1500});
+      return;
+    }
     const chip = e.target.closest('.chip');
     if(!chip) return;
     const state = chip.dataset.state;
