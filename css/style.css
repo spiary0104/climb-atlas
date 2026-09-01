@@ -329,6 +329,39 @@
     background:var(--vic);
     margin-left:1px;
   }
+  /* One level up from country-group, same collapse mechanics -- a single
+     always-visible label per *region* (Asia, Europe, North America,
+     Oceania) instead of per country, so adding a country to an existing
+     region costs zero extra always-visible height (it nests inside the
+     region's own collapsed body), only a genuinely new region adds a row.
+     Without this, N countries meant N always-visible rows even fully
+     collapsed -- fine at 6, but by 8 the filter panel needed its
+     max-height:50vh scroll backstop on mobile just to stay usable (see
+     docs/architecture.md "Sidebar chip growth"), and that only gets worse
+     as more countries are added within regions that already exist. */
+  .region-header{
+    display:flex;align-items:center;gap:6px;
+    width:100%;background:none;border:none;padding:0;
+    font:inherit;font-weight:700;text-align:left;cursor:pointer;
+    margin:10px 0 6px;
+  }
+  .region-header:hover{color:var(--text);}
+  .region-header::before{
+    content:"▸";
+    display:inline-block;
+    font-size:9px;
+    transition:transform .15s ease;
+  }
+  .region-group:not(.collapsed) .region-header::before{transform:rotate(90deg);}
+  .region-group.collapsed .region-body{display:none;}
+  .region-group .country-group:first-child{margin-top:0;}
+  .region-group.has-active .region-header{color:var(--vic);}
+  .region-group.has-active .region-header::after{
+    content:"";
+    width:5px;height:5px;border-radius:50%;
+    background:var(--vic);
+    margin-left:1px;
+  }
   .type-filter{display:flex;flex-direction:column;gap:7px;margin-top:12px;padding-top:10px;border-top:1px solid var(--border);}
   .type-check{display:flex;align-items:center;gap:8px;font-size:12.5px;font-family:'Space Mono',monospace;color:var(--text);cursor:pointer;}
   .type-check .dot{width:9px;height:9px;flex-shrink:0;border-radius:40% 60% 55% 45%/50% 45% 55% 50%;border:1px solid rgba(0,0,0,0.35);}

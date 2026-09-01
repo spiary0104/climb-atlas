@@ -492,6 +492,8 @@
 
   // --- filter controls ---
   document.getElementById('stateChips').addEventListener('click', (e)=>{
+    const regionHeader = e.target.closest('.region-header');
+    if(regionHeader){ regionHeader.closest('.region-group').classList.toggle('collapsed'); return; }
     const label = e.target.closest('.country-label');
     if(label){
       const group = label.closest('.country-group');
@@ -515,12 +517,15 @@
       const key = c.dataset.state === 'ALL' ? 'ALL' : c.dataset.country + ':' + c.dataset.state;
       c.classList.toggle('active', activeStates.has(key));
     });
-    // A chip can be active while its own country group is collapsed (the
-    // chip-row is just display:none, its .active class is untouched) --
-    // flag the group itself so that filter doesn't silently disappear
-    // from view.
+    // A chip can be active while its own country group (and that
+    // country's region group, one level up) is collapsed -- flag both so
+    // an applied filter never silently disappears from view just because
+    // its group or region happens to be collapsed.
     document.querySelectorAll('.country-group').forEach(group=>{
       group.classList.toggle('has-active', !!group.querySelector('.chip.active'));
+    });
+    document.querySelectorAll('.region-group').forEach(region=>{
+      region.classList.toggle('has-active', !!region.querySelector('.country-group.has-active'));
     });
     render();
   });
