@@ -33,12 +33,21 @@ depends on all of the above. Breaking this order breaks the app silently
 
 ## Data model
 
-- **`spots`** — public read of `status = 'approved'` rows only. Inserts
-  from the client are forced to `status = 'pending'` by RLS — a tampered
-  client can't insert a pre-approved row. Has an optional `address` text
-  column (street address) alongside the always-present `suburb`/`state`/
-  `country` — most seed spots don't have one yet (see "Seed data sourcing"
-  below), but the add/edit forms and popup both support it.
+- **`spots`** — public read of `status = 'approved'` rows only (plus a
+  signed-in user can also read their own `submitted_by` rows, whatever
+  their status — needed for the rate-limit check below). Inserts are
+  restricted to signed-in users (`auth.uid() is not null`), forced to
+  `status = 'pending'` and `submitted_by = auth.uid()` by RLS — a
+  tampered client can't insert a pre-approved row or attribute one to
+  someone else — and capped at 10 per rolling 24h per account via a
+  `with check` subquery counting that user's own recent submissions.
+  `js/app.js` also does a client-side pre-check (same 10/24h count)
+  before opening the add-spot form, purely for a clearer UX — the actual
+  enforcement is the RLS policy, not the client check. Has an optional
+  `address` text column (street address) alongside the always-present
+  `suburb`/`state`/`country` — most seed spots don't have one yet (see
+  "Seed data sourcing" below), but the add/edit forms and popup both
+  support it.
 - **`pending_edits`** — proposed edits to existing spots. The live `spots`
   row is untouched until a moderator approves; approving copies the
   proposed fields onto the live row and deletes the proposal.
@@ -61,8 +70,8 @@ are only unique within a country** (e.g. AU's `WA` vs US's `WA` are
 different regions). Anything that filters, colors, or edits by state —
 the chips in `index.html`, `STATES_BY_COUNTRY` in `app.js`, the RLS-safe
 columns in `schema.sql` — keys off the `(country, state)` pair together,
-never `state` alone. Now 6 countries deep (AU, US, JP, CA, NZ, CN), same
-pattern each time — keep this in mind before adding a 7th. One collision
+never `state` alone. Now 8 countries deep (AU, US, JP, CA, NZ, CN, GB, DE),
+same pattern each time — keep this in mind before adding a 9th. One collision
 worth flagging: `US`'s state code for California is `CA`, and `CA` is
 also the top-level country code for Canada — not a real ambiguity since
 they're different object keys/fields (`STATES_BY_COUNTRY.US` contains
@@ -72,8 +81,9 @@ string always means the same thing while reading this codebase.
 
 ## Seed data sourcing
 
-`js/data.js` currently has 504 spots (74 AU, 332 US, 32 JP, 15 CA, 9 NZ,
-42 CN), all indoor gyms (bouldering and/or top rope — see "Known gaps"
+`js/data.js` currently has 682 spots (74 AU, 332 US, 32 JP, 15 CA, 9 NZ,
+42 CN, 66 GB, 112 DE), all indoor gyms (bouldering and/or top rope — see
+"Known gaps"
 below on why outdoor areas were removed). It was built up in layers, not
 from one source:
 
@@ -169,6 +179,28 @@ from one source:
     itself flagged something (an ambiguous address, an unconfirmed
     single-source find, etc.) — see `docs/tasks.md` for the full per-gym
     list from the Dianping pass.
+- **United Kingdom (66 gyms) and Germany (112 gyms)** came from Mountain
+  Project's own `/gyms/united-kingdom` and `/gyms/germany` directories —
+  same source and method as the original AU/US pass, but at directory-
+  listing depth only (name + county/city), not per-gym address
+  verification, so this is closer to the Japan/Canada/New Zealand
+  "lighter touch" tier: real gym names confirmed via the directory
+  itself, positions are city/area-level from general geography, and
+  climbing type is inferred from each gym's name (explicit "Boulder"/
+  "Bloc" — a very common German bouldering-gym naming convention — means
+  bouldering-only; otherwise assumed to also offer top-rope/lead) rather
+  than individually confirmed. One UK listing (UoE Climbing Wall, a
+  University of Edinburgh rec-center wall) was excluded on the same
+  criteria as the original AU/US noise filter; one ambiguous-looking
+  entry (The Ledge, labelled "Highland Council" in the directory) was
+  confirmed via a targeted search to be a real, well-regarded dedicated
+  gym, not a council leisure center. `state` uses the UK's four
+  constituent nations (England/Scotland/Wales/Northern Ireland) and
+  Germany's 16 federal states — Mountain Project's own German location
+  labels are a mix of city names and Bavarian sub-region names (e.g.
+  "Mittelfranken", "Oberbayern") that were individually mapped to their
+  actual Land. **Unlike the other 6 countries, GB/DE don't have the
+  `address` field populated** — that pass (below) predates this one.
 - **The `address` field (added alongside the directions-button/report-
   spot features) is now populated (or deliberately flagged as
   unverifiable, see below) across all 6 countries in the dataset.**
@@ -286,11 +318,18 @@ from one source:
      applied filter never silently disappears from view just because its
      group is collapsed.
   With everything collapsed by default, `.sidebar-controls` measured
-  ~463px on desktop / ~406px on mobile after this change (vs. 847px fully
-  expanded) — **adding a 7th country still adds one more collapsed label
-  row (~30px), not another full expanded chip row**, so this scales far
-  better than the flat chip-row layout did. Still worth re-measuring both
-  regions after a future country addition rather than assuming it's fine.
+  ~463px on desktop / ~406px on mobile at 6 countries (vs. 847px fully
+  expanded) — **adding a country still adds one more collapsed label row
+  (~30px), not another full expanded chip row**, so this scales far
+  better than the flat chip-row layout did. Re-measured at 8 countries
+  (adding GB/DE): desktop still fits without scrolling, but mobile
+  (375×812) now measures ~820px of actual content against the 406px
+  (50vh) cap — the `max-height:50vh; overflow-y:auto` backstop mentioned
+  above is now the thing actually keeping this usable on mobile, not
+  just a just-in-case safety net. Confirmed it's genuinely scrollable
+  (not a hard cutoff hiding the last few countries) rather than assumed.
+  Worth reconsidering the collapsed-row cost on mobile specifically
+  before a 9th country, since it's no longer comfortably under the cap.
 - **The gym list always renders the full filtered set.** An earlier
   version hid it unless there was an active search term (to save render
   cost at 500+ spots), showing a one-line placeholder instead — reverted

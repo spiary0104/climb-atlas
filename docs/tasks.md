@@ -1096,9 +1096,65 @@ placeholder work just to fill this section)_
   5. Search now matches state/country too (code and human-readable
      label), not just name/suburb — verified "Japan" returns exactly 32
      and "chongqing" exactly 5, matching known per-region counts.
-- **Not yet done**: merge into `master` and push — same auto-deploy
-  caveat as every branch since the domain went live: `master` pushes
-  straight to `climbatlas.org` via Vercel, so this is a deliberate step.
+- **Done**: merged into `master` and pushed — live on `climbatlas.org`.
+
+### Require sign-in + rate-limit new spot submissions; add UK and Germany
+- Branch: `feature/signin-required-rate-limit-add-spot` (new branch off
+  `master` — previous branch merged; not yet merged itself)
+- Status: both parts implemented + verified in a served copy; not yet
+  merged. The UK/Germany data isn't live yet even after merging — see
+  below, it needs a re-seed step same as every prior country addition.
+- **(1) Sign-in required + 10/day rate limit**, motivated by trolling
+  risk on the now-public site. Real enforcement is server-side, in
+  `supabase/schema.sql` — client-side checks alone can be bypassed by
+  anyone calling the API directly:
+  - Added `submitted_by` (uuid, references `auth.users`) to `spots`.
+  - Broadened the SELECT policy so a signed-in user can see their own
+    submitted rows regardless of status (needed for the rate-limit
+    subquery and the client-side pre-check), without exposing other
+    users' pending submissions to each other.
+  - Replaced the anyone-can-insert-as-pending INSERT policy with one
+    requiring `auth.uid() is not null`, `submitted_by = auth.uid()`
+    (stops attributing a submission to someone else's account), and a
+    `with check` subquery capping it at <10 rows from that same user in
+    the last rolling 24h.
+  - `js/app.js`: "+ Add a location" now checks `window.auth.user` first
+    (toast + opens sign-in modal if signed out) and does a pre-check
+    count query before opening the form, so someone who's already hit
+    the cap is told immediately rather than after filling out the whole
+    form — fails open (opens the form) if that query itself errors,
+    since server-side RLS is the real backstop either way.
+  - **Verified live**: clicking "+ Add a location" while signed out
+    shows the toast and opens sign-in instead of the add-spot modal; no
+    console errors. **Not verified**: the actual sign-in + submission-
+    limit round trip, since this environment can't complete a real
+    Supabase auth session — worth the user testing signed in once this
+    ships.
+- **(2) Added United Kingdom (66 gyms) and Germany (112 gyms)**, sourced
+  from `mountainproject.com/gyms/united-kingdom` and `/gyms/germany` —
+  directory-listing depth (name + county/city), not per-gym address
+  verification, closer to the Japan/Canada/New Zealand "lighter touch"
+  tier than the original AU/US pass. One UK listing excluded as a
+  university rec-center wall (same criteria as AU/US); one ambiguous
+  entry (The Ledge, Inverness) confirmed via search to be real. `state`
+  uses the UK's 4 constituent nations and Germany's 16 federal states —
+  full detail in `docs/architecture.md` "Seed data sourcing".
+  - Net result: 504 → **682 total spots**. Structural checks all
+    passed: `grep -c "{name:"` = 682, braces/brackets balanced
+    (683/683, 684/684), zero duplicate name+suburb+state combos, every
+    state code used has a matching `STATES_BY_COUNTRY` entry (checked
+    programmatically), no console errors, Germany's 16-chip row doesn't
+    overflow mobile width.
+  - **Not yet live**: this is `js/data.js` (bundled seed data) only —
+    confirmed directly that the live app is still pulling 504 spots
+    from Supabase (`countNum` showed 504 on load; searching "Griffwerk",
+    a real German gym in the new data, returned 0 against the live
+    `spots` array). Needs the same re-seed step as every prior country
+    addition: generate SQL via `supabase/seed.html`, run it in the SQL
+    Editor. Also re-measured the sidebar height concern from the China
+    task at 8 countries — see `docs/architecture.md` "Map" section,
+    mobile now genuinely relies on the scroll backstop rather than
+    comfortably fitting under it.
 
 ## Blocked
 
