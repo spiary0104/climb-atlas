@@ -73,6 +73,7 @@
     --t-outdoor:#b8834a;
     --t-indoor:#3fb8a6;
     --t-toprope:#8a6bb0;
+    --t-lead:#4a90c9;
     --community:#e8d9a0;
     --climbed:var(--qld);
     --bookmark:#e0b23c;
@@ -368,6 +369,7 @@
   .type-check input{cursor:pointer;}
   .type-check input.chk-indoor{accent-color:var(--t-indoor);}
   .type-check input.chk-toprope{accent-color:var(--t-toprope);}
+  .type-check input.chk-lead{accent-color:var(--t-lead);}
 
   .type-check .mark-dot{
     width:14px;height:14px;border-radius:4px;

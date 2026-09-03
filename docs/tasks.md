@@ -41,6 +41,38 @@ placeholder work just to fill this section)_
 
 ## In Progress
 
+### Add a lead climbing type/checkbox
+- Branch: `feature/geocode-address-tool` (same branch/worktree as the
+  geocoding-tool task above — continued rather than starting fresh, per
+  this project's established practice of stacking small tasks from one
+  session onto the active unmerged branch)
+- Status: implemented + verified live in a served copy; not yet merged.
+- What: user asked to add "lead climbing" as a fourth climbing type,
+  alongside the existing indoor bouldering / top rope / outdoor bouldering.
+  Followed the exact same pattern used when outdoor bouldering was added
+  (see `docs/architecture.md` "Known gaps"): new `lead-climbing` value in
+  `TYPE_COLORS`/`TYPE_LABELS`/`activeTypes` (`js/app.js`), a new `--t-lead`
+  CSS variable (`#4a90c9`, blue — distinct from the other three), and a
+  matching checkbox added in all four places a type checkbox needs to
+  exist: sidebar type filter, map legend, add-spot form (`fTypeLead`), and
+  edit-spot form (`eTypeLead`) — each wired through the same generic
+  `data-type`/id-to-type-map plumbing the other three types already use,
+  no per-type special-casing needed. No schema change — `spots.types` is
+  a plain `text[]` with no check constraint.
+- **Verified live** (served copy, `npx serve .`): legend shows all 4 types;
+  sidebar filter has a working 4th checkbox (toggling it produces no
+  console errors, correctly flips `activeTypes`); add-spot form's 4th
+  checkbox renders with the right label and blue accent-color when
+  checked, confirmed via a temporary DOM-level bypass of the sign-in gate
+  (not a code change, just to inspect the modal markup — this project's
+  add-spot flow now requires sign-in, so a real end-to-end submission with
+  lead climbing checked wasn't tested this session); edit-spot form's
+  `eTypeLead` element confirmed present via direct DOM query. No console
+  errors observed at any point.
+- No existing seed spot has been retroactively tagged `lead-climbing` —
+  same as outdoor bouldering, it only applies going forward to new/edited
+  submissions, per the same reasoning documented in `docs/architecture.md`.
+
 ### Add a geocoding tool to fix inaccurate pin positions
 - Branch: `feature/geocode-address-tool` (new branch off `master`)
 - Status: implemented + smoke-tested live against the real Nominatim API; not

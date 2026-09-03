@@ -1,7 +1,7 @@
 
 (function(){
 
-  const TYPE_COLORS = {'indoor-bouldering':'#3fb8a6','top-rope':'#8a6bb0','outdoor-bouldering':'#b8834a'};
+  const TYPE_COLORS = {'indoor-bouldering':'#3fb8a6','top-rope':'#8a6bb0','outdoor-bouldering':'#b8834a','lead-climbing':'#4a90c9'};
   // `state` codes collide across countries (AU's WA = Western Australia, US's WA = Washington),
   // so country+state together identify a region — never key off `state` alone.
   const STATES_BY_COUNTRY = {
@@ -22,7 +22,7 @@
          ['BRANDENBURG','Brandenburg'],['RHEINLAND_PFALZ','Rheinland-Pfalz'],['HAMBURG','Hamburg'],
          ['SAARLAND','Saarland'],['THURINGEN','Thüringen'],['MECKLENBURG_VORPOMMERN','Mecklenburg-Vorpommern']]
   };
-  const TYPE_LABELS = {'indoor-bouldering':'Indoor bouldering','top-rope':'Top rope','outdoor-bouldering':'Outdoor bouldering'};
+  const TYPE_LABELS = {'indoor-bouldering':'Indoor bouldering','top-rope':'Top rope','outdoor-bouldering':'Outdoor bouldering','lead-climbing':'Lead climbing'};
   const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany'};
   // Fixed camera target per country for the "fly to this country" click on
   // its sidebar label -- picked to frame that country's actual spread of
@@ -69,7 +69,7 @@
   let pendingReports = []; // "report incorrect info" messages awaiting review (moderator-only)
 
   let activeStates = new Set(['ALL']);
-  let activeTypes = new Set(['indoor-bouldering','top-rope','outdoor-bouldering']);
+  let activeTypes = new Set(['indoor-bouldering','top-rope','outdoor-bouldering','lead-climbing']);
   let showClimbedOnly = false;
   let showBookmarkedOnly = false;
   let searchTerm = '';
@@ -785,11 +785,11 @@
   ['fName','fSuburb'].forEach(id=>{
     document.getElementById(id).addEventListener('input', checkFormReady);
   });
-  ['fTypeIndoor','fTypeTopRope','fTypeOutdoor'].forEach(id=>{
+  ['fTypeIndoor','fTypeTopRope','fTypeOutdoor','fTypeLead'].forEach(id=>{
     document.getElementById(id).addEventListener('change', checkFormReady);
   });
   function selectedTypes(){
-    const map = {fTypeIndoor:'indoor-bouldering', fTypeTopRope:'top-rope', fTypeOutdoor:'outdoor-bouldering'};
+    const map = {fTypeIndoor:'indoor-bouldering', fTypeTopRope:'top-rope', fTypeOutdoor:'outdoor-bouldering', fTypeLead:'lead-climbing'};
     return Object.keys(map).filter(id=>document.getElementById(id).checked).map(id=>map[id]);
   }
   function checkFormReady(){
@@ -857,6 +857,7 @@
     document.getElementById('eTypeIndoor').checked = g.types.includes('indoor-bouldering');
     document.getElementById('eTypeTopRope').checked = g.types.includes('top-rope');
     document.getElementById('eTypeOutdoor').checked = g.types.includes('outdoor-bouldering');
+    document.getElementById('eTypeLead').checked = g.types.includes('lead-climbing');
     editPinStatus.textContent = `Current pin: ${g.lat.toFixed(4)}, ${g.lng.toFixed(4)}`;
     editPinStatus.classList.remove('set');
     // Revert only makes sense for un-edited-back-to seed spots — community
@@ -883,11 +884,11 @@
   ['eName','eSuburb'].forEach(id=>{
     document.getElementById(id).addEventListener('input', checkEditFormReady);
   });
-  ['eTypeIndoor','eTypeTopRope','eTypeOutdoor'].forEach(id=>{
+  ['eTypeIndoor','eTypeTopRope','eTypeOutdoor','eTypeLead'].forEach(id=>{
     document.getElementById(id).addEventListener('change', checkEditFormReady);
   });
   function selectedEditTypes(){
-    const map = {eTypeIndoor:'indoor-bouldering', eTypeTopRope:'top-rope', eTypeOutdoor:'outdoor-bouldering'};
+    const map = {eTypeIndoor:'indoor-bouldering', eTypeTopRope:'top-rope', eTypeOutdoor:'outdoor-bouldering', eTypeLead:'lead-climbing'};
     return Object.keys(map).filter(id=>document.getElementById(id).checked).map(id=>map[id]);
   }
   function checkEditFormReady(){

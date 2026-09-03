@@ -511,6 +511,17 @@ from one source:
   over (unused) since the original removal. No existing seed spot has
   been retroactively tagged with this type — it only applies going
   forward to new/edited submissions.
+- **Lead climbing** was added as a fourth type the same way: a new
+  `lead-climbing` value in `TYPE_COLORS`/`TYPE_LABELS`/`activeTypes`
+  (`js/app.js`), a new `--t-lead` CSS variable (blue, `#4a90c9` — chosen to
+  stay visually distinct from indoor's teal, top rope's purple, and
+  outdoor's amber), and matching checkboxes in the sidebar type filter, the
+  map legend, and both the add-spot and edit-spot forms (`fTypeLead` /
+  `eTypeLead` in `index.html`, wired the same way as the other three type
+  checkboxes in `js/app.js`). No schema change needed — `spots.types` is a
+  plain `text[]` with no check constraint (`supabase/schema.sql`). Same as
+  outdoor bouldering, no existing seed spot has been retroactively tagged
+  with this type — it only applies going forward.
 
 ## Where to look first for a given change
 
