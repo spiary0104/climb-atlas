@@ -153,9 +153,46 @@ placeholder work just to fill this section)_
     `supabase/geocode.html` for the same 24 accepted rows) in their
     Supabase SQL Editor — this update only touched the offline
     `js/data.js` fallback; the live table isn't fixed until that SQL runs.
-- **Not yet done**: the rest of the ~600-spot pass hasn't been run (only
-  this one filtered batch of 30 so far) — most of the dataset's pins are
-  still at the original city/suburb-level estimate. GB/DE still have no
+- **Second batch applied (2026-09-04)**: user asked to geocode "everything
+  that is 4km+" — run this time as a standalone Node script (mirroring
+  `geocode.html`'s own logic: same Nominatim endpoint, same 1.1s rate limit,
+  same haversine distance calc) directly against the **remaining 468
+  addressed spots** that don't already carry the verified-note (i.e. the
+  full remaining dataset minus the 24 already fixed), rather than another
+  manual browser pass — the script ran in the background (~9 minutes) while
+  other work continued. Result: 298 matched, 170 no-match (spread across
+  the whole run, not one contiguous block — consistent with genuinely
+  hard-to-parse addresses, e.g. AU unit-number formats and several Chinese
+  mall/complex addresses, not a rate-limit block), 24 moved ≥4km.
+  - Same independent cross-check discipline as the first batch: the 23 US
+    candidates checked against the Census Bureau geocoder (14 tight matches,
+    1 more — Solid Rock Gym/Vertical Hold San Marcos — a 0.571km gap
+    confirmed via web search as a real, currently-branded gym at that exact
+    address, so treated as certain), the 1 AU candidate (Core Climbing,
+    Carrara) confirmed via web search. **16 of 24 applied** to `js/data.js`
+    with the same verified-note treatment.
+  - **8 left unapplied**: the same 5 addresses that had no Census match in
+    the first batch reappeared here with fresh Nominatim results (InSPIRE
+    Rock Lubbock, Movement Dallas–The Hill, Movement Plano, Gripstone,
+    Sessions Climbing & Fitness) plus one more this batch (Übergrippen
+    Indoor Climbing Crag, Castle Rock CO) — still no independent
+    confirmation available, so still not applied. Vertical World North
+    reappeared unchanged (still the same unresolved 2.46km gap from before).
+    New this batch: **Central Rock Gym – Kennesaw** had a 2.598km
+    disagreement between Nominatim and Census with the address itself
+    confirmed correct by search — same "genuinely uncertain" treatment as
+    Vertical World North, left unapplied pending manual review.
+  - Running total: **40 of 682 spots** now carry the independently-verified
+    note (24 + 16). Structural check (`node -e` eval): still 682 total
+    spots, 683/683 braces balanced.
+  - **User still needs to run the SQL** for these 16 (or the combined
+    40-row script covering both batches) against the live Supabase table —
+    `js/data.js` is fixed, the live table isn't yet.
+- **Not yet done**: most of the ~468 remaining addressed spots weren't big
+  movers (<4km) and so weren't touched this pass — the dataset still isn't
+  fully geocoded, just the two batches of outliers found so far (30 then
+  24, filtered at ~5km then 4km). A lower-threshold or genuinely full pass
+  would surface smaller, still-real corrections. GB/DE still have no
   `address` field at all (see `docs/architecture.md`), so this tool can't
   help their pin accuracy until that's added first.
 
