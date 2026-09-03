@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Climb Atlas — geocode addresses</title>
+<style>
+  body{font-family:system-ui,sans-serif;background:#211f1b;color:#ece5d6;padding:32px;line-height:1.6;max-width:1100px;}
+  pre{background:#2b2822;padding:16px;border-radius:8px;overflow-x:auto;white-space:pre-wrap;max-height:300px;overflow-y:auto;}
+  button{font-size:14px;padding:9px 16px;border-radius:8px;border:none;background:#e2793f;color:#221a12;font-weight:700;cursor:pointer;margin:4px 8px 4px 0;}
+  button:disabled{opacity:0.5;cursor:not-allowed;}
+  input[type=email],input[type=number]{background:#2b2822;color:#ece5d6;border:1px solid #4a463d;border-radius:6px;padding:6px 8px;}
+  .ok{color:#5aa373;}
+  .warn{color:#d9a441;}
+  code{background:#2b2822;padding:1px 5px;border-radius:4px;}
+  table{border-collapse:collapse;width:100%;font-size:13px;margin-top:12px;}
+  th,td{border:1px solid #4a463d;padding:6px 8px;text-align:left;vertical-align:top;}
+  th{background:#2b2822;position:sticky;top:0;}
+  tbody tr:nth-child(even){background:#26231d;}
+  a{color:#7fb6e0;}
+  .controls-bar{background:#2b2822;padding:14px;border-radius:8px;margin-top:16px;}
+  .tablewrap{max-height:520px;overflow-y:auto;border:1px solid #4a463d;border-radius:8px;}
+</style>
+</head>
+<body>
+
+<h1>Climb Atlas — geocode addresses</h1>
+<p>
+  Every spot's <code>address</code> field was individually verified (see
+  <code>docs/architecture.md</code> "Seed data sourcing"), but for most of them the
+  <code>lat</code>/<code>lng</code> pin position was never recomputed from that address — it's
+  still the original city/suburb-level estimate. This page re-geocodes every spot that has a
+  real street <code>address</code> against
+  <a href="https://nominatim.openstreetmap.org/" target="_blank">OpenStreetMap's Nominatim</a>
+  (free, keyless — no API key/account needed, consistent with this project's map itself), shows
+  how far each proposed position is from the current pin, and lets you review and accept
+  corrections one at a time rather than applying anything blind.
+</p>
+<p class="warn">
+  Nominatim's usage policy caps requests at ~1/second and asks for a contact email or referer
+  on bulk personal use — this runs sequentially with a 1.1s delay per request, so geocoding all
+  ~600 addressed spots takes roughly 10–15 minutes. Map data © OpenStreetMap contributors.
+</p>
+<p>
+  <label>Contact email (sent as the Nominatim <code>email</code> param, per their usage policy —
+  optional but recommended):<br>
+  <input id="emailInput" type="email" placeholder="you@example.com" value="climbatlas0104@gmail.com" size="40"></label>
+</p>
+<button id="startBtn">Start geocoding</button>
+<button id="stopBtn" disabled>Stop</button>
+<p id="progress"></p>
+<p id="unmatched"></p>
+
+<div id="controls" class="controls-bar" style="display:none">
+  <label>Show spots moved more than
+    <input id="minKm" type="number" value="1" min="0" step="0.1"> km
+  </label>
+  <button id="filterBtn">Apply filter</button>
+  <button id="selectAllBtn">Select all shown</button>
+  <button id="deselectAllBtn">Deselect all</button>
+  <button id="genBtn">Generate SQL + JSON for selected</button>
+</div>
+
+<div class="tablewrap">
+<table id="resultsTable">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Spot</th>
+      <th>Region</th>
+      <th>Moved</th>
+      <th>Current position</th>
+      <th>Proposed position</th>
+      <th>Nominatim match (sanity-check this)</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+</div>
+
+<h3>Generated output</h3>
+<p>
+  1) Run the SQL directly in Supabase's SQL Editor to fix the live map immediately.
+  2) Hand the JSON to Claude (or apply by hand) to update the matching <code>lat</code>/<code>lng</code>
+  values in <code>js/data.js</code> too, so the offline fallback and any future re-seed stay in sync.
+</p>
+<button id="copySqlBtn" disabled>Copy SQL to clipboard</button>
+<button id="copyJsonBtn" disabled>Copy JSON to clipboard</button>
+<pre id="sqlOut" style="display:none"></pre>
+<pre id="jsonOut" style="display:none"></pre>
+
+<script src="../js/data.js"></script>
+<script>
+  function haversineKm(lat1, lng1, lat2, lng2) {
+    const R = 6371;
+    const dLat = (lat2 - lat1) * Math.PI / 180;
+    const dLng = (lng2 - lng1) * Math.PI / 180;
+    const a = Math.sin(dLat / 2) ** 2 +
+      Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) * Math.sin(dLng / 2) ** 2;
+    return R * 2 * Math.asin(Math.sqrt(a));
+  }
+  function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+  function sqlString(v) { return "'" + String(v).replace(/'/g, "''") + "'"; }
+  function osmLink(lat, lng) {
+    return `https://www.openstreetmap.org/?mlat=${lat}&mlon=${lng}#map=18/${lat}/${lng}`;
+  }
+
+  let results = [];       // one entry per addressed spot: {spot, matched, newLat, newLng, distanceKm, displayName, error}
+  let stopRequested = false;
+
+  const startBtn = document.getElementById('startBtn');
+  const stopBtn = document.getElementById('stopBtn');
+  const progressEl = document.getElementById('progress');
+  const unmatchedEl = document.getElementById('unmatched');
+  const controlsEl = document.getElementById('controls');
+  const tbody = document.querySelector('#resultsTable tbody');
+
+  startBtn.addEventListener('click', async () => {
+    startBtn.disabled = true;
+    stopBtn.disabled = false;
+    stopRequested = false;
+    results = [];
+    tbody.innerHTML = '';
+    unmatchedEl.textContent = '';
+    controlsEl.style.display = 'none';
+
+    const targets = window.SEED_GYMS.filter(g => g.address && g.address.trim());
+    const email = document.getElementById('emailInput').value.trim();
+
+    for (let i = 0; i < targets.length; i++) {
+      if (stopRequested) break;
+      const g = targets[i];
+      progressEl.textContent = `Geocoding ${i + 1} / ${targets.length}: ${g.name} (${g.suburb}, ${g.country})...`;
+      try {
+        const params = new URLSearchParams({
+          format: 'jsonv2',
+          limit: '1',
+          countrycodes: g.country.toLowerCase(),
+          q: g.address
+        });
+        if (email) params.set('email', email);
+        const res = await fetch(`https://nominatim.openstreetmap.org/search?${params.toString()}`);
+        const data = await res.json();
+        if (data && data.length) {
+          const newLat = parseFloat(data[0].lat);
+          const newLng = parseFloat(data[0].lon);
+          results.push({
+            spot: g, matched: true, newLat, newLng,
+            distanceKm: haversineKm(g.lat, g.lng, newLat, newLng),
+            displayName: data[0].display_name
+          });
+        } else {
+          results.push({ spot: g, matched: false });
+        }
+      } catch (err) {
+        results.push({ spot: g, matched: false, error: err.message });
+      }
+      await sleep(1100); // Nominatim usage policy: max ~1 request/second
+    }
+
+    const matchedCount = results.filter(r => r.matched).length;
+    progressEl.innerHTML = stopRequested
+      ? `<span class="warn">Stopped early.</span> Geocoded ${matchedCount} of ${results.length} attempted (${targets.length} addressed spots total).`
+      : `<span class="ok">Done.</span> Geocoded ${matchedCount} of ${targets.length} addressed spots (${targets.length - matchedCount} had no Nominatim match).`;
+
+    const unmatched = results.filter(r => !r.matched);
+    if (unmatched.length) {
+      unmatchedEl.innerHTML = `<span class="warn">No match found for ${unmatched.length} spot(s) — left untouched, needs manual lookup:</span> ` +
+        unmatched.map(r => r.spot.name + (r.error ? ` (error: ${r.error})` : '')).join(', ');
+    }
+
+    startBtn.disabled = false;
+    stopBtn.disabled = true;
+    controlsEl.style.display = results.some(r => r.matched) ? 'block' : 'none';
+    renderTable();
+  });
+
+  stopBtn.addEventListener('click', () => { stopRequested = true; });
+
+  function renderTable() {
+    const minKm = parseFloat(document.getElementById('minKm').value) || 0;
+    const rows = results
+      .map((r, idx) => ({ r, idx }))
+      .filter(({ r }) => r.matched && r.distanceKm >= minKm)
+      .sort((a, b) => b.r.distanceKm - a.r.distanceKm);
+
+    tbody.innerHTML = rows.length ? rows.map(({ r, idx }) => `
+      <tr data-idx="${idx}">
+        <td><input type="checkbox" class="acceptChk"></td>
+        <td>${r.spot.name}</td>
+        <td>${r.spot.suburb}, ${r.spot.state}, ${r.spot.country}</td>
+        <td>${r.distanceKm.toFixed(2)} km</td>
+        <td>${r.spot.lat.toFixed(5)}, ${r.spot.lng.toFixed(5)}<br><a href="${osmLink(r.spot.lat, r.spot.lng)}" target="_blank">view</a></td>
+        <td>${r.newLat.toFixed(5)}, ${r.newLng.toFixed(5)}<br><a href="${osmLink(r.newLat, r.newLng)}" target="_blank">view</a></td>
+        <td>${r.displayName}</td>
+      </tr>
+    `).join('') : `<tr><td colspan="7">No matched spots moved more than ${minKm} km.</td></tr>`;
+  }
+
+  document.getElementById('filterBtn').addEventListener('click', renderTable);
+  document.getElementById('selectAllBtn').addEventListener('click', () => {
+    document.querySelectorAll('.acceptChk').forEach(c => c.checked = true);
+  });
+  document.getElementById('deselectAllBtn').addEventListener('click', () => {
+    document.querySelectorAll('.acceptChk').forEach(c => c.checked = false);
+  });
+
+  let generatedSql = '', generatedJson = '';
+
+  document.getElementById('genBtn').addEventListener('click', () => {
+    const accepted = [];
+    document.querySelectorAll('#resultsTable tbody tr[data-idx]').forEach(tr => {
+      const chk = tr.querySelector('.acceptChk');
+      if (chk && chk.checked) accepted.push(results[parseInt(tr.dataset.idx, 10)]);
+    });
+    if (!accepted.length) { alert('No rows selected — check the boxes for the corrections you want to accept first.'); return; }
+
+    generatedSql = accepted
+      .map(r => `update public.spots set lat = ${r.newLat}, lng = ${r.newLng} where id = ${sqlString(r.spot.id)};`)
+      .join('\n') + '\n';
+
+    generatedJson = JSON.stringify(accepted.map(r => ({
+      id: r.spot.id, name: r.spot.name, suburb: r.spot.suburb, state: r.spot.state, country: r.spot.country,
+      oldLat: r.spot.lat, oldLng: r.spot.lng, newLat: r.newLat, newLng: r.newLng
+    })), null, 2);
+
+    const sqlOut = document.getElementById('sqlOut');
+    const jsonOut = document.getElementById('jsonOut');
+    sqlOut.textContent = generatedSql;
+    sqlOut.style.display = 'block';
+    jsonOut.textContent = generatedJson;
+    jsonOut.style.display = 'block';
+    document.getElementById('copySqlBtn').disabled = false;
+    document.getElementById('copyJsonBtn').disabled = false;
+  });
+
+  document.getElementById('copySqlBtn').addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText(generatedSql); alert('SQL copied.'); }
+    catch (e) { alert(`Couldn't copy automatically (${e.message}) — select the text in the box and copy manually.`); }
+  });
+  document.getElementById('copyJsonBtn').addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText(generatedJson); alert('JSON copied.'); }
+    catch (e) { alert(`Couldn't copy automatically (${e.message}) — select the text in the box and copy manually.`); }
+  });
+</script>
+</body>
+</html>

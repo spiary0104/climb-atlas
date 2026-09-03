@@ -294,6 +294,17 @@ from one source:
     Jungle's suburb, the 3 Japan suburb corrections, or the 2 China
     suburb corrections above), not routinely recomputed from the new
     address string.
+  - **This is exactly the gap `supabase/geocode.html` exists to close**:
+    a one-off browser tool (same pattern as `supabase/seed.html`) that
+    re-geocodes every spot's already-verified `address` against
+    OpenStreetMap's Nominatim, shows how far the result sits from the
+    current pin, and lets a human accept/reject each correction before it
+    generates SQL (for the live table) and a JSON diff (for `js/data.js`)
+    — see `docs/tasks.md` "Add a geocoding tool..." and the README
+    "Fixing pin positions" section. Not yet run to completion as of this
+    writing — most positions in this dataset are still the original
+    city/suburb-level estimate, not a geocoded street-level one, until
+    that tool is actually run and its corrections applied.
 - **Sidebar chip growth has a real height ceiling — mitigated, not solved,
   by an accordion.** `.sidebar-controls` (`css/style.css`) — the search
   box plus every country's chip row plus type/marks filters — sits above

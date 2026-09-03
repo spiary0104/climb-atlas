@@ -17,6 +17,8 @@ js/data.js              The seed dataset — every gym/crag pin, as window.SEED_
 js/app.js               Everything else: map rendering, filters, add/edit, marks
 supabase/schema.sql      Run once in the Supabase SQL Editor — creates spots, pending_edits, reports, moderators, marks
 supabase/seed.html       Run once in a browser — loads the spots table from js/data.js
+supabase/geocode.html    Maintenance tool — re-geocodes spot addresses against OpenStreetMap
+                         Nominatim to fix inaccurate pin positions, see "Fixing pin positions" below
 ```
 
 Script load order in `index.html` matters: the Supabase JS CDN script, then
@@ -111,6 +113,22 @@ before they're publicly visible (or, for reports, before anyone acts on them):
 - Only `spots`, `pending_edits`, and `reports` are moderated this way. There's still no
   accuracy review beyond that — a moderator can approve something wrong, and there's no
   edit history/audit log.
+
+## Fixing pin positions (geocoding)
+
+Most seed spots have a verified street `address`, but for many the `lat`/`lng` pin itself
+was only ever estimated at city/suburb level, not computed from that address — see
+`docs/architecture.md` "Seed data sourcing". If you get feedback that pins are off by a few
+kilometres, open `supabase/geocode.html` in a browser: it re-geocodes every spot that has an
+`address` against [OpenStreetMap's Nominatim](https://nominatim.openstreetmap.org/) (free,
+keyless), shows how far each proposed position is from the current pin (sorted worst-first),
+and lets you review and select individual corrections rather than applying anything blind —
+each row includes the raw Nominatim match text and map links for both the old and new
+position so you can sanity-check before accepting. Selected corrections generate both:
+ready-to-run SQL (paste into the Supabase SQL Editor to fix the live map immediately) and a
+JSON list of the same changes to apply to `js/data.js` too, so the offline fallback and any
+future re-seed stay in sync. Nominatim's usage policy caps requests around 1/second, so a
+full pass over ~600 addressed spots takes roughly 10–15 minutes.
 
 ## Before it's actually public
 

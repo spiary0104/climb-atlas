@@ -41,6 +41,59 @@ placeholder work just to fill this section)_
 
 ## In Progress
 
+### Add a geocoding tool to fix inaccurate pin positions
+- Branch: `feature/geocode-address-tool` (new branch off `master`)
+- Status: implemented + smoke-tested live against the real Nominatim API; not
+  yet used to actually correct any spot's position, and not yet merged.
+- What: user reported feedback that several map pins are "a few km" off from
+  their real location. Root cause was already known and documented (see
+  `docs/architecture.md` "Seed data sourcing"): most spots have a verified
+  street `address`, but the `lat`/`lng` pin was generally never recomputed
+  from it — it's still the original city/suburb-level estimate from whichever
+  data-adding pass created that entry. Fixing this for real needs a geocoding
+  step, not another guess.
+- **New `supabase/geocode.html`** (same "one-off browser tool, not part of the
+  live app" pattern as `supabase/seed.html`): loads `js/data.js`, geocodes
+  every spot with a non-empty `address` against OpenStreetMap's **Nominatim**
+  (free, keyless — no account/API key, same no-API-key philosophy as the map's
+  CARTO basemap), sequentially with a 1.1s delay per request (Nominatim's
+  usage policy caps at ~1 req/sec). For each match it computes the haversine
+  distance between the current pin and the geocoded position, and renders a
+  sortable/filterable review table (worst offenders first) — nothing is
+  applied automatically. Each row shows both positions with OpenStreetMap map
+  links and the raw Nominatim match text, so a human can sanity-check before
+  accepting (per `Rules.md` §1 — never guess/apply blind). Spots Nominatim
+  can't match (e.g. unit-number-style addresses like "Building 3/85 O'Riordan
+  St" trip up its parser) are listed separately as needing manual lookup,
+  not silently skipped.
+- Accepted corrections (checkboxes, with select-all/deselect-all helpers)
+  generate two outputs: ready-to-paste **SQL** (`update public.spots set
+  lat=…, lng=… where id=…`) to fix the live map immediately via the Supabase
+  SQL Editor, and a **JSON** list of the same `{id, old/new lat/lng}` changes
+  to apply to `js/data.js` too — so the offline fallback and any future
+  re-seed stay in sync with the live corrections rather than reverting them.
+  `id` values match the `seed-<index>` scheme `js/data.js` assigns at load
+  (see the `.map((g,i)=>({...g, id:'seed-'+i, ...}))` at the bottom of that
+  file), the same id the live `spots` table already uses.
+- **Verified live** (served copy, `npx serve .`): page loads with no console
+  errors; ran a real (not mocked) partial pass against Nominatim — 8 of the
+  first 16 addressed AU spots matched, correctly sorted by distance moved
+  (2.03 km down to 1.04 km shown, more below the table's threshold), each
+  with a sane-looking Nominatim match string confirming the right building
+  (e.g. "Climb Fit Macquarie, 3, Waterloo Road, Macquarie Park" matching the
+  spot's own known address); the 8 that didn't match were listed by name
+  under "needs manual lookup," not dropped silently; selecting rows and
+  clicking "Generate SQL + JSON" produced correct, syntactically valid SQL
+  and JSON keyed by the right `seed-N` ids.
+- **Not yet done**: an actual full pass hasn't been run (only tested a
+  partial, stopped-early sample against real spots to verify the mechanism
+  works) — running the full ~600-spot pass, reviewing the results, and
+  applying accepted corrections to both the live Supabase table and
+  `js/data.js` is a separate follow-up action, not done as part of building
+  the tool itself. GB/DE still have no `address` field at all (see
+  `docs/architecture.md`), so this tool can't help their pin accuracy until
+  that's added first.
+
 ### Fix globe rendering, marker drag lag, remove outdoor-bouldering type
 - Branch: `fix/globe-render-perf-remove-outdoor-type`
 - Status: in progress (implemented + verified against a live served copy in a
