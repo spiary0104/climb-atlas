@@ -79,6 +79,29 @@ they're different object keys/fields (`STATES_BY_COUNTRY.US` contains
 top-level *country*), but worth knowing before assuming a bare `"CA"`
 string always means the same thing while reading this codebase.
 
+**Proposing a country not in the list**: the add-spot and edit-spot forms'
+country `<select>` has an `OTHER` option ("Other (not listed)") for exactly
+this — picking it swaps the `<select id="fState">`/`<select id="eState">`
+for two free-text inputs (`fCountryOther`/`fStateOther`,
+`eCountryOther`/`eStateOther` in `index.html`), and the submission stores
+whatever the person typed directly as `country`/`state` (see
+`getCountryState()` in `js/app.js`) rather than a short code. Nothing in
+`schema.sql` restricts `country` to the known list — it's a plain `text`
+column — so this needs no database change. The submission is still
+signed-in + rate-limited + moderator-reviewed like any other spot; a
+moderator sees the raw country name directly in the pending-review panel
+(`(France)` etc.), which is self-explanatory without any extra flagging.
+A country submitted this way has **no sidebar filter chip, colour, or
+`STATES_BY_COUNTRY` entry** once approved — `passesFilters()` defaults to
+showing every country when no chip is toggled, so the spot still appears
+on the map and in search, just without dedicated filter UI, until someone
+does the same one-country-at-a-time work (chip, colours, state list,
+`COUNTRY_LABELS`) every other country in this file went through.
+`openEditModal()` also handles the reverse case — editing an existing spot
+whose `country` isn't a recognized key falls back to the `OTHER` fields
+pre-filled with its current value, rather than throwing on
+`STATES_BY_COUNTRY[country]` being undefined.
+
 ## Seed data sourcing
 
 `js/data.js` currently has 682 spots (74 AU, 332 US, 32 JP, 15 CA, 9 NZ,

@@ -697,8 +697,30 @@
     sel.innerHTML = STATES_BY_COUNTRY[country].map(([code,label])=>`<option value="${code}">${label}</option>`).join('');
     if(STATES_BY_COUNTRY[country].some(([code])=>code===prevValue)) sel.value = prevValue;
   }
-  document.getElementById('fCountry').addEventListener('change', (e)=>populateStateSelect('fState', e.target.value));
-  document.getElementById('eCountry').addEventListener('change', (e)=>populateStateSelect('eState', e.target.value));
+  // "Other (not listed)" lets someone propose a country this map doesn't support
+  // yet -- there's no STATES_BY_COUNTRY entry or short code for it, so the normal
+  // state <select> is swapped for two free-text inputs instead. Submitted as
+  // whatever the person types (moderator-reviewed either way); a country only
+  // gets proper chip/colour/filter support once someone formally adds it, the
+  // same one-at-a-time process every existing country went through.
+  function toggleOtherCountryFields(prefix, country){
+    const isOther = country === 'OTHER';
+    document.getElementById(prefix + 'OtherCountryFields').style.display = isOther ? 'flex' : 'none';
+    document.getElementById(prefix + 'State').parentElement.style.display = isOther ? 'none' : '';
+    if(!isOther) populateStateSelect(prefix + 'State', country);
+  }
+  function getCountryState(prefix){
+    const countrySel = document.getElementById(prefix + 'Country');
+    if(countrySel.value === 'OTHER'){
+      return {
+        country: document.getElementById(prefix + 'CountryOther').value.trim(),
+        state: document.getElementById(prefix + 'StateOther').value.trim()
+      };
+    }
+    return {country: countrySel.value, state: document.getElementById(prefix + 'State').value};
+  }
+  document.getElementById('fCountry').addEventListener('change', (e)=>{ toggleOtherCountryFields('f', e.target.value); checkFormReady(); });
+  document.getElementById('eCountry').addEventListener('change', (e)=>{ toggleOtherCountryFields('e', e.target.value); checkEditFormReady(); });
 
   // --- add gym flow ---
   const modalBackdrop = document.getElementById('modalBackdrop');
@@ -731,10 +753,10 @@
     submitBtn.disabled = true;
     pinStatus.textContent = 'No pin dropped yet — click "Drop pin" then tap the map.';
     pinStatus.classList.remove('set');
-    ['fName','fSuburb','fAddress','fNotes','fPhoto'].forEach(id=>document.getElementById(id).value='');
-    ['fTypeIndoor','fTypeTopRope','fTypeOutdoor'].forEach(id=>document.getElementById(id).checked=false);
+    ['fName','fSuburb','fAddress','fNotes','fPhoto','fCountryOther','fStateOther'].forEach(id=>document.getElementById(id).value='');
+    ['fTypeIndoor','fTypeTopRope','fTypeOutdoor','fTypeLead'].forEach(id=>document.getElementById(id).checked=false);
     document.getElementById('fCountry').value = 'AU';
-    populateStateSelect('fState', 'AU');
+    toggleOtherCountryFields('f', 'AU');
     modalBackdrop.classList.remove('hidden');
   });
 
@@ -795,20 +817,25 @@
   function checkFormReady(){
     const name = document.getElementById('fName').value.trim();
     const suburb = document.getElementById('fSuburb').value.trim();
-    submitBtn.disabled = !(name && suburb && placingPin && selectedTypes().length > 0);
+    const {country, state} = getCountryState('f');
+    submitBtn.disabled = !(name && suburb && country && state && placingPin && selectedTypes().length > 0);
   }
+  ['fCountryOther','fStateOther'].forEach(id=>{
+    document.getElementById(id).addEventListener('input', checkFormReady);
+  });
 
   document.getElementById('submitBtn').addEventListener('click', async ()=>{
     if(!placingPin) return;
     if(!window.sb){ showToast('Supabase is not configured — see README.md'); return; }
     const user = window.auth.user;
     if(!user){ showToast('Sign in to add a location'); closeModal(); openAuthModal(); return; }
+    const {country, state} = getCountryState('f');
     const gym = {
       id: 'community-' + (window.crypto && crypto.randomUUID ? crypto.randomUUID() : Date.now()),
       name: document.getElementById('fName').value.trim(),
       suburb: document.getElementById('fSuburb').value.trim(),
-      state: document.getElementById('fState').value,
-      country: document.getElementById('fCountry').value,
+      state,
+      country,
       types: selectedTypes(),
       address: document.getElementById('fAddress').value.trim() || null,
       notes: document.getElementById('fNotes').value.trim() || null,
@@ -848,9 +875,19 @@
     currentEditPin = {lat: g.lat, lng: g.lng};
     document.getElementById('eName').value = g.name;
     document.getElementById('eSuburb').value = g.suburb;
-    document.getElementById('eCountry').value = g.country;
-    populateStateSelect('eState', g.country);
-    document.getElementById('eState').value = g.state;
+    if(STATES_BY_COUNTRY[g.country]){
+      document.getElementById('eCountry').value = g.country;
+      toggleOtherCountryFields('e', g.country);
+      document.getElementById('eState').value = g.state;
+    } else {
+      // g.country isn't one of the supported dropdown countries -- this spot
+      // was itself submitted through the "Other (not listed)" path (or has a
+      // country this map hasn't formally added chip/colour support for yet).
+      document.getElementById('eCountry').value = 'OTHER';
+      toggleOtherCountryFields('e', 'OTHER');
+      document.getElementById('eCountryOther').value = g.country;
+      document.getElementById('eStateOther').value = g.state;
+    }
     document.getElementById('eAddress').value = g.address || '';
     document.getElementById('eNotes').value = g.notes || '';
     document.getElementById('ePhoto').value = g.photo || '';
@@ -894,18 +931,23 @@
   function checkEditFormReady(){
     const name = document.getElementById('eName').value.trim();
     const suburb = document.getElementById('eSuburb').value.trim();
-    document.getElementById('eSaveBtn').disabled = !(name && suburb && currentEditPin && selectedEditTypes().length > 0);
+    const {country, state} = getCountryState('e');
+    document.getElementById('eSaveBtn').disabled = !(name && suburb && country && state && currentEditPin && selectedEditTypes().length > 0);
   }
+  ['eCountryOther','eStateOther'].forEach(id=>{
+    document.getElementById(id).addEventListener('input', checkEditFormReady);
+  });
 
   document.getElementById('eSaveBtn').addEventListener('click', async ()=>{
     if(!currentEditId || !currentEditPin) return;
     if(!window.sb){ showToast('Supabase is not configured — see README.md'); return; }
+    const {country, state} = getCountryState('e');
     const proposal = {
       spot_id: currentEditId,
       name: document.getElementById('eName').value.trim(),
       suburb: document.getElementById('eSuburb').value.trim(),
-      state: document.getElementById('eState').value,
-      country: document.getElementById('eCountry').value,
+      state,
+      country,
       types: selectedEditTypes(),
       address: document.getElementById('eAddress').value.trim() || null,
       notes: document.getElementById('eNotes').value.trim() || null,

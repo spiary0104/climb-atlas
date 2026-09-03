@@ -41,12 +41,53 @@ placeholder work just to fill this section)_
 
 ## In Progress
 
+### Let community submissions propose a country not on the map yet
+- Branch: `feature/propose-new-country` (new branch off `master`)
+- Status: implemented + verified live in a served copy; not yet merged.
+- What: user feedback — people want to add gyms in countries the map
+  doesn't support yet (only AU/US/JP/CA/NZ/CN/GB/DE have a chip, colours,
+  and a `STATES_BY_COUNTRY` entry). Added an "Other (not listed)" option
+  to the country `<select>` in both the add-spot and edit-spot forms —
+  picking it swaps the State `<select>` for two free-text inputs (country
+  name + state/region) instead of trying to guess a short code or region
+  list for a country this app doesn't know about yet.
+- No schema change needed — `spots.country` is a plain `text` column with
+  no check constraint. The submission still goes through the existing
+  sign-in + rate-limit + moderator-review pipeline unchanged; a moderator
+  just sees the raw typed country name in the pending panel (e.g.
+  "(France)"), which is self-explanatory.
+- An approved spot from an unlisted country still shows up on the map and
+  in search (confirmed `passesFilters()` already defaults to "show
+  everything" when no sidebar chip is toggled) — it just has no dedicated
+  filter chip/colour until someone does the same one-country-at-a-time
+  formal-support work every existing country went through. Full writeup in
+  `docs/architecture.md` "Data model".
+- Also fixed a real pre-existing bug found while touching this code: the
+  add-spot modal's reset-on-open handler cleared
+  `fTypeIndoor`/`fTypeTopRope`/`fTypeOutdoor` but not `fTypeLead` (missed
+  when lead climbing was added in the prior task) — the Lead Climbing
+  checkbox could stay checked across separate "Add a location" opens.
+  Fixed alongside this change since it's the same array.
+- **Verified live** (served copy, `npx serve .`, DOM-level sign-in bypass
+  for testing since add-spot now requires auth): selecting "Other" in
+  either form swaps in the free-text fields and hides the State dropdown
+  without touching the Country dropdown itself; switching back to a real
+  country re-shows and correctly repopulates the State dropdown; no
+  console errors at any step. `openEditModal()`'s fallback path (for
+  editing a spot whose `country` isn't a recognized key) was checked by
+  reading the code, not exercised live — no such spot exists in the
+  dataset yet to open.
+- **Not yet done**: an actual end-to-end submission through Supabase
+  (sign in for real, submit an "Other" country, see it land in
+  `pending`) — this environment can't complete a real auth flow. Worth
+  the user trying once live.
+
 ### Add a lead climbing type/checkbox
 - Branch: `feature/geocode-address-tool` (same branch/worktree as the
   geocoding-tool task above — continued rather than starting fresh, per
   this project's established practice of stacking small tasks from one
   session onto the active unmerged branch)
-- Status: implemented + verified live in a served copy; not yet merged.
+- Status: **done — merged to `master`** (PR #2) and live on climbatlas.org.
 - What: user asked to add "lead climbing" as a fourth climbing type,
   alongside the existing indoor bouldering / top rope / outdoor bouldering.
   Followed the exact same pattern used when outdoor bouldering was added
@@ -75,8 +116,10 @@ placeholder work just to fill this section)_
 
 ### Add a geocoding tool to fix inaccurate pin positions
 - Branch: `feature/geocode-address-tool` (new branch off `master`)
-- Status: implemented + smoke-tested live against the real Nominatim API; not
-  yet used to actually correct any spot's position, and not yet merged.
+- Status: **done — merged to `master`** (PR #2) and live on climbatlas.org.
+  Used to apply 40 real corrections so far (see the two follow-up batches
+  further down this section); the full ~450-spot remainder is still
+  ungeocoded.
 - What: user reported feedback that several map pins are "a few km" off from
   their real location. Root cause was already known and documented (see
   `docs/architecture.md` "Seed data sourcing"): most spots have a verified
