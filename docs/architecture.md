@@ -70,8 +70,9 @@ are only unique within a country** (e.g. AU's `WA` vs US's `WA` are
 different regions). Anything that filters, colors, or edits by state —
 the chips in `index.html`, `STATES_BY_COUNTRY` in `app.js`, the RLS-safe
 columns in `schema.sql` — keys off the `(country, state)` pair together,
-never `state` alone. Now 8 countries deep (AU, US, JP, CA, NZ, CN, GB, DE),
-same pattern each time — keep this in mind before adding a 9th. One collision
+never `state` alone. Now 12 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
+FR, SE, NL, IT), same pattern each time — keep this in mind before adding
+a 13th. One collision
 worth flagging: `US`'s state code for California is `CA`, and `CA` is
 also the top-level country code for Canada — not a real ambiguity since
 they're different object keys/fields (`STATES_BY_COUNTRY.US` contains
@@ -104,10 +105,11 @@ pre-filled with its current value, rather than throwing on
 
 ## Seed data sourcing
 
-`js/data.js` currently has 682 spots (74 AU, 332 US, 32 JP, 15 CA, 9 NZ,
-42 CN, 66 GB, 112 DE), all indoor gyms (bouldering and/or top rope — see
-"Known gaps"
-below on why outdoor areas were removed). It was built up in layers, not
+`js/data.js` currently has 758 spots (74 AU, 332 US, 32 JP, 15 CA, 9 NZ,
+42 CN, 66 GB, 112 DE, 30 FR, 7 SE, 25 NL, 14 IT), all indoor gyms
+(bouldering and/or top rope, with a growing number now also tagged
+lead-climbing — see "Known gaps" below on why outdoor areas were
+removed). It was built up in layers, not
 from one source:
 
 - The original AU set and the first US pass were researched and
@@ -390,6 +392,55 @@ from one source:
   builds every filtered spot as a `.gym-item` regardless of `searchTerm`
   now; the placeholder only appears when the filtered set is genuinely
   empty ("No spots match").
+- **France (30 gyms), Sweden (7), Netherlands (25), and Italy (14)** —
+  the 9th through 12th countries — came from a different kind of source
+  than any prior pass: **climbing-gyms.com**, a directory site with its
+  own per-city listing pages (`/browse/europe/<country>/<city>`) that
+  expose a real street address per gym, not just a name. Given the scale
+  (France alone lists 150+ cities), this pass is deliberately **not
+  exhaustive** — same trade-off as every "lighter touch" country before
+  it — scoped to each country's 3-4 largest cities by the site's own gym
+  count: Paris/Lyon/Marseille/Toulouse (FR), Göteborg/Stockholm/Malmö
+  (SE), Amsterdam/Den Haag/Utrecht/Rotterdam (NL), Roma/Milano/Modena/
+  Firenze (IT).
+  - **Positioning is a step up from the directory-only tier (GB/DE)**:
+    every gym's real street address (as given by the source) was
+    individually geocoded against OpenStreetMap's Nominatim — the exact
+    same tool/method as `supabase/geocode.html`, run here as a one-off
+    Node script instead of the browser tool since there was no existing
+    pin to compare against. 71 of 76 addresses matched; the other 5
+    (4 genuinely unmatched addresses, plus one gym — Altissimo Toulouse
+    Saint Martin — for which the source gave no street address at all)
+    fall back to another already-geocoded gym's position in the same
+    city, flagged in that spot's own `notes`. This was **not**
+    independently cross-checked against a second source the way the
+    AU/US address-verification passes were (no per-gym web search) —
+    treat it as "real address, geocoded once," not "verified."
+  - **Climbing type inferred from chain/name recognition, not
+    individually confirmed** — the source lists a name and address only,
+    no facility type. Chains researched and applied consistently: Arkose,
+    Block'Out, and Bolder/Boulderhal/Boulder-branded gyms (bouldering-
+    focused naming convention, same heuristic used for DE) → indoor
+    bouldering only; Climb Up (confirmed via search as France's largest
+    chain, offering bouldering + top-rope + lead climbing on real bolted
+    routes) → tagged with the **new `lead-climbing` type** (added earlier
+    this session) for the first time on any spot in this dataset,
+    alongside indoor bouldering and top-rope; Movimento Verticale Roma
+    similarly tagged with lead climbing since the source's own Italian
+    description ("arrampicata sportiva") is literally "sport climbing,"
+    i.e. lead. Everything else defaults to indoor-bouldering + top-rope,
+    the same conservative default used for unconfirmed DE/GB gyms.
+  - `state` uses each country's real administrative regions (Île-de-
+    France, Auvergne-Rhône-Alpes, etc. for FR; Swedish "län"; Dutch
+    provinces; Italian regions) rather than a made-up grouping — the
+    source's own address strings named the region directly for most
+    entries, the rest (Lyon, Marseille, Malmö, Utrecht) filled in from
+    well-established general knowledge (e.g. Lyon is the seat of
+    Auvergne-Rhône-Alpes), not individually looked up.
+  - **Not yet pushed to the live Supabase table** — same next-step gap as
+    every prior country addition; needs `supabase/seed.html`'s generated
+    SQL run in the SQL Editor before these 76 spots are visible on the
+    live map rather than just the offline `js/data.js` fallback.
 
 ## Map
 

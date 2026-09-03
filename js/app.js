@@ -20,10 +20,15 @@
          ['BADEN_WURTTEMBERG','Baden-Württemberg'],['BREMEN','Bremen'],['SCHLESWIG_HOLSTEIN','Schleswig-Holstein'],
          ['SACHSEN','Sachsen'],['NIEDERSACHSEN','Niedersachsen'],['SACHSEN_ANHALT','Sachsen-Anhalt'],
          ['BRANDENBURG','Brandenburg'],['RHEINLAND_PFALZ','Rheinland-Pfalz'],['HAMBURG','Hamburg'],
-         ['SAARLAND','Saarland'],['THURINGEN','Thüringen'],['MECKLENBURG_VORPOMMERN','Mecklenburg-Vorpommern']]
+         ['SAARLAND','Saarland'],['THURINGEN','Thüringen'],['MECKLENBURG_VORPOMMERN','Mecklenburg-Vorpommern']],
+    FR: [['ILE_DE_FRANCE','Île-de-France (Paris)'],['AUVERGNE_RHONE_ALPES','Auvergne-Rhône-Alpes (Lyon)'],
+         ['PACA',"Provence-Alpes-Côte d'Azur (Marseille)"],['OCCITANIE','Occitanie (Toulouse)']],
+    SE: [['VASTRA_GOTALAND','Västra Götaland (Göteborg)'],['STOCKHOLM','Stockholm'],['SKANE','Skåne (Malmö)']],
+    NL: [['NOORD_HOLLAND','Noord-Holland (Amsterdam)'],['ZUID_HOLLAND','Zuid-Holland (Den Haag, Rotterdam)'],['UTRECHT','Utrecht']],
+    IT: [['LAZIO','Lazio (Roma)'],['LOMBARDIA','Lombardia (Milano)'],['EMILIA_ROMAGNA','Emilia-Romagna (Modena)'],['TOSCANA','Toscana (Firenze)']]
   };
   const TYPE_LABELS = {'indoor-bouldering':'Indoor bouldering','top-rope':'Top rope','outdoor-bouldering':'Outdoor bouldering','lead-climbing':'Lead climbing'};
-  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany'};
+  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy'};
   // Fixed camera target per country for the "fly to this country" click on
   // its sidebar label -- picked to frame that country's actual spread of
   // seed spots (e.g. US needs a wide zoom to fit both NY and CA), not a
@@ -37,7 +42,11 @@
     NZ: {center:[172,-41], zoom:4.6},
     CN: {center:[110,32], zoom:3.6},
     GB: {center:[-2.5,54.5], zoom:4.8},
-    DE: {center:[10.5,51], zoom:4.6}
+    DE: {center:[10.5,51], zoom:4.6},
+    FR: {center:[2.5,46.3], zoom:5.2},
+    SE: {center:[15,58.5], zoom:4.4},
+    NL: {center:[5.2,52.1], zoom:7},
+    IT: {center:[11,43.3], zoom:5.2}
   };
   // Below this zoom, a spot with no nearby neighbours (so supercluster hands
   // it back as a lone, unclustered point rather than grouping it) still paints

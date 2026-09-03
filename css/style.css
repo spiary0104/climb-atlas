@@ -70,6 +70,20 @@
     --de-saarland:#c95f7a;
     --de-thuringen:#e08e45;
     --de-mecklenburg-vorpommern:#5b7fc4;
+    --fr-ile-de-france:#c0563d;
+    --fr-auvergne-rhone-alpes:#3f9e6b;
+    --fr-paca:#4a7fc9;
+    --fr-occitanie:#b38f3f;
+    --se-vastra-gotaland:#7a5cc4;
+    --se-stockholm:#4aa8a3;
+    --se-skane:#cc6f9e;
+    --nl-noord-holland:#d67a2e;
+    --nl-zuid-holland:#4592c9;
+    --nl-utrecht:#6bb35a;
+    --it-lazio:#c94f6b;
+    --it-lombardia:#3fae8e;
+    --it-emilia-romagna:#8a6bc9;
+    --it-toscana:#cfa23a;
     --t-outdoor:#b8834a;
     --t-indoor:#3fb8a6;
     --t-toprope:#8a6bb0;
@@ -296,6 +310,20 @@
   .chip[data-country="DE"][data-state="SAARLAND"].active{background:var(--de-saarland);}
   .chip[data-country="DE"][data-state="THURINGEN"].active{background:var(--de-thuringen);}
   .chip[data-country="DE"][data-state="MECKLENBURG_VORPOMMERN"].active{background:var(--de-mecklenburg-vorpommern);}
+  .chip[data-country="FR"][data-state="ILE_DE_FRANCE"].active{background:var(--fr-ile-de-france);}
+  .chip[data-country="FR"][data-state="AUVERGNE_RHONE_ALPES"].active{background:var(--fr-auvergne-rhone-alpes);}
+  .chip[data-country="FR"][data-state="PACA"].active{background:var(--fr-paca);}
+  .chip[data-country="FR"][data-state="OCCITANIE"].active{background:var(--fr-occitanie);}
+  .chip[data-country="SE"][data-state="VASTRA_GOTALAND"].active{background:var(--se-vastra-gotaland);}
+  .chip[data-country="SE"][data-state="STOCKHOLM"].active{background:var(--se-stockholm);}
+  .chip[data-country="SE"][data-state="SKANE"].active{background:var(--se-skane);}
+  .chip[data-country="NL"][data-state="NOORD_HOLLAND"].active{background:var(--nl-noord-holland);}
+  .chip[data-country="NL"][data-state="ZUID_HOLLAND"].active{background:var(--nl-zuid-holland);}
+  .chip[data-country="NL"][data-state="UTRECHT"].active{background:var(--nl-utrecht);}
+  .chip[data-country="IT"][data-state="LAZIO"].active{background:var(--it-lazio);}
+  .chip[data-country="IT"][data-state="LOMBARDIA"].active{background:var(--it-lombardia);}
+  .chip[data-country="IT"][data-state="EMILIA_ROMAGNA"].active{background:var(--it-emilia-romagna);}
+  .chip[data-country="IT"][data-state="TOSCANA"].active{background:var(--it-toscana);}
 
   .toggle-row{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-dim);font-family:'Space Mono',monospace;cursor:pointer;}
   .toggle-row input{accent-color:var(--vic);}

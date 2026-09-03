@@ -41,9 +41,68 @@ placeholder work just to fill this section)_
 
 ## In Progress
 
+### Add France, Sweden, Netherlands, Italy (76 gyms)
+- Branch: `feature/add-france-sweden-netherlands-italy` (new branch off
+  `master`)
+- Status: implemented + verified live in a served copy; not yet merged.
+  **Not yet pushed to the live Supabase table** — same outstanding step
+  as every prior country addition.
+- What: user asked to add these 4 countries using
+  `https://climbing-gyms.com/browse/europe` as the source — a directory
+  site with per-city gym listings, each with a real street address
+  (unlike Mountain Project's AU/US/UK/DE listings, which only gave
+  name + city). Scoped to each country's 3-4 largest cities by the
+  site's own gym count (not exhaustive — France alone lists 150+
+  cities): Paris/Lyon/Marseille/Toulouse (FR, 30 gyms),
+  Göteborg/Stockholm/Malmö (SE, 7), Amsterdam/Den Haag/Utrecht/Rotterdam
+  (NL, 25), Roma/Milano/Modena/Firenze (IT, 14). 76 gyms total.
+- **Positions individually geocoded, not city-level estimates**: every
+  gym's real address was run through Nominatim (same tool as
+  `supabase/geocode.html`, here as a one-off Node script since there was
+  no existing pin to compare against) — 71 of 76 matched; the other 5
+  fall back to another already-geocoded gym's position in the same city,
+  flagged in `notes`. This is a step up from the GB/DE "directory depth"
+  tier but **not** cross-checked against a second source per-gym the way
+  AU/US were (no individual web search) — real address, geocoded once,
+  not independently verified.
+- **First real use of the `lead-climbing` type** (added earlier this
+  session but never actually applied to a spot until now): Climb Up
+  (France's largest chain, confirmed via search to offer bouldering +
+  top-rope + lead) and Movimento Verticale Roma (source's own
+  description translates to "sport climbing," i.e. lead) are tagged
+  `[indoor-bouldering, top-rope, lead-climbing]`. Everything else's type
+  is inferred from chain/name recognition (Arkose, Block'Out,
+  Bolder/Boulderhal/Boulder-branded gyms → bouldering-only; everything
+  else → bouldering + top-rope default), not individually confirmed —
+  same tier of confidence as the DE/GB naming-heuristic passes.
+- Added `FR`/`SE`/`NL`/`IT` to `STATES_BY_COUNTRY` (using each country's
+  real administrative regions — Île-de-France, Auvergne-Rhône-Alpes,
+  etc.), `COUNTRY_LABELS`, and `COUNTRY_FLY_TARGETS` in `js/app.js`; 14
+  new `--fr-*`/`--se-*`/`--nl-*`/`--it-*` CSS colour variables + chip
+  active-state rules in `css/style.css`; new sidebar chip rows (nested
+  under the existing Europe region-group, alphabetically among
+  France/Germany/Italy/Netherlands/Sweden/United Kingdom) and country
+  `<option>`s in both add/edit-spot forms in `index.html`. Full sourcing
+  writeup in `docs/architecture.md` "Seed data sourcing".
+- Net result: 682 → **758 total spots**. Structural check (`node -e`
+  eval): 759/759 braces balanced, 760/760 brackets balanced, all 758 ids
+  unique, zero duplicate name+suburb+state+country combos.
+- **Verified live** (served copy, `npx serve .`): `window.SEED_GYMS.length`
+  = 758; all 4 new country chip groups render in the sidebar with correct
+  colours in the right alphabetical slot; clicking the France sidebar
+  chip/label correctly filters and flies the camera to France (confirmed
+  by screenshot — basemap showed "France"/"Lyon"/"Auvergne-Rhône-Alpes"
+  labels after the fly-to); add-spot form's Italy state dropdown
+  populates with the correct 4 regions; no console errors at any point.
+  This test environment's Supabase project only has the old 504 spots
+  live (not yet re-seeded), so the new countries weren't visually
+  confirmed rendering as map markers in this session — only structurally,
+  via the same code path every other approved spot already renders
+  through.
+
 ### Let community submissions propose a country not on the map yet
 - Branch: `feature/propose-new-country` (new branch off `master`)
-- Status: implemented + verified live in a served copy; not yet merged.
+- Status: **done — merged to `master`** and live on climbatlas.org.
 - What: user feedback — people want to add gyms in countries the map
   doesn't support yet (only AU/US/JP/CA/NZ/CN/GB/DE have a chip, colours,
   and a `STATES_BY_COUNTRY` entry). Added an "Other (not listed)" option
