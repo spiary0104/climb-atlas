@@ -41,23 +41,73 @@ placeholder work just to fill this section)_
 
 ## In Progress
 
+### Add a continent label tier + click-to-fly, above the existing country tier
+- Branch: `feature/continent-labels-and-fly-to` (new branch off `master`)
+- Status: implemented + verified live in a served copy; not yet merged.
+- What: user feedback after the France/Sweden/Netherlands/Italy addition
+  — with 6 European countries now on the map, the globe-zoom label tier
+  was showing an individual country name (e.g. "Germany") immediately at
+  the most-zoomed-out view, before a continent name. Asked for: (1) show
+  the continent (e.g. "Europe") first, switching to the country name only
+  once zoomed in further; (2) make sure the country name doesn't ever
+  show twice once it does appear; (3) clicking a continent flies/rotates
+  the globe to it, same as clicking a country already does.
+- **(1) New continent tier**: added `CONTINENT_LABEL_ZOOM = 3.5` (coarser
+  than the existing `COUNTRY_LABEL_ZOOM = 5`), a `COUNTRY_TO_REGION` map
+  (country code → region id, matching the sidebar's own
+  `.region-group[data-region]` nesting), `REGION_LABELS`, and
+  `computeContinentCentroids()` — same pattern as the existing per-country
+  centroid function, one tier coarser. `paintMarkers()`'s two-way
+  continent/state branch became a three-way continent/country/state
+  branch, still sharing one collision-avoidance pass and one
+  `regionLabelMarkers` tracking dict.
+- **(2) No duplicate country names**: this falls out of the tier design
+  rather than needing separate logic — each tier's candidates come from
+  exactly one centroid map keyed uniquely per tier (continent: region id,
+  country: bare code, state: `"country:state"`), and only one tier's
+  candidates are ever read at a given zoom, so a given label can only
+  ever be sourced once. Verified live by zooming in/out across the
+  continent↔country boundary and reading `.region-label` elements from
+  the DOM directly — exactly one label per key at every zoom tested, and
+  the old tier's label(s) were gone by the time the new tier's appeared.
+- **(3) Click-to-fly**: added `REGION_FLY_TARGETS` (`COUNTRY_FLY_TARGETS`,
+  one tier up — frames every country currently in that continent). Wired
+  two ways: the on-map continent label itself is now clickable (the only
+  label tier that is — state/country labels keep `pointer-events:none` so
+  they can't block map drag; continent labels get a new `.continent-label`
+  CSS class that turns pointer-events back on), and the sidebar's
+  `.region-header` click (Asia/Europe/North America/Oceania) now also
+  flies to `REGION_FLY_TARGETS` alongside its existing collapse-toggle,
+  mirroring how `.country-label` already does both for
+  `COUNTRY_FLY_TARGETS`. Full writeup in `docs/architecture.md` "Map".
+- **Verified live** (served copy, `npx serve .`, against the now-fully-
+  seeded live Supabase data — 758 spots): default globe view shows a
+  single "Europe" label (confirmed via DOM query, not just visually —
+  the basemap's own place-name labels like "GERMANY"/"UNITED KINGDOM" are
+  a separate CARTO tile layer, not this app's markers, and were initially
+  mistaken for the same thing before checking the DOM directly); zooming
+  in twice correctly cleared "Europe" and painted "Germany", "United
+  Kingdom", "France", "Netherlands" as four separate, non-duplicated
+  labels; zooming back out restored the single "Europe" label; clicking
+  the sidebar's Europe region-header flew the camera to `{center:[8,50],
+  zoom:3.2}`; clicking the on-map "Europe" label itself flew to the same
+  target; no console errors at any point.
+
 ### Add France, Sweden, Netherlands, Italy (76 gyms)
 - Branch: `feature/add-france-sweden-netherlands-italy` (new branch off
   `master`)
-- Status: **done — merged to `master`** and live on climbatlas.org (code
-  only). **The live Supabase table is still not seeded** — and this
-  turned out to be a bigger pre-existing gap than expected: the user
-  reported "Europe is not showing any markers" after this merge, and
-  checking confirmed the live `spots` table has only ever had **504**
-  rows — exactly AU+US+JP+CA+NZ+CN. Germany and the UK (added in an
+- Status: **done — merged to `master`**, live Supabase table re-seeded
+  (confirmed by the user), all 758 spots live on climbatlas.org. Along
+  the way, found the live `spots` table had only ever had **504** rows —
+  exactly AU+US+JP+CA+NZ+CN — because Germany and the UK (added in an
   earlier session, see "Require sign-in + rate-limit new spot
   submissions; add UK and Germany" in Done below) were never actually
-  pushed live either, despite being in `js/data.js` this whole time — so
-  all of Europe (DE, GB, FR, SE, NL, IT — 254 spots) has been invisible
-  on the real map independent of anything from this task. Sent the user
+  pushed live either, despite being in `js/data.js` this whole time. So
+  "Europe is not showing any markers" (the user's report right after
+  this merge) was a bigger, pre-existing gap than this task alone — sent
   a **full 758-row re-seed** (every country, upsert-safe by `id`,
   superseding an earlier narrower 76-row script that would not have
-  fixed DE/GB) — not yet confirmed run as of this entry.
+  fixed DE/GB) rather than a partial fix.
 - What: user asked to add these 4 countries using
   `https://climbing-gyms.com/browse/europe` as the source — a directory
   site with per-city gym listings, each with a real street address

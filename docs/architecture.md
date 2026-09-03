@@ -548,22 +548,44 @@ from one source:
   bookmarked.
 - Country/state filter, type filter, and marks filter are independent
   (AND'd together); search matches name or suburb.
-- **Region labels are two-tiered**, controlled by `COUNTRY_LABEL_ZOOM`
-  (currently 5) alongside the existing `HOLD_ICON_ZOOM` (9): below
-  `COUNTRY_LABEL_ZOOM`, `paintMarkers()` shows one label per *country*
-  (`computeCountryCentroids()` + `COUNTRY_LABELS`, e.g. "Japan") rather
-  than per state/prefecture/city — at globe/continent zoom, several
-  same-country regions are usually still too close together on screen to
-  be worth distinguishing, and a country name orients a viewer faster.
-  From `COUNTRY_LABEL_ZOOM` up to `HOLD_ICON_ZOOM`, labels switch to the
-  finer state/city tier (`computeRegionCentroids()`) as before. Both
-  tiers share the same collision-avoidance logic and the same
-  `regionLabelMarkers` tracking dict — country-tier keys are bare country
-  codes (`"JP"`), state-tier keys are `"country:state"` (`"JP:TOKYO"`),
-  so there's no key collision between tiers, and a tier's stale markers
-  get cleaned up automatically by the existing per-frame diff once the
-  zoom crosses the threshold and that tier's keys stop appearing in
-  `seenLabels`.
+- **Region labels are three-tiered**, controlled by `CONTINENT_LABEL_ZOOM`
+  (currently 3.5), `COUNTRY_LABEL_ZOOM` (5), and `HOLD_ICON_ZOOM` (9):
+  below `CONTINENT_LABEL_ZOOM` (true globe view), `paintMarkers()` shows
+  one label per *continent* (`computeContinentCentroids()` +
+  `REGION_LABELS`, e.g. "Europe") — added after the user pointed out that
+  showing a country name (e.g. "Germany") immediately at the most-zoomed-
+  out view, ahead of a continent name, was backwards once the map had
+  several same-continent countries (Germany/France/Italy/Netherlands/
+  Sweden/UK all in Europe). From `CONTINENT_LABEL_ZOOM` up to
+  `COUNTRY_LABEL_ZOOM`, labels switch to one per *country*
+  (`computeCountryCentroids()` + `COUNTRY_LABELS`, e.g. "Japan"). From
+  `COUNTRY_LABEL_ZOOM` up to `HOLD_ICON_ZOOM`, labels switch to the finer
+  state/city tier (`computeRegionCentroids()`) as before. All three tiers
+  share the same collision-avoidance logic and the same
+  `regionLabelMarkers` tracking dict — continent-tier keys are region ids
+  (`"europe"`), country-tier keys are bare country codes (`"JP"`),
+  state-tier keys are `"country:state"` (`"JP:TOKYO"`), so there's no key
+  collision between tiers, and — since only one tier's candidates are
+  ever read into `source` at a given zoom — a given label can only ever
+  be sourced from exactly one centroid, so e.g. "Germany" can never be
+  painted twice at once. A tier's stale markers get cleaned up
+  automatically by the existing per-frame diff once the zoom crosses a
+  threshold and that tier's keys stop appearing in `seenLabels`. Which
+  continent a country belongs to is a static `COUNTRY_TO_REGION` map in
+  `js/app.js`, matching the `.region-group[data-region]` nesting already
+  used in `index.html`'s sidebar — a spot whose country isn't in that map
+  (e.g. one submitted via the "Other (not listed)" country option) is
+  skipped from the continent tier rather than guessed into one.
+  - **Continent labels are clickable** — the only label tier that is
+    (state/country labels keep `pointer-events:none`, same as always, so
+    they can't block map drag). Clicking one calls `map.flyTo()` against
+    a new `REGION_FLY_TARGETS` entry, the same "fly to this region" idea
+    `COUNTRY_FLY_TARGETS` already provided per-country, framing every
+    country currently in that continent rather than the whole globe. The
+    sidebar's `.region-header` click (Asia/Europe/North America/Oceania)
+    now does the same fly-to alongside its existing collapse-toggle,
+    mirroring how a `.country-label` click already both toggles and flies
+    to `COUNTRY_FLY_TARGETS`.
 
 ## Known gaps (from README "Before it's actually public")
 

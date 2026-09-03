@@ -48,6 +48,25 @@
     NL: {center:[5.2,52.1], zoom:7},
     IT: {center:[11,43.3], zoom:5.2}
   };
+  // Which sidebar region-group each country belongs to -- same grouping as
+  // the `.region-group[data-region]` wrappers in index.html, kept here too
+  // so the map's own continent-tier labels/fly-targets don't need to read
+  // the DOM to know a country's continent.
+  const COUNTRY_TO_REGION = {
+    CN:'asia', JP:'asia',
+    DE:'europe', GB:'europe', FR:'europe', SE:'europe', NL:'europe', IT:'europe',
+    CA:'north-america', US:'north-america',
+    AU:'oceania', NZ:'oceania'
+  };
+  const REGION_LABELS = {asia:'Asia', europe:'Europe', 'north-america':'North America', oceania:'Oceania'};
+  // Same idea as COUNTRY_FLY_TARGETS, one tier coarser -- framing every
+  // country currently in that region, not just one.
+  const REGION_FLY_TARGETS = {
+    asia: {center:[125,32], zoom:2.6},
+    europe: {center:[8,50], zoom:3.2},
+    'north-america': {center:[-100,45], zoom:2.4},
+    oceania: {center:[155,-30], zoom:3}
+  };
   // Below this zoom, a spot with no nearby neighbours (so supercluster hands
   // it back as a lone, unclustered point rather than grouping it) still paints
   // as a small numbered badge instead of the hold-shaped icon -- at globe/
@@ -60,6 +79,12 @@
   // at globe/continent zoom, a country name orients a viewer faster than a
   // handful of same-country city names clustered together would.
   const COUNTRY_LABEL_ZOOM = 5;
+  // Below this (coarser than COUNTRY_LABEL_ZOOM), labels show the continent
+  // name (e.g. "Europe") instead of individual countries -- at true globe
+  // zoom, several nearby countries (Germany/France/Italy/... all in Europe)
+  // are usually too close together on screen to be worth telling apart yet,
+  // and a continent name orients a viewer faster.
+  const CONTINENT_LABEL_ZOOM = 3.5;
 
   function typeSwatch(types){
     const colors = (types&&types.length?types:['indoor-bouldering']).map(t=>TYPE_COLORS[t]||'#999');
@@ -89,6 +114,7 @@
   let lastIconBucket = null; // 'icon' | 'number' | null -- which style ungrouped spot markers were last painted in
   let regionCentroids = {}; // "country:state" -> {lat,lng,country,state}, recomputed whenever the filtered spot set changes
   let countryCentroids = {}; // country code -> {lat,lng,country,count}, same idea one tier up
+  let continentCentroids = {}; // region id -> {lat,lng,region,count}, same idea one tier up again
   let regionLabelMarkers = {}; // "country:state" -> maplibregl.Marker, for the basic city/state labels shown below HOLD_ICON_ZOOM
   let placingPin = null; // {lat,lng} while add-modal open
   let currentEditId = null;
@@ -162,6 +188,7 @@
     })));
     regionCentroids = computeRegionCentroids(visibleSpots);
     countryCentroids = computeCountryCentroids(visibleSpots);
+    continentCentroids = computeContinentCentroids(visibleSpots);
     // A rebuilt index hands out fresh cluster ids that can coincidentally
     // collide with old ones from the previous index but mean a different
     // group, so anything already painted has to go before we query it.
@@ -203,6 +230,29 @@
     const centroids = {};
     Object.entries(sums).forEach(([country, s])=>{
       centroids[country] = {lat: s.latSum/s.count, lng: s.lngSum/s.count, country, count: s.count};
+    });
+    return centroids;
+  }
+
+  // One label point per continent/region, one tier coarser again -- shown
+  // at true globe zoom, before individual countries are worth telling
+  // apart (see CONTINENT_LABEL_ZOOM). A spot whose country isn't in
+  // COUNTRY_TO_REGION (e.g. one submitted via the "Other (not listed)"
+  // country option, ahead of that country formally getting continent
+  // support) is skipped here rather than guessed into a region.
+  function computeContinentCentroids(visibleSpots){
+    const sums = {};
+    visibleSpots.forEach(g=>{
+      const region = COUNTRY_TO_REGION[g.country];
+      if(!region) return;
+      if(!sums[region]) sums[region] = {latSum:0, lngSum:0, count:0, region};
+      sums[region].latSum += g.lat;
+      sums[region].lngSum += g.lng;
+      sums[region].count++;
+    });
+    const centroids = {};
+    Object.entries(sums).forEach(([region, s])=>{
+      centroids[region] = {lat: s.latSum/s.count, lng: s.lngSum/s.count, region, count: s.count};
     });
     return centroids;
   }
@@ -272,18 +322,26 @@
       if(!seenSpots.has(id)){ markerEls[id].marker.remove(); delete markerEls[id]; }
     });
 
-    // Two-tier basic labels, same "zoomed out" window as the numbered badges
-    // -- once real markers take over (zoom >= HOLD_ICON_ZOOM) labels aren't
-    // needed, you can already see individual gyms. Below COUNTRY_LABEL_ZOOM
-    // (globe/continent view) labels show the country name -- at that zoom,
-    // several same-country cities/states are usually still too close
-    // together on screen to be worth distinguishing, and a country name
-    // orients a viewer faster. From COUNTRY_LABEL_ZOOM up to HOLD_ICON_ZOOM,
-    // labels switch to the finer state/prefecture/city tier as before.
+    // Three-tier basic labels, same "zoomed out" window as the numbered
+    // badges -- once real markers take over (zoom >= HOLD_ICON_ZOOM) labels
+    // aren't needed, you can already see individual gyms. Below
+    // CONTINENT_LABEL_ZOOM (true globe view) labels show the continent name
+    // (e.g. "Europe") -- at that zoom several countries on the same
+    // continent are usually still too close together on screen to be worth
+    // distinguishing, and a continent name orients a viewer fastest. From
+    // CONTINENT_LABEL_ZOOM up to COUNTRY_LABEL_ZOOM, labels switch to the
+    // country tier (e.g. "Germany"); from COUNTRY_LABEL_ZOOM up to
+    // HOLD_ICON_ZOOM, the finer state/prefecture/city tier, same as before.
+    // Each tier is keyed off a disjoint id space (region id / bare country
+    // code / "country:state") and only one tier's candidates are ever fed
+    // into `source` below, so a given label (e.g. "Germany") is sourced
+    // from exactly one centroid and can never be painted twice at once --
+    // the collision-avoidance pass below only ever discards a *contested*
+    // candidate in favour of another, never paints the same key twice.
     //
-    // Nearby regions (e.g. AU's NSW/ACT/VIC, or several Chinese cities in
-    // the same province) can project to almost the same screen point while
-    // still zoomed out, which read as garbled/duplicated overlapping text.
+    // Nearby regions (e.g. AU's NSW/ACT/VIC, or several European countries
+    // at globe zoom) can project to almost the same screen point while
+    // still zoomed out, which would read as garbled/overlapping text.
     // Collision avoidance: project every in-view candidate to screen space,
     // let the region with more visible spots win a contested spot, and skip
     // (not paint) any candidate that lands within MIN_LABEL_SPACING px of an
@@ -291,10 +349,11 @@
     // any map renderer, just done by hand since these are plain DOM markers.
     const MIN_LABEL_SPACING = 55;
     const showLabels = zoom < HOLD_ICON_ZOOM;
-    const showCountryTier = zoom < COUNTRY_LABEL_ZOOM;
+    const showContinentTier = zoom < CONTINENT_LABEL_ZOOM;
+    const showCountryTier = !showContinentTier && zoom < COUNTRY_LABEL_ZOOM;
     const seenLabels = new Set();
     if(showLabels){
-      const source = showCountryTier ? countryCentroids : regionCentroids;
+      const source = showContinentTier ? continentCentroids : showCountryTier ? countryCentroids : regionCentroids;
       const candidates = Object.entries(source)
         .filter(([,c])=> !(c.lng < bbox[0] || c.lng > bbox[2] || c.lat < bbox[1] || c.lat > bbox[3]))
         .map(([key,c])=>({key, c, pt: map.project([c.lng, c.lat])}))
@@ -311,7 +370,20 @@
         if(regionLabelMarkers[cand.key]) return;
         const el = document.createElement('div');
         el.className = 'region-label';
-        el.textContent = showCountryTier ? (COUNTRY_LABELS[cand.c.country] || cand.c.country) : stateLabel(cand.c.country, cand.c.state);
+        if(showContinentTier){
+          el.textContent = REGION_LABELS[cand.c.region] || cand.c.region;
+          el.classList.add('continent-label');
+          // Continent labels are the only tier with pointer-events enabled
+          // (see the .continent-label CSS rule) -- clicking one flies the
+          // globe to that continent, same idea as clicking a country's
+          // sidebar label already does for COUNTRY_FLY_TARGETS.
+          el.addEventListener('click', ()=>{
+            const target = REGION_FLY_TARGETS[cand.c.region];
+            if(target) map.flyTo({center: target.center, zoom: target.zoom, duration: 1500});
+          });
+        } else {
+          el.textContent = showCountryTier ? (COUNTRY_LABELS[cand.c.country] || cand.c.country) : stateLabel(cand.c.country, cand.c.state);
+        }
         // Offset below the badge that would otherwise sit at this same
         // point, so the label doesn't sit directly on top of it.
         regionLabelMarkers[cand.key] = new maplibregl.Marker({element: el, offset: [0, 24]}).setLngLat([cand.c.lng, cand.c.lat]).addTo(map);
@@ -502,7 +574,13 @@
   // --- filter controls ---
   document.getElementById('stateChips').addEventListener('click', (e)=>{
     const regionHeader = e.target.closest('.region-header');
-    if(regionHeader){ regionHeader.closest('.region-group').classList.toggle('collapsed'); return; }
+    if(regionHeader){
+      const group = regionHeader.closest('.region-group');
+      group.classList.toggle('collapsed');
+      const target = REGION_FLY_TARGETS[group.dataset.region];
+      if(target) map.flyTo({center: target.center, zoom: target.zoom, duration: 1500});
+      return;
+    }
     const label = e.target.closest('.country-label');
     if(label){
       const group = label.closest('.country-group');
