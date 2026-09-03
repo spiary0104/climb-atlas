@@ -44,9 +44,20 @@ placeholder work just to fill this section)_
 ### Add France, Sweden, Netherlands, Italy (76 gyms)
 - Branch: `feature/add-france-sweden-netherlands-italy` (new branch off
   `master`)
-- Status: implemented + verified live in a served copy; not yet merged.
-  **Not yet pushed to the live Supabase table** — same outstanding step
-  as every prior country addition.
+- Status: **done — merged to `master`** and live on climbatlas.org (code
+  only). **The live Supabase table is still not seeded** — and this
+  turned out to be a bigger pre-existing gap than expected: the user
+  reported "Europe is not showing any markers" after this merge, and
+  checking confirmed the live `spots` table has only ever had **504**
+  rows — exactly AU+US+JP+CA+NZ+CN. Germany and the UK (added in an
+  earlier session, see "Require sign-in + rate-limit new spot
+  submissions; add UK and Germany" in Done below) were never actually
+  pushed live either, despite being in `js/data.js` this whole time — so
+  all of Europe (DE, GB, FR, SE, NL, IT — 254 spots) has been invisible
+  on the real map independent of anything from this task. Sent the user
+  a **full 758-row re-seed** (every country, upsert-safe by `id`,
+  superseding an earlier narrower 76-row script that would not have
+  fixed DE/GB) — not yet confirmed run as of this entry.
 - What: user asked to add these 4 countries using
   `https://climbing-gyms.com/browse/europe` as the source — a directory
   site with per-city gym listings, each with a real street address
