@@ -455,6 +455,20 @@ from one source:
     independently cross-checked against a second source the way the
     AU/US address-verification passes were (no per-gym web search) —
     treat it as "real address, geocoded once," not "verified."
+    **Update**: the Netherlands' 25 spots have since had that follow-up
+    cross-check done (2026-09) — every NL gym's address was independently
+    confirmed via web search (its own site, a listing, or both) as a
+    real, currently-operating gym, not just a Nominatim match. Re-geocoding
+    all 25 against Nominatim again also confirmed every stored pin sits
+    within 50m of the address's true position, so the original one-off
+    geocoding pass held up. No closures or wrong addresses found. One
+    non-issue surfaced and documented in both spots' own `notes`: **Beest
+    Boulders - Den Haag Hollands Spoor** and **De Klimmuur - Den Haag
+    Hollands Spoor** share one building at Waldorpstraat 15 next to the
+    station — confirmed via search to be two genuinely separate
+    businesses (a bouldering hall and a rope-climbing hall) under one
+    roof, not a duplicate listing. FR/SE/IT and BE have *not* had this
+    same follow-up pass — still "real address, geocoded once" for those.
   - **Climbing type inferred from chain/name recognition, not
     individually confirmed** — the source lists a name and address only,
     no facility type. Chains researched and applied consistently: Arkose,

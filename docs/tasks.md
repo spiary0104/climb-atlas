@@ -41,6 +41,44 @@ placeholder work just to fill this section)_
 
 ## In Progress
 
+### Verify Netherlands gym positions (25 spots, complete)
+- Branch: `feature/complete-state-lists` (same branch/worktree as the
+  task above — continued rather than starting fresh, since it's the same
+  session and the user's follow-up was directly prompted by the NL work)
+- Status: **complete**. User asked "can you verify that gyms are in the
+  right places?" after the state-list fix; scoped down to just the
+  Netherlands (25 spots) rather than the full 758-spot dataset, since
+  that's what the state-list bug report was about.
+- Method: (1) re-geocoded all 25 stored addresses against Nominatim and
+  compared to the stored `lat`/`lng` (same tool/method as
+  `supabase/geocode.html`), (2) independently web-searched every gym by
+  name to confirm it's still real, currently operating, and at that
+  address — this second step is what the original FR/SE/NL/IT pass
+  explicitly hadn't done (see "Seed data sourcing" in
+  `docs/architecture.md` — that pass was "real address, geocoded once,"
+  not cross-checked).
+- **Result: all 25 confirmed clean.** Every address matched its
+  Nominatim position within 50m (largest gap was Beest Boulders -
+  Amsterdam at 50m, most were exact); every gym independently confirmed
+  real and current via its own site or a listing; no closures, no wrong
+  suburbs, no fake/stale entries found.
+- **One non-issue caught and documented**: Beest Boulders and De Klimmuur
+  both have a "Den Haag Hollands Spoor" location at the same address
+  (Waldorpstraat 15/15F) — looked like a possible duplicate at a glance,
+  but confirmed via search they're two separate real businesses (a
+  bouldering hall and a rope-climbing hall) sharing one building next to
+  the train station. Added a clarifying note to both spots' `notes`
+  fields in `js/data.js` rather than leaving it looking like an
+  unexplained coincidence.
+- Net result: still **758 total spots**, no additions/removals — this
+  was a verification pass, not a data-adding one. Structural check
+  (`node --check` + brace/bracket balance): 759/759 braces, 760/760
+  brackets, unchanged.
+- **Not done**: the other climbing-gyms.com-sourced countries (FR, SE,
+  IT, BE) have not had this same independent cross-check — still
+  "geocoded once, not verified" per `docs/architecture.md`. Worth the
+  same treatment if reported, or proactively at some point.
+
 ### Complete every country's state/province/prefecture list
 - Branch: `feature/complete-state-lists` (new branch off `master`)
 - Status: implemented + verified live in a served copy; not yet merged.
