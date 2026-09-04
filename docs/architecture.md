@@ -119,6 +119,20 @@ submission, just one tier down. Chip/colour support for a given
 `(country,state)` pair should be added the same way it always has been —
 once real spots exist there.
 
+**The country `<select>` is grouped by continent with `<optgroup>`**,
+not a flat alphabetical list — with 25 countries a single flat list had
+gotten long enough to be worth splitting up. Groups (Asia, Europe, North
+America, Oceania, South America) and their contents are hand-written in
+`index.html` for both `#fCountry` and `#eCountry`, in the same order and
+grouping as `COUNTRY_TO_REGION` in `js/app.js` and the sidebar's own
+region-groups — there's no code that keeps these three in sync
+automatically, so adding a country needs its `<option>` placed in the
+matching `<optgroup>` by hand, same as every other per-country list in
+this file. `<optgroup>` is purely a native HTML/CSS grouping — reading or
+setting `select.value` behaves identically to a flat list, so none of
+`js/app.js`'s country-handling code (`toggleOtherCountryFields()`,
+`openEditModal()`'s fallback, the reset handlers) needed to change.
+
 **Proposing a country not in the list**: the add-spot and edit-spot forms'
 country `<select>` has an `OTHER` option ("Other (not listed)") for exactly
 this — picking it swaps the `<select id="fState">`/`<select id="eState">`

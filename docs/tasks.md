@@ -44,9 +44,42 @@ invent placeholder work just to fill this section.)_
 
 ## In Progress
 
-### Add Norway, Mexico, Brazil (51 gyms)
-- Branch: `feature/add-norway-mexico-brazil` (new branch off `master`)
+### Group the country dropdown by continent; fix stale Terms country list
+- Branch: `feature/country-dropdown-groups-legal-update` (new branch off
+  `master`)
 - Status: implemented + verified live in a served copy; not yet merged.
+- What: two requests in one message. (1) "Improve the dropdown menu for
+  the countries" — with 25 countries + Other, the flat alphabetical
+  `<select>` in both add/edit-spot forms had gotten long. (2) "Update the
+  privacy and terms if required" — checked both; Privacy Policy has no
+  country-specific content (nothing to change), but Terms of Service's
+  "What this is" paragraph still named the original 6 countries
+  ("Australia, the United States, Japan, Canada, New Zealand, and
+  China") from before this session's country-adding work — genuinely
+  stale, unlike the header tagline which an earlier task already made
+  country-agnostic for exactly this reason.
+- **(1)**: split both country `<select>`s into 5 `<optgroup>`s (Asia,
+  Europe, North America, Oceania, South America), matching
+  `COUNTRY_TO_REGION`'s grouping and the sidebar's own region-groups.
+  Purely a markup change — `<optgroup>` doesn't affect `select.value`
+  semantics, so no JS changed. Full detail in `docs/architecture.md`
+  "Data model".
+- **(2)**: reworded the stale sentence to "a growing list of countries
+  worldwide" (same fix pattern already used for the header tagline) and
+  bumped Terms' "Last updated" date to 5 September 2026. Privacy Policy
+  untouched — confirmed it names no countries.
+- **Verified live** (served copy, `npx serve .`): both selects render 5
+  optgroups with the right countries in each (spot-checked via the DOM,
+  not visually — native `<select>` dropdown popups are OS-rendered and
+  don't screenshot); selecting a grouped option (Brazil) still correctly
+  populates the state select (27 divisions); Terms modal shows the new
+  date and wording, no longer mentions the old 6-country list; no
+  console errors.
+- **Not yet done**: pushing/merging this branch.
+
+### Add Norway, Mexico, Brazil (51 gyms)
+- Branch: `feature/add-norway-mexico-brazil` — **done — merged to
+  `master`**.
 - What: finishing the "add more countries in" backlog — the two items
   left after the Poland/Denmark/Finland/Ireland batch.
 - **Norway (20 gyms, 11 cities)**: climbing-gyms.com's own coverage is
