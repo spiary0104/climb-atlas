@@ -4,28 +4,86 @@
   const TYPE_COLORS = {'indoor-bouldering':'#3fb8a6','top-rope':'#8a6bb0','outdoor-bouldering':'#b8834a','lead-climbing':'#4a90c9'};
   // `state` codes collide across countries (AU's WA = Western Australia, US's WA = Washington),
   // so country+state together identify a region — never key off `state` alone.
+  // Every country here lists its REAL, COMPLETE set of top-level administrative
+  // divisions (all 50 US states + DC, all 47 JP prefectures, etc.) — not just
+  // the subset a prior seed-data pass happened to add spots in. This matters
+  // for the add/edit-spot forms (`populateStateSelect()` below): a community
+  // member proposing a gym in a state/province/prefecture with zero existing
+  // spots still needs to be able to select it. Fixed 2026-09 after a report
+  // that the Netherlands' dropdown only offered 3 of its 12 real provinces
+  // (missing Noord-Brabant, the one actually asked about) — audited and fixed
+  // for every country, not just NL. China (CN) is the one deliberate exception
+  // to "real administrative divisions": it intentionally lists major cities,
+  // not China's 34 provincial-level divisions (see `docs/architecture.md`
+  // "Data model" for why) — expanded here from 10 to 31 major/provincial-
+  // capital cities, still not exhaustive (China has 300+ prefecture-level
+  // cities), just a much wider practical set than before.
   const STATES_BY_COUNTRY = {
     AU: [['NSW','NSW'],['VIC','VIC'],['QLD','QLD'],['WA','WA'],['SA','SA'],['ACT','ACT'],['TAS','TAS'],['NT','NT']],
-    US: [['CA','California'],['CO','Colorado'],['TX','Texas'],['WA','Washington'],['NY','New York'],['NV','Nevada'],
-         ['GA','Georgia'],['UT','Utah'],['AL','Alabama'],['TN','Tennessee'],['MA','Massachusetts'],['IL','Illinois']],
-    JP: [['TOKYO','Tokyo'],['OSAKA','Osaka'],['KYOTO','Kyoto'],['FUKUOKA','Fukuoka'],['AICHI','Aichi (Nagoya)'],
-         ['KANAGAWA','Kanagawa (Yokohama)'],['HOKKAIDO','Hokkaido (Sapporo)'],['HYOGO','Hyogo (Kobe)']],
-    CA: [['ON','Ontario'],['BC','British Columbia'],['QC','Quebec'],['AB','Alberta']],
-    NZ: [['AUCKLAND','Auckland'],['WELLINGTON','Wellington'],['CANTERBURY','Canterbury (Christchurch)']],
-    CN: [['SHENZHEN','Shenzhen'],['GUANGZHOU','Guangzhou'],['SHANGHAI','Shanghai'],['HANGZHOU','Hangzhou'],
-         ['CHENGDU','Chengdu'],['BEIJING','Beijing'],['WUHAN','Wuhan'],['CHANGSHA','Changsha'],['ZHUHAI','Zhuhai'],
-         ['CHONGQING','Chongqing']],
+    US: [['AL','Alabama'],['AK','Alaska'],['AZ','Arizona'],['AR','Arkansas'],['CA','California'],['CO','Colorado'],
+         ['CT','Connecticut'],['DE','Delaware'],['DC','District of Columbia'],['FL','Florida'],['GA','Georgia'],
+         ['HI','Hawaii'],['ID','Idaho'],['IL','Illinois'],['IN','Indiana'],['IA','Iowa'],['KS','Kansas'],
+         ['KY','Kentucky'],['LA','Louisiana'],['ME','Maine'],['MD','Maryland'],['MA','Massachusetts'],
+         ['MI','Michigan'],['MN','Minnesota'],['MS','Mississippi'],['MO','Missouri'],['MT','Montana'],
+         ['NE','Nebraska'],['NV','Nevada'],['NH','New Hampshire'],['NJ','New Jersey'],['NM','New Mexico'],
+         ['NY','New York'],['NC','North Carolina'],['ND','North Dakota'],['OH','Ohio'],['OK','Oklahoma'],
+         ['OR','Oregon'],['PA','Pennsylvania'],['RI','Rhode Island'],['SC','South Carolina'],['SD','South Dakota'],
+         ['TN','Tennessee'],['TX','Texas'],['UT','Utah'],['VT','Vermont'],['VA','Virginia'],['WA','Washington'],
+         ['WV','West Virginia'],['WI','Wisconsin'],['WY','Wyoming']],
+    JP: [['AICHI','Aichi (Nagoya)'],['AKITA','Akita'],['AOMORI','Aomori'],['CHIBA','Chiba'],['EHIME','Ehime'],
+         ['FUKUI','Fukui'],['FUKUOKA','Fukuoka'],['FUKUSHIMA','Fukushima'],['GIFU','Gifu'],['GUNMA','Gunma'],
+         ['HIROSHIMA','Hiroshima'],['HOKKAIDO','Hokkaido (Sapporo)'],['HYOGO','Hyogo (Kobe)'],['IBARAKI','Ibaraki'],
+         ['ISHIKAWA','Ishikawa'],['IWATE','Iwate'],['KAGAWA','Kagawa'],['KAGOSHIMA','Kagoshima'],
+         ['KANAGAWA','Kanagawa (Yokohama)'],['KOCHI','Kochi'],['KUMAMOTO','Kumamoto'],['KYOTO','Kyoto'],
+         ['MIE','Mie'],['MIYAGI','Miyagi'],['MIYAZAKI','Miyazaki'],['NAGANO','Nagano'],['NAGASAKI','Nagasaki'],
+         ['NARA','Nara'],['NIIGATA','Niigata'],['OITA','Oita'],['OKAYAMA','Okayama'],['OKINAWA','Okinawa'],
+         ['OSAKA','Osaka'],['SAGA','Saga'],['SAITAMA','Saitama'],['SHIGA','Shiga'],['SHIMANE','Shimane'],
+         ['SHIZUOKA','Shizuoka'],['TOCHIGI','Tochigi'],['TOKUSHIMA','Tokushima'],['TOKYO','Tokyo'],
+         ['TOTTORI','Tottori'],['TOYAMA','Toyama'],['WAKAYAMA','Wakayama'],['YAMAGATA','Yamagata'],
+         ['YAMAGUCHI','Yamaguchi'],['YAMANASHI','Yamanashi']],
+    CA: [['AB','Alberta'],['BC','British Columbia'],['MB','Manitoba'],['NB','New Brunswick'],
+         ['NL','Newfoundland and Labrador'],['NT','Northwest Territories'],['NS','Nova Scotia'],['NU','Nunavut'],
+         ['ON','Ontario'],['PE','Prince Edward Island'],['QC','Quebec'],['SK','Saskatchewan'],['YT','Yukon']],
+    NZ: [['AUCKLAND','Auckland'],['BAY_OF_PLENTY','Bay of Plenty'],['CANTERBURY','Canterbury (Christchurch)'],
+         ['GISBORNE','Gisborne'],['HAWKES_BAY',"Hawke's Bay"],['MANAWATU_WHANGANUI','Manawatu-Whanganui'],
+         ['MARLBOROUGH','Marlborough'],['NELSON','Nelson'],['NORTHLAND','Northland'],['OTAGO','Otago'],
+         ['SOUTHLAND','Southland'],['TARANAKI','Taranaki'],['TASMAN','Tasman'],['WAIKATO','Waikato'],
+         ['WELLINGTON','Wellington'],['WEST_COAST','West Coast']],
+    CN: [['BEIJING','Beijing'],['CHANGCHUN','Changchun'],['CHANGSHA','Changsha'],['CHENGDU','Chengdu'],
+         ['CHONGQING','Chongqing'],['DALIAN','Dalian'],['FUZHOU','Fuzhou'],['GUANGZHOU','Guangzhou'],
+         ['GUIYANG','Guiyang'],['HAIKOU','Haikou'],['HANGZHOU','Hangzhou'],['HARBIN','Harbin'],['HEFEI','Hefei'],
+         ['JINAN','Jinan'],['KUNMING','Kunming'],['NANCHANG','Nanchang'],['NANJING','Nanjing'],
+         ['NANNING','Nanning'],['NINGBO','Ningbo'],['QINGDAO','Qingdao'],['SHANGHAI','Shanghai'],
+         ['SHENYANG','Shenyang'],['SHENZHEN','Shenzhen'],['SHIJIAZHUANG','Shijiazhuang'],['SUZHOU','Suzhou'],
+         ['TIANJIN','Tianjin'],['WUHAN','Wuhan'],['XIAMEN','Xiamen'],['XIAN',"Xi'an"],['ZHENGZHOU','Zhengzhou'],
+         ['ZHUHAI','Zhuhai']],
     GB: [['ENGLAND','England'],['SCOTLAND','Scotland'],['WALES','Wales'],['NORTHERN_IRELAND','Northern Ireland']],
     DE: [['BAYERN','Bayern'],['BERLIN','Berlin'],['NORDRHEIN_WESTFALEN','Nordrhein-Westfalen'],['HESSEN','Hessen'],
          ['BADEN_WURTTEMBERG','Baden-Württemberg'],['BREMEN','Bremen'],['SCHLESWIG_HOLSTEIN','Schleswig-Holstein'],
          ['SACHSEN','Sachsen'],['NIEDERSACHSEN','Niedersachsen'],['SACHSEN_ANHALT','Sachsen-Anhalt'],
          ['BRANDENBURG','Brandenburg'],['RHEINLAND_PFALZ','Rheinland-Pfalz'],['HAMBURG','Hamburg'],
          ['SAARLAND','Saarland'],['THURINGEN','Thüringen'],['MECKLENBURG_VORPOMMERN','Mecklenburg-Vorpommern']],
-    FR: [['ILE_DE_FRANCE','Île-de-France (Paris)'],['AUVERGNE_RHONE_ALPES','Auvergne-Rhône-Alpes (Lyon)'],
-         ['PACA',"Provence-Alpes-Côte d'Azur (Marseille)"],['OCCITANIE','Occitanie (Toulouse)']],
-    SE: [['VASTRA_GOTALAND','Västra Götaland (Göteborg)'],['STOCKHOLM','Stockholm'],['SKANE','Skåne (Malmö)']],
-    NL: [['NOORD_HOLLAND','Noord-Holland (Amsterdam)'],['ZUID_HOLLAND','Zuid-Holland (Den Haag, Rotterdam)'],['UTRECHT','Utrecht']],
-    IT: [['LAZIO','Lazio (Roma)'],['LOMBARDIA','Lombardia (Milano)'],['EMILIA_ROMAGNA','Emilia-Romagna (Modena)'],['TOSCANA','Toscana (Firenze)']]
+    FR: [['AUVERGNE_RHONE_ALPES','Auvergne-Rhône-Alpes (Lyon)'],['BOURGOGNE_FRANCHE_COMTE','Bourgogne-Franche-Comté'],
+         ['BRETAGNE','Bretagne'],['CENTRE_VAL_DE_LOIRE','Centre-Val de Loire'],['CORSE','Corse'],
+         ['GRAND_EST','Grand Est'],['HAUTS_DE_FRANCE','Hauts-de-France'],['ILE_DE_FRANCE','Île-de-France (Paris)'],
+         ['NORMANDIE','Normandie'],['NOUVELLE_AQUITAINE','Nouvelle-Aquitaine'],['OCCITANIE','Occitanie (Toulouse)'],
+         ['PAYS_DE_LA_LOIRE','Pays de la Loire'],['PACA',"Provence-Alpes-Côte d'Azur (Marseille)"]],
+    SE: [['BLEKINGE','Blekinge'],['DALARNA','Dalarna'],['GAVLEBORG','Gävleborg'],['GOTLAND','Gotland'],
+         ['HALLAND','Halland'],['JAMTLAND','Jämtland'],['JONKOPING','Jönköping'],['KALMAR','Kalmar'],
+         ['KRONOBERG','Kronoberg'],['NORRBOTTEN','Norrbotten'],['OREBRO','Örebro'],['OSTERGOTLAND','Östergötland'],
+         ['SKANE','Skåne (Malmö)'],['SODERMANLAND','Södermanland'],['STOCKHOLM','Stockholm'],['UPPSALA','Uppsala'],
+         ['VARMLAND','Värmland'],['VASTERBOTTEN','Västerbotten'],['VASTERNORRLAND','Västernorrland'],
+         ['VASTMANLAND','Västmanland'],['VASTRA_GOTALAND','Västra Götaland (Göteborg)']],
+    NL: [['DRENTHE','Drenthe'],['FLEVOLAND','Flevoland'],['FRIESLAND','Friesland (Fryslân)'],
+         ['GELDERLAND','Gelderland'],['GRONINGEN','Groningen'],['LIMBURG','Limburg'],
+         ['NOORD_BRABANT','Noord-Brabant'],['NOORD_HOLLAND','Noord-Holland (Amsterdam)'],['OVERIJSSEL','Overijssel'],
+         ['UTRECHT','Utrecht'],['ZEELAND','Zeeland'],['ZUID_HOLLAND','Zuid-Holland (Den Haag, Rotterdam)']],
+    IT: [['ABRUZZO','Abruzzo'],['BASILICATA','Basilicata'],['CALABRIA','Calabria'],['CAMPANIA','Campania'],
+         ['EMILIA_ROMAGNA','Emilia-Romagna (Modena)'],['FRIULI_VENEZIA_GIULIA','Friuli-Venezia Giulia'],
+         ['LAZIO','Lazio (Roma)'],['LIGURIA','Liguria'],['LOMBARDIA','Lombardia (Milano)'],['MARCHE','Marche'],
+         ['MOLISE','Molise'],['PIEMONTE','Piemonte'],['PUGLIA','Puglia'],['SARDEGNA','Sardegna'],
+         ['SICILIA','Sicilia'],['TOSCANA','Toscana (Firenze)'],['TRENTINO_ALTO_ADIGE','Trentino-Alto Adige'],
+         ['UMBRIA','Umbria'],['VALLE_DAOSTA',"Valle d'Aosta"],['VENETO','Veneto']]
   };
   const TYPE_LABELS = {'indoor-bouldering':'Indoor bouldering','top-rope':'Top rope','outdoor-bouldering':'Outdoor bouldering','lead-climbing':'Lead climbing'};
   const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy'};

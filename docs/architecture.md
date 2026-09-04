@@ -80,6 +80,45 @@ they're different object keys/fields (`STATES_BY_COUNTRY.US` contains
 top-level *country*), but worth knowing before assuming a bare `"CA"`
 string always means the same thing while reading this codebase.
 
+**`STATES_BY_COUNTRY` now lists each country's real, complete set of
+top-level divisions, not just the subset a seed-data pass happened to
+touch.** Every earlier country addition populated `STATES_BY_COUNTRY`
+with only the states/provinces/prefectures that pass's seed gyms actually
+used (e.g. NL originally had 3 of its 12 real provinces) — fine for
+*displaying* existing spots, but it silently capped what a community
+member could pick in the add/edit-spot forms' state `<select>`
+(`populateStateSelect()` builds its options straight from this list, see
+"Where to look first" below). Fixed after a report that the Netherlands
+dropdown had no way to select Noord-Brabant — audited and expanded every
+country, not just the one reported: `US` now lists all 50 states + DC
+(51, was 12), `JP` all 47 prefectures (was 8), `CA` all 10 provinces + 3
+territories (13, was 4), `NZ` all 16 regions (was 3), `FR` all 13
+metropolitan régions (was 4), `SE` all 21 counties/län (was 3), `NL` all
+12 provinces (was 3, now includes Noord-Brabant), `IT` all 20 regions
+(was 4). `AU` (8 states/territories), `GB` (4 constituent nations), `DE`
+(16 Länder), and `BE` (3 regions) were already complete and left
+untouched. `CN` is the deliberate exception — it intentionally keys on
+city names rather than China's 34 provincial-level divisions (see
+"Seed data sourcing" below for why), so it was widened from 10 to 31
+major/provincial-capital cities instead of converted to provinces, which
+would have required re-keying every existing CN spot's `state` value.
+None of this touched any *existing* spot's `state` value or code — every
+code a seed spot already used (e.g. `NL:UTRECHT`) is unchanged, this only
+adds previously-missing options alongside them. It also deliberately did
+**not** add sidebar filter chips or `--xx-yyy` CSS colour variables for
+the newly-added, currently-empty divisions — chips are hand-authored per
+`(country,state)` pair in `index.html` plus a colour var in
+`css/style.css`, and building one for every new entry (dozens per
+country) would re-open the sidebar-height problem "Sidebar chip growth"
+below was written to solve, for divisions with zero spots to filter by.
+A spot submitted in one of these newly-available-but-chipless divisions
+still shows on the map and in search by default (`passesFilters()`
+already shows everything when no chip is toggled) — same "no dedicated
+filter UI yet" treatment already documented above for an `OTHER`-country
+submission, just one tier down. Chip/colour support for a given
+`(country,state)` pair should be added the same way it always has been —
+once real spots exist there.
+
 **Proposing a country not in the list**: the add-spot and edit-spot forms'
 country `<select>` has an `OTHER` option ("Other (not listed)") for exactly
 this — picking it swaps the `<select id="fState">`/`<select id="eState">`

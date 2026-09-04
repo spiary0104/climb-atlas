@@ -41,6 +41,57 @@ placeholder work just to fill this section)_
 
 ## In Progress
 
+### Complete every country's state/province/prefecture list
+- Branch: `feature/complete-state-lists` (new branch off `master`)
+- Status: implemented + verified live in a served copy; not yet merged.
+- What: a user on the live site reported that the Netherlands add-spot
+  dropdown only offered 3 provinces (missing Noord-Brabant, which they
+  wanted to add a gym in) out of the Netherlands' 12 real provinces.
+  Root cause: every country's `STATES_BY_COUNTRY` entry (`js/app.js`) had
+  only ever been populated with the states/provinces/prefectures that
+  country's original seed-data pass happened to add gyms in — never
+  audited against the country's actual full set of administrative
+  divisions. User asked to fix this "in general for anything below a
+  country," not just NL.
+- Audited and expanded all 12 countries in `STATES_BY_COUNTRY`: `US` 12
+  → 51 (50 states + DC), `JP` 8 → 47 (all prefectures), `CA` 4 → 13 (10
+  provinces + 3 territories), `NZ` 3 → 16 (all regions), `FR` 4 → 13 (all
+  metropolitan régions), `SE` 3 → 21 (all counties/län), `NL` 3 → 12 (all
+  provinces, including Noord-Brabant), `IT` 4 → 20 (all regions). `AU`,
+  `GB`, `DE`, and `BE` were already complete (8/4/16/3) and left
+  untouched. `CN` was widened 10 → 31 major/provincial-capital cities
+  rather than converted to real provinces — it deliberately keys on city
+  names, not provinces, a documented design decision from the original
+  China pass (would need re-keying every existing CN spot's `state` to
+  change). Full writeup in `docs/architecture.md` "Data model".
+- **No existing spot's `state` value or code changed** — every code a
+  seed spot already used still resolves exactly as before (verified live
+  against the real 758-spot dataset, not just structurally). This only
+  adds previously-missing options to the add/edit-spot forms' dropdown.
+- **Deliberately did not add sidebar filter chips or CSS colours** for
+  the newly-available, currently-empty divisions — chips are hand-
+  authored per `(country,state)` pair (`index.html` markup +
+  `css/style.css` colour var each), and doing that for every new entry
+  (100+ across all countries) would re-open the sidebar-height growth
+  problem documented in `docs/architecture.md` "Sidebar chip growth". A
+  spot submitted in one of these new divisions still shows on the map/
+  search by default (no chip needs to be toggled off), same treatment
+  already used for `OTHER`-country submissions. Chip/colour support for
+  a given division should be added the same way as always, once real
+  spots exist there.
+- **Verified live** (served copy, `npx serve .`): add-spot form's country
+  dropdown correctly lists all 51 US / 47 JP / 13 CA / 20 IT / 21 SE / 31
+  CN options; Netherlands dropdown confirmed to include
+  `NOORD_BRABANT:Noord-Brabant` (the reported-missing one) alongside all
+  11 other real provinces; `window.SEED_GYMS.length` unchanged at 758;
+  every existing NL spot's `state` (`NOORD_HOLLAND`/`ZUID_HOLLAND`/
+  `UTRECHT`) still resolves correctly in the data; `node --check
+  js/app.js` passes; a structural check confirmed zero duplicate state
+  codes within any single country; no console errors.
+- **Not yet done**: pushing/merging this branch, and the same
+  human-in-a-real-browser look every branch in this project still
+  ultimately needs before merge.
+
 ### Add a continent label tier + click-to-fly, above the existing country tier
 - Branch: `feature/continent-labels-and-fly-to` (new branch off `master`)
 - Status: implemented + verified live in a served copy; not yet merged.
