@@ -70,9 +70,9 @@ are only unique within a country** (e.g. AU's `WA` vs US's `WA` are
 different regions). Anything that filters, colors, or edits by state —
 the chips in `index.html`, `STATES_BY_COUNTRY` in `app.js`, the RLS-safe
 columns in `schema.sql` — keys off the `(country, state)` pair together,
-never `state` alone. Now 12 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
-FR, SE, NL, IT), same pattern each time — keep this in mind before adding
-a 13th. One collision
+never `state` alone. Now 13 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
+FR, SE, NL, IT, KR), same pattern each time — keep this in mind before
+adding a 14th. One collision
 worth flagging: `US`'s state code for California is `CA`, and `CA` is
 also the top-level country code for Canada — not a real ambiguity since
 they're different object keys/fields (`STATES_BY_COUNTRY.US` contains
@@ -105,8 +105,8 @@ pre-filled with its current value, rather than throwing on
 
 ## Seed data sourcing
 
-`js/data.js` currently has 758 spots (74 AU, 332 US, 32 JP, 15 CA, 9 NZ,
-42 CN, 66 GB, 112 DE, 30 FR, 7 SE, 25 NL, 14 IT), all indoor gyms
+`js/data.js` currently has 795 spots (74 AU, 332 US, 32 JP, 15 CA, 9 NZ,
+42 CN, 66 GB, 112 DE, 30 FR, 7 SE, 25 NL, 14 IT, 37 KR), all indoor gyms
 (bouldering and/or top rope, with a growing number now also tagged
 lead-climbing — see "Known gaps" below on why outdoor areas were
 removed). It was built up in layers, not
@@ -441,6 +441,45 @@ from one source:
     every prior country addition; needs `supabase/seed.html`'s generated
     SQL run in the SQL Editor before these 76 spots are visible on the
     live map rather than just the offline `js/data.js` fallback.
+- **South Korea (37 gyms, 10 regions)** returned to a Mountain Project
+  directory pass (`/gyms/south-korea`), the same source/method as the
+  original AU/US/UK/DE work, since MP happens to have decent Korea
+  coverage unlike its gap for Japan. One listing (Pangyo Park Artificial
+  Wall) was excluded after its own gym page described it as an outdoor
+  public-park climbing structure, not a commercial gym — same "not a real
+  gym" exclusion criteria as the original AU/US noise filter. Three
+  listings whose names reference a specific university (Do Climbing
+  Kyungsung/Pukyong National University, Rock Odyssey Dong-eui
+  University, Waverock Pusan National University) were kept rather than
+  excluded as campus rec-center walls — each was individually checked
+  (a commercial phone/website/booking presence, and for Waverock PNU, its
+  own `waverock.co.kr/pnu` public class-booking subpage found via search)
+  and confirmed to be a normal public-facing franchise location merely
+  named after or sited near the university, not a restricted student-only
+  facility, with a note on each spot disclosing this reasoning.
+  - **Positions individually geocoded** the same way as the FR/SE/NL/IT
+    pass — 32 of 37 addresses matched Nominatim directly; the other 5
+    (Ayers Rock Climbing Gym, B.bloc Climbing Songdo, Cl!mben Climbing
+    Company, King Kong Climbing, Monta Rex) didn't resolve at street level
+    — for 4 of those a simplified district-level version of the same
+    address did resolve, and the last (Ayers Rock, Seoul) falls back to
+    another matched gym in the same Songpa-gu district — all flagged in
+    that spot's own `notes`.
+  - **Climbing type not given by Mountain Project for any Korea listing**
+    (unlike its AU/US listings, which at least implied type via gym
+    category) — every spot defaults to indoor-bouldering + top-rope, the
+    same conservative default used for unconfirmed DE/GB/FR-tier entries,
+    except B.bloc Climbing Songdo (bouldering-only, "bloc" in the name).
+  - `state` uses South Korea's real top-level administrative divisions —
+    the six special/metropolitan cities that have a seed spot (Seoul,
+    Busan, Incheon, Daegu, Gwangju, Ulsan) plus the provinces that do
+    (Gyeonggi-do, Gyeongsangnam-do, Jeollanam-do, Chungcheongnam-do) —
+    rather than a made-up grouping, consistent with how FR/SE/NL/IT used
+    each country's real regions. Busan alone accounts for 13 of the 37
+    gyms (a genuine concentration in MP's own Korea listings, not a
+    sourcing artifact).
+  - **Not yet pushed to the live Supabase table** — same next-step gap as
+    every prior country addition.
 
 ## Map
 

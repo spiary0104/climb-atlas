@@ -25,10 +25,13 @@
          ['PACA',"Provence-Alpes-Côte d'Azur (Marseille)"],['OCCITANIE','Occitanie (Toulouse)']],
     SE: [['VASTRA_GOTALAND','Västra Götaland (Göteborg)'],['STOCKHOLM','Stockholm'],['SKANE','Skåne (Malmö)']],
     NL: [['NOORD_HOLLAND','Noord-Holland (Amsterdam)'],['ZUID_HOLLAND','Zuid-Holland (Den Haag, Rotterdam)'],['UTRECHT','Utrecht']],
-    IT: [['LAZIO','Lazio (Roma)'],['LOMBARDIA','Lombardia (Milano)'],['EMILIA_ROMAGNA','Emilia-Romagna (Modena)'],['TOSCANA','Toscana (Firenze)']]
+    IT: [['LAZIO','Lazio (Roma)'],['LOMBARDIA','Lombardia (Milano)'],['EMILIA_ROMAGNA','Emilia-Romagna (Modena)'],['TOSCANA','Toscana (Firenze)']],
+    KR: [['SEOUL','Seoul'],['BUSAN','Busan'],['GYEONGGI','Gyeonggi-do'],['GWANGJU','Gwangju'],
+         ['GYEONGSANGNAM','Gyeongsangnam-do'],['ULSAN','Ulsan'],['INCHEON','Incheon'],['DAEGU','Daegu'],
+         ['JEOLLANAM','Jeollanam-do'],['CHUNGCHEONGNAM','Chungcheongnam-do']]
   };
   const TYPE_LABELS = {'indoor-bouldering':'Indoor bouldering','top-rope':'Top rope','outdoor-bouldering':'Outdoor bouldering','lead-climbing':'Lead climbing'};
-  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy'};
+  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy', KR:'South Korea'};
   // Fixed camera target per country for the "fly to this country" click on
   // its sidebar label -- picked to frame that country's actual spread of
   // seed spots (e.g. US needs a wide zoom to fit both NY and CA), not a
@@ -46,14 +49,15 @@
     FR: {center:[2.5,46.3], zoom:5.2},
     SE: {center:[15,58.5], zoom:4.4},
     NL: {center:[5.2,52.1], zoom:7},
-    IT: {center:[11,43.3], zoom:5.2}
+    IT: {center:[11,43.3], zoom:5.2},
+    KR: {center:[128,36], zoom:5.4}
   };
   // Which sidebar region-group each country belongs to -- same grouping as
   // the `.region-group[data-region]` wrappers in index.html, kept here too
   // so the map's own continent-tier labels/fly-targets don't need to read
   // the DOM to know a country's continent.
   const COUNTRY_TO_REGION = {
-    CN:'asia', JP:'asia',
+    CN:'asia', JP:'asia', KR:'asia',
     DE:'europe', GB:'europe', FR:'europe', SE:'europe', NL:'europe', IT:'europe',
     CA:'north-america', US:'north-america',
     AU:'oceania', NZ:'oceania'

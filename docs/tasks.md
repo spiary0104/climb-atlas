@@ -41,9 +41,55 @@ placeholder work just to fill this section)_
 
 ## In Progress
 
+### Add South Korea (37 gyms)
+- Branch: `feature/add-south-korea` (new branch off `master`)
+- Status: implemented + verified live in a served copy; not yet merged.
+  **Not yet pushed to the live Supabase table** — same outstanding step
+  as every prior country addition.
+- What: user asked to use Mountain Project's `/gyms/south-korea`
+  directory (MP has decent Korea coverage, unlike its gap for Japan) —
+  same source/method as the original AU/US/UK/DE passes. 38 listings
+  found; 37 added, 1 excluded.
+- **Excluded**: Pangyo Park Artificial Wall — its own gym page described
+  it as an outdoor public-park climbing structure, not a commercial gym.
+- **3 university-named gyms individually checked, not assumed to be
+  campus-restricted**: Do Climbing Kyungsung/Pukyong National University,
+  Rock Odyssey Dong-eui University, and Waverock Pusan National
+  University all confirmed (phone/website/booking presence; Waverock PNU
+  specifically via its own public `waverock.co.kr/pnu` class-booking
+  page) to be normal commercial franchise locations merely sited near a
+  university, not restricted facilities — kept, with a disclosure note
+  on each.
+- **Positions individually geocoded**: 32/37 addresses matched Nominatim
+  directly; 4 more matched after simplifying to a district-level version
+  of the same address; the last (Ayers Rock Climbing Gym, Seoul) falls
+  back to another matched gym in the same Songpa-gu district — all
+  flagged in `notes`.
+- **No facility type given by MP for any Korea listing** — every spot
+  defaults to indoor-bouldering + top-rope except B.bloc Climbing Songdo
+  ("bloc" in the name → bouldering-only), same conservative default used
+  for unconfirmed DE/GB/FR-tier entries.
+- Added `KR` to `STATES_BY_COUNTRY` (using Korea's real top-level
+  divisions that have a seed spot: Seoul, Busan, Incheon, Daegu, Gwangju,
+  Ulsan, Gyeonggi-do, Gyeongsangnam-do, Jeollanam-do, Chungcheongnam-do),
+  `COUNTRY_LABELS`, `COUNTRY_FLY_TARGETS`, and `COUNTRY_TO_REGION` (asia,
+  alongside China/Japan) in `js/app.js`; 10 new `--kr-*` CSS colour
+  variables + chip rules in `css/style.css`; a new sidebar chip row
+  (nested under the existing Asia region-group, alphabetically after
+  Japan) and country `<option>` in both add/edit-spot forms.
+- Net result: 758 → **795 total spots**. Structural check (`node -e`
+  eval): 796/796 braces balanced, 797/797 brackets balanced, all 795 ids
+  unique, zero duplicate name+suburb+state+country combos.
+- **Verified live** (served copy, `npx serve .`): `window.SEED_GYMS.length`
+  = 795; South Korea chip group renders in the sidebar under Asia with
+  all 10 regions in the right colours; clicking the South Korea sidebar
+  label correctly flies the camera to `{center:[128,36], zoom:5.4}`; no
+  console errors. Live Supabase data (still 758, pre-re-seed) obviously
+  showed no Korea spots yet — expected, not a bug.
+
 ### Add a continent label tier + click-to-fly, above the existing country tier
 - Branch: `feature/continent-labels-and-fly-to` (new branch off `master`)
-- Status: implemented + verified live in a served copy; not yet merged.
+- Status: **done — merged to `master`** and live on climbatlas.org.
 - What: user feedback after the France/Sweden/Netherlands/Italy addition
   — with 6 European countries now on the map, the globe-zoom label tier
   was showing an individual country name (e.g. "Germany") immediately at
