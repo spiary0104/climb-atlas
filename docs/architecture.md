@@ -385,6 +385,31 @@ from one source:
     writing — most positions in this dataset are still the original
     city/suburb-level estimate, not a geocoded street-level one, until
     that tool is actually run and its corrections applied.
+- **Every selected sidebar chip was completely illegible until this was
+  found and fixed.** Each per-`(country,state)` chip carries an inline
+  `style="color:var(--xx-yyy)"` in `index.html`, so its dot and text
+  preview that state's colour while inactive. `.chip.active` in
+  `css/style.css` set `background` to that same colour but only set
+  `color:var(--bg)` via a normal stylesheet rule — and an inline style
+  always wins over an external stylesheet rule on the same property,
+  regardless of selector specificity. So activating any chip changed its
+  background to the state's colour but left the inline `color` — the
+  *same* colour — untouched, making the text and dot exactly match the
+  new background and disappear. The one chip that ever rendered
+  correctly was `data-state="ALL"`, the single case with no inline
+  colour (nothing to conflict with `.chip.active{color:var(--bg)}`) —
+  which is almost certainly why this went unnoticed through every prior
+  session: any smoke test that checked "does the active state look
+  right" checked the All chip, never a real per-state one. Fixed with a
+  scoped `color:var(--bg) !important` on `.chip.active` — the one
+  legitimate use for `!important` in this file, since nothing short of
+  it can out-rank a same-element inline style. Found by clicking a real
+  state chip in a served copy and reading its actual computed
+  `background-color`/`color` (both resolved to the identical value),
+  not by inspecting the CSS source alone. Also added a plain
+  `.chip:not(.active):hover{border-color:var(--text-dim)}` while in
+  here — chips had no hover feedback at all before, unlike every other
+  clickable control in the sidebar.
 - **Sidebar chip growth has a real height ceiling — mitigated, not solved,
   by an accordion.** `.sidebar-controls` (`css/style.css`) — the search
   box plus every country's chip row plus type/marks filters — sits above

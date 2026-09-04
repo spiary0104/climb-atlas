@@ -300,8 +300,19 @@
     transition:all .12s ease;
   }
   .chip .dot{width:7px;height:7px;border-radius:50%;background:currentColor;}
+  /* Each per-state chip carries an inline style="color:var(--xx-yyy)" (set
+     in index.html) so its dot and text preview that state's colour while
+     inactive. Inline styles always win over an external stylesheet rule
+     on the same property, no matter how specific the selector -- so
+     without !important here, activating a chip changed its *background*
+     to that same colour but left the inline color untouched, making the
+     text and dot exactly match the new background and vanish completely.
+     Only the "All" chip (the one case with no inline colour) ever
+     rendered correctly; every real country/state chip was invisible the
+     moment it was selected. */
+  .chip:not(.active):hover{border-color:var(--text-dim);}
   .chip:active{transform:scale(0.95);}
-  .chip.active{color:var(--bg);border-color:transparent;}
+  .chip.active{color:var(--bg) !important;border-color:transparent;}
   .chip[data-state="ALL"].active{background:var(--text);}
   /* AU and US both use two-letter codes (e.g. WA = Western Australia vs Washington),
      so these must be scoped by data-country too, not data-state alone. */

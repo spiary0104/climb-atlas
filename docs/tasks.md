@@ -44,9 +44,47 @@ invent placeholder work just to fill this section.)_
 
 ## In Progress
 
-### Polish the 3-tier map label styling (continent/country/state)
-- Branch: `feature/polish-map-label-tiers` (new branch off `master`)
+### Update About page, fix a real chip-legibility bug
+- Branch: `feature/update-about-polish-chips` (new branch off `master`)
 - Status: implemented + verified live in a served copy; not yet merged.
+- What: two requests in one message. (1) "Update the about section" —
+  `about.html` still had the same stale 6-country list ("Australia, the
+  United States, Japan, Canada, New Zealand, and China") and only
+  mentioned 2 climbing types (missing lead-climbing) — same class of
+  staleness already fixed once in Terms of Service, just missed here.
+  Also found and fixed the identical stale 6-country list in `index.html`'s
+  `<meta name="description">` and `og:description` tags, which the
+  earlier "make the tagline country-agnostic" task hadn't touched. (2)
+  "Polish the sidebar chips" — while looking at chip CSS to figure out
+  what "polish" should mean, found a real, severe, previously-undetected
+  bug: **every selected country/state chip was completely illegible**
+  (see `docs/architecture.md` "Map" for the root cause — an inline style
+  silently beating the `.active` stylesheet rule for `color`). Fixed with
+  a scoped `!important`, plus added a missing `:hover` state.
+- **(1)**: reworded About's subtitle and the two stale meta tags to "a
+  growing list of countries worldwide" (same fix pattern as Terms);
+  updated the type list to "indoor bouldering, top rope, or lead
+  climbing."
+- **(2)**: `.chip.active{color:var(--bg) !important;...}` so the active
+  colour wins over each chip's own inline `style="color:..."`; added
+  `.chip:not(.active):hover{border-color:var(--text-dim)}` for basic
+  hover feedback, matching the existing `.auth-btn:hover` pattern.
+- **Verified live** (served copy, `npx serve .`): clicked a real state
+  chip (Bayern) and read its actual computed `background-color`/`color`
+  before and after the fix — before: both `rgb(74,144,184)` (identical,
+  invisible text); after: background stays `rgb(74,144,184)`, text is
+  `rgb(33,31,27)` (`--bg`, readable). Confirmed the "All" chip and normal
+  filtering behaviour still work correctly (clicking Bayern showed 28
+  spots + filtered map, clicking All restored 987). Screenshots confirm
+  the fix visually. No console errors. (Hover state verified by CSS
+  inspection only — this environment's synthetic mouse hover doesn't
+  reliably trigger real `:hover`, a known automation limitation, not a
+  CSS issue; the rule is identical to the already-working `.auth-btn:hover`.)
+- **Not yet done**: pushing/merging this branch.
+
+### Polish the 3-tier map label styling (continent/country/state)
+- Branch: `feature/polish-map-label-tiers` — **done — merged to
+  `master`**.
 - What: user asked to make the map's continent/country/state labels
   (shown while zoomed out, below `HOLD_ICON_ZOOM`) "noticeably
   different" from each other when zooming through the 3 tiers. Checking
