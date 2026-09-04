@@ -695,14 +695,22 @@ from one source:
 - Outdoor bouldering was removed as a type/category early in this
   project (the 23 outdoor-only seed spots at the time were deleted
   rather than recategorized — that old data only exists in git history,
-  not restored), then **reintroduced as a type option by explicit
-  request** — `outdoor-bouldering` is now a normal third value in
-  `TYPE_COLORS`/`TYPE_LABELS`/`activeTypes` (`js/app.js`), with its own
-  sidebar filter checkbox, map legend entry, and add/edit-spot form
-  checkbox, reusing the `--t-outdoor` CSS variable that had been left
-  over (unused) since the original removal. No existing seed spot has
-  been retroactively tagged with this type — it only applies going
-  forward to new/edited submissions.
+  not restored), then reintroduced as a type option by explicit request,
+  then **removed again "for now"** (2026-09) — `outdoor-bouldering` is
+  gone from `TYPE_COLORS`/`TYPE_LABELS`/`activeTypes` (`js/app.js`) and
+  its sidebar filter checkbox, map legend entry, and both add/edit-spot
+  form checkboxes were deleted from `index.html`. This second removal is
+  a clean no-op on the data side — confirmed zero spots in `js/data.js`
+  carry `outdoor-bouldering` at removal time (it had never been
+  retroactively applied to any seed spot since reintroduction), so
+  nothing needed migrating. The `--t-outdoor` CSS variable itself was
+  deliberately left defined in `css/style.css` — it's also used by
+  `.modal.info-modal .placeholder`'s text colour, unrelated to the
+  climbing type — so removing the type didn't touch that rule. If this
+  type comes back a third time, it's the same four-file pattern as
+  lead-climbing below: `TYPE_COLORS`/`TYPE_LABELS`/`activeTypes` in
+  `js/app.js`, the sidebar checkbox + legend entry + two form checkboxes
+  in `index.html`, reusing the already-defined `--t-outdoor` variable.
 - **Lead climbing** was added as a fourth type the same way: a new
   `lead-climbing` value in `TYPE_COLORS`/`TYPE_LABELS`/`activeTypes`
   (`js/app.js`), a new `--t-lead` CSS variable (blue, `#4a90c9` — chosen to
