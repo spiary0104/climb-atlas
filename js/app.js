@@ -529,8 +529,12 @@
             const target = REGION_FLY_TARGETS[cand.c.region];
             if(target) map.flyTo({center: target.center, zoom: target.zoom, duration: 1500});
           });
+        } else if(showCountryTier){
+          el.textContent = COUNTRY_LABELS[cand.c.country] || cand.c.country;
+          el.classList.add('country-tier-label');
         } else {
-          el.textContent = showCountryTier ? (COUNTRY_LABELS[cand.c.country] || cand.c.country) : stateLabel(cand.c.country, cand.c.state);
+          el.textContent = stateLabel(cand.c.country, cand.c.state);
+          el.classList.add('state-tier-label');
         }
         // Offset below the badge that would otherwise sit at this same
         // point, so the label doesn't sit directly on top of it.

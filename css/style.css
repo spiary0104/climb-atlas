@@ -965,7 +965,11 @@
 
   /* Basic region label shown below HOLD_ICON_ZOOM alongside cluster/number
      badges (js/app.js computeRegionCentroids) -- just text, no background
-     box, so it doesn't compete with the badges for attention. */
+     box, so it doesn't compete with the badges for attention. Base rule
+     holds what all three tiers share; each tier below overrides size/
+     weight/colour so continent -> country -> state reads as a clear
+     step down in prominence as the view gets more granular, matching
+     the same big-to-small progression a paper map's type hierarchy uses. */
   .region-label{
     color:var(--text);
     font-family:'Space Grotesk',sans-serif;
@@ -977,9 +981,29 @@
     white-space:nowrap;
     pointer-events:none;
   }
+  /* Continent tier (globe zoom) -- the primary "you are here" orientation
+     label, biggest and in the warm accent colour so it reads first. Also
+     the only tier with pointer-events on (see js/app.js's click-to-fly). */
   .region-label.continent-label{
     pointer-events:auto;
     cursor:pointer;
+    font-size:16px;
+    letter-spacing:.08em;
+    color:var(--vic);
+  }
+  /* Country tier -- one step more detailed, standard size/colour (this is
+     what the old shared rule looked like before tiers were split out). */
+  .region-label.country-tier-label{
+    font-size:12px;
+  }
+  /* State/city tier -- the finest-grained labels, shown right before real
+     markers take over -- smaller, lighter weight, dimmer colour so they
+     read as "almost there" rather than competing with the coarser tiers. */
+  .region-label.state-tier-label{
+    font-size:9.5px;
+    font-weight:600;
+    letter-spacing:.02em;
+    color:var(--text-dim);
   }
 
   @media (max-width:760px){

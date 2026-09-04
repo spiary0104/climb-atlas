@@ -44,10 +44,40 @@ invent placeholder work just to fill this section.)_
 
 ## In Progress
 
-### Group the country dropdown by continent; fix stale Terms country list
-- Branch: `feature/country-dropdown-groups-legal-update` (new branch off
-  `master`)
+### Polish the 3-tier map label styling (continent/country/state)
+- Branch: `feature/polish-map-label-tiers` (new branch off `master`)
 - Status: implemented + verified live in a served copy; not yet merged.
+- What: user asked to make the map's continent/country/state labels
+  (shown while zoomed out, below `HOLD_ICON_ZOOM`) "noticeably
+  different" from each other when zooming through the 3 tiers. Checking
+  the CSS confirmed the actual bug: all three tiers shared one identical
+  `.region-label` rule (11px, same weight/colour) — only the text content
+  changed between tiers, no visual distinction at all.
+- Gave each tier its own CSS class (`continent-label` already existed;
+  added `country-tier-label` and `state-tier-label`) on top of the shared
+  `.region-label` base: continent 16px in the warm `--vic` accent colour
+  (biggest, reads first at globe zoom), country 12px standard colour,
+  state/city 9.5px dimmer `--text-dim` and lighter weight (smallest,
+  since it's the finest-grained tier right before real markers appear).
+  Only `js/app.js` (which class gets added per tier) and `css/style.css`
+  (the actual styling) changed — the collision-avoidance/centroid logic
+  itself was untouched.
+- **Verified live** (served copy, `npx serve .`): temporarily exposed the
+  map instance (`window.__debugMap = map`, removed before committing,
+  `git diff` checked after to confirm nothing debug-only was left in —
+  same technique used for the earlier region-label-collision fix),
+  jumped to each tier's zoom range and read every `.region-label`
+  element's actual computed `font-size`/`color` directly rather than
+  eyeballing it: continent confirmed 16px/`#e2793f`, country 12px/
+  `#ece5d6`, state 9.5px/`#a89d87`. Screenshots at each zoom level
+  confirm the progression reads correctly (continent labels visibly
+  bigger and orange; state labels visibly smaller and dimmer). No
+  console errors.
+- **Not yet done**: pushing/merging this branch.
+
+### Group the country dropdown by continent; fix stale Terms country list
+- Branch: `feature/country-dropdown-groups-legal-update` — **done —
+  merged to `master`**.
 - What: two requests in one message. (1) "Improve the dropdown menu for
   the countries" — with 25 countries + Other, the flat alphabetical
   `<select>` in both add/edit-spot forms had gotten long. (2) "Update the

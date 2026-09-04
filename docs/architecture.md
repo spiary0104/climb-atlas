@@ -890,7 +890,23 @@ from one source:
   collision between tiers, and — since only one tier's candidates are
   ever read into `source` at a given zoom — a given label can only ever
   be sourced from exactly one centroid, so e.g. "Germany" can never be
-  painted twice at once. A tier's stale markers get cleaned up
+  painted twice at once.
+  **Each tier also gets its own CSS class** (`continent-label`/
+  `country-tier-label`/`state-tier-label`, all still sharing the base
+  `.region-label` rule) — before this, all three tiers rendered with
+  identical size/weight/colour, so the transition from continent → country
+  → state carried no visual cue beyond the text itself changing (fixed
+  after a request to make the three tiers "noticeably different"). Now
+  continent labels are the biggest (16px) and in the warm `--vic` accent
+  colour, reading as the primary orientation label at globe zoom; country
+  labels are a step down (12px, standard text colour); state/city labels
+  are the smallest and dimmest (9.5px, `--text-dim`, lighter weight),
+  since they're the finest-grained tier shown right before real markers
+  take over. Verified by temporarily exposing the map instance
+  (`window.__debugMap = map`, removed before committing — same one-off
+  technique used for the earlier region-label-collision fix) and reading
+  each tier's computed style directly, not just visually. A tier's stale
+  markers get cleaned up
   automatically by the existing per-frame diff once the zoom crosses a
   threshold and that tier's keys stop appearing in `seenLabels`. Which
   continent a country belongs to is a static `COUNTRY_TO_REGION` map in
