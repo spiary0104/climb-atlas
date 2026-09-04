@@ -70,9 +70,9 @@ are only unique within a country** (e.g. AU's `WA` vs US's `WA` are
 different regions). Anything that filters, colors, or edits by state —
 the chips in `index.html`, `STATES_BY_COUNTRY` in `app.js`, the RLS-safe
 columns in `schema.sql` — keys off the `(country, state)` pair together,
-never `state` alone. Now 12 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
-FR, SE, NL, IT), same pattern each time — keep this in mind before adding
-a 13th. One collision
+never `state` alone. Now 13 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
+FR, SE, NL, IT, BE), same pattern each time — keep this in mind before
+adding a 14th. One collision
 worth flagging: `US`'s state code for California is `CA`, and `CA` is
 also the top-level country code for Canada — not a real ambiguity since
 they're different object keys/fields (`STATES_BY_COUNTRY.US` contains
@@ -144,8 +144,8 @@ pre-filled with its current value, rather than throwing on
 
 ## Seed data sourcing
 
-`js/data.js` currently has 758 spots (74 AU, 332 US, 32 JP, 15 CA, 9 NZ,
-42 CN, 66 GB, 112 DE, 30 FR, 7 SE, 25 NL, 14 IT), all indoor gyms
+`js/data.js` currently has 772 spots (74 AU, 332 US, 32 JP, 15 CA, 9 NZ,
+42 CN, 66 GB, 112 DE, 30 FR, 7 SE, 25 NL, 14 IT, 14 BE), all indoor gyms
 (bouldering and/or top rope, with a growing number now also tagged
 lead-climbing — see "Known gaps" below on why outdoor areas were
 removed). It was built up in layers, not
@@ -494,6 +494,21 @@ from one source:
     every prior country addition; needs `supabase/seed.html`'s generated
     SQL run in the SQL Editor before these 76 spots are visible on the
     live map rather than just the offline `js/data.js` fallback.
+- **Belgium (14 gyms, 4 cities)** — same climbing-gyms.com source and
+  method as FR/SE/NL/IT, scoped to its 4 largest cities by the site's own
+  gym count: Antwerpen (5), Gent (4), Liège (3), Bruxelles (2). All 14
+  addresses geocoded cleanly against Nominatim on the first try — no
+  fallback positions needed, unlike every prior climbing-gyms.com pass.
+  Type inferred the same way: the source explicitly tagged Gent's 4 gyms
+  and Antwerp's "Beest Boulders"/"Boulderzaal" pair as bouldering-only
+  (kept as given), Antwerp's 3 "Klimzaal" gyms as "Climbing/Bouldering"
+  (kept as bouldering + top-rope), and Bruxelles's Arkose Canal is the
+  same bouldering-only Arkose chain already confirmed during the France
+  pass. `state` uses Belgium's 3 real top-level regions (Flanders,
+  Wallonia, Brussels-Capital) — Antwerpen/Gent are in Flanders, Liège in
+  Wallonia, Bruxelles is its own region, all given directly in the
+  source's own address strings. Not yet pushed to the live Supabase
+  table.
 
 ## Map
 
