@@ -41,6 +41,46 @@ placeholder work just to fill this section)_
 
 ## In Progress
 
+### Verify France/Sweden/Italy/Belgium gym positions (64 spots, complete)
+- Branch: `feature/complete-state-lists` (same branch — this merged in
+  `feature/add-belgium` first, since Belgium was one of the four
+  countries asked about and wasn't in master yet; `feature/add-belgium`
+  and `feature/add-south-korea` were the only other open branches, and
+  only Belgium was in scope here)
+- Status: **complete**. Direct follow-up to the NL verification pass —
+  user asked to run the same check on France, Sweden, Italy, and Belgium
+  (the other climbing-gyms.com-sourced countries), then merge everything.
+- Method: identical to the NL pass — re-geocoded all 64 addressed spots
+  against Nominatim (skipping the one FR spot with no address at all,
+  Altissimo Toulouse Saint Martin, already flagged) and independently
+  web-searched every gym by name to confirm it's real and current.
+- **Found and fixed 3 real errors** (see `docs/architecture.md` "Seed
+  data sourcing" for full detail) — these were address-text errors the
+  original one-off Nominatim pass couldn't have caught by re-running the
+  same broken address:
+  - **A.S.D. Stone Monkey** (Firenze) — address had a typo blocking
+    geocoding entirely; corrected via the gym's own site, pin moved
+    **~4.8km** to its real location.
+  - **Boite A Grimpe - Marseille** — wrong postal code (13012 → 13008,
+    confirmed via search); address text fixed, but Nominatim still can't
+    geocode this street at all (genuine OSM gap), so position stays a
+    same-city fallback as before.
+  - **"Bouldering" (Stockholm)** — confirmed this actually is the gym's
+    real name, not a placeholder; renamed to "Bouldering Stockholm" for
+    clarity since the generic name looked like an error at a glance.
+- **60 of 64 needed no change** — addresses matched Nominatim within
+  0-500m and every gym confirmed real/current, including all 14 Belgium
+  spots (geocoded at add-time this session, now also independently
+  confirmed to exist).
+- Net result: still **772 total spots** — a verification/correction
+  pass, not additions. Structural check (`node --check` + brace/bracket
+  balance): 773/773 braces, 774/774 brackets, unchanged.
+- **Verified live** (served copy): all 3 corrected entries load with
+  their new lat/lng/address/notes; no console errors.
+- **Not done**: `feature/add-south-korea` is still a separate, unmerged
+  branch — out of scope here (Korea wasn't one of the 4 countries asked
+  about, and wasn't sourced from climbing-gyms.com).
+
 ### Verify Netherlands gym positions (25 spots, complete)
 - Branch: `feature/complete-state-lists` (same branch/worktree as the
   task above — continued rather than starting fresh, since it's the same

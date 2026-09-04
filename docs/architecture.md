@@ -467,8 +467,36 @@ from one source:
     Hollands Spoor** share one building at Waldorpstraat 15 next to the
     station — confirmed via search to be two genuinely separate
     businesses (a bouldering hall and a rope-climbing hall) under one
-    roof, not a duplicate listing. FR/SE/IT and BE have *not* had this
-    same follow-up pass — still "real address, geocoded once" for those.
+    roof, not a duplicate listing.
+    **Update**: FR (29 addressed spots, excluding the one with no address
+    at all), SE (7), IT (14), and BE (14) — 64 spots — have since had the
+    same follow-up pass (2026-09): re-geocoded against Nominatim and each
+    gym independently confirmed real/current via web search. This caught
+    three genuine errors the original one-off geocoding pass missed,
+    because the errors were in the address text itself, not something
+    re-running the same broken address through Nominatim again could
+    surface:
+    - **A.S.D. Stone Monkey** (Firenze, IT) — stored address had a typo
+      ("Alesso" for "Alessio", missing the "a" suffix on the house
+      number) that kept it from geocoding at all. Corrected against the
+      gym's own site (stonemonkey.it) and re-geocoded — moved the pin
+      **~4.8km** to the correct Isolotto/Monticelli area of Florence.
+    - **Boite A Grimpe - Marseille** (FR) — stored postal code was wrong
+      (13012, corrected to the real 13008, confirmed via search) — still
+      doesn't geocode even fixed (Nominatim has no coverage of this
+      street at all, confirmed by testing several query variants), so
+      the position stays a same-city fallback as before, just with the
+      corrected address text now on record for whenever this street
+      does get mapped.
+    - **"Bouldering" (Stockholm, SE)** — the source directory gave a
+      generic name; confirmed via search this is the gym's actual name
+      ("Bouldering Stockholm"/"Bouldering STHLM"), not a data error, and
+      renamed for clarity.
+    60 of the 64 needed no changes at all — addresses matched Nominatim
+    within 0-500m and every gym confirmed real and current, Belgium
+    included (added this same session, previously geocoded-at-add-time
+    but not yet independently web-searched for real-world existence
+    until now).
   - **Climbing type inferred from chain/name recognition, not
     individually confirmed** — the source lists a name and address only,
     no facility type. Chains researched and applied consistently: Arkose,
