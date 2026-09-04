@@ -70,9 +70,9 @@ are only unique within a country** (e.g. AU's `WA` vs US's `WA` are
 different regions). Anything that filters, colors, or edits by state —
 the chips in `index.html`, `STATES_BY_COUNTRY` in `app.js`, the RLS-safe
 columns in `schema.sql` — keys off the `(country, state)` pair together,
-never `state` alone. Now 22 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
-FR, SE, NL, IT, BE, KR, ES, PT, AT, CH, PL, DK, FI, IE), same pattern each
-time — keep this in mind before adding a 23rd. One collision
+never `state` alone. Now 25 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
+FR, SE, NL, IT, BE, KR, ES, PT, AT, CH, PL, DK, FI, IE, NO, MX, BR), same
+pattern each time — keep this in mind before adding a 26th. One collision
 worth flagging: `US`'s state code for California is `CA`, and `CA` is
 also the top-level country code for Canada — not a real ambiguity since
 they're different object keys/fields (`STATES_BY_COUNTRY.US` contains
@@ -144,9 +144,10 @@ pre-filled with its current value, rather than throwing on
 
 ## Seed data sourcing
 
-`js/data.js` currently has 936 spots (74 AU, 332 US, 32 JP, 15 CA, 9 NZ,
+`js/data.js` currently has 987 spots (74 AU, 332 US, 32 JP, 15 CA, 9 NZ,
 42 CN, 66 GB, 112 DE, 30 FR, 7 SE, 25 NL, 14 IT, 14 BE, 37 KR, 22 ES,
-7 PT, 22 AT, 8 CH, 31 PL, 14 DK, 14 FI, 9 IE), all indoor gyms
+7 PT, 22 AT, 8 CH, 31 PL, 14 DK, 14 FI, 9 IE, 20 NO, 16 MX, 15 BR), all
+indoor gyms
 (bouldering and/or top rope, with a growing number now also tagged
 lead-climbing — see "Known gaps" below on why outdoor areas were
 removed). It was built up in layers, not
@@ -695,6 +696,59 @@ from one source:
     state-list-completeness fix), not just the ones these seed spots use.
   - **Not yet pushed to the live Supabase table** — same next-step gap as
     every prior country addition.
+- **Norway (20 gyms, 11 cities), Mexico (16 gyms, 4 cities), and Brazil
+  (15 gyms, 4 cities)** — the 23rd-25th countries — finish the "add more
+  countries" backlog. **Brazil is the first South America country**,
+  which needed a new continent-tier region (see "Map" below).
+  - **Norway**: climbing-gyms.com's own Norway page has only 2 gyms
+    (both in Bergen), so this pass used general web search instead — the
+    same lighter-touch tier as the original Japan/Canada/New Zealand
+    passes, not the geocoded-address tier every European country since
+    has used. 20 real, named gyms confirmed via search across 11 cities
+    (Oslo 3, Bergen 4, Trondheim 3, Stavanger 2, Bodø 2, Hemsedal 1,
+    Kristiansand 1, Kristiansund 1, Lillehammer 1, Ålesund 1, Skien 1) —
+    positions are **city-level with a small per-gym offset** (same
+    convention as the original AU/US Mountain Project pass for multiple
+    gyms in one city), not individually geocoded addresses. `state` uses
+    Norway's current 15 fylker (counties, as of the 2024 reform), listed
+    complete in `STATES_BY_COUNTRY.NO` from the start per the usual
+    standard — 10 of the 15 have a seed spot, more than any other
+    country's "cities actually used" count, so Norway also needed CSS
+    colours/chips for all 10, not just a top-4.
+  - **Mexico**: climbing-gyms.com *does* cover Mexico (confirmed by
+    checking directly, contrary to the initial assumption when this was
+    added to Backlog) — same geocoded-address method as the European
+    passes. Ciudad de México (8) + Monterrey (4) + Toluca de Lerdo (2) +
+    Zapopan (2) = 16. All 16 addresses matched Nominatim, though one
+    (**TOKA climbing**, address "Tlatilco 5") needed a manual fix — the
+    top match was a same-named but wrong street ~28km away in Tláhuac;
+    checking Nominatim's alternate matches found the real Tlatilco
+    neighbourhood (Azcapotzalco) instead. Worth remembering for any
+    future geocoding pass: a top Nominatim result isn't automatically
+    the right one for a common street name, especially in a large city.
+    `state` uses Mexico's 32 federal entities, listed complete from the
+    start. One address (**Amanecer Climbing**) is technically in
+    Interlomas/Huixquilucan, Estado de México — a different federal
+    entity from Ciudad de México proper, despite climbing-gyms.com
+    listing it under the CDMX city page (a common real-world ambiguity
+    in the CDMX metro area, not a data error).
+  - **Brazil**: no directory site found (climbing-gyms.com's own Brazil
+    page explicitly says "No cities with climbing gyms in Brazil yet"),
+    so this used the same web-search method as Norway, but with real
+    street addresses where search turned them up (a mixed precision tier
+    — most of São Paulo/Belo Horizonte/Curitiba matched Nominatim
+    directly; a few fall back to a same-city gym's position where the
+    address didn't resolve or wasn't given at all). São Paulo (6) + Belo
+    Horizonte (5) + Curitiba (3) + Rio de Janeiro (1) = 15. **Rio ended
+    up thin (1 gym) for a real reason, not an oversight**: the other
+    strong candidate, Centro de Escalada JPA, showed a "now closed"
+    (Agora fechado) signal on a business listing and was excluded, same
+    "confirmed closure" treatment as the US pass's closures — only
+    Evolução Escalada Indoor (Botafogo) remained confirmed-open. `state`
+    uses Brazil's 26 states + Distrito Federal (27 total), listed
+    complete from the start.
+  - **Not yet pushed to the live Supabase table** — same next-step gap as
+    every prior country addition.
 
 ## Map
 
@@ -830,6 +884,11 @@ from one source:
   used in `index.html`'s sidebar — a spot whose country isn't in that map
   (e.g. one submitted via the "Other (not listed)" country option) is
   skipped from the continent tier rather than guessed into one.
+  **`south-america` was added as a fifth region** when Brazil became the
+  first South America country in the dataset — a new `REGION_LABELS`/
+  `REGION_FLY_TARGETS` entry and a new `.region-group[data-region="south-
+  america"]` sidebar wrapper, same mechanics as the existing four
+  (asia/europe/north-america/oceania), not a special case.
   - **Continent labels are clickable** — the only label tier that is
     (state/country labels keep `pointer-events:none`, same as always, so
     they can't block map drag). Clicking one calls `map.flyTo()` against

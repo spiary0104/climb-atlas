@@ -36,18 +36,72 @@ Each entry:
 
 ## Backlog
 
-- **Add Norway** — climbing-gyms.com's own Norway coverage is just 2
-  gyms in one metro area (Bergen: Kokstad, Laksevåg), too thin to use for
-  a whole-country pass (see the Poland/Denmark/Finland/Ireland task
-  below). Needs the same lighter-touch web-search method as Mexico/
-  Brazil instead of this source. Not started.
-- **Add Mexico and/or Brazil** — third tier of the "add more countries"
-  ask. No single reliable directory site confirmed yet for either
-  country (unlike climbing-gyms.com's European coverage or Mountain
-  Project's Korea coverage) — would need a lighter-touch web-search pass
-  like the original Japan/Canada/New Zealand passes. Not started.
+_(empty — the "add more countries" ask that drove this whole run of
+tasks is now fully worked through: Korea, Belgium, Spain/Portugal/
+Austria/Switzerland, Poland/Denmark/Finland/Ireland, and finally Norway/
+Mexico/Brazil below. Add real tasks here as they're identified; don't
+invent placeholder work just to fill this section.)_
 
 ## In Progress
+
+### Add Norway, Mexico, Brazil (51 gyms)
+- Branch: `feature/add-norway-mexico-brazil` (new branch off `master`)
+- Status: implemented + verified live in a served copy; not yet merged.
+- What: finishing the "add more countries in" backlog — the two items
+  left after the Poland/Denmark/Finland/Ireland batch.
+- **Norway (20 gyms, 11 cities)**: climbing-gyms.com's own coverage is
+  only 2 gyms (both Bergen), so this used general web search instead —
+  the lighter-touch tier (real names confirmed via search, city-level
+  position with a small per-gym offset, not individually geocoded
+  addresses), same as the original Japan/Canada/New Zealand passes.
+  Oslo (3), Bergen (4), Trondheim (3), Stavanger (2), Bodø (2), Hemsedal
+  (1), Kristiansand (1), Kristiansund (1), Lillehammer (1), Ålesund (1),
+  Skien (1).
+- **Mexico (16 gyms, 4 cities)**: climbing-gyms.com turns out to cover
+  Mexico after all (worth correcting — the Backlog entry assumed no
+  directory existed) — same geocoded-address method as the European
+  passes. Ciudad de México (8), Monterrey (4), Toluca de Lerdo (2),
+  Zapopan (2). One real geocoding mistake caught and fixed: **TOKA
+  climbing**'s address ("Tlatilco 5") matched a same-named wrong street
+  ~28km away on the first Nominatim result — checking alternate matches
+  found the real Tlatilco neighbourhood instead. Worth remembering for
+  future geocoding passes in large cities.
+- **Brazil (15 gyms, 4 cities)**: no directory site exists
+  (climbing-gyms.com's own Brazil page says "No cities... yet"), so this
+  used web search with real addresses where found — a mixed-precision
+  tier between the two above. São Paulo (6), Belo Horizonte (5), Curitiba
+  (3), Rio de Janeiro (1, after excluding a second candidate that showed
+  a "now closed" signal). **Brazil is the first South America country**
+  — added a genuinely new continent-tier region (`south-america`) to the
+  3-tier label system and sidebar, same mechanics as the existing four
+  regions, not a special case.
+- Full sourcing detail, all exclusions, and the TOKA fix in
+  `docs/architecture.md` "Seed data sourcing".
+- Added `NO`/`MX`/`BR` to `STATES_BY_COUNTRY` with each country's
+  complete real top-level divisions (Norway 15 fylker, Mexico 32 federal
+  entities, Brazil 26 states + Distrito Federal) — same completeness
+  standard as every country since the NL fix — plus `COUNTRY_LABELS`,
+  `COUNTRY_FLY_TARGETS`, `COUNTRY_TO_REGION` in `js/app.js`; a new
+  `south-america` entry in `REGION_LABELS`/`REGION_FLY_TARGETS`; 21 new
+  CSS colour variables (10 NO — more divisions have spots than any
+  "top-4-cities" country so far, 4 MX, 4 BR) + chip rules in
+  `css/style.css`; 3 new sidebar chip groups (Norway between Netherlands
+  and Poland; Mexico between Japan and Netherlands) plus a brand-new
+  South America region-group (Brazil) after Oceania, and country
+  `<option>`s in both add/edit forms.
+- Net result: 936 → **987 total spots**. Structural check (Node-parsed
+  `window.SEED_GYMS`): 987/987 unique ids, zero duplicate
+  name+suburb+state+country combos; a distance-from-city-centre sanity
+  check on all 51 new spots caught the TOKA error above and confirmed
+  every other spot within 25km of its city.
+- **Verified live** (served copy, `npx serve .`): add-spot form's country
+  dropdown lists all 15 NO / 32 MX / 27 BR divisions; Norway/Mexico/
+  Brazil sidebar groups render in the right alphabetical/regional slots;
+  the new South America region header is clickable with no console
+  errors; `window.SEED_GYMS.length` = 987; no console errors.
+- **Not yet done**: pushing/merging this branch; the live Supabase table
+  (same outstanding step as every country addition this session, now
+  covering Belgium, Korea, and all 4 new-country batches).
 
 ### Add Poland, Denmark, Finland, Ireland (68 gyms)
 - Branch: `feature/add-poland-denmark-norway-finland-ireland` (new

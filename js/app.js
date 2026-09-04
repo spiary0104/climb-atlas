@@ -131,10 +131,35 @@
          ['LAOIS','Laois'],['LEITRIM','Leitrim'],['LIMERICK','Limerick'],['LONGFORD','Longford'],
          ['LOUTH','Louth'],['MAYO','Mayo'],['MEATH','Meath'],['MONAGHAN','Monaghan'],['OFFALY','Offaly'],
          ['ROSCOMMON','Roscommon'],['SLIGO','Sligo'],['TIPPERARY','Tipperary'],['WATERFORD','Waterford'],
-         ['WESTMEATH','Westmeath'],['WEXFORD','Wexford'],['WICKLOW','Wicklow']]
+         ['WESTMEATH','Westmeath'],['WEXFORD','Wexford'],['WICKLOW','Wicklow']],
+    NO: [['AGDER','Agder (Kristiansand)'],['AKERSHUS','Akershus'],['BUSKERUD','Buskerud (Hemsedal)'],
+         ['FINNMARK','Finnmark'],['INNLANDET','Innlandet (Lillehammer)'],
+         ['MORE_OG_ROMSDAL','Møre og Romsdal (Ålesund, Kristiansund)'],['NORDLAND','Nordland (Bodø)'],
+         ['OSLO','Oslo'],['ROGALAND','Rogaland (Stavanger)'],['TELEMARK','Telemark (Skien)'],
+         ['TROMS','Troms'],['TRONDELAG','Trøndelag (Trondheim)'],['VESTFOLD','Vestfold'],
+         ['VESTLAND','Vestland (Bergen)'],['OSTFOLD','Østfold']],
+    MX: [['AGUASCALIENTES','Aguascalientes'],['BAJA_CALIFORNIA','Baja California'],
+         ['BAJA_CALIFORNIA_SUR','Baja California Sur'],['CAMPECHE','Campeche'],['CHIAPAS','Chiapas'],
+         ['CHIHUAHUA','Chihuahua'],['CIUDAD_DE_MEXICO','Ciudad de México'],['COAHUILA','Coahuila'],
+         ['COLIMA','Colima'],['DURANGO','Durango'],['GUANAJUATO','Guanajuato'],['GUERRERO','Guerrero'],
+         ['HIDALGO','Hidalgo'],['JALISCO','Jalisco (Zapopan)'],['MEXICO','México (Toluca)'],
+         ['MICHOACAN','Michoacán'],['MORELOS','Morelos'],['NAYARIT','Nayarit'],
+         ['NUEVO_LEON','Nuevo León (Monterrey)'],['OAXACA','Oaxaca'],['PUEBLA','Puebla'],
+         ['QUERETARO','Querétaro'],['QUINTANA_ROO','Quintana Roo'],['SAN_LUIS_POTOSI','San Luis Potosí'],
+         ['SINALOA','Sinaloa'],['SONORA','Sonora'],['TABASCO','Tabasco'],['TAMAULIPAS','Tamaulipas'],
+         ['TLAXCALA','Tlaxcala'],['VERACRUZ','Veracruz'],['YUCATAN','Yucatán'],['ZACATECAS','Zacatecas']],
+    BR: [['ACRE','Acre'],['ALAGOAS','Alagoas'],['AMAPA','Amapá'],['AMAZONAS','Amazonas'],['BAHIA','Bahia'],
+         ['CEARA','Ceará'],['DISTRITO_FEDERAL','Distrito Federal'],['ESPIRITO_SANTO','Espírito Santo'],
+         ['GOIAS','Goiás'],['MARANHAO','Maranhão'],['MATO_GROSSO','Mato Grosso'],
+         ['MATO_GROSSO_DO_SUL','Mato Grosso do Sul'],['MINAS_GERAIS','Minas Gerais (Belo Horizonte)'],
+         ['PARA','Pará'],['PARAIBA','Paraíba'],['PARANA','Paraná (Curitiba)'],['PERNAMBUCO','Pernambuco'],
+         ['PIAUI','Piauí'],['RIO_DE_JANEIRO','Rio de Janeiro'],['RIO_GRANDE_DO_NORTE','Rio Grande do Norte'],
+         ['RIO_GRANDE_DO_SUL','Rio Grande do Sul'],['RONDONIA','Rondônia'],['RORAIMA','Roraima'],
+         ['SANTA_CATARINA','Santa Catarina'],['SAO_PAULO','São Paulo'],['SERGIPE','Sergipe'],
+         ['TOCANTINS','Tocantins']]
   };
   const TYPE_LABELS = {'indoor-bouldering':'Indoor bouldering','top-rope':'Top rope','outdoor-bouldering':'Outdoor bouldering','lead-climbing':'Lead climbing'};
-  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy', BE:'Belgium', KR:'South Korea', ES:'Spain', PT:'Portugal', AT:'Austria', CH:'Switzerland', PL:'Poland', DK:'Denmark', FI:'Finland', IE:'Ireland'};
+  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy', BE:'Belgium', KR:'South Korea', ES:'Spain', PT:'Portugal', AT:'Austria', CH:'Switzerland', PL:'Poland', DK:'Denmark', FI:'Finland', IE:'Ireland', NO:'Norway', MX:'Mexico', BR:'Brazil'};
   // Fixed camera target per country for the "fly to this country" click on
   // its sidebar label -- picked to frame that country's actual spread of
   // seed spots (e.g. US needs a wide zoom to fit both NY and CA), not a
@@ -162,7 +187,10 @@
     PL: {center:[18,52], zoom:5.8},
     DK: {center:[10,56], zoom:6},
     FI: {center:[26,63], zoom:4.8},
-    IE: {center:[-7.5,53.2], zoom:6.5}
+    IE: {center:[-7.5,53.2], zoom:6.5},
+    NO: {center:[10,63], zoom:3.8},
+    MX: {center:[-101,22], zoom:4.2},
+    BR: {center:[-46,-22], zoom:5}
   };
   // Which sidebar region-group each country belongs to -- same grouping as
   // the `.region-group[data-region]` wrappers in index.html, kept here too
@@ -172,17 +200,20 @@
     CN:'asia', JP:'asia', KR:'asia',
     DE:'europe', GB:'europe', FR:'europe', SE:'europe', NL:'europe', IT:'europe', BE:'europe',
     ES:'europe', PT:'europe', AT:'europe', CH:'europe', PL:'europe', DK:'europe', FI:'europe', IE:'europe',
-    CA:'north-america', US:'north-america',
-    AU:'oceania', NZ:'oceania'
+    NO:'europe',
+    CA:'north-america', US:'north-america', MX:'north-america',
+    AU:'oceania', NZ:'oceania',
+    BR:'south-america'
   };
-  const REGION_LABELS = {asia:'Asia', europe:'Europe', 'north-america':'North America', oceania:'Oceania'};
+  const REGION_LABELS = {asia:'Asia', europe:'Europe', 'north-america':'North America', oceania:'Oceania', 'south-america':'South America'};
   // Same idea as COUNTRY_FLY_TARGETS, one tier coarser -- framing every
   // country currently in that region, not just one.
   const REGION_FLY_TARGETS = {
     asia: {center:[125,32], zoom:2.6},
     europe: {center:[8,50], zoom:3.2},
     'north-america': {center:[-100,45], zoom:2.4},
-    oceania: {center:[155,-30], zoom:3}
+    oceania: {center:[155,-30], zoom:3},
+    'south-america': {center:[-58,-15], zoom:3}
   };
   // Below this zoom, a spot with no nearby neighbours (so supercluster hands
   // it back as a lone, unclustered point rather than grouping it) still paints

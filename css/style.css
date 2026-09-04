@@ -126,6 +126,24 @@
     --ie-clare:#5ac93f;
     --ie-cork:#9e3fc9;
     --ie-limerick:#c9c33f;
+    --no-oslo:#3fa8c9;
+    --no-vestland:#c9683f;
+    --no-trondelag:#7ac93f;
+    --no-rogaland:#c93f9e;
+    --no-nordland:#3fc96c;
+    --no-buskerud:#c9c33f;
+    --no-agder:#8a3fc9;
+    --no-more-og-romsdal:#c95f3f;
+    --no-innlandet:#3f7ec9;
+    --no-telemark:#c93fc0;
+    --mx-ciudad-de-mexico:#c9503f;
+    --mx-nuevo-leon:#3f7ec9;
+    --mx-mexico:#8ec93f;
+    --mx-jalisco:#c9a33f;
+    --br-sao-paulo:#3fc9a3;
+    --br-rio-de-janeiro:#c93f6b;
+    --br-minas-gerais:#8a5cc9;
+    --br-parana:#c9843f;
     --t-outdoor:#b8834a;
     --t-indoor:#3fb8a6;
     --t-toprope:#8a6bb0;
@@ -408,6 +426,24 @@
   .chip[data-country="IE"][data-state="CLARE"].active{background:var(--ie-clare);}
   .chip[data-country="IE"][data-state="CORK"].active{background:var(--ie-cork);}
   .chip[data-country="IE"][data-state="LIMERICK"].active{background:var(--ie-limerick);}
+  .chip[data-country="NO"][data-state="OSLO"].active{background:var(--no-oslo);}
+  .chip[data-country="NO"][data-state="VESTLAND"].active{background:var(--no-vestland);}
+  .chip[data-country="NO"][data-state="TRONDELAG"].active{background:var(--no-trondelag);}
+  .chip[data-country="NO"][data-state="ROGALAND"].active{background:var(--no-rogaland);}
+  .chip[data-country="NO"][data-state="NORDLAND"].active{background:var(--no-nordland);}
+  .chip[data-country="NO"][data-state="BUSKERUD"].active{background:var(--no-buskerud);}
+  .chip[data-country="NO"][data-state="AGDER"].active{background:var(--no-agder);}
+  .chip[data-country="NO"][data-state="MORE_OG_ROMSDAL"].active{background:var(--no-more-og-romsdal);}
+  .chip[data-country="NO"][data-state="INNLANDET"].active{background:var(--no-innlandet);}
+  .chip[data-country="NO"][data-state="TELEMARK"].active{background:var(--no-telemark);}
+  .chip[data-country="MX"][data-state="CIUDAD_DE_MEXICO"].active{background:var(--mx-ciudad-de-mexico);}
+  .chip[data-country="MX"][data-state="NUEVO_LEON"].active{background:var(--mx-nuevo-leon);}
+  .chip[data-country="MX"][data-state="MEXICO"].active{background:var(--mx-mexico);}
+  .chip[data-country="MX"][data-state="JALISCO"].active{background:var(--mx-jalisco);}
+  .chip[data-country="BR"][data-state="SAO_PAULO"].active{background:var(--br-sao-paulo);}
+  .chip[data-country="BR"][data-state="RIO_DE_JANEIRO"].active{background:var(--br-rio-de-janeiro);}
+  .chip[data-country="BR"][data-state="MINAS_GERAIS"].active{background:var(--br-minas-gerais);}
+  .chip[data-country="BR"][data-state="PARANA"].active{background:var(--br-parana);}
 
   .toggle-row{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-dim);font-family:'Space Mono',monospace;cursor:pointer;}
   .toggle-row input{accent-color:var(--vic);}
