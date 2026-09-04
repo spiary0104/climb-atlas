@@ -25,10 +25,11 @@
          ['PACA',"Provence-Alpes-Côte d'Azur (Marseille)"],['OCCITANIE','Occitanie (Toulouse)']],
     SE: [['VASTRA_GOTALAND','Västra Götaland (Göteborg)'],['STOCKHOLM','Stockholm'],['SKANE','Skåne (Malmö)']],
     NL: [['NOORD_HOLLAND','Noord-Holland (Amsterdam)'],['ZUID_HOLLAND','Zuid-Holland (Den Haag, Rotterdam)'],['UTRECHT','Utrecht']],
-    IT: [['LAZIO','Lazio (Roma)'],['LOMBARDIA','Lombardia (Milano)'],['EMILIA_ROMAGNA','Emilia-Romagna (Modena)'],['TOSCANA','Toscana (Firenze)']]
+    IT: [['LAZIO','Lazio (Roma)'],['LOMBARDIA','Lombardia (Milano)'],['EMILIA_ROMAGNA','Emilia-Romagna (Modena)'],['TOSCANA','Toscana (Firenze)']],
+    BE: [['FLANDERS','Flanders'],['WALLONIA','Wallonia'],['BRUSSELS','Brussels-Capital']]
   };
   const TYPE_LABELS = {'indoor-bouldering':'Indoor bouldering','top-rope':'Top rope','outdoor-bouldering':'Outdoor bouldering','lead-climbing':'Lead climbing'};
-  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy'};
+  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy', BE:'Belgium'};
   // Fixed camera target per country for the "fly to this country" click on
   // its sidebar label -- picked to frame that country's actual spread of
   // seed spots (e.g. US needs a wide zoom to fit both NY and CA), not a
@@ -46,7 +47,8 @@
     FR: {center:[2.5,46.3], zoom:5.2},
     SE: {center:[15,58.5], zoom:4.4},
     NL: {center:[5.2,52.1], zoom:7},
-    IT: {center:[11,43.3], zoom:5.2}
+    IT: {center:[11,43.3], zoom:5.2},
+    BE: {center:[4.6,50.7], zoom:6.6}
   };
   // Which sidebar region-group each country belongs to -- same grouping as
   // the `.region-group[data-region]` wrappers in index.html, kept here too
@@ -54,7 +56,7 @@
   // the DOM to know a country's continent.
   const COUNTRY_TO_REGION = {
     CN:'asia', JP:'asia',
-    DE:'europe', GB:'europe', FR:'europe', SE:'europe', NL:'europe', IT:'europe',
+    DE:'europe', GB:'europe', FR:'europe', SE:'europe', NL:'europe', IT:'europe', BE:'europe',
     CA:'north-america', US:'north-america',
     AU:'oceania', NZ:'oceania'
   };

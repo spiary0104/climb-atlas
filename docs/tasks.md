@@ -41,9 +41,45 @@ placeholder work just to fill this section)_
 
 ## In Progress
 
+### Add Belgium (14 gyms)
+- Branch: `feature/add-belgium` (new branch off `master`)
+- Status: implemented + verified live in a served copy; not yet merged.
+  **Not yet pushed to the live Supabase table** — same outstanding step
+  as every prior country addition.
+- What: user asked to add Belgium using `climbing-gyms.com/browse/europe`
+  again, same source as France/Sweden/Netherlands/Italy. Scoped to its 4
+  largest cities by the site's own gym count: Antwerpen (5), Gent (4),
+  Liège (3), Bruxelles (2) — 14 gyms total.
+- **All 14 addresses geocoded cleanly on the first Nominatim try** — no
+  fallback positions needed this time, unlike every prior
+  climbing-gyms.com pass (FR/SE/NL/IT and Korea's MP pass all needed at
+  least one fallback).
+- Type mostly given directly by the source this time (Gent's 4 + 2 of
+  Antwerp's 5 explicitly tagged "Bouldering"; Antwerp's other 3 tagged
+  "Climbing/Bouldering" → bouldering + top-rope); Bruxelles's Arkose
+  Canal reused the bouldering-only classification already confirmed for
+  the Arkose chain during the France pass.
+- Added `BE` to `STATES_BY_COUNTRY` (Belgium's 3 real top-level regions —
+  Flanders, Wallonia, Brussels-Capital, taken directly from the source's
+  own address strings), `COUNTRY_LABELS`, `COUNTRY_FLY_TARGETS`, and
+  `COUNTRY_TO_REGION` (europe) in `js/app.js`; 3 new `--be-*` CSS colour
+  variables + chip rules; a new sidebar chip row (alphabetically first
+  under the Europe region-group, before France) and country `<option>`
+  in both add/edit-spot forms.
+- Net result: 758 → **772 total spots**. Structural check (`node -e`
+  eval): 773/773 braces balanced, 774/774 brackets balanced, all 772 ids
+  unique, zero duplicate name+suburb+state+country combos.
+- **Verified live** (served copy, `npx serve .`): `window.SEED_GYMS.length`
+  = 772; Belgium chip group renders under Europe with all 3 regions in
+  the right colours and alphabetical slot; clicking the Belgium sidebar
+  label correctly flies the camera to `{center:[4.6,50.7], zoom:6.6}`,
+  visibly framing Antwerp/Brussels/Charleroi/Namur; no console errors.
+  Live Supabase data (still 758, pre-re-seed) showed no Belgium spots
+  yet — expected, not a bug.
+
 ### Add a continent label tier + click-to-fly, above the existing country tier
 - Branch: `feature/continent-labels-and-fly-to` (new branch off `master`)
-- Status: implemented + verified live in a served copy; not yet merged.
+- Status: **done — merged to `master`** and live on climbatlas.org.
 - What: user feedback after the France/Sweden/Netherlands/Italy addition
   — with 6 European countries now on the map, the globe-zoom label tier
   was showing an individual country name (e.g. "Germany") immediately at
