@@ -36,10 +36,87 @@ Each entry:
 
 ## Backlog
 
-_(empty — add real tasks here as they're identified; don't invent
-placeholder work just to fill this section)_
+- **Add Poland, Denmark, Norway, Finland, Ireland** — second tier of the
+  "add more countries" ask, via climbing-gyms.com same as the
+  Spain/Portugal/Austria/Switzerland batch. Not started.
+- **Add Mexico and/or Brazil** — third tier of the same ask. No single
+  reliable directory site confirmed yet for either country (unlike
+  climbing-gyms.com's European coverage or Mountain Project's Korea
+  coverage) — would need a lighter-touch web-search pass like the
+  original Japan/Canada/New Zealand passes. Not started.
 
 ## In Progress
+
+### Add Spain, Portugal, Austria, Switzerland (59 gyms)
+- Branch: `feature/add-spain-portugal-switzerland-austria` (new branch
+  off `master`)
+- Status: implemented + verified live in a served copy; not yet merged.
+- What: user asked to "add more countries in." Clarified scope via
+  AskUserQuestion first: (1) merge the still-open South Korea branch
+  from earlier in this session — done first, see the merge-conflict
+  entry below; (2) which new countries — user picked Spain/Portugal/
+  Switzerland/Austria via climbing-gyms.com as the first batch (also
+  flagged interest in a second Europe batch and Mexico/Brazil, not yet
+  started — see Backlog).
+- Same method as every climbing-gyms.com pass: scoped to each country's
+  largest cities by the site's own gym count, addresses individually
+  geocoded via Nominatim, climbing type inferred from chain/name
+  recognition. Full detail (including the Madrid/Burgos-404, Salzburg
+  same-address-merge, and Switzerland's unusually flat per-city gym
+  counts) in `docs/architecture.md` "Seed data sourcing".
+  - Spain: Madrid (14) + Barcelona (8) = 22 — scoped down from the usual
+    4 cities since climbing-gyms.com's own Burgos/Alcorcón pages 404.
+  - Portugal: Lisboa (3) + Coimbra (2) + Porto (2) = 7.
+  - Austria: Wien (13) + Graz (4) + Linz (3) + Salzburg (2, merged from
+    3 listed) = 22.
+  - Switzerland: Zürich (2) + Basel (2) + Bern (2) + Winterthur (2) = 8.
+- **Applied the state-list-completeness standard from the start**: all
+  4 countries' `STATES_BY_COUNTRY` entries list the complete real set of
+  administrative divisions (ES 19 autonomous communities/cities, PT 20
+  districts/regions, AT 9 federal states, CH 26 cantons), not just the
+  ones these seed spots use — same fix already applied to every
+  pre-existing country, done here proactively instead of needing a
+  second bug report.
+- Added `ES`/`PT`/`AT`/`CH` to `STATES_BY_COUNTRY`, `COUNTRY_LABELS`,
+  `COUNTRY_FLY_TARGETS`, `COUNTRY_TO_REGION` (europe) in `js/app.js`; 13
+  new CSS colour variables (only for divisions with actual spots: 2 ES,
+  3 PT, 4 AT, 3 CH) + chip rules in `css/style.css`; 4 new sidebar chip
+  groups in their alphabetical Europe slots (Austria before Belgium;
+  Portugal, Spain between Netherlands and Sweden; Switzerland between
+  Sweden and United Kingdom) and country `<option>`s in both add/edit
+  forms in `index.html`.
+- Net result: 809 → **868 total spots**. Structural check (Node-parsed
+  `window.SEED_GYMS`, not just regex): 868/868 unique ids, zero
+  duplicate name+suburb+state+country combos.
+- **Verified live** (served copy, `npx serve .`): add-spot form's country
+  dropdown correctly lists all 19 ES / 20 PT / 9 AT / 26 CH divisions in
+  alphabetical order; all 4 new sidebar chip groups render in the right
+  Europe alphabetical slots with correct colours; clicking Spain's
+  sidebar label triggers no console errors; `window.SEED_GYMS.length` =
+  868; no console errors at any point.
+- **Not yet done**: pushing/merging this branch; the live Supabase
+  table (same outstanding step as every prior country addition); the
+  second Europe batch (Poland/Denmark/Norway/Finland/Ireland) and
+  Mexico/Brazil the user also expressed interest in — added to Backlog
+  below rather than started in the same session.
+
+### Merge South Korea branch into master (post-hoc conflict resolution)
+- Status: **done — merged to `master`**, pushed.
+- What: `feature/add-south-korea` (37 gyms, implemented in an earlier
+  session) was still sitting unmerged while `master` moved on through
+  Belgium, the state-list-completeness fix, and the FR/SE/IT/BE
+  verification pass — all of which touched the same `STATES_BY_COUNTRY`/
+  `COUNTRY_LABELS`/`COUNTRY_FLY_TARGETS`/`COUNTRY_TO_REGION` block in
+  `js/app.js` that Korea's branch also touched, so the merge conflicted
+  in `js/app.js`, `css/style.css`, `docs/architecture.md`, and
+  `docs/tasks.md` (not `js/data.js` or `index.html`, which merged
+  cleanly). Resolved by keeping both sides' additions side by side
+  (Belgium + Korea's states/labels/fly-targets/regions, both docs
+  writeups back to back) rather than picking one over the other.
+- Net result: 772 → **809 total spots**. Verified live (served copy):
+  both Belgium's and Korea's sidebar chip groups render correctly, both
+  appear in the country dropdown, `window.SEED_GYMS.length` = 809, no
+  console errors. Branch deleted after merge (local + remote).
 
 ### Verify France/Sweden/Italy/Belgium gym positions (64 spots, complete)
 - Branch: `feature/complete-state-lists` (same branch — this merged in

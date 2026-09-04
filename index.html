@@ -99,6 +99,15 @@
           <div class="region-group collapsed" data-region="europe">
             <button type="button" class="section-label region-header">Europe</button>
             <div class="region-body">
+              <div class="country-group collapsed" data-country="AT">
+                <button type="button" class="section-label country-label">Austria</button>
+                <div class="chip-row">
+                  <div class="chip" data-country="AT" data-state="WIEN" style="color:var(--at-wien)"><span class="dot"></span>Wien</div>
+                  <div class="chip" data-country="AT" data-state="STEIERMARK" style="color:var(--at-steiermark)"><span class="dot"></span>Steiermark</div>
+                  <div class="chip" data-country="AT" data-state="OBEROSTERREICH" style="color:var(--at-oberosterreich)"><span class="dot"></span>Oberösterreich</div>
+                  <div class="chip" data-country="AT" data-state="SALZBURG" style="color:var(--at-salzburg)"><span class="dot"></span>Salzburg</div>
+                </div>
+              </div>
               <div class="country-group collapsed" data-country="BE">
                 <button type="button" class="section-label country-label">Belgium</button>
                 <div class="chip-row">
@@ -154,12 +163,35 @@
                   <div class="chip" data-country="NL" data-state="UTRECHT" style="color:var(--nl-utrecht)"><span class="dot"></span>Utrecht</div>
                 </div>
               </div>
+              <div class="country-group collapsed" data-country="PT">
+                <button type="button" class="section-label country-label">Portugal</button>
+                <div class="chip-row">
+                  <div class="chip" data-country="PT" data-state="LISBOA" style="color:var(--pt-lisboa)"><span class="dot"></span>Lisboa</div>
+                  <div class="chip" data-country="PT" data-state="COIMBRA" style="color:var(--pt-coimbra)"><span class="dot"></span>Coimbra</div>
+                  <div class="chip" data-country="PT" data-state="PORTO" style="color:var(--pt-porto)"><span class="dot"></span>Porto</div>
+                </div>
+              </div>
+              <div class="country-group collapsed" data-country="ES">
+                <button type="button" class="section-label country-label">Spain</button>
+                <div class="chip-row">
+                  <div class="chip" data-country="ES" data-state="MADRID" style="color:var(--es-madrid)"><span class="dot"></span>Comunidad de Madrid</div>
+                  <div class="chip" data-country="ES" data-state="CATALUNYA" style="color:var(--es-catalunya)"><span class="dot"></span>Cataluña</div>
+                </div>
+              </div>
               <div class="country-group collapsed" data-country="SE">
                 <button type="button" class="section-label country-label">Sweden</button>
                 <div class="chip-row">
                   <div class="chip" data-country="SE" data-state="VASTRA_GOTALAND" style="color:var(--se-vastra-gotaland)"><span class="dot"></span>Västra Götaland</div>
                   <div class="chip" data-country="SE" data-state="STOCKHOLM" style="color:var(--se-stockholm)"><span class="dot"></span>Stockholm</div>
                   <div class="chip" data-country="SE" data-state="SKANE" style="color:var(--se-skane)"><span class="dot"></span>Skåne</div>
+                </div>
+              </div>
+              <div class="country-group collapsed" data-country="CH">
+                <button type="button" class="section-label country-label">Switzerland</button>
+                <div class="chip-row">
+                  <div class="chip" data-country="CH" data-state="ZURICH" style="color:var(--ch-zurich)"><span class="dot"></span>Zürich</div>
+                  <div class="chip" data-country="CH" data-state="BASEL_STADT" style="color:var(--ch-basel-stadt)"><span class="dot"></span>Basel-Stadt</div>
+                  <div class="chip" data-country="CH" data-state="BERN" style="color:var(--ch-bern)"><span class="dot"></span>Bern</div>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="GB">
@@ -319,6 +351,7 @@
         <label>Country</label>
         <select id="fCountry">
           <option value="AU">Australia</option>
+          <option value="AT">Austria</option>
           <option value="BE">Belgium</option>
           <option value="CA">Canada</option>
           <option value="CN">China</option>
@@ -328,8 +361,11 @@
           <option value="JP">Japan</option>
           <option value="NL">Netherlands</option>
           <option value="NZ">New Zealand</option>
+          <option value="PT">Portugal</option>
           <option value="KR">South Korea</option>
+          <option value="ES">Spain</option>
           <option value="SE">Sweden</option>
+          <option value="CH">Switzerland</option>
           <option value="GB">United Kingdom</option>
           <option value="US">United States</option>
           <option value="OTHER">Other (not listed)</option>
@@ -422,6 +458,7 @@
         <label>Country</label>
         <select id="eCountry">
           <option value="AU">Australia</option>
+          <option value="AT">Austria</option>
           <option value="BE">Belgium</option>
           <option value="CA">Canada</option>
           <option value="CN">China</option>
@@ -431,8 +468,11 @@
           <option value="JP">Japan</option>
           <option value="NL">Netherlands</option>
           <option value="NZ">New Zealand</option>
+          <option value="PT">Portugal</option>
           <option value="KR">South Korea</option>
+          <option value="ES">Spain</option>
           <option value="SE">Sweden</option>
+          <option value="CH">Switzerland</option>
           <option value="GB">United Kingdom</option>
           <option value="US">United States</option>
           <option value="OTHER">Other (not listed)</option>

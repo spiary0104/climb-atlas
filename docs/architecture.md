@@ -70,9 +70,9 @@ are only unique within a country** (e.g. AU's `WA` vs US's `WA` are
 different regions). Anything that filters, colors, or edits by state —
 the chips in `index.html`, `STATES_BY_COUNTRY` in `app.js`, the RLS-safe
 columns in `schema.sql` — keys off the `(country, state)` pair together,
-never `state` alone. Now 14 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
-FR, SE, NL, IT, BE, KR), same pattern each time — keep this in mind before
-adding a 15th. One collision
+never `state` alone. Now 18 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
+FR, SE, NL, IT, BE, KR, ES, PT, AT, CH), same pattern each time — keep
+this in mind before adding a 19th. One collision
 worth flagging: `US`'s state code for California is `CA`, and `CA` is
 also the top-level country code for Canada — not a real ambiguity since
 they're different object keys/fields (`STATES_BY_COUNTRY.US` contains
@@ -144,8 +144,9 @@ pre-filled with its current value, rather than throwing on
 
 ## Seed data sourcing
 
-`js/data.js` currently has 809 spots (74 AU, 332 US, 32 JP, 15 CA, 9 NZ,
-42 CN, 66 GB, 112 DE, 30 FR, 7 SE, 25 NL, 14 IT, 14 BE, 37 KR), all indoor gyms
+`js/data.js` currently has 868 spots (74 AU, 332 US, 32 JP, 15 CA, 9 NZ,
+42 CN, 66 GB, 112 DE, 30 FR, 7 SE, 25 NL, 14 IT, 14 BE, 37 KR, 22 ES,
+7 PT, 22 AT, 8 CH), all indoor gyms
 (bouldering and/or top rope, with a growing number now also tagged
 lead-climbing — see "Known gaps" below on why outdoor areas were
 removed). It was built up in layers, not
@@ -574,6 +575,62 @@ from one source:
     each country's real regions. Busan alone accounts for 13 of the 37
     gyms (a genuine concentration in MP's own Korea listings, not a
     sourcing artifact).
+  - **Not yet pushed to the live Supabase table** — same next-step gap as
+    every prior country addition.
+- **Spain (22 gyms, 2 cities), Portugal (7, 3 cities), Austria (22, 4
+  cities), and Switzerland (8, 4 cities)** — the 15th-18th countries —
+  returned to climbing-gyms.com, same source/method as the France/Sweden/
+  Netherlands/Italy/Belgium passes. Spain was scoped to Madrid (14) and
+  Barcelona (8) only — the site's own Burgos and Alcorcón city pages
+  both 404, so the "top 4 cities" pattern used for every prior
+  climbing-gyms.com country wasn't achievable here; 2 real, working
+  cities was judged a solid-enough batch on its own rather than forcing
+  a workaround. Portugal's "top 4" is genuinely a top 3 (Lisboa, Coimbra,
+  Porto) — the 4th-place tier is a long tie at 1 gym each with no clear
+  next city. Switzerland's per-city gym counts are unusually fragmented
+  (mostly 1 gym per small town, no city standing out) — many cities tied
+  at 2 gyms each; picked the four largest by population among that tied
+  group (Zürich, Basel, Bern, Winterthur) rather than an arbitrary
+  4-of-many-ties selection.
+  - **Positions individually geocoded** the same way as every
+    climbing-gyms.com pass — 57 of 59 addressed spots matched Nominatim
+    directly. **Arkose - Madrid** and **Boulder Madrid** didn't resolve
+    even after retrying several query variants (Nominatim has no
+    coverage of either street) — both independently confirmed real via
+    web search (Arkose's own Cuatro Caminos location, Boulder Madrid's
+    own site) and fall back to the nearest confirmed metro station's
+    position instead of a guessed address-level point. **The North Wall
+    - Porto** has no street address at all in the source directory (like
+    Altissimo Toulouse Saint Martin in the France pass) — falls back to
+    São Rock - Porto's position, flagged in `notes`.
+  - **One pair merged rather than kept as two spots**: the source listed
+    both "Boulderhalle Salzburg" and "Kletterhalle Salzburg" at the
+    identical address (Wasserfeldstraße 23) — unlike the Den Haag
+    Hollands Spoor case in the Netherlands (confirmed there as two
+    genuinely separate businesses sharing a building), a web search here
+    confirmed the "Boulderhalle" is the bouldering room *inside* the
+    Kletterhalle, accessed through its entrance, not an independent
+    business. Kept as a single `Kletterhalle Salzburg` spot with
+    `types:[indoor-bouldering, top-rope]` rather than double-pinning the
+    same physical entrance.
+  - **Climbing type inferred from name/chain recognition**, same
+    conservative heuristic as DE/GB/FR: names containing "Bloc"/
+    "Boulder"/"Bulder" in any of Spanish, German, or their English
+    cognates (Bloc District, Monobloc, Uuadibloc, Boulderbar, BLOC house,
+    Blockfabrik, Minimum, ELYS Boulderloft, BoulderBad Muubeeri,
+    Blockfeld, etc.) → indoor-bouldering only; names suggesting a rope-
+    climbing hall ("Kletterhalle", "Kletteranlage", "Kletterzentrum",
+    "Rocódromo", "Rocòdrom") or with no clear bouldering-only signal →
+    bouldering + top-rope default. Arkose reused its already-confirmed
+    bouldering-only classification from the France pass.
+  - `state` uses each country's real top-level divisions (Spain's
+    autonomous communities, Portugal's districts, Austria's federal
+    states, Switzerland's cantons) — same as every other country's
+    entry in `STATES_BY_COUNTRY`, and, per the state-list-completeness
+    fix above, populated with the *complete* real set for all four from
+    the start (19/20/9/26 respectively) rather than only the divisions
+    these seed spots happen to use, so this doesn't reintroduce the same
+    gap the NL report caught.
   - **Not yet pushed to the live Supabase table** — same next-step gap as
     every prior country addition.
 

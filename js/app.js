@@ -87,10 +87,32 @@
     BE: [['FLANDERS','Flanders'],['WALLONIA','Wallonia'],['BRUSSELS','Brussels-Capital']],
     KR: [['SEOUL','Seoul'],['BUSAN','Busan'],['GYEONGGI','Gyeonggi-do'],['GWANGJU','Gwangju'],
          ['GYEONGSANGNAM','Gyeongsangnam-do'],['ULSAN','Ulsan'],['INCHEON','Incheon'],['DAEGU','Daegu'],
-         ['JEOLLANAM','Jeollanam-do'],['CHUNGCHEONGNAM','Chungcheongnam-do']]
+         ['JEOLLANAM','Jeollanam-do'],['CHUNGCHEONGNAM','Chungcheongnam-do']],
+    ES: [['ANDALUCIA','Andalucía'],['ARAGON','Aragón'],['ASTURIAS','Asturias'],['BALEARES','Baleares'],
+         ['CANARIAS','Canarias'],['CANTABRIA','Cantabria'],['CASTILLA_LA_MANCHA','Castilla-La Mancha'],
+         ['CASTILLA_Y_LEON','Castilla y León'],['CATALUNYA','Cataluña (Barcelona)'],['CEUTA','Ceuta'],
+         ['MADRID','Comunidad de Madrid'],['COMUNIDAD_VALENCIANA','Comunidad Valenciana'],
+         ['EXTREMADURA','Extremadura'],['GALICIA','Galicia'],['LA_RIOJA','La Rioja'],['MELILLA','Melilla'],
+         ['MURCIA','Murcia'],['NAVARRA','Navarra'],['PAIS_VASCO','País Vasco']],
+    PT: [['ACORES','Açores'],['AVEIRO','Aveiro'],['BEJA','Beja'],['BRAGA','Braga'],['BRAGANCA','Bragança'],
+         ['CASTELO_BRANCO','Castelo Branco'],['COIMBRA','Coimbra'],['EVORA','Évora'],['FARO','Faro'],
+         ['GUARDA','Guarda'],['LEIRIA','Leiria'],['LISBOA','Lisboa'],['MADEIRA','Madeira'],
+         ['PORTALEGRE','Portalegre'],['PORTO','Porto'],['SANTAREM','Santarém'],['SETUBAL','Setúbal'],
+         ['VIANA_DO_CASTELO','Viana do Castelo'],['VILA_REAL','Vila Real'],['VISEU','Viseu']],
+    AT: [['BURGENLAND','Burgenland'],['KARNTEN','Kärnten'],['NIEDEROSTERREICH','Niederösterreich'],
+         ['OBEROSTERREICH','Oberösterreich (Linz)'],['SALZBURG','Salzburg'],['STEIERMARK','Steiermark (Graz)'],
+         ['TIROL','Tirol'],['VORARLBERG','Vorarlberg'],['WIEN','Wien']],
+    CH: [['AARGAU','Aargau'],['APPENZELL_AUSSERRHODEN','Appenzell Ausserrhoden'],
+         ['APPENZELL_INNERRHODEN','Appenzell Innerrhoden'],['BASEL_LANDSCHAFT','Basel-Landschaft'],
+         ['BASEL_STADT','Basel-Stadt (Basel)'],['BERN','Bern'],['FRIBOURG','Fribourg'],['GENEVE','Genève'],
+         ['GLARUS','Glarus'],['GRAUBUNDEN','Graubünden'],['JURA','Jura'],['LUZERN','Luzern'],
+         ['NEUCHATEL','Neuchâtel'],['NIDWALDEN','Nidwalden'],['OBWALDEN','Obwalden'],
+         ['SCHAFFHAUSEN','Schaffhausen'],['SCHWYZ','Schwyz'],['SOLOTHURN','Solothurn'],['ST_GALLEN','St. Gallen'],
+         ['THURGAU','Thurgau'],['TICINO','Ticino'],['URI','Uri'],['VALAIS','Valais'],['VAUD','Vaud'],
+         ['ZUG','Zug'],['ZURICH','Zürich (Winterthur)']]
   };
   const TYPE_LABELS = {'indoor-bouldering':'Indoor bouldering','top-rope':'Top rope','outdoor-bouldering':'Outdoor bouldering','lead-climbing':'Lead climbing'};
-  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy', BE:'Belgium', KR:'South Korea'};
+  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy', BE:'Belgium', KR:'South Korea', ES:'Spain', PT:'Portugal', AT:'Austria', CH:'Switzerland'};
   // Fixed camera target per country for the "fly to this country" click on
   // its sidebar label -- picked to frame that country's actual spread of
   // seed spots (e.g. US needs a wide zoom to fit both NY and CA), not a
@@ -110,7 +132,11 @@
     NL: {center:[5.2,52.1], zoom:7},
     IT: {center:[11,43.3], zoom:5.2},
     BE: {center:[4.6,50.7], zoom:6.6},
-    KR: {center:[128,36], zoom:5.4}
+    KR: {center:[128,36], zoom:5.4},
+    ES: {center:[-1,40.5], zoom:5.5},
+    PT: {center:[-8.5,39.5], zoom:6.2},
+    AT: {center:[14,47.7], zoom:6.2},
+    CH: {center:[8,47.3], zoom:7.2}
   };
   // Which sidebar region-group each country belongs to -- same grouping as
   // the `.region-group[data-region]` wrappers in index.html, kept here too
@@ -119,6 +145,7 @@
   const COUNTRY_TO_REGION = {
     CN:'asia', JP:'asia', KR:'asia',
     DE:'europe', GB:'europe', FR:'europe', SE:'europe', NL:'europe', IT:'europe', BE:'europe',
+    ES:'europe', PT:'europe', AT:'europe', CH:'europe',
     CA:'north-america', US:'north-america',
     AU:'oceania', NZ:'oceania'
   };

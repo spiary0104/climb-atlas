@@ -97,6 +97,18 @@
     --kr-daegu:#7a8acf;
     --kr-jeollanam:#cfaf3f;
     --kr-chungcheongnam:#5ac9c9;
+    --es-madrid:#c9503f;
+    --es-catalunya:#3f8ec9;
+    --pt-lisboa:#3fa563;
+    --pt-coimbra:#c9973f;
+    --pt-porto:#8f3fc9;
+    --at-wien:#c93f7a;
+    --at-steiermark:#3fc9a8;
+    --at-oberosterreich:#7a9ecf;
+    --at-salzburg:#cf9e3f;
+    --ch-zurich:#c93f3f;
+    --ch-basel-stadt:#3fc95a;
+    --ch-bern:#a03fc9;
     --t-outdoor:#b8834a;
     --t-indoor:#3fb8a6;
     --t-toprope:#8a6bb0;
@@ -350,6 +362,18 @@
   .chip[data-country="KR"][data-state="DAEGU"].active{background:var(--kr-daegu);}
   .chip[data-country="KR"][data-state="JEOLLANAM"].active{background:var(--kr-jeollanam);}
   .chip[data-country="KR"][data-state="CHUNGCHEONGNAM"].active{background:var(--kr-chungcheongnam);}
+  .chip[data-country="ES"][data-state="MADRID"].active{background:var(--es-madrid);}
+  .chip[data-country="ES"][data-state="CATALUNYA"].active{background:var(--es-catalunya);}
+  .chip[data-country="PT"][data-state="LISBOA"].active{background:var(--pt-lisboa);}
+  .chip[data-country="PT"][data-state="COIMBRA"].active{background:var(--pt-coimbra);}
+  .chip[data-country="PT"][data-state="PORTO"].active{background:var(--pt-porto);}
+  .chip[data-country="AT"][data-state="WIEN"].active{background:var(--at-wien);}
+  .chip[data-country="AT"][data-state="STEIERMARK"].active{background:var(--at-steiermark);}
+  .chip[data-country="AT"][data-state="OBEROSTERREICH"].active{background:var(--at-oberosterreich);}
+  .chip[data-country="AT"][data-state="SALZBURG"].active{background:var(--at-salzburg);}
+  .chip[data-country="CH"][data-state="ZURICH"].active{background:var(--ch-zurich);}
+  .chip[data-country="CH"][data-state="BASEL_STADT"].active{background:var(--ch-basel-stadt);}
+  .chip[data-country="CH"][data-state="BERN"].active{background:var(--ch-bern);}
 
   .toggle-row{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-dim);font-family:'Space Mono',monospace;cursor:pointer;}
   .toggle-row input{accent-color:var(--vic);}
