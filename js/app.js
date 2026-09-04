@@ -1,7 +1,7 @@
 
 (function(){
 
-  const TYPE_COLORS = {'indoor-bouldering':'#3fb8a6','top-rope':'#8a6bb0','outdoor-bouldering':'#b8834a','lead-climbing':'#4a90c9'};
+  const TYPE_COLORS = {'indoor-bouldering':'#3fb8a6','top-rope':'#8a6bb0','lead-climbing':'#4a90c9'};
   // `state` codes collide across countries (AU's WA = Western Australia, US's WA = Washington),
   // so country+state together identify a region — never key off `state` alone.
   // Every country here lists its REAL, COMPLETE set of top-level administrative
@@ -158,7 +158,7 @@
          ['SANTA_CATARINA','Santa Catarina'],['SAO_PAULO','São Paulo'],['SERGIPE','Sergipe'],
          ['TOCANTINS','Tocantins']]
   };
-  const TYPE_LABELS = {'indoor-bouldering':'Indoor bouldering','top-rope':'Top rope','outdoor-bouldering':'Outdoor bouldering','lead-climbing':'Lead climbing'};
+  const TYPE_LABELS = {'indoor-bouldering':'Indoor bouldering','top-rope':'Top rope','lead-climbing':'Lead climbing'};
   const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy', BE:'Belgium', KR:'South Korea', ES:'Spain', PT:'Portugal', AT:'Austria', CH:'Switzerland', PL:'Poland', DK:'Denmark', FI:'Finland', IE:'Ireland', NO:'Norway', MX:'Mexico', BR:'Brazil'};
   // Fixed camera target per country for the "fly to this country" click on
   // its sidebar label -- picked to frame that country's actual spread of
@@ -251,7 +251,7 @@
   let pendingReports = []; // "report incorrect info" messages awaiting review (moderator-only)
 
   let activeStates = new Set(['ALL']);
-  let activeTypes = new Set(['indoor-bouldering','top-rope','outdoor-bouldering','lead-climbing']);
+  let activeTypes = new Set(['indoor-bouldering','top-rope','lead-climbing']);
   let showClimbedOnly = false;
   let showBookmarkedOnly = false;
   let searchTerm = '';
@@ -989,7 +989,7 @@
     pinStatus.textContent = 'No pin dropped yet — click "Drop pin" then tap the map.';
     pinStatus.classList.remove('set');
     ['fName','fSuburb','fAddress','fNotes','fPhoto','fCountryOther','fStateOther'].forEach(id=>document.getElementById(id).value='');
-    ['fTypeIndoor','fTypeTopRope','fTypeOutdoor','fTypeLead'].forEach(id=>document.getElementById(id).checked=false);
+    ['fTypeIndoor','fTypeTopRope','fTypeLead'].forEach(id=>document.getElementById(id).checked=false);
     document.getElementById('fCountry').value = 'AU';
     toggleOtherCountryFields('f', 'AU');
     modalBackdrop.classList.remove('hidden');
@@ -1042,11 +1042,11 @@
   ['fName','fSuburb'].forEach(id=>{
     document.getElementById(id).addEventListener('input', checkFormReady);
   });
-  ['fTypeIndoor','fTypeTopRope','fTypeOutdoor','fTypeLead'].forEach(id=>{
+  ['fTypeIndoor','fTypeTopRope','fTypeLead'].forEach(id=>{
     document.getElementById(id).addEventListener('change', checkFormReady);
   });
   function selectedTypes(){
-    const map = {fTypeIndoor:'indoor-bouldering', fTypeTopRope:'top-rope', fTypeOutdoor:'outdoor-bouldering', fTypeLead:'lead-climbing'};
+    const map = {fTypeIndoor:'indoor-bouldering', fTypeTopRope:'top-rope', fTypeLead:'lead-climbing'};
     return Object.keys(map).filter(id=>document.getElementById(id).checked).map(id=>map[id]);
   }
   function checkFormReady(){
@@ -1128,7 +1128,6 @@
     document.getElementById('ePhoto').value = g.photo || '';
     document.getElementById('eTypeIndoor').checked = g.types.includes('indoor-bouldering');
     document.getElementById('eTypeTopRope').checked = g.types.includes('top-rope');
-    document.getElementById('eTypeOutdoor').checked = g.types.includes('outdoor-bouldering');
     document.getElementById('eTypeLead').checked = g.types.includes('lead-climbing');
     editPinStatus.textContent = `Current pin: ${g.lat.toFixed(4)}, ${g.lng.toFixed(4)}`;
     editPinStatus.classList.remove('set');
@@ -1156,11 +1155,11 @@
   ['eName','eSuburb'].forEach(id=>{
     document.getElementById(id).addEventListener('input', checkEditFormReady);
   });
-  ['eTypeIndoor','eTypeTopRope','eTypeOutdoor','eTypeLead'].forEach(id=>{
+  ['eTypeIndoor','eTypeTopRope','eTypeLead'].forEach(id=>{
     document.getElementById(id).addEventListener('change', checkEditFormReady);
   });
   function selectedEditTypes(){
-    const map = {eTypeIndoor:'indoor-bouldering', eTypeTopRope:'top-rope', eTypeOutdoor:'outdoor-bouldering', eTypeLead:'lead-climbing'};
+    const map = {eTypeIndoor:'indoor-bouldering', eTypeTopRope:'top-rope', eTypeLead:'lead-climbing'};
     return Object.keys(map).filter(id=>document.getElementById(id).checked).map(id=>map[id]);
   }
   function checkEditFormReady(){

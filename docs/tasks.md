@@ -226,6 +226,38 @@ invent placeholder work just to fill this section.)_
   appear in the country dropdown, `window.SEED_GYMS.length` = 809, no
   console errors. Branch deleted after merge (local + remote).
 
+### Remove outdoor bouldering type "for now"
+- Branch: `feature/remove-outdoor-bouldering-type` — **done — merged to
+  `master`**.
+- What: user asked to remove the "outdoor bouldering" type/tag. This is
+  the type's second removal — it was deleted early in the project,
+  reintroduced by explicit request (see `docs/architecture.md` "Known
+  gaps"), and is now removed again. "For now" reads as leaving the door
+  open to a third reintroduction later, so this only touches UI/config,
+  not the underlying data model (no schema change either time).
+- Removed `outdoor-bouldering` from `TYPE_COLORS`/`TYPE_LABELS`/
+  `activeTypes` in `js/app.js`, its 4 references in the add/edit-spot
+  form-field mapping objects and reset handlers, and its 4 markup blocks
+  in `index.html` (sidebar type filter, map legend, add-spot form,
+  edit-spot form checkboxes).
+- **Confirmed zero-risk removal**: checked `js/data.js` first — no spot
+  carries `outdoor-bouldering` (it was never retroactively applied to
+  seed data since reintroduction, per the original task's own notes), so
+  this is a pure UI change with no data migration needed.
+- **Left `--t-outdoor` CSS variable in place** (`css/style.css`) — it's
+  also reused by `.modal.info-modal .placeholder`'s text colour, unrelated
+  to climbing types, so removing the type didn't touch that rule. No
+  `.chk-outdoor` CSS rule existed to remove (that class was only ever
+  used for JS/HTML hooks, not styled directly).
+- **Verified live** (served copy, `npx serve .`): sidebar type filter,
+  map legend, and both add/edit-spot forms all show exactly 3 types
+  (Indoor bouldering, Top rope, Lead climbing); `window.SEED_GYMS.length`
+  unchanged at 772; no console errors. This was verified back when
+  master was at 772 spots (pre-dating this session's later country
+  additions) — the removal itself is UI-only and unaffected by the data
+  grown on top of it since, but worth noting the smoke test itself
+  wasn't re-run against the current 987-spot dataset.
+
 ### Verify France/Sweden/Italy/Belgium gym positions (64 spots, complete)
 - Branch: `feature/complete-state-lists` (same branch — this merged in
   `feature/add-belgium` first, since Belgium was one of the four
