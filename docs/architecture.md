@@ -70,9 +70,9 @@ are only unique within a country** (e.g. AU's `WA` vs US's `WA` are
 different regions). Anything that filters, colors, or edits by state —
 the chips in `index.html`, `STATES_BY_COUNTRY` in `app.js`, the RLS-safe
 columns in `schema.sql` — keys off the `(country, state)` pair together,
-never `state` alone. Now 18 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
-FR, SE, NL, IT, BE, KR, ES, PT, AT, CH), same pattern each time — keep
-this in mind before adding a 19th. One collision
+never `state` alone. Now 22 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
+FR, SE, NL, IT, BE, KR, ES, PT, AT, CH, PL, DK, FI, IE), same pattern each
+time — keep this in mind before adding a 23rd. One collision
 worth flagging: `US`'s state code for California is `CA`, and `CA` is
 also the top-level country code for Canada — not a real ambiguity since
 they're different object keys/fields (`STATES_BY_COUNTRY.US` contains
@@ -144,9 +144,9 @@ pre-filled with its current value, rather than throwing on
 
 ## Seed data sourcing
 
-`js/data.js` currently has 868 spots (74 AU, 332 US, 32 JP, 15 CA, 9 NZ,
+`js/data.js` currently has 936 spots (74 AU, 332 US, 32 JP, 15 CA, 9 NZ,
 42 CN, 66 GB, 112 DE, 30 FR, 7 SE, 25 NL, 14 IT, 14 BE, 37 KR, 22 ES,
-7 PT, 22 AT, 8 CH), all indoor gyms
+7 PT, 22 AT, 8 CH, 31 PL, 14 DK, 14 FI, 9 IE), all indoor gyms
 (bouldering and/or top rope, with a growing number now also tagged
 lead-climbing — see "Known gaps" below on why outdoor areas were
 removed). It was built up in layers, not
@@ -631,6 +631,68 @@ from one source:
     the start (19/20/9/26 respectively) rather than only the divisions
     these seed spots happen to use, so this doesn't reintroduce the same
     gap the NL report caught.
+  - **Not yet pushed to the live Supabase table** — same next-step gap as
+    every prior country addition.
+- **Poland (31 gyms, 4 cities), Denmark (14, 4 cities), Finland (14, 4
+  cities), and Ireland (9, 5 cities)** — the 19th-22nd countries — same
+  climbing-gyms.com source/method as the prior European batches, third
+  tier of the "add more countries" ask. Norway was deliberately **not**
+  added in this pass — climbing-gyms.com's own Norway page lists only 2
+  gyms total, both in the same Bergen metro area (Kokstad, Laksevåg), too
+  thin to represent a whole country; flagged in `docs/tasks.md` Backlog
+  for a proper web-search-based pass instead, the same tier as Mexico/
+  Brazil.
+  - Poland: Warszawa (11) + Wrocław (8) + Kraków (7) + Poznań (5) = 31.
+  - Denmark: København (7) + Odense (4) + Aarhus (2) + Aalborg (1) = 14.
+  - Finland: Helsinki (8, after one merge below) + Lahti (2) + Oulu (2) +
+    Tampere (2) = 14.
+  - Ireland: scoped differently from every prior climbing-gyms.com
+    country — rather than "top 4 cities," this pass took *every* city
+    the source listed for Ireland (8 city pages), since the country's
+    real distribution is one dominant city (Dublin, 5 gyms including a
+    Finglas outpost) plus a long tail of 1-gym towns, not a clean top-4.
+  - **Three exclusions applied, same filter criteria as the original
+    AU/US Mountain Project pass**: **Galway Climbing Coop** is explicitly
+    members-only, not a normal public-facing gym — excluded. **Mardyke
+    Arena UCC** (Cork, University College Cork's rec center) has
+    ambiguous public-access terms for its climbing wall specifically
+    (confirmed free for UCC students, but general-public PAYG access to
+    the wall itself isn't clearly confirmed) — excluded on the same
+    "can't confirm it's public" caution as the original filter, unlike
+    the Korea university-named gyms (which *were* individually confirmed
+    public and kept). **"Unique Ascent"** was listed under Dublin by the
+    source but turned out via search to be a real outdoor sea-cliff
+    climbing guide company based in Donegal, not an indoor gym at all,
+    and not actually in Dublin — excluded rather than guessed into a
+    location. One kept despite looking similar: **UL Sport Climbing
+    Wall** (University of Limerick) was individually confirmed via search
+    to be genuinely open to the public (with student/staff discounts),
+    so it was kept, disclosed in its own `notes` — same treatment as the
+    Korea university gyms.
+  - **One pair merged rather than kept as two spots**, same pattern as
+    the Salzburg case above: Helsinki's **"KiipeilyAreena Salmisaari"**
+    and **"Salmisaari Sports Center"** shared an address — confirmed via
+    search that Salmisaari Sports Center is the multi-sport building
+    that houses the climbing arena as one venue inside it, not a second
+    independent gym, so only the actual climbing venue was kept.
+  - **Positions individually geocoded** — 65 of 68 addressed spots
+    matched Nominatim directly (2 short retries fixed Polish street-name
+    abbreviation issues and a UK-style city suffix on the Cork query).
+    Two spots had no address in the source at all (Kiipeilyareena -
+    Kalasatama, Helsinki; Gravity Climbing Centre, Dublin) — both fall
+    back to another gym's position in the same city, flagged in `notes`.
+  - **Climbing type inferred from name/chain recognition**, same
+    heuristic as every prior pass — "Boulder"/"Bulderownia"/"Bloc" in
+    Polish, Danish, or English → indoor-bouldering only (all of Denmark's
+    "Beta Boulders" and "Boulders" chain locations were also explicitly
+    tagged "Bouldering gym" by the source, confirming the heuristic);
+    "Kiipeilyareena"/"Klatreklub"/generic "Climbing Center" names with no
+    bouldering-only signal → bouldering + top-rope default.
+  - `state` uses each country's real top-level divisions — Poland's 16
+    voivodeships, Denmark's 5 regions, Finland's 19 regions, and the
+    Republic of Ireland's 26 counties — populated with the complete real
+    set from the start (same standard as every country since the
+    state-list-completeness fix), not just the ones these seed spots use.
   - **Not yet pushed to the live Supabase table** — same next-step gap as
     every prior country addition.
 

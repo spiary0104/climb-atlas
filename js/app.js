@@ -109,10 +109,32 @@
          ['NEUCHATEL','Neuchâtel'],['NIDWALDEN','Nidwalden'],['OBWALDEN','Obwalden'],
          ['SCHAFFHAUSEN','Schaffhausen'],['SCHWYZ','Schwyz'],['SOLOTHURN','Solothurn'],['ST_GALLEN','St. Gallen'],
          ['THURGAU','Thurgau'],['TICINO','Ticino'],['URI','Uri'],['VALAIS','Valais'],['VAUD','Vaud'],
-         ['ZUG','Zug'],['ZURICH','Zürich (Winterthur)']]
+         ['ZUG','Zug'],['ZURICH','Zürich (Winterthur)']],
+    PL: [['DOLNOSLASKIE','Dolnośląskie (Wrocław)'],['KUJAWSKO_POMORSKIE','Kujawsko-Pomorskie'],
+         ['LUBELSKIE','Lubelskie'],['LUBUSKIE','Lubuskie'],['LODZKIE','Łódzkie'],
+         ['MALOPOLSKIE','Małopolskie (Kraków)'],['MAZOWIECKIE','Mazowieckie (Warszawa)'],['OPOLSKIE','Opolskie'],
+         ['PODKARPACKIE','Podkarpackie'],['PODLASKIE','Podlaskie'],['POMORSKIE','Pomorskie'],
+         ['SLASKIE','Śląskie'],['SWIETOKRZYSKIE','Świętokrzyskie'],
+         ['WARMINSKO_MAZURSKIE','Warmińsko-Mazurskie'],['WIELKOPOLSKIE','Wielkopolskie (Poznań)'],
+         ['ZACHODNIOPOMORSKIE','Zachodniopomorskie']],
+    DK: [['HOVEDSTADEN','Hovedstaden (København)'],['MIDTJYLLAND','Midtjylland (Aarhus)'],
+         ['NORDJYLLAND','Nordjylland (Aalborg)'],['SJAELLAND','Sjælland'],['SYDDANMARK','Syddanmark (Odense)']],
+    FI: [['AHVENANMAA','Ahvenanmaa'],['ETELA_KARJALA','Etelä-Karjala'],['ETELA_POHJANMAA','Etelä-Pohjanmaa'],
+         ['ETELA_SAVO','Etelä-Savo'],['KAINUU','Kainuu'],['KANTA_HAME','Kanta-Häme'],
+         ['KESKI_POHJANMAA','Keski-Pohjanmaa'],['KESKI_SUOMI','Keski-Suomi'],['KYMENLAAKSO','Kymenlaakso'],
+         ['LAPPI','Lappi'],['PIRKANMAA','Pirkanmaa (Tampere)'],['POHJANMAA','Pohjanmaa'],
+         ['POHJOIS_KARJALA','Pohjois-Karjala'],['POHJOIS_POHJANMAA','Pohjois-Pohjanmaa (Oulu)'],
+         ['POHJOIS_SAVO','Pohjois-Savo'],['PAIJAT_HAME','Päijät-Häme (Lahti)'],['SATAKUNTA','Satakunta'],
+         ['UUSIMAA','Uusimaa (Helsinki)'],['VARSINAIS_SUOMI','Varsinais-Suomi']],
+    IE: [['CARLOW','Carlow'],['CAVAN','Cavan'],['CLARE','Clare'],['CORK','Cork'],['DONEGAL','Donegal'],
+         ['DUBLIN','Dublin'],['GALWAY','Galway'],['KERRY','Kerry'],['KILDARE','Kildare'],['KILKENNY','Kilkenny'],
+         ['LAOIS','Laois'],['LEITRIM','Leitrim'],['LIMERICK','Limerick'],['LONGFORD','Longford'],
+         ['LOUTH','Louth'],['MAYO','Mayo'],['MEATH','Meath'],['MONAGHAN','Monaghan'],['OFFALY','Offaly'],
+         ['ROSCOMMON','Roscommon'],['SLIGO','Sligo'],['TIPPERARY','Tipperary'],['WATERFORD','Waterford'],
+         ['WESTMEATH','Westmeath'],['WEXFORD','Wexford'],['WICKLOW','Wicklow']]
   };
   const TYPE_LABELS = {'indoor-bouldering':'Indoor bouldering','top-rope':'Top rope','outdoor-bouldering':'Outdoor bouldering','lead-climbing':'Lead climbing'};
-  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy', BE:'Belgium', KR:'South Korea', ES:'Spain', PT:'Portugal', AT:'Austria', CH:'Switzerland'};
+  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy', BE:'Belgium', KR:'South Korea', ES:'Spain', PT:'Portugal', AT:'Austria', CH:'Switzerland', PL:'Poland', DK:'Denmark', FI:'Finland', IE:'Ireland'};
   // Fixed camera target per country for the "fly to this country" click on
   // its sidebar label -- picked to frame that country's actual spread of
   // seed spots (e.g. US needs a wide zoom to fit both NY and CA), not a
@@ -136,7 +158,11 @@
     ES: {center:[-1,40.5], zoom:5.5},
     PT: {center:[-8.5,39.5], zoom:6.2},
     AT: {center:[14,47.7], zoom:6.2},
-    CH: {center:[8,47.3], zoom:7.2}
+    CH: {center:[8,47.3], zoom:7.2},
+    PL: {center:[18,52], zoom:5.8},
+    DK: {center:[10,56], zoom:6},
+    FI: {center:[26,63], zoom:4.8},
+    IE: {center:[-7.5,53.2], zoom:6.5}
   };
   // Which sidebar region-group each country belongs to -- same grouping as
   // the `.region-group[data-region]` wrappers in index.html, kept here too
@@ -145,7 +171,7 @@
   const COUNTRY_TO_REGION = {
     CN:'asia', JP:'asia', KR:'asia',
     DE:'europe', GB:'europe', FR:'europe', SE:'europe', NL:'europe', IT:'europe', BE:'europe',
-    ES:'europe', PT:'europe', AT:'europe', CH:'europe',
+    ES:'europe', PT:'europe', AT:'europe', CH:'europe', PL:'europe', DK:'europe', FI:'europe', IE:'europe',
     CA:'north-america', US:'north-america',
     AU:'oceania', NZ:'oceania'
   };

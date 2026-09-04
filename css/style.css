@@ -109,6 +109,23 @@
     --ch-zurich:#c93f3f;
     --ch-basel-stadt:#3fc95a;
     --ch-bern:#a03fc9;
+    --pl-mazowieckie:#c9583f;
+    --pl-dolnoslaskie:#3f9ec9;
+    --pl-malopolskie:#8ec93f;
+    --pl-wielkopolskie:#c93f9e;
+    --dk-hovedstaden:#3fc9c0;
+    --dk-syddanmark:#c9a33f;
+    --dk-midtjylland:#6b3fc9;
+    --dk-nordjylland:#3fc95e;
+    --fi-uusimaa:#c93f5e;
+    --fi-paijat-hame:#3f7ac9;
+    --fi-pohjois-pohjanmaa:#a8c93f;
+    --fi-pirkanmaa:#c9843f;
+    --ie-dublin:#3f9ecf;
+    --ie-wicklow:#c93f6b;
+    --ie-clare:#5ac93f;
+    --ie-cork:#9e3fc9;
+    --ie-limerick:#c9c33f;
     --t-outdoor:#b8834a;
     --t-indoor:#3fb8a6;
     --t-toprope:#8a6bb0;
@@ -374,6 +391,23 @@
   .chip[data-country="CH"][data-state="ZURICH"].active{background:var(--ch-zurich);}
   .chip[data-country="CH"][data-state="BASEL_STADT"].active{background:var(--ch-basel-stadt);}
   .chip[data-country="CH"][data-state="BERN"].active{background:var(--ch-bern);}
+  .chip[data-country="PL"][data-state="MAZOWIECKIE"].active{background:var(--pl-mazowieckie);}
+  .chip[data-country="PL"][data-state="DOLNOSLASKIE"].active{background:var(--pl-dolnoslaskie);}
+  .chip[data-country="PL"][data-state="MALOPOLSKIE"].active{background:var(--pl-malopolskie);}
+  .chip[data-country="PL"][data-state="WIELKOPOLSKIE"].active{background:var(--pl-wielkopolskie);}
+  .chip[data-country="DK"][data-state="HOVEDSTADEN"].active{background:var(--dk-hovedstaden);}
+  .chip[data-country="DK"][data-state="SYDDANMARK"].active{background:var(--dk-syddanmark);}
+  .chip[data-country="DK"][data-state="MIDTJYLLAND"].active{background:var(--dk-midtjylland);}
+  .chip[data-country="DK"][data-state="NORDJYLLAND"].active{background:var(--dk-nordjylland);}
+  .chip[data-country="FI"][data-state="UUSIMAA"].active{background:var(--fi-uusimaa);}
+  .chip[data-country="FI"][data-state="PAIJAT_HAME"].active{background:var(--fi-paijat-hame);}
+  .chip[data-country="FI"][data-state="POHJOIS_POHJANMAA"].active{background:var(--fi-pohjois-pohjanmaa);}
+  .chip[data-country="FI"][data-state="PIRKANMAA"].active{background:var(--fi-pirkanmaa);}
+  .chip[data-country="IE"][data-state="DUBLIN"].active{background:var(--ie-dublin);}
+  .chip[data-country="IE"][data-state="WICKLOW"].active{background:var(--ie-wicklow);}
+  .chip[data-country="IE"][data-state="CLARE"].active{background:var(--ie-clare);}
+  .chip[data-country="IE"][data-state="CORK"].active{background:var(--ie-cork);}
+  .chip[data-country="IE"][data-state="LIMERICK"].active{background:var(--ie-limerick);}
 
   .toggle-row{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-dim);font-family:'Space Mono',monospace;cursor:pointer;}
   .toggle-row input{accent-color:var(--vic);}

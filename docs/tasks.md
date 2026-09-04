@@ -36,16 +36,70 @@ Each entry:
 
 ## Backlog
 
-- **Add Poland, Denmark, Norway, Finland, Ireland** — second tier of the
-  "add more countries" ask, via climbing-gyms.com same as the
-  Spain/Portugal/Austria/Switzerland batch. Not started.
-- **Add Mexico and/or Brazil** — third tier of the same ask. No single
-  reliable directory site confirmed yet for either country (unlike
-  climbing-gyms.com's European coverage or Mountain Project's Korea
-  coverage) — would need a lighter-touch web-search pass like the
-  original Japan/Canada/New Zealand passes. Not started.
+- **Add Norway** — climbing-gyms.com's own Norway coverage is just 2
+  gyms in one metro area (Bergen: Kokstad, Laksevåg), too thin to use for
+  a whole-country pass (see the Poland/Denmark/Finland/Ireland task
+  below). Needs the same lighter-touch web-search method as Mexico/
+  Brazil instead of this source. Not started.
+- **Add Mexico and/or Brazil** — third tier of the "add more countries"
+  ask. No single reliable directory site confirmed yet for either
+  country (unlike climbing-gyms.com's European coverage or Mountain
+  Project's Korea coverage) — would need a lighter-touch web-search pass
+  like the original Japan/Canada/New Zealand passes. Not started.
 
 ## In Progress
+
+### Add Poland, Denmark, Finland, Ireland (68 gyms)
+- Branch: `feature/add-poland-denmark-norway-finland-ireland` (new
+  branch off `master`)
+- Status: implemented + verified live in a served copy; not yet merged.
+- What: continuing "add more countries in" — second Europe tier via
+  climbing-gyms.com, same method as the Spain/Portugal/Austria/
+  Switzerland batch. Norway was dropped from this batch (see Backlog)
+  after checking its actual page — only 2 gyms total, not enough to
+  represent the country.
+  - Poland: Warszawa (11) + Wrocław (8) + Kraków (7) + Poznań (5) = 31.
+  - Denmark: København (7) + Odense (4) + Aarhus (2) + Aalborg (1) = 14.
+  - Finland: Helsinki (8) + Lahti (2) + Oulu (2) + Tampere (2) = 14.
+  - Ireland: every city the source listed (8 pages), not just a top 4 —
+    Dublin dominates (5 gyms) with a long tail of 1-gym towns, so "top 4"
+    didn't fit; ended up with Dublin, Bray, Cloonlara, Cork City,
+    Limerick = 9 gyms after 3 exclusions.
+- **3 gyms excluded** on the same criteria as the original AU/US
+  Mountain Project pass: Galway Climbing Coop (explicitly members-only),
+  Mardyke Arena UCC (Cork — ambiguous public access to the climbing wall
+  specifically, unlike UL Sport Climbing Wall which *was* confirmed
+  public and kept), and "Unique Ascent" (listed under Dublin by the
+  source but actually a Donegal outdoor sea-cliff guiding company, not
+  an indoor gym, and not in Dublin at all). Full reasoning in
+  `docs/architecture.md` "Seed data sourcing".
+- **One pair merged, not double-pinned**: Helsinki's "KiipeilyAreena
+  Salmisaari" and "Salmisaari Sports Center" turned out to be the same
+  physical venue (the sports center building houses the climbing arena,
+  not a second separate gym) — same pattern as the Salzburg merge in the
+  prior batch.
+- Added `PL`/`DK`/`FI`/`IE` to `STATES_BY_COUNTRY` with each country's
+  complete real top-level divisions (Poland 16 voivodeships, Denmark 5
+  regions, Finland 19 regions, Ireland 26 counties) — same
+  completeness standard as every country since the NL fix — plus
+  `COUNTRY_LABELS`, `COUNTRY_FLY_TARGETS`, `COUNTRY_TO_REGION` (europe)
+  in `js/app.js`; 17 new CSS colour variables (only for divisions with
+  actual spots: 4 PL, 4 DK, 4 FI, 5 IE) + chip rules in `css/style.css`;
+  4 new sidebar chip groups in their alphabetical Europe slots (Denmark,
+  Finland between Belgium and France; Ireland between Germany and Italy;
+  Poland between Netherlands and Portugal) and country `<option>`s in
+  both add/edit forms.
+- Net result: 868 → **936 total spots**. Structural check (Node-parsed
+  `window.SEED_GYMS`): 936/936 unique ids, zero duplicate
+  name+suburb+state+country combos.
+- **Verified live** (served copy, `npx serve .`): add-spot form's country
+  dropdown correctly lists all 16 PL / 5 DK / 19 FI / 26 IE divisions;
+  all 4 new sidebar chip groups render in the right alphabetical Europe
+  slots with correct colours; `window.SEED_GYMS.length` = 936; no
+  console errors.
+- **Not yet done**: pushing/merging this branch; the live Supabase table
+  (same outstanding step as every country addition this session);
+  Norway and Mexico/Brazil (Backlog).
 
 ### Add Spain, Portugal, Austria, Switzerland (59 gyms)
 - Branch: `feature/add-spain-portugal-switzerland-austria` (new branch
