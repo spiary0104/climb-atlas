@@ -87,6 +87,16 @@
     --be-flanders:#c9793f;
     --be-wallonia:#4a9ecf;
     --be-brussels:#8a5cc9;
+    --kr-seoul:#d1495c;
+    --kr-busan:#3f9ecf;
+    --kr-gyeonggi:#6fae3f;
+    --kr-gwangju:#a35cc9;
+    --kr-gyeongsangnam:#cf8a3f;
+    --kr-ulsan:#3fcf9e;
+    --kr-incheon:#cf3f7a;
+    --kr-daegu:#7a8acf;
+    --kr-jeollanam:#cfaf3f;
+    --kr-chungcheongnam:#5ac9c9;
     --t-outdoor:#b8834a;
     --t-indoor:#3fb8a6;
     --t-toprope:#8a6bb0;
@@ -330,6 +340,16 @@
   .chip[data-country="BE"][data-state="FLANDERS"].active{background:var(--be-flanders);}
   .chip[data-country="BE"][data-state="WALLONIA"].active{background:var(--be-wallonia);}
   .chip[data-country="BE"][data-state="BRUSSELS"].active{background:var(--be-brussels);}
+  .chip[data-country="KR"][data-state="SEOUL"].active{background:var(--kr-seoul);}
+  .chip[data-country="KR"][data-state="BUSAN"].active{background:var(--kr-busan);}
+  .chip[data-country="KR"][data-state="GYEONGGI"].active{background:var(--kr-gyeonggi);}
+  .chip[data-country="KR"][data-state="GWANGJU"].active{background:var(--kr-gwangju);}
+  .chip[data-country="KR"][data-state="GYEONGSANGNAM"].active{background:var(--kr-gyeongsangnam);}
+  .chip[data-country="KR"][data-state="ULSAN"].active{background:var(--kr-ulsan);}
+  .chip[data-country="KR"][data-state="INCHEON"].active{background:var(--kr-incheon);}
+  .chip[data-country="KR"][data-state="DAEGU"].active{background:var(--kr-daegu);}
+  .chip[data-country="KR"][data-state="JEOLLANAM"].active{background:var(--kr-jeollanam);}
+  .chip[data-country="KR"][data-state="CHUNGCHEONGNAM"].active{background:var(--kr-chungcheongnam);}
 
   .toggle-row{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-dim);font-family:'Space Mono',monospace;cursor:pointer;}
   .toggle-row input{accent-color:var(--vic);}
