@@ -523,9 +523,22 @@
     margin-left:1px;
   }
   .type-filter{display:flex;flex-direction:column;gap:7px;margin-top:12px;padding-top:10px;border-top:1px solid var(--border);}
-  .type-check{display:flex;align-items:center;gap:8px;font-size:12.5px;font-family:'Space Mono',monospace;color:var(--text);cursor:pointer;}
-  .type-check .dot{width:9px;height:9px;flex-shrink:0;border-radius:40% 60% 55% 45%/50% 45% 55% 50%;border:1px solid rgba(0,0,0,0.35);}
-  .type-check input{cursor:pointer;}
+  /* Specificity note: the add/edit-spot forms' type/marks checkboxes sit
+     inside a <div class="field"> wrapper (for layout spacing), and
+     .field label / .field input (further down, meant for the forms'
+     real text/select fields) are both MORE specific than a bare
+     .type-check or .type-check input -- so without the extra
+     .type-filter qualifier here, .field's rules silently won: label
+     fell back to display:block (breaking the whole flex row) and picked
+     up .field label's text-transform:uppercase, and the checkbox
+     <input> got stretched to .field input's width:100%, both v
+     isibly breaking the layout (checkbox detached from its own label,
+     a sliver of the next control's dot poking in from the edge). The
+     sidebar's own filter checkboxes were never inside a .field, so they
+     were never affected -- only the modal forms' copies were broken. */
+  .type-filter .type-check{display:flex;align-items:center;gap:8px;font-size:12.5px;font-family:'Space Mono',monospace;color:var(--text);cursor:pointer;text-transform:none;margin-bottom:0;letter-spacing:normal;}
+  .type-filter .type-check .dot{width:9px;height:9px;flex-shrink:0;border-radius:40% 60% 55% 45%/50% 45% 55% 50%;border:1px solid rgba(0,0,0,0.35);}
+  .type-filter .type-check input[type="checkbox"]{cursor:pointer;width:auto;flex-shrink:0;}
   .type-check input.chk-indoor{accent-color:var(--t-indoor);}
   .type-check input.chk-toprope{accent-color:var(--t-toprope);}
   .type-check input.chk-lead{accent-color:var(--t-lead);}

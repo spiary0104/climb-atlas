@@ -310,6 +310,22 @@
     }catch(err){
       console.warn('Sky/atmosphere not supported in this MapLibre build', err);
     }
+    try{
+      // CARTO's Dark Matter style ships "roadname_major" (its own major/
+      // arterial road name labels) at text-color #383838 -- a near-black
+      // dark grey, on a #111 halo, over an already-dark basemap. Every
+      // other road tier in the same style (roadname_pri/sec/minor) uses a
+      // light grey (rgb ~146-189) that reads fine; roadname_major is the
+      // one tier that's essentially invisible, which is backwards since
+      // it's the most prominent road class. This looks like an upstream
+      // styling gap in CARTO's own style rather than anything intentional
+      // -- confirmed by reading the loaded style's actual paint properties
+      // (`map.getStyle().layers`), not guessed. Brightened to match the
+      // other tiers instead of leaving major roads unreadable.
+      map.setPaintProperty('roadname_major', 'text-color', '#c8c8c8');
+    }catch(err){
+      console.warn('roadname_major layer not found in this basemap style', err);
+    }
   });
 
   // MapLibre doesn't cluster arbitrary DOM markers itself, so supercluster

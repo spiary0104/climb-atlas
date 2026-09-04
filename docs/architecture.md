@@ -789,6 +789,30 @@ from one source:
   - **Not yet pushed to the live Supabase table** — same next-step gap as
     every prior country addition.
 
+## Form field CSS specificity
+
+The add/edit-spot forms' `.type-check` checkbox rows (`css/style.css`)
+sit inside a `<div class="field">` wrapper, used everywhere else in the
+same forms purely for spacing. `.field label` and `.field input` (styled
+for the forms' real text/select fields — uppercase mini-labels, full-
+width text inputs) are both *more specific* than a bare `.type-check` or
+`.type-check input`, so they silently won on every property they both
+touched: the label fell back to `display:block` (collapsing the whole
+flex row a checkbox/dot/text needs), picked up `text-transform:uppercase`
+it never asked for, and the `<input>` itself got stretched to
+`.field input`'s `width:100%` instead of its native checkbox size —
+together rendering as a checkbox visibly detached from its own label,
+with the next control's colour dot poking in from the edge. Fixed by
+re-scoping the rules as `.type-filter .type-check` / `.type-filter
+.type-check input[type="checkbox"]` — two classes outrank `.field`'s
+class+element selector, so no `!important` was needed here (unlike the
+sidebar chip-legibility fix in "Map" below, which genuinely needed it to
+beat an inline style). The sidebar's own copies of these same checkboxes
+were never
+inside a `.field` wrapper, so they'd always rendered correctly — worth
+remembering before assuming "it works in the sidebar" means a shared
+class is fine everywhere it's reused.
+
 ## Map
 
 - MapLibre GL, not Leaflet — chosen for the 3D globe projection
@@ -804,6 +828,22 @@ from one source:
   occurrence counts of `globe`-related identifiers in the real unpkg
   bundles for 4.7.1 (1 occurrence) vs 5.24.0 (234, including real
   `globe_extrude` shader code), not by version-number guessing.
+- **CARTO's Dark Matter style has a real bug in its own major-road label
+  colour**, fixed at runtime rather than left alone: `roadname_major`
+  (the `transportation_name` symbol layer for arterial/major roads,
+  `minzoom:13`) ships with `text-color:#383838` — a near-black dark grey
+  on a `#111` halo, over an already-dark basemap. Every other road tier
+  in the same style (`roadname_pri`/`roadname_sec`/`roadname_minor`) uses
+  a light grey (`rgb` values roughly 146–189) that reads fine; major
+  roads are the one tier that's essentially invisible, backwards for the
+  most prominent road class. Confirmed by reading the actual loaded
+  style's paint properties (`map.getStyle().layers`) rather than
+  assuming, and by toggling the colour back and forth on a real street
+  ("Cahill Expressway", Sydney) to see it vanish/reappear. Fixed with one
+  `map.setPaintProperty('roadname_major', 'text-color', '#c8c8c8')` call
+  in the same `style.load` handler that already sets the globe projection
+  and sky tint — brightened to match the other road tiers, not an
+  arbitrary colour choice.
 - **Don't `fitBounds` across the whole `spots` array** — AU (~lng 113 to
   153) and US (~lng -125 to -70) sit on opposite sides of the Pacific.
   `maplibregl.LngLatBounds.extend()` only tracks running min/max longitude,

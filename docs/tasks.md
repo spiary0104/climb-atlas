@@ -44,9 +44,51 @@ invent placeholder work just to fill this section.)_
 
 ## In Progress
 
-### Update About page, fix a real chip-legibility bug
-- Branch: `feature/update-about-polish-chips` (new branch off `master`)
+### Fix edit-form checkbox layout, fix invisible major-road labels
+- Branch: `feature/fix-edit-form-checkboxes-and-street-labels` (new
+  branch off `master`)
 - Status: implemented + verified live in a served copy; not yet merged.
+- What: two bug reports in one message. (1) In the edit-spot modal,
+  "Type (select all that apply)" checkboxes weren't aligned with their
+  labels, and a sliver of the next checkbox's colour dot poked in from
+  the side. (2) Some street names on the map were unreadable due to
+  colouring.
+- **(1)**: root cause was a CSS specificity conflict, not a markup bug —
+  `.field label`/`.field input` (styled for the forms' real text/select
+  fields) are both more specific than the checkboxes' own `.type-check`/
+  `.type-check input` rules, so they silently won: label fell back to
+  `display:block` (breaking the flex row), picked up an unwanted
+  `text-transform:uppercase`, and the checkbox `<input>` got stretched to
+  100% width. Confirmed via computed styles in a served copy before
+  guessing at a fix. Fixed by re-scoping to `.type-filter .type-check` /
+  `.type-filter .type-check input[type="checkbox"]`, specific enough to
+  win without `!important`. Full detail in `docs/architecture.md` "Form
+  field CSS specificity". Sidebar's own checkboxes were unaffected (never
+  inside a `.field` wrapper) — this only ever hit the add/edit-spot
+  forms' copies.
+- **(2)**: asked which "street names" first (map's own road labels vs. a
+  spot's address text in its popup) rather than guessing — user meant the
+  basemap's actual road labels. Read the loaded MapLibre style directly
+  (`map.getStyle().layers`) and found a real bug in CARTO's own Dark
+  Matter style: `roadname_major` (major/arterial roads) ships with
+  `text-color:#383838` — near-black on a `#111` halo, essentially
+  invisible — while every other road tier (`roadname_pri`/`sec`/`minor`)
+  uses a light, legible grey. Confirmed by toggling the colour on a real
+  street ("Cahill Expressway", Sydney) and watching it vanish/reappear.
+  Fixed with one `map.setPaintProperty('roadname_major', 'text-color',
+  '#c8c8c8')` call alongside the existing globe/sky setup in the
+  `style.load` handler.
+- **Verified live** (served copy, `npx serve .`, temporary
+  `window.__debugMap = map` handle — removed before committing, `git
+  diff` checked after): edit-form checkbox row confirmed `display:flex`,
+  native checkbox width, `text-transform:none` (was `block`, `100%`,
+  `uppercase`); `roadname_major` confirmed `#c8c8c8` live and visually
+  legible against a real street. No console errors either fix.
+- **Not yet done**: pushing/merging this branch.
+
+### Update About page, fix a real chip-legibility bug
+- Branch: `feature/update-about-polish-chips` — **done — merged to
+  `master`**.
 - What: two requests in one message. (1) "Update the about section" —
   `about.html` still had the same stale 6-country list ("Australia, the
   United States, Japan, Canada, New Zealand, and China") and only
