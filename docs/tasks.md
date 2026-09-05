@@ -44,9 +44,37 @@ invent placeholder work just to fill this section.)_
 
 ## In Progress
 
-### Lower the geocode-accuracy threshold to 200m (40 more spots corrected)
-- Branch: `feature/geocode-200m-check` (new branch off `master`)
+### Lower the geocode-accuracy threshold to 100m (11 more spots corrected)
+- Branch: `feature/geocode-100m-check` (new branch off `master`)
 - Status: **done — verified live; not yet merged.**
+- What: sixth follow-up in this series — user asked to keep going. Only
+  34 spots came back ≥100m (real convergence, not just a smaller slice),
+  22 already-handled, leaving 12 new candidates (5 US, 7 non-US).
+- All 5 US spots fixed via Census/Nominatim agreement, every one within
+  0.09km. 6 of 7 non-US spots fixed via Photon. **1 new unresolved**:
+  **Awesome Walls - Dublin** — both Nominatim's and Photon's matches
+  were street/area-level, not address-specific, not precise enough to
+  justify moving an already-close (188m) pin.
+- Running total of independently-verified positions: 303 → **314 of 987
+  spots**. Structural check (`node --check` + Node-parsed re-count):
+  987/987 unique ids, zero duplicate name+suburb+state+country combos.
+- **Verified live** (served copy, `npx serve .`): `window.SEED_GYMS.length`
+  = 987; spot-checked 4 fixed/unresolved entries directly in the loaded
+  data; no console errors.
+- **Not yet done**: pushing/merging this branch; re-running
+  `supabase/seed.html`'s generated SQL against the live Supabase table.
+- **Unresolved-list total is now 16**: Sessions Climbing & Fitness, Rock
+  Odyssey Hadan, The Wall Bouldering Gym, Climb Moab, Adamanta Sierra,
+  Pulse Climbing, Climbing Cave, Beyond Bouldering (Clovelly Park),
+  Vertigo - Lisboa, City Summit, Momentum Lehi, Grabit, Willy's World
+  Adventure, Xkala by Walltopia, Motion Boulder 2, Awesome Walls -
+  Dublin — every one address-confirmed-real, position-unconfirmable.
+  Remaining candidates below this threshold are converging on genuine
+  geocoder-precision noise rather than real data errors.
+
+### Lower the geocode-accuracy threshold to 200m (40 more spots corrected)
+- Branch: `feature/geocode-200m-check` — **done — merged to `master`**.
+- Status: done — merged.
 - What: fifth follow-up in this series — user asked to keep going. Same
   reused-cache method. 62 spots came back ≥200m; 20 already-correct or
   already-unresolved, leaving 42 new candidates (24 US, 18 non-US).

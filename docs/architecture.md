@@ -1026,6 +1026,30 @@ from one source:
   - Unresolved-list total across the whole series is now **15** (TOKA
     climbing still excluded as a known non-issue): the 13 from the 500m
     pass above, plus **Xkala by Walltopia** and **Motion Boulder 2**.
+- **Lowered the geocode-accuracy threshold to 100m (11 more spots
+  corrected)**: sixth follow-up. Only 34 spots came back ≥100m — real
+  convergence, not just a smaller slice of a still-large pool — 22
+  already-handled, leaving 12 new candidates (5 US, 7 non-US).
+  - **All 5 US spots confirmed** via Census agreeing with Nominatim,
+    every one within 0.09km.
+  - **6 of 7 non-US spots confirmed** via Photon, most exact/near-exact
+    matches, across AU/CA/NZ/KR/CH/FI. **1 stayed unresolved**:
+    **Awesome Walls - Dublin** — both Nominatim's own match ("North
+    Road", no house number) and Photon's (an electoral-ward boundary,
+    not a business or address) are street/area-level rather than
+    address-specific, so neither was precise enough to justify moving a
+    pin that's already only 188m off.
+  - Running total of independently-verified positions: 303 → **314 of
+    987 spots**. Structural check (`node --check` + Node-parsed
+    re-count): 987/987 unique ids, zero duplicate
+    name+suburb+state+country combos.
+  - **Not yet pushed to the live Supabase table** — same outstanding step
+    as every prior correction pass.
+  - Unresolved-list total is now **16** — full list in `docs/tasks.md`.
+    At this point remaining candidates are converging on genuine
+    geocoder-precision noise rather than real data errors — this is
+    close to the practical floor of what free geocoding tools can
+    resolve for this dataset.
 
 ## Form field CSS specificity
 
