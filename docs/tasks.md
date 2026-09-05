@@ -44,9 +44,35 @@ invent placeholder work just to fill this section.)_
 
 ## In Progress
 
-### Lower the geocode-accuracy threshold to 500m (67 more spots corrected)
-- Branch: `feature/geocode-500m-check` (new branch off `master`)
+### Lower the geocode-accuracy threshold to 200m (40 more spots corrected)
+- Branch: `feature/geocode-200m-check` (new branch off `master`)
 - Status: **done — verified live; not yet merged.**
+- What: fifth follow-up in this series — user asked to keep going. Same
+  reused-cache method. 62 spots came back ≥200m; 20 already-correct or
+  already-unresolved, leaving 42 new candidates (24 US, 18 non-US).
+- All 24 US spots fixed via Census/Nominatim agreement — every one
+  within 0.35km, the tightest batch yet, no tiebreaker needed for any.
+- 16 of 18 non-US spots fixed via Photon, many exact named-POI matches.
+  **2 new unresolved**: **Xkala by Walltopia** and **Motion Boulder 2**
+  (both Mexico) — addresses confirmed real, but Photon's match for each
+  landed somewhere unrelated with no way to break the tie with
+  Nominatim.
+- Running total of independently-verified positions: 264 → **303 of 987
+  spots**. Structural check (`node --check` + Node-parsed re-count):
+  987/987 unique ids, zero duplicate name+suburb+state+country combos.
+- **Verified live** (served copy, `npx serve .`): `window.SEED_GYMS.length`
+  = 987; spot-checked 6 fixed/unresolved entries directly in the loaded
+  data; no console errors.
+- **Not yet done**: pushing/merging this branch; re-running
+  `supabase/seed.html`'s generated SQL against the live Supabase table.
+- **Unresolved-list total across the whole series is now 15** — full
+  list in `docs/architecture.md` "Seed data sourcing". At this point
+  remaining errors are all comfortably sub-500m for everything fixable;
+  diminishing returns are setting in on this series.
+
+### Lower the geocode-accuracy threshold to 500m (67 more spots corrected)
+- Branch: `feature/geocode-500m-check` — **done — merged to `master`**.
+- Status: done — merged.
 - What: fourth follow-up in this series — user asked to keep going and
   verify anything over 500m. Same reused-cache method as the previous
   three passes. 87 spots came back ≥500m; 18 were already-correct or

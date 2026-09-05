@@ -1000,6 +1000,32 @@ from one source:
     Adventure** — every one with its address independently confirmed
     real via web search, none with a position any free geocoding tool
     available to this project could confirm or correct.
+- **Lowered the geocode-accuracy threshold to 200m (40 more spots
+  corrected)**: fifth follow-up in this series. 62 spots came back
+  ≥200m; 20 were already-correct or already-researched-and-unresolved,
+  leaving 42 genuinely new candidates (24 US, 18 non-US) — errors this
+  small confirm the dataset is converging, not just shrinking by
+  threshold alone.
+  - **All 24 US spots confirmed** via Census agreeing with Nominatim,
+    every one within 0.35km (most well under 0.1km) — the tightest,
+    cleanest batch yet, no tiebreaker source needed for any of them.
+  - **16 of 18 non-US spots confirmed** via Photon, many exact (0.00km)
+    named-business-POI matches, across AU/CA/FR/IT/PL/FI/IE. **2 stayed
+    unresolved**: **Xkala by Walltopia** and **Motion Boulder 2** (both
+    Mexico) — both addresses independently re-confirmed real via search,
+    but Photon's own match for each landed somewhere clearly unrelated
+    (a public park for Xkala, a different street segment ~750m away for
+    Motion Boulder 2), giving no way to break the tie with Nominatim, so
+    neither pin was touched.
+  - Running total of independently-verified positions: 264 → **303 of
+    987 spots**. Structural check (`node --check` + Node-parsed
+    re-count): 987/987 unique ids, zero duplicate
+    name+suburb+state+country combos.
+  - **Not yet pushed to the live Supabase table** — same outstanding step
+    as every prior correction pass.
+  - Unresolved-list total across the whole series is now **15** (TOKA
+    climbing still excluded as a known non-issue): the 13 from the 500m
+    pass above, plus **Xkala by Walltopia** and **Motion Boulder 2**.
 
 ## Form field CSS specificity
 
