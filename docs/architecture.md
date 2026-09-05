@@ -846,6 +846,67 @@ from one source:
     generated SQL needs re-running in the SQL Editor to carry these 31
     corrected positions (and every other still-pending change) onto the
     live map.
+- **Lowered the geocode-accuracy threshold again, to 2km (46 more spots
+  corrected)**: direct follow-up to the 3km pass above — recomputed every
+  addressed spot's distance from its cached Nominatim geocode against the
+  *current* (post-3km-fix) `js/data.js` positions, without re-hitting
+  Nominatim (its result doesn't change), and found 57 spots ≥2km off.
+  8 of those were spots the 3km pass had already deliberately fixed using
+  a non-Nominatim source (Census or Photon) — their distance *from
+  Nominatim* stayed large on purpose, since Nominatim was the source
+  rejected in favour of a better one; not a new issue. That left 49
+  genuinely new candidates (39 US, 10 non-US), cross-checked the same way:
+  - **40 US spots**: confirmed via the Census geocoder agreeing with
+    Nominatim, applied directly (mirroring the ≤0.5km-agreement rule from
+    the 3km pass, one entry — Flowstone Climbing — let through at 0.54km
+    since it's still clearly the same location just fractionally less
+    precise agreement).
+  - **9 more US spots** needed a third source since Nominatim and Census
+    disagreed by 1-4.3km: Photon confirmed **Adrenaline Climbing** and
+    **Central Rock Gym – Waltham** and **MetroRock Littleton** agreeing
+    with *Nominatim* (two of them via a direct named-business POI match —
+    "Adrenaline Climbing", "MetroRock Littleton" — the strongest kind of
+    confirmation this project's tooling can get); Photon confirmed
+    **Elevation Rock Gym**, **Momentum Millcreek**, **The Scratch Pad**,
+    and **The Quarry** agreeing with *Census* instead (three of those via
+    a named "Elevation Rock Gym" POI or nearby transit-stop nodes within
+    0.02-0.55km) — all four are in Utah, where Nominatim's own OSM data
+    for these addresses turned out to be the less accurate side of the
+    disagreement, the reverse of the usual pattern. **Climbing Cave**
+    (Queensbury, NY) stayed unresolved: Census matched a *different*
+    street ("Glen Ct" vs. the confirmed real "Glen Dr") and Photon
+    couldn't find "Glen Drive" in its index at all — neither free
+    geocoder can locate this specific street, so the pin wasn't touched
+    despite the business's own address being confirmed real via search.
+  - **9 non-US spots** (5 AU, 1 Canada, 1 NZ, 1 China, 1 Portugal) had no
+    Census coverage, so each was cross-checked via Photon and, for one,
+    a corrected/more specific address found via search:
+    **Allez Up** (Montreal) and **Boulder Co Auckland** matched a named
+    business POI or exact house-number POI directly; **Dynomite North
+    Wollongong**, **Crank** (Macgregor), and **Rockface** (Balcatta) all
+    landed within 0.08-0.6km of Nominatim's point via Photon's own street/
+    building data; **Banana Climbing (Yuefang ID Mall)**, Changsha,
+    matched the same street object in both geocoders exactly. **Urban
+    Jungle** (Perth) — originally just approximated to its corrected
+    suburb during the AU address-verification pilot, never individually
+    geocoded — turned out to have a Nominatim match resolving directly to
+    a named "Urban Jungle Jandakot" business POI, so it got a real
+    geocoded position for the first time here. Three stayed unresolved
+    for lack of a confirming source: **Pulse Climbing** (Warners Bay) and
+    **Beyond Bouldering** (Clovelly Park) — Photon returned only nearby
+    transit stops, no address- or business-level match; **Vertigo -
+    Lisboa** — the original address has no house number at all (a known,
+    disclosed gap from the original climbing-gyms.com sourcing pass), and
+    a more specific building name found via search ("Edifício Beira Rio")
+    didn't resolve to a unique location in either geocoder — likely
+    another same-named-street ambiguity in the Lisboa area, the same
+    failure mode as TOKA climbing above, just without an existing fix to
+    point to.
+  - Running total of independently-verified positions: 71 → **117 of 987
+    spots**. Structural check (`node --check` + Node-parsed re-count):
+    987/987 unique ids, zero duplicate name+suburb+state+country combos.
+  - **Not yet pushed to the live Supabase table** — same outstanding step
+    as every prior correction pass.
 
 ## Form field CSS specificity
 

@@ -44,9 +44,48 @@ invent placeholder work just to fill this section.)_
 
 ## In Progress
 
-### Full geocode-accuracy sweep at a 3km threshold (31 spots corrected)
-- Branch: `feature/geocode-3km-check` (new branch off `master`)
+### Lower the geocode-accuracy threshold to 2km (46 more spots corrected)
+- Branch: `feature/geocode-2km-check` (new branch off `master`)
 - Status: **done — verified live; not yet merged.**
+- What: direct follow-up — user asked to lower the threshold again and
+  fix anything over 2km. Reused the 3km pass's cached Nominatim results
+  (no need to re-hit the rate-limited API) and recomputed distances
+  against the post-3km-fix data, surfacing 57 candidates ≥2km — 8 of
+  those were spots the 3km pass had already fixed using a non-Nominatim
+  source on purpose (their distance *from Nominatim* is supposed to stay
+  large), leaving 49 genuinely new candidates.
+- Same cross-check discipline as the 3km pass: 40 US spots confirmed via
+  Census agreeing with Nominatim, applied directly. 9 more US spots and
+  9 non-US spots needed a third source (Photon/OSM, or in Utah's case
+  Photon agreeing with *Census* instead of Nominatim, the reverse of the
+  usual pattern) — full list and reasoning in `docs/architecture.md`
+  "Seed data sourcing". Two catches worth flagging:
+  - **Urban Jungle** (Perth) had never actually been geocoded at all —
+    an earlier pass only approximated it to a corrected suburb. Nominatim
+    resolved it directly to a named "Urban Jungle Jandakot" POI, so it
+    got a real position for the first time here.
+  - **Climbing Cave** (Queensbury, NY) and **Vertigo - Lisboa** stayed
+    unresolved even after a third source: Census/Photon disagree on which
+    street "Glen Dr" even is for Climbing Cave, and Vertigo's address has
+    no house number and a more specific building name search turned up
+    doesn't resolve uniquely — same "confirmed real, position
+    unconfirmable" treatment as everything left unapplied in the 3km
+    pass. **Pulse Climbing** and **Beyond Bouldering** (both AU) also
+    stayed unresolved — Photon found no address- or business-level match
+    for either.
+- Running total of independently-verified positions: 71 → **117 of 987
+  spots**. Structural check (`node --check` + Node-parsed re-count):
+  987/987 unique ids, zero duplicate name+suburb+state+country combos.
+- **Verified live** (served copy, `npx serve .`): `window.SEED_GYMS.length`
+  = 987; spot-checked 5 corrected/unresolved entries (Urban Jungle,
+  Elevation Rock Gym, The Quarry, Central Rock Gym – Waltham, Vertigo -
+  Lisboa) directly in the loaded data; no console errors.
+- **Not yet done**: pushing/merging this branch; re-running
+  `supabase/seed.html`'s generated SQL against the live Supabase table.
+
+### Full geocode-accuracy sweep at a 3km threshold (31 spots corrected)
+- Branch: `feature/geocode-3km-check` — **done — merged to `master`**.
+- Status: done — merged.
 - What: user asked to run the geocode check and make sure everything
   moving more than 3km is fixed — a lower, more thorough threshold than
   the two earlier passes (≥5km, then ≥4km, 40 spots corrected total).
