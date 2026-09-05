@@ -44,9 +44,47 @@ invent placeholder work just to fill this section.)_
 
 ## In Progress
 
-### Lower the geocode-accuracy threshold to 2km (46 more spots corrected)
-- Branch: `feature/geocode-2km-check` (new branch off `master`)
+### Lower the geocode-accuracy threshold to 1km (80 more spots corrected)
+- Branch: `feature/geocode-1km-check` (new branch off `master`)
 - Status: **done — verified live; not yet merged.**
+- What: third follow-up in this series — user asked to verify anything
+  over 1km. Same reused-cache method as the 2km pass. 97 spots came back
+  ≥1km; 15 were already-correct (fixed in an earlier pass using a
+  non-Nominatim source on purpose) or already-researched-and-unresolved,
+  leaving 82 genuinely new candidates (61 US, 21 non-US) — the largest
+  batch in this series.
+- 60 of 61 US spots fixed (53 direct Census/Nominatim agreement, 7 more
+  via Photon as tiebreaker). Two worth flagging: **The Front Climbing
+  Club – South Main** (Millcreek, UT) — Census and Nominatim disagreed by
+  ~4.9km despite Census matching the address exactly; Photon's named-POI
+  match sided with Census, so Nominatim was the one dropped this time.
+  **Central Rock Gym – Arsenal Yards** (Watertown, MA) — initially looked
+  like the *existing* pin might be right (Photon's only nearby match sat
+  close to it), but Google Maps' own coordinate for the business broke
+  the tie in favor of the fix — a reminder that a source landing near
+  the old pin isn't automatically proof the old pin was fine.
+- 20 of 21 non-US spots fixed via Photon (AU, Japan, Canada, UK) — several
+  were direct named-business-POI matches, the strongest confirmation this
+  project's tooling gets.
+- **2 new unresolved cases**: **Momentum Lehi** (Utah) — Census matched a
+  different street and Nominatim's own match came back tagged with a
+  neighboring city's zip code; a real Utah numbered-grid street-naming
+  collision (address itself confirmed correct via the gym's own site).
+  **City Summit** (Malaga, WA) — address confirmed real via search, but
+  Photon found no match at all. Full detail in `docs/architecture.md`
+  "Seed data sourcing".
+- Running total of independently-verified positions: 117 → **197 of 987
+  spots**. Structural check (`node --check` + Node-parsed re-count):
+  987/987 unique ids, zero duplicate name+suburb+state+country combos.
+- **Verified live** (served copy, `npx serve .`): `window.SEED_GYMS.length`
+  = 987; spot-checked 6 entries (3 fixed, 2 unresolved, 1 previously-fixed
+  control) directly in the loaded data; no console errors.
+- **Not yet done**: pushing/merging this branch; re-running
+  `supabase/seed.html`'s generated SQL against the live Supabase table.
+
+### Lower the geocode-accuracy threshold to 2km (46 more spots corrected)
+- Branch: `feature/geocode-2km-check` — **done — merged to `master`**.
+- Status: done — merged.
 - What: direct follow-up — user asked to lower the threshold again and
   fix anything over 2km. Reused the 3km pass's cached Nominatim results
   (no need to re-hit the rate-limited API) and recomputed distances

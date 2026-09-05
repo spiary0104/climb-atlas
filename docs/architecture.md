@@ -907,6 +907,52 @@ from one source:
     987/987 unique ids, zero duplicate name+suburb+state+country combos.
   - **Not yet pushed to the live Supabase table** — same outstanding step
     as every prior correction pass.
+- **Lowered the geocode-accuracy threshold to 1km (80 more spots
+  corrected)**: third follow-up in this series, same reused-cache method
+  as the 2km pass (no re-hitting Nominatim). 97 spots came back ≥1km;
+  15 of those were already-correct spots from earlier passes (their
+  distance *from Nominatim* is expected to stay large since a better
+  source was already chosen for them) or already-researched-and-left-
+  unresolved addresses, leaving 82 genuinely new candidates (61 US, 21
+  non-US) — the biggest batch of this series so far.
+  - **60 of 61 US spots** confirmed via Census agreeing with Nominatim
+    (53 directly, 7 more via Photon as tiebreaker where Census errored or
+    disagreed) — full list in `docs/tasks.md`. Two catches worth noting:
+    **The Front Climbing Club – South Main** (Millcreek, UT) had Census
+    and Nominatim disagree by ~4.9km even though Census matched the
+    input address exactly — Photon resolved it to a named "The Front
+    Climbing Club" POI agreeing with Census within 0.02km, confirming
+    Nominatim was the wrong one this time. **Central Rock Gym – Arsenal
+    Yards** (Watertown, MA) looked at first like Nominatim might be
+    wrong too (Photon's only nearby match, on the old "Arsenal Street"
+    rather than the newer "Arsenal Yards Blvd" complex, sat close to the
+    *stored* pin) — checking Google Maps' own listed coordinate for this
+    business broke the tie decisively in Nominatim's favor (0.13km
+    away), confirming the stored pin was the one that needed fixing.
+    Worth remembering: a second source landing near the existing pin
+    isn't proof the existing pin is right, if that source's address
+    match itself is questionable.
+  - **1 US spot stayed unresolved for a new reason**: **Momentum Lehi**
+    (401 S 850 E) — Census confidently matched a *different* street
+    ("850 W") and Nominatim's own match came back tagged with a
+    different, neighboring city's zip code (84003, not Lehi's 84043) —
+    a real instance of the Utah numbered-grid street-naming collision
+    this file has flagged before as a source of past mistakes (see the
+    TOKA/Adamanta pattern), just between cities on the same grid instead
+    of within one city. The address itself was confirmed correct via the
+    gym's own site and Yelp, but no source could confidently place it.
+  - **20 of 21 non-US spots** confirmed via Photon within 0.9km of
+    Nominatim, several as direct named-POI matches (BlocHaus Marrickville,
+    BlocHaus Leichhardt, Mountain Strong, La Roca Boulders, Rocket
+    Climbing, The Hive Heights, The Ledge) — the strongest confirmation
+    tier, spanning AU, Japan, Canada, and the UK. **City Summit** (Malaga,
+    WA) stayed unresolved — address confirmed real via search, but Photon
+    returned no address- or business-level match for it at all.
+  - Running total of independently-verified positions: 117 → **197 of 987
+    spots**. Structural check (`node --check` + Node-parsed re-count):
+    987/987 unique ids, zero duplicate name+suburb+state+country combos.
+  - **Not yet pushed to the live Supabase table** — same outstanding step
+    as every prior correction pass.
 
 ## Form field CSS specificity
 
