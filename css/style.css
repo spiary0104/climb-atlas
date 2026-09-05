@@ -144,6 +144,18 @@
     --br-rio-de-janeiro:#c93f6b;
     --br-minas-gerais:#8a5cc9;
     --br-parana:#c9843f;
+    --hu-budapest:#c9503f;
+    --hu-pest:#3f9ec9;
+    --hu-veszprem:#7ac93f;
+    --gr-attica:#3f7ec9;
+    --gr-central-macedonia:#c9683f;
+    --gr-south-aegean:#3fc9a3;
+    --gr-crete:#c93f9e;
+    --gr-western-greece:#c9c33f;
+    --cz-praha:#8a3fc9;
+    --cz-jihomoravsky:#3fc96c;
+    --is-hofudborgarsvaedid:#3fa8c9;
+    --is-nordurland-eystra:#c95f3f;
     --t-outdoor:#b8834a;
     --t-indoor:#3fb8a6;
     --t-toprope:#8a6bb0;
@@ -455,6 +467,18 @@
   .chip[data-country="BR"][data-state="RIO_DE_JANEIRO"].active{background:var(--br-rio-de-janeiro);}
   .chip[data-country="BR"][data-state="MINAS_GERAIS"].active{background:var(--br-minas-gerais);}
   .chip[data-country="BR"][data-state="PARANA"].active{background:var(--br-parana);}
+  .chip[data-country="HU"][data-state="BUDAPEST"].active{background:var(--hu-budapest);}
+  .chip[data-country="HU"][data-state="PEST"].active{background:var(--hu-pest);}
+  .chip[data-country="HU"][data-state="VESZPREM"].active{background:var(--hu-veszprem);}
+  .chip[data-country="GR"][data-state="ATTICA"].active{background:var(--gr-attica);}
+  .chip[data-country="GR"][data-state="CENTRAL_MACEDONIA"].active{background:var(--gr-central-macedonia);}
+  .chip[data-country="GR"][data-state="SOUTH_AEGEAN"].active{background:var(--gr-south-aegean);}
+  .chip[data-country="GR"][data-state="CRETE"].active{background:var(--gr-crete);}
+  .chip[data-country="GR"][data-state="WESTERN_GREECE"].active{background:var(--gr-western-greece);}
+  .chip[data-country="CZ"][data-state="PRAHA"].active{background:var(--cz-praha);}
+  .chip[data-country="CZ"][data-state="JIHOMORAVSKY"].active{background:var(--cz-jihomoravsky);}
+  .chip[data-country="IS"][data-state="HOFUDBORGARSVAEDID"].active{background:var(--is-hofudborgarsvaedid);}
+  .chip[data-country="IS"][data-state="NORDURLAND_EYSTRA"].active{background:var(--is-nordurland-eystra);}
 
   .toggle-row{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-dim);font-family:'Space Mono',monospace;cursor:pointer;}
   .toggle-row input{accent-color:var(--vic);}

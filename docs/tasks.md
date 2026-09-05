@@ -44,9 +44,63 @@ invent placeholder work just to fill this section.)_
 
 ## In Progress
 
-### Lower the geocode-accuracy threshold to 100m (11 more spots corrected)
-- Branch: `feature/geocode-100m-check` (new branch off `master`)
+### Add Hungary, Greece, Czech Republic, Iceland (42 gyms)
+- Branch: `feature/add-hungary-greece-czech-iceland` (new branch off `master`)
 - Status: **done — verified live; not yet merged.**
+- What: user asked to "add more countries" — clarified via `AskUserQuestion`
+  that this meant more of Europe. Checked climbing-gyms.com directly for
+  each candidate before committing to it (the Norway lesson): Hungary (18
+  gyms, all 4 cities) and Greece (13 gyms, all 10 cities — like Ireland,
+  most Greek cities have just 1 gym, so no clean top-4) had solid
+  coverage and used the same geocoded-address method as every other
+  climbing-gyms.com pass; Czech Republic (0 cities listed) and Iceland
+  (1 city listed) were too thin, so both used Norway's lighter-touch
+  method instead — real gyms confirmed via web search, but with real
+  addresses individually geocoded this time (Czech Republic 8 gyms,
+  Prague + Brno; Iceland 3 gyms, Reykjavík + Akureyri).
+- **2 borderline-real-gym cases kept with a disclosure note**: City
+  Fitness Next Gen (Rhodes) is a multi-sport fitness centre with a
+  confirmed small climbing wall; Kraftlyftingafélag Akureyrar (Iceland)
+  is primarily a powerlifting club with a confirmed 7m bouldering wall —
+  same judgment call as the Korea/Ireland university-gym cases earlier.
+- **Positions**: 35 of 42 addresses matched Nominatim directly, 2 more
+  matched on a reformatted retry, 5 fall back to another gym's position
+  in the same city or a city-centre point (flagged in each spot's own
+  `notes`) — full list in `docs/architecture.md` "Seed data sourcing".
+- **3 gyms tagged `lead-climbing`** based on each one's own description
+  (17.5m-23.5m sport-climbing walls, not just bouldering): Smichoff
+  Climbing Center, Třináctka, BigWall Praha-Vysočany, DURO Climbing Gym
+  (all Czech Republic), and Apollon Kalymnos Climbing Academy (Greece,
+  on Kalymnos — the country's premier outdoor sport-climbing island).
+- Added `HU`/`GR`/`CZ`/`IS` to `STATES_BY_COUNTRY` with each country's
+  complete real top-level divisions (Hungary 20, Greece 13, Czech
+  Republic 14, Iceland 8), `COUNTRY_LABELS`, `COUNTRY_FLY_TARGETS`,
+  `COUNTRY_TO_REGION` (europe) in `js/app.js`; 12 new CSS colour
+  variables (only for divisions with actual spots: 3 HU, 5 GR, 2 CZ,
+  2 IS) + chip rules in `css/style.css`; 4 new sidebar chip groups in
+  their alphabetical Europe slots (Czech Republic between Belgium and
+  Denmark; Greece, Hungary, Iceland between Germany and Ireland) and
+  country `<option>`s in both add/edit forms in `index.html`.
+- Net result: 987 → **1029 total spots**. Structural check (Node-parsed
+  `window.SEED_GYMS`): 1029/1029 unique ids, zero duplicate
+  name+suburb+state+country combos.
+- **Verified live** (served copy, `npx serve .`): all 4 new sidebar chip
+  groups render with the right chip counts (CZ 2, GR 5, HU 3, IS 2); all
+  4 countries appear in the add-spot form's country dropdown; selecting
+  Iceland populates all 8 real regions in the state dropdown; clicking a
+  new chip (Hungary/Budapest) toggles `.active` correctly; no console
+  errors at any point; `window.SEED_GYMS.length` = 1029.
+- **Not yet done**: pushing/merging this branch; the live Supabase table
+  (same outstanding step as every prior country addition).
+- **Note**: `supabase/schema.sql` has an unrelated, uncommitted draft
+  sitting in the working tree (a sketch for a personal climbing-logbook
+  feature — routes/sessions/session_climbs tables — not something this
+  session wrote or was asked to touch). Left completely alone; not part
+  of this task's commit.
+
+### Lower the geocode-accuracy threshold to 100m (11 more spots corrected)
+- Branch: `feature/geocode-100m-check` — **done — merged to `master`**.
+- Status: done — merged.
 - What: sixth follow-up in this series — user asked to keep going. Only
   34 spots came back ≥100m (real convergence, not just a smaller slice),
   22 already-handled, leaving 12 new candidates (5 US, 7 non-US).

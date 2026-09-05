@@ -156,10 +156,31 @@
          ['PIAUI','Piauí'],['RIO_DE_JANEIRO','Rio de Janeiro'],['RIO_GRANDE_DO_NORTE','Rio Grande do Norte'],
          ['RIO_GRANDE_DO_SUL','Rio Grande do Sul'],['RONDONIA','Rondônia'],['RORAIMA','Roraima'],
          ['SANTA_CATARINA','Santa Catarina'],['SAO_PAULO','São Paulo'],['SERGIPE','Sergipe'],
-         ['TOCANTINS','Tocantins']]
+         ['TOCANTINS','Tocantins']],
+    HU: [['BACS_KISKUN','Bács-Kiskun'],['BARANYA','Baranya'],['BEKES','Békés'],
+         ['BORSOD_ABAUJ_ZEMPLEN','Borsod-Abaúj-Zemplén'],['BUDAPEST','Budapest'],
+         ['CSONGRAD_CSANAD','Csongrád-Csanád'],['FEJER','Fejér'],['GYOR_MOSON_SOPRON','Győr-Moson-Sopron'],
+         ['HAJDU_BIHAR','Hajdú-Bihar'],['HEVES','Heves'],['JASZ_NAGYKUN_SZOLNOK','Jász-Nagykun-Szolnok'],
+         ['KOMAROM_ESZTERGOM','Komárom-Esztergom'],['NOGRAD','Nógrád'],['PEST','Pest'],['SOMOGY','Somogy'],
+         ['SZABOLCS_SZATMAR_BEREG','Szabolcs-Szatmár-Bereg'],['TOLNA','Tolna'],['VAS','Vas'],
+         ['VESZPREM','Veszprém'],['ZALA','Zala']],
+    GR: [['ATTICA','Attica'],['CENTRAL_GREECE','Central Greece'],['CENTRAL_MACEDONIA','Central Macedonia'],
+         ['CRETE','Crete'],['EASTERN_MACEDONIA_THRACE','Eastern Macedonia and Thrace'],['EPIRUS','Epirus'],
+         ['IONIAN_ISLANDS','Ionian Islands'],['NORTH_AEGEAN','North Aegean'],['PELOPONNESE','Peloponnese'],
+         ['SOUTH_AEGEAN','South Aegean'],['THESSALY','Thessaly'],['WESTERN_GREECE','Western Greece'],
+         ['WESTERN_MACEDONIA','Western Macedonia']],
+    CZ: [['JIHOCESKY','Jihočeský (South Bohemia)'],['JIHOMORAVSKY','Jihomoravský (South Moravia)'],
+         ['KARLOVARSKY','Karlovarský'],['KRALOVEHRADECKY','Královéhradecký'],['LIBERECKY','Liberecký'],
+         ['MORAVSKOSLEZSKY','Moravskoslezský'],['OLOMOUCKY','Olomoucký'],['PARDUBICKY','Pardubický'],
+         ['PLZENSKY','Plzeňský'],['PRAHA','Praha (Prague)'],['STREDOCESKY','Středočeský'],
+         ['USTECKY','Ústecký'],['VYSOCINA','Vysočina'],['ZLINSKY','Zlínský']],
+    IS: [['AUSTURLAND','Austurland (East)'],['HOFUDBORGARSVAEDID','Höfuðborgarsvæðið (Capital Region)'],
+         ['NORDURLAND_EYSTRA','Norðurland eystra (Northeast)'],['NORDURLAND_VESTRA','Norðurland vestra (Northwest)'],
+         ['SUDURLAND','Suðurland (South)'],['SUDURNES','Suðurnes'],['VESTFIRDIR','Vestfirðir (Westfjords)'],
+         ['VESTURLAND','Vesturland (West)']]
   };
   const TYPE_LABELS = {'indoor-bouldering':'Indoor bouldering','top-rope':'Top rope','lead-climbing':'Lead climbing'};
-  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy', BE:'Belgium', KR:'South Korea', ES:'Spain', PT:'Portugal', AT:'Austria', CH:'Switzerland', PL:'Poland', DK:'Denmark', FI:'Finland', IE:'Ireland', NO:'Norway', MX:'Mexico', BR:'Brazil'};
+  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy', BE:'Belgium', KR:'South Korea', ES:'Spain', PT:'Portugal', AT:'Austria', CH:'Switzerland', PL:'Poland', DK:'Denmark', FI:'Finland', IE:'Ireland', NO:'Norway', MX:'Mexico', BR:'Brazil', HU:'Hungary', GR:'Greece', CZ:'Czech Republic', IS:'Iceland'};
   // Fixed camera target per country for the "fly to this country" click on
   // its sidebar label -- picked to frame that country's actual spread of
   // seed spots (e.g. US needs a wide zoom to fit both NY and CA), not a
@@ -190,7 +211,11 @@
     IE: {center:[-7.5,53.2], zoom:6.5},
     NO: {center:[10,63], zoom:3.8},
     MX: {center:[-101,22], zoom:4.2},
-    BR: {center:[-46,-22], zoom:5}
+    BR: {center:[-46,-22], zoom:5},
+    HU: {center:[19,47.3], zoom:6.5},
+    GR: {center:[24,38], zoom:5.5},
+    CZ: {center:[15,49.9], zoom:6.5},
+    IS: {center:[-19,65], zoom:5.2}
   };
   // Which sidebar region-group each country belongs to -- same grouping as
   // the `.region-group[data-region]` wrappers in index.html, kept here too
@@ -200,7 +225,7 @@
     CN:'asia', JP:'asia', KR:'asia',
     DE:'europe', GB:'europe', FR:'europe', SE:'europe', NL:'europe', IT:'europe', BE:'europe',
     ES:'europe', PT:'europe', AT:'europe', CH:'europe', PL:'europe', DK:'europe', FI:'europe', IE:'europe',
-    NO:'europe',
+    NO:'europe', HU:'europe', GR:'europe', CZ:'europe', IS:'europe',
     CA:'north-america', US:'north-america', MX:'north-america',
     AU:'oceania', NZ:'oceania',
     BR:'south-america'

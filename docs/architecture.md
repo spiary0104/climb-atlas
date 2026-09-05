@@ -70,9 +70,10 @@ are only unique within a country** (e.g. AU's `WA` vs US's `WA` are
 different regions). Anything that filters, colors, or edits by state —
 the chips in `index.html`, `STATES_BY_COUNTRY` in `app.js`, the RLS-safe
 columns in `schema.sql` — keys off the `(country, state)` pair together,
-never `state` alone. Now 25 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
-FR, SE, NL, IT, BE, KR, ES, PT, AT, CH, PL, DK, FI, IE, NO, MX, BR), same
-pattern each time — keep this in mind before adding a 26th. One collision
+never `state` alone. Now 29 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
+FR, SE, NL, IT, BE, KR, ES, PT, AT, CH, PL, DK, FI, IE, NO, MX, BR, HU, GR,
+CZ, IS), same pattern each time — keep this in mind before adding a 30th.
+One collision
 worth flagging: `US`'s state code for California is `CA`, and `CA` is
 also the top-level country code for Canada — not a real ambiguity since
 they're different object keys/fields (`STATES_BY_COUNTRY.US` contains
@@ -158,10 +159,10 @@ pre-filled with its current value, rather than throwing on
 
 ## Seed data sourcing
 
-`js/data.js` currently has 987 spots (74 AU, 332 US, 32 JP, 15 CA, 9 NZ,
+`js/data.js` currently has 1029 spots (74 AU, 332 US, 32 JP, 15 CA, 9 NZ,
 42 CN, 66 GB, 112 DE, 30 FR, 7 SE, 25 NL, 14 IT, 14 BE, 37 KR, 22 ES,
-7 PT, 22 AT, 8 CH, 31 PL, 14 DK, 14 FI, 9 IE, 20 NO, 16 MX, 15 BR), all
-indoor gyms
+7 PT, 22 AT, 8 CH, 31 PL, 14 DK, 14 FI, 9 IE, 20 NO, 16 MX, 15 BR, 18 HU,
+13 GR, 8 CZ, 3 IS), all indoor gyms
 (bouldering and/or top rope, with a growing number now also tagged
 lead-climbing — see "Known gaps" below on why outdoor areas were
 removed). It was built up in layers, not
@@ -786,6 +787,70 @@ from one source:
     Evolução Escalada Indoor (Botafogo) remained confirmed-open. `state`
     uses Brazil's 26 states + Distrito Federal (27 total), listed
     complete from the start.
+  - **Not yet pushed to the live Supabase table** — same next-step gap as
+    every prior country addition.
+- **Hungary (18 gyms, 4 cities), Greece (13 gyms, 10 cities), Czech
+  Republic (8 gyms, 2 cities), and Iceland (3 gyms, 2 cities)** — the
+  26th-29th countries — user asked for "more of Europe" via `AskUserQuestion`,
+  which surfaced this specific batch. climbing-gyms.com was checked
+  directly for all four before starting, per the lesson from Norway's
+  original 2-gym showing: Hungary (18 gyms, all 4 of its listed cities)
+  and Greece (13 gyms, all 10 of its listed cities, since — like
+  Ireland — most Greek cities on the site have just 1 gym each, so a
+  top-4 cut would have discarded most of the country) both had solid
+  coverage and used the same geocoded-address method as every other
+  climbing-gyms.com pass. Czech Republic showed **0 cities** on the site
+  and Iceland showed only **1** — both too thin to use, so both were
+  built the same lighter-touch way as Norway: real, named gyms confirmed
+  via general web search, addresses still individually geocoded against
+  Nominatim (this is a step up from Norway's own city-level-only
+  positioning, since real street addresses were findable this time).
+  - Hungary: Budapest (14) + Budaörs (2) + Vác (1) + Veszprém (1) = 18.
+  - Greece: Athina (2) + Thessaloniki (3) + 8 more cities at 1 gym each
+    (Ano Liosia, Chalandri, Chorio/Kalymnos, Iraklio, Marousi, Pallini,
+    Patras, Rodos) = 13.
+  - Czech Republic: Prague (7) + Brno (1) = 8.
+  - Iceland: Reykjavík (1) + Akureyri (2) = 3.
+  - **Two borderline "is this a real climbing gym" cases, both kept with
+    a disclosure note rather than excluded** — same judgment call as the
+    Korea/Ireland university-gym cases earlier in this file: **City
+    Fitness Next Gen** (Rhodes, Greece) is a 4-floor multi-sport fitness
+    centre with a squash court, confirmed via search to also have a
+    small dedicated indoor climbing wall as one of its class offerings —
+    kept since climbing is a genuine, named activity there, not
+    inferred. **Kraftlyftingafélag Akureyrar** (Iceland) is primarily
+    Iceland's oldest powerlifting club, confirmed via search to also
+    have its own 7m indoor bouldering wall — kept for the same reason.
+  - **Positions individually geocoded** — 35 of 42 addresses matched
+    Nominatim directly. 7 didn't resolve on the first try; 2 (PXP
+    Climbing, Thessaloniki; City Fitness Next Gen, Rhodes) matched on a
+    reformatted retry of the same address. The remaining 5 fall back to
+    another already-geocoded gym or a city-centre point, flagged in each
+    spot's own `notes`: **Redpoint Athens Climbing Center** falls back to
+    Mamouna Climbing Spot's position (same city, Athina); **Crux -
+    Climbing gym** falls back to PXP Climbing's position (same city,
+    Thessaloniki); **Apollon Kalymnos Climbing Academy**, **RockWay**
+    (Iraklio), and **OAKA Indoor Climbing** (Marousi) each fall back to
+    their own city centre, since no other already-geocoded gym exists in
+    the same city to borrow a position from.
+  - **Climbing type mostly inferred from name/chain recognition**, same
+    heuristic as every prior climbing-gyms.com pass — "Boulder"/"Bloc"-
+    style names → indoor-bouldering only; generic "Climbing
+    Center"/"Climbing Gym" names → bouldering + top-rope default. Three
+    exceptions confirmed via each gym's own description rather than
+    guessed: **Smichoff Climbing Center** and **Třináctka** (both Prague)
+    and **BigWall Praha-Vysočany** and **DURO Climbing Gym** (Brno) are
+    all explicitly described (own sites/press coverage) as having tall
+    (17.5m-23.5m) sport-climbing walls, not just bouldering — tagged with
+    `lead-climbing` alongside the other two types. **Apollon Kalymnos
+    Climbing Academy** is also tagged `lead-climbing` since Kalymnos is
+    Greece's premier outdoor sport-climbing destination and the gym's own
+    description frames it as training for exactly that.
+  - `state` uses each country's real top-level divisions — Hungary's 19
+    counties + Budapest (20 total), Greece's 13 regions, Czech Republic's
+    13 regions + Prague (14 total), and Iceland's 8 regions — populated
+    with the complete real set for all four from the start, same standard
+    as every country since the NL fix.
   - **Not yet pushed to the live Supabase table** — same next-step gap as
     every prior country addition.
 - **Full-dataset geocode-accuracy check at a 3km threshold (31 more spots
