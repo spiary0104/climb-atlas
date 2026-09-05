@@ -953,6 +953,53 @@ from one source:
     987/987 unique ids, zero duplicate name+suburb+state+country combos.
   - **Not yet pushed to the live Supabase table** — same outstanding step
     as every prior correction pass.
+- **Lowered the geocode-accuracy threshold to 500m (67 more spots
+  corrected)**: fourth follow-up in this series, same reused-cache
+  method. 87 spots came back ≥500m; 18 were already-correct or
+  already-researched-and-unresolved from earlier passes (including a
+  same-named-but-different-spot gotcha: two separate real gyms are both
+  called "Beyond Bouldering" — Keswick and Clovelly Park, South
+  Australia — plus a third, Kent Town, that was never a candidate at
+  any threshold; the exclusion list for this pass had to match on
+  suburb, not just name, to avoid skipping the wrong one), leaving 69
+  genuinely new candidates (39 US, 30 non-US).
+  - **38 of 39 US spots** confirmed via Census agreeing with Nominatim
+    (34 directly, 4 more via Photon/web-search as tiebreaker) — all
+    comfortably tighter agreement than any prior pass in this series
+    (mostly sub-0.3km), consistent with these being smaller errors to
+    begin with. **1 stayed unresolved**: **Willy's World Adventure**
+    (Eastham, MA) — address confirmed real via search, but neither
+    Census nor Photon returned any match for its highway address at all.
+  - **29 of 30 non-US spots** confirmed via Photon within 0.7km of
+    Nominatim, many as exact (0.00km) named-business-POI matches (Climb
+    Fit Kirrawee, Bayside Rock Climbing, Alpine Indoor Climbing, Climb
+    Toowoomba, Portside Boulders, Beyond Bouldering, Beta Park, The
+    Hive, Café Bloc, Fergs Wellington) — Australia, Japan, Canada, New
+    Zealand, and Korea. **1 stayed unresolved**: **Grabit** (Gwangju,
+    South Korea) — Photon's only match was 1.6km away with no
+    independent web confirmation of the gym's exact address to break
+    the tie, so the existing pin (from the original Mountain Project
+    Korea pass) was left alone.
+  - Running total of independently-verified positions: 197 → **264 of
+    987 spots**. Structural check (`node --check` + Node-parsed
+    re-count): 987/987 unique ids, zero duplicate
+    name+suburb+state+country combos.
+  - **Not yet pushed to the live Supabase table** — same outstanding step
+    as every prior correction pass.
+  - With this pass, the unresolved list across the whole geocode-
+    accuracy series stands at 13 spots (TOKA climbing is a known
+    non-issue, not counted; a handful of others — The Front Climbing
+    Club – South Main, Momentum Millcreek, Central Rock Gym – Kennesaw,
+    Elevation Rock Gym, The Quarry, The Scratch Pad — sit far from their
+    own cached Nominatim geocode on purpose, since a better source was
+    used instead, and aren't part of this list): **Sessions Climbing &
+    Fitness**, **Rock Odyssey Hadan**, **The Wall Bouldering Gym**,
+    **Climb Moab**, **Adamanta Sierra**, **Pulse Climbing**, **Climbing
+    Cave**, **Beyond Bouldering** (Clovelly Park), **Vertigo - Lisboa**,
+    **City Summit**, **Momentum Lehi**, **Grabit**, **Willy's World
+    Adventure** — every one with its address independently confirmed
+    real via web search, none with a position any free geocoding tool
+    available to this project could confirm or correct.
 
 ## Form field CSS specificity
 

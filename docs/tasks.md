@@ -44,9 +44,46 @@ invent placeholder work just to fill this section.)_
 
 ## In Progress
 
-### Lower the geocode-accuracy threshold to 1km (80 more spots corrected)
-- Branch: `feature/geocode-1km-check` (new branch off `master`)
+### Lower the geocode-accuracy threshold to 500m (67 more spots corrected)
+- Branch: `feature/geocode-500m-check` (new branch off `master`)
 - Status: **done — verified live; not yet merged.**
+- What: fourth follow-up in this series — user asked to keep going and
+  verify anything over 500m. Same reused-cache method as the previous
+  three passes. 87 spots came back ≥500m; 18 were already-correct or
+  already-researched-and-unresolved, leaving 69 genuinely new candidates
+  (39 US, 30 non-US) — errors this small, as expected.
+- 38 of 39 US spots fixed (34 direct Census/Nominatim agreement, mostly
+  well under 0.3km — the smallest, tightest-agreement batch in this
+  series so far; 4 more via Photon/web search as tiebreaker where Census
+  errored). **Willy's World Adventure** (Eastham, MA) stayed unresolved —
+  address confirmed real, but neither Census nor Photon could match its
+  highway address at all.
+- 29 of 30 non-US spots fixed via Photon within 0.7km, many exact
+  (0.00km) named-business-POI matches, across AU/JP/CA/NZ/KR.
+  **Grabit** (Gwangju, South Korea) stayed unresolved — Photon's only
+  match was 1.6km away with nothing to break the tie.
+- **One same-name gotcha caught while building the exclusion list**:
+  there are 3 real, distinct gyms all called "Beyond Bouldering" in South
+  Australia (Kent Town, Keswick — fixed this pass, Clovelly Park — still
+  unresolved from an earlier pass) — had to exclude candidates by
+  suburb, not name alone, to avoid skipping the wrong one or
+  double-fixing.
+- Running total of independently-verified positions: 197 → **264 of 987
+  spots**. Structural check (`node --check` + Node-parsed re-count):
+  987/987 unique ids, zero duplicate name+suburb+state+country combos.
+- **Verified live** (served copy, `npx serve .`): `window.SEED_GYMS.length`
+  = 987; spot-checked all 3 "Beyond Bouldering" entries plus 5 other
+  fixed/unresolved spots directly in the loaded data; no console errors.
+- **Not yet done**: pushing/merging this branch; re-running
+  `supabase/seed.html`'s generated SQL against the live Supabase table.
+- **Unresolved-list total across the whole series is now 13** (down to
+  the genuinely hard cases — full list in `docs/architecture.md` "Seed
+  data sourcing"), not counting spots that only look far from Nominatim
+  because a better source was deliberately used instead.
+
+### Lower the geocode-accuracy threshold to 1km (80 more spots corrected)
+- Branch: `feature/geocode-1km-check` — **done — merged to `master`**.
+- Status: done — merged.
 - What: third follow-up in this series — user asked to verify anything
   over 1km. Same reused-cache method as the 2km pass. 97 spots came back
   ≥1km; 15 were already-correct (fixed in an earlier pass using a
