@@ -788,6 +788,64 @@ from one source:
     complete from the start.
   - **Not yet pushed to the live Supabase table** — same next-step gap as
     every prior country addition.
+- **Full-dataset geocode-accuracy check at a 3km threshold (31 more spots
+  corrected, complete)**: earlier passes only checked spots that had moved
+  ≥5km then ≥4km against Nominatim (40 spots corrected total, see the two
+  batches above). This pass re-ran the same check against every remaining
+  addressed spot that didn't already carry the verified-note (731 of 771),
+  lowering the threshold to 3km — surfacing 37 candidates instead of the
+  smaller batches before. Every candidate was independently cross-checked
+  before applying anything, per `Rules.md` §1 (never guess from a single
+  geocoder):
+  - **25 US spots**: confirmed via the US Census Bureau geocoder agreeing
+    with Nominatim within 0.5km — applied directly.
+  - **6 more required a third source since Nominatim/Census disagreed by
+    2-3km or Census had no match at all**: cross-checked against the
+    **Photon** geocoder (photon.komoot.io, also free/keyless, backed by
+    its own independent OSM index) and, for one, Google Maps' own listed
+    coordinate. Applied where two independent sources agreed: **InSPIRE
+    Rock Lubbock** and **Movement Plano** (Nominatim confirmed exactly by
+    Photon — Plano's Photon hit was a named "Movement Plano" business POI,
+    not just an interpolated address); **Vertical World North** (Nominatim
+    confirmed by Photon within 0.2km, Census's interpolated point was
+    ~2.5km off and not used); **Central Rock Gym – Kennesaw** (the reverse
+    — Census confirmed by a named "Central Rock Gym" POI in Photon within
+    0.7km, Nominatim's own point was ~3.3km off and not used this time);
+    **Beta One Bouldering Gym** (Google Maps' own coordinate, cross-checked
+    against Nominatim within 0.5km); **Climb Base5** (Nominatim resolved
+    the address directly to a named "Climb Base5" POI).
+  - **6 left unapplied — address confirmed real via web search, but no
+    independent second source could confirm a corrected position**, so
+    the existing pin stays rather than trusting one geocoder alone:
+    **Sessions Climbing & Fitness** and **Climb Moab** (Census has no
+    road-range data for either street even after retrying with corrected
+    formatting — same known TIGER-coverage gap noted in the 4km-threshold
+    pass; Photon returned no exact match either); **Adamanta Sierra**
+    (Nominatim's match resolved to a *different* postal code segment of
+    the same long highway than the confirmed address's real one — a
+    wrong-segment match, not usable, and a retry with the full
+    "Plaza Omnia" address returned nothing); **The Wall Bouldering Gym**
+    (Fukuoka's Nishitsukiguma address isn't well-covered by
+    Nominatim/Photon — both fell back to a nearby trunk-road match
+    instead of the actual neighbourhood); **Rock Odyssey Hadan** (no
+    source, including this pass's own search, has ever independently
+    confirmed this spot's exact address beyond the original Mountain
+    Project listing).
+  - **TOKA climbing** reappeared in this pass's raw Nominatim output as a
+    26km mover — a **false positive**, not a new issue: its pin was
+    already corrected in an earlier session (see the Norway/Mexico/Brazil
+    entry above) specifically because this same address is ambiguous
+    between two same-named streets in Mexico City, and a plain
+    single-result Nominatim query keeps landing on the wrong one. No
+    change made — the already-verified fix stands.
+  - Running total of independently-verified positions: 40 → **71 of 987**
+    spots. Structural check (`node --check` + Node-parsed re-count):
+    still 987/987 unique ids, zero duplicate name+suburb+state+country
+    combos.
+  - **Not yet pushed to the live Supabase table** — `supabase/seed.html`'s
+    generated SQL needs re-running in the SQL Editor to carry these 31
+    corrected positions (and every other still-pending change) onto the
+    live map.
 
 ## Form field CSS specificity
 

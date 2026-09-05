@@ -44,10 +44,58 @@ invent placeholder work just to fill this section.)_
 
 ## In Progress
 
+### Full geocode-accuracy sweep at a 3km threshold (31 spots corrected)
+- Branch: `feature/geocode-3km-check` (new branch off `master`)
+- Status: **done — verified live; not yet merged.**
+- What: user asked to run the geocode check and make sure everything
+  moving more than 3km is fixed — a lower, more thorough threshold than
+  the two earlier passes (≥5km, then ≥4km, 40 spots corrected total).
+- Re-geocoded every one of the 731 addressed spots that didn't already
+  carry an independently-verified note against Nominatim (a standalone
+  Node script, same method as `supabase/geocode.html`, run in the
+  background — ~13 minutes at Nominatim's 1 req/sec limit). 37 came back
+  ≥3km from their stored pin.
+- **Every candidate was cross-checked against a second independent source
+  before touching anything** (`Rules.md` §1 — never trust one geocoder
+  alone): 25 US spots confirmed via the US Census Bureau's free geocoder
+  agreeing with Nominatim within 0.5km, applied directly. 6 more needed a
+  third source (Nominatim and Census disagreed by 2-3km, or Census had no
+  match) — resolved via the Photon/OSM geocoder and, for one, Google
+  Maps' own listed coordinate: InSPIRE Rock Lubbock, Movement Plano,
+  Vertical World North, Central Rock Gym – Kennesaw, Beta One Bouldering
+  Gym, Climb Base5. Full detail — including which source won for
+  Kennesaw (Census, not Nominatim, for once) and why — in
+  `docs/architecture.md` "Seed data sourcing".
+- **6 left unapplied on purpose**: Sessions Climbing & Fitness and Climb
+  Moab (Census has no road-range data for either street, Photon found no
+  exact match either), Adamanta Sierra (Nominatim matched a different
+  postal segment of the same long highway than the confirmed address),
+  The Wall Bouldering Gym (Fukuoka address not well covered by either
+  free geocoder), Rock Odyssey Hadan (no second source has ever confirmed
+  this one's exact address). Each address was independently confirmed
+  real via web search — only the *position* couldn't be corrected with
+  confidence, so the existing pin stays rather than guessing.
+- **One false positive caught and left alone**: TOKA climbing (Mexico)
+  showed up as a 26km mover in the raw Nominatim output, but this is a
+  known, already-fixed ambiguity from an earlier session (a same-named
+  street exists in two different parts of Mexico City) — no change made.
+- Running total of independently-verified positions: 40 → **71 of 987
+  spots**. Structural check (`node --check` + Node-parsed re-count):
+  987/987 unique ids, zero duplicate name+suburb+state+country combos.
+- **Verified live** (served copy, `npx serve .`): `window.SEED_GYMS.length`
+  = 987; spot-checked 4 of the corrected entries (InSPIRE Rock Lubbock,
+  Movement Plano, Central Rock Gym – Kennesaw, Climb Base5) directly in
+  the loaded data — all show the corrected lat/lng and original address;
+  no console errors.
+- **Not yet done**: pushing/merging this branch; re-running
+  `supabase/seed.html`'s generated SQL against the live Supabase table
+  (same outstanding step as every prior data-correcting pass) — this only
+  fixed the offline `js/data.js` fallback.
+
 ### Fix edit-form checkbox layout, fix invisible major-road labels
-- Branch: `feature/fix-edit-form-checkboxes-and-street-labels` (new
-  branch off `master`)
-- Status: implemented + verified live in a served copy; not yet merged.
+- Branch: `feature/fix-edit-form-checkboxes-and-street-labels` — **done —
+  merged to `master`**.
+- Status: implemented + verified live in a served copy; merged.
 - What: two bug reports in one message. (1) In the edit-spot modal,
   "Type (select all that apply)" checkboxes weren't aligned with their
   labels, and a sliver of the next checkbox's colour dot poked in from
