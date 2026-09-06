@@ -44,9 +44,63 @@ invent placeholder work just to fill this section.)_
 
 ## In Progress
 
-### Add Hungary, Greece, Czech Republic, Iceland (42 gyms)
-- Branch: `feature/add-hungary-greece-czech-iceland` (new branch off `master`)
+### Add Romania, Croatia, Russia, Bulgaria (40 gyms)
+- Branch: `feature/add-romania-croatia-russia-bulgaria` (new branch off `master`)
 - Status: **done — verified live; not yet merged.**
+- What: user asked to keep adding countries, "starting from the ones
+  with more gyms." Checked climbing-gyms.com's raw gym count for every
+  not-yet-added European country first (all 43 remaining entries),
+  rather than guessing, then took the 4 biggest: Romania (18, all 7
+  cities), Croatia (8, all 5 cities), Russia (7, its only 2 listed
+  cities — Moskva, Sankt-Peterburg), Bulgaria (7, both its cities).
+  Slovenia has zero gyms listed (same "too thin" signal as Czech
+  Republic/Iceland last batch) — skipped, not force-added.
+- **Russia's `state` keys on city names, not federal subjects** — same
+  design as China, extended here specifically to avoid drawing
+  internationally contested territory (Crimea, the occupied Ukrainian
+  oblasts) into a public filter list. 20 major cities listed, matching
+  CN's own city-list scale.
+- **High fallback rate this batch (13 of 40 spots, 32.5%)** — Nominatim/
+  Photon reliably geocoded Romanian and Bulgarian addresses, but 7 of 8
+  Croatian and 6 of 7 Russian addresses failed to resolve at all, with
+  Photon's best guesses landing in entirely different cities. One
+  Bulgarian address (Balkan Climbing) got a confident-looking but
+  clearly wrong Nominatim match — caught by checking the returned street
+  name, not a distance check — and was treated as unresolved instead.
+  Full detail and every fallback's reasoning in `docs/architecture.md`
+  "Seed data sourcing".
+- **One same-address pair kept separate, not merged**: Climb House
+  Brasov and Natural High Brașov share an identical street address with
+  no house number — unlike the Salzburg/Helsinki merge precedents, no
+  source confirmed or denied they're the same venue, so both stayed as
+  distinct entries with a cross-referencing note.
+- Added `RO`/`HR`/`RU`/`BG` to `STATES_BY_COUNTRY` (Romania 42, Croatia
+  21, Russia 20 major cities, Bulgaria 28), `COUNTRY_LABELS`,
+  `COUNTRY_FLY_TARGETS`, `COUNTRY_TO_REGION` (europe) in `js/app.js`; 15
+  new CSS colour variables (7 RO, 4 HR, 2 RU, 2 BG) + chip rules in
+  `css/style.css`; 4 new sidebar chip groups in their alphabetical Europe
+  slots (Bulgaria, Croatia between Belgium and Czech Republic; Romania,
+  Russia between Portugal and Spain) and country `<option>`s in both
+  add/edit forms in `index.html`.
+- Net result: 1029 → **1069 total spots**. Structural check (Node-parsed
+  `window.SEED_GYMS`): 1069/1069 unique ids, zero duplicate
+  name+suburb+state+country combos.
+- **Verified live** (served copy, `npx serve .`): all 4 new sidebar chip
+  groups render with the right chip counts (RO 7, HR 4, RU 2, BG 2); all
+  4 countries appear in the add-spot form's country dropdown; selecting
+  Russia populates all 20 city options in the state dropdown; clicking a
+  new chip (Romania/București) toggles `.active` correctly; no console
+  errors at any point; `window.SEED_GYMS.length` = 1069.
+- **Not yet done**: pushing/merging this branch; the live Supabase table
+  (same outstanding step as every prior country addition).
+- **Note**: `supabase/schema.sql` still has the same unrelated,
+  uncommitted personal-climbing-logbook draft flagged in the prior
+  task's entry — still untouched, still not part of any commit.
+
+### Add Hungary, Greece, Czech Republic, Iceland (42 gyms)
+- Branch: `feature/add-hungary-greece-czech-iceland` — **done — merged to
+  `master`**.
+- Status: done — merged.
 - What: user asked to "add more countries" — clarified via `AskUserQuestion`
   that this meant more of Europe. Checked climbing-gyms.com directly for
   each candidate before committing to it (the Norway lesson): Hungary (18

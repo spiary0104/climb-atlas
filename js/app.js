@@ -177,10 +177,43 @@
     IS: [['AUSTURLAND','Austurland (East)'],['HOFUDBORGARSVAEDID','Höfuðborgarsvæðið (Capital Region)'],
          ['NORDURLAND_EYSTRA','Norðurland eystra (Northeast)'],['NORDURLAND_VESTRA','Norðurland vestra (Northwest)'],
          ['SUDURLAND','Suðurland (South)'],['SUDURNES','Suðurnes'],['VESTFIRDIR','Vestfirðir (Westfjords)'],
-         ['VESTURLAND','Vesturland (West)']]
+         ['VESTURLAND','Vesturland (West)']],
+    RO: [['ALBA','Alba'],['ARAD','Arad'],['ARGES','Argeș'],['BACAU','Bacău'],['BIHOR','Bihor'],
+         ['BISTRITA_NASAUD','Bistrița-Năsăud'],['BOTOSANI','Botoșani'],['BRAILA','Brăila'],['BRASOV','Brașov'],
+         ['BUCURESTI','București'],['BUZAU','Buzău'],['CALARASI','Călărași'],['CARAS_SEVERIN','Caraș-Severin'],
+         ['CLUJ','Cluj'],['CONSTANTA','Constanța'],['COVASNA','Covasna'],['DAMBOVITA','Dâmbovița'],
+         ['DOLJ','Dolj'],['GALATI','Galați'],['GIURGIU','Giurgiu'],['GORJ','Gorj'],['HARGHITA','Harghita'],
+         ['HUNEDOARA','Hunedoara'],['IALOMITA','Ialomița'],['IASI','Iași'],['ILFOV','Ilfov'],
+         ['MARAMURES','Maramureș'],['MEHEDINTI','Mehedinți'],['MURES','Mureș'],['NEAMT','Neamț'],
+         ['OLT','Olt'],['PRAHOVA','Prahova'],['SALAJ','Sălaj'],['SATU_MARE','Satu Mare'],['SIBIU','Sibiu'],
+         ['SUCEAVA','Suceava'],['TELEORMAN','Teleorman'],['TIMIS','Timiș'],['TULCEA','Tulcea'],
+         ['VALCEA','Vâlcea'],['VASLUI','Vaslui'],['VRANCEA','Vrancea']],
+    HR: [['BJELOVAR_BILOGORA','Bjelovar-Bilogora'],['BROD_POSAVINA','Brod-Posavina'],
+         ['DUBROVNIK_NERETVA','Dubrovnik-Neretva'],['ISTARSKA','Istarska'],['KARLOVAC','Karlovac'],
+         ['KOPRIVNICKO_KRIZEVACKA','Koprivničko-križevačka'],['KRAPINA_ZAGORJE','Krapina-Zagorje'],
+         ['LIKA_SENJ','Lika-Senj'],['MEDIMURJE','Međimurje'],['OSIJEK_BARANJA','Osijek-Baranja'],
+         ['POZEGA_SLAVONIJA','Požega-Slavonija'],['PRIMORJE_GORSKI_KOTAR','Primorje-Gorski Kotar'],
+         ['SIBENIK_KNIN','Šibenik-Knin'],['SISAK_MOSLAVINA','Sisak-Moslavina'],
+         ['SPLITSKO_DALMATINSKA','Splitsko-dalmatinska'],['VARAZDIN','Varaždin'],
+         ['VIROVITICA_PODRAVINA','Virovitica-Podravina'],['VUKOVAR_SRIJEM','Vukovar-Srijem'],['ZADAR','Zadar'],
+         ['ZAGREBACKA','Zagrebačka'],['ZAGREB','Zagreb']],
+    RU: [['MOSKVA','Moskva'],['SANKT_PETERBURG','Sankt-Peterburg'],['NOVOSIBIRSK','Novosibirsk'],
+         ['YEKATERINBURG','Yekaterinburg'],['KAZAN','Kazan'],['NIZHNY_NOVGOROD','Nizhny Novgorod'],
+         ['CHELYABINSK','Chelyabinsk'],['KRASNOYARSK','Krasnoyarsk'],['SAMARA','Samara'],['UFA','Ufa'],
+         ['ROSTOV_ON_DON','Rostov-on-Don'],['OMSK','Omsk'],['KRASNODAR','Krasnodar'],['VORONEZH','Voronezh'],
+         ['PERM','Perm'],['VOLGOGRAD','Volgograd'],['SARATOV','Saratov'],['TYUMEN','Tyumen'],
+         ['TOLYATTI','Tolyatti'],['IZHEVSK','Izhevsk']],
+    BG: [['BLAGOEVGRAD','Blagoevgrad'],['BURGAS','Burgas'],['DOBRICH','Dobrich'],['GABROVO','Gabrovo'],
+         ['HASKOVO','Haskovo'],['KARDZHALI','Kardzhali'],['KYUSTENDIL','Kyustendil'],['LOVECH','Lovech'],
+         ['MONTANA','Montana'],['PAZARDZHIK','Pazardzhik'],['PERNIK','Pernik'],['PLEVEN','Pleven'],
+         ['PLOVDIV','Plovdiv'],['RAZGRAD','Razgrad'],['RUSE','Ruse'],['SHUMEN','Shumen'],
+         ['SILISTRA','Silistra'],['SLIVEN','Sliven'],['SMOLYAN','Smolyan'],['SOFIA_CITY','Sofia City'],
+         ['SOFIA','Sofia (province)'],['STARA_ZAGORA','Stara Zagora'],['TARGOVISHTE','Targovishte'],
+         ['VARNA','Varna'],['VELIKO_TARNOVO','Veliko Tarnovo'],['VIDIN','Vidin'],['VRATSA','Vratsa'],
+         ['YAMBOL','Yambol']]
   };
   const TYPE_LABELS = {'indoor-bouldering':'Indoor bouldering','top-rope':'Top rope','lead-climbing':'Lead climbing'};
-  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy', BE:'Belgium', KR:'South Korea', ES:'Spain', PT:'Portugal', AT:'Austria', CH:'Switzerland', PL:'Poland', DK:'Denmark', FI:'Finland', IE:'Ireland', NO:'Norway', MX:'Mexico', BR:'Brazil', HU:'Hungary', GR:'Greece', CZ:'Czech Republic', IS:'Iceland'};
+  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy', BE:'Belgium', KR:'South Korea', ES:'Spain', PT:'Portugal', AT:'Austria', CH:'Switzerland', PL:'Poland', DK:'Denmark', FI:'Finland', IE:'Ireland', NO:'Norway', MX:'Mexico', BR:'Brazil', HU:'Hungary', GR:'Greece', CZ:'Czech Republic', IS:'Iceland', RO:'Romania', HR:'Croatia', RU:'Russia', BG:'Bulgaria'};
   // Fixed camera target per country for the "fly to this country" click on
   // its sidebar label -- picked to frame that country's actual spread of
   // seed spots (e.g. US needs a wide zoom to fit both NY and CA), not a
@@ -215,7 +248,11 @@
     HU: {center:[19,47.3], zoom:6.5},
     GR: {center:[24,38], zoom:5.5},
     CZ: {center:[15,49.9], zoom:6.5},
-    IS: {center:[-19,65], zoom:5.2}
+    IS: {center:[-19,65], zoom:5.2},
+    RO: {center:[24.5,46], zoom:5.8},
+    HR: {center:[16,44.5], zoom:5.6},
+    RU: {center:[35,58], zoom:3.6},
+    BG: {center:[24.5,42.7], zoom:6.5}
   };
   // Which sidebar region-group each country belongs to -- same grouping as
   // the `.region-group[data-region]` wrappers in index.html, kept here too
@@ -226,6 +263,7 @@
     DE:'europe', GB:'europe', FR:'europe', SE:'europe', NL:'europe', IT:'europe', BE:'europe',
     ES:'europe', PT:'europe', AT:'europe', CH:'europe', PL:'europe', DK:'europe', FI:'europe', IE:'europe',
     NO:'europe', HU:'europe', GR:'europe', CZ:'europe', IS:'europe',
+    RO:'europe', HR:'europe', RU:'europe', BG:'europe',
     CA:'north-america', US:'north-america', MX:'north-america',
     AU:'oceania', NZ:'oceania',
     BR:'south-america'

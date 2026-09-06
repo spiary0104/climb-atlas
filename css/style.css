@@ -156,6 +156,21 @@
     --cz-jihomoravsky:#3fc96c;
     --is-hofudborgarsvaedid:#3fa8c9;
     --is-nordurland-eystra:#c95f3f;
+    --ro-bucuresti:#c9503f;
+    --ro-brasov:#3f9ec9;
+    --ro-mures:#7ac93f;
+    --ro-timis:#c9683f;
+    --ro-harghita:#8a3fc9;
+    --ro-cluj:#3fc96c;
+    --ro-iasi:#c93f9e;
+    --hr-zagreb:#3f7ec9;
+    --hr-splitsko-dalmatinska:#c9c33f;
+    --hr-istarska:#3fc9a3;
+    --hr-koprivnicko-krizevacka:#c93f6b;
+    --ru-moskva:#8a6bb0;
+    --ru-sankt-peterburg:#c9843f;
+    --bg-sofia-city:#3fa8c9;
+    --bg-varna:#c95f3f;
     --t-outdoor:#b8834a;
     --t-indoor:#3fb8a6;
     --t-toprope:#8a6bb0;
@@ -479,6 +494,21 @@
   .chip[data-country="CZ"][data-state="JIHOMORAVSKY"].active{background:var(--cz-jihomoravsky);}
   .chip[data-country="IS"][data-state="HOFUDBORGARSVAEDID"].active{background:var(--is-hofudborgarsvaedid);}
   .chip[data-country="IS"][data-state="NORDURLAND_EYSTRA"].active{background:var(--is-nordurland-eystra);}
+  .chip[data-country="RO"][data-state="BUCURESTI"].active{background:var(--ro-bucuresti);}
+  .chip[data-country="RO"][data-state="BRASOV"].active{background:var(--ro-brasov);}
+  .chip[data-country="RO"][data-state="MURES"].active{background:var(--ro-mures);}
+  .chip[data-country="RO"][data-state="TIMIS"].active{background:var(--ro-timis);}
+  .chip[data-country="RO"][data-state="HARGHITA"].active{background:var(--ro-harghita);}
+  .chip[data-country="RO"][data-state="CLUJ"].active{background:var(--ro-cluj);}
+  .chip[data-country="RO"][data-state="IASI"].active{background:var(--ro-iasi);}
+  .chip[data-country="HR"][data-state="ZAGREB"].active{background:var(--hr-zagreb);}
+  .chip[data-country="HR"][data-state="SPLITSKO_DALMATINSKA"].active{background:var(--hr-splitsko-dalmatinska);}
+  .chip[data-country="HR"][data-state="ISTARSKA"].active{background:var(--hr-istarska);}
+  .chip[data-country="HR"][data-state="KOPRIVNICKO_KRIZEVACKA"].active{background:var(--hr-koprivnicko-krizevacka);}
+  .chip[data-country="RU"][data-state="MOSKVA"].active{background:var(--ru-moskva);}
+  .chip[data-country="RU"][data-state="SANKT_PETERBURG"].active{background:var(--ru-sankt-peterburg);}
+  .chip[data-country="BG"][data-state="SOFIA_CITY"].active{background:var(--bg-sofia-city);}
+  .chip[data-country="BG"][data-state="VARNA"].active{background:var(--bg-varna);}
 
   .toggle-row{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-dim);font-family:'Space Mono',monospace;cursor:pointer;}
   .toggle-row input{accent-color:var(--vic);}

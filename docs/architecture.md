@@ -70,10 +70,10 @@ are only unique within a country** (e.g. AU's `WA` vs US's `WA` are
 different regions). Anything that filters, colors, or edits by state —
 the chips in `index.html`, `STATES_BY_COUNTRY` in `app.js`, the RLS-safe
 columns in `schema.sql` — keys off the `(country, state)` pair together,
-never `state` alone. Now 29 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
+never `state` alone. Now 33 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
 FR, SE, NL, IT, BE, KR, ES, PT, AT, CH, PL, DK, FI, IE, NO, MX, BR, HU, GR,
-CZ, IS), same pattern each time — keep this in mind before adding a 30th.
-One collision
+CZ, IS, RO, HR, RU, BG), same pattern each time — keep this in mind before
+adding a 34th. One collision
 worth flagging: `US`'s state code for California is `CA`, and `CA` is
 also the top-level country code for Canada — not a real ambiguity since
 they're different object keys/fields (`STATES_BY_COUNTRY.US` contains
@@ -159,10 +159,10 @@ pre-filled with its current value, rather than throwing on
 
 ## Seed data sourcing
 
-`js/data.js` currently has 1029 spots (74 AU, 332 US, 32 JP, 15 CA, 9 NZ,
+`js/data.js` currently has 1069 spots (74 AU, 332 US, 32 JP, 15 CA, 9 NZ,
 42 CN, 66 GB, 112 DE, 30 FR, 7 SE, 25 NL, 14 IT, 14 BE, 37 KR, 22 ES,
 7 PT, 22 AT, 8 CH, 31 PL, 14 DK, 14 FI, 9 IE, 20 NO, 16 MX, 15 BR, 18 HU,
-13 GR, 8 CZ, 3 IS), all indoor gyms
+13 GR, 8 CZ, 3 IS, 18 RO, 8 HR, 7 RU, 7 BG), all indoor gyms
 (bouldering and/or top rope, with a growing number now also tagged
 lead-climbing — see "Known gaps" below on why outdoor areas were
 removed). It was built up in layers, not
@@ -851,6 +851,87 @@ from one source:
     13 regions + Prague (14 total), and Iceland's 8 regions — populated
     with the complete real set for all four from the start, same standard
     as every country since the NL fix.
+  - **Not yet pushed to the live Supabase table** — same next-step gap as
+    every prior country addition.
+- **Romania (18 gyms, 7 cities), Croatia (8 gyms, 5 cities), Russia (7
+  gyms, 2 cities), and Bulgaria (7 gyms, 2 cities)** — the 30th-33rd
+  countries — user asked to keep adding countries, "starting from the
+  ones with more gyms." Rather than guess which remaining countries had
+  the most, every not-yet-added country on climbing-gyms.com's own
+  country list (all of Europe, 43 entries) was checked directly for its
+  raw gym count first, then the four biggest were taken as this batch:
+  Romania (18, clearly the largest), Croatia and Russia (8 each), Bulgaria
+  (7). Countries checked but left for a future batch, roughly in size
+  order: Latvia/Luxembourg/Lithuania/Estonia/Belarus/Bosnia and
+  Herzegovina (6 each), Serbia (4), Slovakia (3), Moldova/North Macedonia
+  (2), Montenegro/Albania (1) — Slovenia currently has **zero** gyms
+  listed on the site, the same "too thin to use" signal Czech
+  Republic/Iceland gave in the prior batch.
+  - Romania: București (7) + Cluj-Napoca (4) + Brașov (2) + Târgu Mureș
+    (2) + Timișoara (1) + Miercurea Ciuc (1) + Iași (1) = 18. The site's
+    own city-slug URLs for diacritic-heavy Romanian city names (Brașov,
+    București, Iași, Târgu Mureș, Timișoara) don't match their display
+    names directly (e.g. București's page is at `/bucure-ti`, not
+    `/bucuresti`) — worth remembering if this source is used again for a
+    Romanian city, fetch the country page's own links rather than
+    guessing the slug.
+  - Croatia: Zagreb (3) + Split (2) + Pula (1) + Koprivnica (1) + Kaštel
+    Sućurac (1) = 8.
+  - Russia: climbing-gyms.com only lists Moskva (4) and Sankt-Peterburg
+    (3), plus one "Unknown City" 1-gym entry that was skipped rather than
+    guessed at (no way to geocode a spot without knowing which city it's
+    in) — 7 gyms kept.
+  - Bulgaria: Sofia (6) + Varna (1) = 7.
+  - **`state` for Russia deliberately keys on city names, not the full
+    federal-subject list** — the same design already used for China
+    (`STATES_BY_COUNTRY.CN`), extended here for an additional reason
+    beyond scale: Russia's federal-subject boundaries include several
+    genuinely, internationally contested territories (Crimea and the
+    four partially-occupied Ukrainian oblasts), and this project has no
+    reason to take a position on that by drawing them into a public
+    filter list. Keying on city names sidesteps the question entirely
+    while still giving useful filter granularity. Populated with 20
+    major Russian cities (Moskva/Sankt-Peterburg plus 18 more, matching
+    the scale of CN's own city list), not just the 2 that currently have
+    a seed spot — same "complete-enough-to-be-useful" standard as every
+    other country's state list, adapted to a city-keyed scheme.
+  - **This batch hit real, repeated geocoding trouble for two of the four
+    countries** — worth flagging as a pattern, not just this batch's
+    problem: Nominatim (and Photon as a second opinion) resolved Romanian
+    and Bulgarian street addresses reliably, but **7 of 8 Croatian
+    addresses and 6 of 7 Russian addresses failed to resolve at all**,
+    with Photon's best guesses landing in entirely different cities (e.g.
+    Pula's address matched streets in Tenja, Vinkovci, and Đakovo — three
+    different towns, none of them Pula). This looks like a genuine gap in
+    both services' OSM-derived road coverage for Croatian and Russian
+    street-level addresses specifically, not a one-off — 13 of this
+    batch's 40 spots (32.5%, the highest fallback rate of any batch in
+    this dataset) ended up on a same-city-gym or city-centre fallback
+    position rather than their own geocoded address, flagged in each
+    spot's own `notes`. One Bulgarian address (**Balkan Climbing**,
+    Sofia) got a *confident-looking* Nominatim match that was actually
+    wrong — it resolved to an unrelated street on the opposite side of
+    the city — caught by noticing the returned street name didn't
+    resemble the query at all, not by any distance threshold; fell back
+    to Climb Academy's position in the same city instead of trusting it.
+  - **One same-address pair left unmerged, unlike the Salzburg/Helsinki
+    precedent**: **Climb House Brasov** and **Natural High Brașov** are
+    both listed by the source at the identical street (no house number
+    given for either), but unlike Salzburg's Boulderhalle/Kletterhalle
+    pair or Helsinki's KiipeilyAreena/Salmisaari pair — both confirmed via
+    search to be one venue under two names — no source could confirm or
+    deny that here, so both were kept as separate entries with a note
+    cross-referencing the coincidence rather than guessing either way.
+  - **Climbing type mostly inferred from name/chain recognition**, same
+    heuristic as every prior pass — "Blokx"/"Boulder" → indoor-bouldering
+    only; generic "Climbing Center"/"Climbing Gym"/"Skalodrom" (Russian
+    for "climbing wall") names → bouldering + top-rope default. One
+    exception tagged `lead-climbing`: **SKAI Urban Crag** (Cluj-Napoca) —
+    "Urban Crag" names a simulated-outdoor-route product line, not a
+    plain bouldering wall — and **Skalodrom Bigwallsport na Dinamo**
+    (Moscow) — "Bigwall" in the name signals a tall lead wall, the same
+    naming convention already confirmed for BigWall Praha-Vysočany in the
+    Czech Republic batch.
   - **Not yet pushed to the live Supabase table** — same next-step gap as
     every prior country addition.
 - **Full-dataset geocode-accuracy check at a 3km threshold (31 more spots
