@@ -227,3 +227,143 @@ create policy "users can remove their own marks"
   using (auth.uid() = user_id);
 
 create index if not exists marks_user_id_idx on public.marks (user_id);
+
+-- ---------------------------------------------------------------------------
+-- DRAFT — not yet wired into index.html/app.js, not yet run against a live
+-- project. Sketch for a personal climbing logbook (routes catalog + diary),
+-- the first "Panda Bouldering"-style feature layered on top of the existing
+-- gym map. Review before running in the SQL Editor.
+-- ---------------------------------------------------------------------------
+
+-- ---------------------------------------------------------------------------
+-- routes: the route/problem catalog for a gym. Optional structure for logging
+-- a climb against a named, graded route rather than a freeform grade — gyms
+-- reset routes constantly, so this is deliberately lightweight (no moderation
+-- queue like `spots`): any signed-in user can add one, the submitter or a
+-- moderator can fix/remove it, and `is_active` marks a route as stripped from
+-- the wall without deleting the history that already points at it.
+-- ---------------------------------------------------------------------------
+create table if not exists public.routes (
+  id uuid primary key default gen_random_uuid(),
+  spot_id text not null references public.spots(id) on delete cascade,
+  name text,
+  climb_type text not null check (climb_type in ('indoor-bouldering', 'top-rope', 'lead-climbing')),
+  grade text not null,
+  grade_system text not null default 'v-scale' check (grade_system in ('v-scale', 'yds', 'french', 'font')),
+  color text,
+  wall_section text,
+  setter text,
+  is_active boolean not null default true,
+  photo text,
+  submitted_by uuid references auth.users(id),
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now()
+);
+
+alter table public.routes enable row level security;
+
+drop policy if exists "routes are publicly readable" on public.routes;
+create policy "routes are publicly readable"
+  on public.routes for select
+  using (true);
+
+drop policy if exists "signed-in users can add routes" on public.routes;
+create policy "signed-in users can add routes"
+  on public.routes for insert
+  with check (auth.uid() is not null and submitted_by = auth.uid());
+
+drop policy if exists "submitter or moderator can update a route" on public.routes;
+create policy "submitter or moderator can update a route"
+  on public.routes for update
+  using (submitted_by = auth.uid() or auth.uid() in (select user_id from public.moderators));
+
+drop policy if exists "submitter or moderator can delete a route" on public.routes;
+create policy "submitter or moderator can delete a route"
+  on public.routes for delete
+  using (submitted_by = auth.uid() or auth.uid() in (select user_id from public.moderators));
+
+create index if not exists routes_spot_id_idx on public.routes (spot_id);
+
+-- ---------------------------------------------------------------------------
+-- sessions: one climbing-diary entry per gym visit — the calendar-day record
+-- (Panda's "记录" tab). Fully private, same ownership pattern as `marks`.
+-- ---------------------------------------------------------------------------
+create table if not exists public.sessions (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid not null references auth.users(id) on delete cascade,
+  spot_id text references public.spots(id) on delete set null,
+  session_date date not null,
+  mood text check (mood in ('great', 'good', 'ok', 'tired', 'rough')),
+  notes text,
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now()
+);
+
+alter table public.sessions enable row level security;
+
+drop policy if exists "users can view their own sessions" on public.sessions;
+create policy "users can view their own sessions"
+  on public.sessions for select
+  using (auth.uid() = user_id);
+
+drop policy if exists "users can add their own sessions" on public.sessions;
+create policy "users can add their own sessions"
+  on public.sessions for insert
+  with check (auth.uid() = user_id);
+
+drop policy if exists "users can update their own sessions" on public.sessions;
+create policy "users can update their own sessions"
+  on public.sessions for update
+  using (auth.uid() = user_id);
+
+drop policy if exists "users can delete their own sessions" on public.sessions;
+create policy "users can delete their own sessions"
+  on public.sessions for delete
+  using (auth.uid() = user_id);
+
+create index if not exists sessions_user_id_idx on public.sessions (user_id);
+create index if not exists sessions_spot_id_idx on public.sessions (spot_id);
+
+-- ---------------------------------------------------------------------------
+-- session_climbs: individual route attempts logged within a session. `route_id`
+-- is nullable so a climb can be logged freeform (grade typed by hand) even when
+-- it isn't linked to a catalogued `routes` row. Ownership is via the parent
+-- session (no direct user_id column) since a climb only ever belongs to one.
+-- ---------------------------------------------------------------------------
+create table if not exists public.session_climbs (
+  id uuid primary key default gen_random_uuid(),
+  session_id uuid not null references public.sessions(id) on delete cascade,
+  route_id uuid references public.routes(id) on delete set null,
+  climb_type text not null check (climb_type in ('indoor-bouldering', 'top-rope', 'lead-climbing')),
+  grade text not null,
+  grade_system text not null default 'v-scale' check (grade_system in ('v-scale', 'yds', 'french', 'font')),
+  attempts integer not null default 1,
+  sent boolean not null default true,
+  notes text,
+  created_at timestamptz not null default now()
+);
+
+alter table public.session_climbs enable row level security;
+
+drop policy if exists "users can view climbs on their own sessions" on public.session_climbs;
+create policy "users can view climbs on their own sessions"
+  on public.session_climbs for select
+  using (session_id in (select id from public.sessions where user_id = auth.uid()));
+
+drop policy if exists "users can add climbs to their own sessions" on public.session_climbs;
+create policy "users can add climbs to their own sessions"
+  on public.session_climbs for insert
+  with check (session_id in (select id from public.sessions where user_id = auth.uid()));
+
+drop policy if exists "users can update climbs on their own sessions" on public.session_climbs;
+create policy "users can update climbs on their own sessions"
+  on public.session_climbs for update
+  using (session_id in (select id from public.sessions where user_id = auth.uid()));
+
+drop policy if exists "users can delete climbs on their own sessions" on public.session_climbs;
+create policy "users can delete climbs on their own sessions"
+  on public.session_climbs for delete
+  using (session_id in (select id from public.sessions where user_id = auth.uid()));
+
+create index if not exists session_climbs_session_id_idx on public.session_climbs (session_id);
+create index if not exists session_climbs_route_id_idx on public.session_climbs (route_id);
