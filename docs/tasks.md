@@ -36,17 +36,79 @@ Each entry:
 
 ## Backlog
 
-_(empty — the "add more countries" ask that drove this whole run of
-tasks is now fully worked through: Korea, Belgium, Spain/Portugal/
-Austria/Switzerland, Poland/Denmark/Finland/Ireland, and finally Norway/
-Mexico/Brazil below. Add real tasks here as they're identified; don't
-invent placeholder work just to fill this section.)_
+### Add Chile, Colombia, Venezuela (boulderinglist.com)
+- Status: backlog.
+- What: these three were the next-largest new countries on
+  boulderinglist.com's country list (18/23/15 gyms respectively) after
+  Argentina and Philippines, but their listings are dominated by
+  mountaineering/alpine-club entries with no confirmed indoor wall (e.g.
+  "Club Andino Sosneado"-style clubs, "Asociación de Montañismo y
+  Escalada del Estado Zulia") — the same per-gym web-search verification
+  the Argentina batch needed, just for a larger, noisier list. Deferred
+  rather than force-added or filtered on a tight budget — see
+  `docs/architecture.md` "Seed data sourcing" (Argentina/Philippines
+  entry) for the exact reasoning and the "Club Andino Córdoba was kept,
+  others weren't" judgment-call precedent to reuse.
 
 ## In Progress
 
+### Add Argentina, Philippines (34 gyms)
+- Branch: `feature/add-argentina-philippines` (new branch off `master`)
+- Status: implemented + verified against the offline fallback path in a
+  served copy; not yet merged.
+- What: user asked to cross-check boulderinglist.com and
+  startbouldering.com and add more countries. startbouldering.com 403'd
+  on every fetch attempt this session — general web search was used as
+  the cross-check source instead, same fallback pattern as prior
+  blocked-source cases (e.g. Dianping). Full sourcing detail, every
+  exclusion/merge/correction, and the "Georgia" country/US-state mixup
+  found on boulderinglist.com are all in `docs/architecture.md` "Seed
+  data sourcing".
+- Argentina (17 gyms, 14 cities): 3 entries excluded (a confirmed-
+  demolished outdoor wall, an outdoor riverside wall, one duplicate
+  merged into another same-address listing), 5 suburb corrections where
+  boulderinglist.com only gave a generic province-level label.
+- Philippines (17 gyms, 15 cities): 2 entries excluded (one unconfirmed
+  as a real gym, one outdoor-only mountain wall).
+- Added `AR` (24 divisions: 23 provinces + CABA) and `PH` (82: 81
+  provinces + NCR) to `STATES_BY_COUNTRY`, `COUNTRY_LABELS`,
+  `COUNTRY_FLY_TARGETS`, `COUNTRY_TO_REGION` (`AR` → south-america
+  alongside Brazil, `PH` → asia alongside China/Japan/Korea) in
+  `js/app.js`; 16 new CSS colour variables (7 AR, 9 PH) + chip rules in
+  `css/style.css`; a new Argentina sidebar chip group (before Brazil,
+  alphabetically first in South America) and a new Philippines group
+  (between Japan and South Korea in Asia), plus country `<option>`s in
+  both add/edit forms in `index.html`.
+- Net result: 1069 → **1103 total spots**. Structural check (Node-parsed
+  `window.SEED_GYMS`): 1103/1103 unique ids, zero duplicate
+  name+suburb+state+country combos.
+- **Verified**: since the live Supabase table isn't re-seeded with this
+  batch yet, the app's normal load path still shows the older 1069-row
+  table (expected — same gap as every prior country addition). To
+  actually exercise the new data's render/search/filter path, temporarily
+  pointed `js/supabase-init.js` at an invalid URL to force the app's own
+  documented offline-fallback path (reverted before committing, confirmed
+  clean via `git diff`), then confirmed: all 34 new spots searchable by
+  name, the Argentina/Buenos-Aires chip filter returns exactly its 9 real
+  spots, both new sidebar chip groups render with correct colours/counts,
+  both country `<option>`s present in both forms, no console errors, no
+  mobile horizontal overflow at 375px.
+- `supabase_seed_output.sql` regenerated (1103 rows, matches
+  `window.SEED_GYMS.length` exactly) via a Node script replicating
+  `supabase/seed.html`'s own SQL-generation logic directly (rather than
+  driving the page through a browser) — still untracked/uncommitted by
+  design, a one-off deliverable for the user to paste into the Supabase
+  SQL Editor themselves.
+- **Not yet done**: pushing/merging this branch; running the regenerated
+  SQL against the live Supabase table; Chile/Colombia/Venezuela (Backlog).
+- **Note**: `supabase/schema.sql`'s personal-climbing-logbook draft
+  (routes/sessions/session_climbs tables) was committed and pushed to
+  `master` by the user in a prior session on this same working tree —
+  fully resolved, not an open item anymore.
+
 ### Add Romania, Croatia, Russia, Bulgaria (40 gyms)
-- Branch: `feature/add-romania-croatia-russia-bulgaria` (new branch off `master`)
-- Status: **done — verified live; not yet merged.**
+- Branch: `feature/add-romania-croatia-russia-bulgaria` (merged to `master`)
+- Status: **done — merged to `master`.**
 - What: user asked to keep adding countries, "starting from the ones
   with more gyms." Checked climbing-gyms.com's raw gym count for every
   not-yet-added European country first (all 43 remaining entries),
@@ -91,11 +153,11 @@ invent placeholder work just to fill this section.)_
   Russia populates all 20 city options in the state dropdown; clicking a
   new chip (Romania/București) toggles `.active` correctly; no console
   errors at any point; `window.SEED_GYMS.length` = 1069.
-- **Not yet done**: pushing/merging this branch; the live Supabase table
-  (same outstanding step as every prior country addition).
-- **Note**: `supabase/schema.sql` still has the same unrelated,
-  uncommitted personal-climbing-logbook draft flagged in the prior
-  task's entry — still untouched, still not part of any commit.
+- **Not yet done (at the time)**: merged to `master` since — the live
+  Supabase table is the only outstanding step now, same as every country
+  addition still awaiting a re-seed.
+- **Note**: `supabase/schema.sql`'s personal-climbing-logbook draft was
+  committed by the user in a later session — no longer an open item.
 
 ### Add Hungary, Greece, Czech Republic, Iceland (42 gyms)
 - Branch: `feature/add-hungary-greece-czech-iceland` — **done — merged to

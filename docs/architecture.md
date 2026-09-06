@@ -70,10 +70,10 @@ are only unique within a country** (e.g. AU's `WA` vs US's `WA` are
 different regions). Anything that filters, colors, or edits by state —
 the chips in `index.html`, `STATES_BY_COUNTRY` in `app.js`, the RLS-safe
 columns in `schema.sql` — keys off the `(country, state)` pair together,
-never `state` alone. Now 33 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
+never `state` alone. Now 35 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
 FR, SE, NL, IT, BE, KR, ES, PT, AT, CH, PL, DK, FI, IE, NO, MX, BR, HU, GR,
-CZ, IS, RO, HR, RU, BG), same pattern each time — keep this in mind before
-adding a 34th. One collision
+CZ, IS, RO, HR, RU, BG, AR, PH), same pattern each time — keep this in mind
+before adding a 36th. One collision
 worth flagging: `US`'s state code for California is `CA`, and `CA` is
 also the top-level country code for Canada — not a real ambiguity since
 they're different object keys/fields (`STATES_BY_COUNTRY.US` contains
@@ -159,10 +159,10 @@ pre-filled with its current value, rather than throwing on
 
 ## Seed data sourcing
 
-`js/data.js` currently has 1069 spots (74 AU, 332 US, 32 JP, 15 CA, 9 NZ,
+`js/data.js` currently has 1103 spots (74 AU, 332 US, 32 JP, 15 CA, 9 NZ,
 42 CN, 66 GB, 112 DE, 30 FR, 7 SE, 25 NL, 14 IT, 14 BE, 37 KR, 22 ES,
 7 PT, 22 AT, 8 CH, 31 PL, 14 DK, 14 FI, 9 IE, 20 NO, 16 MX, 15 BR, 18 HU,
-13 GR, 8 CZ, 3 IS, 18 RO, 8 HR, 7 RU, 7 BG), all indoor gyms
+13 GR, 8 CZ, 3 IS, 18 RO, 8 HR, 7 RU, 7 BG, 17 AR, 17 PH), all indoor gyms
 (bouldering and/or top rope, with a growing number now also tagged
 lead-climbing — see "Known gaps" below on why outdoor areas were
 removed). It was built up in layers, not
@@ -932,6 +932,148 @@ from one source:
     (Moscow) — "Bigwall" in the name signals a tall lead wall, the same
     naming convention already confirmed for BigWall Praha-Vysočany in the
     Czech Republic batch.
+  - **Not yet pushed to the live Supabase table** — same next-step gap as
+    every prior country addition.
+- **Argentina (17 gyms, 14 cities) and Philippines (17 gyms, 15 cities)** —
+  the 34th-35th countries. User asked to cross-check
+  [boulderinglist.com](https://boulderinglist.com/countries) and
+  [startbouldering.com](https://startbouldering.com/) against each other and
+  add more countries. startbouldering.com returned an HTTP 403 to this
+  session's fetch tool the whole time — never usable as a second source for
+  this batch, so every claim below was cross-checked against general web
+  search instead (same fallback this project has always used when a source
+  can't be reached, e.g. Dianping blocking automated fetches during the
+  Shanghai/Beijing/Chongqing pass).
+  - **A real, non-obvious data-quality trap found in boulderinglist.com
+    itself, worth flagging for any future use of this source**: its
+    per-country gym list for "Georgia" returned Atlanta-area gyms (Georgia
+    State University, Stone Summit Atlanta, Wall Crawler Rock Club, etc.) —
+    the *US state* of Georgia — with only one single entry (s.k.lucky,
+    Tbilisi) actually belonging to the *country* Georgia. The site
+    apparently buckets both under one "Georgia" label with no
+    country/state distinction. Caught by actually reading the returned
+    city list rather than trusting the label, and by there being only 14
+    total listed (matching a mid-size US-state count, not a real national
+    count) — country Georgia was left out of this batch entirely as a
+    result (1 real gym isn't enough to seed a country).
+  - **Method for picking this batch**: fetched boulderinglist.com's full
+    84-country list with real gym counts, cross off every country already
+    in this dataset, then took the largest genuinely-new ones. Argentina
+    (29 listed, 20 actually enumerated on its own page — a real discrepancy
+    between the site's summary count and its own detail page, not
+    resolved, just noted) and Philippines (14 listed, 19 actually
+    enumerated) were both picked this way. Chile (18), Colombia (23), and
+    Venezuela (15) were larger or comparable in size but deliberately
+    **not** added this round — their listings were dominated by
+    mountaineering/alpine-club entries ("Club Andino X", "Asociación de
+    Montañismo y Escalada del Estado Zulia") with no confirmed indoor wall,
+    which would need the same gym-by-gym verification this batch already
+    took a long time on; left in Backlog for a future pass rather than
+    force-added or arbitrarily filtered on a tight budget.
+  - **Argentina exclusions/corrections, applied the same "never guess"
+    discipline as the original AU/US noise filter**:
+    - **Centro Andino Buenos Aires** (its climbing wall, "Palestra Nacional
+      de Andinismo" at CeNARD) was excluded on two independent grounds:
+      confirmed via search to be a large, open-air concrete structure (not
+      an indoor gym, out of this app's scope), *and* confirmed demolished
+      on 15 December 2025 — a real, current closure, same treatment as
+      Boulder Project Prahran or the US pass's confirmed closures.
+    - **Palestra del Club Mitre de Pesca** (Rosario) was excluded as an
+      outdoor natural-riverbank wall, same "indoor gyms only" scope
+      exclusion as Huayan Climbing Park (China batch) and Hanging Bridge
+      Mountain Park (Philippines, below).
+    - **AREA Multiaventura** and **Cima Escuela de Escalada** (both listed
+      separately by boulderinglist.com, one under "Buenos Aires" and one
+      under "Monte Grande") resolved to the identical street address
+      (Dardo Rocha 371) once individually searched — merged into a single
+      `Cima Escuela de Escalada` entry rather than kept as two, same
+      precedent as the Salzburg Boulderhalle/Kletterhalle and Helsinki
+      KiipeilyAreena/Salmisaari merges.
+    - **Club Andino Córdoba** was kept, unlike several other "Club Andino"
+      entries on the same source — its own site confirms a genuine indoor
+      climbing wall at a municipal sports complex (Polideportivo General
+      Paz), not just an alpine-club office with no wall. This is the same
+      judgment call already applied to Korea's/Ireland's university-named
+      gyms: verify per-entry rather than assuming either way from the name.
+    - **5 suburb corrections**: boulderinglist.com listed AADED Escalando,
+      Golem Escalada, K2 Escalada Deportiva, LA CIMA - Gimnasio Stadium,
+      and Club Andino Sosneado all under a generic province-level label
+      ("Buenos Aires" or "Mendoza") rather than their real city — corrected
+      to Acassuso, Avellaneda, Bella Vista, Tres Arroyos (~500km from the
+      capital — the biggest miss), and San Rafael respectively, each found
+      via the gym's own individually-confirmed address.
+    - Two gyms — **Club Andino Burzaco (CABur)** and **K2 Escalada
+      Deportiva** — have both an outdoor wall and a confirmed genuine
+      indoor component (an indoor fissure wall/boulder room/training wall
+      for CABur; a covered bouldering area for K2) — kept for the indoor
+      component, same "mixed venue, kept for its confirmed indoor part"
+      treatment as Caliraya Recreation Center in the Philippines batch.
+  - **`state` uses Argentina's real top-level divisions**: the 23 provinces
+    plus the Ciudad Autónoma de Buenos Aires (CABA), populated complete
+    (24 total) from the start per the standard set since the NL
+    completeness fix, not just the 7 divisions this batch's spots use.
+  - **Philippines exclusions**: **"B Fitness Station"** (a third
+    boulderinglist.com Quezon City listing) could not be confirmed as a
+    real climbing facility by any source found during this pass — excluded
+    as unconfirmed rather than guessed in. **Hanging Bridge Mountain
+    Park** (Villaros) was excluded as an outdoor mountain-slope wall, the
+    same indoor-only scope exclusion as Centro Andino Buenos Aires above.
+    **Bloc Boulder** (Bocaue) was kept but flagged in its own `notes` as a
+    private, invitation/text-booking-only facility, not a walk-in public
+    gym — a softer version of the Galway Climbing Coop exclusion
+    criteria (members-only cooperative), judged not restrictive enough to
+    exclude outright since anyone can text to request access.
+  - **`state` uses the Philippines' real top-level divisions**: the 81
+    provinces plus the National Capital Region (NCR/Metro Manila),
+    populated complete (82 total) from general knowledge of the current
+    PSGC division list, same standard as every other country — not
+    independently verified against an official government source
+    beyond that, consistent with how every other country's "complete
+    division list" in this file was built.
+  - **Positions individually geocoded** against Nominatim, with Photon and
+    simplified/retried queries as a second pass for anything that didn't
+    resolve on the first try, same method as every geocoded-address
+    country before this one. 20 of 34 addresses matched cleanly on the
+    first Nominatim pass; the rest needed a retry, Photon, or a
+    city-centre/area-level fallback — full per-spot disclosure is in each
+    spot's own `notes` field in `js/data.js`, not just here. One Photon
+    false-positive was caught and rejected during the Philippines retries:
+    Kapit Tuko Indoor Climbing Gym's address matched a same-named
+    subdivision in San Pablo, a different city entirely from Biñan (the
+    same "Photon lands in the wrong town" failure mode already documented
+    for Croatia/Russia) — rejected in favor of a Biñan city-centre
+    fallback instead of trusting it.
+  - **Climbing type inferred from each gym's own description**, same
+    conservative heuristic as every prior pass — a name or description
+    naming "bouldering" specifically and nothing else (Boulder Space,
+    Good Climbs, Flow State Bouldering, both Bouldering Hive branches,
+    Bloc Boulder, Pared Parque España, Heidrun) → indoor-bouldering only;
+    a description confirming rope routes too → bouldering + top-rope.
+    Climb Central Manila (explicitly "the biggest indoor sport-climbing
+    venue in the Philippines"), AADED Escalando (Argentina's first sport-
+    climbing school with routes up to the tallest wall in the country),
+    Chao - Punto Gym (explicitly has bolted lead routes), and Rocódromo La
+    Plata (explicitly offers "equipando" / lead-bolted routes) are tagged
+    `lead-climbing` alongside the other two types.
+  - Net result: 1069 → **1103 total spots**. Structural check (Node-parsed
+    `window.SEED_GYMS`): 1103/1103 unique ids, zero duplicate
+    name+suburb+state+country combos.
+  - **Verified live**: since the live Supabase table isn't re-seeded with
+    this batch yet, the app's normal on-load path still pulls the older
+    1069-row table — same "not visible as a live map marker yet" gap as
+    every prior country addition. To actually verify the new data's
+    render/search/filter path (not just its structure), the app's
+    Supabase client was temporarily pointed at an invalid URL (a one-line,
+    reverted-before-commit edit to `js/supabase-init.js`, confirmed via
+    `git diff` showing no changes afterward) to force its own documented
+    offline-fallback path, which uses `js/data.js` directly — with that
+    forced, all 34 new spots were confirmed searchable by name, the new
+    Argentina/Buenos-Aires chip filter correctly returned exactly its 9
+    real spots, both new sidebar chip groups (Argentina under South
+    America, Philippines under Asia) render with correct per-state colours
+    and counts, both country `<option>`s appear in the add/edit-spot
+    forms, and there was no console error or mobile horizontal overflow
+    at 375px width at any point.
   - **Not yet pushed to the live Supabase table** — same next-step gap as
     every prior country addition.
 - **Full-dataset geocode-accuracy check at a 3km threshold (31 more spots

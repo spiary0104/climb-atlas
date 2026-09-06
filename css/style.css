@@ -171,6 +171,22 @@
     --ru-sankt-peterburg:#c9843f;
     --bg-sofia-city:#3fa8c9;
     --bg-varna:#c95f3f;
+    --ar-buenos-aires:#3f8ec9;
+    --ar-caba:#c9a23f;
+    --ar-cordoba:#6bc93f;
+    --ar-santa-fe:#c93f5e;
+    --ar-entre-rios:#3fc9bd;
+    --ar-mendoza:#9e3fc9;
+    --ar-neuquen:#c9703f;
+    --ph-ncr:#c93f7a;
+    --ph-rizal:#3fa1c9;
+    --ph-laguna:#7a3fc9;
+    --ph-benguet:#3fc98a;
+    --ph-bulacan:#c9573f;
+    --ph-misamis-oriental:#3f6ac9;
+    --ph-cavite:#c93fb0;
+    --ph-camarines-sur:#4fc93f;
+    --ph-pampanga:#c9913f;
     --t-outdoor:#b8834a;
     --t-indoor:#3fb8a6;
     --t-toprope:#8a6bb0;
@@ -509,6 +525,22 @@
   .chip[data-country="RU"][data-state="SANKT_PETERBURG"].active{background:var(--ru-sankt-peterburg);}
   .chip[data-country="BG"][data-state="SOFIA_CITY"].active{background:var(--bg-sofia-city);}
   .chip[data-country="BG"][data-state="VARNA"].active{background:var(--bg-varna);}
+  .chip[data-country="AR"][data-state="BUENOS_AIRES"].active{background:var(--ar-buenos-aires);}
+  .chip[data-country="AR"][data-state="CABA"].active{background:var(--ar-caba);}
+  .chip[data-country="AR"][data-state="CORDOBA"].active{background:var(--ar-cordoba);}
+  .chip[data-country="AR"][data-state="SANTA_FE"].active{background:var(--ar-santa-fe);}
+  .chip[data-country="AR"][data-state="ENTRE_RIOS"].active{background:var(--ar-entre-rios);}
+  .chip[data-country="AR"][data-state="MENDOZA"].active{background:var(--ar-mendoza);}
+  .chip[data-country="AR"][data-state="NEUQUEN"].active{background:var(--ar-neuquen);}
+  .chip[data-country="PH"][data-state="NCR"].active{background:var(--ph-ncr);}
+  .chip[data-country="PH"][data-state="RIZAL"].active{background:var(--ph-rizal);}
+  .chip[data-country="PH"][data-state="LAGUNA"].active{background:var(--ph-laguna);}
+  .chip[data-country="PH"][data-state="BENGUET"].active{background:var(--ph-benguet);}
+  .chip[data-country="PH"][data-state="BULACAN"].active{background:var(--ph-bulacan);}
+  .chip[data-country="PH"][data-state="MISAMIS_ORIENTAL"].active{background:var(--ph-misamis-oriental);}
+  .chip[data-country="PH"][data-state="CAVITE"].active{background:var(--ph-cavite);}
+  .chip[data-country="PH"][data-state="CAMARINES_SUR"].active{background:var(--ph-camarines-sur);}
+  .chip[data-country="PH"][data-state="PAMPANGA"].active{background:var(--ph-pampanga);}
 
   .toggle-row{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-dim);font-family:'Space Mono',monospace;cursor:pointer;}
   .toggle-row input{accent-color:var(--vic);}

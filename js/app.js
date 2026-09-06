@@ -210,10 +210,42 @@
          ['SILISTRA','Silistra'],['SLIVEN','Sliven'],['SMOLYAN','Smolyan'],['SOFIA_CITY','Sofia City'],
          ['SOFIA','Sofia (province)'],['STARA_ZAGORA','Stara Zagora'],['TARGOVISHTE','Targovishte'],
          ['VARNA','Varna'],['VELIKO_TARNOVO','Veliko Tarnovo'],['VIDIN','Vidin'],['VRATSA','Vratsa'],
-         ['YAMBOL','Yambol']]
+         ['YAMBOL','Yambol']],
+    AR: [['BUENOS_AIRES','Buenos Aires'],['CABA','Ciudad Autónoma de Buenos Aires'],['CATAMARCA','Catamarca'],
+         ['CHACO','Chaco'],['CHUBUT','Chubut'],['CORDOBA','Córdoba'],['CORRIENTES','Corrientes'],
+         ['ENTRE_RIOS','Entre Ríos'],['FORMOSA','Formosa'],['JUJUY','Jujuy'],['LA_PAMPA','La Pampa'],
+         ['LA_RIOJA','La Rioja'],['MENDOZA','Mendoza'],['MISIONES','Misiones'],['NEUQUEN','Neuquén'],
+         ['RIO_NEGRO','Río Negro'],['SALTA','Salta'],['SAN_JUAN','San Juan'],['SAN_LUIS','San Luis'],
+         ['SANTA_CRUZ','Santa Cruz'],['SANTA_FE','Santa Fe'],['SANTIAGO_DEL_ESTERO','Santiago del Estero'],
+         ['TIERRA_DEL_FUEGO','Tierra del Fuego'],['TUCUMAN','Tucumán']],
+    PH: [['NCR','National Capital Region (Metro Manila)'],['ABRA','Abra'],['AGUSAN_DEL_NORTE','Agusan del Norte'],
+         ['AGUSAN_DEL_SUR','Agusan del Sur'],['AKLAN','Aklan'],['ALBAY','Albay'],['ANTIQUE','Antique'],
+         ['APAYAO','Apayao'],['AURORA','Aurora'],['BASILAN','Basilan'],['BATAAN','Bataan'],['BATANES','Batanes'],
+         ['BATANGAS','Batangas'],['BENGUET','Benguet'],['BILIRAN','Biliran'],['BOHOL','Bohol'],
+         ['BUKIDNON','Bukidnon'],['BULACAN','Bulacan'],['CAGAYAN','Cagayan'],['CAMARINES_NORTE','Camarines Norte'],
+         ['CAMARINES_SUR','Camarines Sur'],['CAMIGUIN','Camiguin'],['CAPIZ','Capiz'],['CATANDUANES','Catanduanes'],
+         ['CAVITE','Cavite'],['CEBU','Cebu'],['COTABATO','Cotabato'],['DAVAO_DE_ORO','Davao de Oro'],
+         ['DAVAO_DEL_NORTE','Davao del Norte'],['DAVAO_DEL_SUR','Davao del Sur'],['DAVAO_OCCIDENTAL','Davao Occidental'],
+         ['DAVAO_ORIENTAL','Davao Oriental'],['DINAGAT_ISLANDS','Dinagat Islands'],['EASTERN_SAMAR','Eastern Samar'],
+         ['GUIMARAS','Guimaras'],['IFUGAO','Ifugao'],['ILOCOS_NORTE','Ilocos Norte'],['ILOCOS_SUR','Ilocos Sur'],
+         ['ILOILO','Iloilo'],['ISABELA','Isabela'],['KALINGA','Kalinga'],['LA_UNION','La Union'],['LAGUNA','Laguna'],
+         ['LANAO_DEL_NORTE','Lanao del Norte'],['LANAO_DEL_SUR','Lanao del Sur'],['LEYTE','Leyte'],
+         ['MAGUINDANAO_DEL_NORTE','Maguindanao del Norte'],['MAGUINDANAO_DEL_SUR','Maguindanao del Sur'],
+         ['MARINDUQUE','Marinduque'],['MASBATE','Masbate'],['MISAMIS_OCCIDENTAL','Misamis Occidental'],
+         ['MISAMIS_ORIENTAL','Misamis Oriental'],['MOUNTAIN_PROVINCE','Mountain Province'],
+         ['NEGROS_OCCIDENTAL','Negros Occidental'],['NEGROS_ORIENTAL','Negros Oriental'],
+         ['NORTHERN_SAMAR','Northern Samar'],['NUEVA_ECIJA','Nueva Ecija'],['NUEVA_VIZCAYA','Nueva Vizcaya'],
+         ['OCCIDENTAL_MINDORO','Occidental Mindoro'],['ORIENTAL_MINDORO','Oriental Mindoro'],['PALAWAN','Palawan'],
+         ['PAMPANGA','Pampanga'],['PANGASINAN','Pangasinan'],['QUEZON','Quezon'],['QUIRINO','Quirino'],
+         ['RIZAL','Rizal'],['ROMBLON','Romblon'],['SAMAR','Samar'],['SARANGANI','Sarangani'],['SIQUIJOR','Siquijor'],
+         ['SORSOGON','Sorsogon'],['SOUTH_COTABATO','South Cotabato'],['SOUTHERN_LEYTE','Southern Leyte'],
+         ['SULTAN_KUDARAT','Sultan Kudarat'],['SULU','Sulu'],['SURIGAO_DEL_NORTE','Surigao del Norte'],
+         ['SURIGAO_DEL_SUR','Surigao del Sur'],['TARLAC','Tarlac'],['TAWI_TAWI','Tawi-Tawi'],['ZAMBALES','Zambales'],
+         ['ZAMBOANGA_DEL_NORTE','Zamboanga del Norte'],['ZAMBOANGA_DEL_SUR','Zamboanga del Sur'],
+         ['ZAMBOANGA_SIBUGAY','Zamboanga Sibugay']]
   };
   const TYPE_LABELS = {'indoor-bouldering':'Indoor bouldering','top-rope':'Top rope','lead-climbing':'Lead climbing'};
-  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy', BE:'Belgium', KR:'South Korea', ES:'Spain', PT:'Portugal', AT:'Austria', CH:'Switzerland', PL:'Poland', DK:'Denmark', FI:'Finland', IE:'Ireland', NO:'Norway', MX:'Mexico', BR:'Brazil', HU:'Hungary', GR:'Greece', CZ:'Czech Republic', IS:'Iceland', RO:'Romania', HR:'Croatia', RU:'Russia', BG:'Bulgaria'};
+  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy', BE:'Belgium', KR:'South Korea', ES:'Spain', PT:'Portugal', AT:'Austria', CH:'Switzerland', PL:'Poland', DK:'Denmark', FI:'Finland', IE:'Ireland', NO:'Norway', MX:'Mexico', BR:'Brazil', HU:'Hungary', GR:'Greece', CZ:'Czech Republic', IS:'Iceland', RO:'Romania', HR:'Croatia', RU:'Russia', BG:'Bulgaria', AR:'Argentina', PH:'Philippines'};
   // Fixed camera target per country for the "fly to this country" click on
   // its sidebar label -- picked to frame that country's actual spread of
   // seed spots (e.g. US needs a wide zoom to fit both NY and CA), not a
@@ -252,21 +284,23 @@
     RO: {center:[24.5,46], zoom:5.8},
     HR: {center:[16,44.5], zoom:5.6},
     RU: {center:[35,58], zoom:3.6},
-    BG: {center:[24.5,42.7], zoom:6.5}
+    BG: {center:[24.5,42.7], zoom:6.5},
+    AR: {center:[-63,-35], zoom:4.2},
+    PH: {center:[121.8,12.5], zoom:5.2}
   };
   // Which sidebar region-group each country belongs to -- same grouping as
   // the `.region-group[data-region]` wrappers in index.html, kept here too
   // so the map's own continent-tier labels/fly-targets don't need to read
   // the DOM to know a country's continent.
   const COUNTRY_TO_REGION = {
-    CN:'asia', JP:'asia', KR:'asia',
+    CN:'asia', JP:'asia', KR:'asia', PH:'asia',
     DE:'europe', GB:'europe', FR:'europe', SE:'europe', NL:'europe', IT:'europe', BE:'europe',
     ES:'europe', PT:'europe', AT:'europe', CH:'europe', PL:'europe', DK:'europe', FI:'europe', IE:'europe',
     NO:'europe', HU:'europe', GR:'europe', CZ:'europe', IS:'europe',
     RO:'europe', HR:'europe', RU:'europe', BG:'europe',
     CA:'north-america', US:'north-america', MX:'north-america',
     AU:'oceania', NZ:'oceania',
-    BR:'south-america'
+    BR:'south-america', AR:'south-america'
   };
   const REGION_LABELS = {asia:'Asia', europe:'Europe', 'north-america':'North America', oceania:'Oceania', 'south-america':'South America'};
   // Same idea as COUNTRY_FLY_TARGETS, one tier coarser -- framing every
