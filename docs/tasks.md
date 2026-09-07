@@ -36,16 +36,125 @@ Each entry:
 
 ## Backlog
 
-_(empty — add real tasks here as they're identified; don't invent
-placeholder work just to fill this section.)_
+### Add the remaining 11 Chinese cities from the "岩馆探索" (PANDA) app footage
+- Status: backlog — split off from the Xi'an task below per the user's
+  explicit scope decision ("all 12 cities, split across several
+  follow-up tasks", via `AskUserQuestion`).
+- What: the user's `C:\Users\Spiar\Videos\bouldering locations` folder
+  has 11 MP4 screen-recordings + 2 PNG screenshots covering this real
+  Chinese gym-directory app's own listing for 12 cities total. Xi'an (19
+  gyms) is done — see `docs/architecture.md` "Seed data sourcing" for the
+  full method, the app's UI conventions (建设中 badge, blank-photo+订阅提醒
+  pattern = not yet open; 换线 badge = active), and the unusually high
+  (47%) no-confirmable-address rate hit there. The same method applies to
+  each city below — re-run the frame-extraction step first, since the
+  JPEGs already extracted this session live in a session-scratchpad
+  directory that does **not** persist across sessions; only the source
+  MP4s in the Videos folder persist:
+  1. `pip install opencv-python-headless --quiet` (no ffmpeg/vlc in this
+     environment, confirmed).
+  2. Sample ~8-10 evenly-spaced frames per video via `cv2.VideoCapture` +
+     `cap.set(cv2.CAP_PROP_POS_FRAMES, frame_idx)` + `cap.read()`, save as
+     JPEG to a new scratchpad `frames/` dir.
+  3. Read every gym card's name + status badge from the frames, exclude
+     建设中/订阅提醒-pattern cards, cross-reference against that city's own
+     "城市攀岩地图 N家岩馆" banner count for completeness.
+  4. Web-search + Nominatim-geocode each candidate exactly like Xi'an —
+     expect a real chance of a similarly high no-address rate; flag
+     rather than guess, per `Rules.md` §1.
+- Per-city source video and confirmed/approximate gym count (from each
+  city's own banner where seen, else the video's apparent scroll depth):
+  - **Beijing** — `IMG_6215.MP4` (full scroll of the whole list). Gym
+    count not confirmed via a banner in this footage — likely several
+    dozen given Beijing's Banana Climbing + Dianping-sourced gyms already
+    in this dataset are a small fraction of the city's real total.
+  - **Shanghai** — `IMG_6363.MP4`. Confirmed **100 gyms** via the app's
+    own city banner — by far the largest single city in this footage.
+  - **Guangzhou** — `IMG_6365.MP4` (first portion of the recording, before
+    it moves on to Shenzhen). Count not confirmed via a banner in the
+    portion reviewed.
+  - **Shenzhen** — `IMG_6365.MP4` (second portion) + `IMG_6366.MP4` +
+    `IMG_6367.MP4`. Count not confirmed via a banner in the portions
+    reviewed.
+  - **Chengdu** — `IMG_6364.MP4` (possibly) + `IMG_6368.MP4`. Confirmed
+    **38 gyms** via the app's own city banner.
+  - **Hangzhou** — `IMG_6369.MP4`. Confirmed **53 gyms** via the app's own
+    city banner.
+  - **Nanjing** — `IMG_6372.MP4` (first portion). Confirmed **22 gyms**
+    via the app's own city banner.
+  - **Wuhan** — `IMG_6373.MP4` (first portion). Confirmed **21 gyms** via
+    the app's own city banner.
+  - **Chongqing** — `IMG_6373.MP4` (second portion). Confirmed **35
+    gyms** via the app's own city banner — on top of the 5 Chongqing
+    gyms already in this dataset from an earlier, separate Dianping pass
+    (see `docs/architecture.md`), so expect real overlap/duplicate
+    checking against those 5 existing entries, not just against each
+    other.
+  - **Suzhou** — `IMG_6374.MP4` (first portion). Confirmed **22 gyms**
+    via the app's own city banner.
+  - **Tianjin** — `IMG_6374.MP4` (second portion). Confirmed **21 gyms**
+    via the app's own city banner.
+  - (Xi'an itself — `IMG_6215.MP4`'s companion PNG screenshots, ~25 gyms
+    seen, 19 kept after exclusions/merges — is done, not part of this
+    backlog entry.)
+- Given the scale (400-500+ candidates across all 11 remaining cities,
+  each likely needing its own address-search pass same as Xi'an), this
+  should stay split into one task per city (or a small group of related
+  cities) rather than attempted in one sitting — same reasoning that
+  produced this split in the first place.
 
 ## In Progress
 
-### Add India, Israel, Indonesia, Taiwan (31 gyms)
-- Branch: `feature/add-india-israel-indonesia-taiwan` (new branch off
-  `master`)
+### Add Xi'an (China) — 19 gyms
+- Branch: `feature/add-xian` (new branch off `master`)
 - Status: implemented + verified against the offline fallback path in a
   served copy; not yet merged.
+- What: first of 12 Chinese cities from the user's screen-recorded
+  "岩馆探索" (PANDA) app footage — see the Backlog entry above for the
+  other 11 and the full method. 21 candidates identified from the
+  footage; 2 pairs merged as likely-duplicate cards (岩十三攀岩馆, DC攀岩),
+  leaving 19 distinct gyms. Full sourcing detail, every exclusion/merge/
+  flag is in `docs/architecture.md` "Seed data sourcing".
+- **Unusually high no-address rate for this batch**: only 10 of 19 gyms
+  got a real, independently web-searched + Nominatim-geocoded address;
+  the other 9 (47%) had no address findable at all via web search and
+  are flagged with a city-centre placeholder position rather than a
+  guessed one — the worst hit rate of any country/city batch in this
+  project so far (previous worst: Croatia/Russia's 32.5% geocoding-
+  failure rate). Worth expecting a similar rate for the other 11 cities.
+- **A real bug was caught and fixed during verification**: the first
+  draft of this batch omitted the `types` array on all 9 city-centre-
+  placeholder spots, which crashed `render()` the moment the offline-
+  fallback path tried to filter them (`g.types.some(...)` on `undefined`)
+  — caught by the browser console during the standard verification pass,
+  fixed by adding the same conservative `[indoor-bouldering, top-rope]`
+  default used elsewhere in this dataset for unconfirmed-type entries.
+- Added a `--cn-xian` CSS colour variable + chip rule in `css/style.css`
+  and a new Xi'an chip in `index.html`'s existing China chip-row
+  (`state="XIAN"` was already present in `STATES_BY_COUNTRY.CN` from an
+  earlier state-list-completeness pass — no `js/app.js` change needed).
+- Net result: 1181 → **1200 total spots**. Structural check (Node-parsed
+  `window.SEED_GYMS`): 1200/1200 unique ids, zero duplicate
+  name+suburb+state+country combos, every spot has a non-empty `types`
+  array.
+- **Verified**: same offline-fallback-forcing method as every prior batch
+  (`js/supabase-init.js` temporarily pointed at an invalid URL, reverted
+  before committing, confirmed clean via `git diff`) — with that forced,
+  all 19 new spots searchable by name, the new Xi'an chip renders with
+  the correct colour and a legible active state, clicking it correctly
+  filters to exactly 19 spots, no console errors (after the `types` fix
+  above), no mobile horizontal overflow at 375px.
+- `supabase_seed_output.sql` regenerated (1200 rows) via the same Node
+  script used for every prior batch — still untracked/uncommitted by
+  design, a one-off deliverable for the user to paste into the Supabase
+  SQL Editor themselves.
+- **Not yet done**: pushing/merging this branch; running the regenerated
+  SQL against the live Supabase table; the other 11 cities (see Backlog).
+
+### Add India, Israel, Indonesia, Taiwan (31 gyms)
+- Branch: `feature/add-india-israel-indonesia-taiwan` — **done — merged
+  to `master`** (commit `7f41c5c`), pushed to origin.
+- Status: done — merged.
 - What: user asked to keep adding countries. Re-checked boulderinglist.com's
   remaining not-yet-added list and took the four largest with clean
   enough data: India, Israel, Indonesia, Taiwan. Full sourcing detail,
@@ -86,8 +195,10 @@ placeholder work just to fill this section.)_
   script used for every prior batch — still untracked/uncommitted by
   design, a one-off deliverable for the user to paste into the Supabase
   SQL Editor themselves.
-- **Not yet done**: pushing/merging this branch; running the regenerated
-  SQL against the live Supabase table.
+- **Not yet done (at the time)**: merged to `master` and pushed since —
+  Xi'an followed through on in the task above. The live Supabase table
+  is still the only outstanding step, same as every country addition
+  still awaiting a re-seed.
 
 ### Add Colombia, Chile, Venezuela (47 gyms)
 - Branch: `feature/add-colombia-chile-venezuela` — **done — merged to

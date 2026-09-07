@@ -175,8 +175,8 @@ pre-filled with its current value, rather than throwing on
 
 ## Seed data sourcing
 
-`js/data.js` currently has 1181 spots (74 AU, 332 US, 32 JP, 15 CA, 9 NZ,
-42 CN, 66 GB, 112 DE, 30 FR, 7 SE, 25 NL, 14 IT, 14 BE, 37 KR, 22 ES,
+`js/data.js` currently has 1200 spots (74 AU, 332 US, 32 JP, 15 CA, 9 NZ,
+61 CN, 66 GB, 112 DE, 30 FR, 7 SE, 25 NL, 14 IT, 14 BE, 37 KR, 22 ES,
 7 PT, 22 AT, 8 CH, 31 PL, 14 DK, 14 FI, 9 IE, 20 NO, 16 MX, 15 BR, 18 HU,
 13 GR, 8 CZ, 3 IS, 18 RO, 8 HR, 7 RU, 7 BG, 17 AR, 17 PH, 18 CO, 15 CL,
 14 VE, 8 IN, 8 IL, 9 ID, 6 TW), all indoor gyms
@@ -1292,6 +1292,112 @@ from one source:
     horizontal overflow at 375px.
   - **Not yet pushed to the live Supabase table** — same next-step gap as
     every prior country addition.
+- **Xi'an (19 gyms) — the first of 12 Chinese cities sourced from a new kind
+  of source: screen-recorded video footage of a real Chinese gym-directory
+  app ("岩馆探索"/PANDA), not a text directory site.** The user provided 11
+  MP4 screen recordings + 2 PNG screenshots covering that app's own
+  directory for 12 Chinese cities (Beijing, Shanghai [100 gyms per the
+  app's own city banner], Guangzhou, Shenzhen, Chengdu [38], Hangzhou [53],
+  Nanjing [22], Wuhan [21], Chongqing [35, on top of the 5 already in this
+  dataset from an earlier Dianping pass], Suzhou [22], Tianjin [21], Xi'an
+  [~25]) — an estimated 400-500+ gym candidates in total, none with
+  addresses in the app itself (name + thumbnail only). Given this was
+  10-20x larger than any prior single-task scope in this project, the user
+  was asked to scope it (`AskUserQuestion`, per `Rules.md` §11) and chose
+  "all 12 cities, split across several follow-up tasks" — do Xi'an now,
+  backlog the other 11 (see `docs/tasks.md` Backlog).
+  - **No ffmpeg/vlc available in this environment** — confirmed via `which
+    ffmpeg` / `Get-Command`. Installed `opencv-python-headless` via pip and
+    wrote a one-off Python script sampling 8 evenly-spaced frames per video
+    via `cv2.VideoCapture` + `cap.set(cv2.CAP_PROP_POS_FRAMES, ...)`, saved
+    as JPEGs to a scratchpad directory — 88 frames total across the 11
+    videos, used to visually read every gym card's name and status badge.
+  - **The app's own UI conventions had to be learned before candidates could
+    be filtered correctly**: a "建设中" (under construction) black badge
+    means not-yet-open — excluded. A card with a blank/faded photo, a
+    "订阅提醒" (subscribe for updates) button, and 0/0 like/star counts is a
+    second, visually distinct "not yet open" pattern (also seen for gyms in
+    the Shanghai/Wuhan footage) — treated identically to 建设中. A "换线"
+    (route-change notice) badge means an active, currently-operating gym —
+    not an exclusion signal. Each city tab's own "城市攀岩地图 N家岩馆"
+    banner card gives that city's authoritative gym count, used to
+    sanity-check whether a scroll/video had captured the full list.
+  - **21 Xi'an candidates were identified from the footage; 2 pairs turned
+    out to be the same gym shown as two separate cards** (an unlabeled
+    "main" card and a same-named branch card, for both 岩十三攀岩馆 and DC
+    攀岩) — every independent web search for either card's name in each
+    pair returned the identical single address, with no second address
+    ever surfacing, so each pair was merged into one spot rather than kept
+    as two — same "likely duplicate, don't double-count" treatment already
+    used for a Beijing candidate (768攀岩馆) earlier in this dataset. Net:
+    19 distinct gyms.
+  - **This batch had an unusually high rate of unconfirmable addresses**:
+    10 of 19 gyms (Laoshan Climbing Co-creation Club, Yan13 Climbing Gym,
+    Lingzhongli Climbing, Duote Climbing ×2 of 3 branches, Daren Climbing,
+    Red Point Climbing ×2, Climbing Dream Factory, Xi'an Seeyou Climbing
+    Gym) got a real, web-search-confirmed address (individually geocoded
+    against Nominatim, several as exact named-building/landmark matches,
+    a few as street- or district-level fallbacks where Nominatim couldn't
+    resolve the exact building); the other **9 (47%) had no address
+    findable via web search at all** — DC Climbing (merged card), Huoshi
+    Climbing (Rainbow Valley), Muyan Climbing, Jianshan Climbing, Duote
+    Climbing (Minleyuan — also couldn't be independently confirmed as a
+    genuine third branch distinct from the other two Duote locations,
+    flagged as a possible duplicate/mislabel rather than guessed), Xi'an
+    Zebra Climbing, Wopan Xi'an Climbing Gym, and Peter Rabbit Climbing
+    (Damao City — a different, confirmed branch of the same chain exists
+    at a Chang'an District mall, but not this one). This is a markedly
+    worse hit rate than any prior country/city batch (the previous worst,
+    Croatia/Russia's geocoding-failure rate, was 32.5%) — smaller,
+    independent Chinese gyms are evidently much less indexed by
+    English-language web search than the boulderinglist.com/
+    climbing-gyms.com-sourced European/South American gyms, or than a
+    named-chain's own marketing site (Banana Climbing). Per `Rules.md` §1,
+    none of these 9 addresses were guessed — each carries a `notes` field
+    disclosing the search was run and came up empty, with its position set
+    to Xi'an's city centre (with a small per-gym offset, same convention as
+    the original Mountain Project multi-gym-per-city passes) as a visible
+    placeholder rather than a real location. The gym names themselves are
+    still treated as confirmed real, since the primary source (the app's
+    own directory, read directly from screen-recorded footage) is at least
+    as reliable as boulderinglist.com's own text listings this project has
+    otherwise trusted at face value.
+  - `state` uses `"XIAN"` — already present in `STATES_BY_COUNTRY.CN`
+    from the earlier state-list-completeness pass (China's `state` field
+    keys on city names, not provinces, per the existing design) — so no
+    `js/app.js` change was needed for this addition, only a new
+    `--cn-xian` CSS colour variable + chip rule and a new sidebar chip in
+    `index.html`'s existing China chip-row.
+  - **A real bug was caught and fixed during verification, not just
+    disclosed**: the first draft of this batch omitted the `types` array
+    on all 9 city-centre-placeholder spots above, which crashed `render()`
+    (`g.types.some(...)` on `undefined`) the moment the offline-fallback
+    path tried to filter them — caught by the browser console during the
+    standard offline-fallback-forcing verification pass, not by inspection
+    alone. Fixed by adding the same conservative `[indoor-bouldering,
+    top-rope]` default used for every other unconfirmed-type entry in this
+    dataset.
+  - Net result: 1181 → **1200 total spots**. Structural check (Node-parsed
+    `window.SEED_GYMS`): 1200/1200 unique ids, zero duplicate
+    name+suburb+state+country combos, every spot has a non-empty `types`
+    array.
+  - **Verified live** (served copy, `npx serve .`, same offline-fallback-
+    forcing method as every prior batch — `js/supabase-init.js` temporarily
+    pointed at an invalid URL, reverted before committing, confirmed clean
+    via `git diff`): all 19 new spots searchable by name; the new Xi'an
+    chip renders in China's existing chip-row with the correct colour and
+    a legible active state (confirmed via computed style, not just
+    visually); clicking it correctly filters to exactly 19 spots; no
+    console errors after the `types` fix above; no horizontal overflow in
+    the China chip row at 375px mobile width.
+  - **Not yet pushed to the live Supabase table** — same next-step gap as
+    every prior country/city addition.
+  - **The other 11 cities from this same footage are backlogged**, not
+    attempted this session — see `docs/tasks.md` Backlog for per-city
+    source video filenames, confirmed/approximate gym counts, and the
+    exact frame-extraction method to re-run (the extracted JPEGs
+    themselves are session-scratchpad files that don't persist; the
+    source MP4s in `C:\Users\Spiar\Videos\bouldering locations` do).
 - **Full-dataset geocode-accuracy check at a 3km threshold (31 more spots
   corrected, complete)**: earlier passes only checked spots that had moved
   ≥5km then ≥4km against Nominatim (40 spots corrected total, see the two
