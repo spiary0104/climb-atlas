@@ -229,10 +229,12 @@ create policy "users can remove their own marks"
 create index if not exists marks_user_id_idx on public.marks (user_id);
 
 -- ---------------------------------------------------------------------------
--- DRAFT — not yet wired into index.html/app.js, not yet run against a live
--- project. Sketch for a personal climbing logbook (routes catalog + diary),
--- the first "Panda Bouldering"-style feature layered on top of the existing
--- gym map. Review before running in the SQL Editor.
+-- Personal climbing logbook (routes catalog + diary) — the first "Panda
+-- Bouldering"-style feature layered on top of the existing gym map.
+-- `sessions`/`session_climbs` are wired into index.html/app.js (the header's
+-- "Logbook" button); `routes` is not used by any UI yet. Not yet run against
+-- a live project — review, then run once in the SQL Editor like the rest of
+-- this file.
 -- ---------------------------------------------------------------------------
 
 -- ---------------------------------------------------------------------------

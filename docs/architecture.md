@@ -64,6 +64,22 @@ depends on all of the above. Breaking this order breaks the app silently
 - **`marks`** — per-user "climbed" / "bookmarked" state. RLS restricts
   each user to their own rows regardless of what the client sends. Not
   moderated — private data, nothing to review.
+- **`routes`**, **`sessions`**, **`session_climbs`** — the personal climbing
+  logbook (header's "Logbook" button, gated behind sign-in same as marks).
+  `sessions` is one diary entry per gym visit (date, mood, notes); each has
+  zero or more `session_climbs` rows (type, grade, attempts, sent) via
+  `session_id`, optionally pointing at a `routes` row (a gym's catalogued
+  route/problem) via `route_id` — nullable, since most climbs are logged
+  freeform (grade typed by hand) rather than linked to a catalogued route.
+  Ownership for `session_climbs` is via its parent `sessions` row (no direct
+  `user_id` column) since a climb only ever belongs to one session. `routes`
+  is public-read with no moderation queue (unlike `spots`) — any signed-in
+  user can add or edit one, since gym routes reset on a schedule the
+  `spots` moderation model would be too slow for; `is_active` marks a route
+  stripped from the wall without deleting history that points at it. Only
+  `sessions`/`session_climbs` have UI so far (`js/app.js`'s
+  `openLogbookModal`/`openAddSessionModal`) — `routes` has no add/browse UI
+  yet, so every climb currently logged is freeform.
 
 Every spot has both a `country` and a `state` field, and **`state` codes
 are only unique within a country** (e.g. AU's `WA` vs US's `WA` are

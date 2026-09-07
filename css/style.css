@@ -876,6 +876,49 @@
   .pending-actions button:active:not(:disabled){transform:scale(0.97);}
   .pending-actions button:disabled{opacity:0.4;cursor:not-allowed;}
 
+  .session-list{display:flex;flex-direction:column;gap:10px;}
+  .session-item{
+    background:var(--surface-2);
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:12px 14px;
+  }
+  .climb-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
+  .climb-chip{
+    font-family:'Space Mono',monospace;
+    font-size:11px;
+    padding:3px 8px;
+    border-radius:12px;
+    border:1px solid var(--border);
+    color:var(--text-dim);
+  }
+  .climb-chip.sent{border-color:var(--vic);color:var(--vic);}
+
+  .climb-rows{display:flex;flex-direction:column;gap:8px;}
+  .climb-row{
+    display:flex;gap:6px;align-items:center;
+    background:var(--surface-2);
+    border:1px solid var(--border);
+    border-radius:7px;
+    padding:8px;
+  }
+  .climb-row select.climb-type{flex:1.3;min-width:0;}
+  .climb-row input.climb-grade{flex:1;min-width:0;}
+  .climb-row input.climb-attempts{width:44px;flex:none;}
+  .climb-row label.climb-sent{
+    display:flex;align-items:center;gap:3px;flex:none;
+    font-size:10.5px;color:var(--text-dim);white-space:nowrap;
+  }
+  .climb-row select, .climb-row input[type="text"], .climb-row input[type="number"]{
+    background:var(--bg);border:1px solid var(--border);border-radius:5px;
+    color:var(--text);padding:5px 6px;font-size:12px;font-family:inherit;
+  }
+  .climb-row .remove-climb-btn{
+    flex:none;background:none;border:none;color:var(--text-dim);
+    cursor:pointer;font-size:15px;line-height:1;padding:2px 4px;
+  }
+  .climb-row .remove-climb-btn:hover{color:var(--t-outdoor,#c96);}
+
   .footer-links{
     display:flex;
     gap:10px;

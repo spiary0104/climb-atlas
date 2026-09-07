@@ -30,6 +30,7 @@
       <div class="count-badge"><b id="countNum">0</b>&nbsp;spots shown</div>
       <a class="auth-btn" href="about.html">About</a>
       <button class="auth-btn" id="savedBtn">Saved</button>
+      <button class="auth-btn" id="logbookBtn">Logbook</button>
       <button class="auth-btn add-btn" id="addBtn">+ Add a location</button>
       <button class="auth-btn" id="pendingReviewBtn" style="display:none;">Pending review</button>
       <div class="auth-widget" id="authWidget"><button class="auth-btn" id="signInBtn">Sign in</button></div>
@@ -782,6 +783,56 @@
     <div class="modal-actions">
       <button class="btn-cancel" id="authCancelBtn">Cancel</button>
       <button class="btn-submit" id="sendMagicLinkBtn">Send magic link</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop hidden" id="logbookModalBackdrop">
+  <div class="modal info-modal">
+    <h2>Climbing logbook</h2>
+    <div class="sub">Private to your account — a diary of sessions and the climbs you logged during each one.</div>
+    <button class="add-btn" id="addSessionBtn" style="margin-bottom:14px;">+ Log a session</button>
+    <div id="logbookList" class="session-list"></div>
+    <div class="close-row"><button class="btn-submit info-close" style="padding:8px 18px;">Close</button></div>
+  </div>
+</div>
+
+<div class="modal-backdrop hidden" id="addSessionModalBackdrop">
+  <div class="modal">
+    <h2>Log a session</h2>
+    <div class="sub">Private to your account — not shown on the public map.</div>
+    <div class="field field-row">
+      <div>
+        <label>Date</label>
+        <input id="sDate" type="date">
+      </div>
+      <div>
+        <label>Mood</label>
+        <select id="sMood">
+          <option value="great">🤩 Great</option>
+          <option value="good" selected>🙂 Good</option>
+          <option value="ok">😐 OK</option>
+          <option value="tired">😮‍💨 Tired</option>
+          <option value="rough">😫 Rough</option>
+        </select>
+      </div>
+    </div>
+    <div class="field">
+      <label>Gym (optional)</label>
+      <select id="sGym"><option value="">No specific gym</option></select>
+    </div>
+    <div class="field">
+      <label>Climbs logged</label>
+      <div id="sClimbsList" class="climb-rows"></div>
+      <button class="btn-cancel" id="sAddClimbBtn" style="margin-top:8px;width:100%;">+ Add a climb</button>
+    </div>
+    <div class="field">
+      <label>Notes (optional)</label>
+      <textarea id="sNotes" placeholder="How did it feel? Anything to remember for next time?"></textarea>
+    </div>
+    <div class="modal-actions">
+      <button class="btn-cancel" id="sCancelBtn">Cancel</button>
+      <button class="btn-submit" id="sSaveBtn">Save session</button>
     </div>
   </div>
 </div>

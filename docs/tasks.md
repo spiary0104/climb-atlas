@@ -52,6 +52,49 @@ Each entry:
 
 ## In Progress
 
+### Personal climbing logbook (sessions + session_climbs UI)
+- Branch: `feature/personal-climbing-logbook` (new branch off `master`)
+- Status: verified live in a served copy; not yet merged.
+- What: this session found the feature already substantially implemented
+  and uncommitted in the working tree at the start of the turn (a header
+  "Logbook" button, a session-list modal, and a "Log a session" modal
+  with dynamic climb rows, all wired to the `sessions`/`session_climbs`
+  tables from the schema draft committed in an earlier task) — not
+  written from scratch this turn. Reviewed it end to end, verified it
+  works, and is committing it now rather than leaving finished work
+  sitting uncommitted. Full data-model writeup already in
+  `docs/architecture.md` "Data model".
+- **Verified live** (served copy, `npx serve .`): since this environment
+  can't complete a real Supabase auth flow, sign-in was simulated by
+  overriding `window.auth`'s `user` getter (`Object.defineProperty`,
+  runtime-only, no file changes) and `window.sb.from` was stubbed per-
+  table to inspect exact call payloads without hitting a live database.
+  Confirmed: the sign-in gate blocks and toasts correctly when signed
+  out; opening "Log a session" populates the gym `<select>` (sorted
+  alphabetically) and starts with one climb row defaulted to today's
+  date; adding/editing/removing climb rows re-renders correctly and
+  preserves the other rows' values; saving inserts into `sessions` with
+  the exact expected fields (`user_id`, `spot_id` — `null` when no gym
+  picked, `session_date`, `mood`, `notes` — `null` when blank) and then
+  `session_climbs` with the returned `session_id`, correct
+  `grade_system` per climb type (`v-scale` for indoor-bouldering,
+  `yds` otherwise), and correctly **omits** the `session_climbs` insert
+  entirely when every climb row's grade was left blank (the
+  `draftClimbs.filter(c=>c.grade.trim())` guard); deleting a session
+  calls `.delete().eq('id', <real id>)`; the populated-list view
+  correctly resolves a `spot_id` to a real gym name via `spots`,
+  formats the mood emoji, and renders climb chips with a `.sent`/
+  unsent visual distinction. No console errors at any point; no
+  horizontal overflow or layout breakage at 375px mobile width,
+  including the multi-control climb-row layout.
+- **Not yet done**: the `routes` catalog table has no add/browse UI yet
+  (documented as a known, deliberate scope boundary in
+  `docs/architecture.md`, not an oversight) — every climb is currently
+  logged freeform rather than against a named, gym-catalogued route. A
+  real end-to-end Supabase round trip (real sign-in, real insert) still
+  needs the user to try it live, same limitation as every other sign-in-
+  gated feature in this project's history.
+
 ### Add Argentina, Philippines (34 gyms)
 - Branch: `feature/add-argentina-philippines` (new branch off `master`)
 - Status: implemented + verified against the offline fallback path in a
