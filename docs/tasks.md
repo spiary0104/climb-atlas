@@ -36,25 +36,67 @@ Each entry:
 
 ## Backlog
 
-### Add Chile, Colombia, Venezuela (boulderinglist.com)
-- Status: backlog.
-- What: these three were the next-largest new countries on
-  boulderinglist.com's country list (18/23/15 gyms respectively) after
-  Argentina and Philippines, but their listings are dominated by
-  mountaineering/alpine-club entries with no confirmed indoor wall (e.g.
-  "Club Andino Sosneado"-style clubs, "Asociación de Montañismo y
-  Escalada del Estado Zulia") — the same per-gym web-search verification
-  the Argentina batch needed, just for a larger, noisier list. Deferred
-  rather than force-added or filtered on a tight budget — see
-  `docs/architecture.md` "Seed data sourcing" (Argentina/Philippines
-  entry) for the exact reasoning and the "Club Andino Córdoba was kept,
-  others weren't" judgment-call precedent to reuse.
+_(empty — Chile/Colombia/Venezuela, the three deferred from the
+Argentina/Philippines batch, are now done — see below. Add real tasks
+here as they're identified; don't invent placeholder work just to fill
+this section.)_
 
 ## In Progress
 
+### Add Colombia, Chile, Venezuela (47 gyms)
+- Branch: `feature/add-colombia-chile-venezuela` (new branch off `master`)
+- Status: implemented + verified against the offline fallback path in a
+  served copy; not yet merged.
+- What: user asked to keep adding countries and cross-check locations
+  for correctness. This follows through on the three countries deferred
+  from the Argentina/Philippines batch — each of their boulderinglist.com
+  listings got the same per-gym "is this a real, currently-operating
+  indoor facility" verification as Argentina, not just an address
+  lookup. Full sourcing detail, every exclusion/merge/access-judgment
+  call, and the specific catches (an AI-search false attribution, a
+  Photon geocode landing 600km away, a duplicate listing under two city
+  labels) are all in `docs/architecture.md` "Seed data sourcing".
+- Colombia (18 gyms, 10 cities): 1 excluded (unconfirmed), 1 duplicate
+  merged (Ecoextremo, listed twice under different cities).
+- Chile (15 gyms, 11 cities): 3 excluded — 2 on ambiguous-public-access
+  grounds (a university wall, a student/alumni climbing space), 1 on
+  scope grounds (a confirmed outdoor-only wall).
+- Venezuela (14 gyms, 9 cities): 1 excluded (unconfirmed); every other
+  "sounds like it might not be a real gym" entry (a skate park, a
+  mountaineering association, a gym named after a person) turned out to
+  be a real, verifiable facility once individually checked.
+- Added `CO` (33 divisions: 32 departments + Bogotá D.C.), `CL` (16
+  regions), and `VE` (24: 23 states + Distrito Capital) to
+  `STATES_BY_COUNTRY`, `COUNTRY_LABELS`, `COUNTRY_FLY_TARGETS`,
+  `COUNTRY_TO_REGION` (all three → south-america, alongside
+  Argentina/Brazil) in `js/app.js`; 23 new CSS colour variables (9 CO, 8
+  CL, 6 VE) + chip rules in `css/style.css`; 3 new sidebar chip groups
+  under South America (alphabetical: Argentina, Brazil, Chile, Colombia,
+  Venezuela) and country `<option>`s in both add/edit forms in
+  `index.html`.
+- Net result: 1103 → **1150 total spots**. Structural check (Node-parsed
+  `window.SEED_GYMS`): 1150/1150 unique ids, zero duplicate
+  name+suburb+state+country combos, every state code used confirmed to
+  resolve against its country's `STATES_BY_COUNTRY` entry.
+- **Verified**: same offline-fallback-forcing method as the Argentina/
+  Philippines batch (temporarily pointed `js/supabase-init.js` at an
+  invalid URL, reverted before committing, confirmed clean via `git
+  diff`) — with that forced, all 47 new spots searchable by name, all 3
+  new sidebar chip groups render with correct colours/counts, both
+  country `<option>`s present in both forms, chip active-state text
+  stayed legible, no console errors, no mobile horizontal overflow at
+  375px.
+- `supabase_seed_output.sql` regenerated (1150 rows) via the same Node
+  script used for the Argentina/Philippines batch — still
+  untracked/uncommitted by design, a one-off deliverable for the user to
+  paste into the Supabase SQL Editor themselves.
+- **Not yet done**: pushing/merging this branch; running the regenerated
+  SQL against the live Supabase table.
+
 ### Personal climbing logbook (sessions + session_climbs UI)
-- Branch: `feature/personal-climbing-logbook` (new branch off `master`)
-- Status: verified live in a served copy; not yet merged.
+- Branch: `feature/personal-climbing-logbook` — **done — merged to
+  `master`**.
+- Status: done — merged.
 - What: this session found the feature already substantially implemented
   and uncommitted in the working tree at the start of the turn (a header
   "Logbook" button, a session-list modal, and a "Log a session" modal
@@ -96,9 +138,9 @@ Each entry:
   gated feature in this project's history.
 
 ### Add Argentina, Philippines (34 gyms)
-- Branch: `feature/add-argentina-philippines` (new branch off `master`)
-- Status: implemented + verified against the offline fallback path in a
-  served copy; not yet merged.
+- Branch: `feature/add-argentina-philippines` — **done — merged to
+  `master`**.
+- Status: done — merged.
 - What: user asked to cross-check boulderinglist.com and
   startbouldering.com and add more countries. startbouldering.com 403'd
   on every fetch attempt this session — general web search was used as
@@ -142,8 +184,10 @@ Each entry:
   driving the page through a browser) — still untracked/uncommitted by
   design, a one-off deliverable for the user to paste into the Supabase
   SQL Editor themselves.
-- **Not yet done**: pushing/merging this branch; running the regenerated
-  SQL against the live Supabase table; Chile/Colombia/Venezuela (Backlog).
+- **Not yet done (at the time)**: merged to `master` since; Chile/
+  Colombia/Venezuela followed through on in the next task above. The
+  live Supabase table is still the only outstanding step, same as every
+  country addition still awaiting a re-seed.
 - **Note**: `supabase/schema.sql`'s personal-climbing-logbook draft
   (routes/sessions/session_climbs tables) was committed and pushed to
   `master` by the user in a prior session on this same working tree —

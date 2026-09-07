@@ -242,10 +242,32 @@
          ['SULTAN_KUDARAT','Sultan Kudarat'],['SULU','Sulu'],['SURIGAO_DEL_NORTE','Surigao del Norte'],
          ['SURIGAO_DEL_SUR','Surigao del Sur'],['TARLAC','Tarlac'],['TAWI_TAWI','Tawi-Tawi'],['ZAMBALES','Zambales'],
          ['ZAMBOANGA_DEL_NORTE','Zamboanga del Norte'],['ZAMBOANGA_DEL_SUR','Zamboanga del Sur'],
-         ['ZAMBOANGA_SIBUGAY','Zamboanga Sibugay']]
+         ['ZAMBOANGA_SIBUGAY','Zamboanga Sibugay']],
+    CO: [['AMAZONAS','Amazonas'],['ANTIOQUIA','Antioquia'],['ARAUCA','Arauca'],['ATLANTICO','Atlántico'],
+         ['BOGOTA_DC','Bogotá D.C.'],['BOLIVAR','Bolívar'],['BOYACA','Boyacá'],['CALDAS','Caldas'],
+         ['CAQUETA','Caquetá'],['CASANARE','Casanare'],['CAUCA','Cauca'],['CESAR','Cesar'],['CHOCO','Chocó'],
+         ['CORDOBA','Córdoba'],['CUNDINAMARCA','Cundinamarca'],['GUAINIA','Guainía'],['GUAVIARE','Guaviare'],
+         ['HUILA','Huila'],['LA_GUAJIRA','La Guajira'],['MAGDALENA','Magdalena'],['META','Meta'],
+         ['NARINO','Nariño'],['NORTE_DE_SANTANDER','Norte de Santander'],['PUTUMAYO','Putumayo'],
+         ['QUINDIO','Quindío'],['RISARALDA','Risaralda'],['SAN_ANDRES_Y_PROVIDENCIA','San Andrés y Providencia'],
+         ['SANTANDER','Santander'],['SUCRE','Sucre'],['TOLIMA','Tolima'],['VALLE_DEL_CAUCA','Valle del Cauca'],
+         ['VAUPES','Vaupés'],['VICHADA','Vichada']],
+    CL: [['ARICA_Y_PARINACOTA','Arica y Parinacota'],['TARAPACA','Tarapacá'],['ANTOFAGASTA','Antofagasta'],
+         ['ATACAMA','Atacama'],['COQUIMBO','Coquimbo'],['VALPARAISO','Valparaíso'],
+         ['METROPOLITANA','Metropolitana de Santiago'],['LIBERTADOR_OHIGGINS',"Libertador General Bernardo O'Higgins"],
+         ['MAULE','Maule'],['NUBLE','Ñuble'],['BIOBIO','Biobío'],['ARAUCANIA','La Araucanía'],
+         ['LOS_RIOS','Los Ríos'],['LOS_LAGOS','Los Lagos'],['AYSEN','Aysén'],
+         ['MAGALLANES','Magallanes y de la Antártica Chilena']],
+    VE: [['AMAZONAS','Amazonas'],['ANZOATEGUI','Anzoátegui'],['APURE','Apure'],['ARAGUA','Aragua'],
+         ['BARINAS','Barinas'],['BOLIVAR','Bolívar'],['CARABOBO','Carabobo'],['COJEDES','Cojedes'],
+         ['DELTA_AMACURO','Delta Amacuro'],['DISTRITO_CAPITAL','Distrito Capital'],['FALCON','Falcón'],
+         ['GUARICO','Guárico'],['LARA','Lara'],['LA_GUAIRA','La Guaira'],['MERIDA','Mérida'],
+         ['MIRANDA','Miranda'],['MONAGAS','Monagas'],['NUEVA_ESPARTA','Nueva Esparta'],
+         ['PORTUGUESA','Portuguesa'],['SUCRE','Sucre'],['TACHIRA','Táchira'],['TRUJILLO','Trujillo'],
+         ['YARACUY','Yaracuy'],['ZULIA','Zulia']]
   };
   const TYPE_LABELS = {'indoor-bouldering':'Indoor bouldering','top-rope':'Top rope','lead-climbing':'Lead climbing'};
-  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy', BE:'Belgium', KR:'South Korea', ES:'Spain', PT:'Portugal', AT:'Austria', CH:'Switzerland', PL:'Poland', DK:'Denmark', FI:'Finland', IE:'Ireland', NO:'Norway', MX:'Mexico', BR:'Brazil', HU:'Hungary', GR:'Greece', CZ:'Czech Republic', IS:'Iceland', RO:'Romania', HR:'Croatia', RU:'Russia', BG:'Bulgaria', AR:'Argentina', PH:'Philippines'};
+  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy', BE:'Belgium', KR:'South Korea', ES:'Spain', PT:'Portugal', AT:'Austria', CH:'Switzerland', PL:'Poland', DK:'Denmark', FI:'Finland', IE:'Ireland', NO:'Norway', MX:'Mexico', BR:'Brazil', HU:'Hungary', GR:'Greece', CZ:'Czech Republic', IS:'Iceland', RO:'Romania', HR:'Croatia', RU:'Russia', BG:'Bulgaria', AR:'Argentina', PH:'Philippines', CO:'Colombia', CL:'Chile', VE:'Venezuela'};
   // Fixed camera target per country for the "fly to this country" click on
   // its sidebar label -- picked to frame that country's actual spread of
   // seed spots (e.g. US needs a wide zoom to fit both NY and CA), not a
@@ -286,7 +308,10 @@
     RU: {center:[35,58], zoom:3.6},
     BG: {center:[24.5,42.7], zoom:6.5},
     AR: {center:[-63,-35], zoom:4.2},
-    PH: {center:[121.8,12.5], zoom:5.2}
+    PH: {center:[121.8,12.5], zoom:5.2},
+    CO: {center:[-74.3,5.5], zoom:5},
+    CL: {center:[-72,-37], zoom:4.4},
+    VE: {center:[-68,9], zoom:5.2}
   };
   // Which sidebar region-group each country belongs to -- same grouping as
   // the `.region-group[data-region]` wrappers in index.html, kept here too
@@ -300,7 +325,7 @@
     RO:'europe', HR:'europe', RU:'europe', BG:'europe',
     CA:'north-america', US:'north-america', MX:'north-america',
     AU:'oceania', NZ:'oceania',
-    BR:'south-america', AR:'south-america'
+    BR:'south-america', AR:'south-america', CO:'south-america', CL:'south-america', VE:'south-america'
   };
   const REGION_LABELS = {asia:'Asia', europe:'Europe', 'north-america':'North America', oceania:'Oceania', 'south-america':'South America'};
   // Same idea as COUNTRY_FLY_TARGETS, one tier coarser -- framing every

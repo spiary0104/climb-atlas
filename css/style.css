@@ -187,6 +187,29 @@
     --ph-cavite:#c93fb0;
     --ph-camarines-sur:#4fc93f;
     --ph-pampanga:#c9913f;
+    --co-bogota-dc:#3f9ec9;
+    --co-santander:#c9703f;
+    --co-valle-del-cauca:#7ac93f;
+    --co-cundinamarca:#c93f8a;
+    --co-norte-de-santander:#3fc9bd;
+    --co-antioquia:#9e3fc9;
+    --co-tolima:#c9c33f;
+    --co-huila:#3f6ac9;
+    --co-narino:#c95f6b;
+    --cl-metropolitana:#4fc98a;
+    --cl-valparaiso:#c9843f;
+    --cl-los-lagos:#6b3fc9;
+    --cl-libertador-ohiggins:#c93f5e;
+    --cl-maule:#3fa8c9;
+    --cl-biobio:#a3c93f;
+    --cl-araucania:#c96b3f;
+    --cl-los-rios:#8a3fc9;
+    --ve-distrito-capital:#3fc96c;
+    --ve-miranda:#c93f3f;
+    --ve-zulia:#3f7ec9;
+    --ve-aragua:#c9a23f;
+    --ve-tachira:#6bc9a3;
+    --ve-guarico:#9e6bc9;
     --t-outdoor:#b8834a;
     --t-indoor:#3fb8a6;
     --t-toprope:#8a6bb0;
@@ -541,6 +564,29 @@
   .chip[data-country="PH"][data-state="CAVITE"].active{background:var(--ph-cavite);}
   .chip[data-country="PH"][data-state="CAMARINES_SUR"].active{background:var(--ph-camarines-sur);}
   .chip[data-country="PH"][data-state="PAMPANGA"].active{background:var(--ph-pampanga);}
+  .chip[data-country="CO"][data-state="BOGOTA_DC"].active{background:var(--co-bogota-dc);}
+  .chip[data-country="CO"][data-state="SANTANDER"].active{background:var(--co-santander);}
+  .chip[data-country="CO"][data-state="VALLE_DEL_CAUCA"].active{background:var(--co-valle-del-cauca);}
+  .chip[data-country="CO"][data-state="CUNDINAMARCA"].active{background:var(--co-cundinamarca);}
+  .chip[data-country="CO"][data-state="NORTE_DE_SANTANDER"].active{background:var(--co-norte-de-santander);}
+  .chip[data-country="CO"][data-state="ANTIOQUIA"].active{background:var(--co-antioquia);}
+  .chip[data-country="CO"][data-state="TOLIMA"].active{background:var(--co-tolima);}
+  .chip[data-country="CO"][data-state="HUILA"].active{background:var(--co-huila);}
+  .chip[data-country="CO"][data-state="NARINO"].active{background:var(--co-narino);}
+  .chip[data-country="CL"][data-state="METROPOLITANA"].active{background:var(--cl-metropolitana);}
+  .chip[data-country="CL"][data-state="VALPARAISO"].active{background:var(--cl-valparaiso);}
+  .chip[data-country="CL"][data-state="LOS_LAGOS"].active{background:var(--cl-los-lagos);}
+  .chip[data-country="CL"][data-state="LIBERTADOR_OHIGGINS"].active{background:var(--cl-libertador-ohiggins);}
+  .chip[data-country="CL"][data-state="MAULE"].active{background:var(--cl-maule);}
+  .chip[data-country="CL"][data-state="BIOBIO"].active{background:var(--cl-biobio);}
+  .chip[data-country="CL"][data-state="ARAUCANIA"].active{background:var(--cl-araucania);}
+  .chip[data-country="CL"][data-state="LOS_RIOS"].active{background:var(--cl-los-rios);}
+  .chip[data-country="VE"][data-state="DISTRITO_CAPITAL"].active{background:var(--ve-distrito-capital);}
+  .chip[data-country="VE"][data-state="MIRANDA"].active{background:var(--ve-miranda);}
+  .chip[data-country="VE"][data-state="ZULIA"].active{background:var(--ve-zulia);}
+  .chip[data-country="VE"][data-state="ARAGUA"].active{background:var(--ve-aragua);}
+  .chip[data-country="VE"][data-state="TACHIRA"].active{background:var(--ve-tachira);}
+  .chip[data-country="VE"][data-state="GUARICO"].active{background:var(--ve-guarico);}
 
   .toggle-row{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-dim);font-family:'Space Mono',monospace;cursor:pointer;}
   .toggle-row input{accent-color:var(--vic);}

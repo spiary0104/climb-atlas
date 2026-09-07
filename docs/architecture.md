@@ -86,10 +86,10 @@ are only unique within a country** (e.g. AU's `WA` vs US's `WA` are
 different regions). Anything that filters, colors, or edits by state —
 the chips in `index.html`, `STATES_BY_COUNTRY` in `app.js`, the RLS-safe
 columns in `schema.sql` — keys off the `(country, state)` pair together,
-never `state` alone. Now 35 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
+never `state` alone. Now 38 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
 FR, SE, NL, IT, BE, KR, ES, PT, AT, CH, PL, DK, FI, IE, NO, MX, BR, HU, GR,
-CZ, IS, RO, HR, RU, BG, AR, PH), same pattern each time — keep this in mind
-before adding a 36th. One collision
+CZ, IS, RO, HR, RU, BG, AR, PH, CO, CL, VE), same pattern each time — keep
+this in mind before adding a 39th. One collision
 worth flagging: `US`'s state code for California is `CA`, and `CA` is
 also the top-level country code for Canada — not a real ambiguity since
 they're different object keys/fields (`STATES_BY_COUNTRY.US` contains
@@ -175,10 +175,11 @@ pre-filled with its current value, rather than throwing on
 
 ## Seed data sourcing
 
-`js/data.js` currently has 1103 spots (74 AU, 332 US, 32 JP, 15 CA, 9 NZ,
+`js/data.js` currently has 1150 spots (74 AU, 332 US, 32 JP, 15 CA, 9 NZ,
 42 CN, 66 GB, 112 DE, 30 FR, 7 SE, 25 NL, 14 IT, 14 BE, 37 KR, 22 ES,
 7 PT, 22 AT, 8 CH, 31 PL, 14 DK, 14 FI, 9 IE, 20 NO, 16 MX, 15 BR, 18 HU,
-13 GR, 8 CZ, 3 IS, 18 RO, 8 HR, 7 RU, 7 BG, 17 AR, 17 PH), all indoor gyms
+13 GR, 8 CZ, 3 IS, 18 RO, 8 HR, 7 RU, 7 BG, 17 AR, 17 PH, 18 CO, 15 CL,
+14 VE), all indoor gyms
 (bouldering and/or top rope, with a growing number now also tagged
 lead-climbing — see "Known gaps" below on why outdoor areas were
 removed). It was built up in layers, not
@@ -1090,6 +1091,106 @@ from one source:
     and counts, both country `<option>`s appear in the add/edit-spot
     forms, and there was no console error or mobile horizontal overflow
     at 375px width at any point.
+  - **Not yet pushed to the live Supabase table** — same next-step gap as
+    every prior country addition.
+- **Colombia (18 gyms, 10 cities), Chile (15 gyms, 11 cities), and
+  Venezuela (14 gyms, 9 cities)** — the 36th-38th countries, and the same
+  three deferred in the Argentina/Philippines Backlog entry (this session
+  followed through on them rather than leaving them backlogged). User
+  asked to keep adding countries and cross-check locations for
+  correctness — every gym in this batch got the same per-entry
+  verification treatment as Argentina: confirm it's a real, currently-
+  operating indoor facility (not just trust boulderinglist.com's own
+  label), then individually geocode its address.
+  - **Colombia turned out to be the cleanest of the three** — of 19
+    candidates, only **"Game Over"** (Ibagué) was excluded, and only
+    because no independent source could confirm it's a real climbing
+    facility at all (unlike everything else in this batch, which
+    resolved to real, named businesses or public facilities). One
+    duplicate found and merged: boulderinglist.com listed the same
+    Ecoextremo facility twice under two different city labels
+    ("Ecoextremo - Omar Moreno" under Bucaramanga, "Muro Aguilas -
+    Ecoextremo - Alquiler" under Floridablanca) — confirmed via a
+    matching phone number and location (Mesa de Ruitoque) to be one
+    venue, merged into a single `Ecoextremo` entry. One near-miss caught
+    mid-verification: an AI-summarized web search claimed Dulfer Escuela
+    y Gimnasio de Escalada and Gravedad Cero (both Cali) shared an
+    address — rejected after checking climbing-map.org's own per-gym
+    listings directly, which give each a distinct real address (Av
+    Pasoancho vs. Carrera 62C) — a reminder that an AI search summary
+    can itself misattribute a detail, not just the underlying sources.
+  - **Chile needed the most exclusions of the three (3 of 18
+    candidates)**, all judgment calls on public-access grounds rather
+    than "is this a real wall" — the same standard already applied to
+    Korea's/Ireland's university-gym cases: **Muro de Escalada MontUBB**
+    (Chillán, a university wall with no public-access policy confirmed
+    either way) and **Rama de Andinismo y Escalada UFRO** (Temuco,
+    confirmed via its own site to be an alumni/student climbing space,
+    not clearly open to the general public — the same caution that
+    excluded Mardyke Arena UCC in the Ireland batch) were both excluded
+    on access grounds; **Ranquimilo** (Talca) was excluded on scope
+    grounds instead — confirmed to be a genuinely outdoor-only wall, out
+    of this app's indoor-gyms-only scope, the same treatment as Huayan
+    Climbing Park (China) and Palestra del Club Mitre de Pesca
+    (Argentina). Two kept despite looking similarly ambiguous at first:
+    **Escalando en Penumbras** (a free, 20+ year running public climbing
+    workshop inside Santiago's Estadio Nacional, not a private club) and
+    **Club Gimnástico Alemán Temuco** (otherwise a private century-old
+    multisport club, but its specific climbing wall is independently
+    confirmed open to the public) — both individually confirmed rather
+    than excluded by association with a similar-sounding name.
+  - **Venezuela had the most "sounds sketchy, turned out real" cases** —
+    of the 15 original candidates, every "Club"/"Asociación"-style entry
+    except one (**Elos**, San Antonio de los Altos — completely
+    unconfirmed by any source, excluded) turned out to be a real,
+    verifiable facility once individually checked: **Skate Park Chacao**
+    is a genuine public extreme-sports park with a real 12m climbing
+    wall and free entry; **Asociación de Montañismo y Escalada del
+    Estado Zulia**, despite the "association" name, has its own real
+    physical monolith-type wall (the same "has a wall vs. doesn't"
+    distinction already used to keep Club Andino Córdoba but exclude
+    other Club Andino entries in the Argentina batch); **Jose Daniel
+    Arciniegas Contreras** is confirmed to be a real independently-run
+    gym named after its owner, not a placeholder or data error; **Villa
+    Olímpica** (San Juan de los Morros) is confirmed as the site of
+    Venezuela's National Center for Sports Climbing, with a wall
+    described as the tallest in Latin America.
+  - **`state` uses each country's real top-level divisions, populated
+    complete from the start** (same standard as every country since the
+    NL fix): Colombia's 32 departments + Bogotá D.C. (33 total), Chile's
+    16 regions, Venezuela's 23 states + Distrito Capital (24 total).
+  - **Positions individually geocoded** against Nominatim, Photon as a
+    second pass for no-matches. One Photon false positive was caught and
+    rejected during the Colombia retries: Extrema Aventura's (Cúcuta)
+    address matched a Photon result in El Bordo, Cauca — a different
+    department roughly 600km away — rejected in favor of a Cúcuta
+    city-centre fallback instead, the same "Photon lands in the wrong
+    place entirely" failure mode already documented for Croatia/Russia/
+    the Philippines. Full per-spot fallback disclosure is in each spot's
+    own `notes` field in `js/data.js`.
+  - **Climbing type inferred from each gym's own description**, same
+    conservative heuristic as every prior pass. Three gyms tagged
+    `lead-climbing` based on explicit confirmation of real rope/lead
+    routes, not just bouldering: GRAN PARED SAS (Bogotá, Colombia's
+    largest wall, 15 lead + 18 top-rope lanes), Destino Escalada (Cali,
+    5 climbing zones including rope routes), GimnasioElMuro (Santiago,
+    billed as Santiago's largest gym with 22 rope lines), Naciones
+    Unidas (Caracas, 9+ lanes, home of the Distrito Capital's climbing
+    team), and Villa Olímpica (San Juan de los Morros, Venezuela's
+    National Center for Sports Climbing).
+  - Net result: 1103 → **1150 total spots**. Structural check
+    (Node-parsed `window.SEED_GYMS`): 1150/1150 unique ids, zero
+    duplicate name+suburb+state+country combos, every state code used
+    confirmed to resolve against its country's `STATES_BY_COUNTRY` entry.
+  - **Verified**: same offline-fallback-forcing method as the Argentina/
+    Philippines batch (`js/supabase-init.js` temporarily pointed at an
+    invalid URL, reverted before committing, confirmed clean via `git
+    diff`) — with that forced, all 47 new spots confirmed searchable by
+    name, all three new sidebar chip groups (Chile, Colombia, Venezuela,
+    all under South America alongside Argentina/Brazil) render with
+    correct colours/counts, both country `<option>`s present in both
+    forms, chip active-state text stayed legible, no console errors, no
+    mobile horizontal overflow at 375px.
   - **Not yet pushed to the live Supabase table** — same next-step gap as
     every prior country addition.
 - **Full-dataset geocode-accuracy check at a 3km threshold (31 more spots
