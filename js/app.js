@@ -264,10 +264,52 @@
          ['GUARICO','Guárico'],['LARA','Lara'],['LA_GUAIRA','La Guaira'],['MERIDA','Mérida'],
          ['MIRANDA','Miranda'],['MONAGAS','Monagas'],['NUEVA_ESPARTA','Nueva Esparta'],
          ['PORTUGUESA','Portuguesa'],['SUCRE','Sucre'],['TACHIRA','Táchira'],['TRUJILLO','Trujillo'],
-         ['YARACUY','Yaracuy'],['ZULIA','Zulia']]
+         ['YARACUY','Yaracuy'],['ZULIA','Zulia']],
+    IN: [['ANDAMAN_AND_NICOBAR','Andaman and Nicobar Islands'],['ANDHRA_PRADESH','Andhra Pradesh'],
+         ['ARUNACHAL_PRADESH','Arunachal Pradesh'],['ASSAM','Assam'],['BIHAR','Bihar'],
+         ['CHANDIGARH','Chandigarh'],['CHHATTISGARH','Chhattisgarh'],
+         ['DADRA_NAGAR_HAVELI_DAMAN_DIU','Dadra and Nagar Haveli and Daman and Diu'],['DELHI','Delhi (NCT)'],
+         ['GOA','Goa'],['GUJARAT','Gujarat'],['HARYANA','Haryana'],['HIMACHAL_PRADESH','Himachal Pradesh'],
+         ['JAMMU_AND_KASHMIR','Jammu and Kashmir'],['JHARKHAND','Jharkhand'],['KARNATAKA','Karnataka'],
+         ['KERALA','Kerala'],['LADAKH','Ladakh'],['LAKSHADWEEP','Lakshadweep'],
+         ['MADHYA_PRADESH','Madhya Pradesh'],['MAHARASHTRA','Maharashtra'],['MANIPUR','Manipur'],
+         ['MEGHALAYA','Meghalaya'],['MIZORAM','Mizoram'],['NAGALAND','Nagaland'],['ODISHA','Odisha'],
+         ['PUDUCHERRY','Puducherry'],['PUNJAB','Punjab'],['RAJASTHAN','Rajasthan'],['SIKKIM','Sikkim'],
+         ['TAMIL_NADU','Tamil Nadu'],['TELANGANA','Telangana'],['TRIPURA','Tripura'],
+         ['UTTAR_PRADESH','Uttar Pradesh'],['UTTARAKHAND','Uttarakhand'],['WEST_BENGAL','West Bengal']],
+    // Israel's 6 internationally-recognized districts only -- deliberately excludes the
+    // Judea and Samaria Area (West Bank), a genuinely internationally-contested territory,
+    // the same political-neutrality reasoning already applied to Russia's city-keyed
+    // `state` scheme (see docs/architecture.md "Seed data sourcing").
+    IL: [['CENTRAL','Central District'],['HAIFA','Haifa District'],['JERUSALEM','Jerusalem District'],
+         ['NORTHERN','Northern District'],['SOUTHERN','Southern District'],['TEL_AVIV','Tel Aviv District']],
+    ID: [['ACEH','Aceh'],['BALI','Bali'],['BANTEN','Banten'],['BENGKULU','Bengkulu'],
+         ['DI_YOGYAKARTA','DI Yogyakarta'],['DKI_JAKARTA','DKI Jakarta'],['GORONTALO','Gorontalo'],
+         ['JAMBI','Jambi'],['JAWA_BARAT','Jawa Barat'],['JAWA_TENGAH','Jawa Tengah'],
+         ['JAWA_TIMUR','Jawa Timur'],['KALIMANTAN_BARAT','Kalimantan Barat'],
+         ['KALIMANTAN_SELATAN','Kalimantan Selatan'],['KALIMANTAN_TENGAH','Kalimantan Tengah'],
+         ['KALIMANTAN_TIMUR','Kalimantan Timur'],['KALIMANTAN_UTARA','Kalimantan Utara'],
+         ['KEP_BANGKA_BELITUNG','Kepulauan Bangka Belitung'],['KEP_RIAU','Kepulauan Riau'],
+         ['LAMPUNG','Lampung'],['MALUKU','Maluku'],['MALUKU_UTARA','Maluku Utara'],
+         ['NUSA_TENGGARA_BARAT','Nusa Tenggara Barat'],['NUSA_TENGGARA_TIMUR','Nusa Tenggara Timur'],
+         ['PAPUA','Papua'],['PAPUA_BARAT','Papua Barat'],['PAPUA_BARAT_DAYA','Papua Barat Daya'],
+         ['PAPUA_PEGUNUNGAN','Papua Pegunungan'],['PAPUA_SELATAN','Papua Selatan'],
+         ['PAPUA_TENGAH','Papua Tengah'],['RIAU','Riau'],['SULAWESI_BARAT','Sulawesi Barat'],
+         ['SULAWESI_SELATAN','Sulawesi Selatan'],['SULAWESI_TENGAH','Sulawesi Tengah'],
+         ['SULAWESI_TENGGARA','Sulawesi Tenggara'],['SULAWESI_UTARA','Sulawesi Utara'],
+         ['SUMATERA_BARAT','Sumatera Barat'],['SUMATERA_SELATAN','Sumatera Selatan'],
+         ['SUMATERA_UTARA','Sumatera Utara']],
+    TW: [['TAIPEI','Taipei City'],['NEW_TAIPEI','New Taipei City'],['TAOYUAN','Taoyuan City'],
+         ['TAICHUNG','Taichung City'],['TAINAN','Tainan City'],['KAOHSIUNG','Kaohsiung City'],
+         ['KEELUNG','Keelung City'],['HSINCHU_CITY','Hsinchu City'],['CHIAYI_CITY','Chiayi City'],
+         ['HSINCHU_COUNTY','Hsinchu County'],['MIAOLI','Miaoli County'],['CHANGHUA','Changhua County'],
+         ['NANTOU','Nantou County'],['YUNLIN','Yunlin County'],['CHIAYI_COUNTY','Chiayi County'],
+         ['PINGTUNG','Pingtung County'],['YILAN','Yilan County'],['HUALIEN','Hualien County'],
+         ['TAITUNG','Taitung County'],['PENGHU','Penghu County'],['KINMEN','Kinmen County'],
+         ['LIENCHIANG','Lienchiang County']]
   };
   const TYPE_LABELS = {'indoor-bouldering':'Indoor bouldering','top-rope':'Top rope','lead-climbing':'Lead climbing'};
-  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy', BE:'Belgium', KR:'South Korea', ES:'Spain', PT:'Portugal', AT:'Austria', CH:'Switzerland', PL:'Poland', DK:'Denmark', FI:'Finland', IE:'Ireland', NO:'Norway', MX:'Mexico', BR:'Brazil', HU:'Hungary', GR:'Greece', CZ:'Czech Republic', IS:'Iceland', RO:'Romania', HR:'Croatia', RU:'Russia', BG:'Bulgaria', AR:'Argentina', PH:'Philippines', CO:'Colombia', CL:'Chile', VE:'Venezuela'};
+  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy', BE:'Belgium', KR:'South Korea', ES:'Spain', PT:'Portugal', AT:'Austria', CH:'Switzerland', PL:'Poland', DK:'Denmark', FI:'Finland', IE:'Ireland', NO:'Norway', MX:'Mexico', BR:'Brazil', HU:'Hungary', GR:'Greece', CZ:'Czech Republic', IS:'Iceland', RO:'Romania', HR:'Croatia', RU:'Russia', BG:'Bulgaria', AR:'Argentina', PH:'Philippines', CO:'Colombia', CL:'Chile', VE:'Venezuela', IN:'India', IL:'Israel', ID:'Indonesia', TW:'Taiwan'};
   // Fixed camera target per country for the "fly to this country" click on
   // its sidebar label -- picked to frame that country's actual spread of
   // seed spots (e.g. US needs a wide zoom to fit both NY and CA), not a
@@ -311,14 +353,18 @@
     PH: {center:[121.8,12.5], zoom:5.2},
     CO: {center:[-74.3,5.5], zoom:5},
     CL: {center:[-72,-37], zoom:4.4},
-    VE: {center:[-68,9], zoom:5.2}
+    VE: {center:[-68,9], zoom:5.2},
+    IN: {center:[77,22], zoom:4},
+    IL: {center:[35,32], zoom:7},
+    ID: {center:[110,-3], zoom:4},
+    TW: {center:[121,24.3], zoom:7}
   };
   // Which sidebar region-group each country belongs to -- same grouping as
   // the `.region-group[data-region]` wrappers in index.html, kept here too
   // so the map's own continent-tier labels/fly-targets don't need to read
   // the DOM to know a country's continent.
   const COUNTRY_TO_REGION = {
-    CN:'asia', JP:'asia', KR:'asia', PH:'asia',
+    CN:'asia', JP:'asia', KR:'asia', PH:'asia', IN:'asia', IL:'asia', ID:'asia', TW:'asia',
     DE:'europe', GB:'europe', FR:'europe', SE:'europe', NL:'europe', IT:'europe', BE:'europe',
     ES:'europe', PT:'europe', AT:'europe', CH:'europe', PL:'europe', DK:'europe', FI:'europe', IE:'europe',
     NO:'europe', HU:'europe', GR:'europe', CZ:'europe', IS:'europe',

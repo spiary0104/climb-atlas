@@ -210,6 +210,28 @@
     --ve-aragua:#c9a23f;
     --ve-tachira:#6bc9a3;
     --ve-guarico:#9e6bc9;
+    --in-tamil-nadu:#3f9ec9;
+    --in-telangana:#c9703f;
+    --in-himachal-pradesh:#7ac93f;
+    --in-maharashtra:#c93f8a;
+    --in-delhi:#3fc9bd;
+    --in-uttarakhand:#9e3fc9;
+    --il-southern:#c9c33f;
+    --il-jerusalem:#3f6ac9;
+    --il-northern:#c95f6b;
+    --il-central:#4fc98a;
+    --il-tel-aviv:#c9843f;
+    --id-bali:#6b3fc9;
+    --id-jawa-barat:#c93f5e;
+    --id-riau:#3fa8c9;
+    --id-banten:#a3c93f;
+    --id-sulawesi-tengah:#c96b3f;
+    --id-jawa-timur:#8a3fc9;
+    --id-jambi:#3fc96c;
+    --tw-hsinchu-county:#c93f3f;
+    --tw-new-taipei:#3f7ec9;
+    --tw-taichung:#c9a23f;
+    --tw-taipei:#6bc9a3;
     --t-outdoor:#b8834a;
     --t-indoor:#3fb8a6;
     --t-toprope:#8a6bb0;
@@ -587,6 +609,28 @@
   .chip[data-country="VE"][data-state="ARAGUA"].active{background:var(--ve-aragua);}
   .chip[data-country="VE"][data-state="TACHIRA"].active{background:var(--ve-tachira);}
   .chip[data-country="VE"][data-state="GUARICO"].active{background:var(--ve-guarico);}
+  .chip[data-country="IN"][data-state="TAMIL_NADU"].active{background:var(--in-tamil-nadu);}
+  .chip[data-country="IN"][data-state="TELANGANA"].active{background:var(--in-telangana);}
+  .chip[data-country="IN"][data-state="HIMACHAL_PRADESH"].active{background:var(--in-himachal-pradesh);}
+  .chip[data-country="IN"][data-state="MAHARASHTRA"].active{background:var(--in-maharashtra);}
+  .chip[data-country="IN"][data-state="DELHI"].active{background:var(--in-delhi);}
+  .chip[data-country="IN"][data-state="UTTARAKHAND"].active{background:var(--in-uttarakhand);}
+  .chip[data-country="IL"][data-state="SOUTHERN"].active{background:var(--il-southern);}
+  .chip[data-country="IL"][data-state="JERUSALEM"].active{background:var(--il-jerusalem);}
+  .chip[data-country="IL"][data-state="NORTHERN"].active{background:var(--il-northern);}
+  .chip[data-country="IL"][data-state="CENTRAL"].active{background:var(--il-central);}
+  .chip[data-country="IL"][data-state="TEL_AVIV"].active{background:var(--il-tel-aviv);}
+  .chip[data-country="ID"][data-state="BALI"].active{background:var(--id-bali);}
+  .chip[data-country="ID"][data-state="JAWA_BARAT"].active{background:var(--id-jawa-barat);}
+  .chip[data-country="ID"][data-state="RIAU"].active{background:var(--id-riau);}
+  .chip[data-country="ID"][data-state="BANTEN"].active{background:var(--id-banten);}
+  .chip[data-country="ID"][data-state="SULAWESI_TENGAH"].active{background:var(--id-sulawesi-tengah);}
+  .chip[data-country="ID"][data-state="JAWA_TIMUR"].active{background:var(--id-jawa-timur);}
+  .chip[data-country="ID"][data-state="JAMBI"].active{background:var(--id-jambi);}
+  .chip[data-country="TW"][data-state="HSINCHU_COUNTY"].active{background:var(--tw-hsinchu-county);}
+  .chip[data-country="TW"][data-state="NEW_TAIPEI"].active{background:var(--tw-new-taipei);}
+  .chip[data-country="TW"][data-state="TAICHUNG"].active{background:var(--tw-taichung);}
+  .chip[data-country="TW"][data-state="TAIPEI"].active{background:var(--tw-taipei);}
 
   .toggle-row{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-dim);font-family:'Space Mono',monospace;cursor:pointer;}
   .toggle-row input{accent-color:var(--vic);}

@@ -86,10 +86,10 @@ are only unique within a country** (e.g. AU's `WA` vs US's `WA` are
 different regions). Anything that filters, colors, or edits by state —
 the chips in `index.html`, `STATES_BY_COUNTRY` in `app.js`, the RLS-safe
 columns in `schema.sql` — keys off the `(country, state)` pair together,
-never `state` alone. Now 38 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
+never `state` alone. Now 42 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
 FR, SE, NL, IT, BE, KR, ES, PT, AT, CH, PL, DK, FI, IE, NO, MX, BR, HU, GR,
-CZ, IS, RO, HR, RU, BG, AR, PH, CO, CL, VE), same pattern each time — keep
-this in mind before adding a 39th. One collision
+CZ, IS, RO, HR, RU, BG, AR, PH, CO, CL, VE, IN, IL, ID, TW), same pattern
+each time — keep this in mind before adding a 43rd. One collision
 worth flagging: `US`'s state code for California is `CA`, and `CA` is
 also the top-level country code for Canada — not a real ambiguity since
 they're different object keys/fields (`STATES_BY_COUNTRY.US` contains
@@ -175,11 +175,11 @@ pre-filled with its current value, rather than throwing on
 
 ## Seed data sourcing
 
-`js/data.js` currently has 1150 spots (74 AU, 332 US, 32 JP, 15 CA, 9 NZ,
+`js/data.js` currently has 1181 spots (74 AU, 332 US, 32 JP, 15 CA, 9 NZ,
 42 CN, 66 GB, 112 DE, 30 FR, 7 SE, 25 NL, 14 IT, 14 BE, 37 KR, 22 ES,
 7 PT, 22 AT, 8 CH, 31 PL, 14 DK, 14 FI, 9 IE, 20 NO, 16 MX, 15 BR, 18 HU,
 13 GR, 8 CZ, 3 IS, 18 RO, 8 HR, 7 RU, 7 BG, 17 AR, 17 PH, 18 CO, 15 CL,
-14 VE), all indoor gyms
+14 VE, 8 IN, 8 IL, 9 ID, 6 TW), all indoor gyms
 (bouldering and/or top rope, with a growing number now also tagged
 lead-climbing — see "Known gaps" below on why outdoor areas were
 removed). It was built up in layers, not
@@ -1191,6 +1191,105 @@ from one source:
     correct colours/counts, both country `<option>`s present in both
     forms, chip active-state text stayed legible, no console errors, no
     mobile horizontal overflow at 375px.
+  - **Not yet pushed to the live Supabase table** — same next-step gap as
+    every prior country addition.
+- **India (8 gyms, 7 cities), Israel (8 gyms, 6 cities), Indonesia (9
+  gyms, 8 cities), and Taiwan (6 gyms, 5 cities)** — the 39th-42nd
+  countries. User asked to keep adding countries. Checked
+  boulderinglist.com's remaining not-yet-added country list again and
+  took the four largest with clean enough data: India (14 candidates),
+  Indonesia (11), Israel (9), Taiwan (8) — same "starting from the ones
+  with more gyms" method as prior batches.
+  - **India needed the most exclusions of this batch (6 of 14
+    candidates)**, split across two different reasons:
+    - **4 university/school-tied walls excluded on ambiguous-access
+      grounds** (Eshwaran Bharatan Memorial Wall/St. Stephen's College,
+      IIT Kanpur, Girivihar Podar College Bouldering Wall, Youth
+      Adventure Club/Ramjas School) — none had a confirmed
+      general-public walk-in policy, the same caution already applied
+      to Mardyke Arena UCC (Ireland) and, in this same batch, to
+      Indonesia's Untar/Tarumanagara University wall. The Indian
+      Mountaineering Foundation's own wall was excluded on a different,
+      scope-based ground instead — confirmed via web search to be an
+      "outdoor set-up," out of this app's indoor-only scope, even though
+      boulderinglist.com's summary description made it sound indoor.
+    - **1 likely-closed listing excluded**: Arun Samant Climbing Gym
+      (Goregaon, Mumbai) is tagged "Closed Down" on a business directory
+      with no independent source confirming it's still operating — the
+      same "confirmed closure → exclude" treatment as Boulder Project
+      Prahran (Australia batch) and the US pass's closures.
+    - **Nainital Mountaineering Club was kept despite the "club" name** —
+      confirmed via web search to be a genuine, 1968-founded public
+      climbing club offering courses (including to underprivileged
+      children) at a real 12m wall, the same "has a real public program"
+      standard that kept Escalando en Penumbras (Chile batch) and
+      Nainital's own Escalando-en-Penumbras-style precedent.
+  - **Israel's one exclusion**: Sportek Climbing Gym (Tel Aviv) is
+    explicitly described by its own source as an outdoor climbing gym in
+    Hayarkon Park — excluded on scope grounds, same "indoor gyms only"
+    treatment as every prior outdoor exclusion this session.
+  - **Indonesia had two real, distinct catches**: **Untar** (Tarumanagara
+    University, Jakarta) was excluded on the same ambiguous-access
+    grounds as India's university walls above. **Tokei Ubud Climbing
+    Gym** (Bali) was excluded as a confirmed closure — its own Instagram
+    account says the gym burned down. One suburb/state correction:
+    **Bungo Boulder** was listed by boulderinglist.com under a generic
+    "West Java" label, but its real location (Bungo, on Sumatra) is
+    actually in Jambi province, nowhere near Java — corrected after
+    Nominatim's own geocode made the mismatch obvious. **Bremgra Indoor
+    Climbing Gym** had the same kind of correction — listed under "Jawa
+    Barat" but its real address (Serpong/BSD) is in Banten, a separate
+    province carved out of West Java in 2000.
+  - **Taiwan's two exclusions were both explicitly outdoor**: Park
+    Outdoor Tower and Outdoor-Taiwan, boulderinglist.com's own
+    descriptions for both said so directly — no ambiguity to resolve,
+    unlike most of this session's outdoor exclusions.
+  - **One gym renamed after cross-checking against independent
+    sources**: boulderinglist.com's "STONE bouldering gym" (New Taipei
+    City) is confirmed via Mountain Project and Chalk Rebels to actually
+    be branded **MegaSTONE Climbing Gym** — kept under its real current
+    name rather than the source's shorter label.
+  - **`state` uses each country's real top-level divisions, populated
+    complete from the start** (same standard as every country since the
+    NL fix): India's 28 states + 8 union territories (36 total),
+    Indonesia's 38 provinces, and Taiwan's 22 special
+    municipalities/cities/counties. **Israel is the deliberate
+    exception**: `STATES_BY_COUNTRY.IL` lists only the 6
+    internationally-recognized Israeli districts, intentionally excluding
+    the Judea and Samaria Area (West Bank) — the same political-
+    neutrality reasoning already applied to Russia's city-keyed `state`
+    scheme (avoiding embedding a position on genuinely contested
+    territory into a public filter list), extended here to a real
+    country rather than a design workaround.
+  - **Positions individually geocoded** against Nominatim, with Photon
+    and simplified/retried queries for anything that didn't resolve on
+    the first try. One geocoder error was caught and rejected during the
+    Taiwan retries: Y17 Climbing Gym's confirmed address (Renai Road
+    *Section 1*) matched a Nominatim result on Renai Road *Section 3* —
+    a different segment of the same road, several km away — rejected in
+    favor of a district-centre fallback instead, the same "wrong segment
+    of a long road" failure mode already documented for Adamanta Sierra
+    (US geocode-accuracy series).
+  - **Climbing type inferred from each gym's own description**, same
+    conservative heuristic as every prior pass. Three gyms tagged
+    `lead-climbing`: Fit Rock Arena (Chennai, explicit top-rope/lead
+    wall), Nainital Mountaineering Club (lead and speed climbing
+    confirmed), and Badung Climbing Gym (Bali, has a dedicated lead
+    climbing wall alongside its boulder/speed walls).
+  - Net result: 1150 → **1181 total spots**. Structural check
+    (Node-parsed `window.SEED_GYMS`): 1181/1181 unique ids, zero
+    duplicate name+suburb+state+country combos, every state code used
+    confirmed to resolve against its country's `STATES_BY_COUNTRY` entry.
+  - **Verified**: same offline-fallback-forcing method as every prior
+    batch this session (`js/supabase-init.js` temporarily pointed at an
+    invalid URL, reverted before committing, confirmed clean via `git
+    diff`) — with that forced, all 31 new spots confirmed searchable by
+    name (including the renamed MegaSTONE Climbing Gym), all four new
+    sidebar chip groups (India, Indonesia, Israel between China and
+    Japan; Taiwan after South Korea, all under Asia) render with correct
+    colours/counts, both country `<option>`s present in both forms, chip
+    active-state text stayed legible, no console errors, no mobile
+    horizontal overflow at 375px.
   - **Not yet pushed to the live Supabase table** — same next-step gap as
     every prior country addition.
 - **Full-dataset geocode-accuracy check at a 3km threshold (31 more spots

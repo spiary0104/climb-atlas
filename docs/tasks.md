@@ -36,17 +36,63 @@ Each entry:
 
 ## Backlog
 
-_(empty — Chile/Colombia/Venezuela, the three deferred from the
-Argentina/Philippines batch, are now done — see below. Add real tasks
-here as they're identified; don't invent placeholder work just to fill
-this section.)_
+_(empty — add real tasks here as they're identified; don't invent
+placeholder work just to fill this section.)_
 
 ## In Progress
 
-### Add Colombia, Chile, Venezuela (47 gyms)
-- Branch: `feature/add-colombia-chile-venezuela` (new branch off `master`)
+### Add India, Israel, Indonesia, Taiwan (31 gyms)
+- Branch: `feature/add-india-israel-indonesia-taiwan` (new branch off
+  `master`)
 - Status: implemented + verified against the offline fallback path in a
   served copy; not yet merged.
+- What: user asked to keep adding countries. Re-checked boulderinglist.com's
+  remaining not-yet-added list and took the four largest with clean
+  enough data: India, Israel, Indonesia, Taiwan. Full sourcing detail,
+  every exclusion/rename/correction is in `docs/architecture.md` "Seed
+  data sourcing".
+- India (8 gyms, 7 cities): 6 excluded — 4 university/school-tied walls
+  on ambiguous-access grounds, 1 likely-closed listing, 1 outdoor-scope
+  exclusion (the Indian Mountaineering Foundation's own wall).
+- Israel (8 gyms, 6 cities): 1 excluded (explicitly outdoor).
+- Indonesia (9 gyms, 8 cities): 2 excluded (1 ambiguous-access university
+  wall, 1 confirmed closure/fire), 2 province corrections where
+  boulderinglist.com's own city grouping was wrong (Bungo → Jambi, not
+  West Java; Bremgra → Banten, not West Java).
+- Taiwan (6 gyms, 5 cities): 2 excluded (both explicitly outdoor), 1
+  renamed after independent cross-check (STONE → MegaSTONE Climbing Gym).
+- Added `IN` (36: 28 states + 8 union territories), `IL` (6 districts —
+  deliberately excludes the contested Judea and Samaria Area, same
+  political-neutrality reasoning as Russia's city-keyed `state` scheme),
+  `ID` (38 provinces), and `TW` (22 municipalities/cities/counties) to
+  `STATES_BY_COUNTRY`, `COUNTRY_LABELS`, `COUNTRY_FLY_TARGETS`,
+  `COUNTRY_TO_REGION` (all four → asia) in `js/app.js`; 22 new CSS
+  colour variables + chip rules in `css/style.css`; 4 new sidebar chip
+  groups under Asia (India, Indonesia, Israel between China and Japan;
+  Taiwan after South Korea) and country `<option>`s in both add/edit
+  forms in `index.html`.
+- Net result: 1150 → **1181 total spots**. Structural check (Node-parsed
+  `window.SEED_GYMS`): 1181/1181 unique ids, zero duplicate
+  name+suburb+state+country combos, every state code used confirmed to
+  resolve against its country's `STATES_BY_COUNTRY` entry.
+- **Verified**: same offline-fallback-forcing method as every prior
+  batch (`js/supabase-init.js` temporarily pointed at an invalid URL,
+  reverted before committing, confirmed clean via `git diff`) — with
+  that forced, all 31 new spots searchable by name, all 4 new sidebar
+  chip groups render with correct colours/counts, both country
+  `<option>`s present in both forms, chip active-state text stayed
+  legible, no console errors, no mobile horizontal overflow at 375px.
+- `supabase_seed_output.sql` regenerated (1181 rows) via the same Node
+  script used for every prior batch — still untracked/uncommitted by
+  design, a one-off deliverable for the user to paste into the Supabase
+  SQL Editor themselves.
+- **Not yet done**: pushing/merging this branch; running the regenerated
+  SQL against the live Supabase table.
+
+### Add Colombia, Chile, Venezuela (47 gyms)
+- Branch: `feature/add-colombia-chile-venezuela` — **done — merged to
+  `master`**.
+- Status: done — merged.
 - What: user asked to keep adding countries and cross-check locations
   for correctness. This follows through on the three countries deferred
   from the Argentina/Philippines batch — each of their boulderinglist.com
@@ -90,8 +136,10 @@ this section.)_
   script used for the Argentina/Philippines batch — still
   untracked/uncommitted by design, a one-off deliverable for the user to
   paste into the Supabase SQL Editor themselves.
-- **Not yet done**: pushing/merging this branch; running the regenerated
-  SQL against the live Supabase table.
+- **Not yet done (at the time)**: merged to `master` since; India/Israel/
+  Indonesia/Taiwan followed through on in the task above. The live
+  Supabase table is still the only outstanding step, same as every
+  country addition still awaiting a re-seed.
 
 ### Personal climbing logbook (sessions + session_climbs UI)
 - Branch: `feature/personal-climbing-logbook` — **done — merged to
