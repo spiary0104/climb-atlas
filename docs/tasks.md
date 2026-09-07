@@ -106,9 +106,8 @@ Each entry:
 ## In Progress
 
 ### Add Xi'an (China) — 19 gyms
-- Branch: `feature/add-xian` (new branch off `master`)
-- Status: implemented + verified against the offline fallback path in a
-  served copy; not yet merged.
+- Branch: `feature/add-xian` — **done — merged to `master`**, pushed.
+- Status: done — merged.
 - What: first of 12 Chinese cities from the user's screen-recorded
   "岩馆探索" (PANDA) app footage — see the Backlog entry above for the
   other 11 and the full method. 21 candidates identified from the
@@ -148,8 +147,8 @@ Each entry:
   script used for every prior batch — still untracked/uncommitted by
   design, a one-off deliverable for the user to paste into the Supabase
   SQL Editor themselves.
-- **Not yet done**: pushing/merging this branch; running the regenerated
-  SQL against the live Supabase table; the other 11 cities (see Backlog).
+- **Not yet done**: running the regenerated SQL against the live Supabase
+  table; the other 11 cities (see Backlog).
 
 ### Add India, Israel, Indonesia, Taiwan (31 gyms)
 - Branch: `feature/add-india-israel-indonesia-taiwan` — **done — merged
