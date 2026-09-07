@@ -175,8 +175,8 @@ pre-filled with its current value, rather than throwing on
 
 ## Seed data sourcing
 
-`js/data.js` currently has 1200 spots (74 AU, 332 US, 32 JP, 15 CA, 9 NZ,
-61 CN, 66 GB, 112 DE, 30 FR, 7 SE, 25 NL, 14 IT, 14 BE, 37 KR, 22 ES,
+`js/data.js` currently has 1231 spots (74 AU, 332 US, 32 JP, 15 CA, 9 NZ,
+92 CN, 66 GB, 112 DE, 30 FR, 7 SE, 25 NL, 14 IT, 14 BE, 37 KR, 22 ES,
 7 PT, 22 AT, 8 CH, 31 PL, 14 DK, 14 FI, 9 IE, 20 NO, 16 MX, 15 BR, 18 HU,
 13 GR, 8 CZ, 3 IS, 18 RO, 8 HR, 7 RU, 7 BG, 17 AR, 17 PH, 18 CO, 15 CL,
 14 VE, 8 IN, 8 IL, 9 ID, 6 TW), all indoor gyms
@@ -1398,6 +1398,80 @@ from one source:
     exact frame-extraction method to re-run (the extracted JPEGs
     themselves are session-scratchpad files that don't persist; the
     source MP4s in `C:\Users\Spiar\Videos\bouldering locations` do).
+- **Chongqing (31 more gyms, on top of the 5 already in this dataset from an
+  earlier, separate Dianping pass) — second of the 12 "岩馆探索" (PANDA) app
+  cities**, direct follow-up to Xi'an above (same video footage, same "keep
+  going" ask). Re-extracted frames from `IMG_6372.MP4` — the file this
+  session's own earlier backlog note had guessed was Nanjing "possibly" —
+  and found from the frames themselves (the app's own "35家岩馆" city-map
+  banner, and gym names referencing 渝北/南岸/沙坪坝, all Chongqing districts)
+  that it's actually Chongqing, not Nanjing. Worth flagging as a real
+  correction to the earlier backlog guess, not a new discovery: this
+  session's video-to-city mapping in `docs/tasks.md` was inferred from
+  filenames and partial context before any frame had actually been
+  reviewed, and turned out wrong for at least this one file — a fresh
+  session picking up any of the remaining 10 backlogged cities should
+  verify the city from the frames' own content (a banner, a district name
+  in a gym's branch label) before trusting the filename-based guess.
+  - 35 gyms confirmed via the app's own banner; 2 matched already-listed
+    Chongqing spots exactly by name+address (Scream Climbing (Guangdian
+    Park), Black Ram Climbing Gym) and were left as-is; 1 was tagged 建设中
+    and excluded; 1 (重庆华岩攀岩公园) is the same large outdoor artificial-
+    wall park already excluded on scope grounds during the original
+    Dianping pass — leaving 31 new gyms.
+  - **A new address source for this batch**: huodong.com turned out to have
+    its own dedicated Chongqing climbing-venue category
+    (`/venue/chongqing/rock_climbing`, found via its fitness-category page's
+    own nav link, not guessed at) with real per-venue detail pages —
+    fetched directly (`curl` for the listing pages' venue names + detail-
+    page URLs, `WebFetch` for each detail page's address) rather than
+    through general web search, which had been mostly unproductive for
+    this batch (mirroring Xi'an's own experience). This got a real address
+    for 16 of 31 gyms and confirmed the 2 already-listed duplicates.
+  - **3 more resolved to a confirmed mall/area but not an exact unit**:
+    Pandengxia Kids Climbing (Shapingba Rongchuangmao) and Lepan Jungle
+    Climbing (Yinxiangcheng) both matched their mall building directly via
+    Nominatim, and Chongqing University City Xijie Climbing Field matched
+    its general University City area — none of the three had a specific
+    unit number confirmable via any source.
+  - **The remaining 12 of 31 (39%) had no address findable at all** and are
+    flagged with a Chongqing-city-centre placeholder rather than guessed,
+    per `Rules.md` §1 — a similarly high rate to Xi'an's 47%, confirming
+    this is a real pattern for this footage source (smaller, independently-
+    run Chinese gyms genuinely under-indexed by web search), not a Xi'an-
+    specific fluke.
+  - **Several genuine multi-branch chains surfaced across this batch**,
+    same "verify each branch, don't assume from the name" discipline as
+    every prior pass: Pandengxia Kids Climbing has branches at Qijiang
+    Wanda, Yongchuan, Yubei Shuita Yunxuan, Changshou Kaiyi, Shapingba
+    Rongchuangmao, Shuangfu Wuyue, and Liangjiang Xingyueli — 7 distinct
+    locations, not one gym; Jidao Climbing has 3 (Jingang International,
+    Lanting Xinduhui, Dongyuan 1891); STONE Climbing has 3 (Shiqiao Plaza,
+    Longhu Jinsha Tianjie, and a third, C33, with no address found); Lepan
+    Jungle Climbing has 2 (Yinxiangcheng, Yubei).
+  - **One pair of huodong.com listings merged, not double-counted**: "山石
+    攀岩(石桥广场店)" and the generically-named "Rock Climbing Gym(石桥广场
+    店)" both resolved to the identical Shiqiao Plaza address — treated as
+    one gym, the same "same address, don't double-pin" precedent used
+    throughout this dataset (Salzburg, Helsinki, Yan13 Climbing Gym above).
+  - `state` uses the existing `"CHONGQING"` key, already present in
+    `STATES_BY_COUNTRY.CN` — no `js/app.js` change needed, only appending
+    to the existing Chongqing sidebar chip's underlying data (the chip
+    itself, added during the original Dianping pass, needed no changes).
+  - Net result: 1200 → **1231 total spots**. Structural check (Node-parsed
+    `window.SEED_GYMS`): 1231/1231 unique ids, zero duplicate
+    name+suburb+state+country combos, every spot has a non-empty `types`
+    array (caught and fixed the same missing-`types` mistake as Xi'an on
+    one entry — Chongqing University City Xijie Climbing Field — during
+    this pass's own verification, before it ever reached a live browser).
+  - **Verified live** (served copy, `npx serve .`, same offline-fallback-
+    forcing method as every prior batch): the Chongqing chip filter
+    returns exactly 36 spots (5 existing + 31 new); all new spots load
+    without error; no console errors beyond the deliberately-forced
+    Supabase-unreachable ones; no horizontal overflow in the China chip
+    row at 375px mobile width.
+  - **Not yet pushed to the live Supabase table** — same next-step gap as
+    every prior country/city addition.
 - **Full-dataset geocode-accuracy check at a 3km threshold (31 more spots
   corrected, complete)**: earlier passes only checked spots that had moved
   ≥5km then ≥4km against Nominatim (40 spots corrected total, see the two
