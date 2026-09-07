@@ -51,6 +51,7 @@
     --cn-zhuhai:#d68910;
     --cn-chongqing:#8e5b3a;
     --cn-xian:#a1887f;
+    --cn-nanjing:#4f7942;
     --gb-england:#c0392b;
     --gb-scotland:#2e5fa3;
     --gb-wales:#5aab6e;
@@ -451,6 +452,7 @@
   .chip[data-country="CN"][data-state="ZHUHAI"].active{background:var(--cn-zhuhai);}
   .chip[data-country="CN"][data-state="CHONGQING"].active{background:var(--cn-chongqing);}
   .chip[data-country="CN"][data-state="XIAN"].active{background:var(--cn-xian);}
+  .chip[data-country="CN"][data-state="NANJING"].active{background:var(--cn-nanjing);}
   .chip[data-country="GB"][data-state="ENGLAND"].active{background:var(--gb-england);}
   .chip[data-country="GB"][data-state="SCOTLAND"].active{background:var(--gb-scotland);}
   .chip[data-country="GB"][data-state="WALES"].active{background:var(--gb-wales);}

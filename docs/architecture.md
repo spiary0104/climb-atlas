@@ -175,8 +175,8 @@ pre-filled with its current value, rather than throwing on
 
 ## Seed data sourcing
 
-`js/data.js` currently has 1231 spots (74 AU, 332 US, 32 JP, 15 CA, 9 NZ,
-92 CN, 66 GB, 112 DE, 30 FR, 7 SE, 25 NL, 14 IT, 14 BE, 37 KR, 22 ES,
+`js/data.js` currently has 1245 spots (74 AU, 332 US, 32 JP, 15 CA, 9 NZ,
+106 CN, 66 GB, 112 DE, 30 FR, 7 SE, 25 NL, 14 IT, 14 BE, 37 KR, 22 ES,
 7 PT, 22 AT, 8 CH, 31 PL, 14 DK, 14 FI, 9 IE, 20 NO, 16 MX, 15 BR, 18 HU,
 13 GR, 8 CZ, 3 IS, 18 RO, 8 HR, 7 RU, 7 BG, 17 AR, 17 PH, 18 CO, 15 CL,
 14 VE, 8 IN, 8 IL, 9 ID, 6 TW), all indoor gyms
@@ -1470,6 +1470,60 @@ from one source:
     without error; no console errors beyond the deliberately-forced
     Supabase-unreachable ones; no horizontal overflow in the China chip
     row at 375px mobile width.
+  - **Not yet pushed to the live Supabase table** — same next-step gap as
+    every prior country/city addition.
+- **Nanjing (14 gyms) — third of the 12 "岩馆探索" (PANDA) app cities.** After
+  the Chongqing correction, every remaining video was re-checked by content
+  (its own banner, or a district/branch name) before starting on any city —
+  see the "important correction" note in `docs/tasks.md` Backlog. This
+  confirmed `IMG_6368.MP4` as Nanjing (22家岩馆 banner; a branch explicitly
+  labelled "南京华贸中心店") and, along the way, resolved every other
+  remaining video's city too: `IMG_6364.MP4`=Guangzhou, `IMG_6365.MP4`
+  =Shenzhen, `IMG_6366.MP4`=Chengdu (38家岩馆), `IMG_6367.MP4`=Hangzhou
+  (53家岩馆), `IMG_6369.MP4`=Wuhan (21家岩馆), `IMG_6373.MP4`=Suzhou (22家岩馆,
+  confirming the original guess), `IMG_6374.MP4`=Tianjin (21家岩馆,
+  confirming the original guess) — the full corrected mapping is now in
+  `docs/tasks.md` Backlog, so no future session needs to re-derive it.
+  - 22 gyms confirmed via the app's own banner; 7 excluded (建设中 tag, or a
+    blank-photo+订阅提醒 card) — leaving 15 candidates. One further pair
+    (Blue Whale Climbing's "Sun City Bouldering branch" and "Sun City
+    flagship branch" cards) merged into one entry — every source for either
+    name returns the identical address, same reasoning as Yan13 Climbing
+    Gym in the Xi'an batch — leaving 14 distinct gyms.
+  - **Markedly better address hit rate than Xi'an/Chongqing**: 7 of 14 got
+    a precise address, 3 more resolved to a confirmed mall/area without an
+    exact unit, and only 4 had no address findable at all (29%, vs. Xi'an's
+    47% and Chongqing's 39%) — plausibly because several of these are
+    branches of chains with their own real web presence (Blue Whale
+    Climbing/蓝鲸攀岩, SEEK ROCK CLIMBING/石刻攀岩), unlike many of Xi'an/
+    Chongqing's smaller independent gyms.
+  - **Two genuine multi-branch chains verified**: Blue Whale Climbing has 4
+    Nanjing branches (Sun City, Jiqingmen, Hexi Zhongsheng, Yuejie Fantasy
+    City — the last with the mall confirmed but the specific branch inside
+    it not independently confirmed); SEEK ROCK CLIMBING has 3 open branches
+    (Xinyao Gemdale Plaza, Jiangbei Yinxianghui, Nanyou Plaza/Xianlin —
+    the latter two only resolved to a mall/area, not an exact unit) plus 2
+    excluded as 建设中 (城南茂店, 旗舰馆).
+  - `state` needed a brand-new `"NANJING"` key — already present in
+    `STATES_BY_COUNTRY.CN` from the earlier state-list-completeness pass,
+    so no `js/app.js` change was needed, but this is the first-ever Nanjing
+    spot in the dataset, so (unlike Xi'an/Chongqing) a new `--cn-nanjing`
+    CSS colour variable + chip rule and a new sidebar chip in `index.html`'s
+    existing China chip-row were required.
+  - Net result: 1231 → **1245 total spots**. Structural check (Node-parsed
+    `window.SEED_GYMS`): 1245/1245 unique ids, zero duplicate
+    name+suburb+state+country combos, every spot has a non-empty `types`
+    array (caught and fixed the same missing-`types` mistake as Xi'an/
+    Chongqing on two entries during this pass's own verification, before it
+    ever reached a live browser — this is now the third batch in a row this
+    exact mistake had to be caught, worth a future session double-checking
+    every new spot object includes `types` at write time, not just at
+    verification time).
+  - **Verified live** (served copy, `npx serve .`, same offline-fallback-
+    forcing method as every prior batch): the Nanjing chip filter returns
+    exactly 14 spots; no console errors beyond the deliberately-forced
+    Supabase-unreachable ones; no horizontal overflow in the China chip row
+    at 375px mobile width.
   - **Not yet pushed to the live Supabase table** — same next-step gap as
     every prior country/city addition.
 - **Full-dataset geocode-accuracy check at a 3km threshold (31 more spots

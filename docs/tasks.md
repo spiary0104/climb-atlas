@@ -62,65 +62,55 @@ Each entry:
   4. Web-search + Nominatim-geocode each candidate exactly like Xi'an —
      expect a real chance of a similarly high no-address rate; flag
      rather than guess, per `Rules.md` §1.
-- **Important correction, found while doing the Chongqing task below**: the
-  original per-city video-filename mapping in this entry (written before
-  any frame had actually been reviewed, going only on filenames/rough
-  context) was wrong for at least one file — `IMG_6372.MP4`, guessed here
-  as "Nanjing", turned out on actual frame inspection to be Chongqing (the
-  app's own "35家岩馆" banner and district names like 渝北/南岸/沙坪坝 in gym
-  branch labels made this unambiguous). **Do not trust the filename
-  mapping below without re-confirming from the frames' own content**
-  (a city banner, or a district name in a gym's branch label) — treat the
-  video filenames as a starting point for extraction, not a confirmed
-  city assignment. Nanjing's real source video is therefore unconfirmed
-  again — it's one of the remaining not-yet-opened files.
-- Confirmed/approximate gym counts (from each city's own in-app banner —
-  reliable regardless of which video it turns up in) and the video
-  filenames not yet opened or reviewed by content:
-  - **Beijing** — `IMG_6215.MP4` (full scroll of the whole list, per the
-    original review — this one *was* content-reviewed, just not
-    re-confirmed against a banner). Gym count not confirmed via a banner;
-    likely several dozen.
-  - **Shanghai** — `IMG_6363.MP4` (content-reviewed for the banner only).
-    Confirmed **100 gyms** via the app's own city banner — by far the
-    largest single city in this footage.
-  - **Guangzhou** — likely `IMG_6365.MP4` (first portion) per the original
-    guess, **not yet re-confirmed by content** given the Chongqing
-    correction above. Count not confirmed via a banner either.
-  - **Shenzhen** — likely `IMG_6365.MP4` (second portion) + `IMG_6366.MP4`
-    + `IMG_6367.MP4` per the original guess, **not yet re-confirmed**.
-    Count not confirmed via a banner.
-  - **Chengdu** — likely `IMG_6364.MP4` and/or `IMG_6368.MP4` per the
-    original guess, **not yet re-confirmed**. Confirmed count **38 gyms**
-    via the app's own city banner (seen once, city unconfirmed which
-    video it came from).
-  - **Hangzhou** — likely `IMG_6369.MP4` per the original guess, **not yet
-    re-confirmed**. Confirmed count **53 gyms** via the app's own banner.
-  - **Nanjing** — video unknown (see correction above — `IMG_6372.MP4` was
-    actually Chongqing). Confirmed count **22 gyms** via the app's own
-    banner (seen once; city unconfirmed which remaining video it's in).
-  - **Wuhan** — likely `IMG_6373.MP4` (first portion) per the original
-    guess, **not yet re-confirmed** given the sibling file `IMG_6372.MP4`
-    turned out mismapped. Confirmed count **21 gyms** via the app's own
-    banner.
-  - **Suzhou** — likely `IMG_6374.MP4` (first portion) per the original
-    guess, **not yet re-confirmed**. Confirmed count **22 gyms** via the
-    app's own banner.
-  - **Tianjin** — likely `IMG_6374.MP4` (second portion) per the original
-    guess, **not yet re-confirmed**. Confirmed count **21 gyms** via the
-    app's own banner.
-  - (Xi'an — `IMG_6215.MP4`'s companion PNG screenshots, 19 gyms kept
-    after exclusions/merges — and Chongqing — `IMG_6372.MP4`, 31 new gyms
-    on top of 5 already in the dataset — are both done, not part of this
-    backlog entry. See the two "done" entries below.)
-- Given the scale (400-500+ candidates across all 10 remaining cities,
-  each likely needing its own address-search pass with a similarly high
-  ~40-47% no-confirmable-address rate, per both Xi'an and Chongqing so
-  far), this should stay split into one task per city (or a small group
-  of related cities) rather than attempted in one sitting — same
-  reasoning that produced this split in the first place. **Re-verify each
-  video's actual city from its own frame content (banner, district names)
-  before trusting the filename guesses above** — see the correction note.
+- **Video-to-city mapping is now fully confirmed by content** (not
+  filename guesses) — a correction was needed along the way: the original
+  mapping in this entry (written before any frame had been reviewed) had
+  `IMG_6372.MP4` as "Nanjing", but it's actually Chongqing (see that task's
+  own entry below). After that was caught, every remaining video was
+  re-checked by its own content (a city banner, or a district/branch name)
+  before starting on any city, resolving the full set:
+  - **Beijing** — `IMG_6215.MP4` (full scroll, content-reviewed). Gym
+    count not confirmed via a banner; likely several dozen.
+  - **Shanghai** — `IMG_6363.MP4`. Confirmed **100 gyms** via the app's
+    own city banner — by far the largest single city in this footage.
+  - **Guangzhou** — `IMG_6364.MP4` (confirmed by content — this video
+    opens confusingly on what looks like a national "全部" tab-switch
+    animation frame with other cities' gyms briefly visible, but settles
+    into clearly Guangzhou/Dongguan-area gyms by the end of the scroll).
+    Gym count not confirmed via a banner in this file.
+  - **Shenzhen** — `IMG_6365.MP4` (confirmed by content — Shenzhen-area
+    gym names from the very first frame, e.g. "深圳太子湾店", "前海壹方汇店").
+    Gym count not confirmed via a banner in this file.
+  - **Chengdu** — `IMG_6366.MP4` (confirmed by content: **38家岩馆** banner,
+    matching the confirmed count, plus branch names referencing 双流/成都
+    体育学院).
+  - **Hangzhou** — `IMG_6367.MP4` (confirmed by content: **53家岩馆** banner;
+    also the frame where the app's own city-tab bar is fully visible:
+    成都/杭州/南京/武汉/西安/重庆/苏州/[天津], confirming the app's own city
+    order matches this numbering run).
+  - **Nanjing** — `IMG_6368.MP4` (confirmed by content: **22家岩馆** banner;
+    a branch explicitly labelled "南京华贸中心店") — done, see below.
+  - **Wuhan** — `IMG_6369.MP4` (confirmed by content: **21家岩馆** banner;
+    branch names referencing "武汉荟聚店", "武体攀岩基地"; also where
+    "岩舞空间(凯德1818店)" reappears — the same not-yet-open card already
+    excluded during the original, separate Dianping Wuhan pass).
+  - **Suzhou** — `IMG_6373.MP4` (confirmed by content: **22家岩馆** banner,
+    matching the original guess; branch names referencing 昆山/吴中/漕湖, all
+    Suzhou-administered areas).
+  - **Tianjin** — `IMG_6374.MP4` (confirmed by content: **21家岩馆** banner,
+    matching the original guess; a branch explicitly labelled "天津远洋店").
+  - (Xi'an — `IMG_6215.MP4`'s companion PNG screenshots, 19 gyms — and
+    Chongqing — `IMG_6372.MP4`, 31 new gyms — and Nanjing — `IMG_6368.MP4`,
+    14 new gyms — are all done. See their own "done" entries below.)
+- Given the scale (400-500+ candidates across the 7 remaining cities —
+  Beijing, Shanghai, Guangzhou, Shenzhen, Chengdu, Hangzhou, Wuhan — each
+  likely needing its own address-search pass with a no-confirmable-address
+  rate somewhere in the 29-47% range seen so far across Xi'an/Chongqing/
+  Nanjing), this should stay split into one task per city (or a small
+  group of related cities) rather than attempted in one sitting — same
+  reasoning that produced this split in the first place. The video-to-city
+  mapping above is now settled, so a future session can go straight to
+  extraction without re-deriving it.
 
 ## In Progress
 
@@ -171,8 +161,54 @@ Each entry:
   design, a one-off deliverable for the user to paste into the Supabase
   SQL Editor themselves.
 - **Not yet done**: running the regenerated SQL against the live Supabase
-  table; the other 10 remaining cities (see Backlog — note Nanjing's
-  video is now unconfirmed again per the correction there).
+  table; the other 10 remaining cities at the time (Nanjing followed
+  through on immediately after, see the entry above the Backlog note;
+  9 remain — see Backlog).
+
+### Add Nanjing (China) — 14 gyms
+- Branch: `feature/add-nanjing-panda` — merged to `master`, pushed.
+- Status: done — merged.
+- What: user said "keep going" after Chongqing — third of 12 Chinese
+  cities from the same "岩馆探索" (PANDA) app footage. Since the Chongqing
+  task had already shown one filename guess wrong, every remaining video
+  was re-checked by content before starting on any city, which confirmed
+  `IMG_6368.MP4` as Nanjing (22家岩馆 banner) and, as a side effect,
+  resolved every other remaining city's real video too — see the Backlog
+  entry above for the full corrected mapping, and
+  `docs/architecture.md` "Seed data sourcing" for full detail.
+- 22 gyms confirmed via the app's own banner; 7 excluded (建设中, or a
+  blank-photo+订阅提醒 card); 1 pair merged (Blue Whale Climbing's "Sun
+  City Bouldering" and "Sun City flagship" cards, same reasoning as Yan13
+  Climbing Gym in Xi'an) — leaving 14 distinct gyms.
+- **Markedly better address hit rate than Xi'an/Chongqing**: 7 of 14 got
+  a precise address, 3 more resolved to a confirmed mall/area, only 4
+  (29%) had no address at all — better than Xi'an's 47% and Chongqing's
+  39%, plausibly because several of these are branches of chains with
+  their own real web presence (Blue Whale Climbing, SEEK ROCK CLIMBING).
+- Two genuine multi-branch chains verified: Blue Whale Climbing (4
+  Nanjing branches), SEEK ROCK CLIMBING (3 open branches + 2 excluded as
+  建设中).
+- **First-ever Nanjing spot in this dataset** — needed a new `"NANJING"`
+  key (already present in `STATES_BY_COUNTRY.CN`, no `js/app.js` change),
+  plus (unlike Xi'an/Chongqing, which reused existing chip infrastructure)
+  a new `--cn-nanjing` CSS colour variable + chip rule and a new sidebar
+  chip in `index.html`'s China chip-row.
+- **Same missing-`types` mistake as Xi'an/Chongqing caught and fixed
+  during this batch's own verification** (two entries this time) — the
+  third batch in a row this exact mistake had to be caught before commit;
+  worth double-checking every new spot object includes `types` at write
+  time in future batches, not just at verification time.
+- Net result: 1231 → **1245 total spots**. Structural check (Node-parsed
+  `window.SEED_GYMS`): 1245/1245 unique ids, zero duplicate
+  name+suburb+state+country combos, every spot has a non-empty `types`
+  array.
+- **Verified**: same offline-fallback-forcing method as every prior batch
+  — the Nanjing chip filter returns exactly 14 spots, no console errors,
+  no mobile horizontal overflow at 375px.
+- `supabase_seed_output.sql` regenerated (1245 rows) — still untracked/
+  uncommitted by design, a one-off deliverable for the user.
+- **Not yet done**: running the regenerated SQL against the live Supabase
+  table; the remaining 9 cities (see Backlog).
 
 ### Add Xi'an (China) — 19 gyms
 - Branch: `feature/add-xian` — **done — merged to `master`**, pushed.
