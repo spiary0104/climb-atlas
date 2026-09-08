@@ -114,6 +114,42 @@ Each entry:
 
 ## In Progress
 
+### Fix unfounded top-rope tags on Xi'an/Chongqing/Nanjing gyms (49 spots)
+- Status: done — committed directly to `master` (data-only correction,
+  not a new city addition).
+- What: user reported some gyms were marked top-rope when they're
+  actually bouldering-only. Audited all 64 gyms added across the Xi'an/
+  Chongqing/Nanjing "岩馆探索" tasks below and found only 3 ever had real
+  evidence of top-rope (Climbing Dream Factory, 2 Red Point branches) —
+  the other 49 had been defaulted to `[indoor-bouldering, top-rope]`
+  purely because their type wasn't independently confirmed, the wrong
+  default for this source (small mall-storefront/children's gyms rarely
+  have real rope-climbing infrastructure in China). Full reasoning,
+  the exclusion list (3 pre-existing Dianping-pass gyms with real
+  evidence, left untouched), and two script bugs caught mid-fix (a CRLF
+  line-ending mismatch that silently dropped the disclosure-note
+  insertion; a name collision with an unrelated Australian gym also
+  called "Pulse Climbing") are all in `docs/architecture.md` "Seed data
+  sourcing".
+- Net result: still **1245 total spots** — all 49 corrected entries
+  re-tagged `types:[indoor-bouldering]` with a `notes` clause disclosing
+  the correction. Structural check (Node-parsed `window.SEED_GYMS`):
+  1245/1245 unique ids, zero duplicate name+suburb+state+country combos,
+  every spot has a non-empty `types` array.
+- **Verified live** (served copy, `npx serve .`, offline-fallback-forcing
+  method): spot-checked Yan13 Climbing Gym — `types` now
+  `["indoor-bouldering"]` with the disclosure note present; `git diff
+  --stat` confirmed exactly 49 lines changed in `js/data.js`, no
+  line-ending churn; no console errors.
+- `supabase_seed_output.sql` regenerated (1245 rows, same count — this
+  pass doesn't add/remove spots) — still untracked/uncommitted by design.
+- **Not yet done**: running the regenerated SQL against the live
+  Supabase table (same outstanding step as every prior data-correcting
+  pass); this correction was scoped to the CN batches this session
+  added — worth applying the same "no default toward top-rope without
+  evidence" discipline to the other 9 not-yet-processed cities in the
+  Backlog entry below when they're eventually done.
+
 ### Add Chongqing (China) — 31 more gyms
 - Branch: `feature/add-chongqing-panda` — merged to `master`, pushed.
 - Status: done — merged.

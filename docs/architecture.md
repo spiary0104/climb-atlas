@@ -1526,6 +1526,70 @@ from one source:
     at 375px mobile width.
   - **Not yet pushed to the live Supabase table** — same next-step gap as
     every prior country/city addition.
+- **Fixed an unfounded top-rope default across the Xi'an/Chongqing/Nanjing
+  "岩馆探索" batches (49 spots corrected)**: reported that some gyms were
+  marked top-rope when they're actually bouldering-only. Auditing confirmed
+  this — of the 64 gyms added across those three cities, only 3 (Climbing
+  Dream Factory's confirmed sport+crack+bouldering facility, and 2 Red
+  Point Climbing branches with rope lines visible in their own app photos)
+  ever had actual positive evidence of top-rope. The other **49 had been
+  defaulted to `[indoor-bouldering, top-rope]` purely because their type
+  wasn't independently confirmed** — the wrong direction for this source:
+  most of these are small mall-storefront or children's-gym units (7 of
+  them literally named "Kids Climbing"), which in China overwhelmingly
+  lack the ceiling height and belay staffing/insurance that real rope
+  climbing needs. This differs from the "default to bouldering + top-rope
+  when unconfirmed" heuristic used for European/South American gyms
+  earlier in this file, where climbing-gyms.com/boulderinglist.com-sourced
+  entries are typically larger dedicated gyms — the same blanket default
+  doesn't transfer to this footage's much smaller, budget-format venues.
+  Also excluded from the correction, on the same "already has real
+  evidence" grounds: **Bashan Tiger Climbing Club**, **Black Ram Climbing
+  Gym**, and **Jihuayuan Extreme Sports Center** — all 3 predate this
+  batch (from the earlier, separate Dianping pass) and already carry
+  actual sourced facility descriptions ("speed, bouldering, and difficulty
+  (lead) routes"; "bouldering plus top-rope routes"; a large dedicated
+  extreme-sports complex), not a blind default.
+  - All 49 corrected entries were re-tagged `types:[indoor-bouldering]`
+    only, with a `notes` clause disclosing the correction (why it was
+    wrong, not just that it changed) — visible in-app per this project's
+    usual disclosure standard, not just in git history.
+  - **A real script bug caught mid-fix**: the first correction pass used
+    `line.replace(/"\},$/, ...)` to insert the disclosure clause before
+    each entry's closing `"},` — this worked for the `types` replacement
+    (a plain substring match) but silently failed for the `notes`-clause
+    insertion, because `js/data.js` is CRLF-line-ended and the `$` anchor
+    matched right before the trailing `\r`, not at the very end of the
+    line, so `"\},$` never matched. Confirmed via `grep -c` that only 1 of
+    49 entries got the disclosure clause after the first pass; fixed by
+    re-running with a `/"\},\r?$/` pattern that tolerates the optional
+    `\r`, verified `grep -c` then showed all 49. Also caught by this same
+    bug-hunt: the correction script name-matched **"Pulse Climbing"**
+    against the wrong entry on its first pass — an unrelated Australian
+    gym (Warners Bay, NSW) happens to share the exact same name as the
+    new Nanjing entry, and the script's plain string search found the AU
+    one first (already correctly `[indoor-bouldering]`, so it silently
+    no-op'd) rather than the Nanjing one — caught by the script's own
+    "Changed: 48 of 49" count not matching the expected 49, not assumed
+    away. Fixed with a direct, disambiguated edit to the Nanjing entry
+    specifically.
+  - Net result: still **1245 total spots** (a type-correction pass, not
+    an addition/removal). Structural check (Node-parsed `window.SEED_GYMS`):
+    1245/1245 unique ids, zero duplicate name+suburb+state+country combos,
+    every spot has a non-empty `types` array, exactly 5 of the 69 Xi'an/
+    Chongqing/Nanjing spots still carry `top-rope` (the 2 Red Point
+    branches + Climbing Dream Factory + the 2 pre-existing Dianping-pass
+    entries), the other 64 are bouldering-only.
+  - **Verified live** (served copy, `npx serve .`, same offline-fallback-
+    forcing method as every prior batch): spot-checked Yan13 Climbing Gym
+    directly in the loaded data — `types` is now `["indoor-bouldering"]`
+    and its `notes` field carries the disclosure clause; `git diff --stat`
+    on `js/data.js` confirmed exactly 49 lines changed (no line-ending
+    churn across the rest of the file from the CRLF/LF script mishap
+    above); no console errors beyond the deliberately-forced
+    Supabase-unreachable ones.
+  - **Not yet pushed to the live Supabase table** — same next-step gap as
+    every prior country/city addition.
 - **Full-dataset geocode-accuracy check at a 3km threshold (31 more spots
   corrected, complete)**: earlier passes only checked spots that had moved
   ≥5km then ≥4km against Nominatim (40 spots corrected total, see the two
