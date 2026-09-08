@@ -94,10 +94,13 @@ Each entry:
   - **Chengdu** — done via huodong.com's own Chengdu directory instead of
     `IMG_6366.MP4`'s frames — see the "Add Chengdu" done entry below. The
     video itself was never reviewed for this city.
-  - **Hangzhou** — `IMG_6367.MP4` (confirmed by content: **53家岩馆** banner;
-    also the frame where the app's own city-tab bar is fully visible:
+  - **Hangzhou** — done via huodong.com's own Hangzhou directory instead
+    of `IMG_6367.MP4`'s frames — see the "Add Hangzhou" done entry below.
+    The video itself was never reviewed for this city (it also happens to
+    be the frame where the app's own city-tab bar is fully visible:
     成都/杭州/南京/武汉/西安/重庆/苏州/[天津], confirming the app's own city
-    order matches this numbering run).
+    order matches this numbering run — noted here in case a future
+    session needs it for another city).
   - **Nanjing** — `IMG_6368.MP4` (confirmed by content: **22家岩馆** banner;
     a branch explicitly labelled "南京华贸中心店") — done, see below.
   - **Wuhan** — `IMG_6369.MP4` (confirmed by content: **21家岩馆** banner;
@@ -441,7 +444,51 @@ Each entry:
   uncommitted by design, a one-off deliverable for the user.
 - **Not yet done**: running the regenerated SQL against the live
   Supabase table; the remaining 4 cities (Hangzhou, Wuhan, Suzhou,
-  Tianjin) — see Backlog.
+  Tianjin) — see Backlog. (Hangzhou followed through on immediately
+  after, see the entry below.)
+
+### Add Hangzhou (China) — 18 gyms
+- Branch: `feature/add-hangzhou-panda` — merged to `master`, pushed.
+- Status: done — merged.
+- What: user said "finish the last four" — ninth of 12 Chinese cities
+  from the same "岩馆探索" (PANDA) app footage. Same method again:
+  huodong.com's own Hangzhou directory (2 pages, 28 raw candidates)
+  instead of frame-extracting `IMG_6367.MP4`.
+- **10 of 28 excluded**: 2 kids playgrounds, an equestrian center, a
+  bug-themed educational park, a suspended branch, a family camping
+  ground with no confirmed wall, a kids-fitness/basketball venue with no
+  confirmed wall, a kids-only Climbing Orangutan branch (same standard as
+  Shenzhen/Chengdu), and 2 outdoor venues.
+- **Two schools kept with access caveats**: Zhejiang Sports Vocational
+  College (public booking, academic-calendar hours) and Zhejiang
+  Construction Vocational College (partner-org/course/open-day access for
+  non-students) — both genuinely, if imperfectly, public rather than
+  barred outright.
+- **A real intra-chain access distinction caught**: Menotou's two
+  Hangzhou branches have contradictory audiences — one explicitly
+  adults-only (18+), the other explicitly serves "children to adults" —
+  both kept as genuinely different branches rather than assuming a
+  chain-wide policy. Climbing Orangutan, Happy Climbing, and Wanpan
+  Climbing each got a second confirmed branch too.
+- **Geocoding followed the usual two-tier pattern**: 4 of 18 resolved on
+  the full-address pass, 14 more on a simplified pass. Two spots share an
+  identical fallback point on the same avenue (genuinely different gyms).
+- **Climbing type applied at write time from each gym's own
+  description**, same discipline as every batch since Beijing.
+- `state` uses the existing `"HANGZHOU"` key — no `js/app.js`,
+  `css/style.css`, or `index.html` changes needed.
+- Net result: 1445 → **1463 total spots**. Structural check (Node-parsed
+  `window.SEED_GYMS`): 1463/1463 unique ids, zero duplicate
+  name+suburb+state+country combos, every spot has a non-empty `types`
+  array.
+- **Verified**: same offline-fallback-forcing method as every prior batch
+  — the Hangzhou chip filter returns exactly 21 spots (3 existing + 18
+  new), no console errors, no mobile horizontal overflow at 375px.
+- `supabase_seed_output.sql` regenerated (1463 rows) — still untracked/
+  uncommitted by design, a one-off deliverable for the user.
+- **Not yet done**: running the regenerated SQL against the live
+  Supabase table; the remaining 3 cities (Wuhan, Suzhou, Tianjin) — see
+  Backlog.
 
 ### Fix unfounded top-rope tags on Xi'an/Chongqing/Nanjing gyms (49 spots)
 - Status: done — committed directly to `master` (data-only correction,

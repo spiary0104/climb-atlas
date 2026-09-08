@@ -175,8 +175,8 @@ pre-filled with its current value, rather than throwing on
 
 ## Seed data sourcing
 
-`js/data.js` currently has 1445 spots (74 AU, 332 US, 32 JP, 15 CA, 9 NZ,
-306 CN, 66 GB, 112 DE, 30 FR, 7 SE, 25 NL, 14 IT, 14 BE, 37 KR, 22 ES,
+`js/data.js` currently has 1463 spots (74 AU, 332 US, 32 JP, 15 CA, 9 NZ,
+324 CN, 66 GB, 112 DE, 30 FR, 7 SE, 25 NL, 14 IT, 14 BE, 37 KR, 22 ES,
 7 PT, 22 AT, 8 CH, 31 PL, 14 DK, 14 FI, 9 IE, 20 NO, 16 MX, 15 BR, 18 HU,
 13 GR, 8 CZ, 3 IS, 18 RO, 8 HR, 7 RU, 7 BG, 17 AR, 17 PH, 18 CO, 15 CL,
 14 VE, 8 IN, 8 IL, 9 ID, 6 TW), all indoor gyms
@@ -2047,6 +2047,61 @@ from one source:
     every prior country/city addition.
   - **4 cities remain in this footage's backlog**: Hangzhou, Wuhan,
     Suzhou, Tianjin.
+- **Hangzhou (18 more gyms) — ninth of the 12 "岩馆探索" (PANDA) app
+  cities.** Same method again: huodong.com's own Hangzhou climbing
+  directory (2 pages, 28 raw candidates) instead of frame-extracting
+  `IMG_6367.MP4`.
+  - **10 of 28 excluded**: 2 kids playgrounds and an equestrian center on
+    name/category alone; a "bug-themed educational paradise" (not
+    climbing at all); a suspended (暂停营业) branch; a family camping
+    ground whose own description names only camping amenities despite a
+    "rock climbing" category tag; a kids-fitness/basketball venue whose
+    own description mentions no climbing wall despite the same tag; a
+    kids-only Climbing Orangutan branch (ages 3-12, explicit no-adult-
+    provision) — same standard as its Shenzhen and Chengdu counterparts;
+    and 2 explicitly outdoor venues (a "China Climbing Town" natural-rock
+    destination and a rural farmhouse-stay climbing post), on the same
+    scope grounds as every other outdoor exclusion in this dataset.
+  - **Two schools/colleges kept with access caveats, not excluded**:
+    Zhejiang Sports Vocational and Technical College's own climbing gym
+    (public booking required, operates on an academic calendar) and
+    Zhejiang Construction Vocational College's training field (external
+    visitors book through partner orgs, courses, or open days at a higher
+    rate than students) — both confirmed genuinely, if imperfectly,
+    open to the public rather than barred outright, same "verify, don't
+    assume" standard as Chengdu Sport University and Beijing Sport
+    University.
+  - **Chain branch-checking caught a real access distinction within one
+    brand**: Menotou (闷头攀岩) has two Hangzhou locations with
+    contradictory audiences — the Xixi Intime branch is explicitly
+    adults-only (18+, no minors), while the Gemdale Plaza branch's own
+    description says it serves "children to adults" — both kept as
+    genuinely different branches rather than assuming one policy applies
+    chain-wide. Climbing Orangutan, Happy Climbing, and Wanpan Climbing
+    each got a second confirmed branch too.
+  - **Geocoding followed the same two-tier pattern as every PANDA-app
+    batch since Beijing**: 4 of 18 resolved on the full-address pass, the
+    remaining 14 resolved on a simplified street-level pass. Two spots
+    (XBOX Family Sports Center, Happy Climbing Yuhang) share an identical
+    fallback point on the same long avenue — genuinely different gyms,
+    not a duplicate, disclosed in both spots' own `notes`.
+  - **Climbing type applied at write time from each gym's own
+    description**, same discipline as every batch since Beijing.
+  - `state` uses the existing `"HANGZHOU"` key — no `js/app.js`,
+    `css/style.css`, or `index.html` changes needed.
+  - Net result: 1445 → **1463 total spots**. Structural check (Node-parsed
+    `window.SEED_GYMS`): 1463/1463 unique ids, zero duplicate
+    name+suburb+state+country combos, every spot has a non-empty `types`
+    array.
+  - **Verified live** (served copy, `npx serve .`, same offline-fallback-
+    forcing method as every prior batch): the Hangzhou chip filter returns
+    exactly 21 spots (3 existing + 18 new); no console errors beyond the
+    deliberately-forced Supabase-unreachable ones; no horizontal overflow
+    in the China chip row at 375px mobile width.
+  - **Not yet pushed to the live Supabase table** — same next-step gap as
+    every prior country/city addition.
+  - **3 cities remain in this footage's backlog**: Wuhan, Suzhou,
+    Tianjin.
 - **Full-dataset geocode-accuracy check at a 3km threshold (31 more spots
   corrected, complete)**: earlier passes only checked spots that had moved
   ≥5km then ≥4km against Nominatim (40 spots corrected total, see the two
