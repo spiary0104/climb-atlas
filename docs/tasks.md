@@ -36,101 +36,7 @@ Each entry:
 
 ## Backlog
 
-### Add the remaining 11 Chinese cities from the "岩馆探索" (PANDA) app footage
-- Status: backlog — split off from the Xi'an task below per the user's
-  explicit scope decision ("all 12 cities, split across several
-  follow-up tasks", via `AskUserQuestion`).
-- What: the user's `C:\Users\Spiar\Videos\bouldering locations` folder
-  has 11 MP4 screen-recordings + 2 PNG screenshots covering this real
-  Chinese gym-directory app's own listing for 12 cities total. Xi'an (19
-  gyms) is done — see `docs/architecture.md` "Seed data sourcing" for the
-  full method, the app's UI conventions (建设中 badge, blank-photo+订阅提醒
-  pattern = not yet open; 换线 badge = active), and the unusually high
-  (47%) no-confirmable-address rate hit there. The same method applies to
-  each city below — re-run the frame-extraction step first, since the
-  JPEGs already extracted this session live in a session-scratchpad
-  directory that does **not** persist across sessions; only the source
-  MP4s in the Videos folder persist:
-  1. `pip install opencv-python-headless --quiet` (no ffmpeg/vlc in this
-     environment, confirmed).
-  2. Sample ~8-10 evenly-spaced frames per video via `cv2.VideoCapture` +
-     `cap.set(cv2.CAP_PROP_POS_FRAMES, frame_idx)` + `cap.read()`, save as
-     JPEG to a new scratchpad `frames/` dir.
-  3. Read every gym card's name + status badge from the frames, exclude
-     建设中/订阅提醒-pattern cards, cross-reference against that city's own
-     "城市攀岩地图 N家岩馆" banner count for completeness.
-  4. Web-search + Nominatim-geocode each candidate exactly like Xi'an —
-     expect a real chance of a similarly high no-address rate; flag
-     rather than guess, per `Rules.md` §1.
-- **Video-to-city mapping is now fully confirmed by content** (not
-  filename guesses) — a correction was needed along the way: the original
-  mapping in this entry (written before any frame had been reviewed) had
-  `IMG_6372.MP4` as "Nanjing", but it's actually Chongqing (see that task's
-  own entry below). After that was caught, every remaining video was
-  re-checked by its own content (a city banner, or a district/branch name)
-  before starting on any city, resolving the full set:
-  - **Beijing** — done via a different route entirely: huodong.com turned
-    out to have its own genuine Beijing climbing-venue directory, so this
-    city was sourced from that instead of `IMG_6215.MP4`'s frames — see
-    the "Add Beijing" done entry below. The video itself was never
-    reviewed for this city.
-  - **Shanghai** — `IMG_6363.MP4`. Confirmed **100 gyms** via the app's
-    own city banner — by far the largest single city in this footage.
-    **Done** (both halves) — see the "Add Shanghai" done entries below.
-    Important correction for whichever city gets tackled next: Shanghai's
-    own scroll had real Beijing gyms
-    mixed into its tab with no separating banner, and at least one
-    contaminated card sat *before* the obvious contaminated block even
-    started — so "the wrong-city content resolves itself by the end of
-    the scroll" (true for Guangzhou's video) is **not** a safe assumption
-    to carry forward; verify every candidate's city individually rather
-    than trusting scroll position for any city.
-  - **Guangzhou** — done via huodong.com's own Guangzhou directory
-    instead of `IMG_6364.MP4`'s frames — see the "Add Guangzhou" done
-    entry below. The video itself was never reviewed for this city.
-  - **Shenzhen** — done via huodong.com's own Shenzhen directory instead
-    of `IMG_6365.MP4`'s frames — see the "Add Shenzhen" done entry below.
-    The video itself was never reviewed for this city.
-  - **Chengdu** — done via huodong.com's own Chengdu directory instead of
-    `IMG_6366.MP4`'s frames — see the "Add Chengdu" done entry below. The
-    video itself was never reviewed for this city.
-  - **Hangzhou** — done via huodong.com's own Hangzhou directory instead
-    of `IMG_6367.MP4`'s frames — see the "Add Hangzhou" done entry below.
-    The video itself was never reviewed for this city (it also happens to
-    be the frame where the app's own city-tab bar is fully visible:
-    成都/杭州/南京/武汉/西安/重庆/苏州/[天津], confirming the app's own city
-    order matches this numbering run — noted here in case a future
-    session needs it for another city).
-  - **Nanjing** — `IMG_6368.MP4` (confirmed by content: **22家岩馆** banner;
-    a branch explicitly labelled "南京华贸中心店") — done, see below.
-  - **Wuhan** — done via huodong.com's own Wuhan directory instead of
-    `IMG_6369.MP4`'s frames — see the "Add Wuhan" done entry below
-    (which also finally resolves that video's own "岩舞空间(凯德1818店)"
-    not-yet-open card, confirmed now open via huodong.com). The video
-    itself was never reviewed for this city.
-  - **Suzhou** — done, see the "Add Suzhou" done entry below. Unlike
-    every other remaining city, huodong.com has no Suzhou directory at
-    all, so this one genuinely needed `IMG_6373.MP4`'s frames (confirmed
-    by content: **22家岩馆** banner, matching the original guess) plus web
-    search — the same method as Xi'an/Chongqing/Nanjing.
-  - **Tianjin** — `IMG_6374.MP4` (confirmed by content: **21家岩馆** banner,
-    matching the original guess; a branch explicitly labelled "天津远洋店").
-  - (Xi'an — `IMG_6215.MP4`'s companion PNG screenshots, 19 gyms — and
-    Chongqing — `IMG_6372.MP4`, 31 new gyms — and Nanjing — `IMG_6368.MP4`,
-    14 new gyms — and Shanghai (both halves) — and Beijing, 50 new gyms via
-    huodong.com rather than frame extraction — are all done. See their own
-    "done" entries below.)
-- Given the scale (candidates across the 7 remaining cities — Guangzhou,
-  Shenzhen, Chengdu, Hangzhou, Wuhan, Suzhou, Tianjin — each likely
-  needing its own address-search pass), this should stay split
-  into one task per city (or a small group of related cities) rather than
-  attempted in one sitting — same reasoning that produced this split in
-  the first place. Worth checking huodong.com for a per-city directory
-  before falling back to frame extraction for each remaining city — it
-  had genuine coverage for Shanghai, Chongqing, and Beijing (not
-  discovered for Xi'an/Nanjing at the time those were done, but worth
-  re-checking), and gave much better address hit rates than frame
-  extraction + web search alone.
+_(none)_
 
 ## In Progress
 
@@ -588,6 +494,53 @@ Each entry:
   uncommitted by design, a one-off deliverable for the user.
 - **Not yet done**: running the regenerated SQL against the live
   Supabase table; the last remaining city (Tianjin) — see Backlog.
+  (Tianjin followed through on immediately after, see the entry below —
+  this completes the whole 12-city PANDA-app project.)
+
+### Add Tianjin (China) — 15 gyms (PANDA-app project complete)
+- Branch: `feature/add-tianjin-panda` — merged to `master`, pushed.
+- Status: done — merged. **This is the twelfth and final city from the
+  "岩馆探索" (PANDA) app footage — the whole project backlog is now
+  empty.**
+- What: user said "finish the last four" — same as Suzhou, huodong.com
+  has no Tianjin climbing directory, so this fell back to frame-
+  extracting `IMG_6374.MP4` (another unusually short, 3.0s near-static
+  scroll capture) plus general web search.
+- 20 unique cards found against the app's own "21家岩馆" banner; 3
+  excluded as 建设中 (under construction), 2 more excluded because their
+  own official names explicitly declare themselves children's climbing
+  gyms (攀猩儿童攀岩馆 — "儿童" is part of the brand name itself here, a
+  stronger signal than a kids-friendly photo, same standard as the
+  adult-barred Climbing Orangutan branch excluded in Shenzhen), leaving
+  15.
+- **Address confirmation was somewhat better than Suzhou's**: 9 of 15
+  got a real address (6 mall-level, 3 exact-unit), 1 more at a probable
+  but not independently-attributed address, and the remaining 5 (33%)
+  use a city/district centroid placeholder — 3 share the bare Nankai
+  District centroid, 3 more share the bare Tianjin city centroid.
+- **Fun Wild Climbing (already confirmed in Beijing, Shanghai, and
+  Guangzhou) got a fourth confirmed city here** — now a 4-city chain.
+  Tianjin Top Climbing has 3 confirmed branches; Mango Climbing has 3.
+- **No climbing-type evidence exists for any of these 15** (thumbnails
+  only) — all 15 tagged bouldering-only, same discipline as Suzhou.
+- First-ever Tianjin spot in this dataset — `"TIANJIN"` was already in
+  `STATES_BY_COUNTRY.CN`, but needed a new `--cn-tianjin` CSS colour +
+  chip rule and a new sidebar chip.
+- Net result: 1498 → **1513 total spots**. Structural check (Node-parsed
+  `window.SEED_GYMS`): 1513/1513 unique ids, zero duplicate
+  name+suburb+state+country combos, every spot has a non-empty `types`
+  array.
+- **Verified**: same offline-fallback-forcing method as every prior batch
+  — the new Tianjin chip renders with the correct colour and legible
+  active-state text, filters to exactly 15 spots, no console errors, no
+  mobile horizontal overflow at 375px.
+- `supabase_seed_output.sql` regenerated (1513 rows) — still untracked/
+  uncommitted by design, a one-off deliverable for the user.
+- **Not yet done**: running the regenerated SQL against the live
+  Supabase table (same outstanding gap as every prior country/city
+  addition — the whole 12-city PANDA-app project's ~600+ new spots are
+  still not live). **No further PANDA-app cities remain** — the Backlog
+  entry for this project has been removed below.
 
 ### Fix unfounded top-rope tags on Xi'an/Chongqing/Nanjing gyms (49 spots)
 - Status: done — committed directly to `master` (data-only correction,

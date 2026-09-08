@@ -175,8 +175,8 @@ pre-filled with its current value, rather than throwing on
 
 ## Seed data sourcing
 
-`js/data.js` currently has 1498 spots (74 AU, 332 US, 32 JP, 15 CA, 9 NZ,
-359 CN, 66 GB, 112 DE, 30 FR, 7 SE, 25 NL, 14 IT, 14 BE, 37 KR, 22 ES,
+`js/data.js` currently has 1513 spots (74 AU, 332 US, 32 JP, 15 CA, 9 NZ,
+374 CN, 66 GB, 112 DE, 30 FR, 7 SE, 25 NL, 14 IT, 14 BE, 37 KR, 22 ES,
 7 PT, 22 AT, 8 CH, 31 PL, 14 DK, 14 FI, 9 IE, 20 NO, 16 MX, 15 BR, 18 HU,
 13 GR, 8 CZ, 3 IS, 18 RO, 8 HR, 7 RU, 7 BG, 17 AR, 17 PH, 18 CO, 15 CL,
 14 VE, 8 IN, 8 IL, 9 ID, 6 TW), all indoor gyms
@@ -2242,6 +2242,68 @@ from one source:
   - **Not yet pushed to the live Supabase table** — same next-step gap as
     every prior country/city addition.
   - **1 city remains in this footage's backlog**: Tianjin.
+- **Tianjin (15 gyms) — twelfth and final "岩馆探索" (PANDA) app city, and
+  the first-ever Tianjin spots in this dataset.** Same as Suzhou,
+  huodong.com has no Tianjin climbing directory, so this batch fell back
+  to frame-extracting the source video (`IMG_6374.MP4`, another unusually
+  short 3.0s near-static scroll capture like Suzhou's) plus general web
+  search. **This completes the entire 12-city "岩馆探索" PANDA-app
+  project** started with Xi'an — see the individual per-city entries
+  above (Xi'an, Chongqing, Nanjing, Shanghai ×2, Beijing, Guangzhou,
+  Shenzhen, Chengdu, Hangzhou, Wuhan, Suzhou, Tianjin) for the full
+  history.
+  - 20 unique cards found against the app's own "21家岩馆" banner (again
+    within this project's established tolerance for banner-vs-actual
+    mismatches); 3 excluded as 建设中 (under construction); 2 more
+    excluded because their own official names explicitly declare
+    themselves children's climbing gyms (攀猩儿童攀岩馆 — "Climbing
+    Orangutan CHILDREN'S Climbing Gym" is literally part of the brand
+    name here, a stronger signal than a merely kids-friendly card photo,
+    so treated the same as the explicitly adult-barred Climbing
+    Orangutan branch excluded in Shenzhen), leaving 15.
+  - **Address confirmation was somewhat better than Suzhou's**: 9 of 15
+    got a real address (6 at mall/complex-level, 3 at exact-unit
+    precision), 1 more at a probable-but-not-independently-attributed
+    address (matched by branch-name/station coincidence, disclosed as
+    such), and the remaining 5 (33%) use a city or district centroid
+    placeholder. Three spots share the bare Nankai District centroid and
+    three more share the bare Tianjin city centroid, each disclosed in
+    the affected spots' own `notes`.
+  - **Fun Wild Climbing (趣野攀岩), already confirmed in Beijing, Shanghai,
+    and Guangzhou, got a fourth confirmed city** here (Meijiang Convention
+    Center) — now a 4-city-confirmed chain. Tianjin Top Climbing has 3
+    confirmed branches (Hexi, Huanghe Rd, Ling'ao), each individually
+    addressed/flagged. Mango Climbing has 3 confirmed branches across
+    different parts of Tianjin.
+  - **No climbing-type evidence exists for any of these 15**, same
+    evidentiary tier as Suzhou (thumbnails only, no huodong.com
+    description text) — all 15 tagged bouldering-only, continuing the
+    lesson from the original Xi'an/Chongqing/Nanjing top-rope correction
+    rather than repeating it a third time.
+  - First-ever Tianjin spot in this dataset — `"TIANJIN"` was already in
+    `STATES_BY_COUNTRY.CN`, but (same as Nanjing and Suzhou) needed a new
+    `--cn-tianjin` CSS colour variable + chip rule and a new sidebar chip.
+  - Net result: 1498 → **1513 total spots**. Structural check (Node-parsed
+    `window.SEED_GYMS`): 1513/1513 unique ids, zero duplicate
+    name+suburb+state+country combos, every spot has a non-empty `types`
+    array.
+  - **Verified live** (served copy, `npx serve .`, same offline-fallback-
+    forcing method as every prior batch): the new Tianjin chip renders
+    with the correct colour and a legible active state (dark text on the
+    new red-brown background); clicking it correctly filters to exactly
+    15 spots; no console errors beyond the deliberately-forced
+    Supabase-unreachable ones; no horizontal overflow in the China chip
+    row at 375px mobile width.
+  - **Not yet pushed to the live Supabase table** — same next-step gap as
+    every prior country/city addition.
+  - **The "岩馆探索" (PANDA) app project backlog is now empty** — all 12
+    cities from the original footage are done. `js/data.js`'s China
+    total across every pass this project has done for this app's
+    footage (Xi'an, Chongqing, Nanjing, Shanghai, Beijing, Guangzhou,
+    Shenzhen, Chengdu, Hangzhou, Wuhan, Suzhou, Tianjin) now stands at
+    hundreds of gyms sourced from a single continuous multi-session
+    effort — see `docs/tasks.md` for the per-city breakdown and every
+    individual sourcing/exclusion/correction decision.
 - **Full-dataset geocode-accuracy check at a 3km threshold (31 more spots
   corrected, complete)**: earlier passes only checked spots that had moved
   ≥5km then ≥4km against Nominatim (40 spots corrected total, see the two
