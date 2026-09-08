@@ -2566,6 +2566,71 @@ from one source:
     geocoder-precision noise rather than real data errors — this is
     close to the practical floor of what free geocoding tools can
     resolve for this dataset.
+- **Fixed a second unfounded top-rope default, this time in the Shanghai
+  batch (36 of 63 tagged spots corrected)**: after the earlier 49-spot
+  Xi'an/Chongqing/Nanjing correction, user asked to check every remaining
+  China spot tagged top-rope for the same mistake. Auditing every CN
+  spot's own `notes` field for actual type evidence (not just re-trusting
+  the tag) found that Shanghai's two "岩馆探索" (PANDA) batches — sourced
+  before the "type from description at write time" discipline started
+  with the Beijing batch — had the identical problem: 60 of Shanghai's 63
+  top-rope/lead-tagged spots had notes describing only address/geocoding
+  sourcing, with **no statement anywhere that huodong.com's own
+  description had actually confirmed rope or lead facilities**. (The
+  other 3 — Climbing Factory, Jungle Berry Camp, Jinshan Outdoor Sports
+  Center Climbing Gym — already carried real evidence in their notes from
+  the original pass and were left untouched.)
+  - Re-verified all 60 directly against huodong.com's own venue
+    description for each (re-fetched the same 5-page Shanghai directory,
+    matched each spot to its detail-page URL, read the actual Chinese
+    description text) rather than assuming either direction — per
+    `Rules.md` §1, this correction was itself researched, not applied on
+    a hunch that "probably" the same mistake repeated.
+  - **A real reliability wrinkle surfaced during this re-verification**:
+    many venues' descriptions share near-identical template phrasing
+    (e.g. "场馆主打抱石（Bouldering）项目，适合初学者至进阶爱好者" appears
+    verbatim across several unrelated bouldering-only gyms, and a
+    similar template exists for bouldering+top-rope venues). Cross-checked
+    by fetching a handful of these pages directly a second time and
+    confirming the quoted text is genuinely present on the page verbatim,
+    with the venue's own name/address correctly woven into the same
+    template — this is huodong.com reusing its own category-level listing
+    copy (still reflecting the venue's actual registered facility type),
+    not a fabricated/hallucinated description. Treated as real evidence,
+    but of a plainer, more templated tier than the individually-detailed
+    write-ups seen for Beijing/Guangzhou/Shenzhen/Chengdu/Hangzhou/Wuhan.
+  - Of the 60: **24 confirmed bouldering-only** (re-tagged
+    `types:[indoor-bouldering]`, top-rope/lead removed), **24 confirmed
+    top-rope** (kept, with the evidence now stated in `notes`), **9
+    confirmed both top-rope and lead climbing** (kept both, `LEAD` type
+    added), and **3 confirmed lead climbing but not specifically top-rope**
+    (top-rope removed, `LEAD` type added instead). One venue (5+ Climbing,
+    Songjiang Yunjian) explicitly states its own listing **prohibits**
+    top-rope/lead climbing at that branch — a stronger-than-usual signal,
+    re-tagged bouldering-only.
+  - Net result: still **1513 total spots** (a type-correction pass, not
+    an addition/removal, same as the earlier 49-spot fix). Structural
+    check (Node-parsed `window.SEED_GYMS`): 1513/1513 unique ids, zero
+    duplicate name+suburb+state+country combos, every spot has a
+    non-empty `types` array. Shanghai's own type breakdown after the fix:
+    36 top-rope (24 corrected + 3 already-evidenced, plus 9 shared with
+    lead), 12 lead-climbing, 34 bouldering-only (was 10 bouldering-only +
+    63 top-rope/lead before this pass).
+  - **Verified live** (served copy, `npx serve .`, offline-fallback-
+    forcing method): Shanghai chip filter still returns exactly 73 spots
+    (unchanged — no additions/removals); spot-checked Vmore Climbing
+    (North Bund) directly in the loaded data — `types` is now
+    `["indoor-bouldering"]` with the disclosure note present; no console
+    errors beyond the deliberately-forced Supabase-unreachable ones; `git
+    diff` on `js/supabase-init.js` confirmed clean after reverting the
+    test edit.
+  - **Not yet pushed to the live Supabase table** — same outstanding step
+    as every prior correction pass. Every other PANDA-app city (Beijing,
+    Guangzhou, Shenzhen, Chengdu, Hangzhou, Wuhan) was individually
+    checked against this same standard during this audit and found
+    clean — each of their top-rope/lead tags already cites an explicit
+    huodong.com description confirmation in its own `notes`, since those
+    batches were sourced after the write-time-evidence discipline began.
 
 ## Form field CSS specificity
 

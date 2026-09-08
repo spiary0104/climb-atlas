@@ -578,6 +578,60 @@ _(none)_
   evidence" discipline to the other 9 not-yet-processed cities in the
   Backlog entry below when they're eventually done.
 
+### Fix unfounded top-rope tags in the Shanghai batch (36 of 63 spots)
+- Branch: `fix/shanghai-toprope-verification` — committed, not yet
+  merged.
+- Status: done — implemented and verified live; awaiting merge.
+- What: direct follow-up to the Xi'an/Chongqing/Nanjing fix above — user
+  asked to check every remaining China spot tagged top-rope for the same
+  kind of unfounded default. Audited every CN spot's own `notes` field
+  for real type evidence (not just trusting the tag) and found Shanghai's
+  two PANDA-app batches (sourced before Beijing's "type from description
+  at write time" discipline began) had the same problem: 60 of Shanghai's
+  63 top-rope/lead-tagged spots had notes describing only address/
+  geocoding sourcing, with no statement that huodong.com's description
+  had actually confirmed rope or lead facilities. The other 3 (Climbing
+  Factory, Jungle Berry Camp, Jinshan Outdoor Sports Center) already had
+  real evidence and were untouched.
+- Re-verified all 60 directly against huodong.com's actual venue
+  description (re-fetched the Shanghai directory, matched each spot to
+  its detail page, read the real description text) — 3 parallel research
+  agents did the fetching, then 2 of their "boilerplate-looking" results
+  were independently re-checked directly to confirm the quoted text is
+  genuinely on the page (huodong.com reuses template copy per facility
+  category, correctly filled in with each venue's real name/address —
+  not a fabricated/hallucinated description). Full reasoning and the
+  exact classification breakdown are in `docs/architecture.md` "Seed
+  data sourcing".
+- Of the 60: 24 confirmed bouldering-only (top-rope removed), 24
+  confirmed top-rope (kept, evidence now in `notes`), 9 confirmed both
+  top-rope and lead (kept both), 3 confirmed lead but not top-rope
+  (top-rope removed, lead added). One (5+ Climbing, Songjiang Yunjian)
+  explicitly states top-rope/lead are prohibited at that branch —
+  re-tagged bouldering-only.
+- Net result: still **1513 total spots** (type-correction only). Shanghai
+  breakdown after the fix: 36 top-rope, 12 lead-climbing, 34
+  bouldering-only (was 63 top-rope/lead-tagged, 10 bouldering-only,
+  before this pass). Structural check (Node-parsed `window.SEED_GYMS`):
+  1513/1513 unique ids, zero duplicate name+suburb+state+country combos,
+  every spot has a non-empty `types` array.
+- **Verified live** (served copy, `npx serve .`, offline-fallback-forcing
+  method): Shanghai chip filter still returns exactly 73 spots
+  (unchanged); spot-checked Vmore Climbing (North Bund) — `types` now
+  `["indoor-bouldering"]` with the disclosure note present; no console
+  errors beyond the deliberately-forced Supabase-unreachable ones; `git
+  diff` on `js/supabase-init.js` confirmed clean after reverting the test
+  edit.
+- **Also checked**: every other PANDA-app city (Beijing, Guangzhou,
+  Shenzhen, Chengdu, Hangzhou, Wuhan) against this same standard during
+  this audit — all clean, since those batches were sourced after the
+  write-time-evidence discipline began and already cite an explicit
+  huodong.com confirmation in each spot's own `notes`.
+- **Not yet done**: merging this branch; running the regenerated SQL
+  against the live Supabase table (same outstanding step as every prior
+  correction pass — this pass doesn't change the row count so the
+  existing un-run SQL already covers it once regenerated).
+
 ### Add Chongqing (China) — 31 more gyms
 - Branch: `feature/add-chongqing-panda` — merged to `master`, pushed.
 - Status: done — merged.
