@@ -175,8 +175,8 @@ pre-filled with its current value, rather than throwing on
 
 ## Seed data sourcing
 
-`js/data.js` currently has 1379 spots (74 AU, 332 US, 32 JP, 15 CA, 9 NZ,
-240 CN, 66 GB, 112 DE, 30 FR, 7 SE, 25 NL, 14 IT, 14 BE, 37 KR, 22 ES,
+`js/data.js` currently has 1418 spots (74 AU, 332 US, 32 JP, 15 CA, 9 NZ,
+279 CN, 66 GB, 112 DE, 30 FR, 7 SE, 25 NL, 14 IT, 14 BE, 37 KR, 22 ES,
 7 PT, 22 AT, 8 CH, 31 PL, 14 DK, 14 FI, 9 IE, 20 NO, 16 MX, 15 BR, 18 HU,
 13 GR, 8 CZ, 3 IS, 18 RO, 8 HR, 7 RU, 7 BG, 17 AR, 17 PH, 18 CO, 15 CL,
 14 VE, 8 IN, 8 IL, 9 ID, 6 TW), all indoor gyms
@@ -1904,6 +1904,76 @@ from one source:
     every prior country/city addition.
   - **6 cities remain in this footage's backlog**: Shenzhen, Chengdu,
     Hangzhou, Wuhan, Suzhou, Tianjin.
+- **Shenzhen (39 more gyms) — seventh of the 12 "岩馆探索" (PANDA) app
+  cities.** Same method again: huodong.com's own Shenzhen climbing
+  directory (`/venue/shenzhen/rock_climbing`, 3 pages, 54 raw
+  candidates) instead of frame-extracting `IMG_6365.MP4`.
+  - **15 of 54 excluded**: 5 exact-address duplicates of already-listed
+    (or already-flagged-as-likely-duplicate) Banana Climbing entries —
+    huodong.com's own Shenzhen Banana Climbing branch cards resolved to
+    the identical addresses already on file for Nanshan Houhai, Kingdee,
+    Bao'an Center, iN City Plaza, and Link Plaza, incidentally confirming
+    those existing entries' addresses rather than adding anything new.
+    10 more excluded after reading each one's own description rather than
+    trusting a "攀岩" category tag at face value: a cave-exploration theme
+    park explicitly not a real climbing facility; a "soft-body climbing"
+    kids venue whose own description contrasts itself from "a traditional
+    rock climbing wall setup"; 2 of 4 "Little Player Dream Factory"-
+    branded venues whose own pages explicitly deny having a real climbing
+    wall (the other 2 branches of the same brand were kept — each was
+    checked individually, not assumed from the shared brand name); a
+    generic fitness gym whose own description explicitly says "no
+    confirmed climbing wall" despite the category tag; a hybrid
+    basketball-primary space where climbing is explicitly described as
+    secondary; and a genuinely kids-only climbing gym (Climbing Orangutan,
+    Lvjing branch) whose own listing explicitly states adults cannot
+    enter the climbing zones at all — the only exclusion in this batch on
+    access grounds, since several other youth/family-branded venues in
+    this batch were kept specifically because none of them made that same
+    explicit adult-barring claim.
+  - **Real chain proliferation continued**: Blue Sky Climbing (蓝天攀岩)
+    has 7 confirmed Shenzhen branches; Climbing Orangutan (攀猩攀岩) has 4
+    (one excluded as kids-only, above); Zhengyan, Yijiu, and Little
+    Warrior each have 2-3; Yanwu Kongjian (岩舞空间, already seen once in
+    Shanghai) got 2 more confirmed Shenzhen branches. Two near-identical
+    Cantonese-branded gyms (嗰度有家攀岩馆 / 呢度有家攀岩馆, both roughly
+    "there's a place here") were individually confirmed as genuinely
+    distinct gyms at different addresses, not a duplicate listing, despite
+    the near-identical names.
+  - **Two access/consistency judgment calls, both kept**: a youth-center-
+    housed Yijiu branch only restricts unaccompanied entry to under-8s
+    (no adult bar), so it wasn't excluded the way the explicitly
+    adults-barred Climbing Orangutan kids branch was; two public
+    municipal sports-center climbing gyms (Longgang Universiade Center,
+    Guangming District Public Sports Center) were kept without access
+    caveats, same "genuinely shared public facility" treatment as
+    University Town Sports Center Climbing Field (Guangzhou).
+  - **Geocoding hit the same severe first-pass failure Beijing did**: only
+    4 of 39 resolved on the full-address pass; a second, simplified
+    street+district pass resolved 31 more; the last 4 needed a
+    metro-station or subdistrict-level fallback, with two same-station/
+    same-district pairs sharing an identical fallback point (Lightning
+    Climbing Gym / Nedo Yaugaa Climbing Gym at Gangxia North Station;
+    Pulan Sports / Climbing Orangutan-Shuiwan at the bare Nanshan District
+    centroid) — disclosed in both spots' own `notes` in each case.
+  - **Climbing type applied at write time from each gym's own
+    description**, same discipline as Beijing/Guangzhou — roughly half
+    ended up bouldering-only.
+  - `state` uses the existing `"SHENZHEN"` key — no `js/app.js`,
+    `css/style.css`, or `index.html` changes needed.
+  - Net result: 1379 → **1418 total spots**. Structural check (Node-parsed
+    `window.SEED_GYMS`): 1418/1418 unique ids, zero duplicate
+    name+suburb+state+country combos, every spot has a non-empty `types`
+    array.
+  - **Verified live** (served copy, `npx serve .`, same offline-fallback-
+    forcing method as every prior batch): the Shenzhen chip filter
+    returns exactly 47 spots (8 existing + 39 new); no console errors
+    beyond the deliberately-forced Supabase-unreachable ones; no
+    horizontal overflow in the China chip row at 375px mobile width.
+  - **Not yet pushed to the live Supabase table** — same next-step gap as
+    every prior country/city addition.
+  - **5 cities remain in this footage's backlog**: Chengdu, Hangzhou,
+    Wuhan, Suzhou, Tianjin.
 - **Full-dataset geocode-accuracy check at a 3km threshold (31 more spots
   corrected, complete)**: earlier passes only checked spots that had moved
   ≥5km then ≥4km against Nominatim (40 spots corrected total, see the two
