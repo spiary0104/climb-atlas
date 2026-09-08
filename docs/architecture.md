@@ -2720,6 +2720,52 @@ from one source:
     this same worldwide audit, to be worked through country by country
     per the user's explicit choice. Not yet pushed to the live Supabase
     table — same outstanding step as every prior correction pass.
+- **South Korea (35 of 37 spots audited)**: continuing the worldwide
+  audit — Korea was the cleanest analog to the original China mistake
+  (Mountain Project gave zero facility-type signal at all for any Korea
+  listing, so every spot but one had simply been defaulted to
+  bouldering+top-rope with no name-heuristic override even attempted).
+  Verified each via web search — mostly Korean-language sources plus
+  spiri7.com, a Korean gym-tracking/leaderboard site whose gym pages show
+  a discipline section (볼더링/bouldering, 리드/lead) only for disciplines
+  that gym actually tracks, used as a secondary confirmation source
+  alongside each gym's own site/blog/Instagram where one existed.
+  - Of 35 audited: **29 confirmed bouldering-only** (top-rope wrongly
+    assumed), **5 confirmed to have lead climbing** (Ayers Rock Climbing
+    Gym, Cl!mben Climbing Company, Club Spider Sasang, Do Climbing
+    Gimhae, Rock Tree), and **1 confirmed top-rope** (Big Climbing Gym,
+    on blog-title-level evidence only, the weakest tier accepted this
+    session). This mirrors the original China finding almost exactly in
+    direction and magnitude (29/35 = 83% wrongly assumed rope climbing,
+    even higher than the original 49/64 Xi'an/Chongqing/Nanjing rate).
+  - **12 of the 35 came back genuinely UNCLEAR** — a real, dead official
+    site, no web presence at all, or reviews too thin to confirm facility
+    type either way (9 Climbing Gym, Awesome Climbing, Bros Climbing,
+    Climb Works, Do Climbing Kyungsung/Pukyong National University, Do
+    Climbing: Sasang, Gate 1 Climbing, Grabit, Hong Jong-Yeol Climbing,
+    Jaws Climbing, Rock Odyssey Dongnae, Twin Climbing Center). Rather
+    than leave these on the unverified top-rope default, they were
+    **defaulted to bouldering-only with a disclosed "no evidence found"
+    note** — the same choice already made for Suzhou/Tianjin's thumbnail-
+    only batches, justified here by the same-country evidence: of the 23
+    Korea spots that *were* confirmed either way, 29/30 (including the
+    already-correct B.bloc Climbing Songdo) turned out bouldering-only,
+    so bouldering-only is the statistically far safer unverified default
+    for this specific gym population, not a coin-flip guess.
+  - Net result: still **1513 total spots**. Structural check (Node-parsed
+    `window.SEED_GYMS`): 1513/1513 unique ids, zero duplicate
+    name+suburb+state+country combos, every spot has a non-empty `types`
+    array. Korea breakdown after the fix: 2 top-rope, 5 lead-climbing, 30
+    bouldering-only (of 37 total) — down from the original near-blanket
+    top-rope default.
+  - **Verified live** (served copy, `npx serve .`, offline-fallback-
+    forcing method): `window.SEED_GYMS.length` = 1513 unchanged, Korea
+    count unchanged at 37; no console errors beyond the deliberately-
+    forced Supabase-unreachable ones; `git diff` on `js/supabase-init.js`
+    confirmed clean.
+  - **Not yet done**: the ~490 climbing-gyms.com-sourced spots across 22
+    more countries are still queued in this worldwide audit. Not yet
+    pushed to the live Supabase table.
 
 ## Form field CSS specificity
 

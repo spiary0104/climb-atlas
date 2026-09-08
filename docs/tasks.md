@@ -632,10 +632,10 @@ _(none)_
   correction pass — this pass doesn't change the row count so the
   existing un-run SQL already covers it once regenerated).
 
-### Worldwide top-rope-tag audit — UK + Germany done (81 of 178 spots corrected)
+### Worldwide top-rope-tag audit — UK + Germany + South Korea done (116 of 215 spots corrected)
 - Branch: `fix/worldwide-toprope-verification` — committed, not yet
   merged.
-- Status: in progress — UK and Germany done; South Korea and ~22 more
+- Status: in progress — UK, Germany, and South Korea done; ~22 more
   countries still queued. This is a multi-session effort by explicit
   user choice ("go country by country through the full ~640, biggest
   first"), not a single-pass task.
@@ -676,15 +676,33 @@ _(none)_
   method): both "Climbing Factory" entries confirmed distinct/correct;
   no console errors beyond the deliberately-forced Supabase-unreachable
   ones; `git diff` on `js/supabase-init.js` confirmed clean.
-- **Not yet done**: South Korea (35 spots, next up) and ~490 more spots
-  across 22 climbing-gyms.com-sourced countries (France, Sweden,
-  Netherlands, Italy, Belgium, Poland, Denmark, Finland, Ireland, Spain,
-  Portugal, Austria, Switzerland, Hungary, Greece, Czech Republic,
-  Iceland, Romania, Croatia, Russia, Bulgaria, plus Norway/Mexico/Brazil/
-  Argentina/Colombia/Chile/Venezuela/Philippines/India/Israel/Indonesia/
-  Taiwan's own lighter-touch "type inferred from description" tier,
-  which may warrant a lighter check than the blind-default countries).
-  Not yet pushed to the live Supabase table.
+- **South Korea (37 gyms, 35 audited)**: MP gave zero facility-type
+  signal for any Korea listing, so this was the cleanest analog to the
+  original China mistake. 29 of 35 confirmed bouldering-only (83% wrongly
+  assumed rope climbing — even higher than the original Xi'an/Chongqing/
+  Nanjing rate), 5 confirmed lead climbing, 1 confirmed top-rope. 12 of
+  35 came back genuinely unclear (dead sites, no web presence, too-thin
+  reviews) — defaulted to bouldering-only with a disclosed "no evidence
+  found" note rather than left on the unverified top-rope default, since
+  29 of 30 confirmed-either-way Korea spots turned out bouldering-only —
+  a statistically safe default for this specific gym population, not a
+  guess. Full reasoning in `docs/architecture.md` "Seed data sourcing".
+- Net result across all three countries: still **1513 total spots**.
+  Korea breakdown after the fix: 2 top-rope, 5 lead-climbing, 30
+  bouldering-only (of 37 total).
+- **Verified live** (same offline-fallback-forcing method): Korea count
+  unchanged at 37; no console errors beyond the deliberately-forced
+  Supabase-unreachable ones; `git diff` on `js/supabase-init.js`
+  confirmed clean.
+- **Not yet done**: ~490 more spots across 22 climbing-gyms.com-sourced
+  countries (France, Sweden, Netherlands, Italy, Belgium, Poland,
+  Denmark, Finland, Ireland, Spain, Portugal, Austria, Switzerland,
+  Hungary, Greece, Czech Republic, Iceland, Romania, Croatia, Russia,
+  Bulgaria, plus Norway/Mexico/Brazil/Argentina/Colombia/Chile/Venezuela/
+  Philippines/India/Israel/Indonesia/Taiwan's own lighter-touch "type
+  inferred from description" tier, which may warrant a lighter check
+  than the blind-default countries). Not yet pushed to the live Supabase
+  table.
 
 ### Add Chongqing (China) — 31 more gyms
 - Branch: `feature/add-chongqing-panda` — merged to `master`, pushed.
