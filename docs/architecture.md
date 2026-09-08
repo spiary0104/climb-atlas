@@ -1661,12 +1661,56 @@ from one source:
     in the China chip row at 375px mobile width.
   - **Not yet pushed to the live Supabase table** — same next-step gap as
     every prior country/city addition.
-  - **The remaining ~35-40 confirmed Shanghai candidates from this same
-    huodong.com directory (pages 3-5 not yet fully processed) are
-    backlogged** — see `docs/tasks.md` Backlog for the specific candidate
-    names and detail-page URLs already gathered, so a future session can
-    go straight to address-fetching without re-deriving the city-attribution
-    method above.
+- **Shanghai, second half (36 more gyms) — completes Shanghai**, direct
+  follow-up to the first half above using the same huodong.com Shanghai
+  climbing directory (pages 3-5 this time). Same city-attribution
+  discipline as the first half — every candidate individually confirmed
+  Shanghai via huodong.com's own listing, not inferred from app-scroll
+  position.
+  - **3 candidates excluded**: Partpark局部公园 (huodong.com's own
+    description frames it as primarily a tennis facility with climbing
+    only a minor secondary activity, no confirmed dedicated wall); 射击攀岩
+    (explicitly an outdoor venue in Gongqing Forest Park, out of this
+    app's indoor-only scope); 攀岩工厂 (an exact-address duplicate of the
+    existing "Climbing Factory" spot from the original Dianping pass —
+    same 855 West Changjiang Rd / Boxiuhui Creative Park building).
+  - **One access judgment call kept rather than excluded**: Tongji
+    University Climbing Gym (Siping Rd Campus) — huodong.com's own
+    description explicitly confirms it opens to external climbers via
+    reservation and visitor registration, the same "verify, don't assume"
+    standard already applied to Korea's/Ireland's university-gym cases,
+    not the more cautious exclusion used for ambiguous-access university
+    walls elsewhere in this dataset.
+  - **Two pairs merged as same-address/same-listing duplicates**: 爬客
+    攀岩馆 and 派客攀岩 both list 88 Changning Rd; 上海市奉贤区体育中心(奉贤体育
+    中心攀岩馆) and 奉贤体育中心攀岩馆 are the identical listing appearing twice
+    in huodong.com's own directory (once on page 1, once on page 5).
+  - Positions individually geocoded against Nominatim — most needed a
+    street-only retry (dropping the house number/mall name) to resolve at
+    all, a notably lower first-try hit rate than the first half.
+  - **A gap was caught before committing, not after**: the initial write
+    of this batch omitted one already-fetched candidate (Jibi Storm
+    Climbing's Bailian Xijiao branch, `极壁风暴攀岩馆(百联西郊店)`) — its
+    address had been fetched via WebFetch but the entry never made it
+    into the actual `data.js` write. Caught by re-checking the file for
+    every name on the working candidate list before finalizing, not by
+    trusting the write was complete; added afterward with its own
+    Nominatim geocode.
+  - Net result: 1274 → **1310 total spots**. Structural check (Node-parsed
+    `window.SEED_GYMS`): 1310/1310 unique ids, zero duplicate
+    name+suburb+state+country combos, every spot has a non-empty `types`
+    array.
+  - **Verified live** (served copy, `npx serve .`, same offline-fallback-
+    forcing method as every prior batch): the Shanghai chip filter returns
+    exactly 73 spots (37 from the first half + 36 new); no console errors
+    beyond the deliberately-forced Supabase-unreachable ones; no
+    horizontal overflow in the China chip row at 375px mobile width.
+  - **Not yet pushed to the live Supabase table** — same next-step gap as
+    every prior country/city addition.
+  - **This finishes Shanghai** — the remaining 8 cities in this footage
+    (Beijing, Guangzhou, Shenzhen, Chengdu, Hangzhou, Wuhan, Suzhou,
+    Tianjin) are the only ones left in `docs/tasks.md`'s PANDA-app
+    backlog.
 - **Full-dataset geocode-accuracy check at a 3km threshold (31 more spots
   corrected, complete)**: earlier passes only checked spots that had moved
   ≥5km then ≥4km against Nominatim (40 spots corrected total, see the two

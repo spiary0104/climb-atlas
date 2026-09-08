@@ -36,72 +36,6 @@ Each entry:
 
 ## Backlog
 
-### Finish Shanghai — second half of the "岩馆探索" (PANDA) app city
-- Status: backlog — split off per the user's explicit choice ("split into
-  two halves") once Shanghai turned out to be ~100 gyms, 2-3x any other
-  city in this footage.
-- What: the first half (29 gyms) is done — see the "Add Shanghai" entry
-  below and `docs/architecture.md` "Seed data sourcing" for the full
-  method, including the real Beijing-cards-mixed-into-Shanghai's-own-tab
-  problem this batch had to work around (every candidate needs individual
-  city verification — position in the scroll is not trustworthy, even for
-  cards that look "safe"). huodong.com's own Shanghai climbing directory
-  (`https://huodong.com/venue/shanghai/rock_climbing`, pages 1-5, ~90
-  listings total) is the primary source — pages 1-2 are done, pages 3-5
-  are not yet processed. Detail-page URLs already gathered this session
-  (fetch each with `WebFetch`, prompt: "What is this venue's exact name
-  and full street address (including district)?"):
-  - **Page 3** (already excluded: none yet checked for exclusion —
-    apply the same criteria as every prior batch): Partpark局部公园-饮品
-    网球攀岩 (`eyup2`), LE MONT Climbing Gym (`eyuKZ`), GYM攀岩馆(绿地缤纷城店)
-    (`eyuSb`), 魔岩攀岩馆(黄浦市民健身中心A楼店) (`eyuSj`), 克莱攀岩公园 (`eyuK4`),
-    中庭攀岩场 (`eyuS1`), Jungle浆果·丛林营地 (`eyuKb`), 红攀攀岩体验中心(浦江城市
-    生活广场店) (`eyuKo`), BetaBouldersClimbingGYM难点攀岩馆 (`eyuSQ`), 冰川体育
-    (万渡汇店) (`eyuKs`), 啸岩攀岩(嘉亭荟城市生活广场店) (`eyuKN`). Also on this
-    page but excluded: 奉翔体育足球基地 (football, not climbing).
-  - **Page 4** (all climbing-relevant): 射击攀岩 (`eyuKK`), 攀岩工厂 (`eyuKy` —
-    note: an existing "Climbing Factory" spot already exists in this
-    dataset at a *different* Baoshan address from the original Dianping
-    pass; check this isn't the same venue before adding), 攀竞体育(静安馆)
-    (`eyuKJ`), 爬客攀岩馆 (`eyuSn`), 攀猩攀岩馆(宝乐汇印象城店) (`eyuKG`), 登拓攀岩
-    (春申馆) (`eyuK7`), 开元地中海攀猩攀岩馆 (`eyuKz`), 攀猩·攀岩拓展(上海青浦吾悦
-    广场店) (`eyuKc`), 攀猩攀岩馆(新达汇·三林店) (`eyuKj`), 红猩猩攀岩馆 (`eyuS9`),
-    攀猩儿童攀岩馆 (`eyuK3` — a third, unbranched 攀猩 card; confirm which
-    branch before adding, may be a duplicate of another 攀猩 card already
-    fetched), 1778CLIMBING攀岩馆(三林印象汇店) (`eyuKh`), HIGH5极限运动中心
-    (`eyuKT`), 岩顶攀岩Rock Summit Climbing Gym(丰尚国际广场店) (`eyuKL`), Vmore
-    攀岩馆 (`eyuKt` — likely a duplicate of "Vmore Climbing (North Bund)"
-    already added; check the address before treating as a new branch),
-    Rock攀岩俱乐部 (`eyuKk`), U+攀岩(恒生万鹂广场店) (`eyuKA`). Excluded on this
-    page: U·GYM悠健健身生活馆 (a general fitness/lifestyle club, not
-    climbing-specific per its own description).
-  - **Page 5** (all climbing-relevant): 攀岩小将步步高攀岩馆 (`eyulI`), 派客攀岩
-    (`eyuSz`), 极壁风暴攀岩馆(百联西郊店) (`eyuSs` — a second Jibi Storm branch,
-    distinct from the Pudong one already added), 智慧湾南桥空间攀岩场
-    (`eyuKY`), 金山户外体育中心攀岩馆 (`eyuKP`), 山艺攀岩 (`eyuKn`), J攀岩运动馆
-    (`eyuKw`), 奉贤体育中心攀岩馆 (`eyuKQ`), DYNO Park攀岩馆(盈丰天地店) (`eyuK9`),
-    J.Climbing攀岩俱乐部 (`eyuKC`), 琪朋户外攀岩馆 (`eyuKD`), 上海攀王攀岩
-    (`eyuKi`). One needs an access-policy judgment call before including:
-    同济大学四平路校区攀岩馆 (`eyuKl`) is a Tongji University wall — apply the
-    same "confirm genuine public access before keeping" caution already
-    used for Mardyke Arena UCC (Ireland)/Chile's university-gym cases,
-    not the "confirmed public, kept" treatment of the Korea/Ireland cases
-    that were individually verified.
-  - Already confirmed **excluded** from the whole Shanghai directory (not
-    real, currently-open, dedicated climbing gyms): 徐汇滨江攀岩墙 (暂停营业/
-    suspended), 优加攀岩 (暂停营业/suspended), MELAND CLUB (parent-child
-    entertainment venue, already excluded from the first half).
-  - After pages 3-5 are fetched, cross-check every result against both
-    (a) the 37 Shanghai spots already in this dataset (several first-half
-    additions were exact-address duplicates of an earlier Dianping-pass
-    entry — expect the same here) and (b) each other, since a few names
-    above are flagged as likely duplicates of a first-half or same-page
-    entry.
-  - Once this is done, Shanghai itself is complete and the remaining 8
-    cities (Beijing, Guangzhou, Shenzhen, Chengdu, Hangzhou, Wuhan,
-    Suzhou, Tianjin) are the only ones left in the outer PANDA-app
-    backlog below.
-
 ### Add the remaining 11 Chinese cities from the "岩馆探索" (PANDA) app footage
 - Status: backlog — split off from the Xi'an task below per the user's
   explicit scope decision ("all 12 cities, split across several
@@ -139,9 +73,9 @@ Each entry:
     count not confirmed via a banner; likely several dozen.
   - **Shanghai** — `IMG_6363.MP4`. Confirmed **100 gyms** via the app's
     own city banner — by far the largest single city in this footage.
-    **Half-done** — see the "Finish Shanghai" Backlog entry above and the
-    "Add Shanghai" done entry below. Important correction for whichever
-    city gets tackled next: Shanghai's own scroll had real Beijing gyms
+    **Done** (both halves) — see the "Add Shanghai" done entries below.
+    Important correction for whichever city gets tackled next: Shanghai's
+    own scroll had real Beijing gyms
     mixed into its tab with no separating banner, and at least one
     contaminated card sat *before* the obvious contaminated block even
     started — so "the wrong-city content resolves itself by the end of
@@ -191,7 +125,7 @@ Each entry:
 
 ### Add Shanghai (China) — 29 gyms, first half
 - Branch: `feature/add-shanghai-panda-1` — merged to `master`, pushed.
-- Status: done — merged. Second half backlogged, see Backlog above.
+- Status: done — merged. Second half done too, see the entry below.
 - What: user said "shanghai next" — fourth of 12 Chinese cities from the
   same "岩馆探索" (PANDA) app footage, and by far the largest (100 gyms
   confirmed via the app's own banner). Given the scale, the user chose to
@@ -227,9 +161,53 @@ Each entry:
   new), no console errors, no mobile horizontal overflow at 375px.
 - `supabase_seed_output.sql` regenerated (1274 rows) — still untracked/
   uncommitted by design, a one-off deliverable for the user.
+- **Not yet done (at the time)**: the second half followed through on
+  immediately after, see the entry below. The live Supabase table is
+  still the only outstanding step, same as every country/city addition
+  still awaiting a re-seed.
+
+### Add Shanghai (China) — 36 gyms, second half (Shanghai complete)
+- Branch: `feature/add-shanghai-panda-2` — merged to `master`, pushed.
+- Status: done — merged. Shanghai itself is now complete; 8 cities
+  remain in the outer PANDA-app Backlog entry.
+- What: user said "do the other half" — continuing from huodong.com's
+  same 5-page Shanghai climbing directory (pages 3-5 this time, having
+  done pages 1-2 in the first half). Same city-attribution discipline as
+  the first half.
+- **3 candidates excluded**: Partpark局部公园 (primarily a tennis facility
+  per its own description, no confirmed dedicated climbing wall); 射击攀岩
+  (explicitly outdoor, in Gongqing Forest Park); 攀岩工厂 (an exact-address
+  duplicate of the existing "Climbing Factory" spot from the original
+  Dianping pass).
+- **One access judgment call kept**: Tongji University Climbing Gym
+  (Siping Rd Campus) — huodong.com's own description explicitly confirms
+  it opens to external climbers via reservation, same standard as the
+  Korea/Ireland university-gym cases kept elsewhere in this dataset.
+- **Two pairs merged as same-address/same-listing duplicates**: 爬客攀岩馆
+  / 派客攀岩 (both 88 Changning Rd); 上海市奉贤区体育中心(奉贤体育中心攀岩馆) /
+  奉贤体育中心攀岩馆 (the identical huodong.com listing appearing on both
+  page 1 and page 5).
+- **A gap was caught and fixed before committing**: the initial write
+  omitted one already-fetched candidate (a second Jibi Storm Climbing
+  branch, Bailian Xijiao) — its address had been fetched but the entry
+  never made it into `data.js`. Caught by re-checking the file against
+  the full working candidate list before finalizing, not assumed
+  complete; added afterward with its own Nominatim geocode.
+- `state` uses the existing `"SHANGHAI"` key — no `js/app.js`,
+  `css/style.css`, or `index.html` changes needed.
+- Net result: 1274 → **1310 total spots**. Structural check (Node-parsed
+  `window.SEED_GYMS`): 1310/1310 unique ids, zero duplicate
+  name+suburb+state+country combos, every spot has a non-empty `types`
+  array.
+- **Verified**: same offline-fallback-forcing method as every prior batch
+  — the Shanghai chip filter returns exactly 73 spots (37 from the first
+  half + 36 new), no console errors, no mobile horizontal overflow at
+  375px.
+- `supabase_seed_output.sql` regenerated (1310 rows) — still untracked/
+  uncommitted by design, a one-off deliverable for the user.
 - **Not yet done**: running the regenerated SQL against the live
-  Supabase table; the second half of Shanghai (see Backlog); the
-  remaining 8 cities after that.
+  Supabase table; the remaining 8 cities (Beijing, Guangzhou, Shenzhen,
+  Chengdu, Hangzhou, Wuhan, Suzhou, Tianjin) — see Backlog.
 
 ### Fix unfounded top-rope tags on Xi'an/Chongqing/Nanjing gyms (49 spots)
 - Status: done — committed directly to `master` (data-only correction,
