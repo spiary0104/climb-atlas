@@ -69,8 +69,11 @@ Each entry:
   own entry below). After that was caught, every remaining video was
   re-checked by its own content (a city banner, or a district/branch name)
   before starting on any city, resolving the full set:
-  - **Beijing** — `IMG_6215.MP4` (full scroll, content-reviewed). Gym
-    count not confirmed via a banner; likely several dozen.
+  - **Beijing** — done via a different route entirely: huodong.com turned
+    out to have its own genuine Beijing climbing-venue directory, so this
+    city was sourced from that instead of `IMG_6215.MP4`'s frames — see
+    the "Add Beijing" done entry below. The video itself was never
+    reviewed for this city.
   - **Shanghai** — `IMG_6363.MP4`. Confirmed **100 gyms** via the app's
     own city banner — by far the largest single city in this footage.
     **Done** (both halves) — see the "Add Shanghai" done entries below.
@@ -110,16 +113,20 @@ Each entry:
     matching the original guess; a branch explicitly labelled "天津远洋店").
   - (Xi'an — `IMG_6215.MP4`'s companion PNG screenshots, 19 gyms — and
     Chongqing — `IMG_6372.MP4`, 31 new gyms — and Nanjing — `IMG_6368.MP4`,
-    14 new gyms — are all done. See their own "done" entries below.)
-- Given the scale (400-500+ candidates across the 7 remaining cities —
-  Beijing, Shanghai, Guangzhou, Shenzhen, Chengdu, Hangzhou, Wuhan — each
-  likely needing its own address-search pass with a no-confirmable-address
-  rate somewhere in the 29-47% range seen so far across Xi'an/Chongqing/
-  Nanjing), this should stay split into one task per city (or a small
-  group of related cities) rather than attempted in one sitting — same
-  reasoning that produced this split in the first place. The video-to-city
-  mapping above is now settled, so a future session can go straight to
-  extraction without re-deriving it.
+    14 new gyms — and Shanghai (both halves) — and Beijing, 50 new gyms via
+    huodong.com rather than frame extraction — are all done. See their own
+    "done" entries below.)
+- Given the scale (candidates across the 7 remaining cities — Guangzhou,
+  Shenzhen, Chengdu, Hangzhou, Wuhan, Suzhou, Tianjin — each likely
+  needing its own address-search pass), this should stay split
+  into one task per city (or a small group of related cities) rather than
+  attempted in one sitting — same reasoning that produced this split in
+  the first place. Worth checking huodong.com for a per-city directory
+  before falling back to frame extraction for each remaining city — it
+  had genuine coverage for Shanghai, Chongqing, and Beijing (not
+  discovered for Xi'an/Nanjing at the time those were done, but worth
+  re-checking), and gave much better address hit rates than frame
+  extraction + web search alone.
 
 ## In Progress
 
@@ -207,7 +214,76 @@ Each entry:
   uncommitted by design, a one-off deliverable for the user.
 - **Not yet done**: running the regenerated SQL against the live
   Supabase table; the remaining 8 cities (Beijing, Guangzhou, Shenzhen,
-  Chengdu, Hangzhou, Wuhan, Suzhou, Tianjin) — see Backlog.
+  Chengdu, Hangzhou, Wuhan, Suzhou, Tianjin) — see Backlog. (Beijing
+  followed through on immediately after, see the entry below.)
+
+### Add Beijing (China) — 50 gyms
+- Branch: `feature/add-beijing-panda` — merged to `master`, pushed.
+- Status: done — merged.
+- What: user said "keep going" after Shanghai — fifth of 12 Chinese
+  cities from the same "岩馆探索" (PANDA) app footage. Checked
+  huodong.com for a Beijing-specific climbing directory first (the same
+  source that worked well for Shanghai/Chongqing) rather than falling
+  back to frame extraction from `IMG_6215.MP4` — it exists
+  (`/venue/beijing/rock_climbing`, 5 pages, 75 raw candidates), so this
+  city was sourced entirely from there; the video itself was never
+  reviewed.
+- **25 of 75 excluded**: 14 plainly not climbing facilities (trampoline
+  parks, kids playgrounds, a skateboard club, a boxing club, a bar) or
+  tagged suspended; 7 more excluded after reading each one's own
+  description (2 kids/family entertainment complexes including a second
+  Meland-branded location, same reasoning as MELAND CLUB in Shanghai; 4
+  outdoor venues on the same scope grounds as Huayan Climbing Park); 4
+  exact duplicates of gyms already in this dataset from the earlier,
+  separate Dianping Beijing pass, matched by identical address not name
+  (Rock Time Climbing (Dawanglu), Aopan Climbing, Climbing Favorite
+  (Changying), Banana Climbing (Shangdi) all had a duplicate listing in
+  this batch). Net: 50 distinct new gyms.
+- **Aopan Climbing turned out to have 10 more Beijing branches** in this
+  batch alone (the largest chain-branch count found in any city batch so
+  far) — each confirmed individually via huodong.com's own per-venue
+  page, not assumed from the shared brand name. Rock Time Climbing,
+  Climb On Gym, CAMP4, Haoshi Sports Climbing Space, Yaoyan Climbing, and
+  Fun Wild Climbing each got 2-4 more confirmed branches too.
+- **One university-affiliated Aopan branch kept** (Beijing Sport
+  University) — huodong.com's own listing confirms outside visitors can
+  enter with ID registration, same standard as Tongji University
+  Climbing Gym (Shanghai). **One semi-outdoor facility kept with
+  disclosure** (Ritan Park climbing field) rather than excluded on scope
+  grounds, since it's a real professional training facility, not a plain
+  outdoor wall. **One same-address pair kept separate, not merged**
+  (Aopan Climbing World Park / Vitality Zone Sports Center, both 188
+  Baotai Rd) — no source confirmed either way, same treatment as Climb
+  House Brasov/Natural High Brașov.
+- **Independently corroborates the Shanghai-contamination discovery**:
+  Aopan Climbing (Wukesong), Dingshi Climbing (Chengshousi), and Renren
+  Climbing (Lize) confirm Wukesong/Chengshousi/人人攀岩 are all genuine
+  Beijing locations — the same districts/chain flagged when real Beijing
+  gyms were found mixed into Shanghai's own app-tab footage.
+- **Applied the "no top-rope without evidence" correction at write time
+  this time**, not as an afterthought — every entry's `types` came only
+  from its own huodong.com description (bouldering-only unless top-rope/
+  lead/auto-belay was explicitly named). 25 of 50 ended up bouldering-only.
+- **Unusually severe first-pass geocoding failure**: a first Nominatim
+  pass using each gym's full address (street + mall name) resolved only
+  4 of 50 — worse than any prior batch. A second pass dropping mall/
+  building names down to just street + district resolved 45 more
+  directly; the last was geocoded individually. All 50 positions are
+  street/area-level, not exact-building, flagged per-entry.
+- `state` uses the existing `"BEIJING"` key — no `js/app.js`,
+  `css/style.css`, or `index.html` changes needed.
+- Net result: 1310 → **1360 total spots**. Structural check (Node-parsed
+  `window.SEED_GYMS`): 1360/1360 unique ids, zero duplicate
+  name+suburb+state+country combos, every spot has a non-empty `types`
+  array.
+- **Verified**: same offline-fallback-forcing method as every prior batch
+  — the Beijing chip filter returns exactly 56 spots (6 existing + 50
+  new), no console errors, no mobile horizontal overflow at 375px.
+- `supabase_seed_output.sql` regenerated (1360 rows) — still untracked/
+  uncommitted by design, a one-off deliverable for the user.
+- **Not yet done**: running the regenerated SQL against the live
+  Supabase table; the remaining 7 cities (Guangzhou, Shenzhen, Chengdu,
+  Hangzhou, Wuhan, Suzhou, Tianjin) — see Backlog.
 
 ### Fix unfounded top-rope tags on Xi'an/Chongqing/Nanjing gyms (49 spots)
 - Status: done — committed directly to `master` (data-only correction,

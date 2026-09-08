@@ -175,8 +175,8 @@ pre-filled with its current value, rather than throwing on
 
 ## Seed data sourcing
 
-`js/data.js` currently has 1245 spots (74 AU, 332 US, 32 JP, 15 CA, 9 NZ,
-106 CN, 66 GB, 112 DE, 30 FR, 7 SE, 25 NL, 14 IT, 14 BE, 37 KR, 22 ES,
+`js/data.js` currently has 1360 spots (74 AU, 332 US, 32 JP, 15 CA, 9 NZ,
+221 CN, 66 GB, 112 DE, 30 FR, 7 SE, 25 NL, 14 IT, 14 BE, 37 KR, 22 ES,
 7 PT, 22 AT, 8 CH, 31 PL, 14 DK, 14 FI, 9 IE, 20 NO, 16 MX, 15 BR, 18 HU,
 13 GR, 8 CZ, 3 IS, 18 RO, 8 HR, 7 RU, 7 BG, 17 AR, 17 PH, 18 CO, 15 CL,
 14 VE, 8 IN, 8 IL, 9 ID, 6 TW), all indoor gyms
@@ -1711,6 +1711,131 @@ from one source:
     (Beijing, Guangzhou, Shenzhen, Chengdu, Hangzhou, Wuhan, Suzhou,
     Tianjin) are the only ones left in `docs/tasks.md`'s PANDA-app
     backlog.
+- **Beijing (50 more gyms, plus one long-standing flag independently
+  corroborated) — fifth of the 12 "岩馆探索" (PANDA) app cities.** Unlike
+  Xi'an/Chongqing/Nanjing (frame-extraction from video) or Shanghai
+  (huodong.com's Shanghai directory), this batch skipped video-frame
+  review entirely — huodong.com turned out to have its own genuine,
+  5-page Beijing climbing-venue directory
+  (`/venue/beijing/rock_climbing`), checked directly before assuming it
+  existed (the same "check first, don't guess" discipline already
+  applied when Norway/Mexico turned out to have inconsistent
+  climbing-gyms.com coverage). 75 raw candidates across the 5 pages.
+  - **25 of 75 excluded**: 14 were plainly not climbing facilities on
+    their name/category alone (trampoline parks, kids playgrounds, a
+    skateboard club, a boxing club, a craft-beer bar) or explicitly
+    tagged suspended (暂停营业); a further 7 were excluded after reading
+    each one's own huodong.com description — 2 kids/family entertainment
+    complexes (奈尔宝, matching the same "not a dedicated climbing gym"
+    reasoning as MELAND CLUB in Shanghai; and a second Meland-branded
+    location here, excluded for the identical reason), an outdoor via
+    ferrata route, an outdoor climbing area inside a botanical garden, an
+    outdoor climbing facility inside an industrial heritage park (首钢极限
+    公园, on the same scope grounds as Huayan Climbing Park), and an
+    outdoor recreation area inside a multi-sport park; 4 were exact
+    duplicates of gyms already in this dataset from the earlier, separate
+    Dianping Beijing pass — matched by identical address, not name alone
+    (a generic "岩时攀岩馆" listing resolved to the same address as the
+    already-listed Rock Time Climbing (Dawanglu); an Aopan Climbing
+    Sijiqing-campus listing matched the already-listed Aopan Climbing
+    exactly; 攀岩最爱常营馆 matched the already-listed Climbing Favorite
+    (Changying) exactly; and 香蕉攀岩(上地店) matched the already-listed
+    Banana Climbing (Shangdi) exactly). Net: 50 distinct new gyms.
+  - **Several genuine multi-branch chains verified, same "check each
+    branch, don't assume from the name" discipline as every prior
+    batch**: Aopan Climbing (奥攀攀岩), already in this dataset with one
+    Haidian location, turned out to have **10 more Beijing branches** in
+    this batch alone (Wangfujing Outlets, Xihongmen, World Park, Jiaomen,
+    Beijing Sport University, Yuquanying, Wukesong, plus a co-branded
+    "缦合·奥攀攀岩" location) — the single largest chain-branch count found
+    in any city batch so far, confirmed one by one via huodong.com's own
+    per-venue pages rather than assumed from the shared brand name. Rock
+    Time Climbing (岩时攀岩), already listed at Dawanglu, got 3 more
+    confirmed branches (Guanzhuang, Huilongguan, and a differently-named
+    "岩时攀登中心" at Xisanqi). Climb On Gym, CAMP4, Haoshi Sports Climbing
+    Space (already listed once, near 798 Art District), Yaoyan Climbing,
+    and Fun Wild Climbing (趣野攀岩, also seen once already in the Shanghai
+    batch under the same brand) each got 2-3 confirmed branches.
+  - **One university-affiliated Aopan branch kept, not excluded**: Aopan
+    Climbing (Beijing Sport University) — huodong.com's own listing
+    explicitly confirms outside visitors can enter with ID registration
+    at the gate, the same "verify, don't assume" standard already applied
+    to Tongji University Climbing Gym (Shanghai) and the Korea/Ireland
+    university-gym cases, rather than the more cautious exclusion used
+    for ambiguous-access university walls elsewhere in this dataset.
+  - **One semi-outdoor facility kept with disclosure, not excluded on
+    scope grounds**: Beijing Jindianshi Ritan Climbing Field, inside
+    Ritan Park — huodong.com's own description calls it "indoor and
+    semi-outdoor bouldering and lead-climbing training," a real
+    professional training facility rather than a plain outdoor wall
+    (unlike the 5 purely-outdoor exclusions above), so it was kept with
+    the semi-outdoor nature disclosed in its own `notes`.
+  - **One same-address pair kept separate, not merged**: Aopan Climbing
+    (World Park) and Vitality Zone Sports Center both list 188 Baotai Rd,
+    Fengtai — unlike the Salzburg/Helsinki merge precedents, no source
+    confirmed or denied whether these are the same venue under two names
+    or two facilities sharing one complex, so both were kept as distinct
+    entries with a cross-referencing note, the same "don't guess either
+    way" treatment already used for Climb House Brasov/Natural High
+    Brașov (Romania batch).
+  - **This batch independently corroborates the Shanghai-contamination
+    discovery from two directions**: Aopan Climbing (Wukesong) and
+    Dingshi Climbing (Chengshousi) confirm 五棵松/Wukesong and 成寿寺/
+    Chengshousi are genuine Beijing locations — both were districts named
+    in the real Beijing gyms found mixed into Shanghai's own app-tab
+    footage earlier this project. Separately, Renren Climbing (Lize) —
+    人人攀岩 — confirms that chain is a real, multi-branch Beijing operator,
+    corroborating (not just repeating) the discovery that 人人攀岩(欢乐谷店)
+    was one of the "looked safe by position, actually Beijing" cards found
+    during the Shanghai batch.
+  - **Applied this session's "no default toward top-rope without
+    evidence" correction directly at write time, not after the fact**:
+    unlike the original Xi'an/Chongqing/Nanjing passes (which defaulted
+    unconfirmed spots to `[indoor-bouldering, top-rope]` and needed a
+    49-spot correction afterward), every one of this batch's 50 entries
+    was tagged solely from its own huodong.com description — bouldering
+    only where the description names nothing else, `top-rope` only where
+    the description explicitly says so (or names auto-belay, which
+    implies assisted rope climbing), `lead-climbing` only where the
+    description explicitly names lead/difficulty climbing or a
+    "先锋"/"顶绳" (lead/top-rope) wall. Net: 25 of 50 are bouldering-only,
+    consistent with the small mall-storefront/community-gym character of
+    most of this footage source, the same pattern already documented for
+    Xi'an/Chongqing/Nanjing.
+  - **Geocoding hit a real, unusually severe first-pass failure rate**:
+    a first Nominatim pass using each gym's full address (street + mall/
+    building name) resolved only 4 of 50 — by far the worst first-pass
+    rate of any batch in this project, including Xi'an/Chongqing/Nanjing's
+    own no-confirmable-*address* rates (which are a different failure
+    mode — those addresses were never found at all, whereas here the
+    addresses were confirmed real but Nominatim's OSM index apparently
+    has poor coverage of Beijing mall/building names specifically). A
+    second pass dropping every mall/building name down to just the street
+    name + district resolved 45 of the remaining 46 directly; the last
+    (Rock Time Climbing Center, Xisanqi) was geocoded individually with a
+    slightly broader area query. All 50 positions are therefore
+    street-or-area-level, not exact-building, flagged per-entry in
+    `notes` — two pairs of spots on the same street (CAMP4 Jiuxianqiao
+    Xinchenli / Haoshi Jiulong Life Plaza both on Jiuxianqiao Rd; Aopan
+    World Park / Vitality Zone Sports Center, genuinely same address)
+    ended up sharing an identical fallback point, disclosed in both
+    spots' own `notes` rather than left unexplained.
+  - `state` uses the existing `"BEIJING"` key — no `js/app.js`,
+    `css/style.css`, or `index.html` changes needed, this only appends to
+    `js/data.js`.
+  - Net result: 1310 → **1360 total spots**. Structural check (Node-parsed
+    `window.SEED_GYMS`): 1360/1360 unique ids, zero duplicate
+    name+suburb+state+country combos, every spot has a non-empty `types`
+    array.
+  - **Verified live** (served copy, `npx serve .`, same offline-fallback-
+    forcing method as every prior batch): the Beijing chip filter returns
+    exactly 56 spots (6 existing + 50 new); no console errors beyond the
+    deliberately-forced Supabase-unreachable ones; no horizontal overflow
+    in the China chip row at 375px mobile width.
+  - **Not yet pushed to the live Supabase table** — same next-step gap as
+    every prior country/city addition.
+  - **7 cities remain in this footage's backlog**: Guangzhou, Shenzhen,
+    Chengdu, Hangzhou, Wuhan, Suzhou, Tianjin.
 - **Full-dataset geocode-accuracy check at a 3km threshold (31 more spots
   corrected, complete)**: earlier passes only checked spots that had moved
   ≥5km then ≥4km against Nominatim (40 spots corrected total, see the two
