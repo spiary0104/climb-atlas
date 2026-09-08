@@ -175,8 +175,8 @@ pre-filled with its current value, rather than throwing on
 
 ## Seed data sourcing
 
-`js/data.js` currently has 1478 spots (74 AU, 332 US, 32 JP, 15 CA, 9 NZ,
-339 CN, 66 GB, 112 DE, 30 FR, 7 SE, 25 NL, 14 IT, 14 BE, 37 KR, 22 ES,
+`js/data.js` currently has 1498 spots (74 AU, 332 US, 32 JP, 15 CA, 9 NZ,
+359 CN, 66 GB, 112 DE, 30 FR, 7 SE, 25 NL, 14 IT, 14 BE, 37 KR, 22 ES,
 7 PT, 22 AT, 8 CH, 31 PL, 14 DK, 14 FI, 9 IE, 20 NO, 16 MX, 15 BR, 18 HU,
 13 GR, 8 CZ, 3 IS, 18 RO, 8 HR, 7 RU, 7 BG, 17 AR, 17 PH, 18 CO, 15 CL,
 14 VE, 8 IN, 8 IL, 9 ID, 6 TW), all indoor gyms
@@ -2179,6 +2179,69 @@ from one source:
   - **Not yet pushed to the live Supabase table** — same next-step gap as
     every prior country/city addition.
   - **2 cities remain in this footage's backlog**: Suzhou, Tianjin.
+- **Suzhou (20 gyms) — eleventh of the 12 "岩馆探索" (PANDA) app cities,
+  and the first-ever Suzhou spots in this dataset.** huodong.com's own
+  Suzhou category page returned zero listings ("这个组合还没有收录到场馆" —
+  "this combination has no venues recorded yet"), unlike every PANDA-app
+  city since Beijing, so this batch fell back to frame-extracting the
+  source video (`IMG_6373.MP4`) plus general web search for addresses,
+  the same method used for Xi'an/Chongqing/Nanjing before the huodong.com
+  directories were discovered.
+  - **The video itself was unusually short (2.9s, 175 frames)** — a
+  near-static scroll capture rather than a continuous scroll like earlier
+  cities' videos — so 30 evenly-sampled frames were enough to read every
+  card without missing any mid-scroll transition. 21 unique gym cards
+  were found against the app's own "22家岩馆" banner (close enough to be
+  within this project's established tolerance for banner-vs-actual
+  count mismatches); one of the 21 ("Follow Away Climbing跟攀攀岩馆") showed
+  the "订阅提醒" (subscribe for updates) not-yet-open pattern already
+  established for this app and was excluded, leaving 20.
+  - **Address confirmation hit the same wall as the original frame-
+    extraction cities**: only 6 of 20 got a real, independently-confirmed
+    address (2 more at mall-level precision); the other 14 (70%) had no
+    exact address findable via web search — worse than Xi'an's 47%,
+    consistent with Suzhou lacking any directory-site coverage at all
+    (unlike huodong.com-covered cities, which consistently hit much
+    lower no-address rates). All 14 use a placeholder position (city,
+    district, or named-area centroid) derived only from information
+    already present in the gym's own branch name (e.g. "相城天街店"
+    literally names Xiangcheng District) — never guessed beyond what the
+    source itself stated.
+  - **One government open-data source was tried and abandoned**: a
+    Suzhou municipal sports-venue registry (苏体通,
+    zscqxzzf.suzhou.gov.cn) surfaced in search results and looked
+    promising, but its HTTPS endpoint refused every connection attempt
+    from this session's tools — its cached search-result text was still
+    usable (confirming 2 addresses), just not the live site itself.
+  - **No climbing-type evidence exists for any of these 20** — unlike
+    every huodong.com-sourced batch since Beijing, which had real
+    description text to read, this batch has only thumbnail photos from
+    video frames, the same evidentiary tier as the original Xi'an/
+    Chongqing/Nanjing passes. Rather than repeat that batch's mistake
+    (defaulting unconfirmed spots to `[indoor-bouldering, top-rope]`,
+    which needed a 49-spot correction afterward), all 20 are tagged
+    bouldering-only from the start, per the correction's own stated
+    lesson.
+  - **First-ever Suzhou spot in this dataset** — `"SUZHOU"` was already
+    present in `STATES_BY_COUNTRY.CN` from an earlier completeness pass,
+    so no `js/app.js` change was needed, but (same as Nanjing) a new
+    `--cn-suzhou` CSS colour variable + chip rule and a new sidebar chip
+    in `index.html`'s China chip-row were required.
+  - Net result: 1478 → **1498 total spots**. Structural check (Node-parsed
+    `window.SEED_GYMS`): 1498/1498 unique ids, zero duplicate
+    name+suburb+state+country combos, every spot has a non-empty `types`
+    array.
+  - **Verified live** (served copy, `npx serve .`, same offline-fallback-
+    forcing method as every prior batch): the new Suzhou chip renders
+    with the correct colour and a legible active state (confirmed via
+    computed style: dark text on the new purple background, same
+    `!important` legibility fix already covering every other chip);
+    clicking it correctly filters to exactly 20 spots; no console errors
+    beyond the deliberately-forced Supabase-unreachable ones; no
+    horizontal overflow in the China chip row at 375px mobile width.
+  - **Not yet pushed to the live Supabase table** — same next-step gap as
+    every prior country/city addition.
+  - **1 city remains in this footage's backlog**: Tianjin.
 - **Full-dataset geocode-accuracy check at a 3km threshold (31 more spots
   corrected, complete)**: earlier passes only checked spots that had moved
   ≥5km then ≥4km against Nominatim (40 spots corrected total, see the two

@@ -108,9 +108,11 @@ Each entry:
     (which also finally resolves that video's own "岩舞空间(凯德1818店)"
     not-yet-open card, confirmed now open via huodong.com). The video
     itself was never reviewed for this city.
-  - **Suzhou** — `IMG_6373.MP4` (confirmed by content: **22家岩馆** banner,
-    matching the original guess; branch names referencing 昆山/吴中/漕湖, all
-    Suzhou-administered areas).
+  - **Suzhou** — done, see the "Add Suzhou" done entry below. Unlike
+    every other remaining city, huodong.com has no Suzhou directory at
+    all, so this one genuinely needed `IMG_6373.MP4`'s frames (confirmed
+    by content: **22家岩馆** banner, matching the original guess) plus web
+    search — the same method as Xi'an/Chongqing/Nanjing.
   - **Tianjin** — `IMG_6374.MP4` (confirmed by content: **21家岩馆** banner,
     matching the original guess; a branch explicitly labelled "天津远洋店").
   - (Xi'an — `IMG_6215.MP4`'s companion PNG screenshots, 19 gyms — and
@@ -544,6 +546,48 @@ Each entry:
   uncommitted by design, a one-off deliverable for the user.
 - **Not yet done**: running the regenerated SQL against the live
   Supabase table; the remaining 2 cities (Suzhou, Tianjin) — see Backlog.
+  (Suzhou followed through on immediately after, see the entry below.)
+
+### Add Suzhou (China) — 20 gyms
+- Branch: `feature/add-suzhou-panda` — merged to `master`, pushed.
+- Status: done — merged.
+- What: user said "finish the last four" — eleventh of 12 Chinese cities
+  from the same "岩馆探索" (PANDA) app footage, and the first-ever Suzhou
+  spots in this dataset. huodong.com has no Suzhou climbing directory at
+  all ("this combination has no venues recorded yet"), unlike every
+  PANDA-app city since Beijing, so this fell back to frame-extracting
+  `IMG_6373.MP4` (an unusually short, 2.9s near-static scroll capture)
+  plus general web search, the same method used for Xi'an/Chongqing/
+  Nanjing.
+- 21 unique cards found against the app's own "22家岩馆" banner; one
+  ("Follow Away Climbing") showed the "订阅提醒" not-yet-open pattern and
+  was excluded, leaving 20.
+- **Address confirmation hit the same wall as Xi'an/Chongqing/Nanjing**:
+  only 6 of 20 got a real address (2 more at mall-level), the other 14
+  (70%) use a placeholder position derived only from information already
+  in the gym's own branch name — worse than Xi'an's 47%, consistent with
+  Suzhou having zero directory-site coverage. A promising Suzhou
+  government sports-venue registry (苏体通) was tried but its HTTPS
+  endpoint refused every connection from this session's tools.
+- **No climbing-type evidence exists for any of these 20** (thumbnails
+  only, no description text) — all 20 tagged bouldering-only from the
+  start, applying the lesson from the earlier 49-spot top-rope
+  correction rather than repeating it.
+- First-ever Suzhou spot in this dataset — `"SUZHOU"` was already in
+  `STATES_BY_COUNTRY.CN`, but (same as Nanjing) needed a new
+  `--cn-suzhou` CSS colour variable + chip rule and a new sidebar chip.
+- Net result: 1478 → **1498 total spots**. Structural check (Node-parsed
+  `window.SEED_GYMS`): 1498/1498 unique ids, zero duplicate
+  name+suburb+state+country combos, every spot has a non-empty `types`
+  array.
+- **Verified**: same offline-fallback-forcing method as every prior batch
+  — the new Suzhou chip renders with the correct colour and legible
+  active-state text, filters to exactly 20 spots, no console errors, no
+  mobile horizontal overflow at 375px.
+- `supabase_seed_output.sql` regenerated (1498 rows) — still untracked/
+  uncommitted by design, a one-off deliverable for the user.
+- **Not yet done**: running the regenerated SQL against the live
+  Supabase table; the last remaining city (Tianjin) — see Backlog.
 
 ### Fix unfounded top-rope tags on Xi'an/Chongqing/Nanjing gyms (49 spots)
 - Status: done — committed directly to `master` (data-only correction,
