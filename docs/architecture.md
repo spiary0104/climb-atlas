@@ -175,8 +175,8 @@ pre-filled with its current value, rather than throwing on
 
 ## Seed data sourcing
 
-`js/data.js` currently has 1360 spots (74 AU, 332 US, 32 JP, 15 CA, 9 NZ,
-221 CN, 66 GB, 112 DE, 30 FR, 7 SE, 25 NL, 14 IT, 14 BE, 37 KR, 22 ES,
+`js/data.js` currently has 1379 spots (74 AU, 332 US, 32 JP, 15 CA, 9 NZ,
+240 CN, 66 GB, 112 DE, 30 FR, 7 SE, 25 NL, 14 IT, 14 BE, 37 KR, 22 ES,
 7 PT, 22 AT, 8 CH, 31 PL, 14 DK, 14 FI, 9 IE, 20 NO, 16 MX, 15 BR, 18 HU,
 13 GR, 8 CZ, 3 IS, 18 RO, 8 HR, 7 RU, 7 BG, 17 AR, 17 PH, 18 CO, 15 CL,
 14 VE, 8 IN, 8 IL, 9 ID, 6 TW), all indoor gyms
@@ -1836,6 +1836,74 @@ from one source:
     every prior country/city addition.
   - **7 cities remain in this footage's backlog**: Guangzhou, Shenzhen,
     Chengdu, Hangzhou, Wuhan, Suzhou, Tianjin.
+- **Guangzhou (19 more gyms) — sixth of the 12 "岩馆探索" (PANDA) app
+  cities.** Same method as Beijing: checked huodong.com for a Guangzhou-
+  specific climbing directory first (`/venue/guangzhou/rock_climbing`,
+  found to exist directly rather than assumed) instead of frame-
+  extracting `IMG_6364.MP4` — a much smaller batch than Beijing this
+  time, only 2 pages / 23 raw candidates.
+  - **4 of 23 excluded**: 2 kids-entertainment venues (a "dream family
+    park," a kids theme park) and a roller-skating rink were excluded on
+    name/category alone, same as every prior batch's pre-filter step.
+    The fourth is a real, non-obvious catch: 广州锦绣香江温泉城 (a hot
+    springs resort) is indexed under huodong.com's climbing category, but
+    its own page explicitly states "该场地并未设有专门的攀岩设施或攀岩活动
+    区域" ("this venue has no dedicated climbing facilities or climbing
+    activity areas") — a source contradicting its own category tag,
+    caught by reading the description rather than trusting the listing
+    category. Net: 19 distinct gyms, no exact-address duplicates found
+    against the single pre-existing Guangzhou entry (Banana Climbing,
+    Grantral Centre — that one still has no confirmed address, unrelated
+    to this batch).
+  - **Two more genuine multi-branch chains verified**: Super Extreme
+    Climbing (超极限攀岩馆) has 3 confirmed Guangzhou branches (Liuyuansu
+    Tiyandi, Youtuobang Aoti, Yonglong Garden East — the last carrying a
+    name/address mismatch in huodong.com's own listing, its card is
+    labelled "Yonglong Garden East" but its actual address resolves to
+    Youtuobang West Plaza, kept as given rather than guessed at); Mars
+    Climbing Gym (火星攀岩馆) and King Climbing (王者攀岩) each have a
+    flagship location plus one branch, both individually addressed.
+    Fun Wild Climbing (趣野攀岩), already seen once each in Beijing and
+    Shanghai, got a fourth confirmed location here, corroborating it's a
+    genuine multi-city operator, not a one-off namesake.
+  - **One university-affiliated branch kept, not excluded**: Super
+    Extreme Climbing (SCUT East Campus) — huodong.com's own listing
+    explicitly says it welcomes visitors (advance approval is only
+    needed for vehicle parking, not general entry), the same
+    "verify, don't assume" standard already applied to Tongji University
+    Climbing Gym (Shanghai) and Aopan Climbing (Beijing Sport
+    University). **One public-not-private facility kept without
+    disclosure caveats**: University Town Sports Center Climbing Field
+    is part of Guangzhou University Town's shared public sports complex
+    (a public district hosting 10 institutions, not one school's private
+    gym), so it didn't need the same access-verification treatment as a
+    single-campus facility.
+  - **Positions individually geocoded** — 16 of 19 addresses matched
+    Nominatim directly on the first try (a much better hit rate than
+    Beijing's rough first pass, since this batch's queries went straight
+    to street-level rather than full-address); the other 3 (Pulan
+    Sports, RockinClimbing, Super Extreme SCUT East Campus) resolved on
+    a second, further-simplified pass — RockinClimbing's Nansha District
+    address couldn't resolve past the whole district centroid, flagged
+    in its own `notes`.
+  - **Climbing type applied at write time from each gym's own
+    description**, same discipline as Beijing — 6 of 19 ended up
+    bouldering-only where no rope/lead offering was named.
+  - `state` uses the existing `"GUANGZHOU"` key — no `js/app.js`,
+    `css/style.css`, or `index.html` changes needed.
+  - Net result: 1360 → **1379 total spots**. Structural check (Node-parsed
+    `window.SEED_GYMS`): 1379/1379 unique ids, zero duplicate
+    name+suburb+state+country combos, every spot has a non-empty `types`
+    array.
+  - **Verified live** (served copy, `npx serve .`, same offline-fallback-
+    forcing method as every prior batch): the Guangzhou chip filter
+    returns exactly 20 spots (1 existing + 19 new); no console errors
+    beyond the deliberately-forced Supabase-unreachable ones; no
+    horizontal overflow in the China chip row at 375px mobile width.
+  - **Not yet pushed to the live Supabase table** — same next-step gap as
+    every prior country/city addition.
+  - **6 cities remain in this footage's backlog**: Shenzhen, Chengdu,
+    Hangzhou, Wuhan, Suzhou, Tianjin.
 - **Full-dataset geocode-accuracy check at a 3km threshold (31 more spots
   corrected, complete)**: earlier passes only checked spots that had moved
   ≥5km then ≥4km against Nominatim (40 spots corrected total, see the two

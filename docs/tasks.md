@@ -85,11 +85,9 @@ Each entry:
     the scroll" (true for Guangzhou's video) is **not** a safe assumption
     to carry forward; verify every candidate's city individually rather
     than trusting scroll position for any city.
-  - **Guangzhou** — `IMG_6364.MP4` (confirmed by content — this video
-    opens confusingly on what looks like a national "全部" tab-switch
-    animation frame with other cities' gyms briefly visible, but settles
-    into clearly Guangzhou/Dongguan-area gyms by the end of the scroll).
-    Gym count not confirmed via a banner in this file.
+  - **Guangzhou** — done via huodong.com's own Guangzhou directory
+    instead of `IMG_6364.MP4`'s frames — see the "Add Guangzhou" done
+    entry below. The video itself was never reviewed for this city.
   - **Shenzhen** — `IMG_6365.MP4` (confirmed by content — Shenzhen-area
     gym names from the very first frame, e.g. "深圳太子湾店", "前海壹方汇店").
     Gym count not confirmed via a banner in this file.
@@ -283,7 +281,59 @@ Each entry:
   uncommitted by design, a one-off deliverable for the user.
 - **Not yet done**: running the regenerated SQL against the live
   Supabase table; the remaining 7 cities (Guangzhou, Shenzhen, Chengdu,
-  Hangzhou, Wuhan, Suzhou, Tianjin) — see Backlog.
+  Hangzhou, Wuhan, Suzhou, Tianjin) — see Backlog. (Guangzhou followed
+  through on immediately after, see the entry below.)
+
+### Add Guangzhou (China) — 19 gyms
+- Branch: `feature/add-guangzhou-panda` — merged to `master`, pushed.
+- Status: done — merged.
+- What: user said "keep going" after Beijing — sixth of 12 Chinese
+  cities from the same "岩馆探索" (PANDA) app footage. Same method as
+  Beijing: checked huodong.com for a Guangzhou-specific directory first
+  (found to exist, `/venue/guangzhou/rock_climbing`) instead of frame-
+  extracting `IMG_6364.MP4` — a much smaller batch, 2 pages / 23 raw
+  candidates.
+- **4 of 23 excluded**: 2 kids-entertainment venues and a roller-skating
+  rink on name/category alone; one real catch — 广州锦绣香江温泉城 (a hot
+  springs resort) is indexed under huodong.com's climbing category, but
+  its own page explicitly says it has no dedicated climbing facilities
+  at all, a source contradicting its own category tag. Net: 19 distinct
+  gyms, no exact-address duplicates against the single pre-existing
+  Guangzhou entry.
+- **Two more genuine multi-branch chains verified**: Super Extreme
+  Climbing (3 branches, one with a name/address mismatch in huodong.com's
+  own listing, kept as given rather than guessed at); Mars Climbing Gym
+  and King Climbing (each a flagship + one branch). Fun Wild Climbing
+  (already seen once each in Beijing and Shanghai) got a fourth confirmed
+  location here.
+- **One university-affiliated branch kept** (Super Extreme, SCUT East
+  Campus) — huodong.com's own listing confirms it welcomes visitors,
+  same standard as Tongji University (Shanghai) and Aopan Climbing
+  (Beijing Sport University). **One public sports-center facility kept
+  without access caveats** (University Town Sports Center Climbing
+  Field) since it's a shared public complex, not a single school's
+  private gym.
+- **Positions individually geocoded** — 16 of 19 matched Nominatim
+  directly (a better hit rate than Beijing's rough first pass, since
+  queries went straight to street-level); 3 more resolved on a
+  simplified second pass, one (RockinClimbing) only to its district
+  centroid.
+- **Climbing type applied at write time from each gym's own
+  description** — 6 of 19 ended up bouldering-only.
+- `state` uses the existing `"GUANGZHOU"` key — no `js/app.js`,
+  `css/style.css`, or `index.html` changes needed.
+- Net result: 1360 → **1379 total spots**. Structural check (Node-parsed
+  `window.SEED_GYMS`): 1379/1379 unique ids, zero duplicate
+  name+suburb+state+country combos, every spot has a non-empty `types`
+  array.
+- **Verified**: same offline-fallback-forcing method as every prior batch
+  — the Guangzhou chip filter returns exactly 20 spots (1 existing + 19
+  new), no console errors, no mobile horizontal overflow at 375px.
+- `supabase_seed_output.sql` regenerated (1379 rows) — still untracked/
+  uncommitted by design, a one-off deliverable for the user.
+- **Not yet done**: running the regenerated SQL against the live
+  Supabase table; the remaining 6 cities (Shenzhen, Chengdu, Hangzhou,
+  Wuhan, Suzhou, Tianjin) — see Backlog.
 
 ### Fix unfounded top-rope tags on Xi'an/Chongqing/Nanjing gyms (49 spots)
 - Status: done — committed directly to `master` (data-only correction,
