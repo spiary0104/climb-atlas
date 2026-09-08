@@ -632,13 +632,14 @@ _(none)_
   correction pass — this pass doesn't change the row count so the
   existing un-run SQL already covers it once regenerated).
 
-### Worldwide top-rope-tag audit — UK + Germany + South Korea done (116 of 215 spots corrected)
+### Worldwide top-rope-tag audit — 12 countries done (250 of 420 spots corrected)
 - Branch: `fix/worldwide-toprope-verification` — committed, not yet
   merged.
-- Status: in progress — UK, Germany, and South Korea done; ~22 more
-  countries still queued. This is a multi-session effort by explicit
-  user choice ("go country by country through the full ~640, biggest
-  first"), not a single-pass task.
+- Status: in progress — UK, Germany, South Korea, Poland, Norway,
+  France, Argentina, Colombia, Italy, Spain, Romania, and Mexico done;
+  ~15 more countries still queued. This is a multi-session effort by
+  explicit user choice ("go country by country through the full ~640,
+  biggest first"), not a single-pass task.
 - What: direct follow-up to the two China top-rope fixes above — user
   asked whether the same audit had been run on the rest of the world. A
   full scan found 663 non-China spots whose top-rope/lead tag had no
@@ -694,15 +695,65 @@ _(none)_
   unchanged at 37; no console errors beyond the deliberately-forced
   Supabase-unreachable ones; `git diff` on `js/supabase-init.js`
   confirmed clean.
-- **Not yet done**: ~490 more spots across 22 climbing-gyms.com-sourced
-  countries (France, Sweden, Netherlands, Italy, Belgium, Poland,
-  Denmark, Finland, Ireland, Spain, Portugal, Austria, Switzerland,
-  Hungary, Greece, Czech Republic, Iceland, Romania, Croatia, Russia,
-  Bulgaria, plus Norway/Mexico/Brazil/Argentina/Colombia/Chile/Venezuela/
-  Philippines/India/Israel/Indonesia/Taiwan's own lighter-touch "type
-  inferred from description" tier, which may warrant a lighter check
-  than the blind-default countries). Not yet pushed to the live Supabase
-  table.
+- **Poland (31 gyms, 22 audited)**: 4 confirmed bouldering-only, 9
+  top-rope, 8 both top-rope and lead, 1 lead-only (Murall Annopol).
+  Breakdown after the fix: 17 top-rope, 9 lead, 13 bouldering-only.
+- **Norway (20 gyms, 16 audited) — the first clean pass in this whole
+  series**: every audited gym confirmed to genuinely have top-rope
+  climbing as originally tagged — 0 miscorrections, only evidence added
+  to `notes`. One closure signal flagged in passing but not acted on
+  (Klatrefabrikken Stavanger, possibly replaced by "AIR by Bolder") —
+  out of this task's scope.
+- **France (30 gyms, 16 audited)**: 6 confirmed bouldering-only,
+  including a "Climb Up" branch (Marseille La Valentine) bouldering-only
+  despite the chain being confirmed elsewhere as offering top-rope/lead
+  — exactly the chain-name false-positive this audit exists to catch.
+  One venue (HAPIK, Lyon) turned out to be a family auto-belay
+  attraction, not a traditional gym — kept bouldering-only, flagged.
+  Breakdown: 9 top-rope, 2 lead, 20 bouldering-only.
+- **Argentina (17 gyms, 14 audited)**: only 1 confirmed bouldering-only
+  (K2 Escalada Deportiva — indoor component only, per this app's
+  indoor-only scope). Breakdown: 14 top-rope, 4 lead, 3 bouldering-only.
+- **Colombia (18 gyms, 14 audited) — statistically the opposite of
+  Korea**: only 2 of 14 bouldering-only, with 5 more genuinely unclear.
+  Since Colombia's own confirmed-either-way spots lean toward *having*
+  rope climbing (unlike Korea's 29/30 bouldering-only), the 5 unclear
+  entries were left on their existing top-rope tag with an "unconfirmed"
+  disclosure rather than defaulted to bouldering-only the way Korea's
+  were — that default wouldn't have been statistically justified here.
+  Breakdown: 13 top-rope, 2 lead, 4 bouldering-only.
+- **Italy (14 gyms, 13 audited)**: only 2 bouldering-only (15% miss
+  rate, among the lowest in this series). Breakdown: 5 top-rope, 6
+  lead, 3 bouldering-only.
+- **Spain (22 gyms, 13 audited)**: 1 bouldering-only (RockTown Climbing).
+  Breakdown: 7 top-rope, 5 lead, 10 bouldering-only.
+- **Romania (18 gyms, 13 audited)**: 2 bouldering-only, 1 genuinely
+  unclear (Gravity, Cluj) defaulted to bouldering-only per this
+  project's established pattern. Romanian terminology cleanly
+  distinguishes "manșă" (top-rope) from "cap de coardă" (lead) in
+  several gyms' own descriptions. Breakdown: 8 top-rope, 4 lead, 8
+  bouldering-only.
+- **Mexico (16 gyms, 13 audited)**: 7 of 13 confirmed bouldering-only
+  (54% miss rate, among the highest in this series), several with
+  explicit "sin cuerda"/"sin arnés" confirmation. Breakdown: 6 top-rope,
+  1 lead, 9 bouldering-only.
+- Net result across all 9 countries in this batch: still **1513 total
+  spots** (type-correction only). Structural check (Node-parsed
+  `window.SEED_GYMS`): 1513/1513 unique ids, zero duplicate
+  name+suburb+state+country combos, every spot has a non-empty `types`
+  array.
+- **Verified live** (served copy, `npx serve .`, offline-fallback-forcing
+  method): `window.SEED_GYMS.length` = 1513 unchanged; per-country
+  counts spot-checked directly in the loaded data (PL 31, NO 20, FR 30,
+  MX 16); no console errors beyond the deliberately-forced
+  Supabase-unreachable ones; `git diff` on `js/supabase-init.js`
+  confirmed clean.
+- **Not yet done**: ~356 more spots across ~15 more countries (Austria,
+  Brazil, Greece, Philippines, Finland, Canada, Chile, Hungary, Croatia,
+  Bulgaria, Indonesia, Belgium, Russia, Sweden, Netherlands, Ireland,
+  Czech Republic, India, Portugal, Switzerland, Denmark, Israel, Taiwan,
+  New Zealand, Iceland, Venezuela, Japan). Not yet pushed to the live
+  Supabase table.
 
 ### Add Chongqing (China) — 31 more gyms
 - Branch: `feature/add-chongqing-panda` — merged to `master`, pushed.

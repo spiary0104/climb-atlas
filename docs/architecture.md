@@ -2766,6 +2766,103 @@ from one source:
   - **Not yet done**: the ~490 climbing-gyms.com-sourced spots across 22
     more countries are still queued in this worldwide audit. Not yet
     pushed to the live Supabase table.
+- **Poland, Norway, France, Argentina, Colombia, Italy, Spain, Mexico,
+  and Romania (134 of 205 spots audited)**: continuing the worldwide
+  audit, biggest-country-first, per the user's explicit choice — this
+  batch covers 9 more countries in one pass.
+  - **Poland (31 gyms, 22 audited)**: 4 confirmed bouldering-only, 9
+    confirmed top-rope, 8 confirmed both top-rope and lead, 1 confirmed
+    lead-only (Murall Annopol — a "sport wall" graded 4a-8a, a
+    lead-climbing grade range, with no explicit top-rope mention).
+    Breakdown after the fix: 17 top-rope, 9 lead-climbing, 13
+    bouldering-only.
+  - **Norway (20 gyms, 16 audited) — the first country in this whole
+    series where the original default held up completely**: every one
+    of the 16 audited gyms confirmed to genuinely have top-rope climbing
+    alongside bouldering — 0 miscorrections. Only the confirming
+    evidence was added to `notes`; no `types` changed. One incidental
+    finding, flagged but not acted on (out of this task's scope):
+    Klatrefabrikken Stavanger appears to have permanently closed per
+    multiple sources found during the pass, with routesetting possibly
+    continuing under "AIR by Bolder" — not independently confirmed.
+  - **France (30 gyms, 16 audited)**: 6 confirmed bouldering-only,
+    including one "Climb Up" branch (Marseille La Valentine) that's
+    bouldering-only despite the chain being previously confirmed as
+    offering top-rope/lead elsewhere — exactly the kind of chain-name
+    false-positive this audit series exists to catch. One venue (HAPIK,
+    Lyon) turned out to be a family auto-belay attraction with themed
+    obstacle walls, not a traditional climbing gym — kept as
+    bouldering-only given the ambiguity of its unusual format, flagged
+    rather than excluded outright since scope review wasn't asked for.
+    Breakdown after the fix: 9 top-rope, 2 lead-climbing, 20
+    bouldering-only.
+  - **Argentina (17 gyms, 14 audited)**: only 1 confirmed bouldering-only
+    (K2 Escalada Deportiva — its confirmed indoor component is
+    bouldering-only; a separate outdoor wall doesn't count per this
+    app's indoor-only scope). The other 13 all confirmed to have real
+    roped climbing, 4 of them lead-capable. Breakdown after the fix: 14
+    top-rope, 4 lead-climbing, 3 bouldering-only.
+  - **Colombia (18 gyms, 14 audited) — a genuinely different statistical
+    shape than Korea's**: only 2 of 14 confirmed bouldering-only, with 5
+    of the remaining 12 coming back UNCLEAR (no reliable source either
+    way). Since Colombia's own confirmed-either-way ratio leans heavily
+    toward *having* rope climbing (unlike Korea, where 29/30 confirmed
+    spots were bouldering-only), defaulting the 5 unclear entries to
+    bouldering-only the way Korea's unclear cases were handled would not
+    have been statistically justified here — they were left on their
+    existing top-rope tag instead, with a disclosure note stating the
+    type couldn't be independently confirmed this pass, rather than
+    guessed either direction. Breakdown after the fix: 13 top-rope, 2
+    lead-climbing, 4 bouldering-only.
+  - **Italy (14 gyms, 13 audited)**: only 2 confirmed bouldering-only (a
+    15% miss rate, one of the lowest in this whole series) — ASD Rambla
+    Vertical (a 4m wall, too short for roped climbing) and Monkey Island
+    (explicitly lacks an external rope wall despite hosting the Italian
+    Boulder Championships). 6 of the remaining 11 confirmed lead-capable.
+    Breakdown after the fix: 5 top-rope, 6 lead-climbing, 3
+    bouldering-only.
+  - **Spain (22 gyms, 13 audited)**: 1 confirmed bouldering-only
+    (RockTown Climbing - Madrid). 5 confirmed lead-capable via Spanish
+    terms for sport/lead climbing (escalada de primero/de dificultad),
+    distinguished from generic roped climbing. Breakdown after the fix:
+    7 top-rope, 5 lead-climbing, 10 bouldering-only.
+  - **Romania (18 gyms, 13 audited)**: 2 confirmed bouldering-only
+    (Fabrica de Cățărat, HangOut Climbing Gym — both explicitly market
+    themselves as bouldering-only with no ropes needed). One entry
+    (Gravity, Cluj) came back genuinely unclear — no reliable,
+    independently-quotable source could confirm facility type beyond an
+    AI-search-summary-level mention — defaulted to bouldering-only per
+    this project's established pattern for genuinely unconfirmable
+    entries, disclosed as such. Romanian terminology distinguishes
+    "manșă" (top-rope) from "cap de coardă" (lead) explicitly in several
+    gyms' own descriptions — the clearest terminology split found in any
+    country audited so far. Breakdown after the fix: 8 top-rope, 4
+    lead-climbing, 8 bouldering-only.
+  - **Mexico (16 gyms, 13 audited)**: 7 of 13 confirmed bouldering-only
+    (a 54% miss rate, among the highest in this series) — several with
+    explicit Spanish-language confirmation ("sin cuerda"/"sin arnés ni
+    cuerdas") despite one being branded "V+ Bouldering & Sport Center,"
+    a name that itself implied rope climbing. Breakdown after the fix: 6
+    top-rope, 1 lead-climbing, 9 bouldering-only.
+  - Net result across all 9 countries: still **1513 total spots**
+    (type-correction only, no additions/removals — every country's total
+    confirmed unchanged: PL 31, NO 20, FR 30, AR 17, IT 14, ES 22, RO 18,
+    CO 18, MX 16). Structural check (Node-parsed `window.SEED_GYMS`):
+    1513/1513 unique ids, zero duplicate name+suburb+state+country
+    combos, every spot has a non-empty `types` array.
+  - **Verified live** (served copy, `npx serve .`, offline-fallback-
+    forcing method): `window.SEED_GYMS.length` = 1513 unchanged; spot-
+    checked per-country counts (PL 31, NO 20, FR 30, MX 16) directly in
+    the loaded data; no console errors beyond the deliberately-forced
+    Supabase-unreachable ones; `git diff` on `js/supabase-init.js`
+    confirmed clean after reverting the test edit.
+  - **Not yet done**: the remaining ~356 spots across ~15 more countries
+    (Austria, Brazil, Greece, Philippines, Finland, Canada, Chile,
+    Hungary, Croatia, Bulgaria, Indonesia, Belgium, Russia, Sweden,
+    Netherlands, Ireland, Czech Republic, India, Portugal, Switzerland,
+    Denmark, Israel, Taiwan, New Zealand, Iceland, Venezuela, Japan) are
+    still queued in this worldwide audit — a multi-session effort by
+    design. Not yet pushed to the live Supabase table.
 
 ## Form field CSS specificity
 
