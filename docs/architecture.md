@@ -2631,6 +2631,95 @@ from one source:
     clean — each of their top-rope/lead tags already cites an explicit
     huodong.com description confirmation in its own `notes`, since those
     batches were sourced after the write-time-evidence discipline began.
+- **Extended the top-rope-tag audit worldwide, starting with the biggest
+  "blind default" countries: United Kingdom (38 of 66 corrected) and
+  Germany (43 of 112 corrected)**: after the two China fixes above, user
+  asked whether the same audit had been run outside China. It hadn't — a
+  full-dataset scan found **663 non-China spots** whose top-rope/lead tag
+  had no explicit per-gym evidence in `notes`, but most of that (the US,
+  199 spots) turned out to be a false alarm on inspection: those gyms
+  (Movement, CityRock, Eagle Climbing, etc.) are well-known chains
+  individually researched via Mountain Project's own gym pages, just
+  under-documented in `notes` relative to type-sourcing specifically —
+  not a blind default the way China's mall-storefront gyms were. The
+  genuine "same shape as China" risk pool — a type assumed from a naming
+  heuristic or a blanket default, never read from an actual facility
+  description — narrows to roughly **640 spots across 24 countries**:
+  South Korea (35, Mountain Project gave literally no facility type),
+  UK + Germany (114, MP directory-listing depth only, type inferred from
+  whether the name said "Boulder"/"Bloc"), and the ~490 spots sourced
+  from climbing-gyms.com (France, Sweden, Netherlands, Italy, Belgium,
+  Poland, Denmark, Finland, Ireland, Spain, Portugal, Austria,
+  Switzerland, Hungary, Greece, Czech Republic, Iceland, Romania,
+  Croatia, Russia, Bulgaria — same "chain/name recognition, default to
+  bouldering+top-rope otherwise" pattern documented earlier in this
+  section for each of those countries). User chose to work through this
+  full list country by country, biggest first, the same way the AU/US
+  address-verification pass was done one state at a time — this is a
+  multi-session effort, not a single pass.
+  - **Method**: for each country, every flagged gym was individually
+    web-searched (parallel research agents, ~15-20 gyms per agent) for
+    its own site or a reliable directory/review confirming its real
+    facility type — bouldering-only, top-rope, and/or lead climbing —
+    the same standard as the huodong.com re-verification, just without a
+    single directory site to lean on for these countries.
+  - **UK (66 gyms, 58 audited)**: 21 confirmed bouldering-only (top-rope
+    removed), 3 confirmed top-rope-only, 34 confirmed to have **both**
+    top-rope and lead climbing (lead was never even considered in the
+    original default, which only ever assumed top-rope) — e.g. Parthian
+    Climbing's 4 branches, The Depot Climbing Centre's 2 branches, and
+    both TCA "roped" locations (The Church, The Prop Store — TCA's two
+    bouldering-only locations, The Mothership and The Newsroom, were
+    correctly separated from their roped sister sites). Miss rate: 21 of
+    58 (36%) were wrongly defaulted toward rope climbing — lower than
+    China's ~75%/~50% rates but still a real, substantial error.
+  - **Germany (112 gyms, 56 audited)**: only 1 confirmed bouldering-only
+    despite the "assume top-rope" default (Kosmos, Leipzig — a real
+    Boulderhalle despite its generic name) — a low miss rate in the
+    "wrongly assumed rope climbing" direction, but the audit surfaced a
+    much bigger, different problem: **the overwhelming majority of
+    Kletterhalle/Kletterzentrum/Kletterarena-named gyms actually offer
+    lead climbing (Vorstieg)**, a discipline the original default never
+    tagged at all (it only ever considered bouldering vs. top-rope). 43
+    of the 56 audited gyms got `lead-climbing` added for the first time.
+    German gym naming conventions turned out far more reliable than the
+    original heuristic assumed — "Kletterhalle"/"-zentrum"/"-arena" names
+    reliably signal real rope infrastructure, usually including lead,
+    while "Boulderhalle"/generic single-word brand names (Monkeyspot,
+    Level 8, Stuntwerk, UPJOY, Der Steinbock's chain) reliably signal
+    bouldering-only — the opposite failure mode from the UK/China batches
+    (undercounting a real discipline, not falsely assuming one).
+  - **One real name-collision bug caught and fixed during this pass**:
+    both a Shanghai gym (from the original Dianping pass) and one of
+    these new Germany corrections are named exactly "Climbing Factory" —
+    the correction script's plain-string name match found the Shanghai
+    entry first and applied the German Nürnberg evidence/type to it by
+    mistake (the same "same name, wrong entry" failure mode already
+    documented for "Pulse Climbing" in the original Xi'an/Chongqing/
+    Nanjing fix). Caught by the script's own multi-match warning, not
+    assumed away — both entries were manually corrected back to their
+    real, distinct facility types and evidence (Shanghai: bouldering +
+    top-rope, unchanged from before this pass; Nürnberg: bouldering +
+    top-rope + lead, the correction that was actually meant for it).
+  - Net result: still **1513 total spots** (type-correction only, no
+    additions/removals). Structural check (Node-parsed `window.SEED_GYMS`
+    ): 1513/1513 unique ids, zero duplicate name+suburb+state+country
+    combos, every spot has a non-empty `types` array. UK breakdown after
+    the fix: 38 top-rope, 34 lead-climbing, 28 bouldering-only (of 66
+    total). Germany breakdown: 43 top-rope, 37 lead-climbing, 69
+    bouldering-only (of 112 total).
+  - **Verified live** (served copy, `npx serve .`, offline-fallback-
+    forcing method): `window.SEED_GYMS.length` = 1513 unchanged; the two
+    "Climbing Factory" entries confirmed distinct and correct (Shanghai:
+    `[indoor-bouldering, top-rope]`; Nürnberg: `[indoor-bouldering,
+    top-rope, lead-climbing]`); no console errors beyond the
+    deliberately-forced Supabase-unreachable ones; `git diff` on
+    `js/supabase-init.js` confirmed clean after reverting the test edit.
+  - **Not yet done**: South Korea (35 spots) and the ~490 climbing-
+    gyms.com-sourced spots across 22 more countries are still queued in
+    this same worldwide audit, to be worked through country by country
+    per the user's explicit choice. Not yet pushed to the live Supabase
+    table — same outstanding step as every prior correction pass.
 
 ## Form field CSS specificity
 
