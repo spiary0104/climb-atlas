@@ -103,10 +103,11 @@ Each entry:
     session needs it for another city).
   - **Nanjing** — `IMG_6368.MP4` (confirmed by content: **22家岩馆** banner;
     a branch explicitly labelled "南京华贸中心店") — done, see below.
-  - **Wuhan** — `IMG_6369.MP4` (confirmed by content: **21家岩馆** banner;
-    branch names referencing "武汉荟聚店", "武体攀岩基地"; also where
-    "岩舞空间(凯德1818店)" reappears — the same not-yet-open card already
-    excluded during the original, separate Dianping Wuhan pass).
+  - **Wuhan** — done via huodong.com's own Wuhan directory instead of
+    `IMG_6369.MP4`'s frames — see the "Add Wuhan" done entry below
+    (which also finally resolves that video's own "岩舞空间(凯德1818店)"
+    not-yet-open card, confirmed now open via huodong.com). The video
+    itself was never reviewed for this city.
   - **Suzhou** — `IMG_6373.MP4` (confirmed by content: **22家岩馆** banner,
     matching the original guess; branch names referencing 昆山/吴中/漕湖, all
     Suzhou-administered areas).
@@ -488,7 +489,61 @@ Each entry:
   uncommitted by design, a one-off deliverable for the user.
 - **Not yet done**: running the regenerated SQL against the live
   Supabase table; the remaining 3 cities (Wuhan, Suzhou, Tianjin) — see
-  Backlog.
+  Backlog. (Wuhan followed through on immediately after, see the entry
+  below.)
+
+### Add Wuhan (China) — 15 gyms
+- Branch: `feature/add-wuhan-panda` — merged to `master`, pushed.
+- Status: done — merged.
+- What: user said "finish the last four" — tenth of 12 Chinese cities
+  from the same "岩馆探索" (PANDA) app footage. Same method again:
+  huodong.com's own Wuhan directory (2 pages, 20 raw candidates) instead
+  of frame-extracting `IMG_6369.MP4`.
+- **4 of 20 excluded**: a fourth Meya Animal Camping-branded kids
+  soft-play venue (after Chengdu), a basketball venue with no confirmed
+  wall, an outdoor kids' play area with only soft-padded climbing
+  structures, and an outdoor natural-rock venue (same scope grounds as
+  every other outdoor exclusion in this dataset).
+- **One candidate resolved a long-standing flag and corrected a suburb
+  error**: Banana Climbing (Hang Lung Plaza) had no address and a
+  guessed Wuchang District suburb — huodong.com's own listing confirms
+  both a real address and that it's actually in Qiaokou District
+  (Hankou), same "resolve the flag" treatment as Kerry Centre (Shanghai)
+  and CapitaLand Tianfu (Chengdu). A second, genuinely different Banana
+  Climbing branch (a different mall brand, 万象汇 vs. the existing
+  万象城 flagship) was added as new.
+- **One candidate resolved an old "not yet open" exclusion**: 岩舞空间
+  (凯德1818店) was excluded from an earlier Dianping-sourced Wuhan pass
+  as not-yet-open; huodong.com now shows it operating normally, so it
+  was added this time with the earlier exclusion reason disclosed.
+- **Yanwu Kongjian (already seen in Shanghai and Shenzhen) got 2 more
+  confirmed Wuhan branches**, corroborating it's a genuine multi-city
+  operator. New Starting Point Climbing got 2 confirmed branches.
+- **One university-referencing name checked and cleared**: "CUG Outdoor
+  Climbing Gym" references China University of Geosciences and includes
+  "outdoor" in its own name, but huodong.com's own description confirms
+  it's fully indoor with no university tie or access restriction — kept
+  without any access caveat.
+- **Geocoding followed the usual two-tier pattern**: 2 of 15 resolved on
+  the full-address pass, 13 more on a simplified pass. Two spots share an
+  identical fallback point at the same mall (genuinely different gyms).
+- **Climbing type applied at write time from each gym's own
+  description**, same discipline as every batch since Beijing.
+- `state` uses the existing `"WUHAN"` key — no `js/app.js`,
+  `css/style.css`, or `index.html` changes needed.
+- Net result: 1463 → **1478 total spots**. Structural check (Node-parsed
+  `window.SEED_GYMS`): 1478/1478 unique ids, zero duplicate
+  name+suburb+state+country combos, every spot has a non-empty `types`
+  array.
+- **Verified**: same offline-fallback-forcing method as every prior batch
+  — the Wuhan chip filter returns exactly 19 spots (4 existing + 15
+  new), the resolved Hang Lung Plaza entry loads with its corrected
+  suburb/address, no console errors, no mobile horizontal overflow at
+  375px.
+- `supabase_seed_output.sql` regenerated (1478 rows) — still untracked/
+  uncommitted by design, a one-off deliverable for the user.
+- **Not yet done**: running the regenerated SQL against the live
+  Supabase table; the remaining 2 cities (Suzhou, Tianjin) — see Backlog.
 
 ### Fix unfounded top-rope tags on Xi'an/Chongqing/Nanjing gyms (49 spots)
 - Status: done — committed directly to `master` (data-only correction,

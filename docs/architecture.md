@@ -175,8 +175,8 @@ pre-filled with its current value, rather than throwing on
 
 ## Seed data sourcing
 
-`js/data.js` currently has 1463 spots (74 AU, 332 US, 32 JP, 15 CA, 9 NZ,
-324 CN, 66 GB, 112 DE, 30 FR, 7 SE, 25 NL, 14 IT, 14 BE, 37 KR, 22 ES,
+`js/data.js` currently has 1478 spots (74 AU, 332 US, 32 JP, 15 CA, 9 NZ,
+339 CN, 66 GB, 112 DE, 30 FR, 7 SE, 25 NL, 14 IT, 14 BE, 37 KR, 22 ES,
 7 PT, 22 AT, 8 CH, 31 PL, 14 DK, 14 FI, 9 IE, 20 NO, 16 MX, 15 BR, 18 HU,
 13 GR, 8 CZ, 3 IS, 18 RO, 8 HR, 7 RU, 7 BG, 17 AR, 17 PH, 18 CO, 15 CL,
 14 VE, 8 IN, 8 IL, 9 ID, 6 TW), all indoor gyms
@@ -2102,6 +2102,83 @@ from one source:
     every prior country/city addition.
   - **3 cities remain in this footage's backlog**: Wuhan, Suzhou,
     Tianjin.
+- **Wuhan (15 more gyms, plus one long-standing flag resolved) — tenth of
+  the 12 "岩馆探索" (PANDA) app cities.** Same method again: huodong.com's
+  own Wuhan climbing directory (2 pages, 20 raw candidates) instead of
+  frame-extracting `IMG_6369.MP4`.
+  - **4 of 20 excluded** after reading each one's own description: a
+    fourth Meya Animal Camping-branded kids soft-play venue (after
+    Chengdu — same pattern, no real wall despite the category tag); a
+    basketball-focused sports center with no confirmed climbing wall; an
+    outdoor riverside kids' play area with only "low-height soft-padded
+    climbing structures," not a dedicated wall; and an outdoor venue
+    combining natural rock faces with artificial walls, on the same scope
+    grounds as every other outdoor exclusion in this dataset (despite its
+    own description insisting it's a "legitimate climbing venue," its
+    outdoor-first framing puts it outside this app's indoor-gyms scope,
+    same as Huayan Climbing Park and China Climbing Town).
+  - **One candidate resolved a long-standing flag instead of adding a new
+    spot, and corrected a suburb error in the process**: "Banana Climbing
+    (Hang Lung Plaza)" had been flagged since an earlier Dianping pass
+    with no address and a guessed Wuchang District suburb (search results
+    kept surfacing the Qincheng MixC World flagship instead). huodong.com's
+    own listing for "香蕉攀岩馆(恒隆广场店)" independently confirms both a
+    real address and that Hang Lung Plaza is actually in Qiaokou District
+    (Hankou), not Wuchang — both corrected on the existing entry, same
+    "resolve the flag, don't just add a duplicate" treatment as Banana
+    Climbing (Kerry Centre) in Shanghai and (CapitaLand Tianfu) in
+    Chengdu. A second Banana Climbing candidate at a genuinely different
+    mall (Qincheng Wanxiang *Mall*, 万象汇 — a different, smaller-format
+    Banana-Climbing-hosting brand from the existing Qincheng MixC *World*,
+    万象城, flagship) was added as a new spot rather than assumed to be
+    the same complex.
+  - **One candidate resolves an old "not yet open" exclusion instead of
+    being a new discovery**: 岩舞空间(凯德1818店) — a Yanwu Kongjian branch
+    at CapitaMall 1818 — was excluded from an earlier, separate
+    Dianping-sourced Wuhan pass specifically because it appeared as a
+    not-yet-open card in that footage. huodong.com's own directory now
+    lists it operating normally with no suspended/not-open flag, so it
+    was added this time, with a note explaining the earlier exclusion
+    reason rather than treating this as an unrelated fresh find.
+  - **Yanwu Kongjian (Rock Dance Space), already seen once each in
+    Shanghai and Shenzhen, got 2 more confirmed Wuhan branches** in this
+    batch — the CapitaMall 1818 location above, plus a Wuhan Livat
+    branch — corroborating it's a genuine multi-city operator rather than
+    a one-off namesake. New Starting Point Climbing got 2 confirmed
+    branches, individually addressed.
+  - **One university-referencing name checked and cleared of any access
+    restriction**: "CUG Outdoor Climbing Gym" references China University
+    of Geosciences (地大) and includes "outdoor" (户外) in its own name,
+    but huodong.com's own description explicitly confirms it's a fully
+    indoor, public commercial facility with no stated university tie or
+    access restriction — kept without any access caveat, unlike the
+    genuinely restricted or reservation-gated university gyms elsewhere
+    in this dataset.
+  - **Geocoding followed the same two-tier pattern as every PANDA-app
+    batch since Beijing**: 2 of 15 resolved on the full-address pass, the
+    remaining 13 resolved on a simplified street-level pass. Two spots
+    (CUG Outdoor Climbing Gym, Snow Leopard Climbing Gym) share an
+    identical fallback point at the same mall (Qingshan Impression City,
+    different floors) — genuinely different gyms, not a duplicate,
+    disclosed in Snow Leopard's own `notes`.
+  - **Climbing type applied at write time from each gym's own
+    description**, same discipline as every batch since Beijing.
+  - `state` uses the existing `"WUHAN"` key — no `js/app.js`,
+    `css/style.css`, or `index.html` changes needed.
+  - Net result: 1463 → **1478 total spots**. Structural check (Node-parsed
+    `window.SEED_GYMS`): 1478/1478 unique ids, zero duplicate
+    name+suburb+state+country combos, every spot has a non-empty `types`
+    array.
+  - **Verified live** (served copy, `npx serve .`, same offline-fallback-
+    forcing method as every prior batch): the Wuhan chip filter returns
+    exactly 19 spots (4 existing + 15 new); the resolved Hang Lung Plaza
+    entry loads with its corrected suburb, address, and coordinates; no
+    console errors beyond the deliberately-forced Supabase-unreachable
+    ones; no horizontal overflow in the China chip row at 375px mobile
+    width.
+  - **Not yet pushed to the live Supabase table** — same next-step gap as
+    every prior country/city addition.
+  - **2 cities remain in this footage's backlog**: Suzhou, Tianjin.
 - **Full-dataset geocode-accuracy check at a 3km threshold (31 more spots
   corrected, complete)**: earlier passes only checked spots that had moved
   ≥5km then ≥4km against Nominatim (40 spots corrected total, see the two
