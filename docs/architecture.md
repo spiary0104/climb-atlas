@@ -175,8 +175,8 @@ pre-filled with its current value, rather than throwing on
 
 ## Seed data sourcing
 
-`js/data.js` currently has 1418 spots (74 AU, 332 US, 32 JP, 15 CA, 9 NZ,
-279 CN, 66 GB, 112 DE, 30 FR, 7 SE, 25 NL, 14 IT, 14 BE, 37 KR, 22 ES,
+`js/data.js` currently has 1445 spots (74 AU, 332 US, 32 JP, 15 CA, 9 NZ,
+306 CN, 66 GB, 112 DE, 30 FR, 7 SE, 25 NL, 14 IT, 14 BE, 37 KR, 22 ES,
 7 PT, 22 AT, 8 CH, 31 PL, 14 DK, 14 FI, 9 IE, 20 NO, 16 MX, 15 BR, 18 HU,
 13 GR, 8 CZ, 3 IS, 18 RO, 8 HR, 7 RU, 7 BG, 17 AR, 17 PH, 18 CO, 15 CL,
 14 VE, 8 IN, 8 IL, 9 ID, 6 TW), all indoor gyms
@@ -1974,6 +1974,79 @@ from one source:
     every prior country/city addition.
   - **5 cities remain in this footage's backlog**: Chengdu, Hangzhou,
     Wuhan, Suzhou, Tianjin.
+- **Chengdu (27 more gyms, plus one long-standing flag resolved) — eighth
+  of the 12 "岩馆探索" (PANDA) app cities.** Same method again: huodong.com's
+  own Chengdu climbing directory (3 pages, 37 raw candidates) instead of
+  frame-extracting `IMG_6366.MP4`.
+  - **8 of 37 excluded** after reading each one's own description: a
+    child-focused soft-play "camping" venue with 2-3m walls, explicitly
+    "not a traditional dedicated climbing gym"; a youth-oriented
+    entertainment complex whose "climbing" turned out to be climbing nets,
+    not a wall; the Meland brand (a third occurrence, after Shanghai and
+    Beijing — again confirmed as a family entertainment center with
+    "rock climbing" as a miscategorized tag, no actual wall); a go-kart
+    club; a kids-only climbing venue (ages 3-12, "no dedicated adult
+    climbing section") — same exclusion standard as Climbing Orangutan's
+    Lvjing branch in Shenzhen; an outdoor natural-rock climbing base in
+    rural Dayi County, on the same scope grounds as every other outdoor
+    exclusion in this dataset; a panda-themed kids' play space whose own
+    description explicitly denies having a real climbing wall despite the
+    "rock climbing" category tag; and a university-operated *outdoor*
+    wall with genuinely restrictive access (an entry-application and
+    approval process, not just ID registration) — the only exclusion in
+    this batch on both scope and access grounds at once.
+  - **Two Banana Climbing candidates matched existing entries rather than
+    adding anything new**: one exactly confirmed the already-listed
+    "Banana Climbing (ICD)" address (no change needed); the other finally
+    resolved a long-standing "no address found" flag on "Banana Climbing
+    (CapitaLand Tianfu)" (Hi-Tech Zone) — updated that existing entry
+    directly with the confirmed address and a fresh geocode, the same
+    "resolve the flag, don't just add a duplicate" treatment used for
+    Banana Climbing (Kerry Centre) during the Shanghai batch.
+  - **Real chain proliferation again**: Climbing Panda (熊猫攀岩生活馆) has
+    6 confirmed Chengdu branches; Climbing Hero (攀登侠) has 2 adult-
+    accessible branches kept plus 1 kids-only branch excluded (each
+    checked individually, not assumed from the shared name); Flying Frog
+    Climbing has 2. Two unrelated chains share panda branding by
+    coincidence — Climbing Panda (熊猫攀岩生活馆) and Super Panda Fitness
+    Studio (SUPER PANDA健身工作室) — confirmed as genuinely separate
+    operators, not the same chain.
+  - **One university-affiliated gym kept with a reservation caveat, not
+    excluded**: Chengdu Sport University's Eastern Campus climbing gym —
+    huodong.com's own listing confirms outside visitors can book by phone
+    or online and pass ID verification at the gate, rather than being
+    barred outright, same "verify, don't assume" standard as Aopan
+    Climbing (Beijing Sport University) and Super Extreme Climbing (SCUT,
+    Guangzhou). **One school-adjacent gym kept without caveats**: Chengdu
+    Weiming Climbing Wall sits next to a private school campus but
+    huodong.com's own listing confirms it's a genuinely public,
+    walk-in-accessible community space during regular hours, not a
+    school-only facility.
+  - **Geocoding followed the same two-tier pattern as Beijing/Shenzhen**:
+    16 of 27 resolved on the full-address pass; a simplified street/
+    subdistrict pass resolved 9 more; the last 2 needed a bare district-
+    centroid fallback. Two spots (Lezhidao City Sports Leisure Camp,
+    Climbing Hero North City Longhu Tianjie) share an identical fallback
+    point at the same mall complex — genuinely different gyms in the same
+    building, not a duplicate, disclosed in both spots' own `notes`.
+  - **Climbing type applied at write time from each gym's own
+    description**, same discipline as every PANDA-app batch since Beijing.
+  - `state` uses the existing `"CHENGDU"` key — no `js/app.js`,
+    `css/style.css`, or `index.html` changes needed.
+  - Net result: 1418 → **1445 total spots**. Structural check (Node-parsed
+    `window.SEED_GYMS`): 1445/1445 unique ids, zero duplicate
+    name+suburb+state+country combos, every spot has a non-empty `types`
+    array.
+  - **Verified live** (served copy, `npx serve .`, same offline-fallback-
+    forcing method as every prior batch): the Chengdu chip filter returns
+    exactly 30 spots (3 existing + 27 new); the resolved CapitaLand Tianfu
+    entry loads with its new address and coordinates; no console errors
+    beyond the deliberately-forced Supabase-unreachable ones; no
+    horizontal overflow in the China chip row at 375px mobile width.
+  - **Not yet pushed to the live Supabase table** — same next-step gap as
+    every prior country/city addition.
+  - **4 cities remain in this footage's backlog**: Hangzhou, Wuhan,
+    Suzhou, Tianjin.
 - **Full-dataset geocode-accuracy check at a 3km threshold (31 more spots
   corrected, complete)**: earlier passes only checked spots that had moved
   ≥5km then ≥4km against Nominatim (40 spots corrected total, see the two

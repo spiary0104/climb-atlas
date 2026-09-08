@@ -91,9 +91,9 @@ Each entry:
   - **Shenzhen** — done via huodong.com's own Shenzhen directory instead
     of `IMG_6365.MP4`'s frames — see the "Add Shenzhen" done entry below.
     The video itself was never reviewed for this city.
-  - **Chengdu** — `IMG_6366.MP4` (confirmed by content: **38家岩馆** banner,
-    matching the confirmed count, plus branch names referencing 双流/成都
-    体育学院).
+  - **Chengdu** — done via huodong.com's own Chengdu directory instead of
+    `IMG_6366.MP4`'s frames — see the "Add Chengdu" done entry below. The
+    video itself was never reviewed for this city.
   - **Hangzhou** — `IMG_6367.MP4` (confirmed by content: **53家岩馆** banner;
     also the frame where the app's own city-tab bar is fully visible:
     成都/杭州/南京/武汉/西安/重庆/苏州/[天津], confirming the app's own city
@@ -386,7 +386,62 @@ Each entry:
   uncommitted by design, a one-off deliverable for the user.
 - **Not yet done**: running the regenerated SQL against the live
   Supabase table; the remaining 5 cities (Chengdu, Hangzhou, Wuhan,
-  Suzhou, Tianjin) — see Backlog.
+  Suzhou, Tianjin) — see Backlog. (Chengdu followed through on
+  immediately after, see the entry below.)
+
+### Add Chengdu (China) — 27 gyms
+- Branch: `feature/add-chengdu-panda` — merged to `master`, pushed.
+- Status: done — merged.
+- What: user said "next" after Shenzhen — eighth of 12 Chinese cities
+  from the same "岩馆探索" (PANDA) app footage. Same method again:
+  huodong.com's own Chengdu directory (3 pages, 37 raw candidates)
+  instead of frame-extracting `IMG_6366.MP4`.
+- **8 of 37 excluded** after reading each one's own description: a kids
+  soft-play "camping" venue explicitly not a dedicated gym, an
+  entertainment complex whose "climbing" was climbing nets not a wall,
+  a third Meland-branded venue (after Shanghai and Beijing, same
+  miscategorized-tag pattern), a go-kart club, a kids-only gym (ages
+  3-12, no adult section — same standard as Shenzhen's Climbing
+  Orangutan Lvjing exclusion), an outdoor natural-rock base in rural
+  Dayi County, a panda-themed kids' play space with no real wall despite
+  the category tag, and a university outdoor wall with genuinely
+  restrictive (application + approval) access.
+- **Two Banana Climbing candidates resolved existing entries rather than
+  adding new ones**: one confirmed the already-listed ICD address
+  exactly; the other finally resolved a long-standing "no address found"
+  flag on Banana Climbing (CapitaLand Tianfu) — updated that entry
+  directly, same treatment as Kerry Centre in the Shanghai batch.
+- **Chain proliferation continued**: Climbing Panda has 6 confirmed
+  branches, Climbing Hero has 2 adult-accessible branches plus 1
+  kids-only branch excluded, Flying Frog Climbing has 2. Climbing Panda
+  and Super Panda Fitness Studio share panda branding by coincidence,
+  confirmed as unrelated chains.
+- **One university gym kept with a reservation caveat** (Chengdu Sport
+  University Eastern Campus — booking + ID verification, not barred
+  outright); **one school-adjacent gym kept without caveats** (Chengdu
+  Weiming Climbing Wall — confirmed genuinely public, walk-in hours).
+- **Geocoding followed the same two-tier pattern as Beijing/Shenzhen**:
+  16 of 27 resolved on the full-address pass, 9 more on a simplified
+  pass, the last 2 needed a bare district centroid. Two spots share an
+  identical fallback point at the same mall complex (genuinely different
+  gyms, not a duplicate).
+- **Climbing type applied at write time from each gym's own
+  description**, same discipline as every batch since Beijing.
+- `state` uses the existing `"CHENGDU"` key — no `js/app.js`,
+  `css/style.css`, or `index.html` changes needed.
+- Net result: 1418 → **1445 total spots**. Structural check (Node-parsed
+  `window.SEED_GYMS`): 1445/1445 unique ids, zero duplicate
+  name+suburb+state+country combos, every spot has a non-empty `types`
+  array.
+- **Verified**: same offline-fallback-forcing method as every prior batch
+  — the Chengdu chip filter returns exactly 30 spots (3 existing + 27
+  new), the resolved CapitaLand Tianfu entry loads with its new address,
+  no console errors, no mobile horizontal overflow at 375px.
+- `supabase_seed_output.sql` regenerated (1445 rows) — still untracked/
+  uncommitted by design, a one-off deliverable for the user.
+- **Not yet done**: running the regenerated SQL against the live
+  Supabase table; the remaining 4 cities (Hangzhou, Wuhan, Suzhou,
+  Tianjin) — see Backlog.
 
 ### Fix unfounded top-rope tags on Xi'an/Chongqing/Nanjing gyms (49 spots)
 - Status: done — committed directly to `master` (data-only correction,
