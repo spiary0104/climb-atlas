@@ -1590,6 +1590,83 @@ from one source:
     Supabase-unreachable ones.
   - **Not yet pushed to the live Supabase table** — same next-step gap as
     every prior country/city addition.
+- **Shanghai (29 more gyms, plus one long-standing address flag resolved) —
+  fourth of the 12 "岩馆探索" (PANDA) app cities, first half of two.**
+  Shanghai's own banner confirmed 100 gyms — far larger than any prior city
+  in this footage — so per the user's explicit choice this batch is
+  deliberately a first half only; the remaining confirmed candidates are
+  backlogged in `docs/tasks.md`.
+  - **A serious data-integrity problem was found and had to be solved before
+    any of this could be trusted**: partway through the Shanghai tab's own
+    continuous scroll (no tab-switch banner in between the two), cards named
+    after unambiguous Beijing places (中关村/Zhongguancun, 五棵松/Wukesong,
+    首钢/Shougang, 成寿寺) appeared mixed in among genuinely Shanghai-named
+    cards. Cross-checking confirmed these are real Beijing branches of real
+    chains (e.g. 岩时攀岩's confirmed Beijing branch at Dawanglu, Chaoyang) —
+    not a coincidence, and not a tab-switch-animation artifact that would
+    resolve itself by scrolling further (as it had for Guangzhou's own video
+    earlier). Worse: one card that looked "safe" purely by its position
+    (人人攀岩(欢乐谷店), appearing before the obvious Beijing block even
+    started) turned out on individual web search to *also* be a
+    confirmed Beijing gym (垡头东路化工路5号, Chaoyang). This falsified the
+    working assumption that city-attribution could be inferred from scroll
+    position at all — every single candidate for this batch was
+    individually web-verified by city, not positionally inferred, and the
+    same discipline is noted as required for the second half too.
+  - **huodong.com turned out to have its own genuine, 5-page Shanghai
+    climbing-venue directory** (`/venue/shanghai/rock_climbing`) that both
+    confirms a candidate really is Shanghai and gives a real address in one
+    step — used as the primary source for this batch instead of the
+    per-card photo/position guessing Xi'an/Chongqing/Nanjing needed, and a
+    much higher-quality source as a result.
+  - **This cross-reference surfaced 4 exact duplicates of gyms already in
+    this dataset** from an earlier, separate Dianping pass — Jinfeng
+    Climbing 189, Dayan Yuedong (Changfeng Joy City), Banana Climbing (West
+    Yan'an Road), and Benchmark Climbing Gym all matched on the identical
+    address — none re-added. It also **resolved a long-standing flag**:
+    **Banana Climbing (Kerry Centre)** had been flagged since the original
+    Dianping pass as "could not confirm a single address — 3 sources
+    disagree" (218 Tianmuxi Rd / Shanghai Kerry Everbright City / 286
+    Meiyuan Rd); this pass's independent huodong.com source confirms 218
+    Tianmuxi Rd, now recorded on the existing spot instead of left flagged.
+  - **One pair merged, not double-pinned**: RIBBONCLIMBING攀岩馆 and 上海叶岩
+    攀岩馆 resolved to the identical address (Room 212A, West Bldg, 800
+    Guoshun East Rd, Yangpu District) on huodong.com's own listing — same
+    "same address, don't double-pin" precedent used throughout this
+    dataset (Salzburg, Helsinki, Yan13 Climbing Gym).
+  - **One candidate excluded**: MELAND CLUB — huodong.com's own description
+    frames it as a parent-child entertainment venue, not a dedicated
+    climbing gym, the same "not a real gym" criteria used since the
+    original AU/US Mountain Project pass.
+  - **Positions individually geocoded against Nominatim, with a lower hit
+    rate than Xi'an/Chongqing/Nanjing** — most of these addresses name a
+    specific mall/building Nominatim can't resolve to the exact unit, so
+    many fall back to the street or district level. Two needed a coarser
+    landmark fallback after a bad match: Vmore Climbing (North Bund)'s
+    address query resolved to an unrelated hospital several km away
+    (rejected); Yanwu Kongjian (Lingang Wanda)'s address had no match at
+    all (fell back to the Lingang new-town area).
+  - `state` uses the existing `"SHANGHAI"` key already in
+    `STATES_BY_COUNTRY.CN` — no `js/app.js`, `css/style.css`, or
+    `index.html` changes needed, this only appends to (and corrects one
+    entry in) `js/data.js`.
+  - Net result: 1245 → **1274 total spots**. Structural check (Node-parsed
+    `window.SEED_GYMS`): 1274/1274 unique ids, zero duplicate
+    name+suburb+state+country combos, every spot has a non-empty `types`
+    array.
+  - **Verified live** (served copy, `npx serve .`, same offline-fallback-
+    forcing method as every prior batch): the Shanghai chip filter returns
+    exactly 37 spots (8 existing + 29 new); no console errors beyond the
+    deliberately-forced Supabase-unreachable ones; no horizontal overflow
+    in the China chip row at 375px mobile width.
+  - **Not yet pushed to the live Supabase table** — same next-step gap as
+    every prior country/city addition.
+  - **The remaining ~35-40 confirmed Shanghai candidates from this same
+    huodong.com directory (pages 3-5 not yet fully processed) are
+    backlogged** — see `docs/tasks.md` Backlog for the specific candidate
+    names and detail-page URLs already gathered, so a future session can
+    go straight to address-fetching without re-deriving the city-attribution
+    method above.
 - **Full-dataset geocode-accuracy check at a 3km threshold (31 more spots
   corrected, complete)**: earlier passes only checked spots that had moved
   ≥5km then ≥4km against Nominatim (40 spots corrected total, see the two
