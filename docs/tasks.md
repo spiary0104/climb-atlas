@@ -72,6 +72,46 @@ Each entry:
 
 ## In Progress
 
+### UI/UX redesign — Stage E: map camera, labels, legend, popup
+- Branch: `feature/map-polish` — committed, merged to `master`, pushed.
+- Status: done.
+- **Initial camera**: the starting zoom was a fixed 1.3 — a ~490px globe
+  in an 836px-tall desktop map, and clipped on a phone. `initialZoom()`
+  in `js/app.js` now derives it from the map container's shorter side
+  (globe diameter scales with 2^zoom, ~490px at 1.3), clamped to
+  0.6–2.4: 1.84 / 712px at 1440×900, 1.58 / 595px at 1280×800, 0.68 /
+  319px at 375×812, 0.6 / 302px at 320. Same mid-Pacific centre as
+  before (the AU+US framing rationale still holds).
+- **Duplicate labels**: CARTO's own `place_continent` (zoom 0–2),
+  `place_country_1/2` (2–7 / 3–10) and `place_state` (5–10) layers
+  duplicated the app's three label tiers — "NORTH AMERICA" next to
+  "North America" at globe zoom. In the `style.load` handler: the
+  continent layer is hidden outright, the two country layers get
+  `minzoom = COUNTRY_LABEL_ZOOM` (5) so they only appear once the app's
+  own country tier has handed over to states, and `place_state` gets
+  `minzoom = HOLD_ICON_ZOOM` (9) so it only appears once the app stops
+  painting labels at all. Layer ids were confirmed by fetching the
+  style JSON, not guessed; wrapped in try/catch like the existing
+  `roadname_major` fix so a CARTO style change degrades to a console
+  warning.
+- **Legend**: retitled "Legend" (was "Colour = type"), swatches as a
+  proper list with the hold-shaped marker silhouette, the six-clause
+  explanation cut to one short note; `--r-lg` radius + `--shadow-float`
+  so it reads as a floating panel. **Popup**: name up to 16px display
+  weight, `--r-lg` panel, action buttons in the display font, same
+  shadow token.
+- **Verification caveat worth recording**: the in-app Browser pane was
+  hidden for these checks, and a hidden pane doesn't run MapLibre's
+  canvas resize or CSS transitions — so screenshots taken right after a
+  viewport resize show a stale, undersized canvas pinned top-left and
+  half-transitioned drawers. DOM measurements are unaffected. The
+  original audit's "globe pinned top-left" observation was partly this
+  artifact (the undersized fixed zoom was real). Verified this stage
+  via DOM: all five continent labels paint (`.region-label`), only the
+  app's "North America" appears (no CARTO twin), legend list has 3
+  swatches, count 1513, no console errors, and the zoom formula's
+  outputs above computed in-page.
+
 ### UI/UX redesign — Stage D: sidebar list + filter panel
 - Branch: `feature/sidebar-list` — committed, merged to `master`, pushed.
 - Status: done.

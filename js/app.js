@@ -459,11 +459,21 @@
   // Style is CARTO's free, keyless "Dark Matter" vector basemap — the GL
   // sibling of the same dark tiles this app already used, so the globe keeps
   // the existing look instead of picking up a new visual identity.
+  //
+  // The globe's on-screen diameter scales with 2^zoom (~490px at zoom 1.3),
+  // so a fixed zoom is tiny on a wide desktop and clipped on a phone. Pick
+  // the zoom that fills ~85% of the map's shorter side instead, clamped so
+  // it never starts so close the globe reads as a flat map.
+  function initialZoom(){
+    const el = document.getElementById('map');
+    const side = Math.min(el.clientWidth, el.clientHeight) || 600;
+    return Math.min(2.4, Math.max(0.6, 1.3 + Math.log2(side * 0.85 / 490)));
+  }
   const map = new maplibregl.Map({
     container: 'map',
     style: 'https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json',
     center: [-162, 10],
-    zoom: 1.3,
+    zoom: initialZoom(),
     attributionControl: {compact: true}
   });
   map.addControl(new maplibregl.NavigationControl({showCompass:false}), 'top-right');
@@ -501,6 +511,19 @@
       map.setPaintProperty('roadname_major', 'text-color', '#c8c8c8');
     }catch(err){
       console.warn('roadname_major layer not found in this basemap style', err);
+    }
+    try{
+      // The basemap's own continent / country / state labels duplicate the
+      // three label tiers this app paints (see paintMarkers) -- at globe
+      // zoom that put "NORTH AMERICA" next to "North America". Hide the
+      // continent layer outright and push the country/state layers up past
+      // the zooms where the app's own equivalents are showing.
+      map.setLayoutProperty('place_continent', 'visibility', 'none');
+      map.setLayerZoomRange('place_country_1', COUNTRY_LABEL_ZOOM, 7);
+      map.setLayerZoomRange('place_country_2', COUNTRY_LABEL_ZOOM, 10);
+      map.setLayerZoomRange('place_state', HOLD_ICON_ZOOM, 10);
+    }catch(err){
+      console.warn('Basemap place-label layers not found in this style', err);
     }
   });
 

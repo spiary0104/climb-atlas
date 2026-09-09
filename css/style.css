@@ -725,26 +725,35 @@
     bottom:44px;
     left:16px;
     z-index:400;
-    background:rgba(43,40,34,0.92);
+    background:rgba(43,40,34,0.94);
     border:1px solid var(--border);
-    border-radius:8px;
+    border-radius:var(--r-lg);
+    box-shadow:var(--shadow-float);
     font-family:var(--font-body);
-    font-size:var(--fs-xs);
+    font-size:var(--fs-sm);
     color:var(--text-dim);
-    max-width:230px;
-    backdrop-filter:blur(3px);
+    width:224px;
+    backdrop-filter:blur(4px);
   }
   .legend-header{
     display:flex;align-items:center;justify-content:space-between;gap:10px;
-    width:100%;background:none;border:none;cursor:pointer;
-    font-family:inherit;padding:10px 12px;
+    width:100%;background:none;border:none;cursor:pointer;color:var(--text);
+    font-family:var(--font-display);font-weight:600;font-size:var(--fs-md);
+    padding:10px 14px;
   }
-  .legend-header b{color:var(--text);font-size:var(--fs-xs);}
   .legend-chevron{color:var(--text-dim);font-size:9px;transition:transform .15s ease;}
   .legend.collapsed .legend-chevron{transform:rotate(180deg);}
-  .legend-body{padding:0 12px 10px;}
+  .legend-body{padding:0 14px 12px;}
   .legend.collapsed .legend-body{display:none;}
-  .legend.collapsed .legend-header{padding-bottom:10px;}
+  .legend-types{list-style:none;margin:0 0 var(--sp-2);padding:0;display:flex;flex-direction:column;gap:5px;}
+  .legend-types li{display:flex;align-items:center;gap:var(--sp-2);color:var(--text);}
+  .legend-swatch{
+    width:11px;height:11px;flex-shrink:0;
+    border-radius:40% 60% 55% 45%/50% 45% 55% 50%;
+    border:1px solid rgba(0,0,0,0.35);
+  }
+  .legend-note{margin:0;font-size:var(--fs-xs);line-height:1.45;}
+  .legend-note b{color:var(--community);}
 
   .toast{
     position:absolute;
@@ -980,11 +989,11 @@
   .maplibregl-popup-content{
     background:var(--surface);
     color:var(--text);
-    border-radius:8px;
+    border-radius:var(--r-lg);
     border:1px solid var(--border);
-    padding:12px 14px;
+    padding:14px 16px;
     font-family:var(--font-body);
-    box-shadow:0 12px 30px -10px rgba(10,9,7,0.6);
+    box-shadow:var(--shadow-float);
   }
   /* The tip is a CSS border-triangle — only the side facing the marker is
      colored, per anchor direction; the rest stay transparent by default. */
@@ -998,7 +1007,7 @@
   .maplibregl-popup-anchor-right .maplibregl-popup-tip{border-left-color:var(--surface) !important;}
   .maplibregl-popup-close-button{color:var(--text-dim);font-size:var(--fs-lg);padding:2px 6px;}
   .maplibregl-popup-close-button:hover{color:var(--text);background:transparent;}
-  .popup-name{font-family:var(--font-display);font-weight:700;font-size:var(--fs-base);margin-bottom:2px;}
+  .popup-name{font-family:var(--font-display);font-weight:700;font-size:var(--fs-lg);line-height:var(--lh-tight);margin-bottom:3px;padding-right:18px;}
   .popup-meta{font-size:var(--fs-sm);color:var(--text-dim);font-family:var(--font-body);margin-bottom:6px;}
   .popup-address{font-size:var(--fs-sm);color:var(--text-dim);margin-bottom:6px;}
   .popup-edit-btn,.popup-directions-btn{
@@ -1006,10 +1015,11 @@
     background:var(--surface-2);
     border:1px solid var(--border);
     color:var(--text);
-    padding:5px 10px;
-    border-radius:6px;
+    padding:6px 10px;
+    border-radius:var(--r-sm);
     font-size:var(--fs-sm);
-    font-family:var(--font-body);
+    font-family:var(--font-display);
+    font-weight:600;
     cursor:pointer;
     text-align:center;
     text-decoration:none;

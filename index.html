@@ -571,15 +571,15 @@
       <div class="toast" id="toast" role="status" aria-live="polite"></div>
       <div class="legend" id="legend">
         <button class="legend-header" id="legendToggle" aria-expanded="true" aria-controls="legendBody">
-          <b>Colour = type</b><span class="legend-chevron">▴</span>
+          <span>Legend</span><span class="legend-chevron" aria-hidden="true">▴</span>
         </button>
         <div class="legend-body" id="legendBody">
-          <span style="color:var(--t-indoor)">●</span> Indoor bouldering &nbsp;
-          <span style="color:var(--t-toprope)">●</span> Top rope &nbsp;
-          <span style="color:var(--t-lead)">●</span> Lead climbing<br>
-          Split markers = more than one type. A + means community-added, not yet verified.
-          A green ring means you've climbed it; a gold star means it's bookmarked.
-          Numbered circles are clusters — click or zoom in to split them apart.
+          <ul class="legend-types">
+            <li><span class="legend-swatch" style="background:var(--t-indoor)"></span>Indoor bouldering</li>
+            <li><span class="legend-swatch" style="background:var(--t-toprope)"></span>Top rope</li>
+            <li><span class="legend-swatch" style="background:var(--t-lead)"></span>Lead climbing</li>
+          </ul>
+          <p class="legend-note">Split pins offer more than one type. <b>+</b> community-added, not yet verified. Green ring: climbed. Gold star: bookmarked. Numbered circles are clusters — click to zoom in.</p>
         </div>
       </div>
     </main>
