@@ -20,21 +20,26 @@
 <a class="skip-link" href="#main">Skip to map</a>
 <div class="app">
   <header>
-    <div class="title-block">
-      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle filters and list" aria-controls="sidebar" aria-expanded="false">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+    <div class="header-left">
+      <button class="icon-btn mobile-toggle" id="mobileToggle" aria-label="Toggle filters and list" aria-controls="sidebar" aria-expanded="false">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
       </button>
       <h1>Climb<span>Atlas</span></h1>
-      <span class="tagline">community-sourced map of bouldering &amp; climbing spots</span>
+      <span class="tagline">Community-sourced map of climbing gyms worldwide</span>
     </div>
     <div class="header-right">
-      <div class="count-badge" aria-live="polite"><strong id="countNum">0</strong>&nbsp;spots shown</div>
-      <a class="auth-btn" href="about.html">About</a>
-      <button class="auth-btn" id="savedBtn">Saved</button>
-      <button class="auth-btn" id="logbookBtn">Logbook</button>
-      <button class="auth-btn add-btn" id="addBtn">+ Add a location</button>
-      <button class="auth-btn" id="pendingReviewBtn" style="display:none;">Pending review</button>
-      <div class="auth-widget" id="authWidget"><button class="auth-btn" id="signInBtn">Sign in</button></div>
+      <div class="count-badge" aria-live="polite"><strong id="countNum">0</strong><span class="count-label"> spots shown</span></div>
+      <nav class="header-nav" id="headerNav" aria-label="Site">
+        <a class="btn btn-text" href="about.html">About</a>
+        <button class="btn btn-text" id="savedBtn">Saved</button>
+        <button class="btn btn-text" id="logbookBtn">Logbook</button>
+        <button class="btn btn-outline" id="pendingReviewBtn" style="display:none;">Pending review</button>
+        <div class="auth-widget" id="authWidget"><button class="btn btn-outline" id="signInBtn">Sign in</button></div>
+      </nav>
+      <button class="btn btn-primary" id="addBtn">+ Add<span class="hide-mobile"> a location</span></button>
+      <button class="icon-btn nav-toggle" id="navToggle" aria-label="Menu" aria-controls="headerNav" aria-expanded="false">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="5" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="19" r="2"/></svg>
+      </button>
     </div>
   </header>
   <div class="offline-banner hidden" id="offlineBanner">Showing offline seed data — Supabase isn't configured yet, so live data, sign-in, and marks are unavailable. See README.md.</div>

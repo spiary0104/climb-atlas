@@ -72,6 +72,43 @@ Each entry:
 
 ## In Progress
 
+### UI/UX redesign — Stage C: header + mobile layout
+- Branch: `feature/header-mobile-layout` — committed, merged to
+  `master`, pushed.
+- Status: done.
+- What: the header had six identical pill buttons (no hierarchy — About
+  and "+ Add a location" looked the same) and on a 375px phone stacked
+  into four rows, 207px tall, before the map even started. Rebuilt as a
+  single row at every width with a real button tier system.
+- **Button system** (`css/style.css` "Buttons"): `.btn` base +
+  `.btn-primary` (the one accent-filled action), `.btn-outline`
+  (bordered secondary: Sign in, Pending review), `.btn-text` (quiet
+  tertiary: About / Saved / Logbook / Sign out), plus `.icon-btn` for
+  the two square toggles. Replaces the old `.auth-btn` everywhere
+  (`index.html`, `about.html`, and the two strings `renderAuthUI()`
+  injects in `js/app.js`). Modal forms keep their own full-width
+  `.add-btn` / `.btn-submit` / `.btn-cancel`.
+- **Layout**: `.header-left` (menu toggle · wordmark · tagline) and
+  `.header-right` (count · `<nav class="header-nav">` · primary CTA ·
+  more-toggle). The tagline is the first thing dropped (hidden ≤1100px
+  — it's decoration). ≤760px the nav becomes a dropdown under a
+  three-dot `#navToggle` (`.header-nav.open`), the count badge shows
+  just the number (label visually-hidden, still read by screen
+  readers), and the CTA shortens to "+ Add". Header `z-index` raised
+  to 700 so the dropdown never renders under the sidebar drawer (600).
+  Tagline copy changed from "community-sourced map of bouldering &
+  climbing spots" to "Community-sourced map of climbing gyms
+  worldwide" (sentence case, and "spots" was vague once outdoor areas
+  were dropped from scope).
+- Small JS: `setNavOpen()` toggles the dropdown + `aria-expanded`; any
+  click on an item inside, or anywhere outside, closes it.
+- **Verified live at 1440 / 1024 / 768 / 430 / 375 / 320**: header
+  height 56px at every width; `.header-left` and `.header-right` never
+  overlap (at 320px: left ends at 149px, right starts at 165px); no
+  horizontal overflow anywhere; ≤760px the nav is `display:none` until
+  toggled, then a right-aligned panel fully inside the viewport, closes
+  on outside click; no console errors.
+
 ### UI/UX redesign — Stage B: design tokens
 - Branch: `feature/design-tokens` — committed, merged to `master`, pushed.
 - Status: done.

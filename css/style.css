@@ -316,9 +316,56 @@
   }
   .app{display:flex;flex-direction:column;height:100vh;}
 
+  /* --- Buttons ---------------------------------------------------------
+     One base + three tiers. Primary is the single accent-filled action on
+     any surface; outline is a bordered secondary; text is a quiet tertiary
+     for navigation. Modal forms keep their own full-width .add-btn /
+     .btn-submit / .btn-cancel below. */
+  .btn{
+    appearance:none;
+    display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    font-family:var(--font-display);
+    font-weight:600;
+    font-size:var(--fs-md);
+    line-height:1.2;
+    padding:8px 12px;
+    min-height:34px;
+    border-radius:var(--r-md);
+    border:1px solid transparent;
+    background:transparent;
+    color:var(--text);
+    cursor:pointer;
+    text-decoration:none;
+    white-space:nowrap;
+    transition:border-color .15s ease, background-color .15s ease, color .15s ease, transform .1s ease, filter .15s ease;
+  }
+  .btn:active{transform:scale(0.97);}
+  .btn-primary{background:var(--accent);color:var(--accent-ink);padding-inline:14px;}
+  .btn-primary:hover{filter:brightness(1.08);}
+  .btn-outline{border-color:var(--border);background:var(--surface-2);}
+  .btn-outline:hover{border-color:var(--text-dim);}
+  .btn-text{color:var(--text-dim);padding-inline:10px;}
+  .btn-text:hover{color:var(--text);background:var(--surface-2);}
+  .icon-btn{
+    appearance:none;
+    display:none;
+    align-items:center;justify-content:center;
+    width:36px;height:36px;
+    border-radius:var(--r-md);
+    border:1px solid var(--border);
+    background:var(--surface-2);
+    color:var(--text);
+    cursor:pointer;
+    transition:border-color .15s ease, transform .1s ease;
+  }
+  .icon-btn:hover{border-color:var(--text-dim);}
+  .icon-btn:active{transform:scale(0.92);}
+
+  /* --- Header ---------------------------------------------------------- */
   header{
     position:relative;
-    padding:16px 22px;
+    padding:10px 20px;
+    min-height:56px;
     border-bottom:1px solid var(--border);
     background:
       repeating-linear-gradient(0deg, transparent 0 26px, rgba(236,229,214,0.035) 26px 27px),
@@ -326,58 +373,43 @@
     display:flex;
     align-items:center;
     justify-content:space-between;
-    gap:16px;
-    flex-wrap:wrap;
-    z-index:5;
+    gap:var(--sp-4);
+    /* Above the sidebar drawer (z 600) so the mobile nav dropdown, which
+       lives inside the header, never renders underneath it. */
+    z-index:700;
   }
-  header .title-block{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;}
+  .header-left{display:flex;align-items:center;gap:var(--sp-3);min-width:0;}
   header h1{
     font-family:var(--font-display);
     font-weight:700;
     font-size:var(--fs-xl);
-    letter-spacing:0.5px;
+    letter-spacing:.02em;
+    line-height:1;
     margin:0;
     text-transform:uppercase;
+    white-space:nowrap;
   }
   header h1 span{color:var(--accent);}
   header .tagline{
     font-size:var(--fs-md);
     color:var(--text-dim);
-    font-family:var(--font-body);
+    padding-left:var(--sp-3);
+    border-left:1px solid var(--border);
+    white-space:nowrap;
   }
   header .count-badge{
     font-family:var(--font-mono);
     font-variant-numeric:tabular-nums;
     font-size:var(--fs-sm);
     color:var(--text-dim);
-    border:1px solid var(--border);
-    padding:5px 10px;
-    border-radius:20px;
     white-space:nowrap;
+    margin-right:var(--sp-1);
   }
   header .count-badge strong{color:var(--text);font-weight:700;}
 
-  .header-right{display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
-  a.auth-btn{text-decoration:none;display:inline-block;}
-  .header-right .add-btn{width:auto;padding:7px 14px;border-radius:var(--r-md);}
-
-  .auth-widget{display:flex;align-items:center;gap:8px;}
-  .auth-btn{
-    font-family:var(--font-display);
-    font-weight:600;
-    font-size:var(--fs-md);
-    line-height:1.2;
-    padding:7px 12px;
-    border-radius:var(--r-md);
-    border:1px solid var(--border);
-    background:var(--surface-2);
-    color:var(--text);
-    cursor:pointer;
-    transition:border-color .15s ease, background-color .15s ease, transform .1s ease;
-  }
-  .auth-btn:hover{border-color:var(--text-dim);}
-  .auth-btn:active{transform:scale(0.96);}
-  .auth-btn.ghost{background:transparent;color:var(--text-dim);}
+  .header-right{display:flex;align-items:center;gap:var(--sp-2);flex-shrink:0;}
+  .header-nav{display:flex;align-items:center;gap:var(--sp-1);}
+  .auth-widget{display:flex;align-items:center;gap:var(--sp-1);}
   .auth-email{
     font-family:var(--font-body);
     font-size:var(--fs-sm);
@@ -1092,18 +1124,40 @@
     color:var(--text-dim);
   }
 
+  /* The tagline is decoration -- first thing to go as the header tightens. */
+  @media (max-width:1100px){
+    header .tagline{display:none;}
+  }
+  /* Single-row mobile header: [menu] [wordmark] ... [count] [+ Add] [more].
+     Secondary actions fold into a dropdown under the "more" toggle. */
   @media (max-width:760px){
-    .sidebar{position:absolute;left:0;top:0;bottom:0;z-index:600;transform:translateX(-100%);transition:transform .2s ease;width:82vw;min-width:0;}
+    .sidebar{position:absolute;left:0;top:0;bottom:0;z-index:600;transform:translateX(-100%);transition:transform .2s ease;width:min(82vw,360px);min-width:0;}
     .sidebar.open{transform:translateX(0);}
-    .mobile-toggle{display:flex !important;}
+    header{padding:8px 12px;}
+    .icon-btn{display:inline-flex;}
+    header h1{font-size:18px;}
+    header .count-badge .count-label{
+      position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;
+    }
+    .hide-mobile{display:none;}
+    .header-nav{
+      display:none;
+      position:absolute;top:calc(100% + 6px);right:12px;
+      flex-direction:column;align-items:stretch;gap:2px;
+      min-width:180px;padding:6px;
+      background:var(--surface);
+      border:1px solid var(--border);
+      border-radius:var(--r-lg);
+      box-shadow:var(--shadow-float);
+    }
+    .header-nav.open{display:flex;}
+    .header-nav .btn{justify-content:flex-start;width:100%;}
+    .header-nav .btn-outline{background:transparent;border-color:transparent;}
+    .auth-widget{flex-direction:column;align-items:stretch;}
+    .auth-email{max-width:none;padding:6px 10px;}
   }
-  .mobile-toggle{
-    display:none;
-    align-items:center;justify-content:center;
-    background:var(--surface-2);border:1px solid var(--border);
-    color:var(--text);width:34px;height:34px;border-radius:8px;cursor:pointer;
-    transition:border-color .15s ease, transform .1s ease;
+  @media (max-width:360px){
+    header h1{font-size:var(--fs-lg);}
+    .btn-primary{padding-inline:10px;}
   }
-  .mobile-toggle:hover{border-color:var(--text-dim);}
-  .mobile-toggle:active{transform:scale(0.92);}
 

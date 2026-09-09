@@ -988,6 +988,21 @@
     e.currentTarget.setAttribute('aria-expanded', String(open));
   });
 
+  // Narrow viewports fold the secondary header actions (About / Saved /
+  // Logbook / sign-in) into a dropdown behind this toggle. Any click on an
+  // item inside, or anywhere outside, closes it again.
+  const headerNav = document.getElementById('headerNav');
+  const navToggle = document.getElementById('navToggle');
+  function setNavOpen(open){
+    headerNav.classList.toggle('open', open);
+    navToggle.setAttribute('aria-expanded', String(open));
+  }
+  navToggle.addEventListener('click', ()=> setNavOpen(!headerNav.classList.contains('open')));
+  headerNav.addEventListener('click', (e)=>{ if(e.target.closest('button, a')) setNavOpen(false); });
+  document.addEventListener('click', (e)=>{
+    if(headerNav.classList.contains('open') && !e.target.closest('#headerNav, #navToggle')) setNavOpen(false);
+  });
+
   // --- modal keyboard/focus handling ---
   // Every modal is a .modal-backdrop toggled via the `hidden` class by its own
   // open/close function. Rather than threading focus management through each
@@ -1062,8 +1077,8 @@
 
   function renderAuthUI(user){
     authWidget.innerHTML = user
-      ? `<span class="auth-email" title="${escapeHtml(user.email||'')}">${escapeHtml(user.email||'Signed in')}</span><button class="auth-btn ghost" id="signOutBtn">Sign out</button>`
-      : `<button class="auth-btn" id="signInBtn">Sign in</button>`;
+      ? `<span class="auth-email" title="${escapeHtml(user.email||'')}">${escapeHtml(user.email||'Signed in')}</span><button class="btn btn-text" id="signOutBtn">Sign out</button>`
+      : `<button class="btn btn-outline" id="signInBtn">Sign in</button>`;
     updateMarksFilterAvailability();
   }
 
