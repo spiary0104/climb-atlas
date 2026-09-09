@@ -47,7 +47,14 @@ depends on all of the above. Breaking this order breaks the app silently
   `address` text column (street address) alongside the always-present
   `suburb`/`state`/`country` — most seed spots don't have one yet (see
   "Seed data sourcing" below), but the add/edit forms and popup both
-  support it.
+  support it. **Reads must page**: PostgREST caps a single response at
+  1000 rows (Supabase's `max-rows` default), and it doesn't error — it
+  just truncates. `loadSpots()` in `js/app.js` therefore pulls approved
+  rows with `.order('id').range(from, to)` in 1000-row chunks until a
+  short page comes back. Before this, the live map silently showed 1000
+  of 1513 spots. Any future query that can return more than 1000 rows
+  (a moderator's pending list won't, but a full-table read will) needs
+  the same treatment.
 - **`pending_edits`** — proposed edits to existing spots. The live `spots`
   row is untouched until a moderator approves; approving copies the
   proposed fields onto the live row and deletes the proposal.

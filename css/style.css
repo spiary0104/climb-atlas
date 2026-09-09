@@ -244,8 +244,35 @@
     --climbed:var(--qld);
     --bookmark:#e0b23c;
     --danger:#c14f6b;
+    --focus:#7fb0e8;
   }
   *{box-sizing:border-box;}
+  /* Keyboard focus ring for every interactive element -- :focus-visible so
+     mouse clicks on buttons don't paint it, but keyboard users always get it. */
+  :where(button, a, input, select, textarea, [tabindex]):focus-visible{
+    outline:2px solid var(--focus);
+    outline-offset:2px;
+  }
+  .skip-link{
+    position:absolute;left:12px;top:-100px;z-index:2000;
+    background:var(--vic);color:#221a12;
+    padding:8px 14px;border-radius:8px;
+    font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;
+    text-decoration:none;
+  }
+  .skip-link:focus{top:12px;}
+  .visually-hidden{
+    position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+    overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;
+  }
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{
+      transition-duration:.01ms !important;
+      animation-duration:.01ms !important;
+      animation-iteration-count:1 !important;
+      scroll-behavior:auto !important;
+    }
+  }
   html,body{height:100%;}
   body{
     margin:0;
@@ -294,7 +321,7 @@
     border-radius:20px;
     white-space:nowrap;
   }
-  header .count-badge b{color:var(--text);font-weight:700;}
+  header .count-badge strong{color:var(--text);font-weight:700;}
 
   .header-right{display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
   a.auth-btn{text-decoration:none;display:inline-block;}
@@ -372,14 +399,16 @@
     font-family:'Inter',sans-serif;
   }
   .search-row input::placeholder{color:var(--text-dim);}
-  .search-row input:focus{outline:none;border-color:var(--nsw);}
+  .search-row input:focus{border-color:var(--focus);}
   .search-row svg{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--text-dim);}
 
   .chip-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;}
   .chip{
+    appearance:none;
     font-family:'Space Mono',monospace;
     font-size:11px;
-    padding:5px 9px;
+    line-height:1.3;
+    padding:6px 10px;
     border-radius:6px;
     border:1px solid var(--border);
     background:var(--surface-2);
@@ -722,7 +751,7 @@
      were never affected -- only the modal forms' copies were broken. */
   .type-filter .type-check{display:flex;align-items:center;gap:8px;font-size:12.5px;font-family:'Space Mono',monospace;color:var(--text);cursor:pointer;text-transform:none;margin-bottom:0;letter-spacing:normal;}
   .type-filter .type-check .dot{width:9px;height:9px;flex-shrink:0;border-radius:40% 60% 55% 45%/50% 45% 55% 50%;border:1px solid rgba(0,0,0,0.35);}
-  .type-filter .type-check input[type="checkbox"]{cursor:pointer;width:auto;flex-shrink:0;}
+  .type-filter .type-check input[type="checkbox"]{cursor:pointer;width:16px;height:16px;margin:0;flex-shrink:0;}
   .type-check input.chk-indoor{accent-color:var(--t-indoor);}
   .type-check input.chk-toprope{accent-color:var(--t-toprope);}
   .type-check input.chk-lead{accent-color:var(--t-lead);}
@@ -772,9 +801,9 @@
     background:transparent;
     border:1px solid var(--border);
     color:var(--text-dim);
-    width:22px;height:22px;
+    width:28px;height:28px;
     border-radius:6px;
-    font-size:11px;
+    font-size:12px;
     cursor:pointer;
     flex-shrink:0;
     display:flex;align-items:center;justify-content:center;
@@ -788,9 +817,9 @@
     background:transparent;
     border:1px solid var(--border);
     color:var(--text-dim);
-    width:22px;height:22px;
+    width:28px;height:28px;
     border-radius:6px;
-    font-size:11px;
+    font-size:12px;
     cursor:pointer;
     flex-shrink:0;
     display:flex;align-items:center;justify-content:center;
@@ -829,7 +858,9 @@
 
   .legend{
     position:absolute;
-    bottom:16px;
+    /* Clear the map attribution strip along the bottom edge -- it's a
+       licensing requirement for OSM/CARTO tiles and must stay readable. */
+    bottom:44px;
     left:16px;
     z-index:400;
     background:rgba(43,40,34,0.92);
@@ -1035,7 +1066,7 @@
   .field{margin-bottom:12px;}
   .field.field-row{display:flex;gap:10px;}
   .field.field-row > div{flex:1;min-width:0;}
-  .field label{display:block;font-size:11px;color:var(--text-dim);margin-bottom:4px;font-family:'Space Mono',monospace;text-transform:uppercase;letter-spacing:.4px;}
+  .field label,.field .field-label{display:block;font-size:11px;color:var(--text-dim);margin-bottom:4px;font-family:'Space Mono',monospace;text-transform:uppercase;letter-spacing:.4px;}
   .field input,.field select,.field textarea{
     width:100%;
     background:var(--surface-2);
@@ -1047,7 +1078,7 @@
     font-family:'Inter',sans-serif;
   }
   .field textarea{resize:vertical;min-height:50px;}
-  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--vic);}
+  .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--vic);}
   .auth-divider{
     display:flex;align-items:center;gap:10px;
     margin:2px 0 14px;
@@ -1272,8 +1303,3 @@
   .mobile-toggle:hover{border-color:var(--text-dim);}
   .mobile-toggle:active{transform:scale(0.92);}
 
-  button:focus-visible{
-    outline:2px solid var(--nsw);
-    outline-offset:2px;
-    border-radius:6px;
-  }

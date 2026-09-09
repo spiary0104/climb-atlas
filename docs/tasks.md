@@ -36,9 +36,79 @@ Each entry:
 
 ## Backlog
 
-_(none)_
+### UI/UX redesign — remaining stages (B–H)
+- Status: backlog, in priority order. Stage A (below, In Progress) is
+  done; each later stage is its own branch, verified live at
+  1440/1280/1024/768/430/375/320 before merge, so the site stays usable
+  between stages.
+- **B. Design tokens** — real type scale (11/12/13/14/16/20), 4px spacing
+  scale, radius scale (4/8/12), semantic colour tokens (`--accent`,
+  `--focus`, `--success`, `--danger`) decoupled from the AU state palette
+  (`--vic` is currently doing double duty as the app accent, `--qld` as
+  "climbed", `--nsw` was the focus ring). Move each chip's colour onto a
+  per-element custom property (`style="--chip:var(--x)"`) so one
+  `.chip.active{background:var(--chip)}` rule replaces the 232
+  per-`(country,state)` rules and the `!important` in `css/style.css`.
+  Retire Space Mono to numeric data only (counts, coordinates, grades,
+  `tabular-nums`); Space Grotesk for display/controls, Inter for body.
+- **C. Header** — one primary CTA, secondary actions grouped; on
+  <760px collapse to a single row (logo · count · CTA · menu) instead of
+  the current 4 stacked rows (~207px of a 812px viewport before the map).
+- **D. Sidebar** — show human-readable region labels in list rows (not
+  raw `state` codes like `MECKLENBURG_VORPOMMERN`), 2-line rows, filter
+  panel hierarchy, a loading state while Supabase answers, and separate
+  "expand group" from "fly to country" (one click currently does both).
+- **E. Map** — initial camera that fills the canvas, suppress CARTO's
+  built-in continent labels where the app paints its own, legend + popup
+  restyle on the new tokens.
+- **F. Forms** — inline validation messages (why is Submit disabled?),
+  consistent modal chrome.
+- **G. Perf** — defer `js/data.js` (608KB) until the offline fallback is
+  actually needed, `<link rel="preconnect">` for unpkg/jsdelivr/cartocdn,
+  pin MapLibre to an exact version.
+- **H. Polish** — About page restyle, README/meta copy (still says
+  "crags" and lists 6 countries), dead-token cleanup (`--t-outdoor`,
+  empty `.spot-number-marker{}`, stray hex colours).
 
 ## In Progress
+
+### UI/UX redesign — Stage A: critical fixes + accessibility floor
+- Branch: `fix/critical-a11y-data-cap` — committed, merged to `master`,
+  pushed.
+- Status: done.
+- What: user asked for a full audit-then-improve pass (design, UX, code,
+  a11y, perf) with the explicit constraint of improving the existing
+  site rather than rebuilding it. The audit found one genuine production
+  bug and an accessibility floor that needed fixing before any visual
+  work, so those shipped first as their own stage.
+- **The live map was showing 1000 of 1513 spots.** `loadSpots()` did a
+  bare `.select('*')`; PostgREST caps one response at 1000 rows, so a
+  third of the dataset silently vanished from production once it grew
+  past that. Confirmed live (exact count 1513, rows returned 1000).
+  Fixed by paging with `.order('id').range(from, to)` in 1000-row chunks.
+  Full note in `docs/architecture.md` "Data model".
+- **Accessibility floor**: all 25 form inputs had `<label>`s with no
+  `for` (none were associated); the 232 filter chips were `<div>`s
+  (unreachable by keyboard); inputs set `outline:none` on focus; no skip
+  link; no `prefers-reduced-motion` handling; modals had no dialog
+  semantics, focus management, or Escape-to-close; list-row icon buttons
+  were 22px and checkboxes 13px. All fixed: chips are `<button
+  aria-pressed>`, labels use `for`/`aria-label`, a single
+  `:focus-visible` ring via a new `--focus` token, skip link, dialog
+  roles + focus-in/restore + focus trap + Escape (one generic block in
+  `js/app.js` watching `.modal-backdrop` class flips, so each modal's own
+  open/close logic is untouched), map animations go through `motion()`
+  which zeroes durations under reduced motion, targets bumped to 28px /
+  16px.
+- Also fixed: the legend overlapped the MapLibre attribution strip
+  (measured overlapping rects) — attribution is a tile-licence
+  requirement, so the legend now sits above it.
+- **Verified live** (served copy, `npx serve .`, real Supabase): count
+  badge reads 1513; chips keyboard-focusable with `aria-pressed`
+  toggling; opening the sign-in modal moves focus inside, Escape closes
+  it via its own Cancel button; no unlabelled controls; no console
+  errors; mobile (375px) sidebar toggle works with `aria-expanded`
+  tracking, no horizontal overflow.
 
 ### Add Shanghai (China) — 29 gyms, first half
 - Branch: `feature/add-shanghai-panda-1` — merged to `master`, pushed.

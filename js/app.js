@@ -401,6 +401,10 @@
   // are usually too close together on screen to be worth telling apart yet,
   // and a continent name orients a viewer faster.
   const CONTINENT_LABEL_ZOOM = 3.5;
+  // Camera animations respect the OS reduced-motion preference: every
+  // flyTo/easeTo duration goes through this so they collapse to a cut.
+  const REDUCED_MOTION = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const motion = ms => REDUCED_MOTION ? 0 : ms;
 
   function typeSwatch(types){
     const colors = (types&&types.length?types:['indoor-bouldering']).map(t=>TYPE_COLORS[t]||'#999');
@@ -639,7 +643,7 @@
         el.textContent = count;
         el.addEventListener('click', ()=>{
           const targetZoom = Math.min(supercluster.getClusterExpansionZoom(clusterId), 20);
-          map.easeTo({center:[lng,lat], zoom: targetZoom});
+          map.easeTo({center:[lng,lat], zoom: targetZoom, duration: motion(500)});
         });
         clusterMarkers[clusterId] = new maplibregl.Marker({element: el}).setLngLat([lng,lat]).addTo(map);
       } else {
@@ -715,7 +719,7 @@
           // sidebar label already does for COUNTRY_FLY_TARGETS.
           el.addEventListener('click', ()=>{
             const target = REGION_FLY_TARGETS[cand.c.region];
-            if(target) map.flyTo({center: target.center, zoom: target.zoom, duration: 1500});
+            if(target) map.flyTo({center: target.center, zoom: target.zoom, duration: motion(1500)});
           });
         } else if(showCountryTier){
           el.textContent = COUNTRY_LABELS[cand.c.country] || cand.c.country;
@@ -773,7 +777,7 @@
     el.style.height = '34px';
     el.textContent = '1';
     el.addEventListener('click', ()=>{
-      map.easeTo({center:[g.lng, g.lat], zoom: Math.max(map.getZoom()+3, HOLD_ICON_ZOOM)});
+      map.easeTo({center:[g.lng, g.lat], zoom: Math.max(map.getZoom()+3, HOLD_ICON_ZOOM), duration: motion(500)});
     });
     const marker = new maplibregl.Marker({element: el}).setLngLat([g.lng, g.lat]).addTo(map);
     return {marker, el, kind:'number'};
@@ -862,7 +866,7 @@
           <button class="edit-icon-btn" title="Edit this spot" aria-label="Edit this spot">✎</button>`;
         item.addEventListener('click', ()=>{
           const targetZoom = Math.max(map.getZoom(), 13);
-          map.flyTo({center:[g.lng, g.lat], zoom: targetZoom, duration: 800});
+          map.flyTo({center:[g.lng, g.lat], zoom: targetZoom, duration: motion(800)});
           // paintMarkers() (bound to 'moveend' at setup, before this one-off
           // listener exists) runs first and repopulates markerEls for the new
           // viewport, so the lookup below sees the freshly painted marker.
@@ -918,7 +922,7 @@
       const group = regionHeader.closest('.region-group');
       group.classList.toggle('collapsed');
       const target = REGION_FLY_TARGETS[group.dataset.region];
-      if(target) map.flyTo({center: target.center, zoom: target.zoom, duration: 1500});
+      if(target) map.flyTo({center: target.center, zoom: target.zoom, duration: motion(1500)});
       return;
     }
     const label = e.target.closest('.country-label');
@@ -926,7 +930,7 @@
       const group = label.closest('.country-group');
       group.classList.toggle('collapsed');
       const target = COUNTRY_FLY_TARGETS[group.dataset.country];
-      if(target) map.flyTo({center: target.center, zoom: target.zoom, duration: 1500});
+      if(target) map.flyTo({center: target.center, zoom: target.zoom, duration: motion(1500)});
       return;
     }
     const chip = e.target.closest('.chip');
@@ -942,7 +946,9 @@
     }
     document.querySelectorAll('.chip').forEach(c=>{
       const key = c.dataset.state === 'ALL' ? 'ALL' : c.dataset.country + ':' + c.dataset.state;
-      c.classList.toggle('active', activeStates.has(key));
+      const on = activeStates.has(key);
+      c.classList.toggle('active', on);
+      c.setAttribute('aria-pressed', String(on));
     });
     // A chip can be active while its own country group (and that
     // country's region group, one level up) is collapsed -- flag both so
@@ -977,8 +983,45 @@
     render();
   });
 
-  document.getElementById('mobileToggle').addEventListener('click', ()=>{
-    document.getElementById('sidebar').classList.toggle('open');
+  document.getElementById('mobileToggle').addEventListener('click', (e)=>{
+    const open = document.getElementById('sidebar').classList.toggle('open');
+    e.currentTarget.setAttribute('aria-expanded', String(open));
+  });
+
+  // --- modal keyboard/focus handling ---
+  // Every modal is a .modal-backdrop toggled via the `hidden` class by its own
+  // open/close function. Rather than threading focus management through each
+  // of those, watch the class flips: on open, remember what had focus and move
+  // it into the dialog; on close, put it back. Escape triggers the dialog's own
+  // cancel/close button so each modal's existing close logic still runs.
+  const FOCUSABLE = 'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
+  let lastFocused = null;
+  document.querySelectorAll('.modal-backdrop').forEach(backdrop=>{
+    new MutationObserver(()=>{
+      const open = !backdrop.classList.contains('hidden');
+      if(open){
+        lastFocused = document.activeElement;
+        const first = backdrop.querySelector('.modal ' + FOCUSABLE);
+        if(first) first.focus();
+      } else if(lastFocused && document.body.contains(lastFocused)){
+        lastFocused.focus();
+        lastFocused = null;
+      }
+    }).observe(backdrop, {attributes:true, attributeFilter:['class']});
+  });
+  document.addEventListener('keydown', (e)=>{
+    const open = [...document.querySelectorAll('.modal-backdrop')].filter(b=>!b.classList.contains('hidden')).pop();
+    if(!open) return;
+    if(e.key === 'Escape'){
+      const closeBtn = open.querySelector('.btn-cancel, .info-close');
+      if(closeBtn){ e.preventDefault(); closeBtn.click(); }
+    } else if(e.key === 'Tab'){
+      const items = [...open.querySelectorAll('.modal ' + FOCUSABLE)].filter(el=>el.offsetParent !== null);
+      if(!items.length) return;
+      const first = items[0], last = items[items.length-1];
+      if(e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+      else if(!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+    }
   });
 
   // "Saved" header button -- jumps straight to the existing Bookmarked
@@ -1473,9 +1516,20 @@
   async function loadSpots(){
     if(window.sb){
       try{
-        const {data, error} = await window.sb.from('spots').select('*').eq('status','approved');
-        if(error) throw error;
-        spots = data || [];
+        // PostgREST caps a single response at 1000 rows by default, so a
+        // bare select silently dropped everything past the first 1000 once
+        // the dataset outgrew that. Page through in 1000-row chunks until a
+        // short page comes back.
+        const PAGE = 1000;
+        const all = [];
+        for(let from = 0;; from += PAGE){
+          const {data, error} = await window.sb.from('spots').select('*').eq('status','approved')
+            .order('id').range(from, from + PAGE - 1);
+          if(error) throw error;
+          all.push(...(data || []));
+          if(!data || data.length < PAGE) break;
+        }
+        spots = all;
         usingFallback = false;
         return;
       }catch(err){
