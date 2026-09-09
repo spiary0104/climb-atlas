@@ -435,6 +435,18 @@ from one source:
   `.chip:not(.active):hover{border-color:var(--text-dim)}` while in
   here — chips had no hover feedback at all before, unlike every other
   clickable control in the sidebar.
+  **Superseded (redesign Stage B)**: the inline `color` is gone. Each
+  chip now carries its region colour as a custom property instead —
+  `style="--chip:var(--de-bayern)"` — and a single pair of rules reads
+  it: `.chip{color:var(--chip, var(--text-dim))}` for the idle text/dot
+  and `.chip.active{background:var(--chip, var(--text)); color:var(--bg)}`
+  for the selected state. Because nothing inline sets `color` any more,
+  the `!important` isn't needed, and the 232 per-`(country,state)`
+  `.chip[data-country][data-state].active{background:…}` rules that used
+  to mirror `index.html` are deleted. Adding a region's chip is now just
+  the `index.html` line plus its `--xx-yyy` colour variable — no
+  matching CSS rule. The chips themselves are `<button aria-pressed>`
+  (Stage A), so they're keyboard-operable.
 - **Sidebar chip growth has a real height ceiling — mitigated, not solved,
   by an accordion.** `.sidebar-controls` (`css/style.css`) — the search
   box plus every country's chip row plus type/marks filters — sits above

@@ -72,6 +72,47 @@ Each entry:
 
 ## In Progress
 
+### UI/UX redesign — Stage B: design tokens
+- Branch: `feature/design-tokens` — committed, merged to `master`, pushed.
+- Status: done.
+- What: the system underneath the visual work. `css/style.css`'s `:root`
+  now separates the per-region map palette (unchanged) from semantic
+  tokens the UI is actually built from: `--accent`/`--accent-ink`
+  (was borrowing Victoria's `--vic`), `--success`/`--success-ink` (was
+  Queensland's `--qld`), `--focus`, `--danger`; three font tokens
+  (`--font-display` Space Grotesk for wordmark/headings/controls,
+  `--font-body` Inter for content and forms, `--font-mono` Space Mono
+  for numeric data only — count badge, pin coordinates, climb grades,
+  all with `tabular-nums`); a 6-step type scale `--fs-xs`…`--fs-xl`
+  (11/12/13/14/16/20) that the previous 14 ad-hoc pixel sizes snapped
+  onto; `--sp-*` spacing and `--r-sm/md/lg` radius tokens.
+- **Chip colour moved from an inline `color` to a per-element custom
+  property** (`style="--chip:var(--de-bayern)"` in `index.html`). One
+  `.chip{color:var(--chip,…)}` + one `.chip.active{background:var(--chip,…)}`
+  rule replaced 232 per-`(country,state)` rules and the `!important`
+  that the old inline `color` had forced — the "All" chip has no `--chip`
+  and falls back to neutral. `css/style.css` went 1279 → ~1100 lines.
+- Typography direction applied: Space Mono retired from tagline, chips,
+  labels, meta, buttons, legend, modal subtitles (26 rules) — it was the
+  main "hacker prototype" tell at 10.5–12px. Section labels are now
+  small display-font caps; form labels sentence case; region headers
+  sentence-case display 13px; country labels body 12px. Header buttons
+  moved off 20px pills to the shared 8px radius (Stage C restyles them
+  properly).
+- **A self-inflicted bug caught in verification**: the font-family
+  replacement script also rewrote the `--font-body` token's own value
+  into `var(--font-body)` — a self-referencing custom property, which
+  the browser treats as invalid and drops to the initial serif. Caught
+  by reading computed `fontFamily` live (Times New Roman on every body
+  element), not by inspection; fixed by restoring the token's value.
+  Worth remembering for any future "replace X with var(--x)" pass: the
+  token definition line matches too.
+- **Verified live**: Bayern chip active → background `#4a90b8`, text
+  `--bg` (legible); All chip active → neutral; count filters to 28 /
+  back to 1513; every measured element resolves Inter/Space Grotesk/
+  Space Mono as intended; no console errors; 375px sidebar still opens
+  with no horizontal overflow.
+
 ### UI/UX redesign — Stage A: critical fixes + accessibility floor
 - Branch: `fix/critical-a11y-data-cap` — committed, merged to `master`,
   pushed.

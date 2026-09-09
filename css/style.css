@@ -241,10 +241,43 @@
     --t-toprope:#8a6bb0;
     --t-lead:#4a90c9;
     --community:#e8d9a0;
-    --climbed:var(--qld);
     --bookmark:#e0b23c;
+
+    /* Semantic tokens -- everything above is the per-region map palette,
+       everything below is what the UI itself is built from. Keep them
+       separate: --vic is Victoria's colour, --accent is the app's. */
+    --accent:#e2793f;
+    --accent-ink:var(--accent-ink);
+    --success:#5aa373;
+    --success-ink:var(--success-ink);
     --danger:#c14f6b;
     --focus:#7fb0e8;
+    --climbed:var(--success);
+
+    /* Type: display for the wordmark/headings/controls, body for content
+       and forms, mono only for numeric data (counts, coordinates, grades). */
+    --font-display:'Space Grotesk',system-ui,sans-serif;
+    --font-body:'Inter',system-ui,sans-serif;
+    --font-mono:'Space Mono',ui-monospace,monospace;
+    --fs-xs:11px;
+    --fs-sm:12px;
+    --fs-md:13px;
+    --fs-base:14px;
+    --fs-lg:16px;
+    --fs-xl:20px;
+    --lh-tight:1.25;
+    --lh-body:1.5;
+
+    --sp-1:4px;
+    --sp-2:8px;
+    --sp-3:12px;
+    --sp-4:16px;
+    --sp-5:24px;
+    --sp-6:32px;
+    --r-sm:6px;
+    --r-md:8px;
+    --r-lg:12px;
+    --shadow-float:0 12px 30px -10px rgba(10,9,7,0.6), 0 2px 8px rgba(10,9,7,0.35);
   }
   *{box-sizing:border-box;}
   /* Keyboard focus ring for every interactive element -- :focus-visible so
@@ -255,9 +288,9 @@
   }
   .skip-link{
     position:absolute;left:12px;top:-100px;z-index:2000;
-    background:var(--vic);color:#221a12;
+    background:var(--accent);color:var(--accent-ink);
     padding:8px 14px;border-radius:8px;
-    font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;
+    font-family:var(--font-display);font-weight:700;font-size:var(--fs-md);
     text-decoration:none;
   }
   .skip-link:focus{top:12px;}
@@ -278,7 +311,7 @@
     margin:0;
     background:var(--bg);
     color:var(--text);
-    font-family:'Inter',system-ui,sans-serif;
+    font-family:var(--font-body);
     overflow:hidden;
   }
   .app{display:flex;flex-direction:column;height:100vh;}
@@ -299,22 +332,23 @@
   }
   header .title-block{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;}
   header h1{
-    font-family:'Space Grotesk',sans-serif;
+    font-family:var(--font-display);
     font-weight:700;
-    font-size:20px;
+    font-size:var(--fs-xl);
     letter-spacing:0.5px;
     margin:0;
     text-transform:uppercase;
   }
-  header h1 span{color:var(--vic);}
+  header h1 span{color:var(--accent);}
   header .tagline{
-    font-size:12.5px;
+    font-size:var(--fs-md);
     color:var(--text-dim);
-    font-family:'Space Mono',monospace;
+    font-family:var(--font-body);
   }
   header .count-badge{
-    font-family:'Space Mono',monospace;
-    font-size:12px;
+    font-family:var(--font-mono);
+    font-variant-numeric:tabular-nums;
+    font-size:var(--fs-sm);
     color:var(--text-dim);
     border:1px solid var(--border);
     padding:5px 10px;
@@ -325,14 +359,16 @@
 
   .header-right{display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
   a.auth-btn{text-decoration:none;display:inline-block;}
-  .header-right .add-btn{width:auto;padding:6px 14px;border-radius:20px;}
+  .header-right .add-btn{width:auto;padding:7px 14px;border-radius:var(--r-md);}
 
   .auth-widget{display:flex;align-items:center;gap:8px;}
   .auth-btn{
-    font-family:'Space Mono',monospace;
-    font-size:11.5px;
-    padding:6px 12px;
-    border-radius:20px;
+    font-family:var(--font-display);
+    font-weight:600;
+    font-size:var(--fs-md);
+    line-height:1.2;
+    padding:7px 12px;
+    border-radius:var(--r-md);
     border:1px solid var(--border);
     background:var(--surface-2);
     color:var(--text);
@@ -343,8 +379,8 @@
   .auth-btn:active{transform:scale(0.96);}
   .auth-btn.ghost{background:transparent;color:var(--text-dim);}
   .auth-email{
-    font-family:'Space Mono',monospace;
-    font-size:11.5px;
+    font-family:var(--font-body);
+    font-size:var(--fs-sm);
     color:var(--text-dim);
     max-width:160px;
     overflow:hidden;
@@ -354,10 +390,10 @@
 
   .offline-banner{
     background:rgba(226,121,63,0.12);
-    border-bottom:1px solid var(--vic);
-    color:var(--vic);
-    font-family:'Space Mono',monospace;
-    font-size:11.5px;
+    border-bottom:1px solid var(--accent);
+    color:var(--accent);
+    font-family:var(--font-body);
+    font-size:var(--fs-sm);
     padding:8px 22px;
     text-align:center;
   }
@@ -395,285 +431,50 @@
     color:var(--text);
     padding:9px 12px 9px 32px;
     border-radius:8px;
-    font-size:13.5px;
-    font-family:'Inter',sans-serif;
+    font-size:var(--fs-base);
+    font-family:var(--font-body);
   }
   .search-row input::placeholder{color:var(--text-dim);}
   .search-row input:focus{border-color:var(--focus);}
   .search-row svg{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--text-dim);}
 
   .chip-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;}
+  /* Each per-state chip sets its region colour as a custom property in
+     index.html (style="--chip:var(--xx-yyy)") rather than as an inline
+     `color`, so this one rule can use it for the idle text/dot and the
+     active background alike. An inline `color` would beat any stylesheet
+     rule for the active state and make the text vanish into its own
+     background -- which is exactly what the previous 232 per-state rules
+     plus an !important were working around. The "All" chip has no --chip
+     and falls back to the neutral text colour. */
   .chip{
     appearance:none;
-    font-family:'Space Mono',monospace;
-    font-size:11px;
+    font-family:var(--font-display);
+    font-weight:500;
+    font-size:var(--fs-sm);
     line-height:1.3;
-    padding:6px 10px;
-    border-radius:6px;
+    padding:5px 10px;
+    border-radius:var(--r-sm);
     border:1px solid var(--border);
     background:var(--surface-2);
-    color:var(--text-dim);
+    color:var(--chip, var(--text-dim));
     cursor:pointer;
     user-select:none;
     display:flex;
     align-items:center;
-    gap:5px;
-    transition:all .12s ease;
+    gap:6px;
+    transition:border-color .15s ease, background-color .15s ease, color .15s ease, transform .1s ease;
   }
   .chip .dot{width:7px;height:7px;border-radius:50%;background:currentColor;}
-  /* Each per-state chip carries an inline style="color:var(--xx-yyy)" (set
-     in index.html) so its dot and text preview that state's colour while
-     inactive. Inline styles always win over an external stylesheet rule
-     on the same property, no matter how specific the selector -- so
-     without !important here, activating a chip changed its *background*
-     to that same colour but left the inline color untouched, making the
-     text and dot exactly match the new background and vanish completely.
-     Only the "All" chip (the one case with no inline colour) ever
-     rendered correctly; every real country/state chip was invisible the
-     moment it was selected. */
   .chip:not(.active):hover{border-color:var(--text-dim);}
   .chip:active{transform:scale(0.95);}
-  .chip.active{color:var(--bg) !important;border-color:transparent;}
-  .chip[data-state="ALL"].active{background:var(--text);}
-  /* AU and US both use two-letter codes (e.g. WA = Western Australia vs Washington),
-     so these must be scoped by data-country too, not data-state alone. */
-  .chip[data-country="AU"][data-state="NSW"].active{background:var(--nsw);}
-  .chip[data-country="AU"][data-state="VIC"].active{background:var(--vic);}
-  .chip[data-country="AU"][data-state="QLD"].active{background:var(--qld);}
-  .chip[data-country="AU"][data-state="WA"].active{background:var(--wa);}
-  .chip[data-country="AU"][data-state="SA"].active{background:var(--sa);}
-  .chip[data-country="AU"][data-state="ACT"].active{background:var(--act);}
-  .chip[data-country="AU"][data-state="TAS"].active{background:var(--tas);}
-  .chip[data-country="AU"][data-state="NT"].active{background:var(--nt);}
-  .chip[data-country="US"][data-state="CA"].active{background:var(--us-ca);}
-  .chip[data-country="US"][data-state="CO"].active{background:var(--us-co);}
-  .chip[data-country="US"][data-state="TX"].active{background:var(--us-tx);}
-  .chip[data-country="US"][data-state="WA"].active{background:var(--us-wa);}
-  .chip[data-country="US"][data-state="NY"].active{background:var(--us-ny);}
-  .chip[data-country="US"][data-state="NV"].active{background:var(--us-nv);}
-  .chip[data-country="US"][data-state="GA"].active{background:var(--us-ga);}
-  .chip[data-country="US"][data-state="UT"].active{background:var(--us-ut);}
-  .chip[data-country="US"][data-state="AL"].active{background:var(--us-al);}
-  .chip[data-country="US"][data-state="TN"].active{background:var(--us-tn);}
-  .chip[data-country="US"][data-state="MA"].active{background:var(--us-ma);}
-  .chip[data-country="US"][data-state="IL"].active{background:var(--us-il);}
-  .chip[data-country="JP"][data-state="TOKYO"].active{background:var(--jp-tokyo);}
-  .chip[data-country="JP"][data-state="OSAKA"].active{background:var(--jp-osaka);}
-  .chip[data-country="JP"][data-state="KYOTO"].active{background:var(--jp-kyoto);}
-  .chip[data-country="JP"][data-state="FUKUOKA"].active{background:var(--jp-fukuoka);}
-  .chip[data-country="JP"][data-state="AICHI"].active{background:var(--jp-aichi);}
-  .chip[data-country="JP"][data-state="KANAGAWA"].active{background:var(--jp-kanagawa);}
-  .chip[data-country="JP"][data-state="HOKKAIDO"].active{background:var(--jp-hokkaido);}
-  .chip[data-country="JP"][data-state="HYOGO"].active{background:var(--jp-hyogo);}
-  .chip[data-country="CA"][data-state="ON"].active{background:var(--ca-on);}
-  .chip[data-country="CA"][data-state="BC"].active{background:var(--ca-bc);}
-  .chip[data-country="CA"][data-state="QC"].active{background:var(--ca-qc);}
-  .chip[data-country="CA"][data-state="AB"].active{background:var(--ca-ab);}
-  .chip[data-country="NZ"][data-state="AUCKLAND"].active{background:var(--nz-auckland);}
-  .chip[data-country="NZ"][data-state="WELLINGTON"].active{background:var(--nz-wellington);}
-  .chip[data-country="NZ"][data-state="CANTERBURY"].active{background:var(--nz-canterbury);}
-  .chip[data-country="CN"][data-state="SHENZHEN"].active{background:var(--cn-shenzhen);}
-  .chip[data-country="CN"][data-state="GUANGZHOU"].active{background:var(--cn-guangzhou);}
-  .chip[data-country="CN"][data-state="SHANGHAI"].active{background:var(--cn-shanghai);}
-  .chip[data-country="CN"][data-state="HANGZHOU"].active{background:var(--cn-hangzhou);}
-  .chip[data-country="CN"][data-state="CHENGDU"].active{background:var(--cn-chengdu);}
-  .chip[data-country="CN"][data-state="BEIJING"].active{background:var(--cn-beijing);}
-  .chip[data-country="CN"][data-state="WUHAN"].active{background:var(--cn-wuhan);}
-  .chip[data-country="CN"][data-state="CHANGSHA"].active{background:var(--cn-changsha);}
-  .chip[data-country="CN"][data-state="ZHUHAI"].active{background:var(--cn-zhuhai);}
-  .chip[data-country="CN"][data-state="CHONGQING"].active{background:var(--cn-chongqing);}
-  .chip[data-country="CN"][data-state="XIAN"].active{background:var(--cn-xian);}
-  .chip[data-country="CN"][data-state="NANJING"].active{background:var(--cn-nanjing);}
-  .chip[data-country="CN"][data-state="SUZHOU"].active{background:var(--cn-suzhou);}
-  .chip[data-country="CN"][data-state="TIANJIN"].active{background:var(--cn-tianjin);}
-  .chip[data-country="GB"][data-state="ENGLAND"].active{background:var(--gb-england);}
-  .chip[data-country="GB"][data-state="SCOTLAND"].active{background:var(--gb-scotland);}
-  .chip[data-country="GB"][data-state="WALES"].active{background:var(--gb-wales);}
-  .chip[data-country="GB"][data-state="NORTHERN_IRELAND"].active{background:var(--gb-northern-ireland);}
-  .chip[data-country="DE"][data-state="BAYERN"].active{background:var(--de-bayern);}
-  .chip[data-country="DE"][data-state="BERLIN"].active{background:var(--de-berlin);}
-  .chip[data-country="DE"][data-state="NORDRHEIN_WESTFALEN"].active{background:var(--de-nordrhein-westfalen);}
-  .chip[data-country="DE"][data-state="HESSEN"].active{background:var(--de-hessen);}
-  .chip[data-country="DE"][data-state="BADEN_WURTTEMBERG"].active{background:var(--de-baden-wurttemberg);}
-  .chip[data-country="DE"][data-state="BREMEN"].active{background:var(--de-bremen);}
-  .chip[data-country="DE"][data-state="SCHLESWIG_HOLSTEIN"].active{background:var(--de-schleswig-holstein);}
-  .chip[data-country="DE"][data-state="SACHSEN"].active{background:var(--de-sachsen);}
-  .chip[data-country="DE"][data-state="NIEDERSACHSEN"].active{background:var(--de-niedersachsen);}
-  .chip[data-country="DE"][data-state="SACHSEN_ANHALT"].active{background:var(--de-sachsen-anhalt);}
-  .chip[data-country="DE"][data-state="BRANDENBURG"].active{background:var(--de-brandenburg);}
-  .chip[data-country="DE"][data-state="RHEINLAND_PFALZ"].active{background:var(--de-rheinland-pfalz);}
-  .chip[data-country="DE"][data-state="HAMBURG"].active{background:var(--de-hamburg);}
-  .chip[data-country="DE"][data-state="SAARLAND"].active{background:var(--de-saarland);}
-  .chip[data-country="DE"][data-state="THURINGEN"].active{background:var(--de-thuringen);}
-  .chip[data-country="DE"][data-state="MECKLENBURG_VORPOMMERN"].active{background:var(--de-mecklenburg-vorpommern);}
-  .chip[data-country="FR"][data-state="ILE_DE_FRANCE"].active{background:var(--fr-ile-de-france);}
-  .chip[data-country="FR"][data-state="AUVERGNE_RHONE_ALPES"].active{background:var(--fr-auvergne-rhone-alpes);}
-  .chip[data-country="FR"][data-state="PACA"].active{background:var(--fr-paca);}
-  .chip[data-country="FR"][data-state="OCCITANIE"].active{background:var(--fr-occitanie);}
-  .chip[data-country="SE"][data-state="VASTRA_GOTALAND"].active{background:var(--se-vastra-gotaland);}
-  .chip[data-country="SE"][data-state="STOCKHOLM"].active{background:var(--se-stockholm);}
-  .chip[data-country="SE"][data-state="SKANE"].active{background:var(--se-skane);}
-  .chip[data-country="NL"][data-state="NOORD_HOLLAND"].active{background:var(--nl-noord-holland);}
-  .chip[data-country="NL"][data-state="ZUID_HOLLAND"].active{background:var(--nl-zuid-holland);}
-  .chip[data-country="NL"][data-state="UTRECHT"].active{background:var(--nl-utrecht);}
-  .chip[data-country="IT"][data-state="LAZIO"].active{background:var(--it-lazio);}
-  .chip[data-country="IT"][data-state="LOMBARDIA"].active{background:var(--it-lombardia);}
-  .chip[data-country="IT"][data-state="EMILIA_ROMAGNA"].active{background:var(--it-emilia-romagna);}
-  .chip[data-country="IT"][data-state="TOSCANA"].active{background:var(--it-toscana);}
-  .chip[data-country="BE"][data-state="FLANDERS"].active{background:var(--be-flanders);}
-  .chip[data-country="BE"][data-state="WALLONIA"].active{background:var(--be-wallonia);}
-  .chip[data-country="BE"][data-state="BRUSSELS"].active{background:var(--be-brussels);}
-  .chip[data-country="KR"][data-state="SEOUL"].active{background:var(--kr-seoul);}
-  .chip[data-country="KR"][data-state="BUSAN"].active{background:var(--kr-busan);}
-  .chip[data-country="KR"][data-state="GYEONGGI"].active{background:var(--kr-gyeonggi);}
-  .chip[data-country="KR"][data-state="GWANGJU"].active{background:var(--kr-gwangju);}
-  .chip[data-country="KR"][data-state="GYEONGSANGNAM"].active{background:var(--kr-gyeongsangnam);}
-  .chip[data-country="KR"][data-state="ULSAN"].active{background:var(--kr-ulsan);}
-  .chip[data-country="KR"][data-state="INCHEON"].active{background:var(--kr-incheon);}
-  .chip[data-country="KR"][data-state="DAEGU"].active{background:var(--kr-daegu);}
-  .chip[data-country="KR"][data-state="JEOLLANAM"].active{background:var(--kr-jeollanam);}
-  .chip[data-country="KR"][data-state="CHUNGCHEONGNAM"].active{background:var(--kr-chungcheongnam);}
-  .chip[data-country="ES"][data-state="MADRID"].active{background:var(--es-madrid);}
-  .chip[data-country="ES"][data-state="CATALUNYA"].active{background:var(--es-catalunya);}
-  .chip[data-country="PT"][data-state="LISBOA"].active{background:var(--pt-lisboa);}
-  .chip[data-country="PT"][data-state="COIMBRA"].active{background:var(--pt-coimbra);}
-  .chip[data-country="PT"][data-state="PORTO"].active{background:var(--pt-porto);}
-  .chip[data-country="AT"][data-state="WIEN"].active{background:var(--at-wien);}
-  .chip[data-country="AT"][data-state="STEIERMARK"].active{background:var(--at-steiermark);}
-  .chip[data-country="AT"][data-state="OBEROSTERREICH"].active{background:var(--at-oberosterreich);}
-  .chip[data-country="AT"][data-state="SALZBURG"].active{background:var(--at-salzburg);}
-  .chip[data-country="CH"][data-state="ZURICH"].active{background:var(--ch-zurich);}
-  .chip[data-country="CH"][data-state="BASEL_STADT"].active{background:var(--ch-basel-stadt);}
-  .chip[data-country="CH"][data-state="BERN"].active{background:var(--ch-bern);}
-  .chip[data-country="PL"][data-state="MAZOWIECKIE"].active{background:var(--pl-mazowieckie);}
-  .chip[data-country="PL"][data-state="DOLNOSLASKIE"].active{background:var(--pl-dolnoslaskie);}
-  .chip[data-country="PL"][data-state="MALOPOLSKIE"].active{background:var(--pl-malopolskie);}
-  .chip[data-country="PL"][data-state="WIELKOPOLSKIE"].active{background:var(--pl-wielkopolskie);}
-  .chip[data-country="DK"][data-state="HOVEDSTADEN"].active{background:var(--dk-hovedstaden);}
-  .chip[data-country="DK"][data-state="SYDDANMARK"].active{background:var(--dk-syddanmark);}
-  .chip[data-country="DK"][data-state="MIDTJYLLAND"].active{background:var(--dk-midtjylland);}
-  .chip[data-country="DK"][data-state="NORDJYLLAND"].active{background:var(--dk-nordjylland);}
-  .chip[data-country="FI"][data-state="UUSIMAA"].active{background:var(--fi-uusimaa);}
-  .chip[data-country="FI"][data-state="PAIJAT_HAME"].active{background:var(--fi-paijat-hame);}
-  .chip[data-country="FI"][data-state="POHJOIS_POHJANMAA"].active{background:var(--fi-pohjois-pohjanmaa);}
-  .chip[data-country="FI"][data-state="PIRKANMAA"].active{background:var(--fi-pirkanmaa);}
-  .chip[data-country="IE"][data-state="DUBLIN"].active{background:var(--ie-dublin);}
-  .chip[data-country="IE"][data-state="WICKLOW"].active{background:var(--ie-wicklow);}
-  .chip[data-country="IE"][data-state="CLARE"].active{background:var(--ie-clare);}
-  .chip[data-country="IE"][data-state="CORK"].active{background:var(--ie-cork);}
-  .chip[data-country="IE"][data-state="LIMERICK"].active{background:var(--ie-limerick);}
-  .chip[data-country="NO"][data-state="OSLO"].active{background:var(--no-oslo);}
-  .chip[data-country="NO"][data-state="VESTLAND"].active{background:var(--no-vestland);}
-  .chip[data-country="NO"][data-state="TRONDELAG"].active{background:var(--no-trondelag);}
-  .chip[data-country="NO"][data-state="ROGALAND"].active{background:var(--no-rogaland);}
-  .chip[data-country="NO"][data-state="NORDLAND"].active{background:var(--no-nordland);}
-  .chip[data-country="NO"][data-state="BUSKERUD"].active{background:var(--no-buskerud);}
-  .chip[data-country="NO"][data-state="AGDER"].active{background:var(--no-agder);}
-  .chip[data-country="NO"][data-state="MORE_OG_ROMSDAL"].active{background:var(--no-more-og-romsdal);}
-  .chip[data-country="NO"][data-state="INNLANDET"].active{background:var(--no-innlandet);}
-  .chip[data-country="NO"][data-state="TELEMARK"].active{background:var(--no-telemark);}
-  .chip[data-country="MX"][data-state="CIUDAD_DE_MEXICO"].active{background:var(--mx-ciudad-de-mexico);}
-  .chip[data-country="MX"][data-state="NUEVO_LEON"].active{background:var(--mx-nuevo-leon);}
-  .chip[data-country="MX"][data-state="MEXICO"].active{background:var(--mx-mexico);}
-  .chip[data-country="MX"][data-state="JALISCO"].active{background:var(--mx-jalisco);}
-  .chip[data-country="BR"][data-state="SAO_PAULO"].active{background:var(--br-sao-paulo);}
-  .chip[data-country="BR"][data-state="RIO_DE_JANEIRO"].active{background:var(--br-rio-de-janeiro);}
-  .chip[data-country="BR"][data-state="MINAS_GERAIS"].active{background:var(--br-minas-gerais);}
-  .chip[data-country="BR"][data-state="PARANA"].active{background:var(--br-parana);}
-  .chip[data-country="HU"][data-state="BUDAPEST"].active{background:var(--hu-budapest);}
-  .chip[data-country="HU"][data-state="PEST"].active{background:var(--hu-pest);}
-  .chip[data-country="HU"][data-state="VESZPREM"].active{background:var(--hu-veszprem);}
-  .chip[data-country="GR"][data-state="ATTICA"].active{background:var(--gr-attica);}
-  .chip[data-country="GR"][data-state="CENTRAL_MACEDONIA"].active{background:var(--gr-central-macedonia);}
-  .chip[data-country="GR"][data-state="SOUTH_AEGEAN"].active{background:var(--gr-south-aegean);}
-  .chip[data-country="GR"][data-state="CRETE"].active{background:var(--gr-crete);}
-  .chip[data-country="GR"][data-state="WESTERN_GREECE"].active{background:var(--gr-western-greece);}
-  .chip[data-country="CZ"][data-state="PRAHA"].active{background:var(--cz-praha);}
-  .chip[data-country="CZ"][data-state="JIHOMORAVSKY"].active{background:var(--cz-jihomoravsky);}
-  .chip[data-country="IS"][data-state="HOFUDBORGARSVAEDID"].active{background:var(--is-hofudborgarsvaedid);}
-  .chip[data-country="IS"][data-state="NORDURLAND_EYSTRA"].active{background:var(--is-nordurland-eystra);}
-  .chip[data-country="RO"][data-state="BUCURESTI"].active{background:var(--ro-bucuresti);}
-  .chip[data-country="RO"][data-state="BRASOV"].active{background:var(--ro-brasov);}
-  .chip[data-country="RO"][data-state="MURES"].active{background:var(--ro-mures);}
-  .chip[data-country="RO"][data-state="TIMIS"].active{background:var(--ro-timis);}
-  .chip[data-country="RO"][data-state="HARGHITA"].active{background:var(--ro-harghita);}
-  .chip[data-country="RO"][data-state="CLUJ"].active{background:var(--ro-cluj);}
-  .chip[data-country="RO"][data-state="IASI"].active{background:var(--ro-iasi);}
-  .chip[data-country="HR"][data-state="ZAGREB"].active{background:var(--hr-zagreb);}
-  .chip[data-country="HR"][data-state="SPLITSKO_DALMATINSKA"].active{background:var(--hr-splitsko-dalmatinska);}
-  .chip[data-country="HR"][data-state="ISTARSKA"].active{background:var(--hr-istarska);}
-  .chip[data-country="HR"][data-state="KOPRIVNICKO_KRIZEVACKA"].active{background:var(--hr-koprivnicko-krizevacka);}
-  .chip[data-country="RU"][data-state="MOSKVA"].active{background:var(--ru-moskva);}
-  .chip[data-country="RU"][data-state="SANKT_PETERBURG"].active{background:var(--ru-sankt-peterburg);}
-  .chip[data-country="BG"][data-state="SOFIA_CITY"].active{background:var(--bg-sofia-city);}
-  .chip[data-country="BG"][data-state="VARNA"].active{background:var(--bg-varna);}
-  .chip[data-country="AR"][data-state="BUENOS_AIRES"].active{background:var(--ar-buenos-aires);}
-  .chip[data-country="AR"][data-state="CABA"].active{background:var(--ar-caba);}
-  .chip[data-country="AR"][data-state="CORDOBA"].active{background:var(--ar-cordoba);}
-  .chip[data-country="AR"][data-state="SANTA_FE"].active{background:var(--ar-santa-fe);}
-  .chip[data-country="AR"][data-state="ENTRE_RIOS"].active{background:var(--ar-entre-rios);}
-  .chip[data-country="AR"][data-state="MENDOZA"].active{background:var(--ar-mendoza);}
-  .chip[data-country="AR"][data-state="NEUQUEN"].active{background:var(--ar-neuquen);}
-  .chip[data-country="PH"][data-state="NCR"].active{background:var(--ph-ncr);}
-  .chip[data-country="PH"][data-state="RIZAL"].active{background:var(--ph-rizal);}
-  .chip[data-country="PH"][data-state="LAGUNA"].active{background:var(--ph-laguna);}
-  .chip[data-country="PH"][data-state="BENGUET"].active{background:var(--ph-benguet);}
-  .chip[data-country="PH"][data-state="BULACAN"].active{background:var(--ph-bulacan);}
-  .chip[data-country="PH"][data-state="MISAMIS_ORIENTAL"].active{background:var(--ph-misamis-oriental);}
-  .chip[data-country="PH"][data-state="CAVITE"].active{background:var(--ph-cavite);}
-  .chip[data-country="PH"][data-state="CAMARINES_SUR"].active{background:var(--ph-camarines-sur);}
-  .chip[data-country="PH"][data-state="PAMPANGA"].active{background:var(--ph-pampanga);}
-  .chip[data-country="CO"][data-state="BOGOTA_DC"].active{background:var(--co-bogota-dc);}
-  .chip[data-country="CO"][data-state="SANTANDER"].active{background:var(--co-santander);}
-  .chip[data-country="CO"][data-state="VALLE_DEL_CAUCA"].active{background:var(--co-valle-del-cauca);}
-  .chip[data-country="CO"][data-state="CUNDINAMARCA"].active{background:var(--co-cundinamarca);}
-  .chip[data-country="CO"][data-state="NORTE_DE_SANTANDER"].active{background:var(--co-norte-de-santander);}
-  .chip[data-country="CO"][data-state="ANTIOQUIA"].active{background:var(--co-antioquia);}
-  .chip[data-country="CO"][data-state="TOLIMA"].active{background:var(--co-tolima);}
-  .chip[data-country="CO"][data-state="HUILA"].active{background:var(--co-huila);}
-  .chip[data-country="CO"][data-state="NARINO"].active{background:var(--co-narino);}
-  .chip[data-country="CL"][data-state="METROPOLITANA"].active{background:var(--cl-metropolitana);}
-  .chip[data-country="CL"][data-state="VALPARAISO"].active{background:var(--cl-valparaiso);}
-  .chip[data-country="CL"][data-state="LOS_LAGOS"].active{background:var(--cl-los-lagos);}
-  .chip[data-country="CL"][data-state="LIBERTADOR_OHIGGINS"].active{background:var(--cl-libertador-ohiggins);}
-  .chip[data-country="CL"][data-state="MAULE"].active{background:var(--cl-maule);}
-  .chip[data-country="CL"][data-state="BIOBIO"].active{background:var(--cl-biobio);}
-  .chip[data-country="CL"][data-state="ARAUCANIA"].active{background:var(--cl-araucania);}
-  .chip[data-country="CL"][data-state="LOS_RIOS"].active{background:var(--cl-los-rios);}
-  .chip[data-country="VE"][data-state="DISTRITO_CAPITAL"].active{background:var(--ve-distrito-capital);}
-  .chip[data-country="VE"][data-state="MIRANDA"].active{background:var(--ve-miranda);}
-  .chip[data-country="VE"][data-state="ZULIA"].active{background:var(--ve-zulia);}
-  .chip[data-country="VE"][data-state="ARAGUA"].active{background:var(--ve-aragua);}
-  .chip[data-country="VE"][data-state="TACHIRA"].active{background:var(--ve-tachira);}
-  .chip[data-country="VE"][data-state="GUARICO"].active{background:var(--ve-guarico);}
-  .chip[data-country="IN"][data-state="TAMIL_NADU"].active{background:var(--in-tamil-nadu);}
-  .chip[data-country="IN"][data-state="TELANGANA"].active{background:var(--in-telangana);}
-  .chip[data-country="IN"][data-state="HIMACHAL_PRADESH"].active{background:var(--in-himachal-pradesh);}
-  .chip[data-country="IN"][data-state="MAHARASHTRA"].active{background:var(--in-maharashtra);}
-  .chip[data-country="IN"][data-state="DELHI"].active{background:var(--in-delhi);}
-  .chip[data-country="IN"][data-state="UTTARAKHAND"].active{background:var(--in-uttarakhand);}
-  .chip[data-country="IL"][data-state="SOUTHERN"].active{background:var(--il-southern);}
-  .chip[data-country="IL"][data-state="JERUSALEM"].active{background:var(--il-jerusalem);}
-  .chip[data-country="IL"][data-state="NORTHERN"].active{background:var(--il-northern);}
-  .chip[data-country="IL"][data-state="CENTRAL"].active{background:var(--il-central);}
-  .chip[data-country="IL"][data-state="TEL_AVIV"].active{background:var(--il-tel-aviv);}
-  .chip[data-country="ID"][data-state="BALI"].active{background:var(--id-bali);}
-  .chip[data-country="ID"][data-state="JAWA_BARAT"].active{background:var(--id-jawa-barat);}
-  .chip[data-country="ID"][data-state="RIAU"].active{background:var(--id-riau);}
-  .chip[data-country="ID"][data-state="BANTEN"].active{background:var(--id-banten);}
-  .chip[data-country="ID"][data-state="SULAWESI_TENGAH"].active{background:var(--id-sulawesi-tengah);}
-  .chip[data-country="ID"][data-state="JAWA_TIMUR"].active{background:var(--id-jawa-timur);}
-  .chip[data-country="ID"][data-state="JAMBI"].active{background:var(--id-jambi);}
-  .chip[data-country="TW"][data-state="HSINCHU_COUNTY"].active{background:var(--tw-hsinchu-county);}
-  .chip[data-country="TW"][data-state="NEW_TAIPEI"].active{background:var(--tw-new-taipei);}
-  .chip[data-country="TW"][data-state="TAICHUNG"].active{background:var(--tw-taichung);}
-  .chip[data-country="TW"][data-state="TAIPEI"].active{background:var(--tw-taipei);}
+  .chip.active{background:var(--chip, var(--text));color:var(--bg);border-color:transparent;font-weight:600;}
 
-  .toggle-row{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-dim);font-family:'Space Mono',monospace;cursor:pointer;}
-  .toggle-row input{accent-color:var(--vic);}
+  .toggle-row{display:flex;align-items:center;gap:8px;font-size:var(--fs-sm);color:var(--text-dim);font-family:var(--font-body);cursor:pointer;}
+  .toggle-row input{accent-color:var(--accent);}
 
-  .section-label{font-size:10.5px;color:var(--text-dim);font-family:'Space Mono',monospace;text-transform:uppercase;letter-spacing:.5px;margin-bottom:1px;}
-  .section-label.country-label{margin:10px 0 6px;}
+  .section-label{font-size:var(--fs-xs);font-weight:600;color:var(--text-dim);font-family:var(--font-display);letter-spacing:.04em;text-transform:uppercase;margin-bottom:var(--sp-1);}
+  .section-label.country-label{margin:10px 0 6px;font-family:var(--font-body);font-weight:500;font-size:var(--fs-sm);letter-spacing:0;text-transform:none;}
   /* Country groups collapse by default -- with 6 countries the fully
      expanded chip list ran the filter panel out of usable height (see
      docs/architecture.md "Sidebar chip growth"). The label is a <button>
@@ -695,11 +496,11 @@
   .country-group.collapsed .chip-row{display:none;}
   /* A chip can be active while its group is collapsed -- flag it so the
      filter doesn't silently vanish from view. */
-  .country-group.has-active .country-label{color:var(--vic);}
+  .country-group.has-active .country-label{color:var(--accent);}
   .country-group.has-active .country-label::after{
     content:"";
     width:5px;height:5px;border-radius:50%;
-    background:var(--vic);
+    background:var(--accent);
     margin-left:1px;
   }
   /* One level up from country-group, same collapse mechanics -- a single
@@ -715,7 +516,9 @@
   .region-header{
     display:flex;align-items:center;gap:6px;
     width:100%;background:none;border:none;padding:0;
-    font:inherit;font-weight:700;text-align:left;cursor:pointer;
+    font:inherit;font-family:var(--font-display);font-size:var(--fs-md);font-weight:600;
+    letter-spacing:0;text-transform:none;color:var(--text);
+    text-align:left;cursor:pointer;
     margin:10px 0 6px;
   }
   .region-header:hover{color:var(--text);}
@@ -728,11 +531,11 @@
   .region-group:not(.collapsed) .region-header::before{transform:rotate(90deg);}
   .region-group.collapsed .region-body{display:none;}
   .region-group .country-group:first-child{margin-top:0;}
-  .region-group.has-active .region-header{color:var(--vic);}
+  .region-group.has-active .region-header{color:var(--accent);}
   .region-group.has-active .region-header::after{
     content:"";
     width:5px;height:5px;border-radius:50%;
-    background:var(--vic);
+    background:var(--accent);
     margin-left:1px;
   }
   .type-filter{display:flex;flex-direction:column;gap:7px;margin-top:12px;padding-top:10px;border-top:1px solid var(--border);}
@@ -749,7 +552,7 @@
      a sliver of the next control's dot poking in from the edge). The
      sidebar's own filter checkboxes were never inside a .field, so they
      were never affected -- only the modal forms' copies were broken. */
-  .type-filter .type-check{display:flex;align-items:center;gap:8px;font-size:12.5px;font-family:'Space Mono',monospace;color:var(--text);cursor:pointer;text-transform:none;margin-bottom:0;letter-spacing:normal;}
+  .type-filter .type-check{display:flex;align-items:center;gap:8px;font-size:var(--fs-md);font-family:var(--font-body);color:var(--text);cursor:pointer;text-transform:none;margin-bottom:0;letter-spacing:normal;}
   .type-filter .type-check .dot{width:9px;height:9px;flex-shrink:0;border-radius:40% 60% 55% 45%/50% 45% 55% 50%;border:1px solid rgba(0,0,0,0.35);}
   .type-filter .type-check input[type="checkbox"]{cursor:pointer;width:16px;height:16px;margin:0;flex-shrink:0;}
   .type-check input.chk-indoor{accent-color:var(--t-indoor);}
@@ -783,8 +586,8 @@
     margin-top:3px;flex-shrink:0;border:1.5px solid rgba(0,0,0,0.35);
   }
   .gym-item .info{min-width:0;flex:1;}
-  .gym-item .name{font-size:13.5px;font-weight:600;line-height:1.3;}
-  .gym-item .meta{font-size:11.5px;color:var(--text-dim);font-family:'Space Mono',monospace;margin-top:2px;display:flex;gap:6px;flex-wrap:wrap;}
+  .gym-item .name{font-size:var(--fs-base);font-weight:600;line-height:1.3;}
+  .gym-item .meta{font-size:var(--fs-sm);color:var(--text-dim);font-family:var(--font-body);margin-top:2px;display:flex;gap:6px;flex-wrap:wrap;}
   .tag-pill{
     font-size:9.5px;
     padding:1px 6px;
@@ -795,7 +598,7 @@
   }
   .tag-pill.community{border-color:var(--community);color:var(--community);}
   .tag-pill.edited{border-color:#8fb0d6;color:#8fb0d6;}
-  .empty-state{padding:24px 16px;color:var(--text-dim);font-size:13px;text-align:center;}
+  .empty-state{padding:24px 16px;color:var(--text-dim);font-size:var(--fs-md);text-align:center;}
 
   .edit-icon-btn{
     background:transparent;
@@ -803,7 +606,7 @@
     color:var(--text-dim);
     width:28px;height:28px;
     border-radius:6px;
-    font-size:12px;
+    font-size:var(--fs-sm);
     cursor:pointer;
     flex-shrink:0;
     display:flex;align-items:center;justify-content:center;
@@ -819,7 +622,7 @@
     color:var(--text-dim);
     width:28px;height:28px;
     border-radius:6px;
-    font-size:12px;
+    font-size:var(--fs-sm);
     cursor:pointer;
     flex-shrink:0;
     display:flex;align-items:center;justify-content:center;
@@ -837,21 +640,21 @@
   }
   .add-btn{
     width:100%;
-    background:var(--vic);
-    color:#221a12;
+    background:var(--accent);
+    color:var(--accent-ink);
     border:none;
     padding:10px;
     border-radius:8px;
-    font-family:'Space Grotesk',sans-serif;
+    font-family:var(--font-display);
     font-weight:700;
-    font-size:13px;
+    font-size:var(--fs-md);
     cursor:pointer;
     letter-spacing:0.3px;
   }
   .add-btn{transition:filter .15s ease, transform .1s ease;}
   .add-btn:hover{filter:brightness(1.08);}
   .add-btn:active{transform:scale(0.98);}
-  .add-btn.placing{background:var(--surface-2);color:var(--vic);border:1px dashed var(--vic);}
+  .add-btn.placing{background:var(--surface-2);color:var(--accent);border:1px dashed var(--accent);}
 
   .map-wrap{flex:1;position:relative;min-width:0;}
   #map{position:absolute;inset:0;background:var(--bg);}
@@ -866,8 +669,8 @@
     background:rgba(43,40,34,0.92);
     border:1px solid var(--border);
     border-radius:8px;
-    font-family:'Space Mono',monospace;
-    font-size:10.5px;
+    font-family:var(--font-body);
+    font-size:var(--fs-xs);
     color:var(--text-dim);
     max-width:230px;
     backdrop-filter:blur(3px);
@@ -877,7 +680,7 @@
     width:100%;background:none;border:none;cursor:pointer;
     font-family:inherit;padding:10px 12px;
   }
-  .legend-header b{color:var(--text);font-size:11px;}
+  .legend-header b{color:var(--text);font-size:var(--fs-xs);}
   .legend-chevron{color:var(--text-dim);font-size:9px;transition:transform .15s ease;}
   .legend.collapsed .legend-chevron{transform:rotate(180deg);}
   .legend-body{padding:0 12px 10px;}
@@ -889,11 +692,11 @@
     top:16px;
     left:50%;
     transform:translateX(-50%) translateY(-8px);
-    background:var(--qld);
-    color:#12241a;
+    background:var(--success);
+    color:var(--success-ink);
     padding:9px 16px;
     border-radius:8px;
-    font-size:12.5px;
+    font-size:var(--fs-md);
     font-weight:600;
     z-index:900;
     opacity:0;
@@ -909,12 +712,12 @@
     left:50%;
     transform:translateX(-50%);
     background:var(--surface);
-    border:1px dashed var(--vic);
-    color:var(--vic);
+    border:1px dashed var(--accent);
+    color:var(--accent);
     padding:9px 16px;
     border-radius:8px;
-    font-family:'Space Mono',monospace;
-    font-size:12px;
+    font-family:var(--font-body);
+    font-size:var(--fs-sm);
     z-index:900;
     display:none;
   }
@@ -951,8 +754,8 @@
   .modal-backdrop.hidden .modal{
     transform:scale(0.97) translateY(6px);
   }
-  .modal h2{font-family:'Space Grotesk',sans-serif;font-size:16px;margin:0 0 4px;}
-  .modal .sub{font-size:12px;color:var(--text-dim);margin-bottom:16px;font-family:'Space Mono',monospace;}
+  .modal h2{font-family:var(--font-display);font-size:var(--fs-lg);margin:0 0 4px;}
+  .modal .sub{font-size:var(--fs-sm);color:var(--text-dim);margin-bottom:16px;font-family:var(--font-body);}
 
   .modal.info-modal{
     width:520px;
@@ -961,20 +764,20 @@
     line-height:1.55;
   }
   .modal.info-modal h2{margin-bottom:2px;}
-  .modal.info-modal .updated{font-size:11px;color:var(--text-dim);font-family:'Space Mono',monospace;margin-bottom:16px;}
-  .modal.info-modal h3{font-family:'Space Grotesk',sans-serif;font-size:13.5px;color:var(--text);margin:18px 0 6px;}
-  .modal.info-modal p{font-size:13px;color:var(--text-dim);margin:0 0 10px;}
+  .modal.info-modal .updated{font-size:var(--fs-xs);color:var(--text-dim);font-family:var(--font-body);margin-bottom:16px;}
+  .modal.info-modal h3{font-family:var(--font-display);font-size:var(--fs-base);color:var(--text);margin:18px 0 6px;}
+  .modal.info-modal p{font-size:var(--fs-md);color:var(--text-dim);margin:0 0 10px;}
   .modal.info-modal ul{margin:0 0 10px;padding-left:18px;}
-  .modal.info-modal li{font-size:13px;color:var(--text-dim);margin-bottom:5px;}
+  .modal.info-modal li{font-size:var(--fs-md);color:var(--text-dim);margin-bottom:5px;}
   .modal.info-modal .legal-note{
-    font-size:11.5px;
-    color:var(--vic);
+    font-size:var(--fs-sm);
+    color:var(--accent);
     background:rgba(226,121,63,0.08);
-    border:1px dashed var(--vic);
+    border:1px dashed var(--accent);
     border-radius:7px;
     padding:8px 10px;
     margin-bottom:16px;
-    font-family:'Space Mono',monospace;
+    font-family:var(--font-body);
   }
   .modal.info-modal .placeholder{color:var(--t-outdoor);}
   .modal.info-modal .close-row{margin-top:6px;text-align:right;}
@@ -987,19 +790,19 @@
     padding:12px 14px;
   }
   .pending-kind{
-    font-family:'Space Mono',monospace;
-    font-size:10.5px;
+    font-family:var(--font-body);
+    font-size:var(--fs-xs);
     text-transform:uppercase;
     letter-spacing:.4px;
-    color:var(--vic);
+    color:var(--accent);
     margin-bottom:4px;
   }
-  .pending-notes{font-size:12px;color:var(--text-dim);margin-top:6px;word-break:break-word;}
+  .pending-notes{font-size:var(--fs-sm);color:var(--text-dim);margin-top:6px;word-break:break-word;}
   .pending-notes a{color:var(--text-dim);}
   .pending-actions{display:flex;gap:8px;margin-top:10px;}
   .pending-actions button{
     flex:1;padding:7px;border-radius:6px;border:1px solid var(--border);
-    font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:12.5px;cursor:pointer;
+    font-family:var(--font-display);font-weight:600;font-size:var(--fs-md);cursor:pointer;
     transition:background-color .15s ease, filter .15s ease, transform .1s ease;
   }
   .pending-actions button:active:not(:disabled){transform:scale(0.97);}
@@ -1014,14 +817,15 @@
   }
   .climb-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
   .climb-chip{
-    font-family:'Space Mono',monospace;
-    font-size:11px;
+    font-family:var(--font-mono);
+    font-variant-numeric:tabular-nums;
+    font-size:var(--fs-xs);
     padding:3px 8px;
     border-radius:12px;
     border:1px solid var(--border);
     color:var(--text-dim);
   }
-  .climb-chip.sent{border-color:var(--vic);color:var(--vic);}
+  .climb-chip.sent{border-color:var(--accent);color:var(--accent);}
 
   .climb-rows{display:flex;flex-direction:column;gap:8px;}
   .climb-row{
@@ -1036,15 +840,15 @@
   .climb-row input.climb-attempts{width:44px;flex:none;}
   .climb-row label.climb-sent{
     display:flex;align-items:center;gap:3px;flex:none;
-    font-size:10.5px;color:var(--text-dim);white-space:nowrap;
+    font-size:var(--fs-xs);color:var(--text-dim);white-space:nowrap;
   }
   .climb-row select, .climb-row input[type="text"], .climb-row input[type="number"]{
     background:var(--bg);border:1px solid var(--border);border-radius:5px;
-    color:var(--text);padding:5px 6px;font-size:12px;font-family:inherit;
+    color:var(--text);padding:5px 6px;font-size:var(--fs-sm);font-family:inherit;
   }
   .climb-row .remove-climb-btn{
     flex:none;background:none;border:none;color:var(--text-dim);
-    cursor:pointer;font-size:15px;line-height:1;padding:2px 4px;
+    cursor:pointer;font-size:var(--fs-lg);line-height:1;padding:2px 4px;
   }
   .climb-row .remove-climb-btn:hover{color:var(--t-outdoor,#c96);}
 
@@ -1053,8 +857,8 @@
     gap:10px;
     justify-content:center;
     margin-top:10px;
-    font-family:'Space Mono',monospace;
-    font-size:11px;
+    font-family:var(--font-body);
+    font-size:var(--fs-xs);
   }
   .footer-links button{
     background:none;border:none;color:var(--text-dim);
@@ -1066,7 +870,7 @@
   .field{margin-bottom:12px;}
   .field.field-row{display:flex;gap:10px;}
   .field.field-row > div{flex:1;min-width:0;}
-  .field label,.field .field-label{display:block;font-size:11px;color:var(--text-dim);margin-bottom:4px;font-family:'Space Mono',monospace;text-transform:uppercase;letter-spacing:.4px;}
+  .field label,.field .field-label{display:block;font-size:var(--fs-sm);font-weight:500;color:var(--text-dim);margin-bottom:var(--sp-1);font-family:var(--font-body);}
   .field input,.field select,.field textarea{
     width:100%;
     background:var(--surface-2);
@@ -1074,42 +878,42 @@
     color:var(--text);
     padding:8px 10px;
     border-radius:6px;
-    font-size:13px;
-    font-family:'Inter',sans-serif;
+    font-size:var(--fs-md);
+    font-family:var(--font-body);
   }
   .field textarea{resize:vertical;min-height:50px;}
-  .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--vic);}
+  .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--accent);}
   .auth-divider{
     display:flex;align-items:center;gap:10px;
     margin:2px 0 14px;
     color:var(--text-dim);
-    font-family:'Space Mono',monospace;
-    font-size:11px;
+    font-family:var(--font-body);
+    font-size:var(--fs-xs);
     text-transform:uppercase;
     letter-spacing:.5px;
   }
   .auth-divider::before,.auth-divider::after{content:"";flex:1;height:1px;background:var(--border);}
   .auth-status{
-    font-size:12px;
-    font-family:'Space Mono',monospace;
+    font-size:var(--fs-sm);
+    font-family:var(--font-body);
     min-height:16px;
     margin:-4px 0 10px;
   }
-  .auth-status.ok{color:var(--qld);}
+  .auth-status.ok{color:var(--success);}
   .auth-status.err{color:var(--danger);}
 
-  .pin-status{font-size:12px;font-family:'Space Mono',monospace;padding:8px 10px;background:var(--surface-2);border-radius:6px;border:1px solid var(--border);margin-bottom:14px;color:var(--text-dim);}
-  .pin-status.set{color:var(--qld);border-color:var(--qld);}
+  .pin-status{font-size:var(--fs-sm);font-family:var(--font-mono);font-variant-numeric:tabular-nums;padding:8px 10px;background:var(--surface-2);border-radius:6px;border:1px solid var(--border);margin-bottom:14px;color:var(--text-dim);}
+  .pin-status.set{color:var(--success);border-color:var(--success);}
   .modal-actions{display:flex;gap:8px;margin-top:4px;}
   .modal-actions button{
     flex:1;padding:10px;border-radius:7px;border:1px solid var(--border);
-    font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:13px;cursor:pointer;
+    font-family:var(--font-display);font-weight:600;font-size:var(--fs-md);cursor:pointer;
     transition:background-color .15s ease, border-color .15s ease, filter .15s ease, transform .1s ease;
   }
   .modal-actions button:active:not(:disabled){transform:scale(0.98);}
   .btn-cancel{background:transparent;color:var(--text-dim);}
   .btn-cancel:hover{border-color:var(--text-dim);color:var(--text);}
-  .btn-submit{background:var(--vic);color:#221a12;border-color:transparent;}
+  .btn-submit{background:var(--accent);color:var(--accent-ink);border-color:transparent;}
   .btn-submit:hover:not(:disabled){filter:brightness(1.08);}
   .btn-submit:disabled{opacity:0.4;cursor:not-allowed;}
 
@@ -1120,7 +924,7 @@
     border-radius:8px;
     border:1px solid var(--border);
     padding:12px 14px;
-    font-family:'Inter',sans-serif;
+    font-family:var(--font-body);
     box-shadow:0 12px 30px -10px rgba(10,9,7,0.6);
   }
   /* The tip is a CSS border-triangle — only the side facing the marker is
@@ -1133,11 +937,11 @@
   .maplibregl-popup-anchor-bottom-right .maplibregl-popup-tip{border-top-color:var(--surface) !important;}
   .maplibregl-popup-anchor-left .maplibregl-popup-tip{border-right-color:var(--surface) !important;}
   .maplibregl-popup-anchor-right .maplibregl-popup-tip{border-left-color:var(--surface) !important;}
-  .maplibregl-popup-close-button{color:var(--text-dim);font-size:16px;padding:2px 6px;}
+  .maplibregl-popup-close-button{color:var(--text-dim);font-size:var(--fs-lg);padding:2px 6px;}
   .maplibregl-popup-close-button:hover{color:var(--text);background:transparent;}
-  .popup-name{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;margin-bottom:2px;}
-  .popup-meta{font-size:11.5px;color:var(--text-dim);font-family:'Space Mono',monospace;margin-bottom:6px;}
-  .popup-address{font-size:11.5px;color:var(--text-dim);margin-bottom:6px;}
+  .popup-name{font-family:var(--font-display);font-weight:700;font-size:var(--fs-base);margin-bottom:2px;}
+  .popup-meta{font-size:var(--fs-sm);color:var(--text-dim);font-family:var(--font-body);margin-bottom:6px;}
+  .popup-address{font-size:var(--fs-sm);color:var(--text-dim);margin-bottom:6px;}
   .popup-edit-btn,.popup-directions-btn{
     margin-top:0;
     background:var(--surface-2);
@@ -1145,15 +949,15 @@
     color:var(--text);
     padding:5px 10px;
     border-radius:6px;
-    font-size:11.5px;
-    font-family:'Space Mono',monospace;
+    font-size:var(--fs-sm);
+    font-family:var(--font-body);
     cursor:pointer;
     text-align:center;
     text-decoration:none;
     display:inline-block;
     transition:border-color .15s ease, color .15s ease, transform .1s ease;
   }
-  .popup-edit-btn:hover,.popup-directions-btn:hover{border-color:var(--vic);color:var(--vic);}
+  .popup-edit-btn:hover,.popup-directions-btn:hover{border-color:var(--accent);color:var(--accent);}
   .popup-edit-btn:active,.popup-directions-btn:active{transform:scale(0.96);}
   .popup-links{display:flex;gap:6px;margin-top:8px;}
   .popup-links .popup-edit-btn,.popup-links .popup-directions-btn{flex:1;}
@@ -1164,8 +968,8 @@
     border:none;
     padding:2px 0;
     color:var(--text-dim);
-    font-size:10.5px;
-    font-family:'Space Mono',monospace;
+    font-size:var(--fs-xs);
+    font-family:var(--font-body);
     text-decoration:underline;
     text-underline-offset:2px;
     cursor:pointer;
@@ -1175,8 +979,8 @@
   .popup-actions .mark-btn{
     width:auto;height:auto;
     padding:5px 10px;
-    font-size:11px;
-    font-family:'Space Mono',monospace;
+    font-size:var(--fs-xs);
+    font-family:var(--font-body);
     flex:1;
     margin-top:0;
   }
@@ -1206,7 +1010,7 @@
   .hold-marker.community::after{
     content:"+";
     position:absolute;top:-6px;right:-6px;
-    background:var(--community);color:#12241a;
+    background:var(--community);color:var(--success-ink);
     width:12px;height:12px;border-radius:50%;
     font-size:9px;font-weight:900;line-height:12px;text-align:center;
   }
@@ -1222,12 +1026,12 @@
   .cluster-marker{
     display:flex;align-items:center;justify-content:center;
     background:var(--surface-2);
-    border:2px solid var(--vic);
+    border:2px solid var(--accent);
     border-radius:50%;
     color:var(--text);
-    font-family:'Space Grotesk',sans-serif;
+    font-family:var(--font-display);
     font-weight:700;
-    font-size:13px;
+    font-size:var(--fs-md);
     box-shadow:0 2px 6px rgba(20,16,10,0.6);
     /* Not transform -- MapLibre repositions this exact element via its own
        inline transform on every render frame (it's the element passed to
@@ -1254,8 +1058,8 @@
      the same big-to-small progression a paper map's type hierarchy uses. */
   .region-label{
     color:var(--text);
-    font-family:'Space Grotesk',sans-serif;
-    font-size:11px;
+    font-family:var(--font-display);
+    font-size:var(--fs-xs);
     font-weight:700;
     letter-spacing:.03em;
     text-transform:uppercase;
@@ -1269,14 +1073,14 @@
   .region-label.continent-label{
     pointer-events:auto;
     cursor:pointer;
-    font-size:16px;
+    font-size:var(--fs-lg);
     letter-spacing:.08em;
-    color:var(--vic);
+    color:var(--accent);
   }
   /* Country tier -- one step more detailed, standard size/colour (this is
      what the old shared rule looked like before tiers were split out). */
   .region-label.country-tier-label{
-    font-size:12px;
+    font-size:var(--fs-sm);
   }
   /* State/city tier -- the finest-grained labels, shown right before real
      markers take over -- smaller, lighter weight, dimmer colour so they
