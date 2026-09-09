@@ -2856,13 +2856,93 @@ from one source:
     the loaded data; no console errors beyond the deliberately-forced
     Supabase-unreachable ones; `git diff` on `js/supabase-init.js`
     confirmed clean after reverting the test edit.
-  - **Not yet done**: the remaining ~356 spots across ~15 more countries
-    (Austria, Brazil, Greece, Philippines, Finland, Canada, Chile,
-    Hungary, Croatia, Bulgaria, Indonesia, Belgium, Russia, Sweden,
-    Netherlands, Ireland, Czech Republic, India, Portugal, Switzerland,
-    Denmark, Israel, Taiwan, New Zealand, Iceland, Venezuela, Japan) are
-    still queued in this worldwide audit — a multi-session effort by
-    design. Not yet pushed to the live Supabase table.
+- **Austria, Brazil, Greece, Philippines, Finland, Canada, Chile, Hungary,
+  Indonesia, Croatia, Bulgaria, Ireland, Sweden, Netherlands, Czech
+  Republic, India, Denmark, Switzerland, Portugal, Taiwan, Israel,
+  Venezuela, New Zealand, Iceland, Japan, Russia, and Belgium (160 of
+  ~332 spots across these 27 countries audited) — this finishes the
+  worldwide top-rope-tag audit.** Every remaining country from the
+  original ~640-spot risk pool is now done (12 countries in the prior
+  batch + China's own two batches + these 27 = the whole list). Same
+  method as every prior batch: parallel research agents individually
+  web-searched each flagged gym's own site/reviews/directory listing for
+  real facility-type evidence, one agent pair per ~2-3 countries (13
+  agent dispatches, 2 of them retried once after a transient rate-limit
+  error).
+  - Of 160 audited: **40 confirmed bouldering-only** (wrongly assumed to
+    have top-rope), **66 gained `lead-climbing` for the first time**
+    (a discipline the original blanket default never considered at all,
+    the same pattern already seen for Germany/Czech Republic/Croatia —
+    countries whose native rope-climbing-hall terminology, once actually
+    read, reliably implies lead infrastructure), and the rest confirmed
+    their existing tag correct or came back genuinely unclear.
+  - **A recurring judgment call, applied more carefully this batch than
+    the first attempt**: whether to default a genuinely-UNCLEAR gym to
+    bouldering-only depends on that specific country's own confirmed-
+    evidence ratio, not a blanket rule (the Korea-vs-Colombia precedent
+    from the earlier batch). A first pass through this batch's UNCLEAR
+    cases defaulted all of them to bouldering-only uniformly — caught
+    before committing by checking each affected country's actual
+    confirmed ratio, which showed several (Philippines 4/4 confirmed
+    positive, Brazil 9/11, Greece 7/9, Bulgaria 5/5, India 3/3, Israel
+    2/2) leaned heavily toward gyms *having* real rope climbing. Removing
+    top-rope from an unconfirmed gym in one of those countries would have
+    repeated the original bug in the opposite direction — a real facility
+    quietly untagged on a weak country-level prior, not on any actual
+    evidence about that specific gym. 13 entries (7 Philippines, 1
+    Brazil, 1 Greece, 2 Bulgaria, 1 India, 1 Israel) were reverted from
+    the bouldering-only default back to their original top-rope tag, with
+    a disclosure note stating the type couldn't be independently
+    confirmed and explaining why the existing tag was kept rather than
+    removed. The remaining UNCLEAR cases (Indonesia's four, Croatia's PK
+    Elvis, Chile's BALANCE, Venezuela's Aranitas Club) stayed on the
+    bouldering-only default, since those countries' own confirmed samples
+    were roughly even or had no meaningful lean either way.
+  - **One real data error caught and fixed beyond type**: **RockWay**
+    had been listed under `Iraklio`/`CRETE` (i.e. Heraklion), but every
+    source the research agent found places it in Neo Irakleio, a real
+    municipality in Athens/Attica (confirmed independently via Nominatim,
+    which resolves "Neo Irakleio, Athens" to a real place in the
+    Attica region, ~38.05°N 23.77°E — nowhere near Crete). Corrected
+    `suburb`, `state`, and `lat`/`lng` to the Attica location; the
+    address text itself (a street name) was left unchanged since it's
+    plausibly the same either way and wasn't independently re-verified.
+  - **A second real correction, this time to an already-lead-tagged
+    entry**: **Skalodrom Bigwallsport na Dinamo** (Moscow) had been
+    tagged `lead-climbing` in the original Russia batch based on the
+    Bigwallsport chain's general reputation, but this pass found the
+    operator's own site and an independent gym directory both categorize
+    this *specific* Dinamo location as bouldering-only (950m², 4.5m wall)
+    — the lead-climbing tag actually belongs to the same chain's separate
+    Luzhniki location, not this one. Corrected to bouldering-only, same
+    "verify the specific branch, don't assume from the chain name"
+    discipline established for every multi-branch chain in this dataset.
+  - **Badung Climbing Gym** (Bali, Indonesia) had its top-rope tag
+    removed — theCrag's own description lists boulder blocks, a speed
+    wall, and a lead-climbing wall, but no top-rope wall at all — kept
+    bouldering + lead, the same "don't guess a discipline into existence"
+    standard applied throughout this project.
+  - **Crag Studio** (Gachibowli, India) had `indoor-bouldering` *added* —
+    it was tagged top-rope + lead only, but LBB's own coverage and the
+    gym's materials describe genuine bouldering there too, alongside the
+    lead/top wall.
+  - Net result: still **1513 total spots** (type-correction only, no
+    additions/removals). Structural check (Node-parsed `window.SEED_GYMS`
+    ): 1513/1513 unique ids, zero duplicate name+suburb+state+country
+    combos, every spot has a non-empty `types` array.
+  - **Verified live** (served copy, `npx serve .`, offline-fallback-
+    forcing method): `window.SEED_GYMS.length` = 1513 unchanged; spot-
+    checked the RockWay/Bigwallsport-Dinamo/Badung/Campus-Climbing
+    (Chile vs. Israel disambiguation) corrections directly in the loaded
+    data, and re-checked the 13 reverted-to-top-rope entries after the
+    consistency fix; no console errors beyond the deliberately-forced
+    Supabase-unreachable ones; `git diff` on `js/supabase-init.js`
+    confirmed clean after reverting the test edit.
+  - **This closes out the worldwide top-rope-tag audit** — every country
+    identified in the original ~640-spot risk pool (South Korea, UK,
+    Germany, and these 36 more) has now been individually audited.
+    Not yet pushed to the live Supabase table — same outstanding step as
+    every prior correction pass in this series.
 
 ## Form field CSS specificity
 

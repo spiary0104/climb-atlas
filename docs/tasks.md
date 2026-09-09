@@ -632,14 +632,20 @@ _(none)_
   correction pass — this pass doesn't change the row count so the
   existing un-run SQL already covers it once regenerated).
 
-### Worldwide top-rope-tag audit — 12 countries done (250 of 420 spots corrected)
+### Worldwide top-rope-tag audit — COMPLETE (all ~39 countries done, 410 of ~580 spots corrected)
 - Branch: `fix/worldwide-toprope-verification` — committed, not yet
   merged.
-- Status: in progress — UK, Germany, South Korea, Poland, Norway,
-  France, Argentina, Colombia, Italy, Spain, Romania, and Mexico done;
-  ~15 more countries still queued. This is a multi-session effort by
-  explicit user choice ("go country by country through the full ~640,
-  biggest first"), not a single-pass task.
+- Status: **done**. UK, Germany, South Korea, Poland, Norway, France,
+  Argentina, Colombia, Italy, Spain, Romania, Mexico (12 countries, done
+  earlier), then Austria, Brazil, Greece, Philippines, Finland, Canada,
+  Chile, Hungary, Indonesia, Croatia, Bulgaria, Ireland, Sweden,
+  Netherlands, Czech Republic, India, Denmark, Switzerland, Portugal,
+  Taiwan, Israel, Venezuela, New Zealand, Iceland, Japan, Russia, and
+  Belgium (27 more countries, this final batch) — every country in the
+  original ~640-spot risk pool has now been individually audited. This
+  was explicitly scoped by the user as a multi-session effort ("go
+  country by country through the full ~640, biggest first"); it's now
+  finished.
 - What: direct follow-up to the two China top-rope fixes above — user
   asked whether the same audit had been run on the rest of the world. A
   full scan found 663 non-China spots whose top-rope/lead tag had no
@@ -748,12 +754,43 @@ _(none)_
   MX 16); no console errors beyond the deliberately-forced
   Supabase-unreachable ones; `git diff` on `js/supabase-init.js`
   confirmed clean.
-- **Not yet done**: ~356 more spots across ~15 more countries (Austria,
-  Brazil, Greece, Philippines, Finland, Canada, Chile, Hungary, Croatia,
-  Bulgaria, Indonesia, Belgium, Russia, Sweden, Netherlands, Ireland,
-  Czech Republic, India, Portugal, Switzerland, Denmark, Israel, Taiwan,
-  New Zealand, Iceland, Venezuela, Japan). Not yet pushed to the live
-  Supabase table.
+- **Final batch — Austria, Brazil, Greece, Philippines, Finland, Canada,
+  Chile, Hungary, Indonesia, Croatia, Bulgaria, Ireland, Sweden,
+  Netherlands, Czech Republic, India, Denmark, Switzerland, Portugal,
+  Taiwan, Israel, Venezuela, New Zealand, Iceland, Japan, Russia, and
+  Belgium (160 of ~332 spots across these 27 countries audited)**: 13
+  parallel research-agent dispatches (2 countries each, mostly), same
+  method as every prior batch. 40 confirmed bouldering-only (wrongly
+  assumed rope climbing), 66 gained `lead-climbing` for the first time.
+  Full per-country evidence and two real non-type data corrections
+  (RockWay's suburb/state was wrong — Neo Irakleio/Attica, not Heraklion/
+  Crete; Skalodrom Bigwallsport na Dinamo's lead tag belonged to a
+  different branch of the same chain) are in `docs/architecture.md`
+  "Seed data sourcing".
+- **A methodology bug caught before committing**: a first pass defaulted
+  every genuinely-UNCLEAR gym to bouldering-only uniformly, but several
+  countries' own confirmed samples leaned heavily toward gyms *having*
+  real rope climbing (Philippines 4/4, Brazil 9/11, Greece 7/9, Bulgaria
+  5/5, India 3/3, Israel 2/2) — removing top-rope from an unconfirmed gym
+  there would have repeated the original bug backwards. 13 entries were
+  reverted to their original top-rope tag with a disclosure note instead
+  (the same Korea-vs-Colombia country-statistical judgment call
+  established in the prior batch, applied more carefully this time).
+- Net result: still **1513 total spots** (type-correction only).
+  Structural check (Node-parsed `window.SEED_GYMS`): 1513/1513 unique
+  ids, zero duplicate name+suburb+state+country combos, every spot has a
+  non-empty `types` array.
+- **Verified live** (served copy, `npx serve .`, offline-fallback-forcing
+  method): `window.SEED_GYMS.length` = 1513 unchanged; spot-checked the
+  RockWay/Bigwallsport-Dinamo/Badung/Campus-Climbing corrections and all
+  13 reverted-to-top-rope entries directly in the loaded data; no console
+  errors beyond the deliberately-forced Supabase-unreachable ones; `git
+  diff` on `js/supabase-init.js` confirmed clean.
+- **This finishes the worldwide top-rope-tag audit** — every country in
+  the original risk pool has been individually audited. Not yet merged to
+  `master` (still on `fix/worldwide-toprope-verification`); not yet
+  pushed to the live Supabase table (same outstanding step as every prior
+  correction pass in this whole project).
 
 ### Add Chongqing (China) — 31 more gyms
 - Branch: `feature/add-chongqing-panda` — merged to `master`, pushed.
