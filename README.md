@@ -1,7 +1,7 @@
 # Climb Atlas
 
-A community-sourced map of indoor climbing gyms (bouldering, top rope) across Australia,
-the United States, Japan, Canada, New Zealand, and China, modelled on [Track Atlas](https://trackatlas.org).
+A community-sourced map of indoor climbing gyms (bouldering, top rope, lead) across 40+
+countries, modelled on [Track Atlas](https://trackatlas.org).
 
 This is a static site: plain HTML/CSS/JS, no build step, no framework. Once Supabase is
 configured (see below), open `index.html` in a browser and it runs.
@@ -13,7 +13,7 @@ index.html             Page shell — header, sidebar, map container, all the mo
 css/style.css           All styling (dark "chalk & rock" theme, MapLibre GL overrides)
 js/supabase-init.js     Creates the shared Supabase client — put your project URL/key here
 js/auth.js              Thin wrapper around Supabase Auth (magic link + Google)
-js/data.js              The seed dataset — every gym/crag pin, as window.SEED_GYMS
+js/data.js              The seed dataset — every gym pin, as window.SEED_GYMS (loaded on demand, see below)
 js/app.js               Everything else: map rendering, filters, add/edit, marks
 supabase/schema.sql      Run once in the Supabase SQL Editor — creates spots, pending_edits, reports, moderators, marks
 supabase/seed.html       Run once in a browser — loads the spots table from js/data.js

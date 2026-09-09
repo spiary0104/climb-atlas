@@ -72,6 +72,42 @@ Each entry:
 
 ## In Progress
 
+### UI/UX redesign — Stage H: polish, copy, cleanup (final stage)
+- Branch: `feature/polish-copy-cleanup` — committed, merged to
+  `master`, pushed.
+- Status: done. **This completes the redesign plan (Stages A–H).**
+- **About page** (`about.html`): rebuilt as a real page rather than a
+  modal wearing page CSS — `<main id="main" class="info-modal
+  static-content">` (the `.info-modal` long-form text rules in
+  `css/style.css` are now scoped to `.info-modal` alone, not
+  `.modal.info-modal`, so the page shares them without carrying the
+  modal class), skip link, 28px display h2 with a 16px lede, prose
+  capped at 65ch, `.header-left` wordmark + `.btn-outline` back link,
+  `.btn-primary` at the foot. Copy updated: "climbing spots" →
+  "indoor climbing gyms — bouldering, top rope, and lead — across 40+
+  countries"; the filter description now matches the actual UI
+  (region/type filters, search by name/suburb/country) instead of
+  "checkboxes to filter by country/state"; mentions the logbook.
+- **Copy**: `index.html` meta/og descriptions (still said "gyms and
+  crags" — outdoor areas were dropped from scope long ago) rewritten
+  to say what the site actually is; Privacy ("gym/crag details") and
+  Terms ("gyms or crags listed") likewise; `README.md` intro still
+  listed the original six countries — now "40+ countries", and its
+  file-map line for `data.js` notes the on-demand load.
+- **Dead code**: `--t-outdoor` token (last remnant of the removed
+  outdoor type) and the unused `.modal.info-modal .placeholder` rule
+  deleted; `.remove-climb-btn:hover` now uses `--danger` (it was
+  falling back to a hardcoded `#c96`); the empty
+  `.spot-number-marker{}` rule and its comment removed (the JS comment
+  at `buildSpotNumberMarker()` already explains the intent).
+  `css/style.css` is 1203 lines (was 1279 at the start of the
+  redesign, despite everything added since).
+- **Verified live**: About page — `main#main` present, h2 28px Space
+  Grotesk, lede 16px, paragraphs capped ~605px, back link 8px radius,
+  primary CTA accent; at 375px no horizontal overflow, header 75px,
+  readable. No stray `t-outdoor` / `.placeholder` / `title-block`
+  references anywhere.
+
 ### UI/UX redesign — Stage G: performance
 - Branch: `feature/perf-deferred-seed` — committed, merged to `master`,
   pushed.
