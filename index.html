@@ -594,11 +594,11 @@
     <button class="add-btn" id="dropPinBtn" style="margin-bottom:14px;">Drop pin</button>
     <div class="field">
       <label for="fName">Name</label>
-      <input id="fName" type="text" placeholder="e.g. Boulder Collective">
+      <input id="fName" type="text" placeholder="e.g. Boulder Collective" aria-required="true">
     </div>
     <div class="field">
       <label for="fSuburb">Suburb / nearest town</label>
-      <input id="fSuburb" type="text" placeholder="e.g. Marrickville">
+      <input id="fSuburb" type="text" placeholder="e.g. Marrickville" aria-required="true">
     </div>
     <div class="field field-row">
       <div>
@@ -715,6 +715,7 @@
       <label for="fPhoto">Photo link (optional)</label>
       <input id="fPhoto" type="text" placeholder="Link to a photo — their site, Instagram, Google Maps">
     </div>
+    <p class="form-hint" id="fFormHint" aria-live="polite"></p>
     <div class="modal-actions">
       <button class="btn-cancel" id="cancelBtn">Cancel</button>
       <button class="btn-submit" id="submitBtn" disabled>Add to map</button>
@@ -730,11 +731,11 @@
     <button class="add-btn" id="eDropPinBtn" style="margin-bottom:14px;">Move pin</button>
     <div class="field">
       <label for="eName">Name</label>
-      <input id="eName" type="text">
+      <input id="eName" type="text" aria-required="true">
     </div>
     <div class="field">
       <label for="eSuburb">Suburb / nearest town</label>
-      <input id="eSuburb" type="text">
+      <input id="eSuburb" type="text" aria-required="true">
     </div>
     <div class="field field-row">
       <div>
@@ -851,6 +852,7 @@
       <label for="ePhoto">Photo link (optional)</label>
       <input id="ePhoto" type="text" placeholder="Link to a photo — their site, Instagram, Google Maps">
     </div>
+    <p class="form-hint" id="eFormHint" aria-live="polite"></p>
     <div class="modal-actions">
       <button class="btn-cancel" id="eCancelBtn">Cancel</button>
       <button class="btn-submit" id="eSaveBtn">Save changes</button>

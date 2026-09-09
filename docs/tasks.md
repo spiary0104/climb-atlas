@@ -72,6 +72,35 @@ Each entry:
 
 ## In Progress
 
+### UI/UX redesign — Stage F: form feedback + modal chrome
+- Branch: `feature/forms-validation` — committed, merged to `master`,
+  pushed.
+- Status: done.
+- What: the add/edit-spot forms disabled their Submit button until six
+  conditions were met but never said which ones were missing, and the
+  magic-link form only checked for an empty email.
+- **"Still needed" hint**: `checkFormReady()` / `checkEditFormReady()`
+  in `js/app.js` now build a list of what's missing (pin, name, suburb,
+  country+state, ≥1 type) and write it to a `<p class="form-hint"
+  aria-live="polite">` above the actions (`#fFormHint` / `#eFormHint`
+  in `index.html`); it empties once nothing is missing. The add form
+  runs the check on open so the hint is there from the start. Name and
+  suburb inputs carry `aria-required`.
+- **Email**: `sendMagicLinkBtn` validates a basic `x@y.z` shape, shows a
+  specific message ("That doesn't look like an email address."), sets
+  `aria-invalid` (red border via `.field input[aria-invalid="true"]`),
+  and refocuses the field.
+- **Modal chrome on the tokens**: `--r-lg` panel (380px wide, was 360),
+  `--sp-*` padding, 18px display h2, 13px/1.5 subtitle; inputs at
+  `--fs-base` (14px, was 13) with `--r-md`, textareas 72px min (was
+  50); `.modal-actions` / `.add-btn` / `.pin-status` radii unified on
+  `--r-md`.
+- **Verified live**: with an empty add form the hint lists all four
+  gaps; after typing a name and suburb and ticking a type it reads
+  "Still needed: a pin on the map." and Submit stays disabled;
+  "not-an-email" produces the specific message with `aria-invalid=
+  "true"`; modal 12px radius, inputs 8px/14px; no console errors.
+
 ### UI/UX redesign — Stage E: map camera, labels, legend, popup
 - Branch: `feature/map-polish` — committed, merged to `master`, pushed.
 - Status: done.

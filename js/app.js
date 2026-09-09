@@ -1188,11 +1188,14 @@
 
   document.getElementById('sendMagicLinkBtn').addEventListener('click', async ()=>{
     const email = authEmailInput.value.trim();
-    if(!email){
-      authStatus.textContent = 'Enter your email first.';
+    if(!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+      authStatus.textContent = email ? 'That doesn’t look like an email address.' : 'Enter your email first.';
       authStatus.className = 'auth-status err';
+      authEmailInput.setAttribute('aria-invalid', 'true');
+      authEmailInput.focus();
       return;
     }
+    authEmailInput.removeAttribute('aria-invalid');
     const btn = document.getElementById('sendMagicLinkBtn');
     btn.disabled = true;
     try{
@@ -1301,6 +1304,7 @@
     ['fTypeIndoor','fTypeTopRope','fTypeLead'].forEach(id=>document.getElementById(id).checked=false);
     document.getElementById('fCountry').value = 'AU';
     toggleOtherCountryFields('f', 'AU');
+    checkFormReady();
     modalBackdrop.classList.remove('hidden');
   });
 
@@ -1358,11 +1362,24 @@
     const map = {fTypeIndoor:'indoor-bouldering', fTypeTopRope:'top-rope', fTypeLead:'lead-climbing'};
     return Object.keys(map).filter(id=>document.getElementById(id).checked).map(id=>map[id]);
   }
+  // Rather than a silently disabled Submit, list what's still missing so
+  // the person filling the form knows why. Cleared once nothing is.
+  function renderFormHint(hintId, missing){
+    const el = document.getElementById(hintId);
+    el.textContent = missing.length ? 'Still needed: ' + missing.join(', ') + '.' : '';
+  }
   function checkFormReady(){
     const name = document.getElementById('fName').value.trim();
     const suburb = document.getElementById('fSuburb').value.trim();
     const {country, state} = getCountryState('f');
-    submitBtn.disabled = !(name && suburb && country && state && placingPin && selectedTypes().length > 0);
+    const missing = [];
+    if(!placingPin) missing.push('a pin on the map');
+    if(!name) missing.push('a name');
+    if(!suburb) missing.push('a suburb');
+    if(!country || !state) missing.push('a country and state');
+    if(selectedTypes().length === 0) missing.push('at least one climbing type');
+    renderFormHint('fFormHint', missing);
+    submitBtn.disabled = missing.length > 0;
   }
   ['fCountryOther','fStateOther'].forEach(id=>{
     document.getElementById(id).addEventListener('input', checkFormReady);
@@ -1475,7 +1492,14 @@
     const name = document.getElementById('eName').value.trim();
     const suburb = document.getElementById('eSuburb').value.trim();
     const {country, state} = getCountryState('e');
-    document.getElementById('eSaveBtn').disabled = !(name && suburb && country && state && currentEditPin && selectedEditTypes().length > 0);
+    const missing = [];
+    if(!currentEditPin) missing.push('a pin on the map');
+    if(!name) missing.push('a name');
+    if(!suburb) missing.push('a suburb');
+    if(!country || !state) missing.push('a country and state');
+    if(selectedEditTypes().length === 0) missing.push('at least one climbing type');
+    renderFormHint('eFormHint', missing);
+    document.getElementById('eSaveBtn').disabled = missing.length > 0;
   }
   ['eCountryOther','eStateOther'].forEach(id=>{
     document.getElementById(id).addEventListener('input', checkEditFormReady);
