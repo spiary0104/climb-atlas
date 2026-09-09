@@ -633,8 +633,9 @@ _(none)_
   existing un-run SQL already covers it once regenerated).
 
 ### Worldwide top-rope-tag audit — COMPLETE (all ~39 countries done, 410 of ~580 spots corrected)
-- Branch: `fix/worldwide-toprope-verification` — committed, not yet
-  merged.
+- Branch: batched across several branches per session (`fix/worldwide-
+  toprope-verification`, `fix/worldwide-toprope-batch3`, etc.), each
+  merged to `master` and pushed as it landed — nothing left unmerged.
 - Status: **done**. UK, Germany, South Korea, Poland, Norway, France,
   Argentina, Colombia, Italy, Spain, Romania, Mexico (12 countries, done
   earlier), then Austria, Brazil, Greece, Philippines, Finland, Canada,
@@ -787,10 +788,11 @@ _(none)_
   errors beyond the deliberately-forced Supabase-unreachable ones; `git
   diff` on `js/supabase-init.js` confirmed clean.
 - **This finishes the worldwide top-rope-tag audit** — every country in
-  the original risk pool has been individually audited. Not yet merged to
-  `master` (still on `fix/worldwide-toprope-verification`); not yet
-  pushed to the live Supabase table (same outstanding step as every prior
-  correction pass in this whole project).
+  the original risk pool has been individually audited, and every batch
+  is merged to `master` and pushed to GitHub. The only outstanding step
+  is pushing the regenerated seed SQL to the live Supabase table (same
+  outstanding step as every prior correction pass in this whole project
+  — see the note at the top of Backlog/In Progress).
 
 ### Add Chongqing (China) — 31 more gyms
 - Branch: `feature/add-chongqing-panda` — merged to `master`, pushed.
