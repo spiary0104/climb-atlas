@@ -241,6 +241,7 @@
     --t-toprope:#8a6bb0;
     --t-lead:#4a90c9;
     --community:#e8d9a0;
+    --edited:#8fb0d6;
     --bookmark:#e0b23c;
 
     /* Semantic tokens -- everything above is the per-region map palette,
@@ -601,68 +602,94 @@
   #marksFilters input:disabled{cursor:not-allowed;}
   #marksFilters label:has(input:disabled){cursor:not-allowed;opacity:0.55;}
 
-  .gym-list{flex:1;overflow-y:auto;padding:6px 0;}
+  /* --- Gym list ---------------------------------------------------------
+     Each row is a real <button> (fly to the spot) plus three quiet icon
+     actions. Actions are borderless until hovered so a 1500-row list
+     doesn't read as 4500 little boxes. */
+  .gym-list{flex:1;overflow-y:auto;padding:var(--sp-1) 0;}
   .gym-item{
-    padding:10px 16px;
-    border-bottom:1px solid rgba(74,68,56,0.5);
-    cursor:pointer;
     display:flex;
-    gap:10px;
-    align-items:flex-start;
+    align-items:center;
+    gap:var(--sp-1);
+    padding:0 var(--sp-2) 0 0;
+    border-bottom:1px solid rgba(74,68,56,0.45);
+    transition:background-color .15s ease;
   }
-  .gym-item{transition:background-color .15s ease;}
   .gym-item:hover{background:var(--surface-2);}
-  .gym-item:active{background:var(--surface-2);}
+  .gym-main{
+    appearance:none;
+    flex:1;min-width:0;
+    display:flex;align-items:flex-start;gap:var(--sp-3);
+    padding:10px var(--sp-2) 10px var(--sp-4);
+    background:none;border:none;color:inherit;
+    font:inherit;text-align:left;cursor:pointer;
+  }
+  .gym-main:focus-visible{outline-offset:-2px;}
   .gym-item .swatch{
     width:12px;height:12px;border-radius:40% 60% 55% 45%/50% 45% 55% 50%;
-    margin-top:3px;flex-shrink:0;border:1.5px solid rgba(0,0,0,0.35);
+    margin-top:4px;flex-shrink:0;border:1.5px solid rgba(0,0,0,0.35);
   }
-  .gym-item .info{min-width:0;flex:1;}
-  .gym-item .name{font-size:var(--fs-base);font-weight:600;line-height:1.3;}
-  .gym-item .meta{font-size:var(--fs-sm);color:var(--text-dim);font-family:var(--font-body);margin-top:2px;display:flex;gap:6px;flex-wrap:wrap;}
+  .gym-item .info{min-width:0;flex:1;display:block;}
+  .gym-item .name{display:block;font-size:var(--fs-base);font-weight:600;line-height:var(--lh-tight);}
+  .gym-item .meta{
+    display:block;
+    margin-top:2px;
+    font-size:var(--fs-sm);line-height:1.4;color:var(--text-dim);
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  }
+  .gym-item .meta .place{color:var(--text);opacity:.85;}
+  .gym-item .meta .place::after{content:" · ";color:var(--text-dim);opacity:1;}
+  .gym-item .meta .tag-pill{margin-left:var(--sp-1);vertical-align:1px;}
+  .row-actions{display:flex;gap:2px;flex-shrink:0;}
+  .row-action{
+    appearance:none;
+    width:28px;height:28px;
+    display:inline-flex;align-items:center;justify-content:center;
+    border-radius:var(--r-sm);
+    border:1px solid transparent;
+    background:transparent;
+    color:var(--text-dim);
+    font-size:var(--fs-sm);
+    cursor:pointer;
+    transition:color .15s ease, border-color .15s ease, background-color .15s ease, transform .1s ease;
+  }
+  .row-action:hover{color:var(--text);border-color:var(--border);background:var(--surface);}
+  .row-action:active{transform:scale(0.9);}
+  .row-action.climbed-btn.active{color:var(--climbed);background:rgba(90,163,115,0.14);}
+  .row-action.bookmark-btn.active{color:var(--bookmark);background:rgba(224,178,60,0.14);}
+
   .tag-pill{
-    font-size:9.5px;
-    padding:1px 6px;
-    border-radius:4px;
-    border:1px solid var(--border);
-    text-transform:uppercase;
-    letter-spacing:.4px;
+    font-size:var(--fs-xs);
+    line-height:1.4;
+    padding:0 6px;
+    border-radius:var(--r-sm);
+    font-weight:500;
   }
-  .tag-pill.community{border-color:var(--community);color:var(--community);}
-  .tag-pill.edited{border-color:#8fb0d6;color:#8fb0d6;}
-  .empty-state{padding:24px 16px;color:var(--text-dim);font-size:var(--fs-md);text-align:center;}
-
-  .edit-icon-btn{
-    background:transparent;
-    border:1px solid var(--border);
-    color:var(--text-dim);
-    width:28px;height:28px;
-    border-radius:6px;
-    font-size:var(--fs-sm);
-    cursor:pointer;
-    flex-shrink:0;
-    display:flex;align-items:center;justify-content:center;
-    margin-top:1px;
-    transition:color .15s ease, border-color .15s ease, transform .1s ease;
+  .tag-pill.community{color:var(--community);background:rgba(232,217,160,0.12);}
+  .tag-pill.edited{color:var(--edited);background:rgba(143,176,214,0.12);}
+  .empty-state{padding:var(--sp-6) var(--sp-4);color:var(--text-dim);font-size:var(--fs-md);text-align:center;}
+  .empty-state p{margin:0 0 var(--sp-3);}
+  .skeleton-row{
+    display:flex;flex-direction:column;gap:6px;
+    padding:12px var(--sp-4);
+    border-bottom:1px solid rgba(74,68,56,0.45);
   }
-  .edit-icon-btn:hover{color:var(--text);border-color:var(--text-dim);}
-  .edit-icon-btn:active{transform:scale(0.9);}
+  .skeleton-row span{display:block;height:10px;border-radius:5px;background:var(--surface-2);}
+  .skeleton-row span:first-child{width:62%;height:12px;}
+  .skeleton-row span:last-child{width:40%;}
 
+  /* Popup versions of the mark buttons (popupHtml in js/app.js) */
   .mark-btn{
-    background:transparent;
+    appearance:none;
     border:1px solid var(--border);
+    background:transparent;
     color:var(--text-dim);
-    width:28px;height:28px;
-    border-radius:6px;
-    font-size:var(--fs-sm);
+    border-radius:var(--r-sm);
     cursor:pointer;
-    flex-shrink:0;
-    display:flex;align-items:center;justify-content:center;
-    margin-top:1px;
     transition:color .15s ease, border-color .15s ease, background-color .15s ease, transform .1s ease;
   }
   .mark-btn:hover{color:var(--text);border-color:var(--text-dim);}
-  .mark-btn:active{transform:scale(0.9);}
+  .mark-btn:active{transform:scale(0.96);}
   .mark-btn.climbed-btn.active{color:var(--climbed);border-color:var(--climbed);background:rgba(90,163,115,0.12);}
   .mark-btn.bookmark-btn.active{color:var(--bookmark);border-color:var(--bookmark);background:rgba(224,178,60,0.12);}
 

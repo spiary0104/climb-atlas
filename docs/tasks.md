@@ -72,6 +72,42 @@ Each entry:
 
 ## In Progress
 
+### UI/UX redesign — Stage D: sidebar list + filter panel
+- Branch: `feature/sidebar-list` — committed, merged to `master`, pushed.
+- Status: done.
+- What: the list rows showed raw internal `state` codes to users
+  (`MECKLENBURG_VORPOMMERN`, `SHANGHAI`), were plain `<div>`s (not
+  keyboard-reachable as a whole-row action), carried three bordered
+  icon boxes each (≈4500 little boxes across the list), and there was
+  no loading state — the panel was blank and the count read "0" until
+  Supabase answered.
+- **Rows**: each is now a `<button class="gym-main">` (fly to the spot)
+  plus a `.row-actions` group of borderless `.row-action` icon buttons
+  (border/background only on hover; climbed/bookmarked states tinted;
+  `aria-pressed` kept in sync by `updateMarkUI()`). Meta line is
+  `Suburb · Region · Country` using `stateLabel()` and
+  `COUNTRY_LABELS` — the same lookups the map labels already used — on
+  a single truncated line with the full text on the button's `title`.
+  Rows went 92px → 57px. Popups use `stateLabel()` too.
+- **Filter panel**: a "Region" section label above the accordion so it
+  matches "Type" / "My marks"; expanding a region/country still flies
+  the map there but collapsing no longer does (one click used to do
+  both, in both directions); every accordion `<button>` now carries
+  `aria-expanded`, set on init and kept in sync.
+- **States**: six `.skeleton-row` placeholders and a "…" count while
+  spots load; the empty state gained a "Clear filters" button
+  (`resetFilters()` in `js/app.js` — search, regions, types, marks all
+  back to default, chip `aria-pressed` and group `has-active` flags
+  reset with them).
+- `.tag-pill` moved off a 9.5px bordered box to an 11px tinted label;
+  its hardcoded `#8fb0d6` became a `--edited` token.
+- **Verified live**: first row is a `BUTTON`, meta reads
+  "Stuttgart · Baden-Württemberg · Germany", `title` carries the full
+  string; row heights 57px min at 1440 and at 375 (drawer open, no
+  horizontal overflow); Europe header `aria-expanded` goes
+  false → true → false across two clicks; a no-match search shows the
+  empty state and Clear filters restores 1513; no console errors.
+
 ### UI/UX redesign — Stage C: header + mobile layout
 - Branch: `feature/header-mobile-layout` — committed, merged to
   `master`, pushed.

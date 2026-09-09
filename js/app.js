@@ -820,7 +820,7 @@
     const bookmarked = bookmarkedIds.has(g.id);
     return `${g.photo?`<img class="popup-photo" src="${escapeHtml(g.photo)}" alt="${escapeHtml(g.name)}" onerror="this.style.display='none'">`:''}
        <div class="popup-name">${escapeHtml(g.name)}</div>
-       <div class="popup-meta">${escapeHtml(g.suburb)}, ${g.state} · ${typeLabel}${g.community?' · community-added':''}${g.edited?' · edited':''}</div>
+       <div class="popup-meta">${escapeHtml(g.suburb)}, ${escapeHtml(stateLabel(g.country, g.state))} · ${typeLabel}${g.community?' · community-added':''}${g.edited?' · edited':''}</div>
        ${g.address?`<div class="popup-address">${escapeHtml(g.address)}</div>`:''}
        ${g.notes?`<div style="font-size:12px;color:var(--text-dim)">${escapeHtml(g.notes)}</div>`:''}
        <div class="popup-actions">
@@ -841,30 +841,40 @@
     document.getElementById('countNum').textContent = visible.length;
 
     if(visible.length === 0){
-      list.innerHTML = '<div class="empty-state">No spots match. Try clearing filters or search.</div>';
+      list.innerHTML = `<div class="empty-state">
+        <p>No spots match these filters.</p>
+        <button type="button" class="btn btn-outline clear-filters">Clear filters</button>
+      </div>`;
     } else {
       visible.sort((a,b)=>a.name.localeCompare(b.name));
       visible.forEach(g=>{
         const climbed = climbedIds.has(g.id);
         const bookmarked = bookmarkedIds.has(g.id);
+        const region = stateLabel(g.country, g.state);
+        const country = COUNTRY_LABELS[g.country] || g.country;
 
         const item = document.createElement('div');
         item.className = 'gym-item';
         item.dataset.id = g.id;
         item.innerHTML = `
-          <div class="swatch" style="background:${typeSwatch(g.types)}"></div>
-          <div class="info">
-            <div class="name">${escapeHtml(g.name)}</div>
-            <div class="meta">
-              <span>${escapeHtml(g.suburb)}, ${g.state}</span>
-              ${g.community?'<span class="tag-pill community">Community</span>':''}
-              ${g.edited?'<span class="tag-pill edited">Edited</span>':''}
-            </div>
-          </div>
-          <button class="mark-btn climbed-btn ${climbed?'active':''}" title="Mark as climbed" aria-label="Mark as climbed">✓</button>
-          <button class="mark-btn bookmark-btn ${bookmarked?'active':''}" title="Bookmark" aria-label="Bookmark">★</button>
-          <button class="edit-icon-btn" title="Edit this spot" aria-label="Edit this spot">✎</button>`;
-        item.addEventListener('click', ()=>{
+          <button type="button" class="gym-main" title="${escapeHtml(g.suburb)}, ${escapeHtml(region)}, ${escapeHtml(country)}">
+            <span class="swatch" style="background:${typeSwatch(g.types)}" aria-hidden="true"></span>
+            <span class="info">
+              <span class="name">${escapeHtml(g.name)}</span>
+              <span class="meta">
+                <span class="place">${escapeHtml(g.suburb)}</span>
+                <span class="region">${escapeHtml(region)}${region !== country ? ' · ' + escapeHtml(country) : ''}</span>
+                ${g.community?'<span class="tag-pill community">Community</span>':''}
+                ${g.edited?'<span class="tag-pill edited">Edited</span>':''}
+              </span>
+            </span>
+          </button>
+          <span class="row-actions">
+            <button type="button" class="row-action climbed-btn ${climbed?'active':''}" title="Mark as climbed" aria-label="Mark as climbed" aria-pressed="${climbed}">✓</button>
+            <button type="button" class="row-action bookmark-btn ${bookmarked?'active':''}" title="Bookmark" aria-label="Bookmark" aria-pressed="${bookmarked}">★</button>
+            <button type="button" class="row-action edit-icon-btn" title="Edit this spot" aria-label="Edit this spot">✎</button>
+          </span>`;
+        item.querySelector('.gym-main').addEventListener('click', ()=>{
           const targetZoom = Math.max(map.getZoom(), 13);
           map.flyTo({center:[g.lng, g.lat], zoom: targetZoom, duration: motion(800)});
           // paintMarkers() (bound to 'moveend' at setup, before this one-off
@@ -910,27 +920,53 @@
     if(item){
       const cb = item.querySelector('.climbed-btn');
       const bb = item.querySelector('.bookmark-btn');
-      if(cb) cb.classList.toggle('active', climbedIds.has(spotId));
-      if(bb) bb.classList.toggle('active', bookmarkedIds.has(spotId));
+      if(cb){ const on = climbedIds.has(spotId); cb.classList.toggle('active', on); cb.setAttribute('aria-pressed', String(on)); }
+      if(bb){ const on = bookmarkedIds.has(spotId); bb.classList.toggle('active', on); bb.setAttribute('aria-pressed', String(on)); }
     }
   }
 
+  function resetFilters(){
+    searchTerm = '';
+    document.getElementById('searchInput').value = '';
+    activeStates = new Set(['ALL']);
+    activeTypes = new Set(['indoor-bouldering','top-rope','lead-climbing']);
+    showClimbedOnly = false;
+    showBookmarkedOnly = false;
+    document.querySelectorAll('.chip').forEach(c=>{
+      const on = c.dataset.state === 'ALL';
+      c.classList.toggle('active', on);
+      c.setAttribute('aria-pressed', String(on));
+    });
+    document.querySelectorAll('.country-group, .region-group').forEach(g=>g.classList.remove('has-active'));
+    document.querySelectorAll('#typeFilters input[data-type]').forEach(i=>{ i.checked = true; });
+    document.getElementById('filterClimbed').checked = false;
+    document.getElementById('filterBookmarked').checked = false;
+    render();
+  }
+  document.getElementById('gymList').addEventListener('click', (e)=>{
+    if(e.target.closest('.clear-filters')) resetFilters();
+  });
+
   // --- filter controls ---
   document.getElementById('stateChips').addEventListener('click', (e)=>{
+    // Expanding a region/country also flies the map there; collapsing it
+    // is just tidying the panel and shouldn't move the camera.
     const regionHeader = e.target.closest('.region-header');
     if(regionHeader){
       const group = regionHeader.closest('.region-group');
-      group.classList.toggle('collapsed');
+      const expanded = !group.classList.toggle('collapsed');
+      regionHeader.setAttribute('aria-expanded', String(expanded));
       const target = REGION_FLY_TARGETS[group.dataset.region];
-      if(target) map.flyTo({center: target.center, zoom: target.zoom, duration: motion(1500)});
+      if(expanded && target) map.flyTo({center: target.center, zoom: target.zoom, duration: motion(1500)});
       return;
     }
     const label = e.target.closest('.country-label');
     if(label){
       const group = label.closest('.country-group');
-      group.classList.toggle('collapsed');
+      const expanded = !group.classList.toggle('collapsed');
+      label.setAttribute('aria-expanded', String(expanded));
       const target = COUNTRY_FLY_TARGETS[group.dataset.country];
-      if(target) map.flyTo({center: target.center, zoom: target.zoom, duration: motion(1500)});
+      if(expanded && target) map.flyTo({center: target.center, zoom: target.zoom, duration: motion(1500)});
       return;
     }
     const chip = e.target.closest('.chip');
@@ -1956,6 +1992,14 @@
   });
 
   async function init(){
+    // Accordion buttons expose their state; every group starts collapsed.
+    document.querySelectorAll('.region-header, .country-label').forEach(b=>{
+      b.setAttribute('aria-expanded', String(!b.parentElement.classList.contains('collapsed')));
+    });
+    // Placeholder rows while Supabase answers, so the panel isn't blank and
+    // the count doesn't read "0" for the first second.
+    document.getElementById('gymList').innerHTML = Array.from({length:6}, ()=>'<div class="skeleton-row" aria-hidden="true"><span></span><span></span></div>').join('');
+    document.getElementById('countNum').textContent = '…';
     await window.auth.init();
     window.auth.onChange(async (user)=>{
       renderAuthUI(user);
