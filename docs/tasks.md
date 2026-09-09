@@ -72,6 +72,33 @@ Each entry:
 
 ## In Progress
 
+### UI/UX redesign — Stage G: performance
+- Branch: `feature/perf-deferred-seed` — committed, merged to `master`,
+  pushed.
+- Status: done.
+- **`js/data.js` is no longer downloaded on every page load.** It's
+  ~600KB (1513 spots) and was only ever the offline fallback once
+  Supabase went live, yet every visitor fetched it. `app.js` now loads
+  it on demand via `ensureSeedData()` (one-shot script injection →
+  `window.SEED_GYMS`); `loadSpots()`'s fallback branch awaits it, as do
+  `openEditModal()` (only for an edited non-community spot, so the
+  "Revert to original" check still works) and the revert handler. The
+  static `<script src="js/data.js">` is gone from `index.html`; the
+  load-order note in `CLAUDE.md`, `README.md`, and `docs/architecture.md`
+  updated to match. `supabase/seed.html` / `geocode.html` still include
+  it directly.
+- `<link rel="preconnect">` for unpkg, jsdelivr, basemaps.cartocdn.com,
+  and fonts.gstatic.com. MapLibre pinned to `5.24.0` (what `@5`
+  currently resolves to on unpkg, and the build whose globe support was
+  verified) instead of the floating major tag.
+- **Verified live, both paths**: live Supabase — count 1513,
+  `window.SEED_GYMS` undefined, no `js/data.js` request in the resource
+  timeline, both MapLibre assets at `5.24.0`, no console errors.
+  Forced-offline (the usual temporary invalid `SUPABASE_URL`, reverted
+  after) — `data.js` requested on demand, 1513 rows rendered, offline
+  banner shown, only the deliberately-forced Supabase errors in the
+  console.
+
 ### UI/UX redesign — Stage F: form feedback + modal chrome
 - Branch: `feature/forms-validation` — committed, merged to `master`,
   pushed.

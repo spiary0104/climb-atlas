@@ -23,7 +23,11 @@ supabase/geocode.html    Maintenance tool — re-geocodes spot addresses against
 
 Script load order in `index.html` matters: the Supabase JS CDN script, then
 `supabase-init.js` (defines `window.sb`), then `auth.js` (defines `window.auth`), then
-`data.js` (defines `window.SEED_GYMS`), then `app.js`, which depends on all of the above.
+`app.js`, which depends on both. `data.js` (defines `window.SEED_GYMS`, ~600KB) is not a
+static script any more — `app.js` loads it on demand (`ensureSeedData()`) only when
+Supabase is unreachable (the offline fallback) or when an edited seed spot's original
+values are needed for "Revert to original". `supabase/seed.html` and `geocode.html` still
+include it directly.
 
 ## Setup (required — the app doesn't do anything useful until this is done)
 

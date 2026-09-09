@@ -1429,9 +1429,12 @@
   });
 
   // --- edit spot flow ---
-  function openEditModal(id){
+  async function openEditModal(id){
     const g = spots.find(x=>x.id===id);
     if(!g) return;
+    // Only an edited seed spot can be reverted, and only the seed file knows
+    // its original values -- pull it in for that case alone.
+    if(g.edited && !g.community) await ensureSeedData().catch(()=>{});
     currentEditId = id;
     currentEditPin = {lat: g.lat, lng: g.lng};
     document.getElementById('eName').value = g.name;
@@ -1543,7 +1546,7 @@
     if(!currentEditId) return;
     if(!window.sb){ showToast('Supabase is not configured — see README.md'); return; }
     const id = currentEditId;
-    const original = (window.SEED_GYMS||[]).find(s=>s.id===id);
+    const original = (await ensureSeedData().catch(()=>[])).find(s=>s.id===id);
     if(!original){ showToast('No original data to revert to'); return; }
     const proposal = {
       spot_id: id,
@@ -1611,6 +1614,24 @@
   });
 
   // --- load spots + marks on start ---
+  // js/data.js (the ~600KB bundled seed dataset) is only needed when Supabase
+  // is unreachable, or to offer "Revert to original" on an edited seed spot
+  // -- so it's fetched on demand rather than on every page load.
+  let seedDataPromise = null;
+  function ensureSeedData(){
+    if(window.SEED_GYMS) return Promise.resolve(window.SEED_GYMS);
+    if(!seedDataPromise){
+      seedDataPromise = new Promise((resolve, reject)=>{
+        const s = document.createElement('script');
+        s.src = 'js/data.js';
+        s.onload = ()=> resolve(window.SEED_GYMS || []);
+        s.onerror = ()=>{ seedDataPromise = null; reject(new Error('Could not load js/data.js')); };
+        document.head.appendChild(s);
+      });
+    }
+    return seedDataPromise;
+  }
+
   async function loadSpots(){
     if(window.sb){
       try{
@@ -1635,7 +1656,7 @@
       }
     }
     usingFallback = true;
-    spots = (window.SEED_GYMS || []).slice();
+    spots = (await ensureSeedData().catch(err=>{ console.error(err); return []; })).slice();
   }
 
   async function checkModerator(){

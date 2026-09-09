@@ -27,9 +27,21 @@ supabase/seed.html       Run once in a browser — loads the spots table from js
 
 **Script load order in `index.html` matters**: Supabase JS CDN script →
 `supabase-init.js` (defines `window.sb`) → `auth.js` (defines
-`window.auth`) → `data.js` (defines `window.SEED_GYMS`) → `app.js`, which
-depends on all of the above. Breaking this order breaks the app silently
-(check the browser console).
+`window.auth`) → `app.js`, which depends on both. Breaking this order
+breaks the app silently (check the browser console). **`js/data.js` is
+deliberately not in that chain any more** (redesign Stage G): it's
+~600KB and only matters when Supabase is unreachable or when "Revert to
+original" needs an edited seed spot's original values, so `app.js` loads
+it on demand via `ensureSeedData()` (a one-shot script injection that
+resolves to `window.SEED_GYMS`). `loadSpots()`'s fallback branch,
+`openEditModal()` (for edited, non-community spots only) and the revert
+handler await it; the other `window.SEED_GYMS || []` lookups are
+best-effort fallbacks that already tolerate it being absent. The
+one-off tools `supabase/seed.html` and `supabase/geocode.html` include
+`data.js` directly and are unaffected. MapLibre is pinned to an exact
+version (`5.24.0`, the build whose globe support was verified — see
+"Map") rather than the floating `@5` tag, so a CDN-side minor bump can't
+change rendering underneath the app.
 
 ## Data model
 

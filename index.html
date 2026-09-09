@@ -11,8 +11,12 @@
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23211f1b'/%3E%3Cpath d='M16 5c5 0 8 4 8 8.5S20 26 16 27c-4-1-8-9.5-8-13.5S11 5 16 5z' fill='%23b8834a'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://unpkg.com">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="preconnect" href="https://basemaps.cartocdn.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5/dist/maplibre-gl.css">
+<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.css">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -1010,12 +1014,14 @@
   </div>
 </div>
 
-<script src="https://unpkg.com/maplibre-gl@5/dist/maplibre-gl.js"></script>
+<script src="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.js"></script>
 <script src="https://unpkg.com/supercluster@8/dist/supercluster.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script src="js/supabase-init.js"></script>
 <script src="js/auth.js"></script>
-<script src="js/data.js"></script>
+<!-- js/data.js (the bundled seed dataset) is loaded on demand by app.js
+     (ensureSeedData) -- only when Supabase is unreachable or an edited seed
+     spot's original values are needed -- not as a static script here. -->
 <script src="js/app.js"></script>
 </body>
 </html>

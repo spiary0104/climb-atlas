@@ -28,7 +28,10 @@ Before modifying code:
    `js/auth.js`, `js/supabase-init.js`, `css/style.css`, `supabase/schema.sql`).
 2. Understand the architecture (`docs/architecture.md`).
 3. Identify dependencies — script load order in `index.html` matters:
-   Supabase CDN → `supabase-init.js` → `auth.js` → `data.js` → `app.js`.
+   Supabase CDN → `supabase-init.js` → `auth.js` → `app.js`. `js/data.js`
+   is no longer a static `<script>`: `app.js` fetches it on demand
+   (`ensureSeedData()`) only when Supabase is unreachable or an edited
+   seed spot's original values are needed.
 4. State the intended approach.
 5. Implement the smallest correct change.
 
