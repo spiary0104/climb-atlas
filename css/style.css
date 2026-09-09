@@ -280,6 +280,9 @@
     --shadow-float:0 12px 30px -10px rgba(10,9,7,0.6), 0 2px 8px rgba(10,9,7,0.35);
   }
   *{box-sizing:border-box;}
+  /* Form controls don't inherit the page font by default (they'd fall back
+     to the UA's 13.3px Arial) -- make every button/input pick it up. */
+  button,input,select,textarea{font-family:inherit;}
   /* Keyboard focus ring for every interactive element -- :focus-visible so
      mouse clicks on buttons don't paint it, but keyboard users always get it. */
   :where(button, a, input, select, textarea, [tabindex]):focus-visible{

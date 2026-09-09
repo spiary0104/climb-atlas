@@ -36,39 +36,26 @@ Each entry:
 
 ## Backlog
 
-### UI/UX redesign — remaining stages (B–H)
-- Status: backlog, in priority order. Stage A (below, In Progress) is
-  done; each later stage is its own branch, verified live at
-  1440/1280/1024/768/430/375/320 before merge, so the site stays usable
-  between stages.
-- **B. Design tokens** — real type scale (11/12/13/14/16/20), 4px spacing
-  scale, radius scale (4/8/12), semantic colour tokens (`--accent`,
-  `--focus`, `--success`, `--danger`) decoupled from the AU state palette
-  (`--vic` is currently doing double duty as the app accent, `--qld` as
-  "climbed", `--nsw` was the focus ring). Move each chip's colour onto a
-  per-element custom property (`style="--chip:var(--x)"`) so one
-  `.chip.active{background:var(--chip)}` rule replaces the 232
-  per-`(country,state)` rules and the `!important` in `css/style.css`.
-  Retire Space Mono to numeric data only (counts, coordinates, grades,
-  `tabular-nums`); Space Grotesk for display/controls, Inter for body.
-- **C. Header** — one primary CTA, secondary actions grouped; on
-  <760px collapse to a single row (logo · count · CTA · menu) instead of
-  the current 4 stacked rows (~207px of a 812px viewport before the map).
-- **D. Sidebar** — show human-readable region labels in list rows (not
-  raw `state` codes like `MECKLENBURG_VORPOMMERN`), 2-line rows, filter
-  panel hierarchy, a loading state while Supabase answers, and separate
-  "expand group" from "fly to country" (one click currently does both).
-- **E. Map** — initial camera that fills the canvas, suppress CARTO's
-  built-in continent labels where the app paints its own, legend + popup
-  restyle on the new tokens.
-- **F. Forms** — inline validation messages (why is Submit disabled?),
-  consistent modal chrome.
-- **G. Perf** — defer `js/data.js` (608KB) until the offline fallback is
-  actually needed, `<link rel="preconnect">` for unpkg/jsdelivr/cartocdn,
-  pin MapLibre to an exact version.
-- **H. Polish** — About page restyle, README/meta copy (still says
-  "crags" and lists 6 countries), dead-token cleanup (`--t-outdoor`,
-  empty `.spot-number-marker{}`, stray hex colours).
+### Redesign follow-ups (optional, not blocking)
+- Status: backlog. The eight-stage redesign (A–H, see In Progress) is
+  complete and live on `master`. These are the things that pass left on
+  the table, in rough priority order:
+- **A human look in a real browser.** Every stage was verified via DOM
+  measurement plus screenshots, but the in-app Browser pane was hidden
+  for much of it, and a hidden pane doesn't run MapLibre's canvas
+  resize or CSS transitions — so the *globe's* on-screen framing at each
+  viewport (the `initialZoom()` formula's actual result) and the
+  drawer/menu transitions were checked numerically, not seen. Worth one
+  pass on a real phone and a wide monitor.
+- **Row-action discoverability.** The list rows' climbed/bookmark/edit
+  buttons are deliberately borderless until hovered (the old bordered
+  version read as ~4500 boxes). If people miss them on touch devices,
+  the fix is a faint always-on background on `.row-action` at
+  `@media (hover:none)`.
+- **List virtualisation** only if the dataset roughly doubles again —
+  `render()` builds all 1513 rows in ~20ms today, fine.
+- **Legal copy review** — Privacy/Terms are still the plain-language
+  drafts; the `.legal-note` on Terms says so.
 
 ## In Progress
 

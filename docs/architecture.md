@@ -2975,6 +2975,52 @@ from one source:
     Not yet pushed to the live Supabase table — same outstanding step as
     every prior correction pass in this series.
 
+## Design system
+
+Everything visual is built from the tokens at the top of `css/style.css`
+— add to them rather than around them.
+
+- **Two layers of colour.** The long per-region list (`--nsw`, `--de-
+  bayern`, `--cn-shanghai`, …) is the *map palette* and only ever
+  colours a region's chip/label. The UI itself uses the *semantic*
+  tokens below it: `--accent`/`--accent-ink` (the one ember-orange
+  call-to-action colour and the dark text that sits on it), `--success`,
+  `--danger`, `--focus`, `--climbed`, `--bookmark`, `--community`,
+  `--edited`, and three surface tones `--bg` < `--surface` <
+  `--surface-2` that do the separating — borders (`--border`) are for
+  structure (dividers, inputs), not for outlining every element. Don't
+  reuse a state colour for a UI meaning again (`--vic` used to be the
+  accent, `--qld` "climbed", `--nsw` the focus ring).
+- **Type.** `--font-display` (Space Grotesk) for the wordmark, headings,
+  and controls; `--font-body` (Inter) for content and forms;
+  `--font-mono` (Space Mono) only for numeric data — the count badge,
+  pin coordinates, climb grades — always with `tabular-nums`. Sizes come
+  from `--fs-xs`…`--fs-xl` (11/12/13/14/16/20) plus a 28px display step
+  on the About page; line-heights `--lh-tight` (1.25) and `--lh-body`
+  (1.5). Section labels are small display-font caps; form labels
+  sentence case.
+- **Space and shape.** `--sp-1`…`--sp-6` (4/8/12/16/24/32),
+  `--r-sm/md/lg` (6/8/12: chips and tags / controls and inputs / panels
+  and modals), one floating-layer shadow `--shadow-float`.
+- **Buttons** (`.btn` + `.btn-primary` / `.btn-outline` / `.btn-text`,
+  `.icon-btn` for square toggles). One accent-filled action per
+  surface; outline for secondary; text for navigation. Modal forms keep
+  their own full-width `.add-btn` / `.btn-submit` / `.btn-cancel`.
+- **Chips** carry their region colour as `style="--chip:var(--xx-yyy)"`
+  (see "Map" below for why that replaced an inline `color`), and are
+  `<button aria-pressed>`.
+- **Motion.** 150–200ms ease on state changes; camera moves go through
+  `motion()` in `js/app.js` and every CSS transition is collapsed under
+  `prefers-reduced-motion: reduce`.
+- **Accessibility floor**, kept since redesign Stage A: every interactive
+  element is a real `<button>`/`<a>`/input with a `:focus-visible` ring
+  in `--focus`; every input has an associated label; modals carry
+  `role="dialog"` + `aria-labelledby`, move focus in on open, trap Tab,
+  restore focus and close on Escape (one generic block in `js/app.js`
+  watching `.modal-backdrop` class flips); accordions and toggles expose
+  `aria-expanded`; there's a skip link to `#main`; icon targets are
+  ≥28px.
+
 ## Form field CSS specificity
 
 The add/edit-spot forms' `.type-check` checkbox rows (`css/style.css`)
