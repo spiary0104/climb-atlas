@@ -732,6 +732,29 @@
 
   .map-wrap{flex:1;position:relative;min-width:0;}
   #map{position:absolute;inset:0;background:var(--bg);}
+  /* At wide viewports the globe fills only a fraction of this area, leaving
+     a large flat expanse of the map's own rendered "space" background
+     (sky-color, set via map.setSky() in js/app.js) that reads as empty
+     rather than intentional. Can't paint behind the canvas -- MapLibre's
+     WebGL surface is opaque and covers the full container -- so this sits
+     on top instead. First attempt darkened the far corners (a classic
+     vignette), but sky-color is already near-black (#0d0b09) -- adding more
+     black on top of near-black has essentially no visible effect, there's
+     no perceptual room left to get darker. Flipped it instead: stays fully
+     transparent through the centre ~50% where the globe/markers/legend
+     text live, and gently LIFTS the far corners toward the app's own
+     --surface tone at low alpha -- a real, visible tonal shift rather than
+     a no-op, using a colour already in the palette rather than a new one.
+     pointer-events:none and a z-index below the legend/toast/banners
+     (400/900) so it never affects interaction or dims the UI chrome. */
+  .map-wrap::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:2;
+    pointer-events:none;
+    background:radial-gradient(ellipse at center, transparent 50%, rgba(55,51,42,0.5) 100%);
+  }
 
   .legend{
     position:absolute;
