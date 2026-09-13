@@ -634,10 +634,23 @@
   .gym-item .info{min-width:0;flex:1;display:block;}
   .gym-item .name{display:block;font-size:var(--fs-base);font-weight:600;line-height:var(--lh-tight);}
   .gym-item .meta{
-    display:block;
+    /* Was a single nowrap+ellipsis line -- at the sidebar's ~180px text
+       column, most region/country combos ("Baden-Württemberg · Germany",
+       "Provence-Alpes-Côte d'Azur (Marseille) · France") truncated well
+       before the country name, hiding exactly the info someone's scanning
+       the list for -- and on touch devices there's no hover to recover it
+       via the `title` fallback. Clamped to 2 lines instead of 1: most
+       meta strings still fit on one line and the row stays compact (57px,
+       matching .name's own uncapped wrap above it); only genuinely long
+       ones now wrap instead of disappearing. Still capped, not unlimited,
+       so one pathological string can't blow out a row's height next to
+       its neighbours. */
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:2;
     margin-top:2px;
     font-size:var(--fs-sm);line-height:1.4;color:var(--text-dim);
-    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+    overflow:hidden;
   }
   .gym-item .meta .place{color:var(--text);opacity:.85;}
   .gym-item .meta .place::after{content:" · ";color:var(--text-dim);opacity:1;}
