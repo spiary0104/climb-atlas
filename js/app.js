@@ -1120,6 +1120,27 @@
     document.getElementById('legendToggle').setAttribute('aria-expanded', String(!collapsed));
   });
 
+  // First-visit hint: shown once per browser (a plain boolean flag, nothing
+  // personal), dismissed by its own close button, any real interaction with
+  // the map, or a timeout -- never blocks anything else. localStorage reads/
+  // writes are wrapped since private-browsing modes can throw on access.
+  (function initFirstVisitHint(){
+    const hintBanner = document.getElementById('hintBanner');
+    let hintSeen = true;
+    try{ hintSeen = localStorage.getItem('climbatlas_hint_seen') === '1'; }catch(err){ /* ignore */ }
+    if(hintSeen) return;
+    function dismissHint(){
+      hintBanner.classList.remove('show');
+      try{ localStorage.setItem('climbatlas_hint_seen', '1'); }catch(err){ /* ignore */ }
+    }
+    hintBanner.classList.add('show');
+    document.getElementById('hintDismiss').addEventListener('click', dismissHint);
+    map.once('click', dismissHint);
+    map.once('dragstart', dismissHint);
+    map.once('zoomstart', dismissHint);
+    setTimeout(dismissHint, 10000);
+  })();
+
   // --- toast ---
   function showToast(msg){
     const t = document.getElementById('toast');

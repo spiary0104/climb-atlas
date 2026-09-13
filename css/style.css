@@ -793,6 +793,51 @@
   }
   .placing-banner.show{display:block;}
 
+  /* First-visit-only hint: the map's single most important affordance
+     (click a cluster to zoom in) otherwise only lives inside the Legend,
+     which starts collapsed on mobile and is easy to miss as just a corner
+     panel on desktop. Same floating-banner language as .toast/.placing-
+     banner above so it reads as part of the same UI, not a new pattern. */
+  .hint-banner{
+    position:absolute;
+    top:16px;
+    left:50%;
+    transform:translateX(-50%) translateY(-8px);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    background:var(--surface);
+    border:1px solid var(--border);
+    color:var(--text);
+    padding:9px 8px 9px 16px;
+    border-radius:8px;
+    font-family:var(--font-body);
+    font-size:var(--fs-sm);
+    box-shadow:var(--shadow-float);
+    z-index:900;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .25s ease, transform .25s ease;
+    white-space:nowrap;
+  }
+  .hint-banner.show{
+    opacity:1;
+    transform:translateX(-50%) translateY(0);
+    pointer-events:auto;
+  }
+  .hint-dismiss{
+    appearance:none;
+    background:none;
+    border:none;
+    color:var(--text-dim);
+    font-size:16px;
+    line-height:1;
+    cursor:pointer;
+    padding:2px 4px;
+    border-radius:4px;
+  }
+  .hint-dismiss:hover{color:var(--text);}
+
   /* modal */
   .modal-backdrop{
     position:fixed;inset:0;background:rgba(10,9,7,0.65);
