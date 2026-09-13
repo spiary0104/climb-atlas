@@ -312,10 +312,20 @@
     // the 5 this first seed-data pass happens to use.
     ZA: [['EASTERN_CAPE','Eastern Cape'],['FREE_STATE','Free State'],['GAUTENG','Gauteng'],
          ['KWAZULU_NATAL','KwaZulu-Natal'],['LIMPOPO','Limpopo'],['MPUMALANGA','Mpumalanga'],
-         ['NORTH_WEST','North West'],['NORTHERN_CAPE','Northern Cape'],['WESTERN_CAPE','Western Cape']]
+         ['NORTH_WEST','North West'],['NORTHERN_CAPE','Northern Cape'],['WESTERN_CAPE','Western Cape']],
+    // Ecuador's 24 real provinces, complete from the start same as every
+    // country since the NL state-list-completeness fix.
+    EC: [['AZUAY','Azuay'],['BOLIVAR','Bolívar'],['CANAR','Cañar'],['CARCHI','Carchi'],
+         ['CHIMBORAZO','Chimborazo'],['COTOPAXI','Cotopaxi'],['EL_ORO','El Oro'],
+         ['ESMERALDAS','Esmeraldas'],['GALAPAGOS','Galápagos'],['GUAYAS','Guayas'],
+         ['IMBABURA','Imbabura'],['LOJA','Loja'],['LOS_RIOS','Los Ríos'],['MANABI','Manabí'],
+         ['MORONA_SANTIAGO','Morona Santiago'],['NAPO','Napo'],['ORELLANA','Orellana'],
+         ['PASTAZA','Pastaza'],['PICHINCHA','Pichincha'],['SANTA_ELENA','Santa Elena'],
+         ['SANTO_DOMINGO','Santo Domingo de los Tsáchilas'],['SUCUMBIOS','Sucumbíos'],
+         ['TUNGURAHUA','Tungurahua'],['ZAMORA_CHINCHIPE','Zamora Chinchipe']]
   };
   const TYPE_LABELS = {'indoor-bouldering':'Indoor bouldering','top-rope':'Top rope','lead-climbing':'Lead climbing'};
-  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy', BE:'Belgium', KR:'South Korea', ES:'Spain', PT:'Portugal', AT:'Austria', CH:'Switzerland', PL:'Poland', DK:'Denmark', FI:'Finland', IE:'Ireland', NO:'Norway', MX:'Mexico', BR:'Brazil', HU:'Hungary', GR:'Greece', CZ:'Czech Republic', IS:'Iceland', RO:'Romania', HR:'Croatia', RU:'Russia', BG:'Bulgaria', AR:'Argentina', PH:'Philippines', CO:'Colombia', CL:'Chile', VE:'Venezuela', IN:'India', IL:'Israel', ID:'Indonesia', TW:'Taiwan', ZA:'South Africa'};
+  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy', BE:'Belgium', KR:'South Korea', ES:'Spain', PT:'Portugal', AT:'Austria', CH:'Switzerland', PL:'Poland', DK:'Denmark', FI:'Finland', IE:'Ireland', NO:'Norway', MX:'Mexico', BR:'Brazil', HU:'Hungary', GR:'Greece', CZ:'Czech Republic', IS:'Iceland', RO:'Romania', HR:'Croatia', RU:'Russia', BG:'Bulgaria', AR:'Argentina', PH:'Philippines', CO:'Colombia', CL:'Chile', VE:'Venezuela', IN:'India', IL:'Israel', ID:'Indonesia', TW:'Taiwan', ZA:'South Africa', EC:'Ecuador'};
   // Fixed camera target per country for the "fly to this country" click on
   // its sidebar label -- picked to frame that country's actual spread of
   // seed spots (e.g. US needs a wide zoom to fit both NY and CA), not a
@@ -364,7 +374,8 @@
     IL: {center:[35,32], zoom:7},
     ID: {center:[110,-3], zoom:4},
     TW: {center:[121,24.3], zoom:7},
-    ZA: {center:[26,-29], zoom:4.4}
+    ZA: {center:[26,-29], zoom:4.4},
+    EC: {center:[-78.5,-1.5], zoom:5.8}
   };
   // Which sidebar region-group each country belongs to -- same grouping as
   // the `.region-group[data-region]` wrappers in index.html, kept here too
@@ -379,6 +390,7 @@
     CA:'north-america', US:'north-america', MX:'north-america',
     AU:'oceania', NZ:'oceania',
     BR:'south-america', AR:'south-america', CO:'south-america', CL:'south-america', VE:'south-america',
+    EC:'south-america',
     ZA:'africa'
   };
   const REGION_LABELS = {asia:'Asia', europe:'Europe', 'north-america':'North America', oceania:'Oceania', 'south-america':'South America', africa:'Africa'};

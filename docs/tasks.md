@@ -3788,6 +3788,37 @@ _(none)_
 
 ## Done (recent)
 
+### Add Ecuador (11 gyms, next-largest missing country)
+- Branch: `feature/add-ecuador` — merged to `master`, pushed.
+- Status: done — merged.
+- What: user asked to "add the next country that we're missing with the
+  most gyms." Cross-referenced boulderinglist.com's full 84-country gym-
+  count list against the ~43 countries already in this dataset. Skipped
+  the nominal largest missing entry ("Georgia," 14 gyms) — a known trap
+  already documented in `docs/architecture.md`: that listing conflates
+  the country with the US state of Georgia. Ecuador (8 gyms on
+  boulderinglist, cross-checked against climbing-gyms.com's own smaller,
+  only-partially-overlapping Ecuador listing) is the next genuinely-
+  largest missing country. Every candidate from both directories
+  individually web-searched for real/current status and actual climbing
+  type. One excluded on scope grounds (El Muro, Cumbayá — outdoor,
+  "only covered with a roof"). Full per-gym sourcing, the "LA ROCA" →
+  El Rocodromo identification, and the rejected wrong-city geocode are in
+  `docs/architecture.md` "Seed data sourcing".
+- `state` uses Ecuador's 24 real provinces, populated complete from the
+  start (8 have a seed spot and a sidebar chip/colour).
+- Net result: 1525 → **1536 total spots**. Structural check (Node-parsed
+  `window.SEED_GYMS`): 1536/1536 unique ids, zero duplicate
+  name+suburb+state+country combos, every spot has a non-empty `types`
+  array.
+- **Verified**: same offline-fallback-forcing method as every prior batch
+  — count reads 1536; all 11 new spots searchable by "ecuador"; the
+  Pichincha chip correctly filters to exactly 4 spots; the new Ecuador
+  country `<option>` present in both forms; no console errors; no
+  horizontal overflow at 375px mobile.
+- **Not yet done**: running the regenerated seed SQL against the live
+  Supabase table — same outstanding step as every prior country addition.
+
 ### Add South Africa (12 gyms, first African country)
 - Branch: `feature/add-south-africa` — merged to `master`, pushed.
 - Status: done — merged.

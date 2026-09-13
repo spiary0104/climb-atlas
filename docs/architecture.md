@@ -3069,6 +3069,84 @@ from one source:
     375px mobile with the new chip row expanded.
   - **Not yet pushed to the live Supabase table** — same next-step gap as
     every prior country addition.
+- **Ecuador (11 gyms, 8 provinces)** — added on request to "add the next
+  country that we're missing with the most gyms." Cross-referenced
+  boulderinglist.com's full 84-country gym-count list against every
+  country already in this dataset. The nominal largest missing country,
+  "Georgia" at 14 gyms, was skipped — a known trap already documented in
+  this file: boulderinglist.com's own "Georgia" listing conflates the
+  country with the US state of Georgia, with only ~1 real gym actually
+  belonging to the country. Ecuador (8 gyms on boulderinglist, cross-
+  checked against climbing-gyms.com's own smaller, partially-overlapping
+  Ecuador listing) is the next genuinely-largest missing country.
+  - **Two directories gave substantially different, only lightly-
+    overlapping gym lists for the same country** — boulderinglist.com's 8
+    (Quito ×3, Ambato, Azogues, Ibarra, Portoviejo, Puyo) and climbing-
+    gyms.com's 4 (Quito ×2, Guayaquil, Puyo) shared no gym names in
+    common except Puyo. Every candidate from both lists was individually
+    web-searched rather than trusting either directory's count at face
+    value.
+  - **One candidate excluded on scope grounds**: El Muro (Cumbayá/
+    Lumbisí, one of climbing-gyms.com's two Quito listings) — its own
+    coverage describes both the boulder area and the climbing routes as
+    outdoor, "only covered with a roof" — not a fully enclosed indoor
+    facility, the same "roof alone isn't indoor" scope exclusion already
+    applied to Huayan Climbing Park (China) and other outdoor venues in
+    this dataset.
+  - **One boulderinglist.com listing ("LA ROCA") couldn't be found under
+    that name anywhere** — independently identified instead as El
+    Rocodromo ("Ciudad de Quito"), a well-documented major climbing
+    complex in La Vicentina that's otherwise absent from this dataset's
+    candidate list, and boulderinglist's own count of "3 gyms in Quito"
+    only reconciles if this is the third. Kept under its real, verifiable
+    name rather than the directory's unconfirmed label, the same
+    treatment as MegaSTONE Climbing Gym (Taiwan). It's a mixed indoor/
+    outdoor complex (an explicit indoor gym plus boulder caves, alongside
+    a separate large exterior bouldering area) — kept for its confirmed
+    indoor bouldering + top-rope component.
+  - **Monodedo turned out to be a 2-branch chain**: its own Quito
+    location (climbing-gyms.com's listing) plus an independently
+    confirmed second location in Cuenca — Azuay's first-ever gym in this
+    dataset — added as a distinct spot rather than assumed to be the same
+    single location either list implied.
+  - **One access check, resolved without exclusion**: Max Climbing Club
+    (Guayaquil) operates out of a stadium climbing wall, which could have
+    read as a restricted team facility — its own site confirms public
+    programs from age 5, not a closed club, so it was kept without
+    caveats.
+  - **Positions individually geocoded** against Nominatim, Photon as a
+    second pass for no-matches — 9 of 11 resolved on the first Nominatim
+    try. One Photon result was caught and rejected as a wrong-city match
+    before being used: Iguana's (Ambato, Tungurahua) address query
+    matched a same-named street, "Consejo Provincial," that also exists
+    in Esmeraldas province, hundreds of km away — rejected in favour of
+    an Ambato city-centre fallback instead, the same "same street name
+    exists elsewhere" failure mode already documented for Croatia/
+    Russia/the Philippines/South Africa.
+  - **Climbing type applied only from direct evidence, same discipline as
+    every batch since Beijing** — 7 of 11 are bouldering-only (both
+    Monodedo locations, Iguana, CECAMP, Complejo La California, Muro de
+    Puyo), 1 is bouldering + lead only with no top-rope evidence (Max
+    Climbing Club), and 3 are bouldering + top-rope (El Rocodromo,
+    Vertigo Escalada, Complejo de Yacucalle).
+  - `state` uses Ecuador's real 24 provinces, populated complete from the
+    start (same standard as every country since the NL fix) — 8 have a
+    seed spot and a sidebar chip/colour: Pichincha, Azuay, Tungurahua,
+    Cañar, Imbabura, Manabí, Guayas, Pastaza.
+  - Net result: 1525 → **1536 total spots**. Structural check (Node-parsed
+    `window.SEED_GYMS`): 1536/1536 unique ids, zero duplicate
+    name+suburb+state+country combos, every spot has a non-empty `types`
+    array.
+  - **Verified live** (served copy, `npx serve .`, offline-fallback-forcing
+    method): count reads 1536; searching "ecuador" returns all 11 spots;
+    the Pichincha chip correctly filters to exactly 4 spots; the new
+    Ecuador country `<option>` present in both add/edit forms (South
+    America optgroup, between Colombia and Venezuela); chip active-state
+    text confirmed legible via computed style; no console errors beyond
+    the deliberately-forced Supabase-unreachable ones; no horizontal
+    overflow at 375px mobile with the region/country expanded.
+  - **Not yet pushed to the live Supabase table** — same next-step gap as
+    every prior country addition.
 
 ## Design system
 
