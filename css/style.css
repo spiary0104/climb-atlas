@@ -1152,6 +1152,20 @@
     letter-spacing:.08em;
     color:var(--accent);
   }
+  /* MapLibre's globe projection auto-dims any marker on the sphere's far
+     side (adds .maplibregl-marker-covered + an inline opacity:0.2) so it
+     reads as "rotate to see this". Correct for real data markers, but the
+     fixed default camera (mid-Pacific, chosen when only AU+US existed --
+     see "Don't fitBounds..." above) means Europe and South America sit on
+     that far side on every fresh load, dimming their continent labels to
+     near-illegible. Unlike a data cluster, a continent label is one of only
+     five permanent navigation anchors -- it should never fade just because
+     of which way the camera happens to be pointed. An !important stylesheet
+     rule outranks MapLibre's own inline style (no !important there), same
+     precedent as the chip active-state fix elsewhere in this file. */
+  .region-label.continent-label.maplibregl-marker-covered{
+    opacity:1 !important;
+  }
   /* Country tier -- one step more detailed, standard size/colour (this is
      what the old shared rule looked like before tiers were split out). */
   .region-label.country-tier-label{
