@@ -2974,6 +2974,101 @@ from one source:
     Germany, and these 36 more) has now been individually audited.
     Not yet pushed to the live Supabase table — same outstanding step as
     every prior correction pass in this series.
+- **South Africa (12 gyms, 5 provinces) — the first African country in this
+  dataset**, added on request ("populate South Africa, ensuring the
+  correct gym type and location is selected"). Sourced from
+  climbing-gyms.com's South Africa directory (13 raw candidates across 9
+  cities), the same source/method as most of the European/South American
+  passes — every candidate individually cross-checked via web search or
+  its own site for (a) it's a real, currently-operating indoor facility
+  and (b) its actual climbing type, no default applied without direct
+  textual evidence, per the lesson from the worldwide top-rope-tag audit
+  above.
+  - **One candidate excluded**: Vertigo Adventures (Longmarket Street,
+    Cape Town) — every source describes it as an outdoor guided-climbing
+    company (Table Mountain, Silvermine trips), not an indoor gym, out of
+    this app's indoor-only scope.
+  - **CityROCK's 3 South African branches** (Cape Town, "Pretoria" —
+    actually Centurion, "Johannesburg" — actually Randburg) each
+    individually confirmed via that branch's own cityrock.co.za page to
+    offer bouldering + top-rope + lead climbing — the chain names
+    branches after the metro area rather than the exact suburb, the same
+    naming convention already seen for several chains elsewhere in this
+    dataset, not a data error.
+  - **One university-affiliated gym kept, not excluded**: Maties Rock
+    Climbing Wall (Stellenbosch University's climbing club at its
+    Coetzenburg sports complex) — individually confirmed via web search
+    that it welcomes both students and non-students as members, the same
+    verify-don't-assume standard already applied to Korea's/Ireland's/
+    Chile's university-gym cases. Bouldering-only; the "rock climbing
+    outings" its own description also mentions are outdoor excursions for
+    members, not an indoor rope wall.
+  - **One mixed indoor/outdoor venue kept for its indoor component**: The
+    Climbing Barn Adventure Centre (Mooiplaats, Pretoria) — confirmed
+    450sqm of top-rope/lead walls plus 150sqm of bouldering indoors,
+    alongside an outdoor team-building component — same "kept for the
+    confirmed indoor facility" precedent as K2 Escalada Deportiva
+    (Argentina) and Club Andino Burzaco.
+  - **Two addresses corrected from climbing-gyms.com's own listing**:
+    Rock Valley Climbing (the source gave a slightly different street;
+    the address used here matches the gym's own site and independent
+    directories) and Friends and Allies (source said "Tungsten Road,
+    Johannesburg"; multiple independent sources agree on "Naaf Street,
+    Strydompark, Randburg" instead).
+  - **Positions individually geocoded** against Nominatim, with Photon as
+    a second pass for no-matches — 5 of 12 resolved on the first
+    Nominatim try; the rest resolved via Photon, mostly exact street
+    matches. **2 Photon results were caught and rejected as wrong-street
+    matches** before being used, the same "same street name exists
+    elsewhere" failure mode already documented for Croatia/Russia/the
+    Philippines earlier in this file: Rock Valley Climbing's query
+    matched a different street (Von Willigh Avenue) in the same suburb
+    instead of the confirmed Theuns Avenue, and Southern Rock Climbing
+    Centre's query matched "Valley View Road" in Stamford Hill/Morningside
+    — a different, distant Durban suburb — instead of the confirmed New
+    Germany. Both fall back to their correct suburb's centroid instead of
+    the wrong-street point.
+  - **Climbing type applied only from direct evidence, same discipline as
+    every batch since Beijing** — 4 of 12 are bouldering-only (2 Bloc 11
+    branches, Friends and Allies, Maties), 1 is bouldering + lead only
+    with no top-rope evidence (HangTime, whose own site categorises its
+    offering as "Sport Climbing - Bouldering"), 1 is bouldering + top-rope
+    with no lead evidence (Rock Valley Climbing), and the remaining 6 are
+    confirmed bouldering + top-rope + lead.
+  - `state` uses South Africa's real top-level provinces, populated
+    complete from the start (9, same standard as every country since the
+    NL fix) — Eastern Cape, Free State, Gauteng, KwaZulu-Natal, Limpopo,
+    Mpumalanga, North West, Northern Cape, Western Cape — though only 5
+    (Western Cape, Gauteng, KwaZulu-Natal, Eastern Cape, Mpumalanga) have
+    a seed spot and therefore a sidebar chip/colour.
+  - **A new continent-tier region, `africa`, was added** — the same
+    structural change Brazil's addition needed when it became the first
+    South America country: a new `REGION_LABELS`/`REGION_FLY_TARGETS`
+    entry in `js/app.js` and a new `.region-group[data-region="africa"]`
+    sidebar wrapper in `index.html`, same mechanics as the existing five
+    regions, not a special case. Its fly-target currently matches South
+    Africa's own `COUNTRY_FLY_TARGETS` entry (there's only one country in
+    the region so far) — widen it once a second African country is added,
+    the same way every other region's target was picked to frame all its
+    countries together.
+  - Net result: 1513 → **1525 total spots**. Structural check (Node-parsed
+    `window.SEED_GYMS`): 1525/1525 unique ids, zero duplicate
+    name+suburb+state+country combos, every spot has a non-empty `types`
+    array.
+  - **Verified live** (served copy, `npx serve .`, offline-fallback-forcing
+    method): count reads 1525; searching "south africa" returns all 12
+    spots with correct human-readable province/country labels; the new
+    Africa region and South Africa country chip groups render correctly
+    (collapsed by default, `.has-active` propagates to both levels when a
+    chip is active); the Western Cape chip correctly filters to exactly 5
+    spots; both country `<option>`s (new "Africa" `<optgroup>`, first
+    alphabetically) present in both add/edit forms; chip active-state text
+    confirmed legible via computed style (background and text resolve to
+    different values); no console errors beyond the deliberately-forced
+    Supabase-unreachable ones; no horizontal overflow in the sidebar at
+    375px mobile with the new chip row expanded.
+  - **Not yet pushed to the live Supabase table** — same next-step gap as
+    every prior country addition.
 
 ## Design system
 

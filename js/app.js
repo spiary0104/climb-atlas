@@ -306,10 +306,16 @@
          ['NANTOU','Nantou County'],['YUNLIN','Yunlin County'],['CHIAYI_COUNTY','Chiayi County'],
          ['PINGTUNG','Pingtung County'],['YILAN','Yilan County'],['HUALIEN','Hualien County'],
          ['TAITUNG','Taitung County'],['PENGHU','Penghu County'],['KINMEN','Kinmen County'],
-         ['LIENCHIANG','Lienchiang County']]
+         ['LIENCHIANG','Lienchiang County']],
+    // South Africa's 9 real top-level provinces, complete from the start same
+    // as every country since the NL state-list-completeness fix -- not just
+    // the 5 this first seed-data pass happens to use.
+    ZA: [['EASTERN_CAPE','Eastern Cape'],['FREE_STATE','Free State'],['GAUTENG','Gauteng'],
+         ['KWAZULU_NATAL','KwaZulu-Natal'],['LIMPOPO','Limpopo'],['MPUMALANGA','Mpumalanga'],
+         ['NORTH_WEST','North West'],['NORTHERN_CAPE','Northern Cape'],['WESTERN_CAPE','Western Cape']]
   };
   const TYPE_LABELS = {'indoor-bouldering':'Indoor bouldering','top-rope':'Top rope','lead-climbing':'Lead climbing'};
-  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy', BE:'Belgium', KR:'South Korea', ES:'Spain', PT:'Portugal', AT:'Austria', CH:'Switzerland', PL:'Poland', DK:'Denmark', FI:'Finland', IE:'Ireland', NO:'Norway', MX:'Mexico', BR:'Brazil', HU:'Hungary', GR:'Greece', CZ:'Czech Republic', IS:'Iceland', RO:'Romania', HR:'Croatia', RU:'Russia', BG:'Bulgaria', AR:'Argentina', PH:'Philippines', CO:'Colombia', CL:'Chile', VE:'Venezuela', IN:'India', IL:'Israel', ID:'Indonesia', TW:'Taiwan'};
+  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy', BE:'Belgium', KR:'South Korea', ES:'Spain', PT:'Portugal', AT:'Austria', CH:'Switzerland', PL:'Poland', DK:'Denmark', FI:'Finland', IE:'Ireland', NO:'Norway', MX:'Mexico', BR:'Brazil', HU:'Hungary', GR:'Greece', CZ:'Czech Republic', IS:'Iceland', RO:'Romania', HR:'Croatia', RU:'Russia', BG:'Bulgaria', AR:'Argentina', PH:'Philippines', CO:'Colombia', CL:'Chile', VE:'Venezuela', IN:'India', IL:'Israel', ID:'Indonesia', TW:'Taiwan', ZA:'South Africa'};
   // Fixed camera target per country for the "fly to this country" click on
   // its sidebar label -- picked to frame that country's actual spread of
   // seed spots (e.g. US needs a wide zoom to fit both NY and CA), not a
@@ -357,7 +363,8 @@
     IN: {center:[77,22], zoom:4},
     IL: {center:[35,32], zoom:7},
     ID: {center:[110,-3], zoom:4},
-    TW: {center:[121,24.3], zoom:7}
+    TW: {center:[121,24.3], zoom:7},
+    ZA: {center:[26,-29], zoom:4.4}
   };
   // Which sidebar region-group each country belongs to -- same grouping as
   // the `.region-group[data-region]` wrappers in index.html, kept here too
@@ -371,17 +378,21 @@
     RO:'europe', HR:'europe', RU:'europe', BG:'europe',
     CA:'north-america', US:'north-america', MX:'north-america',
     AU:'oceania', NZ:'oceania',
-    BR:'south-america', AR:'south-america', CO:'south-america', CL:'south-america', VE:'south-america'
+    BR:'south-america', AR:'south-america', CO:'south-america', CL:'south-america', VE:'south-america',
+    ZA:'africa'
   };
-  const REGION_LABELS = {asia:'Asia', europe:'Europe', 'north-america':'North America', oceania:'Oceania', 'south-america':'South America'};
+  const REGION_LABELS = {asia:'Asia', europe:'Europe', 'north-america':'North America', oceania:'Oceania', 'south-america':'South America', africa:'Africa'};
   // Same idea as COUNTRY_FLY_TARGETS, one tier coarser -- framing every
-  // country currently in that region, not just one.
+  // country currently in that region, not just one. Africa currently has
+  // only South Africa, so this matches ZA's own fly target for now -- widen
+  // it once a second African country is added, same as every other region.
   const REGION_FLY_TARGETS = {
     asia: {center:[125,32], zoom:2.6},
     europe: {center:[8,50], zoom:3.2},
     'north-america': {center:[-100,45], zoom:2.4},
     oceania: {center:[155,-30], zoom:3},
-    'south-america': {center:[-58,-15], zoom:3}
+    'south-america': {center:[-58,-15], zoom:3},
+    africa: {center:[26,-29], zoom:3.6}
   };
   // Below this zoom, a spot with no nearby neighbours (so supercluster hands
   // it back as a lone, unclustered point rather than grouping it) still paints

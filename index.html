@@ -60,6 +60,21 @@
           <div class="chip-row">
             <button type="button" class="chip active" data-state="ALL" aria-pressed="true"><span>All</span></button>
           </div>
+          <div class="region-group collapsed" data-region="africa">
+            <button type="button" class="section-label region-header">Africa</button>
+            <div class="region-body">
+              <div class="country-group collapsed" data-country="ZA">
+                <button type="button" class="section-label country-label">South Africa</button>
+                <div class="chip-row">
+                  <button type="button" class="chip" data-country="ZA" data-state="WESTERN_CAPE" style="--chip:var(--za-western-cape)" aria-pressed="false"><span class="dot"></span>Western Cape</button>
+                  <button type="button" class="chip" data-country="ZA" data-state="GAUTENG" style="--chip:var(--za-gauteng)" aria-pressed="false"><span class="dot"></span>Gauteng</button>
+                  <button type="button" class="chip" data-country="ZA" data-state="KWAZULU_NATAL" style="--chip:var(--za-kwazulu-natal)" aria-pressed="false"><span class="dot"></span>KwaZulu-Natal</button>
+                  <button type="button" class="chip" data-country="ZA" data-state="EASTERN_CAPE" style="--chip:var(--za-eastern-cape)" aria-pressed="false"><span class="dot"></span>Eastern Cape</button>
+                  <button type="button" class="chip" data-country="ZA" data-state="MPUMALANGA" style="--chip:var(--za-mpumalanga)" aria-pressed="false"><span class="dot"></span>Mpumalanga</button>
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="region-group collapsed" data-region="asia">
             <button type="button" class="section-label region-header">Asia</button>
             <div class="region-body">
@@ -612,6 +627,9 @@
       <div>
         <label for="fCountry">Country</label>
         <select id="fCountry">
+          <optgroup label="Africa">
+            <option value="ZA">South Africa</option>
+          </optgroup>
           <optgroup label="Asia">
             <option value="CN">China</option>
             <option value="IN">India</option>
@@ -749,6 +767,9 @@
       <div>
         <label for="eCountry">Country</label>
         <select id="eCountry">
+          <optgroup label="Africa">
+            <option value="ZA">South Africa</option>
+          </optgroup>
           <optgroup label="Asia">
             <option value="CN">China</option>
             <option value="IN">India</option>

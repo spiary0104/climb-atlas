@@ -3788,6 +3788,40 @@ _(none)_
 
 ## Done (recent)
 
+### Add South Africa (12 gyms, first African country)
+- Branch: `feature/add-south-africa` — merged to `master`, pushed.
+- Status: done — merged.
+- What: user asked to populate South Africa, "ensuring that the correct
+  gym type and location is selected." Sourced from climbing-gyms.com's
+  South Africa directory (13 raw candidates, 9 cities); every candidate
+  individually cross-checked for real/current status and actual climbing
+  type before writing anything — no default applied without direct
+  textual evidence, applying the lesson from the worldwide top-rope-tag
+  audit. One candidate excluded (Vertigo Adventures — an outdoor guiding
+  company, not an indoor gym). Full per-gym sourcing, exclusions, and the
+  2 rejected wrong-street geocoding matches are in `docs/architecture.md`
+  "Seed data sourcing".
+- Since this is the first African country in the dataset, also added a
+  new continent-tier region (`africa`) — `REGION_LABELS`/
+  `REGION_FLY_TARGETS` in `js/app.js` and a new `.region-group[data-
+  region="africa"]` sidebar wrapper in `index.html`, same mechanics as
+  the existing five regions.
+- `state` uses South Africa's 9 real provinces, populated complete from
+  the start (5 have a seed spot and a sidebar chip/colour: Western Cape,
+  Gauteng, KwaZulu-Natal, Eastern Cape, Mpumalanga).
+- Net result: 1513 → **1525 total spots**. Structural check (Node-parsed
+  `window.SEED_GYMS`): 1525/1525 unique ids, zero duplicate
+  name+suburb+state+country combos, every spot has a non-empty `types`
+  array.
+- **Verified**: same offline-fallback-forcing method as every prior batch
+  — count reads 1525; all 12 new spots searchable by "south africa"; the
+  new Africa region/South Africa country chip groups render correctly
+  with legible active-state chip text; both country `<option>`s present
+  in both forms; no console errors; no horizontal overflow at 375px
+  mobile with the new chip row expanded.
+- **Not yet done**: running the regenerated seed SQL against the live
+  Supabase table — same outstanding step as every prior country addition.
+
 ### Domain launch: climbatlas.org live via Vercel, Supabase fully wired
 - Branch: `fix/marker-lag-region-label-collisions`, merged to `master`
   and pushed to `github.com/spiary0104/climb-atlas`.
