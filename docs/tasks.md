@@ -3788,6 +3788,43 @@ _(none)_
 
 ## Done (recent)
 
+### Expand Japan using Google Places (as a substitute) — 24 more gyms, 4 new prefectures
+- Branch: `feature/add-japan-more-gyms` — merged to `master`, pushed.
+- Status: done — merged.
+- What: user asked to "utilise google places to add more gyms to japan."
+  No Google Places API key is configured for this project (checked
+  directly — none found anywhere in the repo, consistent with the
+  project's keyless-API design) and no dedicated Places tool was
+  available in this session, so this batch used general web search
+  against each gym's own site or a consistent secondary source as the
+  practical substitute — same method as every "lighter-touch" country in
+  `docs/architecture.md`. Three parallel research passes covered new
+  cities (Sendai/Miyagi, Hiroshima, Naha/Okinawa, Saitama) and 10 more
+  Tokyo wards not already in the dataset.
+- One candidate (Gravity Research Omiya) excluded on evidence-quality
+  grounds — a single low-confidence source's lead-climbing claim
+  conflicted with the same chain's other 3 already-listed bouldering-
+  only locations, so it was left out entirely rather than guessed either
+  way. Full per-gym sourcing, the Onoyama Park Budokan
+  bouldering-vs-lead access distinction, and the Naha/geocoding fallback
+  detail are in `docs/architecture.md` "Seed data sourcing".
+- `state` uses the existing MIYAGI/HIROSHIMA/OKINAWA/SAITAMA keys
+  (already in `STATES_BY_COUNTRY.JP` from the earlier completeness
+  pass) — no `js/app.js` change needed. 4 new CSS colour variables + 4
+  new sidebar chips added to Japan's existing chip row.
+- Net result: 1536 → **1560 total spots** (Japan 32 → 56). Structural
+  check (Node-parsed `window.SEED_GYMS`): 1560/1560 unique ids, zero
+  duplicate name+suburb+state+country combos, every spot has a
+  non-empty `types` array.
+- **Verified**: same offline-fallback-forcing method as every prior
+  batch — count reads 1560; new Sendai/Hiroshima/Naha/Saitama gyms
+  searchable by name; all 4 new chips render in distinct colours with
+  legible active-state text; Miyagi chip filters to exactly 5 spots; no
+  console errors; no horizontal overflow at 375px mobile.
+- **Not yet done**: running the regenerated seed SQL against the live
+  Supabase table — same outstanding step as every prior country/city
+  addition.
+
 ### Add Ecuador (11 gyms, next-largest missing country)
 - Branch: `feature/add-ecuador` — merged to `master`, pushed.
 - Status: done — merged.

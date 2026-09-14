@@ -3147,6 +3147,94 @@ from one source:
     overflow at 375px mobile with the region/country expanded.
   - **Not yet pushed to the live Supabase table** — same next-step gap as
     every prior country addition.
+- **Japan expansion (24 more gyms, 32 → 56, 4 new prefectures: Miyagi/
+  Sendai, Hiroshima, Okinawa/Naha, Saitama)** — added on request to
+  "utilise Google Places to add more gyms to Japan." **No Google Places
+  API key is configured anywhere in this project** (confirmed by
+  grepping the whole repo before starting — this project's established
+  design philosophy is keyless APIs only, e.g. Nominatim/CARTO, and no
+  Places-specific tool was available in this session's toolset either),
+  so this batch used general web search against each gym's own site or a
+  consistent secondary directory/listing as the practical substitute —
+  the same method already used for every "lighter-touch" country in this
+  file (Norway, Brazil, the original Japan/Canada/New Zealand passes).
+  Three parallel research passes covered Sendai/Hiroshima, Naha/Saitama,
+  and 10 more Tokyo wards not already in the dataset.
+  - **One candidate deliberately excluded on evidence-quality grounds,
+    not just absence of evidence**: "Gravity Research Omiya" (Saitama) —
+    a single low-confidence source (direct page fetch 404'd, only a
+    search-snippet survived) claimed a lead-climbing wall, but this
+    directly conflicts with the same "Gravity Research" chain's three
+    other already-listed locations in this dataset (Umeda, Sapporo,
+    Kobe — all bouldering-only) and with the chain's general real-world
+    reputation as a bouldering-only operator. Rather than guess which
+    source to trust, per `Rules.md` §1, it was left out entirely instead
+    of being added under either type.
+  - **Onoyama Park Budokan Climbing & Sumo Hall** (Naha) is a public
+    prefectural sports facility, not a private gym — its bouldering wall
+    (4m) is normal general admission, but its 12m lead wall requires an
+    Okinawa Mountain Climbing Association license card plus a climbing
+    partner. Kept with both types tagged, since the lead wall is real and
+    the bouldering wall genuinely is walk-in, but the access caveat for
+    the lead wall specifically is disclosed in its own `notes` — the same
+    "verify and disclose access precisely, don't just include or
+    exclude" standard already used for the Korea/Ireland/Chile/South
+    Africa university- and club-adjacent gyms.
+  - **Katsushika Sports Climbing Center** is a ward-run Tokyo public
+    facility explicitly billed as the first in the city's 23 wards with
+    bouldering, lead, AND speed-climbing walls — general-public admission
+    confirmed via posted hourly rates for all ages, not
+    membership-restricted, so kept without an access caveat (unlike
+    Onoyama above). This app has no speed-climbing type, so only
+    bouldering and lead are tagged; the facility's speed wall is
+    disclosed in `notes` but doesn't map to anything in `TYPE_LABELS`.
+  - **CELL and Exciting Sancha** (both Setagaya, Tokyo) had their type
+    evidence (bouldering + lead climbing for both) come from secondary
+    blog/aggregator sources rather than either gym's own site directly —
+    a lower-confidence tier than most entries in this dataset, disclosed
+    per-entry rather than presented as equally solid.
+  - **Naha Gym** had no climbing-type evidence findable at all (only an
+    Instagram listing with hours/pricing) — defaulted to bouldering-only
+    per the discipline established by the South Korea top-rope-tag audit
+    (unconfirmed small gyms default to bouldering, not top-rope, since
+    that's the statistically safer unverified default for this kind of
+    gym), disclosed as such rather than left on an assumed type.
+  - **Geocoding hit the same mall/building-address resolution gap
+    Japan has shown before**: of 24 addresses, only 8 resolved directly
+    against Nominatim at street level (B'nuts, pb climbing Yokogawa,
+    Naha Gym, Onoyama Park Budokan, Energy Climbing Gym Urawa, Climbing
+    Gym Penguin, plus 2 more); the rest fell back to their ward/city
+    centroid. **Boulbaka** (Naha) couldn't resolve even on a simplified
+    retry — falls back to Naha's whole-city centroid, the coarsest
+    fallback tier used in this pass. Two same-ward pairs ended up
+    sharing an identical fallback point (CELL/Exciting Sancha in
+    Setagaya; T-WALL Kinshicho/Fish and Bird Toyocho in Koto) — both
+    pairs are confirmed distinct, real gyms at different addresses,
+    disclosed in each spot's own `notes`.
+  - `state` uses the existing `MIYAGI`/`HIROSHIMA`/`OKINAWA`/`SAITAMA`
+    keys — all four were already present in `STATES_BY_COUNTRY.JP` from
+    the earlier state-list-completeness pass (which populated Japan's
+    full 47 prefectures even though only 8 had spots at the time), so no
+    `js/app.js` change was needed. Four new `--jp-miyagi`/`--jp-
+    hiroshima`/`--jp-okinawa`/`--jp-saitama` CSS colour variables and
+    four new sidebar chips were added to Japan's existing chip row in
+    `index.html`, since these are each prefecture's first-ever seed spot.
+  - Net result: 1536 → **1560 total spots**; Japan alone 32 → **56**.
+    Structural check (Node-parsed `window.SEED_GYMS`): 1560/1560 unique
+    ids, zero duplicate name+suburb+state+country combos, every spot has
+    a non-empty `types` array, every JP state code used confirmed to
+    resolve against `STATES_BY_COUNTRY.JP`.
+  - **Verified live** (served copy, `npx serve .`, offline-fallback-
+    forcing method): count reads 1560; searching "STONER" returns the
+    new Sendai gym with the correct "Miyagi · Japan" label; all four new
+    chips (Miyagi/Hiroshima/Okinawa/Saitama) render in distinct colours
+    and, when active, resolve to legible dark-text-on-colour (matching
+    every other chip); the Miyagi chip correctly filters to exactly 5
+    spots; no console errors beyond the deliberately-forced
+    Supabase-unreachable ones; no horizontal overflow at 375px mobile
+    with the Japan chip row expanded.
+  - **Not yet pushed to the live Supabase table** — same next-step gap as
+    every prior country/city addition.
 
 ## Design system
 
