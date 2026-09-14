@@ -3788,6 +3788,39 @@ _(none)_
 
 ## Done (recent)
 
+### Expand South Korea using Google Places (as a substitute) — 24 more gyms, 2 new divisions
+- Branch: `feature/add-korea-more-gyms` — merged to `master`, pushed.
+- Status: done — merged.
+- What: user asked "are there anymore [Japan gyms] to add? otherwise move
+  onto korea" — Japan still has plenty of headroom but per this project's
+  usual pacing, moved to Korea as directed. Same method as the Japan
+  expansion (no Google Places API key configured, general web search used
+  as the substitute). Three parallel research passes covered more Seoul
+  gyms, two new cities (Daejeon, Jeju), and more Incheon/Daegu gyms
+  (previously only 1 each).
+- **Real finding**: Naver's "modoo!" free-homepage platform shut down
+  entirely 26 June 2025 — every `modoo.at` URL now shows only a platform-
+  wide closure notice. 3 candidates whose only source was a dead modoo.at
+  page were excluded outright; 2 more with an independent second source
+  were kept with the dead-source caveat disclosed. Full detail in
+  `docs/architecture.md` "Seed data sourcing".
+- Also completed `STATES_BY_COUNTRY.KR` to all 17 real top-level
+  divisions (was 10) — the same kind of gap the original Netherlands
+  report caught, just never applied to Korea until now.
+- `state` uses the existing SEOUL/DAEJEON/JEJU/INCHEON/DAEGU keys. 2 new
+  CSS colour variables + 2 new sidebar chips (Daejeon, Jeju).
+- Net result: 1560 → **1584 total spots** (Korea 37 → 61). Structural
+  check (Node-parsed `window.SEED_GYMS`): 1584/1584 unique ids, zero
+  duplicate name+suburb+state+country combos, every spot has a non-empty
+  `types` array.
+- **Verified**: same offline-fallback-forcing method as every prior
+  batch — count reads 1584; new gyms searchable by name; both new chips
+  render with legible active-state text; Jeju chip filters to exactly 4
+  spots; no console errors; no horizontal overflow at 375px mobile.
+- **Not yet done**: running the regenerated seed SQL against the live
+  Supabase table — same outstanding step as every prior country/city
+  addition.
+
 ### Expand Japan using Google Places (as a substitute) — 24 more gyms, 4 new prefectures
 - Branch: `feature/add-japan-more-gyms` — merged to `master`, pushed.
 - Status: done — merged.

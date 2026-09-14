@@ -3235,6 +3235,85 @@ from one source:
     with the Japan chip row expanded.
   - **Not yet pushed to the live Supabase table** — same next-step gap as
     every prior country/city addition.
+- **South Korea expansion (24 more gyms, 37 → 61, 2 new top-level
+  divisions: Daejeon, Jeju)** — direct follow-up to the Japan expansion
+  above, same "no Google Places API key configured" situation (checked
+  again, still none) and same web-search-substitute method. Three
+  parallel research passes covered more Seoul gyms, new cities (Daejeon,
+  Jeju), and more Incheon/Daegu gyms (previously only 1 each).
+  - **A real, non-obvious finding from this pass**: Naver's free
+    "modoo!" homepage-building platform (`*.modoo.at`) shut down
+    entirely on 26 June 2025 — every `modoo.at` URL surfaced during
+    research now shows only a platform-wide closure notice, not
+    gym-specific information. This isn't evidence any individual gym
+    closed, but it does mean a `modoo.at` page can no longer serve as
+    live confirmation of anything. **Three candidates were excluded
+    outright** because a now-dead `modoo.at` page was their *only*
+    source with no independent corroboration: Cube Climbing/Bupyeong
+    (Incheon), Vertigo Climbing Gym (Seoul), SECTOR.B Bouldering Gym
+    (Seoul). Two candidates were **kept** despite also citing a dead
+    `modoo.at` page, because each had a genuinely independent second
+    source: Dino Cat Climbing Gym (Daegu, corroborated by a climbing.kr
+    directory board post) and Jeju Climbing School (corroborated by
+    climbingtv.co.kr). Worth remembering for any future Korea-focused
+    pass in this project: don't treat a `modoo.at` URL as live
+    confirmation of anything going forward.
+  - **Also caught a genuinely stale, but still worth completing, gap in
+    `STATES_BY_COUNTRY.KR`**: unlike every country fixed since the
+    Netherlands state-list-completeness pass, Korea's list had never
+    been expanded to the country's real complete set of 17 top-level
+    divisions — it only ever had the 10 divisions earlier passes'
+    seed spots happened to use. Completed it to all 17 (added
+    Chungcheongbuk-do, Gangwon-do, Gyeongsangbuk-do, Jeollabuk-do,
+    Sejong, plus Daejeon and Jeju, which now also have real spots) in
+    the same pass that needed Daejeon/Jeju anyway, rather than leaving
+    a second, smaller version of the original NL gap in place.
+  - **PEAKERS Jongno** is a converted movie theater (former CGV
+    Piccadilly1958) — its tall former screen space now holds lead walls
+    alongside bouldering, confirmed via a CJ corporate source rather
+    than the gym's own site.
+  - **B.bloc Climbing Yeongjong** (Incheon) is a confirmed distinct
+    branch of the same B.bloc chain as the already-listed B.bloc
+    Climbing Songdo — its own type wasn't independently confirmed, so
+    it was tagged bouldering-only by inference from the chain's
+    "bloc"-branded sister location, disclosed as an inference rather
+    than direct evidence for this specific branch.
+  - **"Sport climbing academy" interpreted as lead climbing, not
+    bouldering**: Jeju Move Zone's Korean billing (스포츠클라이밍아카데미)
+    was tagged `lead-climbing` rather than left ambiguous, applying the
+    same "sport climbing = lead" precedent already used for Movimento
+    Verticale Roma (Italy) and Chao - Punto Gym (Colombia) earlier in
+    this file.
+  - **Climbing Gym Lead Yuseong** (Daejeon) is tagged `lead-climbing`
+    only, no bouldering — its own name specifies "Lead" and its own
+    description names 30+ endurance/lead routes with no bouldering
+    offering stated, the same precedent as Murall Annopol (Poland)
+    being tagged lead-only elsewhere in this file.
+  - **Geocoding**: of 24 addresses, about half resolved directly against
+    Nominatim; the rest fell back to their ward/city centroid, flagged
+    per-entry in `notes`, consistent with the Korea/Japan mall-and-
+    building-style address pattern already documented elsewhere in this
+    file.
+  - `state` uses the existing `SEOUL`/`DAEJEON`/`JEJU`/`INCHEON`/`DAEGU`
+    keys (all now present in the completed `STATES_BY_COUNTRY.KR` list
+    above). Two new `--kr-daejeon`/`--kr-jeju` CSS colour variables and
+    two new sidebar chips were added, since these are each division's
+    first-ever seed spot.
+  - Net result: 1560 → **1584 total spots**; South Korea alone 37 →
+    **61**. Structural check (Node-parsed `window.SEED_GYMS`): 1584/1584
+    unique ids, zero duplicate name+suburb+state+country combos, every
+    spot has a non-empty `types` array, every KR state code used
+    confirmed to resolve against the completed `STATES_BY_COUNTRY.KR`.
+  - **Verified live** (served copy, `npx serve .`, offline-fallback-
+    forcing method): count reads 1584; searching "Dino Cat" returns the
+    new Daegu gym; both new chips (Daejeon/Jeju) render and, when
+    active, resolve to legible dark-text-on-colour; the Jeju chip
+    correctly filters to exactly 4 spots; no console errors beyond the
+    deliberately-forced Supabase-unreachable ones; no horizontal
+    overflow at 375px mobile with South Korea's now-12-chip row
+    expanded.
+  - **Not yet pushed to the live Supabase table** — same next-step gap as
+    every prior country/city addition.
 
 ## Design system
 
