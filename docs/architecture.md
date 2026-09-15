@@ -105,10 +105,10 @@ are only unique within a country** (e.g. AU's `WA` vs US's `WA` are
 different regions). Anything that filters, colors, or edits by state —
 the chips in `index.html`, `STATES_BY_COUNTRY` in `app.js`, the RLS-safe
 columns in `schema.sql` — keys off the `(country, state)` pair together,
-never `state` alone. Now 46 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
+never `state` alone. Now 47 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
 FR, SE, NL, IT, BE, KR, ES, PT, AT, CH, PL, DK, FI, IE, NO, MX, BR, HU, GR,
-CZ, IS, RO, HR, RU, BG, AR, PH, CO, CL, VE, IN, IL, ID, TW, ZA, EC, VN, LT), same
-pattern each time — keep this in mind before adding a 47th. One collision
+CZ, IS, RO, HR, RU, BG, AR, PH, CO, CL, VE, IN, IL, ID, TW, ZA, EC, VN, LT,
+RS), same pattern each time — keep this in mind before adding a 48th. One collision
 worth flagging: `US`'s state code for California is `CA`, and `CA` is
 also the top-level country code for Canada — not a real ambiguity since
 they're different object keys/fields (`STATES_BY_COUNTRY.US` contains
@@ -3496,6 +3496,75 @@ from one source:
     the Vilnius chip correctly filters to exactly 4 spots; chip
     active-state text confirmed legible via computed style (dark text on
     purple background); no console errors beyond the deliberately-forced
+    Supabase-unreachable ones; no horizontal overflow at 375px mobile
+    with the region/country expanded.
+  - **Not yet pushed to the live Supabase table** — same next-step gap as
+    every prior country addition.
+- **Serbia (5 gyms, 2 divisions) — the 47th country**, added on request to
+  keep applying the "next largest missing country" method — a 3-way tie
+  at 7 gyms (Bolivia, Iran, Serbia) once Vietnam and Lithuania had been
+  picked off the earlier 4-way/5-way ties. Serbia was picked after
+  confirming indoorclimbing.com's own Serbia-Montenegro page independently
+  gave real street addresses for 5 of boulderinglist.com's 7 candidates —
+  the same two-directory cross-check standard as Vietnam/Lithuania.
+  - **2 of the 7 original candidates excluded as confirmed outdoor
+    artificial walls**, not indoor gyms — same scope exclusion as every
+    other outdoor venue in this dataset (Huayan Climbing Park, El Muro,
+    etc.): **Ada Ciganlija SPK Vertikal** (a 15m open-air wall "on the
+    left bank of the Lake Sava," per the operator's own site) and
+    **Kladovo Black Rock** (a 40m/13.5m outdoor wall at Karataš, per
+    multiple sources describing it as an outdoor climbing area). Left 5
+    real, confirmed indoor gyms — a smaller batch than Vietnam/Lithuania,
+    but consistent with this project's standing precedent of excluding
+    outdoor venues rather than force-including them to hit a target count.
+  - **One candidate resolved a mistranslated-name puzzle rather than being
+    a plain lookup**: boulderinglist.com's "I Belgrade Gimnasium" turned
+    out to be a location description, not a real venue name — the gym is
+    actually **Gekon** (Bouldering sala Gekon / Penjački klub Gekon /
+    Climbing Gym Gekon), housed at or adjacent to the First Belgrade
+    Gymnasium school building on Cara Dušana street, confirmed via
+    multiple independent Serbian-language sources — kept under its real
+    current name, the same "resolve the real name, don't trust the
+    directory's shorthand label" treatment as MegaSTONE Climbing Gym
+    (Taiwan) and El Rocodromo (Ecuador).
+  - **One gym kept despite a single, unconfirmed closure signal**: Hala
+    Sportova (Ranko Žeravica Sports Hall, Novi Beograd) — a dated,
+    secondhand Tripadvisor-forum comment claimed its climbing wall had
+    been removed, but every other, more current source (indoorclimbing.com,
+    the facility's own activity listings) still describes an active 18m
+    rope-climbing wall — kept on the stronger, more recent evidence, with
+    the single conflicting claim disclosed in its own `notes` rather than
+    silently ignored or acted on alone, the same "don't guess from one
+    weak signal" discipline as every other borderline case in this file.
+  - **Climbing type applied only from direct evidence** — Sektor44,
+    Belgrade Climbing Club, and Gekon are all confirmed bouldering-only
+    (each independently described as a dedicated bouldering space with no
+    rope-climbing mention); Adrenalin Climbing Club is confirmed
+    bouldering + top-rope (both a rope section and a bouldering section,
+    per multiple sources); Hala Sportova is confirmed top-rope only (an
+    18m rope-climbing wall, no bouldering-specific evidence found).
+  - **Positions individually geocoded** against Nominatim — all 5
+    addresses resolved at street level on the first try, matching
+    Lithuania's own perfect hit rate.
+  - **`state` uses Serbia's real top-level districts, deliberately
+    excluding Kosovo and Metohija** — 25 districts (Belgrade + Vojvodina's
+    7 + Central Serbia's 17), populated complete from the start (same
+    standard as every country since the NL fix), of which 2 (Belgrade,
+    South Bačka/Novi Sad) have a seed spot and a sidebar chip/colour.
+    Kosovo's 5 districts are left out entirely — the same political-
+    neutrality reasoning already applied to Russia's city-keyed `state`
+    scheme and Israel's exclusion of the West Bank: Kosovo's status is a
+    genuine, internationally contested question this app has no reason to
+    take a position on by drawing it into a public filter list.
+  - Net result: 1616 → **1621 total spots**. Structural check (Node-parsed
+    `window.SEED_GYMS`): 1621/1621 unique ids, zero duplicate
+    name+suburb+state+country combos, every spot has a non-empty `types`
+    array.
+  - **Verified live** (served copy, `npx serve .`, offline-fallback-forcing
+    method): count reads 1621; searching "serbia" returns all 5 spots;
+    the Belgrade chip correctly filters to exactly 4 spots; chip
+    active-state text confirmed legible via computed style (dark text on
+    red background); no console errors beyond the deliberately-forced
     Supabase-unreachable ones; no horizontal overflow at 375px mobile
     with the region/country expanded.
   - **Not yet pushed to the live Supabase table** — same next-step gap as

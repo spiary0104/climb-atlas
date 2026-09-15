@@ -3788,6 +3788,39 @@ _(none)_
 
 ## Done (recent)
 
+### Add Serbia (5 gyms, the next-largest missing country, 47th)
+- Branch: `feature/add-serbia` — merged to `master`, pushed.
+- Status: done — merged.
+- What: user said "next" — continuing the same "add the next country
+  with the most gyms we don't already have" method used for Vietnam and
+  Lithuania. A 3-way tie at 7 gyms (Bolivia, Iran, Serbia) once Vietnam
+  and Lithuania had been picked off the earlier tie; Serbia was picked
+  after confirming indoorclimbing.com's own Serbia-Montenegro page
+  independently gave real addresses for 5 of boulderinglist.com's 7
+  candidates.
+- 2 of the 7 original candidates excluded as confirmed outdoor artificial
+  walls (Ada Ciganlija SPK Vertikal, Kladovo Black Rock), leaving 5 real
+  indoor gyms. One name puzzle resolved: boulderinglist's "I Belgrade
+  Gimnasium" is actually Gekon, a real bouldering hall near the First
+  Belgrade Gymnasium school building. One gym (Hala Sportova) kept
+  despite a single dated, unconfirmed closure rumor, since every more
+  current source still describes it as active. Full sourcing detail in
+  `docs/architecture.md` "Seed data sourcing".
+- `state` uses Serbia's 25 real districts, deliberately excluding
+  Kosovo's 5 (same political-neutrality reasoning as Russia/Israel),
+  populated complete from the start (2 have a seed spot: Belgrade, South
+  Bačka). All 5 addresses geocoded at street level on the first try.
+- Net result: 1616 → **1621 total spots**. Structural check (Node-parsed
+  `window.SEED_GYMS`): 1621/1621 unique ids, zero duplicate
+  name+suburb+state+country combos, every spot has a non-empty `types`
+  array.
+- **Verified**: same offline-fallback-forcing method as every prior batch
+  — count reads 1621; all 5 spots searchable by "serbia"; the Belgrade
+  chip correctly filters to exactly 4 spots with legible active-state
+  text; no console errors; no horizontal overflow at 375px mobile.
+- **Not yet done**: running the regenerated seed SQL against the live
+  Supabase table — same outstanding step as every prior country addition.
+
 ### Add Lithuania (8 gyms, the next-largest missing country, 46th)
 - Branch: `feature/add-lithuania` — merged to `master`, pushed.
 - Status: done — merged.

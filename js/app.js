@@ -342,10 +342,24 @@
     // same as every country since the NL state-list-completeness fix.
     LT: [['ALYTUS','Alytus'],['KAUNAS','Kaunas'],['KLAIPEDA','Klaipėda'],['MARIJAMPOLE','Marijampolė'],
          ['PANEVEZYS','Panevėžys'],['SIAULIAI','Šiauliai'],['TAURAGE','Tauragė'],['TELSIAI','Telšiai'],
-         ['UTENA','Utena'],['VILNIUS','Vilnius']]
+         ['UTENA','Utena'],['VILNIUS','Vilnius']],
+    // Serbia's 25 real top-level districts (Belgrade + Vojvodina's 7 +
+    // Central Serbia's 17), deliberately excluding Kosovo and Metohija's
+    // 5 districts -- same political-neutrality reasoning already applied
+    // to Russia's city-keyed `state` scheme and Israel's exclusion of the
+    // West Bank: Kosovo's status is a genuine, internationally contested
+    // question this app has no reason to take a position on by drawing it
+    // into a public filter list.
+    RS: [['BELGRADE','Belgrade'],['SEVERNOBACKI','North Bačka'],['SREDNJEBANATSKI','Central Banat'],
+         ['SEVERNOBANATSKI','North Banat'],['JUZNOBANATSKI','South Banat'],['ZAPADNOBACKI','West Bačka'],
+         ['JUZNOBACKI','South Bačka'],['SREMSKI','Srem'],['MACVANSKI','Mačva'],['KOLUBARSKI','Kolubara'],
+         ['PODUNAVSKI','Podunavlje'],['BRANICEVSKI','Braničevo'],['SUMADIJSKI','Šumadija'],
+         ['POMORAVSKI','Pomoravlje'],['BORSKI','Bor'],['ZAJECARSKI','Zaječar'],['ZLATIBORSKI','Zlatibor'],
+         ['MORAVICKI','Moravica'],['RASKI','Raška'],['RASINSKI','Rasina'],['NISAVSKI','Nišava'],
+         ['TOPLICKI','Toplica'],['PIROTSKI','Pirot'],['JABLANICKI','Jablanica'],['PCINJSKI','Pčinja']]
   };
   const TYPE_LABELS = {'indoor-bouldering':'Indoor bouldering','top-rope':'Top rope','lead-climbing':'Lead climbing'};
-  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy', BE:'Belgium', KR:'South Korea', ES:'Spain', PT:'Portugal', AT:'Austria', CH:'Switzerland', PL:'Poland', DK:'Denmark', FI:'Finland', IE:'Ireland', NO:'Norway', MX:'Mexico', BR:'Brazil', HU:'Hungary', GR:'Greece', CZ:'Czech Republic', IS:'Iceland', RO:'Romania', HR:'Croatia', RU:'Russia', BG:'Bulgaria', AR:'Argentina', PH:'Philippines', CO:'Colombia', CL:'Chile', VE:'Venezuela', IN:'India', IL:'Israel', ID:'Indonesia', TW:'Taiwan', ZA:'South Africa', EC:'Ecuador', VN:'Vietnam', LT:'Lithuania'};
+  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy', BE:'Belgium', KR:'South Korea', ES:'Spain', PT:'Portugal', AT:'Austria', CH:'Switzerland', PL:'Poland', DK:'Denmark', FI:'Finland', IE:'Ireland', NO:'Norway', MX:'Mexico', BR:'Brazil', HU:'Hungary', GR:'Greece', CZ:'Czech Republic', IS:'Iceland', RO:'Romania', HR:'Croatia', RU:'Russia', BG:'Bulgaria', AR:'Argentina', PH:'Philippines', CO:'Colombia', CL:'Chile', VE:'Venezuela', IN:'India', IL:'Israel', ID:'Indonesia', TW:'Taiwan', ZA:'South Africa', EC:'Ecuador', VN:'Vietnam', LT:'Lithuania', RS:'Serbia'};
   // Fixed camera target per country for the "fly to this country" click on
   // its sidebar label -- picked to frame that country's actual spread of
   // seed spots (e.g. US needs a wide zoom to fit both NY and CA), not a
@@ -397,7 +411,8 @@
     ZA: {center:[26,-29], zoom:4.4},
     EC: {center:[-78.5,-1.5], zoom:5.8},
     VN: {center:[106,16], zoom:5},
-    LT: {center:[24,55.3], zoom:6.5}
+    LT: {center:[24,55.3], zoom:6.5},
+    RS: {center:[20.3,44.9], zoom:7}
   };
   // Which sidebar region-group each country belongs to -- same grouping as
   // the `.region-group[data-region]` wrappers in index.html, kept here too
@@ -408,7 +423,7 @@
     DE:'europe', GB:'europe', FR:'europe', SE:'europe', NL:'europe', IT:'europe', BE:'europe', LT:'europe',
     ES:'europe', PT:'europe', AT:'europe', CH:'europe', PL:'europe', DK:'europe', FI:'europe', IE:'europe',
     NO:'europe', HU:'europe', GR:'europe', CZ:'europe', IS:'europe',
-    RO:'europe', HR:'europe', RU:'europe', BG:'europe',
+    RO:'europe', HR:'europe', RU:'europe', BG:'europe', RS:'europe',
     CA:'north-america', US:'north-america', MX:'north-america',
     AU:'oceania', NZ:'oceania',
     BR:'south-america', AR:'south-america', CO:'south-america', CL:'south-america', VE:'south-america',
