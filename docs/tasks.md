@@ -3788,6 +3788,42 @@ _(none)_
 
 ## Done (recent)
 
+### Add Vietnam (7 gyms, the next-largest missing country)
+- Branch: `feature/add-vietnam` — merged to `master`, pushed.
+- Status: done — merged.
+- What: user asked to "add the next country with the most gyms that we
+  don't already have." Cross-referenced boulderinglist.com's 84-country
+  list against every country already in this dataset (same method as the
+  Ecuador addition). Skipped "Georgia" (14 gyms, known US-state-conflation
+  trap) — the next-largest missing countries were a genuine 4-way tie at
+  7 gyms (Bolivia, Iran, Lithuania, Serbia, Vietnam); picked Vietnam after
+  confirming it had 7 solid, real, named gyms with a second directory
+  (indoorclimbing.com) to cross-check against.
+- Two real corrections found by cross-referencing sources: Beefy Boulders'
+  boulderinglist address was stale (Cầu Giấy) — its own site confirms 2
+  current branches (Tây Hồ, Mỹ Đình) instead, added as distinct spots;
+  "Crescent Wall" and "Push Climbing" were listed as two separate gyms
+  but are the same venue (confirmed via the operator's own site) — merged
+  into one. Full per-gym sourcing in `docs/architecture.md` "Seed data
+  sourcing".
+- `state` uses Vietnam's current 34 top-level divisions (post-July-2025
+  provincial merger, verified directly rather than assumed), populated
+  complete from the start. 2 new CSS colour variables + 2 new sidebar
+  chips (Hanoi, Ho Chi Minh City) — Vietnam's first-ever spots.
+- Net result: 1601 → **1608 total spots** (Vietnam: 0 → 7, the 45th
+  country in this dataset). Structural check (Node-parsed
+  `window.SEED_GYMS`): 1608/1608 unique ids, zero duplicate
+  name+suburb+state+country combos, every spot has a non-empty `types`
+  array.
+- **Verified**: same offline-fallback-forcing method as every prior
+  batch — count reads 1608; all 7 spots searchable by "vietnam"; the
+  Hanoi chip filters to exactly 5 spots; the new Vietnam country
+  `<option>` populates all 34 state-dropdown divisions; no console
+  errors; no horizontal overflow at 375px mobile.
+- **Not yet done**: running the regenerated seed SQL against the live
+  Supabase table — same outstanding step as every prior country
+  addition.
+
 ### Expand Taiwan using Google Places (as a substitute) — 17 more gyms, 2 new cities
 - Branch: `feature/add-taiwan-more-gyms` — merged to `master`, pushed.
 - Status: done — merged.

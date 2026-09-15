@@ -105,10 +105,10 @@ are only unique within a country** (e.g. AU's `WA` vs US's `WA` are
 different regions). Anything that filters, colors, or edits by state —
 the chips in `index.html`, `STATES_BY_COUNTRY` in `app.js`, the RLS-safe
 columns in `schema.sql` — keys off the `(country, state)` pair together,
-never `state` alone. Now 42 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
+never `state` alone. Now 45 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
 FR, SE, NL, IT, BE, KR, ES, PT, AT, CH, PL, DK, FI, IE, NO, MX, BR, HU, GR,
-CZ, IS, RO, HR, RU, BG, AR, PH, CO, CL, VE, IN, IL, ID, TW), same pattern
-each time — keep this in mind before adding a 43rd. One collision
+CZ, IS, RO, HR, RU, BG, AR, PH, CO, CL, VE, IN, IL, ID, TW, ZA, EC, VN), same
+pattern each time — keep this in mind before adding a 46th. One collision
 worth flagging: `US`'s state code for California is `CA`, and `CA` is
 also the top-level country code for Canada — not a real ambiguity since
 they're different object keys/fields (`STATES_BY_COUNTRY.US` contains
@@ -3377,6 +3377,77 @@ from one source:
     row expanded.
   - **Not yet pushed to the live Supabase table** — same next-step gap as
     every prior country/city addition.
+- **Vietnam (7 gyms, 2 cities) — the 45th country**, added on request to
+  "add the next country with the most gyms that we don't already have."
+  Cross-referenced boulderinglist.com's full 84-country gym-count list
+  against every country already in this dataset, same method as the
+  Ecuador addition. The nominal largest missing country, "Georgia" at 14
+  gyms, was skipped for the same already-documented reason (boulderinglist
+  conflates the country with the US state of Georgia). The next-largest
+  missing countries were a genuine 4-way tie at 7 gyms each: Bolivia,
+  Iran, Lithuania, Serbia, and Vietnam — Vietnam was picked after
+  checking its own boulderinglist.com page directly and finding 7 solid,
+  real, named gyms with an available second directory
+  (indoorclimbing.com's own Vietnam page) to cross-check against, rather
+  than an arbitrary pick among the tied countries.
+  - **Two real corrections surfaced from cross-referencing the two
+    directories against each other and each gym's own site**, not just
+    address lookups:
+    - **Beefy Boulders** — boulderinglist.com's listing gives a single
+      Cầu Giấy address, but the chain's own site confirms its 2
+      *current* branches are Tây Hồ and Mỹ Đình instead — added both as
+      distinct spots rather than the one stale address, the same
+      "resolve to the real current branches" treatment already used
+      throughout this dataset for chains whose seed-source address had
+      gone stale (e.g. Banana Climbing's Kerry Centre/CapitaLand Tianfu/
+      Hang Lung Plaza flags in the China batches).
+    - **"Crescent Wall" and "Push Climbing"** were listed by
+      boulderinglist.com as two separate Ho Chi Minh City gyms, but
+      Push Climbing's own site (pushclimbing.vn) confirms "Crescent
+      Wall" is simply the branded name for its own location inside
+      Crescent Mall — the same venue, not two — merged into one spot
+      rather than double-counted, the same "same venue, don't
+      double-pin" precedent used throughout this dataset (Salzburg,
+      Helsinki, Yan13 Climbing Gym).
+  - **Climbing type applied only from direct evidence** — ARCH Rock
+    Climbing Hanoi and Push Climbing/Crescent Wall are both confirmed
+    bouldering + top-rope + lead (auto-belay too, for Push); the other
+    5 are bouldering-only. ARCH's own claim to be "the only climbing
+    gym that has rope climbing in Hanoi" was also used as corroborating
+    evidence that Hanoi Climbing Hub (routes graded up to V7-8, no rope
+    mention anywhere) is bouldering-only, not left as an unconfirmed
+    default.
+  - **Positions individually geocoded** against Nominatim — 4 of 7
+    resolved at street level (ARCH, Beefy Boulders - Mỹ Đình, VietClimb,
+    Push Climbing/Crescent Wall); the other 3 (Hanoi Climbing Hub, Beefy
+    Boulders - Tây Hồ, Vertical Academy) fall back to their ward's
+    centroid, disclosed per-entry.
+  - **`state` uses Vietnam's real, current top-level divisions as of the
+    July 2025 provincial merger** (63 → 34 provinces/centrally-governed
+    cities, a real, very recent administrative change verified directly
+    rather than assumed from older general knowledge) — populated
+    complete from the start (34 total, same standard as every country
+    since the NL fix), of which only Hà Nội (unchanged by the merger)
+    and the newly-expanded Hồ Chí Minh City have a seed spot and a
+    sidebar chip/colour. District-level names below the province tier
+    (Tây Hồ, Long Biên, Quận 7, etc.) were technically abolished by the
+    same merger and reorganized into wards, but are kept as `suburb`
+    values since they're still how every source (and a real visitor)
+    identifies these locations.
+  - Net result: 1601 → **1608 total spots**. Structural check (Node-parsed
+    `window.SEED_GYMS`): 1608/1608 unique ids, zero duplicate
+    name+suburb+state+country combos, every spot has a non-empty `types`
+    array.
+  - **Verified live** (served copy, `npx serve .`, offline-fallback-forcing
+    method): count reads 1608; searching "vietnam" returns all 7 spots;
+    the Hanoi chip correctly filters to exactly 5 spots; the new Vietnam
+    country `<option>` present in both forms, and selecting it populates
+    the state dropdown with all 34 divisions; chip active-state text
+    confirmed legible via computed style; no console errors beyond the
+    deliberately-forced Supabase-unreachable ones; no horizontal overflow
+    at 375px mobile with the region/country expanded.
+  - **Not yet pushed to the live Supabase table** — same next-step gap as
+    every prior country addition.
 
 ## Design system
 

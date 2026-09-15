@@ -324,10 +324,23 @@
          ['MORONA_SANTIAGO','Morona Santiago'],['NAPO','Napo'],['ORELLANA','Orellana'],
          ['PASTAZA','Pastaza'],['PICHINCHA','Pichincha'],['SANTA_ELENA','Santa Elena'],
          ['SANTO_DOMINGO','Santo Domingo de los Tsáchilas'],['SUCUMBIOS','Sucumbíos'],
-         ['TUNGURAHUA','Tungurahua'],['ZAMORA_CHINCHIPE','Zamora Chinchipe']]
+         ['TUNGURAHUA','Tungurahua'],['ZAMORA_CHINCHIPE','Zamora Chinchipe']],
+    // Vietnam's 34 real top-level provinces/centrally-governed cities as of
+    // the July 2025 provincial merger (63 -> 34), complete from the start
+    // same as every country since the NL state-list-completeness fix.
+    VN: [['AN_GIANG','An Giang'],['CA_MAU','Cà Mau'],['CAN_THO','Cần Thơ'],['CAO_BANG','Cao Bằng'],
+         ['DA_NANG','Đà Nẵng'],['DAK_LAK','Đắk Lắk'],['DIEN_BIEN','Điện Biên'],['DONG_NAI','Đồng Nai'],
+         ['DONG_THAP','Đồng Tháp'],['GIA_LAI','Gia Lai'],['HA_TINH','Hà Tĩnh'],['HAI_PHONG','Hải Phòng'],
+         ['HANOI','Hà Nội'],['HO_CHI_MINH','Hồ Chí Minh'],['HUE','Huế'],['HUNG_YEN','Hưng Yên'],
+         ['KHANH_HOA','Khánh Hòa'],['LAI_CHAU','Lai Châu'],['LAM_DONG','Lâm Đồng'],['LANG_SON','Lạng Sơn'],
+         ['LAO_CAI','Lào Cai'],['NGHE_AN','Nghệ An'],['NINH_BINH','Ninh Bình'],['PHU_THO','Phú Thọ'],
+         ['QUANG_NGAI','Quảng Ngãi'],['QUANG_NINH','Quảng Ninh'],['QUANG_TRI','Quảng Trị'],
+         ['SON_LA','Sơn La'],['TAY_NINH','Tây Ninh'],['THAI_NGUYEN','Thái Nguyên'],
+         ['THANH_HOA','Thanh Hóa'],['TUYEN_QUANG','Tuyên Quang'],['VINH_LONG','Vĩnh Long'],
+         ['BAC_NINH','Bắc Ninh']]
   };
   const TYPE_LABELS = {'indoor-bouldering':'Indoor bouldering','top-rope':'Top rope','lead-climbing':'Lead climbing'};
-  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy', BE:'Belgium', KR:'South Korea', ES:'Spain', PT:'Portugal', AT:'Austria', CH:'Switzerland', PL:'Poland', DK:'Denmark', FI:'Finland', IE:'Ireland', NO:'Norway', MX:'Mexico', BR:'Brazil', HU:'Hungary', GR:'Greece', CZ:'Czech Republic', IS:'Iceland', RO:'Romania', HR:'Croatia', RU:'Russia', BG:'Bulgaria', AR:'Argentina', PH:'Philippines', CO:'Colombia', CL:'Chile', VE:'Venezuela', IN:'India', IL:'Israel', ID:'Indonesia', TW:'Taiwan', ZA:'South Africa', EC:'Ecuador'};
+  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy', BE:'Belgium', KR:'South Korea', ES:'Spain', PT:'Portugal', AT:'Austria', CH:'Switzerland', PL:'Poland', DK:'Denmark', FI:'Finland', IE:'Ireland', NO:'Norway', MX:'Mexico', BR:'Brazil', HU:'Hungary', GR:'Greece', CZ:'Czech Republic', IS:'Iceland', RO:'Romania', HR:'Croatia', RU:'Russia', BG:'Bulgaria', AR:'Argentina', PH:'Philippines', CO:'Colombia', CL:'Chile', VE:'Venezuela', IN:'India', IL:'Israel', ID:'Indonesia', TW:'Taiwan', ZA:'South Africa', EC:'Ecuador', VN:'Vietnam'};
   // Fixed camera target per country for the "fly to this country" click on
   // its sidebar label -- picked to frame that country's actual spread of
   // seed spots (e.g. US needs a wide zoom to fit both NY and CA), not a
@@ -377,14 +390,15 @@
     ID: {center:[110,-3], zoom:4},
     TW: {center:[121,24.3], zoom:7},
     ZA: {center:[26,-29], zoom:4.4},
-    EC: {center:[-78.5,-1.5], zoom:5.8}
+    EC: {center:[-78.5,-1.5], zoom:5.8},
+    VN: {center:[106,16], zoom:5}
   };
   // Which sidebar region-group each country belongs to -- same grouping as
   // the `.region-group[data-region]` wrappers in index.html, kept here too
   // so the map's own continent-tier labels/fly-targets don't need to read
   // the DOM to know a country's continent.
   const COUNTRY_TO_REGION = {
-    CN:'asia', JP:'asia', KR:'asia', PH:'asia', IN:'asia', IL:'asia', ID:'asia', TW:'asia',
+    CN:'asia', JP:'asia', KR:'asia', PH:'asia', IN:'asia', IL:'asia', ID:'asia', TW:'asia', VN:'asia',
     DE:'europe', GB:'europe', FR:'europe', SE:'europe', NL:'europe', IT:'europe', BE:'europe',
     ES:'europe', PT:'europe', AT:'europe', CH:'europe', PL:'europe', DK:'europe', FI:'europe', IE:'europe',
     NO:'europe', HU:'europe', GR:'europe', CZ:'europe', IS:'europe',
