@@ -3788,6 +3788,35 @@ _(none)_
 
 ## Done (recent)
 
+### Add Lithuania (8 gyms, the next-largest missing country, 46th)
+- Branch: `feature/add-lithuania` — merged to `master`, pushed.
+- Status: done — merged.
+- What: user said "next" — continuing the same "add the next country
+  with the most gyms we don't already have" method used for Vietnam.
+  Same 4-way tie at 7 gyms (Bolivia, Iran, Lithuania, Serbia) Vietnam
+  was picked from; Lithuania was the next pick after confirming
+  indoorclimbing.com's own Lithuania page independently listed real
+  addresses for all 7 boulderinglist.com candidates.
+- An 8th gym surfaced from a chain-branch split (Montis Magia → LOFTAS +
+  PIKAS, same pattern as Vietnam's Beefy Boulders), one stale address
+  corrected (Scala Dream), one address typo corrected (VERTICAL Climbing
+  Center). Full sourcing detail in `docs/architecture.md` "Seed data
+  sourcing".
+- `state` uses Lithuania's 10 real counties, populated complete from the
+  start (3 have a seed spot: Kaunas, Klaipėda, Vilnius). All 8 addresses
+  geocoded at street level on the first try — the best hit rate of any
+  recent batch.
+- Net result: 1608 → **1616 total spots**. Structural check (Node-parsed
+  `window.SEED_GYMS`): 1616/1616 unique ids, zero duplicate
+  name+suburb+state+country combos, every spot has a non-empty `types`
+  array.
+- **Verified**: same offline-fallback-forcing method as every prior batch
+  — count reads 1616; all 8 spots searchable by "lithuania"; the Vilnius
+  chip correctly filters to exactly 4 spots with legible active-state
+  text; no console errors; no horizontal overflow at 375px mobile.
+- **Not yet done**: running the regenerated seed SQL against the live
+  Supabase table — same outstanding step as every prior country addition.
+
 ### Add Vietnam (7 gyms, the next-largest missing country)
 - Branch: `feature/add-vietnam` — merged to `master`, pushed.
 - Status: done — merged.

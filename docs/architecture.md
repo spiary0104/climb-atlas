@@ -105,10 +105,10 @@ are only unique within a country** (e.g. AU's `WA` vs US's `WA` are
 different regions). Anything that filters, colors, or edits by state —
 the chips in `index.html`, `STATES_BY_COUNTRY` in `app.js`, the RLS-safe
 columns in `schema.sql` — keys off the `(country, state)` pair together,
-never `state` alone. Now 45 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
+never `state` alone. Now 46 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
 FR, SE, NL, IT, BE, KR, ES, PT, AT, CH, PL, DK, FI, IE, NO, MX, BR, HU, GR,
-CZ, IS, RO, HR, RU, BG, AR, PH, CO, CL, VE, IN, IL, ID, TW, ZA, EC, VN), same
-pattern each time — keep this in mind before adding a 46th. One collision
+CZ, IS, RO, HR, RU, BG, AR, PH, CO, CL, VE, IN, IL, ID, TW, ZA, EC, VN, LT), same
+pattern each time — keep this in mind before adding a 47th. One collision
 worth flagging: `US`'s state code for California is `CA`, and `CA` is
 also the top-level country code for Canada — not a real ambiguity since
 they're different object keys/fields (`STATES_BY_COUNTRY.US` contains
@@ -3446,6 +3446,58 @@ from one source:
     confirmed legible via computed style; no console errors beyond the
     deliberately-forced Supabase-unreachable ones; no horizontal overflow
     at 375px mobile with the region/country expanded.
+  - **Not yet pushed to the live Supabase table** — same next-step gap as
+    every prior country addition.
+- **Lithuania (8 gyms, 3 cities) — the 46th country**, added on request to
+  keep applying the "next largest missing country" method — the same
+  4-way tie at 7 gyms (Bolivia, Iran, Lithuania, Serbia) Vietnam was
+  picked from. Lithuania was the next pick after checking
+  indoorclimbing.com's own Lithuania page, which independently listed
+  real addresses for all 7 boulderinglist.com candidates — the same
+  clean two-directory cross-check Vietnam's pick had.
+  - **An 8th gym surfaced from a chain-branch split, the same pattern as
+    Beefy Boulders (Vietnam)**: boulderinglist.com's single "Montis
+    Magia" listing turned out to be a 2-branch Vilnius chain once its
+    own site (montismagia.lt/contactus) was checked directly — LOFTAS
+    (Vytenio g. 50) and PIKAS (Ukmergės g. 221) are two distinct climbing
+    centers, added as two spots rather than one ambiguous entry.
+  - **One stale address corrected**: Scala Dream's boulderinglist.com/
+    indoorclimbing.com address (Statybininkų pr. 88, Klaipėda) is stale —
+    multiple independent current sources (klaipedatravel.lt, info.lt,
+    klaipedaassutavim.lt, trip.lt, the gym's own site) agree on Mainų g.
+    6 instead, the same "resolve to the real current address, disclose
+    the correction" treatment as Vietnam's Beefy Boulders fix.
+  - **One address typo corrected**: indoorclimbing.com's VERTICAL
+    Climbing Center address ("Kavalriju 143") was corrected to "Kalvarijų
+    g. 143" via independent search and a Mountain Project listing.
+  - **Climbing type applied only from direct evidence, same discipline as
+    every batch since the worldwide top-rope-tag audit** — Boulder House,
+    BONOBO Climbing, and both Montis Magia branches have real evidence of
+    top-rope and/or lead alongside bouldering; Climbing Club Kaunas and
+    Fabrique are bouldering-only with no rope evidence found (defaulted
+    conservatively per the project's established discipline, not
+    guessed); Scala Dream's own site explicitly confirms bouldering plus
+    "the highest climbing wall in Klaipėda" (top-rope, no lead evidence);
+    VERTICAL Climbing Center's 15m lead wall is explicitly confirmed
+    separately from its bouldering wall.
+  - **Positions individually geocoded** against Nominatim — all 8
+    addresses resolved at street level on the first try, the best
+    geocoding hit rate of any recent batch in this project.
+  - **`state` uses Lithuania's real 10 counties**, populated complete
+    from the start (same standard as every country since the NL fix), of
+    which 3 (Kaunas, Klaipėda, Vilnius) have a seed spot and a sidebar
+    chip/colour.
+  - Net result: 1608 → **1616 total spots**. Structural check (Node-parsed
+    `window.SEED_GYMS`): 1616/1616 unique ids, zero duplicate
+    name+suburb+state+country combos, every spot has a non-empty `types`
+    array.
+  - **Verified live** (served copy, `npx serve .`, offline-fallback-forcing
+    method): count reads 1616; searching "lithuania" returns all 8 spots;
+    the Vilnius chip correctly filters to exactly 4 spots; chip
+    active-state text confirmed legible via computed style (dark text on
+    purple background); no console errors beyond the deliberately-forced
+    Supabase-unreachable ones; no horizontal overflow at 375px mobile
+    with the region/country expanded.
   - **Not yet pushed to the live Supabase table** — same next-step gap as
     every prior country addition.
 

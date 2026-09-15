@@ -337,10 +337,15 @@
          ['QUANG_NGAI','Quảng Ngãi'],['QUANG_NINH','Quảng Ninh'],['QUANG_TRI','Quảng Trị'],
          ['SON_LA','Sơn La'],['TAY_NINH','Tây Ninh'],['THAI_NGUYEN','Thái Nguyên'],
          ['THANH_HOA','Thanh Hóa'],['TUYEN_QUANG','Tuyên Quang'],['VINH_LONG','Vĩnh Long'],
-         ['BAC_NINH','Bắc Ninh']]
+         ['BAC_NINH','Bắc Ninh']],
+    // Lithuania's 10 real counties (apskritys), complete from the start
+    // same as every country since the NL state-list-completeness fix.
+    LT: [['ALYTUS','Alytus'],['KAUNAS','Kaunas'],['KLAIPEDA','Klaipėda'],['MARIJAMPOLE','Marijampolė'],
+         ['PANEVEZYS','Panevėžys'],['SIAULIAI','Šiauliai'],['TAURAGE','Tauragė'],['TELSIAI','Telšiai'],
+         ['UTENA','Utena'],['VILNIUS','Vilnius']]
   };
   const TYPE_LABELS = {'indoor-bouldering':'Indoor bouldering','top-rope':'Top rope','lead-climbing':'Lead climbing'};
-  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy', BE:'Belgium', KR:'South Korea', ES:'Spain', PT:'Portugal', AT:'Austria', CH:'Switzerland', PL:'Poland', DK:'Denmark', FI:'Finland', IE:'Ireland', NO:'Norway', MX:'Mexico', BR:'Brazil', HU:'Hungary', GR:'Greece', CZ:'Czech Republic', IS:'Iceland', RO:'Romania', HR:'Croatia', RU:'Russia', BG:'Bulgaria', AR:'Argentina', PH:'Philippines', CO:'Colombia', CL:'Chile', VE:'Venezuela', IN:'India', IL:'Israel', ID:'Indonesia', TW:'Taiwan', ZA:'South Africa', EC:'Ecuador', VN:'Vietnam'};
+  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy', BE:'Belgium', KR:'South Korea', ES:'Spain', PT:'Portugal', AT:'Austria', CH:'Switzerland', PL:'Poland', DK:'Denmark', FI:'Finland', IE:'Ireland', NO:'Norway', MX:'Mexico', BR:'Brazil', HU:'Hungary', GR:'Greece', CZ:'Czech Republic', IS:'Iceland', RO:'Romania', HR:'Croatia', RU:'Russia', BG:'Bulgaria', AR:'Argentina', PH:'Philippines', CO:'Colombia', CL:'Chile', VE:'Venezuela', IN:'India', IL:'Israel', ID:'Indonesia', TW:'Taiwan', ZA:'South Africa', EC:'Ecuador', VN:'Vietnam', LT:'Lithuania'};
   // Fixed camera target per country for the "fly to this country" click on
   // its sidebar label -- picked to frame that country's actual spread of
   // seed spots (e.g. US needs a wide zoom to fit both NY and CA), not a
@@ -391,7 +396,8 @@
     TW: {center:[121,24.3], zoom:7},
     ZA: {center:[26,-29], zoom:4.4},
     EC: {center:[-78.5,-1.5], zoom:5.8},
-    VN: {center:[106,16], zoom:5}
+    VN: {center:[106,16], zoom:5},
+    LT: {center:[24,55.3], zoom:6.5}
   };
   // Which sidebar region-group each country belongs to -- same grouping as
   // the `.region-group[data-region]` wrappers in index.html, kept here too
@@ -399,7 +405,7 @@
   // the DOM to know a country's continent.
   const COUNTRY_TO_REGION = {
     CN:'asia', JP:'asia', KR:'asia', PH:'asia', IN:'asia', IL:'asia', ID:'asia', TW:'asia', VN:'asia',
-    DE:'europe', GB:'europe', FR:'europe', SE:'europe', NL:'europe', IT:'europe', BE:'europe',
+    DE:'europe', GB:'europe', FR:'europe', SE:'europe', NL:'europe', IT:'europe', BE:'europe', LT:'europe',
     ES:'europe', PT:'europe', AT:'europe', CH:'europe', PL:'europe', DK:'europe', FI:'europe', IE:'europe',
     NO:'europe', HU:'europe', GR:'europe', CZ:'europe', IS:'europe',
     RO:'europe', HR:'europe', RU:'europe', BG:'europe',
