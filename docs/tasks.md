@@ -3788,6 +3788,38 @@ _(none)_
 
 ## Done (recent)
 
+### Expand Taiwan using Google Places (as a substitute) — 17 more gyms, 2 new cities
+- Branch: `feature/add-taiwan-more-gyms` — merged to `master`, pushed.
+- Status: done — merged.
+- What: user said "keep going" after Korea — moved to Taiwan next since
+  it was the thinnest already-listed Asian country (6 gyms, no coverage
+  at all in Kaohsiung or Tainan, the country's two largest cities). Same
+  method as Japan/Korea (no Google Places API key configured, general
+  web search used as the substitute). Three parallel research passes
+  covered Kaohsiung, Tainan, and more Taipei/New Taipei gyms.
+- **Worst first-try geocoding hit rate of any batch in this dataset**:
+  only 1 of 17 addresses resolved at street level via Nominatim; the
+  rest fell back to district centroids, several shared between 2-3 gyms
+  in the same district (small offsets applied so they don't stack).
+  Full per-gym sourcing, the Yes Power Gym/CLK Climbing Facility
+  borderline-inclusion calls, and the T-UP chain's branch-to-branch type
+  difference are in `docs/architecture.md` "Seed data sourcing".
+- `state` uses the existing KAOHSIUNG/TAINAN keys (already in
+  `STATES_BY_COUNTRY.TW`). 2 new CSS colour variables + 2 new sidebar
+  chips.
+- Net result: 1584 → **1601 total spots** (Taiwan 6 → 23). Structural
+  check (Node-parsed `window.SEED_GYMS`): 1601/1601 unique ids, zero
+  duplicate name+suburb+state+country combos, every spot has a
+  non-empty `types` array.
+- **Verified**: same offline-fallback-forcing method as every prior
+  batch — count reads 1601; new Kaohsiung gyms searchable by name; both
+  new chips render with legible active-state text; Kaohsiung chip
+  filters to exactly 5 spots; no console errors; no horizontal overflow
+  at 375px mobile.
+- **Not yet done**: running the regenerated seed SQL against the live
+  Supabase table — same outstanding step as every prior country/city
+  addition.
+
 ### Expand South Korea using Google Places (as a substitute) — 24 more gyms, 2 new divisions
 - Branch: `feature/add-korea-more-gyms` — merged to `master`, pushed.
 - Status: done — merged.

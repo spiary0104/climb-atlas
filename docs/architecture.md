@@ -3314,6 +3314,69 @@ from one source:
     expanded.
   - **Not yet pushed to the live Supabase table** — same next-step gap as
     every prior country/city addition.
+- **Taiwan expansion (17 more gyms, 6 → 23, 2 new cities: Kaohsiung,
+  Tainan)** — direct follow-up to the Japan/Korea expansions, same
+  situation (no Google Places API key configured, general web search
+  used as the substitute) and same rationale for picking the country:
+  Taiwan was the thinnest already-listed Asian country (6 gyms across 5
+  cities, with the country's two largest cities, Kaohsiung and Tainan,
+  completely uncovered). Three parallel research passes covered
+  Kaohsiung, Tainan, and more Taipei/New Taipei gyms not already in the
+  dataset.
+  - **Geocoding hit the worst first-try Nominatim failure rate of any
+    batch in this dataset so far**: only 1 of 17 addresses (T-UP
+    Climbing Gym - Wanhua) resolved at street level on the first try;
+    the other 16 fell back to their district centroid. Several
+    districts ended up with 2-3 gyms sharing an identical fallback
+    point (Zuoying/Kaohsiung ×3, Nangang/Taipei ×3, Zhongshan/Taipei
+    ×2) — a small deterministic offset (~400-500m) was applied to each
+    so overlapping gyms don't stack on exactly one pixel, the same
+    convention as the original Mountain Project multi-gym-per-city
+    passes, with every pair/trio's genuinely-distinct-address status
+    disclosed in `notes`.
+  - **Yes Power Gym** (Tainan) and **Boulder Space - Sanmin** (Kaohsiung)
+    are both borderline/lower-confidence cases kept with an explicit
+    disclosure rather than excluded: Yes Power Gym is primarily a
+    general fitness center whose bouldering area is described as a
+    substantial, purpose-built investment (not an incidental wall) —
+    the same "genuine dedicated feature, not incidental" standard
+    already used for City Fitness Next Gen (Greece); Boulder Space -
+    Sanmin's own facility type wasn't confirmed for that specific
+    branch, only inferred from the chain's confirmed primary offering.
+  - **CLK Climbing Facility** (Tainan) is a mixed indoor/outdoor venue —
+    kept only for its confirmed indoor bouldering component in an
+    adjacent warehouse, the same "kept for the confirmed indoor part"
+    precedent as K2 Escalada Deportiva (Argentina). It also has no
+    street address in any source at all — the coarsest fallback tier in
+    this batch, a highway-marker-level approximation.
+  - **T-WALL Kinshicho and T-WALL Ookayama** precedent extends to this
+    batch too: T-UP Climbing Gym's Nangang and Wanhua branches are both
+    explicitly bouldering-only per the chain's own site, while its
+    Zhonghe branch is the chain's flagship rope-climbing location
+    (top-rope + lead + auto-belay) — confirming, once again, that a
+    shared chain brand doesn't imply a shared facility type across
+    branches.
+  - `state` uses the existing `KAOHSIUNG`/`TAINAN` keys — already
+    present in `STATES_BY_COUNTRY.TW` from the earlier state-list-
+    completeness pass (which populated Taiwan's full 22 municipalities/
+    cities/counties even though only 5 had spots at the time), so no
+    `js/app.js` change was needed. Two new `--tw-kaohsiung`/`--tw-tainan`
+    CSS colour variables and two new sidebar chips were added, since
+    these are each city's first-ever seed spot.
+  - Net result: 1584 → **1601 total spots**; Taiwan alone 6 → **23**.
+    Structural check (Node-parsed `window.SEED_GYMS`): 1601/1601 unique
+    ids, zero duplicate name+suburb+state+country combos, every spot has
+    a non-empty `types` array.
+  - **Verified live** (served copy, `npx serve .`, offline-fallback-
+    forcing method): count reads 1601; searching "Boulder Space" returns
+    the new Kaohsiung gyms; both new chips (Kaohsiung/Tainan) render in
+    distinct colours and, when active, resolve to legible dark-text-on-
+    colour; the Kaohsiung chip correctly filters to exactly 5 spots; no
+    console errors beyond the deliberately-forced Supabase-unreachable
+    ones; no horizontal overflow at 375px mobile with Taiwan's now-6-chip
+    row expanded.
+  - **Not yet pushed to the live Supabase table** — same next-step gap as
+    every prior country/city addition.
 
 ## Design system
 
