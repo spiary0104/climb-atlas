@@ -356,10 +356,14 @@
          ['PODUNAVSKI','Podunavlje'],['BRANICEVSKI','Braničevo'],['SUMADIJSKI','Šumadija'],
          ['POMORAVSKI','Pomoravlje'],['BORSKI','Bor'],['ZAJECARSKI','Zaječar'],['ZLATIBORSKI','Zlatibor'],
          ['MORAVICKI','Moravica'],['RASKI','Raška'],['RASINSKI','Rasina'],['NISAVSKI','Nišava'],
-         ['TOPLICKI','Toplica'],['PIROTSKI','Pirot'],['JABLANICKI','Jablanica'],['PCINJSKI','Pčinja']]
+         ['TOPLICKI','Toplica'],['PIROTSKI','Pirot'],['JABLANICKI','Jablanica'],['PCINJSKI','Pčinja']],
+    // Bolivia's 9 real departments, populated complete from the start
+    // same as every country since the NL state-list-completeness fix.
+    BO: [['LA_PAZ','La Paz'],['COCHABAMBA','Cochabamba'],['SANTA_CRUZ','Santa Cruz'],['ORURO','Oruro'],
+         ['POTOSI','Potosí'],['CHUQUISACA','Chuquisaca'],['TARIJA','Tarija'],['BENI','Beni'],['PANDO','Pando']]
   };
   const TYPE_LABELS = {'indoor-bouldering':'Indoor bouldering','top-rope':'Top rope','lead-climbing':'Lead climbing'};
-  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy', BE:'Belgium', KR:'South Korea', ES:'Spain', PT:'Portugal', AT:'Austria', CH:'Switzerland', PL:'Poland', DK:'Denmark', FI:'Finland', IE:'Ireland', NO:'Norway', MX:'Mexico', BR:'Brazil', HU:'Hungary', GR:'Greece', CZ:'Czech Republic', IS:'Iceland', RO:'Romania', HR:'Croatia', RU:'Russia', BG:'Bulgaria', AR:'Argentina', PH:'Philippines', CO:'Colombia', CL:'Chile', VE:'Venezuela', IN:'India', IL:'Israel', ID:'Indonesia', TW:'Taiwan', ZA:'South Africa', EC:'Ecuador', VN:'Vietnam', LT:'Lithuania', RS:'Serbia'};
+  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy', BE:'Belgium', KR:'South Korea', ES:'Spain', PT:'Portugal', AT:'Austria', CH:'Switzerland', PL:'Poland', DK:'Denmark', FI:'Finland', IE:'Ireland', NO:'Norway', MX:'Mexico', BR:'Brazil', HU:'Hungary', GR:'Greece', CZ:'Czech Republic', IS:'Iceland', RO:'Romania', HR:'Croatia', RU:'Russia', BG:'Bulgaria', AR:'Argentina', PH:'Philippines', CO:'Colombia', CL:'Chile', VE:'Venezuela', IN:'India', IL:'Israel', ID:'Indonesia', TW:'Taiwan', ZA:'South Africa', EC:'Ecuador', VN:'Vietnam', LT:'Lithuania', RS:'Serbia', BO:'Bolivia'};
   // Fixed camera target per country for the "fly to this country" click on
   // its sidebar label -- picked to frame that country's actual spread of
   // seed spots (e.g. US needs a wide zoom to fit both NY and CA), not a
@@ -412,7 +416,8 @@
     EC: {center:[-78.5,-1.5], zoom:5.8},
     VN: {center:[106,16], zoom:5},
     LT: {center:[24,55.3], zoom:6.5},
-    RS: {center:[20.3,44.9], zoom:7}
+    RS: {center:[20.3,44.9], zoom:7},
+    BO: {center:[-67.1,-16.9], zoom:5.6}
   };
   // Which sidebar region-group each country belongs to -- same grouping as
   // the `.region-group[data-region]` wrappers in index.html, kept here too
@@ -427,7 +432,7 @@
     CA:'north-america', US:'north-america', MX:'north-america',
     AU:'oceania', NZ:'oceania',
     BR:'south-america', AR:'south-america', CO:'south-america', CL:'south-america', VE:'south-america',
-    EC:'south-america',
+    EC:'south-america', BO:'south-america',
     ZA:'africa'
   };
   const REGION_LABELS = {asia:'Asia', europe:'Europe', 'north-america':'North America', oceania:'Oceania', 'south-america':'South America', africa:'Africa'};

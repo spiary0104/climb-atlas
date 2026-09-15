@@ -3788,6 +3788,37 @@ _(none)_
 
 ## Done (recent)
 
+### Add Bolivia (6 gyms, the next-largest missing country, 48th)
+- Branch: `feature/add-bolivia` — merged to `master`, pushed.
+- Status: done — merged.
+- What: user said "next" — continuing the same "add the next country
+  with the most gyms we don't already have" method used for Vietnam,
+  Lithuania, and Serbia. A 2-way tie at 7 gyms (Bolivia, Iran) once the
+  earlier ties had been picked through; Bolivia was picked after
+  indoorclimbing.com's own Bolivia page independently gave real
+  addresses for all 7 of boulderinglist.com's 7 candidates — a stronger
+  cross-check than Iran's non-overlapping second source.
+- 1 of the 7 original candidates excluded (Camp Kewiña — an outdoor
+  camping property, not an indoor gym). One name puzzle resolved:
+  boulderinglist's "El Miuro" is actually El Muro Escalada Deportiva,
+  Bolivia's first professional sport-climbing gym, confirmed to offer
+  all three climbing types. Full sourcing detail in
+  `docs/architecture.md` "Seed data sourcing".
+- `state` uses Bolivia's 9 real departments, populated complete from the
+  start (2 have a seed spot: Cochabamba, La Paz). Only La Paz's 3
+  addresses geocoded directly; Cochabamba's 3 needed simplified
+  retries/fallbacks (Nominatim has weak coverage there).
+- Net result: 1621 → **1627 total spots**. Structural check (Node-parsed
+  `window.SEED_GYMS`): 1627/1627 unique ids, zero duplicate
+  name+suburb+state+country combos, every spot has a non-empty `types`
+  array.
+- **Verified**: same offline-fallback-forcing method as every prior batch
+  — count reads 1627; all 6 spots searchable by "bolivia"; the La Paz
+  chip correctly filters to exactly 3 spots with legible active-state
+  text; no console errors; no horizontal overflow at 375px mobile.
+- **Not yet done**: running the regenerated seed SQL against the live
+  Supabase table — same outstanding step as every prior country addition.
+
 ### Add Serbia (5 gyms, the next-largest missing country, 47th)
 - Branch: `feature/add-serbia` — merged to `master`, pushed.
 - Status: done — merged.

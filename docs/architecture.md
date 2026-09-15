@@ -105,10 +105,10 @@ are only unique within a country** (e.g. AU's `WA` vs US's `WA` are
 different regions). Anything that filters, colors, or edits by state —
 the chips in `index.html`, `STATES_BY_COUNTRY` in `app.js`, the RLS-safe
 columns in `schema.sql` — keys off the `(country, state)` pair together,
-never `state` alone. Now 47 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
+never `state` alone. Now 48 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
 FR, SE, NL, IT, BE, KR, ES, PT, AT, CH, PL, DK, FI, IE, NO, MX, BR, HU, GR,
 CZ, IS, RO, HR, RU, BG, AR, PH, CO, CL, VE, IN, IL, ID, TW, ZA, EC, VN, LT,
-RS), same pattern each time — keep this in mind before adding a 48th. One collision
+RS, BO), same pattern each time — keep this in mind before adding a 49th. One collision
 worth flagging: `US`'s state code for California is `CA`, and `CA` is
 also the top-level country code for Canada — not a real ambiguity since
 they're different object keys/fields (`STATES_BY_COUNTRY.US` contains
@@ -3565,6 +3565,65 @@ from one source:
     the Belgrade chip correctly filters to exactly 4 spots; chip
     active-state text confirmed legible via computed style (dark text on
     red background); no console errors beyond the deliberately-forced
+    Supabase-unreachable ones; no horizontal overflow at 375px mobile
+    with the region/country expanded.
+  - **Not yet pushed to the live Supabase table** — same next-step gap as
+    every prior country addition.
+- **Bolivia (6 gyms, 2 departments) — the 48th country**, added on request
+  to keep applying the "next largest missing country" method — a 2-way
+  tie at 7 gyms (Bolivia, Iran) once Vietnam/Lithuania/Serbia had been
+  picked off the earlier ties. Bolivia was picked after directly comparing
+  both countries' second-source cross-check quality: indoorclimbing.com's
+  own Bolivia page independently gave real, usable street addresses for
+  all 7 of boulderinglist.com's 7 candidates (the best cross-check hit
+  rate of any recent batch), whereas Iran's second source
+  (iranrocktrip.com) listed a completely different, non-overlapping set
+  of gyms, and boulderinglist's own Iran addresses were wall-spec text
+  rather than real addresses.
+  - **One candidate excluded on scope grounds**: Camp Kewiña (Cochabamba)
+    turned out, on closer inspection, to be a 34-hectare outdoor camping
+    property with pine/cypress forests, natural rock formations, cabins,
+    and a lake — an outdoor recreational retreat with a small climbing
+    feature, not a dedicated indoor gym. Same "roof/wall alone isn't
+    indoor" scope exclusion already applied to El Muro Cumbayá (Ecuador)
+    and Huayan Climbing Park (China).
+  - **One gym's real name resolved from a directory mislabel**:
+    boulderinglist.com listed "El Miuro" (a likely transcription slip);
+    it's actually **El Muro Escalada Deportiva**, Bolivia's first
+    professional sport-climbing gym (opened 23 August 2014 at Club
+    Olympic, Cochabamba) — its own promotional material explicitly
+    advertises top-rope, lead, and (more recently) bouldering courses,
+    confirmed via multiple independent sources, so it's the only Bolivia
+    spot in this batch tagged with all three climbing types.
+  - **Climbing type applied only from direct evidence** — Ahimsa Boulder,
+    Gecko Boulders, LA Cueva Boulder Gym, and Llama Climber are all
+    confirmed bouldering-only (each independently described as a
+    dedicated boulder gym/room with no rope-climbing mention); CRUXTREME
+    is confirmed lead-climbing only (a 15m sport-climbing wall, "sport
+    climbing" mapped to lead per the same convention already used for
+    Movimento Verticale Roma).
+  - **Positions individually geocoded** against Nominatim — only the 3 La
+    Paz addresses resolved directly on the first try; all 3 Cochabamba
+    addresses needed a second, simplified pass: "Club Olympic,
+    Cochabamba" resolved to a named Club Olympic point of interest
+    (used for El Muro, which is housed there), "Avenida América,
+    Cochabamba" resolved to the named avenue itself (used for Gecko
+    Boulders), and Ahimsa Boulder's own address is a Google Plus Code
+    Nominatim can't parse at all, so it falls back to the Tiquipaya area
+    the source itself names.
+  - **`state` uses Bolivia's 9 real departments**, populated complete from
+    the start (same standard as every country since the NL fix), of
+    which 2 (Cochabamba, La Paz) have a seed spot and a sidebar
+    chip/colour.
+  - Net result: 1621 → **1627 total spots**. Structural check (Node-parsed
+    `window.SEED_GYMS`): 1627/1627 unique ids, zero duplicate
+    name+suburb+state+country combos, every spot has a non-empty `types`
+    array.
+  - **Verified live** (served copy, `npx serve .`, offline-fallback-forcing
+    method): count reads 1627; searching "bolivia" returns all 6 spots;
+    the La Paz chip correctly filters to exactly 3 spots; chip
+    active-state text confirmed legible via computed style (dark text on
+    orange background); no console errors beyond the deliberately-forced
     Supabase-unreachable ones; no horizontal overflow at 375px mobile
     with the region/country expanded.
   - **Not yet pushed to the live Supabase table** — same next-step gap as
