@@ -36,6 +36,30 @@ Each entry:
 
 ## Backlog
 
+### Monetization: paid tier ("offline mode" gated behind Stripe)
+- Status: backlog. Direct follow-up to the "PWA foundation" task in Done
+  below — that task built the technical offline-caching groundwork
+  (`manifest.json` + `sw.js`) with **no payment gating at all**, by the
+  user's explicit choice to scope this as "foundation only" for now.
+- What: turn the now-working offline caching into an actual paid feature,
+  the first of 5 paid-tier ideas discussed and grounded in comparable
+  products (AllTrails+/Peak, Kaya, Vertical-Life, Strava — see the
+  session that produced this list for the other 4: ad-free, logbook
+  analytics, training plans, social leaderboards/heatmaps). This needs,
+  at minimum: a Stripe account + checkout flow, a webhook endpoint to
+  record subscription status (this static site has no server of its own
+  — a Supabase Edge Function is the natural place, not something this
+  project has today), and a `subscriptions`-style table + RLS-safe way
+  for the client to know "is this signed-in user paid" before deciding
+  what to let the service worker cache/how much.
+- Needs its own scoping pass before starting (per `Rules.md` §11) — e.g.
+  what exactly gets gated (unlimited saved offline regions vs. a
+  free-tier cap of 1?), what Stripe product/price to create, whether
+  this repo's "no build step, no framework" constraint extends to
+  needing a Supabase Edge Function (a small isolated Deno function,
+  arguably not the same kind of "build tooling" `CLAUDE.md` warns
+  against, but worth confirming with the user before assuming).
+
 ### Redesign follow-ups (optional, not blocking)
 - Status: backlog. The eight-stage redesign (A–H, see In Progress) is
   complete and live on `master`. These are the things that pass left on
@@ -3787,6 +3811,52 @@ Each entry:
 _(none)_
 
 ## Done (recent)
+
+### PWA foundation: manifest.json + offline-caching service worker
+- Branch: `feature/pwa-offline-foundation` — implemented + verified as far
+  as this environment allows; not yet merged.
+- Status: done (scoped as "PWA foundation only," see below).
+- What: user asked how to make Climb Atlas profitable; after a short
+  PWA-vs-native-app discussion and 5 paid-tier ideas grounded in
+  comparable products (AllTrails+/Peak, Kaya, Vertical-Life, Strava —
+  offline maps, ad-free, logbook analytics, training plans, social
+  leaderboards), the user picked idea #1, "offline mode," as the feature
+  to build the first paid tier around. Asked how much to build right now
+  (just the technical PWA/offline foundation vs. also a free-tier cap vs.
+  a full Stripe-gated feature) — user chose **PWA foundation only, no
+  payment gating yet**.
+- Added `manifest.json` (name/icons/`display:standalone`, linked from
+  both `index.html` and `about.html`) and `sw.js` (registered from
+  `index.html`, root-scoped so it controls the whole site) with four
+  cache buckets: the app shell (stale-while-revalidate), CARTO map tiles
+  (cache-first — a tile never changes, this is what makes a previously-
+  viewed map area work offline), third-party library CDNs
+  (stale-while-revalidate), and Supabase REST reads (network-first,
+  falling back to the last-seen response offline). All GET-only — writes
+  (submissions, edits, marks) are never intercepted. `icons/icon.svg` is
+  the existing favicon design scaled to 512×512 (no PNG-generation
+  tooling available, so SVG-only for now — installable in Chrome, no
+  `apple-touch-icon` since iOS doesn't reliably rasterize SVG for that).
+  Full detail in `docs/architecture.md` "PWA / offline support".
+- **Real verification limitation found and documented, not glossed
+  over**: the in-app Browser preview tool used for every prior task in
+  this project **cannot register any service worker at all** — confirmed
+  by registering a trivial, valid no-op worker and getting the identical
+  `TypeError: ... unknown error occurred when fetching the script.` as
+  `sw.js` itself, with `isSecureContext:true` and no iframe involved — a
+  sandboxed-preview-harness restriction, not a code bug. What *was*
+  verified: `manifest.json` parses and every field/icon resolves,
+  `node --check sw.js` passes, the icon renders correctly, and the rest
+  of the app (live Supabase load, 1655-spot count, no new console errors
+  beyond the expected registration failure) is unaffected.
+- **Not yet done**: a real, non-sandboxed browser check (Chrome
+  DevTools → Application → Service Workers/Manifest, then an actual
+  offline reload) to confirm install-prompt and offline-reload behaviour
+  for real — worth the user trying once this merges. No payment/paywall
+  gating exists yet — that's explicitly a separate, larger follow-up task
+  (needs a real payment backend piece, e.g. Stripe + a webhook + a
+  Supabase table tracking subscription status, that this static site
+  doesn't have). See Backlog below.
 
 ### Add Ukraine (6 gyms, next-largest missing country, 53rd — tier complete)
 - Branch: `feature/add-ukraine` — merged to `master`, pushed.

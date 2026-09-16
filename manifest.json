@@ -1,0 +1,17 @@
+{
+  "name": "Climb Atlas",
+  "short_name": "ClimbAtlas",
+  "description": "A community-sourced map of indoor climbing gyms worldwide.",
+  "start_url": "/index.html",
+  "scope": "/",
+  "id": "/index.html",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#211f1b",
+  "theme_color": "#211f1b",
+  "icons": [
+    { "src": "icons/icon.svg", "sizes": "192x192", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "icons/icon.svg", "sizes": "512x512", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "icons/icon.svg", "sizes": "512x512", "type": "image/svg+xml", "purpose": "maskable" }
+  ]
+}
