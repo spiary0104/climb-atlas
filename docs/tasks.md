@@ -3788,6 +3788,32 @@ _(none)_
 
 ## Done (recent)
 
+### Add Malaysia (6 gyms, next-largest missing country, 51st)
+- Branch: `feature/add-malaysia` — merged to `master`, pushed.
+- Status: done — merged.
+- What: user said "do the rest in the tier" — the first of the three
+  remaining tied-at-6 countries (Malaysia, Thailand, Ukraine) after
+  Estonia. All 6 boulderinglist.com candidates confirmed real via
+  independent web search, each with its own genuine address — no
+  exclusions needed. One directory label resolved to its real name:
+  "Putrajaya Climb Park" is actually Putrajaya Challenge Park. Full
+  sourcing detail in `docs/architecture.md` "Seed data sourcing".
+- `state` uses Malaysia's 13 states + 3 federal territories, populated
+  complete from the start (4 have a seed spot: Penang, Johor, Putrajaya,
+  Selangor). 5 of 6 addresses geocoded at street level.
+- Net result: 1637 → **1643 total spots**. Structural check (Node-parsed
+  `window.SEED_GYMS`): 1643/1643 unique ids, zero duplicate
+  name+suburb+state+country combos, every spot has a non-empty `types`
+  array.
+- **Verified**: same offline-fallback-forcing method as every prior batch
+  — count reads 1643; all 6 spots searchable by "malaysia"; the
+  Selangor chip correctly filters to exactly 2 spots with legible
+  active-state text; no console errors; no horizontal overflow at 375px
+  mobile.
+- **Not yet done**: Thailand and Ukraine, the remaining two in this tier
+  (followed through on immediately after, see the entries below);
+  running the regenerated seed SQL against the live Supabase table.
+
 ### Add Estonia (6 gyms, next-largest missing country, 50th)
 - Branch: `feature/add-estonia` — merged to `master`, pushed.
 - Status: done — merged.

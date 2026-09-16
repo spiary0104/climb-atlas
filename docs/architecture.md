@@ -105,11 +105,11 @@ are only unique within a country** (e.g. AU's `WA` vs US's `WA` are
 different regions). Anything that filters, colors, or edits by state —
 the chips in `index.html`, `STATES_BY_COUNTRY` in `app.js`, the RLS-safe
 columns in `schema.sql` — keys off the `(country, state)` pair together,
-never `state` alone. Now 50 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
+never `state` alone. Now 51 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
 FR, SE, NL, IT, BE, KR, ES, PT, AT, CH, PL, DK, FI, IE, NO, MX, BR, HU, GR,
 CZ, IS, RO, HR, RU, BG, AR, PH, CO, CL, VE, IN, IL, ID, TW, ZA, EC, VN, LT,
-RS, BO, IR, EE), same pattern each time — keep this in mind before adding
-a 51st. One collision
+RS, BO, IR, EE, MY), same pattern each time — keep this in mind before
+adding a 52nd. One collision
 worth flagging: `US`'s state code for California is `CA`, and `CA` is
 also the top-level country code for Canada — not a real ambiguity since
 they're different object keys/fields (`STATES_BY_COUNTRY.US` contains
@@ -3752,6 +3752,49 @@ from one source:
     the Tartu chip correctly filters to exactly 3 spots; chip
     active-state text confirmed legible via computed style (dark text on
     orange background); no console errors beyond the deliberately-forced
+    Supabase-unreachable ones; no horizontal overflow at 375px mobile
+    with the region/country expanded.
+  - **Not yet pushed to the live Supabase table** — same next-step gap as
+    every prior country addition.
+- **Malaysia (6 gyms, 4 divisions) — the 51st country**, the first of the
+  three remaining members of the tied-at-6 batch (Estonia, Malaysia,
+  Thailand, Ukraine) — user asked to "do the rest in the tier" after
+  Estonia. All 6 of boulderinglist.com's candidates confirmed real and
+  current via independent web search, each with its own genuine street
+  address — no exclusions needed, the cleanest hit rate of any recent
+  batch.
+  - **One directory label resolved to its real name**: boulderinglist.com
+    listed "Putrajaya Climb Park," but multiple independent sources
+    confirm its real name is Putrajaya Challenge Park (Taman Cabaran), a
+    public multi-zone complex — the same "resolve the shorthand label"
+    treatment as NET Spordihall (Estonia) and Gekon (Serbia).
+  - **Climbing type applied only from direct evidence** — Project Rock
+    (Penang) and Rockworld (Johor Bahru) are both confirmed to offer all
+    three disciplines (bouldering, top-rope, lead) via their own sites;
+    Putrajaya Challenge Park is confirmed bouldering + top-rope + lead
+    across its 6 named zones (its speed-climbing zone isn't tagged, since
+    this app has no speed-climbing type); Petit Climbing Center (Johor)
+    and Bump Bouldering (Selangor) are both confirmed bouldering-only,
+    each independently described with no rope-climbing mention; Shah Alam
+    Extreme Park (Selangor) is confirmed bouldering + a separate
+    belayer-staffed climbing wall, no lead-specific evidence found.
+  - **Positions individually geocoded** against Nominatim — 5 of 6
+    resolved at street level on the first try; only Petit Climbing Center
+    fell back to the Johor Bahru city centroid (a retry with a
+    simplified address still returned no match).
+  - **`state` uses Malaysia's 13 states + 3 federal territories**,
+    populated complete from the start (same standard as every country
+    since the NL fix), of which 4 (Penang, Johor, Putrajaya, Selangor)
+    have a seed spot and a sidebar chip/colour.
+  - Net result: 1637 → **1643 total spots**. Structural check (Node-parsed
+    `window.SEED_GYMS`): 1643/1643 unique ids, zero duplicate
+    name+suburb+state+country combos, every spot has a non-empty `types`
+    array.
+  - **Verified live** (served copy, `npx serve .`, offline-fallback-forcing
+    method): count reads 1643; searching "malaysia" returns all 6 spots;
+    the Selangor chip correctly filters to exactly 2 spots; chip
+    active-state text confirmed legible via computed style (dark text on
+    purple background); no console errors beyond the deliberately-forced
     Supabase-unreachable ones; no horizontal overflow at 375px mobile
     with the region/country expanded.
   - **Not yet pushed to the live Supabase table** — same next-step gap as
