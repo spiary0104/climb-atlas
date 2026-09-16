@@ -3788,6 +3788,39 @@ _(none)_
 
 ## Done (recent)
 
+### Add Iran (4 gyms, the last of the original missing-country tie, 49th)
+- Branch: `feature/add-iran` — merged to `master`, pushed.
+- Status: done — merged.
+- What: user said "next" — the last remaining member of the original
+  4-way tie at 7 gyms (Bolivia, Iran, Lithuania, Serbia) once Vietnam
+  had also been picked off the same boulderinglist.com pool. Iran's
+  second source (iranrocktrip.com) turned out to list a completely
+  different set of Tehran gyms with no overlap, and boulderinglist's own
+  Iran "addresses" were wall-specification text rather than real street
+  addresses — but every one of the 7 original candidates was still
+  individually web-searched rather than skipping the country outright.
+- 3 of 7 excluded: 2 unconfirmable by any source (Climbing wall of
+  turbin, Boluk-e-Bala/MAXBlocs), 1 ambiguous-access university wall
+  (Tarbiat Modares University). Left 4 real gyms across 4 cities — the
+  smallest country batch so far, consistent with excluding unconfirmable
+  candidates rather than forcing a count. Full sourcing detail in
+  `docs/architecture.md` "Seed data sourcing".
+- `state` uses Iran's 31 real provinces, populated complete from the
+  start (4 have a seed spot: Qazvin, Qom, Tehran, Zanjan). 2 of 4
+  addresses geocoded at street level; 2 fell back to city centroid.
+- Net result: 1627 → **1631 total spots**. Structural check (Node-parsed
+  `window.SEED_GYMS`): 1631/1631 unique ids, zero duplicate
+  name+suburb+state+country combos, every spot has a non-empty `types`
+  array.
+- **Verified**: same offline-fallback-forcing method as every prior batch
+  — count reads 1631; all 4 spots searchable by "iran"; the Tehran chip
+  correctly filters to exactly 1 spot with legible active-state text; no
+  console errors; no horizontal overflow at 375px mobile.
+- **This completes the original 4-way-tie sequence** (Vietnam, Lithuania,
+  Serbia, Bolivia, Iran) from boulderinglist.com's country list.
+- **Not yet done**: running the regenerated seed SQL against the live
+  Supabase table — same outstanding step as every prior country addition.
+
 ### Add Bolivia (6 gyms, the next-largest missing country, 48th)
 - Branch: `feature/add-bolivia` — merged to `master`, pushed.
 - Status: done — merged.

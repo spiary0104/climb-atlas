@@ -105,10 +105,11 @@ are only unique within a country** (e.g. AU's `WA` vs US's `WA` are
 different regions). Anything that filters, colors, or edits by state —
 the chips in `index.html`, `STATES_BY_COUNTRY` in `app.js`, the RLS-safe
 columns in `schema.sql` — keys off the `(country, state)` pair together,
-never `state` alone. Now 48 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
+never `state` alone. Now 49 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
 FR, SE, NL, IT, BE, KR, ES, PT, AT, CH, PL, DK, FI, IE, NO, MX, BR, HU, GR,
 CZ, IS, RO, HR, RU, BG, AR, PH, CO, CL, VE, IN, IL, ID, TW, ZA, EC, VN, LT,
-RS, BO), same pattern each time — keep this in mind before adding a 49th. One collision
+RS, BO, IR), same pattern each time — keep this in mind before adding a
+50th. One collision
 worth flagging: `US`'s state code for California is `CA`, and `CA` is
 also the top-level country code for Canada — not a real ambiguity since
 they're different object keys/fields (`STATES_BY_COUNTRY.US` contains
@@ -3626,6 +3627,75 @@ from one source:
     orange background); no console errors beyond the deliberately-forced
     Supabase-unreachable ones; no horizontal overflow at 375px mobile
     with the region/country expanded.
+  - **Not yet pushed to the live Supabase table** — same next-step gap as
+    every prior country addition.
+- **Iran (4 gyms, 4 provinces) — the 49th country**, the last remaining
+  member of the original boulderinglist.com tie at 7 gyms (Bolivia, Iran)
+  once Vietnam/Lithuania/Serbia/Bolivia had been picked off the earlier
+  ties. Checked directly against a second source (iranrocktrip.com)
+  before committing, same discipline as every prior tied-country pick —
+  that source turned out to list a completely different, non-overlapping
+  set of Tehran gyms rather than confirming boulderinglist's own 7, and
+  boulderinglist's own listed "addresses" were wall-specification text
+  (e.g. wall height/roof angle), not real street addresses. Individually
+  web-searched each of the 7 original candidates anyway rather than
+  skipping the country outright.
+  - **3 of the 7 original candidates excluded**: 2 could not be confirmed
+    real by any source at all (Climbing wall of turbin, Tabriz;
+    Boluk-e-Bala/MAXBlocs, Tehran) — no independent mention found
+    anywhere, so left out entirely per `Rules.md` §1 rather than guessed
+    in. 1 (Tarbiat Modares University, Tehran) was excluded on the same
+    ambiguous-public-access grounds as every other unconfirmed
+    university wall in this dataset — its real climbing wall (625m²,
+    11m overhanging, 14m roof) is confirmed to exist, but no source
+    describes its policy toward outside visitors, unlike the university
+    gyms elsewhere in this file that were individually confirmed open
+    and kept (Beijing Sport University, Chengdu Sport University,
+    Tongji University, etc.). Left 4 real, confirmed gyms across 4
+    different cities — the smallest country batch in this dataset, but
+    consistent with the standing precedent of excluding unconfirmable
+    candidates rather than force-including them to hit a target count
+    (same as Serbia's 5-of-7 and Bolivia's 6-of-7).
+  - **Climbing type applied only from direct evidence** — Shahid Rajaee
+    Complex Gym (Qazvin) is confirmed to have both a lead wall (two
+    distinct wall structures, one a 155m+6m-roof pyramid) and a separate
+    bouldering section; ASOO Yadegar Imam Climbing Gym (Qom) and Davoudi
+    Climbing Gym (Tehran) both have no facility-type evidence beyond
+    being real, current climbing gyms, so both default to bouldering-only
+    per this project's established discipline for unconfirmed-type
+    entries (the same standard as Korea's/China's audited batches) rather
+    than being guessed as rope climbing. Taka Gayasi (Zanjan) is
+    confirmed as a real 12m wall with no discipline named by any
+    source — tagged top-rope (not bouldering) since a wall that tall is
+    physically incompatible with bouldering-only use (every bouldering
+    wall elsewhere in this dataset is under ~5m); this is a physical
+    inference from the wall's own confirmed dimensions, not a guess about
+    the facility's marketing, the same kind of dimension-based reasoning
+    already used for Murall Annopol's (Poland) lead-only tag.
+  - **Positions individually geocoded** against Nominatim — 2 of 4
+    (Shahid Rajaee, Davoudi) resolved at street/named-location level; the
+    other 2 (ASOO, Taka Gayasi) fall back to their city centroid — a
+    retry with a more specific sub-address for ASOO (Asayeshgah Square)
+    still returned no match.
+  - **`state` uses Iran's 31 real provinces**, populated complete from
+    the start (same standard as every country since the NL fix), of
+    which 4 (Qazvin, Qom, Tehran, Zanjan) have a seed spot and a sidebar
+    chip/colour.
+  - Net result: 1627 → **1631 total spots**. Structural check (Node-parsed
+    `window.SEED_GYMS`): 1631/1631 unique ids, zero duplicate
+    name+suburb+state+country combos, every spot has a non-empty `types`
+    array.
+  - **Verified live** (served copy, `npx serve .`, offline-fallback-forcing
+    method): count reads 1631; searching "iran" returns all 4 spots (plus
+    2 incidental substring matches on Venezuela's Miranda state — expected
+    search behaviour, not a bug); the Tehran chip correctly filters to
+    exactly 1 spot; chip active-state text confirmed legible via computed
+    style (dark text on green background); no console errors beyond the
+    deliberately-forced Supabase-unreachable ones; no horizontal overflow
+    at 375px mobile with the region/country expanded.
+  - **This completes the original boulderinglist.com "next-largest missing
+    country" tie sequence** — every country from the 4-way tie at 7 gyms
+    (Bolivia, Iran, Lithuania, Serbia) plus Vietnam has now been added.
   - **Not yet pushed to the live Supabase table** — same next-step gap as
     every prior country addition.
 
