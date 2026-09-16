@@ -3812,6 +3812,37 @@ _(none)_
 
 ## Done (recent)
 
+### Add Slovakia (6 gyms, next-largest missing country, 54th)
+- Status: done — committed directly to `master` (no separate branch —
+  same lightweight single-country pattern as the recent tied-country
+  picks).
+- What: user said "for now lets just keep adding countries." Checked
+  boulderinglist.com's full 84-country list — the next-largest missing
+  country was Slovakia (5 gyms), once the earlier ~6/~7-gym ties
+  (Estonia/Malaysia/Thailand/Ukraine, then Vietnam/Lithuania/Serbia/
+  Bolivia/Iran) had all been exhausted. Cross-checked against
+  indoorclimbing.com's own Slovakia page: 4 of 5 gyms matched exactly
+  with real addresses, but the two sources disagreed on the 5th
+  (boulderinglist: K2-Zilina; indoorclimbing: Ovčín Boulder & Bistro) —
+  both individually confirmed real and kept rather than picking one,
+  giving 6 gyms total. Full sourcing detail in `docs/architecture.md`
+  "Seed data sourcing".
+- `state` uses Slovakia's 8 real kraje, populated complete from the start
+  (4 have a seed spot: Bratislavský, Žilinský, Trenčiansky,
+  Banskobystrický). All 6 addresses geocoded at street level on the
+  first try.
+- Net result: 1655 → **1661 total spots**. Structural check (Node-parsed
+  `window.SEED_GYMS`): 1661/1661 unique ids, zero duplicate
+  name+suburb+state+country combos, every spot has a non-empty `types`
+  array.
+- **Verified**: same offline-fallback-forcing method as every prior batch
+  — count reads 1661; all 6 spots searchable by "slovakia"; the
+  Bratislavský chip correctly filters to exactly 2 spots with legible
+  active-state text; no console errors; no horizontal overflow at 375px
+  mobile.
+- **Not yet done**: running the regenerated seed SQL against the live
+  Supabase table — same outstanding step as every prior country addition.
+
 ### PWA foundation: manifest.json + offline-caching service worker
 - Branch: `feature/pwa-offline-foundation` — implemented + verified as far
   as this environment allows; not yet merged.

@@ -108,11 +108,11 @@ are only unique within a country** (e.g. AU's `WA` vs US's `WA` are
 different regions). Anything that filters, colors, or edits by state —
 the chips in `index.html`, `STATES_BY_COUNTRY` in `app.js`, the RLS-safe
 columns in `schema.sql` — keys off the `(country, state)` pair together,
-never `state` alone. Now 53 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
+never `state` alone. Now 54 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
 FR, SE, NL, IT, BE, KR, ES, PT, AT, CH, PL, DK, FI, IE, NO, MX, BR, HU, GR,
 CZ, IS, RO, HR, RU, BG, AR, PH, CO, CL, VE, IN, IL, ID, TW, ZA, EC, VN, LT,
-RS, BO, IR, EE, MY, TH, UA), same pattern each time — keep this in mind
-before adding a 54th. One collision
+RS, BO, IR, EE, MY, TH, UA, SK), same pattern each time — keep this in mind
+before adding a 55th. One collision
 worth flagging: `US`'s state code for California is `CA`, and `CA` is
 also the top-level country code for Canada — not a real ambiguity since
 they're different object keys/fields (`STATES_BY_COUNTRY.US` contains
@@ -3926,6 +3926,53 @@ from one source:
   - **This completes the "do the rest in the tier" batch** — all three
     remaining tied-at-6 countries (Malaysia, Thailand, Ukraine) have now
     been added, following Estonia's own pick from the same tie.
+  - **Not yet pushed to the live Supabase table** — same next-step gap as
+    every prior country addition.
+- **Slovakia (6 gyms, 4 divisions) — the 54th country**, the next-largest
+  missing country per boulderinglist.com's full country list (5 gyms)
+  once the earlier ~6/~7-gym ties had all been exhausted. Cross-checked
+  boulderinglist's own Slovakia page directly against indoorclimbing.com's
+  Slovakia page, the same two-directory discipline used for every recent
+  pick — 4 of the 5 gyms matched exactly across both sources (Brutál
+  Povala, Block Dock, Vertigo, HK Manin, with real addresses from
+  indoorclimbing.com), but the two disagreed on the 5th: boulderinglist
+  listed K2-Zilina Bouldering Climbing Gym, indoorclimbing.com listed
+  Ovčín Boulder & Bistro instead. Rather than pick one over the other,
+  both were individually web-searched — both turned out to be real,
+  independently confirmed, currently-operating gyms — so both were kept,
+  giving 6 gyms total instead of 5.
+  - **Climbing type applied only from direct evidence, same discipline as
+    every batch since the worldwide top-rope-tag audit** — Brutál Povala
+    and Ovčín Boulder & Bistro are both confirmed bouldering-only (each
+    explicitly described as ropeless); Block Dock is confirmed
+    bouldering-only despite its 650m2 size (explicitly billed as a
+    bouldering gym across both its Rača and Petržalka locations, no rope
+    mention in any source); Vertigo, HK Manin, and K2-Zilina are all
+    confirmed to offer bouldering + top-rope + lead climbing (Vertigo:
+    84 lead lines with auto-belay/top-rope up to 12m plus two bouldering
+    halls; HK Manin: the operating club's own site explicitly confirms
+    both top-rope and lead belaying courses, alongside a separate 4m
+    bouldering wall; K2-Zilina: its own site has an explicit "Lead
+    Climbing" page, 80 rope lines up to 15m with auto-belayers, plus two
+    bouldering profiles).
+  - **Positions individually geocoded** against Nominatim — all 6
+    addresses resolved at street level on the first try, matching the
+    perfect hit rate already seen for Lithuania and Serbia.
+  - **`state` uses Slovakia's 8 real kraje (regions)**, populated
+    complete from the start (same standard as every country since the
+    NL fix), of which 4 have a seed spot and a sidebar chip/colour:
+    Bratislavský, Žilinský, Trenčiansky, Banskobystrický.
+  - Net result: 1655 → **1661 total spots**. Structural check (Node-parsed
+    `window.SEED_GYMS`): 1661/1661 unique ids, zero duplicate
+    name+suburb+state+country combos, every spot has a non-empty `types`
+    array.
+  - **Verified live** (served copy, `npx serve .`, offline-fallback-forcing
+    method): count reads 1661; searching "slovakia" returns all 6 spots;
+    the Bratislavský chip correctly filters to exactly 2 spots (Block
+    Dock, Vertigo); chip active-state text confirmed legible via computed
+    style (dark text on teal background); no console errors beyond the
+    deliberately-forced Supabase-unreachable ones; no horizontal overflow
+    at 375px mobile with the region/country expanded.
   - **Not yet pushed to the live Supabase table** — same next-step gap as
     every prior country addition.
 
