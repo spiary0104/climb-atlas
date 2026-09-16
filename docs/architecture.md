@@ -23,6 +23,9 @@ js/data.js              The seed dataset — every gym/crag pin, as window.SEED_
 js/app.js               Everything else: map rendering, filters, add/edit, marks
 supabase/schema.sql      Run once in the Supabase SQL Editor — creates spots, pending_edits, reports, moderators, marks
 supabase/seed.html       Run once in a browser — loads the spots table from js/data.js
+manifest.json            Web app manifest (installability — name, icons, standalone display)
+sw.js                    Service worker — offline caching for the app shell, map tiles, and Supabase reads
+icons/icon.svg           The app icon used by manifest.json (same design as the browser-tab favicon, scaled up)
 ```
 
 **Script load order in `index.html` matters**: Supabase JS CDN script →
@@ -4178,6 +4181,110 @@ class is fine everywhere it's reused.
     mirroring how a `.country-label` click already both toggles and flies
     to `COUNTRY_FLY_TARGETS`.
 
+## PWA / offline support
+
+Added as the technical groundwork for a possible future paid tier (an
+"offline mode" feature — see `docs/tasks.md` for the monetization
+discussion this came out of), but useful on its own regardless of
+whether/how that's ever gated: installability (Add to Home Screen /
+desktop install) plus real offline caching of the app shell, map tiles,
+and the last-seen Supabase data.
+
+- **`manifest.json`** (root) — name, icons, `display:"standalone"`,
+  `theme_color`/`background_color` matching `--bg` (`#211f1b`). Linked
+  from both `index.html` and `about.html` via `<link rel="manifest">`.
+  **Icons are SVG, not PNG** (`icons/icon.svg`, the existing favicon
+  design scaled from its original 32×32 viewBox to 512×512, same paths
+  ×16) — this project has no image-generation tooling and no build step
+  to run one, so a real PNG raster wasn't practical to produce. SVG
+  icons with `sizes:"192x192"`/`"512x512"` and `purpose:"any"` satisfy
+  Chrome's installability check (it rasterizes the SVG itself), and the
+  same file is reused for `purpose:"maskable"` since the design already
+  fills the full square edge-to-edge with no transparent margin and the
+  hold shape sits well inside the maskable safe zone. **No
+  `apple-touch-icon`** was added for the same reason — iOS Safari doesn't
+  reliably rasterize SVG for that tag the way Chrome does for manifest
+  icons, and a broken/blank home-screen icon on iOS would be worse than
+  no icon at all. If real PNG icons are ever generated (any image tool,
+  even a phone screenshot of `icons/icon.svg` cropped square would do),
+  add them alongside the SVG entries rather than replacing them, plus an
+  `apple-touch-icon` link.
+- **`sw.js`** (root, not `js/sw.js` — a service worker's default scope is
+  the directory it's served from, and this needs to control the whole
+  site) registered from a small inline script at the bottom of
+  `index.html`, guarded by `'serviceWorker' in navigator` and deferred to
+  the `load` event. Three cache buckets, all versioned by one
+  `CACHE_VERSION` constant (bump it when a precached file's content
+  changes, so returning visitors don't get stuck on stale cached copies):
+  - **Shell cache** — `index.html`, `about.html`, `manifest.json`,
+    `css/style.css`, and `js/supabase-init.js`/`auth.js`/`app.js`
+    precached on `install`, served **stale-while-revalidate** afterward
+    (serve the cached copy instantly, refetch in the background to keep
+    it current next time). `js/data.js` is deliberately **not**
+    precached — it's ~600KB and only ever loaded on demand
+    (`ensureSeedData()`, see "File map" above); if a visitor's session
+    happens to trigger that on-demand load while online, the same
+    stale-while-revalidate rule (same-origin) still catches and caches
+    it opportunistically, but nothing forces it to download upfront.
+  - **Tile cache** — `basemaps.cartocdn.com` (the CARTO Dark Matter
+    basemap) served **cache-first**, since a tile for a given
+    coordinate/zoom never changes — this is what actually makes "look at
+    a previously-viewed part of the map while offline" work. No size cap
+    or eviction policy implemented yet — relies on the browser's own
+    storage-quota eviction if it ever grows large enough to matter.
+  - **Runtime cache** — third-party library CDNs (`unpkg.com`,
+    `cdn.jsdelivr.net`, `fonts.googleapis.com`, `fonts.gstatic.com` — the
+    MapLibre GL/Supercluster/Supabase-JS scripts and Google Fonts CSS/
+    files) served stale-while-revalidate, same reasoning as the shell
+    cache.
+  - **Data cache** — any Supabase REST read (`*.supabase.co/rest/...` —
+    matched by hostname suffix, not the specific project id, so this
+    doesn't need updating if the project ever changes) served
+    **network-first**: try the network for freshness, fall back to the
+    last successful response when offline. This is the "last-seen spot
+    data still shows offline" piece — it caches whatever the current
+    session actually queried (approved spots in view, a signed-in user's
+    own marks), not a full offline copy of the database.
+  - Every strategy is a plain `GET`-only fetch-event filter (`if
+    (request.method !== 'GET') return`) — a spot submission, an edit, a
+    mark toggle, or any other write is never intercepted or cached,
+    always goes straight to the network. Non-matching requests (mainly
+    Supabase Auth calls) fall through uncached too.
+  - `activate` deletes any `climbatlas-*`-prefixed cache whose name isn't
+    one of the current version's four, so an old `CACHE_VERSION`'s caches
+    get cleaned up automatically on the next visit after a deploy.
+- **Verification caveat, real and worth knowing about**: the in-app
+  Browser preview tool used throughout this project's history **cannot
+  register any service worker at all** — confirmed by registering a
+  trivial, syntactically-valid no-op worker (`self.addEventListener(
+  "install", e=>self.skipWaiting())`) served from the same origin and
+  getting the identical `TypeError: ... An unknown error occurred when
+  fetching the script.` that `sw.js` itself produced, with
+  `isSecureContext:true` and not running inside an iframe — so it's a
+  restriction of that specific sandboxed preview harness (most likely
+  service workers disabled at the browser-instance level), not a bug in
+  `sw.js` or its registration code. What *was* verified in that
+  environment: `manifest.json` parses as valid JSON and every field
+  resolves (fetched and inspected directly); `node --check sw.js` passes
+  (valid JS syntax); the icon renders correctly at 512×512; the rest of
+  the app (live Supabase load, spot count, no new console errors besides
+  the expected registration failure) is unaffected by these additions.
+  **The actual install prompt, offline reload, and cache-hit behaviour
+  still need a real, non-sandboxed browser** (Chrome's Application panel
+  → Service Workers/Manifest, or just going offline in DevTools and
+  reloading) before this is considered fully proven — same category of
+  outstanding verification as the sign-in flow and other things this
+  environment can't fully exercise.
+- **Deliberately not done yet**: no payment/subscription gating of
+  anything — this task was scoped as "PWA foundation only" (installability
+  + offline caching), not the paid tier itself. See `docs/tasks.md` for
+  the broader monetization discussion this came out of; wiring an actual
+  paywall (Stripe or otherwise) around, say, a curated "download this
+  region for offline use" feature would be a separate, larger task
+  needing its own scoping (a payment backend piece this static site
+  doesn't have yet — see the "Full Stripe-gated feature" option that was
+  explicitly deferred when this task was scoped).
+
 ## Known gaps (from README "Before it's actually public")
 
 - Privacy Policy / Terms of Service are drafts with placeholders — not
@@ -4229,6 +4336,7 @@ class is fine everywhere it's reused.
 | Visual/theme changes | `css/style.css` |
 | Page structure, modals | `index.html` |
 | DB schema, RLS policies, moderation logic | `supabase/schema.sql` |
+| PWA installability, offline caching | `manifest.json`, `sw.js` |
 
 ## Keeping this file honest
 
