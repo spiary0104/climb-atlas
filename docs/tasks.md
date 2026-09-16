@@ -3788,6 +3788,36 @@ _(none)_
 
 ## Done (recent)
 
+### Add Estonia (6 gyms, next-largest missing country, 50th)
+- Branch: `feature/add-estonia` — merged to `master`, pushed.
+- Status: done — merged.
+- What: user said "next" — a new 4-way tie at 6 gyms (Estonia, Malaysia,
+  Thailand, Ukraine) once the original ~7-gym tie sequence finished with
+  Iran. Estonia was picked after indoorclimbing.com's own Estonia page
+  gave the cleanest single-source cross-check of the four (recognizing
+  "Tuuletorn" as the Windtower Experience Centre) — Ukraine was
+  deprioritized since one candidate (Manege, Donetsk) sits in a
+  Russian-occupied city with unconfirmable operating status.
+- Ronimistehas' two adjacent halls (bouldering at Tehase 21, rope
+  climbing at Tehase 23) were kept as one combined spot rather than
+  split, since they're consecutive units on one street. One
+  boulderinglist generic "Climbing Gym" label resolved to its real name,
+  NET Spordihall. Full sourcing detail in `docs/architecture.md` "Seed
+  data sourcing".
+- `state` uses Estonia's 15 real counties, populated complete from the
+  start (3 have a seed spot: Harju, Tartu, Hiiu). 5 of 6 addresses
+  geocoded at street level.
+- Net result: 1631 → **1637 total spots**. Structural check (Node-parsed
+  `window.SEED_GYMS`): 1637/1637 unique ids, zero duplicate
+  name+suburb+state+country combos, every spot has a non-empty `types`
+  array.
+- **Verified**: same offline-fallback-forcing method as every prior batch
+  — count reads 1637; all 6 spots searchable by "estonia"; the Tartu
+  chip correctly filters to exactly 3 spots with legible active-state
+  text; no console errors; no horizontal overflow at 375px mobile.
+- **Not yet done**: running the regenerated seed SQL against the live
+  Supabase table — same outstanding step as every prior country addition.
+
 ### Add Iran (4 gyms, the last of the original missing-country tie, 49th)
 - Branch: `feature/add-iran` — merged to `master`, pushed.
 - Status: done — merged.

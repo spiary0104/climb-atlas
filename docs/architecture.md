@@ -105,11 +105,11 @@ are only unique within a country** (e.g. AU's `WA` vs US's `WA` are
 different regions). Anything that filters, colors, or edits by state —
 the chips in `index.html`, `STATES_BY_COUNTRY` in `app.js`, the RLS-safe
 columns in `schema.sql` — keys off the `(country, state)` pair together,
-never `state` alone. Now 49 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
+never `state` alone. Now 50 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
 FR, SE, NL, IT, BE, KR, ES, PT, AT, CH, PL, DK, FI, IE, NO, MX, BR, HU, GR,
 CZ, IS, RO, HR, RU, BG, AR, PH, CO, CL, VE, IN, IL, ID, TW, ZA, EC, VN, LT,
-RS, BO, IR), same pattern each time — keep this in mind before adding a
-50th. One collision
+RS, BO, IR, EE), same pattern each time — keep this in mind before adding
+a 51st. One collision
 worth flagging: `US`'s state code for California is `CA`, and `CA` is
 also the top-level country code for Canada — not a real ambiguity since
 they're different object keys/fields (`STATES_BY_COUNTRY.US` contains
@@ -3696,6 +3696,64 @@ from one source:
   - **This completes the original boulderinglist.com "next-largest missing
     country" tie sequence** — every country from the 4-way tie at 7 gyms
     (Bolivia, Iran, Lithuania, Serbia) plus Vietnam has now been added.
+  - **Not yet pushed to the live Supabase table** — same next-step gap as
+    every prior country addition.
+- **Estonia (6 gyms, 3 counties) — the 50th country**, picked from a new
+  4-way tie at 6 gyms (Estonia, Malaysia, Thailand, Ukraine) once the
+  original ~7-gym tie sequence had been exhausted with Iran. Picked over
+  the other three after checking cross-check quality directly:
+  indoorclimbing.com's own Estonia page independently confirmed real
+  street addresses for most of boulderinglist.com's 6 candidates —
+  including recognizing "Tuuletorn" as the Estonian name for the
+  already-documented Windtower Experience Centre — a cleaner
+  single-source cross-check than Malaysia's or Thailand's scattered
+  blog/listicle sourcing. Ukraine was deprioritized: one of its 6
+  candidates (Manege, Donetsk) sits in a city under Russian occupation
+  where current operating status can't be confirmed, and the listing
+  itself mixed "Kiev"/"Kyiv" spellings suggesting stale data.
+  - **One pair of adjacent halls kept as one combined spot, not split**:
+    Ronimistehas turned out to be two halls under one operator — a
+    bouldering hall at Tehase 21 (350m², billed as Southern Estonia's
+    only proper bouldering gym) and a separate rope-climbing hall next
+    door at Tehase 23 (confirmed top-rope + lead via its own competition
+    age-group categories) — pinned as a single spot with all three types,
+    since the two halls are consecutive units on the same street rather
+    than separate branches across the city, unlike the genuinely
+    separate Montis Magia (Lithuania) or ZEN (Japan) multi-branch cases.
+  - **One boulderinglist.com generic label resolved to its real name**:
+    a second, unnamed "Climbing Gym" (Tartu) entry was independently
+    identified as NET Spordihall (Ujula 4), housed at the University of
+    Tartu's sports complex, confirmed via multiple sources to have both
+    a 4m bouldering wall and 10m/15m rope walls with self-belay devices —
+    the same "resolve the directory's shorthand label to a real name"
+    treatment as Gekon (Serbia) and El Muro Escalada Deportiva (Bolivia).
+  - **Climbing type applied only from direct evidence** — Kivi Climbing
+    and Ronimisministeerium (both Tallinn) and Climbing Gym Ringtee
+    (Tartu) are all confirmed bouldering-only (each independently
+    described with no rope-climbing mention, and Ronimisministeerium's
+    own site explicitly frames itself as ropeless); Tuuletorn (Käina) is
+    confirmed top-rope via its "four automatic safety lines" (auto-belay,
+    the same auto-belay-implies-top-rope mapping used for Banana
+    Climbing's tags), no bouldering evidence found.
+  - **Positions individually geocoded** against Nominatim — 5 of 6
+    resolved at street level on the first try; only Tuuletorn fell back
+    to the Käina area centroid (a retry with the diacritic-free street
+    name still returned no match).
+  - **`state` uses Estonia's 15 real counties (maakonnad)**, populated
+    complete from the start (same standard as every country since the
+    NL fix), of which 3 (Harju/Tallinn, Tartu, Hiiu/Käina) have a seed
+    spot and a sidebar chip/colour.
+  - Net result: 1631 → **1637 total spots**. Structural check (Node-parsed
+    `window.SEED_GYMS`): 1637/1637 unique ids, zero duplicate
+    name+suburb+state+country combos, every spot has a non-empty `types`
+    array.
+  - **Verified live** (served copy, `npx serve .`, offline-fallback-forcing
+    method): count reads 1637; searching "estonia" returns all 6 spots;
+    the Tartu chip correctly filters to exactly 3 spots; chip
+    active-state text confirmed legible via computed style (dark text on
+    orange background); no console errors beyond the deliberately-forced
+    Supabase-unreachable ones; no horizontal overflow at 375px mobile
+    with the region/country expanded.
   - **Not yet pushed to the live Supabase table** — same next-step gap as
     every prior country addition.
 
