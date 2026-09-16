@@ -3788,6 +3788,37 @@ _(none)_
 
 ## Done (recent)
 
+### Add Ukraine (6 gyms, next-largest missing country, 53rd — tier complete)
+- Branch: `feature/add-ukraine` — merged to `master`, pushed.
+- Status: done — merged.
+- What: direct continuation of "do the rest in the tier" — the third and
+  final of the three remaining tied-at-6 countries (Malaysia, Thailand,
+  Ukraine) after Estonia/Malaysia/Thailand. **This completes the whole
+  tier.** boulderinglist.com's 6-row listing was only 5 distinct gyms
+  (one duplicate row); of those, 3 were excluded — Manege (Donetsk) on
+  political-neutrality/occupied-territory grounds, PRANA (Kyiv) and KHAI
+  (Kharkiv) as unconfirmable-current — and replaced with 4
+  better-evidenced Kyiv/Lviv gyms found via independent research (Boulder
+  Space, Climbing SPACE, Hyperion, TheWall), alongside the two originals
+  that did check out (UP!, Tsekh Climbing Gym). Full sourcing detail in
+  `docs/architecture.md` "Seed data sourcing".
+- `state` uses Ukraine's full 27 real top-level divisions (24 oblasts +
+  Crimea + Kyiv + Sevastopol), populated complete from the start —
+  Crimea is deliberately included, since (unlike Russia's or Serbia's
+  state lists) it's Ukraine's own internationally-recognized territory,
+  not another country's contested claim. 2 have a seed spot: Kyiv, Lviv.
+- Net result: 1649 → **1655 total spots**. Structural check (Node-parsed
+  `window.SEED_GYMS`): 1655/1655 unique ids, zero duplicate
+  name+suburb+state+country combos, every spot has a non-empty `types`
+  array.
+- **Verified**: same offline-fallback-forcing method as every prior batch
+  — count reads 1655; all 6 spots searchable by "ukraine"; the Kyiv chip
+  correctly filters to exactly 5 spots with legible active-state text;
+  no console errors; no horizontal overflow at 375px mobile.
+- **Not yet done**: running the regenerated seed SQL against the live
+  Supabase table (covers Malaysia/Thailand/Ukraine's rows, none of which
+  have been pushed yet).
+
 ### Add Thailand (6 gyms, next-largest missing country, 52nd)
 - Branch: `feature/add-thailand` — merged to `master`, pushed.
 - Status: done — merged.

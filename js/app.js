@@ -413,10 +413,27 @@
          ['SUKHOTHAI','Sukhothai'],['SUPHAN_BURI','Suphan Buri'],['SURAT_THANI','Surat Thani'],
          ['SURIN','Surin'],['TAK','Tak'],['TRANG','Trang'],['TRAT','Trat'],
          ['UBON_RATCHATHANI','Ubon Ratchathani'],['UDON_THANI','Udon Thani'],
-         ['UTHAI_THANI','Uthai Thani'],['UTTARADIT','Uttaradit'],['YALA','Yala'],['YASOTHON','Yasothon']]
+         ['UTHAI_THANI','Uthai Thani'],['UTTARADIT','Uttaradit'],['YALA','Yala'],['YASOTHON','Yasothon']],
+    // Ukraine's 24 oblasts + the Autonomous Republic of Crimea + Kyiv and
+    // Sevastopol (special-status cities) -- 27 total, Ukraine's own
+    // internationally-recognized constitutional territory (unlike
+    // Russia's or Serbia's state lists, which deliberately exclude
+    // contested territory belonging to a *different* country, including
+    // Crimea here doesn't take a side -- it's simply Ukraine's own
+    // official division list).
+    UA: [['CHERKASY','Cherkasy Oblast'],['CHERNIHIV','Chernihiv Oblast'],['CHERNIVTSI','Chernivtsi Oblast'],
+         ['DNIPROPETROVSK','Dnipropetrovsk Oblast'],['DONETSK','Donetsk Oblast'],
+         ['IVANO_FRANKIVSK','Ivano-Frankivsk Oblast'],['KHARKIV','Kharkiv Oblast'],['KHERSON','Kherson Oblast'],
+         ['KHMELNYTSKYI','Khmelnytskyi Oblast'],['KIROVOHRAD','Kirovohrad Oblast'],
+         ['KYIV_OBLAST','Kyiv Oblast'],['LUHANSK','Luhansk Oblast'],['LVIV','Lviv Oblast'],
+         ['MYKOLAIV','Mykolaiv Oblast'],['ODESA','Odesa Oblast'],['POLTAVA','Poltava Oblast'],
+         ['RIVNE','Rivne Oblast'],['SUMY','Sumy Oblast'],['TERNOPIL','Ternopil Oblast'],
+         ['VINNYTSIA','Vinnytsia Oblast'],['VOLYN','Volyn Oblast'],['ZAKARPATTIA','Zakarpattia Oblast'],
+         ['ZAPORIZHZHIA','Zaporizhzhia Oblast'],['ZHYTOMYR','Zhytomyr Oblast'],
+         ['CRIMEA','Autonomous Republic of Crimea'],['KYIV','Kyiv'],['SEVASTOPOL','Sevastopol']]
   };
   const TYPE_LABELS = {'indoor-bouldering':'Indoor bouldering','top-rope':'Top rope','lead-climbing':'Lead climbing'};
-  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy', BE:'Belgium', KR:'South Korea', ES:'Spain', PT:'Portugal', AT:'Austria', CH:'Switzerland', PL:'Poland', DK:'Denmark', FI:'Finland', IE:'Ireland', NO:'Norway', MX:'Mexico', BR:'Brazil', HU:'Hungary', GR:'Greece', CZ:'Czech Republic', IS:'Iceland', RO:'Romania', HR:'Croatia', RU:'Russia', BG:'Bulgaria', AR:'Argentina', PH:'Philippines', CO:'Colombia', CL:'Chile', VE:'Venezuela', IN:'India', IL:'Israel', ID:'Indonesia', TW:'Taiwan', ZA:'South Africa', EC:'Ecuador', VN:'Vietnam', LT:'Lithuania', RS:'Serbia', BO:'Bolivia', IR:'Iran', EE:'Estonia', MY:'Malaysia', TH:'Thailand'};
+  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy', BE:'Belgium', KR:'South Korea', ES:'Spain', PT:'Portugal', AT:'Austria', CH:'Switzerland', PL:'Poland', DK:'Denmark', FI:'Finland', IE:'Ireland', NO:'Norway', MX:'Mexico', BR:'Brazil', HU:'Hungary', GR:'Greece', CZ:'Czech Republic', IS:'Iceland', RO:'Romania', HR:'Croatia', RU:'Russia', BG:'Bulgaria', AR:'Argentina', PH:'Philippines', CO:'Colombia', CL:'Chile', VE:'Venezuela', IN:'India', IL:'Israel', ID:'Indonesia', TW:'Taiwan', ZA:'South Africa', EC:'Ecuador', VN:'Vietnam', LT:'Lithuania', RS:'Serbia', BO:'Bolivia', IR:'Iran', EE:'Estonia', MY:'Malaysia', TH:'Thailand', UA:'Ukraine'};
   // Fixed camera target per country for the "fly to this country" click on
   // its sidebar label -- picked to frame that country's actual spread of
   // seed spots (e.g. US needs a wide zoom to fit both NY and CA), not a
@@ -474,7 +491,8 @@
     IR: {center:[51,35.5], zoom:5.6},
     EE: {center:[25,58.6], zoom:6.5},
     MY: {center:[103,3.5], zoom:5.6},
-    TH: {center:[99.7,13.5], zoom:4.6}
+    TH: {center:[99.7,13.5], zoom:4.6},
+    UA: {center:[27.3,50.1], zoom:5.4}
   };
   // Which sidebar region-group each country belongs to -- same grouping as
   // the `.region-group[data-region]` wrappers in index.html, kept here too
@@ -485,7 +503,7 @@
     DE:'europe', GB:'europe', FR:'europe', SE:'europe', NL:'europe', IT:'europe', BE:'europe', LT:'europe',
     ES:'europe', PT:'europe', AT:'europe', CH:'europe', PL:'europe', DK:'europe', FI:'europe', IE:'europe',
     NO:'europe', HU:'europe', GR:'europe', CZ:'europe', IS:'europe',
-    RO:'europe', HR:'europe', RU:'europe', BG:'europe', RS:'europe', EE:'europe',
+    RO:'europe', HR:'europe', RU:'europe', BG:'europe', RS:'europe', EE:'europe', UA:'europe',
     CA:'north-america', US:'north-america', MX:'north-america',
     AU:'oceania', NZ:'oceania',
     BR:'south-america', AR:'south-america', CO:'south-america', CL:'south-america', VE:'south-america',

@@ -105,11 +105,11 @@ are only unique within a country** (e.g. AU's `WA` vs US's `WA` are
 different regions). Anything that filters, colors, or edits by state —
 the chips in `index.html`, `STATES_BY_COUNTRY` in `app.js`, the RLS-safe
 columns in `schema.sql` — keys off the `(country, state)` pair together,
-never `state` alone. Now 52 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
+never `state` alone. Now 53 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
 FR, SE, NL, IT, BE, KR, ES, PT, AT, CH, PL, DK, FI, IE, NO, MX, BR, HU, GR,
 CZ, IS, RO, HR, RU, BG, AR, PH, CO, CL, VE, IN, IL, ID, TW, ZA, EC, VN, LT,
-RS, BO, IR, EE, MY, TH), same pattern each time — keep this in mind before
-adding a 53rd. One collision
+RS, BO, IR, EE, MY, TH, UA), same pattern each time — keep this in mind
+before adding a 54th. One collision
 worth flagging: `US`'s state code for California is `CA`, and `CA` is
 also the top-level country code for Canada — not a real ambiguity since
 they're different object keys/fields (`STATES_BY_COUNTRY.US` contains
@@ -3853,6 +3853,76 @@ from one source:
     a red background); no console errors beyond the deliberately-forced
     Supabase-unreachable ones; no horizontal overflow at 375px mobile
     with the region/country expanded.
+  - **Not yet pushed to the live Supabase table** — same next-step gap as
+    every prior country addition.
+- **Ukraine (6 gyms, 2 divisions) — the 53rd country**, the third and
+  final member of the tied-at-6 batch (Estonia, Malaysia, Thailand,
+  Ukraine) — direct continuation of "do the rest in the tier," completing
+  the tier. boulderinglist.com's own 6-row Ukraine listing turned out to
+  be only 5 distinct gyms once a duplicate scraped row was found (both
+  "PRANA – prospect Pobedi-20" and "PRANA – Kiev" resolve to the same
+  gym) — and of those 5, 3 had to be excluded rather than trusted at face
+  value:
+  - **Manege (Donetsk) excluded on political-neutrality/scope grounds,
+    not evidence grounds** — Donetsk has been under continuous Russian-
+    backed occupation since 2014, with no way to confirm current civilian
+    operating status there. Consistent with this dataset's standing
+    precedent of not asserting normal operation in occupied/contested
+    territory (already applied to Russia's city-keyed `state` scheme and
+    Serbia's exclusion of Kosovo), this candidate was excluded outright
+    rather than included with a caveat.
+  - **PRANA (Kyiv) and KHAI (Kharkiv) excluded as unconfirmable-current**
+    — every source found for PRANA was an old, undated listing with no
+    2023-2025 mention despite a targeted search; KHAI's only dated source
+    (an alpine-club page) couldn't be independently corroborated as
+    currently operating, and Kharkiv is a frontline city under regular
+    attack (not occupied, but current-status evidence needs to be
+    genuinely current) — same "never guess a candidate into existence"
+    treatment as Iran's Boluk-e-Bala/MAXBlocs exclusions.
+  - **4 better-evidenced, currently-operating gyms found via independent
+    web research filled out the batch instead of forcing the weak
+    originals in**: Boulder Space and Climbing SPACE (both part of one
+    operator, SpaceGroup) and TheWall (Lviv) are all confirmed currently
+    operating and expanding via a dated Climbing Business Journal
+    article — the strongest current-status evidence found for any gym in
+    this whole batch. Hyperion (Kyiv) is confirmed via multiple
+    independent sources, though one gives a conflicting address
+    (Kyrylivska St 46 vs. the Kostiantynivska St address used, which is
+    the one Nominatim could resolve).
+  - **Climbing type applied only from direct evidence** — UP!, Tsekh
+    Climbing Gym, Hyperion, and TheWall are all confirmed bouldering +
+    top-rope (no lead-specific evidence found for any); Boulder Space and
+    Climbing SPACE are both confirmed bouldering-only, each independently
+    described with no rope-climbing mention.
+  - **Geocoding**: 4 of 6 addresses resolved at street level (2 directly,
+    2 more via a simplified street-name-only retry); Tsekh Climbing
+    Gym's street name never resolved even simplified, falling back to
+    the bare Kyiv city centroid.
+  - **`state` uses Ukraine's full 27 top-level divisions** (24 oblasts +
+    the Autonomous Republic of Crimea + Kyiv and Sevastopol as
+    special-status cities), populated complete from the start (same
+    standard as every country since the NL fix) — of which 2 (Kyiv,
+    Lviv) have a seed spot and a sidebar chip/colour. Unlike Russia's
+    city-keyed `state` scheme or Serbia's exclusion of Kosovo, Crimea is
+    deliberately **included** here: it's Ukraine's own internationally-
+    recognized constitutional territory, not a case of drawing a
+    different country's contested territory into a public filter list,
+    so including it doesn't take a side the way excluding it (or
+    including it under a different country's list) would.
+  - Net result: 1649 → **1655 total spots**. Structural check
+    (Node-parsed `window.SEED_GYMS`): 1655/1655 unique ids, zero
+    duplicate name+suburb+state+country combos, every spot has a
+    non-empty `types` array.
+  - **Verified live** (served copy, `npx serve .`, offline-fallback-
+    forcing method): count reads 1655; searching "ukraine" returns all 6
+    spots; the Kyiv chip correctly filters to exactly 5 spots; chip
+    active-state text confirmed legible via computed style (dark text on
+    a blue background); no console errors beyond the deliberately-forced
+    Supabase-unreachable ones; no horizontal overflow at 375px mobile
+    with the region/country expanded.
+  - **This completes the "do the rest in the tier" batch** — all three
+    remaining tied-at-6 countries (Malaysia, Thailand, Ukraine) have now
+    been added, following Estonia's own pick from the same tie.
   - **Not yet pushed to the live Supabase table** — same next-step gap as
     every prior country addition.
 
