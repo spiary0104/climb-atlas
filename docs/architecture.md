@@ -105,11 +105,11 @@ are only unique within a country** (e.g. AU's `WA` vs US's `WA` are
 different regions). Anything that filters, colors, or edits by state —
 the chips in `index.html`, `STATES_BY_COUNTRY` in `app.js`, the RLS-safe
 columns in `schema.sql` — keys off the `(country, state)` pair together,
-never `state` alone. Now 51 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
+never `state` alone. Now 52 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
 FR, SE, NL, IT, BE, KR, ES, PT, AT, CH, PL, DK, FI, IE, NO, MX, BR, HU, GR,
 CZ, IS, RO, HR, RU, BG, AR, PH, CO, CL, VE, IN, IL, ID, TW, ZA, EC, VN, LT,
-RS, BO, IR, EE, MY), same pattern each time — keep this in mind before
-adding a 52nd. One collision
+RS, BO, IR, EE, MY, TH), same pattern each time — keep this in mind before
+adding a 53rd. One collision
 worth flagging: `US`'s state code for California is `CA`, and `CA` is
 also the top-level country code for Canada — not a real ambiguity since
 they're different object keys/fields (`STATES_BY_COUNTRY.US` contains
@@ -3795,6 +3795,62 @@ from one source:
     the Selangor chip correctly filters to exactly 2 spots; chip
     active-state text confirmed legible via computed style (dark text on
     purple background); no console errors beyond the deliberately-forced
+    Supabase-unreachable ones; no horizontal overflow at 375px mobile
+    with the region/country expanded.
+  - **Not yet pushed to the live Supabase table** — same next-step gap as
+    every prior country addition.
+- **Thailand (6 gyms, 4 divisions) — the 52nd country**, the second of the
+  three remaining members of the tied-at-6 batch (Estonia, Malaysia,
+  Thailand, Ukraine) — direct continuation of "do the rest in the tier"
+  after Malaysia. Of boulderinglist.com's 7 candidates, 6 confirmed real
+  and current via independent web search; 1 (Chill Out, Si Racha) could
+  not be confirmed real by any English- or Thai-language source found and
+  was excluded, the same "never guess a candidate into existence"
+  treatment as Iran's Boluk-e-Bala/MAXBlocs exclusions.
+  - **One directory label resolved to its real current identity**:
+    boulderinglist.com listed "C3" (Chiang Mai Climbing Club), which
+    looked like it might be defunct or renamed on first search — resolved
+    via independent search to its real, current name, Progression
+    Vertical, confirmed to offer lead climbing, top-rope, an updated
+    bouldering area, and a free-standing boulder. Kept under this real
+    name rather than excluded, the same "resolve the directory's
+    shorthand/outdated label to the real current name" treatment as NET
+    Spordihall (Estonia) and Putrajaya Challenge Park (Malaysia).
+  - **Climbing type applied only from direct evidence** — 5 of 6 are
+    confirmed bouldering + top-rope with no lead-specific evidence found;
+    Progression Vertical is the only one confirmed lead-capable too.
+  - **Geocoding hit an unusually low first-pass hit rate for this
+    batch** — only 1 of 6 addresses (Sports World at LadProa) resolved at
+    street level on the first Nominatim pass; a second, simplified-query
+    retry pass recovered 2 more (Rock Domain via "Bangna-Trad Road,
+    Bangna, Bangkok"; No Gravity via "Chang Moi, Mueang Chiang Mai" — the
+    actual named neighbourhood the gym's address sits in, a genuine
+    improvement over a bare centroid) and Progression Vertical via
+    "Tambon Pa Daet, Chiang Mai." The remaining 2 never resolved past a
+    fallback: Sports World Suratthani has no street name in any source at
+    all (only "Sports World Department Store, Suratthani"), so it falls
+    back to the bare Surat Thani city centroid; Rebel Rock Climbing's
+    retry ("Si Sunthon, Thalang, Phuket") returned a confident-looking
+    match, but it resolved to a specific, unrelated building (UWC
+    Thailand Lower Primary, a school) in the right district rather than
+    the gym itself — rejected as a wrong-POI mismatch, per this dataset's
+    own established discipline of never trusting a geocoder's
+    landed-on-a-different-real-place result (Croatia/Russia/Philippines/
+    South Africa/Ecuador), falling back to the plain Phuket city centroid
+    instead.
+  - **`state` uses Thailand's 76 provinces + Bangkok (77 total)**,
+    populated complete from the start (same standard as every country
+    since the NL fix), of which 4 (Bangkok, Chiang Mai, Surat Thani,
+    Phuket) have a seed spot and a sidebar chip/colour.
+  - Net result: 1643 → **1649 total spots**. Structural check (Node-parsed
+    `window.SEED_GYMS`): 1649/1649 unique ids, zero duplicate
+    name+suburb+state+country combos, every spot has a non-empty `types`
+    array.
+  - **Verified live** (served copy, `npx serve .`, offline-fallback-forcing
+    method): count reads 1649; searching "thailand" returns all 6 spots;
+    the Bangkok chip correctly filters to exactly 2 spots; chip
+    active-state text confirmed legible via computed style (dark text on
+    a red background); no console errors beyond the deliberately-forced
     Supabase-unreachable ones; no horizontal overflow at 375px mobile
     with the region/country expanded.
   - **Not yet pushed to the live Supabase table** — same next-step gap as

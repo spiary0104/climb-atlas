@@ -385,10 +385,38 @@
          ['NEGERI_SEMBILAN','Negeri Sembilan'],['PAHANG','Pahang'],['PENANG','Penang'],['PERAK','Perak'],
          ['PERLIS','Perlis'],['SABAH','Sabah'],['SARAWAK','Sarawak'],['SELANGOR','Selangor'],
          ['TERENGGANU','Terengganu'],['KUALA_LUMPUR','Kuala Lumpur'],['LABUAN','Labuan'],
-         ['PUTRAJAYA','Putrajaya']]
+         ['PUTRAJAYA','Putrajaya']],
+    // Thailand's 76 provinces + Bangkok (77 total), populated complete
+    // from the start same as every country since the NL fix.
+    TH: [['BANGKOK','Bangkok'],['AMNAT_CHAROEN','Amnat Charoen'],['ANG_THONG','Ang Thong'],
+         ['BUENG_KAN','Bueng Kan'],['BURIRAM','Buriram'],['CHACHOENGSAO','Chachoengsao'],
+         ['CHAI_NAT','Chai Nat'],['CHAIYAPHUM','Chaiyaphum'],['CHANTHABURI','Chanthaburi'],
+         ['CHIANG_MAI','Chiang Mai'],['CHIANG_RAI','Chiang Rai'],['CHONBURI','Chonburi'],
+         ['CHUMPHON','Chumphon'],['KALASIN','Kalasin'],['KAMPHAENG_PHET','Kamphaeng Phet'],
+         ['KANCHANABURI','Kanchanaburi'],['KHON_KAEN','Khon Kaen'],['KRABI','Krabi'],
+         ['LAMPANG','Lampang'],['LAMPHUN','Lamphun'],['LOEI','Loei'],['LOPBURI','Lopburi'],
+         ['MAE_HONG_SON','Mae Hong Son'],['MAHA_SARAKHAM','Maha Sarakham'],['MUKDAHAN','Mukdahan'],
+         ['NAKHON_NAYOK','Nakhon Nayok'],['NAKHON_PATHOM','Nakhon Pathom'],
+         ['NAKHON_PHANOM','Nakhon Phanom'],['NAKHON_RATCHASIMA','Nakhon Ratchasima'],
+         ['NAKHON_SAWAN','Nakhon Sawan'],['NAKHON_SI_THAMMARAT','Nakhon Si Thammarat'],
+         ['NAN','Nan'],['NARATHIWAT','Narathiwat'],['NONG_BUA_LAMPHU','Nong Bua Lamphu'],
+         ['NONG_KHAI','Nong Khai'],['NONTHABURI','Nonthaburi'],['PATHUM_THANI','Pathum Thani'],
+         ['PATTANI','Pattani'],['PHANG_NGA','Phang Nga'],['PHATTHALUNG','Phatthalung'],
+         ['PHAYAO','Phayao'],['PHETCHABUN','Phetchabun'],['PHETCHABURI','Phetchaburi'],
+         ['PHICHIT','Phichit'],['PHITSANULOK','Phitsanulok'],
+         ['PHRA_NAKHON_SI_AYUTTHAYA','Phra Nakhon Si Ayutthaya'],['PHRAE','Phrae'],
+         ['PHUKET','Phuket'],['PRACHINBURI','Prachinburi'],['PRACHUAP_KHIRI_KHAN','Prachuap Khiri Khan'],
+         ['RANONG','Ranong'],['RATCHABURI','Ratchaburi'],['RAYONG','Rayong'],['ROI_ET','Roi Et'],
+         ['SA_KAEO','Sa Kaeo'],['SAKON_NAKHON','Sakon Nakhon'],['SAMUT_PRAKAN','Samut Prakan'],
+         ['SAMUT_SAKHON','Samut Sakhon'],['SAMUT_SONGKHRAM','Samut Songkhram'],['SARABURI','Saraburi'],
+         ['SATUN','Satun'],['SING_BURI','Sing Buri'],['SISAKET','Sisaket'],['SONGKHLA','Songkhla'],
+         ['SUKHOTHAI','Sukhothai'],['SUPHAN_BURI','Suphan Buri'],['SURAT_THANI','Surat Thani'],
+         ['SURIN','Surin'],['TAK','Tak'],['TRANG','Trang'],['TRAT','Trat'],
+         ['UBON_RATCHATHANI','Ubon Ratchathani'],['UDON_THANI','Udon Thani'],
+         ['UTHAI_THANI','Uthai Thani'],['UTTARADIT','Uttaradit'],['YALA','Yala'],['YASOTHON','Yasothon']]
   };
   const TYPE_LABELS = {'indoor-bouldering':'Indoor bouldering','top-rope':'Top rope','lead-climbing':'Lead climbing'};
-  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy', BE:'Belgium', KR:'South Korea', ES:'Spain', PT:'Portugal', AT:'Austria', CH:'Switzerland', PL:'Poland', DK:'Denmark', FI:'Finland', IE:'Ireland', NO:'Norway', MX:'Mexico', BR:'Brazil', HU:'Hungary', GR:'Greece', CZ:'Czech Republic', IS:'Iceland', RO:'Romania', HR:'Croatia', RU:'Russia', BG:'Bulgaria', AR:'Argentina', PH:'Philippines', CO:'Colombia', CL:'Chile', VE:'Venezuela', IN:'India', IL:'Israel', ID:'Indonesia', TW:'Taiwan', ZA:'South Africa', EC:'Ecuador', VN:'Vietnam', LT:'Lithuania', RS:'Serbia', BO:'Bolivia', IR:'Iran', EE:'Estonia', MY:'Malaysia'};
+  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy', BE:'Belgium', KR:'South Korea', ES:'Spain', PT:'Portugal', AT:'Austria', CH:'Switzerland', PL:'Poland', DK:'Denmark', FI:'Finland', IE:'Ireland', NO:'Norway', MX:'Mexico', BR:'Brazil', HU:'Hungary', GR:'Greece', CZ:'Czech Republic', IS:'Iceland', RO:'Romania', HR:'Croatia', RU:'Russia', BG:'Bulgaria', AR:'Argentina', PH:'Philippines', CO:'Colombia', CL:'Chile', VE:'Venezuela', IN:'India', IL:'Israel', ID:'Indonesia', TW:'Taiwan', ZA:'South Africa', EC:'Ecuador', VN:'Vietnam', LT:'Lithuania', RS:'Serbia', BO:'Bolivia', IR:'Iran', EE:'Estonia', MY:'Malaysia', TH:'Thailand'};
   // Fixed camera target per country for the "fly to this country" click on
   // its sidebar label -- picked to frame that country's actual spread of
   // seed spots (e.g. US needs a wide zoom to fit both NY and CA), not a
@@ -445,14 +473,15 @@
     BO: {center:[-67.1,-16.9], zoom:5.6},
     IR: {center:[51,35.5], zoom:5.6},
     EE: {center:[25,58.6], zoom:6.5},
-    MY: {center:[103,3.5], zoom:5.6}
+    MY: {center:[103,3.5], zoom:5.6},
+    TH: {center:[99.7,13.5], zoom:4.6}
   };
   // Which sidebar region-group each country belongs to -- same grouping as
   // the `.region-group[data-region]` wrappers in index.html, kept here too
   // so the map's own continent-tier labels/fly-targets don't need to read
   // the DOM to know a country's continent.
   const COUNTRY_TO_REGION = {
-    CN:'asia', JP:'asia', KR:'asia', PH:'asia', IN:'asia', IL:'asia', ID:'asia', TW:'asia', VN:'asia', IR:'asia', MY:'asia',
+    CN:'asia', JP:'asia', KR:'asia', PH:'asia', IN:'asia', IL:'asia', ID:'asia', TW:'asia', VN:'asia', IR:'asia', MY:'asia', TH:'asia',
     DE:'europe', GB:'europe', FR:'europe', SE:'europe', NL:'europe', IT:'europe', BE:'europe', LT:'europe',
     ES:'europe', PT:'europe', AT:'europe', CH:'europe', PL:'europe', DK:'europe', FI:'europe', IE:'europe',
     NO:'europe', HU:'europe', GR:'europe', CZ:'europe', IS:'europe',

@@ -3788,6 +3788,38 @@ _(none)_
 
 ## Done (recent)
 
+### Add Thailand (6 gyms, next-largest missing country, 52nd)
+- Branch: `feature/add-thailand` — merged to `master`, pushed.
+- Status: done — merged.
+- What: direct continuation of "do the rest in the tier" — the second of
+  the three remaining tied-at-6 countries (Malaysia, Thailand, Ukraine)
+  after Estonia/Malaysia. Of boulderinglist.com's 7 candidates, 6
+  confirmed real via independent web search; 1 (Chill Out, Si Racha)
+  could not be confirmed real by any source and was excluded. One
+  directory label resolved to its real current identity: "C3" is
+  actually Progression Vertical. Full sourcing detail in
+  `docs/architecture.md` "Seed data sourcing".
+- **Geocoding hit an unusually low hit rate**: only 1 of 6 addresses
+  resolved on the first Nominatim pass; a simplified-query retry
+  recovered 2 more; the last 2 (Sports World Suratthani, Rebel Rock
+  Climbing) never resolved past a fallback — Rebel Rock Climbing's retry
+  returned a confident-looking but wrong-POI match (a nearby school, not
+  the gym) that was rejected rather than trusted.
+- `state` uses Thailand's 76 provinces + Bangkok (77 total), populated
+  complete from the start (4 have a seed spot: Bangkok, Chiang Mai,
+  Surat Thani, Phuket).
+- Net result: 1643 → **1649 total spots**. Structural check (Node-parsed
+  `window.SEED_GYMS`): 1649/1649 unique ids, zero duplicate
+  name+suburb+state+country combos, every spot has a non-empty `types`
+  array.
+- **Verified**: same offline-fallback-forcing method as every prior batch
+  — count reads 1649; all 6 spots searchable by "thailand"; the Bangkok
+  chip correctly filters to exactly 2 spots with legible active-state
+  text; no console errors; no horizontal overflow at 375px mobile.
+- **Not yet done**: Ukraine, the last remaining country in this tier
+  (next up); running the regenerated seed SQL against the live Supabase
+  table (this and Malaysia's rows both still need to be pushed).
+
 ### Add Malaysia (6 gyms, next-largest missing country, 51st)
 - Branch: `feature/add-malaysia` — merged to `master`, pushed.
 - Status: done — merged.
