@@ -484,10 +484,31 @@
          ['AKSARAY','Aksaray'],['BAYBURT','Bayburt'],['KARAMAN','Karaman'],
          ['KIRIKKALE','Kırıkkale'],['BATMAN','Batman'],['SIRNAK','Şırnak'],
          ['BARTIN','Bartın'],['ARDAHAN','Ardahan'],['IGDIR','Iğdır'],['YALOVA','Yalova'],
-         ['KARABUK','Karabük'],['KILIS','Kilis'],['OSMANIYE','Osmaniye'],['DUZCE','Düzce']]
+         ['KARABUK','Karabük'],['KILIS','Kilis'],['OSMANIYE','Osmaniye'],['DUZCE','Düzce']],
+    // Latvia's 7 republican cities (valstspilsētas) plus 36 municipalities
+    // (novadi) as of the 2021 administrative-territorial reform, populated
+    // complete from the start same as every country since the NL fix.
+    LV: [['RIGA','Rīga'],['DAUGAVPILS','Daugavpils'],['JELGAVA','Jelgava'],
+         ['JEKABPILS','Jēkabpils'],['JURMALA','Jūrmala'],['LIEPAJA','Liepāja'],
+         ['REZEKNE','Rēzekne'],['ADAZU','Ādažu novads'],['AIZKRAUKLES','Aizkraukles novads'],
+         ['ALUKSNES','Alūksnes novads'],['AUGSDAUGAVAS','Augšdaugavas novads'],
+         ['BALVU','Balvu novads'],['BAUSKAS','Bauskas novads'],['CESU','Cēsu novads'],
+         ['DIENVIDKURZEMES','Dienvidkurzemes novads'],['DOBELES','Dobeles novads'],
+         ['GULBENES','Gulbenes novads'],['JEKABPILS_NOVADS','Jēkabpils novads'],
+         ['JELGAVAS_NOVADS','Jelgavas novads'],['KEKAVAS','Ķekavas novads'],
+         ['KRASLAVAS','Krāslavas novads'],['KULDIGAS','Kuldīgas novads'],
+         ['LIMBAZU','Limbažu novads'],['LIVANU','Līvānu novads'],['LUDZAS','Ludzas novads'],
+         ['MADONAS','Madonas novads'],['MARUPES','Mārupes novads'],['OGRES','Ogres novads'],
+         ['OLAINES','Olaines novads'],['PREILU','Preiļu novads'],
+         ['REZEKNES_NOVADS','Rēzeknes novads'],['ROPAZU','Ropažu novads'],
+         ['SALASPILS','Salaspils novads'],['SALDUS','Saldus novads'],
+         ['SAULKRASTU','Saulkrastu novads'],['SIGULDAS','Siguldas novads'],
+         ['SMILTENES','Smiltenes novads'],['TALSU','Talsu novads'],['TUKUMA','Tukuma novads'],
+         ['VALKAS','Valkas novads'],['VALMIERAS','Valmieras novads'],
+         ['VARAKLANU','Varakļānu novads'],['VENTSPILS','Ventspils novads']]
   };
   const TYPE_LABELS = {'indoor-bouldering':'Indoor bouldering','top-rope':'Top rope','lead-climbing':'Lead climbing'};
-  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy', BE:'Belgium', KR:'South Korea', ES:'Spain', PT:'Portugal', AT:'Austria', CH:'Switzerland', PL:'Poland', DK:'Denmark', FI:'Finland', IE:'Ireland', NO:'Norway', MX:'Mexico', BR:'Brazil', HU:'Hungary', GR:'Greece', CZ:'Czech Republic', IS:'Iceland', RO:'Romania', HR:'Croatia', RU:'Russia', BG:'Bulgaria', AR:'Argentina', PH:'Philippines', CO:'Colombia', CL:'Chile', VE:'Venezuela', IN:'India', IL:'Israel', ID:'Indonesia', TW:'Taiwan', ZA:'South Africa', EC:'Ecuador', VN:'Vietnam', LT:'Lithuania', RS:'Serbia', BO:'Bolivia', IR:'Iran', EE:'Estonia', MY:'Malaysia', TH:'Thailand', UA:'Ukraine', SK:'Slovakia', CY:'Cyprus', PA:'Panama', PE:'Peru', TR:'Turkey'};
+  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy', BE:'Belgium', KR:'South Korea', ES:'Spain', PT:'Portugal', AT:'Austria', CH:'Switzerland', PL:'Poland', DK:'Denmark', FI:'Finland', IE:'Ireland', NO:'Norway', MX:'Mexico', BR:'Brazil', HU:'Hungary', GR:'Greece', CZ:'Czech Republic', IS:'Iceland', RO:'Romania', HR:'Croatia', RU:'Russia', BG:'Bulgaria', AR:'Argentina', PH:'Philippines', CO:'Colombia', CL:'Chile', VE:'Venezuela', IN:'India', IL:'Israel', ID:'Indonesia', TW:'Taiwan', ZA:'South Africa', EC:'Ecuador', VN:'Vietnam', LT:'Lithuania', RS:'Serbia', BO:'Bolivia', IR:'Iran', EE:'Estonia', MY:'Malaysia', TH:'Thailand', UA:'Ukraine', SK:'Slovakia', CY:'Cyprus', PA:'Panama', PE:'Peru', TR:'Turkey', LV:'Latvia'};
   // Fixed camera target per country for the "fly to this country" click on
   // its sidebar label -- picked to frame that country's actual spread of
   // seed spots (e.g. US needs a wide zoom to fit both NY and CA), not a
@@ -551,7 +572,8 @@
     CY: {center:[33.2,35.05], zoom:8.6},
     PA: {center:[-80.5,8.6], zoom:6.2},
     PE: {center:[-75,-11.5], zoom:5.4},
-    TR: {center:[31,40.2], zoom:6}
+    TR: {center:[31,40.2], zoom:6},
+    LV: {center:[24.17,56.97], zoom:9.5}
   };
   // Which sidebar region-group each country belongs to -- same grouping as
   // the `.region-group[data-region]` wrappers in index.html, kept here too
@@ -563,7 +585,7 @@
     ES:'europe', PT:'europe', AT:'europe', CH:'europe', PL:'europe', DK:'europe', FI:'europe', IE:'europe',
     NO:'europe', HU:'europe', GR:'europe', CZ:'europe', IS:'europe',
     RO:'europe', HR:'europe', RU:'europe', BG:'europe', RS:'europe', EE:'europe', UA:'europe', SK:'europe',
-    CY:'europe', TR:'europe',
+    CY:'europe', TR:'europe', LV:'europe',
     CA:'north-america', US:'north-america', MX:'north-america', PA:'north-america',
     AU:'oceania', NZ:'oceania',
     BR:'south-america', AR:'south-america', CO:'south-america', CL:'south-america', VE:'south-america',

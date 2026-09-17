@@ -108,11 +108,11 @@ are only unique within a country** (e.g. AU's `WA` vs US's `WA` are
 different regions). Anything that filters, colors, or edits by state —
 the chips in `index.html`, `STATES_BY_COUNTRY` in `app.js`, the RLS-safe
 columns in `schema.sql` — keys off the `(country, state)` pair together,
-never `state` alone. Now 58 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
+never `state` alone. Now 59 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
 FR, SE, NL, IT, BE, KR, ES, PT, AT, CH, PL, DK, FI, IE, NO, MX, BR, HU, GR,
 CZ, IS, RO, HR, RU, BG, AR, PH, CO, CL, VE, IN, IL, ID, TW, ZA, EC, VN, LT,
-RS, BO, IR, EE, MY, TH, UA, SK, CY, PA, PE, TR), same pattern each time —
-keep this in mind before adding a 59th. One collision
+RS, BO, IR, EE, MY, TH, UA, SK, CY, PA, PE, TR, LV), same pattern each
+time — keep this in mind before adding a 60th. One collision
 worth flagging: `US`'s state code for California is `CA`, and `CA` is
 also the top-level country code for Canada — not a real ambiguity since
 they're different object keys/fields (`STATES_BY_COUNTRY.US` contains
@@ -4318,6 +4318,64 @@ from one source:
     name; the İstanbul chip correctly filters to exactly 1 spot with
     legible active-state text (dark text on red background); the new
     Turkey country `<option>` present in both add/edit forms; no console
+    errors beyond the deliberately-forced Supabase-unreachable ones; no
+    horizontal overflow at 375px mobile; `git diff` on
+    `js/supabase-init.js` confirmed clean after reverting the test edit.
+  - **Not yet pushed to the live Supabase table** — same next-step gap as
+    every prior country addition.
+- **Latvia (2 gyms, 59th country)** — after Turkey, boulderinglist.com's
+  full 84-country list showed Latvia (4 raw listings) as the next-largest
+  missing country, ahead of Malta (3) and the 2-gym tier this file had
+  previously flagged.
+  - **boulderinglist.com's 4 raw listings were only 2 real indoor
+    candidates**: "Falkors Bouldering Center" appears twice under two
+    differently-spelled city labels (Riga vs Rīga — the same gym), and
+    "Gandra Tower" is explicitly an outdoor 12m artificial-rock tower
+    with top-rope/lead belaying and winter drytooling — excluded on the
+    same "indoor gyms only" scope grounds as every other outdoor
+    exclusion in this dataset (Huayan Climbing Park, El Muro, Ada
+    Ciganlija SPK Vertikal, etc.). That leaves Falkors and Virsotne.
+  - **Cross-checked against a dedicated local source (skydive.lv, a
+    Latvian tour operator's blog, explicitly dated "Updated: July 2026")
+    rather than just the two directories**, which independently confirms
+    Riga has exactly 2 indoor bouldering gyms (Falkors, Virsotne) plus
+    the one outdoor tower already excluded — a clean, unambiguous
+    confirmation that 2 is the real count, not an artifact of this
+    dataset's own filtering.
+  - **indoorclimbing.com's own listing for Falkors gave a second, older
+    address** (Ropau 140-303) alongside the current one — Falkors' own
+    site (boulderings.lv/contact) lists only the one current physical
+    location (Ūnijas iela 14), so the older address was treated as a
+    stale/former listing, not a second gym, the same "resolve to the
+    real current location" discipline used throughout this dataset
+    (Beefy Boulders, Scala Dream, Banana Climbing's various flagged
+    addresses).
+  - **Climbing type applied only from direct evidence**: Falkors is
+    confirmed bouldering-only (its own site and every source describe it
+    purely as a "bouldering center," no rope mention anywhere); Virsotne
+    is confirmed bouldering + top-rope — skydive.lv's own description
+    explicitly calls it "one of the few indoor gyms that also offers
+    rope climbing."
+  - **Positions individually geocoded** against Nominatim — both
+    resolved on the first try, Falkors to a named "Falkors Boulderinga
+    Centrs" point of interest and Virsotne directly to the named "Sky
+    and more" shopping centre matching the source's own description —
+    the strongest confirmation tier this dataset uses.
+  - **`state` uses Latvia's current 43 top-level divisions** (7
+    valstspilsētas/republican cities + 36 novadi/municipalities, per the
+    2021 administrative-territorial reform, verified directly rather
+    than assumed from older general knowledge), populated complete from
+    the start (same standard as every country since the NL fix) — only
+    Rīga has a seed spot and a sidebar chip/colour so far.
+  - Net result: 1710 → **1712 total spots**. Structural check
+    (Node-parsed `window.SEED_GYMS`): 1712/1712 unique ids, zero
+    duplicate name+suburb+state+country combos, every spot has a
+    non-empty `types` array.
+  - **Verified live** (served copy, `npx serve .`, offline-fallback-
+    forcing method): count reads 1712; both Latvia spots searchable by
+    name; the Rīga chip correctly filters to exactly 2 spots with
+    legible active-state text (dark text on purple background); the new
+    Latvia country `<option>` present in both add/edit forms; no console
     errors beyond the deliberately-forced Supabase-unreachable ones; no
     horizontal overflow at 375px mobile; `git diff` on
     `js/supabase-init.js` confirmed clean after reverting the test edit.

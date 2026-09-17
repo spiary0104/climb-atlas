@@ -3841,6 +3841,38 @@ _(none)_
 
 ## Done (recent)
 
+### Add Latvia (2 gyms, next-largest missing country, 59th)
+- Status: done — committed directly to `master`.
+- What: after Turkey, boulderinglist.com's full 84-country list showed
+  Latvia (4 raw listings) as the next-largest missing country, ahead of
+  Malta (3) and the 2-gym tier. Of the 4 raw listings, one was a
+  duplicate (Falkors Bouldering Center under two city-label spellings)
+  and one (Gandra Tower) was explicitly outdoor — excluded — leaving 2
+  real candidates. Cross-checked against a dedicated local blog
+  (skydive.lv, updated July 2026) which independently confirms Riga has
+  exactly 2 indoor bouldering gyms.
+- Falkors confirmed bouldering-only; Virsotne confirmed bouldering +
+  top-rope (skydive.lv explicitly: "one of the few indoor gyms that also
+  offers rope climbing"). indoorclimbing.com's second, older address for
+  Falkors was resolved as stale — the gym's own site lists only one
+  current location. Full sourcing detail in `docs/architecture.md` "Seed
+  data sourcing".
+- `state` uses Latvia's current 43 top-level divisions (7 republican
+  cities + 36 municipalities, 2021 reform), populated complete from the
+  start.
+- Net result: 1710 → **1712 total spots**. Structural check (Node-parsed
+  `window.SEED_GYMS`): 1712/1712 unique ids, zero duplicate
+  name+suburb+state+country combos, every spot has a non-empty `types`
+  array.
+- **Verified**: same offline-fallback-forcing method as every prior
+  batch — count reads 1712; both Latvia spots searchable by name; the
+  Rīga chip filters to exactly 2 spots with legible active-state text;
+  the new Latvia country `<option>` present in both forms; no console
+  errors; no horizontal overflow at 375px mobile.
+- **Not yet done**: running the regenerated seed SQL against the live
+  Supabase table — same outstanding step as every prior country
+  addition.
+
 ### Add Turkey (3 gyms, next-largest missing country, 58th)
 - Status: done — committed directly to `master`.
 - What: after the tied-at-3 group finished with Peru, boulderinglist.com's
