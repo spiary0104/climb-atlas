@@ -505,10 +505,16 @@
          ['SAULKRASTU','Saulkrastu novads'],['SIGULDAS','Siguldas novads'],
          ['SMILTENES','Smiltenes novads'],['TALSU','Talsu novads'],['TUKUMA','Tukuma novads'],
          ['VALKAS','Valkas novads'],['VALMIERAS','Valmieras novads'],
-         ['VARAKLANU','Varakļānu novads'],['VENTSPILS','Ventspils novads']]
+         ['VARAKLANU','Varakļānu novads'],['VENTSPILS','Ventspils novads']],
+    // Singapore's 5 Community Development Council (CDC) districts,
+    // populated complete from the start same as every country since the
+    // NL fix.
+    SG: [['CENTRAL','Central Singapore'],['NORTH_EAST','North East'],
+         ['NORTH_WEST','North West'],['SOUTH_EAST','South East'],
+         ['SOUTH_WEST','South West']]
   };
   const TYPE_LABELS = {'indoor-bouldering':'Indoor bouldering','top-rope':'Top rope','lead-climbing':'Lead climbing'};
-  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy', BE:'Belgium', KR:'South Korea', ES:'Spain', PT:'Portugal', AT:'Austria', CH:'Switzerland', PL:'Poland', DK:'Denmark', FI:'Finland', IE:'Ireland', NO:'Norway', MX:'Mexico', BR:'Brazil', HU:'Hungary', GR:'Greece', CZ:'Czech Republic', IS:'Iceland', RO:'Romania', HR:'Croatia', RU:'Russia', BG:'Bulgaria', AR:'Argentina', PH:'Philippines', CO:'Colombia', CL:'Chile', VE:'Venezuela', IN:'India', IL:'Israel', ID:'Indonesia', TW:'Taiwan', ZA:'South Africa', EC:'Ecuador', VN:'Vietnam', LT:'Lithuania', RS:'Serbia', BO:'Bolivia', IR:'Iran', EE:'Estonia', MY:'Malaysia', TH:'Thailand', UA:'Ukraine', SK:'Slovakia', CY:'Cyprus', PA:'Panama', PE:'Peru', TR:'Turkey', LV:'Latvia'};
+  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy', BE:'Belgium', KR:'South Korea', ES:'Spain', PT:'Portugal', AT:'Austria', CH:'Switzerland', PL:'Poland', DK:'Denmark', FI:'Finland', IE:'Ireland', NO:'Norway', MX:'Mexico', BR:'Brazil', HU:'Hungary', GR:'Greece', CZ:'Czech Republic', IS:'Iceland', RO:'Romania', HR:'Croatia', RU:'Russia', BG:'Bulgaria', AR:'Argentina', PH:'Philippines', CO:'Colombia', CL:'Chile', VE:'Venezuela', IN:'India', IL:'Israel', ID:'Indonesia', TW:'Taiwan', ZA:'South Africa', EC:'Ecuador', VN:'Vietnam', LT:'Lithuania', RS:'Serbia', BO:'Bolivia', IR:'Iran', EE:'Estonia', MY:'Malaysia', TH:'Thailand', UA:'Ukraine', SK:'Slovakia', CY:'Cyprus', PA:'Panama', PE:'Peru', TR:'Turkey', LV:'Latvia', SG:'Singapore'};
   // Fixed camera target per country for the "fly to this country" click on
   // its sidebar label -- picked to frame that country's actual spread of
   // seed spots (e.g. US needs a wide zoom to fit both NY and CA), not a
@@ -573,14 +579,15 @@
     PA: {center:[-80.5,8.6], zoom:6.2},
     PE: {center:[-75,-11.5], zoom:5.4},
     TR: {center:[31,40.2], zoom:6},
-    LV: {center:[24.17,56.97], zoom:9.5}
+    LV: {center:[24.17,56.97], zoom:9.5},
+    SG: {center:[103.85,1.36], zoom:10.4}
   };
   // Which sidebar region-group each country belongs to -- same grouping as
   // the `.region-group[data-region]` wrappers in index.html, kept here too
   // so the map's own continent-tier labels/fly-targets don't need to read
   // the DOM to know a country's continent.
   const COUNTRY_TO_REGION = {
-    CN:'asia', JP:'asia', KR:'asia', PH:'asia', IN:'asia', IL:'asia', ID:'asia', TW:'asia', VN:'asia', IR:'asia', MY:'asia', TH:'asia',
+    CN:'asia', JP:'asia', KR:'asia', PH:'asia', IN:'asia', IL:'asia', ID:'asia', TW:'asia', VN:'asia', IR:'asia', MY:'asia', TH:'asia', SG:'asia',
     DE:'europe', GB:'europe', FR:'europe', SE:'europe', NL:'europe', IT:'europe', BE:'europe', LT:'europe',
     ES:'europe', PT:'europe', AT:'europe', CH:'europe', PL:'europe', DK:'europe', FI:'europe', IE:'europe',
     NO:'europe', HU:'europe', GR:'europe', CZ:'europe', IS:'europe',

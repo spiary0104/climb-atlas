@@ -3841,6 +3841,42 @@ _(none)_
 
 ## Done (recent)
 
+### Add Singapore (2 gyms, 60th country — finishes the tied-at-3 group)
+- Status: done — committed directly to `master`.
+- What: after Latvia, Malta (3 raw listings) was investigated but not
+  added — one candidate (Gebla Climbing) confirmed to have closed its
+  indoor gym by end of 2025, the other two were the same Sliema Scouts
+  venue listed twice, leaving only 1 real gym (not enough to seed a
+  country). Singapore was picked next — the last unpicked member of the
+  original tied-at-3 group (Cyprus, Panama, Peru, Singapore), previously
+  deprioritized because every boulderinglist.com listing mixes indoor
+  and outdoor facilities within a single entry.
+- Scoped more carefully this time: "Climb Asia Climbing Centre" resolved
+  to its real current name, Ground Up Climbing (confirmed bouldering +
+  top-rope + lead via its own site); "Yishun Safra Climbing Centre" kept
+  for its confirmed separate "two floors of indoor bouldering" component
+  only, with its outdoor walls excluded — same "kept for the confirmed
+  indoor part" precedent as K2 Escalada Deportiva/Climbing Barn Adventure
+  Centre. "Ubin Lagoon Resort" excluded on unconfirmed-status/location
+  grounds. Full sourcing detail in `docs/architecture.md` "Seed data
+  sourcing".
+- `state` uses Singapore's 5 real Community Development Council
+  districts, populated complete from the start.
+- Net result: 1712 → **1714 total spots**. Structural check (Node-parsed
+  `window.SEED_GYMS`): 1714/1714 unique ids, zero duplicate
+  name+suburb+state+country combos, every spot has a non-empty `types`
+  array.
+- **Verified**: same offline-fallback-forcing method as every prior
+  batch — count reads 1714; both Singapore spots searchable by name;
+  the Central Singapore chip filters to exactly 1 spot with legible
+  active-state text; the new Singapore country `<option>` present in
+  both forms; no console errors; no horizontal overflow at 375px mobile.
+- **This finishes the original tied-at-3 group entirely** — Cyprus,
+  Panama, Peru, and Singapore have all now been added.
+- **Not yet done**: running the regenerated seed SQL against the live
+  Supabase table — same outstanding step as every prior country
+  addition.
+
 ### Add Latvia (2 gyms, next-largest missing country, 59th)
 - Status: done — committed directly to `master`.
 - What: after Turkey, boulderinglist.com's full 84-country list showed

@@ -108,11 +108,11 @@ are only unique within a country** (e.g. AU's `WA` vs US's `WA` are
 different regions). Anything that filters, colors, or edits by state —
 the chips in `index.html`, `STATES_BY_COUNTRY` in `app.js`, the RLS-safe
 columns in `schema.sql` — keys off the `(country, state)` pair together,
-never `state` alone. Now 59 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
+never `state` alone. Now 60 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
 FR, SE, NL, IT, BE, KR, ES, PT, AT, CH, PL, DK, FI, IE, NO, MX, BR, HU, GR,
 CZ, IS, RO, HR, RU, BG, AR, PH, CO, CL, VE, IN, IL, ID, TW, ZA, EC, VN, LT,
-RS, BO, IR, EE, MY, TH, UA, SK, CY, PA, PE, TR, LV), same pattern each
-time — keep this in mind before adding a 60th. One collision
+RS, BO, IR, EE, MY, TH, UA, SK, CY, PA, PE, TR, LV, SG), same pattern each
+time — keep this in mind before adding a 61st. One collision
 worth flagging: `US`'s state code for California is `CA`, and `CA` is
 also the top-level country code for Canada — not a real ambiguity since
 they're different object keys/fields (`STATES_BY_COUNTRY.US` contains
@@ -4379,6 +4379,80 @@ from one source:
     errors beyond the deliberately-forced Supabase-unreachable ones; no
     horizontal overflow at 375px mobile; `git diff` on
     `js/supabase-init.js` confirmed clean after reverting the test edit.
+  - **Not yet pushed to the live Supabase table** — same next-step gap as
+    every prior country addition.
+- **Malta was investigated but not added, and Singapore (2 gyms, 60th
+  country) was picked instead.** After Latvia, boulderinglist.com's
+  full list showed Malta (3 raw listings) as the next-largest missing
+  country. Individually checking each candidate found: "Gebla Climbing"
+  (L-Imsida) announced via Euro Climbing News that it would close its
+  indoor gym by the end of 2025, pivoting to an outdoor-only guiding
+  business — a confirmed closure by the time of this pass (September
+  2026), same "confirmed closure → exclude" treatment as Boulder Project
+  Prahran; "Sliema Scouts Climbing Gym" and "Bouldering Wall - Sliema"
+  are the same venue (Sliema Scouts HQ, run by the Malta Climbing Club)
+  listed twice under two names. That left only 1 real, current gym — not
+  enough to seed a country by this dataset's own standard (the same
+  "Georgia"/Turkey-deferral precedent), so Malta was left out and the
+  next candidate, Singapore, was tried instead.
+- **Singapore (2 gyms, 60th country)** — every one of boulderinglist.com's
+  3 Singapore listings mixes indoor and outdoor facilities within a
+  single entry, the reason this country was repeatedly deprioritized in
+  every earlier tied-country pick in this file. Scoped more carefully
+  this time, applying the same "kept for the confirmed indoor component
+  only" precedent already used for K2 Escalada Deportiva (Argentina) and
+  the Climbing Barn Adventure Centre (South Africa):
+  - **"Climb Asia Climbing Centre"** is a stale directory name —
+    independently confirmed via its own site (groundupsg.com), Chalk
+    Rebels, and Little Steps to have rebranded to **Ground Up Climbing**,
+    kept under its real current name (the same "resolve the directory's
+    outdated label" treatment as El Rocodromo/Gekon/MegaSTONE elsewhere
+    in this file). Its own site confirms 34 lanes for bouldering, top
+    rope, and lead climbing — all three types confirmed by direct
+    evidence, not the outdoor high wall boulderinglist.com's own listing
+    also mentioned (excluded, out of this app's indoor-only scope).
+  - **"Yishun Safra Climbing Centre"** is described by boulderinglist.com
+    primarily as an outdoor facility ("Singapore's largest outdoor
+    climbing facility"), but SAFRA's own site (safra.sg) independently
+    confirms a genuine separate "two floors of indoor bouldering"
+    component — kept for that confirmed indoor part only. Confirmed
+    genuinely publicly accessible via a non-member walk-in fee (~S$18),
+    not restricted to SAFRA members only, the same "verify, don't assume
+    a club/members' facility is closed to the public" standard already
+    applied to HK Manin (Slovakia) and the Korea/Ireland/Chile/South
+    Africa university-gym cases.
+  - **"Ubin Lagoon Resort" was excluded on unconfirmed-status grounds**
+    — its address couldn't be confirmed to actually be on Pulau Ubin
+    island itself (one source gave a mainland Punggol address instead, a
+    real, unresolved discrepancy) and no independent source confirmed
+    it's still operating or genuinely open beyond resort guests — left
+    out per `Rules.md` §1 rather than guessed either way, the same
+    treatment as PRANA/KHAI (Ukraine) and Elos (Venezuela).
+  - **Positions individually geocoded** against Nominatim — Ground Up
+    Climbing resolved directly to a named "Ground Up" sports-centre point
+    of interest; Yishun Safra Climbing Centre resolved to the named
+    "Safra Yishun Country Club" grounds — both the strongest confirmation
+    tier this dataset uses.
+  - **`state` uses Singapore's 5 real Community Development Council (CDC)
+    districts**, populated complete from the start (same standard as
+    every country since the NL fix) — only Central Singapore (Ground Up,
+    Kallang) and North West (SAFRA Yishun) have a seed spot and a
+    sidebar chip/colour so far.
+  - Net result: 1712 → **1714 total spots**. Structural check
+    (Node-parsed `window.SEED_GYMS`): 1714/1714 unique ids, zero
+    duplicate name+suburb+state+country combos, every spot has a
+    non-empty `types` array.
+  - **Verified live** (served copy, `npx serve .`, offline-fallback-
+    forcing method): count reads 1714; both Singapore spots searchable
+    by name; the Central Singapore chip correctly filters to exactly 1
+    spot with legible active-state text (dark text on red background);
+    the new Singapore country `<option>` present in both add/edit forms;
+    no console errors beyond the deliberately-forced Supabase-
+    unreachable ones; no horizontal overflow at 375px mobile; `git diff`
+    on `js/supabase-init.js` confirmed clean after reverting the test
+    edit.
+  - **This finishes the original tied-at-3 group entirely** (Cyprus,
+    Panama, Peru, Singapore) — every member has now been added.
   - **Not yet pushed to the live Supabase table** — same next-step gap as
     every prior country addition.
 

@@ -2255,4 +2255,34 @@
     // outdoor tower, leaving 2 real gyms.
     {name:"Falkors Bouldering Center", suburb:"Teika, Riga", state:"RIGA", country:"LV", lat:56.9685197, lng:24.1665278, types:[IB], address:"Ūnijas iela 14, 3rd floor, Teika, Rīga, LV-1084, Latvia", notes:"Confirmed via its own site (boulderings.lv/contact, the only current physical address listed) and independently by skydive.lv (July 2026) as \"the biggest bouldering gym in the Baltics,\" ~1,300sqm. indoorclimbing.com's own listing also showed a second, older address (Ropau 140-303) with no matching current source -- treated as a stale/former location, not a second gym. No rope-climbing evidence found; kept bouldering-only. Address resolved against Nominatim to a named \"Falkors Boulderinga Centrs\" point of interest."},
     {name:"Virsotne Climbing Gym", suburb:"Sarkandaugava, Riga", state:"RIGA", country:"LV", lat:56.9868527, lng:24.1321034, types:[IB,TR], address:"Duntes iela 19a, 2nd floor (Sky&More shopping centre), Rīga, LV-1005, Latvia", notes:"Confirmed via its own site (kapsana.lv), indoorclimbing.com, and skydive.lv -- \"the largest bouldering gym in Latvia\" and explicitly \"one of the few indoor gyms that also offers rope climbing.\" Address resolved against Nominatim directly to the named \"Sky and more\" shopping centre matching the source's own description."},
+
+    // ---- Singapore (60th country) ----
+    // boulderinglist.com's 3 listings all mixed indoor and outdoor
+    // facilities within a single entry, the reason this country was
+    // repeatedly deprioritized in earlier passes. Individually checked
+    // each with more careful scoping this time: "Climb Asia Climbing
+    // Centre" is a stale directory name -- confirmed via multiple
+    // independent sources (its own site groundupsg.com, Chalk Rebels,
+    // Little Steps) to have rebranded to Ground Up Climbing, kept for
+    // its confirmed real indoor facility (34 lanes for bouldering, top
+    // rope, and lead climbing), the same "resolve to the real current
+    // name" treatment as El Rocodromo/Gekon/MegaSTONE elsewhere in this
+    // dataset. "Yishun Safra Climbing Centre" is described by
+    // boulderinglist.com as primarily an outdoor facility, but SAFRA's
+    // own site independently confirms a genuine separate "two floors of
+    // indoor bouldering" component -- kept for that confirmed indoor
+    // part only, the outdoor sport-climbing walls excluded on the same
+    // "kept for the confirmed indoor component" grounds as K2 Escalada
+    // Deportiva (Argentina)/Climbing Barn Adventure Centre (South
+    // Africa). Confirmed genuinely publicly accessible (a non-member
+    // walk-in fee, ~S$18), not restricted to SAFRA members only. The
+    // third candidate, "Ubin Lagoon Resort," was excluded -- its address
+    // couldn't be confirmed to actually be on Pulau Ubin island itself
+    // (one source gave a mainland Punggol address instead, a real
+    // discrepancy this dataset never guesses past) and independent
+    // sources gave no confirmation it's still operating or genuinely
+    // open to non-resort-guests, so it was left out per Rules.md
+    // §1 rather than guessed either way.
+    {name:"Ground Up Climbing", suburb:"Kallang", state:"CENTRAL", country:"SG", lat:1.3160066, lng:103.8560632, types:[IB,TR,LEAD], address:"60 Tessensohn Road, CSC @ Tessensohn, Level 2, Singapore 217664", notes:"Confirmed via its own site (groundupsg.com) and Chalk Rebels -- 34 lanes for bouldering, top rope, and lead climbing, open to the public from age 5. Formerly listed as \"Climb Asia Climbing Centre\"; kept under its real current name. Address resolved against Nominatim directly to a named \"Ground Up\" sports-centre point of interest."},
+    {name:"Yishun Safra Climbing Centre", suburb:"Yishun", state:"NORTH_WEST", country:"SG", lat:1.4240373, lng:103.8410600, types:[IB], address:"60 Yishun Avenue 4, SAFRA Yishun, Singapore 769027", notes:"Confirmed via SAFRA's own site (safra.sg) -- a genuine separate \"two floors of indoor bouldering\" facility inside a larger complex whose outdoor walls (boulderinglist.com's own description calls it \"Singapore's largest outdoor climbing facility\") are excluded, indoor-bouldering component only. Confirmed publicly accessible via a non-member walk-in fee (~S$18), not SAFRA-members-only. No indoor rope-climbing evidence found. Address resolved against Nominatim to the named \"Safra Yishun Country Club\" grounds."},
   ].map((g,i)=>({...g, id:'seed-'+i, community:false, country: g.country || 'AU'}));
