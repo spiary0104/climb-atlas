@@ -36,6 +36,35 @@ Each entry:
 
 ## Backlog
 
+### Finish the boulderingwall.com UK opportunity + other-country chain expansions
+- Status: backlog. Direct follow-up to "Add UK gyms from boulderingwall.com
+  + fix 3 GB entries" in Done below — that task deliberately did a smaller
+  representative slice (33 spots) of a much larger opportunity found on
+  the same site, per `Rules.md` §11.
+- What: boulderingwall.com's UK coverage has ~63 city pages; this pass
+  worked through the largest ones. Remaining: roughly 30 more UK
+  single-gym-city entries (smaller towns not yet visited) plus ~20
+  other-country chain-expansion candidates spotted along the way but not
+  followed up — Malaysia/Camp5 (~6 branches), Canada/Hive (~4 more
+  branches beyond the 2 already in this dataset), Germany/Boulderwelt
+  (~4 branches), Japan/B-PUMP network (~3 branches), Australia/9 Degrees
+  (~2 branches), New Zealand/Boulder Co (~1). Each needs the same
+  per-branch verification discipline as every chain in this dataset —
+  don't assume a branch exists or shares its chain's type from the name
+  alone.
+- Also unresolved from this pass: **Turkey** — only one gym (Boulderhane,
+  Istanbul) cleared verification; two other candidates (911 Search &
+  Rescue Association, Boulder Istanbul) were excluded on unconfirmed-
+  status grounds. A single confirmed gym isn't enough to seed a 55th
+  country by this dataset's own standard (see the "Georgia" mixup in
+  `docs/architecture.md`) — worth a dedicated research pass to find 2-3
+  more real, currently-operating Turkey gyms before adding it as a
+  country.
+- **climbingbusinessjournal.com/map/ is not a usable source** — confirmed
+  this pass (US/Canada-only free tier, paywalled beyond that, no
+  accessible API via the Maptive embed) — don't re-investigate it in a
+  future pass without a new angle (e.g. if their pricing/API changes).
+
 ### Monetization: paid tier ("offline mode" gated behind Stripe)
 - Status: backlog. Direct follow-up to the "PWA foundation" task in Done
   below — that task built the technical offline-caching groundwork
@@ -3811,6 +3840,53 @@ Each entry:
 _(none)_
 
 ## Done (recent)
+
+### Add UK gyms from boulderingwall.com + fix 3 existing GB entries
+- Status: done — committed directly to `master` (no separate branch —
+  same lightweight pattern as the recent single-country/expansion picks).
+- What: user asked to use `boulderingwall.com/countries/` and
+  `climbingbusinessjournal.com/map/` to expand existing countries, then
+  find missing countries. climbingbusinessjournal.com/map/ turned out
+  not usable (US/Canada-only free tier, paywalled beyond that, no
+  accessible API). boulderingwall.com turned out to be a real upgrade
+  over the UK's original Mountain Project sourcing — every listing
+  states its own discipline directly instead of requiring an inference
+  from the gym's name.
+- Given the full opportunity here (~72 UK entries + ~20 other-country
+  chain-branch candidates + 3 Turkey candidates) was far larger than any
+  single batch in this project's history, did a smaller representative
+  slice this pass (30 England + 2 Scotland + 1 Wales = 33 new spots)
+  and deferred the rest — see the new Backlog entry.
+- **3 existing GB entries corrected**: Rhino Boulder (added its real
+  address/suburb/geocoded position — was a rough Greater London
+  placeholder), Parthian Climbing Harrogate → Live For Today Climbing
+  Centre (Formerly Parthian Harrogate) (March 2024 acquisition), Climbing
+  The Walls → Climbing Hut Shrewsbury (the source's name was actually a
+  session/activity name, not the venue's name).
+- **Turkey was investigated as a possible 55th country but not added**:
+  only one gym (Boulderhane, Istanbul) cleared verification; two more
+  candidates were excluded on unconfirmed-status grounds (wrong branch
+  address; unconfirmed "temporarily closed" signal). One confirmed gym
+  isn't enough to seed a country by this dataset's own standard — left
+  for a dedicated future pass, tracked in Backlog.
+- Full sourcing detail, every exclusion/rename/chain-precedent
+  reasoning, and the Depot/Climbing Hangar/Eden Rock chain-typing calls
+  are in `docs/architecture.md` "Seed data sourcing".
+- Net result: 1661 → **1694 total spots** (GB 66 → 99). Structural check
+  (Node-parsed `window.SEED_GYMS`): 1694/1694 unique ids, zero duplicate
+  name+suburb+state+country combos, every spot has a non-empty `types`
+  array.
+- **Verified**: same offline-fallback-forcing method as every prior
+  batch — count reads 1694; all 33 new spots and all 3 corrected entries
+  searchable by name with the expected corrected text; no console
+  errors beyond the deliberately-forced Supabase-unreachable ones; no
+  horizontal overflow at 375px mobile with the GB chip row expanded;
+  `git diff` on `js/supabase-init.js` confirmed clean.
+- **Not yet done**: running the regenerated seed SQL against the live
+  Supabase table — same outstanding step as every prior country/city
+  addition; the remaining ~30 UK single-gym-city entries and ~20
+  other-country chain-branch candidates (see Backlog); Turkey as a
+  country, once more real gyms are confirmed there.
 
 ### Add Slovakia (6 gyms, next-largest missing country, 54th)
 - Status: done — committed directly to `master` (no separate branch —

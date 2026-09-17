@@ -3975,6 +3975,121 @@ from one source:
     at 375px mobile with the region/country expanded.
   - **Not yet pushed to the live Supabase table** — same next-step gap as
     every prior country addition.
+- **United Kingdom expansion (33 more gyms, 66 → 99) using
+  boulderingwall.com, plus 3 corrections to existing GB entries.** User
+  asked to cross-reference `boulderingwall.com/countries/` and
+  `climbingbusinessjournal.com/map/` against existing countries.
+  - **climbingbusinessjournal.com/map/ was investigated and found not
+    usable as a data source**: the page's own text states "This map
+    includes commercial climbing gyms in the USA and Canada" (free tier),
+    with Pro/Plus/Premium paid tiers for anything beyond that. The map
+    itself is embedded via a third-party service, Maptive, which loads
+    data from its own backend with no accessible free JSON API (checked
+    via `curl` HTML inspection and Browser-tool network-request
+    monitoring). Since this dataset already has thorough US/Canada
+    coverage, effort was redirected entirely to boulderingwall.com.
+  - **boulderingwall.com turned out to be a substantially better UK
+    source than the original Mountain Project directory-listing-depth
+    sourcing GB's existing 66 gyms came from**: every listing on it
+    explicitly states its own discipline ("Bouldering" vs. "Bouldering +
+    ropes"), a strictly better evidence tier than inferring type from a
+    gym's name alone.
+  - **Scope discipline applied** (per `Rules.md` §11): the full UK
+    opportunity on this site works out to roughly 72 potential new
+    entries once every one of its ~63 UK city pages is worked through,
+    plus a further ~20 other-country chain-expansion candidates spotted
+    along the way (Malaysia/Camp5, Canada/Hive, Germany/Boulderwelt,
+    Japan/B-PUMP network, Australia/9 Degrees, New Zealand/Boulder Co)
+    and 3 Turkey candidates — far larger than any single-batch addition
+    in this project's history. This pass deliberately did a smaller,
+    representative slice instead (30 England + 2 Scotland + 1 Wales = 33
+    new spots, plus 3 corrections to existing entries) and defers the
+    rest — see the Backlog entry.
+  - **Three existing GB entries corrected, not just left alone**:
+    **Rhino Boulder** (`suburb:"Greater London"`, no address, a rough
+    city-level position) is the same gym as boulderingwall.com's "Rhino
+    Boulder, The Mall, Bromley, BR1 1TS" listing (a distinctive,
+    uncommon name) — updated in place with the real address/suburb/
+    geocoded position rather than added as a duplicate.
+    **Parthian Climbing Harrogate** was acquired by Live For Today in
+    March 2024 and is now publicly branded "Live For Today Climbing
+    Centre (Formerly Parthian Harrogate)" — a rename, not a new gym.
+    **Climbing The Walls** (Shrewsbury) turned out to be the name of a
+    specific activity/session at the real venue, Climbing Hut Shrewsbury
+    — renamed to the venue's actual name.
+  - **Several duplicate-vs-new-gym ambiguities resolved via targeted
+    follow-up research rather than guessed either way**: **Harrogate**
+    and **Shrewsbury** above (both renames); **Llanberis** —
+    boulderingwall.com attributed "Indy Climbing Wall" there, but
+    independent search confirms the real INDY Climbing Wall is in
+    Llanfairpwll, Anglesey (postcode LL61 6NT), matching this dataset's
+    existing, correctly-placed entry exactly — a boulderingwall.com
+    data-quality error, not a new gym, so no action was needed.
+    **Belfast** — the site's Belfast page contributed 0 confirmed new
+    gyms after a candidate found there (Boulder Istanbul-adjacent search
+    noise) turned out irrelevant.
+  - **Excluded on scope grounds**: France's boulderingwall.com listing is
+    outdoor-only, skipped entirely (consistent with this dataset's
+    indoor-only scope).
+  - **Excluded on unconfirmed-status grounds, per `Rules.md` §1**: 911
+    Search & Rescue Association (Turkey) — the specific web address found
+    for it belonged to a different regional branch entirely (Bandırma/
+    Balıkesir, not the Bursa-based entity originally found via search),
+    and the Bursa entity's public-access policy for its climbing wall
+    couldn't be confirmed from any source. Boulder Istanbul (Wall of
+    Istanbul) — a real, historically-established gym, but showed a
+    "temporarily closed" signal in search results and isn't listed on
+    either boulderinglist.com or indoorclimbing.com, so its current
+    operating status couldn't be confirmed. **Both Turkey exclusions,
+    plus the general unconfirmed-status caution, meant Turkey was not
+    added as this dataset's 55th country this pass** — only one Turkey
+    gym (Boulderhane, Istanbul) actually cleared verification, and this
+    project's own standard (see the "Georgia" country/US-state mixup
+    earlier in this file) is that one confirmed gym isn't enough to seed
+    a whole country. Left for a dedicated future research pass instead
+    of force-added.
+  - **Chain-precedent typing applied where a specific branch's own
+    discipline wasn't independently confirmed**, consistent with this
+    dataset's established practice of checking each branch individually
+    but falling back on a chain's already-confirmed pattern when a
+    branch-specific source is silent: **The Climbing Hangar** (already
+    confirmed bouldering-only chain-wide via its existing London entry)
+    applied to its new Sheffield/Liverpool ×2/Reading/Southampton/Exeter/
+    Plymouth branches; **Eden Rock** (already confirmed bouldering-only
+    via its existing Carlisle and Edinburgh entries) applied to its new
+    Newcastle branch; **Big Depot**-branded flagship locations (Leeds,
+    Manchester, Birmingham, Sheffield) tagged bouldering + top-rope +
+    lead on the same pattern as this dataset's existing Depot Manchester/
+    Nottingham entries, while boulderingwall.com's own "Bouldering"-only
+    tag was kept as-is for the smaller Armley/Pudsey Depot branches
+    rather than overridden by the chain pattern.
+  - **Positions**: 18 of the 33 new spots were individually geocoded
+    against Nominatim (mostly via bare-postcode-only queries, which
+    resolved cleanly for Leeds/Sheffield/Liverpool/Newcastle/Cambridge/
+    Reading/Southampton/Exeter postcodes); the rest use a disclosed
+    city-centre approximation. **Depot Climbing Birmingham's postcode
+    (B5 6LU) never resolved correctly** despite three attempts (first to
+    Blackwall Tunnel, London; then to an unrelated Birmingham postcode,
+    B2 4DH) — falls back to the Birmingham city centroid with the
+    geocoding difficulty disclosed, consistent with this dataset's
+    established precedent for addresses that can't be pinned exactly.
+    **The Hive Swansea's address ("Rear of 75...") never resolved even
+    after retrying with a simplified street+postcode query** — falls
+    back to a Swansea city-centre position, also disclosed.
+  - Net result: 1661 → **1694 total spots** (GB 66 → 99). Structural
+    check (Node-parsed `window.SEED_GYMS`): 1694/1694 unique ids, zero
+    duplicate name+suburb+state+country combos, every spot has a
+    non-empty `types` array.
+  - **Verified live** (served copy, `npx serve .`, offline-fallback-
+    forcing method): count reads 1694; all 33 new spots and all 3
+    corrected entries confirmed searchable by name with the expected
+    corrected suburb/name text (Rhino Boulder → Bromley, Climbing Hut
+    Shrewsbury, Live For Today Climbing Centre); no console errors beyond
+    the deliberately-forced Supabase-unreachable ones; no horizontal
+    overflow at 375px mobile with the GB chip row expanded; `git diff` on
+    `js/supabase-init.js` confirmed clean after reverting the test edit.
+  - **Not yet pushed to the live Supabase table** — same next-step gap as
+    every prior country/city addition.
 
 ## Design system
 
