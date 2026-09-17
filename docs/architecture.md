@@ -4090,6 +4090,69 @@ from one source:
     `js/supabase-init.js` confirmed clean after reverting the test edit.
   - **Not yet pushed to the live Supabase table** — same next-step gap as
     every prior country/city addition.
+- **Cyprus (5 gyms, 55th country)** — the next-largest missing country per
+  boulderinglist.com's full list once Slovakia had been added, with one
+  real trap caught along the way: **Costa Rica's own summary count on
+  boulderinglist.com's country-index page said 4 gyms, but its actual
+  detail page shows 0** — the same kind of stale/mismatched-count issue
+  already documented for "Georgia," caught this time by checking the
+  detail page directly rather than trusting the index page's number, per
+  the lesson from that earlier trap. Cyprus (3 gyms per its own detail
+  page) was checked next and turned out to be a real, if incomplete,
+  starting point.
+  - **boulderinglist.com's own 3-gym Cyprus list was independently
+    confirmed by indoorclimbing.com** (real street addresses for all 3:
+    LCC Limassol Climbing Club, Ungravity Climbing, C.F.C.C. Cyprus
+    Federation Climbing Centre) — the strongest cross-check quality of
+    the four countries tied at 3 gyms that round (Cyprus, Panama, Peru,
+    Singapore all considered; Singapore's own listings were notably
+    messier, mixing indoor and outdoor facilities within single entries).
+  - **General web search surfaced 2 more real, currently-operating
+    gyms neither directory had listed**: Redpoint (Kaimakli, Nicosia — a
+    parkour + bouldering academy, "the best and biggest in Nicosia" per a
+    Reddit thread) and Rockstar Climbing (Nicosia — a boutique 142sqm
+    bouldering gym, confirmed via Walltopia's own project page, which
+    built the wall). Both individually confirmed via their own sites/
+    business listings before being added — this dataset ended up with 5
+    real Cyprus gyms, more than either source's own count.
+  - **Confirmed no real indoor gym exists in Paphos**, Cyprus's other
+    major city — multiple Reddit/Facebook threads from residents asking
+    "are there none?" found no counter-evidence, so nothing was added
+    there rather than guessed in.
+  - **Climbing type applied only from direct evidence**: Ungravity
+    Climbing confirmed bouldering + lead wall (allaboutkids.com.cy) plus
+    a separate roped-climbing confirmation from a third-party directory;
+    C.F.C.C. confirmed bouldering + 4 sport-climbing walls (mapped to
+    lead climbing, the same "sport climbing = lead" convention used
+    throughout this dataset); LCC Limassol, Redpoint, and Rockstar
+    Climbing are all confirmed bouldering-only via their own
+    sites/directories, with no rope-climbing evidence found for any of
+    the three.
+  - **Positions**: 3 of 5 addresses resolved directly against Nominatim
+    (Ungravity, Redpoint, Rockstar Climbing); LCC Limassol and C.F.C.C.
+    fell back to a city/area centroid after their specific streets
+    didn't resolve even on a simplified retry.
+  - **`state` uses Cyprus's 6 official Republic of Cyprus districts**
+    (Nicosia, Limassol, Larnaca, Famagusta, Paphos, Kyrenia) — the
+    standard, internationally-recognized administrative division
+    (Northern Cyprus/the TRNC is recognized only by Turkey), not a
+    contested-territory judgment call the way Kosovo/West Bank/Crimea
+    were handled elsewhere in this file. Only Nicosia and Limassol have
+    a seed spot and a sidebar chip/colour so far.
+  - Net result: 1694 → **1699 total spots**. Structural check (Node-parsed
+    `window.SEED_GYMS`): 1699/1699 unique ids, zero duplicate
+    name+suburb+state+country combos, every spot has a non-empty `types`
+    array.
+  - **Verified live** (served copy, `npx serve .`, offline-fallback-
+    forcing method): count reads 1699; all 5 Cyprus spots searchable by
+    name; the Nicosia chip correctly filters to exactly 4 spots with
+    legible active-state text (dark text on blue background); the new
+    Cyprus country `<option>` present in both add/edit forms; no console
+    errors beyond the deliberately-forced Supabase-unreachable ones; no
+    horizontal overflow at 375px mobile; `git diff` on
+    `js/supabase-init.js` confirmed clean after reverting the test edit.
+  - **Not yet pushed to the live Supabase table** — same next-step gap as
+    every prior country addition.
 
 ## Design system
 

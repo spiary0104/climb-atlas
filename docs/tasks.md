@@ -3841,6 +3841,34 @@ _(none)_
 
 ## Done (recent)
 
+### Add Cyprus (5 gyms, next-largest missing country, 55th)
+- Status: done — committed directly to `master`.
+- What: user asked "are we missing anymore?" — checked boulderinglist.com's
+  full 84-country list against the dataset. Found Costa Rica's own
+  summary count (4 gyms) doesn't match its actual detail page (0 gyms) —
+  a stale-count trap similar to "Georgia," caught by checking the detail
+  page directly. Cyprus (3 gyms per its detail page, independently
+  confirmed via indoorclimbing.com) was the next candidate with clean
+  cross-check quality; general web search then turned up 2 more real
+  gyms (Redpoint, Rockstar Climbing) neither directory listed, for 5
+  total.
+- `state` uses Cyprus's 6 official Republic of Cyprus districts — the
+  standard internationally-recognized division (Northern Cyprus is
+  recognized only by Turkey), same neutrality standard already applied
+  to Russia/Serbia/Israel elsewhere in this dataset.
+- Full sourcing detail in `docs/architecture.md` "Seed data sourcing".
+- Net result: 1694 → **1699 total spots**. Structural check (Node-parsed
+  `window.SEED_GYMS`): 1699/1699 unique ids, zero duplicate
+  name+suburb+state+country combos, every spot has a non-empty `types`
+  array.
+- **Verified**: same offline-fallback-forcing method as every prior
+  batch — count reads 1699; all 5 Cyprus spots searchable by name; the
+  Nicosia chip filters to exactly 4 spots with legible active-state
+  text; the new Cyprus country `<option>` present in both forms; no
+  console errors; no horizontal overflow at 375px mobile.
+- **Not yet done**: running the regenerated seed SQL against the live
+  Supabase table — same outstanding step as every prior country addition.
+
 ### Add UK gyms from boulderingwall.com + fix 3 existing GB entries
 - Status: done — committed directly to `master` (no separate branch —
   same lightweight pattern as the recent single-country/expansion picks).
