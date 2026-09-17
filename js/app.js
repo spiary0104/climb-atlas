@@ -450,10 +450,19 @@
          ['DARIEN','Darién'],['HERRERA','Herrera'],['LOS_SANTOS','Los Santos'],
          ['VERAGUAS','Veraguas'],['GUNA_YALA','Comarca Guna Yala'],
          ['EMBERA_WOUNAAN','Comarca Emberá-Wounaan'],['NGABE_BUGLE','Comarca Ngäbe-Buglé'],
-         ['KUNA_MADUNGANDI','Comarca Kuna de Madungandí'],['KUNA_WARGANDI','Comarca Kuna de Wargandí']]
+         ['KUNA_MADUNGANDI','Comarca Kuna de Madungandí'],['KUNA_WARGANDI','Comarca Kuna de Wargandí']],
+    // Peru's 25 real regions (24 departments + the Constitutional
+    // Province of Callao), populated complete from the start.
+    PE: [['LIMA','Lima'],['AREQUIPA','Arequipa'],['AMAZONAS','Amazonas'],['ANCASH','Áncash'],
+         ['APURIMAC','Apurímac'],['AYACUCHO','Ayacucho'],['CAJAMARCA','Cajamarca'],
+         ['CALLAO','Callao'],['CUSCO','Cusco'],['HUANCAVELICA','Huancavelica'],
+         ['HUANUCO','Huánuco'],['ICA','Ica'],['JUNIN','Junín'],['LA_LIBERTAD','La Libertad'],
+         ['LAMBAYEQUE','Lambayeque'],['LORETO','Loreto'],['MADRE_DE_DIOS','Madre de Dios'],
+         ['MOQUEGUA','Moquegua'],['PASCO','Pasco'],['PIURA','Piura'],['PUNO','Puno'],
+         ['SAN_MARTIN','San Martín'],['TACNA','Tacna'],['TUMBES','Tumbes'],['UCAYALI','Ucayali']]
   };
   const TYPE_LABELS = {'indoor-bouldering':'Indoor bouldering','top-rope':'Top rope','lead-climbing':'Lead climbing'};
-  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy', BE:'Belgium', KR:'South Korea', ES:'Spain', PT:'Portugal', AT:'Austria', CH:'Switzerland', PL:'Poland', DK:'Denmark', FI:'Finland', IE:'Ireland', NO:'Norway', MX:'Mexico', BR:'Brazil', HU:'Hungary', GR:'Greece', CZ:'Czech Republic', IS:'Iceland', RO:'Romania', HR:'Croatia', RU:'Russia', BG:'Bulgaria', AR:'Argentina', PH:'Philippines', CO:'Colombia', CL:'Chile', VE:'Venezuela', IN:'India', IL:'Israel', ID:'Indonesia', TW:'Taiwan', ZA:'South Africa', EC:'Ecuador', VN:'Vietnam', LT:'Lithuania', RS:'Serbia', BO:'Bolivia', IR:'Iran', EE:'Estonia', MY:'Malaysia', TH:'Thailand', UA:'Ukraine', SK:'Slovakia', CY:'Cyprus', PA:'Panama'};
+  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy', BE:'Belgium', KR:'South Korea', ES:'Spain', PT:'Portugal', AT:'Austria', CH:'Switzerland', PL:'Poland', DK:'Denmark', FI:'Finland', IE:'Ireland', NO:'Norway', MX:'Mexico', BR:'Brazil', HU:'Hungary', GR:'Greece', CZ:'Czech Republic', IS:'Iceland', RO:'Romania', HR:'Croatia', RU:'Russia', BG:'Bulgaria', AR:'Argentina', PH:'Philippines', CO:'Colombia', CL:'Chile', VE:'Venezuela', IN:'India', IL:'Israel', ID:'Indonesia', TW:'Taiwan', ZA:'South Africa', EC:'Ecuador', VN:'Vietnam', LT:'Lithuania', RS:'Serbia', BO:'Bolivia', IR:'Iran', EE:'Estonia', MY:'Malaysia', TH:'Thailand', UA:'Ukraine', SK:'Slovakia', CY:'Cyprus', PA:'Panama', PE:'Peru'};
   // Fixed camera target per country for the "fly to this country" click on
   // its sidebar label -- picked to frame that country's actual spread of
   // seed spots (e.g. US needs a wide zoom to fit both NY and CA), not a
@@ -515,7 +524,8 @@
     UA: {center:[27.3,50.1], zoom:5.4},
     SK: {center:[19.1,48.7], zoom:6.8},
     CY: {center:[33.2,35.05], zoom:8.6},
-    PA: {center:[-80.5,8.6], zoom:6.2}
+    PA: {center:[-80.5,8.6], zoom:6.2},
+    PE: {center:[-75,-11.5], zoom:5.4}
   };
   // Which sidebar region-group each country belongs to -- same grouping as
   // the `.region-group[data-region]` wrappers in index.html, kept here too
@@ -531,7 +541,7 @@
     CA:'north-america', US:'north-america', MX:'north-america', PA:'north-america',
     AU:'oceania', NZ:'oceania',
     BR:'south-america', AR:'south-america', CO:'south-america', CL:'south-america', VE:'south-america',
-    EC:'south-america', BO:'south-america',
+    EC:'south-america', BO:'south-america', PE:'south-america',
     ZA:'africa'
   };
   const REGION_LABELS = {asia:'Asia', europe:'Europe', 'north-america':'North America', oceania:'Oceania', 'south-america':'South America', africa:'Africa'};

@@ -4203,6 +4203,62 @@ from one source:
     `js/supabase-init.js` confirmed clean after reverting the test edit.
   - **Not yet pushed to the live Supabase table** — same next-step gap as
     every prior country addition.
+- **Peru (5 gyms, 57th country)** — the last of the tied-at-3 group
+  (Cyprus, Panama, Peru, Singapore) picked. Peru's own indoorclimbing.com
+  cross-check was the weakest of the three (it only independently
+  confirmed 1 of boulderinglist.com's 3 candidates — CCM Arequipa — not
+  all 3 the way Cyprus's and Panama's second sources had), so every
+  candidate was individually web-searched rather than trusted from the
+  directory alone. This surfaced **2 more real, currently-operating gyms
+  neither directory listed**: Pirqa (Miraflores, home to Peru's national
+  climbing team per Climbing Magazine) and Bloque (an active, 5,000+-
+  follower bouldering gym) — both independently confirmed via a
+  dedicated gym-review site, rockclimbperu.com, and (for Pirqa) Wanderlog
+  reviews.
+  - **Climbing type applied only from direct evidence, cross-checked
+    against multiple independent sources for the Lima gyms specifically**
+    since the initial evidence was sometimes contradictory: Base Camp
+    Peru's own site names both bouldering and "deportiva" (sport
+    climbing), and rockclimbperu.com independently confirms a "gateway
+    lead wall" — tagged bouldering + lead. VERTICAL Gimnasio de Escalada's
+    own site brands itself "Palestra o bloque" (implying a rope wall),
+    but its wall-angle description (30°/15°/plates) reads as bouldering-
+    specific terminology, and an independent gym-review site explicitly
+    calls it an "open air bouldering facility" with no rope-climbing
+    evidence found elsewhere — tagged bouldering-only on the
+    stronger, more specific evidence. Pirqa is confirmed by two
+    independent sources (rockclimbperu.com and Wanderlog) to have both
+    rope walls and bouldering — tagged bouldering + top-rope (no
+    lead-specific terminology found). CCM Arequipa and Bloque are both
+    confirmed bouldering-only from their own descriptions, with no
+    rope-climbing evidence found for either.
+  - **Positions**: 4 of 5 addresses resolved directly against Nominatim
+    (Pirqa matched a named "PIRQA Climbing Gym" point of interest, the
+    strongest confirmation tier); Bloque has no specific street address
+    findable via any source despite being confirmed real and active —
+    falls back to a general Lima position, disclosed.
+  - **`state` uses Peru's 25 real regions** (24 departments + the
+    Constitutional Province of Callao), populated complete from the
+    start (same standard as every country since the NL fix) — only Lima
+    and Arequipa have a seed spot and a sidebar chip/colour so far.
+  - Net result: 1702 → **1707 total spots**. Structural check (Node-parsed
+    `window.SEED_GYMS`): 1707/1707 unique ids, zero duplicate
+    name+suburb+state+country combos, every spot has a non-empty `types`
+    array.
+  - **Verified live** (served copy, `npx serve .`, offline-fallback-
+    forcing method): count reads 1707; all 5 Peru spots searchable by
+    name; the Lima chip correctly filters to exactly 4 spots with legible
+    active-state text (dark text on red background); the new Peru country
+    `<option>` present in both add/edit forms; no console errors beyond
+    the deliberately-forced Supabase-unreachable ones; no horizontal
+    overflow at 375px mobile; `git diff` on `js/supabase-init.js`
+    confirmed clean after reverting the test edit.
+  - **This finishes the tied-at-3 group** — Cyprus, Panama, and Peru have
+    all been added; only Singapore remains from that group, still
+    deprioritized for mixing indoor/outdoor facilities within single
+    listings.
+  - **Not yet pushed to the live Supabase table** — same next-step gap as
+    every prior country addition.
 
 ## Design system
 

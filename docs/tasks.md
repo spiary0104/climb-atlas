@@ -3841,6 +3841,35 @@ _(none)_
 
 ## Done (recent)
 
+### Add Peru (5 gyms, next-largest missing country, 57th)
+- Status: done — committed directly to `master`.
+- What: the last of the tied-at-3 group (Cyprus, Panama, Peru,
+  Singapore). Peru's own indoorclimbing.com cross-check was the weakest
+  (only 1 of 3 boulderinglist.com candidates independently confirmed),
+  so every candidate was individually web-searched instead — which
+  surfaced 2 more real gyms neither directory listed (Pirqa, Bloque),
+  confirmed via rockclimbperu.com and Wanderlog reviews.
+- Climbing type required cross-checking multiple sources for the Lima
+  gyms specifically, since initial evidence was sometimes contradictory
+  (e.g. VERTICAL's own "Palestra" branding vs. an independent source
+  confirming it's bouldering-only) — full reasoning in
+  `docs/architecture.md` "Seed data sourcing".
+- `state` uses Peru's 25 real regions, populated complete from the start.
+- Net result: 1702 → **1707 total spots**. Structural check (Node-parsed
+  `window.SEED_GYMS`): 1707/1707 unique ids, zero duplicate
+  name+suburb+state+country combos, every spot has a non-empty `types`
+  array.
+- **Verified**: same offline-fallback-forcing method as every prior
+  batch — count reads 1707; all 5 Peru spots searchable by name; the
+  Lima chip filters to exactly 4 spots with legible active-state text;
+  the new Peru country `<option>` present in both forms; no console
+  errors; no horizontal overflow at 375px mobile.
+- **This finishes the tied-at-3 group** — only Singapore remains
+  unpicked (deprioritized for mixing indoor/outdoor facilities).
+- **Not yet done**: running the regenerated seed SQL against the live
+  Supabase table — same outstanding step as every prior country
+  addition.
+
 ### Add Panama (3 gyms, next-largest missing country, 56th)
 - Status: done — committed directly to `master`.
 - What: direct continuation of the "are we missing anymore?" sweep from
