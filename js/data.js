@@ -2219,4 +2219,26 @@
     {name:"VERTICAL Gimnasio de Escalada", suburb:"Jesús María, Lima", state:"LIMA", country:"PE", lat:-12.0709933, lng:-77.0401894, types:[IB], address:"Jirón Nazca cuadra 6, Campo de Marte, Jesús María, Lima, Peru", notes:"Confirmed via its own site (escaladavertical.com) and Peru's climbing federation (FEDPE, a competition venue at this address) -- an independent gym-review site (rockclimbperu.com) describes it as an \"open air bouldering facility,\" no rope-climbing evidence found despite the site's own \"palestra\" (wall) branding. Address resolved directly against Nominatim."},
     {name:"Pirqa", suburb:"Miraflores, Lima", state:"LIMA", country:"PE", lat:-12.1214565, lng:-77.0333256, types:[IB,TR], address:"Calle José Gálvez 360, Miraflores, Lima, Peru", notes:"Confirmed via its own site (pirqa.com), TripAdvisor (4.2/5, 40 reviews), and Peru's national climbing team training there per Climbing Magazine -- rockclimbperu.com and Wanderlog both independently confirm both rope walls and bouldering. Address resolved directly against Nominatim to a named \"PIRQA Climbing Gym\" point of interest."},
     {name:"Bloque", suburb:"Lima", state:"LIMA", country:"PE", lat:-12.0600, lng:-77.0300, types:[IB], notes:"Confirmed via its own active Instagram (5,000+ followers, weekly posts) and independently recommended by rockclimbperu.com as a real, visitable \"open air\" facility with \"modern bouldering walls, adjustable training board\" -- no specific street address found via web search; falls back to a general Lima position."},
+
+    // ---- Turkey (58th country) ----
+    // boulderinglist.com lists 5 Turkey entries, but one is the same gym
+    // (Bursa Tirmanis Evi) listed twice under two different city labels, and
+    // one (911 Search & Rescue Association, Bursa) was already investigated
+    // and excluded during the earlier boulderingwall.com UK pass -- its
+    // specific branch address couldn't be confirmed and its public-access
+    // policy for the climbing wall was never established. That leaves 3
+    // real, individually-confirmed gyms: Boulderhane (Istanbul, already
+    // confirmed in an earlier pass), plus two new ones found on this
+    // country's boulderinglist.com page and independently verified --
+    // Bursa Tirmanis Evi (run by Bursa Dagcilik ve Doga Sporlari Ihtisas
+    // Kulubu / Bursa Mountaineering and Nature Sports Club, confirmed via
+    // indoor-climbing-map.com with real public opening hours, Mon/Thu
+    // 18:00-21:00) and Boulder Eskisehir/BoulderEs (confirmed via its own
+    // site bouldereskisehir.com and climbing-gyms.com). 3 gyms matches this
+    // dataset's own precedent for seeding a country (Panama/Peru both
+    // started at 3). `state` uses Turkey's 81 real provinces, populated
+    // complete from the start.
+    {name:"Boulderhane", suburb:"Şişli, Istanbul", state:"ISTANBUL", country:"TR", lat:41.0761626, lng:29.0111428, types:[IB], address:"Esentepe Mah., Büyükdere Cad., Metrocity AVM No:171, -1. Kat, Şişli, Istanbul, Turkey", notes:"Confirmed via its own site (boulderhane.com), Mountain Project, and Wanderlog reviews -- a ~700sqm bouldering-only gym on the -1 floor of Metrocity AVM (Levent metro station). Address resolved against Nominatim to a matching point of interest at the same street number (No:171) inside the mall."},
+    {name:"Bursa Tırmanış Evi", suburb:"Osmangazi, Bursa", state:"BURSA", country:"TR", lat:40.1909746, lng:29.0588067, types:[IB], address:"Ahmetpaşa Mah., İstiklal Okulu Sok. No: 55, Osmangazi, Bursa 16100, Turkey", notes:"Confirmed via indoor-climbing-map.com -- a 60m² bouldering wall run by Bursa Dağcılık ve Doğa Sporları İhtisas Kulübü (Bursa Mountaineering and Nature Sports Club), open to the public Mondays and Thursdays 18:00-21:00. No rope-climbing evidence found. Address resolved directly against Nominatim."},
+    {name:"BoulderEs", suburb:"Odunpazarı, Eskişehir", state:"ESKISEHIR", country:"TR", lat:39.7745718, lng:30.5080822, types:[IB], address:"Basın Şehitleri Cd. No:104, Kırmızıtoprak, Odunpazarı, Eskişehir 26020, Turkey", notes:"Confirmed via its own site (bouldereskisehir.com), climbing-gyms.com, and an active Instagram (@boulderes) -- a bouldering-focused gym offering workshops and personal training. No rope-climbing evidence found. Address resolved directly against Nominatim (\"Basın Şehitleri Caddesi\" also exists in a different Eskişehir neighbourhood -- Kırmızıtoprak was confirmed as the correct one via a source naming \"BoulderEs Kırmızıtoprak\" directly)."},
   ].map((g,i)=>({...g, id:'seed-'+i, community:false, country: g.country || 'AU'}));

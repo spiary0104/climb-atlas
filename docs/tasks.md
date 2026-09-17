@@ -3841,6 +3841,40 @@ _(none)_
 
 ## Done (recent)
 
+### Add Turkey (3 gyms, next-largest missing country, 58th)
+- Status: done — committed directly to `master`.
+- What: after the tied-at-3 group finished with Peru, boulderinglist.com's
+  full 84-country list showed Turkey as the next-largest missing country
+  (5 raw listings) — higher than the 2-gym tier this file had previously
+  flagged as the next candidates. This revisits a country an earlier
+  session (the boulderingwall.com UK pass) had deferred after finding
+  only 1 confirmed gym there.
+- The 5 raw listings were only 4 distinct gyms (one duplicate row); of
+  those, 911 Search & Rescue Association was excluded again (the same
+  candidate already rejected in the earlier pass — wrong branch address,
+  unconfirmed public access), leaving 3: Boulderhane (Istanbul, already
+  confirmed), Bursa Tırmanış Evi, and BoulderEs (Eskişehir) — both newly
+  confirmed via independent sources (indoor-climbing-map.com,
+  bouldereskisehir.com). 3 gyms matches this dataset's own precedent for
+  seeding a country (Panama/Peru both started at 3). All 3 confirmed
+  bouldering-only from direct evidence.
+- `state` uses Turkey's 81 real provinces, populated complete from the
+  start. Full sourcing detail, including a rejected wrong-neighbourhood
+  Nominatim match for BoulderEs, in `docs/architecture.md` "Seed data
+  sourcing".
+- Net result: 1707 → **1710 total spots**. Structural check (Node-parsed
+  `window.SEED_GYMS`): 1710/1710 unique ids, zero duplicate
+  name+suburb+state+country combos, every spot has a non-empty `types`
+  array.
+- **Verified**: same offline-fallback-forcing method as every prior
+  batch — count reads 1710; all 3 Turkey spots searchable by name; the
+  İstanbul chip filters to exactly 1 spot with legible active-state
+  text; the new Turkey country `<option>` present in both forms; no
+  console errors; no horizontal overflow at 375px mobile.
+- **Not yet done**: running the regenerated seed SQL against the live
+  Supabase table — same outstanding step as every prior country
+  addition.
+
 ### Add Peru (5 gyms, next-largest missing country, 57th)
 - Status: done — committed directly to `master`.
 - What: the last of the tied-at-3 group (Cyprus, Panama, Peru,

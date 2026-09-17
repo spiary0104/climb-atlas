@@ -108,11 +108,11 @@ are only unique within a country** (e.g. AU's `WA` vs US's `WA` are
 different regions). Anything that filters, colors, or edits by state —
 the chips in `index.html`, `STATES_BY_COUNTRY` in `app.js`, the RLS-safe
 columns in `schema.sql` — keys off the `(country, state)` pair together,
-never `state` alone. Now 54 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
+never `state` alone. Now 58 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
 FR, SE, NL, IT, BE, KR, ES, PT, AT, CH, PL, DK, FI, IE, NO, MX, BR, HU, GR,
 CZ, IS, RO, HR, RU, BG, AR, PH, CO, CL, VE, IN, IL, ID, TW, ZA, EC, VN, LT,
-RS, BO, IR, EE, MY, TH, UA, SK), same pattern each time — keep this in mind
-before adding a 55th. One collision
+RS, BO, IR, EE, MY, TH, UA, SK, CY, PA, PE, TR), same pattern each time —
+keep this in mind before adding a 59th. One collision
 worth flagging: `US`'s state code for California is `CA`, and `CA` is
 also the top-level country code for Canada — not a real ambiguity since
 they're different object keys/fields (`STATES_BY_COUNTRY.US` contains
@@ -4257,6 +4257,70 @@ from one source:
     all been added; only Singapore remains from that group, still
     deprioritized for mixing indoor/outdoor facilities within single
     listings.
+  - **Not yet pushed to the live Supabase table** — same next-step gap as
+    every prior country addition.
+- **Turkey (3 gyms, 58th country)** — after finishing the tied-at-3 group,
+  boulderinglist.com's own full 84-country gym-count list showed Turkey
+  as the next-largest missing country (5 raw listings), higher than every
+  member of the 2-gym tier this file had previously flagged as the next
+  candidates. This revisits a country an earlier session (the
+  boulderingwall.com UK pass) had explicitly deferred, after concluding
+  only one confirmed gym (Boulderhane) existed there — not enough to seed
+  a country by this dataset's own standard.
+  - **boulderinglist.com's 5 raw listings were only 4 distinct entries**:
+    "Bursa Tirmanis Evi" appears twice under two different city labels (a
+    specific street-address label and a plain "Bursa" label) — the same
+    gym, not two. Of the remaining 4, **911 Search & Rescue Association**
+    (Bursa) was excluded again — this is the same candidate already
+    investigated and rejected during the boulderingwall.com pass (wrong
+    branch address found, public-access policy for its climbing wall
+    never confirmed) — leaving 3.
+  - **All 3 remaining candidates individually confirmed real and current
+    via web search, not just trusted from the directory**: **Boulderhane**
+    (Istanbul) — already confirmed in the earlier pass, re-verified here
+    via its own site (boulderhane.com), Mountain Project, and Wanderlog
+    reviews; a ~700sqm bouldering-only gym on the -1 floor of Metrocity
+    AVM. **Bursa Tırmanış Evi** — confirmed via indoor-climbing-map.com, a
+    60m² bouldering wall run by Bursa Dağcılık ve Doğa Sporları İhtisas
+    Kulübü (Bursa Mountaineering and Nature Sports Club) with real public
+    opening hours (Mon/Thu 18:00-21:00) — genuinely publicly accessible
+    during those windows, not a members-only club facility. **BoulderEs**
+    (Boulder Eskişehir) — confirmed via its own site (bouldereskisehir.com),
+    climbing-gyms.com, and an active Instagram, offering workshops and
+    personal training.
+  - **3 gyms matches this dataset's own established precedent for seeding
+    a country** — Panama and Peru both started at exactly 3 gyms too, so
+    this isn't treated as a thinner bar than usual.
+  - **All 3 confirmed bouldering-only** — none of the three sources found
+    for any of the three gyms mentions a rope wall, top-rope, or lead
+    climbing, so no type was assumed without evidence, per the lesson
+    from the worldwide top-rope-tag audit.
+  - **Positions individually geocoded** against Nominatim — Boulderhane
+    resolved to a named point of interest inside Metrocity AVM sharing its
+    exact street number (No:171); Bursa Tırmanış Evi's street resolved
+    directly. **BoulderEs hit the "same street name exists elsewhere"
+    failure mode** already documented for Croatia/Russia/the Philippines/
+    South Africa/Ecuador/Panama — "Basın Şehitleri Caddesi" exists in two
+    different Eskişehir neighbourhoods (Kırmızıtoprak and Osmangazi); the
+    correct one (Kırmızıtoprak) was confirmed via an independent source
+    explicitly naming "BoulderEs Kırmızıtoprak," not picked arbitrarily
+    from Nominatim's ranked results.
+  - **`state` uses Turkey's 81 real provinces (il)**, populated complete
+    from the start (same standard as every country since the NL fix) —
+    only İstanbul, Bursa, and Eskişehir have a seed spot and a sidebar
+    chip/colour so far.
+  - Net result: 1707 → **1710 total spots**. Structural check (Node-parsed
+    `window.SEED_GYMS`): 1710/1710 unique ids, zero duplicate
+    name+suburb+state+country combos, every spot has a non-empty `types`
+    array.
+  - **Verified live** (served copy, `npx serve .`, offline-fallback-
+    forcing method): count reads 1710; all 3 Turkey spots searchable by
+    name; the İstanbul chip correctly filters to exactly 1 spot with
+    legible active-state text (dark text on red background); the new
+    Turkey country `<option>` present in both add/edit forms; no console
+    errors beyond the deliberately-forced Supabase-unreachable ones; no
+    horizontal overflow at 375px mobile; `git diff` on
+    `js/supabase-init.js` confirmed clean after reverting the test edit.
   - **Not yet pushed to the live Supabase table** — same next-step gap as
     every prior country addition.
 

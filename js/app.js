@@ -459,10 +459,35 @@
          ['HUANUCO','Huánuco'],['ICA','Ica'],['JUNIN','Junín'],['LA_LIBERTAD','La Libertad'],
          ['LAMBAYEQUE','Lambayeque'],['LORETO','Loreto'],['MADRE_DE_DIOS','Madre de Dios'],
          ['MOQUEGUA','Moquegua'],['PASCO','Pasco'],['PIURA','Piura'],['PUNO','Puno'],
-         ['SAN_MARTIN','San Martín'],['TACNA','Tacna'],['TUMBES','Tumbes'],['UCAYALI','Ucayali']]
+         ['SAN_MARTIN','San Martín'],['TACNA','Tacna'],['TUMBES','Tumbes'],['UCAYALI','Ucayali']],
+    // Turkey's 81 real provinces (il), populated complete from the start
+    // same as every country since the NL fix.
+    TR: [['ADANA','Adana'],['ADIYAMAN','Adıyaman'],['AFYONKARAHISAR','Afyonkarahisar'],
+         ['AGRI','Ağrı'],['AMASYA','Amasya'],['ANKARA','Ankara'],['ANTALYA','Antalya'],
+         ['ARTVIN','Artvin'],['AYDIN','Aydın'],['BALIKESIR','Balıkesir'],['BILECIK','Bilecik'],
+         ['BINGOL','Bingöl'],['BITLIS','Bitlis'],['BOLU','Bolu'],['BURDUR','Burdur'],
+         ['BURSA','Bursa'],['CANAKKALE','Çanakkale'],['CANKIRI','Çankırı'],['CORUM','Çorum'],
+         ['DENIZLI','Denizli'],['DIYARBAKIR','Diyarbakır'],['EDIRNE','Edirne'],
+         ['ELAZIG','Elazığ'],['ERZINCAN','Erzincan'],['ERZURUM','Erzurum'],
+         ['ESKISEHIR','Eskişehir'],['GAZIANTEP','Gaziantep'],['GIRESUN','Giresun'],
+         ['GUMUSHANE','Gümüşhane'],['HAKKARI','Hakkari'],['HATAY','Hatay'],
+         ['ISPARTA','Isparta'],['MERSIN','Mersin'],['ISTANBUL','İstanbul'],['IZMIR','İzmir'],
+         ['KARS','Kars'],['KASTAMONU','Kastamonu'],['KAYSERI','Kayseri'],
+         ['KIRKLARELI','Kırklareli'],['KIRSEHIR','Kırşehir'],['KOCAELI','Kocaeli'],
+         ['KONYA','Konya'],['KUTAHYA','Kütahya'],['MALATYA','Malatya'],['MANISA','Manisa'],
+         ['KAHRAMANMARAS','Kahramanmaraş'],['MARDIN','Mardin'],['MUGLA','Muğla'],
+         ['MUS','Muş'],['NEVSEHIR','Nevşehir'],['NIGDE','Niğde'],['ORDU','Ordu'],
+         ['RIZE','Rize'],['SAKARYA','Sakarya'],['SAMSUN','Samsun'],['SIIRT','Siirt'],
+         ['SINOP','Sinop'],['SIVAS','Sivas'],['TEKIRDAG','Tekirdağ'],['TOKAT','Tokat'],
+         ['TRABZON','Trabzon'],['TUNCELI','Tunceli'],['SANLIURFA','Şanlıurfa'],
+         ['USAK','Uşak'],['VAN','Van'],['YOZGAT','Yozgat'],['ZONGULDAK','Zonguldak'],
+         ['AKSARAY','Aksaray'],['BAYBURT','Bayburt'],['KARAMAN','Karaman'],
+         ['KIRIKKALE','Kırıkkale'],['BATMAN','Batman'],['SIRNAK','Şırnak'],
+         ['BARTIN','Bartın'],['ARDAHAN','Ardahan'],['IGDIR','Iğdır'],['YALOVA','Yalova'],
+         ['KARABUK','Karabük'],['KILIS','Kilis'],['OSMANIYE','Osmaniye'],['DUZCE','Düzce']]
   };
   const TYPE_LABELS = {'indoor-bouldering':'Indoor bouldering','top-rope':'Top rope','lead-climbing':'Lead climbing'};
-  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy', BE:'Belgium', KR:'South Korea', ES:'Spain', PT:'Portugal', AT:'Austria', CH:'Switzerland', PL:'Poland', DK:'Denmark', FI:'Finland', IE:'Ireland', NO:'Norway', MX:'Mexico', BR:'Brazil', HU:'Hungary', GR:'Greece', CZ:'Czech Republic', IS:'Iceland', RO:'Romania', HR:'Croatia', RU:'Russia', BG:'Bulgaria', AR:'Argentina', PH:'Philippines', CO:'Colombia', CL:'Chile', VE:'Venezuela', IN:'India', IL:'Israel', ID:'Indonesia', TW:'Taiwan', ZA:'South Africa', EC:'Ecuador', VN:'Vietnam', LT:'Lithuania', RS:'Serbia', BO:'Bolivia', IR:'Iran', EE:'Estonia', MY:'Malaysia', TH:'Thailand', UA:'Ukraine', SK:'Slovakia', CY:'Cyprus', PA:'Panama', PE:'Peru'};
+  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy', BE:'Belgium', KR:'South Korea', ES:'Spain', PT:'Portugal', AT:'Austria', CH:'Switzerland', PL:'Poland', DK:'Denmark', FI:'Finland', IE:'Ireland', NO:'Norway', MX:'Mexico', BR:'Brazil', HU:'Hungary', GR:'Greece', CZ:'Czech Republic', IS:'Iceland', RO:'Romania', HR:'Croatia', RU:'Russia', BG:'Bulgaria', AR:'Argentina', PH:'Philippines', CO:'Colombia', CL:'Chile', VE:'Venezuela', IN:'India', IL:'Israel', ID:'Indonesia', TW:'Taiwan', ZA:'South Africa', EC:'Ecuador', VN:'Vietnam', LT:'Lithuania', RS:'Serbia', BO:'Bolivia', IR:'Iran', EE:'Estonia', MY:'Malaysia', TH:'Thailand', UA:'Ukraine', SK:'Slovakia', CY:'Cyprus', PA:'Panama', PE:'Peru', TR:'Turkey'};
   // Fixed camera target per country for the "fly to this country" click on
   // its sidebar label -- picked to frame that country's actual spread of
   // seed spots (e.g. US needs a wide zoom to fit both NY and CA), not a
@@ -525,7 +550,8 @@
     SK: {center:[19.1,48.7], zoom:6.8},
     CY: {center:[33.2,35.05], zoom:8.6},
     PA: {center:[-80.5,8.6], zoom:6.2},
-    PE: {center:[-75,-11.5], zoom:5.4}
+    PE: {center:[-75,-11.5], zoom:5.4},
+    TR: {center:[31,40.2], zoom:6}
   };
   // Which sidebar region-group each country belongs to -- same grouping as
   // the `.region-group[data-region]` wrappers in index.html, kept here too
@@ -537,7 +563,7 @@
     ES:'europe', PT:'europe', AT:'europe', CH:'europe', PL:'europe', DK:'europe', FI:'europe', IE:'europe',
     NO:'europe', HU:'europe', GR:'europe', CZ:'europe', IS:'europe',
     RO:'europe', HR:'europe', RU:'europe', BG:'europe', RS:'europe', EE:'europe', UA:'europe', SK:'europe',
-    CY:'europe',
+    CY:'europe', TR:'europe',
     CA:'north-america', US:'north-america', MX:'north-america', PA:'north-america',
     AU:'oceania', NZ:'oceania',
     BR:'south-america', AR:'south-america', CO:'south-america', CL:'south-america', VE:'south-america',
