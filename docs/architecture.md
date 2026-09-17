@@ -4153,6 +4153,56 @@ from one source:
     `js/supabase-init.js` confirmed clean after reverting the test edit.
   - **Not yet pushed to the live Supabase table** — same next-step gap as
     every prior country addition.
+- **Panama (3 gyms, 56th country)** — the next candidate from the same
+  tied-at-3 group Cyprus was picked from (Panama, Peru, Singapore).
+  boulderinglist.com's own 3-gym Panama listing was independently
+  confirmed by indoorclimbing.com with matching real addresses for all
+  3 — the stronger cross-check of the two remaining candidates: Peru's
+  own indoorclimbing.com page only confirmed 1 of its 3 candidates
+  (Singapore was already deprioritized during the Cyprus pick for
+  mixing indoor/outdoor facilities within single listings).
+  - **All 3 candidates individually confirmed real and currently
+    operating** via web search, not just trusted from the two
+    directories: El Espacio La Cueva (Alto Boquete) has an active
+    Instagram/Facebook presence with posts as recent as a few months
+    old; Sportlink Climb (Costa del Este) has a well-established
+    5,500+-follower Instagram and hosts the Panama Climbing Games
+    competition; Baboons Boulder Wall is confirmed via its own hostel's
+    site (posada1914.com) as "the only [indoor climbing wall] in Panama
+    City," bookable as a public activity rather than restricted to
+    hostel guests.
+  - **Climbing type applied only from direct evidence** — all 3 are
+    bouldering-only (El Espacio La Cueva's own description names a
+    "Boulder House"; Sportlink Climb is explicitly "Boulder wall
+    climbing"; Baboons Boulder Wall's own name and every source describe
+    only a boulder wall), no rope-climbing evidence found for any.
+  - **Positions**: El Espacio La Cueva resolved directly against
+    Nominatim to the named Alto Boquete corregimiento; Sportlink Climb
+    and Baboons Boulder Wall's specific street addresses didn't resolve
+    (one Nominatim result for Baboons' address landed on an unrelated
+    street/suburb entirely — Calidonia instead of the confirmed Bella
+    Vista — rejected as a wrong-street match, the same failure mode
+    already documented for Croatia/Russia/the Philippines/South Africa/
+    Ecuador elsewhere in this file) — both fall back to their confirmed
+    neighbourhood's area centroid instead.
+  - **`state` uses Panama's 10 real provinces plus its 5 indigenous
+    comarcas**, populated complete from the start (same standard as
+    every country since the NL fix) — only Chiriquí and Panamá have a
+    seed spot and a sidebar chip/colour so far.
+  - Net result: 1699 → **1702 total spots**. Structural check (Node-parsed
+    `window.SEED_GYMS`): 1702/1702 unique ids, zero duplicate
+    name+suburb+state+country combos, every spot has a non-empty `types`
+    array.
+  - **Verified live** (served copy, `npx serve .`, offline-fallback-
+    forcing method): count reads 1702; all 3 Panama spots searchable by
+    name; the Panamá chip correctly filters to exactly 2 spots with
+    legible active-state text (dark text on gold background); the new
+    Panama country `<option>` present in both add/edit forms; no console
+    errors beyond the deliberately-forced Supabase-unreachable ones; no
+    horizontal overflow at 375px mobile; `git diff` on
+    `js/supabase-init.js` confirmed clean after reverting the test edit.
+  - **Not yet pushed to the live Supabase table** — same next-step gap as
+    every prior country addition.
 
 ## Design system
 

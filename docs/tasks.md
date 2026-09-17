@@ -3841,6 +3841,34 @@ _(none)_
 
 ## Done (recent)
 
+### Add Panama (3 gyms, next-largest missing country, 56th)
+- Status: done — committed directly to `master`.
+- What: direct continuation of the "are we missing anymore?" sweep from
+  Cyprus — the next candidate from the same tied-at-3 group (Panama,
+  Peru, Singapore). Panama had the stronger cross-check quality:
+  indoorclimbing.com independently confirmed all 3 of boulderinglist.com's
+  candidates with matching real addresses, vs. Peru's second source
+  confirming only 1 of 3.
+- All 3 gyms individually confirmed real/current via web search
+  (Instagram/Facebook activity, the hostel's own site for Baboons
+  Boulder Wall) and all confirmed bouldering-only from direct evidence.
+- `state` uses Panama's 10 real provinces + 5 indigenous comarcas,
+  populated complete from the start.
+- Full sourcing detail in `docs/architecture.md` "Seed data sourcing".
+- Net result: 1699 → **1702 total spots**. Structural check (Node-parsed
+  `window.SEED_GYMS`): 1702/1702 unique ids, zero duplicate
+  name+suburb+state+country combos, every spot has a non-empty `types`
+  array.
+- **Verified**: same offline-fallback-forcing method as every prior
+  batch — count reads 1702; all 3 Panama spots searchable by name; the
+  Panamá chip filters to exactly 2 spots with legible active-state
+  text; the new Panama country `<option>` present in both forms; no
+  console errors; no horizontal overflow at 375px mobile.
+- **Not yet done**: running the regenerated seed SQL against the live
+  Supabase table — same outstanding step as every prior country
+  addition; Peru and Singapore remain as unpicked tied-at-3 candidates
+  if the "missing countries" sweep continues.
+
 ### Add Cyprus (5 gyms, next-largest missing country, 55th)
 - Status: done — committed directly to `master`.
 - What: user asked "are we missing anymore?" — checked boulderinglist.com's

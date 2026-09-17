@@ -442,10 +442,18 @@
     // only by Turkey), not a contested-territory judgment call the way
     // Kosovo/West Bank/Crimea were elsewhere in this file.
     CY: [['NICOSIA','Nicosia'],['LIMASSOL','Limassol'],['LARNACA','Larnaca'],
-         ['FAMAGUSTA','Famagusta'],['PAPHOS','Paphos'],['KYRENIA','Kyrenia']]
+         ['FAMAGUSTA','Famagusta'],['PAPHOS','Paphos'],['KYRENIA','Kyrenia']],
+    // Panama's 10 real provinces plus its 5 indigenous comarcas, populated
+    // complete from the start same as every country since the NL fix.
+    PA: [['CHIRIQUI','Chiriquí'],['PANAMA','Panamá'],['PANAMA_OESTE','Panamá Oeste'],
+         ['BOCAS_DEL_TORO','Bocas del Toro'],['COCLE','Coclé'],['COLON','Colón'],
+         ['DARIEN','Darién'],['HERRERA','Herrera'],['LOS_SANTOS','Los Santos'],
+         ['VERAGUAS','Veraguas'],['GUNA_YALA','Comarca Guna Yala'],
+         ['EMBERA_WOUNAAN','Comarca Emberá-Wounaan'],['NGABE_BUGLE','Comarca Ngäbe-Buglé'],
+         ['KUNA_MADUNGANDI','Comarca Kuna de Madungandí'],['KUNA_WARGANDI','Comarca Kuna de Wargandí']]
   };
   const TYPE_LABELS = {'indoor-bouldering':'Indoor bouldering','top-rope':'Top rope','lead-climbing':'Lead climbing'};
-  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy', BE:'Belgium', KR:'South Korea', ES:'Spain', PT:'Portugal', AT:'Austria', CH:'Switzerland', PL:'Poland', DK:'Denmark', FI:'Finland', IE:'Ireland', NO:'Norway', MX:'Mexico', BR:'Brazil', HU:'Hungary', GR:'Greece', CZ:'Czech Republic', IS:'Iceland', RO:'Romania', HR:'Croatia', RU:'Russia', BG:'Bulgaria', AR:'Argentina', PH:'Philippines', CO:'Colombia', CL:'Chile', VE:'Venezuela', IN:'India', IL:'Israel', ID:'Indonesia', TW:'Taiwan', ZA:'South Africa', EC:'Ecuador', VN:'Vietnam', LT:'Lithuania', RS:'Serbia', BO:'Bolivia', IR:'Iran', EE:'Estonia', MY:'Malaysia', TH:'Thailand', UA:'Ukraine', SK:'Slovakia', CY:'Cyprus'};
+  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy', BE:'Belgium', KR:'South Korea', ES:'Spain', PT:'Portugal', AT:'Austria', CH:'Switzerland', PL:'Poland', DK:'Denmark', FI:'Finland', IE:'Ireland', NO:'Norway', MX:'Mexico', BR:'Brazil', HU:'Hungary', GR:'Greece', CZ:'Czech Republic', IS:'Iceland', RO:'Romania', HR:'Croatia', RU:'Russia', BG:'Bulgaria', AR:'Argentina', PH:'Philippines', CO:'Colombia', CL:'Chile', VE:'Venezuela', IN:'India', IL:'Israel', ID:'Indonesia', TW:'Taiwan', ZA:'South Africa', EC:'Ecuador', VN:'Vietnam', LT:'Lithuania', RS:'Serbia', BO:'Bolivia', IR:'Iran', EE:'Estonia', MY:'Malaysia', TH:'Thailand', UA:'Ukraine', SK:'Slovakia', CY:'Cyprus', PA:'Panama'};
   // Fixed camera target per country for the "fly to this country" click on
   // its sidebar label -- picked to frame that country's actual spread of
   // seed spots (e.g. US needs a wide zoom to fit both NY and CA), not a
@@ -506,7 +514,8 @@
     TH: {center:[99.7,13.5], zoom:4.6},
     UA: {center:[27.3,50.1], zoom:5.4},
     SK: {center:[19.1,48.7], zoom:6.8},
-    CY: {center:[33.2,35.05], zoom:8.6}
+    CY: {center:[33.2,35.05], zoom:8.6},
+    PA: {center:[-80.5,8.6], zoom:6.2}
   };
   // Which sidebar region-group each country belongs to -- same grouping as
   // the `.region-group[data-region]` wrappers in index.html, kept here too
@@ -519,7 +528,7 @@
     NO:'europe', HU:'europe', GR:'europe', CZ:'europe', IS:'europe',
     RO:'europe', HR:'europe', RU:'europe', BG:'europe', RS:'europe', EE:'europe', UA:'europe', SK:'europe',
     CY:'europe',
-    CA:'north-america', US:'north-america', MX:'north-america',
+    CA:'north-america', US:'north-america', MX:'north-america', PA:'north-america',
     AU:'oceania', NZ:'oceania',
     BR:'south-america', AR:'south-america', CO:'south-america', CL:'south-america', VE:'south-america',
     EC:'south-america', BO:'south-america',
