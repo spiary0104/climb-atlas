@@ -3841,6 +3841,44 @@ _(none)_
 
 ## Done (recent)
 
+### Add Andorra (6 gyms, next-largest missing country, 62nd)
+- Status: done — committed directly to `master`.
+- What: user said "next" — continuing the boulderinglist.com
+  next-largest-missing-country sweep. North Macedonia and UAE both
+  turned out to be the same stale-summary-count trap already documented
+  for "Georgia"/Costa Rica (detail pages show 0 gyms despite the index
+  page's claimed count) — skipped. Andorra was picked from the resulting
+  tied-at-2 tier after finding a much richer second source than
+  boulderinglist.com's own 2-gym listing: the Federació Andorrana de
+  Muntanyisme's own directory (fam.ad/rocodroms) lists 10 real climbing
+  facilities across 5 parishes.
+- 4 of the 10 excluded — 3 confirmed outdoor, 2 (Ordino's CTEO and
+  Rocòdrom d'Ordino) both turned out to describe the same outdoor
+  concrete wall, not two indoor facilities. Left 6 confirmed real,
+  current, indoor gyms across 4 parishes: BlocCafè Gym Boulder, BlocCafè
+  Climbing (a genuinely separate second BlocCafè location, confirmed via
+  the operator's own site), Centre Esportiu Serradells, Palau de Gel,
+  Centre Esportiu Pas de la Casa, Rocòdrom Fiter i Rossell. Full sourcing
+  detail, including a case where a facility's own website contradicted
+  the federation directory's listing, is in `docs/architecture.md` "Seed
+  data sourcing".
+- `state` uses Andorra's 7 real parishes, populated complete from the
+  start (4 have a seed spot: Andorra la Vella, Canillo, Encamp,
+  Escaldes-Engordany).
+- Net result: 1718 → **1724 total spots**. Structural check (Node-parsed
+  `window.SEED_GYMS`): 1724/1724 unique ids, zero duplicate
+  name+suburb+state+country combos, every spot has a non-empty `types`
+  array.
+- **Verified**: same offline-fallback-forcing method as every prior
+  batch — count reads 1724; all 6 spots searchable by "andorra"; the
+  Andorra la Vella chip correctly filters to exactly 3 spots with
+  legible active-state text; the new Andorra country `<option>` present
+  in both forms; no console errors; no horizontal overflow at 375px
+  mobile.
+- **Not yet done**: running the regenerated seed SQL against the live
+  Supabase table — same outstanding step as every prior country
+  addition.
+
 ### Add Bosnia and Herzegovina (4 gyms, next-largest missing country, 61st)
 - Status: done — committed directly to `master`.
 - What: user said "next" — continuing the boulderinglist.com

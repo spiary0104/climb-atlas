@@ -108,11 +108,11 @@ are only unique within a country** (e.g. AU's `WA` vs US's `WA` are
 different regions). Anything that filters, colors, or edits by state —
 the chips in `index.html`, `STATES_BY_COUNTRY` in `app.js`, the RLS-safe
 columns in `schema.sql` — keys off the `(country, state)` pair together,
-never `state` alone. Now 61 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
+never `state` alone. Now 62 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
 FR, SE, NL, IT, BE, KR, ES, PT, AT, CH, PL, DK, FI, IE, NO, MX, BR, HU, GR,
 CZ, IS, RO, HR, RU, BG, AR, PH, CO, CL, VE, IN, IL, ID, TW, ZA, EC, VN, LT,
-RS, BO, IR, EE, MY, TH, UA, SK, CY, PA, PE, TR, LV, SG, BA), same pattern
-each time — keep this in mind before adding a 62nd. One collision
+RS, BO, IR, EE, MY, TH, UA, SK, CY, PA, PE, TR, LV, SG, BA, AD), same
+pattern each time — keep this in mind before adding a 63rd. One collision
 worth flagging: `US`'s state code for California is `CA`, and `CA` is
 also the top-level country code for Canada — not a real ambiguity since
 they're different object keys/fields (`STATES_BY_COUNTRY.US` contains
@@ -4509,6 +4509,85 @@ from one source:
     Bosnia and Herzegovina country `<option>` present in both forms; no
     console errors beyond the deliberately-forced Supabase-unreachable
     ones; no horizontal overflow at 375px mobile; `git diff` on
+    `js/supabase-init.js` confirmed clean after reverting the test edit.
+  - **Not yet pushed to the live Supabase table** — same next-step gap as
+    every prior country addition.
+- **Andorra (6 gyms, 62nd country)** — the next-largest missing country
+  once the tied-at-2 tier (Andorra, Luxembourg, Honduras, Moldova, Nepal)
+  was reached after North Macedonia and UAE both turned out to be the
+  same stale-summary-count trap already documented for "Georgia"/Costa
+  Rica (their detail pages show 0 gyms, not the 2 their index-page count
+  claimed). boulderinglist.com's own detail page listed only 2 gyms
+  (both in Andorra la Vella), but the Federació Andorrana de Muntanyisme
+  (fam.ad/rocodroms) — the country's own mountaineering federation —
+  lists 10 real climbing facilities across 5 parishes, the same "a
+  directory's listing count isn't the ceiling" pattern documented
+  repeatedly elsewhere in this file. Every one of the 10 was individually
+  checked: 3 (Rocòdrom de Canillo, Rocòdrom Cortals d'Aventura, Boulder
+  Parc de la Ossa) are confirmed outdoor — excluded on scope grounds. 2
+  more (Centre de Tecnificació Esportiva Ordino, Rocòdrom d'Ordino) both
+  turned out, on closer inspection, to describe the same outdoor concrete
+  wall next to Ordino's sports centre (multiple independent sources
+  describe it as "an artificial outdoor concrete carved climbing wall"
+  with outdoor lighting) — left out rather than guessed indoor purely on
+  the strength of the federation page's own terse one-line label. The
+  remaining 6 are all confirmed real, current, genuinely indoor
+  facilities — 4 more than either directory showed: BlocCafè Gym Boulder
+  and BlocCafè Climbing (two genuinely separate physical BlocCafè
+  locations, confirmed via the operator's own site, not the same building
+  under two names), Centre Esportiu Serradells, Palau de Gel (Canillo),
+  Centre Esportiu Pas de la Casa (Encamp), and Rocòdrom Fiter i Rossell
+  (Escaldes-Engordany).
+  - **One facility's own site directly contradicted the federation's own
+    type label, caught before trusting either blindly**: Palau de Gel's
+    own website page (fetched directly) didn't mention a climbing wall
+    at all among its listed activities, even though the federation page
+    listed it as a real facility — resolved by finding independent
+    Andorran press coverage (diariandorra.ad, altaveu.com) confirming a
+    real, newly-opened ("the first of its kind in Andorra") indoor wall
+    inside the complex, not by trusting either single source alone.
+  - **Climbing type applied only from direct evidence, same discipline as
+    every batch since Beijing**: BlocCafè Gym Boulder and BlocCafè
+    Climbing are both bouldering-only per the operator's own detailed
+    page (despite the federation's terser one-line label mentioning
+    "sport routes" for the Climbing location — the venue's own more
+    detailed description was trusted over the shorthand directory
+    label, same precedent as MegaSTONE/El Rocodromo/Gekon elsewhere in
+    this file); Palau de Gel is bouldering + top-rope (a 59m² boulder
+    cave plus a 9m/110m² wall with 4 magnetic auto-belays, auto-belay
+    mapped to top-rope per the convention already used for Banana
+    Climbing's tags); Centre Esportiu Pas de la Casa is top-rope only
+    ("an indoor climbing wall with no inclination," i.e. vertical, no
+    bouldering evidence found); Rocòdrom Fiter i Rossell is bouldering +
+    lead-climbing (a bouldering zone plus 10 permanent bolted routes up
+    to French 7c, "permanent graded routes" mapped to lead per the same
+    convention as Movimento Verticale Roma); Centre Esportiu Serradells
+    has no explicit type evidence in any source beyond "6m high, 35m²" —
+    tagged top-rope on the same physical-dimension inference already used
+    for Taka Gayasi (Iran), since 6m exceeds every bouldering-only wall's
+    height elsewhere in this dataset (which tops out around 5m), not
+    guessed from marketing copy.
+  - **Positions individually geocoded** against Nominatim — 5 of 6
+    addresses resolved directly on the first try; Palau de Gel needed a
+    simplified retry (dropping the street address down to just the venue
+    name + parish), which resolved directly to a named "Palau de Gel"
+    point of interest — the strongest confirmation tier used in this
+    dataset.
+  - **`state` uses Andorra's 7 real parishes**, populated complete from
+    the start (same standard as every country since the NL fix), of
+    which 4 have a seed spot and a sidebar chip/colour: Andorra la Vella
+    (3 spots), Canillo, Encamp, Escaldes-Engordany.
+  - Net result: 1718 → **1724 total spots**. Structural check (Node-parsed
+    `window.SEED_GYMS`): 1724/1724 unique ids, zero duplicate
+    name+suburb+state+country combos, every spot has a non-empty `types`
+    array.
+  - **Verified live** (served copy, `npx serve .`, offline-fallback-forcing
+    method): count reads 1724; all 6 spots searchable by "andorra"; the
+    Andorra la Vella chip correctly filters to exactly 3 spots with
+    legible active-state text (dark text on red background); the new
+    Andorra country `<option>` present in both add/edit forms; no console
+    errors beyond the deliberately-forced Supabase-unreachable ones; no
+    horizontal overflow at 375px mobile; `git diff` on
     `js/supabase-init.js` confirmed clean after reverting the test edit.
   - **Not yet pushed to the live Supabase table** — same next-step gap as
     every prior country addition.
