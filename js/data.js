@@ -2285,4 +2285,23 @@
     // §1 rather than guessed either way.
     {name:"Ground Up Climbing", suburb:"Kallang", state:"CENTRAL", country:"SG", lat:1.3160066, lng:103.8560632, types:[IB,TR,LEAD], address:"60 Tessensohn Road, CSC @ Tessensohn, Level 2, Singapore 217664", notes:"Confirmed via its own site (groundupsg.com) and Chalk Rebels -- 34 lanes for bouldering, top rope, and lead climbing, open to the public from age 5. Formerly listed as \"Climb Asia Climbing Centre\"; kept under its real current name. Address resolved against Nominatim directly to a named \"Ground Up\" sports-centre point of interest."},
     {name:"Yishun Safra Climbing Centre", suburb:"Yishun", state:"NORTH_WEST", country:"SG", lat:1.4240373, lng:103.8410600, types:[IB], address:"60 Yishun Avenue 4, SAFRA Yishun, Singapore 769027", notes:"Confirmed via SAFRA's own site (safra.sg) -- a genuine separate \"two floors of indoor bouldering\" facility inside a larger complex whose outdoor walls (boulderinglist.com's own description calls it \"Singapore's largest outdoor climbing facility\") are excluded, indoor-bouldering component only. Confirmed publicly accessible via a non-member walk-in fee (~S$18), not SAFRA-members-only. No indoor rope-climbing evidence found. Address resolved against Nominatim to the named \"Safra Yishun Country Club\" grounds."},
+
+    // ---- Bosnia and Herzegovina (61st country) ----
+    // boulderinglist.com's own detail page listed only 2 gyms, but
+    // climbing-gyms.com's own BiH page lists 6 cities with a gym each --
+    // the same "a directory's listing count isn't the ceiling" pattern
+    // already documented for Cyprus/Peru. Every one of the 6
+    // climbing-gyms.com candidates was individually checked: "Climbing
+    // Area Pecka" (Gornja Pecka) is confirmed as a famous 140+-route
+    // OUTDOOR sport-climbing crag with a visitor centre, not an indoor
+    // gym -- excluded on scope grounds. "Penjalište/vježbalište Miroslav
+    // Đokić-Đole" (Trebinje) had no independent source confirming it's
+    // specifically an indoor facility (the generic Bosnian/Serbian terms
+    // "penjalište"/"vježbalište" don't disambiguate indoor vs outdoor) --
+    // left out per Rules.md §1 rather than guessed either way. The
+    // remaining 4 are all confirmed real, current, genuinely indoor gyms:
+    {name:"Indoor Wall Foča", suburb:"Foča", state:"REPUBLIKA_SRPSKA", country:"BA", lat:43.5018773, lng:18.7866681, types:[IB], address:"Cara Dušana bb, Foča, 73300, Republika Srpska, Bosnia and Herzegovina", notes:"Confirmed via indoorclimbing.com and climbing-map.org -- a real, currently-listed indoor bouldering gym. No rope-climbing evidence found. Address resolved directly against Nominatim to the named street."},
+    {name:"ASPK Neretva", suburb:"Mostar", state:"HERZEGOVINA_NERETVA", country:"BA", lat:43.3548348, lng:17.8092137, types:[IB], address:"Kampus Univerziteta \"Džemal Bijedić\", Mostar, 88000, Bosnia and Herzegovina", notes:"Confirmed via its own site (aspkneretva.com/climbing-gym) and indoorclimbing.com -- a real indoor climbing hall on the university campus, open Mon/Wed/Fri 19:00-21:00. No rope-climbing evidence found beyond bouldering; kept bouldering-only. Address resolved against Nominatim directly to the named university."},
+    {name:"Flamingo Loophole", suburb:"Bihać", state:"UNA_SANA", country:"BA", lat:44.8438596, lng:15.8743668, types:[IB], address:"Ulica 502. viteške brdske brigade 24, Bihać, 77000, Bosnia and Herzegovina", notes:"Confirmed via multiple independent press sources (Mediterranean Hope, Altreconomia) -- a real indoor climbing gym (plus outdoor sports facilities) founded 2022 as a community/therapeutic-climbing project. No rope-climbing evidence found beyond bouldering. Address resolved against Nominatim to the matching street."},
+    {name:"Climbing Club Extreme", suburb:"Banja Luka", state:"REPUBLIKA_SRPSKA", country:"BA", lat:44.7702580, lng:17.2098952, types:[IB], address:"Bulevar vojvode Petra Bojovića 1, Banja Luka, 78000, Republika Srpska, Bosnia and Herzegovina", notes:"Confirmed via independent press (6yka.com) and banjaluka.com -- a real indoor climbing hall on the University of Banja Luka campus, described as \"the best climbing hall in Bosnia and Herzegovina,\" recently renovated. No rope-climbing evidence found beyond bouldering. Address resolved against Nominatim to the matching street in the Borik/campus area."},
   ].map((g,i)=>({...g, id:'seed-'+i, community:false, country: g.country || 'AU'}));

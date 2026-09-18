@@ -108,11 +108,11 @@ are only unique within a country** (e.g. AU's `WA` vs US's `WA` are
 different regions). Anything that filters, colors, or edits by state —
 the chips in `index.html`, `STATES_BY_COUNTRY` in `app.js`, the RLS-safe
 columns in `schema.sql` — keys off the `(country, state)` pair together,
-never `state` alone. Now 60 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
+never `state` alone. Now 61 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
 FR, SE, NL, IT, BE, KR, ES, PT, AT, CH, PL, DK, FI, IE, NO, MX, BR, HU, GR,
 CZ, IS, RO, HR, RU, BG, AR, PH, CO, CL, VE, IN, IL, ID, TW, ZA, EC, VN, LT,
-RS, BO, IR, EE, MY, TH, UA, SK, CY, PA, PE, TR, LV, SG), same pattern each
-time — keep this in mind before adding a 61st. One collision
+RS, BO, IR, EE, MY, TH, UA, SK, CY, PA, PE, TR, LV, SG, BA), same pattern
+each time — keep this in mind before adding a 62nd. One collision
 worth flagging: `US`'s state code for California is `CA`, and `CA` is
 also the top-level country code for Canada — not a real ambiguity since
 they're different object keys/fields (`STATES_BY_COUNTRY.US` contains
@@ -4453,6 +4453,63 @@ from one source:
     edit.
   - **This finishes the original tied-at-3 group entirely** (Cyprus,
     Panama, Peru, Singapore) — every member has now been added.
+  - **Not yet pushed to the live Supabase table** — same next-step gap as
+    every prior country addition.
+- **Bosnia and Herzegovina (4 gyms, 61st country)** — the next-largest
+  missing country per boulderinglist.com's full 84-country list once
+  Singapore finished the tied-at-3 group. boulderinglist.com's own
+  detail page listed only 2 gyms, but climbing-gyms.com's own BiH page
+  lists 6 cities with a gym each — the same "a directory's listing count
+  isn't the ceiling" pattern already documented for Cyprus/Peru/Bosnia's
+  own predecessors in this file. Every one of the 6 climbing-gyms.com
+  candidates was individually checked: "Climbing Area Pecka" (Gornja
+  Pecka) is confirmed as a famous 140+-route OUTDOOR sport-climbing crag
+  with a visitor centre, not an indoor gym — excluded on scope grounds.
+  "Penjalište/vježbalište Miroslav Đokić-Đole" (Trebinje) had no
+  independent source confirming it's specifically an indoor facility —
+  left out per `Rules.md` §1 rather than guessed either way, the same
+  discipline already used for Iran's Boluk-e-Bala/MAXBlocs and Ukraine's
+  PRANA/KHAI. "Alpinist sport climbing club Neretva" (Mostar) resolved
+  to the already-known ASPK Neretva, confirmed via matching address —
+  not a new find. The remaining 4 are all confirmed real, current,
+  genuinely indoor gyms: Indoor Wall Foča, ASPK Neretva (Mostar), Flamingo
+  Loophole (Bihać — the climbing-gyms.com source that surfaced this and
+  Climbing Club Extreme beyond boulderinglist.com's own 2-gym count), and
+  Climbing Club Extreme (Banja Luka, "the best climbing hall in Bosnia
+  and Herzegovina").
+  - **All 4 confirmed bouldering-only** — none of the sources found for
+    any of the four gyms mentions a rope wall, top-rope, or lead
+    climbing, so no type was assumed without evidence, per the lesson
+    from the worldwide top-rope-tag audit.
+  - **Positions**: 2 of 4 addresses (Indoor Wall Foča, ASPK Neretva)
+    resolved directly against Nominatim. Flamingo Loophole's exact
+    address returned an empty result on the first Nominatim query;
+    resolved on a simplified retry ("502. viteske brdske brigade,
+    Bihac, Bosnia"). Climbing Club Extreme's address also returned empty
+    on the first query; resolved on a corrected/expanded-spelling retry
+    ("Bulevar vojvode Petra Bojovica, Banja Luka, Bosnia"). Both retries
+    followed this project's established "simplify the query, don't
+    guess a location" discipline.
+  - **`state` uses Bosnia and Herzegovina's real administrative
+    structure**: the 10 Federation of BiH cantons + Republika Srpska (as
+    one undivided unit, since it isn't further subdivided into cantons)
+    + Brčko District = 12 total divisions, populated complete from the
+    start (same standard as every country since the NL fix). Only 3 have
+    a seed spot and a sidebar chip/colour: Republika Srpska (Foča +
+    Banja Luka), Herzegovina-Neretva Canton (Mostar), Una-Sana Canton
+    (Bihać).
+  - Net result: 1714 → **1718 total spots**. Structural check (Node-parsed
+    `window.SEED_GYMS`): 1718/1718 unique ids, zero duplicate
+    name+suburb+state+country combos, every spot has a non-empty `types`
+    array.
+  - **Verified live** (served copy, `npx serve .`, offline-fallback-forcing
+    method): count reads 1718; all 4 spots searchable by "bosnia"; the
+    Republika Srpska chip correctly filters to exactly 2 spots with
+    legible active-state text (dark text on purple background); the new
+    Bosnia and Herzegovina country `<option>` present in both forms; no
+    console errors beyond the deliberately-forced Supabase-unreachable
+    ones; no horizontal overflow at 375px mobile; `git diff` on
+    `js/supabase-init.js` confirmed clean after reverting the test edit.
   - **Not yet pushed to the live Supabase table** — same next-step gap as
     every prior country addition.
 

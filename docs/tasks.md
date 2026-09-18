@@ -3841,6 +3841,43 @@ _(none)_
 
 ## Done (recent)
 
+### Add Bosnia and Herzegovina (4 gyms, next-largest missing country, 61st)
+- Status: done — committed directly to `master`.
+- What: user said "next" — continuing the boulderinglist.com
+  next-largest-missing-country sweep after Singapore finished the
+  tied-at-3 group. boulderinglist.com's own detail page showed only 2
+  gyms, but cross-checking against climbing-gyms.com's separate 6-city
+  BiH directory surfaced 2 more genuinely real, confirmed indoor gyms
+  beyond that — the same "a directory's listing count isn't the
+  ceiling" pattern documented repeatedly elsewhere in this project.
+- One candidate excluded on scope grounds (Climbing Area Pecka — a
+  famous outdoor sport-climbing crag), one left out per `Rules.md` §1 for
+  lack of independent indoor/outdoor confirmation (a Trebinje
+  penjalište/vježbalište), and one resolved as an already-known gym
+  under a different directory's name (Alpinist sport climbing club
+  Neretva = ASPK Neretva) rather than double-counted. Left 4 confirmed
+  real gyms: Indoor Wall Foča, ASPK Neretva (Mostar), Flamingo Loophole
+  (Bihać), Climbing Club Extreme (Banja Luka) — all confirmed
+  bouldering-only from direct evidence. Full sourcing detail in
+  `docs/architecture.md` "Seed data sourcing".
+- `state` uses Bosnia and Herzegovina's real administrative structure
+  (10 Federation cantons + Republika Srpska as one unit + Brčko
+  District = 12 total divisions), populated complete from the start (3
+  have a seed spot: Republika Srpska, Herzegovina-Neretva, Una-Sana).
+- Net result: 1714 → **1718 total spots**. Structural check (Node-parsed
+  `window.SEED_GYMS`): 1718/1718 unique ids, zero duplicate
+  name+suburb+state+country combos, every spot has a non-empty `types`
+  array.
+- **Verified**: same offline-fallback-forcing method as every prior
+  batch — count reads 1718; all 4 spots searchable by "bosnia"; the
+  Republika Srpska chip correctly filters to exactly 2 spots with
+  legible active-state text; the new Bosnia and Herzegovina country
+  `<option>` present in both forms; no console errors; no horizontal
+  overflow at 375px mobile.
+- **Not yet done**: running the regenerated seed SQL against the live
+  Supabase table — same outstanding step as every prior country
+  addition.
+
 ### Add Singapore (2 gyms, 60th country — finishes the tied-at-3 group)
 - Status: done — committed directly to `master`.
 - What: after Latvia, Malta (3 raw listings) was investigated but not
