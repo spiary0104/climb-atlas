@@ -4591,6 +4591,128 @@ from one source:
     `js/supabase-init.js` confirmed clean after reverting the test edit.
   - **Not yet pushed to the live Supabase table** — same next-step gap as
     every prior country addition.
+- **17 gyms found via Reddit — the first Reddit-sourced batch in this
+  dataset's history, for countries already in the 62-country set** (not a
+  new country). User asked to "use reddit to scrape some locations for
+  existing countries that we're missing but double check that they're
+  real gyms" — every prior batch in this file sourced from a directory
+  site (boulderinglist.com, climbing-gyms.com, huodong.com, Mountain
+  Project) or the "岩馆探索" app footage; this is the first time Reddit
+  itself was the discovery source. Scoped via `AskUserQuestion` to a
+  "broad sweep across many countries" (checking r/bouldering-style
+  subreddits across a wide range of already-added countries in one pass)
+  rather than one country in depth.
+  - **Tooling**: this repo has no Reddit-specific CLI installed
+    (`rdt-cli` isn't present), so the `agent-reach` skill's OpenCLI
+    backend (`opencli reddit search`/`opencli reddit read`) was used
+    instead. **An unscoped, plain-text `opencli reddit search` is very
+    noisy** — Reddit's own search matches loosely on isolated common
+    words like "climbing" or "gym," so a first batch of city-name-only
+    queries returned almost entirely unrelated results (relationship-
+    advice threads, birthday posts, retirement-planning posts). Scoping
+    every search to `--subreddit bouldering` fixed this — worth
+    remembering for any future Reddit-sourcing pass on this project:
+    plain global search is not usable, subreddit-scoped search is.
+  - **Every candidate named in a thread or comment was independently
+    web-searched before being trusted** — Reddit itself was only ever
+    the discovery mechanism, never the source of truth for an address or
+    a climbing type, per this project's standing "never guess" rule.
+    This caught two real "already covered, don't duplicate" cases before
+    they were added: **HUDY Boulder Karlín** (Prague, Czech Republic) and
+    **WEST Bouldering** (Warsaw, Poland) were both mentioned on Reddit but
+    are already in this dataset under the identical name and address —
+    neither was re-added.
+  - **A genuine name-collision case, not a duplicate**: Bangkok's
+    **Gravity Lab** shares its exact name with an already-listed,
+    completely unrelated gym in Durango, Colorado, USA — the same
+    "different real gym, same name, different country" pattern already
+    documented for "Pulse Climbing" and "Climbing Factory" elsewhere in
+    this file. Confirmed as a genuinely distinct Bangkok venue via
+    multiple independent sources (own site, Mountain Project, BK
+    Magazine) before adding it.
+  - **A genuine "different address, same club, don't confuse with an
+    excluded entry" case**: Buenos Aires's **Centro Andino Buenos Aires
+    (CABA Sede Rivadavia)**, at the club's own headquarters building
+    (Av. Rivadavia 1253), is a real, currently-operating indoor
+    bouldering wall — distinct from the same club's outdoor Palestra
+    Nacional de Andinismo structure at CeNARD, which this dataset had
+    already excluded elsewhere as a confirmed December 2025 demolition.
+    Confirmed via Waze, Corner, and the club's own Instagram
+    (@cabarivadavia) before treating it as a separate, addable spot
+    rather than assuming it was the same (excluded) facility.
+  - **One naming conflict left unresolved and excluded rather than
+    guessed**: Seoul's climbing-gyms.com listings for "Seoul Forest
+    Climbing Jongno Branch" and the differently-branded "Climbing Park
+    Jongno" both resolve to the identical address (96 Supyo-ro, Jongno
+    District) — no source could confirm which name is current or whether
+    they're the same venue under two labels, so this Jongno location was
+    left out entirely; only Seoul Forest Climbing's separate, unambiguous
+    Seongsu-dong branch (a different address) was added.
+  - **10 Canada gyms in Ontario/Quebec/British Columbia**: Altitude Gym
+    Kanata (North America's largest bouldering gym by floor area, per
+    multiple sources), Grand River Rocks (Kitchener — moved to a new
+    Victoria St address in June 2024, the old Borden Ave address
+    superseded), Up the Bloc (Mississauga, bouldering-only per its own
+    site), True North Climbing (Toronto/Downsview), two genuinely
+    separate additional Boulderz Climbing Centre branches (Etobicoke and
+    Mississauga, alongside the chain's already-listed Toronto/Dupont St
+    location — each branch individually confirmed rather than assumed
+    from the chain name, per this dataset's established multi-branch
+    discipline), Le Mouv' espace bloc (Montreal — despite its "espace
+    bloc"/bouldering-space branding, confirmed via Chalk Rebels and
+    Mountain Project to also offer top-rope), and Bomber Boulders (Port
+    Alberni, BC — explicitly "exclusively a bouldering facility," opened
+    April 2024).
+  - **4 Bangkok, Thailand gyms**: Gravity Lab (see name-collision note
+    above; top-rope, lead, and bouldering, per multiple sources),
+    Stonegoat Climbing Gym (Southeast Asia's largest bouldering gym per
+    its own site, bouldering-only), Proclimber Gym (Mountain Project's
+    own listing title explicitly says "bouldering only"), and Urban
+    Playground Climbing (inside The Racquet Club, confirmed bouldering +
+    auto-belay + top-rope + lead via its own site and TheSmartLocal).
+  - **3 Buenos Aires, Argentina gyms**: V Once Escalada (a boulder gym
+    near Once station, name a pun on the V11 grade, bouldering-only),
+    Estación Vertical (Florida, Vicente López — a 650m² gym for sport
+    climbing and bouldering; no source specifically confirmed bolted
+    lead routes, so tagged top-rope rather than lead per this dataset's
+    conservative-evidence standard), and Centro Andino Buenos Aires
+    (CABA Sede Rivadavia, see above).
+  - **2 Seoul, South Korea gyms**: Seoul Forest Climbing (Seongsu-dong
+    branch only, see the Jongno naming-conflict note above; no
+    facility-type evidence found, defaulted to bouldering-only per this
+    dataset's established Seoul-gym pattern) and THE CLIMB Yeonnam
+    (theCrag's own listing explicitly tags it "Bouldering"; a genuinely
+    separate branch from the chain's already-listed The Climb Hongdae,
+    both in Mapo-gu but at different addresses). Two more candidate
+    branches (Mullae, Seongsu) of the same "The Climb" chain mentioned in
+    the same Reddit thread could not be independently confirmed with a
+    real address by any source and were left out.
+  - **Positions individually geocoded** against Nominatim — 13 of 17
+    resolved at street level (several as named-point-of-interest matches,
+    the strongest confirmation tier used in this dataset, e.g. V Once
+    Escalada, Palau de Gel-style matches); the other 4 (Gravity Lab,
+    Proclimber Gym in Bangkok; Estación Vertical, Centro Andino Buenos
+    Aires/CABA Sede Rivadavia in Buenos Aires) fell back to a district or
+    general-area position after their exact street address didn't
+    resolve even simplified, disclosed per-entry in `notes`.
+  - No `js/app.js`, `css/style.css`, or `index.html` changes were needed
+    — every country/state used (CA's ON/QC/BC, TH's BANGKOK, AR's
+    CABA/BUENOS_AIRES, KR's SEOUL) already existed in
+    `STATES_BY_COUNTRY` and already has a sidebar chip.
+  - Net result: 1724 → **1741 total spots**. Structural check (Node-parsed
+    `window.SEED_GYMS`): 1741/1741 unique ids, zero duplicate
+    name+suburb+state+country combos, every spot has a non-empty `types`
+    array.
+  - **Verified live** (served copy, offline-fallback-forcing method):
+    count reads 1741; all 17 new spots searchable by name, including
+    confirming "Gravity Lab" returns exactly 2 results (the new Bangkok
+    entry plus the pre-existing, unrelated US one); all 3 Boulderz
+    branches (Toronto, Etobicoke, Mississauga) appear distinctly; no
+    console errors beyond the deliberately-forced Supabase-unreachable
+    ones; no horizontal overflow at 375px mobile; `git diff` on
+    `js/supabase-init.js` confirmed clean after reverting the test edit.
+  - **Not yet pushed to the live Supabase table** — same next-step gap as
+    every prior batch.
 
 ## Design system
 

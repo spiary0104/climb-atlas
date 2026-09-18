@@ -3841,6 +3841,51 @@ _(none)_
 
 ## Done (recent)
 
+### Add 17 gyms found via Reddit (first Reddit-sourced batch, existing countries)
+- Status: done — committed directly to `master`.
+- What: user asked to "use reddit to scrape some locations for existing
+  countries that we're missing but double check that they're real
+  gyms." Scoped via `AskUserQuestion` to a broad sweep across many
+  already-added countries rather than one country in depth. Used the
+  `agent-reach` skill's OpenCLI Reddit backend (`opencli reddit
+  search`/`read`), scoped to `--subreddit bouldering` after an unscoped
+  search proved too noisy (matched isolated words like "climbing"/"gym"
+  across unrelated subreddits). Every candidate named in a thread/
+  comment was independently web-searched for a real address and actual
+  climbing-type evidence before being added — Reddit was only ever the
+  discovery mechanism, never the source of truth.
+- 2 candidates (HUDY Boulder Karlín, Prague; WEST Bouldering, Warsaw)
+  turned out to already be in this dataset under the identical name and
+  address — not re-added. One genuine name collision confirmed distinct
+  (Bangkok's Gravity Lab vs. an unrelated Durango, Colorado gym of the
+  same name). One Seoul naming conflict (two climbing-gyms.com listings
+  resolving to the identical address under different names) was left
+  unresolved and excluded rather than guessed. Full per-gym sourcing
+  detail in `docs/architecture.md` "Seed data sourcing".
+- Added 10 Canada gyms (Ontario/Quebec/BC, including 2 more genuinely
+  separate Boulderz Climbing Centre branches alongside the chain's
+  existing Toronto location), 4 Bangkok/Thailand gyms, 3 Buenos Aires/
+  Argentina gyms (including a real indoor wall at Centro Andino Buenos
+  Aires's own headquarters, distinct from the club's already-excluded
+  demolished outdoor structure), and 2 Seoul/South Korea gyms.
+- No `js/app.js`/`css/style.css`/`index.html` changes needed — every
+  country/state used already existed in `STATES_BY_COUNTRY` with a
+  sidebar chip.
+- Net result: 1724 → **1741 total spots**. Structural check (Node-parsed
+  `window.SEED_GYMS`): 1741/1741 unique ids, zero duplicate
+  name+suburb+state+country combos, every spot has a non-empty `types`
+  array.
+- **Verified**: same offline-fallback-forcing method as every prior
+  batch — count reads 1741; all 17 new spots searchable by name,
+  including confirming "Gravity Lab" returns exactly 2 results; all 3
+  Boulderz branches appear distinctly; no console errors; no horizontal
+  overflow at 375px mobile.
+- **Not yet done**: running the regenerated seed SQL against the live
+  Supabase table — same outstanding step as every prior batch. The
+  "broad sweep" wasn't exhaustive across every one of the 62 countries —
+  further Reddit-sourcing passes on other countries could still surface
+  more gyms if the user wants to continue this method.
+
 ### Add Andorra (6 gyms, next-largest missing country, 62nd)
 - Status: done — committed directly to `master`.
 - What: user said "next" — continuing the boulderinglist.com
