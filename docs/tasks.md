@@ -3841,6 +3841,23 @@ _(none)_
 
 ## Done (recent)
 
+### Add United Arab Emirates, Luxembourg and Georgia (16 gyms, 63rd-65th countries)
+- Status: done — committed directly to `master`.
+- What: user asked to add the next 3 countries using the same sites as
+  before. Picked by verified gym count (see `docs/architecture.md` "Seed
+  data sourcing"): UAE 7, Luxembourg 5, Georgia 4. Georgia is the country,
+  not the US state (boulderinglist.com conflates them). Six candidates were
+  excluded as outdoor or unconfirmable; Costa Rica, Malta and Nepal are
+  deferred.
+- Two geocoder mistakes were caught and rejected rather than trusted (a
+  same-named street in another Tbilisi district; a university building
+  matched instead of a street address). Several positions are street-level
+  only and say so in each entry's notes.
+- Net result: 1746 → **1762 total spots**. Structural check and offline
+  verification passed (see architecture.md).
+- **Not yet done**: running the regenerated seed SQL against the live
+  Supabase table.
+
 ### Anti-scraping measures (robots.txt, vercel.json, Terms clause)
 - Status: done — committed directly to `master`. The partial-protection
   caveats are the important part; read `docs/architecture.md` "Scraping and

@@ -529,10 +529,25 @@
     AD: [['ANDORRA_LA_VELLA','Andorra la Vella'],['CANILLO','Canillo'],
          ['ENCAMP','Encamp'],['ESCALDES_ENGORDANY','Escaldes-Engordany'],
          ['LA_MASSANA','La Massana'],['ORDINO','Ordino'],
-         ['SANT_JULIA_DE_LORIA',"Sant Julià de Lòria"]]
+         ['SANT_JULIA_DE_LORIA',"Sant Julià de Lòria"]],
+    // United Arab Emirates' 7 emirates.
+    AE: [['ABU_DHABI','Abu Dhabi'],['DUBAI','Dubai'],['SHARJAH','Sharjah'],['AJMAN','Ajman'],
+         ['UMM_AL_QUWAIN','Umm Al Quwain'],['RAS_AL_KHAIMAH','Ras Al Khaimah'],['FUJAIRAH','Fujairah']],
+    // Georgia (the country) -- Tbilisi + 9 regions + the 2 autonomous republics
+    // (Adjara, Abkhazia). Abkhazia is included as Georgia's own internationally
+    // recognised territory, the same call made for Crimea under Ukraine.
+    GE: [['TBILISI','Tbilisi'],['ADJARA','Adjara'],['ABKHAZIA','Abkhazia'],['GURIA','Guria'],
+         ['IMERETI','Imereti'],['KAKHETI','Kakheti'],['KVEMO_KARTLI','Kvemo Kartli'],
+         ['MTSKHETA_MTIANETI','Mtskheta-Mtianeti'],['RACHA_LECHKHUMI','Racha-Lechkhumi and Kvemo Svaneti'],
+         ['SAMEGRELO','Samegrelo-Zemo Svaneti'],['SAMTSKHE_JAVAKHETI','Samtskhe-Javakheti'],
+         ['SHIDA_KARTLI','Shida Kartli']],
+    // Luxembourg's 12 cantons.
+    LU: [['CAPELLEN','Capellen'],['CLERVAUX','Clervaux'],['DIEKIRCH','Diekirch'],['ECHTERNACH','Echternach'],
+         ['ESCH_SUR_ALZETTE','Esch-sur-Alzette'],['GREVENMACHER','Grevenmacher'],['LUXEMBOURG','Luxembourg'],
+         ['MERSCH','Mersch'],['REDANGE','Redange'],['REMICH','Remich'],['VIANDEN','Vianden'],['WILTZ','Wiltz']]
   };
   const TYPE_LABELS = {'indoor-bouldering':'Indoor bouldering','top-rope':'Top rope','lead-climbing':'Lead climbing'};
-  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy', BE:'Belgium', KR:'South Korea', ES:'Spain', PT:'Portugal', AT:'Austria', CH:'Switzerland', PL:'Poland', DK:'Denmark', FI:'Finland', IE:'Ireland', NO:'Norway', MX:'Mexico', BR:'Brazil', HU:'Hungary', GR:'Greece', CZ:'Czech Republic', IS:'Iceland', RO:'Romania', HR:'Croatia', RU:'Russia', BG:'Bulgaria', AR:'Argentina', PH:'Philippines', CO:'Colombia', CL:'Chile', VE:'Venezuela', IN:'India', IL:'Israel', ID:'Indonesia', TW:'Taiwan', ZA:'South Africa', EC:'Ecuador', VN:'Vietnam', LT:'Lithuania', RS:'Serbia', BO:'Bolivia', IR:'Iran', EE:'Estonia', MY:'Malaysia', TH:'Thailand', UA:'Ukraine', SK:'Slovakia', CY:'Cyprus', PA:'Panama', PE:'Peru', TR:'Turkey', LV:'Latvia', SG:'Singapore', BA:'Bosnia and Herzegovina', AD:'Andorra'};
+  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy', BE:'Belgium', KR:'South Korea', ES:'Spain', PT:'Portugal', AT:'Austria', CH:'Switzerland', PL:'Poland', DK:'Denmark', FI:'Finland', IE:'Ireland', NO:'Norway', MX:'Mexico', BR:'Brazil', HU:'Hungary', GR:'Greece', CZ:'Czech Republic', IS:'Iceland', RO:'Romania', HR:'Croatia', RU:'Russia', BG:'Bulgaria', AR:'Argentina', PH:'Philippines', CO:'Colombia', CL:'Chile', VE:'Venezuela', IN:'India', IL:'Israel', ID:'Indonesia', TW:'Taiwan', ZA:'South Africa', EC:'Ecuador', VN:'Vietnam', LT:'Lithuania', RS:'Serbia', BO:'Bolivia', IR:'Iran', EE:'Estonia', MY:'Malaysia', TH:'Thailand', UA:'Ukraine', SK:'Slovakia', CY:'Cyprus', PA:'Panama', PE:'Peru', TR:'Turkey', LV:'Latvia', SG:'Singapore', BA:'Bosnia and Herzegovina', AD:'Andorra', AE:'United Arab Emirates', GE:'Georgia', LU:'Luxembourg'};
   // Fixed camera target per country for the "fly to this country" click on
   // its sidebar label -- picked to frame that country's actual spread of
   // seed spots (e.g. US needs a wide zoom to fit both NY and CA), not a
@@ -600,19 +615,22 @@
     LV: {center:[24.17,56.97], zoom:9.5},
     SG: {center:[103.85,1.36], zoom:10.4},
     BA: {center:[17.6,43.9], zoom:6.6},
-    AD: {center:[1.55,42.53], zoom:10.6}
+    AD: {center:[1.55,42.53], zoom:10.6},
+    AE: {center:[54.9,24.8], zoom:7.6},
+    GE: {center:[44.76,41.72], zoom:9.4},
+    LU: {center:[6.05,49.56], zoom:9.6}
   };
   // Which sidebar region-group each country belongs to -- same grouping as
   // the `.region-group[data-region]` wrappers in index.html, kept here too
   // so the map's own continent-tier labels/fly-targets don't need to read
   // the DOM to know a country's continent.
   const COUNTRY_TO_REGION = {
-    CN:'asia', JP:'asia', KR:'asia', PH:'asia', IN:'asia', IL:'asia', ID:'asia', TW:'asia', VN:'asia', IR:'asia', MY:'asia', TH:'asia', SG:'asia',
+    CN:'asia', JP:'asia', KR:'asia', PH:'asia', IN:'asia', IL:'asia', ID:'asia', TW:'asia', VN:'asia', IR:'asia', MY:'asia', TH:'asia', SG:'asia', AE:'asia', GE:'asia',
     DE:'europe', GB:'europe', FR:'europe', SE:'europe', NL:'europe', IT:'europe', BE:'europe', LT:'europe',
     ES:'europe', PT:'europe', AT:'europe', CH:'europe', PL:'europe', DK:'europe', FI:'europe', IE:'europe',
     NO:'europe', HU:'europe', GR:'europe', CZ:'europe', IS:'europe',
     RO:'europe', HR:'europe', RU:'europe', BG:'europe', RS:'europe', EE:'europe', UA:'europe', SK:'europe',
-    CY:'europe', TR:'europe', LV:'europe', BA:'europe', AD:'europe',
+    CY:'europe', TR:'europe', LV:'europe', BA:'europe', AD:'europe', LU:'europe',
     CA:'north-america', US:'north-america', MX:'north-america', PA:'north-america',
     AU:'oceania', NZ:'oceania',
     BR:'south-america', AR:'south-america', CO:'south-america', CL:'south-america', VE:'south-america',

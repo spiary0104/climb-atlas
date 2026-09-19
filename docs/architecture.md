@@ -108,11 +108,11 @@ are only unique within a country** (e.g. AU's `WA` vs US's `WA` are
 different regions). Anything that filters, colors, or edits by state —
 the chips in `index.html`, `STATES_BY_COUNTRY` in `app.js`, the RLS-safe
 columns in `schema.sql` — keys off the `(country, state)` pair together,
-never `state` alone. Now 62 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
+never `state` alone. Now 65 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
 FR, SE, NL, IT, BE, KR, ES, PT, AT, CH, PL, DK, FI, IE, NO, MX, BR, HU, GR,
 CZ, IS, RO, HR, RU, BG, AR, PH, CO, CL, VE, IN, IL, ID, TW, ZA, EC, VN, LT,
-RS, BO, IR, EE, MY, TH, UA, SK, CY, PA, PE, TR, LV, SG, BA, AD), same
-pattern each time — keep this in mind before adding a 63rd. One collision
+RS, BO, IR, EE, MY, TH, UA, SK, CY, PA, PE, TR, LV, SG, BA, AD, AE, GE,
+LU), same pattern each time — keep this in mind before adding a 66th. One collision
 worth flagging: `US`'s state code for California is `CA`, and `CA` is
 also the top-level country code for Canada — not a real ambiguity since
 they're different object keys/fields (`STATES_BY_COUNTRY.US` contains
@@ -4768,6 +4768,63 @@ from one source:
   source. Net 1741 -> 1746 spots. Address-matching by street + number
   (not name) is what made this reliable: Shanghai gyms rebrand and list
   under several names. Not yet pushed to the live Supabase table.
+- **United Arab Emirates (7 gyms), Luxembourg (5), and Georgia (4) — the
+  63rd-65th countries**, added on request ("utilising the previous sites
+  used, add the next 3 countries"). Candidates were ranked by *verified* gym
+  count, not by boulderinglist.com's headline number: Georgia's 14 there
+  conflates the country with the US state (the trap already documented for
+  it earlier in this file); Costa Rica (stale summary, 0 on its detail page)
+  and Malta (only 1 real gym left after checking) were skipped; Nepal was
+  thinner. The UAE and Luxembourg have more real gyms once
+  indoorclimbing.com, climbing-gyms.com and web search are combined, and
+  Georgia has 4 confirmed genuine Tbilisi gyms.
+  - **Excluded, and why**: The Wall Dubai (an outdoor tower), Vertical Club
+    Dubai, Hall Omnisport Steinsel and Spolo Ovenacher (none could be
+    confirmed as a real climbing facility), Bloc Brill Mamer (outdoor
+    free-to-use boulders), Batumi Olympia (a fitness club with no
+    climbing detail). Costa Rica, Malta and Nepal are left for a later pass.
+  - **Type applied only from direct evidence**: Mountain Extreme (Dubai),
+    RedRock (Luxembourg), D-Summit and S.K. Lucky are the bouldering +
+    top-rope + lead gyms; CLYMB Abu Dhabi and Coque are bouldering +
+    top-rope (auto-belay mapped to top-rope, no lead evidence); Club 71
+    (Tbilisi) is top-rope only, inferred from its 8m wall height, the same
+    dimension precedent as Taka Gayasi (Iran); everything else is
+    bouldering-only. M. Khergiani Climbing Gym has no source describing its
+    facilities, so it defaults to bouldering-only with that disclosed.
+  - **Three fitness-club or attraction cases kept with a disclosed access
+    caveat** (same standard as City Fitness Next Gen in Greece): Train
+    Galleria (Abu Dhabi), Club 71 (Tbilisi) and CLYMB.
+  - **Positions**: every address was run through Nominatim, then Photon as
+    a second opinion, then each gym's own site or map embed where the
+    geocoders disagreed. Several are street-level only, disclosed per entry
+    (Boulder Zone, Rock Republic ×2, D-Summit, BlocX). GoClimb comes from its
+    own site's location data because OSM does not contain Junction Mall.
+    **Two geocoder errors were caught and rejected**: Pro Climbers'
+    "Merab Kostava Street 37" matched a different street of the same name in
+    Saburtalo ~9km away (the Vera Park gym is at the Chess Palace point
+    instead, and OSM numbers that building 29 while the gym's sources say
+    37-A), and S.K. Lucky's first hit was a university building rather than
+    its University Street address.
+  - **`state` lists are complete from the start**: the UAE's 7 emirates,
+    Georgia's 12 regions (including Abkhazia, listed as one of Georgia's own
+    internationally recognised regions, the same neutrality reasoning as
+    Crimea under Ukraine) and Luxembourg's 12 cantons. Chips exist only for
+    divisions with a spot: Dubai and Abu Dhabi, Tbilisi, and Luxembourg and
+    Esch-sur-Alzette. Asia gained the UAE and Georgia, Europe gained
+    Luxembourg (`COUNTRY_TO_REGION`, `COUNTRY_LABELS`,
+    `COUNTRY_FLY_TARGETS`, five new `--ae-*`/`--ge-*`/`--lu-*` colours).
+  - Net result: 1746 → **1762 total spots**. Structural check (Node-parsed
+    `window.SEED_GYMS`): 1762/1762 unique ids, zero duplicate
+    name+suburb+state+country combos, every spot has a non-empty `types`
+    array.
+  - **Verified** (offline-fallback-forcing method, `js/supabase-init.js`
+    reverted and confirmed clean): count reads 1762; searching the UAE and
+    Luxembourg returns exactly 7 and 5; all five chips filter to 5/2/4/2/3
+    with dark text on the region colour; both country `<option>` sets
+    present and the state dropdowns populate 7/12/12; no console errors
+    beyond the forced Supabase ones; no horizontal overflow at 375px.
+  - **Not yet pushed to the live Supabase table** — same next-step gap as
+    every prior batch.
 
 ## Scraping and bulk access
 
