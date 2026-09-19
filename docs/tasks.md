@@ -3887,6 +3887,29 @@ _(none)_
   errors beyond the forced Supabase ones, no overflow at 375px;
   structural check 1741/1741 unique ids, 0 duplicate combos, Moscow no
   longer has stacked pins; `git diff` on `js/supabase-init.js` clean.
+- **Follow-up (same day) — 16 more corrected, 25 in total**: for the gyms
+  left uncertain above, plus 23 spots where two geocoders agreed with each
+  other but not the pin (mostly US gyms Nominatim never resolved, so the
+  earlier threshold series never checked them), I fetched a *third* source —
+  coordinates published by directory sites (indoorclimbinggym.com,
+  flashclimb.com), the gym's own map embed, or an Apple Maps place page —
+  and only corrected where all three agreed. Corrected: The Boulder Field
+  (12.2 km), VITAL Murrieta (7.2), Mesa Rim Austin (6.0), Cirque Climbing
+  (5.9), VITAL Carlsbad (5.1), Proving Ground (3.7), LA Boulders (3.4), El
+  Dojo (3.1), Crux Central (2.3), Horizon (2.2), Canyons (1.2), Movement
+  Englewood (1.1), Refuge (3.2 — Census/Apple/directories right, Nominatim
+  wrong), Vertical World North (2.3 — its own site embed agrees with Census;
+  Nominatim's exact-looking match was wrong), Portside Boulders Osborne Park
+  (2.2 — an OSM POI named for the gym plus Apple Maps), Pulse Climbing (2.0 —
+  two source clusters 0.6 km apart, so the midpoint, precision ~0.3 km,
+  disclosed in notes). **Still unchanged (two geocoders agree, no third
+  source found)**: Boulderdash SFV (13.6 km), Edgeworks Tacoma and Bellevue,
+  Hangar 18 San Clemente and Orange, Elevator Rock, VietClimb, Ameg, Calgary
+  Climbing Centre Chinook, Northern Rocks, Bremgra. Also unchanged: Sports
+  World Suratthani (no street address findable; pin is on Ko Samui, ~70 km
+  off). Of the 161 unverified non-China spots, 66 now have a geocoder within
+  0.5 km of the pin, 30 have no geocoder result, and 65 disagree (mostly a
+  single, weak geocoder result).
 - **Not yet done**: regenerated seed SQL must be run in Supabase to put
   the corrections live; the 149 non-China spots where neither check
   could confirm the pin remain "unverified", not "wrong".
