@@ -3841,6 +3841,20 @@ _(none)_
 
 ## Done (recent)
 
+### Add Belarus, Uruguay and Saudi Arabia (15 gyms, 69th-71st countries)
+- Status: done — committed directly to `master`.
+- What: user said "next 3". Nine candidates had been researched across two
+  rounds; Belarus, Uruguay and Saudi Arabia tied at 5 verified gyms and were
+  taken. Armenia (3), Nepal (3 clearly indoor), Lebanon (2), Jordan (2),
+  Moldova (2) and Morocco (1) are left for later. Full detail in
+  `docs/architecture.md` "Seed data sourcing".
+- Two entries are lower confidence and say so (The Cave Alhamra, Riyadh:
+  district-level position; El Muro Paysandu, Uruguay: single-source address).
+- Net result: 1790 -> **1805 total spots**. Structural check and offline
+  verification passed.
+- **Not yet done**: running the regenerated seed SQL against the live
+  Supabase table.
+
 ### Add Slovenia, Costa Rica and Kazakhstan (28 gyms, 66th-68th countries)
 - Status: done — committed directly to `master`.
 - What: user said "next 3". Six countries were researched in parallel and the

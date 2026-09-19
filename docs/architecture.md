@@ -108,11 +108,11 @@ are only unique within a country** (e.g. AU's `WA` vs US's `WA` are
 different regions). Anything that filters, colors, or edits by state —
 the chips in `index.html`, `STATES_BY_COUNTRY` in `app.js`, the RLS-safe
 columns in `schema.sql` — keys off the `(country, state)` pair together,
-never `state` alone. Now 68 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
+never `state` alone. Now 71 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
 FR, SE, NL, IT, BE, KR, ES, PT, AT, CH, PL, DK, FI, IE, NO, MX, BR, HU, GR,
 CZ, IS, RO, HR, RU, BG, AR, PH, CO, CL, VE, IN, IL, ID, TW, ZA, EC, VN, LT,
 RS, BO, IR, EE, MY, TH, UA, SK, CY, PA, PE, TR, LV, SG, BA, AD, AE, GE,
-LU, SI, CR, KZ), same pattern each time — keep this in mind before adding a 69th. One collision
+LU, SI, CR, KZ, BY, UY, SA), same pattern each time — keep this in mind before adding a 72nd. One collision
 worth flagging: `US`'s state code for California is `CA`, and `CA` is
 also the top-level country code for Canada — not a real ambiguity since
 they're different object keys/fields (`STATES_BY_COUNTRY.US` contains
@@ -4889,6 +4889,68 @@ from one source:
     active text; both country `<option>` sets present and the state dropdowns
     populate 12/20/7; no console errors beyond the forced Supabase ones; no
     horizontal overflow at 375px.
+  - **Not yet pushed to the live Supabase table** — same next-step gap as
+    every prior batch.
+- **Belarus (5 gyms), Uruguay (5), and Saudi Arabia (5) — the 69th-71st
+  countries**, added on request ("next 3"). Belarus had already been researched
+  in the previous round; six more countries were researched in parallel (Saudi
+  Arabia, Lebanon, Armenia, Uruguay, Morocco, Jordan). Results, by verified gyms:
+  Belarus 5 (+1 medium, left out), Uruguay 5, Saudi Arabia 5, Armenia 3, Nepal 3
+  clearly indoor, Lebanon 2, Jordan 2, Moldova 2, Morocco 1. The three tied at 5
+  were taken. **Left for later**: Armenia (Ver Var, Boulderland and a fitness-club
+  wall; Boulder Town excluded as probably inactive), Nepal (the other 4 are roofed
+  but open-sided), Lebanon (Bold Adventure Park and Go Up, both medium confidence;
+  U ROCK real but no 2025-26 activity of its own), Jordan (Climbat Amman and
+  Badiya), Moldova (Chisinau Bouldering Project, Fitness Doza), and Morocco (only
+  Atlas Elevation in Marrakech, too thin to seed).
+  - **Directories were nearly empty again**: boulderinglist.com has no Belarus
+    or Saudi Arabia page and lists one Uruguayan gym; indoorclimbing.com lists one
+    for Belarus and Uruguay. Belarus came from each gym's own site, Yandex and
+    Mountain Project; Uruguay from the Uruguayan climbing association's gym list
+    plus Tripadvisor and Instagram; Saudi Arabia from the Saudi Climbing and Hiking
+    Federation's licensed-gym list, press coverage and each gym's own site.
+  - **Excluded, and why**: Belarus's Frunzensky FOC (a real municipal wall but
+    its height and type conflict between sources), Gomel's Omega Climb (a youth
+    sports school with unconfirmed public access), the many small kids' attraction
+    walls, and outdoor quarries; Uruguay's outdoor boulder sectors; Saudi Arabia's
+    Jump Up (trampoline attraction), AlUla/NEOM outdoor walls and The Edge (a wall
+    builder, whose only gym is The Cave).
+  - **Type applied only from direct evidence**: Dyno (Dammam) is tagged bouldering
+    + top-rope + lead from Tripadvisor and Walltopia's "rope walls" description
+    because its own site does not itemise disciplines; The Cave Alhamra is
+    top-rope + lead from reviewer quotes about an 8 m wall; Belarus's Plato and
+    Trapezia are top-rope from their own sites' "rope wall" wording, with no
+    evidence separating top-rope from auto-belay. Everything described as
+    bouldering-only stays bouldering-only.
+  - **Two lower-confidence entries kept with their weakness stated**: The Cave
+    Alhamra (Riyadh) has no published street address or pin, so its position is
+    the Al Hamra district centre (approximate) and rests on reviewer quotes; El
+    Muro Paysandu (Uruguay) has a single-source address and a Photon-only
+    position. Gender-segmented hours (women-only sessions) are noted where the
+    sources give them for the Saudi gyms.
+  - **Geocoding traps**: Nominatim knew none of the Belarusian gyms by name and
+    Photon returned nothing usable for Belarus, so positions there are Nominatim
+    street matches or Yandex pins that agreed with a reverse check; several Saudi
+    positions are Google/Yango map-embed pins because the geocoders only resolve
+    the district (The Cave Alnakheel is about 3 km from the district point).
+    Uruguay has one street spelled two ways ("Rossell" vs OSM's "Rosell"), and
+    "Baltazar Brum 828" exists in three departments.
+  - `state` lists are complete from the start: Belarus's 6 regions plus Minsk
+    city (a separate division from Minsk Region), Uruguay's 19 departments and
+    Saudi Arabia's 13 administrative regions. Chips exist only where there is a
+    spot: 3 Belarusian, 4 Uruguayan, 3 Saudi. Belarus goes under Europe, Saudi
+    Arabia under Asia and Uruguay under South America; the region fly-targets were
+    not widened, so those region headers do not frame the new countries.
+  - Net result: 1790 -> **1805 total spots**. Structural check (Node-parsed
+    `window.SEED_GYMS`): 1805/1805 unique ids, zero duplicate
+    name+suburb+state+country combos, every spot has a non-empty `types`
+    array, every state code resolves.
+  - **Verified** (offline-fallback-forcing method, `js/supabase-init.js`
+    reverted and confirmed clean): count reads 1805; searching each country
+    returns 5/5/5; all 10 new chips filter to the right counts with legible active
+    text; both country `<option>` sets present and the state dropdowns populate
+    7/19/13; no console errors beyond the forced Supabase ones; no horizontal
+    overflow at 375px.
   - **Not yet pushed to the live Supabase table** — same next-step gap as
     every prior batch.
 
