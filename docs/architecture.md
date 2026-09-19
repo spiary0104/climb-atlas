@@ -108,11 +108,11 @@ are only unique within a country** (e.g. AU's `WA` vs US's `WA` are
 different regions). Anything that filters, colors, or edits by state —
 the chips in `index.html`, `STATES_BY_COUNTRY` in `app.js`, the RLS-safe
 columns in `schema.sql` — keys off the `(country, state)` pair together,
-never `state` alone. Now 65 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
+never `state` alone. Now 68 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
 FR, SE, NL, IT, BE, KR, ES, PT, AT, CH, PL, DK, FI, IE, NO, MX, BR, HU, GR,
 CZ, IS, RO, HR, RU, BG, AR, PH, CO, CL, VE, IN, IL, ID, TW, ZA, EC, VN, LT,
 RS, BO, IR, EE, MY, TH, UA, SK, CY, PA, PE, TR, LV, SG, BA, AD, AE, GE,
-LU), same pattern each time — keep this in mind before adding a 66th. One collision
+LU, SI, CR, KZ), same pattern each time — keep this in mind before adding a 69th. One collision
 worth flagging: `US`'s state code for California is `CA`, and `CA` is
 also the top-level country code for Canada — not a real ambiguity since
 they're different object keys/fields (`STATES_BY_COUNTRY.US` contains
@@ -4823,6 +4823,72 @@ from one source:
     with dark text on the region colour; both country `<option>` sets
     present and the state dropdowns populate 7/12/12; no console errors
     beyond the forced Supabase ones; no horizontal overflow at 375px.
+  - **Not yet pushed to the live Supabase table** — same next-step gap as
+    every prior batch.
+- **Slovenia (14 gyms), Costa Rica (7), and Kazakhstan (7) — the 66th-68th
+  countries**, added on request ("next 3"). Six candidates were researched in
+  parallel by separate agents, each verifying every gym individually, and the
+  three with the most confirmed gyms were taken: Slovenia 14, Costa Rica 8
+  (7 kept), Kazakhstan 7. Left for later: **Belarus** (5 solid gyms in Minsk,
+  Brest and Grodno plus one medium-confidence municipal wall, Frunzensky FOC),
+  **Nepal** (only 3 clearly indoor; 4 more are roofed but open-sided, which is
+  outside this app's indoor-only scope) and **Moldova** (2).
+  - **Directories were almost useless for all three**: boulderinglist.com has
+    no Slovenia page, climbing-gyms.com says "No cities with climbing gyms in
+    Slovenia yet", and indoorclimbing.com's Slovenia page is empty; only
+    Mountain Project lists 7 Slovenian gyms. Slovenia's list came mainly from
+    the Slovenian Alpine Association's wall list (ksp.pzs.si) plus each gym's
+    own site. Kazakhstan came from 2GIS, Yandex, Zoon and the gyms' own sites
+    and Instagram. Costa Rica's boulderinglist page shows 0 gyms despite its
+    index claiming 4 (the same stale-count trap as before).
+  - **Excluded, and why**: Costa Rica's **Pura Roca** (last Instagram post April
+    2025, site fails to load, a listing shows a closure notice — current
+    operation unconfirmed) and four other Costa Rica candidates with only stale
+    or single-snippet evidence; in Slovenia, club and school walls without
+    confirmed public access (Kamnik, Skofja Loka's BricAlp, Komenda, AO
+    Zeleznicar, PZS-list school and municipal halls), outdoor structures, and an
+    unconfirmed company (Bolder Baza); in Kazakhstan, trampoline-park climbing
+    attractions (Kango, Gravity), the outdoor 17 m wall, university and school
+    walls in other cities, and two Skala branches at MEGA malls that have no
+    current confirmation.
+  - **Type applied only from direct evidence**: gyms whose own site names
+    lead or lists a tall graded route wall are tagged bouldering + top-rope +
+    lead (Plezalni center Ljubljana, Celje, Slovenska Bistrica; SKALA Almaty;
+    Eskalar; Ascend San Pablo; Rock Climbing Costa Rica). Celje and Slovenska
+    Bistrica's lead tags are inferred from 14-17 m graded route walls, and
+    say so. NU Climbing (Astana) and Climbers Garden default to
+    bouldering-only. Skala KeruenCity is top-rope only, from a 12 m wall.
+  - **Positions are weaker than usual for Costa Rica and Kazakhstan**:
+    Nominatim resolved almost no Costa Rican addresses, so positions there come
+    from Photon named points, a Plus Code, or a neighbouring landmark the gym
+    is described as facing, each with an honest 0.1-1 km precision in the
+    entry's own notes. Kazakhstan positions are mostly named OSM points, but
+    Climbers Garden has three conflicting published addresses (street level
+    only) and NU Climbing is pinned at campus level. Zoon's coordinate for
+    SKALA Almaty is wrong and was not used.
+  - **Caveats kept in the entries**: NU Climbing is open to the public only
+    Mon/Wed/Fri 19:00-21:00; Rock Climbing Costa Rica (Jaco) has an unread
+    Facebook post asking if it is closed and a site that would not load;
+    Eskalar's phone numbers differ across sources. Two "San Pablo" places exist
+    in Costa Rica and Nominatim picked the wrong one.
+  - `state` lists are complete from the start: Slovenia's 12 statistical
+    regions (English names such as Central Slovenia, Upper Carniola), Kazakhstan's
+    3 cities of republican significance plus 17 regions (Almaty city and Almaty
+    Region are separate divisions), and Costa Rica's 7 provinces. Chips exist
+    only for divisions with a spot: 7 Slovenian, 2 Kazakh, 5 Costa Rican.
+    Kazakhstan and Costa Rica sit in Asia and North America respectively
+    (`COUNTRY_TO_REGION`); the Asia region fly-target was not widened, so the
+    Asia header does not frame Kazakhstan.
+  - Net result: 1762 -> **1790 total spots**. Structural check (Node-parsed
+    `window.SEED_GYMS`): 1790/1790 unique ids, zero duplicate
+    name+suburb+state+country combos, every spot has a non-empty `types`
+    array, every state code resolves.
+  - **Verified** (offline-fallback-forcing method, `js/supabase-init.js`
+    reverted and confirmed clean): count reads 1790; searching each country
+    returns 14/7/7; all 14 new chips filter to the right counts with legible
+    active text; both country `<option>` sets present and the state dropdowns
+    populate 12/20/7; no console errors beyond the forced Supabase ones; no
+    horizontal overflow at 375px.
   - **Not yet pushed to the live Supabase table** — same next-step gap as
     every prior batch.
 

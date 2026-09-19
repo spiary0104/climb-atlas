@@ -3841,6 +3841,20 @@ _(none)_
 
 ## Done (recent)
 
+### Add Slovenia, Costa Rica and Kazakhstan (28 gyms, 66th-68th countries)
+- Status: done — committed directly to `master`.
+- What: user said "next 3". Six countries were researched in parallel and the
+  three with the most verified gyms taken (Slovenia 14, Costa Rica 7 after
+  excluding one unconfirmable gym, Kazakhstan 7). Belarus (5-6), Nepal (3 clearly
+  indoor) and Moldova (2) are left for later. Full detail in
+  `docs/architecture.md` "Seed data sourcing".
+- Positions for Costa Rica are approximate (0.1-1 km, disclosed per entry);
+  several entries carry open caveats (public hours, conflicting addresses).
+- Net result: 1762 -> **1790 total spots**. Structural check and offline
+  verification passed.
+- **Not yet done**: running the regenerated seed SQL against the live
+  Supabase table.
+
 ### Add United Arab Emirates, Luxembourg and Georgia (16 gyms, 63rd-65th countries)
 - Status: done — committed directly to `master`.
 - What: user asked to add the next 3 countries using the same sites as

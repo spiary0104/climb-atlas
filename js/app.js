@@ -544,10 +544,21 @@
     // Luxembourg's 12 cantons.
     LU: [['CAPELLEN','Capellen'],['CLERVAUX','Clervaux'],['DIEKIRCH','Diekirch'],['ECHTERNACH','Echternach'],
          ['ESCH_SUR_ALZETTE','Esch-sur-Alzette'],['GREVENMACHER','Grevenmacher'],['LUXEMBOURG','Luxembourg'],
-         ['MERSCH','Mersch'],['REDANGE','Redange'],['REMICH','Remich'],['VIANDEN','Vianden'],['WILTZ','Wiltz']]
+         ['MERSCH','Mersch'],['REDANGE','Redange'],['REMICH','Remich'],['VIANDEN','Vianden'],['WILTZ','Wiltz']],
+    // Slovenia's 12 statistical regions.
+    SI: [['POMURSKA','Mura'],['PODRAVSKA','Drava'],['KOROSKA','Carinthia'],['SAVINJSKA','Savinja'],['ZASAVSKA','Central Sava'],['POSAVSKA','Lower Sava'],
+         ['JUGOVZHODNA','Southeast Slovenia'],['OSREDNJESLOVENSKA','Central Slovenia'],['GORENJSKA','Upper Carniola'],['PRIMORSKO_NOTRANJSKA','Littoral-Inner Carniola'],
+         ['GORISKA','Gorizia'],['OBALNO_KRASKA','Coastal-Karst']],
+    // Kazakhstan: 3 cities of republican significance + 17 regions. Almaty city and Almaty Region are separate divisions.
+    KZ: [['ASTANA','Astana'],['ALMATY_CITY','Almaty'],['SHYMKENT','Shymkent'],['ABAI','Abai'],['AKMOLA','Akmola'],['AKTOBE','Aktobe'],['ALMATY_REGION','Almaty Region'],
+         ['ATYRAU','Atyrau'],['EAST_KAZAKHSTAN','East Kazakhstan'],['JAMBYL','Jambyl'],['JETISU','Jetisu'],['KARAGANDA','Karaganda'],['KOSTANAY','Kostanay'],
+         ['KYZYLORDA','Kyzylorda'],['MANGYSTAU','Mangystau'],['NORTH_KAZAKHSTAN','North Kazakhstan'],['PAVLODAR','Pavlodar'],['TURKISTAN','Turkistan'],
+         ['ULYTAU','Ulytau'],['WEST_KAZAKHSTAN','West Kazakhstan']],
+    // Costa Rica's 7 provinces.
+    CR: [['SAN_JOSE','San José'],['ALAJUELA','Alajuela'],['CARTAGO','Cartago'],['HEREDIA','Heredia'],['GUANACASTE','Guanacaste'],['PUNTARENAS','Puntarenas'],['LIMON','Limón']]
   };
   const TYPE_LABELS = {'indoor-bouldering':'Indoor bouldering','top-rope':'Top rope','lead-climbing':'Lead climbing'};
-  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy', BE:'Belgium', KR:'South Korea', ES:'Spain', PT:'Portugal', AT:'Austria', CH:'Switzerland', PL:'Poland', DK:'Denmark', FI:'Finland', IE:'Ireland', NO:'Norway', MX:'Mexico', BR:'Brazil', HU:'Hungary', GR:'Greece', CZ:'Czech Republic', IS:'Iceland', RO:'Romania', HR:'Croatia', RU:'Russia', BG:'Bulgaria', AR:'Argentina', PH:'Philippines', CO:'Colombia', CL:'Chile', VE:'Venezuela', IN:'India', IL:'Israel', ID:'Indonesia', TW:'Taiwan', ZA:'South Africa', EC:'Ecuador', VN:'Vietnam', LT:'Lithuania', RS:'Serbia', BO:'Bolivia', IR:'Iran', EE:'Estonia', MY:'Malaysia', TH:'Thailand', UA:'Ukraine', SK:'Slovakia', CY:'Cyprus', PA:'Panama', PE:'Peru', TR:'Turkey', LV:'Latvia', SG:'Singapore', BA:'Bosnia and Herzegovina', AD:'Andorra', AE:'United Arab Emirates', GE:'Georgia', LU:'Luxembourg'};
+  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy', BE:'Belgium', KR:'South Korea', ES:'Spain', PT:'Portugal', AT:'Austria', CH:'Switzerland', PL:'Poland', DK:'Denmark', FI:'Finland', IE:'Ireland', NO:'Norway', MX:'Mexico', BR:'Brazil', HU:'Hungary', GR:'Greece', CZ:'Czech Republic', IS:'Iceland', RO:'Romania', HR:'Croatia', RU:'Russia', BG:'Bulgaria', AR:'Argentina', PH:'Philippines', CO:'Colombia', CL:'Chile', VE:'Venezuela', IN:'India', IL:'Israel', ID:'Indonesia', TW:'Taiwan', ZA:'South Africa', EC:'Ecuador', VN:'Vietnam', LT:'Lithuania', RS:'Serbia', BO:'Bolivia', IR:'Iran', EE:'Estonia', MY:'Malaysia', TH:'Thailand', UA:'Ukraine', SK:'Slovakia', CY:'Cyprus', PA:'Panama', PE:'Peru', TR:'Turkey', LV:'Latvia', SG:'Singapore', BA:'Bosnia and Herzegovina', AD:'Andorra', AE:'United Arab Emirates', GE:'Georgia', LU:'Luxembourg', SI:'Slovenia', KZ:'Kazakhstan', CR:'Costa Rica'};
   // Fixed camera target per country for the "fly to this country" click on
   // its sidebar label -- picked to frame that country's actual spread of
   // seed spots (e.g. US needs a wide zoom to fit both NY and CA), not a
@@ -618,20 +629,23 @@
     AD: {center:[1.55,42.53], zoom:10.6},
     AE: {center:[54.9,24.8], zoom:7.6},
     GE: {center:[44.76,41.72], zoom:9.4},
-    LU: {center:[6.05,49.56], zoom:9.6}
+    LU: {center:[6.05,49.56], zoom:9.6},
+    SI: {center:[14.8,46.1], zoom:7.4},
+    KZ: {center:[74,47.2], zoom:4.4},
+    CR: {center:[-84.4,10.0], zoom:7.6}
   };
   // Which sidebar region-group each country belongs to -- same grouping as
   // the `.region-group[data-region]` wrappers in index.html, kept here too
   // so the map's own continent-tier labels/fly-targets don't need to read
   // the DOM to know a country's continent.
   const COUNTRY_TO_REGION = {
-    CN:'asia', JP:'asia', KR:'asia', PH:'asia', IN:'asia', IL:'asia', ID:'asia', TW:'asia', VN:'asia', IR:'asia', MY:'asia', TH:'asia', SG:'asia', AE:'asia', GE:'asia',
+    CN:'asia', JP:'asia', KR:'asia', PH:'asia', IN:'asia', IL:'asia', ID:'asia', TW:'asia', VN:'asia', IR:'asia', MY:'asia', TH:'asia', SG:'asia', AE:'asia', GE:'asia', KZ:'asia',
     DE:'europe', GB:'europe', FR:'europe', SE:'europe', NL:'europe', IT:'europe', BE:'europe', LT:'europe',
     ES:'europe', PT:'europe', AT:'europe', CH:'europe', PL:'europe', DK:'europe', FI:'europe', IE:'europe',
     NO:'europe', HU:'europe', GR:'europe', CZ:'europe', IS:'europe',
     RO:'europe', HR:'europe', RU:'europe', BG:'europe', RS:'europe', EE:'europe', UA:'europe', SK:'europe',
-    CY:'europe', TR:'europe', LV:'europe', BA:'europe', AD:'europe', LU:'europe',
-    CA:'north-america', US:'north-america', MX:'north-america', PA:'north-america',
+    CY:'europe', TR:'europe', LV:'europe', BA:'europe', AD:'europe', LU:'europe', SI:'europe',
+    CA:'north-america', US:'north-america', MX:'north-america', PA:'north-america', CR:'north-america',
     AU:'oceania', NZ:'oceania',
     BR:'south-america', AR:'south-america', CO:'south-america', CL:'south-america', VE:'south-america',
     EC:'south-america', BO:'south-america', PE:'south-america',
