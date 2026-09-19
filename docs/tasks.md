@@ -3841,6 +3841,26 @@ _(none)_
 
 ## Done (recent)
 
+### Anti-scraping measures (robots.txt, vercel.json, Terms clause)
+- Status: done — committed directly to `master`. The partial-protection
+  caveats are the important part; read `docs/architecture.md` "Scraping and
+  bulk access".
+- What: user asked to prevent others scraping the site. Checking the live
+  site first showed the whole repo was publicly served (`js/data.js`,
+  `docs/*`, `supabase/schema.sql`, `Rules.md`, ...). Added `robots.txt`
+  (AI/scraper bots disallowed, search engines welcome), `vercel.json`
+  redirects for `/docs`, `/supabase` and root `.md` files, and a "Using the
+  site" section in the Terms modal (date bumped to 19 September 2026).
+- **Honest limits**: robots.txt only stops bots that obey it; `js/data.js`
+  and the Supabase REST API remain readable by anyone, so a determined
+  scraper is not stopped. Meaningful protection needs the Vercel dashboard
+  steps (Bot Protection + one rate-limit rule — owner action, listed in
+  architecture.md) and, for Supabase, a design change (bounding-box RPC or a
+  rate-limited proxy) that was deliberately not started.
+- **Not yet done**: the Vercel dashboard settings; deciding whether to remove
+  the `js/data.js` offline fallback.
+
+
 ### Cross-check Shanghai against SmartShanghai + add missing gyms (5 added)
 - Status: done — committed directly to `master`.
 - What: user asked to use SmartShanghai for the China gyms and add any

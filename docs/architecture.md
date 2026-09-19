@@ -4769,6 +4769,49 @@ from one source:
   (not name) is what made this reliable: Shanghai gyms rebrand and list
   under several names. Not yet pushed to the live Supabase table.
 
+## Scraping and bulk access
+
+A public map has to send its data to every visitor's browser, so scraping
+can be made more expensive but never impossible. What is exposed, and what
+limits it:
+
+- **`js/data.js` (~750KB, every spot) is publicly downloadable in one
+  request** at `/js/data.js`. It is only the offline fallback (see "File
+  map"), but it is the cheapest possible scrape.
+- **Supabase REST is open to anyone holding the anon key** (which is public
+  by design and sits in `js/supabase-init.js`). RLS lets anyone read
+  approved `spots`; PostgREST returns at most 1000 rows per request, so a
+  scraper just pages with `range`. Supabase has no built-in per-IP rate
+  limiter, and the anon key can't be hidden. Vercel's firewall does **not**
+  cover it — it is a different domain.
+- **The whole repo used to be served as static files** (`docs/`,
+  `supabase/schema.sql`, `supabase/seed.html`, `Rules.md`, `CLAUDE.md`,
+  found by `curl`-ing them on the live site). None held secrets, but
+  `docs/` documents the whole sourcing method and contains contact emails.
+
+What is in place: `robots.txt` (welcomes search engines; disallows known AI
+and scraper user-agents and `/js/data.js`, `/docs/`, `/supabase/` — this
+only stops crawlers that choose to obey it); `vercel.json` `redirects`
+sending `/docs/*`, `/supabase/*` and the root `.md` files to `/`
+(redirects run *before* the filesystem on Vercel, so they override real
+files; `rewrites` in `vercel.json` run *after* it and would NOT have
+blocked them); and a "Using the site" clause in the Terms of Service.
+
+What needs the site owner (dashboard, not code): Vercel dashboard →
+Firewall → turn on the **Bot Protection** managed ruleset (available on all
+plans, off by default; challenges non-browser traffic) and add the one
+rate-limiting custom rule Hobby allows (fixed 60-second windows). That covers
+`climbatlas.org` only.
+
+Not done, and the real fix if abuse appears: stop serving the full table.
+Options in increasing effort — (1) delete the `js/data.js` fallback and rely
+on the service worker's cached Supabase reads for offline use (removes the
+one-request scrape; Supabase still pages); (2) replace the bulk read with a
+Supabase RPC that returns only spots inside the map's bounding box, so a
+scraper has to walk the world in many small requests; (3) put reads behind a
+Vercel Function that rate-limits per IP. (2)/(3) change how `loadSpots()`
+works and how the PWA caches, so they need their own task.
+
 ## Design system
 
 Everything visual is built from the tokens at the top of `css/style.css`

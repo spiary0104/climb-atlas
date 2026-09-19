@@ -1,0 +1,36 @@
+# Climb Atlas — crawler policy.
+# Search engines are welcome. AI-training and bulk-scraper bots are not.
+# This file only stops crawlers that choose to obey it; see docs/architecture.md
+# "Scraping and bulk access" for what actually limits abuse.
+
+User-agent: *
+Disallow: /js/data.js
+Disallow: /docs/
+Disallow: /supabase/
+
+User-agent: GPTBot
+User-agent: ChatGPT-User
+User-agent: OAI-SearchBot
+User-agent: ClaudeBot
+User-agent: Claude-Web
+User-agent: anthropic-ai
+User-agent: Google-Extended
+User-agent: CCBot
+User-agent: PerplexityBot
+User-agent: Bytespider
+User-agent: Amazonbot
+User-agent: Applebot-Extended
+User-agent: FacebookBot
+User-agent: meta-externalagent
+User-agent: cohere-ai
+User-agent: Diffbot
+User-agent: ImagesiftBot
+User-agent: omgili
+User-agent: Omgilibot
+User-agent: Timpibot
+User-agent: Scrapy
+User-agent: MJ12bot
+User-agent: AhrefsBot
+User-agent: SemrushBot
+User-agent: DotBot
+Disallow: /

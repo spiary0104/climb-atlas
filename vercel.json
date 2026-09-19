@@ -1,0 +1,7 @@
+{
+  "redirects": [
+    { "source": "/docs/:path*", "destination": "/", "permanent": false },
+    { "source": "/supabase/:path*", "destination": "/", "permanent": false },
+    { "source": "/(Rules|CLAUDE|README|WORKFLOW_GUIDE).md", "destination": "/", "permanent": false }
+  ]
+}
