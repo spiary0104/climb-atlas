@@ -4753,6 +4753,22 @@ from one source:
     `docs/tasks.md`). Each corrected spot's `notes` field says it was
     corrected and by what.
 
+- **Shanghai cross-check against SmartShanghai (5 gyms added).**
+  smartshanghai.com/listings/climbing/ lists 24 gyms with English and
+  Chinese addresses. It sits behind an Aliyun WAF: `curl` gets a JS
+  challenge; a real browser gets the listing page, but individual venue
+  pages then present a slide-to-verify CAPTCHA, which must not be
+  automated or bypassed — the listing cards alone carry name, address and a
+  description, which is enough for matching and for adding gyms. 13 of the
+  24 matched existing Shanghai spots by address, often under different
+  names (recorded in each entry's `notes`), 3 were out of scope (outdoor
+  adventure parks or a zero-location page), and 5 were new: Academy of
+  Bouldering, Benchmark 2.0, 1778 Climbing (Haichao Lu), Stonehaven and Howl
+  Shanghai — all bouldering, each disclosing that SmartShanghai is its only
+  source. Net 1741 -> 1746 spots. Address-matching by street + number
+  (not name) is what made this reliable: Shanghai gyms rebrand and list
+  under several names. Not yet pushed to the live Supabase table.
+
 ## Design system
 
 Everything visual is built from the tokens at the top of `css/style.css`

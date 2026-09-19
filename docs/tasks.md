@@ -3841,6 +3841,54 @@ _(none)_
 
 ## Done (recent)
 
+### Cross-check Shanghai against SmartShanghai + add missing gyms (5 added)
+- Status: done — committed directly to `master`.
+- What: user asked to use SmartShanghai for the China gyms and add any
+  missing ones. SmartShanghai's climbing directory
+  (smartshanghai.com/listings/climbing/) lists 24 gyms with bilingual
+  addresses. **Access note**: plain `curl` gets an Aliyun WAF JS challenge;
+  the Browser pane loads the listing page normally, but each *venue* page
+  then shows a slide-to-verify CAPTCHA, which was deliberately not solved.
+  Everything used here comes from the listing cards (name, English +
+  Chinese address, description), which is enough.
+- Of the 24: 13 already matched our data by address, several under other
+  names (Rock Hour = our YS Climbing; Kray Climbing Park = KL Climbing Park;
+  Jinfeng 189 = Acme Climbing; Moyan Climbing = Magirock/Moyan Pandeng, listed
+  twice; Pake Climbing = Infinite Climbing; Yanwu Kongjian Hongkou = Roaring
+  Climbing Gym; Banana Climbing Kerry Centre = Banana+; and so on). Those
+  alternate names are now in each entry's `notes` so a search by either
+  name works. 3 were excluded on scope grounds (Magic Jungle and Discovery
+  Adventures Moganshan are outdoor ropes/adventure parks, the latter in
+  Zhejiang; Park Climbing Gym shows 0 locations). Perky Sports (Jing'an,
+  ex-Climbingism) is in the same building (Heyi Mansion, 418-420 Jiangning
+  Lu) as our Panqing Sports (Jing'an), so it was treated as a probable
+  duplicate and noted on that entry rather than added.
+- **Added (5), all bouldering, Shanghai**: Academy of Bouldering (AOB,
+  Hongkou North Bund), Benchmark 2.0 (a second Benchmark, Hongkou, separate
+  from the Putuo one), 1778 Climbing (Haichao Lu, a second location of the
+  chain already listed at Sanlin), Stonehaven (Longhua Hui, Xuhui) and Howl
+  Shanghai (a 24-hour self-service training room in Putuo, small and
+  book-ahead). Stonehaven and Howl resolved to named buildings; AOB,
+  Benchmark 2.0 and 1778 are street-level only and say so.
+- **Caveats, disclosed in each entry**: the only source found for all five
+  is SmartShanghai itself (recently added listings with detailed
+  descriptions); no Dianping/huodong/Google page confirmed them. 1778's
+  address conflicts with a 360-map listing (187 vs 133 Haichao Rd).
+  Benchmark 2.0's two geocoders disagreed by several km; Photon's, which
+  matches the "near Haining Lu" detail, was used.
+- **Not added**: Yanwu Space (Pudong, 1200 Shibo Da Dao) and High Five
+  (697 Lingshi Lu) — both only have dated (2015-19) evidence, and we already
+  list a High Five at a different address (643 Yonghe East Rd), so they look
+  like older/moved locations; SmartShanghai also has older venue pages for
+  Pongo and Shanghai Stadium that no longer appear in its directory.
+- Net result: 1741 -> **1746 total spots** (Shanghai 73 -> 78). Structural
+  check: 1746/1746 unique ids, 0 duplicate combos, every spot has `types`.
+- **Verified**: offline-fallback method — count 1746, Shanghai 78, all four
+  searched new gyms found by name, no overflow at 375px, no new console
+  errors. (A stale cached `data.js` showed the old count until refreshed —
+  worth remembering when a check mysteriously shows old data.)
+- **Not yet done**: run the regenerated seed SQL in Supabase.
+
 ### Whole-dataset location audit (reverse geocode + Overpass + web search) — 9 pins corrected
 - Status: done — committed directly to `master` (data-only; `js/data.js`).
 - What: user asked to confirm all added gyms have consistent locations,
