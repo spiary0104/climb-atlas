@@ -3841,6 +3841,56 @@ _(none)_
 
 ## Done (recent)
 
+### Whole-dataset location audit (reverse geocode + Overpass + web search) — 9 pins corrected
+- Status: done — committed directly to `master` (data-only; `js/data.js`).
+- What: user asked to confirm all added gyms have consistent locations,
+  then for another check method. Ran (1) a reverse-geocode of every one
+  of the 1741 pins (Nominatim `/reverse`), comparing the returned
+  road/postcode/city/country to each spot's stored address, and (2) an
+  Overpass "gym name or `sport=climbing` within 200m of the pin" check on
+  the 274 flagged/undisclosed-street spots. Then web-searched every
+  probably-wrong gym to confirm its address and geocoded that address
+  (Nominatim + Photon, plus Census for US) to measure how far the stored
+  pin was. Full method and findings in `docs/architecture.md`.
+- Results: 0 country mismatches, 0 unresolvable state codes, 0 invalid
+  lat/lng. 773 spots confirmed at street/postcode level, 612 right
+  city/area only (114 already disclose a fallback, 281 are Chinese mall
+  addresses OSM covers poorly), 299 have no address.
+- **Corrected (9)**: placeholder and wrong-place pins —
+  Onix Sala De Escalada (10.6 km), X CLIMB (11.9 km, pin was a same-named
+  street in Thermi), Limestone / Bigwallsport Dinamo / Climb Lab in
+  Moscow (9-16 km, all three shared one placeholder pin), Rockit (5.0 km),
+  Pacific Edge (3.8 km, pin was a rounded 37.00,-122.02 placeholder),
+  BlocHaus Mitchell (1.5 km), Sandbox Bouldering (0.8 km). Each got a
+  `notes` clause saying it was corrected and how.
+- **Deliberately NOT changed (not sure enough)**: Refuge Climbing (Las
+  Vegas — Nominatim and Census disagree by ~6km, Census likely right),
+  Sports World Suratthani (pin is on Ko Samui, ~70km from Surat Thani
+  city; no source gives a street address, so only a district-level guess
+  is possible), Portside Boulders Osborne Park (~2km off but the two
+  geocoders disagree by 0.6km), Pulse Climbing and Vertical World North
+  (geocoders disagree; already on the unresolved list).
+- **A mistake in my own cross-check, caught before applying**: two
+  spots are both named "Portside Boulders" (O'Connor and Osborne Park).
+  The comparison script used `find(name)` and matched the O'Connor entry,
+  producing a false "16 km off". Any script that looks a spot up by name
+  must handle duplicate names (same class of bug as "Pulse Climbing" and
+  "Climbing Factory" earlier).
+- **Overpass caveat**: the public Overpass server rate-limits a single
+  IP quickly and each name-regex query took ~15s, so it cannot be run
+  over all 1741 spots. Run it only on a flagged subset, ≥3s between
+  requests, with a request timeout (a hung request stalled it once). A
+  miss is weak evidence (OSM is missing many gyms); only treat it as a
+  flag when the reverse-geocode check also failed.
+- Verified: offline-fallback method — count 1741, all 4 spot-checked
+  corrections load with new coordinates and the notes clause, no console
+  errors beyond the forced Supabase ones, no overflow at 375px;
+  structural check 1741/1741 unique ids, 0 duplicate combos, Moscow no
+  longer has stacked pins; `git diff` on `js/supabase-init.js` clean.
+- **Not yet done**: regenerated seed SQL must be run in Supabase to put
+  the corrections live; the 149 non-China spots where neither check
+  could confirm the pin remain "unverified", not "wrong".
+
 ### Add 17 gyms found via Reddit (first Reddit-sourced batch, existing countries)
 - Status: done — committed directly to `master`.
 - What: user asked to "use reddit to scrape some locations for existing

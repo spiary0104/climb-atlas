@@ -4713,6 +4713,45 @@ from one source:
     `js/supabase-init.js` confirmed clean after reverting the test edit.
   - **Not yet pushed to the live Supabase table** — same next-step gap as
     every prior batch.
+- **Whole-dataset location audit (reverse geocode + Overpass + web
+  search) — the first check that tests pins from the pin side, not the
+  address side.** Every earlier accuracy pass (the geocode-threshold
+  series) forward-geocoded the stored address and compared it to the
+  pin, so it could only catch a pin that disagreed with what a geocoder
+  thought the address was. This pass added checks that don't share that
+  blind spot: (1) **reverse geocode every pin** (Nominatim `/reverse`,
+  `accept-language=en`) and compare returned road / postcode / city /
+  country to the stored address; (2) **Overpass** — is there an OSM
+  feature named like the gym, or tagged `sport=climbing`, within 200m;
+  (3) **web search** to confirm each suspect's real address, then
+  forward-geocode that confirmed address with two or three geocoders.
+  - **Results across 1741 spots**: 0 country mismatches; 773 confirmed at
+    street or postcode level; 612 right city/area but street unconfirmed
+    (114 disclose a fallback; 281 are Chinese mall addresses OSM covers
+    poorly); 299 have no address; 57 flagged, most of which were
+    transliteration false alarms (Greek/Russian/Thai names) or agreed on
+    the street.
+  - **What it found that the address-side passes missed**: pins that
+    matched a *same-named street in a different district* (X CLIMB —
+    Thessaloniki centre vs Thermi), a *rounded placeholder* (Pacific Edge
+    at exactly 37.00,-122.02), a *fallback centroid that landed in the
+    wrong place* (Sports World Suratthani's "Surat Thani centroid" is on
+    Ko Samui, ~70km away), and *three Moscow gyms sharing one placeholder
+    pin* 9-16km from their real addresses.
+  - **Known limits, so nobody over-trusts it**: reverse geocoding returns
+    the nearest feature, so a pin inside a building or car park can
+    legitimately return a neighbouring street — the "right city, street
+    unconfirmed" bucket is not an error list. Overpass misses are weak
+    evidence (patchy OSM coverage in China, Croatia, etc.). None of these
+    checks proves a pin is on the right building; only the gym's own
+    published coordinates or a visual check does.
+  - **Script pitfall**: looking a spot up by `name` breaks on duplicate
+    names (two "Portside Boulders", two "Pulse Climbing", two "Climbing
+    Factory") — match on id, or name plus suburb, when comparing.
+  - Corrected 9 pins where two independent geocoders agreed with a
+    web-confirmed address; left 5 uncertain ones alone (see
+    `docs/tasks.md`). Each corrected spot's `notes` field says it was
+    corrected and by what.
 
 ## Design system
 
