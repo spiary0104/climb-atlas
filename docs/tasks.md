@@ -113,11 +113,30 @@ Each entry:
 ## In Progress
 
 ### Audit fixes: Escape-deletes, moderator XSS, offline shell, RLS pinning, iOS PWA
-- Branch: `fix/audit-critical` — committed locally, **not yet pushed or
-  merged** (this session could not push; delivered as a git bundle).
+- Branch: `fix/audit-critical` — three commits, pushed to GitHub by the
+  user from a git bundle (this sandbox can't push); **not yet merged**.
 - Status: implemented + verified in a headless browser; needs a real-device
   look and **`supabase/schema.sql` must be re-run once** in the SQL Editor
-  for the new triggers/indexes to exist.
+  for the new triggers/indexes/function to exist.
+- **Follow-up commits on the same branch**: (a) Android edge-to-edge
+  regression from `viewport-fit=cover` — header drew under the status
+  bar in the installed PWA; fixed with `env(safe-area-inset-top/bottom)`
+  padding on the header, legend and map controls. (b) **"Could not save —
+  try again" on every add-spot** — reproduced in a local Postgres 16 with
+  an `auth.uid()` shim: master's INSERT policy selects from `spots`
+  inside a policy *on* `spots`, and Postgres raises `infinite recursion
+  detected in policy for relation "spots"` on every insert. This is a
+  pre-existing master bug (since the rate limit was added), not something
+  the audit branch introduced. Fixed by moving the count into a
+  `security definer` function `public.recent_submission_count()`; see
+  `docs/architecture.md` "Data model". Verified locally with the full
+  schema applied: seed insert as postgres keeps `id='seed-0'`/approved/
+  community=false; a tampered signed-in insert (approved, community=false,
+  someone else's `submitted_by`, `created_at` 2000) is pinned to
+  pending/true/self/now with a `community-<uuid>` id; 10 inserts allowed,
+  11th rejected by RLS; a second user is unaffected by the first's cap and
+  sees none of their pending rows; anon sees 0 pending, 1 approved, and
+  cannot insert.
 - What (from the full code audit in the Climb Atlas project doc
   `climb-atlas-app-review.md`): (1) Escape in Pending-review / Logbook /
   Log-a-session clicked the first `.btn-cancel`, i.e. Reject / Delete /

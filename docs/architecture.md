@@ -54,8 +54,21 @@ change rendering underneath the app.
   restricted to signed-in users (`auth.uid() is not null`), forced to
   `status = 'pending'` and `submitted_by = auth.uid()` by RLS — a
   tampered client can't insert a pre-approved row or attribute one to
-  someone else — and capped at 10 per rolling 24h per account via a
-  `with check` subquery counting that user's own recent submissions.
+  someone else — and capped at 10 per rolling 24h per account. **The
+  count must live in the `security definer` function
+  `public.recent_submission_count()`, not inline in the policy**: a
+  policy on `spots` whose expression selects from `spots` re-enters the
+  same policy and Postgres raises `infinite recursion detected in policy
+  for relation "spots"` on every insert — which is exactly what the
+  original inline `(select count(*) from public.spots …) < 10` did, so
+  every community submission failed with "Could not save" until it was
+  moved into the function (fixed in `fix/audit-critical`). The function
+  takes no argument and always counts `auth.uid()`'s own rows, so it
+  can't be used to probe anyone else's. A `before insert` trigger
+  (`pin_community_submission`) additionally overwrites `created_at`,
+  `community`, `edited`, `status`, `submitted_by` and `id` for any
+  signed-in insert, so the cap can't be dodged by back-dating
+  `created_at` from the client.
   `js/app.js` also does a client-side pre-check (same 10/24h count)
   before opening the add-spot form, purely for a clearer UX — the actual
   enforcement is the RLS policy, not the client check. Has an optional

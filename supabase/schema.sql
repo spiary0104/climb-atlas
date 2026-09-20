@@ -155,17 +155,34 @@ create policy "approved spots are publicly readable, moderators see all, submitt
 drop policy if exists "anyone can add spots" on public.spots;
 drop policy if exists "anyone can propose a new spot as pending" on public.spots;
 drop policy if exists "signed-in users can propose a new spot as pending, rate-limited" on public.spots;
+-- The count lives in a SECURITY DEFINER function rather than inline: a policy
+-- on `spots` whose expression queries `spots` makes Postgres raise "infinite
+-- recursion detected in policy for relation spots" on EVERY insert, so the
+-- inline version silently broke all community submissions ("Could not save").
+-- The function runs as its owner and bypasses RLS, so it can count the
+-- caller's own rows without re-entering this policy. It takes no argument and
+-- always counts auth.uid()'s rows, so it can't be used to probe anyone else.
+create or replace function public.recent_submission_count()
+returns integer
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select count(*)::integer from public.spots
+  where submitted_by = auth.uid()
+    and created_at > now() - interval '1 day';
+$$;
+revoke all on function public.recent_submission_count() from public;
+grant execute on function public.recent_submission_count() to anon, authenticated;
+
 create policy "signed-in users can propose a new spot as pending, rate-limited"
   on public.spots for insert
   with check (
     status = 'pending'
     and auth.uid() is not null
     and submitted_by = auth.uid()
-    and (
-      select count(*) from public.spots
-      where submitted_by = auth.uid()
-        and created_at > now() - interval '1 day'
-    ) < 10
+    and public.recent_submission_count() < 10
   );
 
 drop policy if exists "anyone can edit spots" on public.spots;
