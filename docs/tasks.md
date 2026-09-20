@@ -112,6 +112,42 @@ Each entry:
 
 ## In Progress
 
+### Audit fixes: Escape-deletes, moderator XSS, offline shell, RLS pinning, iOS PWA
+- Branch: `fix/audit-critical` — committed locally, **not yet pushed or
+  merged** (this session could not push; delivered as a git bundle).
+- Status: implemented + verified in a headless browser; needs a real-device
+  look and **`supabase/schema.sql` must be re-run once** in the SQL Editor
+  for the new triggers/indexes to exist.
+- What (from the full code audit in the Climb Atlas project doc
+  `climb-atlas-app-review.md`): (1) Escape in Pending-review / Logbook /
+  Log-a-session clicked the first `.btn-cancel`, i.e. Reject / Delete /
+  "+ Add a climb" — close controls now carry `data-modal-close`,
+  destructive buttons are `.btn-danger`. (2) `escapeHtml` didn't escape
+  quotes and `state`/`country`/ids were interpolated raw in the moderator
+  panel, reachable by anonymous `pending_edits` inserts — all escaped,
+  inline `onclick` replaced by `data-popup-action` delegation, photo links
+  validated as http(s). (3) CDN tags lacked `crossorigin`, so the SW
+  cached nothing and the offline shell couldn't boot; SW cache v2 and only
+  the public approved-spots read is cached. (4) `created_at`/`community`/
+  `edited`/`id` were client-writable (rate-limit bypass) — `before insert`
+  trigger pins them; `updated_at` trigger; indexes. (5) Auth events for an
+  unchanged user no longer re-render (was racing `loadSpots()` on boot).
+  (6) Goat app icon (PNG 180/192/512 + SVG), apple-touch-icon and
+  apple-mobile-web-app meta, `viewport-fit=cover`, `100dvh` shell.
+- **Verified** (served copy, CDN libs served from local node_modules,
+  Supabase/tiles blocked → offline fallback path): count 1854; Escape in a
+  modal with a Reject button above Close clicks Close (0 rejects); zero
+  `[onclick]` elements; delegated popup actions open the auth / report /
+  edit modals for the right spot and Escape closes each; `.app` height is
+  the viewport (dvh); all five CDN tags `crossorigin="anonymous"`; no page
+  errors.
+- **Not verified here**: a real service-worker offline reload, the RLS
+  trigger against the live project, iOS home-screen install. Also still
+  open from the audit: seed ids are array indices (H3 — needs a stable id
+  scheme before the next re-seed), `pending_edits`/`reports` accept
+  anonymous inserts (M2), offline banner copy (M6).
+
+
 ### UI/UX redesign — Stage H: polish, copy, cleanup (final stage)
 - Branch: `feature/polish-copy-cleanup` — committed, merged to
   `master`, pushed.

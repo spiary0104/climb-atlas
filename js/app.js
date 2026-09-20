@@ -1170,10 +1170,19 @@
     return true;
   }
 
+  // Escapes for BOTH text and attribute context. The old textContent→innerHTML
+  // trick only handled & < > — a value like `x" onerror="…` inside src="…" or
+  // data-id="…" went through untouched.
+  const HTML_ESCAPES = {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'};
   function escapeHtml(str){
-    const d = document.createElement('div');
-    d.textContent = str;
-    return d.innerHTML;
+    return String(str == null ? '' : str).replace(/[&<>"']/g, ch => HTML_ESCAPES[ch]);
+  }
+
+  // Only http(s) links are ever rendered as <img src> / <a href>. Anything else
+  // (javascript:, data:, a bare word) is dropped rather than rendered.
+  function safeUrl(str){
+    const s = String(str || '').trim();
+    return /^https?:\/\/[^\s"'<>]+$/i.test(s) ? s : null;
   }
 
   // Deliberately just destination + lat/lng, no origin -- Google Maps fills
@@ -1187,21 +1196,39 @@
     const typeLabel = g.types.map(t=>TYPE_LABELS[t]).join(' · ');
     const climbed = climbedIds.has(g.id);
     const bookmarked = bookmarkedIds.has(g.id);
-    return `${g.photo?`<img class="popup-photo" src="${escapeHtml(g.photo)}" alt="${escapeHtml(g.name)}" onerror="this.style.display='none'">`:''}
+    const photo = safeUrl(g.photo);
+    const id = escapeHtml(g.id);
+    // No inline onclick handlers: the spot id is user-supplied text, so it goes
+    // in a data attribute and a single delegated listener (below) reads it back.
+    return `${photo?`<img class="popup-photo" src="${escapeHtml(photo)}" alt="${escapeHtml(g.name)}" onerror="this.style.display='none'">`:''}
        <div class="popup-name">${escapeHtml(g.name)}</div>
-       <div class="popup-meta">${escapeHtml(g.suburb)}, ${escapeHtml(stateLabel(g.country, g.state))} · ${typeLabel}${g.community?' · community-added':''}${g.edited?' · edited':''}</div>
+       <div class="popup-meta">${escapeHtml(g.suburb)}, ${escapeHtml(stateLabel(g.country, g.state))} · ${escapeHtml(typeLabel)}${g.community?' · community-added':''}${g.edited?' · edited':''}</div>
        ${g.address?`<div class="popup-address">${escapeHtml(g.address)}</div>`:''}
        ${g.notes?`<div style="font-size:12px;color:var(--text-dim)">${escapeHtml(g.notes)}</div>`:''}
        <div class="popup-actions">
-         <button class="mark-btn climbed-btn ${climbed?'active':''}" onclick="window.__toggleMark('${g.id}','climbed')">✓ Climbed</button>
-         <button class="mark-btn bookmark-btn ${bookmarked?'active':''}" onclick="window.__toggleMark('${g.id}','bookmarked')">★ Save</button>
+         <button class="mark-btn climbed-btn ${climbed?'active':''}" data-popup-action="climbed" data-spot-id="${id}">✓ Climbed</button>
+         <button class="mark-btn bookmark-btn ${bookmarked?'active':''}" data-popup-action="bookmarked" data-spot-id="${id}">★ Save</button>
        </div>
        <div class="popup-links">
          <a class="popup-directions-btn" href="${directionsUrl(g)}" target="_blank" rel="noopener noreferrer">📍 Directions</a>
-         <button class="popup-edit-btn" onclick="window.__editSpot('${g.id}')">Edit this spot</button>
+         <button class="popup-edit-btn" data-popup-action="edit" data-spot-id="${id}">Edit this spot</button>
        </div>
-       <button class="popup-report-btn" onclick="window.__reportSpot('${g.id}')">⚑ Report incorrect info</button>`;
+       <button class="popup-report-btn" data-popup-action="report" data-spot-id="${id}">⚑ Report incorrect info</button>`;
   }
+
+  // One delegated handler for every popup button, past and future — popups are
+  // re-rendered via setHTML so per-popup listeners would be lost anyway.
+  document.addEventListener('click', (e)=>{
+    const btn = e.target.closest('[data-popup-action]');
+    if(!btn) return;
+    const id = btn.dataset.spotId;
+    switch(btn.dataset.popupAction){
+      case 'climbed':
+      case 'bookmarked': toggleMark(id, btn.dataset.popupAction); break;
+      case 'edit': openEditModal(id); break;
+      case 'report': openReportModal(id); break;
+    }
+  });
 
   function render(){
     const list = document.getElementById('gymList');
@@ -1433,7 +1460,12 @@
     const open = [...document.querySelectorAll('.modal-backdrop')].filter(b=>!b.classList.contains('hidden')).pop();
     if(!open) return;
     if(e.key === 'Escape'){
-      const closeBtn = open.querySelector('.btn-cancel, .info-close');
+      // Only ever click an explicitly-marked close control. The old
+      // `.btn-cancel, .info-close` selector matched the first .btn-cancel in
+      // DOM order, which in the Pending-review and Logbook modals was a
+      // Reject / Delete button rendered above the real Close -- so Escape
+      // silently deleted the first item in the list.
+      const closeBtn = open.querySelector('[data-modal-close]');
       if(closeBtn){ e.preventDefault(); closeBtn.click(); }
     } else if(e.key === 'Tab'){
       const items = [...open.querySelectorAll('.modal ' + FOCUSABLE)].filter(el=>el.offsetParent !== null);
@@ -1602,13 +1634,12 @@
       console.error(err);
     }
   }
-  window.__toggleMark = toggleMark;
 
   // --- country/state dropdowns (shared by add + edit forms) ---
   function populateStateSelect(stateSelectId, country){
     const sel = document.getElementById(stateSelectId);
     const prevValue = sel.value;
-    sel.innerHTML = STATES_BY_COUNTRY[country].map(([code,label])=>`<option value="${code}">${label}</option>`).join('');
+    sel.innerHTML = STATES_BY_COUNTRY[country].map(([code,label])=>`<option value="${escapeHtml(code)}">${escapeHtml(label)}</option>`).join('');
     if(STATES_BY_COUNTRY[country].some(([code])=>code===prevValue)) sel.value = prevValue;
   }
   // "Other (not listed)" lets someone propose a country this map doesn't support
@@ -1758,7 +1789,11 @@
     const user = window.auth.user;
     if(!user){ showToast('Sign in to add a location'); closeModal(); openAuthModal(); return; }
     const {country, state} = getCountryState('f');
+    const fPhotoRaw = document.getElementById('fPhoto').value.trim();
+    if(fPhotoRaw && !safeUrl(fPhotoRaw)){ showToast('Photo link must start with http:// or https://'); return; }
     const gym = {
+      // The server-side trigger (schema.sql) replaces anything that isn't a
+      // 'community-<uuid>' id, so the Date.now() fallback is just a placeholder.
       id: 'community-' + (window.crypto && crypto.randomUUID ? crypto.randomUUID() : Date.now()),
       name: document.getElementById('fName').value.trim(),
       suburb: document.getElementById('fSuburb').value.trim(),
@@ -1767,7 +1802,7 @@
       types: selectedTypes(),
       address: document.getElementById('fAddress').value.trim() || null,
       notes: document.getElementById('fNotes').value.trim() || null,
-      photo: document.getElementById('fPhoto').value.trim() || null,
+      photo: fPhotoRaw || null,
       lat: placingPin.lat,
       lng: placingPin.lng,
       submitted_by: user.id,
@@ -1834,7 +1869,6 @@
     checkEditFormReady();
     editModalBackdrop.classList.remove('hidden');
   }
-  window.__editSpot = openEditModal;
 
   function closeEditModal(){
     editModalBackdrop.classList.add('hidden');
@@ -1878,6 +1912,8 @@
   document.getElementById('eSaveBtn').addEventListener('click', async ()=>{
     if(!currentEditId || !currentEditPin) return;
     if(!window.sb){ showToast('Supabase is not configured — see README.md'); return; }
+    const ePhotoRaw = document.getElementById('ePhoto').value.trim();
+    if(ePhotoRaw && !safeUrl(ePhotoRaw)){ showToast('Photo link must start with http:// or https://'); return; }
     const {country, state} = getCountryState('e');
     const proposal = {
       spot_id: currentEditId,
@@ -1888,7 +1924,7 @@
       types: selectedEditTypes(),
       address: document.getElementById('eAddress').value.trim() || null,
       notes: document.getElementById('eNotes').value.trim() || null,
-      photo: document.getElementById('ePhoto').value.trim() || null,
+      photo: ePhotoRaw || null,
       lat: currentEditPin.lat,
       lng: currentEditPin.lng
     };
@@ -1946,7 +1982,6 @@
     rSubmitBtn.disabled = true;
     reportModalBackdrop.classList.remove('hidden');
   }
-  window.__reportSpot = openReportModal;
 
   function closeReportModal(){
     reportModalBackdrop.classList.add('hidden');
@@ -2110,12 +2145,12 @@
     list.innerHTML = sessions.map(s=>{
       const climbs = s.session_climbs || [];
       const chips = climbs.map(c=>`<span class="climb-chip ${c.sent?'sent':''}">${TYPE_LABELS[c.climb_type]||c.climb_type} ${escapeHtml(c.grade)}${c.attempts>1?` ×${c.attempts}`:''}</span>`).join('');
-      return `<div class="session-item" data-id="${s.id}">
+      return `<div class="session-item" data-id="${escapeHtml(s.id)}">
         <div class="pending-kind">${escapeHtml(s.session_date)} · ${MOOD_EMOJI[s.mood]||''} ${escapeHtml(spotLabel(s.spot_id))}</div>
         ${chips ? `<div class="climb-chips">${chips}</div>` : '<div class="pending-notes">No climbs logged this session.</div>'}
         ${s.notes ? `<div class="pending-notes">${escapeHtml(s.notes)}</div>` : ''}
         <div class="pending-actions">
-          <button class="btn-cancel session-delete" data-id="${s.id}">Delete</button>
+          <button class="btn-danger session-delete" data-id="${escapeHtml(s.id)}">Delete</button>
         </div>
       </div>`;
     }).join('');
@@ -2179,7 +2214,7 @@
           <option value="lead-climbing" ${c.climb_type==='lead-climbing'?'selected':''}>Lead</option>
         </select>
         <input type="text" class="climb-grade" data-field="grade" placeholder="Grade, e.g. V2" value="${escapeHtml(c.grade||'')}">
-        <input type="number" class="climb-attempts" data-field="attempts" min="1" value="${c.attempts||1}" title="Attempts">
+        <input type="number" class="climb-attempts" data-field="attempts" min="1" value="${Number(c.attempts)||1}" title="Attempts">
         <label class="climb-sent"><input type="checkbox" data-field="sent" ${c.sent?'checked':''}> Sent</label>
         <button type="button" class="remove-climb-btn" title="Remove">✕</button>
       </div>`).join('');
@@ -2285,13 +2320,13 @@
       cards.push(`<div class="pending-item">
         <div class="pending-kind">New spot</div>
         <div class="popup-name">${escapeHtml(g.name)}</div>
-        <div class="popup-meta">${escapeHtml(g.suburb)}, ${g.state} (${g.country}) · ${g.types.map(t=>TYPE_LABELS[t]||t).join(' · ')}</div>
+        <div class="popup-meta">${escapeHtml(g.suburb)}, ${escapeHtml(g.state)} (${escapeHtml(g.country)}) · ${escapeHtml((g.types||[]).map(t=>TYPE_LABELS[t]||t).join(' · '))}</div>
         ${g.address?`<div class="pending-notes">${escapeHtml(g.address)}</div>`:''}
         ${g.notes?`<div class="pending-notes">${escapeHtml(g.notes)}</div>`:''}
-        ${g.photo?`<div class="pending-notes">Photo: <a href="${escapeHtml(g.photo)}" target="_blank" rel="noopener noreferrer">${escapeHtml(g.photo)}</a></div>`:''}
+        ${g.photo?`<div class="pending-notes">Photo: ${safeUrl(g.photo)?`<a href="${escapeHtml(safeUrl(g.photo))}" target="_blank" rel="noopener noreferrer">${escapeHtml(g.photo)}</a>`:escapeHtml(g.photo)+' (not a valid http link)'}</div>`:''}
         <div class="pending-actions">
-          <button class="btn-cancel pending-reject" data-kind="spot" data-id="${g.id}">Reject</button>
-          <button class="btn-submit pending-approve" data-kind="spot" data-id="${g.id}">Approve</button>
+          <button class="btn-danger pending-reject" data-kind="spot" data-id="${escapeHtml(g.id)}">Reject</button>
+          <button class="btn-submit pending-approve" data-kind="spot" data-id="${escapeHtml(g.id)}">Approve</button>
         </div>
       </div>`);
     });
@@ -2300,13 +2335,13 @@
       cards.push(`<div class="pending-item">
         <div class="pending-kind">Edit to ${escapeHtml(target?target.name:pe.spot_id)}</div>
         <div class="popup-name">${escapeHtml(pe.name)}</div>
-        <div class="popup-meta">${escapeHtml(pe.suburb)}, ${pe.state} (${pe.country}) · ${pe.types.map(t=>TYPE_LABELS[t]||t).join(' · ')}</div>
+        <div class="popup-meta">${escapeHtml(pe.suburb)}, ${escapeHtml(pe.state)} (${escapeHtml(pe.country)}) · ${escapeHtml((pe.types||[]).map(t=>TYPE_LABELS[t]||t).join(' · '))}</div>
         ${pe.address?`<div class="pending-notes">${escapeHtml(pe.address)}</div>`:''}
         ${pe.notes?`<div class="pending-notes">${escapeHtml(pe.notes)}</div>`:''}
-        ${pe.photo?`<div class="pending-notes">Photo: <a href="${escapeHtml(pe.photo)}" target="_blank" rel="noopener noreferrer">${escapeHtml(pe.photo)}</a></div>`:''}
+        ${pe.photo?`<div class="pending-notes">Photo: ${safeUrl(pe.photo)?`<a href="${escapeHtml(safeUrl(pe.photo))}" target="_blank" rel="noopener noreferrer">${escapeHtml(pe.photo)}</a>`:escapeHtml(pe.photo)+' (not a valid http link)'}</div>`:''}
         <div class="pending-actions">
-          <button class="btn-cancel pending-reject" data-kind="edit" data-id="${pe.id}">Reject</button>
-          <button class="btn-submit pending-approve" data-kind="edit" data-id="${pe.id}">Approve</button>
+          <button class="btn-danger pending-reject" data-kind="edit" data-id="${escapeHtml(pe.id)}">Reject</button>
+          <button class="btn-submit pending-approve" data-kind="edit" data-id="${escapeHtml(pe.id)}">Approve</button>
         </div>
       </div>`);
     });
@@ -2316,8 +2351,8 @@
         <div class="pending-kind">Report on ${escapeHtml(target?target.name:r.spot_id)}</div>
         <div class="pending-notes">${escapeHtml(r.message)}</div>
         <div class="pending-actions">
-          <button class="btn-cancel pending-dismiss" data-kind="report" data-id="${r.id}">Dismiss</button>
-          <button class="btn-submit pending-edit-spot" data-kind="report" data-spot-id="${r.spot_id}">Edit this spot</button>
+          <button class="btn-danger pending-dismiss" data-kind="report" data-id="${escapeHtml(r.id)}">Dismiss</button>
+          <button class="btn-submit pending-edit-spot" data-kind="report" data-spot-id="${escapeHtml(r.spot_id)}">Edit this spot</button>
         </div>
       </div>`);
     });
@@ -2435,17 +2470,29 @@
     // the count doesn't read "0" for the first second.
     document.getElementById('gymList').innerHTML = Array.from({length:6}, ()=>'<div class="skeleton-row" aria-hidden="true"><span></span><span></span></div>').join('');
     document.getElementById('countNum').textContent = '…';
-    await window.auth.init();
+    // supabase-js fires INITIAL_SESSION straight after subscribing, SIGNED_IN
+    // on every tab focus and TOKEN_REFRESHED hourly -- all with the same user.
+    // Without this guard each one re-ran the full reload + render(), which on
+    // first load raced loadSpots() (skeleton replaced by "No spots match")
+    // and on every tab switch closed any open popup.
+    let lastAuthUserId = null;
+    let spotsLoaded = false;
+    try{ await window.auth.init(); }catch(err){ console.warn('auth init failed, continuing signed-out', err); }
     window.auth.onChange(async (user)=>{
+      const uid = user ? user.id : null;
+      if(uid === lastAuthUserId) return;
+      lastAuthUserId = uid;
       renderAuthUI(user);
       await loadMarks();
       await checkModerator();
       await loadPending();
       renderPendingBadge();
-      render();
+      if(spotsLoaded) render();
       if(user) closeAuthModal();
     });
     await loadSpots();
+    spotsLoaded = true;
+    lastAuthUserId = window.auth.user ? window.auth.user.id : null;
     await loadMarks();
     await checkModerator();
     await loadPending();

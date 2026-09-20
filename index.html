@@ -2,22 +2,27 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Climb Atlas — community-sourced climbing map</title>
 <meta name="description" content="A community-sourced map of indoor climbing gyms — bouldering, top rope, and lead — across 40+ countries. Filter by region and type, save the gyms you've climbed, and help keep the map current.">
 <meta name="theme-color" content="#211f1b">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Climb Atlas">
 <meta property="og:title" content="Climb Atlas">
 <meta property="og:description" content="A community-sourced map of indoor climbing gyms — bouldering, top rope, and lead — across 40+ countries.">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23211f1b'/%3E%3Cpath d='M16 5c5 0 8 4 8 8.5S20 26 16 27c-4-1-8-9.5-8-13.5S11 5 16 5z' fill='%23b8834a'/%3E%3C/svg%3E">
+<link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
 <link rel="manifest" href="manifest.json">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://unpkg.com">
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="preconnect" href="https://basemaps.cartocdn.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.css" crossorigin="anonymous">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -1089,7 +1094,7 @@
     </div>
     <p class="form-hint" id="fFormHint" aria-live="polite"></p>
     <div class="modal-actions">
-      <button class="btn-cancel" id="cancelBtn">Cancel</button>
+      <button class="btn-cancel" id="cancelBtn" data-modal-close>Cancel</button>
       <button class="btn-submit" id="submitBtn" disabled>Add to map</button>
     </div>
   </div>
@@ -1266,7 +1271,7 @@
     </div>
     <p class="form-hint" id="eFormHint" aria-live="polite"></p>
     <div class="modal-actions">
-      <button class="btn-cancel" id="eCancelBtn">Cancel</button>
+      <button class="btn-cancel" id="eCancelBtn" data-modal-close>Cancel</button>
       <button class="btn-submit" id="eSaveBtn">Save changes</button>
     </div>
     <button id="eRevertBtn" style="margin-top:10px;width:100%;background:transparent;border:1px dashed var(--border);color:var(--text-dim);padding:8px;border-radius:7px;font-family:'Space Mono',monospace;font-size:11.5px;cursor:pointer;display:none;">Revert to original data</button>
@@ -1282,7 +1287,7 @@
       <textarea id="rMessage" placeholder="e.g. This gym closed down in 2025 / wrong suburb / name is misspelled"></textarea>
     </div>
     <div class="modal-actions">
-      <button class="btn-cancel" id="rCancelBtn">Cancel</button>
+      <button class="btn-cancel" id="rCancelBtn" data-modal-close>Cancel</button>
       <button class="btn-submit" id="rSubmitBtn" disabled>Send report</button>
     </div>
   </div>
@@ -1300,7 +1305,7 @@
     </div>
     <div id="authStatus" class="auth-status"></div>
     <div class="modal-actions">
-      <button class="btn-cancel" id="authCancelBtn">Cancel</button>
+      <button class="btn-cancel" id="authCancelBtn" data-modal-close>Cancel</button>
       <button class="btn-submit" id="sendMagicLinkBtn">Send magic link</button>
     </div>
   </div>
@@ -1312,7 +1317,7 @@
     <div class="sub">Private to your account — a diary of sessions and the climbs you logged during each one.</div>
     <button class="add-btn" id="addSessionBtn" style="margin-bottom:14px;">+ Log a session</button>
     <div id="logbookList" class="session-list"></div>
-    <div class="close-row"><button class="btn-submit info-close" style="padding:8px 18px;">Close</button></div>
+    <div class="close-row"><button class="btn-submit info-close" data-modal-close style="padding:8px 18px;">Close</button></div>
   </div>
 </div>
 
@@ -1350,7 +1355,7 @@
       <textarea id="sNotes" placeholder="How did it feel? Anything to remember for next time?"></textarea>
     </div>
     <div class="modal-actions">
-      <button class="btn-cancel" id="sCancelBtn">Cancel</button>
+      <button class="btn-cancel" id="sCancelBtn" data-modal-close>Cancel</button>
       <button class="btn-submit" id="sSaveBtn">Save session</button>
     </div>
   </div>
@@ -1361,7 +1366,7 @@
     <h2 id="dlg-pending-review">Pending review</h2>
     <div class="sub">New spots and edits submitted by the community, awaiting approval.</div>
     <div id="pendingList" class="pending-list"></div>
-    <div class="close-row"><button class="btn-submit info-close" style="padding:8px 18px;">Close</button></div>
+    <div class="close-row"><button class="btn-submit info-close" data-modal-close style="padding:8px 18px;">Close</button></div>
   </div>
 </div>
 
@@ -1386,7 +1391,7 @@
     <h3>Changes to this policy</h3>
     <p>This policy may be updated as the site adds features like accounts, analytics, or advertising. Material changes will be reflected here with an updated date.</p>
 
-    <div class="close-row"><button class="btn-submit info-close" style="padding:8px 18px;">Close</button></div>
+    <div class="close-row"><button class="btn-submit info-close" data-modal-close style="padding:8px 18px;">Close</button></div>
   </div>
 </div>
 
@@ -1421,13 +1426,13 @@
     <h3>Contact &amp; jurisdiction</h3>
     <p>Questions: <a href="mailto:climbatlas0104@gmail.com">climbatlas0104@gmail.com</a>. These terms are governed by the laws of New South Wales, Australia.</p>
 
-    <div class="close-row"><button class="btn-submit info-close" style="padding:8px 18px;">Close</button></div>
+    <div class="close-row"><button class="btn-submit info-close" data-modal-close style="padding:8px 18px;">Close</button></div>
   </div>
 </div>
 
-<script src="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.js"></script>
-<script src="https://unpkg.com/supercluster@8/dist/supercluster.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/supercluster@8/dist/supercluster.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js" crossorigin="anonymous"></script>
 <script src="js/supabase-init.js"></script>
 <script src="js/auth.js"></script>
 <!-- js/data.js (the bundled seed dataset) is loaded on demand by app.js

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Concept 2: "Summit" — minimal geometric goat face; horns double as mountain peaks -->
+  <rect width="512" height="512" rx="114" fill="#211f1b"/>
+  <!-- horns as peaks -->
+  <path d="M196 236 C150 200 140 130 186 96 C176 140 190 190 230 226 Z" fill="#ff8a3d"/>
+  <path d="M316 236 C362 200 372 130 326 96 C336 140 322 190 282 226 Z" fill="#ff8a3d"/>
+  <path d="M186 96 C178 112 176 126 180 138 C190 128 198 116 196 100 Z" fill="#f5f0e8"/>
+  <path d="M326 96 C334 112 336 126 332 138 C322 128 314 116 316 100 Z" fill="#f5f0e8"/>
+  <!-- face -->
+  <path d="M256 210 C334 210 376 262 376 326 C376 386 332 420 256 420 C180 420 136 386 136 326 C136 262 178 210 256 210 Z" fill="#f5f0e8"/>
+  <!-- ears -->
+  <path d="M142 296 C104 276 78 288 72 314 C104 326 134 322 152 308 Z" fill="#f5f0e8"/>
+  <path d="M370 296 C408 276 434 288 440 314 C408 326 378 322 360 308 Z" fill="#f5f0e8"/>
+  <!-- eyes -->
+  <circle cx="218" cy="312" r="16" fill="#211f1b"/>
+  <circle cx="294" cy="312" r="16" fill="#211f1b"/>
+  <!-- nose -->
+  <path d="M242 356 Q256 348 270 356 L256 372 Z" fill="#211f1b"/>
+  <!-- goatee -->
+  <path d="M242 420 L256 452 L270 420 Z" fill="#e6dccb"/>
+  <!-- ground line -->
+  <path d="M120 470 Q256 452 392 470" fill="none" stroke="#ff8a3d" stroke-width="10" stroke-linecap="round" opacity="0.8"/>
+</svg>

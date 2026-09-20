@@ -71,6 +71,60 @@ alter table public.spots add column if not exists address text;
 -- those) and for anything inserted before this column existed.
 alter table public.spots add column if not exists submitted_by uuid references auth.users(id);
 
+-- Pin the columns a community submission must not control. The INSERT policy
+-- below forces `status`/`submitted_by`, but `created_at`, `community`, `edited`
+-- and `id` were all client-writable: a tampered client could backdate
+-- `created_at` to dodge the 10/day rate limit (which counts on it), or set
+-- `community = false` so its submission rendered as seed data once approved.
+-- Seeding via the SQL Editor runs as `postgres`, so `auth.uid()` is null there
+-- and the trigger leaves those rows alone — the seed script keeps working.
+create or replace function public.pin_community_submission()
+returns trigger
+language plpgsql
+set search_path = public
+as $$
+begin
+  if auth.uid() is not null then
+    new.created_at   := now();
+    new.updated_at   := now();
+    new.community    := true;
+    new.edited       := false;
+    new.status       := 'pending';
+    new.submitted_by := auth.uid();
+    -- Client ids must look like our own 'community-<uuid>' scheme; anything
+    -- else (an injected string, a spoofed 'seed-N') is replaced server-side.
+    if new.id is null or new.id !~ '^community-[0-9a-f-]{36}$' then
+      new.id := 'community-' || gen_random_uuid()::text;
+    end if;
+  end if;
+  return new;
+end;
+$$;
+
+drop trigger if exists spots_pin_community_submission on public.spots;
+create trigger spots_pin_community_submission
+  before insert on public.spots
+  for each row execute function public.pin_community_submission();
+
+-- Keep updated_at honest on every UPDATE (moderator approvals, edit merges).
+create or replace function public.touch_updated_at()
+returns trigger language plpgsql as $$
+begin
+  new.updated_at := now();
+  return new;
+end;
+$$;
+drop trigger if exists spots_touch_updated_at on public.spots;
+create trigger spots_touch_updated_at
+  before update on public.spots
+  for each row execute function public.touch_updated_at();
+
+-- Indexes for the hot RLS paths: the public map read, the per-user
+-- rate-limit subquery (which otherwise seq-scans on every insert), and the
+-- moderator queue joins.
+create index if not exists spots_status_idx on public.spots (status);
+create index if not exists spots_submitted_by_created_at_idx on public.spots (submitted_by, created_at);
+
 alter table public.spots enable row level security;
 
 -- Moderation model: the public only ever sees approved spots. Only a signed-in user
@@ -369,3 +423,9 @@ create policy "users can delete climbs on their own sessions"
 
 create index if not exists session_climbs_session_id_idx on public.session_climbs (session_id);
 create index if not exists session_climbs_route_id_idx on public.session_climbs (route_id);
+
+-- ---------------------------------------------------------------------------
+-- Indexes for the moderation-queue lookups (added with the audit fixes).
+-- ---------------------------------------------------------------------------
+create index if not exists pending_edits_spot_id_idx on public.pending_edits (spot_id);
+create index if not exists reports_spot_id_idx on public.reports (spot_id);

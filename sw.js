@@ -2,7 +2,7 @@
 //
 // Bump CACHE_VERSION whenever a precached file's content changes so
 // clients pick up the new version instead of serving stale files forever.
-const CACHE_VERSION = 'v1';
+const CACHE_VERSION = 'v2';
 const SHELL_CACHE = 'climbatlas-shell-' + CACHE_VERSION;
 const RUNTIME_CACHE = 'climbatlas-runtime-' + CACHE_VERSION;
 const TILE_CACHE = 'climbatlas-tiles-' + CACHE_VERSION;
@@ -17,7 +17,9 @@ const SHELL_FILES = [
   'js/supabase-init.js',
   'js/auth.js',
   'js/app.js',
-  'icons/icon.svg'
+  'icons/icon.svg',
+  'icons/favicon.svg',
+  'icons/icon-192.png'
 ];
 
 // Hosts whose responses are map tiles/sprites/glyphs -- worth caching
@@ -100,7 +102,11 @@ self.addEventListener('fetch', (event) => {
   // Supabase data reads (spots, marks, etc.): try the network for freshness,
   // fall back to the last-seen response when offline.
   if (url.hostname.endsWith(SUPABASE_HOST_SUFFIX) && url.pathname.startsWith('/rest/')) {
-    event.respondWith(networkFirst(request, DATA_CACHE));
+    // Only the public approved-spots read is worth keeping offline. Per-user
+    // tables (marks, sessions, moderator queue) are private and must not sit
+    // in Cache Storage after sign-out on a shared device.
+    const isPublicSpotsRead = /\/rest\/v1\/spots\b/.test(url.pathname) && /status=eq\.approved/.test(url.search) && !/submitted_by=/.test(url.search);
+    if (isPublicSpotsRead) event.respondWith(networkFirst(request, DATA_CACHE));
     return;
   }
 

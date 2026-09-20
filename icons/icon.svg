@@ -1,4 +1,45 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-<rect width="512" height="512" rx="96" fill="#211f1b"/>
-<path d="M256 80c80 0 128 64 128 136S320 416 256 432c-64 -16 -128 -152 -128 -216S176 80 256 80z" fill="#b8834a"/>
+  <!-- Concept 1: "Top-out" — goat head peeking over the bottom edge, hooves gripping -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ff8a3d"/>
+      <stop offset="1" stop-color="#e85d1f"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="114" fill="url(#bg)"/>
+  <!-- distant peaks -->
+  <path d="M0 330 L90 210 L150 280 L230 150 L320 270 L390 200 L512 330 Z" fill="#ffffff" opacity="0.14"/>
+  <!-- rock ledge the goat grips -->
+  <path d="M0 400 Q120 372 256 380 Q392 388 512 396 L512 512 L0 512 Z" fill="#5a3a2a"/>
+  <path d="M0 400 Q120 372 256 380 Q392 388 512 396 L512 412 Q392 404 256 396 Q120 388 0 416 Z" fill="#7a5040"/>
+  <!-- horns -->
+  <path d="M170 236 C150 190 160 140 200 122 C186 160 186 200 200 232 Z" fill="#c9a26b"/>
+  <path d="M342 236 C362 190 352 140 312 122 C326 160 326 200 312 232 Z" fill="#c9a26b"/>
+  <!-- ears -->
+  <ellipse cx="146" cy="262" rx="42" ry="22" transform="rotate(-20 146 262)" fill="#f5f0e8"/>
+  <ellipse cx="366" cy="262" rx="42" ry="22" transform="rotate(20 366 262)" fill="#f5f0e8"/>
+  <ellipse cx="150" cy="264" rx="26" ry="12" transform="rotate(-20 150 264)" fill="#f7b3a4"/>
+  <ellipse cx="362" cy="264" rx="26" ry="12" transform="rotate(20 362 264)" fill="#f7b3a4"/>
+  <!-- head -->
+  <path d="M256 200 C330 200 372 250 372 320 C372 372 330 404 256 404 C182 404 140 372 140 320 C140 250 182 200 256 200 Z" fill="#f5f0e8"/>
+  <!-- tuft -->
+  <path d="M228 210 C236 186 250 178 256 196 C262 178 276 186 284 210 Z" fill="#f5f0e8"/>
+  <!-- eyes -->
+  <circle cx="218" cy="298" r="20" fill="#2b2118"/>
+  <circle cx="294" cy="298" r="20" fill="#2b2118"/>
+  <circle cx="225" cy="290" r="7" fill="#fff"/>
+  <circle cx="301" cy="290" r="7" fill="#fff"/>
+  <!-- blush -->
+  <ellipse cx="180" cy="336" rx="18" ry="10" fill="#f7b3a4" opacity="0.9"/>
+  <ellipse cx="332" cy="336" rx="18" ry="10" fill="#f7b3a4" opacity="0.9"/>
+  <!-- nose + smile -->
+  <path d="M242 340 Q256 332 270 340 Q262 356 256 356 Q250 356 242 340 Z" fill="#2b2118"/>
+  <path d="M236 364 Q256 380 276 364" fill="none" stroke="#2b2118" stroke-width="7" stroke-linecap="round"/>
+  <!-- goatee -->
+  <path d="M244 404 L256 428 L268 404 Z" fill="#e6dccb"/>
+  <!-- hooves gripping ledge -->
+  <rect x="128" y="376" width="58" height="42" rx="20" fill="#f5f0e8"/>
+  <rect x="326" y="376" width="58" height="42" rx="20" fill="#f5f0e8"/>
+  <rect x="137" y="402" width="40" height="16" rx="8" fill="#2b2118"/>
+  <rect x="335" y="402" width="40" height="16" rx="8" fill="#2b2118"/>
 </svg>

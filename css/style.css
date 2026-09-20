@@ -445,7 +445,9 @@
     font-family:var(--font-body);
     overflow:hidden;
   }
-  .app{display:flex;flex-direction:column;height:100vh;}
+  /* dvh: on iOS Safari 100vh is the *large* viewport, so the bottom ~80px
+     (legend, zoom controls, attribution) sat behind the browser chrome. */
+  .app{display:flex;flex-direction:column;height:100vh;height:100dvh;}
 
   /* --- Buttons ---------------------------------------------------------
      One base + three tiers. Primary is the single accent-filled action on
@@ -1203,6 +1205,11 @@
   .modal-actions button:active:not(:disabled){transform:scale(0.98);}
   .btn-cancel{background:transparent;color:var(--text-dim);}
   .btn-cancel:hover{border-color:var(--text-dim);color:var(--text);}
+  /* Destructive actions (Reject / Delete / Dismiss). Deliberately NOT
+     .btn-cancel: the Escape-to-close handler used to click the first
+     .btn-cancel in the modal, which in list modals was one of these. */
+  .btn-danger{background:transparent;color:var(--danger);border-color:transparent;}
+  .btn-danger:hover{border-color:var(--danger);}
   .btn-submit{background:var(--accent);color:var(--accent-ink);border-color:transparent;}
   .btn-submit:hover:not(:disabled){filter:brightness(1.08);}
   .btn-submit:disabled{opacity:0.4;cursor:not-allowed;}
