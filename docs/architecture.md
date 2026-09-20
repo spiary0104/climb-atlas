@@ -108,11 +108,11 @@ are only unique within a country** (e.g. AU's `WA` vs US's `WA` are
 different regions). Anything that filters, colors, or edits by state —
 the chips in `index.html`, `STATES_BY_COUNTRY` in `app.js`, the RLS-safe
 columns in `schema.sql` — keys off the `(country, state)` pair together,
-never `state` alone. Now 80 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
+never `state` alone. Now 84 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
 FR, SE, NL, IT, BE, KR, ES, PT, AT, CH, PL, DK, FI, IE, NO, MX, BR, HU, GR,
 CZ, IS, RO, HR, RU, BG, AR, PH, CO, CL, VE, IN, IL, ID, TW, ZA, EC, VN, LT,
 RS, BO, IR, EE, MY, TH, UA, SK, CY, PA, PE, TR, LV, SG, BA, AD, AE, GE,
-LU, SI, CR, KZ, BY, UY, SA, HK, EG, QA, KE, GT, AM, LB, JO, NP), same pattern each time — keep this in mind before adding an 81st. One collision
+LU, SI, CR, KZ, BY, UY, SA, HK, EG, QA, KE, GT, AM, LB, JO, NP, ME, MN, OM, PY), same pattern each time — keep this in mind before adding an 85th. One collision
 worth flagging: `US`'s state code for California is `CA`, and `CA` is
 also the top-level country code for Canada — not a real ambiguity since
 they're different object keys/fields (`STATES_BY_COUNTRY.US` contains
@@ -5073,6 +5073,63 @@ from one source:
     text; the country `<option>`s are present in both forms and the state dropdowns
     populate 22/11/8/12/7; no console errors beyond the forced Supabase ones; no
     horizontal overflow at 375px with everything expanded.
+  - **Not yet pushed to the live Supabase table** — same next-step gap as
+    every prior batch.
+- **Montenegro (2 gyms), Mongolia (2), Oman (2), and Paraguay (2) — the 81st-84th
+  countries**, added on request ("keep going"). Ten countries were researched in
+  parallel (Kuwait, Bahrain, Oman, the Dominican Republic, Honduras, Paraguay, Pakistan,
+  Mongolia, Moldova, Montenegro, North Macedonia, Albania) and the four with 2 verified
+  gyms each were taken, following the Latvia and Singapore precedent. Left out, by the
+  project's standard that one confirmed gym is not enough to seed a country: Kuwait (1,
+  Ascend Rock Climbing Center, high confidence), Bahrain (1, The Crag, whose indoor status
+  is unresolved), Moldova (1, Chisinau Bouldering Project), North Macedonia (1, Boulder
+  Bar Skopje) and Albania (1, Rock Tirana), plus Pakistan, the Dominican Republic and
+  Honduras with none. Any of those five singles can be added as soon as a second gym is
+  found there. Still open from earlier rounds: Uzbekistan (1), Azerbaijan (1), Morocco (1)
+  and Sri Lanka (0).
+  - **Directories were empty or stale again**: boulderinglist.com has no page for Oman,
+    Kuwait, Bahrain, Mongolia or Honduras, and lists 0 gyms for the Dominican Republic;
+    indoorclimbing.com's Oman page 404s; climbing-gyms.com says no Dominican or
+    Honduran gyms exist. Sources are each gym's own site, Instagram, press (Oman Observer,
+    Rafiki, Walltopia project pages) and map listings.
+  - **Excluded, and why**: Oman's Muscat Climbing Centre (no 2025-26 activity, partly a wall
+    builder) and "The Wall" at Muscat Diving and Adventure Centre (undated, no address);
+    Paraguay had no other candidates; Mongolia's Wall Climbing Mongolia (no indoor venue
+    found); Montenegro's Nikšić club room (no current evidence); Pakistan's ClimbX and
+    Climbing Arena (likely outdoor towers, "indoor" only from templated directory copy);
+    the Dominican Republic's "El 10" (a numbered outdoor sector) and a 2008-only
+    Gold's Gym wall; Honduras's UNAH wall (2015 database entry only).
+  - **Type applied only from direct evidence**: Adventure World (Oman) is bouldering +
+    top-rope, with the lead and auto-belay claim on Platinumlist left off as a single
+    aggregator; Outward Bound Oman is top-rope only from its climb/belay sessions. MAK
+    Podgorica's lead tag is inferred from "sport climbing" courses on an 8 m wall, and
+    Club de Escalada's from "escalada deportiva", both per the project's sport-climbing =
+    lead convention and both flagged in the entry.
+  - **Access and precision caveats kept in the entries**: Outward Bound Oman is group
+    bookings only (up to 9, ages 10+); Adventure World has mandatory first-timer instruction
+    and women-only sessions; Encanto and CLIMB Partner (Mongolia) rest on undated or
+    2024 evidence. Approximate positions: Club de Escalada (about 1 km, house number
+    unresolved), CLIMB Partner (street level, district conflicting), Outward Bound
+    (about 1 km), Adventure World (mall centroid, about 150 m).
+  - **Traps caught**: Nominatim's "Al Khoud" result is in Al Hail, about 6 km from the
+    real Al Khoud 6; Walltopia calls La Roca "La Roca Asuncion" but it is in Luque;
+    "Encanto Sport Complex" also matches a Phoenix sports centre; Oman's mall is named both
+    Muscat Mall and Mall of Muscat. Searching "Oman" matches "Romania" as a substring, so
+    the search count for it is inflated (the chip filter is exact).
+  - `state` lists are complete from the start: Montenegro's 25 municipalities, Mongolia's
+    Ulaanbaatar plus 21 aimags, Oman's 11 governorates and Paraguay's Asuncion plus 17
+    departments. Chips exist only where there is a spot: 2 Montenegrin, 1 Mongolian, 1
+    Omani, 2 Paraguayan. Mongolia and Oman go under Asia, Montenegro under Europe and
+    Paraguay under South America; the region fly-targets were not widened.
+  - Net result: 1854 -> **1862 total spots**. Structural check (Node-parsed
+    `window.SEED_GYMS`): 1862/1862 unique ids, zero duplicate
+    name+suburb+state+country combos, every spot has a non-empty `types`
+    array, every state code resolves.
+  - **Verified** (offline-fallback-forcing method, `js/supabase-init.js`
+    reverted and confirmed clean): count reads 1862; all 6 new chips filter to the right
+    counts with legible active text; the country `<option>`s are present in both forms and
+    the state dropdowns populate 25/22/11/18; no console errors beyond the forced
+    Supabase ones; no horizontal overflow at 375px with everything expanded.
   - **Not yet pushed to the live Supabase table** — same next-step gap as
     every prior batch.
 

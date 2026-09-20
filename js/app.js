@@ -608,10 +608,35 @@
          ['IZABAL','Izabal'],['JALAPA','Jalapa'],['JUTIAPA','Jutiapa'],['PETEN','Petén'],
          ['QUETZALTENANGO','Quetzaltenango'],['QUICHE','Quiché'],['RETALHULEU','Retalhuleu'],['SACATEPEQUEZ','Sacatepéquez'],
          ['SAN_MARCOS','San Marcos'],['SANTA_ROSA','Santa Rosa'],['SOLOLA','Sololá'],['SUCHITEPEQUEZ','Suchitepéquez'],
-         ['TOTONICAPAN','Totonicapán'],['ZACAPA','Zacapa']]
+         ['TOTONICAPAN','Totonicapán'],['ZACAPA','Zacapa']],
+    // Montenegro's 25 municipalities.
+    ME: [['ANDRIJEVICA','Andrijevica'],['BAR','Bar'],['BERANE','Berane'],['BIJELO_POLJE','Bijelo Polje'],
+         ['BUDVA','Budva'],['CETINJE','Cetinje'],['DANILOVGRAD','Danilovgrad'],['GUSINJE','Gusinje'],
+         ['HERCEG_NOVI','Herceg Novi'],['KOLASIN','Kolašin'],['KOTOR','Kotor'],['MOJKOVAC','Mojkovac'],
+         ['NIKSIC','Nikšić'],['PETNJICA','Petnjica'],['PLAV','Plav'],['PLUZINE','Plužine'],
+         ['PLJEVLJA','Pljevlja'],['PODGORICA','Podgorica'],['ROZAJE','Rožaje'],['SAVNIK','Šavnik'],
+         ['TIVAT','Tivat'],['TUZI','Tuzi'],['ULCINJ','Ulcinj'],['ZABLJAK','Žabljak'],
+         ['ZETA','Zeta']],
+    // Mongolia: Ulaanbaatar plus the 21 aimags.
+    MN: [['ULAANBAATAR','Ulaanbaatar'],['ARKHANGAI','Arkhangai'],['BAYAN_OLGII','Bayan-Ölgii'],['BAYANKHONGOR','Bayankhongor'],
+         ['BULGAN','Bulgan'],['DARKHAN_UUL','Darkhan-Uul'],['DORNOD','Dornod'],['DORNOGOVI','Dornogovi'],
+         ['DUNDGOVI','Dundgovi'],['GOVI_ALTAI','Govi-Altai'],['GOVISUMBER','Govisümber'],['KHENTII','Khentii'],
+         ['KHOVD','Khovd'],['KHOVSGOL','Khövsgöl'],['ORKHON','Orkhon'],['OVORKHANGAI','Övörkhangai'],
+         ['OMNOGOVI','Ömnögovi'],['SELENGE','Selenge'],['SUKHBAATAR','Sükhbaatar'],['TOV','Töv'],
+         ['UVS','Uvs'],['ZAVKHAN','Zavkhan']],
+    // Oman's 11 governorates.
+    OM: [['MUSCAT','Muscat'],['DHOFAR','Dhofar'],['MUSANDAM','Musandam'],['AL_BURAIMI','Al Buraimi'],
+         ['AD_DAKHILIYAH','Ad Dakhiliyah'],['AL_BATINAH_NORTH','Al Batinah North'],['AL_BATINAH_SOUTH','Al Batinah South'],['ASH_SHARQIYAH_NORTH','Ash Sharqiyah North'],
+         ['ASH_SHARQIYAH_SOUTH','Ash Sharqiyah South'],['AD_DHAHIRAH','Ad Dhahirah'],['AL_WUSTA','Al Wusta']],
+    // Paraguay: the Asuncion capital district plus 17 departments.
+    PY: [['ASUNCION','Asunción'],['CONCEPCION','Concepción'],['SAN_PEDRO','San Pedro'],['CORDILLERA','Cordillera'],
+         ['GUAIRA','Guairá'],['CAAGUAZU','Caaguazú'],['CAAZAPA','Caazapá'],['ITAPUA','Itapúa'],
+         ['MISIONES','Misiones'],['PARAGUARI','Paraguarí'],['ALTO_PARANA','Alto Paraná'],['CENTRAL','Central'],
+         ['NEEMBUCU','Ñeembucú'],['AMAMBAY','Amambay'],['CANINDEYU','Canindeyú'],['PRESIDENTE_HAYES','Presidente Hayes'],
+         ['BOQUERON','Boquerón'],['ALTO_PARAGUAY','Alto Paraguay']]
   };
   const TYPE_LABELS = {'indoor-bouldering':'Indoor bouldering','top-rope':'Top rope','lead-climbing':'Lead climbing'};
-  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy', BE:'Belgium', KR:'South Korea', ES:'Spain', PT:'Portugal', AT:'Austria', CH:'Switzerland', PL:'Poland', DK:'Denmark', FI:'Finland', IE:'Ireland', NO:'Norway', MX:'Mexico', BR:'Brazil', HU:'Hungary', GR:'Greece', CZ:'Czech Republic', IS:'Iceland', RO:'Romania', HR:'Croatia', RU:'Russia', BG:'Bulgaria', AR:'Argentina', PH:'Philippines', CO:'Colombia', CL:'Chile', VE:'Venezuela', IN:'India', IL:'Israel', ID:'Indonesia', TW:'Taiwan', ZA:'South Africa', EC:'Ecuador', VN:'Vietnam', LT:'Lithuania', RS:'Serbia', BO:'Bolivia', IR:'Iran', EE:'Estonia', MY:'Malaysia', TH:'Thailand', UA:'Ukraine', SK:'Slovakia', CY:'Cyprus', PA:'Panama', PE:'Peru', TR:'Turkey', LV:'Latvia', SG:'Singapore', BA:'Bosnia and Herzegovina', AD:'Andorra', AE:'United Arab Emirates', GE:'Georgia', LU:'Luxembourg', SI:'Slovenia', KZ:'Kazakhstan', CR:'Costa Rica', BY:'Belarus', UY:'Uruguay', SA:'Saudi Arabia', HK:'Hong Kong', EG:'Egypt', KE:'Kenya', QA:'Qatar', AM:'Armenia', LB:'Lebanon', JO:'Jordan', NP:'Nepal', GT:'Guatemala'};
+  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy', BE:'Belgium', KR:'South Korea', ES:'Spain', PT:'Portugal', AT:'Austria', CH:'Switzerland', PL:'Poland', DK:'Denmark', FI:'Finland', IE:'Ireland', NO:'Norway', MX:'Mexico', BR:'Brazil', HU:'Hungary', GR:'Greece', CZ:'Czech Republic', IS:'Iceland', RO:'Romania', HR:'Croatia', RU:'Russia', BG:'Bulgaria', AR:'Argentina', PH:'Philippines', CO:'Colombia', CL:'Chile', VE:'Venezuela', IN:'India', IL:'Israel', ID:'Indonesia', TW:'Taiwan', ZA:'South Africa', EC:'Ecuador', VN:'Vietnam', LT:'Lithuania', RS:'Serbia', BO:'Bolivia', IR:'Iran', EE:'Estonia', MY:'Malaysia', TH:'Thailand', UA:'Ukraine', SK:'Slovakia', CY:'Cyprus', PA:'Panama', PE:'Peru', TR:'Turkey', LV:'Latvia', SG:'Singapore', BA:'Bosnia and Herzegovina', AD:'Andorra', AE:'United Arab Emirates', GE:'Georgia', LU:'Luxembourg', SI:'Slovenia', KZ:'Kazakhstan', CR:'Costa Rica', BY:'Belarus', UY:'Uruguay', SA:'Saudi Arabia', HK:'Hong Kong', EG:'Egypt', KE:'Kenya', QA:'Qatar', AM:'Armenia', LB:'Lebanon', JO:'Jordan', NP:'Nepal', GT:'Guatemala', ME:'Montenegro', MN:'Mongolia', OM:'Oman', PY:'Paraguay'};
   // Fixed camera target per country for the "fly to this country" click on
   // its sidebar label -- picked to frame that country's actual spread of
   // seed spots (e.g. US needs a wide zoom to fit both NY and CA), not a
@@ -697,23 +722,27 @@
     LB: {center:[35.5,33.8], zoom:8.4},
     JO: {center:[35.9,31.9], zoom:8.6},
     NP: {center:[84.6,27.95], zoom:7.0},
-    GT: {center:[-90.9,14.65], zoom:7.6}
+    GT: {center:[-90.9,14.65], zoom:7.6},
+    ME: {center:[19.0,42.43], zoom:8.8},
+    MN: {center:[106.92,47.89], zoom:9.4},
+    OM: {center:[58.14,23.62], zoom:9.4},
+    PY: {center:[-57.55,-25.28], zoom:9.0}
   };
   // Which sidebar region-group each country belongs to -- same grouping as
   // the `.region-group[data-region]` wrappers in index.html, kept here too
   // so the map's own continent-tier labels/fly-targets don't need to read
   // the DOM to know a country's continent.
   const COUNTRY_TO_REGION = {
-    CN:'asia', JP:'asia', KR:'asia', PH:'asia', IN:'asia', IL:'asia', ID:'asia', TW:'asia', VN:'asia', IR:'asia', MY:'asia', TH:'asia', SG:'asia', AE:'asia', GE:'asia', KZ:'asia', SA:'asia', HK:'asia', QA:'asia', AM:'asia', LB:'asia', JO:'asia', NP:'asia',
+    CN:'asia', JP:'asia', KR:'asia', PH:'asia', IN:'asia', IL:'asia', ID:'asia', TW:'asia', VN:'asia', IR:'asia', MY:'asia', TH:'asia', SG:'asia', AE:'asia', GE:'asia', KZ:'asia', SA:'asia', HK:'asia', QA:'asia', AM:'asia', LB:'asia', JO:'asia', NP:'asia', MN:'asia', OM:'asia',
     DE:'europe', GB:'europe', FR:'europe', SE:'europe', NL:'europe', IT:'europe', BE:'europe', LT:'europe',
     ES:'europe', PT:'europe', AT:'europe', CH:'europe', PL:'europe', DK:'europe', FI:'europe', IE:'europe',
     NO:'europe', HU:'europe', GR:'europe', CZ:'europe', IS:'europe',
     RO:'europe', HR:'europe', RU:'europe', BG:'europe', RS:'europe', EE:'europe', UA:'europe', SK:'europe',
-    CY:'europe', TR:'europe', LV:'europe', BA:'europe', AD:'europe', LU:'europe', SI:'europe', BY:'europe',
+    CY:'europe', TR:'europe', LV:'europe', BA:'europe', AD:'europe', LU:'europe', SI:'europe', BY:'europe', ME:'europe',
     CA:'north-america', US:'north-america', MX:'north-america', PA:'north-america', CR:'north-america', GT:'north-america',
     AU:'oceania', NZ:'oceania',
     BR:'south-america', AR:'south-america', CO:'south-america', CL:'south-america', VE:'south-america',
-    EC:'south-america', BO:'south-america', PE:'south-america', UY:'south-america',
+    EC:'south-america', BO:'south-america', PE:'south-america', UY:'south-america', PY:'south-america',
     ZA:'africa', EG:'africa', KE:'africa'
   };
   const REGION_LABELS = {asia:'Asia', europe:'Europe', 'north-america':'North America', oceania:'Oceania', 'south-america':'South America', africa:'Africa'};

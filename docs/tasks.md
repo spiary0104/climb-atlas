@@ -3841,6 +3841,19 @@ _(none)_
 
 ## Done (recent)
 
+### Add Montenegro, Mongolia, Oman and Paraguay (8 gyms, 81st-84th countries)
+- Status: done — committed directly to `master`.
+- What: user said "keep going". Ten countries were researched in parallel; the four with 2
+  verified gyms each were taken. Five countries with 1 verified gym (Kuwait, Bahrain,
+  Moldova, North Macedonia, Albania) and three with none (Pakistan, Dominican Republic,
+  Honduras) were left out. Full detail in `docs/architecture.md` "Seed data sourcing".
+- Several entries are lower confidence and say so (Club de Escalada, CLIMB Partner,
+  Outward Bound Oman, MAK Podgorica, Boka Place).
+- Net result: 1854 -> **1862 total spots**. Structural check and offline
+  verification passed.
+- **Not yet done**: running the regenerated seed SQL against the live
+  Supabase table.
+
 ### Add Guatemala, Armenia, Lebanon, Jordan and Nepal (14 gyms, 76th-80th countries)
 - Status: done — committed directly to `master`.
 - What: user said "keep going". Six countries were researched in parallel; Uzbekistan
