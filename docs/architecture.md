@@ -108,11 +108,11 @@ are only unique within a country** (e.g. AU's `WA` vs US's `WA` are
 different regions). Anything that filters, colors, or edits by state —
 the chips in `index.html`, `STATES_BY_COUNTRY` in `app.js`, the RLS-safe
 columns in `schema.sql` — keys off the `(country, state)` pair together,
-never `state` alone. Now 71 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
+never `state` alone. Now 75 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
 FR, SE, NL, IT, BE, KR, ES, PT, AT, CH, PL, DK, FI, IE, NO, MX, BR, HU, GR,
 CZ, IS, RO, HR, RU, BG, AR, PH, CO, CL, VE, IN, IL, ID, TW, ZA, EC, VN, LT,
 RS, BO, IR, EE, MY, TH, UA, SK, CY, PA, PE, TR, LV, SG, BA, AD, AE, GE,
-LU, SI, CR, KZ, BY, UY, SA), same pattern each time — keep this in mind before adding a 72nd. One collision
+LU, SI, CR, KZ, BY, UY, SA, HK, EG, QA, KE), same pattern each time — keep this in mind before adding a 76th. One collision
 worth flagging: `US`'s state code for California is `CA`, and `CA` is
 also the top-level country code for Canada — not a real ambiguity since
 they're different object keys/fields (`STATES_BY_COUNTRY.US` contains
@@ -4951,6 +4951,73 @@ from one source:
     text; both country `<option>` sets present and the state dropdowns populate
     7/19/13; no console errors beyond the forced Supabase ones; no horizontal
     overflow at 375px.
+  - **Not yet pushed to the live Supabase table** — same next-step gap as
+    every prior batch.
+- **Hong Kong (29 gyms), Egypt (2), Qatar (2), and Kenya (2) — the 72nd-75th
+  countries**, added on request ("keep adding countries"). Six candidates were
+  researched in parallel (Hong Kong, Qatar, Egypt, Sri Lanka, Azerbaijan, Kenya),
+  each gym verified individually. Sri Lanka had 0 verified gyms and Azerbaijan 1
+  (ClimBaku, Baku), so both were left out; the other four were taken. Two-gym
+  countries follow the Latvia and Singapore precedent. Still left for later:
+  Armenia (3), Nepal (3 clearly indoor), Lebanon, Jordan and Moldova (2 each), and
+  Azerbaijan and Sri Lanka if more gyms turn up.
+  - **Directories were empty or stale for all four again**: boulderinglist.com
+    lists 0 gyms for Qatar, Kenya, Sri Lanka and Azerbaijan, and indoorclimbing.com
+    lists only one Kenyan gym. Hong Kong came from hongkongclimbing.com,
+    boulderinghk.com, Sassy HK, Esquire HK, Time Out HK, each gym's own pages and
+    Instagram; Egypt, Qatar and Kenya from each gym's own site, press and Instagram.
+    Most Hong Kong gyms' own sites did not load from the research environment, so
+    "verified" there means at least two independent listings, one of them dated
+    2025-2026, plus a geocode.
+  - **Excluded, and why**: Egypt's Fingerlock (closed Nov 2023; Mountain Project's
+    listing is stale) and Ascent's temporary outdoor North Coast wall; Qatar's
+    trampoline-park and attraction walls and EsQalar's Aspire Zone site (sources
+    conflict on whether it is indoor); Kenya's outdoor towers (Purdy Arms, Valley
+    Arcade), a 2020-only trampoline-park wall and outdoor adventure venues; in Hong
+    Kong, Kizuna (closed; JUST CLIMB took the unit), Boulderland (closed), the
+    children-only JUST CLIMB schools, a pop-up, an outdoor JUST CLIMB Sai Sha wall,
+    Triangle Plus (unconfirmed operating; same unit as JUST CLIMB Tsuen Wan), MightyB
+    (no address), an unconfirmed Yuen Long branch and the government (LCSD) sports
+    centre walls, which need a climbing certificate and are not walk-in.
+  - **Type applied only from direct evidence**: Ascent Sheikh Zayed and JUST CLIMB Kai
+    Tak (lead) are tagged from their own descriptions. Auto-belay counts as top-rope
+    (Verm City's Clip 'n Climb area). Weakest evidence, and tagged medium
+    confidence: JUST CLIMB Tsuen Wan (top-rope from a search summary), GoNature
+    (older Time Out description), Urban Stone (lead from Yahoo, top-rope
+    unconfirmed). Everything with no rope mention defaults to bouldering only.
+  - **Position precision**: Hong Kong is mostly a named-building match from Photon
+    or Nominatim (building level). Approximate: JUST CLIMB Kai Tak (the whole
+    Sports Park centroid, 200-500 m), Butterfly and Urban Stone (street midpoint,
+    about 200 m, and they share a pin), Ascent Maadi (the Maadi district centre,
+    1-2 km, no street address published) and Mt Kenya Climbing Gym (1-2 km, no
+    geocoder or OSM entry). Qatar's Boulder uses the gym's own Google pin; the
+    published address says Doha but OSM reverse geocoding puts the pin in Baaya, Al
+    Rayyan, and the published address is followed.
+  - **Traps caught**: many Hong Kong suburb labels do not match the district (Mei
+    Foo and Lai Chi Kok gyms are in Kwai Tsing; Tseung Kwan O is Sai Kung; San Po
+    Kong is Wong Tai Sin; Prince Edward gyms can be Yau Tsim Mong or Sham Shui Po);
+    rebrands share units (Kizuna to JUST CLIMB Tseung Kwan O; Raccoon to Tanuki and
+    Vita Beta Quarry Bay to Proxy are likely but not confirmed); some sources
+    garble JUST CLIMB branch names (Tuen Mun versus Tsuen Wan). Eden Mall's address
+    says Cairo but it is in Sheikh Zayed City, Giza Governorate. 8 Noyabr prospekti
+    (Azerbaijan) and Qatar's Al Buwairda Street each have misleading geocoder hits.
+  - `state` lists are complete from the start: Hong Kong's 18 districts, Egypt's 27
+    governorates, Kenya's 47 counties and Qatar's 8 municipalities. Chips exist
+    only where there is a spot: 14 for Hong Kong, 2 each for Egypt, Kenya and
+    Qatar. Hong Kong is its own country entry (`HK`), separate from China, and goes
+    under Asia with Qatar; Egypt and Kenya go under Africa, and the Africa
+    region fly-target was widened to frame all three African countries.
+  - Net result: 1805 -> **1840 total spots**. Structural check (Node-parsed
+    `window.SEED_GYMS`): 1840/1840 unique ids, zero duplicate
+    name+suburb+state+country combos, every spot has a non-empty `types`
+    array, every state code resolves.
+  - **Verified** (offline-fallback-forcing method, `js/supabase-init.js`
+    reverted and confirmed clean): count reads 1840; searching each country
+    returns 29/2/2/2; all 20 new chips filter to the right counts with legible
+    active text (Hong Kong's 14 chips sum to 29); both country `<option>` sets
+    present and the state dropdowns populate 18/27/47/8; no console errors beyond
+    the forced Supabase ones; no horizontal overflow at 375px with the Hong Kong
+    chip row expanded.
   - **Not yet pushed to the live Supabase table** — same next-step gap as
     every prior batch.
 

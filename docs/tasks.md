@@ -3841,6 +3841,21 @@ _(none)_
 
 ## Done (recent)
 
+### Add Hong Kong, Egypt, Qatar and Kenya (35 gyms, 72nd-75th countries)
+- Status: done — committed directly to `master`.
+- What: user said "keep adding countries". Six countries were researched in
+  parallel; Sri Lanka (0 verified) and Azerbaijan (1) were left out and the other
+  four taken (Hong Kong 29, Egypt 2, Qatar 2, Kenya 2). Full detail in
+  `docs/architecture.md` "Seed data sourcing".
+- Several entries are lower confidence and say so (Ascent Maadi and Mt Kenya
+  Climbing Gym: position about 1-2 km; JUST CLIMB Kai Tak: park centroid;
+  Butterfly / Urban Stone: shared street-midpoint pin; a number of Hong Kong gyms
+  rest on two listings with no own-site confirmation).
+- Net result: 1805 -> **1840 total spots**. Structural check and offline
+  verification passed.
+- **Not yet done**: running the regenerated seed SQL against the live
+  Supabase table.
+
 ### Add Belarus, Uruguay and Saudi Arabia (15 gyms, 69th-71st countries)
 - Status: done — committed directly to `master`.
 - What: user said "next 3". Nine candidates had been researched across two

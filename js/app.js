@@ -564,10 +564,33 @@
          ['SALTO','Salto'],['SAN_JOSE','San José'],['SORIANO','Soriano'],['TACUAREMBO','Tacuarembó'],['TREINTA_Y_TRES','Treinta y Tres']],
     // Saudi Arabia's 13 administrative regions.
     SA: [['RIYADH','Riyadh Region'],['MAKKAH','Makkah Region'],['MADINAH','Madinah Region'],['QASSIM','Al-Qassim Region'],['EASTERN','Eastern Province'],['ASIR','Asir Region'],
-         ['TABUK','Tabuk Region'],['HAIL','Ha\'il Region'],['NORTHERN_BORDERS','Northern Borders Region'],['JAZAN','Jazan Region'],['NAJRAN','Najran Region'],['BAHAH','Al Bahah Region'],['JAWF','Al Jawf Region']]
+         ['TABUK','Tabuk Region'],['HAIL','Ha\'il Region'],['NORTHERN_BORDERS','Northern Borders Region'],['JAZAN','Jazan Region'],['NAJRAN','Najran Region'],['BAHAH','Al Bahah Region'],['JAWF','Al Jawf Region']],
+    // Hong Kong's 18 districts.
+    HK: [['CENTRAL_WESTERN','Central and Western'],['EASTERN','Eastern'],['SOUTHERN','Southern'],['WAN_CHAI','Wan Chai'],['KOWLOON_CITY','Kowloon City'],
+         ['KWUN_TONG','Kwun Tong'],['SHAM_SHUI_PO','Sham Shui Po'],['WONG_TAI_SIN','Wong Tai Sin'],['YAU_TSIM_MONG','Yau Tsim Mong'],['ISLANDS','Islands'],
+         ['KWAI_TSING','Kwai Tsing'],['NORTH','North'],['SAI_KUNG','Sai Kung'],['SHA_TIN','Sha Tin'],['TAI_PO','Tai Po'],
+         ['TSUEN_WAN','Tsuen Wan'],['TUEN_MUN','Tuen Mun'],['YUEN_LONG','Yuen Long']],
+    // Egypt's 27 governorates.
+    EG: [['ALEXANDRIA','Alexandria'],['ASWAN','Aswan'],['ASYUT','Asyut'],['BEHEIRA','Beheira'],['BENI_SUEF','Beni Suef'],['CAIRO','Cairo'],
+         ['DAKAHLIA','Dakahlia'],['DAMIETTA','Damietta'],['FAIYUM','Faiyum'],['GHARBIA','Gharbia'],['GIZA','Giza'],['ISMAILIA','Ismailia'],
+         ['KAFR_EL_SHEIKH','Kafr el-Sheikh'],['LUXOR','Luxor'],['MATROUH','Matrouh'],['MINYA','Minya'],['MONUFIA','Monufia'],['NEW_VALLEY','New Valley'],
+         ['NORTH_SINAI','North Sinai'],['PORT_SAID','Port Said'],['QALYUBIA','Qalyubia'],['QENA','Qena'],['RED_SEA','Red Sea'],['SHARQIA','Sharqia'],
+         ['SOHAG','Sohag'],['SOUTH_SINAI','South Sinai'],['SUEZ','Suez']],
+    // Kenya's 47 counties.
+    KE: [['BARINGO','Baringo'],['BOMET','Bomet'],['BUNGOMA','Bungoma'],['BUSIA','Busia'],['ELGEYO_MARAKWET','Elgeyo-Marakwet'],['EMBU','Embu'],
+         ['GARISSA','Garissa'],['HOMA_BAY','Homa Bay'],['ISIOLO','Isiolo'],['KAJIADO','Kajiado'],['KAKAMEGA','Kakamega'],['KERICHO','Kericho'],
+         ['KIAMBU','Kiambu'],['KILIFI','Kilifi'],['KIRINYAGA','Kirinyaga'],['KISII','Kisii'],['KISUMU','Kisumu'],['KITUI','Kitui'],
+         ['KWALE','Kwale'],['LAIKIPIA','Laikipia'],['LAMU','Lamu'],['MACHAKOS','Machakos'],['MAKUENI','Makueni'],['MANDERA','Mandera'],
+         ['MARSABIT','Marsabit'],['MERU','Meru'],['MIGORI','Migori'],['MOMBASA','Mombasa'],['MURANGA','Murang\'a'],['NAIROBI','Nairobi'],
+         ['NAKURU','Nakuru'],['NANDI','Nandi'],['NAROK','Narok'],['NYAMIRA','Nyamira'],['NYANDARUA','Nyandarua'],['NYERI','Nyeri'],
+         ['SAMBURU','Samburu'],['SIAYA','Siaya'],['TAITA_TAVETA','Taita-Taveta'],['TANA_RIVER','Tana River'],['THARAKA_NITHI','Tharaka-Nithi'],['TRANS_NZOIA','Trans Nzoia'],
+         ['TURKANA','Turkana'],['UASIN_GISHU','Uasin Gishu'],['VIHIGA','Vihiga'],['WAJIR','Wajir'],['WEST_POKOT','West Pokot']],
+    // Qatar's 8 municipalities.
+    QA: [['AD_DAWHAH','Doha'],['AL_RAYYAN','Al Rayyan'],['AL_WAKRAH','Al Wakrah'],['AL_KHOR','Al Khor and Al Thakhira'],
+         ['UMM_SALAL','Umm Salal'],['AL_DAAYEN','Al Daayen'],['AL_SHAMAL','Al Shamal'],['AL_SHAHANIYA','Al Shahaniya']]
   };
   const TYPE_LABELS = {'indoor-bouldering':'Indoor bouldering','top-rope':'Top rope','lead-climbing':'Lead climbing'};
-  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy', BE:'Belgium', KR:'South Korea', ES:'Spain', PT:'Portugal', AT:'Austria', CH:'Switzerland', PL:'Poland', DK:'Denmark', FI:'Finland', IE:'Ireland', NO:'Norway', MX:'Mexico', BR:'Brazil', HU:'Hungary', GR:'Greece', CZ:'Czech Republic', IS:'Iceland', RO:'Romania', HR:'Croatia', RU:'Russia', BG:'Bulgaria', AR:'Argentina', PH:'Philippines', CO:'Colombia', CL:'Chile', VE:'Venezuela', IN:'India', IL:'Israel', ID:'Indonesia', TW:'Taiwan', ZA:'South Africa', EC:'Ecuador', VN:'Vietnam', LT:'Lithuania', RS:'Serbia', BO:'Bolivia', IR:'Iran', EE:'Estonia', MY:'Malaysia', TH:'Thailand', UA:'Ukraine', SK:'Slovakia', CY:'Cyprus', PA:'Panama', PE:'Peru', TR:'Turkey', LV:'Latvia', SG:'Singapore', BA:'Bosnia and Herzegovina', AD:'Andorra', AE:'United Arab Emirates', GE:'Georgia', LU:'Luxembourg', SI:'Slovenia', KZ:'Kazakhstan', CR:'Costa Rica', BY:'Belarus', UY:'Uruguay', SA:'Saudi Arabia'};
+  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy', BE:'Belgium', KR:'South Korea', ES:'Spain', PT:'Portugal', AT:'Austria', CH:'Switzerland', PL:'Poland', DK:'Denmark', FI:'Finland', IE:'Ireland', NO:'Norway', MX:'Mexico', BR:'Brazil', HU:'Hungary', GR:'Greece', CZ:'Czech Republic', IS:'Iceland', RO:'Romania', HR:'Croatia', RU:'Russia', BG:'Bulgaria', AR:'Argentina', PH:'Philippines', CO:'Colombia', CL:'Chile', VE:'Venezuela', IN:'India', IL:'Israel', ID:'Indonesia', TW:'Taiwan', ZA:'South Africa', EC:'Ecuador', VN:'Vietnam', LT:'Lithuania', RS:'Serbia', BO:'Bolivia', IR:'Iran', EE:'Estonia', MY:'Malaysia', TH:'Thailand', UA:'Ukraine', SK:'Slovakia', CY:'Cyprus', PA:'Panama', PE:'Peru', TR:'Turkey', LV:'Latvia', SG:'Singapore', BA:'Bosnia and Herzegovina', AD:'Andorra', AE:'United Arab Emirates', GE:'Georgia', LU:'Luxembourg', SI:'Slovenia', KZ:'Kazakhstan', CR:'Costa Rica', BY:'Belarus', UY:'Uruguay', SA:'Saudi Arabia', HK:'Hong Kong', EG:'Egypt', KE:'Kenya', QA:'Qatar'};
   // Fixed camera target per country for the "fly to this country" click on
   // its sidebar label -- picked to frame that country's actual spread of
   // seed spots (e.g. US needs a wide zoom to fit both NY and CA), not a
@@ -644,14 +667,18 @@
     CR: {center:[-84.4,10.0], zoom:7.6},
     BY: {center:[26,53.1], zoom:5.8},
     UY: {center:[-56.0,-33.2], zoom:6.2},
-    SA: {center:[44.5,24.5], zoom:5.0}
+    SA: {center:[44.5,24.5], zoom:5.0},
+    HK: {center:[114.17,22.36], zoom:9.8},
+    EG: {center:[31.1,30.0], zoom:8.6},
+    KE: {center:[36.9,-0.6], zoom:7.4},
+    QA: {center:[51.4,25.3], zoom:8.4}
   };
   // Which sidebar region-group each country belongs to -- same grouping as
   // the `.region-group[data-region]` wrappers in index.html, kept here too
   // so the map's own continent-tier labels/fly-targets don't need to read
   // the DOM to know a country's continent.
   const COUNTRY_TO_REGION = {
-    CN:'asia', JP:'asia', KR:'asia', PH:'asia', IN:'asia', IL:'asia', ID:'asia', TW:'asia', VN:'asia', IR:'asia', MY:'asia', TH:'asia', SG:'asia', AE:'asia', GE:'asia', KZ:'asia', SA:'asia',
+    CN:'asia', JP:'asia', KR:'asia', PH:'asia', IN:'asia', IL:'asia', ID:'asia', TW:'asia', VN:'asia', IR:'asia', MY:'asia', TH:'asia', SG:'asia', AE:'asia', GE:'asia', KZ:'asia', SA:'asia', HK:'asia', QA:'asia',
     DE:'europe', GB:'europe', FR:'europe', SE:'europe', NL:'europe', IT:'europe', BE:'europe', LT:'europe',
     ES:'europe', PT:'europe', AT:'europe', CH:'europe', PL:'europe', DK:'europe', FI:'europe', IE:'europe',
     NO:'europe', HU:'europe', GR:'europe', CZ:'europe', IS:'europe',
@@ -661,7 +688,7 @@
     AU:'oceania', NZ:'oceania',
     BR:'south-america', AR:'south-america', CO:'south-america', CL:'south-america', VE:'south-america',
     EC:'south-america', BO:'south-america', PE:'south-america', UY:'south-america',
-    ZA:'africa'
+    ZA:'africa', EG:'africa', KE:'africa'
   };
   const REGION_LABELS = {asia:'Asia', europe:'Europe', 'north-america':'North America', oceania:'Oceania', 'south-america':'South America', africa:'Africa'};
   // Same idea as COUNTRY_FLY_TARGETS, one tier coarser -- framing every
@@ -674,7 +701,7 @@
     'north-america': {center:[-100,45], zoom:2.4},
     oceania: {center:[155,-30], zoom:3},
     'south-america': {center:[-58,-15], zoom:3},
-    africa: {center:[26,-29], zoom:3.6}
+    africa: {center:[26,-2], zoom:2.6}
   };
   // Below this zoom, a spot with no nearby neighbours (so supercluster hands
   // it back as a lone, unclustered point rather than grouping it) still paints
