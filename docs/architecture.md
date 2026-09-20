@@ -198,6 +198,18 @@ pre-filled with its current value, rather than throwing on
 
 ## Seed data sourcing
 
+**Research standing instruction (from the project owner): search in the local
+language.** When finding and sourcing gyms for a country, every research pass must
+include native-language searches, not just English ones: the local words for
+climbing gym / bouldering gym / climbing wall, in the local script where there is one,
+plus local map and directory services (2GIS or Yandex for Russian-speaking countries,
+Naver or Kakao for Korea, Dianping or Baidu for China, and so on). Directories and
+English-language search have repeatedly under-reported a country's real gym count (the
+"directory count is not the ceiling" pattern noted throughout this section), and
+several countries were added on English-only searches. Research briefs for future
+countries should list the native search terms explicitly, and countries already added
+on mostly English sources are candidates for a native-language re-check.
+
 `js/data.js` currently has 1513 spots (74 AU, 332 US, 32 JP, 15 CA, 9 NZ,
 374 CN, 66 GB, 112 DE, 30 FR, 7 SE, 25 NL, 14 IT, 14 BE, 37 KR, 22 ES,
 7 PT, 22 AT, 8 CH, 31 PL, 14 DK, 14 FI, 9 IE, 20 NO, 16 MX, 15 BR, 18 HU,
