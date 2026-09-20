@@ -587,10 +587,31 @@
          ['TURKANA','Turkana'],['UASIN_GISHU','Uasin Gishu'],['VIHIGA','Vihiga'],['WAJIR','Wajir'],['WEST_POKOT','West Pokot']],
     // Qatar's 8 municipalities.
     QA: [['AD_DAWHAH','Doha'],['AL_RAYYAN','Al Rayyan'],['AL_WAKRAH','Al Wakrah'],['AL_KHOR','Al Khor and Al Thakhira'],
-         ['UMM_SALAL','Umm Salal'],['AL_DAAYEN','Al Daayen'],['AL_SHAMAL','Al Shamal'],['AL_SHAHANIYA','Al Shahaniya']]
+         ['UMM_SALAL','Umm Salal'],['AL_DAAYEN','Al Daayen'],['AL_SHAMAL','Al Shamal'],['AL_SHAHANIYA','Al Shahaniya']],
+    // Armenia's 10 provinces (marzer) plus Yerevan.
+    AM: [['ARAGATSOTN','Aragatsotn'],['ARARAT','Ararat'],['ARMAVIR','Armavir'],['GEGHARKUNIK','Gegharkunik'],
+         ['KOTAYK','Kotayk'],['LORI','Lori'],['SHIRAK','Shirak'],['SYUNIK','Syunik'],
+         ['TAVUSH','Tavush'],['VAYOTS_DZOR','Vayots Dzor'],['YEREVAN','Yerevan']],
+    // Lebanon's 8 governorates.
+    LB: [['BEIRUT','Beirut'],['MOUNT_LEBANON','Mount Lebanon'],['NORTH','North'],['SOUTH','South'],
+         ['BEKAA','Bekaa'],['NABATIEH','Nabatieh'],['AKKAR','Akkar'],['BAALBEK_HERMEL','Baalbek-Hermel']],
+    // Jordan's 12 governorates.
+    JO: [['AMMAN','Amman'],['BALQA','Balqa'],['ZARQA','Zarqa'],['MADABA','Madaba'],
+         ['IRBID','Irbid'],['MAFRAQ','Mafraq'],['JERASH','Jerash'],['AJLOUN','Ajloun'],
+         ['KARAK','Karak'],['TAFILAH','Tafilah'],['MAAN','Ma\'an'],['AQABA','Aqaba']],
+    // Nepal's 7 provinces.
+    NP: [['KOSHI','Koshi'],['MADHESH','Madhesh'],['BAGMATI','Bagmati'],['GANDAKI','Gandaki'],
+         ['LUMBINI','Lumbini'],['KARNALI','Karnali'],['SUDURPASHCHIM','Sudurpashchim']],
+    // Guatemala's 22 departments.
+    GT: [['ALTA_VERAPAZ','Alta Verapaz'],['BAJA_VERAPAZ','Baja Verapaz'],['CHIMALTENANGO','Chimaltenango'],['CHIQUIMULA','Chiquimula'],
+         ['EL_PROGRESO','El Progreso'],['ESCUINTLA','Escuintla'],['GUATEMALA','Guatemala'],['HUEHUETENANGO','Huehuetenango'],
+         ['IZABAL','Izabal'],['JALAPA','Jalapa'],['JUTIAPA','Jutiapa'],['PETEN','Petén'],
+         ['QUETZALTENANGO','Quetzaltenango'],['QUICHE','Quiché'],['RETALHULEU','Retalhuleu'],['SACATEPEQUEZ','Sacatepéquez'],
+         ['SAN_MARCOS','San Marcos'],['SANTA_ROSA','Santa Rosa'],['SOLOLA','Sololá'],['SUCHITEPEQUEZ','Suchitepéquez'],
+         ['TOTONICAPAN','Totonicapán'],['ZACAPA','Zacapa']]
   };
   const TYPE_LABELS = {'indoor-bouldering':'Indoor bouldering','top-rope':'Top rope','lead-climbing':'Lead climbing'};
-  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy', BE:'Belgium', KR:'South Korea', ES:'Spain', PT:'Portugal', AT:'Austria', CH:'Switzerland', PL:'Poland', DK:'Denmark', FI:'Finland', IE:'Ireland', NO:'Norway', MX:'Mexico', BR:'Brazil', HU:'Hungary', GR:'Greece', CZ:'Czech Republic', IS:'Iceland', RO:'Romania', HR:'Croatia', RU:'Russia', BG:'Bulgaria', AR:'Argentina', PH:'Philippines', CO:'Colombia', CL:'Chile', VE:'Venezuela', IN:'India', IL:'Israel', ID:'Indonesia', TW:'Taiwan', ZA:'South Africa', EC:'Ecuador', VN:'Vietnam', LT:'Lithuania', RS:'Serbia', BO:'Bolivia', IR:'Iran', EE:'Estonia', MY:'Malaysia', TH:'Thailand', UA:'Ukraine', SK:'Slovakia', CY:'Cyprus', PA:'Panama', PE:'Peru', TR:'Turkey', LV:'Latvia', SG:'Singapore', BA:'Bosnia and Herzegovina', AD:'Andorra', AE:'United Arab Emirates', GE:'Georgia', LU:'Luxembourg', SI:'Slovenia', KZ:'Kazakhstan', CR:'Costa Rica', BY:'Belarus', UY:'Uruguay', SA:'Saudi Arabia', HK:'Hong Kong', EG:'Egypt', KE:'Kenya', QA:'Qatar'};
+  const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy', BE:'Belgium', KR:'South Korea', ES:'Spain', PT:'Portugal', AT:'Austria', CH:'Switzerland', PL:'Poland', DK:'Denmark', FI:'Finland', IE:'Ireland', NO:'Norway', MX:'Mexico', BR:'Brazil', HU:'Hungary', GR:'Greece', CZ:'Czech Republic', IS:'Iceland', RO:'Romania', HR:'Croatia', RU:'Russia', BG:'Bulgaria', AR:'Argentina', PH:'Philippines', CO:'Colombia', CL:'Chile', VE:'Venezuela', IN:'India', IL:'Israel', ID:'Indonesia', TW:'Taiwan', ZA:'South Africa', EC:'Ecuador', VN:'Vietnam', LT:'Lithuania', RS:'Serbia', BO:'Bolivia', IR:'Iran', EE:'Estonia', MY:'Malaysia', TH:'Thailand', UA:'Ukraine', SK:'Slovakia', CY:'Cyprus', PA:'Panama', PE:'Peru', TR:'Turkey', LV:'Latvia', SG:'Singapore', BA:'Bosnia and Herzegovina', AD:'Andorra', AE:'United Arab Emirates', GE:'Georgia', LU:'Luxembourg', SI:'Slovenia', KZ:'Kazakhstan', CR:'Costa Rica', BY:'Belarus', UY:'Uruguay', SA:'Saudi Arabia', HK:'Hong Kong', EG:'Egypt', KE:'Kenya', QA:'Qatar', AM:'Armenia', LB:'Lebanon', JO:'Jordan', NP:'Nepal', GT:'Guatemala'};
   // Fixed camera target per country for the "fly to this country" click on
   // its sidebar label -- picked to frame that country's actual spread of
   // seed spots (e.g. US needs a wide zoom to fit both NY and CA), not a
@@ -671,20 +692,25 @@
     HK: {center:[114.17,22.36], zoom:9.8},
     EG: {center:[31.1,30.0], zoom:8.6},
     KE: {center:[36.9,-0.6], zoom:7.4},
-    QA: {center:[51.4,25.3], zoom:8.4}
+    QA: {center:[51.4,25.3], zoom:8.4},
+    AM: {center:[44.51,40.17], zoom:8.4},
+    LB: {center:[35.5,33.8], zoom:8.4},
+    JO: {center:[35.9,31.9], zoom:8.6},
+    NP: {center:[84.6,27.95], zoom:7.0},
+    GT: {center:[-90.9,14.65], zoom:7.6}
   };
   // Which sidebar region-group each country belongs to -- same grouping as
   // the `.region-group[data-region]` wrappers in index.html, kept here too
   // so the map's own continent-tier labels/fly-targets don't need to read
   // the DOM to know a country's continent.
   const COUNTRY_TO_REGION = {
-    CN:'asia', JP:'asia', KR:'asia', PH:'asia', IN:'asia', IL:'asia', ID:'asia', TW:'asia', VN:'asia', IR:'asia', MY:'asia', TH:'asia', SG:'asia', AE:'asia', GE:'asia', KZ:'asia', SA:'asia', HK:'asia', QA:'asia',
+    CN:'asia', JP:'asia', KR:'asia', PH:'asia', IN:'asia', IL:'asia', ID:'asia', TW:'asia', VN:'asia', IR:'asia', MY:'asia', TH:'asia', SG:'asia', AE:'asia', GE:'asia', KZ:'asia', SA:'asia', HK:'asia', QA:'asia', AM:'asia', LB:'asia', JO:'asia', NP:'asia',
     DE:'europe', GB:'europe', FR:'europe', SE:'europe', NL:'europe', IT:'europe', BE:'europe', LT:'europe',
     ES:'europe', PT:'europe', AT:'europe', CH:'europe', PL:'europe', DK:'europe', FI:'europe', IE:'europe',
     NO:'europe', HU:'europe', GR:'europe', CZ:'europe', IS:'europe',
     RO:'europe', HR:'europe', RU:'europe', BG:'europe', RS:'europe', EE:'europe', UA:'europe', SK:'europe',
     CY:'europe', TR:'europe', LV:'europe', BA:'europe', AD:'europe', LU:'europe', SI:'europe', BY:'europe',
-    CA:'north-america', US:'north-america', MX:'north-america', PA:'north-america', CR:'north-america',
+    CA:'north-america', US:'north-america', MX:'north-america', PA:'north-america', CR:'north-america', GT:'north-america',
     AU:'oceania', NZ:'oceania',
     BR:'south-america', AR:'south-america', CO:'south-america', CL:'south-america', VE:'south-america',
     EC:'south-america', BO:'south-america', PE:'south-america', UY:'south-america',

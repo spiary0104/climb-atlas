@@ -108,11 +108,11 @@ are only unique within a country** (e.g. AU's `WA` vs US's `WA` are
 different regions). Anything that filters, colors, or edits by state —
 the chips in `index.html`, `STATES_BY_COUNTRY` in `app.js`, the RLS-safe
 columns in `schema.sql` — keys off the `(country, state)` pair together,
-never `state` alone. Now 75 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
+never `state` alone. Now 80 countries deep (AU, US, JP, CA, NZ, CN, GB, DE,
 FR, SE, NL, IT, BE, KR, ES, PT, AT, CH, PL, DK, FI, IE, NO, MX, BR, HU, GR,
 CZ, IS, RO, HR, RU, BG, AR, PH, CO, CL, VE, IN, IL, ID, TW, ZA, EC, VN, LT,
 RS, BO, IR, EE, MY, TH, UA, SK, CY, PA, PE, TR, LV, SG, BA, AD, AE, GE,
-LU, SI, CR, KZ, BY, UY, SA, HK, EG, QA, KE), same pattern each time — keep this in mind before adding a 76th. One collision
+LU, SI, CR, KZ, BY, UY, SA, HK, EG, QA, KE, GT, AM, LB, JO, NP), same pattern each time — keep this in mind before adding an 81st. One collision
 worth flagging: `US`'s state code for California is `CA`, and `CA` is
 also the top-level country code for Canada — not a real ambiguity since
 they're different object keys/fields (`STATES_BY_COUNTRY.US` contains
@@ -5018,6 +5018,61 @@ from one source:
     present and the state dropdowns populate 18/27/47/8; no console errors beyond
     the forced Supabase ones; no horizontal overflow at 375px with the Hong Kong
     chip row expanded.
+  - **Not yet pushed to the live Supabase table** — same next-step gap as
+    every prior batch.
+- **Guatemala (4 gyms), Armenia (3), Lebanon (3), Jordan (2), and Nepal (2) — the
+  76th-80th countries**, added on request ("keep going"). Six candidates were
+  researched in parallel (Armenia, Nepal, Jordan, Lebanon, Uzbekistan, Guatemala),
+  each gym verified individually; Uzbekistan had only 1 (BeFit Pro, a Tashkent fitness
+  club) and was left out. Armenia, Nepal, Lebanon and Jordan were the leftovers from
+  the previous round, re-verified from scratch. Still left for later: Moldova (2),
+  Morocco (1), Uzbekistan (1), Azerbaijan (1, ClimBaku) and Sri Lanka (0).
+  - **Directories were empty or stale again**: boulderinglist.com lists 0 gyms for
+    Armenia and only La Fabrica for Guatemala, and its Nepal page is stale and lists
+    semi-indoor walls; indoorclimbing.com lists only U ROCK for Lebanon. Sources are each
+    gym's own site, Yandex/2GIS, Instagram, press (Climbing Business Journal, Lebanon
+    Traveler, Sports Nep, Jordan News) and map listings.
+  - **Excluded, and why**: Armenia's Boulder Town (only a crowdfunding appeal and an
+    "off for a while" listing) and a Yerevan State University lead wall (public access
+    unconfirmed); Lebanon's FLYP (destroyed in the 2020 port blast, no reopening seen),
+    Stamina Gym (no address or detail) and ClimbAID (an NGO tent wall); Nepal's Psycho
+    Block (Google shows permanently closed), and Astrek, Kathmandu Sport Climbing Center
+    and Pasang Lhamu (roofed but open or semi-indoor, so not fully indoor); Guatemala's
+    Qubo Antigua (sources conflict on whether it closed), La Fabrica (a fitness club, wall
+    unconfirmed), La Rocalla (closed) and adventure or entertainment parks; Jordan's
+    outdoor crags and sports halls.
+  - **Type applied only from direct evidence**: Big Mountain (Guatemala), U ROCK,
+    Climbat Amman, Ascend and WISH are tagged bouldering + top-rope + lead from their
+    own descriptions or listings; WISH's lead comes from a Tripadvisor category list and
+    Mountain Project's "sport routes". Bold Adventure Park is top-rope from a rope wall
+    with no lead statement. Grand Sport Complex (Armenia) has no discipline stated, so
+    bouldering is a default that could be wrong.
+  - **Position precision**: Big Mountain, Ver Var, Boulderland, Climbat and WISH are
+    named-POI or Yandex-pin matches (building level). Approximate: Casa Boulder (about
+    300 m, house number not resolved), Venga Atitlan (town centre, a few hundred metres),
+    Ascend (the coordinate in the gym's own site markup, 200-500 m), and Bold, U ROCK
+    and Go Up (Google-derived pins, about 50-100 m).
+  - **Traps caught**: "Ascent Climbing Gym" in the earlier lead is really Ascend
+    Climbing (The South Wall), and a geocoder match for "Ascent" lands in the US or
+    Egypt. "Casa Boulder" is also a Mexico City and a Santiago gym, and Photon's top hit
+    is the Mexico City one. Yandex and 2GIS print longitude first. Bold and U ROCK are
+    marketed as Beirut but sit in Mount Lebanon. Boulderland shares its address with a
+    separate university wall. Guatemala's Big Mountain wall is 13 m, not 13.8 feet.
+  - `state` lists are complete from the start: Armenia's 10 provinces plus Yerevan,
+    Lebanon's 8 governorates, Jordan's 12, Nepal's 7 provinces and Guatemala's 22
+    departments. Chips exist only where there is a spot: 1 Armenian, 2 Lebanese, 1 Jordanian,
+    2 Nepali, 3 Guatemalan. Armenia, Lebanon, Jordan and Nepal go under Asia and Guatemala
+    under North America; the region fly-targets were not widened.
+  - Net result: 1840 -> **1854 total spots**. Structural check (Node-parsed
+    `window.SEED_GYMS`): 1854/1854 unique ids, zero duplicate
+    name+suburb+state+country combos, every spot has a non-empty `types`
+    array, every state code resolves.
+  - **Verified** (offline-fallback-forcing method, `js/supabase-init.js`
+    reverted and confirmed clean): count reads 1854; searching each country returns
+    the right spots; all 9 new chips filter to the right counts with legible active
+    text; the country `<option>`s are present in both forms and the state dropdowns
+    populate 22/11/8/12/7; no console errors beyond the forced Supabase ones; no
+    horizontal overflow at 375px with everything expanded.
   - **Not yet pushed to the live Supabase table** — same next-step gap as
     every prior batch.
 

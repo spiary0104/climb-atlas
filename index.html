@@ -93,6 +93,12 @@
           <div class="region-group collapsed" data-region="asia">
             <button type="button" class="section-label region-header">Asia</button>
             <div class="region-body">
+              <div class="country-group collapsed" data-country="AM">
+                <button type="button" class="section-label country-label">Armenia</button>
+                <div class="chip-row">
+                  <button type="button" class="chip" data-country="AM" data-state="YEREVAN" style="--chip:var(--am-yerevan)" aria-pressed="false"><span class="dot"></span>Yerevan</button>
+                </div>
+              </div>
               <div class="country-group collapsed" data-country="CN">
                 <button type="button" class="section-label country-label">China</button>
                 <div class="chip-row">
@@ -196,11 +202,24 @@
                   <button type="button" class="chip" data-country="JP" data-state="SAITAMA" style="--chip:var(--jp-saitama)" aria-pressed="false"><span class="dot"></span>Saitama</button>
                 </div>
               </div>
+              <div class="country-group collapsed" data-country="JO">
+                <button type="button" class="section-label country-label">Jordan</button>
+                <div class="chip-row">
+                  <button type="button" class="chip" data-country="JO" data-state="AMMAN" style="--chip:var(--jo-amman)" aria-pressed="false"><span class="dot"></span>Amman</button>
+                </div>
+              </div>
               <div class="country-group collapsed" data-country="KZ">
                 <button type="button" class="section-label country-label">Kazakhstan</button>
                 <div class="chip-row">
                   <button type="button" class="chip" data-country="KZ" data-state="ALMATY_CITY" style="--chip:var(--kz-almatycity)" aria-pressed="false"><span class="dot"></span>Almaty</button>
                   <button type="button" class="chip" data-country="KZ" data-state="ASTANA" style="--chip:var(--kz-astana)" aria-pressed="false"><span class="dot"></span>Astana</button>
+                </div>
+              </div>
+              <div class="country-group collapsed" data-country="LB">
+                <button type="button" class="section-label country-label">Lebanon</button>
+                <div class="chip-row">
+                  <button type="button" class="chip" data-country="LB" data-state="MOUNT_LEBANON" style="--chip:var(--lb-mountlebanon)" aria-pressed="false"><span class="dot"></span>Mount Lebanon</button>
+                  <button type="button" class="chip" data-country="LB" data-state="SOUTH" style="--chip:var(--lb-south)" aria-pressed="false"><span class="dot"></span>South</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="MY">
@@ -210,6 +229,13 @@
                   <button type="button" class="chip" data-country="MY" data-state="JOHOR" style="--chip:var(--my-johor)" aria-pressed="false"><span class="dot"></span>Johor</button>
                   <button type="button" class="chip" data-country="MY" data-state="PUTRAJAYA" style="--chip:var(--my-putrajaya)" aria-pressed="false"><span class="dot"></span>Putrajaya</button>
                   <button type="button" class="chip" data-country="MY" data-state="SELANGOR" style="--chip:var(--my-selangor)" aria-pressed="false"><span class="dot"></span>Selangor</button>
+                </div>
+              </div>
+              <div class="country-group collapsed" data-country="NP">
+                <button type="button" class="section-label country-label">Nepal</button>
+                <div class="chip-row">
+                  <button type="button" class="chip" data-country="NP" data-state="BAGMATI" style="--chip:var(--np-bagmati)" aria-pressed="false"><span class="dot"></span>Bagmati</button>
+                  <button type="button" class="chip" data-country="NP" data-state="GANDAKI" style="--chip:var(--np-gandaki)" aria-pressed="false"><span class="dot"></span>Gandaki</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="PH">
@@ -655,6 +681,14 @@
                   <button type="button" class="chip" data-country="CR" data-state="CARTAGO" style="--chip:var(--cr-cartago)" aria-pressed="false"><span class="dot"></span>Cartago</button>
                 </div>
               </div>
+              <div class="country-group collapsed" data-country="GT">
+                <button type="button" class="section-label country-label">Guatemala</button>
+                <div class="chip-row">
+                  <button type="button" class="chip" data-country="GT" data-state="SACATEPEQUEZ" style="--chip:var(--gt-sacatepequez)" aria-pressed="false"><span class="dot"></span>Sacatepéquez</button>
+                  <button type="button" class="chip" data-country="GT" data-state="GUATEMALA" style="--chip:var(--gt-guatemala)" aria-pressed="false"><span class="dot"></span>Guatemala</button>
+                  <button type="button" class="chip" data-country="GT" data-state="SOLOLA" style="--chip:var(--gt-solola)" aria-pressed="false"><span class="dot"></span>Sololá</button>
+                </div>
+              </div>
               <div class="country-group collapsed" data-country="MX">
                 <button type="button" class="section-label country-label">Mexico</button>
                 <div class="chip-row">
@@ -908,6 +942,7 @@
             <option value="ZA">South Africa</option>
           </optgroup>
           <optgroup label="Asia">
+            <option value="AM">Armenia</option>
             <option value="CN">China</option>
             <option value="GE">Georgia</option>
             <option value="HK">Hong Kong</option>
@@ -916,8 +951,11 @@
             <option value="IR">Iran</option>
             <option value="IL">Israel</option>
             <option value="JP">Japan</option>
+            <option value="JO">Jordan</option>
             <option value="KZ">Kazakhstan</option>
+            <option value="LB">Lebanon</option>
             <option value="MY">Malaysia</option>
+            <option value="NP">Nepal</option>
             <option value="PH">Philippines</option>
             <option value="QA">Qatar</option>
             <option value="SA">Saudi Arabia</option>
@@ -970,6 +1008,7 @@
           <optgroup label="North America">
             <option value="CA">Canada</option>
             <option value="CR">Costa Rica</option>
+            <option value="GT">Guatemala</option>
             <option value="MX">Mexico</option>
             <option value="PA">Panama</option>
             <option value="US">United States</option>
@@ -1080,6 +1119,7 @@
             <option value="ZA">South Africa</option>
           </optgroup>
           <optgroup label="Asia">
+            <option value="AM">Armenia</option>
             <option value="CN">China</option>
             <option value="GE">Georgia</option>
             <option value="HK">Hong Kong</option>
@@ -1088,8 +1128,11 @@
             <option value="IR">Iran</option>
             <option value="IL">Israel</option>
             <option value="JP">Japan</option>
+            <option value="JO">Jordan</option>
             <option value="KZ">Kazakhstan</option>
+            <option value="LB">Lebanon</option>
             <option value="MY">Malaysia</option>
+            <option value="NP">Nepal</option>
             <option value="PH">Philippines</option>
             <option value="QA">Qatar</option>
             <option value="SA">Saudi Arabia</option>
@@ -1142,6 +1185,7 @@
           <optgroup label="North America">
             <option value="CA">Canada</option>
             <option value="CR">Costa Rica</option>
+            <option value="GT">Guatemala</option>
             <option value="MX">Mexico</option>
             <option value="PA">Panama</option>
             <option value="US">United States</option>

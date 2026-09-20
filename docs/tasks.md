@@ -3841,6 +3841,18 @@ _(none)_
 
 ## Done (recent)
 
+### Add Guatemala, Armenia, Lebanon, Jordan and Nepal (14 gyms, 76th-80th countries)
+- Status: done — committed directly to `master`.
+- What: user said "keep going". Six countries were researched in parallel; Uzbekistan
+  (1 verified) was left out and the other five taken (Guatemala 4, Armenia 3, Lebanon 3,
+  Jordan 2, Nepal 2). Full detail in `docs/architecture.md` "Seed data sourcing".
+- Several entries are lower confidence and say so (Casa Boulder, Venga Atitlan, Go Up,
+  Grand Sport Complex, WISH, Badiya).
+- Net result: 1840 -> **1854 total spots**. Structural check and offline
+  verification passed.
+- **Not yet done**: running the regenerated seed SQL against the live
+  Supabase table.
+
 ### Add Hong Kong, Egypt, Qatar and Kenya (35 gyms, 72nd-75th countries)
 - Status: done — committed directly to `master`.
 - What: user said "keep adding countries". Six countries were researched in
