@@ -3854,6 +3854,34 @@ _(none)_
 - **Not yet done**: running the regenerated seed SQL against the live
   Supabase table.
 
+### Add Gangwon-do, South Korea (5 gyms, first-ever spots in this division)
+- Status: done — committed directly to `master`.
+- What: direct continuation of the standing "keep working on Korea" task
+  — fills the first of South Korea's 4 still-empty top-level divisions
+  (Chungcheongbuk-do, Gangwon-do, Gyeongsangbuk-do, Jeollabuk-do; Sejong
+  was excluded in an earlier session — its only candidate was
+  outdoor-only). Sourced via web research (WebSearch budget exhausted
+  mid-task, so the `Claude_Browser` device-tools were used as a
+  workaround to keep going); addresses geocoded via WebFetch against
+  ArcGIS's `findAddressCandidates` endpoint, all 5 at `score=100` exact
+  matches. Type defaulted to bouldering-only per this project's
+  established Korea-specific discipline unless source material named
+  another discipline (2 of 5 gained top-rope and/or lead climbing on
+  direct evidence). Full detail in `docs/architecture.md` "Seed data
+  sourcing".
+- Net result: 1862 → **1867 total spots** (merged onto master after the
+  Montenegro/Mongolia/Oman/Paraguay batch above landed, so the total is
+  higher than this task's own commit originally computed). Structural
+  check and offline-fallback-forcing live verification both passed
+  (Gangwon-do chip filters to exactly 5 spots, no console errors, no
+  mobile overflow) — this pass's live-browser check succeeded cleanly,
+  unlike an earlier session's attempt at the same kind of check which hit
+  a CDN policy denial and needed a workaround.
+- **Not yet done**: running the regenerated seed SQL against the live
+  Supabase table — same outstanding step as every prior batch; the
+  remaining 3 empty Korea divisions (Chungcheongbuk-do, Gyeongsangbuk-do,
+  Jeollabuk-do) per the standing "keep working on Korea" instruction.
+
 ### Add Guatemala, Armenia, Lebanon, Jordan and Nepal (14 gyms, 76th-80th countries)
 - Status: done — committed directly to `master`.
 - What: user said "keep going". Six countries were researched in parallel; Uzbekistan

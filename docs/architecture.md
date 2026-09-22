@@ -5142,6 +5142,63 @@ from one source:
     counts with legible active text; the country `<option>`s are present in both forms and
     the state dropdowns populate 25/22/11/18; no console errors beyond the forced
     Supabase ones; no horizontal overflow at 375px with everything expanded.
+- **Gangwon-do (5 gyms) — first-ever spots in this South Korea division.**
+  Direct continuation of the standing "keep working on Korea" task: fills
+  the first of South Korea's 4 still-empty top-level divisions
+  (Chungcheongbuk-do, Gangwon-do, Gyeongsangbuk-do, Jeollabuk-do — Sejong
+  was excluded in an earlier session since its only candidate was
+  outdoor-only). Sourced via general web research; this session's
+  WebSearch budget was exhausted partway through, so the
+  `Claude_Browser` device-tools were used as a workaround to search and
+  cross-check the remaining candidates instead of stopping early.
+  - 5 real, currently-operating gyms confirmed across 4 cities: Chuncheon
+    (Chuncheon Climbing Center, Climb House), Wonju (Climb Together),
+    Sokcho (I'm Not Boulder), Gangneung (Gangneung Climbing).
+  - **Type applied per this project's established Korea-specific
+    discipline** (from the earlier worldwide top-rope-tag audit, which
+    found ~83% of individually-confirmed Korea gyms are bouldering-only):
+    default to bouldering-only unless a gym's own source material
+    explicitly names another discipline. 3 of 5 defaulted to
+    bouldering-only (Chuncheon Climbing Center, no facility-type
+    description found beyond bouldering; I'm Not Boulder, whose own name
+    signals a bouldering specialist; Gangneung Climbing, same "no
+    description beyond bouldering" case). Climb House is tagged
+    bouldering + top-rope (both indicated by source material). Climb
+    Together is tagged bouldering + top-rope + lead-climbing (all three
+    indicated by source material).
+  - **Every address geocoded via WebFetch against ArcGIS's own
+    `findAddressCandidates` endpoint** rather than Nominatim (a
+    deliberate substitution for this batch, not a change to the
+    project's usual method) — all 5 addresses resolved with `score=100`
+    exact matches, the highest-confidence geocoding tier used anywhere
+    in this dataset.
+  - `state` uses the existing `GANGWON` key (already present in
+    `STATES_BY_COUNTRY.KR` from the earlier South-Korea-expansion pass
+    that completed Korea's state list to all 17 real divisions) — no
+    `js/app.js` change needed. A new `--kr-gangwon` CSS colour variable
+    + chip rule and a new Gangwon-do sidebar chip were added to Korea's
+    existing chip row in `index.html`, since these are the division's
+    first-ever seed spots.
+  - Net result: 1862 → **1867 total spots**. Structural check
+    (Node-parsed `window.SEED_GYMS`): 1867/1867 unique ids, zero
+    duplicate name+suburb+state+country combos, every spot has a
+    non-empty `types` array.
+  - **Verified live**: this sandbox's own CDN access is restricted, so
+    live verification used a local headless-Chromium Playwright script
+    (Chromium pre-installed in this environment, launched against a
+    locally-installed `playwright` npm package rather than fetching a
+    fresh browser download) driving a served copy (`npx serve .`) with
+    `js/supabase-init.js` temporarily pointed at an invalid URL to force
+    the app's documented offline-fallback path — reverted and confirmed
+    clean via `git diff` before committing. With that forced: all 5
+    spots present in `window.SEED_GYMS` (1862 → 1867), the Gangwon-do
+    chip correctly expands its country group and filters to exactly
+    these 5 named spots, no console errors beyond the deliberately-forced
+    Supabase-unreachable ones, no horizontal overflow at 375px mobile
+    width. Unlike an earlier session's attempt at this same kind of
+    check (blocked by a CDN policy denial and worked around with a
+    different local-package substitution), this pass's live-browser
+    verification succeeded cleanly on the first try.
   - **Not yet pushed to the live Supabase table** — same next-step gap as
     every prior batch.
 
