@@ -5314,6 +5314,88 @@ from one source:
     smoke test.
   - **Not yet pushed to the live Supabase table** — same next-step gap as
     every prior batch.
+- **Jeollabuk-do (6 gyms) — fourth and last remaining South Korea
+  division filled, first-ever spots in this division.** Direct
+  continuation of the standing "keep working on Korea" task: fills the
+  last of South Korea's then-4-empty top-level divisions (Gangwon-do,
+  Chungcheongbuk-do, and Gyeongsangbuk-do were completed first). Sejong
+  remains excluded, per an earlier session, since its only candidate was
+  outdoor-only. **This completes South Korea's full division coverage**
+  — every one of the country's 17 real top-level divisions now has at
+  least one seed spot. Sourcing (names, addresses, discipline evidence)
+  was gathered in earlier segments and all 6 addresses geocoded via
+  WebFetch against ArcGIS's `findAddressCandidates` endpoint (the same
+  substitution already used for every prior Korea-division batch in this
+  series), all at `score=100` exact matches; this pass wrote the actual
+  `js/data.js`/`css/style.css`/`index.html` entries and verified them.
+  - 6 real, currently-operating gyms confirmed across 3 cities: Jeonju
+    Hola Climbing Center and Hans Climbing (both Jeonju, Deokjin-gu),
+    Gunsan Climbing Center and Gunsan Sports Climbing Center (both
+    Gunsan), ClimbFarm (Iksan), and Ascent Climbing Manseong (Jeonju).
+  - **A naming resolution, not a guess**: Jeonju Hola Climbing Center's
+    own Facebook page ("전주올라클라이밍센터 | Jeonju") confirms "Hola" and
+    "Olla" are the same gym under two different romanizations of the same
+    Korean name (올라), with the gym's own English/URL branding using
+    "Hola" — recorded rather than treated as two separate candidates.
+  - **Two genuine open research threads deliberately left unresolved
+    rather than guessed either way**, both disclosed in the relevant
+    spots' own `notes` fields per `Rules.md` §1/§19: a "Hardrock
+    Climbing" (하드락 클라이밍 카페) cited by spiri7.com/welfarehello.com as
+    offering bouldering + lead could not be linked via any independent
+    source to either Jeonju Hola Climbing Center or Hans Climbing
+    (Jeonju), despite multiple targeted searches — so the lead-climbing
+    tag was not applied speculatively to either gym. Separately, Gunsan
+    Climbing Center's official site (sportsclub.sports.or.kr) confirms it
+    as a real, currently-registered sports club facility but only
+    generically mentions '산악' (mountaineering/alpine climbing), with no
+    explicit bouldering/top-rope/lead facility-type confirmation; a
+    second official source (climbingtv.co.kr) could not be fetched
+    (ROBOTS_DISALLOWED/SSL error).
+  - **Type applied per this project's established Korea-specific
+    discipline** (default to bouldering-only unless source material
+    explicitly names another discipline, per the worldwide top-rope-tag
+    audit's finding that ~83% of individually-confirmed Korea gyms are
+    bouldering-only): all 6 ended up bouldering-only — no independent
+    rope/lead evidence was found for any of the six despite active
+    searching, including for the two unresolved threads above.
+  - **Every address geocoded via WebFetch against ArcGIS's own
+    `findAddressCandidates` endpoint**, the same substitution already
+    used for every prior Korea-division batch in this series — all 6
+    addresses resolved with `score=100` exact matches.
+  - `state` uses the existing `JEOLLABUK` key (already present in
+    `STATES_BY_COUNTRY.KR` from the earlier South-Korea-expansion pass
+    that completed Korea's state list to all 17 real divisions) — no
+    `js/app.js` change needed. A new `--kr-jeollabuk` CSS colour variable
+    (`#cf3fae`, a magenta continuing the existing `--kr-*` hue spread) +
+    chip rule (chips use a shared `--chip` custom property, see "Map" →
+    Design system, so no per-region CSS rule beyond the colour variable
+    was needed) and a new Jeollabuk-do sidebar chip were added to Korea's
+    existing chip row in `index.html`, since these are the division's
+    first-ever seed spots.
+  - Net result: 1875 → **1881 total spots**. Structural check
+    (Node-parsed `window.SEED_GYMS`): 1881/1881 unique ids, zero
+    duplicate name+suburb+state+country combos, every spot has a
+    non-empty `types` array, every KR state code used resolves against
+    `STATES_BY_COUNTRY.KR`.
+  - **Verified structurally, not via live browser this pass** — this
+    session's CDN access was confirmed (again, via a direct
+    `/__agentproxy/status`-linked `curl` check against unpkg.com) to be
+    blocked by the environment's agent-proxy policy (`connect_rejected`),
+    matching every prior segment's finding in this series — this pass
+    didn't spend further turns re-confirming it and went straight to the
+    Node-parsed structural check instead, per `Rules.md` §12's "Do Not
+    Pretend" — disclosed as a real limitation, not glossed over as a
+    full live smoke test.
+  - **South Korea's standing "keep working on Korea" task has no more
+    empty divisions to fill** — Gangwon-do, Chungcheongbuk-do,
+    Gyeongsangbuk-do, and Jeollabuk-do are all now done, joining the 13
+    divisions that already had spots; Sejong remains the one deliberate
+    exclusion (outdoor-only candidate). A future session would need new
+    direction from the user for further Korea work (e.g. expanding an
+    already-filled division, or the two unresolved research threads
+    above) rather than more empty-division filling.
+  - **Not yet pushed to the live Supabase table** — same next-step gap as
+    every prior batch.
 
 ## Scraping and bulk access
 
