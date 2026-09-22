@@ -112,6 +112,92 @@ Each entry:
 
 ## In Progress
 
+### Featured "worth traveling for" destinations discovery layer
+- Branch: `feature/featured-destinations-discovery` — implemented,
+  verification limited by this sandbox (see below); not yet committed
+  or merged.
+- Status: in progress.
+- What: direct follow-up to a brainstorm about whether a global/near-
+  global bouldering app should include countries people don't actually
+  travel to boulder in. User's explicit, standing instruction from that
+  discussion: **"ok dont cut it"** — nothing existing (Africa or any
+  other country/gym data) gets removed. Separately, user authorized
+  ("yeah do that") building a curated, *additive* "worth traveling for"
+  discovery layer surfacing countries with real climbing-gym density/
+  reputation (China, Japan, Korea, US, Germany, UK) for trip-planning —
+  layered on top of the existing full dataset, which is completely
+  unmodified by this task.
+- **Implementation** (three files only — `js/data.js`, the seed
+  dataset, is untouched, confirming this is a pure UI/navigation
+  addition with zero data risk):
+  - `index.html`: a new `<div class="featured-destinations"
+    id="featuredDestinations">` block in the sidebar, between the
+    search input and `#stateChips`, with a "Worth traveling for" section
+    label and six real `<button type="button" class="featured-chip"
+    data-country="...">` elements (China, Japan, South Korea, United
+    States, Germany, United Kingdom) — real buttons, not `<div>`s, per
+    this project's established accessibility floor.
+  - `js/app.js`: a new, separate `click` listener on
+    `#featuredDestinations` (added after the existing `render()` call,
+    before the `#typeFilters` listener). Deliberately its own listener
+    rather than folded into the existing `#stateChips` handler, since
+    `.featured-destinations` sits outside `#stateChips` and is pure
+    navigation (fly to the country via the existing
+    `COUNTRY_FLY_TARGETS` lookup, expand that country's `.country-group`
+    and parent `.region-group` so it's visible in the sidebar too) —
+    never touches `activeStates`/the filter state, unlike a real chip
+    click. Mirrors the already-existing `.country-label` click-handling
+    branch's logic exactly.
+  - `css/style.css`: new `.featured-destinations`/`.featured-row`/
+    `.featured-chip` rules inserted after the existing `.chip.active`
+    rule. Deliberately styled distinct from `.chip`'s neutral-border/
+    toggle-active pattern (accent-outlined pills that fill solid on
+    hover/press) so the row reads as navigation, not "one more filter."
+    Reuses existing design tokens only — `--accent`/`--accent-ink`,
+    `--font-display`, `--fs-sm`, `--r-sm`, `--sp-2`, `--focus` — no new
+    tokens invented. Applies the design-taste-frontend skill's COLOR
+    CONSISTENCY LOCK (the one accent colour, not a new one) and Tactile
+    Feedback (`:active{transform:scale(0.95)}`) principles.
+- **Verification, honestly limited by this sandbox environment** (per
+  Rules.md §12 — reporting what was actually tested, not claiming it
+  "works" untested):
+  - Static review confirms the new code correctly reuses
+    `COUNTRY_FLY_TARGETS` and `motion()` (both pre-existing, already
+    exercised by the working `.country-label` handler this mirrors),
+    and that the click handler's selectors (`.country-group[data-
+    country="..."]`, `.region-group`, `.region-header`) match the real
+    markup in `index.html`.
+  - A live Playwright smoke test was run (served via `npx serve .`,
+    `node /tmp/smoke_test.js`) and confirms `#featuredDestinations`
+    exists with all 6 `.featured-chip` children present, correctly
+    labelled, with the right `data-country` codes — the markup itself
+    renders correctly.
+  - **The click-behaviour half of the smoke test could not be
+    exercised**: this sandbox's outbound network blocks `unpkg.com`
+    (confirmed twice, independently — a direct `curl` to
+    `unpkg.com/maplibre-gl@5.24.0/...` fails with an explicit
+    egress-proxy rejection, and the Playwright browser's own captured
+    console output shows `PAGEERROR: maplibregl is not defined`
+    alongside several `net::ERR_TUNNEL_CONNECTION_FAILED` entries).
+    `js/app.js` is one top-level IIFE that crashes at the pre-existing
+    `new maplibregl.Map(...)` call (unrelated to this task) before this
+    task's own `addEventListener` call — or anything else in the file
+    after that line — ever runs. This means **no live JS behaviour in
+    `js/app.js` can be verified in this sandbox at all**, not just this
+    feature's — a pre-existing environment limitation, not something
+    this task introduced or could fix from within the session.
+  - No console errors attributable to this task's own code were
+    observed; every error present is the same pre-existing
+    `maplibregl`/`supabase`/tunnel-connection failure.
+- **Not yet done**: an actual click-through smoke test (does clicking a
+  chip really fly the camera and expand the right groups) — needs a
+  real, unrestricted browser, since this sandbox cannot load MapLibre
+  GL at all. No git commit has been made yet. This branch also cannot
+  be pushed from this session — the git proxy returns a 403
+  (`spiary0104/climb-atlas is not in this session's authorized
+  repository set`) — see the Completion Report delivered to the user
+  for how to actually receive this change.
+
 ### UI/UX redesign — Stage H: polish, copy, cleanup (final stage)
 - Branch: `feature/polish-copy-cleanup` — committed, merged to
   `master`, pushed.
