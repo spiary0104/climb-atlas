@@ -5201,6 +5201,63 @@ from one source:
     verification succeeded cleanly on the first try.
   - **Not yet pushed to the live Supabase table** — same next-step gap as
     every prior batch.
+- **Chungcheongbuk-do (4 gyms) — second South Korea division filled,
+  first-ever spots in this division.** Direct continuation of the
+  standing "keep working on Korea" task: fills the second of South
+  Korea's 4 then-empty top-level divisions (Gangwon-do was completed
+  first; Gyeongsangbuk-do and Jeollabuk-do remained). Sourced via general
+  web research plus a Korean gym-tracking/leaderboard site
+  (spiri7.com — the same secondary source already used and documented
+  for the earlier South-Korea-expansion pass) as a discipline-confirmation
+  aid alongside each candidate's own web presence.
+  - 4 real, currently-operating gyms confirmed across 3 cities: Cheongju
+    (Cheongju Rak Climbing Center, Tagy Climbing Center, Cheongju
+    International Sports Climbing Center) and Chungju (Oullac Climbing
+    Gym).
+  - **Type applied per this project's established Korea-specific
+    discipline** (default to bouldering-only unless source material
+    explicitly names another discipline): 3 of 4 defaulted to or were
+    confirmed bouldering-only (Cheongju Rak, explicitly tagged 볼더링
+    by its source with a 2026.09 currency signal; Tagy Climbing Center,
+    no facility-type description beyond generic route commentary; Oullac
+    Climbing Gym, explicitly tagged bouldering by a Spiri7 regional
+    round-up article). Cheongju International Sports Climbing Center is
+    tagged bouldering + lead-climbing — a real, government-built
+    (~4 billion KRW) international-standard facility at Naesu Living
+    Sports Park with competition-grade lead/speed/bouldering walls plus
+    smaller amateur walls, confirmed via a 2021 Newsis news article and
+    independently corroborated by a brunch.co.kr writeup describing its
+    2024 full-scale-operations relaunch; speed climbing is present but
+    untagged since this app has no speed-climbing type (same convention
+    as CLIMB Partner, Mongolia).
+  - **Every address geocoded via WebFetch against ArcGIS's own
+    `findAddressCandidates` endpoint**, the same substitution already
+    used for the Gangwon-do batch — all 4 addresses resolved with
+    `score=100` exact matches.
+  - `state` uses the existing `CHUNGCHEONGBUK` key (already present in
+    `STATES_BY_COUNTRY.KR` from the earlier South-Korea-expansion pass
+    that completed Korea's state list to all 17 real divisions) — no
+    `js/app.js` change needed. A new `--kr-chungcheongbuk` CSS colour
+    variable + chip rule and a new Chungcheongbuk-do sidebar chip were
+    added to Korea's existing chip row in `index.html`, since these are
+    the division's first-ever seed spots.
+  - Net result: 1867 → **1871 total spots**. Structural check
+    (Node-parsed `window.SEED_GYMS`): 1871/1871 unique ids, zero
+    duplicate name+suburb+state+country combos, every spot has a
+    non-empty `types` array, every KR state code used resolves against
+    `STATES_BY_COUNTRY.KR`.
+  - **Verified structurally, not via live browser this pass** — this
+    session's CDN access was confirmed (again) to be blocked by the
+    environment's agent-proxy policy (`unpkg.com`/`cdn.jsdelivr.net`/
+    `fonts.googleapis.com` all rejected per `/__agentproxy/status`), and
+    after several prior segments spent repeatedly re-confirming this same
+    block without making forward progress, this pass deliberately
+    stopped retrying it and used a Node-parsed structural check instead
+    (see above), per `Rules.md` §12's "Do Not Pretend" — this is
+    disclosed as a real limitation, not glossed over as a full live
+    smoke test.
+  - **Not yet pushed to the live Supabase table** — same next-step gap as
+    every prior batch.
 
 ## Scraping and bulk access
 
