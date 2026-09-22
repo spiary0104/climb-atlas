@@ -3841,6 +3841,38 @@ _(none)_
 
 ## Done (recent)
 
+### Add Gyeongsangbuk-do, South Korea (4 gyms, third division filled)
+- Status: done — committed directly to `master`.
+- What: direct continuation of the standing "keep working on Korea" task
+  — fills the third of South Korea's then-4-empty top-level divisions
+  (Gangwon-do and Chungcheongbuk-do were completed first; Jeollabuk-do
+  remains). Sourcing (Korean names, addresses, discipline evidence) was
+  gathered via a research subagent and the addresses geocoded via
+  WebFetch against ArcGIS's `findAddressCandidates` endpoint (all 4 at
+  `score=100` exact matches) in an earlier segment; this pass wrote the
+  `js/data.js` entries, added the first-ever CSS colour variable + chip
+  for this division, and verified structurally. Full detail in
+  `docs/architecture.md` "Seed data sourcing".
+- 4 real, currently-operating gyms across 4 cities: Flow Climb
+  (Gyeongju), Olla Climbing Center (Gyeongsan), Norbo Climbing (Gumi),
+  Pohang Spider Climbing (Pohang) — all tagged bouldering-only per this
+  project's established Korea-specific discipline (no fully-confirmed
+  rope/lead evidence for any of the four).
+- Net result: 1871 → **1875 total spots**. Structural check (Node-parsed
+  `window.SEED_GYMS`): 1875/1875 unique ids, zero duplicate
+  name+suburb+state+country combos, every spot has a non-empty `types`
+  array, every KR state code used resolves against `STATES_BY_COUNTRY.KR`.
+- **Verified structurally, not via live browser this pass** — this
+  session's CDN access was re-confirmed blocked by the environment's
+  agent-proxy policy (unpkg.com/cdn.jsdelivr.net/fonts.googleapis.com
+  all `connect_rejected`), matching every prior segment's finding; per
+  `Rules.md` §12 this pass went straight to the Node-parsed structural
+  check rather than re-litigating the CDN block again.
+- **Not yet done**: running the regenerated seed SQL against the live
+  Supabase table — same outstanding step as every prior batch; the last
+  remaining empty Korea division, Jeollabuk-do, per the standing "keep
+  working on Korea" instruction.
+
 ### Add Montenegro, Mongolia, Oman and Paraguay (8 gyms, 81st-84th countries)
 - Status: done — committed directly to `master`.
 - What: user said "keep going". Ten countries were researched in parallel; the four with 2

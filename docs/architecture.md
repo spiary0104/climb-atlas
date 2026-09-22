@@ -5258,6 +5258,62 @@ from one source:
     smoke test.
   - **Not yet pushed to the live Supabase table** — same next-step gap as
     every prior batch.
+- **Gyeongsangbuk-do (4 gyms) — third South Korea division filled,
+  first-ever spots in this division.** Direct continuation of the
+  standing "keep working on Korea" task: fills the third of South
+  Korea's then-4-empty top-level divisions (Gangwon-do and
+  Chungcheongbuk-do were completed first; Jeollabuk-do remained).
+  Findings were gathered via a research subagent, with the 4 addresses
+  geocoded via WebFetch against ArcGIS's `findAddressCandidates`
+  endpoint (the same substitution already used for Gangwon-do and
+  Chungcheongbuk-do) in an earlier segment — this pass wrote the actual
+  `js/data.js`/`css/style.css`/`index.html` entries and verified them.
+  - 4 real, currently-operating gyms confirmed across 4 cities: Flow
+    Climb (Gyeongju), Olla Climbing Center (Hayang-eup, Gyeongsan),
+    Norbo Climbing (Gumi), Pohang Spider Climbing (Ocheon-eup, Pohang).
+  - **Type applied per this project's established Korea-specific
+    discipline** (default to bouldering-only unless source material
+    explicitly names another discipline): all 4 ended up bouldering-only.
+    Flow Climb had only a weak circumstantial hint toward bouldering, no
+    full facility-type confirmation. Olla Climbing Center is explicitly
+    confirmed bouldering by a Spiri7 leaderboard page. Norbo Climbing's
+    3rd floor is explicitly confirmed a dedicated bouldering gym
+    ('볼더링짐'); a separately-mentioned 2nd-floor "endurance wall" was
+    not counted as rope/lead evidence since no source specifically calls
+    it a climbing wall. Pohang Spider Climbing has a confirmed 2nd-floor
+    bouldering area; a lead/rope offering is plausible from ambiguous
+    site language but wasn't first-party confirmed, so it's flagged for
+    manual review rather than tagged.
+  - **Every address geocoded via WebFetch against ArcGIS's own
+    `findAddressCandidates` endpoint**, the same substitution already
+    used for Gangwon-do and Chungcheongbuk-do — all 4 addresses resolved
+    with `score=100` exact matches.
+  - `state` uses the existing `GYEONGSANGBUK` key (already present in
+    `STATES_BY_COUNTRY.KR` from the earlier South-Korea-expansion pass
+    that completed Korea's state list to all 17 real divisions) — no
+    `js/app.js` change needed. A new `--kr-gyeongsangbuk` CSS colour
+    variable (a green, `#3fcf57`, computed via an HSL-hue-gap analysis of
+    the pre-existing `--kr-*` colours) + chip rule and a new
+    Gyeongsangbuk-do sidebar chip were added to Korea's existing chip
+    row in `index.html`, since these are the division's first-ever seed
+    spots.
+  - Net result: 1871 → **1875 total spots**. Structural check
+    (Node-parsed `window.SEED_GYMS`): 1875/1875 unique ids, zero
+    duplicate name+suburb+state+country combos, every spot has a
+    non-empty `types` array, every KR state code used resolves against
+    `STATES_BY_COUNTRY.KR`.
+  - **Verified structurally, not via live browser this pass** — this
+    session's CDN access was confirmed (again, via a direct
+    `/__agentproxy/status`-linked `curl` check against
+    unpkg.com/cdn.jsdelivr.net/fonts.googleapis.com) to be blocked by the
+    environment's agent-proxy policy (`connect_rejected` on all three),
+    matching every prior segment's finding — this pass didn't spend
+    further turns re-confirming it and went straight to the Node-parsed
+    structural check instead, per `Rules.md` §12's "Do Not Pretend" —
+    disclosed as a real limitation, not glossed over as a full live
+    smoke test.
+  - **Not yet pushed to the live Supabase table** — same next-step gap as
+    every prior batch.
 
 ## Scraping and bulk access
 
