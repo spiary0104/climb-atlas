@@ -11,3 +11,8 @@ desktop.ini
 .vscode/
 .idea/
 *.swp
+
+# Scratch npm installs (this project has no package.json / build step —
+# see CLAUDE.md "Stack" — node_modules here is one-off verification
+# tooling for a session, never a tracked dependency)
+node_modules/
