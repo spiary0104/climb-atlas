@@ -5496,6 +5496,30 @@ class is fine everywhere it's reused.
     now does the same fly-to alongside its existing collapse-toggle,
     mirroring how a `.country-label` click already both toggles and flies
     to `COUNTRY_FLY_TARGETS`.
+- **Featured "worth traveling for" destinations row** (sidebar, above
+  `#stateChips`): a curated, additive discovery layer — six hand-picked
+  countries (China, Japan, South Korea, United States, Germany, United
+  Kingdom) surfaced as accent-outlined `.featured-chip` buttons for
+  trip-planning, separate from the filter system. This does not touch
+  `js/data.js` or any existing country/gym data (the standing "don't cut
+  anything" instruction covers all of it, including Africa) — it's a
+  pure navigation addition, same category of change as the continent-
+  label click-to-fly above. Its own `click` listener on
+  `#featuredDestinations` (not folded into the `#stateChips` handler,
+  since the row sits outside that container and never touches
+  `activeStates`) reuses `COUNTRY_FLY_TARGETS` and `motion()` exactly the
+  way the `.country-label` branch does, then expands the target
+  country's `.country-group` and its parent `.region-group` so the
+  destination is actually visible in the sidebar once the camera lands
+  on it. Styled deliberately distinct from `.chip` (solid-fill-on-hover
+  pills instead of the toggle-active pattern) so it reads as "go here,"
+  not "one more filter." **Verification note**: this sandbox's outbound
+  network blocks `unpkg.com`, so `js/app.js`'s single top-level IIFE
+  crashes at the pre-existing `new maplibregl.Map(...)` call before this
+  feature's own listener — or anything else in the file — ever runs;
+  confirmed via static review and a markup-only Playwright smoke test
+  instead of a live click-through. See `docs/tasks.md`'s "In Progress"
+  entry for the full disclosure.
 
 ## PWA / offline support
 

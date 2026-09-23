@@ -640,6 +640,32 @@
   .chip:active{transform:scale(0.95);}
   .chip.active{background:var(--chip, var(--text));color:var(--bg);border-color:transparent;font-weight:600;}
 
+  /* Featured-destinations row: pure navigation (fly-to), not a filter --
+     deliberately styled distinct from .chip's neutral-border/toggle-active
+     pattern so it doesn't read as "one more filter". Accent-outlined pills
+     that fill solid on hover/press, the same accent used for the app's one
+     call-to-action colour elsewhere (locked per-page, see .btn-primary). */
+  .featured-destinations{margin-bottom:var(--sp-2);}
+  .featured-row{display:flex;flex-wrap:wrap;gap:6px;}
+  .featured-chip{
+    appearance:none;
+    font-family:var(--font-display);
+    font-weight:500;
+    font-size:var(--fs-sm);
+    line-height:1.3;
+    padding:5px 10px;
+    border-radius:var(--r-sm);
+    border:1px solid var(--accent);
+    background:transparent;
+    color:var(--accent);
+    cursor:pointer;
+    user-select:none;
+    transition:background-color .15s ease, color .15s ease, transform .1s ease;
+  }
+  .featured-chip:hover{background:var(--accent);color:var(--accent-ink);}
+  .featured-chip:active{transform:scale(0.95);}
+  .featured-chip:focus-visible{outline:2px solid var(--focus);outline-offset:2px;}
+
   .toggle-row{display:flex;align-items:center;gap:8px;font-size:var(--fs-sm);color:var(--text-dim);font-family:var(--font-body);cursor:pointer;}
   .toggle-row input{accent-color:var(--accent);}
 
