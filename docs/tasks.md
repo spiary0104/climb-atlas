@@ -3927,6 +3927,94 @@ _(none)_
 
 ## Done (recent)
 
+### Add Gyeongsangbuk-do, South Korea (4 gyms, third division filled)
+- Status: done — committed directly to `master`.
+- What: direct continuation of the standing "keep working on Korea" task
+  — fills the third of South Korea's then-4-empty top-level divisions
+  (Gangwon-do and Chungcheongbuk-do were completed first; Jeollabuk-do
+  remains). Sourcing (Korean names, addresses, discipline evidence) was
+  gathered via a research subagent and the addresses geocoded via
+  WebFetch against ArcGIS's `findAddressCandidates` endpoint (all 4 at
+  `score=100` exact matches) in an earlier segment; this pass wrote the
+  `js/data.js` entries, added the first-ever CSS colour variable + chip
+  for this division, and verified structurally. Full detail in
+  `docs/architecture.md` "Seed data sourcing".
+- 4 real, currently-operating gyms across 4 cities: Flow Climb
+  (Gyeongju), Olla Climbing Center (Gyeongsan), Norbo Climbing (Gumi),
+  Pohang Spider Climbing (Pohang) — all tagged bouldering-only per this
+  project's established Korea-specific discipline (no fully-confirmed
+  rope/lead evidence for any of the four).
+- Net result: 1871 → **1875 total spots**. Structural check (Node-parsed
+  `window.SEED_GYMS`): 1875/1875 unique ids, zero duplicate
+  name+suburb+state+country combos, every spot has a non-empty `types`
+  array, every KR state code used resolves against `STATES_BY_COUNTRY.KR`.
+- **Verified structurally, not via live browser this pass** — this
+  session's CDN access was re-confirmed blocked by the environment's
+  agent-proxy policy (unpkg.com/cdn.jsdelivr.net/fonts.googleapis.com
+  all `connect_rejected`), matching every prior segment's finding; per
+  `Rules.md` §12 this pass went straight to the Node-parsed structural
+  check rather than re-litigating the CDN block again.
+- **Not yet done**: running the regenerated seed SQL against the live
+  Supabase table — same outstanding step as every prior batch; the last
+  remaining empty Korea division, Jeollabuk-do, per the standing "keep
+  working on Korea" instruction.
+
+### Add Jeollabuk-do, South Korea (6 gyms, fourth and final division filled)
+- Status: done — committed directly to `master`.
+- What: direct continuation of the standing "keep working on Korea" task
+  — fills the last of South Korea's then-4-empty top-level divisions
+  (Gangwon-do, Chungcheongbuk-do, and Gyeongsangbuk-do were completed
+  first). Sejong remains excluded, per an earlier session, since its only
+  candidate was outdoor-only. **This completes South Korea's full
+  division coverage** — every one of the country's 17 real top-level
+  divisions now has at least one seed spot. Sourcing (names, addresses,
+  discipline evidence) was gathered in earlier segments and all 6
+  addresses geocoded via WebFetch against ArcGIS's `findAddressCandidates`
+  endpoint (the same substitution used for every prior Korea-division
+  batch in this series), all at `score=100` exact matches; this pass
+  wrote the `js/data.js`/`css/style.css`/`index.html` entries and
+  verified them. Full detail in `docs/architecture.md` "Seed data
+  sourcing".
+- 6 real, currently-operating gyms across 3 cities: Jeonju Hola Climbing
+  Center and Hans Climbing (both Jeonju, Deokjin-gu), Gunsan Climbing
+  Center and Gunsan Sports Climbing Center (both Gunsan), ClimbFarm
+  (Iksan), and Ascent Climbing Manseong (Jeonju) — all tagged
+  bouldering-only per this project's established Korea-specific
+  discipline (no independent rope/lead evidence found for any of the
+  six).
+- **A naming resolution, not a guess**: Jeonju Hola Climbing Center's own
+  Facebook page confirms "Hola" and "Olla" are the same gym under two
+  romanizations of the same Korean name — recorded rather than treated
+  as two separate candidates.
+- **Two genuine open research threads deliberately left unresolved
+  rather than guessed either way**, both disclosed in the relevant
+  spots' own `notes` fields: a "Hardrock Climbing" cited by secondary
+  sources as offering bouldering + lead could not be linked to either
+  Jeonju Hola Climbing Center or Hans Climbing despite targeted
+  searches; Gunsan Climbing Center's official site only generically
+  mentions mountaineering/alpine climbing, with no explicit facility-
+  type confirmation, and a second official source could not be fetched.
+- Net result: 1875 → **1881 total spots**. Structural check (Node-parsed
+  `window.SEED_GYMS`): 1881/1881 unique ids, zero duplicate
+  name+suburb+state+country combos, every spot has a non-empty `types`
+  array, every KR state code used resolves against `STATES_BY_COUNTRY.KR`.
+- **Verified structurally, not via live browser this pass** — this
+  session's CDN access was re-confirmed blocked by the environment's
+  agent-proxy policy (`connect_rejected` on unpkg.com), matching every
+  prior segment's finding; per `Rules.md` §12 this pass went straight to
+  the Node-parsed structural check instead of re-litigating the CDN
+  block again.
+- **South Korea's standing "keep working on Korea" task has no more
+  empty divisions to fill** — Gangwon-do, Chungcheongbuk-do,
+  Gyeongsangbuk-do, and Jeollabuk-do are all now done, joining the 13
+  divisions that already had spots; Sejong remains the one deliberate
+  exclusion (outdoor-only candidate). A future session would need new
+  direction from the user for further Korea work (e.g. expanding an
+  already-filled division, or the two unresolved research threads
+  above) rather than more empty-division filling.
+- **Not yet done**: running the regenerated seed SQL against the live
+  Supabase table — same outstanding step as every prior batch.
+
 ### Add Montenegro, Mongolia, Oman and Paraguay (8 gyms, 81st-84th countries)
 - Status: done — committed directly to `master`.
 - What: user said "keep going". Ten countries were researched in parallel; the four with 2
@@ -3967,6 +4055,40 @@ _(none)_
   Supabase table — same outstanding step as every prior batch; the
   remaining 3 empty Korea divisions (Chungcheongbuk-do, Gyeongsangbuk-do,
   Jeollabuk-do) per the standing "keep working on Korea" instruction.
+
+### Add Chungcheongbuk-do, South Korea (4 gyms, second division filled)
+- Status: done — committed directly to `master`.
+- What: direct continuation of the standing "keep working on Korea" task
+  — fills the second of South Korea's then-4-empty top-level divisions
+  (Gangwon-do was completed first; Gyeongsangbuk-do and Jeollabuk-do
+  remained). Sourced via general web research plus spiri7.com (a Korean
+  gym-tracking/leaderboard site already used and documented for the
+  earlier South-Korea-expansion pass) as a discipline-confirmation aid.
+  Addresses geocoded via WebFetch against ArcGIS's `findAddressCandidates`
+  endpoint, all 4 at `score=100` exact matches. Type defaulted to
+  bouldering-only per this project's established Korea-specific
+  discipline unless source material named another discipline — 3 of 4
+  defaulted/confirmed bouldering-only, 1 (Cheongju International Sports
+  Climbing Center, a real government-built facility at Naesu Living
+  Sports Park) confirmed bouldering + lead-climbing. Full detail in
+  `docs/architecture.md` "Seed data sourcing".
+- Net result: 1867 → **1871 total spots**. Structural check
+  (Node-parsed `window.SEED_GYMS`): 1871/1871 unique ids, zero duplicate
+  name+suburb+state+country combos, every spot has a non-empty `types`
+  array, every KR state code used resolves against
+  `STATES_BY_COUNTRY.KR`.
+- **Verified structurally, not via live browser this pass** — this
+  session's CDN access was confirmed (again) to be blocked by the
+  environment's agent-proxy policy, and after several prior segments
+  spent repeatedly re-confirming this same block without making forward
+  progress, this pass deliberately stopped retrying it and used a
+  Node-parsed structural check instead, per `Rules.md` §12's "Do Not
+  Pretend" — disclosed as a real limitation, not glossed over as a full
+  live smoke test.
+- **Not yet done**: running the regenerated seed SQL against the live
+  Supabase table — same outstanding step as every prior batch; the
+  remaining 2 empty Korea divisions (Gyeongsangbuk-do, Jeollabuk-do) per
+  the standing "keep working on Korea" instruction.
 
 ### Add Guatemala, Armenia, Lebanon, Jordan and Nepal (14 gyms, 76th-80th countries)
 - Status: done — committed directly to `master`.
