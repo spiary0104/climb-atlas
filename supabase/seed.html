@@ -16,7 +16,7 @@
 
 <h1>Climb Atlas — one-time seed</h1>
 <p>
-  Generates a SQL script from every spot in <code>js/data.js</code> that upserts them into your
+  Generates a SQL script from every spot in <code>data/gyms.json</code> that upserts them into your
   Supabase <code>spots</code> table. Safe to re-run — it matches on <code>id</code>, so re-running
   just re-syncs the seed rows rather than duplicating them.
 </p>
@@ -39,7 +39,10 @@
 <p id="status"></p>
 <pre id="output">Click "Generate SQL" to build the script.</pre>
 
-<script src="../js/data.js"></script>
+<script>
+  // Seed dataset: data/gyms.json (pure JSON). Handlers await SEED_GYMS_READY.
+  window.SEED_GYMS_READY = fetch('../data/gyms.json').then(r => r.json()).then(d => (window.SEED_GYMS = d));
+</script>
 <script>
   const out = document.getElementById('output');
   const statusEl = document.getElementById('status');
@@ -48,7 +51,7 @@
   let sql = '';
 
   // Postgres single-quoted string literal, escaping embedded single quotes
-  // the standard SQL way (doubling them) -- notes/names in js/data.js do
+  // the standard SQL way (doubling them) -- notes/names in data/gyms.json do
   // contain apostrophes and quoted phrases.
   function sqlString(v) {
     return "'" + String(v).replace(/'/g, "''") + "'";
@@ -60,7 +63,8 @@
     return 'ARRAY[' + (arr || []).map(sqlString).join(',') + ']::text[]';
   }
 
-  genBtn.addEventListener('click', () => {
+  genBtn.addEventListener('click', async () => {
+    await window.SEED_GYMS_READY;
     const rows = window.SEED_GYMS.map(g => `  (${[
       sqlString(g.id),
       sqlString(g.name),

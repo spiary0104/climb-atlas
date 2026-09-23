@@ -2,7 +2,7 @@
 //
 // Bump CACHE_VERSION whenever a precached file's content changes so
 // clients pick up the new version instead of serving stale files forever.
-const CACHE_VERSION = 'v1';
+const CACHE_VERSION = 'v3';
 const SHELL_CACHE = 'climbatlas-shell-' + CACHE_VERSION;
 const RUNTIME_CACHE = 'climbatlas-runtime-' + CACHE_VERSION;
 const TILE_CACHE = 'climbatlas-tiles-' + CACHE_VERSION;
@@ -14,9 +14,22 @@ const SHELL_FILES = [
   'about.html',
   'manifest.json',
   'css/style.css',
+  'css/chips.css',
   'js/supabase-init.js',
   'js/auth.js',
-  'js/app.js',
+  'js/main.js',
+  'js/sw-register.js',
+  'js/modules/state.js',
+  'js/modules/constants.js',
+  'js/modules/regions.js',
+  'js/modules/utils.js',
+  'js/modules/map.js',
+  'js/modules/sidebar.js',
+  'js/modules/modals.js',
+  'js/modules/auth-ui.js',
+  'js/modules/data-load.js',
+  'js/modules/logbook.js',
+  'js/modules/moderation.js',
   'icons/icon.svg'
 ];
 

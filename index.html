@@ -19,6 +19,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.css">
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/chips.css">
 </head>
 <body>
 
@@ -38,7 +39,7 @@
         <a class="btn btn-text" href="about.html">About</a>
         <button class="btn btn-text" id="savedBtn">Saved</button>
         <button class="btn btn-text" id="logbookBtn">Logbook</button>
-        <button class="btn btn-outline" id="pendingReviewBtn" style="display:none;">Pending review</button>
+        <button class="btn btn-outline init-hidden" id="pendingReviewBtn">Pending review</button>
         <div class="auth-widget" id="authWidget"><button class="btn btn-outline" id="signInBtn">Sign in</button></div>
       </nav>
       <button class="btn btn-primary" id="addBtn">+ Add<span class="hide-mobile"> a location</span></button>
@@ -56,17 +57,6 @@
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
           <input id="searchInput" type="search" placeholder="Search gym or suburb…" aria-label="Search gyms by name, suburb, or region" autocomplete="off">
         </div>
-        <div class="featured-destinations" id="featuredDestinations">
-          <div class="section-label">Worth traveling for</div>
-          <div class="featured-row">
-            <button type="button" class="featured-chip" data-country="CN">China</button>
-            <button type="button" class="featured-chip" data-country="JP">Japan</button>
-            <button type="button" class="featured-chip" data-country="KR">South Korea</button>
-            <button type="button" class="featured-chip" data-country="US">United States</button>
-            <button type="button" class="featured-chip" data-country="DE">Germany</button>
-            <button type="button" class="featured-chip" data-country="GB">United Kingdom</button>
-          </div>
-        </div>
         <div id="stateChips">
           <div class="section-label">Region</div>
           <div class="chip-row">
@@ -78,25 +68,25 @@
               <div class="country-group collapsed" data-country="EG">
                 <button type="button" class="section-label country-label">Egypt</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="EG" data-state="GIZA" style="--chip:var(--eg-giza)" aria-pressed="false"><span class="dot"></span>Giza</button>
-                  <button type="button" class="chip" data-country="EG" data-state="CAIRO" style="--chip:var(--eg-cairo)" aria-pressed="false"><span class="dot"></span>Cairo</button>
+                  <button type="button" class="chip" data-country="EG" data-state="GIZA" aria-pressed="false"><span class="dot"></span>Giza</button>
+                  <button type="button" class="chip" data-country="EG" data-state="CAIRO" aria-pressed="false"><span class="dot"></span>Cairo</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="KE">
                 <button type="button" class="section-label country-label">Kenya</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="KE" data-state="NAIROBI" style="--chip:var(--ke-nairobi)" aria-pressed="false"><span class="dot"></span>Nairobi</button>
-                  <button type="button" class="chip" data-country="KE" data-state="LAIKIPIA" style="--chip:var(--ke-laikipia)" aria-pressed="false"><span class="dot"></span>Laikipia</button>
+                  <button type="button" class="chip" data-country="KE" data-state="NAIROBI" aria-pressed="false"><span class="dot"></span>Nairobi</button>
+                  <button type="button" class="chip" data-country="KE" data-state="LAIKIPIA" aria-pressed="false"><span class="dot"></span>Laikipia</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="ZA">
                 <button type="button" class="section-label country-label">South Africa</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="ZA" data-state="WESTERN_CAPE" style="--chip:var(--za-western-cape)" aria-pressed="false"><span class="dot"></span>Western Cape</button>
-                  <button type="button" class="chip" data-country="ZA" data-state="GAUTENG" style="--chip:var(--za-gauteng)" aria-pressed="false"><span class="dot"></span>Gauteng</button>
-                  <button type="button" class="chip" data-country="ZA" data-state="KWAZULU_NATAL" style="--chip:var(--za-kwazulu-natal)" aria-pressed="false"><span class="dot"></span>KwaZulu-Natal</button>
-                  <button type="button" class="chip" data-country="ZA" data-state="EASTERN_CAPE" style="--chip:var(--za-eastern-cape)" aria-pressed="false"><span class="dot"></span>Eastern Cape</button>
-                  <button type="button" class="chip" data-country="ZA" data-state="MPUMALANGA" style="--chip:var(--za-mpumalanga)" aria-pressed="false"><span class="dot"></span>Mpumalanga</button>
+                  <button type="button" class="chip" data-country="ZA" data-state="WESTERN_CAPE" aria-pressed="false"><span class="dot"></span>Western Cape</button>
+                  <button type="button" class="chip" data-country="ZA" data-state="GAUTENG" aria-pressed="false"><span class="dot"></span>Gauteng</button>
+                  <button type="button" class="chip" data-country="ZA" data-state="KWAZULU_NATAL" aria-pressed="false"><span class="dot"></span>KwaZulu-Natal</button>
+                  <button type="button" class="chip" data-country="ZA" data-state="EASTERN_CAPE" aria-pressed="false"><span class="dot"></span>Eastern Cape</button>
+                  <button type="button" class="chip" data-country="ZA" data-state="MPUMALANGA" aria-pressed="false"><span class="dot"></span>Mpumalanga</button>
                 </div>
               </div>
             </div>
@@ -107,249 +97,246 @@
               <div class="country-group collapsed" data-country="AM">
                 <button type="button" class="section-label country-label">Armenia</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="AM" data-state="YEREVAN" style="--chip:var(--am-yerevan)" aria-pressed="false"><span class="dot"></span>Yerevan</button>
+                  <button type="button" class="chip" data-country="AM" data-state="YEREVAN" aria-pressed="false"><span class="dot"></span>Yerevan</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="CN">
                 <button type="button" class="section-label country-label">China</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="CN" data-state="SHENZHEN" style="--chip:var(--cn-shenzhen)" aria-pressed="false"><span class="dot"></span>Shenzhen</button>
-                  <button type="button" class="chip" data-country="CN" data-state="GUANGZHOU" style="--chip:var(--cn-guangzhou)" aria-pressed="false"><span class="dot"></span>Guangzhou</button>
-                  <button type="button" class="chip" data-country="CN" data-state="SHANGHAI" style="--chip:var(--cn-shanghai)" aria-pressed="false"><span class="dot"></span>Shanghai</button>
-                  <button type="button" class="chip" data-country="CN" data-state="HANGZHOU" style="--chip:var(--cn-hangzhou)" aria-pressed="false"><span class="dot"></span>Hangzhou</button>
-                  <button type="button" class="chip" data-country="CN" data-state="CHENGDU" style="--chip:var(--cn-chengdu)" aria-pressed="false"><span class="dot"></span>Chengdu</button>
-                  <button type="button" class="chip" data-country="CN" data-state="BEIJING" style="--chip:var(--cn-beijing)" aria-pressed="false"><span class="dot"></span>Beijing</button>
-                  <button type="button" class="chip" data-country="CN" data-state="WUHAN" style="--chip:var(--cn-wuhan)" aria-pressed="false"><span class="dot"></span>Wuhan</button>
-                  <button type="button" class="chip" data-country="CN" data-state="CHANGSHA" style="--chip:var(--cn-changsha)" aria-pressed="false"><span class="dot"></span>Changsha</button>
-                  <button type="button" class="chip" data-country="CN" data-state="ZHUHAI" style="--chip:var(--cn-zhuhai)" aria-pressed="false"><span class="dot"></span>Zhuhai</button>
-                  <button type="button" class="chip" data-country="CN" data-state="CHONGQING" style="--chip:var(--cn-chongqing)" aria-pressed="false"><span class="dot"></span>Chongqing</button>
-                  <button type="button" class="chip" data-country="CN" data-state="XIAN" style="--chip:var(--cn-xian)" aria-pressed="false"><span class="dot"></span>Xi'an</button>
-                  <button type="button" class="chip" data-country="CN" data-state="NANJING" style="--chip:var(--cn-nanjing)" aria-pressed="false"><span class="dot"></span>Nanjing</button>
-                  <button type="button" class="chip" data-country="CN" data-state="SUZHOU" style="--chip:var(--cn-suzhou)" aria-pressed="false"><span class="dot"></span>Suzhou</button>
-                  <button type="button" class="chip" data-country="CN" data-state="TIANJIN" style="--chip:var(--cn-tianjin)" aria-pressed="false"><span class="dot"></span>Tianjin</button>
+                  <button type="button" class="chip" data-country="CN" data-state="SHENZHEN" aria-pressed="false"><span class="dot"></span>Shenzhen</button>
+                  <button type="button" class="chip" data-country="CN" data-state="GUANGZHOU" aria-pressed="false"><span class="dot"></span>Guangzhou</button>
+                  <button type="button" class="chip" data-country="CN" data-state="SHANGHAI" aria-pressed="false"><span class="dot"></span>Shanghai</button>
+                  <button type="button" class="chip" data-country="CN" data-state="HANGZHOU" aria-pressed="false"><span class="dot"></span>Hangzhou</button>
+                  <button type="button" class="chip" data-country="CN" data-state="CHENGDU" aria-pressed="false"><span class="dot"></span>Chengdu</button>
+                  <button type="button" class="chip" data-country="CN" data-state="BEIJING" aria-pressed="false"><span class="dot"></span>Beijing</button>
+                  <button type="button" class="chip" data-country="CN" data-state="WUHAN" aria-pressed="false"><span class="dot"></span>Wuhan</button>
+                  <button type="button" class="chip" data-country="CN" data-state="CHANGSHA" aria-pressed="false"><span class="dot"></span>Changsha</button>
+                  <button type="button" class="chip" data-country="CN" data-state="ZHUHAI" aria-pressed="false"><span class="dot"></span>Zhuhai</button>
+                  <button type="button" class="chip" data-country="CN" data-state="CHONGQING" aria-pressed="false"><span class="dot"></span>Chongqing</button>
+                  <button type="button" class="chip" data-country="CN" data-state="XIAN" aria-pressed="false"><span class="dot"></span>Xi'an</button>
+                  <button type="button" class="chip" data-country="CN" data-state="NANJING" aria-pressed="false"><span class="dot"></span>Nanjing</button>
+                  <button type="button" class="chip" data-country="CN" data-state="SUZHOU" aria-pressed="false"><span class="dot"></span>Suzhou</button>
+                  <button type="button" class="chip" data-country="CN" data-state="TIANJIN" aria-pressed="false"><span class="dot"></span>Tianjin</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="GE">
                 <button type="button" class="section-label country-label">Georgia</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="GE" data-state="TBILISI" style="--chip:var(--ge-tbilisi)" aria-pressed="false"><span class="dot"></span>Tbilisi</button>
+                  <button type="button" class="chip" data-country="GE" data-state="TBILISI" aria-pressed="false"><span class="dot"></span>Tbilisi</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="HK">
                 <button type="button" class="section-label country-label">Hong Kong</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="HK" data-state="EASTERN" style="--chip:var(--hk-eastern)" aria-pressed="false"><span class="dot"></span>Eastern</button>
-                  <button type="button" class="chip" data-country="HK" data-state="WAN_CHAI" style="--chip:var(--hk-wan-chai)" aria-pressed="false"><span class="dot"></span>Wan Chai</button>
-                  <button type="button" class="chip" data-country="HK" data-state="KOWLOON_CITY" style="--chip:var(--hk-kowloon-city)" aria-pressed="false"><span class="dot"></span>Kowloon City</button>
-                  <button type="button" class="chip" data-country="HK" data-state="KWUN_TONG" style="--chip:var(--hk-kwun-tong)" aria-pressed="false"><span class="dot"></span>Kwun Tong</button>
-                  <button type="button" class="chip" data-country="HK" data-state="SHAM_SHUI_PO" style="--chip:var(--hk-sham-shui-po)" aria-pressed="false"><span class="dot"></span>Sham Shui Po</button>
-                  <button type="button" class="chip" data-country="HK" data-state="WONG_TAI_SIN" style="--chip:var(--hk-wong-tai-sin)" aria-pressed="false"><span class="dot"></span>Wong Tai Sin</button>
-                  <button type="button" class="chip" data-country="HK" data-state="YAU_TSIM_MONG" style="--chip:var(--hk-yau-tsim-mong)" aria-pressed="false"><span class="dot"></span>Yau Tsim Mong</button>
-                  <button type="button" class="chip" data-country="HK" data-state="KWAI_TSING" style="--chip:var(--hk-kwai-tsing)" aria-pressed="false"><span class="dot"></span>Kwai Tsing</button>
-                  <button type="button" class="chip" data-country="HK" data-state="SAI_KUNG" style="--chip:var(--hk-sai-kung)" aria-pressed="false"><span class="dot"></span>Sai Kung</button>
-                  <button type="button" class="chip" data-country="HK" data-state="SHA_TIN" style="--chip:var(--hk-sha-tin)" aria-pressed="false"><span class="dot"></span>Sha Tin</button>
-                  <button type="button" class="chip" data-country="HK" data-state="TSUEN_WAN" style="--chip:var(--hk-tsuen-wan)" aria-pressed="false"><span class="dot"></span>Tsuen Wan</button>
-                  <button type="button" class="chip" data-country="HK" data-state="TUEN_MUN" style="--chip:var(--hk-tuen-mun)" aria-pressed="false"><span class="dot"></span>Tuen Mun</button>
-                  <button type="button" class="chip" data-country="HK" data-state="SOUTHERN" style="--chip:var(--hk-southern)" aria-pressed="false"><span class="dot"></span>Southern</button>
-                  <button type="button" class="chip" data-country="HK" data-state="CENTRAL_WESTERN" style="--chip:var(--hk-central-western)" aria-pressed="false"><span class="dot"></span>Central and Western</button>
+                  <button type="button" class="chip" data-country="HK" data-state="EASTERN" aria-pressed="false"><span class="dot"></span>Eastern</button>
+                  <button type="button" class="chip" data-country="HK" data-state="WAN_CHAI" aria-pressed="false"><span class="dot"></span>Wan Chai</button>
+                  <button type="button" class="chip" data-country="HK" data-state="KOWLOON_CITY" aria-pressed="false"><span class="dot"></span>Kowloon City</button>
+                  <button type="button" class="chip" data-country="HK" data-state="KWUN_TONG" aria-pressed="false"><span class="dot"></span>Kwun Tong</button>
+                  <button type="button" class="chip" data-country="HK" data-state="SHAM_SHUI_PO" aria-pressed="false"><span class="dot"></span>Sham Shui Po</button>
+                  <button type="button" class="chip" data-country="HK" data-state="WONG_TAI_SIN" aria-pressed="false"><span class="dot"></span>Wong Tai Sin</button>
+                  <button type="button" class="chip" data-country="HK" data-state="YAU_TSIM_MONG" aria-pressed="false"><span class="dot"></span>Yau Tsim Mong</button>
+                  <button type="button" class="chip" data-country="HK" data-state="KWAI_TSING" aria-pressed="false"><span class="dot"></span>Kwai Tsing</button>
+                  <button type="button" class="chip" data-country="HK" data-state="SAI_KUNG" aria-pressed="false"><span class="dot"></span>Sai Kung</button>
+                  <button type="button" class="chip" data-country="HK" data-state="SHA_TIN" aria-pressed="false"><span class="dot"></span>Sha Tin</button>
+                  <button type="button" class="chip" data-country="HK" data-state="TSUEN_WAN" aria-pressed="false"><span class="dot"></span>Tsuen Wan</button>
+                  <button type="button" class="chip" data-country="HK" data-state="TUEN_MUN" aria-pressed="false"><span class="dot"></span>Tuen Mun</button>
+                  <button type="button" class="chip" data-country="HK" data-state="SOUTHERN" aria-pressed="false"><span class="dot"></span>Southern</button>
+                  <button type="button" class="chip" data-country="HK" data-state="CENTRAL_WESTERN" aria-pressed="false"><span class="dot"></span>Central and Western</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="IN">
                 <button type="button" class="section-label country-label">India</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="IN" data-state="TAMIL_NADU" style="--chip:var(--in-tamil-nadu)" aria-pressed="false"><span class="dot"></span>Tamil Nadu</button>
-                  <button type="button" class="chip" data-country="IN" data-state="TELANGANA" style="--chip:var(--in-telangana)" aria-pressed="false"><span class="dot"></span>Telangana</button>
-                  <button type="button" class="chip" data-country="IN" data-state="HIMACHAL_PRADESH" style="--chip:var(--in-himachal-pradesh)" aria-pressed="false"><span class="dot"></span>Himachal Pradesh</button>
-                  <button type="button" class="chip" data-country="IN" data-state="MAHARASHTRA" style="--chip:var(--in-maharashtra)" aria-pressed="false"><span class="dot"></span>Maharashtra</button>
-                  <button type="button" class="chip" data-country="IN" data-state="DELHI" style="--chip:var(--in-delhi)" aria-pressed="false"><span class="dot"></span>Delhi</button>
-                  <button type="button" class="chip" data-country="IN" data-state="UTTARAKHAND" style="--chip:var(--in-uttarakhand)" aria-pressed="false"><span class="dot"></span>Uttarakhand</button>
+                  <button type="button" class="chip" data-country="IN" data-state="TAMIL_NADU" aria-pressed="false"><span class="dot"></span>Tamil Nadu</button>
+                  <button type="button" class="chip" data-country="IN" data-state="TELANGANA" aria-pressed="false"><span class="dot"></span>Telangana</button>
+                  <button type="button" class="chip" data-country="IN" data-state="HIMACHAL_PRADESH" aria-pressed="false"><span class="dot"></span>Himachal Pradesh</button>
+                  <button type="button" class="chip" data-country="IN" data-state="MAHARASHTRA" aria-pressed="false"><span class="dot"></span>Maharashtra</button>
+                  <button type="button" class="chip" data-country="IN" data-state="DELHI" aria-pressed="false"><span class="dot"></span>Delhi</button>
+                  <button type="button" class="chip" data-country="IN" data-state="UTTARAKHAND" aria-pressed="false"><span class="dot"></span>Uttarakhand</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="ID">
                 <button type="button" class="section-label country-label">Indonesia</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="ID" data-state="BALI" style="--chip:var(--id-bali)" aria-pressed="false"><span class="dot"></span>Bali</button>
-                  <button type="button" class="chip" data-country="ID" data-state="JAWA_BARAT" style="--chip:var(--id-jawa-barat)" aria-pressed="false"><span class="dot"></span>Jawa Barat</button>
-                  <button type="button" class="chip" data-country="ID" data-state="RIAU" style="--chip:var(--id-riau)" aria-pressed="false"><span class="dot"></span>Riau</button>
-                  <button type="button" class="chip" data-country="ID" data-state="BANTEN" style="--chip:var(--id-banten)" aria-pressed="false"><span class="dot"></span>Banten</button>
-                  <button type="button" class="chip" data-country="ID" data-state="SULAWESI_TENGAH" style="--chip:var(--id-sulawesi-tengah)" aria-pressed="false"><span class="dot"></span>Sulawesi Tengah</button>
-                  <button type="button" class="chip" data-country="ID" data-state="JAWA_TIMUR" style="--chip:var(--id-jawa-timur)" aria-pressed="false"><span class="dot"></span>Jawa Timur</button>
-                  <button type="button" class="chip" data-country="ID" data-state="JAMBI" style="--chip:var(--id-jambi)" aria-pressed="false"><span class="dot"></span>Jambi</button>
+                  <button type="button" class="chip" data-country="ID" data-state="BALI" aria-pressed="false"><span class="dot"></span>Bali</button>
+                  <button type="button" class="chip" data-country="ID" data-state="JAWA_BARAT" aria-pressed="false"><span class="dot"></span>Jawa Barat</button>
+                  <button type="button" class="chip" data-country="ID" data-state="RIAU" aria-pressed="false"><span class="dot"></span>Riau</button>
+                  <button type="button" class="chip" data-country="ID" data-state="BANTEN" aria-pressed="false"><span class="dot"></span>Banten</button>
+                  <button type="button" class="chip" data-country="ID" data-state="SULAWESI_TENGAH" aria-pressed="false"><span class="dot"></span>Sulawesi Tengah</button>
+                  <button type="button" class="chip" data-country="ID" data-state="JAWA_TIMUR" aria-pressed="false"><span class="dot"></span>Jawa Timur</button>
+                  <button type="button" class="chip" data-country="ID" data-state="JAMBI" aria-pressed="false"><span class="dot"></span>Jambi</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="IR">
                 <button type="button" class="section-label country-label">Iran</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="IR" data-state="QAZVIN" style="--chip:var(--ir-qazvin)" aria-pressed="false"><span class="dot"></span>Qazvin</button>
-                  <button type="button" class="chip" data-country="IR" data-state="QOM" style="--chip:var(--ir-qom)" aria-pressed="false"><span class="dot"></span>Qom</button>
-                  <button type="button" class="chip" data-country="IR" data-state="TEHRAN" style="--chip:var(--ir-tehran)" aria-pressed="false"><span class="dot"></span>Tehran</button>
-                  <button type="button" class="chip" data-country="IR" data-state="ZANJAN" style="--chip:var(--ir-zanjan)" aria-pressed="false"><span class="dot"></span>Zanjan</button>
+                  <button type="button" class="chip" data-country="IR" data-state="QAZVIN" aria-pressed="false"><span class="dot"></span>Qazvin</button>
+                  <button type="button" class="chip" data-country="IR" data-state="QOM" aria-pressed="false"><span class="dot"></span>Qom</button>
+                  <button type="button" class="chip" data-country="IR" data-state="TEHRAN" aria-pressed="false"><span class="dot"></span>Tehran</button>
+                  <button type="button" class="chip" data-country="IR" data-state="ZANJAN" aria-pressed="false"><span class="dot"></span>Zanjan</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="IL">
                 <button type="button" class="section-label country-label">Israel</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="IL" data-state="SOUTHERN" style="--chip:var(--il-southern)" aria-pressed="false"><span class="dot"></span>Southern</button>
-                  <button type="button" class="chip" data-country="IL" data-state="JERUSALEM" style="--chip:var(--il-jerusalem)" aria-pressed="false"><span class="dot"></span>Jerusalem</button>
-                  <button type="button" class="chip" data-country="IL" data-state="NORTHERN" style="--chip:var(--il-northern)" aria-pressed="false"><span class="dot"></span>Northern</button>
-                  <button type="button" class="chip" data-country="IL" data-state="CENTRAL" style="--chip:var(--il-central)" aria-pressed="false"><span class="dot"></span>Central</button>
-                  <button type="button" class="chip" data-country="IL" data-state="TEL_AVIV" style="--chip:var(--il-tel-aviv)" aria-pressed="false"><span class="dot"></span>Tel Aviv</button>
+                  <button type="button" class="chip" data-country="IL" data-state="SOUTHERN" aria-pressed="false"><span class="dot"></span>Southern</button>
+                  <button type="button" class="chip" data-country="IL" data-state="JERUSALEM" aria-pressed="false"><span class="dot"></span>Jerusalem</button>
+                  <button type="button" class="chip" data-country="IL" data-state="NORTHERN" aria-pressed="false"><span class="dot"></span>Northern</button>
+                  <button type="button" class="chip" data-country="IL" data-state="CENTRAL" aria-pressed="false"><span class="dot"></span>Central</button>
+                  <button type="button" class="chip" data-country="IL" data-state="TEL_AVIV" aria-pressed="false"><span class="dot"></span>Tel Aviv</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="JP">
                 <button type="button" class="section-label country-label">Japan</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="JP" data-state="TOKYO" style="--chip:var(--jp-tokyo)" aria-pressed="false"><span class="dot"></span>Tokyo</button>
-                  <button type="button" class="chip" data-country="JP" data-state="OSAKA" style="--chip:var(--jp-osaka)" aria-pressed="false"><span class="dot"></span>Osaka</button>
-                  <button type="button" class="chip" data-country="JP" data-state="KYOTO" style="--chip:var(--jp-kyoto)" aria-pressed="false"><span class="dot"></span>Kyoto</button>
-                  <button type="button" class="chip" data-country="JP" data-state="FUKUOKA" style="--chip:var(--jp-fukuoka)" aria-pressed="false"><span class="dot"></span>Fukuoka</button>
-                  <button type="button" class="chip" data-country="JP" data-state="AICHI" style="--chip:var(--jp-aichi)" aria-pressed="false"><span class="dot"></span>Aichi</button>
-                  <button type="button" class="chip" data-country="JP" data-state="KANAGAWA" style="--chip:var(--jp-kanagawa)" aria-pressed="false"><span class="dot"></span>Kanagawa</button>
-                  <button type="button" class="chip" data-country="JP" data-state="HOKKAIDO" style="--chip:var(--jp-hokkaido)" aria-pressed="false"><span class="dot"></span>Hokkaido</button>
-                  <button type="button" class="chip" data-country="JP" data-state="HYOGO" style="--chip:var(--jp-hyogo)" aria-pressed="false"><span class="dot"></span>Hyogo</button>
-                  <button type="button" class="chip" data-country="JP" data-state="MIYAGI" style="--chip:var(--jp-miyagi)" aria-pressed="false"><span class="dot"></span>Miyagi</button>
-                  <button type="button" class="chip" data-country="JP" data-state="HIROSHIMA" style="--chip:var(--jp-hiroshima)" aria-pressed="false"><span class="dot"></span>Hiroshima</button>
-                  <button type="button" class="chip" data-country="JP" data-state="OKINAWA" style="--chip:var(--jp-okinawa)" aria-pressed="false"><span class="dot"></span>Okinawa</button>
-                  <button type="button" class="chip" data-country="JP" data-state="SAITAMA" style="--chip:var(--jp-saitama)" aria-pressed="false"><span class="dot"></span>Saitama</button>
+                  <button type="button" class="chip" data-country="JP" data-state="TOKYO" aria-pressed="false"><span class="dot"></span>Tokyo</button>
+                  <button type="button" class="chip" data-country="JP" data-state="OSAKA" aria-pressed="false"><span class="dot"></span>Osaka</button>
+                  <button type="button" class="chip" data-country="JP" data-state="KYOTO" aria-pressed="false"><span class="dot"></span>Kyoto</button>
+                  <button type="button" class="chip" data-country="JP" data-state="FUKUOKA" aria-pressed="false"><span class="dot"></span>Fukuoka</button>
+                  <button type="button" class="chip" data-country="JP" data-state="AICHI" aria-pressed="false"><span class="dot"></span>Aichi</button>
+                  <button type="button" class="chip" data-country="JP" data-state="KANAGAWA" aria-pressed="false"><span class="dot"></span>Kanagawa</button>
+                  <button type="button" class="chip" data-country="JP" data-state="HOKKAIDO" aria-pressed="false"><span class="dot"></span>Hokkaido</button>
+                  <button type="button" class="chip" data-country="JP" data-state="HYOGO" aria-pressed="false"><span class="dot"></span>Hyogo</button>
+                  <button type="button" class="chip" data-country="JP" data-state="MIYAGI" aria-pressed="false"><span class="dot"></span>Miyagi</button>
+                  <button type="button" class="chip" data-country="JP" data-state="HIROSHIMA" aria-pressed="false"><span class="dot"></span>Hiroshima</button>
+                  <button type="button" class="chip" data-country="JP" data-state="OKINAWA" aria-pressed="false"><span class="dot"></span>Okinawa</button>
+                  <button type="button" class="chip" data-country="JP" data-state="SAITAMA" aria-pressed="false"><span class="dot"></span>Saitama</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="JO">
                 <button type="button" class="section-label country-label">Jordan</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="JO" data-state="AMMAN" style="--chip:var(--jo-amman)" aria-pressed="false"><span class="dot"></span>Amman</button>
+                  <button type="button" class="chip" data-country="JO" data-state="AMMAN" aria-pressed="false"><span class="dot"></span>Amman</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="KZ">
                 <button type="button" class="section-label country-label">Kazakhstan</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="KZ" data-state="ALMATY_CITY" style="--chip:var(--kz-almatycity)" aria-pressed="false"><span class="dot"></span>Almaty</button>
-                  <button type="button" class="chip" data-country="KZ" data-state="ASTANA" style="--chip:var(--kz-astana)" aria-pressed="false"><span class="dot"></span>Astana</button>
+                  <button type="button" class="chip" data-country="KZ" data-state="ALMATY_CITY" aria-pressed="false"><span class="dot"></span>Almaty</button>
+                  <button type="button" class="chip" data-country="KZ" data-state="ASTANA" aria-pressed="false"><span class="dot"></span>Astana</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="LB">
                 <button type="button" class="section-label country-label">Lebanon</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="LB" data-state="MOUNT_LEBANON" style="--chip:var(--lb-mountlebanon)" aria-pressed="false"><span class="dot"></span>Mount Lebanon</button>
-                  <button type="button" class="chip" data-country="LB" data-state="SOUTH" style="--chip:var(--lb-south)" aria-pressed="false"><span class="dot"></span>South</button>
+                  <button type="button" class="chip" data-country="LB" data-state="MOUNT_LEBANON" aria-pressed="false"><span class="dot"></span>Mount Lebanon</button>
+                  <button type="button" class="chip" data-country="LB" data-state="SOUTH" aria-pressed="false"><span class="dot"></span>South</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="MY">
                 <button type="button" class="section-label country-label">Malaysia</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="MY" data-state="PENANG" style="--chip:var(--my-penang)" aria-pressed="false"><span class="dot"></span>Penang</button>
-                  <button type="button" class="chip" data-country="MY" data-state="JOHOR" style="--chip:var(--my-johor)" aria-pressed="false"><span class="dot"></span>Johor</button>
-                  <button type="button" class="chip" data-country="MY" data-state="PUTRAJAYA" style="--chip:var(--my-putrajaya)" aria-pressed="false"><span class="dot"></span>Putrajaya</button>
-                  <button type="button" class="chip" data-country="MY" data-state="SELANGOR" style="--chip:var(--my-selangor)" aria-pressed="false"><span class="dot"></span>Selangor</button>
+                  <button type="button" class="chip" data-country="MY" data-state="PENANG" aria-pressed="false"><span class="dot"></span>Penang</button>
+                  <button type="button" class="chip" data-country="MY" data-state="JOHOR" aria-pressed="false"><span class="dot"></span>Johor</button>
+                  <button type="button" class="chip" data-country="MY" data-state="PUTRAJAYA" aria-pressed="false"><span class="dot"></span>Putrajaya</button>
+                  <button type="button" class="chip" data-country="MY" data-state="SELANGOR" aria-pressed="false"><span class="dot"></span>Selangor</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="MN">
                 <button type="button" class="section-label country-label">Mongolia</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="MN" data-state="ULAANBAATAR" style="--chip:var(--mn-ulaanbaatar)" aria-pressed="false"><span class="dot"></span>Ulaanbaatar</button>
+                  <button type="button" class="chip" data-country="MN" data-state="ULAANBAATAR" aria-pressed="false"><span class="dot"></span>Ulaanbaatar</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="NP">
                 <button type="button" class="section-label country-label">Nepal</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="NP" data-state="BAGMATI" style="--chip:var(--np-bagmati)" aria-pressed="false"><span class="dot"></span>Bagmati</button>
-                  <button type="button" class="chip" data-country="NP" data-state="GANDAKI" style="--chip:var(--np-gandaki)" aria-pressed="false"><span class="dot"></span>Gandaki</button>
+                  <button type="button" class="chip" data-country="NP" data-state="BAGMATI" aria-pressed="false"><span class="dot"></span>Bagmati</button>
+                  <button type="button" class="chip" data-country="NP" data-state="GANDAKI" aria-pressed="false"><span class="dot"></span>Gandaki</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="OM">
                 <button type="button" class="section-label country-label">Oman</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="OM" data-state="MUSCAT" style="--chip:var(--om-muscat)" aria-pressed="false"><span class="dot"></span>Muscat</button>
+                  <button type="button" class="chip" data-country="OM" data-state="MUSCAT" aria-pressed="false"><span class="dot"></span>Muscat</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="PH">
                 <button type="button" class="section-label country-label">Philippines</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="PH" data-state="NCR" style="--chip:var(--ph-ncr)" aria-pressed="false"><span class="dot"></span>Metro Manila</button>
-                  <button type="button" class="chip" data-country="PH" data-state="RIZAL" style="--chip:var(--ph-rizal)" aria-pressed="false"><span class="dot"></span>Rizal</button>
-                  <button type="button" class="chip" data-country="PH" data-state="LAGUNA" style="--chip:var(--ph-laguna)" aria-pressed="false"><span class="dot"></span>Laguna</button>
-                  <button type="button" class="chip" data-country="PH" data-state="BENGUET" style="--chip:var(--ph-benguet)" aria-pressed="false"><span class="dot"></span>Benguet</button>
-                  <button type="button" class="chip" data-country="PH" data-state="BULACAN" style="--chip:var(--ph-bulacan)" aria-pressed="false"><span class="dot"></span>Bulacan</button>
-                  <button type="button" class="chip" data-country="PH" data-state="MISAMIS_ORIENTAL" style="--chip:var(--ph-misamis-oriental)" aria-pressed="false"><span class="dot"></span>Misamis Oriental</button>
-                  <button type="button" class="chip" data-country="PH" data-state="CAVITE" style="--chip:var(--ph-cavite)" aria-pressed="false"><span class="dot"></span>Cavite</button>
-                  <button type="button" class="chip" data-country="PH" data-state="CAMARINES_SUR" style="--chip:var(--ph-camarines-sur)" aria-pressed="false"><span class="dot"></span>Camarines Sur</button>
-                  <button type="button" class="chip" data-country="PH" data-state="PAMPANGA" style="--chip:var(--ph-pampanga)" aria-pressed="false"><span class="dot"></span>Pampanga</button>
+                  <button type="button" class="chip" data-country="PH" data-state="NCR" aria-pressed="false"><span class="dot"></span>Metro Manila</button>
+                  <button type="button" class="chip" data-country="PH" data-state="RIZAL" aria-pressed="false"><span class="dot"></span>Rizal</button>
+                  <button type="button" class="chip" data-country="PH" data-state="LAGUNA" aria-pressed="false"><span class="dot"></span>Laguna</button>
+                  <button type="button" class="chip" data-country="PH" data-state="BENGUET" aria-pressed="false"><span class="dot"></span>Benguet</button>
+                  <button type="button" class="chip" data-country="PH" data-state="BULACAN" aria-pressed="false"><span class="dot"></span>Bulacan</button>
+                  <button type="button" class="chip" data-country="PH" data-state="MISAMIS_ORIENTAL" aria-pressed="false"><span class="dot"></span>Misamis Oriental</button>
+                  <button type="button" class="chip" data-country="PH" data-state="CAVITE" aria-pressed="false"><span class="dot"></span>Cavite</button>
+                  <button type="button" class="chip" data-country="PH" data-state="CAMARINES_SUR" aria-pressed="false"><span class="dot"></span>Camarines Sur</button>
+                  <button type="button" class="chip" data-country="PH" data-state="PAMPANGA" aria-pressed="false"><span class="dot"></span>Pampanga</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="QA">
                 <button type="button" class="section-label country-label">Qatar</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="QA" data-state="AD_DAWHAH" style="--chip:var(--qa-doha)" aria-pressed="false"><span class="dot"></span>Doha</button>
-                  <button type="button" class="chip" data-country="QA" data-state="AL_DAAYEN" style="--chip:var(--qa-aldaayen)" aria-pressed="false"><span class="dot"></span>Al Daayen</button>
+                  <button type="button" class="chip" data-country="QA" data-state="AD_DAWHAH" aria-pressed="false"><span class="dot"></span>Doha</button>
+                  <button type="button" class="chip" data-country="QA" data-state="AL_DAAYEN" aria-pressed="false"><span class="dot"></span>Al Daayen</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="KR">
                 <button type="button" class="section-label country-label">South Korea</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="KR" data-state="SEOUL" style="--chip:var(--kr-seoul)" aria-pressed="false"><span class="dot"></span>Seoul</button>
-                  <button type="button" class="chip" data-country="KR" data-state="BUSAN" style="--chip:var(--kr-busan)" aria-pressed="false"><span class="dot"></span>Busan</button>
-                  <button type="button" class="chip" data-country="KR" data-state="GYEONGGI" style="--chip:var(--kr-gyeonggi)" aria-pressed="false"><span class="dot"></span>Gyeonggi-do</button>
-                  <button type="button" class="chip" data-country="KR" data-state="GWANGJU" style="--chip:var(--kr-gwangju)" aria-pressed="false"><span class="dot"></span>Gwangju</button>
-                  <button type="button" class="chip" data-country="KR" data-state="GYEONGSANGNAM" style="--chip:var(--kr-gyeongsangnam)" aria-pressed="false"><span class="dot"></span>Gyeongsangnam-do</button>
-                  <button type="button" class="chip" data-country="KR" data-state="ULSAN" style="--chip:var(--kr-ulsan)" aria-pressed="false"><span class="dot"></span>Ulsan</button>
-                  <button type="button" class="chip" data-country="KR" data-state="INCHEON" style="--chip:var(--kr-incheon)" aria-pressed="false"><span class="dot"></span>Incheon</button>
-                  <button type="button" class="chip" data-country="KR" data-state="DAEGU" style="--chip:var(--kr-daegu)" aria-pressed="false"><span class="dot"></span>Daegu</button>
-                  <button type="button" class="chip" data-country="KR" data-state="JEOLLANAM" style="--chip:var(--kr-jeollanam)" aria-pressed="false"><span class="dot"></span>Jeollanam-do</button>
-                  <button type="button" class="chip" data-country="KR" data-state="CHUNGCHEONGNAM" style="--chip:var(--kr-chungcheongnam)" aria-pressed="false"><span class="dot"></span>Chungcheongnam-do</button>
-                  <button type="button" class="chip" data-country="KR" data-state="DAEJEON" style="--chip:var(--kr-daejeon)" aria-pressed="false"><span class="dot"></span>Daejeon</button>
-                  <button type="button" class="chip" data-country="KR" data-state="JEJU" style="--chip:var(--kr-jeju)" aria-pressed="false"><span class="dot"></span>Jeju</button>
-                  <button type="button" class="chip" data-country="KR" data-state="GANGWON" style="--chip:var(--kr-gangwon)" aria-pressed="false"><span class="dot"></span>Gangwon-do</button>
-                  <button type="button" class="chip" data-country="KR" data-state="CHUNGCHEONGBUK" style="--chip:var(--kr-chungcheongbuk)" aria-pressed="false"><span class="dot"></span>Chungcheongbuk-do</button>
-                  <button type="button" class="chip" data-country="KR" data-state="GYEONGSANGBUK" style="--chip:var(--kr-gyeongsangbuk)" aria-pressed="false"><span class="dot"></span>Gyeongsangbuk-do</button>
-                  <button type="button" class="chip" data-country="KR" data-state="JEOLLABUK" style="--chip:var(--kr-jeollabuk)" aria-pressed="false"><span class="dot"></span>Jeollabuk-do</button>
+                  <button type="button" class="chip" data-country="KR" data-state="SEOUL" aria-pressed="false"><span class="dot"></span>Seoul</button>
+                  <button type="button" class="chip" data-country="KR" data-state="BUSAN" aria-pressed="false"><span class="dot"></span>Busan</button>
+                  <button type="button" class="chip" data-country="KR" data-state="GYEONGGI" aria-pressed="false"><span class="dot"></span>Gyeonggi-do</button>
+                  <button type="button" class="chip" data-country="KR" data-state="GWANGJU" aria-pressed="false"><span class="dot"></span>Gwangju</button>
+                  <button type="button" class="chip" data-country="KR" data-state="GYEONGSANGNAM" aria-pressed="false"><span class="dot"></span>Gyeongsangnam-do</button>
+                  <button type="button" class="chip" data-country="KR" data-state="ULSAN" aria-pressed="false"><span class="dot"></span>Ulsan</button>
+                  <button type="button" class="chip" data-country="KR" data-state="INCHEON" aria-pressed="false"><span class="dot"></span>Incheon</button>
+                  <button type="button" class="chip" data-country="KR" data-state="DAEGU" aria-pressed="false"><span class="dot"></span>Daegu</button>
+                  <button type="button" class="chip" data-country="KR" data-state="JEOLLANAM" aria-pressed="false"><span class="dot"></span>Jeollanam-do</button>
+                  <button type="button" class="chip" data-country="KR" data-state="CHUNGCHEONGNAM" aria-pressed="false"><span class="dot"></span>Chungcheongnam-do</button>
+                  <button type="button" class="chip" data-country="KR" data-state="DAEJEON" aria-pressed="false"><span class="dot"></span>Daejeon</button>
+                  <button type="button" class="chip" data-country="KR" data-state="JEJU" aria-pressed="false"><span class="dot"></span>Jeju</button>
+                  <button type="button" class="chip" data-country="KR" data-state="GANGWON" aria-pressed="false"><span class="dot"></span>Gangwon-do</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="TW">
                 <button type="button" class="section-label country-label">Taiwan</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="TW" data-state="HSINCHU_COUNTY" style="--chip:var(--tw-hsinchu-county)" aria-pressed="false"><span class="dot"></span>Hsinchu County</button>
-                  <button type="button" class="chip" data-country="TW" data-state="NEW_TAIPEI" style="--chip:var(--tw-new-taipei)" aria-pressed="false"><span class="dot"></span>New Taipei City</button>
-                  <button type="button" class="chip" data-country="TW" data-state="TAICHUNG" style="--chip:var(--tw-taichung)" aria-pressed="false"><span class="dot"></span>Taichung City</button>
-                  <button type="button" class="chip" data-country="TW" data-state="TAIPEI" style="--chip:var(--tw-taipei)" aria-pressed="false"><span class="dot"></span>Taipei City</button>
-                  <button type="button" class="chip" data-country="TW" data-state="KAOHSIUNG" style="--chip:var(--tw-kaohsiung)" aria-pressed="false"><span class="dot"></span>Kaohsiung City</button>
-                  <button type="button" class="chip" data-country="TW" data-state="TAINAN" style="--chip:var(--tw-tainan)" aria-pressed="false"><span class="dot"></span>Tainan City</button>
+                  <button type="button" class="chip" data-country="TW" data-state="HSINCHU_COUNTY" aria-pressed="false"><span class="dot"></span>Hsinchu County</button>
+                  <button type="button" class="chip" data-country="TW" data-state="NEW_TAIPEI" aria-pressed="false"><span class="dot"></span>New Taipei City</button>
+                  <button type="button" class="chip" data-country="TW" data-state="TAICHUNG" aria-pressed="false"><span class="dot"></span>Taichung City</button>
+                  <button type="button" class="chip" data-country="TW" data-state="TAIPEI" aria-pressed="false"><span class="dot"></span>Taipei City</button>
+                  <button type="button" class="chip" data-country="TW" data-state="KAOHSIUNG" aria-pressed="false"><span class="dot"></span>Kaohsiung City</button>
+                  <button type="button" class="chip" data-country="TW" data-state="TAINAN" aria-pressed="false"><span class="dot"></span>Tainan City</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="TH">
                 <button type="button" class="section-label country-label">Thailand</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="TH" data-state="BANGKOK" style="--chip:var(--th-bangkok)" aria-pressed="false"><span class="dot"></span>Bangkok</button>
-                  <button type="button" class="chip" data-country="TH" data-state="CHIANG_MAI" style="--chip:var(--th-chiang-mai)" aria-pressed="false"><span class="dot"></span>Chiang Mai</button>
-                  <button type="button" class="chip" data-country="TH" data-state="SURAT_THANI" style="--chip:var(--th-surat-thani)" aria-pressed="false"><span class="dot"></span>Surat Thani</button>
-                  <button type="button" class="chip" data-country="TH" data-state="PHUKET" style="--chip:var(--th-phuket)" aria-pressed="false"><span class="dot"></span>Phuket</button>
+                  <button type="button" class="chip" data-country="TH" data-state="BANGKOK" aria-pressed="false"><span class="dot"></span>Bangkok</button>
+                  <button type="button" class="chip" data-country="TH" data-state="CHIANG_MAI" aria-pressed="false"><span class="dot"></span>Chiang Mai</button>
+                  <button type="button" class="chip" data-country="TH" data-state="SURAT_THANI" aria-pressed="false"><span class="dot"></span>Surat Thani</button>
+                  <button type="button" class="chip" data-country="TH" data-state="PHUKET" aria-pressed="false"><span class="dot"></span>Phuket</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="AE">
                 <button type="button" class="section-label country-label">United Arab Emirates</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="AE" data-state="DUBAI" style="--chip:var(--ae-dubai)" aria-pressed="false"><span class="dot"></span>Dubai</button>
-                  <button type="button" class="chip" data-country="AE" data-state="ABU_DHABI" style="--chip:var(--ae-abudhabi)" aria-pressed="false"><span class="dot"></span>Abu Dhabi</button>
+                  <button type="button" class="chip" data-country="AE" data-state="DUBAI" aria-pressed="false"><span class="dot"></span>Dubai</button>
+                  <button type="button" class="chip" data-country="AE" data-state="ABU_DHABI" aria-pressed="false"><span class="dot"></span>Abu Dhabi</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="VN">
                 <button type="button" class="section-label country-label">Vietnam</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="VN" data-state="HANOI" style="--chip:var(--vn-hanoi)" aria-pressed="false"><span class="dot"></span>Hanoi</button>
-                  <button type="button" class="chip" data-country="VN" data-state="HO_CHI_MINH" style="--chip:var(--vn-ho-chi-minh)" aria-pressed="false"><span class="dot"></span>Ho Chi Minh City</button>
+                  <button type="button" class="chip" data-country="VN" data-state="HANOI" aria-pressed="false"><span class="dot"></span>Hanoi</button>
+                  <button type="button" class="chip" data-country="VN" data-state="HO_CHI_MINH" aria-pressed="false"><span class="dot"></span>Ho Chi Minh City</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="SA">
                 <button type="button" class="section-label country-label">Saudi Arabia</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="SA" data-state="RIYADH" style="--chip:var(--sa-riyadh)" aria-pressed="false"><span class="dot"></span>Riyadh Region</button>
-                  <button type="button" class="chip" data-country="SA" data-state="MAKKAH" style="--chip:var(--sa-makkah)" aria-pressed="false"><span class="dot"></span>Makkah Region</button>
-                  <button type="button" class="chip" data-country="SA" data-state="EASTERN" style="--chip:var(--sa-eastern)" aria-pressed="false"><span class="dot"></span>Eastern Province</button>
+                  <button type="button" class="chip" data-country="SA" data-state="RIYADH" aria-pressed="false"><span class="dot"></span>Riyadh Region</button>
+                  <button type="button" class="chip" data-country="SA" data-state="MAKKAH" aria-pressed="false"><span class="dot"></span>Makkah Region</button>
+                  <button type="button" class="chip" data-country="SA" data-state="EASTERN" aria-pressed="false"><span class="dot"></span>Eastern Province</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="SG">
                 <button type="button" class="section-label country-label">Singapore</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="SG" data-state="CENTRAL" style="--chip:var(--sg-central)" aria-pressed="false"><span class="dot"></span>Central</button>
-                  <button type="button" class="chip" data-country="SG" data-state="NORTH_WEST" style="--chip:var(--sg-northwest)" aria-pressed="false"><span class="dot"></span>North West</button>
+                  <button type="button" class="chip" data-country="SG" data-state="CENTRAL" aria-pressed="false"><span class="dot"></span>Central</button>
+                  <button type="button" class="chip" data-country="SG" data-state="NORTH_WEST" aria-pressed="false"><span class="dot"></span>North West</button>
                 </div>
               </div>
             </div>
@@ -360,335 +347,335 @@
               <div class="country-group collapsed" data-country="AT">
                 <button type="button" class="section-label country-label">Austria</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="AT" data-state="WIEN" style="--chip:var(--at-wien)" aria-pressed="false"><span class="dot"></span>Wien</button>
-                  <button type="button" class="chip" data-country="AT" data-state="STEIERMARK" style="--chip:var(--at-steiermark)" aria-pressed="false"><span class="dot"></span>Steiermark</button>
-                  <button type="button" class="chip" data-country="AT" data-state="OBEROSTERREICH" style="--chip:var(--at-oberosterreich)" aria-pressed="false"><span class="dot"></span>Oberösterreich</button>
-                  <button type="button" class="chip" data-country="AT" data-state="SALZBURG" style="--chip:var(--at-salzburg)" aria-pressed="false"><span class="dot"></span>Salzburg</button>
+                  <button type="button" class="chip" data-country="AT" data-state="WIEN" aria-pressed="false"><span class="dot"></span>Wien</button>
+                  <button type="button" class="chip" data-country="AT" data-state="STEIERMARK" aria-pressed="false"><span class="dot"></span>Steiermark</button>
+                  <button type="button" class="chip" data-country="AT" data-state="OBEROSTERREICH" aria-pressed="false"><span class="dot"></span>Oberösterreich</button>
+                  <button type="button" class="chip" data-country="AT" data-state="SALZBURG" aria-pressed="false"><span class="dot"></span>Salzburg</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="BY">
                 <button type="button" class="section-label country-label">Belarus</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="BY" data-state="MINSK_CITY" style="--chip:var(--by-minskcity)" aria-pressed="false"><span class="dot"></span>Minsk</button>
-                  <button type="button" class="chip" data-country="BY" data-state="BREST" style="--chip:var(--by-brest)" aria-pressed="false"><span class="dot"></span>Brest Region</button>
-                  <button type="button" class="chip" data-country="BY" data-state="GRODNO" style="--chip:var(--by-grodno)" aria-pressed="false"><span class="dot"></span>Grodno Region</button>
+                  <button type="button" class="chip" data-country="BY" data-state="MINSK_CITY" aria-pressed="false"><span class="dot"></span>Minsk</button>
+                  <button type="button" class="chip" data-country="BY" data-state="BREST" aria-pressed="false"><span class="dot"></span>Brest Region</button>
+                  <button type="button" class="chip" data-country="BY" data-state="GRODNO" aria-pressed="false"><span class="dot"></span>Grodno Region</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="BE">
                 <button type="button" class="section-label country-label">Belgium</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="BE" data-state="FLANDERS" style="--chip:var(--be-flanders)" aria-pressed="false"><span class="dot"></span>Flanders</button>
-                  <button type="button" class="chip" data-country="BE" data-state="WALLONIA" style="--chip:var(--be-wallonia)" aria-pressed="false"><span class="dot"></span>Wallonia</button>
-                  <button type="button" class="chip" data-country="BE" data-state="BRUSSELS" style="--chip:var(--be-brussels)" aria-pressed="false"><span class="dot"></span>Brussels-Capital</button>
+                  <button type="button" class="chip" data-country="BE" data-state="FLANDERS" aria-pressed="false"><span class="dot"></span>Flanders</button>
+                  <button type="button" class="chip" data-country="BE" data-state="WALLONIA" aria-pressed="false"><span class="dot"></span>Wallonia</button>
+                  <button type="button" class="chip" data-country="BE" data-state="BRUSSELS" aria-pressed="false"><span class="dot"></span>Brussels-Capital</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="BG">
                 <button type="button" class="section-label country-label">Bulgaria</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="BG" data-state="SOFIA_CITY" style="--chip:var(--bg-sofia-city)" aria-pressed="false"><span class="dot"></span>Sofia City</button>
-                  <button type="button" class="chip" data-country="BG" data-state="VARNA" style="--chip:var(--bg-varna)" aria-pressed="false"><span class="dot"></span>Varna</button>
+                  <button type="button" class="chip" data-country="BG" data-state="SOFIA_CITY" aria-pressed="false"><span class="dot"></span>Sofia City</button>
+                  <button type="button" class="chip" data-country="BG" data-state="VARNA" aria-pressed="false"><span class="dot"></span>Varna</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="HR">
                 <button type="button" class="section-label country-label">Croatia</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="HR" data-state="ZAGREB" style="--chip:var(--hr-zagreb)" aria-pressed="false"><span class="dot"></span>Zagreb</button>
-                  <button type="button" class="chip" data-country="HR" data-state="SPLITSKO_DALMATINSKA" style="--chip:var(--hr-splitsko-dalmatinska)" aria-pressed="false"><span class="dot"></span>Splitsko-dalmatinska</button>
-                  <button type="button" class="chip" data-country="HR" data-state="ISTARSKA" style="--chip:var(--hr-istarska)" aria-pressed="false"><span class="dot"></span>Istarska</button>
-                  <button type="button" class="chip" data-country="HR" data-state="KOPRIVNICKO_KRIZEVACKA" style="--chip:var(--hr-koprivnicko-krizevacka)" aria-pressed="false"><span class="dot"></span>Koprivničko-križevačka</button>
+                  <button type="button" class="chip" data-country="HR" data-state="ZAGREB" aria-pressed="false"><span class="dot"></span>Zagreb</button>
+                  <button type="button" class="chip" data-country="HR" data-state="SPLITSKO_DALMATINSKA" aria-pressed="false"><span class="dot"></span>Splitsko-dalmatinska</button>
+                  <button type="button" class="chip" data-country="HR" data-state="ISTARSKA" aria-pressed="false"><span class="dot"></span>Istarska</button>
+                  <button type="button" class="chip" data-country="HR" data-state="KOPRIVNICKO_KRIZEVACKA" aria-pressed="false"><span class="dot"></span>Koprivničko-križevačka</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="CZ">
                 <button type="button" class="section-label country-label">Czech Republic</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="CZ" data-state="PRAHA" style="--chip:var(--cz-praha)" aria-pressed="false"><span class="dot"></span>Praha</button>
-                  <button type="button" class="chip" data-country="CZ" data-state="JIHOMORAVSKY" style="--chip:var(--cz-jihomoravsky)" aria-pressed="false"><span class="dot"></span>Jihomoravský</button>
+                  <button type="button" class="chip" data-country="CZ" data-state="PRAHA" aria-pressed="false"><span class="dot"></span>Praha</button>
+                  <button type="button" class="chip" data-country="CZ" data-state="JIHOMORAVSKY" aria-pressed="false"><span class="dot"></span>Jihomoravský</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="DK">
                 <button type="button" class="section-label country-label">Denmark</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="DK" data-state="HOVEDSTADEN" style="--chip:var(--dk-hovedstaden)" aria-pressed="false"><span class="dot"></span>Hovedstaden</button>
-                  <button type="button" class="chip" data-country="DK" data-state="SYDDANMARK" style="--chip:var(--dk-syddanmark)" aria-pressed="false"><span class="dot"></span>Syddanmark</button>
-                  <button type="button" class="chip" data-country="DK" data-state="MIDTJYLLAND" style="--chip:var(--dk-midtjylland)" aria-pressed="false"><span class="dot"></span>Midtjylland</button>
-                  <button type="button" class="chip" data-country="DK" data-state="NORDJYLLAND" style="--chip:var(--dk-nordjylland)" aria-pressed="false"><span class="dot"></span>Nordjylland</button>
+                  <button type="button" class="chip" data-country="DK" data-state="HOVEDSTADEN" aria-pressed="false"><span class="dot"></span>Hovedstaden</button>
+                  <button type="button" class="chip" data-country="DK" data-state="SYDDANMARK" aria-pressed="false"><span class="dot"></span>Syddanmark</button>
+                  <button type="button" class="chip" data-country="DK" data-state="MIDTJYLLAND" aria-pressed="false"><span class="dot"></span>Midtjylland</button>
+                  <button type="button" class="chip" data-country="DK" data-state="NORDJYLLAND" aria-pressed="false"><span class="dot"></span>Nordjylland</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="EE">
                 <button type="button" class="section-label country-label">Estonia</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="EE" data-state="HARJU" style="--chip:var(--ee-harju)" aria-pressed="false"><span class="dot"></span>Harju</button>
-                  <button type="button" class="chip" data-country="EE" data-state="TARTU" style="--chip:var(--ee-tartu)" aria-pressed="false"><span class="dot"></span>Tartu</button>
-                  <button type="button" class="chip" data-country="EE" data-state="HIIU" style="--chip:var(--ee-hiiu)" aria-pressed="false"><span class="dot"></span>Hiiu</button>
+                  <button type="button" class="chip" data-country="EE" data-state="HARJU" aria-pressed="false"><span class="dot"></span>Harju</button>
+                  <button type="button" class="chip" data-country="EE" data-state="TARTU" aria-pressed="false"><span class="dot"></span>Tartu</button>
+                  <button type="button" class="chip" data-country="EE" data-state="HIIU" aria-pressed="false"><span class="dot"></span>Hiiu</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="FI">
                 <button type="button" class="section-label country-label">Finland</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="FI" data-state="UUSIMAA" style="--chip:var(--fi-uusimaa)" aria-pressed="false"><span class="dot"></span>Uusimaa</button>
-                  <button type="button" class="chip" data-country="FI" data-state="PAIJAT_HAME" style="--chip:var(--fi-paijat-hame)" aria-pressed="false"><span class="dot"></span>Päijät-Häme</button>
-                  <button type="button" class="chip" data-country="FI" data-state="POHJOIS_POHJANMAA" style="--chip:var(--fi-pohjois-pohjanmaa)" aria-pressed="false"><span class="dot"></span>Pohjois-Pohjanmaa</button>
-                  <button type="button" class="chip" data-country="FI" data-state="PIRKANMAA" style="--chip:var(--fi-pirkanmaa)" aria-pressed="false"><span class="dot"></span>Pirkanmaa</button>
+                  <button type="button" class="chip" data-country="FI" data-state="UUSIMAA" aria-pressed="false"><span class="dot"></span>Uusimaa</button>
+                  <button type="button" class="chip" data-country="FI" data-state="PAIJAT_HAME" aria-pressed="false"><span class="dot"></span>Päijät-Häme</button>
+                  <button type="button" class="chip" data-country="FI" data-state="POHJOIS_POHJANMAA" aria-pressed="false"><span class="dot"></span>Pohjois-Pohjanmaa</button>
+                  <button type="button" class="chip" data-country="FI" data-state="PIRKANMAA" aria-pressed="false"><span class="dot"></span>Pirkanmaa</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="FR">
                 <button type="button" class="section-label country-label">France</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="FR" data-state="ILE_DE_FRANCE" style="--chip:var(--fr-ile-de-france)" aria-pressed="false"><span class="dot"></span>Île-de-France</button>
-                  <button type="button" class="chip" data-country="FR" data-state="AUVERGNE_RHONE_ALPES" style="--chip:var(--fr-auvergne-rhone-alpes)" aria-pressed="false"><span class="dot"></span>Auvergne-Rhône-Alpes</button>
-                  <button type="button" class="chip" data-country="FR" data-state="PACA" style="--chip:var(--fr-paca)" aria-pressed="false"><span class="dot"></span>Provence-Alpes-Côte d'Azur</button>
-                  <button type="button" class="chip" data-country="FR" data-state="OCCITANIE" style="--chip:var(--fr-occitanie)" aria-pressed="false"><span class="dot"></span>Occitanie</button>
+                  <button type="button" class="chip" data-country="FR" data-state="ILE_DE_FRANCE" aria-pressed="false"><span class="dot"></span>Île-de-France</button>
+                  <button type="button" class="chip" data-country="FR" data-state="AUVERGNE_RHONE_ALPES" aria-pressed="false"><span class="dot"></span>Auvergne-Rhône-Alpes</button>
+                  <button type="button" class="chip" data-country="FR" data-state="PACA" aria-pressed="false"><span class="dot"></span>Provence-Alpes-Côte d'Azur</button>
+                  <button type="button" class="chip" data-country="FR" data-state="OCCITANIE" aria-pressed="false"><span class="dot"></span>Occitanie</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="DE">
                 <button type="button" class="section-label country-label">Germany</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="DE" data-state="BAYERN" style="--chip:var(--de-bayern)" aria-pressed="false"><span class="dot"></span>Bayern</button>
-                  <button type="button" class="chip" data-country="DE" data-state="BERLIN" style="--chip:var(--de-berlin)" aria-pressed="false"><span class="dot"></span>Berlin</button>
-                  <button type="button" class="chip" data-country="DE" data-state="NORDRHEIN_WESTFALEN" style="--chip:var(--de-nordrhein-westfalen)" aria-pressed="false"><span class="dot"></span>Nordrhein-Westfalen</button>
-                  <button type="button" class="chip" data-country="DE" data-state="HESSEN" style="--chip:var(--de-hessen)" aria-pressed="false"><span class="dot"></span>Hessen</button>
-                  <button type="button" class="chip" data-country="DE" data-state="BADEN_WURTTEMBERG" style="--chip:var(--de-baden-wurttemberg)" aria-pressed="false"><span class="dot"></span>Baden-Württemberg</button>
-                  <button type="button" class="chip" data-country="DE" data-state="BREMEN" style="--chip:var(--de-bremen)" aria-pressed="false"><span class="dot"></span>Bremen</button>
-                  <button type="button" class="chip" data-country="DE" data-state="SCHLESWIG_HOLSTEIN" style="--chip:var(--de-schleswig-holstein)" aria-pressed="false"><span class="dot"></span>Schleswig-Holstein</button>
-                  <button type="button" class="chip" data-country="DE" data-state="SACHSEN" style="--chip:var(--de-sachsen)" aria-pressed="false"><span class="dot"></span>Sachsen</button>
-                  <button type="button" class="chip" data-country="DE" data-state="NIEDERSACHSEN" style="--chip:var(--de-niedersachsen)" aria-pressed="false"><span class="dot"></span>Niedersachsen</button>
-                  <button type="button" class="chip" data-country="DE" data-state="SACHSEN_ANHALT" style="--chip:var(--de-sachsen-anhalt)" aria-pressed="false"><span class="dot"></span>Sachsen-Anhalt</button>
-                  <button type="button" class="chip" data-country="DE" data-state="BRANDENBURG" style="--chip:var(--de-brandenburg)" aria-pressed="false"><span class="dot"></span>Brandenburg</button>
-                  <button type="button" class="chip" data-country="DE" data-state="RHEINLAND_PFALZ" style="--chip:var(--de-rheinland-pfalz)" aria-pressed="false"><span class="dot"></span>Rheinland-Pfalz</button>
-                  <button type="button" class="chip" data-country="DE" data-state="HAMBURG" style="--chip:var(--de-hamburg)" aria-pressed="false"><span class="dot"></span>Hamburg</button>
-                  <button type="button" class="chip" data-country="DE" data-state="SAARLAND" style="--chip:var(--de-saarland)" aria-pressed="false"><span class="dot"></span>Saarland</button>
-                  <button type="button" class="chip" data-country="DE" data-state="THURINGEN" style="--chip:var(--de-thuringen)" aria-pressed="false"><span class="dot"></span>Thüringen</button>
-                  <button type="button" class="chip" data-country="DE" data-state="MECKLENBURG_VORPOMMERN" style="--chip:var(--de-mecklenburg-vorpommern)" aria-pressed="false"><span class="dot"></span>Mecklenburg-Vorpommern</button>
+                  <button type="button" class="chip" data-country="DE" data-state="BAYERN" aria-pressed="false"><span class="dot"></span>Bayern</button>
+                  <button type="button" class="chip" data-country="DE" data-state="BERLIN" aria-pressed="false"><span class="dot"></span>Berlin</button>
+                  <button type="button" class="chip" data-country="DE" data-state="NORDRHEIN_WESTFALEN" aria-pressed="false"><span class="dot"></span>Nordrhein-Westfalen</button>
+                  <button type="button" class="chip" data-country="DE" data-state="HESSEN" aria-pressed="false"><span class="dot"></span>Hessen</button>
+                  <button type="button" class="chip" data-country="DE" data-state="BADEN_WURTTEMBERG" aria-pressed="false"><span class="dot"></span>Baden-Württemberg</button>
+                  <button type="button" class="chip" data-country="DE" data-state="BREMEN" aria-pressed="false"><span class="dot"></span>Bremen</button>
+                  <button type="button" class="chip" data-country="DE" data-state="SCHLESWIG_HOLSTEIN" aria-pressed="false"><span class="dot"></span>Schleswig-Holstein</button>
+                  <button type="button" class="chip" data-country="DE" data-state="SACHSEN" aria-pressed="false"><span class="dot"></span>Sachsen</button>
+                  <button type="button" class="chip" data-country="DE" data-state="NIEDERSACHSEN" aria-pressed="false"><span class="dot"></span>Niedersachsen</button>
+                  <button type="button" class="chip" data-country="DE" data-state="SACHSEN_ANHALT" aria-pressed="false"><span class="dot"></span>Sachsen-Anhalt</button>
+                  <button type="button" class="chip" data-country="DE" data-state="BRANDENBURG" aria-pressed="false"><span class="dot"></span>Brandenburg</button>
+                  <button type="button" class="chip" data-country="DE" data-state="RHEINLAND_PFALZ" aria-pressed="false"><span class="dot"></span>Rheinland-Pfalz</button>
+                  <button type="button" class="chip" data-country="DE" data-state="HAMBURG" aria-pressed="false"><span class="dot"></span>Hamburg</button>
+                  <button type="button" class="chip" data-country="DE" data-state="SAARLAND" aria-pressed="false"><span class="dot"></span>Saarland</button>
+                  <button type="button" class="chip" data-country="DE" data-state="THURINGEN" aria-pressed="false"><span class="dot"></span>Thüringen</button>
+                  <button type="button" class="chip" data-country="DE" data-state="MECKLENBURG_VORPOMMERN" aria-pressed="false"><span class="dot"></span>Mecklenburg-Vorpommern</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="GR">
                 <button type="button" class="section-label country-label">Greece</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="GR" data-state="ATTICA" style="--chip:var(--gr-attica)" aria-pressed="false"><span class="dot"></span>Attica</button>
-                  <button type="button" class="chip" data-country="GR" data-state="CENTRAL_MACEDONIA" style="--chip:var(--gr-central-macedonia)" aria-pressed="false"><span class="dot"></span>Central Macedonia</button>
-                  <button type="button" class="chip" data-country="GR" data-state="SOUTH_AEGEAN" style="--chip:var(--gr-south-aegean)" aria-pressed="false"><span class="dot"></span>South Aegean</button>
-                  <button type="button" class="chip" data-country="GR" data-state="CRETE" style="--chip:var(--gr-crete)" aria-pressed="false"><span class="dot"></span>Crete</button>
-                  <button type="button" class="chip" data-country="GR" data-state="WESTERN_GREECE" style="--chip:var(--gr-western-greece)" aria-pressed="false"><span class="dot"></span>Western Greece</button>
+                  <button type="button" class="chip" data-country="GR" data-state="ATTICA" aria-pressed="false"><span class="dot"></span>Attica</button>
+                  <button type="button" class="chip" data-country="GR" data-state="CENTRAL_MACEDONIA" aria-pressed="false"><span class="dot"></span>Central Macedonia</button>
+                  <button type="button" class="chip" data-country="GR" data-state="SOUTH_AEGEAN" aria-pressed="false"><span class="dot"></span>South Aegean</button>
+                  <button type="button" class="chip" data-country="GR" data-state="CRETE" aria-pressed="false"><span class="dot"></span>Crete</button>
+                  <button type="button" class="chip" data-country="GR" data-state="WESTERN_GREECE" aria-pressed="false"><span class="dot"></span>Western Greece</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="HU">
                 <button type="button" class="section-label country-label">Hungary</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="HU" data-state="BUDAPEST" style="--chip:var(--hu-budapest)" aria-pressed="false"><span class="dot"></span>Budapest</button>
-                  <button type="button" class="chip" data-country="HU" data-state="PEST" style="--chip:var(--hu-pest)" aria-pressed="false"><span class="dot"></span>Pest</button>
-                  <button type="button" class="chip" data-country="HU" data-state="VESZPREM" style="--chip:var(--hu-veszprem)" aria-pressed="false"><span class="dot"></span>Veszprém</button>
+                  <button type="button" class="chip" data-country="HU" data-state="BUDAPEST" aria-pressed="false"><span class="dot"></span>Budapest</button>
+                  <button type="button" class="chip" data-country="HU" data-state="PEST" aria-pressed="false"><span class="dot"></span>Pest</button>
+                  <button type="button" class="chip" data-country="HU" data-state="VESZPREM" aria-pressed="false"><span class="dot"></span>Veszprém</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="IS">
                 <button type="button" class="section-label country-label">Iceland</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="IS" data-state="HOFUDBORGARSVAEDID" style="--chip:var(--is-hofudborgarsvaedid)" aria-pressed="false"><span class="dot"></span>Höfuðborgarsvæðið</button>
-                  <button type="button" class="chip" data-country="IS" data-state="NORDURLAND_EYSTRA" style="--chip:var(--is-nordurland-eystra)" aria-pressed="false"><span class="dot"></span>Norðurland eystra</button>
+                  <button type="button" class="chip" data-country="IS" data-state="HOFUDBORGARSVAEDID" aria-pressed="false"><span class="dot"></span>Höfuðborgarsvæðið</button>
+                  <button type="button" class="chip" data-country="IS" data-state="NORDURLAND_EYSTRA" aria-pressed="false"><span class="dot"></span>Norðurland eystra</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="IE">
                 <button type="button" class="section-label country-label">Ireland</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="IE" data-state="DUBLIN" style="--chip:var(--ie-dublin)" aria-pressed="false"><span class="dot"></span>Dublin</button>
-                  <button type="button" class="chip" data-country="IE" data-state="WICKLOW" style="--chip:var(--ie-wicklow)" aria-pressed="false"><span class="dot"></span>Wicklow</button>
-                  <button type="button" class="chip" data-country="IE" data-state="CLARE" style="--chip:var(--ie-clare)" aria-pressed="false"><span class="dot"></span>Clare</button>
-                  <button type="button" class="chip" data-country="IE" data-state="CORK" style="--chip:var(--ie-cork)" aria-pressed="false"><span class="dot"></span>Cork</button>
-                  <button type="button" class="chip" data-country="IE" data-state="LIMERICK" style="--chip:var(--ie-limerick)" aria-pressed="false"><span class="dot"></span>Limerick</button>
+                  <button type="button" class="chip" data-country="IE" data-state="DUBLIN" aria-pressed="false"><span class="dot"></span>Dublin</button>
+                  <button type="button" class="chip" data-country="IE" data-state="WICKLOW" aria-pressed="false"><span class="dot"></span>Wicklow</button>
+                  <button type="button" class="chip" data-country="IE" data-state="CLARE" aria-pressed="false"><span class="dot"></span>Clare</button>
+                  <button type="button" class="chip" data-country="IE" data-state="CORK" aria-pressed="false"><span class="dot"></span>Cork</button>
+                  <button type="button" class="chip" data-country="IE" data-state="LIMERICK" aria-pressed="false"><span class="dot"></span>Limerick</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="IT">
                 <button type="button" class="section-label country-label">Italy</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="IT" data-state="LAZIO" style="--chip:var(--it-lazio)" aria-pressed="false"><span class="dot"></span>Lazio</button>
-                  <button type="button" class="chip" data-country="IT" data-state="LOMBARDIA" style="--chip:var(--it-lombardia)" aria-pressed="false"><span class="dot"></span>Lombardia</button>
-                  <button type="button" class="chip" data-country="IT" data-state="EMILIA_ROMAGNA" style="--chip:var(--it-emilia-romagna)" aria-pressed="false"><span class="dot"></span>Emilia-Romagna</button>
-                  <button type="button" class="chip" data-country="IT" data-state="TOSCANA" style="--chip:var(--it-toscana)" aria-pressed="false"><span class="dot"></span>Toscana</button>
+                  <button type="button" class="chip" data-country="IT" data-state="LAZIO" aria-pressed="false"><span class="dot"></span>Lazio</button>
+                  <button type="button" class="chip" data-country="IT" data-state="LOMBARDIA" aria-pressed="false"><span class="dot"></span>Lombardia</button>
+                  <button type="button" class="chip" data-country="IT" data-state="EMILIA_ROMAGNA" aria-pressed="false"><span class="dot"></span>Emilia-Romagna</button>
+                  <button type="button" class="chip" data-country="IT" data-state="TOSCANA" aria-pressed="false"><span class="dot"></span>Toscana</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="LT">
                 <button type="button" class="section-label country-label">Lithuania</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="LT" data-state="KAUNAS" style="--chip:var(--lt-kaunas)" aria-pressed="false"><span class="dot"></span>Kaunas</button>
-                  <button type="button" class="chip" data-country="LT" data-state="KLAIPEDA" style="--chip:var(--lt-klaipeda)" aria-pressed="false"><span class="dot"></span>Klaipėda</button>
-                  <button type="button" class="chip" data-country="LT" data-state="VILNIUS" style="--chip:var(--lt-vilnius)" aria-pressed="false"><span class="dot"></span>Vilnius</button>
+                  <button type="button" class="chip" data-country="LT" data-state="KAUNAS" aria-pressed="false"><span class="dot"></span>Kaunas</button>
+                  <button type="button" class="chip" data-country="LT" data-state="KLAIPEDA" aria-pressed="false"><span class="dot"></span>Klaipėda</button>
+                  <button type="button" class="chip" data-country="LT" data-state="VILNIUS" aria-pressed="false"><span class="dot"></span>Vilnius</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="LU">
                 <button type="button" class="section-label country-label">Luxembourg</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="LU" data-state="LUXEMBOURG" style="--chip:var(--lu-luxembourg)" aria-pressed="false"><span class="dot"></span>Luxembourg</button>
-                  <button type="button" class="chip" data-country="LU" data-state="ESCH_SUR_ALZETTE" style="--chip:var(--lu-eschsuralzette)" aria-pressed="false"><span class="dot"></span>Esch-sur-Alzette</button>
+                  <button type="button" class="chip" data-country="LU" data-state="LUXEMBOURG" aria-pressed="false"><span class="dot"></span>Luxembourg</button>
+                  <button type="button" class="chip" data-country="LU" data-state="ESCH_SUR_ALZETTE" aria-pressed="false"><span class="dot"></span>Esch-sur-Alzette</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="ME">
                 <button type="button" class="section-label country-label">Montenegro</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="ME" data-state="PODGORICA" style="--chip:var(--me-podgorica)" aria-pressed="false"><span class="dot"></span>Podgorica</button>
-                  <button type="button" class="chip" data-country="ME" data-state="TIVAT" style="--chip:var(--me-tivat)" aria-pressed="false"><span class="dot"></span>Tivat</button>
+                  <button type="button" class="chip" data-country="ME" data-state="PODGORICA" aria-pressed="false"><span class="dot"></span>Podgorica</button>
+                  <button type="button" class="chip" data-country="ME" data-state="TIVAT" aria-pressed="false"><span class="dot"></span>Tivat</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="NL">
                 <button type="button" class="section-label country-label">Netherlands</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="NL" data-state="NOORD_HOLLAND" style="--chip:var(--nl-noord-holland)" aria-pressed="false"><span class="dot"></span>Noord-Holland</button>
-                  <button type="button" class="chip" data-country="NL" data-state="ZUID_HOLLAND" style="--chip:var(--nl-zuid-holland)" aria-pressed="false"><span class="dot"></span>Zuid-Holland</button>
-                  <button type="button" class="chip" data-country="NL" data-state="UTRECHT" style="--chip:var(--nl-utrecht)" aria-pressed="false"><span class="dot"></span>Utrecht</button>
+                  <button type="button" class="chip" data-country="NL" data-state="NOORD_HOLLAND" aria-pressed="false"><span class="dot"></span>Noord-Holland</button>
+                  <button type="button" class="chip" data-country="NL" data-state="ZUID_HOLLAND" aria-pressed="false"><span class="dot"></span>Zuid-Holland</button>
+                  <button type="button" class="chip" data-country="NL" data-state="UTRECHT" aria-pressed="false"><span class="dot"></span>Utrecht</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="NO">
                 <button type="button" class="section-label country-label">Norway</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="NO" data-state="OSLO" style="--chip:var(--no-oslo)" aria-pressed="false"><span class="dot"></span>Oslo</button>
-                  <button type="button" class="chip" data-country="NO" data-state="VESTLAND" style="--chip:var(--no-vestland)" aria-pressed="false"><span class="dot"></span>Vestland</button>
-                  <button type="button" class="chip" data-country="NO" data-state="TRONDELAG" style="--chip:var(--no-trondelag)" aria-pressed="false"><span class="dot"></span>Trøndelag</button>
-                  <button type="button" class="chip" data-country="NO" data-state="ROGALAND" style="--chip:var(--no-rogaland)" aria-pressed="false"><span class="dot"></span>Rogaland</button>
-                  <button type="button" class="chip" data-country="NO" data-state="NORDLAND" style="--chip:var(--no-nordland)" aria-pressed="false"><span class="dot"></span>Nordland</button>
-                  <button type="button" class="chip" data-country="NO" data-state="BUSKERUD" style="--chip:var(--no-buskerud)" aria-pressed="false"><span class="dot"></span>Buskerud</button>
-                  <button type="button" class="chip" data-country="NO" data-state="AGDER" style="--chip:var(--no-agder)" aria-pressed="false"><span class="dot"></span>Agder</button>
-                  <button type="button" class="chip" data-country="NO" data-state="MORE_OG_ROMSDAL" style="--chip:var(--no-more-og-romsdal)" aria-pressed="false"><span class="dot"></span>Møre og Romsdal</button>
-                  <button type="button" class="chip" data-country="NO" data-state="INNLANDET" style="--chip:var(--no-innlandet)" aria-pressed="false"><span class="dot"></span>Innlandet</button>
-                  <button type="button" class="chip" data-country="NO" data-state="TELEMARK" style="--chip:var(--no-telemark)" aria-pressed="false"><span class="dot"></span>Telemark</button>
+                  <button type="button" class="chip" data-country="NO" data-state="OSLO" aria-pressed="false"><span class="dot"></span>Oslo</button>
+                  <button type="button" class="chip" data-country="NO" data-state="VESTLAND" aria-pressed="false"><span class="dot"></span>Vestland</button>
+                  <button type="button" class="chip" data-country="NO" data-state="TRONDELAG" aria-pressed="false"><span class="dot"></span>Trøndelag</button>
+                  <button type="button" class="chip" data-country="NO" data-state="ROGALAND" aria-pressed="false"><span class="dot"></span>Rogaland</button>
+                  <button type="button" class="chip" data-country="NO" data-state="NORDLAND" aria-pressed="false"><span class="dot"></span>Nordland</button>
+                  <button type="button" class="chip" data-country="NO" data-state="BUSKERUD" aria-pressed="false"><span class="dot"></span>Buskerud</button>
+                  <button type="button" class="chip" data-country="NO" data-state="AGDER" aria-pressed="false"><span class="dot"></span>Agder</button>
+                  <button type="button" class="chip" data-country="NO" data-state="MORE_OG_ROMSDAL" aria-pressed="false"><span class="dot"></span>Møre og Romsdal</button>
+                  <button type="button" class="chip" data-country="NO" data-state="INNLANDET" aria-pressed="false"><span class="dot"></span>Innlandet</button>
+                  <button type="button" class="chip" data-country="NO" data-state="TELEMARK" aria-pressed="false"><span class="dot"></span>Telemark</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="PL">
                 <button type="button" class="section-label country-label">Poland</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="PL" data-state="MAZOWIECKIE" style="--chip:var(--pl-mazowieckie)" aria-pressed="false"><span class="dot"></span>Mazowieckie</button>
-                  <button type="button" class="chip" data-country="PL" data-state="DOLNOSLASKIE" style="--chip:var(--pl-dolnoslaskie)" aria-pressed="false"><span class="dot"></span>Dolnośląskie</button>
-                  <button type="button" class="chip" data-country="PL" data-state="MALOPOLSKIE" style="--chip:var(--pl-malopolskie)" aria-pressed="false"><span class="dot"></span>Małopolskie</button>
-                  <button type="button" class="chip" data-country="PL" data-state="WIELKOPOLSKIE" style="--chip:var(--pl-wielkopolskie)" aria-pressed="false"><span class="dot"></span>Wielkopolskie</button>
+                  <button type="button" class="chip" data-country="PL" data-state="MAZOWIECKIE" aria-pressed="false"><span class="dot"></span>Mazowieckie</button>
+                  <button type="button" class="chip" data-country="PL" data-state="DOLNOSLASKIE" aria-pressed="false"><span class="dot"></span>Dolnośląskie</button>
+                  <button type="button" class="chip" data-country="PL" data-state="MALOPOLSKIE" aria-pressed="false"><span class="dot"></span>Małopolskie</button>
+                  <button type="button" class="chip" data-country="PL" data-state="WIELKOPOLSKIE" aria-pressed="false"><span class="dot"></span>Wielkopolskie</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="PT">
                 <button type="button" class="section-label country-label">Portugal</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="PT" data-state="LISBOA" style="--chip:var(--pt-lisboa)" aria-pressed="false"><span class="dot"></span>Lisboa</button>
-                  <button type="button" class="chip" data-country="PT" data-state="COIMBRA" style="--chip:var(--pt-coimbra)" aria-pressed="false"><span class="dot"></span>Coimbra</button>
-                  <button type="button" class="chip" data-country="PT" data-state="PORTO" style="--chip:var(--pt-porto)" aria-pressed="false"><span class="dot"></span>Porto</button>
+                  <button type="button" class="chip" data-country="PT" data-state="LISBOA" aria-pressed="false"><span class="dot"></span>Lisboa</button>
+                  <button type="button" class="chip" data-country="PT" data-state="COIMBRA" aria-pressed="false"><span class="dot"></span>Coimbra</button>
+                  <button type="button" class="chip" data-country="PT" data-state="PORTO" aria-pressed="false"><span class="dot"></span>Porto</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="RO">
                 <button type="button" class="section-label country-label">Romania</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="RO" data-state="BUCURESTI" style="--chip:var(--ro-bucuresti)" aria-pressed="false"><span class="dot"></span>București</button>
-                  <button type="button" class="chip" data-country="RO" data-state="BRASOV" style="--chip:var(--ro-brasov)" aria-pressed="false"><span class="dot"></span>Brașov</button>
-                  <button type="button" class="chip" data-country="RO" data-state="MURES" style="--chip:var(--ro-mures)" aria-pressed="false"><span class="dot"></span>Mureș</button>
-                  <button type="button" class="chip" data-country="RO" data-state="TIMIS" style="--chip:var(--ro-timis)" aria-pressed="false"><span class="dot"></span>Timiș</button>
-                  <button type="button" class="chip" data-country="RO" data-state="HARGHITA" style="--chip:var(--ro-harghita)" aria-pressed="false"><span class="dot"></span>Harghita</button>
-                  <button type="button" class="chip" data-country="RO" data-state="CLUJ" style="--chip:var(--ro-cluj)" aria-pressed="false"><span class="dot"></span>Cluj</button>
-                  <button type="button" class="chip" data-country="RO" data-state="IASI" style="--chip:var(--ro-iasi)" aria-pressed="false"><span class="dot"></span>Iași</button>
+                  <button type="button" class="chip" data-country="RO" data-state="BUCURESTI" aria-pressed="false"><span class="dot"></span>București</button>
+                  <button type="button" class="chip" data-country="RO" data-state="BRASOV" aria-pressed="false"><span class="dot"></span>Brașov</button>
+                  <button type="button" class="chip" data-country="RO" data-state="MURES" aria-pressed="false"><span class="dot"></span>Mureș</button>
+                  <button type="button" class="chip" data-country="RO" data-state="TIMIS" aria-pressed="false"><span class="dot"></span>Timiș</button>
+                  <button type="button" class="chip" data-country="RO" data-state="HARGHITA" aria-pressed="false"><span class="dot"></span>Harghita</button>
+                  <button type="button" class="chip" data-country="RO" data-state="CLUJ" aria-pressed="false"><span class="dot"></span>Cluj</button>
+                  <button type="button" class="chip" data-country="RO" data-state="IASI" aria-pressed="false"><span class="dot"></span>Iași</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="RS">
                 <button type="button" class="section-label country-label">Serbia</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="RS" data-state="BELGRADE" style="--chip:var(--rs-belgrade)" aria-pressed="false"><span class="dot"></span>Belgrade</button>
-                  <button type="button" class="chip" data-country="RS" data-state="JUZNOBACKI" style="--chip:var(--rs-south-backa)" aria-pressed="false"><span class="dot"></span>South Bačka</button>
+                  <button type="button" class="chip" data-country="RS" data-state="BELGRADE" aria-pressed="false"><span class="dot"></span>Belgrade</button>
+                  <button type="button" class="chip" data-country="RS" data-state="JUZNOBACKI" aria-pressed="false"><span class="dot"></span>South Bačka</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="RU">
                 <button type="button" class="section-label country-label">Russia</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="RU" data-state="MOSKVA" style="--chip:var(--ru-moskva)" aria-pressed="false"><span class="dot"></span>Moskva</button>
-                  <button type="button" class="chip" data-country="RU" data-state="SANKT_PETERBURG" style="--chip:var(--ru-sankt-peterburg)" aria-pressed="false"><span class="dot"></span>Sankt-Peterburg</button>
+                  <button type="button" class="chip" data-country="RU" data-state="MOSKVA" aria-pressed="false"><span class="dot"></span>Moskva</button>
+                  <button type="button" class="chip" data-country="RU" data-state="SANKT_PETERBURG" aria-pressed="false"><span class="dot"></span>Sankt-Peterburg</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="SI">
                 <button type="button" class="section-label country-label">Slovenia</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="SI" data-state="OSREDNJESLOVENSKA" style="--chip:var(--si-osrednjeslovenska)" aria-pressed="false"><span class="dot"></span>Central Slovenia</button>
-                  <button type="button" class="chip" data-country="SI" data-state="GORENJSKA" style="--chip:var(--si-gorenjska)" aria-pressed="false"><span class="dot"></span>Upper Carniola</button>
-                  <button type="button" class="chip" data-country="SI" data-state="SAVINJSKA" style="--chip:var(--si-savinjska)" aria-pressed="false"><span class="dot"></span>Savinja</button>
-                  <button type="button" class="chip" data-country="SI" data-state="PODRAVSKA" style="--chip:var(--si-podravska)" aria-pressed="false"><span class="dot"></span>Drava</button>
-                  <button type="button" class="chip" data-country="SI" data-state="OBALNO_KRASKA" style="--chip:var(--si-obalnokraska)" aria-pressed="false"><span class="dot"></span>Coastal-Karst</button>
-                  <button type="button" class="chip" data-country="SI" data-state="JUGOVZHODNA" style="--chip:var(--si-jugovzhodna)" aria-pressed="false"><span class="dot"></span>Southeast Slovenia</button>
-                  <button type="button" class="chip" data-country="SI" data-state="GORISKA" style="--chip:var(--si-goriska)" aria-pressed="false"><span class="dot"></span>Gorizia</button>
+                  <button type="button" class="chip" data-country="SI" data-state="OSREDNJESLOVENSKA" aria-pressed="false"><span class="dot"></span>Central Slovenia</button>
+                  <button type="button" class="chip" data-country="SI" data-state="GORENJSKA" aria-pressed="false"><span class="dot"></span>Upper Carniola</button>
+                  <button type="button" class="chip" data-country="SI" data-state="SAVINJSKA" aria-pressed="false"><span class="dot"></span>Savinja</button>
+                  <button type="button" class="chip" data-country="SI" data-state="PODRAVSKA" aria-pressed="false"><span class="dot"></span>Drava</button>
+                  <button type="button" class="chip" data-country="SI" data-state="OBALNO_KRASKA" aria-pressed="false"><span class="dot"></span>Coastal-Karst</button>
+                  <button type="button" class="chip" data-country="SI" data-state="JUGOVZHODNA" aria-pressed="false"><span class="dot"></span>Southeast Slovenia</button>
+                  <button type="button" class="chip" data-country="SI" data-state="GORISKA" aria-pressed="false"><span class="dot"></span>Gorizia</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="ES">
                 <button type="button" class="section-label country-label">Spain</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="ES" data-state="MADRID" style="--chip:var(--es-madrid)" aria-pressed="false"><span class="dot"></span>Comunidad de Madrid</button>
-                  <button type="button" class="chip" data-country="ES" data-state="CATALUNYA" style="--chip:var(--es-catalunya)" aria-pressed="false"><span class="dot"></span>Cataluña</button>
+                  <button type="button" class="chip" data-country="ES" data-state="MADRID" aria-pressed="false"><span class="dot"></span>Comunidad de Madrid</button>
+                  <button type="button" class="chip" data-country="ES" data-state="CATALUNYA" aria-pressed="false"><span class="dot"></span>Cataluña</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="SE">
                 <button type="button" class="section-label country-label">Sweden</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="SE" data-state="VASTRA_GOTALAND" style="--chip:var(--se-vastra-gotaland)" aria-pressed="false"><span class="dot"></span>Västra Götaland</button>
-                  <button type="button" class="chip" data-country="SE" data-state="STOCKHOLM" style="--chip:var(--se-stockholm)" aria-pressed="false"><span class="dot"></span>Stockholm</button>
-                  <button type="button" class="chip" data-country="SE" data-state="SKANE" style="--chip:var(--se-skane)" aria-pressed="false"><span class="dot"></span>Skåne</button>
+                  <button type="button" class="chip" data-country="SE" data-state="VASTRA_GOTALAND" aria-pressed="false"><span class="dot"></span>Västra Götaland</button>
+                  <button type="button" class="chip" data-country="SE" data-state="STOCKHOLM" aria-pressed="false"><span class="dot"></span>Stockholm</button>
+                  <button type="button" class="chip" data-country="SE" data-state="SKANE" aria-pressed="false"><span class="dot"></span>Skåne</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="CH">
                 <button type="button" class="section-label country-label">Switzerland</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="CH" data-state="ZURICH" style="--chip:var(--ch-zurich)" aria-pressed="false"><span class="dot"></span>Zürich</button>
-                  <button type="button" class="chip" data-country="CH" data-state="BASEL_STADT" style="--chip:var(--ch-basel-stadt)" aria-pressed="false"><span class="dot"></span>Basel-Stadt</button>
-                  <button type="button" class="chip" data-country="CH" data-state="BERN" style="--chip:var(--ch-bern)" aria-pressed="false"><span class="dot"></span>Bern</button>
+                  <button type="button" class="chip" data-country="CH" data-state="ZURICH" aria-pressed="false"><span class="dot"></span>Zürich</button>
+                  <button type="button" class="chip" data-country="CH" data-state="BASEL_STADT" aria-pressed="false"><span class="dot"></span>Basel-Stadt</button>
+                  <button type="button" class="chip" data-country="CH" data-state="BERN" aria-pressed="false"><span class="dot"></span>Bern</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="GB">
                 <button type="button" class="section-label country-label">United Kingdom</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="GB" data-state="ENGLAND" style="--chip:var(--gb-england)" aria-pressed="false"><span class="dot"></span>England</button>
-                  <button type="button" class="chip" data-country="GB" data-state="SCOTLAND" style="--chip:var(--gb-scotland)" aria-pressed="false"><span class="dot"></span>Scotland</button>
-                  <button type="button" class="chip" data-country="GB" data-state="WALES" style="--chip:var(--gb-wales)" aria-pressed="false"><span class="dot"></span>Wales</button>
-                  <button type="button" class="chip" data-country="GB" data-state="NORTHERN_IRELAND" style="--chip:var(--gb-northern-ireland)" aria-pressed="false"><span class="dot"></span>Northern Ireland</button>
+                  <button type="button" class="chip" data-country="GB" data-state="ENGLAND" aria-pressed="false"><span class="dot"></span>England</button>
+                  <button type="button" class="chip" data-country="GB" data-state="SCOTLAND" aria-pressed="false"><span class="dot"></span>Scotland</button>
+                  <button type="button" class="chip" data-country="GB" data-state="WALES" aria-pressed="false"><span class="dot"></span>Wales</button>
+                  <button type="button" class="chip" data-country="GB" data-state="NORTHERN_IRELAND" aria-pressed="false"><span class="dot"></span>Northern Ireland</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="UA">
                 <button type="button" class="section-label country-label">Ukraine</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="UA" data-state="KYIV" style="--chip:var(--ua-kyiv)" aria-pressed="false"><span class="dot"></span>Kyiv</button>
-                  <button type="button" class="chip" data-country="UA" data-state="LVIV" style="--chip:var(--ua-lviv)" aria-pressed="false"><span class="dot"></span>Lviv</button>
+                  <button type="button" class="chip" data-country="UA" data-state="KYIV" aria-pressed="false"><span class="dot"></span>Kyiv</button>
+                  <button type="button" class="chip" data-country="UA" data-state="LVIV" aria-pressed="false"><span class="dot"></span>Lviv</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="SK">
                 <button type="button" class="section-label country-label">Slovakia</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="SK" data-state="BRATISLAVSKY" style="--chip:var(--sk-bratislavsky)" aria-pressed="false"><span class="dot"></span>Bratislavský</button>
-                  <button type="button" class="chip" data-country="SK" data-state="ZILINSKY" style="--chip:var(--sk-zilinsky)" aria-pressed="false"><span class="dot"></span>Žilinský</button>
-                  <button type="button" class="chip" data-country="SK" data-state="TRENCIANSKY" style="--chip:var(--sk-trenciansky)" aria-pressed="false"><span class="dot"></span>Trenčiansky</button>
-                  <button type="button" class="chip" data-country="SK" data-state="BANSKOBYSTRICKY" style="--chip:var(--sk-banskobystricky)" aria-pressed="false"><span class="dot"></span>Banskobystrický</button>
+                  <button type="button" class="chip" data-country="SK" data-state="BRATISLAVSKY" aria-pressed="false"><span class="dot"></span>Bratislavský</button>
+                  <button type="button" class="chip" data-country="SK" data-state="ZILINSKY" aria-pressed="false"><span class="dot"></span>Žilinský</button>
+                  <button type="button" class="chip" data-country="SK" data-state="TRENCIANSKY" aria-pressed="false"><span class="dot"></span>Trenčiansky</button>
+                  <button type="button" class="chip" data-country="SK" data-state="BANSKOBYSTRICKY" aria-pressed="false"><span class="dot"></span>Banskobystrický</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="CY">
                 <button type="button" class="section-label country-label">Cyprus</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="CY" data-state="NICOSIA" style="--chip:var(--cy-nicosia)" aria-pressed="false"><span class="dot"></span>Nicosia</button>
-                  <button type="button" class="chip" data-country="CY" data-state="LIMASSOL" style="--chip:var(--cy-limassol)" aria-pressed="false"><span class="dot"></span>Limassol</button>
+                  <button type="button" class="chip" data-country="CY" data-state="NICOSIA" aria-pressed="false"><span class="dot"></span>Nicosia</button>
+                  <button type="button" class="chip" data-country="CY" data-state="LIMASSOL" aria-pressed="false"><span class="dot"></span>Limassol</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="TR">
                 <button type="button" class="section-label country-label">Turkey</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="TR" data-state="ISTANBUL" style="--chip:var(--tr-istanbul)" aria-pressed="false"><span class="dot"></span>İstanbul</button>
-                  <button type="button" class="chip" data-country="TR" data-state="BURSA" style="--chip:var(--tr-bursa)" aria-pressed="false"><span class="dot"></span>Bursa</button>
-                  <button type="button" class="chip" data-country="TR" data-state="ESKISEHIR" style="--chip:var(--tr-eskisehir)" aria-pressed="false"><span class="dot"></span>Eskişehir</button>
+                  <button type="button" class="chip" data-country="TR" data-state="ISTANBUL" aria-pressed="false"><span class="dot"></span>İstanbul</button>
+                  <button type="button" class="chip" data-country="TR" data-state="BURSA" aria-pressed="false"><span class="dot"></span>Bursa</button>
+                  <button type="button" class="chip" data-country="TR" data-state="ESKISEHIR" aria-pressed="false"><span class="dot"></span>Eskişehir</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="LV">
                 <button type="button" class="section-label country-label">Latvia</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="LV" data-state="RIGA" style="--chip:var(--lv-riga)" aria-pressed="false"><span class="dot"></span>Rīga</button>
+                  <button type="button" class="chip" data-country="LV" data-state="RIGA" aria-pressed="false"><span class="dot"></span>Rīga</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="BA">
                 <button type="button" class="section-label country-label">Bosnia and Herzegovina</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="BA" data-state="REPUBLIKA_SRPSKA" style="--chip:var(--ba-republikasrpska)" aria-pressed="false"><span class="dot"></span>Republika Srpska</button>
-                  <button type="button" class="chip" data-country="BA" data-state="HERZEGOVINA_NERETVA" style="--chip:var(--ba-herzegovinaneretva)" aria-pressed="false"><span class="dot"></span>Herzegovina-Neretva</button>
-                  <button type="button" class="chip" data-country="BA" data-state="UNA_SANA" style="--chip:var(--ba-unasana)" aria-pressed="false"><span class="dot"></span>Una-Sana</button>
+                  <button type="button" class="chip" data-country="BA" data-state="REPUBLIKA_SRPSKA" aria-pressed="false"><span class="dot"></span>Republika Srpska</button>
+                  <button type="button" class="chip" data-country="BA" data-state="HERZEGOVINA_NERETVA" aria-pressed="false"><span class="dot"></span>Herzegovina-Neretva</button>
+                  <button type="button" class="chip" data-country="BA" data-state="UNA_SANA" aria-pressed="false"><span class="dot"></span>Una-Sana</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="AD">
                 <button type="button" class="section-label country-label">Andorra</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="AD" data-state="ANDORRA_LA_VELLA" style="--chip:var(--ad-andorralavella)" aria-pressed="false"><span class="dot"></span>Andorra la Vella</button>
-                  <button type="button" class="chip" data-country="AD" data-state="CANILLO" style="--chip:var(--ad-canillo)" aria-pressed="false"><span class="dot"></span>Canillo</button>
-                  <button type="button" class="chip" data-country="AD" data-state="ENCAMP" style="--chip:var(--ad-encamp)" aria-pressed="false"><span class="dot"></span>Encamp</button>
-                  <button type="button" class="chip" data-country="AD" data-state="ESCALDES_ENGORDANY" style="--chip:var(--ad-escaldesengordany)" aria-pressed="false"><span class="dot"></span>Escaldes-Engordany</button>
+                  <button type="button" class="chip" data-country="AD" data-state="ANDORRA_LA_VELLA" aria-pressed="false"><span class="dot"></span>Andorra la Vella</button>
+                  <button type="button" class="chip" data-country="AD" data-state="CANILLO" aria-pressed="false"><span class="dot"></span>Canillo</button>
+                  <button type="button" class="chip" data-country="AD" data-state="ENCAMP" aria-pressed="false"><span class="dot"></span>Encamp</button>
+                  <button type="button" class="chip" data-country="AD" data-state="ESCALDES_ENGORDANY" aria-pressed="false"><span class="dot"></span>Escaldes-Engordany</button>
                 </div>
               </div>
             </div>
@@ -699,61 +686,61 @@
               <div class="country-group collapsed" data-country="CA">
                 <button type="button" class="section-label country-label">Canada</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="CA" data-state="ON" style="--chip:var(--ca-on)" aria-pressed="false"><span class="dot"></span>ON</button>
-                  <button type="button" class="chip" data-country="CA" data-state="BC" style="--chip:var(--ca-bc)" aria-pressed="false"><span class="dot"></span>BC</button>
-                  <button type="button" class="chip" data-country="CA" data-state="QC" style="--chip:var(--ca-qc)" aria-pressed="false"><span class="dot"></span>QC</button>
-                  <button type="button" class="chip" data-country="CA" data-state="AB" style="--chip:var(--ca-ab)" aria-pressed="false"><span class="dot"></span>AB</button>
+                  <button type="button" class="chip" data-country="CA" data-state="ON" aria-pressed="false"><span class="dot"></span>ON</button>
+                  <button type="button" class="chip" data-country="CA" data-state="BC" aria-pressed="false"><span class="dot"></span>BC</button>
+                  <button type="button" class="chip" data-country="CA" data-state="QC" aria-pressed="false"><span class="dot"></span>QC</button>
+                  <button type="button" class="chip" data-country="CA" data-state="AB" aria-pressed="false"><span class="dot"></span>AB</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="CR">
                 <button type="button" class="section-label country-label">Costa Rica</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="CR" data-state="SAN_JOSE" style="--chip:var(--cr-sanjose)" aria-pressed="false"><span class="dot"></span>San José</button>
-                  <button type="button" class="chip" data-country="CR" data-state="HEREDIA" style="--chip:var(--cr-heredia)" aria-pressed="false"><span class="dot"></span>Heredia</button>
-                  <button type="button" class="chip" data-country="CR" data-state="PUNTARENAS" style="--chip:var(--cr-puntarenas)" aria-pressed="false"><span class="dot"></span>Puntarenas</button>
-                  <button type="button" class="chip" data-country="CR" data-state="GUANACASTE" style="--chip:var(--cr-guanacaste)" aria-pressed="false"><span class="dot"></span>Guanacaste</button>
-                  <button type="button" class="chip" data-country="CR" data-state="CARTAGO" style="--chip:var(--cr-cartago)" aria-pressed="false"><span class="dot"></span>Cartago</button>
+                  <button type="button" class="chip" data-country="CR" data-state="SAN_JOSE" aria-pressed="false"><span class="dot"></span>San José</button>
+                  <button type="button" class="chip" data-country="CR" data-state="HEREDIA" aria-pressed="false"><span class="dot"></span>Heredia</button>
+                  <button type="button" class="chip" data-country="CR" data-state="PUNTARENAS" aria-pressed="false"><span class="dot"></span>Puntarenas</button>
+                  <button type="button" class="chip" data-country="CR" data-state="GUANACASTE" aria-pressed="false"><span class="dot"></span>Guanacaste</button>
+                  <button type="button" class="chip" data-country="CR" data-state="CARTAGO" aria-pressed="false"><span class="dot"></span>Cartago</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="GT">
                 <button type="button" class="section-label country-label">Guatemala</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="GT" data-state="SACATEPEQUEZ" style="--chip:var(--gt-sacatepequez)" aria-pressed="false"><span class="dot"></span>Sacatepéquez</button>
-                  <button type="button" class="chip" data-country="GT" data-state="GUATEMALA" style="--chip:var(--gt-guatemala)" aria-pressed="false"><span class="dot"></span>Guatemala</button>
-                  <button type="button" class="chip" data-country="GT" data-state="SOLOLA" style="--chip:var(--gt-solola)" aria-pressed="false"><span class="dot"></span>Sololá</button>
+                  <button type="button" class="chip" data-country="GT" data-state="SACATEPEQUEZ" aria-pressed="false"><span class="dot"></span>Sacatepéquez</button>
+                  <button type="button" class="chip" data-country="GT" data-state="GUATEMALA" aria-pressed="false"><span class="dot"></span>Guatemala</button>
+                  <button type="button" class="chip" data-country="GT" data-state="SOLOLA" aria-pressed="false"><span class="dot"></span>Sololá</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="MX">
                 <button type="button" class="section-label country-label">Mexico</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="MX" data-state="CIUDAD_DE_MEXICO" style="--chip:var(--mx-ciudad-de-mexico)" aria-pressed="false"><span class="dot"></span>Ciudad de México</button>
-                  <button type="button" class="chip" data-country="MX" data-state="NUEVO_LEON" style="--chip:var(--mx-nuevo-leon)" aria-pressed="false"><span class="dot"></span>Nuevo León</button>
-                  <button type="button" class="chip" data-country="MX" data-state="MEXICO" style="--chip:var(--mx-mexico)" aria-pressed="false"><span class="dot"></span>México</button>
-                  <button type="button" class="chip" data-country="MX" data-state="JALISCO" style="--chip:var(--mx-jalisco)" aria-pressed="false"><span class="dot"></span>Jalisco</button>
+                  <button type="button" class="chip" data-country="MX" data-state="CIUDAD_DE_MEXICO" aria-pressed="false"><span class="dot"></span>Ciudad de México</button>
+                  <button type="button" class="chip" data-country="MX" data-state="NUEVO_LEON" aria-pressed="false"><span class="dot"></span>Nuevo León</button>
+                  <button type="button" class="chip" data-country="MX" data-state="MEXICO" aria-pressed="false"><span class="dot"></span>México</button>
+                  <button type="button" class="chip" data-country="MX" data-state="JALISCO" aria-pressed="false"><span class="dot"></span>Jalisco</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="PA">
                 <button type="button" class="section-label country-label">Panama</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="PA" data-state="CHIRIQUI" style="--chip:var(--pa-chiriqui)" aria-pressed="false"><span class="dot"></span>Chiriquí</button>
-                  <button type="button" class="chip" data-country="PA" data-state="PANAMA" style="--chip:var(--pa-panama)" aria-pressed="false"><span class="dot"></span>Panamá</button>
+                  <button type="button" class="chip" data-country="PA" data-state="CHIRIQUI" aria-pressed="false"><span class="dot"></span>Chiriquí</button>
+                  <button type="button" class="chip" data-country="PA" data-state="PANAMA" aria-pressed="false"><span class="dot"></span>Panamá</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="US">
                 <button type="button" class="section-label country-label">United States</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="US" data-state="CA" style="--chip:var(--us-ca)" aria-pressed="false"><span class="dot"></span>CA</button>
-                  <button type="button" class="chip" data-country="US" data-state="CO" style="--chip:var(--us-co)" aria-pressed="false"><span class="dot"></span>CO</button>
-                  <button type="button" class="chip" data-country="US" data-state="TX" style="--chip:var(--us-tx)" aria-pressed="false"><span class="dot"></span>TX</button>
-                  <button type="button" class="chip" data-country="US" data-state="WA" style="--chip:var(--us-wa)" aria-pressed="false"><span class="dot"></span>WA</button>
-                  <button type="button" class="chip" data-country="US" data-state="NY" style="--chip:var(--us-ny)" aria-pressed="false"><span class="dot"></span>NY</button>
-                  <button type="button" class="chip" data-country="US" data-state="NV" style="--chip:var(--us-nv)" aria-pressed="false"><span class="dot"></span>NV</button>
-                  <button type="button" class="chip" data-country="US" data-state="GA" style="--chip:var(--us-ga)" aria-pressed="false"><span class="dot"></span>GA</button>
-                  <button type="button" class="chip" data-country="US" data-state="UT" style="--chip:var(--us-ut)" aria-pressed="false"><span class="dot"></span>UT</button>
-                  <button type="button" class="chip" data-country="US" data-state="AL" style="--chip:var(--us-al)" aria-pressed="false"><span class="dot"></span>AL</button>
-                  <button type="button" class="chip" data-country="US" data-state="TN" style="--chip:var(--us-tn)" aria-pressed="false"><span class="dot"></span>TN</button>
-                  <button type="button" class="chip" data-country="US" data-state="MA" style="--chip:var(--us-ma)" aria-pressed="false"><span class="dot"></span>MA</button>
-                  <button type="button" class="chip" data-country="US" data-state="IL" style="--chip:var(--us-il)" aria-pressed="false"><span class="dot"></span>IL</button>
+                  <button type="button" class="chip" data-country="US" data-state="CA" aria-pressed="false"><span class="dot"></span>CA</button>
+                  <button type="button" class="chip" data-country="US" data-state="CO" aria-pressed="false"><span class="dot"></span>CO</button>
+                  <button type="button" class="chip" data-country="US" data-state="TX" aria-pressed="false"><span class="dot"></span>TX</button>
+                  <button type="button" class="chip" data-country="US" data-state="WA" aria-pressed="false"><span class="dot"></span>WA</button>
+                  <button type="button" class="chip" data-country="US" data-state="NY" aria-pressed="false"><span class="dot"></span>NY</button>
+                  <button type="button" class="chip" data-country="US" data-state="NV" aria-pressed="false"><span class="dot"></span>NV</button>
+                  <button type="button" class="chip" data-country="US" data-state="GA" aria-pressed="false"><span class="dot"></span>GA</button>
+                  <button type="button" class="chip" data-country="US" data-state="UT" aria-pressed="false"><span class="dot"></span>UT</button>
+                  <button type="button" class="chip" data-country="US" data-state="AL" aria-pressed="false"><span class="dot"></span>AL</button>
+                  <button type="button" class="chip" data-country="US" data-state="TN" aria-pressed="false"><span class="dot"></span>TN</button>
+                  <button type="button" class="chip" data-country="US" data-state="MA" aria-pressed="false"><span class="dot"></span>MA</button>
+                  <button type="button" class="chip" data-country="US" data-state="IL" aria-pressed="false"><span class="dot"></span>IL</button>
                 </div>
               </div>
             </div>
@@ -764,22 +751,22 @@
               <div class="country-group collapsed" data-country="AU">
                 <button type="button" class="section-label country-label">Australia</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="AU" data-state="NSW" style="--chip:var(--nsw)" aria-pressed="false"><span class="dot"></span>NSW</button>
-                  <button type="button" class="chip" data-country="AU" data-state="VIC" style="--chip:var(--vic)" aria-pressed="false"><span class="dot"></span>VIC</button>
-                  <button type="button" class="chip" data-country="AU" data-state="QLD" style="--chip:var(--qld)" aria-pressed="false"><span class="dot"></span>QLD</button>
-                  <button type="button" class="chip" data-country="AU" data-state="WA" style="--chip:var(--wa)" aria-pressed="false"><span class="dot"></span>WA</button>
-                  <button type="button" class="chip" data-country="AU" data-state="SA" style="--chip:var(--sa)" aria-pressed="false"><span class="dot"></span>SA</button>
-                  <button type="button" class="chip" data-country="AU" data-state="ACT" style="--chip:var(--act)" aria-pressed="false"><span class="dot"></span>ACT</button>
-                  <button type="button" class="chip" data-country="AU" data-state="TAS" style="--chip:var(--tas)" aria-pressed="false"><span class="dot"></span>TAS</button>
-                  <button type="button" class="chip" data-country="AU" data-state="NT" style="--chip:var(--nt)" aria-pressed="false"><span class="dot"></span>NT</button>
+                  <button type="button" class="chip" data-country="AU" data-state="NSW" aria-pressed="false"><span class="dot"></span>NSW</button>
+                  <button type="button" class="chip" data-country="AU" data-state="VIC" aria-pressed="false"><span class="dot"></span>VIC</button>
+                  <button type="button" class="chip" data-country="AU" data-state="QLD" aria-pressed="false"><span class="dot"></span>QLD</button>
+                  <button type="button" class="chip" data-country="AU" data-state="WA" aria-pressed="false"><span class="dot"></span>WA</button>
+                  <button type="button" class="chip" data-country="AU" data-state="SA" aria-pressed="false"><span class="dot"></span>SA</button>
+                  <button type="button" class="chip" data-country="AU" data-state="ACT" aria-pressed="false"><span class="dot"></span>ACT</button>
+                  <button type="button" class="chip" data-country="AU" data-state="TAS" aria-pressed="false"><span class="dot"></span>TAS</button>
+                  <button type="button" class="chip" data-country="AU" data-state="NT" aria-pressed="false"><span class="dot"></span>NT</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="NZ">
                 <button type="button" class="section-label country-label">New Zealand</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="NZ" data-state="AUCKLAND" style="--chip:var(--nz-auckland)" aria-pressed="false"><span class="dot"></span>Auckland</button>
-                  <button type="button" class="chip" data-country="NZ" data-state="WELLINGTON" style="--chip:var(--nz-wellington)" aria-pressed="false"><span class="dot"></span>Wellington</button>
-                  <button type="button" class="chip" data-country="NZ" data-state="CANTERBURY" style="--chip:var(--nz-canterbury)" aria-pressed="false"><span class="dot"></span>Canterbury</button>
+                  <button type="button" class="chip" data-country="NZ" data-state="AUCKLAND" aria-pressed="false"><span class="dot"></span>Auckland</button>
+                  <button type="button" class="chip" data-country="NZ" data-state="WELLINGTON" aria-pressed="false"><span class="dot"></span>Wellington</button>
+                  <button type="button" class="chip" data-country="NZ" data-state="CANTERBURY" aria-pressed="false"><span class="dot"></span>Canterbury</button>
                 </div>
               </div>
             </div>
@@ -790,103 +777,103 @@
               <div class="country-group collapsed" data-country="AR">
                 <button type="button" class="section-label country-label">Argentina</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="AR" data-state="BUENOS_AIRES" style="--chip:var(--ar-buenos-aires)" aria-pressed="false"><span class="dot"></span>Buenos Aires</button>
-                  <button type="button" class="chip" data-country="AR" data-state="CABA" style="--chip:var(--ar-caba)" aria-pressed="false"><span class="dot"></span>CABA</button>
-                  <button type="button" class="chip" data-country="AR" data-state="CORDOBA" style="--chip:var(--ar-cordoba)" aria-pressed="false"><span class="dot"></span>Córdoba</button>
-                  <button type="button" class="chip" data-country="AR" data-state="SANTA_FE" style="--chip:var(--ar-santa-fe)" aria-pressed="false"><span class="dot"></span>Santa Fe</button>
-                  <button type="button" class="chip" data-country="AR" data-state="ENTRE_RIOS" style="--chip:var(--ar-entre-rios)" aria-pressed="false"><span class="dot"></span>Entre Ríos</button>
-                  <button type="button" class="chip" data-country="AR" data-state="MENDOZA" style="--chip:var(--ar-mendoza)" aria-pressed="false"><span class="dot"></span>Mendoza</button>
-                  <button type="button" class="chip" data-country="AR" data-state="NEUQUEN" style="--chip:var(--ar-neuquen)" aria-pressed="false"><span class="dot"></span>Neuquén</button>
+                  <button type="button" class="chip" data-country="AR" data-state="BUENOS_AIRES" aria-pressed="false"><span class="dot"></span>Buenos Aires</button>
+                  <button type="button" class="chip" data-country="AR" data-state="CABA" aria-pressed="false"><span class="dot"></span>CABA</button>
+                  <button type="button" class="chip" data-country="AR" data-state="CORDOBA" aria-pressed="false"><span class="dot"></span>Córdoba</button>
+                  <button type="button" class="chip" data-country="AR" data-state="SANTA_FE" aria-pressed="false"><span class="dot"></span>Santa Fe</button>
+                  <button type="button" class="chip" data-country="AR" data-state="ENTRE_RIOS" aria-pressed="false"><span class="dot"></span>Entre Ríos</button>
+                  <button type="button" class="chip" data-country="AR" data-state="MENDOZA" aria-pressed="false"><span class="dot"></span>Mendoza</button>
+                  <button type="button" class="chip" data-country="AR" data-state="NEUQUEN" aria-pressed="false"><span class="dot"></span>Neuquén</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="BO">
                 <button type="button" class="section-label country-label">Bolivia</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="BO" data-state="COCHABAMBA" style="--chip:var(--bo-cochabamba)" aria-pressed="false"><span class="dot"></span>Cochabamba</button>
-                  <button type="button" class="chip" data-country="BO" data-state="LA_PAZ" style="--chip:var(--bo-la-paz)" aria-pressed="false"><span class="dot"></span>La Paz</button>
+                  <button type="button" class="chip" data-country="BO" data-state="COCHABAMBA" aria-pressed="false"><span class="dot"></span>Cochabamba</button>
+                  <button type="button" class="chip" data-country="BO" data-state="LA_PAZ" aria-pressed="false"><span class="dot"></span>La Paz</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="BR">
                 <button type="button" class="section-label country-label">Brazil</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="BR" data-state="SAO_PAULO" style="--chip:var(--br-sao-paulo)" aria-pressed="false"><span class="dot"></span>São Paulo</button>
-                  <button type="button" class="chip" data-country="BR" data-state="RIO_DE_JANEIRO" style="--chip:var(--br-rio-de-janeiro)" aria-pressed="false"><span class="dot"></span>Rio de Janeiro</button>
-                  <button type="button" class="chip" data-country="BR" data-state="MINAS_GERAIS" style="--chip:var(--br-minas-gerais)" aria-pressed="false"><span class="dot"></span>Minas Gerais</button>
-                  <button type="button" class="chip" data-country="BR" data-state="PARANA" style="--chip:var(--br-parana)" aria-pressed="false"><span class="dot"></span>Paraná</button>
+                  <button type="button" class="chip" data-country="BR" data-state="SAO_PAULO" aria-pressed="false"><span class="dot"></span>São Paulo</button>
+                  <button type="button" class="chip" data-country="BR" data-state="RIO_DE_JANEIRO" aria-pressed="false"><span class="dot"></span>Rio de Janeiro</button>
+                  <button type="button" class="chip" data-country="BR" data-state="MINAS_GERAIS" aria-pressed="false"><span class="dot"></span>Minas Gerais</button>
+                  <button type="button" class="chip" data-country="BR" data-state="PARANA" aria-pressed="false"><span class="dot"></span>Paraná</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="CL">
                 <button type="button" class="section-label country-label">Chile</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="CL" data-state="METROPOLITANA" style="--chip:var(--cl-metropolitana)" aria-pressed="false"><span class="dot"></span>Metropolitana</button>
-                  <button type="button" class="chip" data-country="CL" data-state="VALPARAISO" style="--chip:var(--cl-valparaiso)" aria-pressed="false"><span class="dot"></span>Valparaíso</button>
-                  <button type="button" class="chip" data-country="CL" data-state="LOS_LAGOS" style="--chip:var(--cl-los-lagos)" aria-pressed="false"><span class="dot"></span>Los Lagos</button>
-                  <button type="button" class="chip" data-country="CL" data-state="LIBERTADOR_OHIGGINS" style="--chip:var(--cl-libertador-ohiggins)" aria-pressed="false"><span class="dot"></span>Libertador O'Higgins</button>
-                  <button type="button" class="chip" data-country="CL" data-state="MAULE" style="--chip:var(--cl-maule)" aria-pressed="false"><span class="dot"></span>Maule</button>
-                  <button type="button" class="chip" data-country="CL" data-state="BIOBIO" style="--chip:var(--cl-biobio)" aria-pressed="false"><span class="dot"></span>Biobío</button>
-                  <button type="button" class="chip" data-country="CL" data-state="ARAUCANIA" style="--chip:var(--cl-araucania)" aria-pressed="false"><span class="dot"></span>La Araucanía</button>
-                  <button type="button" class="chip" data-country="CL" data-state="LOS_RIOS" style="--chip:var(--cl-los-rios)" aria-pressed="false"><span class="dot"></span>Los Ríos</button>
+                  <button type="button" class="chip" data-country="CL" data-state="METROPOLITANA" aria-pressed="false"><span class="dot"></span>Metropolitana</button>
+                  <button type="button" class="chip" data-country="CL" data-state="VALPARAISO" aria-pressed="false"><span class="dot"></span>Valparaíso</button>
+                  <button type="button" class="chip" data-country="CL" data-state="LOS_LAGOS" aria-pressed="false"><span class="dot"></span>Los Lagos</button>
+                  <button type="button" class="chip" data-country="CL" data-state="LIBERTADOR_OHIGGINS" aria-pressed="false"><span class="dot"></span>Libertador O'Higgins</button>
+                  <button type="button" class="chip" data-country="CL" data-state="MAULE" aria-pressed="false"><span class="dot"></span>Maule</button>
+                  <button type="button" class="chip" data-country="CL" data-state="BIOBIO" aria-pressed="false"><span class="dot"></span>Biobío</button>
+                  <button type="button" class="chip" data-country="CL" data-state="ARAUCANIA" aria-pressed="false"><span class="dot"></span>La Araucanía</button>
+                  <button type="button" class="chip" data-country="CL" data-state="LOS_RIOS" aria-pressed="false"><span class="dot"></span>Los Ríos</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="CO">
                 <button type="button" class="section-label country-label">Colombia</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="CO" data-state="BOGOTA_DC" style="--chip:var(--co-bogota-dc)" aria-pressed="false"><span class="dot"></span>Bogotá D.C.</button>
-                  <button type="button" class="chip" data-country="CO" data-state="SANTANDER" style="--chip:var(--co-santander)" aria-pressed="false"><span class="dot"></span>Santander</button>
-                  <button type="button" class="chip" data-country="CO" data-state="VALLE_DEL_CAUCA" style="--chip:var(--co-valle-del-cauca)" aria-pressed="false"><span class="dot"></span>Valle del Cauca</button>
-                  <button type="button" class="chip" data-country="CO" data-state="CUNDINAMARCA" style="--chip:var(--co-cundinamarca)" aria-pressed="false"><span class="dot"></span>Cundinamarca</button>
-                  <button type="button" class="chip" data-country="CO" data-state="NORTE_DE_SANTANDER" style="--chip:var(--co-norte-de-santander)" aria-pressed="false"><span class="dot"></span>Norte de Santander</button>
-                  <button type="button" class="chip" data-country="CO" data-state="ANTIOQUIA" style="--chip:var(--co-antioquia)" aria-pressed="false"><span class="dot"></span>Antioquia</button>
-                  <button type="button" class="chip" data-country="CO" data-state="TOLIMA" style="--chip:var(--co-tolima)" aria-pressed="false"><span class="dot"></span>Tolima</button>
-                  <button type="button" class="chip" data-country="CO" data-state="HUILA" style="--chip:var(--co-huila)" aria-pressed="false"><span class="dot"></span>Huila</button>
-                  <button type="button" class="chip" data-country="CO" data-state="NARINO" style="--chip:var(--co-narino)" aria-pressed="false"><span class="dot"></span>Nariño</button>
+                  <button type="button" class="chip" data-country="CO" data-state="BOGOTA_DC" aria-pressed="false"><span class="dot"></span>Bogotá D.C.</button>
+                  <button type="button" class="chip" data-country="CO" data-state="SANTANDER" aria-pressed="false"><span class="dot"></span>Santander</button>
+                  <button type="button" class="chip" data-country="CO" data-state="VALLE_DEL_CAUCA" aria-pressed="false"><span class="dot"></span>Valle del Cauca</button>
+                  <button type="button" class="chip" data-country="CO" data-state="CUNDINAMARCA" aria-pressed="false"><span class="dot"></span>Cundinamarca</button>
+                  <button type="button" class="chip" data-country="CO" data-state="NORTE_DE_SANTANDER" aria-pressed="false"><span class="dot"></span>Norte de Santander</button>
+                  <button type="button" class="chip" data-country="CO" data-state="ANTIOQUIA" aria-pressed="false"><span class="dot"></span>Antioquia</button>
+                  <button type="button" class="chip" data-country="CO" data-state="TOLIMA" aria-pressed="false"><span class="dot"></span>Tolima</button>
+                  <button type="button" class="chip" data-country="CO" data-state="HUILA" aria-pressed="false"><span class="dot"></span>Huila</button>
+                  <button type="button" class="chip" data-country="CO" data-state="NARINO" aria-pressed="false"><span class="dot"></span>Nariño</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="EC">
                 <button type="button" class="section-label country-label">Ecuador</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="EC" data-state="PICHINCHA" style="--chip:var(--ec-pichincha)" aria-pressed="false"><span class="dot"></span>Pichincha</button>
-                  <button type="button" class="chip" data-country="EC" data-state="AZUAY" style="--chip:var(--ec-azuay)" aria-pressed="false"><span class="dot"></span>Azuay</button>
-                  <button type="button" class="chip" data-country="EC" data-state="TUNGURAHUA" style="--chip:var(--ec-tungurahua)" aria-pressed="false"><span class="dot"></span>Tungurahua</button>
-                  <button type="button" class="chip" data-country="EC" data-state="CANAR" style="--chip:var(--ec-canar)" aria-pressed="false"><span class="dot"></span>Cañar</button>
-                  <button type="button" class="chip" data-country="EC" data-state="IMBABURA" style="--chip:var(--ec-imbabura)" aria-pressed="false"><span class="dot"></span>Imbabura</button>
-                  <button type="button" class="chip" data-country="EC" data-state="MANABI" style="--chip:var(--ec-manabi)" aria-pressed="false"><span class="dot"></span>Manabí</button>
-                  <button type="button" class="chip" data-country="EC" data-state="GUAYAS" style="--chip:var(--ec-guayas)" aria-pressed="false"><span class="dot"></span>Guayas</button>
-                  <button type="button" class="chip" data-country="EC" data-state="PASTAZA" style="--chip:var(--ec-pastaza)" aria-pressed="false"><span class="dot"></span>Pastaza</button>
+                  <button type="button" class="chip" data-country="EC" data-state="PICHINCHA" aria-pressed="false"><span class="dot"></span>Pichincha</button>
+                  <button type="button" class="chip" data-country="EC" data-state="AZUAY" aria-pressed="false"><span class="dot"></span>Azuay</button>
+                  <button type="button" class="chip" data-country="EC" data-state="TUNGURAHUA" aria-pressed="false"><span class="dot"></span>Tungurahua</button>
+                  <button type="button" class="chip" data-country="EC" data-state="CANAR" aria-pressed="false"><span class="dot"></span>Cañar</button>
+                  <button type="button" class="chip" data-country="EC" data-state="IMBABURA" aria-pressed="false"><span class="dot"></span>Imbabura</button>
+                  <button type="button" class="chip" data-country="EC" data-state="MANABI" aria-pressed="false"><span class="dot"></span>Manabí</button>
+                  <button type="button" class="chip" data-country="EC" data-state="GUAYAS" aria-pressed="false"><span class="dot"></span>Guayas</button>
+                  <button type="button" class="chip" data-country="EC" data-state="PASTAZA" aria-pressed="false"><span class="dot"></span>Pastaza</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="PY">
                 <button type="button" class="section-label country-label">Paraguay</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="PY" data-state="ASUNCION" style="--chip:var(--py-asuncion)" aria-pressed="false"><span class="dot"></span>Asunción</button>
-                  <button type="button" class="chip" data-country="PY" data-state="CENTRAL" style="--chip:var(--py-central)" aria-pressed="false"><span class="dot"></span>Central</button>
+                  <button type="button" class="chip" data-country="PY" data-state="ASUNCION" aria-pressed="false"><span class="dot"></span>Asunción</button>
+                  <button type="button" class="chip" data-country="PY" data-state="CENTRAL" aria-pressed="false"><span class="dot"></span>Central</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="PE">
                 <button type="button" class="section-label country-label">Peru</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="PE" data-state="LIMA" style="--chip:var(--pe-lima)" aria-pressed="false"><span class="dot"></span>Lima</button>
-                  <button type="button" class="chip" data-country="PE" data-state="AREQUIPA" style="--chip:var(--pe-arequipa)" aria-pressed="false"><span class="dot"></span>Arequipa</button>
+                  <button type="button" class="chip" data-country="PE" data-state="LIMA" aria-pressed="false"><span class="dot"></span>Lima</button>
+                  <button type="button" class="chip" data-country="PE" data-state="AREQUIPA" aria-pressed="false"><span class="dot"></span>Arequipa</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="UY">
                 <button type="button" class="section-label country-label">Uruguay</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="UY" data-state="MONTEVIDEO" style="--chip:var(--uy-montevideo)" aria-pressed="false"><span class="dot"></span>Montevideo</button>
-                  <button type="button" class="chip" data-country="UY" data-state="MALDONADO" style="--chip:var(--uy-maldonado)" aria-pressed="false"><span class="dot"></span>Maldonado</button>
-                  <button type="button" class="chip" data-country="UY" data-state="TACUAREMBO" style="--chip:var(--uy-tacuarembo)" aria-pressed="false"><span class="dot"></span>Tacuarembó</button>
-                  <button type="button" class="chip" data-country="UY" data-state="PAYSANDU" style="--chip:var(--uy-paysandu)" aria-pressed="false"><span class="dot"></span>Paysandú</button>
+                  <button type="button" class="chip" data-country="UY" data-state="MONTEVIDEO" aria-pressed="false"><span class="dot"></span>Montevideo</button>
+                  <button type="button" class="chip" data-country="UY" data-state="MALDONADO" aria-pressed="false"><span class="dot"></span>Maldonado</button>
+                  <button type="button" class="chip" data-country="UY" data-state="TACUAREMBO" aria-pressed="false"><span class="dot"></span>Tacuarembó</button>
+                  <button type="button" class="chip" data-country="UY" data-state="PAYSANDU" aria-pressed="false"><span class="dot"></span>Paysandú</button>
                 </div>
               </div>
               <div class="country-group collapsed" data-country="VE">
                 <button type="button" class="section-label country-label">Venezuela</button>
                 <div class="chip-row">
-                  <button type="button" class="chip" data-country="VE" data-state="DISTRITO_CAPITAL" style="--chip:var(--ve-distrito-capital)" aria-pressed="false"><span class="dot"></span>Distrito Capital</button>
-                  <button type="button" class="chip" data-country="VE" data-state="MIRANDA" style="--chip:var(--ve-miranda)" aria-pressed="false"><span class="dot"></span>Miranda</button>
-                  <button type="button" class="chip" data-country="VE" data-state="ZULIA" style="--chip:var(--ve-zulia)" aria-pressed="false"><span class="dot"></span>Zulia</button>
-                  <button type="button" class="chip" data-country="VE" data-state="ARAGUA" style="--chip:var(--ve-aragua)" aria-pressed="false"><span class="dot"></span>Aragua</button>
-                  <button type="button" class="chip" data-country="VE" data-state="TACHIRA" style="--chip:var(--ve-tachira)" aria-pressed="false"><span class="dot"></span>Táchira</button>
-                  <button type="button" class="chip" data-country="VE" data-state="GUARICO" style="--chip:var(--ve-guarico)" aria-pressed="false"><span class="dot"></span>Guárico</button>
+                  <button type="button" class="chip" data-country="VE" data-state="DISTRITO_CAPITAL" aria-pressed="false"><span class="dot"></span>Distrito Capital</button>
+                  <button type="button" class="chip" data-country="VE" data-state="MIRANDA" aria-pressed="false"><span class="dot"></span>Miranda</button>
+                  <button type="button" class="chip" data-country="VE" data-state="ZULIA" aria-pressed="false"><span class="dot"></span>Zulia</button>
+                  <button type="button" class="chip" data-country="VE" data-state="ARAGUA" aria-pressed="false"><span class="dot"></span>Aragua</button>
+                  <button type="button" class="chip" data-country="VE" data-state="TACHIRA" aria-pressed="false"><span class="dot"></span>Táchira</button>
+                  <button type="button" class="chip" data-country="VE" data-state="GUARICO" aria-pressed="false"><span class="dot"></span>Guárico</button>
                 </div>
               </div>
             </div>
@@ -896,17 +883,17 @@
           <div class="section-label">Type</div>
           <label class="type-check">
             <input type="checkbox" class="chk-indoor" data-type="indoor-bouldering" checked>
-            <span class="dot" style="background:var(--t-indoor)"></span>
+            <span class="dot u-bg-indoor"></span>
             Indoor bouldering
           </label>
           <label class="type-check">
             <input type="checkbox" class="chk-toprope" data-type="top-rope" checked>
-            <span class="dot" style="background:var(--t-toprope)"></span>
+            <span class="dot u-bg-toprope"></span>
             Top rope
           </label>
           <label class="type-check">
             <input type="checkbox" class="chk-lead" data-type="lead-climbing" checked>
-            <span class="dot" style="background:var(--t-lead)"></span>
+            <span class="dot u-bg-lead"></span>
             Lead climbing
           </label>
         </div>
@@ -928,7 +915,7 @@
       <div class="sidebar-footer">
         <div class="footer-links">
           <button id="openPrivacy">Privacy</button>
-          <span style="color:var(--border)">·</span>
+          <span class="u-sep">·</span>
           <button id="openTerms">Terms</button>
         </div>
       </div>
@@ -948,9 +935,9 @@
         </button>
         <div class="legend-body" id="legendBody">
           <ul class="legend-types">
-            <li><span class="legend-swatch" style="background:var(--t-indoor)"></span>Indoor bouldering</li>
-            <li><span class="legend-swatch" style="background:var(--t-toprope)"></span>Top rope</li>
-            <li><span class="legend-swatch" style="background:var(--t-lead)"></span>Lead climbing</li>
+            <li><span class="legend-swatch u-bg-indoor"></span>Indoor bouldering</li>
+            <li><span class="legend-swatch u-bg-toprope"></span>Top rope</li>
+            <li><span class="legend-swatch u-bg-lead"></span>Lead climbing</li>
           </ul>
           <p class="legend-note">Split pins offer more than one type. <b>+</b> community-added, not yet verified. Green ring: climbed. Gold star: bookmarked. Numbered circles are clusters — click to zoom in.</p>
         </div>
@@ -964,7 +951,7 @@
     <h2 id="dlg-add-a-spot">Add a spot</h2>
     <div class="sub">Submitted for review — it'll appear on the shared map once a moderator approves it.</div>
     <div class="pin-status" id="pinStatus">No pin dropped yet — click "Drop pin" then tap the map.</div>
-    <button class="add-btn" id="dropPinBtn" style="margin-bottom:14px;">Drop pin</button>
+    <button class="add-btn u-mb-14" id="dropPinBtn">Drop pin</button>
     <div class="field">
       <label for="fName">Name</label>
       <input id="fName" type="text" placeholder="e.g. Boulder Collective" aria-required="true">
@@ -1090,7 +1077,7 @@
         </select>
       </div>
     </div>
-    <div class="field field-row" id="fOtherCountryFields" style="display:none;">
+    <div class="field field-row init-hidden" id="fOtherCountryFields">
       <div>
         <label for="fCountryOther">Country name</label>
         <input id="fCountryOther" type="text" placeholder="e.g. France">
@@ -1106,20 +1093,20 @@
     </div>
     <div class="field">
       <div class="field-label">Type (select all that apply)</div>
-      <div class="type-filter" style="margin-top:2px;padding-top:0;border-top:none;">
+      <div class="type-filter u-flush-top">
         <label class="type-check">
           <input type="checkbox" class="chk-indoor" id="fTypeIndoor">
-          <span class="dot" style="background:var(--t-indoor)"></span>
+          <span class="dot u-bg-indoor"></span>
           Indoor bouldering
         </label>
         <label class="type-check">
           <input type="checkbox" class="chk-toprope" id="fTypeTopRope">
-          <span class="dot" style="background:var(--t-toprope)"></span>
+          <span class="dot u-bg-toprope"></span>
           Top rope
         </label>
         <label class="type-check">
           <input type="checkbox" class="chk-lead" id="fTypeLead">
-          <span class="dot" style="background:var(--t-lead)"></span>
+          <span class="dot u-bg-lead"></span>
           Lead climbing
         </label>
       </div>
@@ -1145,7 +1132,7 @@
     <h2 id="dlg-edit-this-spot">Edit this spot</h2>
     <div class="sub">Submitted as a proposed change — the spot keeps showing its current info until a moderator approves it.</div>
     <div class="pin-status" id="editPinStatus">Current pin: —</div>
-    <button class="add-btn" id="eDropPinBtn" style="margin-bottom:14px;">Move pin</button>
+    <button class="add-btn u-mb-14" id="eDropPinBtn">Move pin</button>
     <div class="field">
       <label for="eName">Name</label>
       <input id="eName" type="text" aria-required="true">
@@ -1271,7 +1258,7 @@
         </select>
       </div>
     </div>
-    <div class="field field-row" id="eOtherCountryFields" style="display:none;">
+    <div class="field field-row init-hidden" id="eOtherCountryFields">
       <div>
         <label for="eCountryOther">Country name</label>
         <input id="eCountryOther" type="text" placeholder="e.g. France">
@@ -1287,20 +1274,20 @@
     </div>
     <div class="field">
       <div class="field-label">Type (select all that apply)</div>
-      <div class="type-filter" style="margin-top:2px;padding-top:0;border-top:none;">
+      <div class="type-filter u-flush-top">
         <label class="type-check">
           <input type="checkbox" class="chk-indoor" id="eTypeIndoor">
-          <span class="dot" style="background:var(--t-indoor)"></span>
+          <span class="dot u-bg-indoor"></span>
           Indoor bouldering
         </label>
         <label class="type-check">
           <input type="checkbox" class="chk-toprope" id="eTypeTopRope">
-          <span class="dot" style="background:var(--t-toprope)"></span>
+          <span class="dot u-bg-toprope"></span>
           Top rope
         </label>
         <label class="type-check">
           <input type="checkbox" class="chk-lead" id="eTypeLead">
-          <span class="dot" style="background:var(--t-lead)"></span>
+          <span class="dot u-bg-lead"></span>
           Lead climbing
         </label>
       </div>
@@ -1318,7 +1305,7 @@
       <button class="btn-cancel" id="eCancelBtn">Cancel</button>
       <button class="btn-submit" id="eSaveBtn">Save changes</button>
     </div>
-    <button id="eRevertBtn" style="margin-top:10px;width:100%;background:transparent;border:1px dashed var(--border);color:var(--text-dim);padding:8px;border-radius:7px;font-family:'Space Mono',monospace;font-size:11.5px;cursor:pointer;display:none;">Revert to original data</button>
+    <button id="eRevertBtn" class="init-hidden">Revert to original data</button>
   </div>
 </div>
 
@@ -1341,7 +1328,7 @@
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="dlg-sign-in">
     <h2 id="dlg-sign-in">Sign in</h2>
     <div class="sub">Sign in to mark spots as climbed and bookmark ones you want to try.</div>
-    <button class="add-btn" id="googleSignInBtn" style="margin-bottom:14px;">Continue with Google</button>
+    <button class="add-btn u-mb-14" id="googleSignInBtn">Continue with Google</button>
     <div class="auth-divider"><span>or</span></div>
     <div class="field">
       <label for="authEmail">Email</label>
@@ -1359,9 +1346,9 @@
   <div class="modal info-modal" role="dialog" aria-modal="true" aria-labelledby="dlg-climbing-logbook">
     <h2 id="dlg-climbing-logbook">Climbing logbook</h2>
     <div class="sub">Private to your account — a diary of sessions and the climbs you logged during each one.</div>
-    <button class="add-btn" id="addSessionBtn" style="margin-bottom:14px;">+ Log a session</button>
+    <button class="add-btn u-mb-14" id="addSessionBtn">+ Log a session</button>
     <div id="logbookList" class="session-list"></div>
-    <div class="close-row"><button class="btn-submit info-close" style="padding:8px 18px;">Close</button></div>
+    <div class="close-row"><button class="btn-submit info-close u-pad-close">Close</button></div>
   </div>
 </div>
 
@@ -1392,7 +1379,7 @@
     <div class="field">
       <div class="field-label">Climbs logged</div>
       <div id="sClimbsList" class="climb-rows"></div>
-      <button class="btn-cancel" id="sAddClimbBtn" style="margin-top:8px;width:100%;">+ Add a climb</button>
+      <button class="btn-cancel u-full-mt8" id="sAddClimbBtn">+ Add a climb</button>
     </div>
     <div class="field">
       <label for="sNotes">Notes (optional)</label>
@@ -1410,7 +1397,7 @@
     <h2 id="dlg-pending-review">Pending review</h2>
     <div class="sub">New spots and edits submitted by the community, awaiting approval.</div>
     <div id="pendingList" class="pending-list"></div>
-    <div class="close-row"><button class="btn-submit info-close" style="padding:8px 18px;">Close</button></div>
+    <div class="close-row"><button class="btn-submit info-close u-pad-close">Close</button></div>
   </div>
 </div>
 
@@ -1435,7 +1422,7 @@
     <h3>Changes to this policy</h3>
     <p>This policy may be updated as the site adds features like accounts, analytics, or advertising. Material changes will be reflected here with an updated date.</p>
 
-    <div class="close-row"><button class="btn-submit info-close" style="padding:8px 18px;">Close</button></div>
+    <div class="close-row"><button class="btn-submit info-close u-pad-close">Close</button></div>
   </div>
 </div>
 
@@ -1470,7 +1457,7 @@
     <h3>Contact &amp; jurisdiction</h3>
     <p>Questions: <a href="mailto:climbatlas0104@gmail.com">climbatlas0104@gmail.com</a>. These terms are governed by the laws of New South Wales, Australia.</p>
 
-    <div class="close-row"><button class="btn-submit info-close" style="padding:8px 18px;">Close</button></div>
+    <div class="close-row"><button class="btn-submit info-close u-pad-close">Close</button></div>
   </div>
 </div>
 
@@ -1479,18 +1466,10 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script src="js/supabase-init.js"></script>
 <script src="js/auth.js"></script>
-<!-- js/data.js (the bundled seed dataset) is loaded on demand by app.js
+<!-- data/gyms.json (the bundled seed dataset) is fetched on demand by js/modules/data-load.js
      (ensureSeedData) -- only when Supabase is unreachable or an edited seed
-     spot's original values are needed -- not as a static script here. -->
-<script src="js/app.js"></script>
-<script>
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('sw.js').catch((err) => {
-      console.warn('Service worker registration failed:', err);
-    });
-  });
-}
-</script>
+     spot's original values are needed. -->
+<script type="module" src="js/main.js"></script>
+<script src="js/sw-register.js"></script>
 </body>
 </html>

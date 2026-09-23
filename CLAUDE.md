@@ -2,101 +2,87 @@
 
 @Rules.md
 
-This file is read by every Claude Code session opened anywhere inside this
-repository — the main session, any `git worktree` session, and any
-subagent — because it lives at the project root and worktrees are just
-separate checkouts of the same repo. Keep it accurate; it's the shared
-brief for everyone working on this project, human or not.
+Read by every Claude Code session in this repo (main, worktrees,
+subagents). Keep it accurate and short.
 
-## Project Overview
+## Context hygiene (read first)
 
-Climb Atlas is a community-sourced map of bouldering/climbing spots
-(indoor gyms + outdoor areas) across Australia and the US, modelled on
-Track Atlas.
+- **Never read `data/` or `docs/archive/`.** Query the seed data with
+  `jq` or `grep` only (examples in `docs/ARCHITECTURE.md`).
+- **Files over 30 KB: use `grep`, `head`, or line ranges only — never read
+  them in full.** Currently over 30 KB: `index.html`, `css/style.css`,
+  `data/gyms.json`, `js/modules/regions.js`, everything in `docs/archive/`. Check with `wc -c` if unsure.
+- Start from `docs/ARCHITECTURE.md` (file map, data flow, key functions
+  with file:line) and `docs/TASKS.md` (open work). Both are short; keep
+  them that way (≤150 and ≤60 lines).
+
+## Project overview
+
+Community-sourced map of climbing gyms worldwide (~1,900 spots, 80+
+countries), modelled on Track Atlas. Live at climbatlas.org.
 
 **Stack: plain static site. No build step, no framework, no package.json.**
-Backend is [Supabase](https://supabase.com) (Postgres + Auth). Do not
-introduce npm/build tooling, a framework, or a bundler without discussing
-it first — the whole point of the current architecture is that it's a
-handful of files you can open directly in a browser.
+Backend is Supabase (Postgres + Auth + RLS). Do not introduce npm/build
+tooling, a framework, or a bundler without discussing it first.
 
-Full setup and architecture are documented in `README.md` and
-`docs/architecture.md` — read both before touching `js/app.js`.
+## File map
 
-Before modifying code:
-1. Inspect the relevant existing implementation (`js/app.js`, `js/data.js`,
-   `js/auth.js`, `js/supabase-init.js`, `css/style.css`, `supabase/schema.sql`).
-2. Understand the architecture (`docs/architecture.md`).
-3. Identify dependencies — script load order in `index.html` matters:
-   Supabase CDN → `supabase-init.js` → `auth.js` → `app.js`. `js/data.js`
-   is no longer a static `<script>`: `app.js` fetches it on demand
-   (`ensureSeedData()`) only when Supabase is unreachable or an edited
-   seed spot's original values are needed.
-4. State the intended approach.
-5. Implement the smallest correct change.
-
-## Important Commands
-
-There is no install step and no build step. This is a static site.
-
-Run it locally:
 ```
-python3 -m http.server 8000
+index.html              App shell (no inline JS/CSS)
+about.html              Standalone About page
+css/style.css           All styles; tokens on :root              (>30 KB)
+css/chips.css           Per-region chip colours (generated)
+js/supabase-init.js     window.sb (classic script)
+js/auth.js              window.auth (classic script)
+js/main.js              Entry ES module: init*() in order, then boot
+js/sw-register.js       Service-worker registration
+js/modules/state.js     appState — ALL shared mutable state
+js/modules/constants.js Colours, labels, fly targets, zoom thresholds
+js/modules/regions.js   STATES_BY_COUNTRY (static)
+js/modules/utils.js     escapeHtml, directionsUrl, typeSwatch, showToast
+js/modules/map.js       Map, clusters, labels, markers, popups, legend
+js/modules/sidebar.js   render(), filters, search, nav, marks
+js/modules/modals.js    Focus/Escape, add/edit/report forms, info modals
+js/modules/auth-ui.js   Sign-in widget + modal
+js/modules/data-load.js Spots/marks/moderator/pending loading + seed fallback
+js/modules/logbook.js   Logbook
+js/modules/moderation.js Pending-review panel
+data/gyms.json          Seed dataset — NEVER read; jq/grep only
+supabase/schema.sql     Tables + RLS; re-runnable in the SQL Editor
+supabase/seed.html      Builds upsert SQL from data/gyms.json
+supabase/geocode.html   Pin-position checker for seed spots
+sw.js                   Service worker — add new JS/CSS to SHELL_FILES, bump CACHE_VERSION
+docs/ARCHITECTURE.md    Architecture, short form (data flow, file:line)
+docs/TASKS.md           Open tasks only
+docs/archive/           Old long-form docs — NEVER read
 ```
-or
+
+Load order in `index.html`: MapLibre → Supercluster → Supabase CDN →
+`supabase-init.js` → `auth.js` → `main.js` (module) → `sw-register.js`.
+Keep every module under 800 lines; write shared state only via `appState`.
+
+## Before modifying code
+1. Find the relevant code via `docs/ARCHITECTURE.md` + `grep -n`.
+2. Read only the line ranges you need.
+3. State the approach, make the smallest correct change.
+
+## Commands
+
+No install, no build. Serve over HTTP (required: ES modules, fetch, Auth redirects):
 ```
-npx serve .
+python3 -m http.server 8000     # or: npx serve .
 ```
-Then open `http://localhost:8000`. (Serving over HTTP, not opening the
-file directly, matters once Supabase Auth redirect URLs are involved —
-see README "Setup".)
+No test suite or linter yet. Verification is manual — Rules.md §6–7.
+Database changes go through `supabase/schema.sql`. Seed edits go into
+`data/gyms.json` (via `jq`/script, keep `id`s stable), then regenerate SQL
+with `supabase/seed.html`.
 
-There is currently no automated test suite and no linter configured for
-this project. Verification is manual: run the app in a browser, exercise
-the feature, and check the browser console for errors (see Rules.md §6
-and §7 — Verify Everything / Full Smoke Test — for the exact procedure).
-If you add tooling (a linter, a test runner) later, update this section
-and `Rules.md` §6 to name the actual commands — do not leave this section
-stale.
+## Brain vs. worker sessions
 
-Database changes go through `supabase/schema.sql` (run once in the
-Supabase SQL Editor; safe to re-run — see README). Seed data lives in
-`js/data.js` and loads via `supabase/seed.html`.
-
-## Architecture
-
-See:
-@docs/architecture.md
-
-## Current Development State
-
-See:
-@docs/tasks.md
-
-## Role: Brain vs. Worker Sessions
-
-This repo is worked on using a **brain + worker** pattern (see
-`WORKFLOW_GUIDE.md` at the repo root for the full setup). In short:
-
-- **The brain session** is the main Claude Code session in the primary
-  checkout (not a worktree). It runs on **Opus**. Its job is to read
-  `docs/tasks.md`, break work into single, focused tasks, and either
-  (a) dispatch a task to a `worker` subagent defined in
-  `.claude/agents/worker.md` (which runs on Sonnet, isolated in its own
-  git worktree), or (b) hand the user a copy-pasteable technical brief for
-  a manually-opened worker terminal (`claude --worktree <task-name>`).
-  Every dispatch — subagent or manual brief — must be a clear, scoped,
-  technical brief: objective, relevant files, constraints, and the
-  verification steps the worker must run before reporting done.
-- **Worker sessions** run on **Sonnet** (set explicitly — see
-  `WORKFLOW_GUIDE.md`). Each worker owns exactly one task in its own git
-  worktree/branch, follows `Rules.md` in full, and reports back using the
-  Completion Report format (Rules.md §15) before its branch is merged.
-- **One task = one chat.** Do not accumulate unrelated work in a single
-  session. See `Rules.md` §16–17 for the model-assignment and
-  context-budget rules this implies.
-
-If you are a worker session reading this file: you are not the brain.
-Do the one task you were briefed on, verify it per Rules.md, write your
-completion report, and stop — do not pick up additional unrelated work in
-the same session.
+See `WORKFLOW_GUIDE.md`. The **brain** (main checkout, Opus) reads
+`docs/TASKS.md`, splits work into single tasks, and dispatches each to a
+`worker` subagent (`.claude/agents/worker.md`, Sonnet, own worktree) or
+hands the user a copy-pasteable brief for `claude --worktree <task>`.
+Every brief: objective, files, constraints, verification steps.
+**Workers** own one task, follow `Rules.md`, report with the Completion
+Report format (Rules.md §15), then stop. One task = one chat.

@@ -81,14 +81,17 @@
 <p>
   1) Run the SQL directly in Supabase's SQL Editor to fix the live map immediately.
   2) Hand the JSON to Claude (or apply by hand) to update the matching <code>lat</code>/<code>lng</code>
-  values in <code>js/data.js</code> too, so the offline fallback and any future re-seed stay in sync.
+  values in <code>data/gyms.json</code> too, so the offline fallback and any future re-seed stay in sync.
 </p>
 <button id="copySqlBtn" disabled>Copy SQL to clipboard</button>
 <button id="copyJsonBtn" disabled>Copy JSON to clipboard</button>
 <pre id="sqlOut" style="display:none"></pre>
 <pre id="jsonOut" style="display:none"></pre>
 
-<script src="../js/data.js"></script>
+<script>
+  // Seed dataset: data/gyms.json (pure JSON). Handlers await SEED_GYMS_READY.
+  window.SEED_GYMS_READY = fetch('../data/gyms.json').then(r => r.json()).then(d => (window.SEED_GYMS = d));
+</script>
 <script>
   function haversineKm(lat1, lng1, lat2, lng2) {
     const R = 6371;
@@ -115,6 +118,7 @@
   const tbody = document.querySelector('#resultsTable tbody');
 
   startBtn.addEventListener('click', async () => {
+    await window.SEED_GYMS_READY;
     startBtn.disabled = true;
     stopBtn.disabled = false;
     stopRequested = false;
