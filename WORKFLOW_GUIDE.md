@@ -106,8 +106,8 @@ one's on you):
 - `CLAUDE.md.md`
 - `imports/Rules.md.md` (and the `imports/` folder if it's now empty)
 
-The corrected replacements — `CLAUDE.md`, `Rules.md`, `docs/architecture.md`,
-`docs/tasks.md`, `.claude/agents/worker.md`, `.claude/settings.json`,
+The corrected replacements — `CLAUDE.md`, `Rules.md`, `docs/ARCHITECTURE.md`,
+`docs/TASKS.md`, `.claude/agents/worker.md`, `.claude/settings.json`,
 `.gitignore`, and this file — are being delivered to your project root
 and `docs/`/`.claude/` subfolders alongside this guide.
 
@@ -153,11 +153,11 @@ starts on Opus already — the brain. Confirm with `/model` (no argument)
 if you want to double check; it shows the current selection.
 
 The brain's job each session:
-1. Read `docs/tasks.md` for current state.
+1. Read `docs/TASKS.md` for current state.
 2. Break the next piece of work into one focused task with clear
    acceptance criteria (Rules.md §11).
 3. Dispatch it — pick one of the two methods below.
-4. Update `docs/tasks.md` (move the task to "In Progress" with its branch
+4. Update `docs/TASKS.md` (move the task to "In Progress" with its branch
    name) before moving on.
 
 Do not have the brain session also do the implementation work itself in
@@ -260,7 +260,7 @@ git push
 (Substitute your actual default branch name if it isn't `main` — check
 with `git branch --show-current` from step 1a, or `git remote show
 origin`.) Then remove the worktree (§3) if it wasn't already
-auto-removed, and update `docs/tasks.md` — move the entry from "In
+auto-removed, and update `docs/TASKS.md` — move the entry from "In
 Progress" to "Done (recent)".
 
 ---
@@ -280,7 +280,7 @@ Progress" to "Done (recent)".
   graceful summary. That's consistent with "one task, one chat, under
   ~500K" as a discipline: you're meant to end the session well before
   that point, not lean on compaction to extend it. Make sure anything
-  that matters is already in `docs/tasks.md` before you're anywhere near
+  that matters is already in `docs/TASKS.md` before you're anywhere near
   the limit.
 - If you ever want the safety net back: set `"autoCompactEnabled": true`
   in `.claude/settings.json`, or override per-session with

@@ -13,21 +13,23 @@ index.html             Page shell — header, sidebar, map container, all the mo
 css/style.css           All styling (dark "chalk & rock" theme, MapLibre GL overrides)
 js/supabase-init.js     Creates the shared Supabase client — put your project URL/key here
 js/auth.js              Thin wrapper around Supabase Auth (magic link + Google)
-js/data.js              The seed dataset — every gym pin, as window.SEED_GYMS (loaded on demand, see below)
-js/app.js               Everything else: map rendering, filters, add/edit, marks
+data/gyms.json          The seed dataset — every gym pin as pure JSON (fetched on demand, see below)
+js/main.js              Entry point (ES module) — wires up js/modules/* in order
+js/modules/             map, sidebar, modals, auth-ui, data-load, logbook, moderation, state, …
+css/chips.css           Per-region chip colours (keyed on data-country/data-state)
 supabase/schema.sql      Run once in the Supabase SQL Editor — creates spots, pending_edits, reports, moderators, marks
-supabase/seed.html       Run once in a browser — loads the spots table from js/data.js
+supabase/seed.html       Run once in a browser — loads the spots table from data/gyms.json
 supabase/geocode.html    Maintenance tool — re-geocodes spot addresses against OpenStreetMap
                          Nominatim to fix inaccurate pin positions, see "Fixing pin positions" below
 ```
 
 Script load order in `index.html` matters: the Supabase JS CDN script, then
 `supabase-init.js` (defines `window.sb`), then `auth.js` (defines `window.auth`), then
-`app.js`, which depends on both. `data.js` (defines `window.SEED_GYMS`, ~600KB) is not a
-static script any more — `app.js` loads it on demand (`ensureSeedData()`) only when
+`js/main.js` (an ES module, so the site must be served over HTTP), which depends on both.
+`data/gyms.json` (~900KB) is not loaded on page load — `js/modules/data-load.js` fetches it on demand (`ensureSeedData()`, sets `window.SEED_GYMS`) only when
 Supabase is unreachable (the offline fallback) or when an edited seed spot's original
-values are needed for "Revert to original". `supabase/seed.html` and `geocode.html` still
-include it directly.
+values are needed for "Revert to original". `supabase/seed.html` and `geocode.html` fetch
+it too.
 
 ## Setup (required — the app doesn't do anything useful until this is done)
 
@@ -62,7 +64,7 @@ means the first request after a pause takes a few seconds to wake it back up).
    (Dashboard → Project Settings → API). The anon key is meant to be public/client-side —
    access control comes from the RLS policies in `schema.sql`, not from hiding this key.
 6. **Seed the spots table.** Open `supabase/seed.html` in a browser and click the button.
-   It loads `js/data.js` and upserts every seed spot as `status = 'approved'` — safe to re-run.
+   It loads `data/gyms.json` and upserts every seed spot as `status = 'approved'` — safe to re-run.
 7. **Add yourself as a moderator** (so you can approve/reject submissions — see
    "Moderation" below). Sign in to the running app once with the account you want to use,
    then in the SQL Editor run:
@@ -122,7 +124,7 @@ before they're publicly visible (or, for reports, before anyone acts on them):
 
 Most seed spots have a verified street `address`, but for many the `lat`/`lng` pin itself
 was only ever estimated at city/suburb level, not computed from that address — see
-`docs/architecture.md` "Seed data sourcing". If you get feedback that pins are off by a few
+`docs/ARCHITECTURE.md` (full sourcing history archived in `docs/archive/`). If you get feedback that pins are off by a few
 kilometres, open `supabase/geocode.html` in a browser: it re-geocodes every spot that has an
 `address` against [OpenStreetMap's Nominatim](https://nominatim.openstreetmap.org/) (free,
 keyless), shows how far each proposed position is from the current pin (sorted worst-first),
@@ -130,7 +132,7 @@ and lets you review and select individual corrections rather than applying anyth
 each row includes the raw Nominatim match text and map links for both the old and new
 position so you can sanity-check before accepting. Selected corrections generate both:
 ready-to-run SQL (paste into the Supabase SQL Editor to fix the live map immediately) and a
-JSON list of the same changes to apply to `js/data.js` too, so the offline fallback and any
+JSON list of the same changes to apply to `data/gyms.json` too, so the offline fallback and any
 future re-seed stay in sync. Nominatim's usage policy caps requests around 1/second, so a
 full pass over ~600 addressed spots takes roughly 10–15 minutes.
 
@@ -146,7 +148,7 @@ full pass over ~600 addressed spots takes roughly 10–15 minutes.
   (their site, Instagram, etc.), not a file you host. A real upload flow needs object
   storage (Supabase Storage, Cloudflare R2, or S3).
 - **"Revert to original data"** only works for un-edited seed spots (it looks up the
-  original values in `js/data.js`). Community-submitted spots have no stored "original" to
+  original values in `data/gyms.json`). Community-submitted spots have no stored "original" to
   revert to, so the button is hidden for those even if they've since been edited.
 - **Outdoor bouldering was removed as a category** — the app now only tracks indoor gyms
   (bouldering, top rope). The 23 seed spots that were outdoor-only (crags/climbing areas
@@ -197,14 +199,14 @@ and add a custom domain from the host's dashboard once you've bought one.
 - **`state` codes are only unique within a country** — e.g. AU's `WA` (Western Australia)
   and US's `WA` (Washington) are different regions that happen to share a code. Every
   spot has both a `country` and a `state` field, and anything that filters, colors, or
-  edits by state (chips in `index.html`, `STATES_BY_COUNTRY` in `app.js`, the RLS-safe
+  edits by state (chips in `index.html`, `STATES_BY_COUNTRY` in `js/modules/regions.js`, the RLS-safe
   columns in `schema.sql`) keys off the pair together, never `state` alone. Japan,
   Canada, New Zealand, and China were all added following this same pattern — see
-  `docs/architecture.md` "Seed data sourcing" for how each one's region codes were
+  `docs/ARCHITECTURE.md` (full sourcing history archived in `docs/archive/`) for how each one's region codes were
   chosen (Japan and NZ use city/region names since neither has a widely-known
   short-code convention; Canada uses standard 2-letter province codes like AU/US;
   China uses the 9 city names its one data source itself groups by).
-- Seed data in `data.js` was researched and cross-checked spot-by-spot rather than
+- Seed data in `data/gyms.json` was researched and cross-checked spot-by-spot rather than
   pulled from one source — see the in-app About section for the full story. It's not
   exhaustive; that's what the community add/edit flow is for. The US portion currently
   covers 12 states' worth of major-city indoor gyms, Japan covers 8 cities/prefectures,
@@ -215,18 +217,18 @@ and add a custom domain from the host's dashboard once you've bought one.
   spots, since their only entries were outdoor-bouldering areas removed in the pass
   below — the chips still show them since a future indoor gym in that state is
   entirely plausible, they'll just filter to nothing until one's added.
-- Below HOLD_ICON_ZOOM (`js/app.js`), an ungrouped single spot marker paints as a
+- Below HOLD_ICON_ZOOM (`js/modules/constants.js`), an ungrouped single spot marker paints as a
   numbered badge — deliberately styled identically to a real cluster badge, not
   colour-coded, so it reads as "just another badge" while zoomed out rather than a
   third distinct marker style. It switches to the real hold-shaped icon once you
   zoom in past that threshold, or click it to zoom straight there. The same zoomed-
   out window also shows plain text city/state labels (`.region-label`) at each
   visible region's centroid, for basic orientation on the globe without needing to
-  zoom in — see `docs/architecture.md` "Map" for both.
+  zoom in — see `docs/ARCHITECTURE.md` for both.
 - The country/state filter chips are grouped into a collapsible accordion per
   country (collapsed by default) rather than one long always-expanded list — with
   6+ countries the fully-expanded chip list ran the sidebar out of usable height
-  (see `docs/architecture.md` "Sidebar chip growth"). A filter chosen inside a
+  (see `docs/ARCHITECTURE.md`). A filter chosen inside a
   collapsed group stays applied and gets a small colour/dot indicator on that
   group's label so it's never silently invisible. The gym list below the filters
   is hidden (replaced by a one-line spot count) until you actually search by name

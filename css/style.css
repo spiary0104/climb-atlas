@@ -609,8 +609,9 @@
   .search-row svg{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--text-dim);}
 
   .chip-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;}
-  /* Each per-state chip sets its region colour as a custom property in
-     index.html (style="--chip:var(--xx-yyy)") rather than as an inline
+  /* Each per-state chip gets its region colour as a custom property from
+     css/chips.css (--chip:var(--xx-yyy), keyed on data-country/data-state)
+     rather than as an inline
      `color`, so this one rule can use it for the idle text/dot and the
      active background alike. An inline `color` would beat any stylesheet
      rule for the active state and make the text vanish into its own
@@ -828,7 +829,7 @@
   .skeleton-row span:first-child{width:62%;height:12px;}
   .skeleton-row span:last-child{width:40%;}
 
-  /* Popup versions of the mark buttons (popupHtml in js/app.js) */
+  /* Popup versions of the mark buttons (popupHtml in js/modules/map.js) */
   .mark-btn{
     appearance:none;
     border:1px solid var(--border);
@@ -869,7 +870,7 @@
   #map{position:absolute;inset:0;background:var(--bg);}
   /* At wide viewports the globe fills only a fraction of this area, leaving
      a large flat expanse of the map's own rendered "space" background
-     (sky-color, set via map.setSky() in js/app.js) that reads as empty
+     (sky-color, set via map.setSky() in js/modules/map.js) that reads as empty
      rather than intentional. Can't paint behind the canvas -- MapLibre's
      WebGL surface is opaque and covers the full container -- so this sits
      on top instead. First attempt darkened the far corners (a classic
@@ -1341,7 +1342,7 @@
   .cluster-marker:hover{filter:brightness(1.18);}
 
   /* Basic region label shown below HOLD_ICON_ZOOM alongside cluster/number
-     badges (js/app.js computeRegionCentroids) -- just text, no background
+     badges (js/modules/map.js computeRegionCentroids) -- just text, no background
      box, so it doesn't compete with the badges for attention. Base rule
      holds what all three tiers share; each tier below overrides size/
      weight/colour so continent -> country -> state reads as a clear
@@ -1434,3 +1435,18 @@
     .btn-primary{padding-inline:10px;}
   }
 
+/* ---- Former inline styles from index.html ----
+   !important reproduces the precedence the inline style="" attributes had.
+   .init-hidden is deliberately NOT !important: JS shows these elements by
+   setting element.style.display, which must still win. */
+/* id-qualified so it beats component rules like .field-row{display:flex} */
+#pendingReviewBtn.init-hidden,#fOtherCountryFields.init-hidden,#eOtherCountryFields.init-hidden,#eRevertBtn.init-hidden{display:none;}
+.u-mb-14{margin-bottom:14px !important;}
+.u-pad-close{padding:8px 18px !important;}
+.u-full-mt8{margin-top:8px !important;width:100% !important;}
+.u-flush-top{margin-top:2px !important;padding-top:0 !important;border-top:none !important;}
+.u-sep{color:var(--border) !important;}
+.u-bg-indoor{background:var(--t-indoor) !important;}
+.u-bg-toprope{background:var(--t-toprope) !important;}
+.u-bg-lead{background:var(--t-lead) !important;}
+#eRevertBtn{margin-top:10px !important;width:100% !important;background:transparent !important;border:1px dashed var(--border) !important;color:var(--text-dim) !important;padding:8px !important;border-radius:7px !important;font-family:'Space Mono',monospace !important;font-size:11.5px !important;cursor:pointer !important;}

@@ -1,0 +1,568 @@
+1:// Climb Atlas seed data — the starting dataset of climbing spots.
+2:// This is exposed as a global so app.js can read it without a bundler/module step.
+3:// Add/rearrange entries here directly; app.js never needs to change for data edits.
+8:    // --- NSW / Sydney ---
+9:    // Addresses in this AU section verified individually against each gym's
+10:    // own website or a consistent business-listing source (Yelp/Whereis/
+11:    // Localsearch etc. agreeing) as a scoping pilot for populating the new
+12:    // `address` field -- see docs/tasks.md for the full writeup, including
+13:    // the 4 stale/duplicate entries this pass caught and fixed (2 removed
+14:    // as duplicates of another still-listed spot, 1 removed as a permanently
+15:    // closed business, 1 corrected suburb).
+45:    // --- ACT ---
+50:    // --- VIC / Melbourne ---
+66:    // --- QLD ---
+82:    // --- WA / Perth ---
+91:    // --- SA / Adelaide ---
+99:    // --- TAS ---
+103:    // --- US indoor gyms ---
+437:    // --- JP indoor gyms ---
+438:    // Names sourced from climbingjapan.com's gym directory (Tokyo/Osaka/Kyoto)
+439:    // and general web search results for the other five cities -- all real,
+440:    // named gyms, but unlike the Mountain Project pass above, no individual
+441:    // gym page was opened to confirm a street address for each one. Positions
+442:    // are ward/neighbourhood-level from general geography, not geocoded
+443:    // addresses -- see the note on every entry below, and docs/tasks.md for
+444:    // the fuller writeup.
+485:    // --- Japan expansion pass: no Google Places API key is configured for
+486:    // this project, so this batch used general web search against gym
+487:    // sites/directories/listings (the practical substitute for Places data
+488:    // in this environment) instead of a live Places lookup. Every gym below
+489:    // is real and independently confirmed via its own site or a consistent
+490:    // secondary source; climbing type is only tagged from explicit textual
+491:    // evidence, defaulting to bouldering-only when a source is silent (the
+492:    // discipline established by the worldwide top-rope-tag audit) rather
+493:    // than assuming rope climbing. Positions were geocoded against
+494:    // Nominatim; many mall/building-style Japanese addresses didn't resolve
+495:    // at street level and fall back to their ward/city centroid instead,
+496:    // flagged per-entry below.
+526:    // --- CA indoor gyms ---
+527:    // Names sourced from general web search across each city's own climbing
+528:    // scene, same lighter-touch approach as the Japan pass above: real,
+529:    // named gyms, but no individual gym page was opened to confirm a street
+530:    // address. Positions are neighbourhood/city-level from general geography.
+550:    // --- NZ indoor gyms ---
+563:    // --- CN indoor gyms ---
+564:    // All 28 currently-open Banana Climbing (香蕉攀岩) locations, read
+565:    // directly from bananaclimbing.com's own "Our Locations" list (which
+566:    // states "28 GYMS NATIONWIDE" -- matches exactly once the one location
+567:    // marked CLOSED and the "coming soon" ones are excluded). Single-brand
+568:    // chain, so unlike the multi-source passes above this is a genuinely
+569:    // complete, current snapshot of this one company's locations, not a
+570:    // partial sample. District/mall names come straight from the site;
+571:    // positions are city/district-level (the site gives no lat/lng),
+572:    // flagged per-entry in notes. "Lead Climbing"/"Top Rope"/"Auto-Belay"
+573:    // on the source page map to this app's top-rope type; every location
+574:    // also offers bouldering.
+632:    // Shanghai (29 more gyms) — fourth of the 12 "岩馆探索" (PANDA) app cities,
+633:    // sourced from the same footage as Xi'an/Chongqing/Nanjing. Shanghai's own
+634:    // banner confirmed 100 gyms — by far the largest single city in this
+635:    // footage, and this batch is deliberately a first half only (the user
+636:    // asked to split it into two, given the scale); the remaining ~35-40
+637:    // confirmed Shanghai candidates are backlogged in docs/tasks.md.
+638:    // A real, non-obvious data problem was found and resolved before any of
+639:    // this could be trusted: partway through the Shanghai tab's own
+640:    // continuous scroll (no tab-switch banner in between), cards with
+641:    // unambiguous Beijing place names (中关村/Zhongguancun, 五棵松/Wukesong,
+642:    // 首钢/Shougang, 成寿寺) appeared mixed in among genuinely Shanghai-named
+643:    // cards — confirmed via web search to be real Beijing branches of real
+644:    // chains (e.g. 岩时攀岩's confirmed Beijing branch at Dawanglu), not a
+645:    // coincidence or a tab-switch-animation artifact. Worse, at least one
+646:    // card that looked "safe" by its position (人人攀岩, appearing before the
+647:    // obvious Beijing block even started) turned out to also be Beijing on
+648:    // individual web-search confirmation — so every single candidate below
+649:    // was individually verified by city, not inferred from scroll position.
+650:    // huodong.com turned out to have its own genuine, multi-page Shanghai
+651:    // climbing-venue directory (`/venue/shanghai/rock_climbing`) that both
+652:    // confirms a candidate really is Shanghai and gives a real address in
+653:    // one step — used as the primary source for this batch instead of the
+654:    // per-card photo/position guessing that Xi'an/Chongqing/Nanjing needed.
+655:    // This cross-reference also surfaced 5 of this batch's candidates as
+656:    // exact duplicates of gyms already in this dataset from an earlier,
+657:    // separate Dianping pass (Jinfeng Climbing 189, Dayan Yuedong, Banana
+658:    // Climbing (West Yan'an Road), and Benchmark Climbing Gym all matched
+659:    // on the exact same address) — not re-added — and resolved a
+660:    // long-standing flag on **Banana Climbing (Kerry Centre)** (previously
+661:    // "could not confirm a single address — 3 sources disagree"): this
+662:    // pass's independent huodong.com source confirms the 218 Tianmuxi Rd
+663:    // address, now recorded on that existing spot rather than left flagged.
+664:    // One further pair (RIBBONCLIMBING攀岩馆 and 上海叶岩攀岩馆) resolved to
+665:    // the identical address (800 Guoshun East Rd, West Bldg, Room 212A) —
+666:    // merged into one entry rather than kept as two, same "same address,
+667:    // don't double-pin" precedent used throughout this dataset. One
+668:    // candidate (MELAND CLUB) was excluded — huodong.com's own description
+669:    // frames it as a parent-child entertainment venue, not a dedicated
+670:    // climbing gym.
+671:    // Positions individually geocoded against Nominatim — a lower hit rate
+672:    // than Xi'an/Chongqing/Nanjing's addressed entries (many of these
+673:    // addresses include a specific mall/building name that Nominatim
+674:    // couldn't resolve down to the exact unit), so several fall back to
+675:    // the street or district level; two (vmore攀岩馆's North Bund branch,
+676:    // and 岩舞空间攀岩's Lingang branch) fall back to a same-area landmark
+677:    // since the street-level query returned an unrelated match (a hospital,
+678:    // in vmore's case) or no match at all.
+709:    // Shanghai, second half (35 more gyms) — completes Shanghai (the
+710:    // largest of the 12 "岩馆探索" (PANDA) app cities), continuing from
+711:    // huodong.com's own 5-page Shanghai climbing directory (pages 3-5 this
+712:    // time; pages 1-2 are the batch above). Same city-attribution
+713:    // discipline as the first half (every candidate individually confirmed
+714:    // Shanghai via this directory, not inferred from app-scroll position).
+715:    // 3 candidates excluded: Partpark局部公园 (huodong.com's own description
+716:    // frames it as primarily a tennis facility with climbing only a minor
+717:    // secondary activity, no confirmed dedicated wall); 射击攀岩 (explicitly
+718:    // an outdoor venue in Gongqing Forest Park, out of this app's indoor-
+719:    // only scope); 攀岩工厂 (an exact-address duplicate of the existing
+720:    // "Climbing Factory" spot from the original Dianping pass — same 855
+721:    // West Changjiang Rd / Boxiuhui Creative Park building). One access
+722:    // judgment call kept rather than excluded: 同济大学四平路校区攀岩馆 (Tongji
+723:    // University) — huodong.com's own description explicitly confirms it
+724:    // opens to external climbers via reservation, the same "verify, don't
+725:    // assume" standard already applied to Korea's/Ireland's university-gym
+726:    // cases. Two pairs merged as same-address duplicates: 爬客攀岩馆 and 派客
+727:    // 攀岩 both list 88 Changning Rd; 上海市奉贤区体育中心(奉贤体育中心攀岩馆) and
+728:    // 奉贤体育中心攀岩馆 are the same listing appearing twice in huodong.com's
+729:    // own directory (once on page 1, once on page 5).
+730:    // Positions individually geocoded against Nominatim — most needed a
+731:    // street-only retry (dropping the house number/mall name) to resolve
+732:    // at all, a lower hit rate than the first half, consistent with how
+733:    // specific-unit mall addresses are hard for Nominatim generally.
+928:    // Suzhou — first-ever Suzhou spots in this dataset. Sourced from the app's own
+929:    // video footage (huodong.com has no Suzhou climbing directory: "this combination
+930:    // has no venues recorded yet"), so unlike every PANDA-app city since Beijing,
+931:    // addresses here mostly come from general web search rather than a directory
+932:    // site, with a correspondingly higher no-confirmable-address rate (14 of 20).
+954:    // Tianjin — first-ever Tianjin spots in this dataset, and the twelfth and
+955:    // final city from the "岩馆探索" (PANDA) app footage. Same as Suzhou,
+956:    // huodong.com has no Tianjin climbing directory, so this batch also fell
+957:    // back to the app's own video footage plus general web search.
+974:    // Chongqing gyms found via Dianping (大众点评), cross-checked against a second
+975:    // source each. Chongqing's Huayan Climbing Park (a large outdoor artificial-wall
+976:    // park in Jiulongpo District, used for World Cup and national team training) was
+977:    // deliberately excluded — outdoor venues were removed from this app's scope
+978:    // entirely (see docs/architecture.md "Known gaps"), and it doesn't fit either as
+979:    // an indoor gym.
+986:    // Xi'an (19 gyms) — sourced from screen-recorded footage of the "岩馆探索"
+987:    // (PANDA) gym-directory app's own Xi'an listing (the user's video/screenshot
+988:    // collection, not a text directory), then each gym's address independently
+989:    // web-searched and geocoded via Nominatim. This is the first of 12 Chinese
+990:    // cities covered by that footage — the other 11 (Beijing, Shanghai, Guangzhou,
+991:    // Shenzhen, Chengdu, Hangzhou, Nanjing, Wuhan, Chongqing's own remaining gyms,
+992:    // Suzhou, Tianjin) are backlogged for future sessions, see docs/tasks.md.
+993:    // 5 candidates seen in the footage were excluded: gyms tagged "建设中" (under
+994:    // construction) or shown with a blank/faded photo + "订阅提醒" (subscribe for
+995:    // updates) button and 0/0 like/star counts — both patterns mean "not yet open"
+996:    // in this app's own UI, confirmed by cross-referencing which cards did/didn't
+997:    // have that treatment. 2 pairs of cards that looked like duplicates in the
+998:    // footage (an unlabeled "main" card and a same-named branch card, for both
+999:    // 岩十三攀岩馆 and DC攀岩) were merged into one spot each rather than kept as
+1000:    // two, since no independent source ever surfaced two distinct addresses for
+1001:    // either name — same "likely duplicate, don't double-count" treatment already
+1002:    // used for a Beijing candidate (768攀岩馆) in an earlier Dianping pass and for
+1003:    // several Shenzhen/Wuhan Banana Climbing entries. `state` uses "XIAN" — this
+1004:    // project's `CN` entries key on city name, not province, per the established
+1005:    // design (see docs/architecture.md "Data model" — the original reasoning was
+1006:    // to avoid re-keying every existing CN spot if it ever needed provinces).
+1027:    // Chongqing (31 more gyms, on top of the 5 already in this dataset from an
+1028:    // earlier, separate Dianping pass) — second of the 12 "岩馆探索" (PANDA) app
+1029:    // cities, from the same video footage as Xi'an above. The app's own city
+1030:    // banner confirmed 35 total gyms; 2 of those 35 matched already-listed
+1031:    // Chongqing spots exactly by name+address (Scream Climbing (Guangdian Park),
+1032:    // Black Ram Climbing Gym — both cross-checked via huodong.com's own listing
+1033:    // and left as-is, not re-added), 1 was tagged 建设中 (under construction) and
+1034:    // excluded, and 1 (重庆华岩攀岩公园) is the same large outdoor artificial-wall
+1035:    // park already excluded on scope grounds during the original Dianping pass
+1036:    // (see "Known gaps" below on why outdoor venues are out of scope) — leaving
+1037:    // these 31. Addresses cross-checked and geocoded against huodong.com's own
+1038:    // Chongqing climbing-venue directory (`/venue/chongqing/rock_climbing`,
+1039:    // matched to this app's card names where a huodong.com listing existed) and
+1040:    // general web search, same "never guess" discipline as every other batch.
+1041:    // 16 of 31 got a precise address; 3 more resolved to a confirmed mall/area
+1042:    // but not an exact unit; the other 12 (39%) had no address findable at all
+1043:    // and are flagged with a Chongqing-city-centre placeholder — a similarly
+1044:    // high no-address rate to Xi'an's 47%, reinforcing that this footage's
+1045:    // smaller independent gyms are genuinely under-indexed by web search, not a
+1046:    // one-off Xi'an problem.
+1079:    // Nanjing (14 gyms) — third of the 12 "岩馆探索" (PANDA) app cities, from
+1080:    // the same footage as Xi'an/Chongqing. This time the video-to-city mapping
+1081:    // itself needed re-verifying from scratch: this session's own earlier
+1082:    // guesses (in docs/tasks.md) had already been shown wrong once for
+1083:    // Chongqing, so every remaining video was re-checked by content (its own
+1084:    // banner, or a district/branch name) before starting on any one city —
+1085:    // `IMG_6368.MP4` is confirmed Nanjing this way (22家岩馆 banner, and a
+1086:    // branch explicitly labelled "南京华贸中心店"). Full corrected mapping for
+1087:    // all 12 cities is in docs/tasks.md.
+1088:    // 22 gyms confirmed via the app's own banner; 7 excluded (建设中 tag, or a
+1089:    // blank-photo+订阅提醒 card) — leaving 15 candidates, one further pair
+1090:    // (蓝鲸攀岩's "太阳城抱石店" and "太阳城旗舰店" cards) merged into one entry
+1091:    // for the same reason as Yan13 Climbing Gym in Xi'an (every source for
+1092:    // either name returns the identical single address) — 14 distinct gyms.
+1093:    // 7 of 14 got a precise address; 3 more resolved to a confirmed mall/area
+1094:    // without an exact unit; the remaining 4 had no address findable at all
+1095:    // and are flagged with a placeholder — a markedly better hit rate than
+1096:    // Xi'an/Chongqing (71% vs. ~50-60%), plausibly because several of these
+1097:    // are branches of chains (蓝鲸攀岩/Blue Whale, 石刻攀岩/SEEK ROCK CLIMBING)
+1098:    // with their own real web presence, unlike many of Xi'an/Chongqing's
+1099:    // smaller independent gyms.
+1115:    // United Kingdom (66 gyms) — every entry read from Mountain Project's own
+1116:    // /gyms/united-kingdom directory (68 listed), which gives gym name and
+1117:    // county/area but not a street address or lat/lng. One entry was excluded
+1118:    // as a non-gym (UoE Climbing Wall — a University of Edinburgh recreation
+1119:    // wall, same exclusion criteria as the original AU/US Mountain Project
+1120:    // pass). Positions are city/area-level from general geography, not
+1121:    // geocoded exact addresses — same lighter-touch approach used for Japan/
+1122:    // Canada/New Zealand/China, flagged here once rather than per-entry.
+1123:    // Types are inferred from each gym's name (explicit "Boulder"/"Bloc" =
+1124:    // bouldering-only; otherwise assumed to also offer top-rope/lead, which
+1125:    // is the norm for a UK "climbing centre"/"climbing wall") since Mountain
+1126:    // Project's directory listing doesn't give per-gym type/amenity detail
+1127:    // the way its full gym pages do — not individually confirmed per gym.
+1128:    // `state` uses the UK's four constituent nations (England/Scotland/
+1129:    // Wales/Northern Ireland), the natural first subdivision below country.
+1233:    // Germany (112 gyms) — every entry read from Mountain Project's own
+1234:    // /gyms/germany directory. Positions are city-level from general
+1235:    // geography, not geocoded exact addresses (same disclosed limitation as
+1236:    // the UK pass above). Types inferred from name the same way: "Boulder"/
+1237:    // "Bloc" in the name (a very common German bouldering-gym naming
+1238:    // convention: "Boulderhalle"/"Bloc...") = bouldering-only; "Kletter"/
+1239:    // "Climbing" (a full climbing hall, "Kletterhalle"/"Kletterzentrum") =
+1240:    // assumed to also offer top-rope/lead. `state` uses Germany's 16
+1241:    // federal states (Bundesländer) — Mountain Project's own location labels
+1242:    // are a mix of city names and Bavarian sub-region names (e.g.
+1243:    // "Mittelfranken", "Oberbayern"), all mapped here to their actual state.
+1356:    // --- France / Paris (Île-de-France) — sourced from climbing-gyms.com ---
+1370:    // --- France / Lyon (Auvergne-Rhône-Alpes) ---
+1376:    // --- France / Marseille (Provence-Alpes-Côte d'Azur) ---
+1383:    // --- France / Toulouse (Occitanie) ---
+1390:    // --- Sweden / Göteborg (Västra Götaland) — sourced from climbing-gyms.com ---
+1395:    // --- Sweden / Stockholm ---
+1398:    // --- Sweden / Malmö (Skåne) ---
+1400:    // --- Netherlands / Amsterdam (Noord-Holland) — sourced from climbing-gyms.com ---
+1409:    // --- Netherlands / Den Haag (Zuid-Holland) ---
+1417:    // --- Netherlands / Utrecht ---
+1424:    // --- Netherlands / Rotterdam (Zuid-Holland) ---
+1429:    // --- Italy / Roma (Lazio) — sourced from climbing-gyms.com ---
+1436:    // --- Italy / Milano (Lombardia) ---
+1440:    // --- Italy / Modena (Emilia-Romagna) ---
+1444:    // --- Italy / Firenze (Toscana) ---
+1447:    // --- Belgium -- sourced from climbing-gyms.com's city directory ---
+1462:    // --- South Korea -- sourced from Mountain Project's /gyms/south-korea directory ---
+1501:    // --- South Korea expansion pass: same "no Google Places API key
+1502:    // configured" situation as the Japan expansion pass -- general web
+1503:    // search against each gym's own site/directory/social page used as
+1504:    // the practical substitute. A real, non-obvious finding from this
+1505:    // pass: the Naver "modoo!" free-homepage platform shut down entirely
+1506:    // on 26 June 2025 -- every modoo.at URL found during research now
+1507:    // shows only a platform-wide closure notice, not gym-specific
+1508:    // information, so any candidate whose ONLY evidence was a modoo.at
+1509:    // page was excluded outright (Cube Climbing/Bupyeong, Vertigo
+1510:    // Climbing Gym, SECTOR.B Bouldering Gym); candidates with an
+1511:    // independent secondary source alongside a now-dead modoo.at page
+1512:    // were kept, with the dead-source caveat disclosed per-entry.
+1542:// --- South Korea: Gangwon-do (first-ever spots in this division) ---
+1549:// --- Spain ---
+1573:// --- Portugal ---
+1582:// --- Austria ---
+1606:// --- Switzerland ---
+1615:// --- Poland ---
+1648:// --- Denmark ---
+1664:// --- Finland ---
+1680:// --- Ireland ---
+1690:// --- Norway ---
+1712:// --- Mexico ---
+1730:// --- Brazil ---
+1941:    // --- Taiwan expansion pass: same "no Google Places API key
+1942:    // configured" situation as the Japan/Korea expansion passes -- general
+1943:    // web search (Taiwanese/Chinese-language sources included) used as the
+1944:    // practical substitute. Adds Kaohsiung and Tainan, the two largest
+1945:    // Taiwanese cities previously missing entirely, plus more Taipei/New
+1946:    // Taipei coverage. Geocoding hit a severe first-try failure rate for
+1947:    // Taiwanese addresses (only 1 of 17 resolved at street level via
+1948:    // Nominatim) -- the rest fall back to their district centroid, with a
+1949:    // small per-gym offset applied where 2-3 gyms in the same district
+1950:    // would otherwise share one exact point, the same convention used for
+1951:    // the original Mountain Project multi-gym-per-city passes.
+1972:    // --- South Africa -- the first African country in this dataset. Sourced from
+1973:    // climbing-gyms.com's South Africa directory (13 raw candidates across 9
+1974:    // cities), every gym individually cross-checked via web search/its own site
+1975:    // for (a) it's a real, currently-operating indoor facility and (b) its actual
+1976:    // climbing type -- no default applied without direct textual evidence, per
+1977:    // this project's own worldwide top-rope-tag audit lesson. One candidate,
+1978:    // Vertigo Adventures (Longmarket Street, Cape Town), was excluded: every
+1979:    // source describes it as an outdoor guided-climbing company (Table Mountain,
+1980:    // Silvermine), not an indoor gym, out of this app's indoor-only scope.
+1993:    // --- Ecuador -- picked as the next country to add by real gym count. boulderinglist.com's
+1994:    // own per-country list shows a "Georgia" entry at 14 gyms, but that's a known trap already
+1995:    // documented in this file: its "Georgia" listing conflates the US state with the country
+1996:    // (Atlanta-area gyms mixed in with the one real Tbilisi gym), so it was skipped -- Ecuador
+1997:    // (8 gyms on boulderinglist, cross-checked against climbing-gyms.com's own smaller Ecuador
+1998:    // listing too) is the next genuinely-largest missing country. Every candidate individually
+1999:    // web-searched for (a) it's real/current and (b) its actual climbing type -- no default
+2000:    // applied without direct evidence.
+2013:    // --- Vietnam -- the next-largest missing country by boulderinglist.com's
+2014:    // own 84-country gym count (a 7-gym tie with Bolivia/Iran/Lithuania/
+2015:    // Serbia after skipping "Georgia," a known trap that conflates the
+2016:    // country with the US state -- Vietnam was picked from the tie after
+2017:    // checking its own boulderinglist.com page showed 7 solid, real, named
+2018:    // gyms). Cross-checked against a second directory, indoorclimbing.com's
+2019:    // own Vietnam page, which independently confirmed 5 of the 7 names with
+2020:    // real addresses and some facility-type detail.
+2029:    // --- Lithuania -- the next-largest missing country after Vietnam, from
+2030:    // the same boulderinglist.com 84-country tie at 7 gyms (Bolivia, Iran,
+2031:    // Lithuania, Serbia). Picked after checking indoorclimbing.com's own
+2032:    // Lithuania page, which independently listed real addresses for all 7
+2033:    // boulderinglist candidates, giving a clean two-directory cross-check
+2034:    // like Vietnam's had.
+2043:    // --- Serbia -- the next-largest missing country after Lithuania, from
+2044:    // the same boulderinglist.com pool (a 3-way tie at 7 gyms: Bolivia,
+2045:    // Iran, Serbia, once Vietnam and Lithuania had been picked off the
+2046:    // earlier tie). Picked after indoorclimbing.com's own Serbia-Montenegro
+2047:    // page gave real street addresses for 5 of boulderinglist's 7
+2048:    // candidates -- the same two-directory cross-check standard as
+2049:    // Vietnam/Lithuania. Of the 7, 2 were excluded as confirmed outdoor
+2050:    // artificial walls (Ada Ciganlija SPK Vertikal -- an open-air 15m wall
+2051:    // on the bank of the Sava, per the operator's own site; Kladovo Black
+2052:    // Rock -- a 40m/13.5m outdoor wall at Karataš, per multiple sources),
+2053:    // leaving 5 real, confirmed indoor gyms.
+2059:    // --- Bolivia -- the next-largest missing country after Serbia, from
+2060:    // the same boulderinglist.com pool (a 2-way tie at 7 gyms: Bolivia,
+2061:    // Iran, once Vietnam/Lithuania/Serbia had been picked off the earlier
+2062:    // ties). Picked over Iran after checking both countries' second-source
+2063:    // cross-check quality directly: indoorclimbing.com's Bolivia page gave
+2064:    // real, usable street addresses for all 7 of boulderinglist's 7
+2065:    // candidates (the best cross-check hit rate of any recent batch),
+2066:    // while Iran's own second source (iranrocktrip.com) listed a
+2067:    // completely different set of gyms with no overlap at all, and
+2068:    // boulderinglist's own Iran addresses were wall-spec text, not real
+2069:    // addresses.
+2076:    // --- Iran -- the last remaining member of the original boulderinglist.com
+2077:    // tie at 7 gyms (Bolivia, Iran), picked up after Bolivia. Checked directly
+2078:    // against a second source (iranrocktrip.com) before committing, same as
+2079:    // every other tied-country pick this session -- that second source turned
+2080:    // out to list a completely different, non-overlapping set of Tehran gyms
+2081:    // rather than confirming boulderinglist's own 7, and boulderinglist's own
+2082:    // listed addresses were wall-spec text rather than real street addresses.
+2083:    // Individually web-searched each of the 7 original candidates anyway,
+2084:    // same discipline as every prior country: 2 could not be confirmed real
+2085:    // by any source (Climbing wall of turbin, Tabriz; Boluk-e-Bala/MAXBlocs,
+2086:    // Tehran) and were excluded rather than guessed in; 1 (Tarbiat Modares
+2087:    // University, Tehran) was excluded on the same ambiguous-public-access
+2088:    // grounds as every other unconfirmed university wall in this dataset --
+2089:    // no source found describing its policy toward outside visitors, unlike
+2090:    // the university gyms elsewhere in this file that were individually
+2091:    // confirmed open and kept. Left 4 real, confirmed gyms across 4 cities.
+2096:    // --- Estonia -- the next-largest missing country after Iran, picked
+2097:    // from a 4-way tie at 6 gyms (Estonia, Malaysia, Thailand, Ukraine) on
+2098:    // boulderinglist.com. Picked over the other three after checking
+2099:    // cross-check quality directly: indoorclimbing.com's own Estonia page
+2100:    // independently confirmed real street addresses for most of
+2101:    // boulderinglist's 6 candidates (including recognizing "Tuuletorn" as
+2102:    // the Estonian name for the already-documented Windtower Experience
+2103:    // Centre), a cleaner single-source cross-check than Malaysia/Thailand's
+2104:    // scattered blog/listicle sourcing. Ukraine was also deprioritized given
+2105:    // one of its 6 candidates (Manege, Donetsk) sits in a currently
+2106:    // Russian-occupied city where operating status can't be confirmed, and
+2107:    // the listing itself mixed "Kiev"/"Kyiv" spellings suggesting stale data.
+2114:    // --- Malaysia -- the first pick from the "rest of the tier" batch,
+2115:    // a 4-way tie at 6 gyms (Estonia, Malaysia, Thailand, Ukraine) once
+2116:    // Estonia had already been added. All 6 of boulderinglist.com's
+2117:    // candidates confirmed real and current via independent web search,
+2118:    // each with a genuine street address -- no exclusions needed.
+2126:    // --- Thailand -- second pick from the "rest of the tier" batch (the
+2127:    // 4-way tie at 6 gyms: Estonia, Malaysia, Thailand, Ukraine, once
+2128:    // Estonia and Malaysia had already been added). 7 boulderinglist.com
+2129:    // candidates individually verified via web search; 6 confirmed real
+2130:    // (1 renamed to its actual current identity, C3 -> Progression
+2131:    // Vertical), 1 excluded (Chill Out, Si Racha -- could not be
+2132:    // confirmed real by any English- or Thai-language source found).
+2133:    // Geocoding hit an unusually low hit rate for this batch -- most
+2134:    // addresses only resolved on a second, simplified retry pass, and 2
+2135:    // (Sports World Suratthani, Rebel Rock Climbing) never resolved past
+2136:    // a bare city centroid; a third retry's confident-looking match for
+2137:    // Rebel Rock Climbing (a specific Phuket primary school) was rejected
+2138:    // as a wrong-POI mismatch rather than trusted at face value, per this
+2139:    // dataset's own established discipline (Croatia/Russia/Philippines/
+2140:    // South Africa/Ecuador).
+2148:    // --- Ukraine -- third and final pick from the "rest of the tier"
+2149:    // batch (the 4-way tie at 6 gyms: Estonia, Malaysia, Thailand,
+2150:    // Ukraine), completing the tier. boulderinglist.com's own 6-row
+2151:    // Ukraine listing turned out to be only 5 distinct gyms once
+2152:    // duplicate rows and unconfirmable/occupied-territory entries were
+2153:    // cleared out -- Manege (Donetsk) was excluded on political-
+2154:    // neutrality/scope grounds (Donetsk has been under Russian-backed
+2155:    // occupation since 2014, with no way to confirm current civilian
+2156:    // operation there), PRANA (Kyiv) and KHAI (Kharkiv) could not be
+2157:    // confirmed as currently operating by any source found. Independent
+2158:    // web research turned up 4 better-evidenced, currently-operating
+2159:    // Kyiv/Lviv gyms to fill out the batch instead of forcing the
+2160:    // original weak candidates in, the same "never guess a candidate
+2161:    // into existence" discipline as every prior country in this tier.
+2169:    // --- Slovakia -- the 54th country, next-largest missing country per
+2170:    // boulderinglist.com's country list (5 gyms) once the prior ~6/~7-gym
+2171:    // ties had been exhausted. Cross-checked against indoorclimbing.com's
+2172:    // own Slovakia page: 4 of boulderinglist's 5 gyms matched exactly
+2173:    // (Brutal Povala, Block Dock, Vertigo, HK Manin, all with real
+2174:    // addresses from indoorclimbing.com), but the two sources disagreed on
+2175:    // the 5th -- boulderinglist listed K2-Zilina Bouldering Climbing Gym,
+2176:    // indoorclimbing.com listed Ovcin Boulder & Bistro instead. Individually
+2177:    // web-searched both rather than picking one: both turned out to be
+2178:    // real, independently confirmed, currently-operating gyms, so both were
+2179:    // kept rather than discarding either -- 6 gyms total, not 5.
+2187:    // Cyprus (5 gyms, 55th country) -- picked as the next-largest missing
+2188:    // country after Slovakia. boulderinglist.com's own Cyprus page listed
+2189:    // 3 gyms with real addresses independently confirmed by
+2190:    // indoorclimbing.com; further web search turned up 2 more real,
+2191:    // currently-operating gyms (Redpoint, Rockstar Climbing) that neither
+2192:    // directory had listed. `state` uses Cyprus's 6 official Republic of
+2193:    // Cyprus districts, the standard internationally-recognized division
+2194:    // (Northern Cyprus/the TRNC is recognized only by Turkey) -- not a
+2195:    // contested-territory judgment call the way Kosovo/West Bank/Crimea
+2196:    // were elsewhere in this file.
+2203:    // Panama (3 gyms, 56th country) -- boulderinglist.com's 3-gym listing
+2204:    // independently confirmed by indoorclimbing.com with matching real
+2205:    // addresses for all 3 (the stronger cross-check of the two remaining
+2206:    // tied-at-3 candidates after Cyprus, Peru's second source only
+2207:    // confirmed 1 of its 3). `state` uses Panama's 10 real provinces plus
+2208:    // its 5 indigenous comarcas, populated complete from the start.
+2213:    // Peru (5 gyms, 57th country) -- boulderinglist.com's 3-gym Peru
+2214:    // listing (CCM Arequipa, VERTICAL, Base Camp Peru) had the weakest
+2215:    // second-source cross-check of the tied-at-3 group Cyprus/Panama
+2216:    // were picked from (indoorclimbing.com only independently confirmed
+2217:    // 1 of the 3), so instead of trusting the directory outright, every
+2218:    // candidate was individually web-searched -- which also surfaced 2
+2219:    // more real, currently-operating gyms (Pirqa, Bloque) neither
+2220:    // directory listed, confirmed via an independent gym-review site
+2221:    // (rockclimbperu.com) and Wanderlog reviews. `state` uses Peru's 25
+2222:    // real regions (24 departments + the Constitutional Province of
+2223:    // Callao), populated complete from the start.
+2230:    // ---- Turkey (58th country) ----
+2231:    // boulderinglist.com lists 5 Turkey entries, but one is the same gym
+2232:    // (Bursa Tirmanis Evi) listed twice under two different city labels, and
+2233:    // one (911 Search & Rescue Association, Bursa) was already investigated
+2234:    // and excluded during the earlier boulderingwall.com UK pass -- its
+2235:    // specific branch address couldn't be confirmed and its public-access
+2236:    // policy for the climbing wall was never established. That leaves 3
+2237:    // real, individually-confirmed gyms: Boulderhane (Istanbul, already
+2238:    // confirmed in an earlier pass), plus two new ones found on this
+2239:    // country's boulderinglist.com page and independently verified --
+2240:    // Bursa Tirmanis Evi (run by Bursa Dagcilik ve Doga Sporlari Ihtisas
+2241:    // Kulubu / Bursa Mountaineering and Nature Sports Club, confirmed via
+2242:    // indoor-climbing-map.com with real public opening hours, Mon/Thu
+2243:    // 18:00-21:00) and Boulder Eskisehir/BoulderEs (confirmed via its own
+2244:    // site bouldereskisehir.com and climbing-gyms.com). 3 gyms matches this
+2245:    // dataset's own precedent for seeding a country (Panama/Peru both
+2246:    // started at 3). `state` uses Turkey's 81 real provinces, populated
+2247:    // complete from the start.
+2252:    // ---- Latvia (59th country) ----
+2253:    // boulderinglist.com listed 4 raw entries, but "Falkors Bouldering
+2254:    // Center" appears twice under two different city-label spellings
+2255:    // (Riga vs Rīga -- same gym), and "Gandra Tower" is explicitly an
+2256:    // outdoor 12m artificial-rock tower with top-rope/lead belaying, out
+2257:    // of this app's indoor-only scope (same exclusion standard as every
+2258:    // other outdoor venue in this dataset). Cross-checked against
+2259:    // indoorclimbing.com and a dedicated local blog (skydive.lv, updated
+2260:    // July 2026) which independently confirms Riga has exactly 2 indoor
+2261:    // bouldering gyms -- Falkors and Virsotne -- plus the one excluded
+2262:    // outdoor tower, leaving 2 real gyms.
+2266:    // ---- Singapore (60th country) ----
+2267:    // boulderinglist.com's 3 listings all mixed indoor and outdoor
+2268:    // facilities within a single entry, the reason this country was
+2269:    // repeatedly deprioritized in earlier passes. Individually checked
+2270:    // each with more careful scoping this time: "Climb Asia Climbing
+2271:    // Centre" is a stale directory name -- confirmed via multiple
+2272:    // independent sources (its own site groundupsg.com, Chalk Rebels,
+2273:    // Little Steps) to have rebranded to Ground Up Climbing, kept for
+2274:    // its confirmed real indoor facility (34 lanes for bouldering, top
+2275:    // rope, and lead climbing), the same "resolve to the real current
+2276:    // name" treatment as El Rocodromo/Gekon/MegaSTONE elsewhere in this
+2277:    // dataset. "Yishun Safra Climbing Centre" is described by
+2278:    // boulderinglist.com as primarily an outdoor facility, but SAFRA's
+2279:    // own site independently confirms a genuine separate "two floors of
+2280:    // indoor bouldering" component -- kept for that confirmed indoor
+2281:    // part only, the outdoor sport-climbing walls excluded on the same
+2282:    // "kept for the confirmed indoor component" grounds as K2 Escalada
+2283:    // Deportiva (Argentina)/Climbing Barn Adventure Centre (South
+2284:    // Africa). Confirmed genuinely publicly accessible (a non-member
+2285:    // walk-in fee, ~S$18), not restricted to SAFRA members only. The
+2286:    // third candidate, "Ubin Lagoon Resort," was excluded -- its address
+2287:    // couldn't be confirmed to actually be on Pulau Ubin island itself
+2288:    // (one source gave a mainland Punggol address instead, a real
+2289:    // discrepancy this dataset never guesses past) and independent
+2290:    // sources gave no confirmation it's still operating or genuinely
+2291:    // open to non-resort-guests, so it was left out per Rules.md
+2292:    // §1 rather than guessed either way.
+2296:    // ---- Bosnia and Herzegovina (61st country) ----
+2297:    // boulderinglist.com's own detail page listed only 2 gyms, but
+2298:    // climbing-gyms.com's own BiH page lists 6 cities with a gym each --
+2299:    // the same "a directory's listing count isn't the ceiling" pattern
+2300:    // already documented for Cyprus/Peru. Every one of the 6
+2301:    // climbing-gyms.com candidates was individually checked: "Climbing
+2302:    // Area Pecka" (Gornja Pecka) is confirmed as a famous 140+-route
+2303:    // OUTDOOR sport-climbing crag with a visitor centre, not an indoor
+2304:    // gym -- excluded on scope grounds. "Penjalište/vježbalište Miroslav
+2305:    // Đokić-Đole" (Trebinje) had no independent source confirming it's
+2306:    // specifically an indoor facility (the generic Bosnian/Serbian terms
+2307:    // "penjalište"/"vježbalište" don't disambiguate indoor vs outdoor) --
+2308:    // left out per Rules.md §1 rather than guessed either way. The
+2309:    // remaining 4 are all confirmed real, current, genuinely indoor gyms:
+2315:    // ---- Andorra (62nd country) ----
+2316:    // boulderinglist.com's own detail page listed only 2 gyms (both in
+2317:    // Andorra la Vella), but Fedbase's official mountaineering federation
+2318:    // (fam.ad/rocodroms) lists 10 real climbing facilities across 5 parishes
+2319:    // -- the same "a directory's listing count isn't the ceiling" pattern
+2320:    // documented repeatedly elsewhere in this dataset. Every facility on
+2321:    // that federation list was individually checked: 3 (Rocòdrom de
+2322:    // Canillo, Rocòdrom Cortals d'Aventura, Boulder Parc de la Ossa) are
+2323:    // confirmed outdoor -- excluded on scope grounds. 2 more (Centre de
+2324:    // Tecnificació Esportiva Ordino, Rocòdrom d'Ordino) turned out on
+2325:    // closer inspection to both describe the same outdoor concrete wall
+2326:    // next to Ordino's sports centre (multiple independent sources call it
+2327:    // "an artificial outdoor concrete carved climbing wall" with outdoor
+2328:    // lighting) -- left out rather than guessed indoor on the strength of a
+2329:    // one-line federation label. The remaining 6 are all confirmed real,
+2330:    // current, genuinely indoor facilities -- 4 more than either directory
+2331:    // showed:
+2339:    // ---- Reddit-sourced gyms for existing countries (first Reddit-sourced
+2340:    // batch in this dataset) -- found via r/bouldering-scoped Reddit
+2341:    // searches (opencli reddit search --subreddit bouldering) across cities
+2342:    // in countries already covered, per an explicit request to "double
+2343:    // check that they're real gyms" before adding anything. An initial
+2344:    // unscoped Reddit search was very noisy (matched isolated words like
+2345:    // "climbing"/"gym" across unrelated subreddits); scoping to
+2346:    // r/bouldering fixed that. Every candidate named in a thread/comment
+2347:    // was then independently web-searched for (a) a confirmed real,
+2348:    // current address and (b) actual climbing-type evidence -- nothing
+2349:    // added on a Reddit mention alone. Two candidates found this way
+2350:    // (HUDY Boulder Karlín in Prague, WEST Bouldering in Warsaw) turned out
+2351:    // to already be in this dataset under the identical name/address and
+2352:    // were not re-added.
+2375:    // ---- United Arab Emirates, Georgia and Luxembourg (63rd-65th countries) ----
+2376:    // Chosen as the three countries with the most verified gyms among those not yet in the
+2377:    // dataset (boulderinglist.com lists Georgia at 14 but conflates the US state; Costa Rica and
+2378:    // Malta are stale or thinner). Every gym was individually web-confirmed. Excluded: The Wall
+2379:    // Dubai (outdoor tower), Vertical Club Dubai, Hall Omnisport Steinsel and Spolo Ovenacher
+2380:    // (unconfirmable), Bloc Brill Mamer (outdoor boulders), Batumi Olympia (fitness club, no detail).
+2397:    // ---- Slovenia, Kazakhstan and Costa Rica (66th-68th countries) ----
+2398:    // Picked as the three countries with the most individually verified gyms out of six researched
+2399:    // (Slovenia 14, Costa Rica 8, Kazakhstan 7, Belarus 5, Nepal 3 clearly indoor, Moldova 2). Directory
+2400:    // sites were nearly empty for all three, so sources are each gym's own site, 2GIS/Yandex/Mountain
+2401:    // Project, Instagram and, for Slovenia, the alpine association's wall list. Every position was run
+2402:    // through Nominatim and Photon; precision is disclosed per entry.
+2431:    // ---- Belarus, Uruguay and Saudi Arabia (69th-71st countries) ----
+2432:    // Chosen from nine researched candidates as the three tied at the top (5 verified gyms each);
+2433:    // the others were Armenia 3, Nepal 3 clearly indoor, Lebanon 2, Jordan 2, Moldova 2, Morocco 1.
+2434:    // Directories were nearly empty for all three, so sources are each gym's own site, Yandex/Yango/
+2435:    // Tripadvisor listings, Instagram and press coverage. Position precision is disclosed per entry.
+2451:    // ---- Hong Kong, Egypt, Qatar and Kenya (72nd-75th countries) ----
+2452:    // Chosen from six researched candidates (Hong Kong 29, Egypt 2, Qatar 2, Kenya 2 verified gyms;
+2453:    // Sri Lanka 0 and Azerbaijan 1 were left out as too thin). Directories were empty or stale for
+2454:    // Qatar, Egypt and Kenya, so sources are each gym's own site, press, Instagram and map listings.
+2455:    // Position precision is disclosed per entry.
+2491:    // ---- Guatemala, Armenia, Lebanon, Jordan and Nepal (76th-80th countries) ----
+2492:    // Chosen from six researched candidates (Guatemala 4, Armenia 3, Lebanon 3, Jordan 2, Nepal 2 verified
+2493:    // gyms; Uzbekistan had only 1 and was left out). Directories were empty or stale for all of them, so
+2494:    // sources are each gym's own site, press, Instagram and map listings. Position precision is disclosed per entry.
+2509:    // ---- Montenegro, Mongolia, Oman and Paraguay (81st-84th countries) ----
+2510:    // Chosen from ten researched countries: the four with 2 verified gyms each. Kuwait, Bahrain, Moldova,
+2511:    // North Macedonia and Albania had 1 each, and Pakistan, the Dominican Republic and Honduras had none,
+2512:    // so they were left out. Directories were empty or stale for all of these; sources are each gym's own
+2513:    // site, press, Instagram and map listings. Position precision is disclosed per entry.

@@ -183,8 +183,8 @@ findings, still restricted to trusted sources above. See
 Do not rely on conversation memory for important project information.
 
 Important decisions, architecture changes, requirements and discoveries
-must be written into the appropriate project document (`docs/architecture.md`
-for how the system works, `docs/tasks.md` for what's being worked on and
+must be written into the appropriate project document (`docs/ARCHITECTURE.md`
+for how the system works, `docs/TASKS.md` for what's being worked on and
 what was decided about it).
 
 After writing persistent information, report the exact file path.
@@ -303,7 +303,7 @@ an accident, not a normal part of the workflow.
   in `.claude/settings.json`, or `DISABLE_AUTO_COMPACT=1`) — with it off,
   hitting the true context limit forces `/clear` (full reset) rather than
   a silent summarize-and-continue. Make sure anything that matters is
-  already written to `docs/tasks.md` (§10) before that point, since a
+  already written to `docs/TASKS.md` (§10) before that point, since a
   `/clear` does not carry it forward automatically.
 
 ---
@@ -326,7 +326,7 @@ letting this session's context get polluted with the back-and-forth.
 
 Claude does not reliably retain instructions across sessions purely "in
 memory." Any request to remember, track, or not-forget something is only
-satisfied by writing it to `docs/tasks.md` or `docs/architecture.md` and
+satisfied by writing it to `docs/TASKS.md` or `docs/ARCHITECTURE.md` and
 reporting the exact path (§10) — never by a bare acknowledgement.
 Likewise, never report a task, test, or smoke test as done without having
 actually run it in this session (§12).

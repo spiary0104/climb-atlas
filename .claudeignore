@@ -1,0 +1,6 @@
+# Context hygiene: keep these out of Claude's context.
+# (Claude Code enforces this via permissions.deny in .claude/settings.json;
+#  this file is for tools that honour .claudeignore.)
+docs/archive/
+data/
+node_modules/

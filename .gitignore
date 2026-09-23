@@ -16,3 +16,7 @@ desktop.ini
 # see CLAUDE.md "Stack" — node_modules here is one-off verification
 # tooling for a session, never a tracked dependency)
 node_modules/
+
+# Generated / scratch
+.playwright-mcp/
+supabase_seed_output.sql

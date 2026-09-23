@@ -2,7 +2,7 @@
  * auth.js — thin wrapper around Supabase Auth (magic link + Google).
  * ------------------------------------------------------------
  * Exposes window.auth with the current user and a subscribe/notify pattern so
- * app.js can re-render whenever sign-in state changes, without app.js needing
+ * the app (js/main.js) can re-render whenever sign-in state changes, without the app needing
  * to know anything about Supabase directly.
  */
 
