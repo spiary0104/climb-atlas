@@ -3927,6 +3927,67 @@ _(none)_
 
 ## Done (recent)
 
+### Add Seoul + Gyeonggi-do depth pass, South Korea (22 gyms)
+- Status: done — committed directly to `master`.
+- What: direct continuation of the standing "keep working on Korea" task.
+  With every South Korea division now holding at least one spot (see the
+  four division-filling entries below), the user asked whether the
+  ~200-300 real gyms Korea is estimated to have nationwide (per a
+  business-directory scrape) had actually been researched, or just the
+  minimum to fill empty divisions — it was the latter. This pass targets
+  the real gap: Seoul and Gyeonggi-do, Korea's two densest climbing
+  regions (each independently estimated at 55-70 real gyms), which stood
+  at only 18 and 6 spots respectively despite being long-filled
+  divisions, not empty ones.
+- Two parallel research passes (Korean-language search, spiri7.com gym
+  pages, Daangn business listings, Instagram/Facebook activity for
+  recency) found 24 raw candidates; 2 were deliberately excluded rather
+  than guessed at: "Climbing Park Jongno" has a pre-existing unresolved
+  naming/address conflict already documented on Seoul Forest Climbing's
+  own `notes` field, and this pass's own source gave yet a third
+  different address for the same name; "Yeongdeungpo Sports Climbing
+  Gym" only had facility-type evidence for its *outdoor*-wall lead
+  climbing, out of scope for this indoor-only project. Left 10 Seoul +
+  12 Gyeonggi = 22 gyms.
+- **4 confirmed with both bouldering AND lead climbing** (Mad Gym
+  Gwangmyeong, Pax Climbing Center, Chamonix Climbing, Suji Climbing —
+  all via explicit dual-discipline evidence on the gym's own business
+  listing or spiri7.com page) — a notably higher lead-climbing hit rate
+  than prior Korea batches, this being Seoul/Gyeonggi's denser urban gym
+  market rather than smaller regional cities. The other 18 default to
+  bouldering-only per this project's established Korea-specific
+  discipline (no independent rope/lead evidence found), each disclosed.
+- **2 same-brand-different-branch resolutions, not duplicates**:
+  Climbing Park Hanti (Daechi-dong) is a different branch/address from
+  the already-listed "Climbing Park" (Yeoksam-dong); Seoul Boulders
+  Mokdong is a different branch/address from the already-listed
+  "SEOULBOULDERS Climbing Company" (Yeongdeungpo-gu).
+- **Geocoding**: 17 of 22 addresses resolved via ArcGIS
+  `findAddressCandidates` at score=100 (exact match); 1 (Alé Climbing
+  Gangdong) had no street number in any source, so its dong-level match
+  is disclosed as such; 4 (Climb A Clock, Rock Face Climbing, AstroMan
+  Paju, Climb Days, Jo Gyu-bok Byeollae) hit a repeated
+  proxy-level "url exceeds maximum fetchable length" rejection on their
+  full street-address query specifically (not an obvious length issue —
+  worth retrying with a different tool/approach in a future pass) and
+  fell back to a simplified district/dong-level query instead, disclosed
+  per-entry.
+- Net result: 1881 → **1903 total spots** (Seoul 18 → 28, Gyeonggi-do
+  6 → 18). Structural check (Node-parsed `window.SEED_GYMS`): 1903/1903
+  unique ids, zero duplicate name+suburb+state+country combos, every
+  spot has a non-empty `types` array.
+- **Verified structurally, not via live browser this pass** — same CDN
+  access limitation noted in every recent Korea-batch entry; per
+  `Rules.md` §12 this pass went straight to the Node-parsed structural
+  check.
+- **Not yet done**: running the regenerated seed SQL against the live
+  Supabase table — same outstanding step as every prior batch. Seoul and
+  Gyeonggi are still well short of their estimated real gym counts
+  (roughly 28/70 and 18/60) — this was a depth pass, not an exhaustive
+  one, so further Korea research (more Seoul/Gyeonggi gyms, or other
+  under-covered divisions like Busan/Daegu) remains available if the
+  user wants to continue.
+
 ### Add Gyeongsangbuk-do, South Korea (4 gyms, third division filled)
 - Status: done — committed directly to `master`.
 - What: direct continuation of the standing "keep working on Korea" task
