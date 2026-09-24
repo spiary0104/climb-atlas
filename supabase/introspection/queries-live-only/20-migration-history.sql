@@ -1,0 +1,1 @@
+select json_build_object('schema_migrations_table',to_regclass('supabase_migrations.schema_migrations')::text,'legacy_migrations_table',to_regclass('supabase_migrations.migrations')::text,'schemas_with_migration_in_name',(select coalesce(json_agg(nspname),'[]'::json) from pg_namespace where nspname ilike '%migration%')) as data;

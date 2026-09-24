@@ -1,0 +1,722 @@
+[
+ {
+  "column": "user_id",
+  "default": null,
+  "generated": "",
+  "identity": "",
+  "not_null": true,
+  "position": 1,
+  "table": "marks",
+  "type": "uuid"
+ },
+ {
+  "column": "spot_id",
+  "default": null,
+  "generated": "",
+  "identity": "",
+  "not_null": true,
+  "position": 2,
+  "table": "marks",
+  "type": "text"
+ },
+ {
+  "column": "mark_type",
+  "default": null,
+  "generated": "",
+  "identity": "",
+  "not_null": true,
+  "position": 3,
+  "table": "marks",
+  "type": "text"
+ },
+ {
+  "column": "created_at",
+  "default": "now()",
+  "generated": "",
+  "identity": "",
+  "not_null": true,
+  "position": 4,
+  "table": "marks",
+  "type": "timestamp with time zone"
+ },
+ {
+  "column": "user_id",
+  "default": null,
+  "generated": "",
+  "identity": "",
+  "not_null": true,
+  "position": 1,
+  "table": "moderators",
+  "type": "uuid"
+ },
+ {
+  "column": "created_at",
+  "default": "now()",
+  "generated": "",
+  "identity": "",
+  "not_null": true,
+  "position": 2,
+  "table": "moderators",
+  "type": "timestamp with time zone"
+ },
+ {
+  "column": "id",
+  "default": "gen_random_uuid()",
+  "generated": "",
+  "identity": "",
+  "not_null": true,
+  "position": 1,
+  "table": "pending_edits",
+  "type": "uuid"
+ },
+ {
+  "column": "spot_id",
+  "default": null,
+  "generated": "",
+  "identity": "",
+  "not_null": true,
+  "position": 2,
+  "table": "pending_edits",
+  "type": "text"
+ },
+ {
+  "column": "name",
+  "default": null,
+  "generated": "",
+  "identity": "",
+  "not_null": true,
+  "position": 3,
+  "table": "pending_edits",
+  "type": "text"
+ },
+ {
+  "column": "suburb",
+  "default": null,
+  "generated": "",
+  "identity": "",
+  "not_null": true,
+  "position": 4,
+  "table": "pending_edits",
+  "type": "text"
+ },
+ {
+  "column": "state",
+  "default": null,
+  "generated": "",
+  "identity": "",
+  "not_null": true,
+  "position": 5,
+  "table": "pending_edits",
+  "type": "text"
+ },
+ {
+  "column": "country",
+  "default": null,
+  "generated": "",
+  "identity": "",
+  "not_null": true,
+  "position": 6,
+  "table": "pending_edits",
+  "type": "text"
+ },
+ {
+  "column": "lat",
+  "default": null,
+  "generated": "",
+  "identity": "",
+  "not_null": true,
+  "position": 7,
+  "table": "pending_edits",
+  "type": "double precision"
+ },
+ {
+  "column": "lng",
+  "default": null,
+  "generated": "",
+  "identity": "",
+  "not_null": true,
+  "position": 8,
+  "table": "pending_edits",
+  "type": "double precision"
+ },
+ {
+  "column": "types",
+  "default": "'{}'::text[]",
+  "generated": "",
+  "identity": "",
+  "not_null": true,
+  "position": 9,
+  "table": "pending_edits",
+  "type": "text[]"
+ },
+ {
+  "column": "notes",
+  "default": null,
+  "generated": "",
+  "identity": "",
+  "not_null": false,
+  "position": 10,
+  "table": "pending_edits",
+  "type": "text"
+ },
+ {
+  "column": "photo",
+  "default": null,
+  "generated": "",
+  "identity": "",
+  "not_null": false,
+  "position": 11,
+  "table": "pending_edits",
+  "type": "text"
+ },
+ {
+  "column": "address",
+  "default": null,
+  "generated": "",
+  "identity": "",
+  "not_null": false,
+  "position": 12,
+  "table": "pending_edits",
+  "type": "text"
+ },
+ {
+  "column": "submitted_at",
+  "default": "now()",
+  "generated": "",
+  "identity": "",
+  "not_null": true,
+  "position": 13,
+  "table": "pending_edits",
+  "type": "timestamp with time zone"
+ },
+ {
+  "column": "id",
+  "default": "gen_random_uuid()",
+  "generated": "",
+  "identity": "",
+  "not_null": true,
+  "position": 1,
+  "table": "reports",
+  "type": "uuid"
+ },
+ {
+  "column": "spot_id",
+  "default": null,
+  "generated": "",
+  "identity": "",
+  "not_null": true,
+  "position": 2,
+  "table": "reports",
+  "type": "text"
+ },
+ {
+  "column": "message",
+  "default": null,
+  "generated": "",
+  "identity": "",
+  "not_null": true,
+  "position": 3,
+  "table": "reports",
+  "type": "text"
+ },
+ {
+  "column": "created_at",
+  "default": "now()",
+  "generated": "",
+  "identity": "",
+  "not_null": true,
+  "position": 4,
+  "table": "reports",
+  "type": "timestamp with time zone"
+ },
+ {
+  "column": "id",
+  "default": "gen_random_uuid()",
+  "generated": "",
+  "identity": "",
+  "not_null": true,
+  "position": 1,
+  "table": "routes",
+  "type": "uuid"
+ },
+ {
+  "column": "spot_id",
+  "default": null,
+  "generated": "",
+  "identity": "",
+  "not_null": true,
+  "position": 2,
+  "table": "routes",
+  "type": "text"
+ },
+ {
+  "column": "name",
+  "default": null,
+  "generated": "",
+  "identity": "",
+  "not_null": false,
+  "position": 3,
+  "table": "routes",
+  "type": "text"
+ },
+ {
+  "column": "climb_type",
+  "default": null,
+  "generated": "",
+  "identity": "",
+  "not_null": true,
+  "position": 4,
+  "table": "routes",
+  "type": "text"
+ },
+ {
+  "column": "grade",
+  "default": null,
+  "generated": "",
+  "identity": "",
+  "not_null": true,
+  "position": 5,
+  "table": "routes",
+  "type": "text"
+ },
+ {
+  "column": "grade_system",
+  "default": "'v-scale'::text",
+  "generated": "",
+  "identity": "",
+  "not_null": true,
+  "position": 6,
+  "table": "routes",
+  "type": "text"
+ },
+ {
+  "column": "color",
+  "default": null,
+  "generated": "",
+  "identity": "",
+  "not_null": false,
+  "position": 7,
+  "table": "routes",
+  "type": "text"
+ },
+ {
+  "column": "wall_section",
+  "default": null,
+  "generated": "",
+  "identity": "",
+  "not_null": false,
+  "position": 8,
+  "table": "routes",
+  "type": "text"
+ },
+ {
+  "column": "setter",
+  "default": null,
+  "generated": "",
+  "identity": "",
+  "not_null": false,
+  "position": 9,
+  "table": "routes",
+  "type": "text"
+ },
+ {
+  "column": "is_active",
+  "default": "true",
+  "generated": "",
+  "identity": "",
+  "not_null": true,
+  "position": 10,
+  "table": "routes",
+  "type": "boolean"
+ },
+ {
+  "column": "photo",
+  "default": null,
+  "generated": "",
+  "identity": "",
+  "not_null": false,
+  "position": 11,
+  "table": "routes",
+  "type": "text"
+ },
+ {
+  "column": "submitted_by",
+  "default": null,
+  "generated": "",
+  "identity": "",
+  "not_null": false,
+  "position": 12,
+  "table": "routes",
+  "type": "uuid"
+ },
+ {
+  "column": "created_at",
+  "default": "now()",
+  "generated": "",
+  "identity": "",
+  "not_null": true,
+  "position": 13,
+  "table": "routes",
+  "type": "timestamp with time zone"
+ },
+ {
+  "column": "updated_at",
+  "default": "now()",
+  "generated": "",
+  "identity": "",
+  "not_null": true,
+  "position": 14,
+  "table": "routes",
+  "type": "timestamp with time zone"
+ },
+ {
+  "column": "id",
+  "default": "gen_random_uuid()",
+  "generated": "",
+  "identity": "",
+  "not_null": true,
+  "position": 1,
+  "table": "session_climbs",
+  "type": "uuid"
+ },
+ {
+  "column": "session_id",
+  "default": null,
+  "generated": "",
+  "identity": "",
+  "not_null": true,
+  "position": 2,
+  "table": "session_climbs",
+  "type": "uuid"
+ },
+ {
+  "column": "route_id",
+  "default": null,
+  "generated": "",
+  "identity": "",
+  "not_null": false,
+  "position": 3,
+  "table": "session_climbs",
+  "type": "uuid"
+ },
+ {
+  "column": "climb_type",
+  "default": null,
+  "generated": "",
+  "identity": "",
+  "not_null": true,
+  "position": 4,
+  "table": "session_climbs",
+  "type": "text"
+ },
+ {
+  "column": "grade",
+  "default": null,
+  "generated": "",
+  "identity": "",
+  "not_null": true,
+  "position": 5,
+  "table": "session_climbs",
+  "type": "text"
+ },
+ {
+  "column": "grade_system",
+  "default": "'v-scale'::text",
+  "generated": "",
+  "identity": "",
+  "not_null": true,
+  "position": 6,
+  "table": "session_climbs",
+  "type": "text"
+ },
+ {
+  "column": "attempts",
+  "default": "1",
+  "generated": "",
+  "identity": "",
+  "not_null": true,
+  "position": 7,
+  "table": "session_climbs",
+  "type": "integer"
+ },
+ {
+  "column": "sent",
+  "default": "true",
+  "generated": "",
+  "identity": "",
+  "not_null": true,
+  "position": 8,
+  "table": "session_climbs",
+  "type": "boolean"
+ },
+ {
+  "column": "notes",
+  "default": null,
+  "generated": "",
+  "identity": "",
+  "not_null": false,
+  "position": 9,
+  "table": "session_climbs",
+  "type": "text"
+ },
+ {
+  "column": "created_at",
+  "default": "now()",
+  "generated": "",
+  "identity": "",
+  "not_null": true,
+  "position": 10,
+  "table": "session_climbs",
+  "type": "timestamp with time zone"
+ },
+ {
+  "column": "id",
+  "default": "gen_random_uuid()",
+  "generated": "",
+  "identity": "",
+  "not_null": true,
+  "position": 1,
+  "table": "sessions",
+  "type": "uuid"
+ },
+ {
+  "column": "user_id",
+  "default": null,
+  "generated": "",
+  "identity": "",
+  "not_null": true,
+  "position": 2,
+  "table": "sessions",
+  "type": "uuid"
+ },
+ {
+  "column": "spot_id",
+  "default": null,
+  "generated": "",
+  "identity": "",
+  "not_null": false,
+  "position": 3,
+  "table": "sessions",
+  "type": "text"
+ },
+ {
+  "column": "session_date",
+  "default": null,
+  "generated": "",
+  "identity": "",
+  "not_null": true,
+  "position": 4,
+  "table": "sessions",
+  "type": "date"
+ },
+ {
+  "column": "mood",
+  "default": null,
+  "generated": "",
+  "identity": "",
+  "not_null": false,
+  "position": 5,
+  "table": "sessions",
+  "type": "text"
+ },
+ {
+  "column": "notes",
+  "default": null,
+  "generated": "",
+  "identity": "",
+  "not_null": false,
+  "position": 6,
+  "table": "sessions",
+  "type": "text"
+ },
+ {
+  "column": "created_at",
+  "default": "now()",
+  "generated": "",
+  "identity": "",
+  "not_null": true,
+  "position": 7,
+  "table": "sessions",
+  "type": "timestamp with time zone"
+ },
+ {
+  "column": "updated_at",
+  "default": "now()",
+  "generated": "",
+  "identity": "",
+  "not_null": true,
+  "position": 8,
+  "table": "sessions",
+  "type": "timestamp with time zone"
+ },
+ {
+  "column": "id",
+  "default": null,
+  "generated": "",
+  "identity": "",
+  "not_null": true,
+  "position": 1,
+  "table": "spots",
+  "type": "text"
+ },
+ {
+  "column": "name",
+  "default": null,
+  "generated": "",
+  "identity": "",
+  "not_null": true,
+  "position": 2,
+  "table": "spots",
+  "type": "text"
+ },
+ {
+  "column": "suburb",
+  "default": null,
+  "generated": "",
+  "identity": "",
+  "not_null": true,
+  "position": 3,
+  "table": "spots",
+  "type": "text"
+ },
+ {
+  "column": "state",
+  "default": null,
+  "generated": "",
+  "identity": "",
+  "not_null": true,
+  "position": 4,
+  "table": "spots",
+  "type": "text"
+ },
+ {
+  "column": "lat",
+  "default": null,
+  "generated": "",
+  "identity": "",
+  "not_null": true,
+  "position": 5,
+  "table": "spots",
+  "type": "double precision"
+ },
+ {
+  "column": "lng",
+  "default": null,
+  "generated": "",
+  "identity": "",
+  "not_null": true,
+  "position": 6,
+  "table": "spots",
+  "type": "double precision"
+ },
+ {
+  "column": "types",
+  "default": "'{}'::text[]",
+  "generated": "",
+  "identity": "",
+  "not_null": true,
+  "position": 7,
+  "table": "spots",
+  "type": "text[]"
+ },
+ {
+  "column": "notes",
+  "default": null,
+  "generated": "",
+  "identity": "",
+  "not_null": false,
+  "position": 8,
+  "table": "spots",
+  "type": "text"
+ },
+ {
+  "column": "photo",
+  "default": null,
+  "generated": "",
+  "identity": "",
+  "not_null": false,
+  "position": 9,
+  "table": "spots",
+  "type": "text"
+ },
+ {
+  "column": "community",
+  "default": "false",
+  "generated": "",
+  "identity": "",
+  "not_null": true,
+  "position": 10,
+  "table": "spots",
+  "type": "boolean"
+ },
+ {
+  "column": "edited",
+  "default": "false",
+  "generated": "",
+  "identity": "",
+  "not_null": true,
+  "position": 11,
+  "table": "spots",
+  "type": "boolean"
+ },
+ {
+  "column": "created_at",
+  "default": "now()",
+  "generated": "",
+  "identity": "",
+  "not_null": true,
+  "position": 12,
+  "table": "spots",
+  "type": "timestamp with time zone"
+ },
+ {
+  "column": "updated_at",
+  "default": "now()",
+  "generated": "",
+  "identity": "",
+  "not_null": true,
+  "position": 13,
+  "table": "spots",
+  "type": "timestamp with time zone"
+ },
+ {
+  "column": "country",
+  "default": "'AU'::text",
+  "generated": "",
+  "identity": "",
+  "not_null": true,
+  "position": 14,
+  "table": "spots",
+  "type": "text"
+ },
+ {
+  "column": "status",
+  "default": "'approved'::text",
+  "generated": "",
+  "identity": "",
+  "not_null": true,
+  "position": 15,
+  "table": "spots",
+  "type": "text"
+ },
+ {
+  "column": "address",
+  "default": null,
+  "generated": "",
+  "identity": "",
+  "not_null": false,
+  "position": 16,
+  "table": "spots",
+  "type": "text"
+ },
+ {
+  "column": "submitted_by",
+  "default": null,
+  "generated": "",
+  "identity": "",
+  "not_null": false,
+  "position": 17,
+  "table": "spots",
+  "type": "uuid"
+ }
+]

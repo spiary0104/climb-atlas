@@ -1,0 +1,58 @@
+[
+ {
+  "kind": "r",
+  "name": "marks",
+  "owner": "postgres",
+  "rls_enabled": true,
+  "rls_forced": false
+ },
+ {
+  "kind": "r",
+  "name": "moderators",
+  "owner": "postgres",
+  "rls_enabled": true,
+  "rls_forced": false
+ },
+ {
+  "kind": "r",
+  "name": "pending_edits",
+  "owner": "postgres",
+  "rls_enabled": true,
+  "rls_forced": false
+ },
+ {
+  "kind": "r",
+  "name": "reports",
+  "owner": "postgres",
+  "rls_enabled": true,
+  "rls_forced": false
+ },
+ {
+  "kind": "r",
+  "name": "routes",
+  "owner": "postgres",
+  "rls_enabled": true,
+  "rls_forced": false
+ },
+ {
+  "kind": "r",
+  "name": "session_climbs",
+  "owner": "postgres",
+  "rls_enabled": true,
+  "rls_forced": false
+ },
+ {
+  "kind": "r",
+  "name": "sessions",
+  "owner": "postgres",
+  "rls_enabled": true,
+  "rls_forced": false
+ },
+ {
+  "kind": "r",
+  "name": "spots",
+  "owner": "postgres",
+  "rls_enabled": true,
+  "rls_forced": false
+ }
+]

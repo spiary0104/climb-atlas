@@ -1,0 +1,1 @@
+select json_build_object('buckets',(select coalesce(json_agg(json_build_object('id',id,'name',name,'public',public,'file_size_limit',file_size_limit,'allowed_mime_types',allowed_mime_types)),'[]'::json) from storage.buckets),'object_count',(select count(*) from storage.objects)) as data;

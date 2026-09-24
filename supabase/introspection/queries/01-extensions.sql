@@ -1,0 +1,1 @@
+select coalesce(json_agg(json_build_object('name',e.extname,'version',e.extversion,'schema',n.nspname) order by e.extname),'[]'::json) as data from pg_extension e join pg_namespace n on n.oid=e.extnamespace;
