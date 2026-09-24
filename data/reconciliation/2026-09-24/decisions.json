@@ -1,0 +1,53 @@
+{
+  "generated": "2026-09-24",
+  "note": "Human-reviewed decisions applied by scripts/build-reconciled.js. Live spots.id values are canonical.",
+  "duplicates_removed": [
+    {
+      "remove_repo_id": "seed-1966",
+      "remove_name": "Tagy Climbing Center",
+      "same_gym_as_live_id": "seed-1228",
+      "retained_repo_record": "seed-1868",
+      "conclusion": "SAME PHYSICAL GYM",
+      "evidence": [
+        "Address: new record '3F, 293 Danjae-ro, Sangdang-gu, Cheongju' = live '충북 청주시 상당구 방서동 단재로 293' (293 Danjae-ro, Sangdang-gu): same street and number.",
+        "Same name (live adds the Korean form 타기클라이밍센터), same country/state (KR / CHUNGCHEONGBUK), same district, same type (indoor-bouldering).",
+        "Pin gap of 7.3 km is not a different entrance: the new pin is a street-only Nominatim match (its own notes say the house number was not in OSM and it may be off along a long road), whereas the live pin is an exact address-point geocode (ArcGIS score 100)."
+      ],
+      "action": "Drop seed-1966. Keep the live-matched record (repo seed-1868, live id seed-1228, exact live pin). Its useful 2026 recency evidence is appended to the retained record's notes."
+    },
+    {
+      "remove_repo_id": "seed-1970",
+      "remove_name": "Gunsan Sports Climbing Center",
+      "same_gym_as_live_id": "seed-1238",
+      "retained_repo_record": "seed-1878",
+      "conclusion": "SAME PHYSICAL GYM",
+      "evidence": [
+        "Address: new record '274 Wolmyeong-ro, Gunsan' = live '전북 군산시 월명로 274' (274 Wolmyeong-ro, Gunsan): same street and number.",
+        "Same name (live adds 군산스포츠클라이밍센타), same country/state (KR / JEOLLABUK), same type (indoor-bouldering).",
+        "Pin gap of 2.7 km: the new pin is a street-only Nominatim match on a long road (per its own notes); the live pin is an exact address-point geocode (ArcGIS score 100)."
+      ],
+      "action": "Drop seed-1970. Keep repo seed-1878 (live id seed-1238). Recency evidence appended to its notes."
+    },
+    {
+      "remove_repo_id": "seed-1971",
+      "remove_name": "Ascent Climbing Manseong",
+      "same_gym_as_live_id": "seed-1240",
+      "retained_repo_record": "seed-1880",
+      "conclusion": "SAME PHYSICAL GYM",
+      "evidence": [
+        "Address: new record '6F Cheongok Bldg, 76 Manseongjungang-ro, Deokjin-gu, Jeonju' = live '전북 전주시 덕진구 만성중앙로 76 청옥빌딩 6층' (76 Manseongjungang-ro, Cheongok Building, 6F): same street, number, building (청옥 = Cheongok) and floor.",
+        "Same name (live adds Jeonju and 어센트클라이밍 만성점), same country/state and district, same type (indoor-bouldering).",
+        "Pin gap of 600 m: the new pin is a street-only Nominatim match (per its own notes); the live pin is an exact address-point geocode (ArcGIS score 100)."
+      ],
+      "action": "Drop seed-1971. Keep repo seed-1880 (live id seed-1240). Recency evidence appended to its notes."
+    }
+  ],
+  "notes_append": {
+    "seed-1868": " Also reported active in 2026: Chungcheong Maeil news (19 Jul 2026) describes a provincial climbing programme held here; bouldering, Moonboard and Kilterboard (merged from a duplicate record added in the Sep 2026 native-language pass).",
+    "seed-1878": " Also reported active in Sep 2026: Daangn listing updated within 3 weeks, hours 10:00-23:00; bouldering plus Moonboard (merged from a duplicate record added in the Sep 2026 native-language pass).",
+    "seed-1880": " Also: the gym's own Instagram posted in Feb 2026; bouldering with day passes (merged from a duplicate record added in the Sep 2026 native-language pass)."
+  },
+  "known_content_differences_vs_live": {
+    "seed-458": "Repo name/types/notes were edited after seeding (live: T-WALL Kinshicho, repo: Base Camp Tokyo Kinshicho). Same address point; a content update to push later, not an identity change."
+  }
+}
