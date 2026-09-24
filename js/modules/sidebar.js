@@ -2,7 +2,7 @@
 import { openAuthModal } from './auth-ui.js';
 import { COUNTRY_FLY_TARGETS, COUNTRY_LABELS, REGION_FLY_TARGETS, motion } from './constants.js';
 import { map, popupHtml, rebuildClusterIndex, spotMarkerClasses, stateLabel } from './map.js';
-import { openEditModal } from './modals.js';
+import { openEditModal, openReportModal } from './modals.js';
 import { appState } from './state.js';
 import { escapeHtml, showToast, typeSwatch } from './utils.js';
 
@@ -293,5 +293,22 @@ export function initSidebar(){
     render();
     if(window.innerWidth <= 760) document.getElementById('sidebar').classList.add('open');
   });
-  window.__toggleMark = toggleMark;
+
+  // Popup buttons carry data-popup-action / data-spot-id (see popup-html.js) instead of inline onclick handlers, so a
+  // spot id can never be interpreted as code. Popups are re-rendered with setHTML, hence one delegated listener.
+  document.addEventListener('click', (e)=>{
+    const btn = e.target.closest('[data-popup-action]');
+    if(!btn) return;
+    const id = btn.dataset.spotId;
+    switch(btn.dataset.popupAction){
+      case 'climbed':
+      case 'bookmarked': toggleMark(id, btn.dataset.popupAction); break;
+      case 'edit': openEditModal(id); break;
+      case 'report': openReportModal(id); break;
+    }
+  });
+  // <img> error events don't bubble, so a capture-phase listener replaces the old inline onerror="..." handler.
+  document.addEventListener('error', (e)=>{
+    if(e.target && e.target.matches && e.target.matches('img.popup-photo')) e.target.style.display = 'none';
+  }, true);
 }

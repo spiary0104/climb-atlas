@@ -1240,6 +1240,10 @@
   .modal-actions button:active:not(:disabled){transform:scale(0.98);}
   .btn-cancel{background:transparent;color:var(--text-dim);}
   .btn-cancel:hover{border-color:var(--text-dim);color:var(--text);}
+  /* Destructive actions (Reject / Dismiss / Delete). Same look as .btn-cancel on purpose; a separate class so no
+     selector that means "the close/cancel control" can ever match a destructive button (see modals.js Escape handling). */
+  .btn-danger{background:transparent;color:var(--text-dim);}
+  .btn-danger:hover{border-color:var(--text-dim);color:var(--text);}
   .btn-submit{background:var(--accent);color:var(--accent-ink);border-color:transparent;}
   .btn-submit:hover:not(:disabled){filter:brightness(1.08);}
   .btn-submit:disabled{opacity:0.4;cursor:not-allowed;}

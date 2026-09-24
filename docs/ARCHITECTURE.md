@@ -24,7 +24,9 @@ read it; grep it for a specific heading only if this file lacks something).
 | `js/modules/state.js` | `appState` — every piece of mutable state (spots, marks, filters, markers, form state) |
 | `js/modules/constants.js` | Type colours/labels, country labels + fly targets, zoom thresholds, `motion()` |
 | `js/modules/regions.js` | `STATES_BY_COUNTRY` (static, ~620 lines) |
-| `js/modules/utils.js` | `typeSwatch`, `escapeHtml`, `directionsUrl`, `showToast` |
+| `js/modules/utils.js` | `typeSwatch`, `directionsUrl`, `showToast`; re-exports `escapeHtml`, `safeUrl` |
+| `js/modules/html-safe.js` | Pure `escapeHtml` (all of `& < > " ' \``) and `safeUrl` (http/https only). Every DB/form value in markup goes through these |
+| `js/modules/popup-html.js`, `moderation-html.js` | Pure HTML builders for the map popup and the pending-review cards (no DOM, unit-tested) |
 | `js/modules/map.js` | Map, clustering, label tiers, markers, popups, legend, first-visit hint |
 | `js/modules/sidebar.js` | `render()`, filters, search, header nav, Saved button, `toggleMark` |
 | `js/modules/modals.js` | Modal focus/Escape handling, add/edit/report forms, Privacy/Terms |
@@ -101,8 +103,18 @@ badges in between.
 
 ## Offline / PWA (`sw.js`)
 Shell precached (`SHELL_FILES`); bump `CACHE_VERSION` (:5) whenever a
-precached file changes. Tiles cache-first, Supabase network-first, the rest
-stale-while-revalidate.
+precached file changes. Tiles cache-first, the rest stale-while-revalidate.
+Supabase: ONLY the public `GET /rest/v1/spots?...status=eq.approved` read is
+cached (network-first); marks/sessions/moderator/pending/auth and every write
+are never intercepted (the Cache API ignores `Authorization`, so caching them
+would leak across users). Popup/modal buttons use `data-*` + one delegated
+listener (no inline `onclick`, no `window.__*`); Escape only clicks
+`[data-modal-close]`.
+
+## Tests
+`node --test "tests/*.test.js"` (Node 24, no install): escaping/URL safety,
+hostile-input rendering of popup + moderator panel, service-worker caching
+(vm sandbox), static checks (no inline handlers, modal-close markers).
 
 ## Querying the seed data
 ```

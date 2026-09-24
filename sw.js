@@ -2,7 +2,7 @@
 //
 // Bump CACHE_VERSION whenever a precached file's content changes so
 // clients pick up the new version instead of serving stale files forever.
-const CACHE_VERSION = 'v4';
+const CACHE_VERSION = 'v5';   // v5: private Supabase reads are no longer cached; activating v5 deletes the old v4 data cache that held them
 const SHELL_CACHE = 'climbatlas-shell-' + CACHE_VERSION;
 const RUNTIME_CACHE = 'climbatlas-runtime-' + CACHE_VERSION;
 const TILE_CACHE = 'climbatlas-tiles-' + CACHE_VERSION;
@@ -23,6 +23,9 @@ const SHELL_FILES = [
   'js/modules/constants.js',
   'js/modules/regions.js',
   'js/modules/utils.js',
+  'js/modules/html-safe.js',
+  'js/modules/popup-html.js',
+  'js/modules/moderation-html.js',
   'js/modules/map.js',
   'js/modules/sidebar.js',
   'js/modules/modals.js',
@@ -44,6 +47,27 @@ const TILE_HOSTS = ['basemaps.cartocdn.com'];
 // updating if the project URL's path ever changes.
 const SUPABASE_HOST_SUFFIX = '.supabase.co';
 
+// The ONLY Supabase response that may be cached: the public read of approved spots
+// (GET /rest/v1/spots?...&status=eq.approved, paged with offset/limit). Under RLS that result is identical for every
+// visitor. Everything else under /rest/ is per-user or moderator-only (marks, sessions, session_climbs, moderators,
+// pending_edits, reports, pending spots, a submitter's own rows...) and must never be written to Cache Storage: the
+// Cache API keys on the URL alone, not on the Authorization header, so a cached private response would later be served
+// to a different user or after sign-out on a shared device.
+function isPublicSpotsRead(url) {
+  return url.pathname === '/rest/v1/spots'
+    && url.searchParams.get('status') === 'eq.approved'
+    && !url.searchParams.has('submitted_by');
+}
+
+// Belt and braces for the DATA cache only (the static/CDN caches legitimately hold responses such as Google Fonts CSS that
+// say "private"): a Supabase response that declares itself private / uncacheable is never stored, whatever the URL.
+function isStorable(response) {
+  if (!response || !response.ok) return false;
+  const cc = (response.headers && response.headers.get('Cache-Control')) || '';
+  const directives = cc.toLowerCase().split(',').map((d) => d.trim().split('=')[0]);
+  return !directives.includes('no-store') && !directives.includes('private');
+}
+
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(SHELL_CACHE)
@@ -60,9 +84,16 @@ self.addEventListener('activate', (event) => {
         names.filter((name) => name.startsWith('climbatlas-') && !keep.has(name))
           .map((name) => caches.delete(name))
       ))
+      .then(() => purgeNonPublicData())
       .then(() => self.clients.claim())
   );
 });
+
+async function purgeNonPublicData() {
+  const cache = await caches.open(DATA_CACHE);
+  const requests = await cache.keys();
+  await Promise.all(requests.filter((req) => !isPublicSpotsRead(new URL(req.url))).map((req) => cache.delete(req)));
+}
 
 async function staleWhileRevalidate(request, cacheName) {
   const cache = await caches.open(cacheName);
@@ -89,7 +120,7 @@ async function networkFirst(request, cacheName) {
   const cache = await caches.open(cacheName);
   try {
     const response = await fetch(request);
-    if (response && response.ok) cache.put(request, response.clone());
+    if (isStorable(response)) cache.put(request, response.clone());
     return response;
   } catch (err) {
     const cached = await cache.match(request);
@@ -110,10 +141,11 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Supabase data reads (spots, marks, etc.): try the network for freshness,
-  // fall back to the last-seen response when offline.
-  if (url.hostname.endsWith(SUPABASE_HOST_SUFFIX) && url.pathname.startsWith('/rest/')) {
-    event.respondWith(networkFirst(request, DATA_CACHE));
+  // Supabase reads. Only the public approved-spots list is cached (network-first, last-seen copy offline).
+  // Every other Supabase request -- private tables, moderator queues, auth -- is not intercepted at all, so it
+  // goes straight to the network and is never stored.
+  if (url.hostname.endsWith(SUPABASE_HOST_SUFFIX)) {
+    if (isPublicSpotsRead(url)) event.respondWith(networkFirst(request, DATA_CACHE));
     return;
   }
 
@@ -126,5 +158,5 @@ self.addEventListener('fetch', (event) => {
   if (isSameOrigin || isLibraryCdn) {
     event.respondWith(staleWhileRevalidate(request, isSameOrigin ? SHELL_CACHE : RUNTIME_CACHE));
   }
-  // Everything else (e.g. Supabase auth calls) goes straight to the network.
+  // Everything else goes straight to the network.
 });
