@@ -34,13 +34,13 @@ function renderLogbookList(){
   }
   list.innerHTML = appState.sessions.map(s=>{
     const climbs = s.session_climbs || [];
-    const chips = climbs.map(c=>`<span class="climb-chip ${c.sent?'sent':''}">${TYPE_LABELS[c.climb_type]||c.climb_type} ${escapeHtml(c.grade)}${c.attempts>1?` ×${c.attempts}`:''}</span>`).join('');
-    return `<div class="session-item" data-id="${s.id}">
-        <div class="pending-kind">${escapeHtml(s.session_date)} · ${MOOD_EMOJI[s.mood]||''} ${escapeHtml(spotLabel(s.spot_id))}</div>
+    const chips = climbs.map(c=>`<span class="climb-chip ${c.sent?'sent':''}">${escapeHtml(TYPE_LABELS[c.climb_type]||c.climb_type)} ${escapeHtml(c.grade)}${c.attempts>1?` ×${escapeHtml(c.attempts)}`:''}</span>`).join('');
+    return `<div class="session-item" data-id="${escapeHtml(s.id)}">
+        <div class="pending-kind">${escapeHtml(s.session_date)} · ${escapeHtml(MOOD_EMOJI[s.mood]||'')} ${escapeHtml(spotLabel(s.spot_id))}</div>
         ${chips ? `<div class="climb-chips">${chips}</div>` : '<div class="pending-notes">No climbs logged this session.</div>'}
         ${s.notes ? `<div class="pending-notes">${escapeHtml(s.notes)}</div>` : ''}
         <div class="pending-actions">
-          <button class="btn-cancel session-delete" data-id="${s.id}">Delete</button>
+          <button class="btn-danger session-delete" data-id="${escapeHtml(s.id)}">Delete</button>
         </div>
       </div>`;
   }).join('');
@@ -80,7 +80,7 @@ function renderClimbRows(){
           <option value="lead-climbing" ${c.climb_type==='lead-climbing'?'selected':''}>Lead</option>
         </select>
         <input type="text" class="climb-grade" data-field="grade" placeholder="Grade, e.g. V2" value="${escapeHtml(c.grade||'')}">
-        <input type="number" class="climb-attempts" data-field="attempts" min="1" value="${c.attempts||1}" title="Attempts">
+        <input type="number" class="climb-attempts" data-field="attempts" min="1" value="${Number(c.attempts)||1}" title="Attempts">
         <label class="climb-sent"><input type="checkbox" data-field="sent" ${c.sent?'checked':''}> Sent</label>
         <button type="button" class="remove-climb-btn" title="Remove">✕</button>
       </div>`).join('');

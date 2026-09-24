@@ -24,7 +24,9 @@ read it; grep it for a specific heading only if this file lacks something).
 | `js/modules/state.js` | `appState` — every piece of mutable state (spots, marks, filters, markers, form state) |
 | `js/modules/constants.js` | Type colours/labels, country labels + fly targets, zoom thresholds, `motion()` |
 | `js/modules/regions.js` | `STATES_BY_COUNTRY` (static, ~620 lines) |
-| `js/modules/utils.js` | `typeSwatch`, `escapeHtml`, `directionsUrl`, `showToast` |
+| `js/modules/utils.js` | `typeSwatch`, `directionsUrl`, `showToast`; re-exports `escapeHtml`, `safeUrl` |
+| `js/modules/html-safe.js` | Pure `escapeHtml` (all of `& < > " ' \``) and `safeUrl` (http/https only). Every DB/form value in markup goes through these |
+| `js/modules/popup-html.js`, `moderation-html.js` | Pure HTML builders for the map popup and the pending-review cards (no DOM, unit-tested) |
 | `js/modules/map.js` | Map, clustering, label tiers, markers, popups, legend, first-visit hint |
 | `js/modules/sidebar.js` | `render()`, filters, search, header nav, Saved button, `toggleMark` |
 | `js/modules/modals.js` | Modal focus/Escape handling, add/edit/report forms, Privacy/Terms |
@@ -32,9 +34,11 @@ read it; grep it for a specific heading only if this file lacks something).
 | `js/modules/data-load.js` | `loadSpots` (Supabase → `data/gyms.json` fallback), marks, moderator, pending |
 | `js/modules/logbook.js` | Logbook list + "Log a session" form |
 | `js/modules/moderation.js` | Pending-review panel, approve/reject/dismiss |
-| `data/gyms.json` | Seed dataset, 1,867 spots, pure JSON. **Never read — use `jq`** |
+| `data/gyms.json` | LEGACY seed dataset: offline fallback + "Revert to original" source in `data-load.js`/`modals.js` (ids stale vs production), and the reconciliation provenance input. **Never read; never edit** |
+| `data/gyms.reconciled.json` | FROZEN reconciliation/provenance dataset (2,127 records = production at the first import). Not a runtime file |
 | `supabase/schema.sql` | Tables, RLS, rate limit. Re-runnable |
-| `supabase/seed.html`, `geocode.html` | Seed-SQL generator; pin-position checker (both fetch `data/gyms.json`) |
+| `supabase/geocode.html` | Pin-position checker (fetches `data/gyms.json`). The legacy `seed.html` seed-SQL generator was removed |
+| `import/`, `scripts/gym-import.js`, `scripts/lib/gym-import/` | Gym import pipeline: staging batches, match index, validate/plan/dedupe. See `docs/import-workflow.md` |
 | `sw.js` | Service worker (`SHELL_FILES` :11 — add new JS/CSS files here) |
 | `docs/TASKS.md` | Open work only |
 | `docs/archive/` | Old long-form docs + data.js provenance comments. **Never read** |
@@ -50,9 +54,8 @@ MapLibre → Supercluster → Supabase CDN → `supabase-init.js` → `auth.js` 
   calls them in the original order: `initMap`, `initSidebar`,
   `initModalKeyboard`, `initAuthUI`, `initForms`, `initLogbook`,
   `initModeration`, `initInfoModals`.
-- Popup HTML uses inline `onclick` → globals `window.__toggleMark`
-  (`sidebar.js:271`), `__editSpot` (`modals.js:328`), `__reportSpot`
-  (`modals.js:402`).
+- Popup buttons carry `data-popup-action` + `data-spot-id`; one delegated click listener in `sidebar.js` handles them
+  (no inline `onclick`, no `window.__*` globals).
 - Imports form cycles (map ↔ sidebar ↔ modals); that's safe because
   top-level code only does DOM lookups and `new maplibregl.Map`. Keep it so.
 
@@ -61,7 +64,7 @@ MapLibre → Supercluster → Supabase CDN → `supabase-init.js` → `auth.js` 
 needs sign-in + rate limit :104), `pending_edits` (:134), `reports` (:177),
 `marks` (:204), `routes` (:248), `sessions` (:293), `session_climbs` (:335).
 
-Spot shape: `id` (`seed-N` for seed rows), `name`, `suburb`, `state`,
+Spot shape: `id` (`seed-N` legacy, `community-<uuid>`, or frozen `g-<hex>` for imported gyms), `name`, `suburb`, `state`,
 `country`, `lat`, `lng`, `address`, `types[]` (`indoor-bouldering` |
 `top-rope` | `lead-climbing`), `notes`, `community`. `state` codes collide
 across countries — always key on `country:state`.
@@ -101,8 +104,18 @@ badges in between.
 
 ## Offline / PWA (`sw.js`)
 Shell precached (`SHELL_FILES`); bump `CACHE_VERSION` (:5) whenever a
-precached file changes. Tiles cache-first, Supabase network-first, the rest
-stale-while-revalidate.
+precached file changes. Tiles cache-first, the rest stale-while-revalidate.
+Supabase: ONLY the public `GET /rest/v1/spots?...status=eq.approved` read is
+cached (network-first); marks/sessions/moderator/pending/auth and every write
+are never intercepted (the Cache API ignores `Authorization`, so caching them
+would leak across users). Popup/modal buttons use `data-*` + one delegated
+listener (no inline `onclick`, no `window.__*`); Escape only clicks
+`[data-modal-close]`.
+
+## Tests
+`node --test "tests/*.test.js"` (Node 24, no install): escaping/URL safety,
+hostile-input rendering of popup + moderator panel, service-worker caching
+(vm sandbox), static checks (no inline handlers, modal-close markers).
 
 ## Querying the seed data
 ```
@@ -110,5 +123,5 @@ jq length data/gyms.json
 jq '[.[]|select(.country=="JP")]|length' data/gyms.json
 jq -c '.[]|select(.name|test("Blochaus";"i"))' data/gyms.json
 ```
-Edit seed spots with `jq`/a script, keep `id`s stable, then regenerate SQL
-with `supabase/seed.html`.
+Read-only queries only: do not edit `data/gyms.json` (legacy, stale ids). New gyms go through the
+import pipeline (`docs/import-workflow.md`).

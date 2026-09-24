@@ -1,0 +1,19 @@
+{
+  "count": 2127,
+  "sha256": "fc944ec966989368498027c273371f7d137f7bc0afb19ec73213d6dc5a2b83b2",
+  "fields": [
+    "id",
+    "name",
+    "country",
+    "state",
+    "suburb",
+    "lat",
+    "lng",
+    "address",
+    "types",
+    "h"
+  ],
+  "source": "live:thayxaampaelvntoaido.supabase.co",
+  "built_from": "GET /rest/v1/spots?status=eq.approved (anon, read-only)",
+  "note": "Derived from production spots (approved). Not a source of truth; rebuild rather than edit."
+}

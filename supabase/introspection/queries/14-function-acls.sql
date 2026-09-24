@@ -1,0 +1,1 @@
+select coalesce(json_agg(json_build_object('function',p.proname,'acl',p.proacl::text) order by p.proname),'[]'::json) as data from pg_proc p join pg_namespace n on n.oid=p.pronamespace where n.nspname='public' and not exists (select 1 from pg_depend d where d.objid=p.oid and d.deptype='e');

@@ -1,0 +1,17 @@
+[
+ {
+  "comment": null,
+  "def": "CREATE OR REPLACE FUNCTION public.pin_community_submission()\n RETURNS trigger\n LANGUAGE plpgsql\n SET search_path TO 'public'\nAS $function$\r\nbegin\r\n  if auth.uid() is not null then\r\n    new.created_at   := now();\r\n    new.updated_at   := now();\r\n    new.community    := true;\r\n    new.edited       := false;\r\n    new.status       := 'pending';\r\n    new.submitted_by := auth.uid();\r\n    -- Client ids must look like our own 'community-<uuid>' scheme; anything\r\n    -- else (an injected string, a spoofed 'seed-N') is replaced server-side.\r\n    if new.id is null or new.id !~ '^community-[0-9a-f-]{36}$' then\r\n      new.id := 'community-' || gen_random_uuid()::text;\r\n    end if;\r\n  end if;\r\n  return new;\r\nend;\r\n$function$\n",
+  "name": "pin_community_submission"
+ },
+ {
+  "comment": null,
+  "def": "CREATE OR REPLACE FUNCTION public.recent_submission_count()\n RETURNS integer\n LANGUAGE sql\n STABLE SECURITY DEFINER\n SET search_path TO 'public'\nAS $function$\r\n  select count(*)::integer from public.spots\r\n  where submitted_by = auth.uid()\r\n    and created_at > now() - interval '1 day';\r\n$function$\n",
+  "name": "recent_submission_count"
+ },
+ {
+  "comment": null,
+  "def": "CREATE OR REPLACE FUNCTION public.touch_updated_at()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\r\nbegin\r\n  new.updated_at := now();\r\n  return new;\r\nend;\r\n$function$\n",
+  "name": "touch_updated_at"
+ }
+]

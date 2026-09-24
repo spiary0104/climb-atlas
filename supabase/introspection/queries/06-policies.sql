@@ -1,0 +1,1 @@
+select coalesce(json_agg(json_build_object('schema',schemaname,'table',tablename,'name',policyname,'permissive',permissive,'roles',roles,'cmd',cmd,'using',qual,'with_check',with_check) order by schemaname,tablename,policyname),'[]'::json) as data from pg_policies where schemaname not in ('pg_catalog','information_schema');

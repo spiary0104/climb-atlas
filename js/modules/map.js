@@ -1,8 +1,9 @@
 // MapLibre map: globe setup, clustering, region/country/continent labels, markers, popups, legend, first-visit hint.
-import { CONTINENT_LABEL_ZOOM, COUNTRY_LABELS, COUNTRY_LABEL_ZOOM, COUNTRY_TO_REGION, HOLD_ICON_ZOOM, REGION_FLY_TARGETS, REGION_LABELS, TYPE_LABELS, motion } from './constants.js';
+import { CONTINENT_LABEL_ZOOM, COUNTRY_LABELS, COUNTRY_LABEL_ZOOM, COUNTRY_TO_REGION, HOLD_ICON_ZOOM, REGION_FLY_TARGETS, REGION_LABELS, motion } from './constants.js';
 import { STATES_BY_COUNTRY } from './regions.js';
 import { appState } from './state.js';
-import { directionsUrl, escapeHtml, typeSwatch } from './utils.js';
+import { buildPopupHtml } from './popup-html.js';
+import { typeSwatch } from './utils.js';
 
 // Fixed starting view, not a fitBounds-to-data fit: AU and US spots sit on
 // opposite sides of the Pacific, and LngLatBounds.extend() just tracks
@@ -313,23 +314,11 @@ function buildSpotNumberMarker(g){
 }
 
 export function popupHtml(g){
-  const typeLabel = g.types.map(t=>TYPE_LABELS[t]).join(' · ');
-  const climbed = appState.climbedIds.has(g.id);
-  const bookmarked = appState.bookmarkedIds.has(g.id);
-  return `${g.photo?`<img class="popup-photo" src="${escapeHtml(g.photo)}" alt="${escapeHtml(g.name)}" onerror="this.style.display='none'">`:''}
-       <div class="popup-name">${escapeHtml(g.name)}</div>
-       <div class="popup-meta">${escapeHtml(g.suburb)}, ${escapeHtml(stateLabel(g.country, g.state))} · ${typeLabel}${g.community?' · community-added':''}${g.edited?' · edited':''}</div>
-       ${g.address?`<div class="popup-address">${escapeHtml(g.address)}</div>`:''}
-       ${g.notes?`<div style="font-size:12px;color:var(--text-dim)">${escapeHtml(g.notes)}</div>`:''}
-       <div class="popup-actions">
-         <button class="mark-btn climbed-btn ${climbed?'active':''}" onclick="window.__toggleMark('${g.id}','climbed')">✓ Climbed</button>
-         <button class="mark-btn bookmark-btn ${bookmarked?'active':''}" onclick="window.__toggleMark('${g.id}','bookmarked')">★ Save</button>
-       </div>
-       <div class="popup-links">
-         <a class="popup-directions-btn" href="${directionsUrl(g)}" target="_blank" rel="noopener noreferrer">📍 Directions</a>
-         <button class="popup-edit-btn" onclick="window.__editSpot('${g.id}')">Edit this spot</button>
-       </div>
-       <button class="popup-report-btn" onclick="window.__reportSpot('${g.id}')">⚑ Report incorrect info</button>`;
+  return buildPopupHtml(g, {
+    climbed: appState.climbedIds.has(g.id),
+    bookmarked: appState.bookmarkedIds.has(g.id),
+    region: stateLabel(g.country, g.state)
+  });
 }
 
 // Collapsed by default on narrow viewports, since the full legend text

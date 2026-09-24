@@ -1,0 +1,314 @@
+[
+ {
+  "cmd": "INSERT",
+  "name": "users can add their own marks",
+  "permissive": "PERMISSIVE",
+  "roles": [
+   "public"
+  ],
+  "schema": "public",
+  "table": "marks",
+  "using": null,
+  "with_check": "(auth.uid() = user_id)"
+ },
+ {
+  "cmd": "DELETE",
+  "name": "users can remove their own marks",
+  "permissive": "PERMISSIVE",
+  "roles": [
+   "public"
+  ],
+  "schema": "public",
+  "table": "marks",
+  "using": "(auth.uid() = user_id)",
+  "with_check": null
+ },
+ {
+  "cmd": "SELECT",
+  "name": "users can view their own marks",
+  "permissive": "PERMISSIVE",
+  "roles": [
+   "public"
+  ],
+  "schema": "public",
+  "table": "marks",
+  "using": "(auth.uid() = user_id)",
+  "with_check": null
+ },
+ {
+  "cmd": "SELECT",
+  "name": "users can check their own moderator status",
+  "permissive": "PERMISSIVE",
+  "roles": [
+   "public"
+  ],
+  "schema": "public",
+  "table": "moderators",
+  "using": "(auth.uid() = user_id)",
+  "with_check": null
+ },
+ {
+  "cmd": "INSERT",
+  "name": "anyone can propose an edit",
+  "permissive": "PERMISSIVE",
+  "roles": [
+   "public"
+  ],
+  "schema": "public",
+  "table": "pending_edits",
+  "using": null,
+  "with_check": "true"
+ },
+ {
+  "cmd": "DELETE",
+  "name": "moderators can remove pending edits",
+  "permissive": "PERMISSIVE",
+  "roles": [
+   "public"
+  ],
+  "schema": "public",
+  "table": "pending_edits",
+  "using": "(auth.uid() IN ( SELECT moderators.user_id\n   FROM moderators))",
+  "with_check": null
+ },
+ {
+  "cmd": "SELECT",
+  "name": "moderators can view pending edits",
+  "permissive": "PERMISSIVE",
+  "roles": [
+   "public"
+  ],
+  "schema": "public",
+  "table": "pending_edits",
+  "using": "(auth.uid() IN ( SELECT moderators.user_id\n   FROM moderators))",
+  "with_check": null
+ },
+ {
+  "cmd": "INSERT",
+  "name": "anyone can submit a report",
+  "permissive": "PERMISSIVE",
+  "roles": [
+   "public"
+  ],
+  "schema": "public",
+  "table": "reports",
+  "using": null,
+  "with_check": "true"
+ },
+ {
+  "cmd": "DELETE",
+  "name": "moderators can dismiss reports",
+  "permissive": "PERMISSIVE",
+  "roles": [
+   "public"
+  ],
+  "schema": "public",
+  "table": "reports",
+  "using": "(auth.uid() IN ( SELECT moderators.user_id\n   FROM moderators))",
+  "with_check": null
+ },
+ {
+  "cmd": "SELECT",
+  "name": "moderators can view reports",
+  "permissive": "PERMISSIVE",
+  "roles": [
+   "public"
+  ],
+  "schema": "public",
+  "table": "reports",
+  "using": "(auth.uid() IN ( SELECT moderators.user_id\n   FROM moderators))",
+  "with_check": null
+ },
+ {
+  "cmd": "SELECT",
+  "name": "routes are publicly readable",
+  "permissive": "PERMISSIVE",
+  "roles": [
+   "public"
+  ],
+  "schema": "public",
+  "table": "routes",
+  "using": "true",
+  "with_check": null
+ },
+ {
+  "cmd": "INSERT",
+  "name": "signed-in users can add routes",
+  "permissive": "PERMISSIVE",
+  "roles": [
+   "public"
+  ],
+  "schema": "public",
+  "table": "routes",
+  "using": null,
+  "with_check": "((auth.uid() IS NOT NULL) AND (submitted_by = auth.uid()))"
+ },
+ {
+  "cmd": "DELETE",
+  "name": "submitter or moderator can delete a route",
+  "permissive": "PERMISSIVE",
+  "roles": [
+   "public"
+  ],
+  "schema": "public",
+  "table": "routes",
+  "using": "((submitted_by = auth.uid()) OR (auth.uid() IN ( SELECT moderators.user_id\n   FROM moderators)))",
+  "with_check": null
+ },
+ {
+  "cmd": "UPDATE",
+  "name": "submitter or moderator can update a route",
+  "permissive": "PERMISSIVE",
+  "roles": [
+   "public"
+  ],
+  "schema": "public",
+  "table": "routes",
+  "using": "((submitted_by = auth.uid()) OR (auth.uid() IN ( SELECT moderators.user_id\n   FROM moderators)))",
+  "with_check": null
+ },
+ {
+  "cmd": "INSERT",
+  "name": "users can add climbs to their own sessions",
+  "permissive": "PERMISSIVE",
+  "roles": [
+   "public"
+  ],
+  "schema": "public",
+  "table": "session_climbs",
+  "using": null,
+  "with_check": "(session_id IN ( SELECT sessions.id\n   FROM sessions\n  WHERE (sessions.user_id = auth.uid())))"
+ },
+ {
+  "cmd": "DELETE",
+  "name": "users can delete climbs on their own sessions",
+  "permissive": "PERMISSIVE",
+  "roles": [
+   "public"
+  ],
+  "schema": "public",
+  "table": "session_climbs",
+  "using": "(session_id IN ( SELECT sessions.id\n   FROM sessions\n  WHERE (sessions.user_id = auth.uid())))",
+  "with_check": null
+ },
+ {
+  "cmd": "UPDATE",
+  "name": "users can update climbs on their own sessions",
+  "permissive": "PERMISSIVE",
+  "roles": [
+   "public"
+  ],
+  "schema": "public",
+  "table": "session_climbs",
+  "using": "(session_id IN ( SELECT sessions.id\n   FROM sessions\n  WHERE (sessions.user_id = auth.uid())))",
+  "with_check": null
+ },
+ {
+  "cmd": "SELECT",
+  "name": "users can view climbs on their own sessions",
+  "permissive": "PERMISSIVE",
+  "roles": [
+   "public"
+  ],
+  "schema": "public",
+  "table": "session_climbs",
+  "using": "(session_id IN ( SELECT sessions.id\n   FROM sessions\n  WHERE (sessions.user_id = auth.uid())))",
+  "with_check": null
+ },
+ {
+  "cmd": "INSERT",
+  "name": "users can add their own sessions",
+  "permissive": "PERMISSIVE",
+  "roles": [
+   "public"
+  ],
+  "schema": "public",
+  "table": "sessions",
+  "using": null,
+  "with_check": "(auth.uid() = user_id)"
+ },
+ {
+  "cmd": "DELETE",
+  "name": "users can delete their own sessions",
+  "permissive": "PERMISSIVE",
+  "roles": [
+   "public"
+  ],
+  "schema": "public",
+  "table": "sessions",
+  "using": "(auth.uid() = user_id)",
+  "with_check": null
+ },
+ {
+  "cmd": "UPDATE",
+  "name": "users can update their own sessions",
+  "permissive": "PERMISSIVE",
+  "roles": [
+   "public"
+  ],
+  "schema": "public",
+  "table": "sessions",
+  "using": "(auth.uid() = user_id)",
+  "with_check": null
+ },
+ {
+  "cmd": "SELECT",
+  "name": "users can view their own sessions",
+  "permissive": "PERMISSIVE",
+  "roles": [
+   "public"
+  ],
+  "schema": "public",
+  "table": "sessions",
+  "using": "(auth.uid() = user_id)",
+  "with_check": null
+ },
+ {
+  "cmd": "SELECT",
+  "name": "approved spots are publicly readable, moderators see all, submi",
+  "permissive": "PERMISSIVE",
+  "roles": [
+   "public"
+  ],
+  "schema": "public",
+  "table": "spots",
+  "using": "((status = 'approved'::text) OR (auth.uid() IN ( SELECT moderators.user_id\n   FROM moderators)) OR (submitted_by = auth.uid()))",
+  "with_check": null
+ },
+ {
+  "cmd": "DELETE",
+  "name": "moderators can delete spots",
+  "permissive": "PERMISSIVE",
+  "roles": [
+   "public"
+  ],
+  "schema": "public",
+  "table": "spots",
+  "using": "(auth.uid() IN ( SELECT moderators.user_id\n   FROM moderators))",
+  "with_check": null
+ },
+ {
+  "cmd": "UPDATE",
+  "name": "moderators can update spots",
+  "permissive": "PERMISSIVE",
+  "roles": [
+   "public"
+  ],
+  "schema": "public",
+  "table": "spots",
+  "using": "(auth.uid() IN ( SELECT moderators.user_id\n   FROM moderators))",
+  "with_check": null
+ },
+ {
+  "cmd": "INSERT",
+  "name": "signed-in users can propose a new spot as pending, rate-limited",
+  "permissive": "PERMISSIVE",
+  "roles": [
+   "public"
+  ],
+  "schema": "public",
+  "table": "spots",
+  "using": null,
+  "with_check": "((status = 'pending'::text) AND (auth.uid() IS NOT NULL) AND (submitted_by = auth.uid()) AND (recent_submission_count() < 10))"
+ }
+]

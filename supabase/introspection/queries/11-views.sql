@@ -1,0 +1,1 @@
+select json_build_object('views',(select coalesce(json_agg(json_build_object('name',viewname,'definition',definition)),'[]'::json) from pg_views where schemaname='public'),'matviews',(select coalesce(json_agg(json_build_object('name',matviewname,'definition',definition)),'[]'::json) from pg_matviews where schemaname='public')) as data;

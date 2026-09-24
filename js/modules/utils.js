@@ -1,17 +1,13 @@
 // Small shared helpers: HTML escaping, directions links, type swatches, toast.
 import { TYPE_COLORS } from './constants.js';
+// escapeHtml / safeUrl live in html-safe.js (pure, unit-tested); re-exported so existing imports keep working.
+export { escapeHtml, safeUrl } from './html-safe.js';
 
 export function typeSwatch(types){
   const colors = (types&&types.length?types:['indoor-bouldering']).map(t=>TYPE_COLORS[t]||'#999');
   if(colors.length === 1) return colors[0];
   const step = 100/colors.length;
   return `conic-gradient(${colors.map((c,i)=>`${c} ${i*step}% ${(i+1)*step}%`).join(', ')})`;
-}
-
-export function escapeHtml(str){
-  const d = document.createElement('div');
-  d.textContent = str;
-  return d.innerHTML;
 }
 
 // Deliberately just destination + lat/lng, no origin -- Google Maps fills

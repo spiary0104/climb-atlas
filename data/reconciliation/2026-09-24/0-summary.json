@@ -1,0 +1,30 @@
+{
+  "generated": "2026-09-24T06:28:43.264Z",
+  "live_rows": 1881,
+  "repo_rows": 2133,
+  "matched": 1881,
+  "by_tier": {
+    "T1-exact-id": 1227,
+    "T2-same-name": 654
+  },
+  "exact_same_id": 1227,
+  "id_replacements": 654,
+  "new_gyms_get_new_ids": 249,
+  "ambiguous": 0,
+  "possible_duplicates_of_live_gyms": 3,
+  "probable_needs_review": 0,
+  "unmatched_live": 0,
+  "repo_gyms_currently_holding_a_live_id_of_a_different_gym": 654,
+  "duplicate_candidates_in_repo": 106,
+  "new_gyms_within_60m_of_live_gym": 0,
+  "matched_gyms_whose_repo_content_differs_from_live": 1,
+  "drift_by_field": {
+    "name": 1,
+    "notes": 1,
+    "types": 1
+  },
+  "final_ids_unique": true,
+  "final_ids_assigned": 2130,
+  "final_ids_pending_human_decision": 3,
+  "live_ids_preserved": 1881
+}

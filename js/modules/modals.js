@@ -4,7 +4,7 @@ import { ensureSeedData } from './data-load.js';
 import { map } from './map.js';
 import { STATES_BY_COUNTRY } from './regions.js';
 import { appState } from './state.js';
-import { showToast } from './utils.js';
+import { escapeHtml, safeUrl, showToast } from './utils.js';
 
 // --- modal keyboard/focus handling ---
 // Every modal is a .modal-backdrop toggled via the `hidden` class by its own
@@ -12,13 +12,14 @@ import { showToast } from './utils.js';
 // of those, watch the class flips: on open, remember what had focus and move
 // it into the dialog; on close, put it back. Escape triggers the dialog's own
 // cancel/close button so each modal's existing close logic still runs.
+const DESTRUCTIVE = '.btn-danger, .pending-reject, .pending-dismiss, .pending-approve, .session-delete, [data-destructive]';
 const FOCUSABLE = 'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
 // --- country/state dropdowns (shared by add + edit forms) ---
 function populateStateSelect(stateSelectId, country){
   const sel = document.getElementById(stateSelectId);
   const prevValue = sel.value;
-  sel.innerHTML = STATES_BY_COUNTRY[country].map(([code,label])=>`<option value="${code}">${label}</option>`).join('');
+  sel.innerHTML = STATES_BY_COUNTRY[country].map(([code,label])=>`<option value="${escapeHtml(code)}">${escapeHtml(label)}</option>`).join('');
   if(STATES_BY_COUNTRY[country].some(([code])=>code===prevValue)) sel.value = prevValue;
 }
 // "Other (not listed)" lets someone propose a country this map doesn't support
@@ -159,7 +160,7 @@ const reportModalBackdrop = document.getElementById('reportModalBackdrop');
 const rMessage = document.getElementById('rMessage');
 const rSubmitBtn = document.getElementById('rSubmitBtn');
 
-function openReportModal(id){
+export function openReportModal(id){
   const g = appState.spots.find(x=>x.id===id);
   if(!g) return;
   appState.currentReportId = id;
@@ -198,8 +199,12 @@ export function initModalKeyboard(){
     const open = [...document.querySelectorAll('.modal-backdrop')].filter(b=>!b.classList.contains('hidden')).pop();
     if(!open) return;
     if(e.key === 'Escape'){
-      const closeBtn = open.querySelector('.btn-cancel, .info-close');
-      if(closeBtn){ e.preventDefault(); closeBtn.click(); }
+      // Only ever click a control explicitly marked data-modal-close. The old selector ('.btn-cancel, .info-close')
+      // matched the FIRST .btn-cancel in DOM order, which in the Pending-review and Logbook modals is a Reject /
+      // Delete button rendered above the real Close -- so Escape silently rejected a spot or deleted a session.
+      // DESTRUCTIVE is a second guard in case a marker is ever put on the wrong element.
+      const closeBtn = open.querySelector('[data-modal-close]');
+      if(closeBtn && !closeBtn.matches(DESTRUCTIVE)){ e.preventDefault(); closeBtn.click(); }
     } else if(e.key === 'Tab'){
       const items = [...open.querySelectorAll('.modal ' + FOCUSABLE)].filter(el=>el.offsetParent !== null);
       if(!items.length) return;
@@ -289,6 +294,8 @@ export function initForms(){
     const user = window.auth.user;
     if(!user){ showToast('Sign in to add a location'); closeModal(); openAuthModal(); return; }
     const {country, state} = getCountryState('f');
+    const fPhotoRaw = document.getElementById('fPhoto').value.trim();
+    if(fPhotoRaw && !safeUrl(fPhotoRaw)){ showToast('Photo link must be a full http:// or https:// address'); return; }
     const gym = {
       id: 'community-' + (window.crypto && crypto.randomUUID ? crypto.randomUUID() : Date.now()),
       name: document.getElementById('fName').value.trim(),
@@ -298,7 +305,7 @@ export function initForms(){
       types: selectedTypes(),
       address: document.getElementById('fAddress').value.trim() || null,
       notes: document.getElementById('fNotes').value.trim() || null,
-      photo: document.getElementById('fPhoto').value.trim() || null,
+      photo: fPhotoRaw ? safeUrl(fPhotoRaw) : null,
       lat: appState.placingPin.lat,
       lng: appState.placingPin.lng,
       submitted_by: user.id,
@@ -325,7 +332,6 @@ export function initForms(){
       submitBtn.disabled = false;
     }
   });
-  window.__editSpot = openEditModal;
   document.getElementById('eCancelBtn').addEventListener('click', closeEditModal);
 
   document.getElementById('eDropPinBtn').addEventListener('click', ()=>{
@@ -347,6 +353,8 @@ export function initForms(){
     if(!appState.currentEditId || !appState.currentEditPin) return;
     if(!window.sb){ showToast('Supabase is not configured — see README.md'); return; }
     const {country, state} = getCountryState('e');
+    const ePhotoRaw = document.getElementById('ePhoto').value.trim();
+    if(ePhotoRaw && !safeUrl(ePhotoRaw)){ showToast('Photo link must be a full http:// or https:// address'); return; }
     const proposal = {
       spot_id: appState.currentEditId,
       name: document.getElementById('eName').value.trim(),
@@ -356,7 +364,7 @@ export function initForms(){
       types: selectedEditTypes(),
       address: document.getElementById('eAddress').value.trim() || null,
       notes: document.getElementById('eNotes').value.trim() || null,
-      photo: document.getElementById('ePhoto').value.trim() || null,
+      photo: ePhotoRaw ? safeUrl(ePhotoRaw) : null,
       lat: appState.currentEditPin.lat,
       lng: appState.currentEditPin.lng
     };
@@ -399,7 +407,6 @@ export function initForms(){
       console.error(err);
     }
   });
-  window.__reportSpot = openReportModal;
   document.getElementById('rCancelBtn').addEventListener('click', closeReportModal);
 
   rMessage.addEventListener('input', ()=>{

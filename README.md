@@ -18,7 +18,6 @@ js/main.js              Entry point (ES module) — wires up js/modules/* in ord
 js/modules/             map, sidebar, modals, auth-ui, data-load, logbook, moderation, state, …
 css/chips.css           Per-region chip colours (keyed on data-country/data-state)
 supabase/schema.sql      Run once in the Supabase SQL Editor — creates spots, pending_edits, reports, moderators, marks
-supabase/seed.html       Run once in a browser — loads the spots table from data/gyms.json
 supabase/geocode.html    Maintenance tool — re-geocodes spot addresses against OpenStreetMap
                          Nominatim to fix inaccurate pin positions, see "Fixing pin positions" below
 ```
@@ -28,8 +27,8 @@ Script load order in `index.html` matters: the Supabase JS CDN script, then
 `js/main.js` (an ES module, so the site must be served over HTTP), which depends on both.
 `data/gyms.json` (~900KB) is not loaded on page load — `js/modules/data-load.js` fetches it on demand (`ensureSeedData()`, sets `window.SEED_GYMS`) only when
 Supabase is unreachable (the offline fallback) or when an edited seed spot's original
-values are needed for "Revert to original". `supabase/seed.html` and `geocode.html` fetch
-it too.
+values are needed for "Revert to original". `supabase/geocode.html` fetches it too.
+(It is a legacy dataset whose ids no longer match production; see `docs/import-workflow.md`, "Retiring `data/gyms.json`".)
 
 ## Setup (required — the app doesn't do anything useful until this is done)
 
@@ -63,8 +62,11 @@ means the first request after a pause takes a few seconds to wake it back up).
 5. **Fill in `js/supabase-init.js`** with your project's URL and anon/public key
    (Dashboard → Project Settings → API). The anon key is meant to be public/client-side —
    access control comes from the RLS policies in `schema.sql`, not from hiding this key.
-6. **Seed the spots table.** Open `supabase/seed.html` in a browser and click the button.
-   It loads `data/gyms.json` and upserts every seed spot as `status = 'approved'` — safe to re-run.
+6. **Seed the spots table.** The old browser seeding page (`supabase/seed.html`) was removed: `data/gyms.json`'s ids no
+   longer match production, so re-running it would have overwritten real rows. The production database is already
+   populated and new gyms are added only through the import pipeline (`docs/import-workflow.md`). Bootstrapping an *empty*
+   Supabase project is not currently a supported workflow (the importer targets the production project or localhost, 1,000
+   rows per batch); `data/gyms.reconciled.json` is the frozen dataset that matches production.
 7. **Add yourself as a moderator** (so you can approve/reject submissions — see
    "Moderation" below). Sign in to the running app once with the account you want to use,
    then in the SQL Editor run:

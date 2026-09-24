@@ -1,0 +1,32 @@
+[
+ {
+  "schema": "public",
+  "name": "pin_community_submission",
+  "args": "",
+  "returns": "trigger",
+  "language": "plpgsql",
+  "security_definer": false,
+  "volatility": "v",
+  "owner": "postgres"
+ },
+ {
+  "schema": "public",
+  "name": "recent_submission_count",
+  "args": "",
+  "returns": "integer",
+  "language": "sql",
+  "security_definer": true,
+  "volatility": "s",
+  "owner": "postgres"
+ },
+ {
+  "schema": "public",
+  "name": "touch_updated_at",
+  "args": "",
+  "returns": "trigger",
+  "language": "plpgsql",
+  "security_definer": false,
+  "volatility": "v",
+  "owner": "postgres"
+ }
+]

@@ -1,0 +1,72 @@
+[
+ {
+  "table": "marks",
+  "name": "marks_pkey",
+  "definition": "CREATE UNIQUE INDEX marks_pkey ON public.marks USING btree (user_id, spot_id, mark_type)"
+ },
+ {
+  "table": "marks",
+  "name": "marks_user_id_idx",
+  "definition": "CREATE INDEX marks_user_id_idx ON public.marks USING btree (user_id)"
+ },
+ {
+  "table": "moderators",
+  "name": "moderators_pkey",
+  "definition": "CREATE UNIQUE INDEX moderators_pkey ON public.moderators USING btree (user_id)"
+ },
+ {
+  "table": "pending_edits",
+  "name": "pending_edits_pkey",
+  "definition": "CREATE UNIQUE INDEX pending_edits_pkey ON public.pending_edits USING btree (id)"
+ },
+ {
+  "table": "reports",
+  "name": "reports_pkey",
+  "definition": "CREATE UNIQUE INDEX reports_pkey ON public.reports USING btree (id)"
+ },
+ {
+  "table": "routes",
+  "name": "routes_pkey",
+  "definition": "CREATE UNIQUE INDEX routes_pkey ON public.routes USING btree (id)"
+ },
+ {
+  "table": "routes",
+  "name": "routes_spot_id_idx",
+  "definition": "CREATE INDEX routes_spot_id_idx ON public.routes USING btree (spot_id)"
+ },
+ {
+  "table": "session_climbs",
+  "name": "session_climbs_pkey",
+  "definition": "CREATE UNIQUE INDEX session_climbs_pkey ON public.session_climbs USING btree (id)"
+ },
+ {
+  "table": "session_climbs",
+  "name": "session_climbs_route_id_idx",
+  "definition": "CREATE INDEX session_climbs_route_id_idx ON public.session_climbs USING btree (route_id)"
+ },
+ {
+  "table": "session_climbs",
+  "name": "session_climbs_session_id_idx",
+  "definition": "CREATE INDEX session_climbs_session_id_idx ON public.session_climbs USING btree (session_id)"
+ },
+ {
+  "table": "sessions",
+  "name": "sessions_pkey",
+  "definition": "CREATE UNIQUE INDEX sessions_pkey ON public.sessions USING btree (id)"
+ },
+ {
+  "table": "sessions",
+  "name": "sessions_spot_id_idx",
+  "definition": "CREATE INDEX sessions_spot_id_idx ON public.sessions USING btree (spot_id)"
+ },
+ {
+  "table": "sessions",
+  "name": "sessions_user_id_idx",
+  "definition": "CREATE INDEX sessions_user_id_idx ON public.sessions USING btree (user_id)"
+ },
+ {
+  "table": "spots",
+  "name": "spots_pkey",
+  "definition": "CREATE UNIQUE INDEX spots_pkey ON public.spots USING btree (id)"
+ }
+]

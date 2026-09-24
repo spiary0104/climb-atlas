@@ -2,7 +2,7 @@
 import { openAuthModal } from './auth-ui.js';
 import { COUNTRY_FLY_TARGETS, COUNTRY_LABELS, REGION_FLY_TARGETS, motion } from './constants.js';
 import { map, popupHtml, rebuildClusterIndex, spotMarkerClasses, stateLabel } from './map.js';
-import { openEditModal } from './modals.js';
+import { openEditModal, openReportModal } from './modals.js';
 import { appState } from './state.js';
 import { escapeHtml, showToast, typeSwatch } from './utils.js';
 
@@ -227,6 +227,31 @@ export function initSidebar(){
     render();
   });
 
+  // Featured "worth traveling for" destinations: pure navigation, not a
+  // filter -- unlike a chip click this never touches activeStates. Mirrors
+  // the .country-label branch above (fly to COUNTRY_FLY_TARGETS and expand
+  // that country's group and its parent region), but lives in its own
+  // listener since .featured-destinations sits outside #stateChips.
+  document.getElementById('featuredDestinations').addEventListener('click', (e)=>{
+    const btn = e.target.closest('.featured-chip');
+    if(!btn) return;
+    const code = btn.dataset.country;
+    const target = COUNTRY_FLY_TARGETS[code];
+    if(target) map.flyTo({center: target.center, zoom: target.zoom, duration: motion(1500)});
+    const group = document.querySelector('.country-group[data-country="'+code+'"]');
+    if(group){
+      group.classList.remove('collapsed');
+      const label = group.querySelector('.country-label');
+      if(label) label.setAttribute('aria-expanded', 'true');
+      const region = group.closest('.region-group');
+      if(region){
+        region.classList.remove('collapsed');
+        const header = region.querySelector('.region-header');
+        if(header) header.setAttribute('aria-expanded', 'true');
+      }
+    }
+  });
+
   document.getElementById('typeFilters').addEventListener('change', (e)=>{
     const input = e.target.closest('input[data-type]');
     if(!input) return;
@@ -268,5 +293,22 @@ export function initSidebar(){
     render();
     if(window.innerWidth <= 760) document.getElementById('sidebar').classList.add('open');
   });
-  window.__toggleMark = toggleMark;
+
+  // Popup buttons carry data-popup-action / data-spot-id (see popup-html.js) instead of inline onclick handlers, so a
+  // spot id can never be interpreted as code. Popups are re-rendered with setHTML, hence one delegated listener.
+  document.addEventListener('click', (e)=>{
+    const btn = e.target.closest('[data-popup-action]');
+    if(!btn) return;
+    const id = btn.dataset.spotId;
+    switch(btn.dataset.popupAction){
+      case 'climbed':
+      case 'bookmarked': toggleMark(id, btn.dataset.popupAction); break;
+      case 'edit': openEditModal(id); break;
+      case 'report': openReportModal(id); break;
+    }
+  });
+  // <img> error events don't bubble, so a capture-phase listener replaces the old inline onerror="..." handler.
+  document.addEventListener('error', (e)=>{
+    if(e.target && e.target.matches && e.target.matches('img.popup-photo')) e.target.style.display = 'none';
+  }, true);
 }

@@ -1,0 +1,186 @@
+{
+  "generated": "2026-09-24",
+  "note": "Human-reviewed decisions applied by scripts/build-reconciled.js. Live spots.id values are canonical.",
+  "duplicates_removed": [
+    {
+      "remove_repo_id": "seed-1966",
+      "remove_name": "Tagy Climbing Center",
+      "same_gym_as_live_id": "seed-1228",
+      "retained_repo_record": "seed-1868",
+      "conclusion": "SAME PHYSICAL GYM",
+      "evidence": [
+        "Address: new record '3F, 293 Danjae-ro, Sangdang-gu, Cheongju' = live '충북 청주시 상당구 방서동 단재로 293' (293 Danjae-ro, Sangdang-gu): same street and number.",
+        "Same name (live adds the Korean form 타기클라이밍센터), same country/state (KR / CHUNGCHEONGBUK), same district, same type (indoor-bouldering).",
+        "Pin gap of 7.3 km is not a different entrance: the new pin is a street-only Nominatim match (its own notes say the house number was not in OSM and it may be off along a long road), whereas the live pin is an exact address-point geocode (ArcGIS score 100)."
+      ],
+      "action": "Drop seed-1966. Keep the live-matched record (repo seed-1868, live id seed-1228, exact live pin). Its useful 2026 recency evidence is appended to the retained record's notes."
+    },
+    {
+      "remove_repo_id": "seed-1970",
+      "remove_name": "Gunsan Sports Climbing Center",
+      "same_gym_as_live_id": "seed-1238",
+      "retained_repo_record": "seed-1878",
+      "conclusion": "SAME PHYSICAL GYM",
+      "evidence": [
+        "Address: new record '274 Wolmyeong-ro, Gunsan' = live '전북 군산시 월명로 274' (274 Wolmyeong-ro, Gunsan): same street and number.",
+        "Same name (live adds 군산스포츠클라이밍센타), same country/state (KR / JEOLLABUK), same type (indoor-bouldering).",
+        "Pin gap of 2.7 km: the new pin is a street-only Nominatim match on a long road (per its own notes); the live pin is an exact address-point geocode (ArcGIS score 100)."
+      ],
+      "action": "Drop seed-1970. Keep repo seed-1878 (live id seed-1238). Recency evidence appended to its notes."
+    },
+    {
+      "remove_repo_id": "seed-1971",
+      "remove_name": "Ascent Climbing Manseong",
+      "same_gym_as_live_id": "seed-1240",
+      "retained_repo_record": "seed-1880",
+      "conclusion": "SAME PHYSICAL GYM",
+      "evidence": [
+        "Address: new record '6F Cheongok Bldg, 76 Manseongjungang-ro, Deokjin-gu, Jeonju' = live '전북 전주시 덕진구 만성중앙로 76 청옥빌딩 6층' (76 Manseongjungang-ro, Cheongok Building, 6F): same street, number, building (청옥 = Cheongok) and floor.",
+        "Same name (live adds Jeonju and 어센트클라이밍 만성점), same country/state and district, same type (indoor-bouldering).",
+        "Pin gap of 600 m: the new pin is a street-only Nominatim match (per its own notes); the live pin is an exact address-point geocode (ArcGIS score 100)."
+      ],
+      "action": "Drop seed-1971. Keep repo seed-1880 (live id seed-1240). Recency evidence appended to its notes."
+    },
+    {
+      "kind": "duplicate_within_new_records",
+      "remove_repo_id": "seed-1987",
+      "remove_final_id": "g-7523c09127",
+      "remove_name": "Mad Gym Gwangmyeong Climbing Center",
+      "same_gym_as_new_final_id": "g-8213f51019",
+      "retained_repo_record": "seed-1891",
+      "retained_final_id": "g-8213f51019",
+      "conclusion": "SAME PHYSICAL GYM",
+      "evidence": [
+        "Identical address: 5F, 1008 Beoman-ro, Gwangmyeong (retained: 경기도 광명시 범안로 1008, 5층). Same name (retained adds 매드짐 광명클라이밍센터), same country/state, same types (indoor-bouldering + lead-climbing).",
+        "Pin: an independent ArcGIS World Geocoder lookup of 경기도 광명시 범안로 1008 returns a PointAddress (score 100) 0 m from the retained pin and 3,668 m from the rejected pin. The rejected pin reverse-geocodes (OSM) to a rural road in Noonsa-dong/Hagon-dong, not Beoman-ro; its own notes say it is a street-only Nominatim match."
+      ],
+      "action": "Reject g-7523c09127 (kept in this file and in data/gyms.json as seed-1987; not present in data/gyms.reconciled.json; never imported). Keep g-8213f51019 unchanged except: its notes gain the rejected record's closed-Sunday / Sep 2026 Daangn evidence.",
+      "carried_over": {
+        "into": "g-8213f51019",
+        "field": "notes",
+        "kind": "append (see notes_append.seed-1891)"
+      },
+      "reviewed": "Approved 2026-09-24 after review: same physical gym entered twice in the Sep 2026 native-language Korea pass (once with a bilingual name, once with an English-only name). Retained record chosen by verified pin quality/completeness, not by language of the name.",
+      "rejected_record": {
+        "name": "Mad Gym Gwangmyeong Climbing Center",
+        "suburb": "Haan-dong, Gwangmyeong",
+        "state": "GYEONGGI",
+        "country": "KR",
+        "lat": 37.4416781,
+        "lng": 126.8411849,
+        "types": [
+          "indoor-bouldering",
+          "lead-climbing"
+        ],
+        "address": "5F, 1008 Beoman-ro, Gwangmyeong, Gyeonggi-do, South Korea",
+        "notes": "Found via SPIRI7. Daangn post dated Sep 2026; bouldering and lead. Closed Sundays. Pin is Nominatim's street-only match (house number not in OSM), so street-level and possibly several hundred metres off on a long road; worth a check in supabase/geocode.html. Added Sep 2026 via a native-language directory pass.",
+        "id": "seed-1987",
+        "community": false,
+        "final_id": "g-7523c09127"
+      }
+    },
+    {
+      "kind": "duplicate_within_new_records",
+      "remove_repo_id": "seed-1981",
+      "remove_final_id": "g-429da12245",
+      "remove_name": "Chamonix Climbing",
+      "same_gym_as_new_final_id": "g-e8a005400e",
+      "retained_repo_record": "seed-1893",
+      "retained_final_id": "g-e8a005400e",
+      "conclusion": "SAME PHYSICAL GYM",
+      "evidence": [
+        "Identical street address: 48 Gyeongui-ro, Uijeongbu (retained: 경기도 의정부시 경의로 48 (의정부동)). Same name (retained adds 샤모니클라이밍), same country/state, same types (indoor-bouldering + lead-climbing).",
+        "Pin: an independent ArcGIS World Geocoder lookup of 경기도 의정부시 경의로 48 returns a PointAddress (score 100) 0 m from the retained pin and 149 m from the rejected pin, which is a street-only Nominatim match per its own notes."
+      ],
+      "action": "Reject g-429da12245 (kept in this file and in data/gyms.json as seed-1981; not present in data/gyms.reconciled.json; never imported). Keep g-e8a005400e unchanged except: its notes gain the rejected record's price, closed-days and recent-activity evidence.",
+      "carried_over": {
+        "into": "g-e8a005400e",
+        "field": "notes",
+        "kind": "append (see notes_append.seed-1893)"
+      },
+      "reviewed": "Approved 2026-09-24 after review: same physical gym entered twice in the Sep 2026 native-language Korea pass (once with a bilingual name, once with an English-only name). Retained record chosen by verified pin quality/completeness, not by language of the name.",
+      "rejected_record": {
+        "name": "Chamonix Climbing",
+        "suburb": "Uijeongbu-dong, Uijeongbu",
+        "state": "GYEONGGI",
+        "country": "KR",
+        "lat": 37.7330158,
+        "lng": 127.0423889,
+        "types": [
+          "indoor-bouldering",
+          "lead-climbing"
+        ],
+        "address": "48 Gyeongui-ro, Uijeongbu, Gyeonggi-do, South Korea",
+        "notes": "Found via its Daangn profile — active within 3 weeks; bouldering, endurance and lead, day pass 15,000 won. Closed Sundays and 2nd/4th Saturdays. Pin is Nominatim's street-only match (house number not in OSM), so street-level and possibly several hundred metres off on a long road; worth a check in supabase/geocode.html. Added Sep 2026 via a native-language directory pass.",
+        "id": "seed-1981",
+        "community": false,
+        "final_id": "g-429da12245"
+      }
+    },
+    {
+      "kind": "duplicate_within_new_records",
+      "remove_repo_id": "seed-1900",
+      "remove_final_id": "g-11bb3a6ff4",
+      "remove_name": "Climb Days (클라임데이즈)",
+      "same_gym_as_new_final_id": "g-138cbc8020",
+      "retained_repo_record": "seed-1982",
+      "retained_final_id": "g-138cbc8020",
+      "conclusion": "SAME PHYSICAL GYM",
+      "evidence": [
+        "Identical address: 25 Deokcheon-ro 152beon-gil, Manan-gu, Anyang (rejected: 경기도 안양시 만안구 덕천로152번길 25 (안양동)). Same name (rejected adds 클라임데이즈), same country/state, same type (indoor-bouldering).",
+        "Pin: an independent ArcGIS World Geocoder lookup of 경기도 안양시 만안구 덕천로152번길 25 returns a PointAddress (score 100) 21 m from the RETAINED pin and 1,992 m from the rejected pin; the retained pin reverse-geocodes (OSM) to \"25, 덕천로152번길\". The rejected record's own notes say its pin is a neighbourhood centroid because the address did not geocode."
+      ],
+      "action": "Reject g-11bb3a6ff4 (kept in this file and in data/gyms.json as seed-1900; not present in data/gyms.reconciled.json; never imported). Keep g-138cbc8020 with its verified coordinates and its existing notes unchanged; it gains the rejected record's bilingual name and Korean address (field_carryovers.seed-1982). Its frozen id is unchanged.",
+      "carried_over": {
+        "into": "g-138cbc8020",
+        "fields": [
+          "name",
+          "address"
+        ],
+        "kind": "replace (see field_carryovers.seed-1982)"
+      },
+      "reviewed": "Approved 2026-09-24 after review: same physical gym entered twice in the Sep 2026 native-language Korea pass (once with a bilingual name, once with an English-only name). Retained record chosen by verified pin quality/completeness, not by language of the name.",
+      "rejected_record": {
+        "name": "Climb Days (클라임데이즈)",
+        "suburb": "Manan-gu, Anyang-si, Gyeonggi-do",
+        "state": "GYEONGGI",
+        "country": "KR",
+        "lat": 37.388856,
+        "lng": 126.916336,
+        "types": [
+          "indoor-bouldering"
+        ],
+        "address": "경기도 안양시 만안구 덕천로152번길 25 (안양동)",
+        "notes": "Confirmed currently active via a Daangn business listing and an active branch Facebook page; a third-party YouTube video titled with \"안양 클라임데이즈 / 볼더링\" (bouldering) is the only facility-type signal found, and it isn't the gym's own official statement -- defaulted to bouldering-only per this project's established Korea-specific discipline, unconfirmed for top-rope/lead. The exact street address did not resolve via ArcGIS (repeated proxy-level length rejections) -- position falls back to the Anyang-dong neighbourhood centroid, disclosed here rather than guessed at building level.",
+        "id": "seed-1900",
+        "community": false,
+        "final_id": "g-11bb3a6ff4"
+      }
+    }
+  ],
+  "notes_append": {
+    "seed-1868": " Also reported active in 2026: Chungcheong Maeil news (19 Jul 2026) describes a provincial climbing programme held here; bouldering, Moonboard and Kilterboard (merged from a duplicate record added in the Sep 2026 native-language pass).",
+    "seed-1878": " Also reported active in Sep 2026: Daangn listing updated within 3 weeks, hours 10:00-23:00; bouldering plus Moonboard (merged from a duplicate record added in the Sep 2026 native-language pass).",
+    "seed-1880": " Also: the gym's own Instagram posted in Feb 2026; bouldering with day passes (merged from a duplicate record added in the Sep 2026 native-language pass).",
+    "seed-1891": " Also reported: closed Sundays; Daangn post dated Sep 2026 (merged from a duplicate record added in the Sep 2026 native-language pass).",
+    "seed-1893": " Also reported active within 3 weeks of the Sep 2026 native-language pass (Daangn profile): day pass 15,000 won; closed Sundays and 2nd/4th Saturdays (merged from a duplicate record added in that pass)."
+  },
+  "known_content_differences_vs_live": {
+    "seed-458": "Repo name/types/notes were edited after seeding (live: T-WALL Kinshicho, repo: Base Camp Tokyo Kinshicho). Same address point; a content update to push later, not an identity change."
+  },
+  "field_carryovers": {
+    "seed-1982": {
+      "retained_final_id": "g-138cbc8020",
+      "from_repo_id": "seed-1900",
+      "set": {
+        "name": "Climb Days (클라임데이즈)",
+        "address": "경기도 안양시 만안구 덕천로152번길 25 (안양동)"
+      },
+      "was": {
+        "name": "Climb Days",
+        "address": "25 Deokcheon-ro 152beon-gil, Manan-gu, Anyang, Gyeonggi-do, South Korea"
+      },
+      "note": "Bilingual name and native-language (Korean) address, matching production convention for Korean gyms. Coordinates and notes of the retained record are deliberately NOT changed. The frozen id g-138cbc8020 was derived from the pre-carry-over name and stays as is."
+    }
+  }
+}

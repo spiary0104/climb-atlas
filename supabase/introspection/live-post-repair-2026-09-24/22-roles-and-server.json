@@ -1,0 +1,66 @@
+{
+ "roles": [
+  {
+   "bypass_rls": false,
+   "can_login": false,
+   "role": "anon",
+   "superuser": false
+  },
+  {
+   "bypass_rls": false,
+   "can_login": false,
+   "role": "authenticated",
+   "superuser": false
+  },
+  {
+   "bypass_rls": false,
+   "can_login": true,
+   "role": "authenticator",
+   "superuser": false
+  },
+  {
+   "bypass_rls": false,
+   "can_login": false,
+   "role": "dashboard_user",
+   "superuser": false
+  },
+  {
+   "bypass_rls": true,
+   "can_login": true,
+   "role": "postgres",
+   "superuser": false
+  },
+  {
+   "bypass_rls": true,
+   "can_login": false,
+   "role": "service_role",
+   "superuser": false
+  },
+  {
+   "bypass_rls": true,
+   "can_login": true,
+   "role": "supabase_admin",
+   "superuser": true
+  },
+  {
+   "bypass_rls": false,
+   "can_login": true,
+   "role": "supabase_auth_admin",
+   "superuser": false
+  },
+  {
+   "bypass_rls": false,
+   "can_login": true,
+   "role": "supabase_storage_admin",
+   "superuser": false
+  }
+ ],
+ "server_settings": {
+  "TimeZone": "UTC",
+  "default_transaction_read_only": "off",
+  "max_connections": "60",
+  "server_version": "17.6",
+  "shared_buffers": "28672"
+ },
+ "version": "PostgreSQL 17.6 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 15.2.0, 64-bit"
+}

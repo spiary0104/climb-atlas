@@ -1,0 +1,218 @@
+[
+ {
+  "deferrable": false,
+  "definition": "CHECK ((mark_type = ANY (ARRAY['climbed'::text, 'bookmarked'::text])))",
+  "name": "marks_mark_type_check",
+  "table": "marks",
+  "type": "c",
+  "validated": true
+ },
+ {
+  "deferrable": false,
+  "definition": "PRIMARY KEY (user_id, spot_id, mark_type)",
+  "name": "marks_pkey",
+  "table": "marks",
+  "type": "p",
+  "validated": true
+ },
+ {
+  "deferrable": false,
+  "definition": "FOREIGN KEY (spot_id) REFERENCES spots(id) ON DELETE CASCADE",
+  "name": "marks_spot_id_fkey",
+  "table": "marks",
+  "type": "f",
+  "validated": true
+ },
+ {
+  "deferrable": false,
+  "definition": "FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE",
+  "name": "marks_user_id_fkey",
+  "table": "marks",
+  "type": "f",
+  "validated": true
+ },
+ {
+  "deferrable": false,
+  "definition": "PRIMARY KEY (user_id)",
+  "name": "moderators_pkey",
+  "table": "moderators",
+  "type": "p",
+  "validated": true
+ },
+ {
+  "deferrable": false,
+  "definition": "FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE",
+  "name": "moderators_user_id_fkey",
+  "table": "moderators",
+  "type": "f",
+  "validated": true
+ },
+ {
+  "deferrable": false,
+  "definition": "PRIMARY KEY (id)",
+  "name": "pending_edits_pkey",
+  "table": "pending_edits",
+  "type": "p",
+  "validated": true
+ },
+ {
+  "deferrable": false,
+  "definition": "FOREIGN KEY (spot_id) REFERENCES spots(id) ON DELETE CASCADE",
+  "name": "pending_edits_spot_id_fkey",
+  "table": "pending_edits",
+  "type": "f",
+  "validated": true
+ },
+ {
+  "deferrable": false,
+  "definition": "PRIMARY KEY (id)",
+  "name": "reports_pkey",
+  "table": "reports",
+  "type": "p",
+  "validated": true
+ },
+ {
+  "deferrable": false,
+  "definition": "FOREIGN KEY (spot_id) REFERENCES spots(id) ON DELETE CASCADE",
+  "name": "reports_spot_id_fkey",
+  "table": "reports",
+  "type": "f",
+  "validated": true
+ },
+ {
+  "deferrable": false,
+  "definition": "CHECK ((climb_type = ANY (ARRAY['indoor-bouldering'::text, 'top-rope'::text, 'lead-climbing'::text])))",
+  "name": "routes_climb_type_check",
+  "table": "routes",
+  "type": "c",
+  "validated": true
+ },
+ {
+  "deferrable": false,
+  "definition": "CHECK ((grade_system = ANY (ARRAY['v-scale'::text, 'yds'::text, 'french'::text, 'font'::text])))",
+  "name": "routes_grade_system_check",
+  "table": "routes",
+  "type": "c",
+  "validated": true
+ },
+ {
+  "deferrable": false,
+  "definition": "PRIMARY KEY (id)",
+  "name": "routes_pkey",
+  "table": "routes",
+  "type": "p",
+  "validated": true
+ },
+ {
+  "deferrable": false,
+  "definition": "FOREIGN KEY (spot_id) REFERENCES spots(id) ON DELETE CASCADE",
+  "name": "routes_spot_id_fkey",
+  "table": "routes",
+  "type": "f",
+  "validated": true
+ },
+ {
+  "deferrable": false,
+  "definition": "FOREIGN KEY (submitted_by) REFERENCES auth.users(id)",
+  "name": "routes_submitted_by_fkey",
+  "table": "routes",
+  "type": "f",
+  "validated": true
+ },
+ {
+  "deferrable": false,
+  "definition": "CHECK ((climb_type = ANY (ARRAY['indoor-bouldering'::text, 'top-rope'::text, 'lead-climbing'::text])))",
+  "name": "session_climbs_climb_type_check",
+  "table": "session_climbs",
+  "type": "c",
+  "validated": true
+ },
+ {
+  "deferrable": false,
+  "definition": "CHECK ((grade_system = ANY (ARRAY['v-scale'::text, 'yds'::text, 'french'::text, 'font'::text])))",
+  "name": "session_climbs_grade_system_check",
+  "table": "session_climbs",
+  "type": "c",
+  "validated": true
+ },
+ {
+  "deferrable": false,
+  "definition": "PRIMARY KEY (id)",
+  "name": "session_climbs_pkey",
+  "table": "session_climbs",
+  "type": "p",
+  "validated": true
+ },
+ {
+  "deferrable": false,
+  "definition": "FOREIGN KEY (route_id) REFERENCES routes(id) ON DELETE SET NULL",
+  "name": "session_climbs_route_id_fkey",
+  "table": "session_climbs",
+  "type": "f",
+  "validated": true
+ },
+ {
+  "deferrable": false,
+  "definition": "FOREIGN KEY (session_id) REFERENCES sessions(id) ON DELETE CASCADE",
+  "name": "session_climbs_session_id_fkey",
+  "table": "session_climbs",
+  "type": "f",
+  "validated": true
+ },
+ {
+  "deferrable": false,
+  "definition": "CHECK ((mood = ANY (ARRAY['great'::text, 'good'::text, 'ok'::text, 'tired'::text, 'rough'::text])))",
+  "name": "sessions_mood_check",
+  "table": "sessions",
+  "type": "c",
+  "validated": true
+ },
+ {
+  "deferrable": false,
+  "definition": "PRIMARY KEY (id)",
+  "name": "sessions_pkey",
+  "table": "sessions",
+  "type": "p",
+  "validated": true
+ },
+ {
+  "deferrable": false,
+  "definition": "FOREIGN KEY (spot_id) REFERENCES spots(id) ON DELETE SET NULL",
+  "name": "sessions_spot_id_fkey",
+  "table": "sessions",
+  "type": "f",
+  "validated": true
+ },
+ {
+  "deferrable": false,
+  "definition": "FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE",
+  "name": "sessions_user_id_fkey",
+  "table": "sessions",
+  "type": "f",
+  "validated": true
+ },
+ {
+  "deferrable": false,
+  "definition": "PRIMARY KEY (id)",
+  "name": "spots_pkey",
+  "table": "spots",
+  "type": "p",
+  "validated": true
+ },
+ {
+  "deferrable": false,
+  "definition": "CHECK ((status = ANY (ARRAY['pending'::text, 'approved'::text])))",
+  "name": "spots_status_check",
+  "table": "spots",
+  "type": "c",
+  "validated": true
+ },
+ {
+  "deferrable": false,
+  "definition": "FOREIGN KEY (submitted_by) REFERENCES auth.users(id)",
+  "name": "spots_submitted_by_fkey",
+  "table": "spots",
+  "type": "f",
+  "validated": true
+ }
+]

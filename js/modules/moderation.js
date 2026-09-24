@@ -1,10 +1,10 @@
 // Moderator pending-review panel: approve/reject spots and edits, dismiss reports.
-import { TYPE_LABELS } from './constants.js';
 import { loadPending, loadSpots } from './data-load.js';
 import { openEditModal } from './modals.js';
+import { pendingPanelHtml } from './moderation-html.js';
 import { render } from './sidebar.js';
 import { appState } from './state.js';
-import { escapeHtml, showToast } from './utils.js';
+import { showToast } from './utils.js';
 
 // --- moderation: pending review panel ---
 const pendingModalBackdrop = document.getElementById('pendingModalBackdrop');
@@ -21,50 +21,17 @@ export function renderPendingBadge(){
   pendingReviewBtn.textContent = count ? `Pending review (${count})` : 'Pending review';
 }
 
+function findSpotById(id){
+  return appState.spots.find(s=>s.id===id) || (window.SEED_GYMS||[]).find(s=>s.id===id);
+}
+
 function renderPendingPanel(){
-  const list = document.getElementById('pendingList');
-  const cards = [];
-  appState.pendingSpots.forEach(g=>{
-    cards.push(`<div class="pending-item">
-        <div class="pending-kind">New spot</div>
-        <div class="popup-name">${escapeHtml(g.name)}</div>
-        <div class="popup-meta">${escapeHtml(g.suburb)}, ${g.state} (${g.country}) · ${g.types.map(t=>TYPE_LABELS[t]||t).join(' · ')}</div>
-        ${g.address?`<div class="pending-notes">${escapeHtml(g.address)}</div>`:''}
-        ${g.notes?`<div class="pending-notes">${escapeHtml(g.notes)}</div>`:''}
-        ${g.photo?`<div class="pending-notes">Photo: <a href="${escapeHtml(g.photo)}" target="_blank" rel="noopener noreferrer">${escapeHtml(g.photo)}</a></div>`:''}
-        <div class="pending-actions">
-          <button class="btn-cancel pending-reject" data-kind="spot" data-id="${g.id}">Reject</button>
-          <button class="btn-submit pending-approve" data-kind="spot" data-id="${g.id}">Approve</button>
-        </div>
-      </div>`);
+  document.getElementById('pendingList').innerHTML = pendingPanelHtml({
+    spots: appState.pendingSpots,
+    edits: appState.pendingEdits,
+    reports: appState.pendingReports,
+    findSpot: findSpotById
   });
-  appState.pendingEdits.forEach(pe=>{
-    const target = appState.spots.find(s=>s.id===pe.spot_id) || (window.SEED_GYMS||[]).find(s=>s.id===pe.spot_id);
-    cards.push(`<div class="pending-item">
-        <div class="pending-kind">Edit to ${escapeHtml(target?target.name:pe.spot_id)}</div>
-        <div class="popup-name">${escapeHtml(pe.name)}</div>
-        <div class="popup-meta">${escapeHtml(pe.suburb)}, ${pe.state} (${pe.country}) · ${pe.types.map(t=>TYPE_LABELS[t]||t).join(' · ')}</div>
-        ${pe.address?`<div class="pending-notes">${escapeHtml(pe.address)}</div>`:''}
-        ${pe.notes?`<div class="pending-notes">${escapeHtml(pe.notes)}</div>`:''}
-        ${pe.photo?`<div class="pending-notes">Photo: <a href="${escapeHtml(pe.photo)}" target="_blank" rel="noopener noreferrer">${escapeHtml(pe.photo)}</a></div>`:''}
-        <div class="pending-actions">
-          <button class="btn-cancel pending-reject" data-kind="edit" data-id="${pe.id}">Reject</button>
-          <button class="btn-submit pending-approve" data-kind="edit" data-id="${pe.id}">Approve</button>
-        </div>
-      </div>`);
-  });
-  appState.pendingReports.forEach(r=>{
-    const target = appState.spots.find(s=>s.id===r.spot_id) || (window.SEED_GYMS||[]).find(s=>s.id===r.spot_id);
-    cards.push(`<div class="pending-item">
-        <div class="pending-kind">Report on ${escapeHtml(target?target.name:r.spot_id)}</div>
-        <div class="pending-notes">${escapeHtml(r.message)}</div>
-        <div class="pending-actions">
-          <button class="btn-cancel pending-dismiss" data-kind="report" data-id="${r.id}">Dismiss</button>
-          <button class="btn-submit pending-edit-spot" data-kind="report" data-spot-id="${r.spot_id}">Edit this spot</button>
-        </div>
-      </div>`);
-  });
-  list.innerHTML = cards.length ? cards.join('') : '<div class="empty-state">Nothing pending review.</div>';
 }
 
 function openPendingModal(){
