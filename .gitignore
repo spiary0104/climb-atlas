@@ -20,3 +20,12 @@ node_modules/
 # Generated / scratch
 .playwright-mcp/
 supabase_seed_output.sql
+
+# Local pre-change backups of the seed dataset (recovery also via git tag pre-id-reconciliation)
+data/backups/
+data/reconciliation/*/live-snapshot.json
+data/reconciliation/*/proposed-id-map.json
+
+# Supabase CLI local state (link info, version cache)
+supabase/.temp/
+supabase/.branches/
