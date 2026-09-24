@@ -9,6 +9,7 @@
 'use strict';
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 
 const ROOT = path.resolve(__dirname, '..', '..', '..');
 const ENV = { url: 'SUPABASE_URL', service: 'SUPABASE_SERVICE_ROLE_KEY', anon: 'SUPABASE_ANON_KEY' };
@@ -71,7 +72,8 @@ const redact = (text, secrets) => (secrets || []).filter(s => s && s.length > 8)
 
 // A write gate is minted only by importer.js (see mintWriteGate) after all preflight checks and CLI flags have passed.
 const GATE = Symbol('gym-import-write-gate');
-const mintWriteGate = ({ batchId, token, rows }) => Object.freeze({ [GATE]: true, batchId, token, rows });
+const mintWriteGate = ({ batchId, token, rows, payloadSha }) => Object.freeze({ [GATE]: true, batchId, token, rows, payloadSha });
+const sha256 = s => crypto.createHash('sha256').update(s).digest('hex');
 
 class Api {
   constructor(target, { timeoutMs = 60000 } = {}) { this.t = target; this.timeoutMs = timeoutMs; }
@@ -106,6 +108,7 @@ class Api {
   async insertSpots(rows, gate) {
     if (!gate || gate[GATE] !== true) throw new Error('refusing to write: no write gate (all preflight checks and safety flags must pass first)');
     if (!Array.isArray(rows) || !rows.length || rows !== gate.rows) throw new Error('refusing to write: rows do not match the approved payload');
+    if (!gate.payloadSha || sha256(JSON.stringify(rows)) !== gate.payloadSha) throw new Error('refusing to write: the payload changed after it was approved (hash mismatch)');
     return this._send('POST', '/rest/v1/spots', { service: true, headers: { 'Content-Type': 'application/json', Prefer: 'return=minimal' }, body: JSON.stringify(rows) });
   }
 }

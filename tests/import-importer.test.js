@@ -14,7 +14,7 @@ const S = require('../scripts/lib/gym-import/index-store');
 const T = require('../scripts/lib/gym-import/target');
 const N = require('../scripts/lib/gym-import/normalize');
 const { runImport, toRow, diffRow } = require('../scripts/lib/gym-import/importer');
-const { ROOT, tmp, PROD, makeBatch, rec } = require('./helpers/import-helpers');
+const { ROOT, tmp, PROD, makeBatch, makeIndex, rec } = require('./helpers/import-helpers');
 const { localStack, admin, prodRow, fakeJwt } = require('./helpers/local-stack');
 
 const stack = localStack();
@@ -61,7 +61,7 @@ const manifestOf = w => path.join(w.b.dir, 'manifest.json');
 test('apply inserts a small synthetic batch: rows exist, provenance flags fixed, existing spots untouched, manifest written', { skip }, async () => {
   const w = await world();
   const dry = await run(w);
-  assert.equal(dry.exit, 0, dry.report); assert.equal(dry.state, 'fresh'); assert.equal(dry.coverage, 'FULL'); assert.match(dry.token, /^[0-9a-f]{12}$/);
+  assert.equal(dry.exit, 0, dry.report); assert.equal(dry.state, 'fresh'); assert.equal(dry.coverage, 'FULL'); assert.match(dry.token, /^[0-9a-f]{16}$/);
   const before = await adm.all();
   const r = await run(w, { mode: 'apply', confirm: dry.token });
   assert.equal(r.exit, 0, r.report); assert.equal(r.wrote, true);
@@ -351,7 +351,10 @@ test('post-import verification: `verify` passes on a good import and FAILS if pr
   s3.api.insertSpots = async (rows, gate) => { const r = await real3(rows, gate); await adm.patch(rows[1].id, { notes: 'changed behind the importer\'s back' }); return r; };
   const failed = await run(w3, { mode: 'apply', confirm: d3.token, api: s3.api });
   assert.equal(failed.exit, 4, failed.report); assert.equal(failed.verification.ok, false);
-  assert.equal(JSON.parse(fs.readFileSync(manifestOf(w3), 'utf8')).status, 'imported-verification-failed');
+  assert.equal(fs.existsSync(manifestOf(w3)), false, 'a failed verification must NOT leave a manifest.json behind');
+  const fail = JSON.parse(fs.readFileSync(path.join(w3.b.dir, 'import-failure.json'), 'utf8'));
+  assert.equal(fail.status, 'import-failed'); assert.equal(fail.phase, 'verification-failed'); assert.ok(fail.problems.length >= 1);
+  assert.equal(require('../scripts/lib/gym-import/manifest').isImported(w3.b.dir), false);
 });
 
 test('the insert itself is atomic and insert-only: a payload containing one existing id writes nothing and changes nothing', { skip }, async () => {
@@ -361,7 +364,7 @@ test('the insert itself is atomic and insert-only: a payload containing one exis
   const fresh = toRow({ ...rec({ name: 'Atomic Fresh', lat: -33.1, lng: 151.1 }), id: 'g-bbbbbbbbbb' }, u => u);
   const clash = { ...toRow({ ...rec({ name: 'Overwrite attempt' }), id: 'seed-100' }, u => u) };
   const rows = [fresh, clash];
-  const gate = T.mintWriteGate({ batchId: 'x', token: 'y', rows });
+  const gate = T.mintWriteGate({ batchId: 'x', token: 'y', rows, payloadSha: require('../scripts/lib/gym-import/importer').payloadSha(rows) });
   const r = await api.insertSpots(rows, gate);
   assert.equal(r.ok, false); assert.ok([409, 400].includes(r.status), 'HTTP ' + r.status);
   assert.equal(JSON.stringify(await adm.all()), before, 'neither the fresh row nor an overwrite happened');
@@ -372,28 +375,37 @@ test('the insert itself is atomic and insert-only: a payload containing one exis
 });
 
 // ============================================ 8. production-mode gates (fake API, temp repo root; no network) ====================
-function fakeProduction({ approved, pending = [], failInsert = false }) {
-  const state = { approved: approved.map(r => ({ ...r })), pending: pending.map(r => ({ ...r })), inserts: [], reads: 0 };
+function fakeProduction({ approved, pending = [], failInsert = false, behaviour = failInsert ? 'reject' : 'ok' }) {
+  // Behaves like the database for a plain INSERT: atomic (any existing id fails the whole statement, nothing changes), never overwrites.
+  // behaviour: 'ok' | 'reject' (HTTP 409) | 'lose-after' (rows written, response lost) | 'drop-before' (request never arrives) | 'partial' (1 row, then lost)
+  const netErr = () => Object.assign(new Error('socket hang up'), { network: true });
+  const state = { approved: approved.map(r => ({ ...r })), pending: pending.map(r => ({ ...r })), inserts: [], reads: 0, log: [] };
   const api = {
     async probe() { return { ok: true, status: 200 }; },
     async getAll(q) {
       state.reads++;
-      if (q.includes('status=eq.approved')) return state.approved.map(r => ({ ...r }));
-      if (q.includes('status=eq.pending')) return state.pending.map(r => ({ ...r }));
-      const m = /id=in\.\(([^)]*)\)/.exec(q); if (m) { const ids = m[1].split(','); return [...state.approved, ...state.pending].filter(r => ids.includes(r.id)); }
+      if (q.includes('status=eq.approved')) { state.log.push('read:approved'); return state.approved.map(r => ({ ...r })); }
+      if (q.includes('status=eq.pending')) { state.log.push('read:pending'); return state.pending.map(r => ({ ...r })); }
+      const m = /id=in\.\(([^)]*)\)/.exec(q); if (m) { state.log.push('read:ids'); const ids = m[1].split(','); return [...state.approved, ...state.pending].filter(r => ids.includes(r.id)).map(r => ({ ...r })); }
       throw new Error('unexpected query ' + q);
     },
     async insertSpots(rows, gate) {
       assert.ok(gate && gate.rows === rows, 'the fake API only accepts the gated payload');
+      state.log.push('INSERT');
+      if (behaviour === 'drop-before') throw netErr();
       state.inserts.push(rows);
-      if (failInsert) return { ok: false, status: 409, text: 'duplicate key value violates unique constraint' };
-      rows.forEach(r => state.approved.push({ ...r, created_at: 'x', updated_at: 'x', submitted_by: null }));
+      const existing = new Set([...state.approved, ...state.pending].map(r => r.id));
+      if (behaviour === 'reject' || rows.some(r => existing.has(r.id))) return { ok: false, status: 409, text: 'duplicate key value violates unique constraint' };
+      const put = r => state.approved.push({ ...r, created_at: 'x', updated_at: 'x', submitted_by: null });
+      if (behaviour === 'partial') { put(rows[0]); throw netErr(); }
+      rows.forEach(put);
+      if (behaviour === 'lose-after') throw netErr();
       return { ok: true, status: 201, text: '' };
     },
   };
   return { api, state };
 }
-async function prodWorld({ withPending = [] } = {}) {
+async function prodWorld({ withPending = [], behaviour = 'ok' } = {}) {
   const root = tmp();
   fs.mkdirSync(path.join(root, 'js'), { recursive: true }); fs.mkdirSync(path.join(root, 'import', 'batches'), { recursive: true });
   fs.copyFileSync(path.join(ROOT, 'js', 'supabase-init.js'), path.join(root, 'js', 'supabase-init.js'));
@@ -405,7 +417,7 @@ async function prodWorld({ withPending = [] } = {}) {
   fs.writeFileSync(path.join(b.dir, 'plan.json'), JSON.stringify(plan, null, 1) + '\n');
   const prod = T.productionConfig(root);
   const goodKey = fakeJwt({ role: 'service_role', ref: prod.ref, exp: 4102444800 });
-  const fake = fakeProduction({ approved, pending: withPending });
+  const fake = fakeProduction({ approved, pending: withPending, behaviour });
   const base = { batchDir: b.dir, root, env: { SUPABASE_URL: prod.url, SUPABASE_SERVICE_ROLE_KEY: goodKey }, api: fake.api };
   return { root, b, fake, base, prod, goodKey };
 }
@@ -495,6 +507,243 @@ test('LIVE (opt-in, read-only): the real 246-record batch passes the full prefli
   assert.equal(r.exit, 0, r.report); assert.equal(r.target.kind, 'production'); assert.equal(r.state, 'fresh'); assert.equal(r.rows.length, 246);
   assert.ok(calls.length > 0 && calls.every(m => m === 'GET'), 'only GET requests: ' + [...new Set(calls)].join());
   assert.equal(fs.existsSync(path.join(dir, 'manifest.json')), false);
+});
+
+// ============================================ AUDIT: manifest lifecycle, provenance, token binding, write gate ===================
+const MFM = require('../scripts/lib/gym-import/manifest');
+const { confirmToken, payloadSha, IMPORTER_VERSION } = require('../scripts/lib/gym-import/importer');
+const failureOf = w => path.join(w.b.dir, 'import-failure.json');
+const MANIFEST_KEYS = ['approved_after', 'approved_before', 'batch_id', 'confirm_token', 'coverage', 'finished_at', 'ids', 'importer_version', 'live_state_sha256', 'payload_sha256', 'plan_sha256', 'rows_inserted', 'schema_version', 'started_at', 'status', 'target', 'verification'];
+
+test('manifest lifecycle: an OUTPUT, never an input. A pre-import dry-run needs none; only a verified apply creates one; exact fields', { skip }, async () => {
+  const w = await world();
+  assert.equal(fs.existsSync(manifestOf(w)), false, 'the batch starts without a manifest');
+  const dry = await run(w);
+  assert.equal(dry.exit, 0, dry.report); assert.equal(dry.state, 'fresh'); assert.equal(dry.coverage, 'FULL');       // a COMPLETE preflight without a manifest
+  assert.equal(fs.existsSync(manifestOf(w)), false, 'a dry-run creates nothing');
+  for (const bad of [undefined, '0000000000000000']) { const r = await run(w, { mode: 'apply', confirm: bad }); assert.equal(r.exit, 2); }
+  assert.equal(fs.existsSync(manifestOf(w)), false, 'refused applies create nothing'); assert.equal(fs.existsSync(failureOf(w)), false);
+  const ok = await run(w, { mode: 'apply', confirm: dry.token });
+  assert.equal(ok.exit, 0, ok.report);
+  const m = JSON.parse(fs.readFileSync(manifestOf(w), 'utf8'));
+  assert.deepEqual(Object.keys(m).sort(), MANIFEST_KEYS);
+  assert.equal(m.status, 'imported'); assert.equal(m.coverage, 'FULL'); assert.equal(m.importer_version, IMPORTER_VERSION); assert.equal(m.schema_version, 1);
+  assert.deepEqual(m.target, { kind: 'local', host: '127.0.0.1:54321' });
+  assert.deepEqual(m.verification, { ok: true, checked: 3, problems: [] });
+  assert.equal(m.confirm_token, dry.token); assert.equal(m.rows_inserted, 3); assert.equal(m.ids.length, 3);
+  assert.match(m.payload_sha256, /^[0-9a-f]{64}$/); assert.match(m.plan_sha256, /^[0-9a-f]{64}$/); assert.match(m.live_state_sha256, /^[0-9a-f]{64}$/);
+  assert.equal(MFM.readManifest(w.b.dir).valid, true); assert.equal(MFM.isImported(w.b.dir), true);
+  for (const secret of [stack.service, stack.anon]) assert.ok(!JSON.stringify(m).includes(secret));
+});
+
+test('a manifest cannot be used to bypass anything: forged, malformed, wrong-batch, wrong-payload, wrong-target or "failed" manifests are refused or ignored', { skip }, async () => {
+  const w = await world();
+  const dry = await run(w);
+  const before = JSON.stringify(await adm.all());
+  const ids = JSON.parse(JSON.stringify(dry.rows.map(r => r.id)));
+  const good = { schema_version: 1, importer_version: IMPORTER_VERSION, batch_id: w.b.id, status: 'imported', target: { kind: 'local', host: '127.0.0.1:54321' }, payload_sha256: dry.payloadSha, ids, verification: { ok: true, checked: 3, problems: [] } };
+  const variants = {
+    'well-formed and matching, but production has none of the rows': good,
+    'empty object': {}, 'wrong batch id': { ...good, batch_id: 'someone-else' }, 'failed status': { ...good, status: 'imported-verification-failed' },
+    'verification not ok': { ...good, verification: { ok: false } }, 'other payload': { ...good, payload_sha256: 'f'.repeat(64) }, 'other target': { ...good, target: { kind: 'production', host: 'x.supabase.co' } },
+  };
+  for (const [label, m] of Object.entries(variants)) {
+    fs.writeFileSync(manifestOf(w), JSON.stringify(m));
+    const r = await run(w); assert.equal(r.exit, 2, label + '\n' + r.report); assert.ok(failing(r).includes('no manifest without rows'), label);
+    const a = await run(w, { mode: 'apply', confirm: dry.token }); assert.equal(a.exit, 2, label); assert.equal(a.wrote, false);
+    assert.equal(JSON.stringify(await adm.all()), before, label + ': production unchanged');
+  }
+  fs.writeFileSync(manifestOf(w), 'not json at all');
+  assert.equal((await run(w)).exit, 2); assert.equal(MFM.isImported(w.b.dir), false);
+  fs.unlinkSync(manifestOf(w));
+  // rows present + a manifest that does not match this run: NOT labelled already-imported
+  await run(w, { mode: 'apply', confirm: dry.token });
+  const real = fs.readFileSync(manifestOf(w), 'utf8');
+  fs.writeFileSync(manifestOf(w), JSON.stringify({ ...JSON.parse(real), payload_sha256: 'a'.repeat(64) }));
+  const mism = await run(w); assert.equal(mism.exit, 2); assert.ok(failing(mism).includes('manifest matches this batch, payload and target'));
+  fs.writeFileSync(manifestOf(w), real);
+  const okAgain = await run(w); assert.equal(okAgain.exit, 0); assert.equal(okAgain.state, 'already-imported');
+});
+
+test('only a well-formed "imported" manifest marks a batch as imported (planner, staged-batch comparison); stray or failed files do not', async () => {
+  const root = tmp();
+  const a = makeBatch([rec({ name: 'Staged Elsewhere', lat: -33.3, lng: 151.3 })], { id: '2026-01-01-alpha', root });
+  const b = makeBatch([rec({ name: 'Staged Elsewhere', lat: -33.3001, lng: 151.3 })], { id: '2026-01-02-beta', root });
+  const index = makeIndex();
+  const cmp = async () => (await P.planBatch({ dir: b.dir, index })).records[0].class;
+  assert.equal(await cmp(), 'probable-duplicate', 'a staged (unimported) batch is compared against');
+  fs.writeFileSync(path.join(a.dir, 'manifest.json'), '{}');
+  assert.equal(await cmp(), 'probable-duplicate', 'a stray/forged manifest does not hide a staged batch');
+  fs.writeFileSync(path.join(a.dir, 'manifest.json'), JSON.stringify({ schema_version: 1, batch_id: '2026-01-01-alpha', status: 'imported-verification-failed', ids: ['g-1'], target: { kind: 'local', host: 'h' }, payload_sha256: 'a'.repeat(64), verification: { ok: false } }));
+  assert.equal(await cmp(), 'probable-duplicate', 'a failed manifest does not hide it either');
+  fs.writeFileSync(path.join(a.dir, 'manifest.json'), JSON.stringify({ schema_version: 1, batch_id: '2026-01-01-alpha', status: 'imported', ids: ['g-1'], target: { kind: 'local', host: 'h' }, payload_sha256: 'a'.repeat(64), verification: { ok: true } }));
+  assert.equal(await cmp(), 'new', 'a valid imported manifest: those gyms are in production now, so they are no longer "staged"');
+});
+
+test('a failed or ambiguous write never leaves a manifest claiming success (lost response, dropped request, partial write, rejected insert, failed verification)', async () => {
+  const outcomes = {};
+  for (const behaviour of ['reject', 'lose-after', 'drop-before', 'partial']) {
+    const pw = await prodWorld({ behaviour });
+    const dry = await runImport({ ...pw.base });
+    assert.equal(dry.exit, 0, dry.report);
+    const r = await runImport({ ...pw.base, mode: 'apply', confirm: dry.token, productionFlag: true });
+    outcomes[behaviour] = { exit: r.exit, manifest: fs.existsSync(path.join(pw.b.dir, 'manifest.json')), failure: fs.existsSync(path.join(pw.b.dir, 'import-failure.json')), rows: pw.fake.state.approved.length - PROD.length };
+    if (behaviour === 'partial') assert.equal(JSON.parse(fs.readFileSync(path.join(pw.b.dir, 'import-failure.json'), 'utf8')).phase, 'partial-or-unknown-outcome');
+  }
+  assert.deepEqual(outcomes.reject, { exit: 2, manifest: false, failure: false, rows: 0 }, 'rejected insert: nothing written, nothing recorded');
+  assert.deepEqual(outcomes['drop-before'], { exit: 4, manifest: false, failure: false, rows: 0 }, 'request never arrived: exit 4, nothing written, no manifest');
+  assert.deepEqual(outcomes.partial, { exit: 4, manifest: false, failure: true, rows: 1 }, 'partial state: failure record only');
+  assert.deepEqual(outcomes['lose-after'], { exit: 0, manifest: true, failure: false, rows: 3 }, 'response lost but ALL rows verified in production: a genuine success');
+});
+
+test('idempotency matrix (fake production): none imported / all identical / some exist / one differs / response lost / verification fails - never an overwrite', async () => {
+  // a) none imported -> inserts once
+  const a = await prodWorld(); const da = await runImport({ ...a.base });
+  assert.equal((await runImport({ ...a.base, mode: 'apply', confirm: da.token, productionFlag: true })).exit, 0); assert.equal(a.fake.state.inserts.length, 1);
+  // b) all already exist identically -> no second insert, exit 0
+  const rb = await runImport({ ...a.base, mode: 'apply', confirm: da.token, productionFlag: true }); assert.equal(rb.exit, 0); assert.equal(a.fake.state.inserts.length, 1);
+  // c) some exist -> refused, no insert
+  const c = await prodWorld(); const dc = await runImport({ ...c.base });
+  const staged = JSON.parse(fs.readFileSync(path.join(c.b.dir, 'records.ndjson'), 'utf8').trim().split('\n')[0]);
+  c.fake.state.approved.push({ ...toRow(staged, u => u), created_at: 'x', updated_at: 'x', submitted_by: null });
+  const rc = await runImport({ ...c.base, mode: 'apply', confirm: dc.token, productionFlag: true }); assert.equal(rc.exit, 2); assert.equal(c.fake.state.inserts.length, 0);
+  // d) an existing record differs -> refused; that row keeps the other value
+  const d = await prodWorld(); const dd = await runImport({ ...d.base }); await runImport({ ...d.base, mode: 'apply', confirm: dd.token, productionFlag: true });
+  fs.unlinkSync(path.join(d.b.dir, 'manifest.json'));
+  d.fake.state.approved.find(r => r.id === dd.rows[1].id).name = 'Edited after import';
+  const rd = await runImport({ ...d.base, mode: 'apply', confirm: dd.token, productionFlag: true }); assert.equal(rd.exit, 2); assert.equal(d.fake.state.inserts.length, 1);
+  assert.equal(d.fake.state.approved.find(r => r.id === dd.rows[1].id).name, 'Edited after import', 'the edit survives');
+  // the fake database itself refuses to overwrite: an id collision fails the whole statement
+  const e = fakeProduction({ approved: PROD.map(r => prodRow({ ...r, created_at: 'x', updated_at: 'x', submitted_by: null })) });
+  const clash = [toRow({ ...rec(), id: 'g-1212121212' }, u => u), toRow({ ...rec(), id: 'seed-100' }, u => u)];
+  const gate = T.mintWriteGate({ batchId: 'x', token: 'y', rows: clash, payloadSha: payloadSha(clash) });
+  assert.equal((await e.api.insertSpots(clash, gate)).ok, false); assert.equal(e.state.approved.length, PROD.length);
+});
+
+test('confirmation token: bound to batch, payload, plan, target host and kind, coverage, live state and importer version', () => {
+  const base = { batchId: 'b', planSha: 'p', payload: 'x', host: 'h.supabase.co', kind: 'production', coverage: 'FULL', liveSha: 'l' };
+  const t0 = confirmToken(base);
+  assert.match(t0, /^[0-9a-f]{16}$/);
+  for (const [k, v] of Object.entries({ batchId: 'b2', planSha: 'p2', payload: 'x2', host: 'other.supabase.co', kind: 'local', coverage: 'PARTIAL', liveSha: 'l2' })) assert.notEqual(confirmToken({ ...base, [k]: v }), t0, k + ' must change the token');
+  assert.equal(confirmToken({ ...base }), t0, 'deterministic');
+});
+
+test('token invalidation end to end: changed records, changed batch, changed production state and partial coverage all invalidate it', { skip }, async () => {
+  const w = await world();
+  const dry = await run(w); const t0 = dry.token;
+  // (1) a public-only (PARTIAL) dry-run yields NO token, and a token computed for PARTIAL coverage is rejected by --apply
+  const partial = await run(w, { env: env({ SUPABASE_SERVICE_ROLE_KEY: undefined }) });
+  assert.equal(partial.exit, 0); assert.equal(partial.coverage, 'PARTIAL'); assert.equal(partial.token, null); assert.match(partial.report, /Confirmation token: none \(PARTIAL/);
+  const fake = confirmToken({ batchId: w.b.id, planSha: dry.planSha, payload: dry.payloadSha, host: '127.0.0.1:54321', kind: 'local', coverage: 'PARTIAL', liveSha: dry.liveSha });
+  const before = JSON.stringify(await adm.all());
+  const viaPartial = await run(w, { mode: 'apply', confirm: fake }); assert.equal(viaPartial.exit, 2); assert.ok(failing(viaPartial).includes('gate: --confirm'));
+  const noKey = await run(w, { mode: 'apply', confirm: t0, env: env({ SUPABASE_SERVICE_ROLE_KEY: undefined }) }); assert.equal(noKey.exit, 2); assert.equal(noKey.checks.some(c => c.name === 'production reads'), false, 'refused before any network read');
+  assert.equal(JSON.stringify(await adm.all()), before);
+  // (2) same records under another batch name -> different token
+  const copy = makeBatch(fs.readFileSync(path.join(w.b.dir, 'records.ndjson'), 'utf8').trim().split('\n'), { id: '2026-01-05-other-name' });
+  const pl = await P.planBatch({ dir: copy.dir, index: w.index }); fs.writeFileSync(path.join(copy.dir, 'plan.json'), JSON.stringify(pl, null, 1) + '\n');
+  const other = await runImport({ batchDir: copy.dir, indexDir: w.indexDir, env: env() }); assert.equal(other.exit, 0, other.report); assert.notEqual(other.token, t0);
+  // (3) an edited record (plan regenerated so everything else is consistent) -> different token; the old token is refused
+  const f = path.join(w.b.dir, 'records.ndjson'); const lines = fs.readFileSync(f, 'utf8').trim().split('\n'); const o = JSON.parse(lines[2]); o.notes = 'edited after the dry-run'; lines[2] = JSON.stringify(o);
+  fs.writeFileSync(f, lines.join('\n') + '\n');
+  const pl2 = await P.planBatch({ dir: w.b.dir, index: w.index }); fs.writeFileSync(path.join(w.b.dir, 'plan.json'), JSON.stringify(pl2, null, 1) + '\n');
+  const edited = await run(w); assert.equal(edited.exit, 0); assert.notEqual(edited.token, t0);
+  const stale = await run(w, { mode: 'apply', confirm: t0 }); assert.equal(stale.exit, 2); assert.ok(failing(stale).includes('gate: --confirm'));
+  // (4) production state changes: refused as drift; and once the index is rebuilt to match, the token is different again
+  await adm.insert([prodRow({ id: 'seed-4242', name: 'Added by someone else', suburb: 'x', state: 'QLD', country: 'AU', lat: -27.5, lng: 153.0 })]);
+  const drifted = await run(w, { mode: 'apply', confirm: edited.token }); assert.equal(drifted.exit, 2); assert.ok(failing(drifted).includes('production has not drifted from the index'));
+  S.write(await anonApproved(), w.indexDir, { source: 'rebuilt' });
+  const idx2 = S.load(w.indexDir); const pl3 = await P.planBatch({ dir: w.b.dir, index: idx2 }); fs.writeFileSync(path.join(w.b.dir, 'plan.json'), JSON.stringify(pl3, null, 1) + '\n');
+  const rebuilt = await run(w); assert.equal(rebuilt.exit, 0, rebuilt.report); assert.notEqual(rebuilt.token, edited.token); assert.notEqual(rebuilt.liveSha, edited.liveSha);
+  assert.equal((await adm.all()).some(r => r.id.startsWith('g-')), false, 'no staged row was ever written');
+});
+
+test('the token depends on no credential: two different service-role keys give the same token', async () => {
+  const pw = await prodWorld();
+  const k2 = fakeJwt({ role: 'service_role', ref: pw.prod.ref, exp: 4102444800, jti: 'a-different-key' });
+  const t1 = (await runImport({ ...pw.base })).token, t2 = (await runImport({ ...pw.base, env: { ...pw.base.env, SUPABASE_SERVICE_ROLE_KEY: k2 } })).token;
+  assert.ok(t1 && t1 === t2);
+});
+
+test('final write gate: the last thing before the INSERT is the final live re-check; a changed/added row or a new pending clash refuses; the payload is re-hashed', async () => {
+  // order of API calls in a successful apply: ... reads ..., final re-check reads, INSERT, post-import reads
+  const pw = await prodWorld(); const dry = await runImport({ ...pw.base });
+  pw.fake.state.log.length = 0;
+  const ok = await runImport({ ...pw.base, mode: 'apply', confirm: dry.token, productionFlag: true }); assert.equal(ok.exit, 0, ok.report);
+  const log = pw.fake.state.log, at = log.indexOf('INSERT');
+  assert.equal(log.filter(x => x === 'INSERT').length, 1, 'exactly one INSERT');
+  assert.deepEqual(log.slice(at - 3, at), ['read:approved', 'read:ids', 'read:pending'], 'the INSERT is immediately preceded by a full live re-read');
+  // production changes after the token was issued but before the write
+  const changes = {
+    'a row CHANGED': (rows, pend) => { rows.find(r => r.id === 'seed-101').name = 'Vertical Works (edited)'; },
+    'a row ADDED': (rows) => { rows.push(prodRow({ id: 'seed-9001', name: 'New Arrival', suburb: 'x', state: 'QLD', country: 'AU', lat: -27, lng: 153, created_at: 'x', updated_at: 'x', submitted_by: null })); },
+    'a row REMOVED': (rows) => { rows.splice(rows.findIndex(r => r.id === 'seed-102'), 1); },
+    'a pending clash appears': (rows, pend, staged) => { pend.push({ id: 'community-0f3a7c2e-2222-4222-8333-444455556666', name: staged.name, suburb: staged.suburb, state: staged.state, country: staged.country, lat: staged.lat, lng: staged.lng, types: staged.types, status: 'pending', community: true, edited: false }); },
+  };
+  for (const [label, mutate] of Object.entries(changes)) {
+    const w = await prodWorld(); const d = await runImport({ ...w.base });
+    const staged = JSON.parse(fs.readFileSync(path.join(w.b.dir, 'records.ndjson'), 'utf8').trim().split('\n')[0]);
+    let approvedReads = 0; const realGet = w.fake.api.getAll;
+    w.fake.api.getAll = async (q, o) => { const rows = await realGet(q, o); if (q.includes('status=eq.approved') && ++approvedReads === 2) mutate(w.fake.state.approved, w.fake.state.pending, staged); return q.includes('status=eq.approved') ? w.fake.state.approved.map(r => ({ ...r })) : q.includes('status=eq.pending') ? w.fake.state.pending.map(r => ({ ...r })) : rows; };
+    const r = await runImport({ ...w.base, mode: 'apply', confirm: d.token, productionFlag: true });
+    assert.equal(r.exit, 2, label + '\n' + r.report); assert.ok(failing(r).includes('final re-check before write'), label + ': ' + failing(r).join());
+    assert.equal(w.fake.state.inserts.length, 0, label + ': no INSERT was attempted'); assert.equal(fs.existsSync(path.join(w.b.dir, 'manifest.json')), false);
+  }
+  // the payload cannot change between approval and the INSERT
+  const rows = [toRow({ ...rec(), id: 'g-3434343434' }, u => u)];
+  const gate = T.mintWriteGate({ batchId: 'x', token: 'y', rows, payloadSha: payloadSha(rows) });
+  rows[0].name = 'tampered after approval';
+  await assert.rejects(() => new T.Api(T.resolveTarget({ SUPABASE_URL: 'http://127.0.0.1:1', SUPABASE_ANON_KEY: 'a'.repeat(20), SUPABASE_SERVICE_ROLE_KEY: 'sb_secret_' + 'z'.repeat(30) })).insertSpots(rows, gate), /payload changed after it was approved/);
+});
+
+test('credentials never leak: not in reports, errors, exceptions, CLI output, tokens or manifests (unreachable target and injected failures)', async () => {
+  const KEY = 'sb_secret_' + 'LEAKCANARY0123456789abcdefghijk', ANON = 'anon-canary-' + 'q'.repeat(24);
+  const e = { SUPABASE_URL: 'http://127.0.0.1:1', SUPABASE_ANON_KEY: ANON, SUPABASE_SERVICE_ROLE_KEY: KEY };
+  const b = makeBatch([rec({ id: 'g-5656565656' })], { id: '2026-01-01-leak-check' });
+  const idx = tmp(); S.write([], idx, {});
+  const r = await runImport({ batchDir: b.dir, indexDir: idx, env: e });
+  assert.equal(r.exit, 2); assert.ok(failing(r).length >= 1);
+  for (const s of [KEY, ANON, 'LEAKCANARY']) assert.ok(!r.report.includes(s) && !JSON.stringify(r.checks).includes(s), 'runImport output leaked ' + s);
+  const cli = cp.spawnSync(process.execPath, [CLI, 'import', b.dir, '--index', idx, '--apply', '--confirm', 'x'.repeat(16)], { encoding: 'utf8', env: { ...process.env, ...e } });
+  for (const s of [KEY, ANON, 'LEAKCANARY']) assert.ok(!(cli.stdout + cli.stderr).includes(s), 'CLI output leaked ' + s);
+  // an exception whose message contains the key is redacted before it reaches the report
+  const pw = await prodWorld(); const canary = pw.goodKey;
+  pw.fake.api.getAll = async () => { throw new Error('upstream said: bad credential ' + canary); };
+  const inj = await runImport({ ...pw.base }); assert.equal(inj.exit, 2); assert.ok(!inj.report.includes(canary) && inj.report.includes('[redacted]'));
+  // network errors from the real client are redacted too
+  const api = new T.Api(T.resolveTarget(e)); api.secrets = () => [KEY, ANON];
+  await assert.rejects(() => api.getAll('/rest/v1/spots?select=id'), err => !err.message.includes(KEY) && !err.message.includes(ANON));
+});
+
+test('pre-import view of the index is verified against the hash recorded at staging, NOT trusted from a manifest (forged manifests throw)', async () => {
+  const { preImportIndex } = require('./helpers/import-helpers');
+  const root = tmp();
+  const mk = (rows, name) => { const d = path.join(root, 'import', name); fs.mkdirSync(d, { recursive: true }); return d; };
+  const base = PROD.map(r => prodRow(r));
+  const extra = [prodRow({ id: 'g-aaaaaaaaaa', name: 'Imported One', suburb: 's', state: 'NSW', country: 'AU', lat: -30, lng: 150 }), prodRow({ id: 'g-bbbbbbbbbb', name: 'Imported Two', suburb: 's', state: 'NSW', country: 'AU', lat: -31, lng: 150 })];
+  const idxDir = mk(base, 'index'); const pre = S.write(base, idxDir, {});               // the index as staged
+  const batchId = '2026-01-01-pre-import-view'; const bdir = path.join(root, 'import', 'batches', batchId); fs.mkdirSync(bdir, { recursive: true });
+  fs.writeFileSync(path.join(bdir, 'batch.json'), JSON.stringify({ schema_version: 1, batch_id: batchId, description: 'test batch', index_at_staging: { sha256: pre.sha256, count: pre.count } }));
+  assert.equal(preImportIndex(batchId, root).entries.length, PROD.length, 'no manifest: the real index IS the pre-import state');
+  S.write([...base, ...extra], idxDir, {});                                                // production/index after the import
+  const manifest = ids => ({ schema_version: 1, batch_id: batchId, status: 'imported', ids, target: { kind: 'local', host: 'h' }, payload_sha256: 'a'.repeat(64), verification: { ok: true } });
+  fs.writeFileSync(path.join(bdir, 'manifest.json'), JSON.stringify(manifest(['g-aaaaaaaaaa', 'g-bbbbbbbbbb'])));
+  const view = preImportIndex(batchId, root);
+  assert.equal(view.entries.length, PROD.length); assert.equal(view.sha256, pre.sha256); assert.equal(view.preImportView, true);
+  for (const [label, ids] of Object.entries({ 'removes a real pre-existing gym': ['g-aaaaaaaaaa', 'g-bbbbbbbbbb', 'seed-100'], 'omits an imported gym': ['g-aaaaaaaaaa'], 'names ids that are not in the index': ['g-aaaaaaaaaa', 'g-bbbbbbbbbb', 'g-cccccccccc'] })) {
+    fs.writeFileSync(path.join(bdir, 'manifest.json'), JSON.stringify(manifest(label === 'names ids that are not in the index' ? ['g-aaaaaaaaaa', 'g-cccccccccc'] : ids)));
+    assert.throws(() => preImportIndex(batchId, root), /cannot reconstruct the pre-import index/, label);
+  }
+  fs.writeFileSync(path.join(bdir, 'manifest.json'), '{}'); assert.throws(() => preImportIndex(batchId, root), /not valid/);
+});
+
+test('production logic never derives state from a manifest: the importer reads only the live database and the index', () => {
+  const src = f => fs.readFileSync(path.join(ROOT, 'scripts', 'lib', 'gym-import', f), 'utf8');
+  const im = src('importer.js');
+  assert.ok(!/preImportIndex/.test(im), 'no test-only helper in production code');
+  // every use of the manifest in the importer is validation, labelling or writing; none feeds index/drift/plan/presence decisions
+  const uses = [...im.matchAll(/mf\.[a-zA-Z]+|MF\.[a-zA-Z]+/g)].map(m => m[0]);
+  assert.ok(uses.every(u => /^(mf\.(exists|valid|problems|manifest)|MF\.(readManifest|mismatches|writeManifest|writeFailure|FAILURE|MANIFEST))$/.test(u)), uses.join());
 });
 
 // ============================================ 9. static guarantees ================================================================

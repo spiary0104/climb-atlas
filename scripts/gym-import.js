@@ -26,6 +26,7 @@ const S = require('./lib/gym-import/index-store');
 const { renderReport } = require('./lib/gym-import/report');
 const { stageFromFile, relTo } = require('./lib/gym-import/stage');
 const { runImport } = require('./lib/gym-import/importer');
+const { redact } = require('./lib/gym-import/target');
 
 const ROOT = S.ROOT;
 const BATCHES = path.join(ROOT, 'import', 'batches');
@@ -185,5 +186,5 @@ function cmdNewBatch(slug, flags) {
     // Never process.exit() here: with fetch sockets still closing, Node on Windows can crash (0xC0000409) and lose the exit code,
     // and this CLI's exit codes are part of its safety contract. Setting exitCode lets the event loop drain first.
     process.exitCode = code;
-  } catch (e) { console.error('error: ' + e.message); process.exitCode = 1; }
+  } catch (e) { console.error('error: ' + redact(e.message, [process.env.SUPABASE_SERVICE_ROLE_KEY, process.env.SUPABASE_ANON_KEY])); process.exitCode = 1; }
 })();

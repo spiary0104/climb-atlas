@@ -147,11 +147,29 @@ Remove-Item Env:SUPABASE_SERVICE_ROLE_KEY; Remove-Item Env:SUPABASE_URL
 
 ### Dry-run vs apply
 - **Dry-run (the default)** does everything except write: validates the batch, verifies recorded provenance, re-checks the live production
-  state, and prints a deterministic report (no timestamps) listing exactly the rows that would be inserted, the payload hash and the
-  **confirmation token**. Only `GET` requests are ever sent. Without a service-role key it still runs but reports
-  `Coverage: PARTIAL` (pending/non-approved rows are invisible to the public API), and `--apply` will be refused.
-- **Apply** runs the same preflight with the service-role key (`Coverage: FULL`) and additionally needs `--confirm <token>` (bound to this
-  batch + exact payload + target) and, for production, `--i-understand-this-writes-to-production`. `--apply` alone is never enough.
+  state, and prints a deterministic report (no timestamps) listing exactly the rows that would be inserted. Only `GET` requests are ever sent.
+  It needs **no manifest** and no service-role key. Without the key it is explicitly classified **`Coverage: PARTIAL`** (public reads only) and is
+  *not* equivalent to a complete preflight: it prints **no confirmation token**, and `--apply` cannot proceed from it.
+- **Dry-run with the service-role key** is `Coverage: FULL` (still read-only) and prints the **confirmation token**.
+- **Apply** re-runs the whole FULL preflight itself (it never trusts an earlier dry-run), then additionally needs `--confirm <token>` and, for
+  production, `--i-understand-this-writes-to-production`. `--apply` alone is never enough.
+
+### Checks that need `SUPABASE_SERVICE_ROLE_KEY` (all mandatory for `--apply`; absent = PARTIAL coverage)
+| Check | Why the public key cannot do it |
+|---|---|
+| Credential shape/project/expiry, then a server-side read probe with the key | The key is what performs the INSERT |
+| Staged ids absent in **every status** (`id=in.(…)` read as service role) | A `pending` row with a staged id is invisible to the public API but would make the INSERT fail (or, in a merge design, be overwritten) |
+| Pending community submissions fetched and compared with every staged gym (no probable duplicate) | Pending rows are invisible to the public API |
+| The same reads repeated in the final re-check immediately before the INSERT | Same reason |
+| Confirmation token issuance | Bound to `Coverage: FULL` |
+Everything else (batch validation, provenance, index integrity, drift against the approved rows, the all-new plan) is identical with or without the key.
+
+### Confirmation token
+`--confirm <token>` is a 64-bit hash (an anti-accident confirmation, not a secret) of: the importer version, the batch id, the **exact payload hash** (the rows
+as they will be inserted, including the fixed `status/community/edited` flags), the plan hash (which embeds the index), the **target host and kind**,
+the preflight **coverage** (`FULL`), and a hash of the **live approved spots as observed** (id + content hash). Change a record, rename the batch, point
+at another project, drop to a partial dry-run, or let production change (and rebuild the index) and the token changes, so the old one is refused. It is
+derived from no credential. Before the write the payload is hashed again, so rows cannot change between approval and the INSERT.
 
 ### Safety gates (all must pass before the single write; any failure = exit 2, nothing written)
 1. Explicit batch; explicit target (`SUPABASE_URL`); the target is production or localhost; production uses only the repo's batch and index (no `--index` override).
@@ -160,27 +178,43 @@ Remove-Item Env:SUPABASE_SERVICE_ROLE_KEY; Remove-Item Env:SUPABASE_URL
 4. Recorded provenance still valid: `batch.json` counts; the decisions file's canonical hash is unchanged; no record listed as rejected is staged (a changed source file is only a warning: the batch is frozen).
 5. The local index is intact (`index-meta.json` matches) and **production still equals the index** (no gym added, removed or changed since it was built).
 6. A fresh plan classifies **every** record as `new` (0 existing/update/probable-duplicate/invalid/rejected, no blockers) and equals the committed `plan.json`.
-7. **Every staged id is absent from production in every status** (service-role read, so pending rows count), and no staged gym is a probable duplicate of a **pending** community submission.
+7. Every staged id is absent from production in every status, and no staged gym is a probable duplicate of a pending submission (service-role read).
 8. `--confirm` token matches; the production flag is present.
-9. A final identical re-check (production state, ids, pending clashes) immediately before the write.
+9. A final identical live re-check immediately before the write: any row added, removed **or changed**, any staged id now present, any new pending clash, or a changed live-state hash is a refusal. The importer never tries to reconcile.
 
 The write itself is one plain `INSERT` of the staged rows (`status=approved, community=false, edited=false`), atomic: if any id already exists the
-whole statement fails and nothing is written. There is **no** upsert, `on_conflict`, PATCH, PUT, DELETE or RPC anywhere in the importer (a test
-enforces exactly one write call site, reachable only through a write gate minted after the checks above).
+whole statement fails and nothing is written. There is **no** upsert, `on_conflict`, PATCH, PUT, DELETE or RPC anywhere in the importer. The call path is
+`gym-import.js import --apply` → `runImport` → (gates, final re-check) → `mintWriteGate` → `Api.insertSpots` → one `POST /rest/v1/spots`; a test enforces exactly
+one write call site, reachable only through a gate minted after the checks above.
 
-### Idempotency
-Re-running is always safe:
-- The batch already has `manifest.json` → state `already-imported`: read-only verification, **no write, manifest untouched**, exit 0 (even with `--apply`).
-- All staged ids exist in production with identical content but there is no manifest (e.g. a crash after the insert) → `already-present`: no database write; `--apply` only writes a local recovery manifest.
-- Some (not all) staged ids exist, or an existing row differs (e.g. a moderator edited it) → **refused**; the importer never merges or overwrites.
-- A lost response (timeout) after the request is treated as "outcome unknown": the importer reads production to see what happened instead of retrying.
+### Manifest lifecycle
+- **`manifest.json` is an output, never an input.** A pre-import dry-run needs none and creates none. It is written by exactly two paths: (1) a successful `--apply`
+  **after** the read-back verification passed (`status: imported`), and (2) `--apply` finding every staged row already in production with identical content but no
+  manifest (`status: imported-recovered`; no database write). Dry-runs, refused applies, rejected inserts and unknown outcomes create nothing.
+- **A failed or ambiguous write never produces a manifest.** A verification failure or a partial/unknown state writes **`import-failure.json`** instead
+  (`status: import-failed`, `phase`, the staged ids present in production, the problems). Nothing treats that file as "imported".
+- **A manifest can never bypass a check.** Its only uses are: refusing (a manifest exists but production has none of the rows), or labelling `already-imported`
+  when live reads have already proven identical content **and** the manifest matches this batch, exact payload, ids and target. A malformed, forged,
+  wrong-batch/payload/target or non-`imported` manifest is refused (or ignored by the planner); only a well-formed `imported` manifest marks a batch as imported.
+  The pre-import state always comes from the **live database and the index**, never from a manifest.
+- **Fields** (and nothing else — no credentials, no headers): `schema_version, importer_version, batch_id, status, target{kind,host}, coverage, plan_sha256,
+  payload_sha256, confirm_token, live_state_sha256, rows_inserted, approved_before, approved_after, verification{ok,checked,problems}, started_at, finished_at, ids`.
 
-### Post-import verification and manifest
-After the insert (read-only): every staged id exists; each row equals the staged content and has the fixed provenance flags; the approved count went
-up by exactly N; **every pre-existing spot is unchanged** (hash-compared with the index). The outcome is written to `manifest.json` in the batch
-(status `imported`, or `imported-verification-failed` with exit 4; ids, counts, plan/payload hashes, target host, timestamps — never credentials).
-After a successful import: `node scripts/gym-import.js build-index --live`, commit the manifest and the refreshed index, run the tests (they derive
-the pre-import view from the manifest), and update `docs/TASKS.md`.
+### Idempotency (what each situation does; no case overwrites a row)
+| Situation | Behaviour |
+|---|---|
+| a. Nothing imported yet | Full preflight; `--apply` does one INSERT, verifies, writes `manifest.json` |
+| b. All staged rows already exist, identical | `already-imported` (valid manifest) / `already-present` (none): **no database write**, exit 0; `--apply` may write only a local recovery manifest |
+| c. Some staged rows exist | Refused (exit 2): mixed state, nothing written |
+| d. An existing staged row differs (e.g. a moderator edited it) | Refused (exit 2); the edit is preserved; never merged or overwritten |
+| e. INSERT succeeded but the response was lost | Not retried: production is read. All rows present and verified → success + manifest; none present → exit 4, "nothing was written"; some → exit 4 + `import-failure.json` |
+| f. Verification fails after the write | Exit 4, `import-failure.json` (rows *are* in production), **no manifest** |
+
+### Post-import verification
+After the insert (read-only): every staged id exists; each row equals the staged content and has the fixed provenance flags; the approved count went up by exactly N;
+**every pre-existing spot is unchanged** (hash-compared with the index). After a successful import: `node scripts/gym-import.js build-index --live`, commit the manifest
+and the refreshed index, run the tests, and update `docs/TASKS.md`. (Regression tests that describe the pre-import world reconstruct it from the rebuilt index only if the result
+hashes to `index_at_staging` recorded in `batch.json` — independent of the manifest; a wrong manifest makes them fail loudly. Production code never does this.)
 
 ### What the importer is intentionally NOT capable of
 Updating, deleting, closing, merging or overwriting any spot; importing `update` records; importing batches with probable duplicates or invalid

@@ -10,6 +10,7 @@ const N = require('./normalize');
 const V = require('./validate');
 const M = require('./match');
 const store = require('./index-store');
+const { isImported } = require('./manifest');
 
 const BATCH_DIR_RE = /^\d{4}-\d{2}-\d{2}-[a-z0-9][a-z0-9-]{1,60}$/;
 const VISIBLE = ['name', 'suburb', 'state', 'lat', 'lng', 'address', 'types'];   // fields the index can compare directly
@@ -43,7 +44,7 @@ function loadBatch(dir) {
   if (fs.existsSync(decFile)) {
     try { decisions = JSON.parse(fs.readFileSync(decFile, 'utf8')).decisions || {}; } catch (e) { problems.push('decisions.json is not valid JSON'); }
   }
-  const imported = fs.existsSync(path.join(dir, 'manifest.json'));
+  const imported = isImported(dir);   // a well-formed manifest that says 'imported'; a stray/failed/forged file does not count
   return { id, dir, meta, lines, decisions, problems, imported };
 }
 
@@ -54,7 +55,7 @@ function loadStaged(batchesDir, exceptId) {
   for (const name of fs.readdirSync(batchesDir).sort()) {
     if (name === exceptId || !BATCH_DIR_RE.test(name)) continue;
     const dir = path.join(batchesDir, name);
-    if (!fs.statSync(dir).isDirectory() || fs.existsSync(path.join(dir, 'manifest.json'))) continue;
+    if (!fs.statSync(dir).isDirectory() || isImported(dir)) continue;
     for (const { rec } of readNdjson(path.join(dir, 'records.ndjson'))) {
       if (!rec || rec.intent === 'update' || typeof rec.lat !== 'number' || typeof rec.lng !== 'number' || !rec.country || !rec.name) continue;
       out.push({ id: rec.id || null, name: rec.name, country: rec.country, state: rec.state, suburb: rec.suburb, lat: rec.lat, lng: rec.lng, address: rec.address || null, batch: name });

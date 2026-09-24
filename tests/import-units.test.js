@@ -112,7 +112,9 @@ test('production boundary: writes exist only in the gated importer; everything e
     const src = fs.readFileSync(path.join(ROOT, f), 'utf8').split('\n').filter(l => !/^\s*\/\//.test(l)).join('\n');
     assert.ok(!/method:\s*['"](POST|PATCH|PUT|DELETE)/i.test(src), f + ': non-GET HTTP method');
     assert.ok(!/\.(insert|upsert|update|delete|rpc)\(/.test(src.replace(/\.update\(seed\)|\.update\(payload\)|\.update\(buf\)|\.update\(JSON|\.update\(s\)/g, '')), f + ': supabase-js write call');
-    if (!IMPORTER.includes(f)) assert.ok(!/service_role|SUPABASE_SERVICE|createClient|psql|db push|migration repair|_send\('POST'|insertSpots/i.test(src), f + ': privileged access');
+    // the CLI may name the env var (only to redact it from error text); it must not use it, and nothing else may mention privileged access
+    if (f === 'scripts/gym-import.js') assert.ok(!/service_role|createClient|psql|db push|migration repair|_send\('POST'|insertSpots/i.test(src.replace('process.env.SUPABASE_SERVICE_ROLE_KEY', '')) && (src.match(/SUPABASE_SERVICE_ROLE_KEY/g) || []).length === 1 && /redact\(e\.message, \[process\.env\.SUPABASE_SERVICE_ROLE_KEY/.test(src), f + ': privileged access');
+    else if (!IMPORTER.includes(f)) assert.ok(!/service_role|SUPABASE_SERVICE|createClient|psql|db push|migration repair|_send\('POST'|insertSpots/i.test(src), f + ': privileged access');
     else assert.ok(!/createClient|psql|db push|migration repair/i.test(src), f + ': privileged access');
     assert.ok(!/child_process|execSync|spawn\(/.test(src), f + ': shells out');
   }

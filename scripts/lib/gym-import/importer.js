@@ -13,8 +13,9 @@ const P = require('./plan');
 const S = require('./index-store');
 const T = require('./target');
 const { canonicalSha } = require('./stage');
+const MF = require('./manifest');
 
-const IMPORTER_VERSION = 1;
+const IMPORTER_VERSION = 2;
 const MAX_ROWS = 1000;                 // one request = one atomic statement; bigger batches must be split
 const HEX_ID = /^g-[0-9a-f]{10,40}$/;
 const COLS = ['id', 'name', 'suburb', 'state', 'country', 'lat', 'lng', 'types', 'notes', 'photo', 'address', 'community', 'edited', 'status'];
@@ -30,7 +31,14 @@ function toRow(r, safeUrl) {
   };
 }
 const payloadSha = rows => sha256(JSON.stringify(rows));
-const confirmToken = ({ batchId, planSha, payload, host }) => sha256(JSON.stringify([batchId, planSha, payload, host])).slice(0, 12);
+// Hash of the live approved spots as observed right now (id + content hash, sorted). Two runs see the same value only if production
+// is identical, so binding the token to it means "the state I reviewed is the state you are about to write into".
+const liveStateSha = approved => sha256(JSON.stringify(approved.map(r => [r.id, S.toEntry(r).h]).sort((a, b) => (a[0] < b[0] ? -1 : a[0] > b[0] ? 1 : 0))));
+// The confirmation token binds --apply to: this exact batch, the exact rows that will be inserted (payload), the plan (which embeds the
+// index), the target project (host) and kind, the preflight coverage (a PARTIAL public dry-run can never yield a token that --apply
+// accepts), the observed live production state, and the importer version. 64 bits: it is an anti-accident confirmation, not a secret.
+const confirmToken = ({ batchId, planSha, payload, host, kind, coverage, liveSha }) =>
+  sha256(JSON.stringify(['gym-import-confirm', IMPORTER_VERSION, batchId, planSha, payload, host, kind, coverage, liveSha])).slice(0, 16);
 
 // Which fields of a production row differ from the staged row (empty = identical, incl. provenance flags).
 function diffRow(row, db) {
@@ -173,25 +181,29 @@ async function runImport(opts) {
     const rows = []; for (const x of recs) rows.push(toRow(x.rec, (await V.deps()).safeUrl));
     res.rows = rows;
     res.payloadSha = payloadSha(rows);
-    const manifestFile = path.join(batchDir, 'manifest.json');
-    const hasManifest = fs.existsSync(manifestFile);
+    // A manifest is an OUTPUT of a previous import, never a precondition: a pre-import dry-run needs none. If one exists it is validated
+    // against this batch, the exact payload and this target; it can only cause a refusal or a label, never make a check pass.
+    const mf = MF.readManifest(batchDir);
+    const mfMismatch = mf.exists ? (mf.valid ? MF.mismatches(mf.manifest, { batchId: res.batchId, payloadSha: res.payloadSha, host: target.host, ids }) : mf.problems) : [];
+    if (fs.existsSync(path.join(batchDir, MF.FAILURE))) add('WARN', 'previous failed import attempt', `${MF.FAILURE} exists; production state below is what counts`);
 
     if (present.length === N_) {
       const bad = []; rows.forEach(r => { const d = diffRow(r, snap.byId.get(r.id) || present.find(p2 => p2.id === r.id)); if (d.length) bad.push(`${r.id}: ${d.join('/')}`); });
       if (bad.length) { add('FAIL', 'already in production, content differs', `${bad.length} staged id(s) exist with different content, e.g. ${sample(bad, 3)}. The importer will not overwrite an existing spot.`); return refuse(); }
-      res.state = hasManifest ? 'already-imported' : 'already-present';
+      if (mf.exists && mfMismatch.length) { add('FAIL', 'manifest matches this batch, payload and target', `manifest.json is not valid for this run (${mfMismatch.join('; ')}); it is ignored for decisions but blocks a silent "already imported"`); return refuse(); }
+      res.state = mf.exists ? 'already-imported' : 'already-present';
       add('PASS', 'idempotent re-run', `all ${N_} staged ids already exist in production with identical content; NOTHING will be written`);
       const others = drift(snap.approved, index, new Set(ids));
       add(driftTotal(others) ? 'WARN' : 'PASS', 'index vs production (excluding this batch)', driftTotal(others) ? `${driftTotal(others)} other difference(s); rebuild the index after reviewing` : 'identical');
-      if (mode === 'apply' && !hasManifest) {
-        const m = manifestFor({ res, batch, target, now, status: 'imported-recovered', before: null, after: snap.approved.length, verification: { ok: true, checked: N_, problems: [] }, inserted: 0 });
-        fs.writeFileSync(manifestFile, JSON.stringify(m, null, 2) + '\n'); res.manifest = m; res.manifestWritten = true;
-        add('PASS', 'manifest', 'batch was already in production but had no manifest.json; wrote a recovery manifest (no database write)');
+      if (mode === 'apply' && !mf.exists) {
+        const m = manifestFor({ res, batch, target, now, status: 'imported-recovered', before: null, after: snap.approved.length, verification: { ok: true, checked: N_, problems: [] }, inserted: 0, liveSha: liveStateSha(snap.approved) });
+        MF.writeManifest(batchDir, m); res.manifest = m; res.manifestWritten = true;
+        add('PASS', 'manifest', 'batch was already in production (identical content) but had no manifest.json; wrote a recovery manifest (a local file; no database write)');
       }
       return done(0);
     }
     if (present.length) { add('FAIL', 'staged ids absent from production', `${present.length} of ${N_} staged ids already exist (${sample(present.map(p2 => p2.id))}); refusing a partial/mixed state`); return refuse(); }
-    if (hasManifest) { add('FAIL', 'manifest consistent with production', 'manifest.json says imported but production has none of the rows'); return refuse(); }
+    if (mf.exists) { add('FAIL', 'no manifest without rows', `${MF.MANIFEST} exists but production has none of the staged rows${mfMismatch.length ? ` (and it does not match this run: ${mfMismatch.join('; ')})` : ''}; refusing to import on top of a claimed import — investigate, then remove the file only if the rows are genuinely gone`); return refuse(); }
     res.state = 'fresh';
     if (mode === 'verify') { add('FAIL', 'verify', 'the batch is not in production yet (nothing to verify)'); return refuse(); }
     add('PASS', 'staged ids absent from production', `${N_} of ${N_} absent` + (res.coverage === 'FULL' ? ' (all statuses checked with the service-role read)' : ' (approved rows only: PARTIAL)'));
@@ -220,28 +232,36 @@ async function runImport(opts) {
       add('PASS', 'no staged record duplicates a pending submission', `${snap.pending.length} pending row(s) checked`);
     } else add('SKIP', 'pending submissions', 'not checked without a service-role read');
 
-    res.token = confirmToken({ batchId: res.batchId, planSha: plan.plan_sha256, payload: res.payloadSha, host: target.host });
+    res.liveSha = liveStateSha(snap.approved);
     res.applyReady = res.coverage === 'FULL';
+    // A token exists only for a FULL-coverage (service-role) preflight. A PARTIAL public dry-run has none, and even a token computed
+    // from one could never match, because coverage is part of what it is bound to.
+    if (res.applyReady) res.token = confirmToken({ batchId: res.batchId, planSha: plan.plan_sha256, payload: res.payloadSha, host: target.host, kind: target.kind, coverage: 'FULL', liveSha: res.liveSha });
 
     if (mode !== 'apply') { add('PASS', 'dry-run', 'NO WRITES PERFORMED'); return done(0); }
 
     // ---- apply gates -----------------------------------------------------------------------------------------------------
-    if (!confirm) add('FAIL', 'gate: --confirm', `required: --confirm ${res.token} (printed by the dry-run for exactly this batch, payload and target)`);
-    else if (confirm !== res.token) add('FAIL', 'gate: --confirm', 'the confirmation token does not match this batch/payload/target; re-run the dry-run and read its report');
+    if (!res.applyReady) add('FAIL', 'gate: full preflight coverage', 'apply requires the service-role preflight (FULL coverage)');
+    if (!confirm) add('FAIL', 'gate: --confirm', `required: --confirm ${res.token} (printed by the FULL-coverage dry-run for exactly this batch, payload, target and production state)`);
+    else if (confirm !== res.token) add('FAIL', 'gate: --confirm', 'the confirmation token does not match this batch/payload/target/production state (a token from a partial dry-run never matches); re-run the dry-run with the service-role key and read its report');
     else add('PASS', 'gate: --confirm', 'matches');
     if (target.kind === 'production') add(productionFlag ? 'PASS' : 'FAIL', 'gate: --i-understand-this-writes-to-production', productionFlag ? 'given' : 'required for the production target');
     if (fails().length) return refuse();
 
     // ---- last look immediately before the write -------------------------------------------------------------------
+    // Nothing but this re-check, the gate mint and the INSERT separates the checks from the write. Any difference (a row added, removed
+    // or CHANGED, a staged id now present, a new pending clash) is a refusal: the importer never tries to reconcile.
     const before = await snapshot();
+    if (!before.pending) { add('FAIL', 'final re-check before write', 'no privileged (pending-row) read available'); return refuse(); }
     const dr2 = drift(before.approved, index);
     const clash2 = before.pending.filter(p2 => recs.some(x => M.scan(x.rec, [p2], { forceProbable: true }).probable.length));
-    if (before.presentRows.length || driftTotal(dr2) || clash2.length) { add('FAIL', 'final re-check before write', `production changed during preflight (present ${before.presentRows.length}, drift ${driftTotal(dr2)}, pending clashes ${clash2.length}); nothing written`); return refuse(); }
-    add('PASS', 'final re-check before write', 'production still identical to the index; ids still absent');
+    const liveMoved = liveStateSha(before.approved) !== res.liveSha;
+    if (before.presentRows.length || driftTotal(dr2) || clash2.length || liveMoved) { add('FAIL', 'final re-check before write', `production changed during preflight (present ${before.presentRows.length}, drift ${driftTotal(dr2)}, pending clashes ${clash2.length}, state hash moved ${liveMoved}); nothing written`); return refuse(); }
+    add('PASS', 'final re-check before write', 'production still identical to the index and to the state the token was issued for; ids still absent');
     res.beforeCount = before.approved.length;
     res.startedAt = now();
 
-    const gate = T.mintWriteGate({ batchId: res.batchId, token: res.token, rows });
+    const gate = T.mintWriteGate({ batchId: res.batchId, token: res.token, rows, payloadSha: res.payloadSha });
     let outcomeUnknown = false;
     try {
       const r = await api.insertSpots(rows, gate);
@@ -249,37 +269,62 @@ async function runImport(opts) {
       if (!r.ok) { add('FAIL', 'insert', `HTTP ${r.status}: ${String(r.text).slice(0, 300)}. The insert is a single atomic statement, so nothing was written.`); const chk = await snapshot(); if (chk.presentRows.length) { add('FAIL', 'post-failure check', `${chk.presentRows.length} staged row(s) unexpectedly present; inspect production before retrying`); return done(4); } return refuse(); }
     } catch (e) { outcomeUnknown = true; add('WARN', 'insert', `no response (${e.message}); checking what happened`); }
     const after = await snapshot();
-    if (outcomeUnknown && after.presentRows.length === 0) { add('FAIL', 'insert', 'the request did not complete and no staged row exists; nothing was written'); return done(4); }
+    if (outcomeUnknown && after.presentRows.length === 0) { add('FAIL', 'insert', 'the request did not complete and no staged row exists; nothing was written. Safe to re-run after checking connectivity.'); return done(4); }
     res.wrote = after.presentRows.length > 0;
-    add('PASS', 'insert', `${after.presentRows.length} row(s) written in one atomic statement`);
+    if (after.presentRows.length !== N_) {
+      // Cannot happen for one atomic INSERT unless something else touched production; never described as a success.
+      add('FAIL', 'insert', `${after.presentRows.length} of ${N_} staged rows exist after the insert; this is a partial/unknown state`);
+      const f = failureFor({ res, batch, target, now, phase: 'partial-or-unknown-outcome', present: after.presentRows.map(x => x.id), problems: [`${after.presentRows.length} of ${N_} staged ids exist`] });
+      MF.writeFailure(batchDir, f); res.failureWritten = true;
+      add('WARN', MF.FAILURE, 'wrote a failure record (NOT manifest.json); inspect production before doing anything else');
+      return done(4);
+    }
+    add('PASS', 'insert', `all ${N_} row(s) written in one atomic statement`);
 
     // ---- post-import verification (read-only) -----------------------------------------------------------------------
     const problems = [];
-    if (after.presentRows.length !== N_) problems.push(`${after.presentRows.length} of ${N_} staged ids exist after the insert`);
     rows.forEach(r => { const db = after.presentRows.find(x => x.id === r.id); if (!db) return; const d = diffRow(r, db); if (d.length) problems.push(`${r.id}: ${d.join('/')}`); });
     if (after.approved.length !== res.beforeCount + N_) problems.push(`approved count ${after.approved.length}, expected ${res.beforeCount + N_}`);
     const drAfter = drift(after.approved, index, new Set(ids));
     if (driftTotal(drAfter)) problems.push(`pre-existing spots changed: added ${drAfter.added.length}, removed ${drAfter.removed.length}, changed ${drAfter.changed.length}`);
     res.verification = { ok: problems.length === 0, checked: N_, problems };
     add(problems.length ? 'FAIL' : 'PASS', 'post-import verification', problems.length ? sample(problems, 4) : `all ${N_} rows present and identical to the staged content; approved ${res.beforeCount} → ${after.approved.length}; every pre-existing spot unchanged`);
-    const m = manifestFor({ res, batch, target, now, status: problems.length ? 'imported-verification-failed' : 'imported', before: res.beforeCount, after: after.approved.length, verification: res.verification, inserted: after.presentRows.length, startedAt: res.startedAt });
-    fs.writeFileSync(manifestFile, JSON.stringify(m, null, 2) + '\n'); res.manifest = m; res.manifestWritten = true;
-    add('PASS', 'manifest', 'wrote manifest.json (no credentials in it)');
-    return done(problems.length ? 4 : 0);
+    if (problems.length) {
+      // manifest.json means "imported and verified". A failed verification must never leave one behind.
+      MF.writeFailure(batchDir, failureFor({ res, batch, target, now, phase: 'verification-failed', present: after.presentRows.map(x => x.id), problems }));
+      res.failureWritten = true;
+      add('WARN', MF.FAILURE, 'wrote a failure record (NOT manifest.json); the rows ARE in production — inspect before re-running');
+      return done(4);
+    }
+    const m = manifestFor({ res, batch, target, now, status: 'imported', before: res.beforeCount, after: after.approved.length, verification: res.verification, inserted: after.presentRows.length, startedAt: res.startedAt, liveSha: res.liveSha });
+    MF.writeManifest(batchDir, m); res.manifest = m; res.manifestWritten = true;
+    add('PASS', 'manifest', 'wrote manifest.json (verified import; no credentials in it)');
+    return done(0);
   } catch (e) {
     add('FAIL', 'production reads', T.redact(e.message, [target.serviceKey, target.anonKey]));
     return res.wrote ? done(4) : refuse();
   }
 }
 
-function manifestFor({ res, batch, target, now, status, before, after, verification, inserted, startedAt }) {
+// manifest.json: the record of a VERIFIED import (status 'imported') or a verified recovery ('imported-recovered'). Written only after the
+// read-back verification passed. Contains no credential of any kind (no key, no key fragment, no request headers).
+function manifestFor({ res, batch, target, now, status, before, after, verification, inserted, startedAt, liveSha }) {
   return {
     schema_version: 1, importer_version: IMPORTER_VERSION, batch_id: batch.id, status,
     target: { kind: target.kind, host: target.host },
-    plan_sha256: res.planSha || null, payload_sha256: res.payloadSha, confirm_token: res.token || null,
+    coverage: res.coverage,
+    plan_sha256: res.planSha || null, payload_sha256: res.payloadSha, confirm_token: res.token || null, live_state_sha256: liveSha || null,
     rows_inserted: inserted, approved_before: before, approved_after: after,
     verification, started_at: startedAt || now(), finished_at: now(),
     ids: res.rows.map(r => r.id),
+  };
+}
+// import-failure.json: a write that did not verify (or an unknown outcome). Never named or shaped like a manifest.
+function failureFor({ res, batch, target, now, phase, present, problems }) {
+  return {
+    schema_version: 1, importer_version: IMPORTER_VERSION, batch_id: batch.id, status: 'import-failed', phase,
+    target: { kind: target.kind, host: target.host }, payload_sha256: res.payloadSha, staged: res.rows.length,
+    staged_ids_present_in_production: present, approved_before: res.beforeCount, problems, started_at: res.startedAt || null, finished_at: now(),
   };
 }
 
@@ -290,7 +335,7 @@ function renderReport(res) {
   L.push(`# Import preflight: ${res.batchId}  [${label}]`, '');
   L.push(`Target: ${res.target ? `${res.target.kind} (${res.target.host})` : 'unresolved'} | Coverage: ${res.coverage}${res.coverage === 'PARTIAL' ? ' (public reads only)' : ''}${res.state ? ' | State: ' + res.state : ''}`);
   if (res.rows.length) L.push(`Rows: ${res.rows.length} | payload sha256 ${res.payloadSha ? res.payloadSha.slice(0, 16) + '…' : '-'}${res.planSha ? ' | plan ' + res.planSha.slice(0, 12) + '…' : ''}`);
-  if (res.token && res.state === 'fresh') L.push(`Confirmation token (required by --apply for exactly this batch/payload/target): ${res.token}`);
+  if (res.state === 'fresh') L.push(res.token ? `Confirmation token (required by --apply; bound to this batch, payload, target and production state): ${res.token}` : 'Confirmation token: none (PARTIAL coverage; run the dry-run with the service-role key to obtain one)');
   L.push('', '## Checks');
   res.checks.forEach(c => L.push(`- [${c.status}] ${c.name}${c.detail ? ': ' + c.detail : ''}`));
   if (res.rows.length && res.state === 'fresh') {
@@ -303,4 +348,4 @@ function renderReport(res) {
   return L.join('\n');
 }
 
-module.exports = { runImport, toRow, payloadSha, confirmToken, diffRow, drift, renderReport, MAX_ROWS, COLS };
+module.exports = { runImport, toRow, payloadSha, confirmToken, liveStateSha, diffRow, drift, renderReport, MAX_ROWS, COLS, IMPORTER_VERSION };

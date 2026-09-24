@@ -4,6 +4,7 @@ const fs = require('fs');
 const os = require('os');
 const path = require('path');
 const S = require('../../scripts/lib/gym-import/index-store');
+const { readManifest, isImported } = require('../../scripts/lib/gym-import/manifest');
 
 const ROOT = path.resolve(__dirname, '..', '..');
 const tmp = () => fs.mkdtempSync(path.join(os.tmpdir(), 'gym-import-test-'));
@@ -35,18 +36,29 @@ function makeBatch(records, { id = '2026-01-01-synthetic', decisions = null, roo
 const rec = (over = {}) => ({ name: 'Summit Lab', suburb: 'Newtown', state: 'NSW', country: 'AU', lat: -33.897, lng: 151.179, types: ['indoor-bouldering'], address: '1 King St, Newtown NSW 2042', notes: 'n', photo: null, ...over });
 const byName = (plan, name) => plan.records.find(r => r.name === name);
 
-// The match index as it was BEFORE any batch in import/batches was imported. Once a batch has a manifest.json the real index is
-// rebuilt from production and includes its gyms; the Stage 0 / staging regression tests are about the pre-import world, so they
-// use this (identical to the real index until the first import).
-function preImportIndex() {
-  const idx = S.load();
-  const dir = path.join(ROOT, 'import', 'batches'), imported = new Set();
-  if (fs.existsSync(dir)) for (const b of fs.readdirSync(dir)) { const m = path.join(dir, b, 'manifest.json'); if (fs.existsSync(m)) (JSON.parse(fs.readFileSync(m, 'utf8')).ids || []).forEach(id => imported.add(id)); }
-  if (!imported.size) return idx;
-  const entries = idx.entries.filter(e => !imported.has(e.id)), byId = new Map(), byCountry = new Map();
+// The match index as it was BEFORE a batch was imported, for regression tests about the pre-import world (Stage 0 reconciliation,
+// staging). Before the import (no manifest) this IS the real index. After a verified import the real index is rebuilt from production
+// and contains the batch's gyms, so the pre-import view is reconstructed by removing them -- and that reconstruction is only accepted
+// if it hashes to the index sha256/count recorded in batch.json (index_at_staging) when the batch was staged. That recorded hash is
+// independent of the manifest: a wrong, forged or stale manifest makes this throw instead of silently changing what tests see.
+// Nothing in the importer itself uses this; production logic always reads the live database.
+function preImportIndex(batchId = '2026-09-24-reconciled-new-gyms', root = ROOT) {
+  const idx = S.load(path.join(root, 'import', 'index'));
+  const dir = path.join(root, 'import', 'batches', batchId);
+  const mf = readManifest(dir);
+  if (!mf.exists) return idx;
+  if (!mf.valid) throw new Error('manifest for ' + batchId + ' is not valid: ' + mf.problems.join('; '));
+  const staged = JSON.parse(fs.readFileSync(path.join(dir, 'batch.json'), 'utf8')).index_at_staging;
+  if (!staged || !staged.sha256) throw new Error('batch.json has no index_at_staging to verify the reconstruction against');
+  const remove = new Set(mf.manifest.ids);
+  const lines = fs.readFileSync(path.join(root, 'import', 'index', 'gym-index.ndjson'), 'utf8').split(String.fromCharCode(10)).filter(Boolean);
+  const kept = lines.filter(l => !remove.has(JSON.parse(l).id));
+  const text = kept.join(String.fromCharCode(10)) + String.fromCharCode(10);
+  if (S.sha256(Buffer.from(text)) !== staged.sha256 || kept.length !== staged.count) throw new Error('cannot reconstruct the pre-import index for ' + batchId + ': the result does not match index_at_staging in batch.json (' + kept.length + ' gyms)');
+  const entries = kept.map(l => JSON.parse(l)), byId = new Map(), byCountry = new Map();
   for (const e of entries) { byId.set(e.id, e); if (!byCountry.has(e.country)) byCountry.set(e.country, []); byCountry.get(e.country).push(e); }
-  return { ...idx, entries, byId, byCountry, sha256: S.sha256(Buffer.from(entries.map(e => JSON.stringify(e)).join('\n'))), metaMatches: true, preImportView: true };
+  return { ...idx, entries, byId, byCountry, sha256: staged.sha256, metaMatches: true, preImportView: true };
 }
-const batchImported = id => fs.existsSync(path.join(ROOT, 'import', 'batches', id, 'manifest.json'));
+const batchImported = id => isImported(path.join(ROOT, 'import', 'batches', id));
 
 module.exports = { ROOT, tmp, PROD, makeIndex, makeBatch, rec, byName, preImportIndex, batchImported };
