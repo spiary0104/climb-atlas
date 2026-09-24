@@ -1,0 +1,1538 @@
+[
+ {
+  "table": "marks",
+  "grantee": "postgres",
+  "privilege": "INSERT",
+  "grantable": false
+ },
+ {
+  "table": "marks",
+  "grantee": "postgres",
+  "privilege": "SELECT",
+  "grantable": false
+ },
+ {
+  "table": "marks",
+  "grantee": "postgres",
+  "privilege": "UPDATE",
+  "grantable": false
+ },
+ {
+  "table": "marks",
+  "grantee": "postgres",
+  "privilege": "DELETE",
+  "grantable": false
+ },
+ {
+  "table": "marks",
+  "grantee": "postgres",
+  "privilege": "TRUNCATE",
+  "grantable": false
+ },
+ {
+  "table": "marks",
+  "grantee": "postgres",
+  "privilege": "REFERENCES",
+  "grantable": false
+ },
+ {
+  "table": "marks",
+  "grantee": "postgres",
+  "privilege": "TRIGGER",
+  "grantable": false
+ },
+ {
+  "table": "marks",
+  "grantee": "postgres",
+  "privilege": "MAINTAIN",
+  "grantable": false
+ },
+ {
+  "table": "marks",
+  "grantee": "anon",
+  "privilege": "INSERT",
+  "grantable": false
+ },
+ {
+  "table": "marks",
+  "grantee": "anon",
+  "privilege": "SELECT",
+  "grantable": false
+ },
+ {
+  "table": "marks",
+  "grantee": "anon",
+  "privilege": "UPDATE",
+  "grantable": false
+ },
+ {
+  "table": "marks",
+  "grantee": "anon",
+  "privilege": "DELETE",
+  "grantable": false
+ },
+ {
+  "table": "marks",
+  "grantee": "anon",
+  "privilege": "TRUNCATE",
+  "grantable": false
+ },
+ {
+  "table": "marks",
+  "grantee": "anon",
+  "privilege": "REFERENCES",
+  "grantable": false
+ },
+ {
+  "table": "marks",
+  "grantee": "anon",
+  "privilege": "TRIGGER",
+  "grantable": false
+ },
+ {
+  "table": "marks",
+  "grantee": "anon",
+  "privilege": "MAINTAIN",
+  "grantable": false
+ },
+ {
+  "table": "marks",
+  "grantee": "authenticated",
+  "privilege": "INSERT",
+  "grantable": false
+ },
+ {
+  "table": "marks",
+  "grantee": "authenticated",
+  "privilege": "SELECT",
+  "grantable": false
+ },
+ {
+  "table": "marks",
+  "grantee": "authenticated",
+  "privilege": "UPDATE",
+  "grantable": false
+ },
+ {
+  "table": "marks",
+  "grantee": "authenticated",
+  "privilege": "DELETE",
+  "grantable": false
+ },
+ {
+  "table": "marks",
+  "grantee": "authenticated",
+  "privilege": "TRUNCATE",
+  "grantable": false
+ },
+ {
+  "table": "marks",
+  "grantee": "authenticated",
+  "privilege": "REFERENCES",
+  "grantable": false
+ },
+ {
+  "table": "marks",
+  "grantee": "authenticated",
+  "privilege": "TRIGGER",
+  "grantable": false
+ },
+ {
+  "table": "marks",
+  "grantee": "authenticated",
+  "privilege": "MAINTAIN",
+  "grantable": false
+ },
+ {
+  "table": "marks",
+  "grantee": "service_role",
+  "privilege": "INSERT",
+  "grantable": false
+ },
+ {
+  "table": "marks",
+  "grantee": "service_role",
+  "privilege": "SELECT",
+  "grantable": false
+ },
+ {
+  "table": "marks",
+  "grantee": "service_role",
+  "privilege": "UPDATE",
+  "grantable": false
+ },
+ {
+  "table": "marks",
+  "grantee": "service_role",
+  "privilege": "DELETE",
+  "grantable": false
+ },
+ {
+  "table": "marks",
+  "grantee": "service_role",
+  "privilege": "TRUNCATE",
+  "grantable": false
+ },
+ {
+  "table": "marks",
+  "grantee": "service_role",
+  "privilege": "REFERENCES",
+  "grantable": false
+ },
+ {
+  "table": "marks",
+  "grantee": "service_role",
+  "privilege": "TRIGGER",
+  "grantable": false
+ },
+ {
+  "table": "marks",
+  "grantee": "service_role",
+  "privilege": "MAINTAIN",
+  "grantable": false
+ },
+ {
+  "table": "moderators",
+  "grantee": "postgres",
+  "privilege": "INSERT",
+  "grantable": false
+ },
+ {
+  "table": "moderators",
+  "grantee": "postgres",
+  "privilege": "SELECT",
+  "grantable": false
+ },
+ {
+  "table": "moderators",
+  "grantee": "postgres",
+  "privilege": "UPDATE",
+  "grantable": false
+ },
+ {
+  "table": "moderators",
+  "grantee": "postgres",
+  "privilege": "DELETE",
+  "grantable": false
+ },
+ {
+  "table": "moderators",
+  "grantee": "postgres",
+  "privilege": "TRUNCATE",
+  "grantable": false
+ },
+ {
+  "table": "moderators",
+  "grantee": "postgres",
+  "privilege": "REFERENCES",
+  "grantable": false
+ },
+ {
+  "table": "moderators",
+  "grantee": "postgres",
+  "privilege": "TRIGGER",
+  "grantable": false
+ },
+ {
+  "table": "moderators",
+  "grantee": "postgres",
+  "privilege": "MAINTAIN",
+  "grantable": false
+ },
+ {
+  "table": "moderators",
+  "grantee": "anon",
+  "privilege": "INSERT",
+  "grantable": false
+ },
+ {
+  "table": "moderators",
+  "grantee": "anon",
+  "privilege": "SELECT",
+  "grantable": false
+ },
+ {
+  "table": "moderators",
+  "grantee": "anon",
+  "privilege": "UPDATE",
+  "grantable": false
+ },
+ {
+  "table": "moderators",
+  "grantee": "anon",
+  "privilege": "DELETE",
+  "grantable": false
+ },
+ {
+  "table": "moderators",
+  "grantee": "anon",
+  "privilege": "TRUNCATE",
+  "grantable": false
+ },
+ {
+  "table": "moderators",
+  "grantee": "anon",
+  "privilege": "REFERENCES",
+  "grantable": false
+ },
+ {
+  "table": "moderators",
+  "grantee": "anon",
+  "privilege": "TRIGGER",
+  "grantable": false
+ },
+ {
+  "table": "moderators",
+  "grantee": "anon",
+  "privilege": "MAINTAIN",
+  "grantable": false
+ },
+ {
+  "table": "moderators",
+  "grantee": "authenticated",
+  "privilege": "INSERT",
+  "grantable": false
+ },
+ {
+  "table": "moderators",
+  "grantee": "authenticated",
+  "privilege": "SELECT",
+  "grantable": false
+ },
+ {
+  "table": "moderators",
+  "grantee": "authenticated",
+  "privilege": "UPDATE",
+  "grantable": false
+ },
+ {
+  "table": "moderators",
+  "grantee": "authenticated",
+  "privilege": "DELETE",
+  "grantable": false
+ },
+ {
+  "table": "moderators",
+  "grantee": "authenticated",
+  "privilege": "TRUNCATE",
+  "grantable": false
+ },
+ {
+  "table": "moderators",
+  "grantee": "authenticated",
+  "privilege": "REFERENCES",
+  "grantable": false
+ },
+ {
+  "table": "moderators",
+  "grantee": "authenticated",
+  "privilege": "TRIGGER",
+  "grantable": false
+ },
+ {
+  "table": "moderators",
+  "grantee": "authenticated",
+  "privilege": "MAINTAIN",
+  "grantable": false
+ },
+ {
+  "table": "moderators",
+  "grantee": "service_role",
+  "privilege": "INSERT",
+  "grantable": false
+ },
+ {
+  "table": "moderators",
+  "grantee": "service_role",
+  "privilege": "SELECT",
+  "grantable": false
+ },
+ {
+  "table": "moderators",
+  "grantee": "service_role",
+  "privilege": "UPDATE",
+  "grantable": false
+ },
+ {
+  "table": "moderators",
+  "grantee": "service_role",
+  "privilege": "DELETE",
+  "grantable": false
+ },
+ {
+  "table": "moderators",
+  "grantee": "service_role",
+  "privilege": "TRUNCATE",
+  "grantable": false
+ },
+ {
+  "table": "moderators",
+  "grantee": "service_role",
+  "privilege": "REFERENCES",
+  "grantable": false
+ },
+ {
+  "table": "moderators",
+  "grantee": "service_role",
+  "privilege": "TRIGGER",
+  "grantable": false
+ },
+ {
+  "table": "moderators",
+  "grantee": "service_role",
+  "privilege": "MAINTAIN",
+  "grantable": false
+ },
+ {
+  "table": "pending_edits",
+  "grantee": "postgres",
+  "privilege": "INSERT",
+  "grantable": false
+ },
+ {
+  "table": "pending_edits",
+  "grantee": "postgres",
+  "privilege": "SELECT",
+  "grantable": false
+ },
+ {
+  "table": "pending_edits",
+  "grantee": "postgres",
+  "privilege": "UPDATE",
+  "grantable": false
+ },
+ {
+  "table": "pending_edits",
+  "grantee": "postgres",
+  "privilege": "DELETE",
+  "grantable": false
+ },
+ {
+  "table": "pending_edits",
+  "grantee": "postgres",
+  "privilege": "TRUNCATE",
+  "grantable": false
+ },
+ {
+  "table": "pending_edits",
+  "grantee": "postgres",
+  "privilege": "REFERENCES",
+  "grantable": false
+ },
+ {
+  "table": "pending_edits",
+  "grantee": "postgres",
+  "privilege": "TRIGGER",
+  "grantable": false
+ },
+ {
+  "table": "pending_edits",
+  "grantee": "postgres",
+  "privilege": "MAINTAIN",
+  "grantable": false
+ },
+ {
+  "table": "pending_edits",
+  "grantee": "anon",
+  "privilege": "INSERT",
+  "grantable": false
+ },
+ {
+  "table": "pending_edits",
+  "grantee": "anon",
+  "privilege": "SELECT",
+  "grantable": false
+ },
+ {
+  "table": "pending_edits",
+  "grantee": "anon",
+  "privilege": "UPDATE",
+  "grantable": false
+ },
+ {
+  "table": "pending_edits",
+  "grantee": "anon",
+  "privilege": "DELETE",
+  "grantable": false
+ },
+ {
+  "table": "pending_edits",
+  "grantee": "anon",
+  "privilege": "TRUNCATE",
+  "grantable": false
+ },
+ {
+  "table": "pending_edits",
+  "grantee": "anon",
+  "privilege": "REFERENCES",
+  "grantable": false
+ },
+ {
+  "table": "pending_edits",
+  "grantee": "anon",
+  "privilege": "TRIGGER",
+  "grantable": false
+ },
+ {
+  "table": "pending_edits",
+  "grantee": "anon",
+  "privilege": "MAINTAIN",
+  "grantable": false
+ },
+ {
+  "table": "pending_edits",
+  "grantee": "authenticated",
+  "privilege": "INSERT",
+  "grantable": false
+ },
+ {
+  "table": "pending_edits",
+  "grantee": "authenticated",
+  "privilege": "SELECT",
+  "grantable": false
+ },
+ {
+  "table": "pending_edits",
+  "grantee": "authenticated",
+  "privilege": "UPDATE",
+  "grantable": false
+ },
+ {
+  "table": "pending_edits",
+  "grantee": "authenticated",
+  "privilege": "DELETE",
+  "grantable": false
+ },
+ {
+  "table": "pending_edits",
+  "grantee": "authenticated",
+  "privilege": "TRUNCATE",
+  "grantable": false
+ },
+ {
+  "table": "pending_edits",
+  "grantee": "authenticated",
+  "privilege": "REFERENCES",
+  "grantable": false
+ },
+ {
+  "table": "pending_edits",
+  "grantee": "authenticated",
+  "privilege": "TRIGGER",
+  "grantable": false
+ },
+ {
+  "table": "pending_edits",
+  "grantee": "authenticated",
+  "privilege": "MAINTAIN",
+  "grantable": false
+ },
+ {
+  "table": "pending_edits",
+  "grantee": "service_role",
+  "privilege": "INSERT",
+  "grantable": false
+ },
+ {
+  "table": "pending_edits",
+  "grantee": "service_role",
+  "privilege": "SELECT",
+  "grantable": false
+ },
+ {
+  "table": "pending_edits",
+  "grantee": "service_role",
+  "privilege": "UPDATE",
+  "grantable": false
+ },
+ {
+  "table": "pending_edits",
+  "grantee": "service_role",
+  "privilege": "DELETE",
+  "grantable": false
+ },
+ {
+  "table": "pending_edits",
+  "grantee": "service_role",
+  "privilege": "TRUNCATE",
+  "grantable": false
+ },
+ {
+  "table": "pending_edits",
+  "grantee": "service_role",
+  "privilege": "REFERENCES",
+  "grantable": false
+ },
+ {
+  "table": "pending_edits",
+  "grantee": "service_role",
+  "privilege": "TRIGGER",
+  "grantable": false
+ },
+ {
+  "table": "pending_edits",
+  "grantee": "service_role",
+  "privilege": "MAINTAIN",
+  "grantable": false
+ },
+ {
+  "table": "reports",
+  "grantee": "postgres",
+  "privilege": "INSERT",
+  "grantable": false
+ },
+ {
+  "table": "reports",
+  "grantee": "postgres",
+  "privilege": "SELECT",
+  "grantable": false
+ },
+ {
+  "table": "reports",
+  "grantee": "postgres",
+  "privilege": "UPDATE",
+  "grantable": false
+ },
+ {
+  "table": "reports",
+  "grantee": "postgres",
+  "privilege": "DELETE",
+  "grantable": false
+ },
+ {
+  "table": "reports",
+  "grantee": "postgres",
+  "privilege": "TRUNCATE",
+  "grantable": false
+ },
+ {
+  "table": "reports",
+  "grantee": "postgres",
+  "privilege": "REFERENCES",
+  "grantable": false
+ },
+ {
+  "table": "reports",
+  "grantee": "postgres",
+  "privilege": "TRIGGER",
+  "grantable": false
+ },
+ {
+  "table": "reports",
+  "grantee": "postgres",
+  "privilege": "MAINTAIN",
+  "grantable": false
+ },
+ {
+  "table": "reports",
+  "grantee": "anon",
+  "privilege": "INSERT",
+  "grantable": false
+ },
+ {
+  "table": "reports",
+  "grantee": "anon",
+  "privilege": "SELECT",
+  "grantable": false
+ },
+ {
+  "table": "reports",
+  "grantee": "anon",
+  "privilege": "UPDATE",
+  "grantable": false
+ },
+ {
+  "table": "reports",
+  "grantee": "anon",
+  "privilege": "DELETE",
+  "grantable": false
+ },
+ {
+  "table": "reports",
+  "grantee": "anon",
+  "privilege": "TRUNCATE",
+  "grantable": false
+ },
+ {
+  "table": "reports",
+  "grantee": "anon",
+  "privilege": "REFERENCES",
+  "grantable": false
+ },
+ {
+  "table": "reports",
+  "grantee": "anon",
+  "privilege": "TRIGGER",
+  "grantable": false
+ },
+ {
+  "table": "reports",
+  "grantee": "anon",
+  "privilege": "MAINTAIN",
+  "grantable": false
+ },
+ {
+  "table": "reports",
+  "grantee": "authenticated",
+  "privilege": "INSERT",
+  "grantable": false
+ },
+ {
+  "table": "reports",
+  "grantee": "authenticated",
+  "privilege": "SELECT",
+  "grantable": false
+ },
+ {
+  "table": "reports",
+  "grantee": "authenticated",
+  "privilege": "UPDATE",
+  "grantable": false
+ },
+ {
+  "table": "reports",
+  "grantee": "authenticated",
+  "privilege": "DELETE",
+  "grantable": false
+ },
+ {
+  "table": "reports",
+  "grantee": "authenticated",
+  "privilege": "TRUNCATE",
+  "grantable": false
+ },
+ {
+  "table": "reports",
+  "grantee": "authenticated",
+  "privilege": "REFERENCES",
+  "grantable": false
+ },
+ {
+  "table": "reports",
+  "grantee": "authenticated",
+  "privilege": "TRIGGER",
+  "grantable": false
+ },
+ {
+  "table": "reports",
+  "grantee": "authenticated",
+  "privilege": "MAINTAIN",
+  "grantable": false
+ },
+ {
+  "table": "reports",
+  "grantee": "service_role",
+  "privilege": "INSERT",
+  "grantable": false
+ },
+ {
+  "table": "reports",
+  "grantee": "service_role",
+  "privilege": "SELECT",
+  "grantable": false
+ },
+ {
+  "table": "reports",
+  "grantee": "service_role",
+  "privilege": "UPDATE",
+  "grantable": false
+ },
+ {
+  "table": "reports",
+  "grantee": "service_role",
+  "privilege": "DELETE",
+  "grantable": false
+ },
+ {
+  "table": "reports",
+  "grantee": "service_role",
+  "privilege": "TRUNCATE",
+  "grantable": false
+ },
+ {
+  "table": "reports",
+  "grantee": "service_role",
+  "privilege": "REFERENCES",
+  "grantable": false
+ },
+ {
+  "table": "reports",
+  "grantee": "service_role",
+  "privilege": "TRIGGER",
+  "grantable": false
+ },
+ {
+  "table": "reports",
+  "grantee": "service_role",
+  "privilege": "MAINTAIN",
+  "grantable": false
+ },
+ {
+  "table": "routes",
+  "grantee": "postgres",
+  "privilege": "INSERT",
+  "grantable": false
+ },
+ {
+  "table": "routes",
+  "grantee": "postgres",
+  "privilege": "SELECT",
+  "grantable": false
+ },
+ {
+  "table": "routes",
+  "grantee": "postgres",
+  "privilege": "UPDATE",
+  "grantable": false
+ },
+ {
+  "table": "routes",
+  "grantee": "postgres",
+  "privilege": "DELETE",
+  "grantable": false
+ },
+ {
+  "table": "routes",
+  "grantee": "postgres",
+  "privilege": "TRUNCATE",
+  "grantable": false
+ },
+ {
+  "table": "routes",
+  "grantee": "postgres",
+  "privilege": "REFERENCES",
+  "grantable": false
+ },
+ {
+  "table": "routes",
+  "grantee": "postgres",
+  "privilege": "TRIGGER",
+  "grantable": false
+ },
+ {
+  "table": "routes",
+  "grantee": "postgres",
+  "privilege": "MAINTAIN",
+  "grantable": false
+ },
+ {
+  "table": "routes",
+  "grantee": "anon",
+  "privilege": "INSERT",
+  "grantable": false
+ },
+ {
+  "table": "routes",
+  "grantee": "anon",
+  "privilege": "SELECT",
+  "grantable": false
+ },
+ {
+  "table": "routes",
+  "grantee": "anon",
+  "privilege": "UPDATE",
+  "grantable": false
+ },
+ {
+  "table": "routes",
+  "grantee": "anon",
+  "privilege": "DELETE",
+  "grantable": false
+ },
+ {
+  "table": "routes",
+  "grantee": "anon",
+  "privilege": "TRUNCATE",
+  "grantable": false
+ },
+ {
+  "table": "routes",
+  "grantee": "anon",
+  "privilege": "REFERENCES",
+  "grantable": false
+ },
+ {
+  "table": "routes",
+  "grantee": "anon",
+  "privilege": "TRIGGER",
+  "grantable": false
+ },
+ {
+  "table": "routes",
+  "grantee": "anon",
+  "privilege": "MAINTAIN",
+  "grantable": false
+ },
+ {
+  "table": "routes",
+  "grantee": "authenticated",
+  "privilege": "INSERT",
+  "grantable": false
+ },
+ {
+  "table": "routes",
+  "grantee": "authenticated",
+  "privilege": "SELECT",
+  "grantable": false
+ },
+ {
+  "table": "routes",
+  "grantee": "authenticated",
+  "privilege": "UPDATE",
+  "grantable": false
+ },
+ {
+  "table": "routes",
+  "grantee": "authenticated",
+  "privilege": "DELETE",
+  "grantable": false
+ },
+ {
+  "table": "routes",
+  "grantee": "authenticated",
+  "privilege": "TRUNCATE",
+  "grantable": false
+ },
+ {
+  "table": "routes",
+  "grantee": "authenticated",
+  "privilege": "REFERENCES",
+  "grantable": false
+ },
+ {
+  "table": "routes",
+  "grantee": "authenticated",
+  "privilege": "TRIGGER",
+  "grantable": false
+ },
+ {
+  "table": "routes",
+  "grantee": "authenticated",
+  "privilege": "MAINTAIN",
+  "grantable": false
+ },
+ {
+  "table": "routes",
+  "grantee": "service_role",
+  "privilege": "INSERT",
+  "grantable": false
+ },
+ {
+  "table": "routes",
+  "grantee": "service_role",
+  "privilege": "SELECT",
+  "grantable": false
+ },
+ {
+  "table": "routes",
+  "grantee": "service_role",
+  "privilege": "UPDATE",
+  "grantable": false
+ },
+ {
+  "table": "routes",
+  "grantee": "service_role",
+  "privilege": "DELETE",
+  "grantable": false
+ },
+ {
+  "table": "routes",
+  "grantee": "service_role",
+  "privilege": "TRUNCATE",
+  "grantable": false
+ },
+ {
+  "table": "routes",
+  "grantee": "service_role",
+  "privilege": "REFERENCES",
+  "grantable": false
+ },
+ {
+  "table": "routes",
+  "grantee": "service_role",
+  "privilege": "TRIGGER",
+  "grantable": false
+ },
+ {
+  "table": "routes",
+  "grantee": "service_role",
+  "privilege": "MAINTAIN",
+  "grantable": false
+ },
+ {
+  "table": "session_climbs",
+  "grantee": "postgres",
+  "privilege": "INSERT",
+  "grantable": false
+ },
+ {
+  "table": "session_climbs",
+  "grantee": "postgres",
+  "privilege": "SELECT",
+  "grantable": false
+ },
+ {
+  "table": "session_climbs",
+  "grantee": "postgres",
+  "privilege": "UPDATE",
+  "grantable": false
+ },
+ {
+  "table": "session_climbs",
+  "grantee": "postgres",
+  "privilege": "DELETE",
+  "grantable": false
+ },
+ {
+  "table": "session_climbs",
+  "grantee": "postgres",
+  "privilege": "TRUNCATE",
+  "grantable": false
+ },
+ {
+  "table": "session_climbs",
+  "grantee": "postgres",
+  "privilege": "REFERENCES",
+  "grantable": false
+ },
+ {
+  "table": "session_climbs",
+  "grantee": "postgres",
+  "privilege": "TRIGGER",
+  "grantable": false
+ },
+ {
+  "table": "session_climbs",
+  "grantee": "postgres",
+  "privilege": "MAINTAIN",
+  "grantable": false
+ },
+ {
+  "table": "session_climbs",
+  "grantee": "anon",
+  "privilege": "INSERT",
+  "grantable": false
+ },
+ {
+  "table": "session_climbs",
+  "grantee": "anon",
+  "privilege": "SELECT",
+  "grantable": false
+ },
+ {
+  "table": "session_climbs",
+  "grantee": "anon",
+  "privilege": "UPDATE",
+  "grantable": false
+ },
+ {
+  "table": "session_climbs",
+  "grantee": "anon",
+  "privilege": "DELETE",
+  "grantable": false
+ },
+ {
+  "table": "session_climbs",
+  "grantee": "anon",
+  "privilege": "TRUNCATE",
+  "grantable": false
+ },
+ {
+  "table": "session_climbs",
+  "grantee": "anon",
+  "privilege": "REFERENCES",
+  "grantable": false
+ },
+ {
+  "table": "session_climbs",
+  "grantee": "anon",
+  "privilege": "TRIGGER",
+  "grantable": false
+ },
+ {
+  "table": "session_climbs",
+  "grantee": "anon",
+  "privilege": "MAINTAIN",
+  "grantable": false
+ },
+ {
+  "table": "session_climbs",
+  "grantee": "authenticated",
+  "privilege": "INSERT",
+  "grantable": false
+ },
+ {
+  "table": "session_climbs",
+  "grantee": "authenticated",
+  "privilege": "SELECT",
+  "grantable": false
+ },
+ {
+  "table": "session_climbs",
+  "grantee": "authenticated",
+  "privilege": "UPDATE",
+  "grantable": false
+ },
+ {
+  "table": "session_climbs",
+  "grantee": "authenticated",
+  "privilege": "DELETE",
+  "grantable": false
+ },
+ {
+  "table": "session_climbs",
+  "grantee": "authenticated",
+  "privilege": "TRUNCATE",
+  "grantable": false
+ },
+ {
+  "table": "session_climbs",
+  "grantee": "authenticated",
+  "privilege": "REFERENCES",
+  "grantable": false
+ },
+ {
+  "table": "session_climbs",
+  "grantee": "authenticated",
+  "privilege": "TRIGGER",
+  "grantable": false
+ },
+ {
+  "table": "session_climbs",
+  "grantee": "authenticated",
+  "privilege": "MAINTAIN",
+  "grantable": false
+ },
+ {
+  "table": "session_climbs",
+  "grantee": "service_role",
+  "privilege": "INSERT",
+  "grantable": false
+ },
+ {
+  "table": "session_climbs",
+  "grantee": "service_role",
+  "privilege": "SELECT",
+  "grantable": false
+ },
+ {
+  "table": "session_climbs",
+  "grantee": "service_role",
+  "privilege": "UPDATE",
+  "grantable": false
+ },
+ {
+  "table": "session_climbs",
+  "grantee": "service_role",
+  "privilege": "DELETE",
+  "grantable": false
+ },
+ {
+  "table": "session_climbs",
+  "grantee": "service_role",
+  "privilege": "TRUNCATE",
+  "grantable": false
+ },
+ {
+  "table": "session_climbs",
+  "grantee": "service_role",
+  "privilege": "REFERENCES",
+  "grantable": false
+ },
+ {
+  "table": "session_climbs",
+  "grantee": "service_role",
+  "privilege": "TRIGGER",
+  "grantable": false
+ },
+ {
+  "table": "session_climbs",
+  "grantee": "service_role",
+  "privilege": "MAINTAIN",
+  "grantable": false
+ },
+ {
+  "table": "sessions",
+  "grantee": "postgres",
+  "privilege": "INSERT",
+  "grantable": false
+ },
+ {
+  "table": "sessions",
+  "grantee": "postgres",
+  "privilege": "SELECT",
+  "grantable": false
+ },
+ {
+  "table": "sessions",
+  "grantee": "postgres",
+  "privilege": "UPDATE",
+  "grantable": false
+ },
+ {
+  "table": "sessions",
+  "grantee": "postgres",
+  "privilege": "DELETE",
+  "grantable": false
+ },
+ {
+  "table": "sessions",
+  "grantee": "postgres",
+  "privilege": "TRUNCATE",
+  "grantable": false
+ },
+ {
+  "table": "sessions",
+  "grantee": "postgres",
+  "privilege": "REFERENCES",
+  "grantable": false
+ },
+ {
+  "table": "sessions",
+  "grantee": "postgres",
+  "privilege": "TRIGGER",
+  "grantable": false
+ },
+ {
+  "table": "sessions",
+  "grantee": "postgres",
+  "privilege": "MAINTAIN",
+  "grantable": false
+ },
+ {
+  "table": "sessions",
+  "grantee": "anon",
+  "privilege": "INSERT",
+  "grantable": false
+ },
+ {
+  "table": "sessions",
+  "grantee": "anon",
+  "privilege": "SELECT",
+  "grantable": false
+ },
+ {
+  "table": "sessions",
+  "grantee": "anon",
+  "privilege": "UPDATE",
+  "grantable": false
+ },
+ {
+  "table": "sessions",
+  "grantee": "anon",
+  "privilege": "DELETE",
+  "grantable": false
+ },
+ {
+  "table": "sessions",
+  "grantee": "anon",
+  "privilege": "TRUNCATE",
+  "grantable": false
+ },
+ {
+  "table": "sessions",
+  "grantee": "anon",
+  "privilege": "REFERENCES",
+  "grantable": false
+ },
+ {
+  "table": "sessions",
+  "grantee": "anon",
+  "privilege": "TRIGGER",
+  "grantable": false
+ },
+ {
+  "table": "sessions",
+  "grantee": "anon",
+  "privilege": "MAINTAIN",
+  "grantable": false
+ },
+ {
+  "table": "sessions",
+  "grantee": "authenticated",
+  "privilege": "INSERT",
+  "grantable": false
+ },
+ {
+  "table": "sessions",
+  "grantee": "authenticated",
+  "privilege": "SELECT",
+  "grantable": false
+ },
+ {
+  "table": "sessions",
+  "grantee": "authenticated",
+  "privilege": "UPDATE",
+  "grantable": false
+ },
+ {
+  "table": "sessions",
+  "grantee": "authenticated",
+  "privilege": "DELETE",
+  "grantable": false
+ },
+ {
+  "table": "sessions",
+  "grantee": "authenticated",
+  "privilege": "TRUNCATE",
+  "grantable": false
+ },
+ {
+  "table": "sessions",
+  "grantee": "authenticated",
+  "privilege": "REFERENCES",
+  "grantable": false
+ },
+ {
+  "table": "sessions",
+  "grantee": "authenticated",
+  "privilege": "TRIGGER",
+  "grantable": false
+ },
+ {
+  "table": "sessions",
+  "grantee": "authenticated",
+  "privilege": "MAINTAIN",
+  "grantable": false
+ },
+ {
+  "table": "sessions",
+  "grantee": "service_role",
+  "privilege": "INSERT",
+  "grantable": false
+ },
+ {
+  "table": "sessions",
+  "grantee": "service_role",
+  "privilege": "SELECT",
+  "grantable": false
+ },
+ {
+  "table": "sessions",
+  "grantee": "service_role",
+  "privilege": "UPDATE",
+  "grantable": false
+ },
+ {
+  "table": "sessions",
+  "grantee": "service_role",
+  "privilege": "DELETE",
+  "grantable": false
+ },
+ {
+  "table": "sessions",
+  "grantee": "service_role",
+  "privilege": "TRUNCATE",
+  "grantable": false
+ },
+ {
+  "table": "sessions",
+  "grantee": "service_role",
+  "privilege": "REFERENCES",
+  "grantable": false
+ },
+ {
+  "table": "sessions",
+  "grantee": "service_role",
+  "privilege": "TRIGGER",
+  "grantable": false
+ },
+ {
+  "table": "sessions",
+  "grantee": "service_role",
+  "privilege": "MAINTAIN",
+  "grantable": false
+ },
+ {
+  "table": "spots",
+  "grantee": "postgres",
+  "privilege": "INSERT",
+  "grantable": false
+ },
+ {
+  "table": "spots",
+  "grantee": "postgres",
+  "privilege": "SELECT",
+  "grantable": false
+ },
+ {
+  "table": "spots",
+  "grantee": "postgres",
+  "privilege": "UPDATE",
+  "grantable": false
+ },
+ {
+  "table": "spots",
+  "grantee": "postgres",
+  "privilege": "DELETE",
+  "grantable": false
+ },
+ {
+  "table": "spots",
+  "grantee": "postgres",
+  "privilege": "TRUNCATE",
+  "grantable": false
+ },
+ {
+  "table": "spots",
+  "grantee": "postgres",
+  "privilege": "REFERENCES",
+  "grantable": false
+ },
+ {
+  "table": "spots",
+  "grantee": "postgres",
+  "privilege": "TRIGGER",
+  "grantable": false
+ },
+ {
+  "table": "spots",
+  "grantee": "postgres",
+  "privilege": "MAINTAIN",
+  "grantable": false
+ },
+ {
+  "table": "spots",
+  "grantee": "anon",
+  "privilege": "INSERT",
+  "grantable": false
+ },
+ {
+  "table": "spots",
+  "grantee": "anon",
+  "privilege": "SELECT",
+  "grantable": false
+ },
+ {
+  "table": "spots",
+  "grantee": "anon",
+  "privilege": "UPDATE",
+  "grantable": false
+ },
+ {
+  "table": "spots",
+  "grantee": "anon",
+  "privilege": "DELETE",
+  "grantable": false
+ },
+ {
+  "table": "spots",
+  "grantee": "anon",
+  "privilege": "TRUNCATE",
+  "grantable": false
+ },
+ {
+  "table": "spots",
+  "grantee": "anon",
+  "privilege": "REFERENCES",
+  "grantable": false
+ },
+ {
+  "table": "spots",
+  "grantee": "anon",
+  "privilege": "TRIGGER",
+  "grantable": false
+ },
+ {
+  "table": "spots",
+  "grantee": "anon",
+  "privilege": "MAINTAIN",
+  "grantable": false
+ },
+ {
+  "table": "spots",
+  "grantee": "authenticated",
+  "privilege": "INSERT",
+  "grantable": false
+ },
+ {
+  "table": "spots",
+  "grantee": "authenticated",
+  "privilege": "SELECT",
+  "grantable": false
+ },
+ {
+  "table": "spots",
+  "grantee": "authenticated",
+  "privilege": "UPDATE",
+  "grantable": false
+ },
+ {
+  "table": "spots",
+  "grantee": "authenticated",
+  "privilege": "DELETE",
+  "grantable": false
+ },
+ {
+  "table": "spots",
+  "grantee": "authenticated",
+  "privilege": "TRUNCATE",
+  "grantable": false
+ },
+ {
+  "table": "spots",
+  "grantee": "authenticated",
+  "privilege": "REFERENCES",
+  "grantable": false
+ },
+ {
+  "table": "spots",
+  "grantee": "authenticated",
+  "privilege": "TRIGGER",
+  "grantable": false
+ },
+ {
+  "table": "spots",
+  "grantee": "authenticated",
+  "privilege": "MAINTAIN",
+  "grantable": false
+ },
+ {
+  "table": "spots",
+  "grantee": "service_role",
+  "privilege": "INSERT",
+  "grantable": false
+ },
+ {
+  "table": "spots",
+  "grantee": "service_role",
+  "privilege": "SELECT",
+  "grantable": false
+ },
+ {
+  "table": "spots",
+  "grantee": "service_role",
+  "privilege": "UPDATE",
+  "grantable": false
+ },
+ {
+  "table": "spots",
+  "grantee": "service_role",
+  "privilege": "DELETE",
+  "grantable": false
+ },
+ {
+  "table": "spots",
+  "grantee": "service_role",
+  "privilege": "TRUNCATE",
+  "grantable": false
+ },
+ {
+  "table": "spots",
+  "grantee": "service_role",
+  "privilege": "REFERENCES",
+  "grantable": false
+ },
+ {
+  "table": "spots",
+  "grantee": "service_role",
+  "privilege": "TRIGGER",
+  "grantable": false
+ },
+ {
+  "table": "spots",
+  "grantee": "service_role",
+  "privilege": "MAINTAIN",
+  "grantable": false
+ }
+]
