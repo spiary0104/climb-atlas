@@ -47,7 +47,9 @@ js/modules/auth-ui.js   Sign-in widget + modal
 js/modules/data-load.js Spots/marks/moderator/pending loading + seed fallback
 js/modules/logbook.js   Logbook
 js/modules/moderation.js Pending-review panel
-data/gyms.json          Seed dataset — NEVER read; jq/grep only
+data/gyms.json          LEGACY seed dataset / offline fallback — NEVER read or edit
+import/                 Import pipeline: index/ (match index), batches/ (staging)
+scripts/gym-import.js   Import CLI (+ scripts/lib/gym-import/); docs/import-workflow.md
 supabase/schema.sql     Tables + RLS; re-runnable in the SQL Editor
 supabase/seed.html      Builds upsert SQL from data/gyms.json
 supabase/geocode.html   Pin-position checker for seed spots
@@ -73,9 +75,12 @@ No install, no build. Serve over HTTP (required: ES modules, fetch, Auth redirec
 python3 -m http.server 8000     # or: npx serve .
 ```
 No test suite or linter yet. Verification is manual — Rules.md §6–7.
-Database changes go through `supabase/schema.sql`. Seed edits go into
-`data/gyms.json` (via `jq`/script, keep `id`s stable), then regenerate SQL
-with `supabase/seed.html`.
+Schema changes go through `supabase/migrations/` (docs/migrations.md).
+**New gyms go through the import pipeline only** — `docs/import-workflow.md`
+(`node scripts/gym-import.js new-batch|validate|plan|freeze-ids`; tests:
+`node --test "tests/*.test.js"`). Never add/edit gyms in `data/gyms.json`, never run
+`supabase/seed.html` (legacy, ids are stale) or edit `spots` by hand. Never read
+`import/index/` or old batches' `records.ndjson`; read a batch's `report.md`.
 
 ## Brain vs. worker sessions
 

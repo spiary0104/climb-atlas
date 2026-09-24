@@ -34,9 +34,10 @@ read it; grep it for a specific heading only if this file lacks something).
 | `js/modules/data-load.js` | `loadSpots` (Supabase → `data/gyms.json` fallback), marks, moderator, pending |
 | `js/modules/logbook.js` | Logbook list + "Log a session" form |
 | `js/modules/moderation.js` | Pending-review panel, approve/reject/dismiss |
-| `data/gyms.json` | Seed dataset, 1,867 spots, pure JSON. **Never read — use `jq`** |
+| `data/gyms.json` | LEGACY seed dataset (offline fallback in `data-load.js`; ids stale vs production). **Never read; never edit** |
 | `supabase/schema.sql` | Tables, RLS, rate limit. Re-runnable |
-| `supabase/seed.html`, `geocode.html` | Seed-SQL generator; pin-position checker (both fetch `data/gyms.json`) |
+| `supabase/seed.html`, `geocode.html` | LEGACY seed-SQL generator (do not run — ids no longer match production); pin-position checker |
+| `import/`, `scripts/gym-import.js`, `scripts/lib/gym-import/` | Gym import pipeline: staging batches, match index, validate/plan/dedupe. See `docs/import-workflow.md` |
 | `sw.js` | Service worker (`SHELL_FILES` :11 — add new JS/CSS files here) |
 | `docs/TASKS.md` | Open work only |
 | `docs/archive/` | Old long-form docs + data.js provenance comments. **Never read** |
@@ -52,9 +53,8 @@ MapLibre → Supercluster → Supabase CDN → `supabase-init.js` → `auth.js` 
   calls them in the original order: `initMap`, `initSidebar`,
   `initModalKeyboard`, `initAuthUI`, `initForms`, `initLogbook`,
   `initModeration`, `initInfoModals`.
-- Popup HTML uses inline `onclick` → globals `window.__toggleMark`
-  (`sidebar.js:271`), `__editSpot` (`modals.js:328`), `__reportSpot`
-  (`modals.js:402`).
+- Popup buttons carry `data-popup-action` + `data-spot-id`; one delegated click listener in `sidebar.js` handles them
+  (no inline `onclick`, no `window.__*` globals).
 - Imports form cycles (map ↔ sidebar ↔ modals); that's safe because
   top-level code only does DOM lookups and `new maplibregl.Map`. Keep it so.
 
@@ -63,7 +63,7 @@ MapLibre → Supercluster → Supabase CDN → `supabase-init.js` → `auth.js` 
 needs sign-in + rate limit :104), `pending_edits` (:134), `reports` (:177),
 `marks` (:204), `routes` (:248), `sessions` (:293), `session_climbs` (:335).
 
-Spot shape: `id` (`seed-N` for seed rows), `name`, `suburb`, `state`,
+Spot shape: `id` (`seed-N` legacy, `community-<uuid>`, or frozen `g-<hex>` for imported gyms), `name`, `suburb`, `state`,
 `country`, `lat`, `lng`, `address`, `types[]` (`indoor-bouldering` |
 `top-rope` | `lead-climbing`), `notes`, `community`. `state` codes collide
 across countries — always key on `country:state`.

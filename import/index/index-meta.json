@@ -1,0 +1,19 @@
+{
+  "count": 1881,
+  "sha256": "4132a6ce90a26f2972b7409103e60c865aa65728b4905bd2a35126aeb1b28f2e",
+  "fields": [
+    "id",
+    "name",
+    "country",
+    "state",
+    "suburb",
+    "lat",
+    "lng",
+    "address",
+    "types",
+    "h"
+  ],
+  "source": "snapshot",
+  "built_from": "live-snapshot.json",
+  "note": "Derived from production spots (approved). Not a source of truth; rebuild rather than edit."
+}

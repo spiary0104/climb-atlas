@@ -8,7 +8,9 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 (delete them; git keeps history). Keep this file under 60 lines.
 
 ## In progress
-- _(none)_
+### Gym import pipeline (Stage 5)
+- Status: validate/plan/dedupe built + tested (branch feature/gym-import-pipeline); **production import NOT built**.
+- Next: user answers the open decisions in docs/import-workflow.md (mechanism, 3 in-batch duplicate pairs, staging the 249, gyms.json fallback).
 
 ## Backlog
 

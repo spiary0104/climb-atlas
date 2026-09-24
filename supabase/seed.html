@@ -15,6 +15,11 @@
 <body>
 
 <h1>Climb Atlas — one-time seed</h1>
+<p style="background:#5a2323;border:1px solid #c0504d;border-radius:8px;padding:12px 16px;">
+  <b>LEGACY — DO NOT RUN.</b> The ids in <code>data/gyms.json</code> no longer match production (654 records hold a different
+  gym's id), so the SQL this page generates would overwrite real rows. New gyms go through the import pipeline:
+  see <code>docs/import-workflow.md</code>.
+</p>
 <p>
   Generates a SQL script from every spot in <code>data/gyms.json</code> that upserts them into your
   Supabase <code>spots</code> table. Safe to re-run — it matches on <code>id</code>, so re-running
