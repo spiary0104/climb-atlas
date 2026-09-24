@@ -7,7 +7,7 @@ hardening that is live) and is kept only until it is retired; do not edit it and
 `supabase/migrations/20260924000000_baseline_live_schema.sql` reproduces the live production schema of
 2026-09-24 exactly (verified: `scripts/compare-schema.js` reports no differences between live and a database built
 only from this file; 52/52 RLS checks pass — see `docs/schema-introspection-2026-09-24.md`). Production already
-contains it, so it is **recorded as applied, never executed there**. Never edit it.
+contains it, so it was **recorded as applied, never executed there**. Never edit it.
 
 ## Making a schema change
 1. `supabase migration new <describes_the_change>` → edit the new file in `supabase/migrations/`.
@@ -23,14 +23,13 @@ Never edit the database by hand in the dashboard SQL editor without capturing th
 per-user under `%LOCALAPPDATA%\Programs\DockerDesktop\resources\bin`). Config: `supabase/config.toml`
 (`project_id = "climb-atlas"`, Postgres 17). Local API: http://127.0.0.1:54321.
 
-## Recording the baseline on production (NOT yet run — needs explicit approval)
-This is the first intentional production write: it creates the `supabase_migrations` schema and one history row,
-and nothing else (no schema or data change).
-```
-supabase migration repair 20260924000000 --status applied --linked
-```
-Afterwards `supabase migration list --linked` should show local and remote both at `20260924000000`, and
-`supabase db push --linked --dry-run` should report nothing to apply.
+## Baseline recorded on production
+Done 2026-09-24 (approved): `supabase migration repair 20260924000000 --status applied --linked`.
+This created the `supabase_migrations` schema and one row (`20260924000000`, `baseline_live_schema`, 112 statements);
+no schema or data change. Verified afterwards: `supabase migration list --linked` shows local and remote both at
+`20260924000000`, and a read-only re-capture (`supabase/introspection/live-post-repair-2026-09-24`) is identical to the
+pre-repair capture for every public-schema object and every row count (only the new `supabase_migrations` schema differs).
+From here on, apply new migrations with `supabase db push --linked`.
 
 ## Tools
 - `scripts/introspect-schema.js <live|local|scratch> <dir>` — read-only catalog capture (live queries run inside `BEGIN READ ONLY`).

@@ -1,0 +1,25 @@
+{
+ "event_triggers": [
+  "issue_graphql_placeholder",
+  "pgrst_ddl_watch",
+  "pgrst_drop_watch",
+  "issue_pg_cron_access",
+  "issue_pg_net_access",
+  "issue_pg_graphql_access"
+ ],
+ "non_system_schemas": [
+  "auth",
+  "extensions",
+  "graphql",
+  "graphql_public",
+  "pgbouncer",
+  "public",
+  "realtime",
+  "storage",
+  "supabase_migrations",
+  "vault"
+ ],
+ "publications": [],
+ "sequences": [],
+ "types": []
+}
