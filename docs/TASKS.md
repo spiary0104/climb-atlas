@@ -10,8 +10,8 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 ## In progress
 ### Gym import pipeline (Stage 5)
 - Status: validate/plan/dedupe built + tested (branch feature/gym-import-pipeline); first batch
-  `import/batches/2026-09-24-reconciled-new-gyms` staged (246 new, plan clean); **production import NOT built, nothing imported**.
-- Next: user answers the remaining open decisions in docs/import-workflow.md (import mechanism/credentials, gyms.json fallback, seed.html).
+  `import/batches/2026-09-24-reconciled-new-gyms` staged (246 new, plan clean); gated importer built + tested locally; **nothing imported**.
+- Next: user approves running `import --apply` for that batch (needs their service-role key in the shell env); then rebuild the index and commit the manifest. Other open decisions: gyms.json fallback, seed.html.
 
 ## Backlog
 

@@ -11,17 +11,20 @@ const P = require('../scripts/lib/gym-import/plan');
 const S = require('../scripts/lib/gym-import/index-store');
 const V = require('../scripts/lib/gym-import/validate');
 const { stageFromFile } = require('../scripts/lib/gym-import/stage');
-const { ROOT, tmp, rec } = require('./helpers/import-helpers');
+const { ROOT, tmp, rec, preImportIndex, batchImported } = require('./helpers/import-helpers');
 
 const ID = '2026-09-24-reconciled-new-gyms';
 const DIR = path.join(ROOT, 'import', 'batches', ID);
 const RECONCILED = path.join(ROOT, 'data', 'gyms.reconciled.json');
 const DECISIONS = path.join(ROOT, 'data', 'reconciliation', '2026-09-24', 'decisions.json');
 const lines = () => fs.readFileSync(path.join(DIR, 'records.ndjson'), 'utf8').split('\n').filter(Boolean).map(l => JSON.parse(l));
+// After the (future, approved) production import the batch gets a manifest.json and the real index is rebuilt to include these gyms.
+// These tests describe the batch as staged, so they use the pre-import view of the index and skip the checks that only hold before import.
+const IMPORTED = batchImported(ID);
 const skipNoSource = fs.existsSync(RECONCILED) ? false : 'data/gyms.reconciled.json not present';
 
 test('staged batch: 246 records, every one with a frozen g-<10 hex> id, unique, none colliding with the 1,881 production ids', () => {
-  const recs = lines(), index = S.load();
+  const recs = lines(), index = preImportIndex();
   assert.equal(recs.length, 246);
   assert.equal(index.entries.length, 1881);
   for (const r of recs) assert.match(r.id, /^g-[0-9a-f]{10}$/, r.name);
@@ -38,11 +41,12 @@ test('staged batch: validates cleanly (schema, states, types, coordinates, photo
 });
 
 test('staged batch: the dry-run plan is 246 new and nothing else, with no blockers; committed plan.json/report.md are the current plan', async () => {
-  const plan = await P.planBatch({ dir: DIR, index: S.load() });
+  const plan = await P.planBatch({ dir: DIR, index: preImportIndex() });
   const c = plan.counts;
   assert.deepEqual([c.records, c.new, c.existing, c.update, c['probable-duplicate'], c.invalid, c.rejected], [246, 246, 0, 0, 0, 0, 0]);
   assert.deepEqual(plan.blockers, []); assert.equal(plan.importable, true); assert.equal(c.new_id_not_frozen, 0);
   assert.deepEqual(plan.staged_batches_compared, []);
+  if (IMPORTED) return;                                            // after import the committed plan is a historical record
   const committed = JSON.parse(fs.readFileSync(path.join(DIR, 'plan.json'), 'utf8'));
   assert.equal(JSON.stringify(plan), JSON.stringify(committed), 'plan.json is stale: re-run "plan" and commit it');
   const { renderReport } = require('../scripts/lib/gym-import/report');
@@ -71,7 +75,7 @@ test('staged batch: contains none of the rejected/duplicate records and reflects
 
 test('staged batch equals the reconciled dataset\'s new records exactly (same records, same order, same content)', { skip: skipNoSource }, () => {
   const all = JSON.parse(fs.readFileSync(RECONCILED, 'utf8'));
-  const idx = S.load();
+  const idx = preImportIndex();
   const expected = all.filter(g => !idx.byId.has(g.id));
   assert.equal(expected.length, 246);
   assert.equal(JSON.stringify(lines()), JSON.stringify(expected));
@@ -81,7 +85,7 @@ test('staged batch equals the reconciled dataset\'s new records exactly (same re
 });
 
 test('staging is idempotent and safe: same source again = unchanged; a different source into the same batch is refused', { skip: skipNoSource }, async () => {
-  const all = JSON.parse(fs.readFileSync(RECONCILED, 'utf8')), index = S.load();
+  const all = JSON.parse(fs.readFileSync(RECONCILED, 'utf8')), index = preImportIndex();
   const root = tmp(), args = { source: RECONCILED, slug: 'reconciled-new-gyms', description: 'test staging of the reconciled new gyms', date: '2026-09-24', index, batchesDir: root };
   const first = await stageFromFile(args), second = await stageFromFile(args);
   assert.equal(first.action, 'created'); assert.equal(second.action, 'unchanged'); assert.equal(first.staged, 246);
@@ -94,7 +98,7 @@ test('staging is idempotent and safe: same source again = unchanged; a different
 
 test('staging never stages existing records, and refuses to stage anything the decisions file lists as rejected', async () => {
   const N = require('../scripts/lib/gym-import/normalize');
-  const src = path.join(tmp(), 'src.json'), index = S.load();
+  const src = path.join(tmp(), 'src.json'), index = preImportIndex();
   const a = rec({ name: 'Fresh Wall One', suburb: 'A', lat: -33.11, lng: 151.11 }), b = rec({ name: 'Fresh Wall Two', suburb: 'B', lat: -33.22, lng: 151.44 });
   a.id = N.deriveId(a, new Set()); b.id = N.deriveId(b, new Set([a.id]));
   const existing = { id: 'seed-0', name: '9 Degrees Alexandria', suburb: 'Alexandria', state: 'NSW', country: 'AU', lat: -33.9042, lng: 151.1968, types: ['indoor-bouldering'], address: "Building 3/85 O'Riordan St, Alexandria NSW 2015", notes: null };
@@ -109,9 +113,12 @@ test('staging never stages existing records, and refuses to stage anything the d
   assert.deepEqual(fs.readdirSync(guarded), [], 'a refused staging writes nothing');
 });
 
-test('production boundary for staging: data/gyms.json is unchanged and the index still matches the recorded production snapshot', () => {
+test('production boundary for staging: data/gyms.json is unchanged; before import nothing is imported, after import the manifest matches the batch', () => {
   cp.execSync('git diff --quiet HEAD -- data/gyms.json', { cwd: ROOT });                       // throws if modified
   const idx = S.load();
-  assert.equal(idx.metaMatches, true); assert.equal(idx.entries.length, 1881);
-  assert.equal(fs.existsSync(path.join(DIR, 'manifest.json')), false, 'nothing has been imported');
+  assert.equal(idx.metaMatches, true);
+  const mf = path.join(DIR, 'manifest.json');
+  if (!IMPORTED) { assert.equal(idx.entries.length, 1881); assert.equal(fs.existsSync(mf), false, 'nothing has been imported'); return; }
+  const m = JSON.parse(fs.readFileSync(mf, 'utf8'));
+  assert.match(m.status, /^imported/); assert.deepEqual(m.ids, lines().map(r => r.id)); assert.equal(m.rows_inserted, 246);
 });

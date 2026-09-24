@@ -1,7 +1,7 @@
 # Gym import workflow
 
-How new gyms get from research into production. **Stage 5 status: validation, dry-run and review are built and tested;
-the production import step is deliberately NOT built yet** (see "Production import (not built)").
+How new gyms get from research into production. **Status: validation, dry-run, review and the gated production importer are built
+and tested locally. The importer has NOT been run against production** (no production credential has been provided or used).
 
 ```
 research → import/batches/<batch>/records.ndjson   (staging; one gym per line)
@@ -9,7 +9,8 @@ research → import/batches/<batch>/records.ndjson   (staging; one gym per line)
         → plan       (dedupe vs the match index → plan.json + report.md; dry-run, never writes to production)
         → freeze-ids (write the g-<hex> ids into the batch once)
         → review     (a human reads report.md; decisions.json resolves probable duplicates)
-        → import     (NOT BUILT: explicit, gated, separate command; needs approval)
+        → import --dry-run   (live read-only preflight + deterministic report; the DEFAULT)
+        → import --apply     (the only command that writes; insert-only; gated; verified; manifest)
 ```
 
 ## Directory layout
@@ -112,18 +113,82 @@ Never read `data/`, `records.ndjson` of old batches, or the index. A session nee
 lines it is appending, and `report.md` (≤ ~25 lines per section). All matching runs in the script against the local index
 (0.3 s for 2,130 records vs 1,881 gyms). The index holds 9 fields per gym, no notes/photos.
 
-## Production import (not built)
-Design constraints for the future `import` command — **not implemented; needs explicit approval of the open questions in
-docs/TASKS.md first**:
-1. Separate command, requires `--i-understand-this-writes-to-production` **and** `--confirm <first 12 chars of plan_sha256>`; never run by tests.
-2. Preflight: `verify-index --live` must be clean; re-plan must reproduce the same `plan_sha256`; batch must be `importable`.
-3. Inserts only `ON CONFLICT (id) DO NOTHING`, `status='approved'`, `community=false`, in one transaction, then verify count = before + N.
-4. Updates only with a compare-and-swap on the current row (`expect_h` / `updated_at`); a moderator's change since the index was built aborts the batch.
-5. Writes `manifest.json` (ids, counts, plan hash, who/when) and rebuilds the index; commit the batch directory.
+## Production importer (`gym-import.js import`)
+```
+node scripts/gym-import.js import <batch>                       # = --dry-run. Never writes.
+node scripts/gym-import.js import <batch> --dry-run             # validation + live read-only checks + report; zero writes
+node scripts/gym-import.js import <batch> --verify              # read-only: is this imported batch in production, unchanged?
+node scripts/gym-import.js import <batch> --apply --confirm <token> [--i-understand-this-writes-to-production]
+node scripts/gym-import.js import <batch> --dry-run --report-file report.txt   # also save the (deterministic) report
+```
+`<batch>` must be named explicitly (a directory name under `import/batches/` or a path); there is no "latest" or wildcard.
+Exit codes: `0` passed / nothing to do, `1` usage error, `2` refused (a check or gate failed; nothing was written), `4` a write
+happened (or may have) but verification failed — read the report.
 
-## Open decisions (need approval before the import command is written)
-1. **Mechanism and credentials.** Options: (a) a node script using the `service_role` key from an untracked env var; (b) a generated
-   reviewed `import.sql` run via the Supabase CLI; (c) a data migration file. Recommendation: (a) or (b) with the gates above; not (c).
+### Credential setup (never commit it)
+The importer reads its credentials **only from environment variables of the shell that runs it**. It does not read `.env` files or
+any file, never prints the key (errors are redacted), and never writes it into the batch, manifest, report or git.
+
+| Variable | Needed for | Notes |
+|---|---|---|
+| `SUPABASE_URL` | `--apply` (required); dry-run optional | Must be the production project URL (`https://<ref>.supabase.co`) or a local Supabase (`http://127.0.0.1:54321`). Any other host is refused. Unset: a dry-run defaults to production **read-only**; `--apply` refuses (there is no default write target). |
+| `SUPABASE_SERVICE_ROLE_KEY` | `--apply` (required); dry-run optional | The project's service-role (secret) key. Legacy JWT keys must have `role=service_role` and, for production, the production project `ref`; `sb_secret_…` keys are accepted; anon/publishable keys are refused. |
+| `SUPABASE_ANON_KEY` | local targets only | Production's public key is already in `js/supabase-init.js`. |
+
+```
+# PowerShell (this window only; nothing is saved):
+$env:SUPABASE_URL = "https://<project-ref>.supabase.co"
+$env:SUPABASE_SERVICE_ROLE_KEY = Read-Host "service-role key"   # or paste; never put it in a file
+# ...run the importer...
+Remove-Item Env:SUPABASE_SERVICE_ROLE_KEY; Remove-Item Env:SUPABASE_URL
+```
+`.env`, `.env.*` and `*.pem` are git-ignored as a backstop, and a test scans every tracked file for service-role keys.
+**Production credentials must never be committed, pasted into a batch/report/issue, or shared in chat.**
+
+### Dry-run vs apply
+- **Dry-run (the default)** does everything except write: validates the batch, verifies recorded provenance, re-checks the live production
+  state, and prints a deterministic report (no timestamps) listing exactly the rows that would be inserted, the payload hash and the
+  **confirmation token**. Only `GET` requests are ever sent. Without a service-role key it still runs but reports
+  `Coverage: PARTIAL` (pending/non-approved rows are invisible to the public API), and `--apply` will be refused.
+- **Apply** runs the same preflight with the service-role key (`Coverage: FULL`) and additionally needs `--confirm <token>` (bound to this
+  batch + exact payload + target) and, for production, `--i-understand-this-writes-to-production`. `--apply` alone is never enough.
+
+### Safety gates (all must pass before the single write; any failure = exit 2, nothing written)
+1. Explicit batch; explicit target (`SUPABASE_URL`); the target is production or localhost; production uses only the repo's batch and index (no `--index` override).
+2. Credential shape, project ref and expiry are valid **and** the server accepts it (a read probe with the key).
+3. Batch valid: every line a JSON object and schema-valid, `intent` absent/`new` (**update/delete/merge records are refused**), every id a frozen `g-<hex>`, unique, at most 1,000 rows.
+4. Recorded provenance still valid: `batch.json` counts; the decisions file's canonical hash is unchanged; no record listed as rejected is staged (a changed source file is only a warning: the batch is frozen).
+5. The local index is intact (`index-meta.json` matches) and **production still equals the index** (no gym added, removed or changed since it was built).
+6. A fresh plan classifies **every** record as `new` (0 existing/update/probable-duplicate/invalid/rejected, no blockers) and equals the committed `plan.json`.
+7. **Every staged id is absent from production in every status** (service-role read, so pending rows count), and no staged gym is a probable duplicate of a **pending** community submission.
+8. `--confirm` token matches; the production flag is present.
+9. A final identical re-check (production state, ids, pending clashes) immediately before the write.
+
+The write itself is one plain `INSERT` of the staged rows (`status=approved, community=false, edited=false`), atomic: if any id already exists the
+whole statement fails and nothing is written. There is **no** upsert, `on_conflict`, PATCH, PUT, DELETE or RPC anywhere in the importer (a test
+enforces exactly one write call site, reachable only through a write gate minted after the checks above).
+
+### Idempotency
+Re-running is always safe:
+- The batch already has `manifest.json` → state `already-imported`: read-only verification, **no write, manifest untouched**, exit 0 (even with `--apply`).
+- All staged ids exist in production with identical content but there is no manifest (e.g. a crash after the insert) → `already-present`: no database write; `--apply` only writes a local recovery manifest.
+- Some (not all) staged ids exist, or an existing row differs (e.g. a moderator edited it) → **refused**; the importer never merges or overwrites.
+- A lost response (timeout) after the request is treated as "outcome unknown": the importer reads production to see what happened instead of retrying.
+
+### Post-import verification and manifest
+After the insert (read-only): every staged id exists; each row equals the staged content and has the fixed provenance flags; the approved count went
+up by exactly N; **every pre-existing spot is unchanged** (hash-compared with the index). The outcome is written to `manifest.json` in the batch
+(status `imported`, or `imported-verification-failed` with exit 4; ids, counts, plan/payload hashes, target host, timestamps — never credentials).
+After a successful import: `node scripts/gym-import.js build-index --live`, commit the manifest and the refreshed index, run the tests (they derive
+the pre-import view from the manifest), and update `docs/TASKS.md`.
+
+### What the importer is intentionally NOT capable of
+Updating, deleting, closing, merging or overwriting any spot; importing `update` records; importing batches with probable duplicates or invalid
+records; writing to any host other than production or localhost; running without an explicit batch; writing in dry-run/default mode; importing more
+than 1,000 rows in one go; changing the schema (no DDL, no migrations); touching any table other than `spots`.
+
+## Open decisions
+1. ~~Mechanism and credentials~~ **Implemented** (service-role key from the shell environment, PostgREST insert; see above). Running it against production still needs your explicit go-ahead and credential.
 2. ~~The 3 in-batch duplicate pairs among the 249~~ **Resolved 2026-09-24** (approved): Mad Gym Gwangmyeong keeps `g-8213f51019`,
    Chamonix Climbing keeps `g-e8a005400e`, Climb Days keeps `g-138cbc8020`; the other record of each pair is rejected (full record,
    evidence and relationship kept in `data/reconciliation/2026-09-24/decisions.json`; originals remain in `data/gyms.json`) and
@@ -141,5 +206,6 @@ docs/TASKS.md first**:
 - Add or edit gyms in `data/gyms.json`, or hand-number `seed-N` ids.
 - Run `supabase/seed.html` / its generated SQL (**legacy**: its ids no longer match production — running it would overwrite real rows).
 - Insert or edit `spots` rows in the Supabase dashboard/SQL editor; change gym content without an `update` record.
+- Put a Supabase key in any file, batch, chat or commit; run `import --apply` without having read the dry-run report first.
 - Hand-edit `import/index/*` or a batch's `plan.json`/`report.md`; import a batch that is not `importable`.
 - Merge two records "by eye" — record a decision instead.

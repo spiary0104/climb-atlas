@@ -8,7 +8,7 @@ const path = require('node:path');
 const P = require('../scripts/lib/gym-import/plan');
 const S = require('../scripts/lib/gym-import/index-store');
 const N = require('../scripts/lib/gym-import/normalize');
-const { ROOT, makeBatch, tmp } = require('./helpers/import-helpers');
+const { ROOT, makeBatch, tmp, preImportIndex } = require('./helpers/import-helpers');
 
 const RECONCILED = path.join(ROOT, 'data', 'gyms.reconciled.json');
 const DECISIONS = path.join(ROOT, 'data', 'reconciliation', '2026-09-24', 'decisions.json');
@@ -21,7 +21,7 @@ const opts = { skip: HAVE ? false : 'data/gyms.reconciled.json or import/index n
 
 let cache = null;
 async function run(records = null) {
-  const index = S.load();
+  const index = preImportIndex();
   const recs = records || JSON.parse(fs.readFileSync(RECONCILED, 'utf8'));
   const b = makeBatch(recs, { id: '2026-09-24-fixture-reconciled' });
   return { plan: await P.planBatch({ dir: b.dir, index }), index, recs, b };
@@ -29,9 +29,9 @@ async function run(records = null) {
 const base = async () => (cache = cache || await run());
 
 test('index matches the production snapshot recorded at reconciliation time (1,881 gyms) and is small', opts, async () => {
-  const idx = S.load();
+  const idx = preImportIndex();
   assert.equal(idx.entries.length, 1881);
-  assert.equal(idx.metaMatches, true, 'index-meta.json sha256 must match gym-index.ndjson');
+  assert.equal(S.load().metaMatches, true, 'index-meta.json sha256 must match gym-index.ndjson');
   assert.ok(fs.statSync(path.join(ROOT, 'import', 'index', 'gym-index.ndjson')).size < 600 * 1024);
   assert.deepEqual(Object.keys(idx.entries[0]), S.FIELDS);
   assert.ok(!('notes' in idx.entries[0]) && !('photo' in idx.entries[0]), 'index must not duplicate full records');
@@ -169,7 +169,7 @@ test('rerunning the same import is a no-op: identical plan bytes, and once inser
   assert.equal(JSON.stringify(again), JSON.stringify(plan));
   // simulate: production now also holds the 246 records the plan would insert
   const inserted = new Set(plan.records.filter(r => r.class === 'new').map(r => r.id));
-  const rows = [...S.load().entries.map(e => ({ ...e, notes: null, photo: null })), ...recs.filter(g => inserted.has(g.id))];
+  const rows = [...preImportIndex().entries.map(e => ({ ...e, notes: null, photo: null })), ...recs.filter(g => inserted.has(g.id))];
   const dir = tmp(); S.write(rows, dir, { source: 'simulated' });
   const b = makeBatch(recs, { id: '2026-09-24-fixture-reconciled' });
   const after = await P.planBatch({ dir: b.dir, index: S.load(dir) });

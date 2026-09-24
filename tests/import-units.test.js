@@ -88,13 +88,13 @@ test('index format: deterministic, sorted, only match fields, no notes/photo, re
   const idx = makeIndex(); assert.equal(idx.metaMatches, true);
 });
 
-test('CLI: validate exit codes, plan exit codes, and the import command does not exist yet', () => {
+test('CLI: validate exit codes, plan exit codes, and import usage errors (no network)', () => {
   const run = (...args) => cp.spawnSync(process.execPath, [path.join(ROOT, 'scripts', 'gym-import.js'), ...args], { encoding: 'utf8' });
   const good = makeBatch([rec()]), bad = makeBatch([rec({ name: '' })], { id: '2026-01-02-bad' });
   const v1 = run('validate', good.dir); assert.equal(v1.status, 0, v1.stdout + v1.stderr); assert.match(v1.stdout, /Schema OK/);
   const v2 = run('validate', bad.dir); assert.equal(v2.status, 1); assert.match(v2.stdout, /ERROR required \(name\)/);
-  const imp = run('import', good.dir); assert.equal(imp.status, 3); assert.match(imp.stderr, /no production import command/);
-  const imp2 = run('import', good.dir, '--i-understand-this-writes-to-production'); assert.equal(imp2.status, 3);
+  assert.equal(run('import').status, 1, 'import needs an explicit batch');
+  const both = run('import', good.dir, '--apply', '--dry-run', '--i-understand-this-writes-to-production'); assert.equal(both.status, 1); assert.match(both.stderr, /only one of/);
   const idx = tmp(); S.write(require('./helpers/import-helpers').PROD, idx, {});
   const pl = run('plan', good.dir, '--index', idx); assert.equal(pl.status, 2, pl.stdout + pl.stderr);   // new ids not frozen yet -> not importable
   assert.ok(fs.existsSync(path.join(good.dir, 'plan.json')) && fs.existsSync(path.join(good.dir, 'report.md')));
@@ -104,17 +104,20 @@ test('CLI: validate exit codes, plan exit codes, and the import command does not
   run('plan', good.dir, '--index', idx); assert.ok(fs.readFileSync(path.join(good.dir, 'plan.json')).equals(bytes), 'plan.json is byte-identical on rerun');
 });
 
-test('production boundary: the pipeline contains no write path to Supabase (static check)', () => {
-  const files = ['scripts/gym-import.js', ...fs.readdirSync(path.join(ROOT, 'scripts', 'lib', 'gym-import')).map(f => 'scripts/lib/gym-import/' + f)];
+test('production boundary: writes exist only in the gated importer; everything else is read-only (static check)', () => {
+  const dir = path.join(ROOT, 'scripts', 'lib', 'gym-import');
+  const files = ['scripts/gym-import.js', ...fs.readdirSync(dir).map(f => 'scripts/lib/gym-import/' + f)];
+  const IMPORTER = ['scripts/lib/gym-import/target.js', 'scripts/lib/gym-import/importer.js'];
   for (const f of files) {
     const src = fs.readFileSync(path.join(ROOT, f), 'utf8').split('\n').filter(l => !/^\s*\/\//.test(l)).join('\n');
     assert.ok(!/method:\s*['"](POST|PATCH|PUT|DELETE)/i.test(src), f + ': non-GET HTTP method');
-    assert.ok(!/\.(insert|upsert|update|delete|rpc)\(/.test(src.replace(/\.update\(seed\)|\.update\(payload\)|\.update\(buf\)|\.update\(JSON/g, '')), f + ': supabase-js write call');
-    assert.ok(!/service_role|SUPABASE_SERVICE|createClient|psql|db push|migration repair/i.test(src.replace(/"db push"/g, '')), f + ': privileged access');
+    assert.ok(!/\.(insert|upsert|update|delete|rpc)\(/.test(src.replace(/\.update\(seed\)|\.update\(payload\)|\.update\(buf\)|\.update\(JSON|\.update\(s\)/g, '')), f + ': supabase-js write call');
+    if (!IMPORTER.includes(f)) assert.ok(!/service_role|SUPABASE_SERVICE|createClient|psql|db push|migration repair|_send\('POST'|insertSpots/i.test(src), f + ': privileged access');
+    else assert.ok(!/createClient|psql|db push|migration repair/i.test(src), f + ': privileged access');
     assert.ok(!/child_process|execSync|spawn\(/.test(src), f + ': shells out');
   }
-  // the only network call is the read-only index fetch
-  const net = files.filter(f => /\bfetch\(/.test(fs.readFileSync(path.join(ROOT, f), 'utf8')));
-  assert.deepEqual(net, ['scripts/lib/gym-import/index-store.js']);
+  // network: only the index fetch and the importer's HTTP client; the single write lives in target.js
+  const net = files.filter(f => /\bfetch\(/.test(fs.readFileSync(path.join(ROOT, f), 'utf8'))).sort();
+  assert.deepEqual(net, ['scripts/lib/gym-import/index-store.js', 'scripts/lib/gym-import/target.js']);
   assert.match(fs.readFileSync(path.join(ROOT, 'scripts/lib/gym-import/index-store.js'), 'utf8'), /method: 'GET'/);
 });

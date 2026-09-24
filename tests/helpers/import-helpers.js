@@ -35,4 +35,18 @@ function makeBatch(records, { id = '2026-01-01-synthetic', decisions = null, roo
 const rec = (over = {}) => ({ name: 'Summit Lab', suburb: 'Newtown', state: 'NSW', country: 'AU', lat: -33.897, lng: 151.179, types: ['indoor-bouldering'], address: '1 King St, Newtown NSW 2042', notes: 'n', photo: null, ...over });
 const byName = (plan, name) => plan.records.find(r => r.name === name);
 
-module.exports = { ROOT, tmp, PROD, makeIndex, makeBatch, rec, byName };
+// The match index as it was BEFORE any batch in import/batches was imported. Once a batch has a manifest.json the real index is
+// rebuilt from production and includes its gyms; the Stage 0 / staging regression tests are about the pre-import world, so they
+// use this (identical to the real index until the first import).
+function preImportIndex() {
+  const idx = S.load();
+  const dir = path.join(ROOT, 'import', 'batches'), imported = new Set();
+  if (fs.existsSync(dir)) for (const b of fs.readdirSync(dir)) { const m = path.join(dir, b, 'manifest.json'); if (fs.existsSync(m)) (JSON.parse(fs.readFileSync(m, 'utf8')).ids || []).forEach(id => imported.add(id)); }
+  if (!imported.size) return idx;
+  const entries = idx.entries.filter(e => !imported.has(e.id)), byId = new Map(), byCountry = new Map();
+  for (const e of entries) { byId.set(e.id, e); if (!byCountry.has(e.country)) byCountry.set(e.country, []); byCountry.get(e.country).push(e); }
+  return { ...idx, entries, byId, byCountry, sha256: S.sha256(Buffer.from(entries.map(e => JSON.stringify(e)).join('\n'))), metaMatches: true, preImportView: true };
+}
+const batchImported = id => fs.existsSync(path.join(ROOT, 'import', 'batches', id, 'manifest.json'));
+
+module.exports = { ROOT, tmp, PROD, makeIndex, makeBatch, rec, byName, preImportIndex, batchImported };

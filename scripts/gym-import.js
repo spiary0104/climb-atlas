@@ -8,11 +8,15 @@
 //   node scripts/gym-import.js freeze-ids <batch>                 write derived g-<hex> ids into records.ndjson (once)
 //   node scripts/gym-import.js stage-from-file <source.json> --slug <slug> --description "..." [--date YYYY-MM-DD] [--decisions <decisions.json>]
 //                                                                 stage only the NEW records of a JSON array into a fresh batch
+//   node scripts/gym-import.js import <batch> [--dry-run]         DEFAULT. Preflight + live read-only checks + report. Never writes.
+//   node scripts/gym-import.js import <batch> --verify            read-only: confirm an imported batch is in production unchanged
+//   node scripts/gym-import.js import <batch> --apply --confirm <token> [--i-understand-this-writes-to-production]
+//                                                                 the ONLY command that can write (insert new gyms). See docs/import-workflow.md
 //   node scripts/gym-import.js build-index (--from-snapshot <file.json> | --live) [--out <dir>]
 //   node scripts/gym-import.js verify-index (--from-snapshot <file.json> | --live) [--index <dir>]
 //
 // <batch> is a directory, or just its name under import/batches/. Exit codes: 0 ok, 1 usage/validation failure,
-// 2 plan produced but the batch is not importable yet (review/blockers), 3 command intentionally unavailable.
+// 2 plan produced but not importable / import preflight refused, 4 import wrote (or may have written) but verification failed.
 'use strict';
 const fs = require('fs');
 const path = require('path');
@@ -21,6 +25,7 @@ const P = require('./lib/gym-import/plan');
 const S = require('./lib/gym-import/index-store');
 const { renderReport } = require('./lib/gym-import/report');
 const { stageFromFile, relTo } = require('./lib/gym-import/stage');
+const { runImport } = require('./lib/gym-import/importer');
 
 const ROOT = S.ROOT;
 const BATCHES = path.join(ROOT, 'import', 'batches');
@@ -29,7 +34,7 @@ function parseArgs(argv) {
   const pos = [], flags = {};
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i];
-    if (a.startsWith('--')) { const k = a.slice(2); if (['no-write', 'no-staged', 'live'].includes(k)) flags[k] = true; else flags[k] = argv[++i]; }
+    if (a.startsWith('--')) { const k = a.slice(2); if (['no-write', 'no-staged', 'live', 'dry-run', 'apply', 'verify', 'i-understand-this-writes-to-production'].includes(k)) flags[k] = true; else flags[k] = argv[++i]; }
     else pos.push(a);
   }
   return { pos, flags };
@@ -136,6 +141,17 @@ async function cmdStage(source, flags) {
   return r.notStaged.length ? 2 : 0;
 }
 
+async function cmdImport(arg, flags) {
+  if (!arg) { console.error('usage: import <batch> [--dry-run | --verify | --apply --confirm <token> [--i-understand-this-writes-to-production]]\nThe batch must be named explicitly.'); return 1; }
+  const chosen = ['dry-run', 'verify', 'apply'].filter(m => flags[m]);
+  if (chosen.length > 1) { console.error('error: choose only one of --dry-run, --verify, --apply'); return 1; }
+  const mode = chosen[0] || 'dry-run';              // no flag = dry-run: the default can never write
+  const r = await runImport({ batchDir: batchPath(arg), mode, confirm: flags.confirm || null, productionFlag: !!flags['i-understand-this-writes-to-production'], indexDir: flags.index || null });
+  console.log(r.report);
+  if (flags['report-file']) fs.writeFileSync(path.resolve(flags['report-file']), r.report + '\n');
+  return r.exit;
+}
+
 function cmdNewBatch(slug, flags) {
   if (!slug || !/^[a-z0-9][a-z0-9-]{1,60}$/.test(slug)) throw new Error('slug must be lower-case letters/digits/hyphens, e.g. "japan-osaka-round-1"');
   const id = new Date().toISOString().slice(0, 10) + '-' + slug;
@@ -161,13 +177,13 @@ function cmdNewBatch(slug, flags) {
       case 'stage-from-file': code = await cmdStage(arg, flags); break;
       case 'build-index': code = await cmdBuildIndex(flags); break;
       case 'verify-index': code = await cmdVerifyIndex(flags); break;
-      case 'import':
-        console.error('There is intentionally no production import command yet. The design (and the open safety questions) are in docs/import-workflow.md §"Production import (not built)". Do not import gyms by hand.');
-        code = 3; break;
+      case 'import': code = await cmdImport(arg, flags); break;
       default:
         console.error(fs.readFileSync(__filename, 'utf8').split('\n').slice(1, 14).map(l => l.replace(/^\/\/ ?/, '')).join('\n'));
         code = 1;
     }
-    process.exit(code);
-  } catch (e) { console.error('error: ' + e.message); process.exit(1); }
+    // Never process.exit() here: with fetch sockets still closing, Node on Windows can crash (0xC0000409) and lose the exit code,
+    // and this CLI's exit codes are part of its safety contract. Setting exitCode lets the event loop drain first.
+    process.exitCode = code;
+  } catch (e) { console.error('error: ' + e.message); process.exitCode = 1; }
 })();

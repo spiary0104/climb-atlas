@@ -29,3 +29,8 @@ data/reconciliation/*/proposed-id-map.json
 # Supabase CLI local state (link info, version cache)
 supabase/.temp/
 supabase/.branches/
+
+# Credentials must never be committed (the importer reads SUPABASE_SERVICE_ROLE_KEY from the shell environment only)
+.env
+.env.*
+*.pem
