@@ -12,6 +12,19 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 
 ## Backlog
 
+### Native-language gym pass — follow-ups (Sep 2026)
+- Status: backlog. Round 1: 120 gyms (seed-1903..2022). Round 2: 112 (seed-2023..2134; JP 26 Tokyo-area,
+  FR 34, DE 32, ES 16, IT 4). Ids were shifted +36 when merged after master's Korea passes took
+  seed-1867..1902; 2 gyms skipped as duplicates of those (Nobo Climbing = Norbo Climbing, Parks
+  Climbing = Pax Climbing Center), so 230 of the 232 were added. Round 2 used chain store lists + climbing-net/rocodromos/DAV pages.
+- Closed but still seeded (delete in gyms.json AND Supabase; upserts won't remove):
+  Gravity Research Sapporo (closed 14 Apr 2025), T-WALL Ookayama (not on any current store list).
+- Pins to eyeball in supabase/geocode.html: notes with "street-level" or "district-level".
+- Next candidates: Climb Up (Brest, Angers, Lesquin, Villeneuve d'Ascq, Mulhouse, Dijon, Orléans, Le Mans,
+  Aix x2, Istres, Nîmes…), ~20 more Bloc Session sites, MurMur/Antrebloc/Le Pan; Sputnik Asturias
+  (opens 25 Sep 2026); Italian gyms whose sites time out (Torino, Bologna, Palermo, Napoli); DE:
+  Thüringen/Sachsen-Anhalt/Saarland, urban apes & Der Kegel (Berlin); KR: Gwangju, Jeollanam.
+
 ### UK + chain expansions (boulderingwall.com follow-up)
 - Status: backlog
 - What: ~30 more UK single-gym towns; chain branches: Camp5 MY (~6),
