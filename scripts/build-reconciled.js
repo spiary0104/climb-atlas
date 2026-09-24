@@ -10,7 +10,8 @@
 // Rules: live ids are kept exactly; repo gyms holding a different gym's live id are re-id'd to the
 // matching live id; genuinely new gyms get the frozen id already assigned in proposed-id-map.json
 // (g-<hex>, derived once from country|name|suburb|lat|lng -- never from array position);
-// documented duplicates are removed; nothing else about a record changes.
+// documented duplicates are removed (their full records are kept in decisions.json for audit); documented notes appends and
+// field carry-overs are applied to the retained record; nothing else about a record changes.
 'use strict';
 const fs = require('fs');
 const path = require('path');
@@ -29,6 +30,7 @@ if (map.length !== repo.length) throw new Error('proposed-id-map.json does not m
 
 const drop = new Set(decisions.duplicates_removed.map(d => d.remove_repo_id));
 const append = decisions.notes_append || {};
+const carry = decisions.field_carryovers || {};   // fields REPLACED on a retained record (frozen ids are NOT re-derived)
 const out = [];
 repo.forEach((g, i) => {
   const m = map[i];
@@ -37,6 +39,13 @@ repo.forEach((g, i) => {
   if (!m.final_id) throw new Error('No final id for ' + g.id + ' ' + g.name + ' and it is not a documented duplicate');
   const rec = { ...g, id: m.final_id };
   if (append[g.id]) rec.notes = (rec.notes || '') + append[g.id];
+  if (carry[g.id]) {
+    for (const [k, v] of Object.entries(carry[g.id].set)) {
+      if (JSON.stringify(g[k]) !== JSON.stringify(carry[g.id].was[k])) throw new Error('field_carryovers.' + g.id + '.was.' + k + ' does not match gyms.json; re-review the decision');
+      rec[k] = v;
+    }
+    if (carry[g.id].retained_final_id !== m.final_id) throw new Error('field_carryovers.' + g.id + ' retained_final_id does not match the frozen id');
+  }
   out.push(rec);
 });
 

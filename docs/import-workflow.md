@@ -78,7 +78,7 @@ content that differs from an existing gym.
 
 ## IDs
 New gyms get `g-<first 10 hex of sha1(country|name|suburb|lat(4dp)|lng(4dp))>` using the reconciliation's own normalisation
-(so the 249 ids frozen in Stage 0 re-derive exactly — tested). Collisions extend by 2 hex chars, resolved in sorted order so
+(so the 246 ids frozen in Stage 0 re-derive exactly — tested). Collisions extend by 2 hex chars, resolved in sorted order so
 the result is independent of record order. `freeze-ids` writes the id into `records.ndjson` **once**; after that, edits to the
 name or pin never change it. Existing gyms keep their production ids (`seed-N`, `community-<uuid>`). Never hand-assign ids.
 
@@ -117,9 +117,11 @@ docs/TASKS.md first**:
 ## Open decisions (need approval before the import command is written)
 1. **Mechanism and credentials.** Options: (a) a node script using the `service_role` key from an untracked env var; (b) a generated
    reviewed `import.sql` run via the Supabase CLI; (c) a data migration file. Recommendation: (a) or (b) with the gates above; not (c).
-2. **The 3 in-batch duplicate pairs among the 249** (Mad Gym Gwangmyeong, Chamonix Climbing, Climb Days: an English-named and a
-   Korean-named record each): which record to keep, or reject both and keep production data. Until decided, 243 are `new`, 6 are held.
-3. **How the 249/243 get staged.** They currently exist only in the untracked `data/gyms.reconciled.json`. Options: a one-off
+2. ~~The 3 in-batch duplicate pairs among the 249~~ **Resolved 2026-09-24** (approved): Mad Gym Gwangmyeong keeps `g-8213f51019`,
+   Chamonix Climbing keeps `g-e8a005400e`, Climb Days keeps `g-138cbc8020`; the other record of each pair is rejected (full record,
+   evidence and relationship kept in `data/reconciliation/2026-09-24/decisions.json`; originals remain in `data/gyms.json`) and
+   listed carry-overs were applied. The reconciled file now has 2,127 records: 1,881 existing + **246 new**.
+3. **How the 246 get staged.** They currently exist only in the untracked `data/gyms.reconciled.json`. Options: a one-off
    `stage-from-file` command that writes a committed batch of just the new records, or leave the fixture uncommitted and re-research.
 4. **`data/gyms.json` as the offline fallback** (`js/modules/data-load.js`): it is stale against production. Options: replace it later by an
    export from production, or retire the fallback. Nothing changes until you decide.
