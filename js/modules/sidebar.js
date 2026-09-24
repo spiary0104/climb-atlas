@@ -227,6 +227,31 @@ export function initSidebar(){
     render();
   });
 
+  // Featured "worth traveling for" destinations: pure navigation, not a
+  // filter -- unlike a chip click this never touches activeStates. Mirrors
+  // the .country-label branch above (fly to COUNTRY_FLY_TARGETS and expand
+  // that country's group and its parent region), but lives in its own
+  // listener since .featured-destinations sits outside #stateChips.
+  document.getElementById('featuredDestinations').addEventListener('click', (e)=>{
+    const btn = e.target.closest('.featured-chip');
+    if(!btn) return;
+    const code = btn.dataset.country;
+    const target = COUNTRY_FLY_TARGETS[code];
+    if(target) map.flyTo({center: target.center, zoom: target.zoom, duration: motion(1500)});
+    const group = document.querySelector('.country-group[data-country="'+code+'"]');
+    if(group){
+      group.classList.remove('collapsed');
+      const label = group.querySelector('.country-label');
+      if(label) label.setAttribute('aria-expanded', 'true');
+      const region = group.closest('.region-group');
+      if(region){
+        region.classList.remove('collapsed');
+        const header = region.querySelector('.region-header');
+        if(header) header.setAttribute('aria-expanded', 'true');
+      }
+    }
+  });
+
   document.getElementById('typeFilters').addEventListener('change', (e)=>{
     const input = e.target.closest('input[data-type]');
     if(!input) return;

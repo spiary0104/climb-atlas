@@ -2,7 +2,7 @@
 //
 // Bump CACHE_VERSION whenever a precached file's content changes so
 // clients pick up the new version instead of serving stale files forever.
-const CACHE_VERSION = 'v3';
+const CACHE_VERSION = 'v4';
 const SHELL_CACHE = 'climbatlas-shell-' + CACHE_VERSION;
 const RUNTIME_CACHE = 'climbatlas-runtime-' + CACHE_VERSION;
 const TILE_CACHE = 'climbatlas-tiles-' + CACHE_VERSION;

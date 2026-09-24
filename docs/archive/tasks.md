@@ -112,6 +112,92 @@ Each entry:
 
 ## In Progress
 
+### Featured "worth traveling for" destinations discovery layer
+- Branch: `feature/featured-destinations-discovery` — implemented,
+  verification limited by this sandbox (see below); not yet committed
+  or merged.
+- Status: in progress.
+- What: direct follow-up to a brainstorm about whether a global/near-
+  global bouldering app should include countries people don't actually
+  travel to boulder in. User's explicit, standing instruction from that
+  discussion: **"ok dont cut it"** — nothing existing (Africa or any
+  other country/gym data) gets removed. Separately, user authorized
+  ("yeah do that") building a curated, *additive* "worth traveling for"
+  discovery layer surfacing countries with real climbing-gym density/
+  reputation (China, Japan, Korea, US, Germany, UK) for trip-planning —
+  layered on top of the existing full dataset, which is completely
+  unmodified by this task.
+- **Implementation** (three files only — `js/data.js`, the seed
+  dataset, is untouched, confirming this is a pure UI/navigation
+  addition with zero data risk):
+  - `index.html`: a new `<div class="featured-destinations"
+    id="featuredDestinations">` block in the sidebar, between the
+    search input and `#stateChips`, with a "Worth traveling for" section
+    label and six real `<button type="button" class="featured-chip"
+    data-country="...">` elements (China, Japan, South Korea, United
+    States, Germany, United Kingdom) — real buttons, not `<div>`s, per
+    this project's established accessibility floor.
+  - `js/app.js`: a new, separate `click` listener on
+    `#featuredDestinations` (added after the existing `render()` call,
+    before the `#typeFilters` listener). Deliberately its own listener
+    rather than folded into the existing `#stateChips` handler, since
+    `.featured-destinations` sits outside `#stateChips` and is pure
+    navigation (fly to the country via the existing
+    `COUNTRY_FLY_TARGETS` lookup, expand that country's `.country-group`
+    and parent `.region-group` so it's visible in the sidebar too) —
+    never touches `activeStates`/the filter state, unlike a real chip
+    click. Mirrors the already-existing `.country-label` click-handling
+    branch's logic exactly.
+  - `css/style.css`: new `.featured-destinations`/`.featured-row`/
+    `.featured-chip` rules inserted after the existing `.chip.active`
+    rule. Deliberately styled distinct from `.chip`'s neutral-border/
+    toggle-active pattern (accent-outlined pills that fill solid on
+    hover/press) so the row reads as navigation, not "one more filter."
+    Reuses existing design tokens only — `--accent`/`--accent-ink`,
+    `--font-display`, `--fs-sm`, `--r-sm`, `--sp-2`, `--focus` — no new
+    tokens invented. Applies the design-taste-frontend skill's COLOR
+    CONSISTENCY LOCK (the one accent colour, not a new one) and Tactile
+    Feedback (`:active{transform:scale(0.95)}`) principles.
+- **Verification, honestly limited by this sandbox environment** (per
+  Rules.md §12 — reporting what was actually tested, not claiming it
+  "works" untested):
+  - Static review confirms the new code correctly reuses
+    `COUNTRY_FLY_TARGETS` and `motion()` (both pre-existing, already
+    exercised by the working `.country-label` handler this mirrors),
+    and that the click handler's selectors (`.country-group[data-
+    country="..."]`, `.region-group`, `.region-header`) match the real
+    markup in `index.html`.
+  - A live Playwright smoke test was run (served via `npx serve .`,
+    `node /tmp/smoke_test.js`) and confirms `#featuredDestinations`
+    exists with all 6 `.featured-chip` children present, correctly
+    labelled, with the right `data-country` codes — the markup itself
+    renders correctly.
+  - **The click-behaviour half of the smoke test could not be
+    exercised**: this sandbox's outbound network blocks `unpkg.com`
+    (confirmed twice, independently — a direct `curl` to
+    `unpkg.com/maplibre-gl@5.24.0/...` fails with an explicit
+    egress-proxy rejection, and the Playwright browser's own captured
+    console output shows `PAGEERROR: maplibregl is not defined`
+    alongside several `net::ERR_TUNNEL_CONNECTION_FAILED` entries).
+    `js/app.js` is one top-level IIFE that crashes at the pre-existing
+    `new maplibregl.Map(...)` call (unrelated to this task) before this
+    task's own `addEventListener` call — or anything else in the file
+    after that line — ever runs. This means **no live JS behaviour in
+    `js/app.js` can be verified in this sandbox at all**, not just this
+    feature's — a pre-existing environment limitation, not something
+    this task introduced or could fix from within the session.
+  - No console errors attributable to this task's own code were
+    observed; every error present is the same pre-existing
+    `maplibregl`/`supabase`/tunnel-connection failure.
+- **Not yet done**: an actual click-through smoke test (does clicking a
+  chip really fly the camera and expand the right groups) — needs a
+  real, unrestricted browser, since this sandbox cannot load MapLibre
+  GL at all. No git commit has been made yet. This branch also cannot
+  be pushed from this session — the git proxy returns a 403
+  (`spiary0104/climb-atlas is not in this session's authorized
+  repository set`) — see the Completion Report delivered to the user
+  for how to actually receive this change.
+
 ### UI/UX redesign — Stage H: polish, copy, cleanup (final stage)
 - Branch: `feature/polish-copy-cleanup` — committed, merged to
   `master`, pushed.
@@ -3841,6 +3927,155 @@ _(none)_
 
 ## Done (recent)
 
+### Add Seoul + Gyeonggi-do depth pass, South Korea (22 gyms)
+- Status: done — committed directly to `master`.
+- What: direct continuation of the standing "keep working on Korea" task.
+  With every South Korea division now holding at least one spot (see the
+  four division-filling entries below), the user asked whether the
+  ~200-300 real gyms Korea is estimated to have nationwide (per a
+  business-directory scrape) had actually been researched, or just the
+  minimum to fill empty divisions — it was the latter. This pass targets
+  the real gap: Seoul and Gyeonggi-do, Korea's two densest climbing
+  regions (each independently estimated at 55-70 real gyms), which stood
+  at only 18 and 6 spots respectively despite being long-filled
+  divisions, not empty ones.
+- Two parallel research passes (Korean-language search, spiri7.com gym
+  pages, Daangn business listings, Instagram/Facebook activity for
+  recency) found 24 raw candidates; 2 were deliberately excluded rather
+  than guessed at: "Climbing Park Jongno" has a pre-existing unresolved
+  naming/address conflict already documented on Seoul Forest Climbing's
+  own `notes` field, and this pass's own source gave yet a third
+  different address for the same name; "Yeongdeungpo Sports Climbing
+  Gym" only had facility-type evidence for its *outdoor*-wall lead
+  climbing, out of scope for this indoor-only project. Left 10 Seoul +
+  12 Gyeonggi = 22 gyms.
+- **4 confirmed with both bouldering AND lead climbing** (Mad Gym
+  Gwangmyeong, Pax Climbing Center, Chamonix Climbing, Suji Climbing —
+  all via explicit dual-discipline evidence on the gym's own business
+  listing or spiri7.com page) — a notably higher lead-climbing hit rate
+  than prior Korea batches, this being Seoul/Gyeonggi's denser urban gym
+  market rather than smaller regional cities. The other 18 default to
+  bouldering-only per this project's established Korea-specific
+  discipline (no independent rope/lead evidence found), each disclosed.
+- **2 same-brand-different-branch resolutions, not duplicates**:
+  Climbing Park Hanti (Daechi-dong) is a different branch/address from
+  the already-listed "Climbing Park" (Yeoksam-dong); Seoul Boulders
+  Mokdong is a different branch/address from the already-listed
+  "SEOULBOULDERS Climbing Company" (Yeongdeungpo-gu).
+- **Geocoding**: 17 of 22 addresses resolved via ArcGIS
+  `findAddressCandidates` at score=100 (exact match); 1 (Alé Climbing
+  Gangdong) had no street number in any source, so its dong-level match
+  is disclosed as such; 4 (Climb A Clock, Rock Face Climbing, AstroMan
+  Paju, Climb Days, Jo Gyu-bok Byeollae) hit a repeated
+  proxy-level "url exceeds maximum fetchable length" rejection on their
+  full street-address query specifically (not an obvious length issue —
+  worth retrying with a different tool/approach in a future pass) and
+  fell back to a simplified district/dong-level query instead, disclosed
+  per-entry.
+- Net result: 1881 → **1903 total spots** (Seoul 18 → 28, Gyeonggi-do
+  6 → 18). Structural check (Node-parsed `window.SEED_GYMS`): 1903/1903
+  unique ids, zero duplicate name+suburb+state+country combos, every
+  spot has a non-empty `types` array.
+- **Verified structurally, not via live browser this pass** — same CDN
+  access limitation noted in every recent Korea-batch entry; per
+  `Rules.md` §12 this pass went straight to the Node-parsed structural
+  check.
+- **Not yet done**: running the regenerated seed SQL against the live
+  Supabase table — same outstanding step as every prior batch. Seoul and
+  Gyeonggi are still well short of their estimated real gym counts
+  (roughly 28/70 and 18/60) — this was a depth pass, not an exhaustive
+  one, so further Korea research (more Seoul/Gyeonggi gyms, or other
+  under-covered divisions like Busan/Daegu) remains available if the
+  user wants to continue.
+
+### Add Gyeongsangbuk-do, South Korea (4 gyms, third division filled)
+- Status: done — committed directly to `master`.
+- What: direct continuation of the standing "keep working on Korea" task
+  — fills the third of South Korea's then-4-empty top-level divisions
+  (Gangwon-do and Chungcheongbuk-do were completed first; Jeollabuk-do
+  remains). Sourcing (Korean names, addresses, discipline evidence) was
+  gathered via a research subagent and the addresses geocoded via
+  WebFetch against ArcGIS's `findAddressCandidates` endpoint (all 4 at
+  `score=100` exact matches) in an earlier segment; this pass wrote the
+  `js/data.js` entries, added the first-ever CSS colour variable + chip
+  for this division, and verified structurally. Full detail in
+  `docs/architecture.md` "Seed data sourcing".
+- 4 real, currently-operating gyms across 4 cities: Flow Climb
+  (Gyeongju), Olla Climbing Center (Gyeongsan), Norbo Climbing (Gumi),
+  Pohang Spider Climbing (Pohang) — all tagged bouldering-only per this
+  project's established Korea-specific discipline (no fully-confirmed
+  rope/lead evidence for any of the four).
+- Net result: 1871 → **1875 total spots**. Structural check (Node-parsed
+  `window.SEED_GYMS`): 1875/1875 unique ids, zero duplicate
+  name+suburb+state+country combos, every spot has a non-empty `types`
+  array, every KR state code used resolves against `STATES_BY_COUNTRY.KR`.
+- **Verified structurally, not via live browser this pass** — this
+  session's CDN access was re-confirmed blocked by the environment's
+  agent-proxy policy (unpkg.com/cdn.jsdelivr.net/fonts.googleapis.com
+  all `connect_rejected`), matching every prior segment's finding; per
+  `Rules.md` §12 this pass went straight to the Node-parsed structural
+  check rather than re-litigating the CDN block again.
+- **Not yet done**: running the regenerated seed SQL against the live
+  Supabase table — same outstanding step as every prior batch; the last
+  remaining empty Korea division, Jeollabuk-do, per the standing "keep
+  working on Korea" instruction.
+
+### Add Jeollabuk-do, South Korea (6 gyms, fourth and final division filled)
+- Status: done — committed directly to `master`.
+- What: direct continuation of the standing "keep working on Korea" task
+  — fills the last of South Korea's then-4-empty top-level divisions
+  (Gangwon-do, Chungcheongbuk-do, and Gyeongsangbuk-do were completed
+  first). Sejong remains excluded, per an earlier session, since its only
+  candidate was outdoor-only. **This completes South Korea's full
+  division coverage** — every one of the country's 17 real top-level
+  divisions now has at least one seed spot. Sourcing (names, addresses,
+  discipline evidence) was gathered in earlier segments and all 6
+  addresses geocoded via WebFetch against ArcGIS's `findAddressCandidates`
+  endpoint (the same substitution used for every prior Korea-division
+  batch in this series), all at `score=100` exact matches; this pass
+  wrote the `js/data.js`/`css/style.css`/`index.html` entries and
+  verified them. Full detail in `docs/architecture.md` "Seed data
+  sourcing".
+- 6 real, currently-operating gyms across 3 cities: Jeonju Hola Climbing
+  Center and Hans Climbing (both Jeonju, Deokjin-gu), Gunsan Climbing
+  Center and Gunsan Sports Climbing Center (both Gunsan), ClimbFarm
+  (Iksan), and Ascent Climbing Manseong (Jeonju) — all tagged
+  bouldering-only per this project's established Korea-specific
+  discipline (no independent rope/lead evidence found for any of the
+  six).
+- **A naming resolution, not a guess**: Jeonju Hola Climbing Center's own
+  Facebook page confirms "Hola" and "Olla" are the same gym under two
+  romanizations of the same Korean name — recorded rather than treated
+  as two separate candidates.
+- **Two genuine open research threads deliberately left unresolved
+  rather than guessed either way**, both disclosed in the relevant
+  spots' own `notes` fields: a "Hardrock Climbing" cited by secondary
+  sources as offering bouldering + lead could not be linked to either
+  Jeonju Hola Climbing Center or Hans Climbing despite targeted
+  searches; Gunsan Climbing Center's official site only generically
+  mentions mountaineering/alpine climbing, with no explicit facility-
+  type confirmation, and a second official source could not be fetched.
+- Net result: 1875 → **1881 total spots**. Structural check (Node-parsed
+  `window.SEED_GYMS`): 1881/1881 unique ids, zero duplicate
+  name+suburb+state+country combos, every spot has a non-empty `types`
+  array, every KR state code used resolves against `STATES_BY_COUNTRY.KR`.
+- **Verified structurally, not via live browser this pass** — this
+  session's CDN access was re-confirmed blocked by the environment's
+  agent-proxy policy (`connect_rejected` on unpkg.com), matching every
+  prior segment's finding; per `Rules.md` §12 this pass went straight to
+  the Node-parsed structural check instead of re-litigating the CDN
+  block again.
+- **South Korea's standing "keep working on Korea" task has no more
+  empty divisions to fill** — Gangwon-do, Chungcheongbuk-do,
+  Gyeongsangbuk-do, and Jeollabuk-do are all now done, joining the 13
+  divisions that already had spots; Sejong remains the one deliberate
+  exclusion (outdoor-only candidate). A future session would need new
+  direction from the user for further Korea work (e.g. expanding an
+  already-filled division, or the two unresolved research threads
+  above) rather than more empty-division filling.
+- **Not yet done**: running the regenerated seed SQL against the live
+  Supabase table — same outstanding step as every prior batch.
+
 ### Add Montenegro, Mongolia, Oman and Paraguay (8 gyms, 81st-84th countries)
 - Status: done — committed directly to `master`.
 - What: user said "keep going". Ten countries were researched in parallel; the four with 2
@@ -3881,6 +4116,40 @@ _(none)_
   Supabase table — same outstanding step as every prior batch; the
   remaining 3 empty Korea divisions (Chungcheongbuk-do, Gyeongsangbuk-do,
   Jeollabuk-do) per the standing "keep working on Korea" instruction.
+
+### Add Chungcheongbuk-do, South Korea (4 gyms, second division filled)
+- Status: done — committed directly to `master`.
+- What: direct continuation of the standing "keep working on Korea" task
+  — fills the second of South Korea's then-4-empty top-level divisions
+  (Gangwon-do was completed first; Gyeongsangbuk-do and Jeollabuk-do
+  remained). Sourced via general web research plus spiri7.com (a Korean
+  gym-tracking/leaderboard site already used and documented for the
+  earlier South-Korea-expansion pass) as a discipline-confirmation aid.
+  Addresses geocoded via WebFetch against ArcGIS's `findAddressCandidates`
+  endpoint, all 4 at `score=100` exact matches. Type defaulted to
+  bouldering-only per this project's established Korea-specific
+  discipline unless source material named another discipline — 3 of 4
+  defaulted/confirmed bouldering-only, 1 (Cheongju International Sports
+  Climbing Center, a real government-built facility at Naesu Living
+  Sports Park) confirmed bouldering + lead-climbing. Full detail in
+  `docs/architecture.md` "Seed data sourcing".
+- Net result: 1867 → **1871 total spots**. Structural check
+  (Node-parsed `window.SEED_GYMS`): 1871/1871 unique ids, zero duplicate
+  name+suburb+state+country combos, every spot has a non-empty `types`
+  array, every KR state code used resolves against
+  `STATES_BY_COUNTRY.KR`.
+- **Verified structurally, not via live browser this pass** — this
+  session's CDN access was confirmed (again) to be blocked by the
+  environment's agent-proxy policy, and after several prior segments
+  spent repeatedly re-confirming this same block without making forward
+  progress, this pass deliberately stopped retrying it and used a
+  Node-parsed structural check instead, per `Rules.md` §12's "Do Not
+  Pretend" — disclosed as a real limitation, not glossed over as a full
+  live smoke test.
+- **Not yet done**: running the regenerated seed SQL against the live
+  Supabase table — same outstanding step as every prior batch; the
+  remaining 2 empty Korea divisions (Gyeongsangbuk-do, Jeollabuk-do) per
+  the standing "keep working on Korea" instruction.
 
 ### Add Guatemala, Armenia, Lebanon, Jordan and Nepal (14 gyms, 76th-80th countries)
 - Status: done — committed directly to `master`.
