@@ -9,8 +9,9 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 
 ## In progress
 ### Gym import pipeline (Stage 5)
-- Status: validate/plan/dedupe built + tested (branch feature/gym-import-pipeline); **production import NOT built**.
-- Next: user answers the open decisions in docs/import-workflow.md (mechanism, staging the 246 new gyms, gyms.json fallback; the 3 in-batch duplicate pairs are resolved).
+- Status: validate/plan/dedupe built + tested (branch feature/gym-import-pipeline); first batch
+  `import/batches/2026-09-24-reconciled-new-gyms` staged (246 new, plan clean); **production import NOT built, nothing imported**.
+- Next: user answers the remaining open decisions in docs/import-workflow.md (import mechanism/credentials, gyms.json fallback, seed.html).
 
 ## Backlog
 

@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-09-24-reconciled-new-gyms",
+  "description": "The 246 genuinely new gyms from the Stage 0 id reconciliation (2,127 reconciled records minus the 1,881 already in production), after the 3 approved in-batch duplicate decisions.",
+  "created": "2026-09-24",
+  "source": {
+    "kind": "stage-from-file",
+    "file": "data/gyms.reconciled.json",
+    "canonical_sha256": "6662812cd11d3d27d93b36210340c6adf86d6f84d0aa8fc0d01e55f6b6c223aa",
+    "records_in_source": 2127,
+    "staged": 246,
+    "not_staged_because_already_in_production": 1881,
+    "not_staged_other": {},
+    "decisions": {
+      "file": "data/reconciliation/2026-09-24/decisions.json",
+      "canonical_sha256": "d533cd494450f3c248d6ec793eebc75e5a8ee6251833d0bac1bf076761df4cec",
+      "rejected_records_excluded": [
+        "seed-1966",
+        "seed-1970",
+        "seed-1971",
+        "g-7523c09127",
+        "g-429da12245",
+        "g-11bb3a6ff4"
+      ]
+    }
+  },
+  "index_at_staging": {
+    "sha256": "4132a6ce90a26f2972b7409103e60c865aa65728b4905bd2a35126aeb1b28f2e",
+    "count": 1881
+  }
+}

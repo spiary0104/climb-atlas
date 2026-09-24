@@ -6,6 +6,8 @@
 //   node scripts/gym-import.js validate   <batch>                 offline schema checks only
 //   node scripts/gym-import.js plan       <batch> [--no-write] [--no-staged] [--index <dir>]
 //   node scripts/gym-import.js freeze-ids <batch>                 write derived g-<hex> ids into records.ndjson (once)
+//   node scripts/gym-import.js stage-from-file <source.json> --slug <slug> --description "..." [--date YYYY-MM-DD] [--decisions <decisions.json>]
+//                                                                 stage only the NEW records of a JSON array into a fresh batch
 //   node scripts/gym-import.js build-index (--from-snapshot <file.json> | --live) [--out <dir>]
 //   node scripts/gym-import.js verify-index (--from-snapshot <file.json> | --live) [--index <dir>]
 //
@@ -18,6 +20,7 @@ const V = require('./lib/gym-import/validate');
 const P = require('./lib/gym-import/plan');
 const S = require('./lib/gym-import/index-store');
 const { renderReport } = require('./lib/gym-import/report');
+const { stageFromFile, relTo } = require('./lib/gym-import/stage');
 
 const ROOT = S.ROOT;
 const BATCHES = path.join(ROOT, 'import', 'batches');
@@ -113,6 +116,26 @@ async function cmdVerifyIndex(flags) {
   return ok ? 0 : 1;
 }
 
+async function cmdStage(source, flags) {
+  if (!source || !fs.existsSync(source)) throw new Error('missing/unknown <source.json>');
+  const index = S.load(flags.index ? path.resolve(flags.index) : undefined);
+  let dec = null;
+  if (flags.decisions) {   // reconciliation decisions.json: records it lists as rejected must never be staged
+    const d = JSON.parse(fs.readFileSync(path.resolve(flags.decisions), 'utf8'));
+    const rejected = d.duplicates_removed.map(x => x.remove_final_id || x.remove_repo_id);
+    dec = { rejectedIds: rejected, meta: { file: rel(path.resolve(flags.decisions)), canonical_sha256: require('./lib/gym-import/stage').canonicalSha(d), rejected_records_excluded: rejected } };
+  }
+  const r = await stageFromFile({
+    source: path.resolve(source), slug: flags.slug, description: flags.description, date: flags.date || new Date().toISOString().slice(0, 10),
+    index, batchesDir: BATCHES, mustExclude: dec ? dec.rejectedIds : [], provenance: { file: rel(path.resolve(source)), extra: dec ? { decisions: dec.meta } : {} },
+  });
+  console.log(`${r.action}: ${rel(r.dir)}  (${r.staged} new record(s) staged)`);
+  console.log('source classes: ' + Object.entries(r.byClass).map(([k, v]) => `${k} ${v}`).join(', '));
+  if (r.notStaged.length) { console.log(`WARNING: ${r.notStaged.length} source record(s) were neither new nor existing and were NOT staged (fix them in the source):`); r.notStaged.slice(0, 10).forEach(x => console.log(`  line ${x.line} ${x.class} "${x.name}"`)); }
+  console.log('Next: validate, plan, then review report.md. Nothing was written to production.');
+  return r.notStaged.length ? 2 : 0;
+}
+
 function cmdNewBatch(slug, flags) {
   if (!slug || !/^[a-z0-9][a-z0-9-]{1,60}$/.test(slug)) throw new Error('slug must be lower-case letters/digits/hyphens, e.g. "japan-osaka-round-1"');
   const id = new Date().toISOString().slice(0, 10) + '-' + slug;
@@ -135,6 +158,7 @@ function cmdNewBatch(slug, flags) {
       case 'validate': code = await cmdValidate(batchPath(arg)); break;
       case 'plan': code = await cmdPlan(batchPath(arg), flags); break;
       case 'freeze-ids': code = await cmdFreeze(batchPath(arg), flags); break;
+      case 'stage-from-file': code = await cmdStage(arg, flags); break;
       case 'build-index': code = await cmdBuildIndex(flags); break;
       case 'verify-index': code = await cmdVerifyIndex(flags); break;
       case 'import':
