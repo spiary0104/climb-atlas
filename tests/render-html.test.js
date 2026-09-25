@@ -30,6 +30,10 @@ function tags(html) {
 const shape = html => tags(html).map(t => t.tag + '[' + Object.keys(t.attrs).sort().join(',') + ']');
 const hasHandlerAttrs = html => tags(html).some(t => Object.keys(t.attrs).some(n => /^on/i.test(n)));
 const allText = html => html.replace(/<[^>]*>/g, '');
+// Every <svg> must be one of our sprite icons, and every <use> must point into assets/icons.svg.
+const onlySpriteIcons = html => tags(html).every(t => (t.tag !== 'svg' || /^icon\b/.test(t.attrs.class || '') && t.attrs['aria-hidden'] === 'true')
+  && (t.tag !== 'use' || /^assets\/icons\.svg#i-[a-z-]+$/.test(t.attrs.href || '')));
+const countSvg = html => (html.match(/<svg\b/gi) || []).length;
 
 const HOSTILE = [
   '"><img src=x onerror=window.__pwned=1>',
@@ -51,7 +55,9 @@ test('popup: hostile values in every field cannot add tags/attributes or handler
     const hostile = popup.buildPopupHtml({ ...benignSpot, id: h, name: h, suburb: h, address: h, notes: h, types: [h, 'top-rope'] }, { region: h });
     assert.deepEqual(shape(hostile), shape(benign), 'tag/attribute structure changed for payload ' + h);
     assert.equal(hasHandlerAttrs(hostile), false, 'event-handler attribute injected: ' + h);
-    assert.ok(!/<script|<svg/i.test(hostile), 'raw markup leaked: ' + h);   // (attribute VALUES may legitimately contain the escaped text)
+    assert.ok(!/<script/i.test(hostile), 'raw markup leaked: ' + h);   // (attribute VALUES may legitimately contain the escaped text)
+    assert.equal(countSvg(hostile), countSvg(benign), 'svg markup leaked: ' + h);
+    assert.ok(onlySpriteIcons(hostile), 'non-sprite svg/use in popup for payload ' + h);
   }
 });
 
@@ -93,9 +99,10 @@ test('popup: normal behaviour preserved (name, place, types, address, marks stat
   assert.ok(text.includes('1 Example St') && text.includes('Friendly staff'));
   const climbed = tags(html).find(t => t.attrs['data-popup-action'] === 'climbed');
   const saved = tags(html).find(t => t.attrs['data-popup-action'] === 'bookmarked');
-  assert.match(climbed.attrs.class, /\bactive\b/);
-  assert.doesNotMatch(saved.attrs.class, /\bactive\b/);
-  const dir = tags(html).find(t => t.attrs.class === 'popup-directions-btn');
+  assert.equal(climbed.attrs['aria-pressed'], 'true');       // toggle state is aria-pressed (styled by .btn[aria-pressed=true])
+  assert.equal(saved.attrs['aria-pressed'], 'false');
+  assert.match(climbed.attrs.class, /\bbtn\b/);
+  const dir = tags(html).find(t => /\bpopup-directions-btn\b/.test(t.attrs.class || ''));
   assert.match(dir.attrs.href, /^https:\/\/www\.google\.com\/maps\/dir\/\?api=1&amp;destination=/);
 });
 
@@ -116,7 +123,7 @@ test('moderator panel: hostile state/country/types/id/name/etc. cannot alter the
     });
     assert.deepEqual(shape(hostile), shape(benign), 'markup structure changed for payload ' + h);
     assert.equal(hasHandlerAttrs(hostile), false, 'handler injected: ' + h);
-    assert.ok(!/<script|<svg/i.test(hostile), 'raw markup leaked: ' + h);
+    assert.ok(!/<script|<svg/i.test(hostile), 'raw markup leaked: ' + h);   // the moderator panel carries no icons at all
   }
 });
 

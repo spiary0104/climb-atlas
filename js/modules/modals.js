@@ -215,6 +215,32 @@ export function initModalKeyboard(){
   });
 }
 
+// "Add a gym": the top bar button and the Me menu item (js/modules/nav.js) both start here.
+export async function startAddGym(){
+  const user = window.auth.user;
+  if(!user){ showToast('Sign in to add a location'); openAuthModal(); return; }
+  if(!window.sb){ showToast('Supabase is not configured — see README.md'); return; }
+  const dayAgo = new Date(Date.now() - 24*60*60*1000).toISOString();
+  const {count, error} = await window.sb.from('spots')
+    .select('id', {count:'exact', head:true})
+    .eq('submitted_by', user.id)
+    .gte('created_at', dayAgo);
+  if(!error && count >= 10){
+    showToast("You've reached today's limit of 10 submissions — try again tomorrow.");
+    return;
+  }
+  appState.placingPin = null;
+  submitBtn.disabled = true;
+  pinStatus.textContent = 'No pin dropped yet — click "Drop pin" then tap the map.';
+  pinStatus.classList.remove('set');
+  ['fName','fSuburb','fAddress','fNotes','fPhoto','fCountryOther','fStateOther'].forEach(id=>document.getElementById(id).value='');
+  ['fTypeIndoor','fTypeTopRope','fTypeLead'].forEach(id=>document.getElementById(id).checked=false);
+  document.getElementById('fCountry').value = 'AU';
+  toggleOtherCountryFields('f', 'AU');
+  checkFormReady();
+  modalBackdrop.classList.remove('hidden');
+}
+
 export function initForms(){
   document.getElementById('fCountry').addEventListener('change', (e)=>{ toggleOtherCountryFields('f', e.target.value); checkFormReady(); });
   document.getElementById('eCountry').addEventListener('change', (e)=>{ toggleOtherCountryFields('e', e.target.value); checkEditFormReady(); });
@@ -225,30 +251,7 @@ export function initForms(){
   // not after. The actual limit is enforced server-side either way --
   // this is just a nicer UX in front of it, and fails open (opens the
   // form) if the count query itself errors.
-  document.getElementById('addBtn').addEventListener('click', async ()=>{
-    const user = window.auth.user;
-    if(!user){ showToast('Sign in to add a location'); openAuthModal(); return; }
-    if(!window.sb){ showToast('Supabase is not configured — see README.md'); return; }
-    const dayAgo = new Date(Date.now() - 24*60*60*1000).toISOString();
-    const {count, error} = await window.sb.from('spots')
-      .select('id', {count:'exact', head:true})
-      .eq('submitted_by', user.id)
-      .gte('created_at', dayAgo);
-    if(!error && count >= 10){
-      showToast("You've reached today's limit of 10 submissions — try again tomorrow.");
-      return;
-    }
-    appState.placingPin = null;
-    submitBtn.disabled = true;
-    pinStatus.textContent = 'No pin dropped yet — click "Drop pin" then tap the map.';
-    pinStatus.classList.remove('set');
-    ['fName','fSuburb','fAddress','fNotes','fPhoto','fCountryOther','fStateOther'].forEach(id=>document.getElementById(id).value='');
-    ['fTypeIndoor','fTypeTopRope','fTypeLead'].forEach(id=>document.getElementById(id).checked=false);
-    document.getElementById('fCountry').value = 'AU';
-    toggleOtherCountryFields('f', 'AU');
-    checkFormReady();
-    modalBackdrop.classList.remove('hidden');
-  });
+  document.getElementById('addBtn').addEventListener('click', startAddGym);
 
   document.getElementById('cancelBtn').addEventListener('click', closeModal);
 

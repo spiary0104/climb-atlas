@@ -8,6 +8,12 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 (delete them; git keeps history). Keep this file under 60 lines.
 
 ## In progress
+### Bouldeer redesign (docs/DESIGN.md sec. 17)
+- Status: Phase 0 + 1 done on `feature/bouldeer-design-foundations` (tokens, fonts, components, icons, top bar/tab bar,
+  Bouldeer brand, CDN `crossorigin`). Not merged. Next: Phase 2 (Explore: two-pane, scoped list, sheet, pins, search in top bar).
+- Open for the owner: Privacy/Terms are unreviewed drafts and still name "Climb Atlas" as the party (legal review);
+  human check on a real phone; PNG/iOS icons + app icon (sec. 19.7);
+  START and the Log tab both read "Log" per sec. 6.5; lake/plum type colours provisional (sec. 19.1); Me menu shows own email.
 ### Gym import pipeline — first batch imported; follow-ups
 - Status: pipeline + gated importer built and tested. Batch `import/batches/2026-09-24-reconciled-new-gyms`
   (246 gyms) IMPORTED to production 2026-09-24, verified (approved 1,881 → 2,127; `manifest.json`).
@@ -47,14 +53,6 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
   checkout, a webhook (Supabase Edge Function — confirm that's OK given
   the no-build-tooling rule), a subscriptions table + RLS.
 - Open questions: what exactly is gated; free-tier cap; price.
-
-### Redesign follow-ups (optional)
-- Human check on a real phone + wide monitor (globe framing, drawer
-  transitions were only verified numerically).
-- If touch users miss row actions: faint background on `.row-action`
-  under `@media (hover:none)`.
-- List virtualisation only if the dataset roughly doubles.
-- Legal copy review: Privacy/Terms are still plain-language drafts.
 
 ## Blocked
 - _(none)_

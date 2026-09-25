@@ -1,8 +1,10 @@
-// Climb Atlas service worker — offline app shell + map/data caching.
+// Bouldeer service worker — offline app shell + map/data caching.
 //
 // Bump CACHE_VERSION whenever a precached file's content changes so
 // clients pick up the new version instead of serving stale files forever.
-const CACHE_VERSION = 'v5';   // v5: private Supabase reads are no longer cached; activating v5 deletes the old v4 data cache that held them
+// v5: private Supabase reads are no longer cached (activation deleted the old v4 data cache that held them).
+// v6: Bouldeer design foundations (new CSS files, icon sprite, nav.js/icons.js; css/chips.css removed).
+const CACHE_VERSION = 'v6';
 const SHELL_CACHE = 'climbatlas-shell-' + CACHE_VERSION;
 const RUNTIME_CACHE = 'climbatlas-runtime-' + CACHE_VERSION;
 const TILE_CACHE = 'climbatlas-tiles-' + CACHE_VERSION;
@@ -13,8 +15,11 @@ const SHELL_FILES = [
   'index.html',
   'about.html',
   'manifest.json',
+  'css/tokens.css',
+  'css/base.css',
+  'css/components.css',
   'css/style.css',
-  'css/chips.css',
+  'assets/icons.svg',
   'js/supabase-init.js',
   'js/auth.js',
   'js/main.js',
@@ -23,6 +28,8 @@ const SHELL_FILES = [
   'js/modules/constants.js',
   'js/modules/regions.js',
   'js/modules/utils.js',
+  'js/modules/icons.js',
+  'js/modules/nav.js',
   'js/modules/html-safe.js',
   'js/modules/popup-html.js',
   'js/modules/moderation-html.js',

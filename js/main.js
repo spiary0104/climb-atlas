@@ -1,4 +1,4 @@
-// Climb Atlas entry point (ES module). Loaded after the classic scripts
+// Bouldeer entry point (ES module). Loaded after the classic scripts
 // supabase-init.js (window.sb) and auth.js (window.auth).
 import { closeAuthModal, initAuthUI, renderAuthUI } from './modules/auth-ui.js';
 import { checkModerator, loadMarks, loadPending, loadSpots } from './modules/data-load.js';
@@ -6,6 +6,7 @@ import { initLogbook } from './modules/logbook.js';
 import { initMap } from './modules/map.js';
 import { initForms, initInfoModals, initModalKeyboard } from './modules/modals.js';
 import { initModeration, renderPendingBadge } from './modules/moderation.js';
+import { initNavigation } from './modules/nav.js';
 import { initSidebar, render } from './modules/sidebar.js';
 import { appState } from './modules/state.js';
 
@@ -18,6 +19,7 @@ initForms();
 initLogbook();
 initModeration();
 initInfoModals();
+initNavigation();
 
 async function init(){
   // Accordion buttons expose their state; every group starts collapsed.

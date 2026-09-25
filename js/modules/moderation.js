@@ -51,7 +51,7 @@ async function approveSpot(id){
   try{
     const {error} = await window.sb.from('spots').update({status:'approved'}).eq('id', id);
     if(error) throw error;
-    showToast('Spot approved ✓');
+    showToast('Spot approved');
   }catch(err){
     showToast('Could not approve — try again');
     console.error(err);
@@ -83,7 +83,7 @@ async function approveEdit(pendingEditId){
     if(e1) throw e1;
     const {error: e2} = await window.sb.from('pending_edits').delete().eq('id', pe.id);
     if(e2) throw e2;
-    showToast('Edit approved ✓');
+    showToast('Edit approved');
   }catch(err){
     showToast('Could not approve edit — try again');
     console.error(err);

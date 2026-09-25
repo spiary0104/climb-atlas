@@ -4,7 +4,7 @@ import { TYPE_COLORS } from './constants.js';
 export { escapeHtml, safeUrl } from './html-safe.js';
 
 export function typeSwatch(types){
-  const colors = (types&&types.length?types:['indoor-bouldering']).map(t=>TYPE_COLORS[t]||'#999');
+  const colors = (types&&types.length?types:['indoor-bouldering']).map(t=>TYPE_COLORS[t]||'var(--color-text-muted)');
   if(colors.length === 1) return colors[0];
   const step = 100/colors.length;
   return `conic-gradient(${colors.map((c,i)=>`${c} ${i*step}% ${(i+1)*step}%`).join(', ')})`;

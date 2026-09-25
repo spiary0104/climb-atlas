@@ -1,4 +1,4 @@
-# Climb Atlas — Project Instructions
+# Bouldeer — Project Instructions
 
 @Rules.md
 
@@ -10,16 +10,17 @@ subagents). Keep it accurate and short.
 - **Never read `data/` or `docs/archive/`.** Query the seed data with
   `jq` or `grep` only (examples in `docs/ARCHITECTURE.md`).
 - **Files over 30 KB: use `grep`, `head`, or line ranges only — never read
-  them in full.** Currently over 30 KB: `index.html`, `css/style.css`,
-  `data/gyms.json`, `js/modules/regions.js`, everything in `docs/archive/`. Check with `wc -c` if unsure.
+  them in full.** Currently over 30 KB: `index.html`,
+  `data/gyms.json`, `js/modules/regions.js`, `docs/DESIGN.md`, everything in `docs/archive/`. Check with `wc -c` if unsure.
 - Start from `docs/ARCHITECTURE.md` (file map, data flow, key functions
   with file:line) and `docs/TASKS.md` (open work). Both are short; keep
   them that way (≤150 and ≤60 lines).
 
 ## Project overview
 
-Community-sourced map of climbing gyms worldwide (~1,900 spots, 80+
-countries), modelled on Track Atlas. Live at climbatlas.org.
+Bouldeer: a community-sourced map of climbing gyms worldwide (~2,100 spots, 80+
+countries). Live at climbatlas.org (repo name climb-atlas). **UI work follows
+`docs/DESIGN.md`** (tokens only, no raw colours; see ARCHITECTURE "Design system").
 
 **Stack: plain static site. No build step, no framework, no package.json.**
 Backend is Supabase (Postgres + Auth + RLS). Do not introduce npm/build
@@ -28,10 +29,13 @@ tooling, a framework, or a bundler without discussing it first.
 ## File map
 
 ```
-index.html              App shell (no inline JS/CSS)
+index.html              App shell (no inline JS/CSS)                 (>30 KB)
 about.html              Standalone About page
-css/style.css           All styles; tokens on :root              (>30 KB)
-css/chips.css           Per-region chip colours (generated)
+css/tokens.css          Design tokens (only file with raw values); design/tokens.json generated from it
+css/base.css            Reset, type scale, focus
+css/components.css      Shared components (.btn tiers, chips, fields, nav, dialogs, ...)
+css/style.css           App layer (shell, list pane, map overlays, logbook, moderation)
+assets/icons.svg        Phosphor sprite; js/modules/icons.js icon(name)
 js/supabase-init.js     window.sb (classic script)
 js/auth.js              window.auth (classic script)
 js/main.js              Entry ES module: init*() in order, then boot
@@ -41,7 +45,8 @@ js/modules/constants.js Colours, labels, fly targets, zoom thresholds
 js/modules/regions.js   STATES_BY_COUNTRY (static)
 js/modules/utils.js     escapeHtml, directionsUrl, typeSwatch, showToast
 js/modules/map.js       Map, clusters, labels, markers, popups, legend
-js/modules/sidebar.js   render(), filters, search, nav, marks
+js/modules/sidebar.js   render(), filters, search, marks
+js/modules/nav.js       Top bar / tab bar / Me menu ([data-nav])
 js/modules/modals.js    Focus/Escape, add/edit/report forms, info modals
 js/modules/auth-ui.js   Sign-in widget + modal
 js/modules/data-load.js Spots/marks/moderator/pending loading + seed fallback
@@ -74,7 +79,7 @@ No install, no build. Serve over HTTP (required: ES modules, fetch, Auth redirec
 ```
 python3 -m http.server 8000     # or: npx serve .
 ```
-No test suite or linter yet. Verification is manual — Rules.md §6–7.
+Tests: `node --test "tests/*.test.js"` (no linter). Browser verification is still required — Rules.md §6–7.
 Schema changes go through `supabase/migrations/` (docs/migrations.md).
 **New gyms go through the import pipeline only** — `docs/import-workflow.md`
 (`node scripts/gym-import.js new-batch|validate|plan|freeze-ids`; tests:

@@ -22,14 +22,14 @@ test('no inline event handlers or window.__ globals anywhere in the app', () => 
   }
 });
 
-test('index.html: every modal has a data-modal-close control, and only cancel/close buttons carry it', () => {
+test('index.html: every modal has a data-modal-close control, and only non-destructive secondary/tertiary .btn controls carry it', () => {
   const html = read('index.html');
   const modals = [...html.matchAll(/<div class="modal-backdrop[^"]*" id="(\w+)">([\s\S]*?)(?=<div class="modal-backdrop|<script|$)/g)];
   assert.ok(modals.length >= 9, 'expected the 9 modals, found ' + modals.length);
   for (const [, id, body] of modals) {
     const closers = [...body.matchAll(/<button[^>]*data-modal-close[^>]*>/g)].map((m) => m[0]);
     assert.ok(closers.length >= 1, id + ' has no data-modal-close control');
-    for (const c of closers) assert.ok(/btn-cancel|info-close/.test(c) && !/btn-danger|pending-|session-delete/.test(c), 'unexpected closer in ' + id + ': ' + c);
+    for (const c of closers) assert.ok(/\bbtn\b/.test(c) && /\bbtn-(secondary|tertiary)\b/.test(c) && !/btn-danger|btn-primary|pending-|session-delete/.test(c), 'unexpected closer in ' + id + ': ' + c);
   }
   // nothing else in the page is marked as a closer
   assert.equal((html.match(/data-modal-close/g) || []).length, modals.reduce((n, m) => n + (m[2].match(/data-modal-close/g) || []).length, 0));
@@ -45,14 +45,15 @@ test('Escape handling clicks only [data-modal-close] and refuses destructive con
   for (const cls of ['.btn-danger', '.pending-reject', '.pending-dismiss', '.pending-approve', '.session-delete']) assert.ok(destructive.includes(cls), cls);
 });
 
-test('destructive buttons (Reject / Dismiss / Delete) are never styled or selected as .btn-cancel', () => {
+test('destructive buttons (Reject / Dismiss / Delete) carry .btn-danger and are never a close/cancel control', () => {
   for (const f of ['js/modules/moderation-html.js', 'js/modules/logbook.js']) {
     const src = stripComments(read(f));
     for (const m of src.matchAll(/<button[^>]*class="([^"]*)"[^>]*>/g)) {
-      if (/pending-reject|pending-dismiss|session-delete/.test(m[1])) assert.ok(/btn-danger/.test(m[1]) && !/btn-cancel/.test(m[1]), f + ': ' + m[1]);
+      if (/pending-reject|pending-dismiss|session-delete/.test(m[1])) assert.ok(/btn-danger/.test(m[1]) && !/btn-cancel|btn-primary/.test(m[1]), f + ': ' + m[1]);
     }
   }
-  assert.ok(/\.btn-danger\s*\{/.test(read('css/style.css')), '.btn-danger has no CSS rule');
+  assert.ok(/\.btn-danger\s*\{/.test(read('css/components.css')), '.btn-danger has no CSS rule');
+  assert.equal(/btn-cancel|btn-submit|add-btn|mark-btn/.test(read('index.html') + read('css/components.css') + read('css/style.css')), false, 'retired button classes are back');
 });
 
 // Every ${...} inside these HTML-building templates must be escapeHtml(...) or one of the reviewed-safe expressions below.
@@ -68,8 +69,7 @@ const SAFE_EXPR = [
   /^i$/,                                                                        // loop index
   /^c\.attempts>1\?` ×\$\{escapeHtml\(c\.attempts\)\}`:''$/,
   /^chips \? .*$/, /^s\.notes \? .*$/,                                          // conditional blocks whose contents are checked below
-  /^g\.(address|notes)\?`<div class="(popup-address|pending-notes)">\$\{escapeHtml\(g\.(address|notes)\)\}<\/div>`:''$/,
-  /^g\.notes\?`<div style="font-size:12px;color:var\(--text-dim\)">\$\{escapeHtml\(g\.notes\)\}<\/div>`:''$/,
+  /^g\.(address|notes)\?`<div class="(popup-address|popup-notes|pending-notes)">\$\{escapeHtml\(g\.(address|notes)\)\}<\/div>`:''$/,
   /^pe\.(address|notes)\?`<div class="pending-notes">\$\{escapeHtml\(pe\.(address|notes)\)\}<\/div>`:''$/,
   /^photo\?`<img class="popup-photo" src="\$\{escapeHtml\(photo\)\}" alt="\$\{escapeHtml\(g\.name\)\}">`:''$/,
   /^photoLine\((g|pe)\.photo\)$/,
@@ -77,7 +77,10 @@ const SAFE_EXPR = [
   /^photo$/,
   /^spotLabel\(/, /^cards\./,
   /^id$/,                                                                       // popup-html.js: const id = escapeHtml(g.id)
-  /^CSS\.escape\(/,                                                             // used in a CSS selector string, not in markup
+  /^CSS\.escape\(/,
+  /^icon\('[a-z-]+'(, \{size:'(sm|md|lg)'\})?\)$/,                             // sprite icon with a literal name (icons.js rejects unknown names)
+  /^icon\(m\.icon, \{size:'sm'\}\)$/,                                           // logbook moodHtml: m comes from the fixed MOODS table
+  /^moodHtml\(s\.mood\)$/,                                                       // builds from MOODS only; unknown moods render nothing                                                             // used in a CSS selector string, not in markup
 ];
 function interpolations(src) {
   const out = [];

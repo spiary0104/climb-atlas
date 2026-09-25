@@ -1,6 +1,7 @@
 // Static config: type colours/labels, country labels + fly targets, zoom thresholds.
 
-export const TYPE_COLORS = {'indoor-bouldering':'#3fb8a6','top-rope':'#8a6bb0','lead-climbing':'#4a90c9'};
+// Climb-type colours are CSS custom properties (css/tokens.css), so the pin, swatch and tag colours have one source.
+export const TYPE_COLORS = {'indoor-bouldering':'var(--color-type-boulder)','top-rope':'var(--color-type-toprope)','lead-climbing':'var(--color-type-lead)'};
 export const TYPE_LABELS = {'indoor-bouldering':'Indoor bouldering','top-rope':'Top rope','lead-climbing':'Lead climbing'};
 export const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy', BE:'Belgium', KR:'South Korea', ES:'Spain', PT:'Portugal', AT:'Austria', CH:'Switzerland', PL:'Poland', DK:'Denmark', FI:'Finland', IE:'Ireland', NO:'Norway', MX:'Mexico', BR:'Brazil', HU:'Hungary', GR:'Greece', CZ:'Czech Republic', IS:'Iceland', RO:'Romania', HR:'Croatia', RU:'Russia', BG:'Bulgaria', AR:'Argentina', PH:'Philippines', CO:'Colombia', CL:'Chile', VE:'Venezuela', IN:'India', IL:'Israel', ID:'Indonesia', TW:'Taiwan', ZA:'South Africa', EC:'Ecuador', VN:'Vietnam', LT:'Lithuania', RS:'Serbia', BO:'Bolivia', IR:'Iran', EE:'Estonia', MY:'Malaysia', TH:'Thailand', UA:'Ukraine', SK:'Slovakia', CY:'Cyprus', PA:'Panama', PE:'Peru', TR:'Turkey', LV:'Latvia', SG:'Singapore', BA:'Bosnia and Herzegovina', AD:'Andorra', AE:'United Arab Emirates', GE:'Georgia', LU:'Luxembourg', SI:'Slovenia', KZ:'Kazakhstan', CR:'Costa Rica', BY:'Belarus', UY:'Uruguay', SA:'Saudi Arabia', HK:'Hong Kong', EG:'Egypt', KE:'Kenya', QA:'Qatar', AM:'Armenia', LB:'Lebanon', JO:'Jordan', NP:'Nepal', GT:'Guatemala', ME:'Montenegro', MN:'Mongolia', OM:'Oman', PY:'Paraguay'};
 // Fixed camera target per country for the "fly to this country" click on
@@ -146,4 +147,8 @@ export const CONTINENT_LABEL_ZOOM = 3.5;
 // flyTo/easeTo duration goes through this so they collapse to a cut.
 const REDUCED_MOTION = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 export const motion = ms => REDUCED_MOTION ? 0 : ms;
-export const MOOD_EMOJI = {great:'🤩', good:'🙂', ok:'😐', tired:'😮‍💨', rough:'😫'};
+// Session mood: an icon from the one icon system plus a text label (no emoji; DESIGN.md sec. 1.3).
+export const MOODS = {
+  great:{label:'Great', icon:'smiley-wink'}, good:{label:'Good', icon:'smiley'}, ok:{label:'OK', icon:'smiley-meh'},
+  tired:{label:'Tired', icon:'smiley-nervous'}, rough:{label:'Rough', icon:'smiley-sad'}
+};

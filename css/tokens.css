@@ -1,0 +1,235 @@
+/* Bouldeer design tokens -- the ONLY file allowed to contain raw colour, shadow or font values (docs/DESIGN.md sec. 2).
+   Mirrored by design/tokens.json (the native-app source); tests/design-system.test.js fails if the two drift.
+
+   Three layers, and components reference only the second and third:
+     1. primitives      --palette-*            raw ramps. Never used outside this file.
+     2. semantic roles  --{category}-{property}-{modifier}   e.g. --color-text-muted. Themed: paper on :root, rock on [data-theme="rock"].
+     3. component       --pin-*, --cluster-*, --sheet-*, --map-*, --z-*   only where a plain role does not fit.
+
+   Theme scoping: :root and [data-theme="paper"] carry paper (documents). [data-theme="rock"] (the map region only) overrides the
+   surface, text and border roles. Floating objects over the map are paper objects: they carry data-theme="paper" (or are listed in
+   the paper selector below when a library creates them, e.g. MapLibre popups). */
+
+:root{
+  /* ===== 1. Primitives ============================================================================================ */
+  /* Warm neutrals, paper -> rock */
+  --palette-paper-0:#FFFDF8;  --palette-paper-1:#F9F6EE;  --palette-paper-2:#F4F1EA;  --palette-paper-3:#ECE7DC;
+  --palette-paper-4:#E2DCCE;  --palette-paper-5:#D5CEBE;  --palette-paper-6:#BFB7A6;  --palette-paper-7:#9C9484;
+  --palette-paper-8:#6F6A5E;  --palette-paper-9:#4A463E;  --palette-paper-10:#2F2C27; --palette-paper-11:#1B1916;
+  /* Ink: text and hairlines on paper */
+  --palette-ink-12:#22312A;   --palette-ink-9:#5E6E64;    --palette-ink-7:#8A968E;    --palette-ink-4:#C6CDC8;
+  --palette-ink-alpha-08:rgba(34,49,42,0.08);
+  --palette-ink-alpha-20:rgba(34,49,42,0.20);
+  --palette-ink-alpha-40:rgba(34,49,42,0.40);
+  /* Rock: map neutrals */
+  --palette-rock-0:#1B1916;   --palette-rock-1:#23211D;   --palette-rock-2:#2B2823;   --palette-rock-3:#35312B;
+  --palette-rock-4:#433E36;   --palette-rock-5:#5A544A;   --palette-rock-6:#7A7366;   --palette-rock-7:#A39C8F;
+  --palette-rock-8:#CFC8BA;   --palette-rock-9:#F1EDE4;
+  --palette-rock-alpha-45:rgba(27,25,22,0.45);
+  /* Forest: the UI accent */
+  --palette-forest-1:#EEF4EF; --palette-forest-2:#DCE8DF; --palette-forest-3:#BFD5C6; --palette-forest-4:#9DBFA9;
+  --palette-forest-5:#6FA184; --palette-forest-6:#4C8767; --palette-forest-7:#2F6B4F; --palette-forest-8:#245640;
+  --palette-forest-9:#1B4231; --palette-forest-10:#122D22;
+  /* Mustard: START, stamps, celebration */
+  --palette-mustard-1:#FCF5E1; --palette-mustard-2:#F8E9BF; --palette-mustard-3:#F2D98F; --palette-mustard-4:#EBC65E;
+  --palette-mustard-5:#E9B53B; --palette-mustard-6:#C9971F; --palette-mustard-7:#A47A14; --palette-mustard-8:#7A5A0F;
+  /* Climb-type hues (lake/plum provisional: DESIGN.md sec. 19 decision 1) */
+  --palette-ember-3:#F5C4AC;  --palette-ember-5:#E2793F;  --palette-ember-7:#B85A28;
+  --palette-lake-3:#BFD7E6;   --palette-lake-5:#3F7FA6;   --palette-lake-7:#2C5C7A;
+  --palette-plum-3:#DCC4D9;   --palette-plum-5:#8A4E7A;   --palette-plum-7:#63365A;
+  /* Status */
+  --palette-brick-1:#FBEAE5;  --palette-brick-5:#B8452B;
+  /* Stamp ink (stamp component and share card only) */
+  --palette-stamp-red:#C8322B;
+
+  /* ===== 2. Semantic roles: theme-independent ===================================================================== */
+  /* Climb types: never re-used for any other UI meaning */
+  --color-type-boulder:var(--palette-ember-5);      --color-type-boulder-subtle:var(--palette-ember-3);  --color-type-boulder-text:var(--palette-ember-7);
+  --color-type-toprope:var(--palette-lake-5);       --color-type-toprope-subtle:var(--palette-lake-3);   --color-type-toprope-text:var(--palette-lake-7);
+  --color-type-lead:var(--palette-plum-5);          --color-type-lead-subtle:var(--palette-plum-3);      --color-type-lead-text:var(--palette-plum-7);
+
+  /* Provenance: text-only roles, no fills */
+  --color-provenance-community:var(--palette-ink-7);
+  --color-provenance-verified:var(--palette-forest-6);
+  --color-provenance-pending:var(--palette-mustard-7);
+
+  --color-stamp-ink:var(--palette-stamp-red);
+
+  /* Typography */
+  --font-display:"Fraunces", Georgia, "Times New Roman", serif;
+  --font-text:"Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-features-numeric:"tnum" 1, "lnum" 1;
+  --font-weight-regular:400;
+  --font-weight-medium:500;
+  --font-weight-semibold:600;
+  /* The ten-step scale: size / line-height / weight / tracking. Line-heights are fixed px. Serif steps are >= 18px. */
+  --type-display-xl-size:40px; --type-display-xl-line:44px; --type-display-xl-weight:600; --type-display-xl-tracking:-0.01em;
+  --type-display-lg-size:28px; --type-display-lg-line:32px; --type-display-lg-weight:600; --type-display-lg-tracking:-0.005em;
+  --type-display-md-size:22px; --type-display-md-line:28px; --type-display-md-weight:600; --type-display-md-tracking:0;
+  --type-display-sm-size:18px; --type-display-sm-line:24px; --type-display-sm-weight:600; --type-display-sm-tracking:0;
+  --type-text-lg-size:16px;    --type-text-lg-line:24px;    --type-text-lg-weight:400;    --type-text-lg-tracking:0;
+  --type-text-md-size:14px;    --type-text-md-line:20px;    --type-text-md-weight:400;    --type-text-md-tracking:0;
+  --type-text-sm-size:13px;    --type-text-sm-line:18px;    --type-text-sm-weight:400;    --type-text-sm-tracking:0;
+  --type-caption-size:12px;    --type-caption-line:16px;    --type-caption-weight:500;    --type-caption-tracking:0;
+  --type-micro-size:11px;      --type-micro-line:14px;      --type-micro-weight:600;      --type-micro-tracking:0;
+  --type-label-size:12px;      --type-label-line:16px;      --type-label-weight:600;      --type-label-tracking:0.02em;
+
+  /* Spacing (multiples of 4) */
+  --space-0:0px; --space-1:4px; --space-2:8px; --space-3:12px; --space-4:16px;
+  --space-5:24px; --space-6:32px; --space-7:48px; --space-8:64px;
+
+  /* Radii: one factor. Pills only on filter chips, the primary button, START and avatars. */
+  --radius-none:0px;
+  --radius-check:4px;          /* checkboxes only (platform convention, outside the scale) */
+  --radius-sm:6px;             /* inputs, tags, thumbnails, provenance marks */
+  --radius-md:10px;            /* secondary/tertiary buttons, icon buttons, small cards, popovers <= 240px */
+  --radius-lg:14px;            /* cards, panels, peek card, popovers > 240px */
+  --radius-xl:20px;            /* sheets, dialogs */
+  --radius-pill:999px;
+  --radius-circle:50%;
+
+  /* Hairlines */
+  --border-width:1px;
+  --focus-ring-width:2px;
+  --focus-ring-offset:2px;
+  --text-underline-offset:2px;
+
+  /* Exactly two shadows */
+  --shadow-none:none;
+  --shadow-raised:0 2px 8px rgba(27,25,22,0.14), 0 1px 0 rgba(27,25,22,0.06);        /* floating objects over the MAP only */
+  --shadow-overlay:0 20px 48px -16px rgba(27,25,22,0.32), 0 4px 12px rgba(27,25,22,0.10); /* sheets, dialogs, menus */
+
+  /* Motion */
+  --motion-instant:0ms;
+  --motion-fast:120ms;         /* hover, pressed */
+  --motion-base:180ms;         /* state changes, chip toggles */
+  --motion-slow:240ms;         /* sheet snap, popover open */
+  --motion-reveal:320ms;       /* stamp landing, milestone sheet only */
+  --ease-standard:cubic-bezier(0.2, 0, 0, 1);
+  --ease-out:cubic-bezier(0, 0, 0.2, 1);
+  --ease-stamp:cubic-bezier(0.34, 1.4, 0.64, 1);
+  --scale-pressed:0.98;
+  --opacity-disabled:0.4;
+
+  /* Sizes */
+  --size-touch-min:44px;
+  --size-control-sm:32px;
+  --size-control-md:40px;
+  --size-control-lg:48px;
+  --size-icon-sm:16px;
+  --size-icon-md:20px;
+  --size-icon-lg:24px;
+  --size-row-dense:56px;
+  --size-thumb-dense:40px;
+  --size-tabbar-content:56px;
+  --size-tabbar:84px;          /* 56px + safe area */
+  --size-topbar-desktop:64px;
+  --size-start-button:60px;
+  --size-start-raise:26px;
+  --size-avatar:32px;
+  --size-mascot-start:44px;
+  --size-mascot-avatar:32px;
+  --size-mascot-spot:96px;     /* max in-product character size except the milestone sheet */
+  --size-mascot-milestone:160px;
+  --size-provenance-mark:6px;
+  --size-dot-type:9px;
+  --size-list-pane:340px;      /* current sidebar width; Phase 2 moves to 460px per sec. 7.1 */
+  --size-drawer-max:360px;
+  --size-dialog:380px;
+  --size-dialog-wide:520px;
+  --size-menu:220px;
+  --size-legend:224px;
+  --size-measure:65ch;
+  --size-sheet-grabber:36px;
+  --size-textarea-min:72px;
+
+  /* ===== 3. Component tokens (the short list that earns them) ==================================================== */
+  --pin-size-city:16px;  --pin-size-dot:6px;  --pin-zoom-dot-max:11;
+  --cluster-size:32px;   --cluster-size-large:40px; --cluster-max-zoom:15;
+  --pin-size-hold:20px;  /* current round pin; Phase 2 moves to the 16px teardrop */
+  --sheet-snap-peek:18%; --sheet-snap-half:52%; --sheet-snap-full:92%;
+  --card-photo-ratio:4 / 3; --hero-photo-ratio:16 / 9;
+
+  --map-canvas:var(--palette-rock-0);
+  --map-pin-outline:var(--palette-ink-12);
+  --map-pin-selected-ring:var(--palette-forest-5);
+  --map-pin-saved-ring:var(--palette-mustard-5);
+  --map-pin-climbed-ring:var(--palette-forest-6);
+  --map-pin-checkedin-fill:var(--palette-forest-7);
+  --map-cluster-fill:var(--palette-paper-0);
+  --map-cluster-text:var(--palette-ink-12);
+  --map-cluster-border:var(--palette-ink-12);
+  --map-label-text:var(--palette-rock-8);
+  --map-label-halo:var(--palette-rock-0);
+  --map-control-surface:var(--palette-paper-0);
+  --map-control-border:var(--palette-ink-alpha-20);
+  /* Globe atmosphere and basemap label fix (read by js/modules/map.js at style.load) */
+  --map-sky:var(--palette-rock-0);
+  --map-horizon:var(--palette-rock-3);
+  --map-fog:var(--palette-rock-0);
+  --map-road-label:var(--palette-rock-8);
+
+  /* Layering */
+  --z-map-overlay:400;
+  --z-drawer:600;
+  --z-topbar:700;
+  --z-toast:900;
+  --z-dialog:1000;
+  --z-skip-link:2000;
+}
+
+/* ===== 2. Semantic roles: paper theme (documents) ================================================================ */
+:root,
+[data-theme="paper"],
+[data-theme="rock"] .maplibregl-popup{
+  --color-surface-canvas:var(--palette-paper-2);
+  --color-surface-default:var(--palette-paper-0);
+  --color-surface-subtle:var(--palette-paper-1);
+  --color-surface-raised:var(--palette-paper-3);
+  --color-surface-inverse:var(--palette-rock-0);
+  --color-surface-scrim:var(--palette-rock-alpha-45);
+
+  --color-text-primary:var(--palette-ink-12);
+  --color-text-secondary:var(--palette-ink-9);
+  --color-text-muted:var(--palette-ink-7);       /* >= 12px 500 only; use secondary below that */
+  --color-text-inverse:var(--palette-rock-9);
+  --color-text-link:var(--palette-forest-7);
+  --color-text-on-accent:var(--palette-paper-0);
+  --color-text-on-mustard:var(--palette-ink-12);
+
+  --color-border-subtle:var(--palette-ink-alpha-20);
+  --color-border-strong:var(--palette-ink-12);
+  --color-border-divider:var(--palette-ink-alpha-08);
+
+  --color-accent-solid:var(--palette-forest-7);
+  --color-accent-hover:var(--palette-forest-8);
+  --color-accent-pressed:var(--palette-forest-9);
+  --color-accent-subtle:var(--palette-forest-1);
+  --color-accent-text:var(--palette-forest-8);
+
+  --color-highlight-solid:var(--palette-mustard-5);
+  --color-highlight-subtle:var(--palette-mustard-1);
+  --color-highlight-text:var(--palette-mustard-7);
+
+  --color-status-success:var(--palette-forest-6);   --color-status-success-subtle:var(--palette-forest-1);
+  --color-status-warning:var(--palette-mustard-6);  --color-status-warning-subtle:var(--palette-mustard-1);
+  --color-status-danger:var(--palette-brick-5);     --color-status-danger-subtle:var(--palette-brick-1);
+  --color-status-info:var(--palette-lake-5);        --color-status-info-subtle:var(--palette-lake-3);
+  --color-status-warning-text:var(--palette-mustard-8);
+
+  --color-focus-ring:var(--palette-forest-5);
+}
+
+/* ===== 2. Semantic roles: rock theme (the map region and its immediate controls) ================================= */
+[data-theme="rock"]{
+  --color-surface-canvas:var(--palette-rock-0);
+  --color-surface-default:var(--palette-paper-0);   /* floating cards over the map stay paper */
+  --color-surface-subtle:var(--palette-rock-1);
+  --color-surface-raised:var(--palette-rock-2);
+  --color-text-primary:var(--palette-rock-9);
+  --color-text-secondary:var(--palette-rock-7);
+  --color-text-muted:var(--palette-rock-6);
+  --color-border-subtle:var(--palette-rock-3);
+  --color-border-strong:var(--palette-rock-9);
+  --color-focus-ring:var(--palette-forest-4);       /* visible on rock (sec. 15) */
+}

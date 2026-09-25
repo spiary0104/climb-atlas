@@ -4,14 +4,21 @@ import { escapeHtml, showToast } from './utils.js';
 
 // --- auth UI ---
 const authWidget = document.getElementById('authWidget');
+const accountSlot = document.getElementById('accountSlot');
+const meAccount = document.getElementById('meAccount');
 const authModalBackdrop = document.getElementById('authModalBackdrop');
 const authStatus = document.getElementById('authStatus');
 const authEmailInput = document.getElementById('authEmail');
 
 export function renderAuthUI(user){
   authWidget.innerHTML = user
-    ? `<span class="auth-email" title="${escapeHtml(user.email||'')}">${escapeHtml(user.email||'Signed in')}</span><button class="btn btn-text" id="signOutBtn">Sign out</button>`
-    : `<button class="btn btn-outline" id="signInBtn">Sign in</button>`;
+    ? '<button type="button" class="btn btn-tertiary" id="signOutBtn">Sign out</button>'
+    : '<button type="button" class="btn btn-tertiary" id="signInBtn">Sign in</button>';
+  meAccount.textContent = user ? `Signed in as ${user.email || 'you'}` : 'Not signed in';
+  const initial = ((user && user.email) || '?').trim().charAt(0).toUpperCase() || '?';
+  accountSlot.innerHTML = user
+    ? `<button type="button" class="avatar-btn" data-nav="me" aria-controls="meMenu" aria-expanded="false" aria-label="Account menu"><span class="avatar" aria-hidden="true">${escapeHtml(initial)}</span></button>`
+    : '<button type="button" class="btn btn-tertiary" id="topSignInBtn">Sign in</button>';
   updateMarksFilterAvailability();
 }
 
@@ -39,6 +46,7 @@ export function closeAuthModal(){
 }
 
 export function initAuthUI(){
+  accountSlot.addEventListener('click', (e)=>{ if(e.target.closest('#topSignInBtn')) openAuthModal(); });
   authWidget.addEventListener('click', (e)=>{
     if(e.target.id === 'signInBtn') openAuthModal();
     else if(e.target.id === 'signOutBtn'){

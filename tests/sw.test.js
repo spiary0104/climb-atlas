@@ -9,6 +9,10 @@ const path = require('node:path');
 
 const ROOT = path.resolve(__dirname, '..');
 const SRC = fs.readFileSync(path.join(ROOT, 'sw.js'), 'utf8');
+// The cache version is read from sw.js so a routine version bump needs no test edit. v4 is named explicitly below: it is the
+// data cache that held private responses before the security fix and must be deleted by every later worker.
+const V = /const CACHE_VERSION = 'v(\d+)'/.exec(SRC)[1];
+const CUR = 'v' + V, PREV = 'v' + (Number(V) - 1);
 const SB = 'https://abcdefghij.supabase.co';
 const ANON = 'sb_publishable_anon';
 
@@ -111,7 +115,7 @@ test('the public approved-spots read IS cached network-first and still works off
   const online = await w.dispatchFetch(get(PUBLIC_SPOTS, { apikey: ANON }));
   assert.ok(online.responded, 'public read not handled');
   assert.match(await (await online.responded).text(), /Public Gym/);
-  assert.deepEqual(w.puts.map((p) => p.cache), ['climbatlas-data-v5']);
+  assert.deepEqual(w.puts.map((p) => p.cache), ['climbatlas-data-' + CUR]);
   // offline: network throws, cached public copy is served
   w.net.impl = async () => { throw new TypeError('offline'); };
   const offline = await w.dispatchFetch(get(PUBLIC_SPOTS, { apikey: ANON }));
@@ -135,16 +139,19 @@ test('a Supabase response that declares itself private / no-store is not stored 
   assert.equal(w.puts.length, 0, 'error responses are not stored');
 });
 
-test('activation deletes the old v4 data cache and any non-public entry left in the current data cache', async () => {
+test('activation deletes the old v4 data cache (private data), the previous version, and any non-public entry left in the current data cache', async () => {
   const w = makeWorker();
   const old = await w.ctx.caches.open('climbatlas-data-v4');                   // what the previous worker left behind
   await old.put(new Request(`${SB}/rest/v1/marks?select=*`), new Response('[{"private":1}]'));
-  const cur = await w.ctx.caches.open('climbatlas-data-v5');
+  const prev = await w.ctx.caches.open('climbatlas-data-' + PREV);
+  await prev.put(new Request(PUBLIC_SPOTS), new Response('[]'));
+  const cur = await w.ctx.caches.open('climbatlas-data-' + CUR);
   await cur.put(new Request(`${SB}/rest/v1/sessions?select=*`), new Response('[{"private":2}]'));
   await cur.put(new Request(PUBLIC_SPOTS), new Response('[{"public":3}]'));
   await w.activate();
   assert.equal(w.stores.has('climbatlas-data-v4'), false, 'old data cache still present');
-  const remaining = [...w.stores.get('climbatlas-data-v5').keys()];
+  assert.equal(w.stores.has('climbatlas-data-' + PREV), false, 'previous version cache still present');
+  const remaining = [...w.stores.get('climbatlas-data-' + CUR).keys()];
   assert.deepEqual(remaining, [PUBLIC_SPOTS]);
 });
 
@@ -158,10 +165,10 @@ test('static/shared caching is unchanged: app shell stale-while-revalidate, tile
   const cdn = await w.dispatchFetch(get('https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.js')); await cdn.responded;
   const font = await w.dispatchFetch(get('https://fonts.googleapis.com/css2?family=Inter')); await font.responded;
   const bySrc = Object.fromEntries(w.puts.map((p) => [new URL(p.url).hostname + new URL(p.url).pathname, p.cache]));
-  assert.equal(bySrc['climbatlas.org/index.html'], 'climbatlas-shell-v5');
-  assert.equal(bySrc['basemaps.cartocdn.com/dark_all/3/1/2.png'], 'climbatlas-tiles-v5');
-  assert.equal(bySrc['unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.js'], 'climbatlas-runtime-v5');
-  assert.equal(bySrc['fonts.googleapis.com/css2'], 'climbatlas-runtime-v5');
+  assert.equal(bySrc['climbatlas.org/index.html'], 'climbatlas-shell-' + CUR);
+  assert.equal(bySrc['basemaps.cartocdn.com/dark_all/3/1/2.png'], 'climbatlas-tiles-' + CUR);
+  assert.equal(bySrc['unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.js'], 'climbatlas-runtime-' + CUR);
+  assert.equal(bySrc['fonts.googleapis.com/css2'], 'climbatlas-runtime-' + CUR);
   // second tile request is served from cache without touching the network
   const before = w.net.calls.length;
   const again = await w.dispatchFetch(get('https://basemaps.cartocdn.com/dark_all/3/1/2.png')); await again.responded;

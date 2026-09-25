@@ -1,10 +1,11 @@
-// Sidebar list + filters (state chips, types, marks, search), header nav, Saved button, climbed/bookmark marks.
+// Sidebar list + filters (state chips, types, marks, search), Saved button, climbed/bookmark marks. Top bar / tab bar: nav.js.
 import { openAuthModal } from './auth-ui.js';
 import { COUNTRY_FLY_TARGETS, COUNTRY_LABELS, REGION_FLY_TARGETS, motion } from './constants.js';
 import { map, popupHtml, rebuildClusterIndex, spotMarkerClasses, stateLabel } from './map.js';
 import { openEditModal, openReportModal } from './modals.js';
 import { appState } from './state.js';
 import { escapeHtml, showToast, typeSwatch } from './utils.js';
+import { icon } from './icons.js';
 
 function passesFilters(g){
   if(!appState.activeStates.has('ALL') && !appState.activeStates.has(g.country+':'+g.state)) return false;
@@ -33,7 +34,7 @@ export function render(){
   if(visible.length === 0){
     list.innerHTML = `<div class="empty-state">
         <p>No spots match these filters.</p>
-        <button type="button" class="btn btn-outline clear-filters">Clear filters</button>
+        <button type="button" class="btn btn-secondary clear-filters">Clear filters</button>
       </div>`;
   } else {
     visible.sort((a,b)=>a.name.localeCompare(b.name));
@@ -60,9 +61,9 @@ export function render(){
             </span>
           </button>
           <span class="row-actions">
-            <button type="button" class="row-action climbed-btn ${climbed?'active':''}" title="Mark as climbed" aria-label="Mark as climbed" aria-pressed="${climbed}">✓</button>
-            <button type="button" class="row-action bookmark-btn ${bookmarked?'active':''}" title="Bookmark" aria-label="Bookmark" aria-pressed="${bookmarked}">★</button>
-            <button type="button" class="row-action edit-icon-btn" title="Edit this spot" aria-label="Edit this spot">✎</button>
+            <button type="button" class="btn btn-tertiary btn-icon btn-sm row-action climbed-btn" title="Mark as climbed" aria-label="Mark as climbed" aria-pressed="${climbed}">${icon('check', {size:'sm'})}</button>
+            <button type="button" class="btn btn-tertiary btn-icon btn-sm row-action bookmark-btn" title="Save" aria-label="Save" aria-pressed="${bookmarked}">${icon('bookmark-simple', {size:'sm'})}</button>
+            <button type="button" class="btn btn-tertiary btn-icon btn-sm row-action edit-icon-btn" title="Edit this spot" aria-label="Edit this spot">${icon('pencil-simple', {size:'sm'})}</button>
           </span>`;
       item.querySelector('.gym-main').addEventListener('click', ()=>{
         const targetZoom = Math.max(map.getZoom(), 13);
@@ -132,16 +133,6 @@ function resetFilters(){
   document.getElementById('filterClimbed').checked = false;
   document.getElementById('filterBookmarked').checked = false;
   render();
-}
-
-// Narrow viewports fold the secondary header actions (About / Saved /
-// Logbook / sign-in) into a dropdown behind this toggle. Any click on an
-// item inside, or anywhere outside, closes it again.
-const headerNav = document.getElementById('headerNav');
-const navToggle = document.getElementById('navToggle');
-function setNavOpen(open){
-  headerNav.classList.toggle('open', open);
-  navToggle.setAttribute('aria-expanded', String(open));
 }
 
 // --- climbed / bookmark marks ---
@@ -272,17 +263,8 @@ export function initSidebar(){
     render();
   });
 
-  document.getElementById('mobileToggle').addEventListener('click', (e)=>{
-    const open = document.getElementById('sidebar').classList.toggle('open');
-    e.currentTarget.setAttribute('aria-expanded', String(open));
-  });
-  navToggle.addEventListener('click', ()=> setNavOpen(!headerNav.classList.contains('open')));
-  headerNav.addEventListener('click', (e)=>{ if(e.target.closest('button, a')) setNavOpen(false); });
-  document.addEventListener('click', (e)=>{
-    if(headerNav.classList.contains('open') && !e.target.closest('#headerNav, #navToggle')) setNavOpen(false);
-  });
 
-  // "Saved" header button -- jumps straight to the existing Bookmarked
+  // "Saved" (Me menu) -- jumps straight to the existing Bookmarked
   // filter rather than being a separate page, so it reuses the same
   // marks/list/map rendering everything else already goes through.
   document.getElementById('savedBtn').addEventListener('click', ()=>{

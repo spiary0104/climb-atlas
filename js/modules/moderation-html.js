@@ -25,8 +25,8 @@ export function pendingSpotCardHtml(g){
         ${g.notes?`<div class="pending-notes">${escapeHtml(g.notes)}</div>`:''}
         ${photoLine(g.photo)}
         <div class="pending-actions">
-          <button class="btn-danger pending-reject" data-kind="spot" data-id="${escapeHtml(g.id)}">Reject</button>
-          <button class="btn-submit pending-approve" data-kind="spot" data-id="${escapeHtml(g.id)}">Approve</button>
+          <button type="button" class="btn btn-tertiary btn-sm btn-danger pending-reject" data-kind="spot" data-id="${escapeHtml(g.id)}">Reject</button>
+          <button type="button" class="btn btn-secondary btn-sm pending-approve" data-kind="spot" data-id="${escapeHtml(g.id)}">Approve</button>
         </div>
       </div>`;
 }
@@ -40,8 +40,8 @@ export function pendingEditCardHtml(pe, targetName){
         ${pe.notes?`<div class="pending-notes">${escapeHtml(pe.notes)}</div>`:''}
         ${photoLine(pe.photo)}
         <div class="pending-actions">
-          <button class="btn-danger pending-reject" data-kind="edit" data-id="${escapeHtml(pe.id)}">Reject</button>
-          <button class="btn-submit pending-approve" data-kind="edit" data-id="${escapeHtml(pe.id)}">Approve</button>
+          <button type="button" class="btn btn-tertiary btn-sm btn-danger pending-reject" data-kind="edit" data-id="${escapeHtml(pe.id)}">Reject</button>
+          <button type="button" class="btn btn-secondary btn-sm pending-approve" data-kind="edit" data-id="${escapeHtml(pe.id)}">Approve</button>
         </div>
       </div>`;
 }
@@ -51,8 +51,8 @@ export function pendingReportCardHtml(r, targetName){
         <div class="pending-kind">Report on ${escapeHtml(targetName || r.spot_id)}</div>
         <div class="pending-notes">${escapeHtml(r.message)}</div>
         <div class="pending-actions">
-          <button class="btn-danger pending-dismiss" data-kind="report" data-id="${escapeHtml(r.id)}">Dismiss</button>
-          <button class="btn-submit pending-edit-spot" data-kind="report" data-spot-id="${escapeHtml(r.spot_id)}">Edit this spot</button>
+          <button type="button" class="btn btn-tertiary btn-sm btn-danger pending-dismiss" data-kind="report" data-id="${escapeHtml(r.id)}">Dismiss</button>
+          <button type="button" class="btn btn-secondary btn-sm pending-edit-spot" data-kind="report" data-spot-id="${escapeHtml(r.spot_id)}">Edit this spot</button>
         </div>
       </div>`;
 }

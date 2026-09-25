@@ -14,9 +14,13 @@ read it; grep it for a specific heading only if this file lacks something).
 ## File map
 | Path | What it is |
 |---|---|
-| `index.html` | App shell: header, sidebar, chips, all modals. No inline JS/CSS |
-| `css/style.css` | All styles; tokens on `:root`; former inline styles at the end |
-| `css/chips.css` | Per-region chip colour (`--chip`), keyed on `data-country`+`data-state` |
+| `index.html` | App shell: top bar, list pane, map region (`data-theme="rock"`), tab bar, Me menu, all dialogs. No inline JS/CSS |
+| `docs/DESIGN.md` | Bouldeer design spec (source of truth for UI; 73 KB: read by line range) + dated decision log at the end |
+| `css/tokens.css` | The ONLY place raw colour/shadow/font values live: `--palette-*` primitives → semantic roles (paper on `:root`, `[data-theme="rock"]` overrides) → component tokens |
+| `design/tokens.json` | W3C tokens for the native app, GENERATED from tokens.css: `node scripts/build-tokens-json.js` |
+| `css/base.css`, `css/components.css` | Reset/type scale/focus; shared components (`.btn` tiers, fields, search, chips, rows, cards, tabs, top bar, tab bar + START, menu, dialogs, alerts, provenance, type tags, mascot hooks) |
+| `css/style.css` | App layer: shell, list pane, map overlays/pins/clusters/labels, logbook + moderation lists, About page |
+| `assets/icons.svg` | The one icon system: Phosphor Regular sprite (MIT); use `icon(name)` from `js/modules/icons.js` |
 | `js/supabase-init.js` | Classic script: `window.sb`, `window.SUPABASE_CONFIGURED` |
 | `js/auth.js` | Classic script: `window.auth` (`init`, `onChange`, sign-in/out, `user`) |
 | `js/main.js` | Entry module: calls each `init*()` in order, then `init()` (boot) |
@@ -27,8 +31,10 @@ read it; grep it for a specific heading only if this file lacks something).
 | `js/modules/utils.js` | `typeSwatch`, `directionsUrl`, `showToast`; re-exports `escapeHtml`, `safeUrl` |
 | `js/modules/html-safe.js` | Pure `escapeHtml` (all of `& < > " ' \``) and `safeUrl` (http/https only). Every DB/form value in markup goes through these |
 | `js/modules/popup-html.js`, `moderation-html.js` | Pure HTML builders for the map popup and the pending-review cards (no DOM, unit-tested) |
-| `js/modules/map.js` | Map, clustering, label tiers, markers, popups, legend, first-visit hint |
-| `js/modules/sidebar.js` | `render()`, filters, search, header nav, Saved button, `toggleMark` |
+| `js/modules/map.js` | Map, clustering, label tiers, markers, popups, legend, first-visit hint (map paint colours read from tokens via `cssToken()`) |
+| `js/modules/sidebar.js` | `render()`, filters, search, Saved button, `toggleMark` |
+| `js/modules/nav.js` | Top bar + tab bar + Me menu: one delegated `[data-nav]` handler (explore/regions/log/start/me/add-gym) |
+| `js/modules/icons.js` | `icon(name)` → sprite `<svg>`; unknown names throw |
 | `js/modules/modals.js` | Modal focus/Escape handling, add/edit/report forms, Privacy/Terms |
 | `js/modules/auth-ui.js` | Sign-in widget + modal |
 | `js/modules/data-load.js` | `loadSpots` (Supabase → `data/gyms.json` fallback), marks, moderator, pending |
@@ -53,7 +59,7 @@ MapLibre → Supercluster → Supabase CDN → `supabase-init.js` → `auth.js` 
 - Each module's DOM wiring lives in an exported `init*()`; `main.js:13-20`
   calls them in the original order: `initMap`, `initSidebar`,
   `initModalKeyboard`, `initAuthUI`, `initForms`, `initLogbook`,
-  `initModeration`, `initInfoModals`.
+  `initModeration`, `initInfoModals`, `initNavigation`.
 - Popup buttons carry `data-popup-action` + `data-spot-id`; one delegated click listener in `sidebar.js` handles them
   (no inline `onclick`, no `window.__*` globals).
 - Imports form cycles (map ↔ sidebar ↔ modals); that's safe because
@@ -88,13 +94,14 @@ across countries — always key on `country:state`.
 | Map | `initialZoom`, `map` | `map.js:24`, `:29` |
 | Map | `compute{Region,Country,Continent}Centroids` | `map.js:73-113` |
 | Map | `buildSpotMarker`, `buildSpotNumberMarker`, `popupHtml` | `map.js:279`, `:302`, `:315` |
-| List | `updateMarkUI`, `resetFilters`, `setNavOpen`, `toggleMark` | `sidebar.js:100`, `:118`, `:142`, `:148` |
+| List | `updateMarkUI`, `resetFilters`, `toggleMark` | `sidebar.js` (grep) |
+| Nav | `initNavigation`, `ACTIONS` | `nav.js` |
 | Forms | `populateStateSelect`, `getCountryState` | `modals.js:18`, `:36` |
 | Forms | `startPlacing`, `stopPlacing`, `checkFormReady` | `modals.js:59`, `:65`, `:80` |
-| Forms | `openEditModal`, `openReportModal` | `modals.js:95`, `:162` |
+| Forms | `openEditModal`, `openReportModal`, `startAddGym` | `modals.js` (grep) |
 | Modals | focus trap (MutationObserver) + Escape/Tab | `modals.js:183-212` |
 | Auth UI | `renderAuthUI`, `openAuthModal` | `auth-ui.js:11`, `:30` |
-| Logbook | `loadSessions`, `renderLogbookList`, `openAddSessionModal` | `logbook.js:7`, `:29`, `:94` |
+| Logbook | `openLogbookModal`, `startLogSession`, `renderLogbookList` | `logbook.js` (grep) |
 | Moderation | `renderPendingPanel`, `approveSpot`, `approveEdit` | `moderation.js:24`, `:83`, `:107` |
 
 ## Map label tiers (`constants.js:133-144`)
@@ -102,9 +109,18 @@ Continent labels below `CONTINENT_LABEL_ZOOM` (3.5), country labels below
 `COUNTRY_LABEL_ZOOM` (5), hold icons from `HOLD_ICON_ZOOM` (9); numbered
 badges in between.
 
+## Design system (docs/DESIGN.md)
+Components use semantic roles only (`--color-text-secondary`, `--radius-md`, `--shadow-overlay`), never
+`--palette-*` or raw values. Paper = documents; `[data-theme="rock"]` = the map region; objects floating over the
+map are `.map-float` + `data-theme="paper"` with `--shadow-raised`. Fraunces only >= 18px; Inter otherwise; no 700.
+Buttons: `.btn` + exactly one of `.btn-primary` (one per surface) / `-secondary` / `-tertiary`, sizes `.btn-sm/-lg`,
+`.btn-icon`; destructive = `.btn-danger` (Escape never clicks it). New icon: add Phosphor path data to the sprite +
+`ICON_NAMES`. After editing tokens.css run `node scripts/build-tokens-json.js`.
+
 ## Offline / PWA (`sw.js`)
 Shell precached (`SHELL_FILES`); bump `CACHE_VERSION` (:5) whenever a
-precached file changes. Tiles cache-first, the rest stale-while-revalidate.
+precached file changes (now v6). Tiles cache-first, the rest stale-while-revalidate;
+CDN assets carry `crossorigin="anonymous"` so they are cacheable for offline boot.
 Supabase: ONLY the public `GET /rest/v1/spots?...status=eq.approved` read is
 cached (network-first); marks/sessions/moderator/pending/auth and every write
 are never intercepted (the Cache API ignores `Authorization`, so caching them
@@ -115,7 +131,9 @@ listener (no inline `onclick`, no `window.__*`); Escape only clicks
 ## Tests
 `node --test "tests/*.test.js"` (Node 24, no install): escaping/URL safety,
 hostile-input rendering of popup + moderator panel, service-worker caching
-(vm sandbox), static checks (no inline handlers, modal-close markers).
+(vm sandbox), static checks (no inline handlers, modal-close markers),
+design system (`design-system.test.js`: tokens ↔ tokens.json, no raw colours,
+fonts, radii, shadows, icons, no emoji, brand, mascot hooks, CDN `crossorigin`).
 
 ## Querying the seed data
 ```

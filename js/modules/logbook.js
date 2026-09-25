@@ -1,5 +1,6 @@
 // Personal logbook: sessions list + "Log a session" form.
-import { MOOD_EMOJI, TYPE_LABELS } from './constants.js';
+import { MOODS, TYPE_LABELS } from './constants.js';
+import { icon } from './icons.js';
 import { appState } from './state.js';
 import { escapeHtml, showToast } from './utils.js';
 
@@ -36,18 +37,24 @@ function renderLogbookList(){
     const climbs = s.session_climbs || [];
     const chips = climbs.map(c=>`<span class="climb-chip ${c.sent?'sent':''}">${escapeHtml(TYPE_LABELS[c.climb_type]||c.climb_type)} ${escapeHtml(c.grade)}${c.attempts>1?` ×${escapeHtml(c.attempts)}`:''}</span>`).join('');
     return `<div class="session-item" data-id="${escapeHtml(s.id)}">
-        <div class="pending-kind">${escapeHtml(s.session_date)} · ${escapeHtml(MOOD_EMOJI[s.mood]||'')} ${escapeHtml(spotLabel(s.spot_id))}</div>
+        <div class="pending-kind"><span class="tnum">${escapeHtml(s.session_date)}</span> · ${moodHtml(s.mood)} · ${escapeHtml(spotLabel(s.spot_id))}</div>
         ${chips ? `<div class="climb-chips">${chips}</div>` : '<div class="pending-notes">No climbs logged this session.</div>'}
         ${s.notes ? `<div class="pending-notes">${escapeHtml(s.notes)}</div>` : ''}
         <div class="pending-actions">
-          <button class="btn-danger session-delete" data-id="${escapeHtml(s.id)}">Delete</button>
+          <button type="button" class="btn btn-tertiary btn-sm btn-danger session-delete" data-id="${escapeHtml(s.id)}">Delete</button>
         </div>
       </div>`;
   }).join('');
 }
 
 const logbookModalBackdrop = document.getElementById('logbookModalBackdrop');
-async function openLogbookModal(){
+// Mood: icon + text label from a fixed table; an unknown stored value shows nothing rather than raw text.
+function moodHtml(mood){
+  const m = MOODS[mood];
+  return m ? `<span class="mood">${icon(m.icon, {size:'sm'})}${escapeHtml(m.label)}</span>` : '';
+}
+
+export async function openLogbookModal(){
   if(!window.auth.user){ showToast('Sign in to use your logbook'); return; }
   await loadSessions();
   renderLogbookList();
@@ -82,7 +89,7 @@ function renderClimbRows(){
         <input type="text" class="climb-grade" data-field="grade" placeholder="Grade, e.g. V2" value="${escapeHtml(c.grade||'')}">
         <input type="number" class="climb-attempts" data-field="attempts" min="1" value="${Number(c.attempts)||1}" title="Attempts">
         <label class="climb-sent"><input type="checkbox" data-field="sent" ${c.sent?'checked':''}> Sent</label>
-        <button type="button" class="remove-climb-btn" title="Remove">✕</button>
+        <button type="button" class="btn btn-tertiary btn-icon btn-sm remove-climb-btn" title="Remove this climb" aria-label="Remove this climb">${icon('x', {size:'sm'})}</button>
       </div>`).join('');
 }
 
@@ -103,6 +110,12 @@ function openAddSessionModal(){
   addSessionModalBackdrop.classList.remove('hidden');
 }
 
+// START (mobile tab bar): straight to "Log a session". Signed-in only, like the logbook itself.
+export function startLogSession(){
+  if(!window.auth.user){ showToast('Sign in to log a session'); return; }
+  openAddSessionModal();
+}
+
 function closeAddSessionModal(){
   addSessionModalBackdrop.classList.add('hidden');
   logbookModalBackdrop.classList.remove('hidden');
@@ -112,7 +125,6 @@ export function initLogbook(){
   logbookModalBackdrop.addEventListener('click', (e)=>{
     if(e.target === logbookModalBackdrop) logbookModalBackdrop.classList.add('hidden');
   });
-  document.getElementById('logbookBtn').addEventListener('click', openLogbookModal);
 
   document.getElementById('logbookList').addEventListener('click', async (e)=>{
     const btn = e.target.closest('.session-delete');
@@ -179,7 +191,7 @@ export function initLogbook(){
         })));
         if(e2) throw e2;
       }
-      showToast('Session saved ✓');
+      showToast('Session saved');
       closeAddSessionModal();
       await loadSessions();
       renderLogbookList();

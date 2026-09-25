@@ -166,11 +166,8 @@ function paintMarkers(){
       seenClusters.add(clusterId);
       if(appState.clusterMarkers[clusterId]) return; // same index, same id => already correctly painted
       const count = feature.properties.point_count;
-      const size = count < 10 ? 34 : count < 50 ? 42 : 50;
       const el = document.createElement('div');
-      el.className = 'cluster-marker';
-      el.style.width = size+'px';
-      el.style.height = size+'px';
+      el.className = count > 99 ? 'cluster-marker is-large' : 'cluster-marker';
       el.textContent = count;
       el.addEventListener('click', ()=>{
         const targetZoom = Math.min(appState.supercluster.getClusterExpansionZoom(clusterId), 20);
@@ -280,8 +277,6 @@ export function spotMarkerClasses(g){
 function buildSpotMarker(g){
   const el = document.createElement('div');
   el.className = spotMarkerClasses(g);
-  el.style.width = '20px';
-  el.style.height = '20px';
   el.style.background = typeSwatch(g.types);
   // Popup HTML is built lazily on first open, not here — this runs once per
   // marker on every viewport repaint, and most painted markers never get
@@ -303,8 +298,6 @@ function buildSpotMarker(g){
 function buildSpotNumberMarker(g){
   const el = document.createElement('div');
   el.className = 'cluster-marker spot-number-marker';
-  el.style.width = '34px';
-  el.style.height = '34px';
   el.textContent = '1';
   el.addEventListener('click', ()=>{
     map.easeTo({center:[g.lng, g.lat], zoom: Math.max(map.getZoom()+3, HOLD_ICON_ZOOM), duration: motion(500)});
@@ -326,6 +319,11 @@ export function popupHtml(g){
 // on tap, and left expanded by default on desktop where there's room.
 const legendEl = document.getElementById('legend');
 
+// Read a design token (css/tokens.css) as a literal colour for MapLibre paint properties, which cannot take CSS variables.
+function cssToken(name){
+  return getComputedStyle(document.getElementById('main')).getPropertyValue(name).trim();
+}
+
 export function initMap(){
   map.addControl(new maplibregl.NavigationControl({showCompass:false}), 'top-right');
 
@@ -336,11 +334,11 @@ export function initMap(){
       // blue, so the atmosphere glow reads as "this app" and not a generic
       // Mapbox/MapLibre demo.
       map.setSky({
-        'sky-color': '#0d0b09',
+        'sky-color': cssToken('--map-sky'),
         'sky-horizon-blend': 0.5,
-        'horizon-color': '#3a2a1a',
+        'horizon-color': cssToken('--map-horizon'),
         'horizon-fog-blend': 0.6,
-        'fog-color': '#211f1b',
+        'fog-color': cssToken('--map-fog'),
         'fog-ground-blend': 0.7,
         'atmosphere-blend': ['interpolate', ['linear'], ['zoom'], 0, 1, 5, 1, 7, 0]
       });
@@ -359,7 +357,7 @@ export function initMap(){
       // -- confirmed by reading the loaded style's actual paint properties
       // (`map.getStyle().layers`), not guessed. Brightened to match the
       // other tiers instead of leaving major roads unreadable.
-      map.setPaintProperty('roadname_major', 'text-color', '#c8c8c8');
+      map.setPaintProperty('roadname_major', 'text-color', cssToken('--map-road-label'));
     }catch(err){
       console.warn('roadname_major layer not found in this basemap style', err);
     }

@@ -4,6 +4,7 @@
 import { TYPE_LABELS } from './constants.js';
 import { escapeHtml, safeUrl } from './html-safe.js';
 import { directionsUrl } from './utils.js';
+import { icon } from './icons.js';
 
 export function buildPopupHtml(g, { climbed = false, bookmarked = false, region = '' } = {}){
   const typeLabel = (g.types || []).map(t=>TYPE_LABELS[t] || t).join(' · ');
@@ -13,14 +14,14 @@ export function buildPopupHtml(g, { climbed = false, bookmarked = false, region 
        <div class="popup-name">${escapeHtml(g.name)}</div>
        <div class="popup-meta">${escapeHtml(g.suburb)}, ${escapeHtml(region)} · ${escapeHtml(typeLabel)}${g.community?' · community-added':''}${g.edited?' · edited':''}</div>
        ${g.address?`<div class="popup-address">${escapeHtml(g.address)}</div>`:''}
-       ${g.notes?`<div style="font-size:12px;color:var(--text-dim)">${escapeHtml(g.notes)}</div>`:''}
+       ${g.notes?`<div class="popup-notes">${escapeHtml(g.notes)}</div>`:''}
        <div class="popup-actions">
-         <button class="mark-btn climbed-btn ${climbed?'active':''}" data-popup-action="climbed" data-spot-id="${id}">✓ Climbed</button>
-         <button class="mark-btn bookmark-btn ${bookmarked?'active':''}" data-popup-action="bookmarked" data-spot-id="${id}">★ Save</button>
+         <button type="button" class="btn btn-secondary btn-sm climbed-btn" aria-pressed="${climbed}" data-popup-action="climbed" data-spot-id="${id}">${icon('check', {size:'sm'})}Climbed</button>
+         <button type="button" class="btn btn-secondary btn-sm bookmark-btn" aria-pressed="${bookmarked}" data-popup-action="bookmarked" data-spot-id="${id}">${icon('bookmark-simple', {size:'sm'})}Save</button>
        </div>
        <div class="popup-links">
-         <a class="popup-directions-btn" href="${escapeHtml(directionsUrl(g))}" target="_blank" rel="noopener noreferrer">📍 Directions</a>
-         <button class="popup-edit-btn" data-popup-action="edit" data-spot-id="${id}">Edit this spot</button>
+         <a class="btn btn-secondary btn-sm popup-directions-btn" href="${escapeHtml(directionsUrl(g))}" target="_blank" rel="noopener noreferrer">${icon('navigation-arrow', {size:'sm'})}Directions</a>
+         <button type="button" class="btn btn-secondary btn-sm popup-edit-btn" data-popup-action="edit" data-spot-id="${id}">${icon('pencil-simple', {size:'sm'})}Edit</button>
        </div>
-       <button class="popup-report-btn" data-popup-action="report" data-spot-id="${id}">⚑ Report incorrect info</button>`;
+       <button type="button" class="btn btn-tertiary btn-sm popup-report-btn" data-popup-action="report" data-spot-id="${id}">${icon('flag', {size:'sm'})}Report incorrect info</button>`;
 }
