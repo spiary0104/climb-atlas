@@ -8,6 +8,8 @@ import { initLogbook } from './modules/logbook.js';
 import { initMap } from './modules/map.js';
 import { initForms, initInfoModals, initModalKeyboard } from './modules/modals.js';
 import { initModeration, renderPendingBadge } from './modules/moderation.js';
+import { initLogPage } from './modules/log-page.js';
+import { initMePage } from './modules/me-page.js';
 import { initNavigation } from './modules/nav.js';
 import { initRegionPages } from './modules/region-page.js';
 import { initRouter } from './modules/router.js';
@@ -24,6 +26,8 @@ initInfoModals();
 initExplore();
 initGymPage();
 initRegionPages();
+initLogPage();
+initMePage();
 initNavigation();
 initRouter();          // after every view has registered: renders the page for the URL (a skeleton until data arrives)
 

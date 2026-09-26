@@ -91,7 +91,7 @@ const SAFE_EXPR = [
   /^html$/,                                                                      // search.js listbox(): wraps searchGroupHtml() output
   // page-html.js: numbers coerced with Number(); markup assembled earlier in the same builder from escaped parts;
   // helpers that escape internally (link, thumbHtml, pinSvg, pageCardHtml); cls is a literal class list from callers
-  /^Number\([a-z.]+\)$/,
+  /^Number\([A-Za-z.]+\)$/,
   /^(cls|tiles|pin|history|actions)$/, /^items\.join\(''\)$/,
   /^link\(c\.href, c\.label\)$/, /^pinSvg\(\{ types \}\)$/, /^thumbHtml\(g, '(card|row)'\)$/,
   /^ctx\.nearby\.map\(n => pageCardHtml\(n\.g, n\.ctx\)\)\.join\(''\)$/,
@@ -100,6 +100,10 @@ const SAFE_EXPR = [
   /^items\.map\(i => page(Row|Card)Html\(i\.g, i\.ctx\)\)\.join\(''\)$/,
   /^(tileGridHtml\((g\.items|p\.tiles)\)|gymCollectionHtml\(p\.gyms\)|breadcrumbHtml\(p\.crumbs \|\| \[\]\))$/,
   /^(dims|gyms)$/, /^mapThumbHtml\(\{ \.\.\.p\.map, wide: true, points: true \}\)$/,
+  // calendar/log/me: assembled in the same builder from numbers, fixed names and escaped labels; p.sessions is
+  // logbook.js sessionsHtml() (itself in this review), p.calendar is calendarHtml()
+  /^(head|links)$/, /^rows\.join\(''\)$/, /^p\.(sessions|calendar)$/,
+  /^key$/, /^tab\('(saved|climbed)', '(Saved|Climbed)', p\.(saved|climbed)\.length\)$/, /^pending$/,   // me page: tab keys are literals
 ];
 // A conditional is safe when every branch that can be rendered is safe: a fixed string literal, a template whose own
 // interpolations are all safe, or a nested conditional (checked recursively). The condition itself is never rendered.

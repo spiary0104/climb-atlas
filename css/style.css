@@ -9,7 +9,6 @@ body.app-body{overflow:hidden;}
 /* ===== Top bar (>= 600px) ======================================================================================== */
 .topbar .add-label-short{display:none;}
 .account-slot{position:relative;display:flex;align-items:center;}
-#meMenu{position:fixed;top:calc(var(--size-topbar-desktop) + var(--space-1));right:var(--space-4);}
 
 /* ===== Offline notice ============================================================================================ */
 .offline-banner{border-radius:var(--radius-none);border-width:0 0 var(--border-width);justify-content:center;}
@@ -142,14 +141,13 @@ body.app-body{overflow:hidden;}
 @media (max-width:599px){
   .topbar{display:none;}
   .tabbar{display:grid;}
-  #meMenu{top:auto;right:var(--space-2);bottom:calc(var(--size-tabbar) + var(--space-2));}
 }
 @media (min-width:1440px){
   .topbar{padding:0 var(--space-7);}
 }
 
 /* ===== Utilities (the former inline style="" attributes) ========================================================== */
-#pendingReviewBtn.init-hidden,#fOtherCountryFields.init-hidden,#eOtherCountryFields.init-hidden,#eRevertBtn.init-hidden{display:none;}
+#fOtherCountryFields.init-hidden,#eOtherCountryFields.init-hidden,#eRevertBtn.init-hidden{display:none;}
 .u-mb-4{margin-bottom:var(--space-4);}
 .u-flush-top{margin-top:0;padding-top:0;border-top:0;}
 .u-mt-2{margin-top:var(--space-2);}

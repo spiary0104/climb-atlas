@@ -9,13 +9,13 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 
 ## In progress
 ### Bouldeer redesign (docs/DESIGN.md sec. 17)
-- Status: Phase 0 + 1 on `feature/bouldeer-design-foundations`; Phase 2 (Explore) stacked on it in
-  `feature/bouldeer-phase-2-explore`. Neither merged; merge together. Next: Phase 3 (router, gym/region pages, slugs).
-- Phase 2 open: Lighthouse a11y >= 95 not measured; sheet drag + carousel swipe need a real phone; Field Guide pass +
-  deer head (redrawn from OneDrive/.../PANDABOULDERING/mascot, owner to approve) in DESIGN.md decision log. Retro icon/app icon: Phase 5.
-- Open for the owner: Privacy/Terms are unreviewed drafts and still name "Climb Atlas" as the party (legal review);
-  human check on a real phone; PNG/iOS icons + app icon (sec. 19.7);
-  START and the Log tab both read "Log" per sec. 6.5; lake/plum type colours provisional (sec. 19.1); Me menu shows own email.
+- Status: Phases 0-1, 2 and 3 stacked: `feature/bouldeer-design-foundations` → `-phase-2-explore` → `-phase-3-pages`.
+  None merged; merge together. Next: Phase 4 (community and provenance).
+- Before merging Phase 3: owner applies `supabase/migrations/20260926072124_add_spot_slugs.sql` (`supabase db push --linked`;
+  the app works without it via the client slug fallback, but stored slugs are what keep links stable).
+- Open: Lighthouse a11y >= 95 not measured; real-phone check (sheet drag, carousel, sticky gym actions); owner to approve
+  the deer head redraw; sunset app icon + PNG/iOS icons in Phase 5; Privacy/Terms drafts still name "Climb Atlas" (legal);
+  START and the Log tab both read "Log" (sec. 6.5); lake/plum colours provisional (sec. 19.1). Decisions: DESIGN.md log.
 ### Gym import pipeline — first batch imported; follow-ups
 - Status: pipeline + gated importer built and tested. Batch `import/batches/2026-09-24-reconciled-new-gyms`
   (246 gyms) IMPORTED to production 2026-09-24, verified (approved 1,881 → 2,127; `manifest.json`).

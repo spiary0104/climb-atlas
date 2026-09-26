@@ -270,12 +270,6 @@ function placeControls(){
 
 // ----- nav entry points (nav.js) ----------------------------------------------------------------------------------
 export function showExplore(){ closeSearch(); if(!isExplore()) navigate(exploreUrl()); if(isSheetMode()) setSnap('half'); }
-export function showSaved(){
-  if(!window.auth.user){ showToast('Sign in to view your saved gyms'); return; }
-  appState.showBookmarkedOnly = true;
-  filtersChanged({push: true});
-  if(isSheetMode()) setSnap('half');
-}
 
 export function initExplore(){
   showSkeleton();
@@ -320,7 +314,6 @@ export function initExplore(){
     $('searchThisArea').hidden = true;
     refreshList();
   });
-  $('savedBtn').addEventListener('click', showSaved);
   // Back/forward are routed by router.js; Explore restores its query state whenever it is (re)entered.
   registerView('explore', { enter(params, container, {returning, initial}){
     if(initial) return;
@@ -329,10 +322,10 @@ export function initExplore(){
   } });
   // The skip link targets the list on Explore and the page itself elsewhere (<base href> would turn #id into a reload).
   document.querySelector('.skip-link').addEventListener('click', (e)=>{ e.preventDefault(); (isExplore() ? $('gymList') : $('view')).focus(); });
-  // Escape closes the topmost layer only: dialogs (modals.js), the Me menu (nav.js) and search handle it first and mark it.
+  // Escape closes the topmost layer only: dialogs (modals.js) and search handle it first and mark it.
   document.addEventListener('keydown', (e)=>{
     if(e.key !== 'Escape' || e.defaultPrevented) return;
-    if(document.querySelector('.modal-backdrop:not(.hidden)') || $('meMenu').classList.contains('open') || isSearchOpen()) return;
+    if(!isExplore() || document.querySelector('.modal-backdrop:not(.hidden)') || isSearchOpen()) return;
     if(appState.selectedId || appState.carouselIds.length){ e.preventDefault(); closePeek(); }
   });
   // <img> error events don't bubble: a capture-phase listener hides a broken photo so the contour placeholder shows.

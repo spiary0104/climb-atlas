@@ -35,7 +35,8 @@ css/tokens.css          Design tokens (only file with raw values); design/tokens
 css/base.css            Reset, type scale, focus
 css/components.css      Shared components (.btn tiers, chips, fields, nav, dialogs, ...)
 css/explore.css         Explore: list pane/sheet, rows/cards, chips, search, pins, peek card
-css/style.css           App layer (shell, map controls, forms, logbook, moderation)
+css/page.css            Pages (gym, region/city, log, me)
+css/style.css           App layer (shell, map controls, forms, sessions, moderation)
 assets/icons.svg        Phosphor sprite; js/modules/icons.js icon(name)
 assets/contour.svg      Placeholder for gyms without a photo
 assets/mascot/head.svg  Deer head (START + default avatar only; DESIGN.md sec. 12.2)
@@ -55,7 +56,9 @@ js/modules/search.js    Search combobox (+ search-index.js, pure)
 js/modules/sheet.js     Mobile bottom sheet snaps
 js/modules/marks.js     Climbed/saved toggles
 js/modules/*-html.js, geo.js  Pure builders/helpers (unit-tested)
-js/modules/nav.js       Top bar / tab bar / Me menu ([data-nav])
+js/modules/router.js    History API router; views render into <main id="view">
+js/modules/*-page.js    Page views: gym, region, log, me (+ page-html.js, slug.js, mini-map.js)
+js/modules/nav.js       Top bar / tab bar ([data-nav])
 js/modules/modals.js    Focus/Escape, add/edit/report forms, info modals
 js/modules/auth-ui.js   Sign-in widget + modal
 js/modules/data-load.js Spots/marks/moderator/pending loading + seed fallback

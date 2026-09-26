@@ -3,20 +3,15 @@ import { appState } from './state.js';
 import { showToast } from './utils.js';
 
 // --- auth UI ---
-const authWidget = document.getElementById('authWidget');
 const accountSlot = document.getElementById('accountSlot');
-const meAccount = document.getElementById('meAccount');
 const authModalBackdrop = document.getElementById('authModalBackdrop');
 const authStatus = document.getElementById('authStatus');
 const authEmailInput = document.getElementById('authEmail');
 
+// Signed in: the default avatar (the deer head) opens /me. Signed out: a "Sign in" text button (sec. 6.4).
 export function renderAuthUI(user){
-  authWidget.innerHTML = user
-    ? '<button type="button" class="btn btn-tertiary" id="signOutBtn">Sign out</button>'
-    : '<button type="button" class="btn btn-tertiary" id="signInBtn">Sign in</button>';
-  meAccount.textContent = user ? `Signed in as ${user.email || 'you'}` : 'Not signed in';
   accountSlot.innerHTML = user
-    ? `<button type="button" class="avatar-btn" data-nav="me" aria-controls="meMenu" aria-expanded="false" aria-label="Account menu"><span class="avatar mascot mascot--avatar" aria-hidden="true"><img src="assets/mascot/head.svg" alt=""></span></button>`
+    ? `<button type="button" class="avatar-btn" data-nav="me" aria-label="Me: your gyms and account"><span class="avatar mascot mascot--avatar" aria-hidden="true"><img src="assets/mascot/head.svg" alt=""></span></button>`
     : '<button type="button" class="btn btn-tertiary" id="topSignInBtn">Sign in</button>';
   updateMarksFilterAvailability();
 }
@@ -40,13 +35,6 @@ export function closeAuthModal(){
 
 export function initAuthUI(){
   accountSlot.addEventListener('click', (e)=>{ if(e.target.closest('#topSignInBtn')) openAuthModal(); });
-  authWidget.addEventListener('click', (e)=>{
-    if(e.target.id === 'signInBtn') openAuthModal();
-    else if(e.target.id === 'signOutBtn'){
-      window.auth.signOut();
-      showToast('Signed out');
-    }
-  });
   document.getElementById('authCancelBtn').addEventListener('click', closeAuthModal);
   authModalBackdrop.addEventListener('click', (e)=>{
     if(e.target === authModalBackdrop) closeAuthModal();

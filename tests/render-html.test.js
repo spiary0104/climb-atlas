@@ -212,6 +212,42 @@ test('region pages: hostile place and gym names stay text; cards up to 20 gyms, 
   assert.ok(!/<a[^>]*>Sydney<\/a>/.test(bc), 'and not a link');
 });
 
+test('log page: month calendar starts on Monday and marks session days; signed-out shows only the sign-in call', async () => {
+  const { page } = await modules;
+  const cal = page.calendarHtml(2026, 8, new Map([['2026-09-26', 2], ['2026-09-01', 1]]), '2026-09-26');   // September 2026
+  const days = tags(cal).filter(t => /\bcal-day\b/.test(t.attrs.class || ''));
+  assert.equal(days.length, 30);
+  assert.equal(cal.indexOf('<td></td>'), cal.indexOf('<tbody><tr>') + '<tbody><tr>'.length, '1 September 2026 is a Tuesday: one empty Monday cell first');
+  assert.deepEqual(days.filter(d => /has-session/.test(d.attrs.class)).map(d => d.attrs['aria-label']), ['1 September, 1 session', '26 September, 2 sessions']);
+  assert.match(days.find(d => /is-today/.test(d.attrs.class)).attrs['aria-label'], /^26 September/);
+  assert.equal((cal.match(/<tr>/g) || []).length, 6, 'header + 5 weeks');
+  const out = page.logPageHtml({ signedIn: false });
+  assert.deepEqual(tags(out).filter(t => t.attrs['data-page-action']).map(t => t.attrs['data-page-action']), ['sign-in']);
+  const inn = page.logPageHtml({ signedIn: true, count: 2, calendar: cal, sessions: '<div class="session-item"></div>' });
+  assert.equal((inn.match(/\bbtn-primary\b/g) || []).length, 1, 'one primary action: Log a session');
+});
+
+test('me page: saved/climbed tabs as links, rows link to gym pages, no email anywhere, moderator-only pending button', async () => {
+  const { page } = await modules;
+  const row = name => ({ g: { ...benignSpot, name }, ctx: { region: 'NSW', href: '/gym/boulder-barn' } });
+  const base = { signedIn: true, section: 'saved', saved: [row('Boulder Barn')], climbed: [], isModerator: false, pendingCount: 0 };
+  const html = page.mePageHtml(base);
+  const tabs = tags(html).filter(t => /\btab\b/.test(t.attrs.class || ''));
+  assert.deepEqual(tabs.map(t => [t.attrs.href, t.attrs['aria-current'] || '']), [['/me/saved', 'page'], ['/me/climbed', '']]);
+  assert.equal(tags(html).find(t => /page-row/.test(t.attrs.class || '')).attrs.href, '/gym/boulder-barn');
+  assert.ok(!/pending/.test(html), 'no Pending review for non-moderators');
+  assert.match(page.mePageHtml({ ...base, isModerator: true, pendingCount: 3 }), /Pending review <span class="tnum">\(3\)<\/span>/);
+  assert.ok(/Save a gym from its page/.test(page.mePageHtml({ ...base, saved: [] })), 'empty state text');
+  assert.ok(!/@/.test(html), 'no email address on /me (sec. 18)');
+  for (const h of HOSTILE) {
+    const hostile = page.mePageHtml({ ...base, saved: [row(h)], section: h });
+    assert.deepEqual(shape(hostile), shape(html), 'me page structure changed for payload ' + h);
+    assert.equal(hasHandlerAttrs(hostile), false);
+  }
+  const out = page.mePageHtml({ signedIn: false });
+  assert.deepEqual(tags(out).filter(t => t.attrs['data-page-action']).map(t => t.attrs['data-page-action']), ['sign-in', 'privacy', 'terms']);
+});
+
 const pendingSpot = { id: 'community-aaaa', name: 'N', suburb: 'S', state: 'NSW', country: 'AU', types: ['top-rope'], address: 'A', notes: 'n', photo: 'https://example.com/p.jpg' };
 const pendingEdit = { id: '11111111-2222-3333-4444-555555555555', spot_id: 'seed-1', name: 'N', suburb: 'S', state: 'NSW', country: 'AU', types: ['top-rope'], address: 'A', notes: 'n', photo: 'https://example.com/p.jpg' };
 const pendingReport = { id: '99999999-2222-3333-4444-555555555555', spot_id: 'seed-1', message: 'wrong pin' };

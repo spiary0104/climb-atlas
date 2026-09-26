@@ -14,13 +14,14 @@ Line refs drift: re-grep function names rather than trusting numbers.
 ## File map
 | Path | What it is |
 |---|---|
-| `index.html` | App shell: top bar (+ search slot), Explore (list pane / bottom sheet, map, peek card), tab bar, Me menu, all dialogs incl. All filters. No inline JS/CSS |
+| `index.html` | App shell (`<base href="/">`): top bar (+ search slot), Explore (list pane / bottom sheet, map, peek card), `<main id="view">` for pages, tab bar, all dialogs incl. All filters. No inline JS/CSS |
 | `docs/DESIGN.md` | Bouldeer design spec (source of truth for UI; 77 KB: read by line range) + dated decision log at the end |
 | `css/tokens.css` | The ONLY place raw colour/shadow/font values live: `--palette-*` primitives → semantic roles (paper on `:root`, `[data-theme="rock"]` overrides) → component tokens (`--pin-*`, `--map-*`, `--size-*`, `--z-*`) |
 | `design/tokens.json` | W3C tokens for the native app, GENERATED from tokens.css: `node scripts/build-tokens-json.js` |
 | `css/base.css`, `css/components.css` | Reset/type scale/focus; shared components (`.btn` tiers, fields, search field, chips, tabs, top bar, tab bar + START, menu, dialogs, alerts, provenance, type tags, mascot hooks) |
 | `css/explore.css` | Explore: two-pane layout, rows/cards/placeholder, chips, search popover, All filters sheet, pins/clusters/labels, peek card, bottom sheet + carousel (< 1024px) |
-| `css/style.css` | App layer: shell, toast/placing banner, MapLibre controls, add/edit form bits, logbook + moderation lists, About page |
+| `css/page.css` | Pages: gym (sec. 8), region/city, log (calendar), me; breadcrumb, panels, mini map, page rows/cards |
+| `css/style.css` | App layer: shell, toast/placing banner, MapLibre controls, add/edit form bits, session + moderation lists, About page |
 | `assets/icons.svg` | The one icon system: Phosphor Regular sprite (MIT); use `icon(name)` from `js/modules/icons.js` |
 | `assets/contour.svg` | Contour placeholder symbol for gyms without a photo (sec. 13) |
 | `assets/mascot/head.svg` | Flat-vector deer head: START (44px) + default avatar (32px) only (sec. 12.2; tests enforce placement) |
@@ -31,19 +32,24 @@ Line refs drift: re-grep function names rather than trusting numbers.
 | `js/modules/regions.js` | `STATES_BY_COUNTRY` (static, ~620 lines) |
 | `js/modules/html-safe.js`, `utils.js` | Pure `escapeHtml` / `safeUrl` (http/https only); `directionsUrl`, `showToast` |
 | `js/modules/geo.js`, `search-index.js`, `pin-html.js`, `list-html.js`, `moderation-html.js` | PURE (no DOM, unit-tested): distance, antimeridian-safe bounds, stacked-pin offsets, URL state encode/decode, folding · search index + query · pin SVG · row/card/carousel/peek/empty/pill/search-option markup · pending-review cards |
-| `js/modules/explore.js` | Explore controller: `render()` (full refresh), selection/hover sync, peek card, URL + last camera, landing, Esc, nav entry points |
+| `js/modules/router.js` | History API router (+ `/#/` fallback): `matchRoute`, `navigate`, `registerView`, `refreshPage`, title/canonical, nav `aria-current`. Explore stays mounted behind pages |
+| `js/modules/slug.js` | Pure slug rule mirroring the DB migration (fallback for rows without `slug`) + `gymPath`/`countryPath`/`regionPath`/`cityPath` |
+| `js/modules/page-html.js` | Pure page builders: gym page, breadcrumb, map slot, page card/row, regions/place pages, calendar, log, me, not found |
+| `js/modules/gym-page.js`, `region-page.js`, `log-page.js`, `me-page.js` | Page controllers (views): data gathering + `data-page-action` handlers |
+| `js/modules/mini-map.js` | Non-interactive MapLibre maps on pages (same warmed basemap), destroyed on leave |
+| `js/modules/explore.js` | Explore controller: `render()` (full refresh), selection/hover sync, peek card, URL + last camera, landing, Esc, the `explore` view |
 | `js/modules/map.js` | Map, `rebuildClusterIndex`/`paintMarkers` (supercluster r48/max15, pins, clusters, label tiers), `refreshPin`, `flyToPlace`, locate control; handlers set by explore.js |
 | `js/modules/list.js` | Scoped list: `renderList` (scope → sort → cap 400), status line, skeletons, empty states, carousel, row keyboard |
 | `js/modules/filters.js` | `matches`/`applyFilters`, chip row, applied pills, All filters sheet (draft + live count), URL filter half |
 | `js/modules/search.js` | Search combobox (desktop popover / mobile full height), recent searches, Regions browse |
 | `js/modules/sheet.js` | Mobile bottom sheet: snaps 18/52/92%, drag rules, tab bar hides at full |
 | `js/modules/marks.js` | `toggleMark` (Supabase `marks`, optimistic + rollback); explore.js listens |
-| `js/modules/nav.js`, `icons.js` | Top bar/tab bar/Me menu (`[data-nav]` → explore/regions/log/start/me/add-gym); `icon(name)` (unknown names throw) |
+| `js/modules/nav.js`, `icons.js` | Top bar/tab bar (`[data-nav]` → explore, `/in`, `/log`, START, `/me`, add-gym); `icon(name)` (unknown names throw) |
 | `js/modules/modals.js` | Modal focus/Escape handling, add/edit/report forms, Privacy/Terms |
-| `js/modules/auth-ui.js`, `data-load.js`, `logbook.js`, `moderation.js` | Sign-in UI · `loadSpots` (Supabase → `data/gyms.json` fallback), marks, moderator, pending · logbook · pending review |
+| `js/modules/auth-ui.js`, `data-load.js`, `logbook.js`, `moderation.js` | Sign-in dialog + account slot · `loadSpots` (Supabase → `data/gyms.json` fallback), marks, moderator, pending · sessions + "Log a session" dialog · pending-review dialog |
 | `data/gyms.json` | LEGACY seed dataset: offline fallback + "Revert to original" source (ids stale vs production), reconciliation input. **Never read; never edit** |
 | `data/gyms.reconciled.json` | FROZEN reconciliation/provenance dataset (2,127 records = production at the first import). Not a runtime file |
-| `supabase/schema.sql` | Tables, RLS, rate limit. Re-runnable. Changes via `supabase/migrations/` |
+| `supabase/migrations/` | Source of truth for the schema (`docs/migrations.md`); `…_add_spot_slugs.sql` adds the stored `spots.slug` |
 | `import/`, `scripts/gym-import.js`, `scripts/lib/gym-import/` | Gym import pipeline (`docs/import-workflow.md`) |
 | `sw.js` | Service worker (`SHELL_FILES` — add every new JS/CSS/asset file; bump `CACHE_VERSION`) |
 | `docs/TASKS.md` / `docs/archive/` | Open work only / old long-form docs (**never read**) |
@@ -65,7 +71,8 @@ MapLibre → Supercluster → Supabase CDN → `supabase-init.js` → `auth.js` 
 `marks`, `routes`, `sessions`, `session_climbs`.
 Spot shape: `id` (`seed-N` legacy, `community-<uuid>`, or frozen `g-<hex>` for imported gyms), `name`, `suburb`, `state`,
 `country`, `lat`, `lng`, `address`, `types[]` (`indoor-bouldering` | `top-rope` | `lead-climbing`), `notes`, `photo`,
-`community`, `edited`, `created_at`. `state` codes collide across countries — always key on `country:state`.
+`community`, `edited`, `created_at`, `slug` (stored, unique, set on insert, never changed). `state` codes collide across
+countries — always key on `country:state`.
 
 ## Data flow (Explore, DESIGN.md sec. 7)
 1. `init()` → `auth.init()` → `loadSpots()`; unreachable Supabase → `data/gyms.json` + offline banner.
@@ -80,6 +87,11 @@ Spot shape: `id` (`seed-N` legacy, `community-<uuid>`, or frozen `g-<hex>` for i
 6. Writes unchanged: add → `spots` insert (pending); edit → `pending_edits`; report → `reports`; marks → `marks`.
 
 URL: `?q=<text>&place=AU:NSW[:Suburb]&c=lng,lat,z&t=boulder,toprope,lead&saved=1&climbed=1&photos=1`.
+
+## Pages (DESIGN.md sec. 6.2, 8; Phase 3)
+`/gym/{slug}` · `/in` · `/in/{cc}` · `/in/{cc}/{region}` · `/in/{cc}/{region}/{city}` · `/log` · `/me[/saved|/climbed]`.
+`vercel.json` (and `serve.json` for `npx serve`) rewrite these to `index.html`; `router.route()` hides Explore, renders the
+view into `#view`, sets title/canonical; Back pops to the Explore URL left behind. Internal links: `<a href data-link>`.
 
 ## Map layers of meaning
 Pins: dots ≤ zoom 11, teardrops above (type colour: boulder > top rope > lead; rings selected > saved > climbed).
@@ -96,9 +108,9 @@ Buttons: `.btn` + exactly one of `.btn-primary` (one per surface) / `-secondary`
 `.btn-icon`; destructive = `.btn-danger` (Escape never clicks it). New icon: add Phosphor path data to the sprite +
 `ICON_NAMES`. After editing tokens.css run `node scripts/build-tokens-json.js`.
 
-## Offline / PWA (`sw.js`, v8)
-Shell precached (`SHELL_FILES`). Page loads (`mode: navigate`) are cached once per path and served for any query
-string (Explore state lives in the query). Tiles cache-first; other same-origin + CDN files stale-while-revalidate;
+## Offline / PWA (`sw.js`, v9)
+Shell precached (`SHELL_FILES`). Page loads (`mode: navigate`) of every app route share one cached shell (keyed `/`),
+whatever the path or query; other pages (about.html) are cached per path. Tiles cache-first; other same-origin + CDN files stale-while-revalidate;
 CDN tags carry `crossorigin="anonymous"`. Supabase: ONLY the public `GET /rest/v1/spots?...status=eq.approved` read
 is cached (network-first); marks/sessions/moderator/pending/auth and every write are never intercepted (the Cache
 API ignores `Authorization`, so caching them would leak across users). Escape only clicks `[data-modal-close]`.
@@ -106,7 +118,7 @@ API ignores `Authorization`, so caching them would leak across users). Escape on
 ## Tests
 `node --test "tests/*.test.js"` (Node 24, no install; importer tests need Docker + the local Supabase stack):
 escaping/URL safety, hostile-input rendering of every Explore builder + moderator panel, pure Explore modules
-(`explore-pure.test.js`: bounds, URL state, search index, pins), service-worker caching (vm sandbox), static checks
+(`explore-pure.test.js`: bounds, URL state, search index, pins, slugs, routes), page builders, service-worker caching (vm sandbox), static checks
 (no inline handlers, modal-close markers, reviewed template interpolations), design system (`design-system.test.js`).
 
 ## Querying the seed data

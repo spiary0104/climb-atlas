@@ -37,7 +37,7 @@
       <button type="button" class="tab" data-nav="explore" aria-current="page">Explore</button>
       <button type="button" class="tab" data-nav="regions">Regions</button>
       <button type="button" class="tab" data-nav="log">Log</button>
-      <button type="button" class="tab" data-nav="me" aria-controls="meMenu" aria-expanded="false">Me</button>
+      <button type="button" class="tab" data-nav="me">Me</button>
     </nav>
     <div class="topbar-search" id="topbarSearchSlot">
       <div class="search" id="search" role="search">
@@ -138,17 +138,8 @@
     <button type="button" class="tabbar-item" data-nav="regions"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-squares-four"/></svg><span>Regions</span></button>
     <button type="button" class="start-btn" data-nav="start" aria-label="Log a session"><span class="start-disc"><span class="mascot mascot--start" data-mascot-slot="start" aria-hidden="true"><img src="assets/mascot/head.svg" alt=""></span><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-plus"/></svg></span><span>Log</span></button>
     <button type="button" class="tabbar-item" data-nav="log"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-book-open"/></svg><span>Log</span></button>
-    <button type="button" class="tabbar-item" data-nav="me" aria-controls="meMenu" aria-expanded="false"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-user"/></svg><span>Me</span></button>
+    <button type="button" class="tabbar-item" data-nav="me"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-user"/></svg><span>Me</span></button>
   </nav>
-  <div class="menu" id="meMenu" data-theme="paper" role="group" aria-label="Me">
-    <div class="menu-meta" id="meAccount"></div>
-    <button type="button" class="btn btn-tertiary" id="savedBtn"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-bookmark-simple"/></svg>Saved</button>
-    <button type="button" class="btn btn-tertiary" data-nav="add-gym"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-plus"/></svg>Add a gym</button>
-    <button type="button" class="btn btn-tertiary init-hidden" id="pendingReviewBtn">Pending review</button>
-    <a class="btn btn-tertiary" href="about.html">About</a>
-    <hr class="menu-divider">
-    <div class="auth-widget" id="authWidget"></div>
-  </div>
 </div>
 
 <div class="modal-backdrop hidden" id="modalBackdrop">
@@ -544,16 +535,6 @@
       <button class="btn btn-secondary" id="authCancelBtn" data-modal-close>Cancel</button>
       <button class="btn btn-primary" id="sendMagicLinkBtn">Send magic link</button>
     </div>
-  </div>
-</div>
-
-<div class="modal-backdrop hidden" id="logbookModalBackdrop">
-  <div class="modal info-modal" role="dialog" aria-modal="true" aria-labelledby="dlg-climbing-logbook">
-    <h2 id="dlg-climbing-logbook">Climbing logbook</h2>
-    <div class="sub">Private to your account — a diary of sessions and the climbs you logged during each one.</div>
-    <button class="btn btn-primary btn-block u-mb-4" id="addSessionBtn"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-plus"/></svg>Log a session</button>
-    <div id="logbookList" class="session-list"></div>
-    <div class="close-row"><button class="btn btn-secondary info-close" data-modal-close>Close</button></div>
   </div>
 </div>
 

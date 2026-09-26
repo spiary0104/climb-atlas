@@ -3,22 +3,16 @@ import { loadPending, loadSpots } from './data-load.js';
 import { openEditModal } from './modals.js';
 import { pendingPanelHtml } from './moderation-html.js';
 import { render } from './explore.js';
+import { refreshPage } from './router.js';
 import { appState } from './state.js';
 import { showToast } from './utils.js';
 
 // --- moderation: pending review panel ---
 const pendingModalBackdrop = document.getElementById('pendingModalBackdrop');
-const pendingReviewBtn = document.getElementById('pendingReviewBtn');
 
+// The "Pending review (N)" button lives on the /me page (me-page.js); re-render it when the queue changes.
 export function renderPendingBadge(){
-  if(!appState.isModerator){
-    pendingReviewBtn.style.display = 'none';
-    return;
-  }
-  const count = appState.pendingSpots.length + appState.pendingEdits.length + appState.pendingReports.length;
-  pendingReviewBtn.classList.remove('init-hidden'); // initial hidden state now lives in CSS
-  pendingReviewBtn.style.display = '';
-  pendingReviewBtn.textContent = count ? `Pending review (${count})` : 'Pending review';
+  refreshPage();
 }
 
 function findSpotById(id){
@@ -34,7 +28,7 @@ function renderPendingPanel(){
   });
 }
 
-function openPendingModal(){
+export function openPendingModal(){
   renderPendingPanel();
   pendingModalBackdrop.classList.remove('hidden');
 }
@@ -116,8 +110,6 @@ async function dismissReport(id){
 }
 
 export function initModeration(){
-  pendingReviewBtn.addEventListener('click', openPendingModal);
-
   document.getElementById('pendingList').addEventListener('click', (e)=>{
     const btn = e.target.closest('button');
     if(!btn) return;

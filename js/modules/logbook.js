@@ -1,6 +1,8 @@
-// Personal logbook: sessions list + "Log a session" form.
+// Personal logbook: loading sessions, the session list markup for the /log page (log-page.js), and the "Log a session"
+// dialog (opened from /log and from START).
 import { MOODS, TYPE_LABELS } from './constants.js';
 import { icon } from './icons.js';
+import { refreshPage } from './router.js';
 import { appState } from './state.js';
 import { escapeHtml, showToast } from './utils.js';
 
@@ -16,6 +18,7 @@ export async function loadSessions(){
       .order('session_date', {ascending:false});
     if(error) throw error;
     appState.sessions = data || [];
+    appState.sessionsLoaded = true;
   }catch(err){
     console.error('Failed to load sessions', err);
   }
@@ -27,13 +30,12 @@ function spotLabel(spotId){
   return g ? g.name : 'Unknown gym';
 }
 
-function renderLogbookList(){
-  const list = document.getElementById('logbookList');
-  if(!appState.sessions.length){
-    list.innerHTML = '<div class="empty-state">No sessions logged yet — click "Log a session" to start your diary.</div>';
-    return;
+// The /log page's session list (dense, newest first). Delete is .btn-danger and never a close control.
+export function sessionsHtml(sessions = appState.sessions){
+  if(!sessions.length){
+    return '<div class="empty-state"><p class="empty-title">No sessions yet</p><p>Log your first session to start your diary.</p></div>';
   }
-  list.innerHTML = appState.sessions.map(s=>{
+  return sessions.map(s=>{
     const climbs = s.session_climbs || [];
     const chips = climbs.map(c=>`<span class="climb-chip ${c.sent?'sent':''}">${escapeHtml(TYPE_LABELS[c.climb_type]||c.climb_type)} ${escapeHtml(c.grade)}${c.attempts>1?` ×${escapeHtml(c.attempts)}`:''}</span>`).join('');
     return `<div class="session-item" data-id="${escapeHtml(s.id)}">
@@ -47,18 +49,10 @@ function renderLogbookList(){
   }).join('');
 }
 
-const logbookModalBackdrop = document.getElementById('logbookModalBackdrop');
 // Mood: icon + text label from a fixed table; an unknown stored value shows nothing rather than raw text.
 function moodHtml(mood){
   const m = MOODS[mood];
   return m ? `<span class="mood">${icon(m.icon, {size:'sm'})}${escapeHtml(m.label)}</span>` : '';
-}
-
-export async function openLogbookModal(){
-  if(!window.auth.user){ showToast('Sign in to use your logbook'); return; }
-  await loadSessions();
-  renderLogbookList();
-  logbookModalBackdrop.classList.remove('hidden');
 }
 
 // --- logbook: "Log a session" form ---
@@ -106,11 +100,10 @@ function openAddSessionModal(){
   document.getElementById('sNotes').value = '';
   appState.draftClimbs = [];
   addClimbRow();
-  logbookModalBackdrop.classList.add('hidden');
   addSessionModalBackdrop.classList.remove('hidden');
 }
 
-// START (mobile tab bar): straight to "Log a session". Signed-in only, like the logbook itself.
+// START (mobile tab bar) and the /log page: "Log a session". Signed-in only, like the logbook itself.
 export function startLogSession(){
   if(!window.auth.user){ showToast('Sign in to log a session'); return; }
   openAddSessionModal();
@@ -118,29 +111,24 @@ export function startLogSession(){
 
 function closeAddSessionModal(){
   addSessionModalBackdrop.classList.add('hidden');
-  logbookModalBackdrop.classList.remove('hidden');
+}
+
+// Delete a session (the /log page's Delete buttons).
+export async function deleteSession(id, btn){
+  if(btn) btn.disabled = true;
+  try{
+    const {error} = await window.sb.from('sessions').delete().eq('id', id);
+    if(error) throw error;
+    showToast('Session deleted');
+  }catch(err){
+    showToast('Could not delete — try again');
+    console.error(err);
+  }
+  await loadSessions();
+  refreshPage();
 }
 
 export function initLogbook(){
-  logbookModalBackdrop.addEventListener('click', (e)=>{
-    if(e.target === logbookModalBackdrop) logbookModalBackdrop.classList.add('hidden');
-  });
-
-  document.getElementById('logbookList').addEventListener('click', async (e)=>{
-    const btn = e.target.closest('.session-delete');
-    if(!btn) return;
-    btn.disabled = true;
-    try{
-      const {error} = await window.sb.from('sessions').delete().eq('id', btn.dataset.id);
-      if(error) throw error;
-      showToast('Session deleted');
-    }catch(err){
-      showToast('Could not delete — try again');
-      console.error(err);
-    }
-    await loadSessions();
-    renderLogbookList();
-  });
   addSessionModalBackdrop.addEventListener('click', (e)=>{
     if(e.target === addSessionModalBackdrop) closeAddSessionModal();
   });
@@ -162,7 +150,6 @@ export function initLogbook(){
     renderClimbRows();
   });
   document.getElementById('sAddClimbBtn').addEventListener('click', addClimbRow);
-  document.getElementById('addSessionBtn').addEventListener('click', openAddSessionModal);
   document.getElementById('sCancelBtn').addEventListener('click', closeAddSessionModal);
 
   document.getElementById('sSaveBtn').addEventListener('click', async ()=>{
@@ -194,7 +181,7 @@ export function initLogbook(){
       showToast('Session saved');
       closeAddSessionModal();
       await loadSessions();
-      renderLogbookList();
+      refreshPage();
     }catch(err){
       showToast('Could not save session — try again');
       console.error(err);

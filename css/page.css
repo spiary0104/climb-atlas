@@ -104,6 +104,25 @@
 .place-tile-count{font-size:var(--type-text-sm-size);line-height:var(--type-text-sm-line);color:var(--color-text-secondary);}
 .card-grid{display:grid;grid-template-columns:repeat(3, minmax(0, 1fr));gap:var(--space-4);}
 
+/* ===== Log and Me (sec. 14: calendar + list side by side / stacked) ============================================= */
+.page-header-row{display:flex;align-items:flex-end;justify-content:space-between;gap:var(--space-4);flex-wrap:wrap;}
+.page-cta{margin:var(--space-5) 0 0;}
+.log-layout{display:grid;grid-template-columns:minmax(0, 1fr) var(--size-page-aside);gap:var(--space-7);align-items:start;margin-top:var(--space-5);}
+.calendar-head{display:flex;align-items:center;justify-content:space-between;gap:var(--space-2);}
+.calendar-head .panel-title{margin:0;}
+.calendar-nav{display:flex;gap:var(--space-1);}
+.calendar-grid{width:100%;margin-top:var(--space-3);border-collapse:collapse;table-layout:fixed;font-feature-settings:var(--font-features-numeric);}
+.calendar-grid th{padding:var(--space-1) 0;font-size:var(--type-caption-size);line-height:var(--type-caption-line);font-weight:var(--font-weight-semibold);color:var(--color-text-secondary);}
+.calendar-grid td{padding:var(--space-1) 0;text-align:center;}
+.cal-day{display:inline-flex;align-items:center;justify-content:center;width:var(--size-control-sm);height:var(--size-control-sm);border-radius:var(--radius-circle);font-size:var(--type-text-sm-size);color:var(--color-text-secondary);}
+.cal-day.has-session{background:var(--color-accent-subtle);color:var(--color-accent-text);font-weight:var(--font-weight-semibold);}
+.cal-day.is-today{box-shadow:none;outline:var(--border-width) solid var(--color-border-strong);}
+.me-tabs{margin:var(--space-4) 0 0;}
+.me-tabs .tab{text-decoration:none;}
+.me-empty{text-align:left;padding-left:0;}
+.me-actions{display:flex;flex-wrap:wrap;gap:var(--space-2);}
+.me-links{display:flex;flex-wrap:wrap;gap:var(--space-4);margin:0;font-size:var(--type-text-md-size);}
+
 /* Empty / loading */
 .page-empty{text-align:left;}
 .page-empty .section-note{margin-top:var(--space-2);}
@@ -119,6 +138,8 @@
   .place-layout{grid-template-columns:minmax(0, 1fr);gap:var(--space-5);}
   .place-aside{position:static;margin-top:0;}
   .place-tiles,.card-grid{grid-template-columns:repeat(2, minmax(0, 1fr));}
+  .log-layout{grid-template-columns:minmax(0, 1fr);gap:var(--space-5);}
+  .log-layout .calendar{order:-1;}
 }
 @media (max-width:767px){
   .page{padding:var(--space-4) var(--space-4) var(--space-7);}

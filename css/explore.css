@@ -353,14 +353,7 @@
   .maplibregl-ctrl-bottom-right{bottom:var(--sheet-peek-offset, 18vh);}
   .maplibregl-ctrl-group:has(.maplibregl-ctrl-zoom-in){display:none;}
 
-  /* Gym details over the sheet (the peek card's mobile form until gym pages exist in Phase 3). */
-  .peek{
-    position:fixed;top:auto;left:0;right:0;bottom:0;z-index:var(--z-peek);
-    width:auto;max-width:var(--size-sheet-max);max-height:70vh;margin:0 auto;
-    padding:var(--space-4) var(--space-4) calc(var(--space-4) + env(safe-area-inset-bottom));
-    border-radius:var(--radius-xl) var(--radius-xl) 0 0;
-    box-shadow:var(--shadow-overlay);
-  }
+  .peek{display:none;}           /* no peek card below 1024px: rows and carousel cards open the gym page */
 
   /* Search opens full height with the keyboard up; results fill it (sec. 9.3). Its overlay container is lifted above the
      sheet and tab bar, since the fixed field otherwise stays inside the overlay's stacking context. */
@@ -381,7 +374,6 @@
   .modal.filter-sheet{width:100%;max-width:var(--size-sheet-max);height:auto;max-height:88vh;border-radius:var(--radius-xl) var(--radius-xl) 0 0;}
 }
 @media (max-width:599px){
-  .peek{bottom:var(--size-tabbar);padding-bottom:var(--space-4);}
   /* The Fraunces count line gets its own line on phones instead of truncating beside sort and the view switch. */
   .list-status{flex-wrap:wrap;row-gap:var(--space-1);}
   .list-count{flex:1 0 100%;}
