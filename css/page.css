@@ -139,6 +139,26 @@
 .page-empty .section-note{margin-top:var(--space-2);}
 .skeleton-title{width:50%;height:var(--space-6);margin-bottom:var(--space-5);border-radius:var(--radius-sm);background:var(--color-surface-raised);}
 
+/* ===== /add: add a gym (sec. 10.3). Map with a fixed centre crosshair beside a short form; no character. ======= */
+.add-layout{display:grid;grid-template-columns:minmax(0, 1fr) var(--size-add-form);gap:var(--space-6);margin-top:var(--space-5);align-items:start;}
+.add-map-wrap{position:relative;height:var(--size-add-map);border-radius:var(--radius-lg);overflow:hidden;border:var(--border-width) solid var(--color-border-subtle);}
+.add-map{position:absolute;inset:0;}
+.add-crosshair{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);pointer-events:none;color:var(--map-pin-dot);filter:drop-shadow(0 0 var(--border-width) var(--map-pin-outline)) drop-shadow(0 0 var(--border-width) var(--map-pin-outline));}
+.add-map-bar{display:flex;align-items:center;justify-content:space-between;gap:var(--space-3);margin-top:var(--space-3);}
+.add-coords{font-size:var(--type-caption-size);line-height:var(--type-caption-line);color:var(--color-text-secondary);}
+.add-near{display:flex;align-items:flex-start;gap:var(--space-2);margin:var(--space-3) 0 0;max-width:var(--size-measure);font-size:var(--type-text-sm-size);line-height:var(--type-text-sm-line);color:var(--color-text-secondary);}
+.add-near--warn{padding:var(--space-2) var(--space-3);border-radius:var(--radius-sm);background:var(--color-status-warning-subtle);color:var(--color-status-warning-text);}
+.add-near--warn .icon{flex:none;margin-top:var(--space-1);}
+.add-near a{color:inherit;font-weight:var(--font-weight-semibold);}
+.add-step{margin:0 0 var(--space-3);font-size:var(--type-label-size);line-height:var(--type-label-line);font-weight:var(--type-label-weight);letter-spacing:var(--type-label-tracking);color:var(--color-text-secondary);}
+.add-types{margin:0 0 var(--space-3);padding:0;border:0;min-width:0;}
+.add-types legend{padding:0;margin-bottom:var(--space-1);}
+/* the type rows sit inside .field, whose label rule would otherwise make them caption-sized blocks */
+.add-types .check-row{display:flex;margin:0;font-size:var(--type-text-md-size);line-height:var(--type-text-md-line);font-weight:var(--font-weight-regular);color:var(--color-text-primary);}
+.add-actions{display:flex;flex-wrap:wrap;gap:var(--space-2);justify-content:flex-end;margin-top:var(--space-2);}
+.add-signin{margin:var(--space-3) 0 0;text-align:right;font-size:var(--type-caption-size);line-height:var(--type-caption-line);color:var(--color-text-secondary);}
+.add-done .section-note{margin-top:var(--space-2);}
+
 /* ===== Responsive (sec. 8.3) ========================================================================================= */
 @media (max-width:1023px){
   .page{padding:var(--space-5) var(--space-5) var(--space-7);}
@@ -151,6 +171,7 @@
   .place-tiles,.card-grid{grid-template-columns:repeat(2, minmax(0, 1fr));}
   .log-layout{grid-template-columns:minmax(0, 1fr);gap:var(--space-5);}
   .log-layout .calendar{order:-1;}
+  .add-layout{grid-template-columns:minmax(0, 1fr);gap:var(--space-5);}
 }
 @media (max-width:767px){
   .page{padding:var(--space-4) var(--space-4) var(--space-7);}
@@ -170,6 +191,8 @@
   .card-strip .page-card{flex:0 0 72%;scroll-snap-align:start;}
   .map-thumb.map-thumb--wide{aspect-ratio:auto;height:200px;}
   .card-grid{grid-template-columns:minmax(0, 1fr);}
+  .add-map-wrap{height:var(--size-add-map-mobile);}
+  .add-actions .btn{flex:1;}
 }
 @media (max-width:599px){
   .gym-actions{padding-bottom:var(--space-2);}

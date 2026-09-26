@@ -53,12 +53,11 @@ export const appState = {
   continentCentroids: {}, // region id -> {lat,lng,region,count}, same idea one tier up again
   regionLabelMarkers: {}, // "country:state" -> maplibregl.Marker, for the basic city/state labels shown below HOLD_ICON_ZOOM
 
-  placingPin: null, // {lat,lng} while add-modal open
   currentEditId: null,
   currentEditPin: null, // {lat,lng} while edit-modal open
   currentReportId: null, // spot id being reported while report-modal open
   isPlacing: false,
-  placingMode: null, // 'add' | 'edit'
+  placingMode: null, // 'edit' (the edit form's pin; adding a gym uses the /add page's own map)
   lastFocused: null,
 
   seedDataPromise: null, // in-flight fetch of data/gyms.json (see data-load.js ensureSeedData)

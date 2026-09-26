@@ -13,6 +13,7 @@ const modules = (async () => ({
   list: await import('../js/modules/list-html.js'),
   page: await import('../js/modules/page-html.js'),
   mod: await import('../js/modules/moderation-html.js'),
+  add: await import('../js/modules/add-html.js'),
 }))();
 
 // Minimal HTML tokenizer (enough for our own templates): returns [{tag, attrs:{name:value}}] for every start tag.
@@ -346,4 +347,63 @@ test('moderation: the diff lists changed fields old -> new, counts the rest, and
   assert.ok(allText(odd).includes('bouldering-cave'), 'unknown type strings are shown as text');
   assert.doesNotThrow(() => mod.modPanelHtml({ kind: 'spot', name: 'G', row: { ...pendingSpot, types: null, address: null, notes: null, photo: null, lat: null } }, modCtx()));
   assert.ok(!/mascot/.test(html), 'no character on /mod (sec. 12.2)');
+});
+
+// ===== /add (DESIGN.md sec. 10.3): the draft is typed by the visitor and restored from localStorage, so all of it is untrusted =====
+const draftOf = (v, over = {}) => ({ step: 1, name: v, types: ['top-rope', v], suburb: v, country: v, state: v, countryOther: v, stateOther: v,
+  address: v, photo: v, notes: v, lat: -33.9, lng: 151.2, zoom: 15, ...over });
+
+test('add: hostile draft values cannot alter the step 1 / step 2 markup or the note under the map', async () => {
+  const { add } = await modules;
+  const benign = [1, 2].map(step => add.addStepHtml(draftOf('plain words', { step }), { signedIn: false }));
+  const nearBenign = add.nearHtml(draftOf('plain words'), { g: { name: 'plain words' }, km: 0.05 }, '/gym/x');
+  const areaBenign = add.nearHtml(draftOf('plain words'), { g: { name: 'x' }, km: 3 }, '/gym/x');
+  for (const h of HOSTILE) {
+    [1, 2].forEach((step, i) => {
+      const html = add.addStepHtml(draftOf(h, { step }), { signedIn: false });
+      assert.deepEqual(shape(html), shape(benign[i]), 'step ' + step + ' structure changed for payload ' + h);
+      assert.equal(hasHandlerAttrs(html), false, 'handler injected: ' + h);
+      assert.ok(!/<script/i.test(html) && onlySpriteIcons(html), 'raw markup leaked: ' + h);
+    });
+    assert.deepEqual(shape(add.nearHtml(draftOf(h), { g: { name: h }, km: 0.05 }, '/gym/x')), shape(nearBenign), 'duplicate note changed for ' + h);
+    assert.deepEqual(shape(add.nearHtml(draftOf(h), { g: { name: h }, km: 3 }, '/gym/x')), shape(areaBenign), 'area note changed for ' + h);
+  }
+});
+
+test('add: step 1 asks only for the pin, a name and a type; the area comes from the nearest gym within 25 km', async () => {
+  const { add } = await modules;
+  assert.deepEqual(add.stepOneMissing(draftOf('Crux', { zoom: 10 }), 10), ['the pin (zoom in to street level)']);
+  assert.deepEqual(add.stepOneMissing(draftOf('', { types: [] }), 15), ['a name', 'at least one climbing type']);
+  assert.deepEqual(add.stepOneMissing({ ...draftOf('Crux'), lat: null }, 15), ['the pin (zoom in to street level)']);
+  assert.deepEqual(add.stepOneMissing(draftOf('Crux'), 15), []);
+  const spots = [{ name: 'Far', suburb: 'Far', country: 'AU', state: 'VIC', lat: -37.8, lng: 144.9 },
+    { name: 'Near', suburb: 'Newtown', country: 'AU', state: 'NSW', lat: -33.9, lng: 151.18 }, { name: 'No pin', lat: null, lng: null }];
+  const r = add.areaFor(spots, { lat: -33.9, lng: 151.2 });
+  assert.equal(r.near.g.name, 'Near');
+  assert.deepEqual(r.area, { suburb: 'Newtown', country: 'AU', state: 'NSW' });
+  assert.equal(add.areaFor(spots, { lat: 0, lng: 0 }).area, null, 'no area from a gym thousands of km away');
+  assert.equal(add.areaFor([], { lat: 0, lng: 0 }).near, null);
+  assert.deepEqual(add.areaMissing({ suburb: ' ', country: 'AU', state: '' }), ['a suburb or town', 'a country and region']);
+  assert.deepEqual(add.countryState({ country: 'OTHER', countryOther: ' France ', stateOther: 'Île-de-France' }), { country: 'France', state: 'Île-de-France' });
+  const dup = add.nearHtml(draftOf('x'), { g: { name: 'Crux' }, km: 0.08 }, '/gym/crux');
+  assert.ok(/add-near--warn/.test(dup) && /href="\/gym\/crux"/.test(dup) && allText(dup).includes('80 m'));
+  assert.ok(allText(add.nearHtml({ ...draftOf(''), country: '' }, null, '/')).includes('step 2 will ask'));
+});
+
+test('add: one primary (Submit for review) per step, sign-in note only when signed out, no character on /add', async () => {
+  const { add } = await modules;
+  for (const step of [1, 2]) {
+    const out = add.addStepHtml(draftOf('Crux', { step, country: 'AU', state: 'NSW' }), { signedIn: false });
+    const btns = tags(out).filter(t => t.tag === 'button');
+    assert.equal(btns.filter(b => /btn-primary/.test(b.attrs.class)).length, 1);
+    assert.equal(btns.find(b => /btn-primary/.test(b.attrs.class)).attrs.type, 'submit');
+    assert.ok(allText(out).includes('sign in when you submit'));
+    assert.ok(!allText(add.addStepHtml(draftOf('Crux', { step }), { signedIn: true })).includes('sign in when you submit'));
+  }
+  const s2 = add.addStepHtml(draftOf('Crux', { step: 2, country: 'AU', state: 'NSW' }), {});
+  assert.ok(/<option value="NSW" selected>/.test(s2) && /<option value="AU" selected>Australia/.test(s2), 'area pre-filled');
+  assert.ok(/data-add-field="stateOther"/.test(add.addStepHtml(draftOf('Crux', { step: 2, country: 'OTHER' }), {})), 'Other country: free text');
+  assert.ok(/disabled>Submitting…/.test(add.addStepHtml(draftOf('Crux'), { busy: true })));
+  for (const html of [add.addPageHtml(), add.addDoneHtml(), s2]) assert.ok(!/mascot/.test(html));
+  assert.ok(allText(add.addDoneHtml()).includes("Thanks — it's in review."));
 });

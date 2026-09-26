@@ -350,8 +350,9 @@
   .list-footer{display:none;}
   body.sheet-full .tabbar{display:none;}
 
-  .maplibregl-ctrl-bottom-right{bottom:var(--sheet-peek-offset, 18vh);}
-  .maplibregl-ctrl-group:has(.maplibregl-ctrl-zoom-in){display:none;}
+  /* Explore's map only: the /add pin map keeps its zoom buttons and attribution in place */
+  #map .maplibregl-ctrl-bottom-right{bottom:var(--sheet-peek-offset, 18vh);}
+  #map .maplibregl-ctrl-group:has(.maplibregl-ctrl-zoom-in){display:none;}
 
   .peek{display:none;}           /* no peek card below 1024px: rows and carousel cards open the gym page */
 

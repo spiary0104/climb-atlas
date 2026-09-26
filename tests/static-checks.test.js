@@ -25,7 +25,7 @@ test('no inline event handlers or window.__ globals anywhere in the app', () => 
 test('index.html: every modal has a data-modal-close control, and only non-destructive secondary/tertiary .btn controls carry it', () => {
   const html = read('index.html');
   const modals = [...html.matchAll(/<div class="modal-backdrop[^"]*" id="(\w+)">([\s\S]*?)(?=<div class="modal-backdrop|<script|$)/g)];
-  assert.ok(modals.length >= 8, 'expected the 8 dialogs, found ' + modals.length);
+  assert.ok(modals.length >= 7, 'expected the 7 dialogs, found ' + modals.length);
   for (const [, id, body] of modals) {
     const closers = [...body.matchAll(/<button[^>]*data-modal-close[^>]*>/g)].map((m) => m[0]);
     assert.ok(closers.length >= 1, id + ' has no data-modal-close control');
@@ -110,6 +110,10 @@ const SAFE_EXPR = [
   // show() is a FIELDS formatter (escapeHtml or photoText); rows/queue/panel are assembled from these same builders
   /^(label|k|KIND_LABEL\[k\]|d\.rows|queue|panel)$/, /^show\((current|proposed)\[key\]\)$/,
   /^items\.map\(\(it, i\) => modRowHtml\(it, ctxs\[i\]\)\)\.join\(''\)$/,
+  // add-html.js (/add): extra is a literal attribute string at every textField() call site; opts/other/submit/signIn are
+  // assembled in the same builder from escaped values and literals; the helpers escape internally
+  /^(extra|opts|other|submit|signIn)$/, /^(countrySelect\(d\)|typeChecks\(d\.types\))$/, /^d\.country === 'OTHER' \? '' : regionSelect\(d\)$/,
+  /^textField\('[a-zA-Z]+', '[A-Za-z ]+', d\.[a-zA-Z]+\)$/,
 ];
 // A conditional is safe when every branch that can be rendered is safe: a fixed string literal, a template whose own
 // interpolations are all safe, or a nested conditional (checked recursively). The condition itself is never rendered.
@@ -148,7 +152,8 @@ test('HTML-building templates only interpolate escaped or reviewed-safe expressi
   const files = ['js/modules/list-html.js', 'js/modules/pin-html.js', 'js/modules/moderation-html.js', 'js/modules/logbook.js', 'js/modules/auth-ui.js',
     'js/modules/search.js', 'js/modules/list.js', 'js/modules/explore.js', 'js/modules/filters.js', 'js/modules/map.js',
     'js/modules/page-html.js', 'js/modules/gym-page.js', 'js/modules/router.js', 'js/modules/slug.js', 'js/modules/region-page.js', 'js/modules/mini-map.js',
-    'js/modules/provenance.js', 'js/modules/community.js', 'js/modules/me-page.js', 'js/modules/log-page.js', 'js/modules/mod-page.js'];
+    'js/modules/provenance.js', 'js/modules/community.js', 'js/modules/me-page.js', 'js/modules/log-page.js', 'js/modules/mod-page.js',
+    'js/modules/add-html.js', 'js/modules/add-page.js'];
   const unsafe = [];
   for (const f of files) {
     // lines that assign to .textContent are not markup (the browser treats the value as text)
@@ -171,12 +176,15 @@ test('photo URLs are validated at every render site and at both submit handlers'
   assert.ok(/const photo = safeUrl\(g\.photo\)/.test(read('js/modules/page-html.js')), 'the gym page hero validates the photo');
   assert.ok(/safeUrl\(photo\)/.test(read('js/modules/moderation-html.js')));
   const modals = read('js/modules/modals.js');
-  assert.ok(/fPhotoRaw && !safeUrl\(fPhotoRaw\)/.test(modals) && /ePhotoRaw && !safeUrl\(ePhotoRaw\)/.test(modals));
+  assert.ok(/ePhotoRaw && !safeUrl\(ePhotoRaw\)/.test(modals), 'the edit form validates the photo');
+  const add = read('js/modules/add-page.js');
+  assert.ok(/photo && !safeUrl\(photo\)/.test(add) && /photo: photo \? safeUrl\(photo\) : null/.test(add), 'the /add submit validates the photo');
   // no other place renders a photo into markup
   for (const f of moduleFiles) {
     // moderation.js only copies pe.photo into the approved-edit UPDATE payload (data, never rendered as markup)
     // filters.js only tests safeUrl(g.photo) for the "Has photos" filter (a boolean, never markup)
-    if (/list-html|page-html|moderation-html|modals\.js|html-safe|moderation\.js|filters\.js/.test(f)) continue;
+    // add-page.js only validates draft.photo and inserts safeUrl(photo) (checked above); add-html.js shows it as an escaped input value
+    if (/list-html|page-html|moderation-html|modals\.js|html-safe|moderation\.js|filters\.js|add-page|add-html/.test(f)) continue;
     assert.ok(!/\.photo\b/.test(stripComments(read(f))) || /\.value\s*=/.test(read(f)), 'unreviewed photo use in ' + f);
   }
 });

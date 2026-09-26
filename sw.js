@@ -64,6 +64,8 @@ const SHELL_FILES = [
   'js/modules/provenance.js',
   'js/modules/community.js',
   'js/modules/mod-page.js',
+  'js/modules/add-html.js',
+  'js/modules/add-page.js',
   'js/modules/modals.js',
   'js/modules/auth-ui.js',
   'js/modules/data-load.js',
@@ -156,7 +158,7 @@ async function cacheFirst(request, cacheName) {
 // route (/gym/…, /in/…, /log, /me) is the same index.html shell rendered by the router. So app routes share ONE cached
 // shell (keyed '/'), whatever the path or query, and other pages (about.html) are cached per path. Without this an
 // offline reload of /?c=… or of a gym page never visited online would find nothing.
-const APP_ROUTE = /^\/(?:index\.html)?$|^\/(?:gym|in|log|me|mod)(?:\/|$)/;
+const APP_ROUTE = /^\/(?:index\.html)?$|^\/(?:gym|in|log|me|mod|add)(?:\/|$)/;
 async function navigation(request) {
   const cache = await caches.open(SHELL_CACHE);
   const url = new URL(request.url);

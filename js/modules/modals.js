@@ -1,10 +1,9 @@
-// Modal keyboard/focus handling, add/edit/report spot forms, Privacy/Terms info modals.
-import { openAuthModal } from './auth-ui.js';
+// Modal keyboard/focus handling, edit/report spot forms, Privacy/Terms info modals. Adding a gym is the /add page.
 import { ensureSeedData } from './data-load.js';
 import { map } from './map.js';
 import { STATES_BY_COUNTRY } from './regions.js';
 import { appState } from './state.js';
-import { refreshPage } from './router.js';
+import { navigate, refreshPage } from './router.js';
 import { escapeHtml, safeUrl, showToast } from './utils.js';
 
 // --- modal keyboard/focus handling ---
@@ -46,18 +45,10 @@ function getCountryState(prefix){
   return {country: countrySel.value, state: document.getElementById(prefix + 'State').value};
 }
 
-// --- add gym flow ---
-const modalBackdrop = document.getElementById('modalBackdrop');
-const pinStatus = document.getElementById('pinStatus');
-const submitBtn = document.getElementById('submitBtn');
+// --- pin placing (edit form) ---
 const placingBanner = document.getElementById('placingBanner');
 const editModalBackdrop = document.getElementById('editModalBackdrop');
 const editPinStatus = document.getElementById('editPinStatus');
-function closeModal(){
-  modalBackdrop.classList.add('hidden');
-  stopPlacing();
-}
-
 function startPlacing(mode){
   appState.placingMode = mode;
   appState.isPlacing = true;
@@ -69,30 +60,12 @@ function stopPlacing(){
   placingBanner.classList.remove('show');
   map.getContainer().style.cursor = '';
 }
-function selectedTypes(){
-  const map = {fTypeIndoor:'indoor-bouldering', fTypeTopRope:'top-rope', fTypeLead:'lead-climbing'};
-  return Object.keys(map).filter(id=>document.getElementById(id).checked).map(id=>map[id]);
-}
 // Rather than a silently disabled Submit, list what's still missing so
 // the person filling the form knows why. Cleared once nothing is.
 function renderFormHint(hintId, missing){
   const el = document.getElementById(hintId);
   el.textContent = missing.length ? 'Still needed: ' + missing.join(', ') + '.' : '';
 }
-function checkFormReady(){
-  const name = document.getElementById('fName').value.trim();
-  const suburb = document.getElementById('fSuburb').value.trim();
-  const {country, state} = getCountryState('f');
-  const missing = [];
-  if(!appState.placingPin) missing.push('a pin on the map');
-  if(!name) missing.push('a name');
-  if(!suburb) missing.push('a suburb');
-  if(!country || !state) missing.push('a country and state');
-  if(selectedTypes().length === 0) missing.push('at least one climbing type');
-  renderFormHint('fFormHint', missing);
-  submitBtn.disabled = missing.length > 0;
-}
-
 // --- edit spot flow ---
 export async function openEditModal(id){
   const g = appState.spots.find(x=>x.id===id);
@@ -219,125 +192,24 @@ export function initModalKeyboard(){
   });
 }
 
-// "Add a gym": the top bar button and the Me menu item (js/modules/nav.js) both start here.
-export async function startAddGym(){
-  const user = window.auth.user;
-  if(!user){ showToast('Sign in to add a location'); openAuthModal(); return; }
-  if(!window.sb){ showToast('Supabase is not configured — see README.md'); return; }
-  const dayAgo = new Date(Date.now() - 24*60*60*1000).toISOString();
-  const {count, error} = await window.sb.from('spots')
-    .select('id', {count:'exact', head:true})
-    .eq('submitted_by', user.id)
-    .gte('created_at', dayAgo);
-  if(!error && count >= 10){
-    showToast("You've reached today's limit of 10 submissions — try again tomorrow.");
-    return;
-  }
-  appState.placingPin = null;
-  submitBtn.disabled = true;
-  pinStatus.textContent = 'No pin dropped yet — click "Drop pin" then tap the map.';
-  pinStatus.classList.remove('set');
-  ['fName','fSuburb','fAddress','fNotes','fPhoto','fCountryOther','fStateOther'].forEach(id=>document.getElementById(id).value='');
-  ['fTypeIndoor','fTypeTopRope','fTypeLead'].forEach(id=>document.getElementById(id).checked=false);
-  document.getElementById('fCountry').value = 'AU';
-  toggleOtherCountryFields('f', 'AU');
-  checkFormReady();
-  modalBackdrop.classList.remove('hidden');
-}
+// "Add a gym": the top bar button, /me and the Explore empty state all go to the /add page (add-page.js).
+export function startAddGym(){ navigate('/add'); }
 
 export function initForms(){
-  document.getElementById('fCountry').addEventListener('change', (e)=>{ toggleOtherCountryFields('f', e.target.value); checkFormReady(); });
   document.getElementById('eCountry').addEventListener('change', (e)=>{ toggleOtherCountryFields('e', e.target.value); checkEditFormReady(); });
 
-  // Signed-in only (per the RLS policy in schema.sql), and a client-side
-  // pre-check against the same rolling-24h/10-submission cap so someone
-  // who's already hit it gets told before filling out the whole form,
-  // not after. The actual limit is enforced server-side either way --
-  // this is just a nicer UX in front of it, and fails open (opens the
-  // form) if the count query itself errors.
   document.getElementById('addBtn').addEventListener('click', startAddGym);
-
-  document.getElementById('cancelBtn').addEventListener('click', closeModal);
-
-  document.getElementById('dropPinBtn').addEventListener('click', ()=>{
-    modalBackdrop.classList.add('hidden');
-    startPlacing('add');
-  });
 
   map.on('click', (e)=>{
     if(!appState.isPlacing) return;
     const pt = {lat: e.lngLat.lat, lng: e.lngLat.lng};
-    const mode = appState.placingMode;
     stopPlacing();
     appState.placingMode = null;
-    if(mode === 'edit'){
-      appState.currentEditPin = pt;
-      editPinStatus.textContent = `Pin set at ${pt.lat.toFixed(4)}, ${pt.lng.toFixed(4)}`;
-      editPinStatus.classList.add('set');
-      editModalBackdrop.classList.remove('hidden');
-      checkEditFormReady();
-    } else {
-      appState.placingPin = pt;
-      pinStatus.textContent = `Pin set at ${pt.lat.toFixed(4)}, ${pt.lng.toFixed(4)}`;
-      pinStatus.classList.add('set');
-      modalBackdrop.classList.remove('hidden');
-      checkFormReady();
-    }
-  });
-
-  ['fName','fSuburb'].forEach(id=>{
-    document.getElementById(id).addEventListener('input', checkFormReady);
-  });
-  ['fTypeIndoor','fTypeTopRope','fTypeLead'].forEach(id=>{
-    document.getElementById(id).addEventListener('change', checkFormReady);
-  });
-  ['fCountryOther','fStateOther'].forEach(id=>{
-    document.getElementById(id).addEventListener('input', checkFormReady);
-  });
-
-  document.getElementById('submitBtn').addEventListener('click', async ()=>{
-    if(!appState.placingPin) return;
-    if(!window.sb){ showToast('Supabase is not configured — see README.md'); return; }
-    const user = window.auth.user;
-    if(!user){ showToast('Sign in to add a location'); closeModal(); openAuthModal(); return; }
-    const {country, state} = getCountryState('f');
-    const fPhotoRaw = document.getElementById('fPhoto').value.trim();
-    if(fPhotoRaw && !safeUrl(fPhotoRaw)){ showToast('Photo link must be a full http:// or https:// address'); return; }
-    const gym = {
-      id: 'community-' + (window.crypto && crypto.randomUUID ? crypto.randomUUID() : Date.now()),
-      name: document.getElementById('fName').value.trim(),
-      suburb: document.getElementById('fSuburb').value.trim(),
-      state,
-      country,
-      types: selectedTypes(),
-      address: document.getElementById('fAddress').value.trim() || null,
-      notes: document.getElementById('fNotes').value.trim() || null,
-      photo: fPhotoRaw ? safeUrl(fPhotoRaw) : null,
-      lat: appState.placingPin.lat,
-      lng: appState.placingPin.lng,
-      submitted_by: user.id,
-      community: true,
-      edited: false,
-      status: 'pending'
-    };
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Saving…';
-    try{
-      const {error} = await window.sb.from('spots').insert(gym);
-      if(error) throw error;
-      showToast('Submitted — a moderator will review it before it appears on the map.');
-      submitBtn.textContent = 'Add to map';
-      closeModal();
-    }catch(err){
-      // The RLS policy (schema.sql) is the real enforcement of the sign-in +
-      // 10/day rules -- this is just a clearer message for the rare case the
-      // client-side pre-check missed (a race, or its own query erroring).
-      const rlsRejected = /row-level security|permission denied/i.test(err.message||'');
-      showToast(rlsRejected ? "Couldn't save — you may have reached today's submission limit." : 'Could not save — try again');
-      console.error(err);
-      submitBtn.textContent = 'Add to map';
-      submitBtn.disabled = false;
-    }
+    appState.currentEditPin = pt;
+    editPinStatus.textContent = `Pin set at ${pt.lat.toFixed(4)}, ${pt.lng.toFixed(4)}`;
+    editPinStatus.classList.add('set');
+    editModalBackdrop.classList.remove('hidden');
+    checkEditFormReady();
   });
   document.getElementById('eCancelBtn').addEventListener('click', closeEditModal);
 

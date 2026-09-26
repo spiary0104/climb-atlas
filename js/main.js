@@ -12,6 +12,7 @@ import { initModeration, renderPendingBadge } from './modules/moderation.js';
 import { initLogPage } from './modules/log-page.js';
 import { initMePage } from './modules/me-page.js';
 import { initModPage } from './modules/mod-page.js';
+import { initAddPage } from './modules/add-page.js';
 import { initNavigation } from './modules/nav.js';
 import { initRegionPages } from './modules/region-page.js';
 import { initRouter } from './modules/router.js';
@@ -31,6 +32,7 @@ initRegionPages();
 initLogPage();
 initMePage();
 initModPage();
+initAddPage();
 initNavigation();
 initRouter();          // after every view has registered: renders the page for the URL (a skeleton until data arrives)
 
