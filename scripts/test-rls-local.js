@@ -84,9 +84,23 @@ const denied = r => r.status >= 400 || (Array.isArray(r.json) && r.json.length =
   r = await api('POST', '/rest/v1/pending_edits', { token: A.token, body: { spot_id: spot, name: 'Better name', suburb: 'X', state: 'NSW', country: 'AU', lat: 1, lng: 1, types: ['top-rope'], address: null, notes: null, photo: null } });   // supabase-js .insert() without .select() => Prefer: return=minimal
   t('user: can propose an edit (edit flow)', r.status === 201, 'HTTP ' + r.status);
   const editId = ((await svc('GET', '/rest/v1/pending_edits?select=id&name=eq.Better%20name&spot_id=eq.' + spot)).json[0] || {}).id;
-  r = await api('POST', '/rest/v1/pending_edits', { token: A.token, body: { spot_id: spot, name: 'x', suburb: 'X', state: 'NSW', country: 'AU', lat: 1, lng: 1, types: [] }, prefer: rep });
-  t('user: return=representation on pending_edits is refused (SELECT is moderator-only)', r.status === 403, 'HTTP ' + r.status);
-  r = await api('GET', '/rest/v1/pending_edits?select=id', { token: A.token }); t('user: cannot read the moderation queue (edits)', r.json.length === 0);
+  // Phase 4: a submitter reads back their OWN proposal (to see "awaiting review" / a rejection reason); forged fields are
+  // overwritten by the trigger; nobody reads anyone else's proposals.
+  r = await api('POST', '/rest/v1/pending_edits', { token: A.token, body: { spot_id: spot, name: 'x', suburb: 'X', state: 'NSW', country: 'AU', lat: 1, lng: 1, types: [],
+    edit_note: 'Checked on their site', review_requested: true, submitted_by: B.id, status: 'approved', decided_at: '2020-01-01T00:00:00Z', rejection_reason: 'forged' }, prefer: rep });
+  const own = r.json && r.json[0];
+  t('user: reads back their own proposal; submitter/status/decision cannot be forged', r.status === 201 && own && own.submitted_by === A.id && own.status === 'pending' && own.decided_at === null && own.rejection_reason === null && own.edit_note === 'Checked on their site' && own.review_requested === true,
+    own ? `${own.submitted_by === A.id ? 'own' : 'FORGED'} ${own.status}` : 'HTTP ' + r.status);
+  r = await api('GET', '/rest/v1/pending_edits?select=id,submitted_by', { token: A.token }); t('user: sees only their own proposals', r.json.length >= 1 && r.json.every(x => x.submitted_by === A.id), `${r.json.length} rows`);
+  r = await api('GET', '/rest/v1/pending_edits?select=id', { token: B.token }); t("other user: cannot read A's proposals (moderation queue)", r.json.length === 0);
+  r = await api('PATCH', `/rest/v1/pending_edits?id=eq.${own && own.id}`, { token: A.token, body: { status: 'approved' }, prefer: rep }); t('user: cannot approve their own proposal', denied(r), 'HTTP ' + r.status);
+  r = await api('POST', '/rest/v1/pending_edits', { token: A.token, body: { spot_id: spot, name: 'x', suburb: 'X', state: 'NSW', country: 'AU', lat: 1, lng: 1, types: [], edit_note: 'y'.repeat(201) } }); t('user: edit note over 200 characters is refused', r.status >= 400, 'HTTP ' + r.status);
+  // profiles: public display names, own row only, never an email
+  r = await api('POST', '/rest/v1/profiles', { token: A.token, body: { user_id: A.id, display_name: 'mika.sends' } }); t('user: creates their own profile', r.status === 201, 'HTTP ' + r.status);
+  r = await api('POST', '/rest/v1/profiles', { token: A.token, body: { user_id: B.id, display_name: 'impostor' } }); t("user: cannot create someone else's profile", r.status >= 400, 'HTTP ' + r.status);
+  r = await api('POST', '/rest/v1/profiles', { token: B.token, body: { user_id: B.id, display_name: 'b@example.com' } }); t('user: an email-like display name is refused', r.status >= 400, 'HTTP ' + r.status);
+  r = await api('PATCH', `/rest/v1/profiles?user_id=eq.${A.id}`, { token: B.token, body: { display_name: 'hijacked' }, prefer: rep }); t("other user: cannot rename A", denied(r), 'HTTP ' + r.status);
+  r = await api('GET', `/rest/v1/profiles?select=display_name&user_id=eq.${A.id}`); t('anon: display names are public', r.status === 200 && r.json.length === 1 && r.json[0].display_name === 'mika.sends');
   r = await api('POST', '/rest/v1/marks', { token: A.token, body: { user_id: A.id, spot_id: spot, mark_type: 'climbed' } }); t('user: can mark a spot climbed', r.status === 201, 'HTTP ' + r.status);
   r = await api('POST', '/rest/v1/marks', { token: A.token, body: { user_id: B.id, spot_id: spot, mark_type: 'bookmarked' } }); t("user: cannot add a mark for someone else", r.status >= 400, 'HTTP ' + r.status);
   r = await api('GET', '/rest/v1/marks?select=spot_id,mark_type', { token: A.token }); t('user: reads only their own marks', r.json.length === 1);
@@ -115,14 +129,34 @@ const denied = r => r.status >= 400 || (Array.isArray(r.json) && r.json.length =
   t('moderator: approves a pending spot (touch trigger bumps updated_at)', r.status === 200 && r.json.length === 1 && r.json[0].status === 'approved' && r.json[0].updated_at > before, r.status === 200 && r.json[0] ? 'approved, updated_at advanced' : 'HTTP ' + r.status);
   r = await api('PATCH', `/rest/v1/spots?id=eq.${spot}`, { token: M.token, body: { name: 'Better name', edited: true, updated_at: new Date().toISOString() }, prefer: rep }); t('moderator: applies an edit to a live spot (approve-edit flow)', r.status === 200 && r.json.length === 1 && r.json[0].edited === true);
   r = await api('DELETE', `/rest/v1/pending_edits?id=eq.${editId}`, { token: M.token, prefer: rep }); t('moderator: removes the proposal after applying it', r.status === 200 && r.json.length === 1);
+  // Phase 4: decisions are recorded on the proposal instead of deleting it
+  r = await api('PATCH', `/rest/v1/pending_edits?id=eq.${own && own.id}`, { token: M.token, body: { status: 'approved', decided_at: new Date().toISOString() }, prefer: rep });
+  t('moderator: marks a proposal approved (kept for history)', r.status === 200 && r.json.length === 1 && r.json[0].status === 'approved');
+  r = await api('POST', '/rest/v1/rpc/spot_provenance', { body: { p_spot_id: spot } });
+  t('anon: spot_provenance counts contributors from approved edits', r.status === 200 && r.json.length === 1 && r.json[0].contributors === 1 && r.json[0].last_edited, r.status === 200 ? JSON.stringify(r.json[0]) : 'HTTP ' + r.status);
+  r = await api('POST', '/rest/v1/rpc/spot_provenance', { body: { p_spot_id: tag + '-pending' } }); t('anon: spot_provenance says nothing about a non-approved gym', r.status === 200 && r.json.length === 0);
+  r = await api('POST', '/rest/v1/rpc/contribution_points', { token: A.token, body: { p_users: [A.id, B.id] } });
+  const pts = r.json && r.json[0];
+  t('user: contribution_points returns only their own row (15 per approved gym + 5 per approved edit)', r.status === 200 && r.json.length === 1 && pts.user_id === A.id && pts.edits === 1 && pts.points === 15 * pts.gyms + 5 * pts.edits, r.status === 200 ? JSON.stringify(r.json) : 'HTTP ' + r.status);
+  r = await api('POST', '/rest/v1/rpc/contribution_points', { body: { p_users: [A.id] } }); t('anon: cannot call contribution_points', r.status >= 400, 'HTTP ' + r.status);
+  r = await api('POST', '/rest/v1/rpc/contribution_points', { token: M.token, body: { p_users: [A.id, B.id] } }); t('moderator: contribution_points for any contributors', r.status === 200 && r.json.length === 2);
   const rep1 = await svc('GET', '/rest/v1/reports?select=id&limit=1'); r = await api('DELETE', `/rest/v1/reports?id=eq.${rep1.json[0].id}`, { token: M.token, prefer: rep }); t('moderator: dismisses a report', r.status === 200 && r.json.length === 1);
-  r = await api('DELETE', `/rest/v1/spots?id=eq.${tag}-pending`, { token: M.token, prefer: rep }); t('moderator: rejects (deletes) a pending spot', r.status === 200 && r.json.length === 1);
+  // Phase 4: a rejected gym is kept with its reason: hidden from the public, visible to its submitter
+  r = await api('POST', '/rest/v1/spots', { token: B.token, body: { id: 'community-' + uuid(), name: 'B rejected', suburb: 'X', state: 'NSW', country: 'AU', lat: 0, lng: 0, types: ['top-rope'], status: 'pending', submitted_by: B.id }, prefer: rep });
+  const bSpot = r.json && r.json[0];
+  r = await api('PATCH', `/rest/v1/spots?id=eq.${bSpot && bSpot.id}`, { token: M.token, body: { status: 'rejected', rejection_reason: 'Duplicate of an existing gym' }, prefer: rep }); t('moderator: rejects a gym with a reason', r.status === 200 && r.json.length === 1 && r.json[0].status === 'rejected');
+  r = await api('GET', `/rest/v1/spots?select=id&id=eq.${bSpot && bSpot.id}`); t('anon: cannot see a rejected gym', r.status === 200 && r.json.length === 0);
+  r = await api('GET', `/rest/v1/spots?select=status,rejection_reason&id=eq.${bSpot && bSpot.id}`, { token: B.token }); t('submitter: sees their rejected gym and the reason', r.json.length === 1 && r.json[0].rejection_reason === 'Duplicate of an existing gym');
+  r = await api('GET', `/rest/v1/spots?select=id&id=eq.${bSpot && bSpot.id}`, { token: A.token }); t("other user: cannot see B's rejected gym", r.json.length === 0);
+  r = await api('PATCH', `/rest/v1/spots?id=eq.${spot}`, { token: A.token, body: { verified_at: new Date().toISOString() }, prefer: rep }); t('user: cannot mark a gym verified', denied(r), 'HTTP ' + r.status);
+  r = await api('DELETE', `/rest/v1/spots?id=eq.${tag}-pending`, { token: M.token, prefer: rep }); t('moderator: can still hard-delete a pending spot (spam)', r.status === 200 && r.json.length === 1);
   r = await api('PATCH', `/rest/v1/routes?id=eq.${rid}`, { token: M.token, body: { grade: 'V4' }, prefer: rep }); t("moderator: can edit any user's route", r.status === 200 && r.json.length === 1);
 
   // ---------------- cleanup (local only) ----------------
   await svc('DELETE', `/rest/v1/spots?submitted_by=in.(${A.id},${B.id},${M.id})`); await svc('DELETE', `/rest/v1/spots?id=in.(${seedIds.join(',')})`);
   await svc('DELETE', `/rest/v1/pending_edits?spot_id=in.(${seedIds.join(',')})`); await svc('DELETE', `/rest/v1/reports?spot_id=in.(${seedIds.join(',')})`);
   await svc('DELETE', `/rest/v1/moderators?user_id=eq.${M.id}`);
+  await svc('DELETE', `/rest/v1/profiles?user_id=in.(${A.id},${B.id},${M.id})`);
 
   const w = Math.max(...results.map(x => x.name.length));
   results.forEach(x => console.log((x.ok ? 'PASS ' : 'FAIL ') + x.name.padEnd(w) + '  ' + x.detail));

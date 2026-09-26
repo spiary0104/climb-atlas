@@ -62,7 +62,7 @@ export async function loadPending(){
   try{
     const [{data: pSpots, error: e1}, {data: pEdits, error: e2}, {data: pReports, error: e3}] = await Promise.all([
       window.sb.from('spots').select('*').eq('status','pending'),
-      window.sb.from('pending_edits').select('*'),
+      window.sb.from('pending_edits').select('*').eq('status','pending'),
       window.sb.from('reports').select('*')
     ]);
     if(e1) throw e1;

@@ -53,9 +53,10 @@ async function approveSpot(id){
   await refreshAfterModeration();
 }
 
-async function rejectSpot(id){
+// Rejections are kept with a reason (shown to the submitter, sec. 10.5) instead of deleting the row.
+async function rejectSpot(id, reason = null){
   try{
-    const {error} = await window.sb.from('spots').delete().eq('id', id);
+    const {error} = await window.sb.from('spots').update({status:'rejected', rejection_reason: reason}).eq('id', id);
     if(error) throw error;
     showToast('Spot rejected');
   }catch(err){
@@ -75,7 +76,8 @@ async function approveEdit(pendingEditId){
       edited: true, updated_at: new Date().toISOString()
     }).eq('id', pe.spot_id);
     if(e1) throw e1;
-    const {error: e2} = await window.sb.from('pending_edits').delete().eq('id', pe.id);
+    // The proposal is kept as approved history (contributor counts and points, sec. 10.1/10.6).
+    const {error: e2} = await window.sb.from('pending_edits').update({status:'approved', decided_at: new Date().toISOString()}).eq('id', pe.id);
     if(e2) throw e2;
     showToast('Edit approved');
   }catch(err){
@@ -85,9 +87,9 @@ async function approveEdit(pendingEditId){
   await refreshAfterModeration();
 }
 
-async function rejectEdit(pendingEditId){
+async function rejectEdit(pendingEditId, reason = null){
   try{
-    const {error} = await window.sb.from('pending_edits').delete().eq('id', pendingEditId);
+    const {error} = await window.sb.from('pending_edits').update({status:'rejected', rejection_reason: reason, decided_at: new Date().toISOString()}).eq('id', pendingEditId);
     if(error) throw error;
     showToast('Edit rejected');
   }catch(err){
