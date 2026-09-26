@@ -9,6 +9,7 @@ import { initMap } from './modules/map.js';
 import { initForms, initInfoModals, initModalKeyboard } from './modules/modals.js';
 import { initModeration, renderPendingBadge } from './modules/moderation.js';
 import { initNavigation } from './modules/nav.js';
+import { initRegionPages } from './modules/region-page.js';
 import { initRouter } from './modules/router.js';
 import { appState } from './modules/state.js';
 
@@ -22,6 +23,7 @@ initModeration();
 initInfoModals();
 initExplore();
 initGymPage();
+initRegionPages();
 initNavigation();
 initRouter();          // after every view has registered: renders the page for the URL (a skeleton until data arrives)
 

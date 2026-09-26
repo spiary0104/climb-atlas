@@ -1,12 +1,13 @@
 // App navigation chrome (DESIGN.md sec. 6.4 / 6.5): the desktop/tablet top bar, the mobile tab bar with START, and the Me menu.
 // Wired to what exists until Phase 3 turns the areas into pages:
-//   Explore -> the map and list (closes search; the mobile sheet goes to half)   Regions -> place search in browse mode
+//   Explore -> the map and list (closes search; the mobile sheet goes to half)   Regions -> /in (region pages)
 //   Log     -> the logbook dialog                                               Me      -> menu: Saved, Add a gym, Pending review, About, account
 //   START   -> "Log a session" (check-in arrives in Phase 5)
 // Every control is a [data-nav] button handled by one delegated listener; no inline handlers, no globals.
-import { showExplore, showRegions } from './explore.js';
+import { showExplore } from './explore.js';
 import { openLogbookModal, startLogSession } from './logbook.js';
 import { startAddGym } from './modals.js';
+import { navigate } from './router.js';
 import { closeSearch } from './search.js';
 
 const meMenu = document.getElementById('meMenu');
@@ -23,7 +24,7 @@ function setMenuOpen(open){
 
 const ACTIONS = {
   explore(){ showExplore(); },
-  regions(){ showRegions(); },
+  regions(){ closeSearch(); navigate('/in'); },
   log(){ closeSearch(); openLogbookModal(); },
   start(){ closeSearch(); startLogSession(); },
   me(){ setMenuOpen(!meMenu.classList.contains('open')); },

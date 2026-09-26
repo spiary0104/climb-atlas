@@ -187,6 +187,31 @@ test('gym page: the minimum page renders no empty sections; the photo page shows
   assert.ok(!/mascot/.test(html), 'no character on gym pages (sec. 12.2)');
 });
 
+test('region pages: hostile place and gym names stay text; cards up to 20 gyms, dense rows beyond (DNA #2)', async () => {
+  const { page } = await modules;
+  const item = name => ({ g: { ...benignSpot, name }, ctx: { region: 'NSW', href: '/gym/x' } });
+  const build = (name, n) => page.placePageHtml({ crumbs: [{ label: 'Regions', href: '/in' }, { label: name, current: true }], title: name, meta: n + ' gyms',
+    tilesTitle: 'Cities', tiles: [{ label: name, href: '/in/au/nsw/x', count: 3 }], gymsTitle: 'Gyms', gyms: Array.from({ length: n }, () => item(name)),
+    map: { lat: -33.9, lng: 151.2, zoom: 9, href: '/?place=AU:NSW', label: 'Show ' + name } });
+  const benign = build('Sydney', 3);
+  for (const h of HOSTILE) {
+    const hostile = build(h, 3);
+    assert.deepEqual(shape(hostile), shape(benign), 'place page structure changed for payload ' + h);
+    assert.equal(hasHandlerAttrs(hostile), false);
+    assert.ok(onlySpriteIcons(hostile));
+    const index = page.regionsIndexHtml([{ title: h, items: [{ label: h, href: '/in/au', count: 2 }] }], 2);
+    assert.deepEqual(shape(index), shape(page.regionsIndexHtml([{ title: 'Asia', items: [{ label: 'Japan', href: '/in/jp', count: 2 }] }], 2)));
+  }
+  assert.equal((build('A', 20).match(/class="gym-card page-card"/g) || []).length, 20, '20 gyms: cards');
+  assert.equal((build('A', 21).match(/class="page-row"/g) || []).length, 21, '21 gyms: dense rows');
+  assert.ok(/data-mini-map data-points/.test(benign), 'the region map plots its gyms');
+  assert.ok(!/mascot/.test(benign), 'no character on region pages (sec. 12.2)');
+  const bc = benign.slice(benign.indexOf('<nav class="breadcrumb"'), benign.indexOf('</nav>'));
+  const crumbs = tags(bc).filter(t => t.tag === 'li');
+  assert.equal(crumbs[crumbs.length - 1].attrs['aria-current'], 'page', 'the current place is marked, not linked');
+  assert.ok(!/<a[^>]*>Sydney<\/a>/.test(bc), 'and not a link');
+});
+
 const pendingSpot = { id: 'community-aaaa', name: 'N', suburb: 'S', state: 'NSW', country: 'AU', types: ['top-rope'], address: 'A', notes: 'n', photo: 'https://example.com/p.jpg' };
 const pendingEdit = { id: '11111111-2222-3333-4444-555555555555', spot_id: 'seed-1', name: 'N', suburb: 'S', state: 'NSW', country: 'AU', types: ['top-rope'], address: 'A', notes: 'n', photo: 'https://example.com/p.jpg' };
 const pendingReport = { id: '99999999-2222-3333-4444-555555555555', spot_id: 'seed-1', message: 'wrong pin' };

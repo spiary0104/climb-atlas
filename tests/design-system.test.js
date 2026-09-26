@@ -254,7 +254,7 @@ test('mascot: the flat-vector head only on START and the default avatar (sec. 12
   assert.ok(!/mascot/.test(dialogs), 'no mascot in dialogs');
   const main = html.slice(html.indexOf('<main class="map-wrap"'), html.indexOf('</main>'));
   assert.ok(!/mascot/.test(main), 'no mascot on the map');
-  for (const f of ['js/modules/moderation-html.js', 'js/modules/moderation.js', 'js/modules/modals.js', 'js/modules/map.js', 'js/modules/pin-html.js', 'js/modules/list-html.js', 'js/modules/filters.js', 'js/modules/page-html.js', 'js/modules/gym-page.js']) assert.ok(!/mascot/.test(read(f)), f);
+  for (const f of ['js/modules/moderation-html.js', 'js/modules/moderation.js', 'js/modules/modals.js', 'js/modules/map.js', 'js/modules/pin-html.js', 'js/modules/list-html.js', 'js/modules/filters.js', 'js/modules/page-html.js', 'js/modules/gym-page.js', 'js/modules/region-page.js']) assert.ok(!/mascot/.test(read(f)), f);
   assert.match(read('css/components.css'), /\.mascot--spot\{width:var\(--size-mascot-spot\)/);
 });
 

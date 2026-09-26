@@ -56,6 +56,7 @@ const SHELL_FILES = [
   'js/modules/page-html.js',
   'js/modules/gym-page.js',
   'js/modules/mini-map.js',
+  'js/modules/region-page.js',
   'js/modules/modals.js',
   'js/modules/auth-ui.js',
   'js/modules/data-load.js',

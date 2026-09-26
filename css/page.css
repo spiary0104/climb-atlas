@@ -84,6 +84,26 @@
 .page-row:hover{background:var(--color-surface-raised);text-decoration:none;}
 .page-row .gym-row-meta{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
 
+/* ===== Regions: index, country, region and city pages (sec. 14: 3-col grid + map / 2-col + map below / 1-col + 200px map) */
+.place-header{margin-bottom:var(--space-2);}
+.place-meta{margin:var(--space-2) 0 0;font-size:var(--type-text-md-size);line-height:var(--type-text-md-line);color:var(--color-text-secondary);}
+.place-layout{display:grid;grid-template-columns:minmax(0, 1fr) var(--size-place-map);gap:var(--space-7);align-items:start;}
+.place-main > .page-section:first-child{margin-top:var(--space-5);}
+.place-aside{position:sticky;top:var(--space-5);margin-top:var(--space-5);}
+.map-thumb-figure.map-thumb--wide{width:100%;}
+.map-thumb.map-thumb--wide{width:100%;aspect-ratio:var(--card-photo-ratio);}
+.place-map-link{margin:var(--space-3) 0 0;}
+.place-tiles{display:grid;grid-template-columns:repeat(3, minmax(0, 1fr));gap:var(--space-2);margin:0;padding:0;list-style:none;}
+.place-tile{
+  display:flex;flex-direction:column;gap:var(--space-1);min-height:var(--size-row-dense);padding:var(--space-3) var(--space-4);
+  background:var(--color-surface-default);border:var(--border-width) solid var(--color-border-subtle);border-radius:var(--radius-md);
+  color:inherit;text-decoration:none;transition:border-color var(--motion-fast) var(--ease-standard);
+}
+.place-tile:hover{border-color:var(--color-border-strong);text-decoration:none;}
+.place-tile-name{font-size:var(--type-text-md-size);line-height:var(--type-text-md-line);font-weight:var(--font-weight-semibold);}
+.place-tile-count{font-size:var(--type-text-sm-size);line-height:var(--type-text-sm-line);color:var(--color-text-secondary);}
+.card-grid{display:grid;grid-template-columns:repeat(3, minmax(0, 1fr));gap:var(--space-4);}
+
 /* Empty / loading */
 .page-empty{text-align:left;}
 .page-empty .section-note{margin-top:var(--space-2);}
@@ -96,6 +116,9 @@
   .gym-page > .gym-actions{margin-top:var(--space-4);}
   .gym-layout{grid-template-columns:minmax(0, 1fr);gap:var(--space-5);}
   .gym-aside{order:-1;}                 /* the Essentials panel moves under the header */
+  .place-layout{grid-template-columns:minmax(0, 1fr);gap:var(--space-5);}
+  .place-aside{position:static;margin-top:0;}
+  .place-tiles,.card-grid{grid-template-columns:repeat(2, minmax(0, 1fr));}
 }
 @media (max-width:767px){
   .page{padding:var(--space-4) var(--space-4) var(--space-7);}
@@ -113,6 +136,8 @@
   .card-strip{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 calc(var(--space-4) * -1);padding:0 var(--space-4);scrollbar-width:none;}
   .card-strip::-webkit-scrollbar{display:none;}
   .card-strip .page-card{flex:0 0 72%;scroll-snap-align:start;}
+  .map-thumb.map-thumb--wide{aspect-ratio:auto;height:200px;}
+  .card-grid{grid-template-columns:minmax(0, 1fr);}
 }
 @media (max-width:599px){
   .gym-actions{padding-bottom:var(--space-2);}

@@ -179,3 +179,12 @@ test('router: paths map to views; unknown paths are notfound, never an exception
   assert.deepEqual(m('/me/saved'), ['me', { section: 'saved' }]);
   for (const bad of ['/gym/', '/gym/a/b', '/in/AUSTRALIA1', '/me/passport', '/admin', '/gym/%E0%A4%A']) assert.equal(matchRoute(bad).name, bad === '/gym/%E0%A4%A' ? 'gym' : 'notfound', bad);
 });
+
+test('geo: fitCamera frames a box (region pages) and clamps the zoom', async () => {
+  const { geo } = await mods;
+  const sydney = geo.fitCamera({ west: 150.9, south: -34.1, east: 151.4, north: -33.7 }, 360, 270);
+  assert.ok(Math.abs(sydney.lng - 151.15) < 1e-9 && sydney.lat < -33.7 && sydney.lat > -34.1);
+  assert.ok(sydney.zoom > 8 && sydney.zoom < 11, 'city-scale zoom: ' + sydney.zoom);
+  assert.equal(geo.fitCamera({ west: 151.2, south: -33.9, east: 151.2, north: -33.9 }, 360, 270).zoom, 13, 'a single point clamps to maxZoom');
+  assert.equal(geo.fitCamera({ west: -170, south: -60, east: 170, north: 70 }, 360, 270).zoom, 2, 'the world clamps to minZoom');
+});

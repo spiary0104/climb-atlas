@@ -115,3 +115,17 @@ export function wordStarts(s){
   return fold(s).split(/[^\p{L}\p{M}\p{N}]+/u).filter(Boolean);
 }
 
+
+// Centre and zoom that fit a {west,south,east,north} box into a width x height px map (Web Mercator), clamped.
+export function fitCamera(b, width, height, { minZoom = 2, maxZoom = 13, padding = 24 } = {}){
+  const mercY = lat => Math.log(Math.tan(Math.PI / 4 + Math.max(-85, Math.min(85, lat)) * Math.PI / 360));
+  const lngSpan = Math.max(1e-6, b.east - b.west);
+  const ySpan = Math.max(1e-9, mercY(b.north) - mercY(b.south));
+  const w = Math.max(1, width - padding * 2), h = Math.max(1, height - padding * 2);
+  const zx = Math.log2(w * 360 / (256 * lngSpan));
+  const zy = Math.log2(h * 2 * Math.PI / (256 * ySpan));
+  const zoom = Math.max(minZoom, Math.min(maxZoom, Math.min(zx, zy)));
+  const midY = (mercY(b.north) + mercY(b.south)) / 2;
+  const lat = (2 * Math.atan(Math.exp(midY)) - Math.PI / 2) * 180 / Math.PI;
+  return { lng: (b.west + b.east) / 2, lat, zoom: Math.round(zoom * 100) / 100 };
+}

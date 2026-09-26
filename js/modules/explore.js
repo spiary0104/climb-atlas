@@ -270,7 +270,6 @@ function placeControls(){
 
 // ----- nav entry points (nav.js) ----------------------------------------------------------------------------------
 export function showExplore(){ closeSearch(); if(!isExplore()) navigate(exploreUrl()); if(isSheetMode()) setSnap('half'); }
-export function showRegions(){ openSearch({browse: true}); }
 export function showSaved(){
   if(!window.auth.user){ showToast('Sign in to view your saved gyms'); return; }
   appState.showBookmarkedOnly = true;

@@ -21,11 +21,14 @@ export function breadcrumbHtml(crumbs){
 // A static map: a slot the page fills with a small non-interactive map (mini-map.js; the same warm dark basemap as
 // Explore, which is keyless as vector tiles -- CARTO's raster tiles need an API key), the pin, a link to Explore and the
 // basemap credit. Coordinates travel as numbers in data-* attributes, never as markup.
-export function mapThumbHtml({ lat, lng, zoom = 14, size = 120, href, label, types = null }){
+// wide: fills its column (region pages) instead of a fixed square; points: the page passes its gyms as dots.
+export function mapThumbHtml({ lat, lng, zoom = 14, size = 120, href, label, types = null, wide = false, points = false }){
   if(!Number.isFinite(lat) || !Number.isFinite(lng)) return '';
   const pin = types ? `<span class="map-thumb-pin">${pinSvg({ types })}</span>` : '';
-  return `<figure class="map-thumb-figure"><a class="map-thumb" data-theme="rock" href="${escapeHtml(href)}" data-link data-mini-map`
-    + ` data-lat="${Number(lat)}" data-lng="${Number(lng)}" data-zoom="${Number(zoom)}" style="width:${Number(size)}px;height:${Number(size)}px" aria-label="${escapeHtml(label)}">${pin}</a>`
+  const box = wide ? ' map-thumb--wide' : '';
+  const dims = wide ? '' : ` style="width:${Number(size)}px;height:${Number(size)}px"`;
+  return `<figure class="map-thumb-figure${box}"><a class="map-thumb${box}" data-theme="rock" href="${escapeHtml(href)}" data-link data-mini-map${points ? ' data-points' : ''}`
+    + ` data-lat="${Number(lat)}" data-lng="${Number(lng)}" data-zoom="${Number(zoom)}"${dims} aria-label="${escapeHtml(label)}">${pin}</a>`
     + `<figcaption class="map-thumb-credit">© OpenStreetMap · CARTO</figcaption></figure>`;
 }
 
@@ -79,6 +82,43 @@ export function gymPageHtml(g, ctx = {}){
     + `<div class="essentials-address"><p class="panel-row">${escapeHtml(g.address || where)}</p>`
     + mapThumbHtml({ lat: g.lat, lng: g.lng, zoom: 14, size: 120, href: ctx.exploreHref || '/', label: 'Show ' + (g.name || 'this gym') + ' on the map', types: g.types })
     + `</div></section>${history}</aside></div>${actions}</article>`;   // actions last: beside the title on desktop, sticky at the bottom on phones
+}
+
+// ===== Regions (sec. 6.1: countries -> regions -> cities, each a page) =================================================
+const countLabel = n => n === 1 ? '1 gym' : Number(n).toLocaleString('en-US') + ' gyms';
+
+// Tiles: a place name with its gym count (countries on /in, regions on a country page, cities on a region page).
+export function tileGridHtml(items){
+  return `<ul class="place-tiles">${items.map(t => `<li><a class="place-tile" href="${escapeHtml(t.href)}" data-link>`
+    + `<span class="place-tile-name">${escapeHtml(t.label)}</span><span class="place-tile-count tnum">${escapeHtml(countLabel(t.count))}</span></a></li>`).join('')}</ul>`;
+}
+
+// Gyms of a place: photo cards for a first look, dense rows once there are more than 20 (DNA #2).
+export const CARD_LIMIT = 20;
+export function gymCollectionHtml(items){
+  if(!items.length) return '';
+  return items.length > CARD_LIMIT
+    ? `<div class="page-list">${items.map(i => pageRowHtml(i.g, i.ctx)).join('')}</div>`
+    : `<div class="card-grid">${items.map(i => pageCardHtml(i.g, i.ctx)).join('')}</div>`;
+}
+
+// /in: every country with gyms, grouped by continent. groups: [{title, items: tiles}]
+export function regionsIndexHtml(groups, total){
+  return `<article class="page place-page"><header class="place-header"><h1 class="page-title">Regions</h1>`
+    + `<p class="place-meta tnum">${escapeHtml(countLabel(total))} in ${escapeHtml(groups.reduce((n, g) => n + g.items.length, 0))} countries</p></header>`
+    + groups.map((g, i) => `<section class="page-section" aria-labelledby="continent-${Number(i)}"><h2 class="section-title" id="continent-${Number(i)}">${escapeHtml(g.title)}</h2>${tileGridHtml(g.items)}</section>`).join('')
+    + `</article>`;
+}
+
+// Country / region / city page. p: {crumbs, title, meta, tilesTitle, tiles, gymsTitle, gyms: [{g, ctx}], map: mapThumbHtml args}
+export function placePageHtml(p){
+  const tiles = p.tiles && p.tiles.length ? `<section class="page-section" aria-labelledby="tilesTitle"><h2 class="section-title" id="tilesTitle">${escapeHtml(p.tilesTitle)}</h2>${tileGridHtml(p.tiles)}</section>` : '';
+  const gyms = p.gyms && p.gyms.length ? `<section class="page-section" aria-labelledby="gymsTitle"><h2 class="section-title" id="gymsTitle">${escapeHtml(p.gymsTitle || 'Gyms')}</h2>${gymCollectionHtml(p.gyms)}</section>` : '';
+  return `<article class="page place-page">${breadcrumbHtml(p.crumbs || [])}`
+    + `<header class="place-header"><h1 class="page-title">${escapeHtml(p.title)}</h1><p class="place-meta tnum">${escapeHtml(p.meta)}</p></header>`
+    + `<div class="place-layout"><div class="place-main">${tiles}${gyms}</div>`
+    + `<aside class="place-aside">${p.map ? mapThumbHtml({ ...p.map, wide: true, points: true }) : ''}`
+    + `${p.map ? `<p class="place-map-link"><a class="btn btn-secondary btn-sm" href="${escapeHtml(p.map.href)}" data-link>${icon('map-trifold', {size:'sm'})}Browse on the map</a></p>` : ''}</aside></div></article>`;
 }
 
 export function notFoundHtml(what = 'page'){

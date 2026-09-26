@@ -95,6 +95,11 @@ const SAFE_EXPR = [
   /^(cls|tiles|pin|history|actions)$/, /^items\.join\(''\)$/,
   /^link\(c\.href, c\.label\)$/, /^pinSvg\(\{ types \}\)$/, /^thumbHtml\(g, '(card|row)'\)$/,
   /^ctx\.nearby\.map\(n => pageCardHtml\(n\.g, n\.ctx\)\)\.join\(''\)$/,
+  // page-html.js region builders: the tile template escapes href/label/count; the rest compose reviewed builders
+  /^items\.map\(t => `<li><a class="place-tile" href="\$\{escapeHtml\(t\.href\)\}" data-link>` \+ `<span class="place-tile-name">\$\{escapeHtml\(t\.label\)\}<\/span><span class="place-tile-count tnum">\$\{escapeHtml\(countLabel\(t\.count\)\)\}<\/span><\/a><\/li>`\)\.join\(''\)$/,
+  /^items\.map\(i => page(Row|Card)Html\(i\.g, i\.ctx\)\)\.join\(''\)$/,
+  /^(tileGridHtml\((g\.items|p\.tiles)\)|gymCollectionHtml\(p\.gyms\)|breadcrumbHtml\(p\.crumbs \|\| \[\]\))$/,
+  /^(dims|gyms)$/, /^mapThumbHtml\(\{ \.\.\.p\.map, wide: true, points: true \}\)$/,
 ];
 // A conditional is safe when every branch that can be rendered is safe: a fixed string literal, a template whose own
 // interpolations are all safe, or a nested conditional (checked recursively). The condition itself is never rendered.
@@ -132,7 +137,7 @@ function interpolations(src) {
 test('HTML-building templates only interpolate escaped or reviewed-safe expressions', () => {
   const files = ['js/modules/list-html.js', 'js/modules/pin-html.js', 'js/modules/moderation-html.js', 'js/modules/logbook.js', 'js/modules/auth-ui.js',
     'js/modules/search.js', 'js/modules/list.js', 'js/modules/explore.js', 'js/modules/filters.js', 'js/modules/map.js',
-    'js/modules/page-html.js', 'js/modules/gym-page.js', 'js/modules/router.js', 'js/modules/slug.js'];
+    'js/modules/page-html.js', 'js/modules/gym-page.js', 'js/modules/router.js', 'js/modules/slug.js', 'js/modules/region-page.js', 'js/modules/mini-map.js'];
   const unsafe = [];
   for (const f of files) {
     // lines that assign to .textContent are not markup (the browser treats the value as text)
