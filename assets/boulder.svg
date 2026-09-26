@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<!--
+  Bouldeer photo placeholder (docs/DESIGN.md sec. 13, Brand Pass 2026-09-26): the cream holds boulder of the source artwork
+  (design/mascot/deer/head-on-boulder.png) as a quiet motif, gym vocabulary rather than trail contours. One shared symbol;
+  colours come from the page through inherited custom properties (the placeholder tokens in css/tokens.css), with the token values as
+  fallbacks. The boulder sits right of centre so the lower-left corner stays clear for the gym's initial (text, not art).
+  Forty of these in a grid read as one system: nothing varies but the letter.
+-->
+  <symbol id="boulder" viewBox="0 0 120 90" preserveAspectRatio="xMidYMid slice">
+    <path d="M40 92 C36 72 44 52 60 41 C75 31 97 27 111 35 C125 43 130 64 128 92 Z"
+      style="fill:var(--placeholder-boulder, #FFFCF4);stroke:var(--placeholder-line, #EBC596)" stroke-width="1.4" vector-effect="non-scaling-stroke"/>
+    <g style="stroke:var(--placeholder-line, #EBC596)" stroke-width="1.2" vector-effect="non-scaling-stroke" stroke-linejoin="round">
+      <path d="M64 55 C66 50 76 49 79 53 C81 57 77 62 71 62 C66 62 63 59 64 55 Z" style="fill:var(--placeholder-hold-a, #C3D4C7)" vector-effect="non-scaling-stroke"/>
+      <path d="M92 44 C94 41 100 41 101 44 C102 47 99 50 96 50 C93 50 91 47 92 44 Z" style="fill:var(--placeholder-hold-b, #EFD290)" vector-effect="non-scaling-stroke"/>
+      <path d="M99 66 C101 61 110 61 112 66 C113 70 109 74 105 74 C101 74 98 70 99 66 Z" style="fill:var(--placeholder-hold-a, #C3D4C7)" vector-effect="non-scaling-stroke"/>
+      <path d="M78 76 C79 73 84 73 85 76 C86 79 83 81 81 81 C79 81 77 79 78 76 Z" style="fill:var(--placeholder-hold-b, #EFD290)" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g style="fill:var(--placeholder-line, #EBC596)"><circle cx="86" cy="58" r="1"/><circle cx="72" cy="72" r="0.9"/><circle cx="108" cy="52" r="0.9"/></g>
+  </symbol>
+</svg>

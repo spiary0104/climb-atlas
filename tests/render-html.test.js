@@ -33,9 +33,9 @@ function tags(html) {
 const shape = html => tags(html).map(t => t.tag + '[' + Object.keys(t.attrs).sort().join(',') + ']');
 const hasHandlerAttrs = html => tags(html).some(t => Object.keys(t.attrs).some(n => /^on/i.test(n)));
 const allText = html => html.replace(/<[^>]*>/g, '');
-// Every <svg> must be a sprite icon or the shared contour placeholder, and every <use> must point into our own two sprites.
-const onlySpriteIcons = html => tags(html).every(t => (t.tag !== 'svg' || /^(icon|placeholder-contour|pin-svg)\b/.test(t.attrs.class || '') && t.attrs['aria-hidden'] === 'true')
-  && (t.tag !== 'use' || /^assets\/icons\.svg#i-[a-z-]+$|^assets\/contour\.svg#contour$/.test(t.attrs.href || '')));
+// Every <svg> must be a sprite icon or the shared boulder placeholder, and every <use> must point into our own sprites.
+const onlySpriteIcons = html => tags(html).every(t => (t.tag !== 'svg' || /^(icon|placeholder-art|pin-svg)\b/.test(t.attrs.class || '') && t.attrs['aria-hidden'] === 'true')
+  && (t.tag !== 'use' || /^assets\/icons\.svg#i-[a-z-]+$|^assets\/boulder\.svg#boulder$/.test(t.attrs.href || '')));
 const countSvg = html => (html.match(/<svg\b/gi) || []).length;
 
 const HOSTILE = [
@@ -107,9 +107,9 @@ test('explore builders: javascript:/data: photo is never rendered as an image; a
     assert.equal(Object.keys(imgs[0].attrs).some(n => /^on/i.test(n)), false);
     assert.match(imgs[0].attrs.class, /\bgym-photo\b/, b + ': broken photos are hidden by the capture-phase handler via .gym-photo');
   }
-  // Without a photo the contour placeholder carries the initial as text.
+  // Without a photo the boulder placeholder carries the initial as text.
   const row = list.rowHtml({ ...benignSpot, photo: null, name: 'élan' }, ctxBenign);
-  assert.ok(/<use href="assets\/contour\.svg#contour"\/>/.test(row) && allText(row).includes('É'));
+  assert.ok(/<use href="assets\/boulder\.svg#boulder"\/>/.test(row) && allText(row).includes('É'));
 });
 
 test('explore builders: quotes and HTML-special characters in ordinary text survive as text', async () => {

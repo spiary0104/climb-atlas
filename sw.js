@@ -30,6 +30,7 @@ const SHELL_FILES = [
   'css/style.css',
   'assets/icons.svg',
   'assets/contour.svg',
+  'assets/boulder.svg',
   'assets/mascot/head.svg',
   'assets/mascot/stamp-head.svg',
   'assets/brand/antlers.svg',

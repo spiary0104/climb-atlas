@@ -328,7 +328,7 @@ export function initExplore(){
     if(!isExplore() || document.querySelector('.modal-backdrop:not(.hidden)') || isSearchOpen()) return;
     if(appState.selectedId || appState.carouselIds.length){ e.preventDefault(); closePeek(); }
   });
-  // <img> error events don't bubble: a capture-phase listener hides a broken photo so the contour placeholder shows.
+  // <img> error events don't bubble: a capture-phase listener hides a broken photo so the boulder placeholder shows.
   document.addEventListener('error', (e)=>{
     if(e.target && e.target.matches && e.target.matches('img.gym-photo')) e.target.classList.add('is-broken');
   }, true);

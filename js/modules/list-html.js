@@ -1,5 +1,5 @@
 // Explore markup builders (DESIGN.md sec. 7.4, 7.10, 13): dense row, photo card, carousel card, peek card, empty states,
-// skeletons and the contour placeholder. Pure (no DOM, no appState): list.js / explore.js pass the per-user state in.
+// skeletons and the boulder placeholder. Pure (no DOM, no appState): list.js / explore.js pass the per-user state in.
 // Every database value goes through escapeHtml(); photos go through safeUrl() first. Buttons carry data-* actions that one
 // delegated listener reads back, never inline handlers, so an id or name can never become code.
 import { TYPE_LABELS } from './constants.js';
@@ -11,13 +11,13 @@ import { PROVENANCE_LABELS } from './provenance.js';
 const TYPE_CLASS = { 'indoor-bouldering': 'boulder', 'top-rope': 'toprope', 'lead-climbing': 'lead' };
 const knownTypes = types => (Array.isArray(types) ? types : []).filter(t => TYPE_CLASS[t]);
 
-// The contour placeholder: one shared symbol plus the gym's initial as text (sec. 13). Sits under any photo, so a photo
-// that fails to load (the capture-phase error handler hides it) falls back to it with no extra DOM work.
+// The boulder placeholder: one shared symbol (the deer art's holds boulder) plus the gym's initial as text (sec. 13). Sits
+// under any photo, so a photo that fails to load (the capture-phase error handler hides it) falls back to it with no extra DOM work.
 export function thumbHtml(g, size){
   const photo = safeUrl(g.photo);          // only absolute http(s) links are ever rendered as an image
   const initial = String(g.name || '?').trim().charAt(0).toUpperCase() || '?';
   return `<span class="thumb thumb--${size === 'card' ? 'card' : size === 'peek' ? 'peek' : 'row'}" aria-hidden="true">`
-    + `<svg class="placeholder-contour" aria-hidden="true" focusable="false"><use href="assets/contour.svg#contour"/></svg>`
+    + `<svg class="placeholder-art" aria-hidden="true" focusable="false"><use href="assets/boulder.svg#boulder"/></svg>`
     + `<span class="placeholder-letter">${escapeHtml(initial)}</span>`
     + `${photo ? `<img class="gym-photo" src="${escapeHtml(photo)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">` : ''}</span>`;
 }

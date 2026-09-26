@@ -231,6 +231,19 @@ test('one icon system: every icon reference exists in assets/icons.svg; the spri
   assert.match(icon('check', { size: 'sm' }), /^<svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="assets\/icons\.svg#i-check"\/><\/svg>$/);
 });
 
+// A standalone SVG file must be well-formed XML or <img>/<use> render nothing (the contour placeholder never showed
+// because its comment held "--"). Guard the cheap, common failures: "--" inside comments and an unclosed root.
+test('every SVG asset is well-formed enough to load standalone (no "--" in comments, one closed <svg> root)', () => {
+  const svgs = ["assets", "assets/mascot", "assets/brand", "icons"].flatMap(d => fs.readdirSync(path.join(ROOT, d)).filter(n => n.endsWith(".svg")).map(n => d + "/" + n));
+  assert.ok(svgs.length >= 9, "svg assets found");
+  for (const f of svgs) {
+    const src = read(f);
+    for (const c of src.matchAll(/<!--([\s\S]*?)-->/g)) assert.ok(!/--/.test(c[1]), f + ': "--" inside an XML comment');
+    assert.equal((src.replace(/<!--[\s\S]*?-->/g, "").match(/<svg\b/g) || []).length, 1, f + ': one <svg> root');
+    assert.match(src.trim(), /<\/svg>$/, f + ': closed root');
+  }
+});
+
 test('provenance is quiet: text-only roles (no fills) and a ring-dot component', () => {
   const css = read('css/components.css');
   for (const r of rules(css).filter(r => /provenance|tag-pill/.test(r.selector))) assert.equal(decl(r.body, 'background'), null, r.selector + ' has a fill');

@@ -38,7 +38,7 @@
 
 /* Static map thumbnail: raster tiles of the dark basemap (a rock object on paper), the gym's pin in the middle */
 .map-thumb-figure{margin:0;flex:none;}
-.map-thumb{position:relative;display:block;overflow:hidden;border-radius:var(--radius-sm);background:var(--map-canvas);border:var(--border-width) solid var(--color-border-subtle);}
+.map-thumb{position:relative;display:block;overflow:hidden;border-radius:var(--radius-sm);background:var(--map-paper-land);border:var(--border-width) solid var(--color-border-subtle);}
 .map-thumb .maplibregl-canvas-container,.map-thumb canvas{pointer-events:none;}
 .map-thumb-pin{position:absolute;left:50%;top:50%;z-index:1;transform:translate(-50%, -100%);line-height:0;}
 .map-thumb-credit{margin-top:var(--space-1);font-size:var(--type-micro-size);line-height:var(--type-micro-line);font-weight:var(--font-weight-medium);color:var(--color-text-secondary);text-align:right;}

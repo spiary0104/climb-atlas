@@ -32,6 +32,8 @@ export function worldZoom(){
 }
 // Style is CARTO's free, keyless "Dark Matter" vector basemap (kept per sec. 16.1; the rock theme sits on it).
 export const BASEMAP_STYLE = 'https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json';
+// Document pages (gym, region, city) show small maps on paper: CARTO Positron recoloured to the paper tokens (paperBasemap).
+export const PAPER_STYLE = 'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json';
 export const map = new maplibregl.Map({
   container: 'map',
   style: BASEMAP_STYLE,
@@ -310,6 +312,36 @@ export function warmBasemap(target = map){
     const v = target.getPaintProperty(layer.id, prop);
     if(typeof v === 'string') target.setPaintProperty(layer.id, prop, warm(v));
     else if(v && Array.isArray(v.stops)) target.setPaintProperty(layer.id, prop, {...v, stops: v.stops.map(([z, c]) => [z, warm(c)])});
+  }
+}
+
+// Paper-toned basemap for the mini maps on document pages (Brand Pass, sec. 8): Positron's light greys take the warm hue
+// of --map-paper-tint and sit just under --map-paper-land; white roads become --map-paper-road, water --map-paper-water,
+// labels --map-paper-label on a land-coloured halo. Explore keeps the dark map (warmBasemap).
+export function paperBasemap(target){
+  const tint = toHsla(cssToken('--map-paper-tint')), land = toHsla(cssToken('--map-paper-land')).l;
+  const road = cssToken('--map-paper-road'), water = cssToken('--map-paper-water');
+  const label = cssToken('--map-paper-label'), halo = cssToken('--map-paper-land');
+  const paper = c => {
+    if(typeof c !== 'string' || c === 'transparent') return c;
+    const {l, a} = toHsla(c);
+    if(a === 0) return c;
+    if(l > 0.995) return road;
+    return `hsla(${tint.h.toFixed(1)}, ${Math.min(tint.s * 100, 35).toFixed(1)}%, ${(Math.max(0, land - (1 - l) * 0.9) * 100).toFixed(1)}%, ${a})`;
+  };
+  const each = (v, f) => typeof v === 'string' ? f(v) : (v && Array.isArray(v.stops) ? {...v, stops: v.stops.map(([z, c]) => [z, f(c)])} : v);
+  for(const layer of target.getStyle().layers){
+    if(layer.type === 'symbol'){
+      if(target.getPaintProperty(layer.id, 'text-color') !== undefined) target.setPaintProperty(layer.id, 'text-color', label);
+      if(target.getPaintProperty(layer.id, 'text-halo-color') !== undefined) target.setPaintProperty(layer.id, 'text-halo-color', halo);
+      continue;
+    }
+    if(!['background', 'fill', 'line'].includes(layer.type)) continue;
+    const prop = layer.type + '-color';
+    const v = target.getPaintProperty(layer.id, prop);
+    const isWater = /water/.test(layer.id) && layer.type !== 'line';
+    const next = each(v, c => isWater ? water : paper(c));
+    if(next !== v) target.setPaintProperty(layer.id, prop, next);
   }
 }
 
