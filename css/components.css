@@ -234,6 +234,7 @@ input[type="checkbox"][role="switch"]{accent-color:var(--color-accent-solid);}
   color:var(--color-text-primary);text-decoration:none;white-space:nowrap;
 }
 .wordmark:hover{color:var(--color-text-primary);}
+.wordmark-mark{display:block;flex:none;width:var(--size-mark-lockup);height:var(--size-mark-lockup);}
 .topbar-nav{display:flex;align-items:stretch;align-self:stretch;gap:var(--space-1);}
 .topbar-nav .tab{min-height:calc(var(--size-topbar-desktop) - var(--border-width));}
 .topbar-actions{margin-left:auto;display:flex;align-items:center;gap:var(--space-3);}
@@ -412,8 +413,20 @@ input[type="checkbox"][role="switch"]{accent-color:var(--color-accent-solid);}
 .mascot{display:inline-block;flex:none;}
 .mascot:empty{display:none;}
 .mascot img{display:block;width:100%;height:100%;}
-.mascot--start{width:var(--size-mascot-start);height:var(--size-mascot-start);}
+/* START: the head in a cream medallion on the mustard disc (the fawn head alone measures 1.02:1 against mustard) */
+.mascot--start{width:var(--size-mascot-start);height:var(--size-mascot-start);border-radius:var(--radius-circle);overflow:hidden;background:var(--color-brand-fawn-subtle);border:var(--border-width) solid var(--color-brand-outline);}
 .mascot--avatar{width:var(--size-mascot-avatar);height:var(--size-mascot-avatar);border-radius:var(--radius-circle);overflow:hidden;}
-.avatar.mascot--avatar{background:var(--color-surface-default);}
+/* The default avatar is the compact seal: the head in a fawn-cream disc with the ink ring (no lettering at 32px) */
+.avatar.mascot--avatar{background:var(--color-brand-fawn-subtle);border:var(--border-width-object) solid var(--color-brand-outline);}
+
+/* The BOULDEER seal (js/modules/brand.js sealSvg). Text size is in SVG units: the seal is never shown below --size-seal. */
+.seal{display:block;flex:none;width:var(--size-seal);height:var(--size-seal);}
+.seal-disc{fill:var(--color-brand-fawn-subtle);stroke:var(--color-brand-outline);stroke-width:3;}
+.seal-inner{fill:var(--color-surface-default);stroke:var(--color-brand-fawn-muted);stroke-width:2;}
+.seal-text{fill:var(--color-text-primary);font-family:var(--font-display);font-weight:var(--font-weight-semibold);font-variation-settings:var(--font-wordmark-soft);}
+.seal-mark{fill:none;stroke:var(--color-brand-bark);stroke-width:8;stroke-linecap:round;stroke-linejoin:round;}
+.seal--mono .seal-disc,.seal--mono .seal-inner{fill:none;stroke:var(--color-stamp-ink);}
+.seal--mono .seal-text{fill:var(--color-stamp-ink);}
+.seal--mono .seal-mark{stroke:var(--color-stamp-ink);}
 .mascot--spot{width:var(--size-mascot-spot);height:var(--size-mascot-spot);}
 .mascot--milestone{width:var(--size-mascot-milestone);height:var(--size-mascot-milestone);}

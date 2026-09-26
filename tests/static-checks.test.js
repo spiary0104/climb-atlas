@@ -114,6 +114,8 @@ const SAFE_EXPR = [
   // assembled in the same builder from escaped values and literals; the helpers escape internally
   /^(extra|opts|other|submit|signIn)$/, /^(countrySelect\(d\)|typeChecks\(d\.types\))$/, /^d\.country === 'OTHER' \? '' : regionSelect\(d\)$/,
   /^textField\('[a-zA-Z]+', '[A-Za-z ]+', d\.[a-zA-Z]+\)$/,
+  // brand.js: the seal builder takes only literal options and escapes its label
+  /^sealSvg\(\)$/, /^(arc|clip|head|CREST)$/,
 ];
 // A conditional is safe when every branch that can be rendered is safe: a fixed string literal, a template whose own
 // interpolations are all safe, or a nested conditional (checked recursively). The condition itself is never rendered.
@@ -153,7 +155,7 @@ test('HTML-building templates only interpolate escaped or reviewed-safe expressi
     'js/modules/search.js', 'js/modules/list.js', 'js/modules/explore.js', 'js/modules/filters.js', 'js/modules/map.js',
     'js/modules/page-html.js', 'js/modules/gym-page.js', 'js/modules/router.js', 'js/modules/slug.js', 'js/modules/region-page.js', 'js/modules/mini-map.js',
     'js/modules/provenance.js', 'js/modules/community.js', 'js/modules/me-page.js', 'js/modules/log-page.js', 'js/modules/mod-page.js',
-    'js/modules/add-html.js', 'js/modules/add-page.js'];
+    'js/modules/add-html.js', 'js/modules/add-page.js', 'js/modules/brand.js'];
   const unsafe = [];
   for (const f of files) {
     // lines that assign to .textContent are not markup (the browser treats the value as text)

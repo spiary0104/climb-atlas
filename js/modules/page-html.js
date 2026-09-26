@@ -3,6 +3,7 @@
 // escapeHtml(); photos through safeUrl() first. Actions are data-page-action + data-spot-id; links are
 // <a href data-link> that the router turns into History API navigation. A section with no data renders nothing
 // (DNA #3); the only substitute is the single contribution prompt.
+import { sealSvg } from './brand.js';
 import { escapeHtml, safeUrl } from './html-safe.js';
 import { directionsUrl } from './utils.js';
 import { icon } from './icons.js';
@@ -169,9 +170,9 @@ export function logPageHtml(p){
 
 // /me and /me/saved, /me/climbed. p: {signedIn, section, saved: [{g, ctx}], climbed: [...], isModerator, pendingCount}
 export function mePageHtml(p){
-  const links = `<section class="page-section" aria-labelledby="aboutMeTitle"><h2 class="section-title" id="aboutMeTitle">Bouldeer</h2><p class="me-links">`
+  const links = `<section class="page-section me-brand" aria-labelledby="aboutMeTitle">${sealSvg()}<div><h2 class="section-title" id="aboutMeTitle">Bouldeer</h2><p class="me-links">`
     + `<a class="link link-quiet" href="about.html">About</a><button type="button" class="link link-quiet" data-page-action="privacy">Privacy</button>`
-    + `<button type="button" class="link link-quiet" data-page-action="terms">Terms</button></p></section>`;
+    + `<button type="button" class="link link-quiet" data-page-action="terms">Terms</button></p></div></section>`;
   if(!p.signedIn) return `<article class="page me-page"><header class="place-header"><h1 class="page-title">Me</h1>`
     + `<p class="place-meta">Save gyms, mark the ones you have climbed and keep a log of your sessions.</p></header>`
     + `<p class="page-cta"><button type="button" class="btn btn-primary" data-page-action="sign-in">Sign in</button></p>${links}</article>`;

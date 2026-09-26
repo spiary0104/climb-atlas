@@ -1,12 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-label="Bouldeer">
 <!--
-  Bouldeer app icon (docs/DESIGN.md sec. 1A, owner decision 2026-09-26: cream head-on-boulder). The full source
+  Bouldeer app icon, MASKABLE variant (docs/DESIGN.md sec. 1A, owner decision 2026-09-26: cream head-on-boulder). The full source
   composition design/mascot/deer/head-on-boulder.png as flat vector: the traced head of assets/mascot/head.svg plus the
-  whole holds boulder (hold positions measured from the source). Full-bleed fawn-cream ground; the art fills the tile ("any" purpose; icons/icon-maskable.svg keeps the 80% safe zone).
+  whole holds boulder (hold positions measured from the source). Full-bleed fawn-cream ground (fawn.1) so it works as
+  "any" and "maskable"; the art sits inside the 80% maskable safe zone (scale 0.80 about the centre).
   PNG exports: icons/icon-192.png, icon-512.png, apple-touch-icon.png (180).
 -->
   <rect width="1024" height="1024" fill="#F9EEDB"/>
-  <g transform="translate(512 512) scale(1.0) translate(-517 -506.5)">
+  <g transform="translate(512 512) scale(0.80) translate(-517 -506.5)">
     <!-- the holds boulder (behind the head) -->
     <ellipse cx="512" cy="720" rx="305" ry="238" fill="#FAECCD" stroke="#171B16" stroke-width="10"/>
     <g fill="#EADBB8"><ellipse cx="620" cy="560" rx="10" ry="6"/><ellipse cx="455" cy="760" rx="9" ry="6"/><ellipse cx="560" cy="890" rx="12" ry="7"/><ellipse cx="760" cy="740" rx="8" ry="5"/><ellipse cx="250" cy="690" rx="8" ry="5"/></g>

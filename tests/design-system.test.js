@@ -130,7 +130,9 @@ test('typography: Fraunces (--font-display) only at 18px and above, and never on
       if (decl(r.body, 'font-family') !== 'var(--font-display)') continue;
       const size = decl(r.body, 'font-size');
       const inherited = /^\.t-display-(xl|lg|md|sm)(,|$)/.test(r.selector);          // the scale classes set size per class
-      if (!inherited) assert.ok(size && px(size) >= 18, `${f} ${r.selector}: serif at ${size}`);
+      // The seal/stamp lettering is the one exception (sec. 11.4, 1A): arched caps sized in SVG units inside a mark of >= --size-seal
+      const lettering = /^\.seal-text$/.test(r.selector);
+      if (!inherited && !lettering) assert.ok(size && px(size) >= 18, `${f} ${r.selector}: serif at ${size}`);
       assert.ok(!/\b(btn|chip|input|select|textarea|label|tab)\b/.test(r.selector), `${f} ${r.selector}: serif on a control`);
     }
   }
@@ -236,25 +238,30 @@ test('provenance is quiet: text-only roles (no fills) and a ring-dot component',
 });
 
 // ===== mascot, brand, navigation ===================================================================================
-test('mascot: the flat-vector head only on START and the default avatar (sec. 12.2), never in forms/dialogs/moderation/map', () => {
+test('mascot: brand marks only where sec. 12.2 allows (START, wordmark lockup, default avatar, seal); never in forms/dialogs/moderation/map', () => {
   const html = read('index.html');
   const slots = [...html.matchAll(/<span class="mascot[^"]*"[^>]*>([\s\S]*?)<\/span>/g)];
   assert.equal(slots.length, 1, 'one mascot slot in the page: START');
   assert.match(slots[0][0], /data-mascot-slot="start"/);
   assert.equal(slots[0][1], '<img src="assets/mascot/head.svg" alt="">', 'START carries the head, decorative (empty alt)');
-  assert.equal((html.match(/assets\/mascot\//g) || []).length, 1, 'the head appears once in the page markup');
-  assert.ok(!/assets\/mascot\//.test(read('about.html')), 'not on the About page');
+  const uses = [...html.matchAll(/<[^>]*assets\/mascot\/[^>]*>/g)].map(m => m[0]);
+  assert.equal(uses.length, 2, 'the head appears twice in the shell: START (phones) and the wordmark lockup (top bar, >= 600px)');
+  assert.ok(uses.some(u => /class="wordmark-mark"/.test(u) && /alt=""/.test(u)), 'the lockup head is decorative beside the name');
+  assert.deepEqual([...read('about.html').matchAll(/<[^>]*assets\/mascot\/[^>]*>/g)].map(m => /class="wordmark-mark"/.test(m[0])), [true], 'About: the lockup only');
   const usedIn = JS.filter(f => /assets\/mascot\//.test(read(f)));
-  assert.deepEqual(usedIn, ['js/modules/auth-ui.js'], 'only the default avatar adds it from JS');
+  assert.deepEqual(usedIn, ['js/modules/auth-ui.js', 'js/modules/brand.js'], 'from JS: the default avatar and the seal builder only');
   assert.match(read('js/modules/auth-ui.js'), /<span class="avatar mascot mascot--avatar" aria-hidden="true"><img src="assets\/mascot\/head\.svg" alt=""><\/span>/);
-  const head = read('assets/mascot/head.svg');
-  assert.ok(!/<script|\son[a-z]+=|javascript:|href=|<image|<foreignObject/i.test(head), 'the head is plain vector shapes');
-  assert.ok(!/(stamp|ember|#E2793F|#E9B53B)/i.test(head.replace(/<!--[\s\S]*?-->/g, '')), 'no climb-type or mustard colour inside the character');
+  for (const f of ['assets/mascot/head.svg', 'assets/mascot/stamp-head.svg', 'assets/brand/antlers.svg', 'icons/favicon.svg', 'icons/icon.svg', 'icons/icon-maskable.svg']) {
+    const svg = read(f);
+    assert.ok(!/<script|\son[a-z]+=|javascript:|href=|<image|<foreignObject/i.test(svg), f + ' is plain vector shapes');
+    assert.ok(!/#E2793F|#3F7FA6|#8A4E7A/i.test(svg), f + ': no climb-type colour inside the character or marks');
+  }
   const dialogs = html.slice(html.indexOf('<div class="modal-backdrop'));
-  assert.ok(!/mascot/.test(dialogs), 'no mascot in dialogs');
+  assert.ok(!/mascot|sealSvg|class="seal/.test(dialogs), 'no mascot in dialogs');
   const main = html.slice(html.indexOf('<main class="map-wrap"'), html.indexOf('</main>'));
   assert.ok(!/mascot/.test(main), 'no mascot on the map');
-  for (const f of ['js/modules/moderation-html.js', 'js/modules/moderation.js', 'js/modules/modals.js', 'js/modules/map.js', 'js/modules/pin-html.js', 'js/modules/list-html.js', 'js/modules/filters.js', 'js/modules/page-html.js', 'js/modules/gym-page.js', 'js/modules/region-page.js', 'js/modules/mod-page.js', 'js/modules/add-html.js', 'js/modules/add-page.js']) assert.ok(!/mascot/.test(read(f)), f);
+  for (const f of ['js/modules/moderation-html.js', 'js/modules/moderation.js', 'js/modules/modals.js', 'js/modules/map.js', 'js/modules/pin-html.js', 'js/modules/list-html.js', 'js/modules/filters.js', 'js/modules/gym-page.js', 'js/modules/region-page.js', 'js/modules/mod-page.js', 'js/modules/add-html.js', 'js/modules/add-page.js']) assert.ok(!/mascot|sealSvg/.test(read(f)), f);
+  assert.deepEqual((read('js/modules/page-html.js').match(/sealSvg\([^)]*\)/g) || []), ['sealSvg()'], 'page-html: the seal once, in the /me brand block');
   assert.match(read('css/components.css'), /\.mascot--spot\{width:var\(--size-mascot-spot\)/);
 });
 
@@ -263,7 +270,7 @@ test('brand: Bouldeer everywhere a visitor reads it; "Climb Atlas" not reintrodu
   const visible = [...PAGES, 'manifest.json', ...JS].map(f => [f, withoutLegal(read(f)).replace(/climbatlas0104@gmail\.com/g, '').replace(/https:\/\/climbatlas\.org\/?/g, '').replace(/climbatlas[_-][a-z_-]+/g, '')]);
   for (const [f, s] of visible) assert.ok(!/Climb ?<span>?Atlas|Climb Atlas|ClimbAtlas/i.test(s), f + ' shows the old brand');
   assert.match(read('index.html'), /<title>Bouldeer — /); assert.match(read('about.html'), /<title>About — Bouldeer<\/title>/);
-  assert.match(read('index.html'), /<a class="wordmark"[^>]*>Bouldeer<\/a>/);
+  assert.match(read('index.html'), /<a class="wordmark"[^>]*>(<img class="wordmark-mark" src="assets\/mascot\/head\.svg" alt=""[^>]*>)?Bouldeer<\/a>/);
   assert.equal(JSON.parse(read('manifest.json')).name, 'Bouldeer');
 });
 

@@ -9,7 +9,8 @@
 // v8: Field Guide pass (cream surfaces, deer head on START/avatar, redrawn contour, warm basemap).
 // v9: Phase 3 pages (router, gym/region/log/me pages, page.css); every app route is served the one cached shell.
 // v10: Phase 4 community (provenance marks and lines, edit notes, /me contributions, /mod).
-const CACHE_VERSION = 'v10';
+// v11: Brand Pass (deer palette, object line, head lockup, seal, antler mark, favicon/app icon, paper mini maps).
+const CACHE_VERSION = 'v11';
 const SHELL_CACHE = 'climbatlas-shell-' + CACHE_VERSION;
 const RUNTIME_CACHE = 'climbatlas-runtime-' + CACHE_VERSION;
 const TILE_CACHE = 'climbatlas-tiles-' + CACHE_VERSION;
@@ -30,6 +31,10 @@ const SHELL_FILES = [
   'assets/icons.svg',
   'assets/contour.svg',
   'assets/mascot/head.svg',
+  'assets/mascot/stamp-head.svg',
+  'assets/brand/antlers.svg',
+  'icons/favicon.svg',
+  'icons/icon.svg',
   'js/supabase-init.js',
   'js/auth.js',
   'js/main.js',
@@ -66,6 +71,7 @@ const SHELL_FILES = [
   'js/modules/mod-page.js',
   'js/modules/add-html.js',
   'js/modules/add-page.js',
+  'js/modules/brand.js',
   'js/modules/modals.js',
   'js/modules/auth-ui.js',
   'js/modules/data-load.js',

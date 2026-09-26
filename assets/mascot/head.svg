@@ -1,62 +1,65 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="212 44 610 610" role="img" aria-label="Bouldeer deer">
 <!--
-  Bouldeer deer head (docs/DESIGN.md sec. 12.1 asset 1, colour version): the established character peeking over its
-  holds boulder, hooves on the rim. Flat vector redrawn from the owner's reference render
-  (OneDrive/Pictures/PANDABOULDERING/mascot/Cute-cartoon-deer-mascot-for-a-boulderin.png), cropped at the rim for
-  small sizes. Uses: START button (44px), default avatar (32px). Colours are artwork: ink #22312A, forest #2F6B4F and
-  the cream ramp match css/tokens.css; fawn and antler brown are the deer's own and appear nowhere else.
+  Bouldeer deer head (docs/DESIGN.md sec. 12.1 asset 1, colour version): the character peeking over its holds boulder,
+  hooves on the rim. Flat-vector trace of the source artwork design/mascot/deer/head-on-boulder.png in the same
+  1024px coordinate space (Brand Pass 2026-09-26: head outline, forehead spots and the cream muzzle re-measured from
+  the source; colours sampled from it). Cropped at the rim for small sizes. Uses: START (44px), default avatar and seal
+  (32px), app icon and favicon compositions (icons/). The outline is slightly heavier than the source (9 vs about 7
+  units) so it holds at 32px.
+  Artwork colours: outline #171B16, fawn #DD9F53, cream #FAE9C7, antler/hoof #754D33, hold green #40634B,
+  hold mustard #D5A431, boulder #FAECCD.
 -->
-  <!-- antlers: ink outline under a brown core -->
+  <!-- antlers: outline under a bark core -->
   <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <g stroke="#22312A" stroke-width="46">
-      <path d="M392 212 C386 160 378 110 372 72"/><path d="M380 142 C360 128 340 116 322 104"/><path d="M386 150 C400 130 412 115 422 102"/>
-      <path d="M642 212 C648 160 656 110 662 72"/><path d="M654 142 C674 128 694 116 712 104"/><path d="M648 150 C634 130 622 115 612 102"/>
+    <g stroke="#171B16" stroke-width="44">
+      <path d="M392 208 C386 160 378 110 372 72"/><path d="M380 142 C360 128 340 116 322 104"/><path d="M386 150 C400 130 412 115 422 102"/>
+      <path d="M642 208 C648 160 656 110 662 72"/><path d="M654 142 C674 128 694 116 712 104"/><path d="M648 150 C634 130 622 115 612 102"/>
     </g>
-    <g stroke="#6E4428" stroke-width="24">
-      <path d="M392 212 C386 160 378 110 372 72"/><path d="M380 142 C360 128 340 116 322 104"/><path d="M386 150 C400 130 412 115 422 102"/>
-      <path d="M642 212 C648 160 656 110 662 72"/><path d="M654 142 C674 128 694 116 712 104"/><path d="M648 150 C634 130 622 115 612 102"/>
+    <g stroke="#754D33" stroke-width="26">
+      <path d="M392 208 C386 160 378 110 372 72"/><path d="M380 142 C360 128 340 116 322 104"/><path d="M386 150 C400 130 412 115 422 102"/>
+      <path d="M642 208 C648 160 656 110 662 72"/><path d="M654 142 C674 128 694 116 712 104"/><path d="M648 150 C634 130 622 115 612 102"/>
     </g>
   </g>
   <!-- ears -->
-  <g stroke="#22312A" stroke-width="11" stroke-linejoin="round">
-    <path d="M348 262 C300 290 250 290 228 262 C220 230 225 200 238 182 C280 180 330 200 360 230 Z" fill="#D99A4E"/>
-    <path d="M686 262 C734 290 784 290 806 262 C814 230 809 200 796 182 C754 180 704 200 674 230 Z" fill="#D99A4E"/>
+  <g stroke="#171B16" stroke-width="9" stroke-linejoin="round">
+    <path d="M352 262 C304 290 254 290 232 262 C224 230 229 200 242 182 C284 180 334 200 364 230 Z" fill="#DD9F53"/>
+    <path d="M682 262 C730 290 780 290 802 262 C810 230 805 200 792 182 C750 180 700 200 670 230 Z" fill="#DD9F53"/>
   </g>
-  <path d="M336 250 C300 270 264 270 248 252 C242 232 244 212 252 200 C282 200 316 214 338 236 Z" fill="#F7E6C4"/>
-  <path d="M698 250 C734 270 770 270 786 252 C792 232 790 212 782 200 C752 200 718 214 696 236 Z" fill="#F7E6C4"/>
-  <!-- head, cream lower face, forehead spots -->
-  <path d="M517 180 C630 180 715 250 715 350 C715 430 690 490 660 540 L374 540 C344 490 319 430 319 350 C319 250 404 180 517 180 Z" fill="#D99A4E"/>
-  <path d="M332 404 C380 438 450 450 517 448 C584 450 654 438 702 404 C696 470 680 510 660 540 L374 540 C354 510 338 470 332 404 Z" fill="#F7E6C4"/>
-  <ellipse cx="470" cy="236" rx="14" ry="10" fill="#F7E6C4"/>
-  <ellipse cx="517" cy="230" rx="12" ry="20" fill="#F7E6C4"/>
-  <ellipse cx="564" cy="236" rx="14" ry="10" fill="#F7E6C4"/>
-  <ellipse cx="517" cy="286" rx="9" ry="14" fill="#F7E6C4"/>
-  <path d="M517 180 C630 180 715 250 715 350 C715 430 690 490 660 540 L374 540 C344 490 319 430 319 350 C319 250 404 180 517 180 Z" fill="none" stroke="#22312A" stroke-width="11" stroke-linejoin="round"/>
+  <path d="M340 250 C304 270 268 270 252 252 C246 232 248 212 256 200 C286 200 320 214 342 236 Z" fill="#FAE9C7"/>
+  <path d="M694 250 C730 270 766 270 782 252 C788 232 786 212 778 200 C748 200 714 214 692 236 Z" fill="#FAE9C7"/>
+  <!-- head, cream muzzle and lower face (high at the centre, lower at the cheeks), forehead spots -->
+  <path d="M517 174 C624 174 708 244 708 350 C708 430 684 490 655 540 L379 540 C350 490 326 430 326 350 C326 244 410 174 517 174 Z" fill="#DD9F53"/>
+  <path d="M332 434 C380 428 440 404 478 392 C498 385 536 385 556 392 C594 404 654 428 702 434 C694 480 676 512 655 540 L379 540 C358 512 340 480 332 434 Z" fill="#FAE9C7"/>
+  <ellipse cx="469.5" cy="235" rx="10.5" ry="12" fill="#FAE9C7"/>
+  <ellipse cx="518" cy="233" rx="14" ry="22" fill="#FAE9C7"/>
+  <ellipse cx="568.5" cy="236" rx="10.5" ry="12" fill="#FAE9C7"/>
+  <ellipse cx="518" cy="286" rx="9" ry="15" fill="#FAE9C7"/>
+  <path d="M517 174 C624 174 708 244 708 350 C708 430 684 490 655 540 L379 540 C350 490 326 430 326 350 C326 244 410 174 517 174 Z" fill="none" stroke="#171B16" stroke-width="9" stroke-linejoin="round"/>
   <!-- brows, eyes, nose, mouth -->
-  <g fill="none" stroke="#22312A" stroke-width="9" stroke-linecap="round">
-    <path d="M392 284 Q410 270 432 280"/><path d="M602 280 Q624 270 642 284"/>
+  <g fill="none" stroke="#171B16" stroke-width="8" stroke-linecap="round">
+    <path d="M392 282 Q410 268 432 278"/><path d="M602 278 Q624 268 642 282"/>
   </g>
-  <circle cx="422" cy="372" r="46" fill="#FFFDF8" stroke="#22312A" stroke-width="10"/>
-  <circle cx="612" cy="372" r="46" fill="#FFFDF8" stroke="#22312A" stroke-width="10"/>
-  <circle cx="432" cy="377" r="32" fill="#22312A"/>
-  <circle cx="602" cy="377" r="32" fill="#22312A"/>
-  <circle cx="420" cy="361" r="10" fill="#FFFDF8"/><circle cx="444" cy="392" r="4" fill="#FFFDF8"/>
-  <circle cx="590" cy="361" r="10" fill="#FFFDF8"/><circle cx="614" cy="392" r="4" fill="#FFFDF8"/>
-  <path d="M488 412 C488 398 546 398 546 412 C546 428 530 440 517 440 C504 440 488 428 488 412 Z" fill="#22312A"/>
+  <circle cx="421" cy="372" r="45" fill="#FFFDF8" stroke="#171B16" stroke-width="8"/>
+  <circle cx="610" cy="372" r="45" fill="#FFFDF8" stroke="#171B16" stroke-width="8"/>
+  <circle cx="431" cy="377" r="31" fill="#171B16"/>
+  <circle cx="600" cy="377" r="31" fill="#171B16"/>
+  <circle cx="421" cy="360" r="9" fill="#FFFDF8"/><circle cx="443" cy="392" r="4" fill="#FFFDF8"/>
+  <circle cx="590" cy="360" r="9" fill="#FFFDF8"/><circle cx="612" cy="392" r="4" fill="#FFFDF8"/>
+  <path d="M488 412 C488 398 546 398 546 412 C546 428 530 440 517 440 C504 440 488 428 488 412 Z" fill="#171B16"/>
   <ellipse cx="506" cy="408" rx="7" ry="4" fill="#FFFDF8"/>
-  <path d="M517 440 L517 452 M480 450 Q498 470 517 452 Q536 470 554 450" fill="none" stroke="#22312A" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M517 440 L517 452 M480 450 Q498 470 517 452 Q536 470 554 450" fill="none" stroke="#171B16" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
   <!-- the holds boulder -->
-  <ellipse cx="512" cy="720" rx="305" ry="238" fill="#F3E6C6" stroke="#22312A" stroke-width="12"/>
-  <g stroke="#22312A" stroke-width="8" stroke-linejoin="round">
-    <path d="M482 540 C490 522 540 520 556 540 C566 556 548 580 520 582 C494 584 474 560 482 540 Z" fill="#E3B23C"/>
-    <path d="M310 640 C318 610 370 600 400 625 C420 645 405 690 360 692 C325 694 302 668 310 640 Z" fill="#2F6B4F"/>
-    <path d="M628 620 C640 595 700 592 725 615 C742 632 720 660 680 660 C650 660 620 645 628 620 Z" fill="#2F6B4F"/>
+  <ellipse cx="512" cy="720" rx="305" ry="238" fill="#FAECCD" stroke="#171B16" stroke-width="10"/>
+  <g stroke="#171B16" stroke-width="7" stroke-linejoin="round">
+    <path d="M482 540 C490 522 540 520 556 540 C566 556 548 580 520 582 C494 584 474 560 482 540 Z" fill="#D5A431"/>
+    <path d="M310 640 C318 610 370 600 400 625 C420 645 405 690 360 692 C325 694 302 668 310 640 Z" fill="#40634B"/>
+    <path d="M628 620 C640 595 700 592 725 615 C742 632 720 660 680 660 C650 660 620 645 628 620 Z" fill="#40634B"/>
   </g>
-  <g fill="#22312A"><circle cx="520" cy="555" r="6"/><circle cx="360" cy="648" r="6"/><circle cx="682" cy="626" r="6"/></g>
+  <g fill="#171B16"><circle cx="520" cy="555" r="6"/><circle cx="360" cy="648" r="6"/><circle cx="682" cy="626" r="6"/></g>
   <!-- hooves on the rim -->
-  <g stroke="#22312A" stroke-width="10" stroke-linejoin="round" stroke-linecap="round">
-    <path d="M300 520 C300 470 360 452 392 480 C410 500 404 535 380 545 C350 556 300 552 300 520 Z" fill="#6E4428"/>
-    <path d="M734 520 C734 470 674 452 642 480 C624 500 630 535 654 545 C684 556 734 552 734 520 Z" fill="#6E4428"/>
+  <g stroke="#171B16" stroke-width="9" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M300 520 C300 470 360 452 392 480 C410 500 404 535 380 545 C350 556 300 552 300 520 Z" fill="#754D33"/>
+    <path d="M734 520 C734 470 674 452 642 480 C624 500 630 535 654 545 C684 556 734 552 734 520 Z" fill="#754D33"/>
     <path d="M350 505 C356 520 358 535 356 545 M684 505 C678 520 676 535 678 545" fill="none"/>
   </g>
 </svg>
