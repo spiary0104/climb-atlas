@@ -10,6 +10,7 @@ globalThis.window.matchMedia = () => ({ matches: false });
 
 const modules = (async () => ({
   list: await import('../js/modules/list-html.js'),
+  page: await import('../js/modules/page-html.js'),
   mod: await import('../js/modules/moderation-html.js'),
 }))();
 
@@ -31,7 +32,7 @@ const shape = html => tags(html).map(t => t.tag + '[' + Object.keys(t.attrs).sor
 const hasHandlerAttrs = html => tags(html).some(t => Object.keys(t.attrs).some(n => /^on/i.test(n)));
 const allText = html => html.replace(/<[^>]*>/g, '');
 // Every <svg> must be a sprite icon or the shared contour placeholder, and every <use> must point into our own two sprites.
-const onlySpriteIcons = html => tags(html).every(t => (t.tag !== 'svg' || /^(icon|placeholder-contour)\b/.test(t.attrs.class || '') && t.attrs['aria-hidden'] === 'true')
+const onlySpriteIcons = html => tags(html).every(t => (t.tag !== 'svg' || /^(icon|placeholder-contour|pin-svg)\b/.test(t.attrs.class || '') && t.attrs['aria-hidden'] === 'true')
   && (t.tag !== 'use' || /^assets\/icons\.svg#i-[a-z-]+$|^assets\/contour\.svg#contour$/.test(t.attrs.href || '')));
 const countSvg = html => (html.match(/<svg\b/gi) || []).length;
 
@@ -139,6 +140,51 @@ test('explore builders: behaviour the popup had is preserved in the peek card, a
   assert.match(list.capRowHtml(1204), /Zoom in to see all <span class="tnum">1,204<\/span>/);
   assert.deepEqual(['area', 'filters', 'search'].map(k => tags(list.emptyHtml(k, 'x')).filter(t => t.attrs['data-list-action']).map(t => t.attrs['data-list-action']).join(',')),
     ['zoom-out,add-gym', 'clear-filters', 'search-city']);
+});
+
+// ===== gym page (DESIGN.md sec. 8) =====
+const pageCtx = (over = {}) => ({ crumbs: [{ label: 'Australia', href: '/in/au' }, { label: 'NSW', href: '/in/au/nsw' }, { label: 'Surry Hills', href: '/in/au/nsw/surry-hills' }],
+  region: 'NSW', country: 'Australia', distance: '', saved: false, climbed: false, history: null, nearby: [], exploreHref: '/?c=151.2,-33.9,15', ...over });
+
+test('gym page: hostile values in every field cannot add tags/attributes or handlers', async () => {
+  const { page } = await modules;
+  const near = { g: { ...benignSpot, id: 'n1', name: 'Near' }, ctx: { region: 'NSW', href: '/gym/near', distance: '1 km away' } };
+  const benign = page.gymPageHtml(benignSpot, pageCtx({ nearby: [near], history: { count: 2, last: '2026-09-01' } }));
+  for (const h of HOSTILE) {
+    const hostile = page.gymPageHtml({ ...benignSpot, id: h, name: h, suburb: h, address: h, notes: h, types: [...benignSpot.types, h] },
+      pageCtx({ region: h, crumbs: [{ label: h, href: h }, { label: h, href: '/in/au/nsw' }, { label: h, href: '/x' }], distance: '', exploreHref: h,
+        nearby: [{ g: { ...near.g, name: h, suburb: h }, ctx: { region: h, href: h, distance: h } }], history: { count: 2, last: h } }));
+    assert.deepEqual(shape(hostile), shape(benign), 'gym page structure changed for payload ' + h);
+    assert.equal(hasHandlerAttrs(hostile), false, 'handler injected: ' + h);
+    assert.ok(!/<script/i.test(hostile), 'raw markup leaked: ' + h);
+    assert.ok(onlySpriteIcons(hostile), 'non-sprite svg for payload ' + h);
+  }
+  assert.equal(tags(page.breadcrumbHtml([{ label: 'a', href: 'javascript:alert(1)' }])).find(t => t.tag === 'a').attrs.href, 'javascript:alert(1)',
+    'breadcrumb hrefs come only from slug.js path builders (never data); escaping keeps them inert text in the attribute');
+});
+
+test('gym page: the minimum page renders no empty sections; the photo page shows the hero and no prompt (sec. 8.2, Phase 3 acceptance)', async () => {
+  const { page } = await modules;
+  const minimal = { id: 'g-1', name: 'Bare Gym', suburb: 'Somewhere', state: 'NSW', country: 'AU', types: ['top-rope'], lat: -33.9, lng: 151.2 };
+  const html = page.gymPageHtml(minimal, pageCtx());
+  const text = allText(html);
+  const headings = tags(html).filter(t => /^h[12]$/.test(t.tag)).length;
+  assert.ok(!/gym-hero/.test(html), 'no placeholder hero');
+  assert.ok(!/aboutTitle|nearbyTitle|historyTitle/.test(html), 'no About / Nearby / history without data');
+  assert.equal((html.match(/contribute-prompt/g) || []).length, 1, 'exactly one contribution prompt');
+  assert.ok(/essentialsTitle/.test(html) && /data-mini-map/.test(html), 'Essentials with the map thumbnail is always there');
+  assert.ok(text.includes('Somewhere, NSW'), 'address row falls back to the place when there is no street address');
+  assert.equal(headings, 3, 'h1 + Community + Essentials only');
+  assert.ok(!/—<|>—|undefined|null|NaN/.test(html), 'no dash placeholders or leaked empties');
+  const withPhoto = page.gymPageHtml({ ...minimal, photo: 'https://example.com/wall.jpg', notes: 'Great setting' }, pageCtx());
+  const hero = tags(withPhoto).find(t => /\bgym-hero\b/.test(t.attrs.class || ''));
+  assert.equal(hero.attrs.src, 'https://example.com/wall.jpg');
+  assert.ok(!/contribute-prompt/.test(withPhoto), 'no prompt when the page has a photo');
+  assert.ok(/aboutTitle/.test(withPhoto));
+  for (const bad of ['javascript:alert(1)', 'data:image/png;base64,AAA', '//evil/x.png']) assert.ok(!/gym-hero/.test(page.gymPageHtml({ ...minimal, photo: bad }, pageCtx())), bad);
+  const acts = tags(html).filter(t => t.attrs['data-page-action']).map(t => t.attrs['data-page-action']);
+  assert.deepEqual(acts, ['edit', 'edit', 'report', 'save', 'climbed'], 'prompt, community actions, then the action row');
+  assert.ok(!/mascot/.test(html), 'no character on gym pages (sec. 12.2)');
 });
 
 const pendingSpot = { id: 'community-aaaa', name: 'N', suburb: 'S', state: 'NSW', country: 'AU', types: ['top-rope'], address: 'A', notes: 'n', photo: 'https://example.com/p.jpg' };

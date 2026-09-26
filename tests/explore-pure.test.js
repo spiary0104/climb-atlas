@@ -12,7 +12,10 @@ const mods = (async () => ({
   geo: await import('../js/modules/geo.js'),
   idx: await import('../js/modules/search-index.js'),
   pin: await import('../js/modules/pin-html.js'),
+  slug: await import('../js/modules/slug.js'),
 }))();
+// router.js is DOM-free at import time; matchRoute is pure.
+const routerMod = import('../js/modules/router.js');
 
 test('geo: distance and its display format', async () => {
   const { geo } = await mods;
@@ -136,4 +139,43 @@ test('pins: teardrop vs dot, type colour class by priority, rings stacked select
   const odd = pin.pinSvg({ kind: '"><script>', types: ['"><img>'], selected: 'yes' });
   assert.ok(!/script|img/.test(odd));
   assert.match(odd, /pin-svg--teardrop/);
+});
+
+test('slugs: the same rule as the database migration (name + new suburb words, accents folded, id fallback, clash suffixes)', async () => {
+  const { slug } = await mods;
+  // The cases verified against supabase/migrations/*_add_spot_slugs.sql on the local database (2026-09-26).
+  assert.equal(slug.slugBase('BlocHaus', 'Marrickville', 'seed-1'), 'blochaus-marrickville');
+  assert.equal(slug.slugBase('B-PUMP Tokyo Akihabara', 'Akihabara, Tokyo', 'seed-3'), 'b-pump-tokyo-akihabara');
+  assert.equal(slug.slugBase('Boulderwelt München Ost', 'München', 'seed-4'), 'boulderwelt-munchen-ost');
+  assert.equal(slug.slugBase('東京ボルダリング', '新宿', 'seed-5'), 'seed-5');
+  assert.equal(slug.slugBase('9 Degrees Alexandria', 'Alexandria', 'g-abc123'), '9-degrees-alexandria');
+  assert.ok(slug.slugBase('x'.repeat(200), '', 'id').length <= 80);
+  const rows = [
+    { id: 'seed-2', name: 'BlocHaus', suburb: 'Marrickville', created_at: '2021-01-01' },
+    { id: 'seed-1', name: 'BlocHaus', suburb: 'Marrickville', created_at: '2020-01-01' },
+    { id: 'seed-9', name: 'Kept', suburb: 'Here', slug: 'stored-slug' },
+  ];
+  slug.assignMissingSlugs(rows);
+  assert.deepEqual(rows.map(r => r.slug), ['blochaus-marrickville-2', 'blochaus-marrickville', 'stored-slug'], 'oldest keeps the plain slug; stored slugs never change');
+  assert.equal(slug.gymPath({ slug: 'a-b' }), '/gym/a-b');
+  assert.equal(slug.gymPath({ id: 'x"><b>' }), '/gym/x%22%3E%3Cb%3E', 'ids are URL-encoded in paths');
+  assert.equal(slug.cityPath('AU', 'NSW', 'Surry Hills'), '/in/au/nsw/surry-hills');
+  assert.equal(slug.regionPath('FR', 'Île-de-France'), '/in/fr/%C3%AEle-de-france');
+});
+
+test('router: paths map to views; unknown paths are notfound, never an exception', async () => {
+  const { matchRoute } = await routerMod;
+  const m = p => { const r = matchRoute(p); return [r.name, r.params]; };
+  assert.deepEqual(m('/'), ['explore', {}]);
+  assert.deepEqual(m('/index.html'), ['explore', {}]);
+  assert.deepEqual(m('/gym/blochaus-marrickville'), ['gym', { slug: 'blochaus-marrickville' }]);
+  assert.deepEqual(m('/gym/boulderwelt-m%C3%BCnchen'), ['gym', { slug: 'boulderwelt-münchen' }]);
+  assert.deepEqual(m('/in'), ['regions', {}]);
+  assert.deepEqual(m('/in/au'), ['country', { country: 'au' }]);
+  assert.deepEqual(m('/in/au/nsw'), ['region', { country: 'au', region: 'nsw' }]);
+  assert.deepEqual(m('/in/au/nsw/surry-hills'), ['city', { country: 'au', region: 'nsw', city: 'surry-hills' }]);
+  assert.deepEqual(m('/log'), ['log', {}]);
+  assert.deepEqual(m('/me'), ['me', {}]);
+  assert.deepEqual(m('/me/saved'), ['me', { section: 'saved' }]);
+  for (const bad of ['/gym/', '/gym/a/b', '/in/AUSTRALIA1', '/me/passport', '/admin', '/gym/%E0%A4%A']) assert.equal(matchRoute(bad).name, bad === '/gym/%E0%A4%A' ? 'gym' : 'notfound', bad);
 });

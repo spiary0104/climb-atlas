@@ -114,3 +114,4 @@ export function fold(s){
 export function wordStarts(s){
   return fold(s).split(/[^\p{L}\p{M}\p{N}]+/u).filter(Boolean);
 }
+

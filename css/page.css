@@ -1,0 +1,119 @@
+/* Pages (docs/DESIGN.md sec. 8, 14): gym, region/city, log and me pages rendered by js/modules/router.js into <main id="view">.
+   Paper documents on the cream canvas: hairlines, Fraunces titles, Inter body, no shadows. Semantic tokens only. */
+
+/* Explore and the page view swap with the hidden attribute (both set their own display otherwise). */
+.explore[hidden],.page-view[hidden]{display:none;}
+.page-view{flex:1;min-height:0;overflow-y:auto;background:var(--color-surface-canvas);}
+.page-view:focus{outline:none;}
+
+.page{max-width:var(--size-page-max);margin:0 auto;padding:var(--space-5) var(--space-7) var(--space-8);}
+.page-title{
+  margin:0;
+  font-family:var(--font-display);font-size:var(--type-display-xl-size);line-height:var(--type-display-xl-line);
+  font-weight:var(--type-display-xl-weight);letter-spacing:var(--type-display-xl-tracking);
+  text-wrap:balance;
+}
+.section-title{
+  margin:0 0 var(--space-3);
+  font-family:var(--font-display);font-size:var(--type-display-md-size);line-height:var(--type-display-md-line);font-weight:var(--type-display-md-weight);
+}
+.section-note{margin:0 0 var(--space-3);max-width:var(--size-measure);font-size:var(--type-text-md-size);line-height:var(--type-text-md-line);color:var(--color-text-secondary);}
+.page-section{margin-top:var(--space-6);}
+.prose{margin:0;max-width:var(--size-measure);font-size:var(--type-text-lg-size);line-height:var(--type-text-lg-line);white-space:pre-line;overflow-wrap:anywhere;}
+
+/* Breadcrumb: Country > Region > City (text-sm, quiet links) */
+.breadcrumb{margin-bottom:var(--space-3);}
+.breadcrumb ol{display:flex;flex-wrap:wrap;gap:var(--space-1);margin:0;padding:0;list-style:none;font-size:var(--type-text-sm-size);line-height:var(--type-text-sm-line);color:var(--color-text-secondary);}
+.breadcrumb li + li::before{content:"›";margin-right:var(--space-1);color:var(--color-text-muted);}
+.breadcrumb [aria-current="page"]{color:var(--color-text-primary);}
+
+/* Panel: the one bordered container on pages (paper.0 on cream, hairline, radius 14) */
+.panel{padding:var(--space-4);background:var(--color-surface-default);border:var(--border-width) solid var(--color-border-subtle);border-radius:var(--radius-lg);}
+.panel + .panel{margin-top:var(--space-4);}
+.panel-title{
+  margin:0 0 var(--space-3);
+  font-family:var(--font-display);font-size:var(--type-display-sm-size);line-height:var(--type-display-sm-line);font-weight:var(--type-display-sm-weight);
+}
+.panel-row{margin:0;font-size:var(--type-text-md-size);line-height:var(--type-text-md-line);}
+
+/* Static map thumbnail: raster tiles of the dark basemap (a rock object on paper), the gym's pin in the middle */
+.map-thumb-figure{margin:0;flex:none;}
+.map-thumb{position:relative;display:block;overflow:hidden;border-radius:var(--radius-sm);background:var(--map-canvas);border:var(--border-width) solid var(--color-border-subtle);}
+.map-thumb .maplibregl-canvas-container,.map-thumb canvas{pointer-events:none;}
+.map-thumb-pin{position:absolute;left:50%;top:50%;z-index:1;transform:translate(-50%, -100%);line-height:0;}
+.map-thumb-credit{margin-top:var(--space-1);font-size:var(--type-micro-size);line-height:var(--type-micro-line);font-weight:var(--font-weight-medium);color:var(--color-text-secondary);text-align:right;}
+.map-thumb-pin .pin-svg{overflow:visible;}
+
+/* ===== Gym page ===================================================================================================== */
+/* Grid areas: the action row is the article's last child so it can be sticky on phones; on desktop it sits beside the title. */
+.gym-page{display:grid;grid-template-columns:minmax(0, 1fr) auto;column-gap:var(--space-5);grid-template-areas:"crumbs crumbs" "head actions" "hero hero" "layout layout";}
+.gym-page > .breadcrumb{grid-area:crumbs;}
+.gym-page > .gym-header{grid-area:head;}
+.gym-page > .gym-actions{grid-area:actions;align-self:start;}
+.gym-page > .gym-hero{grid-area:hero;}
+.gym-page > .gym-layout{grid-area:layout;}
+.gym-header{min-width:0;}
+.gym-heading{min-width:0;}
+.gym-meta{display:flex;flex-wrap:wrap;align-items:center;gap:var(--space-2);margin:var(--space-3) 0 var(--space-2);font-size:var(--type-text-md-size);line-height:var(--type-text-md-line);color:var(--color-text-secondary);}
+.gym-meta-tags{display:inline-flex;flex-wrap:wrap;gap:var(--space-1);}
+.gym-meta-tags:empty{display:none;}
+.gym-header .provenance-line{display:flex;align-items:center;gap:var(--space-1);margin:0 0 var(--space-2);}
+.contribute-prompt{margin:var(--space-2) 0 0;font-size:var(--type-text-md-size);line-height:var(--type-text-md-line);color:var(--color-text-secondary);}
+.gym-actions{display:flex;flex-wrap:wrap;gap:var(--space-2);flex:none;}
+.gym-hero{display:block;width:100%;max-height:360px;aspect-ratio:var(--hero-photo-ratio);object-fit:cover;margin-top:var(--space-5);border-radius:var(--radius-lg);background:var(--color-surface-subtle);}
+.gym-layout{display:grid;grid-template-columns:minmax(0, 1fr) var(--size-page-aside);gap:var(--space-7);margin-top:var(--space-5);}
+.gym-main > .page-section:first-child{margin-top:0;}
+.essentials-address{display:flex;align-items:flex-start;justify-content:space-between;gap:var(--space-3);}
+.community-actions{display:flex;flex-wrap:wrap;gap:var(--space-2);}
+
+/* Nearby: up to four page cards */
+.card-strip{display:grid;grid-template-columns:repeat(2, minmax(0, 1fr));gap:var(--space-4);}
+.page-card{display:flex;flex-direction:column;color:inherit;text-decoration:none;}
+.page-card:hover{text-decoration:none;}
+.page-card .gym-card-body{padding:var(--space-3) var(--space-4) var(--space-4);}
+
+/* Dense row as a link (long lists on region/city pages, Me > Saved/Climbed) */
+.page-list{border-top:var(--border-width) solid var(--color-border-divider);}
+.page-row{
+  display:flex;align-items:center;gap:var(--space-3);
+  min-height:var(--size-row-dense);padding:var(--space-2) var(--space-2);
+  border-bottom:var(--border-width) solid var(--color-border-divider);
+  color:inherit;text-decoration:none;
+  transition:background-color var(--motion-fast) var(--ease-standard);
+}
+.page-row:hover{background:var(--color-surface-raised);text-decoration:none;}
+.page-row .gym-row-meta{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+
+/* Empty / loading */
+.page-empty{text-align:left;}
+.page-empty .section-note{margin-top:var(--space-2);}
+.skeleton-title{width:50%;height:var(--space-6);margin-bottom:var(--space-5);border-radius:var(--radius-sm);background:var(--color-surface-raised);}
+
+/* ===== Responsive (sec. 8.3) ========================================================================================= */
+@media (max-width:1023px){
+  .page{padding:var(--space-5) var(--space-5) var(--space-7);}
+  .gym-page{grid-template-columns:minmax(0, 1fr);grid-template-areas:"crumbs" "head" "actions" "hero" "layout";}
+  .gym-page > .gym-actions{margin-top:var(--space-4);}
+  .gym-layout{grid-template-columns:minmax(0, 1fr);gap:var(--space-5);}
+  .gym-aside{order:-1;}                 /* the Essentials panel moves under the header */
+}
+@media (max-width:767px){
+  .page{padding:var(--space-4) var(--space-4) var(--space-7);}
+  .page-title{font-size:var(--type-display-lg-size);line-height:var(--type-display-lg-line);letter-spacing:var(--type-display-lg-tracking);}
+  /* Sticky bottom action row above the safe area (and above the tab bar, which sits below the page view) */
+  .gym-page{grid-template-areas:"crumbs" "head" "hero" "layout" "actions";}
+  .gym-page > .gym-actions{margin-top:var(--space-5);}
+  .gym-actions{
+    position:sticky;bottom:0;z-index:1;
+    display:grid;grid-template-columns:repeat(3, 1fr);
+    margin:0 calc(var(--space-4) * -1);padding:var(--space-2) var(--space-4) calc(var(--space-2) + env(safe-area-inset-bottom));
+    background:var(--color-surface-canvas);border-top:var(--border-width) solid var(--color-border-subtle);
+  }
+  .gym-actions .btn{min-height:var(--size-touch-min);padding:0 var(--space-2);}
+  .card-strip{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 calc(var(--space-4) * -1);padding:0 var(--space-4);scrollbar-width:none;}
+  .card-strip::-webkit-scrollbar{display:none;}
+  .card-strip .page-card{flex:0 0 72%;scroll-snap-align:start;}
+}
+@media (max-width:599px){
+  .gym-actions{padding-bottom:var(--space-2);}
+}

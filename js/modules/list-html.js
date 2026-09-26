@@ -82,7 +82,7 @@ export function peekHtml(g, ctx = {}){
     + `<button type="button" class="btn btn-secondary btn-sm" data-gym-action="save" data-spot-id="${id}" aria-pressed="${ctx.saved ? 'true' : 'false'}">${icon('bookmark-simple', {size:'sm'})}Save</button>`
     + `<button type="button" class="btn btn-secondary btn-sm" data-gym-action="climbed" data-spot-id="${id}" aria-pressed="${ctx.climbed ? 'true' : 'false'}">${icon('check', {size:'sm'})}Climbed</button>`
     + `<a class="btn btn-secondary btn-sm peek-directions" href="${escapeHtml(directionsUrl(g))}" target="_blank" rel="noopener noreferrer">${icon('navigation-arrow', {size:'sm'})}Directions</a></div>`
-    + `<div class="peek-more">`
+    + `<div class="peek-more">${ctx.href ? `<a class="btn btn-tertiary btn-sm" href="${escapeHtml(ctx.href)}" data-link>${icon('caret-right', {size:'sm'})}Open gym page</a>` : ''}`
     + `<button type="button" class="btn btn-tertiary btn-sm" data-gym-action="edit" data-spot-id="${id}">${icon('pencil-simple', {size:'sm'})}Suggest an edit</button>`
     + `<button type="button" class="btn btn-tertiary btn-sm" data-gym-action="report" data-spot-id="${id}">${icon('flag', {size:'sm'})}Report a problem</button></div>`;
 }

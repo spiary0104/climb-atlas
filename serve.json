@@ -1,0 +1,28 @@
+{
+  "rewrites": [
+    {
+      "source": "/gym/**",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/in",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/in/**",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/log",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/me",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/me/**",
+      "destination": "/index.html"
+    }
+  ]
+}

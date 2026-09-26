@@ -1,13 +1,16 @@
 // Explore controller (DESIGN.md sec. 7): wires the map, the scoped list, filters, search, the peek card and the mobile
 // sheet together, and keeps the URL query (?q=&place=&c=lng,lat,z&t=…&saved=1) in step so back/forward restore a view.
-//   Selection: row click -> fly + select + peek; pin click -> select + peek (desktop) / carousel (mobile); Esc, the close
-//   button or a click on empty map clears it. Hover is mirrored both ways (row <-> pin).
+//   Selection: row click -> fly + select + peek (desktop) / the gym page (mobile); pin click -> select + peek (desktop) /
+//   carousel (mobile), a carousel card opens the gym page; Esc, the close button or a click on empty map clears it.
+//   Hover is mirrored both ways (row <-> pin). Explore stays mounted behind pages (router.js), so Back restores it.
 //   Landing (sec. 19 decision 5): URL camera -> last camera on this device -> densest gym area of the home country -> world.
 import { motion } from './constants.js';
 import { decodeExploreState, encodeExploreState } from './geo.js';
 import { applyFilters, applyUrlFilters, filterUrlState, initFilters, renderFilterBar, resetFilters, setPlaceFilter, setTextFilter } from './filters.js';
 import { gymCtx, initList, markCarouselSelected, renderCarousel, renderList, scrollRowIntoView, setRowHover, setRowSelected, showSkeleton, updateRowMarks } from './list.js';
 import { peekHtml } from './list-html.js';
+import { exploreUrl, isExplore, navigate, refreshPage, registerView } from './router.js';
+import { assignMissingSlugs, gymPath } from './slug.js';
 import { LAST_CAMERA_KEY, clusterExpansionZoom, clusterLeafIds, flyToPlace, landingCamera, map, paintMarkers, rebuildClusterIndex, refreshPin, setMapHandlers, viewBounds } from './map.js';
 import { setMarksListener, toggleMark } from './marks.js';
 import { openEditModal, openReportModal, startAddGym } from './modals.js';
@@ -21,8 +24,6 @@ const byId = new Map();
 let indexedSpots = null;      // the spots array the search index and id map were built from
 let urlApplied = false;
 let freshSearch = false;      // mobile: the first four results after a search render as photo cards
-let detailsOpen = false;      // mobile: the peek card (details) is showing over the sheet
-let detailsFrom = null;       // 'carousel' | 'list' | 'search'
 let movedSinceScope = false;
 
 const spotById = id => byId.get(id) || null;
@@ -34,6 +35,8 @@ export function render(){
   if(indexedSpots !== appState.spots){
     indexedSpots = appState.spots;
     byId.clear();
+    assignMissingSlugs(appState.spots);          // only rows without a stored slug (offline data / pre-migration DB)
+    appState.bySlug = new Map(appState.spots.map(g => [g.slug, g]));
     appState.spots.forEach(g => byId.set(g.id, g));
     rebuildSearchIndex();
     if(!urlApplied){ urlApplied = true; applyUrlFilters(decodeExploreState(location.search)); }
@@ -42,6 +45,7 @@ export function render(){
   filtersChanged({write: false});
   if(appState.selectedId && !spotById(appState.selectedId)) clearSelection();
   renderPeek();
+  refreshPage();                                // a page opened before the data arrived renders now
 }
 
 function refreshList(){
@@ -59,6 +63,7 @@ function filtersChanged({push = false, write = true} = {}){
 
 // ----- URL + last camera ------------------------------------------------------------------------------------------
 function writeUrl({push = false} = {}){
+  if(!isExplore()) return;                      // a page owns the URL while it is showing
   const c = map.getCenter();
   const qs = encodeExploreState({...filterUrlState(), camera: {lng: c.lng, lat: c.lat, zoom: map.getZoom()}});
   const url = location.pathname + (qs ? '?' + qs : '') + location.hash;
@@ -70,6 +75,7 @@ function saveCamera(){
   try{ localStorage.setItem(LAST_CAMERA_KEY, JSON.stringify({lng: +c.lng.toFixed(4), lat: +c.lat.toFixed(4), zoom: +map.getZoom().toFixed(2)})); }catch(err){ /* ignore */ }
 }
 function onPopState(){
+  if(!urlApplied) return;                       // before the first load the URL is applied by render()
   const s = decodeExploreState(location.search);
   applyUrlFilters(s);
   if(s.camera) map.jumpTo({center: [s.camera.lng, s.camera.lat], zoom: s.camera.zoom});
@@ -110,7 +116,7 @@ function setHover(id){
   setRowHover(id, prev);
 }
 
-function select(id, {fly = false, details = !isSheetMode(), from = null} = {}){
+function select(id, {fly = false} = {}){
   const g = spotById(id);
   if(!g) return;
   const prev = appState.selectedId;
@@ -124,14 +130,12 @@ function select(id, {fly = false, details = !isSheetMode(), from = null} = {}){
   }
   scrollRowIntoView(id);
   markCarouselSelected(id);
-  if(details){ detailsOpen = true; detailsFrom = from; }
   renderPeek();
 }
 
 export function clearSelection(){
   const prev = appState.selectedId;
   appState.selectedId = null;
-  detailsOpen = false;
   refreshPin(prev);
   setRowSelected(null, prev);
   hideCarousel();
@@ -139,11 +143,6 @@ export function clearSelection(){
 }
 
 function closePeek(){
-  if(isSheetMode() && detailsOpen && detailsFrom === 'carousel' && appState.carouselIds.length){
-    detailsOpen = false;
-    renderPeek();
-    return;
-  }
   const back = appState.selectedId && document.querySelector(`#gymList [data-spot-id="${CSS.escape(appState.selectedId)}"][data-gym-action="open"]`);
   clearSelection();
   if(back) back.focus({preventScroll: true});
@@ -152,7 +151,7 @@ function closePeek(){
 function renderPeek(){
   const peek = $('peek');
   const g = appState.selectedId && spotById(appState.selectedId);
-  const show = !!g && (detailsOpen || !isSheetMode());
+  const show = !!g && !isSheetMode();           // mobile has no peek card: rows and carousel cards open the gym page
   if(!show){ peek.hidden = true; peek.innerHTML = ''; return; }
   const wasHidden = peek.hidden;
   peek.innerHTML = peekHtml(g, gymCtx(g));
@@ -176,14 +175,19 @@ function hideCarousel(){
 // ----- actions ------------------------------------------------------------------------------------------------------
 function gymAction(action, id){
   switch(action){
-    case 'open': select(id, {fly: true, details: true, from: 'list'}); if(isSheetMode()) setSnap('peek'); break;
-    case 'details': select(id, {details: true, from: 'carousel'}); break;
+    case 'open': if(isSheetMode()) openGymPage(id); else select(id, {fly: true}); break;
+    case 'details': openGymPage(id); break;
     case 'save': toggleMark(id, 'bookmarked'); break;
     case 'climbed': toggleMark(id, 'climbed'); break;
     case 'edit': openEditModal(id); break;
     case 'report': openReportModal(id); break;
     case 'close': closePeek(); break;
   }
+}
+
+function openGymPage(id){
+  const g = spotById(id);
+  if(g) navigate(gymPath(g));
 }
 
 function listAction(action){
@@ -196,6 +200,7 @@ function listAction(action){
 }
 
 function onPlace(place){
+  if(!isExplore()) navigate(exploreUrl());     // searching from a page returns to Explore first
   setPlaceFilter(place);
   setTextFilter('');
   flyToPlace(place);
@@ -206,12 +211,15 @@ function onPlace(place){
 function onGym(id){
   const g = spotById(id);
   if(!g) return;
+  // From a page, or on mobile (no peek card), a gym picked by name opens its page (sec. 9.3).
+  if(!isExplore() || isSheetMode()){ navigate(gymPath(g)); return; }
   // A gym picked by name is shown even if the current filters hide it.
   if(!appState.filtered.includes(g)){ resetFilters(); filtersChanged({push: true}); }
-  select(id, {fly: true, details: true, from: 'search'});
+  select(id, {fly: true});
 }
 
 function onText(text){
+  if(!isExplore()) navigate(exploreUrl());
   setTextFilter(text);
   setPlaceFilter(null);
   applyFilters();
@@ -229,6 +237,7 @@ function onMarksChanged(id){
   if(appState.showBookmarkedOnly || appState.showClimbedOnly){ filtersChanged({write: false}); }
   else { updateRowMarks(id); refreshPin(id); }
   if(appState.selectedId === id) renderPeek();
+  refreshPage();
 }
 
 // ----- search as I move -------------------------------------------------------------------------------------------
@@ -255,12 +264,12 @@ function placeControls(){
   const small = window.matchMedia(SHEET_QUERY).matches;
   $(small ? 'mapSearchSlot' : 'topbarSearchSlot').appendChild($('search'));
   $(small ? 'mapFilterSlot' : 'listFilterSlot').appendChild($('filterBar'));
-  if(!small){ detailsOpen = !!appState.selectedId; hideCarousel(); }
+  if(!small) hideCarousel();
   renderPeek();
 }
 
 // ----- nav entry points (nav.js) ----------------------------------------------------------------------------------
-export function showExplore(){ closeSearch(); if(isSheetMode()) setSnap('half'); }
+export function showExplore(){ closeSearch(); if(!isExplore()) navigate(exploreUrl()); if(isSheetMode()) setSnap('half'); }
 export function showRegions(){ openSearch({browse: true}); }
 export function showSaved(){
   if(!window.auth.user){ showToast('Sign in to view your saved gyms'); return; }
@@ -313,7 +322,14 @@ export function initExplore(){
     refreshList();
   });
   $('savedBtn').addEventListener('click', showSaved);
-  window.addEventListener('popstate', onPopState);
+  // Back/forward are routed by router.js; Explore restores its query state whenever it is (re)entered.
+  registerView('explore', { enter(params, container, {returning, initial}){
+    if(initial) return;
+    if(returning) map.resize();                // the map was hidden (0 x 0) while a page showed
+    onPopState();
+  } });
+  // The skip link targets the list on Explore and the page itself elsewhere (<base href> would turn #id into a reload).
+  document.querySelector('.skip-link').addEventListener('click', (e)=>{ e.preventDefault(); (isExplore() ? $('gymList') : $('view')).focus(); });
   // Escape closes the topmost layer only: dialogs (modals.js), the Me menu (nav.js) and search handle it first and mark it.
   document.addEventListener('keydown', (e)=>{
     if(e.key !== 'Escape' || e.defaultPrevented) return;

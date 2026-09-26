@@ -31,9 +31,10 @@ export function worldZoom(){
   return Math.min(2.4, Math.max(0.6, 1.3 + Math.log2(side * 0.85 / 490)));
 }
 // Style is CARTO's free, keyless "Dark Matter" vector basemap (kept per sec. 16.1; the rock theme sits on it).
+export const BASEMAP_STYLE = 'https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json';
 export const map = new maplibregl.Map({
   container: 'map',
-  style: 'https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json',
+  style: BASEMAP_STYLE,
   center: landingCamera ? [landingCamera.lng, landingCamera.lat] : [-162, 10],
   zoom: landingCamera ? landingCamera.zoom : worldZoom(),
   attributionControl: {compact: true}
@@ -295,7 +296,7 @@ function toHsla(colour){
   const h = d === 0 ? 0 : max === r ? 60 * (((g - b) / d) % 6) : max === g ? 60 * ((b - r) / d + 2) : 60 * ((r - g) / d + 4);
   return {h: (h + 360) % 360, s, l, a};
 }
-function warmBasemap(){
+export function warmBasemap(target = map){
   const tint = toHsla(cssToken('--map-tint')), floor = toHsla(cssToken('--map-canvas')).l;
   const warm = c => {
     if(typeof c !== 'string' || c === 'transparent') return c;
@@ -303,12 +304,12 @@ function warmBasemap(){
     if(a === 0) return c;
     return `hsla(${tint.h.toFixed(1)}, ${(tint.s * 100).toFixed(1)}%, ${(Math.max(l, floor) * 100).toFixed(1)}%, ${a})`;
   };
-  for(const layer of map.getStyle().layers){
+  for(const layer of target.getStyle().layers){
     if(!['background', 'fill', 'line'].includes(layer.type)) continue;
     const prop = layer.type + '-color';
-    const v = map.getPaintProperty(layer.id, prop);
-    if(typeof v === 'string') map.setPaintProperty(layer.id, prop, warm(v));
-    else if(v && Array.isArray(v.stops)) map.setPaintProperty(layer.id, prop, {...v, stops: v.stops.map(([z, c]) => [z, warm(c)])});
+    const v = target.getPaintProperty(layer.id, prop);
+    if(typeof v === 'string') target.setPaintProperty(layer.id, prop, warm(v));
+    else if(v && Array.isArray(v.stops)) target.setPaintProperty(layer.id, prop, {...v, stops: v.stops.map(([z, c]) => [z, warm(c)])});
   }
 }
 

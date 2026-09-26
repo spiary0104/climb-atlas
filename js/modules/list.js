@@ -5,6 +5,7 @@ import { COUNTRY_FLY_TARGETS, COUNTRY_LABELS, LIST_CAP } from './constants.js';
 import { distanceKm, formatDistance, inBounds } from './geo.js';
 import { capRowHtml, carouselCardHtml, cardHtml, emptyHtml, rowHtml, skeletonHtml } from './list-html.js';
 import { stateLabel } from './map.js';
+import { gymPath } from './slug.js';
 import { filtersActive } from './filters.js';
 import { appState } from './state.js';
 
@@ -21,6 +22,7 @@ export function gymCtx(g){
     climbed: appState.climbedIds.has(g.id),
     selected: g.id === appState.selectedId,
     distance: appState.userLocation ? formatDistance(distanceKm(appState.userLocation, g)) : '',
+    href: gymPath(g),
   };
 }
 

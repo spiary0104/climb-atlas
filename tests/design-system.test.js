@@ -11,7 +11,7 @@ const ROOT = path.resolve(__dirname, '..');
 const read = p => fs.readFileSync(path.join(ROOT, p), 'utf8');
 const stripCssComments = s => s.replace(/\/\*[\s\S]*?\*\//g, '');
 const stripJsComments = s => s.replace(/\/\*[\s\S]*?\*\//g, '').replace(/(^|[^:'"`\\])\/\/.*$/gm, '$1');
-const COMPONENT_CSS = ['css/base.css', 'css/components.css', 'css/explore.css', 'css/style.css'];
+const COMPONENT_CSS = ['css/base.css', 'css/components.css', 'css/explore.css', 'css/page.css', 'css/style.css'];
 const PAGES = ['index.html', 'about.html'];
 const modDir = path.join(ROOT, 'js', 'modules');
 const JS = ['js/main.js', 'js/auth.js', 'js/supabase-init.js', 'js/sw-register.js', ...fs.readdirSync(modDir).filter(f => f.endsWith('.js')).map(f => 'js/modules/' + f)];
@@ -212,7 +212,7 @@ test('no emoji or pictographic glyphs in the DOM, JS templates, toasts or CSS ge
     assert.equal(hit, null, `${f}: pictographic character ${hit && JSON.stringify(hit[0])}`);
     assert.ok(!/&(larr|rarr|times|#9[0-9]{3});/.test(src), f + ': glyph entity used as an icon');
   }
-  for (const f of COMPONENT_CSS) for (const m of stripCssComments(read(f)).matchAll(/content\s*:\s*"([^"]*)"/g)) assert.ok(/^( · |)$/.test(m[1]), `${f}: generated content "${m[1]}"`);
+  for (const f of COMPONENT_CSS) for (const m of stripCssComments(read(f)).matchAll(/content\s*:\s*"([^"]*)"/g)) assert.ok(/^( · |›|)$/.test(m[1]), `${f}: generated content "${m[1]}"`);   // separators only (› is the sec. 8.2 breadcrumb)
 });
 
 test('one icon system: every icon reference exists in assets/icons.svg; the sprite is plain Phosphor shapes with its licence', async () => {
@@ -254,13 +254,13 @@ test('mascot: the flat-vector head only on START and the default avatar (sec. 12
   assert.ok(!/mascot/.test(dialogs), 'no mascot in dialogs');
   const main = html.slice(html.indexOf('<main class="map-wrap"'), html.indexOf('</main>'));
   assert.ok(!/mascot/.test(main), 'no mascot on the map');
-  for (const f of ['js/modules/moderation-html.js', 'js/modules/moderation.js', 'js/modules/modals.js', 'js/modules/map.js', 'js/modules/pin-html.js', 'js/modules/list-html.js', 'js/modules/filters.js']) assert.ok(!/mascot/.test(read(f)), f);
+  for (const f of ['js/modules/moderation-html.js', 'js/modules/moderation.js', 'js/modules/modals.js', 'js/modules/map.js', 'js/modules/pin-html.js', 'js/modules/list-html.js', 'js/modules/filters.js', 'js/modules/page-html.js', 'js/modules/gym-page.js']) assert.ok(!/mascot/.test(read(f)), f);
   assert.match(read('css/components.css'), /\.mascot--spot\{width:var\(--size-mascot-spot\)/);
 });
 
-test('brand: Bouldeer everywhere a visitor reads it; "Climb Atlas" not reintroduced (the contact address and storage keys are identifiers)', () => {
+test('brand: Bouldeer everywhere a visitor reads it; "Climb Atlas" not reintroduced (the domain, contact address and storage keys are identifiers)', () => {
   const withoutLegal = s => s.replace(/<div class="modal-backdrop hidden" id="(privacy|terms)ModalBackdrop">[\s\S]*?(?=<div class="modal-backdrop|<script)/g, '');
-  const visible = [...PAGES, 'manifest.json', ...JS].map(f => [f, withoutLegal(read(f)).replace(/climbatlas0104@gmail\.com/g, '').replace(/climbatlas[_-][a-z_-]+/g, '')]);
+  const visible = [...PAGES, 'manifest.json', ...JS].map(f => [f, withoutLegal(read(f)).replace(/climbatlas0104@gmail\.com/g, '').replace(/https:\/\/climbatlas\.org\/?/g, '').replace(/climbatlas[_-][a-z_-]+/g, '')]);
   for (const [f, s] of visible) assert.ok(!/Climb ?<span>?Atlas|Climb Atlas|ClimbAtlas/i.test(s), f + ' shows the old brand');
   assert.match(read('index.html'), /<title>Bouldeer — /); assert.match(read('about.html'), /<title>About — Bouldeer<\/title>/);
   assert.match(read('index.html'), /<a class="wordmark"[^>]*>Bouldeer<\/a>/);

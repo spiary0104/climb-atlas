@@ -89,6 +89,12 @@ const SAFE_EXPR = [
   // pin-html.js: numbers, the fixed path, ring names from RING_ORDER, pinType() output and kind forced to 'dot'|'teardrop'
   /^(w|TEARDROP|shape\((w|outline)\)|r|type|kind|box|parts\.join\(''\))$/,
   /^html$/,                                                                      // search.js listbox(): wraps searchGroupHtml() output
+  // page-html.js: numbers coerced with Number(); markup assembled earlier in the same builder from escaped parts;
+  // helpers that escape internally (link, thumbHtml, pinSvg, pageCardHtml); cls is a literal class list from callers
+  /^Number\([a-z.]+\)$/,
+  /^(cls|tiles|pin|history|actions)$/, /^items\.join\(''\)$/,
+  /^link\(c\.href, c\.label\)$/, /^pinSvg\(\{ types \}\)$/, /^thumbHtml\(g, '(card|row)'\)$/,
+  /^ctx\.nearby\.map\(n => pageCardHtml\(n\.g, n\.ctx\)\)\.join\(''\)$/,
 ];
 // A conditional is safe when every branch that can be rendered is safe: a fixed string literal, a template whose own
 // interpolations are all safe, or a nested conditional (checked recursively). The condition itself is never rendered.
@@ -125,7 +131,8 @@ function interpolations(src) {
 }
 test('HTML-building templates only interpolate escaped or reviewed-safe expressions', () => {
   const files = ['js/modules/list-html.js', 'js/modules/pin-html.js', 'js/modules/moderation-html.js', 'js/modules/logbook.js', 'js/modules/auth-ui.js',
-    'js/modules/search.js', 'js/modules/list.js', 'js/modules/explore.js', 'js/modules/filters.js', 'js/modules/map.js'];
+    'js/modules/search.js', 'js/modules/list.js', 'js/modules/explore.js', 'js/modules/filters.js', 'js/modules/map.js',
+    'js/modules/page-html.js', 'js/modules/gym-page.js', 'js/modules/router.js', 'js/modules/slug.js'];
   const unsafe = [];
   for (const f of files) {
     // lines that assign to .textContent are not markup (the browser treats the value as text)
@@ -145,6 +152,7 @@ test('HTML-building templates only interpolate escaped or reviewed-safe expressi
 
 test('photo URLs are validated at every render site and at both submit handlers', () => {
   assert.ok((read('js/modules/list-html.js').match(/safeUrl\(g\.photo\)/g) || []).length === 2, 'thumbHtml and peekHtml validate the photo');
+  assert.ok(/const photo = safeUrl\(g\.photo\)/.test(read('js/modules/page-html.js')), 'the gym page hero validates the photo');
   assert.ok(/safeUrl\(photo\)/.test(read('js/modules/moderation-html.js')));
   const modals = read('js/modules/modals.js');
   assert.ok(/fPhotoRaw && !safeUrl\(fPhotoRaw\)/.test(modals) && /ePhotoRaw && !safeUrl\(ePhotoRaw\)/.test(modals));
@@ -152,7 +160,7 @@ test('photo URLs are validated at every render site and at both submit handlers'
   for (const f of moduleFiles) {
     // moderation.js only copies pe.photo into the approved-edit UPDATE payload (data, never rendered as markup)
     // filters.js only tests safeUrl(g.photo) for the "Has photos" filter (a boolean, never markup)
-    if (/list-html|moderation-html|modals\.js|html-safe|moderation\.js|filters\.js/.test(f)) continue;
+    if (/list-html|page-html|moderation-html|modals\.js|html-safe|moderation\.js|filters\.js/.test(f)) continue;
     assert.ok(!/\.photo\b/.test(stripComments(read(f))) || /\.value\s*=/.test(read(f)), 'unreviewed photo use in ' + f);
   }
 });

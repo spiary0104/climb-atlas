@@ -5,7 +5,7 @@ import { appState } from './state.js';
 import { escapeHtml, showToast } from './utils.js';
 
 // --- logbook: private per-user climbing diary (sessions + the climbs logged within each) ---
-async function loadSessions(){
+export async function loadSessions(){
   appState.sessions = [];
   const user = window.auth.user;
   if(!user || !window.sb) return;

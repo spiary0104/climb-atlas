@@ -34,6 +34,8 @@ export const appState = {
   hoverId: null,       // gym hovered in the list or on the map
   carouselIds: [],     // mobile pin-tap carousel contents
   searchIndex: null,   // search-index.js index, rebuilt when spots change
+  bySlug: new Map(),   // gym slug -> spot (gym pages)
+  sessionsLoaded: false, // the signed-in user's sessions have been fetched (gym page "Your history here")
 
   // --- map painting (map.js) ---
   visibleIndex: {},    // id -> spot, for whatever currently passes filters (feeds the cluster index)

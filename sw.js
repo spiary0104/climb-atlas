@@ -7,7 +7,8 @@
 // v7: Phase 2 Explore (explore.css, contour placeholder, list/search/sheet modules; sidebar.js + popup-html.js removed);
 //     page loads are served per path whatever the query string (Explore state lives in ?c=…).
 // v8: Field Guide pass (cream surfaces, deer head on START/avatar, redrawn contour, warm basemap).
-const CACHE_VERSION = 'v8';
+// v9: Phase 3 pages (router, gym/region/log/me pages, page.css); every app route is served the one cached shell.
+const CACHE_VERSION = 'v9';
 const SHELL_CACHE = 'climbatlas-shell-' + CACHE_VERSION;
 const RUNTIME_CACHE = 'climbatlas-runtime-' + CACHE_VERSION;
 const TILE_CACHE = 'climbatlas-tiles-' + CACHE_VERSION;
@@ -22,6 +23,7 @@ const SHELL_FILES = [
   'css/base.css',
   'css/components.css',
   'css/explore.css',
+  'css/page.css',
   'css/style.css',
   'assets/icons.svg',
   'assets/contour.svg',
@@ -49,6 +51,11 @@ const SHELL_FILES = [
   'js/modules/search.js',
   'js/modules/sheet.js',
   'js/modules/marks.js',
+  'js/modules/router.js',
+  'js/modules/slug.js',
+  'js/modules/page-html.js',
+  'js/modules/gym-page.js',
+  'js/modules/mini-map.js',
   'js/modules/modals.js',
   'js/modules/auth-ui.js',
   'js/modules/data-load.js',
@@ -137,12 +144,15 @@ async function cacheFirst(request, cacheName) {
   return response;
 }
 
-// Page loads: Explore keeps its state in the query string (?c=lng,lat,z&t=…), which changes on every pan, so the shell is
-// cached once per path and served for any query. Without this an offline reload of /?c=… would find nothing.
+// Page loads: Explore keeps its state in the query string (?c=lng,lat,z&t=…), which changes on every pan, and every app
+// route (/gym/…, /in/…, /log, /me) is the same index.html shell rendered by the router. So app routes share ONE cached
+// shell (keyed '/'), whatever the path or query, and other pages (about.html) are cached per path. Without this an
+// offline reload of /?c=… or of a gym page never visited online would find nothing.
+const APP_ROUTE = /^\/(?:index\.html)?$|^\/(?:gym|in|log|me)(?:\/|$)/;
 async function navigation(request) {
   const cache = await caches.open(SHELL_CACHE);
   const url = new URL(request.url);
-  const key = new Request(url.origin + url.pathname);
+  const key = new Request(url.origin + (APP_ROUTE.test(url.pathname) ? '/' : url.pathname));
   const cached = await cache.match(key);
   const networkPromise = fetch(request)
     .then((response) => {

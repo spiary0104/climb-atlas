@@ -202,6 +202,11 @@ test('page loads with any query string are served from the per-path shell cache 
   w.net.impl = async () => { throw new TypeError('offline'); };
   const offline = await w.dispatchFetch(nav('https://climbatlas.org/?c=2.3500,48.8600,11.00&saved=1'));
   assert.equal(await (await offline.responded).text(), '<!doctype html>shell');
+  // any app route is answered with that one shell offline, even a gym page never visited
+  const gym = await w.dispatchFetch(nav('https://climbatlas.org/gym/blochaus-marrickville'));
+  assert.equal(await (await gym.responded).text(), '<!doctype html>shell');
+  const region = await w.dispatchFetch(nav('https://climbatlas.org/in/au/nsw'));
+  assert.equal(await (await region.responded).text(), '<!doctype html>shell');
   // sub-resources are unaffected: still cached by exact URL (stale-while-revalidate)
   w.net.impl = async (req) => new Response('js', { status: 200 });
   const js = await w.dispatchFetch(get('https://climbatlas.org/js/main.js')); await js.responded;
