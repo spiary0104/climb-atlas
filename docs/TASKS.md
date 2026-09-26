@@ -11,8 +11,8 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 ### Bouldeer redesign (docs/DESIGN.md sec. 17)
 - Status: Phase 0 + 1 on `feature/bouldeer-design-foundations`; Phase 2 (Explore) stacked on it in
   `feature/bouldeer-phase-2-explore`. Neither merged; merge together. Next: Phase 3 (router, gym/region pages, slugs).
-- Phase 2 open: Lighthouse a11y >= 95 not measured; sheet drag + carousel swipe need a real phone;
-  deviations listed in the DESIGN.md decision log (2026-09-26, Phase 2).
+- Phase 2 open: Lighthouse a11y >= 95 not measured; sheet drag + carousel swipe need a real phone; Field Guide pass +
+  deer head (Higgsfield-referenced redraw, owner to approve) in DESIGN.md decision log. Retro icon/app icon: Phase 5.
 - Open for the owner: Privacy/Terms are unreviewed drafts and still name "Climb Atlas" as the party (legal review);
   human check on a real phone; PNG/iOS icons + app icon (sec. 19.7);
   START and the Log tab both read "Log" per sec. 6.5; lake/plum type colours provisional (sec. 19.1); Me menu shows own email.

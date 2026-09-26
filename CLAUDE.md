@@ -38,6 +38,7 @@ css/explore.css         Explore: list pane/sheet, rows/cards, chips, search, pin
 css/style.css           App layer (shell, map controls, forms, logbook, moderation)
 assets/icons.svg        Phosphor sprite; js/modules/icons.js icon(name)
 assets/contour.svg      Placeholder for gyms without a photo
+assets/mascot/head.svg  Deer head (START + default avatar only; DESIGN.md sec. 12.2)
 js/supabase-init.js     window.sb (classic script)
 js/auth.js              window.auth (classic script)
 js/main.js              Entry ES module: init*() in order, then boot

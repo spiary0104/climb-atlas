@@ -23,6 +23,7 @@ Line refs drift: re-grep function names rather than trusting numbers.
 | `css/style.css` | App layer: shell, toast/placing banner, MapLibre controls, add/edit form bits, logbook + moderation lists, About page |
 | `assets/icons.svg` | The one icon system: Phosphor Regular sprite (MIT); use `icon(name)` from `js/modules/icons.js` |
 | `assets/contour.svg` | Contour placeholder symbol for gyms without a photo (sec. 13) |
+| `assets/mascot/head.svg` | Flat-vector deer head: START (44px) + default avatar (32px) only (sec. 12.2; tests enforce placement) |
 | `js/supabase-init.js`, `js/auth.js` | Classic scripts: `window.sb`; `window.auth` (`init`, `onChange`, sign-in/out, `user`) |
 | `js/main.js` | Entry module: `init*()` in order, then `init()` (boot: auth → spots → `applyLanding` → marks/mod/pending → `render`) |
 | `js/modules/state.js` | `appState` — every piece of mutable state (spots, marks, filters, Explore view, markers, form state) |
@@ -84,16 +85,18 @@ URL: `?q=<text>&place=AU:NSW[:Suburb]&c=lng,lat,z&t=boulder,toprope,lead&saved=1
 Pins: dots ≤ zoom 11, teardrops above (type colour: boulder > top rope > lead; rings selected > saved > climbed).
 Clusters: supercluster radius 48, maxZoom 15; identical coordinates get fixed pixel offsets (`stackOffsets`).
 Labels: continent < 3.5 ≤ country < 5 ≤ state/city < `HOLD_ICON_ZOOM` (9); basemap place labels suppressed below.
+Basemap: CARTO Dark Matter, warmed at style load (`warmBasemap`: each colour takes `--map-tint`'s hue, keeps its lightness).
 
 ## Design system (docs/DESIGN.md)
 Components use semantic roles only (`--color-text-secondary`, `--radius-md`, `--shadow-overlay`), never
 `--palette-*` or raw values. Paper = documents; `[data-theme="rock"]` = the map region; objects floating over the
-map are `.map-float` + `data-theme="paper"` with `--shadow-raised`. Fraunces only >= 18px; Inter otherwise; no 700.
+map are `.map-float` + `data-theme="paper"` with `--shadow-raised`. Chrome and the list sit on cream `surface.canvas`; cards,
+chips, fields, the peek card and dialogs are `surface.default` on top of it. Fraunces only >= 18px; Inter otherwise; no 700.
 Buttons: `.btn` + exactly one of `.btn-primary` (one per surface) / `-secondary` / `-tertiary`, sizes `.btn-sm/-lg`,
 `.btn-icon`; destructive = `.btn-danger` (Escape never clicks it). New icon: add Phosphor path data to the sprite +
 `ICON_NAMES`. After editing tokens.css run `node scripts/build-tokens-json.js`.
 
-## Offline / PWA (`sw.js`, v7)
+## Offline / PWA (`sw.js`, v8)
 Shell precached (`SHELL_FILES`). Page loads (`mode: navigate`) are cached once per path and served for any query
 string (Explore state lives in the query). Tiles cache-first; other same-origin + CDN files stale-while-revalidate;
 CDN tags carry `crossorigin="anonymous"`. Supabase: ONLY the public `GET /rest/v1/spots?...status=eq.approved` read

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="6 3 52 52" role="img" aria-label="Bouldeer deer">
+<!--
+  Bouldeer deer head, peeking over the boulder rim (docs/DESIGN.md sec. 12.1 asset 1, colour version).
+  Flat vector redrawn from the Higgsfield reference render (job 43d9343e-99ec-4ae2-8e62-31e5522acf23, 2026-09-26).
+  Uses: START button (44px), default avatar (32px). Colours are artwork, not UI tokens: ink #22312A and the paper
+  ramp match css/tokens.css; fawn is the deer's own colour and is used nowhere else.
+-->
+  <g stroke="#22312A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <!-- antlers -->
+    <g fill="none" stroke-width="3.4">
+      <path d="M26 22 C24.5 16.5 22 12 20.5 6.5"/>
+      <path d="M23.4 14.5 L27.5 10.5"/>
+      <path d="M21.4 9.5 L18 6"/>
+      <path d="M38 22 C39.5 16.5 42 12 43.5 6.5"/>
+      <path d="M40.6 14.5 L36.5 10.5"/>
+      <path d="M42.6 9.5 L46 6"/>
+    </g>
+    <!-- ears -->
+    <path d="M24.5 26.5 C18.5 27.5 11.5 25 8.5 19.5 C14 17.5 21 18.5 25.5 23 Z" fill="#B8834A"/>
+    <path d="M39.5 26.5 C45.5 27.5 52.5 25 55.5 19.5 C50 17.5 43 18.5 38.5 23 Z" fill="#B8834A"/>
+  </g>
+  <path d="M22 24.6 C18 24.8 14 23.4 11.8 20.6 C15.4 19.8 19.6 20.6 22.6 23 Z" fill="#E9C9A0"/>
+  <path d="M42 24.6 C46 24.8 50 23.4 52.2 20.6 C48.6 19.8 44.4 20.6 41.4 23 Z" fill="#E9C9A0"/>
+  <!-- head (the rim below covers the chin) -->
+  <path d="M32 20.5 C38.6 20.5 43.4 25 43.4 31.5 C43.4 38 40.6 43 38.6 48 L25.4 48 C23.4 43 20.6 38 20.6 31.5 C20.6 25 25.4 20.5 32 20.5 Z" fill="#B8834A" stroke="#22312A" stroke-width="2.4" stroke-linejoin="round"/>
+  <ellipse cx="26.6" cy="32" rx="3.6" ry="3.1" fill="#D9A877"/>
+  <ellipse cx="37.4" cy="32" rx="3.6" ry="3.1" fill="#D9A877"/>
+  <circle cx="26.8" cy="32" r="2" fill="#22312A"/>
+  <circle cx="37.2" cy="32" r="2" fill="#22312A"/>
+  <circle cx="27.5" cy="31.3" r="0.6" fill="#FFFDF8"/>
+  <circle cx="37.9" cy="31.3" r="0.6" fill="#FFFDF8"/>
+  <ellipse cx="32" cy="41.6" rx="5.8" ry="4.6" fill="#FFFDF8"/>
+  <path d="M29.5 39.6 Q32 38.6 34.5 39.6 Q33.7 42.1 32 42.5 Q30.3 42.1 29.5 39.6 Z" fill="#22312A"/>
+  <path d="M29.8 44.4 Q32 45.4 34.2 44.4" fill="none" stroke="#22312A" stroke-width="1.2" stroke-linecap="round"/>
+  <!-- boulder rim -->
+  <path d="M-2 66 L-2 53 C6 49.5 15 48 24 47 L42 45.6 C51 45 58 45.6 66 48 L66 66 Z" fill="#D5CEBE" stroke="#22312A" stroke-width="2.4" stroke-linejoin="round"/>
+</svg>

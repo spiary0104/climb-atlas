@@ -179,7 +179,7 @@ test('precache list: every listed file exists on disk and includes the new safet
   const m = /const SHELL_FILES = \[([\s\S]*?)\];/.exec(SRC);
   const files = [...m[1].matchAll(/'([^']+)'/g)].map((x) => x[1]).filter((f) => f !== './');
   for (const f of files) assert.ok(fs.existsSync(path.join(ROOT, f)), 'missing precache file: ' + f);
-  for (const f of ['js/modules/html-safe.js', 'js/modules/list-html.js', 'js/modules/moderation-html.js', 'css/explore.css', 'assets/contour.svg']) assert.ok(files.includes(f), 'not precached: ' + f);
+  for (const f of ['js/modules/html-safe.js', 'js/modules/list-html.js', 'js/modules/moderation-html.js', 'css/explore.css', 'assets/contour.svg', 'assets/mascot/head.svg']) assert.ok(files.includes(f), 'not precached: ' + f);
   for (const f of ['css/', 'assets/']) {
     for (const n of fs.readdirSync(path.join(ROOT, f)).filter(n => /\.(css|svg)$/.test(n))) assert.ok(files.includes(f + n), 'shell file not precached: ' + f + n);
   }

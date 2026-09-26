@@ -1,6 +1,6 @@
 // Sign-in widget + sign-in modal (the auth session itself is window.auth, js/auth.js).
 import { appState } from './state.js';
-import { escapeHtml, showToast } from './utils.js';
+import { showToast } from './utils.js';
 
 // --- auth UI ---
 const authWidget = document.getElementById('authWidget');
@@ -15,9 +15,8 @@ export function renderAuthUI(user){
     ? '<button type="button" class="btn btn-tertiary" id="signOutBtn">Sign out</button>'
     : '<button type="button" class="btn btn-tertiary" id="signInBtn">Sign in</button>';
   meAccount.textContent = user ? `Signed in as ${user.email || 'you'}` : 'Not signed in';
-  const initial = ((user && user.email) || '?').trim().charAt(0).toUpperCase() || '?';
   accountSlot.innerHTML = user
-    ? `<button type="button" class="avatar-btn" data-nav="me" aria-controls="meMenu" aria-expanded="false" aria-label="Account menu"><span class="avatar" aria-hidden="true">${escapeHtml(initial)}</span></button>`
+    ? `<button type="button" class="avatar-btn" data-nav="me" aria-controls="meMenu" aria-expanded="false" aria-label="Account menu"><span class="avatar mascot mascot--avatar" aria-hidden="true"><img src="assets/mascot/head.svg" alt=""></span></button>`
     : '<button type="button" class="btn btn-tertiary" id="topSignInBtn">Sign in</button>';
   updateMarksFilterAvailability();
 }

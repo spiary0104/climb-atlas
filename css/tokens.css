@@ -176,6 +176,7 @@
   --map-horizon:var(--palette-rock-3);
   --map-fog:var(--palette-rock-0);
   --map-road-label:var(--palette-rock-8);
+  --map-tint:var(--palette-rock-4);   /* hue/saturation given to every basemap fill/line (warm dark basemap, sec. 0.4) */
 
   /* Layering */
   --z-map-overlay:400;

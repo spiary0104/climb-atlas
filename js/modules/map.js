@@ -279,6 +279,39 @@ function cssToken(name){
   return getComputedStyle(document.getElementById('main')).getPropertyValue(name).trim();
 }
 
+// Warm dark basemap (owner decision 2026-09-26, sec. 0.4 optional enhancement): CARTO Dark Matter is neutral grey with
+// blue water and roads. Every fill/line/background colour keeps its lightness and alpha but takes the hue and saturation
+// of --map-tint; nothing gets darker than --map-canvas. The map stays rock-dark (DNA #1); labels are untouched.
+const colourCtx = document.createElement('canvas').getContext('2d');
+function toHsla(colour){
+  colourCtx.fillStyle = 'transparent'; colourCtx.fillStyle = colour;   // the canvas normalises any CSS colour (an invalid one leaves the reset)
+  const n = colourCtx.fillStyle.match(/[\d.]+/g) || [];
+  let r, g, b, a = 1;
+  if(colourCtx.fillStyle[0] === '#'){ const h = colourCtx.fillStyle; r = parseInt(h.slice(1, 3), 16); g = parseInt(h.slice(3, 5), 16); b = parseInt(h.slice(5, 7), 16); }
+  else [r, g, b, a = 1] = n.map(Number);
+  r /= 255; g /= 255; b /= 255;
+  const max = Math.max(r, g, b), min = Math.min(r, g, b), l = (max + min) / 2, d = max - min;
+  const s = d === 0 ? 0 : d / (1 - Math.abs(2 * l - 1));
+  const h = d === 0 ? 0 : max === r ? 60 * (((g - b) / d) % 6) : max === g ? 60 * ((b - r) / d + 2) : 60 * ((r - g) / d + 4);
+  return {h: (h + 360) % 360, s, l, a};
+}
+function warmBasemap(){
+  const tint = toHsla(cssToken('--map-tint')), floor = toHsla(cssToken('--map-canvas')).l;
+  const warm = c => {
+    if(typeof c !== 'string' || c === 'transparent') return c;
+    const {l, a} = toHsla(c);
+    if(a === 0) return c;
+    return `hsla(${tint.h.toFixed(1)}, ${(tint.s * 100).toFixed(1)}%, ${(Math.max(l, floor) * 100).toFixed(1)}%, ${a})`;
+  };
+  for(const layer of map.getStyle().layers){
+    if(!['background', 'fill', 'line'].includes(layer.type)) continue;
+    const prop = layer.type + '-color';
+    const v = map.getPaintProperty(layer.id, prop);
+    if(typeof v === 'string') map.setPaintProperty(layer.id, prop, warm(v));
+    else if(v && Array.isArray(v.stops)) map.setPaintProperty(layer.id, prop, {...v, stops: v.stops.map(([z, c]) => [z, warm(c)])});
+  }
+}
+
 export function initMap(){
   map.addControl(new maplibregl.NavigationControl({showCompass:false}), 'bottom-right');
   // Location is never requested on load (sec. 19 decision 5); this control asks when the visitor taps it.
@@ -289,6 +322,7 @@ export function initMap(){
 
   map.once('style.load', ()=>{
     map.setProjection({type:'globe'});
+    try{ warmBasemap(); }catch(err){ console.warn('Could not warm the basemap colours', err); }
     try{
       // Atmosphere tinted to the rock palette rather than the default sky blue.
       map.setSky({

@@ -221,7 +221,7 @@ input[type="checkbox"][role="switch"]{accent-color:var(--color-accent-solid);}
   display:flex;align-items:center;gap:var(--space-5);
   min-height:var(--size-topbar-desktop);
   padding:0 var(--space-5);
-  background:var(--color-surface-default);
+  background:var(--color-surface-canvas);          /* cream (sec. 6.4); cards and fields sit on it in paper.0 */
   border-bottom:var(--border-width) solid var(--color-border-subtle);
 }
 .wordmark{
@@ -271,7 +271,7 @@ input[type="checkbox"][role="switch"]{accent-color:var(--color-accent-solid);}
   grid-template-columns:repeat(5, 1fr);align-items:end;
   min-height:var(--size-tabbar-content);
   padding:0 var(--space-2) env(safe-area-inset-bottom);
-  background:var(--color-surface-default);
+  background:var(--color-surface-canvas);          /* "on cream" (sec. 6.5) */
   border-top:var(--border-width) solid var(--color-border-subtle);
 }
 .tabbar-item{
@@ -412,5 +412,6 @@ input[type="checkbox"][role="switch"]{accent-color:var(--color-accent-solid);}
 .mascot img{display:block;width:100%;height:100%;}
 .mascot--start{width:var(--size-mascot-start);height:var(--size-mascot-start);}
 .mascot--avatar{width:var(--size-mascot-avatar);height:var(--size-mascot-avatar);border-radius:var(--radius-circle);overflow:hidden;}
+.avatar.mascot--avatar{background:var(--color-surface-default);}
 .mascot--spot{width:var(--size-mascot-spot);height:var(--size-mascot-spot);}
 .mascot--milestone{width:var(--size-mascot-milestone);height:var(--size-mascot-milestone);}

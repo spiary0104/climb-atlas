@@ -5,7 +5,7 @@
 export const SHEET_QUERY = '(max-width: 1023px)';
 const SNAPS = { peek: 0.18, half: 0.52, full: 0.92 };
 const $ = id => document.getElementById(id);
-let snap = 'peek';
+let snap = 'half';          // first open at half (owner decision 2026-09-26); pin taps drop it to peek
 let minPeekPx = 0;          // raised while the pin-tap carousel is showing, so the carousel fits at peek
 
 export const isSheetMode = () => window.matchMedia(SHEET_QUERY).matches;

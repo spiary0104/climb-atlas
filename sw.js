@@ -6,7 +6,8 @@
 // v6: Bouldeer design foundations (new CSS files, icon sprite, nav.js/icons.js; css/chips.css removed).
 // v7: Phase 2 Explore (explore.css, contour placeholder, list/search/sheet modules; sidebar.js + popup-html.js removed);
 //     page loads are served per path whatever the query string (Explore state lives in ?c=…).
-const CACHE_VERSION = 'v7';
+// v8: Field Guide pass (cream surfaces, deer head on START/avatar, redrawn contour, warm basemap).
+const CACHE_VERSION = 'v8';
 const SHELL_CACHE = 'climbatlas-shell-' + CACHE_VERSION;
 const RUNTIME_CACHE = 'climbatlas-runtime-' + CACHE_VERSION;
 const TILE_CACHE = 'climbatlas-tiles-' + CACHE_VERSION;
@@ -24,6 +25,7 @@ const SHELL_FILES = [
   'css/style.css',
   'assets/icons.svg',
   'assets/contour.svg',
+  'assets/mascot/head.svg',
   'js/supabase-init.js',
   'js/auth.js',
   'js/main.js',

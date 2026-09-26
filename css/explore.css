@@ -8,7 +8,7 @@
   position:relative;flex:none;
   width:var(--size-list-pane);
   display:flex;flex-direction:column;min-height:0;
-  background:var(--color-surface-default);
+  background:var(--color-surface-canvas);          /* the list is a document: rows sit on cream */
   border-right:var(--border-width) solid var(--color-border-subtle);
 }
 .sheet-inner{flex:1;display:flex;flex-direction:column;min-height:0;}
@@ -33,8 +33,13 @@
   padding:var(--space-1) var(--space-4) var(--space-2);
   border-bottom:var(--border-width) solid var(--color-border-divider);
 }
-.list-count{margin:0;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:var(--type-text-sm-size);line-height:var(--type-text-sm-line);color:var(--color-text-secondary);}
-.list-count strong{color:var(--color-text-primary);font-weight:var(--font-weight-semibold);}
+.list-count{
+  margin:0;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+  font-family:var(--font-display);font-size:var(--type-display-sm-size);line-height:var(--type-display-sm-line);font-weight:var(--font-weight-medium);
+  color:var(--color-text-primary);
+}
+.list-count strong{font-weight:var(--font-weight-semibold);font-feature-settings:var(--font-features-numeric);}
+#statusPlace{color:var(--color-text-secondary);}
 .list-tools{display:flex;align-items:center;gap:var(--space-2);flex:none;}
 .select.select-sm{width:auto;min-height:var(--size-control-sm);padding:0 var(--space-2);font-size:var(--type-text-sm-size);line-height:var(--type-text-sm-line);}
 .seg{display:inline-flex;border:var(--border-width) solid var(--color-border-subtle);border-radius:var(--radius-md);overflow:hidden;}
@@ -271,6 +276,7 @@
   width:var(--size-peek);max-height:calc(100% - var(--space-8) - var(--space-4));overflow-y:auto;
   padding:var(--space-4);border-radius:var(--radius-lg);
 }
+.peek.map-float{border-color:var(--color-border-strong);}   /* the ink hairline (sec. 4.2); beats .map-float's subtle border */
 .peek[hidden]{display:none;}
 .peek-head{display:flex;align-items:flex-start;justify-content:space-between;gap:var(--space-2);margin-bottom:var(--space-3);}
 .peek-name{margin:0;font-family:var(--font-display);font-size:var(--type-display-md-size);line-height:var(--type-display-md-line);font-weight:var(--type-display-md-weight);}
@@ -376,6 +382,10 @@
 }
 @media (max-width:599px){
   .peek{bottom:var(--size-tabbar);padding-bottom:var(--space-4);}
+  /* The Fraunces count line gets its own line on phones instead of truncating beside sort and the view switch. */
+  .list-status{flex-wrap:wrap;row-gap:var(--space-1);}
+  .list-count{flex:1 0 100%;}
+  .list-tools{margin-left:auto;}
 }
 
 /* Controls that toggle with the hidden attribute keep their own display otherwise (.btn is inline-flex). */

@@ -236,12 +236,20 @@ test('provenance is quiet: text-only roles (no fills) and a ring-dot component',
 });
 
 // ===== mascot, brand, navigation ===================================================================================
-test('mascot: hooks only (no artwork placed yet), never in forms/dialogs/moderation/map, sizes from tokens', () => {
+test('mascot: the flat-vector head only on START and the default avatar (sec. 12.2), never in forms/dialogs/moderation/map', () => {
   const html = read('index.html');
   const slots = [...html.matchAll(/<span class="mascot[^"]*"[^>]*>([\s\S]*?)<\/span>/g)];
-  assert.ok(slots.length >= 1, 'START has a mascot slot');
-  for (const s of slots) assert.equal(s[1], '', 'mascot slot must stay empty until the asset is approved');
-  assert.ok(!/<img[^>]*(mascot|deer)/i.test(html + read('about.html')), 'no mascot image in the DOM yet');
+  assert.equal(slots.length, 1, 'one mascot slot in the page: START');
+  assert.match(slots[0][0], /data-mascot-slot="start"/);
+  assert.equal(slots[0][1], '<img src="assets/mascot/head.svg" alt="">', 'START carries the head, decorative (empty alt)');
+  assert.equal((html.match(/assets\/mascot\//g) || []).length, 1, 'the head appears once in the page markup');
+  assert.ok(!/assets\/mascot\//.test(read('about.html')), 'not on the About page');
+  const usedIn = JS.filter(f => /assets\/mascot\//.test(read(f)));
+  assert.deepEqual(usedIn, ['js/modules/auth-ui.js'], 'only the default avatar adds it from JS');
+  assert.match(read('js/modules/auth-ui.js'), /<span class="avatar mascot mascot--avatar" aria-hidden="true"><img src="assets\/mascot\/head\.svg" alt=""><\/span>/);
+  const head = read('assets/mascot/head.svg');
+  assert.ok(!/<script|\son[a-z]+=|javascript:|href=|<image|<foreignObject/i.test(head), 'the head is plain vector shapes');
+  assert.ok(!/(stamp|ember|#E2793F|#E9B53B)/i.test(head.replace(/<!--[\s\S]*?-->/g, '')), 'no climb-type or mustard colour inside the character');
   const dialogs = html.slice(html.indexOf('<div class="modal-backdrop'));
   assert.ok(!/mascot/.test(dialogs), 'no mascot in dialogs');
   const main = html.slice(html.indexOf('<main class="map-wrap"'), html.indexOf('</main>'));
@@ -277,4 +285,20 @@ test('every external script and stylesheet is requested with crossorigin (opaque
     for (const m of html.matchAll(/<script\b[^>]*\bsrc="https:[^"]*"[^>]*>/g)) assert.match(m[0], /crossorigin="anonymous"/, f + ': ' + m[0]);
     for (const m of html.matchAll(/<link\b[^>]*rel="stylesheet"[^>]*href="https:[^"]*"[^>]*>/g)) assert.match(m[0], /crossorigin="anonymous"/, f + ': ' + m[0]);
   }
+});
+
+// ===== Field Guide pass (decision 2026-09-26): cream canvas, Fraunces section hero, ink peek card, warm basemap ==========
+test('field guide: chrome and the list sit on the cream canvas; cards, chips, fields and the peek card stay paper on top', () => {
+  const bg = (f, sel) => { const r = rules(read(f)).find(x => x.selector === sel); return r && decl(r.body, 'background'); };
+  assert.equal(bg('css/components.css', '.topbar'), 'var(--color-surface-canvas)');
+  assert.equal(bg('css/components.css', '.tabbar'), 'var(--color-surface-canvas)');
+  assert.equal(bg('css/explore.css', '.list-pane'), 'var(--color-surface-canvas)');
+  for (const [f, sel] of [['css/components.css', '.chip'], ['css/explore.css', '.gym-card'], ['css/components.css', '.modal'], ['css/components.css', '.menu']]) {
+    assert.equal(bg(f, sel), 'var(--color-surface-default)', sel + ' stays paper.0');
+  }
+  const head = rules(read('css/explore.css')).find(r => r.selector === '.list-count').body;
+  assert.equal(decl(head, 'font-family'), 'var(--font-display)', 'the count line is the Fraunces section hero (sec. 3)');
+  assert.equal(decl(rules(read('css/explore.css')).find(r => r.selector === '.peek.map-float').body, 'border-color'), 'var(--color-border-strong)', 'peek card ink hairline (sec. 4.2)');
+  assert.deepEqual([...read('index.html').matchAll(/<meta name="theme-color" content="([^"]+)"/g)].map(m => m[1]), [T.parseTokensCss(read('css/tokens.css')).base['--palette-paper-2']], 'browser chrome is cream');
+  assert.match(read('js/modules/map.js'), /cssToken\('--map-tint'\)/, 'the basemap is warmed from a token');
 });
