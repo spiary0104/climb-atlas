@@ -1,37 +1,62 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="6 3 52 52" role="img" aria-label="Bouldeer deer">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="212 44 610 610" role="img" aria-label="Bouldeer deer">
 <!--
-  Bouldeer deer head, peeking over the boulder rim (docs/DESIGN.md sec. 12.1 asset 1, colour version).
-  Flat vector redrawn from the Higgsfield reference render (job 43d9343e-99ec-4ae2-8e62-31e5522acf23, 2026-09-26).
-  Uses: START button (44px), default avatar (32px). Colours are artwork, not UI tokens: ink #22312A and the paper
-  ramp match css/tokens.css; fawn is the deer's own colour and is used nowhere else.
+  Bouldeer deer head (docs/DESIGN.md sec. 12.1 asset 1, colour version): the established character peeking over its
+  holds boulder, hooves on the rim. Flat vector redrawn from the owner's reference render
+  (OneDrive/Pictures/PANDABOULDERING/mascot/Cute-cartoon-deer-mascot-for-a-boulderin.png), cropped at the rim for
+  small sizes. Uses: START button (44px), default avatar (32px). Colours are artwork: ink #22312A, forest #2F6B4F and
+  the cream ramp match css/tokens.css; fawn and antler brown are the deer's own and appear nowhere else.
 -->
-  <g stroke="#22312A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-    <!-- antlers -->
-    <g fill="none" stroke-width="3.4">
-      <path d="M26 22 C24.5 16.5 22 12 20.5 6.5"/>
-      <path d="M23.4 14.5 L27.5 10.5"/>
-      <path d="M21.4 9.5 L18 6"/>
-      <path d="M38 22 C39.5 16.5 42 12 43.5 6.5"/>
-      <path d="M40.6 14.5 L36.5 10.5"/>
-      <path d="M42.6 9.5 L46 6"/>
+  <!-- antlers: ink outline under a brown core -->
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <g stroke="#22312A" stroke-width="46">
+      <path d="M392 212 C386 160 378 110 372 72"/><path d="M380 142 C360 128 340 116 322 104"/><path d="M386 150 C400 130 412 115 422 102"/>
+      <path d="M642 212 C648 160 656 110 662 72"/><path d="M654 142 C674 128 694 116 712 104"/><path d="M648 150 C634 130 622 115 612 102"/>
     </g>
-    <!-- ears -->
-    <path d="M24.5 26.5 C18.5 27.5 11.5 25 8.5 19.5 C14 17.5 21 18.5 25.5 23 Z" fill="#B8834A"/>
-    <path d="M39.5 26.5 C45.5 27.5 52.5 25 55.5 19.5 C50 17.5 43 18.5 38.5 23 Z" fill="#B8834A"/>
+    <g stroke="#6E4428" stroke-width="24">
+      <path d="M392 212 C386 160 378 110 372 72"/><path d="M380 142 C360 128 340 116 322 104"/><path d="M386 150 C400 130 412 115 422 102"/>
+      <path d="M642 212 C648 160 656 110 662 72"/><path d="M654 142 C674 128 694 116 712 104"/><path d="M648 150 C634 130 622 115 612 102"/>
+    </g>
   </g>
-  <path d="M22 24.6 C18 24.8 14 23.4 11.8 20.6 C15.4 19.8 19.6 20.6 22.6 23 Z" fill="#E9C9A0"/>
-  <path d="M42 24.6 C46 24.8 50 23.4 52.2 20.6 C48.6 19.8 44.4 20.6 41.4 23 Z" fill="#E9C9A0"/>
-  <!-- head (the rim below covers the chin) -->
-  <path d="M32 20.5 C38.6 20.5 43.4 25 43.4 31.5 C43.4 38 40.6 43 38.6 48 L25.4 48 C23.4 43 20.6 38 20.6 31.5 C20.6 25 25.4 20.5 32 20.5 Z" fill="#B8834A" stroke="#22312A" stroke-width="2.4" stroke-linejoin="round"/>
-  <ellipse cx="26.6" cy="32" rx="3.6" ry="3.1" fill="#D9A877"/>
-  <ellipse cx="37.4" cy="32" rx="3.6" ry="3.1" fill="#D9A877"/>
-  <circle cx="26.8" cy="32" r="2" fill="#22312A"/>
-  <circle cx="37.2" cy="32" r="2" fill="#22312A"/>
-  <circle cx="27.5" cy="31.3" r="0.6" fill="#FFFDF8"/>
-  <circle cx="37.9" cy="31.3" r="0.6" fill="#FFFDF8"/>
-  <ellipse cx="32" cy="41.6" rx="5.8" ry="4.6" fill="#FFFDF8"/>
-  <path d="M29.5 39.6 Q32 38.6 34.5 39.6 Q33.7 42.1 32 42.5 Q30.3 42.1 29.5 39.6 Z" fill="#22312A"/>
-  <path d="M29.8 44.4 Q32 45.4 34.2 44.4" fill="none" stroke="#22312A" stroke-width="1.2" stroke-linecap="round"/>
-  <!-- boulder rim -->
-  <path d="M-2 66 L-2 53 C6 49.5 15 48 24 47 L42 45.6 C51 45 58 45.6 66 48 L66 66 Z" fill="#D5CEBE" stroke="#22312A" stroke-width="2.4" stroke-linejoin="round"/>
+  <!-- ears -->
+  <g stroke="#22312A" stroke-width="11" stroke-linejoin="round">
+    <path d="M348 262 C300 290 250 290 228 262 C220 230 225 200 238 182 C280 180 330 200 360 230 Z" fill="#D99A4E"/>
+    <path d="M686 262 C734 290 784 290 806 262 C814 230 809 200 796 182 C754 180 704 200 674 230 Z" fill="#D99A4E"/>
+  </g>
+  <path d="M336 250 C300 270 264 270 248 252 C242 232 244 212 252 200 C282 200 316 214 338 236 Z" fill="#F7E6C4"/>
+  <path d="M698 250 C734 270 770 270 786 252 C792 232 790 212 782 200 C752 200 718 214 696 236 Z" fill="#F7E6C4"/>
+  <!-- head, cream lower face, forehead spots -->
+  <path d="M517 180 C630 180 715 250 715 350 C715 430 690 490 660 540 L374 540 C344 490 319 430 319 350 C319 250 404 180 517 180 Z" fill="#D99A4E"/>
+  <path d="M332 404 C380 438 450 450 517 448 C584 450 654 438 702 404 C696 470 680 510 660 540 L374 540 C354 510 338 470 332 404 Z" fill="#F7E6C4"/>
+  <ellipse cx="470" cy="236" rx="14" ry="10" fill="#F7E6C4"/>
+  <ellipse cx="517" cy="230" rx="12" ry="20" fill="#F7E6C4"/>
+  <ellipse cx="564" cy="236" rx="14" ry="10" fill="#F7E6C4"/>
+  <ellipse cx="517" cy="286" rx="9" ry="14" fill="#F7E6C4"/>
+  <path d="M517 180 C630 180 715 250 715 350 C715 430 690 490 660 540 L374 540 C344 490 319 430 319 350 C319 250 404 180 517 180 Z" fill="none" stroke="#22312A" stroke-width="11" stroke-linejoin="round"/>
+  <!-- brows, eyes, nose, mouth -->
+  <g fill="none" stroke="#22312A" stroke-width="9" stroke-linecap="round">
+    <path d="M392 284 Q410 270 432 280"/><path d="M602 280 Q624 270 642 284"/>
+  </g>
+  <circle cx="422" cy="372" r="46" fill="#FFFDF8" stroke="#22312A" stroke-width="10"/>
+  <circle cx="612" cy="372" r="46" fill="#FFFDF8" stroke="#22312A" stroke-width="10"/>
+  <circle cx="432" cy="377" r="32" fill="#22312A"/>
+  <circle cx="602" cy="377" r="32" fill="#22312A"/>
+  <circle cx="420" cy="361" r="10" fill="#FFFDF8"/><circle cx="444" cy="392" r="4" fill="#FFFDF8"/>
+  <circle cx="590" cy="361" r="10" fill="#FFFDF8"/><circle cx="614" cy="392" r="4" fill="#FFFDF8"/>
+  <path d="M488 412 C488 398 546 398 546 412 C546 428 530 440 517 440 C504 440 488 428 488 412 Z" fill="#22312A"/>
+  <ellipse cx="506" cy="408" rx="7" ry="4" fill="#FFFDF8"/>
+  <path d="M517 440 L517 452 M480 450 Q498 470 517 452 Q536 470 554 450" fill="none" stroke="#22312A" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- the holds boulder -->
+  <ellipse cx="512" cy="720" rx="305" ry="238" fill="#F3E6C6" stroke="#22312A" stroke-width="12"/>
+  <g stroke="#22312A" stroke-width="8" stroke-linejoin="round">
+    <path d="M482 540 C490 522 540 520 556 540 C566 556 548 580 520 582 C494 584 474 560 482 540 Z" fill="#E3B23C"/>
+    <path d="M310 640 C318 610 370 600 400 625 C420 645 405 690 360 692 C325 694 302 668 310 640 Z" fill="#2F6B4F"/>
+    <path d="M628 620 C640 595 700 592 725 615 C742 632 720 660 680 660 C650 660 620 645 628 620 Z" fill="#2F6B4F"/>
+  </g>
+  <g fill="#22312A"><circle cx="520" cy="555" r="6"/><circle cx="360" cy="648" r="6"/><circle cx="682" cy="626" r="6"/></g>
+  <!-- hooves on the rim -->
+  <g stroke="#22312A" stroke-width="10" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M300 520 C300 470 360 452 392 480 C410 500 404 535 380 545 C350 556 300 552 300 520 Z" fill="#6E4428"/>
+    <path d="M734 520 C734 470 674 452 642 480 C624 500 630 535 654 545 C684 556 734 552 734 520 Z" fill="#6E4428"/>
+    <path d="M350 505 C356 520 358 535 356 545 M684 505 C678 520 676 535 678 545" fill="none"/>
+  </g>
 </svg>
