@@ -103,7 +103,8 @@
 .gym-photo.is-broken{display:none;}
 
 /* ===== Photo card (opt-in; 1 column, 2 at >= 1440px) ================================================================= */
-.gym-list.is-cards{display:grid;grid-template-columns:1fr;align-content:start;gap:var(--space-4);padding:var(--space-4);}
+.gym-list.is-cards{display:grid;grid-template-columns:1fr;grid-auto-rows:max-content;align-content:start;gap:var(--space-4);padding:var(--space-4);}
+/* max-content rows: the cards clip (overflow:hidden), so auto rows had a 0 minimum and squeezed into the pane instead of scrolling */
 .gym-card{
   position:relative;overflow:hidden;
   background:var(--color-surface-default);
