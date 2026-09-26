@@ -22,16 +22,10 @@ export function renderAuthUI(user){
   updateMarksFilterAvailability();
 }
 
+// Saved/Climbed filters need an account: signing out switches them off (the chip row re-renders from appState on the
+// render() that follows every auth change; tapping those chips while signed out opens sign-in, filters.js).
 function updateMarksFilterAvailability(){
-  const signedIn = !!window.auth.user;
-  const climbedFilter = document.getElementById('filterClimbed');
-  const bookmarkedFilter = document.getElementById('filterBookmarked');
-  [climbedFilter, bookmarkedFilter].forEach(el=>{
-    if(!el) return;
-    el.disabled = !signedIn;
-    if(!signedIn && el.checked) el.checked = false;
-  });
-  if(!signedIn){ appState.showClimbedOnly = false; appState.showBookmarkedOnly = false; }
+  if(!window.auth.user){ appState.showClimbedOnly = false; appState.showBookmarkedOnly = false; }
 }
 
 export function openAuthModal(){

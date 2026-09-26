@@ -1,9 +1,10 @@
 // The one icon system (Phosphor Regular sprite in assets/icons.svg; DESIGN.md sec. 16.3). Pure, no DOM, so HTML builders
 // and tests can use it. Only names in ICON_NAMES are accepted: an unknown name is a programming error, never data.
 export const ICON_NAMES = Object.freeze([
-  'arrow-left', 'book-open', 'bookmark-simple', 'caret-down', 'caret-right', 'check', 'check-circle', 'flag', 'info',
-  'magnifying-glass', 'map-trifold', 'navigation-arrow', 'pencil-simple', 'plus', 'smiley', 'smiley-meh', 'smiley-nervous',
-  'smiley-sad', 'smiley-wink', 'squares-four', 'user', 'warning-circle', 'x',
+  'arrow-left', 'book-open', 'bookmark-simple', 'buildings', 'caret-down', 'caret-right', 'caret-up', 'check', 'check-circle',
+  'clock-counter-clockwise', 'crosshair-simple', 'flag', 'globe-hemisphere-west', 'info', 'list', 'magnifying-glass', 'map-pin',
+  'map-trifold', 'mountains', 'navigation-arrow', 'pencil-simple', 'plus', 'sliders-horizontal', 'smiley', 'smiley-meh',
+  'smiley-nervous', 'smiley-sad', 'smiley-wink', 'squares-four', 'user', 'warning-circle', 'x',
 ]);
 const KNOWN = new Set(ICON_NAMES);
 const SIZES = { sm: ' icon-sm', md: '', lg: ' icon-lg' };

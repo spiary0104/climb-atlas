@@ -11,7 +11,7 @@ const ROOT = path.resolve(__dirname, '..');
 const read = p => fs.readFileSync(path.join(ROOT, p), 'utf8');
 const stripCssComments = s => s.replace(/\/\*[\s\S]*?\*\//g, '');
 const stripJsComments = s => s.replace(/\/\*[\s\S]*?\*\//g, '').replace(/(^|[^:'"`\\])\/\/.*$/gm, '$1');
-const COMPONENT_CSS = ['css/base.css', 'css/components.css', 'css/style.css'];
+const COMPONENT_CSS = ['css/base.css', 'css/components.css', 'css/explore.css', 'css/style.css'];
 const PAGES = ['index.html', 'about.html'];
 const modDir = path.join(ROOT, 'js', 'modules');
 const JS = ['js/main.js', 'js/auth.js', 'js/supabase-init.js', 'js/sw-register.js', ...fs.readdirSync(modDir).filter(f => f.endsWith('.js')).map(f => 'js/modules/' + f)];
@@ -22,7 +22,7 @@ const DEFINED = new Set([...Object.keys(tokens.base), ...Object.keys(tokens.pape
 function rules(css) {
   return [...stripCssComments(css).matchAll(/([^{}]+)\{([^{}]*)\}/g)].map(m => ({ selector: m[1].trim().replace(/\s+/g, ' '), body: m[2] }));
 }
-const classesOf = tag => ((/class="([^"]*)"/.exec(tag) || [])[1] || '').split(/\s+/).filter(Boolean);
+const classesOf = tag => ((/class="([^"]*)"/.exec(tag.replace(/\$\{[^}]*\}/g, ' ')) || [])[1] || '').split(/\s+/).filter(Boolean);
 const decl = (body, prop) => { const m = new RegExp('(?:^|;)\\s*' + prop + '\\s*:\\s*([^;]+)').exec(body); return m ? m[1].trim() : null; };
 
 // ===== tokens: architecture, parity with design/tokens.json ======================================================
@@ -57,8 +57,14 @@ test('tokens: three layers -- primitives only in tokens.css, every role themed c
 
 test('every var(--x) used in CSS, HTML and JS resolves to a defined token (catches retired names like --text-dim, --accent, --chip)', () => {
   const unknown = [];
+  // Layout values measured at runtime (sheet.js) are set with style.setProperty and always read with a CSS fallback.
+  const RUNTIME = new Set(JS.flatMap(f => [...read(f).matchAll(/setProperty\('(--[a-z0-9-]+)'/g)].map(m => m[1])));
   for (const f of [...COMPONENT_CSS, ...PAGES, ...JS, 'css/tokens.css']) {
-    for (const m of read(f).matchAll(/var\((--[a-z0-9-]+)/g)) if (!DEFINED.has(m[1])) unknown.push(f + ': ' + m[1]);
+    for (const m of read(f).matchAll(/var\((--[a-z0-9-]+)(,?)/g)) {
+      if (DEFINED.has(m[1])) continue;
+      if (RUNTIME.has(m[1]) && m[2] === ',') continue;
+      unknown.push(f + ': ' + m[1]);
+    }
   }
   assert.deepEqual([...new Set(unknown)], []);
 });
@@ -85,10 +91,11 @@ test('the region colour system is gone (no per-region variables, no chips.css, n
   assert.ok(!/<span class="dot"><\/span>/.test(read('index.html')), 'region chips still carry colour dots');
 });
 
-test('climb-type colours appear only through the type roles (pins, swatches, type dots/tags)', () => {
-  assert.match(read('js/modules/constants.js'), /'indoor-bouldering':'var\(--color-type-boulder\)'/);
+test('climb-type colours appear only through the type roles (pins, type dots/tags)', () => {
+  const css = read('css/explore.css');
+  for (const [cls, role] of [['boulder', 'boulder'], ['toprope', 'toprope'], ['lead', 'lead']]) assert.match(css, new RegExp('\\.pin-body--' + cls + '\\{fill:var\\(--color-type-' + role + '\\);\\}'), 'pin colour for ' + cls);
   const uses = COMPONENT_CSS.flatMap(f => rules(read(f)).filter(r => /--color-type-/.test(r.body)).map(r => r.selector));
-  for (const s of uses) assert.match(s, /type-tag|type-dot/, 'type colour used outside type tags/dots: ' + s);
+  for (const s of uses) assert.match(s, /type-tag|type-dot|pin-body/, 'type colour used outside pins and type tags/dots: ' + s);
 });
 
 // ===== typography ==================================================================================================
@@ -132,7 +139,7 @@ test('typography: Fraunces (--font-display) only at 18px and above, and never on
 
 // ===== surfaces: radius and shadows ===============================================================================
 test('radius: only the scale (6/10/14/20) plus pill/circle/checkbox; pill only on chips, the primary button, search, START, grabber', () => {
-  const PILL_OK = /\.btn-primary|\.chip\b|\.search-field input|\.start-disc|\.sheet-grabber/;
+  const PILL_OK = /\.btn-primary|\.chip\b|\.search-field input|\.start-disc|\.sheet-grabber|\.pin-label|\.map-toggle\b/;   // + the pin label pill and the map chip (sec. 7.2, 7.7)
   for (const f of COMPONENT_CSS) {
     for (const r of rules(read(f))) {
       const v = decl(r.body, 'border-radius');
@@ -144,8 +151,8 @@ test('radius: only the scale (6/10/14/20) plus pill/circle/checkbox; pill only o
 });
 
 test('shadows: exactly two; raised only on objects floating over the map, overlay only on dialogs/sheets/menus/drawer; nothing else', () => {
-  const RAISED_OK = /\.map-float|\.toast|\.maplibregl-popup-content|\.maplibregl-ctrl-group/;
-  const OVERLAY_OK = /\.modal\b|\.menu\b|\.sheet\b|\.sidebar\.open/;
+  const RAISED_OK = /\.map-float|\.toast|\.maplibregl-ctrl-group|\.pin-label|\.map-search-slot/;
+  const OVERLAY_OK = /\.modal\b|\.menu\b|\.sheet\b|\.list-pane\b|\.peek\b|\.search-panel\b/;   // list pane + peek become sheets below 1024px
   for (const f of COMPONENT_CSS) {
     for (const r of rules(read(f))) {
       const v = decl(r.body, 'box-shadow');
@@ -163,17 +170,20 @@ test('themes: the map region is rock, and every floating object inside it is pap
   const html = read('index.html');
   assert.match(html, /<main class="map-wrap"[^>]*data-theme="rock"/);
   const main = html.slice(html.indexOf('<main class="map-wrap"'), html.indexOf('</main>'));
-  const floats = [...main.matchAll(/<div\b[^>]*>/g)].map(m => m[0]).filter(t => ['legend', 'hint-banner', 'placing-banner'].some(c => classesOf(t).includes(c)));
-  assert.equal(floats.length, 3, 'legend, hint banner and placing banner found');
+  const floats = [...main.matchAll(/<(div|button)\b[^>]*>/g)].map(m => m[0]).filter(t => ['map-toggle', 'placing-banner'].some(c => classesOf(t).includes(c)) || /id="searchThisArea"/.test(t));
+  assert.equal(floats.length, 3, '"Search as I move", "Search this area" and the placing banner found');
   for (const t of floats) { assert.ok(classesOf(t).includes('map-float'), t + ' is not a map-float'); assert.match(t, /data-theme="paper"/, t + ' is not paper'); }
-  assert.match(read('css/tokens.css'), /\[data-theme="rock"\] \.maplibregl-popup\{/, 'MapLibre popups resolve to paper roles');
+  assert.match(main, /<div class="map-top" data-theme="paper">/, 'search + chips over the map are paper');
+  assert.match(html, /<section class="peek map-float"[^>]*data-theme="paper"/, 'the peek card is a paper map-float');
+  assert.match(read('js/modules/map.js'), /label\.dataset\.theme = 'paper'/, 'pin labels are paper objects');
+  assert.ok(!/\.legend\b|id="legend|hint-banner|maplibregl-popup/.test(main + read('css/explore.css') + read('css/style.css')), 'legend, hint banner and popups are gone (sec. 6.6, 16.3)');
   for (const f of PAGES) assert.match(read(f), /data-theme="paper"/, f);
 });
 
 // ===== components ==================================================================================================
 function buttonsIn(src) { return [...src.matchAll(/<button\b[^>]*>/g)].map(m => m[0]); }
 test('buttons: every button is a .btn tier or a documented component control; retired classes are gone', () => {
-  const CONTROLS = ['chip', 'tab', 'tabbar-item', 'start-btn', 'region-header', 'country-label', 'legend-header', 'gym-main', 'avatar-btn', 'link'];
+  const CONTROLS = ['chip', 'tab', 'tabbar-item', 'start-btn', 'gym-row-main', 'gym-card-main', 'carousel-card', 'seg-btn', 'map-toggle', 'sheet-grabber-btn', 'avatar-btn', 'link'];
   const sources = [...PAGES.map(f => [f, read(f)]), ...JS.map(f => [f, stripJsComments(read(f))])];
   for (const [f, src] of sources) {
     for (const b of buttonsIn(src)) {
@@ -236,7 +246,7 @@ test('mascot: hooks only (no artwork placed yet), never in forms/dialogs/moderat
   assert.ok(!/mascot/.test(dialogs), 'no mascot in dialogs');
   const main = html.slice(html.indexOf('<main class="map-wrap"'), html.indexOf('</main>'));
   assert.ok(!/mascot/.test(main), 'no mascot on the map');
-  for (const f of ['js/modules/moderation-html.js', 'js/modules/moderation.js', 'js/modules/modals.js', 'js/modules/map.js']) assert.ok(!/mascot/.test(read(f)), f);
+  for (const f of ['js/modules/moderation-html.js', 'js/modules/moderation.js', 'js/modules/modals.js', 'js/modules/map.js', 'js/modules/pin-html.js', 'js/modules/list-html.js', 'js/modules/filters.js']) assert.ok(!/mascot/.test(read(f)), f);
   assert.match(read('css/components.css'), /\.mascot--spot\{width:var\(--size-mascot-spot\)/);
 });
 

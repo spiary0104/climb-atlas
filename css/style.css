@@ -1,6 +1,7 @@
-/* App layer: the Explore shell (top bar, list pane, map region), map overlays, logbook and moderation lists.
+/* App layer: the shell (top bar, Me menu, notices), shared map-overlay objects, MapLibre control overrides, logbook and
+   moderation lists, long-form dialogs and the About page. Explore itself lives in css/explore.css.
    Semantic and component tokens only (css/tokens.css); shared components live in css/components.css.
-   Phase 2 splits this into css/explore.css / css/page.css / css/mod.css (docs/DESIGN.md sec. 16.2). */
+   Phase 3/4 move the page-level parts into css/page.css / css/mod.css (docs/DESIGN.md sec. 16.2). */
 
 body.app-body{overflow:hidden;}
 .app{display:flex;flex-direction:column;height:100vh;height:100dvh;}
@@ -14,106 +15,6 @@ body.app-body{overflow:hidden;}
 .offline-banner{border-radius:var(--radius-none);border-width:0 0 var(--border-width);justify-content:center;}
 .offline-banner.hidden{display:none;}
 
-/* ===== Layout: list pane (paper) + map region (rock) ============================================================= */
-.layout{flex:1;display:flex;min-height:0;position:relative;}
-.sidebar{
-  width:var(--size-list-pane);min-width:var(--size-list-pane);
-  display:flex;flex-direction:column;min-height:0;
-  background:var(--color-surface-default);
-  border-right:var(--border-width) solid var(--color-border-subtle);
-}
-.sidebar-controls{
-  padding:var(--space-4) var(--space-4) var(--space-3);
-  border-bottom:var(--border-width) solid var(--color-border-subtle);
-  /* Capped and independently scrollable so the gym list below always keeps a usable height
-     (docs/archive "Sidebar chip growth"). */
-  max-height:50vh;overflow-y:auto;flex-shrink:0;
-}
-.sidebar-controls .search-field{margin-bottom:var(--space-3);}
-.list-status{
-  display:flex;align-items:baseline;gap:var(--space-1);
-  padding:var(--space-2) var(--space-4);
-  border-bottom:var(--border-width) solid var(--color-border-divider);
-  font-size:var(--type-text-sm-size);line-height:var(--type-text-sm-line);color:var(--color-text-secondary);
-}
-.list-status strong{color:var(--color-text-primary);font-weight:var(--font-weight-semibold);}
-
-/* Featured destinations: navigation (fly-to), not a filter, so they are small secondary buttons, not chips. */
-.featured-destinations{margin-bottom:var(--space-3);}
-.featured-row{display:flex;flex-wrap:wrap;gap:var(--space-2);}
-
-/* Region accordion: region -> country -> region chips. Region is text; no region colours (DESIGN sec. 5.2). */
-.region-header,.country-label{
-  appearance:none;
-  display:flex;align-items:center;gap:var(--space-1);
-  width:100%;min-height:var(--size-control-sm);
-  padding:0;border:0;background:none;
-  text-align:left;cursor:pointer;
-  color:var(--color-text-primary);
-  letter-spacing:0;
-}
-.region-header{margin:var(--space-2) 0 var(--space-1);font-size:var(--type-text-md-size);line-height:var(--type-text-md-line);font-weight:var(--font-weight-semibold);}
-.country-label{margin:var(--space-1) 0;font-size:var(--type-text-sm-size);line-height:var(--type-text-sm-line);font-weight:var(--font-weight-medium);color:var(--color-text-secondary);}
-.region-header:hover,.country-label:hover{color:var(--color-text-primary);}
-.disclosure{color:var(--color-text-secondary);transition:transform var(--motion-base) var(--ease-standard);}
-.region-group:not(.collapsed) > .region-header .disclosure,
-.country-group:not(.collapsed) > .country-label .disclosure{transform:rotate(90deg);}
-.region-group.collapsed .region-body{display:none;}
-.country-group.collapsed .chip-row{display:none;}
-.country-group .chip-row{margin-bottom:var(--space-2);}
-/* A chip can be active while its group is collapsed: flag the group so the filter doesn't silently vanish. */
-.region-group.has-active > .region-header,.country-group.has-active > .country-label{color:var(--color-accent-text);}
-.region-group.has-active > .region-header::after,.country-group.has-active > .country-label::after{
-  content:"";width:var(--size-provenance-mark);height:var(--size-provenance-mark);border-radius:var(--radius-circle);
-  background:var(--color-accent-solid);margin-left:var(--space-1);
-}
-
-/* Type and marks filters */
-.type-filter{display:flex;flex-direction:column;gap:var(--space-2);margin-top:var(--space-3);padding-top:var(--space-3);border-top:var(--border-width) solid var(--color-border-divider);}
-.type-filter .type-check{
-  display:flex;align-items:center;gap:var(--space-2);margin:0;
-  font-size:var(--type-text-md-size);line-height:var(--type-text-md-line);font-weight:var(--font-weight-regular);
-  color:var(--color-text-primary);text-transform:none;letter-spacing:0;cursor:pointer;
-}
-.type-filter .mark-icon{color:var(--color-text-secondary);}
-#marksFilters input:disabled{cursor:not-allowed;}
-#marksFilters label:has(input:disabled){cursor:not-allowed;opacity:var(--opacity-disabled);}
-
-/* ===== Gym list rows (re-tokened .gym-item; Phase 2 replaces with the 56px dense row) ============================ */
-.gym-list{flex:1;overflow-y:auto;}
-.gym-item{
-  display:flex;align-items:center;gap:var(--space-1);
-  min-height:var(--size-row-dense);
-  padding:0 var(--space-2) 0 0;
-  border-bottom:var(--border-width) solid var(--color-border-divider);
-  transition:background-color var(--motion-fast) var(--ease-standard);
-}
-.gym-item:hover{background:var(--color-surface-raised);}
-.gym-main{
-  appearance:none;flex:1;min-width:0;
-  display:flex;align-items:flex-start;gap:var(--space-3);
-  padding:var(--space-2) var(--space-2) var(--space-2) var(--space-4);
-  background:none;border:0;color:inherit;font:inherit;text-align:left;cursor:pointer;
-}
-.gym-main:focus-visible{outline-offset:calc(var(--focus-ring-width) * -1);}
-.gym-item .swatch{width:var(--size-icon-sm);height:var(--size-icon-sm);margin-top:var(--space-1);flex-shrink:0;border-radius:var(--radius-circle);border:var(--border-width) solid var(--map-pin-outline);}
-.gym-item .info{min-width:0;flex:1;display:block;}
-.gym-item .name{display:block;font-size:var(--type-text-md-size);line-height:var(--type-text-md-line);font-weight:var(--font-weight-semibold);}
-.gym-item .meta{
-  /* Clamped to two lines rather than one: at this column width most region/country combinations truncated before the
-     country name. Phase 2's dense row reworks this (sec. 7.4). */
-  display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;
-  font-size:var(--type-text-sm-size);line-height:var(--type-text-sm-line);color:var(--color-text-secondary);
-}
-.gym-item .meta .place{color:var(--color-text-primary);}
-.gym-item .meta .place::after{content:" · ";color:var(--color-text-secondary);}
-.gym-item .meta .tag-pill{margin-left:var(--space-1);}
-.row-actions{display:flex;gap:var(--space-1);flex-shrink:0;}
-
-/* ===== Map region (rock) =========================================================================================== */
-.map-wrap{flex:1;position:relative;min-width:0;background:var(--map-canvas);}
-#map{position:absolute;inset:0;background:var(--map-canvas);}
-
 /* Floating paper objects over the map: hairline + shadow.raised (the only place that shadow is allowed). */
 .map-float{
   background:var(--color-surface-default);
@@ -121,27 +22,6 @@ body.app-body{overflow:hidden;}
   border:var(--border-width) solid var(--color-border-subtle);
   box-shadow:var(--shadow-raised);
 }
-
-/* Legend (kept until Phase 2 replaces the pins; decision 2026-09-26) */
-.legend{
-  position:absolute;bottom:var(--space-7);left:var(--space-4);z-index:var(--z-map-overlay);
-  width:var(--size-legend);
-  border-radius:var(--radius-lg);
-  font-size:var(--type-text-sm-size);line-height:var(--type-text-sm-line);
-}
-.legend-header{
-  appearance:none;display:flex;align-items:center;justify-content:space-between;gap:var(--space-2);
-  width:100%;min-height:var(--size-control-md);padding:0 var(--space-3) 0 var(--space-4);
-  background:none;border:0;cursor:pointer;color:var(--color-text-primary);
-  font-size:var(--type-text-md-size);font-weight:var(--font-weight-semibold);
-}
-.legend-chevron{color:var(--color-text-secondary);transition:transform var(--motion-base) var(--ease-standard);}
-.legend.collapsed .legend-chevron{transform:rotate(-90deg);}
-.legend-body{padding:0 var(--space-4) var(--space-3);}
-.legend.collapsed .legend-body{display:none;}
-.legend-types{list-style:none;margin:0 0 var(--space-2);padding:0;display:flex;flex-direction:column;gap:var(--space-1);}
-.legend-types li{display:flex;align-items:center;gap:var(--space-2);}
-.legend-note{margin:0;font-size:var(--type-caption-size);line-height:var(--type-caption-line);font-weight:var(--font-weight-regular);color:var(--color-text-secondary);}
 
 /* Toast: short status text on the inverse surface (never the character; sec. 12.2) */
 .toast{
@@ -156,108 +36,22 @@ body.app-body{overflow:hidden;}
 }
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
 
-.placing-banner,.hint-banner{
+.placing-banner{
   position:absolute;top:var(--space-4);left:50%;z-index:var(--z-toast);
   transform:translateX(-50%);
-  border-radius:var(--radius-md);
+  display:none;padding:var(--space-2) var(--space-4);
+  border-radius:var(--radius-md);border-color:var(--color-border-strong);
   font-size:var(--type-text-sm-size);line-height:var(--type-text-sm-line);
 }
-.placing-banner{display:none;padding:var(--space-2) var(--space-4);border-color:var(--color-border-strong);}
 .placing-banner.show{display:block;}
-/* First-visit-only hint (kept until Phase 2; decision 2026-09-26) */
-.hint-banner{
-  display:flex;align-items:center;gap:var(--space-2);
-  padding:var(--space-1) var(--space-1) var(--space-1) var(--space-4);
-  transform:translateX(-50%) translateY(calc(var(--space-2) * -1));
-  white-space:nowrap;opacity:0;pointer-events:none;
-  transition:opacity var(--motion-slow) var(--ease-standard), transform var(--motion-slow) var(--ease-standard);
-}
-.hint-banner.show{opacity:1;transform:translateX(-50%) translateY(0);pointer-events:auto;}
 
-/* ===== MapLibre overrides ========================================================================================== */
-.maplibregl-popup-content{
-  background:var(--color-surface-default);color:var(--color-text-primary);
-  border:var(--border-width) solid var(--color-border-strong);
-  border-radius:var(--radius-lg);
-  padding:var(--space-4);
-  font-family:var(--font-text);
-  box-shadow:var(--shadow-raised);
-}
-/* The tip is a CSS border-triangle: only the side facing the marker is coloured, per anchor direction. */
-.maplibregl-popup-anchor-top .maplibregl-popup-tip,
-.maplibregl-popup-anchor-top-left .maplibregl-popup-tip,
-.maplibregl-popup-anchor-top-right .maplibregl-popup-tip{border-bottom-color:var(--color-border-strong) !important;}
-.maplibregl-popup-anchor-bottom .maplibregl-popup-tip,
-.maplibregl-popup-anchor-bottom-left .maplibregl-popup-tip,
-.maplibregl-popup-anchor-bottom-right .maplibregl-popup-tip{border-top-color:var(--color-border-strong) !important;}
-.maplibregl-popup-anchor-left .maplibregl-popup-tip{border-right-color:var(--color-border-strong) !important;}
-.maplibregl-popup-anchor-right .maplibregl-popup-tip{border-left-color:var(--color-border-strong) !important;}
-.maplibregl-popup-close-button{
-  width:var(--size-control-sm);height:var(--size-control-sm);
-  color:var(--color-text-secondary);font-size:var(--type-text-lg-size);line-height:var(--type-text-lg-line);
-  border-radius:var(--radius-md);
-}
-.maplibregl-popup-close-button:hover{color:var(--color-text-primary);background:var(--color-surface-raised);}
+/* ===== MapLibre controls ============================================================================================ */
 .maplibregl-ctrl-group{background:var(--map-control-surface) !important;border:var(--border-width) solid var(--map-control-border);border-radius:var(--radius-md) !important;box-shadow:var(--shadow-raised) !important;}
 .maplibregl-ctrl-group button{background:transparent !important;width:var(--size-control-sm) !important;height:var(--size-control-sm) !important;}
 .maplibregl-ctrl-group button:not(:last-child){border-bottom:var(--border-width) solid var(--map-control-border) !important;}
 .maplibregl-ctrl-group button:hover{background:var(--color-surface-raised) !important;}
 .maplibregl-ctrl-attrib{background:var(--map-control-surface) !important;color:var(--color-text-secondary) !important;}
 .maplibregl-ctrl-attrib a{color:var(--color-text-secondary) !important;}
-
-/* Popup content (precursor of the Phase 2 peek card) */
-.popup-name{margin:0 var(--space-6) var(--space-1) 0;font-family:var(--font-display);font-size:var(--type-display-sm-size);line-height:var(--type-display-sm-line);font-weight:var(--type-display-sm-weight);}
-.popup-meta,.popup-address,.popup-notes{margin-bottom:var(--space-2);font-size:var(--type-text-sm-size);line-height:var(--type-text-sm-line);color:var(--color-text-secondary);}
-.popup-photo{display:block;width:100%;aspect-ratio:var(--card-photo-ratio);object-fit:cover;margin-bottom:var(--space-2);border-radius:var(--radius-sm);background:var(--color-surface-subtle);}
-.popup-actions,.popup-links{display:flex;gap:var(--space-2);margin:var(--space-2) 0;}
-.popup-actions .btn,.popup-links .btn{flex:1;}
-.popup-report-btn{margin-top:var(--space-1);}
-
-/* Pins and clusters (re-tokened; Phase 2 replaces the shapes with teardrops, sec. 7.7) */
-.hold-marker{
-  width:var(--pin-size-hold);height:var(--pin-size-hold);
-  border-radius:var(--radius-circle);
-  border:var(--border-width) solid var(--map-pin-outline);
-  cursor:pointer;
-}
-.hold-marker.climbed{outline:var(--focus-ring-width) solid var(--map-pin-climbed-ring);outline-offset:var(--border-width);}
-.hold-marker.bookmarked{outline:var(--focus-ring-width) solid var(--map-pin-saved-ring);outline-offset:var(--border-width);}
-/* Community-added mark: the quiet provenance ring-dot, top-right of the pin */
-.hold-marker.community::after{
-  content:"";position:absolute;top:calc(var(--space-1) * -1);right:calc(var(--space-1) * -1);
-  width:var(--size-provenance-mark);height:var(--size-provenance-mark);border-radius:var(--radius-circle);
-  background:var(--map-control-surface);border:var(--border-width) solid var(--color-provenance-community);
-}
-.cluster-marker{
-  display:flex;align-items:center;justify-content:center;
-  width:var(--cluster-size);height:var(--cluster-size);
-  border-radius:var(--radius-circle);
-  background:var(--map-cluster-fill);color:var(--map-cluster-text);
-  border:var(--border-width) solid var(--map-cluster-border);
-  font-family:var(--font-text);font-size:var(--type-caption-size);font-weight:var(--font-weight-semibold);
-  font-feature-settings:var(--font-features-numeric);
-  cursor:pointer;
-  /* Not transform: MapLibre repositions this element via its own inline transform every frame. */
-  transition:background-color var(--motion-fast) var(--ease-standard);
-}
-.cluster-marker.is-large{width:var(--cluster-size-large);height:var(--cluster-size-large);}
-.cluster-marker:hover{background:var(--color-surface-raised);}
-
-/* Region labels over the map: Inter only on rock (sec. 1.2), text + halo, no accent colour. */
-.region-label{
-  color:var(--map-label-text);
-  font-family:var(--font-text);
-  font-size:var(--type-micro-size);line-height:var(--type-micro-line);font-weight:var(--font-weight-semibold);
-  letter-spacing:var(--type-label-tracking);
-  text-shadow:0 0 var(--space-1) var(--map-label-halo), 0 0 var(--space-2) var(--map-label-halo);
-  white-space:nowrap;pointer-events:none;
-}
-/* Continent tier: the one clickable label tier (fly-to); largest. */
-.region-label.continent-label{pointer-events:auto;cursor:pointer;font-size:var(--type-text-md-size);line-height:var(--type-text-md-line);color:var(--color-text-primary);}
-/* MapLibre dims markers on the globe's far side; a continent label is a permanent navigation anchor, so it never fades. */
-.region-label.continent-label.maplibregl-marker-covered{opacity:1 !important;}
-.region-label.country-tier-label{font-size:var(--type-caption-size);line-height:var(--type-caption-line);}
-.region-label.state-tier-label{font-weight:var(--font-weight-medium);color:var(--color-text-secondary);}
 
 /* ===== Long-form text in dialogs and the About page ================================================================ */
 .modal.info-modal{width:var(--size-dialog-wide);max-height:78vh;}
@@ -315,7 +109,13 @@ body.app-body{overflow:hidden;}
   font-size:var(--type-text-sm-size);
 }
 
-/* ===== Forms: sign-in divider, pin status ========================================================================= */
+/* ===== Forms: type checkboxes (add/edit), sign-in divider, pin status ============================================= */
+.type-filter{display:flex;flex-direction:column;gap:var(--space-2);margin-top:var(--space-3);padding-top:var(--space-3);border-top:var(--border-width) solid var(--color-border-divider);}
+.type-filter .type-check{
+  display:flex;align-items:center;gap:var(--space-2);margin:0;
+  font-size:var(--type-text-md-size);line-height:var(--type-text-md-line);font-weight:var(--font-weight-regular);
+  color:var(--color-text-primary);text-transform:none;letter-spacing:0;cursor:pointer;
+}
 .auth-divider{
   display:flex;align-items:center;gap:var(--space-3);margin:var(--space-1) 0 var(--space-4);
   color:var(--color-text-secondary);font-size:var(--type-caption-size);line-height:var(--type-caption-line);
@@ -330,25 +130,13 @@ body.app-body{overflow:hidden;}
 }
 .pin-status.set{color:var(--color-status-success);border-color:var(--color-status-success);}
 
-/* ===== List pane footer ============================================================================================ */
-.sidebar-footer{padding:var(--space-3) var(--space-4);border-top:var(--border-width) solid var(--color-border-subtle);}
-.footer-links{display:flex;flex-wrap:wrap;gap:var(--space-3);justify-content:center;font-size:var(--type-caption-size);line-height:var(--type-caption-line);}
-
 /* ===== Responsive shell (DESIGN sec. 14): top bar >= 600px, tab bar + START < 600px ============================= */
 @media (max-width:1023px){
   .topbar{gap:var(--space-3);padding:0 var(--space-4);}
   .topbar .add-label-long{display:none;}
   .topbar .add-label-short{display:inline;}
 }
-/* List pane becomes a drawer (existing breakpoint kept for Phase 1; Phase 2 replaces it with the bottom sheet). */
 @media (max-width:760px){
-  .sidebar{
-    position:absolute;left:0;top:0;bottom:0;z-index:var(--z-drawer);
-    width:min(82vw, var(--size-drawer-max));min-width:0;
-    transform:translateX(-100%);
-    transition:transform var(--motion-base) var(--ease-standard);
-  }
-  .sidebar.open{transform:translateX(0);box-shadow:var(--shadow-overlay);}
   .topbar-nav .tab{padding:0 var(--space-2);}
 }
 @media (max-width:599px){

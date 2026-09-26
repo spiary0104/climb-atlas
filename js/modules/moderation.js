@@ -2,7 +2,7 @@
 import { loadPending, loadSpots } from './data-load.js';
 import { openEditModal } from './modals.js';
 import { pendingPanelHtml } from './moderation-html.js';
-import { render } from './sidebar.js';
+import { render } from './explore.js';
 import { appState } from './state.js';
 import { showToast } from './utils.js';
 

@@ -34,18 +34,26 @@ about.html              Standalone About page
 css/tokens.css          Design tokens (only file with raw values); design/tokens.json generated from it
 css/base.css            Reset, type scale, focus
 css/components.css      Shared components (.btn tiers, chips, fields, nav, dialogs, ...)
-css/style.css           App layer (shell, list pane, map overlays, logbook, moderation)
+css/explore.css         Explore: list pane/sheet, rows/cards, chips, search, pins, peek card
+css/style.css           App layer (shell, map controls, forms, logbook, moderation)
 assets/icons.svg        Phosphor sprite; js/modules/icons.js icon(name)
+assets/contour.svg      Placeholder for gyms without a photo
 js/supabase-init.js     window.sb (classic script)
 js/auth.js              window.auth (classic script)
 js/main.js              Entry ES module: init*() in order, then boot
 js/sw-register.js       Service-worker registration
 js/modules/state.js     appState — ALL shared mutable state
-js/modules/constants.js Colours, labels, fly targets, zoom thresholds
+js/modules/constants.js Labels, fly targets, zoom thresholds, LIST_CAP
 js/modules/regions.js   STATES_BY_COUNTRY (static)
-js/modules/utils.js     escapeHtml, directionsUrl, typeSwatch, showToast
-js/modules/map.js       Map, clusters, labels, markers, popups, legend
-js/modules/sidebar.js   render(), filters, search, marks
+js/modules/utils.js     escapeHtml, directionsUrl, showToast
+js/modules/explore.js   Explore controller: render(), selection, peek, URL state, landing
+js/modules/map.js       Map, clusters, pins, label tiers (handlers from explore.js)
+js/modules/list.js      Viewport-scoped list, sort, cap, empty states, carousel
+js/modules/filters.js   Chips, All filters sheet, filter predicate
+js/modules/search.js    Search combobox (+ search-index.js, pure)
+js/modules/sheet.js     Mobile bottom sheet snaps
+js/modules/marks.js     Climbed/saved toggles
+js/modules/*-html.js, geo.js  Pure builders/helpers (unit-tested)
 js/modules/nav.js       Top bar / tab bar / Me menu ([data-nav])
 js/modules/modals.js    Focus/Escape, add/edit/report forms, info modals
 js/modules/auth-ui.js   Sign-in widget + modal

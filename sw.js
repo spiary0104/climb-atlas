@@ -4,7 +4,9 @@
 // clients pick up the new version instead of serving stale files forever.
 // v5: private Supabase reads are no longer cached (activation deleted the old v4 data cache that held them).
 // v6: Bouldeer design foundations (new CSS files, icon sprite, nav.js/icons.js; css/chips.css removed).
-const CACHE_VERSION = 'v6';
+// v7: Phase 2 Explore (explore.css, contour placeholder, list/search/sheet modules; sidebar.js + popup-html.js removed);
+//     page loads are served per path whatever the query string (Explore state lives in ?c=…).
+const CACHE_VERSION = 'v7';
 const SHELL_CACHE = 'climbatlas-shell-' + CACHE_VERSION;
 const RUNTIME_CACHE = 'climbatlas-runtime-' + CACHE_VERSION;
 const TILE_CACHE = 'climbatlas-tiles-' + CACHE_VERSION;
@@ -18,8 +20,10 @@ const SHELL_FILES = [
   'css/tokens.css',
   'css/base.css',
   'css/components.css',
+  'css/explore.css',
   'css/style.css',
   'assets/icons.svg',
+  'assets/contour.svg',
   'js/supabase-init.js',
   'js/auth.js',
   'js/main.js',
@@ -31,10 +35,18 @@ const SHELL_FILES = [
   'js/modules/icons.js',
   'js/modules/nav.js',
   'js/modules/html-safe.js',
-  'js/modules/popup-html.js',
+  'js/modules/list-html.js',
+  'js/modules/pin-html.js',
+  'js/modules/geo.js',
+  'js/modules/search-index.js',
   'js/modules/moderation-html.js',
   'js/modules/map.js',
-  'js/modules/sidebar.js',
+  'js/modules/explore.js',
+  'js/modules/list.js',
+  'js/modules/filters.js',
+  'js/modules/search.js',
+  'js/modules/sheet.js',
+  'js/modules/marks.js',
   'js/modules/modals.js',
   'js/modules/auth-ui.js',
   'js/modules/data-load.js',
@@ -123,6 +135,22 @@ async function cacheFirst(request, cacheName) {
   return response;
 }
 
+// Page loads: Explore keeps its state in the query string (?c=lng,lat,z&t=…), which changes on every pan, so the shell is
+// cached once per path and served for any query. Without this an offline reload of /?c=… would find nothing.
+async function navigation(request) {
+  const cache = await caches.open(SHELL_CACHE);
+  const url = new URL(request.url);
+  const key = new Request(url.origin + url.pathname);
+  const cached = await cache.match(key);
+  const networkPromise = fetch(request)
+    .then((response) => {
+      if (response && response.ok) cache.put(key, response.clone());
+      return response;
+    })
+    .catch(() => null);
+  return cached || (await networkPromise) || Response.error();
+}
+
 async function networkFirst(request, cacheName) {
   const cache = await caches.open(cacheName);
   try {
@@ -162,6 +190,10 @@ self.addEventListener('fetch', (event) => {
   const isSameOrigin = url.origin === self.location.origin;
   const isLibraryCdn = ['unpkg.com', 'cdn.jsdelivr.net', 'fonts.googleapis.com', 'fonts.gstatic.com']
     .includes(url.hostname);
+  if (isSameOrigin && request.mode === 'navigate') {
+    event.respondWith(navigation(request));
+    return;
+  }
   if (isSameOrigin || isLibraryCdn) {
     event.respondWith(staleWhileRevalidate(request, isSameOrigin ? SHELL_CACHE : RUNTIME_CACHE));
   }

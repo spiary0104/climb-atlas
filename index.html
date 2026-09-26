@@ -22,20 +22,32 @@
 <link rel="stylesheet" href="css/tokens.css">
 <link rel="stylesheet" href="css/base.css">
 <link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/explore.css">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="app-body">
 
-<a class="skip-link" href="#main">Skip to map</a>
+<a class="skip-link" href="#gymList">Skip to the gym list</a>
 <div class="app">
   <header class="topbar" data-theme="paper">
     <a class="wordmark" href="index.html">Bouldeer</a>
     <nav class="topbar-nav" aria-label="Primary">
       <button type="button" class="tab" data-nav="explore" aria-current="page">Explore</button>
-      <button type="button" class="tab" data-nav="regions" aria-controls="sidebar">Regions</button>
+      <button type="button" class="tab" data-nav="regions" aria-controls="searchPanel">Regions</button>
       <button type="button" class="tab" data-nav="log">Log</button>
       <button type="button" class="tab" data-nav="me" aria-controls="meMenu" aria-expanded="false">Me</button>
     </nav>
+    <div class="topbar-search" id="topbarSearchSlot">
+      <div class="search" id="search" role="search">
+        <div class="search-field">
+          <button type="button" class="btn btn-tertiary btn-icon search-back" id="searchBack" aria-label="Close search"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-arrow-left"/></svg></button>
+          <svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-magnifying-glass"/></svg>
+          <input id="searchInput" type="search" role="combobox" aria-expanded="false" aria-controls="searchPanel" aria-autocomplete="list" aria-label="Search gyms, cities, regions and countries" placeholder="Search gyms, cities, regions" autocomplete="off" enterkeyhint="search">
+          <button type="button" class="btn btn-tertiary btn-icon btn-sm search-clear" id="searchClear" aria-label="Clear search" hidden><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-x"/></svg></button>
+        </div>
+        <div class="search-panel" id="searchPanel" hidden></div>
+      </div>
+    </div>
     <div class="topbar-actions">
       <button type="button" class="btn btn-secondary" id="addBtn"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-plus"/></svg><span class="add-label-long">Add a gym</span><span class="add-label-short">Add</span></button>
       <div class="account-slot" id="accountSlot"><button type="button" class="btn btn-tertiary" id="topSignInBtn">Sign in</button></div>
@@ -43,14 +55,43 @@
   </header>
   <div class="offline-banner alert alert-warning hidden" id="offlineBanner" role="status">Showing offline seed data — Supabase isn't configured yet, so live data, sign-in, and marks are unavailable. See README.md.</div>
 
-  <div class="layout">
-    <aside class="sidebar" id="sidebar">
-      <div class="sidebar-controls">
-        <div class="search-field">
-          <svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-magnifying-glass"/></svg>
-          <input id="searchInput" type="search" placeholder="Search gym or suburb…" aria-label="Search gyms by name, suburb, or region" autocomplete="off">
+  <div class="layout explore" id="explore">
+    <section class="list-pane" id="listPane" data-theme="paper" aria-label="Gyms">
+      <div class="sheet-inner">
+        <div class="sheet-handle" id="sheetHandle">
+          <button type="button" class="sheet-grabber-btn" id="sheetGrabber" aria-label="Resize the gym list"><span class="sheet-grabber"></span></button>
+          <div class="filter-slot" id="listFilterSlot">
+            <div class="filter-bar" id="filterBar">
+              <div class="chip-scroll" role="group" aria-label="Filters">
+                <button type="button" class="chip" data-filter-type="indoor-bouldering" aria-pressed="false"><span class="type-dot type-dot--boulder" aria-hidden="true"></span>Boulder</button>
+                <button type="button" class="chip" data-filter-type="top-rope" aria-pressed="false"><span class="type-dot type-dot--toprope" aria-hidden="true"></span>Top rope</button>
+                <button type="button" class="chip" data-filter-type="lead-climbing" aria-pressed="false"><span class="type-dot type-dot--lead" aria-hidden="true"></span>Lead</button>
+                <button type="button" class="chip" data-filter-flag="saved" aria-pressed="false">Saved</button>
+                <button type="button" class="chip" data-filter-flag="climbed" aria-pressed="false">Climbed</button>
+                <button type="button" class="chip" data-filter-flag="photos" aria-pressed="false">Has photos</button>
+                <span class="applied-pills" id="appliedPills"></span>
+                <button type="button" class="chip chip-more" id="allFiltersBtn" aria-haspopup="dialog"><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-sliders-horizontal"/></svg>All filters</button>
+              </div>
+            </div>
+          </div>
+          <div class="list-status">
+            <p class="list-count" aria-live="polite"><strong class="tnum" id="countNum">…</strong> <span id="countLabel">gyms in view</span><span id="statusPlace"></span></p>
+            <div class="list-tools">
+              <label class="visually-hidden" for="sortSelect">Sort by</label>
+              <select class="select select-sm" id="sortSelect">
+                <option value="distance" hidden>Distance</option>
+                <option value="name">Name</option>
+                <option value="recent">Recently added</option>
+              </select>
+              <div class="seg" id="viewToggle" role="group" aria-label="List view">
+                <button type="button" class="seg-btn" data-view="rows" aria-pressed="true" aria-label="Rows"><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-list"/></svg></button>
+                <button type="button" class="seg-btn" data-view="cards" aria-pressed="false" aria-label="Photo cards"><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-squares-four"/></svg></button>
+              </div>
+            </div>
+          </div>
+          <div class="carousel" id="carousel" role="group" aria-label="Gyms at this spot" hidden></div>
         </div>
-        <div class="featured-destinations" id="featuredDestinations">
+        <div class="featured-destinations" id="featuredDestinations" hidden>
           <div class="section-label">Worth traveling for</div>
           <div class="featured-row">
             <button type="button" class="btn btn-secondary btn-sm featured-chip" data-country="CN">China</button>
@@ -61,900 +102,37 @@
             <button type="button" class="btn btn-secondary btn-sm featured-chip" data-country="GB">United Kingdom</button>
           </div>
         </div>
-        <div id="stateChips">
-          <div class="section-label">Region</div>
-          <div class="chip-row">
-            <button type="button" class="chip active" data-state="ALL" aria-pressed="true"><span>All</span></button>
+        <div class="gym-list" id="gymList" role="list" aria-label="Gyms in view" tabindex="-1" aria-busy="true"></div>
+        <div class="list-footer">
+          <div class="footer-links">
+            <a class="link link-quiet" href="about.html">About</a>
+            <button type="button" class="link link-quiet" id="openPrivacy">Privacy</button>
+            <button type="button" class="link link-quiet" id="openTerms">Terms</button>
           </div>
-          <div class="region-group collapsed" data-region="africa">
-            <button type="button" class="region-header"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Africa</button>
-            <div class="region-body">
-              <div class="country-group collapsed" data-country="EG">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Egypt</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="EG" data-state="GIZA" aria-pressed="false">Giza</button>
-                  <button type="button" class="chip" data-country="EG" data-state="CAIRO" aria-pressed="false">Cairo</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="KE">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Kenya</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="KE" data-state="NAIROBI" aria-pressed="false">Nairobi</button>
-                  <button type="button" class="chip" data-country="KE" data-state="LAIKIPIA" aria-pressed="false">Laikipia</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="ZA">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>South Africa</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="ZA" data-state="WESTERN_CAPE" aria-pressed="false">Western Cape</button>
-                  <button type="button" class="chip" data-country="ZA" data-state="GAUTENG" aria-pressed="false">Gauteng</button>
-                  <button type="button" class="chip" data-country="ZA" data-state="KWAZULU_NATAL" aria-pressed="false">KwaZulu-Natal</button>
-                  <button type="button" class="chip" data-country="ZA" data-state="EASTERN_CAPE" aria-pressed="false">Eastern Cape</button>
-                  <button type="button" class="chip" data-country="ZA" data-state="MPUMALANGA" aria-pressed="false">Mpumalanga</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="region-group collapsed" data-region="asia">
-            <button type="button" class="region-header"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Asia</button>
-            <div class="region-body">
-              <div class="country-group collapsed" data-country="AM">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Armenia</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="AM" data-state="YEREVAN" aria-pressed="false">Yerevan</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="CN">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>China</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="CN" data-state="SHENZHEN" aria-pressed="false">Shenzhen</button>
-                  <button type="button" class="chip" data-country="CN" data-state="GUANGZHOU" aria-pressed="false">Guangzhou</button>
-                  <button type="button" class="chip" data-country="CN" data-state="SHANGHAI" aria-pressed="false">Shanghai</button>
-                  <button type="button" class="chip" data-country="CN" data-state="HANGZHOU" aria-pressed="false">Hangzhou</button>
-                  <button type="button" class="chip" data-country="CN" data-state="CHENGDU" aria-pressed="false">Chengdu</button>
-                  <button type="button" class="chip" data-country="CN" data-state="BEIJING" aria-pressed="false">Beijing</button>
-                  <button type="button" class="chip" data-country="CN" data-state="WUHAN" aria-pressed="false">Wuhan</button>
-                  <button type="button" class="chip" data-country="CN" data-state="CHANGSHA" aria-pressed="false">Changsha</button>
-                  <button type="button" class="chip" data-country="CN" data-state="ZHUHAI" aria-pressed="false">Zhuhai</button>
-                  <button type="button" class="chip" data-country="CN" data-state="CHONGQING" aria-pressed="false">Chongqing</button>
-                  <button type="button" class="chip" data-country="CN" data-state="XIAN" aria-pressed="false">Xi'an</button>
-                  <button type="button" class="chip" data-country="CN" data-state="NANJING" aria-pressed="false">Nanjing</button>
-                  <button type="button" class="chip" data-country="CN" data-state="SUZHOU" aria-pressed="false">Suzhou</button>
-                  <button type="button" class="chip" data-country="CN" data-state="TIANJIN" aria-pressed="false">Tianjin</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="GE">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Georgia</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="GE" data-state="TBILISI" aria-pressed="false">Tbilisi</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="HK">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Hong Kong</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="HK" data-state="EASTERN" aria-pressed="false">Eastern</button>
-                  <button type="button" class="chip" data-country="HK" data-state="WAN_CHAI" aria-pressed="false">Wan Chai</button>
-                  <button type="button" class="chip" data-country="HK" data-state="KOWLOON_CITY" aria-pressed="false">Kowloon City</button>
-                  <button type="button" class="chip" data-country="HK" data-state="KWUN_TONG" aria-pressed="false">Kwun Tong</button>
-                  <button type="button" class="chip" data-country="HK" data-state="SHAM_SHUI_PO" aria-pressed="false">Sham Shui Po</button>
-                  <button type="button" class="chip" data-country="HK" data-state="WONG_TAI_SIN" aria-pressed="false">Wong Tai Sin</button>
-                  <button type="button" class="chip" data-country="HK" data-state="YAU_TSIM_MONG" aria-pressed="false">Yau Tsim Mong</button>
-                  <button type="button" class="chip" data-country="HK" data-state="KWAI_TSING" aria-pressed="false">Kwai Tsing</button>
-                  <button type="button" class="chip" data-country="HK" data-state="SAI_KUNG" aria-pressed="false">Sai Kung</button>
-                  <button type="button" class="chip" data-country="HK" data-state="SHA_TIN" aria-pressed="false">Sha Tin</button>
-                  <button type="button" class="chip" data-country="HK" data-state="TSUEN_WAN" aria-pressed="false">Tsuen Wan</button>
-                  <button type="button" class="chip" data-country="HK" data-state="TUEN_MUN" aria-pressed="false">Tuen Mun</button>
-                  <button type="button" class="chip" data-country="HK" data-state="SOUTHERN" aria-pressed="false">Southern</button>
-                  <button type="button" class="chip" data-country="HK" data-state="CENTRAL_WESTERN" aria-pressed="false">Central and Western</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="IN">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>India</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="IN" data-state="TAMIL_NADU" aria-pressed="false">Tamil Nadu</button>
-                  <button type="button" class="chip" data-country="IN" data-state="TELANGANA" aria-pressed="false">Telangana</button>
-                  <button type="button" class="chip" data-country="IN" data-state="HIMACHAL_PRADESH" aria-pressed="false">Himachal Pradesh</button>
-                  <button type="button" class="chip" data-country="IN" data-state="MAHARASHTRA" aria-pressed="false">Maharashtra</button>
-                  <button type="button" class="chip" data-country="IN" data-state="DELHI" aria-pressed="false">Delhi</button>
-                  <button type="button" class="chip" data-country="IN" data-state="UTTARAKHAND" aria-pressed="false">Uttarakhand</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="ID">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Indonesia</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="ID" data-state="BALI" aria-pressed="false">Bali</button>
-                  <button type="button" class="chip" data-country="ID" data-state="JAWA_BARAT" aria-pressed="false">Jawa Barat</button>
-                  <button type="button" class="chip" data-country="ID" data-state="RIAU" aria-pressed="false">Riau</button>
-                  <button type="button" class="chip" data-country="ID" data-state="BANTEN" aria-pressed="false">Banten</button>
-                  <button type="button" class="chip" data-country="ID" data-state="SULAWESI_TENGAH" aria-pressed="false">Sulawesi Tengah</button>
-                  <button type="button" class="chip" data-country="ID" data-state="JAWA_TIMUR" aria-pressed="false">Jawa Timur</button>
-                  <button type="button" class="chip" data-country="ID" data-state="JAMBI" aria-pressed="false">Jambi</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="IR">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Iran</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="IR" data-state="QAZVIN" aria-pressed="false">Qazvin</button>
-                  <button type="button" class="chip" data-country="IR" data-state="QOM" aria-pressed="false">Qom</button>
-                  <button type="button" class="chip" data-country="IR" data-state="TEHRAN" aria-pressed="false">Tehran</button>
-                  <button type="button" class="chip" data-country="IR" data-state="ZANJAN" aria-pressed="false">Zanjan</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="IL">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Israel</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="IL" data-state="SOUTHERN" aria-pressed="false">Southern</button>
-                  <button type="button" class="chip" data-country="IL" data-state="JERUSALEM" aria-pressed="false">Jerusalem</button>
-                  <button type="button" class="chip" data-country="IL" data-state="NORTHERN" aria-pressed="false">Northern</button>
-                  <button type="button" class="chip" data-country="IL" data-state="CENTRAL" aria-pressed="false">Central</button>
-                  <button type="button" class="chip" data-country="IL" data-state="TEL_AVIV" aria-pressed="false">Tel Aviv</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="JP">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Japan</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="JP" data-state="TOKYO" aria-pressed="false">Tokyo</button>
-                  <button type="button" class="chip" data-country="JP" data-state="OSAKA" aria-pressed="false">Osaka</button>
-                  <button type="button" class="chip" data-country="JP" data-state="KYOTO" aria-pressed="false">Kyoto</button>
-                  <button type="button" class="chip" data-country="JP" data-state="FUKUOKA" aria-pressed="false">Fukuoka</button>
-                  <button type="button" class="chip" data-country="JP" data-state="AICHI" aria-pressed="false">Aichi</button>
-                  <button type="button" class="chip" data-country="JP" data-state="KANAGAWA" aria-pressed="false">Kanagawa</button>
-                  <button type="button" class="chip" data-country="JP" data-state="HOKKAIDO" aria-pressed="false">Hokkaido</button>
-                  <button type="button" class="chip" data-country="JP" data-state="HYOGO" aria-pressed="false">Hyogo</button>
-                  <button type="button" class="chip" data-country="JP" data-state="MIYAGI" aria-pressed="false">Miyagi</button>
-                  <button type="button" class="chip" data-country="JP" data-state="HIROSHIMA" aria-pressed="false">Hiroshima</button>
-                  <button type="button" class="chip" data-country="JP" data-state="OKINAWA" aria-pressed="false">Okinawa</button>
-                  <button type="button" class="chip" data-country="JP" data-state="SAITAMA" aria-pressed="false">Saitama</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="JO">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Jordan</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="JO" data-state="AMMAN" aria-pressed="false">Amman</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="KZ">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Kazakhstan</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="KZ" data-state="ALMATY_CITY" aria-pressed="false">Almaty</button>
-                  <button type="button" class="chip" data-country="KZ" data-state="ASTANA" aria-pressed="false">Astana</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="LB">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Lebanon</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="LB" data-state="MOUNT_LEBANON" aria-pressed="false">Mount Lebanon</button>
-                  <button type="button" class="chip" data-country="LB" data-state="SOUTH" aria-pressed="false">South</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="MY">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Malaysia</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="MY" data-state="PENANG" aria-pressed="false">Penang</button>
-                  <button type="button" class="chip" data-country="MY" data-state="JOHOR" aria-pressed="false">Johor</button>
-                  <button type="button" class="chip" data-country="MY" data-state="PUTRAJAYA" aria-pressed="false">Putrajaya</button>
-                  <button type="button" class="chip" data-country="MY" data-state="SELANGOR" aria-pressed="false">Selangor</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="MN">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Mongolia</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="MN" data-state="ULAANBAATAR" aria-pressed="false">Ulaanbaatar</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="NP">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Nepal</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="NP" data-state="BAGMATI" aria-pressed="false">Bagmati</button>
-                  <button type="button" class="chip" data-country="NP" data-state="GANDAKI" aria-pressed="false">Gandaki</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="OM">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Oman</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="OM" data-state="MUSCAT" aria-pressed="false">Muscat</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="PH">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Philippines</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="PH" data-state="NCR" aria-pressed="false">Metro Manila</button>
-                  <button type="button" class="chip" data-country="PH" data-state="RIZAL" aria-pressed="false">Rizal</button>
-                  <button type="button" class="chip" data-country="PH" data-state="LAGUNA" aria-pressed="false">Laguna</button>
-                  <button type="button" class="chip" data-country="PH" data-state="BENGUET" aria-pressed="false">Benguet</button>
-                  <button type="button" class="chip" data-country="PH" data-state="BULACAN" aria-pressed="false">Bulacan</button>
-                  <button type="button" class="chip" data-country="PH" data-state="MISAMIS_ORIENTAL" aria-pressed="false">Misamis Oriental</button>
-                  <button type="button" class="chip" data-country="PH" data-state="CAVITE" aria-pressed="false">Cavite</button>
-                  <button type="button" class="chip" data-country="PH" data-state="CAMARINES_SUR" aria-pressed="false">Camarines Sur</button>
-                  <button type="button" class="chip" data-country="PH" data-state="PAMPANGA" aria-pressed="false">Pampanga</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="QA">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Qatar</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="QA" data-state="AD_DAWHAH" aria-pressed="false">Doha</button>
-                  <button type="button" class="chip" data-country="QA" data-state="AL_DAAYEN" aria-pressed="false">Al Daayen</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="KR">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>South Korea</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="KR" data-state="SEOUL" aria-pressed="false">Seoul</button>
-                  <button type="button" class="chip" data-country="KR" data-state="BUSAN" aria-pressed="false">Busan</button>
-                  <button type="button" class="chip" data-country="KR" data-state="GYEONGGI" aria-pressed="false">Gyeonggi-do</button>
-                  <button type="button" class="chip" data-country="KR" data-state="GWANGJU" aria-pressed="false">Gwangju</button>
-                  <button type="button" class="chip" data-country="KR" data-state="GYEONGSANGNAM" aria-pressed="false">Gyeongsangnam-do</button>
-                  <button type="button" class="chip" data-country="KR" data-state="ULSAN" aria-pressed="false">Ulsan</button>
-                  <button type="button" class="chip" data-country="KR" data-state="INCHEON" aria-pressed="false">Incheon</button>
-                  <button type="button" class="chip" data-country="KR" data-state="DAEGU" aria-pressed="false">Daegu</button>
-                  <button type="button" class="chip" data-country="KR" data-state="JEOLLANAM" aria-pressed="false">Jeollanam-do</button>
-                  <button type="button" class="chip" data-country="KR" data-state="CHUNGCHEONGNAM" aria-pressed="false">Chungcheongnam-do</button>
-                  <button type="button" class="chip" data-country="KR" data-state="DAEJEON" aria-pressed="false">Daejeon</button>
-                  <button type="button" class="chip" data-country="KR" data-state="JEJU" aria-pressed="false">Jeju</button>
-                  <button type="button" class="chip" data-country="KR" data-state="GANGWON" aria-pressed="false">Gangwon-do</button>
-                  <button type="button" class="chip" data-country="KR" data-state="CHUNGCHEONGBUK" aria-pressed="false">Chungcheongbuk-do</button>
-                  <button type="button" class="chip" data-country="KR" data-state="GYEONGSANGBUK" aria-pressed="false">Gyeongsangbuk-do</button>
-                  <button type="button" class="chip" data-country="KR" data-state="JEOLLABUK" aria-pressed="false">Jeollabuk-do</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="TW">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Taiwan</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="TW" data-state="HSINCHU_COUNTY" aria-pressed="false">Hsinchu County</button>
-                  <button type="button" class="chip" data-country="TW" data-state="NEW_TAIPEI" aria-pressed="false">New Taipei City</button>
-                  <button type="button" class="chip" data-country="TW" data-state="TAICHUNG" aria-pressed="false">Taichung City</button>
-                  <button type="button" class="chip" data-country="TW" data-state="TAIPEI" aria-pressed="false">Taipei City</button>
-                  <button type="button" class="chip" data-country="TW" data-state="KAOHSIUNG" aria-pressed="false">Kaohsiung City</button>
-                  <button type="button" class="chip" data-country="TW" data-state="TAINAN" aria-pressed="false">Tainan City</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="TH">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Thailand</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="TH" data-state="BANGKOK" aria-pressed="false">Bangkok</button>
-                  <button type="button" class="chip" data-country="TH" data-state="CHIANG_MAI" aria-pressed="false">Chiang Mai</button>
-                  <button type="button" class="chip" data-country="TH" data-state="SURAT_THANI" aria-pressed="false">Surat Thani</button>
-                  <button type="button" class="chip" data-country="TH" data-state="PHUKET" aria-pressed="false">Phuket</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="AE">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>United Arab Emirates</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="AE" data-state="DUBAI" aria-pressed="false">Dubai</button>
-                  <button type="button" class="chip" data-country="AE" data-state="ABU_DHABI" aria-pressed="false">Abu Dhabi</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="VN">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Vietnam</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="VN" data-state="HANOI" aria-pressed="false">Hanoi</button>
-                  <button type="button" class="chip" data-country="VN" data-state="HO_CHI_MINH" aria-pressed="false">Ho Chi Minh City</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="SA">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Saudi Arabia</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="SA" data-state="RIYADH" aria-pressed="false">Riyadh Region</button>
-                  <button type="button" class="chip" data-country="SA" data-state="MAKKAH" aria-pressed="false">Makkah Region</button>
-                  <button type="button" class="chip" data-country="SA" data-state="EASTERN" aria-pressed="false">Eastern Province</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="SG">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Singapore</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="SG" data-state="CENTRAL" aria-pressed="false">Central</button>
-                  <button type="button" class="chip" data-country="SG" data-state="NORTH_WEST" aria-pressed="false">North West</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="region-group collapsed" data-region="europe">
-            <button type="button" class="region-header"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Europe</button>
-            <div class="region-body">
-              <div class="country-group collapsed" data-country="AT">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Austria</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="AT" data-state="WIEN" aria-pressed="false">Wien</button>
-                  <button type="button" class="chip" data-country="AT" data-state="STEIERMARK" aria-pressed="false">Steiermark</button>
-                  <button type="button" class="chip" data-country="AT" data-state="OBEROSTERREICH" aria-pressed="false">Oberösterreich</button>
-                  <button type="button" class="chip" data-country="AT" data-state="SALZBURG" aria-pressed="false">Salzburg</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="BY">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Belarus</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="BY" data-state="MINSK_CITY" aria-pressed="false">Minsk</button>
-                  <button type="button" class="chip" data-country="BY" data-state="BREST" aria-pressed="false">Brest Region</button>
-                  <button type="button" class="chip" data-country="BY" data-state="GRODNO" aria-pressed="false">Grodno Region</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="BE">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Belgium</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="BE" data-state="FLANDERS" aria-pressed="false">Flanders</button>
-                  <button type="button" class="chip" data-country="BE" data-state="WALLONIA" aria-pressed="false">Wallonia</button>
-                  <button type="button" class="chip" data-country="BE" data-state="BRUSSELS" aria-pressed="false">Brussels-Capital</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="BG">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Bulgaria</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="BG" data-state="SOFIA_CITY" aria-pressed="false">Sofia City</button>
-                  <button type="button" class="chip" data-country="BG" data-state="VARNA" aria-pressed="false">Varna</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="HR">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Croatia</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="HR" data-state="ZAGREB" aria-pressed="false">Zagreb</button>
-                  <button type="button" class="chip" data-country="HR" data-state="SPLITSKO_DALMATINSKA" aria-pressed="false">Splitsko-dalmatinska</button>
-                  <button type="button" class="chip" data-country="HR" data-state="ISTARSKA" aria-pressed="false">Istarska</button>
-                  <button type="button" class="chip" data-country="HR" data-state="KOPRIVNICKO_KRIZEVACKA" aria-pressed="false">Koprivničko-križevačka</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="CZ">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Czech Republic</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="CZ" data-state="PRAHA" aria-pressed="false">Praha</button>
-                  <button type="button" class="chip" data-country="CZ" data-state="JIHOMORAVSKY" aria-pressed="false">Jihomoravský</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="DK">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Denmark</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="DK" data-state="HOVEDSTADEN" aria-pressed="false">Hovedstaden</button>
-                  <button type="button" class="chip" data-country="DK" data-state="SYDDANMARK" aria-pressed="false">Syddanmark</button>
-                  <button type="button" class="chip" data-country="DK" data-state="MIDTJYLLAND" aria-pressed="false">Midtjylland</button>
-                  <button type="button" class="chip" data-country="DK" data-state="NORDJYLLAND" aria-pressed="false">Nordjylland</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="EE">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Estonia</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="EE" data-state="HARJU" aria-pressed="false">Harju</button>
-                  <button type="button" class="chip" data-country="EE" data-state="TARTU" aria-pressed="false">Tartu</button>
-                  <button type="button" class="chip" data-country="EE" data-state="HIIU" aria-pressed="false">Hiiu</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="FI">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Finland</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="FI" data-state="UUSIMAA" aria-pressed="false">Uusimaa</button>
-                  <button type="button" class="chip" data-country="FI" data-state="PAIJAT_HAME" aria-pressed="false">Päijät-Häme</button>
-                  <button type="button" class="chip" data-country="FI" data-state="POHJOIS_POHJANMAA" aria-pressed="false">Pohjois-Pohjanmaa</button>
-                  <button type="button" class="chip" data-country="FI" data-state="PIRKANMAA" aria-pressed="false">Pirkanmaa</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="FR">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>France</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="FR" data-state="ILE_DE_FRANCE" aria-pressed="false">Île-de-France</button>
-                  <button type="button" class="chip" data-country="FR" data-state="AUVERGNE_RHONE_ALPES" aria-pressed="false">Auvergne-Rhône-Alpes</button>
-                  <button type="button" class="chip" data-country="FR" data-state="PACA" aria-pressed="false">Provence-Alpes-Côte d'Azur</button>
-                  <button type="button" class="chip" data-country="FR" data-state="OCCITANIE" aria-pressed="false">Occitanie</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="DE">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Germany</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="DE" data-state="BAYERN" aria-pressed="false">Bayern</button>
-                  <button type="button" class="chip" data-country="DE" data-state="BERLIN" aria-pressed="false">Berlin</button>
-                  <button type="button" class="chip" data-country="DE" data-state="NORDRHEIN_WESTFALEN" aria-pressed="false">Nordrhein-Westfalen</button>
-                  <button type="button" class="chip" data-country="DE" data-state="HESSEN" aria-pressed="false">Hessen</button>
-                  <button type="button" class="chip" data-country="DE" data-state="BADEN_WURTTEMBERG" aria-pressed="false">Baden-Württemberg</button>
-                  <button type="button" class="chip" data-country="DE" data-state="BREMEN" aria-pressed="false">Bremen</button>
-                  <button type="button" class="chip" data-country="DE" data-state="SCHLESWIG_HOLSTEIN" aria-pressed="false">Schleswig-Holstein</button>
-                  <button type="button" class="chip" data-country="DE" data-state="SACHSEN" aria-pressed="false">Sachsen</button>
-                  <button type="button" class="chip" data-country="DE" data-state="NIEDERSACHSEN" aria-pressed="false">Niedersachsen</button>
-                  <button type="button" class="chip" data-country="DE" data-state="SACHSEN_ANHALT" aria-pressed="false">Sachsen-Anhalt</button>
-                  <button type="button" class="chip" data-country="DE" data-state="BRANDENBURG" aria-pressed="false">Brandenburg</button>
-                  <button type="button" class="chip" data-country="DE" data-state="RHEINLAND_PFALZ" aria-pressed="false">Rheinland-Pfalz</button>
-                  <button type="button" class="chip" data-country="DE" data-state="HAMBURG" aria-pressed="false">Hamburg</button>
-                  <button type="button" class="chip" data-country="DE" data-state="SAARLAND" aria-pressed="false">Saarland</button>
-                  <button type="button" class="chip" data-country="DE" data-state="THURINGEN" aria-pressed="false">Thüringen</button>
-                  <button type="button" class="chip" data-country="DE" data-state="MECKLENBURG_VORPOMMERN" aria-pressed="false">Mecklenburg-Vorpommern</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="GR">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Greece</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="GR" data-state="ATTICA" aria-pressed="false">Attica</button>
-                  <button type="button" class="chip" data-country="GR" data-state="CENTRAL_MACEDONIA" aria-pressed="false">Central Macedonia</button>
-                  <button type="button" class="chip" data-country="GR" data-state="SOUTH_AEGEAN" aria-pressed="false">South Aegean</button>
-                  <button type="button" class="chip" data-country="GR" data-state="CRETE" aria-pressed="false">Crete</button>
-                  <button type="button" class="chip" data-country="GR" data-state="WESTERN_GREECE" aria-pressed="false">Western Greece</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="HU">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Hungary</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="HU" data-state="BUDAPEST" aria-pressed="false">Budapest</button>
-                  <button type="button" class="chip" data-country="HU" data-state="PEST" aria-pressed="false">Pest</button>
-                  <button type="button" class="chip" data-country="HU" data-state="VESZPREM" aria-pressed="false">Veszprém</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="IS">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Iceland</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="IS" data-state="HOFUDBORGARSVAEDID" aria-pressed="false">Höfuðborgarsvæðið</button>
-                  <button type="button" class="chip" data-country="IS" data-state="NORDURLAND_EYSTRA" aria-pressed="false">Norðurland eystra</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="IE">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Ireland</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="IE" data-state="DUBLIN" aria-pressed="false">Dublin</button>
-                  <button type="button" class="chip" data-country="IE" data-state="WICKLOW" aria-pressed="false">Wicklow</button>
-                  <button type="button" class="chip" data-country="IE" data-state="CLARE" aria-pressed="false">Clare</button>
-                  <button type="button" class="chip" data-country="IE" data-state="CORK" aria-pressed="false">Cork</button>
-                  <button type="button" class="chip" data-country="IE" data-state="LIMERICK" aria-pressed="false">Limerick</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="IT">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Italy</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="IT" data-state="LAZIO" aria-pressed="false">Lazio</button>
-                  <button type="button" class="chip" data-country="IT" data-state="LOMBARDIA" aria-pressed="false">Lombardia</button>
-                  <button type="button" class="chip" data-country="IT" data-state="EMILIA_ROMAGNA" aria-pressed="false">Emilia-Romagna</button>
-                  <button type="button" class="chip" data-country="IT" data-state="TOSCANA" aria-pressed="false">Toscana</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="LT">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Lithuania</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="LT" data-state="KAUNAS" aria-pressed="false">Kaunas</button>
-                  <button type="button" class="chip" data-country="LT" data-state="KLAIPEDA" aria-pressed="false">Klaipėda</button>
-                  <button type="button" class="chip" data-country="LT" data-state="VILNIUS" aria-pressed="false">Vilnius</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="LU">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Luxembourg</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="LU" data-state="LUXEMBOURG" aria-pressed="false">Luxembourg</button>
-                  <button type="button" class="chip" data-country="LU" data-state="ESCH_SUR_ALZETTE" aria-pressed="false">Esch-sur-Alzette</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="ME">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Montenegro</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="ME" data-state="PODGORICA" aria-pressed="false">Podgorica</button>
-                  <button type="button" class="chip" data-country="ME" data-state="TIVAT" aria-pressed="false">Tivat</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="NL">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Netherlands</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="NL" data-state="NOORD_HOLLAND" aria-pressed="false">Noord-Holland</button>
-                  <button type="button" class="chip" data-country="NL" data-state="ZUID_HOLLAND" aria-pressed="false">Zuid-Holland</button>
-                  <button type="button" class="chip" data-country="NL" data-state="UTRECHT" aria-pressed="false">Utrecht</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="NO">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Norway</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="NO" data-state="OSLO" aria-pressed="false">Oslo</button>
-                  <button type="button" class="chip" data-country="NO" data-state="VESTLAND" aria-pressed="false">Vestland</button>
-                  <button type="button" class="chip" data-country="NO" data-state="TRONDELAG" aria-pressed="false">Trøndelag</button>
-                  <button type="button" class="chip" data-country="NO" data-state="ROGALAND" aria-pressed="false">Rogaland</button>
-                  <button type="button" class="chip" data-country="NO" data-state="NORDLAND" aria-pressed="false">Nordland</button>
-                  <button type="button" class="chip" data-country="NO" data-state="BUSKERUD" aria-pressed="false">Buskerud</button>
-                  <button type="button" class="chip" data-country="NO" data-state="AGDER" aria-pressed="false">Agder</button>
-                  <button type="button" class="chip" data-country="NO" data-state="MORE_OG_ROMSDAL" aria-pressed="false">Møre og Romsdal</button>
-                  <button type="button" class="chip" data-country="NO" data-state="INNLANDET" aria-pressed="false">Innlandet</button>
-                  <button type="button" class="chip" data-country="NO" data-state="TELEMARK" aria-pressed="false">Telemark</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="PL">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Poland</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="PL" data-state="MAZOWIECKIE" aria-pressed="false">Mazowieckie</button>
-                  <button type="button" class="chip" data-country="PL" data-state="DOLNOSLASKIE" aria-pressed="false">Dolnośląskie</button>
-                  <button type="button" class="chip" data-country="PL" data-state="MALOPOLSKIE" aria-pressed="false">Małopolskie</button>
-                  <button type="button" class="chip" data-country="PL" data-state="WIELKOPOLSKIE" aria-pressed="false">Wielkopolskie</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="PT">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Portugal</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="PT" data-state="LISBOA" aria-pressed="false">Lisboa</button>
-                  <button type="button" class="chip" data-country="PT" data-state="COIMBRA" aria-pressed="false">Coimbra</button>
-                  <button type="button" class="chip" data-country="PT" data-state="PORTO" aria-pressed="false">Porto</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="RO">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Romania</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="RO" data-state="BUCURESTI" aria-pressed="false">București</button>
-                  <button type="button" class="chip" data-country="RO" data-state="BRASOV" aria-pressed="false">Brașov</button>
-                  <button type="button" class="chip" data-country="RO" data-state="MURES" aria-pressed="false">Mureș</button>
-                  <button type="button" class="chip" data-country="RO" data-state="TIMIS" aria-pressed="false">Timiș</button>
-                  <button type="button" class="chip" data-country="RO" data-state="HARGHITA" aria-pressed="false">Harghita</button>
-                  <button type="button" class="chip" data-country="RO" data-state="CLUJ" aria-pressed="false">Cluj</button>
-                  <button type="button" class="chip" data-country="RO" data-state="IASI" aria-pressed="false">Iași</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="RS">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Serbia</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="RS" data-state="BELGRADE" aria-pressed="false">Belgrade</button>
-                  <button type="button" class="chip" data-country="RS" data-state="JUZNOBACKI" aria-pressed="false">South Bačka</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="RU">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Russia</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="RU" data-state="MOSKVA" aria-pressed="false">Moskva</button>
-                  <button type="button" class="chip" data-country="RU" data-state="SANKT_PETERBURG" aria-pressed="false">Sankt-Peterburg</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="SI">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Slovenia</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="SI" data-state="OSREDNJESLOVENSKA" aria-pressed="false">Central Slovenia</button>
-                  <button type="button" class="chip" data-country="SI" data-state="GORENJSKA" aria-pressed="false">Upper Carniola</button>
-                  <button type="button" class="chip" data-country="SI" data-state="SAVINJSKA" aria-pressed="false">Savinja</button>
-                  <button type="button" class="chip" data-country="SI" data-state="PODRAVSKA" aria-pressed="false">Drava</button>
-                  <button type="button" class="chip" data-country="SI" data-state="OBALNO_KRASKA" aria-pressed="false">Coastal-Karst</button>
-                  <button type="button" class="chip" data-country="SI" data-state="JUGOVZHODNA" aria-pressed="false">Southeast Slovenia</button>
-                  <button type="button" class="chip" data-country="SI" data-state="GORISKA" aria-pressed="false">Gorizia</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="ES">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Spain</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="ES" data-state="MADRID" aria-pressed="false">Comunidad de Madrid</button>
-                  <button type="button" class="chip" data-country="ES" data-state="CATALUNYA" aria-pressed="false">Cataluña</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="SE">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Sweden</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="SE" data-state="VASTRA_GOTALAND" aria-pressed="false">Västra Götaland</button>
-                  <button type="button" class="chip" data-country="SE" data-state="STOCKHOLM" aria-pressed="false">Stockholm</button>
-                  <button type="button" class="chip" data-country="SE" data-state="SKANE" aria-pressed="false">Skåne</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="CH">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Switzerland</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="CH" data-state="ZURICH" aria-pressed="false">Zürich</button>
-                  <button type="button" class="chip" data-country="CH" data-state="BASEL_STADT" aria-pressed="false">Basel-Stadt</button>
-                  <button type="button" class="chip" data-country="CH" data-state="BERN" aria-pressed="false">Bern</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="GB">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>United Kingdom</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="GB" data-state="ENGLAND" aria-pressed="false">England</button>
-                  <button type="button" class="chip" data-country="GB" data-state="SCOTLAND" aria-pressed="false">Scotland</button>
-                  <button type="button" class="chip" data-country="GB" data-state="WALES" aria-pressed="false">Wales</button>
-                  <button type="button" class="chip" data-country="GB" data-state="NORTHERN_IRELAND" aria-pressed="false">Northern Ireland</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="UA">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Ukraine</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="UA" data-state="KYIV" aria-pressed="false">Kyiv</button>
-                  <button type="button" class="chip" data-country="UA" data-state="LVIV" aria-pressed="false">Lviv</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="SK">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Slovakia</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="SK" data-state="BRATISLAVSKY" aria-pressed="false">Bratislavský</button>
-                  <button type="button" class="chip" data-country="SK" data-state="ZILINSKY" aria-pressed="false">Žilinský</button>
-                  <button type="button" class="chip" data-country="SK" data-state="TRENCIANSKY" aria-pressed="false">Trenčiansky</button>
-                  <button type="button" class="chip" data-country="SK" data-state="BANSKOBYSTRICKY" aria-pressed="false">Banskobystrický</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="CY">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Cyprus</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="CY" data-state="NICOSIA" aria-pressed="false">Nicosia</button>
-                  <button type="button" class="chip" data-country="CY" data-state="LIMASSOL" aria-pressed="false">Limassol</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="TR">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Turkey</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="TR" data-state="ISTANBUL" aria-pressed="false">İstanbul</button>
-                  <button type="button" class="chip" data-country="TR" data-state="BURSA" aria-pressed="false">Bursa</button>
-                  <button type="button" class="chip" data-country="TR" data-state="ESKISEHIR" aria-pressed="false">Eskişehir</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="LV">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Latvia</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="LV" data-state="RIGA" aria-pressed="false">Rīga</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="BA">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Bosnia and Herzegovina</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="BA" data-state="REPUBLIKA_SRPSKA" aria-pressed="false">Republika Srpska</button>
-                  <button type="button" class="chip" data-country="BA" data-state="HERZEGOVINA_NERETVA" aria-pressed="false">Herzegovina-Neretva</button>
-                  <button type="button" class="chip" data-country="BA" data-state="UNA_SANA" aria-pressed="false">Una-Sana</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="AD">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Andorra</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="AD" data-state="ANDORRA_LA_VELLA" aria-pressed="false">Andorra la Vella</button>
-                  <button type="button" class="chip" data-country="AD" data-state="CANILLO" aria-pressed="false">Canillo</button>
-                  <button type="button" class="chip" data-country="AD" data-state="ENCAMP" aria-pressed="false">Encamp</button>
-                  <button type="button" class="chip" data-country="AD" data-state="ESCALDES_ENGORDANY" aria-pressed="false">Escaldes-Engordany</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="region-group collapsed" data-region="north-america">
-            <button type="button" class="region-header"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>North America</button>
-            <div class="region-body">
-              <div class="country-group collapsed" data-country="CA">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Canada</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="CA" data-state="ON" aria-pressed="false">ON</button>
-                  <button type="button" class="chip" data-country="CA" data-state="BC" aria-pressed="false">BC</button>
-                  <button type="button" class="chip" data-country="CA" data-state="QC" aria-pressed="false">QC</button>
-                  <button type="button" class="chip" data-country="CA" data-state="AB" aria-pressed="false">AB</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="CR">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Costa Rica</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="CR" data-state="SAN_JOSE" aria-pressed="false">San José</button>
-                  <button type="button" class="chip" data-country="CR" data-state="HEREDIA" aria-pressed="false">Heredia</button>
-                  <button type="button" class="chip" data-country="CR" data-state="PUNTARENAS" aria-pressed="false">Puntarenas</button>
-                  <button type="button" class="chip" data-country="CR" data-state="GUANACASTE" aria-pressed="false">Guanacaste</button>
-                  <button type="button" class="chip" data-country="CR" data-state="CARTAGO" aria-pressed="false">Cartago</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="GT">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Guatemala</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="GT" data-state="SACATEPEQUEZ" aria-pressed="false">Sacatepéquez</button>
-                  <button type="button" class="chip" data-country="GT" data-state="GUATEMALA" aria-pressed="false">Guatemala</button>
-                  <button type="button" class="chip" data-country="GT" data-state="SOLOLA" aria-pressed="false">Sololá</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="MX">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Mexico</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="MX" data-state="CIUDAD_DE_MEXICO" aria-pressed="false">Ciudad de México</button>
-                  <button type="button" class="chip" data-country="MX" data-state="NUEVO_LEON" aria-pressed="false">Nuevo León</button>
-                  <button type="button" class="chip" data-country="MX" data-state="MEXICO" aria-pressed="false">México</button>
-                  <button type="button" class="chip" data-country="MX" data-state="JALISCO" aria-pressed="false">Jalisco</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="PA">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Panama</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="PA" data-state="CHIRIQUI" aria-pressed="false">Chiriquí</button>
-                  <button type="button" class="chip" data-country="PA" data-state="PANAMA" aria-pressed="false">Panamá</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="US">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>United States</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="US" data-state="CA" aria-pressed="false">CA</button>
-                  <button type="button" class="chip" data-country="US" data-state="CO" aria-pressed="false">CO</button>
-                  <button type="button" class="chip" data-country="US" data-state="TX" aria-pressed="false">TX</button>
-                  <button type="button" class="chip" data-country="US" data-state="WA" aria-pressed="false">WA</button>
-                  <button type="button" class="chip" data-country="US" data-state="NY" aria-pressed="false">NY</button>
-                  <button type="button" class="chip" data-country="US" data-state="NV" aria-pressed="false">NV</button>
-                  <button type="button" class="chip" data-country="US" data-state="GA" aria-pressed="false">GA</button>
-                  <button type="button" class="chip" data-country="US" data-state="UT" aria-pressed="false">UT</button>
-                  <button type="button" class="chip" data-country="US" data-state="AL" aria-pressed="false">AL</button>
-                  <button type="button" class="chip" data-country="US" data-state="TN" aria-pressed="false">TN</button>
-                  <button type="button" class="chip" data-country="US" data-state="MA" aria-pressed="false">MA</button>
-                  <button type="button" class="chip" data-country="US" data-state="IL" aria-pressed="false">IL</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="region-group collapsed" data-region="oceania">
-            <button type="button" class="region-header"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Oceania</button>
-            <div class="region-body">
-              <div class="country-group collapsed" data-country="AU">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Australia</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="AU" data-state="NSW" aria-pressed="false">NSW</button>
-                  <button type="button" class="chip" data-country="AU" data-state="VIC" aria-pressed="false">VIC</button>
-                  <button type="button" class="chip" data-country="AU" data-state="QLD" aria-pressed="false">QLD</button>
-                  <button type="button" class="chip" data-country="AU" data-state="WA" aria-pressed="false">WA</button>
-                  <button type="button" class="chip" data-country="AU" data-state="SA" aria-pressed="false">SA</button>
-                  <button type="button" class="chip" data-country="AU" data-state="ACT" aria-pressed="false">ACT</button>
-                  <button type="button" class="chip" data-country="AU" data-state="TAS" aria-pressed="false">TAS</button>
-                  <button type="button" class="chip" data-country="AU" data-state="NT" aria-pressed="false">NT</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="NZ">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>New Zealand</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="NZ" data-state="AUCKLAND" aria-pressed="false">Auckland</button>
-                  <button type="button" class="chip" data-country="NZ" data-state="WELLINGTON" aria-pressed="false">Wellington</button>
-                  <button type="button" class="chip" data-country="NZ" data-state="CANTERBURY" aria-pressed="false">Canterbury</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="region-group collapsed" data-region="south-america">
-            <button type="button" class="region-header"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>South America</button>
-            <div class="region-body">
-              <div class="country-group collapsed" data-country="AR">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Argentina</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="AR" data-state="BUENOS_AIRES" aria-pressed="false">Buenos Aires</button>
-                  <button type="button" class="chip" data-country="AR" data-state="CABA" aria-pressed="false">CABA</button>
-                  <button type="button" class="chip" data-country="AR" data-state="CORDOBA" aria-pressed="false">Córdoba</button>
-                  <button type="button" class="chip" data-country="AR" data-state="SANTA_FE" aria-pressed="false">Santa Fe</button>
-                  <button type="button" class="chip" data-country="AR" data-state="ENTRE_RIOS" aria-pressed="false">Entre Ríos</button>
-                  <button type="button" class="chip" data-country="AR" data-state="MENDOZA" aria-pressed="false">Mendoza</button>
-                  <button type="button" class="chip" data-country="AR" data-state="NEUQUEN" aria-pressed="false">Neuquén</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="BO">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Bolivia</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="BO" data-state="COCHABAMBA" aria-pressed="false">Cochabamba</button>
-                  <button type="button" class="chip" data-country="BO" data-state="LA_PAZ" aria-pressed="false">La Paz</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="BR">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Brazil</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="BR" data-state="SAO_PAULO" aria-pressed="false">São Paulo</button>
-                  <button type="button" class="chip" data-country="BR" data-state="RIO_DE_JANEIRO" aria-pressed="false">Rio de Janeiro</button>
-                  <button type="button" class="chip" data-country="BR" data-state="MINAS_GERAIS" aria-pressed="false">Minas Gerais</button>
-                  <button type="button" class="chip" data-country="BR" data-state="PARANA" aria-pressed="false">Paraná</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="CL">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Chile</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="CL" data-state="METROPOLITANA" aria-pressed="false">Metropolitana</button>
-                  <button type="button" class="chip" data-country="CL" data-state="VALPARAISO" aria-pressed="false">Valparaíso</button>
-                  <button type="button" class="chip" data-country="CL" data-state="LOS_LAGOS" aria-pressed="false">Los Lagos</button>
-                  <button type="button" class="chip" data-country="CL" data-state="LIBERTADOR_OHIGGINS" aria-pressed="false">Libertador O'Higgins</button>
-                  <button type="button" class="chip" data-country="CL" data-state="MAULE" aria-pressed="false">Maule</button>
-                  <button type="button" class="chip" data-country="CL" data-state="BIOBIO" aria-pressed="false">Biobío</button>
-                  <button type="button" class="chip" data-country="CL" data-state="ARAUCANIA" aria-pressed="false">La Araucanía</button>
-                  <button type="button" class="chip" data-country="CL" data-state="LOS_RIOS" aria-pressed="false">Los Ríos</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="CO">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Colombia</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="CO" data-state="BOGOTA_DC" aria-pressed="false">Bogotá D.C.</button>
-                  <button type="button" class="chip" data-country="CO" data-state="SANTANDER" aria-pressed="false">Santander</button>
-                  <button type="button" class="chip" data-country="CO" data-state="VALLE_DEL_CAUCA" aria-pressed="false">Valle del Cauca</button>
-                  <button type="button" class="chip" data-country="CO" data-state="CUNDINAMARCA" aria-pressed="false">Cundinamarca</button>
-                  <button type="button" class="chip" data-country="CO" data-state="NORTE_DE_SANTANDER" aria-pressed="false">Norte de Santander</button>
-                  <button type="button" class="chip" data-country="CO" data-state="ANTIOQUIA" aria-pressed="false">Antioquia</button>
-                  <button type="button" class="chip" data-country="CO" data-state="TOLIMA" aria-pressed="false">Tolima</button>
-                  <button type="button" class="chip" data-country="CO" data-state="HUILA" aria-pressed="false">Huila</button>
-                  <button type="button" class="chip" data-country="CO" data-state="NARINO" aria-pressed="false">Nariño</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="EC">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Ecuador</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="EC" data-state="PICHINCHA" aria-pressed="false">Pichincha</button>
-                  <button type="button" class="chip" data-country="EC" data-state="AZUAY" aria-pressed="false">Azuay</button>
-                  <button type="button" class="chip" data-country="EC" data-state="TUNGURAHUA" aria-pressed="false">Tungurahua</button>
-                  <button type="button" class="chip" data-country="EC" data-state="CANAR" aria-pressed="false">Cañar</button>
-                  <button type="button" class="chip" data-country="EC" data-state="IMBABURA" aria-pressed="false">Imbabura</button>
-                  <button type="button" class="chip" data-country="EC" data-state="MANABI" aria-pressed="false">Manabí</button>
-                  <button type="button" class="chip" data-country="EC" data-state="GUAYAS" aria-pressed="false">Guayas</button>
-                  <button type="button" class="chip" data-country="EC" data-state="PASTAZA" aria-pressed="false">Pastaza</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="PY">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Paraguay</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="PY" data-state="ASUNCION" aria-pressed="false">Asunción</button>
-                  <button type="button" class="chip" data-country="PY" data-state="CENTRAL" aria-pressed="false">Central</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="PE">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Peru</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="PE" data-state="LIMA" aria-pressed="false">Lima</button>
-                  <button type="button" class="chip" data-country="PE" data-state="AREQUIPA" aria-pressed="false">Arequipa</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="UY">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Uruguay</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="UY" data-state="MONTEVIDEO" aria-pressed="false">Montevideo</button>
-                  <button type="button" class="chip" data-country="UY" data-state="MALDONADO" aria-pressed="false">Maldonado</button>
-                  <button type="button" class="chip" data-country="UY" data-state="TACUAREMBO" aria-pressed="false">Tacuarembó</button>
-                  <button type="button" class="chip" data-country="UY" data-state="PAYSANDU" aria-pressed="false">Paysandú</button>
-                </div>
-              </div>
-              <div class="country-group collapsed" data-country="VE">
-                <button type="button" class="country-label"><svg class="icon icon-sm disclosure" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-right"/></svg>Venezuela</button>
-                <div class="chip-row">
-                  <button type="button" class="chip" data-country="VE" data-state="DISTRITO_CAPITAL" aria-pressed="false">Distrito Capital</button>
-                  <button type="button" class="chip" data-country="VE" data-state="MIRANDA" aria-pressed="false">Miranda</button>
-                  <button type="button" class="chip" data-country="VE" data-state="ZULIA" aria-pressed="false">Zulia</button>
-                  <button type="button" class="chip" data-country="VE" data-state="ARAGUA" aria-pressed="false">Aragua</button>
-                  <button type="button" class="chip" data-country="VE" data-state="TACHIRA" aria-pressed="false">Táchira</button>
-                  <button type="button" class="chip" data-country="VE" data-state="GUARICO" aria-pressed="false">Guárico</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="type-filter" id="typeFilters">
-          <div class="section-label">Type</div>
-          <label class="type-check">
-            <input type="checkbox" class="chk-indoor" data-type="indoor-bouldering" checked>
-            <span class="type-dot type-dot--boulder" aria-hidden="true"></span>
-            Indoor bouldering
-          </label>
-          <label class="type-check">
-            <input type="checkbox" class="chk-toprope" data-type="top-rope" checked>
-            <span class="type-dot type-dot--toprope" aria-hidden="true"></span>
-            Top rope
-          </label>
-          <label class="type-check">
-            <input type="checkbox" class="chk-lead" data-type="lead-climbing" checked>
-            <span class="type-dot type-dot--lead" aria-hidden="true"></span>
-            Lead climbing
-          </label>
-        </div>
-        <div class="type-filter" id="marksFilters">
-          <div class="section-label">My marks</div>
-          <label class="type-check">
-            <input type="checkbox" id="filterClimbed">
-            <svg class="icon icon-sm mark-icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-check"/></svg>
-            Climbed
-          </label>
-          <label class="type-check">
-            <input type="checkbox" id="filterBookmarked">
-            <svg class="icon icon-sm mark-icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-bookmark-simple"/></svg>
-            Saved
-          </label>
         </div>
       </div>
-      <div class="list-status" aria-live="polite"><strong class="tnum" id="countNum">0</strong><span>gyms shown</span></div>
-      <div class="gym-list" id="gymList"></div>
-      <div class="sidebar-footer">
-        <div class="footer-links">
-          <a class="link link-quiet" href="about.html">About</a>
-          <button type="button" class="link link-quiet" id="openPrivacy">Privacy</button>
-          <button type="button" class="link link-quiet" id="openTerms">Terms</button>
-        </div>
-      </div>
-    </aside>
+      <button type="button" class="btn btn-tertiary btn-icon sheet-close" id="sheetClose" aria-label="Collapse the gym list"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-down"/></svg></button>
+    </section>
 
-    <main class="map-wrap" id="main" tabindex="-1" data-theme="rock">
+    <main class="map-wrap" id="main" tabindex="-1" data-theme="rock" aria-label="Map">
       <div id="map"></div>
+      <div class="map-top" data-theme="paper">
+        <div class="map-search-slot" id="mapSearchSlot"></div>
+        <div class="map-filter-slot" id="mapFilterSlot"></div>
+      </div>
+      <div class="map-move-controls">
+        <button type="button" class="map-toggle map-float" data-theme="paper" id="searchAsMove" aria-pressed="true"><span class="map-toggle-box"><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-check"/></svg></span>Search as I move the map</button>
+        <button type="button" class="btn btn-secondary btn-sm map-float" data-theme="paper" id="searchThisArea" hidden>Search this area</button>
+      </div>
       <div class="placing-banner map-float" data-theme="paper" id="placingBanner">Click anywhere on the map to drop a pin for the gym</div>
-      <div class="hint-banner map-float" data-theme="paper" id="hintBanner" role="status">
-        <span>Click a number to zoom in and explore</span>
-        <button type="button" class="btn btn-tertiary btn-icon btn-sm hint-dismiss" id="hintDismiss" aria-label="Dismiss"><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-x"/></svg></button>
-      </div>
       <div class="toast" id="toast" role="status" aria-live="polite"></div>
-      <div class="legend map-float" data-theme="paper" id="legend">
-        <button class="legend-header" id="legendToggle" aria-expanded="true" aria-controls="legendBody">
-          <span>Legend</span><svg class="icon icon-sm legend-chevron" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-down"/></svg>
-        </button>
-        <div class="legend-body" id="legendBody">
-          <ul class="legend-types">
-            <li><span class="type-dot type-dot--boulder" aria-hidden="true"></span>Indoor bouldering</li>
-            <li><span class="type-dot type-dot--toprope" aria-hidden="true"></span>Top rope</li>
-            <li><span class="type-dot type-dot--lead" aria-hidden="true"></span>Lead climbing</li>
-          </ul>
-          <p class="legend-note">Split pins offer more than one type. A small ring-dot marks a community-added gym, not yet verified. Green ring: climbed. Mustard ring: saved. Numbered circles are clusters: click to zoom in.</p>
-        </div>
-      </div>
     </main>
+    <section class="peek map-float" id="peek" data-theme="paper" aria-labelledby="peekTitle" hidden></section>
+    <p class="visually-hidden" id="liveRegion" aria-live="polite"></p>
   </div>
   <nav class="tabbar" aria-label="Primary" data-theme="paper">
     <button type="button" class="tabbar-item" data-nav="explore" aria-current="page"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-map-trifold"/></svg><span>Explore</span></button>
-    <button type="button" class="tabbar-item" data-nav="regions" aria-controls="sidebar"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-squares-four"/></svg><span>Regions</span></button>
+    <button type="button" class="tabbar-item" data-nav="regions" aria-controls="searchPanel"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-squares-four"/></svg><span>Regions</span></button>
     <button type="button" class="start-btn" data-nav="start" aria-label="Log a session"><span class="start-disc"><span class="mascot mascot--start" data-mascot-slot="start" aria-hidden="true"></span><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-plus"/></svg></span><span>Log</span></button>
     <button type="button" class="tabbar-item" data-nav="log"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-book-open"/></svg><span>Log</span></button>
     <button type="button" class="tabbar-item" data-nav="me" aria-controls="meMenu" aria-expanded="false"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-user"/></svg><span>Me</span></button>
@@ -1425,6 +603,35 @@
   </div>
 </div>
 
+
+<div class="modal-backdrop hidden" id="filterSheetBackdrop">
+  <div class="modal filter-sheet" role="dialog" aria-modal="true" aria-labelledby="dlg-all-filters" id="filterSheet">
+    <div class="filter-sheet-head">
+      <h2 id="dlg-all-filters">All filters</h2>
+      <button type="button" class="btn btn-tertiary btn-icon btn-sm" id="filterSheetClose" data-modal-close aria-label="Close"><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-x"/></svg></button>
+    </div>
+    <fieldset class="filter-section">
+      <legend class="section-label">Type</legend>
+      <label class="check-row"><input type="checkbox" data-sheet-type="indoor-bouldering"><span class="type-dot type-dot--boulder" aria-hidden="true"></span>Indoor bouldering</label>
+      <label class="check-row"><input type="checkbox" data-sheet-type="top-rope"><span class="type-dot type-dot--toprope" aria-hidden="true"></span>Top rope</label>
+      <label class="check-row"><input type="checkbox" data-sheet-type="lead-climbing"><span class="type-dot type-dot--lead" aria-hidden="true"></span>Lead climbing</label>
+    </fieldset>
+    <fieldset class="filter-section">
+      <legend class="section-label">Marks</legend>
+      <label class="check-row"><input type="checkbox" data-sheet-flag="saved">Saved</label>
+      <label class="check-row"><input type="checkbox" data-sheet-flag="climbed">Climbed</label>
+      <p class="form-hint" id="filterSheetMarksHint">Sign in to filter by the gyms you saved or climbed.</p>
+    </fieldset>
+    <fieldset class="filter-section">
+      <legend class="section-label">Photos</legend>
+      <label class="check-row"><input type="checkbox" data-sheet-flag="photos">Has photos</label>
+    </fieldset>
+    <div class="modal-actions filter-sheet-actions">
+      <button type="button" class="btn btn-tertiary" id="resetFiltersBtn">Reset</button>
+      <button type="button" class="btn btn-primary" id="applyFiltersBtn">Show gyms</button>
+    </div>
+  </div>
+</div>
 
 <div class="modal-backdrop hidden" id="privacyModalBackdrop">
   <div class="modal info-modal" role="dialog" aria-modal="true" aria-labelledby="dlg-privacy-policy">

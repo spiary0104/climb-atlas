@@ -1,4 +1,4 @@
-// Renders the popup and the moderator panel with benign and with hostile database values, and checks that hostile values
+// Renders the Explore builders (row, card, carousel, peek card, pills, search options) and the moderator panel with benign and with hostile database values, and checks that hostile values
 // cannot add tags, attributes, event handlers or executable links.   node --test tests/
 'use strict';
 const test = require('node:test');
@@ -9,7 +9,7 @@ globalThis.window = globalThis.window || {};
 globalThis.window.matchMedia = () => ({ matches: false });
 
 const modules = (async () => ({
-  popup: await import('../js/modules/popup-html.js'),
+  list: await import('../js/modules/list-html.js'),
   mod: await import('../js/modules/moderation-html.js'),
 }))();
 
@@ -30,9 +30,9 @@ function tags(html) {
 const shape = html => tags(html).map(t => t.tag + '[' + Object.keys(t.attrs).sort().join(',') + ']');
 const hasHandlerAttrs = html => tags(html).some(t => Object.keys(t.attrs).some(n => /^on/i.test(n)));
 const allText = html => html.replace(/<[^>]*>/g, '');
-// Every <svg> must be one of our sprite icons, and every <use> must point into assets/icons.svg.
-const onlySpriteIcons = html => tags(html).every(t => (t.tag !== 'svg' || /^icon\b/.test(t.attrs.class || '') && t.attrs['aria-hidden'] === 'true')
-  && (t.tag !== 'use' || /^assets\/icons\.svg#i-[a-z-]+$/.test(t.attrs.href || '')));
+// Every <svg> must be a sprite icon or the shared contour placeholder, and every <use> must point into our own two sprites.
+const onlySpriteIcons = html => tags(html).every(t => (t.tag !== 'svg' || /^(icon|placeholder-contour)\b/.test(t.attrs.class || '') && t.attrs['aria-hidden'] === 'true')
+  && (t.tag !== 'use' || /^assets\/icons\.svg#i-[a-z-]+$|^assets\/contour\.svg#contour$/.test(t.attrs.href || '')));
 const countSvg = html => (html.match(/<svg\b/gi) || []).length;
 
 const HOSTILE = [
@@ -48,62 +48,97 @@ const HOSTILE = [
 const benignSpot = { id: 'community-0f3a7c2e-1111-4222-8333-444455556666', name: 'Boulder Barn', suburb: 'Surry Hills', state: 'NSW', country: 'AU',
   types: ['indoor-bouldering', 'top-rope'], address: '1 Example St', notes: 'Friendly staff', photo: 'https://example.com/a.jpg', lat: -33.9, lng: 151.2 };
 
-test('popup: hostile values in every field cannot add tags/attributes or handlers (structure is identical to a benign render)', async () => {
-  const { popup } = await modules;
-  const benign = popup.buildPopupHtml(benignSpot, { region: 'New South Wales' });
+// Every builder that renders a gym (row, card, carousel card, peek card) gets the same hostile-input contract the old popup had.
+const BUILDERS = ['rowHtml', 'cardHtml', 'carouselCardHtml', 'peekHtml'];
+const ctxBenign = { region: 'New South Wales', country: 'Australia', saved: true, climbed: false, distance: '1.2 km', selected: false };
+
+test('explore builders: hostile values in every field cannot add tags/attributes or handlers (structure identical to a benign render)', async () => {
+  const { list } = await modules;
+  for (const b of BUILDERS) {
+    const benign = list[b](benignSpot, ctxBenign);
+    for (const h of HOSTILE) {
+      // (an unknown type string is dropped, not rendered, so the benign types stay to keep the dot/tag count comparable)
+      const hostile = list[b]({ ...benignSpot, id: h, name: h, suburb: h, address: h, notes: h, types: [...benignSpot.types, h] }, { ...ctxBenign, region: h, country: h, distance: h });
+      assert.deepEqual(shape(hostile), shape(benign), b + ': tag/attribute structure changed for payload ' + h);
+      assert.equal(hasHandlerAttrs(hostile), false, b + ': event-handler attribute injected: ' + h);
+      assert.ok(!/<script/i.test(hostile), b + ': raw markup leaked: ' + h);
+      assert.equal(countSvg(hostile), countSvg(benign), b + ': svg markup leaked: ' + h);
+      assert.ok(onlySpriteIcons(hostile), b + ': non-sprite svg/use for payload ' + h);
+    }
+  }
   for (const h of HOSTILE) {
-    const hostile = popup.buildPopupHtml({ ...benignSpot, id: h, name: h, suburb: h, address: h, notes: h, types: [h, 'top-rope'] }, { region: h });
-    assert.deepEqual(shape(hostile), shape(benign), 'tag/attribute structure changed for payload ' + h);
-    assert.equal(hasHandlerAttrs(hostile), false, 'event-handler attribute injected: ' + h);
-    assert.ok(!/<script/i.test(hostile), 'raw markup leaked: ' + h);   // (attribute VALUES may legitimately contain the escaped text)
-    assert.equal(countSvg(hostile), countSvg(benign), 'svg markup leaked: ' + h);
-    assert.ok(onlySpriteIcons(hostile), 'non-sprite svg/use in popup for payload ' + h);
+    for (const [kind, benign] of [['place', list.appliedPillHtml('place', 'Sydney')], ['text', list.appliedPillHtml('text', 'boulder')]]) {
+      const hostile = list.appliedPillHtml(kind, h);
+      assert.deepEqual(shape(hostile), shape(benign), 'applied pill ' + kind + ': ' + h);
+      assert.equal(hasHandlerAttrs(hostile), false);
+    }
+    const opt = list.searchOptionHtml({ kind: 'city', label: h, secondary: h, count: 3 }, 0);
+    assert.deepEqual(shape(opt), shape(list.searchOptionHtml({ kind: 'city', label: 'Sydney', secondary: 'NSW', count: 3 }, 0)), 'search option: ' + h);
+    assert.deepEqual(shape(list.searchOptionHtml({ kind: h, label: 'x' }, h)), shape(list.searchOptionHtml({ kind: 'gym', label: 'x' }, 0)), 'unknown kind/index cannot change markup: ' + h);
+    assert.deepEqual(shape(list.searchGroupHtml(h, '')), shape(list.searchGroupHtml('Cities', '')), 'search group: ' + h);
+    assert.ok(!/<script|<img/i.test(list.emptyHtml('search', h)), 'search empty state: ' + h);
   }
 });
 
-test('popup: no inline event handlers at all; buttons use data-popup-action and the id is attribute-escaped', async () => {
-  const { popup } = await modules;
-  const html = popup.buildPopupHtml({ ...benignSpot, id: 'x"><b>' });
+test('explore builders: no inline handlers; actions are data-gym-action + data-spot-id and the id is attribute-escaped', async () => {
+  const { list } = await modules;
+  const html = list.peekHtml({ ...benignSpot, id: 'x"><b>' }, ctxBenign);
   assert.equal(hasHandlerAttrs(html), false);
   assert.ok(!/window\.__|onclick|onerror/i.test(html));
-  const btns = tags(html).filter(t => t.attrs['data-popup-action']);
-  assert.deepEqual(btns.map(b => b.attrs['data-popup-action']), ['climbed', 'bookmarked', 'edit', 'report']);
-  for (const b of btns) assert.equal(b.attrs['data-spot-id'], 'x&quot;&gt;&lt;b&gt;');   // the browser decodes this into plain text via dataset; it is never code
+  const btns = tags(html).filter(t => t.attrs['data-gym-action']);
+  assert.deepEqual(btns.map(b => b.attrs['data-gym-action']), ['close', 'save', 'climbed', 'edit', 'report']);
+  for (const b of btns.filter(b => b.attrs['data-spot-id'] !== undefined)) assert.equal(b.attrs['data-spot-id'], 'x&quot;&gt;&lt;b&gt;');
+  const row = tags(list.rowHtml({ ...benignSpot, id: 'x"><b>' }, ctxBenign));
+  assert.deepEqual(row.filter(t => t.attrs['data-gym-action']).map(t => t.attrs['data-gym-action']), ['open', 'save']);
 });
 
-test('popup: javascript:/data: photo is not rendered as an image; a normal https photo is', async () => {
-  const { popup } = await modules;
-  for (const bad of ['javascript:alert(1)', 'data:image/svg+xml;base64,PHN2Zz4=', 'JAVASCRIPT:alert(1)', 'not a url', '//evil.example/x.png', 'https://x"onerror="alert(1)']) {
-    assert.equal(tags(popup.buildPopupHtml({ ...benignSpot, photo: bad })).some(t => t.tag === 'img'), false, bad);
+test('explore builders: javascript:/data: photo is never rendered as an image; a normal https photo is (and it sits over the placeholder)', async () => {
+  const { list } = await modules;
+  for (const b of BUILDERS) {
+    for (const bad of ['javascript:alert(1)', 'data:image/svg+xml;base64,PHN2Zz4=', 'JAVASCRIPT:alert(1)', 'not a url', '//evil.example/x.png', 'https://x"onerror="alert(1)']) {
+      assert.equal(tags(list[b]({ ...benignSpot, photo: bad }, ctxBenign)).some(t => t.tag === 'img'), false, b + ' ' + bad);
+    }
+    const imgs = tags(list[b](benignSpot, ctxBenign)).filter(t => t.tag === 'img');
+    assert.equal(imgs.length, 1, b);
+    assert.equal(imgs[0].attrs.src, 'https://example.com/a.jpg');
+    assert.equal(Object.keys(imgs[0].attrs).some(n => /^on/i.test(n)), false);
+    assert.match(imgs[0].attrs.class, /\bgym-photo\b/, b + ': broken photos are hidden by the capture-phase handler via .gym-photo');
   }
-  const imgs = tags(popup.buildPopupHtml(benignSpot)).filter(t => t.tag === 'img');
-  assert.equal(imgs.length, 1);
-  assert.equal(imgs[0].attrs.src, 'https://example.com/a.jpg');
-  assert.equal(Object.keys(imgs[0].attrs).some(n => /^on/i.test(n)), false);     // the old inline onerror is gone
+  // Without a photo the contour placeholder carries the initial as text.
+  const row = list.rowHtml({ ...benignSpot, photo: null, name: 'élan' }, ctxBenign);
+  assert.ok(/<use href="assets\/contour\.svg#contour"\/>/.test(row) && allText(row).includes('É'));
 });
 
-test('popup: quotes and HTML-special characters in ordinary text survive as text', async () => {
-  const { popup } = await modules;
-  const html = popup.buildPopupHtml({ ...benignSpot, name: 'Tom & Jerry\'s "Rock" <Gym>', notes: '5 < 6 & "quoted"' });
+test('explore builders: quotes and HTML-special characters in ordinary text survive as text', async () => {
+  const { list } = await modules;
+  const html = list.peekHtml({ ...benignSpot, name: 'Tom & Jerry\'s "Rock" <Gym>', notes: '5 < 6 & "quoted"' }, ctxBenign);
   assert.ok(html.includes('Tom &amp; Jerry&#39;s &quot;Rock&quot; &lt;Gym&gt;'));
   assert.ok(html.includes('5 &lt; 6 &amp; &quot;quoted&quot;'));
-  assert.equal(shape(html).length, shape(popup.buildPopupHtml(benignSpot)).length);
+  assert.equal(shape(html).length, shape(list.peekHtml(benignSpot, ctxBenign)).length);
 });
 
-test('popup: normal behaviour preserved (name, place, types, address, marks state, directions link)', async () => {
-  const { popup } = await modules;
-  const html = popup.buildPopupHtml(benignSpot, { climbed: true, bookmarked: false, region: 'New South Wales' });
+test('explore builders: behaviour the popup had is preserved in the peek card, and rows carry the dense-row content', async () => {
+  const { list } = await modules;
+  const html = list.peekHtml(benignSpot, { ...ctxBenign, climbed: true, saved: false });
   const text = allText(html);
-  assert.ok(text.includes('Boulder Barn') && text.includes('Surry Hills, New South Wales'));
+  assert.ok(text.includes('Boulder Barn') && text.includes('Surry Hills, New South Wales, Australia'));
   assert.ok(/ouldering/.test(text) && /op rope/i.test(text));
   assert.ok(text.includes('1 Example St') && text.includes('Friendly staff'));
-  const climbed = tags(html).find(t => t.attrs['data-popup-action'] === 'climbed');
-  const saved = tags(html).find(t => t.attrs['data-popup-action'] === 'bookmarked');
-  assert.equal(climbed.attrs['aria-pressed'], 'true');       // toggle state is aria-pressed (styled by .btn[aria-pressed=true])
+  const climbed = tags(html).find(t => t.attrs['data-gym-action'] === 'climbed');
+  const saved = tags(html).find(t => t.attrs['data-gym-action'] === 'save');
+  assert.equal(climbed.attrs['aria-pressed'], 'true');
   assert.equal(saved.attrs['aria-pressed'], 'false');
-  assert.match(climbed.attrs.class, /\bbtn\b/);
-  const dir = tags(html).find(t => /\bpopup-directions-btn\b/.test(t.attrs.class || ''));
+  const dir = tags(html).find(t => /\bpeek-directions\b/.test(t.attrs.class || ''));
   assert.match(dir.attrs.href, /^https:\/\/www\.google\.com\/maps\/dir\/\?api=1&amp;destination=/);
+  assert.equal(dir.attrs.rel, 'noopener noreferrer');
+  const row = list.rowHtml({ ...benignSpot, community: true }, ctxBenign);
+  assert.ok(allText(row).includes('Surry Hills · New South Wales') && allText(row).includes('1.2 km'));
+  assert.equal(tags(row).filter(t => /\btype-dot--/.test(t.attrs.class || '')).length, 2, 'one type dot per known type');
+  assert.ok(/provenance-mark--community/.test(row), 'community-added ring-dot');
+  assert.ok(!/provenance-mark/.test(list.rowHtml(benignSpot, ctxBenign)), 'no mark on a verified gym');
+  assert.match(list.capRowHtml(1204), /Zoom in to see all <span class="tnum">1,204<\/span>/);
+  assert.deepEqual(['area', 'filters', 'search'].map(k => tags(list.emptyHtml(k, 'x')).filter(t => t.attrs['data-list-action']).map(t => t.attrs['data-list-action']).join(',')),
+    ['zoom-out,add-gym', 'clear-filters', 'search-city']);
 });
 
 const pendingSpot = { id: 'community-aaaa', name: 'N', suburb: 'S', state: 'NSW', country: 'AU', types: ['top-rope'], address: 'A', notes: 'n', photo: 'https://example.com/p.jpg' };

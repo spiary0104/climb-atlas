@@ -80,8 +80,37 @@ const SAFE_EXPR = [
   /^CSS\.escape\(/,
   /^icon\('[a-z-]+'(, \{size:'(sm|md|lg)'\})?\)$/,                             // sprite icon with a literal name (icons.js rejects unknown names)
   /^icon\(m\.icon, \{size:'sm'\}\)$/,                                           // logbook moodHtml: m comes from the fixed MOODS table
-  /^moodHtml\(s\.mood\)$/,                                                       // builds from MOODS only; unknown moods render nothing                                                             // used in a CSS selector string, not in markup
+  /^moodHtml\(s\.mood\)$/,                                                       // builds from MOODS only; unknown moods render nothing
+  // list-html.js (Explore builders): helpers that escape internally or emit fixed class names / literal icon names
+  /^(provenanceHtml\(g\)|typeDotsHtml\(g\.types\)|typeTagsHtml\(g\.types\)|saveButton\(g, ctx\.saved, '[a-z-]+'\))$/,
+  /^TYPE_CLASS\[t\]$/,                                                          // fixed map, filtered to known types first (knownTypes)
+  /^(extraClass|which|count|optionsHtml)$/,                                      // literal class from callers / 'place'|'text' / escaped count span / searchGroupHtml(options already built)
+  /^Number\(index\)$/,                                                          // search option index: a number, never data
+  // pin-html.js: numbers, the fixed path, ring names from RING_ORDER, pinType() output and kind forced to 'dot'|'teardrop'
+  /^(w|TEARDROP|shape\((w|outline)\)|r|type|kind|box|parts\.join\(''\))$/,
+  /^html$/,                                                                      // search.js listbox(): wraps searchGroupHtml() output
 ];
+// A conditional is safe when every branch that can be rendered is safe: a fixed string literal, a template whose own
+// interpolations are all safe, or a nested conditional (checked recursively). The condition itself is never rendered.
+function splitTernary(e) {
+  let depth = 0, q = null, qPos = -1, nested = 0;
+  for (let i = 0; i < e.length; i++) {
+    const c = e[i];
+    if (q) { if (c === '\\') i++; else if (c === q) q = null; continue; }
+    if (c === "'" || c === '"' || c === '`') { q = c; continue; }
+    if ('([{'.includes(c)) depth++; else if (')]}'.includes(c)) depth--;
+    else if (depth === 0 && c === '?' && e[i + 1] !== '.' && e[i + 1] !== '?') { if (qPos < 0) qPos = i; else nested++; }
+    else if (depth === 0 && c === ':' && qPos >= 0) { if (nested) nested--; else return [e.slice(qPos + 1, i).trim(), e.slice(i + 1).trim()]; }
+  }
+  return null;
+}
+function isSafe(e) {
+  if (SAFE_EXPR.some((re) => re.test(e))) return true;
+  if (/^'[^'\\]*'$/.test(e)) return true;                                          // fixed string literal
+  if (/^`[^`]*`$/.test(e)) return interpolations(e.slice(1, -1)).every((x) => isSafe(x.replace(/\s+/g, ' ')));
+  const t = splitTernary(e);
+  return !!t && t.every(isSafe);
+}
 function interpolations(src) {
   const out = [];
   for (let i = 0; i < src.length; i++) {
@@ -95,7 +124,8 @@ function interpolations(src) {
   return out;
 }
 test('HTML-building templates only interpolate escaped or reviewed-safe expressions', () => {
-  const files = ['js/modules/popup-html.js', 'js/modules/moderation-html.js', 'js/modules/logbook.js', 'js/modules/sidebar.js', 'js/modules/auth-ui.js'];
+  const files = ['js/modules/list-html.js', 'js/modules/pin-html.js', 'js/modules/moderation-html.js', 'js/modules/logbook.js', 'js/modules/auth-ui.js',
+    'js/modules/search.js', 'js/modules/list.js', 'js/modules/explore.js', 'js/modules/filters.js', 'js/modules/map.js'];
   const unsafe = [];
   for (const f of files) {
     // lines that assign to .textContent are not markup (the browser treats the value as text)
@@ -106,7 +136,7 @@ test('HTML-building templates only interpolate escaped or reviewed-safe expressi
       if (!/<[a-z]/i.test(t) && !/class=/.test(t)) continue;
       for (const expr of interpolations(t)) {
         const e = expr.replace(/\s+/g, ' ');
-        if (!SAFE_EXPR.some((re) => re.test(e))) unsafe.push(f + ': ${' + e.slice(0, 110) + '}');
+        if (!isSafe(e)) unsafe.push(f + ': ${' + e.slice(0, 110) + '}');
       }
     }
   }
@@ -114,14 +144,15 @@ test('HTML-building templates only interpolate escaped or reviewed-safe expressi
 });
 
 test('photo URLs are validated at every render site and at both submit handlers', () => {
-  assert.ok(/safeUrl\(g\.photo\)/.test(read('js/modules/popup-html.js')));
+  assert.ok((read('js/modules/list-html.js').match(/safeUrl\(g\.photo\)/g) || []).length === 2, 'thumbHtml and peekHtml validate the photo');
   assert.ok(/safeUrl\(photo\)/.test(read('js/modules/moderation-html.js')));
   const modals = read('js/modules/modals.js');
   assert.ok(/fPhotoRaw && !safeUrl\(fPhotoRaw\)/.test(modals) && /ePhotoRaw && !safeUrl\(ePhotoRaw\)/.test(modals));
   // no other place renders a photo into markup
   for (const f of moduleFiles) {
     // moderation.js only copies pe.photo into the approved-edit UPDATE payload (data, never rendered as markup)
-    if (/popup-html|moderation-html|modals\.js|html-safe|moderation\.js/.test(f)) continue;
+    // filters.js only tests safeUrl(g.photo) for the "Has photos" filter (a boolean, never markup)
+    if (/list-html|moderation-html|modals\.js|html-safe|moderation\.js|filters\.js/.test(f)) continue;
     assert.ok(!/\.photo\b/.test(stripComments(read(f))) || /\.value\s*=/.test(read(f)), 'unreviewed photo use in ' + f);
   }
 });

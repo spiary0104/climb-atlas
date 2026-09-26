@@ -1,0 +1,382 @@
+/* Explore (docs/DESIGN.md sec. 7, 9, 13): the two-pane desktop layout, the viewport-scoped list (rows, cards, status line,
+   empty/loading states), filter chips and the All filters sheet, search, map pins/clusters/labels, the peek card, and the
+   mobile bottom sheet with its pin-tap carousel. Semantic and component tokens only (css/tokens.css). */
+
+/* ===== Layout: list pane (paper) + map (rock); >= 1024px ========================================================= */
+.explore{flex:1;display:flex;min-height:0;position:relative;}
+.list-pane{
+  position:relative;flex:none;
+  width:var(--size-list-pane);
+  display:flex;flex-direction:column;min-height:0;
+  background:var(--color-surface-default);
+  border-right:var(--border-width) solid var(--color-border-subtle);
+}
+.sheet-inner{flex:1;display:flex;flex-direction:column;min-height:0;}
+.sheet-handle{flex:none;}
+.sheet-grabber-btn,.sheet-close{display:none;}
+.gym-list{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;}
+.gym-list:focus{outline:none;}
+.list-footer{flex:none;padding:var(--space-3) var(--space-4);border-top:var(--border-width) solid var(--color-border-subtle);}
+.footer-links{display:flex;flex-wrap:wrap;gap:var(--space-3);justify-content:center;font-size:var(--type-caption-size);line-height:var(--type-caption-line);}
+
+/* ===== Filter chip row: one horizontal line, never wraps (sec. 7.6) ================================================ */
+.filter-bar{padding:var(--space-3) 0 var(--space-2);}
+.chip-scroll{display:flex;gap:var(--space-2);overflow-x:auto;padding:0 var(--space-4);scrollbar-width:none;}
+.chip-scroll::-webkit-scrollbar{display:none;}
+.chip-scroll .chip{flex:none;white-space:nowrap;}
+.applied-pills{display:contents;}
+.chip-applied .icon{margin-right:calc(var(--space-1) * -1);}
+
+/* ===== Status line: "84 gyms in view · NSW" + sort + list/card toggle =========================================== */
+.list-status{
+  display:flex;align-items:center;justify-content:space-between;gap:var(--space-3);
+  padding:var(--space-1) var(--space-4) var(--space-2);
+  border-bottom:var(--border-width) solid var(--color-border-divider);
+}
+.list-count{margin:0;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:var(--type-text-sm-size);line-height:var(--type-text-sm-line);color:var(--color-text-secondary);}
+.list-count strong{color:var(--color-text-primary);font-weight:var(--font-weight-semibold);}
+.list-tools{display:flex;align-items:center;gap:var(--space-2);flex:none;}
+.select.select-sm{width:auto;min-height:var(--size-control-sm);padding:0 var(--space-2);font-size:var(--type-text-sm-size);line-height:var(--type-text-sm-line);}
+.seg{display:inline-flex;border:var(--border-width) solid var(--color-border-subtle);border-radius:var(--radius-md);overflow:hidden;}
+.seg-btn{
+  appearance:none;position:relative;display:inline-flex;align-items:center;justify-content:center;
+  width:var(--size-control-sm);height:calc(var(--size-control-sm) - var(--border-width) * 2);
+  padding:0;border:0;background:transparent;color:var(--color-text-secondary);cursor:pointer;
+  transition:background-color var(--motion-fast) var(--ease-standard);
+}
+.seg-btn + .seg-btn{border-left:var(--border-width) solid var(--color-border-subtle);}
+.seg-btn:hover{color:var(--color-text-primary);}
+.seg-btn[aria-pressed="true"]{background:var(--color-surface-raised);color:var(--color-text-primary);}
+.seg-btn:focus-visible{outline-offset:calc(var(--focus-ring-width) * -1);}
+
+.featured-destinations{flex:none;padding:var(--space-3) var(--space-4);border-bottom:var(--border-width) solid var(--color-border-divider);}
+.featured-destinations[hidden]{display:none;}
+.featured-row{display:flex;flex-wrap:wrap;gap:var(--space-2);}
+
+/* ===== Dense row (56px) ============================================================================================= */
+.gym-row{
+  position:relative;display:flex;align-items:center;
+  min-height:var(--size-row-dense);
+  border-bottom:var(--border-width) solid var(--color-border-divider);
+  transition:background-color var(--motion-fast) var(--ease-standard);
+}
+.gym-row:hover,.gym-row.is-hover{background:var(--color-surface-raised);}
+.gym-row.is-selected{outline:var(--border-width) solid var(--color-border-strong);outline-offset:calc(var(--border-width) * -1);}
+.gym-row-main{
+  appearance:none;flex:1;min-width:0;
+  display:flex;align-items:center;gap:var(--space-3);
+  min-height:var(--size-row-dense);
+  padding:var(--space-2) var(--space-2) var(--space-2) var(--space-4);
+  background:none;border:0;color:inherit;font:inherit;text-align:left;cursor:pointer;
+}
+.gym-row-main:focus-visible{outline-offset:calc(var(--focus-ring-width) * -1);}
+.gym-row-text{flex:1;min-width:0;display:flex;flex-direction:column;}
+.gym-row-name{display:flex;align-items:center;gap:var(--space-1);min-width:0;}
+.gym-row-title{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:var(--type-text-md-size);line-height:var(--type-text-md-line);font-weight:var(--font-weight-semibold);}
+.gym-row-meta{display:flex;align-items:center;gap:var(--space-1);min-width:0;font-size:var(--type-text-sm-size);line-height:var(--type-text-sm-line);color:var(--color-text-secondary);}
+.gym-row-meta .type-dot{width:var(--pin-size-dot);height:var(--pin-size-dot);}
+.gym-row-place{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-left:var(--space-1);}
+.gym-row-side{flex:none;display:flex;align-items:center;gap:var(--space-1);padding-right:var(--space-2);}
+.gym-row-distance{font-size:var(--type-text-sm-size);line-height:var(--type-text-sm-line);color:var(--color-text-secondary);}
+.provenance-mark{flex:none;}
+
+/* ===== Thumbnails and the contour placeholder (sec. 13): the placeholder always sits under the photo ============== */
+.thumb{position:relative;display:block;flex:none;overflow:hidden;background:var(--color-surface-subtle);border-radius:var(--radius-sm);}
+.thumb--row{width:var(--size-thumb-dense);height:var(--size-thumb-dense);}
+.thumb--card{width:100%;aspect-ratio:var(--card-photo-ratio);border-radius:0;}
+.placeholder-contour{position:absolute;inset:0;width:100%;height:100%;fill:none;stroke:var(--placeholder-contour);stroke-width:var(--placeholder-contour-width);}
+.placeholder-letter{
+  position:absolute;left:var(--space-1);bottom:0;
+  font-family:var(--font-display);font-size:var(--type-display-sm-size);line-height:var(--type-display-sm-line);font-weight:var(--font-weight-semibold);
+  color:var(--color-text-primary);
+}
+.thumb--card .placeholder-letter{
+  left:var(--space-3);bottom:var(--space-2);
+  font-family:var(--font-display);font-size:var(--type-display-lg-size);line-height:var(--type-display-lg-line);
+}
+.gym-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.gym-photo.is-broken{display:none;}
+
+/* ===== Photo card (opt-in; 1 column, 2 at >= 1440px) ================================================================= */
+.gym-list.is-cards{display:grid;grid-template-columns:1fr;align-content:start;gap:var(--space-4);padding:var(--space-4);}
+.gym-card{
+  position:relative;overflow:hidden;
+  background:var(--color-surface-default);
+  border:var(--border-width) solid var(--color-border-subtle);
+  border-radius:var(--radius-lg);
+  transition:border-color var(--motion-fast) var(--ease-standard);
+}
+.gym-list:not(.is-cards) .gym-card{margin:var(--space-3) var(--space-4);}
+.gym-card:hover,.gym-card.is-hover{border-color:var(--color-border-strong);}
+.gym-card.is-selected{border-color:var(--color-border-strong);outline:var(--border-width) solid var(--color-border-strong);}
+.gym-card-main{appearance:none;display:flex;flex-direction:column;width:100%;padding:0;border:0;background:none;color:inherit;font:inherit;text-align:left;cursor:pointer;}
+.gym-card-main:focus-visible{outline-offset:calc(var(--focus-ring-width) * -1);}
+.gym-card-body{display:flex;flex-direction:column;gap:var(--space-1);padding:var(--space-3) var(--space-4) var(--space-4);}
+.gym-card-name{display:flex;align-items:center;gap:var(--space-2);font-family:var(--font-display);font-size:var(--type-display-sm-size);line-height:var(--type-display-sm-line);font-weight:var(--type-display-sm-weight);}
+.gym-card-meta{font-size:var(--type-text-sm-size);line-height:var(--type-text-sm-line);color:var(--color-text-secondary);}
+.gym-card-tags{display:flex;flex-wrap:wrap;gap:var(--space-1);}
+.gym-card-save{position:absolute;top:var(--space-2);right:var(--space-2);background:var(--color-surface-default);}
+
+/* ===== Loading, empty and the cap row (sec. 7.10, 7.2) ================================================================ */
+.skeleton-row{padding-left:calc(var(--space-4) + var(--size-thumb-dense) + var(--space-3));border-bottom:var(--border-width) solid var(--color-border-divider);}
+.skeleton-card{display:flex;flex-direction:column;gap:var(--space-2);margin:var(--space-4);padding-bottom:var(--space-4);border:var(--border-width) solid var(--color-border-subtle);border-radius:var(--radius-lg);overflow:hidden;}
+.skeleton-card span{display:block;height:var(--space-3);margin:0 var(--space-4);border-radius:var(--radius-sm);background:var(--color-surface-raised);}
+.skeleton-card span:first-child{height:auto;aspect-ratio:var(--card-photo-ratio);margin:0;border-radius:0;}
+.skeleton-card span:last-child{width:40%;}
+.empty-title{margin:0 0 var(--space-3);font-size:var(--type-text-md-size);line-height:var(--type-text-md-line);font-weight:var(--font-weight-semibold);color:var(--color-text-primary);}
+.empty-actions{display:flex;flex-wrap:wrap;gap:var(--space-2);justify-content:center;}
+.list-cap{display:flex;justify-content:center;padding:var(--space-3) var(--space-4) var(--space-5);}
+
+/* ===== Search (sec. 9): top-bar field + popover on desktop; over the map and full height below 1024px ============= */
+.topbar-search{flex:1;min-width:0;max-width:var(--size-search-max);}
+.search{position:relative;width:100%;}
+.search-field .btn .icon{position:static;}
+.search-back{display:none;}
+.search-clear{position:absolute;right:var(--space-1);}
+.search-field input{padding-right:calc(var(--size-control-sm) + var(--space-2));}
+.search-field input::-webkit-search-cancel-button{display:none;}
+.search-panel{
+  position:absolute;top:calc(100% + var(--space-2));left:0;right:0;z-index:var(--z-dialog);
+  max-height:60vh;overflow-y:auto;padding:var(--space-1) 0;
+  background:var(--color-surface-default);color:var(--color-text-primary);
+  border:var(--border-width) solid var(--color-border-subtle);border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-overlay);
+}
+.search-panel[hidden]{display:none;}
+.search-group{padding:var(--space-1) 0;}
+.search-group-title{padding:var(--space-2) var(--space-4) var(--space-1);font-size:var(--type-label-size);line-height:var(--type-label-line);font-weight:var(--type-label-weight);letter-spacing:var(--type-label-tracking);color:var(--color-text-secondary);}
+.search-option{display:flex;align-items:center;gap:var(--space-3);min-height:var(--size-touch-min);padding:var(--space-1) var(--space-4);cursor:pointer;}
+.search-option:hover,.search-option[aria-selected="true"]{background:var(--color-surface-raised);}
+.search-option .icon{flex:none;color:var(--color-text-secondary);}
+.search-option-text{flex:1;min-width:0;display:flex;flex-direction:column;}
+.search-option-label,.search-option-secondary{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.search-option-label{font-size:var(--type-text-md-size);line-height:var(--type-text-md-line);font-weight:var(--font-weight-medium);}
+.search-option-secondary,.search-option-count{font-size:var(--type-text-sm-size);line-height:var(--type-text-sm-line);color:var(--color-text-secondary);}
+.search-option-count{flex:none;}
+.search-note{margin:0;padding:var(--space-3) var(--space-4);font-size:var(--type-text-sm-size);line-height:var(--type-text-sm-line);color:var(--color-text-secondary);}
+
+/* ===== All filters: side sheet on desktop, bottom sheet below 1024px (sec. 7.6) =================================== */
+#filterSheetBackdrop{justify-content:flex-end;align-items:stretch;}
+.modal.filter-sheet{
+  display:flex;flex-direction:column;gap:var(--space-5);
+  width:var(--size-filter-sheet);max-width:100vw;height:100%;max-height:none;
+  border-radius:var(--radius-xl) 0 0 var(--radius-xl);
+}
+.filter-sheet-head{display:flex;align-items:center;justify-content:space-between;gap:var(--space-3);}
+.filter-sheet h2{margin:0;}
+.filter-section{display:flex;flex-direction:column;gap:var(--space-1);margin:0;padding:0;border:0;min-width:0;}
+.filter-section legend{padding:0;margin-bottom:var(--space-2);}
+.check-row{display:flex;align-items:center;gap:var(--space-3);min-height:var(--size-control-md);font-size:var(--type-text-md-size);line-height:var(--type-text-md-line);cursor:pointer;}
+.check-row:has(input:disabled){cursor:not-allowed;opacity:var(--opacity-disabled);}
+.filter-sheet .form-hint{margin:0;}
+.filter-sheet-actions{margin-top:auto;padding-top:var(--space-4);border-top:var(--border-width) solid var(--color-border-divider);}
+
+/* ===== Map region (rock) ================================================================================================ */
+.map-wrap{flex:1;position:relative;min-width:0;background:var(--map-canvas);}
+#map{position:absolute;inset:0;background:var(--map-canvas);}
+.map-top{display:none;}
+.map-move-controls{
+  position:absolute;top:var(--space-4);left:50%;z-index:var(--z-map-overlay);
+  display:flex;gap:var(--space-2);transform:translateX(-50%);white-space:nowrap;
+}
+.map-move-controls [hidden]{display:none;}
+/* "Search as I move the map": a paper chip with a checkbox look, so "on" does not read as a forest-filled action. */
+.map-toggle{
+  appearance:none;display:inline-flex;align-items:center;gap:var(--space-2);
+  min-height:var(--size-control-sm);padding:0 var(--space-3) 0 var(--space-2);
+  border-radius:var(--radius-pill);cursor:pointer;
+  font-size:var(--type-text-sm-size);line-height:var(--type-text-sm-line);font-weight:var(--font-weight-medium);
+}
+.map-toggle-box{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:var(--size-icon-sm);height:var(--size-icon-sm);
+  border:var(--border-width) solid var(--color-border-strong);border-radius:var(--radius-check);
+  background:var(--color-surface-default);color:var(--color-text-on-accent);
+}
+.map-toggle-box .icon{width:var(--space-3);height:var(--space-3);visibility:hidden;}
+.map-toggle[aria-pressed="true"] .map-toggle-box{background:var(--color-accent-solid);border-color:var(--color-accent-solid);}
+.map-toggle[aria-pressed="true"] .map-toggle-box .icon{visibility:visible;}
+
+/* ===== Pins (sec. 7.7): teardrop / dot SVG from js/modules/pin-html.js; rings sit outside the ink outline ========= */
+.pin{cursor:pointer;line-height:0;}
+.pin-svg{display:block;overflow:visible;transition:transform var(--motion-fast) var(--ease-standard);}
+.pin--teardrop .pin-svg{transform-origin:50% 100%;}
+.pin.is-selected,.pin.is-hover{z-index:2;}
+.pin.is-selected .pin-svg,.pin.is-hover .pin-svg{transform:scale(var(--pin-scale-selected));}
+.pin-body{stroke:var(--map-pin-outline);}
+.pin-body--boulder{fill:var(--color-type-boulder);}
+.pin-body--toprope{fill:var(--color-type-toprope);}
+.pin-body--lead{fill:var(--color-type-lead);}
+.pin-body--other{fill:var(--map-pin-other);}
+.pin-dot{fill:var(--map-pin-dot);}
+.pin-dot--checked-in{fill:var(--map-pin-checkedin-fill);}
+.pin-ring{fill:none;}
+.pin-ring--selected{stroke:var(--map-pin-selected-ring);}
+.pin-ring--saved{stroke:var(--map-pin-saved-ring);}
+.pin-ring--climbed{stroke:var(--map-pin-climbed-ring);}
+/* Name label on the selected teardrop: a paper pill floating over the map. */
+.pin-label{
+  position:absolute;left:50%;bottom:calc(100% + var(--space-2));transform:translateX(-50%);
+  padding:var(--space-1) var(--space-2);
+  background:var(--color-surface-default);color:var(--color-text-primary);
+  border:var(--border-width) solid var(--color-border-subtle);border-radius:var(--radius-pill);
+  box-shadow:var(--shadow-raised);
+  font-family:var(--font-text);font-size:var(--type-caption-size);line-height:var(--type-caption-line);font-weight:var(--font-weight-medium);
+  white-space:nowrap;pointer-events:none;
+}
+
+/* Clusters (sec. 7.8): paper disc, ink hairline, ink count; no colour by content. */
+.cluster-marker{
+  display:flex;align-items:center;justify-content:center;
+  width:var(--cluster-size);height:var(--cluster-size);
+  border-radius:var(--radius-circle);
+  background:var(--map-cluster-fill);color:var(--map-cluster-text);
+  border:var(--border-width) solid var(--map-cluster-border);
+  font-family:var(--font-text);font-size:var(--type-caption-size);font-weight:var(--font-weight-semibold);
+  font-feature-settings:var(--font-features-numeric);
+  cursor:pointer;
+  /* Not transform: MapLibre repositions this element via its own inline transform every frame. */
+  transition:background-color var(--motion-fast) var(--ease-standard);
+}
+.cluster-marker.is-large{width:var(--cluster-size-large);height:var(--cluster-size-large);}
+.cluster-marker:hover{background:var(--color-surface-raised);}
+/* Touch: pins and clusters get a 44px hit area whatever their drawn size (sec. 14). */
+@media (max-width:1023px){
+  .pin::before,.cluster-marker::before{
+    content:"";position:absolute;left:50%;top:50%;
+    width:var(--size-touch-min);height:var(--size-touch-min);transform:translate(-50%, -50%);
+    border-radius:var(--radius-circle);
+  }
+  .pin--teardrop::before{top:40%;}
+}
+
+/* Region labels over the map: Inter only on rock (sec. 1.2), text + halo, no accent colour. */
+.region-label{
+  color:var(--map-label-text);
+  font-family:var(--font-text);
+  font-size:var(--type-micro-size);line-height:var(--type-micro-line);font-weight:var(--font-weight-semibold);
+  letter-spacing:var(--type-label-tracking);
+  text-shadow:0 0 var(--space-1) var(--map-label-halo), 0 0 var(--space-2) var(--map-label-halo);
+  white-space:nowrap;pointer-events:none;
+}
+.region-label.continent-label{pointer-events:auto;cursor:pointer;font-size:var(--type-text-md-size);line-height:var(--type-text-md-line);color:var(--color-text-primary);}
+/* MapLibre dims markers on the globe's far side; a continent label is a permanent navigation anchor, so it never fades. */
+.region-label.continent-label.maplibregl-marker-covered{opacity:1 !important;}
+.region-label.country-tier-label{font-size:var(--type-caption-size);line-height:var(--type-caption-line);}
+.region-label.state-tier-label{font-weight:var(--font-weight-medium);color:var(--color-text-secondary);}
+
+/* ===== Peek card (desktop: over the map, below the "Search as I move" toggle) ======================================== */
+.peek{
+  position:absolute;top:var(--space-8);left:calc(var(--size-list-pane) + var(--space-4));z-index:var(--z-map-overlay);
+  width:var(--size-peek);max-height:calc(100% - var(--space-8) - var(--space-4));overflow-y:auto;
+  padding:var(--space-4);border-radius:var(--radius-lg);
+}
+.peek[hidden]{display:none;}
+.peek-head{display:flex;align-items:flex-start;justify-content:space-between;gap:var(--space-2);margin-bottom:var(--space-3);}
+.peek-name{margin:0;font-family:var(--font-display);font-size:var(--type-display-md-size);line-height:var(--type-display-md-line);font-weight:var(--type-display-md-weight);}
+.peek-photo{display:block;position:static;width:100%;height:auto;aspect-ratio:var(--card-photo-ratio);object-fit:cover;margin-bottom:var(--space-3);border-radius:var(--radius-md);background:var(--color-surface-subtle);}
+.peek-tags{display:flex;flex-wrap:wrap;gap:var(--space-1);margin-bottom:var(--space-2);}
+.peek-meta,.peek-address,.peek-notes,.peek .provenance-line{margin:0 0 var(--space-2);font-size:var(--type-text-sm-size);line-height:var(--type-text-sm-line);color:var(--color-text-secondary);}
+.peek-notes{overflow-wrap:anywhere;}
+.peek .provenance-line{display:flex;align-items:center;gap:var(--space-1);}
+.peek-actions{display:flex;flex-wrap:wrap;gap:var(--space-2);margin:var(--space-3) 0 var(--space-2);}
+.peek-actions .btn{flex:1;}
+.peek-more{display:flex;flex-wrap:wrap;gap:var(--space-1);margin-left:calc(var(--space-3) * -1);}
+
+/* ===== Carousel (mobile pin tap) ======================================================================================= */
+.carousel{display:flex;gap:var(--space-2);overflow-x:auto;scroll-snap-type:x mandatory;padding:var(--space-1) var(--space-4) var(--space-3);scrollbar-width:none;}
+.carousel::-webkit-scrollbar{display:none;}
+.carousel[hidden]{display:none;}
+.carousel-card{
+  appearance:none;flex:0 0 min(var(--size-carousel-card), 82%);scroll-snap-align:center;
+  display:flex;align-items:center;gap:var(--space-3);padding:var(--space-2);
+  background:var(--color-surface-default);color:inherit;font:inherit;text-align:left;cursor:pointer;
+  border:var(--border-width) solid var(--color-border-subtle);border-radius:var(--radius-lg);
+}
+.carousel-card.is-selected{border-color:var(--color-border-strong);}
+.carousel-card .thumb{width:var(--size-thumb-carousel);height:var(--size-thumb-carousel);}
+.carousel-card-body{min-width:0;display:flex;flex-direction:column;gap:var(--space-1);}
+.carousel-card-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-family:var(--font-display);font-size:var(--type-display-sm-size);line-height:var(--type-display-sm-line);font-weight:var(--type-display-sm-weight);}
+.carousel-card-meta{display:flex;align-items:center;gap:var(--space-1);min-width:0;overflow:hidden;white-space:nowrap;font-size:var(--type-text-sm-size);line-height:var(--type-text-sm-line);color:var(--color-text-secondary);}
+.carousel-card-distance{font-size:var(--type-caption-size);line-height:var(--type-caption-line);color:var(--color-text-secondary);}
+
+/* ===== >= 1440px ======================================================================================================== */
+@media (min-width:1440px){
+  .list-pane{width:var(--size-list-pane-wide);}
+  .peek{left:calc(var(--size-list-pane-wide) + var(--space-4));}
+  .gym-list.is-cards{grid-template-columns:1fr 1fr;}
+}
+
+/* ===== < 1024px: full-bleed map, search + chips over it, list in a bottom sheet (sec. 7.9) ========================= */
+@media (max-width:1023px){
+  .explore{display:block;}
+  .map-wrap{position:absolute;inset:0;}
+  .topbar-search{display:none;}
+
+  .map-top{
+    position:absolute;top:calc(env(safe-area-inset-top) + var(--space-4));left:0;right:0;z-index:var(--z-map-overlay);
+    display:flex;flex-direction:column;gap:var(--space-2);pointer-events:none;
+  }
+  .map-top > *{pointer-events:auto;}
+  .map-search-slot{padding:0 var(--space-4);}
+  .map-search-slot .search-field input{min-height:var(--size-control-lg);box-shadow:var(--shadow-raised);}
+  .map-filter-slot .filter-bar{padding:0;}
+  .map-move-controls{top:calc(env(safe-area-inset-top) + var(--space-4) + var(--size-control-lg) + var(--space-2) + var(--size-control-sm) + var(--space-3));}
+
+  /* The sheet: fixed at the bottom, 92% tall, moved by sheet.js through --sheet-offset. */
+  .list-pane{
+    position:fixed;left:0;right:0;bottom:0;z-index:var(--z-sheet);
+    width:auto;max-width:var(--size-sheet-max);height:92vh;height:92dvh;margin:0 auto;
+    border-right:0;border-top:var(--border-width) solid var(--color-border-subtle);
+    border-radius:var(--radius-xl) var(--radius-xl) 0 0;
+    box-shadow:var(--shadow-overlay);
+    transform:translateY(var(--sheet-offset, 74dvh));
+    transition:transform var(--motion-slow) var(--ease-standard);
+    will-change:transform;
+  }
+  .list-pane.is-dragging{transition:none;}
+  .sheet-inner{flex:none;height:var(--sheet-visible, 18dvh);}
+  .sheet-handle{touch-action:none;cursor:grab;}
+  .sheet-grabber-btn{display:flex;justify-content:center;width:100%;padding:0;background:none;border:0;cursor:grab;}
+  .sheet-grabber-btn .sheet-grabber{margin:var(--space-2) auto var(--space-1);}
+  .list-pane[data-snap="full"] .sheet-close{display:inline-flex;position:absolute;top:var(--space-1);right:var(--space-2);}
+  .list-status{padding-top:0;}
+  .list-footer{display:none;}
+  body.sheet-full .tabbar{display:none;}
+
+  .maplibregl-ctrl-bottom-right{bottom:var(--sheet-peek-offset, 18vh);}
+  .maplibregl-ctrl-group:has(.maplibregl-ctrl-zoom-in){display:none;}
+
+  /* Gym details over the sheet (the peek card's mobile form until gym pages exist in Phase 3). */
+  .peek{
+    position:fixed;top:auto;left:0;right:0;bottom:0;z-index:var(--z-peek);
+    width:auto;max-width:var(--size-sheet-max);max-height:70vh;margin:0 auto;
+    padding:var(--space-4) var(--space-4) calc(var(--space-4) + env(safe-area-inset-bottom));
+    border-radius:var(--radius-xl) var(--radius-xl) 0 0;
+    box-shadow:var(--shadow-overlay);
+  }
+
+  /* Search opens full height with the keyboard up; results fill it (sec. 9.3). Its overlay container is lifted above the
+     sheet and tab bar, since the fixed field otherwise stays inside the overlay's stacking context. */
+  body.search-open .map-top{z-index:var(--z-search);}
+  .search.is-open{
+    position:fixed;inset:0;z-index:var(--z-search);
+    display:flex;flex-direction:column;gap:var(--space-2);
+    padding:calc(env(safe-area-inset-top) + var(--space-2)) var(--space-4) 0;
+    background:var(--color-surface-default);
+  }
+  .search.is-open .search-back{display:inline-flex;flex:none;}
+  .search.is-open .search-field{gap:var(--space-2);}
+  .search.is-open .search-field > .icon{display:none;}
+  .search.is-open .search-field input{padding-left:var(--space-4);box-shadow:none;}
+  .search.is-open .search-panel{position:static;flex:1;max-height:none;margin:0 calc(var(--space-4) * -1);border:0;border-radius:0;box-shadow:none;}
+
+  #filterSheetBackdrop{justify-content:center;align-items:flex-end;}
+  .modal.filter-sheet{width:100%;max-width:var(--size-sheet-max);height:auto;max-height:88vh;border-radius:var(--radius-xl) var(--radius-xl) 0 0;}
+}
+@media (max-width:599px){
+  .peek{bottom:var(--size-tabbar);padding-bottom:var(--space-4);}
+}
+
+/* Controls that toggle with the hidden attribute keep their own display otherwise (.btn is inline-flex). */
+.search-clear[hidden],.map-move-controls .btn[hidden]{display:none;}

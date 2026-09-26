@@ -7,8 +7,7 @@
      3. component       --pin-*, --cluster-*, --sheet-*, --map-*, --z-*   only where a plain role does not fit.
 
    Theme scoping: :root and [data-theme="paper"] carry paper (documents). [data-theme="rock"] (the map region only) overrides the
-   surface, text and border roles. Floating objects over the map are paper objects: they carry data-theme="paper" (or are listed in
-   the paper selector below when a library creates them, e.g. MapLibre popups). */
+   surface, text and border roles. Floating objects over the map are paper objects: they carry data-theme="paper". */
 
 :root{
   /* ===== 1. Primitives ============================================================================================ */
@@ -133,12 +132,17 @@
   --size-mascot-milestone:160px;
   --size-provenance-mark:6px;
   --size-dot-type:9px;
-  --size-list-pane:340px;      /* current sidebar width; Phase 2 moves to 460px per sec. 7.1 */
-  --size-drawer-max:360px;
+  --size-list-pane:460px;      /* Explore list pane (sec. 7.1) */
+  --size-list-pane-wide:520px; /* >= 1440px */
+  --size-peek:360px;           /* peek card over the map */
+  --size-filter-sheet:400px;   /* All filters side sheet (desktop) */
+  --size-search-max:480px;     /* top-bar search field */
+  --size-sheet-max:560px;      /* bottom sheet max width on tablets (sec. 14) */
+  --size-carousel-card:280px;
+  --size-thumb-carousel:64px;
   --size-dialog:380px;
   --size-dialog-wide:520px;
   --size-menu:220px;
-  --size-legend:224px;
   --size-measure:65ch;
   --size-sheet-grabber:36px;
   --size-textarea-min:72px;
@@ -146,9 +150,11 @@
   /* ===== 3. Component tokens (the short list that earns them) ==================================================== */
   --pin-size-city:16px;  --pin-size-dot:6px;  --pin-zoom-dot-max:11;
   --cluster-size:32px;   --cluster-size-large:40px; --cluster-max-zoom:15;
-  --pin-size-hold:20px;  /* current round pin; Phase 2 moves to the 16px teardrop */
+  --pin-scale-selected:1.25;   /* 16px -> 20px when selected or hovered (sec. 7.3) */
   --sheet-snap-peek:18%; --sheet-snap-half:52%; --sheet-snap-full:92%;
   --card-photo-ratio:4 / 3; --hero-photo-ratio:16 / 9;
+  --placeholder-contour:var(--palette-paper-5);   /* contour placeholder lines (sec. 13) */
+  --placeholder-contour-width:1.4px;
 
   --map-canvas:var(--palette-rock-0);
   --map-pin-outline:var(--palette-ink-12);
@@ -156,6 +162,8 @@
   --map-pin-saved-ring:var(--palette-mustard-5);
   --map-pin-climbed-ring:var(--palette-forest-6);
   --map-pin-checkedin-fill:var(--palette-forest-7);
+  --map-pin-dot:var(--palette-paper-0);
+  --map-pin-other:var(--palette-paper-6);      /* gyms with no known climb type */
   --map-cluster-fill:var(--palette-paper-0);
   --map-cluster-text:var(--palette-ink-12);
   --map-cluster-border:var(--palette-ink-12);
@@ -171,7 +179,9 @@
 
   /* Layering */
   --z-map-overlay:400;
-  --z-drawer:600;
+  --z-sheet:500;               /* mobile bottom sheet (below the tab bar) */
+  --z-peek:800;                /* mobile gym details over the sheet and tab bar */
+  --z-search:850;              /* mobile full-height search */
   --z-topbar:700;
   --z-toast:900;
   --z-dialog:1000;
@@ -180,8 +190,7 @@
 
 /* ===== 2. Semantic roles: paper theme (documents) ================================================================ */
 :root,
-[data-theme="paper"],
-[data-theme="rock"] .maplibregl-popup{
+[data-theme="paper"]{
   --color-surface-canvas:var(--palette-paper-2);
   --color-surface-default:var(--palette-paper-0);
   --color-surface-subtle:var(--palette-paper-1);

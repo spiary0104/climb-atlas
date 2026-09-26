@@ -179,8 +179,31 @@ test('precache list: every listed file exists on disk and includes the new safet
   const m = /const SHELL_FILES = \[([\s\S]*?)\];/.exec(SRC);
   const files = [...m[1].matchAll(/'([^']+)'/g)].map((x) => x[1]).filter((f) => f !== './');
   for (const f of files) assert.ok(fs.existsSync(path.join(ROOT, f)), 'missing precache file: ' + f);
-  for (const f of ['js/modules/html-safe.js', 'js/modules/popup-html.js', 'js/modules/moderation-html.js']) assert.ok(files.includes(f), 'not precached: ' + f);
+  for (const f of ['js/modules/html-safe.js', 'js/modules/list-html.js', 'js/modules/moderation-html.js', 'css/explore.css', 'assets/contour.svg']) assert.ok(files.includes(f), 'not precached: ' + f);
+  for (const f of ['css/', 'assets/']) {
+    for (const n of fs.readdirSync(path.join(ROOT, f)).filter(n => /\.(css|svg)$/.test(n))) assert.ok(files.includes(f + n), 'shell file not precached: ' + f + n);
+  }
   // every module the app imports is precached, so the shell still boots offline
   const modDir = path.join(ROOT, 'js', 'modules');
   for (const f of fs.readdirSync(modDir).filter((n) => n.endsWith('.js'))) assert.ok(files.includes('js/modules/' + f), 'app module not precached: ' + f);
+});
+
+// Explore keeps its state in the query string (?c=lng,lat,z&t=…), so a page load must be answered from the shell cached for
+// its path whatever the query -- otherwise an offline reload of a shared or restored view finds nothing.
+test('page loads with any query string are served from the per-path shell cache offline, and cached once per path', async () => {
+  const w = makeWorker();
+  const nav = (url) => ({ url, method: 'GET', mode: 'navigate', headers: new Headers() });
+  w.net.impl = async () => new Response('<!doctype html>shell', { status: 200 });
+  const first = await w.dispatchFetch(nav('https://climbatlas.org/?c=151.2000,-33.8700,12.00&t=boulder'));
+  assert.equal(await (await first.responded).text(), '<!doctype html>shell');
+  const again = await w.dispatchFetch(nav('https://climbatlas.org/?place=AU:NSW')); await again.responded;
+  const shellKeys = [...w.stores.get('climbatlas-shell-' + CUR).keys()];
+  assert.deepEqual(shellKeys, ['https://climbatlas.org/'], 'one entry per path, no query-string copies');
+  w.net.impl = async () => { throw new TypeError('offline'); };
+  const offline = await w.dispatchFetch(nav('https://climbatlas.org/?c=2.3500,48.8600,11.00&saved=1'));
+  assert.equal(await (await offline.responded).text(), '<!doctype html>shell');
+  // sub-resources are unaffected: still cached by exact URL (stale-while-revalidate)
+  w.net.impl = async (req) => new Response('js', { status: 200 });
+  const js = await w.dispatchFetch(get('https://climbatlas.org/js/main.js')); await js.responded;
+  assert.ok(w.stores.get('climbatlas-shell-' + CUR).has('https://climbatlas.org/js/main.js'));
 });

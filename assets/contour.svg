@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<!--
+  Bouldeer contour placeholder (docs/DESIGN.md sec. 13): five nested contour lines, used for every gym without a photo.
+  One shared symbol; stroke colour and width come from the page (css/explore.css .placeholder-contour), the letter is text.
+-->
+  <symbol id="contour" viewBox="0 0 120 90" preserveAspectRatio="xMidYMid slice">
+    <g fill="none" vector-effect="non-scaling-stroke">
+      <path vector-effect="non-scaling-stroke" d="M-6 70C14 58 26 72 44 62S70 30 92 36 118 22 128 26"/>
+      <path vector-effect="non-scaling-stroke" d="M-6 84C18 72 34 84 54 74S80 46 100 50 120 42 128 44"/>
+      <path vector-effect="non-scaling-stroke" d="M58 44C58 30 72 20 86 24S104 40 96 50 76 60 66 56 58 52 58 44Z"/>
+      <path vector-effect="non-scaling-stroke" d="M68 42C68 34 76 30 84 32S94 40 90 46 78 50 72 48 68 46 68 42Z"/>
+      <path vector-effect="non-scaling-stroke" d="M-6 52C8 44 20 50 30 42S44 14 62 10 94 8 128 4"/>
+    </g>
+  </symbol>
+</svg>

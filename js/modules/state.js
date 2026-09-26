@@ -3,6 +3,7 @@
 export const appState = {
   spots: [],            // approved spot rows only — what the public map shows
   usingFallback: false, // true if Supabase is unreachable/unconfigured and we fell back to the bundled seed data
+  loaded: false,        // false until the first loadSpots() finishes (the list shows skeletons until then)
   climbedIds: new Set(),
   bookmarkedIds: new Set(),
   isModerator: false,
@@ -13,20 +14,39 @@ export const appState = {
   sessions: [],      // the signed-in user's own logbook entries, each with an embedded session_climbs array
   draftClimbs: [],   // climb rows being built in the currently-open "Log a session" modal, before save
 
-  activeStates: new Set(['ALL']),
+  // --- Explore filters (DESIGN.md sec. 7.6); mirrored in the URL query (geo.js encodeExploreState) ---
   activeTypes: new Set(['indoor-bouldering','top-rope','lead-climbing']),
   showClimbedOnly: false,
   showBookmarkedOnly: false,
-  searchTerm: '',
+  showPhotosOnly: false,
+  placeFilter: null,   // search-index place entry ({kind, key, label, country, state?, bounds}) shown as the region pill
+  searchTerm: '',      // free-text filter applied with Enter in the search field (shown as a pill)
+
+  // --- Explore view ---
+  filtered: [],        // spots passing the filters (feeds the cluster index and the scoped list)
+  inView: [],          // filtered spots inside scopeBounds, sorted
+  scopeBounds: null,   // {west,south,east,north} the list is scoped to; follows the map while searchAsMove is on
+  searchAsMove: true,
+  sortBy: null,        // 'distance' | 'name' | 'recent'; null = default (distance when location is known, else name)
+  listView: 'rows',    // 'rows' | 'cards' (remembered in localStorage)
+  userLocation: null,  // {lat,lng} once the visitor used the locate control
+  selectedId: null,    // gym whose peek card is open / pin is selected
+  hoverId: null,       // gym hovered in the list or on the map
+  carouselIds: [],     // mobile pin-tap carousel contents
+  searchIndex: null,   // search-index.js index, rebuilt when spots change
+
+  // --- map painting (map.js) ---
   visibleIndex: {},    // id -> spot, for whatever currently passes filters (feeds the cluster index)
-  markerEls: {},       // id -> {marker, el} for individual spot markers currently painted on screen
-  clusterMarkers: {},  // cluster_id -> maplibregl.Marker for cluster badges currently painted
+  markerEls: {},       // id -> {marker, el, kind} for individual spot pins currently painted on screen
+  clusterMarkers: {},  // cluster_id -> maplibregl.Marker for cluster discs currently painted
   supercluster: null,
-  lastIconBucket: null, // 'icon' | 'number' | null -- which style ungrouped spot markers were last painted in
+  stackOffsets: new Map(), // id -> [dx,dy] pixel offsets for gyms sharing a coordinate (geo.js stackOffsets)
+  lastPinKind: null,   // 'teardrop' | 'dot' | null -- which style spot pins were last painted in
   regionCentroids: {}, // "country:state" -> {lat,lng,country,state}, recomputed whenever the filtered spot set changes
   countryCentroids: {}, // country code -> {lat,lng,country,count}, same idea one tier up
   continentCentroids: {}, // region id -> {lat,lng,region,count}, same idea one tier up again
   regionLabelMarkers: {}, // "country:state" -> maplibregl.Marker, for the basic city/state labels shown below HOLD_ICON_ZOOM
+
   placingPin: null, // {lat,lng} while add-modal open
   currentEditId: null,
   currentEditPin: null, // {lat,lng} while edit-modal open
