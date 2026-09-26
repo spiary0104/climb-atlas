@@ -3,7 +3,7 @@
 // escapeHtml(); photos through safeUrl() first. Actions are data-page-action + data-spot-id; links are
 // <a href data-link> that the router turns into History API navigation. A section with no data renders nothing
 // (DNA #3); the only substitute is the single contribution prompt.
-import { sealSvg } from './brand.js';
+import { firstRunArt, sealSvg } from './brand.js';
 import { escapeHtml, safeUrl } from './html-safe.js';
 import { directionsUrl } from './utils.js';
 import { icon } from './icons.js';
@@ -170,7 +170,9 @@ export function logPageHtml(p){
 
 // /me and /me/saved, /me/climbed. p: {signedIn, section, saved: [{g, ctx}], climbed: [...], isModerator, pendingCount}
 export function mePageHtml(p){
-  const links = `<section class="page-section me-brand" aria-labelledby="aboutMeTitle">${sealSvg()}<div><h2 class="section-title" id="aboutMeTitle">Bouldeer</h2><p class="me-links">`
+  // One character appearance per screen (sec. 12.2): the seal steps aside while the first-run backpacker is shown.
+  const firstRun = !!p.signedIn && p.section !== 'climbed' && !(p.saved || []).length && !(p.climbed || []).length;
+  const links = `<section class="page-section me-brand" aria-labelledby="aboutMeTitle">${firstRun ? '' : sealSvg()}<div><h2 class="section-title" id="aboutMeTitle">Bouldeer</h2><p class="me-links">`
     + `<a class="link link-quiet" href="about.html">About</a><button type="button" class="link link-quiet" data-page-action="privacy">Privacy</button>`
     + `<button type="button" class="link link-quiet" data-page-action="terms">Terms</button></p></div></section>`;
   if(!p.signedIn) return `<article class="page me-page"><header class="place-header"><h1 class="page-title">Me</h1>`
@@ -180,11 +182,13 @@ export function mePageHtml(p){
   const items = section === 'climbed' ? p.climbed : p.saved;
   const tab = (key, label, n) => `<a class="tab" href="/me/${key}" data-link${key === section ? ' aria-current="page"' : ''}>${escapeHtml(label)} <span class="tnum">${Number(n)}</span></a>`;
   const empty = section === 'climbed' ? 'Mark a gym as climbed from its page or the map, and it will show up here.' : 'Save a gym from its page or the map, and it will show up here.';
+  // The backpacker only on a true first run: nothing saved and nothing climbed yet (sec. 12.2; never on repeat empties).
+  const art = firstRun ? firstRunArt('saved') : '';
   const pending = p.isModerator ? `<a class="btn btn-secondary" href="/mod" data-link>Pending review${p.pendingCount ? ` <span class="tnum">(${Number(p.pendingCount)})</span>` : ''}</a>` : '';
   const contributions = meContributionsHtml(p.community);
   return `<article class="page me-page"><header class="place-header"><h1 class="page-title">Me</h1></header>`
     + `<nav class="tabs me-tabs" aria-label="Your gyms">${tab('saved', 'Saved', p.saved.length)}${tab('climbed', 'Climbed', p.climbed.length)}</nav>`
-    + (items.length ? `<div class="page-list">${items.map(i => pageRowHtml(i.g, i.ctx)).join('')}</div>` : `<div class="empty-state me-empty"><p>${escapeHtml(empty)}</p></div>`)
+    + (items.length ? `<div class="page-list">${items.map(i => pageRowHtml(i.g, i.ctx)).join('')}</div>` : `<div class="empty-state me-empty">${art}<p>${escapeHtml(empty)}</p></div>`)
     + contributions
     + `<section class="page-section" aria-labelledby="accountTitle"><h2 class="section-title" id="accountTitle">Account</h2><div class="me-actions">`
     + `<button type="button" class="btn btn-secondary" data-page-action="add-gym">${icon('plus', {size:'sm'})}Add a gym</button>${pending}`

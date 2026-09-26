@@ -1,5 +1,6 @@
 // Personal logbook: loading sessions, the session list markup for the /log page (log-page.js), and the "Log a session"
 // dialog (opened from /log and from START).
+import { firstRunArt } from './brand.js';
 import { MOODS, TYPE_LABELS } from './constants.js';
 import { icon } from './icons.js';
 import { refreshPage } from './router.js';
@@ -33,7 +34,8 @@ function spotLabel(spotId){
 // The /log page's session list (dense, newest first). Delete is .btn-danger and never a close control.
 export function sessionsHtml(sessions = appState.sessions){
   if(!sessions.length){
-    return '<div class="empty-state"><p class="empty-title">No sessions yet</p><p>Log your first session to start your diary.</p></div>';
+    // First run by definition: the list holds every session this person has logged.
+    return '<div class="empty-state">' + firstRunArt('log') + '<p class="empty-title">No sessions yet</p><p>Log your first session to start your diary.</p></div>';
   }
   return sessions.map(s=>{
     const climbs = s.session_climbs || [];

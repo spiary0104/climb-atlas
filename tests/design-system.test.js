@@ -262,7 +262,10 @@ test('mascot: brand marks only where sec. 12.2 allows (START, wordmark lockup, d
   assert.ok(uses.some(u => /class="wordmark-mark"/.test(u) && /alt=""/.test(u)), 'the lockup head is decorative beside the name');
   assert.deepEqual([...read('about.html').matchAll(/<[^>]*assets\/mascot\/[^>]*>/g)].map(m => /class="wordmark-mark"/.test(m[0])), [true], 'About: the lockup only');
   const usedIn = JS.filter(f => /assets\/mascot\//.test(read(f)));
-  assert.deepEqual(usedIn, ['js/modules/auth-ui.js', 'js/modules/brand.js'], 'from JS: the default avatar and the seal builder only');
+  assert.deepEqual(usedIn, ['js/modules/auth-ui.js', 'js/modules/brand.js'], 'from JS: the default avatar and brand.js (seal, first-run art) only');
+  assert.deepEqual((read('js/modules/logbook.js').match(/firstRunArt\([^)]*\)/g) || []), ["firstRunArt('log')"], 'Log: chalking-up on the first-run empty state only');
+  assert.deepEqual((read('js/modules/page-html.js').match(/firstRunArt\([^)]*\)/g) || []), ["firstRunArt('saved')"], '/me: the backpacker on a first-run Saved tab only');
+  assert.match(read('js/modules/page-html.js'), /const art = firstRun \? firstRunArt\('saved'\) : '';/, 'never on a repeat empty');
   assert.match(read('js/modules/auth-ui.js'), /<span class="avatar mascot mascot--avatar" aria-hidden="true"><img src="assets\/mascot\/head\.svg" alt=""><\/span>/);
   for (const f of ['assets/mascot/head.svg', 'assets/mascot/stamp-head.svg', 'assets/brand/antlers.svg', 'icons/favicon.svg', 'icons/icon.svg', 'icons/icon-maskable.svg']) {
     const svg = read(f);

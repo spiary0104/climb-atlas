@@ -14,6 +14,7 @@ const modules = (async () => ({
   page: await import('../js/modules/page-html.js'),
   mod: await import('../js/modules/moderation-html.js'),
   add: await import('../js/modules/add-html.js'),
+  brand: await import('../js/modules/brand.js'),
 }))();
 
 // Minimal HTML tokenizer (enough for our own templates): returns [{tag, attrs:{name:value}}] for every start tag.
@@ -406,4 +407,29 @@ test('add: one primary (Submit for review) per step, sign-in note only when sign
   assert.ok(/disabled>Submitting…/.test(add.addStepHtml(draftOf('Crux'), { busy: true })));
   for (const html of [add.addPageHtml(), add.addDoneHtml(), s2]) assert.ok(!/mascot/.test(html));
   assert.ok(allText(add.addDoneHtml()).includes("Thanks — it's in review."));
+});
+
+// ===== Brand marks (DESIGN.md sec. 1A, 12.2): the seal and the first-run art ===========================================
+test('brand: the seal is a decorative-safe SVG with arched BOULDEER; first-run art only for its two kinds, decorative', async () => {
+  const { brand, page } = await modules;
+  const a = brand.sealSvg(), b = brand.sealSvg({ mono: true });
+  assert.match(a, /^<svg class="seal" viewBox="0 0 120 120" role="img" aria-label="Bouldeer seal"/);
+  assert.ok(/<textPath [^>]*>BOULDEER<\/textPath>/.test(a) && /assets\/mascot\/head\.svg/.test(a), 'colour seal: lettering + the colour head');
+  assert.ok(/class="seal seal--mono"/.test(b) && /assets\/mascot\/stamp-head\.svg/.test(b), 'mono seal: the single-ink stamp head');
+  const ids = s => [...s.matchAll(/id="([^"]+)"/g)].map(m => m[1]);
+  assert.equal(new Set([...ids(a), ...ids(b)]).size, ids(a).length + ids(b).length, 'two seals on one page never share ids');
+  assert.ok(!/<script|\son[a-z]+=/i.test(a + b));
+  const hostile = brand.sealSvg({ label: '"><img src=x onerror=alert(1)>' });
+  assert.ok(!/<img/.test(hostile) && hasHandlerAttrs(hostile) === false, 'the label is escaped');
+  assert.match(brand.firstRunArt('log'), /^<img class="mascot mascot--spot" src="assets\/mascot\/chalking-up\.svg" alt=""/);
+  assert.match(brand.firstRunArt('saved'), /src="assets\/mascot\/backpacker\.svg" alt=""/);
+  for (const k of ['', 'fell-off', '../x', 'constructor', undefined]) assert.equal(brand.firstRunArt(k), '', 'no art for ' + k);
+  const row = { g: { ...benignSpot, name: 'Boulder Barn' }, ctx: { region: 'NSW', href: '/gym/boulder-barn' } };
+  const base = { signedIn: true, section: 'saved', saved: [], climbed: [], isModerator: false, pendingCount: 0 };
+  assert.match(page.mePageHtml(base), /backpacker\.svg/, 'first run: nothing saved or climbed');
+  assert.ok(!/backpacker\.svg/.test(page.mePageHtml({ ...base, climbed: [row] })), 'not once something is climbed (not a first run)');
+  assert.ok(!/backpacker\.svg/.test(page.mePageHtml({ ...base, section: 'climbed' })), 'not on the Climbed tab');
+  assert.equal((page.mePageHtml(base).match(/<svg class="seal[" ]/g) || []).length, 0, 'first run: the seal steps aside for the backpacker (one character per screen)');
+  assert.equal((page.mePageHtml({ ...base, saved: [row] }).match(/<svg class="seal[" ]/g) || []).length, 1, 'otherwise one seal on /me');
+  assert.equal((page.mePageHtml({ signedIn: false }).match(/<svg class="seal[" ]/g) || []).length, 1, 'signed out: the seal');
 });

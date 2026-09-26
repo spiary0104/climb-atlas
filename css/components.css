@@ -429,4 +429,5 @@ input[type="checkbox"][role="switch"]{accent-color:var(--color-accent-solid);}
 .seal--mono .seal-text{fill:var(--color-stamp-ink);}
 .seal--mono .seal-mark{stroke:var(--color-stamp-ink);}
 .mascot--spot{width:var(--size-mascot-spot);height:var(--size-mascot-spot);}
+.empty-state .mascot--spot{display:block;margin:0 auto var(--space-3);}
 .mascot--milestone{width:var(--size-mascot-milestone);height:var(--size-mascot-milestone);}

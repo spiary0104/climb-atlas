@@ -115,7 +115,7 @@ const SAFE_EXPR = [
   /^(extra|opts|other|submit|signIn)$/, /^(countrySelect\(d\)|typeChecks\(d\.types\))$/, /^d\.country === 'OTHER' \? '' : regionSelect\(d\)$/,
   /^textField\('[a-zA-Z]+', '[A-Za-z ]+', d\.[a-zA-Z]+\)$/,
   // brand.js: the seal builder takes only literal options and escapes its label
-  /^sealSvg\(\)$/, /^(arc|clip|head|CREST)$/,
+  /^sealSvg\(\)$/, /^(arc|clip|head|CREST|pose|art)$/,
 ];
 // A conditional is safe when every branch that can be rendered is safe: a fixed string literal, a template whose own
 // interpolations are all safe, or a nested conditional (checked recursively). The condition itself is never rendered.
