@@ -45,7 +45,7 @@ test('tokens: three layers -- primitives only in tokens.css, every role themed c
   }
   for (const name of Object.keys(tokens.rock)) assert.ok(name in tokens.paper, 'rock overrides an unknown role: ' + name);
   for (const req of ['--color-surface-canvas', '--color-surface-default', '--color-text-primary', '--color-border-subtle', '--color-border-strong',
-    '--color-accent-solid', '--color-highlight-solid', '--color-focus-ring']) assert.ok(req in tokens.paper, 'missing paper role ' + req);
+    '--color-accent-solid', '--color-collect-solid', '--color-focus-ring']) assert.ok(req in tokens.paper, 'missing paper role ' + req);
   for (const req of ['--color-type-boulder', '--color-type-toprope', '--color-type-lead', '--color-provenance-community', '--color-provenance-verified',
     '--color-provenance-pending', '--font-display', '--font-text', '--shadow-raised', '--shadow-overlay', '--radius-sm', '--radius-md', '--radius-lg',
     '--radius-xl', '--radius-pill', '--motion-fast', '--motion-reveal', '--ease-stamp', '--size-touch-min', '--size-row-dense', '--map-canvas', '--pin-size-city']) {
@@ -105,7 +105,7 @@ test('typography: Fraunces + Inter only; no Space Grotesk / Space Mono / Fredoka
   for (const f of PAGES) {
     const links = [...read(f).matchAll(/<link rel="stylesheet" href="(https:\/\/fonts\.googleapis\.com[^"]+)"([^>]*)>/g)];
     assert.equal(links.length, 1, f + ': one Google Fonts stylesheet');
-    assert.equal(links[0][1], 'https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap', f);
+    assert.equal(links[0][1], 'https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,500..600,50..100&family=Inter:wght@400;500;600&display=swap', f);
     assert.match(links[0][2], /crossorigin="anonymous"/, f);
   }
   assert.match(tokens.base['--font-display'], /^"Fraunces", Georgia/); assert.match(tokens.base['--font-text'], /^"Inter", system-ui/);

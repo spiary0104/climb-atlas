@@ -12,7 +12,7 @@
 :root{
   /* ===== 1. Primitives ============================================================================================ */
   /* Warm neutrals, paper -> rock */
-  --palette-paper-0:#FFFDF8;  --palette-paper-1:#F9F6EE;  --palette-paper-2:#F4F1EA;  --palette-paper-3:#ECE7DC;
+  --palette-paper-0:#FFFCF4;  --palette-paper-1:#FAF5EA;  --palette-paper-2:#F6F0E3;  --palette-paper-3:#EEE6D6;
   --palette-paper-4:#E2DCCE;  --palette-paper-5:#D5CEBE;  --palette-paper-6:#BFB7A6;  --palette-paper-7:#9C9484;
   --palette-paper-8:#6F6A5E;  --palette-paper-9:#4A463E;  --palette-paper-10:#2F2C27; --palette-paper-11:#1B1916;
   /* Ink: text and hairlines on paper */
@@ -20,26 +20,29 @@
   --palette-ink-alpha-08:rgba(34,49,42,0.08);
   --palette-ink-alpha-20:rgba(34,49,42,0.20);
   --palette-ink-alpha-40:rgba(34,49,42,0.40);
+  --palette-ink-outline:#171B16;   /* the deer art's outline: illustrations, marks, stamps */
   /* Rock: map neutrals */
   --palette-rock-0:#1B1916;   --palette-rock-1:#23211D;   --palette-rock-2:#2B2823;   --palette-rock-3:#35312B;
   --palette-rock-4:#433E36;   --palette-rock-5:#5A544A;   --palette-rock-6:#7A7366;   --palette-rock-7:#A39C8F;
   --palette-rock-8:#CFC8BA;   --palette-rock-9:#F1EDE4;
   --palette-rock-alpha-45:rgba(27,25,22,0.45);
-  /* Forest: the UI accent */
-  --palette-forest-1:#EEF4EF; --palette-forest-2:#DCE8DF; --palette-forest-3:#BFD5C6; --palette-forest-4:#9DBFA9;
-  --palette-forest-5:#6FA184; --palette-forest-6:#4C8767; --palette-forest-7:#2F6B4F; --palette-forest-8:#245640;
-  --palette-forest-9:#1B4231; --palette-forest-10:#122D22;
-  /* Mustard: START, stamps, celebration */
-  --palette-mustard-1:#FCF5E1; --palette-mustard-2:#F8E9BF; --palette-mustard-3:#F2D98F; --palette-mustard-4:#EBC65E;
-  --palette-mustard-5:#E9B53B; --palette-mustard-6:#C9971F; --palette-mustard-7:#A47A14; --palette-mustard-8:#7A5A0F;
+  /* Forest: the UI accent, the spruce of the deer's clothes and passport (Brand Pass 2026-09-26) */
+  --palette-forest-1:#EEF3EF; --palette-forest-2:#DDE7DF; --palette-forest-3:#C3D4C7; --palette-forest-4:#A2BCA8;
+  --palette-forest-5:#6A8C72; --palette-forest-6:#52705A; --palette-forest-7:#3B5E47; --palette-forest-8:#2F4B39;
+  --palette-forest-9:#243A2C; --palette-forest-10:#182820;
+  /* Mustard: START, collecting, stamps, celebration (the deer art's holds, flag and passport emblem) */
+  --palette-mustard-1:#FCF4E0; --palette-mustard-2:#F7E6BC; --palette-mustard-3:#EFD290; --palette-mustard-4:#E6BC5C;
+  --palette-mustard-5:#DDA23A; --palette-mustard-6:#C08A22; --palette-mustard-7:#8A6412; --palette-mustard-8:#74540E;
+  /* Fawn: the deer's coat (measured #DD9F53). Identity and warmth: marks, seal, placeholders, labels. Never large fills. */
+  --palette-fawn-1:#F9EEDB;   --palette-fawn-2:#F2DFC0;   --palette-fawn-3:#EBC596;   --palette-fawn-5:#DD9F53;   --palette-fawn-8:#8A5A26;
+  /* Bark: the deer's antlers and hooves (measured #754D33). Earthy support. */
+  --palette-bark-3:#B08A6E;   --palette-bark-5:#754D33;   --palette-bark-7:#52341F;
   /* Climb-type hues (lake/plum provisional: DESIGN.md sec. 19 decision 1) */
   --palette-ember-3:#F5C4AC;  --palette-ember-5:#E2793F;  --palette-ember-7:#B85A28;
   --palette-lake-3:#BFD7E6;   --palette-lake-5:#3F7FA6;   --palette-lake-7:#2C5C7A;
   --palette-plum-3:#DCC4D9;   --palette-plum-5:#8A4E7A;   --palette-plum-7:#63365A;
   /* Status */
   --palette-brick-1:#FBEAE5;  --palette-brick-5:#B8452B;
-  /* Stamp ink (stamp component and share card only) */
-  --palette-stamp-red:#C8322B;
 
   /* ===== 2. Semantic roles: theme-independent ===================================================================== */
   /* Climb types: never re-used for any other UI meaning */
@@ -52,10 +55,22 @@
   --color-provenance-verified:var(--palette-forest-6);
   --color-provenance-pending:var(--palette-mustard-7);
 
-  --color-stamp-ink:var(--palette-stamp-red);
+  /* Stamps: forest ink on cream with a mustard emblem, as on the deer's passport (no red in the brand) */
+  --color-stamp-ink:var(--palette-forest-8);
+  --color-stamp-emblem:var(--palette-mustard-5);
+
+  /* Brand: the deer's own colours. Marks, the seal, illustrations and placeholders; not UI controls or large surfaces. */
+  --color-brand-fawn:var(--palette-fawn-5);
+  --color-brand-fawn-muted:var(--palette-fawn-3);
+  --color-brand-fawn-subtle:var(--palette-fawn-1);
+  --color-brand-bark:var(--palette-bark-5);
+  --color-brand-bark-muted:var(--palette-bark-3);
+  --color-brand-outline:var(--palette-ink-outline);
 
   /* Typography */
   --font-display:"Fraunces", Georgia, "Times New Roman", serif;
+  --font-display-soft:"SOFT" 50;     /* Fraunces SOFT axis: rounder terminals that sit with the deer (display text) */
+  --font-wordmark-soft:"SOFT" 100;   /* the wordmark: fully soft */
   --font-text:"Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --font-features-numeric:"tnum" 1, "lnum" 1;
   --font-weight-regular:400;
@@ -89,6 +104,7 @@
 
   /* Hairlines */
   --border-width:1px;
+  --border-width-object:1.5px;   /* the object line: primary button, START, cards, peek card, seal, stamps (sec. 4.2) */
   --focus-ring-width:2px;
   --focus-ring-offset:2px;
   --text-underline-offset:2px;
@@ -161,8 +177,15 @@
   --pin-scale-selected:1.25;   /* 16px -> 20px when selected or hovered (sec. 7.3) */
   --sheet-snap-peek:18%; --sheet-snap-half:52%; --sheet-snap-full:92%;
   --card-photo-ratio:4 / 3; --hero-photo-ratio:16 / 9;
-  --placeholder-contour:var(--palette-paper-5);   /* contour placeholder lines (sec. 13) */
+  --placeholder-contour:var(--palette-paper-6);   /* contour lines (passport and travel only, sec. 13) */
   --placeholder-contour-width:1.4px;
+  /* Photo placeholder: a cream boulder with forest/mustard holds (the deer art's boulder), quiet enough for forty in a grid */
+  --placeholder-ground:var(--palette-fawn-1);
+  --placeholder-boulder:var(--palette-paper-0);
+  --placeholder-line:var(--palette-fawn-3);
+  --placeholder-hold-a:var(--palette-forest-3);
+  --placeholder-hold-b:var(--palette-mustard-3);
+  --placeholder-letter:var(--palette-bark-5);
 
   --map-canvas:var(--palette-rock-0);
   --map-pin-outline:var(--palette-ink-12);
@@ -185,6 +208,13 @@
   --map-fog:var(--palette-rock-0);
   --map-road-label:var(--palette-rock-8);
   --map-tint:var(--palette-rock-4);   /* hue/saturation given to every basemap fill/line (warm dark basemap, sec. 0.4) */
+  /* Paper-toned mini maps on document pages (gym, region, city); Explore stays dark (sec. 8, Brand Pass) */
+  --map-paper-land:var(--palette-paper-1);
+  --map-paper-line:var(--palette-paper-5);
+  --map-paper-road:var(--palette-paper-0);
+  --map-paper-water:var(--palette-forest-2);
+  --map-paper-label:var(--palette-ink-9);
+  --map-paper-tint:var(--palette-fawn-3);
 
   /* Layering */
   --z-map-overlay:400;
@@ -212,7 +242,8 @@
   --color-text-inverse:var(--palette-rock-9);
   --color-text-link:var(--palette-forest-7);
   --color-text-on-accent:var(--palette-paper-0);
-  --color-text-on-mustard:var(--palette-ink-12);
+  --color-text-on-collect:var(--palette-ink-12);
+  --color-text-brand:var(--palette-fawn-8);      /* brand eyebrows and section labels on paper (5.2:1) */
 
   --color-border-subtle:var(--palette-ink-alpha-20);
   --color-border-strong:var(--palette-ink-12);
@@ -224,9 +255,10 @@
   --color-accent-subtle:var(--palette-forest-1);
   --color-accent-text:var(--palette-forest-8);
 
-  --color-highlight-solid:var(--palette-mustard-5);
-  --color-highlight-subtle:var(--palette-mustard-1);
-  --color-highlight-text:var(--palette-mustard-7);
+  --color-collect-solid:var(--palette-mustard-5);    /* START, stamps, session days, milestones, the saved ring */
+  --color-collect-subtle:var(--palette-mustard-1);
+  --color-collect-muted:var(--palette-mustard-3);
+  --color-collect-text:var(--palette-mustard-7);
 
   --color-status-success:var(--palette-forest-6);   --color-status-success-subtle:var(--palette-forest-1);
   --color-status-warning:var(--palette-mustard-6);  --color-status-warning-subtle:var(--palette-mustard-1);

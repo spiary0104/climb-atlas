@@ -107,13 +107,13 @@
 .gym-card{
   position:relative;overflow:hidden;
   background:var(--color-surface-default);
-  border:var(--border-width) solid var(--color-border-subtle);
+  border:var(--border-width-object) solid var(--color-border-strong);   /* the object line (sec. 4.2) */
   border-radius:var(--radius-lg);
-  transition:border-color var(--motion-fast) var(--ease-standard);
+  transition:background-color var(--motion-fast) var(--ease-standard);
 }
 .gym-list:not(.is-cards) .gym-card{margin:var(--space-3) var(--space-4);}
-.gym-card:hover,.gym-card.is-hover{border-color:var(--color-border-strong);}
-.gym-card.is-selected{border-color:var(--color-border-strong);outline:var(--border-width) solid var(--color-border-strong);}
+.gym-card:hover,.gym-card.is-hover{background:var(--color-surface-subtle);}
+.gym-card.is-selected{outline:var(--border-width-object) solid var(--color-border-strong);outline-offset:var(--border-width);}
 .gym-card-main{appearance:none;display:flex;flex-direction:column;width:100%;padding:0;border:0;background:none;color:inherit;font:inherit;text-align:left;cursor:pointer;}
 .gym-card-main:focus-visible{outline-offset:calc(var(--focus-ring-width) * -1);}
 .gym-card-body{display:flex;flex-direction:column;gap:var(--space-1);padding:var(--space-3) var(--space-4) var(--space-4);}
@@ -297,9 +297,9 @@
   appearance:none;flex:0 0 min(var(--size-carousel-card), 82%);scroll-snap-align:center;
   display:flex;align-items:center;gap:var(--space-3);padding:var(--space-2);
   background:var(--color-surface-default);color:inherit;font:inherit;text-align:left;cursor:pointer;
-  border:var(--border-width) solid var(--color-border-subtle);border-radius:var(--radius-lg);
+  border:var(--border-width-object) solid var(--color-border-strong);border-radius:var(--radius-lg);
 }
-.carousel-card.is-selected{border-color:var(--color-border-strong);}
+.carousel-card.is-selected{outline:var(--border-width-object) solid var(--color-border-strong);outline-offset:var(--border-width);}
 .carousel-card .thumb{width:var(--size-thumb-carousel);height:var(--size-thumb-carousel);}
 .carousel-card-body{min-width:0;display:flex;flex-direction:column;gap:var(--space-1);}
 .carousel-card-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-family:var(--font-display);font-size:var(--type-display-sm-size);line-height:var(--type-display-sm-line);font-weight:var(--type-display-sm-weight);}

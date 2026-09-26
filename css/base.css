@@ -7,6 +7,7 @@ body{
   background:var(--color-surface-canvas);
   color:var(--color-text-primary);
   font-family:var(--font-text);
+  font-variation-settings:var(--font-display-soft);   /* Fraunces SOFT 50 wherever the serif appears; Inter has no SOFT axis */
   font-size:var(--type-text-md-size);
   line-height:var(--type-text-md-line);
   font-weight:var(--font-weight-regular);
