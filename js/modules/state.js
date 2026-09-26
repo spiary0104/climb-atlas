@@ -36,6 +36,10 @@ export const appState = {
   searchIndex: null,   // search-index.js index, rebuilt when spots change
   bySlug: new Map(),   // gym slug -> spot (gym pages)
   sessionsLoaded: false, // the signed-in user's sessions have been fetched (gym page "Your history here")
+  contributorCounts: new Map(), // spot id -> distinct contributors (only gyms with 2+), for provenance marks
+  provenanceCache: new Map(),   // spot id -> spot_provenance() row (or null), gym page line
+  myEditCache: new Map(),       // spot id -> the signed-in user's latest proposal for it (or null)
+  myCommunity: null,            // /me: {displayName, points, gyms, edits, submissions} for the signed-in user
 
   // --- map painting (map.js) ---
   visibleIndex: {},    // id -> spot, for whatever currently passes filters (feeds the cluster index)

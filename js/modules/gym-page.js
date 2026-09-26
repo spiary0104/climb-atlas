@@ -3,6 +3,7 @@
 // Markup is built by page-html.js (pure); this module finds the gym, gathers the per-user context and handles actions.
 import { COUNTRY_LABELS } from './constants.js';
 import { distanceKm, encodeExploreState, formatDistance } from './geo.js';
+import { loadGymProvenance, loadMyEditFor } from './community.js';
 import { loadSessions } from './logbook.js';
 import { destroyMiniMaps, mountMiniMaps } from './mini-map.js';
 import { stateLabel } from './map.js';
@@ -10,6 +11,7 @@ import { toggleMark } from './marks.js';
 import { openEditModal, openReportModal } from './modals.js';
 import { gymPageHtml, notFoundHtml, pageSkeletonHtml } from './page-html.js';
 import { refreshPage, registerView, setPageTitle } from './router.js';
+import { provenanceLine } from './provenance.js';
 import { cityPath, countryPath, gymPath, regionPath } from './slug.js';
 import { appState } from './state.js';
 
@@ -65,9 +67,14 @@ function enter({ slug }, view){
     history: historyOf(g),
     nearby: nearbyOf(g),
     exploreHref: '/?' + encodeExploreState({ camera: { lng: g.lng, lat: g.lat, zoom: 15 } }),
+    provenance: provenanceLine(g, appState.provenanceCache.get(g.id) || { contributors: appState.contributorCounts.get(g.id) }),
+    myEdit: appState.myEditCache.get(g.id) || null,
   });
   setPageTitle([g.name, g.suburb].filter(Boolean).join(', '));
   mountMiniMaps(view);
+  // Provenance (added by / contributors / last edited) and, for the signed-in editor, their own latest proposal.
+  if(!appState.provenanceCache.has(g.id)) loadGymProvenance(g.id).then(refreshPage);
+  if(window.auth.user && !appState.myEditCache.has(g.id)) loadMyEditFor(g.id).then(refreshPage);
   // Signed-in: fetch the logbook once so "Your history here" can appear.
   if(window.auth.user && !appState.sessionsLoaded){
     appState.sessionsLoaded = true;

@@ -4,6 +4,7 @@ import { ensureSeedData } from './data-load.js';
 import { map } from './map.js';
 import { STATES_BY_COUNTRY } from './regions.js';
 import { appState } from './state.js';
+import { refreshPage } from './router.js';
 import { escapeHtml, safeUrl, showToast } from './utils.js';
 
 // --- modal keyboard/focus handling ---
@@ -119,6 +120,8 @@ export async function openEditModal(id){
   document.getElementById('eAddress').value = g.address || '';
   document.getElementById('eNotes').value = g.notes || '';
   document.getElementById('ePhoto').value = g.photo || '';
+  document.getElementById('eNote').value = '';
+  document.getElementById('eReview').checked = false;
   document.getElementById('eTypeIndoor').checked = g.types.includes('indoor-bouldering');
   document.getElementById('eTypeTopRope').checked = g.types.includes('top-rope');
   document.getElementById('eTypeLead').checked = g.types.includes('lead-climbing');
@@ -151,6 +154,7 @@ function checkEditFormReady(){
   if(!suburb) missing.push('a suburb');
   if(!country || !state) missing.push('a country and state');
   if(selectedEditTypes().length === 0) missing.push('at least one climbing type');
+  if(!document.getElementById('eNote').value.trim()) missing.push('what changed and how you know');
   renderFormHint('eFormHint', missing);
   document.getElementById('eSaveBtn').disabled = missing.length > 0;
 }
@@ -342,7 +346,7 @@ export function initForms(){
     startPlacing('edit');
   });
 
-  ['eName','eSuburb'].forEach(id=>{
+  ['eName','eSuburb','eNote'].forEach(id=>{
     document.getElementById(id).addEventListener('input', checkEditFormReady);
   });
   ['eTypeIndoor','eTypeTopRope','eTypeLead'].forEach(id=>{
@@ -369,7 +373,9 @@ export function initForms(){
       notes: document.getElementById('eNotes').value.trim() || null,
       photo: ePhotoRaw ? safeUrl(ePhotoRaw) : null,
       lat: appState.currentEditPin.lat,
-      lng: appState.currentEditPin.lng
+      lng: appState.currentEditPin.lng,
+      edit_note: document.getElementById('eNote').value.trim().slice(0, 200),
+      review_requested: document.getElementById('eReview').checked
     };
     const saveBtn = document.getElementById('eSaveBtn');
     saveBtn.disabled = true;
@@ -379,7 +385,9 @@ export function initForms(){
       if(error) throw error;
       showToast('Edit submitted — a moderator will review it before it goes live.');
       saveBtn.textContent = 'Save changes';
+      appState.myEditCache.delete(proposal.spot_id);   // the gym page shows "Your edit is awaiting review"
       closeEditModal();
+      refreshPage();
     }catch(err){
       showToast('Could not save — try again');
       console.error(err);
@@ -398,7 +406,7 @@ export function initForms(){
       spot_id: id,
       name: original.name, suburb: original.suburb, state: original.state, country: original.country,
       types: original.types, address: original.address || null, notes: original.notes || null, photo: original.photo || null,
-      lat: original.lat, lng: original.lng
+      lat: original.lat, lng: original.lng, edit_note: 'Revert to the original dataset values'
     };
     try{
       const {error} = await window.sb.from('pending_edits').insert(proposal);

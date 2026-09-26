@@ -6,7 +6,7 @@
 import { escapeHtml, safeUrl } from './html-safe.js';
 import { directionsUrl } from './utils.js';
 import { icon } from './icons.js';
-import { thumbHtml, typeTagsHtml } from './list-html.js';
+import { provenanceMarkHtml, thumbHtml, typeTagsHtml } from './list-html.js';
 import { pinSvg } from './pin-html.js';
 
 const link = (href, text, cls = 'link link-quiet') => `<a class="${cls}" href="${escapeHtml(href)}" data-link>${escapeHtml(text)}</a>`;
@@ -53,8 +53,11 @@ export function gymPageHtml(g, ctx = {}){
   const photo = safeUrl(g.photo);
   const id = escapeHtml(g.id);
   const where = [g.suburb, ctx.region].filter(Boolean).join(', ');
-  const provenance = g.community ? `<p class="provenance-line"><span class="provenance-mark provenance-mark--community"></span> Community-added${g.edited ? ' · edited' : ''}</p>`
-    : g.edited ? '<p class="provenance-line">Edited by the community</p>' : '';
+  // One quiet line (sec. 10.2) + the editor-only note about their own latest proposal (sec. 10.4).
+  const prov = ctx.provenance || { state: 'community-added', text: 'Community-added' };
+  const provenance = `<p class="provenance-line">${provenanceMarkHtml(prov.state)}${escapeHtml(prov.text)}</p>`
+    + (ctx.myEdit && ctx.myEdit.status === 'pending' ? '<p class="provenance-line provenance-pending">Your edit is awaiting review.</p>' : '')
+    + (ctx.myEdit && ctx.myEdit.status === 'rejected' ? `<p class="provenance-line provenance-rejected">Your last edit wasn’t accepted${ctx.myEdit.rejection_reason ? `: ${escapeHtml(ctx.myEdit.rejection_reason)}` : '.'}</p>` : '');
   const actions = `<div class="gym-actions" role="group" aria-label="Gym actions">`
     + `<button type="button" class="btn btn-secondary" data-page-action="save" data-spot-id="${id}" aria-pressed="${ctx.saved ? 'true' : 'false'}">${icon('bookmark-simple', {size:'sm'})}Save</button>`
     + `<button type="button" class="btn btn-secondary" data-page-action="climbed" data-spot-id="${id}" aria-pressed="${ctx.climbed ? 'true' : 'false'}">${icon('check', {size:'sm'})}Climbed</button>`
@@ -75,7 +78,7 @@ export function gymPageHtml(g, ctx = {}){
     + `${g.notes ? `<section class="page-section" aria-labelledby="aboutTitle"><h2 class="section-title" id="aboutTitle">About</h2><p class="prose">${escapeHtml(g.notes)}</p></section>` : ''}`
     + nearby
     + `<section class="page-section" aria-labelledby="communityTitle"><h2 class="section-title" id="communityTitle">Community</h2>`
-    + `<p class="section-note">${g.community ? 'Added by a Bouldeer climber and checked by a moderator.' : 'From the Bouldeer dataset, kept current by climbers.'} Spotted something out of date?</p>`
+    + `<p class="section-note">${g.community ? 'Added by a Bouldeer climber and checked by a moderator.' : 'From the Bouldeer dataset, kept current by climbers.'} Every edit is checked by a moderator before it goes live. Spotted something out of date?</p>`
     + `<div class="community-actions"><button type="button" class="btn btn-secondary btn-sm" data-page-action="edit" data-spot-id="${id}">${icon('pencil-simple', {size:'sm'})}Suggest an edit</button>`
     + `<button type="button" class="btn btn-tertiary btn-sm" data-page-action="report" data-spot-id="${id}">${icon('flag', {size:'sm'})}Report a problem</button></div></section>`
     + `</div><aside class="gym-aside"><section class="panel essentials" aria-labelledby="essentialsTitle"><h2 class="panel-title" id="essentialsTitle">Essentials</h2>`
@@ -175,12 +178,30 @@ export function mePageHtml(p){
   const tab = (key, label, n) => `<a class="tab" href="/me/${key}" data-link${key === section ? ' aria-current="page"' : ''}>${escapeHtml(label)} <span class="tnum">${Number(n)}</span></a>`;
   const empty = section === 'climbed' ? 'Mark a gym as climbed from its page or the map, and it will show up here.' : 'Save a gym from its page or the map, and it will show up here.';
   const pending = p.isModerator ? `<button type="button" class="btn btn-secondary" data-page-action="pending">Pending review${p.pendingCount ? ` <span class="tnum">(${Number(p.pendingCount)})</span>` : ''}</button>` : '';
+  const contributions = meContributionsHtml(p.community);
   return `<article class="page me-page"><header class="place-header"><h1 class="page-title">Me</h1></header>`
     + `<nav class="tabs me-tabs" aria-label="Your gyms">${tab('saved', 'Saved', p.saved.length)}${tab('climbed', 'Climbed', p.climbed.length)}</nav>`
     + (items.length ? `<div class="page-list">${items.map(i => pageRowHtml(i.g, i.ctx)).join('')}</div>` : `<div class="empty-state me-empty"><p>${escapeHtml(empty)}</p></div>`)
+    + contributions
     + `<section class="page-section" aria-labelledby="accountTitle"><h2 class="section-title" id="accountTitle">Account</h2><div class="me-actions">`
     + `<button type="button" class="btn btn-secondary" data-page-action="add-gym">${icon('plus', {size:'sm'})}Add a gym</button>${pending}`
     + `<button type="button" class="btn btn-tertiary" data-page-action="sign-out">Sign out</button></div></section>${links}</article>`;
+}
+
+// /me "Your contributions" (sec. 10.2, 10.5, 10.6): display name, points and level, own submissions in review or not
+// accepted (with the moderator's reason). c: {displayName, points|null, level, contributor, submissions: [{kind, name, status, reason}]}
+export function meContributionsHtml(c){
+  if(!c) return '';
+  const points = c.points === null ? '' : `<p class="me-points tnum"><strong>${Number(c.points)}</strong> points · level ${Number(c.level)}${c.contributor ? ' · Contributor' : ''}</p>`;
+  const form = `<form class="me-name" data-page-form="display-name" novalidate><label class="field-label" for="displayName">Display name</label>`
+    + `<div class="me-name-row"><input class="input" id="displayName" name="displayName" maxlength="40" autocomplete="nickname" value="${escapeHtml(c.displayName)}">`
+    + `<button type="submit" class="btn btn-secondary">Save</button></div>`
+    + `<p class="form-hint" id="displayNameHint" aria-live="polite">Shown as “added by …” on gyms you add or edit. Never your email.</p></form>`;
+  const subs = (c.submissions || []).map(s => `<li class="me-submission"><span class="me-submission-name">${escapeHtml((s.kind === 'edit' ? 'Edit to ' : 'New gym: ') + s.name)}</span>`
+    + ` <span class="${s.status === 'pending' ? 'provenance-pending' : 'provenance-rejected'}">${s.status === 'pending' ? 'In review' : 'Not accepted'}</span>`
+    + `${s.status === 'rejected' && s.reason ? `<span class="me-submission-reason">${escapeHtml(s.reason)}</span>` : ''}</li>`).join('');
+  return `<section class="page-section" aria-labelledby="contribTitle"><h2 class="section-title" id="contribTitle">Your contributions</h2>`
+    + points + form + (subs ? `<ul class="me-submissions">${subs}</ul>` : '') + `</section>`;
 }
 
 export function notFoundHtml(what = 'page'){

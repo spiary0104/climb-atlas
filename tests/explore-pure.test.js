@@ -13,6 +13,7 @@ const mods = (async () => ({
   idx: await import('../js/modules/search-index.js'),
   pin: await import('../js/modules/pin-html.js'),
   slug: await import('../js/modules/slug.js'),
+  prov: await import('../js/modules/provenance.js'),
 }))();
 // router.js is DOM-free at import time; matchRoute is pure.
 const routerMod = import('../js/modules/router.js');
@@ -187,4 +188,22 @@ test('geo: fitCamera frames a box (region pages) and clamps the zoom', async () 
   assert.ok(sydney.zoom > 8 && sydney.zoom < 11, 'city-scale zoom: ' + sydney.zoom);
   assert.equal(geo.fitCamera({ west: 151.2, south: -33.9, east: 151.2, north: -33.9 }, 360, 270).zoom, 13, 'a single point clamps to maxZoom');
   assert.equal(geo.fitCamera({ west: -170, south: -60, east: 170, north: 70 }, 360, 270).zoom, 2, 'the world clamps to minZoom');
+});
+
+test('provenance: states, levels, relative time, the page line and display-name rules (sec. 10)', async () => {
+  const { prov } = await mods;
+  assert.equal(prov.provenanceState({}, 0), 'community-added', 'the default, seed-imported gyms included');
+  assert.equal(prov.provenanceState({}, 2), 'community-verified');
+  assert.equal(prov.provenanceState({ verified_at: '2026-09-01' }, 0), 'verified');
+  assert.deepEqual([0, 14, 15, 49, 50, 149, 150, 399, 400, 5000].map(prov.levelFor), [1, 1, 2, 2, 3, 3, 4, 4, 5, 5]);
+  assert.equal(prov.isContributor(49), false); assert.equal(prov.isContributor(50), true);
+  const now = new Date('2026-09-26T12:00:00Z');
+  assert.deepEqual(['2026-09-26T08:00:00Z', '2026-09-25T10:00:00Z', '2026-09-20T12:00:00Z', '2026-08-26T12:00:00Z', '2026-03-01T12:00:00Z', '2023-09-01T12:00:00Z', null, 'nope'].map(d => prov.formatRelative(d, now)),
+    ['today', 'yesterday', '6 days ago', '4 weeks ago', '6 months ago', '3 years ago', '', '']);
+  assert.equal(prov.provenanceLine({ submitted_by: 'u1' }, { added_by: 'mika.sends', contributors: 3, last_edited: '2026-09-23T12:00:00Z' }, now).text,
+    'Community-verified · added by mika.sends · last edited 3 days ago · 3 contributors');
+  assert.equal(prov.provenanceLine({ submitted_by: 'u1' }, { contributors: 1 }, now).text, 'Community-added · added by a climber · 1 contributor', 'no display name -> "a climber", never an email');
+  assert.equal(prov.provenanceLine({}, null, now).text, 'Community-added', 'seed gyms: no invented adder');
+  for (const bad of ['a', 'x'.repeat(41), 'me@example.com', '<b>', '   ']) assert.equal(prov.validDisplayName(bad), false, bad);
+  for (const ok of ['mika.sends', 'Jo', 'Élodie M.']) assert.equal(prov.validDisplayName(ok), true, ok);
 });

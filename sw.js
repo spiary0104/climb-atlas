@@ -8,7 +8,8 @@
 //     page loads are served per path whatever the query string (Explore state lives in ?c=…).
 // v8: Field Guide pass (cream surfaces, deer head on START/avatar, redrawn contour, warm basemap).
 // v9: Phase 3 pages (router, gym/region/log/me pages, page.css); every app route is served the one cached shell.
-const CACHE_VERSION = 'v9';
+// v10: Phase 4 community (provenance marks and lines, edit notes, /me contributions, /mod).
+const CACHE_VERSION = 'v10';
 const SHELL_CACHE = 'climbatlas-shell-' + CACHE_VERSION;
 const RUNTIME_CACHE = 'climbatlas-runtime-' + CACHE_VERSION;
 const TILE_CACHE = 'climbatlas-tiles-' + CACHE_VERSION;
@@ -59,6 +60,8 @@ const SHELL_FILES = [
   'js/modules/region-page.js',
   'js/modules/log-page.js',
   'js/modules/me-page.js',
+  'js/modules/provenance.js',
+  'js/modules/community.js',
   'js/modules/modals.js',
   'js/modules/auth-ui.js',
   'js/modules/data-load.js',

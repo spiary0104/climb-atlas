@@ -104,6 +104,8 @@ const SAFE_EXPR = [
   // logbook.js sessionsHtml() (itself in this review), p.calendar is calendarHtml()
   /^(head|links)$/, /^rows\.join\(''\)$/, /^p\.(sessions|calendar)$/,
   /^key$/, /^tab\('(saved|climbed)', '(Saved|Climbed)', p\.(saved|climbed)\.length\)$/, /^pending$/,   // me page: tab keys are literals
+  // Phase 4 provenance: m comes from the fixed MARKS table; the mark builder takes a state name and emits fixed markup
+  /^m\[[01]\](\.toLowerCase\(\))?$/, /^provenanceMarkHtml\((ctx\.provenance|prov\.state)\)$/, /^subs$/,
 ];
 // A conditional is safe when every branch that can be rendered is safe: a fixed string literal, a template whose own
 // interpolations are all safe, or a nested conditional (checked recursively). The condition itself is never rendered.
@@ -141,7 +143,8 @@ function interpolations(src) {
 test('HTML-building templates only interpolate escaped or reviewed-safe expressions', () => {
   const files = ['js/modules/list-html.js', 'js/modules/pin-html.js', 'js/modules/moderation-html.js', 'js/modules/logbook.js', 'js/modules/auth-ui.js',
     'js/modules/search.js', 'js/modules/list.js', 'js/modules/explore.js', 'js/modules/filters.js', 'js/modules/map.js',
-    'js/modules/page-html.js', 'js/modules/gym-page.js', 'js/modules/router.js', 'js/modules/slug.js', 'js/modules/region-page.js', 'js/modules/mini-map.js'];
+    'js/modules/page-html.js', 'js/modules/gym-page.js', 'js/modules/router.js', 'js/modules/slug.js', 'js/modules/region-page.js', 'js/modules/mini-map.js',
+    'js/modules/provenance.js', 'js/modules/community.js', 'js/modules/me-page.js', 'js/modules/log-page.js'];
   const unsafe = [];
   for (const f of files) {
     // lines that assign to .textContent are not markup (the browser treats the value as text)

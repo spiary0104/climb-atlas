@@ -6,6 +6,7 @@ import { distanceKm, formatDistance, inBounds } from './geo.js';
 import { capRowHtml, carouselCardHtml, cardHtml, emptyHtml, rowHtml, skeletonHtml } from './list-html.js';
 import { stateLabel } from './map.js';
 import { gymPath } from './slug.js';
+import { provenanceState } from './provenance.js';
 import { filtersActive } from './filters.js';
 import { appState } from './state.js';
 
@@ -23,6 +24,7 @@ export function gymCtx(g){
     selected: g.id === appState.selectedId,
     distance: appState.userLocation ? formatDistance(distanceKm(appState.userLocation, g)) : '',
     href: gymPath(g),
+    provenance: provenanceState(g, appState.contributorCounts.get(g.id)),
   };
 }
 

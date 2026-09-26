@@ -1,6 +1,7 @@
 // Bouldeer entry point (ES module). Loaded after the classic scripts
 // supabase-init.js (window.sb) and auth.js (window.auth).
 import { closeAuthModal, initAuthUI, renderAuthUI } from './modules/auth-ui.js';
+import { loadContributorCounts } from './modules/community.js';
 import { checkModerator, loadMarks, loadPending, loadSpots } from './modules/data-load.js';
 import { applyLanding, initExplore, render } from './modules/explore.js';
 import { initGymPage } from './modules/gym-page.js';
@@ -35,6 +36,8 @@ async function init(){
   await window.auth.init();
   window.auth.onChange(async (user)=>{
     appState.sessionsLoaded = false;   // the gym page refetches the logbook for whoever is signed in now
+    appState.myEditCache.clear();
+    appState.myCommunity = null;
     renderAuthUI(user);
     await loadMarks();
     await checkModerator();
@@ -44,6 +47,7 @@ async function init(){
     if(user) closeAuthModal();
   });
   await loadSpots();
+  await loadContributorCounts();
   appState.loaded = true;
   applyLanding();
   await loadMarks();

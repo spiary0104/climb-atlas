@@ -135,8 +135,10 @@ test('explore builders: behaviour the popup had is preserved in the peek card, a
   const row = list.rowHtml({ ...benignSpot, community: true }, ctxBenign);
   assert.ok(allText(row).includes('Surry Hills · New South Wales') && allText(row).includes('1.2 km'));
   assert.equal(tags(row).filter(t => /\btype-dot--/.test(t.attrs.class || '')).length, 2, 'one type dot per known type');
-  assert.ok(/provenance-mark--community/.test(row), 'community-added ring-dot');
-  assert.ok(!/provenance-mark/.test(list.rowHtml(benignSpot, ctxBenign)), 'no mark on a verified gym');
+  assert.ok(/provenance-mark--community/.test(row), 'community-added (the default) is the grey ring-dot');
+  assert.ok(/provenance-mark--verified/.test(list.rowHtml(benignSpot, { ...ctxBenign, provenance: 'community-verified' })), 'community-verified is the forest ring-dot');
+  assert.ok(!/provenance-mark/.test(list.rowHtml(benignSpot, { ...ctxBenign, provenance: 'verified' })), 'no mark on a verified gym (sec. 10.2)');
+  assert.ok(!/provenance-mark/.test(list.rowHtml(benignSpot, { ...ctxBenign, provenance: '"><script>' })), 'an unknown state renders nothing');
   assert.match(list.capRowHtml(1204), /Zoom in to see all <span class="tnum">1,204<\/span>/);
   assert.deepEqual(['area', 'filters', 'search'].map(k => tags(list.emptyHtml(k, 'x')).filter(t => t.attrs['data-list-action']).map(t => t.attrs['data-list-action']).join(',')),
     ['zoom-out,add-gym', 'clear-filters', 'search-city']);
@@ -246,6 +248,24 @@ test('me page: saved/climbed tabs as links, rows link to gym pages, no email any
   }
   const out = page.mePageHtml({ signedIn: false });
   assert.deepEqual(tags(out).filter(t => t.attrs['data-page-action']).map(t => t.attrs['data-page-action']), ['sign-in', 'privacy', 'terms']);
+});
+
+test('community: /me contributions and the gym page provenance lines keep hostile names and reasons as text', async () => {
+  const { page } = await modules;
+  const c = s => ({ displayName: s, points: 65, level: 3, contributor: true, submissions: [{ kind: 'gym', name: s, status: 'rejected', reason: s }, { kind: 'edit', name: s, status: 'pending', reason: null }] });
+  const benign = page.meContributionsHtml(c('mika.sends'));
+  assert.ok(allText(benign).includes('65 points · level 3 · Contributor'));
+  assert.ok(allText(benign).includes('New gym: mika.sends') && allText(benign).includes('Not accepted') && allText(benign).includes('In review'));
+  for (const h of HOSTILE) {
+    const hostile = page.meContributionsHtml(c(h));
+    assert.deepEqual(shape(hostile), shape(benign), 'contributions structure changed for payload ' + h);
+    assert.equal(hasHandlerAttrs(hostile), false);
+    const gp = page.gymPageHtml(benignSpot, pageCtx({ provenance: { state: 'community-added', text: h }, myEdit: { status: 'rejected', rejection_reason: h } }));
+    assert.deepEqual(shape(gp), shape(page.gymPageHtml(benignSpot, pageCtx({ provenance: { state: 'community-added', text: 'x' }, myEdit: { status: 'rejected', rejection_reason: 'y' } }))), 'gym page provenance: ' + h);
+  }
+  assert.equal(page.meContributionsHtml(null), '', 'nothing while loading');
+  assert.ok(/Your edit is awaiting review/.test(page.gymPageHtml(benignSpot, pageCtx({ myEdit: { status: 'pending' } }))));
+  assert.ok(!/awaiting review|accepted/.test(page.gymPageHtml(benignSpot, pageCtx({ myEdit: { status: 'approved' } }))), 'approved edits need no note');
 });
 
 const pendingSpot = { id: 'community-aaaa', name: 'N', suburb: 'S', state: 'NSW', country: 'AU', types: ['top-rope'], address: 'A', notes: 'n', photo: 'https://example.com/p.jpg' };

@@ -6,6 +6,7 @@ import { TYPE_LABELS } from './constants.js';
 import { escapeHtml, safeUrl } from './html-safe.js';
 import { directionsUrl } from './utils.js';
 import { icon } from './icons.js';
+import { PROVENANCE_LABELS } from './provenance.js';
 
 const TYPE_CLASS = { 'indoor-bouldering': 'boulder', 'top-rope': 'toprope', 'lead-climbing': 'lead' };
 const knownTypes = types => (Array.isArray(types) ? types : []).filter(t => TYPE_CLASS[t]);
@@ -25,8 +26,13 @@ export const typeDotsHtml = types => knownTypes(types).map(t => `<span class="ty
 export const typeTagsHtml = types => knownTypes(types).map(t => `<span class="type-tag type-tag--${TYPE_CLASS[t]}">${escapeHtml(TYPE_LABELS[t])}</span>`).join('');
 const typeText = types => knownTypes(types).map(t => TYPE_LABELS[t]).join(', ');
 
-// Community-added: a grey ring-dot after the name (verified shows nothing; community-verified arrives with Phase 4).
-const provenanceHtml = g => g.community ? '<span class="provenance-mark provenance-mark--community" title="Community-added"></span><span class="visually-hidden">, community-added</span>' : '';
+// Provenance mark after the name (sec. 10.2): grey ring-dot for community-added (the default), forest for
+// community-verified, nothing for verified. The state comes from provenance.js via ctx; labels are fixed strings.
+const MARKS = { 'community-added': ['community', 'Community-added'], 'community-verified': ['verified', 'Community-verified'] };
+export function provenanceMarkHtml(state = 'community-added'){
+  const m = MARKS[state];
+  return m ? `<span class="provenance-mark provenance-mark--${m[0]}" title="${m[1]}"></span><span class="visually-hidden">, ${m[1].toLowerCase()}</span>` : '';
+}
 
 const placeLine = (g, ctx) => [g.suburb, ctx.region].filter(Boolean).join(' · ');
 
@@ -40,7 +46,7 @@ export function rowHtml(g, ctx = {}){
   return `<div class="gym-row${ctx.selected ? ' is-selected' : ''}" data-id="${escapeHtml(g.id)}" role="listitem">`
     + `<button type="button" class="gym-row-main" data-gym-action="open" data-spot-id="${escapeHtml(g.id)}" aria-label="${escapeHtml(g.name)}, ${escapeHtml(typeText(g.types))}, ${escapeHtml(placeLine(g, ctx))}">`
     + thumbHtml(g, 'row')
-    + `<span class="gym-row-text"><span class="gym-row-name"><span class="gym-row-title">${escapeHtml(g.name)}</span>${provenanceHtml(g)}</span>`
+    + `<span class="gym-row-text"><span class="gym-row-name"><span class="gym-row-title">${escapeHtml(g.name)}</span>${provenanceMarkHtml(ctx.provenance)}</span>`
     + `<span class="gym-row-meta">${typeDotsHtml(g.types)}<span class="gym-row-place">${escapeHtml(placeLine(g, ctx))}</span></span></span></button>`
     + `<span class="gym-row-side">${ctx.distance ? `<span class="gym-row-distance tnum">${escapeHtml(ctx.distance)}</span>` : ''}${saveButton(g, ctx.saved, 'gym-row-save')}</span></div>`;
 }
@@ -51,7 +57,7 @@ export function cardHtml(g, ctx = {}){
   return `<div class="gym-card${ctx.selected ? ' is-selected' : ''}" data-id="${escapeHtml(g.id)}" role="listitem">`
     + `<button type="button" class="gym-card-main" data-gym-action="open" data-spot-id="${escapeHtml(g.id)}">`
     + thumbHtml(g, 'card')
-    + `<span class="gym-card-body"><span class="gym-card-name">${escapeHtml(g.name)}${provenanceHtml(g)}</span>`
+    + `<span class="gym-card-body"><span class="gym-card-name">${escapeHtml(g.name)}${provenanceMarkHtml(ctx.provenance)}</span>`
     + `<span class="gym-card-meta tnum">${escapeHtml(meta)}</span><span class="gym-card-tags">${typeTagsHtml(g.types)}</span></span></button>`
     + saveButton(g, ctx.saved, 'gym-card-save') + `</div>`;
 }
@@ -75,7 +81,7 @@ export function peekHtml(g, ctx = {}){
     + `${photo ? `<img class="gym-photo peek-photo" src="${escapeHtml(photo)}" alt="${escapeHtml(g.name)}" loading="lazy" referrerpolicy="no-referrer">` : ''}`
     + `<div class="peek-tags">${typeTagsHtml(g.types)}</div>`
     + `<p class="peek-meta">${escapeHtml(where)}${ctx.distance ? ` · <span class="tnum">${escapeHtml(ctx.distance)}</span>` : ''}</p>`
-    + `${g.community ? `<p class="provenance-line"><span class="provenance-mark provenance-mark--community"></span> Community-added${g.edited ? ' · edited' : ''}</p>` : g.edited ? '<p class="provenance-line">Edited by the community</p>' : ''}`
+    + `<p class="provenance-line">${provenanceMarkHtml(ctx.provenance)}${escapeHtml(PROVENANCE_LABELS[ctx.provenance] || PROVENANCE_LABELS['community-added'])}</p>`
     + `${g.address ? `<p class="peek-address">${escapeHtml(g.address)}</p>` : ''}`
     + `${g.notes ? `<p class="peek-notes">${escapeHtml(g.notes)}</p>` : ''}`
     + `<div class="peek-actions">`

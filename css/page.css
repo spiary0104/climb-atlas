@@ -58,6 +58,7 @@
 .gym-meta-tags{display:inline-flex;flex-wrap:wrap;gap:var(--space-1);}
 .gym-meta-tags:empty{display:none;}
 .gym-header .provenance-line{display:flex;align-items:center;gap:var(--space-1);margin:0 0 var(--space-2);}
+.provenance-rejected{color:var(--color-status-danger);}
 .contribute-prompt{margin:var(--space-2) 0 0;font-size:var(--type-text-md-size);line-height:var(--type-text-md-line);color:var(--color-text-secondary);}
 .gym-actions{display:flex;flex-wrap:wrap;gap:var(--space-2);flex:none;}
 .gym-hero{display:block;width:100%;max-height:360px;aspect-ratio:var(--hero-photo-ratio);object-fit:cover;margin-top:var(--space-5);border-radius:var(--radius-lg);background:var(--color-surface-subtle);}
@@ -122,6 +123,16 @@
 .me-empty{text-align:left;padding-left:0;}
 .me-actions{display:flex;flex-wrap:wrap;gap:var(--space-2);}
 .me-links{display:flex;flex-wrap:wrap;gap:var(--space-4);margin:0;font-size:var(--type-text-md-size);}
+.me-points{margin:0 0 var(--space-4);font-size:var(--type-text-md-size);line-height:var(--type-text-md-line);color:var(--color-text-secondary);}
+.me-points strong{color:var(--color-text-primary);font-weight:var(--font-weight-semibold);}
+.me-name{max-width:var(--size-dialog);}
+.me-name .field-label{display:block;margin-bottom:var(--space-1);font-size:var(--type-caption-size);line-height:var(--type-caption-line);font-weight:var(--font-weight-semibold);color:var(--color-text-secondary);}
+.me-name-row{display:flex;gap:var(--space-2);}
+.me-name .form-hint{margin-top:var(--space-1);}
+.me-submissions{margin:var(--space-4) 0 0;padding:0;list-style:none;border-top:var(--border-width) solid var(--color-border-divider);}
+.me-submission{display:flex;flex-wrap:wrap;gap:var(--space-1) var(--space-2);padding:var(--space-2) 0;border-bottom:var(--border-width) solid var(--color-border-divider);font-size:var(--type-text-sm-size);line-height:var(--type-text-sm-line);}
+.me-submission-name{font-weight:var(--font-weight-medium);}
+.me-submission-reason{flex-basis:100%;color:var(--color-text-secondary);}
 
 /* Empty / loading */
 .page-empty{text-align:left;}
