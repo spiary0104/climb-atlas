@@ -1,6 +1,6 @@
 # Bouldeer — Design & UX Implementation Specification
 
-*Version 1.0 · 25 September 2026 · Status: approved direction, ready for implementation.*
+*Version 1.1 · 26 September 2026 (Brand Pass: the deer's palette, marks and placement; §1A, §12.0) · Version 1.0 · 25 September 2026.*
 *Source decisions: the critical design review (hybrid B + A + C-limited), the design strategy, the research reports, and the concept boards. Reviewed against the current codebase: vanilla HTML/CSS/JS, MapLibre GL + supercluster, Supabase (PostgREST + RLS), 2,127 gyms.*
 
 This file is the single reference for all UI work on Bouldeer, web now and the native app later. It is written as decisions, not discussion. If an implementation choice cannot be traced to a section here, question it before building it.
@@ -16,24 +16,24 @@ These fourteen constraints govern every screen. They are not up for reinterpreta
 1. **Paper for reading, rock for finding.** Documents (gym pages, region pages, logbook, profile, forms) sit on cream surfaces. The map and its immediate controls sit on rock-black. Nothing else is dark; nothing on the map canvas is cream except floating cards and controls.
 2. **Density is a feature.** Any list that can exceed twenty items defaults to 56px rows. Photo cards are for first looks and heroes, never for scale.
 3. **Missing data is invisible, not placeholdered.** A section with no data does not render. The only substitute is one contribution prompt per page.
-4. **One accent, used like punctuation.** Forest green on the primary action, the active state and the selected pin. Climb types own their three colours; nothing else is coloured. Mustard is reserved for START, stamps and celebrations.
-5. **Hairlines first, two shadows only.** Depth comes from 1px ink borders. `shadow.raised` is for the peek card over the map; `shadow.overlay` is for sheets and dialogs. No card, tile or row casts a shadow.
+4. **Cream first; the deer's colours carry the identity.** Cream is the dominant surface. Forest is the one UI accent (primary action, active state, selected pin). Fawn and bark are the deer's own colours: marks, the seal, placeholders and brand labels, never controls or large fills. Mustard means collecting: START, stamps, session days, milestones, the saved ring. Climb types own their three colours and mean nothing else.
+5. **Hairlines for data, the object line for things, two shadows only.** Rows, tables, inputs and panels use 1px hairlines. Objects you pick up or collect (the primary button, START, cards, the peek card, place tiles, the seal, stamps) carry the 1.5px ink object line, the deer's outline translated into UI. `shadow.raised` is for the peek card over the map; `shadow.overlay` is for sheets and dialogs. No card, tile or row casts a shadow.
 6. **One radius factor: 6 / 10 / 14 / 20.** Pills only on filter chips and the primary button.
 7. **Serif for names, sans for everything, figures tabular.** Fraunces at 18px and above for wordmark, page titles, region names and stamps. Inter for the interface. Tabular figures on every number. No third family.
 8. **Every place has a URL.** Gyms, regions, cities and profiles are pages, never popups or modals.
 9. **The map and the list are one view.** The list is scoped to the viewport with a visible count; selection is synced both ways; on mobile the list is a persistent three-stop sheet, never a separate screen.
 10. **Provenance is always visible and always quiet.** A small mark on the card, one line on the page, never a badge that competes with the name.
-11. **The deer is a host, not a guide.** Flat-vector head on the icon, START and default avatar. Full character only at spot size in first-run empties, milestones and the passport. Never in forms, errors, moderation, the map canvas, desktop chrome or repeat-visit empties. Never larger than the primary action. Motion only on the stamp landing and the milestone reveal.
+11. **The deer is the brand, not a sticker.** Cute character, mature interface: the deer supplies the personality, the Field Guide supplies the credibility. The deer appears as a brand mark (app icon, favicon, wordmark lockup, START, the seal and default avatar, stamps) and as full-body art only at spot size in first-run empties, milestones and the passport (§12.2). Never in forms, errors, moderation, the map canvas, dense lists or repeat-visit empties; one character appearance per screen besides START. Never larger than the primary action. Motion only on the stamp landing and the milestone reveal.
 12. **The stamp is the souvenir.** Check-in → stamp → passport → share card. First release.
-13. **Indoor first in vocabulary, place-agnostic in structure.** Copy and imagery speak gym. Page structure works for a crag with different fields. Contour texture only on placeholders and the passport.
+13. **Indoor first in vocabulary, place-agnostic in structure.** Copy and imagery speak gym. Page structure works for a crag with different fields. Photo placeholders use the deer art's holds boulder; contour texture only on the passport and travel moments.
 14. **Tokens are the product.** Every colour, radius, shadow, size and duration is a named semantic role in one file that web and app both read. Components never reference a raw value.
 
 ### 0.2 Approved implementation decisions
 
-- Primary visual language is **Field Guide** (cream, ink hairlines, serif display, stamps, contour placeholders). **Chalk & Rock** supplies the dark map, 56px rows, moderation, stats and every data-heavy surface. From **Companion** only the raised START face and the milestone celebration sheet are adopted; every other Companion element is rejected (rounded display face, pill-everything, tinted icon tiles, ambient card shadows, light basemap, search-bar avatar).
+- Primary visual language is **Field Guide** (cream, ink hairlines and the object line, serif display, stamps, the deer; boulder placeholders). **Chalk & Rock** supplies the dark map, 56px rows, moderation, stats and every data-heavy surface. From **Companion** only the raised START face and the milestone celebration sheet are adopted; every other Companion element is rejected (rounded display face, pill-everything, tinted icon tiles, ambient card shadows, light basemap, search-bar avatar).
 - Typography: Fraunces (display) + Inter (interface). Space Grotesk and Space Mono are retired.
-- Colour roles: cream document surfaces, rock-black map, forest green accent, mustard for START/stamps/celebrations, ember orange demoted to the boulder climb-type colour, ink for text and hairlines.
-- Map: the existing dark CARTO basemap is retained. Pins are type-coloured teardrops with an ink outline; 16px at city zoom, 6px dots below zoom 11; clusters are cream discs with an ink count. The per-region colour palette is deleted.
+- Colour roles: cream document surfaces, rock-black map, forest green accent, fawn and bark (the deer's colours) for identity and warmth, mustard for START/collecting/stamps/celebrations, ember orange demoted to the boulder climb-type colour, ink for text, outlines and hairlines.
+- Map: the existing dark CARTO basemap is retained for Explore; mini maps on document pages are paper-toned (§8). Pins are type-coloured teardrops with an ink outline; 16px at city zoom, 6px dots below zoom 11; clusters are cream discs with an ink count. The per-region colour palette is deleted.
 - Navigation: five areas (Explore · Regions · Log · Me, plus START on mobile). Passport lives inside Me at launch.
 - Routing: real URLs for gyms, regions, cities, profiles via the History API with a hash fallback.
 - Check-in is a first-release feature, stored in its own table, producing a stamp and a passport.
@@ -45,7 +45,7 @@ Gym pages with real URLs; viewport-scoped map/list with "N gyms in view"; mobile
 
 ### 0.4 Optional enhancements (after first release, only when asked for)
 
-Warm custom basemap; hover synchronisation refinements beyond the basic card↔pin highlight; grade-system normalisation in the logbook; the retro app icon replacing the current goat; achievements beyond the passport's own milestones; facilities and hours data model plus the contribution flow to populate it.
+Warm custom basemap; hover synchronisation refinements beyond the basic card↔pin highlight; grade-system normalisation in the logbook; achievements beyond the passport's own milestones; facilities and hours data model plus the contribution flow to populate it.
 
 ### 0.5 Deferred (do not build in this redesign)
 
@@ -61,7 +61,7 @@ Listed in §19. None blocks Phase 1.
 
 ### 1.1 The idea
 
-Bouldeer is a guidebook to climbing places with a map inside it. That sentence produces every visual rule. A guidebook is paper: cream, hairlines, a serif for names, dense tables where the data is dense. Finding a place is terrain: dark, quiet, precise, with the pins as the only colour. Moving between the two is what a climber does on a trip, and the check-in stamp is the mark left behind. The three source concepts survive in exactly those roles: Field Guide is the paper, Chalk & Rock is the terrain, and Companion contributes the one warm gesture (the character on the START button and at milestones) that makes the transition human.
+Bouldeer is a guidebook to climbing places with a map inside it, kept by a deer who climbs. That sentence produces every visual rule. A guidebook is paper: cream, hairlines, a serif for names, dense tables where the data is dense. Finding a place is terrain: dark, quiet, precise, with the pins as the only colour. Moving between the two is what a climber does on a trip, and the check-in stamp is the mark left behind. The three source concepts survive in exactly those roles: Field Guide is the paper, Chalk & Rock is the terrain, and Companion contributes the one warm gesture (the character on the START button and at milestones) that makes the transition human.
 
 ### 1.2 Why it is one system, not three
 
@@ -82,7 +82,34 @@ Floating elements over the map (peek card, controls, cluster discs) are paper ob
 
 ### 1.3 What is explicitly excluded
 
-Rounded display faces; pills on anything but chips and the primary button; shadows on cards, tiles or rows; tinted icon tiles; ambient glows; light basemaps; textures on surfaces; hero-sized character art in product; full-bleed photos on cards; region-coloured anything; emoji as icons; a third type family; instructional banners; a legend panel.
+Rounded display faces; pills on anything but chips and the primary button; shadows on cards, tiles or rows; tinted icon tiles; ambient glows; light basemaps in Explore; textures on surfaces; hero-sized character art in product; full-bleed photos on cards; region-coloured anything; emoji as icons; a third type family; instructional banners; a legend panel.
+
+### 1A. Brand identity (Brand Pass, 26 Sep 2026)
+
+**Direction:** cute character + mature Field Guide interface. The deer provides cuteness and personality; cream paper, ink structure, Fraunces names and dense data provide maturity. Not childish UI, giant rounded cards, pastels, cartoon controls, points everywhere or saturated panda-style colour.
+
+**Source of truth for the character:** `design/mascot/deer/` (the owner's ten renders; README maps each pose to its role). Product art is flat-vector derived from it, never a new character (§12.0).
+
+| Level | What | Owner |
+|---|---|---|
+| Identity | Head lockup, BOULDEER seal, antler crest, app icon, favicon | the deer |
+| Voice | Cream paper, Fraunces names, ink structure, hairlines, guidebook pages | Field Guide (B) |
+| Warmth | Fawn and bark in marks, placeholders, brand labels, the seal; never large surfaces | the deer's palette |
+| Action | Forest: primary buttons, active states, links, selected pin | UI accent |
+| Collecting | Mustard: START, stamps, session days, milestones, saved ring | Concept C, selectively |
+| Tools | Dark Explore map, 56px rows, moderation, stats | Chalk & Rock (A) |
+| Data | Ember, lake, plum on pins and type tags only | climb types |
+
+**Marks** (all in the repo, all traced from `design/mascot/deer/head-on-boulder.png` or the passport emblem):
+
+- **Head** `assets/mascot/head.svg`: colour, the head peeking over the holds boulder. START (44px, in a cream medallion on the mustard disc), wordmark lockup (28px), default avatar (32px, compact seal: fawn-cream disc, 1.5px ink ring, no lettering), seal centre.
+- **Lockup**: head + "Bouldeer" in Fraunces 600 SOFT 100, 8px gap. Top bar and static pages. The head is decorative; the word is the name.
+- **BOULDEER seal**: ring + arched Fraunces caps + head + antler crest at the foot. In the app it is inline SVG with live text (`js/modules/brand.js sealSvg`, colour and mono); static outlined files `assets/brand/seal.svg`, `seal-mono.svg` for marketing, the native app and off-browser share cards. Minimum 88px (`--size-seal`); below that use the compact seal. Wording: BOULDEER only.
+- **Antler crest** `assets/brand/antlers.svg`: two antlers from one base (the passport emblem in the source art). Single ink via currentColor; the passport emblem (mustard on forest), badge and notification icon, seal foot.
+- **Stamp head** `assets/mascot/stamp-head.svg`: single ink, two line weights, no boulder. Stamps, the mono seal, the passport grid.
+- **App icon** `icons/icon.svg` (fills the tile), `icons/icon-maskable.svg` (80% safe zone), PNG 192/512/maskable-512 and `apple-touch-icon.png` (180): the full cream head-on-boulder on fawn-cream. **Favicon** `icons/favicon.svg`: the simplified head (no boulder) on a fawn-cream tile, legible at 16px.
+- **Platform colours**: `theme-color`, manifest `theme_color` and `background_color` are cream (`paper.2`); the splash is cream with the icon.
+- Marks sit on cream or paper; on rock they sit inside a cream tile or medallion, never directly on the dark map.
 
 ---
 
@@ -105,10 +132,10 @@ CSS naming: `--{category}-{property}-{modifier}` (e.g. `--color-text-muted`). Th
 Warm neutrals (paper → rock), 12 steps, OKLCH-generated, validated for APCA contrast between step pairs 1/11, 2/11, 3/12, 9/1.
 
 ```
-paper.0  #FFFDF8   paper.6  #BFB7A6
-paper.1  #F9F6EE   paper.7  #9C9484
-paper.2  #F4F1EA   paper.8  #6F6A5E
-paper.3  #ECE7DC   paper.9  #4A463E
+paper.0  #FFFCF4   paper.6  #BFB7A6
+paper.1  #FAF5EA   paper.7  #9C9484
+paper.2  #F6F0E3   paper.8  #6F6A5E
+paper.3  #EEE6D6   paper.9  #4A463E
 paper.4  #E2DCCE   paper.10 #2F2C27
 paper.5  #D5CEBE   paper.11 #1B1916
 ```
@@ -120,6 +147,7 @@ ink.12 #22312A   ink.9 #5E6E64   ink.7 #8A968E   ink.4 #C6CDC8
 ink.alpha.08  rgba(34,49,42,0.08)
 ink.alpha.20  rgba(34,49,42,0.20)
 ink.alpha.40  rgba(34,49,42,0.40)
+ink.outline   #171B16   the deer art's outline: illustrations, marks, stamps
 ```
 
 Rock (map neutrals):
@@ -130,19 +158,26 @@ rock.1 #23211D   rock.4 #433E36   rock.7 #A39C8F
 rock.2 #2B2823   rock.5 #5A544A   rock.8 #CFC8BA
 ```
 
-Forest (UI accent):
+Forest (UI accent; the spruce of the deer's clothes and passport):
 
 ```
-forest.1 #EEF4EF  forest.4 #9DBFA9  forest.7 #2F6B4F  forest.9 #1B4231
-forest.2 #DCE8DF  forest.5 #6FA184  forest.8 #245640  forest.10 #122D22
-forest.3 #BFD5C6  forest.6 #4C8767
+forest.1 #EEF3EF  forest.4 #A2BCA8  forest.7 #3B5E47  forest.9 #243A2C
+forest.2 #DDE7DF  forest.5 #6A8C72  forest.8 #2F4B39  forest.10 #182820
+forest.3 #C3D4C7  forest.6 #52705A
 ```
 
-Mustard (START, stamps, celebration):
+Mustard (START, collecting, stamps, celebration; the art's holds, flag and passport emblem):
 
 ```
-mustard.1 #FCF5E1  mustard.3 #F2D98F  mustard.5 #E9B53B  mustard.7 #A47A14
-mustard.2 #F8E9BF  mustard.4 #EBC65E  mustard.6 #C9971F  mustard.8 #7A5A0F
+mustard.1 #FCF4E0  mustard.3 #EFD290  mustard.5 #DDA23A  mustard.7 #8A6412
+mustard.2 #F7E6BC  mustard.4 #E6BC5C  mustard.6 #C08A22  mustard.8 #74540E
+```
+
+Fawn (the deer's coat, measured #DD9F53) and bark (antlers and hooves, measured #754D33): identity and warmth, never controls or large fills:
+
+```
+fawn.1 #F9EEDB  fawn.2 #F2DFC0  fawn.3 #EBC596  fawn.5 #DD9F53  fawn.8 #8A5A26 (text-safe, 5.2:1 on paper.2)
+bark.3 #B08A6E  bark.5 #754D33  bark.7 #52341F
 ```
 
 Climb-type hues (three, distinct from the accent):
@@ -159,7 +194,7 @@ Status:
 brick.5 #B8452B  brick.1 #FBEAE5     (danger)
 ```
 
-Stamp ink: `stamp.red #C8322B` (used only by the stamp component and share card).
+Stamp ink is forest (`stamp.ink` = forest.8) with a mustard emblem, as on the deer's passport; the brand has no red.
 
 Primitive values may be regenerated for contrast, but the *roles* below must keep their meaning.
 
@@ -180,7 +215,8 @@ Paper theme (`:root`):
 --color-text-inverse        rock.9
 --color-text-link           forest.7
 --color-text-on-accent      paper.0
---color-text-on-mustard     ink.12
+--color-text-on-collect     ink.12
+--color-text-brand          fawn.8      brand eyebrows and non-form section labels
 
 --color-border-subtle       ink.alpha.20   default hairline
 --color-border-strong       ink.12         primary button, selected card, focused input
@@ -192,16 +228,30 @@ Paper theme (`:root`):
 --color-accent-subtle       forest.1       selected chip background, active tab tint
 --color-accent-text         forest.8
 
---color-highlight-solid     mustard.5      START, stamp field, celebration
---color-highlight-subtle    mustard.1
---color-highlight-text      mustard.7
+--color-collect-solid       mustard.5      START, stamps, session days, milestones, saved ring
+--color-collect-subtle      mustard.1
+--color-collect-muted       mustard.3
+--color-collect-text        mustard.7      (4.7:1 on paper.2)
 
 --color-status-success      forest.6       --color-status-success-subtle forest.1
 --color-status-warning      mustard.6      --color-status-warning-subtle mustard.1
 --color-status-danger       brick.5        --color-status-danger-subtle  brick.1
 --color-status-info         lake.5         --color-status-info-subtle    lake.3
 
---color-focus-ring          forest.5
+--color-focus-ring          forest.5    (3.3:1 on paper.2)
+```
+
+Brand and stamps (theme-independent):
+
+```
+--color-brand-fawn          fawn.5      marks, seal ring, illustration
+--color-brand-fawn-muted    fawn.3
+--color-brand-fawn-subtle   fawn.1      compact seal, START medallion, placeholder ground
+--color-brand-bark          bark.5      antler crest, placeholder initial
+--color-brand-bark-muted    bark.3
+--color-brand-outline       ink.outline
+--color-stamp-ink           forest.8
+--color-stamp-emblem        mustard.5
 ```
 
 Rock theme (`[data-theme="rock"]`, the map region and its controls):
@@ -249,6 +299,8 @@ Map:
 --map-label-text            rock.8
 --map-control-surface       paper.0
 --map-control-border        ink.alpha.20
+--map-paper-land/-line/-road/-water/-label/-tint   paper mini maps on document pages (paper.1, paper.5, paper.0, forest.2, ink.9, fawn.3)
+--placeholder-ground/-boulder/-line/-hold-a/-hold-b/-letter   the boulder placeholder (fawn.1, paper.0, fawn.3, forest.3, mustard.3, bark.5)
 ```
 
 Interaction states, expressed as modifiers rather than separate colours: `hover` uses `surface.raised` on rows and `accent.hover` on filled buttons; `pressed` uses `accent.pressed` and a 0.98 scale; `disabled` uses 40% opacity, never a grey; `focus-visible` uses a 2px `focus-ring` outline offset 2px.
@@ -257,6 +309,8 @@ Interaction states, expressed as modifiers rather than separate colours: `hover`
 
 ```
 --font-display   "Fraunces", Georgia, "Times New Roman", serif
+--font-display-soft   "SOFT" 50     (all Fraunces; set once on body, Inter ignores it)
+--font-wordmark-soft  "SOFT" 100    (the wordmark and seal lettering)
 --font-text      "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif
 --font-features-numeric  "tnum" 1, "lnum" 1
 
@@ -305,6 +359,8 @@ Weights available: Fraunces 500, 600 (never 700 in product); Inter 400, 500, 600
 --size-start-button 60px
 --size-mascot-spot 96px  (max in-product character size except milestone sheet)
 --size-mascot-milestone 160px
+--size-mark-lockup 28px    --size-seal 88px
+--border-width 1px (hairline)    --border-width-object 1.5px (the object line, §4.2)
 ```
 
 Component tokens (the short list that earns them):
@@ -332,7 +388,9 @@ Component tokens (the short list that earns them):
 
 **Weights:** body 400; emphasis and controls 500/600; display 600, 500 for large hero numbers. 700 does not exist in the product.
 
-**Fallbacks:** Fraunces → Georgia → serif; Inter → system-ui stack. Fonts load via Google Fonts `css2` with `display=swap` and only the weights listed (Fraunces 500/600 with the `opsz` axis; Inter 400/500/600). `font-synthesis: none`. For the native app the same two families are bundled.
+**SOFT axis:** Fraunces is loaded with its `SOFT` axis (50–100); display text uses SOFT 50 and the wordmark and seal lettering SOFT 100, so the serif's terminals round off to sit with the deer's shapes. The seal and stamp lettering (arched caps, sized in SVG units inside a mark of at least 88px) is the only serif below 18px.
+
+**Fallbacks:** Fraunces → Georgia → serif; Inter → system-ui stack. Fonts load via Google Fonts `css2` with `display=swap` and only the weights listed (Fraunces 500–600 with the `opsz` and `SOFT` axes: `Fraunces:opsz,wght,SOFT@9..144,500..600,50..100`; Inter 400/500/600). `font-synthesis: none`. For the native app the same two families are bundled.
 
 **Retired:** Space Grotesk (all uses become Inter 600 or Fraunces per the rules above), Space Mono (all uses become Inter with tabular figures). `--font-mono` is deleted from the tokens.
 
@@ -356,7 +414,7 @@ Nested radii step down one level (a 14px card contains 10px buttons and 6px inpu
 
 ### 4.2 Hairlines
 
-Default border is 1px `color.border.subtle` (ink at 20%). `color.border.strong` (full ink, still 1px) marks: the primary button outline, the selected card or row, a focused input (in addition to the focus ring), the peek card. 1.5px does not exist in product; the concept boards' 1.5px is normalised to 1px + strong colour. Dividers inside grouped lists use `border.divider` (8%). Borders are never coloured with the accent except on the selected map pin ring.
+Default border is 1px `color.border.subtle` (ink at 20%) on rows, tables, inputs, chips and panels. **The object line** is 1.5px full ink (`--border-width-object` + `color.border.strong`) on things you pick up or collect: the primary button, START, photo cards, carousel cards, the peek card, place tiles, the seal and stamps. Hover on an object changes its surface (`surface.subtle`); selection adds a 1.5px ink outline offset 1px. The Brand Pass restored this Concept B line (v1.0 had normalised it to 1px): it is the deer's outline translated into UI. Dividers inside grouped lists use `border.divider` (8%). Borders are never coloured with the accent except on the selected map pin ring.
 
 ### 4.3 Shadows
 
@@ -380,7 +438,8 @@ Paper surfaces are flat. No gradients, no noise, no grain, no texture. The conto
 1. **Cream** — `surface.canvas` `#F4F1EA` and `surface.default` `#FFFDF8`. Every document.
 2. **Rock-black** — `map.canvas` `#1B1916`. The map region and the controls physically inside it. Also `surface.inverse` for tooltips.
 3. **Forest green** — the single UI accent. Primary button fill, active tab underline, selected chip fill, selected pin ring, focus ring (lighter step), links.
-4. **Mustard** — START button fill, the stamp field on the passport, the celebration sheet's title colour and confetti-free highlight, the saved-pin ring. Nowhere else.
+4. **Mustard** — collecting: START, calendar session days, the stamp emblem and passport stamp field, the celebration sheet's title colour, the saved-pin ring. Nowhere else.
+4a. **Fawn and bark** — the deer's colours: marks, the seal, placeholders, brand eyebrows (fawn.8 text), the antler crest. Never on controls, never as large fills, never as status.
 5. **Climb types** — ember orange (boulder), lake blue (top rope), plum (lead). On pins and type tags only. Never on buttons, headings, backgrounds or status.
 6. **Ink** — `#22312A`. All text on paper, all hairlines (via alpha), the pin outline, the cluster count.
 
@@ -443,11 +502,11 @@ Routing is History API (`pushState`) with a hash fallback (`/#/gym/slug`) when t
 
 ### 6.4 Desktop navigation
 
-A 64px cream top bar with a bottom hairline: wordmark left (retro icon 28px + "Bouldeer" in Fraunces 600 22px), four text links (Explore · Regions · Log · Me) in Inter 500 14px with a 2px forest underline on the active one, a search field (pill, 1px hairline, placeholder "Search gyms, cities, regions", max-width 480px, expands to a results panel — see §9), and on the right a secondary "Add a gym" button and a 32px circular avatar (the user's photo; the flat-vector deer head if none). No count badge, no kebab, no character in the bar besides the icon in the wordmark. Signed-out: the avatar becomes a text link "Sign in". The tagline is gone.
+A 64px cream top bar with a bottom hairline: wordmark left (the deer head lockup 28px + "Bouldeer" in Fraunces 600 SOFT 100, 22px), four text links (Explore · Regions · Log · Me) in Inter 500 14px with a 2px forest underline on the active one, a search field (pill, 1px hairline, placeholder "Search gyms, cities, regions", max-width 480px, expands to a results panel — see §9), and on the right a secondary "Add a gym" button and a 32px circular avatar (the user's photo; the compact seal if none: the head in a fawn-cream disc with the ink ring). No count badge, no kebab, no character in the bar besides the icon in the wordmark. Signed-out: the avatar becomes a text link "Sign in". The tagline is gone.
 
 ### 6.5 Mobile navigation
 
-An 84px tab bar (56px content + safe-area) on cream with a top hairline: Explore (map icon) · Regions (grid icon) · **START** · Log (book icon) · Me (person icon). Labels always visible, 11px 500, active item in forest with a 600 label. START is a 60px mustard disc with a 1px ink border, raised 26px above the bar, carrying the flat-vector deer head at 44px; its label reads "Log". Tapping START opens a sheet with two actions: "Check in here" (if a gym is selected or nearby) and "Log a session". The tab bar hides while the bottom sheet is at the full snap.
+An 84px tab bar (56px content + safe-area) on cream with a top hairline: Explore (map icon) · Regions (grid icon) · **START** · Log (book icon) · Me (person icon). Labels always visible, 11px 500, active item in forest with a 600 label. START is a 60px mustard disc with the 1.5px ink object line, raised 26px above the bar, carrying the deer head at 44px in a cream medallion (fawn on mustard alone measures 1.02:1); its label reads "Log". Tapping START opens a sheet with two actions: "Check in here" (if a gym is selected or nearby) and "Log a session". The tab bar hides while the bottom sheet is at the full snap.
 
 ### 6.6 Removed navigation
 
@@ -475,7 +534,7 @@ Hover a row → its pin gets the selected ring and scales to 20px; hover a pin �
 
 **Dense row** (default, `--size-row-dense` 56px): 40px thumbnail (photo or placeholder, radius 6) · name (text-md 600, single line, ellipsis) · meta line (text-sm secondary: `Suburb · Region` on one line; type tags as 6px dots before the suburb, not text, when space is tight) · right column: distance (tabular) and the save toggle (28px icon button, 44px hit area). Provenance mark: a 6px ring-dot after the name for community-added (grey) or community-verified (forest); verified shows nothing. Rows are separated by `border.divider`; no card chrome.
 
-**Photo card** (opt-in): 4:3 photo or contour placeholder with radius 14 on top; below: name (display-sm Fraunces), `Suburb, City · distance`, type tags, and a footer line with the open/closed dot and hours or price when present. Cards sit in a single column in the 460px pane, two columns at ≥ 1440px.
+**Photo card** (opt-in): 4:3 photo or boulder placeholder with radius 14 on top; below: name (display-sm Fraunces), `Suburb, City · distance`, type tags, and a footer line with the open/closed dot and hours or price when present. Cards sit in a single column in the 460px pane, two columns at ≥ 1440px.
 
 **Toggle:** a segmented control at the end of the chip row (list icon · grid icon), remembered in `localStorage`. Default is rows. The photo-card mode is intended for a first look at a new city, not for working through 300 results; the count line stays visible in both modes.
 
@@ -511,9 +570,9 @@ A "Map / List" pill toggle is not used; the sheet's snap points do that job.
 
 Loading: six skeleton rows (or three skeleton cards in card mode) mirroring the row layout; pins fade in at 60% opacity until data arrives; the count shows "…". No spinner, no character.
 
-Empty in viewport: "No gyms in this area yet" + two secondary buttons, "Zoom out" and "Add a gym". Empty from filters: "No gyms match" + "Clear filters". Empty from search: "Nothing for 'xyz'" + "Search a city instead". First-ever visit with location denied and no data: the only empty state that shows the character (traveller pose, 96px) with "Where are you climbing?" and the search field focused.
+Empty in viewport: "No gyms in this area yet" + two secondary buttons, "Zoom out" and "Add a gym". Empty from filters: "No gyms match" + "Clear filters". Empty from search: "Nothing for 'xyz'" + "Search a city instead". First-ever visit with location denied and no data: the character (backpacker pose, 96px) with "Where are you climbing?" and the search field focused (not built yet). The other first-run empties: Log with no sessions (chalking-up) and /me Saved when nothing is saved or climbed (backpacker); see §12.2.
 
-No photo: the contour placeholder (§13).
+No photo: the boulder placeholder (§13).
 
 ---
 
@@ -529,7 +588,7 @@ No photo: the contour placeholder (§13).
 
 **Hero (conditional):** one photo at 16:9, radius 14, max-height 360px, only if a photo exists. No placeholder hero — with no photo the header simply sits on the canvas and the page is shorter. No mosaic.
 
-**Essentials (conditional per row):** a two-column desktop layout with a 320px right column holding a single "Essentials" panel (paper.0, hairline, radius 14) whose rows appear only when data exists: day pass, grades on the wall (from routes), new-set day, hours (collapsible weekly table, today emphasised), address (text + a 120px static map thumbnail, always present since coordinates always exist), website / Instagram. If only the address row exists, the panel is just the address and map thumbnail — still intentional. Below the panel: "Your history here" (sessions, best send, last visit, check-ins) for signed-in users with any data at this gym; hidden otherwise.
+**Essentials (conditional per row):** a two-column desktop layout with a 320px right column holding a single "Essentials" panel (paper.0, hairline, radius 14) whose rows appear only when data exists: day pass, grades on the wall (from routes), new-set day, hours (collapsible weekly table, today emphasised), address (text + a small paper-toned mini map: CARTO Positron recoloured to the paper tokens, always present since coordinates always exist), website / Instagram. If only the address row exists, the panel is just the address and map thumbnail — still intentional. Below the panel: "Your history here" (sessions, best send, last visit, check-ins) for signed-in users with any data at this gym; hidden otherwise.
 
 **Body sections (each conditional):** Facilities (icon + label chips, hairline, radius 10); About (notes, prose at text-lg, 64ch max); On the wall (grade distribution bar + count + "Log a climb here", only when routes exist); Nearby (a horizontal strip of up to 4 photo cards from the same city, always present when the city has ≥ 2 gyms); Community (contributor attribution, edit count, and the three actions: Suggest an edit · Add a photo · Report a problem).
 
@@ -606,43 +665,64 @@ New table `checkins (id uuid pk, user_id uuid fk, spot_id text fk, checked_at ti
 
 ### 11.3 Passport (`/me/passport`)
 
-A paper page with a subtle contour background (the one permitted surface texture, because this page *is* the passport). Header: "Passport" (display-lg), a stat line "11 gyms · 4 cities · 2 countries". Body: **Stamps** — a grid of city stamps (one per distinct city, most recent first), each a circular ink stamp with the city name arched, the gym count and the first date; **Recent check-ins** — dense rows (gym, city, date, note snippet). Tapping a city stamp filters the rows. The traveller pose (96px) appears only when there are zero check-ins, with "Your first stamp is one check-in away."
+A paper page with a subtle contour background (the one permitted surface texture, because this page *is* the passport). The passport itself is drawn as in the source art: a forest cover with the mustard antler crest. Header: "Passport" (display-lg), a stat line "11 gyms · 4 cities · 2 countries". Body: **Stamps** — a grid of city stamps (one per distinct city, most recent first), each a circular ink stamp with the city name arched, the gym count and the first date; **Recent check-ins** — dense rows (gym, city, date, note snippet). Tapping a city stamp filters the rows. The traveller pose (96px) appears only when there are zero check-ins, with "Your first stamp is one check-in away."
 
 ### 11.4 Stamp visual
 
-An SVG component, ink-only (`stamp.red` on paper, or ink on cream for the passport grid): two dashed concentric rings, the gym or city name arched at the top in Fraunces 600 caps with 3px tracking, the date in Inter 600 caps at the bottom, and the flat-vector stamp head in the centre. Rendered slightly rotated (−8° to +8°, seeded by the gym id so it is stable). The stamp is the only component allowed to use uppercase display text.
+An SVG component, single ink (`stamp.ink`, forest, on cream; the mustard `stamp.emblem` only for the antler crest): two dashed concentric rings, the gym or city name arched at the top in Fraunces 600 SOFT 100 caps with 3px tracking, the date in Inter 600 caps at the bottom, and the stamp head (`assets/mascot/stamp-head.svg`) in the centre. It shares its geometry with the mono BOULDEER seal. Rendered slightly rotated (−8° to +8°, seeded by the gym id so it is stable). The stamp is the only component allowed to use uppercase display text.
 
 ### 11.5 Share card
 
-A 1080 × 1350 image generated on a canvas element: cream background, the stamp large, the gym name in Fraunces, the city and date, "Bouldeer" wordmark bottom-right at 5% width. Optional user photo above the stamp at 4:3 if one was attached. Shared via the Web Share API when available, otherwise downloaded. No feed, no likes, no follower graph — the card leaves the product.
+A 1080 × 1350 image generated on a canvas element: cream background, the stamp large, the gym name in Fraunces, the city and date, the head lockup bottom-right at 5% width (or the static seal, `assets/brand/seal.svg`, when rendered off-browser). Optional user photo above the stamp at 4:3 if one was attached. Shared via the Web Share API when available, otherwise downloaded. No feed, no likes, no follower graph — the card leaves the product.
 
 ---
 
 ## 12. Mascot
 
-### 12.1 Assets to produce (flat vector, priority order)
+The deer is the brand's character (§1A). **Source of truth:** the owner's renders in `design/mascot/deer/`. Every product asset is a flat-vector derivative of those files, traced (not redrawn), so the character never drifts.
 
-1. **Head** — the peek-over-the-boulder face, cropped at the rim, in colour and in single-ink. Uses: app icon (composited on the retro sunset ground), START button (44px), default avatar (32/40px), favicon (16px mono).
-2. **Stamp head** — ink-only head simplified to two weights of line, no shading. Uses: stamp component, share card, passport grid.
-3. **Topped-out** — full body, arms up, flag. Uses: milestone sheet only.
-4. **Chalking-up** — full body, seated. Uses: long loads (> 2s) and the first-run empty Log.
-5. **Traveller** — full body with crash pad and case. Uses: first-run Explore with no location, empty passport, new-city prompt.
+### 12.0 Character sheet (what stays constant in every derivative)
 
-Marketing and sticker assets, not built into the product: dyno, heel hook, fell off, rest day, high five. The Higgsfield renders are the reference for redrawing; the product uses the flat-vector versions so the brand assets are style-stable.
+- **Construction:** oversized round head (about half the body height); two rounded chocolate antlers with two to three tines; large leaf ears with cream insides; a crown of three to five cream forehead spots (one tall centre spot); big round black eyes with one white highlight; small rounded black nose; cream muzzle rising to a point under the nose, cream belly and tail tip; chocolate hooves and mitten hands.
+- **Line and fill:** one even dark outline (`ink.outline` #171B16, about 0.7% of the figure's height; slightly heavier in marks under 48px so it holds); flat fills with at most one shade step on the fur (`#BD823E`); no gradients, gloss, highlights beyond the eye catchlight, or textures. The source renders' soft AI shading is removed by snapping to the palette below.
+- **Palette:** fawn #DD9F53, fur shade #BD823E, cream #FAE9C7, bark #754D33, outline #171B16; wardrobe and props in forest #40634B and mustard #DDA23A; orange #E37832 only for travel/place props (the map pin, the suitcase); granite #83817F; slate #2E3230 for pad bases. Never red, blue or purple on the character.
+- **Expressions:** default open smile; effort = level brows, closed mouth; celebration = open mouth, arms up; failure = dizzy (marketing only, §12.2); calm = closed eyes. Never hurt, sad or scared in product.
+- **Open inconsistencies in the source set, fixed in derivatives:** two antler tines per side (the head art) rather than three; mitten hands in bark; cream eye patches only where the source shows them per pose.
+- **Derivatives are generated, not hand-drawn:** the marks were traced against `head-on-boulder.png` (overlay-checked); full-body poses are traced by palette-snapping the source to the colours above and vectorising each colour region (the Brand Pass tracer), then compared side by side with the source at 380px and 96px.
 
-### 12.2 Placement rules (enforced)
+### 12.1 Assets (status)
 
-Allowed: app icon; START button; default avatar; first-run empty states for Explore (no location), Log (no sessions) and Passport (no check-ins); milestone celebration sheet; passport stamp; share card; onboarding screens of the native app; marketing pages.
+| Asset | File | Role | Status |
+|---|---|---|---|
+| Head (colour) | `assets/mascot/head.svg` | START, lockup, compact seal/avatar, seal centre | done |
+| Stamp head (single ink) | `assets/mascot/stamp-head.svg` | stamps, mono seal, passport grid | done |
+| Seal | `js/modules/brand.js`, `assets/brand/seal.svg`, `seal-mono.svg` | owned and collected things | done |
+| Antler crest | `assets/brand/antlers.svg` | passport emblem, badges | done |
+| App icon, favicon | `icons/` | platform | done |
+| Chalking-up | `assets/mascot/chalking-up.svg` | first-run Log; long loads | done |
+| Backpacker | `assets/mascot/backpacker.svg` | first-run Saved; first-run Explore; new city/country | done |
+| Traveller with passport | from `traveller-passport.png` | empty passport, check-in sheet | Phase 5 |
+| Topped-out (flag) | from `topped-out-flag.png` | milestone sheet | Phase 5 |
+| Dyno | from `dyno.png` | new top grade (milestone) | Phase 5 |
+| High five | from `high-five.png` | native onboarding; first approved contribution | Phase 5+ |
+| Rest day | from `rest-day.png` | a quiet week in the log (optional) | later |
+| On the wall, fell off | — | marketing and stickers only | not in product |
 
-Forbidden: forms and inputs; filters; sign-in; moderation; errors and toasts; the map canvas, pins, clusters, labels; gym, region and city pages; desktop top bar (beyond the wordmark icon); any empty state after the user has ever had content there; anywhere twice on one screen; hover or tap "reactions".
+### 12.2 Placement (enforced by tests/design-system.test.js)
 
-Scale: 96px maximum in product (`--size-mascot-spot`), except the milestone sheet at 160px; always narrower than the primary action row beneath it.
+1. **Brand marks** (identity, always): app icon; favicon; the wordmark lockup (desktop top bar and static pages); START (phones); the default avatar (compact seal); the lettered seal on owned/collected surfaces (/me now; stamps, passport and share cards in Phase 5).
+2. **Interaction anchor:** START; in Phase 5 the check-in stamp landing.
+3. **Collecting and progression** (Phase 5): passport cover and stamps, milestone sheet (topped-out, dyno), empty passport (traveller).
+4. **First run only, 96px max** (`--size-mascot-spot`): Log with no sessions (chalking-up); /me Saved when nothing is saved or climbed (backpacker); native onboarding (high-five); optionally rest-day for a quiet log week. All character markup comes from `js/modules/brand.js` (`firstRunArt`, `sealSvg`).
+5. **Never:** forms and inputs; filters; sign-in; moderation; errors and toasts (the fell-off pose stays marketing: failure is not made cute in product); the map canvas, pins, clusters, labels; gym, region and city page bodies; dense rows; points and level displays; any empty state after the person has had content there; hover or tap reactions.
 
-Motion: the stamp landing and the milestone reveal only (320ms, `ease-stamp` / `ease-out`, both replaced by an instant state under `prefers-reduced-motion`). The START face does not animate on tap; the button itself uses the standard pressed scale.
+**One character per screen** besides START (persistent chrome): where first-run art shows, the seal steps aside (/me). The lockup (top bar, >= 600px) and START (tab bar, < 600px) never share a screen.
+
+Scale: 96px maximum in product, except the milestone sheet at 160px; always narrower than the primary action row beneath it. Motion: the stamp landing and the milestone reveal only (320ms, `ease-stamp` / `ease-out`, instant under `prefers-reduced-motion`). The START face does not animate on tap; the button uses the standard pressed scale.
 
 ### 12.3 Milestone sheet (the Companion contribution)
 
-A bottom sheet (dialog on desktop) over a dimmed page: the topped-out character breaking the top edge of the sheet at 160px, a title in Fraunces 600 26px in `highlight.text` ("First V6" / "10 gyms" / "First stamp abroad"), one sentence of data, up to three milestone marks as 44px ink-outline glyphs, and two actions (Share card · Done). Triggers: first check-in; every 5th distinct gym; first gym in a new country; a new highest grade in the log. Never more than one per session; if several trigger, show the highest and list the others in one line.
+A bottom sheet (dialog on desktop) over a dimmed page: the topped-out character breaking the top edge of the sheet at 160px, a title in Fraunces 600 26px in `collect.text` ("First V6" / "10 gyms" / "First stamp abroad"), one sentence of data, up to three milestone marks as 44px ink-outline glyphs, and two actions (Share card · Done). Triggers: first check-in; every 5th distinct gym; first gym in a new country; a new highest grade in the log. Never more than one per session; if several trigger, show the highest and list the others in one line.
 
 ---
 
@@ -650,9 +730,9 @@ A bottom sheet (dialog on desktop) over a dimmed page: the topped-out character 
 
 - **Crops are fixed.** Cards 4:3, hero 16:9, dense-row thumbnail 1:1, avatar 1:1. `object-fit: cover`, never stretched, never letterboxed.
 - **No full-bleed hero cards.** Photos sit inside the card's radius with the card's own padding rules (the concept boards' 8px inset is not used; the photo meets the card edge at the top with the card radius, then content below).
-- **Contour placeholder** for any gym without a photo: `surface.subtle` background, an SVG of five contour paths in `paper.5` at 1.4px, and the gym's initial letter in Fraunces 600 ink at the bottom-left (16px in rows, 34px in cards, absent in the hero because there is no placeholder hero). The SVG is one shared symbol; the letter is text. Forty of these in a grid must read as a system, so nothing varies between them except the letter.
+- **Boulder placeholder** for any gym without a photo (Brand Pass): the deer art's cream holds boulder as a quiet motif, `assets/boulder.svg` (one shared symbol; colours from the `--placeholder-*` tokens: fawn-cream ground, paper boulder, fawn line, sage and mustard holds), and the gym's initial in Fraunces 600 bark at the bottom-left (18px in rows, 28px in cards, absent in the hero). Forty of these in a grid must read as a system, so nothing varies between them except the letter. The contour symbol (`assets/contour.svg`) is kept for the passport and travel moments. SVG assets must be well-formed XML (no "--" inside comments), or `<use>` renders nothing: v1.0's contour placeholder never showed for that reason.
 - **Gym-first imagery.** Where a photo is chosen for a region page or marketing, it shows walls, holds, chalk, people climbing indoors. No landscapes as identity imagery; no stock climbing photography anywhere.
-- **No grain or texture on ordinary surfaces.** Contours appear only in the placeholder and on the passport page.
+- **No grain or texture on ordinary surfaces.** Contours appear only on the passport page and travel moments; the boulder motif only in placeholders.
 - **Community photos** are validated as `https://` URLs, lazy-loaded, and shown at fixed crops; a broken URL falls back to the placeholder.
 
 ---
@@ -831,7 +911,7 @@ Run after every phase. Each line is pass/fail.
 4. **Slug policy.** `name-suburb` with numeric disambiguation is proposed. Renaming a gym should not change its slug (store it, don't derive it live). Confirm.
 5. **Landing when geolocation is denied or unavailable.** Options: last city (local storage) → home country's largest city by gym count → world view at zoom 2. Recommendation: that order, with Sydney only as the *home-country* fallback for AU users, not globally.
 6. **Public profiles and handles.** Requires a `profiles.handle` with uniqueness and moderation of names. Recommendation: defer; ship `/me` private with a display name only.
-7. **Retro app icon adoption.** Replace the current goat icon with the deer sunset icon in Phase 5, or keep the goat until the native app? Recommendation: replace in Phase 5 so web PWA and the future app match from day one.
+7. **App icon.** Resolved 2026-09-26 (Brand Pass): the cream head-on-boulder, installed now (§1A); the earlier sunset choice is superseded.
 8. **Check-in proximity rule.** 500m geofence on mobile with a manual "I'm here" confirmation on desktop is proposed. Confirm the radius and whether desktop check-ins are allowed at all.
 9. **Publish-then-review scope.** Which fields publish immediately with review flagged (proposed: hours, price, links, photo) versus queue (name, location, types, deletion). Confirm.
 10. **Data columns.** Approve adding nullable `hours`, `day_pass_price`, `currency`, `website`, `instagram`, `facilities` in Phase 4 so contribution can start filling them, even though the display is optional/Phase 6.
@@ -885,3 +965,14 @@ Run after every phase. Each line is pass/fail.
 - *Edits (sec. 10.4):* the required "What changed and how do you know?" note (≤ 200 characters) and the "Please double-check this" toggle are on the existing edit dialog; it stays a dialog rather than a sheet. Anonymous edit proposals remain allowed (the existing policy); they are attributed only when signed in. The editor sees "Your edit is awaiting review" or the rejection reason on the gym page.
 - *`/mod` (sec. 10.5):* the Pending-review dialog is gone. "Approve" applies whatever the moderator corrected in the panel (name, suburb, address, notes), so Edit-and-approve is one action. Reject requires a reason. R opens the reason field and never rejects by itself; Escape only closes the panel.
 - *`/add` (sec. 10.3):* a page at every width (no separate mobile sheet). Submitters cannot update their pending row (RLS), so step 2 comes before the single insert rather than after it: step 1 already has "Submit for review", and "Add details" is optional. There is no reverse geocoder, so the area is copied from the nearest gym within 25 km (editable in step 2); with no gym nearby, step 2 asks for it. The website field is omitted (no column). A gym within 150 m of the crosshair is flagged as a likely duplicate with a link to its page.
+
+**2026-09-26: Brand Pass (branch `feature/bouldeer-brand-pass`, stacked on Phase 4; owner: "cute character + mature Field Guide interface").**
+- *Sources:* the owner's deer renders are now in the repo (`design/mascot/deer/`, renamed by pose, README). The panda-app screenshots that informed the START/seal/collecting ideas stay local (`design/references/panda/`, git-excluded: third-party captures, public repo).
+- *Locked by the owner:* app icon = cream head-on-boulder; paper-toned mini maps on gym/region pages; START disc mustard; boulder-with-holds photo placeholder; seal wording BOULDEER only.
+- *Palette:* fawn and bark added as brand roles (identity and warmth, never controls or large fills); forest retuned to the art's spruce (#3B5E47), mustard to its gold (#DDA23A); paper nudged toward the art's cream; `stamp.red` removed (stamps are forest + mustard emblem); highlight roles renamed collect. Measured: white on forest 7.3:1, fawn.8 labels 5.2:1, collect text 4.7:1, focus ring 3.3:1 (v1.0's was 2.6:1, below the 3:1 non-text minimum).
+- *Line:* the 1.5px ink object line returns on the primary button, START, cards, carousel cards, place tiles, the seal (sec. 4.2); rows and panels keep 1px hairlines.
+- *Type:* Fraunces loads its SOFT axis; display SOFT 50, wordmark and seal lettering SOFT 100.
+- *Marks:* head.svg re-measured against the source (head outline, spots, muzzle; source colours); new antler crest, stamp head, seal (inline + static outlined via fonttools, a dev-time tool, not a project dependency), app icon (any + maskable, PNG exports rendered in the browser), favicon; top-bar lockup; START medallion (fawn on mustard is 1.02:1); compact-seal avatar; manifest and theme colours cream.
+- *First-run art:* chalking-up and backpacker traced from the source by palette-snapping (flat, one fur shade step); one character per screen besides START.
+- *Bug found:* `assets/contour.svg` contained "--" inside an XML comment, so it never parsed standalone and the contour placeholder never rendered. Fixed; a test now checks every SVG asset.
+- *Not done in this pass:* the Phase 5 poses (traveller-passport, topped-out, dyno, high-five), the stamp component, and the passport page.

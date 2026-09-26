@@ -31,15 +31,16 @@ tooling, a framework, or a bundler without discussing it first.
 ```
 index.html              App shell (no inline JS/CSS)                 (>30 KB)
 about.html              Standalone About page
-css/tokens.css          Design tokens (only file with raw values); design/tokens.json generated from it
+css/tokens.css          Design tokens (only file with raw values; deer palette: fawn, bark); design/tokens.json generated from it
 css/base.css            Reset, type scale, focus
 css/components.css      Shared components (.btn tiers, chips, fields, nav, dialogs, ...)
 css/explore.css         Explore: list pane/sheet, rows/cards, chips, search, pins, peek card
 css/page.css            Pages (gym, region/city, log, me)
 css/style.css           App layer (shell, map controls, forms, sessions); css/mod.css = /mod
 assets/icons.svg        Phosphor sprite; js/modules/icons.js icon(name)
-assets/contour.svg      Placeholder for gyms without a photo
-assets/mascot/head.svg  Deer head (START + default avatar only; DESIGN.md sec. 12.2)
+assets/boulder.svg      Photo placeholder (contour.svg: passport only)
+assets/mascot/, assets/brand/, icons/  Deer head, stamp head, first-run poses; antler crest, seals; app icon, favicon
+design/mascot/deer/     The owner's deer renders: source of the character (DESIGN.md sec. 1A, 12)
 js/supabase-init.js     window.sb (classic script)
 js/auth.js              window.auth (classic script)
 js/main.js              Entry ES module: init*() in order, then boot

@@ -23,8 +23,9 @@ Line refs drift: re-grep function names rather than trusting numbers.
 | `css/page.css`, `css/mod.css` | Pages: gym (sec. 8), region/city, log (calendar), me, /add; breadcrumb, panels, mini map, page rows/cards · /mod queue + side panel |
 | `css/style.css` | App layer: shell, toast/placing banner, MapLibre controls, edit form bits, session + moderation lists, About page |
 | `assets/icons.svg` | The one icon system: Phosphor Regular sprite (MIT); use `icon(name)` from `js/modules/icons.js` |
-| `assets/contour.svg` | Contour placeholder symbol for gyms without a photo (sec. 13) |
-| `assets/mascot/head.svg` | Flat-vector deer head: START (44px) + default avatar (32px) only (sec. 12.2; tests enforce placement) |
+| `assets/boulder.svg`, `assets/contour.svg` | Photo placeholder (the deer art's holds boulder; colours from `--placeholder-*`) · contour symbol kept for the passport. SVG files must be well-formed XML (tested) |
+| `design/mascot/deer/` | The owner's deer renders: SOURCE of the character (README maps poses to roles). Product art is traced from these (sec. 12.0) |
+| `assets/mascot/`, `assets/brand/`, `icons/` | Head (START, lockup, avatar, seal), stamp head, first-run poses (chalking-up, backpacker) · antler crest, static seals · app icon (any/maskable/PNG), favicon (sec. 1A, 12; tests enforce placement) |
 | `js/supabase-init.js`, `js/auth.js` | Classic scripts: `window.sb`; `window.auth` (`init`, `onChange`, sign-in/out, `user`) |
 | `js/main.js` | Entry module: `init*()` in order, then `init()` (boot: auth → spots → `applyLanding` → marks/mod/pending → `render`) |
 | `js/modules/state.js` | `appState` — every piece of mutable state (spots, marks, filters, Explore view, markers, form state) |
@@ -37,7 +38,8 @@ Line refs drift: re-grep function names rather than trusting numbers.
 | `js/modules/page-html.js` | Pure page builders: gym page (+ provenance line, own-edit note, moderator verify), breadcrumb, map slot, page card/row, regions/place pages, calendar, log, me (+ contributions), not found |
 | `js/modules/gym-page.js`, `region-page.js`, `log-page.js`, `me-page.js`, `mod-page.js`, `add-page.js` | Page controllers (views): data gathering + `data-page-action` / `data-mod-action` / `data-add-action` handlers |
 | `js/modules/community.js` | Provenance + contribution reads (`spot_contributor_counts`, `spot_provenance`, own edit, own points), `saveDisplayName`; all fail soft |
-| `js/modules/mini-map.js` | Non-interactive MapLibre maps on pages (same warmed basemap), destroyed on leave |
+| `js/modules/mini-map.js` | Non-interactive MapLibre maps on pages: paper-toned (Positron via `paperBasemap` in map.js), destroyed on leave |
+| `js/modules/brand.js` | Pure: `sealSvg()` (BOULDEER seal, colour/mono) and `firstRunArt(kind)`: the only JS source of character markup besides the avatar |
 | `js/modules/explore.js` | Explore controller: `render()` (full refresh), selection/hover sync, peek card, URL + last camera, landing, Esc, the `explore` view |
 | `js/modules/map.js` | Map, `rebuildClusterIndex`/`paintMarkers` (supercluster r48/max15, pins, clusters, label tiers), `refreshPin`, `flyToPlace`, locate control; handlers set by explore.js |
 | `js/modules/list.js` | Scoped list: `renderList` (scope → sort → cap 400), status line, skeletons, empty states, carousel, row keyboard |
@@ -113,11 +115,13 @@ Components use semantic roles only (`--color-text-secondary`, `--radius-md`, `--
 `--palette-*` or raw values. Paper = documents; `[data-theme="rock"]` = the map region; objects floating over the
 map are `.map-float` + `data-theme="paper"` with `--shadow-raised`. Chrome and the list sit on cream `surface.canvas`; cards,
 chips, fields, the peek card and dialogs are `surface.default` on top of it. Fraunces only >= 18px; Inter otherwise; no 700.
+Colour meaning: forest = action; `collect.*` (mustard) = START, stamps, session days; `brand.*` (fawn, bark) = marks and
+placeholders only; 1.5px `--border-width-object` ink line on objects (cards, primary button, START), 1px hairlines on rows.
 Buttons: `.btn` + exactly one of `.btn-primary` (one per surface) / `-secondary` / `-tertiary`, sizes `.btn-sm/-lg`,
 `.btn-icon`; destructive = `.btn-danger` (Escape never clicks it). New icon: add Phosphor path data to the sprite +
 `ICON_NAMES`. After editing tokens.css run `node scripts/build-tokens-json.js`.
 
-## Offline / PWA (`sw.js`, v10)
+## Offline / PWA (`sw.js`, v11)
 Shell precached (`SHELL_FILES`). Page loads (`mode: navigate`) of every app route share one cached shell (keyed `/`),
 whatever the path or query; other pages (about.html) are cached per path. Tiles cache-first; other same-origin + CDN files stale-while-revalidate;
 CDN tags carry `crossorigin="anonymous"`. Supabase: ONLY the public `GET /rest/v1/spots?...status=eq.approved` read

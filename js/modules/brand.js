@@ -22,7 +22,7 @@ const CREST = '<path d="M47 58 C40 50 30 42 23 32 C19 25 17 18 17 8"/><path d="M
 export function sealSvg({ mono = false, label = 'Bouldeer' } = {}){
   const n = ++seq, arc = 'sealArc' + n, clip = 'sealClip' + n;
   const head = mono
-    ? '<image href="assets/mascot/stamp-head.svg" x="27" y="33" width="66" height="56"/>'
+    ? '<image href="assets/mascot/stamp-head.svg" x="30" y="36" width="60" height="51"/>'
     : `<image href="assets/mascot/head.svg" x="28" y="27" width="64" height="64" clip-path="url(#${clip})"/>`;
   return `<svg class="seal${mono ? ' seal--mono' : ''}" viewBox="0 0 120 120" role="img" aria-label="${escapeHtml(label)} seal" focusable="false">`
     + `<defs><path id="${arc}" d="M 14 60 A 46 46 0 0 1 106 60"/><clipPath id="${clip}"><circle cx="60" cy="60" r="35"/></clipPath></defs>`
