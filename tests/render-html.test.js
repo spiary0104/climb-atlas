@@ -3,6 +3,7 @@
 'use strict';
 const test = require('node:test');
 const assert = require('node:assert/strict');
+const fs = require('node:fs');
 
 // constants.js reads window.matchMedia at import time; the builders themselves are DOM-free.
 globalThis.window = globalThis.window || {};
@@ -268,65 +269,81 @@ test('community: /me contributions and the gym page provenance lines keep hostil
   assert.ok(!/awaiting review|accepted/.test(page.gymPageHtml(benignSpot, pageCtx({ myEdit: { status: 'approved' } }))), 'approved edits need no note');
 });
 
-const pendingSpot = { id: 'community-aaaa', name: 'N', suburb: 'S', state: 'NSW', country: 'AU', types: ['top-rope'], address: 'A', notes: 'n', photo: 'https://example.com/p.jpg' };
-const pendingEdit = { id: '11111111-2222-3333-4444-555555555555', spot_id: 'seed-1', name: 'N', suburb: 'S', state: 'NSW', country: 'AU', types: ['top-rope'], address: 'A', notes: 'n', photo: 'https://example.com/p.jpg' };
+// ===== /mod: queue and side panel (DESIGN.md sec. 10.5). Every value comes from rows anyone can insert. =====
+const pendingSpot = { id: 'community-aaaa', name: 'N', suburb: 'S', state: 'NSW', country: 'AU', types: ['top-rope'], address: 'A', notes: 'n', photo: 'https://example.com/p.jpg', lat: -33.9, lng: 151.2 };
+const pendingEdit = { id: '11111111-2222-3333-4444-555555555555', spot_id: 'seed-1', name: 'N2', suburb: 'S', state: 'NSW', country: 'AU', types: ['top-rope'], address: 'A', notes: 'n', photo: 'https://example.com/p.jpg', lat: -33.9, lng: 151.2, edit_note: 'moved', review_requested: true };
+const currentGym = { id: 'seed-1', name: 'Known Gym', suburb: 'S', state: 'NSW', country: 'AU', types: ['top-rope'], address: 'A', notes: 'n', photo: 'https://example.com/p.jpg', lat: -33.9, lng: 151.2 };
 const pendingReport = { id: '99999999-2222-3333-4444-555555555555', spot_id: 'seed-1', message: 'wrong pin' };
-const findSpot = id => (id === 'seed-1' ? { id, name: 'Known Gym' } : undefined);
+const modCtx = (over = {}) => ({ index: 0, contributor: 'mika.sends', level: 2, age: 'today', flagged: false, selected: true, href: '/gym/known-gym', ...over });
+const panels = (s, e, r) => [
+  mod => mod.modPanelHtml({ kind: 'spot', name: s.name, row: s }, modCtx()),
+  mod => mod.modPanelHtml({ kind: 'edit', name: 'Known Gym', row: e, current: currentGym }, modCtx()),
+  mod => mod.modPanelHtml({ kind: 'report', name: 'Known Gym', row: r }, modCtx()),
+];
 
-test('moderator panel: hostile state/country/types/id/name/etc. cannot alter the markup (all three card types)', async () => {
+test('moderation: hostile names/fields/notes/reasons cannot alter the queue or panel markup (all three kinds)', async () => {
   const { mod } = await modules;
-  const benign = mod.pendingPanelHtml({ spots: [pendingSpot], edits: [pendingEdit], reports: [pendingReport], findSpot });
+  // Every text field replaced by the same value, so the benign baseline changes the same diff rows as the payload.
+  const rows = h => [
+    { ...pendingSpot, id: h, name: h, suburb: h, state: h, country: h, types: [h], address: h, notes: h },
+    { ...pendingEdit, id: h, spot_id: h, name: h, suburb: h, state: h, country: h, types: [h], address: h, notes: h, edit_note: h },
+    { ...pendingReport, id: h, spot_id: h, message: h },
+  ];
+  const benign = panels(...rows('plain words')).map(f => f(mod));
+  const benignRow = mod.modRowHtml({ kind: 'edit', name: 'Known Gym' }, modCtx());
   for (const h of HOSTILE) {
-    const hostile = mod.pendingPanelHtml({
-      spots: [{ ...pendingSpot, id: h, name: h, suburb: h, state: h, country: h, types: [h], address: h, notes: h }],
-      edits: [{ ...pendingEdit, id: h, spot_id: h, name: h, suburb: h, state: h, country: h, types: [h], address: h, notes: h }],
-      reports: [{ ...pendingReport, id: h, spot_id: h, message: h }],
-      findSpot,
+    panels(...rows(h)).map(f => f(mod)).forEach((html, i) => {
+      assert.deepEqual(shape(html), shape(benign[i]), 'panel ' + i + ' structure changed for payload ' + h);
+      assert.equal(hasHandlerAttrs(html), false, 'handler injected: ' + h);
+      assert.ok(!/<script/i.test(html) && onlySpriteIcons(html), 'raw markup leaked: ' + h);
     });
-    assert.deepEqual(shape(hostile), shape(benign), 'markup structure changed for payload ' + h);
-    assert.equal(hasHandlerAttrs(hostile), false, 'handler injected: ' + h);
-    assert.ok(!/<script|<svg/i.test(hostile), 'raw markup leaked: ' + h);   // the moderator panel carries no icons at all
+    const row = mod.modRowHtml({ kind: h, name: h }, modCtx({ contributor: h, age: h, index: h }));
+    assert.deepEqual(shape(row), shape(benignRow), 'queue row structure changed for payload ' + h);
   }
 });
 
-test('moderator panel: a javascript: photo submitted via a pending edit is shown as inert text, never a link (the reported vector)', async () => {
+test('moderation: a javascript: photo submitted via a proposal is inert text, never a link (the reported vector)', async () => {
   const { mod } = await modules;
   for (const bad of ['javascript:alert(document.domain)', 'JaVaScRiPt:alert(1)', ' javascript:alert(1)', 'java\nscript:alert(1)', 'data:text/html,<script>alert(1)</script>', 'vbscript:x']) {
-    const edit = mod.pendingPanelHtml({ spots: [], edits: [{ ...pendingEdit, photo: bad }], reports: [], findSpot });
-    const spot = mod.pendingPanelHtml({ spots: [{ ...pendingSpot, photo: bad }], edits: [], reports: [], findSpot });
-    for (const html of [edit, spot]) {
-      assert.equal(tags(html).some(t => t.tag === 'a'), false, 'link rendered for ' + JSON.stringify(bad));
-      assert.ok(!/href\s*=/i.test(html), 'href present for ' + JSON.stringify(bad));
+    for (const html of [mod.modPanelHtml({ kind: 'edit', name: 'G', row: { ...pendingEdit, photo: bad }, current: currentGym }, modCtx()),
+      mod.modPanelHtml({ kind: 'spot', name: 'G', row: { ...pendingSpot, photo: bad } }, modCtx())]) {
+      const links = tags(html).filter(t => t.tag === 'a');
+      assert.ok(links.every(a => /^https:\/\/example\.com\//.test(a.attrs.href || '')), 'unsafe link rendered for ' + JSON.stringify(bad));
       assert.ok(html.includes('not a web link'), 'not marked inert');
     }
   }
-  // an ordinary https photo is still a working link, with rel=noopener
-  const ok = tags(mod.pendingPanelHtml({ spots: [], edits: [pendingEdit], reports: [], findSpot })).find(t => t.tag === 'a');
+  const ok = tags(mod.modPanelHtml({ kind: 'spot', name: 'G', row: pendingSpot }, modCtx())).find(t => t.tag === 'a');
   assert.equal(ok.attrs.href, 'https://example.com/p.jpg');
   assert.match(ok.attrs.rel, /noopener/);
-  assert.equal(ok.attrs.target, '_blank');
 });
 
-test('moderator panel: destructive buttons are .btn-danger (never .btn-cancel)', async () => {
+test('moderation: destructive buttons are .btn-danger, never the primary and never a close control; Escape cannot reach them', async () => {
   const { mod } = await modules;
-  const html = mod.pendingPanelHtml({ spots: [pendingSpot], edits: [pendingEdit], reports: [pendingReport], findSpot });
-  const btns = tags(html).filter(t => t.tag === 'button');
-  assert.ok(!btns.some(b => /\bbtn-cancel\b/.test(b.attrs.class)));
-  for (const b of btns.filter(b => /pending-(reject|dismiss)/.test(b.attrs.class))) assert.match(b.attrs.class, /\bbtn-danger\b/);
-  assert.equal(btns.filter(b => /pending-reject/.test(b.attrs.class)).length, 2);
-  assert.equal(btns.filter(b => /pending-dismiss/.test(b.attrs.class)).length, 1);
+  const all = panels(pendingSpot, pendingEdit, pendingReport).map(f => f(mod)).join('');
+  const btns = tags(all).filter(t => t.tag === 'button');
+  for (const b of btns.filter(b => /reject|dismiss/.test(b.attrs['data-mod-action'] || ''))) {
+    assert.match(b.attrs.class, /\bbtn-danger\b/);
+    assert.ok(!/btn-primary/.test(b.attrs.class) && !('data-modal-close' in b.attrs));
+  }
+  assert.equal(btns.filter(b => b.attrs['data-mod-action'] === 'reject').length, 2);
+  assert.equal(btns.filter(b => b.attrs['data-mod-action'] === 'dismiss').length, 1);
+  const page = fs.readFileSync(require('node:path').join(__dirname, '..', 'js', 'modules', 'mod-page.js'), 'utf8');
+  const esc = /if\(e\.key === 'Escape'\)\{([\s\S]*?)return;\n    \}/.exec(page)[1];
+  assert.ok(!/act\(|reject|dismiss|approve/.test(esc), 'Escape only closes the panel');
+  assert.match(page, /if\(!reason\)\{/, 'a rejection requires a reason');
 });
 
-test('moderator panel: normal behaviour preserved (edit shows target spot name, empty state, unknown type text)', async () => {
+test('moderation: the diff lists changed fields old -> new, counts the rest, and shows the note and double-check flag', async () => {
   const { mod } = await modules;
-  const html = mod.pendingPanelHtml({ spots: [pendingSpot], edits: [pendingEdit], reports: [pendingReport], findSpot });
-  const text = allText(html);
-  assert.ok(text.includes('New spot') && text.includes('Edit to Known Gym') && text.includes('Report on Known Gym') && text.includes('wrong pin'));
-  assert.ok(text.includes('S, NSW (AU)'));
-  assert.equal(mod.pendingPanelHtml({ spots: [], edits: [], reports: [], findSpot }), '<div class="empty-state">Nothing pending review.</div>');
-  // unknown type strings (types is free text in the database) are shown as text, not dropped or executed
-  const odd = mod.pendingPanelHtml({ spots: [{ ...pendingSpot, types: ['bouldering-cave'] }], edits: [], reports: [], findSpot });
-  assert.ok(allText(odd).includes('bouldering-cave'));
-  // missing/odd optional data does not throw
-  assert.doesNotThrow(() => mod.pendingPanelHtml({ spots: [{ ...pendingSpot, types: null, address: null, notes: null, photo: null }], edits: [], reports: [], findSpot }));
+  const html = mod.modPanelHtml({ kind: 'edit', name: 'Known Gym', row: pendingEdit, current: currentGym }, modCtx());
+  const rows = [...html.matchAll(/<tr><th scope="row">([^<]+)<\/th><td>([^<]*)<\/td><td>([^<]*)<\/td><\/tr>/g)].map(m => m.slice(1));
+  assert.deepEqual(rows, [['Name', 'Known Gym', 'N2']], 'only the changed field');
+  assert.ok(/8 fields unchanged/.test(html));
+  assert.ok(allText(html).includes('moved') && allText(html).includes('asked for a double-check'));
+  assert.ok(/id="modReason"/.test(html) && /data-mod-field="name"/.test(html), 'reason field and correctable fields');
+  assert.equal(mod.modQueueHtml([], []).includes('Nothing to review'), true);
+  const odd = mod.modPanelHtml({ kind: 'spot', name: 'G', row: { ...pendingSpot, types: ['bouldering-cave'] } }, modCtx());
+  assert.ok(allText(odd).includes('bouldering-cave'), 'unknown type strings are shown as text');
+  assert.doesNotThrow(() => mod.modPanelHtml({ kind: 'spot', name: 'G', row: { ...pendingSpot, types: null, address: null, notes: null, photo: null, lat: null } }, modCtx()));
+  assert.ok(!/mascot/.test(html), 'no character on /mod (sec. 12.2)');
 });

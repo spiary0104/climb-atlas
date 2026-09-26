@@ -25,7 +25,7 @@ test('no inline event handlers or window.__ globals anywhere in the app', () => 
 test('index.html: every modal has a data-modal-close control, and only non-destructive secondary/tertiary .btn controls carry it', () => {
   const html = read('index.html');
   const modals = [...html.matchAll(/<div class="modal-backdrop[^"]*" id="(\w+)">([\s\S]*?)(?=<div class="modal-backdrop|<script|$)/g)];
-  assert.ok(modals.length >= 9, 'expected the 9 modals, found ' + modals.length);
+  assert.ok(modals.length >= 8, 'expected the 8 dialogs, found ' + modals.length);
   for (const [, id, body] of modals) {
     const closers = [...body.matchAll(/<button[^>]*data-modal-close[^>]*>/g)].map((m) => m[0]);
     assert.ok(closers.length >= 1, id + ' has no data-modal-close control');
@@ -106,6 +106,10 @@ const SAFE_EXPR = [
   /^key$/, /^tab\('(saved|climbed)', '(Saved|Climbed)', p\.(saved|climbed)\.length\)$/, /^pending$/,   // me page: tab keys are literals
   // Phase 4 provenance: m comes from the fixed MARKS table; the mark builder takes a state name and emits fixed markup
   /^m\[[01]\](\.toLowerCase\(\))?$/, /^provenanceMarkHtml\((ctx\.provenance|prov\.state)\)$/, /^subs$/,
+  // moderation-html.js (/mod): label comes from the fixed FIELDS table, k is forced to a KIND_LABEL key by kindOf(),
+  // show() is a FIELDS formatter (escapeHtml or photoText); rows/queue/panel are assembled from these same builders
+  /^(label|k|KIND_LABEL\[k\]|d\.rows|queue|panel)$/, /^show\((current|proposed)\[key\]\)$/,
+  /^items\.map\(\(it, i\) => modRowHtml\(it, ctxs\[i\]\)\)\.join\(''\)$/,
 ];
 // A conditional is safe when every branch that can be rendered is safe: a fixed string literal, a template whose own
 // interpolations are all safe, or a nested conditional (checked recursively). The condition itself is never rendered.
@@ -144,7 +148,7 @@ test('HTML-building templates only interpolate escaped or reviewed-safe expressi
   const files = ['js/modules/list-html.js', 'js/modules/pin-html.js', 'js/modules/moderation-html.js', 'js/modules/logbook.js', 'js/modules/auth-ui.js',
     'js/modules/search.js', 'js/modules/list.js', 'js/modules/explore.js', 'js/modules/filters.js', 'js/modules/map.js',
     'js/modules/page-html.js', 'js/modules/gym-page.js', 'js/modules/router.js', 'js/modules/slug.js', 'js/modules/region-page.js', 'js/modules/mini-map.js',
-    'js/modules/provenance.js', 'js/modules/community.js', 'js/modules/me-page.js', 'js/modules/log-page.js'];
+    'js/modules/provenance.js', 'js/modules/community.js', 'js/modules/me-page.js', 'js/modules/log-page.js', 'js/modules/mod-page.js'];
   const unsafe = [];
   for (const f of files) {
     // lines that assign to .textContent are not markup (the browser treats the value as text)

@@ -183,7 +183,7 @@ test('themes: the map region is rock, and every floating object inside it is pap
 // ===== components ==================================================================================================
 function buttonsIn(src) { return [...src.matchAll(/<button\b[^>]*>/g)].map(m => m[0]); }
 test('buttons: every button is a .btn tier or a documented component control; retired classes are gone', () => {
-  const CONTROLS = ['chip', 'tab', 'tabbar-item', 'start-btn', 'gym-row-main', 'gym-card-main', 'carousel-card', 'seg-btn', 'map-toggle', 'sheet-grabber-btn', 'avatar-btn', 'link'];
+  const CONTROLS = ['chip', 'tab', 'tabbar-item', 'start-btn', 'gym-row-main', 'gym-card-main', 'carousel-card', 'seg-btn', 'map-toggle', 'sheet-grabber-btn', 'avatar-btn', 'link', 'mod-row-main'];
   const sources = [...PAGES.map(f => [f, read(f)]), ...JS.map(f => [f, stripJsComments(read(f))])];
   for (const [f, src] of sources) {
     for (const b of buttonsIn(src)) {
@@ -199,7 +199,7 @@ test('buttons: every button is a .btn tier or a documented component control; re
 test('buttons: one filled primary action per dialog', () => {
   const html = read('index.html');
   const dialogs = [...html.matchAll(/<div class="modal[^"]*" role="dialog"[\s\S]*?(?=<div class="modal-backdrop|<script)/g)].map(m => m[0]);
-  assert.ok(dialogs.length >= 9);
+  assert.ok(dialogs.length >= 8);   // Logbook, Pending review and the Me menu became pages in Phase 3/4
   for (const d of dialogs) assert.ok((d.match(/\bbtn-primary\b/g) || []).length <= 1, 'more than one primary in ' + /id="(dlg-[a-z-]+)"/.exec(d)[1]);
 });
 
@@ -254,7 +254,7 @@ test('mascot: the flat-vector head only on START and the default avatar (sec. 12
   assert.ok(!/mascot/.test(dialogs), 'no mascot in dialogs');
   const main = html.slice(html.indexOf('<main class="map-wrap"'), html.indexOf('</main>'));
   assert.ok(!/mascot/.test(main), 'no mascot on the map');
-  for (const f of ['js/modules/moderation-html.js', 'js/modules/moderation.js', 'js/modules/modals.js', 'js/modules/map.js', 'js/modules/pin-html.js', 'js/modules/list-html.js', 'js/modules/filters.js', 'js/modules/page-html.js', 'js/modules/gym-page.js', 'js/modules/region-page.js']) assert.ok(!/mascot/.test(read(f)), f);
+  for (const f of ['js/modules/moderation-html.js', 'js/modules/moderation.js', 'js/modules/modals.js', 'js/modules/map.js', 'js/modules/pin-html.js', 'js/modules/list-html.js', 'js/modules/filters.js', 'js/modules/page-html.js', 'js/modules/gym-page.js', 'js/modules/region-page.js', 'js/modules/mod-page.js']) assert.ok(!/mascot/.test(read(f)), f);
   assert.match(read('css/components.css'), /\.mascot--spot\{width:var\(--size-mascot-spot\)/);
 });
 

@@ -5,7 +5,6 @@ import { openAuthModal } from './auth-ui.js';
 import { loadMyCommunity, saveDisplayName } from './community.js';
 import { isContributor, levelFor, validDisplayName } from './provenance.js';
 import { stateLabel } from './map.js';
-import { openPendingModal } from './moderation.js';
 import { startAddGym } from './modals.js';
 import { mePageHtml, pageSkeletonHtml } from './page-html.js';
 import { currentRoute, refreshPage, registerView, setPageTitle } from './router.js';
@@ -77,7 +76,6 @@ export function initMePage(){
       case 'sign-in': openAuthModal(); break;
       case 'sign-out': window.auth.signOut(); showToast('Signed out'); break;
       case 'add-gym': startAddGym(); break;
-      case 'pending': openPendingModal(); break;
       // Privacy/Terms dialogs are opened by their existing controls (modals.js initInfoModals), kept in the list footer.
       case 'privacy': document.getElementById('openPrivacy').click(); break;
       case 'terms': document.getElementById('openTerms').click(); break;

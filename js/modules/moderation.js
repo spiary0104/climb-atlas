@@ -1,134 +1,96 @@
-// Moderator pending-review panel: approve/reject spots and edits, dismiss reports.
+// Moderator actions (DESIGN.md sec. 10.5), used by the /mod page (mod-page.js) and the gym page's verify control.
+// Decisions are recorded, not deleted: a rejected gym keeps status 'rejected' with its reason; a proposal keeps
+// status 'approved'/'rejected' (contributor history and points, sec. 10.1/10.6). RLS allows all of this to moderators only.
+import { loadContributorCounts } from './community.js';
 import { loadPending, loadSpots } from './data-load.js';
-import { openEditModal } from './modals.js';
-import { pendingPanelHtml } from './moderation-html.js';
 import { render } from './explore.js';
 import { refreshPage } from './router.js';
 import { appState } from './state.js';
 import { showToast } from './utils.js';
 
-// --- moderation: pending review panel ---
-const pendingModalBackdrop = document.getElementById('pendingModalBackdrop');
-
-// The "Pending review (N)" button lives on the /me page (me-page.js); re-render it when the queue changes.
+// The queue count lives on /me and /mod; both re-render from appState.
 export function renderPendingBadge(){
   refreshPage();
 }
 
-function findSpotById(id){
-  return appState.spots.find(s=>s.id===id) || (window.SEED_GYMS||[]).find(s=>s.id===id);
+async function refreshAfterModeration(){
+  await loadSpots();
+  await loadContributorCounts();
+  await loadPending();
+  appState.provenanceCache.clear();
+  render();          // Explore (and, through it, the current page)
 }
 
-function renderPendingPanel(){
-  document.getElementById('pendingList').innerHTML = pendingPanelHtml({
-    spots: appState.pendingSpots,
-    edits: appState.pendingEdits,
-    reports: appState.pendingReports,
-    findSpot: findSpotById
+// Only the text fields a moderator can correct in the panel are taken from `fields`; anything else is ignored.
+const CORRECTABLE = ['name', 'suburb', 'address', 'notes'];
+function corrections(fields = {}){
+  const out = {};
+  for(const k of CORRECTABLE){
+    if(!(k in fields)) continue;
+    const v = String(fields[k] == null ? '' : fields[k]).trim();
+    out[k] = v || (k === 'address' || k === 'notes' ? null : undefined);
+    if(out[k] === undefined) delete out[k];          // name/suburb can't be blanked
+  }
+  return out;
+}
+
+async function run(label, fn){
+  try{ await fn(); showToast(label); return true; }
+  catch(err){ showToast('Could not save — try again'); console.error(err); return false; }
+  finally{ await refreshAfterModeration(); }
+}
+
+export function approveSpot(id, fields){
+  return run('Gym approved', async () => {
+    const {error} = await window.sb.from('spots').update({ ...corrections(fields), status: 'approved' }).eq('id', id);
+    if(error) throw error;
   });
 }
 
-export function openPendingModal(){
-  renderPendingPanel();
-  pendingModalBackdrop.classList.remove('hidden');
-}
-
-async function refreshAfterModeration(){
-  await loadSpots();
-  await loadPending();
-  renderPendingPanel();
-  renderPendingBadge();
-  render();
-}
-
-async function approveSpot(id){
-  try{
-    const {error} = await window.sb.from('spots').update({status:'approved'}).eq('id', id);
+export function rejectSpot(id, reason){
+  return run('Gym rejected', async () => {
+    const {error} = await window.sb.from('spots').update({ status: 'rejected', rejection_reason: String(reason || '').trim().slice(0, 200) || null }).eq('id', id);
     if(error) throw error;
-    showToast('Spot approved');
-  }catch(err){
-    showToast('Could not approve — try again');
-    console.error(err);
-  }
-  await refreshAfterModeration();
+  });
 }
 
-// Rejections are kept with a reason (shown to the submitter, sec. 10.5) instead of deleting the row.
-async function rejectSpot(id, reason = null){
-  try{
-    const {error} = await window.sb.from('spots').update({status:'rejected', rejection_reason: reason}).eq('id', id);
-    if(error) throw error;
-    showToast('Spot rejected');
-  }catch(err){
-    showToast('Could not reject — try again');
-    console.error(err);
-  }
-  await refreshAfterModeration();
-}
-
-async function approveEdit(pendingEditId){
-  const pe = appState.pendingEdits.find(p=>p.id===pendingEditId);
-  if(!pe) return;
-  try{
+export function approveEdit(pendingEditId, fields){
+  const pe = appState.pendingEdits.find(p => p.id === pendingEditId);
+  if(!pe) return Promise.resolve(false);
+  return run('Edit approved', async () => {
     const {error: e1} = await window.sb.from('spots').update({
       name: pe.name, suburb: pe.suburb, state: pe.state, country: pe.country,
       types: pe.types, address: pe.address, notes: pe.notes, photo: pe.photo, lat: pe.lat, lng: pe.lng,
-      edited: true, updated_at: new Date().toISOString()
+      ...corrections(fields), edited: true,
     }).eq('id', pe.spot_id);
     if(e1) throw e1;
-    // The proposal is kept as approved history (contributor counts and points, sec. 10.1/10.6).
-    const {error: e2} = await window.sb.from('pending_edits').update({status:'approved', decided_at: new Date().toISOString()}).eq('id', pe.id);
+    const {error: e2} = await window.sb.from('pending_edits').update({ status: 'approved', decided_at: new Date().toISOString() }).eq('id', pe.id);
     if(e2) throw e2;
-    showToast('Edit approved');
-  }catch(err){
-    showToast('Could not approve edit — try again');
-    console.error(err);
-  }
-  await refreshAfterModeration();
-}
-
-async function rejectEdit(pendingEditId, reason = null){
-  try{
-    const {error} = await window.sb.from('pending_edits').update({status:'rejected', rejection_reason: reason, decided_at: new Date().toISOString()}).eq('id', pendingEditId);
-    if(error) throw error;
-    showToast('Edit rejected');
-  }catch(err){
-    showToast('Could not reject — try again');
-    console.error(err);
-  }
-  await refreshAfterModeration();
-}
-
-async function dismissReport(id){
-  try{
-    const {error} = await window.sb.from('reports').delete().eq('id', id);
-    if(error) throw error;
-    showToast('Report dismissed');
-  }catch(err){
-    showToast('Could not dismiss — try again');
-    console.error(err);
-  }
-  await refreshAfterModeration();
-}
-
-export function initModeration(){
-  document.getElementById('pendingList').addEventListener('click', (e)=>{
-    const btn = e.target.closest('button');
-    if(!btn) return;
-    const kind = btn.dataset.kind;
-    const id = btn.dataset.id;
-    if(btn.classList.contains('pending-approve')){
-      btn.closest('.pending-actions').querySelectorAll('button').forEach(b=>b.disabled=true);
-      if(kind === 'spot') approveSpot(id); else approveEdit(id);
-    } else if(btn.classList.contains('pending-reject')){
-      btn.closest('.pending-actions').querySelectorAll('button').forEach(b=>b.disabled=true);
-      if(kind === 'spot') rejectSpot(id); else rejectEdit(id);
-    } else if(btn.classList.contains('pending-dismiss')){
-      btn.closest('.pending-actions').querySelectorAll('button').forEach(b=>b.disabled=true);
-      dismissReport(id);
-    } else if(btn.classList.contains('pending-edit-spot')){
-      pendingModalBackdrop.classList.add('hidden');
-      openEditModal(btn.dataset.spotId);
-    }
   });
 }
+
+export function rejectEdit(pendingEditId, reason){
+  return run('Edit rejected', async () => {
+    const {error} = await window.sb.from('pending_edits').update({
+      status: 'rejected', rejection_reason: String(reason || '').trim().slice(0, 200) || null, decided_at: new Date().toISOString(),
+    }).eq('id', pendingEditId);
+    if(error) throw error;
+  });
+}
+
+export function dismissReport(id){
+  return run('Report dismissed', async () => {
+    const {error} = await window.sb.from('reports').delete().eq('id', id);
+    if(error) throw error;
+  });
+}
+
+// "Verified" (sec. 10.1): confirmed by a moderator; shown as no mark on cards and "Verified" on the page.
+export function setVerified(spotId, on){
+  return run(on ? 'Marked verified' : 'Verification removed', async () => {
+    const {error} = await window.sb.from('spots').update({ verified_at: on ? new Date().toISOString() : null }).eq('id', spotId);
+    if(error) throw error;
+  });
+}
+
+export function initModeration(){ /* actions only; /mod wires its own events (mod-page.js) */ }

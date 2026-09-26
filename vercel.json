@@ -40,6 +40,10 @@
     {
       "source": "/me/:path*",
       "destination": "/index.html"
+    },
+    {
+      "source": "/mod",
+      "destination": "/index.html"
     }
   ]
 }

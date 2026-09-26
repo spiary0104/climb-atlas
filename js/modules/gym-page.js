@@ -8,6 +8,7 @@ import { loadSessions } from './logbook.js';
 import { destroyMiniMaps, mountMiniMaps } from './mini-map.js';
 import { stateLabel } from './map.js';
 import { toggleMark } from './marks.js';
+import { setVerified } from './moderation.js';
 import { openEditModal, openReportModal } from './modals.js';
 import { gymPageHtml, notFoundHtml, pageSkeletonHtml } from './page-html.js';
 import { refreshPage, registerView, setPageTitle } from './router.js';
@@ -69,6 +70,7 @@ function enter({ slug }, view){
     exploreHref: '/?' + encodeExploreState({ camera: { lng: g.lng, lat: g.lat, zoom: 15 } }),
     provenance: provenanceLine(g, appState.provenanceCache.get(g.id) || { contributors: appState.contributorCounts.get(g.id) }),
     myEdit: appState.myEditCache.get(g.id) || null,
+    isModerator: appState.isModerator,
   });
   setPageTitle([g.name, g.suburb].filter(Boolean).join(', '));
   mountMiniMaps(view);
@@ -94,6 +96,8 @@ export function initGymPage(){
       case 'climbed': toggleMark(id, 'climbed'); break;
       case 'edit': openEditModal(id); break;
       case 'report': openReportModal(id); break;
+      case 'verify': setVerified(id, true); break;
+      case 'unverify': setVerified(id, false); break;
     }
   });
 }

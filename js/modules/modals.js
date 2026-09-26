@@ -458,7 +458,7 @@ export function initInfoModals(){
       e.target.closest('.modal-backdrop').classList.add('hidden');
     });
   });
-  ['privacyModalBackdrop','termsModalBackdrop','pendingModalBackdrop'].forEach(id=>{
+  ['privacyModalBackdrop','termsModalBackdrop'].forEach(id=>{
     document.getElementById(id).addEventListener('click', (e)=>{
       if(e.target.id === id) e.target.classList.add('hidden');
     });

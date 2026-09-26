@@ -80,7 +80,9 @@ export function gymPageHtml(g, ctx = {}){
     + `<section class="page-section" aria-labelledby="communityTitle"><h2 class="section-title" id="communityTitle">Community</h2>`
     + `<p class="section-note">${g.community ? 'Added by a Bouldeer climber and checked by a moderator.' : 'From the Bouldeer dataset, kept current by climbers.'} Every edit is checked by a moderator before it goes live. Spotted something out of date?</p>`
     + `<div class="community-actions"><button type="button" class="btn btn-secondary btn-sm" data-page-action="edit" data-spot-id="${id}">${icon('pencil-simple', {size:'sm'})}Suggest an edit</button>`
-    + `<button type="button" class="btn btn-tertiary btn-sm" data-page-action="report" data-spot-id="${id}">${icon('flag', {size:'sm'})}Report a problem</button></div></section>`
+    + `<button type="button" class="btn btn-tertiary btn-sm" data-page-action="report" data-spot-id="${id}">${icon('flag', {size:'sm'})}Report a problem</button>`
+    // Moderators only: "Verified" = confirmed by a moderator (sec. 10.1). RLS enforces it; this only shows the control.
+    + `${ctx.isModerator ? `<button type="button" class="btn btn-tertiary btn-sm" data-page-action="${g.verified_at ? 'unverify' : 'verify'}" data-spot-id="${id}">${icon('check-circle', {size:'sm'})}${g.verified_at ? 'Remove verification' : 'Mark verified'}</button>` : ''}</div></section>`
     + `</div><aside class="gym-aside"><section class="panel essentials" aria-labelledby="essentialsTitle"><h2 class="panel-title" id="essentialsTitle">Essentials</h2>`
     + `<div class="essentials-address"><p class="panel-row">${escapeHtml(g.address || where)}</p>`
     + mapThumbHtml({ lat: g.lat, lng: g.lng, zoom: 14, size: 120, href: ctx.exploreHref || '/', label: 'Show ' + (g.name || 'this gym') + ' on the map', types: g.types })
@@ -177,7 +179,7 @@ export function mePageHtml(p){
   const items = section === 'climbed' ? p.climbed : p.saved;
   const tab = (key, label, n) => `<a class="tab" href="/me/${key}" data-link${key === section ? ' aria-current="page"' : ''}>${escapeHtml(label)} <span class="tnum">${Number(n)}</span></a>`;
   const empty = section === 'climbed' ? 'Mark a gym as climbed from its page or the map, and it will show up here.' : 'Save a gym from its page or the map, and it will show up here.';
-  const pending = p.isModerator ? `<button type="button" class="btn btn-secondary" data-page-action="pending">Pending review${p.pendingCount ? ` <span class="tnum">(${Number(p.pendingCount)})</span>` : ''}</button>` : '';
+  const pending = p.isModerator ? `<a class="btn btn-secondary" href="/mod" data-link>Pending review${p.pendingCount ? ` <span class="tnum">(${Number(p.pendingCount)})</span>` : ''}</a>` : '';
   const contributions = meContributionsHtml(p.community);
   return `<article class="page me-page"><header class="place-header"><h1 class="page-title">Me</h1></header>`
     + `<nav class="tabs me-tabs" aria-label="Your gyms">${tab('saved', 'Saved', p.saved.length)}${tab('climbed', 'Climbed', p.climbed.length)}</nav>`
