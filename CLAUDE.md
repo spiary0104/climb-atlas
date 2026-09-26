@@ -36,7 +36,7 @@ css/base.css            Reset, type scale, focus
 css/components.css      Shared components (.btn tiers, chips, fields, nav, dialogs, ...)
 css/explore.css         Explore: list pane/sheet, rows/cards, chips, search, pins, peek card
 css/page.css            Pages (gym, region/city, log, me)
-css/style.css           App layer (shell, map controls, forms, sessions, moderation)
+css/style.css           App layer (shell, map controls, forms, sessions); css/mod.css = /mod
 assets/icons.svg        Phosphor sprite; js/modules/icons.js icon(name)
 assets/contour.svg      Placeholder for gyms without a photo
 assets/mascot/head.svg  Deer head (START + default avatar only; DESIGN.md sec. 12.2)
@@ -57,13 +57,14 @@ js/modules/sheet.js     Mobile bottom sheet snaps
 js/modules/marks.js     Climbed/saved toggles
 js/modules/*-html.js, geo.js  Pure builders/helpers (unit-tested)
 js/modules/router.js    History API router; views render into <main id="view">
-js/modules/*-page.js    Page views: gym, region, log, me (+ page-html.js, slug.js, mini-map.js)
+js/modules/*-page.js    Page views: gym, region, log, me, mod, add (+ page-html.js, moderation-html.js, add-html.js, slug.js, mini-map.js)
 js/modules/nav.js       Top bar / tab bar ([data-nav])
-js/modules/modals.js    Focus/Escape, add/edit/report forms, info modals
+js/modules/modals.js    Focus/Escape, edit/report forms, info modals (adding a gym is the /add page)
 js/modules/auth-ui.js   Sign-in widget + modal
 js/modules/data-load.js Spots/marks/moderator/pending loading + seed fallback
 js/modules/logbook.js   Logbook
-js/modules/moderation.js Pending-review panel
+js/modules/moderation.js Moderator actions for /mod and the gym page verify control
+js/modules/community.js Provenance/contribution reads (+ provenance.js, pure: states, levels)
 data/gyms.json          LEGACY seed dataset; app offline fallback + provenance input — NEVER read or edit
 data/gyms.reconciled.json FROZEN reconciliation/provenance dataset (= production at first import); not a runtime file
 import/                 Import pipeline: index/ (match index), batches/ (staging)
