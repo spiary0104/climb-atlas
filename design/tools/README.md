@@ -10,6 +10,12 @@ Requirements: Python 3, Pillow, and fontTools for the seal (`pip install --user 
 | `build_seal.py` | `assets/brand/seal.svg`, `seal-mono.svg` (outlined Fraunces lettering, same geometry as `js/modules/brand.js`) | `python design/tools/build_seal.py` |
 
 Every committed pose was made with exactly the command above; re-running it reproduces the file byte for byte.
+One exception adds an opt-in sample group (7th argument), so groups never change poses traced without them:
+
+| Pose | Extra group | Why |
+|---|---|---|
+| `chalking-up`, `backpacker` (Brand Pass), `traveller-passport`, `dyno` (Phase 5) | none | |
+| `topped-out-flag` (Phase 5) | `granite` | the grey boulder needs granite + one shade, or its shadows snap to forest |
 After tracing, compare the result with the source at full size and at 96px before committing.
 
 Hand-drawn marks (`assets/mascot/head.svg`, `stamp-head.svg`, `assets/brand/antlers.svg`, `icons/`) are traced by hand

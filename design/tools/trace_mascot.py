@@ -8,7 +8,7 @@ simplified (Douglas-Peucker) and drawn as smooth quadratic curves, ink last. See
 
 Usage (the settings every committed pose uses; colors=0 selects the brand palette):
     python design/tools/trace_mascot.py design/mascot/deer/<pose>.png assets/mascot/<pose>.svg 512 0 12 1.1
-Arguments: SRC OUT [size=384] [colors=14, 0 = brand palette] [merge=26, median-cut mode only] [eps=1.0]
+Arguments: SRC OUT [size=384] [colors=14, 0 = brand palette] [merge=26, median-cut mode only] [eps=1.0] [extras, e.g. granite]
 Always compare the result with the source (design/review/ sheet or a side-by-side) at full size and at 96px.
 """
 import sys, math
@@ -57,6 +57,14 @@ BRAND = [  # (sample, output)
   ('#E57F6B', '#E07B6A'), ('#C95F55', '#E07B6A'), ('#8E3A2E', '#8E3A2E'), ('#6B2A24', '#8E3A2E'),
   ('#83817F', '#83817F'), ('#A29987', '#A29987'), ('#C9A26A', '#C9A26A'), ('#785931', '#8A6A3E'),
 ]
+# Opt-in sample groups (7th argument, comma-separated), so adding one never changes poses traced without it.
+EXTRAS = {
+  # granite (the topped-out boulder): base + one shade step, flat like the fur
+  'granite': [('#787878', '#83817F'), ('#909090', '#83817F'), ('#848478', '#83817F'), ('#B4B4B4', '#83817F'),
+              ('#606060', '#666462'), ('#545454', '#666462'), ('#484848', '#666462')],
+}
+for name in (sys.argv[7].split(',') if len(sys.argv) > 7 and sys.argv[7] else []):
+    BRAND = BRAND + EXTRAS[name]
 BG = -1
 if NCOL == 0:
     samples = [(h2c(a), h2c(b)) for a, b in BRAND]
