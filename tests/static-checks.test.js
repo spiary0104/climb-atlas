@@ -110,6 +110,11 @@ const SAFE_EXPR = [
   // show() is a FIELDS formatter (escapeHtml or photoText); rows/queue/panel are assembled from these same builders
   /^(label|k|KIND_LABEL\[k\]|d\.rows|queue|panel)$/, /^show\((current|proposed)\[key\]\)$/,
   /^items\.map\(\(it, i\) => modRowHtml\(it, ctxs\[i\]\)\)\.join\(''\)$/,
+  // Phase 5: page-html's check-in button is built in the same function from literals and the escaped id; brand.js file
+  // names come from its fixed MILESTONE map
+  /^(checkin|file)$/,
+  // stamp-html.js: textPath ids (sequence numbers), the tilt and size as numbers, parts assembled in the same builder
+  /^(top|bottom|head|grid|filterNote|rows|where|marks)$/, /^Number\((stampTilt\(seed\)|size\.toFixed\(2\))\)$/,
   // add-html.js (/add): extra is a literal attribute string at every textField() call site; opts/other/submit/signIn are
   // assembled in the same builder from escaped values and literals; the helpers escape internally
   /^(extra|opts|other|submit|signIn)$/, /^(countrySelect\(d\)|typeChecks\(d\.types\))$/, /^d\.country === 'OTHER' \? '' : regionSelect\(d\)$/,
@@ -155,7 +160,8 @@ test('HTML-building templates only interpolate escaped or reviewed-safe expressi
     'js/modules/search.js', 'js/modules/list.js', 'js/modules/explore.js', 'js/modules/filters.js', 'js/modules/map.js',
     'js/modules/page-html.js', 'js/modules/gym-page.js', 'js/modules/router.js', 'js/modules/slug.js', 'js/modules/region-page.js', 'js/modules/mini-map.js',
     'js/modules/provenance.js', 'js/modules/community.js', 'js/modules/me-page.js', 'js/modules/log-page.js', 'js/modules/mod-page.js',
-    'js/modules/add-html.js', 'js/modules/add-page.js', 'js/modules/brand.js'];
+    'js/modules/add-html.js', 'js/modules/add-page.js', 'js/modules/brand.js',
+    'js/modules/stamp-html.js', 'js/modules/passport.js', 'js/modules/checkin.js', 'js/modules/passport-page.js', 'js/modules/milestone-sheet.js', 'js/modules/share-card.js'];
   const unsafe = [];
   for (const f of files) {
     // lines that assign to .textContent are not markup (the browser treats the value as text)

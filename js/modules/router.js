@@ -13,9 +13,10 @@ export const ROUTES = [
   { name: 'me', re: /^\/me(?:\/(saved|climbed))?\/?$/, keys: ['section'] },
   { name: 'mod', re: /^\/mod\/?$/ },
   { name: 'add', re: /^\/add\/?$/ },
+  { name: 'passport', re: /^\/me\/passport\/?$/ },
 ];
 // Which navigation area each page belongs to (top bar / tab bar active state).
-const AREA = { explore: 'explore', gym: 'explore', regions: 'regions', country: 'regions', region: 'regions', city: 'regions', log: 'log', me: 'me', mod: 'me', add: null, notfound: null };
+const AREA = { explore: 'explore', gym: 'explore', regions: 'regions', country: 'regions', region: 'regions', city: 'regions', log: 'log', me: 'me', mod: 'me', add: null, passport: 'me', notfound: null };
 
 // Pure: path -> {name, params}. Anything unknown is 'notfound' (the page, not a redirect).
 export function matchRoute(path){

@@ -11,7 +11,7 @@ const ROOT = path.resolve(__dirname, '..');
 const read = p => fs.readFileSync(path.join(ROOT, p), 'utf8');
 const stripCssComments = s => s.replace(/\/\*[\s\S]*?\*\//g, '');
 const stripJsComments = s => s.replace(/\/\*[\s\S]*?\*\//g, '').replace(/(^|[^:'"`\\])\/\/.*$/gm, '$1');
-const COMPONENT_CSS = ['css/base.css', 'css/components.css', 'css/explore.css', 'css/page.css', 'css/style.css'];
+const COMPONENT_CSS = ['css/base.css', 'css/components.css', 'css/explore.css', 'css/page.css', 'css/style.css', 'css/passport.css'];
 const PAGES = ['index.html', 'about.html'];
 const modDir = path.join(ROOT, 'js', 'modules');
 const JS = ['js/main.js', 'js/auth.js', 'js/supabase-init.js', 'js/sw-register.js', ...fs.readdirSync(modDir).filter(f => f.endsWith('.js')).map(f => 'js/modules/' + f)];
@@ -131,7 +131,7 @@ test('typography: Fraunces (--font-display) only at 18px and above, and never on
       const size = decl(r.body, 'font-size');
       const inherited = /^\.t-display-(xl|lg|md|sm)(,|$)/.test(r.selector);          // the scale classes set size per class
       // The seal/stamp lettering is the one exception (sec. 11.4, 1A): arched caps sized in SVG units inside a mark of >= --size-seal
-      const lettering = /^\.seal-text$/.test(r.selector);
+      const lettering = /^\.(seal-text|stamp-name)$/.test(r.selector);
       if (!inherited && !lettering) assert.ok(size && px(size) >= 18, `${f} ${r.selector}: serif at ${size}`);
       assert.ok(!/\b(btn|chip|input|select|textarea|label|tab)\b/.test(r.selector), `${f} ${r.selector}: serif on a control`);
     }
@@ -185,7 +185,7 @@ test('themes: the map region is rock, and every floating object inside it is pap
 // ===== components ==================================================================================================
 function buttonsIn(src) { return [...src.matchAll(/<button\b[^>]*>/g)].map(m => m[0]); }
 test('buttons: every button is a .btn tier or a documented component control; retired classes are gone', () => {
-  const CONTROLS = ['chip', 'tab', 'tabbar-item', 'start-btn', 'gym-row-main', 'gym-card-main', 'carousel-card', 'seg-btn', 'map-toggle', 'sheet-grabber-btn', 'avatar-btn', 'link', 'mod-row-main'];
+  const CONTROLS = ['chip', 'tab', 'tabbar-item', 'start-btn', 'gym-row-main', 'gym-card-main', 'carousel-card', 'seg-btn', 'map-toggle', 'sheet-grabber-btn', 'avatar-btn', 'link', 'mod-row-main', 'stamp-btn'];
   const sources = [...PAGES.map(f => [f, read(f)]), ...JS.map(f => [f, stripJsComments(read(f))])];
   for (const [f, src] of sources) {
     for (const b of buttonsIn(src)) {
@@ -202,7 +202,8 @@ test('buttons: one filled primary action per dialog', () => {
   const html = read('index.html');
   const dialogs = [...html.matchAll(/<div class="modal[^"]*" role="dialog"[\s\S]*?(?=<div class="modal-backdrop|<script)/g)].map(m => m[0]);
   assert.ok(dialogs.length >= 7);   // Logbook, Pending review, Add a spot and the Me menu became pages in Phase 3/4
-  for (const d of dialogs) assert.ok((d.match(/\bbtn-primary\b/g) || []).length <= 1, 'more than one primary in ' + /id="(dlg-[a-z-]+)"/.exec(d)[1]);
+  // Dialog bodies rendered by JS (check-in, milestone) have no static heading id: name them by their first tag instead.
+  for (const d of dialogs) assert.ok((d.match(/\bbtn-primary\b/g) || []).length <= 1, 'more than one primary in ' + ((/id="(dlg-[a-z-]+)"/.exec(d) || [])[1] || d.slice(0, 80)));
 });
 
 // ===== iconography =================================================================================================
@@ -262,7 +263,10 @@ test('mascot: brand marks only where sec. 12.2 allows (START, wordmark lockup, d
   assert.ok(uses.some(u => /class="wordmark-mark"/.test(u) && /alt=""/.test(u)), 'the lockup head is decorative beside the name');
   assert.deepEqual([...read('about.html').matchAll(/<[^>]*assets\/mascot\/[^>]*>/g)].map(m => /class="wordmark-mark"/.test(m[0])), [true], 'About: the lockup only');
   const usedIn = JS.filter(f => /assets\/mascot\//.test(read(f)));
-  assert.deepEqual(usedIn, ['js/modules/auth-ui.js', 'js/modules/brand.js'], 'from JS: the default avatar and brand.js (seal, first-run art) only');
+  assert.deepEqual(usedIn, ['js/modules/auth-ui.js', 'js/modules/brand.js', 'js/modules/share-card.js', 'js/modules/stamp-html.js'],
+    'from JS: the default avatar, brand.js (seal, first-run and milestone art), the stamp head on stamps and the share card only');
+  assert.ok(!/assets\/mascot\/(?!stamp-head\.svg)/.test(read('js/modules/stamp-html.js')), 'stamps carry only the single-ink stamp head');
+  assert.deepEqual([...read('js/modules/share-card.js').matchAll(/assets\/mascot\/[a-z-]+\.svg/g)].map(m => m[0]).sort(), ['assets/mascot/head.svg', 'assets/mascot/stamp-head.svg'], 'share card: the stamp head and the lockup head');
   assert.deepEqual((read('js/modules/logbook.js').match(/firstRunArt\([^)]*\)/g) || []), ["firstRunArt('log')"], 'Log: chalking-up on the first-run empty state only');
   assert.deepEqual((read('js/modules/page-html.js').match(/firstRunArt\([^)]*\)/g) || []), ["firstRunArt('saved')"], '/me: the backpacker on a first-run Saved tab only');
   assert.match(read('js/modules/page-html.js'), /const art = firstRun \? firstRunArt\('saved'\) : '';/, 'never on a repeat empty');

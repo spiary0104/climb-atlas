@@ -9,10 +9,18 @@ let seq = 0;
 
 // First-run art (sec. 12.2 tier 4): full-body poses, flat-vector traces of design/mascot/deer, at spot size (96px max),
 // decorative (the empty state's text carries the meaning). Only these kinds exist; anything else renders nothing.
-const FIRST_RUN = { log: 'chalking-up', saved: 'backpacker' };
+const FIRST_RUN = { log: 'chalking-up', saved: 'backpacker', passport: 'traveller-passport' };
 export function firstRunArt(kind){
   const pose = Object.hasOwn(FIRST_RUN, kind) ? FIRST_RUN[kind] : null;   // own keys only (not constructor, toString...)
   return pose ? `<img class="mascot mascot--spot" src="assets/mascot/${pose}.svg" alt="" width="96" height="96" loading="lazy">` : '';
+}
+
+// Milestone art (sec. 12.3): the one sheet where the character may break an edge at 160px. topped-out for passport
+// milestones, dyno for a new highest grade. Decorative; the sheet's title carries the meaning.
+const MILESTONE = { 'topped-out': 'topped-out-flag', dyno: 'dyno' };
+export function milestoneArt(pose){
+  const file = Object.hasOwn(MILESTONE, pose) ? MILESTONE[pose] : MILESTONE['topped-out'];
+  return `<img class="mascot mascot--milestone milestone-art" src="assets/mascot/${file}.svg" alt="" width="160" height="160">`;
 }
 
 // The antler crest (assets/brand/antlers.svg), drawn small at the foot of the seal.

@@ -15,6 +15,7 @@ const modules = (async () => ({
   mod: await import('../js/modules/moderation-html.js'),
   add: await import('../js/modules/add-html.js'),
   brand: await import('../js/modules/brand.js'),
+  stamp: await import('../js/modules/stamp-html.js'),
 }))();
 
 // Minimal HTML tokenizer (enough for our own templates): returns [{tag, attrs:{name:value}}] for every start tag.
@@ -188,7 +189,10 @@ test('gym page: the minimum page renders no empty sections; the photo page shows
   assert.ok(/aboutTitle/.test(withPhoto));
   for (const bad of ['javascript:alert(1)', 'data:image/png;base64,AAA', '//evil/x.png']) assert.ok(!/gym-hero/.test(page.gymPageHtml({ ...minimal, photo: bad }, pageCtx())), bad);
   const acts = tags(html).filter(t => t.attrs['data-page-action']).map(t => t.attrs['data-page-action']);
-  assert.deepEqual(acts, ['edit', 'edit', 'report', 'save', 'climbed'], 'prompt, community actions, then the action row');
+  assert.deepEqual(acts, ['edit', 'edit', 'report', 'checkin', 'save', 'climbed'], 'prompt, community actions, then the action row (Check in first, sec. 11.1)');
+  assert.equal(tags(html).find(t => t.attrs['data-page-action'] === 'checkin').attrs.class, 'btn btn-primary', 'Check in is the one primary action');
+  const done = page.gymPageHtml(minimal, pageCtx({ checkedIn: true }));
+  assert.ok(!/data-page-action="checkin"/.test(done) && /Checked in today/.test(done) && !/btn-primary/.test(done), 'after a check-in: "Checked in today", disabled, no primary');
   assert.ok(!/mascot/.test(html), 'no character on gym pages (sec. 12.2)');
 });
 
@@ -238,7 +242,7 @@ test('me page: saved/climbed tabs as links, rows link to gym pages, no email any
   const base = { signedIn: true, section: 'saved', saved: [row('Boulder Barn')], climbed: [], isModerator: false, pendingCount: 0 };
   const html = page.mePageHtml(base);
   const tabs = tags(html).filter(t => /\btab\b/.test(t.attrs.class || ''));
-  assert.deepEqual(tabs.map(t => [t.attrs.href, t.attrs['aria-current'] || '']), [['/me/saved', 'page'], ['/me/climbed', '']]);
+  assert.deepEqual(tabs.map(t => [t.attrs.href, t.attrs['aria-current'] || '']), [['/me/saved', 'page'], ['/me/climbed', ''], ['/me/passport', '']]);
   assert.equal(tags(html).find(t => /page-row/.test(t.attrs.class || '')).attrs.href, '/gym/boulder-barn');
   assert.ok(!/pending/.test(html), 'no Pending review for non-moderators');
   assert.match(page.mePageHtml({ ...base, isModerator: true, pendingCount: 3 }), /Pending review <span class="tnum">\(3\)<\/span>/);
@@ -432,4 +436,102 @@ test('brand: the seal is a decorative-safe SVG with arched BOULDEER; first-run a
   assert.equal((page.mePageHtml(base).match(/<svg class="seal[" ]/g) || []).length, 0, 'first run: the seal steps aside for the backpacker (one character per screen)');
   assert.equal((page.mePageHtml({ ...base, saved: [row] }).match(/<svg class="seal[" ]/g) || []).length, 1, 'otherwise one seal on /me');
   assert.equal((page.mePageHtml({ signedIn: false }).match(/<svg class="seal[" ]/g) || []).length, 1, 'signed out: the seal');
+});
+
+// ===== Phase 5: stamps, passport, check-in and milestone sheets (DESIGN.md sec. 11, 12.3). Names come from any proposal. =====
+// Tag-level: no script/foreignObject element, no handler attribute, no javascript: attribute value. Escaped TEXT may
+// legitimately contain words like "onerror="; only real tags and attributes matter.
+const svgOk = html => tags(html).every(t => !/^(script|foreignobject)$/i.test(t.tag) && Object.entries(t.attrs).every(([k, v]) => !/^on/i.test(k) && !/^\s*javascript:/i.test(v || '')));
+
+test('stamp: hostile gym/city names cannot alter the SVG; the tilt is stable and within 8 degrees; ids never collide', async () => {
+  const { stamp } = await modules;
+  const benign = stamp.stampSvg({ title: 'Plain Words Gym', date: '2026-09-12T10:00:00Z', seed: 'seed-1' });
+  assert.match(benign, /^<svg class="stamp" viewBox="0 0 120 120" role="img"/);
+  assert.ok(benign.includes('>PLAIN WORDS GYM</textPath>') && benign.includes('>12 SEP 2026</textPath>'), 'caps name + caps date');
+  assert.ok(/href="assets\/mascot\/stamp-head\.svg"/.test(benign), 'the single-ink stamp head');
+  for (const h of HOSTILE) {
+    const out = stamp.stampSvg({ title: h, date: h, seed: h, label: h });
+    assert.deepEqual(shape(out), shape(stamp.stampSvg({ title: 'x', date: 'x', seed: 'x', label: 'x' })), 'stamp structure changed for ' + h);
+    assert.ok(svgOk(out) && hasHandlerAttrs(out) === false, 'markup leaked: ' + h);
+  }
+  for (const seed of ['a', 'seed-1', 'community-xyz', '', 'AU:NSW:alexandria']) {
+    const t = stamp.stampTilt(seed);
+    assert.ok(Number.isInteger(t) && t >= -8 && t <= 8, seed);
+    assert.equal(stamp.stampTilt(seed), t, 'stable');
+  }
+  const ids = [...(stamp.stampSvg({ title: 'a' }) + stamp.stampSvg({ title: 'b' })).matchAll(/id="([^"]+)"/g)].map(m => m[1]);
+  assert.equal(new Set(ids).size, ids.length);
+  assert.ok(stamp.stampSvg({ title: 'x'.repeat(60) }).includes('…'), 'very long names are shortened');
+  assert.equal(stamp.stampDate('not a date'), '');
+  assert.equal(stamp.niceDate('2026-09-12T10:00:00Z'), '12 Sep 2026');
+});
+
+test('passport page: hostile city/gym names and notes stay text; empty, signed-out and filtered states; no email', async () => {
+  const { stamp } = await modules;
+  const stampOf = v => ({ key: 'AU:NSW:' + v, city: v, gyms: 2, first: '2026-01-02T10:00:00Z', last: '2026-02-01T10:00:00Z', seed: v });
+  const rowOf = v => ({ g: { ...benignSpot, name: v, suburb: v }, ctx: { href: '/gym/x', city: v, date: '2 Jan 2026', note: v } });
+  const page = v => stamp.passportPageHtml({ signedIn: true, stats: '3 gyms · 2 cities · 1 country', stamps: [stampOf(v)], rows: [rowOf(v)], filter: '', filterLabel: '' });
+  const benign = page('plain words');
+  for (const h of HOSTILE) {
+    const out = page(h);
+    assert.deepEqual(shape(out), shape(benign), 'passport structure changed for ' + h);
+    assert.ok(svgOk(out) && hasHandlerAttrs(out) === false, 'markup leaked: ' + h);
+  }
+  assert.ok(/Stamps/.test(benign) && /Recent check-ins/.test(benign) && /3 gyms · 2 cities · 1 country/.test(benign));
+  const btn = tags(benign).find(t => /\bstamp-btn\b/.test(t.attrs.class || ''));
+  assert.equal(btn.attrs['aria-pressed'], 'false');
+  const filtered = stamp.passportPageHtml({ signedIn: true, stats: '', stamps: [stampOf('Newtown')], rows: [], filter: 'AU:NSW:Newtown', filterLabel: 'Newtown' });
+  assert.equal(tags(filtered).find(t => /\bstamp-btn\b/.test(t.attrs.class || '')).attrs['aria-pressed'], 'true');
+  assert.ok(/Showing Newtown/.test(filtered) && /data-passport-city=""/.test(filtered), 'a "Show all" control');
+  const empty = stamp.passportPageHtml({ signedIn: true, stats: '', stamps: [], rows: [] });
+  assert.ok(/traveller-passport\.svg/.test(empty) && /Your first stamp is one check-in away\./.test(empty), 'empty: the traveller + the line from sec. 11.3');
+  assert.ok(!/traveller-passport/.test(benign), 'the traveller only on the empty passport');
+  const out = stamp.passportPageHtml({ signedIn: false });
+  assert.ok(/data-page-action="sign-in"/.test(out) && !/mascot/.test(out), 'signed out: sign in, no character');
+  assert.ok(!/@/.test(benign));
+});
+
+test('check-in sheet: hostile names stay text; near shows the distance, confirm needs "I\'m here"; one primary; note max 140; no photo field', async () => {
+  const { stamp } = await modules;
+  const near = stamp.checkinSheetHtml({ name: 'Plain' }, { mode: 'near', distance: '120 m', date: '27 Sep 2026' });
+  const conf = stamp.checkinSheetHtml({ name: 'Plain' }, { mode: 'confirm', date: '27 Sep 2026' });
+  assert.ok(/120 m away/.test(near) && !/id="ciHere"/.test(near));
+  assert.ok(/id="ciHere"/.test(conf) && /I’m at Plain now/.test(conf));
+  for (const html of [near, conf]) {
+    assert.equal((html.match(/\bbtn-primary\b/g) || []).length, 1);
+    assert.match(html, /<textarea id="ciNote" maxlength="140"/);
+    assert.ok(!/photo/i.test(html), 'note only (owner decision)');
+    assert.ok(!/mascot/.test(html), 'no character in the sheet itself: the stamp head arrives with the stamp');
+  }
+  for (const h of HOSTILE) {
+    for (const mode of ['near', 'confirm']) {
+      const out = stamp.checkinSheetHtml({ name: h }, { mode, distance: h, date: h });
+      assert.deepEqual(shape(out), shape(stamp.checkinSheetHtml({ name: 'x' }, { mode, distance: 'x', date: 'x' })), mode + ' changed for ' + h);
+      assert.equal(hasHandlerAttrs(out), false);
+    }
+  }
+  assert.ok(/disabled>Stamping…/.test(stamp.checkinSheetHtml({ name: 'x' }, { busy: true })));
+  const done = stamp.stampedHtml({ id: 'g1', name: 'Plain' }, { checked_at: '2026-09-27T09:00:00Z' }, 'Your first stamp.');
+  assert.deepEqual(tags(done).filter(t => t.attrs['data-ci-action']).map(t => t.attrs['data-ci-action']), ['log', 'share', 'done']);
+  assert.equal((done.match(/\bbtn-primary\b/g) || []).length, 1);
+  assert.ok(/class="stamp"/.test(done) && /Your first stamp\./.test(done));
+  const hostileDone = stamp.stampedHtml({ id: '<x>', name: '<img src=x onerror=alert(1)>' }, { checked_at: 'x' }, '<script>alert(1)</script>');
+  assert.ok(svgOk(hostileDone) && hasHandlerAttrs(hostileDone) === false && !/<img/.test(hostileDone));
+});
+
+test('milestone sheet: topped-out by default, dyno for a grade; escaped; at most three other marks; one primary', async () => {
+  const { stamp } = await modules;
+  const m = stamp.milestoneHtml({ title: 'First stamp', sentence: 'x', pose: 'topped-out', others: [] });
+  assert.ok(/topped-out-flag\.svg" alt="" width="160" height="160"/.test(m), 'topped-out at 160px (the one sheet allowed to break an edge)');
+  assert.ok(/dyno\.svg/.test(stamp.milestoneHtml({ title: 'First V6', pose: 'dyno' })));
+  assert.ok(/topped-out-flag\.svg/.test(stamp.milestoneHtml({ title: 'x', pose: 'constructor' })), 'unknown poses fall back, never build a path');
+  assert.equal((m.match(/\bbtn-primary\b/g) || []).length, 1);
+  assert.deepEqual(tags(m).filter(t => t.attrs['data-ms-action']).map(t => t.attrs['data-ms-action']), ['share', 'done']);
+  const many = stamp.milestoneHtml({ title: 'a', others: ['b', 'c', 'd', 'e'] });
+  assert.equal((many.match(/class="milestone-mark"/g) || []).length, 3, 'up to three other marks');
+  for (const h of HOSTILE) {
+    const out = stamp.milestoneHtml({ title: h, sentence: h, others: [h] });
+    assert.deepEqual(shape(out), shape(stamp.milestoneHtml({ title: 'x', sentence: 'x', others: ['x'] })), 'changed for ' + h);
+    assert.equal(hasHandlerAttrs(out), false);
+  }
 });

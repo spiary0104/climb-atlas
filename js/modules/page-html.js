@@ -59,7 +59,11 @@ export function gymPageHtml(g, ctx = {}){
   const provenance = `<p class="provenance-line">${provenanceMarkHtml(prov.state)}${escapeHtml(prov.text)}</p>`
     + (ctx.myEdit && ctx.myEdit.status === 'pending' ? '<p class="provenance-line provenance-pending">Your edit is awaiting review.</p>' : '')
     + (ctx.myEdit && ctx.myEdit.status === 'rejected' ? `<p class="provenance-line provenance-rejected">Your last edit wasn’t accepted${ctx.myEdit.rejection_reason ? `: ${escapeHtml(ctx.myEdit.rejection_reason)}` : '.'}</p>` : '');
-  const actions = `<div class="gym-actions" role="group" aria-label="Gym actions">`
+  // Check in is the primary action (sec. 8.2, 11.1); after a check-in it reads "Checked in today" until 12 hours pass.
+  const checkin = ctx.checkedIn
+    ? `<button type="button" class="btn btn-secondary" disabled>${icon('check-circle', {size:'sm'})}<span class="label-long">Checked in today</span><span class="label-short">Checked in</span></button>`
+    : `<button type="button" class="btn btn-primary" data-page-action="checkin" data-spot-id="${id}">${icon('map-pin', {size:'sm'})}Check in</button>`;
+  const actions = `<div class="gym-actions" role="group" aria-label="Gym actions">${checkin}`
     + `<button type="button" class="btn btn-secondary" data-page-action="save" data-spot-id="${id}" aria-pressed="${ctx.saved ? 'true' : 'false'}">${icon('bookmark-simple', {size:'sm'})}Save</button>`
     + `<button type="button" class="btn btn-secondary" data-page-action="climbed" data-spot-id="${id}" aria-pressed="${ctx.climbed ? 'true' : 'false'}">${icon('check', {size:'sm'})}Climbed</button>`
     + `<a class="btn btn-secondary" href="${escapeHtml(directionsUrl(g))}" target="_blank" rel="noopener noreferrer">${icon('navigation-arrow', {size:'sm'})}Directions</a></div>`;
@@ -187,7 +191,7 @@ export function mePageHtml(p){
   const pending = p.isModerator ? `<a class="btn btn-secondary" href="/mod" data-link>Pending review${p.pendingCount ? ` <span class="tnum">(${Number(p.pendingCount)})</span>` : ''}</a>` : '';
   const contributions = meContributionsHtml(p.community);
   return `<article class="page me-page"><header class="place-header"><h1 class="page-title">Me</h1></header>`
-    + `<nav class="tabs me-tabs" aria-label="Your gyms">${tab('saved', 'Saved', p.saved.length)}${tab('climbed', 'Climbed', p.climbed.length)}</nav>`
+    + `<nav class="tabs me-tabs" aria-label="Your gyms">${tab('saved', 'Saved', p.saved.length)}${tab('climbed', 'Climbed', p.climbed.length)}<a class="tab" href="/me/passport" data-link>Passport</a></nav>`
     + (items.length ? `<div class="page-list">${items.map(i => pageRowHtml(i.g, i.ctx)).join('')}</div>` : `<div class="empty-state me-empty">${art}<p>${escapeHtml(empty)}</p></div>`)
     + contributions
     + `<section class="page-section" aria-labelledby="accountTitle"><h2 class="section-title" id="accountTitle">Account</h2><div class="me-actions">`

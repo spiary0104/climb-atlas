@@ -27,6 +27,7 @@
 <link rel="stylesheet" href="css/explore.css">
 <link rel="stylesheet" href="css/page.css">
 <link rel="stylesheet" href="css/mod.css">
+<link rel="stylesheet" href="css/passport.css">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="app-body">
@@ -361,6 +362,32 @@
       <button class="btn btn-secondary" id="authCancelBtn" data-modal-close>Cancel</button>
       <button class="btn btn-primary" id="sendMagicLinkBtn">Send magic link</button>
     </div>
+  </div>
+</div>
+
+<!-- Phase 5: check-in sheet, milestone sheet, START sheet (bodies rendered by js/modules/checkin.js, milestone-sheet.js) -->
+<div class="modal-backdrop hidden" id="checkinModalBackdrop">
+  <div class="modal checkin-modal" role="dialog" aria-modal="true" aria-labelledby="dlg-check-in">
+    <button type="button" class="btn btn-tertiary btn-icon btn-sm modal-x" id="checkinClose" data-modal-close aria-label="Close"><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-x"/></svg></button>
+    <div id="checkinBody"></div>
+  </div>
+</div>
+
+<div class="modal-backdrop hidden" id="milestoneModalBackdrop">
+  <div class="modal milestone-modal" role="dialog" aria-modal="true" aria-labelledby="dlg-milestone">
+    <button type="button" class="btn btn-tertiary btn-icon btn-sm modal-x" id="milestoneClose" data-modal-close aria-label="Close"><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-x"/></svg></button>
+    <div id="milestoneBody"></div>
+  </div>
+</div>
+
+<div class="modal-backdrop hidden" id="startModalBackdrop">
+  <div class="modal start-modal" role="dialog" aria-modal="true" aria-labelledby="dlg-start">
+    <h2 id="dlg-start">Start</h2>
+    <div class="start-actions">
+      <button type="button" class="btn btn-secondary btn-block" data-start-action="checkin"><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-map-pin"/></svg><span id="startCheckinLabel">Check in here</span></button>
+      <button type="button" class="btn btn-primary btn-block" data-start-action="log"><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-plus"/></svg>Log a session</button>
+    </div>
+    <div class="modal-actions"><button type="button" class="btn btn-tertiary" id="startClose" data-modal-close>Close</button></div>
   </div>
 </div>
 

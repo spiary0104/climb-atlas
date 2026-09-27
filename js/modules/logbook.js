@@ -1,5 +1,7 @@
 // Personal logbook: loading sessions, the session list markup for the /log page (log-page.js), and the "Log a session"
 // dialog (opened from /log and from START).
+import { showMilestones } from './milestone-sheet.js';
+import { newTopGrade } from './passport.js';
 import { firstRunArt } from './brand.js';
 import { MOODS, TYPE_LABELS } from './constants.js';
 import { icon } from './icons.js';
@@ -94,11 +96,11 @@ function addClimbRow(){
   renderClimbRows();
 }
 
-function openAddSessionModal(){
+function openAddSessionModal(spotId){
   populateGymSelect();
   document.getElementById('sDate').value = new Date().toISOString().slice(0,10);
   document.getElementById('sMood').value = 'good';
-  document.getElementById('sGym').value = '';
+  document.getElementById('sGym').value = spotId && appState.spots.some(s => s.id === spotId) ? spotId : '';
   document.getElementById('sNotes').value = '';
   appState.draftClimbs = [];
   addClimbRow();
@@ -106,9 +108,10 @@ function openAddSessionModal(){
 }
 
 // START (mobile tab bar) and the /log page: "Log a session". Signed-in only, like the logbook itself.
-export function startLogSession(){
+// opts.spotId: pre-select the gym ("Log this session" after a check-in, sec. 11.1).
+export function startLogSession(opts = {}){
   if(!window.auth.user){ showToast('Sign in to log a session'); return; }
-  openAddSessionModal();
+  openAddSessionModal(opts.spotId);
 }
 
 function closeAddSessionModal(){
@@ -182,8 +185,12 @@ export function initLogbook(){
       }
       showToast('Session saved');
       closeAddSessionModal();
+      const before = (appState.sessions || []).filter(s => s.id !== session.id).flatMap(s => s.session_climbs || []);
       await loadSessions();
       refreshPage();
+      // A new highest sent grade (sec. 12.3): the dyno milestone, once per session like every milestone.
+      const top = newTopGrade(before, climbRows.map(c => ({ grade: c.grade.trim(), grade_system: c.climb_type === 'indoor-bouldering' ? 'v-scale' : 'yds', sent: c.sent })));
+      if(top) showMilestones([top], { title: top.title, place: 'Bouldeer logbook', date: new Date().toISOString(), seed: top.title });
     }catch(err){
       showToast('Could not save session — try again');
       console.error(err);

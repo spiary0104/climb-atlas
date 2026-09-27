@@ -13,6 +13,9 @@ import { initLogPage } from './modules/log-page.js';
 import { initMePage } from './modules/me-page.js';
 import { initModPage } from './modules/mod-page.js';
 import { initAddPage } from './modules/add-page.js';
+import { initCheckin } from './modules/checkin.js';
+import { initMilestoneSheet } from './modules/milestone-sheet.js';
+import { initPassportPage } from './modules/passport-page.js';
 import { initNavigation } from './modules/nav.js';
 import { initRegionPages } from './modules/region-page.js';
 import { initRouter } from './modules/router.js';
@@ -33,6 +36,9 @@ initLogPage();
 initMePage();
 initModPage();
 initAddPage();
+initCheckin();
+initMilestoneSheet();
+initPassportPage();
 initNavigation();
 initRouter();          // after every view has registered: renders the page for the URL (a skeleton until data arrives)
 
@@ -40,6 +46,7 @@ async function init(){
   await window.auth.init();
   window.auth.onChange(async (user)=>{
     appState.sessionsLoaded = false;   // the gym page refetches the logbook for whoever is signed in now
+    appState.checkinsLoaded = false; appState.checkins = [];   // and the passport / check-in state
     appState.myEditCache.clear();
     appState.myCommunity = null;
     renderAuthUI(user);

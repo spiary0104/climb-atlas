@@ -7,6 +7,14 @@ import { showToast } from './utils.js';
 let listener = () => {};
 export function setMarksListener(fn){ listener = fn; }
 
+// A mark the server already recorded (a check-in adds `climbed`): update the state and tell the listener.
+export function markAdded(spotId, markType){
+  const set = markType === 'climbed' ? appState.climbedIds : appState.bookmarkedIds;
+  if(set.has(spotId)) return;
+  set.add(spotId);
+  listener(spotId);
+}
+
 export async function toggleMark(spotId, markType){
   if(!window.sb){ showToast('Supabase is not configured — see README.md'); return; }
   const user = window.auth.user;

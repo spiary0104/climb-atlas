@@ -10,7 +10,8 @@
 // v9: Phase 3 pages (router, gym/region/log/me pages, page.css); every app route is served the one cached shell.
 // v10: Phase 4 community (provenance marks and lines, edit notes, /me contributions, /mod).
 // v11: Brand Pass (deer palette, object line, head lockup, seal, antler mark, favicon/app icon, paper mini maps).
-const CACHE_VERSION = 'v11';
+// v12: Phase 5 passport (check-in sheet, stamps, /me/passport, milestone sheet, share card, START sheet).
+const CACHE_VERSION = 'v12';
 const SHELL_CACHE = 'climbatlas-shell-' + CACHE_VERSION;
 const RUNTIME_CACHE = 'climbatlas-runtime-' + CACHE_VERSION;
 const TILE_CACHE = 'climbatlas-tiles-' + CACHE_VERSION;
@@ -27,6 +28,7 @@ const SHELL_FILES = [
   'css/explore.css',
   'css/page.css',
   'css/mod.css',
+  'css/passport.css',
   'css/style.css',
   'assets/icons.svg',
   'assets/contour.svg',
@@ -73,6 +75,12 @@ const SHELL_FILES = [
   'js/modules/add-html.js',
   'js/modules/add-page.js',
   'js/modules/brand.js',
+  'js/modules/passport.js',
+  'js/modules/stamp-html.js',
+  'js/modules/checkin.js',
+  'js/modules/milestone-sheet.js',
+  'js/modules/passport-page.js',
+  'js/modules/share-card.js',
   'js/modules/modals.js',
   'js/modules/auth-ui.js',
   'js/modules/data-load.js',

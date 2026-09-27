@@ -3,6 +3,7 @@
 // Markup is built by page-html.js (pure); this module finds the gym, gathers the per-user context and handles actions.
 import { COUNTRY_LABELS } from './constants.js';
 import { distanceKm, encodeExploreState, formatDistance } from './geo.js';
+import { checkedInRecently, loadCheckins, startCheckin } from './checkin.js';
 import { loadGymProvenance, loadMyEditFor } from './community.js';
 import { loadSessions } from './logbook.js';
 import { destroyMiniMaps, mountMiniMaps } from './mini-map.js';
@@ -71,12 +72,15 @@ function enter({ slug }, view){
     provenance: provenanceLine(g, appState.provenanceCache.get(g.id) || { contributors: appState.contributorCounts.get(g.id) }),
     myEdit: appState.myEditCache.get(g.id) || null,
     isModerator: appState.isModerator,
+    checkedIn: !!window.auth.user && checkedInRecently(g.id),
   });
   setPageTitle([g.name, g.suburb].filter(Boolean).join(', '));
   mountMiniMaps(view);
   // Provenance (added by / contributors / last edited) and, for the signed-in editor, their own latest proposal.
   if(!appState.provenanceCache.has(g.id)) loadGymProvenance(g.id).then(refreshPage);
   if(window.auth.user && !appState.myEditCache.has(g.id)) loadMyEditFor(g.id).then(refreshPage);
+  // Signed-in: fetch the check-ins once so the action reads "Checked in today" when it should.
+  if(window.auth.user && !appState.checkinsLoaded) loadCheckins().then(refreshPage);
   // Signed-in: fetch the logbook once so "Your history here" can appear.
   if(window.auth.user && !appState.sessionsLoaded){
     appState.sessionsLoaded = true;
@@ -92,6 +96,7 @@ export function initGymPage(){
     if(!btn) return;
     const id = btn.dataset.spotId;
     switch(btn.dataset.pageAction){
+      case 'checkin': startCheckin(id); break;
       case 'save': toggleMark(id, 'bookmarked'); break;
       case 'climbed': toggleMark(id, 'climbed'); break;
       case 'edit': openEditModal(id); break;

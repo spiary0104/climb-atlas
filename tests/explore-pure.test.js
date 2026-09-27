@@ -178,7 +178,8 @@ test('router: paths map to views; unknown paths are notfound, never an exception
   assert.deepEqual(m('/log'), ['log', {}]);
   assert.deepEqual(m('/me'), ['me', {}]);
   assert.deepEqual(m('/me/saved'), ['me', { section: 'saved' }]);
-  for (const bad of ['/gym/', '/gym/a/b', '/in/AUSTRALIA1', '/me/passport', '/admin', '/gym/%E0%A4%A']) assert.equal(matchRoute(bad).name, bad === '/gym/%E0%A4%A' ? 'gym' : 'notfound', bad);
+  assert.deepEqual(m('/me/passport'), ['passport', {}]);
+  for (const bad of ['/gym/', '/gym/a/b', '/in/AUSTRALIA1', '/me/passports', '/admin', '/gym/%E0%A4%A']) assert.equal(matchRoute(bad).name, bad === '/gym/%E0%A4%A' ? 'gym' : 'notfound', bad);
 });
 
 test('geo: fitCamera frames a box (region pages) and clamps the zoom', async () => {
