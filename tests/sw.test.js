@@ -29,7 +29,14 @@ function makeWorker() {
       put: async (req, res) => { puts.push({ cache: name, url: req.url }); m.set(req.url, res); },
       delete: async (req) => m.delete(typeof req === 'string' ? req : req.url),
       keys: async () => [...m.keys()].map((u) => new Request(u)),
-      addAll: async () => {},
+      // Like the real Cache API: URLs resolve against the worker's location, and the whole batch rejects on a duplicate
+      // request (Chrome: "Cache.addAll(): duplicate requests"), which fails the install and leaves no worker registered.
+      addAll: async (list) => {
+        const urls = list.map((u) => new URL(u, 'https://climbatlas.org/').href);
+        const dup = urls.find((u, i) => urls.indexOf(u) !== i);
+        if (dup) throw new Error('InvalidStateError: Cache.addAll(): duplicate requests (' + dup + ')');
+        for (const u of urls) m.set(u, new Response('shell'));
+      },
     };
   };
   const caches = {
@@ -50,7 +57,8 @@ function makeWorker() {
     return evt;
   };
   const activate = async () => { let p; listeners.activate({ waitUntil: (x) => { p = x; } }); await p; };
-  return { ctx, stores, puts, net, dispatchFetch, activate, listeners };
+  const install = async () => { let p; listeners.install({ waitUntil: (x) => { p = x; } }); await p; };
+  return { ctx, stores, puts, net, dispatchFetch, activate, install, listeners };
 }
 const get = (url, headers) => new Request(url, { method: 'GET', headers });
 
@@ -173,6 +181,19 @@ test('static/shared caching is unchanged: app shell stale-while-revalidate, tile
   const before = w.net.calls.length;
   const again = await w.dispatchFetch(get('https://basemaps.cartocdn.com/dark_all/3/1/2.png')); await again.responded;
   assert.equal(w.net.calls.length, before);
+});
+
+// A duplicate entry made the real install fail (Cache.addAll rejects duplicate requests), so the worker never registered and
+// the app had no offline shell at all (Brand Pass regression, found in the pre-merge audit).
+test('install: the precache list has no duplicate entries and the install completes with every shell file cached', async () => {
+  const m = /const SHELL_FILES = \[([\s\S]*?)\];/.exec(SRC);
+  const listed = [...m[1].matchAll(/'([^']+)'/g)].map((x) => new URL(x[1], 'https://climbatlas.org/').href);
+  const dups = listed.filter((u, i) => listed.indexOf(u) !== i);
+  assert.deepEqual(dups, [], 'duplicate precache entries: ' + dups.join(', '));
+  const w = makeWorker();
+  await w.install();                                  // rejects if cache.addAll rejects
+  const shell = w.stores.get('climbatlas-shell-' + CUR);
+  assert.equal(shell.size, listed.length, 'every shell file is cached on install');
 });
 
 test('precache list: every listed file exists on disk and includes the new safety modules', () => {
