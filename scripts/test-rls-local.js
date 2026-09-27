@@ -54,8 +54,8 @@ const denied = r => r.status >= 400 || (Array.isArray(r.json) && r.json.length =
   t('anon: can propose an edit (public insert)', r.status === 201, 'HTTP ' + r.status);
   r = await api('POST', '/rest/v1/reports', { body: { spot_id: spot, message: 'wrong pin' } });
   t('anon: can submit a report (public insert)', r.status === 201, 'HTTP ' + r.status);
-  for (const tb of ['pending_edits', 'reports', 'moderators', 'marks', 'sessions', 'session_climbs']) {
-    r = await api('GET', `/rest/v1/${tb}?select=*`); t(`anon: reads nothing from ${tb}`, r.status === 200 && r.json.length === 0, r.status === 200 ? '0 rows' : 'HTTP ' + r.status);
+  for (const tb of ['pending_edits', 'reports', 'moderators', 'marks', 'sessions', 'session_climbs', 'checkins']) {
+    r = await api('GET', `/rest/v1/${tb}?select=*`); t(`anon: reads nothing from ${tb}`, (r.status === 200 && r.json.length === 0) || r.status === 401 || r.status === 403, r.status === 200 ? '0 rows' : 'HTTP ' + r.status + ' (no privilege)');
   }
   r = await api('GET', '/rest/v1/routes?select=id'); t('anon: routes are publicly readable', r.status === 200);
   r = await api('POST', '/rest/v1/marks', { body: { user_id: A.id, spot_id: spot, mark_type: 'climbed' } }); t('anon: cannot add a mark', r.status >= 400, 'HTTP ' + r.status);
@@ -119,6 +119,24 @@ const denied = r => r.status >= 400 || (Array.isArray(r.json) && r.json.length =
   r = await api('DELETE', `/rest/v1/sessions?id=eq.${sid}`, { token: A.token, prefer: rep });
   const left = await svc('GET', `/rest/v1/session_climbs?select=id&session_id=eq.${sid}`); t('user: deleting a session cascades to its climbs', r.status === 200 && left.json.length === 0);
 
+  // ---------------- check-ins (Phase 5, migration 20260927090000) ----------------
+  r = await api('POST', '/rest/v1/checkins', { body: { spot_id: spot, note: 'anon' } }); t('anon: cannot check in', r.status >= 400, 'HTTP ' + r.status);
+  r = await api('POST', '/rest/v1/checkins', { token: A.token, body: { spot_id: spot, note: 'First visit', user_id: B.id, checked_at: '2020-01-01T00:00:00Z' }, prefer: rep });
+  const ci = r.json && r.json[0];
+  t('user: checks in; user_id and checked_at are pinned server-side (no forging, no backdating)', r.status === 201 && ci && ci.user_id === A.id && new Date(ci.checked_at).getFullYear() >= 2026 && ci.note === 'First visit',
+    ci ? `user=${ci.user_id === A.id ? 'A' : 'FORGED'} checked_at=${ci.checked_at.slice(0, 10)}` : 'HTTP ' + r.status);
+  r = await api('GET', `/rest/v1/marks?select=mark_type&spot_id=eq.${spot}`, { token: A.token }); t('user: a check-in adds the climbed mark (trigger)', r.json.length === 1 && r.json[0].mark_type === 'climbed', `${r.json.length} mark`);
+  r = await api('POST', '/rest/v1/checkins', { token: A.token, body: { spot_id: spot } }); t('user: a second check-in at the same gym within 12 hours is refused', r.status >= 400, 'HTTP ' + r.status);
+  r = await api('POST', '/rest/v1/checkins', { token: A.token, body: { spot_id: seedIds[1] }, prefer: rep }); t('user: can check in at another gym the same day', r.status === 201, 'HTTP ' + r.status);
+  r = await api('POST', '/rest/v1/checkins', { token: B.token, body: { spot_id: tag + '-pending' } }); t('user: cannot check in at a pending gym', r.status >= 400, 'HTTP ' + r.status);
+  r = await api('POST', '/rest/v1/checkins', { token: B.token, body: { spot_id: spot, note: 'n'.repeat(141) } }); t('user: a note over 140 characters is refused', r.status >= 400, 'HTTP ' + r.status);
+  r = await api('POST', '/rest/v1/checkins', { token: B.token, body: { spot_id: spot, photo: 'javascript:alert(1)' } }); t('user: a non-https photo link is refused', r.status >= 400, 'HTTP ' + r.status);
+  r = await api('GET', '/rest/v1/checkins?select=id,user_id', { token: A.token }); t('user: reads only their own check-ins', r.json.length === 2 && r.json.every(x => x.user_id === A.id), `${r.json.length} rows`);
+  r = await api('GET', '/rest/v1/checkins?select=id', { token: B.token }); t("other user: cannot read A's check-ins", r.json.length === 0);
+  r = await api('DELETE', `/rest/v1/checkins?id=eq.${ci && ci.id}`, { token: B.token, prefer: rep }); t("other user: cannot delete A's check-in", denied(r), 'HTTP ' + r.status);
+  r = await api('PATCH', `/rest/v1/checkins?id=eq.${ci && ci.id}`, { token: A.token, body: { checked_at: '2020-01-01T00:00:00Z' }, prefer: rep }); t('user: cannot edit a check-in (no update policy)', denied(r), 'HTTP ' + r.status);
+  r = await api('DELETE', `/rest/v1/checkins?id=eq.${ci && ci.id}`, { token: A.token, prefer: rep }); t('user: can delete their own check-in', r.status === 200 && r.json.length === 1);
+
   // ---------------- moderator ----------------
   r = await api('GET', '/rest/v1/moderators?select=user_id', { token: M.token }); t('moderator: sees own moderator row', r.json.length === 1 && r.json[0].user_id === M.id);
   r = await api('GET', '/rest/v1/spots?select=id&status=eq.pending', { token: M.token }); t("moderator: sees everyone's pending spots", r.status === 200 && r.json.length >= 10, `${r.json.length} pending`);
@@ -157,6 +175,7 @@ const denied = r => r.status >= 400 || (Array.isArray(r.json) && r.json.length =
   await svc('DELETE', `/rest/v1/pending_edits?spot_id=in.(${seedIds.join(',')})`); await svc('DELETE', `/rest/v1/reports?spot_id=in.(${seedIds.join(',')})`);
   await svc('DELETE', `/rest/v1/moderators?user_id=eq.${M.id}`);
   await svc('DELETE', `/rest/v1/profiles?user_id=in.(${A.id},${B.id},${M.id})`);
+  await svc('DELETE', `/rest/v1/checkins?user_id=in.(${A.id},${B.id},${M.id})`); await svc('DELETE', `/rest/v1/marks?user_id=in.(${A.id},${B.id},${M.id})`);
 
   const w = Math.max(...results.map(x => x.name.length));
   results.forEach(x => console.log((x.ok ? 'PASS ' : 'FAIL ') + x.name.padEnd(w) + '  ' + x.detail));
