@@ -81,7 +81,8 @@ export async function startCheckin(spotId){
 }
 
 async function stamp(btn){
-  const { g, mode } = current;
+  const session = current;         // this sheet: it can be closed (or another opened) while the insert is in flight
+  const { g, mode } = session;
   const here = $('ciHere');
   if(mode === 'confirm' && here && !here.checked){
     here.setAttribute('aria-invalid', 'true'); here.focus();
@@ -91,8 +92,9 @@ async function stamp(btn){
   const note = ($('ciNote').value || '').trim().slice(0, 140) || null;
   btn.disabled = true; btn.textContent = 'Stamping…';
   const { data, error } = await window.sb.from('checkins').insert({ spot_id: g.id, note }).select('id, spot_id, checked_at, note').single();
+  const stillOpen = current === session;
   if(error){
-    btn.disabled = false; btn.textContent = 'Stamp it';
+    if(stillOpen){ btn.disabled = false; btn.textContent = 'Stamp it'; }
     if(missingTable(error)){ appState.checkinsAvailable = false; showToast('Check-ins are not switched on yet'); }
     else if(/already checked in/i.test(error.message || '')) showToast('Already checked in here today');
     else if(/row-level security|permission/i.test(error.message || '')) showToast('Could not check in: you may have reached today’s limit');
@@ -102,8 +104,16 @@ async function stamp(btn){
   appState.checkins.unshift(data);
   markAdded(g.id, 'climbed');                 // the server added the climbed mark with the check-in
   const spotById = new Map(appState.spots.map(s => [s.id, s]));
-  current.checkin = data;
-  current.milestones = milestonesFor(appState.checkins, data, spotById, { home: homeFromLocale(navigator.language), countryName });
+  session.checkin = data;
+  session.milestones = milestonesFor(appState.checkins, data, spotById, { home: homeFromLocale(navigator.language), countryName });
+  if(!stillOpen){
+    // Closed while saving: the check-in and the climbed mark stand. Say so, and still show a milestone it earned
+    // (close() ran before there was a check-in, so it could not).
+    refreshPage();
+    showToast('Checked in at ' + g.name);
+    showMilestones(session.milestones, cardFor(session));
+    return;
+  }
   body.innerHTML = stampedHtml(g, data, passportLine(appState.checkins, data, spotById, countryName));
   const svg = body.querySelector('.stamp');
   if(svg) svg.classList.add('stamp--landing');
