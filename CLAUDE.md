@@ -36,11 +36,12 @@ css/base.css            Reset, type scale, focus
 css/components.css      Shared components (.btn tiers, chips, fields, nav, dialogs, ...)
 css/explore.css         Explore: list pane/sheet, rows/cards, chips, search, pins, peek card
 css/page.css            Pages (gym, region/city, log, me)
-css/style.css           App layer (shell, map controls, forms, sessions); css/mod.css = /mod
+css/style.css           App layer (shell, map controls, forms, sessions); css/mod.css = /mod; css/passport.css = stamps, passport, sheets
 assets/icons.svg        Phosphor sprite; js/modules/icons.js icon(name)
 assets/boulder.svg      Photo placeholder (contour.svg: passport only)
 assets/mascot/, assets/brand/, icons/  Deer head, stamp head, first-run poses; antler crest, seals; app icon, favicon
 design/mascot/deer/     The owner's deer renders: source of the character (DESIGN.md sec. 1A, 12)
+design/tools/           Dev-only Python: mascot tracer + seal generator (not part of the app; README)
 js/supabase-init.js     window.sb (classic script)
 js/auth.js              window.auth (classic script)
 js/main.js              Entry ES module: init*() in order, then boot
@@ -58,7 +59,7 @@ js/modules/sheet.js     Mobile bottom sheet snaps
 js/modules/marks.js     Climbed/saved toggles
 js/modules/*-html.js, geo.js  Pure builders/helpers (unit-tested)
 js/modules/router.js    History API router; views render into <main id="view">
-js/modules/*-page.js    Page views: gym, region, log, me, mod, add (+ page-html.js, moderation-html.js, add-html.js, slug.js, mini-map.js)
+js/modules/*-page.js    Page views: gym, region, log, me, mod, add, passport (+ page-html.js, moderation-html.js, add-html.js, slug.js, mini-map.js)
 js/modules/nav.js       Top bar / tab bar ([data-nav])
 js/modules/modals.js    Focus/Escape, edit/report forms, info modals (adding a gym is the /add page)
 js/modules/auth-ui.js   Sign-in widget + modal
@@ -66,6 +67,7 @@ js/modules/data-load.js Spots/marks/moderator/pending loading + seed fallback
 js/modules/logbook.js   Logbook
 js/modules/moderation.js Moderator actions for /mod and the gym page verify control
 js/modules/community.js Provenance/contribution reads (+ provenance.js, pure: states, levels)
+js/modules/checkin.js   Check-in flow + START sheet (+ passport.js/stamp-html.js pure, passport-page.js, milestone-sheet.js, share-card.js)
 data/gyms.json          LEGACY seed dataset; app offline fallback + provenance input — NEVER read or edit
 data/gyms.reconciled.json FROZEN reconciliation/provenance dataset (= production at first import); not a runtime file
 import/                 Import pipeline: index/ (match index), batches/ (staging)

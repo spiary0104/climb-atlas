@@ -657,11 +657,11 @@ Contribution points are counted (new gym 15, photo 5, edit 5, confirm 1) and a l
 
 ### 11.1 Flow
 
-**Gym page → Check in** (primary action; requires sign-in; enabled when the device is within 500m or the user confirms "I'm here" on desktop) → a bottom sheet (dialog on desktop) with the gym name, today's date, an optional note (140 chars), an optional photo, and one primary button **Stamp it**. → **Stamp landing:** the sheet's header area shows the stamp animating in (scale 1.3 → 1 with `ease-stamp`, 320ms, a 6° rotation settled from 12°), reduced-motion shows it static. → **Passport line:** under the stamp, one sentence generated from data: "Your 11th visit here" / "Your first gym in Tokyo" / "3rd city this year". → two actions: **Log this session** (opens the session form pre-filled with this gym) and **Share** (opens the share-card preview). → Done returns to the gym page, where the action button now reads "Checked in today".
+**Gym page → Check in** (primary action; requires sign-in; owner decision 2026-09-27: phones ask for location on tap and check in within 500 m, farther is refused with the distance; desktop, or location denied/unavailable, confirms "I'm here") → a bottom sheet (dialog on desktop) with the gym name, today's date, an optional note (140 chars; no photo: owner decision, photos are links and could not go on the share card), and one primary button **Stamp it**. → **Stamp landing:** the sheet's header area shows the stamp animating in (scale 1.3 → 1 with `ease-stamp`, 320ms, a 6° rotation settled from 12°), reduced-motion shows it static. → **Passport line:** under the stamp, one sentence generated from data: "Your 11th visit here" / "Your first gym in Tokyo" / "3rd city this year". → two actions: **Log this session** (opens the session form pre-filled with this gym) and **Share** (opens the share-card preview). → Done returns to the gym page, where the action button now reads "Checked in today".
 
 ### 11.2 Data
 
-New table `checkins (id uuid pk, user_id uuid fk, spot_id text fk, checked_at timestamptz default now(), note text check (length ≤ 140), photo text, created_at)`, RLS owner-only read/write like `marks`, index on `(user_id, checked_at desc)` and `(spot_id)`. Not overloaded onto `marks` because check-ins are repeatable and timestamped. A check-in also inserts a `climbed` mark if absent. Milestones are computed client-side from the user's check-ins at stamp time (counts per gym, distinct cities, distinct countries, first-in-city, first-abroad relative to the user's home country); no achievements table is required for the first release.
+New table `checkins (id uuid pk, user_id uuid fk, spot_id text fk, checked_at timestamptz default now(), note text check (length ≤ 140), photo text, created_at)` (migration `20260927090000_checkins.sql`: user and time pinned by trigger, approved gyms only, one per gym per 12 hours, 30 a day, no updates, photo null or https), RLS owner-only read/write like `marks`, index on `(user_id, checked_at desc)` and `(spot_id)`. Not overloaded onto `marks` because check-ins are repeatable and timestamped. A check-in also inserts a `climbed` mark if absent. Milestones are computed client-side from the user's check-ins at stamp time (counts per gym, distinct cities, distinct countries, first-in-city, first-abroad relative to the user's home country); no achievements table is required for the first release.
 
 ### 11.3 Passport (`/me/passport`)
 
@@ -701,9 +701,9 @@ The deer is the brand's character (§1A). **Source of truth:** the owner's rende
 | App icon, favicon | `icons/` | platform | done |
 | Chalking-up | `assets/mascot/chalking-up.svg` | first-run Log; long loads | done |
 | Backpacker | `assets/mascot/backpacker.svg` | first-run Saved; first-run Explore; new city/country | done |
-| Traveller with passport | from `traveller-passport.png` | empty passport, check-in sheet | Phase 5 |
-| Topped-out (flag) | from `topped-out-flag.png` | milestone sheet | Phase 5 |
-| Dyno | from `dyno.png` | new top grade (milestone) | Phase 5 |
+| Traveller with passport | `assets/mascot/traveller-passport.svg` | empty passport (not the check-in sheet: the stamp head arrives with the stamp, one character per screen) | done |
+| Topped-out (flag) | `assets/mascot/topped-out-flag.svg` | milestone sheet | done |
+| Dyno | `assets/mascot/dyno.svg` | new top grade (milestone) | done |
 | High five | from `high-five.png` | native onboarding; first approved contribution | Phase 5+ |
 | Rest day | from `rest-day.png` | a quiet week in the log (optional) | later |
 | On the wall, fell off | — | marketing and stickers only | not in product |
@@ -912,7 +912,7 @@ Run after every phase. Each line is pass/fail.
 5. **Landing when geolocation is denied or unavailable.** Options: last city (local storage) → home country's largest city by gym count → world view at zoom 2. Recommendation: that order, with Sydney only as the *home-country* fallback for AU users, not globally.
 6. **Public profiles and handles.** Requires a `profiles.handle` with uniqueness and moderation of names. Recommendation: defer; ship `/me` private with a display name only.
 7. **App icon.** Resolved 2026-09-26 (Brand Pass): the cream head-on-boulder, installed now (§1A); the earlier sunset choice is superseded.
-8. **Check-in proximity rule.** 500m geofence on mobile with a manual "I'm here" confirmation on desktop is proposed. Confirm the radius and whether desktop check-ins are allowed at all.
+8. **Check-in proximity rule.** Resolved 2026-09-27: 500 m on phones (location asked on tap; farther is refused), "I'm here" confirmation on desktop or when location is denied/unavailable.
 9. **Publish-then-review scope.** Which fields publish immediately with review flagged (proposed: hours, price, links, photo) versus queue (name, location, types, deletion). Confirm.
 10. **Data columns.** Approve adding nullable `hours`, `day_pass_price`, `currency`, `website`, `instagram`, `facilities` in Phase 4 so contribution can start filling them, even though the display is optional/Phase 6.
 
@@ -976,3 +976,15 @@ Run after every phase. Each line is pass/fail.
 - *First-run art:* chalking-up and backpacker traced from the source by palette-snapping (flat, one fur shade step); one character per screen besides START.
 - *Bug found:* `assets/contour.svg` contained "--" inside an XML comment, so it never parsed standalone and the contour placeholder never rendered. Fixed; a test now checks every SVG asset.
 - *Not done in this pass:* the Phase 5 poses (traveller-passport, topped-out, dyno, high-five), the stamp component, and the passport page.
+
+**2026-09-27: Phase 5 (on `feature/bouldeer-brand-pass`, as the owner asked; owner decisions: 500 m + confirm fallback, local migration, note only).**
+- *Poses:* all ten source renders reviewed; Phase 5 needs three new traces (traveller-passport: empty passport; topped-out: milestone sheet; dyno: new highest grade), made with the committed `design/tools/trace_mascot.py` (topped-out adds an opt-in "granite" sample group). high-five, rest-day, on-the-wall and fell-off are not traced (not used in Phase 5).
+- *Schema:* `checkins` per sec. 11.2 (migration `20260927090000_checkins.sql`, local stack only, `test-rls-local.js` 85/85). A check-in adds the `climbed` mark in the database, with the person's own rights. Not applied to production; until it is, check-in says "Check-ins are not switched on yet".
+- *Flow:* Check in is the gym page's primary action ("Checked in today" for 12 hours after). The stamp lands in 320 ms (`ease-stamp`, instant under reduced motion). One passport sentence follows, then Log this session (gym pre-filled) · Share · Done. The milestone sheet appears when the check-in sheet closes, never more than once per session (sessionStorage plus an in-memory flag).
+- *Passport:* `/me/passport` (a Passport tab on /me): stat line, one stamp per city (suburb until a city field exists), tap to filter the recent check-ins. The traveller appears only when there are no check-ins. The contour page texture is not used yet.
+- *Milestones:* first stamp; every 5th distinct gym; first stamp abroad, then "First gym in <country>" (home = the browser locale's region; the home country never counts); a new highest sent grade within V-scale or YDS (not the first ever grade). Highest shows; others are listed.
+- *Share card:* 1080 x 1350 canvas; the stamp is redrawn natively because SVG-as-image cannot use web fonts. Web Share with the file where supported, else a PNG download.
+- *START (phones):* a sheet with "Check in at <gym>" (the gym page or selected gym) or "Check in nearby" (nearest gym within 500 m), and Log a session.
+- *Layout:* the mobile gym action row shows four 44px buttons with the icon over a short label (sec. 8.3); content-sized columns overflowed with the fourth button.
+- *Not built:* the Explore first-run empty state (sec. 7.10) never triggers while the dataset always has gyms in view.
+

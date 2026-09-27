@@ -7,13 +7,13 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 
 ## In progress
 ### Bouldeer redesign (docs/DESIGN.md sec. 17)
-- Status: Phases 0-1, 2, 3, 4 + Brand Pass stacked: `feature/bouldeer-design-foundations` → `-phase-2-explore` →
-  `-phase-3-pages` → `-phase-4-community` → `-brand-pass`. None merged; merge together. Next: Phase 5 (passport).
+- Status: Phases 0-1, 2, 3, 4, Brand Pass + Phase 5 stacked: `feature/bouldeer-design-foundations` → `-phase-2-explore`
+  → `-phase-3-pages` → `-phase-4-community` → `-brand-pass` (Phase 5 is on it). None merged; merge together.
 - Before merging: owner runs `supabase db push --linked` for `20260926072124_add_spot_slugs.sql` (client slug fallback covers
-  it) and `20260926084510_community_provenance.sql` (without it the provenance RPCs 404 and fall back to "Community-added", and
-  edit notes, decisions and profiles cannot save). Local check first: `node scripts/test-rls-local.js`.
+  it), `20260926084510_community_provenance.sql` (else provenance RPCs 404 and edit notes/decisions/profiles cannot save)
+  and `20260927090000_checkins.sql` (else check-in says "not switched on yet"). Check first: `node scripts/test-rls-local.js`.
 - Open: Lighthouse a11y >= 95 not measured; real-phone check (sheet drag, carousel, sticky gym actions); owner to approve
-  the Brand Pass marks (DESIGN.md 1A); Phase 5 poses to trace (12.1); Privacy/Terms drafts still name "Climb Atlas" (legal);
+  Phase 5 on a real phone (geofence, Web Share); Explore first-run art unbuilt (7.10); Privacy/Terms name "Climb Atlas" (legal);
   START and the Log tab both read "Log" (sec. 6.5); lake/plum colours provisional (sec. 19.1). Decisions: DESIGN.md log.
   Phase 4 not built (minimal schema, owner): publish-then-review for hours/price/links, website field, photo/confirm points.
 ### Gym import pipeline — first batch imported; follow-ups

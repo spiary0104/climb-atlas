@@ -20,7 +20,7 @@ Line refs drift: re-grep function names rather than trusting numbers.
 | `design/tokens.json` | W3C tokens for the native app, GENERATED from tokens.css: `node scripts/build-tokens-json.js` |
 | `css/base.css`, `css/components.css` | Reset/type scale/focus; shared components (`.btn` tiers, fields, search field, chips, tabs, top bar, tab bar + START, menu, dialogs, alerts, provenance, type tags, mascot hooks) |
 | `css/explore.css` | Explore: two-pane layout, rows/cards/placeholder, chips, search popover, All filters sheet, pins/clusters/labels, peek card, bottom sheet + carousel (< 1024px) |
-| `css/page.css`, `css/mod.css` | Pages: gym (sec. 8), region/city, log (calendar), me, /add; breadcrumb, panels, mini map, page rows/cards · /mod queue + side panel |
+| `css/page.css`, `css/mod.css`, `css/passport.css` | Pages: gym (sec. 8), region/city, log (calendar), me, /add; stamps, passport, check-in/milestone/START sheets; breadcrumb, panels, mini map, page rows/cards · /mod queue + side panel |
 | `css/style.css` | App layer: shell, toast/placing banner, MapLibre controls, edit form bits, session + moderation lists, About page |
 | `assets/icons.svg` | The one icon system: Phosphor Regular sprite (MIT); use `icon(name)` from `js/modules/icons.js` |
 | `assets/boulder.svg`, `assets/contour.svg` | Photo placeholder (the deer art's holds boulder; colours from `--placeholder-*`) · contour symbol kept for the passport. SVG files must be well-formed XML (tested) |
@@ -32,14 +32,15 @@ Line refs drift: re-grep function names rather than trusting numbers.
 | `js/modules/constants.js` | Type labels, country labels + fly targets, zoom thresholds (`PIN_DOT_MAX_ZOOM`, `LIST_CAP`), `motion()` |
 | `js/modules/regions.js` | `STATES_BY_COUNTRY` (static, ~620 lines) |
 | `js/modules/html-safe.js`, `utils.js` | Pure `escapeHtml` / `safeUrl` (http/https only); `directionsUrl`, `showToast` |
-| `js/modules/geo.js`, `search-index.js`, `pin-html.js`, `list-html.js`, `moderation-html.js`, `provenance.js`, `add-html.js` | PURE (no DOM, unit-tested): distance, antimeridian-safe bounds, stacked-pin offsets, URL state encode/decode, folding · search index + query · pin SVG · row/card/carousel/peek/empty/pill/search-option markup · /mod queue, diff, panel · provenance state/line, levels, display-name rule · /add steps, nearest-gym area, duplicate note |
+| `js/modules/geo.js`, `search-index.js`, `pin-html.js`, `list-html.js`, `moderation-html.js`, `provenance.js`, `add-html.js`, `passport.js`, `stamp-html.js` | PURE (no DOM, unit-tested): passport rules (stamps per city, passport line, milestones, grades) and stamp/passport/sheet markup · distance, antimeridian-safe bounds, stacked-pin offsets, URL state encode/decode, folding · search index + query · pin SVG · row/card/carousel/peek/empty/pill/search-option markup · /mod queue, diff, panel · provenance state/line, levels, display-name rule · /add steps, nearest-gym area, duplicate note |
 | `js/modules/router.js` | History API router (+ `/#/` fallback): `matchRoute`, `navigate`, `registerView`, `refreshPage`, title/canonical, nav `aria-current`. Explore stays mounted behind pages |
 | `js/modules/slug.js` | Pure slug rule mirroring the DB migration (fallback for rows without `slug`) + `gymPath`/`countryPath`/`regionPath`/`cityPath` |
 | `js/modules/page-html.js` | Pure page builders: gym page (+ provenance line, own-edit note, moderator verify), breadcrumb, map slot, page card/row, regions/place pages, calendar, log, me (+ contributions), not found |
-| `js/modules/gym-page.js`, `region-page.js`, `log-page.js`, `me-page.js`, `mod-page.js`, `add-page.js` | Page controllers (views): data gathering + `data-page-action` / `data-mod-action` / `data-add-action` handlers |
+| `js/modules/gym-page.js`, `region-page.js`, `log-page.js`, `me-page.js`, `mod-page.js`, `add-page.js`, `passport-page.js` | Page controllers (views): data gathering + `data-page-action` / `data-mod-action` / `data-add-action` handlers |
 | `js/modules/community.js` | Provenance + contribution reads (`spot_contributor_counts`, `spot_provenance`, own edit, own points), `saveDisplayName`; all fail soft |
 | `js/modules/mini-map.js` | Non-interactive MapLibre maps on pages: paper-toned (Positron via `paperBasemap` in map.js), destroyed on leave |
-| `js/modules/brand.js` | Pure: `sealSvg()` (BOULDEER seal, colour/mono) and `firstRunArt(kind)`: the only JS source of character markup besides the avatar |
+| `js/modules/brand.js` | Pure: `sealSvg()`, `firstRunArt(kind)`, `milestoneArt(pose)`: the only JS source of character markup besides the avatar |
+| `js/modules/checkin.js`, `milestone-sheet.js`, `share-card.js` | Check-in flow (500 m geofence on phones / "I'm here" confirm, insert, stamp landing, START sheet) · milestone sheet (once per session) · 1080x1350 share card (Web Share / download) |
 | `js/modules/explore.js` | Explore controller: `render()` (full refresh), selection/hover sync, peek card, URL + last camera, landing, Esc, the `explore` view |
 | `js/modules/map.js` | Map, `rebuildClusterIndex`/`paintMarkers` (supercluster r48/max15, pins, clusters, label tiers), `refreshPin`, `flyToPlace`, locate control; handlers set by explore.js |
 | `js/modules/list.js` | Scoped list: `renderList` (scope → sort → cap 400), status line, skeletons, empty states, carousel, row keyboard |
@@ -71,7 +72,8 @@ MapLibre → Supercluster → Supabase CDN → `supabase-init.js` → `auth.js` 
 
 ## Data model (`supabase/schema.sql`)
 `moderators`, `spots` (status pending/approved/rejected; insert needs sign-in + rate limit), `pending_edits`, `reports`,
-`marks`, `routes`, `sessions`, `session_climbs`, `profiles` (`display_name`, public read, own write).
+`marks`, `routes`, `sessions`, `session_climbs`, `profiles` (`display_name`, public read, own write), `checkins` (Phase 5:
+owner-only; user/time pinned by trigger; one per gym per 12 h, 30/day; adds the `climbed` mark).
 Spot shape: `id` (`seed-N` legacy, `community-<uuid>`, or frozen `g-<hex>` for imported gyms), `name`, `suburb`, `state`,
 `country`, `lat`, `lng`, `address`, `types[]` (`indoor-bouldering` | `top-rope` | `lead-climbing`), `notes`, `photo`,
 `community`, `edited`, `created_at`, `slug` (stored, unique, set on insert, never changed), `verified_at`, `rejection_reason`. `state` codes collide across
@@ -92,7 +94,7 @@ countries — always key on `country:state`.
 URL: `?q=<text>&place=AU:NSW[:Suburb]&c=lng,lat,z&t=boulder,toprope,lead&saved=1&climbed=1&photos=1`.
 
 ## Pages (DESIGN.md sec. 6.2, 8; Phase 3)
-`/gym/{slug}` · `/in` · `/in/{cc}` · `/in/{cc}/{region}` · `/in/{cc}/{region}/{city}` · `/log` · `/me[/saved|/climbed]` · `/mod` · `/add`.
+`/gym/{slug}` · `/in` · `/in/{cc}` · `/in/{cc}/{region}` · `/in/{cc}/{region}/{city}` · `/log` · `/me[/saved|/climbed]` · `/me/passport` · `/mod` · `/add`.
 `vercel.json` (and `serve.json` for `npx serve`) rewrite these to `index.html`; `router.route()` hides Explore, renders the
 view into `#view`, sets title/canonical; Back pops to the Explore URL left behind. Internal links: `<a href data-link>`.
 
@@ -121,7 +123,7 @@ Buttons: `.btn` + exactly one of `.btn-primary` (one per surface) / `-secondary`
 `.btn-icon`; destructive = `.btn-danger` (Escape never clicks it). New icon: add Phosphor path data to the sprite +
 `ICON_NAMES`. After editing tokens.css run `node scripts/build-tokens-json.js`.
 
-## Offline / PWA (`sw.js`, v11)
+## Offline / PWA (`sw.js`, v12)
 Shell precached (`SHELL_FILES`). Page loads (`mode: navigate`) of every app route share one cached shell (keyed `/`),
 whatever the path or query; other pages (about.html) are cached per path. Tiles cache-first; other same-origin + CDN files stale-while-revalidate;
 CDN tags carry `crossorigin="anonymous"`. Supabase: ONLY the public `GET /rest/v1/spots?...status=eq.approved` read
@@ -133,7 +135,8 @@ API ignores `Authorization`, so caching them would leak across users). Escape on
 escaping/URL safety, hostile-input rendering of every Explore builder, /mod panel and /add step, pure Explore modules
 (`explore-pure.test.js`: bounds, URL state, search index, pins, slugs, routes), page builders, service-worker caching (vm sandbox), static checks
 (no inline handlers, modal-close markers, reviewed template interpolations), design system (`design-system.test.js`).
-RLS: `node scripts/test-rls-local.js` against the local stack (`supabase start`, then `supabase db reset --local`).
+RLS: `node scripts/test-rls-local.js` against the local stack (`supabase start`, then `supabase db reset --local`), check-ins included.
+Artwork: `design/tools/` (Python, dev-only) regenerates the traced poses and static seals byte for byte (README there).
 
 ## Querying the seed data
 ```
