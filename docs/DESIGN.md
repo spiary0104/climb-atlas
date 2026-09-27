@@ -988,3 +988,10 @@ Run after every phase. Each line is pass/fail.
 - *Layout:* the mobile gym action row shows four 44px buttons with the icon over a short label (sec. 8.3); content-sized columns overflowed with the fourth button.
 - *Not built:* the Explore first-run empty state (sec. 7.10) never triggers while the dataset always has gyms in view.
 
+
+**2026-09-27: pre-merge audit fixes (owner-approved; on `feature/bouldeer-brand-pass`).**
+- *Service worker:* a duplicate precache entry (`icons/icon.svg`, Brand Pass B) made every install fail, so there was no offline shell; fixed, and the test worker now rejects duplicates like the real Cache API.
+- *Check-in limits:* the 12-hour and 30-a-day rules are enforced in the insert trigger under a per-person transaction lock, so simultaneous requests cannot exceed them (the audit got 4 of 8 through at one gym, and 33 in a day). The server names the refusal: not open for check-ins / already checked in here today / daily check-in limit reached, and the app shows the matching message (an ineligible gym is never reported as the limit).
+- *Check-in sheet:* closing it while the stamp saves keeps the check-in, confirms it with a toast and still shows an earned milestone (it used to throw). After stamping, focus moves to Done.
+- *Phones:* the check-in and milestone sheets are bottom sheets below 768px (sec. 6.3, 11.1, 12.3): full width up to 560px, top corners, top hairline, slide up, actions padded clear of the home indicator; one position, no grabber (modal, like All filters). Tablet and desktop keep the centred dialog.
+- *START:* its accessible name is "Start: check in at a gym or log a session" (the visible label stays "Log").

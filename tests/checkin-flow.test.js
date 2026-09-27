@@ -14,6 +14,7 @@ const url = (p) => pathToFileURL(path.join(ROOT, p)).href;
 // list, click handlers and the form fields the sheet reads.
 const stub = () => new Proxy(function () {}, { get: (t, k) => (k === Symbol.toPrimitive ? () => '' : k === 'then' ? undefined : stub()), apply: () => stub(), set: () => true });
 const els = new Map();
+let focused = null;   // the last fake element that received focus()
 function el(id) {
   if (!els.has(id)) {
     const classes = new Set(/Backdrop$/.test(id) ? ['hidden'] : []);
@@ -23,7 +24,12 @@ function el(id) {
       classList: { add: (c) => classes.add(c), remove: (c) => classes.delete(c), contains: (c) => classes.has(c), toggle: (c, on) => (on ?? !classes.has(c)) ? classes.add(c) : classes.delete(c) },
       addEventListener: (type, fn) => { (handlers[type] = handlers[type] || []).push(fn); },
       removeEventListener() {}, setAttribute() {}, removeAttribute() {}, getAttribute: () => null, focus() {},
-      querySelector: () => null, querySelectorAll: () => [], closest: () => null, contains: () => false, appendChild() {},
+      // [data-ci-action="x"] resolves to a focusable fake while the current markup contains that control
+      querySelector(sel) {
+        const m = /^\[data-ci-action="(\w+)"\]$/.exec(sel);
+        return m && this.innerHTML.includes(`data-ci-action="${m[1]}"`) ? { action: m[1], focus() { focused = this; } } : null;
+      },
+      querySelectorAll: () => [], closest: () => null, contains: () => false, appendChild() {},
     });
   }
   return els.get(id);
@@ -111,4 +117,48 @@ test('left open, the sheet lands the stamp as before', async () => {
   assert.deepEqual(unhandled, []);
   assert.match(el('checkinBody').innerHTML, /class="stamp"/);
   assert.match(el('checkinBody').innerHTML, /data-ci-action="done"/);
+  assert.equal(focused && focused.action, 'done', 'keyboard focus moves to Done after the focused "Stamp it" is replaced');
+});
+
+// The server names the reason (20260927090000_checkins.sql); only the matching message is shown, never a guessed limit.
+test('refusals: each server reason gets its own message; an ineligible gym is not reported as the daily limit', async () => {
+  const { checkin, appState } = await modules;
+  const cases = [
+    ['this gym is not open for check-ins', /isn’t open for check-ins any more/],
+    ['daily check-in limit reached', /30 check-ins in 24 hours/],
+    ['already checked in here today', /Already checked in here today/],
+    ['new row violates row-level security policy for table "checkins"', /^Could not check in — try again$/],
+  ];
+  const quiet = console.error; console.error = () => {};
+  try {
+    for (const [message, expected] of cases) {
+      el('checkinClose').handlers.click.forEach((f) => f());
+      appState.checkins = [];
+      window.sb = { from: () => ({ insert: () => ({ select: () => ({ single: async () => ({ data: null, error: { message } }) }) }) }) };
+      await checkin.startCheckin('g0');
+      el('ciHere').checked = true;
+      const btn = stampBtn();
+      click(btn); await tick(); await tick();
+      assert.match(el('toast').textContent, expected, message);
+      if (!/limit/.test(message)) assert.doesNotMatch(el('toast').textContent, /limit|30 check-ins/i, 'no limit wording for: ' + message);
+      assert.equal(btn.disabled, false, 'the open sheet can try again');
+      assert.equal(appState.checkins.length, 0);
+    }
+  } finally { console.error = quiet; }
+  assert.deepEqual(unhandled, []);
+});
+
+test('START names what it does, and the phone sheets are bottom sheets clear of the home indicator', () => {
+  const fs = require('node:fs');
+  const html = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
+  const start = /<button[^>]*class="start-btn"[^>]*>/.exec(html)[0];
+  const name = /aria-label="([^"]*)"/.exec(start)[1];
+  assert.match(name, /check in/i); assert.match(name, /log a session/i);
+  assert.ok(/\blog\b/i.test(name), 'the visible label "Log" is part of the accessible name (WCAG 2.5.3)');
+  const css = fs.readFileSync(path.join(ROOT, 'css', 'passport.css'), 'utf8').replace(/\r\n/g, '\n');
+  const from = css.indexOf('@media (max-width:767px){\n  #checkinModalBackdrop,#milestoneModalBackdrop{align-items:flex-end;}');
+  assert.ok(from >= 0, 'a phone rule anchors both sheets to the bottom edge');
+  const phone = css.slice(from, css.indexOf('\n}', from));
+  for (const part of ['border-radius:var(--radius-xl) var(--radius-xl) 0 0', 'env(safe-area-inset-bottom)', 'max-width:var(--size-sheet-max)', '.hidden .modal{transform:translateY(100%);}'])
+    assert.ok(phone.includes(part), 'phone sheet rule lacks ' + part);
 });

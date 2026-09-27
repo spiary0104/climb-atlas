@@ -34,7 +34,7 @@
 .checkin-row .gym-row-text{min-width:0;}
 .passport-empty .mascot--spot{display:block;margin:0 auto var(--space-3);}
 
-/* ----- sheets (dialogs; bottom sheets on phones via the shared .modal rules) ----- */
+/* ----- sheets: dialogs on tablet/desktop; the check-in and milestone sheets are bottom sheets on phones (below) ----- */
 .checkin-modal,.milestone-modal,.start-modal{position:relative;}
 .modal-x{position:absolute;top:var(--space-2);right:var(--space-2);}
 .checkin-where{display:flex;align-items:center;gap:var(--space-2);margin:0 0 var(--space-3);font-size:var(--type-text-sm-size);line-height:var(--type-text-sm-line);color:var(--color-text-secondary);}
@@ -58,6 +58,20 @@
 .milestone-modal .modal-actions{justify-content:center;}
 
 .start-actions{display:flex;flex-direction:column;gap:var(--space-2);margin:var(--space-3) 0 var(--space-2);}
+
+/* sec. 6.3 / 11.1 / 12.3: check in and the milestone are "bottom on mobile, dialog on desktop". On phones the sheet is
+   anchored to the bottom edge, full width up to --size-sheet-max, top corners only with a top hairline (the sheet
+   look), slides up from below, and keeps its actions clear of the home indicator. One position (content height, at
+   most 88% of the screen): these are modal sheets like All filters, not the draggable Explore sheet, so no grabber. */
+@media (max-width:767px){
+  #checkinModalBackdrop,#milestoneModalBackdrop{align-items:flex-end;}
+  .modal.checkin-modal,.modal.milestone-modal{
+    width:100%;max-width:var(--size-sheet-max);max-height:88vh;max-height:88dvh;margin-top:0;
+    border-width:var(--border-width) 0 0;border-radius:var(--radius-xl) var(--radius-xl) 0 0;
+    padding-bottom:calc(var(--space-4) + env(safe-area-inset-bottom));
+  }
+  #checkinModalBackdrop.hidden .modal,#milestoneModalBackdrop.hidden .modal{transform:translateY(100%);}
+}
 
 /* ----- gym page: four actions (Check in first); the short label on narrow screens ----- */
 .gym-actions .label-short{display:none;}

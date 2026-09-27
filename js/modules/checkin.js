@@ -95,9 +95,13 @@ async function stamp(btn){
   const stillOpen = current === session;
   if(error){
     if(stillOpen){ btn.disabled = false; btn.textContent = 'Stamp it'; }
+    // The server names the reason (migration 20260927090000); a bare RLS refusal is not assumed to be the daily limit.
+    const why = error.message || '';
     if(missingTable(error)){ appState.checkinsAvailable = false; showToast('Check-ins are not switched on yet'); }
-    else if(/already checked in/i.test(error.message || '')) showToast('Already checked in here today');
-    else if(/row-level security|permission/i.test(error.message || '')) showToast('Could not check in: you may have reached today’s limit');
+    else if(/already checked in/i.test(why)) showToast('Already checked in here today');
+    else if(/not open for check-ins/i.test(why)) showToast(`${g.name} isn’t open for check-ins any more`);
+    else if(/daily check-in limit/i.test(why)) showToast('That’s 30 check-ins in 24 hours, the most allowed. Try again later.');
+    else if(/sign in to check in|JWT/i.test(why)) showToast('Your sign-in has expired. Sign in again to check in.');
     else { showToast('Could not check in — try again'); console.error(error); }
     return;
   }
@@ -118,6 +122,9 @@ async function stamp(btn){
   const svg = body.querySelector('.stamp');
   if(svg) svg.classList.add('stamp--landing');
   refreshPage();                              // the gym page now reads "Checked in today"
+  // The focused "Stamp it" button was just replaced: give keyboard focus a home on Done, not the page body.
+  const done = body.querySelector('[data-ci-action="done"]');
+  if(done) done.focus();
 }
 
 const cardFor = c => ({ title: c.g.name, place: [c.g.suburb, countryName(c.g.country)].filter(Boolean).join(', '), date: c.checkin.checked_at, seed: c.g.id });
