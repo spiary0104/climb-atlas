@@ -137,6 +137,30 @@ const denied = r => r.status >= 400 || (Array.isArray(r.json) && r.json.length =
   r = await api('PATCH', `/rest/v1/checkins?id=eq.${ci && ci.id}`, { token: A.token, body: { checked_at: '2020-01-01T00:00:00Z' }, prefer: rep }); t('user: cannot edit a check-in (no update policy)', denied(r), 'HTTP ' + r.status);
   r = await api('DELETE', `/rest/v1/checkins?id=eq.${ci && ci.id}`, { token: A.token, prefer: rep }); t('user: can delete their own check-in', r.status === 200 && r.json.length === 1);
 
+  // Limits under simultaneous requests (pre-merge audit: a plain check-then-insert let 4 of 8 through). Temporary gyms.
+  const cTag = tag + '-c', cIds = Array.from({ length: 36 }, (_, i) => `${cTag}-${i}`);
+  await svc('POST', '/rest/v1/spots', [...cIds.map((id, i) => ({ id, name: 'RLS limit gym ' + i, suburb: 'L' + i, state: 'NSW', country: 'AU', lat: -33.8, lng: 151.2, types: ['indoor-bouldering'], status: 'approved' })),
+    { id: cTag + '-rejected', name: 'RLS rejected gym', suburb: 'X', state: 'NSW', country: 'AU', lat: 0, lng: 0, types: ['top-rope'], status: 'rejected' }]);
+  const C = await signup('c'), D = await signup('d');
+  const msg = x => (x.json && x.json.message) || '';
+  const burst = (who, ids) => Promise.all(ids.map(id => api('POST', '/rest/v1/checkins', { token: who.token, body: { spot_id: id } })));
+  for (const [label, id] of [['pending', tag + '-pending'], ['rejected', cTag + '-rejected'], ['missing', 'no-such-gym']]) {
+    r = await api('POST', '/rest/v1/checkins', { token: C.token, body: { spot_id: id } });
+    t(`user: a ${label} gym is refused as "not open for check-ins" (not a limit message)`, r.status >= 400 && /not open for check-ins/.test(msg(r)), `HTTP ${r.status} ${msg(r)}`);
+  }
+  let rs = await burst(C, Array(10).fill(cIds[0]));
+  t('simultaneous: 10 check-ins at one gym at once -> exactly 1 lands (12-hour rule)', rs.filter(x => x.status === 201).length === 1 && rs.filter(x => x.status !== 201).every(x => /already checked in here today/.test(msg(x))), rs.filter(x => x.status === 201).length + ' landed');
+  rs = await burst(D, [cIds[0]]);
+  t('simultaneous: another person checking in at the same gym is not blocked', rs[0].status === 201, 'HTTP ' + rs[0].status);
+  for (let i = 1; i < 25; i++) await api('POST', '/rest/v1/checkins', { token: D.token, body: { spot_id: cIds[i] } });
+  rs = await burst(D, cIds.slice(25, 35));
+  r = await api('GET', '/rest/v1/checkins?select=id', { token: D.token });
+  t('simultaneous: 10 at once with 25 already -> exactly 5 land, the day stops at 30', rs.filter(x => x.status === 201).length === 5 && r.json.length === 30 && rs.filter(x => x.status !== 201).every(x => /daily check-in limit reached/.test(msg(x))), `${rs.filter(x => x.status === 201).length} landed, ${r.json.length} total`);
+  r = await api('POST', '/rest/v1/checkins', { token: D.token, body: { spot_id: cIds[35] } });
+  t('user: the 31st check-in in a day is refused with the daily-limit message', r.status >= 400 && /daily check-in limit reached/.test(msg(r)), `HTTP ${r.status} ${msg(r)}`);
+  await svc('DELETE', `/rest/v1/checkins?user_id=in.(${C.id},${D.id})`); await svc('DELETE', `/rest/v1/marks?user_id=in.(${C.id},${D.id})`);
+  await svc('DELETE', `/rest/v1/spots?id=like.${cTag}*`);
+
   // ---------------- moderator ----------------
   r = await api('GET', '/rest/v1/moderators?select=user_id', { token: M.token }); t('moderator: sees own moderator row', r.json.length === 1 && r.json[0].user_id === M.id);
   r = await api('GET', '/rest/v1/spots?select=id&status=eq.pending', { token: M.token }); t("moderator: sees everyone's pending spots", r.status === 200 && r.json.length >= 10, `${r.json.length} pending`);
