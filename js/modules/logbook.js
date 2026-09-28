@@ -4,7 +4,9 @@ import { showMilestones } from './milestone-sheet.js';
 import { newTopGrade } from './passport.js';
 import { firstRunArt } from './brand.js';
 import { MOODS, TYPE_LABELS } from './constants.js';
+import { buildPickerIndex, gymsInCountry, pickerBrowseHtml, pickerCurrentHtml, pickerGymsHtml, pickerResultsHtml, queryGyms } from './gym-picker.js';
 import { icon } from './icons.js';
+import { stateLabel } from './map.js';
 import { refreshPage } from './router.js';
 import { appState } from './state.js';
 import { escapeHtml, showToast } from './utils.js';
@@ -63,17 +65,90 @@ function moodHtml(mood){
 const addSessionModalBackdrop = document.getElementById('addSessionModalBackdrop');
 const sClimbsList = document.getElementById('sClimbsList');
 
-function populateGymSelect(){
-  if(appState.gymSelectPopulated) return;
-  const sel = document.getElementById('sGym');
-  const sorted = appState.spots.slice().sort((a,b)=>a.name.localeCompare(b.name));
-  sorted.forEach(g=>{
-    const opt = document.createElement('option');
-    opt.value = g.id;
-    opt.textContent = `${g.name} — ${g.suburb}`;
-    sel.appendChild(opt);
+// --- the gym picker (gym-picker.js): the chosen id lives in the hidden #sGym, which the save below reads ---
+const gymInput = document.getElementById('sGym');
+const gymCurrent = document.getElementById('sGymCurrent');
+const gymPanel = document.getElementById('sGymPanel');
+const gymSearch = document.getElementById('sGymSearch');
+const gymResults = document.getElementById('sGymResults');
+let pickerIndex = null, pickerSpots = null, activeOption = -1;
+
+function pickerIdx(){
+  if(pickerSpots !== appState.spots){ pickerIndex = buildPickerIndex(appState.spots, { stateLabel }); pickerSpots = appState.spots; }
+  return pickerIndex;
+}
+function renderCurrent(){
+  gymCurrent.innerHTML = pickerCurrentHtml(pickerIdx().byId.get(gymInput.value) || null, !gymPanel.hidden);
+}
+function renderResults(){
+  const q = gymSearch.value;
+  activeOption = -1;
+  gymSearch.removeAttribute('aria-activedescendant');
+  if(q.trim()){
+    gymResults.innerHTML = pickerResultsHtml(q, queryGyms(pickerIdx(), q), gymInput.value);
+    const list = gymResults.querySelector('[role="listbox"]');
+    gymSearch.setAttribute('aria-expanded', list ? 'true' : 'false');
+    if(list) gymSearch.setAttribute('aria-controls', list.id); else gymSearch.removeAttribute('aria-controls');
+  }else{
+    gymResults.innerHTML = pickerBrowseHtml(pickerIdx(), gymInput.value);
+    gymSearch.setAttribute('aria-expanded', 'false');
+    gymSearch.removeAttribute('aria-controls');
+  }
+}
+function openPicker(){
+  gymPanel.hidden = false;
+  gymSearch.value = '';
+  renderResults();
+  renderCurrent();
+  gymSearch.focus();
+}
+function closePicker({ focus = true } = {}){
+  gymPanel.hidden = true;
+  gymSearch.setAttribute('aria-expanded', 'false');
+  renderCurrent();
+  if(focus) document.getElementById('sGymToggle').focus();
+}
+function chooseGym(id){
+  gymInput.value = id && pickerIdx().byId.has(id) ? id : '';
+  closePicker();
+}
+function moveActive(step){
+  const opts = [...gymResults.querySelectorAll('[role="option"]')];
+  if(!opts.length) return;
+  activeOption = (activeOption + step + opts.length) % opts.length;
+  opts.forEach((o, i) => o.classList.toggle('is-active', i === activeOption));
+  gymSearch.setAttribute('aria-activedescendant', opts[activeOption].id);
+  opts[activeOption].scrollIntoView({ block: 'nearest' });
+}
+function initGymPicker(){
+  gymCurrent.addEventListener('click', (e)=>{
+    if(!e.target.closest('#sGymToggle')) return;
+    if(gymPanel.hidden) openPicker(); else closePicker();
   });
-  appState.gymSelectPopulated = true;
+  gymSearch.addEventListener('input', renderResults);
+  gymSearch.addEventListener('keydown', (e)=>{
+    if(e.key === 'ArrowDown' || e.key === 'ArrowUp'){ e.preventDefault(); moveActive(e.key === 'ArrowDown' ? 1 : -1); }
+    else if(e.key === 'Enter'){
+      e.preventDefault();
+      const opts = gymResults.querySelectorAll('[role="option"]');
+      const pick = opts[activeOption] || (opts.length === 1 ? opts[0] : null);
+      if(pick) chooseGym(pick.dataset.gymId);
+    }else if(e.key === 'Escape'){
+      e.stopPropagation();                       // Escape closes only the top layer: the picker, not the dialog
+      if(gymSearch.value){ gymSearch.value = ''; renderResults(); } else closePicker();
+    }
+  });
+  gymResults.addEventListener('click', (e)=>{
+    const pick = e.target.closest('[data-gym-id]');
+    if(pick) chooseGym(pick.dataset.gymId);
+  });
+  // A country's gyms are rendered when it is opened (toggle does not bubble: capture it).
+  gymResults.addEventListener('toggle', (e)=>{
+    const d = e.target;
+    if(!d.open || !d.matches('.picker-country')) return;
+    const body = d.querySelector('.picker-country-gyms');
+    if(body && !body.childElementCount) body.innerHTML = pickerGymsHtml(gymsInCountry(pickerIdx(), d.dataset.country), gymInput.value);
+  }, true);
 }
 
 function renderClimbRows(){
@@ -97,10 +172,10 @@ function addClimbRow(){
 }
 
 function openAddSessionModal(spotId){
-  populateGymSelect();
   document.getElementById('sDate').value = new Date().toISOString().slice(0,10);
   document.getElementById('sMood').value = 'good';
-  document.getElementById('sGym').value = spotId && appState.spots.some(s => s.id === spotId) ? spotId : '';
+  gymInput.value = spotId && pickerIdx().byId.has(spotId) ? spotId : '';
+  closePicker({ focus: false });
   document.getElementById('sNotes').value = '';
   appState.draftClimbs = [];
   addClimbRow();
@@ -134,6 +209,7 @@ export async function deleteSession(id, btn){
 }
 
 export function initLogbook(){
+  initGymPicker();
   addSessionModalBackdrop.addEventListener('click', (e)=>{
     if(e.target === addSessionModalBackdrop) closeAddSessionModal();
   });

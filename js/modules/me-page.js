@@ -3,7 +3,7 @@
 // No email address is shown (sec. 18 Provenance: "no email addresses visible anywhere").
 import { openAuthModal } from './auth-ui.js';
 import { loadMyCommunity, saveDisplayName } from './community.js';
-import { isContributor, levelFor, validDisplayName } from './provenance.js';
+import { displayNameSaveMessage, isContributor, isMissingTable, levelFor, validDisplayName } from './provenance.js';
 import { stateLabel } from './map.js';
 import { startAddGym } from './modals.js';
 import { mePageHtml, pageSkeletonHtml } from './page-html.js';
@@ -64,8 +64,9 @@ export function initMePage(){
       showToast('Display name saved');
       refreshPage();
     }catch(err){
-      hint.textContent = 'Could not save — try again.';
-      console.error(err);
+      hint.textContent = displayNameSaveMessage(err);      // the real reason, not always "try again"
+      if(isMissingTable(err) && appState.myCommunity){ appState.myCommunity.profilesAvailable = false; refreshPage(); }
+      else console.error(err);
     }
   });
   document.getElementById('view').addEventListener('click', (e)=>{

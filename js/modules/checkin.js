@@ -61,7 +61,7 @@ function open(html){ body.innerHTML = html; backdrop.classList.remove('hidden');
 
 export async function startCheckin(spotId){
   const g = appState.spots.find(s => s.id === spotId);
-  if(!g) return;
+  if(!g){ showToast('This gym is still loading. Try again in a moment.'); return; }
   if(!window.auth.user){ showToast('Sign in to check in and collect stamps'); openAuthModal(); return; }
   if(!window.sb){ showToast('Supabase is not configured — see README.md'); return; }
   if(!appState.checkinsLoaded) await loadCheckins();
@@ -69,6 +69,7 @@ export async function startCheckin(spotId){
   if(checkedInRecently(g.id)){ showToast('Already checked in here today'); return; }
   let mode = 'confirm', distance = '';
   if(coarsePointer()){
+    showToast('Checking your location…');   // GPS can take seconds: say something is happening
     const here = await locate();
     if(here){
       const km = distanceKm(here, g);
@@ -151,6 +152,7 @@ export function openStartSheet(){
   startBackdrop.classList.remove('hidden');
 }
 async function checkInNearby(){
+  showToast('Checking your location…');
   const here = await locate();
   if(!here){ showToast('Open a gym’s page to check in there'); return; }
   let best = null;

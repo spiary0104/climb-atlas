@@ -227,6 +227,7 @@
   --z-topbar:700;
   --z-toast:900;
   --z-dialog:1000;
+  --z-status:1100;             /* the toast: feedback from inside a dialog or sheet is never covered by it */
   --z-skip-link:2000;
 }
 

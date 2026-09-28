@@ -121,6 +121,9 @@ const SAFE_EXPR = [
   /^textField\('[a-zA-Z]+', '[A-Za-z ]+', d\.[a-zA-Z]+\)$/,
   // brand.js: the seal builder takes only literal options and escapes its label
   /^sealSvg\(\)$/, /^(arc|clip|head|CREST|pose|art)$/,
+  // gym-picker.js (Log a session): text/none/groups are assembled in the same builder from escapeHtml()ed names, places,
+  // labels and codes, Number()ed counts and literal icon names
+  /^(text|none|groups)$/,
 ];
 // A conditional is safe when every branch that can be rendered is safe: a fixed string literal, a template whose own
 // interpolations are all safe, or a nested conditional (checked recursively). The condition itself is never rendered.
@@ -161,7 +164,8 @@ test('HTML-building templates only interpolate escaped or reviewed-safe expressi
     'js/modules/page-html.js', 'js/modules/gym-page.js', 'js/modules/router.js', 'js/modules/slug.js', 'js/modules/region-page.js', 'js/modules/mini-map.js',
     'js/modules/provenance.js', 'js/modules/community.js', 'js/modules/me-page.js', 'js/modules/log-page.js', 'js/modules/mod-page.js',
     'js/modules/add-html.js', 'js/modules/add-page.js', 'js/modules/brand.js',
-    'js/modules/stamp-html.js', 'js/modules/passport.js', 'js/modules/checkin.js', 'js/modules/passport-page.js', 'js/modules/milestone-sheet.js', 'js/modules/share-card.js'];
+    'js/modules/stamp-html.js', 'js/modules/passport.js', 'js/modules/checkin.js', 'js/modules/passport-page.js', 'js/modules/milestone-sheet.js', 'js/modules/share-card.js',
+    'js/modules/gym-picker.js'];
   const unsafe = [];
   for (const f of files) {
     // lines that assign to .textContent are not markup (the browser treats the value as text)

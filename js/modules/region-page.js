@@ -6,9 +6,9 @@ import { COUNTRY_LABELS, COUNTRY_TO_REGION, REGION_LABELS } from './constants.js
 import { encodeExploreState, fitCamera } from './geo.js';
 import { stateLabel } from './map.js';
 import { destroyMiniMaps, mountMiniMaps } from './mini-map.js';
-import { notFoundHtml, pageSkeletonHtml, placePageHtml, regionsIndexHtml } from './page-html.js';
+import { notFoundHtml, pageSkeletonHtml, placePageHtml, regionSearchResultsHtml, regionsIndexHtml } from './page-html.js';
 import { registerView, setPageTitle } from './router.js';
-import { placeKey } from './search-index.js';
+import { buildSearchIndex, placeKey, querySearchIndex } from './search-index.js';
 import { citySegment, cityPath, countryPath, gymPath, regionPath, regionSegment } from './slug.js';
 import { appState } from './state.js';
 
@@ -125,7 +125,35 @@ function cityView({ country, region, city }, view){
   }), gyms, name + ', ' + regionName);
 }
 
+// /in search: the app's search index (search-index.js, the one Explore uses): countries, regions, cities, then gyms, each
+// a link to its page. Only countries with a page are offered.
+function regionSearchItems(text){
+  const idx = appState.searchIndex || (appState.searchIndex = buildSearchIndex(appState.spots, { countryLabels: COUNTRY_LABELS, stateLabel }));
+  const r = querySearchIndex(idx, text);
+  const byId = new Map(appState.spots.map(g => [g.id, g]));
+  const known = e => !!COUNTRY_LABELS[e.country];
+  return [
+    ...r.country.filter(known).map(e => ({ kind: 'country', label: e.label, secondary: '', href: countryPath(e.country), count: e.count })),
+    ...r.region.filter(known).map(e => ({ kind: 'region', label: e.label, secondary: e.secondary, href: regionPath(e.country, e.state), count: e.count })),
+    ...r.city.filter(known).map(e => ({ kind: 'city', label: e.label, secondary: e.secondary, href: cityPath(e.country, e.state, e.label), count: e.count })),
+    ...r.gym.map(e => byId.get(e.id)).filter(Boolean).map(g => ({ kind: 'gym', label: g.name, secondary: [g.suburb, stateLabel(g.country, g.state)].filter(Boolean).join(' · '), href: gymPath(g), count: 0 })),
+  ];
+}
+
 export function initRegionPages(){
+  const view = document.getElementById('view');
+  view.addEventListener('input', (e)=>{
+    if(e.target.id !== 'regionSearch') return;
+    const q = e.target.value;
+    document.getElementById('regionResults').innerHTML = regionSearchResultsHtml(q, q.trim() ? regionSearchItems(q) : []);
+    document.getElementById('regionBrowse').hidden = !!q.trim();     // results replace browsing while there is a query
+  });
+  view.addEventListener('submit', (e)=>{
+    if(!e.target.closest('[data-page-form="region-search"]')) return;
+    e.preventDefault();
+    const first = view.querySelector('.regions-hit');                // Enter opens the top result
+    if(first) first.click();
+  });
   registerView('regions', { enter: regionsView, leave: destroyMiniMaps });
   registerView('country', { enter: countryView, leave: destroyMiniMaps });
   registerView('region', { enter: regionView, leave: destroyMiniMaps });

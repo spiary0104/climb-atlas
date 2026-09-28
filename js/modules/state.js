@@ -64,5 +64,4 @@ export const appState = {
   lastFocused: null,
 
   seedDataPromise: null, // in-flight fetch of data/gyms.json (see data-load.js ensureSeedData)
-  gymSelectPopulated: false,
 };

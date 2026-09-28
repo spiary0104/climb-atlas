@@ -85,7 +85,8 @@ const SHELL_FILES = [
   'js/modules/auth-ui.js',
   'js/modules/data-load.js',
   'js/modules/logbook.js',
-  'js/modules/moderation.js'
+  'js/modules/moderation.js',
+  'js/modules/gym-picker.js'
 ];
 
 // Hosts whose responses are map tiles/sprites/glyphs -- worth caching

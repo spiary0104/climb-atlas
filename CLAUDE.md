@@ -64,7 +64,7 @@ js/modules/nav.js       Top bar / tab bar ([data-nav])
 js/modules/modals.js    Focus/Escape, edit/report forms, info modals (adding a gym is the /add page)
 js/modules/auth-ui.js   Sign-in widget + modal
 js/modules/data-load.js Spots/marks/moderator/pending loading + seed fallback
-js/modules/logbook.js   Logbook
+js/modules/logbook.js   Logbook + "Log a session" (+ gym-picker.js, pure: gym search / continent browse)
 js/modules/moderation.js Moderator actions for /mod and the gym page verify control
 js/modules/community.js Provenance/contribution reads (+ provenance.js, pure: states, levels)
 js/modules/checkin.js   Check-in flow + START sheet (+ passport.js/stamp-html.js pure, passport-page.js, milestone-sheet.js, share-card.js)

@@ -130,12 +130,13 @@
         <button type="button" class="btn btn-secondary btn-sm map-float" data-theme="paper" id="searchThisArea" hidden>Search this area</button>
       </div>
       <div class="placing-banner map-float" data-theme="paper" id="placingBanner">Click anywhere on the map to drop a pin for the gym</div>
-      <div class="toast" id="toast" role="status" aria-live="polite"></div>
     </main>
     <section class="peek map-float" id="peek" data-theme="paper" aria-labelledby="peekTitle" hidden></section>
     <p class="visually-hidden" id="liveRegion" aria-live="polite"></p>
   </div>
   <main class="page-view" id="view" data-theme="paper" tabindex="-1" hidden></main>
+  <!-- In the shell, not in #explore: Explore is hidden while a page shows, and its toasts went with it. -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <nav class="tabbar" aria-label="Primary" data-theme="paper">
     <button type="button" class="tabbar-item" data-nav="explore" aria-current="page"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-map-trifold"/></svg><span>Explore</span></button>
     <button type="button" class="tabbar-item" data-nav="regions"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-squares-four"/></svg><span>Regions</span></button>
@@ -411,9 +412,15 @@
         </select>
       </div>
     </div>
-    <div class="field">
-      <label for="sGym">Gym (optional)</label>
-      <select id="sGym"><option value="">No specific gym</option></select>
+    <div class="field gym-picker">
+      <!-- Search or browse instead of a 2,000-option select (logbook.js + gym-picker.js). #sGym holds the chosen id. -->
+      <label for="sGymSearch" id="sGymLabel">Gym (optional)</label>
+      <div class="gym-picker-current" id="sGymCurrent"></div>
+      <div class="gym-picker-panel" id="sGymPanel" hidden>
+        <input type="search" id="sGymSearch" role="combobox" aria-expanded="false" aria-autocomplete="list" autocomplete="off" enterkeyhint="search" placeholder="Search by gym, city or country">
+        <div class="gym-picker-results" id="sGymResults"></div>
+      </div>
+      <input type="hidden" id="sGym" value="">
     </div>
     <div class="field">
       <div class="field-label">Climbs logged</div>

@@ -112,12 +112,31 @@ export function gymCollectionHtml(items){
     : `<div class="card-grid">${items.map(i => pageCardHtml(i.g, i.ctx)).join('')}</div>`;
 }
 
-// /in: every country with gyms, grouped by continent. groups: [{title, items: tiles}]
+// /in: a search field over countries, regions, cities and gyms, then every country with gyms grouped by continent. The
+// continents start collapsed (real-phone test 2026-09-28: the fully expanded list was far too long on a phone); each
+// summary says how many countries and gyms it holds. groups: [{title, items: tiles}]
 export function regionsIndexHtml(groups, total){
-  return `<article class="page place-page"><header class="place-header"><h1 class="page-title">Regions</h1>`
-    + `<p class="place-meta tnum">${escapeHtml(countLabel(total))} in ${escapeHtml(groups.reduce((n, g) => n + g.items.length, 0))} countries</p></header>`
-    + groups.map((g, i) => `<section class="page-section" aria-labelledby="continent-${Number(i)}"><h2 class="section-title" id="continent-${Number(i)}">${escapeHtml(g.title)}</h2>${tileGridHtml(g.items)}</section>`).join('')
-    + `</article>`;
+  const countries = groups.reduce((n, g) => n + g.items.length, 0);
+  return `<article class="page place-page regions-page"><header class="place-header"><h1 class="page-title">Regions</h1>`
+    + `<p class="place-meta tnum">${escapeHtml(countLabel(total))} in ${escapeHtml(countries)} countries</p></header>`
+    + `<form class="regions-search" role="search" data-page-form="region-search"><label class="visually-hidden" for="regionSearch">Search countries, regions, cities and gyms</label>`
+    + `${icon('magnifying-glass', {size:'sm'})}<input class="input" type="search" id="regionSearch" autocomplete="off" enterkeyhint="search" placeholder="Search a country, region, city or gym"></form>`
+    + `<div class="regions-results" id="regionResults" aria-live="polite"></div>`
+    + `<div class="regions-browse" id="regionBrowse">`
+    + groups.map(g => `<details class="page-section region-continent"><summary class="region-continent-summary">${icon('caret-right', {size:'sm'})}`
+      + `<h2 class="section-title">${escapeHtml(g.title)}</h2><span class="region-continent-count tnum">${escapeHtml(g.items.length === 1 ? '1 country' : g.items.length + ' countries')} · ${escapeHtml(countLabel(g.items.reduce((n, t) => n + t.count, 0)))}</span></summary>`
+      + `${tileGridHtml(g.items)}</details>`).join('')
+    + `</div></article>`;
+}
+
+// /in search results. items: [{kind: country|region|city|gym, label, secondary, href, count}] (region-page.js ranks them).
+const PLACE_KIND = { country: 'Country', region: 'Region', city: 'City', gym: 'Gym' };
+export function regionSearchResultsHtml(query, items){
+  if(!String(query || '').trim()) return '';
+  if(!items.length) return `<p class="empty-state regions-empty">No places or gyms match “${escapeHtml(String(query).trim())}”. Check the spelling, or browse by continent below.</p>`;
+  return `<ul class="page-list regions-hits">` + items.map(i => `<li><a class="page-row regions-hit" href="${escapeHtml(i.href)}" data-link>`
+    + `<span class="gym-row-text"><span class="gym-row-title">${escapeHtml(i.label)}</span><span class="gym-row-meta">${escapeHtml([PLACE_KIND[i.kind] || '', i.secondary].filter(Boolean).join(' · '))}</span></span>`
+    + (i.kind === 'gym' ? '' : `<span class="gym-row-distance tnum">${escapeHtml(countLabel(i.count))}</span>`) + `</a></li>`).join('') + `</ul>`;
 }
 
 // Country / region / city page. p: {crumbs, title, meta, tilesTitle, tiles, gymsTitle, gyms: [{g, ctx}], map: mapThumbHtml args}
@@ -204,10 +223,12 @@ export function mePageHtml(p){
 export function meContributionsHtml(c){
   if(!c) return '';
   const points = c.points === null ? '' : `<p class="me-points tnum"><strong>${Number(c.points)}</strong> points · level ${Number(c.level)}${c.contributor ? ' · Contributor' : ''}</p>`;
+  // Before the profiles table exists (migration 20260926084510 not applied) the name cannot be saved: say so, disabled.
+  const unavailable = c.profilesAvailable === false;
   const form = `<form class="me-name" data-page-form="display-name" novalidate><label class="field-label" for="displayName">Display name</label>`
-    + `<div class="me-name-row"><input class="input" id="displayName" name="displayName" maxlength="40" autocomplete="nickname" value="${escapeHtml(c.displayName)}">`
-    + `<button type="submit" class="btn btn-secondary">Save</button></div>`
-    + `<p class="form-hint" id="displayNameHint" aria-live="polite">Shown as “added by …” on gyms you add or edit. Never your email.</p></form>`;
+    + `<div class="me-name-row"><input class="input" id="displayName" name="displayName" maxlength="40" autocomplete="nickname" value="${escapeHtml(c.displayName)}"${unavailable ? ' disabled' : ''}>`
+    + `<button type="submit" class="btn btn-secondary"${unavailable ? ' disabled' : ''}>Save</button></div>`
+    + `<p class="form-hint" id="displayNameHint" aria-live="polite">${unavailable ? 'Display names aren’t switched on yet. You can set yours once they are.' : 'Shown as “added by …” on gyms you add or edit. Never your email.'}</p></form>`;
   const subs = (c.submissions || []).map(s => `<li class="me-submission"><span class="me-submission-name">${escapeHtml((s.kind === 'edit' ? 'Edit to ' : 'New gym: ') + s.name)}</span>`
     + ` <span class="${s.status === 'pending' ? 'provenance-pending' : 'provenance-rejected'}">${s.status === 'pending' ? 'In review' : 'Not accepted'}</span>`
     + `${s.status === 'rejected' && s.reason ? `<span class="me-submission-reason">${escapeHtml(s.reason)}</span>` : ''}</li>`).join('');

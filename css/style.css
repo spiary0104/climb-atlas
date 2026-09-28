@@ -22,15 +22,18 @@ body.app-body{overflow:hidden;}
   box-shadow:var(--shadow-raised);
 }
 
-/* Toast: short status text on the inverse surface (never the character; sec. 12.2) */
+/* Toast: short status text on the inverse surface (never the character; sec. 12.2). It lives in the app shell and is
+   fixed, so it shows on Explore, on every page and over dialogs; below the top bar where there is one, below the status
+   bar on phones; long messages wrap instead of running off a phone screen. */
 .toast{
-  position:absolute;top:var(--space-4);left:50%;z-index:var(--z-toast);
+  position:fixed;top:calc(var(--size-topbar-desktop) + var(--space-4));left:50%;z-index:var(--z-status);
+  width:max-content;max-width:calc(100vw - var(--space-4) * 2);text-align:center;
   transform:translateX(-50%) translateY(calc(var(--space-2) * -1));
   padding:var(--space-2) var(--space-4);
   background:var(--color-surface-inverse);color:var(--color-text-inverse);
   border-radius:var(--radius-md);box-shadow:var(--shadow-raised);
   font-size:var(--type-text-md-size);line-height:var(--type-text-md-line);font-weight:var(--font-weight-medium);
-  white-space:nowrap;opacity:0;pointer-events:none;
+  opacity:0;pointer-events:none;
   transition:opacity var(--motion-slow) var(--ease-standard), transform var(--motion-slow) var(--ease-standard);
 }
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
@@ -92,21 +95,63 @@ body.app-body{overflow:hidden;}
 .climb-chip.sent{border-color:var(--color-accent-solid);color:var(--color-accent-text);}
 .mood{display:inline-flex;align-items:center;gap:var(--space-1);}
 .climb-rows{display:flex;flex-direction:column;gap:var(--space-2);}
+/* A logged climb. The rows sit inside .field, whose input rule (width:100%, 0,3,1) used to outrank these and stretched
+   the attempts box across the row, pushing Sent and remove out of the dialog. The .climb-rows scope ties that rule and,
+   coming later, wins on purpose. Two lines at every width (the dialog is 380px everywhere): type + grade, then
+   attempts · Sent · remove. Controls keep the shared field height and type size. */
 .climb-row{
-  display:flex;gap:var(--space-2);align-items:center;
+  display:flex;flex-wrap:wrap;gap:var(--space-2);align-items:center;
   padding:var(--space-2);
   background:var(--color-surface-subtle);
   border:var(--border-width) solid var(--color-border-subtle);border-radius:var(--radius-md);
 }
-.climb-row select.climb-type{flex:1.3;min-width:0;}
-.climb-row input.climb-grade{flex:1;min-width:0;}
-.climb-row input.climb-attempts{width:var(--size-touch-min);flex:none;}
-.climb-row label.climb-sent{display:flex;align-items:center;gap:var(--space-1);flex:none;font-size:var(--type-caption-size);color:var(--color-text-secondary);white-space:nowrap;}
-.climb-row select,.climb-row input[type="text"],.climb-row input[type="number"]{
-  min-height:var(--size-control-sm);padding:0 var(--space-2);
+.climb-rows .climb-row :is(select, input[type="text"], input[type="number"]){min-width:0;padding:0 var(--space-2);}
+.climb-rows .climb-row select.climb-type{flex:1 1 55%;width:auto;}
+.climb-rows .climb-row input.climb-grade{flex:1 1 30%;width:auto;}
+.climb-rows .climb-row input.climb-attempts{flex:none;width:calc(var(--size-touch-min) + var(--space-5));}
+.climb-row label.climb-sent{display:flex;align-items:center;gap:var(--space-2);flex:none;min-height:var(--size-touch-min);font-size:var(--type-text-sm-size);color:var(--color-text-secondary);white-space:nowrap;}
+.climb-row .remove-climb-btn{margin-left:auto;}
+
+/* Gym picker (Log a session; gym-picker.js). The choice is always shown; "Choose a gym" / "Change" opens a search field
+   over a short, scrolling result area: search matches (at most 50), or continents and countries, collapsed. */
+.gym-picker-current{
+  display:flex;align-items:center;gap:var(--space-2);min-height:var(--size-touch-min);
+  padding:var(--space-1) var(--space-1) var(--space-1) var(--space-3);
   background:var(--color-surface-default);border:var(--border-width) solid var(--color-border-subtle);border-radius:var(--radius-sm);
-  font-size:var(--type-text-sm-size);
 }
+.gym-picker-current > .icon{flex:none;color:var(--color-text-secondary);}
+.gym-picker-text{display:flex;flex-direction:column;flex:1;min-width:0;}
+.gym-picker-name,.gym-picker-place{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.gym-picker-name{font-size:var(--type-text-md-size);line-height:var(--type-text-md-line);font-weight:var(--font-weight-medium);color:var(--color-text-primary);}
+.gym-picker-none{font-weight:var(--font-weight-regular);color:var(--color-text-secondary);}
+.gym-picker-place{font-size:var(--type-caption-size);line-height:var(--type-caption-line);color:var(--color-text-secondary);}
+.gym-picker-panel{margin-top:var(--space-2);}
+.gym-picker-results{
+  max-height:calc(var(--size-touch-min) * 6);overflow-y:auto;overscroll-behavior:contain;margin-top:var(--space-2);
+  border:var(--border-width) solid var(--color-border-subtle);border-radius:var(--radius-sm);background:var(--color-surface-default);
+}
+.picker-options{margin:0;padding:0;list-style:none;}
+.picker-option,.picker-gym{
+  display:flex;flex-direction:column;justify-content:center;width:100%;min-width:0;min-height:var(--size-touch-min);
+  padding:var(--space-1) var(--space-3);text-align:left;cursor:pointer;
+  background:none;border:0;border-bottom:var(--border-width) solid var(--color-border-subtle);color:inherit;font:inherit;
+}
+.picker-option:hover,.picker-gym:hover,.picker-option.is-active{background:var(--color-surface-subtle);}
+.picker-option.is-active{outline:var(--focus-ring-width) solid var(--color-accent-solid);outline-offset:calc(var(--focus-ring-width) * -1);}   /* the keyboard-highlighted match (aria-activedescendant) */
+.picker-option[aria-selected="true"] .gym-picker-name,.picker-gym[aria-current="true"] .gym-picker-name{color:var(--color-accent-text);font-weight:var(--font-weight-semibold);}
+.picker-group > summary,.picker-country > summary{
+  display:flex;align-items:center;gap:var(--space-2);min-height:var(--size-touch-min);padding:0 var(--space-3);
+  cursor:pointer;list-style:none;border-bottom:var(--border-width) solid var(--color-border-subtle);
+}
+.picker-group > summary::-webkit-details-marker,.picker-country > summary::-webkit-details-marker{display:none;}
+.picker-group > summary{font-weight:var(--font-weight-semibold);}
+.picker-country > summary{padding-left:var(--space-5);}
+.picker-country .picker-gym{padding-left:var(--space-6);}
+.picker-group > summary > .icon,.picker-country > summary > .icon{flex:none;transition:transform var(--motion-fast) var(--ease-standard);}
+.picker-group[open] > summary > .icon,.picker-country[open] > summary > .icon{transform:rotate(90deg);}
+.picker-summary-label{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.picker-count{flex:none;font-size:var(--type-caption-size);color:var(--color-text-secondary);font-weight:var(--font-weight-regular);}
+.picker-empty,.picker-note{margin:0;padding:var(--space-3);font-size:var(--type-text-sm-size);line-height:var(--type-text-sm-line);color:var(--color-text-secondary);}
 
 /* ===== Forms: type checkboxes (add/edit), sign-in divider, pin status ============================================= */
 .type-filter{display:flex;flex-direction:column;gap:var(--space-2);margin-top:var(--space-3);padding-top:var(--space-3);border-top:var(--border-width) solid var(--color-border-divider);}
@@ -141,6 +186,7 @@ body.app-body{overflow:hidden;}
 @media (max-width:599px){
   .topbar{display:none;}
   .tabbar{display:grid;}
+  .toast{top:calc(env(safe-area-inset-top) + var(--space-4));}
 }
 @media (min-width:1440px){
   .topbar{padding:0 var(--space-7);}

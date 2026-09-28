@@ -59,3 +59,16 @@ export function validDisplayName(name){
   const n = String(name == null ? '' : name).trim();
   return n.length >= 2 && n.length <= 40 && !/[@<>]/.test(n);
 }
+
+// A table the running database does not have yet (its migration is not applied): PostgREST PGRST205, Postgres 42P01.
+export const isMissingTable = err => !!err && (err.code === 'PGRST205' || err.code === '42P01' || /could not find the table|does not exist|schema cache/i.test(err.message || ''));
+
+// What to tell someone whose display name did not save. The profiles table arrives with migration 20260926084510; until
+// then every save 404s, and "try again" would never work.
+export function displayNameSaveMessage(err){
+  if(isMissingTable(err)) return 'Display names aren’t switched on yet. Your name will be saved once they are.';
+  const why = String((err && err.message) || '');
+  if((err && err.code === '23514') || /check constraint/i.test(why)) return 'Use 2 to 40 characters, without @ or < >.';
+  if(/JWT|row-level security|permission denied|Not signed in/i.test(why)) return 'Your sign-in has expired. Sign in again to save.';
+  return 'Could not save — try again.';
+}

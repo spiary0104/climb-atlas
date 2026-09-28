@@ -103,6 +103,22 @@
 .place-tile:hover{background:var(--color-surface-subtle);text-decoration:none;}
 .place-tile-name{font-size:var(--type-text-md-size);line-height:var(--type-text-md-line);font-weight:var(--font-weight-semibold);}
 .place-tile-count{font-size:var(--type-text-sm-size);line-height:var(--type-text-sm-line);color:var(--color-text-secondary);}
+
+/* /in: search, then continents as collapsed disclosures (real-phone test 2026-09-28) */
+.regions-search{position:relative;margin-top:var(--space-4);}
+.regions-search > .icon{position:absolute;left:var(--space-3);top:50%;transform:translateY(-50%);color:var(--color-text-secondary);pointer-events:none;}
+.regions-search .input{width:100%;min-height:var(--size-touch-min);padding-left:calc(var(--space-3) + var(--size-icon-sm) + var(--space-2));}
+.regions-results .regions-hits{margin-top:var(--space-4);padding:0;list-style:none;}
+.regions-empty{margin-top:var(--space-4);}
+.region-continent{margin-top:var(--space-2);border-bottom:var(--border-width) solid var(--color-border-divider);}
+.regions-browse .region-continent:first-child{margin-top:var(--space-4);}
+.region-continent-summary{display:flex;align-items:center;gap:var(--space-2);min-height:var(--size-touch-min);padding:var(--space-2) 0;cursor:pointer;list-style:none;}
+.region-continent-summary::-webkit-details-marker{display:none;}
+.region-continent-summary > .icon{flex:none;transition:transform var(--motion-fast) var(--ease-standard);}
+.region-continent[open] > .region-continent-summary > .icon{transform:rotate(90deg);}
+.region-continent-summary .section-title{flex:1;min-width:0;margin:0;}
+.region-continent-count{flex:none;font-size:var(--type-text-sm-size);line-height:var(--type-text-sm-line);color:var(--color-text-secondary);}
+.region-continent .place-tiles{margin-bottom:var(--space-4);}
 .card-grid{display:grid;grid-template-columns:repeat(3, minmax(0, 1fr));gap:var(--space-4);}
 
 /* ===== Log and Me (sec. 14: calendar + list side by side / stacked) ============================================= */
@@ -119,7 +135,7 @@
 .cal-day.has-session{background:var(--color-collect-subtle);border-color:var(--color-collect-solid);color:var(--color-text-primary);font-weight:var(--font-weight-semibold);}
 .cal-day.is-today{box-shadow:none;outline:var(--border-width) solid var(--color-border-strong);}
 .me-tabs{margin:var(--space-4) 0 0;}
-.me-tabs .tab{text-decoration:none;}
+.me-tabs .tab{gap:var(--space-1);text-decoration:none;}   /* flex drops the space between "Saved" and its count */
 .me-empty{text-align:left;padding-left:0;}
 .me-actions{display:flex;flex-wrap:wrap;gap:var(--space-2);}
 .me-brand{display:flex;align-items:center;gap:var(--space-4);}

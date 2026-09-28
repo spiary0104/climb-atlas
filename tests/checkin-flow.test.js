@@ -56,6 +56,7 @@ const modules = (async () => {
   const { appState } = await import(url('js/modules/state.js'));
   checkin.initCheckin();
   (await import(url('js/modules/milestone-sheet.js'))).initMilestoneSheet();
+  (await import(url('js/modules/gym-page.js'))).initGymPage();          // the gym page's own click delegation
   appState.spots = ['One', 'Two', 'Three'].map((n, i) => ({ id: 'g' + i, name: 'Plain Gym ' + n, suburb: 'Suburb ' + n, state: 'NSW', country: 'AU', lat: -33.9, lng: 151.2, types: ['indoor-bouldering'] }));
   appState.checkins = []; appState.checkinsLoaded = true; appState.checkinsAvailable = true;
   window.auth = { user: { id: 'u1' } };
@@ -161,4 +162,92 @@ test('START names what it does, and the check-in, milestone and START sheets are
   const phone = css.slice(from, css.indexOf('\n}', from));
   for (const part of ['.modal.checkin-modal,.modal.milestone-modal,.modal.start-modal{', 'border-radius:var(--radius-xl) var(--radius-xl) 0 0', 'env(safe-area-inset-bottom)', 'max-width:var(--size-sheet-max)', '#startModalBackdrop.hidden .modal{transform:translateY(100%);}'])
     assert.ok(phone.includes(part), 'phone sheet rule lacks ' + part);
+});
+
+// ===== Check in from the gym page (real-phone test 2026-09-28: "pressing Check in does nothing") =====================
+// The handler ran, but its only feedback was a toast inside #explore, which is hidden while a page shows. These drive the
+// gym page's click delegation and assert that every path gives visible feedback: the sign-in dialog, the sheet, or a toast.
+const toasts = [];
+Object.defineProperty(el('toast'), 'textContent', { get: () => toasts[toasts.length - 1] || '', set: (v) => { toasts.push(v); }, configurable: true });
+const pressCheckIn = (spotId) => el('view').handlers.click.forEach((f) => f({ target: { closest: (sel) => (sel === '[data-page-action]' ? { dataset: { pageAction: 'checkin', spotId } } : null) } }));
+async function fresh({ user = { id: 'u1' }, coarse = false, geo = null, table = true } = {}){
+  const { appState } = await modules;
+  el('checkinClose').handlers.click.forEach((f) => f());
+  el('authModalBackdrop').classList.add('hidden');
+  toasts.length = 0;
+  window.auth = { user };
+  appState.checkins = []; appState.checkinsLoaded = table; appState.checkinsAvailable = table ? true : null;
+  const missing = { code: 'PGRST205', message: "Could not find the table 'public.checkins' in the schema cache" };
+  window.sb = { from: () => ({ select: () => ({ order: () => ({ limit: async () => (table ? { data: [], error: null } : { data: null, error: missing }) }) }) }) };
+  globalThis.matchMedia = () => ({ matches: coarse, addEventListener() {} });
+  Object.defineProperty(globalThis, 'navigator', { value: { language: 'en-GB', geolocation: geo }, configurable: true });
+}
+const at = (lat, lng) => ({ getCurrentPosition: (ok) => setImmediate(() => ok({ coords: { latitude: lat, longitude: lng, accuracy: 20 } })) });
+const denied = { getCurrentPosition: (ok, fail) => setImmediate(() => fail({ code: 1 })) };
+const settle = async () => { for (let i = 0; i < 5; i++) await tick(); };
+
+test('Check in, signed out: the sign-in dialog opens and a toast says why', async () => {
+  await fresh({ user: null });
+  pressCheckIn('g0'); await settle();
+  assert.equal(hidden('authModalBackdrop'), false, 'the sign-in dialog opens');
+  assert.match(toasts.join(' | '), /Sign in to check in/);
+  assert.equal(hidden('checkinModalBackdrop'), true);
+});
+
+test('Check in, signed in on a desktop: the handler enters the flow and opens the "I am here" sheet', async () => {
+  await fresh();
+  pressCheckIn('g0'); await settle();
+  assert.equal(hidden('checkinModalBackdrop'), false, 'the check-in sheet opens');
+  assert.match(el('checkinBody').innerHTML, /id="ciHere"/, 'desktop confirms "I am here"');
+});
+
+test('Check in before the check-ins table exists (production today): says so instead of doing nothing', async () => {
+  await fresh({ table: false });
+  pressCheckIn('g0'); await settle();
+  assert.match(toasts.join(' | '), /Check-ins are not switched on yet/);
+  assert.equal(hidden('checkinModalBackdrop'), true);
+});
+
+test('Check in on a phone: "Checking your location…", then the 500 m rule decides (far refused, near proceeds, denied confirms)', async () => {
+  const { appState } = await modules;
+  const g = appState.spots[0];
+  await fresh({ coarse: true, geo: at(g.lat + 0.05, g.lng) });            // about 5.6 km away
+  pressCheckIn('g0'); await settle();
+  assert.equal(toasts[0], 'Checking your location…', 'feedback while the phone finds its position');
+  assert.ok(toasts.some((t) => t === 'You’re 5.6 km from Plain Gym One. Check in when you get there.'), 'farther than 500 m is refused with the distance: ' + toasts.join(' | '));
+  assert.equal(hidden('checkinModalBackdrop'), true);
+
+  await fresh({ coarse: true, geo: at(g.lat + 0.0008, g.lng) });          // about 90 m away
+  pressCheckIn('g0'); await settle();
+  assert.equal(hidden('checkinModalBackdrop'), false, 'within 500 m the sheet opens');
+  assert.ok(el('checkinBody').innerHTML.includes('90 m away'));
+  assert.ok(!el('checkinBody').innerHTML.includes('id="ciHere"'), 'near: no confirmation needed');
+
+  await fresh({ coarse: true, geo: denied });                               // location denied
+  pressCheckIn('g0'); await settle();
+  assert.equal(hidden('checkinModalBackdrop'), false);
+  assert.ok(el('checkinBody').innerHTML.includes('id="ciHere"'), 'denied: the "I am here" fallback');
+});
+
+test('Check in on a gym that is not loaded: a toast, never silence', async () => {
+  await fresh();
+  pressCheckIn('no-such-gym'); await settle();
+  assert.match(toasts.join(' | '), /still loading/);
+  assert.deepEqual(unhandled, []);
+});
+
+test('the toast lives in the app shell, not inside #explore (hidden while a page shows), fixed and above dialogs', () => {
+  const fs = require('node:fs');
+  const html = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
+  const explore = html.slice(html.indexOf('id="explore"'), html.indexOf('<main class="page-view" id="view"'));
+  assert.ok(explore.length > 0 && !explore.includes('id="toast"'), 'the toast is not inside #explore');
+  const afterView = html.slice(html.indexOf('<main class="page-view" id="view"'), html.indexOf('<nav class="tabbar"'));
+  assert.ok(afterView.includes('<div class="toast" id="toast" role="status" aria-live="polite"></div>'), 'the toast sits beside the page view');
+  const css = fs.readFileSync(path.join(ROOT, 'css', 'style.css'), 'utf8');
+  const start = css.indexOf('\n.toast{');
+  const rule = css.slice(start, css.indexOf('}', start));
+  assert.ok(rule.includes('position:fixed') && rule.includes('z-index:var(--z-status)'), rule);
+  const tokens = fs.readFileSync(path.join(ROOT, 'css', 'tokens.css'), 'utf8');
+  const z = (n) => Number(tokens.split('--z-' + n + ':')[1].split(';')[0]);
+  assert.ok(z('status') > z('dialog'), 'a toast shows over an open dialog or sheet');
 });

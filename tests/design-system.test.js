@@ -185,7 +185,7 @@ test('themes: the map region is rock, and every floating object inside it is pap
 // ===== components ==================================================================================================
 function buttonsIn(src) { return [...src.matchAll(/<button\b[^>]*>/g)].map(m => m[0]); }
 test('buttons: every button is a .btn tier or a documented component control; retired classes are gone', () => {
-  const CONTROLS = ['chip', 'tab', 'tabbar-item', 'start-btn', 'gym-row-main', 'gym-card-main', 'carousel-card', 'seg-btn', 'map-toggle', 'sheet-grabber-btn', 'avatar-btn', 'link', 'mod-row-main', 'stamp-btn'];
+  const CONTROLS = ['chip', 'tab', 'tabbar-item', 'start-btn', 'gym-row-main', 'gym-card-main', 'carousel-card', 'seg-btn', 'map-toggle', 'sheet-grabber-btn', 'avatar-btn', 'link', 'mod-row-main', 'stamp-btn', 'picker-gym'];
   const sources = [...PAGES.map(f => [f, read(f)]), ...JS.map(f => [f, stripJsComments(read(f))])];
   for (const [f, src] of sources) {
     for (const b of buttonsIn(src)) {

@@ -995,3 +995,12 @@ Run after every phase. Each line is pass/fail.
 - *Check-in sheet:* closing it while the stamp saves keeps the check-in, confirms it with a toast and still shows an earned milestone (it used to throw). After stamping, focus moves to Done.
 - *Phones:* the check-in, milestone and START sheets are bottom sheets below 768px (sec. 6.3, 6.5, 11.1, 12.3): full width up to 560px, top corners, top hairline, slide up, actions padded clear of the home indicator; one position, no grabber (modal, like All filters). Tablet and desktop keep the centred dialog.
 - *START:* its accessible name is "Start: check in at a gym or log a session" (the visible label stays "Log").
+
+**2026-09-28: real-phone test fixes (owner-reported on an iPhone; on `feature/bouldeer-brand-pass`).**
+- *Toasts were invisible on every page:* the toast lived inside `#explore`, which is hidden while a page shows, so "Check in" looked like it did nothing (signed in, production has no `checkins` table: the only feedback was "Check-ins are not switched on yet"; the 500 m refusal was invisible too). The toast now lives in the app shell, fixed below the top bar (below the status bar on phones), wraps, and sits above dialogs (`--z-status`). Phones also say "Checking your location…" while GPS works. The 500 m rule is unchanged.
+- *Log a session:* the climb row overflowed the dialog at every width (the shared `.field input` rule outranked the row's widths); it now wraps onto two lines. The 2,000-option gym `<select>` is a picker: search by gym, city, region or country (50 results at most), or browse continents and countries, collapsed; a country's gyms render only when opened.
+- *Regions (`/in`):* a search field over countries, regions, cities and gyms (the Explore search index); continents start collapsed.
+- *Display name:* production has no `profiles` table until migration `20260926084510` is applied, so every save failed with "try again". No new migration: /me now says display names are not switched on yet and disables the form; other failures get accurate messages.
+- *Me tabs:* "Saved1" / "Climbed2": the flex tab dropped the space before the count; a token gap restores it.
+- *Sign-in redirect on Netlify:* Supabase Auth configuration, not app code (the app asks to return to the current page; the Auth server falls back to the Site URL for any URL not on the Redirect URLs allow-list). Owner action: add the Netlify domain.
+
