@@ -1,7 +1,7 @@
 """Flat-vector trace of a Bouldeer source render (design/mascot/deer/*.png) -> assets/mascot/*.svg.
 
-Dev-time design tool (not part of the app; needs Python 3 + Pillow). Faithful by construction: background pixels are set
-aside, every character pixel snaps to the nearest sample of the BRAND palette below (each sample names its output colour:
+Dev-time design tool (not part of the app; needs Python 3 + Pillow). Faithful by construction: background pixels (those
+connected to the image edge; enclosed white such as eye whites is character) are set aside, every character pixel snaps to the nearest sample of the BRAND palette below (each sample names its output colour:
 the artwork palette of assets/mascot/head.svg and css/tokens.css; one fur shade step is kept, all other shading merges
 into its base colour, which removes the soft AI gradient look), then each colour region's pixel boundary is traced,
 simplified (Douglas-Peucker) and drawn as smooth quadratic curves, ink last. See docs/DESIGN.md sec. 12.0.
@@ -76,6 +76,31 @@ if NCOL == 0:
         smp = min(samples, key=lambda sb: dist(p, sb[0]))
         grid.append(outs.index(smp[1]))
     palette = list(range(len(outs)))
+    # Enclosed background (2026-09-29): only near-background pixels connected to the image edge are background. Those the
+    # edge cannot reach sit inside the character (eye whites and highlights, chalk, socks, a map pin's hole) and are
+    # traced as white; before, they were dropped too and showed through as holes (the milestone deer's eyes over the
+    # scrim). Real gaps between limbs are listed per pose as a point inside the gap (source 1024px coordinates).
+    POCKETS = {
+      'dyno': [(364, 780)],                                  # between thigh and shorts
+      'chalking-up': [(564, 636), (868, 706)],               # between arm and leg; inside the bucket handle
+      'backpacker': [(640, 680), (716, 680), (490, 854)],    # beside the suitcase, inside its handle, between the feet
+    }
+    def flood(starts):
+        seen = set(starts); todo = list(starts)
+        while todo:
+            i = todo.pop(); x, y = i % W, i // W
+            for j, ok in ((i-1, x > 0), (i+1, x < W-1), (i-W, y > 0), (i+W, y < H-1)):
+                if ok and j not in seen and grid[j] == BG: seen.add(j); todo.append(j)
+        return seen
+    outside = flood([i for i in range(W*H) if grid[i] == BG and (i % W in (0, W-1) or i // W in (0, H-1))])
+    stem = src.replace('\\', '/').split('/')[-1].rsplit('.', 1)[0]
+    kept = set()
+    for sx, sy in POCKETS.get(stem, []):
+        i = int(sy * SIZE / 1024) * W + int(sx * SIZE / 1024)
+        if grid[i] != BG or i in outside: sys.exit('pocket point %s in %s is not an enclosed background gap' % ((sx, sy), stem))
+        kept |= flood([i])
+    white = outs.index(h2c('#FFFDF8'))
+    grid = [white if g == BG and i not in outside and i not in kept else g for i, g in enumerate(grid)]
 else:
     fg = [p for p in px if dist(p, bg) > 22]
     strip = Image.new('RGB', (len(fg), 1)); strip.putdata(fg)

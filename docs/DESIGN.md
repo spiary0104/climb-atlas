@@ -1004,3 +1004,7 @@ Run after every phase. Each line is pass/fail.
 - *Me tabs:* "Saved1" / "Climbed2": the flex tab dropped the space before the count; a token gap restores it.
 - *Sign-in redirect on Netlify:* Supabase Auth configuration, not app code (the app asks to return to the current page; the Auth server falls back to the Site URL for any URL not on the Redirect URLs allow-list). Owner action: add the Netlify domain.
 
+**2026-09-29: second real-phone pass.**
+- *Deer eyes were see-through:* the tracer dropped every near-white pixel as background, so eye whites, highlights, chalk and socks were holes (visible where the milestone deer breaks the sheet edge over the dimmed page). Background is now only what touches the image edge; enclosed white is traced as white, and real gaps between limbs are listed per pose (`design/tools/README.md`). All five traced poses were regenerated; colours, outlines and proportions are otherwise unchanged.
+- *Log a session, Date vs Mood:* iOS Safari sizes date inputs natively, so the Date box did not match the Mood select. Single-line pickers share one fixed height; on iOS the date input drops its native box.
+
