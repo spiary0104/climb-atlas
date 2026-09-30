@@ -16,9 +16,9 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
   START and the Log tab both read "Log" (sec. 6.5); lake/plum colours provisional (sec. 19.1). Decisions: DESIGN.md log.
   Phase 4 not built (minimal schema, owner): publish-then-review for hours/price/links, website field, photo/confirm points.
 ### Gym import pipeline — first batch imported; follow-ups
-- Status: pipeline + gated importer built and tested. Batch `import/batches/2026-09-24-reconciled-new-gyms`
-  (246 gyms) IMPORTED 2026-09-24, verified (1,881 → 2,127; `manifest.json`); index rebuilt and still equal to production (2026-09-29).
-- Open: retire data/gyms.json (runtime fallback + "Revert to original" use stale ids; plan in docs/import-workflow.md). seed.html removed.
+- Status: gated importer built and tested; first batch (246) IMPORTED 2026-09-24 (1,881 → 2,127). Open: retire data/gyms.json (plan in docs).
+- Regional expansion (new locations, one geographic section at a time): `research new|reconcile|stage` built (`research.js`, docs
+  "Regional research"). Pilot `import/research/2026-09-30-new-zealand` scaffolded, NOT researched; next: research NZ, then Tokyo.
 - Location data: 11 OSM-validated updates APPLIED 2026-09-30 (batch `2026-09-30-location-updates`, verified; index rebuilt). Open: 4 to
   manual review (Balkan Climbing, OAKA, CELL, Mamouna); seed-1139 Manga Climbing has Rockspot's pin; 489 unresolved.
 

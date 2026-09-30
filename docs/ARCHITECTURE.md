@@ -54,7 +54,7 @@ Line refs drift: re-grep function names rather than trusting numbers.
 | `data/gyms.json` | LEGACY seed dataset: offline fallback + "Revert to original" source (ids stale vs production), reconciliation input. **Never read; never edit** |
 | `data/gyms.reconciled.json` | FROZEN reconciliation/provenance dataset (2,127 records = production at the first import). Not a runtime file |
 | `supabase/migrations/` | Source of truth for the schema (`docs/migrations.md`); `…_add_spot_slugs.sql` (stored `spots.slug`), `…_community_provenance.sql` (Phase 4) |
-| `import/`, `scripts/gym-import.js`, `scripts/lib/gym-import/` | Gym import pipeline (`docs/import-workflow.md`) |
+| `import/`, `scripts/gym-import.js`, `scripts/lib/gym-import/` | Gym import pipeline (`docs/import-workflow.md`); new locations via regional research sections (`import/research/`, `research.js`) |
 | `sw.js` | Service worker (`SHELL_FILES` — add every new JS/CSS/asset file; bump `CACHE_VERSION`) |
 | `docs/TASKS.md` / `docs/archive/` | Open work only / old long-form docs (**never read**) |
 
