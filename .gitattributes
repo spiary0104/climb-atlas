@@ -4,3 +4,5 @@ import/index/* -text
 import/batches/** -text
 # Generated from css/tokens.css and compared by tests; keep LF everywhere.
 design/tokens.json -text
+# Research sections (section/sources/candidates/reconcile/review) are hashed into staged batches; keep them byte-stable too.
+import/research/** -text

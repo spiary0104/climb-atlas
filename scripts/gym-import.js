@@ -14,6 +14,10 @@
 //                                                                 the ONLY command that can write (insert new gyms). See docs/import-workflow.md
 //   node scripts/gym-import.js build-index (--from-snapshot <file.json> | --live) [--out <dir>]
 //   node scripts/gym-import.js verify-index (--from-snapshot <file.json> | --live) [--index <dir>]
+//   node scripts/gym-import.js research new <slug> --country XX [--states A,B] [--bbox w,s,e,n] --title "..." --description "..." [--date YYYY-MM-DD]
+//   node scripts/gym-import.js research reconcile <section>       offline: candidates vs Bouldeer -> reconcile.json + reconcile.md
+//   node scripts/gym-import.js research stage <section>           accepted candidates (review.json) -> import/batches/<section>/
+//                                                                 <section> is a directory, or its name under import/research/
 //
 // <batch> is a directory, or just its name under import/batches/. Exit codes: 0 ok, 1 usage/validation failure,
 // 2 plan produced but not importable / import preflight refused, 4 import wrote (or may have written) but verification failed.
@@ -153,6 +157,37 @@ async function cmdImport(arg, flags) {
   return r.exit;
 }
 
+// ---- regional research (offline; never touches production) -------------------------------------------------------------
+async function cmdResearch(sub, arg, flags) {
+  const RS = require('./lib/gym-import/research');
+  if (sub === 'new') {
+    const list = v => (v ? String(v).split(',').map(x => x.trim()).filter(Boolean) : null);
+    const bbox = flags.bbox ? String(flags.bbox).split(',').map(Number) : null;
+    const r = await RS.newSection({ root: ROOT, slug: arg, date: flags.date || new Date().toISOString().slice(0, 10), country: flags.country, states: list(flags.states), bbox, title: flags.title, description: flags.description });
+    console.log(`created ${rel(r.dir)}/ (section.json, sources.json, candidates.ndjson). Add sources, append candidates, then: research reconcile ${r.id}`);
+    return 0;
+  }
+  if (sub !== 'reconcile' && sub !== 'stage') { console.error('usage: research new|reconcile|stage ... (see the top of scripts/gym-import.js)'); return 1; }
+  if (!arg) throw new Error('missing <section>');
+  const dir = RS.sectionPath(ROOT, arg);
+  const index = S.load();
+  if (sub === 'reconcile') {
+    const rc = await RS.reconcile(dir, { index, root: ROOT });
+    const section = JSON.parse(fs.readFileSync(path.join(dir, RS.FILES.section), 'utf8'));
+    fs.writeFileSync(path.join(dir, RS.FILES.reconcile), JSON.stringify(rc, null, 1) + '\n');
+    fs.writeFileSync(path.join(dir, RS.FILES.report), RS.renderReconcile(rc, section) + '\n');
+    const c = rc.counts;
+    console.log(`wrote ${rel(path.join(dir, RS.FILES.reconcile))} and ${RS.FILES.report}\n${rc.section_id}: ${c.candidates} candidate(s) -> ready ${c.ready} | review ${c.review} | blocked ${c.blocked} | already in Bouldeer ${c.existing} | invalid ${c.invalid}`);
+    console.log(c.invalid ? 'Fix the invalid candidates, then reconcile again.' : 'Next: a human writes review.json (one decision per candidate), then: research stage ' + rc.section_id);
+    return c.invalid ? 2 : 0;
+  }
+  const r = await RS.stage(dir, { index, root: ROOT });
+  if (r.action === 'refused') { console.log('REFUSED (nothing staged):\n  - ' + r.problems.join('\n  - ')); return 2; }
+  console.log(`${r.action}: ${rel(r.dir)}  (${r.staged} accepted candidate(s) staged with frozen ids)`);
+  console.log(`Next: validate ${path.basename(r.dir)}, plan ${path.basename(r.dir)}, review report.md, commit; then the production dry-run. Nothing was written to production.`);
+  return 0;
+}
+
 function cmdNewBatch(slug, flags) {
   if (!slug || !/^[a-z0-9][a-z0-9-]{1,60}$/.test(slug)) throw new Error('slug must be lower-case letters/digits/hyphens, e.g. "japan-osaka-round-1"');
   const id = new Date().toISOString().slice(0, 10) + '-' + slug;
@@ -179,8 +214,9 @@ function cmdNewBatch(slug, flags) {
       case 'build-index': code = await cmdBuildIndex(flags); break;
       case 'verify-index': code = await cmdVerifyIndex(flags); break;
       case 'import': code = await cmdImport(arg, flags); break;
+      case 'research': code = await cmdResearch(arg, pos[2], flags); break;
       default:
-        console.error(fs.readFileSync(__filename, 'utf8').split('\n').slice(1, 14).map(l => l.replace(/^\/\/ ?/, '')).join('\n'));
+        { const head = fs.readFileSync(__filename, 'utf8').split('\n'); console.error(head.slice(1, head.findIndex(l => l.startsWith("'use strict'"))).map(l => l.replace(/^\/\/ ?/, '')).join('\n')); }
         code = 1;
     }
     // Never process.exit() here: with fetch sockets still closing, Node on Windows can crash (0xC0000409) and lose the exit code,

@@ -11,7 +11,7 @@ subagents). Keep it accurate and short.
   `jq` or `grep` only (examples in `docs/ARCHITECTURE.md`).
 - **Files over 30 KB: use `grep`, `head`, or line ranges only — never read
   them in full.** Currently over 30 KB: `index.html`,
-  `data/gyms.json`, `js/modules/regions.js`, `docs/DESIGN.md`, everything in `docs/archive/`. Check with `wc -c` if unsure.
+  `data/gyms.json`, `js/modules/regions.js`, `docs/DESIGN.md`, `docs/import-workflow.md`, everything in `docs/archive/`. Check with `wc -c` if unsure.
 - Start from `docs/ARCHITECTURE.md` (file map, data flow, key functions
   with file:line) and `docs/TASKS.md` (open work). Both are short; keep
   them that way (≤150 and ≤60 lines).
@@ -70,7 +70,7 @@ js/modules/community.js Provenance/contribution reads (+ provenance.js, pure: st
 js/modules/checkin.js   Check-in flow + START sheet (+ passport.js/stamp-html.js pure, passport-page.js, milestone-sheet.js, share-card.js)
 data/gyms.json          LEGACY seed dataset; app offline fallback + provenance input — NEVER read or edit
 data/gyms.reconciled.json FROZEN reconciliation/provenance dataset (= production at first import); not a runtime file
-import/                 Import pipeline: index/ (match index), batches/ (staging)
+import/                 Import pipeline: index/ (match index), batches/ (staging), research/ (regional sections)
 scripts/gym-import.js   Import CLI (+ scripts/lib/gym-import/); docs/import-workflow.md
 supabase/schema.sql     Tables + RLS; re-runnable in the SQL Editor
 supabase/geocode.html   Pin-position checker for seed spots
@@ -97,11 +97,11 @@ python3 -m http.server 8000     # or: npx serve .
 ```
 Tests: `node --test "tests/*.test.js"` (no linter). Browser verification is still required — Rules.md §6–7.
 Schema changes go through `supabase/migrations/` (docs/migrations.md).
-**New gyms go through the import pipeline only** — `docs/import-workflow.md`
-(`node scripts/gym-import.js new-batch|validate|plan|freeze-ids`; tests:
+**New gyms go through the import pipeline only** — `docs/import-workflow.md`; new locations one geographic section at a time
+(`research new|reconcile|stage`, then `validate|plan`; tests:
 `node --test "tests/*.test.js"`). Never add/edit gyms in `data/gyms.json` or generate seed SQL
 (the old `supabase/seed.html` was removed; ids in gyms.json are stale) or edit `spots` by hand. Never read
-`import/index/` or old batches' `records.ndjson`; read a batch's `report.md`.
+`import/index/`, old batches' `records.ndjson` or other sections' `candidates.ndjson`; read `report.md` / `reconcile.md`.
 
 ## Brain vs. worker sessions
 

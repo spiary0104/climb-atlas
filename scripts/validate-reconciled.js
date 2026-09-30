@@ -202,12 +202,13 @@ async function main() {
   const read = p => fs.readFileSync(path.join(ROOT, p), 'utf8');
   const DIR = path.join(ROOT, 'data', 'reconciliation', process.argv[2] || '2026-09-24');
   const { readManifest } = require('./lib/gym-import/manifest');
-  // Later verified location-update batches (updater.js) changed address/lat/lng of some gyms after this dataset was frozen. Look
-  // through them (history.js): a live row holding exactly the updated value is compared at its value before the update.
+  // Later verified batches changed production after this dataset was frozen: location updates (updater.js) and inserts of new gyms
+  // (importer.js). Look through them (history.js): a live row holding exactly the updated value is compared at its value before the
+  // update, and rows a later insert batch added are left out.
   const H = require('./lib/gym-import/history');
   const looked = H.revertLiveRows(await fetchLive(), ROOT);
   const live = looked.rows;
-  if (looked.batches.length) console.log(`Looking through ${looked.batches.length} verified location-update batch(es) (${looked.batches.join(', ')}): ${looked.reverted} live row(s) compared at their pre-update values.`);
+  if (looked.batches.length) console.log(`Looking through ${looked.batches.length} later verified batch(es) (${looked.batches.join(', ')}): ${looked.reverted} live row(s) compared at their pre-update values, ${looked.removed} row(s) added by later insert batches left out.`);
   const r = runChecks({ orig: JSON.parse(read('data/gyms.json')), out: JSON.parse(read('data/gyms.reconciled.json')), decisions: JSON.parse(fs.readFileSync(path.join(DIR, 'decisions.json'), 'utf8')), live, manifest: readManifest(path.join(ROOT, 'import', 'batches', BATCH_ID)) });
   const s = r.summary;
   console.log(`\nSTATE: ${s.mode}`);

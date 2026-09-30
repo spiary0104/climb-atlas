@@ -127,7 +127,11 @@ async function runImport(opts) {
   const meta = batch.meta, src = (meta && meta.source) || {};
   if (src.staged !== undefined && src.staged !== recs.length) add('FAIL', 'provenance: staged count', `batch.json says ${src.staged}, records.ndjson has ${recs.length}`);
   if (src.not_staged_other && Object.keys(src.not_staged_other).length) add('FAIL', 'provenance: nothing left unresolved', JSON.stringify(src.not_staged_other));
-  if (src.decisions) {
+  if (src.kind === 'regional-research') {
+    // Staged by `research stage`: the section's files must be unchanged since staging and the batch must be exactly the accepted
+    // candidates, record for record (research.js; offline). The reconciliation-file checks below do not apply to it.
+    require('./research').verifyStagedBatch({ root, batchId: batch.id, meta, recs }).forEach(c => add(c.status, c.name, c.detail));
+  } else if (src.decisions) {
     const df = path.resolve(root, src.decisions.file);
     if (!fs.existsSync(df)) add('FAIL', 'provenance: decisions file', `${src.decisions.file} is missing`);
     else {
