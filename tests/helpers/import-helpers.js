@@ -5,6 +5,7 @@ const os = require('os');
 const path = require('path');
 const S = require('../../scripts/lib/gym-import/index-store');
 const { readManifest, isImported } = require('../../scripts/lib/gym-import/manifest');
+const H = require('../../scripts/lib/gym-import/history');
 
 const ROOT = path.resolve(__dirname, '..', '..');
 const tmp = () => fs.mkdtempSync(path.join(os.tmpdir(), 'gym-import-test-'));
@@ -43,7 +44,9 @@ const byName = (plan, name) => plan.records.find(r => r.name === name);
 // independent of the manifest: a wrong, forged or stale manifest makes this throw instead of silently changing what tests see.
 // Nothing in the importer itself uses this; production logic always reads the live database.
 function preImportIndex(batchId = '2026-09-24-reconciled-new-gyms', root = ROOT) {
-  const idx = S.load(path.join(root, 'import', 'index'));
+  // Later verified location-update batches are looked through first (history.js); that step is itself verified against the index each
+  // update batch was planned against, so the reconstruction below still has to hash to index_at_staging.
+  const idx = H.revertIndex(S.load(path.join(root, 'import', 'index')), root);
   const dir = path.join(root, 'import', 'batches', batchId);
   const mf = readManifest(dir);
   if (!mf.exists) return idx;
@@ -51,7 +54,7 @@ function preImportIndex(batchId = '2026-09-24-reconciled-new-gyms', root = ROOT)
   const staged = JSON.parse(fs.readFileSync(path.join(dir, 'batch.json'), 'utf8')).index_at_staging;
   if (!staged || !staged.sha256) throw new Error('batch.json has no index_at_staging to verify the reconstruction against');
   const remove = new Set(mf.manifest.ids);
-  const lines = fs.readFileSync(path.join(root, 'import', 'index', 'gym-index.ndjson'), 'utf8').split(String.fromCharCode(10)).filter(Boolean);
+  const lines = (idx.text || fs.readFileSync(path.join(root, 'import', 'index', 'gym-index.ndjson'), 'utf8')).split(String.fromCharCode(10)).filter(Boolean);
   const kept = lines.filter(l => !remove.has(JSON.parse(l).id));
   const text = kept.join(String.fromCharCode(10)) + String.fromCharCode(10);
   if (S.sha256(Buffer.from(text)) !== staged.sha256 || kept.length !== staged.count) throw new Error('cannot reconstruct the pre-import index for ' + batchId + ': the result does not match index_at_staging in batch.json (' + kept.length + ' gyms)');

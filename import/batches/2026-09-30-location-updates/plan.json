@@ -1,0 +1,331 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-09-30-location-updates",
+ "index": {
+  "sha256": "fc944ec966989368498027c273371f7d137f7bc0afb19ec73213d6dc5a2b83b2",
+  "count": 2127,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [],
+ "counts": {
+  "records": 11,
+  "new": 0,
+  "existing": 0,
+  "update": 11,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 9
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "f6c016e46d0071bb07b8b3842b2ec1c60fe2ae45a4faf67a5c1c45cbb5f0746a",
+ "records": [
+  {
+   "line": 1,
+   "class": "update",
+   "id": "seed-1350",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 60.1658575,
+     "after": 60.1862665
+    },
+    {
+     "field": "lng",
+     "before": 24.9035949,
+     "after": 24.9783567
+    },
+    {
+     "field": "address",
+     "before": null,
+     "after": "Hermannin rantatie 5, 00580 Helsinki, Finland"
+    }
+   ],
+   "expect_h": "10fe9dc23687abec",
+   "update_reason": "Pin and address from OpenStreetMap node/6060938885 (\"KiipeilyAreena Kalasatama\", exact name, sport=climbing); the old pin was pin-shared + pin-noted-approximate; revalidated 2026-09-30 (approved list of 11)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 4716 m"
+    }
+   ]
+  },
+  {
+   "line": 2,
+   "class": "update",
+   "id": "seed-1002",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 49.46,
+     "after": 49.4510292
+    },
+    {
+     "field": "lng",
+     "before": 11.09,
+     "after": 11.0287018
+    },
+    {
+     "field": "address",
+     "before": null,
+     "after": "Leyher Straße 54, 90431 Nürnberg, Germany"
+    }
+   ],
+   "expect_h": "c79f1095eb06ab22",
+   "update_reason": "Pin and address from OpenStreetMap node/9396859544 (\"Der Steinbock Nürnberg\", exact name, sport=climbing); the old pin was pin-coarse; revalidated 2026-09-30 (approved list of 11)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 4542 m"
+    }
+   ]
+  },
+  {
+   "line": 3,
+   "class": "update",
+   "id": "seed-884",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 51.45,
+     "after": 51.4339399
+    },
+    {
+     "field": "lng",
+     "before": -2.58,
+     "after": -2.6117508
+    },
+    {
+     "field": "address",
+     "before": null,
+     "after": "40 Winterstoke Road, Bristol BS3 2NW, United Kingdom"
+    }
+   ],
+   "expect_h": "19ebbf7de196c562",
+   "update_reason": "Pin and address from OpenStreetMap way/377204883 (\"Redpoint Bristol\", exact name, sport=climbing); the old pin was pin-coarse; revalidated 2026-09-30 (approved list of 11)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 2834 m"
+    }
+   ]
+  },
+  {
+   "line": 4,
+   "class": "update",
+   "id": "seed-978",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 49.45,
+     "after": 49.4344151
+    },
+    {
+     "field": "lng",
+     "before": 11.08,
+     "after": 11.0972883
+    },
+    {
+     "field": "address",
+     "before": null,
+     "after": "Allersberger Straße 185, 90461 Nürnberg, Germany"
+    }
+   ],
+   "expect_h": "1cb0be2106711b07",
+   "update_reason": "Pin and address from OpenStreetMap node/2331053313 (\"Boulderhalle E4\", exact name, sport=climbing); the old pin was pin-coarse; revalidated 2026-09-30 (approved list of 11)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 2137 m"
+    }
+   ]
+  },
+  {
+   "line": 5,
+   "class": "update",
+   "id": "seed-949",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 55.95,
+     "after": 55.9646823
+    },
+    {
+     "field": "lng",
+     "before": -3.18,
+     "after": -3.1929215
+    },
+    {
+     "field": "address",
+     "before": null,
+     "after": "23 Dunedin Street, Edinburgh EH7 4GJ, United Kingdom"
+    }
+   ],
+   "expect_h": "d1b906564d53c06c",
+   "update_reason": "Pin and address from OpenStreetMap way/1364140190 (\"Alien Bloc\", exact name, sport=climbing); the old pin was pin-coarse; revalidated 2026-09-30 (approved list of 11)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1820 m"
+    }
+   ]
+  },
+  {
+   "line": 6,
+   "class": "update",
+   "id": "seed-979",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 49.8728,
+     "after": 49.8799322
+    },
+    {
+     "field": "lng",
+     "before": 8.6512,
+     "after": 8.6362005
+    },
+    {
+     "field": "address",
+     "before": null,
+     "after": "Landwehrstraße 79, 64293 Darmstadt, Germany"
+    }
+   ],
+   "expect_h": "924ebb839b558e5c",
+   "update_reason": "Pin and address from OpenStreetMap way/30650807 (\"Boulderhaus Darmstadt\", exact name, sport=climbing); the old pin was pin-shared; revalidated 2026-09-30 (approved list of 11)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1336 m"
+    }
+   ]
+  },
+  {
+   "line": 7,
+   "class": "update",
+   "id": "seed-474",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 51.03,
+     "after": 51.0052807
+    },
+    {
+     "field": "lng",
+     "before": -114.08,
+     "after": -114.061477
+    }
+   ],
+   "expect_h": "07332a2b292ed932",
+   "update_reason": "Pin from OpenStreetMap node/13057325642 (\"Bolder Climbing Community\", exact name); its address matches the stored address; the old pin was pin-coarse; revalidated 2026-09-30 (approved list of 11)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 3039 m"
+    }
+   ]
+  },
+  {
+   "line": 8,
+   "class": "update",
+   "id": "seed-399",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 38.47,
+     "after": 38.4722009
+    },
+    {
+     "field": "lng",
+     "before": -122.73,
+     "after": -122.74367
+    }
+   ],
+   "expect_h": "5361186c2f3ff8cd",
+   "update_reason": "Pin from OpenStreetMap node/13812194501 (\"Vertex Climbing Center\", exact name); its address matches the stored address; the old pin was pin-coarse; revalidated 2026-09-30 (approved list of 11)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1215 m"
+    }
+   ]
+  },
+  {
+   "line": 9,
+   "class": "update",
+   "id": "seed-1242",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 40.3956027,
+     "after": 40.3912461
+    },
+    {
+     "field": "lng",
+     "before": -3.6785934,
+     "after": -3.6696446
+    }
+   ],
+   "expect_h": "4b1e0fe10e363d16",
+   "update_reason": "Pin from OpenStreetMap way/420034590 (\"Boulder Madrid\", exact name); its address matches the stored address; the old pin was pin-noted-approximate; revalidated 2026-09-30 (approved list of 11)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 899 m"
+    }
+   ]
+  },
+  {
+   "line": 10,
+   "class": "update",
+   "id": "seed-1499",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 42.6682265,
+     "after": 42.6652643
+    },
+    {
+     "field": "lng",
+     "before": 23.3710644,
+     "after": 23.3746548
+    }
+   ],
+   "expect_h": "728eaacf120efec4",
+   "update_reason": "Pin from OpenStreetMap node/6456475885 (\"Momentum Indoor Climbing Sofia\", exact name); its address matches the stored address; the old pin was pin-shared; revalidated 2026-09-30 (approved list of 11)"
+  },
+  {
+   "line": 11,
+   "class": "update",
+   "id": "seed-163",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 29.45,
+     "after": 29.4490785
+    },
+    {
+     "field": "lng",
+     "before": -98.47,
+     "after": -98.4742104
+    }
+   ],
+   "expect_h": "cc3a695e3a3e6389",
+   "update_reason": "Pin from OpenStreetMap node/7073073961 (\"The District\", exact name); its address matches the stored address; the old pin was pin-coarse; revalidated 2026-09-30 (approved list of 11)"
+  }
+ ]
+}

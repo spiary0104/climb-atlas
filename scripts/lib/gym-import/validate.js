@@ -15,7 +15,10 @@ const LIMITS = { name: 200, suburb: 200, state: 100, address: 400, notes: 4000 }
 // decided by the importer, never by research data, so it is rejected instead of silently ignored.
 const RECORD_KEYS = new Set(['id', 'intent', 'name', 'suburb', 'state', 'country', 'lat', 'lng', 'types', 'address', 'notes', 'photo', 'community', 'source']);
 const UPDATABLE = ['name', 'suburb', 'state', 'lat', 'lng', 'types', 'address', 'notes', 'photo'];
-const UPDATE_KEYS = new Set(['id', 'intent', 'set', 'reason', 'source']);
+const UPDATE_KEYS = new Set(['id', 'intent', 'set', 'reason', 'source', 'expect_h']);
+// expect_h: the gym's content hash (index-store h) when the update was researched; the plan and the updater refuse the update
+// if the gym no longer has exactly that content.
+const EXPECT_H = /^[0-9a-f]{16}$/;
 
 let _deps = null;
 async function deps() {
@@ -101,6 +104,7 @@ async function validateUpdateRecord(rec) {
   const d = await deps(), errors = [], warnings = [];
   for (const k of Object.keys(rec)) if (!UPDATE_KEYS.has(k)) errors.push({ code: 'unknown-field', field: k, message: `unknown field "${k}" in an update record (allowed: ${[...UPDATE_KEYS].join(', ')}); put changed fields under "set"` });
   if (!isStr(rec.id) || !ID_ANY.test(rec.id)) errors.push({ code: 'bad-id', field: 'id', message: 'an update must name the existing gym id' });
+  if (rec.expect_h !== undefined && (!isStr(rec.expect_h) || !EXPECT_H.test(rec.expect_h))) errors.push({ code: 'bad-expect-h', field: 'expect_h', message: 'expect_h must be the 16-hex content hash of the gym when the update was researched' });
   if (!isStr(rec.reason) || rec.reason.trim().length < 8) errors.push({ code: 'reason-required', field: 'reason', message: 'an update needs a reason (>= 8 chars) explaining why the existing data is being changed' });
   if (!rec.set || typeof rec.set !== 'object' || Array.isArray(rec.set) || !Object.keys(rec.set).length) errors.push({ code: 'empty-update', field: 'set', message: '"set" must be an object with at least one changed field' });
   else {
@@ -112,4 +116,4 @@ async function validateUpdateRecord(rec) {
   return { errors, warnings };
 }
 
-module.exports = { TYPES, UPDATABLE, RECORD_KEYS, validateNewRecord, validateUpdateRecord, deps };
+module.exports = { TYPES, UPDATABLE, RECORD_KEYS, EXPECT_H, validateNewRecord, validateUpdateRecord, deps };

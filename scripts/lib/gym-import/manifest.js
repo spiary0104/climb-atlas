@@ -7,14 +7,15 @@
 //   import-failure.json  OUTPUT of an import that wrote (or may have written) but did not verify. Deliberately a different file
 //                        name: nothing treats it as "imported".
 //
-// Only two statuses count as "imported": 'imported' and 'imported-recovered'.
+// Statuses that count as "imported": 'imported' / 'imported-recovered' (an insert batch) and 'updated' / 'updated-recovered'
+// (an update batch, updater.js).
 'use strict';
 const fs = require('fs');
 const path = require('path');
 
 const MANIFEST = 'manifest.json';
 const FAILURE = 'import-failure.json';
-const IMPORTED_STATUSES = new Set(['imported', 'imported-recovered']);
+const IMPORTED_STATUSES = new Set(['imported', 'imported-recovered', 'updated', 'updated-recovered']);
 
 function readManifest(batchDir) {
   const file = path.join(batchDir, MANIFEST);
