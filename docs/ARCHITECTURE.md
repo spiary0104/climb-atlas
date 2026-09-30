@@ -9,7 +9,7 @@ Line refs drift: re-grep function names rather than trusting numbers.
   step, no package.json. Must be served over HTTP (modules + fetch + Auth).
 - Map: MapLibre GL 5 (globe) + Supercluster, both from CDN.
 - Backend: Supabase (Postgres + Auth + RLS), client from CDN.
-- Hosting: Vercel (`vercel.json`), climbatlas.org. PWA via `sw.js`.
+- Hosting: Vercel (`vercel.json`), www.bouldeer.com (formerly climbatlas.org); Supabase Auth Redirect URLs list both. PWA via `sw.js`.
 
 ## File map
 | Path | What it is |

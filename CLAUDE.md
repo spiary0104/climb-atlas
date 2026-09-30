@@ -19,7 +19,7 @@ subagents). Keep it accurate and short.
 ## Project overview
 
 Bouldeer: a community-sourced map of climbing gyms worldwide (~2,100 spots, 80+
-countries). Live at climbatlas.org (repo name climb-atlas). **UI work follows
+countries). Live at www.bouldeer.com (formerly climbatlas.org; repo name climb-atlas). **UI work follows
 `docs/DESIGN.md`** (tokens only, no raw colours; see ARCHITECTURE "Design system").
 
 **Stack: plain static site. No build step, no framework, no package.json.**
