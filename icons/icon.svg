@@ -1,4 +1,61 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-<rect width="512" height="512" rx="96" fill="#211f1b"/>
-<path d="M256 80c80 0 128 64 128 136S320 416 256 432c-64 -16 -128 -152 -128 -216S176 80 256 80z" fill="#b8834a"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-label="Bouldeer">
+<!--
+  Bouldeer app icon (docs/DESIGN.md sec. 1A, owner decision 2026-09-26: cream head-on-boulder). The full source
+  composition design/mascot/deer/head-on-boulder.png as flat vector: the traced head of assets/mascot/head.svg plus the
+  whole holds boulder (hold positions measured from the source). Full-bleed fawn-cream ground; the art fills the tile ("any" purpose; icons/icon-maskable.svg keeps the 80% safe zone).
+  PNG exports: icons/icon-192.png, icon-512.png, apple-touch-icon.png (180).
+-->
+  <rect width="1024" height="1024" fill="#F9EEDB"/>
+  <g transform="translate(512 512) scale(1.0) translate(-517 -506.5)">
+    <!-- the holds boulder (behind the head) -->
+    <ellipse cx="512" cy="720" rx="305" ry="238" fill="#FAECCD" stroke="#171B16" stroke-width="10"/>
+    <g fill="#EADBB8"><ellipse cx="620" cy="560" rx="10" ry="6"/><ellipse cx="455" cy="760" rx="9" ry="6"/><ellipse cx="560" cy="890" rx="12" ry="7"/><ellipse cx="760" cy="740" rx="8" ry="5"/><ellipse cx="250" cy="690" rx="8" ry="5"/></g>
+    <g stroke="#171B16" stroke-width="7" stroke-linejoin="round">
+      <path d="M482 540 C490 522 540 520 556 540 C566 556 548 580 520 582 C494 584 474 560 482 540 Z" fill="#D5A431"/>
+      <path d="M538 700 C546 684 600 684 610 704 C616 724 596 752 570 752 C548 752 532 722 538 700 Z" fill="#D5A431"/>
+      <path d="M280 776 C284 760 322 758 330 776 C334 794 318 812 304 812 C288 812 276 792 280 776 Z" fill="#D5A431"/>
+      <path d="M310 640 C318 610 370 600 400 625 C420 645 405 690 360 692 C325 694 302 668 310 640 Z" fill="#40634B"/>
+      <path d="M628 620 C640 595 700 592 725 615 C742 632 720 660 680 660 C650 660 620 645 628 620 Z" fill="#40634B"/>
+      <path d="M636 812 C646 790 704 786 726 808 C740 828 720 876 684 878 C654 880 628 840 636 812 Z" fill="#40634B"/>
+      <path d="M386 840 C394 816 452 812 476 834 C490 854 470 906 432 908 C402 910 378 870 386 840 Z" fill="#40634B"/>
+    </g>
+    <g fill="#171B16"><circle cx="520" cy="555" r="6"/><circle cx="574" cy="720" r="6"/><circle cx="305" cy="786" r="5"/><circle cx="360" cy="648" r="6"/><circle cx="682" cy="626" r="6"/><circle cx="682" cy="834" r="6"/><circle cx="432" cy="862" r="6"/></g>
+    <!-- antlers -->
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <g stroke="#171B16" stroke-width="44">
+        <path d="M392 208 C386 160 378 110 372 72"/><path d="M380 142 C360 128 340 116 322 104"/><path d="M386 150 C400 130 412 115 422 102"/>
+        <path d="M642 208 C648 160 656 110 662 72"/><path d="M654 142 C674 128 694 116 712 104"/><path d="M648 150 C634 130 622 115 612 102"/>
+      </g>
+      <g stroke="#754D33" stroke-width="26">
+        <path d="M392 208 C386 160 378 110 372 72"/><path d="M380 142 C360 128 340 116 322 104"/><path d="M386 150 C400 130 412 115 422 102"/>
+        <path d="M642 208 C648 160 656 110 662 72"/><path d="M654 142 C674 128 694 116 712 104"/><path d="M648 150 C634 130 622 115 612 102"/>
+      </g>
+    </g>
+    <!-- ears -->
+    <g stroke="#171B16" stroke-width="9" stroke-linejoin="round">
+      <path d="M352 262 C304 290 254 290 232 262 C224 230 229 200 242 182 C284 180 334 200 364 230 Z" fill="#DD9F53"/>
+      <path d="M682 262 C730 290 780 290 802 262 C810 230 805 200 792 182 C750 180 700 200 670 230 Z" fill="#DD9F53"/>
+    </g>
+    <path d="M340 250 C304 270 268 270 252 252 C246 232 248 212 256 200 C286 200 320 214 342 236 Z" fill="#FAE9C7"/>
+    <path d="M694 250 C730 270 766 270 782 252 C788 232 786 212 778 200 C748 200 714 214 692 236 Z" fill="#FAE9C7"/>
+    <!-- head -->
+    <path d="M517 174 C624 174 708 244 708 350 C708 430 684 490 655 540 L379 540 C350 490 326 430 326 350 C326 244 410 174 517 174 Z" fill="#DD9F53"/>
+    <path d="M332 434 C380 428 440 404 478 392 C498 385 536 385 556 392 C594 404 654 428 702 434 C694 480 676 512 655 540 L379 540 C358 512 340 480 332 434 Z" fill="#FAE9C7"/>
+    <ellipse cx="469.5" cy="235" rx="10.5" ry="12" fill="#FAE9C7"/><ellipse cx="518" cy="233" rx="14" ry="22" fill="#FAE9C7"/>
+    <ellipse cx="568.5" cy="236" rx="10.5" ry="12" fill="#FAE9C7"/><ellipse cx="518" cy="286" rx="9" ry="15" fill="#FAE9C7"/>
+    <path d="M517 174 C624 174 708 244 708 350 C708 430 684 490 655 540 L379 540 C350 490 326 430 326 350 C326 244 410 174 517 174 Z" fill="none" stroke="#171B16" stroke-width="9" stroke-linejoin="round"/>
+    <g fill="none" stroke="#171B16" stroke-width="8" stroke-linecap="round"><path d="M392 282 Q410 268 432 278"/><path d="M602 278 Q624 268 642 282"/></g>
+    <circle cx="421" cy="372" r="45" fill="#FFFDF8" stroke="#171B16" stroke-width="8"/><circle cx="610" cy="372" r="45" fill="#FFFDF8" stroke="#171B16" stroke-width="8"/>
+    <circle cx="431" cy="377" r="31" fill="#171B16"/><circle cx="600" cy="377" r="31" fill="#171B16"/>
+    <circle cx="421" cy="360" r="9" fill="#FFFDF8"/><circle cx="443" cy="392" r="4" fill="#FFFDF8"/><circle cx="590" cy="360" r="9" fill="#FFFDF8"/><circle cx="612" cy="392" r="4" fill="#FFFDF8"/>
+    <path d="M488 412 C488 398 546 398 546 412 C546 428 530 440 517 440 C504 440 488 428 488 412 Z" fill="#171B16"/>
+    <ellipse cx="506" cy="408" rx="7" ry="4" fill="#FFFDF8"/>
+    <path d="M517 440 L517 452 M480 450 Q498 470 517 452 Q536 470 554 450" fill="none" stroke="#171B16" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- hooves on the rim -->
+    <g stroke="#171B16" stroke-width="9" stroke-linejoin="round" stroke-linecap="round">
+      <path d="M300 520 C300 470 360 452 392 480 C410 500 404 535 380 545 C350 556 300 552 300 520 Z" fill="#754D33"/>
+      <path d="M734 520 C734 470 674 452 642 480 C624 500 630 535 654 545 C684 556 734 552 734 520 Z" fill="#754D33"/>
+      <path d="M350 505 C356 520 358 535 356 545 M684 505 C678 520 676 535 678 545" fill="none"/>
+    </g>
+  </g>
 </svg>

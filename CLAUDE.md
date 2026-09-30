@@ -1,4 +1,4 @@
-# Climb Atlas — Project Instructions
+# Bouldeer — Project Instructions
 
 @Rules.md
 
@@ -10,16 +10,17 @@ subagents). Keep it accurate and short.
 - **Never read `data/` or `docs/archive/`.** Query the seed data with
   `jq` or `grep` only (examples in `docs/ARCHITECTURE.md`).
 - **Files over 30 KB: use `grep`, `head`, or line ranges only — never read
-  them in full.** Currently over 30 KB: `index.html`, `css/style.css`,
-  `data/gyms.json`, `js/modules/regions.js`, everything in `docs/archive/`. Check with `wc -c` if unsure.
+  them in full.** Currently over 30 KB: `index.html`,
+  `data/gyms.json`, `js/modules/regions.js`, `docs/DESIGN.md`, everything in `docs/archive/`. Check with `wc -c` if unsure.
 - Start from `docs/ARCHITECTURE.md` (file map, data flow, key functions
   with file:line) and `docs/TASKS.md` (open work). Both are short; keep
   them that way (≤150 and ≤60 lines).
 
 ## Project overview
 
-Community-sourced map of climbing gyms worldwide (~1,900 spots, 80+
-countries), modelled on Track Atlas. Live at climbatlas.org.
+Bouldeer: a community-sourced map of climbing gyms worldwide (~2,100 spots, 80+
+countries). Live at climbatlas.org (repo name climb-atlas). **UI work follows
+`docs/DESIGN.md`** (tokens only, no raw colours; see ARCHITECTURE "Design system").
 
 **Stack: plain static site. No build step, no framework, no package.json.**
 Backend is Supabase (Postgres + Auth + RLS). Do not introduce npm/build
@@ -28,25 +29,45 @@ tooling, a framework, or a bundler without discussing it first.
 ## File map
 
 ```
-index.html              App shell (no inline JS/CSS)
+index.html              App shell (no inline JS/CSS)                 (>30 KB)
 about.html              Standalone About page
-css/style.css           All styles; tokens on :root              (>30 KB)
-css/chips.css           Per-region chip colours (generated)
+css/tokens.css          Design tokens (only file with raw values; deer palette: fawn, bark); design/tokens.json generated from it
+css/base.css            Reset, type scale, focus
+css/components.css      Shared components (.btn tiers, chips, fields, nav, dialogs, ...)
+css/explore.css         Explore: list pane/sheet, rows/cards, chips, search, pins, peek card
+css/page.css            Pages (gym, region/city, log, me)
+css/style.css           App layer (shell, map controls, forms, sessions); css/mod.css = /mod; css/passport.css = stamps, passport, sheets
+assets/icons.svg        Phosphor sprite; js/modules/icons.js icon(name)
+assets/boulder.svg      Photo placeholder (contour.svg: passport only)
+assets/mascot/, assets/brand/, icons/  Deer head, stamp head, first-run poses; antler crest, seals; app icon, favicon
+design/mascot/deer/     The owner's deer renders: source of the character (DESIGN.md sec. 1A, 12)
+design/tools/           Dev-only Python: mascot tracer + seal generator (not part of the app; README)
 js/supabase-init.js     window.sb (classic script)
 js/auth.js              window.auth (classic script)
 js/main.js              Entry ES module: init*() in order, then boot
 js/sw-register.js       Service-worker registration
 js/modules/state.js     appState — ALL shared mutable state
-js/modules/constants.js Colours, labels, fly targets, zoom thresholds
+js/modules/constants.js Labels, fly targets, zoom thresholds, LIST_CAP
 js/modules/regions.js   STATES_BY_COUNTRY (static)
-js/modules/utils.js     escapeHtml, directionsUrl, typeSwatch, showToast
-js/modules/map.js       Map, clusters, labels, markers, popups, legend
-js/modules/sidebar.js   render(), filters, search, nav, marks
-js/modules/modals.js    Focus/Escape, add/edit/report forms, info modals
+js/modules/utils.js     escapeHtml, directionsUrl, showToast
+js/modules/explore.js   Explore controller: render(), selection, peek, URL state, landing
+js/modules/map.js       Map, clusters, pins, label tiers (handlers from explore.js)
+js/modules/list.js      Viewport-scoped list, sort, cap, empty states, carousel
+js/modules/filters.js   Chips, All filters sheet, filter predicate
+js/modules/search.js    Search combobox (+ search-index.js, pure)
+js/modules/sheet.js     Mobile bottom sheet snaps
+js/modules/marks.js     Climbed/saved toggles
+js/modules/*-html.js, geo.js  Pure builders/helpers (unit-tested)
+js/modules/router.js    History API router; views render into <main id="view">
+js/modules/*-page.js    Page views: gym, region, log, me, mod, add, passport (+ page-html.js, moderation-html.js, add-html.js, slug.js, mini-map.js)
+js/modules/nav.js       Top bar / tab bar ([data-nav])
+js/modules/modals.js    Focus/Escape, edit/report forms, info modals (adding a gym is the /add page)
 js/modules/auth-ui.js   Sign-in widget + modal
 js/modules/data-load.js Spots/marks/moderator/pending loading + seed fallback
-js/modules/logbook.js   Logbook
-js/modules/moderation.js Pending-review panel
+js/modules/logbook.js   Logbook + "Log a session" (+ gym-picker.js, pure: gym search / continent browse)
+js/modules/moderation.js Moderator actions for /mod and the gym page verify control
+js/modules/community.js Provenance/contribution reads (+ provenance.js, pure: states, levels)
+js/modules/checkin.js   Check-in flow + START sheet (+ passport.js/stamp-html.js pure, passport-page.js, milestone-sheet.js, share-card.js)
 data/gyms.json          LEGACY seed dataset; app offline fallback + provenance input — NEVER read or edit
 data/gyms.reconciled.json FROZEN reconciliation/provenance dataset (= production at first import); not a runtime file
 import/                 Import pipeline: index/ (match index), batches/ (staging)
@@ -74,7 +95,7 @@ No install, no build. Serve over HTTP (required: ES modules, fetch, Auth redirec
 ```
 python3 -m http.server 8000     # or: npx serve .
 ```
-No test suite or linter yet. Verification is manual — Rules.md §6–7.
+Tests: `node --test "tests/*.test.js"` (no linter). Browser verification is still required — Rules.md §6–7.
 Schema changes go through `supabase/migrations/` (docs/migrations.md).
 **New gyms go through the import pipeline only** — `docs/import-workflow.md`
 (`node scripts/gym-import.js new-batch|validate|plan|freeze-ids`; tests:

@@ -1,6 +1,5 @@
-// Static config: type colours/labels, country labels + fly targets, zoom thresholds.
+// Static config: type labels, country labels + fly targets, zoom thresholds.
 
-export const TYPE_COLORS = {'indoor-bouldering':'#3fb8a6','top-rope':'#8a6bb0','lead-climbing':'#4a90c9'};
 export const TYPE_LABELS = {'indoor-bouldering':'Indoor bouldering','top-rope':'Top rope','lead-climbing':'Lead climbing'};
 export const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy', BE:'Belgium', KR:'South Korea', ES:'Spain', PT:'Portugal', AT:'Austria', CH:'Switzerland', PL:'Poland', DK:'Denmark', FI:'Finland', IE:'Ireland', NO:'Norway', MX:'Mexico', BR:'Brazil', HU:'Hungary', GR:'Greece', CZ:'Czech Republic', IS:'Iceland', RO:'Romania', HR:'Croatia', RU:'Russia', BG:'Bulgaria', AR:'Argentina', PH:'Philippines', CO:'Colombia', CL:'Chile', VE:'Venezuela', IN:'India', IL:'Israel', ID:'Indonesia', TW:'Taiwan', ZA:'South Africa', EC:'Ecuador', VN:'Vietnam', LT:'Lithuania', RS:'Serbia', BO:'Bolivia', IR:'Iran', EE:'Estonia', MY:'Malaysia', TH:'Thailand', UA:'Ukraine', SK:'Slovakia', CY:'Cyprus', PA:'Panama', PE:'Peru', TR:'Turkey', LV:'Latvia', SG:'Singapore', BA:'Bosnia and Herzegovina', AD:'Andorra', AE:'United Arab Emirates', GE:'Georgia', LU:'Luxembourg', SI:'Slovenia', KZ:'Kazakhstan', CR:'Costa Rica', BY:'Belarus', UY:'Uruguay', SA:'Saudi Arabia', HK:'Hong Kong', EG:'Egypt', KE:'Kenya', QA:'Qatar', AM:'Armenia', LB:'Lebanon', JO:'Jordan', NP:'Nepal', GT:'Guatemala', ME:'Montenegro', MN:'Mongolia', OM:'Oman', PY:'Paraguay'};
 // Fixed camera target per country for the "fly to this country" click on
@@ -124,13 +123,13 @@ export const REGION_FLY_TARGETS = {
   'south-america': {center:[-58,-15], zoom:3},
   africa: {center:[26,-2], zoom:2.6}
 };
-// Below this zoom, a spot with no nearby neighbours (so supercluster hands
-// it back as a lone, unclustered point rather than grouping it) still paints
-// as a small numbered badge instead of the hold-shaped icon -- at globe/
-// country zoom a 20px icon for a single far-off spot (e.g. Japan, viewed
-// from the default mid-Pacific camera) reads as a stray dot; a numbered
-// badge matches the visual language clusters already use and stays legible.
+// Below this zoom the map paints its own region/country/continent labels (map.js paintRegionLabels) and the basemap's
+// state labels stay hidden; from here up individual pins orient the viewer.
 export const HOLD_ICON_ZOOM = 9;
+// Pins are 6px dots up to and including this zoom and teardrops above it (DESIGN.md sec. 7.7, --pin-zoom-dot-max).
+export const PIN_DOT_MAX_ZOOM = 11;
+// The list never renders more than this many gyms; a final row asks to zoom in (sec. 7.2).
+export const LIST_CAP = 400;
 // Below this zoom, region labels show the country name (e.g. "Japan")
 // rather than individual states/prefectures/cities (e.g. "Tokyo") --
 // at globe/continent zoom, a country name orients a viewer faster than a
@@ -146,4 +145,8 @@ export const CONTINENT_LABEL_ZOOM = 3.5;
 // flyTo/easeTo duration goes through this so they collapse to a cut.
 const REDUCED_MOTION = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 export const motion = ms => REDUCED_MOTION ? 0 : ms;
-export const MOOD_EMOJI = {great:'🤩', good:'🙂', ok:'😐', tired:'😮‍💨', rough:'😫'};
+// Session mood: an icon from the one icon system plus a text label (no emoji; DESIGN.md sec. 1.3).
+export const MOODS = {
+  great:{label:'Great', icon:'smiley-wink'}, good:{label:'Good', icon:'smiley'}, ok:{label:'OK', icon:'smiley-meh'},
+  tired:{label:'Tired', icon:'smiley-nervous'}, rough:{label:'Rough', icon:'smiley-sad'}
+};

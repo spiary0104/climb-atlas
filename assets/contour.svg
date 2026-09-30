@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<!--
+  Bouldeer contour placeholder (docs/DESIGN.md sec. 13): five contour lines of one small hill, like a guidebook topo:
+  three nested closed rings around a summit (upper right) and two open lines on the lower slope, leaving the lower-left
+  corner clear for the gym's initial. One shared symbol; stroke colour and width come from the page
+  (css/explore.css .placeholder-contour), the letter is text.
+-->
+  <symbol id="contour" viewBox="0 0 120 90" preserveAspectRatio="xMidYMid slice">
+    <g fill="none" vector-effect="non-scaling-stroke">
+      <path vector-effect="non-scaling-stroke" d="M81 30C84 25 92 24 96 28S99 37 94 40 83 39 81 35 80 32 81 30Z"/>
+      <path vector-effect="non-scaling-stroke" d="M70 30C72 19 86 13 98 17S113 33 108 43 92 54 81 51 68 42 70 30Z"/>
+      <path vector-effect="non-scaling-stroke" d="M57 33C58 14 78 3 99 6S126 22 126 38 112 63 91 66 66 62 60 52 56 42 57 33Z"/>
+      <path vector-effect="non-scaling-stroke" d="M-6 58C10 50 26 56 40 51S54 29 62 20 78 -6 96 -8"/>
+      <path vector-effect="non-scaling-stroke" d="M-6 74C14 67 30 72 46 70S66 76 82 78 110 80 128 74"/>
+    </g>
+  </symbol>
+</svg>

@@ -9,6 +9,10 @@ const path = require('node:path');
 
 const ROOT = path.resolve(__dirname, '..');
 const SRC = fs.readFileSync(path.join(ROOT, 'sw.js'), 'utf8');
+// The cache version is read from sw.js so a routine version bump needs no test edit. v4 is named explicitly below: it is the
+// data cache that held private responses before the security fix and must be deleted by every later worker.
+const V = /const CACHE_VERSION = 'v(\d+)'/.exec(SRC)[1];
+const CUR = 'v' + V, PREV = 'v' + (Number(V) - 1);
 const SB = 'https://abcdefghij.supabase.co';
 const ANON = 'sb_publishable_anon';
 
@@ -25,7 +29,14 @@ function makeWorker() {
       put: async (req, res) => { puts.push({ cache: name, url: req.url }); m.set(req.url, res); },
       delete: async (req) => m.delete(typeof req === 'string' ? req : req.url),
       keys: async () => [...m.keys()].map((u) => new Request(u)),
-      addAll: async () => {},
+      // Like the real Cache API: URLs resolve against the worker's location, and the whole batch rejects on a duplicate
+      // request (Chrome: "Cache.addAll(): duplicate requests"), which fails the install and leaves no worker registered.
+      addAll: async (list) => {
+        const urls = list.map((u) => new URL(u, 'https://climbatlas.org/').href);
+        const dup = urls.find((u, i) => urls.indexOf(u) !== i);
+        if (dup) throw new Error('InvalidStateError: Cache.addAll(): duplicate requests (' + dup + ')');
+        for (const u of urls) m.set(u, new Response('shell'));
+      },
     };
   };
   const caches = {
@@ -46,7 +57,8 @@ function makeWorker() {
     return evt;
   };
   const activate = async () => { let p; listeners.activate({ waitUntil: (x) => { p = x; } }); await p; };
-  return { ctx, stores, puts, net, dispatchFetch, activate, listeners };
+  const install = async () => { let p; listeners.install({ waitUntil: (x) => { p = x; } }); await p; };
+  return { ctx, stores, puts, net, dispatchFetch, activate, install, listeners };
 }
 const get = (url, headers) => new Request(url, { method: 'GET', headers });
 
@@ -111,7 +123,7 @@ test('the public approved-spots read IS cached network-first and still works off
   const online = await w.dispatchFetch(get(PUBLIC_SPOTS, { apikey: ANON }));
   assert.ok(online.responded, 'public read not handled');
   assert.match(await (await online.responded).text(), /Public Gym/);
-  assert.deepEqual(w.puts.map((p) => p.cache), ['climbatlas-data-v5']);
+  assert.deepEqual(w.puts.map((p) => p.cache), ['climbatlas-data-' + CUR]);
   // offline: network throws, cached public copy is served
   w.net.impl = async () => { throw new TypeError('offline'); };
   const offline = await w.dispatchFetch(get(PUBLIC_SPOTS, { apikey: ANON }));
@@ -135,16 +147,19 @@ test('a Supabase response that declares itself private / no-store is not stored 
   assert.equal(w.puts.length, 0, 'error responses are not stored');
 });
 
-test('activation deletes the old v4 data cache and any non-public entry left in the current data cache', async () => {
+test('activation deletes the old v4 data cache (private data), the previous version, and any non-public entry left in the current data cache', async () => {
   const w = makeWorker();
   const old = await w.ctx.caches.open('climbatlas-data-v4');                   // what the previous worker left behind
   await old.put(new Request(`${SB}/rest/v1/marks?select=*`), new Response('[{"private":1}]'));
-  const cur = await w.ctx.caches.open('climbatlas-data-v5');
+  const prev = await w.ctx.caches.open('climbatlas-data-' + PREV);
+  await prev.put(new Request(PUBLIC_SPOTS), new Response('[]'));
+  const cur = await w.ctx.caches.open('climbatlas-data-' + CUR);
   await cur.put(new Request(`${SB}/rest/v1/sessions?select=*`), new Response('[{"private":2}]'));
   await cur.put(new Request(PUBLIC_SPOTS), new Response('[{"public":3}]'));
   await w.activate();
   assert.equal(w.stores.has('climbatlas-data-v4'), false, 'old data cache still present');
-  const remaining = [...w.stores.get('climbatlas-data-v5').keys()];
+  assert.equal(w.stores.has('climbatlas-data-' + PREV), false, 'previous version cache still present');
+  const remaining = [...w.stores.get('climbatlas-data-' + CUR).keys()];
   assert.deepEqual(remaining, [PUBLIC_SPOTS]);
 });
 
@@ -158,22 +173,63 @@ test('static/shared caching is unchanged: app shell stale-while-revalidate, tile
   const cdn = await w.dispatchFetch(get('https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.js')); await cdn.responded;
   const font = await w.dispatchFetch(get('https://fonts.googleapis.com/css2?family=Inter')); await font.responded;
   const bySrc = Object.fromEntries(w.puts.map((p) => [new URL(p.url).hostname + new URL(p.url).pathname, p.cache]));
-  assert.equal(bySrc['climbatlas.org/index.html'], 'climbatlas-shell-v5');
-  assert.equal(bySrc['basemaps.cartocdn.com/dark_all/3/1/2.png'], 'climbatlas-tiles-v5');
-  assert.equal(bySrc['unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.js'], 'climbatlas-runtime-v5');
-  assert.equal(bySrc['fonts.googleapis.com/css2'], 'climbatlas-runtime-v5');
+  assert.equal(bySrc['climbatlas.org/index.html'], 'climbatlas-shell-' + CUR);
+  assert.equal(bySrc['basemaps.cartocdn.com/dark_all/3/1/2.png'], 'climbatlas-tiles-' + CUR);
+  assert.equal(bySrc['unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.js'], 'climbatlas-runtime-' + CUR);
+  assert.equal(bySrc['fonts.googleapis.com/css2'], 'climbatlas-runtime-' + CUR);
   // second tile request is served from cache without touching the network
   const before = w.net.calls.length;
   const again = await w.dispatchFetch(get('https://basemaps.cartocdn.com/dark_all/3/1/2.png')); await again.responded;
   assert.equal(w.net.calls.length, before);
 });
 
+// A duplicate entry made the real install fail (Cache.addAll rejects duplicate requests), so the worker never registered and
+// the app had no offline shell at all (Brand Pass regression, found in the pre-merge audit).
+test('install: the precache list has no duplicate entries and the install completes with every shell file cached', async () => {
+  const m = /const SHELL_FILES = \[([\s\S]*?)\];/.exec(SRC);
+  const listed = [...m[1].matchAll(/'([^']+)'/g)].map((x) => new URL(x[1], 'https://climbatlas.org/').href);
+  const dups = listed.filter((u, i) => listed.indexOf(u) !== i);
+  assert.deepEqual(dups, [], 'duplicate precache entries: ' + dups.join(', '));
+  const w = makeWorker();
+  await w.install();                                  // rejects if cache.addAll rejects
+  const shell = w.stores.get('climbatlas-shell-' + CUR);
+  assert.equal(shell.size, listed.length, 'every shell file is cached on install');
+});
+
 test('precache list: every listed file exists on disk and includes the new safety modules', () => {
   const m = /const SHELL_FILES = \[([\s\S]*?)\];/.exec(SRC);
   const files = [...m[1].matchAll(/'([^']+)'/g)].map((x) => x[1]).filter((f) => f !== './');
   for (const f of files) assert.ok(fs.existsSync(path.join(ROOT, f)), 'missing precache file: ' + f);
-  for (const f of ['js/modules/html-safe.js', 'js/modules/popup-html.js', 'js/modules/moderation-html.js']) assert.ok(files.includes(f), 'not precached: ' + f);
+  for (const f of ['js/modules/html-safe.js', 'js/modules/list-html.js', 'js/modules/moderation-html.js', 'css/explore.css', 'assets/contour.svg', 'assets/mascot/head.svg']) assert.ok(files.includes(f), 'not precached: ' + f);
+  for (const f of ['css/', 'assets/']) {
+    for (const n of fs.readdirSync(path.join(ROOT, f)).filter(n => /\.(css|svg)$/.test(n))) assert.ok(files.includes(f + n), 'shell file not precached: ' + f + n);
+  }
   // every module the app imports is precached, so the shell still boots offline
   const modDir = path.join(ROOT, 'js', 'modules');
   for (const f of fs.readdirSync(modDir).filter((n) => n.endsWith('.js'))) assert.ok(files.includes('js/modules/' + f), 'app module not precached: ' + f);
+});
+
+// Explore keeps its state in the query string (?c=lng,lat,z&t=…), so a page load must be answered from the shell cached for
+// its path whatever the query -- otherwise an offline reload of a shared or restored view finds nothing.
+test('page loads with any query string are served from the per-path shell cache offline, and cached once per path', async () => {
+  const w = makeWorker();
+  const nav = (url) => ({ url, method: 'GET', mode: 'navigate', headers: new Headers() });
+  w.net.impl = async () => new Response('<!doctype html>shell', { status: 200 });
+  const first = await w.dispatchFetch(nav('https://climbatlas.org/?c=151.2000,-33.8700,12.00&t=boulder'));
+  assert.equal(await (await first.responded).text(), '<!doctype html>shell');
+  const again = await w.dispatchFetch(nav('https://climbatlas.org/?place=AU:NSW')); await again.responded;
+  const shellKeys = [...w.stores.get('climbatlas-shell-' + CUR).keys()];
+  assert.deepEqual(shellKeys, ['https://climbatlas.org/'], 'one entry per path, no query-string copies');
+  w.net.impl = async () => { throw new TypeError('offline'); };
+  const offline = await w.dispatchFetch(nav('https://climbatlas.org/?c=2.3500,48.8600,11.00&saved=1'));
+  assert.equal(await (await offline.responded).text(), '<!doctype html>shell');
+  // any app route is answered with that one shell offline, even a gym page never visited
+  const gym = await w.dispatchFetch(nav('https://climbatlas.org/gym/blochaus-marrickville'));
+  assert.equal(await (await gym.responded).text(), '<!doctype html>shell');
+  const region = await w.dispatchFetch(nav('https://climbatlas.org/in/au/nsw'));
+  assert.equal(await (await region.responded).text(), '<!doctype html>shell');
+  // sub-resources are unaffected: still cached by exact URL (stale-while-revalidate)
+  w.net.impl = async (req) => new Response('js', { status: 200 });
+  const js = await w.dispatchFetch(get('https://climbatlas.org/js/main.js')); await js.responded;
+  assert.ok(w.stores.get('climbatlas-shell-' + CUR).has('https://climbatlas.org/js/main.js'));
 });

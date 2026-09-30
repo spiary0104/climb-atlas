@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="212 44 610 520" role="img" aria-label="Bouldeer deer" color="#2F4B39">
+<!--
+  Bouldeer stamp head (docs/DESIGN.md sec. 12.1 asset 2): the head of assets/mascot/head.svg reduced to single ink and
+  two line weights (outline 14, detail 8), no boulder, no tints. Traced geometry from design/mascot/deer/head-on-boulder.png.
+  currentColor (default: stamp forest #2F4B39). Uses: the stamp component, the BOULDEER seal (mono), share cards,
+  the passport grid. The forehead spots stay (a defining trait) as small outlines.
+-->
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <!-- antlers: solid ink -->
+    <g stroke-width="30">
+      <path d="M392 208 C386 160 378 110 372 72"/><path d="M380 142 C360 128 340 116 322 104"/><path d="M386 150 C400 130 412 115 422 102"/>
+      <path d="M642 208 C648 160 656 110 662 72"/><path d="M654 142 C674 128 694 116 712 104"/><path d="M648 150 C634 130 622 115 612 102"/>
+    </g>
+    <!-- ears, head -->
+    <g stroke-width="14">
+      <path d="M352 262 C304 290 254 290 232 262 C224 230 229 200 242 182 C284 180 334 200 364 230"/>
+      <path d="M682 262 C730 290 780 290 802 262 C810 230 805 200 792 182 C750 180 700 200 670 230"/>
+      <path d="M517 174 C624 174 708 244 708 350 C708 430 684 490 655 540 L379 540 C350 490 326 430 326 350 C326 244 410 174 517 174 Z"/>
+    </g>
+    <!-- detail: inner ears, muzzle line, spots, brows, eye rings, mouth -->
+    <g stroke-width="8">
+      <path d="M338 246 C304 264 272 264 258 250 C253 232 255 214 262 204"/><path d="M696 246 C730 264 762 264 776 250 C781 232 779 214 772 204"/>
+      <path d="M338 436 C380 430 440 406 478 394 C498 387 536 387 556 394 C594 406 654 430 696 436"/>
+      <ellipse cx="469.5" cy="235" rx="9" ry="10.5"/><ellipse cx="518" cy="233" rx="12" ry="20"/><ellipse cx="568.5" cy="236" rx="9" ry="10.5"/>
+      <path d="M392 282 Q410 268 432 278"/><path d="M602 278 Q624 268 642 282"/>
+      <circle cx="421" cy="372" r="45"/><circle cx="610" cy="372" r="45"/>
+      <path d="M517 440 L517 452 M480 450 Q498 470 517 452 Q536 470 554 450"/>
+    </g>
+  </g>
+  <!-- solids: pupils and nose (highlights knocked out as paper-coloured dots would need a background, so none) -->
+  <g fill="currentColor">
+    <circle cx="431" cy="377" r="27"/><circle cx="600" cy="377" r="27"/>
+    <path d="M488 412 C488 398 546 398 546 412 C546 428 530 440 517 440 C504 440 488 428 488 412 Z"/>
+  </g>
+</svg>

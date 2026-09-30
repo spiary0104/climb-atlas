@@ -31,6 +31,14 @@ no schema or data change. Verified afterwards: `supabase migration list --linked
 pre-repair capture for every public-schema object and every row count (only the new `supabase_migrations` schema differs).
 From here on, apply new migrations with `supabase db push --linked`.
 
+## Applied to production
+2026-09-29 (owner ran `supabase db push --linked` after a dry run listing exactly these three):
+`20260926072124_add_spot_slugs`, `20260926084510_community_provenance`, `20260927090000_checkins`. Before: schema and data
+backups with `supabase db dump --linked` (kept outside the repo; the data dump holds auth users, keep it private). Rehearsed
+first on a local database built from the baseline plus a copy of the 2,127 production gyms. Verified afterwards (read-only):
+`migration list --linked` shows all four on both sides; 2,127 unique well-formed slugs; no gym's `updated_at` changed (compared
+with the backup); `checkins` refuses anon reads and writes; `profiles` readable; provenance RPCs answer; the live site loads.
+
 ## Tools
 - `scripts/introspect-schema.js <live|local|scratch> <dir>` — read-only catalog capture (live queries run inside `BEGIN READ ONLY`).
 - `scripts/compare-schema.js <live-dir> <other-dir>` — diff two captures (public schema).

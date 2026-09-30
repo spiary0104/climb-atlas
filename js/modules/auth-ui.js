@@ -1,30 +1,25 @@
 // Sign-in widget + sign-in modal (the auth session itself is window.auth, js/auth.js).
 import { appState } from './state.js';
-import { escapeHtml, showToast } from './utils.js';
+import { showToast } from './utils.js';
 
 // --- auth UI ---
-const authWidget = document.getElementById('authWidget');
+const accountSlot = document.getElementById('accountSlot');
 const authModalBackdrop = document.getElementById('authModalBackdrop');
 const authStatus = document.getElementById('authStatus');
 const authEmailInput = document.getElementById('authEmail');
 
+// Signed in: the default avatar (the deer head) opens /me. Signed out: a "Sign in" text button (sec. 6.4).
 export function renderAuthUI(user){
-  authWidget.innerHTML = user
-    ? `<span class="auth-email" title="${escapeHtml(user.email||'')}">${escapeHtml(user.email||'Signed in')}</span><button class="btn btn-text" id="signOutBtn">Sign out</button>`
-    : `<button class="btn btn-outline" id="signInBtn">Sign in</button>`;
+  accountSlot.innerHTML = user
+    ? `<button type="button" class="avatar-btn" data-nav="me" aria-label="Me: your gyms and account"><span class="avatar mascot mascot--avatar" aria-hidden="true"><img src="assets/mascot/head.svg" alt=""></span></button>`
+    : '<button type="button" class="btn btn-tertiary" id="topSignInBtn">Sign in</button>';
   updateMarksFilterAvailability();
 }
 
+// Saved/Climbed filters need an account: signing out switches them off (the chip row re-renders from appState on the
+// render() that follows every auth change; tapping those chips while signed out opens sign-in, filters.js).
 function updateMarksFilterAvailability(){
-  const signedIn = !!window.auth.user;
-  const climbedFilter = document.getElementById('filterClimbed');
-  const bookmarkedFilter = document.getElementById('filterBookmarked');
-  [climbedFilter, bookmarkedFilter].forEach(el=>{
-    if(!el) return;
-    el.disabled = !signedIn;
-    if(!signedIn && el.checked) el.checked = false;
-  });
-  if(!signedIn){ appState.showClimbedOnly = false; appState.showBookmarkedOnly = false; }
+  if(!window.auth.user){ appState.showClimbedOnly = false; appState.showBookmarkedOnly = false; }
 }
 
 export function openAuthModal(){
@@ -39,13 +34,7 @@ export function closeAuthModal(){
 }
 
 export function initAuthUI(){
-  authWidget.addEventListener('click', (e)=>{
-    if(e.target.id === 'signInBtn') openAuthModal();
-    else if(e.target.id === 'signOutBtn'){
-      window.auth.signOut();
-      showToast('Signed out');
-    }
-  });
+  accountSlot.addEventListener('click', (e)=>{ if(e.target.closest('#topSignInBtn')) openAuthModal(); });
   document.getElementById('authCancelBtn').addEventListener('click', closeAuthModal);
   authModalBackdrop.addEventListener('click', (e)=>{
     if(e.target === authModalBackdrop) closeAuthModal();

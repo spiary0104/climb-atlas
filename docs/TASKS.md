@@ -1,18 +1,26 @@
 # Tasks — open items only
 
-Full history is in `docs/archive/tasks.md` (archived, do not read; git log
-is the changelog). The ~60 "In Progress" entries there were stale — their
-work is merged and live on climbatlas.org — so none carried over.
+Full history: `docs/archive/tasks.md` (archived, do not read); git log is the changelog.
 
 Entry format: `### title` / Status / What / Notes. Move finished items out
 (delete them; git keeps history). Keep this file under 60 lines.
 
 ## In progress
+### Bouldeer redesign (docs/DESIGN.md sec. 17)
+- Status: Phases 0-5 + Brand Pass complete on `feature/bouldeer-brand-pass` (the earlier phase branches are stacked in it);
+  the release is its pull request into `master` (Vercel deploys climbatlas.org from `master`).
+- Production migrations applied 2026-09-29 (all four recorded; slugs, provenance RPCs, `profiles`, `checkins` live and
+  verified read-only; backups outside the repo). See docs/migrations.md.
+- Open: Lighthouse a11y >= 95 not measured; real-phone retest of the 2026-09-29 fixes (eyes, Date/Mood) and check-in on
+  production; Supabase Auth Redirect URLs: add preview domains (else sign-in lands on the Site URL); Explore first-run art unbuilt (7.10); Privacy Policy predates display names/check-ins/logbook (owner to update);
+  START and the Log tab both read "Log" (sec. 6.5); lake/plum colours provisional (sec. 19.1). Decisions: DESIGN.md log.
+  Phase 4 not built (minimal schema, owner): publish-then-review for hours/price/links, website field, photo/confirm points.
 ### Gym import pipeline — first batch imported; follow-ups
 - Status: pipeline + gated importer built and tested. Batch `import/batches/2026-09-24-reconciled-new-gyms`
-  (246 gyms) IMPORTED to production 2026-09-24, verified (approved 1,881 → 2,127; `manifest.json`).
-- Match index rebuilt from production (2,127 gyms); `scripts/validate-reconciled.js` handles pre- and post-import states.
+  (246 gyms) IMPORTED 2026-09-24, verified (1,881 → 2,127; `manifest.json`); index rebuilt and still equal to production (2026-09-29).
 - Open: retire data/gyms.json (runtime fallback + "Revert to original" use stale ids; plan in docs/import-workflow.md). seed.html removed.
+- Location data (dry run 2026-09-29, nothing applied): 11 OSM-validated updates approved in principle (pins; 6 addresses) need an
+  update-capable importer (today insert-only); 4 to manual review; seed-1139 Manga Climbing has Rockspot's pin; 489 unresolved.
 
 ## Backlog
 
@@ -47,14 +55,6 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
   checkout, a webhook (Supabase Edge Function — confirm that's OK given
   the no-build-tooling rule), a subscriptions table + RLS.
 - Open questions: what exactly is gated; free-tier cap; price.
-
-### Redesign follow-ups (optional)
-- Human check on a real phone + wide monitor (globe framing, drawer
-  transitions were only verified numerically).
-- If touch users miss row actions: faint background on `.row-action`
-  under `@media (hover:none)`.
-- List virtualisation only if the dataset roughly doubles.
-- Legal copy review: Privacy/Terms are still plain-language drafts.
 
 ## Blocked
 - _(none)_

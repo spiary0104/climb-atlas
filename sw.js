@@ -1,8 +1,19 @@
-// Climb Atlas service worker — offline app shell + map/data caching.
+// Bouldeer service worker — offline app shell + map/data caching.
 //
 // Bump CACHE_VERSION whenever a precached file's content changes so
 // clients pick up the new version instead of serving stale files forever.
-const CACHE_VERSION = 'v5';   // v5: private Supabase reads are no longer cached; activating v5 deletes the old v4 data cache that held them
+// v5: private Supabase reads are no longer cached (activation deleted the old v4 data cache that held them).
+// v6: Bouldeer design foundations (new CSS files, icon sprite, nav.js/icons.js; css/chips.css removed).
+// v7: Phase 2 Explore (explore.css, contour placeholder, list/search/sheet modules; sidebar.js + popup-html.js removed);
+//     page loads are served per path whatever the query string (Explore state lives in ?c=…).
+// v8: Field Guide pass (cream surfaces, deer head on START/avatar, redrawn contour, warm basemap).
+// v9: Phase 3 pages (router, gym/region/log/me pages, page.css); every app route is served the one cached shell.
+// v10: Phase 4 community (provenance marks and lines, edit notes, /me contributions, /mod).
+// v11: Brand Pass (deer palette, object line, head lockup, seal, antler mark, favicon/app icon, paper mini maps).
+// v12: Phase 5 passport (check-in sheet, stamps, /me/passport, milestone sheet, share card, START sheet).
+// v13: real-phone fixes (toast in the shell, gym picker, Regions search, re-traced mascot poses with white eyes, legal
+//      rebrand). Same-origin files are stale-while-revalidate, so without a bump phones kept the old deer art.
+const CACHE_VERSION = 'v13';
 const SHELL_CACHE = 'climbatlas-shell-' + CACHE_VERSION;
 const RUNTIME_CACHE = 'climbatlas-runtime-' + CACHE_VERSION;
 const TILE_CACHE = 'climbatlas-tiles-' + CACHE_VERSION;
@@ -13,8 +24,22 @@ const SHELL_FILES = [
   'index.html',
   'about.html',
   'manifest.json',
+  'css/tokens.css',
+  'css/base.css',
+  'css/components.css',
+  'css/explore.css',
+  'css/page.css',
+  'css/mod.css',
+  'css/passport.css',
   'css/style.css',
-  'css/chips.css',
+  'assets/icons.svg',
+  'assets/contour.svg',
+  'assets/boulder.svg',
+  'assets/mascot/head.svg',
+  'assets/mascot/stamp-head.svg',
+  'assets/brand/antlers.svg',
+  'icons/favicon.svg',
+  'icons/icon.svg',
   'js/supabase-init.js',
   'js/auth.js',
   'js/main.js',
@@ -23,17 +48,47 @@ const SHELL_FILES = [
   'js/modules/constants.js',
   'js/modules/regions.js',
   'js/modules/utils.js',
+  'js/modules/icons.js',
+  'js/modules/nav.js',
   'js/modules/html-safe.js',
-  'js/modules/popup-html.js',
+  'js/modules/list-html.js',
+  'js/modules/pin-html.js',
+  'js/modules/geo.js',
+  'js/modules/search-index.js',
   'js/modules/moderation-html.js',
   'js/modules/map.js',
-  'js/modules/sidebar.js',
+  'js/modules/explore.js',
+  'js/modules/list.js',
+  'js/modules/filters.js',
+  'js/modules/search.js',
+  'js/modules/sheet.js',
+  'js/modules/marks.js',
+  'js/modules/router.js',
+  'js/modules/slug.js',
+  'js/modules/page-html.js',
+  'js/modules/gym-page.js',
+  'js/modules/mini-map.js',
+  'js/modules/region-page.js',
+  'js/modules/log-page.js',
+  'js/modules/me-page.js',
+  'js/modules/provenance.js',
+  'js/modules/community.js',
+  'js/modules/mod-page.js',
+  'js/modules/add-html.js',
+  'js/modules/add-page.js',
+  'js/modules/brand.js',
+  'js/modules/passport.js',
+  'js/modules/stamp-html.js',
+  'js/modules/checkin.js',
+  'js/modules/milestone-sheet.js',
+  'js/modules/passport-page.js',
+  'js/modules/share-card.js',
   'js/modules/modals.js',
   'js/modules/auth-ui.js',
   'js/modules/data-load.js',
   'js/modules/logbook.js',
   'js/modules/moderation.js',
-  'icons/icon.svg'
+  'js/modules/gym-picker.js'
 ];
 
 // Hosts whose responses are map tiles/sprites/glyphs -- worth caching
@@ -116,6 +171,25 @@ async function cacheFirst(request, cacheName) {
   return response;
 }
 
+// Page loads: Explore keeps its state in the query string (?c=lng,lat,z&t=…), which changes on every pan, and every app
+// route (/gym/…, /in/…, /log, /me) is the same index.html shell rendered by the router. So app routes share ONE cached
+// shell (keyed '/'), whatever the path or query, and other pages (about.html) are cached per path. Without this an
+// offline reload of /?c=… or of a gym page never visited online would find nothing.
+const APP_ROUTE = /^\/(?:index\.html)?$|^\/(?:gym|in|log|me|mod|add)(?:\/|$)/;
+async function navigation(request) {
+  const cache = await caches.open(SHELL_CACHE);
+  const url = new URL(request.url);
+  const key = new Request(url.origin + (APP_ROUTE.test(url.pathname) ? '/' : url.pathname));
+  const cached = await cache.match(key);
+  const networkPromise = fetch(request)
+    .then((response) => {
+      if (response && response.ok) cache.put(key, response.clone());
+      return response;
+    })
+    .catch(() => null);
+  return cached || (await networkPromise) || Response.error();
+}
+
 async function networkFirst(request, cacheName) {
   const cache = await caches.open(cacheName);
   try {
@@ -155,6 +229,10 @@ self.addEventListener('fetch', (event) => {
   const isSameOrigin = url.origin === self.location.origin;
   const isLibraryCdn = ['unpkg.com', 'cdn.jsdelivr.net', 'fonts.googleapis.com', 'fonts.gstatic.com']
     .includes(url.hostname);
+  if (isSameOrigin && request.mode === 'navigate') {
+    event.respondWith(navigation(request));
+    return;
+  }
   if (isSameOrigin || isLibraryCdn) {
     event.respondWith(staleWhileRevalidate(request, isSameOrigin ? SHELL_CACHE : RUNTIME_CACHE));
   }

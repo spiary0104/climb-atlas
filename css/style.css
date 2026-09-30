@@ -1,1485 +1,199 @@
-:root{
-    --bg:#211f1b;
-    --surface:#2b2822;
-    --surface-2:#37332a;
-    --border:#4a4438;
-    --text:#ece5d6;
-    --text-dim:#a89d87;
-    --nsw:#4e8fc7;
-    --vic:#e2793f;
-    --qld:#5aa373;
-    --wa:#9a72cf;
-    --sa:#d9b647;
-    --act:#dd6a97;
-    --tas:#7fb5a3;
-    --nt:#c47a4a;
-    --us-ca:#c96b5a;
-    --us-tx:#c98f4a;
-    --us-ga:#b3a83f;
-    --us-ut:#8fae52;
-    --us-al:#5aab6e;
-    --us-tn:#4aab96;
-    --us-co:#4aa3ab;
-    --us-wa:#4a86c9;
-    --us-ny:#6b6fc9;
-    --us-nv:#9a5fc9;
-    --us-ma:#c95fae;
-    --us-il:#c95f7a;
-    --jp-tokyo:#d1495b;
-    --jp-osaka:#e08e45;
-    --jp-kyoto:#c9a227;
-    --jp-fukuoka:#4c9a7c;
-    --jp-aichi:#5b7fc4;
-    --jp-kanagawa:#8a5fb0;
-    --jp-hokkaido:#4aa3c9;
-    --jp-hyogo:#c9648a;
-    --jp-miyagi:#6bc93f;
-    --jp-hiroshima:#c9783f;
-    --jp-okinawa:#3fc9a8;
-    --jp-saitama:#8e3fc9;
-    --ca-on:#c0392b;
-    --ca-bc:#2e86ab;
-    --ca-qc:#6a4fb3;
-    --ca-ab:#d68910;
-    --nz-auckland:#1f8a70;
-    --nz-wellington:#8a3ffc;
-    --nz-canterbury:#e06b3f;
-    --cn-shenzhen:#e0b400;
-    --cn-guangzhou:#c98f00;
-    --cn-shanghai:#4a90b8;
-    --cn-hangzhou:#5aab6e;
-    --cn-chengdu:#b85a8a;
-    --cn-beijing:#c0392b;
-    --cn-wuhan:#7a6bc4;
-    --cn-changsha:#3fae9e;
-    --cn-zhuhai:#d68910;
-    --cn-chongqing:#8e5b3a;
-    --cn-xian:#a1887f;
-    --cn-nanjing:#4f7942;
-    --cn-suzhou:#7a6bb0;
-    --cn-tianjin:#c25e5e;
-    --gb-england:#c0392b;
-    --gb-scotland:#2e5fa3;
-    --gb-wales:#5aab6e;
-    --gb-northern-ireland:#d9a441;
-    --de-bayern:#4a90b8;
-    --de-berlin:#c0392b;
-    --de-nordrhein-westfalen:#5aab6e;
-    --de-hessen:#9a72cf;
-    --de-baden-wurttemberg:#d9b647;
-    --de-bremen:#dd6a97;
-    --de-schleswig-holstein:#7fb5a3;
-    --de-sachsen:#c47a4a;
-    --de-niedersachsen:#4aa3c9;
-    --de-sachsen-anhalt:#8a5fb0;
-    --de-brandenburg:#3fae9e;
-    --de-rheinland-pfalz:#c98f4a;
-    --de-hamburg:#6b6fc9;
-    --de-saarland:#c95f7a;
-    --de-thuringen:#e08e45;
-    --de-mecklenburg-vorpommern:#5b7fc4;
-    --fr-ile-de-france:#c0563d;
-    --fr-auvergne-rhone-alpes:#3f9e6b;
-    --fr-paca:#4a7fc9;
-    --fr-occitanie:#b38f3f;
-    --se-vastra-gotaland:#7a5cc4;
-    --se-stockholm:#4aa8a3;
-    --se-skane:#cc6f9e;
-    --nl-noord-holland:#d67a2e;
-    --nl-zuid-holland:#4592c9;
-    --nl-utrecht:#6bb35a;
-    --it-lazio:#c94f6b;
-    --it-lombardia:#3fae8e;
-    --it-emilia-romagna:#8a6bc9;
-    --it-toscana:#cfa23a;
-    --be-flanders:#c9793f;
-    --be-wallonia:#4a9ecf;
-    --be-brussels:#8a5cc9;
-    --kr-seoul:#d1495c;
-    --kr-busan:#3f9ecf;
-    --kr-gyeonggi:#6fae3f;
-    --kr-gwangju:#a35cc9;
-    --kr-gyeongsangnam:#cf8a3f;
-    --kr-ulsan:#3fcf9e;
-    --kr-incheon:#cf3f7a;
-    --kr-daegu:#7a8acf;
-    --kr-jeollanam:#cfaf3f;
-    --kr-chungcheongnam:#5ac9c9;
-    --kr-daejeon:#8ecf3f;
-    --kr-jeju:#cf5a3f;
-    --kr-gangwon:#3f6acf;
-    --kr-chungcheongbuk:#6a3fcf;
-    --kr-gyeongsangbuk:#3fcf57;
-    --kr-jeollabuk:#cf3fae;
-    --es-madrid:#c9503f;
-    --es-catalunya:#3f8ec9;
-    --pt-lisboa:#3fa563;
-    --pt-coimbra:#c9973f;
-    --pt-porto:#8f3fc9;
-    --at-wien:#c93f7a;
-    --at-steiermark:#3fc9a8;
-    --at-oberosterreich:#7a9ecf;
-    --at-salzburg:#cf9e3f;
-    --ch-zurich:#c93f3f;
-    --ch-basel-stadt:#3fc95a;
-    --ch-bern:#a03fc9;
-    --pl-mazowieckie:#c9583f;
-    --pl-dolnoslaskie:#3f9ec9;
-    --pl-malopolskie:#8ec93f;
-    --pl-wielkopolskie:#c93f9e;
-    --dk-hovedstaden:#3fc9c0;
-    --dk-syddanmark:#c9a33f;
-    --dk-midtjylland:#6b3fc9;
-    --dk-nordjylland:#3fc95e;
-    --fi-uusimaa:#c93f5e;
-    --fi-paijat-hame:#3f7ac9;
-    --fi-pohjois-pohjanmaa:#a8c93f;
-    --fi-pirkanmaa:#c9843f;
-    --ie-dublin:#3f9ecf;
-    --ie-wicklow:#c93f6b;
-    --ie-clare:#5ac93f;
-    --ie-cork:#9e3fc9;
-    --ie-limerick:#c9c33f;
-    --no-oslo:#3fa8c9;
-    --no-vestland:#c9683f;
-    --no-trondelag:#7ac93f;
-    --no-rogaland:#c93f9e;
-    --no-nordland:#3fc96c;
-    --no-buskerud:#c9c33f;
-    --no-agder:#8a3fc9;
-    --no-more-og-romsdal:#c95f3f;
-    --no-innlandet:#3f7ec9;
-    --no-telemark:#c93fc0;
-    --mx-ciudad-de-mexico:#c9503f;
-    --mx-nuevo-leon:#3f7ec9;
-    --mx-mexico:#8ec93f;
-    --mx-jalisco:#c9a33f;
-    --br-sao-paulo:#3fc9a3;
-    --br-rio-de-janeiro:#c93f6b;
-    --br-minas-gerais:#8a5cc9;
-    --br-parana:#c9843f;
-    --hu-budapest:#c9503f;
-    --hu-pest:#3f9ec9;
-    --hu-veszprem:#7ac93f;
-    --gr-attica:#3f7ec9;
-    --gr-central-macedonia:#c9683f;
-    --gr-south-aegean:#3fc9a3;
-    --gr-crete:#c93f9e;
-    --gr-western-greece:#c9c33f;
-    --cz-praha:#8a3fc9;
-    --cz-jihomoravsky:#3fc96c;
-    --is-hofudborgarsvaedid:#3fa8c9;
-    --is-nordurland-eystra:#c95f3f;
-    --ro-bucuresti:#c9503f;
-    --ro-brasov:#3f9ec9;
-    --ro-mures:#7ac93f;
-    --ro-timis:#c9683f;
-    --ro-harghita:#8a3fc9;
-    --ro-cluj:#3fc96c;
-    --ro-iasi:#c93f9e;
-    --hr-zagreb:#3f7ec9;
-    --hr-splitsko-dalmatinska:#c9c33f;
-    --hr-istarska:#3fc9a3;
-    --hr-koprivnicko-krizevacka:#c93f6b;
-    --ru-moskva:#8a6bb0;
-    --ru-sankt-peterburg:#c9843f;
-    --bg-sofia-city:#3fa8c9;
-    --bg-varna:#c95f3f;
-    --ar-buenos-aires:#3f8ec9;
-    --ar-caba:#c9a23f;
-    --ar-cordoba:#6bc93f;
-    --ar-santa-fe:#c93f5e;
-    --ar-entre-rios:#3fc9bd;
-    --ar-mendoza:#9e3fc9;
-    --ar-neuquen:#c9703f;
-    --ph-ncr:#c93f7a;
-    --ph-rizal:#3fa1c9;
-    --ph-laguna:#7a3fc9;
-    --ph-benguet:#3fc98a;
-    --ph-bulacan:#c9573f;
-    --ph-misamis-oriental:#3f6ac9;
-    --ph-cavite:#c93fb0;
-    --ph-camarines-sur:#4fc93f;
-    --ph-pampanga:#c9913f;
-    --co-bogota-dc:#3f9ec9;
-    --co-santander:#c9703f;
-    --co-valle-del-cauca:#7ac93f;
-    --co-cundinamarca:#c93f8a;
-    --co-norte-de-santander:#3fc9bd;
-    --co-antioquia:#9e3fc9;
-    --co-tolima:#c9c33f;
-    --co-huila:#3f6ac9;
-    --co-narino:#c95f6b;
-    --cl-metropolitana:#4fc98a;
-    --cl-valparaiso:#c9843f;
-    --cl-los-lagos:#6b3fc9;
-    --cl-libertador-ohiggins:#c93f5e;
-    --cl-maule:#3fa8c9;
-    --cl-biobio:#a3c93f;
-    --cl-araucania:#c96b3f;
-    --cl-los-rios:#8a3fc9;
-    --ve-distrito-capital:#3fc96c;
-    --ve-miranda:#c93f3f;
-    --ve-zulia:#3f7ec9;
-    --ve-aragua:#c9a23f;
-    --ve-tachira:#6bc9a3;
-    --ve-guarico:#9e6bc9;
-    --in-tamil-nadu:#3f9ec9;
-    --in-telangana:#c9703f;
-    --in-himachal-pradesh:#7ac93f;
-    --in-maharashtra:#c93f8a;
-    --in-delhi:#3fc9bd;
-    --in-uttarakhand:#9e3fc9;
-    --il-southern:#c9c33f;
-    --il-jerusalem:#3f6ac9;
-    --il-northern:#c95f6b;
-    --il-central:#4fc98a;
-    --il-tel-aviv:#c9843f;
-    --id-bali:#6b3fc9;
-    --id-jawa-barat:#c93f5e;
-    --id-riau:#3fa8c9;
-    --id-banten:#a3c93f;
-    --id-sulawesi-tengah:#c96b3f;
-    --id-jawa-timur:#8a3fc9;
-    --id-jambi:#3fc96c;
-    --tw-hsinchu-county:#c93f3f;
-    --tw-new-taipei:#3f7ec9;
-    --tw-taichung:#c9a23f;
-    --tw-taipei:#6bc9a3;
-    --tw-kaohsiung:#a33fc9;
-    --tw-tainan:#c9703f;
-    --vn-hanoi:#3fc98e;
-    --vn-ho-chi-minh:#c9433f;
-    --lt-kaunas:#c9a23f;
-    --lt-klaipeda:#3f7ec9;
-    --lt-vilnius:#8e3fc9;
-    --za-western-cape:#3f9ec9;
-    --za-gauteng:#c9703f;
-    --za-kwazulu-natal:#7ac93f;
-    --za-eastern-cape:#c93f6b;
-    --za-mpumalanga:#9e3fc9;
-    --ec-pichincha:#3f7ec9;
-    --ec-azuay:#c9863f;
-    --ec-tungurahua:#6bc93f;
-    --ec-canar:#c93f9e;
-    --ec-imbabura:#3fc9b0;
-    --ec-manabi:#c9583f;
-    --ec-guayas:#8a3fc9;
-    --ec-pastaza:#c9c33f;
-    --rs-belgrade:#c9433f;
-    --rs-south-backa:#3fa3c9;
-    --bo-cochabamba:#3fc95e;
-    --bo-la-paz:#c9973f;
-    --ir-qazvin:#3f5ec9;
-    --ir-qom:#c93f7e;
-    --ir-tehran:#8ec93f;
-    --ir-zanjan:#c98a3f;
-    --ee-harju:#3f9bc9;
-    --ee-tartu:#c9633f;
-    --ee-hiiu:#7ec93f;
-    --my-penang:#c93f9e;
-    --my-johor:#3fc97a;
-    --my-putrajaya:#c9a23f;
-    --my-selangor:#5e3fc9;
-    --th-bangkok:#c9433f;
-    --th-chiang-mai:#3fc9a2;
-    --th-surat-thani:#c9b03f;
-    --th-phuket:#7a3fc9;
-    --ua-kyiv:#3f7ac9;
-    --ua-lviv:#c9843f;
-    --sk-bratislavsky:#3fc9c4;
-    --sk-zilinsky:#c9433f;
-    --sk-trenciansky:#8a3fc9;
-    --sk-banskobystricky:#c9a13f;
-    --cy-nicosia:#3f8ac9;
-    --cy-limassol:#c9633f;
-    --pa-chiriqui:#4fae6d;
-    --pa-panama:#c9a13f;
-    --pe-lima:#c9433f;
-    --pe-arequipa:#3fa1c9;
-    --tr-istanbul:#c9433f;
-    --tr-bursa:#3f8ac9;
-    --tr-eskisehir:#4fae6d;
-    --lv-riga:#8a3fc9;
-    --sg-central:#c9433f;
-    --sg-northwest:#3f8ac9;
-    --ba-republikasrpska:#8a3fc9;
-    --ba-herzegovinaneretva:#4fae6d;
-    --ba-unasana:#c9a13f;
-    --ad-andorralavella:#c9433f;
-    --ad-canillo:#3f8ac9;
-    --ad-encamp:#4fae6d;
-    --ad-escaldesengordany:#c9a13f;
-    --si-osrednjeslovenska:#c9433f;
-    --si-gorenjska:#3f8ac9;
-    --si-savinjska:#c9a13f;
-    --si-podravska:#8a3fc9;
-    --si-obalnokraska:#3fc9c4;
-    --si-jugovzhodna:#c95f6b;
-    --si-goriska:#7ac93f;
-    --kz-almatycity:#c9433f;
-    --kz-astana:#3f8ac9;
-    --cr-sanjose:#c9433f;
-    --cr-heredia:#3f8ac9;
-    --cr-puntarenas:#c9a13f;
-    --cr-guanacaste:#8a3fc9;
-    --cr-cartago:#3fc9c4;
-    --by-minskcity:#c9433f;
-    --by-brest:#3f8ac9;
-    --by-grodno:#c9a13f;
-    --uy-montevideo:#c9433f;
-    --uy-maldonado:#3f8ac9;
-    --uy-tacuarembo:#c9a13f;
-    --uy-paysandu:#8a3fc9;
-    --sa-riyadh:#c9433f;
-    --sa-makkah:#3f8ac9;
-    --sa-eastern:#c9a13f;
-    --hk-eastern:#c9433f;
-    --hk-wan-chai:#3f8ac9;
-    --hk-kowloon-city:#c9a13f;
-    --hk-kwun-tong:#8a3fc9;
-    --hk-sham-shui-po:#3fc9a1;
-    --hk-wong-tai-sin:#c9683f;
-    --hk-yau-tsim-mong:#5fc93f;
-    --hk-kwai-tsing:#c93f8a;
-    --hk-sai-kung:#c9433f;
-    --hk-sha-tin:#3f8ac9;
-    --hk-tsuen-wan:#c9a13f;
-    --hk-tuen-mun:#8a3fc9;
-    --hk-southern:#3fc9a1;
-    --hk-central-western:#c9683f;
-    --eg-giza:#c9433f;
-    --eg-cairo:#3f8ac9;
-    --ke-nairobi:#c9433f;
-    --ke-laikipia:#3f8ac9;
-    --qa-doha:#c9433f;
-    --qa-aldaayen:#3f8ac9;
-    --am-yerevan:#c9433f;
-    --lb-mountlebanon:#c9433f;
-    --lb-south:#3f8ac9;
-    --jo-amman:#c9433f;
-    --np-bagmati:#c9433f;
-    --np-gandaki:#3f8ac9;
-    --gt-sacatepequez:#c9433f;
-    --gt-guatemala:#3f8ac9;
-    --gt-solola:#c9a13f;
-    --me-podgorica:#c9433f;
-    --me-tivat:#3f8ac9;
-    --mn-ulaanbaatar:#c9433f;
-    --om-muscat:#c9433f;
-    --py-asuncion:#c9433f;
-    --py-central:#3f8ac9;
-    --ae-dubai:#c9433f;
-    --ae-abudhabi:#3f8ac9;
-    --ge-tbilisi:#c95f6b;
-    --lu-luxembourg:#3f8ac9;
-    --lu-eschsuralzette:#c9a13f;
-    --t-indoor:#3fb8a6;
-    --t-toprope:#8a6bb0;
-    --t-lead:#4a90c9;
-    --community:#e8d9a0;
-    --edited:#8fb0d6;
-    --bookmark:#e0b23c;
+/* App layer: the shell (top bar, Me menu, notices), shared map-overlay objects, MapLibre control overrides, logbook and
+   moderation lists, long-form dialogs and the About page. Explore itself lives in css/explore.css.
+   Semantic and component tokens only (css/tokens.css); shared components live in css/components.css.
+   Phase 3/4 move the page-level parts into css/page.css / css/mod.css (docs/DESIGN.md sec. 16.2). */
 
-    /* Semantic tokens -- everything above is the per-region map palette,
-       everything below is what the UI itself is built from. Keep them
-       separate: --vic is Victoria's colour, --accent is the app's. */
-    --accent:#e2793f;
-    --accent-ink:var(--accent-ink);
-    --success:#5aa373;
-    --success-ink:var(--success-ink);
-    --danger:#c14f6b;
-    --focus:#7fb0e8;
-    --climbed:var(--success);
+body.app-body{overflow:hidden;}
+.app{display:flex;flex-direction:column;height:100vh;height:100dvh;}
 
-    /* Type: display for the wordmark/headings/controls, body for content
-       and forms, mono only for numeric data (counts, coordinates, grades). */
-    --font-display:'Space Grotesk',system-ui,sans-serif;
-    --font-body:'Inter',system-ui,sans-serif;
-    --font-mono:'Space Mono',ui-monospace,monospace;
-    --fs-xs:11px;
-    --fs-sm:12px;
-    --fs-md:13px;
-    --fs-base:14px;
-    --fs-lg:16px;
-    --fs-xl:20px;
-    --lh-tight:1.25;
-    --lh-body:1.5;
+/* ===== Top bar (>= 600px) ======================================================================================== */
+.topbar .add-label-short{display:none;}
+.account-slot{position:relative;display:flex;align-items:center;}
 
-    --sp-1:4px;
-    --sp-2:8px;
-    --sp-3:12px;
-    --sp-4:16px;
-    --sp-5:24px;
-    --sp-6:32px;
-    --r-sm:6px;
-    --r-md:8px;
-    --r-lg:12px;
-    --shadow-float:0 12px 30px -10px rgba(10,9,7,0.6), 0 2px 8px rgba(10,9,7,0.35);
-  }
-  *{box-sizing:border-box;}
-  /* Form controls don't inherit the page font by default (they'd fall back
-     to the UA's 13.3px Arial) -- make every button/input pick it up. */
-  button,input,select,textarea{font-family:inherit;}
-  /* Keyboard focus ring for every interactive element -- :focus-visible so
-     mouse clicks on buttons don't paint it, but keyboard users always get it. */
-  :where(button, a, input, select, textarea, [tabindex]):focus-visible{
-    outline:2px solid var(--focus);
-    outline-offset:2px;
-  }
-  .skip-link{
-    position:absolute;left:12px;top:-100px;z-index:2000;
-    background:var(--accent);color:var(--accent-ink);
-    padding:8px 14px;border-radius:8px;
-    font-family:var(--font-display);font-weight:700;font-size:var(--fs-md);
-    text-decoration:none;
-  }
-  .skip-link:focus{top:12px;}
-  .visually-hidden{
-    position:absolute;width:1px;height:1px;padding:0;margin:-1px;
-    overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;
-  }
-  @media (prefers-reduced-motion: reduce){
-    *,*::before,*::after{
-      transition-duration:.01ms !important;
-      animation-duration:.01ms !important;
-      animation-iteration-count:1 !important;
-      scroll-behavior:auto !important;
-    }
-  }
-  html,body{height:100%;}
-  body{
-    margin:0;
-    background:var(--bg);
-    color:var(--text);
-    font-family:var(--font-body);
-    overflow:hidden;
-  }
-  .app{display:flex;flex-direction:column;height:100vh;}
+/* ===== Offline notice ============================================================================================ */
+.offline-banner{border-radius:var(--radius-none);border-width:0 0 var(--border-width);justify-content:center;}
+.offline-banner.hidden{display:none;}
 
-  /* --- Buttons ---------------------------------------------------------
-     One base + three tiers. Primary is the single accent-filled action on
-     any surface; outline is a bordered secondary; text is a quiet tertiary
-     for navigation. Modal forms keep their own full-width .add-btn /
-     .btn-submit / .btn-cancel below. */
-  .btn{
-    appearance:none;
-    display:inline-flex;align-items:center;justify-content:center;gap:6px;
-    font-family:var(--font-display);
-    font-weight:600;
-    font-size:var(--fs-md);
-    line-height:1.2;
-    padding:8px 12px;
-    min-height:34px;
-    border-radius:var(--r-md);
-    border:1px solid transparent;
-    background:transparent;
-    color:var(--text);
-    cursor:pointer;
-    text-decoration:none;
-    white-space:nowrap;
-    transition:border-color .15s ease, background-color .15s ease, color .15s ease, transform .1s ease, filter .15s ease;
-  }
-  .btn:active{transform:scale(0.97);}
-  .btn-primary{background:var(--accent);color:var(--accent-ink);padding-inline:14px;}
-  .btn-primary:hover{filter:brightness(1.08);}
-  .btn-outline{border-color:var(--border);background:var(--surface-2);}
-  .btn-outline:hover{border-color:var(--text-dim);}
-  .btn-text{color:var(--text-dim);padding-inline:10px;}
-  .btn-text:hover{color:var(--text);background:var(--surface-2);}
-  .icon-btn{
-    appearance:none;
-    display:none;
-    align-items:center;justify-content:center;
-    width:36px;height:36px;
-    border-radius:var(--r-md);
-    border:1px solid var(--border);
-    background:var(--surface-2);
-    color:var(--text);
-    cursor:pointer;
-    transition:border-color .15s ease, transform .1s ease;
-  }
-  .icon-btn:hover{border-color:var(--text-dim);}
-  .icon-btn:active{transform:scale(0.92);}
+/* Floating paper objects over the map: hairline + shadow.raised (the only place that shadow is allowed). */
+.map-float{
+  background:var(--color-surface-default);
+  color:var(--color-text-primary);
+  border:var(--border-width) solid var(--color-border-subtle);
+  box-shadow:var(--shadow-raised);
+}
 
-  /* --- Header ---------------------------------------------------------- */
-  header{
-    position:relative;
-    padding:10px 20px;
-    min-height:56px;
-    border-bottom:1px solid var(--border);
-    background:
-      repeating-linear-gradient(0deg, transparent 0 26px, rgba(236,229,214,0.035) 26px 27px),
-      var(--surface);
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:var(--sp-4);
-    /* Above the sidebar drawer (z 600) so the mobile nav dropdown, which
-       lives inside the header, never renders underneath it. */
-    z-index:700;
-  }
-  .header-left{display:flex;align-items:center;gap:var(--sp-3);min-width:0;}
-  header h1{
-    font-family:var(--font-display);
-    font-weight:700;
-    font-size:var(--fs-xl);
-    letter-spacing:.02em;
-    line-height:1;
-    margin:0;
-    text-transform:uppercase;
-    white-space:nowrap;
-  }
-  header h1 span{color:var(--accent);}
-  header .tagline{
-    font-size:var(--fs-md);
-    color:var(--text-dim);
-    padding-left:var(--sp-3);
-    border-left:1px solid var(--border);
-    white-space:nowrap;
-  }
-  header .count-badge{
-    font-family:var(--font-mono);
-    font-variant-numeric:tabular-nums;
-    font-size:var(--fs-sm);
-    color:var(--text-dim);
-    white-space:nowrap;
-    margin-right:var(--sp-1);
-  }
-  header .count-badge strong{color:var(--text);font-weight:700;}
+/* Toast: short status text on the inverse surface (never the character; sec. 12.2). It lives in the app shell and is
+   fixed, so it shows on Explore, on every page and over dialogs; below the top bar where there is one, below the status
+   bar on phones; long messages wrap instead of running off a phone screen. */
+.toast{
+  position:fixed;top:calc(var(--size-topbar-desktop) + var(--space-4));left:50%;z-index:var(--z-status);
+  width:max-content;max-width:calc(100vw - var(--space-4) * 2);text-align:center;
+  transform:translateX(-50%) translateY(calc(var(--space-2) * -1));
+  padding:var(--space-2) var(--space-4);
+  background:var(--color-surface-inverse);color:var(--color-text-inverse);
+  border-radius:var(--radius-md);box-shadow:var(--shadow-raised);
+  font-size:var(--type-text-md-size);line-height:var(--type-text-md-line);font-weight:var(--font-weight-medium);
+  opacity:0;pointer-events:none;
+  transition:opacity var(--motion-slow) var(--ease-standard), transform var(--motion-slow) var(--ease-standard);
+}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
 
-  .header-right{display:flex;align-items:center;gap:var(--sp-2);flex-shrink:0;}
-  .header-nav{display:flex;align-items:center;gap:var(--sp-1);}
-  .auth-widget{display:flex;align-items:center;gap:var(--sp-1);}
-  .auth-email{
-    font-family:var(--font-body);
-    font-size:var(--fs-sm);
-    color:var(--text-dim);
-    max-width:160px;
-    overflow:hidden;
-    text-overflow:ellipsis;
-    white-space:nowrap;
-  }
+.placing-banner{
+  position:absolute;top:var(--space-4);left:50%;z-index:var(--z-toast);
+  transform:translateX(-50%);
+  display:none;padding:var(--space-2) var(--space-4);
+  border-radius:var(--radius-md);border-color:var(--color-border-strong);
+  font-size:var(--type-text-sm-size);line-height:var(--type-text-sm-line);
+}
+.placing-banner.show{display:block;}
 
-  .offline-banner{
-    background:rgba(226,121,63,0.12);
-    border-bottom:1px solid var(--accent);
-    color:var(--accent);
-    font-family:var(--font-body);
-    font-size:var(--fs-sm);
-    padding:8px 22px;
-    text-align:center;
-  }
-  .offline-banner.hidden{display:none;}
+/* ===== MapLibre controls ============================================================================================ */
+.maplibregl-ctrl-group{background:var(--map-control-surface) !important;border:var(--border-width) solid var(--map-control-border);border-radius:var(--radius-md) !important;box-shadow:var(--shadow-raised) !important;}
+.maplibregl-ctrl-group button{background:transparent !important;width:var(--size-control-sm) !important;height:var(--size-control-sm) !important;}
+.maplibregl-ctrl-group button:not(:last-child){border-bottom:var(--border-width) solid var(--map-control-border) !important;}
+.maplibregl-ctrl-group button:hover{background:var(--color-surface-raised) !important;}
+.maplibregl-ctrl-attrib{background:var(--map-control-surface) !important;color:var(--color-text-secondary) !important;}
+.maplibregl-ctrl-attrib a{color:var(--color-text-secondary) !important;}
 
-  .layout{flex:1;display:flex;min-height:0;position:relative;}
+/* ===== Long-form text in dialogs and the About page ================================================================ */
+.modal.info-modal{width:var(--size-dialog-wide);max-height:78vh;}
+.info-modal .updated{margin-bottom:var(--space-4);font-size:var(--type-caption-size);line-height:var(--type-caption-line);color:var(--color-text-secondary);}
+.info-modal h3{margin:var(--space-5) 0 var(--space-2);font-size:var(--type-text-lg-size);line-height:var(--type-text-lg-line);font-weight:var(--font-weight-semibold);}
+.info-modal p{margin:0 0 var(--space-3);max-width:var(--size-measure);font-size:var(--type-text-md-size);line-height:var(--type-text-lg-line);color:var(--color-text-secondary);}
+.info-modal ul{margin:0 0 var(--space-3);padding-left:var(--space-5);}
+.info-modal li{margin-bottom:var(--space-1);max-width:var(--size-measure);font-size:var(--type-text-md-size);line-height:var(--type-text-lg-line);color:var(--color-text-secondary);}
+.info-modal .legal-note{margin-bottom:var(--space-4);}
 
-  .sidebar{
-    width:340px;
-    min-width:340px;
-    background:var(--surface);
-    border-right:1px solid var(--border);
-    display:flex;
-    flex-direction:column;
-    min-height:0;
-  }
-  .sidebar-controls{
-    padding:14px 16px 10px;
-    border-bottom:1px solid var(--border);
-    /* 6 countries' worth of chips (45+) made this taller than a typical
-       viewport can spare -- without its own scroll region it forced
-       .gym-list (flex:1, below) down to a sliver, since flex-shrink can't
-       shrink a visible-overflow block below its content height. Capped
-       and made independently scrollable so the gym list always keeps a
-       real, usable minimum height. */
-    max-height:50vh;
-    overflow-y:auto;
-    flex-shrink:0;
-  }
-  .search-row{position:relative;margin-bottom:10px;}
-  .search-row input{
-    width:100%;
-    background:var(--surface-2);
-    border:1px solid var(--border);
-    color:var(--text);
-    padding:9px 12px 9px 32px;
-    border-radius:8px;
-    font-size:var(--fs-base);
-    font-family:var(--font-body);
-  }
-  .search-row input::placeholder{color:var(--text-dim);}
-  .search-row input:focus{border-color:var(--focus);}
-  .search-row svg{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--text-dim);}
+/* ===== Static pages (about.html): a normal scrolling document on paper =========================================== */
+.static-page{max-width:calc(var(--size-measure) + var(--space-7) * 2);margin:0 auto;padding:0 var(--space-5) var(--space-8);}
+.static-header{display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);padding:var(--space-5) 0;margin-bottom:var(--space-6);border-bottom:var(--border-width) solid var(--color-border-subtle);}
+.static-content h1{margin:0 0 var(--space-2);}
+.static-content .lede{margin:0 0 var(--space-6);max-width:var(--size-measure);color:var(--color-text-secondary);}
+.static-content .close-row{justify-content:flex-start;margin-top:var(--space-6);}
 
-  .chip-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;}
-  /* Each per-state chip gets its region colour as a custom property from
-     css/chips.css (--chip:var(--xx-yyy), keyed on data-country/data-state)
-     rather than as an inline
-     `color`, so this one rule can use it for the idle text/dot and the
-     active background alike. An inline `color` would beat any stylesheet
-     rule for the active state and make the text vanish into its own
-     background -- which is exactly what the previous 232 per-state rules
-     plus an !important were working around. The "All" chip has no --chip
-     and falls back to the neutral text colour. */
-  .chip{
-    appearance:none;
-    font-family:var(--font-display);
-    font-weight:500;
-    font-size:var(--fs-sm);
-    line-height:1.3;
-    padding:5px 10px;
-    border-radius:var(--r-sm);
-    border:1px solid var(--border);
-    background:var(--surface-2);
-    color:var(--chip, var(--text-dim));
-    cursor:pointer;
-    user-select:none;
-    display:flex;
-    align-items:center;
-    gap:6px;
-    transition:border-color .15s ease, background-color .15s ease, color .15s ease, transform .1s ease;
-  }
-  .chip .dot{width:7px;height:7px;border-radius:50%;background:currentColor;}
-  .chip:not(.active):hover{border-color:var(--text-dim);}
-  .chip:active{transform:scale(0.95);}
-  .chip.active{background:var(--chip, var(--text));color:var(--bg);border-color:transparent;font-weight:600;}
+/* ===== Moderation queue and logbook lists (re-tokened; Phase 3/4 move them to pages) ============================== */
+.pending-list,.session-list{display:flex;flex-direction:column;gap:var(--space-3);}
+.pending-item,.session-item{
+  padding:var(--space-3) var(--space-4);
+  background:var(--color-surface-default);
+  border:var(--border-width) solid var(--color-border-subtle);
+  border-radius:var(--radius-md);
+}
+.pending-kind{margin-bottom:var(--space-1);font-size:var(--type-caption-size);line-height:var(--type-caption-line);font-weight:var(--font-weight-semibold);color:var(--color-provenance-pending);}
+.session-item .pending-kind{display:flex;align-items:center;gap:var(--space-1);color:var(--color-text-secondary);font-feature-settings:var(--font-features-numeric);}
+.pending-notes{margin-top:var(--space-2);font-size:var(--type-text-sm-size);line-height:var(--type-text-sm-line);color:var(--color-text-secondary);word-break:break-word;}
+.pending-notes a{color:var(--color-text-link);}
+.pending-actions{display:flex;gap:var(--space-2);margin-top:var(--space-3);}
+.pending-actions .btn{flex:1;}
+.climb-chips{display:flex;flex-wrap:wrap;gap:var(--space-2);margin-top:var(--space-2);}
+.climb-chip{
+  padding:0 var(--space-2);
+  border:var(--border-width) solid var(--color-border-subtle);border-radius:var(--radius-sm);
+  font-size:var(--type-micro-size);line-height:var(--type-caption-line);font-weight:var(--font-weight-medium);
+  font-feature-settings:var(--font-features-numeric);color:var(--color-text-secondary);
+}
+.climb-chip.sent{border-color:var(--color-accent-solid);color:var(--color-accent-text);}
+.mood{display:inline-flex;align-items:center;gap:var(--space-1);}
+.climb-rows{display:flex;flex-direction:column;gap:var(--space-2);}
+/* A logged climb. The rows sit inside .field, whose input rule (width:100%, 0,3,1) used to outrank these and stretched
+   the attempts box across the row, pushing Sent and remove out of the dialog. The .climb-rows scope ties that rule and,
+   coming later, wins on purpose. Two lines at every width (the dialog is 380px everywhere): type + grade, then
+   attempts · Sent · remove. Controls keep the shared field height and type size. */
+.climb-row{
+  display:flex;flex-wrap:wrap;gap:var(--space-2);align-items:center;
+  padding:var(--space-2);
+  background:var(--color-surface-subtle);
+  border:var(--border-width) solid var(--color-border-subtle);border-radius:var(--radius-md);
+}
+.climb-rows .climb-row :is(select, input[type="text"], input[type="number"]){min-width:0;padding:0 var(--space-2);}
+.climb-rows .climb-row select.climb-type{flex:1 1 55%;width:auto;}
+.climb-rows .climb-row input.climb-grade{flex:1 1 30%;width:auto;}
+.climb-rows .climb-row input.climb-attempts{flex:none;width:calc(var(--size-touch-min) + var(--space-5));}
+.climb-row label.climb-sent{display:flex;align-items:center;gap:var(--space-2);flex:none;min-height:var(--size-touch-min);font-size:var(--type-text-sm-size);color:var(--color-text-secondary);white-space:nowrap;}
+.climb-row .remove-climb-btn{margin-left:auto;}
 
-  /* Featured-destinations row: pure navigation (fly-to), not a filter --
-     deliberately styled distinct from .chip's neutral-border/toggle-active
-     pattern so it doesn't read as "one more filter". Accent-outlined pills
-     that fill solid on hover/press, the same accent used for the app's one
-     call-to-action colour elsewhere (locked per-page, see .btn-primary). */
-  .featured-destinations{margin-bottom:var(--sp-2);}
-  .featured-row{display:flex;flex-wrap:wrap;gap:6px;}
-  .featured-chip{
-    appearance:none;
-    font-family:var(--font-display);
-    font-weight:500;
-    font-size:var(--fs-sm);
-    line-height:1.3;
-    padding:5px 10px;
-    border-radius:var(--r-sm);
-    border:1px solid var(--accent);
-    background:transparent;
-    color:var(--accent);
-    cursor:pointer;
-    user-select:none;
-    transition:background-color .15s ease, color .15s ease, transform .1s ease;
-  }
-  .featured-chip:hover{background:var(--accent);color:var(--accent-ink);}
-  .featured-chip:active{transform:scale(0.95);}
-  .featured-chip:focus-visible{outline:2px solid var(--focus);outline-offset:2px;}
+/* Gym picker (Log a session; gym-picker.js). The choice is always shown; "Choose a gym" / "Change" opens a search field
+   over a short, scrolling result area: search matches (at most 50), or continents and countries, collapsed. */
+.gym-picker-current{
+  display:flex;align-items:center;gap:var(--space-2);min-height:var(--size-touch-min);
+  padding:var(--space-1) var(--space-1) var(--space-1) var(--space-3);
+  background:var(--color-surface-default);border:var(--border-width) solid var(--color-border-subtle);border-radius:var(--radius-sm);
+}
+.gym-picker-current > .icon{flex:none;color:var(--color-text-secondary);}
+.gym-picker-text{display:flex;flex-direction:column;flex:1;min-width:0;}
+.gym-picker-name,.gym-picker-place{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.gym-picker-name{font-size:var(--type-text-md-size);line-height:var(--type-text-md-line);font-weight:var(--font-weight-medium);color:var(--color-text-primary);}
+.gym-picker-none{font-weight:var(--font-weight-regular);color:var(--color-text-secondary);}
+.gym-picker-place{font-size:var(--type-caption-size);line-height:var(--type-caption-line);color:var(--color-text-secondary);}
+.gym-picker-panel{margin-top:var(--space-2);}
+.gym-picker-results{
+  max-height:calc(var(--size-touch-min) * 6);overflow-y:auto;overscroll-behavior:contain;margin-top:var(--space-2);
+  border:var(--border-width) solid var(--color-border-subtle);border-radius:var(--radius-sm);background:var(--color-surface-default);
+}
+.picker-options{margin:0;padding:0;list-style:none;}
+.picker-option,.picker-gym{
+  display:flex;flex-direction:column;justify-content:center;width:100%;min-width:0;min-height:var(--size-touch-min);
+  padding:var(--space-1) var(--space-3);text-align:left;cursor:pointer;
+  background:none;border:0;border-bottom:var(--border-width) solid var(--color-border-subtle);color:inherit;font:inherit;
+}
+.picker-option:hover,.picker-gym:hover,.picker-option.is-active{background:var(--color-surface-subtle);}
+.picker-option.is-active{outline:var(--focus-ring-width) solid var(--color-accent-solid);outline-offset:calc(var(--focus-ring-width) * -1);}   /* the keyboard-highlighted match (aria-activedescendant) */
+.picker-option[aria-selected="true"] .gym-picker-name,.picker-gym[aria-current="true"] .gym-picker-name{color:var(--color-accent-text);font-weight:var(--font-weight-semibold);}
+.picker-group > summary,.picker-country > summary{
+  display:flex;align-items:center;gap:var(--space-2);min-height:var(--size-touch-min);padding:0 var(--space-3);
+  cursor:pointer;list-style:none;border-bottom:var(--border-width) solid var(--color-border-subtle);
+}
+.picker-group > summary::-webkit-details-marker,.picker-country > summary::-webkit-details-marker{display:none;}
+.picker-group > summary{font-weight:var(--font-weight-semibold);}
+.picker-country > summary{padding-left:var(--space-5);}
+.picker-country .picker-gym{padding-left:var(--space-6);}
+.picker-group > summary > .icon,.picker-country > summary > .icon{flex:none;transition:transform var(--motion-fast) var(--ease-standard);}
+.picker-group[open] > summary > .icon,.picker-country[open] > summary > .icon{transform:rotate(90deg);}
+.picker-summary-label{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.picker-count{flex:none;font-size:var(--type-caption-size);color:var(--color-text-secondary);font-weight:var(--font-weight-regular);}
+.picker-empty,.picker-note{margin:0;padding:var(--space-3);font-size:var(--type-text-sm-size);line-height:var(--type-text-sm-line);color:var(--color-text-secondary);}
 
-  .toggle-row{display:flex;align-items:center;gap:8px;font-size:var(--fs-sm);color:var(--text-dim);font-family:var(--font-body);cursor:pointer;}
-  .toggle-row input{accent-color:var(--accent);}
+/* ===== Forms: type checkboxes (add/edit), sign-in divider, pin status ============================================= */
+.type-filter{display:flex;flex-direction:column;gap:var(--space-2);margin-top:var(--space-3);padding-top:var(--space-3);border-top:var(--border-width) solid var(--color-border-divider);}
+.type-filter .type-check{
+  display:flex;align-items:center;gap:var(--space-2);margin:0;
+  font-size:var(--type-text-md-size);line-height:var(--type-text-md-line);font-weight:var(--font-weight-regular);
+  color:var(--color-text-primary);text-transform:none;letter-spacing:0;cursor:pointer;
+}
+.auth-divider{
+  display:flex;align-items:center;gap:var(--space-3);margin:var(--space-1) 0 var(--space-4);
+  color:var(--color-text-secondary);font-size:var(--type-caption-size);line-height:var(--type-caption-line);
+}
+.auth-divider::before,.auth-divider::after{content:"";flex:1;height:var(--border-width);background:var(--color-border-subtle);}
+.auth-status{min-height:var(--type-text-sm-line);margin:calc(var(--space-1) * -1) 0 var(--space-3);font-size:var(--type-text-sm-size);line-height:var(--type-text-sm-line);}
+.pin-status{
+  margin-bottom:var(--space-4);padding:var(--space-2) var(--space-3);
+  background:var(--color-surface-subtle);border:var(--border-width) solid var(--color-border-subtle);border-radius:var(--radius-sm);
+  font-size:var(--type-text-sm-size);line-height:var(--type-text-sm-line);font-feature-settings:var(--font-features-numeric);
+  color:var(--color-text-secondary);
+}
+.pin-status.set{color:var(--color-status-success);border-color:var(--color-status-success);}
 
-  .section-label{font-size:var(--fs-xs);font-weight:600;color:var(--text-dim);font-family:var(--font-display);letter-spacing:.04em;text-transform:uppercase;margin-bottom:var(--sp-1);}
-  .section-label.country-label{margin:10px 0 6px;font-family:var(--font-body);font-weight:500;font-size:var(--fs-sm);letter-spacing:0;text-transform:none;}
-  /* Country groups collapse by default -- with 6 countries the fully
-     expanded chip list ran the filter panel out of usable height (see
-     docs/architecture.md "Sidebar chip growth"). The label is a <button>
-     for keyboard/screenreader operability; reset to look like the plain
-     .section-label it replaces. */
-  .country-label{
-    display:flex;align-items:center;gap:6px;
-    width:100%;background:none;border:none;padding:0;
-    font:inherit;text-align:left;cursor:pointer;
-  }
-  .country-label:hover{color:var(--text);}
-  .country-label::before{
-    content:"▸";
-    display:inline-block;
-    font-size:9px;
-    transition:transform .15s ease;
-  }
-  .country-group:not(.collapsed) .country-label::before{transform:rotate(90deg);}
-  .country-group.collapsed .chip-row{display:none;}
-  /* A chip can be active while its group is collapsed -- flag it so the
-     filter doesn't silently vanish from view. */
-  .country-group.has-active .country-label{color:var(--accent);}
-  .country-group.has-active .country-label::after{
-    content:"";
-    width:5px;height:5px;border-radius:50%;
-    background:var(--accent);
-    margin-left:1px;
-  }
-  /* One level up from country-group, same collapse mechanics -- a single
-     always-visible label per *region* (Asia, Europe, North America,
-     Oceania) instead of per country, so adding a country to an existing
-     region costs zero extra always-visible height (it nests inside the
-     region's own collapsed body), only a genuinely new region adds a row.
-     Without this, N countries meant N always-visible rows even fully
-     collapsed -- fine at 6, but by 8 the filter panel needed its
-     max-height:50vh scroll backstop on mobile just to stay usable (see
-     docs/architecture.md "Sidebar chip growth"), and that only gets worse
-     as more countries are added within regions that already exist. */
-  .region-header{
-    display:flex;align-items:center;gap:6px;
-    width:100%;background:none;border:none;padding:0;
-    font:inherit;font-family:var(--font-display);font-size:var(--fs-md);font-weight:600;
-    letter-spacing:0;text-transform:none;color:var(--text);
-    text-align:left;cursor:pointer;
-    margin:10px 0 6px;
-  }
-  .region-header:hover{color:var(--text);}
-  .region-header::before{
-    content:"▸";
-    display:inline-block;
-    font-size:9px;
-    transition:transform .15s ease;
-  }
-  .region-group:not(.collapsed) .region-header::before{transform:rotate(90deg);}
-  .region-group.collapsed .region-body{display:none;}
-  .region-group .country-group:first-child{margin-top:0;}
-  .region-group.has-active .region-header{color:var(--accent);}
-  .region-group.has-active .region-header::after{
-    content:"";
-    width:5px;height:5px;border-radius:50%;
-    background:var(--accent);
-    margin-left:1px;
-  }
-  .type-filter{display:flex;flex-direction:column;gap:7px;margin-top:12px;padding-top:10px;border-top:1px solid var(--border);}
-  /* Specificity note: the add/edit-spot forms' type/marks checkboxes sit
-     inside a <div class="field"> wrapper (for layout spacing), and
-     .field label / .field input (further down, meant for the forms'
-     real text/select fields) are both MORE specific than a bare
-     .type-check or .type-check input -- so without the extra
-     .type-filter qualifier here, .field's rules silently won: label
-     fell back to display:block (breaking the whole flex row) and picked
-     up .field label's text-transform:uppercase, and the checkbox
-     <input> got stretched to .field input's width:100%, both v
-     isibly breaking the layout (checkbox detached from its own label,
-     a sliver of the next control's dot poking in from the edge). The
-     sidebar's own filter checkboxes were never inside a .field, so they
-     were never affected -- only the modal forms' copies were broken. */
-  .type-filter .type-check{display:flex;align-items:center;gap:8px;font-size:var(--fs-md);font-family:var(--font-body);color:var(--text);cursor:pointer;text-transform:none;margin-bottom:0;letter-spacing:normal;}
-  .type-filter .type-check .dot{width:9px;height:9px;flex-shrink:0;border-radius:40% 60% 55% 45%/50% 45% 55% 50%;border:1px solid rgba(0,0,0,0.35);}
-  .type-filter .type-check input[type="checkbox"]{cursor:pointer;width:16px;height:16px;margin:0;flex-shrink:0;}
-  .type-check input.chk-indoor{accent-color:var(--t-indoor);}
-  .type-check input.chk-toprope{accent-color:var(--t-toprope);}
-  .type-check input.chk-lead{accent-color:var(--t-lead);}
+/* ===== Responsive shell (DESIGN sec. 14): top bar >= 600px, tab bar + START < 600px ============================= */
+@media (max-width:1023px){
+  .topbar{gap:var(--space-3);padding:0 var(--space-4);}
+  .topbar .add-label-long{display:none;}
+  .topbar .add-label-short{display:inline;}
+}
+@media (max-width:760px){
+  .topbar-nav .tab{padding:0 var(--space-2);}
+}
+@media (max-width:599px){
+  .topbar{display:none;}
+  .tabbar{display:grid;}
+  .toast{top:calc(env(safe-area-inset-top) + var(--space-4));}
+}
+@media (min-width:1440px){
+  .topbar{padding:0 var(--space-7);}
+}
 
-  .type-check .mark-dot{
-    width:14px;height:14px;border-radius:4px;
-    display:flex;align-items:center;justify-content:center;
-    font-size:9px;font-weight:900;background:transparent;
-  }
-  .type-check .mark-dot.climbed{color:var(--climbed);border:1px solid var(--climbed);}
-  .type-check .mark-dot.bookmarked{color:var(--bookmark);border:1px solid var(--bookmark);}
-  #marksFilters input:disabled{cursor:not-allowed;}
-  #marksFilters label:has(input:disabled){cursor:not-allowed;opacity:0.55;}
-
-  /* --- Gym list ---------------------------------------------------------
-     Each row is a real <button> (fly to the spot) plus three quiet icon
-     actions. Actions are borderless until hovered so a 1500-row list
-     doesn't read as 4500 little boxes. */
-  .gym-list{flex:1;overflow-y:auto;padding:var(--sp-1) 0;}
-  .gym-item{
-    display:flex;
-    align-items:center;
-    gap:var(--sp-1);
-    padding:0 var(--sp-2) 0 0;
-    border-bottom:1px solid rgba(74,68,56,0.45);
-    transition:background-color .15s ease;
-  }
-  .gym-item:hover{background:var(--surface-2);}
-  .gym-main{
-    appearance:none;
-    flex:1;min-width:0;
-    display:flex;align-items:flex-start;gap:var(--sp-3);
-    padding:10px var(--sp-2) 10px var(--sp-4);
-    background:none;border:none;color:inherit;
-    font:inherit;text-align:left;cursor:pointer;
-  }
-  .gym-main:focus-visible{outline-offset:-2px;}
-  .gym-item .swatch{
-    width:12px;height:12px;border-radius:40% 60% 55% 45%/50% 45% 55% 50%;
-    margin-top:4px;flex-shrink:0;border:1.5px solid rgba(0,0,0,0.35);
-  }
-  .gym-item .info{min-width:0;flex:1;display:block;}
-  .gym-item .name{display:block;font-size:var(--fs-base);font-weight:600;line-height:var(--lh-tight);}
-  .gym-item .meta{
-    /* Was a single nowrap+ellipsis line -- at the sidebar's ~180px text
-       column, most region/country combos ("Baden-Württemberg · Germany",
-       "Provence-Alpes-Côte d'Azur (Marseille) · France") truncated well
-       before the country name, hiding exactly the info someone's scanning
-       the list for -- and on touch devices there's no hover to recover it
-       via the `title` fallback. Clamped to 2 lines instead of 1: most
-       meta strings still fit on one line and the row stays compact (57px,
-       matching .name's own uncapped wrap above it); only genuinely long
-       ones now wrap instead of disappearing. Still capped, not unlimited,
-       so one pathological string can't blow out a row's height next to
-       its neighbours. */
-    display:-webkit-box;
-    -webkit-box-orient:vertical;
-    -webkit-line-clamp:2;
-    margin-top:2px;
-    font-size:var(--fs-sm);line-height:1.4;color:var(--text-dim);
-    overflow:hidden;
-  }
-  .gym-item .meta .place{color:var(--text);opacity:.85;}
-  .gym-item .meta .place::after{content:" · ";color:var(--text-dim);opacity:1;}
-  .gym-item .meta .tag-pill{margin-left:var(--sp-1);vertical-align:1px;}
-  .row-actions{display:flex;gap:2px;flex-shrink:0;}
-  .row-action{
-    appearance:none;
-    width:28px;height:28px;
-    display:inline-flex;align-items:center;justify-content:center;
-    border-radius:var(--r-sm);
-    border:1px solid transparent;
-    background:transparent;
-    color:var(--text-dim);
-    font-size:var(--fs-sm);
-    cursor:pointer;
-    transition:color .15s ease, border-color .15s ease, background-color .15s ease, transform .1s ease;
-  }
-  .row-action:hover{color:var(--text);border-color:var(--border);background:var(--surface);}
-  .row-action:active{transform:scale(0.9);}
-  .row-action.climbed-btn.active{color:var(--climbed);background:rgba(90,163,115,0.14);}
-  .row-action.bookmark-btn.active{color:var(--bookmark);background:rgba(224,178,60,0.14);}
-
-  .tag-pill{
-    font-size:var(--fs-xs);
-    line-height:1.4;
-    padding:0 6px;
-    border-radius:var(--r-sm);
-    font-weight:500;
-  }
-  .tag-pill.community{color:var(--community);background:rgba(232,217,160,0.12);}
-  .tag-pill.edited{color:var(--edited);background:rgba(143,176,214,0.12);}
-  .empty-state{padding:var(--sp-6) var(--sp-4);color:var(--text-dim);font-size:var(--fs-md);text-align:center;}
-  .empty-state p{margin:0 0 var(--sp-3);}
-  .skeleton-row{
-    display:flex;flex-direction:column;gap:6px;
-    padding:12px var(--sp-4);
-    border-bottom:1px solid rgba(74,68,56,0.45);
-  }
-  .skeleton-row span{display:block;height:10px;border-radius:5px;background:var(--surface-2);}
-  .skeleton-row span:first-child{width:62%;height:12px;}
-  .skeleton-row span:last-child{width:40%;}
-
-  /* Popup versions of the mark buttons (popupHtml in js/modules/map.js) */
-  .mark-btn{
-    appearance:none;
-    border:1px solid var(--border);
-    background:transparent;
-    color:var(--text-dim);
-    border-radius:var(--r-sm);
-    cursor:pointer;
-    transition:color .15s ease, border-color .15s ease, background-color .15s ease, transform .1s ease;
-  }
-  .mark-btn:hover{color:var(--text);border-color:var(--text-dim);}
-  .mark-btn:active{transform:scale(0.96);}
-  .mark-btn.climbed-btn.active{color:var(--climbed);border-color:var(--climbed);background:rgba(90,163,115,0.12);}
-  .mark-btn.bookmark-btn.active{color:var(--bookmark);border-color:var(--bookmark);background:rgba(224,178,60,0.12);}
-
-  .sidebar-footer{
-    padding:12px 16px;
-    border-top:1px solid var(--border);
-  }
-  .add-btn{
-    width:100%;
-    background:var(--accent);
-    color:var(--accent-ink);
-    border:none;
-    padding:10px;
-    border-radius:var(--r-md);
-    font-family:var(--font-display);
-    font-weight:700;
-    font-size:var(--fs-md);
-    cursor:pointer;
-    letter-spacing:0.3px;
-  }
-  .add-btn{transition:filter .15s ease, transform .1s ease;}
-  .add-btn:hover{filter:brightness(1.08);}
-  .add-btn:active{transform:scale(0.98);}
-  .add-btn.placing{background:var(--surface-2);color:var(--accent);border:1px dashed var(--accent);}
-
-  .map-wrap{flex:1;position:relative;min-width:0;}
-  #map{position:absolute;inset:0;background:var(--bg);}
-  /* At wide viewports the globe fills only a fraction of this area, leaving
-     a large flat expanse of the map's own rendered "space" background
-     (sky-color, set via map.setSky() in js/modules/map.js) that reads as empty
-     rather than intentional. Can't paint behind the canvas -- MapLibre's
-     WebGL surface is opaque and covers the full container -- so this sits
-     on top instead. First attempt darkened the far corners (a classic
-     vignette), but sky-color is already near-black (#0d0b09) -- adding more
-     black on top of near-black has essentially no visible effect, there's
-     no perceptual room left to get darker. Flipped it instead: stays fully
-     transparent through the centre ~50% where the globe/markers/legend
-     text live, and gently LIFTS the far corners toward the app's own
-     --surface tone at low alpha -- a real, visible tonal shift rather than
-     a no-op, using a colour already in the palette rather than a new one.
-     pointer-events:none and a z-index below the legend/toast/banners
-     (400/900) so it never affects interaction or dims the UI chrome. */
-  .map-wrap::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    z-index:2;
-    pointer-events:none;
-    background:radial-gradient(ellipse at center, transparent 50%, rgba(55,51,42,0.5) 100%);
-  }
-
-  .legend{
-    position:absolute;
-    /* Clear the map attribution strip along the bottom edge -- it's a
-       licensing requirement for OSM/CARTO tiles and must stay readable. */
-    bottom:44px;
-    left:16px;
-    z-index:400;
-    background:rgba(43,40,34,0.94);
-    border:1px solid var(--border);
-    border-radius:var(--r-lg);
-    box-shadow:var(--shadow-float);
-    font-family:var(--font-body);
-    font-size:var(--fs-sm);
-    color:var(--text-dim);
-    width:224px;
-    backdrop-filter:blur(4px);
-  }
-  .legend-header{
-    display:flex;align-items:center;justify-content:space-between;gap:10px;
-    width:100%;background:none;border:none;cursor:pointer;color:var(--text);
-    font-family:var(--font-display);font-weight:600;font-size:var(--fs-md);
-    padding:10px 14px;
-  }
-  .legend-chevron{color:var(--text-dim);font-size:9px;transition:transform .15s ease;}
-  .legend.collapsed .legend-chevron{transform:rotate(180deg);}
-  .legend-body{padding:0 14px 12px;}
-  .legend.collapsed .legend-body{display:none;}
-  .legend-types{list-style:none;margin:0 0 var(--sp-2);padding:0;display:flex;flex-direction:column;gap:5px;}
-  .legend-types li{display:flex;align-items:center;gap:var(--sp-2);color:var(--text);}
-  .legend-swatch{
-    width:11px;height:11px;flex-shrink:0;
-    border-radius:40% 60% 55% 45%/50% 45% 55% 50%;
-    border:1px solid rgba(0,0,0,0.35);
-  }
-  .legend-note{margin:0;font-size:var(--fs-xs);line-height:1.45;}
-  .legend-note b{color:var(--community);}
-
-  .toast{
-    position:absolute;
-    top:16px;
-    left:50%;
-    transform:translateX(-50%) translateY(-8px);
-    background:var(--success);
-    color:var(--success-ink);
-    padding:9px 16px;
-    border-radius:8px;
-    font-size:var(--fs-md);
-    font-weight:600;
-    z-index:900;
-    opacity:0;
-    pointer-events:none;
-    transition:all .25s ease;
-    white-space:nowrap;
-  }
-  .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
-
-  .placing-banner{
-    position:absolute;
-    top:16px;
-    left:50%;
-    transform:translateX(-50%);
-    background:var(--surface);
-    border:1px dashed var(--accent);
-    color:var(--accent);
-    padding:9px 16px;
-    border-radius:8px;
-    font-family:var(--font-body);
-    font-size:var(--fs-sm);
-    z-index:900;
-    display:none;
-  }
-  .placing-banner.show{display:block;}
-
-  /* First-visit-only hint: the map's single most important affordance
-     (click a cluster to zoom in) otherwise only lives inside the Legend,
-     which starts collapsed on mobile and is easy to miss as just a corner
-     panel on desktop. Same floating-banner language as .toast/.placing-
-     banner above so it reads as part of the same UI, not a new pattern. */
-  .hint-banner{
-    position:absolute;
-    top:16px;
-    left:50%;
-    transform:translateX(-50%) translateY(-8px);
-    display:flex;
-    align-items:center;
-    gap:10px;
-    background:var(--surface);
-    border:1px solid var(--border);
-    color:var(--text);
-    padding:9px 8px 9px 16px;
-    border-radius:8px;
-    font-family:var(--font-body);
-    font-size:var(--fs-sm);
-    box-shadow:var(--shadow-float);
-    z-index:900;
-    opacity:0;
-    pointer-events:none;
-    transition:opacity .25s ease, transform .25s ease;
-    white-space:nowrap;
-  }
-  .hint-banner.show{
-    opacity:1;
-    transform:translateX(-50%) translateY(0);
-    pointer-events:auto;
-  }
-  .hint-dismiss{
-    appearance:none;
-    background:none;
-    border:none;
-    color:var(--text-dim);
-    font-size:16px;
-    line-height:1;
-    cursor:pointer;
-    padding:2px 4px;
-    border-radius:4px;
-  }
-  .hint-dismiss:hover{color:var(--text);}
-
-  /* modal */
-  .modal-backdrop{
-    position:fixed;inset:0;background:rgba(10,9,7,0.65);
-    display:flex;align-items:center;justify-content:center;
-    z-index:1000;
-    opacity:1;
-    visibility:visible;
-    transition:opacity .16s ease, visibility 0s linear 0s;
-  }
-  .modal-backdrop.hidden{
-    opacity:0;
-    visibility:hidden;
-    pointer-events:none;
-    transition:opacity .16s ease, visibility 0s linear .16s;
-  }
-  .modal{
-    background:var(--surface);
-    border:1px solid var(--border);
-    border-radius:var(--r-lg);
-    width:380px;
-    max-width:92vw;
-    max-height:88vh;
-    overflow-y:auto;
-    padding:var(--sp-5) var(--sp-5) var(--sp-4);
-    box-shadow:0 20px 50px -12px rgba(10,9,7,0.55), 0 4px 16px rgba(10,9,7,0.35);
-    transform:scale(1) translateY(0);
-    transition:transform .16s ease;
-  }
-  .modal-backdrop.hidden .modal{
-    transform:scale(0.97) translateY(6px);
-  }
-  .modal h2{font-family:var(--font-display);font-size:18px;line-height:var(--lh-tight);margin:0 0 var(--sp-1);}
-  .modal .sub{font-size:var(--fs-md);line-height:var(--lh-body);color:var(--text-dim);margin-bottom:var(--sp-4);font-family:var(--font-body);}
-
-  .modal.info-modal{
-    width:520px;
-    max-height:78vh;
-    overflow-y:auto;
-    line-height:1.55;
-  }
-  /* Long-form text styling shared by the info modals (privacy, terms,
-     logbook, pending) and the standalone About page, which uses
-     .info-modal without .modal. */
-  .info-modal h2{margin-bottom:2px;}
-  .info-modal .updated{font-size:var(--fs-xs);color:var(--text-dim);font-family:var(--font-body);margin-bottom:16px;}
-  .info-modal h3{font-family:var(--font-display);font-size:var(--fs-base);color:var(--text);margin:20px 0 6px;}
-  .info-modal p{font-size:var(--fs-md);line-height:var(--lh-body);color:var(--text-dim);margin:0 0 10px;max-width:65ch;}
-  .info-modal ul{margin:0 0 10px;padding-left:18px;}
-  .info-modal li{font-size:var(--fs-md);line-height:var(--lh-body);color:var(--text-dim);margin-bottom:5px;max-width:65ch;}
-  .info-modal .legal-note{
-    font-size:var(--fs-sm);
-    color:var(--accent);
-    background:rgba(226,121,63,0.08);
-    border:1px dashed var(--accent);
-    border-radius:var(--r-md);
-    padding:8px 10px;
-    margin-bottom:16px;
-    font-family:var(--font-body);
-  }
-  .info-modal .close-row{margin-top:6px;text-align:right;}
-
-  .pending-list{display:flex;flex-direction:column;gap:10px;}
-  .pending-item{
-    background:var(--surface-2);
-    border:1px solid var(--border);
-    border-radius:8px;
-    padding:12px 14px;
-  }
-  .pending-kind{
-    font-family:var(--font-body);
-    font-size:var(--fs-xs);
-    text-transform:uppercase;
-    letter-spacing:.4px;
-    color:var(--accent);
-    margin-bottom:4px;
-  }
-  .pending-notes{font-size:var(--fs-sm);color:var(--text-dim);margin-top:6px;word-break:break-word;}
-  .pending-notes a{color:var(--text-dim);}
-  .pending-actions{display:flex;gap:8px;margin-top:10px;}
-  .pending-actions button{
-    flex:1;padding:7px;border-radius:6px;border:1px solid var(--border);
-    font-family:var(--font-display);font-weight:600;font-size:var(--fs-md);cursor:pointer;
-    transition:background-color .15s ease, filter .15s ease, transform .1s ease;
-  }
-  .pending-actions button:active:not(:disabled){transform:scale(0.97);}
-  .pending-actions button:disabled{opacity:0.4;cursor:not-allowed;}
-
-  .session-list{display:flex;flex-direction:column;gap:10px;}
-  .session-item{
-    background:var(--surface-2);
-    border:1px solid var(--border);
-    border-radius:8px;
-    padding:12px 14px;
-  }
-  .climb-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
-  .climb-chip{
-    font-family:var(--font-mono);
-    font-variant-numeric:tabular-nums;
-    font-size:var(--fs-xs);
-    padding:3px 8px;
-    border-radius:12px;
-    border:1px solid var(--border);
-    color:var(--text-dim);
-  }
-  .climb-chip.sent{border-color:var(--accent);color:var(--accent);}
-
-  .climb-rows{display:flex;flex-direction:column;gap:8px;}
-  .climb-row{
-    display:flex;gap:6px;align-items:center;
-    background:var(--surface-2);
-    border:1px solid var(--border);
-    border-radius:7px;
-    padding:8px;
-  }
-  .climb-row select.climb-type{flex:1.3;min-width:0;}
-  .climb-row input.climb-grade{flex:1;min-width:0;}
-  .climb-row input.climb-attempts{width:44px;flex:none;}
-  .climb-row label.climb-sent{
-    display:flex;align-items:center;gap:3px;flex:none;
-    font-size:var(--fs-xs);color:var(--text-dim);white-space:nowrap;
-  }
-  .climb-row select, .climb-row input[type="text"], .climb-row input[type="number"]{
-    background:var(--bg);border:1px solid var(--border);border-radius:5px;
-    color:var(--text);padding:5px 6px;font-size:var(--fs-sm);font-family:inherit;
-  }
-  .climb-row .remove-climb-btn{
-    flex:none;background:none;border:none;color:var(--text-dim);
-    cursor:pointer;font-size:var(--fs-lg);line-height:1;padding:2px 4px;
-  }
-  .climb-row .remove-climb-btn:hover{color:var(--danger);}
-
-  .footer-links{
-    display:flex;
-    gap:10px;
-    justify-content:center;
-    margin-top:10px;
-    font-family:var(--font-body);
-    font-size:var(--fs-xs);
-  }
-  .footer-links button{
-    background:none;border:none;color:var(--text-dim);
-    cursor:pointer;text-decoration:underline;
-    padding:0;font-family:inherit;font-size:inherit;
-    transition:color .15s ease;
-  }
-  .footer-links button:hover{color:var(--text);}
-  .field{margin-bottom:12px;}
-  .field.field-row{display:flex;gap:10px;}
-  .field.field-row > div{flex:1;min-width:0;}
-  .field label,.field .field-label{display:block;font-size:var(--fs-sm);font-weight:500;color:var(--text-dim);margin-bottom:var(--sp-1);font-family:var(--font-body);}
-  .field input,.field select,.field textarea{
-    width:100%;
-    background:var(--surface-2);
-    border:1px solid var(--border);
-    color:var(--text);
-    padding:9px 11px;
-    border-radius:var(--r-md);
-    font-size:var(--fs-base);
-    line-height:1.3;
-    font-family:var(--font-body);
-  }
-  .field textarea{resize:vertical;min-height:72px;}
-  .field input[aria-invalid="true"]{border-color:var(--danger);}
-  .form-hint{
-    margin:0 0 var(--sp-2);
-    min-height:1.4em;
-    font-size:var(--fs-sm);
-    line-height:1.4;
-    color:var(--text-dim);
-  }
-  .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--accent);}
-  .auth-divider{
-    display:flex;align-items:center;gap:10px;
-    margin:2px 0 14px;
-    color:var(--text-dim);
-    font-family:var(--font-body);
-    font-size:var(--fs-xs);
-    text-transform:uppercase;
-    letter-spacing:.5px;
-  }
-  .auth-divider::before,.auth-divider::after{content:"";flex:1;height:1px;background:var(--border);}
-  .auth-status{
-    font-size:var(--fs-sm);
-    font-family:var(--font-body);
-    min-height:16px;
-    margin:-4px 0 10px;
-  }
-  .auth-status.ok{color:var(--success);}
-  .auth-status.err{color:var(--danger);}
-
-  .pin-status{font-size:var(--fs-sm);font-family:var(--font-mono);font-variant-numeric:tabular-nums;padding:8px 10px;background:var(--surface-2);border-radius:var(--r-md);border:1px solid var(--border);margin-bottom:14px;color:var(--text-dim);}
-  .pin-status.set{color:var(--success);border-color:var(--success);}
-  .modal-actions{display:flex;gap:var(--sp-2);margin-top:var(--sp-1);}
-  .modal-actions button{
-    flex:1;padding:10px;border-radius:var(--r-md);border:1px solid var(--border);
-    font-family:var(--font-display);font-weight:600;font-size:var(--fs-md);cursor:pointer;
-    transition:background-color .15s ease, border-color .15s ease, filter .15s ease, transform .1s ease;
-  }
-  .modal-actions button:active:not(:disabled){transform:scale(0.98);}
-  .btn-cancel{background:transparent;color:var(--text-dim);}
-  .btn-cancel:hover{border-color:var(--text-dim);color:var(--text);}
-  /* Destructive actions (Reject / Dismiss / Delete). Same look as .btn-cancel on purpose; a separate class so no
-     selector that means "the close/cancel control" can ever match a destructive button (see modals.js Escape handling). */
-  .btn-danger{background:transparent;color:var(--text-dim);}
-  .btn-danger:hover{border-color:var(--text-dim);color:var(--text);}
-  .btn-submit{background:var(--accent);color:var(--accent-ink);border-color:transparent;}
-  .btn-submit:hover:not(:disabled){filter:brightness(1.08);}
-  .btn-submit:disabled{opacity:0.4;cursor:not-allowed;}
-
-  /* MapLibre GL overrides */
-  .maplibregl-popup-content{
-    background:var(--surface);
-    color:var(--text);
-    border-radius:var(--r-lg);
-    border:1px solid var(--border);
-    padding:14px 16px;
-    font-family:var(--font-body);
-    box-shadow:var(--shadow-float);
-  }
-  /* The tip is a CSS border-triangle — only the side facing the marker is
-     colored, per anchor direction; the rest stay transparent by default. */
-  .maplibregl-popup-anchor-top .maplibregl-popup-tip,
-  .maplibregl-popup-anchor-top-left .maplibregl-popup-tip,
-  .maplibregl-popup-anchor-top-right .maplibregl-popup-tip{border-bottom-color:var(--surface) !important;}
-  .maplibregl-popup-anchor-bottom .maplibregl-popup-tip,
-  .maplibregl-popup-anchor-bottom-left .maplibregl-popup-tip,
-  .maplibregl-popup-anchor-bottom-right .maplibregl-popup-tip{border-top-color:var(--surface) !important;}
-  .maplibregl-popup-anchor-left .maplibregl-popup-tip{border-right-color:var(--surface) !important;}
-  .maplibregl-popup-anchor-right .maplibregl-popup-tip{border-left-color:var(--surface) !important;}
-  .maplibregl-popup-close-button{color:var(--text-dim);font-size:var(--fs-lg);padding:2px 6px;}
-  .maplibregl-popup-close-button:hover{color:var(--text);background:transparent;}
-  .popup-name{font-family:var(--font-display);font-weight:700;font-size:var(--fs-lg);line-height:var(--lh-tight);margin-bottom:3px;padding-right:18px;}
-  .popup-meta{font-size:var(--fs-sm);color:var(--text-dim);font-family:var(--font-body);margin-bottom:6px;}
-  .popup-address{font-size:var(--fs-sm);color:var(--text-dim);margin-bottom:6px;}
-  .popup-edit-btn,.popup-directions-btn{
-    margin-top:0;
-    background:var(--surface-2);
-    border:1px solid var(--border);
-    color:var(--text);
-    padding:6px 10px;
-    border-radius:var(--r-sm);
-    font-size:var(--fs-sm);
-    font-family:var(--font-display);
-    font-weight:600;
-    cursor:pointer;
-    text-align:center;
-    text-decoration:none;
-    display:inline-block;
-    transition:border-color .15s ease, color .15s ease, transform .1s ease;
-  }
-  .popup-edit-btn:hover,.popup-directions-btn:hover{border-color:var(--accent);color:var(--accent);}
-  .popup-edit-btn:active,.popup-directions-btn:active{transform:scale(0.96);}
-  .popup-links{display:flex;gap:6px;margin-top:8px;}
-  .popup-links .popup-edit-btn,.popup-links .popup-directions-btn{flex:1;}
-  .popup-report-btn{
-    display:block;
-    margin-top:6px;
-    background:none;
-    border:none;
-    padding:2px 0;
-    color:var(--text-dim);
-    font-size:var(--fs-xs);
-    font-family:var(--font-body);
-    text-decoration:underline;
-    text-underline-offset:2px;
-    cursor:pointer;
-  }
-  .popup-report-btn:hover{color:var(--text);}
-  .popup-actions{display:flex;gap:6px;margin:8px 0;}
-  .popup-actions .mark-btn{
-    width:auto;height:auto;
-    padding:5px 10px;
-    font-size:var(--fs-xs);
-    font-family:var(--font-body);
-    flex:1;
-    margin-top:0;
-  }
-  .popup-photo{
-    width:100%;
-    max-height:130px;
-    object-fit:cover;
-    border-radius:6px;
-    margin-bottom:8px;
-    display:block;
-    background:var(--surface-2);
-  }
-  .maplibregl-ctrl-attrib{background:rgba(43,40,34,0.85) !important;color:var(--text-dim) !important;}
-  .maplibregl-ctrl-attrib a{color:var(--text-dim) !important;}
-  .maplibregl-ctrl-attrib-button{filter:invert(1);opacity:0.6;}
-  .maplibregl-ctrl-group{background:var(--surface) !important;border:1px solid var(--border);box-shadow:none !important;}
-  .maplibregl-ctrl-group button{background:transparent !important;}
-  .maplibregl-ctrl-group button:not(:last-child){border-bottom:1px solid var(--border) !important;}
-  .maplibregl-ctrl-group button:hover{background:var(--surface-2) !important;}
-  .maplibregl-ctrl-icon{filter:invert(1) brightness(1.6);}
-
-  .hold-marker{
-    border-radius:60% 40% 55% 45%/45% 55% 40% 60%;
-    border:2px solid rgba(10,9,7,0.55);
-    box-shadow:0 2px 4px rgba(20,16,10,0.6);
-  }
-  .hold-marker.community::after{
-    content:"+";
-    position:absolute;top:-6px;right:-6px;
-    background:var(--community);color:var(--success-ink);
-    width:12px;height:12px;border-radius:50%;
-    font-size:9px;font-weight:900;line-height:12px;text-align:center;
-  }
-  .hold-marker.climbed{border-color:var(--climbed);}
-  .hold-marker.bookmarked::before{
-    content:"★";
-    position:absolute;bottom:-6px;left:-6px;
-    background:var(--bookmark);color:#2b2005;
-    width:12px;height:12px;border-radius:50%;
-    font-size:8px;font-weight:900;line-height:12px;text-align:center;
-  }
-
-  .cluster-marker{
-    display:flex;align-items:center;justify-content:center;
-    background:var(--surface-2);
-    border:2px solid var(--accent);
-    border-radius:50%;
-    color:var(--text);
-    font-family:var(--font-display);
-    font-weight:700;
-    font-size:var(--fs-md);
-    box-shadow:0 2px 6px rgba(20,16,10,0.6);
-    /* Not transform -- MapLibre repositions this exact element via its own
-       inline transform on every render frame (it's the element passed to
-       maplibregl.Marker), so a transition on transform would CSS-ease every
-       single reposition over .15s instead of applying it instantly, reading
-       as a visible drag/rotate lag on top of the map's own render loop. */
-    transition:filter .15s ease;
-  }
-  .cluster-marker:hover{filter:brightness(1.18);}
-
-  /* Basic region label shown below HOLD_ICON_ZOOM alongside cluster/number
-     badges (js/modules/map.js computeRegionCentroids) -- just text, no background
-     box, so it doesn't compete with the badges for attention. Base rule
-     holds what all three tiers share; each tier below overrides size/
-     weight/colour so continent -> country -> state reads as a clear
-     step down in prominence as the view gets more granular, matching
-     the same big-to-small progression a paper map's type hierarchy uses. */
-  .region-label{
-    color:var(--text);
-    font-family:var(--font-display);
-    font-size:var(--fs-xs);
-    font-weight:700;
-    letter-spacing:.03em;
-    text-transform:uppercase;
-    text-shadow:0 1px 3px rgba(10,9,7,0.9),0 0 6px rgba(10,9,7,0.75);
-    white-space:nowrap;
-    pointer-events:none;
-  }
-  /* Continent tier (globe zoom) -- the primary "you are here" orientation
-     label, biggest and in the warm accent colour so it reads first. Also
-     the only tier with pointer-events on (see js/app.js's click-to-fly). */
-  .region-label.continent-label{
-    pointer-events:auto;
-    cursor:pointer;
-    font-size:var(--fs-lg);
-    letter-spacing:.08em;
-    color:var(--accent);
-  }
-  /* MapLibre's globe projection auto-dims any marker on the sphere's far
-     side (adds .maplibregl-marker-covered + an inline opacity:0.2) so it
-     reads as "rotate to see this". Correct for real data markers, but the
-     fixed default camera (mid-Pacific, chosen when only AU+US existed --
-     see "Don't fitBounds..." above) means Europe and South America sit on
-     that far side on every fresh load, dimming their continent labels to
-     near-illegible. Unlike a data cluster, a continent label is one of only
-     five permanent navigation anchors -- it should never fade just because
-     of which way the camera happens to be pointed. An !important stylesheet
-     rule outranks MapLibre's own inline style (no !important there), same
-     precedent as the chip active-state fix elsewhere in this file. */
-  .region-label.continent-label.maplibregl-marker-covered{
-    opacity:1 !important;
-  }
-  /* Country tier -- one step more detailed, standard size/colour (this is
-     what the old shared rule looked like before tiers were split out). */
-  .region-label.country-tier-label{
-    font-size:var(--fs-sm);
-  }
-  /* State/city tier -- the finest-grained labels, shown right before real
-     markers take over -- smaller, lighter weight, dimmer colour so they
-     read as "almost there" rather than competing with the coarser tiers. */
-  .region-label.state-tier-label{
-    font-size:9.5px;
-    font-weight:600;
-    letter-spacing:.02em;
-    color:var(--text-dim);
-  }
-
-  /* The tagline is decoration -- first thing to go as the header tightens. */
-  @media (max-width:1100px){
-    header .tagline{display:none;}
-  }
-  /* Single-row mobile header: [menu] [wordmark] ... [count] [+ Add] [more].
-     Secondary actions fold into a dropdown under the "more" toggle. */
-  @media (max-width:760px){
-    .sidebar{position:absolute;left:0;top:0;bottom:0;z-index:600;transform:translateX(-100%);transition:transform .2s ease;width:min(82vw,360px);min-width:0;}
-    .sidebar.open{transform:translateX(0);}
-    header{padding:8px 12px;}
-    .icon-btn{display:inline-flex;}
-    header h1{font-size:18px;}
-    header .count-badge .count-label{
-      position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;
-    }
-    .hide-mobile{display:none;}
-    .header-nav{
-      display:none;
-      position:absolute;top:calc(100% + 6px);right:12px;
-      flex-direction:column;align-items:stretch;gap:2px;
-      min-width:180px;padding:6px;
-      background:var(--surface);
-      border:1px solid var(--border);
-      border-radius:var(--r-lg);
-      box-shadow:var(--shadow-float);
-    }
-    .header-nav.open{display:flex;}
-    .header-nav .btn{justify-content:flex-start;width:100%;}
-    .header-nav .btn-outline{background:transparent;border-color:transparent;}
-    .auth-widget{flex-direction:column;align-items:stretch;}
-    .auth-email{max-width:none;padding:6px 10px;}
-  }
-  @media (max-width:360px){
-    header h1{font-size:var(--fs-lg);}
-    .btn-primary{padding-inline:10px;}
-  }
-
-/* ---- Former inline styles from index.html ----
-   !important reproduces the precedence the inline style="" attributes had.
-   .init-hidden is deliberately NOT !important: JS shows these elements by
-   setting element.style.display, which must still win. */
-/* id-qualified so it beats component rules like .field-row{display:flex} */
-#pendingReviewBtn.init-hidden,#fOtherCountryFields.init-hidden,#eOtherCountryFields.init-hidden,#eRevertBtn.init-hidden{display:none;}
-.u-mb-14{margin-bottom:14px !important;}
-.u-pad-close{padding:8px 18px !important;}
-.u-full-mt8{margin-top:8px !important;width:100% !important;}
-.u-flush-top{margin-top:2px !important;padding-top:0 !important;border-top:none !important;}
-.u-sep{color:var(--border) !important;}
-.u-bg-indoor{background:var(--t-indoor) !important;}
-.u-bg-toprope{background:var(--t-toprope) !important;}
-.u-bg-lead{background:var(--t-lead) !important;}
-#eRevertBtn{margin-top:10px !important;width:100% !important;background:transparent !important;border:1px dashed var(--border) !important;color:var(--text-dim) !important;padding:8px !important;border-radius:7px !important;font-family:'Space Mono',monospace !important;font-size:11.5px !important;cursor:pointer !important;}
+/* ===== Utilities (the former inline style="" attributes) ========================================================== */
+#fOtherCountryFields.init-hidden,#eOtherCountryFields.init-hidden,#eRevertBtn.init-hidden{display:none;}
+.u-mb-4{margin-bottom:var(--space-4);}
+.u-flush-top{margin-top:0;padding-top:0;border-top:0;}
+.u-mt-2{margin-top:var(--space-2);}

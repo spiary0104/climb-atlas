@@ -2,7 +2,7 @@
 
 Distilled from `docs/archive/architecture.md` (5,600 lines, archived — do not
 read it; grep it for a specific heading only if this file lacks something).
-`file:line` refs are as of the ES-module split; re-grep if they drift.
+Line refs drift: re-grep function names rather than trusting numbers.
 
 ## Stack
 - Plain static site: HTML + CSS + vanilla JS as native ES modules. No build
@@ -14,114 +14,134 @@ read it; grep it for a specific heading only if this file lacks something).
 ## File map
 | Path | What it is |
 |---|---|
-| `index.html` | App shell: header, sidebar, chips, all modals. No inline JS/CSS |
-| `css/style.css` | All styles; tokens on `:root`; former inline styles at the end |
-| `css/chips.css` | Per-region chip colour (`--chip`), keyed on `data-country`+`data-state` |
-| `js/supabase-init.js` | Classic script: `window.sb`, `window.SUPABASE_CONFIGURED` |
-| `js/auth.js` | Classic script: `window.auth` (`init`, `onChange`, sign-in/out, `user`) |
-| `js/main.js` | Entry module: calls each `init*()` in order, then `init()` (boot) |
-| `js/sw-register.js` | Registers `sw.js` on window load |
-| `js/modules/state.js` | `appState` — every piece of mutable state (spots, marks, filters, markers, form state) |
-| `js/modules/constants.js` | Type colours/labels, country labels + fly targets, zoom thresholds, `motion()` |
+| `index.html` | App shell (`<base href="/">`): top bar (+ search slot), Explore (list pane / bottom sheet, map, peek card), `<main id="view">` for pages, tab bar, all dialogs incl. All filters. No inline JS/CSS |
+| `docs/DESIGN.md` | Bouldeer design spec (source of truth for UI; 77 KB: read by line range) + dated decision log at the end |
+| `css/tokens.css` | The ONLY place raw colour/shadow/font values live: `--palette-*` primitives → semantic roles (paper on `:root`, `[data-theme="rock"]` overrides) → component tokens (`--pin-*`, `--map-*`, `--size-*`, `--z-*`) |
+| `design/tokens.json` | W3C tokens for the native app, GENERATED from tokens.css: `node scripts/build-tokens-json.js` |
+| `css/base.css`, `css/components.css` | Reset/type scale/focus; shared components (`.btn` tiers, fields, search field, chips, tabs, top bar, tab bar + START, menu, dialogs, alerts, provenance, type tags, mascot hooks) |
+| `css/explore.css` | Explore: two-pane layout, rows/cards/placeholder, chips, search popover, All filters sheet, pins/clusters/labels, peek card, bottom sheet + carousel (< 1024px) |
+| `css/page.css`, `css/mod.css`, `css/passport.css` | Pages: gym (sec. 8), region/city, log (calendar), me, /add; stamps, passport, check-in/milestone/START sheets; breadcrumb, panels, mini map, page rows/cards · /mod queue + side panel |
+| `css/style.css` | App layer: shell, toast (in the shell, fixed, above dialogs)/placing banner, MapLibre controls, edit form bits, session + moderation lists, About page |
+| `assets/icons.svg` | The one icon system: Phosphor Regular sprite (MIT); use `icon(name)` from `js/modules/icons.js` |
+| `assets/boulder.svg`, `assets/contour.svg` | Photo placeholder (the deer art's holds boulder; colours from `--placeholder-*`) · contour symbol kept for the passport. SVG files must be well-formed XML (tested) |
+| `design/mascot/deer/` | The owner's deer renders: SOURCE of the character (README maps poses to roles). Product art is traced from these (sec. 12.0) |
+| `assets/mascot/`, `assets/brand/`, `icons/` | Head (START, lockup, avatar, seal), stamp head, first-run poses (chalking-up, backpacker) · antler crest, static seals · app icon (any/maskable/PNG), favicon (sec. 1A, 12; tests enforce placement) |
+| `js/supabase-init.js`, `js/auth.js` | Classic scripts: `window.sb`; `window.auth` (`init`, `onChange`, sign-in/out, `user`) |
+| `js/main.js` | Entry module: `init*()` in order, then `init()` (boot: auth → spots → `applyLanding` → marks/mod/pending → `render`) |
+| `js/modules/state.js` | `appState` — every piece of mutable state (spots, marks, filters, Explore view, markers, form state) |
+| `js/modules/constants.js` | Type labels, country labels + fly targets, zoom thresholds (`PIN_DOT_MAX_ZOOM`, `LIST_CAP`), `motion()` |
 | `js/modules/regions.js` | `STATES_BY_COUNTRY` (static, ~620 lines) |
-| `js/modules/utils.js` | `typeSwatch`, `directionsUrl`, `showToast`; re-exports `escapeHtml`, `safeUrl` |
-| `js/modules/html-safe.js` | Pure `escapeHtml` (all of `& < > " ' \``) and `safeUrl` (http/https only). Every DB/form value in markup goes through these |
-| `js/modules/popup-html.js`, `moderation-html.js` | Pure HTML builders for the map popup and the pending-review cards (no DOM, unit-tested) |
-| `js/modules/map.js` | Map, clustering, label tiers, markers, popups, legend, first-visit hint |
-| `js/modules/sidebar.js` | `render()`, filters, search, header nav, Saved button, `toggleMark` |
-| `js/modules/modals.js` | Modal focus/Escape handling, add/edit/report forms, Privacy/Terms |
-| `js/modules/auth-ui.js` | Sign-in widget + modal |
-| `js/modules/data-load.js` | `loadSpots` (Supabase → `data/gyms.json` fallback), marks, moderator, pending |
-| `js/modules/logbook.js` | Logbook list + "Log a session" form |
-| `js/modules/moderation.js` | Pending-review panel, approve/reject/dismiss |
-| `data/gyms.json` | LEGACY seed dataset: offline fallback + "Revert to original" source in `data-load.js`/`modals.js` (ids stale vs production), and the reconciliation provenance input. **Never read; never edit** |
+| `js/modules/html-safe.js`, `utils.js` | Pure `escapeHtml` / `safeUrl` (http/https only); `directionsUrl`, `showToast` |
+| `js/modules/geo.js`, `search-index.js`, `pin-html.js`, `list-html.js`, `moderation-html.js`, `provenance.js`, `add-html.js`, `passport.js`, `stamp-html.js`, `gym-picker.js` | PURE (no DOM, unit-tested): Log a session gym picker (search, continent browse) · passport rules (stamps per city, passport line, milestones, grades) and stamp/passport/sheet markup · distance, antimeridian-safe bounds, stacked-pin offsets, URL state encode/decode, folding · search index + query · pin SVG · row/card/carousel/peek/empty/pill/search-option markup · /mod queue, diff, panel · provenance state/line, levels, display-name rule · /add steps, nearest-gym area, duplicate note |
+| `js/modules/router.js` | History API router (+ `/#/` fallback): `matchRoute`, `navigate`, `registerView`, `refreshPage`, title/canonical, nav `aria-current`. Explore stays mounted behind pages |
+| `js/modules/slug.js` | Pure slug rule mirroring the DB migration (fallback for rows without `slug`) + `gymPath`/`countryPath`/`regionPath`/`cityPath` |
+| `js/modules/page-html.js` | Pure page builders: gym page (+ provenance line, own-edit note, moderator verify), breadcrumb, map slot, page card/row, regions/place pages, calendar, log, me (+ contributions), not found |
+| `js/modules/gym-page.js`, `region-page.js`, `log-page.js`, `me-page.js`, `mod-page.js`, `add-page.js`, `passport-page.js` | Page controllers (views): data gathering + `data-page-action` / `data-mod-action` / `data-add-action` handlers |
+| `js/modules/community.js` | Provenance + contribution reads (`spot_contributor_counts`, `spot_provenance`, own edit, own points), `saveDisplayName`; all fail soft |
+| `js/modules/mini-map.js` | Non-interactive MapLibre maps on pages: paper-toned (Positron via `paperBasemap` in map.js), destroyed on leave |
+| `js/modules/brand.js` | Pure: `sealSvg()`, `firstRunArt(kind)`, `milestoneArt(pose)`: the only JS source of character markup besides the avatar |
+| `js/modules/checkin.js`, `milestone-sheet.js`, `share-card.js` | Check-in flow (500 m geofence on phones / "I'm here" confirm, insert, stamp landing, START sheet) · milestone sheet (once per session) · 1080x1350 share card (Web Share / download) |
+| `js/modules/explore.js` | Explore controller: `render()` (full refresh), selection/hover sync, peek card, URL + last camera, landing, Esc, the `explore` view |
+| `js/modules/map.js` | Map, `rebuildClusterIndex`/`paintMarkers` (supercluster r48/max15, pins, clusters, label tiers), `refreshPin`, `flyToPlace`, locate control; handlers set by explore.js |
+| `js/modules/list.js` | Scoped list: `renderList` (scope → sort → cap 400), status line, skeletons, empty states, carousel, row keyboard |
+| `js/modules/filters.js` | `matches`/`applyFilters`, chip row, applied pills, All filters sheet (draft + live count), URL filter half |
+| `js/modules/search.js` | Search combobox (desktop popover / mobile full height), recent searches, Regions browse |
+| `js/modules/sheet.js` | Mobile bottom sheet: snaps 18/52/92%, drag rules, tab bar hides at full |
+| `js/modules/marks.js` | `toggleMark` (Supabase `marks`, optimistic + rollback); explore.js listens |
+| `js/modules/nav.js`, `icons.js` | Top bar/tab bar (`[data-nav]` → explore, `/in`, `/log`, START, `/me`, add-gym); `icon(name)` (unknown names throw) |
+| `js/modules/modals.js` | Modal focus/Escape handling, edit (required note + review toggle) and report forms, Privacy/Terms; `startAddGym` → `/add` |
+| `js/modules/auth-ui.js`, `data-load.js`, `logbook.js`, `moderation.js` | Sign-in dialog + account slot · `loadSpots` (Supabase → `data/gyms.json` fallback), marks, moderator, pending · sessions + "Log a session" dialog (searchable gym picker) · moderator actions (approve with corrections, reject with reason, dismiss, verify) |
+| `data/gyms.json` | LEGACY seed dataset: offline fallback + "Revert to original" source (ids stale vs production), reconciliation input. **Never read; never edit** |
 | `data/gyms.reconciled.json` | FROZEN reconciliation/provenance dataset (2,127 records = production at the first import). Not a runtime file |
-| `supabase/schema.sql` | Tables, RLS, rate limit. Re-runnable |
-| `supabase/geocode.html` | Pin-position checker (fetches `data/gyms.json`). The legacy `seed.html` seed-SQL generator was removed |
-| `import/`, `scripts/gym-import.js`, `scripts/lib/gym-import/` | Gym import pipeline: staging batches, match index, validate/plan/dedupe. See `docs/import-workflow.md` |
-| `sw.js` | Service worker (`SHELL_FILES` :11 — add new JS/CSS files here) |
-| `docs/TASKS.md` | Open work only |
-| `docs/archive/` | Old long-form docs + data.js provenance comments. **Never read** |
+| `supabase/migrations/` | Source of truth for the schema (`docs/migrations.md`); `…_add_spot_slugs.sql` (stored `spots.slug`), `…_community_provenance.sql` (Phase 4) |
+| `import/`, `scripts/gym-import.js`, `scripts/lib/gym-import/` | Gym import pipeline (`docs/import-workflow.md`) |
+| `sw.js` | Service worker (`SHELL_FILES` — add every new JS/CSS/asset file; bump `CACHE_VERSION`) |
+| `docs/TASKS.md` / `docs/archive/` | Open work only / old long-form docs (**never read**) |
 
-## Load order (`index.html:1464-1473`)
+## Load order (end of `index.html`)
 MapLibre → Supercluster → Supabase CDN → `supabase-init.js` → `auth.js` →
 `main.js` (module, deferred) → `sw-register.js`.
 
 ## Module conventions
-- Shared mutable state is only ever `appState.x` (`js/modules/state.js`).
-  Don't add module-level `let`s that another module needs to write.
-- Each module's DOM wiring lives in an exported `init*()`; `main.js:13-20`
-  calls them in the original order: `initMap`, `initSidebar`,
-  `initModalKeyboard`, `initAuthUI`, `initForms`, `initLogbook`,
-  `initModeration`, `initInfoModals`.
-- Popup buttons carry `data-popup-action` + `data-spot-id`; one delegated click listener in `sidebar.js` handles them
-  (no inline `onclick`, no `window.__*` globals).
-- Imports form cycles (map ↔ sidebar ↔ modals); that's safe because
-  top-level code only does DOM lookups and `new maplibregl.Map`. Keep it so.
+- Shared mutable state is only ever `appState.x`. No module-level `let`s another module needs to write.
+- Each module's DOM wiring lives in an exported `init*()` called from `main.js`.
+- Markup from data is built by the pure `*-html.js` builders (escapeHtml/safeUrl) and read back only through
+  `data-gym-action` / `data-list-action` / `data-spot-id` + delegated listeners. No inline handlers, no `window.__*`.
+- map.js does not import the list; explore.js registers map handlers (`setMapHandlers`). Import cycles
+  (explore ↔ modals ↔ map) are safe because top-level code only does DOM lookups and `new maplibregl.Map`.
 
 ## Data model (`supabase/schema.sql`)
-`moderators` (:19), `spots` (:39; status pending/approved/rejected; insert
-needs sign-in + rate limit :104), `pending_edits` (:134), `reports` (:177),
-`marks` (:204), `routes` (:248), `sessions` (:293), `session_climbs` (:335).
-
+`moderators`, `spots` (status pending/approved/rejected; insert needs sign-in + rate limit), `pending_edits`, `reports`,
+`marks`, `routes`, `sessions`, `session_climbs`, `profiles` (`display_name`, public read, own write), `checkins` (Phase 5:
+owner-only; user/time pinned by trigger; one per gym per 12 h, 30/day, checked in the trigger under a per-person lock; adds the `climbed` mark).
 Spot shape: `id` (`seed-N` legacy, `community-<uuid>`, or frozen `g-<hex>` for imported gyms), `name`, `suburb`, `state`,
-`country`, `lat`, `lng`, `address`, `types[]` (`indoor-bouldering` |
-`top-rope` | `lead-climbing`), `notes`, `community`. `state` codes collide
-across countries — always key on `country:state`.
+`country`, `lat`, `lng`, `address`, `types[]` (`indoor-bouldering` | `top-rope` | `lead-climbing`), `notes`, `photo`,
+`community`, `edited`, `created_at`, `slug` (stored, unique, set on insert, never changed), `verified_at`, `rejection_reason`. `state` codes collide across
+countries — always key on `country:state`.
 
-## Data flow
-1. `init()` (`main.js:22`) → `window.auth.init()` → `loadSpots()`
-   (`data-load.js:17`).
-2. Supabase unreachable/unconfigured → `ensureSeedData()` (`data-load.js:6`)
-   fetches `data/gyms.json`, sets `appState.usingFallback` → offline banner.
-3. `loadMarks` (:79), `checkModerator` (:44), `loadPending` (:57), then
-   `render()` (`sidebar.js:27`).
-4. `render()` filters via `passesFilters` (`sidebar.js:9`), rebuilds the
-   list, then `rebuildClusterIndex` (`map.js:51`) → `paintMarkers` (`map.js:144`).
-5. Auth changes re-run marks/moderator/pending + `render()`.
-6. Writes: add → `spots` insert (pending, `modals.js` `initForms`); edit →
-   `pending_edits`; report → `reports`; moderators act in `moderation.js`.
+## Data flow (Explore, DESIGN.md sec. 7)
+1. `init()` → `auth.init()` → `loadSpots()`; unreachable Supabase → `data/gyms.json` + offline banner.
+2. `appState.loaded = true` → `applyLanding()`: URL `?c=` → last camera (`bouldeer_last_camera`) → densest gym
+   cluster of the home country (browser locale, supercluster r60 @ z7) → world view.
+3. `render()` (explore.js): rebuild search index + id map when spots change; apply URL filters once;
+   `applyFilters()` → `appState.filtered` → `rebuildClusterIndex` → `renderFilterBar` → `renderList`.
+4. `moveend` (150ms debounce): scope = view bounds (if "Search as I move"), `renderList`, save camera,
+   `history.replaceState`. Filter/place/text changes `pushState`; `popstate` restores filters + camera.
+5. Selection: row → fly (≥13) + select + peek; pin → select + peek (desktop) / carousel (mobile);
+   hover mirrors row ↔ pin (`refreshPin`, `setRowHover`); Esc / close / empty-map click clears.
+6. Writes: add (`/add`) → `spots` insert (pending); edit → `pending_edits`; report → `reports`; marks → `marks`.
 
-## Key functions
-| Area | Function | Where |
-|---|---|---|
-| Map | `initialZoom`, `map` | `map.js:24`, `:29` |
-| Map | `compute{Region,Country,Continent}Centroids` | `map.js:73-113` |
-| Map | `buildSpotMarker`, `buildSpotNumberMarker`, `popupHtml` | `map.js:279`, `:302`, `:315` |
-| List | `updateMarkUI`, `resetFilters`, `setNavOpen`, `toggleMark` | `sidebar.js:100`, `:118`, `:142`, `:148` |
-| Forms | `populateStateSelect`, `getCountryState` | `modals.js:18`, `:36` |
-| Forms | `startPlacing`, `stopPlacing`, `checkFormReady` | `modals.js:59`, `:65`, `:80` |
-| Forms | `openEditModal`, `openReportModal` | `modals.js:95`, `:162` |
-| Modals | focus trap (MutationObserver) + Escape/Tab | `modals.js:183-212` |
-| Auth UI | `renderAuthUI`, `openAuthModal` | `auth-ui.js:11`, `:30` |
-| Logbook | `loadSessions`, `renderLogbookList`, `openAddSessionModal` | `logbook.js:7`, `:29`, `:94` |
-| Moderation | `renderPendingPanel`, `approveSpot`, `approveEdit` | `moderation.js:24`, `:83`, `:107` |
+URL: `?q=<text>&place=AU:NSW[:Suburb]&c=lng,lat,z&t=boulder,toprope,lead&saved=1&climbed=1&photos=1`.
 
-## Map label tiers (`constants.js:133-144`)
-Continent labels below `CONTINENT_LABEL_ZOOM` (3.5), country labels below
-`COUNTRY_LABEL_ZOOM` (5), hold icons from `HOLD_ICON_ZOOM` (9); numbered
-badges in between.
+## Pages (DESIGN.md sec. 6.2, 8; Phase 3)
+`/gym/{slug}` · `/in` · `/in/{cc}` · `/in/{cc}/{region}` · `/in/{cc}/{region}/{city}` · `/log` · `/me[/saved|/climbed]` · `/me/passport` · `/mod` · `/add`.
+`vercel.json` (and `serve.json` for `npx serve`) rewrite these to `index.html`; `router.route()` hides Explore, renders the
+view into `#view`, sets title/canonical; Back pops to the Explore URL left behind. Internal links: `<a href data-link>`.
 
-## Offline / PWA (`sw.js`)
-Shell precached (`SHELL_FILES`); bump `CACHE_VERSION` (:5) whenever a
-precached file changes. Tiles cache-first, the rest stale-while-revalidate.
-Supabase: ONLY the public `GET /rest/v1/spots?...status=eq.approved` read is
-cached (network-first); marks/sessions/moderator/pending/auth and every write
-are never intercepted (the Cache API ignores `Authorization`, so caching them
-would leak across users). Popup/modal buttons use `data-*` + one delegated
-listener (no inline `onclick`, no `window.__*`); Escape only clicks
-`[data-modal-close]`.
+## Community (DESIGN.md sec. 10; Phase 4)
+Provenance (`provenanceState`): `verified_at` → verified (no mark); ≥ 2 distinct contributors (`spot_contributor_counts`) →
+community-verified (forest ring-dot); otherwise community-added (grey ring-dot, seed gyms included). `pending_edits` rows are
+kept with `status` approved/rejected, `edit_note`, `review_requested`, `submitted_by` (pinned by trigger `pin_edit_proposal`).
+Points (`contribution_points`, own row or moderator): 15 per approved gym, 5 per approved edit; levels at 0/15/50/150/400,
+"Contributor" from level 3. `/mod` merges pending gyms, edits and reports oldest first (J/K, Enter, A, R; Escape only closes).
+`/add`: pin = centre of its own map; area from the nearest gym ≤ 25 km; draft in `localStorage` (`bouldeer_add_draft`).
+
+## Map layers of meaning
+Pins: dots ≤ zoom 11, teardrops above (type colour: boulder > top rope > lead; rings selected > saved > climbed).
+Clusters: supercluster radius 48, maxZoom 15; identical coordinates get fixed pixel offsets (`stackOffsets`).
+Labels: continent < 3.5 ≤ country < 5 ≤ state/city < `HOLD_ICON_ZOOM` (9); basemap place labels suppressed below.
+Basemap: CARTO Dark Matter, warmed at style load (`warmBasemap`: each colour takes `--map-tint`'s hue, keeps its lightness).
+
+## Design system (docs/DESIGN.md)
+Components use semantic roles only (`--color-text-secondary`, `--radius-md`, `--shadow-overlay`), never
+`--palette-*` or raw values. Paper = documents; `[data-theme="rock"]` = the map region; objects floating over the
+map are `.map-float` + `data-theme="paper"` with `--shadow-raised`. Chrome and the list sit on cream `surface.canvas`; cards,
+chips, fields, the peek card and dialogs are `surface.default` on top of it. Fraunces only >= 18px; Inter otherwise; no 700.
+Colour meaning: forest = action; `collect.*` (mustard) = START, stamps, session days; `brand.*` (fawn, bark) = marks and
+placeholders only; 1.5px `--border-width-object` ink line on objects (cards, primary button, START), 1px hairlines on rows.
+Buttons: `.btn` + exactly one of `.btn-primary` (one per surface) / `-secondary` / `-tertiary`, sizes `.btn-sm/-lg`,
+`.btn-icon`; destructive = `.btn-danger` (Escape never clicks it). New icon: add Phosphor path data to the sprite +
+`ICON_NAMES`. After editing tokens.css run `node scripts/build-tokens-json.js`.
+
+## Offline / PWA (`sw.js`, v12)
+Shell precached (`SHELL_FILES`). Page loads (`mode: navigate`) of every app route share one cached shell (keyed `/`),
+whatever the path or query; other pages (about.html) are cached per path. Tiles cache-first; other same-origin + CDN files stale-while-revalidate;
+CDN tags carry `crossorigin="anonymous"`. Supabase: ONLY the public `GET /rest/v1/spots?...status=eq.approved` read
+is cached (network-first); marks/sessions/moderator/pending/auth and every write are never intercepted (the Cache
+API ignores `Authorization`, so caching them would leak across users). Escape only clicks `[data-modal-close]`.
 
 ## Tests
-`node --test "tests/*.test.js"` (Node 24, no install): escaping/URL safety,
-hostile-input rendering of popup + moderator panel, service-worker caching
-(vm sandbox), static checks (no inline handlers, modal-close markers).
+`node --test "tests/*.test.js"` (Node 24, no install; importer tests need Docker + the local Supabase stack):
+escaping/URL safety, hostile-input rendering of every Explore builder, /mod panel and /add step, pure Explore modules
+(`explore-pure.test.js`: bounds, URL state, search index, pins, slugs, routes), page builders, service-worker caching (vm sandbox), static checks
+(no inline handlers, modal-close markers, reviewed template interpolations), design system (`design-system.test.js`).
+RLS: `node scripts/test-rls-local.js` against the local stack (`supabase start`, then `supabase db reset --local`), check-ins included.
+Artwork: `design/tools/` (Python, dev-only) regenerates the traced poses and static seals byte for byte (README there).
 
 ## Querying the seed data
 ```
 jq length data/gyms.json
 jq '[.[]|select(.country=="JP")]|length' data/gyms.json
-jq -c '.[]|select(.name|test("Blochaus";"i"))' data/gyms.json
 ```
 Read-only queries only: do not edit `data/gyms.json` (legacy, stale ids). New gyms go through the
 import pipeline (`docs/import-workflow.md`).

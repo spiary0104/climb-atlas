@@ -1,0 +1,68 @@
+/* Base: reset, document type, focus, accessibility helpers. Reads semantic tokens only (css/tokens.css). */
+
+*,*::before,*::after{box-sizing:border-box;}
+html,body{height:100%;}
+body{
+  margin:0;
+  background:var(--color-surface-canvas);
+  color:var(--color-text-primary);
+  font-family:var(--font-text);
+  font-variation-settings:var(--font-display-soft);   /* Fraunces SOFT 50 wherever the serif appears; Inter has no SOFT axis */
+  font-size:var(--type-text-md-size);
+  line-height:var(--type-text-md-line);
+  font-weight:var(--font-weight-regular);
+  font-synthesis:none;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+/* Form controls don't inherit the page font by default (they fall back to the UA's 13.3px Arial). */
+button,input,select,textarea{font-family:inherit;font-size:inherit;line-height:inherit;color:inherit;}
+img{max-width:100%;}
+h1,h2,h3,h4,p{margin:0;}
+a{color:var(--color-text-link);text-underline-offset:var(--text-underline-offset);}
+a:hover{color:var(--color-accent-hover);}
+
+/* Keyboard focus ring: :focus-visible only, never removed (DESIGN sec. 15). */
+:where(button, a, input, select, textarea, summary, [tabindex]):focus-visible{
+  outline:var(--focus-ring-width) solid var(--color-focus-ring);
+  outline-offset:var(--focus-ring-offset);
+}
+
+.skip-link{
+  position:absolute;left:var(--space-3);top:-100px;z-index:var(--z-skip-link);
+  background:var(--color-surface-default);color:var(--color-text-primary);
+  border:var(--border-width) solid var(--color-border-strong);
+  padding:var(--space-2) var(--space-4);border-radius:var(--radius-md);
+  font-weight:var(--font-weight-semibold);text-decoration:none;
+}
+.skip-link:focus{top:var(--space-3);}
+.visually-hidden{
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+  overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;
+}
+
+/* ---- Type scale (sec. 2.4). Serif (display) steps are 18px and above only. ---- */
+.t-display-xl,.t-display-lg,.t-display-md,.t-display-sm{font-family:var(--font-display);font-optical-sizing:auto;}
+.t-display-xl{font-size:var(--type-display-xl-size);line-height:var(--type-display-xl-line);font-weight:var(--type-display-xl-weight);letter-spacing:var(--type-display-xl-tracking);}
+.t-display-lg{font-size:var(--type-display-lg-size);line-height:var(--type-display-lg-line);font-weight:var(--type-display-lg-weight);letter-spacing:var(--type-display-lg-tracking);}
+.t-display-md{font-size:var(--type-display-md-size);line-height:var(--type-display-md-line);font-weight:var(--type-display-md-weight);}
+.t-display-sm{font-size:var(--type-display-sm-size);line-height:var(--type-display-sm-line);font-weight:var(--type-display-sm-weight);}
+.t-text-lg{font-size:var(--type-text-lg-size);line-height:var(--type-text-lg-line);}
+.t-text-md{font-size:var(--type-text-md-size);line-height:var(--type-text-md-line);}
+.t-text-sm{font-size:var(--type-text-sm-size);line-height:var(--type-text-sm-line);}
+.t-caption{font-size:var(--type-caption-size);line-height:var(--type-caption-line);font-weight:var(--type-caption-weight);}
+.t-micro{font-size:var(--type-micro-size);line-height:var(--type-micro-line);font-weight:var(--type-micro-weight);}
+.t-label{font-size:var(--type-label-size);line-height:var(--type-label-line);font-weight:var(--type-label-weight);letter-spacing:var(--type-label-tracking);}
+.t-secondary{color:var(--color-text-secondary);}
+/* Tabular figures on every number that can change (counts, distances, dates, grades). */
+.tnum{font-feature-settings:var(--font-features-numeric);font-variant-numeric:tabular-nums lining-nums;}
+
+/* ---- Reduced motion: transitions collapse; flyTo -> jumpTo is handled in JS (motion()). ---- */
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{
+    transition-duration:var(--motion-instant) !important;
+    animation-duration:var(--motion-instant) !important;
+    animation-iteration-count:1 !important;
+    scroll-behavior:auto !important;
+  }
+}

@@ -1,35 +1,54 @@
-// Climb Atlas entry point (ES module). Loaded after the classic scripts
+// Bouldeer entry point (ES module). Loaded after the classic scripts
 // supabase-init.js (window.sb) and auth.js (window.auth).
 import { closeAuthModal, initAuthUI, renderAuthUI } from './modules/auth-ui.js';
+import { loadContributorCounts } from './modules/community.js';
 import { checkModerator, loadMarks, loadPending, loadSpots } from './modules/data-load.js';
+import { applyLanding, initExplore, render } from './modules/explore.js';
+import { initGymPage } from './modules/gym-page.js';
 import { initLogbook } from './modules/logbook.js';
 import { initMap } from './modules/map.js';
 import { initForms, initInfoModals, initModalKeyboard } from './modules/modals.js';
 import { initModeration, renderPendingBadge } from './modules/moderation.js';
-import { initSidebar, render } from './modules/sidebar.js';
+import { initLogPage } from './modules/log-page.js';
+import { initMePage } from './modules/me-page.js';
+import { initModPage } from './modules/mod-page.js';
+import { initAddPage } from './modules/add-page.js';
+import { initCheckin } from './modules/checkin.js';
+import { initMilestoneSheet } from './modules/milestone-sheet.js';
+import { initPassportPage } from './modules/passport-page.js';
+import { initNavigation } from './modules/nav.js';
+import { initRegionPages } from './modules/region-page.js';
+import { initRouter } from './modules/router.js';
 import { appState } from './modules/state.js';
 
-// Wire up each area in the same order the old single-file app.js did.
+// Wire up each area. The list shows skeleton rows until the first load finishes.
 initMap();
-initSidebar();
 initModalKeyboard();
 initAuthUI();
 initForms();
 initLogbook();
 initModeration();
 initInfoModals();
+initExplore();
+initGymPage();
+initRegionPages();
+initLogPage();
+initMePage();
+initModPage();
+initAddPage();
+initCheckin();
+initMilestoneSheet();
+initPassportPage();
+initNavigation();
+initRouter();          // after every view has registered: renders the page for the URL (a skeleton until data arrives)
 
 async function init(){
-  // Accordion buttons expose their state; every group starts collapsed.
-  document.querySelectorAll('.region-header, .country-label').forEach(b=>{
-    b.setAttribute('aria-expanded', String(!b.parentElement.classList.contains('collapsed')));
-  });
-  // Placeholder rows while Supabase answers, so the panel isn't blank and
-  // the count doesn't read "0" for the first second.
-  document.getElementById('gymList').innerHTML = Array.from({length:6}, ()=>'<div class="skeleton-row" aria-hidden="true"><span></span><span></span></div>').join('');
-  document.getElementById('countNum').textContent = '…';
   await window.auth.init();
   window.auth.onChange(async (user)=>{
+    appState.sessionsLoaded = false;   // the gym page refetches the logbook for whoever is signed in now
+    appState.checkinsLoaded = false; appState.checkins = [];   // and the passport / check-in state
+    appState.myEditCache.clear();
+    appState.myCommunity = null;
     renderAuthUI(user);
     await loadMarks();
     await checkModerator();
@@ -39,6 +58,9 @@ async function init(){
     if(user) closeAuthModal();
   });
   await loadSpots();
+  await loadContributorCounts();
+  appState.loaded = true;
+  applyLanding();
   await loadMarks();
   await checkModerator();
   await loadPending();

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 64" role="img" aria-label="Bouldeer" color="#2F4B39">
+<!--
+  Bouldeer antler mark (docs/DESIGN.md sec. 1A): the crest on the deer's passport in the source artwork
+  (design/mascot/deer/traveller-passport.png): two antlers rising from one base, each with an outer and an inner tine,
+  in the rounded stroke of the character's antlers. Single ink in currentColor (default: stamp forest #2F4B39).
+  Uses: passport emblem (mustard on forest), favicon-scale brand accents, notification/badge icon, stamps and the seal.
+-->
+  <g fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M47 58 C40 50 30 42 23 32 C19 25 17 18 17 8"/><path d="M25 35 C19 32 12 29 7 22"/><path d="M29 40 C31 32 33 26 33 17"/>
+    <path d="M53 58 C60 50 70 42 77 32 C81 25 83 18 83 8"/><path d="M75 35 C81 32 88 29 93 22"/><path d="M71 40 C69 32 67 26 67 17"/>
+  </g>
+</svg>

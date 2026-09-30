@@ -22,14 +22,14 @@ test('no inline event handlers or window.__ globals anywhere in the app', () => 
   }
 });
 
-test('index.html: every modal has a data-modal-close control, and only cancel/close buttons carry it', () => {
+test('index.html: every modal has a data-modal-close control, and only non-destructive secondary/tertiary .btn controls carry it', () => {
   const html = read('index.html');
   const modals = [...html.matchAll(/<div class="modal-backdrop[^"]*" id="(\w+)">([\s\S]*?)(?=<div class="modal-backdrop|<script|$)/g)];
-  assert.ok(modals.length >= 9, 'expected the 9 modals, found ' + modals.length);
+  assert.ok(modals.length >= 7, 'expected the 7 dialogs, found ' + modals.length);
   for (const [, id, body] of modals) {
     const closers = [...body.matchAll(/<button[^>]*data-modal-close[^>]*>/g)].map((m) => m[0]);
     assert.ok(closers.length >= 1, id + ' has no data-modal-close control');
-    for (const c of closers) assert.ok(/btn-cancel|info-close/.test(c) && !/btn-danger|pending-|session-delete/.test(c), 'unexpected closer in ' + id + ': ' + c);
+    for (const c of closers) assert.ok(/\bbtn\b/.test(c) && /\bbtn-(secondary|tertiary)\b/.test(c) && !/btn-danger|btn-primary|pending-|session-delete/.test(c), 'unexpected closer in ' + id + ': ' + c);
   }
   // nothing else in the page is marked as a closer
   assert.equal((html.match(/data-modal-close/g) || []).length, modals.reduce((n, m) => n + (m[2].match(/data-modal-close/g) || []).length, 0));
@@ -45,14 +45,15 @@ test('Escape handling clicks only [data-modal-close] and refuses destructive con
   for (const cls of ['.btn-danger', '.pending-reject', '.pending-dismiss', '.pending-approve', '.session-delete']) assert.ok(destructive.includes(cls), cls);
 });
 
-test('destructive buttons (Reject / Dismiss / Delete) are never styled or selected as .btn-cancel', () => {
+test('destructive buttons (Reject / Dismiss / Delete) carry .btn-danger and are never a close/cancel control', () => {
   for (const f of ['js/modules/moderation-html.js', 'js/modules/logbook.js']) {
     const src = stripComments(read(f));
     for (const m of src.matchAll(/<button[^>]*class="([^"]*)"[^>]*>/g)) {
-      if (/pending-reject|pending-dismiss|session-delete/.test(m[1])) assert.ok(/btn-danger/.test(m[1]) && !/btn-cancel/.test(m[1]), f + ': ' + m[1]);
+      if (/pending-reject|pending-dismiss|session-delete/.test(m[1])) assert.ok(/btn-danger/.test(m[1]) && !/btn-cancel|btn-primary/.test(m[1]), f + ': ' + m[1]);
     }
   }
-  assert.ok(/\.btn-danger\s*\{/.test(read('css/style.css')), '.btn-danger has no CSS rule');
+  assert.ok(/\.btn-danger\s*\{/.test(read('css/components.css')), '.btn-danger has no CSS rule');
+  assert.equal(/btn-cancel|btn-submit|add-btn|mark-btn/.test(read('index.html') + read('css/components.css') + read('css/style.css')), false, 'retired button classes are back');
 });
 
 // Every ${...} inside these HTML-building templates must be escapeHtml(...) or one of the reviewed-safe expressions below.
@@ -68,8 +69,7 @@ const SAFE_EXPR = [
   /^i$/,                                                                        // loop index
   /^c\.attempts>1\?` ×\$\{escapeHtml\(c\.attempts\)\}`:''$/,
   /^chips \? .*$/, /^s\.notes \? .*$/,                                          // conditional blocks whose contents are checked below
-  /^g\.(address|notes)\?`<div class="(popup-address|pending-notes)">\$\{escapeHtml\(g\.(address|notes)\)\}<\/div>`:''$/,
-  /^g\.notes\?`<div style="font-size:12px;color:var\(--text-dim\)">\$\{escapeHtml\(g\.notes\)\}<\/div>`:''$/,
+  /^g\.(address|notes)\?`<div class="(popup-address|popup-notes|pending-notes)">\$\{escapeHtml\(g\.(address|notes)\)\}<\/div>`:''$/,
   /^pe\.(address|notes)\?`<div class="pending-notes">\$\{escapeHtml\(pe\.(address|notes)\)\}<\/div>`:''$/,
   /^photo\?`<img class="popup-photo" src="\$\{escapeHtml\(photo\)\}" alt="\$\{escapeHtml\(g\.name\)\}">`:''$/,
   /^photoLine\((g|pe)\.photo\)$/,
@@ -77,8 +77,75 @@ const SAFE_EXPR = [
   /^photo$/,
   /^spotLabel\(/, /^cards\./,
   /^id$/,                                                                       // popup-html.js: const id = escapeHtml(g.id)
-  /^CSS\.escape\(/,                                                             // used in a CSS selector string, not in markup
+  /^CSS\.escape\(/,
+  /^icon\('[a-z-]+'(, \{size:'(sm|md|lg)'\})?\)$/,                             // sprite icon with a literal name (icons.js rejects unknown names)
+  /^icon\(m\.icon, \{size:'sm'\}\)$/,                                           // logbook moodHtml: m comes from the fixed MOODS table
+  /^moodHtml\(s\.mood\)$/,                                                       // builds from MOODS only; unknown moods render nothing
+  // list-html.js (Explore builders): helpers that escape internally or emit fixed class names / literal icon names
+  /^(provenanceHtml\(g\)|typeDotsHtml\(g\.types\)|typeTagsHtml\(g\.types\)|saveButton\(g, ctx\.saved, '[a-z-]+'\))$/,
+  /^TYPE_CLASS\[t\]$/,                                                          // fixed map, filtered to known types first (knownTypes)
+  /^(extraClass|which|count|optionsHtml)$/,                                      // literal class from callers / 'place'|'text' / escaped count span / searchGroupHtml(options already built)
+  /^Number\(index\)$/,                                                          // search option index: a number, never data
+  // pin-html.js: numbers, the fixed path, ring names from RING_ORDER, pinType() output and kind forced to 'dot'|'teardrop'
+  /^(w|TEARDROP|shape\((w|outline)\)|r|type|kind|box|parts\.join\(''\))$/,
+  /^html$/,                                                                      // search.js listbox(): wraps searchGroupHtml() output
+  // page-html.js: numbers coerced with Number(); markup assembled earlier in the same builder from escaped parts;
+  // helpers that escape internally (link, thumbHtml, pinSvg, pageCardHtml); cls is a literal class list from callers
+  /^Number\([A-Za-z.]+\)$/,
+  /^(cls|tiles|pin|history|actions)$/, /^items\.join\(''\)$/,
+  /^link\(c\.href, c\.label\)$/, /^pinSvg\(\{ types \}\)$/, /^thumbHtml\(g, '(card|row)'\)$/,
+  /^ctx\.nearby\.map\(n => pageCardHtml\(n\.g, n\.ctx\)\)\.join\(''\)$/,
+  // page-html.js region builders: the tile template escapes href/label/count; the rest compose reviewed builders
+  /^items\.map\(t => `<li><a class="place-tile" href="\$\{escapeHtml\(t\.href\)\}" data-link>` \+ `<span class="place-tile-name">\$\{escapeHtml\(t\.label\)\}<\/span><span class="place-tile-count tnum">\$\{escapeHtml\(countLabel\(t\.count\)\)\}<\/span><\/a><\/li>`\)\.join\(''\)$/,
+  /^items\.map\(i => page(Row|Card)Html\(i\.g, i\.ctx\)\)\.join\(''\)$/,
+  /^(tileGridHtml\((g\.items|p\.tiles)\)|gymCollectionHtml\(p\.gyms\)|breadcrumbHtml\(p\.crumbs \|\| \[\]\))$/,
+  /^(dims|gyms)$/, /^mapThumbHtml\(\{ \.\.\.p\.map, wide: true, points: true \}\)$/,
+  // calendar/log/me: assembled in the same builder from numbers, fixed names and escaped labels; p.sessions is
+  // logbook.js sessionsHtml() (itself in this review), p.calendar is calendarHtml()
+  /^(head|links)$/, /^rows\.join\(''\)$/, /^p\.(sessions|calendar)$/,
+  /^key$/, /^tab\('(saved|climbed)', '(Saved|Climbed)', p\.(saved|climbed)\.length\)$/, /^pending$/,   // me page: tab keys are literals
+  // Phase 4 provenance: m comes from the fixed MARKS table; the mark builder takes a state name and emits fixed markup
+  /^m\[[01]\](\.toLowerCase\(\))?$/, /^provenanceMarkHtml\((ctx\.provenance|prov\.state)\)$/, /^subs$/,
+  // moderation-html.js (/mod): label comes from the fixed FIELDS table, k is forced to a KIND_LABEL key by kindOf(),
+  // show() is a FIELDS formatter (escapeHtml or photoText); rows/queue/panel are assembled from these same builders
+  /^(label|k|KIND_LABEL\[k\]|d\.rows|queue|panel)$/, /^show\((current|proposed)\[key\]\)$/,
+  /^items\.map\(\(it, i\) => modRowHtml\(it, ctxs\[i\]\)\)\.join\(''\)$/,
+  // Phase 5: page-html's check-in button is built in the same function from literals and the escaped id; brand.js file
+  // names come from its fixed MILESTONE map
+  /^(checkin|file)$/,
+  // stamp-html.js: textPath ids (sequence numbers), the tilt and size as numbers, parts assembled in the same builder
+  /^(top|bottom|head|grid|filterNote|rows|where|marks)$/, /^Number\((stampTilt\(seed\)|size\.toFixed\(2\))\)$/,
+  // add-html.js (/add): extra is a literal attribute string at every textField() call site; opts/other/submit/signIn are
+  // assembled in the same builder from escaped values and literals; the helpers escape internally
+  /^(extra|opts|other|submit|signIn)$/, /^(countrySelect\(d\)|typeChecks\(d\.types\))$/, /^d\.country === 'OTHER' \? '' : regionSelect\(d\)$/,
+  /^textField\('[a-zA-Z]+', '[A-Za-z ]+', d\.[a-zA-Z]+\)$/,
+  // brand.js: the seal builder takes only literal options and escapes its label
+  /^sealSvg\(\)$/, /^(arc|clip|head|CREST|pose|art)$/,
+  // gym-picker.js (Log a session): text/none/groups are assembled in the same builder from escapeHtml()ed names, places,
+  // labels and codes, Number()ed counts and literal icon names
+  /^(text|none|groups)$/,
 ];
+// A conditional is safe when every branch that can be rendered is safe: a fixed string literal, a template whose own
+// interpolations are all safe, or a nested conditional (checked recursively). The condition itself is never rendered.
+function splitTernary(e) {
+  let depth = 0, q = null, qPos = -1, nested = 0;
+  for (let i = 0; i < e.length; i++) {
+    const c = e[i];
+    if (q) { if (c === '\\') i++; else if (c === q) q = null; continue; }
+    if (c === "'" || c === '"' || c === '`') { q = c; continue; }
+    if ('([{'.includes(c)) depth++; else if (')]}'.includes(c)) depth--;
+    else if (depth === 0 && c === '?' && e[i + 1] !== '.' && e[i + 1] !== '?') { if (qPos < 0) qPos = i; else nested++; }
+    else if (depth === 0 && c === ':' && qPos >= 0) { if (nested) nested--; else return [e.slice(qPos + 1, i).trim(), e.slice(i + 1).trim()]; }
+  }
+  return null;
+}
+function isSafe(e) {
+  if (SAFE_EXPR.some((re) => re.test(e))) return true;
+  if (/^'[^'\\]*'$/.test(e)) return true;                                          // fixed string literal
+  if (/^`[^`]*`$/.test(e)) return interpolations(e.slice(1, -1)).every((x) => isSafe(x.replace(/\s+/g, ' ')));
+  const t = splitTernary(e);
+  return !!t && t.every(isSafe);
+}
 function interpolations(src) {
   const out = [];
   for (let i = 0; i < src.length; i++) {
@@ -92,7 +159,13 @@ function interpolations(src) {
   return out;
 }
 test('HTML-building templates only interpolate escaped or reviewed-safe expressions', () => {
-  const files = ['js/modules/popup-html.js', 'js/modules/moderation-html.js', 'js/modules/logbook.js', 'js/modules/sidebar.js', 'js/modules/auth-ui.js'];
+  const files = ['js/modules/list-html.js', 'js/modules/pin-html.js', 'js/modules/moderation-html.js', 'js/modules/logbook.js', 'js/modules/auth-ui.js',
+    'js/modules/search.js', 'js/modules/list.js', 'js/modules/explore.js', 'js/modules/filters.js', 'js/modules/map.js',
+    'js/modules/page-html.js', 'js/modules/gym-page.js', 'js/modules/router.js', 'js/modules/slug.js', 'js/modules/region-page.js', 'js/modules/mini-map.js',
+    'js/modules/provenance.js', 'js/modules/community.js', 'js/modules/me-page.js', 'js/modules/log-page.js', 'js/modules/mod-page.js',
+    'js/modules/add-html.js', 'js/modules/add-page.js', 'js/modules/brand.js',
+    'js/modules/stamp-html.js', 'js/modules/passport.js', 'js/modules/checkin.js', 'js/modules/passport-page.js', 'js/modules/milestone-sheet.js', 'js/modules/share-card.js',
+    'js/modules/gym-picker.js'];
   const unsafe = [];
   for (const f of files) {
     // lines that assign to .textContent are not markup (the browser treats the value as text)
@@ -103,7 +176,7 @@ test('HTML-building templates only interpolate escaped or reviewed-safe expressi
       if (!/<[a-z]/i.test(t) && !/class=/.test(t)) continue;
       for (const expr of interpolations(t)) {
         const e = expr.replace(/\s+/g, ' ');
-        if (!SAFE_EXPR.some((re) => re.test(e))) unsafe.push(f + ': ${' + e.slice(0, 110) + '}');
+        if (!isSafe(e)) unsafe.push(f + ': ${' + e.slice(0, 110) + '}');
       }
     }
   }
@@ -111,14 +184,33 @@ test('HTML-building templates only interpolate escaped or reviewed-safe expressi
 });
 
 test('photo URLs are validated at every render site and at both submit handlers', () => {
-  assert.ok(/safeUrl\(g\.photo\)/.test(read('js/modules/popup-html.js')));
+  assert.ok((read('js/modules/list-html.js').match(/safeUrl\(g\.photo\)/g) || []).length === 2, 'thumbHtml and peekHtml validate the photo');
+  assert.ok(/const photo = safeUrl\(g\.photo\)/.test(read('js/modules/page-html.js')), 'the gym page hero validates the photo');
   assert.ok(/safeUrl\(photo\)/.test(read('js/modules/moderation-html.js')));
   const modals = read('js/modules/modals.js');
-  assert.ok(/fPhotoRaw && !safeUrl\(fPhotoRaw\)/.test(modals) && /ePhotoRaw && !safeUrl\(ePhotoRaw\)/.test(modals));
+  assert.ok(/ePhotoRaw && !safeUrl\(ePhotoRaw\)/.test(modals), 'the edit form validates the photo');
+  const add = read('js/modules/add-page.js');
+  assert.ok(/photo && !safeUrl\(photo\)/.test(add) && /photo: photo \? safeUrl\(photo\) : null/.test(add), 'the /add submit validates the photo');
   // no other place renders a photo into markup
   for (const f of moduleFiles) {
     // moderation.js only copies pe.photo into the approved-edit UPDATE payload (data, never rendered as markup)
-    if (/popup-html|moderation-html|modals\.js|html-safe|moderation\.js/.test(f)) continue;
+    // filters.js only tests safeUrl(g.photo) for the "Has photos" filter (a boolean, never markup)
+    // add-page.js only validates draft.photo and inserts safeUrl(photo) (checked above); add-html.js shows it as an escaped input value
+    if (/list-html|page-html|moderation-html|modals\.js|html-safe|moderation\.js|filters\.js|add-page|add-html/.test(f)) continue;
     assert.ok(!/\.photo\b/.test(stripComments(read(f))) || /\.value\s*=/.test(read(f)), 'unreviewed photo use in ' + f);
   }
+});
+
+// The product is Bouldeer (owner decision). The Privacy and Terms dialogs name it as such; "Climb Atlas" survives only as
+// "Bouldeer (formerly Climb Atlas)" for continuity with the earlier terms. The contact mailbox and the climbatlas.org
+// domain are addresses, not branding, and are allowed.
+test('legal pages use the Bouldeer name (Climb Atlas only as "formerly")', () => {
+  const html = read('index.html');
+  const legal = html.slice(html.indexOf('id="privacyModalBackdrop"'), html.indexOf('<script', html.indexOf('id="termsModalBackdrop"')));
+  assert.ok(legal.includes('id="termsModalBackdrop"') && legal.includes('Privacy Policy'), 'found both dialogs');
+  const text = legal.replace(/climbatlas0104@gmail\.com/g, '').replace(/Bouldeer \(formerly Climb Atlas\)/g, '');
+  assert.ok(!/climb\s*atlas/i.test(text), 'old product name in the legal copy: ' + (text.match(/.{0,60}climb\s*atlas.{0,20}/i) || [''])[0]);
+  assert.match(legal, /<p>Bouldeer \(formerly Climb Atlas\) is a free, informational, community-edited map/);
+  assert.ok((legal.match(/\bBouldeer\b/g) || []).length >= 4, 'the Terms name Bouldeer throughout');
+  for (const f of ['about.html']) assert.ok(!/climb\s*atlas/i.test(read(f)), f + ' names Climb Atlas');
 });
