@@ -264,6 +264,13 @@ re-run then refuses the mixed state (inspect, then split the batch). **Verificat
 approved count unchanged, every other spot unchanged vs the index; then `manifest.json` (`kind: "update"`, status `updated`) — or a failure
 record and exit 4. Afterwards rebuild the index (`build-index --live`) and commit it with the manifest.
 
+Provenance checks about the earlier state (`validate-reconciled.js`, the tests that reconstruct the pre-import index) look through
+verified update batches with `scripts/lib/gym-import/history.js`: it undoes each batch's recorded changes (its committed `plan.json`) on
+the current index and requires the result to hash to the index that batch was planned against; any unexplained difference throws.
+
+**Applied:** `2026-09-30-location-updates` (11 gyms: 5 pins, 6 pins + addresses; 28 field changes) on 2026-09-30, verified (manifest
+`status: updated`, approved 2,127 unchanged); index rebuilt from production afterwards (`sha256 8dbddf79…`).
+
 ## Retiring `data/gyms.json` (analysis 2026-09-25; NOT done)
 It is **not** safe to remove yet. Everything that depends on it:
 - **App runtime** (`js/modules/data-load.js` `ensureSeedData`, fetched on demand; not precached by `sw.js`): (a) the offline fallback when Supabase is
