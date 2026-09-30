@@ -4,8 +4,10 @@
 //    from SUPABASE_ANON_KEY. With a valid service-role key the same reads also see non-approved (pending) rows.
 //  - The service-role key is read from the environment ONLY (SUPABASE_SERVICE_ROLE_KEY). It is never read from a file, never
 //    printed (error text is redacted), and never written to a batch, manifest or report.
-//  - The single write is Api.insertSpots(): one plain `INSERT` (no upsert, no on_conflict, no PATCH/PUT/DELETE, no rpc). It needs a
-//    write gate that only importer.js can mint after every preflight check and CLI safety flag has passed.
+//  - Two writes exist, each behind its own gate: Api.insertSpots() -- one plain `INSERT` of new rows (no upsert, no on_conflict,
+//    no PUT/DELETE, no rpc), gate minted only by importer.js -- and Api.updateSpotLocation() -- a PATCH of address/lat/lng on one
+//    approved row pinned by id + updated_at, gate minted only by updater.js. Both gates exist only after every preflight check and
+//    CLI safety flag has passed. Nothing can delete a spot or change any other field.
 'use strict';
 const fs = require('fs');
 const path = require('path');
@@ -111,6 +113,33 @@ class Api {
     if (!gate.payloadSha || sha256(JSON.stringify(rows)) !== gate.payloadSha) throw new Error('refusing to write: the payload changed after it was approved (hash mismatch)');
     return this._send('POST', '/rest/v1/spots', { service: true, headers: { 'Content-Type': 'application/json', Prefer: 'return=minimal' }, body: JSON.stringify(rows) });
   }
+
+  // THE ONLY UPDATE in the importer (updater.js): one location correction of one existing approved spot. PATCH with the row
+  // pinned by id + status=approved + the exact updated_at observed at the final re-check (optimistic concurrency: if anything
+  // touched the row since, zero rows match and nothing changes). The body may carry address/lat/lng only, and must be exactly
+  // the approved payload entry. Returns the updated row(s) (Prefer: return=representation) so the caller can count them.
+  async updateSpotLocation(u, gate) {
+    if (!gate || gate[UPDATE_GATE] !== true || !MINTED_UPDATE_GATES.has(gate)) throw new Error('refusing to update: no update gate (all preflight checks and safety flags must pass first)');
+    if (!gate.payloadSha || sha256(JSON.stringify(gate.updates)) !== gate.payloadSha) throw new Error('refusing to update: the payload changed after it was approved (hash mismatch)');
+    const approved = gate.updates.find(x => x.id === u.id);
+    if (!approved || JSON.stringify(approved.set) !== JSON.stringify(u.set)) throw new Error('refusing to update: this change is not the approved one for ' + u.id);
+    const keys = Object.keys(u.set);
+    if (!keys.length || keys.some(k => !LOCATION_FIELDS.includes(k))) throw new Error('refusing to update: only ' + LOCATION_FIELDS.join('/') + ' may be changed');
+    if (('lat' in u.set) !== ('lng' in u.set)) throw new Error('refusing to update: lat and lng change together');
+    for (const k of ['lat', 'lng']) if (k in u.set && (typeof u.set[k] !== 'number' || !Number.isFinite(u.set[k]))) throw new Error('refusing to update: ' + k + ' must be a finite number');
+    if ('address' in u.set && (typeof u.set.address !== 'string' || !u.set.address.trim())) throw new Error('refusing to update: an address can be corrected, never cleared');
+    if (typeof u.id !== 'string' || !/^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$/.test(u.id)) throw new Error('refusing to update: bad id');
+    if (typeof u.updatedAt !== 'string' || !u.updatedAt) throw new Error('refusing to update: the row version (updated_at) observed at the final re-check is required');
+    const q = `/rest/v1/spots?id=eq.${encodeURIComponent(u.id)}&status=eq.approved&updated_at=eq.${encodeURIComponent(u.updatedAt)}`;
+    return this._send('PATCH', q, { service: true, headers: { 'Content-Type': 'application/json', Prefer: 'return=representation' }, body: JSON.stringify(u.set) });
+  }
 }
 
-module.exports = { ROOT, ENV, productionConfig, resolveTarget, validateServiceKey, decodeJwt, redact, mintWriteGate, Api };
+// The fields an update batch may change (updater.js enforces the same list before a gate is ever minted).
+const LOCATION_FIELDS = Object.freeze(['address', 'lat', 'lng']);
+const UPDATE_GATE = Symbol('gym-import-update-gate');
+// Only the exact objects minted here are gates: a copy ({...gate} copies the symbol too) or a hand-built look-alike is refused.
+const MINTED_UPDATE_GATES = new WeakSet();
+const mintUpdateGate = ({ batchId, token, updates, payloadSha }) => { const g = Object.freeze({ [UPDATE_GATE]: true, batchId, token, updates, payloadSha }); MINTED_UPDATE_GATES.add(g); return g; };
+
+module.exports = { ROOT, ENV, productionConfig, resolveTarget, validateServiceKey, decodeJwt, redact, mintWriteGate, mintUpdateGate, LOCATION_FIELDS, Api };

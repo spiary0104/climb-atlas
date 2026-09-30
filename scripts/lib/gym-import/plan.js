@@ -216,6 +216,16 @@ async function planBatch({ dir, index, batchesDir, includeStaged = true }) {
       } else changes.push({ field: f, before: '(not in index; compared at import time)', after: f === 'photo' && v ? (d.safeUrl(v) || v) : v });
     }
     it.id = e.id; it.expectH = e.h;
+    // Researched against a different version of the gym: refuse rather than overwrite a change made since (moderator edit,
+    // another import). expect_h is optional here; updater.js (the only thing that writes updates) requires it.
+    if (it.rec.expect_h !== undefined && it.rec.expect_h !== e.h) { it.errors.push({ code: 'changed-since-research', field: 'expect_h', message: `${e.id} no longer has the content this update was researched against (expect_h ${it.rec.expect_h}, index ${e.h}); re-research it` }); it.cls = 'invalid'; continue; }
+    // A moved pin must not land on another gym: the same 60 m rule that makes a new gym a probable duplicate.
+    if (it.rec.set.lat !== undefined || it.rec.set.lng !== undefined) {
+      const pin = { lat: it.rec.set.lat ?? e.lat, lng: it.rec.set.lng ?? e.lng };
+      const near = index.entries.find(o => o.id !== e.id && N.meters(pin, o) <= M.T.PROBABLE_COLOCATED_M);
+      const nearNew = items.find(o => o !== it && o.intent === 'update' && o.rec && o.rec.set && o.rec.id !== e.id && o.rec.set.lat !== undefined && N.meters(pin, { lat: o.rec.set.lat, lng: o.rec.set.lng }) <= M.T.PROBABLE_COLOCATED_M);
+      if (near || nearNew) { const o = near || { id: nearNew.rec.id, name: 'new pin of ' + nearNew.rec.id }; it.errors.push({ code: 'pin-near-other-gym', field: 'lat', message: `the new pin is within ${M.T.PROBABLE_COLOCATED_M} m of ${o.id} (${o.name})` }); it.cls = 'invalid'; continue; }
+    }
     if (!changes.length) { it.cls = 'existing'; it.match = { id: e.id, name: e.name, tier: 'existing', reason: 'update-is-noop', dist_m: 0 }; it.sameContent = true; continue; }
     it.changes = changes; it.cls = 'update';
     const nm = changes.find(c => c.field === 'name'); if (nm) it.warnings.push({ code: 'rename', field: 'name', message: `renames "${e.name}" -> "${nm.after}"` });

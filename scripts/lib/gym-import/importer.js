@@ -1,7 +1,8 @@
 // The production importer: INSERT-ONLY, gated, verifiable. See docs/import-workflow.md ("Production importer").
 //
 // Modes:  dry-run (default) | verify | apply.  Only `apply` can write, and only after every check and flag below passes.
-// It can insert `new` gyms and nothing else: there is no code path that updates, deletes, merges or overwrites a spot.
+// It can insert `new` gyms and nothing else: there is no code path here that updates, deletes, merges or overwrites a spot. A batch
+// of explicit location-update records is handed to updater.js (address/lat/lng only, bound to expect_h, same gates).
 'use strict';
 const fs = require('fs');
 const path = require('path');
@@ -76,6 +77,11 @@ async function runImport(opts) {
 
   if (!['dry-run', 'verify', 'apply'].includes(mode)) throw new Error('unknown mode ' + mode);
   if (!batchDir || !fs.existsSync(batchDir)) { add('FAIL', 'batch specified', 'an existing batch directory must be given explicitly'); return refuse(); }
+  // A batch in which EVERY line is an {"intent":"update"} record is a location-update batch (updater.js: address/lat/lng of existing
+  // approved spots only, each bound to its researched content hash). Anything else -- including a batch that mixes inserts and
+  // updates -- stays on this insert-only path and is refused by the insert-only check below.
+  const peek = P.loadBatch(batchDir).lines;
+  if (peek.length && peek.every(l => !l.parseError && l.rec && typeof l.rec === 'object' && !Array.isArray(l.rec) && l.rec.intent === 'update')) return require('./updater').runUpdate(opts);
   add('PASS', 'batch specified explicitly', res.batchId);
 
   // ---- target and credentials (offline) -----------------------------------------------------------------------------

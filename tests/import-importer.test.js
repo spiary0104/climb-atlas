@@ -750,16 +750,26 @@ test('production logic never derives state from a manifest: the importer reads o
 });
 
 // ============================================ 9. static guarantees ================================================================
-test('static: the importer has exactly one write path (a plain INSERT) and no update/delete/upsert/merge capability', () => {
+test('static: exactly two write paths -- a plain INSERT (importer.js) and a location PATCH (updater.js) -- and no delete/upsert/merge capability', () => {
   const dir = path.join(ROOT, 'scripts', 'lib', 'gym-import');
   const src = f => fs.readFileSync(path.join(dir, f), 'utf8').split('\n').filter(l => !/^\s*\/\//.test(l)).join('\n');
-  const t = src('target.js'), im = src('importer.js');
-  assert.equal((t.match(/_send\('POST'/g) || []).length, 1, 'exactly one POST call site');
-  for (const bad of [/_send\('(PATCH|PUT|DELETE)'/, /method:\s*['"](PATCH|PUT|DELETE)/i, /on_conflict/, /resolution=(merge|ignore)/, /\/rpc\//, /upsert/i, /Prefer:[^,}]*(merge|ignore)-duplicates/]) { assert.ok(!bad.test(t), 'target.js: ' + bad); assert.ok(!bad.test(im), 'importer.js: ' + bad); }
-  assert.ok(!/_send\('POST'|insertSpots\(/.test(src('plan.js') + src('match.js') + src('validate.js') + src('stage.js') + src('index-store.js') + src('report.js')), 'no other module writes');
-  assert.equal((im.match(/api\.insertSpots\(/g) || []).length, 1, 'the importer calls the write exactly once, after the gates');
-  assert.ok(im.indexOf('mintWriteGate(') > im.indexOf("'gate: --confirm'") && im.indexOf('mintWriteGate(') > im.indexOf('final re-check before write'), 'the gate is minted only after the safety checks');
-  assert.ok(!/child_process|execSync|spawn\(/.test(t + im));
+  const t = src('target.js'), im = src('importer.js'), up = src('updater.js');
+  assert.equal((t.match(/_send\('POST'/g) || []).length, 1, 'exactly one POST call site (insertSpots)');
+  assert.equal((t.match(/_send\('PATCH'/g) || []).length, 1, 'exactly one PATCH call site (updateSpotLocation)');
+  for (const bad of [/_send\('(PUT|DELETE)'/, /method:\s*['"](PUT|DELETE)/i, /on_conflict/, /resolution=(merge|ignore)/, /\/rpc\//, /upsert/i, /Prefer:[^,}]*(merge|ignore)-duplicates/]) for (const [n, s] of [['target.js', t], ['importer.js', im], ['updater.js', up]]) assert.ok(!bad.test(s), n + ': ' + bad);
+  assert.ok(!/_send\('(PATCH|PUT|DELETE)'|method:\s*['"](PATCH|PUT|DELETE)/i.test(im + up), 'no raw write method outside target.js');
+  // the PATCH changes one approved row, pinned to the version seen at the final re-check, and sends only the approved fields
+  const patch = t.slice(t.indexOf('async updateSpotLocation('), t.indexOf("_send('PATCH'"));
+  assert.match(patch, /id=eq\.\$\{encodeURIComponent\(u\.id\)\}&status=eq\.approved&updated_at=eq\.\$\{encodeURIComponent\(u\.updatedAt\)\}/);
+  assert.match(t.slice(t.indexOf("_send('PATCH'")), /body: JSON\.stringify\(u\.set\)/);
+  assert.match(t, /const LOCATION_FIELDS = Object\.freeze\(\['address', 'lat', 'lng'\]\)/);
+  assert.ok(!/_send\('POST'|_send\('PATCH'|insertSpots\(|updateSpotLocation\(/.test(src('plan.js') + src('match.js') + src('validate.js') + src('stage.js') + src('index-store.js') + src('report.js') + src('manifest.js')), 'no other module writes');
+  assert.equal((im.match(/api\.insertSpots\(/g) || []).length, 1, 'the importer calls the insert exactly once, after the gates');
+  assert.ok(!/updateSpotLocation\(|mintUpdateGate\(/.test(im), 'the importer never updates');
+  assert.equal((up.match(/api\.updateSpotLocation\(/g) || []).length, 1, 'the updater calls the update in one place, after the gates');
+  assert.ok(!/insertSpots\(|mintWriteGate\(/.test(up), 'the updater never inserts');
+  for (const [s, mint] of [[im, 'mintWriteGate('], [up, 'mintUpdateGate(']]) assert.ok(s.indexOf(mint) > s.indexOf("'gate: --confirm'") && s.indexOf(mint) > s.indexOf("'final re-check before write'") && s.indexOf("'final re-check before write'") > 0, mint + ' only after the safety checks');
+  assert.ok(!/child_process|execSync|spawn\(/.test(t + im + up));
 });
 
 test('static: no credential is stored in the repository (tracked files, batches, manifests, reports)', () => {
@@ -784,4 +794,44 @@ test('the real 246-record batch has the exact payload the importer would insert 
   assert.equal(rows.length, 246);
   for (const r of rows) { assert.deepEqual(Object.keys(r), ['id', 'name', 'suburb', 'state', 'country', 'lat', 'lng', 'types', 'notes', 'photo', 'address', 'community', 'edited', 'status']); assert.equal(r.status, 'approved'); assert.equal(r.community, false); assert.equal(r.edited, false); assert.match(r.id, /^g-[0-9a-f]{10}$/); }
   assert.equal(N.emptyToNull(rows[0].notes) === rows[0].notes, true);
+});
+
+// ============================================ location updates (updater.js) against the real local database ==================
+// Kept in this file on purpose: every local-stack test resets the same local `spots` table, and files run in parallel.
+const updRec = (index, id, set) => ({ intent: 'update', id, expect_h: index.byId.get(id).h, reason: 'pin from OpenStreetMap node/1 (test)', source: 'OpenStreetMap node/1 (test)', set });
+const TWO = ix => [updRec(ix, 'seed-100', { lat: -33.882, lng: 151.213, address: '14 Example St, Surry Hills NSW 2010' }), updRec(ix, 'seed-102', { lat: -33.8785, lng: 151.196 })];
+test('LOCAL STACK: a real update changes only address/lat/lng (slug kept, updated_at bumped); re-run writes nothing; a concurrent edit is refused', { skip }, async () => {
+  const e = { SUPABASE_URL: stack.url, SUPABASE_ANON_KEY: stack.anon, SUPABASE_SERVICE_ROLE_KEY: stack.service };
+  const setup = async id => {
+    await adm.reset(); await adm.insert(PROD.map(prodRow));
+    const indexDir = tmp(); S.write(await anonApproved(), indexDir, { source: 'local test' });
+    const index = S.load(indexDir);
+    const b = makeBatch(TWO(index), { id });
+    fs.writeFileSync(path.join(b.dir, 'plan.json'), JSON.stringify(await P.planBatch({ dir: b.dir, index }), null, 1) + '\n');
+    return { b, indexDir };
+  };
+  const { b, indexDir } = await setup('2026-02-01-local-fix');
+  const dry = await runImport({ batchDir: b.dir, indexDir, env: e });
+  assert.equal(dry.exit, 0, dry.report); assert.equal(dry.kind, 'update'); assert.equal(dry.coverage, 'FULL');
+  const before = await adm.all();
+  const ok = await runImport({ batchDir: b.dir, indexDir, env: e, mode: 'apply', confirm: dry.token });
+  assert.equal(ok.exit, 0, ok.report);
+  const after = await adm.all();
+  const was = id => before.find(r => r.id === id), now = id => after.find(r => r.id === id);
+  assert.equal(now('seed-100').lat, -33.882); assert.equal(now('seed-100').lng, 151.213); assert.equal(now('seed-100').address, '14 Example St, Surry Hills NSW 2010');
+  assert.equal(now('seed-100').slug, was('seed-100').slug, 'the stored slug never changes');
+  assert.notEqual(now('seed-100').updated_at, was('seed-100').updated_at, 'the database records the edit time');
+  for (const f of ['name', 'suburb', 'state', 'country', 'types', 'notes', 'photo', 'status', 'community', 'edited', 'created_at']) assert.deepEqual(now('seed-100')[f], was('seed-100')[f], f);
+  assert.deepEqual(now('seed-101'), was('seed-101'), 'other gyms untouched'); assert.equal(after.length, before.length);
+  const again = await runImport({ batchDir: b.dir, indexDir, env: e, mode: 'apply', confirm: dry.token });
+  assert.equal(again.exit, 0); assert.deepEqual(await adm.all(), after, 'the re-run wrote nothing');
+  assert.equal((await runImport({ batchDir: b.dir, indexDir, env: e, mode: 'verify' })).exit, 0);
+
+  // a moderator edits a target gym after the dry-run: refused, nothing written
+  const s2 = await setup('2026-02-01-local-race');
+  const dry2 = await runImport({ batchDir: s2.b.dir, indexDir: s2.indexDir, env: e });
+  await adm.patch('seed-102', { notes: 'edited by a moderator' });
+  const snap = JSON.stringify(await adm.all());
+  const raced = await runImport({ batchDir: s2.b.dir, indexDir: s2.indexDir, env: e, mode: 'apply', confirm: dry2.token });
+  assert.equal(raced.exit, 2, raced.report); assert.equal(JSON.stringify(await adm.all()), snap, 'nothing written');
 });

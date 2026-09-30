@@ -19,8 +19,8 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 - Status: pipeline + gated importer built and tested. Batch `import/batches/2026-09-24-reconciled-new-gyms`
   (246 gyms) IMPORTED 2026-09-24, verified (1,881 → 2,127; `manifest.json`); index rebuilt and still equal to production (2026-09-29).
 - Open: retire data/gyms.json (runtime fallback + "Revert to original" use stale ids; plan in docs/import-workflow.md). seed.html removed.
-- Location data (dry run 2026-09-29, nothing applied): 11 OSM-validated updates approved in principle (pins; 6 addresses) need an
-  update-capable importer (today insert-only); 4 to manual review; seed-1139 Manga Climbing has Rockspot's pin; 489 unresolved.
+- Location data (dry run 2026-09-29, nothing applied): 11 OSM-validated updates approved (pins; 6 addresses). Importer location updates
+  built on `feature/importer-location-updates` (updater.js); next: stage the 11 as a batch, dry-run, apply. 4 manual review; seed-1139 pin; 489.
 
 ## Backlog
 
