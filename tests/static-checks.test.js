@@ -200,3 +200,17 @@ test('photo URLs are validated at every render site and at both submit handlers'
     assert.ok(!/\.photo\b/.test(stripComments(read(f))) || /\.value\s*=/.test(read(f)), 'unreviewed photo use in ' + f);
   }
 });
+
+// The product is Bouldeer (owner decision). The Privacy and Terms dialogs name it as such; "Climb Atlas" survives only as
+// "Bouldeer (formerly Climb Atlas)" for continuity with the earlier terms. The contact mailbox and the climbatlas.org
+// domain are addresses, not branding, and are allowed.
+test('legal pages use the Bouldeer name (Climb Atlas only as "formerly")', () => {
+  const html = read('index.html');
+  const legal = html.slice(html.indexOf('id="privacyModalBackdrop"'), html.indexOf('<script', html.indexOf('id="termsModalBackdrop"')));
+  assert.ok(legal.includes('id="termsModalBackdrop"') && legal.includes('Privacy Policy'), 'found both dialogs');
+  const text = legal.replace(/climbatlas0104@gmail\.com/g, '').replace(/Bouldeer \(formerly Climb Atlas\)/g, '');
+  assert.ok(!/climb\s*atlas/i.test(text), 'old product name in the legal copy: ' + (text.match(/.{0,60}climb\s*atlas.{0,20}/i) || [''])[0]);
+  assert.match(legal, /<p>Bouldeer \(formerly Climb Atlas\) is a free, informational, community-edited map/);
+  assert.ok((legal.match(/\bBouldeer\b/g) || []).length >= 4, 'the Terms name Bouldeer throughout');
+  for (const f of ['about.html']) assert.ok(!/climb\s*atlas/i.test(read(f)), f + ' names Climb Atlas');
+});
