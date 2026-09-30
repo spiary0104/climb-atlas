@@ -44,8 +44,8 @@ const byName = (plan, name) => plan.records.find(r => r.name === name);
 // independent of the manifest: a wrong, forged or stale manifest makes this throw instead of silently changing what tests see.
 // Nothing in the importer itself uses this; production logic always reads the live database.
 function preImportIndex(batchId = '2026-09-24-reconciled-new-gyms', root = ROOT) {
-  // Later verified location-update batches are looked through first (history.js); that step is itself verified against the index each
-  // update batch was planned against, so the reconstruction below still has to hash to index_at_staging.
+  // Later verified batches (location updates and inserts) are looked through first (history.js); that step is itself verified against the
+  // index each batch was planned against, so the reconstruction below still has to hash to index_at_staging.
   const idx = H.revertIndex(S.load(path.join(root, 'import', 'index')), root);
   const dir = path.join(root, 'import', 'batches', batchId);
   const mf = readManifest(dir);

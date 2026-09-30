@@ -19,7 +19,7 @@ const orig = read('data/gyms.json'), out = read('data/gyms.reconciled.json'), de
 const REAL_MANIFEST = readManifest(BATCH);
 const index = S.load();
 const H = require('../scripts/lib/gym-import/history');
-// Live rows as the script sees them: later verified location-update batches are looked through (history.js), exactly as
+// Live rows as the script sees them: later verified batches (location updates, inserts) are looked through (history.js), exactly as
 // validate-reconciled.js does before its checks. A row that differs from both the original and the updated value still fails.
 const liveRows = idx => H.revertLiveRows(idx.entries.map(e => ({ id: e.id, name: e.name, country: e.country, lat: e.lat, lng: e.lng, address: e.address }))).rows;
 const NEW_IDS = new Set(out.filter(g => g.id.startsWith('g-')).map(g => g.id));
