@@ -11,7 +11,9 @@
 // v10: Phase 4 community (provenance marks and lines, edit notes, /me contributions, /mod).
 // v11: Brand Pass (deer palette, object line, head lockup, seal, antler mark, favicon/app icon, paper mini maps).
 // v12: Phase 5 passport (check-in sheet, stamps, /me/passport, milestone sheet, share card, START sheet).
-const CACHE_VERSION = 'v12';
+// v13: real-phone fixes (toast in the shell, gym picker, Regions search, re-traced mascot poses with white eyes, legal
+//      rebrand). Same-origin files are stale-while-revalidate, so without a bump phones kept the old deer art.
+const CACHE_VERSION = 'v13';
 const SHELL_CACHE = 'climbatlas-shell-' + CACHE_VERSION;
 const RUNTIME_CACHE = 'climbatlas-runtime-' + CACHE_VERSION;
 const TILE_CACHE = 'climbatlas-tiles-' + CACHE_VERSION;
