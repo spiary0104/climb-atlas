@@ -763,13 +763,29 @@ test('static: exactly two write paths -- a plain INSERT (importer.js) and a loca
   assert.match(patch, /id=eq\.\$\{encodeURIComponent\(u\.id\)\}&status=eq\.approved&updated_at=eq\.\$\{encodeURIComponent\(u\.updatedAt\)\}/);
   assert.match(t.slice(t.indexOf("_send('PATCH'")), /body: JSON\.stringify\(u\.set\)/);
   assert.match(t, /const LOCATION_FIELDS = Object\.freeze\(\['address', 'lat', 'lng'\]\)/);
-  assert.ok(!/_send\('POST'|_send\('PATCH'|insertSpots\(|updateSpotLocation\(/.test(src('plan.js') + src('match.js') + src('validate.js') + src('stage.js') + src('index-store.js') + src('report.js') + src('manifest.js')), 'no other module writes');
+  assert.ok(!/_send\('POST'|_send\('PATCH'|insertSpots\(|updateSpotLocation\(/.test(src('plan.js') + src('match.js') + src('validate.js') + src('stage.js') + src('index-store.js') + src('report.js') + src('manifest.js') + src('history.js') + src('research.js')), 'no other module writes');
+  assert.ok(!/require\('\.\/(target|importer|updater)'\)|fetch\(|mintWriteGate|mintUpdateGate/.test(src('research.js')), 'the research tooling is offline: no target, no network, no gate');
   assert.equal((im.match(/api\.insertSpots\(/g) || []).length, 1, 'the importer calls the insert exactly once, after the gates');
   assert.ok(!/updateSpotLocation\(|mintUpdateGate\(/.test(im), 'the importer never updates');
   assert.equal((up.match(/api\.updateSpotLocation\(/g) || []).length, 1, 'the updater calls the update in one place, after the gates');
   assert.ok(!/insertSpots\(|mintWriteGate\(/.test(up), 'the updater never inserts');
   for (const [s, mint] of [[im, 'mintWriteGate('], [up, 'mintUpdateGate(']]) assert.ok(s.indexOf(mint) > s.indexOf("'gate: --confirm'") && s.indexOf(mint) > s.indexOf("'final re-check before write'") && s.indexOf("'final re-check before write'") > 0, mint + ' only after the safety checks');
   assert.ok(!/child_process|execSync|spawn\(/.test(t + im + up));
+});
+
+test('the insert write gate cannot be copied or forged: only the exact object mintWriteGate returned opens insertSpots', async () => {
+  // Offline: every refusal happens before any request (the target points at a closed local port).
+  const api = new T.Api(T.resolveTarget({ SUPABASE_URL: 'http://127.0.0.1:1', SUPABASE_ANON_KEY: 'a'.repeat(20), SUPABASE_SERVICE_ROLE_KEY: 'sb_secret_' + 'z'.repeat(30) }), { timeoutMs: 500 });
+  const rows = [toRow({ ...rec({ name: 'Gate Copy' }), id: 'g-dddddddddd' }, u => u)];
+  const gate = T.mintWriteGate({ batchId: 'x', token: 'y', rows, payloadSha: require('../scripts/lib/gym-import/importer').payloadSha(rows) });
+  const copy = { ...gate };
+  const sym = Object.getOwnPropertySymbols(gate)[0];
+  assert.equal(copy[sym], true, 'a spread copy carries the gate symbol, so the symbol alone must not be enough');
+  await assert.rejects(() => api.insertSpots(rows, copy), /no write gate/);
+  await assert.rejects(() => api.insertSpots(rows, Object.freeze({ [sym]: true, batchId: 'x', token: 'y', rows, payloadSha: gate.payloadSha })), /no write gate/);
+  await assert.rejects(() => api.insertSpots(rows, Object.assign(Object.create(Object.getPrototypeOf(gate)), gate)), /no write gate/);
+  // the real gate passes the gate check and only then reaches the (unreachable) network
+  await assert.rejects(() => api.insertSpots(rows, gate), e => !/no write gate|approved payload|payload changed/.test(e.message));
 });
 
 test('static: no credential is stored in the repository (tracked files, batches, manifests, reports)', () => {

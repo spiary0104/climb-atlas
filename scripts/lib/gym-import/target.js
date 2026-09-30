@@ -74,7 +74,9 @@ const redact = (text, secrets) => (secrets || []).filter(s => s && s.length > 8)
 
 // A write gate is minted only by importer.js (see mintWriteGate) after all preflight checks and CLI flags have passed.
 const GATE = Symbol('gym-import-write-gate');
-const mintWriteGate = ({ batchId, token, rows, payloadSha }) => Object.freeze({ [GATE]: true, batchId, token, rows, payloadSha });
+// Only the exact objects minted here are gates: a copy ({...gate} copies the symbol too) or a hand-built look-alike is refused.
+const MINTED_WRITE_GATES = new WeakSet();
+const mintWriteGate = ({ batchId, token, rows, payloadSha }) => { const g = Object.freeze({ [GATE]: true, batchId, token, rows, payloadSha }); MINTED_WRITE_GATES.add(g); return g; };
 const sha256 = s => crypto.createHash('sha256').update(s).digest('hex');
 
 class Api {
@@ -108,7 +110,7 @@ class Api {
   // THE ONLY WRITE in the importer: one atomic INSERT of new rows into spots. Plain insert: if any id already exists the whole
   // statement fails and nothing is written; existing rows can never be changed by it.
   async insertSpots(rows, gate) {
-    if (!gate || gate[GATE] !== true) throw new Error('refusing to write: no write gate (all preflight checks and safety flags must pass first)');
+    if (!gate || gate[GATE] !== true || !MINTED_WRITE_GATES.has(gate)) throw new Error('refusing to write: no write gate (all preflight checks and safety flags must pass first)');
     if (!Array.isArray(rows) || !rows.length || rows !== gate.rows) throw new Error('refusing to write: rows do not match the approved payload');
     if (!gate.payloadSha || sha256(JSON.stringify(rows)) !== gate.payloadSha) throw new Error('refusing to write: the payload changed after it was approved (hash mismatch)');
     return this._send('POST', '/rest/v1/spots', { service: true, headers: { 'Content-Type': 'application/json', Prefer: 'return=minimal' }, body: JSON.stringify(rows) });
