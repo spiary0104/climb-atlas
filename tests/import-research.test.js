@@ -189,3 +189,84 @@ test('importer: a regional-research batch passes provenance only while it is exa
   await failOn(w => edit(path.join(w.batchDir, 'batch.json'), t => t.replace(`"section": "import/research/${w.id}"`, '"section": "import/research/elsewhere"')), /source\.section must be/);
   await failOn(w => { const f = path.join(w.batchDir, 'records.ndjson'); const lines = fs.readFileSync(f, 'utf8').trim().split('\n'); fs.writeFileSync(f, lines.slice(1).join('\n') + '\n'); edit(path.join(w.batchDir, 'batch.json'), t => t.replace('"staged": 5', '"staged": 4')); }, /au-001 was accepted but is not in the batch/);
 });
+
+// ---- staleness scope: a reconcile depends only on research sections of the SAME country --------------------------------------
+const otherSection = async (w, slug, date, country, cands) => {
+  const s = await RS.newSection({ root: w.root, slug, date, country, title: slug, description: 'another research section for tests' });
+  fs.writeFileSync(path.join(s.dir, 'candidates.ndjson'), cands.map(c => JSON.stringify(c)).join('\n') + '\n');
+  return s;
+};
+const NZ_CAND = cid => cand(cid, { name: 'Auckland Boulders ' + cid, country: 'NZ', state: 'AUCKLAND', suburb: 'Auckland', address: '1 Queen St, Auckland', lat: -36.85, lng: 174.76 });
+
+test('research staleness: a change in an unrelated country never makes a section stale; a same-country change does', async () => {
+  const w = await world();
+  const rc0 = await reconcile(w);
+  // (b) unrelated country: create a section, then change it again; the AU reconcile is identical and staging is not blocked
+  const nz = await otherSection(w, 'nz-other', '2026-10-03', 'NZ', [NZ_CAND('nz-001')]);
+  const rc1 = await RS.reconcile(w.dir, w);
+  assert.equal(rc1.reconcile_sha256, rc0.reconcile_sha256, 'an unrelated country does not change the reconcile');
+  assert.deepEqual(rc1.inputs.other_sections_compared, [], 'only same-country sections are bound into the inputs');
+  fs.appendFileSync(path.join(nz.dir, 'candidates.ndjson'), JSON.stringify(NZ_CAND('nz-002')) + '\n');
+  assert.equal((await RS.reconcile(w.dir, w)).reconcile_sha256, rc0.reconcile_sha256);
+  review(w);
+  assert.equal((await RS.stage(w.dir, w)).action, 'created', 'staging is not blocked by an unrelated country');
+  // (a) same country: another AU section appears -> the AU reconcile changes and staging the stored one is refused as stale
+  const w2 = await world(); const r20 = await reconcile(w2); review(w2);
+  await otherSection(w2, 'au-two', '2026-10-04', 'AU', [cand('x-100', { name: 'Far Away Gym', state: 'WA', suburb: 'Perth', address: '9 Hay St, Perth', lat: -31.95, lng: 115.86 })]);
+  const r21 = await RS.reconcile(w2.dir, w2);
+  assert.notEqual(r21.reconcile_sha256, r20.reconcile_sha256);
+  assert.deepEqual(r21.inputs.other_sections_compared.map(o => o.id), ['2026-10-04-au-two']);
+  assert.match((await RS.stage(w2.dir, w2)).problems.join(), /stale/);
+  // same-country duplicate protection is intact: a near-identical candidate in the other AU section is flagged for review
+  const w3 = await world(); await otherSection(w3, 'au-dup', '2026-10-05', 'AU', [cand('x-200', { name: 'Summit Lab Newtown' })]);
+  assert.ok(codes(byCid(await RS.reconcile(w3.dir, w3), 'au-001')).includes('other-section'));
+});
+
+test('research staleness: staging still revalidates against the full current index (an import elsewhere makes it stale and not importable)', async () => {
+  const w = await world(); await reconcile(w); review(w);
+  await otherSection(w, 'nz-other', '2026-10-03', 'NZ', [NZ_CAND('nz-001')]);   // unrelated: no effect
+  const staged = await RS.stage(w.dir, w);
+  assert.equal(staged.action, 'created');
+  assert.equal((await P.planBatch({ dir: staged.dir, index: w.index })).importable, true);
+  // (c) another import lands a gym at au-001's pin and the index is rebuilt: the review can no longer be staged (stale: index hash)...
+  const landed = [...PROD, { id: 'g-eeeeeeeeee', name: 'Summit Lab', suburb: 'Newtown', state: 'NSW', country: 'AU', lat: -33.897, lng: 151.179, address: '1 King St, Newtown NSW 2042', types: ['indoor-bouldering'], notes: null, photo: null }];
+  const w2 = await world(); await reconcile(w2); review(w2);
+  S.write(landed, w2.indexDir, { source: 'test' });
+  const r2 = await RS.stage(w2.dir, { ...w2, index: S.load(w2.indexDir) });
+  assert.equal(r2.action, 'refused'); assert.match(r2.problems.join(), /stale/);
+  // ...and the importer's own plan of the batch staged before that import sees the new gym: the record is no longer "new". The
+  // importer's insert-only gate (every record must be new) then refuses the whole batch: covered in import-importer.test.js.
+  const d = tmp(); S.write(landed, d, { source: 'test' });
+  const after = await P.planBatch({ dir: staged.dir, index: S.load(d) });
+  assert.equal(after.records.find(r => r.name === 'Summit Lab').class, 'existing');
+  assert.equal(after.counts.new, 4, 'only the other accepted gyms are still new');
+});
+
+// ---- types: bouldering unknown/no may carry an empty list instead of an unconfirmed placeholder --------------------------------
+test('research types: bouldering unknown or no may have an empty type list; such candidates stay blocked and can never be accepted', async () => {
+  const w = await world({ candidates: [
+    cand('au-001'),
+    cand('au-020', { name: 'Unknown Walls', suburb: 'Kogarah', lat: -33.95, lng: 151.1, types: [], bouldering: 'unknown' }),
+    cand('au-021', { name: 'Rope Only', suburb: 'Parramatta', lat: -33.815, lng: 151.0, types: [], bouldering: 'no', evidence: [ev(['exists', 'open', 'ropes']), ev(['location'], 'S3')] }),
+    cand('au-022', { name: 'Claims Yes', suburb: 'Manly', lat: -33.8, lng: 151.28, types: [] }),
+    cand('au-023', { name: 'Ropes Known', suburb: 'Hornsby', lat: -33.7, lng: 151.1, types: ['top-rope'], bouldering: 'unknown' }),
+  ] });
+  const rc = await reconcile(w);
+  assert.equal(byCid(rc, 'au-020').class, 'blocked'); assert.ok(codes(byCid(rc, 'au-020')).includes('bouldering-unknown'));
+  assert.equal(byCid(rc, 'au-021').class, 'blocked'); assert.ok(codes(byCid(rc, 'au-021')).includes('no-bouldering'));
+  assert.equal(byCid(rc, 'au-022').class, 'invalid', 'bouldering "yes" still requires indoor-bouldering in types');
+  assert.ok(byCid(rc, 'au-022').errors.some(e => e.code === 'types-vs-bouldering'));
+  assert.ok(byCid(rc, 'au-022').errors.some(e => e.code === 'record-bad-types'), 'the importer\'s own empty-types error is only waived for unknown/no');
+  assert.equal(byCid(rc, 'au-023').class, 'blocked', 'legitimate non-empty types are unchanged');
+  const base = { 'au-001': { decision: 'accept' }, 'au-021': { decision: 'reject', reason_code: 'no-bouldering' }, 'au-022': { decision: 'reject', reason_code: 'insufficient-evidence' }, 'au-023': { decision: 'defer', reason: 'bouldering offer not shown anywhere' } };
+  review(w, { ...base, 'au-020': { decision: 'accept' } });
+  assert.match((await RS.stage(w.dir, w)).problems.join('\n'), /au-020: cannot be accepted/);
+  review(w, { ...base, 'au-020': { decision: 'reject', reason_code: 'no-bouldering' } });
+  assert.match((await RS.stage(w.dir, w)).problems.join('\n'), /"no-bouldering" needs bouldering "no"/);
+  review(w, { ...base, 'au-020': { decision: 'defer', reason: 'bouldering offer not established' } });
+  const r = await RS.stage(w.dir, w);
+  assert.equal(r.action, 'created');
+  const recs = fs.readFileSync(path.join(r.dir, 'records.ndjson'), 'utf8').trim().split('\n').map(l => JSON.parse(l));
+  assert.deepEqual(recs.map(x => x.source.split('#')[1]), ['au-001']);
+  assert.ok(recs.every(x => x.types.includes('indoor-bouldering')), 'nothing with an empty or unconfirmed type list is ever staged');
+});
