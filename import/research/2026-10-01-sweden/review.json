@@ -1,0 +1,210 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-01-sweden",
+ "reviewer": "Claude (AI) on the owner's instruction; owner sign-off pending",
+ "reviewed": "2026-10-01",
+ "decisions": {
+  "se-001": {
+   "decision": "defer",
+   "reason": "Open today (S KC chain page shows hours, FAQ shows bouldering, OSM node agrees), but the chain announced on its own site that Klättercentret Solna closes on 19 Dec 2026 (contract not extended, no replacement site named): owner to decide whether to add a gym that closes in about 11 weeks. Accept would be valid on evidence if the owner wants it."
+  },
+  "se-002": {
+   "decision": "accept",
+   "reason": "S KC own page for Telefonplan shows exists, open, address, bouldering and ropes; pin is OSM node 804687577. Related-name flag is a different gym: Klättercentret Telefonplan (Tellusgången 22-24, Hägersten) is a separate chain site, 5.3 km from Bouldering Stockholm (se-006 / seed-1105, Slakthusgatan 26), an independent bouldering gym with a different name and address.",
+   "reviewed_against": [
+    "se-006",
+    "seed-1105"
+   ]
+  },
+  "se-003": {
+   "decision": "accept",
+   "reason": "S KC chain page shows Akalla exists, open, address; S KC English page shows bouldering. Pin is OSM node 5410968011; the chain's own map pin is about 70 m from it (same building area, disagreement noted, OSM element kept).",
+   "reviewed_against": []
+  },
+  "se-004": {
+   "decision": "same-as",
+   "same_as": "seed-1106",
+   "reason": "Importer exact match: same name, Gasverksvägen 15, 5 m from seed-1106. No location-update: existing pin is on the OSM building (way 23427060); the site's own pin is a few hundred metres off, so the existing pin is the better one."
+  },
+  "se-005": {
+   "decision": "accept",
+   "reason": "S KV own page for Sickla shows exists, open, bouldering and ropes; pin is OSM node 5263391133 with address. Klätterverket chain branch with its own address (Marcusplatsen 17, Nacka), distinct from Gasverket.",
+   "reviewed_against": []
+  },
+  "se-006": {
+   "decision": "same-as",
+   "same_as": "seed-1105",
+   "reason": "Same gym: Bouldering Sthlm (own site S BS, alias Bouldering Stockholm) at Slakthusgatan 26 is 0 m from seed-1105 Bouldering Stockholm, same address. Existing pin is already identical to the OSM node, no location update."
+  },
+  "se-007": {
+   "decision": "accept",
+   "reason": "S MOUMO own site (re-checked) shows an open bouldering gym with day-ticket prices, address Götgatan 78 (Skrapan) and no closure notice; hours text still quotes summer hours to 10 Aug (stale but not a closure). Pin is OSM node 11101686073. Rope climbing not seen, so type stays bouldering only.",
+   "reviewed_against": []
+  },
+  "se-008": {
+   "decision": "accept",
+   "reason": "S KARBIN own site (re-checked) shows an active climbing gym with bouldering, ropes, hours 09-22 and day tickets; the site itself gives Västberga allé 60, 126 30 Hägersten, so the address is confirmed on the primary site. Pin is OSM way 108333173 for the building.",
+   "reviewed_against": []
+  },
+  "se-009": {
+   "decision": "accept",
+   "reason": "Single source, accepted under rule E: S BLX own site (primary) shows exists, open, address (Mall of Scandinavia, 4th floor) and bouldering. No OSM node exists; pin is the map location the gym's own site embeds (gym's own published pin), no disagreement recorded.",
+   "reviewed_against": []
+  },
+  "se-010": {
+   "decision": "same-as",
+   "same_as": "seed-1104",
+   "followup": "location-update",
+   "reason": "Same gym: Klätterfabriken (Highsport) at Fabriksgatan 38-42 is Klätterfabriken High Sports in seed-1104, same address. Existing pin is 223 m from the candidate pin, which is OSM node 3715375091 and agrees with the gym's own site pin (S HIGHSPORT), so location-update is justified."
+  },
+  "se-011": {
+   "decision": "same-as",
+   "same_as": "seed-1103",
+   "reason": "Same gym: Klätterdomen at Övre Kaserngården 2 is 0 m from seed-1103 Klätterdomen AB (company-name form of the same gym). Pin already identical, no update."
+  },
+  "se-012": {
+   "decision": "same-as",
+   "same_as": "seed-1102",
+   "reason": "Same gym: Fysiken Klätterlabbet at Elektrovägen 1 is 0 m from seed-1102 Fysiken Klätterlabbet Centrum (alias in the candidate). It is already in Bouldeer, so the university/limited-access question does not arise for staging."
+  },
+  "se-013": {
+   "decision": "same-as",
+   "same_as": "seed-1101",
+   "reason": "Importer exact match: same name, Herkulesgatan 1, 23 m from seed-1101. Pins agree closely; no location update."
+  },
+  "se-014": {
+   "decision": "accept",
+   "reason": "S KC chain page shows Partille exists, open, address; the KC klattring page shows bouldering and ropes. Pin is OSM node 9630447879 and agrees with the chain pin. Former Volym Partille (old domain parked), now a Klättercentret branch with own address (Laxfiskevägen 4A); no existing Bouldeer gym of that name.",
+   "reviewed_against": []
+  },
+  "se-015": {
+   "decision": "accept",
+   "reason": "Single source, accepted under rule E: S KBA own site /omoss (re-read in a rendered browser; the page is a JS app) shows Mariosgata 13 Kungsbacka, drop-in bouldering and public opening hours. Pin is the site's own named map pin (57.5079,12.0536); the same page embeds a second pin at Ollonborrstigen 13 (about 59.24,15.17, a different town), which was not used.",
+   "reviewed_against": []
+  },
+  "se-016": {
+   "decision": "accept",
+   "reason": "S KC chain page shows Malmö exists, open, address, bouldering, plus an opening-hours page; pin is OSM node 5208826925. Distinct chain branch with its own address (Kopparbergsgatan 8).",
+   "reviewed_against": []
+  },
+  "se-017": {
+   "decision": "accept",
+   "reason": "Single source (KC is a primary chain-store-list), accepted under rule E: S KC Helsingborg page shows exists, open, address and the first-visit page shows bouldering. Pin is the Google Maps place pin the chain itself links for the address; not in OSM, no disagreement recorded.",
+   "reviewed_against": []
+  },
+  "se-018": {
+   "decision": "accept",
+   "reason": "S BETA own site shows Malmö gym exists, open, address (Spångatan 3B), bouldering and hours; pin is OSM node 14181083001. The announced Göteborg Beta Boulders gym is a separate, not-yet-open venue and is not part of this candidate.",
+   "reviewed_against": []
+  },
+  "se-019": {
+   "decision": "same-as",
+   "same_as": "seed-1107",
+   "reason": "Importer exact match: same name and Eric Perssons väg 1E, 27 m from seed-1107 (the second OSM node Stadions klätterhall is the same hall). Pin difference is under 150 m, no update."
+  },
+  "se-020": {
+   "decision": "accept",
+   "reason": "Limited-access cleared: S SKK homepage (re-read) says non-members can buy a day pass to a regular session (booking in advance required) and try-climbing sessions are open to anyone without booking. Own site shows exists, open, boulder and rope walls (Väggen, Östratornsvägen 2, Lund); pin is OSM node 4756185566. Caveat: access is by booked session, not free drop-in.",
+   "reviewed_against": []
+  },
+  "se-021": {
+   "decision": "accept",
+   "reason": "Limited-access cleared: S C4 own /climb page (re-read in a browser) says everyone is welcome, no booking, public opening hours (Tue-Thu and Sun evenings, Sat morning) and non-member entry 120 kr. Own site shows address Rörvägen 18 and bouldering training groups; pin is OSM node 12883990881. Caveat: public hours are limited (about 12 h a week) and the adult bouldering wall is only inferred from bouldering group listings and crashpad rental.",
+   "reviewed_against": []
+  },
+  "se-022": {
+   "decision": "accept",
+   "reason": "S URBAN own site shows exists, open, address (Industrigatan 5, Linköping) and bouldering; pin is OSM node 12879202939. Dedicated bouldering gym, not the Norrköping hall.",
+   "reviewed_against": []
+  },
+  "se-023": {
+   "decision": "accept",
+   "reason": "Limited-access cleared: S LKK own page (expired TLS certificate; read with checks off) shows a volunteer-run club hall whose reception handles entry, with a prices page and a weekly public 'Prova på - Drop in' session, so non-members can enter. Own page shows exists, open, rope wall and boulder hall; pin is OSM way 34001196. Caveat: expired certificate on the site.",
+   "reviewed_against": []
+  },
+  "se-024": {
+   "decision": "accept",
+   "reason": "Single source, accepted under rule E: S KHN own site (primary) shows exists, open, address (Kronomagasinsgatan 5), boulder hall open without booking and a rope hall needing a belay card. Pin is the place link the gym itself publishes; not in OSM.",
+   "reviewed_against": []
+  },
+  "se-025": {
+   "decision": "accept",
+   "reason": "Single source, accepted under rule E: S MOTALA own page (Billobulls) shows exists, open (live page), address Mineralvägen 16, bouldering, top rope and lead. Pin is the map link on that page; not in OSM.",
+   "reviewed_against": []
+  },
+  "se-026": {
+   "decision": "accept",
+   "reason": "S OKG own site (re-checked) shows an indoor bouldering and climbing gym at Södra Grev Rosengatan 27 with opening hours; the school page shows bouldering. Pin is OSM node 6531745594. Caveat: rope offer unconfirmed, so type stays bouldering only.",
+   "reviewed_against": []
+  },
+  "se-027": {
+   "decision": "accept",
+   "reason": "S KC Västerås page shows exists, open, address, ropes; the KC English page shows bouldering. Pin is OSM node 11745869869 and agrees with the chain pin. Distinct chain branch with own address (Stenbygatan 3A).",
+   "reviewed_against": []
+  },
+  "se-028": {
+   "decision": "accept",
+   "reason": "S KC Uppsala page shows exists, open, address, ropes; the KC English page shows bouldering. Pin is OSM node 14134903521 (a duplicate OSM node 20 m away is the same gym) and agrees with the chain pin.",
+   "reviewed_against": []
+  },
+  "se-029": {
+   "decision": "defer",
+   "reason": "Limited access not cleared: S F11 own site (re-read) shows only two advertised 'prova på' try-out dates (11 and 25 Oct) and a member wall-card for unlocking the hall; no regular drop-in, day pass or public hours found. Need a source showing regular public access."
+  },
+  "se-030": {
+   "decision": "accept",
+   "reason": "S MONOLOCO own site shows exists, open (hours page) and name; the climbing-hall page shows boulder walls and 12 m rope walls; contact page shows the address (Främbyvägen 20). Pin is OSM node 7895984073.",
+   "reviewed_against": []
+  },
+  "se-031": {
+   "decision": "accept",
+   "reason": "Single source, accepted under rule E: S FYSHUSET own site shows exists, open (05-23 hours), address Södra skeppsbron 28 and bouldering. Pin is the Google Maps embed on that site; not in OSM. Operated by a company (Gävle Klättergym HB), not a club.",
+   "reviewed_against": []
+  },
+  "se-032": {
+   "decision": "accept",
+   "reason": "S OSK own site shows exists, open (current autumn 2026 news), bouldering and ropes; pin is OSM node 6886774573 with address.",
+   "reviewed_against": []
+  },
+  "se-033": {
+   "decision": "accept",
+   "reason": "S ARE own site shows exists, open, bouldering and ropes; pin is OSM node 12006263152. Caveat: only 'Duved, Åre' is known as the address (no street on the site).",
+   "reviewed_against": []
+  },
+  "se-034": {
+   "decision": "accept",
+   "reason": "S KHUSET own site shows exists, open, bouldering and ropes with recent competition news; pin is OSM node 12825815992 with address Ödlegatan 7.",
+   "reviewed_against": []
+  },
+  "se-035": {
+   "decision": "accept",
+   "reason": "Single source, accepted under rule E: S VIGOREN own site shows exists, open, bouldering and ropes; the hitta-hit page gives address Centralvägen 31 and the gym's own map pin. Not in OSM. Sister gym of Klätterfabriken (se-010, a different city).",
+   "reviewed_against": []
+  },
+  "se-036": {
+   "decision": "accept",
+   "reason": "S RC own page (re-read) shows daily hours 07-22, public day passes, upper-level bouldering and caves plus rope climbing in the RC Arena racket centre (Mässvägen 6). It is a real climbing area with public hours, not a limited-access wall. Pin is OSM relation 12698063 (the arena building), not the climbing hall itself. Caveat: climbing is a part of a racket centre.",
+   "reviewed_against": []
+  },
+  "se-037": {
+   "decision": "accept",
+   "reason": "Single source, accepted under rule E: S WALLRIDE own page (re-read) shows an indoor bouldering hall (walls up to about 5 m, crash pads, public opening hours) at Arabygatan 13, Växjö, with a Google Maps link; no closure notice. Borderline: it sits inside an action-sports venue with skate and trampolines, but bouldering is a real, separate offer. Owner may veto. Pin is the map link on that page; not in OSM.",
+   "reviewed_against": []
+  },
+  "se-038": {
+   "decision": "accept",
+   "reason": "Limited-access cleared: S HKK own site (priser-och-oppettider page, re-read) says non-members pay a day entry without booking in regular hours (Tue, Thu 18-21, Fri 17-20, Sat-Sun 14-18). Own site shows exists, bouldering, lead and top-rope walls; pin is OSM node 5769169690.",
+   "reviewed_against": []
+  },
+  "se-039": {
+   "decision": "accept",
+   "reason": "Limited-access cleared: S KARLSTAD hall page (re-read) says non-members can buy a guest pass in the Tingvallahallarna cafeteria; own pages show exists, open, bouldering and ropes, address and map link. Pin is the club's own map link. The club's new hall (funding approved Dec 2025) has no opening date, so the current hall stays the right site. Caveat: access depends on cafeteria hours and a key, with youth training on Mon/Wed 18-21.",
+   "reviewed_against": []
+  },
+  "se-040": {
+   "decision": "accept",
+   "reason": "Limited-access cleared: S HKT own site (re-read) shows drop-in for everyone on Wednesdays 17:30-19:30 at 60 kr, two boulder caves plus top-rope and lead walls, address Ringvägen 10 with a map embed. Pin is the club's own map embed; not in OSM. Caveat: public access is one evening a week.",
+   "reviewed_against": []
+  }
+ }
+}

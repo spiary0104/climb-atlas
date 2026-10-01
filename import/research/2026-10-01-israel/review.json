@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "section_id": "2026-10-01-israel",
+  "reviewer": "Claude (AI) on the owner's instruction; owner sign-off pending",
+  "reviewed": "2026-10-01",
+  "decisions": {
+    "il-001": {
+      "decision": "accept",
+      "reason": "S1 (Performance Rock chain site, branch page) shows Begin 144 Tel Aviv, weekly hours and a bouldering-only gym, so exists/open/bouldering are primary-sourced. Address is the current one: the chain site lists only Begin 144 (Midtown); the older Rival 3 address on the federation list S9 was not used. Pin is OSM node/12079572871 (named Climbing gym - Performance Rock, no address tag); it is 84 m from the site's own Waze pin 32.076853,34.792631, both in the Midtown complex, so the disagreement is under 150 m. Distinct branch from Beer Sheva/Haifa (same chain) and from the other Tel Aviv gyms (VKING, The Bloc, 1.7-3.5 km away, different addresses and brands; iClimb Rishon and Venga are 10 km away).",
+      "reviewed_against": [
+        "il-002",
+        "il-003",
+        "il-004",
+        "il-005",
+        "il-010",
+        "il-012"
+      ]
+    },
+    "il-002": {
+      "decision": "same-as",
+      "same_as": "seed-1590",
+      "followup": "location-update",
+      "reason": "Same gym: seed-1590 Performance Rock, 4 HaAtsmaut St Beer Sheva is the chain's Beer Sheva branch at HaAtzmaut 4 (S1 chain site shows HaAtzmaut 4 with weekly hours and bouldering). The seed pin 31.2429473,34.7857884 is 872 m from the branch's own Waze place pin (31.2381012,34.7929965) and equals the centre of the HaAtzmaut street way (OSM way/785859037), i.e. a street-level geocode, so the sourced pin is clearly better."
+    },
+    "il-003": {
+      "decision": "accept",
+      "reason": "S1 chain site (branch card and branch page) shows HaNamal 32 Haifa, daily hours and bouldering; single source is primary and shows exists, open and bouldering. Pin is the branch's own Waze pin on the chain site (5 decimals); no conflicting pin found. Distinct branch of Performance Rock from Tel Aviv and Beer Sheva (different address).",
+      "reviewed_against": [
+        "il-001",
+        "il-002"
+      ]
+    },
+    "il-004": {
+      "decision": "accept",
+      "reason": "S2 own site shows a large bouldering gym with weekly resets, HaShlosha 3 Tel Aviv and opening hours; single source is primary and shows exists, open and bouldering. Coordinates: the site publishes two pins ~549 m apart. Recorded pin is the gym's own Waze pin (32.0621702,34.7887631); it is 8 m from the OSM address node for HaShlosha 3 (node/2079033744, 32.062145,34.788845), so it is on the building. The other pin (a Google Maps link, 32.06431,34.78351, ~549 m off) does not match the stated address and the site's embedded map queries the address text, so it is rejected as the outlier. Distinct from the other Tel Aviv gyms (different brand and address).",
+      "reviewed_against": [
+        "il-001",
+        "il-005",
+        "il-010",
+        "il-012"
+      ]
+    },
+    "il-005": {
+      "decision": "accept",
+      "reason": "S3 chain site: Hebrew page states the chain is a network of boulder walls in Jerusalem and Tel Aviv, and the Tel Aviv page lists HaMeretz 4 and weekly opening hours (English page cited as evidence lists the address and hours; the word boulder is on the Hebrew version of the same site). Pin is OSM node/11035324444 (Bloc Climbing, climbing:boulder=yes, addr HaMeretz 4), whose address matches the site, so the match is by address and not only name (checked, better than the research note says). No competing pin. The Bloc site says it runs 3 gyms but lists only 2 addresses (Jerusalem and Tel Aviv): a possible third room is unconfirmed and not part of this record. Distinct from the Jerusalem Bloc (different city and address) and from other brands nearby.",
+      "reviewed_against": [
+        "il-001",
+        "il-004",
+        "il-006",
+        "il-010",
+        "il-012"
+      ]
+    },
+    "il-006": {
+      "decision": "accept",
+      "reason": "S3 chain site (Hebrew Jerusalem page) shows a Jerusalem price list, opening hours and address Eliashar 7 (Hebrew spelled Elishar 7), and the chain describes itself as a network of boulder walls in Jerusalem and Tel Aviv. Pin is OSM node/8614506641 (The Block / name:he Hebrew, sport=climbing, no address tag). Checked: Nominatim places the street Elishar/Eliashar ways at 31.7818,35.2203, about 50-60 m from the node, and reverse geocoding the node returns The Block on that street, so the node matches Eliashar 7. The only caveat is that the OSM node carries no address or website of its own; no other pin found. Distinct from Bloc Tel Aviv and from Urban Climbing Jerusalem (3 km away, different brand and address).",
+      "reviewed_against": [
+        "il-005",
+        "il-008"
+      ]
+    },
+    "il-007": {
+      "decision": "accept",
+      "reason": "S4 chain site (Rehovot branch page) shows 200 bouldering routes, Antin Street Rehovot, opening hours, opened 2011; primary source shows exists, open and bouldering. Pin is the branch's own Waze pin 31.90946,34.80696, 16 m from OSM node/3957777287 (Urban Climbing - Bouldering gym), so no disagreement. Distinct from the Jerusalem branch (other city) and from iClimb Rishon (9.5 km away, different brand and address).",
+      "reviewed_against": [
+        "il-008",
+        "il-010"
+      ]
+    },
+    "il-008": {
+      "decision": "accept",
+      "reason": "S4 chain site (Jerusalem branch page) shows 200 bouldering routes, Givat Shaul address (Beit HaDfus 11 / Yosef Weitz Drive 1) and school-year opening hours; single source is primary and shows exists, open and bouldering. Pin is the branch's own Waze pin 31.785389,35.188810. The branch page itself gives Beit HaDfus 11, Givat Shaul (matching the federation list); the chain home page also lists Yosef Weitz Drive 1, which is the address the Waze pin carries; both are the same pin so I treat them as one site (not independently verified as the same building). Distinct from The Bloc Jerusalem (3 km away, different brand and address) and from the Rehovot branch.",
+      "reviewed_against": [
+        "il-006",
+        "il-007"
+      ]
+    },
+    "il-009": {
+      "decision": "same-as",
+      "same_as": "seed-1596",
+      "followup": "location-update",
+      "reason": "Same gym: seed-1596 Monkeys climbing gym is in the Nitsba Poleg complex, Netanya; the candidate is the same gym on its own site S5 (Netzba Poleg complex, floor 1) 391 m from the seed pin. Official Google place pin 32.2766577,34.8618323 agrees with OSM node/6745840987 (Monkeys, climbing:boulder=yes) within 32 m, so the sourced pin is better and the seed pin is over 150 m off. The Ashdod Monkeys branch on the federation list is a separate unconfirmed gym and not covered."
+    },
+    "il-010": {
+      "decision": "accept",
+      "reason": "S6 own site describes a 1,200 m2 complex with a boulder area with hundreds of routes plus lead, auto-belay and kids zones; its price/hours page shows Nadav Baskind 12 and hours, and the site's own map link gives the pin 31.9886446,34.7701989, 63 m from OSM node/13997357083 (iClimb, created July 2026). Caveat: the hours section is headed August, so current-season hours are not confirmed; the site is live and the gym appears to be newly opened. Distinct from the other gyms listed (different brand and address; Tel Aviv gyms are 7-10 km away).",
+      "reviewed_against": [
+        "il-001",
+        "il-004",
+        "il-005",
+        "il-007"
+      ]
+    },
+    "il-011": {
+      "decision": "accept",
+      "reason": "S7 own site shows dozens of bouldering routes plus an 8 m auto-belay wall, public opening hours (closed Monday), a shop, classes for kids/youth/adults and an open invitation to families, with registration for 2025/2026 open. Limited-access check: it is a kibbutz-based club but the site markets to the general public with public hours, which meets the public-access test. Pin is the business coordinates published on the gym's own site and Google link (32.679555,35.5773522), no disagreement.",
+      "reviewed_against": []
+    },
+    "il-012": {
+      "decision": "same-as",
+      "same_as": "seed-1597",
+      "followup": "location-update",
+      "reason": "Same gym: seed-1597 Venga in Petah Tikva has no address and a pin 2.3 km from the candidate; there is a single Venga climbing wall in Petah Tikva on its own site S8 (Moshe Shwaleb 7, Segula industrial zone, open since 2010, hours listed) and the federation list S9. The site's Google place pin (32.107497,34.89389) and Waze link (32.107394,34.893973) agree within 14 m, so the sourced pin is clearly better than the seed pin."
+    }
+  }
+}

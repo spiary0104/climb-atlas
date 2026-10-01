@@ -1,0 +1,182 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-01-singapore",
+ "reviewer": "Claude (AI) on the owner's instruction; owner sign-off pending",
+ "reviewed": "2026-10-01",
+ "decisions": {
+  "sg-001": {
+   "decision": "accept",
+   "reason": "Re-checked S1 on the official site: Downtown entry (6A Shenton Way #B1-03) is listed open and its description says it is perfect for new climbers 'looking to get into bouldering' (explicit bouldering on a primary source; no longer resting on brand name or the 404 blog). Distinct branch from sg-002/003/004 (own address). Pin is OSM node/5923848605, no disagreement noted.",
+   "reviewed_against": [
+    "sg-002",
+    "sg-003",
+    "sg-004"
+   ]
+  },
+  "sg-002": {
+   "decision": "accept",
+   "reason": "Re-checked S1 on the official site: Bugis entry (201 Victoria St #05-07) is listed open; its description cites a boulder island, traverse wall, moon board and a mystery-grade wall, i.e. bouldering features on a primary source. Distinct branch address from sg-001/003/004. Pin is OSM node/10933822710.",
+   "reviewed_against": [
+    "sg-001",
+    "sg-003",
+    "sg-004"
+   ]
+  },
+  "sg-003": {
+   "decision": "accept",
+   "reason": "Re-checked S1: Rochor (2 Serangoon Rd #02-12 Tekka Place) is listed open; its description names an adjustable kilter board but not the word bouldering, so bouldering rests on S1 plus the official boulderm.com pricing/membership page (bouldering gift card to book a session; pass valid at all Boulder Movement locations). Accepted with that caveat (the supplementary page is not in the evidence list). Distinct branch address. Pin OSM node/10968864664.",
+   "reviewed_against": [
+    "sg-001",
+    "sg-002",
+    "sg-004"
+   ]
+  },
+  "sg-004": {
+   "decision": "accept",
+   "reason": "Re-checked S1: Tai Seng (18 Tai Seng St #01-09) is listed open; its description (slab, flat wall, overhang, cave, endurance wall) does not use the word bouldering, so bouldering rests on S1 plus the official boulderm.com pricing/membership page (bouldering session and all-locations pass wording). Accepted with that caveat; owner may defer instead. Distinct from Boulder Planet Tai Seng (sg-008): different brand and address (601 MacPherson Rd), 289 m apart. Pin OSM node/7716823686.",
+   "reviewed_against": [
+    "sg-001",
+    "sg-002",
+    "sg-003",
+    "sg-008"
+   ]
+  },
+  "sg-005": {
+   "decision": "accept",
+   "reason": "S2 official boulder+ site lists The Aperia (12 Kallang Ave) with opening hours, and its first-visit page says 'new to the world of bouldering'; chain-store-list is primary and shows exists/open/address. Distinct address from sg-006 (The Chevrons, Boon Lay). Pin OSM node/5923855321.",
+   "reviewed_against": [
+    "sg-006"
+   ]
+  },
+  "sg-006": {
+   "decision": "accept",
+   "reason": "S2 official boulder+ site lists The Chevrons (48 Boon Lay Way, opened Dec 2021) with shared opening hours; bouldering shown on the same site's first-visit page. Distinct address from sg-005. Pin OSM node/11645974498. Region code SOUTH_WEST is a rough pick.",
+   "reviewed_against": [
+    "sg-005"
+   ]
+  },
+  "sg-007": {
+   "decision": "accept",
+   "reason": "S3 official Boulder Planet site: about-us says 'Boulder Planet is a bouldering gym', home page lists Sembawang Shopping Centre #B1-22/23 with weekday/weekend hours, first-time page names the Sembawang branch; a 2026 workshop date is listed so the site is current. Distinct address from sg-008. Pin OSM node/11646283397.",
+   "reviewed_against": [
+    "sg-008"
+   ]
+  },
+  "sg-008": {
+   "decision": "accept",
+   "reason": "S3 official Boulder Planet site lists Grantral Mall, 601 MacPherson Rd #02-07 (the chain calls it Tai Seng) with hours; the site says it is a bouldering gym. Different brand and address from Boulder Movement Tai Seng (sg-004, 289 m apart), so distinct; also distinct from sg-007. Pin OSM node/10808393885.",
+   "reviewed_against": [
+    "sg-004",
+    "sg-007"
+   ]
+  },
+  "sg-009": {
+   "decision": "accept",
+   "reason": "S4 official BFF Climb site lists Bendemeer (CT Hub, 2 Kallang Ave #01-20) with Climb Zone hours. The contact page itself does not use the word bouldering; the same site's Boulder Zone page (Climb Zone: Moon Board, spray wall, hours for all three outlets) and adult class page (bouldering class) show bouldering. Accepted with that caveat. Distinct address from sg-010/011. Pin OSM node/9858416826.",
+   "reviewed_against": [
+    "sg-010",
+    "sg-011"
+   ]
+  },
+  "sg-010": {
+   "decision": "accept",
+   "reason": "S4 official BFF Climb site lists Our Tampines Hub (1 Tampines Walk #02-81) with Climb Zone hours; bouldering shown by the site's Boulder Zone and adult bouldering class pages (contact page lacks the word). Distinct from sg-011 (different building, 1144 m apart) and sg-009. Pin OSM node/5813931536.",
+   "reviewed_against": [
+    "sg-009",
+    "sg-011"
+   ]
+  },
+  "sg-011": {
+   "decision": "accept",
+   "reason": "S4 official BFF Climb site lists yo:HA Commercial @ Tampines (6 Tampines St 92 #03-06) with Climb Zone hours; bouldering shown by the site's Boulder Zone and adult class pages. Distinct from sg-010 (1144 m apart) and sg-009. Pin OSM node/11645927080. Research says the same unit was the former b8a gym; if b8a exists on Bouldeer it is a stale duplicate (the importer did not flag one).",
+   "reviewed_against": [
+    "sg-009",
+    "sg-010"
+   ]
+  },
+  "sg-012": {
+   "decision": "accept",
+   "reason": "S5 official fit . bloc site shows Kent Ridge flagship (87 Science Park Drive #03-02) as an outlet with 'extensive bouldering areas', and pass wording lists bouldering across all 3 outlets. Distinct address from sg-013/014. Pin OSM node/6749840690.",
+   "reviewed_against": [
+    "sg-013",
+    "sg-014"
+   ]
+  },
+  "sg-013": {
+   "decision": "accept",
+   "reason": "S5 official fit . bloc site: Depot Heights (108 Depot Rd #02-01) is 'built for focused bouldering sessions' with a MoonBoard, hours listed. Distinct address from sg-012/014. Pin OSM node/11646014037. Region code is a rough pick.",
+   "reviewed_against": [
+    "sg-012",
+    "sg-014"
+   ]
+  },
+  "sg-014": {
+   "decision": "accept",
+   "reason": "single-source: S5 is the chain's own site (primary) and shows exists, open (hours listed), address 7 Maxwell Rd #06-01 and bouldering (Telok Ayer entry mentions Tension Board 2 and competition-style climbs; the chain header and passes list bouldering at all 3 outlets). Pin is the Google Maps place pin published on S5; I resolved the link and it points to 1.279116, 103.8465144, identical to the recorded coordinates (no OSM element yet; no disagreement). Distinct from sg-012/013.",
+   "reviewed_against": [
+    "sg-012",
+    "sg-013"
+   ]
+  },
+  "sg-015": {
+   "decision": "defer",
+   "reason": "Bouldering unknown for Climb Central The Kallang: S6 official site lists the outlet (address, hours) but only says chain-wide 'top rope, boulder, lead climb, auto-belays' without naming outlets; the per-outlet claim rests on directories (S16/S18), which do not count, and they conflict for some outlets. Needs an official per-outlet statement of a boulder wall (or a visit/call)."
+  },
+  "sg-016": {
+   "decision": "defer",
+   "reason": "Bouldering unknown for Climb Central Funan: S6 official site lists the outlet (address, hours) but only says chain-wide 'top rope, boulder, lead climb, auto-belays' without naming outlets; the per-outlet claim rests on directories (S16/S18), which do not count, and they conflict for some outlets. Needs an official per-outlet statement of a boulder wall (or a visit/call)."
+  },
+  "sg-017": {
+   "decision": "defer",
+   "reason": "Bouldering unknown for Climb Central Novena: S6 official site lists the outlet (address, hours) but only says chain-wide 'top rope, boulder, lead climb, auto-belays' without naming outlets; the per-outlet claim rests on directories (S16/S18), which do not count, and they conflict for some outlets. Needs an official per-outlet statement of a boulder wall (or a visit/call)."
+  },
+  "sg-018": {
+   "decision": "defer",
+   "reason": "Bouldering unknown for Climb Central SAFRA Choa Chu Kang: S6 official site lists the outlet (address, hours) but only says chain-wide 'top rope, boulder, lead climb, auto-belays' without naming outlets; the per-outlet claim rests on directories (S16/S18), which do not count, and they conflict for some outlets. Needs an official per-outlet statement of a boulder wall (or a visit/call)."
+  },
+  "sg-019": {
+   "decision": "accept",
+   "reason": "S7 official site calls Kinetics Singapore's premier bouldering facility, lists 511 Serangoon Rd, opening hours, entry passes and bouldering classes (primary source shows exists, open, bouldering). Pin OSM node/5339090521; no disagreement noted.",
+   "reviewed_against": []
+  },
+  "sg-020": {
+   "decision": "same-as",
+   "same_as": "seed-1731",
+   "reason": "Importer matched seed-1731 'Ground Up Climbing' at 0 m; same name, same address (60 Tessensohn Road, Civil Service Club / CSC @ Tessensohn, Level 2, Singapore 217664) and identical coordinates, so it is the same gym. No location-update needed (pin identical)."
+  },
+  "sg-021": {
+   "decision": "defer",
+   "reason": "Primary bouldering evidence too thin: S9 outpostclimbing.sg home page is client-rendered with no readable content (no address, hours or offering); the only readable page is /bouldering-mechanics-and-rules, a 2024 in-gym competition rules page (bouldering and lead scoring, check-in dates 5-18 Aug) that shows bouldering was offered but not the current address, open status or boulder walls. Need a readable official page showing exists, open and bouldering."
+  },
+  "sg-022": {
+   "decision": "accept",
+   "reason": "S10 official site menu has a Bouldering facilities section (Kilter, Tension, MoonBoard, spray wall), states it opened Aug 2020, gives 44 Pasir Panjang Rd #B-02, opening hours and Monday/Thursday route resets affecting the bouldering walls (shows exists, open, bouldering). Pin OSM node/8860601618.",
+   "reviewed_against": []
+  },
+  "sg-023": {
+   "decision": "accept",
+   "reason": "S11 official site: 'OYEYO is dedicated to bring you boulder problems of all sorts', bouldering explainer, entry passes, 148 Mackenzie Road with operating hours and a live gym counter (shows exists, open, bouldering). Pin OSM node/6665235799.",
+   "reviewed_against": []
+  },
+  "sg-024": {
+   "decision": "accept",
+   "reason": "S12 official site (Wix): nav lists Kids/Youth Bouldering Class and Intro to Bouldering Session; Visit Us gives Bukit Timah Shopping Centre #B2-20B with operating hours (shows exists, open, bouldering). Pin OSM node/7731068077. Region CENTRAL is a rough pick.",
+   "reviewed_against": []
+  },
+  "sg-025": {
+   "decision": "accept",
+   "reason": "S13 official site is titled 'Safest Bouldering Gym in Singapore's CBD', describes the bouldering facilities, grasshopper board, pricelist and directions to Robinson Centre (61 Robinson Rd) (shows exists, open, bouldering). Pin OSM node/11646024962.",
+   "reviewed_against": []
+  },
+  "sg-026": {
+   "decision": "accept",
+   "reason": "S14 official site: 'The coolest bouldering gym in town', 8 Raffles Ave #02-29 Esplanade Mall, opening hours and 'now open 7 days a week' (shows exists, open, bouldering). Pin OSM node/10702069363.",
+   "reviewed_against": []
+  },
+  "sg-027": {
+   "decision": "reject",
+   "reason_code": "outdoor-area",
+   "reason": "S15 own site calls Ark Bloc 'Singapore's largest outdoor gym' (calisthenics, strongman and a bouldering section); category other and outdoor/open-air, not an indoor bouldering gym. Rule H: not eligible."
+  }
+ }
+}

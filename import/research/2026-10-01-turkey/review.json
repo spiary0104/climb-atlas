@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "section_id": "2026-10-01-turkey",
+  "reviewer": "Claude (AI) on the owner's instruction; owner sign-off pending",
+  "reviewed": "2026-10-01",
+  "decisions": {
+    "tr-001": {
+      "decision": "accept",
+      "reason": "BI is the gym's own official site; its visit page shows a bouldering-only gym with weekday and weekend hours and walk-in policy. No flags. Pin is OSM node/8071577211 and the site's own map widget pin agrees with it.",
+      "reviewed_against": []
+    },
+    "tr-002": {
+      "decision": "same-as",
+      "same_as": "seed-1726",
+      "reason": "Same gym: identical name, same Metrocity AVM basement address on Buyukdere Cd. No:171, Sisli, and the two pins are only 23 m apart. BH (official site) confirms it moved to Metrocity at the end of 2024, which is where the existing record already places it. No location-update: the existing pin is within 23 m of the official map embed."
+    },
+    "tr-003": {
+      "decision": "defer",
+      "reason": "Primary bouldering evidence too thin: DX (official one-page site) shows prices and hours but never says bouldering or any rope offer; the only support is non-primary (blog, event listing) and the MultiSport directory (MSB), which is not evidence for a discipline. Instagram @duvarx was unreadable. Also a pin disagreement: the site's map embed and the MSB pin are about 200 m apart. Needs primary proof of a bouldering wall and a confirmed pin."
+    },
+    "tr-004": {
+      "decision": "accept",
+      "reason": "Single source, but BJ is the gym's own official site: re-read the home, price and contact pages on 2026-10-01; it calls itself Antalya's first bouldering gym (opened 17 Dec 2022), lists current day pass, membership and shoe/chalk rental prices, classes and a phone, so it exists, is open and offers bouldering. Pin is the Google Maps link/embed on its contact page (both give the same pin). Caveat: the site carries no dated content or posted opening hours.",
+      "reviewed_against": []
+    },
+    "tr-005": {
+      "decision": "accept",
+      "reason": "Single source, but TG is the gym's own official site: its FAQ says the gym is mainly boulder (rope area planned later), day entries need no booking, and the contact page lists weekday 13:00-21:00 and weekend 12:00-20:00 hours; classes and passes are sold online. Exists, open and bouldering shown. Pin is the resolved Google Maps place link on its contact page.",
+      "reviewed_against": []
+    },
+    "tr-006": {
+      "decision": "defer",
+      "reason": "Primary bouldering evidence too thin: CB (official site) shows prices and shoe/chalk-bag rental but never states bouldering or rope climbing; MSB is only a directory listing. Needs primary proof of a bouldering wall. Also the MultiSport pin is about 190 m from the site's map embed, to be resolved."
+    },
+    "tr-007": {
+      "decision": "same-as",
+      "same_as": "seed-1728",
+      "reason": "Same gym as existing 'BoulderEs': same name, same street address (Basin Sehitleri Cd. No:104, Kirmizitoprak, Odunpazari). The pins are 456 m apart, but both come from address geocoding rather than a published gym pin, so I am not recommending a location-update; owner may want the pin checked. Note this does not verify that seed-1728 is open or bouldering: BE (official site) is a minimal page with no hours, prices or dated content."
+    },
+    "tr-008": {
+      "decision": "defer",
+      "reason": "Limited access unresolved: MZ (official site) shows posted hours (Mon-Fri 14:00-21:30, Sat 11:00-19:00), an indoor bouldering area, classes and birthday parties, but no drop-in, day-pass, guest or price terms (booking by phone only), and the page says Mozaik Climbing is now a sports club. Needs evidence of public drop-in or day-pass access. Pin is the gym's own Google place link (a second pin for the cultural center is 30 m away)."
+    },
+    "tr-009": {
+      "decision": "defer",
+      "reason": "Own site says the gym is moving and temporarily closed; the new venue and its pin are not confirmed. Re-research once it reopens (a temporarily closed gym is not a temporary venue)."
+    }
+  }
+}

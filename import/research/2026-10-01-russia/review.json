@@ -1,0 +1,172 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-01-russia",
+ "reviewer": "Claude (AI) on the owner's instruction; owner sign-off pending",
+ "reviewed": "2026-10-01",
+ "decisions": {
+  "ru-001": {
+   "decision": "same-as",
+   "same_as": "seed-1489",
+   "reason": "BigWall Dinamo (S BW own page, Leningradsky pr-t 36, Dinamo stadium) is the existing Skalodrom Bigwallsport na Dinamo: same chain, same address (Leningradskiy prospekt 36), pins 47 m apart. No pin update needed."
+  },
+  "ru-002": {
+   "decision": "accept",
+   "reason": "Single source but primary: S BW own page bigwallsport.ru/rivera (re-opened) describes a boulder hall in Riviera mall, Avtozavodskaya ul. 18, hours daily 10:00-23:00 (exists, open, bouldering, address). Pin is the chain site map pin. Not near any existing Bouldeer gym (no flags besides single-source).",
+   "reviewed_against": []
+  },
+  "ru-003": {
+   "decision": "accept",
+   "reason": "Single source but primary: S BW own page bigwallsport.ru/vodnyi_stadion (re-opened) calls it a boulder hall (about 850 m2) at Kronshtadtsky bul. 3a, Gavan mall, 3rd floor, hours daily 10:00-23:00 with booking open; the page nav labels it \"new\", but it is bookable with posted hours so not opening-soon. Pin is the chain site map pin.",
+   "reviewed_against": []
+  },
+  "ru-004": {
+   "decision": "same-as",
+   "same_as": "seed-1487",
+   "reason": "Limestone (S LM own site, Dobroslobodskaya 21) is the existing Climbing wall Limestone: same name, same street address (Dobroslobodskaya Ulitsa 21), pins 15 m apart. The candidate note that the site Google embed sits about 2 km off is moot here: the existing Bouldeer pin and OSM node/4884889913 agree within 15 m, which supports OSM over the embed."
+  },
+  "ru-005": {
+   "decision": "accept",
+   "reason": "Distinct branch from ru-006: Climb Lab Butyrskaya is at Ogorodny pr-d 10 str. 6 while ru-006 is in OMA mall on Ochakovskoye sh. 3a (many km apart); S CL contacts page (re-opened) lists both halls separately with hours 07:00-00:00 and the home page presents bouldering. Pin is OSM node/7883089057; per research notes the official Yandex map pin (55.814376, 37.60478) agrees (no pin disagreement).",
+   "reviewed_against": [
+    "ru-006"
+   ]
+  },
+  "ru-006": {
+   "decision": "accept",
+   "reason": "Distinct branch from ru-005 (OMA mall, Ochakovskoye sh. 3a vs Ogorodny pr-d 10). Single source but primary: S CL contacts page (re-opened) shows the Aminyevskaya branch, address, hours 07:00-00:00 daily, and the chain presents bouldering on its home page. Pin is the gym own Yandex map-constructor pin on that contacts page.",
+   "reviewed_against": [
+    "ru-005"
+   ]
+  },
+  "ru-007": {
+   "decision": "accept",
+   "reason": "Primary: S AT own site (re-opened) offers bouldering, address Elektrolitny pr. 7b in the KANT complex, hours listed (08:00-23:00 weekdays, 10:00-23:00 weekends). Pin is OSM node/6810893686; site pin agrees per notes.",
+   "reviewed_against": []
+  },
+  "ru-008": {
+   "decision": "accept",
+   "reason": "Primary: S TK own site (re-opened) is a bouldering hall at Novodmitrovskaya 5A str. 3 with hours per weekday. Pin is OSM node/5564178526; site pin agrees per notes.",
+   "reviewed_against": []
+  },
+  "ru-009": {
+   "decision": "accept",
+   "reason": "Single source but primary: S SS own site (re-opened) shows bouldering and rope climbing, address shosse Entuziastov 31 str. 50, hours daily (Mon-Fri 11:00-23:00, Sat-Sun 10:00-22:00). Pin is the marker on the site map; an unnamed OSM sports_centre at the same spot is consistent.",
+   "reviewed_against": []
+  },
+  "ru-010": {
+   "decision": "accept",
+   "reason": "Distinct branch of the Tengu's chain: Lobachevskogo 114 (m. Michurinsky prospekt) has its own address and is 10-19 km from the other two (siblings ru-010/011/012). S TG own site (re-opened, tengus.ru) shows a bouldering chain (4.5 m walls, mats), hours Mon-Fri 08:00-00:00, weekends 09:00-00:00. Coordinates: the page has three Yandex constructor map embeds, each placed in the same column directly above its address block (Lobachevskogo 114 column, embed pin 55.6908, 37.4777); I fetched each embed and its pin coordinates equal the candidate coordinates, so this is the gym own published pin, not only a street-position guess.",
+   "reviewed_against": [
+    "ru-011",
+    "ru-012"
+   ]
+  },
+  "ru-011": {
+   "decision": "accept",
+   "reason": "Distinct branch of the Tengu's chain: Dnepropetrovskaya 2 (m. Yuzhnaya) has its own address and is 10-19 km from the other two (siblings ru-010/011/012). S TG own site (re-opened, tengus.ru) shows a bouldering chain (4.5 m walls, mats), hours Mon-Fri 08:00-00:00, weekends 09:00-00:00. Coordinates: the page has three Yandex constructor map embeds, each placed in the same column directly above its address block (Dnepropetrovskaya 2 column, embed pin 55.6231, 37.6032); I fetched each embed and its pin coordinates equal the candidate coordinates, so this is the gym own published pin, not only a street-position guess.",
+   "reviewed_against": [
+    "ru-010",
+    "ru-012"
+   ]
+  },
+  "ru-012": {
+   "decision": "accept",
+   "reason": "Distinct branch of the Tengu's chain: Sushchevsky Val 49, Jazz business centre (m. Maryina Roshcha) has its own address and is 10-19 km from the other two (siblings ru-010/011/012). S TG own site (re-opened, tengus.ru) shows a bouldering chain (4.5 m walls, mats), hours Mon-Fri 08:00-00:00, weekends 09:00-00:00. Coordinates: the page has three Yandex constructor map embeds, each placed in the same column directly above its address block (Sushchevsky Val 49 column, embed pin 55.7934, 37.6110); I fetched each embed and its pin coordinates equal the candidate coordinates, so this is the gym own published pin, not only a street-position guess.",
+   "reviewed_against": [
+    "ru-010",
+    "ru-011"
+   ]
+  },
+  "ru-013": {
+   "decision": "same-as",
+   "same_as": "seed-1488",
+   "reason": "Rock Zona Boulder House (S RZ own contacts page, prospekt Andropova 22) is the existing RockZona boulderhouse: same name in translation, same address (Prospekt Andropova 22), pins 91 m apart (under 150 m, no pin update)."
+  },
+  "ru-014": {
+   "decision": "accept",
+   "reason": "Primary: S CS own site (re-opened) offers a bouldering zone alongside FunRocks, address 3-ya Peschanaya 2 str. 1, hours Mon-Fri 07:00-23:00 / weekends 08:00-23:00, public pay-per-entry prices listed (public access). Pin is OSM node/12500645560, site pin agrees. Caveat: the federation list shows a second CSKA entry on Leningradsky pr. 39, not verified and not recorded.",
+   "reviewed_against": []
+  },
+  "ru-015": {
+   "decision": "defer",
+   "reason": "Primary bouldering evidence could not be re-verified: station.club currently serves a Timeweb parked-domain page with no climbing content for me (https fails certificate, http redirects to the parking page), so S ST cannot be confirmed to show exists/open/bouldering today. Also a multisport club: public drop-in access is not shown in the recorded evidence, and a second club (Gravitatsiya) is listed at the same address. Needs: a working official page or social showing the bouldering hall, hours and public access, or owner confirmation."
+  },
+  "ru-016": {
+   "decision": "accept",
+   "reason": "Primary: S EX own site rock-climbing.ru (re-opened) gives the address ul. Smolnaya 63B, 3rd floor, says bouldering routes run around the wall perimeter with mats, plus top/bottom rope walls; the site has a current group schedule and a 2026 copyright. Caveat: bouldering is secondary and the page has no single hours line. Coordinates: OSM node/9874108551 (name Vertikalny Mir, contact:website rock-climbing.ru); I reverse-geocoded it and it sits at 63B Smolnaya ulitsa, so the address match is confirmed, not assumed.",
+   "reviewed_against": []
+  },
+  "ru-017": {
+   "decision": "accept",
+   "reason": "Primary: S LU own site (re-opened) bouldering and climbing at Krestovsky ostrov, pr. Dinamo 44 lit. B, hours Mon-Fri 10:00-23:00, Sat-Sun 10:00-21:00. Pin is OSM node/4892917121, site pin agrees per notes.",
+   "reviewed_against": []
+  },
+  "ru-018": {
+   "decision": "same-as",
+   "same_as": "seed-1491",
+   "reason": "Igels (S IG own site: biggest dense-set boulder gym, 4th floor) is the existing Klub Igels: same club; the seed address is \"Obvodniy channel embankment\" and the official contact page gives Nab. Obvodnogo kanala 134-136-138 (single site, Krasny Treugolnik plant). The existing pin (59.9607, 30.1587) is a generic placeholder shared by three Saint Petersburg seed gyms and is 9.1 km from the candidate pin 59.9062, 30.2814 (own site map marker), so a location update is warranted.",
+   "followup": "location-update"
+  },
+  "ru-019": {
+   "decision": "accept",
+   "reason": "Primary: S NE own site (re-opened): dedicated bouldering page, address ul. Matrosa Zheleznyaka 57A, daily training schedule shown and 2026/27 season enrolment open. Pin is OSM node/5674430871 (no pin disagreement noted).",
+   "reviewed_against": []
+  },
+  "ru-020": {
+   "decision": "same-as",
+   "same_as": "seed-1493",
+   "reason": "Tramontana (S TR own site climbingcenter.ru, ul. Bronnitskaya 24, 2nd floor) is the existing Skalodrom Tramontana: same centre, same address (Bronnitskaya Ulitsa 24). Existing pin (59.9607, 30.1587) is the shared placeholder 10.5 km away; the candidate pin is OSM node/1402188633 (carries this centre name, phone, website and hours; reverse geocodes to Bronnitskaya ulitsa), so a location update is warranted. Note: the site itself is thin on bouldering (only Boulder Battle 2026 news), but that does not matter for same-as.",
+   "followup": "location-update"
+  },
+  "ru-021": {
+   "decision": "accept",
+   "reason": "Primary: S EV own site (re-opened) lists 150+ bouldering routes, rope walls, address Sofiyskaya 14 and climbing-wall hours 08:00-23:00 with ticket sale. Pin is OSM node/6327968585, site pin agrees per notes. Caveat: footer says 2022-2025 and an old New Year banner remains, so the site is not clearly updated for 2026; public access via ticket.",
+   "reviewed_against": []
+  },
+  "ru-022": {
+   "decision": "same-as",
+   "same_as": "seed-1492",
+   "reason": "Severnaya Stena Petrogradskaya (S SV own site, Gazovaya 10 lit. Z) is the existing Severnaya Stena Petrogradskaya Skalodrom: same hall, same address (Gazovaya Ulitsa 10z). The sibling Bukharestskaya hall (ru-023, Fuchika 10) is a different, closed hall, not a duplicate. Existing pin (59.9607, 30.1587) is the shared placeholder 7.5 km away; candidate pin is OSM node/9124072117 (carries the site, phone and Gazovaya 10 address), so a location update is warranted.",
+   "followup": "location-update"
+  },
+  "ru-023": {
+   "decision": "reject",
+   "reason_code": "closed",
+   "reason": "Closed: S SV own site marks the Bukharestskaya hall (Fuchika 10) as closed from 20 May 2026 (re-opened), confirmed by news N1 and N2 (lease ended). Rule: reject closed."
+  },
+  "ru-024": {
+   "decision": "reject",
+   "reason_code": "closed",
+   "reason": "Closed on 30 April 2026 per news N2 and N1; no gym-owned page is reachable (domain parked) and bouldering is unknown, so it could not be accepted anyway. Rule: reject closed."
+  },
+  "ru-025": {
+   "decision": "accept",
+   "reason": "Single source but primary: S CA own site (re-opened) is a bouldering-only gym at pr. Nauki 71 k. 1 lit A, hours Mon-Sun 09:00-23:00, 2026 events listed. Pin is the gym own Yandex map-constructor pin on the site.",
+   "reviewed_against": []
+  },
+  "ru-026": {
+   "decision": "accept",
+   "reason": "Primary: S RW own site (re-opened) lists ul. Radishcheva 55 as the bouldering hall, daily 8:00-23:00 (the rope hall on Cherkasskaya 25 is not recorded). Pin is OSM node/13509660380, site pin agrees per notes.",
+   "reviewed_against": []
+  },
+  "ru-027": {
+   "decision": "accept",
+   "reason": "Primary: S KS own site (re-opened): home page presents bouldering and difficulty climbing, contacts page gives Tveritina 45 and hours (weekdays 08:15-22:30, weekends 09:00-22:00), 2026 copyright. Pin is OSM node/13509660381, site pin agrees per notes.",
+   "reviewed_against": []
+  },
+  "ru-028": {
+   "decision": "accept",
+   "reason": "Distinct branch from the other Iskra bouldering hall (Khudyakova 12 k1, Kaliber complex; 6.3 km apart; the third hall Iskra.Vysota is a rope wall and is not recorded). Single source but primary: S IS own site (re-opened) About page labels it \"Boulder\", 4.5 m walls, hours on the contacts page. Coordinates: I fetched the contacts page and its own map marker data lists a marker titled \"Tsentr\" at exactly the candidate coordinates; the marker title equals the hall name on the same page, so it is the gym own published pin for that hall (not a guess by address).",
+   "reviewed_against": [
+    "ru-029"
+   ]
+  },
+  "ru-029": {
+   "decision": "accept",
+   "reason": "Distinct branch from the other Iskra bouldering hall (Moldavskaya 16, Focus mall; 6.3 km apart; the third hall Iskra.Vysota is a rope wall and is not recorded). Single source but primary: S IS own site (re-opened) About page labels it \"Boulder\", 4.5 m walls, hours on the contacts page. Coordinates: I fetched the contacts page and its own map marker data lists a marker titled \"Severok\" at exactly the candidate coordinates; the marker title equals the hall name on the same page, so it is the gym own published pin for that hall (not a guess by address).",
+   "reviewed_against": [
+    "ru-028"
+   ]
+  }
+ }
+}

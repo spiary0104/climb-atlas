@@ -1,0 +1,543 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-01-switzerland",
+ "reviewer": "Claude (AI) on the owner's instruction; owner sign-off pending",
+ "reviewed": "2026-10-01",
+ "decisions": {
+  "ch-001": {
+   "decision": "same-as",
+   "same_as": "seed-1292",
+   "reason": "Same gym as seed-1292 \"Minimum - Flüela Zürich\": identical address (Flüelastrasse 31) and pin 2 m apart; S1 (Minimum site) shows it open with bouldering."
+  },
+  "ch-002": {
+   "decision": "same-as",
+   "same_as": "seed-1293",
+   "reason": "Same gym as seed-1293 \"Minimum - Zürich Leutsch\": identical address (Leutschenbachstrasse 44), 10 m apart; the candidate name is a shortened form."
+  },
+  "ch-012": {
+   "decision": "same-as",
+   "same_as": "seed-1298",
+   "reason": "Same gym as seed-1298 \"6a plus - Winterthur\": same address (Klosterstrasse 17, Winterthur), 9 m apart; Kletterhalle 6a plus is the full name on S8."
+  },
+  "ch-013": {
+   "decision": "same-as",
+   "same_as": "seed-1299",
+   "reason": "Same gym as seed-1299 \"Blockfeld Boulderpark & Bistro\" (Oberer Deutweg 4, Winterthur): same brand, 24 m apart; S9 official site is the BLOCKFELD Boulderpark."
+  },
+  "ch-025": {
+   "decision": "same-as",
+   "same_as": "seed-1296",
+   "reason": "Same gym as seed-1296 \"Bimano - Zentweg\" (Zentweg 1A, Bern): bimano boulder in Bern, pin 20 m from the seed pin. bimano solothurn (ch-045, Biberist) is a different branch and is handled separately."
+  },
+  "ch-026": {
+   "decision": "same-as",
+   "same_as": "seed-1297",
+   "reason": "Same gym as seed-1297 \"BoulderBad Muubeeri - Bern\": identical address (Maulbeerstrasse 14) and identical coordinates (0 m)."
+  },
+  "ch-046": {
+   "decision": "same-as",
+   "same_as": "seed-1295",
+   "reason": "Same gym as seed-1295 \"Kletterhalle 7 - Basel\": identical address (Dornacherstrasse 192); pins 92 m apart, under the 150 m threshold, so no location-update follow-up."
+  },
+  "ch-047": {
+   "decision": "same-as",
+   "same_as": "seed-1294",
+   "reason": "Same gym as seed-1294 \"ELYS Boulderloft - Basel\": identical address (Elsässerstrasse 215a) and identical coordinates (0 m)."
+  },
+  "ch-005": {
+   "decision": "accept",
+   "reason": "Distinct Boulderlounge branch from ch-006 (Schlieren, Zürcherstrasse 39j vs St. Gallen, Zürcherstrasse 160, different cities); S4 chain list shows exists, open and bouldering with its own address; OSM node pin at building precision.",
+   "reviewed_against": [
+    "ch-006"
+   ]
+  },
+  "ch-006": {
+   "decision": "accept",
+   "reason": "Distinct Boulderlounge branch (own address Zürcherstrasse 160, 9014 St. Gallen). Also a different gym from ch-017 Kletterzentrum St. Gallen: different name and address, 2.4 km apart. S4 chain list shows exists, open and bouldering.",
+   "reviewed_against": [
+    "ch-005",
+    "ch-017"
+   ]
+  },
+  "ch-017": {
+   "decision": "accept",
+   "reason": "Kletterzentrum St. Gallen (Edisonstrasse 9) is a different gym from Boulderlounge St. Gallen (ch-006): different name, address and operator site, 2.4 km apart. S13 official site shows exists, open and bouldering.",
+   "reviewed_against": [
+    "ch-006"
+   ]
+  },
+  "ch-007": {
+   "decision": "accept",
+   "reason": "Distinct Kletterzentrum Gaswerk branch (Kohlestrasse 12b, Schlieren) from Greifensee and Wädenswil, each with its own address; S5 chain list shows exists, open, bouldering and address.",
+   "reviewed_against": [
+    "ch-008",
+    "ch-009"
+   ]
+  },
+  "ch-008": {
+   "decision": "accept",
+   "reason": "Distinct Gaswerk branch (Im Grossriet 1, Greifensee). The research note doubted indoor bouldering, so I re-opened S5 /standorte/greifensee: it states \"Bouldern indoor: 865m2\" and lists opening hours, so indoor bouldering is confirmed.",
+   "reviewed_against": [
+    "ch-007",
+    "ch-009"
+   ]
+  },
+  "ch-009": {
+   "decision": "accept",
+   "reason": "Distinct Gaswerk branch (Rütihof 2, Wädenswil) with its own address and OSM node; S5 chain list shows exists, open, bouldering and address.",
+   "reviewed_against": [
+    "ch-007",
+    "ch-008"
+   ]
+  },
+  "ch-041": {
+   "decision": "accept",
+   "reason": "Distinct Kraftreaktor branch (Hammermattenstrasse 18, Lenzburg), 8.4 km from the Aarau branch (ch-042) with its own address; S37 official site shows exists, open, bouldering and address.",
+   "reviewed_against": [
+    "ch-042"
+   ]
+  },
+  "ch-042": {
+   "decision": "accept",
+   "reason": "Distinct Kraftreaktor branch (Neumattstrasse 13, Aarau), 8.4 km from Lenzburg (ch-041) with its own address; S38 official site shows exists, open, bouldering and address.",
+   "reviewed_against": [
+    "ch-041"
+   ]
+  },
+  "ch-062": {
+   "decision": "accept",
+   "reason": "Distinct Grimper.ch branch (Avenue des Bergières 10, Lausanne) with its own address, separate from Echandens, Villeneuve, Givisiez, Fribourg and Satigny; S58 chain list shows exists, open, bouldering and address.",
+   "reviewed_against": [
+    "ch-063",
+    "ch-064",
+    "ch-065",
+    "ch-066",
+    "ch-067"
+   ]
+  },
+  "ch-063": {
+   "decision": "accept",
+   "reason": "Distinct Grimper.ch branch (Route de la Venoge 3G, Echandens, Rocspot), 5.9 km from Lausanne-Beaulieu with its own address; S58 chain list shows exists, open, bouldering and address.",
+   "reviewed_against": [
+    "ch-062",
+    "ch-064",
+    "ch-065",
+    "ch-066",
+    "ch-067"
+   ]
+  },
+  "ch-064": {
+   "decision": "accept",
+   "reason": "Distinct Grimper.ch branch (Zone Industrielle D 107, Villeneuve) with its own address; S58 chain list shows exists, open, bouldering and address.",
+   "reviewed_against": [
+    "ch-062",
+    "ch-063",
+    "ch-065",
+    "ch-066",
+    "ch-067"
+   ]
+  },
+  "ch-065": {
+   "decision": "accept",
+   "reason": "Distinct Grimper.ch branch (Route Henri-Stephan 12, Givisiez, Bloczone), 2.6 km from Le Hangar in Fribourg (ch-066) with a different address; S58 shows exists, open, bouldering and address.",
+   "reviewed_against": [
+    "ch-062",
+    "ch-063",
+    "ch-064",
+    "ch-066",
+    "ch-067"
+   ]
+  },
+  "ch-066": {
+   "decision": "accept",
+   "reason": "Distinct Grimper.ch branch (Le Hangar, Avenue du Midi 4, Fribourg), 2.6 km from Givisiez (ch-065) with a different address; S58 chain list shows exists, open, bouldering and address.",
+   "reviewed_against": [
+    "ch-062",
+    "ch-063",
+    "ch-064",
+    "ch-065",
+    "ch-067"
+   ]
+  },
+  "ch-067": {
+   "decision": "accept",
+   "reason": "Distinct Grimper.ch branch (Rue du Pré-de-la-Fontaine 8A, Satigny). Single-source: S58 /salles-descalade/satigny is the chain official page; I re-read it: hours, address, \"voies et blocs\" renewed weekly and a bloc pass. Pin is the map embed on that page (46.22405, 6.05044), the gym own published pin.",
+   "reviewed_against": [
+    "ch-062",
+    "ch-063",
+    "ch-064",
+    "ch-065",
+    "ch-066"
+   ]
+  },
+  "ch-068": {
+   "decision": "accept",
+   "reason": "Distinct TOTEM branch in Ecublens (Chemin de Verney 5B) with its own address, different from the other five TOTEM sites; S59 chain list shows exists, open, bouldering and address; OSM node pin at building precision.",
+   "reviewed_against": [
+    "ch-069",
+    "ch-070",
+    "ch-071",
+    "ch-072",
+    "ch-073"
+   ]
+  },
+  "ch-069": {
+   "decision": "accept",
+   "reason": "Distinct TOTEM branch in Gland (Avenue du Mont-Blanc 38) with its own address, different from the other five TOTEM sites; S59 chain list shows exists, open, bouldering and address; OSM node pin at building precision.",
+   "reviewed_against": [
+    "ch-068",
+    "ch-070",
+    "ch-071",
+    "ch-072",
+    "ch-073"
+   ]
+  },
+  "ch-070": {
+   "decision": "accept",
+   "reason": "Distinct TOTEM branch in Vevey (Avenue Général-Guisan 60) with its own address, different from the other five TOTEM sites; S59 chain list shows exists, open, bouldering and address; OSM node pin at building precision.",
+   "reviewed_against": [
+    "ch-068",
+    "ch-069",
+    "ch-071",
+    "ch-072",
+    "ch-073"
+   ]
+  },
+  "ch-071": {
+   "decision": "accept",
+   "reason": "Distinct TOTEM branch in Meyrin (Rue Emma-Kammacher 5B) with its own address, different from the other five TOTEM sites; S59 chain list shows exists, open, bouldering and address; OSM node pin at building precision.",
+   "reviewed_against": [
+    "ch-068",
+    "ch-069",
+    "ch-070",
+    "ch-072",
+    "ch-073"
+   ]
+  },
+  "ch-072": {
+   "decision": "accept",
+   "reason": "Distinct TOTEM branch in Vernier (Le Môll) (Avenue de l'Étang 67) with its own address, different from the other five TOTEM sites; S59 chain list shows exists, open, bouldering and address; OSM node pin at building precision.",
+   "reviewed_against": [
+    "ch-068",
+    "ch-069",
+    "ch-070",
+    "ch-071",
+    "ch-073"
+   ]
+  },
+  "ch-073": {
+   "decision": "accept",
+   "reason": "Distinct TOTEM branch in Versoix (Chemin de la Scie 2) with its own address, different from the other five TOTEM sites; S59 chain list shows exists, open, bouldering and address; OSM node pin at building precision.",
+   "reviewed_against": [
+    "ch-068",
+    "ch-069",
+    "ch-070",
+    "ch-071",
+    "ch-072"
+   ]
+  },
+  "ch-083": {
+   "decision": "accept",
+   "reason": "Distinct Planet Climbing branch (Avenue des Morgines 10, Petit-Lancy), 2.8 km from Plan-les-Ouates (ch-060) with its own address; S56 chain list shows exists, open, bouldering and address. The Planet Climbing site describes itself as a bloc gym.",
+   "reviewed_against": [
+    "ch-060"
+   ]
+  },
+  "ch-060": {
+   "decision": "accept",
+   "reason": "Distinct Planet Climbing branch (Route de la Galaise 13B, Plan-les-Ouates), 2.8 km from Lancy (ch-083). Single-source: S56 is the chain official site, shows hours, address and prices, and describes the venue as a \"salle d'escalade de bloc\". Pin is the Google Maps link published on the gym page; no disagreement noted.",
+   "reviewed_against": [
+    "ch-083"
+   ]
+  },
+  "ch-079": {
+   "decision": "accept",
+   "reason": "Distinct Vertic-Halle branch in Saxon (Ch. de la Plâtrière 25D per the site; the candidate address is empty) from Monthey and Baltschieder. S65 chain site shows hours, and the Saxon page says it has 3 bloc zones alongside the rope routes. OSM way pin at building precision.",
+   "reviewed_against": [
+    "ch-080",
+    "ch-081"
+   ]
+  },
+  "ch-080": {
+   "decision": "accept",
+   "reason": "Distinct Vertic-Halle branch (Route du Triboulet 10, Monthey) with its own address; the S65 Monthey page describes a 500 m2 bloc area with walls up to 4.5 m and gives hours.",
+   "reviewed_against": [
+    "ch-079",
+    "ch-081"
+   ]
+  },
+  "ch-081": {
+   "decision": "accept",
+   "reason": "Distinct Vertic-Halle branch (Eschigrund 4, Baltschieder) with its own address; the S65 Baltschieder page describes a 500 m2 bloc area and gives hours.",
+   "reviewed_against": [
+    "ch-079",
+    "ch-080"
+   ]
+  },
+  "ch-015": {
+   "decision": "accept",
+   "reason": "Club wall (Kletterclub Weinfelden) but public: S11 own site lists day tickets (single entry, bouldering CHF 10) and public evening hours, and offers bouldering. Pin is the OSM node.",
+   "reviewed_against": []
+  },
+  "ch-016": {
+   "decision": "accept",
+   "reason": "Club hall (SAC Bodan, Kreuzlingen) that is public: S12 shows CHF 5 day tickets for non-members, public hours (Tue, Thu, Fri evenings; Wed seasonal) and the boulder room added in 2020. Limited hours only.",
+   "reviewed_against": []
+  },
+  "ch-024": {
+   "decision": "accept",
+   "reason": "Club hall (SAC Prättigau) open to all: S20 states it is open to everyone seven days a week since January 2026 with day tickets in the online shop, and lists a bouldering area. Exact hours and prices are on a subpage I did not open.",
+   "reviewed_against": []
+  },
+  "ch-043": {
+   "decision": "accept",
+   "reason": "Volunteer-run SAC Brugg-linked hall but public: S39 states individual day passes and subscriptions, open every day, with over 100 boulder problems.",
+   "reviewed_against": []
+  },
+  "ch-053": {
+   "decision": "accept",
+   "reason": "Member-run Verein hall that sells day tickets: S49 states non-members can use day tickets (register before each visit), members 24/7. Single-source: S49 official site shows exists, open and bouldering. Pin is the map on the gym site (own published pin); no disagreement.",
+   "reviewed_against": []
+  },
+  "ch-054": {
+   "decision": "accept",
+   "reason": "SAC Entlebuch hall inside the Connection Wolhusen fitness centre: S50 states day visitors and non-members are welcome, lists weekly hours, and a boulder room reached from the climbing hall. Prices are not on that page; the hours may be those of the fitness centre.",
+   "reviewed_against": []
+  },
+  "ch-078": {
+   "decision": "defer",
+   "reason": "Public access not shown: S64 (lepandevevey.org) only tells visitors to register (\"s'inscrire\") for the association/membership model and gives hours; no day pass, drop-in or guest access is shown. Needs a source showing non-members can visit."
+  },
+  "ch-058": {
+   "decision": "accept",
+   "reason": "Single-source: S54 official site (re-read) shows exists and open (daily hours, day pass from CHF 24) and bouldering (650 m2 bouldering area plus 300 m2 rope wall). Pin is the Google Maps pin linked from the site; the street address is Wilderswil, not Interlaken.",
+   "reviewed_against": []
+  },
+  "ch-059": {
+   "decision": "defer",
+   "reason": "Status unclear: S55 official site (re-read 2026-10-01) still shows a \"vorübergehend geschlossen\" notice with \"Wiedereröffnung am 27. September 2026\", a date already past. The hall exists and has 300 m2 of boulder routes, but I cannot confirm it has reopened. Needs a current open notice or a post-reopening source."
+  },
+  "ch-087": {
+   "decision": "accept",
+   "reason": "Single-source: S70 official site (re-read) shows exists, winter/summer schedules and prices, and bouldering (500 m2 of walls, boulder routes at five levels, Moonboard). Pin is the gym-site map embed (46.17278, 8.99829) matching the Giubiasco address; no disagreement.",
+   "reviewed_against": []
+  },
+  "ch-061": {
+   "decision": "defer",
+   "reason": "Coordinate unresolved: the pin is the OSM node for lintharena Kletterhalle 1 at street precision. S57 (re-read) lists only one site address (Oberurnerstrasse 14) and does not say which building holds the GLKB boulder hall; no separate address or map for it. Needs the boulder hall own pin or building."
+  },
+  "ch-030": {
+   "decision": "accept",
+   "reason": "Research flagged thin evidence. S26 /preise (re-read) lists \"Bouldern: Hälfte des regulären Eintrittspreises\", a bouldering rate on the official price page, so bouldering is shown. The page does not say boulder hall versus rope hall. Pin is the OSM way.",
+   "reviewed_against": []
+  },
+  "ch-038": {
+   "decision": "accept",
+   "reason": "Research flagged thin evidence. S34 /home/infos (re-read) lists a separate \"Preise Bouldern\" block (adult CHF 14, child CHF 6) and weekday/weekend hours at Freiburgstrasse 632, so bouldering is shown by the official site. Rope offer not checked.",
+   "reviewed_against": []
+  },
+  "ch-077": {
+   "decision": "accept",
+   "reason": "Research flagged thin evidence. On S63 (escalade-chavornay.ch) the /tarifs page (re-read) lists bloc single entries (adult CHF 12) and 10-entry passes as a separate discipline, besides the homepage contest and family sessions; address and non-subscriber hours are on the homepage. This evidence is from another page of the same official site than the cited homepage.",
+   "reviewed_against": []
+  },
+  "ch-085": {
+   "decision": "accept",
+   "reason": "Research flagged thin evidence (image caption only). On S68 the lentrepot.ch/activites/escalade page (re-read) describes the bouldering as 4.5 m walls, thick mats, a Kilterboard and over 1,000 m2, and the site shows it open 09h-22h. Evidence is from the activity page, not the cited homepage.",
+   "reviewed_against": []
+  },
+  "ch-004": {
+   "decision": "accept",
+   "reason": "S3 official site shows exists, open, bouldering and address; OSM node pin at building precision.",
+   "reviewed_against": []
+  },
+  "ch-010": {
+   "decision": "accept",
+   "reason": "S6 official site shows exists, open, bouldering and address; OSM node pin.",
+   "reviewed_against": []
+  },
+  "ch-011": {
+   "decision": "accept",
+   "reason": "S7 official site shows exists, open and bouldering; OSM way pin at building precision (address not recorded).",
+   "reviewed_against": []
+  },
+  "ch-014": {
+   "decision": "accept",
+   "reason": "S10 official site shows exists, open, bouldering and address; OSM way pin.",
+   "reviewed_against": []
+  },
+  "ch-018": {
+   "decision": "accept",
+   "reason": "S14 official site shows exists, open, bouldering and address; OSM node pin.",
+   "reviewed_against": []
+  },
+  "ch-019": {
+   "decision": "accept",
+   "reason": "S15 official site shows exists, open, bouldering and address; OSM node pin.",
+   "reviewed_against": []
+  },
+  "ch-020": {
+   "decision": "accept",
+   "reason": "S16 official site shows exists, open and bouldering; OSM node pin (address not recorded).",
+   "reviewed_against": []
+  },
+  "ch-021": {
+   "decision": "accept",
+   "reason": "S17 official site shows exists, open, bouldering and address; OSM way pin.",
+   "reviewed_against": []
+  },
+  "ch-022": {
+   "decision": "accept",
+   "reason": "S18 official site shows exists, open, bouldering and address; OSM node pin.",
+   "reviewed_against": []
+  },
+  "ch-023": {
+   "decision": "accept",
+   "reason": "S19 official site shows exists, open, bouldering and address; OSM node pin.",
+   "reviewed_against": []
+  },
+  "ch-027": {
+   "decision": "accept",
+   "reason": "S23 official site has separate bouldering and rope pages and shows exists and open; OSM way pin.",
+   "reviewed_against": []
+  },
+  "ch-028": {
+   "decision": "accept",
+   "reason": "S24 official site shows exists, open, bouldering and address in the Thun old town; OSM node pin.",
+   "reviewed_against": []
+  },
+  "ch-029": {
+   "decision": "accept",
+   "reason": "S25 official site shows exists, open, bouldering and address (Steffisburg); OSM node pin.",
+   "reviewed_against": []
+  },
+  "ch-031": {
+   "decision": "accept",
+   "reason": "S27 official site shows exists, open, bouldering and address; OSM node pin.",
+   "reviewed_against": []
+  },
+  "ch-032": {
+   "decision": "accept",
+   "reason": "S28 official site shows exists, open, bouldering and address; OSM node pin.",
+   "reviewed_against": []
+  },
+  "ch-033": {
+   "decision": "accept",
+   "reason": "S29 official site shows exists, open and bouldering; OSM way pin.",
+   "reviewed_against": []
+  },
+  "ch-034": {
+   "decision": "accept",
+   "reason": "S30 official site shows exists, open, bouldering and address; OSM node pin.",
+   "reviewed_against": []
+  },
+  "ch-036": {
+   "decision": "accept",
+   "reason": "S32 official site shows exists, open, bouldering and address. OSM also has a separate \"Boulderhalle Meiringen\" node next door (n/5185924553); the recorded pin is the node for Kletterhalle Haslital itself and the two are adjacent (offset not measured).",
+   "reviewed_against": []
+  },
+  "ch-037": {
+   "decision": "accept",
+   "reason": "S33 official site shows exists, open, bouldering and address; OSM node pin.",
+   "reviewed_against": []
+  },
+  "ch-039": {
+   "decision": "accept",
+   "reason": "S35 official site shows exists, open and bouldering (new boulder area) at the sports and seminar centre; OSM way pin.",
+   "reviewed_against": []
+  },
+  "ch-040": {
+   "decision": "accept",
+   "reason": "S36 official site shows exists, open, bouldering and address; OSM way pin.",
+   "reviewed_against": []
+  },
+  "ch-044": {
+   "decision": "accept",
+   "reason": "S40 official site shows exists, open, bouldering and address; the planned rope hall is not claimed.",
+   "reviewed_against": []
+  },
+  "ch-045": {
+   "decision": "accept",
+   "reason": "S41 official site shows exists, open, bouldering and address (printed as 4500 Biberist); distinct from bimano Bern (ch-025, Zentweg, Bern); OSM node pin.",
+   "reviewed_against": []
+  },
+  "ch-048": {
+   "decision": "accept",
+   "reason": "S44 official site shows exists, open, bouldering and address; OSM node pin.",
+   "reviewed_against": []
+  },
+  "ch-049": {
+   "decision": "accept",
+   "reason": "S45 official site shows exists, open, bouldering and address; OSM node pin.",
+   "reviewed_against": []
+  },
+  "ch-050": {
+   "decision": "accept",
+   "reason": "S46 official site shows exists, open, bouldering and address; OSM node pin.",
+   "reviewed_against": []
+  },
+  "ch-051": {
+   "decision": "accept",
+   "reason": "S47 official site shows exists, open, bouldering and address; OSM node pin.",
+   "reviewed_against": []
+  },
+  "ch-052": {
+   "decision": "accept",
+   "reason": "S48 official site shows exists, open and bouldering; OSM node pin (address not recorded).",
+   "reviewed_against": []
+  },
+  "ch-055": {
+   "decision": "accept",
+   "reason": "S51 official site shows exists, open, bouldering and address; OSM node pin.",
+   "reviewed_against": []
+  },
+  "ch-056": {
+   "decision": "accept",
+   "reason": "S52 official site shows exists, open, bouldering and address; OSM node pin.",
+   "reviewed_against": []
+  },
+  "ch-057": {
+   "decision": "accept",
+   "reason": "S53 official site shows exists, open and bouldering; OSM node pin (address not recorded).",
+   "reviewed_against": []
+  },
+  "ch-074": {
+   "decision": "accept",
+   "reason": "S60 official site shows exists, open and bouldering; OSM node pin (address not recorded).",
+   "reviewed_against": []
+  },
+  "ch-075": {
+   "decision": "accept",
+   "reason": "S61 official site shows exists, open, bouldering and address; OSM node pin.",
+   "reviewed_against": []
+  },
+  "ch-076": {
+   "decision": "accept",
+   "reason": "S62 official site shows exists, open, bouldering and address; OSM node pin.",
+   "reviewed_against": []
+  },
+  "ch-082": {
+   "decision": "accept",
+   "reason": "S66 official site shows exists, open and bouldering; OSM node pin (address not recorded).",
+   "reviewed_against": []
+  },
+  "ch-084": {
+   "decision": "accept",
+   "reason": "S67 official site shows exists, open and bouldering; OSM way pin (address not recorded).",
+   "reviewed_against": []
+  },
+  "ch-086": {
+   "decision": "accept",
+   "reason": "S69 official site shows exists, open, bouldering and address; OSM node pin.",
+   "reviewed_against": []
+  },
+  "ch-003": {
+   "decision": "defer",
+   "reason": "Opening status unclear: S2 (re-read) says the hall \"entsteht\" (is being created) and calls it \"the new boulder hall\", yet lists daily hours and sells day passes and memberships; no opening date or dated open notice. Needs confirmation that it has opened."
+  },
+  "ch-035": {
+   "decision": "defer",
+   "reason": "Not yet open: S31 states BoulderBurg opens at Dunantstrasse 4 on the weekend of 17/18 October 2026, after the review date of 2026-10-01. Re-review after the opening."
+  }
+ }
+}
