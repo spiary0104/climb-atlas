@@ -1,0 +1,349 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-01-malaysia",
+ "inputs": {
+  "section_sha256": "77476e1ae0c302cc9c00344916e9d7f64b1dbaf6479ae1fc38ea73f56e54ddd2",
+  "sources_sha256": "b52a2495516a017c79c2f424a1085da381782a99b0f538b5f9ec0c964fd64a8b",
+  "candidates_sha256": "6e1a399b2e8e8f4943dec8366820ba3babd9407b1317b6052c3281c776899a7d",
+  "index": {
+   "sha256": "8dbddf7924c219a236c2ffff9c8fb005dd02d1dcfe61640f8817d49fb2484af2",
+   "count": 2127
+  },
+  "staged_batches_compared": [],
+  "other_sections_compared": []
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 14,
+  "ready": 3,
+  "review": 8,
+  "blocked": 3,
+  "existing": 0,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "my-001",
+   "line": 1,
+   "name": "Camp5 1Utama",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-f1f37e170b"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate my-002 \"Camp5 KL Eco City\": related names \"Camp5 Climbing Gym\" / \"Camp5 KL Eco City\" 7253 m apart",
+     "ids": [
+      "my-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate my-003 \"Camp5 Jumpa\": related names \"Camp5 Climbing Gym\" / \"Camp5 Jumpa\" 10509 m apart",
+     "ids": [
+      "my-003"
+     ]
+    }
+   ],
+   "review_ids": [
+    "my-002",
+    "my-003"
+   ]
+  },
+  {
+   "cid": "my-002",
+   "line": 2,
+   "name": "Camp5 KL Eco City",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-848aaca6f8"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate my-001 \"Camp5 1Utama\": related names \"Camp5 KL Eco City\" / \"Camp5 Climbing Gym\" 7253 m apart",
+     "ids": [
+      "my-001"
+     ]
+    }
+   ],
+   "review_ids": [
+    "my-001"
+   ]
+  },
+  {
+   "cid": "my-003",
+   "line": 3,
+   "name": "Camp5 Jumpa",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-955c407d0e"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate my-001 \"Camp5 1Utama\": related names \"Camp5 Jumpa\" / \"Camp5 Climbing Gym\" 10509 m apart",
+     "ids": [
+      "my-001"
+     ]
+    }
+   ],
+   "review_ids": [
+    "my-001"
+   ]
+  },
+  {
+   "cid": "my-004",
+   "line": 4,
+   "name": "BUMP Bouldering Jaya One",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-0bd5ff032d"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1693 renamed-or-related-name-nearby 48 m",
+     "ids": [
+      "seed-1693"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1693 \"Bump Bouldering\": renamed-or-related-name-nearby (\"BUMP Bouldering Jaya One\" / \"Bump Bouldering\", 48 m)",
+     "ids": [
+      "seed-1693"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-1693"
+   ]
+  },
+  {
+   "cid": "my-005",
+   "line": 5,
+   "name": "BUMP Bouldering Pavilion Bukit Jalil",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-2db5533538"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-1693 \"Bump Bouldering\": related names \"BUMP Bouldering Pavilion Bukit Jalil\" / \"Bump Bouldering\" 8451 m apart",
+     "ids": [
+      "seed-1693"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "seed-1693"
+   ]
+  },
+  {
+   "cid": "my-006",
+   "line": 6,
+   "name": "Bhub Bouldering",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-346ab53621"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "my-007",
+   "line": 7,
+   "name": "Project Rock Gurney Plaza",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-549e82de6d"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "my-008",
+   "line": 8,
+   "name": "Project Rock IKEA Batu Kawan",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-83fd4cfc09"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-1689 \"Project Rock\": related names \"Project Rock IKEA Batu Kawan\" / \"Project Rock\" 268 m apart",
+     "ids": [
+      "seed-1689"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-1689"
+   ]
+  },
+  {
+   "cid": "my-009",
+   "line": 9,
+   "name": "Project Rock Bayana Hub",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-1e337682cf"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "my-010",
+   "line": 10,
+   "name": "Klimbzone",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-786d562102"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "my-011",
+   "line": 11,
+   "name": "Bolder Ventures Climbing Gym",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-4bc446acee"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "my-012",
+   "line": 12,
+   "name": "PAMPA Rock Climbing",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-660434befb"
+   },
+   "blockers": [
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "my-013",
+   "line": 13,
+   "name": "Sabah Indoor Climbing Centre",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-f5c9870254"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "my-014",
+   "line": 14,
+   "name": "Kompleks Sukan Mendaki Putrajaya",
+   "class": "blocked",
+   "suggested": "reject not-a-gym",
+   "importer": {
+    "class": "new",
+    "id": "g-72f917ebc7"
+   },
+   "blockers": [
+    {
+     "code": "not-a-gym",
+     "detail": "category other"
+    },
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-1692 \"Putrajaya Challenge Park\": related names \"Putrajaya Challenge Park wall\" / \"Putrajaya Challenge Park\" 863 m apart",
+     "ids": [
+      "seed-1692"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-1692"
+   ]
+  }
+ ],
+ "reconcile_sha256": "ddc07788c11ffe6be17c878738bfb9f29c8c8865acbeff039fa33f8f9c574b0d"
+}
