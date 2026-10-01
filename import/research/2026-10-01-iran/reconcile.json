@@ -3,8 +3,8 @@
  "section_id": "2026-10-01-iran",
  "inputs": {
   "section_sha256": "e27aba4855f206b180577b7221e1da9df2efa07abca1cd159c4a309f34ad486e",
-  "sources_sha256": "2d90cb32dd49fa78f91bcad465b6e90c76342035ec1d6e815b9a566b1c148c89",
-  "candidates_sha256": "ff3456002dae23fa1d892f839adc56656e2ca970d263732b89f738b9b43a1427",
+  "sources_sha256": "8c318d4e8f048a38548b04e163b654ca00468d8a1325a78471367be91d5fa6a8",
+  "candidates_sha256": "30aa16ad016632eb3782705fba550074d2cec6bd76ec60af88ebd1a246761c2b",
   "index": {
    "sha256": "8dbddf7924c219a236c2ffff9c8fb005dd02d1dcfe61640f8817d49fb2484af2",
    "count": 2127
@@ -18,10 +18,10 @@
   "OTHER_COUNTRY_M": 2000
  },
  "counts": {
-  "candidates": 4,
+  "candidates": 5,
   "ready": 0,
   "review": 3,
-  "blocked": 1,
+  "blocked": 2,
   "existing": 0,
   "invalid": 0
  },
@@ -50,11 +50,19 @@
      "ids": [
       "ir-003"
      ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate ir-005 \"Payam Climbing Academy\": related names \"باشگاه سنگ‌نوردی بلدرلند\" / \"آکادمی سنگنوردی پیام\" 6924 m apart",
+     "ids": [
+      "ir-005"
+     ]
     }
    ],
    "review_ids": [
     "ir-002",
-    "ir-003"
+    "ir-003",
+    "ir-005"
    ]
   },
   {
@@ -93,13 +101,21 @@
      ]
     },
     {
+     "code": "related-name-nearby",
+     "detail": "candidate ir-005 \"Payam Climbing Academy\": related names \"باشگاه کوهنوردی توچال\" / \"آکادمی سنگنوردی پیام\" 8347 m apart",
+     "ids": [
+      "ir-005"
+     ]
+    },
+    {
      "code": "single-source",
      "detail": "all evidence comes from one source"
     }
    ],
    "review_ids": [
     "ir-001",
-    "ir-003"
+    "ir-003",
+    "ir-005"
    ]
   },
   {
@@ -128,13 +144,21 @@
      ]
     },
     {
+     "code": "related-name-nearby",
+     "detail": "candidate ir-005 \"Payam Climbing Academy\": related names \"باشگاه سنگنوردی موج\" / \"آکادمی سنگنوردی پیام\" 7544 m apart",
+     "ids": [
+      "ir-005"
+     ]
+    },
+    {
      "code": "single-source",
      "detail": "all evidence comes from one source"
     }
    ],
    "review_ids": [
     "ir-001",
-    "ir-002"
+    "ir-002",
+    "ir-005"
    ]
   },
   {
@@ -154,7 +178,64 @@
     }
    ],
    "review_ids": []
+  },
+  {
+   "cid": "ir-005",
+   "line": 5,
+   "name": "Payam Climbing Academy",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-d4f87cb0c4"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate ir-001 \"Boulderland Climbing Gym\": related names \"آکادمی سنگنوردی پیام\" / \"باشگاه سنگ‌نوردی بلدرلند\" 6924 m apart",
+     "ids": [
+      "ir-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate ir-002 \"Tochal Club\": related names \"آکادمی سنگنوردی پیام\" / \"باشگاه کوهنوردی توچال\" 8347 m apart",
+     "ids": [
+      "ir-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate ir-003 \"Moj Climbing Gym\": related names \"آکادمی سنگنوردی پیام\" / \"باشگاه سنگنوردی موج\" 7544 m apart",
+     "ids": [
+      "ir-003"
+     ]
+    }
+   ],
+   "review_ids": [
+    "ir-001",
+    "ir-002",
+    "ir-003"
+   ]
   }
  ],
- "reconcile_sha256": "ef0845dfb5f259f58ae989910e44946701ef3c05229b6190c3ddb24489b6c8d4"
+ "reconcile_sha256": "625cc7963598bb136913f20cf5755bbb28f3ff60efc9d6b8347f6239c75a40e0"
 }
