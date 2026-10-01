@@ -1,0 +1,150 @@
+{
+ "gyms": [
+  {
+   "name": "Boulderpark Thalwil \"9grad\"",
+   "city": "Thalwil",
+   "state": "ZURICH",
+   "address": "Zürcherstrasse 65, 8800 Thalwil",
+   "address_source_url": "https://www.boulderpark-thalwil.ch/kontakt/",
+   "website": "https://www.boulderpark-thalwil.ch/",
+   "bouldering": "yes",
+   "evidence": [
+    {
+     "source": "TCTHALWIL",
+     "url": "https://www.boulderpark-thalwil.ch/",
+     "accessed": "2026-10-01",
+     "supports": [
+      "exists",
+      "open",
+      "name",
+      "bouldering"
+     ]
+    },
+    {
+     "source": "TCTHALWIL",
+     "url": "https://www.boulderpark-thalwil.ch/kontakt/",
+     "accessed": "2026-10-01",
+     "supports": [
+      "address"
+     ]
+    }
+   ],
+   "notes": "Contact page has the address and hours; its map link is a Google directions link by place name only, no coordinates."
+  },
+  {
+   "name": "Crux Bouldering",
+   "city": "Biel/Bienne",
+   "state": "BERN",
+   "address": "Rennweg 62, 2504 Biel",
+   "address_source_url": "https://crux-bouldering.ch/info/",
+   "website": "https://www.crux-bouldering.ch",
+   "bouldering": "yes",
+   "evidence": [
+    {
+     "source": "TCCRUX",
+     "url": "https://crux-bouldering.ch/",
+     "accessed": "2026-10-01",
+     "supports": [
+      "exists",
+      "name",
+      "bouldering"
+     ]
+    },
+    {
+     "source": "TCCRUX",
+     "url": "https://crux-bouldering.ch/info/",
+     "accessed": "2026-10-01",
+     "supports": [
+      "address"
+     ]
+    }
+   ],
+   "notes": "Self-service boulder room next to the GRIP climbing gym: key is collected at GRIP and payment is cash or Twint on site, so access depends on GRIP opening hours; open status not confirmed beyond that. Info page gives the address."
+  },
+  {
+   "name": "Boulderraum Sportzentrum Grindelwald",
+   "city": "Grindelwald",
+   "state": "BERN",
+   "address": "Dorfstrasse 110, 3818 Grindelwald",
+   "address_source_url": "https://www.sportzentrum-grindelwald.ch/kontakt/",
+   "website": "https://www.sportzentrum-grindelwald.ch/angebot/boulderraum.html",
+   "bouldering": "yes",
+   "evidence": [
+    {
+     "source": "TCGRINDELWALD",
+     "url": "https://www.sportzentrum-grindelwald.ch/angebot/boulderraum.html",
+     "accessed": "2026-10-01",
+     "supports": [
+      "exists",
+      "name",
+      "bouldering"
+     ]
+    },
+    {
+     "source": "TCGRINDELWALD",
+     "url": "https://www.sportzentrum-grindelwald.ch/kontakt/",
+     "accessed": "2026-10-01",
+     "supports": [
+      "address"
+     ]
+    }
+   ],
+   "notes": "Boulder room (about 170 m2 of climbing area) inside the municipal sports centre; no map pin or coordinates on the pages read. Category probably other."
+  },
+  {
+   "name": "chletterai",
+   "city": "Appenzell",
+   "state": "APPENZELL_INNERRHODEN",
+   "address": "Weissbadstrasse 50, 9050 Appenzell",
+   "address_source_url": "https://www.chletterai.ch",
+   "website": "https://www.chletterai.ch",
+   "bouldering": "yes",
+   "evidence": [
+    {
+     "source": "TCCHLETTERAI",
+     "url": "https://www.chletterai.ch",
+     "accessed": "2026-10-01",
+     "supports": [
+      "exists",
+      "open",
+      "name",
+      "address",
+      "bouldering"
+     ]
+    }
+   ],
+   "notes": "Home page announces a boulder competition on 21 November and a new family tariff, so it is active; no map pin or coordinates found in the page source."
+  },
+  {
+   "name": "Sporting Park (climbing and boulder wall)",
+   "city": "Engelberg",
+   "state": "OBWALDEN",
+   "address": "Engelbergerstrasse 11, 6390 Engelberg",
+   "address_source_url": "https://sportingpark.ch/ueber-uns/lageplan/",
+   "website": "https://sportingpark.ch",
+   "bouldering": "yes",
+   "evidence": [
+    {
+     "source": "TCSPORTINGPARK",
+     "url": "https://sportingpark.ch/sport/klettern/",
+     "accessed": "2026-10-01",
+     "supports": [
+      "exists",
+      "name",
+      "bouldering",
+      "ropes"
+     ]
+    },
+    {
+     "source": "TCSPORTINGPARK",
+     "url": "https://sportingpark.ch/ueber-uns/lageplan/",
+     "accessed": "2026-10-01",
+     "supports": [
+      "address"
+     ]
+    }
+   ],
+   "notes": "Municipal sports centre (category probably other): rope wall with auto-belays plus a boulder area of about 40 problems and a Kilterboard. Site plan page is an image, no pin. Engelberg is in canton Obwalden."
+  }
+ ]
+}

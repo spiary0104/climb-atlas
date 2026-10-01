@@ -1,0 +1,109 @@
+{
+ "gyms": [
+  {
+   "name": "Dreamstone Boulders Kelapa Gading",
+   "city": "Jakarta Timur",
+   "state": "DKI_JAKARTA",
+   "address": "Komplek Gading Festival, Jl. Sedayu Boulevard Raya No. 1, RW 5 Rawa Terate, Cakung, Jakarta Timur 13920",
+   "address_source_url": "https://dreamstoneboulders.com/location",
+   "website": "https://dreamstoneboulders.com/kelapagading",
+   "bouldering": "yes",
+   "evidence": [
+    {
+     "source_url": "https://dreamstoneboulders.com/kelapagading",
+     "accessed": "2026-10-01",
+     "supports": [
+      "exists",
+      "open",
+      "bouldering"
+     ]
+    },
+    {
+     "source_url": "https://dreamstoneboulders.com/location",
+     "accessed": "2026-10-01",
+     "supports": [
+      "address"
+     ]
+    }
+   ],
+   "notes": "The site's location record (Rezerv API) has the full address but empty latitude/longitude for this branch (the Alam Sutera branch has coordinates). About 1,000 sqm with a Kilter Board per the branch page."
+  },
+  {
+   "name": "Rock Island Bali",
+   "city": "Pererenan, Canggu",
+   "state": "BALI",
+   "address": "Jalan Sempol No. 25, Pererenan, Mengwi, Badung, Bali 80351",
+   "address_source_url": "https://rockisland.id/contact-us",
+   "website": "https://rockisland.id/",
+   "bouldering": "yes",
+   "evidence": [
+    {
+     "source_url": "https://rockisland.id/",
+     "accessed": "2026-10-01",
+     "supports": [
+      "exists",
+      "bouldering",
+      "ropes"
+     ]
+    },
+    {
+     "source_url": "https://rockisland.id/contact-us",
+     "accessed": "2026-10-01",
+     "supports": [
+      "open",
+      "address"
+     ]
+    }
+   ],
+   "notes": "Boulder, top rope and lead; hours 10:00-21:00 daily. The contact page map is a text query only, no pin; the gym's Instagram bio has a location link that could not be read."
+  },
+  {
+   "name": "Phyxius Climbing Gym",
+   "city": "Surabaya",
+   "state": "JAWA_TIMUR",
+   "address": "Jl. Dukuh Kupang Timur XB/21, Surabaya",
+   "address_source_url": "https://www.instagram.com/phyxius.climbing.gym/",
+   "website": null,
+   "bouldering": "unknown",
+   "evidence": [
+    {
+     "source_url": "https://www.instagram.com/phyxius.climbing.gym/",
+     "accessed": "2026-10-01",
+     "supports": [
+      "exists",
+      "address"
+     ]
+    }
+   ],
+   "notes": "Address is in the gym's Instagram bio (since 2005, Surabaya, East Java). The bio does not state bouldering (listings describe boulder and roof areas plus tall rope walls). No map link or website."
+  },
+  {
+   "name": "Apetorium 2.0",
+   "city": "Sleman",
+   "state": "DI_YOGYAKARTA",
+   "address": "Jl. Onggomertan No. 108a, Nayan, Maguwoharjo, Sleman",
+   "address_source_url": "https://linktr.ee/apetorium.id",
+   "website": null,
+   "bouldering": "yes",
+   "evidence": [
+    {
+     "source_url": "https://www.instagram.com/apetorium/",
+     "accessed": "2026-10-01",
+     "supports": [
+      "exists",
+      "open",
+      "bouldering"
+     ]
+    },
+    {
+     "source_url": "https://linktr.ee/apetorium.id",
+     "accessed": "2026-10-01",
+     "supports": [
+      "address"
+     ]
+    }
+   ],
+   "notes": "Borderline scope: the Instagram bio calls it a calisthenics and bouldering gym and a studio for private training (office hours 9:00-21:00 Mon-Sat). The Linktree lists two sites: Apetorium at Mudal, Sariharjo, Sleman (no street given) and Apetorium 2.0 at the address above. No map pin."
+  }
+ ]
+}

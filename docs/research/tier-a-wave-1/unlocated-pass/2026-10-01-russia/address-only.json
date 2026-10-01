@@ -1,0 +1,166 @@
+{
+ "gyms": [
+  {
+   "name": "GoClimb (Bauman Moscow State Technical University climbing centre)",
+   "city": "Moscow",
+   "state": "MOSKVA",
+   "address": "Gospitalnaya nab. 4/2, Moscow (4th floor)",
+   "address_source_url": "http://goclimb.ru/ru/kak-dobratsya/",
+   "website": "http://goclimb.ru/ru/",
+   "bouldering": "yes",
+   "evidence": [
+    {
+     "url": "http://goclimb.ru/ru/bolderingovyj-zal/",
+     "accessed": "2026-10-01",
+     "supports": [
+      "exists",
+      "name",
+      "bouldering"
+     ]
+    },
+    {
+     "url": "http://goclimb.ru/ru/kak-dobratsya/",
+     "accessed": "2026-10-01",
+     "supports": [
+      "address"
+     ]
+    },
+    {
+     "url": "http://goclimb.ru/ru/grafik-raboty/",
+     "accessed": "2026-10-01",
+     "supports": [
+      "open"
+     ]
+    },
+    {
+     "url": "http://goclimb.ru/ru/ceny/",
+     "accessed": "2026-10-01",
+     "supports": [
+      "open"
+     ]
+    }
+   ],
+   "notes": "University climbing centre with a separate bouldering hall (about 160 m2, 4 m high, MoonBoard); the site lists weekday evening hours 18:30-21:30 only and a 450 RUB visit for adults 18+. No map pin on the site and no dates (it mentions 2015 additions), so currency is unconfirmed. Category would be university."
+  },
+  {
+   "name": "Vosmerka (Skalodrom 8), Gurzufskaya",
+   "city": "Yekaterinburg",
+   "state": "YEKATERINBURG",
+   "address": "ul. Gurzufskaya 48, 4th floor (Reebok CrossFit EKB hall), Yekaterinburg",
+   "address_source_url": "https://skalodrom8.ru/kontakty/",
+   "website": "https://skalodrom8.ru/",
+   "bouldering": "yes",
+   "evidence": [
+    {
+     "url": "https://skalodrom8.ru/",
+     "accessed": "2026-10-01",
+     "supports": [
+      "exists",
+      "name",
+      "address",
+      "bouldering",
+      "ropes"
+     ]
+    },
+    {
+     "url": "https://skalodrom8.ru/kontakty/",
+     "accessed": "2026-10-01",
+     "supports": [
+      "address"
+     ]
+    }
+   ],
+   "notes": "Site says free climbing is possible as bouldering or with a rope. The footer reads 2014-2022, so current opening is uncertain. The contacts page embeds two Google maps (56.825632, 60.562783 dated 2017; 56.788155, 60.508000 dated 2022) but they are not labelled with the two addresses, so they were NOT used as pins."
+  },
+  {
+   "name": "Vosmerka (Skalodrom 8), Akademika Sakharova",
+   "city": "Yekaterinburg",
+   "state": "YEKATERINBURG",
+   "address": "ul. Akademika Sakharova 47, Yekaterinburg",
+   "address_source_url": "https://skalodrom8.ru/kontakty/",
+   "website": "https://skalodrom8.ru/",
+   "bouldering": "yes",
+   "evidence": [
+    {
+     "url": "https://skalodrom8.ru/",
+     "accessed": "2026-10-01",
+     "supports": [
+      "exists",
+      "name",
+      "address",
+      "bouldering",
+      "ropes"
+     ]
+    },
+    {
+     "url": "https://skalodrom8.ru/kontakty/",
+     "accessed": "2026-10-01",
+     "supports": [
+      "address"
+     ]
+    }
+   ],
+   "notes": "Second site of the same network; same caveats as the Gurzufskaya entry (footer 2014-2022, two unlabelled map embeds not used as pins)."
+  },
+  {
+   "name": "Rock and Wall, Cherkasskaya rope hall",
+   "city": "Yekaterinburg",
+   "state": "YEKATERINBURG",
+   "address": "ul. Cherkasskaya 25, 5th floor (SZTT building), Yekaterinburg",
+   "address_source_url": "https://rockandwall.ru/",
+   "website": "https://rockandwall.ru/",
+   "bouldering": "unknown",
+   "evidence": [
+    {
+     "url": "https://rockandwall.ru/",
+     "accessed": "2026-10-01",
+     "supports": [
+      "exists",
+      "open",
+      "name",
+      "address",
+      "ropes"
+     ]
+    }
+   ],
+   "notes": "Second branch of the operator of ru-026. The site calls it the difficulty (rope) hall: about 120 m2 of walls, over 10 m high, 12 top-rope points, daily 10:00-22:00. Bouldering is at the Radishcheva hall (ru-026). The site map shows only the Radishcheva pin, none for this branch."
+  },
+  {
+   "name": "ParkRock (Skalodromy Anny Dyatkovskoy)",
+   "city": "Samara",
+   "state": "SAMARA",
+   "address": "Moskovskoye sh. 4 str. 3, behind the Skala shopping centre, Samara",
+   "address_source_url": "http://www.parkrock.ru/contact",
+   "website": "http://www.parkrock.ru/",
+   "bouldering": "yes",
+   "evidence": [
+    {
+     "url": "http://www.parkrock.ru/o-skalodrome",
+     "accessed": "2026-10-01",
+     "supports": [
+      "exists",
+      "name",
+      "bouldering",
+      "ropes"
+     ]
+    },
+    {
+     "url": "http://www.parkrock.ru/",
+     "accessed": "2026-10-01",
+     "supports": [
+      "open",
+      "address"
+     ]
+    },
+    {
+     "url": "http://www.parkrock.ru/contact",
+     "accessed": "2026-10-01",
+     "supports": [
+      "address"
+     ]
+    }
+   ],
+   "notes": "Site says visitors can climb routes on top or lower belay (100+ routes) and boulder (150+ routes); daily 10:00-22:00 by appointment, current price list. The contacts page loads a Yandex constructor map whose coordinates could not be read (the constructor API returned an error); no other pin on the site."
+  }
+ ]
+}

@@ -1,0 +1,6 @@
+# Turkiye: unlocated entries not located or addressed (Track C)
+
+1. Mekanik Climbing (Izmir, Bornova / Ozkanlar): the only source remains a 2019 post on a mountaineering club member's blog (http://www.demirayaklar.com/mekanik-climbing/), which names the district only and has no map; no own site or official social found, no OSM element, current status unknown. No official address or pin.
+2. Bursa Tirmanis Evi (Bursa, Osmangazi, Ahmetpasa): run by BUDAK (Bursa mountaineering club). The club's own site (https://budak.org.tr/) does not mention the climbing house at all, and its only published address is its office at Karaman Dernekler Yerleskesi, Nilufer, which is a different place. The Ahmetpasa address and the 60 m2 / evening-hours description exist only in directories. The only Bursa climbing-wall OSM elements (way/665506969 in Nilufer, an unnamed-operator "Tirmanis Duvari") cannot be tied to it. No official address or pin; members' club, would be category "club".
+3. Duvar (Bursa): only a Facebook page (https://www.facebook.com/duvarbursa/), which is not readable without login; no own site, no address, no OSM element; bouldering unconfirmed.
+4. 911 Search & Rescue Association wall (Bursa, Osmangazi): directory-only mention; a rescue association's facility with unclear public access; no official site found, no address or pin.

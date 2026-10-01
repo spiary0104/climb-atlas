@@ -1,0 +1,45 @@
+{
+ "generated": "2026-10-01",
+ "method": "Nominatim search, one query per gym, <=1 req/s",
+ "results": [
+  {
+   "name": "Dreamstone Boulders Kelapa Gading",
+   "query": "Komplek Gading Festival, Jl. Sedayu Boulevard Raya No. 1, RW 5 Rawa Terate, Cakung, Jakarta Timur 13920, Jakarta Timur",
+   "result": null,
+   "precision": null,
+   "verdict": "no match: stays unresolved"
+  },
+  {
+   "name": "Rock Island Bali",
+   "query": "Jalan Sempol No. 25, Pererenan, Mengwi, Badung, Bali 80351, Pererenan, Canggu",
+   "result": null,
+   "precision": null,
+   "verdict": "no match: stays unresolved"
+  },
+  {
+   "name": "Phyxius Climbing Gym",
+   "city": "Surabaya",
+   "address": "Jl. Dukuh Kupang Timur XB/21, Surabaya",
+   "address_source_url": "https://www.instagram.com/phyxius.climbing.gym/",
+   "bouldering": "unknown",
+   "query": "Jl. Dukuh Kupang Timur XB/21, Surabaya, Surabaya",
+   "result": {
+    "lat": -7.281807,
+    "lng": 112.7099956,
+    "osm": "relation/8225811",
+    "display_name": "Dukuh Kupang, Dukuh Pakis, Surabaya, East Java, 60188, Indonesia",
+    "class": "boundary",
+    "type": "administrative"
+   },
+   "precision": "area",
+   "verdict": "area only: not usable as a gym pin"
+  },
+  {
+   "name": "Apetorium 2.0",
+   "query": "Jl. Onggomertan No. 108a, Nayan, Maguwoharjo, Sleman, Sleman",
+   "result": null,
+   "precision": null,
+   "verdict": "no match: stays unresolved"
+  }
+ ]
+}
