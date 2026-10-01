@@ -82,7 +82,7 @@ node scripts/gym-import.js research stage <section>       # needs a current reco
 | `section.json` | `{schema_version, section_id, title, description, created, scope:{country, states\|null, bbox\|null}}`; country must be supported by the app |
 | `sources.json` | `{schema_version, sources:{S1:{kind, title, url, language, accessed}}}`. Primary kinds: `official-site`, `official-social`, `chain-store-list`; others (`federation`, `directory`, `map-data`, `news`, `other`) only support |
 | `candidates.ndjson` | one candidate per line, **including** places that will be rejected (the audit trail) |
-| `reconcile.json` / `.md` | generated, deterministic; bound to the hashes of section/sources/candidates, the index, staged batches and other sections |
+| `reconcile.json` / `.md` | generated, deterministic; bound to the hashes of section/sources/candidates, the index, staged batches and the other research sections **of the same country** (another country's section never makes it stale) |
 | `review.json` | `{schema_version, section_id, reviewer, reviewed, decisions:{<cid>: {...}}}`, written by a human |
 
 **Candidate:** `cid` (unique, not `seed-`/`community-`/`g-`), `name`, `name_local`, `aliases[]`, `chain`, `country`, `state`, `suburb`, `address`,
@@ -90,6 +90,8 @@ node scripts/gym-import.js research stage <section>       # needs a current reco
 (`entrance|building|street|area`), `types`, `website`, `category` (`commercial-gym|university|club|outdoor-area|shop|other`), `status_claim`
 (`open|closed|opening-soon|temporary|unknown`), `bouldering` (`yes|no|unknown`), `evidence[{source, url, accessed, supports[]}]`, `research_notes`, `notes`,
 `photo`. Coordinates always come from an identified source; `website`, evidence and notes stay in the research files (there is no website column).
+`types` includes `indoor-bouldering` exactly when `bouldering` is `yes`; a candidate whose bouldering is `unknown` or `no` may have an empty `types`
+list (never a placeholder). Such a candidate is always blocked, so nothing with an empty or unconfirmed type list can be accepted or staged.
 
 **Reconcile** classes every candidate: `invalid` (fix it), `existing` (the importer's own match says it is already in Bouldeer; never inserted),
 `blocked` (cannot be accepted), `review` (flags), `ready`. Blockers: out of scope; outdoor area / not a gym; not `open`; no primary source
@@ -97,7 +99,7 @@ confirming it exists and is open (a directory or search result alone never is); 
 additions need a bouldering offering; it is never assumed; the 24 existing rope-only gyms are untouched); `coord_precision: area`.
 Duplicate detection is the importer's `planBatch`/`match.js` (thresholds unchanged, including 60 m), **plus** stricter review flags that can
 only add review: names/aliases/`name_local` through the same `evaluatePair`; a related name within 15 km (chain branches, rebrands); any gym
-within 150 m; a gym of another country within 2 km; the same website; candidates of other sections. Also flagged: street-level pins,
+within 150 m; a gym of another country within 2 km; the same website; candidates of other same-country sections. Also flagged: street-level pins,
 a single source, university/club walls, importer warnings. The report suggests a decision; it never makes one.
 
 **Review decisions** (every candidate, no wildcards): `accept` (only `ready`/`review`; a flagged one needs `reason` and `reviewed_against`
