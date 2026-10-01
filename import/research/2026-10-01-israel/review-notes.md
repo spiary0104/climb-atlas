@@ -23,3 +23,6 @@ None.
 - Not reviewed here (in unlocated.md): 17 Israeli gyms without coordinates; Koala (Kfar Etzion, West Bank) needs an owner call on scope.
 - The Bloc's possible third gym and Monkeys Ashdod remain unconfirmed.
 - Venga same-as is a judgement from name and city (no address on the seed record); if the owner knows of a second Venga, reverse it.
+
+## Owner-directed follow-up (2026-10-01)
+- Koala (Kfar Etzion; unlocated.md entry, not a candidate, so no decision exists): project scope rule = each gym carries the ISO 3166-1 alpha-2 country code of where it is, validated against js/modules/regions.js (the same coding as the World Bank data in the gap analysis). OSM boundaries (Nominatim, 2026-10-01) code Kfar Etzion as "ps"; all 8 existing Bouldeer IL gyms code as "il". ISO 3166-1 also places this location under PS. So Koala is out of scope for the IL section; PS is not an app-supported country. It can only be added via a future PS section after app support for PS. No political judgement involved: the same code mapping is applied to every location.

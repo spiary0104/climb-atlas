@@ -28,3 +28,7 @@ Tally: accept 12, same-as 1, defer 3, reject 0 (16 candidates). Validated with t
 
 ## Coordinator adjustments (Claude, orchestrating the review)
 - in-008: accept -> defer. The pin is defensible but the address that would be imported is contradicted by OSM and the gym own storefront; importing a known-conflicting address would resolve it by assumption.
+
+## Owner-directed follow-up (2026-10-01)
+- in-007: accept -> defer. Owner question C: storefront = location evidence only; bouldering has no independent primary source, so accept -> defer.
+- in-008: defer -> defer. Owner question C: remains deferred; reason now records both the address conflict and the storefront-only bouldering evidence.

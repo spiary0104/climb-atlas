@@ -28,3 +28,8 @@ No unresolved coordinate issues. se-003 chain pin is about 70 m from the OSM nod
 1. Klättercentret Solna (se-001): add a gym that closes 19 Dec 2026, or skip.
 2. Wallride Växjö (se-037): keep as a bouldering gym despite the action-sports setting?
 3. Optional follow-up on se-015: what is the venue at Ollonborrstigen 13?
+
+## Owner-directed follow-up (2026-10-01)
+- se-001: defer -> accept. Owner question A: operating now per its own pages (hours, bookings, bouldering FAQ); closure 19 Dec 2026 recorded in the candidate notes.
+- se-037 Wallride (owner question B, decision NOT changed, pending owner): own page (S WALLRIDE, re-read 2026-10-01) describes rope-free bouldering on crash pads, opening hours every day and the address Arabygatan 13, Växjö. PROBLEM: the recorded pin (56.8819139, 14.7812165) is the map VIEWPORT centre of the gym's own Google link, not its place pin (56.881911, 14.7837914); 156 m apart. Proposed: correct the pin to the place pin from the same official link, then keep accept. Until then the accept rests on a wrong pin.
+- se-039 Karlstad Klätterklubb (decision NOT changed; flagged for owner): its own hall page (re-read 2026-10-01) says the guest card can only be bought together with a K3 member and entry is by key. That is guest-of-member access, not public access, so the drafted "limited-access cleared" accept is contradicted by the evidence. Owner to decide (rule F would defer it).

@@ -1,0 +1,504 @@
+{
+ "status": "PREPARED, NOT EXECUTED",
+ "generated": "2026-10-01",
+ "index_sha256": "8dbddf7924c219a236c2ffff9c8fb005dd02d1dcfe61640f8817d49fb2484af2",
+ "note": "Draft records for a separate location-update batch (scripts/lib/gym-import/updater.js: address/lat/lng only, bound to expect_h). Not staged; no existing record changed. Each needs owner confirmation, then its own validate/plan/dry-run/apply/verify.",
+ "followups": [
+  {
+   "section": "2026-10-01-russia",
+   "cid": "ru-020",
+   "candidate_name": "Tramontana",
+   "existing": {
+    "id": "seed-1493",
+    "name": "Skalodrom Tramontana",
+    "address": "Bronnitskaya Ulitsa 24, Sankt-Peterburg, Russia",
+    "lat": 59.9606739,
+    "lng": 30.1586551,
+    "h": "ee5909ae61dbdc8b"
+   },
+   "proposed": {
+    "lat": 59.914002,
+    "lng": 30.3234707
+   },
+   "distance_m": 10546,
+   "coord_source": {
+    "source": "OSM",
+    "method": "osm",
+    "ref": "node/1402188633",
+    "source_kind": "map-data",
+    "source_url": "https://www.openstreetmap.org/"
+   },
+   "coord_precision": "building",
+   "review_reason": "Tramontana (S TR own site climbingcenter.ru, ul. Bronnitskaya 24, 2nd floor) is the existing Skalodrom Tramontana: same centre, same address (Bronnitskaya Ulitsa 24). Existing pin (59.9607, 30.1587) is the shared placeholder 10.5 km away; the candidate pin is OSM node/1402188633 (carries this centre name, phone, website and hours; reverse geocodes to Bronnitskaya ulitsa), so a location update is warranted. Note: the site itself is thin on bouldering (only Boulder Battle 2026 news), but that does not matter for same-as.",
+   "draft_update_record": {
+    "intent": "update",
+    "id": "seed-1493",
+    "expect_h": "ee5909ae61dbdc8b",
+    "reason": "Location from regional research 2026-10-01-russia (ru-020): osm pin node/1402188633; existing pin 10546 m off.",
+    "source": "research:2026-10-01-russia#ru-020",
+    "set": {
+     "lat": 59.914002,
+     "lng": 30.3234707
+    }
+   }
+  },
+  {
+   "section": "2026-10-01-russia",
+   "cid": "ru-018",
+   "candidate_name": "Igels",
+   "existing": {
+    "id": "seed-1491",
+    "name": "Klub Igels",
+    "address": "Obvodniy channel embankment, Sankt-Peterburg, Russia",
+    "lat": 59.9606739,
+    "lng": 30.1586551,
+    "h": "55f59d2f284eadfc"
+   },
+   "proposed": {
+    "lat": 59.9062431,
+    "lng": 30.2814162
+   },
+   "distance_m": 9133,
+   "coord_source": {
+    "source": "IG",
+    "method": "official-map",
+    "ref": "map marker on https://igelsclub.ru/kak-dobratsa",
+    "source_kind": "official-site",
+    "source_url": "https://igelsclub.ru/"
+   },
+   "coord_precision": "building",
+   "review_reason": "Igels (S IG own site: biggest dense-set boulder gym, 4th floor) is the existing Klub Igels: same club; the seed address is \"Obvodniy channel embankment\" and the official contact page gives Nab. Obvodnogo kanala 134-136-138 (single site, Krasny Treugolnik plant). The existing pin (59.9607, 30.1587) is a generic placeholder shared by three Saint Petersburg seed gyms and is 9.1 km from the candidate pin 59.9062, 30.2814 (own site map marker), so a location update is warranted.",
+   "draft_update_record": {
+    "intent": "update",
+    "id": "seed-1491",
+    "expect_h": "55f59d2f284eadfc",
+    "reason": "Location from regional research 2026-10-01-russia (ru-018): official-map pin map marker on https://igelsclub.ru/kak-dobratsa; existing pin 9133 m off.",
+    "source": "research:2026-10-01-russia#ru-018",
+    "set": {
+     "lat": 59.9062431,
+     "lng": 30.2814162
+    }
+   }
+  },
+  {
+   "section": "2026-10-01-russia",
+   "cid": "ru-022",
+   "candidate_name": "Severnaya Stena Petrogradskaya",
+   "existing": {
+    "id": "seed-1492",
+    "name": "Severnaya Stena Petrogradskaya Skalodrom",
+    "address": "Gazovaya Ulitsa 10з, Sankt-Peterburg, Russia",
+    "lat": 59.9606739,
+    "lng": 30.1586551,
+    "h": "0c7dd5997f7b9771"
+   },
+   "proposed": {
+    "lat": 59.9682893,
+    "lng": 30.2923918
+   },
+   "distance_m": 7491,
+   "coord_source": {
+    "source": "OSM",
+    "method": "osm",
+    "ref": "node/9124072117",
+    "source_kind": "map-data",
+    "source_url": "https://www.openstreetmap.org/"
+   },
+   "coord_precision": "building",
+   "review_reason": "Severnaya Stena Petrogradskaya (S SV own site, Gazovaya 10 lit. Z) is the existing Severnaya Stena Petrogradskaya Skalodrom: same hall, same address (Gazovaya Ulitsa 10z). The sibling Bukharestskaya hall (ru-023, Fuchika 10) is a different, closed hall, not a duplicate. Existing pin (59.9607, 30.1587) is the shared placeholder 7.5 km away; candidate pin is OSM node/9124072117 (carries the site, phone and Gazovaya 10 address), so a location update is warranted.",
+   "draft_update_record": {
+    "intent": "update",
+    "id": "seed-1492",
+    "expect_h": "0c7dd5997f7b9771",
+    "reason": "Location from regional research 2026-10-01-russia (ru-022): osm pin node/9124072117; existing pin 7491 m off.",
+    "source": "research:2026-10-01-russia#ru-022",
+    "set": {
+     "lat": 59.9682893,
+     "lng": 30.2923918
+    }
+   }
+  },
+  {
+   "section": "2026-10-01-thailand",
+   "cid": "th-007",
+   "candidate_name": "Rock Domain Climbing Gym",
+   "existing": {
+    "id": "seed-1695",
+    "name": "Rock Domain Climbing Gym",
+    "address": "1780 Bangna-Trad Road, Bangna, Bangkok 10260, Thailand",
+    "lat": 13.6729067,
+    "lng": 100.6071289,
+    "h": "797c849a6574b25b"
+   },
+   "proposed": {
+    "lat": 13.6639476,
+    "lng": 100.6479003
+   },
+   "distance_m": 4516,
+   "coord_source": {
+    "source": "OSM",
+    "method": "osm",
+    "ref": "node/5374585867",
+    "source_kind": "map-data",
+    "source_url": "https://www.openstreetmap.org/"
+   },
+   "coord_precision": "building",
+   "review_reason": "Same gym: seed-1695 Rock Domain Climbing Gym is at 1780 Bangna-Trad Road (same road as Debaratna Road), the candidate is 1780 Debaratna Road, Bangna-Tai; RD official site (re-read) states 1780 Debaratna Road, Bangna-Tai, Bangna. Candidate pin is OSM node 5374585867 (house number 1780, Debaratna Road, name:en Rock Domain Climbing Gym, website rockdomaingym.com), which Nominatim places in Bang Na Tai, Bangkok; the existing pin is 4516 m away. Province: the official address says Bangkok so BANGKOK stands (some listings say Samut Prakan); the OSM pin sits in Bang Na Tai district so it does not disagree.",
+   "draft_update_record": {
+    "intent": "update",
+    "id": "seed-1695",
+    "expect_h": "797c849a6574b25b",
+    "reason": "Location from regional research 2026-10-01-thailand (th-007): osm pin node/5374585867; existing pin 4516 m off.",
+    "source": "research:2026-10-01-thailand#th-007",
+    "set": {
+     "lat": 13.6639476,
+     "lng": 100.6479003
+    }
+   }
+  },
+  {
+   "section": "2026-10-01-thailand",
+   "cid": "th-012",
+   "candidate_name": "REBEL Rock Climbing",
+   "existing": {
+    "id": "seed-1700",
+    "name": "Rebel Rock Climbing",
+    "address": "194/6 M.7 Srisunthorn Road, Talang, Phuket 83110, Thailand",
+    "lat": 7.9366015,
+    "lng": 98.3529292,
+    "h": "34e1661f695ea575"
+   },
+   "proposed": {
+    "lat": 7.9752039,
+    "lng": 98.3404014
+   },
+   "distance_m": 4509,
+   "coord_source": {
+    "source": "OSM",
+    "method": "osm",
+    "ref": "node/4621645591",
+    "source_kind": "map-data",
+    "source_url": "https://www.openstreetmap.org/"
+   },
+   "coord_precision": "building",
+   "review_reason": "Same gym: seed-1700 Rebel Rock Climbing has the same address (194/6 M.7 Srisunthorn Road, Talang, Phuket). REBEL official site (re-read) shows boulder sectors, a Kilter board and rope walls, open Tuesday-Sunday 10am-8pm. Candidate pin is OSM node 4621645591 (housenumber 194/6, website rebelrockclimbing.com, Tu-Su 10:00-20:00); the existing pin is 4509 m away. The official site has no map link, so OSM is the only pin source; flagged for owner sign-off.",
+   "draft_update_record": {
+    "intent": "update",
+    "id": "seed-1700",
+    "expect_h": "34e1661f695ea575",
+    "reason": "Location from regional research 2026-10-01-thailand (th-012): osm pin node/4621645591; existing pin 4509 m off.",
+    "source": "research:2026-10-01-thailand#th-012",
+    "set": {
+     "lat": 7.9752039,
+     "lng": 98.3404014
+    }
+   }
+  },
+  {
+   "section": "2026-10-01-thailand",
+   "cid": "th-011",
+   "candidate_name": "Progression Vertical Climbing Gym",
+   "existing": {
+    "id": "seed-1698",
+    "name": "Progression Vertical",
+    "address": "9/10, Tambon Pa Daet, Amphur Muang, Chiang Mai, Thailand",
+    "lat": 18.7844583,
+    "lng": 98.9815649,
+    "h": "c90f3165c68aacc2"
+   },
+   "proposed": {
+    "lat": 18.7467597,
+    "lng": 98.9879227
+   },
+   "distance_m": 4245,
+   "coord_source": {
+    "source": "OSM",
+    "method": "osm",
+    "ref": "way/1159988644",
+    "source_kind": "map-data",
+    "source_url": "https://www.openstreetmap.org/"
+   },
+   "coord_precision": "building",
+   "review_reason": "Same gym: seed-1698 Progression Vertical has address 9/10 Pa Daet, Amphur Muang, Chiang Mai, the same as the candidate (9, 10 Pa Daet Sub-district). PV official page (re-read) shows the gym open daily with hours, bouldering and ropes. Candidate pin 18.74687,98.98795 is the gym's own Google place pin and agrees with OSM way 1159988644 (centroid 18.74676,98.98792); the existing pin (18.78446,98.98156) is 4245 m away, so the sourced pin is clearly better.",
+   "draft_update_record": {
+    "intent": "update",
+    "id": "seed-1698",
+    "expect_h": "c90f3165c68aacc2",
+    "reason": "Location from regional research 2026-10-01-thailand (th-011): osm pin way/1159988644; existing pin 4245 m off.",
+    "source": "research:2026-10-01-thailand#th-011",
+    "set": {
+     "lat": 18.7467597,
+     "lng": 98.9879227
+    }
+   }
+  },
+  {
+   "section": "2026-10-01-israel",
+   "cid": "il-012",
+   "candidate_name": "Venga",
+   "existing": {
+    "id": "seed-1597",
+    "name": "Venga",
+    "address": null,
+    "lat": 32.0877639,
+    "lng": 34.8859985,
+    "h": "586dead9e2de81c3"
+   },
+   "proposed": {
+    "lat": 32.107394,
+    "lng": 34.893973,
+    "address": "Moshe Shwaleb 7, Segula industrial zone, Petah Tikva (floor 2)"
+   },
+   "distance_m": 2308,
+   "coord_source": {
+    "source": "S8",
+    "method": "official-map",
+    "ref": "https://waze.to/li/hsv8ydhcp0 (site Waze link; resolves to ll 32.107394,34.893973)",
+    "source_kind": "official-site",
+    "source_url": "https://vengavenga.co.il/"
+   },
+   "coord_precision": "building",
+   "review_reason": "Same gym: seed-1597 Venga in Petah Tikva has no address and a pin 2.3 km from the candidate; there is a single Venga climbing wall in Petah Tikva on its own site S8 (Moshe Shwaleb 7, Segula industrial zone, open since 2010, hours listed) and the federation list S9. The site's Google place pin (32.107497,34.89389) and Waze link (32.107394,34.893973) agree within 14 m, so the sourced pin is clearly better than the seed pin.",
+   "draft_update_record": {
+    "intent": "update",
+    "id": "seed-1597",
+    "expect_h": "586dead9e2de81c3",
+    "reason": "Location from regional research 2026-10-01-israel (il-012): official-map pin https://waze.to/li/hsv8ydhcp0 (site Waze link; resolves to ll 32.107394,34.893973); existing pin 2308 m off.",
+    "source": "research:2026-10-01-israel#il-012",
+    "set": {
+     "lat": 32.107394,
+     "lng": 34.893973,
+     "address": "Moshe Shwaleb 7, Segula industrial zone, Petah Tikva (floor 2)"
+    }
+   }
+  },
+  {
+   "section": "2026-10-01-india",
+   "cid": "in-010",
+   "candidate_name": "Crag Studio Gachibowli",
+   "existing": {
+    "id": "seed-1583",
+    "name": "Crag Studio",
+    "address": "Survey No 91, Gachibowli Road, Madhava Reddy Colony, Gachibowli, Hyderabad, Telangana 500032, India",
+    "lat": 17.4436222,
+    "lng": 78.3519638,
+    "h": "9069f0a9a40c59cc"
+   },
+   "proposed": {
+    "lat": 17.4349973,
+    "lng": 78.3597544
+   },
+   "distance_m": 1266,
+   "coord_source": {
+    "source": "OSM",
+    "method": "osm",
+    "ref": "way/559183200",
+    "source_kind": "map-data",
+    "source_url": "https://www.openstreetmap.org/"
+   },
+   "coord_precision": "building",
+   "review_reason": "Same gym as seed-1583 'Crag Studio': same name and the same address (Survey No 91, Gachibowli Rd, Madhava Reddy Colony, Gachibowli). The seed pin (17.44362, 78.35196) reverse-geocodes to ISB Road / Kothaguda, 1.27 km from the gym; the recorded pin is OSM way/559183200 (named Crag Studio, Swecha Sy. No. 91) and the S5 site's own map centre (17.43497, 78.35971) agrees with it, so the sourced pin is clearly better and the existing pin is well over 150 m off.",
+   "draft_update_record": {
+    "intent": "update",
+    "id": "seed-1583",
+    "expect_h": "9069f0a9a40c59cc",
+    "reason": "Location from regional research 2026-10-01-india (in-010): osm pin way/559183200; existing pin 1266 m off.",
+    "source": "research:2026-10-01-india#in-010",
+    "set": {
+     "lat": 17.4349973,
+     "lng": 78.3597544
+    }
+   }
+  },
+  {
+   "section": "2026-10-01-thailand",
+   "cid": "th-006",
+   "candidate_name": "Urban Playground Climbing",
+   "existing": {
+    "id": "seed-1754",
+    "name": "Urban Playground Climbing",
+    "address": "8 Sukhumvit 49/9 Alley, Khlong Tan Nuea, Watthana, Bangkok 10110, Thailand",
+    "lat": 13.7254693,
+    "lng": 100.5794153,
+    "h": "3d24af5a11e7e9fb"
+   },
+   "proposed": {
+    "lat": 13.7362979,
+    "lng": 100.5763602
+   },
+   "distance_m": 1248,
+   "coord_source": {
+    "source": "OSM",
+    "method": "osm",
+    "ref": "node/11112955887",
+    "source_kind": "map-data",
+    "source_url": "https://www.openstreetmap.org/"
+   },
+   "coord_precision": "building",
+   "review_reason": "Same gym: seed-1754 Urban Playground Climbing is at 8 Sukhumvit 49/9 Alley, the same RQ Club address the candidate uses. RQ page (the club's own page for the gym, re-read) shows Urban Playground with 100+ bouldering problems and a cave plus ropes and weekday/weekend hours, so it is a primary source that shows bouldering; it does not change the verdict. Candidate pin is OSM node 11112955887 (13.73630,100.57636; a second node 4506370350 is about 35 m away and Nominatim places the Racquet @ 49 way at 13.73654,100.57626); the existing pin (13.72547,100.57942) is 1248 m away, so the sourced pin is clearly better.",
+   "draft_update_record": {
+    "intent": "update",
+    "id": "seed-1754",
+    "expect_h": "3d24af5a11e7e9fb",
+    "reason": "Location from regional research 2026-10-01-thailand (th-006): osm pin node/11112955887; existing pin 1248 m off.",
+    "source": "research:2026-10-01-thailand#th-006",
+    "set": {
+     "lat": 13.7362979,
+     "lng": 100.5763602
+    }
+   }
+  },
+  {
+   "section": "2026-10-01-israel",
+   "cid": "il-002",
+   "candidate_name": "Performance Rock Beer Sheva",
+   "existing": {
+    "id": "seed-1590",
+    "name": "Performance Rock",
+    "address": "4 HaAtsmaut St, Be'er Sheva, Israel",
+    "lat": 31.2429473,
+    "lng": 34.7857884,
+    "h": "6c2d2672f347f3e0"
+   },
+   "proposed": {
+    "lat": 31.2381012,
+    "lng": 34.7929965
+   },
+   "distance_m": 872,
+   "coord_source": {
+    "source": "S1",
+    "method": "official-map",
+    "ref": "https://performancerock.co.il/ Waze link ll=31.23810120,34.79299650",
+    "source_kind": "chain-store-list",
+    "source_url": "https://performancerock.co.il/"
+   },
+   "coord_precision": "building",
+   "review_reason": "Same gym: seed-1590 Performance Rock, 4 HaAtsmaut St Beer Sheva is the chain's Beer Sheva branch at HaAtzmaut 4 (S1 chain site shows HaAtzmaut 4 with weekly hours and bouldering). The seed pin 31.2429473,34.7857884 is 872 m from the branch's own Waze place pin (31.2381012,34.7929965) and equals the centre of the HaAtzmaut street way (OSM way/785859037), i.e. a street-level geocode, so the sourced pin is clearly better.",
+   "draft_update_record": {
+    "intent": "update",
+    "id": "seed-1590",
+    "expect_h": "6c2d2672f347f3e0",
+    "reason": "Location from regional research 2026-10-01-israel (il-002): official-map pin https://performancerock.co.il/ Waze link ll=31.23810120,34.79299650; existing pin 872 m off.",
+    "source": "research:2026-10-01-israel#il-002",
+    "set": {
+     "lat": 31.2381012,
+     "lng": 34.7929965
+    }
+   }
+  },
+  {
+   "section": "2026-10-01-thailand",
+   "cid": "th-004",
+   "candidate_name": "Stonegoat Climbing Gym (S69)",
+   "existing": {
+    "id": "seed-1752",
+    "name": "Stonegoat Climbing Gym",
+    "address": "36/3 Sukhumvit 69 Alley, Phra Khanong Nuea, Watthana, Bangkok 10110, Thailand",
+    "lat": 13.722079,
+    "lng": 100.5986048,
+    "h": "6e71281d99f7a698"
+   },
+   "proposed": {
+    "lat": 13.7167551,
+    "lng": 100.5930329
+   },
+   "distance_m": 844,
+   "coord_source": {
+    "source": "SG",
+    "method": "official-map",
+    "ref": "https://maps.app.goo.gl/4F3dNGJMZv5Bjfqv9",
+    "source_kind": "official-site",
+    "source_url": "https://www.stonegoatclimb.com/"
+   },
+   "coord_precision": "building",
+   "review_reason": "Same gym: existing seed-1752 Stonegoat Climbing Gym has the identical address (36/3 Sukhumvit 69 Alley, Phra Khanong Nuea). SG branch page shows S69 open daily 10:00-22:00. The candidate pin (13.71676,100.59303) is the Google place pin Stonegoat Climbing Gym (S69) linked from the gym's own branch page, and the existing pin (13.72208,100.59860) is 844 m away, so the sourced pin is clearly better. The PARQ (th-005) is a separate branch.",
+   "draft_update_record": {
+    "intent": "update",
+    "id": "seed-1752",
+    "expect_h": "6e71281d99f7a698",
+    "reason": "Location from regional research 2026-10-01-thailand (th-004): official-map pin https://maps.app.goo.gl/4F3dNGJMZv5Bjfqv9; existing pin 844 m off.",
+    "source": "research:2026-10-01-thailand#th-004",
+    "set": {
+     "lat": 13.7167551,
+     "lng": 100.5930329
+    }
+   }
+  },
+  {
+   "section": "2026-10-01-israel",
+   "cid": "il-009",
+   "candidate_name": "Monkeys Netanya",
+   "existing": {
+    "id": "seed-1596",
+    "name": "Monkeys climbing gym",
+    "address": "Nitsba Poleg Complex, Netanya, Israel",
+    "lat": 32.2801293,
+    "lng": 34.8624999,
+    "h": "51f61c2814c50356"
+   },
+   "proposed": {
+    "lat": 32.2766577,
+    "lng": 34.8618323
+   },
+   "distance_m": 391,
+   "coord_source": {
+    "source": "S5",
+    "method": "official-map",
+    "ref": "https://www.google.com/maps/place/Monkeys+Climbing+Gym/@32.2766622,34.8592574 (data !3d32.2766577!4d34.8618323)",
+    "source_kind": "official-site",
+    "source_url": "https://www.monkeysclimbinggym.co.il/"
+   },
+   "coord_precision": "building",
+   "review_reason": "Same gym: seed-1596 Monkeys climbing gym is in the Nitsba Poleg complex, Netanya; the candidate is the same gym on its own site S5 (Netzba Poleg complex, floor 1) 391 m from the seed pin. Official Google place pin 32.2766577,34.8618323 agrees with OSM node/6745840987 (Monkeys, climbing:boulder=yes) within 32 m, so the sourced pin is better and the seed pin is over 150 m off. The Ashdod Monkeys branch on the federation list is a separate unconfirmed gym and not covered.",
+   "draft_update_record": {
+    "intent": "update",
+    "id": "seed-1596",
+    "expect_h": "51f61c2814c50356",
+    "reason": "Location from regional research 2026-10-01-israel (il-009): official-map pin https://www.google.com/maps/place/Monkeys+Climbing+Gym/@32.2766622,34.8592574 (data !3d32.2766577!4d34.8618323); existing pin 391 m off.",
+    "source": "research:2026-10-01-israel#il-009",
+    "set": {
+     "lat": 32.2766577,
+     "lng": 34.8618323
+    }
+   }
+  },
+  {
+   "section": "2026-10-01-sweden",
+   "cid": "se-010",
+   "candidate_name": "Klätterfabriken",
+   "existing": {
+    "id": "seed-1104",
+    "name": "Klätterfabriken High Sports",
+    "address": "Fabriksgatan 38-42, Göteborg, Sweden",
+    "lat": 57.6991199,
+    "lng": 11.9944752,
+    "h": "a49d0fd748bca078"
+   },
+   "proposed": {
+    "lat": 57.7010961,
+    "lng": 11.9938563
+   },
+   "distance_m": 223,
+   "coord_source": {
+    "source": "OSM",
+    "method": "osm",
+    "ref": "node/3715375091",
+    "source_kind": "map-data",
+    "source_url": "https://www.openstreetmap.org/"
+   },
+   "coord_precision": "building",
+   "review_reason": "Same gym: Klätterfabriken (Highsport) at Fabriksgatan 38-42 is Klätterfabriken High Sports in seed-1104, same address. Existing pin is 223 m from the candidate pin, which is OSM node 3715375091 and agrees with the gym's own site pin (S HIGHSPORT), so location-update is justified.",
+   "draft_update_record": {
+    "intent": "update",
+    "id": "seed-1104",
+    "expect_h": "a49d0fd748bca078",
+    "reason": "Location from regional research 2026-10-01-sweden (se-010): osm pin node/3715375091; existing pin 223 m off.",
+    "source": "research:2026-10-01-sweden#se-010",
+    "set": {
+     "lat": 57.7010961,
+     "lng": 11.9938563
+    }
+   }
+  }
+ ]
+}
