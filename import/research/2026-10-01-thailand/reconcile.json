@@ -1,0 +1,485 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-01-thailand",
+ "inputs": {
+  "section_sha256": "f3cbc17bee2f6a738c3bec9dc628fbd50d16886083f831b8b68a2033ad1a3b24",
+  "sources_sha256": "5d66ef9e6db78c0848837e1ce8911e44de5505b53e0e9ccf3108012bbf3d89fa",
+  "candidates_sha256": "6f4453b22c2e9056e7a27c59174a9b4ace88f767c6be73c6010a99deec2531ed",
+  "index": {
+   "sha256": "8dbddf7924c219a236c2ffff9c8fb005dd02d1dcfe61640f8817d49fb2484af2",
+   "count": 2127
+  },
+  "staged_batches_compared": [],
+  "other_sections_compared": [
+   {
+    "id": "2026-09-30-new-zealand",
+    "candidates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   },
+   {
+    "id": "2026-10-01-india",
+    "candidates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   },
+   {
+    "id": "2026-10-01-indonesia",
+    "candidates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   },
+   {
+    "id": "2026-10-01-israel",
+    "candidates_sha256": "bd15c2bda22819a08fcaa57767fc30dfce0faf8601e4f7f00a6e625ef1a3ad6c"
+   },
+   {
+    "id": "2026-10-01-russia",
+    "candidates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   },
+   {
+    "id": "2026-10-01-singapore",
+    "candidates_sha256": "d2f281968a4e4f4e5096349b7af0ee0f574997f9d64bb4319dee50df682cd789"
+   },
+   {
+    "id": "2026-10-01-sweden",
+    "candidates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   },
+   {
+    "id": "2026-10-01-switzerland",
+    "candidates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   },
+   {
+    "id": "2026-10-01-turkey",
+    "candidates_sha256": "e22aa3825cdc53549d2b42f235b5a6df78f2f94d2fdc0d8d5bea0026bab1af87"
+   }
+  ]
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 16,
+  "ready": 3,
+  "review": 8,
+  "blocked": 4,
+  "existing": 1,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "th-001",
+   "line": 1,
+   "name": "Balance Climbing Rama 9",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-5d2b19809d"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate th-002 \"Balance Prime\": related names \"Balance Climbing\" / \"Balance Prime\" 6287 m apart",
+     "ids": [
+      "th-002"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate th-002 has the same website",
+     "ids": [
+      "th-002"
+     ]
+    }
+   ],
+   "review_ids": [
+    "th-002"
+   ]
+  },
+  {
+   "cid": "th-002",
+   "line": 2,
+   "name": "Balance Prime",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-ee6ea57df4"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate th-001 \"Balance Climbing Rama 9\": related names \"Balance Prime\" / \"Balance Climbing\" 6287 m apart",
+     "ids": [
+      "th-001"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate th-001 has the same website",
+     "ids": [
+      "th-001"
+     ]
+    }
+   ],
+   "review_ids": [
+    "th-001"
+   ]
+  },
+  {
+   "cid": "th-003",
+   "line": 3,
+   "name": "Eagle Eye Climbing Gym",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-580b85b8e7"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "th-004",
+   "line": 4,
+   "name": "Stonegoat Climbing Gym (S69)",
+   "class": "existing",
+   "suggested": "same-as seed-1752",
+   "importer": {
+    "class": "existing",
+    "id": "seed-1752",
+    "match": {
+     "id": "seed-1752",
+     "name": "Stonegoat Climbing Gym",
+     "reason": "same-name",
+     "dist_m": 844
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-1752 but content differs (name, suburb, lat, lng, address); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1752 \"Stonegoat Climbing Gym\": same-name (\"Stonegoat Climbing Gym (S69)\" / \"Stonegoat Climbing Gym\", 844 m)",
+     "ids": [
+      "seed-1752"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "candidate th-005 \"Stonegoat Climbing Gym (The PARQ)\": same-name-but-pin-differs (\"Stonegoat Climbing Gym (S69)\" / \"Stonegoat Climbing Gym (The PARQ)\", 3755 m)",
+     "ids": [
+      "th-005"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "seed-1752",
+    "th-005"
+   ]
+  },
+  {
+   "cid": "th-005",
+   "line": 5,
+   "name": "Stonegoat Climbing Gym (The PARQ)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-97582d8b30"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1752 same-name-but-pin-differs 4329 m",
+     "ids": [
+      "seed-1752"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1752 \"Stonegoat Climbing Gym\": same-name-but-pin-differs (\"Stonegoat Climbing Gym (The PARQ)\" / \"Stonegoat Climbing Gym\", 4329 m)",
+     "ids": [
+      "seed-1752"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "candidate th-004 \"Stonegoat Climbing Gym (S69)\": same-name-but-pin-differs (\"Stonegoat Climbing Gym (The PARQ)\" / \"Stonegoat Climbing Gym (S69)\", 3755 m)",
+     "ids": [
+      "th-004"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "seed-1752",
+    "th-004"
+   ]
+  },
+  {
+   "cid": "th-006",
+   "line": 6,
+   "name": "Urban Playground Climbing",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-0d01dd75d8"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1754 same-name-but-pin-differs 1248 m",
+     "ids": [
+      "seed-1754"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1754 \"Urban Playground Climbing\": same-name-but-pin-differs (\"Urban Playground Climbing\" / \"Urban Playground Climbing\", 1248 m)",
+     "ids": [
+      "seed-1754"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-1754"
+   ]
+  },
+  {
+   "cid": "th-007",
+   "line": 7,
+   "name": "Rock Domain Climbing Gym",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-60397509dc"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1695 same-name-but-pin-differs 4516 m",
+     "ids": [
+      "seed-1695"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1695 \"Rock Domain Climbing Gym\": same-name-but-pin-differs (\"Rock Domain Climbing Gym\" / \"Rock Domain Climbing Gym\", 4516 m)",
+     "ids": [
+      "seed-1695"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-1695"
+   ]
+  },
+  {
+   "cid": "th-008",
+   "line": 8,
+   "name": "Climb Central Bangkok",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-c99ae32515"
+   },
+   "blockers": [
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "th-009",
+   "line": 9,
+   "name": "Boulder Planet Thailand (Rangsit)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-c6bdfc5509"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "th-010",
+   "line": 10,
+   "name": "Bloc City Climbing Gym",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-183d2f9f5a"
+   },
+   "blockers": [
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "th-011",
+   "line": 11,
+   "name": "Progression Vertical Climbing Gym",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-0bfa4d9c5f"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-1698 \"Progression Vertical\": related names \"Progression Vertical Climbing Gym\" / \"Progression Vertical\" 4245 m apart",
+     "ids": [
+      "seed-1698"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-1698"
+   ]
+  },
+  {
+   "cid": "th-012",
+   "line": 12,
+   "name": "REBEL Rock Climbing",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-b62e09ace5"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1700 same-name-but-pin-differs 4509 m",
+     "ids": [
+      "seed-1700"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1700 \"Rebel Rock Climbing\": same-name-but-pin-differs (\"REBEL Rock Climbing\" / \"Rebel Rock Climbing\", 4509 m)",
+     "ids": [
+      "seed-1700"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-1700"
+   ]
+  },
+  {
+   "cid": "th-013",
+   "line": 13,
+   "name": "The Bunker Koh Tao",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-aaf76529ff"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "th-014",
+   "line": 14,
+   "name": "UPSIDE Bouldering Gym",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-3dc8f21b2b"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "th-015",
+   "line": 15,
+   "name": "Ascentory",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-b7776e904e"
+   },
+   "blockers": [
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "th-016",
+   "line": 16,
+   "name": "No Gravity Indoor Climbing",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-93202fcc13"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-1697 \"No Gravity\": related names \"No Gravity Indoor Climbing\" / \"No Gravity\" 1454 m apart",
+     "ids": [
+      "seed-1697"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "seed-1697"
+   ]
+  }
+ ],
+ "reconcile_sha256": "f72e3da5ae9549947d1e4e47b3af41755df5bb75c1d1e1cf63355d0dd7ee306e"
+}

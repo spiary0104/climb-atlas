@@ -1,0 +1,311 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-01-indonesia",
+ "inputs": {
+  "section_sha256": "7b87708926258f2e366d5c3dbf68157d0ef81443fbf293585e24c98ecd68548c",
+  "sources_sha256": "eaad35c5defd6849661af29de5c93aa93b26b0e5b92138611085e4fc52f81b03",
+  "candidates_sha256": "568112f4b3bfa8aa519d30e0f7699278b041d3c1873d9e0daf330144dcd2bc26",
+  "index": {
+   "sha256": "8dbddf7924c219a236c2ffff9c8fb005dd02d1dcfe61640f8817d49fb2484af2",
+   "count": 2127
+  },
+  "staged_batches_compared": [],
+  "other_sections_compared": [
+   {
+    "id": "2026-09-30-new-zealand",
+    "candidates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   },
+   {
+    "id": "2026-10-01-india",
+    "candidates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   },
+   {
+    "id": "2026-10-01-israel",
+    "candidates_sha256": "bd15c2bda22819a08fcaa57767fc30dfce0faf8601e4f7f00a6e625ef1a3ad6c"
+   },
+   {
+    "id": "2026-10-01-russia",
+    "candidates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   },
+   {
+    "id": "2026-10-01-singapore",
+    "candidates_sha256": "d2f281968a4e4f4e5096349b7af0ee0f574997f9d64bb4319dee50df682cd789"
+   },
+   {
+    "id": "2026-10-01-sweden",
+    "candidates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   },
+   {
+    "id": "2026-10-01-switzerland",
+    "candidates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   },
+   {
+    "id": "2026-10-01-thailand",
+    "candidates_sha256": "6f4453b22c2e9056e7a27c59174a9b4ace88f767c6be73c6010a99deec2531ed"
+   },
+   {
+    "id": "2026-10-01-turkey",
+    "candidates_sha256": "e22aa3825cdc53549d2b42f235b5a6df78f2f94d2fdc0d8d5bea0026bab1af87"
+   }
+  ]
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 9,
+  "ready": 0,
+  "review": 7,
+  "blocked": 2,
+  "existing": 0,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "id-001",
+   "line": 1,
+   "name": "Boulder Planet Indonesia",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-f9181ea448"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "id-002",
+   "line": 2,
+   "name": "Indoclimb FX Sudirman",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-7c8c2678c1"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate id-003 has the same website",
+     "ids": [
+      "id-003"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate id-004 has the same website",
+     "ids": [
+      "id-004"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "id-003",
+    "id-004"
+   ]
+  },
+  {
+   "cid": "id-003",
+   "line": 3,
+   "name": "Indoclimb Kuningan City",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-c067efb2d5"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate id-002 has the same website",
+     "ids": [
+      "id-002"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate id-004 has the same website",
+     "ids": [
+      "id-004"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "id-002",
+    "id-004"
+   ]
+  },
+  {
+   "cid": "id-004",
+   "line": 4,
+   "name": "Indoclimb Lippo Mall Kemang",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-d8d207d948"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate id-002 has the same website",
+     "ids": [
+      "id-002"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate id-003 has the same website",
+     "ids": [
+      "id-003"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "id-002",
+    "id-003"
+   ]
+  },
+  {
+   "cid": "id-005",
+   "line": 5,
+   "name": "Dreamstone Boulders Alam Sutera",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-62d88a54c8"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "id-006",
+   "line": 6,
+   "name": "Goodang Bouldering",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-0097d36f32"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "id-007",
+   "line": 7,
+   "name": "Bali Boulder",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-dd2dc74add"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate id-009 \"Bali Climbing Bouldering Gym Canggu\": related names \"Bali Boulder\" / \"Bali Climbing Bouldering Gym Canggu\" 14500 m apart",
+     "ids": [
+      "id-009"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "id-009"
+   ]
+  },
+  {
+   "cid": "id-008",
+   "line": 8,
+   "name": "Boulder Climbing Gym Boxies 123",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-69f854c95a"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "id-009",
+   "line": 9,
+   "name": "Bali Climbing Bouldering Gym Canggu",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-c250ff41e7"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate id-007 \"Bali Boulder\": related names \"Bali Climbing Bouldering Gym Canggu\" / \"Bali Boulder\" 14500 m apart",
+     "ids": [
+      "id-007"
+     ]
+    }
+   ],
+   "review_ids": [
+    "id-007"
+   ]
+  }
+ ],
+ "reconcile_sha256": "c9270c8cf423b31ef8b96605df286638c13f60648b81230fecc4683c7d1b9fde"
+}

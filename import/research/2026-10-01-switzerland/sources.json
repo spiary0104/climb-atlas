@@ -1,0 +1,502 @@
+{
+ "schema_version": 1,
+ "sources": {
+  "OSM": {
+   "kind": "map-data",
+   "title": "OpenStreetMap (Overpass extract 2026-10-01)",
+   "url": "https://www.openstreetmap.org/",
+   "language": "en",
+   "accessed": "2026-10-01"
+  },
+  "S1": {
+   "kind": "chain-store-list",
+   "title": "Minimum website",
+   "url": "https://minimum.ch/",
+   "language": "de",
+   "accessed": "2026-10-01"
+  },
+  "S2": {
+   "kind": "official-site",
+   "title": "Mitō Bouldering Zürich website",
+   "url": "https://mito-bouldering.ch/",
+   "language": "de",
+   "accessed": "2026-10-01"
+  },
+  "S3": {
+   "kind": "official-site",
+   "title": "GrindelBoulder website",
+   "url": "https://grindelboulder.ch/",
+   "language": "de",
+   "accessed": "2026-10-01"
+  },
+  "S4": {
+   "kind": "chain-store-list",
+   "title": "Boulderlounge website",
+   "url": "https://boulderlounge.ch/",
+   "language": "de",
+   "accessed": "2026-10-01"
+  },
+  "S5": {
+   "kind": "chain-store-list",
+   "title": "Kletterzentrum Gaswerk website",
+   "url": "https://kletterzentrum.com/",
+   "language": "de",
+   "accessed": "2026-10-01"
+  },
+  "S6": {
+   "kind": "official-site",
+   "title": "Boulderhalle Adliswil website",
+   "url": "https://climbing.ch/",
+   "language": "de",
+   "accessed": "2026-10-01"
+  },
+  "S7": {
+   "kind": "official-site",
+   "title": "GRIFFIG Kletterhalle Uster website",
+   "url": "https://griffig.com/",
+   "language": "de",
+   "accessed": "2026-10-01"
+  },
+  "S8": {
+   "kind": "official-site",
+   "title": "Kletterhalle 6a plus website",
+   "url": "https://sechsaplus.ch/",
+   "language": "de",
+   "accessed": "2026-10-01"
+  },
+  "S9": {
+   "kind": "official-site",
+   "title": "BLOCKFELD Boulderpark website",
+   "url": "https://blockfeld.ch/",
+   "language": "de",
+   "accessed": "2026-10-01"
+  },
+  "S10": {
+   "kind": "official-site",
+   "title": "ARANEA+ Kletterzentrum website",
+   "url": "https://aranea.ch/",
+   "language": "de",
+   "accessed": "2026-10-01"
+  },
+  "S11": {
+   "kind": "official-site",
+   "title": "thurclimb website",
+   "url": "https://thurclimb.ch/",
+   "language": "de",
+   "accessed": "2026-10-01"
+  },
+  "S12": {
+   "kind": "official-site",
+   "title": "Kletterhalle SAC Bodan website",
+   "url": "https://sac-bodan.ch/",
+   "language": "de",
+   "accessed": "2026-10-01"
+  },
+  "S13": {
+   "kind": "official-site",
+   "title": "Kletterzentrum St. Gallen website",
+   "url": "https://kletterzentrum-sg.ch/",
+   "language": "de",
+   "accessed": "2026-10-01"
+  },
+  "S14": {
+   "kind": "official-site",
+   "title": "Quergang website",
+   "url": "https://quergang.ch/",
+   "language": "de",
+   "accessed": "2026-10-01"
+  },
+  "S15": {
+   "kind": "official-site",
+   "title": "Sparta Bouldering website",
+   "url": "https://sparta-bouldering.com/",
+   "language": "de",
+   "accessed": "2026-10-01"
+  },
+  "S16": {
+   "kind": "official-site",
+   "title": "Boulder Box website",
+   "url": "https://boulderbox.ch/",
+   "language": "de",
+   "accessed": "2026-10-01"
+  },
+  "S17": {
+   "kind": "official-site",
+   "title": "Kletterhalle Appenzeller Park website",
+   "url": "https://kletterhalle-herisau.ch/",
+   "language": "de",
+   "accessed": "2026-10-01"
+  },
+  "S18": {
+   "kind": "official-site",
+   "title": "Kletterzentrum Ap'n Daun website",
+   "url": "https://kletterzentrumchur.ch/",
+   "language": "de",
+   "accessed": "2026-10-01"
+  },
+  "S19": {
+   "kind": "official-site",
+   "title": "Quadrel website",
+   "url": "https://quadrel.ch/",
+   "language": "de",
+   "accessed": "2026-10-01"
+  },
+  "S20": {
+   "kind": "official-site",
+   "title": "Kletterhalle Rätikon website",
+   "url": "https://kletterhalle-raetikon.ch/",
+   "language": "de",
+   "accessed": "2026-10-01"
+  },
+  "S21": {
+   "kind": "official-site",
+   "title": "bimano boulder website",
+   "url": "https://bimano.ch/",
+   "language": "de",
+   "accessed": "2026-10-01"
+  },
+  "S22": {
+   "kind": "official-site",
+   "title": "BoulderBad Muubeeri website",
+   "url": "https://muubeeri.ch/",
+   "language": "de",
+   "accessed": "2026-10-01"
+  },
+  "S23": {
+   "kind": "official-site",
+   "title": "O'Bloc website",
+   "url": "https://obloc.ch/",
+   "language": "de",
+   "accessed": "2026-10-01"
+  },
+  "S24": {
+   "kind": "official-site",
+   "title": "boulderkino website",
+   "url": "https://boulderkino.ch/",
+   "language": "de",
+   "accessed": "2026-10-01"
+  },
+  "S25": {
+   "kind": "official-site",
+   "title": "griffbar Boulderwand Thun website",
+   "url": "https://griffbar.ch/",
+   "language": "de",
+   "accessed": "2026-10-01"
+  },
+  "S26": {
+   "kind": "official-site",
+   "title": "Climbox Langnau website",
+   "url": "https://climbox.ch/",
+   "language": "de",
+   "accessed": "2026-10-01"
+  },
+  "S27": {
+   "kind": "official-site",
+   "title": "BoulderWorb website",
+   "url": "https://boulderworb.ch/",
+   "language": "de",
+   "accessed": "2026-10-01"
+  },
+  "S28": {
+   "kind": "official-site",
+   "title": "Boulderpark Schwarzenburg website",
+   "url": "https://boulderpark.ch/",
+   "language": "de",
+   "accessed": "2026-10-01"
+  },
+  "S29": {
+   "kind": "official-site",
+   "title": "BoulderSchüür Lenk website",
+   "url": "https://boulderschuer.ch/",
+   "language": "de",
+   "accessed": "2026-10-01"
+  },
+  "S30": {
+   "kind": "official-site",
+   "title": "Manola Boulder website",
+   "url": "https://manola-boulder.ch/",
+   "language": "de",
+   "accessed": "2026-10-01"
+  },
+  "S31": {
+   "kind": "official-site",
+   "title": "BoulderBurg website",
+   "url": "https://boulderburg.ch/",
+   "language": "de",
+   "accessed": "2026-10-01"
+  },
+  "S32": {
+   "kind": "official-site",
+   "title": "Kletterhalle Haslital website",
+   "url": "https://kletterhalle-haslital.ch/",
+   "language": "de",
+   "accessed": "2026-10-01"
+  },
+  "S33": {
+   "kind": "official-site",
+   "title": "GRIP Climbing website",
+   "url": "https://gripclimbing.ch/",
+   "language": "de",
+   "accessed": "2026-10-01"
+  },
+  "S34": {
+   "kind": "official-site",
+   "title": "Magnet Trainingszentrum für Sportkletterer website",
+   "url": "https://klettern-bern.ch/",
+   "language": "de",
+   "accessed": "2026-10-01"
+  },
+  "S35": {
+   "kind": "official-site",
+   "title": "Forum Sumiswald website",
+   "url": "https://forum-sumiswald.ch/",
+   "language": "de",
+   "accessed": "2026-10-01"
+  },
+  "S36": {
+   "kind": "official-site",
+   "title": "BOUBA Boulder Baden website",
+   "url": "https://boulder-baden.ch/",
+   "language": "de",
+   "accessed": "2026-10-01"
+  },
+  "S37": {
+   "kind": "official-site",
+   "title": "Kraftreaktor Lenzburg website",
+   "url": "https://kraftreaktor.ch/",
+   "language": "de",
+   "accessed": "2026-10-01"
+  },
+  "S38": {
+   "kind": "official-site",
+   "title": "Kraftreaktor Aarau website",
+   "url": "https://kraftreaktor-aarau.ch/",
+   "language": "de",
+   "accessed": "2026-10-01"
+  },
+  "S39": {
+   "kind": "official-site",
+   "title": "Blockchäfer website",
+   "url": "https://blockchaefer.ch/",
+   "language": "de",
+   "accessed": "2026-10-01"
+  },
+  "S40": {
+   "kind": "official-site",
+   "title": "ISATIS Kletterhalle website",
+   "url": "https://isatis.ag/",
+   "language": "de",
+   "accessed": "2026-10-01"
+  },
+  "S41": {
+   "kind": "official-site",
+   "title": "bimano solothurn website",
+   "url": "https://bimanosolothurn.ch/",
+   "language": "de",
+   "accessed": "2026-10-01"
+  },
+  "S42": {
+   "kind": "official-site",
+   "title": "Kletterhalle 7 website",
+   "url": "https://kletterhalle7.ch/",
+   "language": "de",
+   "accessed": "2026-10-01"
+  },
+  "S43": {
+   "kind": "official-site",
+   "title": "ELYS Boulderloft website",
+   "url": "https://boulderloft.ch/",
+   "language": "de",
+   "accessed": "2026-10-01"
+  },
+  "S44": {
+   "kind": "official-site",
+   "title": "B2 Boulders & Bar website",
+   "url": "https://bzwei.ch/",
+   "language": "de",
+   "accessed": "2026-10-01"
+  },
+  "S45": {
+   "kind": "official-site",
+   "title": "Hebdi website",
+   "url": "https://hebdi.rocks/",
+   "language": "de",
+   "accessed": "2026-10-01"
+  },
+  "S46": {
+   "kind": "official-site",
+   "title": "CITY BOULDER website",
+   "url": "https://cityboulder.ch/",
+   "language": "de",
+   "accessed": "2026-10-01"
+  },
+  "S47": {
+   "kind": "official-site",
+   "title": "Pilatus Indoor website",
+   "url": "https://pilatusindoor.ch/",
+   "language": "de",
+   "accessed": "2026-10-01"
+  },
+  "S48": {
+   "kind": "official-site",
+   "title": "Boulder Arena Sursee website",
+   "url": "https://boulder-arena.ch/",
+   "language": "de",
+   "accessed": "2026-10-01"
+  },
+  "S49": {
+   "kind": "official-site",
+   "title": "Bouldergate Ettiswil website",
+   "url": "https://bouldergate.ch/",
+   "language": "de",
+   "accessed": "2026-10-01"
+  },
+  "S50": {
+   "kind": "official-site",
+   "title": "Kletterhalle Wolhusen website",
+   "url": "https://sac-entlebuch.ch/",
+   "language": "de",
+   "accessed": "2026-10-01"
+  },
+  "S51": {
+   "kind": "official-site",
+   "title": "BoulderBaar website",
+   "url": "https://boulderbaar.ch/",
+   "language": "de",
+   "accessed": "2026-10-01"
+  },
+  "S52": {
+   "kind": "official-site",
+   "title": "Spinnerei Indoor website",
+   "url": "https://spinnerei-indoor.ch/",
+   "language": "de",
+   "accessed": "2026-10-01"
+  },
+  "S53": {
+   "kind": "official-site",
+   "title": "Granit Indoor website",
+   "url": "https://granitindoor.ch/",
+   "language": "de",
+   "accessed": "2026-10-01"
+  },
+  "S54": {
+   "kind": "official-site",
+   "title": "Orbit Interlaken website",
+   "url": "https://orbit-interlaken.ch/",
+   "language": "de",
+   "accessed": "2026-10-01"
+  },
+  "S55": {
+   "kind": "official-site",
+   "title": "Momentum Olten website",
+   "url": "https://momentumolten.ch/",
+   "language": "de",
+   "accessed": "2026-10-01"
+  },
+  "S56": {
+   "kind": "chain-store-list",
+   "title": "Planet Climbing website",
+   "url": "https://planetclimbing.ch/",
+   "language": "fr",
+   "accessed": "2026-10-01"
+  },
+  "S57": {
+   "kind": "official-site",
+   "title": "GLKB Boulderhalle (lintharena) website",
+   "url": "https://lintharena.ch/",
+   "language": "de",
+   "accessed": "2026-10-01"
+  },
+  "S58": {
+   "kind": "chain-store-list",
+   "title": "Grimper.ch website",
+   "url": "https://grimper.ch/",
+   "language": "fr",
+   "accessed": "2026-10-01"
+  },
+  "S59": {
+   "kind": "chain-store-list",
+   "title": "TOTEM website",
+   "url": "https://totem.ch/",
+   "language": "fr",
+   "accessed": "2026-10-01"
+  },
+  "S60": {
+   "kind": "official-site",
+   "title": "Le Cube website",
+   "url": "https://lecube.ch/",
+   "language": "fr",
+   "accessed": "2026-10-01"
+  },
+  "S61": {
+   "kind": "official-site",
+   "title": "La Pile website",
+   "url": "https://lapile.ch/",
+   "language": "fr",
+   "accessed": "2026-10-01"
+  },
+  "S62": {
+   "kind": "official-site",
+   "title": "Gecko Escalade website",
+   "url": "https://geckoescalade.com/",
+   "language": "fr",
+   "accessed": "2026-10-01"
+  },
+  "S63": {
+   "kind": "official-site",
+   "title": "Escalade Chavornay website",
+   "url": "https://escalade-chavornay.ch/",
+   "language": "fr",
+   "accessed": "2026-10-01"
+  },
+  "S64": {
+   "kind": "official-site",
+   "title": "Pan de Vevey website",
+   "url": "https://lepandevevey.org/",
+   "language": "fr",
+   "accessed": "2026-10-01"
+  },
+  "S65": {
+   "kind": "chain-store-list",
+   "title": "Vertic-Halle website",
+   "url": "https://vertic-halle.ch/",
+   "language": "fr",
+   "accessed": "2026-10-01"
+  },
+  "S66": {
+   "kind": "official-site",
+   "title": "Structure Pan d'Escalade website",
+   "url": "https://panstructure.ch/",
+   "language": "fr",
+   "accessed": "2026-10-01"
+  },
+  "S67": {
+   "kind": "official-site",
+   "title": "C+ Urban Climbing website",
+   "url": "https://cplus-climbing.ch/",
+   "language": "fr",
+   "accessed": "2026-10-01"
+  },
+  "S68": {
+   "kind": "official-site",
+   "title": "L'Entrepôt website",
+   "url": "https://lentrepot.ch/",
+   "language": "fr",
+   "accessed": "2026-10-01"
+  },
+  "S69": {
+   "kind": "official-site",
+   "title": "BlocUp website",
+   "url": "https://grimpebloc.ch/",
+   "language": "fr",
+   "accessed": "2026-10-01"
+  },
+  "S70": {
+   "kind": "official-site",
+   "title": "Alpha Boulder website",
+   "url": "https://alphaboulder.ch/",
+   "language": "it",
+   "accessed": "2026-10-01"
+  }
+ }
+}

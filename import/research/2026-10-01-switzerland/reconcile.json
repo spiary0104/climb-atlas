@@ -1,0 +1,2127 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-01-switzerland",
+ "inputs": {
+  "section_sha256": "d8ff2cbc52dc62cecd84790a63ceed73f4d853277fe789ae7bb70fa7417e389d",
+  "sources_sha256": "396bb3a8ce616da732c1702e5e37bd2a6887d8fb9829f070a20032b22dd5fcf1",
+  "candidates_sha256": "85694a81389a5b63c9baa5a7db6f7f4061a7c14793f839faacb580952591b46f",
+  "index": {
+   "sha256": "8dbddf7924c219a236c2ffff9c8fb005dd02d1dcfe61640f8817d49fb2484af2",
+   "count": 2127
+  },
+  "staged_batches_compared": [],
+  "other_sections_compared": [
+   {
+    "id": "2026-09-30-new-zealand",
+    "candidates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   },
+   {
+    "id": "2026-10-01-india",
+    "candidates_sha256": "a1050a21b82070ba5fbb827d91988b90d178a4a10014190e7cee870d2e96bd70"
+   },
+   {
+    "id": "2026-10-01-indonesia",
+    "candidates_sha256": "568112f4b3bfa8aa519d30e0f7699278b041d3c1873d9e0daf330144dcd2bc26"
+   },
+   {
+    "id": "2026-10-01-israel",
+    "candidates_sha256": "bd15c2bda22819a08fcaa57767fc30dfce0faf8601e4f7f00a6e625ef1a3ad6c"
+   },
+   {
+    "id": "2026-10-01-russia",
+    "candidates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   },
+   {
+    "id": "2026-10-01-singapore",
+    "candidates_sha256": "d2f281968a4e4f4e5096349b7af0ee0f574997f9d64bb4319dee50df682cd789"
+   },
+   {
+    "id": "2026-10-01-sweden",
+    "candidates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   },
+   {
+    "id": "2026-10-01-thailand",
+    "candidates_sha256": "6f4453b22c2e9056e7a27c59174a9b4ace88f767c6be73c6010a99deec2531ed"
+   },
+   {
+    "id": "2026-10-01-turkey",
+    "candidates_sha256": "e22aa3825cdc53549d2b42f235b5a6df78f2f94d2fdc0d8d5bea0026bab1af87"
+   }
+  ]
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 87,
+  "ready": 41,
+  "review": 44,
+  "blocked": 2,
+  "existing": 0,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "ch-001",
+   "line": 1,
+   "name": "Minimum Flüela",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-a11b5ec1ed"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1292 renamed-or-related-name-nearby 2 m",
+     "ids": [
+      "seed-1292"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1292 \"Minimum - Flüela Zürich\": renamed-or-related-name-nearby (\"Minimum Flüela\" / \"Minimum - Flüela Zürich\", 2 m)",
+     "ids": [
+      "seed-1292"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-002 has the same website",
+     "ids": [
+      "ch-002"
+     ]
+    }
+   ],
+   "review_ids": [
+    "ch-002",
+    "seed-1292"
+   ]
+  },
+  {
+   "cid": "ch-002",
+   "line": 2,
+   "name": "Minimum Leutsch",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-e6ae2db053"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1293 renamed-or-related-name-nearby 10 m",
+     "ids": [
+      "seed-1293"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1293 \"Minimum - Zürich Leutsch\": renamed-or-related-name-nearby (\"Minimum Leutsch\" / \"Minimum - Zürich Leutsch\", 10 m)",
+     "ids": [
+      "seed-1293"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-001 has the same website",
+     "ids": [
+      "ch-001"
+     ]
+    }
+   ],
+   "review_ids": [
+    "ch-001",
+    "seed-1293"
+   ]
+  },
+  {
+   "cid": "ch-003",
+   "line": 3,
+   "name": "Mitō Bouldering Zürich",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-f945e55c39"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is opening-soon"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "ch-004",
+   "line": 4,
+   "name": "GrindelBoulder",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-14c2acd7c6"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ch-005",
+   "line": 5,
+   "name": "Boulderlounge Schlieren",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-07480139ca"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate ch-006 has the same website",
+     "ids": [
+      "ch-006"
+     ]
+    }
+   ],
+   "review_ids": [
+    "ch-006"
+   ]
+  },
+  {
+   "cid": "ch-006",
+   "line": 6,
+   "name": "Boulderlounge St. Gallen",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-d6954fb26c"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate ch-017 \"Kletterzentrum St. Gallen\": related names \"Boulderlounge St. Gallen\" / \"Kletterzentrum St. Gallen\" 2397 m apart",
+     "ids": [
+      "ch-017"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-005 has the same website",
+     "ids": [
+      "ch-005"
+     ]
+    }
+   ],
+   "review_ids": [
+    "ch-005",
+    "ch-017"
+   ]
+  },
+  {
+   "cid": "ch-007",
+   "line": 7,
+   "name": "Kletterzentrum Gaswerk Schlieren",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-66e5d68350"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate ch-008 has the same website",
+     "ids": [
+      "ch-008"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-009 has the same website",
+     "ids": [
+      "ch-009"
+     ]
+    }
+   ],
+   "review_ids": [
+    "ch-008",
+    "ch-009"
+   ]
+  },
+  {
+   "cid": "ch-008",
+   "line": 8,
+   "name": "Kletterzentrum Gaswerk Greifensee",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-1281064e8f"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate ch-007 has the same website",
+     "ids": [
+      "ch-007"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-009 has the same website",
+     "ids": [
+      "ch-009"
+     ]
+    }
+   ],
+   "review_ids": [
+    "ch-007",
+    "ch-009"
+   ]
+  },
+  {
+   "cid": "ch-009",
+   "line": 9,
+   "name": "Kletterzentrum Gaswerk Wädenswil",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-028ee01351"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate ch-007 has the same website",
+     "ids": [
+      "ch-007"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-008 has the same website",
+     "ids": [
+      "ch-008"
+     ]
+    }
+   ],
+   "review_ids": [
+    "ch-007",
+    "ch-008"
+   ]
+  },
+  {
+   "cid": "ch-010",
+   "line": 10,
+   "name": "Boulderhalle Adliswil",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-1c53e4ff94"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ch-011",
+   "line": 11,
+   "name": "GRIFFIG Kletterhalle Uster",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-663777c19b"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ch-012",
+   "line": 12,
+   "name": "Kletterhalle 6a plus",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-872aca3c9f"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1298 renamed-or-related-name-nearby 9 m",
+     "ids": [
+      "seed-1298"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1298 \"6a plus - Winterthur\": renamed-or-related-name-nearby (\"Kletterhalle 6a plus\" / \"6a plus - Winterthur\", 9 m)",
+     "ids": [
+      "seed-1298"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-1298"
+   ]
+  },
+  {
+   "cid": "ch-013",
+   "line": 13,
+   "name": "BLOCKFELD Boulderpark",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-2bd187ca81"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1299 renamed-or-related-name-nearby 24 m",
+     "ids": [
+      "seed-1299"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1299 \"Blockfeld Boulderpark & Bistro\": renamed-or-related-name-nearby (\"BLOCKFELD Boulderpark\" / \"Blockfeld Boulderpark & Bistro\", 24 m)",
+     "ids": [
+      "seed-1299"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-1299"
+   ]
+  },
+  {
+   "cid": "ch-014",
+   "line": 14,
+   "name": "ARANEA+ Kletterzentrum",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-7ba00f6381"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ch-015",
+   "line": 15,
+   "name": "thurclimb",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-46ed95f76b"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "ch-016",
+   "line": 16,
+   "name": "Kletterhalle SAC Bodan",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-ace906808b"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "ch-017",
+   "line": 17,
+   "name": "Kletterzentrum St. Gallen",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-771f03fa19"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate ch-006 \"Boulderlounge St. Gallen\": related names \"Kletterzentrum St. Gallen\" / \"Boulderlounge St. Gallen\" 2397 m apart",
+     "ids": [
+      "ch-006"
+     ]
+    }
+   ],
+   "review_ids": [
+    "ch-006"
+   ]
+  },
+  {
+   "cid": "ch-018",
+   "line": 18,
+   "name": "Quergang",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-067ede39c1"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ch-019",
+   "line": 19,
+   "name": "Sparta Bouldering",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-5668571748"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ch-020",
+   "line": 20,
+   "name": "Boulder Box",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-63a42146f7"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ch-021",
+   "line": 21,
+   "name": "Kletterhalle Appenzeller Park",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-36884b4ccb"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ch-022",
+   "line": 22,
+   "name": "Kletterzentrum Ap'n Daun",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-e20d3b95e9"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ch-023",
+   "line": 23,
+   "name": "Quadrel",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-e0f9143775"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ch-024",
+   "line": 24,
+   "name": "Kletterhalle Rätikon",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-2ea6c188ee"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "ch-025",
+   "line": 25,
+   "name": "bimano boulder",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-952cff05d5"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1296 renamed-or-related-name-nearby 20 m",
+     "ids": [
+      "seed-1296"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1296 \"Bimano - Zentweg\": renamed-or-related-name-nearby (\"bimano boulder\" / \"Bimano - Zentweg\", 20 m)",
+     "ids": [
+      "seed-1296"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-1296"
+   ]
+  },
+  {
+   "cid": "ch-026",
+   "line": 26,
+   "name": "BoulderBad Muubeeri",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-cd0456a229"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1297 renamed-or-related-name-nearby 0 m",
+     "ids": [
+      "seed-1297"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1297 \"BoulderBad Muubeeri - Bern\": renamed-or-related-name-nearby (\"BoulderBad Muubeeri\" / \"BoulderBad Muubeeri - Bern\", 0 m)",
+     "ids": [
+      "seed-1297"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-1297"
+   ]
+  },
+  {
+   "cid": "ch-027",
+   "line": 27,
+   "name": "O'Bloc",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-04a7320e40"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ch-028",
+   "line": 28,
+   "name": "boulderkino",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-1de4f69056"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ch-029",
+   "line": 29,
+   "name": "griffbar Boulderwand Thun",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-4cf80c7ffc"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ch-030",
+   "line": 30,
+   "name": "Climbox Langnau",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-4e26a94cb8"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ch-031",
+   "line": 31,
+   "name": "BoulderWorb",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-43e3aa35f3"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ch-032",
+   "line": 32,
+   "name": "Boulderpark Schwarzenburg",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-ecd324de99"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ch-033",
+   "line": 33,
+   "name": "BoulderSchüür Lenk",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-507ec10349"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ch-034",
+   "line": 34,
+   "name": "Manola Boulder",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-ca0c52ebda"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ch-035",
+   "line": 35,
+   "name": "BoulderBurg",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-652d234f20"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is opening-soon"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "ch-036",
+   "line": 36,
+   "name": "Kletterhalle Haslital",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-b014958766"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ch-037",
+   "line": 37,
+   "name": "GRIP Climbing",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-3aecbb44d7"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ch-038",
+   "line": 38,
+   "name": "Magnet Trainingszentrum für Sportkletterer",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-54c13827ff"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ch-039",
+   "line": 39,
+   "name": "Forum Sumiswald",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-245e85c7f1"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ch-040",
+   "line": 40,
+   "name": "BOUBA Boulder Baden",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-17adf20ff5"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ch-041",
+   "line": 41,
+   "name": "Kraftreaktor Lenzburg",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-dd666c2e64"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate ch-042 \"Kraftreaktor Aarau\": related names \"Kraftreaktor\" / \"Kraftreaktor Aarau\" 8443 m apart",
+     "ids": [
+      "ch-042"
+     ]
+    }
+   ],
+   "review_ids": [
+    "ch-042"
+   ]
+  },
+  {
+   "cid": "ch-042",
+   "line": 42,
+   "name": "Kraftreaktor Aarau",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-9bf13b3c59"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate ch-041 \"Kraftreaktor Lenzburg\": related names \"Kraftreaktor Aarau\" / \"Kraftreaktor\" 8443 m apart",
+     "ids": [
+      "ch-041"
+     ]
+    }
+   ],
+   "review_ids": [
+    "ch-041"
+   ]
+  },
+  {
+   "cid": "ch-043",
+   "line": 43,
+   "name": "Blockchäfer",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-6b4f6bf992"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "ch-044",
+   "line": 44,
+   "name": "ISATIS Kletterhalle",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-5bd19e1888"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ch-045",
+   "line": 45,
+   "name": "bimano solothurn",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-fac6ece162"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ch-046",
+   "line": 46,
+   "name": "Kletterhalle 7",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-97a398a8e4"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1295 renamed-or-related-name-nearby 92 m",
+     "ids": [
+      "seed-1295"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1295 \"Kletterhalle 7 - Basel\": renamed-or-related-name-nearby (\"Kletterhalle 7\" / \"Kletterhalle 7 - Basel\", 92 m)",
+     "ids": [
+      "seed-1295"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-1295"
+   ]
+  },
+  {
+   "cid": "ch-047",
+   "line": 47,
+   "name": "ELYS Boulderloft",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-8efe277906"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1294 renamed-or-related-name-nearby 0 m",
+     "ids": [
+      "seed-1294"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1294 \"ELYS Boulderloft - Basel\": renamed-or-related-name-nearby (\"ELYS Boulderloft\" / \"ELYS Boulderloft - Basel\", 0 m)",
+     "ids": [
+      "seed-1294"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-1294"
+   ]
+  },
+  {
+   "cid": "ch-048",
+   "line": 48,
+   "name": "B2 Boulders & Bar",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-f3f5ef1071"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ch-049",
+   "line": 49,
+   "name": "Hebdi",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-ab212b06d9"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ch-050",
+   "line": 50,
+   "name": "CITY BOULDER",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-60e15efebd"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ch-051",
+   "line": 51,
+   "name": "Pilatus Indoor",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-2baf6ac488"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ch-052",
+   "line": 52,
+   "name": "Boulder Arena Sursee",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-8df63dd5be"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ch-053",
+   "line": 53,
+   "name": "Bouldergate Ettiswil",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-0a49bf9b5c"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "ch-054",
+   "line": 54,
+   "name": "Kletterhalle Wolhusen",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-a24b51f264"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "ch-055",
+   "line": 55,
+   "name": "BoulderBaar",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-355493a118"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ch-056",
+   "line": 56,
+   "name": "Spinnerei Indoor",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-12a98088ff"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ch-057",
+   "line": 57,
+   "name": "Granit Indoor",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-b887ca86ea"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ch-058",
+   "line": 58,
+   "name": "Orbit Interlaken",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-8794198f44"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "ch-059",
+   "line": 59,
+   "name": "Momentum Olten",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-ec4331a279"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "ch-060",
+   "line": 60,
+   "name": "Planet Climbing Plan-les-Ouates",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-8952111b89"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate ch-083 \"Planet Climbing Lancy\": related names \"Planet Climbing Plan-les-Ouates\" / \"Planet Climbing\" 2796 m apart",
+     "ids": [
+      "ch-083"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-083 has the same website",
+     "ids": [
+      "ch-083"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "ch-083"
+   ]
+  },
+  {
+   "cid": "ch-061",
+   "line": 61,
+   "name": "GLKB Boulderhalle (lintharena)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-ea424f7507"
+   },
+   "flags": [
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "ch-062",
+   "line": 62,
+   "name": "Grimper.ch Lausanne-Beaulieu",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-a8e0820931"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate ch-063 \"Grimper.ch Echandens (Rocspot)\": related names \"Grimper.ch Beaulieu\" / \"Grimper.ch Echandens (Rocspot)\" 5918 m apart",
+     "ids": [
+      "ch-063"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-063 has the same website",
+     "ids": [
+      "ch-063"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-064 has the same website",
+     "ids": [
+      "ch-064"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-065 has the same website",
+     "ids": [
+      "ch-065"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-066 has the same website",
+     "ids": [
+      "ch-066"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-067 has the same website",
+     "ids": [
+      "ch-067"
+     ]
+    }
+   ],
+   "review_ids": [
+    "ch-063",
+    "ch-064",
+    "ch-065",
+    "ch-066",
+    "ch-067"
+   ]
+  },
+  {
+   "cid": "ch-063",
+   "line": 63,
+   "name": "Grimper.ch Echandens (Rocspot)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-e5b91dc731"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate ch-062 \"Grimper.ch Lausanne-Beaulieu\": related names \"Grimper.ch Echandens (Rocspot)\" / \"Grimper.ch Beaulieu\" 5918 m apart",
+     "ids": [
+      "ch-062"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-062 has the same website",
+     "ids": [
+      "ch-062"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-064 has the same website",
+     "ids": [
+      "ch-064"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-065 has the same website",
+     "ids": [
+      "ch-065"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-066 has the same website",
+     "ids": [
+      "ch-066"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-067 has the same website",
+     "ids": [
+      "ch-067"
+     ]
+    }
+   ],
+   "review_ids": [
+    "ch-062",
+    "ch-064",
+    "ch-065",
+    "ch-066",
+    "ch-067"
+   ]
+  },
+  {
+   "cid": "ch-064",
+   "line": 64,
+   "name": "Grimper.ch Villeneuve",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-5dd3c45930"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate ch-062 has the same website",
+     "ids": [
+      "ch-062"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-063 has the same website",
+     "ids": [
+      "ch-063"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-065 has the same website",
+     "ids": [
+      "ch-065"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-066 has the same website",
+     "ids": [
+      "ch-066"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-067 has the same website",
+     "ids": [
+      "ch-067"
+     ]
+    }
+   ],
+   "review_ids": [
+    "ch-062",
+    "ch-063",
+    "ch-065",
+    "ch-066",
+    "ch-067"
+   ]
+  },
+  {
+   "cid": "ch-065",
+   "line": 65,
+   "name": "Grimper.ch Givisiez (Bloczone)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-161cf94e89"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate ch-066 \"Le Hangar (Grimper.ch Fribourg)\": related names \"Grimper.ch Givisiez (Bloczone)\" / \"Grimper.ch Fribourg\" 2613 m apart",
+     "ids": [
+      "ch-066"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-062 has the same website",
+     "ids": [
+      "ch-062"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-063 has the same website",
+     "ids": [
+      "ch-063"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-064 has the same website",
+     "ids": [
+      "ch-064"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-066 has the same website",
+     "ids": [
+      "ch-066"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-067 has the same website",
+     "ids": [
+      "ch-067"
+     ]
+    }
+   ],
+   "review_ids": [
+    "ch-062",
+    "ch-063",
+    "ch-064",
+    "ch-066",
+    "ch-067"
+   ]
+  },
+  {
+   "cid": "ch-066",
+   "line": 66,
+   "name": "Le Hangar (Grimper.ch Fribourg)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-8793955b23"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate ch-065 \"Grimper.ch Givisiez (Bloczone)\": related names \"Grimper.ch Fribourg\" / \"Grimper.ch Givisiez (Bloczone)\" 2613 m apart",
+     "ids": [
+      "ch-065"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-062 has the same website",
+     "ids": [
+      "ch-062"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-063 has the same website",
+     "ids": [
+      "ch-063"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-064 has the same website",
+     "ids": [
+      "ch-064"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-065 has the same website",
+     "ids": [
+      "ch-065"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-067 has the same website",
+     "ids": [
+      "ch-067"
+     ]
+    }
+   ],
+   "review_ids": [
+    "ch-062",
+    "ch-063",
+    "ch-064",
+    "ch-065",
+    "ch-067"
+   ]
+  },
+  {
+   "cid": "ch-067",
+   "line": 67,
+   "name": "Grimper.ch Meyrin-Satigny",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-bff1fd5a92"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate ch-062 has the same website",
+     "ids": [
+      "ch-062"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-063 has the same website",
+     "ids": [
+      "ch-063"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-064 has the same website",
+     "ids": [
+      "ch-064"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-065 has the same website",
+     "ids": [
+      "ch-065"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-066 has the same website",
+     "ids": [
+      "ch-066"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "ch-062",
+    "ch-063",
+    "ch-064",
+    "ch-065",
+    "ch-066"
+   ]
+  },
+  {
+   "cid": "ch-068",
+   "line": 68,
+   "name": "TOTEM Ecublens",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-456aef8896"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate ch-069 has the same website",
+     "ids": [
+      "ch-069"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-070 has the same website",
+     "ids": [
+      "ch-070"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-071 has the same website",
+     "ids": [
+      "ch-071"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-072 has the same website",
+     "ids": [
+      "ch-072"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-073 has the same website",
+     "ids": [
+      "ch-073"
+     ]
+    }
+   ],
+   "review_ids": [
+    "ch-069",
+    "ch-070",
+    "ch-071",
+    "ch-072",
+    "ch-073"
+   ]
+  },
+  {
+   "cid": "ch-069",
+   "line": 69,
+   "name": "TOTEM Gland",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-708d82e3b9"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate ch-068 has the same website",
+     "ids": [
+      "ch-068"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-070 has the same website",
+     "ids": [
+      "ch-070"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-071 has the same website",
+     "ids": [
+      "ch-071"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-072 has the same website",
+     "ids": [
+      "ch-072"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-073 has the same website",
+     "ids": [
+      "ch-073"
+     ]
+    }
+   ],
+   "review_ids": [
+    "ch-068",
+    "ch-070",
+    "ch-071",
+    "ch-072",
+    "ch-073"
+   ]
+  },
+  {
+   "cid": "ch-070",
+   "line": 70,
+   "name": "TOTEM Vevey",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-3c56b92c68"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate ch-068 has the same website",
+     "ids": [
+      "ch-068"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-069 has the same website",
+     "ids": [
+      "ch-069"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-071 has the same website",
+     "ids": [
+      "ch-071"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-072 has the same website",
+     "ids": [
+      "ch-072"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-073 has the same website",
+     "ids": [
+      "ch-073"
+     ]
+    }
+   ],
+   "review_ids": [
+    "ch-068",
+    "ch-069",
+    "ch-071",
+    "ch-072",
+    "ch-073"
+   ]
+  },
+  {
+   "cid": "ch-071",
+   "line": 71,
+   "name": "TOTEM Meyrin",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-52f004dcce"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate ch-068 has the same website",
+     "ids": [
+      "ch-068"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-069 has the same website",
+     "ids": [
+      "ch-069"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-070 has the same website",
+     "ids": [
+      "ch-070"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-072 has the same website",
+     "ids": [
+      "ch-072"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-073 has the same website",
+     "ids": [
+      "ch-073"
+     ]
+    }
+   ],
+   "review_ids": [
+    "ch-068",
+    "ch-069",
+    "ch-070",
+    "ch-072",
+    "ch-073"
+   ]
+  },
+  {
+   "cid": "ch-072",
+   "line": 72,
+   "name": "TOTEM Vernier (Le Môll)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-4897474222"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate ch-068 has the same website",
+     "ids": [
+      "ch-068"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-069 has the same website",
+     "ids": [
+      "ch-069"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-070 has the same website",
+     "ids": [
+      "ch-070"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-071 has the same website",
+     "ids": [
+      "ch-071"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-073 has the same website",
+     "ids": [
+      "ch-073"
+     ]
+    }
+   ],
+   "review_ids": [
+    "ch-068",
+    "ch-069",
+    "ch-070",
+    "ch-071",
+    "ch-073"
+   ]
+  },
+  {
+   "cid": "ch-073",
+   "line": 73,
+   "name": "TOTEM Versoix",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-448ab1686d"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate ch-068 has the same website",
+     "ids": [
+      "ch-068"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-069 has the same website",
+     "ids": [
+      "ch-069"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-070 has the same website",
+     "ids": [
+      "ch-070"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-071 has the same website",
+     "ids": [
+      "ch-071"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-072 has the same website",
+     "ids": [
+      "ch-072"
+     ]
+    }
+   ],
+   "review_ids": [
+    "ch-068",
+    "ch-069",
+    "ch-070",
+    "ch-071",
+    "ch-072"
+   ]
+  },
+  {
+   "cid": "ch-074",
+   "line": 74,
+   "name": "Le Cube",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-104902e680"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ch-075",
+   "line": 75,
+   "name": "La Pile",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-cb911a31d1"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ch-076",
+   "line": 76,
+   "name": "Gecko Escalade",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-772cc22e11"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ch-077",
+   "line": 77,
+   "name": "Escalade Chavornay",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-e16b22c855"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ch-078",
+   "line": 78,
+   "name": "Pan de Vevey",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-d0a94af9f5"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "ch-079",
+   "line": 79,
+   "name": "Vertic-Halle Saxon",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-fb60f89fa9"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate ch-080 has the same website",
+     "ids": [
+      "ch-080"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-081 has the same website",
+     "ids": [
+      "ch-081"
+     ]
+    }
+   ],
+   "review_ids": [
+    "ch-080",
+    "ch-081"
+   ]
+  },
+  {
+   "cid": "ch-080",
+   "line": 80,
+   "name": "Vertic-Halle Monthey",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-61bc114f2c"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate ch-079 has the same website",
+     "ids": [
+      "ch-079"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-081 has the same website",
+     "ids": [
+      "ch-081"
+     ]
+    }
+   ],
+   "review_ids": [
+    "ch-079",
+    "ch-081"
+   ]
+  },
+  {
+   "cid": "ch-081",
+   "line": 81,
+   "name": "Vertic-Halle Baltschieder",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-5ab53036a3"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate ch-079 has the same website",
+     "ids": [
+      "ch-079"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-080 has the same website",
+     "ids": [
+      "ch-080"
+     ]
+    }
+   ],
+   "review_ids": [
+    "ch-079",
+    "ch-080"
+   ]
+  },
+  {
+   "cid": "ch-082",
+   "line": 82,
+   "name": "Structure Pan d'Escalade",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-4b38ee73ee"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ch-083",
+   "line": 83,
+   "name": "Planet Climbing Lancy",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-33c8ddaa88"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate ch-060 \"Planet Climbing Plan-les-Ouates\": related names \"Planet Climbing\" / \"Planet Climbing Plan-les-Ouates\" 2796 m apart",
+     "ids": [
+      "ch-060"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ch-060 has the same website",
+     "ids": [
+      "ch-060"
+     ]
+    }
+   ],
+   "review_ids": [
+    "ch-060"
+   ]
+  },
+  {
+   "cid": "ch-084",
+   "line": 84,
+   "name": "C+ Urban Climbing",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-bc40a35e0e"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ch-085",
+   "line": 85,
+   "name": "L'Entrepôt",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-5719e87fca"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ch-086",
+   "line": 86,
+   "name": "BlocUp",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-f2360c9cf0"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ch-087",
+   "line": 87,
+   "name": "Alpha Boulder",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-fcab43fa8c"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  }
+ ],
+ "reconcile_sha256": "be6a097c96a834be4d34451a05930c4b5d6c801dd1b957d7c86470392d251e9b"
+}

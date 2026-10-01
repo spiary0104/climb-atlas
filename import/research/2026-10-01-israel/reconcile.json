@@ -1,0 +1,562 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-01-israel",
+ "inputs": {
+  "section_sha256": "74bd63685cb060e007f3a721c913043cbc5fc8db634765af524946a2028d327e",
+  "sources_sha256": "1f0824add1fb04ee30e26ca2d2e6d6101e75128041a86850047dd0602eff9b62",
+  "candidates_sha256": "bd15c2bda22819a08fcaa57767fc30dfce0faf8601e4f7f00a6e625ef1a3ad6c",
+  "index": {
+   "sha256": "8dbddf7924c219a236c2ffff9c8fb005dd02d1dcfe61640f8817d49fb2484af2",
+   "count": 2127
+  },
+  "staged_batches_compared": [],
+  "other_sections_compared": [
+   {
+    "id": "2026-09-30-new-zealand",
+    "candidates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   },
+   {
+    "id": "2026-10-01-india",
+    "candidates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   },
+   {
+    "id": "2026-10-01-indonesia",
+    "candidates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   },
+   {
+    "id": "2026-10-01-russia",
+    "candidates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   },
+   {
+    "id": "2026-10-01-singapore",
+    "candidates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   },
+   {
+    "id": "2026-10-01-sweden",
+    "candidates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   },
+   {
+    "id": "2026-10-01-switzerland",
+    "candidates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   },
+   {
+    "id": "2026-10-01-thailand",
+    "candidates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   },
+   {
+    "id": "2026-10-01-turkey",
+    "candidates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   }
+  ]
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 12,
+  "ready": 0,
+  "review": 12,
+  "blocked": 0,
+  "existing": 0,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "il-001",
+   "line": 1,
+   "name": "Performance Rock Tel Aviv",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-23cfa74ce8"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate il-004 \"VKING Tel Aviv\": related names \"Performance Rock Tel Aviv\" / \"VKING Tel Aviv\" 1740 m apart",
+     "ids": [
+      "il-004"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate il-005 \"The Bloc Tel Aviv\": related names \"Performance Rock Tel Aviv\" / \"The Bloc Tel Aviv\" 3491 m apart",
+     "ids": [
+      "il-005"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate il-010 \"iClimb Rishon LeZion\": related names \"פרפורמנס רוק תל אביב\" / \"אייקליימב ראשון לציון\" 10100 m apart",
+     "ids": [
+      "il-010"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate il-012 \"Venga\": related names \"פרפורמנס רוק תל אביב\" / \"ונגה\" 10054 m apart",
+     "ids": [
+      "il-012"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate il-002 has the same website",
+     "ids": [
+      "il-002"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate il-003 has the same website",
+     "ids": [
+      "il-003"
+     ]
+    }
+   ],
+   "review_ids": [
+    "il-002",
+    "il-003",
+    "il-004",
+    "il-005",
+    "il-010",
+    "il-012"
+   ]
+  },
+  {
+   "cid": "il-002",
+   "line": 2,
+   "name": "Performance Rock Beer Sheva",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-2b16f8c13a"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-1590 \"Performance Rock\": related names \"Performance Rock Beer Sheva\" / \"Performance Rock\" 872 m apart",
+     "ids": [
+      "seed-1590"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate il-001 has the same website",
+     "ids": [
+      "il-001"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate il-003 has the same website",
+     "ids": [
+      "il-003"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "il-001",
+    "il-003",
+    "seed-1590"
+   ]
+  },
+  {
+   "cid": "il-003",
+   "line": 3,
+   "name": "Performance Rock Haifa",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-275a0398fd"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate il-001 has the same website",
+     "ids": [
+      "il-001"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate il-002 has the same website",
+     "ids": [
+      "il-002"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "il-001",
+    "il-002"
+   ]
+  },
+  {
+   "cid": "il-004",
+   "line": 4,
+   "name": "VKING Tel Aviv",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-0a211b9124"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate il-001 \"Performance Rock Tel Aviv\": related names \"VKING Tel Aviv\" / \"Performance Rock Tel Aviv\" 1740 m apart",
+     "ids": [
+      "il-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate il-005 \"The Bloc Tel Aviv\": related names \"VKING Tel Aviv\" / \"The Bloc Tel Aviv\" 1941 m apart",
+     "ids": [
+      "il-005"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate il-010 \"iClimb Rishon LeZion\": related names \"ויקינג תל אביב\" / \"אייקליימב ראשון לציון\" 8361 m apart",
+     "ids": [
+      "il-010"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate il-012 \"Venga\": related names \"ויקינג תל אביב\" / \"ונגה\" 11115 m apart",
+     "ids": [
+      "il-012"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    },
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": [
+    "il-001",
+    "il-005",
+    "il-010",
+    "il-012"
+   ]
+  },
+  {
+   "cid": "il-005",
+   "line": 5,
+   "name": "The Bloc Tel Aviv",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-4e37aad496"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate il-001 \"Performance Rock Tel Aviv\": related names \"The Bloc Tel Aviv\" / \"Performance Rock Tel Aviv\" 3491 m apart",
+     "ids": [
+      "il-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate il-004 \"VKING Tel Aviv\": related names \"The Bloc Tel Aviv\" / \"VKING Tel Aviv\" 1941 m apart",
+     "ids": [
+      "il-004"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate il-010 \"iClimb Rishon LeZion\": related names \"הבלוק תל אביב\" / \"אייקליימב ראשון לציון\" 6965 m apart",
+     "ids": [
+      "il-010"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate il-012 \"Venga\": related names \"הבלוק תל אביב\" / \"ונגה\" 13020 m apart",
+     "ids": [
+      "il-012"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate il-006 has the same website",
+     "ids": [
+      "il-006"
+     ]
+    }
+   ],
+   "review_ids": [
+    "il-001",
+    "il-004",
+    "il-006",
+    "il-010",
+    "il-012"
+   ]
+  },
+  {
+   "cid": "il-006",
+   "line": 6,
+   "name": "The Bloc Jerusalem",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-c6ab5c3a50"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate il-008 \"Urban Climbing Jerusalem\": related names \"הבלוק ירושלים\" / \"טיפוס אורבני ירושלים\" 3047 m apart",
+     "ids": [
+      "il-008"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate il-005 has the same website",
+     "ids": [
+      "il-005"
+     ]
+    }
+   ],
+   "review_ids": [
+    "il-005",
+    "il-008"
+   ]
+  },
+  {
+   "cid": "il-007",
+   "line": 7,
+   "name": "Urban Climbing Rehovot",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-6e5ed8fefe"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate il-010 \"iClimb Rishon LeZion\": related names \"טיפוס אורבני רחובות\" / \"אייקליימב ראשון לציון\" 9463 m apart",
+     "ids": [
+      "il-010"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate il-008 has the same website",
+     "ids": [
+      "il-008"
+     ]
+    }
+   ],
+   "review_ids": [
+    "il-008",
+    "il-010"
+   ]
+  },
+  {
+   "cid": "il-008",
+   "line": 8,
+   "name": "Urban Climbing Jerusalem",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-cea6787feb"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate il-006 \"The Bloc Jerusalem\": related names \"טיפוס אורבני ירושלים\" / \"הבלוק ירושלים\" 3047 m apart",
+     "ids": [
+      "il-006"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate il-007 has the same website",
+     "ids": [
+      "il-007"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "il-006",
+    "il-007"
+   ]
+  },
+  {
+   "cid": "il-009",
+   "line": 9,
+   "name": "Monkeys Netanya",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-dac24f186d"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-1596 \"Monkeys climbing gym\": related names \"Monkeys Netanya\" / \"Monkeys climbing gym\" 391 m apart",
+     "ids": [
+      "seed-1596"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-1596"
+   ]
+  },
+  {
+   "cid": "il-010",
+   "line": 10,
+   "name": "iClimb Rishon LeZion",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-ac215a02d6"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate il-001 \"Performance Rock Tel Aviv\": related names \"אייקליימב ראשון לציון\" / \"פרפורמנס רוק תל אביב\" 10100 m apart",
+     "ids": [
+      "il-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate il-004 \"VKING Tel Aviv\": related names \"אייקליימב ראשון לציון\" / \"ויקינג תל אביב\" 8361 m apart",
+     "ids": [
+      "il-004"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate il-005 \"The Bloc Tel Aviv\": related names \"אייקליימב ראשון לציון\" / \"הבלוק תל אביב\" 6965 m apart",
+     "ids": [
+      "il-005"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate il-007 \"Urban Climbing Rehovot\": related names \"אייקליימב ראשון לציון\" / \"טיפוס אורבני רחובות\" 9463 m apart",
+     "ids": [
+      "il-007"
+     ]
+    }
+   ],
+   "review_ids": [
+    "il-001",
+    "il-004",
+    "il-005",
+    "il-007"
+   ]
+  },
+  {
+   "cid": "il-011",
+   "line": 11,
+   "name": "Roca Climbing Club",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-9b3aa1a5f8"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "il-012",
+   "line": 12,
+   "name": "Venga",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-9cb692cd32"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1597 same-name-but-pin-differs 2308 m",
+     "ids": [
+      "seed-1597"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1597 \"Venga\": same-name-but-pin-differs (\"Venga\" / \"Venga\", 2308 m)",
+     "ids": [
+      "seed-1597"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate il-001 \"Performance Rock Tel Aviv\": related names \"ונגה\" / \"פרפורמנס רוק תל אביב\" 10054 m apart",
+     "ids": [
+      "il-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate il-004 \"VKING Tel Aviv\": related names \"ונגה\" / \"ויקינג תל אביב\" 11115 m apart",
+     "ids": [
+      "il-004"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate il-005 \"The Bloc Tel Aviv\": related names \"ונגה\" / \"הבלוק תל אביב\" 13020 m apart",
+     "ids": [
+      "il-005"
+     ]
+    }
+   ],
+   "review_ids": [
+    "il-001",
+    "il-004",
+    "il-005",
+    "seed-1597"
+   ]
+  }
+ ],
+ "reconcile_sha256": "a64e04f9503d8ddf909c226b8f58c6cbac8fedeb7b39d8895318c23d35cdb3db"
+}
