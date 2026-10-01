@@ -52,7 +52,7 @@ Review radii (stricter than the importer): any gym 150 m, related name 15 km, ot
   - single-source: all evidence comes from one source
 - se-035 "Klättervigören" [g-09b76c2974]
   - single-source: all evidence comes from one source
-- se-037 "Wallride" [g-1ed300ad1a]
+- se-037 "Wallride" [g-44b68de98f]
   - single-source: all evidence comes from one source
 - se-038 "Halmstad Klätterklubb" [g-96d6ebb14f]
   - limited-access: club wall: check it is open to the public

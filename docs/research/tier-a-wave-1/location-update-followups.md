@@ -19,3 +19,11 @@ Same-as decisions whose existing Bouldeer pin is wrong by more than 150 m. Gener
 | `seed-1104` Klätterfabriken High Sports | 223 m | 57.7010961, 11.9938563 (osm node/3715375091) | building | no | `2026-10-01-sweden` se-010 |
 
 Before execution: owner confirms each; then a location-update batch goes through validate -> plan -> import --dry-run (FULL) -> explicit approval -> --apply -> --verify -> build-index --live. The 60 m rule and expect_h protections apply.
+
+## Pin corrections to NEW candidates (pre-import; not existing-gym updates)
+
+| Candidate | Old (viewport) | Corrected (place pin) | Source | Shift |
+|---|---|---|---|---:|
+| `2026-10-01-sweden` se-037 Wallride | 56.8819139, 14.7812165 | 56.881911, 14.7837914 | the gym own Google Maps link https://maps.app.goo.gl/tYxsVqBtQZ3jHovT8 (re-resolved 2026-10-01) | 156 m |
+
+Wallride is a new gym (accepted), so the correction is made in its candidate before staging; no existing Bouldeer record is touched.
