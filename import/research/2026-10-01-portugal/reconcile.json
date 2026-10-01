@@ -3,8 +3,8 @@
  "section_id": "2026-10-01-portugal",
  "inputs": {
   "section_sha256": "befd652ad795cdd7dd301690d0e021a0ece7dc09345bc78113a6a2e9119b7646",
-  "sources_sha256": "ddd3079d6c6df874ca39fe336db33daac644c7e44e092cdfb87d8d788bd12402",
-  "candidates_sha256": "38400c2ff7672c082780d4066aa403ff0a196316445fad4f45ace58bae0968f3",
+  "sources_sha256": "40c107fa25d3117ce74ad9e4aba9ff042e9a6506834f47d02d77b90cd508063c",
+  "candidates_sha256": "e8d02a4f341cb809d423c4a0983e5ca1176b5ee9f4ff8ba3b249fb5c4ab3e7d6",
   "index": {
    "sha256": "8dbddf7924c219a236c2ffff9c8fb005dd02d1dcfe61640f8817d49fb2484af2",
    "count": 2127
@@ -34,7 +34,7 @@
    "suggested": "accept",
    "importer": {
     "class": "new",
-    "id": "g-7501588901"
+    "id": "g-426edfcfc3"
    },
    "review_ids": []
   },
@@ -46,12 +46,12 @@
    "suggested": "review",
    "importer": {
     "class": "new",
-    "id": "g-cf391bebc8"
+    "id": "g-98762c1caa"
    },
    "flags": [
     {
      "code": "related-name-nearby",
-     "detail": "seed-1263 \"Escala 25 - Lisboa\": related names \"Escala 25\" / \"Escala 25 - Lisboa\" 711 m apart",
+     "detail": "seed-1263 \"Escala 25 - Lisboa\": related names \"Escala 25\" / \"Escala 25 - Lisboa\" 709 m apart",
      "ids": [
       "seed-1263"
      ]
@@ -69,19 +69,19 @@
    "suggested": "review",
    "importer": {
     "class": "new",
-    "id": "g-a4b690c33c"
+    "id": "g-18d02cfa65"
    },
    "flags": [
     {
      "code": "related-name-nearby",
-     "detail": "candidate pt-004 \"Vertigo Oriente Climbing Center\": related names \"Vertigo Climbing Wall\" / \"Vertigo Oriente Climbing Center\" 2328 m apart",
+     "detail": "candidate pt-004 \"Vertigo Oriente Climbing Center\": related names \"Vertigo Climbing Wall\" / \"Vertigo Oriente Climbing Center\" 2340 m apart",
      "ids": [
       "pt-004"
      ]
     },
     {
      "code": "related-name-nearby",
-     "detail": "seed-1265 \"Vertigo - Lisboa\": related names \"Vertigo Climbing Wall\" / \"Vertigo - Lisboa\" 2409 m apart",
+     "detail": "seed-1265 \"Vertigo - Lisboa\": related names \"Vertigo Climbing Wall\" / \"Vertigo - Lisboa\" 2420 m apart",
      "ids": [
       "seed-1265"
      ]
@@ -112,21 +112,21 @@
    "flags": [
     {
      "code": "importer-probable-duplicate",
-     "detail": "seed-1265 similar-name-nearby 122 m",
+     "detail": "seed-1265 similar-name-nearby 123 m",
      "ids": [
       "seed-1265"
      ]
     },
     {
      "code": "name-match",
-     "detail": "seed-1265 \"Vertigo - Lisboa\": similar-name-nearby (\"Vertigo Oriente Climbing Center\" / \"Vertigo - Lisboa\", 122 m)",
+     "detail": "seed-1265 \"Vertigo - Lisboa\": similar-name-nearby (\"Vertigo Oriente Climbing Center\" / \"Vertigo - Lisboa\", 123 m)",
      "ids": [
       "seed-1265"
      ]
     },
     {
      "code": "related-name-nearby",
-     "detail": "candidate pt-003 \"Vertigo Climbing Center Marvila\": related names \"Vertigo Oriente Climbing Center\" / \"Vertigo Climbing Wall\" 2328 m apart",
+     "detail": "candidate pt-003 \"Vertigo Climbing Center Marvila\": related names \"Vertigo Oriente Climbing Center\" / \"Vertigo Climbing Wall\" 2340 m apart",
      "ids": [
       "pt-003"
      ]
@@ -164,7 +164,7 @@
    "suggested": "accept",
    "importer": {
     "class": "new",
-    "id": "g-8f030e9ec6"
+    "id": "g-4fbb4000f3"
    },
    "review_ids": []
   },
@@ -176,7 +176,7 @@
    "suggested": "defer",
    "importer": {
     "class": "new",
-    "id": "g-9a8949ecb2"
+    "id": "g-f30a6a3e4f"
    },
    "blockers": [
     {
@@ -242,7 +242,7 @@
    "suggested": "defer",
    "importer": {
     "class": "new",
-    "id": "g-3ead616b2c"
+    "id": "g-2feee7a03e"
    },
    "blockers": [
     {
@@ -383,7 +383,7 @@
    "flags": [
     {
      "code": "related-name-nearby",
-     "detail": "seed-1269 \"The North Wall - Porto\": related names \"The North Wall\" / \"The North Wall - Porto\" 4424 m apart",
+     "detail": "seed-1269 \"The North Wall - Porto\": related names \"The North Wall\" / \"The North Wall - Porto\" 4419 m apart",
      "ids": [
       "seed-1269"
      ]
@@ -416,7 +416,7 @@
    "flags": [
     {
      "code": "importer-probable-duplicate",
-     "detail": "seed-1268 renamed-or-related-name-nearby 4 m; seed-1269 co-located 4 m",
+     "detail": "seed-1268 renamed-or-related-name-nearby 0 m; seed-1269 co-located 0 m",
      "ids": [
       "seed-1268",
       "seed-1269"
@@ -424,14 +424,14 @@
     },
     {
      "code": "name-match",
-     "detail": "seed-1268 \"São Rock - Porto\": renamed-or-related-name-nearby (\"São Rock Climbing\" / \"São Rock - Porto\", 4 m)",
+     "detail": "seed-1268 \"São Rock - Porto\": renamed-or-related-name-nearby (\"São Rock Climbing\" / \"São Rock - Porto\", 0 m)",
      "ids": [
       "seed-1268"
      ]
     },
     {
      "code": "name-match",
-     "detail": "seed-1269 \"The North Wall - Porto\": co-located (\"São Rock Climbing\" / \"The North Wall - Porto\", 4 m)",
+     "detail": "seed-1269 \"The North Wall - Porto\": co-located (\"São Rock Climbing\" / \"The North Wall - Porto\", 0 m)",
      "ids": [
       "seed-1269"
      ]
@@ -450,7 +450,7 @@
    "suggested": "defer",
    "importer": {
     "class": "new",
-    "id": "g-121b61a8d5"
+    "id": "g-722fad5f74"
    },
    "blockers": [
     {
@@ -464,12 +464,6 @@
     {
      "code": "bouldering-unknown",
      "detail": "bouldering offering not established (never assumed)"
-    }
-   ],
-   "flags": [
-    {
-     "code": "single-source",
-     "detail": "all evidence comes from one source"
     }
    ],
    "review_ids": []
@@ -528,12 +522,6 @@
     {
      "code": "bouldering-unknown",
      "detail": "bouldering offering not established (never assumed)"
-    }
-   ],
-   "flags": [
-    {
-     "code": "single-source",
-     "detail": "all evidence comes from one source"
     }
    ],
    "review_ids": []
@@ -634,12 +622,18 @@
    "suggested": "defer",
    "importer": {
     "class": "new",
-    "id": "g-c9274a1178"
+    "id": "g-bf73d02c76"
    },
    "blockers": [
     {
      "code": "insufficient-evidence",
      "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "flags": [
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
     }
    ],
    "review_ids": []
@@ -652,7 +646,7 @@
    "suggested": "reject not-a-gym",
    "importer": {
     "class": "new",
-    "id": "g-8b8cc5f8e0"
+    "id": "g-e3783e81b2"
    },
    "blockers": [
     {
@@ -712,7 +706,7 @@
    "suggested": "reject not-a-gym",
    "importer": {
     "class": "new",
-    "id": "g-9c0e3699dd"
+    "id": "g-93a548fee7"
    },
    "blockers": [
     {
@@ -730,12 +724,6 @@
     {
      "code": "bouldering-unknown",
      "detail": "bouldering offering not established (never assumed)"
-    }
-   ],
-   "flags": [
-    {
-     "code": "single-source",
-     "detail": "all evidence comes from one source"
     }
    ],
    "review_ids": []
@@ -780,7 +768,7 @@
    "suggested": "defer",
    "importer": {
     "class": "new",
-    "id": "g-4bd5789518"
+    "id": "g-a5563c262e"
    },
    "blockers": [
     {
@@ -794,12 +782,6 @@
     {
      "code": "bouldering-unknown",
      "detail": "bouldering offering not established (never assumed)"
-    }
-   ],
-   "flags": [
-    {
-     "code": "single-source",
-     "detail": "all evidence comes from one source"
     }
    ],
    "review_ids": []
@@ -841,5 +823,5 @@
    "review_ids": []
   }
  ],
- "reconcile_sha256": "72c78c7a95039126bc92e2c0bdc05768b5df380922077f9f0f81cd0a064a668f"
+ "reconcile_sha256": "fc18924ae88c84cbb0f0c9aa4ba979ad52657497ec1c990ca309fb7c8f2177b1"
 }

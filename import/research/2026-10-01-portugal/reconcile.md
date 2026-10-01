@@ -8,16 +8,16 @@ Review radii (stricter than the importer): any gym 150 m, related name 15 km, ot
 31 candidate(s): ready 8 | review 5 | blocked 18 | already in Bouldeer 0 | invalid 0
 
 ## Needs review (accept needs a reason and reviewed_against covering every listed id) (5)
-- pt-002 "Escala25" [g-cf391bebc8] reviewed_against must include: seed-1263
-  - related-name-nearby: seed-1263 "Escala 25 - Lisboa": related names "Escala 25" / "Escala 25 - Lisboa" 711 m apart
-- pt-003 "Vertigo Climbing Center Marvila" [g-a4b690c33c] reviewed_against must include: pt-004, seed-1265
-  - related-name-nearby: candidate pt-004 "Vertigo Oriente Climbing Center": related names "Vertigo Climbing Wall" / "Vertigo Oriente Climbing Center" 2328 m apart
-  - related-name-nearby: seed-1265 "Vertigo - Lisboa": related names "Vertigo Climbing Wall" / "Vertigo - Lisboa" 2409 m apart
+- pt-002 "Escala25" [g-98762c1caa] reviewed_against must include: seed-1263
+  - related-name-nearby: seed-1263 "Escala 25 - Lisboa": related names "Escala 25" / "Escala 25 - Lisboa" 709 m apart
+- pt-003 "Vertigo Climbing Center Marvila" [g-18d02cfa65] reviewed_against must include: pt-004, seed-1265
+  - related-name-nearby: candidate pt-004 "Vertigo Oriente Climbing Center": related names "Vertigo Climbing Wall" / "Vertigo Oriente Climbing Center" 2340 m apart
+  - related-name-nearby: seed-1265 "Vertigo - Lisboa": related names "Vertigo Climbing Wall" / "Vertigo - Lisboa" 2420 m apart
   - same-website: candidate pt-004 has the same website
 - pt-004 "Vertigo Oriente Climbing Center" [g-4212acde1d] reviewed_against must include: pt-003, seed-1265
-  - importer-probable-duplicate: seed-1265 similar-name-nearby 122 m
-  - name-match: seed-1265 "Vertigo - Lisboa": similar-name-nearby ("Vertigo Oriente Climbing Center" / "Vertigo - Lisboa", 122 m)
-  - related-name-nearby: candidate pt-003 "Vertigo Climbing Center Marvila": related names "Vertigo Oriente Climbing Center" / "Vertigo Climbing Wall" 2328 m apart
+  - importer-probable-duplicate: seed-1265 similar-name-nearby 123 m
+  - name-match: seed-1265 "Vertigo - Lisboa": similar-name-nearby ("Vertigo Oriente Climbing Center" / "Vertigo - Lisboa", 123 m)
+  - related-name-nearby: candidate pt-003 "Vertigo Climbing Center Marvila": related names "Vertigo Oriente Climbing Center" / "Vertigo Climbing Wall" 2340 m apart
   - same-website: candidate pt-003 has the same website
 - pt-014 "upa! Climbing Center" [g-2b99baed19] reviewed_against must include: seed-1267
   - importer-probable-duplicate: seed-1267 renamed-or-related-name-nearby 8 m
@@ -46,9 +46,9 @@ Review radii (stricter than the importer): any gym 150 m, related name 15 km, ot
 - pt-031 "Rocódromo 100 Vertigens": not-a-gym (category other); status-not-open (status_claim is unknown); insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough); bouldering-unknown (bouldering offering not established (never assumed)) -> suggested: reject not-a-gym
 
 ## Ready (no flags; still needs an explicit accept) (8)
-- pt-001 "Climb UP" [g-7501588901]
+- pt-001 "Climb UP" [g-426edfcfc3]
 - pt-005 "CRUX Climbing Center" [g-3f71a1851a]
-- pt-006 "Altissimo Lisboa" [g-8f030e9ec6]
+- pt-006 "Altissimo Lisboa" [g-4fbb4000f3]
 - pt-010 "Ericeira Boulder" [g-9b6508a49c]
 - pt-011 "The West Climbing Center" [g-9b8f3b9312]
 - pt-012 "IN WALL Climbing Center" [g-b01c57ad57]
