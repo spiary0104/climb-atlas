@@ -1,4 +1,243 @@
 {
-  "schema_version": 1,
-  "sources": {}
+ "schema_version": 1,
+ "sources": {
+  "OSM": {
+   "kind": "map-data",
+   "title": "OpenStreetMap (Overpass extract 2026-10-01)",
+   "url": "https://www.openstreetmap.org/",
+   "language": "en",
+   "accessed": "2026-10-01"
+  },
+  "KC": {
+   "kind": "chain-store-list",
+   "title": "Klättercentret (chain site, all locations)",
+   "url": "https://www.klattercentret.se/",
+   "language": "sv",
+   "accessed": "2026-10-01"
+  },
+  "KV": {
+   "kind": "official-site",
+   "title": "Klätterverket",
+   "url": "https://www.klatterverket.se/",
+   "language": "sv",
+   "accessed": "2026-10-01"
+  },
+  "BS": {
+   "kind": "official-site",
+   "title": "Bouldering Sthlm",
+   "url": "https://boulderingstockholm.se/",
+   "language": "sv",
+   "accessed": "2026-10-01"
+  },
+  "MOUMO": {
+   "kind": "official-site",
+   "title": "Moumo",
+   "url": "https://www.moumo.se/",
+   "language": "en",
+   "accessed": "2026-10-01"
+  },
+  "KARBIN": {
+   "kind": "official-site",
+   "title": "Karbin Klätterhall",
+   "url": "https://karbin.com/",
+   "language": "sv",
+   "accessed": "2026-10-01"
+  },
+  "BLX": {
+   "kind": "official-site",
+   "title": "BLX Bouldering Club",
+   "url": "https://blx.rocks/en",
+   "language": "en",
+   "accessed": "2026-10-01"
+  },
+  "HIGHSPORT": {
+   "kind": "official-site",
+   "title": "Highsport / Klätterfabriken",
+   "url": "https://highsport.se/info/klatterfabriken/",
+   "language": "sv",
+   "accessed": "2026-10-01"
+  },
+  "KDOMEN": {
+   "kind": "official-site",
+   "title": "Klätterdomen",
+   "url": "https://www.klatterdomen.se/",
+   "language": "sv",
+   "accessed": "2026-10-01"
+  },
+  "FYSIKEN": {
+   "kind": "official-site",
+   "title": "Fysiken Klätterlabbet",
+   "url": "https://www.fysiken.nu/sv/klatterlabbet/",
+   "language": "sv",
+   "accessed": "2026-10-01"
+  },
+  "BACKA": {
+   "kind": "official-site",
+   "title": "Backa Boulder",
+   "url": "https://www.backaboulder.se/",
+   "language": "sv",
+   "accessed": "2026-10-01"
+  },
+  "KBA": {
+   "kind": "official-site",
+   "title": "Kungsbacka Klättercenter",
+   "url": "https://kungsbackaklattercenter.se/",
+   "language": "sv",
+   "accessed": "2026-10-01"
+  },
+  "BETA": {
+   "kind": "official-site",
+   "title": "Beta Boulders Sweden",
+   "url": "https://betaboulders.se/",
+   "language": "en",
+   "accessed": "2026-10-01"
+  },
+  "MKK": {
+   "kind": "official-site",
+   "title": "Malmö Klätterklubb",
+   "url": "https://malmoklatterklubb.se/",
+   "language": "sv",
+   "accessed": "2026-10-01"
+  },
+  "SKF": {
+   "kind": "federation",
+   "title": "Svenska Klätterförbundet: member clubs",
+   "url": "https://www.klatterforbundet.se/om-forbundet/klubbar/",
+   "language": "sv",
+   "accessed": "2026-10-01"
+  },
+  "SKK": {
+   "kind": "official-site",
+   "title": "Skånes Klätterklubb",
+   "url": "https://skaneskk.se/",
+   "language": "sv",
+   "accessed": "2026-10-01"
+  },
+  "C4": {
+   "kind": "official-site",
+   "title": "C4 Climbing",
+   "url": "https://www.c4climbing.se/",
+   "language": "sv",
+   "accessed": "2026-10-01"
+  },
+  "URBAN": {
+   "kind": "official-site",
+   "title": "Urban Boulders",
+   "url": "https://urbanboulders.se/",
+   "language": "sv",
+   "accessed": "2026-10-01"
+  },
+  "LKK": {
+   "kind": "official-site",
+   "title": "Linköpings Klätterklubb (Hangaren Klätterhall)",
+   "url": "https://linkopingsklatterklubb.se/en/climbing-hall/",
+   "language": "en",
+   "accessed": "2026-10-01"
+  },
+  "KHN": {
+   "kind": "official-site",
+   "title": "Klätterhallen i Norrköping",
+   "url": "https://klatterhallen.com/",
+   "language": "sv",
+   "accessed": "2026-10-01"
+  },
+  "MOTALA": {
+   "kind": "official-site",
+   "title": "Klättra Motala Klätterhall (Billobulls)",
+   "url": "https://www.billobulls.se/klattra-motala-klatterhall/",
+   "language": "sv",
+   "accessed": "2026-10-01"
+  },
+  "OKG": {
+   "kind": "official-site",
+   "title": "Örebro Klättergym",
+   "url": "https://www.orebroklattergym.se/",
+   "language": "sv",
+   "accessed": "2026-10-01"
+  },
+  "F11": {
+   "kind": "official-site",
+   "title": "Nyköpings Klätterklubb (F11 Klätterverkstad)",
+   "url": "https://nykopingsklatterklubb.se/",
+   "language": "sv",
+   "accessed": "2026-10-01"
+  },
+  "MONOLOCO": {
+   "kind": "official-site",
+   "title": "Mono Loco Falun",
+   "url": "https://monoloco.se/",
+   "language": "sv",
+   "accessed": "2026-10-01"
+  },
+  "FYSHUSET": {
+   "kind": "official-site",
+   "title": "Fyshuset Klätterhall Gävle",
+   "url": "https://www.fyshusetklatterhall.se/",
+   "language": "sv",
+   "accessed": "2026-10-01"
+  },
+  "OSK": {
+   "kind": "official-site",
+   "title": "Östersunds Klättercenter",
+   "url": "https://ostersundsklattercenter.se/",
+   "language": "sv",
+   "accessed": "2026-10-01"
+  },
+  "ARE": {
+   "kind": "official-site",
+   "title": "Åre Klätterhall",
+   "url": "https://areklatterhall.se/",
+   "language": "sv",
+   "accessed": "2026-10-01"
+  },
+  "KHUSET": {
+   "kind": "official-site",
+   "title": "Klätterhuset Luleå",
+   "url": "https://klatterhuset.se/",
+   "language": "sv",
+   "accessed": "2026-10-01"
+  },
+  "VIGOREN": {
+   "kind": "official-site",
+   "title": "Klättervigören Jönköping",
+   "url": "https://www.klattervigoren.se/",
+   "language": "sv",
+   "accessed": "2026-10-01"
+  },
+  "RC": {
+   "kind": "official-site",
+   "title": "RC Sport / Racketcentrum (klättring)",
+   "url": "https://rcsport.se/sporter/klattring/",
+   "language": "sv",
+   "accessed": "2026-10-01"
+  },
+  "WALLRIDE": {
+   "kind": "official-site",
+   "title": "Wallride Växjö",
+   "url": "https://wallride.se/en/pages/klattring",
+   "language": "en",
+   "accessed": "2026-10-01"
+  },
+  "HKK": {
+   "kind": "official-site",
+   "title": "Halmstad Klätterklubb",
+   "url": "https://www.hkk.nu/",
+   "language": "sv",
+   "accessed": "2026-10-01"
+  },
+  "KARLSTAD": {
+   "kind": "official-site",
+   "title": "Karlstad Klätterklubb",
+   "url": "https://karlstadklatterklubb.se/",
+   "language": "sv",
+   "accessed": "2026-10-01"
+  },
+  "HKT": {
+   "kind": "official-site",
+   "title": "Höglandsklättrarna Tranås",
+   "url": "https://www.hkt.nu/",
+   "language": "sv",
+   "accessed": "2026-10-01"
+  }
+ }
 }
