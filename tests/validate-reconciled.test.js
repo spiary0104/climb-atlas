@@ -29,8 +29,9 @@ const run = (o = {}) => runChecks({ orig, out, decisions, live: liveRows(index),
 const byName = (r, n) => r.results.find(x => x.name.startsWith(n + '.'));
 const failedNames = r => r.results.filter(x => !x.ok).map(x => x.name.split('.')[0]);
 
-test('precondition: the committed index is the post-import index (2,127 gyms incl. the 246 imported ids)', () => {
-  assert.equal(index.entries.length, 2127); assert.equal(NEW_IDS.size, 246);
+test('precondition: the committed index is the post-import index (2,127 gyms incl. the 246 imported ids, later verified batches looked through)', () => {
+  // Later verified insert batches (e.g. regional research) grow the index; looking through them (history.js) must give the 2,127.
+  assert.ok(index.entries.length >= 2127); assert.equal(liveRows(index).length, 2127); assert.equal(NEW_IDS.size, 246);
   assert.ok([...NEW_IDS].every(id => index.byId.has(id)));
   assert.equal(REAL_MANIFEST.valid, true);
 });
