@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-01-turkey",
+  "description": "Regional research \"Turkiye (Tier A, wave 1)\": 3 new gym(s) accepted of 9 candidate(s)",
+  "created": "2026-10-02",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-10-01-turkey",
+    "section_sha256": "5922bf7d9629f8469889866cbdd63421477179be5f5f7120dd561c3e9be09c10",
+    "sources_sha256": "1893a05175b6f70831f0c5e731710f388aeff31259599a5a1ed276c7e69d083b",
+    "candidates_sha256": "a82c6e77724b3b2a6315ea08d4dd8c74760d4be1f13e95f815c708f665fcdddb",
+    "reconcile_sha256": "3853208465afb222012fc2ae401add2de027aac023634785c07043ec303f5dda",
+    "review_sha256": "487a15f2a14cd89e6621a9181258b335fcd0d91c89e684ec01a6fdfb7ea851b7",
+    "candidates": 9,
+    "staged": 3,
+    "decisions": {
+      "accept": 3,
+      "defer": 4,
+      "same-as": 2
+    }
+  },
+  "index_at_staging": {
+    "sha256": "8dbddf7924c219a236c2ffff9c8fb005dd02d1dcfe61640f8817d49fb2484af2",
+    "count": 2127
+  }
+}
