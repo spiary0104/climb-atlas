@@ -59,7 +59,7 @@ function stateOf(live, e, rec) {
   if (live.status !== 'approved') return { state: 'not-approved' };
   const h = S.toEntry(live).h;
   if (h === rec.expect_h) return { state: 'before', h, updatedAt: live.updated_at };
-  const equalsTarget = Object.entries(rec.set).every(([k, v]) => (k === 'address' ? N.emptyToNull(live.address) === N.emptyToNull(v) : Number(live[k]) === Number(v)));
+  const equalsTarget = Object.entries(rec.set).every(([k, v]) => (k === 'address' ? N.emptyToNull(live.address) === N.emptyToNull(v) : N.sameCoord(live[k], v)));
   const restored = { ...live }; for (const k of Object.keys(rec.set)) restored[k] = e[k];
   if (equalsTarget && S.toEntry(restored).h === rec.expect_h) return { state: 'after', h, updatedAt: live.updated_at };
   return { state: 'changed', h };

@@ -66,4 +66,9 @@ function deriveId(g, used) {
   throw new Error('id space exhausted for ' + g.name);
 }
 
-module.exports = { n1, n2, jaccard, contains, namesRelated, addrKey, addrUsable, meters, emptyToNull, contentHash, idHash, deriveId };
+// Two coordinates are the same pin when they differ by at most 1e-9 degrees (about 0.1 mm). The database (double precision) is read
+// back through the REST API with 15 significant digits, so a staged pin with 16-17 digits never compares exactly equal after a write.
+const COORD_EPS = 1e-9;
+const sameCoord = (a, b) => Number.isFinite(+a) && Number.isFinite(+b) && Math.abs(+a - +b) <= COORD_EPS;
+
+module.exports = { n1, n2, jaccard, contains, namesRelated, addrKey, addrUsable, meters, emptyToNull, contentHash, idHash, deriveId, sameCoord, COORD_EPS };
