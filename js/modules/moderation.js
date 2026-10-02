@@ -42,7 +42,7 @@ async function run(label, fn){
 
 export function approveSpot(id, fields){
   return run('Gym approved', async () => {
-    const {error} = await window.sb.from('spots').update({ ...corrections(fields), status: 'approved' }).eq('id', id);
+    const {error} = await window.sb.from('spots').update({ ...corrections(fields), status: 'approved', verified_at: null }).eq('id', id);   // approving is not verifying (the gym page has its own control); never keep a value a submitter tried to set
     if(error) throw error;
   });
 }

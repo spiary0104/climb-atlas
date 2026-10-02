@@ -154,11 +154,11 @@
     <button class="btn btn-secondary btn-block u-mb-4" id="eDropPinBtn">Move pin</button>
     <div class="field">
       <label for="eName">Name</label>
-      <input id="eName" type="text" aria-required="true">
+      <input id="eName" type="text" maxlength="200" aria-required="true">
     </div>
     <div class="field">
       <label for="eSuburb">Suburb / nearest town</label>
-      <input id="eSuburb" type="text" aria-required="true">
+      <input id="eSuburb" type="text" maxlength="200" aria-required="true">
     </div>
     <div class="field field-row">
       <div>
@@ -280,16 +280,16 @@
     <div class="field field-row init-hidden" id="eOtherCountryFields">
       <div>
         <label for="eCountryOther">Country name</label>
-        <input id="eCountryOther" type="text" placeholder="e.g. France">
+        <input id="eCountryOther" type="text" maxlength="100" placeholder="e.g. France">
       </div>
       <div>
         <label for="eStateOther">State / region</label>
-        <input id="eStateOther" type="text" placeholder="e.g. Île-de-France or a nearby city">
+        <input id="eStateOther" type="text" maxlength="100" placeholder="e.g. Île-de-France or a nearby city">
       </div>
     </div>
     <div class="field">
       <label for="eAddress">Street address (optional)</label>
-      <input id="eAddress" type="text" placeholder="e.g. 12 Chalk St, Marrickville NSW 2204">
+      <input id="eAddress" type="text" maxlength="300" placeholder="e.g. 12 Chalk St, Marrickville NSW 2204">
     </div>
     <div class="field">
       <div class="field-label">Type (select all that apply)</div>
@@ -313,11 +313,11 @@
     </div>
     <div class="field">
       <label for="eNotes">Notes (optional)</label>
-      <textarea id="eNotes"></textarea>
+      <textarea id="eNotes" maxlength="2000"></textarea>
     </div>
     <div class="field">
       <label for="ePhoto">Photo link (optional)</label>
-      <input id="ePhoto" type="text" placeholder="Link to a photo — their site, Instagram, Google Maps">
+      <input id="ePhoto" type="text" maxlength="1000" placeholder="Link to a photo — their site, Instagram, Google Maps">
     </div>
     <div class="field">
       <label for="eNote">What changed and how do you know?</label>
@@ -339,7 +339,7 @@
     <div class="sub">Not for full corrections — if you know the right details, use "Edit this spot" instead. This just flags something for a moderator to look into: <span id="reportSpotName"></span></div>
     <div class="field">
       <label for="rMessage">What's wrong?</label>
-      <textarea id="rMessage" placeholder="e.g. This gym closed down in 2025 / wrong suburb / name is misspelled"></textarea>
+      <textarea id="rMessage" maxlength="2000" placeholder="e.g. This gym closed down in 2025 / wrong suburb / name is misspelled"></textarea>
     </div>
     <div class="modal-actions">
       <button class="btn btn-secondary" id="rCancelBtn" data-modal-close>Cancel</button>
@@ -351,7 +351,7 @@
 <div class="modal-backdrop hidden" id="authModalBackdrop">
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="dlg-sign-in">
     <h2 id="dlg-sign-in">Sign in</h2>
-    <div class="sub">Sign in to mark spots as climbed and bookmark ones you want to try.</div>
+    <div class="sub">Sign in to mark spots as climbed, bookmark ones you want to try, and suggest edits or report problems.</div>
     <button class="btn btn-secondary btn-block u-mb-4" id="googleSignInBtn">Continue with Google</button>
     <div class="auth-divider"><span>or</span></div>
     <div class="field">
