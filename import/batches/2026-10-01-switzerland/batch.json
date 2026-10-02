@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-01-switzerland",
+  "description": "Regional research \"Switzerland (Tier A, wave 1)\": 74 new gym(s) accepted of 87 candidate(s)",
+  "created": "2026-10-02",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-10-01-switzerland",
+    "section_sha256": "d8ff2cbc52dc62cecd84790a63ceed73f4d853277fe789ae7bb70fa7417e389d",
+    "sources_sha256": "396bb3a8ce616da732c1702e5e37bd2a6887d8fb9829f070a20032b22dd5fcf1",
+    "candidates_sha256": "f2b903c802faf5c4e8dbaa312bd3e6e4990617a47d2cd488ccef53530f1c2e16",
+    "reconcile_sha256": "82f01e010a0cdd042b00b9927d5a830bc94e851a4120216d8dbcefe1b3243467",
+    "review_sha256": "57a2b77d0f82eb504857f217cd9be2670bcb8973f33cf34a66fe2a569f8d9c2c",
+    "candidates": 87,
+    "staged": 74,
+    "decisions": {
+      "accept": 74,
+      "defer": 5,
+      "same-as": 8
+    }
+  },
+  "index_at_staging": {
+    "sha256": "beb817536ef2e37b35b9b8af6c7b3b15f6deea0e1423a38d24fa51de0914972f",
+    "count": 2232
+  }
+}

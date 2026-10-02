@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "importer_version": 2,
+  "batch_id": "2026-10-01-india",
+  "status": "import-failed",
+  "phase": "verification-failed",
+  "target": {
+    "kind": "production",
+    "host": "thayxaampaelvntoaido.supabase.co"
+  },
+  "payload_sha256": "d530c8f748c22efbd951ffd3ae2b1f29c02076d2ad75aebf161d77c1373bd639",
+  "staged": 10,
+  "staged_ids_present_in_production": [
+    "g-9c8462fb55",
+    "g-7e12eb91e7",
+    "g-299c332855",
+    "g-d57520749c",
+    "g-49d85354ad",
+    "g-5c6fd7a6fe",
+    "g-cf5ecdc4f5",
+    "g-974370b036",
+    "g-00f5d7e842",
+    "g-a8c3eb6e21"
+  ],
+  "approved_before": 2151,
+  "problems": [
+    "g-5c6fd7a6fe: lat/lng",
+    "g-cf5ecdc4f5: lat/lng",
+    "g-974370b036: lng"
+  ],
+  "started_at": "2026-10-02T14:10:06.255Z",
+  "finished_at": "2026-10-02T14:10:09.614Z"
+}

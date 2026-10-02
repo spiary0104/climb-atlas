@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-01-sweden",
+  "description": "Regional research \"Sweden (Tier A, wave 1)\": 31 new gym(s) accepted of 40 candidate(s)",
+  "created": "2026-10-02",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-10-01-sweden",
+    "section_sha256": "caf5638f3c625eeb9714c7c5073c45cd4ef61910c8f5f580eace6a0424ed805c",
+    "sources_sha256": "6f3727e1ba07dad15fc24db144998b71d13643dc3317f27bbff80a87522038dc",
+    "candidates_sha256": "dbfbdc3f2ec12537495c350fc1a478ebdd943251ddc114a77308ebc677d4c3ed",
+    "reconcile_sha256": "1c96755dca70841e0cfa8e2d6d20b04c8f71652aeb565cf4cb16ae724004ebf7",
+    "review_sha256": "233f42da4477195c4f47ae587fd079836369613210350aa0496f38b0fa346a61",
+    "candidates": 40,
+    "staged": 31,
+    "decisions": {
+      "accept": 31,
+      "defer": 2,
+      "same-as": 7
+    }
+  },
+  "index_at_staging": {
+    "sha256": "7c93ca402ecb35c87a13699eb2617555c9204bcc5109caffe09a9eba709864bc",
+    "count": 2201
+  }
+}

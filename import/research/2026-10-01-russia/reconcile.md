@@ -1,7 +1,7 @@
 # Regional research: Russia (Tier A, wave 1) (2026-10-01-russia)
 
 Scope: RU (whole country)
-Index: 2127 gyms, sha256 8dbddf7924c2… | staged batches compared: none | other sections compared: none
+Index: 2161 gyms, sha256 01924623fc29… | staged batches compared: none | other sections compared: none
 Review radii (stricter than the importer): any gym 150 m, related name 15 km, other country 2 km
 
 ## Summary
