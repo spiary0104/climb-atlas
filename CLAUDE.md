@@ -30,7 +30,7 @@ tooling, a framework, or a bundler without discussing it first.
 
 ```
 index.html              App shell (no inline JS/CSS)                 (>30 KB)
-about.html              Standalone About page
+about.html, privacy.html, terms.html, 404.html   Standalone static pages (root-absolute assets)
 css/tokens.css          Design tokens (only file with raw values; deer palette: fawn, bark); design/tokens.json generated from it
 css/base.css            Reset, type scale, focus
 css/components.css      Shared components (.btn tiers, chips, fields, nav, dialogs, ...)

@@ -14,7 +14,8 @@
 // v13: real-phone fixes (toast in the shell, gym picker, Regions search, re-traced mascot poses with white eyes, legal
 //      rebrand). Same-origin files are stale-while-revalidate, so without a bump phones kept the old deer art.
 // v14: canonical link points at www.bouldeer.com (index.html).
-const CACHE_VERSION = 'v14';
+// v15: launch readiness: privacy/terms/404 pages, legal modals removed, pinned CDN with SRI, new footer links.
+const CACHE_VERSION = 'v15';
 const SHELL_CACHE = 'climbatlas-shell-' + CACHE_VERSION;
 const RUNTIME_CACHE = 'climbatlas-runtime-' + CACHE_VERSION;
 const TILE_CACHE = 'climbatlas-tiles-' + CACHE_VERSION;
@@ -24,6 +25,9 @@ const SHELL_FILES = [
   './',
   'index.html',
   'about.html',
+  'privacy.html',
+  'terms.html',
+  '404.html',
   'manifest.json',
   'css/tokens.css',
   'css/base.css',

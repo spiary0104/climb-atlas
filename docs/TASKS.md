@@ -12,7 +12,7 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 - Production migrations applied 2026-09-29 (all four recorded; slugs, provenance RPCs, `profiles`, `checkins` live and
   verified read-only; backups outside the repo). See docs/migrations.md.
 - Open: Lighthouse a11y >= 95 not measured; real-phone retest of the 2026-09-29 fixes (eyes, Date/Mood) and check-in on
-  production; Supabase Auth Redirect URLs: add preview domains (else sign-in lands on the Site URL); Explore first-run art unbuilt (7.10); Privacy Policy predates display names/check-ins/logbook (owner to update);
+  production; Supabase Auth Redirect URLs: add preview domains (else sign-in lands on the Site URL); Explore first-run art unbuilt (7.10); Privacy Policy rewritten 2026-10-02 (privacy.html, terms.html: static pages, need /privacy + /terms rewrites and SW entries; owner to confirm the 30-day deletion sentence and the age-13 line);
   START and the Log tab both read "Log" (sec. 6.5); lake/plum colours provisional (sec. 19.1). Decisions: DESIGN.md log.
   Phase 4 not built (minimal schema, owner): publish-then-review for hours/price/links, website field, photo/confirm points.
 ### Gym import pipeline — first batch imported; follow-ups

@@ -140,7 +140,8 @@
 .me-actions{display:flex;flex-wrap:wrap;gap:var(--space-2);}
 .me-brand{display:flex;align-items:center;gap:var(--space-4);}
 .me-brand .section-title{margin-top:0;}
-.me-links{display:flex;flex-wrap:wrap;gap:var(--space-4);margin:0;font-size:var(--type-text-md-size);}
+.me-links{display:flex;flex-wrap:wrap;column-gap:var(--space-4);margin:0;font-size:var(--type-text-md-size);}
+.me-links a{display:inline-flex;align-items:center;min-height:var(--size-touch-min);}
 .me-points{margin:0 0 var(--space-4);font-size:var(--type-text-md-size);line-height:var(--type-text-md-line);color:var(--color-text-secondary);}
 .me-points strong{color:var(--color-text-primary);font-weight:var(--font-weight-semibold);}
 .me-name{max-width:var(--size-dialog);}
