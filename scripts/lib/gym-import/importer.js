@@ -45,7 +45,7 @@ const confirmToken = ({ batchId, planSha, payload, host, kind, coverage, liveSha
 function diffRow(row, db) {
   const d = [];
   for (const f of ['name', 'suburb', 'state', 'country']) if (row[f] !== db[f]) d.push(f);
-  for (const f of ['lat', 'lng']) if (Number(row[f]) !== Number(db[f])) d.push(f);
+  for (const f of ['lat', 'lng']) if (!N.sameCoord(row[f], db[f])) d.push(f);   // REST reads back 15 significant digits
   if (JSON.stringify([...row.types].sort()) !== JSON.stringify([...(db.types || [])].sort())) d.push('types');
   for (const f of ['notes', 'photo', 'address']) if (N.emptyToNull(row[f]) !== N.emptyToNull(db[f])) d.push(f);
   if (db.status !== 'approved') d.push('status');
