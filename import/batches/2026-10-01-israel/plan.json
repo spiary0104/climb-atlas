@@ -1,0 +1,101 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-01-israel",
+ "index": {
+  "sha256": "100285234086b4041d776542d99a5c3322a2b682a69bcd60bb7aaa66ab41e46f",
+  "count": 2142,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [],
+ "counts": {
+  "records": 9,
+  "new": 9,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "9c6028195451b94808d61c4e4168f867b36a7fd2fa887a142b21738d4a591cea",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-23cfa74ce8",
+   "id_frozen": true,
+   "name": "Performance Rock Tel Aviv",
+   "country": "IL"
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-275a0398fd",
+   "id_frozen": true,
+   "name": "Performance Rock Haifa",
+   "country": "IL"
+  },
+  {
+   "line": 3,
+   "class": "new",
+   "id": "g-0a211b9124",
+   "id_frozen": true,
+   "name": "VKING Tel Aviv",
+   "country": "IL"
+  },
+  {
+   "line": 4,
+   "class": "new",
+   "id": "g-4e37aad496",
+   "id_frozen": true,
+   "name": "The Bloc Tel Aviv",
+   "country": "IL"
+  },
+  {
+   "line": 5,
+   "class": "new",
+   "id": "g-c6ab5c3a50",
+   "id_frozen": true,
+   "name": "The Bloc Jerusalem",
+   "country": "IL"
+  },
+  {
+   "line": 6,
+   "class": "new",
+   "id": "g-6e5ed8fefe",
+   "id_frozen": true,
+   "name": "Urban Climbing Rehovot",
+   "country": "IL"
+  },
+  {
+   "line": 7,
+   "class": "new",
+   "id": "g-cea6787feb",
+   "id_frozen": true,
+   "name": "Urban Climbing Jerusalem",
+   "country": "IL"
+  },
+  {
+   "line": 8,
+   "class": "new",
+   "id": "g-ac215a02d6",
+   "id_frozen": true,
+   "name": "iClimb Rishon LeZion",
+   "country": "IL"
+  },
+  {
+   "line": 9,
+   "class": "new",
+   "id": "g-9b3aa1a5f8",
+   "id_frozen": true,
+   "name": "Roca Climbing Club",
+   "country": "IL"
+  }
+ ]
+}
