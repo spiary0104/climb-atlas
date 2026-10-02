@@ -333,7 +333,8 @@ test('moderation: destructive buttons are .btn-danger, never the primary and nev
   }
   assert.equal(btns.filter(b => b.attrs['data-mod-action'] === 'reject').length, 2);
   assert.equal(btns.filter(b => b.attrs['data-mod-action'] === 'dismiss').length, 1);
-  const page = fs.readFileSync(require('node:path').join(__dirname, '..', 'js', 'modules', 'mod-page.js'), 'utf8');
+  // Normalise CRLF (a Windows checkout with core.autocrlf) so the LF-based pattern below matches on any checkout.
+  const page = fs.readFileSync(require('node:path').join(__dirname, '..', 'js', 'modules', 'mod-page.js'), 'utf8').replace(/\r\n/g, '\n');
   const esc = /if\(e\.key === 'Escape'\)\{([\s\S]*?)return;\n    \}/.exec(page)[1];
   assert.ok(!/act\(|reject|dismiss|approve/.test(esc), 'Escape only closes the panel');
   assert.match(page, /if\(!reason\)\{/, 'a rejection requires a reason');
