@@ -40,16 +40,23 @@ first on a local database built from the baseline plus a copy of the 2,127 produ
 `migration list --linked` shows all four on both sides; 2,127 unique well-formed slugs; no gym's `updated_at` changed (compared
 with the backup); `checkins` refuses anon reads and writes; `profiles` readable; provenance RPCs answer; the live site loads.
 
+2026-10-02 (owner ran `supabase db push --linked` after a dry run listing exactly these six): the security hardening
+`20261002000100` … `20261002000600` (section below). Before: schema and data backups with `supabase db dump --linked`
+(outside the repo). Read-only pre-checks returned 0 / 0 / 0 (community gyms with `verified_at`, rows over the new caps,
+orphaned edit submitters). Verified afterwards: `migration list --linked` shows all ten on both sides; anon
+`rpc/next_spot_slug` is refused (401, permission denied); `verify-index --live` still equals the index (2,127); the owner
+tested sign-in, a signed-in gym submission, a suggested edit and a problem report, and moderation, on production.
+
 ## Tools
 - `scripts/introspect-schema.js <live|local|scratch> <dir>` — read-only catalog capture (live queries run inside `BEGIN READ ONLY`).
 - `scripts/compare-schema.js <live-dir> <other-dir>` — diff two captures (public schema).
 - `scripts/test-rls-local.js` — RLS/trigger behaviour as anon / user / moderator, against the local stack only.
 
-## Security hardening, 2026-10-02 (PREPARED — NOT APPLIED TO PRODUCTION, needs owner approval)
+## Security hardening, 2026-10-02 (APPLIED TO PRODUCTION 2026-10-02)
 Six migrations from the security audit, `supabase/migrations/20261002000100` … `20261002000600`. Each is wrapped in a
 transaction and safe to run twice. They were tested only on a throwaway Postgres 17 container
 (`node scripts/migration-tests/run.js`, 74/74 cases pass, see `scripts/migration-tests/README.md`), never on production
-or on the local Supabase stack. **Status of all six: PREPARED — NOT APPLIED TO PRODUCTION (needs owner approval).**
+or on the local Supabase stack. **Status of all six: APPLIED TO PRODUCTION 2026-10-02** (see "Applied to production" above).
 
 **Order of deployment:** ship the client change first (it asks signed-out people to sign in before editing or reporting
 and shows readable cap/length errors; it works with or without the migrations), then back up and apply with

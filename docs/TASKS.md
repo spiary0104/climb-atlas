@@ -6,19 +6,19 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 (delete them; git keeps history). Keep this file under 60 lines.
 
 ## In progress
-### Bouldeer redesign (docs/DESIGN.md sec. 17)
-- Status: Phases 0-5 + Brand Pass complete on `feature/bouldeer-brand-pass` (the earlier phase branches are stacked in it);
-  the release is its pull request into `master` (Vercel deploys climbatlas.org from `master`).
-- Migrations applied 2026-09-29 (all four recorded, verified read-only). Security hardening 20261002000100-600 (sign-in
-  for edits/reports, caps, account-deletion FKs) PREPARED, NOT APPLIED: needs owner approval. See docs/migrations.md.
+### Public launch (www.bouldeer.com) — LAUNCHED 2026-10-02
+- Status: launch-readiness merged (PRs #14-#16: /privacy, /terms, 404, security headers + CSP, climbatlas.org 308 redirect,
+  pinned CDN + SRI, sign-in for edits/reports); all 10 migrations applied (security hardening 2026-10-02, docs/migrations.md);
+  owner tested sign-in, submissions and moderation on production. Next: Wave 1 import (179 gyms) after owner review sign-off.
+- Post-launch: gym cap bypassable by bulk insert (move to trigger); research notes on old gym pages; .vercelignore; sitemap; link previews.
 - Open: Lighthouse a11y >= 95 not measured; real-phone retest of the 2026-09-29 fixes (eyes, Date/Mood) and check-in on
-  production; Supabase Auth Redirect URLs: add preview domains (else sign-in lands on the Site URL); Explore first-run art unbuilt (7.10); Privacy Policy rewritten 2026-10-02 (privacy.html, terms.html: static pages, need /privacy + /terms rewrites and SW entries; owner to confirm the 30-day deletion sentence and the age-13 line);
+  production; Supabase Auth Redirect URLs: add preview domains (else sign-in lands on the Site URL); Explore first-run art unbuilt (7.10); Privacy/Terms live 2026-10-02 (owner to confirm the 30-day deletion sentence and the age-13 line);
   START and the Log tab both read "Log" (sec. 6.5); lake/plum colours provisional (sec. 19.1). Decisions: DESIGN.md log.
   Phase 4 not built (minimal schema, owner): publish-then-review for hours/price/links, website field, photo/confirm points.
 ### Gym import pipeline — first batch imported; follow-ups
 - Status: gated importer built and tested; first batch (246) IMPORTED 2026-09-24 (1,881 → 2,127). Open: retire data/gyms.json (plan in docs).
 - Regional expansion (new locations, one geographic section at a time): `research new|reconcile|stage` built (`research.js`, docs
-  "Regional research"). NZ pilot scaffolded, NOT researched. Country gap analysis: docs/research/global-gap-analysis (choose Tier A/B sections).
+  "Regional research"). Wave 1 (9 Tier A sections) REVIEWED, dry run 179 new: awaiting owner sign-off + import. Wave 2 (6) awaiting review; Wave 3A (5, PR #13) and 3C paused.
 - Location data: 11 OSM-validated updates APPLIED 2026-09-30 (batch `2026-09-30-location-updates`, verified; index rebuilt). Open: 4 to
   manual review (Balkan Climbing, OAKA, CELL, Mamouna); seed-1139 Manga Climbing has Rockspot's pin; 489 unresolved.
 
