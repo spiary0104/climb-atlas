@@ -1,11 +1,29 @@
--- Climb Atlas — Supabase schema
--- ------------------------------------------------------------
--- Run this once in your Supabase project's SQL Editor (Dashboard > SQL Editor > New query),
--- before running supabase/seed.html. Safe to re-run — every statement is idempotent.
+-- ============================================================================================================
+-- !!!  STALE -- DO NOT RUN  !!!
 --
+-- This file is a historical reference only. It does NOT describe the live database: it predates the hardening that is
+-- in production (rate limits, pin triggers, profiles, check-ins, slugs, provenance, ...) and running it against a real
+-- project can re-create policies the migrations removed (for example anonymous edit/report inserts).
+--
+-- The source of truth is supabase/migrations/ (process: docs/migrations.md). To build a database, apply those
+-- migrations in order (`supabase db reset --local` for the local stack). To see the current live schema, use the
+-- read-only capture in supabase/introspection/ or run scripts/introspect-schema.js.
+--
+-- The statement below stops the script on purpose, so pasting this into the SQL Editor or piping it to psql fails
+-- immediately instead of changing anything. Delete this file once nobody needs it for reference.
+-- ============================================================================================================
+do $$
+begin
+  raise exception 'supabase/schema.sql is STALE and must not be run. Use supabase/migrations/ (see docs/migrations.md).';
+end;
+$$;
+
+-- ---- original (stale) content below, kept for reference only ----
+-- Climb Atlas -- Supabase schema (historical)
+-- ------------------------------------------------------------
 -- This replaces the old localStorage-based storage.js shim. Approved spots (seed +
 -- community additions) live in `spots`. New submissions and proposed edits sit in a
--- moderation queue until a moderator (listed in `moderators`) approves them — see
+-- moderation queue until a moderator (listed in `moderators`) approves them -- see
 -- "Moderation model" below. Per-user "climbed" / "bookmarked" marks live in a separate
 -- `marks` table locked down so each signed-in user only ever sees or changes their own.
 

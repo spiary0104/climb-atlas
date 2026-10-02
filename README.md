@@ -17,7 +17,7 @@ data/gyms.json          The seed dataset — every gym pin as pure JSON (fetched
 js/main.js              Entry point (ES module) — wires up js/modules/* in order
 js/modules/             map, sidebar, modals, auth-ui, data-load, logbook, moderation, state, …
 css/chips.css           Per-region chip colours (keyed on data-country/data-state)
-supabase/schema.sql      Run once in the Supabase SQL Editor — creates spots, pending_edits, reports, moderators, marks
+supabase/migrations/    The database schema, applied in order (docs/migrations.md). supabase/schema.sql is STALE: never run it
 supabase/geocode.html    Maintenance tool — re-geocodes spot addresses against OpenStreetMap
                          Nominatim to fix inaccurate pin positions, see "Fixing pin positions" below
 ```
@@ -38,14 +38,13 @@ monthly active users; free projects auto-pause after 7 days with no traffic, whi
 means the first request after a pause takes a few seconds to wake it back up).
 
 1. **Create a project** at [supabase.com](https://supabase.com).
-2. **Run the schema.** Dashboard → SQL Editor → New query → paste in the contents of
-   [`supabase/schema.sql`](supabase/schema.sql) → Run. This creates `spots` (public read of
-   approved rows only — see "Moderation" below), `pending_edits` and `moderators` (both
-   moderator-only), and `marks` (each user can only see and change their own). Safe to
-   re-run on a project that already has these tables — e.g. if you set this up before
-   multi-country or moderation support was added, re-running adds the new columns/tables
-   without touching existing rows (they all default to `'AU'` / `'approved'`, i.e.
-   everything already live stays live and public).
+2. **Apply the migrations.** The schema lives in [`supabase/migrations/`](supabase/migrations/), applied in
+   filename order with the Supabase CLI (`supabase db reset --local` builds a local database from them; a hosted project
+   is updated with `supabase db push --linked`). The full process, and why production is never edited by hand, is in
+   [`docs/migrations.md`](docs/migrations.md). **Do not run `supabase/schema.sql`**: it is stale (it predates the hardening
+   that is live) and now stops with an error if executed. The tables are: `spots` (public read of approved rows only, see
+   "Moderation" below), `pending_edits` and `reports` (anyone signed in may add one; only moderators read them),
+   `moderators`, and `marks` (each user can only see and change their own).
 3. **Enable magic-link email sign-in.** Dashboard → Authentication → Providers → Email
    is on by default with "Confirm email" — that's the magic-link flow already. Under
    Authentication → URL Configuration, set **Site URL** to wherever you're running this
@@ -61,7 +60,7 @@ means the first request after a pause takes a few seconds to wake it back up).
    resulting Client ID and Client Secret into Supabase's Google provider settings.
 5. **Fill in `js/supabase-init.js`** with your project's URL and anon/public key
    (Dashboard → Project Settings → API). The anon key is meant to be public/client-side —
-   access control comes from the RLS policies in `schema.sql`, not from hiding this key.
+   access control comes from the RLS policies in `supabase/migrations/`, not from hiding this key.
 6. **Seed the spots table.** The old browser seeding page (`supabase/seed.html`) was removed: `data/gyms.json`'s ids no
    longer match production, so re-running it would have overwritten real rows. The production database is already
    populated and new gyms are added only through the import pipeline (`docs/import-workflow.md`). Bootstrapping an *empty*
@@ -93,22 +92,22 @@ both filterable from the "My marks" section of the sidebar. Marks live in the `m
 table; RLS policies mean a user can only ever read or write their own rows, regardless of
 what the client sends. Marks aren't moderated — they're private, so there's nothing to review.
 
-Adding and editing spots themselves does **not** require signing in — see "Moderation" below.
+Adding a spot, suggesting an edit and reporting a problem all require signing in (and are rate-limited per account) — see "Moderation" below.
 
 ## Moderation
 
 New spots, edits to existing spots, and incorrect-info reports all go through review
 before they're publicly visible (or, for reports, before anyone acts on them):
 
-- **Adding a spot** inserts it into `spots` with `status = 'pending'` — the RLS policy
+- **Adding a spot** (sign-in required, 10 a day) inserts it into `spots` with `status = 'pending'` — the RLS policy
   forces this server-side, so a tampered client can't insert a pre-approved row. Pending
   spots don't appear on the public map at all until approved.
-- **Editing a spot** (including "Revert to original data") doesn't touch the live row —
+- **Editing a spot** (including "Revert to original data"; sign-in required, 20 a day) doesn't touch the live row —
   it inserts a proposal into `pending_edits`. The spot keeps showing its current approved
   data on the map until a moderator approves the proposal, at which point its fields are
   copied onto the live row and the proposal is removed. Reject just deletes the proposal;
   the live spot is untouched either way.
-- **Reporting incorrect information** (the popup's "Report incorrect info" link) inserts
+- **Reporting incorrect information** (the "Report incorrect info" link; sign-in required, 20 a day) inserts
   a free-text message into `reports`, tied to that spot — not a structured edit proposal,
   just a note for a moderator to read. It's never shown publicly. A moderator can dismiss
   it, or use it as a prompt to make the actual correction themselves via "Edit this spot".
@@ -202,7 +201,7 @@ and add a custom domain from the host's dashboard once you've bought one.
   and US's `WA` (Washington) are different regions that happen to share a code. Every
   spot has both a `country` and a `state` field, and anything that filters, colors, or
   edits by state (chips in `index.html`, `STATES_BY_COUNTRY` in `js/modules/regions.js`, the RLS-safe
-  columns in `schema.sql`) keys off the pair together, never `state` alone. Japan,
+  columns in the migrations) keys off the pair together, never `state` alone. Japan,
   Canada, New Zealand, and China were all added following this same pattern — see
   `docs/ARCHITECTURE.md` (full sourcing history archived in `docs/archive/`) for how each one's region codes were
   chosen (Japan and NZ use city/region names since neither has a widely-known
