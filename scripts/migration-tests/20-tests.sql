@@ -198,11 +198,11 @@ select t.try('anon cannot insert a spot (still)', 'anon', null,
 select t.is_true('anon can still read approved spots', 'anon', null, $q$ select count(*) >= 2 from public.spots where status = 'approved' $q$);
 select t.is_true('anon cannot see pending spots', 'anon', null, $q$ select count(*) = 0 from public.spots where status = 'pending' $q$);
 
--- Evidence for the report (not fixed here): the existing 10-a-day spots limit lives in a policy, so one bulk INSERT passes it.
-select t.try('INFO (existing, not changed): 15 gyms in one bulk insert pass the 10/day spots policy', 'authenticated', '00000000-0000-0000-0000-00000000000b',
+-- 20261003000100: the 10-a-day gym cap is enforced per row in the pin trigger, so one bulk INSERT can no longer pass it.
+select t.try('a bulk insert of 15 gyms in ONE statement cannot slip past the 10/day gym cap', 'authenticated', '00000000-0000-0000-0000-00000000000b',
   $q$ insert into public.spots (id, name, suburb, state, country, lat, lng, types, status, submitted_by)
       select 'community-bbbbbbbb-bbbb-bbbb-bbbb-' || lpad(g::text, 12, '0'), 'Bulk ' || g, 'Sydney', 'NSW', 'AU', 1, 1, '{top-rope}', 'pending', '00000000-0000-0000-0000-00000000000b'
-      from generate_series(1, 15) g $q$, 'ok');
+      from generate_series(1, 15) g $q$, 'daily gym limit reached');
 
 -- =============== finding 4: account deletion ===============
 select t.is_true('every FK that references auth.users has ON DELETE CASCADE or SET NULL', 'postgres', null,

@@ -20,6 +20,7 @@ test('submitErrorMessage turns server errors into readable text', async () => {
   const { submitErrorMessage } = await load();
   assert.match(submitErrorMessage({ message: 'daily edit limit reached' }, 'x'), /limit of 20 edits.*tomorrow/);
   assert.match(submitErrorMessage({ message: 'daily report limit reached' }, 'x'), /limit of 20 reports.*tomorrow/);
+  assert.match(submitErrorMessage({ message: 'daily gym limit reached' }, 'x'), /limit of 10 new gyms.*tomorrow/);
   assert.match(submitErrorMessage({ message: 'new row for relation "pending_edits" violates check constraint "pending_edits_notes_len_check"' }, 'x'), /notes is too long \(at most 2000 characters\)/);
   assert.match(submitErrorMessage({ message: 'new row for relation "reports" violates check constraint "reports_message_len_check"' }, 'x'), /message is too long \(at most 2000/);
   assert.match(submitErrorMessage({ message: 'new row for relation "spots" violates check constraint "spots_name_len_check"' }, 'x'), /name is too long \(at most 200/);

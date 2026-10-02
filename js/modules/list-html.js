@@ -28,7 +28,7 @@ const typeText = types => knownTypes(types).map(t => TYPE_LABELS[t]).join(', ');
 
 // Provenance mark after the name (sec. 10.2): grey ring-dot for community-added (the default), forest for
 // community-verified, nothing for verified. The state comes from provenance.js via ctx; labels are fixed strings.
-const MARKS = { 'community-added': ['community', 'Community-added'], 'community-verified': ['verified', 'Community-verified'] };
+const MARKS = { 'listed': ['community', 'Listed by Bouldeer'], 'community-added': ['community', 'Community-added'], 'community-verified': ['verified', 'Community-verified'] };
 export function provenanceMarkHtml(state = 'community-added'){
   const m = MARKS[state];
   return m ? `<span class="provenance-mark provenance-mark--${m[0]}" title="${m[1]}"></span><span class="visually-hidden">, ${m[1].toLowerCase()}</span>` : '';

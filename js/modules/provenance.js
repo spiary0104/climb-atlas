@@ -1,5 +1,6 @@
 // Provenance and contribution rules (DESIGN.md sec. 10). Pure, unit-tested.
-//   community-added     the default for every approved gym, seed-imported ones included ("which is honest", sec. 10.1)
+//   listed              added by Bouldeer itself (seed data and researched imports: spots.community === false), not by a user
+//   community-added     submitted by a user and approved by a moderator (spots.community === true, or unknown)
 //   community-verified  two or more distinct contributors (the adder and authors of approved edits)
 //   verified            a moderator marked it verified (spots.verified_at)
 // Marks: grey ring-dot, forest ring-dot, nothing. Levels (sec. 10.6): thresholds are ours, the spec fixes only the points.
@@ -7,10 +8,12 @@
 export function provenanceState(g, contributors = 0){
   if(g && g.verified_at) return 'verified';
   if(Number(contributors) >= 2) return 'community-verified';
+  if(g && g.community === false) return 'listed';      // owner decision 2026-10-03: imported gyms are not community-added
   return 'community-added';
 }
 
 export const PROVENANCE_LABELS = Object.freeze({
+  'listed': 'Listed by Bouldeer',
   'community-added': 'Community-added',
   'community-verified': 'Community-verified',
   'verified': 'Verified',
