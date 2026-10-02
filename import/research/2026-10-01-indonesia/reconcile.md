@@ -1,7 +1,7 @@
 # Regional research: Indonesia (Tier A, wave 1) (2026-10-01-indonesia)
 
 Scope: ID (whole country)
-Index: 2127 gyms, sha256 8dbddf7924c2… | staged batches compared: none | other sections compared: none
+Index: 2130 gyms, sha256 c8521eb1c1ca… | staged batches compared: none | other sections compared: none
 Review radii (stricter than the importer): any gym 150 m, related name 15 km, other country 2 km
 
 ## Summary

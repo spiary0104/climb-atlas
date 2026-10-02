@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-01-indonesia",
+  "description": "Regional research \"Indonesia (Tier A, wave 1)\": 6 new gym(s) accepted of 9 candidate(s)",
+  "created": "2026-10-02",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-10-01-indonesia",
+    "section_sha256": "7b87708926258f2e366d5c3dbf68157d0ef81443fbf293585e24c98ecd68548c",
+    "sources_sha256": "eaad35c5defd6849661af29de5c93aa93b26b0e5b92138611085e4fc52f81b03",
+    "candidates_sha256": "568112f4b3bfa8aa519d30e0f7699278b041d3c1873d9e0daf330144dcd2bc26",
+    "reconcile_sha256": "b7b70dba0497010deed0eacf27da0687c226e2481fd0cbbaa51d59bf826b2960",
+    "review_sha256": "cea47247147fb2db0d797676c95c55ee687e86452ba5c5c51d1d23f0aca71bcd",
+    "candidates": 9,
+    "staged": 6,
+    "decisions": {
+      "accept": 6,
+      "defer": 3
+    }
+  },
+  "index_at_staging": {
+    "sha256": "c8521eb1c1cabccae2f11f7755956b9d4c9c0242a853b1696c8ec69dbe1d39ef",
+    "count": 2130
+  }
+}

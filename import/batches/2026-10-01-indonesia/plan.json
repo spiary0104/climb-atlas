@@ -1,0 +1,77 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-01-indonesia",
+ "index": {
+  "sha256": "c8521eb1c1cabccae2f11f7755956b9d4c9c0242a853b1696c8ec69dbe1d39ef",
+  "count": 2130,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [],
+ "counts": {
+  "records": 6,
+  "new": 6,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "9799fa54b5dacfcf5fcba3c3bc2294d7faed65e65b465dfe81c5c8e38be344d3",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-f9181ea448",
+   "id_frozen": true,
+   "name": "Boulder Planet Indonesia",
+   "country": "ID"
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-7c8c2678c1",
+   "id_frozen": true,
+   "name": "Indoclimb FX Sudirman",
+   "country": "ID"
+  },
+  {
+   "line": 3,
+   "class": "new",
+   "id": "g-c067efb2d5",
+   "id_frozen": true,
+   "name": "Indoclimb Kuningan City",
+   "country": "ID"
+  },
+  {
+   "line": 4,
+   "class": "new",
+   "id": "g-d8d207d948",
+   "id_frozen": true,
+   "name": "Indoclimb Lippo Mall Kemang",
+   "country": "ID"
+  },
+  {
+   "line": 5,
+   "class": "new",
+   "id": "g-62d88a54c8",
+   "id_frozen": true,
+   "name": "Dreamstone Boulders Alam Sutera",
+   "country": "ID"
+  },
+  {
+   "line": 6,
+   "class": "new",
+   "id": "g-0097d36f32",
+   "id_frozen": true,
+   "name": "Goodang Bouldering",
+   "country": "ID"
+  }
+ ]
+}
