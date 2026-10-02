@@ -196,8 +196,8 @@ export function mePageHtml(p){
   // One character appearance per screen (sec. 12.2): the seal steps aside while the first-run backpacker is shown.
   const firstRun = !!p.signedIn && p.section !== 'climbed' && !(p.saved || []).length && !(p.climbed || []).length;
   const links = `<section class="page-section me-brand" aria-labelledby="aboutMeTitle">${firstRun ? '' : sealSvg()}<div><h2 class="section-title" id="aboutMeTitle">Bouldeer</h2><p class="me-links">`
-    + `<a class="link link-quiet" href="about.html">About</a><button type="button" class="link link-quiet" data-page-action="privacy">Privacy</button>`
-    + `<button type="button" class="link link-quiet" data-page-action="terms">Terms</button></p></div></section>`;
+    + `<a class="link link-quiet" href="/about.html">About</a><a class="link link-quiet" href="/privacy">Privacy</a>`
+    + `<a class="link link-quiet" href="/terms">Terms</a></p></div></section>`;
   if(!p.signedIn) return `<article class="page me-page"><header class="place-header"><h1 class="page-title">Me</h1>`
     + `<p class="place-meta">Save gyms, mark the ones you have climbed and keep a log of your sessions.</p></header>`
     + `<p class="page-cta"><button type="button" class="btn btn-primary" data-page-action="sign-in">Sign in</button></p>${links}</article>`;

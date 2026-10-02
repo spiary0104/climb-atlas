@@ -49,7 +49,7 @@ Line refs drift: re-grep function names rather than trusting numbers.
 | `js/modules/sheet.js` | Mobile bottom sheet: snaps 18/52/92%, drag rules, tab bar hides at full |
 | `js/modules/marks.js` | `toggleMark` (Supabase `marks`, optimistic + rollback); explore.js listens |
 | `js/modules/nav.js`, `icons.js` | Top bar/tab bar (`[data-nav]` → explore, `/in`, `/log`, START, `/me`, add-gym); `icon(name)` (unknown names throw) |
-| `js/modules/modals.js` | Modal focus/Escape handling, edit (required note + review toggle) and report forms, Privacy/Terms; `startAddGym` → `/add` |
+| `js/modules/modals.js` | Modal focus/Escape handling, edit (required note + review toggle) and report forms; `startAddGym` → `/add` |
 | `js/modules/auth-ui.js`, `data-load.js`, `logbook.js`, `moderation.js` | Sign-in dialog + account slot · `loadSpots` (Supabase → `data/gyms.json` fallback), marks, moderator, pending · sessions + "Log a session" dialog (searchable gym picker) · moderator actions (approve with corrections, reject with reason, dismiss, verify) |
 | `data/gyms.json` | LEGACY seed dataset: offline fallback + "Revert to original" source (ids stale vs production), reconciliation input. **Never read; never edit** |
 | `data/gyms.reconciled.json` | FROZEN reconciliation/provenance dataset (2,127 records = production at the first import). Not a runtime file |
@@ -70,8 +70,8 @@ MapLibre → Supercluster → Supabase CDN → `supabase-init.js` → `auth.js` 
 - map.js does not import the list; explore.js registers map handlers (`setMapHandlers`). Import cycles
   (explore ↔ modals ↔ map) are safe because top-level code only does DOM lookups and `new maplibregl.Map`.
 
-## Data model (`supabase/schema.sql`)
-`moderators`, `spots` (status pending/approved/rejected; insert needs sign-in + rate limit), `pending_edits`, `reports`,
+## Data model (`supabase/migrations/`; `schema.sql` is stale)
+`moderators`, `spots` (status pending/approved/rejected; insert needs sign-in + rate limit), `pending_edits` and `reports` (sign-in + 20/day each, `submitted_by` pinned; migrations 20261002*), `routes` (unused, read-only),
 `marks`, `routes`, `sessions`, `session_climbs`, `profiles` (`display_name`, public read, own write), `checkins` (Phase 5:
 owner-only; user/time pinned by trigger; one per gym per 12 h, 30/day, checked in the trigger under a per-person lock; adds the `climbed` mark).
 Spot shape: `id` (`seed-N` legacy, `community-<uuid>`, or frozen `g-<hex>` for imported gyms), `name`, `suburb`, `state`,
@@ -125,7 +125,7 @@ Buttons: `.btn` + exactly one of `.btn-primary` (one per surface) / `-secondary`
 
 ## Offline / PWA (`sw.js`, v12)
 Shell precached (`SHELL_FILES`). Page loads (`mode: navigate`) of every app route share one cached shell (keyed `/`),
-whatever the path or query; other pages (about.html) are cached per path. Tiles cache-first; other same-origin + CDN files stale-while-revalidate;
+whatever the path or query; other pages (about.html, privacy.html, terms.html) are cached per path. Tiles cache-first; other same-origin + CDN files stale-while-revalidate;
 CDN tags carry `crossorigin="anonymous"`. Supabase: ONLY the public `GET /rest/v1/spots?...status=eq.approved` read
 is cached (network-first); marks/sessions/moderator/pending/auth and every write are never intercepted (the Cache
 API ignores `Authorization`, so caching them would leak across users). Escape only clicks `[data-modal-close]`.

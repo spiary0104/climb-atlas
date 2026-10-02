@@ -254,7 +254,9 @@ test('me page: saved/climbed tabs as links, rows link to gym pages, no email any
     assert.equal(hasHandlerAttrs(hostile), false);
   }
   const out = page.mePageHtml({ signedIn: false });
-  assert.deepEqual(tags(out).filter(t => t.attrs['data-page-action']).map(t => t.attrs['data-page-action']), ['sign-in', 'privacy', 'terms']);
+  assert.deepEqual(tags(out).filter(t => t.attrs['data-page-action']).map(t => t.attrs['data-page-action']), ['sign-in']);
+  // About / Privacy / Terms are plain links to their own pages (the Privacy/Terms dialogs are gone).
+  assert.deepEqual(tags(out).filter(t => t.tag === 'a' && /link-quiet/.test(t.attrs.class || '')).map(t => t.attrs.href), ['/about.html', '/privacy', '/terms']);
 });
 
 test('community: /me contributions and the gym page provenance lines keep hostile names and reasons as text', async () => {

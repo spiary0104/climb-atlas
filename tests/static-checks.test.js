@@ -118,7 +118,7 @@ const SAFE_EXPR = [
   // add-html.js (/add): extra is a literal attribute string at every textField() call site; opts/other/submit/signIn are
   // assembled in the same builder from escaped values and literals; the helpers escape internally
   /^(extra|opts|other|submit|signIn)$/, /^(countrySelect\(d\)|typeChecks\(d\.types\))$/, /^d\.country === 'OTHER' \? '' : regionSelect\(d\)$/,
-  /^textField\('[a-zA-Z]+', '[A-Za-z ]+', d\.[a-zA-Z]+\)$/,
+  /^textField\('[a-zA-Z]+', '[A-Za-z ]+', d\.[a-zA-Z]+(, ' maxlength="\d+"')?\)$/,
   // brand.js: the seal builder takes only literal options and escapes its label
   /^sealSvg\(\)$/, /^(arc|clip|head|CREST|pose|art)$/,
   // gym-picker.js (Log a session): text/none/groups are assembled in the same builder from escapeHtml()ed names, places,
@@ -201,16 +201,74 @@ test('photo URLs are validated at every render site and at both submit handlers'
   }
 });
 
-// The product is Bouldeer (owner decision). The Privacy and Terms dialogs name it as such; "Climb Atlas" survives only as
+// The product is Bouldeer (owner decision). The Privacy and Terms pages name it as such; "Climb Atlas" survives only as
 // "Bouldeer (formerly Climb Atlas)" for continuity with the earlier terms. The contact mailbox and the climbatlas.org
 // domain are addresses, not branding, and are allowed.
+const LEGAL_PAGES = ['privacy.html', 'terms.html'];
+const OLD_CONTACT = 'climbatlas0104' + '@gmail.com';
 test('legal pages use the Bouldeer name (Climb Atlas only as "formerly")', () => {
-  const html = read('index.html');
-  const legal = html.slice(html.indexOf('id="privacyModalBackdrop"'), html.indexOf('<script', html.indexOf('id="termsModalBackdrop"')));
-  assert.ok(legal.includes('id="termsModalBackdrop"') && legal.includes('Privacy Policy'), 'found both dialogs');
-  const text = legal.replace(/climbatlas0104@gmail\.com/g, '').replace(/Bouldeer \(formerly Climb Atlas\)/g, '');
-  assert.ok(!/climb\s*atlas/i.test(text), 'old product name in the legal copy: ' + (text.match(/.{0,60}climb\s*atlas.{0,20}/i) || [''])[0]);
-  assert.match(legal, /<p>Bouldeer \(formerly Climb Atlas\) is a free, informational, community-edited map/);
-  assert.ok((legal.match(/\bBouldeer\b/g) || []).length >= 4, 'the Terms name Bouldeer throughout');
-  for (const f of ['about.html']) assert.ok(!/climb\s*atlas/i.test(read(f)), f + ' names Climb Atlas');
+  for (const f of LEGAL_PAGES) {
+    const text = read(f).replace(/Bouldeer \(formerly Climb Atlas\)/g, '');
+    assert.ok(!/climb\s*atlas/i.test(text), f + ': old product name in the legal copy: ' + (text.match(/.{0,60}climb\s*atlas.{0,20}/i) || [''])[0]);
+    assert.ok((read(f).match(/\bBouldeer\b/g) || []).length >= 4, f + ' names Bouldeer throughout');
+  }
+  assert.match(read('terms.html'), /<p>Bouldeer \(formerly Climb Atlas\) is a free, informational, community-edited map/);
+  for (const f of ['about.html', '404.html']) assert.ok(!/climb\s*atlas/i.test(read(f)), f + ' names Climb Atlas');
+});
+
+test('legal pages are real pages: dated, no "draft / not legal advice" banner, no dialogs left in index.html', () => {
+  for (const f of LEGAL_PAGES) {
+    const html = read(f);
+    assert.match(html, /<html lang="en">/, f);
+    assert.match(html, /Last updated: 2 October 2026/, f + ' carries the current date');
+    assert.ok(!/starting draft|not legal advice|legal-note/i.test(html), f + ' still presents itself as a draft');
+    assert.match(html, /<h1[^>]*>(Privacy Policy|Terms of Service)<\/h1>/, f);
+  }
+  assert.match(read('terms.html'), /governed by the laws of New South Wales, Australia/);
+  const idx = read('index.html');
+  assert.ok(!/privacyModalBackdrop|termsModalBackdrop|id="openPrivacy"|id="openTerms"/.test(idx), 'the Privacy/Terms dialogs are gone from index.html');
+  assert.match(idx, /<a class="link link-quiet" href="\/privacy">Privacy<\/a>/);
+  assert.match(idx, /<a class="link link-quiet" href="\/terms">Terms<\/a>/);
+  for (const f of moduleFiles) assert.ok(!/openPrivacy|openTerms|privacyModalBackdrop|termsModalBackdrop|initInfoModals/.test(read(f)), f + ' still wires the old dialogs');
+});
+
+test('privacy policy names every service the app contacts and what the app stores in the browser', () => {
+  const html = read('privacy.html');
+  for (const s of ['Supabase', 'Vercel', 'Google', 'unpkg.com', 'cdn.jsdelivr.net', 'CARTO', 'OpenStreetMap']) assert.ok(html.includes(s), 'privacy.html does not mention ' + s);
+  assert.match(html, /hello@bouldeer\.com/);
+  assert.match(html, /30 days/);
+  // The storage keys the app really uses, so the "Stored in your browser" list cannot drift from the code.
+  const code = moduleFiles.map(read).join('\n');
+  for (const k of ['bouldeer_add_draft', 'bouldeer_list_view', 'bouldeer_last_camera', 'bouldeer_recent_searches']) assert.ok(code.includes(k), k + ' is no longer used: update the policy');
+  assert.ok(!/document\.cookie/.test(code), 'the app now sets cookies: update the policy');
+  assert.ok(!/gtag|googletagmanager|plausible|posthog|mixpanel|hotjar|sentry/i.test(code + read('index.html')), 'analytics added: update the policy');
+});
+
+test('contact address is hello@bouldeer.com; the owner\'s personal address is in no public page, script or test', () => {
+  const files = ['index.html', 'about.html', 'privacy.html', 'terms.html', '404.html', 'supabase/geocode.html', 'manifest.json', 'sw.js', 'js/main.js', 'js/auth.js', ...moduleFiles];
+  for (const f of files) assert.ok(!read(f).includes(OLD_CONTACT), f + ' shows the old contact address');
+  for (const f of ['about.html', 'privacy.html', 'terms.html', '404.html']) assert.match(read(f), /href="mailto:hello@bouldeer\.com"/, f);
+});
+
+test('static pages: About links Privacy and Terms and returns to "/"; 404 links the map, Regions and About with root-absolute assets', () => {
+  const about = read('about.html');
+  assert.match(about, /href="\/privacy"/); assert.match(about, /href="\/terms"/);
+  assert.ok(!/href="index\.html"/.test(about), 'About links back to /index.html');
+  assert.ok(!/40\+ countries|region and type filters|region filter/i.test(about), 'stale About claims');
+  const nf = read('404.html');
+  for (const href of ['/', '/in', '/about.html']) assert.ok(nf.includes('href="' + href + '"'), '404 lacks a link to ' + href);
+  assert.match(nf, /<meta name="robots" content="noindex">/);
+  // A 404 can be served for /any/deep/path, so none of its (or the legal pages') assets may be relative.
+  for (const f of ['404.html', 'privacy.html', 'terms.html']) {
+    const html = read(f);
+    for (const m of html.matchAll(/\b(?:href|src)="([^"#][^"]*)"/g)) assert.ok(/^(\/|https?:|mailto:)/.test(m[1]), f + ' has a relative URL: ' + m[1]);
+    for (const m of html.matchAll(/<use href="([^"]+)"/g)) assert.ok(m[1].startsWith('/assets/icons.svg#'), f + ' sprite: ' + m[1]);
+  }
+});
+
+test('footer and /me legal links are at least 44px tall on phones', () => {
+  const explore = read('css/explore.css'), page = read('css/page.css');
+  assert.match(explore, /@media \(max-width:1023px\),\(pointer:coarse\)\{\.footer-links a\{min-height:var\(--size-touch-min\);\}\}/);
+  assert.match(page, /\.me-links a\{display:inline-flex;align-items:center;min-height:var\(--size-touch-min\);\}/);
+  assert.match(read('css/style.css'), /\.static-footer a\{[^}]*min-height:var\(--size-touch-min\)/);
 });

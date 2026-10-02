@@ -5,11 +5,18 @@
 <base href="/">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bouldeer — community-sourced climbing map</title>
-<meta name="description" content="A community-sourced map of indoor climbing gyms — bouldering, top rope, and lead — across 40+ countries. Filter by region and type, save the gyms you've climbed, and help keep the map current.">
+<meta name="description" content="A community-sourced map of indoor climbing gyms — bouldering, top rope, and lead — in 80+ countries. Search by city or gym, filter by climbing type, save the gyms you've climbed, and help keep the map current.">
 <meta name="theme-color" content="#F6F0E3">
-<meta property="og:title" content="Bouldeer">
-<meta property="og:description" content="A community-sourced map of indoor climbing gyms — bouldering, top rope, and lead — across 40+ countries.">
+<meta property="og:title" content="Bouldeer — community-sourced climbing map">
+<meta property="og:description" content="A community-sourced map of indoor climbing gyms — bouldering, top rope, and lead — in 80+ countries.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://www.bouldeer.com/">
+<meta property="og:site_name" content="Bouldeer">
+<meta property="og:image" content="https://www.bouldeer.com/icons/icon-512.png">
+<meta property="og:image:width" content="512">
+<meta property="og:image:height" content="512">
+<meta property="og:image:alt" content="The Bouldeer deer logo">
+<meta name="twitter:card" content="summary">
 <link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <link rel="manifest" href="manifest.json">
@@ -20,7 +27,7 @@
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="preconnect" href="https://basemaps.cartocdn.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,500..600,50..100&family=Inter:wght@400;500;600&display=swap" crossorigin="anonymous">
-<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.css" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.css" integrity="sha384-uTttxo/aOKbdE5RlD/SPzSDoDmNvGlUYPjONi2MN/b7c9HPSvW07OIuyP7uL6jxK" crossorigin="anonymous">
 <link rel="stylesheet" href="css/tokens.css">
 <link rel="stylesheet" href="css/base.css">
 <link rel="stylesheet" href="css/components.css">
@@ -110,9 +117,9 @@
         <div class="gym-list" id="gymList" role="list" aria-label="Gyms in view" tabindex="-1" aria-busy="true"></div>
         <div class="list-footer">
           <div class="footer-links">
-            <a class="link link-quiet" href="about.html">About</a>
-            <button type="button" class="link link-quiet" id="openPrivacy">Privacy</button>
-            <button type="button" class="link link-quiet" id="openTerms">Terms</button>
+            <a class="link link-quiet" href="/about.html">About</a>
+            <a class="link link-quiet" href="/privacy">Privacy</a>
+            <a class="link link-quiet" href="/terms">Terms</a>
           </div>
         </div>
       </div>
@@ -154,11 +161,11 @@
     <button class="btn btn-secondary btn-block u-mb-4" id="eDropPinBtn">Move pin</button>
     <div class="field">
       <label for="eName">Name</label>
-      <input id="eName" type="text" aria-required="true">
+      <input id="eName" type="text" maxlength="200" aria-required="true">
     </div>
     <div class="field">
       <label for="eSuburb">Suburb / nearest town</label>
-      <input id="eSuburb" type="text" aria-required="true">
+      <input id="eSuburb" type="text" maxlength="200" aria-required="true">
     </div>
     <div class="field field-row">
       <div>
@@ -280,16 +287,16 @@
     <div class="field field-row init-hidden" id="eOtherCountryFields">
       <div>
         <label for="eCountryOther">Country name</label>
-        <input id="eCountryOther" type="text" placeholder="e.g. France">
+        <input id="eCountryOther" type="text" maxlength="100" placeholder="e.g. France">
       </div>
       <div>
         <label for="eStateOther">State / region</label>
-        <input id="eStateOther" type="text" placeholder="e.g. Île-de-France or a nearby city">
+        <input id="eStateOther" type="text" maxlength="100" placeholder="e.g. Île-de-France or a nearby city">
       </div>
     </div>
     <div class="field">
       <label for="eAddress">Street address (optional)</label>
-      <input id="eAddress" type="text" placeholder="e.g. 12 Chalk St, Marrickville NSW 2204">
+      <input id="eAddress" type="text" maxlength="300" placeholder="e.g. 12 Chalk St, Marrickville NSW 2204">
     </div>
     <div class="field">
       <div class="field-label">Type (select all that apply)</div>
@@ -313,11 +320,11 @@
     </div>
     <div class="field">
       <label for="eNotes">Notes (optional)</label>
-      <textarea id="eNotes"></textarea>
+      <textarea id="eNotes" maxlength="2000"></textarea>
     </div>
     <div class="field">
       <label for="ePhoto">Photo link (optional)</label>
-      <input id="ePhoto" type="text" placeholder="Link to a photo — their site, Instagram, Google Maps">
+      <input id="ePhoto" type="text" maxlength="1000" placeholder="Link to a photo — their site, Instagram, Google Maps">
     </div>
     <div class="field">
       <label for="eNote">What changed and how do you know?</label>
@@ -339,7 +346,7 @@
     <div class="sub">Not for full corrections — if you know the right details, use "Edit this spot" instead. This just flags something for a moderator to look into: <span id="reportSpotName"></span></div>
     <div class="field">
       <label for="rMessage">What's wrong?</label>
-      <textarea id="rMessage" placeholder="e.g. This gym closed down in 2025 / wrong suburb / name is misspelled"></textarea>
+      <textarea id="rMessage" maxlength="2000" placeholder="e.g. This gym closed down in 2025 / wrong suburb / name is misspelled"></textarea>
     </div>
     <div class="modal-actions">
       <button class="btn btn-secondary" id="rCancelBtn" data-modal-close>Cancel</button>
@@ -351,7 +358,7 @@
 <div class="modal-backdrop hidden" id="authModalBackdrop">
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="dlg-sign-in">
     <h2 id="dlg-sign-in">Sign in</h2>
-    <div class="sub">Sign in to mark spots as climbed and bookmark ones you want to try.</div>
+    <div class="sub">Sign in to mark spots as climbed, bookmark ones you want to try, and suggest edits or report problems.</div>
     <button class="btn btn-secondary btn-block u-mb-4" id="googleSignInBtn">Continue with Google</button>
     <div class="auth-divider"><span>or</span></div>
     <div class="field">
@@ -467,68 +474,9 @@
   </div>
 </div>
 
-<div class="modal-backdrop hidden" id="privacyModalBackdrop">
-  <div class="modal info-modal" role="dialog" aria-modal="true" aria-labelledby="dlg-privacy-policy">
-    <h2 id="dlg-privacy-policy">Privacy Policy</h2>
-    <div class="updated">Last updated: 1 September 2026</div>
-
-    <h3>What we collect</h3>
-    <p>Three kinds of data: (1) Anything voluntarily entered into the "Add a spot" or "Edit this spot" forms — gym details such as name, location, address, climbing type, notes, and an optional photo link. (2) Anything entered into a "Report incorrect information" form — just a free-text message about a specific spot. (3) If you sign in, your email address (and, for Google sign-in, whatever basic profile info Google shares) plus which spots you've privately marked as climbed or bookmarked.</p>
-
-    <h3>How submitted information is used</h3>
-    <p>Anything submitted through the "Add a spot" / "Edit this spot" forms is displayed publicly to all visitors once a moderator approves it — that's the whole point of a shared map. Don't include personal information in a submission that you don't want shown publicly. "Report incorrect information" messages are different — they're only ever visible to moderators, reviewed to decide whether the spot needs correcting, and not displayed on the public map. Climbed/bookmarked marks are private and tied to your account — only you can see them.</p>
-
-    <h3>Third parties</h3>
-    <p>Map tiles are served by OpenStreetMap and CARTO. Loading the map means your browser requests tiles from their servers directly; see their own privacy policies for how they handle that. Accounts and data storage are handled by Supabase; Google sign-in is handled by Google. See their respective privacy policies for how they handle your data.</p>
-
-    <h3>Requesting removal</h3>
-    <p>To have a submission corrected or removed, use the Edit function on the relevant pin, or contact <a href="mailto:climbatlas0104@gmail.com">climbatlas0104@gmail.com</a>.</p>
-
-    <h3>Changes to this policy</h3>
-    <p>This policy may be updated as the site adds features like accounts, analytics, or advertising. Material changes will be reflected here with an updated date.</p>
-
-    <div class="close-row"><button class="btn btn-secondary info-close" data-modal-close>Close</button></div>
-  </div>
-</div>
-
-<div class="modal-backdrop hidden" id="termsModalBackdrop">
-  <div class="modal info-modal" role="dialog" aria-modal="true" aria-labelledby="dlg-terms-of-service">
-    <h2 id="dlg-terms-of-service">Terms of Service</h2>
-    <div class="updated">Last updated: 19 September 2026</div>
-    <div class="legal-note alert alert-warning">This is a plain-language starting draft, not legal advice. Have it reviewed properly before relying on it — especially once accounts, ads, or payments are added.</div>
-
-    <h3>What this is</h3>
-    <p>Bouldeer (formerly Climb Atlas) is a free, informational, community-edited map of climbing spots across a growing list of countries worldwide. It isn't a booking, ticketing, or payment service, and using it doesn't create any relationship with the gyms listed.</p>
-
-    <h3>Accuracy — please read this one</h3>
-    <p>Information on this map is submitted and edited by the public and may be incomplete, outdated, or wrong. Confirm details — especially opening hours, prices, and whether a gym is still open — directly with the venue before visiting. Outdoor climbing and bouldering carry inherent risk; you climb entirely at your own risk and are responsible for your own judgement, gear, and safety.</p>
-
-    <h3>Submitting content</h3>
-    <ul>
-      <li>By submitting a spot, edit, or photo link, you confirm you have the right to share it, and you grant Bouldeer a licence to display it on the map.</li>
-      <li>Don't submit false information, spam, offensive content, or anything you don't have the rights to.</li>
-      <li>New spots and proposed edits are reviewed by a moderator before they go live, and may be edited, corrected, rejected, or removed at any time by site administrators.</li>
-    </ul>
-
-    <h3>Using the site</h3>
-    <p>Browse and use the map as much as you like. Please don't use bots, scrapers, or scripts to copy the map data in bulk, or to load the site at a rate that affects other people's use, without asking first — email us below. We may block traffic that does, and the site's software and how its data is compiled and presented remain ours (individual facts about a gym, like its address, aren't ours to own).</p>
-
-    <h3>No warranty</h3>
-    <p>Bouldeer is provided "as is," with no guarantee of accuracy, availability, or fitness for any particular purpose. To the extent permitted by law, Bouldeer isn't liable for losses arising from reliance on information found here.</p>
-
-    <h3>Changes</h3>
-    <p>These terms may change as the site grows. Continued use after a change means you accept the updated terms.</p>
-
-    <h3>Contact &amp; jurisdiction</h3>
-    <p>Questions: <a href="mailto:climbatlas0104@gmail.com">climbatlas0104@gmail.com</a>. These terms are governed by the laws of New South Wales, Australia.</p>
-
-    <div class="close-row"><button class="btn btn-secondary info-close" data-modal-close>Close</button></div>
-  </div>
-</div>
-
-<script src="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.js" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/supercluster@8/dist/supercluster.min.js" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.js" integrity="sha384-5+cfbwT0iiub6VsQAdn6yz16nr6sDiQoHx6tm4O8OVYXHYOxcffFmCJBL0dgdvGp" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/supercluster@8.0.1/dist/supercluster.min.js" integrity="sha384-HkQmq7PC2BUVUkCsRUnOyzpliMb5M4pVPnjEiyI92tdS8buRHN6ZnehP1n1Acj84" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.2/dist/umd/supabase.min.js" integrity="sha384-WgXwGL6fUsYJWNaKJgVbrJKGRQwc1vieh2oy4kw9nXqpNDz3tdSsqEYUgeHD/NuF" crossorigin="anonymous"></script>
 <script src="js/supabase-init.js"></script>
 <script src="js/auth.js"></script>
 <!-- data/gyms.json (the bundled seed dataset) is fetched on demand by js/modules/data-load.js

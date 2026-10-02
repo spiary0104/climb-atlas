@@ -1,9 +1,11 @@
-// Modal keyboard/focus handling, edit/report spot forms, Privacy/Terms info modals. Adding a gym is the /add page.
+// Modal keyboard/focus handling, edit/report spot forms. Adding a gym is the /add page.
+import { openAuthModal } from './auth-ui.js';
 import { ensureSeedData } from './data-load.js';
 import { map } from './map.js';
 import { STATES_BY_COUNTRY } from './regions.js';
 import { appState } from './state.js';
 import { navigate, refreshPage } from './router.js';
+import { submitErrorMessage } from './submit-errors.js';
 import { escapeHtml, safeUrl, showToast } from './utils.js';
 
 // --- modal keyboard/focus handling ---
@@ -45,6 +47,15 @@ function getCountryState(prefix){
   return {country: countrySel.value, state: document.getElementById(prefix + 'State').value};
 }
 
+// Suggesting an edit and reporting a gym need an account (the database refuses anonymous rows, migration 20261002000100):
+// signed-out people get the sign-in dialog and a toast instead of a form that cannot be submitted.
+function requireSignIn(reason){
+  if(window.auth && window.auth.user) return true;
+  showToast(reason);
+  openAuthModal();
+  return false;
+}
+
 // --- pin placing (edit form) ---
 const placingBanner = document.getElementById('placingBanner');
 const editModalBackdrop = document.getElementById('editModalBackdrop');
@@ -70,6 +81,7 @@ function renderFormHint(hintId, missing){
 export async function openEditModal(id){
   const g = appState.spots.find(x=>x.id===id);
   if(!g) return;
+  if(!requireSignIn('Sign in to suggest an edit')) return;
   // Only an edited seed spot can be reverted, and only the seed file knows
   // its original values -- pull it in for that case alone.
   if(g.edited && !g.community) await ensureSeedData().catch(()=>{});
@@ -140,6 +152,7 @@ const rSubmitBtn = document.getElementById('rSubmitBtn');
 export function openReportModal(id){
   const g = appState.spots.find(x=>x.id===id);
   if(!g) return;
+  if(!requireSignIn('Sign in to report a problem')) return;
   appState.currentReportId = id;
   document.getElementById('reportSpotName').textContent = g.name;
   rMessage.value = '';
@@ -151,12 +164,6 @@ function closeReportModal(){
   reportModalBackdrop.classList.add('hidden');
   appState.currentReportId = null;
 }
-
-// --- info modals: privacy / terms (About is now a standalone page, about.html) ---
-const infoModals = {
-  openPrivacy: 'privacyModalBackdrop',
-  openTerms: 'termsModalBackdrop'
-};
 
 export function initModalKeyboard(){
   document.querySelectorAll('.modal-backdrop').forEach(backdrop=>{
@@ -231,6 +238,7 @@ export function initForms(){
   document.getElementById('eSaveBtn').addEventListener('click', async ()=>{
     if(!appState.currentEditId || !appState.currentEditPin) return;
     if(!window.sb){ showToast('Supabase is not configured — see README.md'); return; }
+    if(!requireSignIn('Sign in to submit your edit')) return;     // the session may have ended while the form was open
     const {country, state} = getCountryState('e');
     const ePhotoRaw = document.getElementById('ePhoto').value.trim();
     if(ePhotoRaw && !safeUrl(ePhotoRaw)){ showToast('Photo link must be a full http:// or https:// address'); return; }
@@ -261,7 +269,7 @@ export function initForms(){
       closeEditModal();
       refreshPage();
     }catch(err){
-      showToast('Could not save — try again');
+      showToast(submitErrorMessage(err, 'Could not save — try again'));
       console.error(err);
       saveBtn.textContent = 'Save changes';
       saveBtn.disabled = false;
@@ -271,6 +279,7 @@ export function initForms(){
   document.getElementById('eRevertBtn').addEventListener('click', async ()=>{
     if(!appState.currentEditId) return;
     if(!window.sb){ showToast('Supabase is not configured — see README.md'); return; }
+    if(!requireSignIn('Sign in to submit your edit')) return;
     const id = appState.currentEditId;
     const original = (await ensureSeedData().catch(()=>[])).find(s=>s.id===id);
     if(!original){ showToast('No original data to revert to'); return; }
@@ -286,7 +295,7 @@ export function initForms(){
       showToast('Revert submitted — a moderator will review it before it goes live.');
       closeEditModal();
     }catch(err){
-      showToast('Could not submit revert — try again');
+      showToast(submitErrorMessage(err, 'Could not submit revert — try again'));
       console.error(err);
     }
   });
@@ -299,6 +308,7 @@ export function initForms(){
   rSubmitBtn.addEventListener('click', async ()=>{
     if(!appState.currentReportId || !rMessage.value.trim()) return;
     if(!window.sb){ showToast('Supabase is not configured — see README.md'); return; }
+    if(!requireSignIn('Sign in to send your report')) return;
     rSubmitBtn.disabled = true;
     rSubmitBtn.textContent = 'Sending…';
     try{
@@ -311,28 +321,10 @@ export function initForms(){
       rSubmitBtn.textContent = 'Send report';
       closeReportModal();
     }catch(err){
-      showToast('Could not send report — try again');
+      showToast(submitErrorMessage(err, 'Could not send report — try again'));
       console.error(err);
       rSubmitBtn.textContent = 'Send report';
       rSubmitBtn.disabled = false;
     }
-  });
-}
-
-export function initInfoModals(){
-  Object.keys(infoModals).forEach(btnId=>{
-    document.getElementById(btnId).addEventListener('click', ()=>{
-      document.getElementById(infoModals[btnId]).classList.remove('hidden');
-    });
-  });
-  document.querySelectorAll('.info-close').forEach(btn=>{
-    btn.addEventListener('click', (e)=>{
-      e.target.closest('.modal-backdrop').classList.add('hidden');
-    });
-  });
-  ['privacyModalBackdrop','termsModalBackdrop'].forEach(id=>{
-    document.getElementById(id).addEventListener('click', (e)=>{
-      if(e.target.id === id) e.target.classList.add('hidden');
-    });
   });
 }

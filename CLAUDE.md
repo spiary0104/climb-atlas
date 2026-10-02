@@ -30,7 +30,7 @@ tooling, a framework, or a bundler without discussing it first.
 
 ```
 index.html              App shell (no inline JS/CSS)                 (>30 KB)
-about.html              Standalone About page
+about.html, privacy.html, terms.html, 404.html   Standalone static pages (root-absolute assets)
 css/tokens.css          Design tokens (only file with raw values; deer palette: fawn, bark); design/tokens.json generated from it
 css/base.css            Reset, type scale, focus
 css/components.css      Shared components (.btn tiers, chips, fields, nav, dialogs, ...)
@@ -72,7 +72,7 @@ data/gyms.json          LEGACY seed dataset; app offline fallback + provenance i
 data/gyms.reconciled.json FROZEN reconciliation/provenance dataset (= production at first import); not a runtime file
 import/                 Import pipeline: index/ (match index), batches/ (staging), research/ (regional sections)
 scripts/gym-import.js   Import CLI (+ scripts/lib/gym-import/); docs/import-workflow.md
-supabase/schema.sql     Tables + RLS; re-runnable in the SQL Editor
+supabase/schema.sql     STALE, raises an error if run, NEVER run it; the schema is supabase/migrations/
 supabase/geocode.html   Pin-position checker for seed spots
 sw.js                   Service worker — add new JS/CSS to SHELL_FILES, bump CACHE_VERSION
 docs/ARCHITECTURE.md    Architecture, short form (data flow, file:line)

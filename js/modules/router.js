@@ -49,10 +49,13 @@ export const currentRoute = () => current;
 export const isExplore = () => !current || current.name === 'explore';
 export const exploreUrl = () => lastExploreUrl;
 
+// Canonical URLs always name the production origin, so a legacy or preview host never canonicalises to itself.
+const CANONICAL_ORIGIN = 'https://www.bouldeer.com';
+
 function setMeta(title, path){
   document.title = title;
   let link = document.querySelector('link[rel="canonical"]');
-  if(link) link.href = location.origin + path;
+  if(link) link.href = CANONICAL_ORIGIN + path;
 }
 
 // Pages call this once they know their title (e.g. the gym name).
