@@ -45,6 +45,46 @@
       "permanent": true
     },
     {
+      "source": "/import/:path*",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/tests/:path*",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/scripts/:path*",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/design/:path*",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/.claude/:path*",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/data/reconciliation/:path*",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/data/backups/:path*",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/data/gyms.reconciled.json",
+      "destination": "/",
+      "permanent": false
+    },
+    {
       "source": "/docs/:path*",
       "destination": "/",
       "permanent": false

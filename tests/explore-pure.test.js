@@ -193,7 +193,12 @@ test('geo: fitCamera frames a box (region pages) and clamps the zoom', async () 
 
 test('provenance: states, levels, relative time, the page line and display-name rules (sec. 10)', async () => {
   const { prov } = await mods;
-  assert.equal(prov.provenanceState({}, 0), 'community-added', 'the default, seed-imported gyms included');
+  assert.equal(prov.provenanceState({}, 0), 'community-added', 'unknown origin stays community-added');
+  assert.equal(prov.provenanceState({ community: true }, 0), 'community-added', 'a user submission');
+  assert.equal(prov.provenanceState({ community: false }, 0), 'listed', 'seed data and researched imports are listed by Bouldeer');
+  assert.equal(prov.provenanceState({ community: false }, 2), 'community-verified', 'contributors still corroborate a listed gym');
+  assert.equal(prov.provenanceState({ community: false, verified_at: '2026-10-01' }, 0), 'verified');
+  assert.equal(prov.provenanceLine({ community: false }, null, new Date('2026-10-03')).text, 'Listed by Bouldeer', 'imports: no invented adder');
   assert.equal(prov.provenanceState({}, 2), 'community-verified');
   assert.equal(prov.provenanceState({ verified_at: '2026-09-01' }, 0), 'verified');
   assert.deepEqual([0, 14, 15, 49, 50, 149, 150, 399, 400, 5000].map(prov.levelFor), [1, 1, 2, 2, 3, 3, 4, 4, 5, 5]);
