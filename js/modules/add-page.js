@@ -116,12 +116,18 @@ function focusFirstMissing(){
 
 async function submit(){
   if(busy) return;
-  if(stepOneMissing(draft, zoomNow()).length){
+  // A blocked submit always says why (a silent focus jump read as "nothing happens").
+  const missing = stepOneMissing(draft, zoomNow());
+  if(missing.length){
     if(draft.step !== 1){ draft.step = 1; renderStep(); }
-    updateHint(); focusFirstMissing(); return;
+    updateHint(); focusFirstMissing();
+    showToast('Still needed: ' + missing.join(', '));
+    return;
   }
-  if(areaMissing(draft).length){
+  const area = areaMissing(draft);
+  if(area.length){
     draft.step = 2; renderStep(); saveDraft();
+    showToast('Still needed: ' + area.join(', '));
     const s = $('add-suburb'); if(s) s.focus();
     return;
   }

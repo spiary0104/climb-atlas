@@ -15,7 +15,8 @@
 //      rebrand). Same-origin files are stale-while-revalidate, so without a bump phones kept the old deer art.
 // v14: canonical link points at www.bouldeer.com (index.html).
 // v15: launch readiness: privacy/terms/404 pages, legal modals removed, pinned CDN with SRI, new footer links; submit-errors.js (sign-in + DB caps).
-const CACHE_VERSION = 'v15';
+// v16: Add a gym says what is still needed when Submit is blocked.
+const CACHE_VERSION = 'v16';
 const SHELL_CACHE = 'climbatlas-shell-' + CACHE_VERSION;
 const RUNTIME_CACHE = 'climbatlas-runtime-' + CACHE_VERSION;
 const TILE_CACHE = 'climbatlas-tiles-' + CACHE_VERSION;
