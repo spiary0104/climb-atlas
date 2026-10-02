@@ -70,8 +70,8 @@ MapLibre → Supercluster → Supabase CDN → `supabase-init.js` → `auth.js` 
 - map.js does not import the list; explore.js registers map handlers (`setMapHandlers`). Import cycles
   (explore ↔ modals ↔ map) are safe because top-level code only does DOM lookups and `new maplibregl.Map`.
 
-## Data model (`supabase/schema.sql`)
-`moderators`, `spots` (status pending/approved/rejected; insert needs sign-in + rate limit), `pending_edits`, `reports`,
+## Data model (`supabase/migrations/`; `schema.sql` is stale)
+`moderators`, `spots` (status pending/approved/rejected; insert needs sign-in + rate limit), `pending_edits` and `reports` (sign-in + 20/day each, `submitted_by` pinned; migrations 20261002*), `routes` (unused, read-only),
 `marks`, `routes`, `sessions`, `session_climbs`, `profiles` (`display_name`, public read, own write), `checkins` (Phase 5:
 owner-only; user/time pinned by trigger; one per gym per 12 h, 30/day, checked in the trigger under a per-person lock; adds the `climbed` mark).
 Spot shape: `id` (`seed-N` legacy, `community-<uuid>`, or frozen `g-<hex>` for imported gyms), `name`, `suburb`, `state`,

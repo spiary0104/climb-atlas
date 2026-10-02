@@ -9,8 +9,8 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 ### Bouldeer redesign (docs/DESIGN.md sec. 17)
 - Status: Phases 0-5 + Brand Pass complete on `feature/bouldeer-brand-pass` (the earlier phase branches are stacked in it);
   the release is its pull request into `master` (Vercel deploys climbatlas.org from `master`).
-- Production migrations applied 2026-09-29 (all four recorded; slugs, provenance RPCs, `profiles`, `checkins` live and
-  verified read-only; backups outside the repo). See docs/migrations.md.
+- Migrations applied 2026-09-29 (all four recorded, verified read-only). Security hardening 20261002000100-600 (sign-in
+  for edits/reports, caps, account-deletion FKs) PREPARED, NOT APPLIED: needs owner approval. See docs/migrations.md.
 - Open: Lighthouse a11y >= 95 not measured; real-phone retest of the 2026-09-29 fixes (eyes, Date/Mood) and check-in on
   production; Supabase Auth Redirect URLs: add preview domains (else sign-in lands on the Site URL); Explore first-run art unbuilt (7.10); Privacy Policy predates display names/check-ins/logbook (owner to update);
   START and the Log tab both read "Log" (sec. 6.5); lake/plum colours provisional (sec. 19.1). Decisions: DESIGN.md log.
