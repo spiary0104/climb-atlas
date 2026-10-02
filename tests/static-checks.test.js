@@ -118,7 +118,7 @@ const SAFE_EXPR = [
   // add-html.js (/add): extra is a literal attribute string at every textField() call site; opts/other/submit/signIn are
   // assembled in the same builder from escaped values and literals; the helpers escape internally
   /^(extra|opts|other|submit|signIn)$/, /^(countrySelect\(d\)|typeChecks\(d\.types\))$/, /^d\.country === 'OTHER' \? '' : regionSelect\(d\)$/,
-  /^textField\('[a-zA-Z]+', '[A-Za-z ]+', d\.[a-zA-Z]+\)$/,
+  /^textField\('[a-zA-Z]+', '[A-Za-z ]+', d\.[a-zA-Z]+(, ' maxlength="\d+"')?\)$/,
   // brand.js: the seal builder takes only literal options and escapes its label
   /^sealSvg\(\)$/, /^(arc|clip|head|CREST|pose|art)$/,
   // gym-picker.js (Log a session): text/none/groups are assembled in the same builder from escapeHtml()ed names, places,

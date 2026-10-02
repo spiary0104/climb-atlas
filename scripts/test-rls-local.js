@@ -51,9 +51,11 @@ const denied = r => r.status >= 400 || (Array.isArray(r.json) && r.json.length =
   r = await api('POST', '/rest/v1/spots', { body: { id: 'community-' + uuid(), name: 'anon try', suburb: 'x', state: 'NSW', country: 'AU', lat: 0, lng: 0, types: [], status: 'pending', submitted_by: uuid() } });
   t('anon: cannot insert a spot', r.status >= 400, 'HTTP ' + r.status);
   r = await api('POST', '/rest/v1/pending_edits', { body: { spot_id: spot, name: 'edit', suburb: 'X', state: 'NSW', country: 'AU', lat: 1, lng: 1, types: ['top-rope'] } });
-  t('anon: can propose an edit (public insert)', r.status === 201, 'HTTP ' + r.status);
+  t('anon: cannot propose an edit (sign-in required, migration 20261002000100)', r.status >= 400, 'HTTP ' + r.status);
   r = await api('POST', '/rest/v1/reports', { body: { spot_id: spot, message: 'wrong pin' } });
-  t('anon: can submit a report (public insert)', r.status === 201, 'HTTP ' + r.status);
+  t('anon: cannot submit a report (sign-in required, migration 20261002000100)', r.status >= 400, 'HTTP ' + r.status);
+  r = await api('POST', '/rest/v1/rpc/next_spot_slug', { body: { p_base: 'x', p_id: 'y' } }); t('anon: cannot probe slugs (next_spot_slug is not callable, 20261002000600)', r.status >= 400, 'HTTP ' + r.status);
+  r = await api('POST', '/rest/v1/routes', { body: { spot_id: spot, climb_type: 'top-rope', grade: 'V1' } }); t('anon: cannot insert a route (20261002000400)', r.status >= 400, 'HTTP ' + r.status);
   for (const tb of ['pending_edits', 'reports', 'moderators', 'marks', 'sessions', 'session_climbs', 'checkins']) {
     r = await api('GET', `/rest/v1/${tb}?select=*`); t(`anon: reads nothing from ${tb}`, (r.status === 200 && r.json.length === 0) || r.status === 401 || r.status === 403, r.status === 200 ? '0 rows' : 'HTTP ' + r.status + ' (no privilege)');
   }
@@ -95,6 +97,11 @@ const denied = r => r.status >= 400 || (Array.isArray(r.json) && r.json.length =
   r = await api('GET', '/rest/v1/pending_edits?select=id', { token: B.token }); t("other user: cannot read A's proposals (moderation queue)", r.json.length === 0);
   r = await api('PATCH', `/rest/v1/pending_edits?id=eq.${own && own.id}`, { token: A.token, body: { status: 'approved' }, prefer: rep }); t('user: cannot approve their own proposal', denied(r), 'HTTP ' + r.status);
   r = await api('POST', '/rest/v1/pending_edits', { token: A.token, body: { spot_id: spot, name: 'x', suburb: 'X', state: 'NSW', country: 'AU', lat: 1, lng: 1, types: [], edit_note: 'y'.repeat(201) } }); t('user: edit note over 200 characters is refused', r.status >= 400, 'HTTP ' + r.status);
+  r = await api('POST', '/rest/v1/pending_edits', { token: A.token, body: { spot_id: spot, name: 'n'.repeat(201), suburb: 'X', state: 'NSW', country: 'AU', lat: 1, lng: 1, types: [] } }); t('user: edit name over 200 characters is refused (20261002000200)', r.status >= 400, 'HTTP ' + r.status);
+  r = await api('POST', '/rest/v1/reports', { token: A.token, body: { spot_id: spot, message: 'wrong pin' }, prefer: rep }); t('user: can submit a report, attributed to them', r.status === 201 && r.json[0].submitted_by === A.id, 'HTTP ' + r.status);
+  r = await api('POST', '/rest/v1/reports', { token: A.token, body: { spot_id: spot, message: 'm'.repeat(2001) } }); t('user: report over 2000 characters is refused', r.status >= 400, 'HTTP ' + r.status);
+  r = await api('POST', '/rest/v1/spots', { token: M.token, body: { id: 'community-' + uuid(), name: 'forged', suburb: 'x', state: 'NSW', country: 'AU', lat: 0, lng: 0, types: [], status: 'pending', submitted_by: M.id, verified_at: new Date().toISOString(), rejection_reason: 'forged' }, prefer: rep });
+  t('user: a forged verified_at / rejection_reason on a new gym is nulled (20261002000300)', r.status === 201 && r.json[0].verified_at === null && r.json[0].rejection_reason === null, r.status === 201 ? 'verified_at=' + r.json[0].verified_at : 'HTTP ' + r.status);
   // profiles: public display names, own row only, never an email
   r = await api('POST', '/rest/v1/profiles', { token: A.token, body: { user_id: A.id, display_name: 'mika.sends' } }); t('user: creates their own profile', r.status === 201, 'HTTP ' + r.status);
   r = await api('POST', '/rest/v1/profiles', { token: A.token, body: { user_id: B.id, display_name: 'impostor' } }); t("user: cannot create someone else's profile", r.status >= 400, 'HTTP ' + r.status);
@@ -113,7 +120,7 @@ const denied = r => r.status >= 400 || (Array.isArray(r.json) && r.json.length =
   r = await api('GET', '/rest/v1/sessions?select=*,session_climbs(*)&order=session_date.desc', { token: A.token }); t('user: logbook query with embedded climbs works (FK embedding)', r.status === 200 && r.json.length === 1 && r.json[0].session_climbs.length === 1, r.status === 200 ? `${r.json.length} session, ${r.json[0] && r.json[0].session_climbs.length} climb` : 'HTTP ' + r.status);
   r = await api('GET', '/rest/v1/sessions?select=id', { token: B.token }); t("other user: cannot read A's sessions", r.json.length === 0);
   r = await api('POST', '/rest/v1/session_climbs', { token: B.token, body: [{ session_id: sid, climb_type: 'top-rope', grade: '5.10', grade_system: 'yds' }] }); t("other user: cannot add climbs to A's session", r.status >= 400, 'HTTP ' + r.status);
-  r = await api('POST', '/rest/v1/routes', { token: A.token, body: { spot_id: spot, climb_type: 'indoor-bouldering', grade: 'V2', submitted_by: A.id }, prefer: rep }); const rid = r.json && r.json[0] && r.json[0].id; t('user: can add a route', r.status === 201, 'HTTP ' + r.status);
+  r = await api('POST', '/rest/v1/routes', { token: A.token, body: { spot_id: spot, climb_type: 'indoor-bouldering', grade: 'V2', submitted_by: A.id }, prefer: rep }); const rid = ((await svc('POST', '/rest/v1/routes', { spot_id: spot, climb_type: 'indoor-bouldering', grade: 'V2', submitted_by: A.id }, rep)).json[0] || {}).id;   // created with the service key: the app cannot write routes t('user: cannot add a route (routes are read-only through the API, 20261002000400)', r.status >= 400, 'HTTP ' + r.status);
   r = await api('PATCH', `/rest/v1/routes?id=eq.${rid}`, { token: B.token, body: { grade: 'V9' }, prefer: rep }); t("other user: cannot edit A's route", denied(r));
   r = await api('GET', '/rest/v1/moderators?select=user_id', { token: A.token }); t('user: is not a moderator (sees no moderator row)', r.json.length === 0);
   r = await api('DELETE', `/rest/v1/sessions?id=eq.${sid}`, { token: A.token, prefer: rep });
@@ -192,11 +199,11 @@ const denied = r => r.status >= 400 || (Array.isArray(r.json) && r.json.length =
   r = await api('GET', `/rest/v1/spots?select=id&id=eq.${bSpot && bSpot.id}`, { token: A.token }); t("other user: cannot see B's rejected gym", r.json.length === 0);
   r = await api('PATCH', `/rest/v1/spots?id=eq.${spot}`, { token: A.token, body: { verified_at: new Date().toISOString() }, prefer: rep }); t('user: cannot mark a gym verified', denied(r), 'HTTP ' + r.status);
   r = await api('DELETE', `/rest/v1/spots?id=eq.${tag}-pending`, { token: M.token, prefer: rep }); t('moderator: can still hard-delete a pending spot (spam)', r.status === 200 && r.json.length === 1);
-  r = await api('PATCH', `/rest/v1/routes?id=eq.${rid}`, { token: M.token, body: { grade: 'V4' }, prefer: rep }); t("moderator: can edit any user's route", r.status === 200 && r.json.length === 1);
+  r = await api('PATCH', `/rest/v1/routes?id=eq.${rid}`, { token: M.token, body: { grade: 'V4' }, prefer: rep }); t('moderator: cannot edit routes through the API either (read-only)', denied(r), 'HTTP ' + r.status);
 
   // ---------------- cleanup (local only) ----------------
   await svc('DELETE', `/rest/v1/spots?submitted_by=in.(${A.id},${B.id},${M.id})`); await svc('DELETE', `/rest/v1/spots?id=in.(${seedIds.join(',')})`);
-  await svc('DELETE', `/rest/v1/pending_edits?spot_id=in.(${seedIds.join(',')})`); await svc('DELETE', `/rest/v1/reports?spot_id=in.(${seedIds.join(',')})`);
+  await svc('DELETE', `/rest/v1/routes?spot_id=in.(${seedIds.join(',')})`); await svc('DELETE', `/rest/v1/pending_edits?spot_id=in.(${seedIds.join(',')})`); await svc('DELETE', `/rest/v1/reports?spot_id=in.(${seedIds.join(',')})`);
   await svc('DELETE', `/rest/v1/moderators?user_id=eq.${M.id}`);
   await svc('DELETE', `/rest/v1/profiles?user_id=in.(${A.id},${B.id},${M.id})`);
   await svc('DELETE', `/rest/v1/checkins?user_id=in.(${A.id},${B.id},${M.id})`); await svc('DELETE', `/rest/v1/marks?user_id=in.(${A.id},${B.id},${M.id})`);

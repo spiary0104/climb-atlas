@@ -9,6 +9,7 @@ import { BASEMAP_STYLE, map as exploreMap, warmBasemap } from './map.js';
 import { currentRoute, registerView, setPageTitle } from './router.js';
 import { gymPath } from './slug.js';
 import { appState } from './state.js';
+import { submitErrorMessage } from './submit-errors.js';
 import { safeUrl, showToast } from './utils.js';
 
 const DRAFT_KEY = 'bouldeer_add_draft';
@@ -150,7 +151,7 @@ async function submit(){
     appState.myCommunity = null;          // /me reloads the submissions list
   }catch(err){
     const rlsRejected = /row-level security|permission denied/i.test((err && err.message) || '');
-    showToast(rlsRejected ? "Couldn't save — you may have reached today's submission limit." : 'Could not save — try again');
+    showToast(rlsRejected ? "Couldn't save — you may have reached today's submission limit." : submitErrorMessage(err, 'Could not save — try again'));
     console.error(err);
   }finally{
     busy = false;

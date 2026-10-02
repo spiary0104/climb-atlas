@@ -107,14 +107,14 @@ export function addStepHtml(d, ctx = {}){
   const signIn = ctx.signedIn ? '' : '<p class="add-signin">You will be asked to sign in when you submit.</p>';
   if(d.step === 2){
     const other = d.country === 'OTHER'
-      ? `<div class="field field-row">${textField('countryOther', 'Country name', d.countryOther)}${textField('stateOther', 'State or region', d.stateOther)}</div>`
+      ? `<div class="field field-row">${textField('countryOther', 'Country name', d.countryOther, ' maxlength="100"')}${textField('stateOther', 'State or region', d.stateOther, ' maxlength="100"')}</div>`
       : '';
     return `<p class="add-step">Step 2 of 2 · Details (optional)</p>`
-      + textField('suburb', 'Suburb or nearest town', d.suburb, ' autocomplete="off"')
+      + textField('suburb', 'Suburb or nearest town', d.suburb, ' autocomplete="off" maxlength="200"')
       + `<div class="field field-row">${countrySelect(d)}${d.country === 'OTHER' ? '' : regionSelect(d)}</div>${other}`
-      + textField('address', 'Street address', d.address, ' autocomplete="off"')
-      + textField('photo', 'Photo link', d.photo, ' inputmode="url" placeholder="https://"')
-      + `<div class="field"><label for="add-notes">Notes</label><textarea id="add-notes" data-add-field="notes" placeholder="Day pass price, opening hours, anything useful">${escapeHtml(d.notes || '')}</textarea></div>`
+      + textField('address', 'Street address', d.address, ' autocomplete="off" maxlength="300"')
+      + textField('photo', 'Photo link', d.photo, ' inputmode="url" maxlength="1000" placeholder="https://"')
+      + `<div class="field"><label for="add-notes">Notes</label><textarea id="add-notes" data-add-field="notes" maxlength="2000" placeholder="Day pass price, opening hours, anything useful">${escapeHtml(d.notes || '')}</textarea></div>`
       + `<p class="form-hint" id="addHint" aria-live="polite"></p>`
       + `<div class="add-actions"><button type="button" class="btn btn-tertiary" data-add-action="back">${icon('arrow-left', {size:'sm'})}Back</button>${submit}</div>${signIn}`;
   }
