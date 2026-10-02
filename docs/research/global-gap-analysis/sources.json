@@ -1,0 +1,4547 @@
+{
+ "schema_version": 1,
+ "generated": "2026-10-01",
+ "data_sources": [
+  {
+   "id": "D1",
+   "title": "World Bank WDI: Population, total (SP.POP.TOTL), most recent value",
+   "url": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=400&mrnev=1",
+   "accessed": "2026-09-30"
+  },
+  {
+   "id": "D2",
+   "title": "World Bank WDI: GDP, current US$ (NY.GDP.MKTP.CD), most recent value",
+   "url": "https://api.worldbank.org/v2/country/all/indicator/NY.GDP.MKTP.CD?format=json&per_page=400&mrnev=1",
+   "accessed": "2026-09-30"
+  },
+  {
+   "id": "D3",
+   "title": "World Bank WDI: GDP per capita, current US$ (NY.GDP.PCAP.CD), most recent value",
+   "url": "https://api.worldbank.org/v2/country/all/indicator/NY.GDP.PCAP.CD?format=json&per_page=400&mrnev=1",
+   "accessed": "2026-09-30"
+  },
+  {
+   "id": "D4",
+   "title": "World Bank country list (regions, income groups; aggregates excluded)",
+   "url": "https://api.worldbank.org/v2/country?format=json&per_page=400",
+   "accessed": "2026-09-30"
+  },
+  {
+   "id": "D5",
+   "title": "Bouldeer approved gyms: import/index/gym-index.ndjson (verified equal to live production 2026-09-30)",
+   "url": null,
+   "accessed": "2026-09-30"
+  }
+ ],
+ "link_check": {
+  "checked": "2026-09-30",
+  "method": "one GET per URL, 15 s timeout; 403 usually means the site blocks automated requests, not that the page is gone"
+ },
+ "sources": [
+  {
+   "id": "S001",
+   "url": "https://boulderzone.ae/",
+   "title": "Boulder Zone",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "AE"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S002",
+   "url": "https://goclimb.ae/",
+   "title": "GoClimb",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "AE"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S003",
+   "url": "https://www.rockrepublicdubai.com/",
+   "title": "Rock Republic",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "AE"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S004",
+   "url": "https://www.mtnextreme.com/",
+   "title": "Mountain Extreme",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "AE"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S005",
+   "url": "https://www.clymbabudhabi.com/",
+   "title": "CLYMB Abu Dhabi",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "AE"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S006",
+   "url": "https://goclimb.ae/blog/rock-climbing-gyms-in-the-uae/",
+   "title": "Rock Climbing Gyms in the UAE (GoClimb blog)",
+   "language": "en",
+   "kind": "other",
+   "accessed": "2026-09-30",
+   "countries": [
+    "AE"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S007",
+   "url": "https://indoorclimbing.com/uae.html",
+   "title": "UAE Indoor Climbing Gyms",
+   "language": "en",
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "AE"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S008",
+   "url": "https://www.desnivel.com/escalada-roca/las-paredes-de-angola-ya-son-destino-de-primer-nivel-para-la-escalada/",
+   "title": "Las paredes de Angola ya son destino de primer nivel para la escalada",
+   "language": "es",
+   "kind": "news",
+   "accessed": "2026-09-30",
+   "countries": [
+    "AO"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S009",
+   "url": "https://www.azerbaijan-news.az/az/posts/detail/climbaku-dirmanma-merkezi-achildi-90448",
+   "title": "ClimBaku climbing centre opened",
+   "language": "az",
+   "kind": "news",
+   "accessed": "2026-09-30",
+   "countries": [
+    "AZ"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S010",
+   "url": "https://1fit.app/en/baku/studios/295-drmanma-mrkzi",
+   "title": "Climbing Centre Baku (1Fit)",
+   "language": "en",
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "AZ"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S011",
+   "url": "https://www.instagram.com/alp_sport_climbing_centre/",
+   "title": "Alp sport climbing centre (Instagram)",
+   "language": "az",
+   "kind": "official-social",
+   "accessed": "2026-09-30",
+   "countries": [
+    "AZ"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S012",
+   "url": "https://yandex.com/maps/org/climbaku/33252128344/",
+   "title": "Source of the stated estimate",
+   "language": null,
+   "kind": "other",
+   "accessed": "2026-09-30",
+   "countries": [
+    "AZ"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S013",
+   "url": "https://climbinggarden.com/",
+   "title": "The Climbing Garden",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "BD"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S014",
+   "url": "https://www.tbsnews.net/features/panorama/climbing-garden-bangladeshs-first-indoor-bouldering-gym-aims-redefine-urban",
+   "title": "The Climbing Garden (The Business Standard)",
+   "language": "en",
+   "kind": "news",
+   "accessed": "2026-09-30",
+   "countries": [
+    "BD"
+   ],
+   "http_check": {
+    "status": 0,
+    "error": "AbortError",
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S015",
+   "url": "https://www.prothomalo.com/video/bangladesh/diu2iqd73c",
+   "title": "Prothom Alo video on the first climbing gym in Dhaka",
+   "language": "bn",
+   "kind": "news",
+   "accessed": "2026-09-30",
+   "countries": [
+    "BD"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S016",
+   "url": "https://balkanclimbing.com/",
+   "title": "Balkan Climbing",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "BG"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S017",
+   "url": "https://momentumclimbing.bg/tsarigradsko-shose/",
+   "title": "Momentum Indoor Climbing (Tsarigradsko Shose, Bulgaria Mall, Plovdiv)",
+   "language": null,
+   "kind": "chain-store-list",
+   "accessed": "2026-09-30",
+   "countries": [
+    "BG"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S018",
+   "url": "https://www.360mag.bg/posts/47069",
+   "title": "360mag: where to climb in and around Sofia",
+   "language": "bg",
+   "kind": "news",
+   "accessed": "2026-09-30",
+   "countries": [
+    "BG"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S019",
+   "url": "https://www.cuevaboulder.com/",
+   "title": "La Cueva Boulder Gym",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "BO"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S020",
+   "url": "https://www.facebook.com/llamaclimber.gym/",
+   "title": "Llama Climber Gym",
+   "language": null,
+   "kind": "official-social",
+   "accessed": "2026-09-30",
+   "countries": [
+    "BO"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S021",
+   "url": "https://www.indoorclimbing.com/bolivia.html",
+   "title": "Gecko Boulders",
+   "language": null,
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "BO"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S022",
+   "url": "https://boulderinglist.com/gyms/city/Cochabamba",
+   "title": "Climbing & Bouldering Gyms in Cochabamba",
+   "language": "en",
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "BO"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S023",
+   "url": "https://trapezia.by/",
+   "title": "Trapetsiya",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "BY"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S024",
+   "url": "https://plato.by/",
+   "title": "Plato",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "BY"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S025",
+   "url": "https://stadium-dinamo.by/uslugi/skalodrom",
+   "title": "Dinamo climbing wall",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "BY"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S026",
+   "url": "https://gagaringrodno.by/bouldering/",
+   "title": "GAGARIN",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "BY"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S027",
+   "url": "https://minskonsight.com/gde_lazit/minsk",
+   "title": "MinskOnsight: where to climb in Minsk",
+   "language": "ru",
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "BY"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S028",
+   "url": "https://www.thecrag.com/en/climbing/democratic-republic-of-the-congo/kinshasa",
+   "title": "Kinshasa, Rock climbing | theCrag",
+   "language": "en",
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "CD"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S029",
+   "url": "https://www.tripadvisor.com/LocationPhotoDirectLink-g294187-d9566862-i165005397-Funville-Kinshasa.html",
+   "title": "Climbing wall - Funville, Kinshasa (Tripadvisor photo)",
+   "language": "en",
+   "kind": "other",
+   "accessed": "2026-09-30",
+   "countries": [
+    "CD"
+   ],
+   "http_check": {
+    "status": 403,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S030",
+   "url": "https://www.bimano.ch",
+   "title": "Bimano Boulder",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "CH"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S031",
+   "url": "https://www.boulderlounge.ch",
+   "title": "Boulderlounge (St. Gallen, Schlieren)",
+   "language": null,
+   "kind": "chain-store-list",
+   "accessed": "2026-09-30",
+   "countries": [
+    "CH"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S032",
+   "url": "https://www.blockfeld.ch",
+   "title": "BLOCKFELD Boulderpark",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "CH"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S033",
+   "url": "https://www.grindelboulder.ch",
+   "title": "GrindelBoulder",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "CH"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S034",
+   "url": "http://www.boulderpark-thalwil.ch/",
+   "title": "Boulderpark Thalwil 9grad",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "CH"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S035",
+   "url": "https://climbdirectory.com/boulderhallen/",
+   "title": "ClimbDirectory Boulderhallen DACH",
+   "language": "de",
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "CH"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S036",
+   "url": "https://www.sac-cas.ch/de/die-alpen/kletter-und-boulderhallen-schweiz-a-discretion-15246/",
+   "title": "SAC: Kletter- und Boulderhallen Schweiz",
+   "language": "de",
+   "kind": "federation",
+   "accessed": "2026-09-30",
+   "countries": [
+    "CH"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S037",
+   "url": "https://www.bergwelten.com/lp/die-18-schoensten-boulderhallen",
+   "title": "Bergwelten: 18 Boulderhallen",
+   "language": "de",
+   "kind": "news",
+   "accessed": "2026-09-30",
+   "countries": [
+    "CH"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S038",
+   "url": "https://baab.ci/loisirs_baab/les-margouillats-dabidjan/",
+   "title": "Les Margouillats d'Abidjan - Baab",
+   "language": "fr",
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "CI"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S039",
+   "url": "https://www.instagram.com/escaladecotedivoire/",
+   "title": "Les Margouillats (@escaladecotedivoire)",
+   "language": "fr",
+   "kind": "official-social",
+   "accessed": "2026-09-30",
+   "countries": [
+    "CI"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S040",
+   "url": "https://www.jegrimpe.com/saestructuresartificiellesescalade/4270-abidjan.html",
+   "title": "Abidjan - Grimpomania artificial climbing structures",
+   "language": "fr",
+   "kind": "other",
+   "accessed": "2026-09-30",
+   "countries": [
+    "CI"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S041",
+   "url": "https://forum.camptocamp.org/t/possibilite-descalade-au-cameroun-a-yaounde/144544",
+   "title": "Possibilite d'escalade au Cameroun a Yaounde? - Camptocamp forum (2014)",
+   "language": "fr",
+   "kind": "other",
+   "accessed": "2026-09-30",
+   "countries": [
+    "CM"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S042",
+   "url": "https://www.thecrag.com/en/climbing/cameroon",
+   "title": "Cameroon, Rock climbing | theCrag",
+   "language": "en",
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "CM"
+   ],
+   "http_check": {
+    "status": 403,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S043",
+   "url": "https://www.ascendcr.com/",
+   "title": "Ascend Climbing (Pirro, San Pablo)",
+   "language": null,
+   "kind": "chain-store-list",
+   "accessed": "2026-09-30",
+   "countries": [
+    "CR"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S044",
+   "url": "https://www.indoorclimbing.com/costarica.html",
+   "title": "Eskalar",
+   "language": null,
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "CR"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S045",
+   "url": "https://www.mountainproject.com/gym/117263743/pura-roca",
+   "title": "Pura Roca",
+   "language": null,
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "CR"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S046",
+   "url": "https://boulderinglist.com/countries/Costa%20Rica",
+   "title": "Climbing in Costa Rica (BoulderingList)",
+   "language": "en",
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "CR"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S047",
+   "url": "https://laderasur.com/articulo/climbing-for-a-reason-llega-a-cuba-con-un-muro-de-escalada-una-escuela-reconstruida-y-casi-100-rutas-por-muchos-anos-la-escalada-fue-ilegal-para-los-cubanos/",
+   "title": "Climbing for a Reason llega a Cuba",
+   "language": "es",
+   "kind": "news",
+   "accessed": "2026-09-30",
+   "countries": [
+    "CU"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S048",
+   "url": "https://oncubanews.com/cuba/escalada-un-deporte-que-en-la-habana-funciona-tambien-como-terapia-anticovid/",
+   "title": "Escalada en La Habana (OnCubaNews)",
+   "language": "es",
+   "kind": "news",
+   "accessed": "2026-09-30",
+   "countries": [
+    "CU"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S049",
+   "url": "https://www.hudysteny.cz/boulderkarlin/",
+   "title": "HUDY Boulder Karlin",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "CZ"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S050",
+   "url": "https://varp.cz/en/nejlepsi-lezecke-steny-praha-a-okoli/",
+   "title": "Boulder Bar (Jungle Holesovice)",
+   "language": null,
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "CZ"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S051",
+   "url": "https://basecampboulder.cz/",
+   "title": "Basecamp Boulder",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "CZ"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S052",
+   "url": "https://www.denik.cz/regiony/bouldering-ostrava-lezecky-hangar-20230908.html",
+   "title": "HANGAR",
+   "language": null,
+   "kind": "news",
+   "accessed": "2026-09-30",
+   "countries": [
+    "CZ"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S053",
+   "url": "https://blokcentrum.cz/",
+   "title": "Tendon Blok (Blok Centrum)",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "CZ"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S054",
+   "url": "https://www.lamaholds.cz/blog/lezecke-steny-v-cr/",
+   "title": "Lezecke steny v CR - kompletni seznam",
+   "language": "cs",
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "CZ"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S055",
+   "url": "https://www.ademrd.com/donde-escalar",
+   "title": "ADEM - Donde escalar",
+   "language": "es",
+   "kind": "federation",
+   "accessed": "2026-09-30",
+   "countries": [
+    "DO"
+   ],
+   "http_check": {
+    "status": 0,
+    "error": "ENOTFOUND",
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S056",
+   "url": "https://www.mountainproject.com/area/108084557/dominican-republic",
+   "title": "Rock Climbing in Dominican Republic",
+   "language": "en",
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "DO"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S057",
+   "url": "https://www.algerie360.com/decouvrez-le-mur-descalade-tamgout-a-alger/",
+   "title": "Decouvrez le Mur d'Escalade Tamgout a Alger",
+   "language": "fr",
+   "kind": "news",
+   "accessed": "2026-09-30",
+   "countries": [
+    "DZ"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S058",
+   "url": "https://www.thecrag.com/en/climbing/algeria/algiers",
+   "title": "Algiers - theCrag",
+   "language": "en",
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "DZ"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S059",
+   "url": "https://ascentegypt.com/",
+   "title": "Ascent Climbing",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "EG"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S060",
+   "url": "https://www.instagram.com/vergeclimbing/",
+   "title": "Verge Climbing",
+   "language": null,
+   "kind": "official-social",
+   "accessed": "2026-09-30",
+   "countries": [
+    "EG"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S061",
+   "url": "https://cairogyms.com/ascent-egypts-first-dedicated-bouldering-facility/",
+   "title": "Ascent: Egypt's First Dedicated Bouldering Facility",
+   "language": "en",
+   "kind": "news",
+   "accessed": "2026-09-30",
+   "countries": [
+    "EG"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S062",
+   "url": "https://www.indoorclimbing.com/Egypt.html",
+   "title": "Egypt Indoor Climbing Gyms",
+   "language": "en",
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "EG"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S063",
+   "url": "https://baiml.org/destinations/climbing-in-ethiopia/",
+   "title": "Climbing in Ethiopia - BAIML",
+   "language": "en",
+   "kind": "other",
+   "accessed": "2026-09-30",
+   "countries": [
+    "ET"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S064",
+   "url": "https://wanderlog.com/place/details/11004226/juventus-italian-sports-club",
+   "title": "Juventus Italian Sports Club, Addis Ababa (Wanderlog)",
+   "language": "en",
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "ET"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S065",
+   "url": "https://www.thecrag.com/en/climbing/ethiopia/addis-ababa",
+   "title": "Addis Ababa, Rock climbing | theCrag",
+   "language": "en",
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "ET"
+   ],
+   "http_check": {
+    "status": 403,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S066",
+   "url": "https://globalclimbing.org/climbing-association-ghana",
+   "title": "Climbing Association of Ghana - Global Climbing Initiative",
+   "language": "en",
+   "kind": "federation",
+   "accessed": "2026-09-30",
+   "countries": [
+    "GH"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S067",
+   "url": "https://www.thecrag.com/en/climbing/ghana/accra",
+   "title": "Accra, Rock climbing | theCrag",
+   "language": "en",
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "GH"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S068",
+   "url": "https://climbing-gyms.com/browse/africa/ghana/accra",
+   "title": "Accra Climbing Gyms - Ghana Bouldering",
+   "language": "en",
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "GH"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S069",
+   "url": "https://www.tacanaclimbing.com/",
+   "title": "Tacana Climbing",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "GT"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S070",
+   "url": "https://www.facebook.com/proyectocasaboulder/",
+   "title": "Casa Boulder",
+   "language": null,
+   "kind": "official-social",
+   "accessed": "2026-09-30",
+   "countries": [
+    "GT"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S071",
+   "url": "https://www.guatemala.com/guias/pasatiempos/lugares-con-muros-para-escalar-en-guatemala/",
+   "title": "Lugares con muros para escalar en Guatemala",
+   "language": "es",
+   "kind": "news",
+   "accessed": "2026-09-30",
+   "countries": [
+    "GT"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S072",
+   "url": "https://www.indoorclimbing.com/Guatemala.html",
+   "title": "Gimnasios de escalada en Guatemala",
+   "language": "es",
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "GT"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S073",
+   "url": "https://hivebouldering.com/en",
+   "title": "Hive",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "HR"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S074",
+   "url": "https://boulder-zona.com/en/",
+   "title": "Boulder Zona",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "HR"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S075",
+   "url": "https://www.instagram.com/bolderi.hr/",
+   "title": "BoldeRi.hr",
+   "language": null,
+   "kind": "official-social",
+   "accessed": "2026-09-30",
+   "countries": [
+    "HR"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S076",
+   "url": "https://hsps-climbing.org/dvorane/",
+   "title": "Federation-listed club halls (Fothia, ArtRock, Onsight, Hiperaktiv, Vertikal, Bastion, Tuhobic, TNT, Bombina, Muntravo)",
+   "language": null,
+   "kind": "federation",
+   "accessed": "2026-09-30",
+   "countries": [
+    "HR"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S077",
+   "url": "https://www.indoorclimbing.com/croatia.html",
+   "title": "Indoorclimbing.com Croatia",
+   "language": "hr",
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "HR"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S078",
+   "url": "https://www.boulderplanet.id/",
+   "title": "Boulder Planet Tanjung Duren",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "ID"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S079",
+   "url": "https://dreamstoneboulders.com/",
+   "title": "Dreamstone Boulders (Kelapa Gading, Alam Sutera)",
+   "language": null,
+   "kind": "chain-store-list",
+   "accessed": "2026-09-30",
+   "countries": [
+    "ID"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S080",
+   "url": "https://www.indoclimb.com/",
+   "title": "Indoclimb (FX Sudirman, Kemang Village, Kuningan City)",
+   "language": null,
+   "kind": "chain-store-list",
+   "accessed": "2026-09-30",
+   "countries": [
+    "ID"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S081",
+   "url": "https://brocnbells.com/jakarta/bouldering",
+   "title": "Climb ON",
+   "language": null,
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "ID"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S082",
+   "url": "https://www.indoorclimbing.com/indonesia.html",
+   "title": "Alpine Outpost",
+   "language": null,
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "ID"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S083",
+   "url": "https://www.gravityclimbing.ie",
+   "title": "Gravity Climbing Centre",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "IE"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S084",
+   "url": "https://www.dublinclimbingcentre.ie",
+   "title": "Dublin Climbing Centre",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "IE"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S085",
+   "url": "https://www.awesomewalls.ie",
+   "title": "Awesome Walls (Dublin, Cork)",
+   "language": null,
+   "kind": "chain-store-list",
+   "accessed": "2026-09-30",
+   "countries": [
+    "IE"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S086",
+   "url": "https://blocdublin.ie/",
+   "title": "Bloc Climbing Gym",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "IE"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S087",
+   "url": "https://thewall.ie/",
+   "title": "The Wall Climbing Gym",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "IE"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S088",
+   "url": "https://galwayclimbing.org/",
+   "title": "Galway Climbing Co-op",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "IE"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S089",
+   "url": "https://www.mountaineering.ie/content/IndoorClimbing/181",
+   "title": "Mountaineering Ireland: Indoor Climbing",
+   "language": "en",
+   "kind": "federation",
+   "accessed": "2026-09-30",
+   "countries": [
+    "IE"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S090",
+   "url": "https://boulderinglist.com/countries/Ireland",
+   "title": "BoulderingList Ireland",
+   "language": "en",
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "IE"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S091",
+   "url": "https://performancerock.co.il/",
+   "title": "Performance Rock (3 branches: Tel Aviv, Beer Sheva, Haifa)",
+   "language": null,
+   "kind": "chain-store-list",
+   "accessed": "2026-09-30",
+   "countries": [
+    "IL"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S092",
+   "url": "https://vking.co.il/",
+   "title": "VKING Tel Aviv",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "IL"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S093",
+   "url": "https://www.thebloc.co.il/en/tlv",
+   "title": "The Bloc (Tel Aviv, Jerusalem)",
+   "language": null,
+   "kind": "chain-store-list",
+   "accessed": "2026-09-30",
+   "countries": [
+    "IL"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S094",
+   "url": "https://vengavenga.co.il/",
+   "title": "Venga",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "IL"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S095",
+   "url": "https://www.isaacclimbing.com/",
+   "title": "Isaac Climbing Gym",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "IL"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S096",
+   "url": "https://www.desertclimbing.co.il/",
+   "title": "Desert Climbing",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "IL"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S097",
+   "url": "https://www.indoorclimbing.com/israel.html",
+   "title": "iClimb Jerusalem",
+   "language": null,
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "IL"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S098",
+   "url": "https://climbing-gyms.com/browse/asia/israel",
+   "title": "Israel Climbing Gyms",
+   "language": "en",
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "IL"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S099",
+   "url": "https://www.boulderbox.in/about/about-us",
+   "title": "BoulderBox",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "IN"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S100",
+   "url": "https://www.climbcentral.in/",
+   "title": "Climb Central (Bengaluru, Gurugram)",
+   "language": null,
+   "kind": "chain-store-list",
+   "accessed": "2026-09-30",
+   "countries": [
+    "IN"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S101",
+   "url": "https://equilibriumclimbing.com/",
+   "title": "Equilibrium Climbing Station (Hoodi, Indiranagar, Goa)",
+   "language": null,
+   "kind": "chain-store-list",
+   "accessed": "2026-09-30",
+   "countries": [
+    "IN"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S102",
+   "url": "https://www.letsplayclimbing.com/",
+   "title": "Lets Play Climbing",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "IN"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S103",
+   "url": "https://tibc.co.in/",
+   "title": "The Indian Bouldering Company",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "IN"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S104",
+   "url": "https://boulderinglist.com/countries/India",
+   "title": "14 Climbing & Bouldering Gyms in India (BoulderingList)",
+   "language": "en",
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "IN"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S105",
+   "url": "https://lbb.in/bangalore/best-climbing-stations-in-bangalore/",
+   "title": "6 Climbing Stations in Bangalore (LBB)",
+   "language": "en",
+   "kind": "news",
+   "accessed": "2026-09-30",
+   "countries": [
+    "IN"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S106",
+   "url": "https://globalclimbing.org/kurdistan",
+   "title": "Chyawani Slemani - Global Climbing Initiative",
+   "language": "en",
+   "kind": "other",
+   "accessed": "2026-09-30",
+   "countries": [
+    "IQ"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S107",
+   "url": "https://bamdadclimbing.com/en/portfolio/the-rock-climbing-wall-of-erbil-iraq/",
+   "title": "The rock climbing wall of Erbil",
+   "language": "en",
+   "kind": "other",
+   "accessed": "2026-09-30",
+   "countries": [
+    "IQ"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S108",
+   "url": "https://kurdistanchronicle.com/babat/4199",
+   "title": "A New Ascent",
+   "language": "en",
+   "kind": "news",
+   "accessed": "2026-09-30",
+   "countries": [
+    "IQ"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S109",
+   "url": "https://boulderland.ir",
+   "title": "Boulderland Climbing Club",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "IR"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S110",
+   "url": "https://tochalclub.com/bouldering/",
+   "title": "Tochal Club",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "IR"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S111",
+   "url": "https://mojclub.com/moj-climibing-gym/",
+   "title": "Moj Climbing Gym",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "IR"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S112",
+   "url": "https://iranrocktrip.com/fa/gyms/",
+   "title": "Tehran Bouldering Club",
+   "language": null,
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "IR"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S113",
+   "url": "https://explore.iloveclimbing.co/spot/enghelab-bouldering-gym-tehran-iran-1195",
+   "title": "Enghelab Bouldering gym (I Love Climbing)",
+   "language": "en",
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "IR"
+   ],
+   "http_check": {
+    "status": 0,
+    "error": "ERR_SSL_TLSV1_ALERT_INTERNAL_ERROR",
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S114",
+   "url": "https://www.facebook.com/Climbatjo/",
+   "title": "Climbat Amman",
+   "language": null,
+   "kind": "federation",
+   "accessed": "2026-09-30",
+   "countries": [
+    "JO"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S115",
+   "url": "https://www.badiyajo.com/",
+   "title": "Badiya by BarBedu",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "JO"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S116",
+   "url": "https://jcf.jo/where-to-climb/",
+   "title": "Where to Climb - Jordan Climbing Federation",
+   "language": "en",
+   "kind": "federation",
+   "accessed": "2026-09-30",
+   "countries": [
+    "JO"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S117",
+   "url": "https://www.thecrag.com/en/climbing/jordan/area/2602461456",
+   "title": "Climbat Amman - theCrag",
+   "language": "en",
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "JO"
+   ],
+   "http_check": {
+    "status": 403,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S118",
+   "url": "https://www.blueskykenya.org/climb",
+   "title": "Climb BlueSky (Diamond Plaza)",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "KE"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S119",
+   "url": "https://www.facebook.com/mtkenyaclimbinggym/",
+   "title": "Mt Kenya Climbing Gym",
+   "language": null,
+   "kind": "official-social",
+   "accessed": "2026-09-30",
+   "countries": [
+    "KE"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S120",
+   "url": "https://www.facebook.com/ClimbBlueSky/",
+   "title": "Climb BlueSky (Facebook)",
+   "language": "en",
+   "kind": "official-social",
+   "accessed": "2026-09-30",
+   "countries": [
+    "KE"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S121",
+   "url": "https://www.indoorclimbing.com/kenya.html",
+   "title": "Kenya Indoor Climbing Gyms",
+   "language": "en",
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "KE"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S122",
+   "url": "https://gallivantme.com/indoor-climbing-gyms-in-kenya/",
+   "title": "Indoor Climbing Gyms in Kenya - Gallivantme",
+   "language": "en",
+   "kind": "other",
+   "accessed": "2026-09-30",
+   "countries": [
+    "KE"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S123",
+   "url": "https://www.ocd.co.ke/indoor-rock-climbing-in-nairobi/",
+   "title": "An Easy Guide to Indoor Rock Climbing in Nairobi (updated Mar 2025)",
+   "language": "en",
+   "kind": "other",
+   "accessed": "2026-09-30",
+   "countries": [
+    "KE"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S124",
+   "url": "https://www.mtkenyaclimbinggym.com/nanyukicoworkspace",
+   "title": "Mt Kenya Climbing Gym - Cowork Space page",
+   "language": "en",
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "KE"
+   ],
+   "http_check": {
+    "status": 0,
+    "error": "ENOTFOUND",
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S125",
+   "url": "https://www.climbing.com/places/how-an-unlikely-nairobi-climbing-gym-brings-worlds-together/",
+   "title": "How An Unlikely Nairobi Climbing Gym Brings Worlds Together (Climbing magazine)",
+   "language": "en",
+   "kind": "news",
+   "accessed": "2026-09-30",
+   "countries": [
+    "KE"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S126",
+   "url": "https://www.facebook.com/ClimbBlueSky/videos/climb-bluesky-is-nairobis-only-dedicated-indoor-climbing-gym-a-space-built-for-a/1454012293103281/",
+   "title": "Source of the stated estimate",
+   "language": null,
+   "kind": "other",
+   "accessed": "2026-09-30",
+   "countries": [
+    "KE"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S127",
+   "url": "https://www.leclubphnompenh.com/",
+   "title": "Le Club - Climbing Gym & Cafe",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "KH"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S128",
+   "url": "https://epclimbing.com/en/projects/le-club-phnompenh",
+   "title": "Le Club (Entre-Prises)",
+   "language": "en",
+   "kind": "other",
+   "accessed": "2026-09-30",
+   "countries": [
+    "KH"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S129",
+   "url": "https://www.facebook.com/PhnomClimb/",
+   "title": "Phnom Climb Community Gym (Facebook)",
+   "language": "en",
+   "kind": "official-social",
+   "accessed": "2026-09-30",
+   "countries": [
+    "KH"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S130",
+   "url": "https://climbwithascend.com/about-us/",
+   "title": "Ascend Rock Climbing Center",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "KW"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S131",
+   "url": "https://walltopia.com/projects/ascend-rock-climbing-center/",
+   "title": "Ascend Rock Climbing Center - Walltopia",
+   "language": "en",
+   "kind": "other",
+   "accessed": "2026-09-30",
+   "countries": [
+    "KW"
+   ],
+   "http_check": {
+    "status": 403,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S132",
+   "url": "https://climbing-gyms.com/browse/asia/kuwait/kuwait",
+   "title": "Kuwait climbing gyms",
+   "language": "en",
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "KW"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S133",
+   "url": "https://www.facebook.com/Climbingwallkw/",
+   "title": "Climbing Wall Kuwait",
+   "language": "en",
+   "kind": "official-social",
+   "accessed": "2026-09-30",
+   "countries": [
+    "KW"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S134",
+   "url": "https://skalaboulder.kz/",
+   "title": "Skala Boulder",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "KZ"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S135",
+   "url": "https://skalaclub.com/about-skala/",
+   "title": "SKALA Climbing Gym",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "KZ"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S136",
+   "url": "https://caveboulder.kz/",
+   "title": "Cave Boulder",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "KZ"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S137",
+   "url": "https://cozyrock.kz/",
+   "title": "CozyRock",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "KZ"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S138",
+   "url": "https://sxodim.com/astana/place/climbers-garden",
+   "title": "Climbers Garden",
+   "language": null,
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "KZ"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S139",
+   "url": "https://www.indoorclimbing.com/srilanka.html",
+   "title": "Sri Lanka Indoor Climbing Gyms (empty)",
+   "language": "en",
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "LK"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S140",
+   "url": "https://www.life.lk/article/reviews/Colombo-s-First-Climbing-Wall/51/16703",
+   "title": "Colombo's First Climbing Wall (2017)",
+   "language": "en",
+   "kind": "news",
+   "accessed": "2026-09-30",
+   "countries": [
+    "LK"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S141",
+   "url": "https://www.bonobo.lt/",
+   "title": "BONOBO Climbing",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "LT"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S142",
+   "url": "https://www.vertical.lt/",
+   "title": "VERTICAL climbing centre",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "LT"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S143",
+   "url": "https://www.boulderhouse.lt/",
+   "title": "BoulderHouse",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "LT"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S144",
+   "url": "https://www.indoorclimbing.com/lithuania.html",
+   "title": "Montis Magia",
+   "language": null,
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "LT"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S145",
+   "url": "http://redrock-climbingcenter.lu/",
+   "title": "RedRock Climbing Center",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "LU"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S146",
+   "url": "https://en.blocx.lu/",
+   "title": "BlocX Urban Fitness",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "LU"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S147",
+   "url": "https://bkl.lu/",
+   "title": "Boulder Klub Letzebuerg",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "LU"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S148",
+   "url": "https://www.visitluxembourg.com/place/bouldering-in-luxembourg",
+   "title": "Visit Luxembourg: bouldering",
+   "language": "en",
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "LU"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S149",
+   "url": "https://www.instagram.com/atlaselevation/",
+   "title": "Atlas Elevation",
+   "language": null,
+   "kind": "official-social",
+   "accessed": "2026-09-30",
+   "countries": [
+    "MA"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S150",
+   "url": "https://www.clubs.ma/rabat/sports/escalade",
+   "title": "LeMur",
+   "language": null,
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "MA"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S151",
+   "url": "https://latribunedemarrakech.com/atlas-elevation-le-top-de-lescalade-indoor/",
+   "title": "Atlas Elevation, le top de l'escalade indoor",
+   "language": "fr",
+   "kind": "news",
+   "accessed": "2026-09-30",
+   "countries": [
+    "MA"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S152",
+   "url": "https://www.vertigemedia.fr/tla3-salle-escalade-bloc-casablanca-maroc",
+   "title": "Tla3 bloc gym Casablanca",
+   "language": "fr",
+   "kind": "news",
+   "accessed": "2026-09-30",
+   "countries": [
+    "MA"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S153",
+   "url": "https://www.facebook.com/blocboulderingmaroc/",
+   "title": "Bloc Bouldering Maroc",
+   "language": "fr",
+   "kind": "official-social",
+   "accessed": "2026-09-30",
+   "countries": [
+    "MA"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S154",
+   "url": "https://www.facebook.com/climboclock/",
+   "title": "Climb O'Clock",
+   "language": null,
+   "kind": "official-social",
+   "accessed": "2026-09-30",
+   "countries": [
+    "MM"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S155",
+   "url": "https://www.climbing.com/places/climbing-thrives-even-in-myanmar/",
+   "title": "Climbing Thrives Even in Myanmar",
+   "language": "en",
+   "kind": "news",
+   "accessed": "2026-09-30",
+   "countries": [
+    "MM"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S156",
+   "url": "https://moata.org.mo/抱石館/",
+   "title": "Homeless Boulder Gym (MOATA)",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "MO"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S157",
+   "url": "https://www.facebook.com/solutionclimbinggym/",
+   "title": "Solution Climbing Gym",
+   "language": null,
+   "kind": "official-social",
+   "accessed": "2026-09-30",
+   "countries": [
+    "MO"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S158",
+   "url": "https://macaulifestyle.com/city-guide/solution-climbing-gym/",
+   "title": "Solution Climbing Gym - Macau Lifestyle",
+   "language": "en",
+   "kind": "news",
+   "accessed": "2026-09-30",
+   "countries": [
+    "MO"
+   ],
+   "http_check": {
+    "status": 404,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S159",
+   "url": "https://www.camp5.com/",
+   "title": "Camp5 (1Utama, Eco City, Utropolis, Paradigm JB, Jumpa, KL East)",
+   "language": null,
+   "kind": "chain-store-list",
+   "accessed": "2026-09-30",
+   "countries": [
+    "MY"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S160",
+   "url": "https://www.bumpbouldering.com/pavilion-bukit-jalil",
+   "title": "BUMP Bouldering (Jaya One, Pavilion Bukit Jalil)",
+   "language": null,
+   "kind": "chain-store-list",
+   "accessed": "2026-09-30",
+   "countries": [
+    "MY"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S161",
+   "url": "https://bhubbouldering.com/",
+   "title": "B-Hub Bouldering",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "MY"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S162",
+   "url": "https://www.projectrock.com.my/",
+   "title": "Project Rock (Gurney Plaza, IKEA Batu Kawan)",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "MY"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S163",
+   "url": "https://brocnbells.com/kuala-lumpur/bouldering",
+   "title": "MadMonkeyz Climbing Gym",
+   "language": null,
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "MY"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S164",
+   "url": "https://www.lydiascapes.com/malaysiarockclimbinggyms/",
+   "title": "17 Rock Climbing Gyms in Malaysia",
+   "language": "en",
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "MY"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S165",
+   "url": "https://climbingbusinessjournal.com/building-west-africas-first-climbing-facility-lessons-from-lagos",
+   "title": "Building West Africa's First Climbing Facility: Lessons From Lagos",
+   "language": "en",
+   "kind": "news",
+   "accessed": "2026-09-30",
+   "countries": [
+    "NG"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S166",
+   "url": "https://www.instagram.com/weland_climbing/",
+   "title": "Weland Climbing (Instagram)",
+   "language": "en",
+   "kind": "official-social",
+   "accessed": "2026-09-30",
+   "countries": [
+    "NG"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S167",
+   "url": "https://italawa.com.ng/place/weland-climbing/",
+   "title": "Weland Climbing, Victoria Island",
+   "language": "en",
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "NG"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S168",
+   "url": "https://www.thecrag.com/en/climbing/nigeria/abuja",
+   "title": "Abuja, Rock climbing | theCrag",
+   "language": "en",
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "NG"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S169",
+   "url": "https://www.boulderco.co.nz/",
+   "title": "Boulder Co. (Auckland, Hamilton, Christchurch)",
+   "language": null,
+   "kind": "chain-store-list",
+   "accessed": "2026-09-30",
+   "countries": [
+    "NZ"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S170",
+   "url": "https://bouldering.co.nz/",
+   "title": "Uprising Bouldering",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "NZ"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S171",
+   "url": "https://www.northernrocks.co.nz/",
+   "title": "Northern Rocks",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "NZ"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S172",
+   "url": "https://www.aucklandclimb.co.nz/",
+   "title": "Auckland Climbing Gym",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "NZ"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S173",
+   "url": "https://www.basecampadventures.co.nz/queenstown-indoor-climbing-centre/",
+   "title": "Queenstown Climbing Centre",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "NZ"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S174",
+   "url": "https://www.indoorclimbing.com/newzealand.html",
+   "title": "Extreme Edge Hamilton",
+   "language": null,
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "NZ"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S175",
+   "url": "https://www.instagram.com/climbingwall_muscat/",
+   "title": "Adventure Wall (Mall of Muscat)",
+   "language": null,
+   "kind": "official-social",
+   "accessed": "2026-09-30",
+   "countries": [
+    "OM"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S176",
+   "url": "https://www.expatwoman.com/oman/guide/rock-climbing-in-oman",
+   "title": "The Wall (Muscat Diving and Adventure Centre)",
+   "language": null,
+   "kind": "other",
+   "accessed": "2026-09-30",
+   "countries": [
+    "OM"
+   ],
+   "http_check": {
+    "status": 403,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S177",
+   "url": "https://timesofoman.com/article/121703-mall-of-muscat-set-to-open-omans-first-olympic-grade-climbing-arena",
+   "title": "Mall of Muscat set to open Oman's first Olympic Grade climbing arena",
+   "language": "en",
+   "kind": "news",
+   "accessed": "2026-09-30",
+   "countries": [
+    "OM"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S178",
+   "url": "https://www.facebook.com/muscatclimb/",
+   "title": "Muscat Climbing Centre",
+   "language": "en",
+   "kind": "official-social",
+   "accessed": "2026-09-30",
+   "countries": [
+    "OM"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S179",
+   "url": "https://www.facebook.com/baboonswall",
+   "title": "Baboons Boulder Wall",
+   "language": null,
+   "kind": "official-social",
+   "accessed": "2026-09-30",
+   "countries": [
+    "PA"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S180",
+   "url": "https://www.instagram.com/sportlink_climb/",
+   "title": "Sportlink Climb",
+   "language": null,
+   "kind": "official-social",
+   "accessed": "2026-09-30",
+   "countries": [
+    "PA"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S181",
+   "url": "https://www.instagram.com/elespaciolacueva/",
+   "title": "El Espacio La Cueva",
+   "language": null,
+   "kind": "official-social",
+   "accessed": "2026-09-30",
+   "countries": [
+    "PA"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S182",
+   "url": "https://www.indoorclimbing.com/Panama.html",
+   "title": "Gimnasios de escalada en Panama",
+   "language": "es",
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "PA"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S183",
+   "url": "https://basecampperu.com/",
+   "title": "Base Camp Peru",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "PE"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S184",
+   "url": "https://escaladavertical.com/",
+   "title": "VERTICAL Gimnasio de Escalada",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "PE"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S185",
+   "url": "https://www.pirqa.com/",
+   "title": "PIRQA Rock Gym",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "PE"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S186",
+   "url": "https://www.mountainproject.com/gym/126061210/el-templo-de-los-monos",
+   "title": "El Templo de los Monos",
+   "language": null,
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "PE"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S187",
+   "url": "https://www.tripadvisor.com/Attraction_Review-g294314-d7361953-Reviews-7a_Escuela_de_Escalada-Cusco_Cusco_Region.html",
+   "title": "7a Escuela de Escalada",
+   "language": null,
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "PE"
+   ],
+   "http_check": {
+    "status": 403,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S188",
+   "url": "https://www.climbing.com/news/lima-perus-pirqa-rock-gym-is-weathering-the-pandemic-and-giving-back/",
+   "title": "PIRQA Rock Gym article",
+   "language": "en",
+   "kind": "news",
+   "accessed": "2026-09-30",
+   "countries": [
+    "PE"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S189",
+   "url": "https://climbing-gyms.com/browse/south-america/peru/cusco",
+   "title": "Cusco Climbing Gyms",
+   "language": "en",
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "PE"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S190",
+   "url": "https://www.travelertrails.com/things-to-do-in-lahore/climbing-arena",
+   "title": "Climbing Arena Lahore (Traveler Trails)",
+   "language": "en",
+   "kind": "other",
+   "accessed": "2026-09-30",
+   "countries": [
+    "PK"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S191",
+   "url": "https://www.ibexclub.pk/",
+   "title": "Ibex Club Islamabad (ClimbX)",
+   "language": "en",
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "PK"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S192",
+   "url": "https://arena.net.pk/wall-climbing/",
+   "title": "Arena wall climbing, Karachi",
+   "language": "en",
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "PK"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S193",
+   "url": "https://www.indoorclimbing.com/pakistan.html",
+   "title": "Pakistan Indoor Climbing Gyms",
+   "language": "en",
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "PK"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S194",
+   "url": "https://www.elbloquepr.com/",
+   "title": "El Bloque Bouldering Gym",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "PR"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S195",
+   "url": "https://www.mountainproject.com/gyms/puerto-rico",
+   "title": "Puerto Rico Climbing Gym Directory",
+   "language": "en",
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "PR"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S196",
+   "url": "https://www.instagram.com/lacapillaclimbinggym/",
+   "title": "La Capilla Climbing Gym (Instagram)",
+   "language": "en",
+   "kind": "official-social",
+   "accessed": "2026-09-30",
+   "countries": [
+    "PR"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S197",
+   "url": "https://climbup.pt/",
+   "title": "Climb UP",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "PT"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S198",
+   "url": "https://escala25.com/en/",
+   "title": "Escala25",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "PT"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S199",
+   "url": "https://vertigoclimbing.pt/",
+   "title": "Vertigo (Marvila, Oriente)",
+   "language": null,
+   "kind": "chain-store-list",
+   "accessed": "2026-09-30",
+   "countries": [
+    "PT"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S200",
+   "url": "https://www.cruxclimbing.pt",
+   "title": "Crux Climbing Center",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "PT"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S201",
+   "url": "https://www.atlaslisboa.com/lisbon-climbing-gyms/",
+   "title": "Altissimo",
+   "language": null,
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "PT"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S202",
+   "url": "https://rockclimbingportugal.com/gyms",
+   "title": "Proa, Sao Rock, Zone Climb (Porto area), upa! (Coimbra), Bloco Bouldering (Guimaraes)",
+   "language": null,
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "PT"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S203",
+   "url": "https://www.boulder.qa/",
+   "title": "Boulder Qatar",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "QA"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S204",
+   "url": "https://www.boulder.qa/about",
+   "title": "About Boulder Qatar",
+   "language": "en",
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "QA"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S205",
+   "url": "https://www.instagram.com/boulder.qa/",
+   "title": "boulder.qa Instagram",
+   "language": "en",
+   "kind": "official-social",
+   "accessed": "2026-09-30",
+   "countries": [
+    "QA"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S206",
+   "url": "https://kidsloveqatar.com/qatars-first-indoor-climbing-gym-boulder-officially-opens-in-doha/",
+   "title": "Qatar's first indoor climbing gym opens in Doha",
+   "language": "en",
+   "kind": "news",
+   "accessed": "2026-09-30",
+   "countries": [
+    "QA"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S207",
+   "url": "http://esqalar.qa/",
+   "title": "ESQALAR Sports",
+   "language": "en",
+   "kind": "other",
+   "accessed": "2026-09-30",
+   "countries": [
+    "QA"
+   ],
+   "http_check": {
+    "status": 0,
+    "error": "ENOTFOUND",
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S208",
+   "url": "https://www.sektor44.com/",
+   "title": "Sektor44",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "RS"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S209",
+   "url": "https://adrenalin.org.rs/",
+   "title": "Adrenalin",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "RS"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S210",
+   "url": "https://serbianclimbing.com/penjalista/vestacke-stene/",
+   "title": "Gekon, Granit (Belgrade), P.A.E.K. (Nis)",
+   "language": null,
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "RS"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S211",
+   "url": "https://www.facebook.com/pkbeograd/",
+   "title": "Belgrade Climbing Club",
+   "language": null,
+   "kind": "official-social",
+   "accessed": "2026-09-30",
+   "countries": [
+    "RS"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S212",
+   "url": "https://bigwallsport.ru/",
+   "title": "BigVol / Bigwall (Dinamo, Gavan, Riviera)",
+   "language": null,
+   "kind": "chain-store-list",
+   "accessed": "2026-09-30",
+   "countries": [
+    "RU"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S213",
+   "url": "https://severnayastena.ru/",
+   "title": "Severnaya Stena (Petrogradskaya, Bukharestskaya)",
+   "language": null,
+   "kind": "chain-store-list",
+   "accessed": "2026-09-30",
+   "countries": [
+    "RU"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S214",
+   "url": "http://lu4.su/",
+   "title": "Luch",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "RU"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S215",
+   "url": "https://visit-petersburg.ru/leisure/razvlecheniya/skalodrom-el-capitan/",
+   "title": "El Capitan",
+   "language": null,
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "RU"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S216",
+   "url": "https://piter.now/skalodromy-v-sankt-peterburge/",
+   "title": "Neolit",
+   "language": null,
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "RU"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S217",
+   "url": "https://skalodrom8.ru/",
+   "title": "Skalodrom Vosmerka",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "RU"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S218",
+   "url": "https://maps.climbingpro.ru/podborki/bouldering/",
+   "title": "Bouldering - Russian climbing gyms (climbingpro)",
+   "language": "ru",
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "RU"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S219",
+   "url": "https://climbcomps.ru/gyms",
+   "title": "Russian climbing gyms map and list",
+   "language": "ru",
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "RU"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S220",
+   "url": "https://boulderinglist.com/countries/Russia",
+   "title": "BoulderingList Russia",
+   "language": "en",
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "RU"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S221",
+   "url": "https://thecaveclimbing.com/",
+   "title": "The Cave Climbing",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "SA"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S222",
+   "url": "https://www.instagram.com/climbup.sa/",
+   "title": "Climb Up",
+   "language": null,
+   "kind": "official-social",
+   "accessed": "2026-09-30",
+   "countries": [
+    "SA"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S223",
+   "url": "https://www.instagram.com/jigsawclimbing/",
+   "title": "Jigsaw Climbing",
+   "language": null,
+   "kind": "official-social",
+   "accessed": "2026-09-30",
+   "countries": [
+    "SA"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S224",
+   "url": "https://www.dyno.sa/",
+   "title": "DYNO Climbing Center",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "SA"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S225",
+   "url": "https://destinationksa.com/en/climb-up-riyadh-bouldering-gym/",
+   "title": "Climb Up Riyadh bouldering gym",
+   "language": "en",
+   "kind": "news",
+   "accessed": "2026-09-30",
+   "countries": [
+    "SA"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S226",
+   "url": "https://destinationksa.com/en/jeddahs-first-indoor-bouldering-gym/",
+   "title": "Jeddah's first indoor bouldering gym",
+   "language": "en",
+   "kind": "news",
+   "accessed": "2026-09-30",
+   "countries": [
+    "SA"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S227",
+   "url": "https://climbing.sa/climbing-walls/",
+   "title": "Saudi Climbing and Hiking Federation - climbing walls",
+   "language": "en",
+   "kind": "federation",
+   "accessed": "2026-09-30",
+   "countries": [
+    "SA"
+   ],
+   "http_check": {
+    "status": 403,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S228",
+   "url": "https://www.thecrag.com/climbing/sudan/khartoum",
+   "title": "Khartoum, Rock climbing | theCrag",
+   "language": "en",
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "SD"
+   ],
+   "http_check": {
+    "status": 403,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S229",
+   "url": "https://www.klattercentret.se/",
+   "title": "Klattercentret (Solna, Telefonplan, Akalla, Malmo, Uppsala, Vasteras, Helsingborg, Partille)",
+   "language": null,
+   "kind": "chain-store-list",
+   "accessed": "2026-09-30",
+   "countries": [
+    "SE"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S230",
+   "url": "https://boulderingstockholm.se/",
+   "title": "Bouldering Sthlm",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "SE"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S231",
+   "url": "https://www.moumo.se",
+   "title": "Moumo",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "SE"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S232",
+   "url": "https://www.backaboulder.se",
+   "title": "Backa Boulder",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "SE"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S233",
+   "url": "https://www.klattercentret.se/malmo/en/borja-klattra/",
+   "title": "Klattercentret Malmo",
+   "language": "sv",
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "SE"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S234",
+   "url": "https://www.indoorclimbing.com/sweden.html",
+   "title": "Indoorclimbing.com Sweden",
+   "language": "en",
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "SE"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S235",
+   "url": "https://www.boulderm.com/locations/our-gyms",
+   "title": "Boulder Movement (Bugis, Downtown, Rochor, Tai Seng)",
+   "language": null,
+   "kind": "chain-store-list",
+   "accessed": "2026-09-30",
+   "countries": [
+    "SG"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S236",
+   "url": "https://www.boulderplusclimbing.com/location",
+   "title": "boulder+ (Aperia, Chevrons)",
+   "language": null,
+   "kind": "chain-store-list",
+   "accessed": "2026-09-30",
+   "countries": [
+    "SG"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S237",
+   "url": "https://www.boulderplanet.sg/",
+   "title": "Boulder Planet (Sembawang, Tai Seng)",
+   "language": null,
+   "kind": "chain-store-list",
+   "accessed": "2026-09-30",
+   "countries": [
+    "SG"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S238",
+   "url": "https://www.lighthouseclimbing.com/",
+   "title": "Lighthouse Climbing",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "SG"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S239",
+   "url": "https://www.bffclimb.com/",
+   "title": "BFF Climb (3 venues)",
+   "language": null,
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "SG"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S240",
+   "url": "https://theamateurclimber.com/indoor-climbing-singapore/",
+   "title": "Fit.Bloc (2 venues)",
+   "language": null,
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "SG"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S241",
+   "url": "https://www.blockdock.me/",
+   "title": "Block Dock (Raca, Petrzalka)",
+   "language": null,
+   "kind": "chain-store-list",
+   "accessed": "2026-09-30",
+   "countries": [
+    "SK"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S242",
+   "url": "https://boulderspot.sk/en/spot-climbing-gym/",
+   "title": "Spot climbing gym",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "SK"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S243",
+   "url": "https://www.fanatix.sk/boulder",
+   "title": "Fanatix",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "SK"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S244",
+   "url": "https://www.k2zilina.sk/en/indoor-climbing-wall-k2-zilina/",
+   "title": "K2 Zilina",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "SK"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S245",
+   "url": "https://www.zlavadna.sk/zlava_298740_lezecky-zazitok-pre-dospelych-aj-deti-v-najvacsom-lezeckom-centre-na-vychode-t2-boulder-arena",
+   "title": "T2 Boulder Arena",
+   "language": null,
+   "kind": "other",
+   "accessed": "2026-09-30",
+   "countries": [
+    "SK"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S246",
+   "url": "https://www.zagurami.eu/umele-lezecke-steny-slovensko-prehlad/",
+   "title": "Rozlomity",
+   "language": null,
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "SK"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S247",
+   "url": "https://www.balanceclimbing.com/",
+   "title": "Balance Climbing (Rama 9, Sathorn)",
+   "language": null,
+   "kind": "chain-store-list",
+   "accessed": "2026-09-30",
+   "countries": [
+    "TH"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S248",
+   "url": "https://eagleeyeclimb.com/",
+   "title": "Eagle Eye Climbing Gym",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "TH"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S249",
+   "url": "https://www.boulderplanet.co.th/",
+   "title": "Boulder Planet Thailand",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "TH"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S250",
+   "url": "https://www.facebook.com/gravitylab.bkk/",
+   "title": "Gravity Lab Bangkok",
+   "language": null,
+   "kind": "official-social",
+   "accessed": "2026-09-30",
+   "countries": [
+    "TH"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S251",
+   "url": "https://theamateurclimber.com/climbing-gym-bangkok-thailand/",
+   "title": "F5 Climbing Center",
+   "language": null,
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "TH"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S252",
+   "url": "https://brocnbells.com/bangkok/bouldering",
+   "title": "Stonegoat Climbing Gym",
+   "language": null,
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "TH"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S253",
+   "url": "https://www.timeout.com/bangkok/th/sports-and-fitness/urban-playground-climbing",
+   "title": "Urban Playground Climbing",
+   "language": null,
+   "kind": "news",
+   "accessed": "2026-09-30",
+   "countries": [
+    "TH"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S254",
+   "url": "https://www.lydiascapes.com/indoor-rock-climbing-boulder-gyms-of-bangkok/",
+   "title": "Rock Domain Climbing Gym",
+   "language": null,
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "TH"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S255",
+   "url": "https://www.chiangmaicitylife.com/clg/see-do/sports-fitness/climbing/chiang-mai-rock-climbing-adventures/",
+   "title": "Main Wall Climbing Gym",
+   "language": null,
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "TH"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S256",
+   "url": "https://www.indoorclimbing.com/thailand.html",
+   "title": "DEEP Climbing Gym",
+   "language": null,
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "TH"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S257",
+   "url": "https://www.turkmenistan.gov.tm/en/post/73062/childrens-rock-climbing-festival-held-ashgabat",
+   "title": "Children's rock climbing festival held in Ashgabat",
+   "language": "en",
+   "kind": "news",
+   "accessed": "2026-09-30",
+   "countries": [
+    "TM"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S258",
+   "url": "https://www.instagram.com/climb.in/",
+   "title": "Climb'IN",
+   "language": null,
+   "kind": "official-social",
+   "accessed": "2026-09-30",
+   "countries": [
+    "TN"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S259",
+   "url": "https://www.labess.tn/incontournable/climbin/",
+   "title": "Climb'IN - Labess",
+   "language": "fr",
+   "kind": "other",
+   "accessed": "2026-09-30",
+   "countries": [
+    "TN"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S260",
+   "url": "https://oblyk.org/gyms/403/climb-in",
+   "title": "Climb'IN, salle d'escalade a Tunis",
+   "language": "fr",
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "TN"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S261",
+   "url": "https://climbing-gyms.com/browse/africa/tunisia",
+   "title": "Tunisia Climbing Gyms",
+   "language": "en",
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "TN"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S262",
+   "url": "https://www.boulderistanbul.com/en",
+   "title": "Boulder Istanbul",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "TR"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S263",
+   "url": "https://boulderhane.com/en/about/",
+   "title": "Boulderhane",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "TR"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S264",
+   "url": "https://benefitsystems.com.tr/en/facilities/duvar-x/",
+   "title": "DuvarX",
+   "language": null,
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "TR"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S265",
+   "url": "http://www.demirayaklar.com/mekanik-climbing/",
+   "title": "Mekanik Climbing",
+   "language": null,
+   "kind": "other",
+   "accessed": "2026-09-30",
+   "countries": [
+    "TR"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S266",
+   "url": "https://www.instagram.com/boulderjungle/",
+   "title": "Boulder Jungle",
+   "language": null,
+   "kind": "official-social",
+   "accessed": "2026-09-30",
+   "countries": [
+    "TR"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S267",
+   "url": "https://www.facebook.com/kisakayaboulder/",
+   "title": "KisaKaya Ankara Boulder Evi",
+   "language": null,
+   "kind": "official-social",
+   "accessed": "2026-09-30",
+   "countries": [
+    "TR"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S268",
+   "url": "https://www.indoorclimbing.com/turkey.html",
+   "title": "BoulderEs",
+   "language": null,
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "TR"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S269",
+   "url": "https://www.macerita.com/m-log/istanbuldaki-boulder-salonlari",
+   "title": "Istanbul'daki Boulder Salonlari",
+   "language": "tr",
+   "kind": "other",
+   "accessed": "2026-09-30",
+   "countries": [
+    "TR"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S270",
+   "url": "https://www.climbinnizmir.com/",
+   "title": "Climbinn Izmir",
+   "language": "tr",
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "TR"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S271",
+   "url": "https://www.ukclimbing.com/forums/destinations/east_africa_climbing-740748",
+   "title": "UKC Forums - East Africa climbing",
+   "language": "en",
+   "kind": "other",
+   "accessed": "2026-09-30",
+   "countries": [
+    "TZ"
+   ],
+   "http_check": {
+    "status": 403,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S272",
+   "url": "https://www.thecrag.com/en/climbing/tanzania/dar-es-salaam",
+   "title": "Dar es Salaam, Rock climbing | theCrag",
+   "language": "en",
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "TZ"
+   ],
+   "http_check": {
+    "status": 403,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S273",
+   "url": "https://www.tanzania-info.net/country/businesses/62/indoor-climbing",
+   "title": "Indoor Climbing in Tanzania (directory; returned 403, not read)",
+   "language": "en",
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "TZ"
+   ],
+   "http_check": {
+    "status": 403,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S274",
+   "url": "https://www.climbingspace.com.ua/",
+   "title": "Climbing SPACE",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "UA"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S275",
+   "url": "https://hyperion.kiev.ua/ua/poslugy/bouldering",
+   "title": "Hyperion",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "UA"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S276",
+   "url": "https://www.boulderspace.ua/",
+   "title": "Boulder Space",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "UA"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S277",
+   "url": "https://funattic.com.ua/skeledrom/",
+   "title": "Funattic",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "UA"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S278",
+   "url": "https://nashkiev.ua/life/skeledromi-u-kievi-de-polaziti-ta-skilki-tse-koshtue",
+   "title": "UP!",
+   "language": null,
+   "kind": "news",
+   "accessed": "2026-09-30",
+   "countries": [
+    "UA"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S279",
+   "url": "https://mwambaclimbing.com/",
+   "title": "Mwamba Climbing - Uganda's first indoor climbing gym (not yet open)",
+   "language": "en",
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "UG"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S280",
+   "url": "https://www.csmonitor.com/Arts-Culture/2025/1106/mountain-club-of-uganda-rock-climbing",
+   "title": "Mountain Club of Uganda is making climbing more accessible",
+   "language": "en",
+   "kind": "news",
+   "accessed": "2026-09-30",
+   "countries": [
+    "UG"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S281",
+   "url": "https://mcu.ug/roma-wall/",
+   "title": "Roma Wall - Mountain Club of Uganda",
+   "language": "en",
+   "kind": "federation",
+   "accessed": "2026-09-30",
+   "countries": [
+    "UG"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S282",
+   "url": "https://x.com/bolderkampala",
+   "title": "Bolder Climbing Gym (@bolderkampala) - could not be loaded",
+   "language": "en",
+   "kind": "official-social",
+   "accessed": "2026-09-30",
+   "countries": [
+    "UG"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S283",
+   "url": "https://www.instagram.com/bouldermbc/",
+   "title": "MBC - Montevideo Boulder Club",
+   "language": null,
+   "kind": "official-social",
+   "accessed": "2026-09-30",
+   "countries": [
+    "UY"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S284",
+   "url": "https://www.facebook.com/EscaladaCharrua/",
+   "title": "Escalada Charrua",
+   "language": null,
+   "kind": "official-social",
+   "accessed": "2026-09-30",
+   "countries": [
+    "UY"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S285",
+   "url": "https://www.instagram.com/liquenescalada/",
+   "title": "Liquen Escalada y Bouldering",
+   "language": null,
+   "kind": "official-social",
+   "accessed": "2026-09-30",
+   "countries": [
+    "UY"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S286",
+   "url": "https://www.indoorclimbing.com/Uruguay.html",
+   "title": "Gimnasios de escalada en Uruguay",
+   "language": "es",
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "UY"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S287",
+   "url": "https://aude.com.uy/",
+   "title": "Asociacion Uruguaya de Escalada",
+   "language": "es",
+   "kind": "federation",
+   "accessed": "2026-09-30",
+   "countries": [
+    "UY"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S288",
+   "url": "https://befit.uz/befit-box/climbing/",
+   "title": "BeFit BOX climbing",
+   "language": "ru",
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "UZ"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S289",
+   "url": "https://www.indoorclimbing.com/uzbekistan.html",
+   "title": "Uzbekistan Indoor Climbing Gyms",
+   "language": "en",
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "UZ"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S290",
+   "url": "https://2gis.uz/tashkent/search/%D0%A1%D0%BA%D0%B0%D0%BB%D0%BE%D0%B4%D1%80%D0%BE%D0%BC",
+   "title": "Climbing walls in Tashkent (2GIS)",
+   "language": "ru",
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "UZ"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S291",
+   "url": "https://vietclimb.vn/vi/bouldering-gym",
+   "title": "VietClimb",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "VN"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S292",
+   "url": "https://www.beefyboulders.com/",
+   "title": "Beefy Boulders (Tay Ho, My Dinh)",
+   "language": null,
+   "kind": "chain-store-list",
+   "accessed": "2026-09-30",
+   "countries": [
+    "VN"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S293",
+   "url": "https://saigonclimbing.com/",
+   "title": "Skywalk Climbing",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "VN"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S294",
+   "url": "https://pushclimbing.vn/",
+   "title": "Push Climbing / Crescent Wall",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "VN"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S295",
+   "url": "https://www.boulderbox.rocks/",
+   "title": "Boulder Box Vietnam",
+   "language": null,
+   "kind": "official-site",
+   "accessed": "2026-09-30",
+   "countries": [
+    "VN"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S296",
+   "url": "https://www.indoorclimbing.com/vietnam.html",
+   "title": "Vertical Academy",
+   "language": null,
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "VN"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S297",
+   "url": "https://zim-biz.com/business/climbing-hub-zimbabwe",
+   "title": "Climbing Hub Zimbabwe",
+   "language": null,
+   "kind": "directory",
+   "accessed": "2026-09-30",
+   "countries": [
+    "ZW"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S298",
+   "url": "https://gust.com/companies/otgwzim",
+   "title": "Over the Garden Wall - Harare (startup profile)",
+   "language": "en",
+   "kind": "other",
+   "accessed": "2026-09-30",
+   "countries": [
+    "ZW"
+   ],
+   "http_check": {
+    "status": 403,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S299",
+   "url": "https://www.facebook.com/rockclimbingzimbabwe/",
+   "title": "Rock Climbing Zimbabwe (Facebook)",
+   "language": "en",
+   "kind": "official-social",
+   "accessed": "2026-09-30",
+   "countries": [
+    "ZW"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  },
+  {
+   "id": "S300",
+   "url": "https://thecragjournal.com/2024/10/02/climbing-in-zimbabwe-an-uncelebrated-land-of-rock/",
+   "title": "Climbing in Zimbabwe: An Uncelebrated Land of Rock (Crag Journal, 2024)",
+   "language": "en",
+   "kind": "news",
+   "accessed": "2026-09-30",
+   "countries": [
+    "ZW"
+   ],
+   "http_check": {
+    "status": 200,
+    "checked": "2026-09-30"
+   }
+  }
+ ]
+}

@@ -11,7 +11,7 @@ subagents). Keep it accurate and short.
   `jq` or `grep` only (examples in `docs/ARCHITECTURE.md`).
 - **Files over 30 KB: use `grep`, `head`, or line ranges only — never read
   them in full.** Currently over 30 KB: `index.html`,
-  `data/gyms.json`, `js/modules/regions.js`, `docs/DESIGN.md`, `docs/import-workflow.md`, everything in `docs/archive/`. Check with `wc -c` if unsure.
+  `data/gyms.json`, `js/modules/regions.js`, `docs/DESIGN.md`, `docs/import-workflow.md`, `docs/research/*/*.json`, everything in `docs/archive/`. Check with `wc -c` if unsure.
 - Start from `docs/ARCHITECTURE.md` (file map, data flow, key functions
   with file:line) and `docs/TASKS.md` (open work). Both are short; keep
   them that way (≤150 and ≤60 lines).

@@ -1,0 +1,5485 @@
+{
+ "schema_version": 1,
+ "generated": "2026-10-01",
+ "question": "Which significant countries are missing from Bouldeer despite having a real indoor bouldering scene?",
+ "bouldeer_snapshot": {
+  "approved_gyms": 2127,
+  "countries": 84,
+  "index_sha256": "8dbddf7924c219a236c2ffff9c8fb005dd02d1dcfe61640f8817d49fb2484af2",
+  "source": "live:thayxaampaelvntoaido.supabase.co",
+  "verified_equal_to_live": "2026-09-30 (verify-index --live)"
+ },
+ "screen": {
+  "rule": "bouldeer_count <= 10 AND (population >= 5,000,000 OR GDP >= US$50B)",
+  "screened": 104,
+  "researched_rule": "screened AND GDP >= US$50B",
+  "researched": 66
+ },
+ "definitions": {
+  "primary_confirmed_count": "Counted from the researchers' notes: gyms whose bouldering offer is shown on the gym's own site/social or its chain's own location list.",
+  "evidence_strength": "strong = >= 3 primary-confirmed gyms; moderate = 1-2 primary-confirmed, or >= 3 directory-listed; weak = only indirect or unconfirmed mentions; none = nothing found",
+  "indicated_count": "max(observed_count, stated_estimate.value, observed_count + named leads). An indication, not a census; may include gyms already on Bouldeer.",
+  "opportunity_indicated": "max(0, indicated_count - bouldeer_count): how many more gyms the evidence points to than Bouldeer holds. Assumes Bouldeer's gyms are among those found (not checked gym by gym).",
+  "opportunity_confirmed": "max(0, primary_confirmed_count - bouldeer_count)",
+  "size_class": "large = population >= 50M or GDP >= US$500B; substantial = population >= 10M or GDP >= US$100B; smaller = otherwise",
+  "tiers": {
+   "A": "large AND strong evidence AND opportunity_indicated >= 5",
+   "B": "large or substantial AND strong evidence AND opportunity_indicated >= 3 (not A)",
+   "C": "strong or moderate evidence AND opportunity_indicated >= 1 (not A or B)",
+   "watch": "only weak evidence (bouldering not confirmed by any gym's own site/social), or indicated gyms without confirmation",
+   "covered": "Bouldeer already holds at least as many gyms as the evidence indicates",
+   "no-evidence": "no indoor bouldering gym found"
+  },
+  "research_priority": "position within the tier by opportunity_indicated, then opportunity_confirmed, then population: an ordering rule, not a judgement",
+  "confidence": "high = strong evidence with >= 5 primary-confirmed; medium = strong (3-4) or moderate; low = weak/none"
+ },
+ "countries": [
+  {
+   "iso2": "CH",
+   "name": "Switzerland",
+   "region": "Europe & Central Asia",
+   "income_group": "High income",
+   "population": 9092436,
+   "population_year": "2025",
+   "gdp_usd": 1043529899250.92,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 114769,
+   "size_class": "large",
+   "bouldeer_count": 8,
+   "bouldeer_top_suburbs": [
+    "Basel (2)",
+    "Bern (2)",
+    "Winterthur (2)",
+    "Zürich (2)"
+   ],
+   "app_supported": true,
+   "evidence_strength": "strong",
+   "researcher_rating": "strong",
+   "primary_confirmed_count": 6,
+   "observed_count": 6,
+   "stated_estimate": {
+    "value": 96,
+    "basis": "ClimbDirectory lists 96 Boulderhallen locations in Switzerland (directory count; may include hybrids and chains). SAC says its directory covers ~90 public climbing and bouldering facilities in CH and neighbours.",
+    "source_url": "https://climbdirectory.com/boulderhallen/"
+   },
+   "named_leads_not_counted": [
+    "B2 Pratteln",
+    "Minimum Zurich",
+    "Mito Zurich",
+    "Alpha Boulder Giubiasco",
+    "Crux Biel",
+    "Bloczone Fribourg",
+    "Kraftreaktor Lenzburg",
+    "Griffbar Thun",
+    "Magnet Niederwangen",
+    "Chletterai Appenzell",
+    "Bouba Baden"
+   ],
+   "indicated_count": 96,
+   "opportunity_confirmed": 0,
+   "opportunity_indicated": 88,
+   "confidence": "high",
+   "tier": "A",
+   "tier_reason": "large country; strong evidence (6 gyms confirmed on own sites); 88 more gyms indicated than on Bouldeer",
+   "research_priority": "A1",
+   "major_cities": [
+    "Zurich",
+    "Bern",
+    "Basel",
+    "Winterthur",
+    "St. Gallen",
+    "Geneva",
+    "Lausanne",
+    "Lucerne"
+   ],
+   "observed_gyms": [
+    {
+     "name": "Bimano Boulder",
+     "city": "Bern",
+     "url": "https://www.bimano.ch",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Dedicated boulder section with hours and prices.",
+     "source_id": "S030"
+    },
+    {
+     "name": "Boulderlounge (St. Gallen, Schlieren)",
+     "city": "St. Gallen / Schlieren",
+     "url": "https://www.boulderlounge.ch",
+     "source_kind": "chain-store-list",
+     "bouldering_evidence": "Boulder gym brand with two sites.",
+     "source_id": "S031"
+    },
+    {
+     "name": "BLOCKFELD Boulderpark",
+     "city": "Winterthur",
+     "url": "https://www.blockfeld.ch",
+     "source_kind": "official-site",
+     "bouldering_evidence": "~800 m2 bouldering, 200+ boulders.",
+     "source_id": "S032"
+    },
+    {
+     "name": "GrindelBoulder",
+     "city": "Bassersdorf",
+     "url": "https://www.grindelboulder.ch",
+     "source_kind": "official-site",
+     "bouldering_evidence": "~900 m2 boulder hall.",
+     "source_id": "S033"
+    },
+    {
+     "name": "Boulderpark Thalwil 9grad",
+     "city": "Thalwil",
+     "url": "http://www.boulderpark-thalwil.ch/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Self-described boulder hall.",
+     "source_id": "S034"
+    }
+   ],
+   "source_ids": [
+    "S030",
+    "S031",
+    "S032",
+    "S033",
+    "S034",
+    "S035",
+    "S036",
+    "S037"
+   ],
+   "caveats": "The 96 figure is one directory's count.",
+   "notes": "Other names seen: B2 Pratteln, Minimum Zurich, Mito Zurich, Alpha Boulder Giubiasco, Crux Biel, Bloczone Fribourg, Kraftreaktor Lenzburg, Griffbar Thun, Magnet Niederwangen, Chletterai Appenzell, Bouba Baden. French/Italian-speaking regions not searched in depth.",
+   "research_group": "europe"
+  },
+  {
+   "iso2": "SG",
+   "name": "Singapore",
+   "region": "East Asia & Pacific",
+   "income_group": "High income",
+   "population": 6111175,
+   "population_year": "2025",
+   "gdp_usd": 603869516998.738,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 98814,
+   "size_class": "large",
+   "bouldeer_count": 2,
+   "bouldeer_top_suburbs": [
+    "Kallang (1)",
+    "Yishun (1)"
+   ],
+   "app_supported": true,
+   "evidence_strength": "strong",
+   "researcher_rating": "strong",
+   "primary_confirmed_count": 9,
+   "observed_count": 22,
+   "stated_estimate": {
+    "value": 37,
+    "basis": "A directory article claims 37 indoor climbing gyms in Singapore, mostly bouldering-only; another claims 42 (2024). Treat as loose.",
+    "source_url": "https://theamateurclimber.com/indoor-climbing-singapore/"
+   },
+   "named_leads_not_counted": [
+    "Boulder World",
+    "Climb Central",
+    "Ground Up",
+    "Outpost Climbing"
+   ],
+   "indicated_count": 37,
+   "opportunity_confirmed": 7,
+   "opportunity_indicated": 35,
+   "confidence": "high",
+   "tier": "A",
+   "tier_reason": "large country; strong evidence (9 gyms confirmed on own sites); 35 more gyms indicated than on Bouldeer",
+   "research_priority": "A2",
+   "major_cities": [
+    "Singapore"
+   ],
+   "observed_gyms": [
+    {
+     "name": "Boulder Movement (Bugis, Downtown, Rochor, Tai Seng)",
+     "city": "Singapore",
+     "url": "https://www.boulderm.com/locations/our-gyms",
+     "source_kind": "chain-store-list",
+     "bouldering_evidence": "Official chain locations page lists 4 bouldering gyms.",
+     "source_id": "S235"
+    },
+    {
+     "name": "boulder+ (Aperia, Chevrons)",
+     "city": "Singapore",
+     "url": "https://www.boulderplusclimbing.com/location",
+     "source_kind": "chain-store-list",
+     "bouldering_evidence": "Official site describes two bouldering gyms.",
+     "source_id": "S236"
+    },
+    {
+     "name": "Boulder Planet (Sembawang, Tai Seng)",
+     "city": "Singapore",
+     "url": "https://www.boulderplanet.sg/",
+     "source_kind": "chain-store-list",
+     "bouldering_evidence": "Official site describes two bouldering facilities.",
+     "source_id": "S237"
+    },
+    {
+     "name": "Lighthouse Climbing",
+     "city": "Singapore",
+     "url": "https://www.lighthouseclimbing.com/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Official page lists bouldering among main facilities.",
+     "source_id": "S238"
+    },
+    {
+     "name": "BFF Climb (3 venues)",
+     "city": "Singapore",
+     "url": "https://www.bffclimb.com/",
+     "source_kind": "directory",
+     "bouldering_evidence": "Directories list 3 bouldering venues.",
+     "source_id": "S239"
+    },
+    {
+     "name": "Fit.Bloc (2 venues)",
+     "city": "Singapore",
+     "url": "https://theamateurclimber.com/indoor-climbing-singapore/",
+     "source_kind": "directory",
+     "bouldering_evidence": "Directory lists bouldering gyms.",
+     "source_id": "S240"
+    },
+    {
+     "name": "boruda Climbing",
+     "city": "Singapore",
+     "url": "https://theamateurclimber.com/indoor-climbing-singapore/",
+     "source_kind": "directory",
+     "bouldering_evidence": "Directory lists a bouldering gym.",
+     "source_id": "S240"
+    }
+   ],
+   "source_ids": [
+    "S235",
+    "S236",
+    "S237",
+    "S238",
+    "S240"
+   ],
+   "caveats": "9 venues confirmed by official sites/chain lists; 13 directory-named only (BFF x3, Fit.Bloc x2, Kinetics, OYEYO, Z-Vertigo, boruda, b8a, Ark Bloc, Project Send, Climba). Directories undated.",
+   "notes": "Other directory names: Boulder World, Climb Central, Ground Up, Outpost Climbing.",
+   "research_group": "seasia"
+  },
+  {
+   "iso2": "RU",
+   "name": "Russian Federation",
+   "region": "Europe & Central Asia",
+   "income_group": "High income",
+   "population": 143513328,
+   "population_year": "2025",
+   "gdp_usd": 2561310169358.74,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 17547,
+   "size_class": "large",
+   "bouldeer_count": 7,
+   "bouldeer_top_suburbs": [
+    "Moskva (4)",
+    "Sankt-Peterburg (3)"
+   ],
+   "app_supported": true,
+   "evidence_strength": "strong",
+   "researcher_rating": "strong",
+   "primary_confirmed_count": 7,
+   "observed_count": 10,
+   "stated_estimate": {
+    "value": null,
+    "basis": "climbcomps.ru lists 165 climbing gyms nationwide (all types, not bouldering-only); the climbingpro bouldering list runs to 9+ pages. No bouldering-only national count.",
+    "source_url": "https://climbcomps.ru/gyms"
+   },
+   "named_leads_not_counted": [
+    "Tokio",
+    "RedPoint",
+    "Limestone",
+    "Gravitatsiya",
+    "Ekstrim (Moscow)",
+    "Tramontana",
+    "Zhest",
+    "Deti na Rakete (St Petersburg)",
+    "Kotlyakovo bouldering hall",
+    "Kaskad",
+    "Tvoya Vysota (Novosibirsk)",
+    "Tochka Opory (Krasnoyarsk)",
+    "RockTrail",
+    "Lad (Nizhny Novgorod)"
+   ],
+   "indicated_count": 24,
+   "opportunity_confirmed": 0,
+   "opportunity_indicated": 17,
+   "confidence": "high",
+   "tier": "A",
+   "tier_reason": "large country; strong evidence (7 gyms confirmed on own sites); 17 more gyms indicated than on Bouldeer",
+   "research_priority": "A3",
+   "major_cities": [
+    "Moscow",
+    "Saint Petersburg",
+    "Yekaterinburg",
+    "Novosibirsk",
+    "Krasnodar",
+    "Nizhny Novgorod",
+    "Krasnoyarsk"
+   ],
+   "observed_gyms": [
+    {
+     "name": "BigVol / Bigwall (Dinamo, Gavan, Riviera)",
+     "city": "Moscow",
+     "url": "https://bigwallsport.ru/",
+     "source_kind": "chain-store-list",
+     "bouldering_evidence": "Chain site presents itself as a bouldering specialist with several halls.",
+     "source_id": "S212"
+    },
+    {
+     "name": "Severnaya Stena (Petrogradskaya, Bukharestskaya)",
+     "city": "Saint Petersburg",
+     "url": "https://severnayastena.ru/",
+     "source_kind": "chain-store-list",
+     "bouldering_evidence": "Site advertises large bouldering zones at both halls.",
+     "source_id": "S213"
+    },
+    {
+     "name": "Luch",
+     "city": "Saint Petersburg",
+     "url": "http://lu4.su/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Bouldering gym with two halls (via search result).",
+     "source_id": "S214"
+    },
+    {
+     "name": "El Capitan",
+     "city": "Saint Petersburg",
+     "url": "https://visit-petersburg.ru/leisure/razvlecheniya/skalodrom-el-capitan/",
+     "source_kind": "directory",
+     "bouldering_evidence": "City guide: ~400 m2 bouldering area.",
+     "source_id": "S215"
+    },
+    {
+     "name": "Neolit",
+     "city": "Saint Petersburg",
+     "url": "https://piter.now/skalodromy-v-sankt-peterburge/",
+     "source_kind": "directory",
+     "bouldering_evidence": "Guide: bouldering-oriented wall.",
+     "source_id": "S216"
+    },
+    {
+     "name": "Energiya Vysoty",
+     "city": "Saint Petersburg",
+     "url": "https://piter.now/skalodromy-v-sankt-peterburge/",
+     "source_kind": "directory",
+     "bouldering_evidence": "Guide: bouldering zones.",
+     "source_id": "S216"
+    },
+    {
+     "name": "Skalodrom Vosmerka",
+     "city": "Yekaterinburg",
+     "url": "https://skalodrom8.ru/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Site: bouldering and rope.",
+     "source_id": "S217"
+    }
+   ],
+   "source_ids": [
+    "S212",
+    "S213",
+    "S217",
+    "S216",
+    "S218",
+    "S219",
+    "S220"
+   ],
+   "caveats": "Directory entries not verified on own sites; operating status not verified.",
+   "notes": "Bouldering-tagged gyms also in Nizhny Novgorod, Kaluga, Voronezh, Krasnodar, Vladivostok, Stavropol, Petrozavodsk, Murmansk, Sochi, Perm, Kirov, Barnaul; Moscow extras: Tokio, RedPoint, Limestone, Gravitatsiya, Ekstrim; St Petersburg alone has 15+ gyms in one guide.",
+   "research_group": "europe"
+  },
+  {
+   "iso2": "IL",
+   "name": "Israel",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan",
+   "income_group": "High income",
+   "population": 10122800,
+   "population_year": "2025",
+   "gdp_usd": 610777842873.595,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 60337,
+   "size_class": "large",
+   "bouldeer_count": 8,
+   "bouldeer_top_suburbs": [
+    "Be'er Sheva (1)",
+    "Jerusalem (1)",
+    "Karmiel (1)",
+    "Kfar Blum (1)",
+    "Kfar Saba (1)",
+    "Kiryat Ono (1)"
+   ],
+   "app_supported": true,
+   "evidence_strength": "strong",
+   "researcher_rating": "strong",
+   "primary_confirmed_count": 12,
+   "observed_count": 15,
+   "stated_estimate": {
+    "value": null,
+    "basis": "No national count; gyms found across 9 cities.",
+    "source_url": null
+   },
+   "named_leads_not_counted": [
+    "Kirono (Kiryat Ono)",
+    "Monkeys (Netanya)",
+    "Haifa Boulder",
+    "Everest Climbing Club (Tel Aviv)"
+   ],
+   "indicated_count": 19,
+   "opportunity_confirmed": 4,
+   "opportunity_indicated": 11,
+   "confidence": "high",
+   "tier": "A",
+   "tier_reason": "large country; strong evidence (12 gyms confirmed on own sites); 11 more gyms indicated than on Bouldeer",
+   "research_priority": "A4",
+   "major_cities": [
+    "Tel Aviv",
+    "Jerusalem",
+    "Haifa",
+    "Beer Sheva",
+    "Petah Tikva",
+    "Kfar Saba",
+    "Netanya",
+    "Kiryat Ono",
+    "Karmiel"
+   ],
+   "observed_gyms": [
+    {
+     "name": "Performance Rock (3 branches: Tel Aviv, Beer Sheva, Haifa)",
+     "city": "Tel Aviv / Beer Sheva / Haifa",
+     "url": "https://performancerock.co.il/",
+     "source_kind": "chain-store-list",
+     "bouldering_evidence": "Own site lists three branches, all bouldering on walls up to 4.5 m (Hebrew).",
+     "source_id": "S091"
+    },
+    {
+     "name": "VKING Tel Aviv",
+     "city": "Tel Aviv",
+     "url": "https://vking.co.il/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Own site: bouldering gym ~750 m2, ~150 rotating problems.",
+     "source_id": "S092"
+    },
+    {
+     "name": "The Bloc (Tel Aviv, Jerusalem)",
+     "city": "Tel Aviv / Jerusalem",
+     "url": "https://www.thebloc.co.il/en/tlv",
+     "source_kind": "chain-store-list",
+     "bouldering_evidence": "Own site: community gym for boulderers; two branches.",
+     "source_id": "S093"
+    },
+    {
+     "name": "Venga",
+     "city": "Petah Tikva",
+     "url": "https://vengavenga.co.il/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Own site: bouldering, 120+ rotating problems, Moon Board.",
+     "source_id": "S094"
+    },
+    {
+     "name": "Isaac Climbing Gym",
+     "city": "Tel Aviv",
+     "url": "https://www.isaacclimbing.com/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Own site: indoor bouldering gym, four sectors.",
+     "source_id": "S095"
+    },
+    {
+     "name": "Desert Climbing",
+     "city": "Negev (Ben Gurion Institute)",
+     "url": "https://www.desertclimbing.co.il/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Own site: bouldering facility ~250 m2 (opening status not checked).",
+     "source_id": "S096"
+    },
+    {
+     "name": "iClimb Jerusalem",
+     "city": "Jerusalem",
+     "url": "https://www.indoorclimbing.com/israel.html",
+     "source_kind": "directory",
+     "bouldering_evidence": "Directory lists bouldering; small boulder room, mostly ropes.",
+     "source_id": "S097"
+    },
+    {
+     "name": "Campus Climbing",
+     "city": "Karmiel",
+     "url": "https://www.indoorclimbing.com/israel.html",
+     "source_kind": "directory",
+     "bouldering_evidence": "Directory lists bouldering.",
+     "source_id": "S097"
+    },
+    {
+     "name": "Boulderland Israel",
+     "city": "Kfar Saba",
+     "url": "https://www.indoorclimbing.com/israel.html",
+     "source_kind": "directory",
+     "bouldering_evidence": "Directory lists bouldering.",
+     "source_id": "S097"
+    }
+   ],
+   "source_ids": [
+    "S091",
+    "S092",
+    "S093",
+    "S094",
+    "S095",
+    "S096",
+    "S097",
+    "S098"
+   ],
+   "caveats": "15 counts chain branches separately and includes 3 directory-only entries (12 by own site/chain list). Further directory/search-only leads not counted: Kirono (Kiryat Ono), Monkeys (Netanya), Haifa Boulder, Everest Climbing Club (Tel Aviv).",
+   "notes": "Gyms cluster around Tel Aviv.",
+   "research_group": "mena"
+  },
+  {
+   "iso2": "SE",
+   "name": "Sweden",
+   "region": "Europe & Central Asia",
+   "income_group": "High income",
+   "population": 10596620,
+   "population_year": "2025",
+   "gdp_usd": 668998664082.081,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 63133,
+   "size_class": "large",
+   "bouldeer_count": 7,
+   "bouldeer_top_suburbs": [
+    "Göteborg (4)",
+    "Stockholm (2)",
+    "Malmö (1)"
+   ],
+   "app_supported": true,
+   "evidence_strength": "strong",
+   "researcher_rating": "strong",
+   "primary_confirmed_count": 11,
+   "observed_count": 11,
+   "stated_estimate": {
+    "value": null,
+    "basis": "No national count; directories show 15-17 gyms and look incomplete.",
+    "source_url": "https://www.indoorclimbing.com/sweden.html"
+   },
+   "named_leads_not_counted": [
+    "Hoganas Boulder Park",
+    "Klatterhallen Norrkoping",
+    "BLX Bouldering Club",
+    "Monoloco (Falun)",
+    "Wallride (Vaxjo)",
+    "Karbin (Stockholm)"
+   ],
+   "indicated_count": 17,
+   "opportunity_confirmed": 4,
+   "opportunity_indicated": 10,
+   "confidence": "high",
+   "tier": "A",
+   "tier_reason": "large country; strong evidence (11 gyms confirmed on own sites); 10 more gyms indicated than on Bouldeer",
+   "research_priority": "A5",
+   "major_cities": [
+    "Stockholm",
+    "Gothenburg",
+    "Malmo",
+    "Uppsala",
+    "Vasteras",
+    "Helsingborg",
+    "Norrkoping"
+   ],
+   "observed_gyms": [
+    {
+     "name": "Klattercentret (Solna, Telefonplan, Akalla, Malmo, Uppsala, Vasteras, Helsingborg, Partille)",
+     "city": "8 cities",
+     "url": "https://www.klattercentret.se/",
+     "source_kind": "chain-store-list",
+     "bouldering_evidence": "Chain: climbing and bouldering at 8 sites; Malmo page explains bouldering up to 4 m.",
+     "source_id": "S229"
+    },
+    {
+     "name": "Bouldering Sthlm",
+     "city": "Stockholm",
+     "url": "https://boulderingstockholm.se/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Stockholm's first dedicated bouldering gym.",
+     "source_id": "S230"
+    },
+    {
+     "name": "Moumo",
+     "city": "Stockholm",
+     "url": "https://www.moumo.se",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Three floors of climbing; bouldering focus per page and directories.",
+     "source_id": "S231"
+    },
+    {
+     "name": "Backa Boulder",
+     "city": "Gothenburg",
+     "url": "https://www.backaboulder.se",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Bouldering-only gym, Tension Board, MoonBoard.",
+     "source_id": "S232"
+    }
+   ],
+   "source_ids": [
+    "S229",
+    "S233",
+    "S230",
+    "S231",
+    "S232",
+    "S234"
+   ],
+   "caveats": "Klattercentret sites counted individually.",
+   "notes": "Not counted: Hoganas Boulder Park, Klatterhallen Norrkoping, BLX Bouldering Club, Monoloco (Falun), Wallride (Vaxjo), Karbin (Stockholm), club walls.",
+   "research_group": "europe"
+  },
+  {
+   "iso2": "IN",
+   "name": "India",
+   "region": "South Asia",
+   "income_group": "Lower middle income",
+   "population": 1463865525,
+   "population_year": "2025",
+   "gdp_usd": 3956067115771.63,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 2702,
+   "size_class": "large",
+   "bouldeer_count": 8,
+   "bouldeer_top_suburbs": [
+    "Bandra West (1)",
+    "Chittaranjan Park (1)",
+    "Gachibowli (1)",
+    "Manali (1)",
+    "Nainital (1)",
+    "Nashik (1)"
+   ],
+   "app_supported": true,
+   "evidence_strength": "strong",
+   "researcher_rating": "strong",
+   "primary_confirmed_count": 8,
+   "observed_count": 8,
+   "stated_estimate": {
+    "value": 14,
+    "basis": "BoulderingList states 14 climbing/bouldering gyms in India; incomplete and includes rope-only entries, so a directory floor, not a total.",
+    "source_url": "https://boulderinglist.com/countries/India"
+   },
+   "named_leads_not_counted": [
+    "Urban Climbers - The Boulder Project",
+    "Elevate - The Climbing Company",
+    "Bangalore Boulder and Play Arena",
+    "Crag Studio (Hyderabad)",
+    "Fit Rock Arena (Tamil Nadu)",
+    "Top Rock Bouldering Gym (Manali)",
+    "The Climbers Den (Nashik)",
+    "Rock Aliens (Pune)"
+   ],
+   "indicated_count": 16,
+   "opportunity_confirmed": 0,
+   "opportunity_indicated": 8,
+   "confidence": "high",
+   "tier": "A",
+   "tier_reason": "large country; strong evidence (8 gyms confirmed on own sites); 8 more gyms indicated than on Bouldeer",
+   "research_priority": "A6",
+   "major_cities": [
+    "Bengaluru",
+    "Delhi / Gurugram",
+    "Mumbai",
+    "Pune",
+    "Hyderabad",
+    "Chennai",
+    "Goa"
+   ],
+   "observed_gyms": [
+    {
+     "name": "BoulderBox",
+     "city": "New Delhi",
+     "url": "https://www.boulderbox.in/about/about-us",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Own site: indoor bouldering facility (2019).",
+     "source_id": "S099"
+    },
+    {
+     "name": "Climb Central (Bengaluru, Gurugram)",
+     "city": "Bengaluru / Gurugram",
+     "url": "https://www.climbcentral.in/",
+     "source_kind": "chain-store-list",
+     "bouldering_evidence": "Chain site lists bouldering at both centres.",
+     "source_id": "S100"
+    },
+    {
+     "name": "Equilibrium Climbing Station (Hoodi, Indiranagar, Goa)",
+     "city": "Bengaluru / Goa",
+     "url": "https://equilibriumclimbing.com/",
+     "source_kind": "chain-store-list",
+     "bouldering_evidence": "Own site: bouldering at all three gyms.",
+     "source_id": "S101"
+    },
+    {
+     "name": "Lets Play Climbing",
+     "city": "Bengaluru",
+     "url": "https://www.letsplayclimbing.com/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Own site stresses bouldering; listings call it a pure bouldering gym.",
+     "source_id": "S102"
+    },
+    {
+     "name": "The Indian Bouldering Company",
+     "city": "Mumbai",
+     "url": "https://tibc.co.in/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Own site: indoor bouldering space.",
+     "source_id": "S103"
+    }
+   ],
+   "source_ids": [
+    "S099",
+    "S100",
+    "S101",
+    "S102",
+    "S103",
+    "S104",
+    "S105"
+   ],
+   "caveats": "All 8 confirmed on own sites (chain branches counted separately). Hindi search returned only vendors.",
+   "notes": "Not counted (official site not opened): Urban Climbers, Elevate, Bangalore Boulder and Play Arena (Bengaluru), Crag Studio (Hyderabad), Fit Rock Arena (Tamil Nadu), Top Rock (Manali), Climbers Den (Nashik), Rock Aliens (Pune).",
+   "research_group": "sasia"
+  },
+  {
+   "iso2": "TH",
+   "name": "Thailand",
+   "region": "East Asia & Pacific",
+   "income_group": "Upper middle income",
+   "population": 71619863,
+   "population_year": "2025",
+   "gdp_usd": 577009981112.015,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 8057,
+   "size_class": "large",
+   "bouldeer_count": 10,
+   "bouldeer_top_suburbs": [
+    "Bangkok Noi (1)",
+    "Bangkok Yai (1)",
+    "Bangna (1)",
+    "Chang Moi (1)",
+    "Khlong Tan Nuea, Watthana (1)",
+    "Pa Daet (1)"
+   ],
+   "app_supported": true,
+   "evidence_strength": "strong",
+   "researcher_rating": "strong",
+   "primary_confirmed_count": 5,
+   "observed_count": 18,
+   "stated_estimate": {
+    "value": null,
+    "basis": "No national total; directories list ~15 gyms (partial).",
+    "source_url": null
+   },
+   "named_leads_not_counted": [],
+   "indicated_count": 18,
+   "opportunity_confirmed": 0,
+   "opportunity_indicated": 8,
+   "confidence": "high",
+   "tier": "A",
+   "tier_reason": "large country; strong evidence (5 gyms confirmed on own sites); 8 more gyms indicated than on Bouldeer",
+   "research_priority": "A7",
+   "major_cities": [
+    "Bangkok",
+    "Chiang Mai",
+    "Pattaya",
+    "Phuket",
+    "Koh Tao",
+    "Pathum Thani"
+   ],
+   "observed_gyms": [
+    {
+     "name": "Balance Climbing (Rama 9, Sathorn)",
+     "city": "Bangkok",
+     "url": "https://www.balanceclimbing.com/",
+     "source_kind": "chain-store-list",
+     "bouldering_evidence": "Official site: bouldering only, two Bangkok gyms.",
+     "source_id": "S247"
+    },
+    {
+     "name": "Eagle Eye Climbing Gym",
+     "city": "Bangkok",
+     "url": "https://eagleeyeclimb.com/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Official site: bouldering gym with training board (Thai/English).",
+     "source_id": "S248"
+    },
+    {
+     "name": "Boulder Planet Thailand",
+     "city": "Pathum Thani",
+     "url": "https://www.boulderplanet.co.th/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Official site of the bouldering chain.",
+     "source_id": "S249"
+    },
+    {
+     "name": "Gravity Lab Bangkok",
+     "city": "Bangkok",
+     "url": "https://www.facebook.com/gravitylab.bkk/",
+     "source_kind": "official-social",
+     "bouldering_evidence": "Official social exists; directories describe bouldering areas.",
+     "source_id": "S250"
+    },
+    {
+     "name": "F5 Climbing Center",
+     "city": "Bangkok",
+     "url": "https://theamateurclimber.com/climbing-gym-bangkok-thailand/",
+     "source_kind": "directory",
+     "bouldering_evidence": "Directory: mostly bouldering.",
+     "source_id": "S251"
+    },
+    {
+     "name": "Stonegoat Climbing Gym",
+     "city": "Bangkok",
+     "url": "https://brocnbells.com/bangkok/bouldering",
+     "source_kind": "directory",
+     "bouldering_evidence": "Listed as a bouldering gym.",
+     "source_id": "S252"
+    },
+    {
+     "name": "Urban Playground Climbing",
+     "city": "Bangkok",
+     "url": "https://www.timeout.com/bangkok/th/sports-and-fitness/urban-playground-climbing",
+     "source_kind": "news",
+     "bouldering_evidence": "Large gym; directories report bouldering.",
+     "source_id": "S253"
+    },
+    {
+     "name": "Rock Domain Climbing Gym",
+     "city": "Bangkok",
+     "url": "https://www.lydiascapes.com/indoor-rock-climbing-boulder-gyms-of-bangkok/",
+     "source_kind": "directory",
+     "bouldering_evidence": "Directories: bouldering, top rope and lead.",
+     "source_id": "S254"
+    },
+    {
+     "name": "Main Wall Climbing Gym",
+     "city": "Chiang Mai",
+     "url": "https://www.chiangmaicitylife.com/clg/see-do/sports-fitness/climbing/chiang-mai-rock-climbing-adventures/",
+     "source_kind": "directory",
+     "bouldering_evidence": "Directories: bouldering routes.",
+     "source_id": "S255"
+    },
+    {
+     "name": "DEEP Climbing Gym",
+     "city": "Pattaya",
+     "url": "https://www.indoorclimbing.com/thailand.html",
+     "source_kind": "directory",
+     "bouldering_evidence": "Snippet: bouldering in a mall gym.",
+     "source_id": "S256"
+    }
+   ],
+   "source_ids": [
+    "S247",
+    "S248",
+    "S249",
+    "S251",
+    "S254",
+    "S252"
+   ],
+   "caveats": "5 venues with own site/social evidence; the rest directory-only. Thai-language searches mostly returned noise. Rebel Rock (Phuket): bouldering not confirmed.",
+   "notes": "Count includes Pro Climber Thailand, Bean Cow Climbing, The Bunker (Koh Tao), Progression Vertical, CMRCA, No Gravity, C3 (Chiang Mai).",
+   "research_group": "seasia"
+  },
+  {
+   "iso2": "TR",
+   "name": "Turkiye",
+   "region": "Europe & Central Asia",
+   "income_group": "Upper middle income",
+   "population": 85878556,
+   "population_year": "2025",
+   "gdp_usd": 1597293229287,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 18599,
+   "size_class": "large",
+   "bouldeer_count": 3,
+   "bouldeer_top_suburbs": [
+    "Odunpazarı, Eskişehir (1)",
+    "Osmangazi, Bursa (1)",
+    "Şişli, Istanbul (1)"
+   ],
+   "app_supported": true,
+   "evidence_strength": "strong",
+   "researcher_rating": "strong",
+   "primary_confirmed_count": 4,
+   "observed_count": 8,
+   "stated_estimate": {
+    "value": null,
+    "basis": "No source states or lists a national count; bouldering gyms found in 6 cities.",
+    "source_url": null
+   },
+   "named_leads_not_counted": [],
+   "indicated_count": 8,
+   "opportunity_confirmed": 1,
+   "opportunity_indicated": 5,
+   "confidence": "medium",
+   "tier": "A",
+   "tier_reason": "large country; strong evidence (4 gyms confirmed on own sites); 5 more gyms indicated than on Bouldeer",
+   "research_priority": "A8",
+   "major_cities": [
+    "Istanbul",
+    "Ankara",
+    "Izmir",
+    "Antalya",
+    "Eskisehir",
+    "Bursa"
+   ],
+   "observed_gyms": [
+    {
+     "name": "Boulder Istanbul",
+     "city": "Istanbul (Kadikoy)",
+     "url": "https://www.boulderistanbul.com/en",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Own site: climbing and bouldering gym, open since 2009.",
+     "source_id": "S262"
+    },
+    {
+     "name": "Boulderhane",
+     "city": "Istanbul (Levent)",
+     "url": "https://boulderhane.com/en/about/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Own site: bouldering-focused gym; other sources give ~600 m2, ~150 routes.",
+     "source_id": "S263"
+    },
+    {
+     "name": "DuvarX",
+     "city": "Istanbul (Maltepe)",
+     "url": "https://benefitsystems.com.tr/en/facilities/duvar-x/",
+     "source_kind": "directory",
+     "bouldering_evidence": "Listed as a boulder gym in an Istanbul blog; event listings advertise bouldering training. Own Instagram not readable.",
+     "source_id": "S264"
+    },
+    {
+     "name": "Mekanik Climbing",
+     "city": "Izmir (Bornova)",
+     "url": "http://www.demirayaklar.com/mekanik-climbing/",
+     "source_kind": "other",
+     "bouldering_evidence": "Page calls it a boulder gym with colour-coded problems and a Moonboard; appears to be a club/personal page.",
+     "source_id": "S265"
+    },
+    {
+     "name": "Boulder Jungle",
+     "city": "Antalya",
+     "url": "https://www.instagram.com/boulderjungle/",
+     "source_kind": "official-social",
+     "bouldering_evidence": "Instagram: first climbing gym in Antalya; posts show Moonboard and a bouldering league.",
+     "source_id": "S266"
+    },
+    {
+     "name": "KisaKaya Ankara Boulder Evi",
+     "city": "Ankara (Kizilay)",
+     "url": "https://www.facebook.com/kisakayaboulder/",
+     "source_kind": "official-social",
+     "bouldering_evidence": "Facebook page name says boulder house; local article says operating since 2015.",
+     "source_id": "S267"
+    },
+    {
+     "name": "BoulderEs",
+     "city": "Eskisehir",
+     "url": "https://www.indoorclimbing.com/turkey.html",
+     "source_kind": "directory",
+     "bouldering_evidence": "Directory lists it with bouldering; own site not found.",
+     "source_id": "S268"
+    },
+    {
+     "name": "Bursa Tirmanis Evi",
+     "city": "Bursa",
+     "url": "https://www.indoorclimbing.com/turkey.html",
+     "source_kind": "directory",
+     "bouldering_evidence": "Directory: ~60 m2 of angled bouldering, open a few evenings a week (club wall).",
+     "source_id": "S268"
+    }
+   ],
+   "source_ids": [
+    "S262",
+    "S263",
+    "S269",
+    "S264",
+    "S268",
+    "S266",
+    "S265",
+    "S270"
+   ],
+   "caveats": "DuvarX, BoulderEs, Bursa and Mekanik not confirmed by own site. Climbinn Izmir (own site) excluded: bouldering not stated. Macera Park (Izmir) leisure wall excluded.",
+   "notes": "Istanbul has at least 3. Lead: Climbinn Izmir (verify bouldering).",
+   "research_group": "mena"
+  },
+  {
+   "iso2": "ID",
+   "name": "Indonesia",
+   "region": "East Asia & Pacific",
+   "income_group": "Upper middle income",
+   "population": 285721236,
+   "population_year": "2025",
+   "gdp_usd": 1445642584163.81,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 5060,
+   "size_class": "large",
+   "bouldeer_count": 9,
+   "bouldeer_top_suburbs": [
+    "Bandung (3)",
+    "Bengkalis (1)",
+    "Bungo (1)",
+    "Palu (1)",
+    "Seminyak (1)",
+    "Serpong (1)"
+   ],
+   "app_supported": true,
+   "evidence_strength": "strong",
+   "researcher_rating": "strong",
+   "primary_confirmed_count": 6,
+   "observed_count": 14,
+   "stated_estimate": {
+    "value": null,
+    "basis": "No national total found; indoorclimbing.com lists ~17 gyms (partial directory, not a stated count).",
+    "source_url": null
+   },
+   "named_leads_not_counted": [],
+   "indicated_count": 14,
+   "opportunity_confirmed": 0,
+   "opportunity_indicated": 5,
+   "confidence": "high",
+   "tier": "A",
+   "tier_reason": "large country; strong evidence (6 gyms confirmed on own sites); 5 more gyms indicated than on Bouldeer",
+   "research_priority": "A9",
+   "major_cities": [
+    "Jakarta",
+    "Tangerang",
+    "Bandung",
+    "Surabaya",
+    "Bali (Canggu, Ubud)"
+   ],
+   "observed_gyms": [
+    {
+     "name": "Boulder Planet Tanjung Duren",
+     "city": "Jakarta",
+     "url": "https://www.boulderplanet.id/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Official site of a bouldering gym brand with passes and memberships.",
+     "source_id": "S078"
+    },
+    {
+     "name": "Dreamstone Boulders (Kelapa Gading, Alam Sutera)",
+     "city": "Jakarta / Tangerang",
+     "url": "https://dreamstoneboulders.com/",
+     "source_kind": "chain-store-list",
+     "bouldering_evidence": "Official site: bouldering gym, Bouldering Basics class, Kilter Board; two locations.",
+     "source_id": "S079"
+    },
+    {
+     "name": "Indoclimb (FX Sudirman, Kemang Village, Kuningan City)",
+     "city": "Jakarta",
+     "url": "https://www.indoclimb.com/",
+     "source_kind": "chain-store-list",
+     "bouldering_evidence": "Official site advertises indoor bouldering with weekly resets; three locations (bouldering per branch not separately confirmed).",
+     "source_id": "S080"
+    },
+    {
+     "name": "Climb ON",
+     "city": "Jakarta",
+     "url": "https://brocnbells.com/jakarta/bouldering",
+     "source_kind": "directory",
+     "bouldering_evidence": "Directories: small bouldering gym in a mall.",
+     "source_id": "S081"
+    },
+    {
+     "name": "Alpine Outpost",
+     "city": "Jakarta",
+     "url": "https://www.indoorclimbing.com/indonesia.html",
+     "source_kind": "directory",
+     "bouldering_evidence": "Directory: small boulder-only gym.",
+     "source_id": "S082"
+    },
+    {
+     "name": "Bremgra Indoor Climbing Gym",
+     "city": "Serpong, Tangerang",
+     "url": "https://brocnbells.com/jakarta/bouldering",
+     "source_kind": "directory",
+     "bouldering_evidence": "Directories list boulder problems.",
+     "source_id": "S081"
+    },
+    {
+     "name": "Phyxius Climbing Gym",
+     "city": "Surabaya",
+     "url": "https://www.indoorclimbing.com/indonesia.html",
+     "source_kind": "directory",
+     "bouldering_evidence": "Directory: bouldering across several floors.",
+     "source_id": "S082"
+    },
+    {
+     "name": "Click Square",
+     "city": "Bandung",
+     "url": null,
+     "source_kind": "other",
+     "bouldering_evidence": "Search snippet only.",
+     "source_id": null
+    },
+    {
+     "name": "Rock Island",
+     "city": "Canggu, Bali",
+     "url": null,
+     "source_kind": "other",
+     "bouldering_evidence": "Booking-site snippets describe bouldering walls.",
+     "source_id": null
+    }
+   ],
+   "source_ids": [
+    "S078",
+    "S079",
+    "S080",
+    "S082",
+    "S081"
+   ],
+   "caveats": "6 venues rest on official sites/chain lists (bouldering explicit at Boulder Planet, Dreamstone, Indoclimb FX); 8 on directories or snippets. Indonesian-language searches were not run separately, so coverage outside Jakarta is likely incomplete.",
+   "notes": "Count includes Tokei Ubud and Badung Climbing Gym (Bali). Bandung gyms named without confirmed bouldering: Manjat, AE Climbing Gym, Rebel Gym.",
+   "research_group": "seasia"
+  },
+  {
+   "iso2": "MY",
+   "name": "Malaysia",
+   "region": "East Asia & Pacific",
+   "income_group": "Upper middle income",
+   "population": 35977838,
+   "population_year": "2025",
+   "gdp_usd": 472193128644.597,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 13125,
+   "size_class": "substantial",
+   "bouldeer_count": 6,
+   "bouldeer_top_suburbs": [
+    "Bandar Cassia (1)",
+    "Johor Bahru (1)",
+    "Petaling Jaya (1)",
+    "Plentong (1)",
+    "Presint 5 (1)",
+    "Shah Alam (1)"
+   ],
+   "app_supported": true,
+   "evidence_strength": "strong",
+   "researcher_rating": "strong",
+   "primary_confirmed_count": 11,
+   "observed_count": 21,
+   "stated_estimate": {
+    "value": null,
+    "basis": "No national total; one directory lists 17 gyms.",
+    "source_url": null
+   },
+   "named_leads_not_counted": [],
+   "indicated_count": 21,
+   "opportunity_confirmed": 5,
+   "opportunity_indicated": 15,
+   "confidence": "high",
+   "tier": "B",
+   "tier_reason": "substantial country; strong evidence (11 confirmed); 15 more gyms indicated than on Bouldeer",
+   "research_priority": "B1",
+   "major_cities": [
+    "Kuala Lumpur",
+    "Petaling Jaya",
+    "Shah Alam",
+    "Subang Jaya",
+    "Penang",
+    "Johor Bahru",
+    "Kota Kinabalu",
+    "Kuching"
+   ],
+   "observed_gyms": [
+    {
+     "name": "Camp5 (1Utama, Eco City, Utropolis, Paradigm JB, Jumpa, KL East)",
+     "city": "Klang Valley / Johor Bahru",
+     "url": "https://www.camp5.com/",
+     "source_kind": "chain-store-list",
+     "bouldering_evidence": "Official chain site: bouldering at all 6 locations (Utropolis boulder-only).",
+     "source_id": "S159"
+    },
+    {
+     "name": "BUMP Bouldering (Jaya One, Pavilion Bukit Jalil)",
+     "city": "Petaling Jaya / Kuala Lumpur",
+     "url": "https://www.bumpbouldering.com/pavilion-bukit-jalil",
+     "source_kind": "chain-store-list",
+     "bouldering_evidence": "Official site: bouldering gyms, Kilter Board.",
+     "source_id": "S160"
+    },
+    {
+     "name": "B-Hub Bouldering",
+     "city": "Petaling Jaya",
+     "url": "https://bhubbouldering.com/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Official site of a bouldering gym (opened 2024).",
+     "source_id": "S161"
+    },
+    {
+     "name": "Project Rock (Gurney Plaza, IKEA Batu Kawan)",
+     "city": "Penang",
+     "url": "https://www.projectrock.com.my/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Search results: ~350 m2 bouldering plus top rope, Kilter Board; second branch per directory.",
+     "source_id": "S162"
+    },
+    {
+     "name": "MadMonkeyz Climbing Gym",
+     "city": "Kuala Lumpur",
+     "url": "https://brocnbells.com/kuala-lumpur/bouldering",
+     "source_kind": "directory",
+     "bouldering_evidence": "Directories: first bouldering gym in Malaysia.",
+     "source_id": "S163"
+    }
+   ],
+   "source_ids": [
+    "S159",
+    "S160",
+    "S161",
+    "S162",
+    "S164",
+    "S163"
+   ],
+   "caveats": "11 venues have own-site or chain-list evidence; 10 directory-only. Malay-language searches not run. Xero Gravity (PJ) temporarily closed, not counted.",
+   "notes": "Directory-only extras: Bolder Ventures, Boulder Story, Metro Avenue, HangOut (Penang), Petit Climbing Center, Rock World, Rocky Basecamp Tebrau (Johor), Sabah Indoor Climbing, Altitude Climbing (Kuching).",
+   "research_group": "seasia"
+  },
+  {
+   "iso2": "PT",
+   "name": "Portugal",
+   "region": "Europe & Central Asia",
+   "income_group": "High income",
+   "population": 10804871,
+   "population_year": "2025",
+   "gdp_usd": 346639825141.821,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 32082,
+   "size_class": "substantial",
+   "bouldeer_count": 7,
+   "bouldeer_top_suburbs": [
+    "Lisboa (3)",
+    "Coimbra (2)",
+    "Porto (2)"
+   ],
+   "app_supported": true,
+   "evidence_strength": "strong",
+   "researcher_rating": "strong",
+   "primary_confirmed_count": 5,
+   "observed_count": 16,
+   "stated_estimate": {
+    "value": 16,
+    "basis": "Lower bound: rockclimbingportugal.com page 1 lists 16 gyms tagged boulder and has more pages.",
+    "source_url": "https://rockclimbingportugal.com/gyms"
+   },
+   "named_leads_not_counted": [],
+   "indicated_count": 16,
+   "opportunity_confirmed": 0,
+   "opportunity_indicated": 9,
+   "confidence": "high",
+   "tier": "B",
+   "tier_reason": "substantial country; strong evidence (5 confirmed); 9 more gyms indicated than on Bouldeer",
+   "research_priority": "B2",
+   "major_cities": [
+    "Lisbon",
+    "Porto",
+    "Coimbra",
+    "Braga",
+    "Guimaraes",
+    "Faro"
+   ],
+   "observed_gyms": [
+    {
+     "name": "Climb UP",
+     "city": "Carnaxide (Lisbon)",
+     "url": "https://climbup.pt/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Boulder centre since 2018.",
+     "source_id": "S197"
+    },
+    {
+     "name": "Escala25",
+     "city": "Lisbon",
+     "url": "https://escala25.com/en/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Bouldering area.",
+     "source_id": "S198"
+    },
+    {
+     "name": "Vertigo (Marvila, Oriente)",
+     "city": "Lisbon",
+     "url": "https://vertigoclimbing.pt/",
+     "source_kind": "chain-store-list",
+     "bouldering_evidence": "Bouldering and training boards at two centres.",
+     "source_id": "S199"
+    },
+    {
+     "name": "Crux Climbing Center",
+     "city": "Sao Domingos de Rana",
+     "url": "https://www.cruxclimbing.pt",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Boulder zone.",
+     "source_id": "S200"
+    },
+    {
+     "name": "Altissimo",
+     "city": "Agualva-Cacem",
+     "url": "https://www.atlaslisboa.com/lisbon-climbing-gyms/",
+     "source_kind": "directory",
+     "bouldering_evidence": "Guide: boulder plus rope.",
+     "source_id": "S201"
+    },
+    {
+     "name": "9.8 Gravity Climbing Lisbon",
+     "city": "Prior Velho",
+     "url": "https://www.atlaslisboa.com/lisbon-climbing-gyms/",
+     "source_kind": "directory",
+     "bouldering_evidence": "Guide: boulder.",
+     "source_id": "S201"
+    },
+    {
+     "name": "Proa, Sao Rock, Zone Climb (Porto area), upa! (Coimbra), Bloco Bouldering (Guimaraes)",
+     "city": "Porto / Coimbra / Guimaraes",
+     "url": "https://rockclimbingportugal.com/gyms",
+     "source_kind": "directory",
+     "bouldering_evidence": "Directory tag boulder.",
+     "source_id": "S202"
+    }
+   ],
+   "source_ids": [
+    "S197",
+    "S198",
+    "S199",
+    "S200",
+    "S201",
+    "S202"
+   ],
+   "caveats": "5 own-site confirmations; the rest directory-tagged.",
+   "notes": "More: The North Wall (Porto), CEM Maia, ADEB Braga, Dolinas, Madeira.",
+   "research_group": "europe"
+  },
+  {
+   "iso2": "HR",
+   "name": "Croatia",
+   "region": "Europe & Central Asia",
+   "income_group": "High income",
+   "population": 3876200,
+   "population_year": "2025",
+   "gdp_usd": 105060182186.274,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 27104,
+   "size_class": "substantial",
+   "bouldeer_count": 8,
+   "bouldeer_top_suburbs": [
+    "Zagreb (3)",
+    "Split (2)",
+    "Kaštel Sućurac (1)",
+    "Koprivnica (1)",
+    "Pula (1)"
+   ],
+   "app_supported": true,
+   "evidence_strength": "strong",
+   "researcher_rating": "strong",
+   "primary_confirmed_count": 3,
+   "observed_count": 14,
+   "stated_estimate": {
+    "value": 14,
+    "basis": "Croatian federation (HSPS) lists 14 climbing halls, ~13 tagged Boulder/Boulder+; omits at least Boulder Zona, so the real number is higher.",
+    "source_url": "https://hsps-climbing.org/dvorane/"
+   },
+   "named_leads_not_counted": [],
+   "indicated_count": 14,
+   "opportunity_confirmed": 0,
+   "opportunity_indicated": 6,
+   "confidence": "medium",
+   "tier": "B",
+   "tier_reason": "substantial country; strong evidence (3 confirmed); 6 more gyms indicated than on Bouldeer",
+   "research_priority": "B3",
+   "major_cities": [
+    "Zagreb",
+    "Rijeka",
+    "Pula",
+    "Osijek",
+    "Varazdin",
+    "Split"
+   ],
+   "observed_gyms": [
+    {
+     "name": "Hive",
+     "city": "Zagreb",
+     "url": "https://hivebouldering.com/en",
+     "source_kind": "official-site",
+     "bouldering_evidence": "3500 m2, 170+ boulders.",
+     "source_id": "S073"
+    },
+    {
+     "name": "Boulder Zona",
+     "city": "Zagreb",
+     "url": "https://boulder-zona.com/en/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "1500 m2 bouldering gym.",
+     "source_id": "S074"
+    },
+    {
+     "name": "BoldeRi.hr",
+     "city": "Matulji (Rijeka)",
+     "url": "https://www.instagram.com/bolderi.hr/",
+     "source_kind": "official-social",
+     "bouldering_evidence": "Bouldering gym Instagram.",
+     "source_id": "S075"
+    },
+    {
+     "name": "Federation-listed club halls (Fothia, ArtRock, Onsight, Hiperaktiv, Vertikal, Bastion, Tuhobic, TNT, Bombina, Muntravo)",
+     "city": "Zagreb / Pula / Pazin / Varazdin / Osijek / Rijeka / Split / Karlovac / Rovinj",
+     "url": "https://hsps-climbing.org/dvorane/",
+     "source_kind": "federation",
+     "bouldering_evidence": "Federation list tags Boulder or Boulder+.",
+     "source_id": "S076"
+    }
+   ],
+   "source_ids": [
+    "S073",
+    "S074",
+    "S076",
+    "S077"
+   ],
+   "caveats": "Only 3 confirmed on own site/social; many are club halls with limited opening.",
+   "notes": "",
+   "research_group": "europe"
+  },
+  {
+   "iso2": "NZ",
+   "name": "New Zealand",
+   "region": "East Asia & Pacific",
+   "income_group": "High income",
+   "population": 5324700,
+   "population_year": "2025",
+   "gdp_usd": 264057413739.965,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 49591,
+   "size_class": "substantial",
+   "bouldeer_count": 9,
+   "bouldeer_top_suburbs": [
+    "Alicetown, Lower Hutt (1)",
+    "Eden Terrace, Auckland (1)",
+    "Panmure, Auckland (1)",
+    "Riccarton, Christchurch (1)",
+    "Te Aro, Wellington (1)",
+    "Wairau Valley, Auckland (1)"
+   ],
+   "app_supported": true,
+   "evidence_strength": "strong",
+   "researcher_rating": "strong",
+   "primary_confirmed_count": 6,
+   "observed_count": 13,
+   "stated_estimate": {
+    "value": null,
+    "basis": "indoorclimbing.com lists ~15 NZ venues with bouldering (partial).",
+    "source_url": "https://www.indoorclimbing.com/newzealand.html"
+   },
+   "named_leads_not_counted": [],
+   "indicated_count": 13,
+   "opportunity_confirmed": 0,
+   "opportunity_indicated": 4,
+   "confidence": "high",
+   "tier": "B",
+   "tier_reason": "substantial country; strong evidence (6 confirmed); 4 more gyms indicated than on Bouldeer",
+   "research_priority": "B4",
+   "major_cities": [
+    "Auckland",
+    "Christchurch",
+    "Wellington",
+    "Hamilton",
+    "Queenstown",
+    "Wanaka",
+    "Dunedin",
+    "Mount Maunganui"
+   ],
+   "observed_gyms": [
+    {
+     "name": "Boulder Co. (Auckland, Hamilton, Christchurch)",
+     "city": "Auckland / Hamilton / Christchurch",
+     "url": "https://www.boulderco.co.nz/",
+     "source_kind": "chain-store-list",
+     "bouldering_evidence": "Official chain site: three bouldering gyms.",
+     "source_id": "S169"
+    },
+    {
+     "name": "Uprising Bouldering",
+     "city": "Christchurch",
+     "url": "https://bouldering.co.nz/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Official site: large bouldering gym.",
+     "source_id": "S170"
+    },
+    {
+     "name": "Northern Rocks",
+     "city": "Auckland",
+     "url": "https://www.northernrocks.co.nz/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Official site: bouldering and climbing gym.",
+     "source_id": "S171"
+    },
+    {
+     "name": "Auckland Climbing Gym",
+     "city": "Auckland",
+     "url": "https://www.aucklandclimb.co.nz/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Official site: indoor bouldering (opened Oct 2023).",
+     "source_id": "S172"
+    },
+    {
+     "name": "Queenstown Climbing Centre",
+     "city": "Queenstown",
+     "url": "https://www.basecampadventures.co.nz/queenstown-indoor-climbing-centre/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Snippet: ~250 m2 bouldering (page not read).",
+     "source_id": "S173"
+    },
+    {
+     "name": "Faultline",
+     "city": "Wellington",
+     "url": null,
+     "source_kind": "other",
+     "bouldering_evidence": "Snippet: opened 2024 with bouldering.",
+     "source_id": null
+    },
+    {
+     "name": "Hangdog",
+     "city": "Lower Hutt",
+     "url": null,
+     "source_kind": "other",
+     "bouldering_evidence": "Snippet: bouldering walls.",
+     "source_id": null
+    },
+    {
+     "name": "Extreme Edge Hamilton",
+     "city": "Hamilton",
+     "url": "https://www.indoorclimbing.com/newzealand.html",
+     "source_kind": "directory",
+     "bouldering_evidence": "Directory: two bouldering areas.",
+     "source_id": "S174"
+    },
+    {
+     "name": "The Den",
+     "city": "Christchurch",
+     "url": "https://www.indoorclimbing.com/newzealand.html",
+     "source_kind": "directory",
+     "bouldering_evidence": "Directory: bouldering.",
+     "source_id": "S174"
+    },
+    {
+     "name": "The Rock House",
+     "city": "Mount Maunganui",
+     "url": "https://www.indoorclimbing.com/newzealand.html",
+     "source_kind": "directory",
+     "bouldering_evidence": "Directory: large boulder room.",
+     "source_id": "S174"
+    }
+   ],
+   "source_ids": [
+    "S169",
+    "S170",
+    "S171",
+    "S172",
+    "S174"
+   ],
+   "caveats": "6 venues with own-site or chain-list evidence; rest directory/snippet. Many NZ gyms mix ropes and bouldering.",
+   "notes": "Count includes BaseCamp Wanaka. NZ is already the scaffolded pilot section; this is a scene check only, not candidate research.",
+   "research_group": "seasia"
+  },
+  {
+   "iso2": "IR",
+   "name": "Iran, Islamic Rep.",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan",
+   "income_group": "Upper middle income",
+   "population": 92417681,
+   "population_year": "2025",
+   "gdp_usd": 362682115433.364,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 3924,
+   "size_class": "large",
+   "bouldeer_count": 4,
+   "bouldeer_top_suburbs": [
+    "Qazvin (1)",
+    "Qom (1)",
+    "Tehran (1)",
+    "Zanjan (1)"
+   ],
+   "app_supported": true,
+   "evidence_strength": "strong",
+   "researcher_rating": "strong",
+   "primary_confirmed_count": 3,
+   "observed_count": 3,
+   "stated_estimate": {
+    "value": null,
+    "basis": "No total; Tehran gym lists name at least 6 candidates.",
+    "source_url": null
+   },
+   "named_leads_not_counted": [
+    "Shahr Rock Climbing Club",
+    "Payam Climbing Academy",
+    "MZ Rock Climbing Club",
+    "Tehran Bouldering Club"
+   ],
+   "indicated_count": 7,
+   "opportunity_confirmed": 0,
+   "opportunity_indicated": 3,
+   "confidence": "medium",
+   "tier": "B",
+   "tier_reason": "large country; strong evidence (3 confirmed); 3 more gyms indicated than on Bouldeer",
+   "research_priority": "B5",
+   "major_cities": [
+    "Tehran",
+    "Mashhad"
+   ],
+   "observed_gyms": [
+    {
+     "name": "Boulderland Climbing Club",
+     "city": "Tehran",
+     "url": "https://boulderland.ir",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Own Persian site: bouldering walls, moonboard.",
+     "source_id": "S109"
+    },
+    {
+     "name": "Tochal Club",
+     "city": "Tehran",
+     "url": "https://tochalclub.com/bouldering/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Own Persian page: indoor bouldering, walls up to 5 m.",
+     "source_id": "S110"
+    },
+    {
+     "name": "Moj Climbing Gym",
+     "city": "Tehran",
+     "url": "https://mojclub.com/moj-climibing-gym/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Own Persian page: boulder walls with mats.",
+     "source_id": "S111"
+    },
+    {
+     "name": "Tehran Bouldering Club",
+     "city": "Tehran",
+     "url": "https://iranrocktrip.com/fa/gyms/",
+     "source_kind": "directory",
+     "bouldering_evidence": "Persian directory: designed for bouldering.",
+     "source_id": "S112"
+    }
+   ],
+   "source_ids": [
+    "S109",
+    "S110",
+    "S111",
+    "S112",
+    "S113"
+   ],
+   "caveats": "All confirmed gyms are in Tehran; other cities unverified. Directory-only leads: Shahr, Payam, MZ.",
+   "notes": "Bouldeer has 4: gap modest.",
+   "research_group": "sasia"
+  },
+  {
+   "iso2": "CZ",
+   "name": "Czechia",
+   "region": "Europe & Central Asia",
+   "income_group": "High income",
+   "population": 10886878,
+   "population_year": "2025",
+   "gdp_usd": 391026962800.475,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 35917,
+   "size_class": "substantial",
+   "bouldeer_count": 8,
+   "bouldeer_top_suburbs": [
+    "Prague (7)",
+    "Brno (1)"
+   ],
+   "app_supported": true,
+   "evidence_strength": "strong",
+   "researcher_rating": "strong",
+   "primary_confirmed_count": 3,
+   "observed_count": 5,
+   "stated_estimate": {
+    "value": null,
+    "basis": "lamaholds.cz enumerates ~35 artificial walls in 4 cities (mixed types).",
+    "source_url": "https://www.lamaholds.cz/blog/lezecke-steny-v-cr/"
+   },
+   "named_leads_not_counted": [
+    "Tendon Smichoff",
+    "Boulder MyWay",
+    "Boulder V siti",
+    "Flash boulder bar (Brno)",
+    "Kotelna (Brno)",
+    "Boulder Plechovka (Plzen)"
+   ],
+   "indicated_count": 11,
+   "opportunity_confirmed": 0,
+   "opportunity_indicated": 3,
+   "confidence": "medium",
+   "tier": "B",
+   "tier_reason": "substantial country; strong evidence (3 confirmed); 3 more gyms indicated than on Bouldeer",
+   "research_priority": "B6",
+   "major_cities": [
+    "Prague",
+    "Brno",
+    "Ostrava",
+    "Plzen"
+   ],
+   "observed_gyms": [
+    {
+     "name": "HUDY Boulder Karlin",
+     "city": "Prague",
+     "url": "https://www.hudysteny.cz/boulderkarlin/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "200+ boulder problems on ~739 m2.",
+     "source_id": "S049"
+    },
+    {
+     "name": "Boulder Bar (Jungle Holesovice)",
+     "city": "Prague",
+     "url": "https://varp.cz/en/nejlepsi-lezecke-steny-praha-a-okoli/",
+     "source_kind": "directory",
+     "bouldering_evidence": "Review: 300 m2+ bouldering wall.",
+     "source_id": "S050"
+    },
+    {
+     "name": "Basecamp Boulder",
+     "city": "Brno",
+     "url": "https://basecampboulder.cz/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Self-service bouldering gym.",
+     "source_id": "S051"
+    },
+    {
+     "name": "HANGAR",
+     "city": "Ostrava",
+     "url": "https://www.denik.cz/regiony/bouldering-ostrava-lezecky-hangar-20230908.html",
+     "source_kind": "news",
+     "bouldering_evidence": "Large bouldering venue (2023).",
+     "source_id": "S052"
+    },
+    {
+     "name": "Tendon Blok (Blok Centrum)",
+     "city": "Ostrava",
+     "url": "https://blokcentrum.cz/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Bouldering wall, spray wall, MoonBoard.",
+     "source_id": "S053"
+    }
+   ],
+   "source_ids": [
+    "S049",
+    "S051",
+    "S053",
+    "S052",
+    "S054"
+   ],
+   "caveats": "Lokalblok and Big Wall bouldering not verified.",
+   "notes": "More names: Lokalblok, Big Wall, Tendon Smichoff, Boulder MyWay, Boulder V siti (Prague); Flash boulder bar, Kotelna (Brno); Boulder Plechovka (Plzen).",
+   "research_group": "europe"
+  },
+  {
+   "iso2": "MM",
+   "name": "Myanmar",
+   "region": "East Asia & Pacific",
+   "income_group": "Lower middle income",
+   "population": 54850648,
+   "population_year": "2025",
+   "gdp_usd": 81665773809.5238,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 1489,
+   "size_class": "large",
+   "bouldeer_count": 0,
+   "bouldeer_top_suburbs": [],
+   "app_supported": false,
+   "evidence_strength": "moderate",
+   "researcher_rating": "moderate",
+   "primary_confirmed_count": 1,
+   "observed_count": 1,
+   "stated_estimate": {
+    "value": null,
+    "basis": "No source gives a count.",
+    "source_url": null
+   },
+   "named_leads_not_counted": [
+    "Vertical Endurance Climbing Training Center (Yangon)"
+   ],
+   "indicated_count": 2,
+   "opportunity_confirmed": 1,
+   "opportunity_indicated": 2,
+   "confidence": "medium",
+   "tier": "C",
+   "tier_reason": "large country; moderate evidence (1 confirmed); 2 more gym(s) indicated than on Bouldeer",
+   "research_priority": "C1",
+   "major_cities": [
+    "Yangon"
+   ],
+   "observed_gyms": [
+    {
+     "name": "Climb O'Clock",
+     "city": "Yangon",
+     "url": "https://www.facebook.com/climboclock/",
+     "source_kind": "official-social",
+     "bouldering_evidence": "Official Facebook tagged bouldering; sources say opened 2017 with bouldering and ropes.",
+     "source_id": "S154"
+    }
+   ],
+   "source_ids": [
+    "S154",
+    "S155"
+   ],
+   "caveats": "Recent activity not verified; security situation may affect operation.",
+   "notes": "Second lead: Vertical Endurance (Yangon), unverified.",
+   "research_group": "sasia"
+  },
+  {
+   "iso2": "MA",
+   "name": "Morocco",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan",
+   "income_group": "Lower middle income",
+   "population": 38430770,
+   "population_year": "2025",
+   "gdp_usd": 182374250612.28,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 4672,
+   "size_class": "substantial",
+   "bouldeer_count": 0,
+   "bouldeer_top_suburbs": [],
+   "app_supported": false,
+   "evidence_strength": "moderate",
+   "researcher_rating": "moderate",
+   "primary_confirmed_count": 1,
+   "observed_count": 2,
+   "stated_estimate": {
+    "value": null,
+    "basis": "Sources describe Morocco as having very few modern climbing gyms.",
+    "source_url": "https://www.vertigemedia.fr/tla3-salle-escalade-bloc-casablanca-maroc"
+   },
+   "named_leads_not_counted": [],
+   "indicated_count": 2,
+   "opportunity_confirmed": 1,
+   "opportunity_indicated": 2,
+   "confidence": "medium",
+   "tier": "C",
+   "tier_reason": "substantial country; moderate evidence (1 confirmed); 2 more gym(s) indicated than on Bouldeer",
+   "research_priority": "C2",
+   "major_cities": [
+    "Marrakech",
+    "Rabat",
+    "Casablanca"
+   ],
+   "observed_gyms": [
+    {
+     "name": "Atlas Elevation",
+     "city": "Marrakech",
+     "url": "https://www.instagram.com/atlaselevation/",
+     "source_kind": "official-social",
+     "bouldering_evidence": "Instagram and listings: 960 m2 of walls with a bouldering zone of 50+ problems; opened 2021.",
+     "source_id": "S149"
+    },
+    {
+     "name": "LeMur",
+     "city": "Rabat",
+     "url": "https://www.clubs.ma/rabat/sports/escalade",
+     "source_kind": "directory",
+     "bouldering_evidence": "Directory: 130+ routes including a bloc area; own site not found.",
+     "source_id": "S150"
+    }
+   ],
+   "source_ids": [
+    "S149",
+    "S151",
+    "S150",
+    "S152",
+    "S153"
+   ],
+   "caveats": "LeMur rests on one directory entry. Tla3 (Casablanca) planned, not open (target end 2026). CAF Casablanca club wall and Bloc Bouldering Maroc (project) not counted.",
+   "notes": "Bouldeer has 0; Atlas Elevation qualifies.",
+   "research_group": "mena"
+  },
+  {
+   "iso2": "MO",
+   "name": "Macao SAR, China",
+   "region": "East Asia & Pacific",
+   "income_group": "High income",
+   "population": 685900,
+   "population_year": "2025",
+   "gdp_usd": 52061007670.169,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 75902,
+   "size_class": "smaller",
+   "bouldeer_count": 0,
+   "bouldeer_top_suburbs": [],
+   "app_supported": false,
+   "evidence_strength": "moderate",
+   "researcher_rating": "moderate",
+   "primary_confirmed_count": 1,
+   "observed_count": 2,
+   "stated_estimate": {
+    "value": 2,
+    "basis": "The Homeless Boulder Gym's own site calls itself one of only two indoor bouldering gyms in Macau (operator self-description).",
+    "source_url": "https://moata.org.mo/抱石館/"
+   },
+   "named_leads_not_counted": [],
+   "indicated_count": 2,
+   "opportunity_confirmed": 1,
+   "opportunity_indicated": 2,
+   "confidence": "medium",
+   "tier": "C",
+   "tier_reason": "smaller country; moderate evidence (1 confirmed); 2 more gym(s) indicated than on Bouldeer",
+   "research_priority": "C3",
+   "major_cities": [
+    "Macao"
+   ],
+   "observed_gyms": [
+    {
+     "name": "Homeless Boulder Gym (MOATA)",
+     "city": "Macao",
+     "url": "https://moata.org.mo/抱石館/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Operator page (Traditional Chinese): indoor bouldering gym.",
+     "source_id": "S156"
+    },
+    {
+     "name": "Solution Climbing Gym",
+     "city": "Macao",
+     "url": "https://www.facebook.com/solutionclimbinggym/",
+     "source_kind": "official-social",
+     "bouldering_evidence": "Official Facebook exists (not read); city guide snippet describes a small bouldering gym.",
+     "source_id": "S157"
+    }
+   ],
+   "source_ids": [
+    "S156",
+    "S157",
+    "S158"
+   ],
+   "caveats": "Opening status not confirmed for either. University of Macau campus wall not counted. Macao has no region codes in the app yet (new country).",
+   "notes": "",
+   "research_group": "seasia"
+  },
+  {
+   "iso2": "SK",
+   "name": "Slovak Republic",
+   "region": "Europe & Central Asia",
+   "income_group": "High income",
+   "population": 5413813,
+   "population_year": "2025",
+   "gdp_usd": 154530066506.895,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 28544,
+   "size_class": "substantial",
+   "bouldeer_count": 6,
+   "bouldeer_top_suburbs": [
+    "Banská Bystrica (1)",
+    "Považská Bystrica (1)",
+    "Rača, Bratislava (1)",
+    "Ružinov, Bratislava (1)",
+    "Turčianske Jaseno (1)",
+    "Žilina (1)"
+   ],
+   "app_supported": true,
+   "evidence_strength": "strong",
+   "researcher_rating": "strong",
+   "primary_confirmed_count": 5,
+   "observed_count": 7,
+   "stated_estimate": {
+    "value": null,
+    "basis": "zagurami.eu lists ~80 public artificial walls (incl. school/outdoor; not bouldering-specific).",
+    "source_url": "https://www.zagurami.eu/umele-lezecke-steny-slovensko-prehlad/"
+   },
+   "named_leads_not_counted": [
+    "Bouldrofka (Trnava)"
+   ],
+   "indicated_count": 8,
+   "opportunity_confirmed": 0,
+   "opportunity_indicated": 2,
+   "confidence": "high",
+   "tier": "C",
+   "tier_reason": "substantial country; strong evidence (5 confirmed); 2 more gym(s) indicated than on Bouldeer",
+   "research_priority": "C4",
+   "major_cities": [
+    "Bratislava",
+    "Kosice",
+    "Zilina",
+    "Nitra",
+    "Poprad"
+   ],
+   "observed_gyms": [
+    {
+     "name": "Block Dock (Raca, Petrzalka)",
+     "city": "Bratislava",
+     "url": "https://www.blockdock.me/",
+     "source_kind": "chain-store-list",
+     "bouldering_evidence": "Bouldering gyms (MoonBoard, Kilter).",
+     "source_id": "S241"
+    },
+    {
+     "name": "Spot climbing gym",
+     "city": "Bratislava",
+     "url": "https://boulderspot.sk/en/spot-climbing-gym/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Bouldering gym opened Nov 2024.",
+     "source_id": "S242"
+    },
+    {
+     "name": "Fanatix",
+     "city": "Bratislava",
+     "url": "https://www.fanatix.sk/boulder",
+     "source_kind": "official-site",
+     "bouldering_evidence": "110 m2+ bouldering.",
+     "source_id": "S243"
+    },
+    {
+     "name": "K2 Zilina",
+     "city": "Zilina",
+     "url": "https://www.k2zilina.sk/en/indoor-climbing-wall-k2-zilina/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Roofed bouldering area plus indoor Kilterboard.",
+     "source_id": "S244"
+    },
+    {
+     "name": "T2 Boulder Arena",
+     "city": "Kosice",
+     "url": "https://www.zlavadna.sk/zlava_298740_lezecky-zazitok-pre-dospelych-aj-deti-v-najvacsom-lezeckom-centre-na-vychode-t2-boulder-arena",
+     "source_kind": "other",
+     "bouldering_evidence": "Voucher page: bouldering centre.",
+     "source_id": "S245"
+    },
+    {
+     "name": "Rozlomity",
+     "city": "Kosice",
+     "url": "https://www.zagurami.eu/umele-lezecke-steny-slovensko-prehlad/",
+     "source_kind": "directory",
+     "bouldering_evidence": "Directory: bouldering section.",
+     "source_id": "S246"
+    }
+   ],
+   "source_ids": [
+    "S241",
+    "S242",
+    "S243",
+    "S244",
+    "S246"
+   ],
+   "caveats": "K2 Zilina bouldering partly outdoor under a roof.",
+   "notes": "Other names: Vertigo, K2 (Bratislava), Bouldrofka (Trnava), Climbeer, Lozilla, Brutalka, Brutal povala, La Skala.",
+   "research_group": "europe"
+  },
+  {
+   "iso2": "BD",
+   "name": "Bangladesh",
+   "region": "South Asia",
+   "income_group": "Lower middle income",
+   "population": 175686899,
+   "population_year": "2025",
+   "gdp_usd": 456319229255.578,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 2597,
+   "size_class": "large",
+   "bouldeer_count": 0,
+   "bouldeer_top_suburbs": [],
+   "app_supported": false,
+   "evidence_strength": "moderate",
+   "researcher_rating": "moderate",
+   "primary_confirmed_count": 1,
+   "observed_count": 1,
+   "stated_estimate": {
+    "value": 1,
+    "basis": "The Business Standard (2024) calls The Climbing Garden the country's first indoor bouldering gym and names no other.",
+    "source_url": "https://www.tbsnews.net/features/panorama/climbing-garden-bangladeshs-first-indoor-bouldering-gym-aims-redefine-urban"
+   },
+   "named_leads_not_counted": [],
+   "indicated_count": 1,
+   "opportunity_confirmed": 1,
+   "opportunity_indicated": 1,
+   "confidence": "medium",
+   "tier": "C",
+   "tier_reason": "large country; moderate evidence (1 confirmed); 1 more gym(s) indicated than on Bouldeer",
+   "research_priority": "C5",
+   "major_cities": [
+    "Dhaka"
+   ],
+   "observed_gyms": [
+    {
+     "name": "The Climbing Garden",
+     "city": "Dhaka",
+     "url": "https://climbinggarden.com/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Own site: boulder walls ~14 ft with pads, small top-rope wall; opened May 2024.",
+     "source_id": "S013"
+    }
+   ],
+   "source_ids": [
+    "S013",
+    "S014",
+    "S015"
+   ],
+   "caveats": "Single gym. Bangladesh is not an app-supported country yet.",
+   "notes": "Bouldeer has 0.",
+   "research_group": "sasia"
+  },
+  {
+   "iso2": "KH",
+   "name": "Cambodia",
+   "region": "East Asia & Pacific",
+   "income_group": "Lower middle income",
+   "population": 17847982,
+   "population_year": "2025",
+   "gdp_usd": 51267065842.9641,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 2872,
+   "size_class": "substantial",
+   "bouldeer_count": 0,
+   "bouldeer_top_suburbs": [],
+   "app_supported": false,
+   "evidence_strength": "moderate",
+   "researcher_rating": "moderate",
+   "primary_confirmed_count": 1,
+   "observed_count": 1,
+   "stated_estimate": {
+    "value": null,
+    "basis": "No source states a count.",
+    "source_url": null
+   },
+   "named_leads_not_counted": [],
+   "indicated_count": 1,
+   "opportunity_confirmed": 1,
+   "opportunity_indicated": 1,
+   "confidence": "medium",
+   "tier": "C",
+   "tier_reason": "substantial country; moderate evidence (1 confirmed); 1 more gym(s) indicated than on Bouldeer",
+   "research_priority": "C6",
+   "major_cities": [
+    "Phnom Penh"
+   ],
+   "observed_gyms": [
+    {
+     "name": "Le Club - Climbing Gym & Cafe",
+     "city": "Phnom Penh",
+     "url": "https://www.leclubphnompenh.com/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Own site: bouldering with pads.",
+     "source_id": "S127"
+    }
+   ],
+   "source_ids": [
+    "S127",
+    "S128",
+    "S129"
+   ],
+   "caveats": "Phnom Climb reportedly closed March 2026 (not counted). Kingdom Climbing (Siem Reap) not open.",
+   "notes": "Bouldeer has 0.",
+   "research_group": "sasia"
+  },
+  {
+   "iso2": "TN",
+   "name": "Tunisia",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan",
+   "income_group": "Lower middle income",
+   "population": 12348573,
+   "population_year": "2025",
+   "gdp_usd": 57502836548.0878,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 4657,
+   "size_class": "substantial",
+   "bouldeer_count": 0,
+   "bouldeer_top_suburbs": [],
+   "app_supported": false,
+   "evidence_strength": "moderate",
+   "researcher_rating": "moderate",
+   "primary_confirmed_count": 1,
+   "observed_count": 1,
+   "stated_estimate": {
+    "value": null,
+    "basis": "One gym found, described as Tunisia's first climbing gym.",
+    "source_url": "https://oblyk.org/gyms/403/climb-in"
+   },
+   "named_leads_not_counted": [],
+   "indicated_count": 1,
+   "opportunity_confirmed": 1,
+   "opportunity_indicated": 1,
+   "confidence": "medium",
+   "tier": "C",
+   "tier_reason": "substantial country; moderate evidence (1 confirmed); 1 more gym(s) indicated than on Bouldeer",
+   "research_priority": "C7",
+   "major_cities": [
+    "Tunis (La Marsa)"
+   ],
+   "observed_gyms": [
+    {
+     "name": "Climb'IN",
+     "city": "Tunis (La Marsa)",
+     "url": "https://www.instagram.com/climb.in/",
+     "source_kind": "official-social",
+     "bouldering_evidence": "Instagram shows an active gym with bouldering comps; French sources describe a 600 m2 bouldering gym (2020).",
+     "source_id": "S258"
+    }
+   ],
+   "source_ids": [
+    "S258",
+    "S259",
+    "S260",
+    "S261"
+   ],
+   "caveats": "Address differs slightly between sources; probably one gym.",
+   "notes": "Bouldeer has 0.",
+   "research_group": "mena"
+  },
+  {
+   "iso2": "KW",
+   "name": "Kuwait",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan",
+   "income_group": "High income",
+   "population": 4865298,
+   "population_year": "2025",
+   "gdp_usd": 157209026926.418,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 32312,
+   "size_class": "substantial",
+   "bouldeer_count": 0,
+   "bouldeer_top_suburbs": [],
+   "app_supported": false,
+   "evidence_strength": "moderate",
+   "researcher_rating": "moderate",
+   "primary_confirmed_count": 1,
+   "observed_count": 1,
+   "stated_estimate": {
+    "value": null,
+    "basis": "Directories list one gym.",
+    "source_url": "https://climbing-gyms.com/browse/asia/kuwait/kuwait"
+   },
+   "named_leads_not_counted": [],
+   "indicated_count": 1,
+   "opportunity_confirmed": 1,
+   "opportunity_indicated": 1,
+   "confidence": "medium",
+   "tier": "C",
+   "tier_reason": "substantial country; moderate evidence (1 confirmed); 1 more gym(s) indicated than on Bouldeer",
+   "research_priority": "C8",
+   "major_cities": [
+    "Kuwait City (Hawalli)"
+   ],
+   "observed_gyms": [
+    {
+     "name": "Ascend Rock Climbing Center",
+     "city": "Hawalli",
+     "url": "https://climbwithascend.com/about-us/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Own site: Kuwait's first indoor climbing center including bouldering areas.",
+     "source_id": "S130"
+    }
+   ],
+   "source_ids": [
+    "S130",
+    "S131",
+    "S132",
+    "S133"
+   ],
+   "caveats": "Ascend is a mixed tall-wall centre with a bouldering area. Climbing Wall Kuwait: no bouldering evidence.",
+   "notes": "Bouldeer has 0.",
+   "research_group": "mena"
+  },
+  {
+   "iso2": "PR",
+   "name": "Puerto Rico (US)",
+   "region": "Latin America & Caribbean ",
+   "income_group": "High income",
+   "population": 3184835,
+   "population_year": "2025",
+   "gdp_usd": 129368484000,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 40620,
+   "size_class": "substantial",
+   "bouldeer_count": 0,
+   "bouldeer_top_suburbs": [],
+   "app_supported": false,
+   "evidence_strength": "moderate",
+   "researcher_rating": "moderate",
+   "primary_confirmed_count": 1,
+   "observed_count": 1,
+   "stated_estimate": {
+    "value": null,
+    "basis": "El Bloque calls itself the only official bouldering gym in the Caribbean; Mountain Project lists 3 PR climbing gyms.",
+    "source_url": "https://www.mountainproject.com/gyms/puerto-rico"
+   },
+   "named_leads_not_counted": [],
+   "indicated_count": 1,
+   "opportunity_confirmed": 1,
+   "opportunity_indicated": 1,
+   "confidence": "medium",
+   "tier": "C",
+   "tier_reason": "substantial country; moderate evidence (1 confirmed); 1 more gym(s) indicated than on Bouldeer",
+   "research_priority": "C9",
+   "major_cities": [
+    "San Juan",
+    "Bayamon"
+   ],
+   "observed_gyms": [
+    {
+     "name": "El Bloque Bouldering Gym",
+     "city": "San Juan (Hato Rey)",
+     "url": "https://www.elbloquepr.com/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Own site: bouldering gym with courses and memberships.",
+     "source_id": "S194"
+    }
+   ],
+   "source_ids": [
+    "S194",
+    "S195",
+    "S196"
+   ],
+   "caveats": "La Capilla (Bayamon) bouldering unconfirmed. Roca Norte is outdoor. Puerto Rico is not an app-supported country code (PR).",
+   "notes": "Bouldeer has 0.",
+   "research_group": "latam"
+  },
+  {
+   "iso2": "UA",
+   "name": "Ukraine",
+   "region": "Europe & Central Asia",
+   "income_group": "Upper middle income",
+   "population": 38980376,
+   "population_year": "2025",
+   "gdp_usd": 214233312784.397,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 5866,
+   "size_class": "substantial",
+   "bouldeer_count": 6,
+   "bouldeer_top_suburbs": [
+    "Kyiv (3)",
+    "Desnianskyi District (1)",
+    "Frankivskyi District (1)",
+    "Holosiivskyi District (1)"
+   ],
+   "app_supported": true,
+   "evidence_strength": "strong",
+   "researcher_rating": "strong",
+   "primary_confirmed_count": 3,
+   "observed_count": 5,
+   "stated_estimate": {
+    "value": null,
+    "basis": "A Kyiv guide lists 6 gyms with bouldering in Kyiv alone.",
+    "source_url": "https://nashkiev.ua/life/skeledromi-u-kievi-de-polaziti-ta-skilki-tse-koshtue"
+   },
+   "named_leads_not_counted": [
+    "NAU wall (Kyiv)",
+    "KPIskala (Kyiv)"
+   ],
+   "indicated_count": 7,
+   "opportunity_confirmed": 0,
+   "opportunity_indicated": 1,
+   "confidence": "medium",
+   "tier": "C",
+   "tier_reason": "substantial country; strong evidence (3 confirmed); 1 more gym(s) indicated than on Bouldeer",
+   "research_priority": "C10",
+   "major_cities": [
+    "Kyiv",
+    "Lviv",
+    "Kharkiv",
+    "Dnipro",
+    "Odesa"
+   ],
+   "observed_gyms": [
+    {
+     "name": "Climbing SPACE",
+     "city": "Kyiv",
+     "url": "https://www.climbingspace.com.ua/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "400 m2 bouldering zone.",
+     "source_id": "S274"
+    },
+    {
+     "name": "Hyperion",
+     "city": "Kyiv",
+     "url": "https://hyperion.kiev.ua/ua/poslugy/bouldering",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Dedicated bouldering hall 600 m2+.",
+     "source_id": "S275"
+    },
+    {
+     "name": "Boulder Space",
+     "city": "Kyiv",
+     "url": "https://www.boulderspace.ua/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Bouldering gym.",
+     "source_id": "S276"
+    },
+    {
+     "name": "Funattic",
+     "city": "Kyiv",
+     "url": "https://funattic.com.ua/skeledrom/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Mostly bouldering (search summary).",
+     "source_id": "S277"
+    },
+    {
+     "name": "UP!",
+     "city": "Kyiv",
+     "url": "https://nashkiev.ua/life/skeledromi-u-kievi-de-polaziti-ta-skilki-tse-koshtue",
+     "source_kind": "news",
+     "bouldering_evidence": "Guide: offers bouldering.",
+     "source_id": "S278"
+    }
+   ],
+   "source_ids": [
+    "S274",
+    "S275",
+    "S276",
+    "S278"
+   ],
+   "caveats": "Operating status during the war not verified per gym.",
+   "notes": "Outside Kyiv not confirmed (Bukhta Lviv, FormAT Kharkiv).",
+   "research_group": "europe"
+  },
+  {
+   "iso2": "PE",
+   "name": "Peru",
+   "region": "Latin America & Caribbean ",
+   "income_group": "Upper middle income",
+   "population": 34576665,
+   "population_year": "2025",
+   "gdp_usd": 334854659181.893,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 9684,
+   "size_class": "substantial",
+   "bouldeer_count": 5,
+   "bouldeer_top_suburbs": [
+    "Cercado, Arequipa (1)",
+    "Jesús María, Lima (1)",
+    "Lima (1)",
+    "Miraflores, Lima (1)",
+    "Surquillo, Lima (1)"
+   ],
+   "app_supported": true,
+   "evidence_strength": "moderate",
+   "researcher_rating": "moderate",
+   "primary_confirmed_count": 2,
+   "observed_count": 5,
+   "stated_estimate": {
+    "value": null,
+    "basis": "No source states a national count; directories incomplete.",
+    "source_url": null
+   },
+   "named_leads_not_counted": [
+    "La Escalada Escuela y Entrenamiento (Cusco)"
+   ],
+   "indicated_count": 6,
+   "opportunity_confirmed": 0,
+   "opportunity_indicated": 1,
+   "confidence": "medium",
+   "tier": "C",
+   "tier_reason": "substantial country; moderate evidence (2 confirmed); 1 more gym(s) indicated than on Bouldeer",
+   "research_priority": "C11",
+   "major_cities": [
+    "Lima",
+    "Cusco",
+    "Arequipa"
+   ],
+   "observed_gyms": [
+    {
+     "name": "Base Camp Peru",
+     "city": "Lima",
+     "url": "https://basecampperu.com/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Own site: large boulder and sport wall.",
+     "source_id": "S183"
+    },
+    {
+     "name": "VERTICAL Gimnasio de Escalada",
+     "city": "Lima",
+     "url": "https://escaladavertical.com/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Own site: bouldering on ~125 m2 of walls.",
+     "source_id": "S184"
+    },
+    {
+     "name": "PIRQA Rock Gym",
+     "city": "Lima",
+     "url": "https://www.pirqa.com/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Bouldering not on own site; a Climbing.com article describes a boulder cave.",
+     "source_id": "S185"
+    },
+    {
+     "name": "El Templo de los Monos",
+     "city": "Cusco",
+     "url": "https://www.mountainproject.com/gym/126061210/el-templo-de-los-monos",
+     "source_kind": "directory",
+     "bouldering_evidence": "Directory: bouldering-only gym.",
+     "source_id": "S186"
+    },
+    {
+     "name": "7a Escuela de Escalada",
+     "city": "Cusco",
+     "url": "https://www.tripadvisor.com/Attraction_Review-g294314-d7361953-Reviews-7a_Escuela_de_Escalada-Cusco_Cusco_Region.html",
+     "source_kind": "directory",
+     "bouldering_evidence": "Reviews: small bouldering gym; status unverified.",
+     "source_id": "S187"
+    }
+   ],
+   "source_ids": [
+    "S183",
+    "S184",
+    "S188",
+    "S186",
+    "S189"
+   ],
+   "caveats": "Only 2 confirmed on own sites. Social pages behind login.",
+   "notes": "Bouldeer has 5; gap small.",
+   "research_group": "latam"
+  },
+  {
+   "iso2": "BY",
+   "name": "Belarus",
+   "region": "Europe & Central Asia",
+   "income_group": "Upper middle income",
+   "population": 9085991,
+   "population_year": "2025",
+   "gdp_usd": 93397215864.198,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 10279,
+   "size_class": "smaller",
+   "bouldeer_count": 5,
+   "bouldeer_top_suburbs": [
+    "Minsk (Leninsky district) (2)",
+    "Brest (athletics arena) (1)",
+    "Grodno (Oktyabrsky district) (1)",
+    "Minsk (Tsentralny district) (1)"
+   ],
+   "app_supported": true,
+   "evidence_strength": "strong",
+   "researcher_rating": "strong",
+   "primary_confirmed_count": 4,
+   "observed_count": 4,
+   "stated_estimate": {
+    "value": null,
+    "basis": "No national count.",
+    "source_url": "https://minskonsight.com/gde_lazit/minsk"
+   },
+   "named_leads_not_counted": [
+    "Vertikalny Mir (Gomel)",
+    "Adrenalin (Vitebsk)"
+   ],
+   "indicated_count": 6,
+   "opportunity_confirmed": 0,
+   "opportunity_indicated": 1,
+   "confidence": "medium",
+   "tier": "C",
+   "tier_reason": "smaller country; strong evidence (4 confirmed); 1 more gym(s) indicated than on Bouldeer",
+   "research_priority": "C12",
+   "major_cities": [
+    "Minsk",
+    "Gomel",
+    "Brest",
+    "Grodno",
+    "Vitebsk"
+   ],
+   "observed_gyms": [
+    {
+     "name": "Trapetsiya",
+     "city": "Minsk",
+     "url": "https://trapezia.by/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "~330 m2 bouldering zone.",
+     "source_id": "S023"
+    },
+    {
+     "name": "Plato",
+     "city": "Minsk",
+     "url": "https://plato.by/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Large bouldering hall.",
+     "source_id": "S024"
+    },
+    {
+     "name": "Dinamo climbing wall",
+     "city": "Minsk",
+     "url": "https://stadium-dinamo.by/uslugi/skalodrom",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Bouldering areas plus ropes.",
+     "source_id": "S025"
+    },
+    {
+     "name": "GAGARIN",
+     "city": "Grodno",
+     "url": "https://gagaringrodno.by/bouldering/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Dedicated bouldering page.",
+     "source_id": "S026"
+    }
+   ],
+   "source_ids": [
+    "S023",
+    "S024",
+    "S025",
+    "S026",
+    "S027"
+   ],
+   "caveats": "",
+   "notes": "Bouldeer has 5: gap small; leads in Gomel, Vitebsk, Brest.",
+   "research_group": "europe"
+  },
+  {
+   "iso2": "RS",
+   "name": "Serbia",
+   "region": "Europe & Central Asia",
+   "income_group": "Upper middle income",
+   "population": 6549143,
+   "population_year": "2025",
+   "gdp_usd": 99953324472.9042,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 15262,
+   "size_class": "smaller",
+   "bouldeer_count": 5,
+   "bouldeer_top_suburbs": [
+    "Belgrade (2)",
+    "Novi Beograd (2)",
+    "Novi Sad (1)"
+   ],
+   "app_supported": true,
+   "evidence_strength": "moderate",
+   "researcher_rating": "moderate",
+   "primary_confirmed_count": 2,
+   "observed_count": 6,
+   "stated_estimate": {
+    "value": null,
+    "basis": "SerbianClimbing lists 11 artificial walls, 5 labelled bouldering halls.",
+    "source_url": "https://serbianclimbing.com/penjalista/vestacke-stene/"
+   },
+   "named_leads_not_counted": [],
+   "indicated_count": 6,
+   "opportunity_confirmed": 0,
+   "opportunity_indicated": 1,
+   "confidence": "medium",
+   "tier": "C",
+   "tier_reason": "smaller country; moderate evidence (2 confirmed); 1 more gym(s) indicated than on Bouldeer",
+   "research_priority": "C13",
+   "major_cities": [
+    "Belgrade",
+    "Novi Sad",
+    "Nis",
+    "Uzice"
+   ],
+   "observed_gyms": [
+    {
+     "name": "Sektor44",
+     "city": "Belgrade",
+     "url": "https://www.sektor44.com/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Bouldering-focused centre.",
+     "source_id": "S208"
+    },
+    {
+     "name": "Adrenalin",
+     "city": "Novi Sad",
+     "url": "https://adrenalin.org.rs/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Bouldering hall.",
+     "source_id": "S209"
+    },
+    {
+     "name": "Gekon, Granit (Belgrade), P.A.E.K. (Nis)",
+     "city": "Belgrade / Nis",
+     "url": "https://serbianclimbing.com/penjalista/vestacke-stene/",
+     "source_kind": "directory",
+     "bouldering_evidence": "Listed as bouldering halls (club/school buildings).",
+     "source_id": "S210"
+    },
+    {
+     "name": "Belgrade Climbing Club",
+     "city": "Belgrade",
+     "url": "https://www.facebook.com/pkbeograd/",
+     "source_kind": "official-social",
+     "bouldering_evidence": "~130 m2 boulder gym (search result).",
+     "source_id": "S211"
+    }
+   ],
+   "source_ids": [
+    "S208",
+    "S209",
+    "S210"
+   ],
+   "caveats": "Only 2 confirmed on own site; several club halls with limited hours.",
+   "notes": "Bouldeer has 5: gap small.",
+   "research_group": "europe"
+  },
+  {
+   "iso2": "PK",
+   "name": "Pakistan",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan",
+   "income_group": "Lower middle income",
+   "population": 255219554,
+   "population_year": "2025",
+   "gdp_usd": 407307214476.222,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 1596,
+   "size_class": "large",
+   "bouldeer_count": 0,
+   "bouldeer_top_suburbs": [],
+   "app_supported": false,
+   "evidence_strength": "weak",
+   "researcher_rating": "weak",
+   "primary_confirmed_count": 0,
+   "observed_count": 0,
+   "stated_estimate": {
+    "value": null,
+    "basis": "No source states a count.",
+    "source_url": null
+   },
+   "named_leads_not_counted": [
+    "Climbing Arena DHA Phase V (Lahore)"
+   ],
+   "indicated_count": 1,
+   "opportunity_confirmed": 0,
+   "opportunity_indicated": 1,
+   "confidence": "low",
+   "tier": "watch",
+   "tier_reason": "bouldering not confirmed by any gym's own site/social",
+   "research_priority": null,
+   "major_cities": [
+    "Islamabad",
+    "Lahore",
+    "Karachi"
+   ],
+   "observed_gyms": [],
+   "source_ids": [
+    "S190",
+    "S191",
+    "S192",
+    "S193"
+   ],
+   "caveats": "Climbing Arena (DHA Lahore) reportedly has a bouldering area (blog only). ClimbX Islamabad is rope-only per its own site; Arena Karachi is an entertainment wall.",
+   "notes": "Verify Climbing Arena DHA Lahore manually.",
+   "research_group": "sasia"
+  },
+  {
+   "iso2": "UZ",
+   "name": "Uzbekistan",
+   "region": "Europe & Central Asia",
+   "income_group": "Lower middle income",
+   "population": 37053428,
+   "population_year": "2025",
+   "gdp_usd": 147038081129.405,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 3968,
+   "size_class": "substantial",
+   "bouldeer_count": 0,
+   "bouldeer_top_suburbs": [],
+   "app_supported": false,
+   "evidence_strength": "weak",
+   "researcher_rating": "weak",
+   "primary_confirmed_count": 0,
+   "observed_count": 0,
+   "stated_estimate": {
+    "value": null,
+    "basis": "No source states a count.",
+    "source_url": null
+   },
+   "named_leads_not_counted": [
+    "Chirchik climbing centre"
+   ],
+   "indicated_count": 1,
+   "opportunity_confirmed": 0,
+   "opportunity_indicated": 1,
+   "confidence": "low",
+   "tier": "watch",
+   "tier_reason": "bouldering not confirmed by any gym's own site/social",
+   "research_priority": null,
+   "major_cities": [
+    "Tashkent",
+    "Chirchik"
+   ],
+   "observed_gyms": [],
+   "source_ids": [
+    "S288",
+    "S289",
+    "S290"
+   ],
+   "caveats": "BeFitSky is an outdoor rooftop lead wall; BeFit BOX bouldering not stated; Chirchik gym directory-only.",
+   "notes": "",
+   "research_group": "sasia"
+  },
+  {
+   "iso2": "ZW",
+   "name": "Zimbabwe",
+   "region": "Sub-Saharan Africa ",
+   "income_group": "Lower middle income",
+   "population": 16950795,
+   "population_year": "2025",
+   "gdp_usd": 51215643905.5886,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 3021,
+   "size_class": "substantial",
+   "bouldeer_count": 0,
+   "bouldeer_top_suburbs": [],
+   "app_supported": false,
+   "evidence_strength": "weak",
+   "researcher_rating": "weak",
+   "primary_confirmed_count": 0,
+   "observed_count": 1,
+   "stated_estimate": {
+    "value": null,
+    "basis": "No source states a count. One gym is listed in a business directory; a second is a 2016 startup profile.",
+    "source_url": null
+   },
+   "named_leads_not_counted": [],
+   "indicated_count": 1,
+   "opportunity_confirmed": 0,
+   "opportunity_indicated": 1,
+   "confidence": "low",
+   "tier": "watch",
+   "tier_reason": "bouldering not confirmed by any gym's own site/social",
+   "research_priority": null,
+   "major_cities": [
+    "Harare"
+   ],
+   "observed_gyms": [
+    {
+     "name": "Climbing Hub Zimbabwe",
+     "city": "Harare",
+     "url": "https://zim-biz.com/business/climbing-hub-zimbabwe",
+     "source_kind": "directory",
+     "bouldering_evidence": "Directory listing calls it Zimbabwe's first multi-use indoor climbing facility with bouldering, Moon Boards and spray walls plus top-rope and lead.",
+     "source_id": "S297"
+    }
+   ],
+   "source_ids": [
+    "S297",
+    "S298",
+    "S299",
+    "S300"
+   ],
+   "caveats": "Climbing Hub Zimbabwe has no own site/social found; directory-only and undated. Over the Garden Wall: no evidence it opened.",
+   "notes": "Verify Climbing Hub Zimbabwe via Facebook/Instagram before any import.",
+   "research_group": "africa"
+  },
+  {
+   "iso2": "AZ",
+   "name": "Azerbaijan",
+   "region": "Europe & Central Asia",
+   "income_group": "Upper middle income",
+   "population": 10246996,
+   "population_year": "2025",
+   "gdp_usd": 75937647058.8235,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 7411,
+   "size_class": "substantial",
+   "bouldeer_count": 0,
+   "bouldeer_top_suburbs": [],
+   "app_supported": false,
+   "evidence_strength": "weak",
+   "researcher_rating": "weak",
+   "primary_confirmed_count": 0,
+   "observed_count": 0,
+   "stated_estimate": {
+    "value": 1,
+    "basis": "One facility found (ClimBaku / ALP sport climbing centre, Baku), apparently one venue under two names.",
+    "source_url": "https://yandex.com/maps/org/climbaku/33252128344/"
+   },
+   "named_leads_not_counted": [],
+   "indicated_count": 1,
+   "opportunity_confirmed": 0,
+   "opportunity_indicated": 1,
+   "confidence": "low",
+   "tier": "watch",
+   "tier_reason": "bouldering not confirmed by any gym's own site/social",
+   "research_priority": null,
+   "major_cities": [
+    "Baku"
+   ],
+   "observed_gyms": [],
+   "source_ids": [
+    "S009",
+    "S010",
+    "S011",
+    "S012"
+   ],
+   "caveats": "Bouldering well indicated (bouldering competition, directory) but no readable official page. Federation-run, limited hours.",
+   "notes": "Candidate to verify: ALP / ClimBaku, Baku.",
+   "research_group": "sasia"
+  },
+  {
+   "iso2": "ET",
+   "name": "Ethiopia",
+   "region": "Sub-Saharan Africa ",
+   "income_group": "Low income",
+   "population": 135472051,
+   "population_year": "2025",
+   "gdp_usd": 126358758448.356,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 933,
+   "size_class": "large",
+   "bouldeer_count": 0,
+   "bouldeer_top_suburbs": [],
+   "app_supported": false,
+   "evidence_strength": "weak",
+   "researcher_rating": "weak",
+   "primary_confirmed_count": 0,
+   "observed_count": 0,
+   "stated_estimate": {
+    "value": null,
+    "basis": "Only one indirect mention of an indoor bouldering wall, at a multi-sport club in Addis Ababa. No count is stated.",
+    "source_url": "https://baiml.org/destinations/climbing-in-ethiopia/"
+   },
+   "named_leads_not_counted": [],
+   "indicated_count": 0,
+   "opportunity_confirmed": 0,
+   "opportunity_indicated": 0,
+   "confidence": "low",
+   "tier": "watch",
+   "tier_reason": "only indirect or unconfirmed mentions",
+   "research_priority": null,
+   "major_cities": [
+    "Addis Ababa"
+   ],
+   "observed_gyms": [],
+   "source_ids": [
+    "S063",
+    "S064",
+    "S065"
+   ],
+   "caveats": "A guide site mentions an indoor bouldering wall at the Juventus (Italian) Sports Club near Meskel Square; a listing mentions a climbing wall and bounce house in the club's kids' area. Unclear whether it is a real bouldering wall or a kids' wall; no own site/social found; undated. Not counted.",
+   "notes": "Informal Addis Ababa Rock Climbing Club meets at the Juventus wall and outdoor crags. Amharic terms not searched.",
+   "research_group": "africa"
+  },
+  {
+   "iso2": "UG",
+   "name": "Uganda",
+   "region": "Sub-Saharan Africa ",
+   "income_group": "Low income",
+   "population": 51384894,
+   "population_year": "2025",
+   "gdp_usd": 61985829288.1496,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 1206,
+   "size_class": "large",
+   "bouldeer_count": 0,
+   "bouldeer_top_suburbs": [],
+   "app_supported": false,
+   "evidence_strength": "weak",
+   "researcher_rating": "weak",
+   "primary_confirmed_count": 0,
+   "observed_count": 0,
+   "stated_estimate": {
+    "value": null,
+    "basis": "A Nov 2025 Christian Science Monitor article says Uganda has no indoor climbing gyms yet; Mwamba's own site says it is not yet open (projected Q4 2026).",
+    "source_url": "https://www.csmonitor.com/Arts-Culture/2025/1106/mountain-club-of-uganda-rock-climbing"
+   },
+   "named_leads_not_counted": [],
+   "indicated_count": 0,
+   "opportunity_confirmed": 0,
+   "opportunity_indicated": 0,
+   "confidence": "low",
+   "tier": "watch",
+   "tier_reason": "only indirect or unconfirmed mentions",
+   "research_priority": null,
+   "major_cities": [
+    "Kampala"
+   ],
+   "observed_gyms": [],
+   "source_ids": [
+    "S279",
+    "S280",
+    "S281",
+    "S282"
+   ],
+   "caveats": "Mwamba not open yet. Roma Wall is a small members' boulder wall behind a cafe (outdoor, informal). '@bolderkampala' unverified.",
+   "notes": "Recheck after Q4 2026.",
+   "research_group": "africa"
+  },
+  {
+   "iso2": "DZ",
+   "name": "Algeria",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan",
+   "income_group": "Upper middle income",
+   "population": 47435312,
+   "population_year": "2025",
+   "gdp_usd": 287031225987.736,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 6051,
+   "size_class": "substantial",
+   "bouldeer_count": 0,
+   "bouldeer_top_suburbs": [],
+   "app_supported": false,
+   "evidence_strength": "weak",
+   "researcher_rating": "weak",
+   "primary_confirmed_count": 0,
+   "observed_count": 0,
+   "stated_estimate": {
+    "value": null,
+    "basis": "No source lists any Algerian bouldering gym.",
+    "source_url": null
+   },
+   "named_leads_not_counted": [],
+   "indicated_count": 0,
+   "opportunity_confirmed": 0,
+   "opportunity_indicated": 0,
+   "confidence": "low",
+   "tier": "watch",
+   "tier_reason": "only indirect or unconfirmed mentions",
+   "research_priority": null,
+   "major_cities": [
+    "Algiers"
+   ],
+   "observed_gyms": [],
+   "source_ids": [
+    "S057",
+    "S058"
+   ],
+   "caveats": "Tamgout wall (Algiers) is a 22 m rope wall; no bouldering stated. A multisport club has walls with no bouldering evidence. French and Arabic searches found no bouldering gym.",
+   "notes": "Instagram check ('salle de bloc Alger/Oran') is the only way to rule it out.",
+   "research_group": "mena"
+  },
+  {
+   "iso2": "IQ",
+   "name": "Iraq",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan",
+   "income_group": "Upper middle income",
+   "population": 47020774,
+   "population_year": "2025",
+   "gdp_usd": 254367293538.462,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 5410,
+   "size_class": "substantial",
+   "bouldeer_count": 0,
+   "bouldeer_top_suburbs": [],
+   "app_supported": false,
+   "evidence_strength": "weak",
+   "researcher_rating": "weak",
+   "primary_confirmed_count": 0,
+   "observed_count": 0,
+   "stated_estimate": {
+    "value": null,
+    "basis": "No named indoor bouldering gym found.",
+    "source_url": null
+   },
+   "named_leads_not_counted": [],
+   "indicated_count": 0,
+   "opportunity_confirmed": 0,
+   "opportunity_indicated": 0,
+   "confidence": "low",
+   "tier": "watch",
+   "tier_reason": "only indirect or unconfirmed mentions",
+   "research_priority": null,
+   "major_cities": [
+    "Sulaymaniyah",
+    "Erbil"
+   ],
+   "observed_gyms": [],
+   "source_ids": [
+    "S106",
+    "S107",
+    "S108"
+   ],
+   "caveats": "A non-profit says the first indoor climbing gym in Iraq opened in Sulaymaniyah in 2023; name and bouldering not stated. Erbil wall is a private-house installation. Arabic/Kurdish searches not run.",
+   "notes": "Lead: Chyawani group gym, Sulaymaniyah.",
+   "research_group": "mena"
+  },
+  {
+   "iso2": "CI",
+   "name": "Cote d'Ivoire",
+   "region": "Sub-Saharan Africa ",
+   "income_group": "Lower middle income",
+   "population": 32711547,
+   "population_year": "2025",
+   "gdp_usd": 99773555666.1988,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 3050,
+   "size_class": "substantial",
+   "bouldeer_count": 0,
+   "bouldeer_top_suburbs": [],
+   "app_supported": false,
+   "evidence_strength": "weak",
+   "researcher_rating": "weak",
+   "primary_confirmed_count": 0,
+   "observed_count": 0,
+   "stated_estimate": {
+    "value": null,
+    "basis": "Only a volunteer climbing collective was found. No dedicated commercial gym.",
+    "source_url": "https://baab.ci/loisirs_baab/les-margouillats-dabidjan/"
+   },
+   "named_leads_not_counted": [],
+   "indicated_count": 0,
+   "opportunity_confirmed": 0,
+   "opportunity_indicated": 0,
+   "confidence": "low",
+   "tier": "watch",
+   "tier_reason": "only indirect or unconfirmed mentions",
+   "research_priority": null,
+   "major_cities": [
+    "Abidjan"
+   ],
+   "observed_gyms": [],
+   "source_ids": [
+    "S038",
+    "S039",
+    "S040"
+   ],
+   "caveats": "Les Margouillats d'Abidjan meets weekly at a wall in Riviera 2 and a bouldering block in Marcory Residentiel; these appear private/residential with no public gym name or hours. A school wall (Lycee Blaise Pascal) is not counted.",
+   "notes": "Searched in French.",
+   "research_group": "africa"
+  },
+  {
+   "iso2": "CU",
+   "name": "Cuba",
+   "region": "Latin America & Caribbean ",
+   "income_group": "Upper middle income",
+   "population": 10937203,
+   "population_year": "2025",
+   "gdp_usd": 107352000000,
+   "gdp_year": "2020",
+   "gdp_per_capita_usd": 9605,
+   "size_class": "substantial",
+   "bouldeer_count": 0,
+   "bouldeer_top_suburbs": [],
+   "app_supported": false,
+   "evidence_strength": "weak",
+   "researcher_rating": "weak",
+   "primary_confirmed_count": 0,
+   "observed_count": 0,
+   "stated_estimate": {
+    "value": null,
+    "basis": "No gym list or count found.",
+    "source_url": null
+   },
+   "named_leads_not_counted": [],
+   "indicated_count": 0,
+   "opportunity_confirmed": 0,
+   "opportunity_indicated": 0,
+   "confidence": "low",
+   "tier": "watch",
+   "tier_reason": "only indirect or unconfirmed mentions",
+   "research_priority": null,
+   "major_cities": [
+    "La Habana"
+   ],
+   "observed_gyms": [],
+   "source_ids": [
+    "S047",
+    "S048"
+   ],
+   "caveats": "An NGO public wall (Holguin) is rope/teaching; Havana activity is outdoor.",
+   "notes": "",
+   "research_group": "latam"
+  },
+  {
+   "iso2": "EG",
+   "name": "Egypt, Arab Rep.",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan",
+   "income_group": "Lower middle income",
+   "population": 118365995,
+   "population_year": "2025",
+   "gdp_usd": 365254630179.737,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 3086,
+   "size_class": "large",
+   "bouldeer_count": 2,
+   "bouldeer_top_suburbs": [
+    "Maadi (1)",
+    "Sheikh Zayed City (1)"
+   ],
+   "app_supported": true,
+   "evidence_strength": "moderate",
+   "researcher_rating": "moderate",
+   "primary_confirmed_count": 2,
+   "observed_count": 2,
+   "stated_estimate": {
+    "value": null,
+    "basis": "No source gives a count.",
+    "source_url": null
+   },
+   "named_leads_not_counted": [],
+   "indicated_count": 2,
+   "opportunity_confirmed": 0,
+   "opportunity_indicated": 0,
+   "confidence": "medium",
+   "tier": "covered",
+   "tier_reason": "indicated gyms (2) do not exceed Bouldeer's 2",
+   "research_priority": null,
+   "major_cities": [
+    "Cairo"
+   ],
+   "observed_gyms": [
+    {
+     "name": "Ascent Climbing",
+     "city": "Cairo (Sheikh Zayed)",
+     "url": "https://ascentegypt.com/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Own site sells bouldering courses.",
+     "source_id": "S059"
+    },
+    {
+     "name": "Verge Climbing",
+     "city": "Cairo",
+     "url": "https://www.instagram.com/vergeclimbing/",
+     "source_kind": "official-social",
+     "bouldering_evidence": "Instagram bio: indoor bouldering experience, open daily.",
+     "source_id": "S060"
+    }
+   ],
+   "source_ids": [
+    "S059",
+    "S061",
+    "S060",
+    "S062"
+   ],
+   "caveats": "Verge location/status not confirmed. FingerLock (Cairo) reported closed. Possible second Ascent branch (Maadi) unverified.",
+   "notes": "Bouldeer has 2: gap likely small.",
+   "research_group": "mena"
+  },
+  {
+   "iso2": "VN",
+   "name": "Viet Nam",
+   "region": "East Asia & Pacific",
+   "income_group": "Upper middle income",
+   "population": 101598527,
+   "population_year": "2025",
+   "gdp_usd": 514697215165.065,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 5066,
+   "size_class": "large",
+   "bouldeer_count": 7,
+   "bouldeer_top_suburbs": [
+    "Tây Hồ, Hanoi (3)",
+    "Long Biên, Hanoi (1)",
+    "Nam Từ Liêm, Hanoi (1)",
+    "Quận 7, Ho Chi Minh City (1)",
+    "Thảo Điền, Ho Chi Minh City (1)"
+   ],
+   "app_supported": true,
+   "evidence_strength": "strong",
+   "researcher_rating": "strong",
+   "primary_confirmed_count": 6,
+   "observed_count": 7,
+   "stated_estimate": {
+    "value": null,
+    "basis": "No national total; directories list ~5 gyms.",
+    "source_url": null
+   },
+   "named_leads_not_counted": [],
+   "indicated_count": 7,
+   "opportunity_confirmed": 0,
+   "opportunity_indicated": 0,
+   "confidence": "high",
+   "tier": "covered",
+   "tier_reason": "indicated gyms (7) do not exceed Bouldeer's 7",
+   "research_priority": null,
+   "major_cities": [
+    "Hanoi",
+    "Ho Chi Minh City",
+    "Da Nang"
+   ],
+   "observed_gyms": [
+    {
+     "name": "VietClimb",
+     "city": "Hanoi",
+     "url": "https://vietclimb.vn/vi/bouldering-gym",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Official page: 90+ bouldering problems, Kilter and MoonBoard (Vietnamese).",
+     "source_id": "S291"
+    },
+    {
+     "name": "Beefy Boulders (Tay Ho, My Dinh)",
+     "city": "Hanoi",
+     "url": "https://www.beefyboulders.com/",
+     "source_kind": "chain-store-list",
+     "bouldering_evidence": "Official site of a bouldering gym chain, two branches (confirmed via search text).",
+     "source_id": "S292"
+    },
+    {
+     "name": "Skywalk Climbing",
+     "city": "Ho Chi Minh City",
+     "url": "https://saigonclimbing.com/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Official site lists bouldering (Vietnamese).",
+     "source_id": "S293"
+    },
+    {
+     "name": "Push Climbing / Crescent Wall",
+     "city": "Ho Chi Minh City",
+     "url": "https://pushclimbing.vn/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Official site: dedicated bouldering section and MoonBoard.",
+     "source_id": "S294"
+    },
+    {
+     "name": "Boulder Box Vietnam",
+     "city": "Ho Chi Minh City",
+     "url": "https://www.boulderbox.rocks/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Official site: boutique bouldering gym.",
+     "source_id": "S295"
+    },
+    {
+     "name": "Vertical Academy",
+     "city": "Ho Chi Minh City",
+     "url": "https://www.indoorclimbing.com/vietnam.html",
+     "source_kind": "directory",
+     "bouldering_evidence": "Directories: top-rope and bouldering walls.",
+     "source_id": "S296"
+    }
+   ],
+   "source_ids": [
+    "S291",
+    "S292",
+    "S293",
+    "S294",
+    "S295",
+    "S296"
+   ],
+   "caveats": "Da Nang leads (The Hangar, Danang Climbing Gym) from low-quality pages; not counted. Some of these may already be among the 7 on Bouldeer.",
+   "notes": "Not counted: Hanoi Climbing Hub, Jump Arena, ARCH (rope), X-Rock Saigon (rope), Sclimb.",
+   "research_group": "seasia"
+  },
+  {
+   "iso2": "KE",
+   "name": "Kenya",
+   "region": "Sub-Saharan Africa ",
+   "income_group": "Lower middle income",
+   "population": 57532493,
+   "population_year": "2025",
+   "gdp_usd": 135941278878.815,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 2363,
+   "size_class": "large",
+   "bouldeer_count": 2,
+   "bouldeer_top_suburbs": [
+    "Nanyuki (about 4 km from town, on the Nairobi road near Sarafina) (1)",
+    "Parklands, Nairobi (1)"
+   ],
+   "app_supported": true,
+   "evidence_strength": "weak",
+   "researcher_rating": "moderate",
+   "primary_confirmed_count": 0,
+   "observed_count": 2,
+   "stated_estimate": {
+    "value": null,
+    "basis": "No source states a national count. One article calls Mt Kenya Climbing Gym one of only two climbing gyms in Kenya, and Climb BlueSky calls itself Nairobi's only dedicated indoor gym.",
+    "source_url": "https://www.facebook.com/ClimbBlueSky/videos/climb-bluesky-is-nairobis-only-dedicated-indoor-climbing-gym-a-space-built-for-a/1454012293103281/"
+   },
+   "named_leads_not_counted": [],
+   "indicated_count": 2,
+   "opportunity_confirmed": 0,
+   "opportunity_indicated": 0,
+   "confidence": "low",
+   "tier": "covered",
+   "tier_reason": "indicated gyms (2) do not exceed Bouldeer's 2",
+   "research_priority": null,
+   "major_cities": [
+    "Nairobi",
+    "Nanyuki"
+   ],
+   "observed_gyms": [
+    {
+     "name": "Climb BlueSky (Diamond Plaza)",
+     "city": "Nairobi",
+     "url": "https://www.blueskykenya.org/climb",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Directories and blogs, apparently quoting the gym's own page, describe a half-rope, half-bouldering gym with 4.1 m boulder walls and about 50+ problems; the official page excerpt showed only opening hours, so bouldering is confirmed by secondary sources.",
+     "source_id": "S118"
+    },
+    {
+     "name": "Mt Kenya Climbing Gym",
+     "city": "Nanyuki",
+     "url": "https://www.facebook.com/mtkenyaclimbinggym/",
+     "source_kind": "official-social",
+     "bouldering_evidence": "A listing-style summary describes a climbing wall plus a downstairs bouldering room; the official Facebook page showed only the name and location.",
+     "source_id": "S119"
+    }
+   ],
+   "source_ids": [
+    "S118",
+    "S120",
+    "S121",
+    "S122",
+    "S123",
+    "S124",
+    "S125",
+    "S126"
+   ],
+   "caveats": "Likely the same 2 gyms already on Bouldeer (Kenya looks complete). Not bouldering gyms: Ozone Trampoline Park (wall among attractions), Purdy Arms and Valley Arcade (outdoor towers); Savage Wilderness (Sagana) adventure-centre wall unverified.",
+   "notes": "No gyms found in Mombasa, Kisumu or Nakuru.",
+   "research_group": "africa"
+  },
+  {
+   "iso2": "SA",
+   "name": "Saudi Arabia",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan",
+   "income_group": "High income",
+   "population": 36973555,
+   "population_year": "2025",
+   "gdp_usd": 1276942933333.33,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 34537,
+   "size_class": "large",
+   "bouldeer_count": 5,
+   "bouldeer_top_suburbs": [
+    "Al Aarid, Riyadh (1)",
+    "Al Hamra, Riyadh (1)",
+    "Al Nahdah, Dammam (1)",
+    "Al Zahra, Jeddah (1)",
+    "An Nakheel, Riyadh (1)"
+   ],
+   "app_supported": true,
+   "evidence_strength": "strong",
+   "researcher_rating": "moderate",
+   "primary_confirmed_count": 3,
+   "observed_count": 4,
+   "stated_estimate": {
+    "value": null,
+    "basis": "No source states a count; 4 dedicated or mixed gyms found in Riyadh, Jeddah, Dammam/Khobar.",
+    "source_url": null
+   },
+   "named_leads_not_counted": [],
+   "indicated_count": 4,
+   "opportunity_confirmed": 0,
+   "opportunity_indicated": 0,
+   "confidence": "medium",
+   "tier": "covered",
+   "tier_reason": "indicated gyms (4) do not exceed Bouldeer's 5",
+   "research_priority": null,
+   "major_cities": [
+    "Riyadh",
+    "Jeddah",
+    "Dammam",
+    "Khobar"
+   ],
+   "observed_gyms": [
+    {
+     "name": "The Cave Climbing",
+     "city": "Riyadh",
+     "url": "https://thecaveclimbing.com/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Own site: Riyadh's first bouldering gym.",
+     "source_id": "S221"
+    },
+    {
+     "name": "Climb Up",
+     "city": "Riyadh",
+     "url": "https://www.instagram.com/climbup.sa/",
+     "source_kind": "official-social",
+     "bouldering_evidence": "Instagram bio: largest bouldering center in Riyadh; news article agrees.",
+     "source_id": "S222"
+    },
+    {
+     "name": "Jigsaw Climbing",
+     "city": "Jeddah",
+     "url": "https://www.instagram.com/jigsawclimbing/",
+     "source_kind": "official-social",
+     "bouldering_evidence": "Instagram bio: Jeddah's bouldering gym; news calls it Jeddah's first bouldering gym.",
+     "source_id": "S223"
+    },
+    {
+     "name": "DYNO Climbing Center",
+     "city": "Dammam / Khobar",
+     "url": "https://www.dyno.sa/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Own site silent on bouldering; travel sources report bouldering walls plus ropes.",
+     "source_id": "S224"
+    }
+   ],
+   "source_ids": [
+    "S221",
+    "S222",
+    "S225",
+    "S223",
+    "S226",
+    "S224",
+    "S227"
+   ],
+   "caveats": "Three gyms (Cave, Climb Up, Jigsaw) are confirmed by own site/social, which meets the 'strong' rule; researcher rated moderate because Jigsaw's Instagram text was thin. Federation walls page not read in detail.",
+   "notes": "Bouldeer has 5; cross-check these four against them.",
+   "research_group": "mena"
+  },
+  {
+   "iso2": "KZ",
+   "name": "Kazakhstan",
+   "region": "Europe & Central Asia",
+   "income_group": "Upper middle income",
+   "population": 20843754,
+   "population_year": "2025",
+   "gdp_usd": 306239209650.024,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 14692,
+   "size_class": "substantial",
+   "bouldeer_count": 7,
+   "bouldeer_top_suburbs": [
+    "Astana (Nura District) (2)",
+    "Almaty (Alatau, Altyn Bulak-2) (1)",
+    "Almaty (Almaly District) (1)",
+    "Almaty (Bostandyk District) (1)",
+    "Almaty (Bostandyk, Khan-Tengri microdistrict) (1)",
+    "Astana (Yesil District) (1)"
+   ],
+   "app_supported": true,
+   "evidence_strength": "strong",
+   "researcher_rating": "strong",
+   "primary_confirmed_count": 4,
+   "observed_count": 5,
+   "stated_estimate": {
+    "value": null,
+    "basis": "Skala says it opened five halls in Kazakhstan (all halls, not only bouldering).",
+    "source_url": "https://skalaboulder.kz/"
+   },
+   "named_leads_not_counted": [
+    "Skala KeruenCity (Astana)",
+    "Skala MEGA Astana"
+   ],
+   "indicated_count": 7,
+   "opportunity_confirmed": 0,
+   "opportunity_indicated": 0,
+   "confidence": "medium",
+   "tier": "covered",
+   "tier_reason": "indicated gyms (7) do not exceed Bouldeer's 7",
+   "research_priority": null,
+   "major_cities": [
+    "Almaty",
+    "Astana"
+   ],
+   "observed_gyms": [
+    {
+     "name": "Skala Boulder",
+     "city": "Almaty",
+     "url": "https://skalaboulder.kz/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Own site: dedicated bouldering hall.",
+     "source_id": "S134"
+    },
+    {
+     "name": "SKALA Climbing Gym",
+     "city": "Almaty",
+     "url": "https://skalaclub.com/about-skala/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Own site: 100 m2 bouldering hall.",
+     "source_id": "S135"
+    },
+    {
+     "name": "Cave Boulder",
+     "city": "Almaty",
+     "url": "https://caveboulder.kz/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Own site (Russian): bouldering centre.",
+     "source_id": "S136"
+    },
+    {
+     "name": "CozyRock",
+     "city": "Almaty",
+     "url": "https://cozyrock.kz/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Own site: bouldering walls and Kilter Board.",
+     "source_id": "S137"
+    },
+    {
+     "name": "Climbers Garden",
+     "city": "Astana",
+     "url": "https://sxodim.com/astana/place/climbers-garden",
+     "source_kind": "directory",
+     "bouldering_evidence": "Listing: bouldering-focused gym.",
+     "source_id": "S138"
+    }
+   ],
+   "source_ids": [
+    "S134",
+    "S135",
+    "S136",
+    "S137",
+    "S138"
+   ],
+   "caveats": "Skala Astana branches reported with bouldering by directories only.",
+   "notes": "Bouldeer has 7: likely largely covered.",
+   "research_group": "sasia"
+  },
+  {
+   "iso2": "GT",
+   "name": "Guatemala",
+   "region": "Latin America & Caribbean ",
+   "income_group": "Upper middle income",
+   "population": 18687881,
+   "population_year": "2025",
+   "gdp_usd": 123306008821.471,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 6598,
+   "size_class": "substantial",
+   "bouldeer_count": 4,
+   "bouldeer_top_suburbs": [
+    "Antigua Guatemala (1)",
+    "Nueva Montserrat, Zona 3, Mixco (1)",
+    "San Marcos La Laguna (Lake Atitlan) (1)",
+    "Zona 9, Ciudad de Guatemala (1)"
+   ],
+   "app_supported": true,
+   "evidence_strength": "moderate",
+   "researcher_rating": "moderate",
+   "primary_confirmed_count": 1,
+   "observed_count": 2,
+   "stated_estimate": {
+    "value": null,
+    "basis": "No count; Tacana claims to be the largest bouldering gym in the country.",
+    "source_url": "https://www.tacanaclimbing.com/"
+   },
+   "named_leads_not_counted": [],
+   "indicated_count": 2,
+   "opportunity_confirmed": 0,
+   "opportunity_indicated": 0,
+   "confidence": "medium",
+   "tier": "covered",
+   "tier_reason": "indicated gyms (2) do not exceed Bouldeer's 4",
+   "research_priority": null,
+   "major_cities": [
+    "Antigua Guatemala",
+    "Guatemala City",
+    "Quetzaltenango"
+   ],
+   "observed_gyms": [
+    {
+     "name": "Tacana Climbing",
+     "city": "Antigua Guatemala",
+     "url": "https://www.tacanaclimbing.com/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Own site: 200+ m2 of bouldering, moonboards.",
+     "source_id": "S069"
+    },
+    {
+     "name": "Casa Boulder",
+     "city": "Guatemala City (Mixco)",
+     "url": "https://www.facebook.com/proyectocasaboulder/",
+     "source_kind": "official-social",
+     "bouldering_evidence": "Social pages exist (not read); a ~2018 review describes a bouldering-only gym.",
+     "source_id": "S070"
+    }
+   ],
+   "source_ids": [
+    "S069",
+    "S071",
+    "S072"
+   ],
+   "caveats": "Other walls are rope/wall climbing.",
+   "notes": "Bouldeer has 4: no gap evident.",
+   "research_group": "latam"
+  },
+  {
+   "iso2": "BO",
+   "name": "Bolivia",
+   "region": "Latin America & Caribbean ",
+   "income_group": "Lower middle income",
+   "population": 12581843,
+   "population_year": "2025",
+   "gdp_usd": 64768947525.3256,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 5148,
+   "size_class": "substantial",
+   "bouldeer_count": 6,
+   "bouldeer_top_suburbs": [
+    "Cochabamba (3)",
+    "La Paz (3)"
+   ],
+   "app_supported": true,
+   "evidence_strength": "moderate",
+   "researcher_rating": "moderate",
+   "primary_confirmed_count": 1,
+   "observed_count": 6,
+   "stated_estimate": {
+    "value": null,
+    "basis": "indoorclimbing.com lists 6 Bolivian gyms (not all bouldering).",
+    "source_url": "https://www.indoorclimbing.com/bolivia.html"
+   },
+   "named_leads_not_counted": [],
+   "indicated_count": 6,
+   "opportunity_confirmed": 0,
+   "opportunity_indicated": 0,
+   "confidence": "medium",
+   "tier": "covered",
+   "tier_reason": "indicated gyms (6) do not exceed Bouldeer's 6",
+   "research_priority": null,
+   "major_cities": [
+    "La Paz",
+    "Cochabamba",
+    "Santa Cruz de la Sierra"
+   ],
+   "observed_gyms": [
+    {
+     "name": "La Cueva Boulder Gym",
+     "city": "La Paz",
+     "url": "https://www.cuevaboulder.com/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Own site: two boulder rooms.",
+     "source_id": "S019"
+    },
+    {
+     "name": "Llama Climber Gym",
+     "city": "La Paz",
+     "url": "https://www.facebook.com/llamaclimber.gym/",
+     "source_kind": "official-social",
+     "bouldering_evidence": "Snippet: boulder gym.",
+     "source_id": "S020"
+    },
+    {
+     "name": "Gecko Boulders",
+     "city": "Cochabamba",
+     "url": "https://www.indoorclimbing.com/bolivia.html",
+     "source_kind": "directory",
+     "bouldering_evidence": "Directory: bouldering.",
+     "source_id": "S021"
+    },
+    {
+     "name": "Ahimsa Boulder",
+     "city": "Cochabamba",
+     "url": "https://www.indoorclimbing.com/bolivia.html",
+     "source_kind": "directory",
+     "bouldering_evidence": "Directory: boulder school.",
+     "source_id": "S021"
+    }
+   ],
+   "source_ids": [
+    "S019",
+    "S021",
+    "S022"
+   ],
+   "caveats": "Only La Cueva confirmed on own site. Santa Cruz walls: bouldering unconfirmed.",
+   "notes": "Bouldeer has 6: no gap evident.",
+   "research_group": "latam"
+  },
+  {
+   "iso2": "JO",
+   "name": "Jordan",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan",
+   "income_group": "Upper middle income",
+   "population": 11520684,
+   "population_year": "2025",
+   "gdp_usd": 61610052535.2113,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 5348,
+   "size_class": "substantial",
+   "bouldeer_count": 2,
+   "bouldeer_top_suburbs": [
+    "Jabal Al-Lweibdeh, Amman (1)",
+    "Naour, Amman (1)"
+   ],
+   "app_supported": true,
+   "evidence_strength": "moderate",
+   "researcher_rating": "moderate",
+   "primary_confirmed_count": 1,
+   "observed_count": 2,
+   "stated_estimate": {
+    "value": null,
+    "basis": "Jordan Climbing Federation lists three indoor facilities, one a fitness-centre wall.",
+    "source_url": "https://jcf.jo/where-to-climb/"
+   },
+   "named_leads_not_counted": [],
+   "indicated_count": 2,
+   "opportunity_confirmed": 0,
+   "opportunity_indicated": 0,
+   "confidence": "medium",
+   "tier": "covered",
+   "tier_reason": "indicated gyms (2) do not exceed Bouldeer's 2",
+   "research_priority": null,
+   "major_cities": [
+    "Amman",
+    "Ajloun"
+   ],
+   "observed_gyms": [
+    {
+     "name": "Climbat Amman",
+     "city": "Amman",
+     "url": "https://www.facebook.com/Climbatjo/",
+     "source_kind": "federation",
+     "bouldering_evidence": "Federation and travel sources describe a bouldering area and Kilter board.",
+     "source_id": "S114"
+    },
+    {
+     "name": "Badiya by BarBedu",
+     "city": "Amman",
+     "url": "https://www.badiyajo.com/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Own site lists bouldering (fitness gym with a bouldering wall).",
+     "source_id": "S115"
+    }
+   ],
+   "source_ids": [
+    "S116",
+    "S115",
+    "S117",
+    "S114"
+   ],
+   "caveats": "Climbat mostly ropes with a bouldering section; Badiya is a fitness gym.",
+   "notes": "Bouldeer has 2: gap likely small.",
+   "research_group": "mena"
+  },
+  {
+   "iso2": "AE",
+   "name": "United Arab Emirates",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan",
+   "income_group": "High income",
+   "population": 11513149,
+   "population_year": "2025",
+   "gdp_usd": 552324919095.872,
+   "gdp_year": "2024",
+   "gdp_per_capita_usd": 50274,
+   "size_class": "large",
+   "bouldeer_count": 7,
+   "bouldeer_top_suburbs": [
+    "Dubai Investment Park 1, Dubai (2)",
+    "Al Maryah Island, Abu Dhabi (1)",
+    "Al Quoz 3, Dubai (1)",
+    "Al Quoz Industrial 1, Dubai (1)",
+    "Al Qusais 3, Dubai (1)",
+    "Yas Island, Abu Dhabi (1)"
+   ],
+   "app_supported": true,
+   "evidence_strength": "strong",
+   "researcher_rating": "strong",
+   "primary_confirmed_count": 4,
+   "observed_count": 5,
+   "stated_estimate": {
+    "value": null,
+    "basis": "GoClimb blog lists 5 Dubai and 3 Abu Dhabi gyms, not all with bouldering.",
+    "source_url": "https://goclimb.ae/blog/rock-climbing-gyms-in-the-uae/"
+   },
+   "named_leads_not_counted": [
+    "The Block Dubai"
+   ],
+   "indicated_count": 6,
+   "opportunity_confirmed": 0,
+   "opportunity_indicated": 0,
+   "confidence": "medium",
+   "tier": "covered",
+   "tier_reason": "indicated gyms (6) do not exceed Bouldeer's 7",
+   "research_priority": null,
+   "major_cities": [
+    "Dubai",
+    "Abu Dhabi"
+   ],
+   "observed_gyms": [
+    {
+     "name": "Boulder Zone",
+     "city": "Dubai",
+     "url": "https://boulderzone.ae/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Own site: bouldering gym ~260 m2, Moon Board.",
+     "source_id": "S001"
+    },
+    {
+     "name": "GoClimb",
+     "city": "Dubai",
+     "url": "https://goclimb.ae/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Own site: ~400 m2 bouldering-only gym.",
+     "source_id": "S002"
+    },
+    {
+     "name": "Rock Republic",
+     "city": "Dubai",
+     "url": "https://www.rockrepublicdubai.com/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Own site: dedicated indoor bouldering venue.",
+     "source_id": "S003"
+    },
+    {
+     "name": "Mountain Extreme",
+     "city": "Dubai",
+     "url": "https://www.mtnextreme.com/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Directories report ~129 boulder problems; homepage did not mention bouldering.",
+     "source_id": "S004"
+    },
+    {
+     "name": "CLYMB Abu Dhabi",
+     "city": "Abu Dhabi",
+     "url": "https://www.clymbabudhabi.com/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Own site lists bouldering among its styles (small offering in a tall-wall venue).",
+     "source_id": "S005"
+    }
+   ],
+   "source_ids": [
+    "S001",
+    "S002",
+    "S003",
+    "S005",
+    "S006",
+    "S007"
+   ],
+   "caveats": "One listicle conflicts with official sources and was not used. The Wall Dubai is top-rope only. Unverified lead: The Block Dubai.",
+   "notes": "Bouldeer already has 7: gap may be small or none.",
+   "research_group": "mena"
+  },
+  {
+   "iso2": "BG",
+   "name": "Bulgaria",
+   "region": "Europe & Central Asia",
+   "income_group": "High income",
+   "population": 6433302,
+   "population_year": "2025",
+   "gdp_usd": 130777235529.606,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 20328,
+   "size_class": "substantial",
+   "bouldeer_count": 7,
+   "bouldeer_top_suburbs": [
+    "Sofia (6)",
+    "Varna (1)"
+   ],
+   "app_supported": true,
+   "evidence_strength": "strong",
+   "researcher_rating": "strong",
+   "primary_confirmed_count": 4,
+   "observed_count": 4,
+   "stated_estimate": {
+    "value": null,
+    "basis": "No national count found.",
+    "source_url": null
+   },
+   "named_leads_not_counted": [],
+   "indicated_count": 4,
+   "opportunity_confirmed": 0,
+   "opportunity_indicated": 0,
+   "confidence": "medium",
+   "tier": "covered",
+   "tier_reason": "indicated gyms (4) do not exceed Bouldeer's 7",
+   "research_priority": null,
+   "major_cities": [
+    "Sofia",
+    "Plovdiv",
+    "Varna",
+    "Burgas"
+   ],
+   "observed_gyms": [
+    {
+     "name": "Balkan Climbing",
+     "city": "Sofia",
+     "url": "https://balkanclimbing.com/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "730 m2 boulder zone.",
+     "source_id": "S016"
+    },
+    {
+     "name": "Momentum Indoor Climbing (Tsarigradsko Shose, Bulgaria Mall, Plovdiv)",
+     "city": "Sofia / Plovdiv",
+     "url": "https://momentumclimbing.bg/tsarigradsko-shose/",
+     "source_kind": "chain-store-list",
+     "bouldering_evidence": "170+ boulder routes; chain of three halls.",
+     "source_id": "S017"
+    }
+   ],
+   "source_ids": [
+    "S016",
+    "S017",
+    "S018"
+   ],
+   "caveats": "Boulderland (2013) status unknown; Walltopia center now appears to be Momentum.",
+   "notes": "Bouldeer has 7: likely covered. Note: Balkan Climbing is one of the 4 gyms held for manual location review (TASKS).",
+   "research_group": "europe"
+  },
+  {
+   "iso2": "OM",
+   "name": "Oman",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan",
+   "income_group": "High income",
+   "population": 5494691,
+   "population_year": "2025",
+   "gdp_usd": 109604780696.23,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 19947,
+   "size_class": "substantial",
+   "bouldeer_count": 2,
+   "bouldeer_top_suburbs": [
+    "Al Khoud 6, Seeb (1)",
+    "Al Mabelah (Al Maabilah), Seeb (1)"
+   ],
+   "app_supported": true,
+   "evidence_strength": "weak",
+   "researcher_rating": "weak",
+   "primary_confirmed_count": 0,
+   "observed_count": 2,
+   "stated_estimate": {
+    "value": null,
+    "basis": "No count stated; two Muscat venues reported with bouldering.",
+    "source_url": null
+   },
+   "named_leads_not_counted": [],
+   "indicated_count": 2,
+   "opportunity_confirmed": 0,
+   "opportunity_indicated": 0,
+   "confidence": "low",
+   "tier": "covered",
+   "tier_reason": "indicated gyms (2) do not exceed Bouldeer's 2",
+   "research_priority": null,
+   "major_cities": [
+    "Muscat"
+   ],
+   "observed_gyms": [
+    {
+     "name": "Adventure Wall (Mall of Muscat)",
+     "city": "Muscat",
+     "url": "https://www.instagram.com/climbingwall_muscat/",
+     "source_kind": "official-social",
+     "bouldering_evidence": "News article reports climbing and boulder levels; own Instagram only says climbing wall.",
+     "source_id": "S175"
+    },
+    {
+     "name": "The Wall (Muscat Diving and Adventure Centre)",
+     "city": "Muscat",
+     "url": "https://www.expatwoman.com/oman/guide/rock-climbing-in-oman",
+     "source_kind": "other",
+     "bouldering_evidence": "Guide lists it for bouldering; own site not found.",
+     "source_id": "S176"
+    }
+   ],
+   "source_ids": [
+    "S177",
+    "S175",
+    "S176",
+    "S178"
+   ],
+   "caveats": "Bouldering not confirmed by own pages; mall attraction.",
+   "notes": "Bouldeer has 2: no gap evident.",
+   "research_group": "mena"
+  },
+  {
+   "iso2": "IE",
+   "name": "Ireland",
+   "region": "Europe & Central Asia",
+   "income_group": "High income",
+   "population": 5484367,
+   "population_year": "2025",
+   "gdp_usd": 721701359046.313,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 131592,
+   "size_class": "large",
+   "bouldeer_count": 9,
+   "bouldeer_top_suburbs": [
+    "Dublin (4)",
+    "Bray (1)",
+    "Cloonlara (1)",
+    "Cork City (1)",
+    "Finglas, Dublin (1)",
+    "Limerick (1)"
+   ],
+   "app_supported": true,
+   "evidence_strength": "strong",
+   "researcher_rating": "strong",
+   "primary_confirmed_count": 6,
+   "observed_count": 7,
+   "stated_estimate": {
+    "value": null,
+    "basis": "Mountaineering Ireland lists ~16 indoor walls island-wide (incl. Northern Ireland and outdoor centres; bouldering not flagged).",
+    "source_url": "https://www.mountaineering.ie/content/IndoorClimbing/181"
+   },
+   "named_leads_not_counted": [],
+   "indicated_count": 7,
+   "opportunity_confirmed": 0,
+   "opportunity_indicated": 0,
+   "confidence": "high",
+   "tier": "covered",
+   "tier_reason": "indicated gyms (7) do not exceed Bouldeer's 9",
+   "research_priority": null,
+   "major_cities": [
+    "Dublin",
+    "Cork",
+    "Galway",
+    "Limerick",
+    "Waterford"
+   ],
+   "observed_gyms": [
+    {
+     "name": "Gravity Climbing Centre",
+     "city": "Dublin",
+     "url": "https://www.gravityclimbing.ie",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Bouldering wall with 10 circuits.",
+     "source_id": "S083"
+    },
+    {
+     "name": "Dublin Climbing Centre",
+     "city": "Dublin",
+     "url": "https://www.dublinclimbingcentre.ie",
+     "source_kind": "official-site",
+     "bouldering_evidence": "~180 m2 bouldering plus lead.",
+     "source_id": "S084"
+    },
+    {
+     "name": "Awesome Walls (Dublin, Cork)",
+     "city": "Dublin / Cork",
+     "url": "https://www.awesomewalls.ie",
+     "source_kind": "chain-store-list",
+     "bouldering_evidence": "Chain promotes bouldering.",
+     "source_id": "S085"
+    },
+    {
+     "name": "Bloc Climbing Gym",
+     "city": "Dublin",
+     "url": "https://blocdublin.ie/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Dedicated bouldering gym (via search result).",
+     "source_id": "S086"
+    },
+    {
+     "name": "The Wall Climbing Gym",
+     "city": "Dublin",
+     "url": "https://thewall.ie/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Dual membership with Bloc; bouldering not read directly.",
+     "source_id": "S087"
+    },
+    {
+     "name": "Galway Climbing Co-op",
+     "city": "Galway",
+     "url": "https://galwayclimbing.org/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Members-only bouldering wall.",
+     "source_id": "S088"
+    }
+   ],
+   "source_ids": [
+    "S083",
+    "S084",
+    "S085",
+    "S086",
+    "S088",
+    "S089",
+    "S090"
+   ],
+   "caveats": "Northern Ireland gyms excluded (GB). Researcher estimates 7-10 real bouldering gyms in the Republic.",
+   "notes": "Bouldeer has 9: likely near complete.",
+   "research_group": "europe"
+  },
+  {
+   "iso2": "CR",
+   "name": "Costa Rica",
+   "region": "Latin America & Caribbean ",
+   "income_group": "High income",
+   "population": 5152950,
+   "population_year": "2025",
+   "gdp_usd": 102904921157.478,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 19970,
+   "size_class": "substantial",
+   "bouldeer_count": 7,
+   "bouldeer_top_suburbs": [
+    "Cambalache, Liberia (1)",
+    "Guachipelin, Escazu (1)",
+    "Jaco (1)",
+    "La Garita Nueva (near Tamarindo) (1)",
+    "Pirro (1)",
+    "San Blas (1)"
+   ],
+   "app_supported": true,
+   "evidence_strength": "moderate",
+   "researcher_rating": "moderate",
+   "primary_confirmed_count": 2,
+   "observed_count": 4,
+   "stated_estimate": {
+    "value": null,
+    "basis": "BoulderingList shows 4 gyms (not a complete count).",
+    "source_url": "https://boulderinglist.com/countries/Costa%20Rica"
+   },
+   "named_leads_not_counted": [],
+   "indicated_count": 4,
+   "opportunity_confirmed": 0,
+   "opportunity_indicated": 0,
+   "confidence": "medium",
+   "tier": "covered",
+   "tier_reason": "indicated gyms (4) do not exceed Bouldeer's 7",
+   "research_priority": null,
+   "major_cities": [
+    "San Jose",
+    "Heredia",
+    "Escazu"
+   ],
+   "observed_gyms": [
+    {
+     "name": "Ascend Climbing (Pirro, San Pablo)",
+     "city": "Heredia",
+     "url": "https://www.ascendcr.com/",
+     "source_kind": "chain-store-list",
+     "bouldering_evidence": "Own site: boulder room and boulder cave at two locations.",
+     "source_id": "S043"
+    },
+    {
+     "name": "Eskalar",
+     "city": "Escazu",
+     "url": "https://www.indoorclimbing.com/costarica.html",
+     "source_kind": "directory",
+     "bouldering_evidence": "Directory: bouldering and sport walls.",
+     "source_id": "S044"
+    },
+    {
+     "name": "Pura Roca",
+     "city": "San Jose",
+     "url": "https://www.mountainproject.com/gym/117263743/pura-roca",
+     "source_kind": "directory",
+     "bouldering_evidence": "Directory: boulder problems.",
+     "source_id": "S045"
+    }
+   ],
+   "source_ids": [
+    "S043",
+    "S046",
+    "S045"
+   ],
+   "caveats": "",
+   "notes": "Bouldeer has 7: no gap evident.",
+   "research_group": "latam"
+  },
+  {
+   "iso2": "PA",
+   "name": "Panama",
+   "region": "Latin America & Caribbean ",
+   "income_group": "High income",
+   "population": 4571189,
+   "population_year": "2025",
+   "gdp_usd": 90462600000,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 19790,
+   "size_class": "smaller",
+   "bouldeer_count": 3,
+   "bouldeer_top_suburbs": [
+    "Alto Boquete (1)",
+    "Bella Vista, Panama City (1)",
+    "Costa del Este, Panama City (1)"
+   ],
+   "app_supported": true,
+   "evidence_strength": "moderate",
+   "researcher_rating": "moderate",
+   "primary_confirmed_count": 0,
+   "observed_count": 3,
+   "stated_estimate": {
+    "value": null,
+    "basis": "indoorclimbing.com lists these 3 gyms (not claimed complete).",
+    "source_url": "https://www.indoorclimbing.com/Panama.html"
+   },
+   "named_leads_not_counted": [],
+   "indicated_count": 3,
+   "opportunity_confirmed": 0,
+   "opportunity_indicated": 0,
+   "confidence": "medium",
+   "tier": "covered",
+   "tier_reason": "indicated gyms (3) do not exceed Bouldeer's 3",
+   "research_priority": null,
+   "major_cities": [
+    "Panama City",
+    "Boquete"
+   ],
+   "observed_gyms": [
+    {
+     "name": "Baboons Boulder Wall",
+     "city": "Panama City",
+     "url": "https://www.facebook.com/baboonswall",
+     "source_kind": "official-social",
+     "bouldering_evidence": "Directory: bouldering gym inside a hostel; social behind login.",
+     "source_id": "S179"
+    },
+    {
+     "name": "Sportlink Climb",
+     "city": "Panama City",
+     "url": "https://www.instagram.com/sportlink_climb/",
+     "source_kind": "official-social",
+     "bouldering_evidence": "Directory: boulder-wall gym.",
+     "source_id": "S180"
+    },
+    {
+     "name": "El Espacio La Cueva",
+     "city": "Boquete",
+     "url": "https://www.instagram.com/elespaciolacueva/",
+     "source_kind": "official-social",
+     "bouldering_evidence": "Directory: boulder gym.",
+     "source_id": "S181"
+    }
+   ],
+   "source_ids": [
+    "S182"
+   ],
+   "caveats": "All directory-grade; operation unverified.",
+   "notes": "Bouldeer has 3: no gap evident.",
+   "research_group": "latam"
+  },
+  {
+   "iso2": "UY",
+   "name": "Uruguay",
+   "region": "Latin America & Caribbean ",
+   "income_group": "High income",
+   "population": 3384688,
+   "population_year": "2025",
+   "gdp_usd": 85347696277.6859,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 25216,
+   "size_class": "smaller",
+   "bouldeer_count": 5,
+   "bouldeer_top_suburbs": [
+    "Barrio El Molino, Maldonado (1)",
+    "La Figurita / La Comercial, Montevideo (1)",
+    "Paso de los Toros (1)",
+    "Paysandu (1)",
+    "Villa Dolores (Parque Batlle), Montevideo (1)"
+   ],
+   "app_supported": true,
+   "evidence_strength": "moderate",
+   "researcher_rating": "moderate",
+   "primary_confirmed_count": 0,
+   "observed_count": 3,
+   "stated_estimate": {
+    "value": null,
+    "basis": "No count stated.",
+    "source_url": null
+   },
+   "named_leads_not_counted": [],
+   "indicated_count": 3,
+   "opportunity_confirmed": 0,
+   "opportunity_indicated": 0,
+   "confidence": "medium",
+   "tier": "covered",
+   "tier_reason": "indicated gyms (3) do not exceed Bouldeer's 5",
+   "research_priority": null,
+   "major_cities": [
+    "Montevideo",
+    "Maldonado"
+   ],
+   "observed_gyms": [
+    {
+     "name": "MBC - Montevideo Boulder Club",
+     "city": "Montevideo",
+     "url": "https://www.instagram.com/bouldermbc/",
+     "source_kind": "official-social",
+     "bouldering_evidence": "Boulder club; listings describe reset boulder problems.",
+     "source_id": "S283"
+    },
+    {
+     "name": "Escalada Charrua",
+     "city": "Montevideo",
+     "url": "https://www.facebook.com/EscaladaCharrua/",
+     "source_kind": "official-social",
+     "bouldering_evidence": "Listings: sport and bouldering gym.",
+     "source_id": "S284"
+    },
+    {
+     "name": "Liquen Escalada y Bouldering",
+     "city": "Maldonado",
+     "url": "https://www.instagram.com/liquenescalada/",
+     "source_kind": "official-social",
+     "bouldering_evidence": "Name and reviews: bouldering gym.",
+     "source_id": "S285"
+    }
+   ],
+   "source_ids": [
+    "S286",
+    "S287"
+   ],
+   "caveats": "Directory-grade confirmation (social login walls).",
+   "notes": "Bouldeer has 5: no gap evident.",
+   "research_group": "latam"
+  },
+  {
+   "iso2": "QA",
+   "name": "Qatar",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan",
+   "income_group": "High income",
+   "population": 2972215,
+   "population_year": "2025",
+   "gdp_usd": 215559615384.615,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 72525,
+   "size_class": "substantial",
+   "bouldeer_count": 2,
+   "bouldeer_top_suburbs": [
+    "Aspire Zone (Baaya), Doha (1)",
+    "Lusail (Marina District) (1)"
+   ],
+   "app_supported": true,
+   "evidence_strength": "moderate",
+   "researcher_rating": "moderate",
+   "primary_confirmed_count": 1,
+   "observed_count": 1,
+   "stated_estimate": {
+    "value": null,
+    "basis": "Boulder Qatar calls itself the first indoor climbing gym in Qatar.",
+    "source_url": "https://www.boulder.qa/about"
+   },
+   "named_leads_not_counted": [
+    "ESQALAR Sports (Aspire Zone)"
+   ],
+   "indicated_count": 2,
+   "opportunity_confirmed": 0,
+   "opportunity_indicated": 0,
+   "confidence": "medium",
+   "tier": "covered",
+   "tier_reason": "indicated gyms (2) do not exceed Bouldeer's 2",
+   "research_priority": null,
+   "major_cities": [
+    "Doha"
+   ],
+   "observed_gyms": [
+    {
+     "name": "Boulder Qatar",
+     "city": "Doha",
+     "url": "https://www.boulder.qa/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Own site: bouldering, ~280 m2 of walls.",
+     "source_id": "S203"
+    }
+   ],
+   "source_ids": [
+    "S204",
+    "S205",
+    "S206",
+    "S207"
+   ],
+   "caveats": "ESQALAR (Aspire Zone) reportedly has bouldering but its site did not load; not counted.",
+   "notes": "Bouldeer has 2: no gap evident.",
+   "research_group": "mena"
+  },
+  {
+   "iso2": "LT",
+   "name": "Lithuania",
+   "region": "Europe & Central Asia",
+   "income_group": "High income",
+   "population": 2888774,
+   "population_year": "2025",
+   "gdp_usd": 95210150818.3512,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 32959,
+   "size_class": "smaller",
+   "bouldeer_count": 8,
+   "bouldeer_top_suburbs": [
+    "Vilnius (4)",
+    "Kaunas (2)",
+    "Klaipėda (2)"
+   ],
+   "app_supported": true,
+   "evidence_strength": "strong",
+   "researcher_rating": "strong",
+   "primary_confirmed_count": 3,
+   "observed_count": 5,
+   "stated_estimate": {
+    "value": null,
+    "basis": "indoorclimbing.com lists 7 gyms in 5 cities (incomplete).",
+    "source_url": "https://www.indoorclimbing.com/lithuania.html"
+   },
+   "named_leads_not_counted": [],
+   "indicated_count": 5,
+   "opportunity_confirmed": 0,
+   "opportunity_indicated": 0,
+   "confidence": "medium",
+   "tier": "covered",
+   "tier_reason": "indicated gyms (5) do not exceed Bouldeer's 8",
+   "research_priority": null,
+   "major_cities": [
+    "Vilnius",
+    "Kaunas",
+    "Klaipeda"
+   ],
+   "observed_gyms": [
+    {
+     "name": "BONOBO Climbing",
+     "city": "Vilnius",
+     "url": "https://www.bonobo.lt/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "100+ bouldering routes.",
+     "source_id": "S141"
+    },
+    {
+     "name": "VERTICAL climbing centre",
+     "city": "Vilnius",
+     "url": "https://www.vertical.lt/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Weekly bouldering routes, Moonboard.",
+     "source_id": "S142"
+    },
+    {
+     "name": "BoulderHouse",
+     "city": "Kaunas",
+     "url": "https://www.boulderhouse.lt/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "500 m2 bouldering area (city from tourism page).",
+     "source_id": "S143"
+    },
+    {
+     "name": "Montis Magia",
+     "city": "Vilnius",
+     "url": "https://www.indoorclimbing.com/lithuania.html",
+     "source_kind": "directory",
+     "bouldering_evidence": "200 m2 bouldering gym.",
+     "source_id": "S144"
+    },
+    {
+     "name": "Scaladream",
+     "city": "Klaipeda",
+     "url": "https://www.indoorclimbing.com/lithuania.html",
+     "source_kind": "directory",
+     "bouldering_evidence": "Offers bouldering.",
+     "source_id": "S144"
+    }
+   ],
+   "source_ids": [
+    "S141",
+    "S142",
+    "S143",
+    "S144"
+   ],
+   "caveats": "Scene appears to be under 10 gyms.",
+   "notes": "Bouldeer has 8: near complete.",
+   "research_group": "europe"
+  },
+  {
+   "iso2": "LU",
+   "name": "Luxembourg",
+   "region": "Europe & Central Asia",
+   "income_group": "High income",
+   "population": 686970,
+   "population_year": "2025",
+   "gdp_usd": 101157829491.107,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 147252,
+   "size_class": "substantial",
+   "bouldeer_count": 5,
+   "bouldeer_top_suburbs": [
+    "Dudelange (1)",
+    "Esch-sur-Alzette (1)",
+    "Kirchberg, Luxembourg City (1)",
+    "Pfaffenthal, Luxembourg City (1)",
+    "Soleuvre (1)"
+   ],
+   "app_supported": true,
+   "evidence_strength": "strong",
+   "researcher_rating": "strong",
+   "primary_confirmed_count": 3,
+   "observed_count": 3,
+   "stated_estimate": {
+    "value": null,
+    "basis": "No national count.",
+    "source_url": "https://www.visitluxembourg.com/place/bouldering-in-luxembourg"
+   },
+   "named_leads_not_counted": [],
+   "indicated_count": 3,
+   "opportunity_confirmed": 0,
+   "opportunity_indicated": 0,
+   "confidence": "medium",
+   "tier": "covered",
+   "tier_reason": "indicated gyms (3) do not exceed Bouldeer's 5",
+   "research_priority": null,
+   "major_cities": [
+    "Luxembourg City",
+    "Esch-sur-Alzette",
+    "Soleuvre"
+   ],
+   "observed_gyms": [
+    {
+     "name": "RedRock Climbing Center",
+     "city": "Soleuvre",
+     "url": "http://redrock-climbingcenter.lu/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Two bouldering areas.",
+     "source_id": "S145"
+    },
+    {
+     "name": "BlocX Urban Fitness",
+     "city": "Esch-sur-Alzette",
+     "url": "https://en.blocx.lu/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Bouldering offering (mixed fitness venue).",
+     "source_id": "S146"
+    },
+    {
+     "name": "Boulder Klub Letzebuerg",
+     "city": "Luxembourg City",
+     "url": "https://bkl.lu/",
+     "source_kind": "official-site",
+     "bouldering_evidence": "Volunteer-run bouldering area.",
+     "source_id": "S147"
+    }
+   ],
+   "source_ids": [
+    "S145",
+    "S146",
+    "S147",
+    "S148"
+   ],
+   "caveats": "",
+   "notes": "Bouldeer has 5: probably near complete.",
+   "research_group": "europe"
+  },
+  {
+   "iso2": "NG",
+   "name": "Nigeria",
+   "region": "Sub-Saharan Africa ",
+   "income_group": "Lower middle income",
+   "population": 237527782,
+   "population_year": "2025",
+   "gdp_usd": 290794361542.112,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 1224,
+   "size_class": "large",
+   "bouldeer_count": 0,
+   "bouldeer_top_suburbs": [],
+   "app_supported": false,
+   "evidence_strength": "none",
+   "researcher_rating": "none",
+   "primary_confirmed_count": 0,
+   "observed_count": 0,
+   "stated_estimate": {
+    "value": null,
+    "basis": "No indoor bouldering gym found. The only commercial climbing facility is Weland Climbing (Lagos), a roped top-rope and speed venue with bouldering only planned.",
+    "source_url": "https://climbingbusinessjournal.com/building-west-africas-first-climbing-facility-lessons-from-lagos"
+   },
+   "named_leads_not_counted": [],
+   "indicated_count": 0,
+   "opportunity_confirmed": 0,
+   "opportunity_indicated": 0,
+   "confidence": "low",
+   "tier": "no-evidence",
+   "tier_reason": "no indoor bouldering gym found",
+   "research_priority": null,
+   "major_cities": [
+    "Lagos",
+    "Abuja"
+   ],
+   "observed_gyms": [],
+   "source_ids": [
+    "S165",
+    "S166",
+    "S167",
+    "S168"
+   ],
+   "caveats": "Weland Climbing (Landmark Centre, Victoria Island, Lagos) is described as the first and only commercial climbing facility in Nigeria and West Africa. It is built outdoors under canopy roofs, with auto-belay top-rope walls and two speed lanes. Dedicated bouldering is a future plan, so it is not counted. Its Instagram was not opened; worth a quick manual look before final dismissal.",
+   "notes": "An aggregator listed 'Weland Climbing, Play' under Abuja; treated as a stray listing of the Lagos business and not verified. Recheck in 6-12 months, since the bouldering phase may proceed.",
+   "research_group": "africa"
+  },
+  {
+   "iso2": "CD",
+   "name": "Congo, Dem. Rep.",
+   "region": "Sub-Saharan Africa ",
+   "income_group": "Low income",
+   "population": 112832473,
+   "population_year": "2025",
+   "gdp_usd": 91030531316.9936,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 807,
+   "size_class": "large",
+   "bouldeer_count": 0,
+   "bouldeer_top_suburbs": [],
+   "app_supported": false,
+   "evidence_strength": "none",
+   "researcher_rating": "none",
+   "primary_confirmed_count": 0,
+   "observed_count": 0,
+   "stated_estimate": {
+    "value": null,
+    "basis": "No indoor bouldering gym found; the only climbing structure mentioned is a wall at an entertainment arcade in Kinshasa.",
+    "source_url": null
+   },
+   "named_leads_not_counted": [],
+   "indicated_count": 0,
+   "opportunity_confirmed": 0,
+   "opportunity_indicated": 0,
+   "confidence": "low",
+   "tier": "no-evidence",
+   "tier_reason": "no indoor bouldering gym found",
+   "research_priority": null,
+   "major_cities": [
+    "Kinshasa",
+    "Lubumbashi"
+   ],
+   "observed_gyms": [],
+   "source_ids": [
+    "S028",
+    "S029"
+   ],
+   "caveats": "Funville is an entertainment centre with a climbing wall (kids/leisure), not a bouldering gym.",
+   "notes": "Searched in French and English.",
+   "research_group": "africa"
+  },
+  {
+   "iso2": "TZ",
+   "name": "Tanzania",
+   "region": "Sub-Saharan Africa ",
+   "income_group": "Lower middle income",
+   "population": 70545865,
+   "population_year": "2025",
+   "gdp_usd": 90143496090.4411,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 1319,
+   "size_class": "large",
+   "bouldeer_count": 0,
+   "bouldeer_top_suburbs": [],
+   "app_supported": false,
+   "evidence_strength": "none",
+   "researcher_rating": "none",
+   "primary_confirmed_count": 0,
+   "observed_count": 0,
+   "stated_estimate": {
+    "value": null,
+    "basis": "Climbing community posts state there are no climbing gyms in Dar es Salaam, and none turned up in Arusha.",
+    "source_url": "https://www.ukclimbing.com/forums/destinations/east_africa_climbing-740748"
+   },
+   "named_leads_not_counted": [],
+   "indicated_count": 0,
+   "opportunity_confirmed": 0,
+   "opportunity_indicated": 0,
+   "confidence": "low",
+   "tier": "no-evidence",
+   "tier_reason": "no indoor bouldering gym found",
+   "research_priority": null,
+   "major_cities": [
+    "Dar es Salaam",
+    "Arusha",
+    "Musoma"
+   ],
+   "observed_gyms": [],
+   "source_ids": [
+    "S271",
+    "S272",
+    "S273"
+   ],
+   "caveats": "A wall inside the Jipe Moyo Center orphanage (Musoma) is a community/kids facility, not a public gym.",
+   "notes": "Swahili terms not searched.",
+   "research_group": "africa"
+  },
+  {
+   "iso2": "SD",
+   "name": "Sudan",
+   "region": "Sub-Saharan Africa ",
+   "income_group": "Low income",
+   "population": 51662147,
+   "population_year": "2025",
+   "gdp_usd": 60162634574.4689,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 1165,
+   "size_class": "large",
+   "bouldeer_count": 0,
+   "bouldeer_top_suburbs": [],
+   "app_supported": false,
+   "evidence_strength": "none",
+   "researcher_rating": "none",
+   "primary_confirmed_count": 0,
+   "observed_count": 0,
+   "stated_estimate": {
+    "value": null,
+    "basis": "No indoor climbing facility found; conflict conditions make new openings unlikely.",
+    "source_url": null
+   },
+   "named_leads_not_counted": [],
+   "indicated_count": 0,
+   "opportunity_confirmed": 0,
+   "opportunity_indicated": 0,
+   "confidence": "low",
+   "tier": "no-evidence",
+   "tier_reason": "no indoor bouldering gym found",
+   "research_priority": null,
+   "major_cities": [
+    "Khartoum"
+   ],
+   "observed_gyms": [],
+   "source_ids": [
+    "S228"
+   ],
+   "caveats": "Only outdoor mentions. Arabic terms not searched.",
+   "notes": "",
+   "research_group": "africa"
+  },
+  {
+   "iso2": "AO",
+   "name": "Angola",
+   "region": "Sub-Saharan Africa ",
+   "income_group": "Lower middle income",
+   "population": 39040039,
+   "population_year": "2025",
+   "gdp_usd": 122174889423.635,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 3129,
+   "size_class": "substantial",
+   "bouldeer_count": 0,
+   "bouldeer_top_suburbs": [],
+   "app_supported": false,
+   "evidence_strength": "none",
+   "researcher_rating": "none",
+   "primary_confirmed_count": 0,
+   "observed_count": 0,
+   "stated_estimate": {
+    "value": null,
+    "basis": "No indoor climbing or bouldering facility found in Angola. Portuguese searches returned only Portugal and Brazil gyms.",
+    "source_url": null
+   },
+   "named_leads_not_counted": [],
+   "indicated_count": 0,
+   "opportunity_confirmed": 0,
+   "opportunity_indicated": 0,
+   "confidence": "low",
+   "tier": "no-evidence",
+   "tier_reason": "no indoor bouldering gym found",
+   "research_priority": null,
+   "major_cities": [
+    "Luanda"
+   ],
+   "observed_gyms": [],
+   "source_ids": [
+    "S008"
+   ],
+   "caveats": "Coverage is about outdoor areas (Cumbira, Serra da Leba, Pedras Negras).",
+   "notes": "Searched in Portuguese. Facebook/Instagram-only gyms may be missed by web search.",
+   "research_group": "africa"
+  },
+  {
+   "iso2": "GH",
+   "name": "Ghana",
+   "region": "Sub-Saharan Africa ",
+   "income_group": "Lower middle income",
+   "population": 35064272,
+   "population_year": "2025",
+   "gdp_usd": 114209905278.717,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 3257,
+   "size_class": "substantial",
+   "bouldeer_count": 0,
+   "bouldeer_top_suburbs": [],
+   "app_supported": false,
+   "evidence_strength": "none",
+   "researcher_rating": "none",
+   "primary_confirmed_count": 0,
+   "observed_count": 0,
+   "stated_estimate": {
+    "value": null,
+    "basis": "No indoor gym exists; the Climbing Association of Ghana lists an Accra climbing facility only as a future aspiration.",
+    "source_url": "https://globalclimbing.org/climbing-association-ghana"
+   },
+   "named_leads_not_counted": [],
+   "indicated_count": 0,
+   "opportunity_confirmed": 0,
+   "opportunity_indicated": 0,
+   "confidence": "low",
+   "tier": "no-evidence",
+   "tier_reason": "no indoor bouldering gym found",
+   "research_priority": null,
+   "major_cities": [
+    "Accra"
+   ],
+   "observed_gyms": [],
+   "source_ids": [
+    "S066",
+    "S067",
+    "S068"
+   ],
+   "caveats": "Climbing is outdoor only (Krobo Hills, Asubone).",
+   "notes": "The climbing-gyms.com Accra page was not loaded; worth a quick manual check.",
+   "research_group": "africa"
+  },
+  {
+   "iso2": "CM",
+   "name": "Cameroon",
+   "region": "Sub-Saharan Africa ",
+   "income_group": "Lower middle income",
+   "population": 29879337,
+   "population_year": "2025",
+   "gdp_usd": 58933453923.761,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 1972,
+   "size_class": "substantial",
+   "bouldeer_count": 0,
+   "bouldeer_top_suburbs": [],
+   "app_supported": false,
+   "evidence_strength": "none",
+   "researcher_rating": "none",
+   "primary_confirmed_count": 0,
+   "observed_count": 0,
+   "stated_estimate": {
+    "value": null,
+    "basis": "No indoor climbing or bouldering gym found in Douala or Yaounde.",
+    "source_url": null
+   },
+   "named_leads_not_counted": [],
+   "indicated_count": 0,
+   "opportunity_confirmed": 0,
+   "opportunity_indicated": 0,
+   "confidence": "low",
+   "tier": "no-evidence",
+   "tier_reason": "no indoor bouldering gym found",
+   "research_priority": null,
+   "major_cities": [
+    "Douala",
+    "Yaounde"
+   ],
+   "observed_gyms": [],
+   "source_ids": [
+    "S041",
+    "S042"
+   ],
+   "caveats": "Searched in French and English; coverage thin.",
+   "notes": "",
+   "research_group": "africa"
+  },
+  {
+   "iso2": "LK",
+   "name": "Sri Lanka",
+   "region": "South Asia",
+   "income_group": "Upper middle income",
+   "population": 21756000,
+   "population_year": "2025",
+   "gdp_usd": 108825231671.196,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 5002,
+   "size_class": "substantial",
+   "bouldeer_count": 0,
+   "bouldeer_top_suburbs": [],
+   "app_supported": false,
+   "evidence_strength": "none",
+   "researcher_rating": "none",
+   "primary_confirmed_count": 0,
+   "observed_count": 0,
+   "stated_estimate": {
+    "value": null,
+    "basis": "No source lists any Sri Lankan indoor bouldering gym.",
+    "source_url": "https://www.indoorclimbing.com/srilanka.html"
+   },
+   "named_leads_not_counted": [],
+   "indicated_count": 0,
+   "opportunity_confirmed": 0,
+   "opportunity_indicated": 0,
+   "confidence": "low",
+   "tier": "no-evidence",
+   "tier_reason": "no indoor bouldering gym found",
+   "research_priority": null,
+   "major_cities": [
+    "Colombo"
+   ],
+   "observed_gyms": [],
+   "source_ids": [
+    "S139",
+    "S140"
+   ],
+   "caveats": "Only a kids' play-area wall (Colombo) and outdoor guiding.",
+   "notes": "",
+   "research_group": "sasia"
+  },
+  {
+   "iso2": "DO",
+   "name": "Dominican Republic",
+   "region": "Latin America & Caribbean ",
+   "income_group": "Upper middle income",
+   "population": 11520487,
+   "population_year": "2025",
+   "gdp_usd": 127407463759.043,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 11059,
+   "size_class": "substantial",
+   "bouldeer_count": 0,
+   "bouldeer_top_suburbs": [],
+   "app_supported": false,
+   "evidence_strength": "none",
+   "researcher_rating": "none",
+   "primary_confirmed_count": 0,
+   "observed_count": 0,
+   "stated_estimate": {
+    "value": null,
+    "basis": "No dedicated indoor bouldering gym found.",
+    "source_url": null
+   },
+   "named_leads_not_counted": [],
+   "indicated_count": 0,
+   "opportunity_confirmed": 0,
+   "opportunity_indicated": 0,
+   "confidence": "low",
+   "tier": "no-evidence",
+   "tier_reason": "no indoor bouldering gym found",
+   "research_priority": null,
+   "major_cities": [
+    "Santo Domingo",
+    "Santiago"
+   ],
+   "observed_gyms": [],
+   "source_ids": [
+    "S055",
+    "S056"
+   ],
+   "caveats": "Outdoor-focused community; walls reportedly inside fitness chains, bouldering unconfirmed.",
+   "notes": "",
+   "research_group": "latam"
+  },
+  {
+   "iso2": "TM",
+   "name": "Turkmenistan",
+   "region": "Europe & Central Asia",
+   "income_group": "Upper middle income",
+   "population": 7618847,
+   "population_year": "2025",
+   "gdp_usd": 49828621355.6516,
+   "gdp_year": "2025",
+   "gdp_per_capita_usd": 6540,
+   "size_class": "smaller",
+   "bouldeer_count": 0,
+   "bouldeer_top_suburbs": [],
+   "app_supported": false,
+   "evidence_strength": "none",
+   "researcher_rating": "none",
+   "primary_confirmed_count": 0,
+   "observed_count": 0,
+   "stated_estimate": {
+    "value": null,
+    "basis": "No indoor bouldering gym found.",
+    "source_url": null
+   },
+   "named_leads_not_counted": [],
+   "indicated_count": 0,
+   "opportunity_confirmed": 0,
+   "opportunity_indicated": 0,
+   "confidence": "low",
+   "tier": "no-evidence",
+   "tier_reason": "no indoor bouldering gym found",
+   "research_priority": null,
+   "major_cities": [
+    "Ashgabat"
+   ],
+   "observed_gyms": [],
+   "source_ids": [
+    "S257"
+   ],
+   "caveats": "Only an entertainment-centre wall.",
+   "notes": "",
+   "research_group": "sasia"
+  }
+ ],
+ "not_researched": [
+  {
+   "iso2": "PY",
+   "name": "Paraguay",
+   "region": "Latin America & Caribbean ",
+   "income_group": "Upper middle income",
+   "population": 7013078,
+   "gdp_usd": 49278227554.3339,
+   "bouldeer_count": 2,
+   "app_supported": true,
+   "tier": "not-researched",
+   "tier_reason": "screened in (population >= 5M), but GDP < $50B: below this pass's research threshold"
+  },
+  {
+   "iso2": "LY",
+   "name": "Libya",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan",
+   "income_group": "Upper middle income",
+   "population": 7458555,
+   "gdp_usd": 48098909613.6316,
+   "bouldeer_count": 0,
+   "app_supported": false,
+   "tier": "not-researched",
+   "tier_reason": "screened in (population >= 5M), but GDP < $50B: below this pass's research threshold"
+  },
+  {
+   "iso2": "NP",
+   "name": "Nepal",
+   "region": "South Asia",
+   "income_group": "Lower middle income",
+   "population": 29618118,
+   "gdp_usd": 45489810283.1132,
+   "bouldeer_count": 2,
+   "app_supported": true,
+   "tier": "not-researched",
+   "tier_reason": "screened in (population >= 5M), but GDP < $50B: below this pass's research threshold"
+  },
+  {
+   "iso2": "HN",
+   "name": "Honduras",
+   "region": "Latin America & Caribbean ",
+   "income_group": "Lower middle income",
+   "population": 11005850,
+   "gdp_usd": 39601409103.3005,
+   "bouldeer_count": 0,
+   "app_supported": false,
+   "tier": "not-researched",
+   "tier_reason": "screened in (population >= 5M), but GDP < $50B: below this pass's research threshold"
+  },
+  {
+   "iso2": "SN",
+   "name": "Senegal",
+   "region": "Sub-Saharan Africa ",
+   "income_group": "Lower middle income",
+   "population": 18931966,
+   "gdp_usd": 37006536238.3731,
+   "bouldeer_count": 0,
+   "app_supported": false,
+   "tier": "not-researched",
+   "tier_reason": "screened in (population >= 5M), but GDP < $50B: below this pass's research threshold"
+  },
+  {
+   "iso2": "SV",
+   "name": "El Salvador",
+   "region": "Latin America & Caribbean ",
+   "income_group": "Upper middle income",
+   "population": 6365503,
+   "gdp_usd": 36708110000,
+   "bouldeer_count": 0,
+   "app_supported": false,
+   "tier": "not-researched",
+   "tier_reason": "screened in (population >= 5M), but GDP < $50B: below this pass's research threshold"
+  },
+  {
+   "iso2": "PG",
+   "name": "Papua New Guinea",
+   "region": "East Asia & Pacific",
+   "income_group": "Lower middle income",
+   "population": 10762817,
+   "gdp_usd": 32498658653.8415,
+   "bouldeer_count": 0,
+   "app_supported": false,
+   "tier": "not-researched",
+   "tier_reason": "screened in (population >= 5M), but GDP < $50B: below this pass's research threshold"
+  },
+  {
+   "iso2": "HT",
+   "name": "Haiti",
+   "region": "Latin America & Caribbean ",
+   "income_group": "Lower middle income",
+   "population": 11906095,
+   "gdp_usd": 32077278409.2339,
+   "bouldeer_count": 0,
+   "app_supported": false,
+   "tier": "not-researched",
+   "tier_reason": "screened in (population >= 5M), but GDP < $50B: below this pass's research threshold"
+  },
+  {
+   "iso2": "ML",
+   "name": "Mali",
+   "region": "Sub-Saharan Africa ",
+   "income_group": "Low income",
+   "population": 25198821,
+   "gdp_usd": 30069148580.7688,
+   "bouldeer_count": 0,
+   "app_supported": false,
+   "tier": "not-researched",
+   "tier_reason": "screened in (population >= 5M), but GDP < $50B: below this pass's research threshold"
+  },
+  {
+   "iso2": "ZM",
+   "name": "Zambia",
+   "region": "Sub-Saharan Africa ",
+   "income_group": "Lower middle income",
+   "population": 21913874,
+   "gdp_usd": 28879806220.1264,
+   "bouldeer_count": 0,
+   "app_supported": false,
+   "tier": "not-researched",
+   "tier_reason": "screened in (population >= 5M), but GDP < $50B: below this pass's research threshold"
+  },
+  {
+   "iso2": "GN",
+   "name": "Guinea",
+   "region": "Sub-Saharan Africa ",
+   "income_group": "Lower middle income",
+   "population": 15099727,
+   "gdp_usd": 28346024753.2924,
+   "bouldeer_count": 0,
+   "app_supported": false,
+   "tier": "not-researched",
+   "tier_reason": "screened in (population >= 5M), but GDP < $50B: below this pass's research threshold"
+  },
+  {
+   "iso2": "BF",
+   "name": "Burkina Faso",
+   "region": "Sub-Saharan Africa ",
+   "income_group": "Low income",
+   "population": 24074580,
+   "gdp_usd": 27627297461.3181,
+   "bouldeer_count": 0,
+   "app_supported": false,
+   "tier": "not-researched",
+   "tier_reason": "screened in (population >= 5M), but GDP < $50B: below this pass's research threshold"
+  },
+  {
+   "iso2": "LB",
+   "name": "Lebanon",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan",
+   "income_group": "Lower middle income",
+   "population": 5849421,
+   "gdp_usd": 25971643441.3408,
+   "bouldeer_count": 3,
+   "app_supported": true,
+   "tier": "not-researched",
+   "tier_reason": "screened in (population >= 5M), but GDP < $50B: below this pass's research threshold"
+  },
+  {
+   "iso2": "BJ",
+   "name": "Benin",
+   "region": "Sub-Saharan Africa ",
+   "income_group": "Lower middle income",
+   "population": 14814460,
+   "gdp_usd": 24566420903.5337,
+   "bouldeer_count": 0,
+   "app_supported": false,
+   "tier": "not-researched",
+   "tier_reason": "screened in (population >= 5M), but GDP < $50B: below this pass's research threshold"
+  },
+  {
+   "iso2": "SY",
+   "name": "Syrian Arab Republic",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan",
+   "income_group": "Low income",
+   "population": 25620427,
+   "gdp_usd": 23737634644.3994,
+   "bouldeer_count": 0,
+   "app_supported": false,
+   "tier": "not-researched",
+   "tier_reason": "screened in (population >= 5M), but GDP < $50B: below this pass's research threshold"
+  },
+  {
+   "iso2": "KG",
+   "name": "Kyrgyz Republic",
+   "region": "Europe & Central Asia",
+   "income_group": "Lower middle income",
+   "population": 7343064,
+   "gdp_usd": 22623752095.4613,
+   "bouldeer_count": 0,
+   "app_supported": false,
+   "tier": "not-researched",
+   "tier_reason": "screened in (population >= 5M), but GDP < $50B: below this pass's research threshold"
+  },
+  {
+   "iso2": "MZ",
+   "name": "Mozambique",
+   "region": "Sub-Saharan Africa ",
+   "income_group": "Low income",
+   "population": 35631653,
+   "gdp_usd": 22337997046.1913,
+   "bouldeer_count": 0,
+   "app_supported": false,
+   "tier": "not-researched",
+   "tier_reason": "screened in (population >= 5M), but GDP < $50B: below this pass's research threshold"
+  },
+  {
+   "iso2": "NI",
+   "name": "Nicaragua",
+   "region": "Latin America & Caribbean ",
+   "income_group": "Lower middle income",
+   "population": 7007502,
+   "gdp_usd": 22237167113.0916,
+   "bouldeer_count": 0,
+   "app_supported": false,
+   "tier": "not-researched",
+   "tier_reason": "screened in (population >= 5M), but GDP < $50B: below this pass's research threshold"
+  },
+  {
+   "iso2": "NE",
+   "name": "Niger",
+   "region": "Sub-Saharan Africa ",
+   "income_group": "Low income",
+   "population": 27917831,
+   "gdp_usd": 21646191388.2507,
+   "bouldeer_count": 0,
+   "app_supported": false,
+   "tier": "not-researched",
+   "tier_reason": "screened in (population >= 5M), but GDP < $50B: below this pass's research threshold"
+  },
+  {
+   "iso2": "YE",
+   "name": "Yemen, Rep.",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan",
+   "income_group": "Low income",
+   "population": 41773878,
+   "gdp_usd": 21606160663.0318,
+   "bouldeer_count": 0,
+   "app_supported": false,
+   "tier": "not-researched",
+   "tier_reason": "screened in (population >= 5M), but GDP < $50B: below this pass's research threshold"
+  },
+  {
+   "iso2": "TD",
+   "name": "Chad",
+   "region": "Sub-Saharan Africa ",
+   "income_group": "Low income",
+   "population": 21003705,
+   "gdp_usd": 21472835225.4338,
+   "bouldeer_count": 0,
+   "app_supported": false,
+   "tier": "not-researched",
+   "tier_reason": "screened in (population >= 5M), but GDP < $50B: below this pass's research threshold"
+  },
+  {
+   "iso2": "MG",
+   "name": "Madagascar",
+   "region": "Sub-Saharan Africa ",
+   "income_group": "Low income",
+   "population": 32740678,
+   "gdp_usd": 19620352035.7899,
+   "bouldeer_count": 0,
+   "app_supported": false,
+   "tier": "not-researched",
+   "tier_reason": "screened in (population >= 5M), but GDP < $50B: below this pass's research threshold"
+  },
+  {
+   "iso2": "LA",
+   "name": "Lao PDR",
+   "region": "East Asia & Pacific",
+   "income_group": "Lower middle income",
+   "population": 7873046,
+   "gdp_usd": 18302970218.5902,
+   "bouldeer_count": 0,
+   "app_supported": false,
+   "tier": "not-researched",
+   "tier_reason": "screened in (population >= 5M), but GDP < $50B: below this pass's research threshold"
+  },
+  {
+   "iso2": "AF",
+   "name": "Afghanistan",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan",
+   "income_group": "Low income",
+   "population": 43844111,
+   "gdp_usd": 17778508875.7396,
+   "bouldeer_count": 0,
+   "app_supported": false,
+   "tier": "not-researched",
+   "tier_reason": "screened in (population >= 5M), but GDP < $50B: below this pass's research threshold"
+  },
+  {
+   "iso2": "TJ",
+   "name": "Tajikistan",
+   "region": "Europe & Central Asia",
+   "income_group": "Lower middle income",
+   "population": 10786734,
+   "gdp_usd": 17660626562.4832,
+   "bouldeer_count": 0,
+   "app_supported": false,
+   "tier": "not-researched",
+   "tier_reason": "screened in (population >= 5M), but GDP < $50B: below this pass's research threshold"
+  },
+  {
+   "iso2": "PS",
+   "name": "West Bank and Gaza",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan",
+   "income_group": "Lower middle income",
+   "population": 5413596,
+   "gdp_usd": 17167100000,
+   "bouldeer_count": 0,
+   "app_supported": false,
+   "tier": "not-researched",
+   "tier_reason": "screened in (population >= 5M), but GDP < $50B: below this pass's research threshold"
+  },
+  {
+   "iso2": "RW",
+   "name": "Rwanda",
+   "region": "Sub-Saharan Africa ",
+   "income_group": "Low income",
+   "population": 14569341,
+   "gdp_usd": 16372132990.2271,
+   "bouldeer_count": 0,
+   "app_supported": false,
+   "tier": "not-researched",
+   "tier_reason": "screened in (population >= 5M), but GDP < $50B: below this pass's research threshold"
+  },
+  {
+   "iso2": "CG",
+   "name": "Congo, Rep.",
+   "region": "Sub-Saharan Africa ",
+   "income_group": "Lower middle income",
+   "population": 6484437,
+   "gdp_usd": 16306633778.765,
+   "bouldeer_count": 0,
+   "app_supported": false,
+   "tier": "not-researched",
+   "tier_reason": "screened in (population >= 5M), but GDP < $50B: below this pass's research threshold"
+  },
+  {
+   "iso2": "MW",
+   "name": "Malawi",
+   "region": "Sub-Saharan Africa ",
+   "income_group": "Low income",
+   "population": 22216120,
+   "gdp_usd": 14918276698.303,
+   "bouldeer_count": 0,
+   "app_supported": false,
+   "tier": "not-researched",
+   "tier_reason": "screened in (population >= 5M), but GDP < $50B: below this pass's research threshold"
+  },
+  {
+   "iso2": "SO",
+   "name": "Somalia, Fed. Rep.",
+   "region": "Sub-Saharan Africa ",
+   "income_group": "Low income",
+   "population": 19654739,
+   "gdp_usd": 12995200000.2658,
+   "bouldeer_count": 0,
+   "app_supported": false,
+   "tier": "not-researched",
+   "tier_reason": "screened in (population >= 5M), but GDP < $50B: below this pass's research threshold"
+  },
+  {
+   "iso2": "SS",
+   "name": "South Sudan",
+   "region": "Sub-Saharan Africa ",
+   "income_group": "Low income",
+   "population": 12188788,
+   "gdp_usd": 11997800760.2242,
+   "bouldeer_count": 0,
+   "app_supported": false,
+   "tier": "not-researched",
+   "tier_reason": "screened in (population >= 5M), but GDP < $50B: below this pass's research threshold"
+  },
+  {
+   "iso2": "TG",
+   "name": "Togo",
+   "region": "Sub-Saharan Africa ",
+   "income_group": "Lower middle income",
+   "population": 8591626,
+   "gdp_usd": 11889949067.4697,
+   "bouldeer_count": 0,
+   "app_supported": false,
+   "tier": "not-researched",
+   "tier_reason": "screened in (population >= 5M), but GDP < $50B: below this pass's research threshold"
+  },
+  {
+   "iso2": "MR",
+   "name": "Mauritania",
+   "region": "Sub-Saharan Africa ",
+   "income_group": "Lower middle income",
+   "population": 5315065,
+   "gdp_usd": 11679910946.4371,
+   "bouldeer_count": 0,
+   "app_supported": false,
+   "tier": "not-researched",
+   "tier_reason": "screened in (population >= 5M), but GDP < $50B: below this pass's research threshold"
+  },
+  {
+   "iso2": "SL",
+   "name": "Sierra Leone",
+   "region": "Sub-Saharan Africa ",
+   "income_group": "Low income",
+   "population": 8819794,
+   "gdp_usd": 7464157904.43509,
+   "bouldeer_count": 0,
+   "app_supported": false,
+   "tier": "not-researched",
+   "tier_reason": "screened in (population >= 5M), but GDP < $50B: below this pass's research threshold"
+  },
+  {
+   "iso2": "LR",
+   "name": "Liberia",
+   "region": "Sub-Saharan Africa ",
+   "income_group": "Low income",
+   "population": 5731206,
+   "gdp_usd": 5245938900,
+   "bouldeer_count": 0,
+   "app_supported": false,
+   "tier": "not-researched",
+   "tier_reason": "screened in (population >= 5M), but GDP < $50B: below this pass's research threshold"
+  },
+  {
+   "iso2": "BI",
+   "name": "Burundi",
+   "region": "Sub-Saharan Africa ",
+   "income_group": "Low income",
+   "population": 14390003,
+   "gdp_usd": 3364713864.08488,
+   "bouldeer_count": 0,
+   "app_supported": false,
+   "tier": "not-researched",
+   "tier_reason": "screened in (population >= 5M), but GDP < $50B: below this pass's research threshold"
+  },
+  {
+   "iso2": "CF",
+   "name": "Central African Republic",
+   "region": "Sub-Saharan Africa ",
+   "income_group": "Low income",
+   "population": 5513282,
+   "gdp_usd": 3066109226.40165,
+   "bouldeer_count": 0,
+   "app_supported": false,
+   "tier": "not-researched",
+   "tier_reason": "screened in (population >= 5M), but GDP < $50B: below this pass's research threshold"
+  },
+  {
+   "iso2": "KP",
+   "name": "Korea, Dem. People's Rep.",
+   "region": "East Asia & Pacific",
+   "income_group": "Low income",
+   "population": 26571036,
+   "gdp_usd": null,
+   "bouldeer_count": 0,
+   "app_supported": false,
+   "tier": "not-researched",
+   "tier_reason": "screened in (population >= 5M), but GDP < $50B: below this pass's research threshold"
+  }
+ ]
+}
