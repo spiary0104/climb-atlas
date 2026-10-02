@@ -1,0 +1,466 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-01-ukraine",
+ "inputs": {
+  "section_sha256": "01fe4ef167b830636a72e178bc8e184dd8f0cc1fae30cba1c4747804ff9d0d67",
+  "sources_sha256": "b6b8d933f46513cbb33290530e53a868f6c28384893d88d9ce80948824a5cf3e",
+  "candidates_sha256": "b58947548e9625bff4a1f3d639c0413677834868ec3768b18680517fc4388902",
+  "index": {
+   "sha256": "8dbddf7924c219a236c2ffff9c8fb005dd02d1dcfe61640f8817d49fb2484af2",
+   "count": 2127
+  },
+  "staged_batches_compared": [],
+  "other_sections_compared": []
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 16,
+  "ready": 0,
+  "review": 5,
+  "blocked": 9,
+  "existing": 2,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "ua-001",
+   "line": 1,
+   "name": "Hyperion",
+   "class": "existing",
+   "suggested": "same-as seed-1705",
+   "importer": {
+    "class": "existing",
+    "id": "seed-1705",
+    "match": {
+     "id": "seed-1705",
+     "name": "Hyperion",
+     "reason": "same-name",
+     "dist_m": 16
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-1705 but content differs (lat, lng, address, types); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1705 \"Hyperion\": same-name (\"Hyperion\" / \"Hyperion\", 16 m)",
+     "ids": [
+      "seed-1705"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-1705"
+   ]
+  },
+  {
+   "cid": "ua-002",
+   "line": 2,
+   "name": "UP!",
+   "class": "existing",
+   "suggested": "same-as seed-1701",
+   "importer": {
+    "class": "existing",
+    "id": "seed-1701",
+    "match": {
+     "id": "seed-1701",
+     "name": "UP!",
+     "reason": "same-name",
+     "dist_m": 29
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-1701 but content differs (suburb, lat, lng, address, types); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1701 \"UP!\": same-name (\"UP!\" / \"UP!\", 29 m)",
+     "ids": [
+      "seed-1701"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-1701"
+   ]
+  },
+  {
+   "cid": "ua-003",
+   "line": 3,
+   "name": "Funattic",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-2356a5d9e9"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-1702 \"Tsekh Climbing Gym\": related names \"Tsekh\" / \"Tsekh Climbing Gym\" 5719 m apart",
+     "ids": [
+      "seed-1702"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-1702"
+   ]
+  },
+  {
+   "cid": "ua-004",
+   "line": 4,
+   "name": "KPI Climbing Club",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-26b7401a1f"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "ua-005",
+   "line": 5,
+   "name": "The Wall Kyiv",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-54960d47bd"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "ua-006",
+   "line": 6,
+   "name": "The Wall Lviv",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-5830ef64bf"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate ua-007 \"Bukhta\": related names \"Скеледром The Wall\" / \"Скеледром Бухта\" 1428 m apart",
+     "ids": [
+      "ua-007"
+     ]
+    }
+   ],
+   "review_ids": [
+    "ua-007"
+   ]
+  },
+  {
+   "cid": "ua-007",
+   "line": 7,
+   "name": "Bukhta",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-92f79e7847"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate ua-006 \"The Wall Lviv\": related names \"Скеледром Бухта\" / \"Скеледром The Wall\" 1428 m apart",
+     "ids": [
+      "ua-006"
+     ]
+    }
+   ],
+   "review_ids": [
+    "ua-006"
+   ]
+  },
+  {
+   "cid": "ua-008",
+   "line": 8,
+   "name": "MurawayNick",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-39090687fe"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "ua-009",
+   "line": 9,
+   "name": "FormAT",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-8ef7fc893a"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "ua-010",
+   "line": 10,
+   "name": "Montana",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-341116a928"
+   },
+   "flags": [
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "ua-011",
+   "line": 11,
+   "name": "La Scala",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-f5930375cb"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate ua-012 \"Skala\": related names \"La Skala\" / \"Skala\" 7561 m apart",
+     "ids": [
+      "ua-012"
+     ]
+    }
+   ],
+   "review_ids": [
+    "ua-012"
+   ]
+  },
+  {
+   "cid": "ua-012",
+   "line": 12,
+   "name": "Skala",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-156769c2b3"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate ua-011 \"La Scala\": related names \"Skala\" / \"La Skala\" 7561 m apart",
+     "ids": [
+      "ua-011"
+     ]
+    }
+   ],
+   "review_ids": [
+    "ua-011"
+   ]
+  },
+  {
+   "cid": "ua-013",
+   "line": 13,
+   "name": "Energy Wall",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-96558e5a80"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "ua-014",
+   "line": 14,
+   "name": "Climbing Room (Girska Maisternia)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-e2d66e5d52"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "ua-015",
+   "line": 15,
+   "name": "SK Dynamica",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-531c3bc36c"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    },
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "ua-016",
+   "line": 16,
+   "name": "Ostriv",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-882766f29c"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  }
+ ],
+ "reconcile_sha256": "cbcb7b5894a9f74d433b4298cc50f897ff9dde1d64be8803223adf18528be16f"
+}
