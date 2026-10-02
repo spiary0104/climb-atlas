@@ -1,0 +1,621 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-01-switzerland",
+ "index": {
+  "sha256": "beb817536ef2e37b35b9b8af6c7b3b15f6deea0e1423a38d24fa51de0914972f",
+  "count": 2232,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [],
+ "counts": {
+  "records": 74,
+  "new": 74,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "375af948b7d1e22f6774a44cc5d4d7b55fcfb0b585356580a05d56d639c63961",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-14c2acd7c6",
+   "id_frozen": true,
+   "name": "GrindelBoulder",
+   "country": "CH"
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-07480139ca",
+   "id_frozen": true,
+   "name": "Boulderlounge Schlieren",
+   "country": "CH"
+  },
+  {
+   "line": 3,
+   "class": "new",
+   "id": "g-d6954fb26c",
+   "id_frozen": true,
+   "name": "Boulderlounge St. Gallen",
+   "country": "CH"
+  },
+  {
+   "line": 4,
+   "class": "new",
+   "id": "g-66e5d68350",
+   "id_frozen": true,
+   "name": "Kletterzentrum Gaswerk Schlieren",
+   "country": "CH"
+  },
+  {
+   "line": 5,
+   "class": "new",
+   "id": "g-1281064e8f",
+   "id_frozen": true,
+   "name": "Kletterzentrum Gaswerk Greifensee",
+   "country": "CH"
+  },
+  {
+   "line": 6,
+   "class": "new",
+   "id": "g-028ee01351",
+   "id_frozen": true,
+   "name": "Kletterzentrum Gaswerk Wädenswil",
+   "country": "CH"
+  },
+  {
+   "line": 7,
+   "class": "new",
+   "id": "g-1c53e4ff94",
+   "id_frozen": true,
+   "name": "Boulderhalle Adliswil",
+   "country": "CH"
+  },
+  {
+   "line": 8,
+   "class": "new",
+   "id": "g-663777c19b",
+   "id_frozen": true,
+   "name": "GRIFFIG Kletterhalle Uster",
+   "country": "CH"
+  },
+  {
+   "line": 9,
+   "class": "new",
+   "id": "g-7ba00f6381",
+   "id_frozen": true,
+   "name": "ARANEA+ Kletterzentrum",
+   "country": "CH"
+  },
+  {
+   "line": 10,
+   "class": "new",
+   "id": "g-46ed95f76b",
+   "id_frozen": true,
+   "name": "thurclimb",
+   "country": "CH"
+  },
+  {
+   "line": 11,
+   "class": "new",
+   "id": "g-ace906808b",
+   "id_frozen": true,
+   "name": "Kletterhalle SAC Bodan",
+   "country": "CH"
+  },
+  {
+   "line": 12,
+   "class": "new",
+   "id": "g-771f03fa19",
+   "id_frozen": true,
+   "name": "Kletterzentrum St. Gallen",
+   "country": "CH"
+  },
+  {
+   "line": 13,
+   "class": "new",
+   "id": "g-067ede39c1",
+   "id_frozen": true,
+   "name": "Quergang",
+   "country": "CH"
+  },
+  {
+   "line": 14,
+   "class": "new",
+   "id": "g-5668571748",
+   "id_frozen": true,
+   "name": "Sparta Bouldering",
+   "country": "CH"
+  },
+  {
+   "line": 15,
+   "class": "new",
+   "id": "g-63a42146f7",
+   "id_frozen": true,
+   "name": "Boulder Box",
+   "country": "CH"
+  },
+  {
+   "line": 16,
+   "class": "new",
+   "id": "g-36884b4ccb",
+   "id_frozen": true,
+   "name": "Kletterhalle Appenzeller Park",
+   "country": "CH"
+  },
+  {
+   "line": 17,
+   "class": "new",
+   "id": "g-e20d3b95e9",
+   "id_frozen": true,
+   "name": "Kletterzentrum Ap'n Daun",
+   "country": "CH"
+  },
+  {
+   "line": 18,
+   "class": "new",
+   "id": "g-e0f9143775",
+   "id_frozen": true,
+   "name": "Quadrel",
+   "country": "CH"
+  },
+  {
+   "line": 19,
+   "class": "new",
+   "id": "g-2ea6c188ee",
+   "id_frozen": true,
+   "name": "Kletterhalle Rätikon",
+   "country": "CH"
+  },
+  {
+   "line": 20,
+   "class": "new",
+   "id": "g-04a7320e40",
+   "id_frozen": true,
+   "name": "O'Bloc",
+   "country": "CH"
+  },
+  {
+   "line": 21,
+   "class": "new",
+   "id": "g-1de4f69056",
+   "id_frozen": true,
+   "name": "boulderkino",
+   "country": "CH"
+  },
+  {
+   "line": 22,
+   "class": "new",
+   "id": "g-4cf80c7ffc",
+   "id_frozen": true,
+   "name": "griffbar Boulderwand Thun",
+   "country": "CH"
+  },
+  {
+   "line": 23,
+   "class": "new",
+   "id": "g-4e26a94cb8",
+   "id_frozen": true,
+   "name": "Climbox Langnau",
+   "country": "CH"
+  },
+  {
+   "line": 24,
+   "class": "new",
+   "id": "g-43e3aa35f3",
+   "id_frozen": true,
+   "name": "BoulderWorb",
+   "country": "CH"
+  },
+  {
+   "line": 25,
+   "class": "new",
+   "id": "g-ecd324de99",
+   "id_frozen": true,
+   "name": "Boulderpark Schwarzenburg",
+   "country": "CH"
+  },
+  {
+   "line": 26,
+   "class": "new",
+   "id": "g-507ec10349",
+   "id_frozen": true,
+   "name": "BoulderSchüür Lenk",
+   "country": "CH"
+  },
+  {
+   "line": 27,
+   "class": "new",
+   "id": "g-ca0c52ebda",
+   "id_frozen": true,
+   "name": "Manola Boulder",
+   "country": "CH"
+  },
+  {
+   "line": 28,
+   "class": "new",
+   "id": "g-b014958766",
+   "id_frozen": true,
+   "name": "Kletterhalle Haslital",
+   "country": "CH"
+  },
+  {
+   "line": 29,
+   "class": "new",
+   "id": "g-3aecbb44d7",
+   "id_frozen": true,
+   "name": "GRIP Climbing",
+   "country": "CH"
+  },
+  {
+   "line": 30,
+   "class": "new",
+   "id": "g-54c13827ff",
+   "id_frozen": true,
+   "name": "Magnet Trainingszentrum für Sportkletterer",
+   "country": "CH"
+  },
+  {
+   "line": 31,
+   "class": "new",
+   "id": "g-245e85c7f1",
+   "id_frozen": true,
+   "name": "Forum Sumiswald",
+   "country": "CH"
+  },
+  {
+   "line": 32,
+   "class": "new",
+   "id": "g-17adf20ff5",
+   "id_frozen": true,
+   "name": "BOUBA Boulder Baden",
+   "country": "CH"
+  },
+  {
+   "line": 33,
+   "class": "new",
+   "id": "g-dd666c2e64",
+   "id_frozen": true,
+   "name": "Kraftreaktor Lenzburg",
+   "country": "CH"
+  },
+  {
+   "line": 34,
+   "class": "new",
+   "id": "g-9bf13b3c59",
+   "id_frozen": true,
+   "name": "Kraftreaktor Aarau",
+   "country": "CH"
+  },
+  {
+   "line": 35,
+   "class": "new",
+   "id": "g-6b4f6bf992",
+   "id_frozen": true,
+   "name": "Blockchäfer",
+   "country": "CH"
+  },
+  {
+   "line": 36,
+   "class": "new",
+   "id": "g-5bd19e1888",
+   "id_frozen": true,
+   "name": "ISATIS Kletterhalle",
+   "country": "CH"
+  },
+  {
+   "line": 37,
+   "class": "new",
+   "id": "g-fac6ece162",
+   "id_frozen": true,
+   "name": "bimano solothurn",
+   "country": "CH"
+  },
+  {
+   "line": 38,
+   "class": "new",
+   "id": "g-f3f5ef1071",
+   "id_frozen": true,
+   "name": "B2 Boulders & Bar",
+   "country": "CH"
+  },
+  {
+   "line": 39,
+   "class": "new",
+   "id": "g-ab212b06d9",
+   "id_frozen": true,
+   "name": "Hebdi",
+   "country": "CH"
+  },
+  {
+   "line": 40,
+   "class": "new",
+   "id": "g-60e15efebd",
+   "id_frozen": true,
+   "name": "CITY BOULDER",
+   "country": "CH"
+  },
+  {
+   "line": 41,
+   "class": "new",
+   "id": "g-2baf6ac488",
+   "id_frozen": true,
+   "name": "Pilatus Indoor",
+   "country": "CH"
+  },
+  {
+   "line": 42,
+   "class": "new",
+   "id": "g-8df63dd5be",
+   "id_frozen": true,
+   "name": "Boulder Arena Sursee",
+   "country": "CH"
+  },
+  {
+   "line": 43,
+   "class": "new",
+   "id": "g-0a49bf9b5c",
+   "id_frozen": true,
+   "name": "Bouldergate Ettiswil",
+   "country": "CH"
+  },
+  {
+   "line": 44,
+   "class": "new",
+   "id": "g-a24b51f264",
+   "id_frozen": true,
+   "name": "Kletterhalle Wolhusen",
+   "country": "CH"
+  },
+  {
+   "line": 45,
+   "class": "new",
+   "id": "g-355493a118",
+   "id_frozen": true,
+   "name": "BoulderBaar",
+   "country": "CH"
+  },
+  {
+   "line": 46,
+   "class": "new",
+   "id": "g-12a98088ff",
+   "id_frozen": true,
+   "name": "Spinnerei Indoor",
+   "country": "CH"
+  },
+  {
+   "line": 47,
+   "class": "new",
+   "id": "g-b887ca86ea",
+   "id_frozen": true,
+   "name": "Granit Indoor",
+   "country": "CH"
+  },
+  {
+   "line": 48,
+   "class": "new",
+   "id": "g-8794198f44",
+   "id_frozen": true,
+   "name": "Orbit Interlaken",
+   "country": "CH"
+  },
+  {
+   "line": 49,
+   "class": "new",
+   "id": "g-8952111b89",
+   "id_frozen": true,
+   "name": "Planet Climbing Plan-les-Ouates",
+   "country": "CH"
+  },
+  {
+   "line": 50,
+   "class": "new",
+   "id": "g-a8e0820931",
+   "id_frozen": true,
+   "name": "Grimper.ch Lausanne-Beaulieu",
+   "country": "CH"
+  },
+  {
+   "line": 51,
+   "class": "new",
+   "id": "g-e5b91dc731",
+   "id_frozen": true,
+   "name": "Grimper.ch Echandens (Rocspot)",
+   "country": "CH"
+  },
+  {
+   "line": 52,
+   "class": "new",
+   "id": "g-5dd3c45930",
+   "id_frozen": true,
+   "name": "Grimper.ch Villeneuve",
+   "country": "CH"
+  },
+  {
+   "line": 53,
+   "class": "new",
+   "id": "g-161cf94e89",
+   "id_frozen": true,
+   "name": "Grimper.ch Givisiez (Bloczone)",
+   "country": "CH"
+  },
+  {
+   "line": 54,
+   "class": "new",
+   "id": "g-8793955b23",
+   "id_frozen": true,
+   "name": "Le Hangar (Grimper.ch Fribourg)",
+   "country": "CH"
+  },
+  {
+   "line": 55,
+   "class": "new",
+   "id": "g-bff1fd5a92",
+   "id_frozen": true,
+   "name": "Grimper.ch Meyrin-Satigny",
+   "country": "CH"
+  },
+  {
+   "line": 56,
+   "class": "new",
+   "id": "g-456aef8896",
+   "id_frozen": true,
+   "name": "TOTEM Ecublens",
+   "country": "CH"
+  },
+  {
+   "line": 57,
+   "class": "new",
+   "id": "g-708d82e3b9",
+   "id_frozen": true,
+   "name": "TOTEM Gland",
+   "country": "CH"
+  },
+  {
+   "line": 58,
+   "class": "new",
+   "id": "g-3c56b92c68",
+   "id_frozen": true,
+   "name": "TOTEM Vevey",
+   "country": "CH"
+  },
+  {
+   "line": 59,
+   "class": "new",
+   "id": "g-52f004dcce",
+   "id_frozen": true,
+   "name": "TOTEM Meyrin",
+   "country": "CH"
+  },
+  {
+   "line": 60,
+   "class": "new",
+   "id": "g-4897474222",
+   "id_frozen": true,
+   "name": "TOTEM Vernier (Le Môll)",
+   "country": "CH"
+  },
+  {
+   "line": 61,
+   "class": "new",
+   "id": "g-448ab1686d",
+   "id_frozen": true,
+   "name": "TOTEM Versoix",
+   "country": "CH"
+  },
+  {
+   "line": 62,
+   "class": "new",
+   "id": "g-104902e680",
+   "id_frozen": true,
+   "name": "Le Cube",
+   "country": "CH"
+  },
+  {
+   "line": 63,
+   "class": "new",
+   "id": "g-cb911a31d1",
+   "id_frozen": true,
+   "name": "La Pile",
+   "country": "CH"
+  },
+  {
+   "line": 64,
+   "class": "new",
+   "id": "g-772cc22e11",
+   "id_frozen": true,
+   "name": "Gecko Escalade",
+   "country": "CH"
+  },
+  {
+   "line": 65,
+   "class": "new",
+   "id": "g-e16b22c855",
+   "id_frozen": true,
+   "name": "Escalade Chavornay",
+   "country": "CH"
+  },
+  {
+   "line": 66,
+   "class": "new",
+   "id": "g-fb60f89fa9",
+   "id_frozen": true,
+   "name": "Vertic-Halle Saxon",
+   "country": "CH"
+  },
+  {
+   "line": 67,
+   "class": "new",
+   "id": "g-61bc114f2c",
+   "id_frozen": true,
+   "name": "Vertic-Halle Monthey",
+   "country": "CH"
+  },
+  {
+   "line": 68,
+   "class": "new",
+   "id": "g-5ab53036a3",
+   "id_frozen": true,
+   "name": "Vertic-Halle Baltschieder",
+   "country": "CH"
+  },
+  {
+   "line": 69,
+   "class": "new",
+   "id": "g-4b38ee73ee",
+   "id_frozen": true,
+   "name": "Structure Pan d'Escalade",
+   "country": "CH"
+  },
+  {
+   "line": 70,
+   "class": "new",
+   "id": "g-33c8ddaa88",
+   "id_frozen": true,
+   "name": "Planet Climbing Lancy",
+   "country": "CH"
+  },
+  {
+   "line": 71,
+   "class": "new",
+   "id": "g-bc40a35e0e",
+   "id_frozen": true,
+   "name": "C+ Urban Climbing",
+   "country": "CH"
+  },
+  {
+   "line": 72,
+   "class": "new",
+   "id": "g-5719e87fca",
+   "id_frozen": true,
+   "name": "L'Entrepôt",
+   "country": "CH"
+  },
+  {
+   "line": 73,
+   "class": "new",
+   "id": "g-f2360c9cf0",
+   "id_frozen": true,
+   "name": "BlocUp",
+   "country": "CH"
+  },
+  {
+   "line": 74,
+   "class": "new",
+   "id": "g-fcab43fa8c",
+   "id_frozen": true,
+   "name": "Alpha Boulder",
+   "country": "CH"
+  }
+ ]
+}
