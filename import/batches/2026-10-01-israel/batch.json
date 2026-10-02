@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-01-israel",
+  "description": "Regional research \"Israel (Tier A, wave 1)\": 9 new gym(s) accepted of 12 candidate(s)",
+  "created": "2026-10-02",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-10-01-israel",
+    "section_sha256": "74bd63685cb060e007f3a721c913043cbc5fc8db634765af524946a2028d327e",
+    "sources_sha256": "1f0824add1fb04ee30e26ca2d2e6d6101e75128041a86850047dd0602eff9b62",
+    "candidates_sha256": "06df5e05956a2e8533e4a1508988f7ec5fada459a71ca448357d76160114f977",
+    "reconcile_sha256": "b89c3ee9893ae20ac906913a1a4188e1abb031c6da1fc1d42d1175e1ce1024e1",
+    "review_sha256": "ca1f9eeb27029896d2c0aabec4a802a6b840d610074cfee516409031dd9208ce",
+    "candidates": 12,
+    "staged": 9,
+    "decisions": {
+      "accept": 9,
+      "same-as": 3
+    }
+  },
+  "index_at_staging": {
+    "sha256": "100285234086b4041d776542d99a5c3322a2b682a69bcd60bb7aaa66ab41e46f",
+    "count": 2142
+  }
+}
