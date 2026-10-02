@@ -1,0 +1,241 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-01-iran",
+ "inputs": {
+  "section_sha256": "e27aba4855f206b180577b7221e1da9df2efa07abca1cd159c4a309f34ad486e",
+  "sources_sha256": "8c318d4e8f048a38548b04e163b654ca00468d8a1325a78471367be91d5fa6a8",
+  "candidates_sha256": "30aa16ad016632eb3782705fba550074d2cec6bd76ec60af88ebd1a246761c2b",
+  "index": {
+   "sha256": "8dbddf7924c219a236c2ffff9c8fb005dd02d1dcfe61640f8817d49fb2484af2",
+   "count": 2127
+  },
+  "staged_batches_compared": [],
+  "other_sections_compared": []
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 5,
+  "ready": 0,
+  "review": 3,
+  "blocked": 2,
+  "existing": 0,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "ir-001",
+   "line": 1,
+   "name": "Boulderland Climbing Gym",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-a50d448379"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate ir-002 \"Tochal Club\": related names \"باشگاه سنگ‌نوردی بلدرلند\" / \"باشگاه کوهنوردی توچال\" 9156 m apart",
+     "ids": [
+      "ir-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate ir-003 \"Moj Climbing Gym\": related names \"باشگاه سنگ‌نوردی بلدرلند\" / \"باشگاه سنگنوردی موج\" 6177 m apart",
+     "ids": [
+      "ir-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate ir-005 \"Payam Climbing Academy\": related names \"باشگاه سنگ‌نوردی بلدرلند\" / \"آکادمی سنگنوردی پیام\" 6924 m apart",
+     "ids": [
+      "ir-005"
+     ]
+    }
+   ],
+   "review_ids": [
+    "ir-002",
+    "ir-003",
+    "ir-005"
+   ]
+  },
+  {
+   "cid": "ir-002",
+   "line": 2,
+   "name": "Tochal Club",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-a0cfad025a"
+   },
+   "blockers": [
+    {
+     "code": "coarse-coordinates",
+     "detail": "coordinates only locate the area, not the gym"
+    }
+   ],
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate ir-001 \"Boulderland Climbing Gym\": related names \"باشگاه کوهنوردی توچال\" / \"باشگاه سنگ‌نوردی بلدرلند\" 9156 m apart",
+     "ids": [
+      "ir-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate ir-003 \"Moj Climbing Gym\": related names \"باشگاه کوهنوردی توچال\" / \"باشگاه سنگنوردی موج\" 13992 m apart",
+     "ids": [
+      "ir-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate ir-005 \"Payam Climbing Academy\": related names \"باشگاه کوهنوردی توچال\" / \"آکادمی سنگنوردی پیام\" 8347 m apart",
+     "ids": [
+      "ir-005"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "ir-001",
+    "ir-003",
+    "ir-005"
+   ]
+  },
+  {
+   "cid": "ir-003",
+   "line": 3,
+   "name": "Moj Climbing Gym",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-6a1b8f68b9"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate ir-001 \"Boulderland Climbing Gym\": related names \"باشگاه سنگنوردی موج\" / \"باشگاه سنگ‌نوردی بلدرلند\" 6177 m apart",
+     "ids": [
+      "ir-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate ir-002 \"Tochal Club\": related names \"باشگاه سنگنوردی موج\" / \"باشگاه کوهنوردی توچال\" 13992 m apart",
+     "ids": [
+      "ir-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate ir-005 \"Payam Climbing Academy\": related names \"باشگاه سنگنوردی موج\" / \"آکادمی سنگنوردی پیام\" 7544 m apart",
+     "ids": [
+      "ir-005"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "ir-001",
+    "ir-002",
+    "ir-005"
+   ]
+  },
+  {
+   "cid": "ir-004",
+   "line": 4,
+   "name": "MZ Sport Club",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-d99841f032"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "ir-005",
+   "line": 5,
+   "name": "Payam Climbing Academy",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-d4f87cb0c4"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate ir-001 \"Boulderland Climbing Gym\": related names \"آکادمی سنگنوردی پیام\" / \"باشگاه سنگ‌نوردی بلدرلند\" 6924 m apart",
+     "ids": [
+      "ir-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate ir-002 \"Tochal Club\": related names \"آکادمی سنگنوردی پیام\" / \"باشگاه کوهنوردی توچال\" 8347 m apart",
+     "ids": [
+      "ir-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate ir-003 \"Moj Climbing Gym\": related names \"آکادمی سنگنوردی پیام\" / \"باشگاه سنگنوردی موج\" 7544 m apart",
+     "ids": [
+      "ir-003"
+     ]
+    }
+   ],
+   "review_ids": [
+    "ir-001",
+    "ir-002",
+    "ir-003"
+   ]
+  }
+ ],
+ "reconcile_sha256": "625cc7963598bb136913f20cf5755bbb28f3ff60efc9d6b8347f6239c75a40e0"
+}

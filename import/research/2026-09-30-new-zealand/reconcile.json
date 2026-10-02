@@ -1,0 +1,490 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-09-30-new-zealand",
+ "inputs": {
+  "section_sha256": "69727cdce33a0ec7cc5fe4b7d219c837605c0176288f0619acf2a78ec0dc4d5f",
+  "sources_sha256": "46dc78a68d33a3289c6eaa811cffa56ff7e595802184dc96c68db0a501413b12",
+  "candidates_sha256": "3a345a338ba1b7b8611117945eb7338769808dd702793fe1159b64ce477838bb",
+  "index": {
+   "sha256": "8dbddf7924c219a236c2ffff9c8fb005dd02d1dcfe61640f8817d49fb2484af2",
+   "count": 2127
+  },
+  "staged_batches_compared": [],
+  "other_sections_compared": []
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 18,
+  "ready": 5,
+  "review": 7,
+  "blocked": 1,
+  "existing": 5,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "nz-001",
+   "line": 1,
+   "name": "Boulder Co. Auckland",
+   "class": "existing",
+   "suggested": "same-as seed-477",
+   "importer": {
+    "class": "existing",
+    "id": "seed-477",
+    "match": {
+     "id": "seed-477",
+     "name": "Boulder Co Auckland",
+     "reason": "same-name",
+     "dist_m": 290
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-477 but content differs (name, suburb, lat, lng, address); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-477 \"Boulder Co Auckland\": same-name (\"Boulder Co. Auckland\" / \"Boulder Co Auckland\", 290 m)",
+     "ids": [
+      "seed-477"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate nz-003 \"Auckland Climbing Gym\": related names \"Boulder Co. Auckland\" / \"Auckland Climbing Gym\" 14910 m apart",
+     "ids": [
+      "nz-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-479 \"Auckland Climbing Gym\": related names \"Boulder Co. Auckland\" / \"Auckland Climbing Gym\" 14917 m apart",
+     "ids": [
+      "seed-479"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "nz-003",
+    "seed-477",
+    "seed-479"
+   ]
+  },
+  {
+   "cid": "nz-002",
+   "line": 2,
+   "name": "Northern Rocks",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-786e3a0553"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-478 same-name-but-pin-differs 1548 m",
+     "ids": [
+      "seed-478"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-478 \"Northern Rocks\": same-name-but-pin-differs (\"Northern Rocks\" / \"Northern Rocks\", 1548 m)",
+     "ids": [
+      "seed-478"
+     ]
+    },
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": [
+    "seed-478"
+   ]
+  },
+  {
+   "cid": "nz-003",
+   "line": 3,
+   "name": "Auckland Climbing Gym",
+   "class": "existing",
+   "suggested": "same-as seed-479",
+   "importer": {
+    "class": "existing",
+    "id": "seed-479",
+    "match": {
+     "id": "seed-479",
+     "name": "Auckland Climbing Gym",
+     "reason": "same-name",
+     "dist_m": 21
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-479 but content differs (suburb, lat, lng); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-479 \"Auckland Climbing Gym\": same-name (\"Auckland Climbing Gym\" / \"Auckland Climbing Gym\", 21 m)",
+     "ids": [
+      "seed-479"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate nz-001 \"Boulder Co. Auckland\": related names \"Auckland Climbing Gym\" / \"Boulder Co. Auckland\" 14910 m apart",
+     "ids": [
+      "nz-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-477 \"Boulder Co Auckland\": related names \"Auckland Climbing Gym\" / \"Boulder Co Auckland\" 14951 m apart",
+     "ids": [
+      "seed-477"
+     ]
+    }
+   ],
+   "review_ids": [
+    "nz-001",
+    "seed-477",
+    "seed-479"
+   ]
+  },
+  {
+   "cid": "nz-004",
+   "line": 4,
+   "name": "Extreme Edge Panmure",
+   "class": "existing",
+   "suggested": "same-as seed-480",
+   "importer": {
+    "class": "existing",
+    "id": "seed-480",
+    "match": {
+     "id": "seed-480",
+     "name": "Extreme Edge Panmure",
+     "reason": "same-name",
+     "dist_m": 275
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-480 but content differs (suburb, lat, lng, address); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-480 \"Extreme Edge Panmure\": same-name (\"Extreme Edge Panmure\" / \"Extreme Edge Panmure\", 275 m)",
+     "ids": [
+      "seed-480"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-480"
+   ]
+  },
+  {
+   "cid": "nz-005",
+   "line": 5,
+   "name": "Boulder Co. Hamilton",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-4777e1dfc8"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "nz-006",
+   "line": 6,
+   "name": "Extreme Edge Hamilton",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-d6c9fc20c6"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "nz-007",
+   "line": 7,
+   "name": "Turangi Climbing Gym",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-a3b46353a6"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "nz-008",
+   "line": 8,
+   "name": "The Edge Indoor Rockwall (Taupo)",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-7d5b01519a"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "nz-009",
+   "line": 9,
+   "name": "Rocktopia",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-fd4da13330"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "nz-010",
+   "line": 10,
+   "name": "The Crux Climbing Space (YMCA Taranaki)",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-5d090f1fec"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "nz-011",
+   "line": 11,
+   "name": "Massey University Climbing Wall",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-0c56ed9ae8"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "university wall: check it is open to the public"
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "nz-012",
+   "line": 12,
+   "name": "Fergs Wellington",
+   "class": "existing",
+   "suggested": "same-as seed-481",
+   "importer": {
+    "class": "existing",
+    "id": "seed-481",
+    "match": {
+     "id": "seed-481",
+     "name": "Fergs Wellington",
+     "reason": "same-name",
+     "dist_m": 49
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-481 but content differs (lat, lng, address); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-481 \"Fergs Wellington\": same-name (\"Fergs Wellington\" / \"Fergs Wellington\", 49 m)",
+     "ids": [
+      "seed-481"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "seed-481"
+   ]
+  },
+  {
+   "cid": "nz-013",
+   "line": 13,
+   "name": "Boulder Co. Christchurch",
+   "class": "existing",
+   "suggested": "same-as seed-485",
+   "importer": {
+    "class": "existing",
+    "id": "seed-485",
+    "match": {
+     "id": "seed-485",
+     "name": "Boulder Co Christchurch",
+     "reason": "same-name",
+     "dist_m": 55
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-485 but content differs (name, lat, lng); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-485 \"Boulder Co Christchurch\": same-name (\"Boulder Co. Christchurch\" / \"Boulder Co Christchurch\", 55 m)",
+     "ids": [
+      "seed-485"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "seed-485"
+   ]
+  },
+  {
+   "cid": "nz-014",
+   "line": 14,
+   "name": "Uprising Bouldering",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-d8a4c66a45"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-484 renamed-or-related-name-nearby 0 m",
+     "ids": [
+      "seed-484"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-484 \"Uprising Boulder Gym\": renamed-or-related-name-nearby (\"Uprising Bouldering\" / \"Uprising Boulder Gym\", 0 m)",
+     "ids": [
+      "seed-484"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-484"
+   ]
+  },
+  {
+   "cid": "nz-015",
+   "line": 15,
+   "name": "The Adventure Centre Climbing Wall (The Kind Foundation, formerly YMCA Roxx)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-3d6c85ae88"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "nz-016",
+   "line": 16,
+   "name": "Resistance Climbing",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-c83c08e524"
+   },
+   "flags": [
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "nz-017",
+   "line": 17,
+   "name": "The Gravity Well",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-51ca2c73d6"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "nz-018",
+   "line": 18,
+   "name": "Vertical Limits",
+   "class": "blocked",
+   "suggested": "reject closed",
+   "importer": {
+    "class": "new",
+    "id": "g-b7cc3d8bee"
+   },
+   "blockers": [
+    {
+     "code": "closed",
+     "detail": "status_claim is closed"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    },
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": []
+  }
+ ],
+ "reconcile_sha256": "6ee99797cee2d466bb354269c768ec6b8820a0f595f8040623430021f47d0851"
+}

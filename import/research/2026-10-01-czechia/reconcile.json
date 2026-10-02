@@ -1,0 +1,544 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-01-czechia",
+ "inputs": {
+  "section_sha256": "bcea2d8960913a702f1bd140601e4a002c2d6ffd3fb4d89c6a370cace7dff8e2",
+  "sources_sha256": "19e7ca82bd29ddf29d311b35a18505499ec84a4598d202c9cf8c67d6cc283f8b",
+  "candidates_sha256": "9bfec783adb9ac357a6204c800f1ff85ef58403c903faa82ce575eb7fb9c81f0",
+  "index": {
+   "sha256": "8dbddf7924c219a236c2ffff9c8fb005dd02d1dcfe61640f8817d49fb2484af2",
+   "count": 2127
+  },
+  "staged_batches_compared": [],
+  "other_sections_compared": []
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 25,
+  "ready": 9,
+  "review": 13,
+  "blocked": 1,
+  "existing": 2,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "cz-001",
+   "line": 1,
+   "name": "HUDY Boulder Karlín",
+   "class": "existing",
+   "suggested": "same-as seed-1450",
+   "importer": {
+    "class": "existing",
+    "id": "seed-1450",
+    "match": {
+     "id": "seed-1450",
+     "name": "HUDY Boulder Karlín",
+     "reason": "same-name",
+     "dist_m": 6
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-1450 but content differs (suburb, lat, lng, address); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1450 \"HUDY Boulder Karlín\": same-name (\"HUDY Boulder Karlín\" / \"HUDY Boulder Karlín\", 6 m)",
+     "ids": [
+      "seed-1450"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-1450"
+   ]
+  },
+  {
+   "cid": "cz-002",
+   "line": 2,
+   "name": "SmíchOFF",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-a01f8209e0"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1452 similar-name-nearby 108 m",
+     "ids": [
+      "seed-1452"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1452 \"Smichoff Climbing Center\": similar-name-nearby (\"SmíchOFF\" / \"Smichoff Climbing Center\", 108 m)",
+     "ids": [
+      "seed-1452"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate cz-008 \"Lezecké centrum Ruzyně\": related names \"Lezecké centrum SmíchOFF\" / \"Lezecké centrum Ruzyně\" 7556 m apart",
+     "ids": [
+      "cz-008"
+     ]
+    }
+   ],
+   "review_ids": [
+    "cz-008",
+    "seed-1452"
+   ]
+  },
+  {
+   "cid": "cz-003",
+   "line": 3,
+   "name": "BigWall",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-69110af8e3"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1455 similar-name-nearby 149 m",
+     "ids": [
+      "seed-1455"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1455 \"BigWall Praha-Vysočany\": similar-name-nearby (\"BigWall\" / \"BigWall Praha-Vysočany\", 149 m)",
+     "ids": [
+      "seed-1455"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-1455"
+   ]
+  },
+  {
+   "cid": "cz-004",
+   "line": 4,
+   "name": "Boulder V síti",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-dac2e80bc3"
+   },
+   "flags": [
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "cz-005",
+   "line": 5,
+   "name": "UltraAnt",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-96713e45e8"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "cz-006",
+   "line": 6,
+   "name": "JamJam Boulderovka",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-f53050836a"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1453 similar-name-nearby 130 m",
+     "ids": [
+      "seed-1453"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1453 \"JamJam Boulder Gym\": similar-name-nearby (\"JamJam Boulderovka\" / \"JamJam Boulder Gym\", 130 m)",
+     "ids": [
+      "seed-1453"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "seed-1453"
+   ]
+  },
+  {
+   "cid": "cz-007",
+   "line": 7,
+   "name": "Třináctka",
+   "class": "existing",
+   "suggested": "same-as seed-1454",
+   "importer": {
+    "class": "existing",
+    "id": "seed-1454",
+    "match": {
+     "id": "seed-1454",
+     "name": "Třináctka",
+     "reason": "same-name",
+     "dist_m": 183
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-1454 but content differs (suburb, lat, lng, address); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1454 \"Třináctka\": same-name (\"Třináctka\" / \"Třináctka\", 183 m)",
+     "ids": [
+      "seed-1454"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "seed-1454"
+   ]
+  },
+  {
+   "cid": "cz-008",
+   "line": 8,
+   "name": "Lezecké centrum Ruzyně",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-4756a6687f"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate cz-002 \"SmíchOFF\": related names \"Lezecké centrum Ruzyně\" / \"Lezecké centrum SmíchOFF\" 7556 m apart",
+     "ids": [
+      "cz-002"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "cz-002"
+   ]
+  },
+  {
+   "cid": "cz-009",
+   "line": 9,
+   "name": "HANGAR Brno",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-7cdfe857b7"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "cz-010",
+   "line": 10,
+   "name": "HUDY lezecká stěna Brno",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-9ddf6a0d6e"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "cz-011",
+   "line": 11,
+   "name": "HANGAR Ostrava",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-4ec0acdd4f"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "cz-012",
+   "line": 12,
+   "name": "Tendon Blok",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-9d32a01682"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "cz-013",
+   "line": 13,
+   "name": "Stěna Eliass",
+   "class": "blocked",
+   "suggested": "reject closed",
+   "importer": {
+    "class": "new",
+    "id": "g-37d374bf55"
+   },
+   "blockers": [
+    {
+     "code": "closed",
+     "detail": "status_claim is closed"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "cz-014",
+   "line": 14,
+   "name": "Replay boulder",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-491eb60dc0"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "cz-015",
+   "line": 15,
+   "name": "Jungle Pardubice",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-6176855dfb"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "cz-016",
+   "line": 16,
+   "name": "Gekon Boulder Bar",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-bdb66a1ace"
+   },
+   "flags": [
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "cz-017",
+   "line": 17,
+   "name": "MakakAréna",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-b3634f358d"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "cz-018",
+   "line": 18,
+   "name": "Pajkland",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-4aaf1c3c1c"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "cz-019",
+   "line": 19,
+   "name": "Flash Wall Olomouc",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-6c864ad8fa"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "cz-020",
+   "line": 20,
+   "name": "Stěna Lanovka",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-a32198c132"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate cz-021 \"Limit Boulder\": related names \"Lanovka České Budějovice\" / \"Limit Boulder České Budějovice\" 1937 m apart",
+     "ids": [
+      "cz-021"
+     ]
+    }
+   ],
+   "review_ids": [
+    "cz-021"
+   ]
+  },
+  {
+   "cid": "cz-021",
+   "line": 21,
+   "name": "Limit Boulder",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-13b8778bdb"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate cz-020 \"Stěna Lanovka\": related names \"Limit Boulder České Budějovice\" / \"Lanovka České Budějovice\" 1937 m apart",
+     "ids": [
+      "cz-020"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "cz-020"
+   ]
+  },
+  {
+   "cid": "cz-022",
+   "line": 22,
+   "name": "V16",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-2e20de5103"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    },
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "cz-023",
+   "line": 23,
+   "name": "HUDY lezecká stěna Ústí nad Labem",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-8cbc1eab88"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "cz-024",
+   "line": 24,
+   "name": "Boulder Bar Točna",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-23477926a6"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "cz-025",
+   "line": 25,
+   "name": "Komec",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-6fb2ca2bcd"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    },
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": []
+  }
+ ],
+ "reconcile_sha256": "2ba77831b7779cbd9bf8a54d93ce8059b9333ba66cb37602c7a99018cb43d02a"
+}

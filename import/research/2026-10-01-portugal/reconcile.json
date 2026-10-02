@@ -1,0 +1,827 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-01-portugal",
+ "inputs": {
+  "section_sha256": "befd652ad795cdd7dd301690d0e021a0ece7dc09345bc78113a6a2e9119b7646",
+  "sources_sha256": "40c107fa25d3117ce74ad9e4aba9ff042e9a6506834f47d02d77b90cd508063c",
+  "candidates_sha256": "e8d02a4f341cb809d423c4a0983e5ca1176b5ee9f4ff8ba3b249fb5c4ab3e7d6",
+  "index": {
+   "sha256": "8dbddf7924c219a236c2ffff9c8fb005dd02d1dcfe61640f8817d49fb2484af2",
+   "count": 2127
+  },
+  "staged_batches_compared": [],
+  "other_sections_compared": []
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 31,
+  "ready": 8,
+  "review": 5,
+  "blocked": 18,
+  "existing": 0,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "pt-001",
+   "line": 1,
+   "name": "Climb UP",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-426edfcfc3"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "pt-002",
+   "line": 2,
+   "name": "Escala25",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-98762c1caa"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-1263 \"Escala 25 - Lisboa\": related names \"Escala 25\" / \"Escala 25 - Lisboa\" 709 m apart",
+     "ids": [
+      "seed-1263"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-1263"
+   ]
+  },
+  {
+   "cid": "pt-003",
+   "line": 3,
+   "name": "Vertigo Climbing Center Marvila",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-18d02cfa65"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate pt-004 \"Vertigo Oriente Climbing Center\": related names \"Vertigo Climbing Wall\" / \"Vertigo Oriente Climbing Center\" 2340 m apart",
+     "ids": [
+      "pt-004"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-1265 \"Vertigo - Lisboa\": related names \"Vertigo Climbing Wall\" / \"Vertigo - Lisboa\" 2420 m apart",
+     "ids": [
+      "seed-1265"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate pt-004 has the same website",
+     "ids": [
+      "pt-004"
+     ]
+    }
+   ],
+   "review_ids": [
+    "pt-004",
+    "seed-1265"
+   ]
+  },
+  {
+   "cid": "pt-004",
+   "line": 4,
+   "name": "Vertigo Oriente Climbing Center",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-4212acde1d"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1265 similar-name-nearby 123 m",
+     "ids": [
+      "seed-1265"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1265 \"Vertigo - Lisboa\": similar-name-nearby (\"Vertigo Oriente Climbing Center\" / \"Vertigo - Lisboa\", 123 m)",
+     "ids": [
+      "seed-1265"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate pt-003 \"Vertigo Climbing Center Marvila\": related names \"Vertigo Oriente Climbing Center\" / \"Vertigo Climbing Wall\" 2340 m apart",
+     "ids": [
+      "pt-003"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate pt-003 has the same website",
+     "ids": [
+      "pt-003"
+     ]
+    }
+   ],
+   "review_ids": [
+    "pt-003",
+    "seed-1265"
+   ]
+  },
+  {
+   "cid": "pt-005",
+   "line": 5,
+   "name": "CRUX Climbing Center",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-3f71a1851a"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "pt-006",
+   "line": 6,
+   "name": "Altissimo Lisboa",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-4fbb4000f3"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "pt-007",
+   "line": 7,
+   "name": "9.8 Gravity Climbing Lisbon",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-f30a6a3e4f"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "pt-008",
+   "line": 8,
+   "name": "Rocódromo do Areeiro - Casal Vistoso",
+   "class": "blocked",
+   "suggested": "reject not-a-gym",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-db6875c2a6"
+   },
+   "blockers": [
+    {
+     "code": "not-a-gym",
+     "detail": "category other"
+    },
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1264 co-located 41 m",
+     "ids": [
+      "seed-1264"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1264 \"Rocódromo FCMP Casal Vistoso - Lisboa\": co-located (\"Rocódromo do Areeiro - Casal Vistoso\" / \"Rocódromo FCMP Casal Vistoso - Lisboa\", 41 m)",
+     "ids": [
+      "seed-1264"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-1264"
+   ]
+  },
+  {
+   "cid": "pt-009",
+   "line": 9,
+   "name": "Vertical Wall Climbing Lisbon",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-2feee7a03e"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "pt-010",
+   "line": 10,
+   "name": "Ericeira Boulder",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-9b6508a49c"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "pt-011",
+   "line": 11,
+   "name": "The West Climbing Center",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-9b8f3b9312"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "pt-012",
+   "line": 12,
+   "name": "IN WALL Climbing Center",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-b01c57ad57"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "pt-013",
+   "line": 13,
+   "name": "Dolinas Climbing Center",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-23f6f94156"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "pt-014",
+   "line": 14,
+   "name": "upa! Climbing Center",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-2b99baed19"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1267 renamed-or-related-name-nearby 8 m",
+     "ids": [
+      "seed-1267"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1267 \"upa! Climbing Center - Coimbra\": renamed-or-related-name-nearby (\"upa! Climbing Center\" / \"upa! Climbing Center - Coimbra\", 8 m)",
+     "ids": [
+      "seed-1267"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-1267"
+   ]
+  },
+  {
+   "cid": "pt-015",
+   "line": 15,
+   "name": "Proa Climbing Center",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-1ada49166d"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "pt-016",
+   "line": 16,
+   "name": "The North Wall",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-6a6983dc2e"
+   },
+   "blockers": [
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-1269 \"The North Wall - Porto\": related names \"The North Wall\" / \"The North Wall - Porto\" 4419 m apart",
+     "ids": [
+      "seed-1269"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-1269"
+   ]
+  },
+  {
+   "cid": "pt-017",
+   "line": 17,
+   "name": "São Rock Climbing",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-6c966e1e41"
+   },
+   "blockers": [
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1268 renamed-or-related-name-nearby 0 m; seed-1269 co-located 0 m",
+     "ids": [
+      "seed-1268",
+      "seed-1269"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1268 \"São Rock - Porto\": renamed-or-related-name-nearby (\"São Rock Climbing\" / \"São Rock - Porto\", 0 m)",
+     "ids": [
+      "seed-1268"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1269 \"The North Wall - Porto\": co-located (\"São Rock Climbing\" / \"The North Wall - Porto\", 0 m)",
+     "ids": [
+      "seed-1269"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-1268",
+    "seed-1269"
+   ]
+  },
+  {
+   "cid": "pt-018",
+   "line": 18,
+   "name": "Zone Climb",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-722fad5f74"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "pt-019",
+   "line": 19,
+   "name": "Clube de Escalada da Maia",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-66a794005c"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "pt-020",
+   "line": 20,
+   "name": "OneSoul Climbing",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-78487a9afe"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "pt-021",
+   "line": 21,
+   "name": "Núcleo de Montanha de Espinho",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-17a837081f"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "pt-022",
+   "line": 22,
+   "name": "Clube de Escalada de Braga",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-70a42d0347"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "pt-023",
+   "line": 23,
+   "name": "ADEB Braga",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-513a2b8ae9"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "pt-024",
+   "line": 24,
+   "name": "Bloco Bouldering",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-bf73d02c76"
+   },
+   "blockers": [
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "flags": [
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "pt-025",
+   "line": 25,
+   "name": "Boulder Penha Garcia",
+   "class": "blocked",
+   "suggested": "reject not-a-gym",
+   "importer": {
+    "class": "new",
+    "id": "g-e3783e81b2"
+   },
+   "blockers": [
+    {
+     "code": "not-a-gym",
+     "detail": "category other"
+    },
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "pt-026",
+   "line": 26,
+   "name": "Escalava",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-1e1a5c253d"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "pt-027",
+   "line": 27,
+   "name": "Madeira Climbing Center",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-043e20383d"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "pt-028",
+   "line": 28,
+   "name": "Parque Desportivo de Água de Pena",
+   "class": "blocked",
+   "suggested": "reject not-a-gym",
+   "importer": {
+    "class": "new",
+    "id": "g-93a548fee7"
+   },
+   "blockers": [
+    {
+     "code": "not-a-gym",
+     "detail": "category other"
+    },
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "pt-029",
+   "line": 29,
+   "name": "Rocódromo de Vila Real",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-f9d00ea1af"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "pt-030",
+   "line": 30,
+   "name": "Vertical Escalada",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-a5563c262e"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "pt-031",
+   "line": 31,
+   "name": "Rocódromo 100 Vertigens",
+   "class": "blocked",
+   "suggested": "reject not-a-gym",
+   "importer": {
+    "class": "new",
+    "id": "g-d7a72db4f3"
+   },
+   "blockers": [
+    {
+     "code": "not-a-gym",
+     "detail": "category other"
+    },
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  }
+ ],
+ "reconcile_sha256": "fc18924ae88c84cbb0f0c9aa4ba979ad52657497ec1c990ca309fb7c8f2177b1"
+}

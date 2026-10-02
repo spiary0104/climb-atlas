@@ -1,0 +1,355 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-01-croatia",
+ "inputs": {
+  "section_sha256": "07214276d4f4e47d05b399d2619e3ac0376ee2751f1c5bd57f70be95eed927cb",
+  "sources_sha256": "36fadd41f3e948d25f9d3735db4b59a3a9f3e9c2554bb9bb6ac98a1f645d3fe6",
+  "candidates_sha256": "64e8582c6f8a4ae2290695ef0885193c5eb74b97e2f399e98485039dee02a5b7",
+  "index": {
+   "sha256": "8dbddf7924c219a236c2ffff9c8fb005dd02d1dcfe61640f8817d49fb2484af2",
+   "count": 2127
+  },
+  "staged_batches_compared": [],
+  "other_sections_compared": []
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 11,
+  "ready": 0,
+  "review": 5,
+  "blocked": 5,
+  "existing": 1,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "hr-001",
+   "line": 1,
+   "name": "The Hive Zagreb",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-330564b6a2"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1479 co-located 0 m; seed-1480 co-located 0 m; seed-1481 renamed-or-related-name-nearby 0 m",
+     "ids": [
+      "seed-1479",
+      "seed-1480",
+      "seed-1481"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1479 \"Boulder Zona\": co-located (\"The Hive Zagreb\" / \"Boulder Zona\", 0 m)",
+     "ids": [
+      "seed-1479"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1480 \"Fothia Velesajam dvorana za penjanje\": co-located (\"The Hive Zagreb\" / \"Fothia Velesajam dvorana za penjanje\", 0 m)",
+     "ids": [
+      "seed-1480"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1481 \"The Hive Zagreb - Climbing & Yoga\": renamed-or-related-name-nearby (\"The Hive Zagreb\" / \"The Hive Zagreb - Climbing & Yoga\", 0 m)",
+     "ids": [
+      "seed-1481"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-1479",
+    "seed-1480",
+    "seed-1481"
+   ]
+  },
+  {
+   "cid": "hr-002",
+   "line": 2,
+   "name": "Boulder Zona",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-0b3040ef0f"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1479 same-name-but-pin-differs 9560 m",
+     "ids": [
+      "seed-1479"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1479 \"Boulder Zona\": same-name-but-pin-differs (\"Boulder Zona\" / \"Boulder Zona\", 9560 m)",
+     "ids": [
+      "seed-1479"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-1479"
+   ]
+  },
+  {
+   "cid": "hr-003",
+   "line": 3,
+   "name": "Fothia Zagreb Fair (Velesajam)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-99878930b3"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-1480 \"Fothia Velesajam dvorana za penjanje\": related names \"Fothia Velesajam\" / \"Fothia Velesajam dvorana za penjanje\" 4617 m apart",
+     "ids": [
+      "seed-1480"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-1480"
+   ]
+  },
+  {
+   "cid": "hr-004",
+   "line": 4,
+   "name": "BoldeRi",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-2efa49968e"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "hr-005",
+   "line": 5,
+   "name": "SPK Lapis (Dom mladih boulder hall)",
+   "class": "existing",
+   "suggested": "same-as seed-1483",
+   "importer": {
+    "class": "existing",
+    "id": "seed-1483",
+    "match": {
+     "id": "seed-1483",
+     "name": "Spk Lapis",
+     "reason": "same-name",
+     "dist_m": 204
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-1483 but content differs (name, lat, lng, address, types); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1483 \"Spk Lapis\": same-name (\"SPK Lapis (Dom mladih boulder hall)\" / \"Spk Lapis\", 204 m)",
+     "ids": [
+      "seed-1483"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-1483"
+   ]
+  },
+  {
+   "cid": "hr-006",
+   "line": 6,
+   "name": "SPK Marulianus climbing centre",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-18bb897f6a"
+   },
+   "blockers": [
+    {
+     "code": "coarse-coordinates",
+     "detail": "coordinates only locate the area, not the gym"
+    }
+   ],
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1482 similar-name-nearby 218 m",
+     "ids": [
+      "seed-1482"
+     ]
+    },
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1482 \"Climbing Center Marulianus\": similar-name-nearby (\"SPK Marulianus climbing centre\" / \"Climbing Center Marulianus\", 218 m)",
+     "ids": [
+      "seed-1482"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-1482"
+   ]
+  },
+  {
+   "cid": "hr-007",
+   "line": 7,
+   "name": "SPK Tuhobic climbing hall",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-2da66d4d5c"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "hr-008",
+   "line": 8,
+   "name": "SPK Vertikal Varazdin climbing hall",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-49248af586"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "hr-009",
+   "line": 9,
+   "name": "SPK Bastion Osijek hall",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-3e36742553"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "hr-010",
+   "line": 10,
+   "name": "Momentum Boulder",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-72549b2253"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "hr-011",
+   "line": 11,
+   "name": "SPK Direkt Lepoglava hall",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-388a8c1604"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    }
+   ],
+   "review_ids": []
+  }
+ ],
+ "reconcile_sha256": "b609bedca912f9baad740a0d2c561a14649a20288e0086819c4be2ad5b03627f"
+}
