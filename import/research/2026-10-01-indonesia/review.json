@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "section_id": "2026-10-01-indonesia",
+  "reviewer": "Claude (AI) on the owner's instruction; owner sign-off pending",
+  "reviewed": "2026-10-01",
+  "decisions": {
+    "id-001": {
+      "decision": "accept",
+      "reason": "Single source, but BP is the gym's own official site and shows it exists, is open (daily hours, current pass prices) and offers bouldering; pin is the business location from the site's own page data (building precision), no pin disagreement noted.",
+      "reviewed_against": []
+    },
+    "id-002": {
+      "decision": "accept",
+      "reason": "Single source, but IC is the chain's official site; the FX Sudirman branch page shows bouldering and rope walls and weekly opening hours. Distinct branch from id-003 and id-004: different mall and address in Jakarta Pusat vs Jakarta Selatan, own pin published on indoclimb.com/location (~3 km and ~4 km from siblings).",
+      "reviewed_against": [
+        "id-003",
+        "id-004"
+      ]
+    },
+    "id-003": {
+      "decision": "accept",
+      "reason": "Single source, but IC is the chain's official site; the Kuningan City branch page lists a bouldering area, an interval bouldering area and weekly hours. Distinct branch from id-002 and id-004 (own mall, own address and own published pin).",
+      "reviewed_against": [
+        "id-002",
+        "id-004"
+      ]
+    },
+    "id-004": {
+      "decision": "accept",
+      "reason": "Single source, but IC is the chain's official site. Re-read the rendered branch page on 2026-10-01: it says the 780 sqm bouldering-only gym is 'now open for soft opening', lists hours for this week and has a booking widget, so it is operating and open to the public. Caveat: still in soft opening. Distinct branch from id-002 and id-003 (Lippo Mall Kemang address and own published pin).",
+      "reviewed_against": [
+        "id-002",
+        "id-003"
+      ]
+    },
+    "id-005": {
+      "decision": "accept",
+      "reason": "Single source, but DS is the gym's own official site; the Alam Sutera branch page shows an indoor bouldering gym with day passes and memberships and a live booking site (2026 footer). Pin is the branch lat/long published in the DS location list (building precision).",
+      "reviewed_against": []
+    },
+    "id-006": {
+      "decision": "accept",
+      "reason": "Single source, but GD is the gym's own official site. I rendered the site in a browser on 2026-10-01: it describes a premium bouldering gym with address, Mon-Sun 10:00-22:00 hours, cafe and a 2026-dated event, so it exists, is open and offers bouldering. Pin is the Google Maps embed pin from the site. Caveat: site is a script-rendered app with a placeholder event and a 2025 copyright line.",
+      "reviewed_against": []
+    },
+    "id-007": {
+      "decision": "defer",
+      "reason": "Open status rests on an inferred year: the own site says soft opening August 5th but never prints the year; the 2026 reading comes from site edit dates and lapsed pricing. Re-check for a dated opening or current hours before accepting."
+    },
+    "id-008": {
+      "decision": "defer",
+      "reason": "Primary bouldering evidence missing: the mall page (BX) shows an indoor climbing area open daily but never lists disciplines; bouldering is only mentioned by non-primary local news. Also the pin is the mall pin, not the gym. Needs the mall or gym's own page or social showing a bouldering wall."
+    },
+    "id-009": {
+      "decision": "defer",
+      "reason": "Open status not confirmed: no primary source shows it is open now (old website now redirects to an unrelated gambling site and must not be used; the Instagram @baliclimbing evidence only supports exists/bouldering/name, not current status). Needs a recent official Instagram post, new official site or other primary proof of current operation. Pin is OSM node 5666666835 (second OSM feature way 1069153291 about 30 m away)."
+    }
+  }
+}

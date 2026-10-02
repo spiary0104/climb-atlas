@@ -1,0 +1,814 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-01-singapore",
+ "inputs": {
+  "section_sha256": "ac8fa6eaebaf36b488c08ac5ac1823ba7d30bd0a4f753599bb4593abdaa829e4",
+  "sources_sha256": "eb7f747b638359c307410965040c5a92394fbd268091f3002dcd8c62884f4e2b",
+  "candidates_sha256": "06ccd314f117f2de7bb6ece949056f84bf3ccb42d3926369167a1b74f8661881",
+  "index": {
+   "sha256": "8dbddf7924c219a236c2ffff9c8fb005dd02d1dcfe61640f8817d49fb2484af2",
+   "count": 2127
+  },
+  "staged_batches_compared": [],
+  "other_sections_compared": []
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 27,
+  "ready": 7,
+  "review": 14,
+  "blocked": 5,
+  "existing": 1,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "sg-001",
+   "line": 1,
+   "name": "Boulder Movement Downtown",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-f96c32d46b"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate sg-002 has the same website",
+     "ids": [
+      "sg-002"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate sg-003 has the same website",
+     "ids": [
+      "sg-003"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate sg-004 has the same website",
+     "ids": [
+      "sg-004"
+     ]
+    }
+   ],
+   "review_ids": [
+    "sg-002",
+    "sg-003",
+    "sg-004"
+   ]
+  },
+  {
+   "cid": "sg-002",
+   "line": 2,
+   "name": "Boulder Movement Bugis",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-9e5903dc39"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate sg-001 has the same website",
+     "ids": [
+      "sg-001"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate sg-003 has the same website",
+     "ids": [
+      "sg-003"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate sg-004 has the same website",
+     "ids": [
+      "sg-004"
+     ]
+    }
+   ],
+   "review_ids": [
+    "sg-001",
+    "sg-003",
+    "sg-004"
+   ]
+  },
+  {
+   "cid": "sg-003",
+   "line": 3,
+   "name": "Boulder Movement Rochor",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-cab3d4cd7b"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate sg-001 has the same website",
+     "ids": [
+      "sg-001"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate sg-002 has the same website",
+     "ids": [
+      "sg-002"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate sg-004 has the same website",
+     "ids": [
+      "sg-004"
+     ]
+    }
+   ],
+   "review_ids": [
+    "sg-001",
+    "sg-002",
+    "sg-004"
+   ]
+  },
+  {
+   "cid": "sg-004",
+   "line": 4,
+   "name": "Boulder Movement Tai Seng",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-6847f87580"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate sg-008 \"Boulder Planet Tai Seng\": related names \"Boulder Movement Tai Seng\" / \"Boulder Planet Tai Seng\" 289 m apart",
+     "ids": [
+      "sg-008"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate sg-001 has the same website",
+     "ids": [
+      "sg-001"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate sg-002 has the same website",
+     "ids": [
+      "sg-002"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate sg-003 has the same website",
+     "ids": [
+      "sg-003"
+     ]
+    }
+   ],
+   "review_ids": [
+    "sg-001",
+    "sg-002",
+    "sg-003",
+    "sg-008"
+   ]
+  },
+  {
+   "cid": "sg-005",
+   "line": 5,
+   "name": "boulder+ Aperia",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-ddb52e98da"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate sg-006 has the same website",
+     "ids": [
+      "sg-006"
+     ]
+    }
+   ],
+   "review_ids": [
+    "sg-006"
+   ]
+  },
+  {
+   "cid": "sg-006",
+   "line": 6,
+   "name": "boulder+ The Chevrons",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-07178b23cb"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate sg-005 has the same website",
+     "ids": [
+      "sg-005"
+     ]
+    }
+   ],
+   "review_ids": [
+    "sg-005"
+   ]
+  },
+  {
+   "cid": "sg-007",
+   "line": 7,
+   "name": "Boulder Planet Sembawang",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-d152720a9c"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate sg-008 has the same website",
+     "ids": [
+      "sg-008"
+     ]
+    }
+   ],
+   "review_ids": [
+    "sg-008"
+   ]
+  },
+  {
+   "cid": "sg-008",
+   "line": 8,
+   "name": "Boulder Planet Tai Seng",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-caa551790b"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate sg-004 \"Boulder Movement Tai Seng\": related names \"Boulder Planet Tai Seng\" / \"Boulder Movement Tai Seng\" 289 m apart",
+     "ids": [
+      "sg-004"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate sg-007 has the same website",
+     "ids": [
+      "sg-007"
+     ]
+    }
+   ],
+   "review_ids": [
+    "sg-004",
+    "sg-007"
+   ]
+  },
+  {
+   "cid": "sg-009",
+   "line": 9,
+   "name": "BFF Climb Bendemeer",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-e3c22a0dbe"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate sg-010 has the same website",
+     "ids": [
+      "sg-010"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate sg-011 has the same website",
+     "ids": [
+      "sg-011"
+     ]
+    }
+   ],
+   "review_ids": [
+    "sg-010",
+    "sg-011"
+   ]
+  },
+  {
+   "cid": "sg-010",
+   "line": 10,
+   "name": "BFF Climb Tampines Hub",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-d3aa4eb39d"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate sg-011 \"BFF Climb Tampines Yoha\": related names \"BFF Climb Tampines Hub\" / \"BFF Climb Tampines Yoha\" 1144 m apart",
+     "ids": [
+      "sg-011"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate sg-009 has the same website",
+     "ids": [
+      "sg-009"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate sg-011 has the same website",
+     "ids": [
+      "sg-011"
+     ]
+    }
+   ],
+   "review_ids": [
+    "sg-009",
+    "sg-011"
+   ]
+  },
+  {
+   "cid": "sg-011",
+   "line": 11,
+   "name": "BFF Climb Tampines Yoha",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-3c144dfa48"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate sg-010 \"BFF Climb Tampines Hub\": related names \"BFF Climb Tampines Yoha\" / \"BFF Climb Tampines Hub\" 1144 m apart",
+     "ids": [
+      "sg-010"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate sg-009 has the same website",
+     "ids": [
+      "sg-009"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate sg-010 has the same website",
+     "ids": [
+      "sg-010"
+     ]
+    }
+   ],
+   "review_ids": [
+    "sg-009",
+    "sg-010"
+   ]
+  },
+  {
+   "cid": "sg-012",
+   "line": 12,
+   "name": "fit · bloc Kent Ridge",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-f38f20d8c0"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate sg-013 has the same website",
+     "ids": [
+      "sg-013"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate sg-014 has the same website",
+     "ids": [
+      "sg-014"
+     ]
+    }
+   ],
+   "review_ids": [
+    "sg-013",
+    "sg-014"
+   ]
+  },
+  {
+   "cid": "sg-013",
+   "line": 13,
+   "name": "fit · bloc Depot Heights",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-0d06c06c2d"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate sg-012 has the same website",
+     "ids": [
+      "sg-012"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate sg-014 has the same website",
+     "ids": [
+      "sg-014"
+     ]
+    }
+   ],
+   "review_ids": [
+    "sg-012",
+    "sg-014"
+   ]
+  },
+  {
+   "cid": "sg-014",
+   "line": 14,
+   "name": "fit · bloc Telok Ayer",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-e8f3a38dae"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate sg-012 has the same website",
+     "ids": [
+      "sg-012"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate sg-013 has the same website",
+     "ids": [
+      "sg-013"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "sg-012",
+    "sg-013"
+   ]
+  },
+  {
+   "cid": "sg-015",
+   "line": 15,
+   "name": "Climb Central The Kallang",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-79704ff1b7"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate sg-016 has the same website",
+     "ids": [
+      "sg-016"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate sg-017 has the same website",
+     "ids": [
+      "sg-017"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate sg-018 has the same website",
+     "ids": [
+      "sg-018"
+     ]
+    }
+   ],
+   "review_ids": [
+    "sg-016",
+    "sg-017",
+    "sg-018"
+   ]
+  },
+  {
+   "cid": "sg-016",
+   "line": 16,
+   "name": "Climb Central Funan",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-bb83417fe9"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate sg-015 has the same website",
+     "ids": [
+      "sg-015"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate sg-017 has the same website",
+     "ids": [
+      "sg-017"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate sg-018 has the same website",
+     "ids": [
+      "sg-018"
+     ]
+    }
+   ],
+   "review_ids": [
+    "sg-015",
+    "sg-017",
+    "sg-018"
+   ]
+  },
+  {
+   "cid": "sg-017",
+   "line": 17,
+   "name": "Climb Central Novena",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-1bea25e047"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate sg-015 has the same website",
+     "ids": [
+      "sg-015"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate sg-016 has the same website",
+     "ids": [
+      "sg-016"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate sg-018 has the same website",
+     "ids": [
+      "sg-018"
+     ]
+    }
+   ],
+   "review_ids": [
+    "sg-015",
+    "sg-016",
+    "sg-018"
+   ]
+  },
+  {
+   "cid": "sg-018",
+   "line": 18,
+   "name": "Climb Central SAFRA Choa Chu Kang",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-d6dba73a67"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate sg-015 has the same website",
+     "ids": [
+      "sg-015"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate sg-016 has the same website",
+     "ids": [
+      "sg-016"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate sg-017 has the same website",
+     "ids": [
+      "sg-017"
+     ]
+    }
+   ],
+   "review_ids": [
+    "sg-015",
+    "sg-016",
+    "sg-017"
+   ]
+  },
+  {
+   "cid": "sg-019",
+   "line": 19,
+   "name": "Kinetics Climbing",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-063336c756"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "sg-020",
+   "line": 20,
+   "name": "Ground Up Climbing",
+   "class": "existing",
+   "suggested": "same-as seed-1731",
+   "importer": {
+    "class": "existing",
+    "id": "seed-1731",
+    "match": {
+     "id": "seed-1731",
+     "name": "Ground Up Climbing",
+     "reason": "same-name",
+     "dist_m": 0
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-1731 but content differs (suburb, address); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1731 \"Ground Up Climbing\": same-name (\"Ground Up Climbing\" / \"Ground Up Climbing\", 0 m)",
+     "ids": [
+      "seed-1731"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-1731"
+   ]
+  },
+  {
+   "cid": "sg-021",
+   "line": 21,
+   "name": "Outpost Climbing",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-86c0d65638"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "sg-022",
+   "line": 22,
+   "name": "Lighthouse Climbing",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-f49056682b"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "sg-023",
+   "line": 23,
+   "name": "OYEYO Boulder Home",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-ba470b7297"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "sg-024",
+   "line": 24,
+   "name": "Z-Vertigo Boulder Gym",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-935c535d0d"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "sg-025",
+   "line": 25,
+   "name": "Climba",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-6f2fb86cf4"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "sg-026",
+   "line": 26,
+   "name": "Project Send",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-f230eccf5d"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "sg-027",
+   "line": 27,
+   "name": "Ark Bloc",
+   "class": "blocked",
+   "suggested": "reject not-a-gym",
+   "importer": {
+    "class": "new",
+    "id": "g-d5a893b8cb"
+   },
+   "blockers": [
+    {
+     "code": "not-a-gym",
+     "detail": "category other"
+    }
+   ],
+   "review_ids": []
+  }
+ ],
+ "reconcile_sha256": "0a3229f661ef0cf0cce94c2aa9f973de419ba22ccaa01e400eadf9e0ef8bf746"
+}

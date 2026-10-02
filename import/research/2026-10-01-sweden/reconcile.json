@@ -1,0 +1,771 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-01-sweden",
+ "inputs": {
+  "section_sha256": "caf5638f3c625eeb9714c7c5073c45cd4ef61910c8f5f580eace6a0424ed805c",
+  "sources_sha256": "6f3727e1ba07dad15fc24db144998b71d13643dc3317f27bbff80a87522038dc",
+  "candidates_sha256": "dbfbdc3f2ec12537495c350fc1a478ebdd943251ddc114a77308ebc677d4c3ed",
+  "index": {
+   "sha256": "8dbddf7924c219a236c2ffff9c8fb005dd02d1dcfe61640f8817d49fb2484af2",
+   "count": 2127
+  },
+  "staged_batches_compared": [],
+  "other_sections_compared": []
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 40,
+  "ready": 17,
+  "review": 20,
+  "blocked": 0,
+  "existing": 3,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "se-001",
+   "line": 1,
+   "name": "Klättercentret Solna",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-feec19078c"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "se-002",
+   "line": 2,
+   "name": "Klättercentret Telefonplan",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-870b2b262f"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate se-006 \"Bouldering Sthlm\": related names \"Klättercentret Stockholm\" / \"Bouldering Stockholm\" 5268 m apart",
+     "ids": [
+      "se-006"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-1105 \"Bouldering Stockholm\": related names \"Klättercentret Stockholm\" / \"Bouldering Stockholm\" 5268 m apart",
+     "ids": [
+      "seed-1105"
+     ]
+    }
+   ],
+   "review_ids": [
+    "se-006",
+    "seed-1105"
+   ]
+  },
+  {
+   "cid": "se-003",
+   "line": 3,
+   "name": "Klättercentret Akalla",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-9a4e03c080"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "se-004",
+   "line": 4,
+   "name": "Klätterverket Gasverket",
+   "class": "existing",
+   "suggested": "same-as seed-1106",
+   "importer": {
+    "class": "existing",
+    "id": "seed-1106",
+    "match": {
+     "id": "seed-1106",
+     "name": "Klätterverket Gasverket",
+     "reason": "same-name",
+     "dist_m": 5
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-1106 but content differs (lat, lng, address); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1106 \"Klätterverket Gasverket\": same-name (\"Klätterverket Gasverket\" / \"Klätterverket Gasverket\", 5 m)",
+     "ids": [
+      "seed-1106"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-1106"
+   ]
+  },
+  {
+   "cid": "se-005",
+   "line": 5,
+   "name": "Klätterverket Sickla",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-90fdca529c"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "se-006",
+   "line": 6,
+   "name": "Bouldering Sthlm",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-74c9fc5989"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1105 co-located 0 m",
+     "ids": [
+      "seed-1105"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1105 \"Bouldering Stockholm\": co-located (\"Bouldering Sthlm\" / \"Bouldering Stockholm\", 0 m)",
+     "ids": [
+      "seed-1105"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate se-002 \"Klättercentret Telefonplan\": related names \"Bouldering Stockholm\" / \"Klättercentret Stockholm\" 5268 m apart",
+     "ids": [
+      "se-002"
+     ]
+    }
+   ],
+   "review_ids": [
+    "se-002",
+    "seed-1105"
+   ]
+  },
+  {
+   "cid": "se-007",
+   "line": 7,
+   "name": "Moumo",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-17842e61e2"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "se-008",
+   "line": 8,
+   "name": "Karbin Klätterhall",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-7ebe102aa6"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "se-009",
+   "line": 9,
+   "name": "BLX Bouldering Club",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-a326286d49"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "se-010",
+   "line": 10,
+   "name": "Klätterfabriken",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-e2d5d74e89"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1104 similar-name-nearby 223 m",
+     "ids": [
+      "seed-1104"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1104 \"Klätterfabriken High Sports\": similar-name-nearby (\"Klätterfabriken\" / \"Klätterfabriken High Sports\", 223 m)",
+     "ids": [
+      "seed-1104"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-1104"
+   ]
+  },
+  {
+   "cid": "se-011",
+   "line": 11,
+   "name": "Klätterdomen",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-c5f6755535"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1103 renamed-or-related-name-nearby 0 m",
+     "ids": [
+      "seed-1103"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1103 \"Klätterdomen AB\": renamed-or-related-name-nearby (\"Klätterdomen\" / \"Klätterdomen AB\", 0 m)",
+     "ids": [
+      "seed-1103"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-1103"
+   ]
+  },
+  {
+   "cid": "se-012",
+   "line": 12,
+   "name": "Fysiken Klätterlabbet",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-aa7714146d"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1102 renamed-or-related-name-nearby 0 m",
+     "ids": [
+      "seed-1102"
+     ]
+    },
+    {
+     "code": "limited-access",
+     "detail": "university wall: check it is open to the public"
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1102 \"Fysiken Klätterlabbet Centrum\": renamed-or-related-name-nearby (\"Fysiken Klätterlabbet\" / \"Fysiken Klätterlabbet Centrum\", 0 m)",
+     "ids": [
+      "seed-1102"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-1102"
+   ]
+  },
+  {
+   "cid": "se-013",
+   "line": 13,
+   "name": "Backa Boulder",
+   "class": "existing",
+   "suggested": "same-as seed-1101",
+   "importer": {
+    "class": "existing",
+    "id": "seed-1101",
+    "match": {
+     "id": "seed-1101",
+     "name": "Backa Boulder",
+     "reason": "same-name",
+     "dist_m": 23
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-1101 but content differs (lat, lng, address); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1101 \"Backa Boulder\": same-name (\"Backa Boulder\" / \"Backa Boulder\", 23 m)",
+     "ids": [
+      "seed-1101"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-1101"
+   ]
+  },
+  {
+   "cid": "se-014",
+   "line": 14,
+   "name": "Klättercentret Partille",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-5661495368"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "se-015",
+   "line": 15,
+   "name": "Kungsbacka Klättercenter",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-0380c20ac0"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "se-016",
+   "line": 16,
+   "name": "Klättercentret Malmö",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-7e7da17e08"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "se-017",
+   "line": 17,
+   "name": "Klättercentret Helsingborg",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-daefae9168"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "se-018",
+   "line": 18,
+   "name": "Beta Boulders Malmö",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-03b424f0bf"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "se-019",
+   "line": 19,
+   "name": "Malmö Klätterklubb",
+   "class": "existing",
+   "suggested": "same-as seed-1107",
+   "importer": {
+    "class": "existing",
+    "id": "seed-1107",
+    "match": {
+     "id": "seed-1107",
+     "name": "Malmö Klätterklubb",
+     "reason": "same-name",
+     "dist_m": 27
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-1107 but content differs (lat, lng, address, types); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1107 \"Malmö Klätterklubb\": same-name (\"Malmö Klätterklubb\" / \"Malmö Klätterklubb\", 27 m)",
+     "ids": [
+      "seed-1107"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-1107"
+   ]
+  },
+  {
+   "cid": "se-020",
+   "line": 20,
+   "name": "Skånes Klätterklubb",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-32e871f338"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "se-021",
+   "line": 21,
+   "name": "C4 Climbing",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-f98bfcfa2e"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "se-022",
+   "line": 22,
+   "name": "Urban Boulders",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-acc9aa22f2"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "se-023",
+   "line": 23,
+   "name": "Hangaren Klätterhall",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-fd7af4c044"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "se-024",
+   "line": 24,
+   "name": "Klätterhallen i Norrköping",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-8cb5bbdef2"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "se-025",
+   "line": 25,
+   "name": "Klättra Motala Klätterhall",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-34538e5d42"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "se-026",
+   "line": 26,
+   "name": "Örebro Klättergym",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-84c25ac496"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "se-027",
+   "line": 27,
+   "name": "Klättercentret Västerås",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-8567ba08fb"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "se-028",
+   "line": 28,
+   "name": "Klättercentret Uppsala",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-f07f48beb2"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "se-029",
+   "line": 29,
+   "name": "F11 Klätterverkstad",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-84023fecba"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "se-030",
+   "line": 30,
+   "name": "Mono Loco",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-4015941056"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "se-031",
+   "line": 31,
+   "name": "Fyshuset Klätterhall",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-5ca60b81fa"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "se-032",
+   "line": 32,
+   "name": "Östersunds Klättercenter",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-98914c13ba"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "se-033",
+   "line": 33,
+   "name": "Åre Klätterhall",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-a89df4690a"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "se-034",
+   "line": 34,
+   "name": "Klätterhuset",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-274d7923b8"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "se-035",
+   "line": 35,
+   "name": "Klättervigören",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-09b76c2974"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "se-036",
+   "line": 36,
+   "name": "Racketcentrum (RC Sport klättring)",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-897c8f8d77"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "se-037",
+   "line": 37,
+   "name": "Wallride",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-44b68de98f"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "se-038",
+   "line": 38,
+   "name": "Halmstad Klätterklubb",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-96d6ebb14f"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "se-039",
+   "line": 39,
+   "name": "Karlstad Klätterklubb (K3)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-4bbfdd3dd5"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "se-040",
+   "line": 40,
+   "name": "Höglandsklättrarna Tranås (Klättersilon)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-be4954fdd3"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    }
+   ],
+   "review_ids": []
+  }
+ ],
+ "reconcile_sha256": "eca91052cc02998727eb75d154219356e98c8c54a90ca1964e59c3c46c5a1a3c"
+}

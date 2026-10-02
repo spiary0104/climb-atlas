@@ -1,0 +1,159 @@
+{
+ "generated": "2026-10-01",
+ "method": "Nominatim search, one query per gym, <=1 req/s",
+ "results": [
+  {
+   "name": "Sundsvalls Klätterhall",
+   "city": "Sundsvall",
+   "address": "Universitetsallén 30, 852 34 Sundsvall",
+   "address_source_url": "https://www.xn--sundsvallskltterhall-mzb.se/klattra-hos-oss/",
+   "bouldering": "yes",
+   "query": "Universitetsallén 30, 852 34 Sundsvall, Sundsvall",
+   "result": {
+    "lat": 62.3966333,
+    "lng": 17.2831433,
+    "osm": "way/44803028",
+    "display_name": "Skatehallen, 30, Universitetsallén, Västhagen, Norrmalm, Sundsvall, Sundsvall Municipality, Västernorrland County, 852 34, Sweden",
+    "type": "yes"
+   },
+   "precision": "building",
+   "verdict": "house-number match: usable as geocoded-address/building after review"
+  },
+  {
+   "name": "KFUM Umeå Klättring och bouldering",
+   "city": "Umeå",
+   "address": "Järnvägsallén 20, 903 28 Umeå",
+   "address_source_url": "https://umea.kfum.se/klattervaggen/klattring-och-bouldering/",
+   "bouldering": "yes",
+   "query": "Järnvägsallén 20, 903 28 Umeå, Umeå",
+   "result": {
+    "lat": 63.8281098,
+    "lng": 20.2709391,
+    "osm": "node/314055429",
+    "display_name": "20, Järnvägsallén, Centrum, Centrala stan, Umeå, Umeå kommun, Västerbotten County, 903 28, Sweden",
+    "type": "house"
+   },
+   "precision": "building",
+   "verdict": "house-number match: usable as geocoded-address/building after review"
+  },
+  {
+   "name": "Grepp",
+   "city": "Stenkullen (Lerum)",
+   "address": "Smedvägen 24, 443 61 Stenkullen",
+   "address_source_url": "https://grepp.se/kontakt-2/",
+   "bouldering": "yes",
+   "query": "Smedvägen 24, 443 61 Stenkullen, Stenkullen (Lerum)",
+   "result": {
+    "lat": 57.7884037,
+    "lng": 12.3102214,
+    "osm": "way/23033267",
+    "display_name": "Smedvägen, Stenkullen, Lerums distrikt, Lerum, Lerums kommun, Västra Götaland County, 443 60, Sweden",
+    "type": "tertiary"
+   },
+   "precision": "street",
+   "verdict": "street-level only: geocoded-address/street (reviewer must accept or defer)"
+  },
+  {
+   "name": "Campus1477 Blåsenhus (boulder wall)",
+   "city": "Uppsala",
+   "address": "von Kraemers allé 5, 752 37 Uppsala",
+   "address_source_url": "https://campus1477.se/en/training/climbing/boulder-climbing/",
+   "bouldering": "yes",
+   "query": "von Kraemers allé 5, 752 37 Uppsala, Uppsala",
+   "result": {
+    "lat": 59.85005,
+    "lng": 17.63241,
+    "osm": "node/10742375471",
+    "display_name": "Von Kraemers allé 5, von Kraemers allé, Kåbo, Uppsala, Uppsala kommun, Uppsala County, 751 26, Sweden",
+    "type": "charging_station"
+   },
+   "precision": "street",
+   "verdict": "street-level only: geocoded-address/street (reviewer must accept or defer)"
+  },
+  {
+   "name": "Billingens Klätterklubb",
+   "city": "Skövde",
+   "address": "Gruvgatan 4c, 541 31 Skövde",
+   "address_source_url": "https://www.billingensklatterklubb.se/kontakt",
+   "bouldering": "yes",
+   "query": "Gruvgatan 4c, 541 31 Skövde, Skövde",
+   "result": {
+    "lat": 58.3815223,
+    "lng": 13.8309335,
+    "osm": "node/13970692282",
+    "display_name": "4C, Gruvgatan, Södermalm, Skövde, Skövde kommun, Västra Götaland County, 541 33, Sweden",
+    "type": "house"
+   },
+   "precision": "building",
+   "verdict": "house-number match: usable as geocoded-address/building after review"
+  },
+  {
+   "name": "Ölands Klätterklubb",
+   "city": "Borgholm",
+   "address": "Fritidsvägen 1, 387 31 Borgholm",
+   "address_source_url": "https://olandsklatterklubb.se/",
+   "bouldering": "yes",
+   "query": "Fritidsvägen 1, 387 31 Borgholm, Borgholm",
+   "result": {
+    "lat": 56.8829321,
+    "lng": 16.6552565,
+    "osm": "way/53587680",
+    "display_name": "Fritidsvägen, Borgholm, Borgholms kommun, Kalmar County, 387 31, Sweden",
+    "type": "unclassified"
+   },
+   "precision": "street",
+   "verdict": "street-level only: geocoded-address/street (reviewer must accept or defer)"
+  },
+  {
+   "name": "Karlskrona Bergsportförening (klättergymmet i Gräsvikshallen)",
+   "city": "Karlskrona",
+   "address": "Valhallavägen 3, 371 41 Karlskrona",
+   "address_source_url": "https://karlskronabergsport.se/",
+   "bouldering": "yes",
+   "query": "Valhallavägen 3, 371 41 Karlskrona, Karlskrona",
+   "result": {
+    "lat": 56.1811355,
+    "lng": 15.5932644,
+    "osm": "way/143244891",
+    "display_name": "Gräsvikshallen, 3, Valhallavägen, Blåportshöjden, Galgamarken, Karlskrona, Karlskrona kommun, Blekinge County, 371 41, Sweden",
+    "type": "sports_centre"
+   },
+   "precision": "building",
+   "verdict": "house-number match: usable as geocoded-address/building after review"
+  },
+  {
+   "name": "Härnösands klätterklubb (klätterhallen Grottan)",
+   "city": "Härnösand",
+   "address": "Fiskaregatan 11, Härnösand",
+   "address_source_url": "https://harkk.klubbenonline.se/klattra-i-klatterhallen/oppettider",
+   "bouldering": "yes",
+   "query": "Fiskaregatan 11, Härnösand, Härnösand",
+   "result": {
+    "lat": 62.6426628,
+    "lng": 17.9545903,
+    "osm": "way/816316638",
+    "display_name": "Fiskaregatan, Sälsten, Härnösand, Härnösands domkyrkodistrikt, Härnösands kommun, Västernorrland County, 871 60, Sweden",
+    "type": "residential"
+   },
+   "precision": "street",
+   "verdict": "street-level only: geocoded-address/street (reviewer must accept or defer)"
+  },
+  {
+   "name": "Hudiksvalls Klätterklubb (HUKK)",
+   "city": "Iggesund",
+   "address": "Simbadsvägen 25, 825 31 Iggesund",
+   "address_source_url": "https://hukk.se/hitta-oss/",
+   "bouldering": "yes",
+   "query": "Simbadsvägen 25, 825 31 Iggesund, Iggesund",
+   "result": {
+    "lat": 61.6575773,
+    "lng": 17.0777455,
+    "osm": "node/4333721897",
+    "display_name": "Ankarmons camping, 25, Simbadsvägen, Iggesund, Hudiksvalls kommun, Gävleborg County, 825 31, Sweden",
+    "type": "camp_site"
+   },
+   "precision": "building",
+   "verdict": "house-number match: usable as geocoded-address/building after review"
+  }
+ ]
+}

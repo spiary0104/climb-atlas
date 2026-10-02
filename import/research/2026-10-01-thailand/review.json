@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "section_id": "2026-10-01-thailand",
+  "reviewer": "Claude (AI) on the owner's instruction; owner sign-off pending",
+  "reviewed": "2026-10-01",
+  "decisions": {
+    "th-001": {
+      "decision": "accept",
+      "reason": "Distinct Balance Climbing branch from th-002: BAL official site lists Rama 9 (1st Floor, The Shoppes at Belle, 131 Rama 9 Rd) as its own branch with its own address, daily 10:00-22:00 hours and a Bouldering only label. Same website and chain as th-002 but a different address about 6.3 km away. Pin is the official site map link (Google place pin 13.75957,100.56985), no disagreement.",
+      "reviewed_against": [
+        "th-002"
+      ]
+    },
+    "th-002": {
+      "decision": "accept",
+      "reason": "Distinct Balance Climbing branch from th-001: BAL official site lists Sathorn (9th Floor, Sathorn Prime Building, Yannawa) as its own branch with hours and a Bouldering only label. Pin is OSM node 13718179679; the official site map link (Balance Prime Boulder Gym place pin 13.71653,100.53228) agrees within about 10 m.",
+      "reviewed_against": [
+        "th-001"
+      ]
+    },
+    "th-003": {
+      "decision": "accept",
+      "reason": "EAGLE official site (re-read) shows a comp-style bouldering gym in Bangkok Yai, open every day 10:00-22:00, 200 m from MRT Tha Phra. Pin is OSM node 12428810703 (carries the same website); research notes put the site map pin within about 30 m. Notes mention a directory saying it reopened after a closure; the official site shows it operating now.",
+      "reviewed_against": []
+    },
+    "th-004": {
+      "decision": "same-as",
+      "same_as": "seed-1752",
+      "followup": "location-update",
+      "reason": "Same gym: existing seed-1752 Stonegoat Climbing Gym has the identical address (36/3 Sukhumvit 69 Alley, Phra Khanong Nuea). SG branch page shows S69 open daily 10:00-22:00. The candidate pin (13.71676,100.59303) is the Google place pin Stonegoat Climbing Gym (S69) linked from the gym's own branch page, and the existing pin (13.72208,100.59860) is 844 m away, so the sourced pin is clearly better. The PARQ (th-005) is a separate branch."
+    },
+    "th-005": {
+      "decision": "accept",
+      "reason": "Distinct branch: Stonegoat The PARQ, Room 201, 2nd Floor, The PARQ, 88 Ratchadaphisek Rd (Khlong Toei), versus seed-1752 and th-004 which are the S69 branch at 36/3 Sukhumvit 69 Alley, about 3.8-4.3 km away. Single-source: SG own branch page (re-read) shows the branch, directions from MRT QSNCC and bouldering; the home site shows open daily hours. Pin is the Google place pin Stonegoat Climbing Gym (The PARQ) (13.72096,100.55854) linked from that page; OSM geocodes The Parq building about 60 m away, no disagreement.",
+      "reviewed_against": [
+        "seed-1752",
+        "th-004"
+      ]
+    },
+    "th-006": {
+      "decision": "same-as",
+      "same_as": "seed-1754",
+      "followup": "location-update",
+      "reason": "Same gym: seed-1754 Urban Playground Climbing is at 8 Sukhumvit 49/9 Alley, the same RQ Club address the candidate uses. RQ page (the club's own page for the gym, re-read) shows Urban Playground with 100+ bouldering problems and a cave plus ropes and weekday/weekend hours, so it is a primary source that shows bouldering; it does not change the verdict. Candidate pin is OSM node 11112955887 (13.73630,100.57636; a second node 4506370350 is about 35 m away and Nominatim places the Racquet @ 49 way at 13.73654,100.57626); the existing pin (13.72547,100.57942) is 1248 m away, so the sourced pin is clearly better."
+    },
+    "th-007": {
+      "decision": "same-as",
+      "same_as": "seed-1695",
+      "followup": "location-update",
+      "reason": "Same gym: seed-1695 Rock Domain Climbing Gym is at 1780 Bangna-Trad Road (same road as Debaratna Road), the candidate is 1780 Debaratna Road, Bangna-Tai; RD official site (re-read) states 1780 Debaratna Road, Bangna-Tai, Bangna. Candidate pin is OSM node 5374585867 (house number 1780, Debaratna Road, name:en Rock Domain Climbing Gym, website rockdomaingym.com), which Nominatim places in Bang Na Tai, Bangkok; the existing pin is 4516 m away. Province: the official address says Bangkok so BANGKOK stands (some listings say Samut Prakan); the OSM pin sits in Bang Na Tai district so it does not disagree."
+    },
+    "th-008": {
+      "decision": "defer",
+      "reason": "Primary bouldering evidence too thin: CCFB Facebook page only shows a newly opened air-conditioned sport climbing facility (no bouldering, no hours); the official site climbcentral.co.th fails with a TLS handshake error from here (re-tried); bouldering stays unknown and types are empty. Needs the official site or a readable post/page that shows an open facility and whether it has a bouldering area."
+    },
+    "th-009": {
+      "decision": "accept",
+      "reason": "Single-source, and that source is primary: BP official site (re-read) is titled a boulder climbing gym, the first-timers page sells entry passes to Boulder Planet Rangsit, and it lists the Future Park Rangsit address and posted daily hours (11:00-21:30 / 10:00-21:30). Pin is the find-us Google place pin Boulder Planet Rangsit (Thailand) 13.98920,100.61661 from the official page. Ropes are not claimed, so types are bouldering only.",
+      "reviewed_against": []
+    },
+    "th-010": {
+      "decision": "defer",
+      "reason": "Primary bouldering evidence too thin: BLOCIG Instagram page exists (2,298 followers, 37 posts) but its bio is not readable, so neither open status nor any bouldering or rope offer is shown by a primary source; there is no own website. The OSM node (13988478934) has hours but is not primary. Needs a readable bio, post or site showing it is open and offers bouldering."
+    },
+    "th-011": {
+      "decision": "same-as",
+      "same_as": "seed-1698",
+      "followup": "location-update",
+      "reason": "Same gym: seed-1698 Progression Vertical has address 9/10 Pa Daet, Amphur Muang, Chiang Mai, the same as the candidate (9, 10 Pa Daet Sub-district). PV official page (re-read) shows the gym open daily with hours, bouldering and ropes. Candidate pin 18.74687,98.98795 is the gym's own Google place pin and agrees with OSM way 1159988644 (centroid 18.74676,98.98792); the existing pin (18.78446,98.98156) is 4245 m away, so the sourced pin is clearly better."
+    },
+    "th-012": {
+      "decision": "same-as",
+      "same_as": "seed-1700",
+      "followup": "location-update",
+      "reason": "Same gym: seed-1700 Rebel Rock Climbing has the same address (194/6 M.7 Srisunthorn Road, Talang, Phuket). REBEL official site (re-read) shows boulder sectors, a Kilter board and rope walls, open Tuesday-Sunday 10am-8pm. Candidate pin is OSM node 4621645591 (housenumber 194/6, website rebelrockclimbing.com, Tu-Su 10:00-20:00); the existing pin is 4509 m away. The official site has no map link, so OSM is the only pin source; flagged for owner sign-off."
+    },
+    "th-013": {
+      "decision": "accept",
+      "reason": "BUNKER official site (re-read) says The Bunker is the only indoor climbing gym on Koh Tao, with bouldering, top rope and lead, open every day 9am to 8pm, copyright 2026. Pin is OSM node 10997426155 The Bunker (sport=climbing); the site shows no map or address, so there is no second pin to compare and the address stays empty.",
+      "reviewed_against": []
+    },
+    "th-014": {
+      "decision": "defer",
+      "reason": "Open status rests on an inferred year: the own client-rendered site shows a Grand Opening September 1st badge with no year (content read from the JS bundle). Re-check for a dated opening or a readable current-hours page before accepting."
+    },
+    "th-015": {
+      "decision": "defer",
+      "reason": "No open evidence: ASC Linktree (re-read) calls it a Khon Kaen bouldering gym and gives the address and a Google map, but shows no hours, post dates or other sign it is operating; only a directory (DIR2) suggests it is open. Needs its Instagram, Facebook or TikTok showing recent activity or posted hours."
+    },
+    "th-016": {
+      "decision": "defer",
+      "reason": "Cannot establish identity, status or bouldering: the only source is OSM way 313552110 (Bing-sourced building, no address or website, last edited 2014); the Facebook page is unreadable and one directory says it may be permanently closed. Existing seed-1697 No Gravity (94 Atsadathon Rd, Chang Moi) is 1454 m away, so this may be the same gym with a different pin, a relocation or a separate gym; cannot tell. Needs a primary source with address, status and bouldering."
+    }
+  }
+}

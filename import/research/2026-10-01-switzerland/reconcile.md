@@ -1,0 +1,223 @@
+# Regional research: Switzerland (Tier A, wave 1) (2026-10-01-switzerland)
+
+Scope: CH (whole country)
+Index: 2127 gyms, sha256 8dbddf7924c2… | staged batches compared: none | other sections compared: none
+Review radii (stricter than the importer): any gym 150 m, related name 15 km, other country 2 km
+
+## Summary
+87 candidate(s): ready 41 | review 44 | blocked 2 | already in Bouldeer 0 | invalid 0
+
+## Needs review (accept needs a reason and reviewed_against covering every listed id) (44)
+- ch-001 "Minimum Flüela" [g-a11b5ec1ed] reviewed_against must include: ch-002, seed-1292
+  - importer-probable-duplicate: seed-1292 renamed-or-related-name-nearby 2 m
+  - name-match: seed-1292 "Minimum - Flüela Zürich": renamed-or-related-name-nearby ("Minimum Flüela" / "Minimum - Flüela Zürich", 2 m)
+  - same-website: candidate ch-002 has the same website
+- ch-002 "Minimum Leutsch" [g-e6ae2db053] reviewed_against must include: ch-001, seed-1293
+  - importer-probable-duplicate: seed-1293 renamed-or-related-name-nearby 10 m
+  - name-match: seed-1293 "Minimum - Zürich Leutsch": renamed-or-related-name-nearby ("Minimum Leutsch" / "Minimum - Zürich Leutsch", 10 m)
+  - same-website: candidate ch-001 has the same website
+- ch-005 "Boulderlounge Schlieren" [g-07480139ca] reviewed_against must include: ch-006
+  - same-website: candidate ch-006 has the same website
+- ch-006 "Boulderlounge St. Gallen" [g-d6954fb26c] reviewed_against must include: ch-005, ch-017
+  - related-name-nearby: candidate ch-017 "Kletterzentrum St. Gallen": related names "Boulderlounge St. Gallen" / "Kletterzentrum St. Gallen" 2397 m apart
+  - same-website: candidate ch-005 has the same website
+- ch-007 "Kletterzentrum Gaswerk Schlieren" [g-66e5d68350] reviewed_against must include: ch-008, ch-009
+  - same-website: candidate ch-008 has the same website
+  - same-website: candidate ch-009 has the same website
+- ch-008 "Kletterzentrum Gaswerk Greifensee" [g-1281064e8f] reviewed_against must include: ch-007, ch-009
+  - same-website: candidate ch-007 has the same website
+  - same-website: candidate ch-009 has the same website
+- ch-009 "Kletterzentrum Gaswerk Wädenswil" [g-028ee01351] reviewed_against must include: ch-007, ch-008
+  - same-website: candidate ch-007 has the same website
+  - same-website: candidate ch-008 has the same website
+- ch-012 "Kletterhalle 6a plus" [g-872aca3c9f] reviewed_against must include: seed-1298
+  - importer-probable-duplicate: seed-1298 renamed-or-related-name-nearby 9 m
+  - name-match: seed-1298 "6a plus - Winterthur": renamed-or-related-name-nearby ("Kletterhalle 6a plus" / "6a plus - Winterthur", 9 m)
+- ch-013 "BLOCKFELD Boulderpark" [g-2bd187ca81] reviewed_against must include: seed-1299
+  - importer-probable-duplicate: seed-1299 renamed-or-related-name-nearby 24 m
+  - name-match: seed-1299 "Blockfeld Boulderpark & Bistro": renamed-or-related-name-nearby ("BLOCKFELD Boulderpark" / "Blockfeld Boulderpark & Bistro", 24 m)
+- ch-015 "thurclimb" [g-46ed95f76b]
+  - limited-access: club wall: check it is open to the public
+- ch-016 "Kletterhalle SAC Bodan" [g-ace906808b]
+  - limited-access: club wall: check it is open to the public
+- ch-017 "Kletterzentrum St. Gallen" [g-771f03fa19] reviewed_against must include: ch-006
+  - related-name-nearby: candidate ch-006 "Boulderlounge St. Gallen": related names "Kletterzentrum St. Gallen" / "Boulderlounge St. Gallen" 2397 m apart
+- ch-024 "Kletterhalle Rätikon" [g-2ea6c188ee]
+  - limited-access: club wall: check it is open to the public
+- ch-025 "bimano boulder" [g-952cff05d5] reviewed_against must include: seed-1296
+  - importer-probable-duplicate: seed-1296 renamed-or-related-name-nearby 20 m
+  - name-match: seed-1296 "Bimano - Zentweg": renamed-or-related-name-nearby ("bimano boulder" / "Bimano - Zentweg", 20 m)
+- ch-026 "BoulderBad Muubeeri" [g-cd0456a229] reviewed_against must include: seed-1297
+  - importer-probable-duplicate: seed-1297 renamed-or-related-name-nearby 0 m
+  - name-match: seed-1297 "BoulderBad Muubeeri - Bern": renamed-or-related-name-nearby ("BoulderBad Muubeeri" / "BoulderBad Muubeeri - Bern", 0 m)
+- ch-041 "Kraftreaktor Lenzburg" [g-dd666c2e64] reviewed_against must include: ch-042
+  - related-name-nearby: candidate ch-042 "Kraftreaktor Aarau": related names "Kraftreaktor" / "Kraftreaktor Aarau" 8443 m apart
+- ch-042 "Kraftreaktor Aarau" [g-9bf13b3c59] reviewed_against must include: ch-041
+  - related-name-nearby: candidate ch-041 "Kraftreaktor Lenzburg": related names "Kraftreaktor Aarau" / "Kraftreaktor" 8443 m apart
+- ch-043 "Blockchäfer" [g-6b4f6bf992]
+  - limited-access: club wall: check it is open to the public
+- ch-046 "Kletterhalle 7" [g-97a398a8e4] reviewed_against must include: seed-1295
+  - importer-probable-duplicate: seed-1295 renamed-or-related-name-nearby 92 m
+  - name-match: seed-1295 "Kletterhalle 7 - Basel": renamed-or-related-name-nearby ("Kletterhalle 7" / "Kletterhalle 7 - Basel", 92 m)
+- ch-047 "ELYS Boulderloft" [g-8efe277906] reviewed_against must include: seed-1294
+  - importer-probable-duplicate: seed-1294 renamed-or-related-name-nearby 0 m
+  - name-match: seed-1294 "ELYS Boulderloft - Basel": renamed-or-related-name-nearby ("ELYS Boulderloft" / "ELYS Boulderloft - Basel", 0 m)
+- ch-053 "Bouldergate Ettiswil" [g-0a49bf9b5c]
+  - limited-access: club wall: check it is open to the public
+  - single-source: all evidence comes from one source
+- ch-054 "Kletterhalle Wolhusen" [g-a24b51f264]
+  - limited-access: club wall: check it is open to the public
+- ch-058 "Orbit Interlaken" [g-8794198f44]
+  - single-source: all evidence comes from one source
+- ch-059 "Momentum Olten" [g-ec4331a279]
+  - single-source: all evidence comes from one source
+- ch-060 "Planet Climbing Plan-les-Ouates" [g-8952111b89] reviewed_against must include: ch-083
+  - related-name-nearby: candidate ch-083 "Planet Climbing Lancy": related names "Planet Climbing Plan-les-Ouates" / "Planet Climbing" 2796 m apart
+  - same-website: candidate ch-083 has the same website
+  - single-source: all evidence comes from one source
+- ch-061 "GLKB Boulderhalle (lintharena)" [g-ea424f7507]
+  - weak-coordinates: coordinates are street-level, not the building
+- ch-062 "Grimper.ch Lausanne-Beaulieu" [g-a8e0820931] reviewed_against must include: ch-063, ch-064, ch-065, ch-066, ch-067
+  - related-name-nearby: candidate ch-063 "Grimper.ch Echandens (Rocspot)": related names "Grimper.ch Beaulieu" / "Grimper.ch Echandens (Rocspot)" 5918 m apart
+  - same-website: candidate ch-063 has the same website
+  - same-website: candidate ch-064 has the same website
+  - same-website: candidate ch-065 has the same website
+  - same-website: candidate ch-066 has the same website
+  - same-website: candidate ch-067 has the same website
+- ch-063 "Grimper.ch Echandens (Rocspot)" [g-e5b91dc731] reviewed_against must include: ch-062, ch-064, ch-065, ch-066, ch-067
+  - related-name-nearby: candidate ch-062 "Grimper.ch Lausanne-Beaulieu": related names "Grimper.ch Echandens (Rocspot)" / "Grimper.ch Beaulieu" 5918 m apart
+  - same-website: candidate ch-062 has the same website
+  - same-website: candidate ch-064 has the same website
+  - same-website: candidate ch-065 has the same website
+  - same-website: candidate ch-066 has the same website
+  - same-website: candidate ch-067 has the same website
+- ch-064 "Grimper.ch Villeneuve" [g-5dd3c45930] reviewed_against must include: ch-062, ch-063, ch-065, ch-066, ch-067
+  - same-website: candidate ch-062 has the same website
+  - same-website: candidate ch-063 has the same website
+  - same-website: candidate ch-065 has the same website
+  - same-website: candidate ch-066 has the same website
+  - same-website: candidate ch-067 has the same website
+- ch-065 "Grimper.ch Givisiez (Bloczone)" [g-161cf94e89] reviewed_against must include: ch-062, ch-063, ch-064, ch-066, ch-067
+  - related-name-nearby: candidate ch-066 "Le Hangar (Grimper.ch Fribourg)": related names "Grimper.ch Givisiez (Bloczone)" / "Grimper.ch Fribourg" 2613 m apart
+  - same-website: candidate ch-062 has the same website
+  - same-website: candidate ch-063 has the same website
+  - same-website: candidate ch-064 has the same website
+  - same-website: candidate ch-066 has the same website
+  - same-website: candidate ch-067 has the same website
+- ch-066 "Le Hangar (Grimper.ch Fribourg)" [g-8793955b23] reviewed_against must include: ch-062, ch-063, ch-064, ch-065, ch-067
+  - related-name-nearby: candidate ch-065 "Grimper.ch Givisiez (Bloczone)": related names "Grimper.ch Fribourg" / "Grimper.ch Givisiez (Bloczone)" 2613 m apart
+  - same-website: candidate ch-062 has the same website
+  - same-website: candidate ch-063 has the same website
+  - same-website: candidate ch-064 has the same website
+  - same-website: candidate ch-065 has the same website
+  - same-website: candidate ch-067 has the same website
+- ch-067 "Grimper.ch Meyrin-Satigny" [g-bff1fd5a92] reviewed_against must include: ch-062, ch-063, ch-064, ch-065, ch-066
+  - same-website: candidate ch-062 has the same website
+  - same-website: candidate ch-063 has the same website
+  - same-website: candidate ch-064 has the same website
+  - same-website: candidate ch-065 has the same website
+  - same-website: candidate ch-066 has the same website
+  - single-source: all evidence comes from one source
+- ch-068 "TOTEM Ecublens" [g-456aef8896] reviewed_against must include: ch-069, ch-070, ch-071, ch-072, ch-073
+  - same-website: candidate ch-069 has the same website
+  - same-website: candidate ch-070 has the same website
+  - same-website: candidate ch-071 has the same website
+  - same-website: candidate ch-072 has the same website
+  - same-website: candidate ch-073 has the same website
+- ch-069 "TOTEM Gland" [g-708d82e3b9] reviewed_against must include: ch-068, ch-070, ch-071, ch-072, ch-073
+  - same-website: candidate ch-068 has the same website
+  - same-website: candidate ch-070 has the same website
+  - same-website: candidate ch-071 has the same website
+  - same-website: candidate ch-072 has the same website
+  - same-website: candidate ch-073 has the same website
+- ch-070 "TOTEM Vevey" [g-3c56b92c68] reviewed_against must include: ch-068, ch-069, ch-071, ch-072, ch-073
+  - same-website: candidate ch-068 has the same website
+  - same-website: candidate ch-069 has the same website
+  - same-website: candidate ch-071 has the same website
+  - same-website: candidate ch-072 has the same website
+  - same-website: candidate ch-073 has the same website
+- ch-071 "TOTEM Meyrin" [g-52f004dcce] reviewed_against must include: ch-068, ch-069, ch-070, ch-072, ch-073
+  - same-website: candidate ch-068 has the same website
+  - same-website: candidate ch-069 has the same website
+  - same-website: candidate ch-070 has the same website
+  - same-website: candidate ch-072 has the same website
+  - same-website: candidate ch-073 has the same website
+- ch-072 "TOTEM Vernier (Le Môll)" [g-4897474222] reviewed_against must include: ch-068, ch-069, ch-070, ch-071, ch-073
+  - same-website: candidate ch-068 has the same website
+  - same-website: candidate ch-069 has the same website
+  - same-website: candidate ch-070 has the same website
+  - same-website: candidate ch-071 has the same website
+  - same-website: candidate ch-073 has the same website
+- ch-073 "TOTEM Versoix" [g-448ab1686d] reviewed_against must include: ch-068, ch-069, ch-070, ch-071, ch-072
+  - same-website: candidate ch-068 has the same website
+  - same-website: candidate ch-069 has the same website
+  - same-website: candidate ch-070 has the same website
+  - same-website: candidate ch-071 has the same website
+  - same-website: candidate ch-072 has the same website
+- ch-078 "Pan de Vevey" [g-d0a94af9f5]
+  - limited-access: club wall: check it is open to the public
+- ch-079 "Vertic-Halle Saxon" [g-fb60f89fa9] reviewed_against must include: ch-080, ch-081
+  - same-website: candidate ch-080 has the same website
+  - same-website: candidate ch-081 has the same website
+- ch-080 "Vertic-Halle Monthey" [g-61bc114f2c] reviewed_against must include: ch-079, ch-081
+  - same-website: candidate ch-079 has the same website
+  - same-website: candidate ch-081 has the same website
+- ch-081 "Vertic-Halle Baltschieder" [g-5ab53036a3] reviewed_against must include: ch-079, ch-080
+  - same-website: candidate ch-079 has the same website
+  - same-website: candidate ch-080 has the same website
+- ch-083 "Planet Climbing Lancy" [g-33c8ddaa88] reviewed_against must include: ch-060
+  - related-name-nearby: candidate ch-060 "Planet Climbing Plan-les-Ouates": related names "Planet Climbing" / "Planet Climbing Plan-les-Ouates" 2796 m apart
+  - same-website: candidate ch-060 has the same website
+- ch-087 "Alpha Boulder" [g-fcab43fa8c]
+  - single-source: all evidence comes from one source
+
+## Blocked: cannot be accepted (2)
+- ch-003 "Mitō Bouldering Zürich": status-not-open (status_claim is opening-soon); insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough) -> suggested: defer
+- ch-035 "BoulderBurg": status-not-open (status_claim is opening-soon); insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough) -> suggested: defer
+
+## Ready (no flags; still needs an explicit accept) (41)
+- ch-004 "GrindelBoulder" [g-14c2acd7c6]
+- ch-010 "Boulderhalle Adliswil" [g-1c53e4ff94]
+- ch-011 "GRIFFIG Kletterhalle Uster" [g-663777c19b]
+- ch-014 "ARANEA+ Kletterzentrum" [g-7ba00f6381]
+- ch-018 "Quergang" [g-067ede39c1]
+- ch-019 "Sparta Bouldering" [g-5668571748]
+- ch-020 "Boulder Box" [g-63a42146f7]
+- ch-021 "Kletterhalle Appenzeller Park" [g-36884b4ccb]
+- ch-022 "Kletterzentrum Ap'n Daun" [g-e20d3b95e9]
+- ch-023 "Quadrel" [g-e0f9143775]
+- ch-027 "O'Bloc" [g-04a7320e40]
+- ch-028 "boulderkino" [g-1de4f69056]
+- ch-029 "griffbar Boulderwand Thun" [g-4cf80c7ffc]
+- ch-030 "Climbox Langnau" [g-4e26a94cb8]
+- ch-031 "BoulderWorb" [g-43e3aa35f3]
+- ch-032 "Boulderpark Schwarzenburg" [g-ecd324de99]
+- ch-033 "BoulderSchüür Lenk" [g-507ec10349]
+- ch-034 "Manola Boulder" [g-ca0c52ebda]
+- ch-036 "Kletterhalle Haslital" [g-b014958766]
+- ch-037 "GRIP Climbing" [g-3aecbb44d7]
+- ch-038 "Magnet Trainingszentrum für Sportkletterer" [g-54c13827ff]
+- ch-039 "Forum Sumiswald" [g-245e85c7f1]
+- ch-040 "BOUBA Boulder Baden" [g-17adf20ff5]
+- ch-044 "ISATIS Kletterhalle" [g-5bd19e1888]
+- ch-045 "bimano solothurn" [g-fac6ece162]
+- ch-048 "B2 Boulders & Bar" [g-f3f5ef1071]
+- ch-049 "Hebdi" [g-ab212b06d9]
+- ch-050 "CITY BOULDER" [g-60e15efebd]
+- ch-051 "Pilatus Indoor" [g-2baf6ac488]
+- ch-052 "Boulder Arena Sursee" [g-8df63dd5be]
+- ch-055 "BoulderBaar" [g-355493a118]
+- ch-056 "Spinnerei Indoor" [g-12a98088ff]
+- ch-057 "Granit Indoor" [g-b887ca86ea]
+- ch-074 "Le Cube" [g-104902e680]
+- ch-075 "La Pile" [g-cb911a31d1]
+- ch-076 "Gecko Escalade" [g-772cc22e11]
+- ch-077 "Escalade Chavornay" [g-e16b22c855]
+- ch-082 "Structure Pan d'Escalade" [g-4b38ee73ee]
+- ch-084 "C+ Urban Climbing" [g-bc40a35e0e]
+- ch-085 "L'Entrepôt" [g-5719e87fca]
+- ch-086 "BlocUp" [g-f2360c9cf0]
+
+## Next
+Write review.json with one decision per candidate (docs/import-workflow.md, "Regional research"), then `node scripts/gym-import.js research stage 2026-10-01-switzerland`.
+Nothing here touches production.

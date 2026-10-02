@@ -156,9 +156,12 @@ async function checkCandidate(c, { section, sources, sectionId }) {
     if (!Array.isArray(e.supports) || !e.supports.length || e.supports.some(s => !SUPPORTS.has(s))) err('bad-evidence', `evidence[${i}].supports must list what it confirms: ${[...SUPPORTS].join(', ')}`);
   });
   if (Array.isArray(c.types) && c.types.includes('indoor-bouldering') !== (c.bouldering === 'yes') && BOULDERING.has(c.bouldering)) err('types-vs-bouldering', `types ${c.types.includes('indoor-bouldering') ? 'include' : 'lack'} indoor-bouldering but bouldering is "${c.bouldering}"`);
-  // the importer's own record validation (same code the importer runs)
+  // the importer's own record validation (same code the importer runs). One exception: a candidate whose bouldering is "unknown" or
+  // "no" may have an EMPTY types list instead of an unconfirmed placeholder. Such a candidate is always blocked (never accepted or
+  // staged); an accepted candidate has bouldering "yes", so types include "indoor-bouldering" and pass the importer's own check.
+  const noTypesAllowed = Array.isArray(c.types) && c.types.length === 0 && (c.bouldering === 'unknown' || c.bouldering === 'no');
   const v = await V.validateNewRecord(toImportRecord(c, sectionId));
-  v.errors.forEach(e => err('record-' + e.code, e.message));   // its warnings come back from the importer's plan (reconcile)
+  v.errors.filter(e => !(noTypesAllowed && e.code === 'bad-types' && e.field === 'types')).forEach(e => err('record-' + e.code, e.message));   // its warnings come back from the importer's plan (reconcile)
   if (errors.length) return { errors, blockers, flags };
 
   // ---- scope and category -------------------------------------------------------------------------------------------
@@ -197,12 +200,19 @@ function reviewPair(a, b) {   // a, b: {names, country, lat, lng, address, subur
 }
 const siteKey = u => { try { const x = new URL(u); return x.hostname.replace(/^www\./, '').toLowerCase() + x.pathname.replace(/\/+$/, '').toLowerCase(); } catch (e) { return null; } };
 
+// Other research sections of the SAME country (by their section.json scope). Only those are compared with, and only those are bound
+// into reconcile.json's inputs, so an unrelated country's section changing never makes this reconcile stale. A section whose
+// section.json cannot be read is included (conservative). A candidate filed under a different country's section is out of scope
+// there (blocked, never stageable); the importer's own plan still compares every staged batch by record country at staging time.
+const sectionCountry = sdir => { try { return JSON.parse(fs.readFileSync(path.join(sdir, FILES.section), 'utf8')).scope.country || null; } catch (e) { return null; } };
 function otherSections(root, exceptId, country) {
   const dir = researchDir(root), out = [], seen = [];
   if (!fs.existsSync(dir)) return { out, seen };
   for (const name of fs.readdirSync(dir).sort()) {
     const f = path.join(dir, name, FILES.candidates);
     if (name === exceptId || !fs.existsSync(f)) continue;
+    const sc = sectionCountry(path.join(dir, name));
+    if (sc && sc !== country) continue;
     seen.push({ id: name, candidates_sha256: ndjsonSha(f) });
     for (const text of ndjsonLines(fs.readFileSync(f, 'utf8'))) {
       let c; try { c = JSON.parse(text); } catch (e) { continue; }
@@ -244,8 +254,11 @@ async function reconcile(dir, { index, root }) {
   items.filter(it => cidCount.get(it.cid) > 1).forEach(it => it.errors.push({ code: 'duplicate-cid', detail: `cid ${it.cid} is used by more than one line` }));
   const valid = items.filter(it => !it.errors.length).sort((a, b) => byStr(a.cid, b.cid));
 
-  // 1. the importer's own classification (unchanged thresholds), all valid candidates together
-  const plan = valid.length ? await probePlan({ sectionId: s.id, records: valid.map(it => toImportRecord(it.c, s.id)), index, root }) : { records: [], staged_batches_compared: [] };
+  // 1. the importer's own classification (unchanged thresholds), all valid candidates together. The planner requires a non-empty
+  //    types list; duplicate matching ignores types, so a candidate allowed an empty list (bouldering unknown/no: always blocked,
+  //    never staged) is probed with a stand-in. The stand-in exists only in this in-memory probe and is never written anywhere.
+  const probeRecord = c => { const r = toImportRecord(c, s.id); return r.types.length ? r : { ...r, types: ['top-rope'] }; };
+  const plan = valid.length ? await probePlan({ sectionId: s.id, records: valid.map(it => probeRecord(it.c)), index, root }) : { records: [], staged_batches_compared: [] };
   const cidById = new Map();
   valid.forEach((it, i) => { it.imp = plan.records[i]; if (it.imp.id) cidById.set(it.imp.id, it.cid); });
   for (const it of valid) {

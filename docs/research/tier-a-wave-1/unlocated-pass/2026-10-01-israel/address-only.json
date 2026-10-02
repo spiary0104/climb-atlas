@@ -1,0 +1,191 @@
+{
+ "gyms": [
+  {
+   "name": "Boulder Haifa",
+   "city": "Nesher",
+   "state": "HAIFA",
+   "address": "HaHoroshet 4, Nesher",
+   "address_source_url": "https://www.boulder.co.il/",
+   "website": "https://www.boulder.co.il/",
+   "bouldering": "yes",
+   "evidence": [
+    {
+     "source_url": "https://www.boulder.co.il/",
+     "accessed": "2026-10-01",
+     "supports": [
+      "exists",
+      "open",
+      "bouldering",
+      "address"
+     ]
+    }
+   ],
+   "notes": "Homepage says the gym moved to the new address HaHoroshet 4, Nesher; contact block repeats it. Name local: בולדר חיפה. No map pin on the site (searched site and linktree). OSM way/181231108 in the Haifa bay may be the old premises, unverified."
+  },
+  {
+   "name": "Rujum",
+   "city": "Kiryat Shmona",
+   "state": "NORTHERN",
+   "address": "HaHistadrut Square 4, Kiryat Shmona",
+   "address_source_url": "https://www.rujum-ks.co.il/",
+   "website": "https://www.rujum-ks.co.il/",
+   "bouldering": "yes",
+   "evidence": [
+    {
+     "source_url": "https://www.rujum-ks.co.il/",
+     "accessed": "2026-10-01",
+     "supports": [
+      "exists",
+      "open",
+      "bouldering",
+      "address"
+     ]
+    }
+   ],
+   "notes": "Name local: רוג'ום. Address read from the rendered site footer; site has no map embed or pin. Boulder wall plus height wall and ninja area."
+  },
+  {
+   "name": "Campus Karmiel",
+   "city": "Karmiel",
+   "state": "NORTHERN",
+   "address": "HaCharmesh 9, Karmiel",
+   "address_source_url": "https://www.campuswall.co.il/",
+   "website": "https://www.campuswall.co.il/",
+   "bouldering": "unknown",
+   "evidence": [
+    {
+     "source_url": "https://www.campuswall.co.il/",
+     "accessed": "2026-10-01",
+     "supports": [
+      "exists",
+      "address"
+     ]
+    }
+   ],
+   "notes": "Name local: קמפוס. Address read from the rendered site; no map embed or pin. Federation lists bouldering; own site text does not state it."
+  },
+  {
+   "name": "Alle",
+   "city": "Jerusalem",
+   "state": "JERUSALEM",
+   "address": "HaOman 20, Jerusalem (Park HaMesila, opposite Talpiot mall)",
+   "address_source_url": "https://alleclimb.com/about-us/",
+   "website": "https://alleclimb.com/",
+   "bouldering": "unknown",
+   "evidence": [
+    {
+     "source_url": "https://alleclimb.com/about-us/",
+     "accessed": "2026-10-01",
+     "supports": [
+      "exists",
+      "open",
+      "address"
+     ]
+    }
+   ],
+   "notes": "Name local: עלה. Site posts the address and opening hours but no map pin; bouldering is not stated explicitly."
+  },
+  {
+   "name": "Boulderland Kfar Saba (iClimb)",
+   "city": "Kfar Saba",
+   "state": "CENTRAL",
+   "address": "HaTaasia 16, Kfar Saba",
+   "address_source_url": "https://iclimb.co.il/kfar_saba/%D7%A6%D7%A8%D7%95-%D7%A7%D7%A9%D7%A8/",
+   "website": "https://iclimb.co.il/kfar_saba/%d7%a8%d7%90%d7%a9%d7%99/",
+   "bouldering": "yes",
+   "evidence": [
+    {
+     "source_url": "https://iclimb.co.il/kfar_saba/%d7%a8%d7%90%d7%a9%d7%99/",
+     "accessed": "2026-10-01",
+     "supports": [
+      "exists",
+      "bouldering"
+     ]
+    },
+    {
+     "source_url": "https://iclimb.co.il/kfar_saba/%D7%A9%D7%A2%D7%95%D7%AA-%D7%A4%D7%A2%D7%99%D7%9C%D7%95%D7%AA/",
+     "accessed": "2026-10-01",
+     "supports": [
+      "open"
+     ]
+    },
+    {
+     "source_url": "https://iclimb.co.il/kfar_saba/%D7%A6%D7%A8%D7%95-%D7%A7%D7%A9%D7%A8/",
+     "accessed": "2026-10-01",
+     "supports": [
+      "address"
+     ]
+    }
+   ],
+   "notes": "iClimb network branch, bouldering hall plus lead/top-rope. Contact page map embed is a text query on the street address, not a pin."
+  },
+  {
+   "name": "iClimb Jerusalem",
+   "city": "Jerusalem",
+   "state": "JERUSALEM",
+   "address": "Agudat Sport Beitar 1, Jerusalem (Teddy Stadium)",
+   "address_source_url": "https://iclimb.co.il/jerusalem/%D7%A6%D7%A8%D7%95-%D7%A7%D7%A9%D7%A8/",
+   "website": "https://iclimb.co.il/jerusalem/%d7%a8%d7%90%d7%a9%d7%99/",
+   "bouldering": "yes",
+   "evidence": [
+    {
+     "source_url": "https://iclimb.co.il/jerusalem/%d7%a8%d7%90%d7%a9%d7%99/",
+     "accessed": "2026-10-01",
+     "supports": [
+      "exists",
+      "bouldering"
+     ]
+    },
+    {
+     "source_url": "https://iclimb.co.il/jerusalem/%D7%A9%D7%A2%D7%95%D7%AA-%D7%A4%D7%A2%D7%99%D7%9C%D7%95%D7%AA/",
+     "accessed": "2026-10-01",
+     "supports": [
+      "open"
+     ]
+    },
+    {
+     "source_url": "https://iclimb.co.il/jerusalem/%D7%A6%D7%A8%D7%95-%D7%A7%D7%A9%D7%A8/",
+     "accessed": "2026-10-01",
+     "supports": [
+      "address"
+     ]
+    }
+   ],
+   "notes": "The contact page map embed is a text query for the sports-association address at Teddy Stadium, no pin. Page mentions bouldering areas alongside rope walls."
+  },
+  {
+   "name": "iClimb Haifa",
+   "city": "Haifa",
+   "state": "HAIFA",
+   "address": "HaAmalim 37, Haifa (Hutzot HaMifratz)",
+   "address_source_url": "https://iclimb.co.il/haifa/%D7%A6%D7%A8%D7%95-%D7%A7%D7%A9%D7%A8/",
+   "website": "https://iclimb.co.il/haifa/%d7%a8%d7%90%d7%a9%d7%99/",
+   "bouldering": "yes",
+   "evidence": [
+    {
+     "source_url": "https://iclimb.co.il/haifa/%d7%a8%d7%90%d7%a9%d7%99/",
+     "accessed": "2026-10-01",
+     "supports": [
+      "exists",
+      "bouldering"
+     ]
+    },
+    {
+     "source_url": "https://iclimb.co.il/haifa/%D7%A9%D7%A2%D7%95%D7%AA-%D7%A4%D7%A2%D7%99%D7%9C%D7%95%D7%AA/",
+     "accessed": "2026-10-01",
+     "supports": [
+      "open"
+     ]
+    },
+    {
+     "source_url": "https://iclimb.co.il/haifa/%D7%A6%D7%A8%D7%95-%D7%A7%D7%A9%D7%A8/",
+     "accessed": "2026-10-01",
+     "supports": [
+      "address"
+     ]
+    }
+   ],
+   "notes": "Branch page describes bouldering as one of its climbing styles and has a kids boulder area; mainly a large rope and kids complex. Map embed is a text query only."
+  }
+ ]
+}

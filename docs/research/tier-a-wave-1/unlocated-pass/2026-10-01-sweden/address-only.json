@@ -1,0 +1,268 @@
+{
+ "gyms": [
+  {
+   "name": "Sundsvalls Klätterhall",
+   "city": "Sundsvall",
+   "state": "VASTERNORRLAND",
+   "address": "Universitetsallén 30, 852 34 Sundsvall",
+   "address_source_url": "https://www.xn--sundsvallskltterhall-mzb.se/klattra-hos-oss/",
+   "website": "https://www.xn--sundsvallskltterhall-mzb.se/",
+   "bouldering": "yes",
+   "evidence": [
+    {
+     "source": "TCSUNDSVALL",
+     "url": "https://www.xn--sundsvallskltterhall-mzb.se/klattra-hos-oss/",
+     "accessed": "2026-10-01",
+     "supports": [
+      "exists",
+      "open",
+      "name",
+      "address",
+      "bouldering"
+     ]
+    },
+    {
+     "source": "TCSUNDSVALL",
+     "url": "https://www.xn--sundsvallskltterhall-mzb.se/om-oss",
+     "accessed": "2026-10-01",
+     "supports": [
+      "exists",
+      "open"
+     ]
+    }
+   ],
+   "notes": "Opened May 2024 as part of Sundsvalls aktivitetshus; bouldering walls 2-4.5 m plus rope walls, weekly opening hours published. No map pin found in the page source."
+  },
+  {
+   "name": "KFUM Umeå Klättring och bouldering",
+   "city": "Umeå",
+   "state": "VASTERBOTTEN",
+   "address": "Järnvägsallén 20, 903 28 Umeå",
+   "address_source_url": "https://umea.kfum.se/klattervaggen/klattring-och-bouldering/",
+   "website": "https://umea.kfum.se/",
+   "bouldering": "yes",
+   "evidence": [
+    {
+     "source": "TCKFUMUMEA",
+     "url": "https://umea.kfum.se/klattervaggen/klattring-och-bouldering/",
+     "accessed": "2026-10-01",
+     "supports": [
+      "exists",
+      "name",
+      "address",
+      "bouldering"
+     ]
+    },
+    {
+     "source": "TCKFUMUMEA",
+     "url": "https://umea.kfum.se/",
+     "accessed": "2026-10-01",
+     "supports": [
+      "open"
+     ]
+    }
+   ],
+   "notes": "Volunteer-run hall with 5 m walls and wall cards on sale; the home page announces a free open-house bouldering day on 12 September 2026 at the address. The site loads a Google map plugin but no pin was found on the pages read."
+  },
+  {
+   "name": "Grepp",
+   "city": "Stenkullen (Lerum)",
+   "state": "VASTRA_GOTALAND",
+   "address": "Smedvägen 24, 443 61 Stenkullen",
+   "address_source_url": "https://grepp.se/kontakt-2/",
+   "website": "https://grepp.se/",
+   "bouldering": "yes",
+   "evidence": [
+    {
+     "source": "TCGREPP",
+     "url": "https://grepp.se/",
+     "accessed": "2026-10-01",
+     "supports": [
+      "exists",
+      "open",
+      "name",
+      "bouldering"
+     ]
+    },
+    {
+     "source": "TCGREPP",
+     "url": "https://grepp.se/kontakt-2/",
+     "accessed": "2026-10-01",
+     "supports": [
+      "address",
+      "open"
+     ]
+    }
+   ],
+   "notes": "Large climbing centre (about 3,000 m2) with 16 m rope walls and bouldering; opening hours published on the contact page. No map pin in the page source."
+  },
+  {
+   "name": "Campus1477 Blåsenhus (boulder wall)",
+   "city": "Uppsala",
+   "state": "UPPSALA",
+   "address": "von Kraemers allé 5, 752 37 Uppsala",
+   "address_source_url": "https://campus1477.se/en/training/climbing/boulder-climbing/",
+   "website": "https://campus1477.se/en/training/climbing/boulder-climbing/",
+   "bouldering": "yes",
+   "evidence": [
+    {
+     "source": "TCCAMPUS",
+     "url": "https://campus1477.se/en/training/climbing/boulder-climbing/",
+     "accessed": "2026-10-01",
+     "supports": [
+      "exists",
+      "open",
+      "name",
+      "address",
+      "bouldering"
+     ]
+    }
+   ],
+   "notes": "Borderline scope: university sports and fitness centre with a boulder wall by the entrance, open to members and to others for an admission fee, no booking. Likely category university; reviewer to decide whether a single boulder wall in a fitness centre qualifies."
+  },
+  {
+   "name": "Billingens Klätterklubb",
+   "city": "Skövde",
+   "state": "VASTRA_GOTALAND",
+   "address": "Gruvgatan 4c, 541 31 Skövde",
+   "address_source_url": "https://www.billingensklatterklubb.se/kontakt",
+   "website": "https://www.billingensklatterklubb.se/",
+   "bouldering": "yes",
+   "evidence": [
+    {
+     "source": "TCBILLINGEN",
+     "url": "https://www.billingensklatterklubb.se/inomhus",
+     "accessed": "2026-10-01",
+     "supports": [
+      "exists",
+      "open",
+      "name",
+      "bouldering",
+      "ropes"
+     ]
+    },
+    {
+     "source": "TCBILLINGEN",
+     "url": "https://www.billingensklatterklubb.se/kontakt",
+     "accessed": "2026-10-01",
+     "supports": [
+      "address"
+     ]
+    }
+   ],
+   "notes": "Club hall (rope wall with autobelays plus a boulder hall of about 40 running metres); access is for paid members through an RFID tag, 06-22 daily. No public drop-in found, so access is members-only. Address now confirmed on the club contact page (earlier only from a directory)."
+  },
+  {
+   "name": "Ölands Klätterklubb",
+   "city": "Borgholm",
+   "state": "KALMAR",
+   "address": "Fritidsvägen 1, 387 31 Borgholm",
+   "address_source_url": "https://olandsklatterklubb.se/",
+   "website": "https://olandsklatterklubb.se/",
+   "bouldering": "yes",
+   "evidence": [
+    {
+     "source": "TCOLAND",
+     "url": "https://olandsklatterklubb.se/",
+     "accessed": "2026-10-01",
+     "supports": [
+      "exists",
+      "open",
+      "name",
+      "address",
+      "bouldering"
+     ]
+    }
+   ],
+   "notes": "Hall is open to non-members on Thursdays 18-20 (hours may differ, see Facebook); boulder wall open to all, green card needed for top-rope. The only map link on the site is a Google search link by address, no pin."
+  },
+  {
+   "name": "Karlskrona Bergsportförening (klättergymmet i Gräsvikshallen)",
+   "city": "Karlskrona",
+   "state": "BLEKINGE",
+   "address": "Valhallavägen 3, 371 41 Karlskrona",
+   "address_source_url": "https://karlskronabergsport.se/",
+   "website": "https://karlskronabergsport.se/",
+   "bouldering": "yes",
+   "evidence": [
+    {
+     "source": "TCKARLSKRONA",
+     "url": "https://karlskronabergsport.se/",
+     "accessed": "2026-10-01",
+     "supports": [
+      "exists",
+      "open",
+      "name",
+      "address",
+      "bouldering"
+     ]
+    }
+   ],
+   "notes": "Bouldering on low walls on the second floor of Gräsvikshallen (BTH sports hall); public drop-in Mon, Tue, Thu 18-21 and family climbing on Sunday, with a one-visit fee for non-members. The site map is an embed searched by place name, no pin coordinates."
+  },
+  {
+   "name": "Härnösands klätterklubb (klätterhallen Grottan)",
+   "city": "Härnösand",
+   "state": "VASTERNORRLAND",
+   "address": "Fiskaregatan 11, Härnösand",
+   "address_source_url": "https://harkk.klubbenonline.se/klattra-i-klatterhallen/oppettider",
+   "website": "https://harkk.klubbenonline.se/",
+   "bouldering": "yes",
+   "evidence": [
+    {
+     "source": "TCHARNOSAND",
+     "url": "https://harkk.klubbenonline.se/klattra-i-klatterhallen",
+     "accessed": "2026-10-01",
+     "supports": [
+      "exists",
+      "name",
+      "address",
+      "bouldering",
+      "ropes"
+     ]
+    },
+    {
+     "source": "TCHARNOSAND",
+     "url": "https://harkk.klubbenonline.se/klattra-i-klatterhallen/oppettider",
+     "accessed": "2026-10-01",
+     "supports": [
+      "open",
+      "address"
+     ]
+    }
+   ],
+   "notes": "Two boulder rooms just over 4 m high and a 7 m rope wall; access is by month, half-year or year climbing cards (plus staffed open days), no single-visit price seen. No map pin on the pages read."
+  },
+  {
+   "name": "Hudiksvalls Klätterklubb (HUKK)",
+   "city": "Iggesund",
+   "state": "GAVLEBORG",
+   "address": "Simbadsvägen 25, 825 31 Iggesund",
+   "address_source_url": "https://hukk.se/hitta-oss/",
+   "website": "https://hukk.se/",
+   "bouldering": "yes",
+   "evidence": [
+    {
+     "source": "TCHUKK",
+     "url": "https://hukk.se/hallen/",
+     "accessed": "2026-10-01",
+     "supports": [
+      "exists",
+      "name",
+      "address",
+      "bouldering"
+     ]
+    },
+    {
+     "source": "TCHUKK",
+     "url": "https://hukk.se/hitta-oss/",
+     "accessed": "2026-10-01",
+     "supports": [
+      "address"
+     ]
+    }
+   ],
+   "notes": "Hall at Camp Igge Aren with a 13 m wall, boulder stand and a small boulder wall; try-out and member climbing. Opening hours say spring times are coming soon (stale), so open status is not confirmed. No map pin on the pages read."
+  }
+ ]
+}

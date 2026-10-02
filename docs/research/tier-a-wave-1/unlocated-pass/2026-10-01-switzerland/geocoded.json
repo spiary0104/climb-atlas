@@ -1,0 +1,91 @@
+{
+ "generated": "2026-10-01",
+ "method": "Nominatim search, one query per gym, <=1 req/s",
+ "results": [
+  {
+   "name": "Boulderpark Thalwil \"9grad\"",
+   "city": "Thalwil",
+   "address": "Zürcherstrasse 65, 8800 Thalwil",
+   "address_source_url": "https://www.boulderpark-thalwil.ch/kontakt/",
+   "bouldering": "yes",
+   "query": "Zürcherstrasse 65, 8800 Thalwil, Thalwil",
+   "result": {
+    "lat": 47.284443,
+    "lng": 8.5650701,
+    "osm": "way/33919482",
+    "display_name": "Sportpark, 65, Zürcherstrasse, Böni, Thalwil, Bezirk Horgen, Zurich, 8800, Switzerland",
+    "type": "sports_centre"
+   },
+   "precision": "building",
+   "verdict": "house-number match: usable as geocoded-address/building after review"
+  },
+  {
+   "name": "Crux Bouldering",
+   "city": "Biel/Bienne",
+   "address": "Rennweg 62, 2504 Biel",
+   "address_source_url": "https://crux-bouldering.ch/info/",
+   "bouldering": "yes",
+   "query": "Rennweg 62, 2504 Biel, Biel/Bienne",
+   "result": {
+    "lat": 47.1441181,
+    "lng": 7.2677479,
+    "osm": "node/8009893600",
+    "display_name": "X-Project, 62, Chemin de la Course / Rennweg, Champagne, Biel/Bienne, Biel/Bienne administrative district, Seeland administrative region, Bern, 2504, Switzerland",
+    "type": "community_centre"
+   },
+   "precision": "building",
+   "verdict": "house-number match: usable as geocoded-address/building after review"
+  },
+  {
+   "name": "Boulderraum Sportzentrum Grindelwald",
+   "city": "Grindelwald",
+   "address": "Dorfstrasse 110, 3818 Grindelwald",
+   "address_source_url": "https://www.sportzentrum-grindelwald.ch/kontakt/",
+   "bouldering": "yes",
+   "query": "Dorfstrasse 110, 3818 Grindelwald, Grindelwald",
+   "result": {
+    "lat": 46.6230013,
+    "lng": 8.0355223,
+    "osm": "way/81742666",
+    "display_name": "Sportzentrum, 110, Dorfstrasse, Swiss Alp Resort, Grindelwald, Interlaken-Oberhasli administrative district, Oberland administrative region, Bern, 3818, Switzerland",
+    "type": "sports_centre"
+   },
+   "precision": "building",
+   "verdict": "house-number match: usable as geocoded-address/building after review"
+  },
+  {
+   "name": "chletterai",
+   "city": "Appenzell",
+   "address": "Weissbadstrasse 50, 9050 Appenzell",
+   "address_source_url": "https://www.chletterai.ch",
+   "bouldering": "yes",
+   "query": "Weissbadstrasse 50, 9050 Appenzell, Appenzell",
+   "result": {
+    "lat": 47.3296254,
+    "lng": 9.4118766,
+    "osm": "way/1545166842",
+    "display_name": "Weissbadstrasse, Steinegg, Schwende-Rüte, Appenzell Innerrhoden, 9050, Switzerland",
+    "type": "tertiary"
+   },
+   "precision": "street",
+   "verdict": "street-level only: geocoded-address/street (reviewer must accept or defer)"
+  },
+  {
+   "name": "Sporting Park (climbing and boulder wall)",
+   "city": "Engelberg",
+   "address": "Engelbergerstrasse 11, 6390 Engelberg",
+   "address_source_url": "https://sportingpark.ch/ueber-uns/lageplan/",
+   "bouldering": "yes",
+   "query": "Engelbergerstrasse 11, 6390 Engelberg, Engelberg",
+   "result": {
+    "lat": 46.8178324,
+    "lng": 8.4045684,
+    "osm": "way/82116897",
+    "display_name": "Sporting-Park Engelberg, 11, Engelbergerstrasse, Nassboden, Engelberg, Obwalden, 6390, Switzerland",
+    "type": "civic"
+   },
+   "precision": "building",
+   "verdict": "house-number match: usable as geocoded-address/building after review"
+  }
+ ]
+}

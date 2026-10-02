@@ -1,0 +1,333 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-01-india",
+ "inputs": {
+  "section_sha256": "e25b5f47e5be969ada6df49377d2796995060678bb1bc6c5bba016f34ec3df2a",
+  "sources_sha256": "99f77957de719633835f5bfb4a15ebef0ad3979ac3aca31be9e3cf72113a59a7",
+  "candidates_sha256": "a1050a21b82070ba5fbb827d91988b90d178a4a10014190e7cee870d2e96bd70",
+  "index": {
+   "sha256": "8dbddf7924c219a236c2ffff9c8fb005dd02d1dcfe61640f8817d49fb2484af2",
+   "count": 2127
+  },
+  "staged_batches_compared": [],
+  "other_sections_compared": []
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 16,
+  "ready": 5,
+  "review": 11,
+  "blocked": 0,
+  "existing": 0,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "in-001",
+   "line": 1,
+   "name": "BoulderBox",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-9c8462fb55"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "in-002",
+   "line": 2,
+   "name": "Climb Central Gurugram",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-7e12eb91e7"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "in-003",
+   "line": 3,
+   "name": "Climb Central Bengaluru",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-299c332855"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "in-004",
+   "line": 4,
+   "name": "Equilibrium Climbing Station Hoodi",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-d827f3e940"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate in-005 \"Equilibrium Climbing Station Indiranagar\": related names \"Equilibrium Climbing Station Hoodi\" / \"Equilibrium Climbing Station Indiranagar\" 7954 m apart",
+     "ids": [
+      "in-005"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    },
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": [
+    "in-005"
+   ]
+  },
+  {
+   "cid": "in-005",
+   "line": 5,
+   "name": "Equilibrium Climbing Station Indiranagar",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-d57520749c"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate in-004 \"Equilibrium Climbing Station Hoodi\": related names \"Equilibrium Climbing Station Indiranagar\" / \"Equilibrium Climbing Station Hoodi\" 7954 m apart",
+     "ids": [
+      "in-004"
+     ]
+    }
+   ],
+   "review_ids": [
+    "in-004"
+   ]
+  },
+  {
+   "cid": "in-006",
+   "line": 6,
+   "name": "Equilibrium Climbing Station Goa",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-49d85354ad"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "in-007",
+   "line": 7,
+   "name": "Elevate - The Climbing Company",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-81ca61a539"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "in-008",
+   "line": 8,
+   "name": "Bangalore Boulder",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-27231b7a9a"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "in-009",
+   "line": 9,
+   "name": "The Indian Bouldering Company",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-5c6fd7a6fe"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "in-010",
+   "line": 10,
+   "name": "Crag Studio Gachibowli",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-22d0ebab33"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-1583 \"Crag Studio\": related names \"Crag Studio Gachibowli\" / \"Crag Studio\" 1266 m apart",
+     "ids": [
+      "seed-1583"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate in-011 has the same website",
+     "ids": [
+      "in-011"
+     ]
+    }
+   ],
+   "review_ids": [
+    "in-011",
+    "seed-1583"
+   ]
+  },
+  {
+   "cid": "in-011",
+   "line": 11,
+   "name": "Crag Studio Mettuguda",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-cf5ecdc4f5"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate in-010 has the same website",
+     "ids": [
+      "in-010"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "in-010"
+   ]
+  },
+  {
+   "cid": "in-012",
+   "line": 12,
+   "name": "Fit Rock Arena Chetpet",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-974370b036"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "in-013",
+   "line": 13,
+   "name": "Rock Aliens Climbing Gym",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-25387cc2b8"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    },
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "in-014",
+   "line": 14,
+   "name": "SMJV Bouldering & Climbing Wall (GGIM)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-cbcac1e2ef"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "in-015",
+   "line": 15,
+   "name": "Climb City",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-00f5d7e842"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "in-016",
+   "line": 16,
+   "name": "Boulder 21",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-a8c3eb6e21"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    }
+   ],
+   "review_ids": []
+  }
+ ],
+ "reconcile_sha256": "0215471aa6bc5f687b25cf48ae94875b135e170fc9212dafcad1a42dbee31676"
+}

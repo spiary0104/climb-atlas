@@ -1,0 +1,241 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-01-turkey",
+ "inputs": {
+  "section_sha256": "5922bf7d9629f8469889866cbdd63421477179be5f5f7120dd561c3e9be09c10",
+  "sources_sha256": "1893a05175b6f70831f0c5e731710f388aeff31259599a5a1ed276c7e69d083b",
+  "candidates_sha256": "a82c6e77724b3b2a6315ea08d4dd8c74760d4be1f13e95f815c708f665fcdddb",
+  "index": {
+   "sha256": "8dbddf7924c219a236c2ffff9c8fb005dd02d1dcfe61640f8817d49fb2484af2",
+   "count": 2127
+  },
+  "staged_batches_compared": [],
+  "other_sections_compared": []
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 9,
+  "ready": 1,
+  "review": 3,
+  "blocked": 4,
+  "existing": 1,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "tr-001",
+   "line": 1,
+   "name": "Boulder Istanbul",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-49a3a48cc8"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "tr-002",
+   "line": 2,
+   "name": "Boulderhane",
+   "class": "existing",
+   "suggested": "same-as seed-1726",
+   "importer": {
+    "class": "existing",
+    "id": "seed-1726",
+    "match": {
+     "id": "seed-1726",
+     "name": "Boulderhane",
+     "reason": "same-name",
+     "dist_m": 23
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-1726 but content differs (suburb, lat, lng, address); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1726 \"Boulderhane\": same-name (\"Boulderhane\" / \"Boulderhane\", 23 m)",
+     "ids": [
+      "seed-1726"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "seed-1726"
+   ]
+  },
+  {
+   "cid": "tr-003",
+   "line": 3,
+   "name": "DuvarX",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-1792e82ef5"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "tr-004",
+   "line": 4,
+   "name": "Boulder Jungle",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-67f956b4f2"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "tr-005",
+   "line": 5,
+   "name": "Tragos Boulder",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-bfa3da0734"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "tr-006",
+   "line": 6,
+   "name": "Climbinn",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-70482d92d3"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "tr-007",
+   "line": 7,
+   "name": "Boulder Eskişehir",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-c196ef3c53"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "alias-match",
+     "detail": "seed-1728 \"BoulderEs\": same-name (\"BoulderEs\" / \"BoulderEs\", 456 m)",
+     "ids": [
+      "seed-1728"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "seed-1728"
+   ]
+  },
+  {
+   "cid": "tr-008",
+   "line": 8,
+   "name": "Mozaik Climbing & Bouldering",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-09923bedce"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "tr-009",
+   "line": 9,
+   "name": "Kısakaya Ankara Tırmanış Evi",
+   "class": "blocked",
+   "suggested": "reject temporary",
+   "importer": {
+    "class": "new",
+    "id": "g-da11245a0e"
+   },
+   "blockers": [
+    {
+     "code": "temporary",
+     "detail": "status_claim is temporary"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  }
+ ],
+ "reconcile_sha256": "5258c039383b32f2959402fcd16229e2a537a4f9a363c86a21bec010942ed797"
+}

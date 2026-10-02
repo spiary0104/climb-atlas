@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "section_id": "2026-10-01-india",
+  "reviewer": "Claude (AI) on the owner's instruction; owner sign-off pending",
+  "reviewed": "2026-10-01",
+  "decisions": {
+    "in-001": {
+      "decision": "accept",
+      "reason": "S1 own site shows exists, open, bouldering and address (dedicated bouldering gym). Pin is OSM way/1137301505 (Boulder Box, climbing:boulder=yes) and the gym's own Find Us map pin is about 5 m from it; no disagreement.",
+      "reviewed_against": []
+    },
+    "in-002": {
+      "decision": "accept",
+      "reason": "Single source but primary: S2 chain page for Gurugram shows it as a bouldering gym in M3M 65th Avenue mall with booking and hours links (exists, open, bouldering). Pin is the chain's own place-labelled map embed (M3M 65th Avenue), mall-level; reverse geocode lands in Sector 65 Gurugram; no disagreement.",
+      "reviewed_against": []
+    },
+    "in-003": {
+      "decision": "accept",
+      "reason": "Single source but primary: S2 chain page for Bengaluru shows exists, open, bouldering (VR Bengaluru, Whitefield) with booking. Pin disagreement named: the location page embed (place label 'Climb Central Bengaluru', 12.99614, 77.69535) was used; the older embed on Bengaluru.php (12.9917, 77.7287) is 3.4 km east and lands in a residential complex in Hoodi, not at VR Bengaluru. The used pin is the chain's own place-labelled pin and sits within about 20 m of the VR Mall POIs in OSM, matching the address on the page.",
+      "reviewed_against": []
+    },
+    "in-004": {
+      "decision": "defer",
+      "reason": "coordinate unresolved: the only pin is the 4-decimal geo in the gym's own structured data (12.9916, 77.71), weak-coordinates flag, no OSM element for this gym and no building-level cross-check (reverse geocode gives only the Hoodi locality). The same site's published pins for the other two EQ branches are off by about 300 m (Indiranagar) and 750 m (Goa) from OSM elements that match the gym's address, so this pin cannot be trusted unchecked. Gym itself looks fine (S3 location page shows exists, open, bouldering and ropes). Needs a verified building-level pin for 415, 10th Cross Rd, Hoodi."
+    },
+    "in-005": {
+      "decision": "accept",
+      "reason": "S3 location page shows exists, open, bouldering (bouldering and ClimbFit only) at 3rd Floor, 546 Chinmaya Mission Hospital Rd. Distinct branch from in-004 (Hoodi, 8 km away, own address). Pin disagreement named: recorded pin is OSM node/10633402099, which carries house number 546 on that road, boulder=yes, hours and phone and reverse-geocodes to the gym itself; the gym's own published geo (12.9784, 77.6408, 4 decimals) is about 300 m east, at the KFC junction on the same road.",
+      "reviewed_against": [
+        "in-004"
+      ]
+    },
+    "in-006": {
+      "decision": "accept",
+      "reason": "S3 location page shows exists, open, bouldering at Anjuna, Goa (address: behind Splashdown Water Park). Pin disagreement named: recorded pin is OSM node/12119968134 (name Equilibrium, leisure=sports_centre, sport=climbing), which sits next to Splashdown Waterpark (OSM way 407687121 at 15.5787, 73.7585), matching the address landmark; the gym's own published geo (15.5793, 73.7513) is about 750 m west and reverse-geocodes to Mazal Vaddo, not behind the water park.",
+      "reviewed_against": []
+    },
+    "in-007": {
+      "decision": "defer",
+      "reason": "Owner rule on storefront pages: the gym-run MyTribe storefront (S11) is accepted as official evidence of the LOCATION (it agrees within ~10 m with OSM way 1065763489 \"Elevate\", sport=climbing), but not by itself as evidence of a bouldering offer. No independent primary source shows bouldering (no own website; Instagram unreadable; OSM says only sport=climbing). Re-check with an independent primary source before accepting."
+    },
+    "in-008": {
+      "decision": "defer",
+      "reason": "Two open issues. (1) Address: the recorded street address (15th Cross, 8th Main Rd) comes from an unsourced directory and conflicts with OSM (10th Main Rd) and the founder storefront geo (~240 m south, 12th Cross Rd). (2) Owner rule on storefront pages: the MyTribe storefront (S12) is location evidence only; bouldering has no independent primary source (no own website; Instagram unreadable; OSM way 1252541716 says sport=climbing). Defer until both are resolved from primary sources."
+    },
+    "in-009": {
+      "decision": "accept",
+      "reason": "Single source but primary: S4 own site shows exists, open, bouldering (four wall sections, indoor bouldering space) with address and opening hours (Mon-Fri 7am-10:30pm, Sat-Sun 10am-9pm). Pin is the place-labelled map embed on its contact page (The Indian Bouldering Company); reverse geocode lands in Fort, Mumbai; no disagreement.",
+      "reviewed_against": []
+    },
+    "in-010": {
+      "decision": "same-as",
+      "same_as": "seed-1583",
+      "followup": "location-update",
+      "reason": "Same gym as seed-1583 'Crag Studio': same name and the same address (Survey No 91, Gachibowli Rd, Madhava Reddy Colony, Gachibowli). The seed pin (17.44362, 78.35196) reverse-geocodes to ISB Road / Kothaguda, 1.27 km from the gym; the recorded pin is OSM way/559183200 (named Crag Studio, Swecha Sy. No. 91) and the S5 site's own map centre (17.43497, 78.35971) agrees with it, so the sourced pin is clearly better and the existing pin is well over 150 m off."
+    },
+    "in-011": {
+      "decision": "accept",
+      "reason": "Distinct second Crag Studio site (Mettuguda metro station concourse, Secunderabad, about 17 km from Gachibowli) with its own address, hours and booking; not the same gym as in-010 or seed-1583. S5 site (a JS app, but it renders normally and I read its data) shows exists, open (hours: Monday closed, other days morning and evening slots), bouldering (Boulder Basics sold at this site). Pin is the site's own map centre for Mettuguda (17.43544, 78.51970), reverse-geocodes to Krishna Deva Raya Road, Mettuguda; no disagreement. Caveat: rope offer not stated here, so types stay indoor-bouldering only.",
+      "reviewed_against": [
+        "in-010"
+      ]
+    },
+    "in-012": {
+      "decision": "accept",
+      "reason": "S6 own site (JS app) shows a Chetpet gym with bouldering, top rope and Boulder Jam, plus a map embed labelled Fit Rock Arena Chetpet; S22 gym booking page sells single and multi-session passes for bouldering and top rope; S23 Linktree shows a Boulder Jam on 21 Feb 2026. Pin is the place-labelled map embed (reverse geocode is in the Chetpet area of Chennai); no disagreement. Caveats: the site shows no street address or hours (record has no address), open status rests on the booking page and a Feb 2026 event, and older directories list a Pallikaranai address that may be a former or second venue.",
+      "reviewed_against": []
+    },
+    "in-013": {
+      "decision": "defer",
+      "reason": "coordinate unresolved and bouldering evidence too thin: the pin (18.5327, 73.8332) is the site platform's business location labelled 'Laxmi Society, Model Colony', while the visible address is 'Arun Soc No 2, 413 Shivaji Nagar' (street-level only, no OSM element for the gym nearby). Also the visible S7 page text (hours Mon-Sun 9am-9pm, plans, tiny place with shoe rental) never says bouldering or top rope; 'bouldering' appears only in the platform's hidden business description. Needs a building-level pin and a page or social post that actually shows bouldering."
+    },
+    "in-014": {
+      "decision": "defer",
+      "reason": "limited-access not resolved: S8 says only that the SMJV wall inside Shri Mahaveer Jain Vidyalaya is 'open for all who wish to learn', with no public hours, drop-in or day pass, price or booking route, and the page is a general GGIM sport-climbing page (references Tokyo 2021 as upcoming) so current opening is also unshown. Needs public access terms (drop-in or day pass) and current hours or booking proof. The pin (Google Maps link on the page, 18.52061, 73.83381) looks plausible but is unverified."
+    },
+    "in-015": {
+      "decision": "accept",
+      "reason": "Single source but primary: S9 own site shows exists, open (hours Tue-Fri 1-10pm, Sat-Sun 11am-9pm, online booking, day pass price), bouldering (about 150 bouldering problems) plus top rope and lead lanes, with address. Pin is the site's own Google Maps place link; no disagreement. Note it is in Noida, Uttar Pradesh.",
+      "reviewed_against": []
+    },
+    "in-016": {
+      "decision": "accept",
+      "reason": "S10 Girivihar page (own site) shows a free public bouldering facility set up with Navi Mumbai Municipal Corporation, in operation since 1 June 2023, with public hours 5-9pm daily except Mondays and public holidays, no prebooking, 1-hour slots, rental shoes, instructors. Limited-access rule: public access is shown (drop-in, open to citizens; one-time on-the-spot registration with ID and a first-time safety workshop; first preference to Navi Mumbai residents). Page calls it a bouldering gym with imported wall, no food zone, shoes rule, and the OSM way is a building (indoor), so indoor-bouldering stands. Pin is the Maps link on the page and agrees with OSM way/1055741442 within about 5 m. Category club stays, since it is a trust-run registration-only facility.",
+      "reviewed_against": []
+    }
+  }
+}

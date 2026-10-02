@@ -1,0 +1,733 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-01-russia",
+ "inputs": {
+  "section_sha256": "eac63ca18eb3b52433f12981b623e4cea55cd5d3ad700181cc956eaf08d33d66",
+  "sources_sha256": "c48d17103a1d430ff937a3d97f59431c953a3f71dc837beaa8f7b6b4ca50ce09",
+  "candidates_sha256": "4563c9cc46872d36663aa2cc861825a912f8f2c4320eb43e4a65673f0ea183d6",
+  "index": {
+   "sha256": "8dbddf7924c219a236c2ffff9c8fb005dd02d1dcfe61640f8817d49fb2484af2",
+   "count": 2127
+  },
+  "staged_batches_compared": [],
+  "other_sections_compared": []
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 29,
+  "ready": 10,
+  "review": 17,
+  "blocked": 2,
+  "existing": 0,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "ru-001",
+   "line": 1,
+   "name": "BigWall Dinamo",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-d2df01dcba"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1489 co-located 47 m",
+     "ids": [
+      "seed-1489"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1489 \"Skalodrom Bigwallsport na Dinamo\": co-located (\"BigWall Dinamo\" / \"Skalodrom Bigwallsport na Dinamo\", 47 m)",
+     "ids": [
+      "seed-1489"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "seed-1489"
+   ]
+  },
+  {
+   "cid": "ru-002",
+   "line": 2,
+   "name": "BigWall Riviera",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-af739d3c4c"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "ru-003",
+   "line": 3,
+   "name": "BigWall Gavan",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-9cf8d6f650"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "ru-004",
+   "line": 4,
+   "name": "Limestone",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-887ded292f"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1487 renamed-or-related-name-nearby 15 m",
+     "ids": [
+      "seed-1487"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1487 \"Climbing wall Limestone\": renamed-or-related-name-nearby (\"Limestone\" / \"Climbing wall Limestone\", 15 m)",
+     "ids": [
+      "seed-1487"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-1487"
+   ]
+  },
+  {
+   "cid": "ru-005",
+   "line": 5,
+   "name": "Climb Lab Butyrskaya",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-f456ef9b91"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate ru-006 has the same website",
+     "ids": [
+      "ru-006"
+     ]
+    }
+   ],
+   "review_ids": [
+    "ru-006"
+   ]
+  },
+  {
+   "cid": "ru-006",
+   "line": 6,
+   "name": "Climb Lab Aminyevskaya",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-8488e9fee9"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate ru-005 has the same website",
+     "ids": [
+      "ru-005"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "ru-005"
+   ]
+  },
+  {
+   "cid": "ru-007",
+   "line": 7,
+   "name": "Atmosfera",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-0a824a8a09"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ru-008",
+   "line": 8,
+   "name": "Tokyo ClimbIN",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-042e11766f"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ru-009",
+   "line": 9,
+   "name": "Staraya Shkola",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-f235db4d8e"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "ru-010",
+   "line": 10,
+   "name": "Tengu's Michurinsky Prospekt",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-091a08a77f"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate ru-011 \"Tengu's Yuzhnaya\": related names \"Tengu's Michurinsky Prospekt\" / \"TENGU’S\" 10890 m apart",
+     "ids": [
+      "ru-011"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate ru-012 \"Tengu's Maryina Roshcha\": related names \"Tengu's Michurinsky Prospekt\" / \"TENGU’S\" 14133 m apart",
+     "ids": [
+      "ru-012"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ru-011 has the same website",
+     "ids": [
+      "ru-011"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ru-012 has the same website",
+     "ids": [
+      "ru-012"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "ru-011",
+    "ru-012"
+   ]
+  },
+  {
+   "cid": "ru-011",
+   "line": 11,
+   "name": "Tengu's Yuzhnaya",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-c656cc0c0a"
+   },
+   "flags": [
+    {
+     "code": "alias-match",
+     "detail": "candidate ru-012 \"Tengu's Maryina Roshcha\": same-name-same-suburb-far-pin (\"Скалодром TENGU’S\" / \"Скалодром TENGU’S\", 18935 m)",
+     "ids": [
+      "ru-012"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate ru-010 \"Tengu's Michurinsky Prospekt\": related names \"Tengu's Yuzhnaya\" / \"Скалодром TENGU’S\" 10890 m apart",
+     "ids": [
+      "ru-010"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ru-010 has the same website",
+     "ids": [
+      "ru-010"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ru-012 has the same website",
+     "ids": [
+      "ru-012"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "ru-010",
+    "ru-012"
+   ]
+  },
+  {
+   "cid": "ru-012",
+   "line": 12,
+   "name": "Tengu's Maryina Roshcha",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-9bb3c2ba52"
+   },
+   "flags": [
+    {
+     "code": "alias-match",
+     "detail": "candidate ru-011 \"Tengu's Yuzhnaya\": same-name-same-suburb-far-pin (\"Скалодром TENGU’S\" / \"Скалодром TENGU’S\", 18935 m)",
+     "ids": [
+      "ru-011"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate ru-010 \"Tengu's Michurinsky Prospekt\": related names \"Tengu's Maryina Roshcha\" / \"TENGU’S\" 14133 m apart",
+     "ids": [
+      "ru-010"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ru-010 has the same website",
+     "ids": [
+      "ru-010"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ru-011 has the same website",
+     "ids": [
+      "ru-011"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "ru-010",
+    "ru-011"
+   ]
+  },
+  {
+   "cid": "ru-013",
+   "line": 13,
+   "name": "Rock Zona Boulder House",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-462e31c22b"
+   },
+   "flags": [
+    {
+     "code": "alias-match",
+     "detail": "seed-1488 \"RockZona boulderhouse\": renamed-or-related-name-nearby (\"RockZona\" / \"RockZona boulderhouse\", 91 m)",
+     "ids": [
+      "seed-1488"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "seed-1488"
+   ]
+  },
+  {
+   "cid": "ru-014",
+   "line": 14,
+   "name": "CSKA Climbing Centre",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-f3171a9b64"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ru-015",
+   "line": 15,
+   "name": "Sportstation Climbing",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-683c6a4f72"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ru-016",
+   "line": 16,
+   "name": "Ekstrim Climbing Gym",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-fec3a85643"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ru-017",
+   "line": 17,
+   "name": "Luch",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-a32602fde0"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ru-018",
+   "line": 18,
+   "name": "Igels",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-e3472bebe6"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-1491 \"Klub Igels\": related names \"Igels\" / \"Klub Igels\" 9133 m apart",
+     "ids": [
+      "seed-1491"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "seed-1491"
+   ]
+  },
+  {
+   "cid": "ru-019",
+   "line": 19,
+   "name": "Neolit",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-cd9ace0c0d"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ru-020",
+   "line": 20,
+   "name": "Tramontana",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-15d80a4878"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-1493 \"Skalodrom Tramontana\": related names \"Tramontana\" / \"Skalodrom Tramontana\" 10546 m apart",
+     "ids": [
+      "seed-1493"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-1493"
+   ]
+  },
+  {
+   "cid": "ru-021",
+   "line": 21,
+   "name": "Energiya Vysoty",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-d1e2b92778"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ru-022",
+   "line": 22,
+   "name": "Severnaya Stena Petrogradskaya",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-fbf7ffdaf3"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate ru-023 \"Severnaya Stena Bukharestskaya\": related names \"Severnaya Stena Petrogradskaya\" / \"Severnaya Stena Bukharestskaya\" 10409 m apart",
+     "ids": [
+      "ru-023"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-1492 \"Severnaya Stena Petrogradskaya Skalodrom\": related names \"Severnaya Stena Petrogradskaya\" / \"Severnaya Stena Petrogradskaya Skalodrom\" 7491 m apart",
+     "ids": [
+      "seed-1492"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ru-023 has the same website",
+     "ids": [
+      "ru-023"
+     ]
+    }
+   ],
+   "review_ids": [
+    "ru-023",
+    "seed-1492"
+   ]
+  },
+  {
+   "cid": "ru-023",
+   "line": 23,
+   "name": "Severnaya Stena Bukharestskaya",
+   "class": "blocked",
+   "suggested": "reject closed",
+   "importer": {
+    "class": "new",
+    "id": "g-363f2db6b9"
+   },
+   "blockers": [
+    {
+     "code": "closed",
+     "detail": "status_claim is closed"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate ru-022 \"Severnaya Stena Petrogradskaya\": related names \"Severnaya Stena Bukharestskaya\" / \"Severnaya Stena Petrogradskaya\" 10409 m apart",
+     "ids": [
+      "ru-022"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ru-022 has the same website",
+     "ids": [
+      "ru-022"
+     ]
+    }
+   ],
+   "review_ids": [
+    "ru-022"
+   ]
+  },
+  {
+   "cid": "ru-024",
+   "line": 24,
+   "name": "El Capitan",
+   "class": "blocked",
+   "suggested": "reject closed",
+   "importer": {
+    "class": "new",
+    "id": "g-5a79610ec6"
+   },
+   "blockers": [
+    {
+     "code": "closed",
+     "detail": "status_claim is closed"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "ru-025",
+   "line": 25,
+   "name": "ClimbArt",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-f30febad48"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "ru-026",
+   "line": 26,
+   "name": "Rock and Wall (bouldering hall)",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-734d215c65"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ru-027",
+   "line": 27,
+   "name": "Kray Sveta",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-adaffdabdd"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ru-028",
+   "line": 28,
+   "name": "Iskra Center",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-6f86cb6f45"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate ru-029 \"Iskra Severok\": related names \"Iskra Center\" / \"Iskra Severok\" 6346 m apart",
+     "ids": [
+      "ru-029"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ru-029 has the same website",
+     "ids": [
+      "ru-029"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "ru-029"
+   ]
+  },
+  {
+   "cid": "ru-029",
+   "line": 29,
+   "name": "Iskra Severok",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-245272594b"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate ru-028 \"Iskra Center\": related names \"Iskra Severok\" / \"Iskra Center\" 6346 m apart",
+     "ids": [
+      "ru-028"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ru-028 has the same website",
+     "ids": [
+      "ru-028"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "ru-028"
+   ]
+  }
+ ],
+ "reconcile_sha256": "c9e97f2176c0fcbd91b5a3bed64304986f54d9ffb488ac36056c2a6b99f4ef0c"
+}
