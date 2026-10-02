@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-01-singapore",
+  "description": "Regional research \"Singapore (Tier A, wave 1)\": 20 new gym(s) accepted of 27 candidate(s)",
+  "created": "2026-10-02",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-10-01-singapore",
+    "section_sha256": "ac8fa6eaebaf36b488c08ac5ac1823ba7d30bd0a4f753599bb4593abdaa829e4",
+    "sources_sha256": "eb7f747b638359c307410965040c5a92394fbd268091f3002dcd8c62884f4e2b",
+    "candidates_sha256": "06ccd314f117f2de7bb6ece949056f84bf3ccb42d3926369167a1b74f8661881",
+    "reconcile_sha256": "c481337c2d09866d46e7e8c8fac4de12c120d7c2996188a7b9cfb46e81a84baf",
+    "review_sha256": "fe0759612023deb17d3d8e8c324f15a75628c30ffd000ef9b6f4acfb24acaeac",
+    "candidates": 27,
+    "staged": 20,
+    "decisions": {
+      "accept": 20,
+      "defer": 5,
+      "reject": 1,
+      "same-as": 1
+    }
+  },
+  "index_at_staging": {
+    "sha256": "b72fd3058a813fc452e5c9267ee1c0d87227379be2ec03eac4b500cf30a95a11",
+    "count": 2181
+  }
+}
