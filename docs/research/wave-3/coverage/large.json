@@ -1,0 +1,363 @@
+{
+  "group": "large",
+  "generated": "2026-10-01",
+  "countries": [
+    {
+      "iso2": "DE", "name": "Germany", "bouldeer_count": 144,
+      "bouldeer_cities": "Freiburg 8, Berlin 7, Hamburg 5, Stuttgart 5, Nuernberg 5, Koeln 4, Kassel 4, Dresden 4, Leipzig 3, Muenchen 3-4, Augsburg 3, Bremen 3, Erlangen 3; ~100 further towns with 1-2 each",
+      "independent_total": {
+        "low": 266, "high": 570,
+        "basis": "Low = dedicated boulder-hall directory (boulderhallenfinder.de, 266 halls in 171 cities; its Berlin page lists 13). High = DAV figure for ALL publicly accessible boulder+climbing facilities incl. rope-only (~570, 222 of them DAV halls, July 2026). Bouldering-offer total is therefore between the two; mixed rope+boulder DAV halls are the unquantified middle.",
+        "sources": [
+          {"title": "DAV Zahlen und Fakten zum Klettersport in Deutschland", "url": "https://www.alpenverein.de/verband/presse/hintergrundinfos/zahlen-und-fakten-zum-klettersport-in-deutschland", "language": "de", "number": 570, "counts": "all public boulder + climbing facilities incl. rope-only (222 DAV halls), Stand Juli 2026", "accessed": "2026-10-01"},
+          {"title": "BoulderhallenFinder Karte", "url": "https://boulderhallenfinder.de/karte", "language": "de", "number": 266, "counts": "bouldering halls, 171 cities (search snippet said 258/244 on other pages)", "accessed": "2026-10-01"},
+          {"title": "climbdirectory.com Deutschland", "url": "https://climbdirectory.com/land/deutschland/", "language": "de", "number": 481, "counts": "all climbing halls incl. rope-only; Berlin 22, Koeln 9, Hamburg 9, Muenchen 8", "accessed": "2026-10-01"}
+        ]
+      },
+      "sample": {
+        "size": 22, "found": 7, "ratio": 0.32,
+        "missing_examples": ["Berta Block (Berlin)", "Bright Site (Berlin)", "Elektra Boulderhalle (Berlin)", "Der Kegel (Berlin)", "Nordwandhalle (Hamburg)", "Boulderhalle Steil (Karlsruhe)", "The Rock Boulderhalle (Karlsruhe)", "Bouldercenter Gersthofen", "Knopffabrik Zwickau"],
+        "gyms": [
+          {"name": "Berta Block", "city": "Berlin", "evidence_url": "https://boulderhallenfinder.de/berlin", "on_bouldeer": false},
+          {"name": "Bright Site", "city": "Berlin", "evidence_url": "https://boulderhallenfinder.de/berlin", "on_bouldeer": false},
+          {"name": "Elektra Boulderhalle", "city": "Berlin", "evidence_url": "https://boulderhallenfinder.de/berlin", "on_bouldeer": false},
+          {"name": "Der Kegel", "city": "Berlin", "evidence_url": "https://boulderhallenfinder.de/berlin", "on_bouldeer": false},
+          {"name": "Ninja Bloc", "city": "Berlin", "evidence_url": "https://boulderhallenfinder.de/berlin", "on_bouldeer": false},
+          {"name": "Bouldergarten", "city": "Berlin", "evidence_url": "https://boulderhallenfinder.de/berlin", "on_bouldeer": true},
+          {"name": "Suedbloc", "city": "Berlin", "evidence_url": "https://boulderhallenfinder.de/berlin", "on_bouldeer": true},
+          {"name": "Nordwandhalle", "city": "Hamburg", "evidence_url": "https://boulderhallenfinder.de/hamburg", "on_bouldeer": false},
+          {"name": "FLASHH Hamburg", "city": "Hamburg", "evidence_url": "https://boulderhallenfinder.de/hamburg", "on_bouldeer": true},
+          {"name": "Salon du Bloc", "city": "Hamburg", "evidence_url": "https://boulderhallenfinder.de/hamburg", "on_bouldeer": true},
+          {"name": "Boulderhalle Steil", "city": "Karlsruhe", "evidence_url": "https://boulderhallenfinder.de/karlsruhe", "on_bouldeer": false},
+          {"name": "The Rock Boulderhalle", "city": "Karlsruhe", "evidence_url": "https://boulderhallenfinder.de/karlsruhe", "on_bouldeer": false},
+          {"name": "Boulderwelt Karlsruhe", "city": "Karlsruhe", "evidence_url": "https://boulderhallenfinder.de/karlsruhe", "on_bouldeer": true},
+          {"name": "Mandala Boulderhalle Postplatz", "city": "Dresden", "evidence_url": "https://boulderhallenfinder.de/dresden", "on_bouldeer": false},
+          {"name": "Bouldercity Dresden", "city": "Dresden", "evidence_url": "https://boulderhallenfinder.de/dresden", "on_bouldeer": true},
+          {"name": "boulderdrome", "city": "Radebeul/Dresden", "evidence_url": "https://boulderhallenfinder.de/dresden", "on_bouldeer": true},
+          {"name": "Bouldercenter", "city": "Gersthofen", "evidence_url": "https://pofzak.de/alle-boulderhallen-in-deutschland/", "on_bouldeer": false},
+          {"name": "Bodenlos", "city": "Hattingen", "evidence_url": "https://pofzak.de/alle-boulderhallen-in-deutschland/", "on_bouldeer": false},
+          {"name": "Knopffabrik", "city": "Zwickau", "evidence_url": "https://pofzak.de/alle-boulderhallen-in-deutschland/", "on_bouldeer": false},
+          {"name": "Glashaus", "city": "Weiden", "evidence_url": "https://pofzak.de/alle-boulderhallen-in-deutschland/", "on_bouldeer": false},
+          {"name": "School Project", "city": "Plauen", "evidence_url": "https://pofzak.de/alle-boulderhallen-in-deutschland/", "on_bouldeer": false},
+          {"name": "2T Kletter+Boulderhalle", "city": "Lindlar", "evidence_url": "https://climbdirectory.com/land/deutschland/", "on_bouldeer": false}
+        ]
+      },
+      "indicative_gap": {"low": 120, "high": 190, "basis": "Low: 266 (boulder-hall directory) - 144 Bouldeer = 122. High: (1-0.32) x 266 = 181, rounded up; more if mixed DAV halls with boulder areas are counted (those are inside the 570 but not quantifiable). Sample existence evidence is directories only, not each gym's own site."},
+      "missing_cities": ["Berlin partly (Bouldeer 7 vs 13-22 halls)", "Bad Essen", "Hattingen", "Zwickau", "Plauen", "Weiden", "Gersthofen", "Lindlar", "Beilngries", "Finnentrop", "Kelkheim"],
+      "missing_chains": ["urban apes (Bouldeer has 2 of ~8: Hamburg Ost/West/St Pauli, Berlin Basement/Wedding/Fhain not matched)", "Mandala (1 of 2)", "The Rock (Karlsruhe)", "Bouldeer lacks most Berlin independents (Berta Block, Bright Site, Elektra, Kegel, Ninja Bloc)"],
+      "evidence_confidence": "medium", "research_difficulty": "medium",
+      "difficulty_reason": "Large (266-570), German-language, but excellent per-city directories (boulderhallenfinder.de has city pages, DAV Kletterhallensuche); most gyms have own websites. Needs Bundesland/city sections.",
+      "recommendation": "research section now",
+      "notes": "Recommended order: Berlin; Bayern small/mid towns; NRW; Baden-Wuerttemberg; Niedersachsen/Hessen. Bouldeer DE already looks strong for the older DAV/mixed halls and Boulderwelt (8/8). Gap is mostly newer independents and the urban apes/Berlin cluster. Possible duplicate/unclear: Bouldeer has 'urban apes Boulderquartier Hamburg' vs directory's three Hamburg urban apes; Climbing Arena vs Kletterarena Dresden treated as the same and excluded from the sample."
+    },
+    {
+      "iso2": "ES", "name": "Spain", "bouldeer_count": 57,
+      "bouldeer_cities": "Madrid 15, Barcelona 8, Zaragoza 3, Gava 2, Valencia 2, Vigo 2, Sevilla 2; ~20 other towns with 1",
+      "independent_total": {
+        "low": 220, "high": 240,
+        "basis": "Spanish press (EFE/Infobae, Sept 2026): about 240 commercial rocodromos in 2026 (160 in 2023); one article says 220 with 52 in the big cities (Madrid 18, Barcelona 11). rocodromos.com (Desnivel) lists 239 incl. municipal/club walls. All figures include rope-only; no bouldering split published.",
+        "sources": [
+          {"title": "EFE Sport Business: El auge de la escalada en Espana", "url": "https://efesportbusiness.com/noticias/auge-escalada-espana/", "language": "es", "number": 240, "counts": "commercial rocodromos 2026 (160 in 2023); 220 mentioned elsewhere in the article; Madrid 18, Barcelona 11", "accessed": "2026-10-01"},
+          {"title": "rocodromos.com (Ediciones Desnivel)", "url": "https://rocodromos.com/", "language": "es", "number": 239, "counts": "climbing centres incl. municipal and club walls, rope and boulder", "accessed": "2026-10-01"}
+        ]
+      },
+      "sample": {
+        "size": 21, "found": 4, "ratio": 0.19,
+        "missing_examples": ["Kimera Climbing BCN", "Blocat Climbing", "Kraken Bloc Granollers", "Flashh Barcelona", "Vents Bulder Valencia", "Indoorwall Valencia", "Awesome Boulder Center Madrid", "Boulder Zone Madrid", "Bayyana Climbing Cordoba", "Gravity Aviles"],
+        "gyms": [
+          {"name": "Kimera Climbing BCN", "city": "Barcelona", "evidence_url": "https://rocodromos.com/provincias/barcelona/", "on_bouldeer": false},
+          {"name": "Bloc District BCN", "city": "Barcelona", "evidence_url": "https://rocodromos.com/provincias/barcelona/", "on_bouldeer": true},
+          {"name": "Sharma Climbing Barcelona", "city": "Barcelona", "evidence_url": "https://rocodromos.com/provincias/barcelona/", "on_bouldeer": true},
+          {"name": "Ingravita", "city": "Barcelona", "evidence_url": "https://rocodromos.com/provincias/barcelona/", "on_bouldeer": false},
+          {"name": "Freebloc", "city": "Barcelona", "evidence_url": "https://rocodromos.com/provincias/barcelona/", "on_bouldeer": false},
+          {"name": "Indoorwall El Clot", "city": "Barcelona", "evidence_url": "https://rocodromos.com/provincias/barcelona/", "on_bouldeer": true},
+          {"name": "Kraken Bloc Granollers", "city": "Granollers", "evidence_url": "https://rocodromos.com/provincias/barcelona/", "on_bouldeer": false},
+          {"name": "Indoorwall Hospitalet", "city": "L'Hospitalet", "evidence_url": "https://rocodromos.com/provincias/barcelona/", "on_bouldeer": false},
+          {"name": "Bulder Planet Mataro", "city": "Mataro", "evidence_url": "https://rocodromos.com/provincias/barcelona/", "on_bouldeer": false},
+          {"name": "Flashh Barcelona", "city": "Barcelona", "evidence_url": "https://rocodromos.com/provincias/barcelona/", "on_bouldeer": false},
+          {"name": "Camaleon Boulder", "city": "Valencia", "evidence_url": "https://rocodromos.com/provincias/valencia-valencia/", "on_bouldeer": true},
+          {"name": "Vents Bulder Valencia", "city": "Valencia", "evidence_url": "https://rocodromos.com/provincias/valencia-valencia/", "on_bouldeer": false},
+          {"name": "Indoorwall Valencia", "city": "Valencia", "evidence_url": "https://rocodromos.com/provincias/valencia-valencia/", "on_bouldeer": false},
+          {"name": "Laif Climbing Gym", "city": "Valencia", "evidence_url": "https://rocodromos.com/provincias/valencia-valencia/", "on_bouldeer": false},
+          {"name": "Awesome Boulder Center", "city": "Madrid", "evidence_url": "https://rocodromos.com/provincias/madrid/", "on_bouldeer": false},
+          {"name": "Planet Vertical", "city": "Madrid", "evidence_url": "https://rocodromos.com/provincias/madrid/", "on_bouldeer": false},
+          {"name": "Boulder Zone", "city": "Madrid", "evidence_url": "https://rocodromos.com/provincias/madrid/", "on_bouldeer": false},
+          {"name": "Bayyana Climbing", "city": "Cordoba", "evidence_url": "https://rocodromos.com/", "on_bouldeer": false},
+          {"name": "Arenisca Centro de Escalada", "city": "Cadiz", "evidence_url": "https://rocodromos.com/", "on_bouldeer": false},
+          {"name": "El Roko", "city": "Asturias", "evidence_url": "https://rocodromos.com/provincias/asturias/", "on_bouldeer": false},
+          {"name": "Gravity Aviles", "city": "Aviles", "evidence_url": "https://rocodromos.com/provincias/asturias/", "on_bouldeer": false}
+        ]
+      },
+      "indicative_gap": {"low": 100, "high": 185, "basis": "High: 240 commercial - 57 Bouldeer = 183 (counts rope-only gyms, so an upper bound). Low (rough): the sample is only 19 percent found but is Catalonia/Valencia/Madrid-heavy and bouldering offer of some sampled rope+boulder gyms was not confirmed on their own sites; 100 is a judgement figure, not a measured one."},
+      "missing_cities": ["Cordoba", "Cadiz", "Alicante", "Bilbao city (only suburbs Berango/Derio/Barakaldo)", "Mataro", "Granollers", "L'Hospitalet", "Manresa", "Vic", "Las Palmas", "Aviles"],
+      "missing_chains": ["Indoorwall (Bouldeer 1 of ~8: Granollers, Hospitalet, Manresa, Vilanova, Vic, Valencia missing)", "Kimera (BCN)", "Awesome Boulder"],
+      "evidence_confidence": "low", "research_difficulty": "medium",
+      "difficulty_reason": "~240 gyms, Spanish, regional (Catalan/Galician/Basque) names; rocodromos.com has province pages but does not flag boulder offer; many small Catalan independents.",
+      "recommendation": "research section now",
+      "notes": "Big-city coverage is decent (Madrid 15 of ~18, Barcelona ~12 of ~11-13 incl. area). Gap is the Barcelona province satellites, Valencia province, Andalucia, Canarias and the rest. Suggested order: Catalunya (Barcelona province, Girona, Tarragona), Comunidad Valenciana, Andalucia, Pais Vasco/Navarra, then rest. Confirm boulder offer per gym during research."
+    },
+    {
+      "iso2": "FR", "name": "France", "bouldeer_count": 95,
+      "bouldeer_cities": "Paris 13, Lyon 6, Marseille 6, Toulouse 6, Tours 2, Lille 2, Issy-les-Moulineaux 2, Nantes 2, Clermont-Ferrand 2, Bordeaux 2; ~50 other communes with 1",
+      "independent_total": {
+        "low": 132, "high": 291,
+        "basis": "High: 291 private (commercial) climbing gyms 2025 (Union Sport & Cycles / Union des salles d'escalade / FFME market study; includes rope-only; 1,070+ FFME-affiliated structures also exist but are mostly club walls). Low: ~132 named halls in a bloc/escalade directory (parc-attraction-loisirs.fr, 'plus de 130'), which is demonstrably incomplete (omits several Bouldeer-listed branches).",
+        "sources": [
+          {"title": "PlanetGrimpe: Le boom des salles d'escalade marque une pause, etat des lieux 2025", "url": "https://planetgrimpe.com/le-boom-des-salles-descalade-marque-une-pause-etat-des-lieux-2025/", "language": "fr", "number": 291, "counts": "private climbing gyms 2025, +0.2 percent yoy, includes rope-only; 1,070+ FFME structures", "accessed": "2026-10-01"},
+          {"title": "Salles d'escalade et de bloc en France: liste par ville", "url": "https://www.parc-attraction-loisirs.fr/parcs-de-loisirs/salle-escalade-bloc/", "language": "fr", "number": 132, "counts": "named halls counted from the list (page claims 130+), bloc and mixed", "accessed": "2026-10-01"},
+          {"title": "Climbing District salles", "url": "https://www.climbingdistrict.com", "language": "fr", "number": 7, "counts": "Climbing District France (7 incl. Neuilly and Annette K.; Bouldeer has 5)", "accessed": "2026-10-01"}
+        ]
+      },
+      "sample": {
+        "size": 26, "found": 9, "ratio": 0.35,
+        "missing_examples": ["Murmur Pantin", "Climb Up Epinay", "M'Roc Laennec (Lyon)", "Blocabrac (Saint-Etienne)", "The Roof Poitiers", "The Roof Rennes", "Kern'Up (Sotteville)", "Altissimo Lille", "Altissimo Metz", "Art Bloc (Nice)"],
+        "gyms": [
+          {"name": "Murmur Pantin", "city": "Pantin", "evidence_url": "https://www.parc-attraction-loisirs.fr/parcs-de-loisirs/salle-escalade-bloc/", "on_bouldeer": false},
+          {"name": "Climb Up Epinay", "city": "Epinay-sur-Seine", "evidence_url": "https://www.parc-attraction-loisirs.fr/parcs-de-loisirs/salle-escalade-bloc/", "on_bouldeer": false},
+          {"name": "Block'Out Osny (Cergy)", "city": "Osny", "evidence_url": "https://www.parc-attraction-loisirs.fr/parcs-de-loisirs/salle-escalade-bloc/", "on_bouldeer": true},
+          {"name": "Climb Up Lyon Gerland", "city": "Lyon", "evidence_url": "https://www.parc-attraction-loisirs.fr/parcs-de-loisirs/salle-escalade-bloc/", "on_bouldeer": true},
+          {"name": "M'Roc Laennec", "city": "Lyon", "evidence_url": "https://www.parc-attraction-loisirs.fr/parcs-de-loisirs/salle-escalade-bloc/", "on_bouldeer": false},
+          {"name": "Cime Altitude 245", "city": "Dijon", "evidence_url": "https://www.parc-attraction-loisirs.fr/parcs-de-loisirs/salle-escalade-bloc/", "on_bouldeer": false},
+          {"name": "Espace Vertical 2", "city": "Saint-Martin-d'Heres", "evidence_url": "https://www.parc-attraction-loisirs.fr/parcs-de-loisirs/salle-escalade-bloc/", "on_bouldeer": false},
+          {"name": "Blocabrac", "city": "Saint-Etienne", "evidence_url": "https://www.parc-attraction-loisirs.fr/parcs-de-loisirs/salle-escalade-bloc/", "on_bouldeer": false},
+          {"name": "Altigrimp", "city": "Taulignan", "evidence_url": "https://www.parc-attraction-loisirs.fr/parcs-de-loisirs/salle-escalade-bloc/", "on_bouldeer": false},
+          {"name": "Block'Out Reims", "city": "Reims", "evidence_url": "https://www.parc-attraction-loisirs.fr/parcs-de-loisirs/salle-escalade-bloc/", "on_bouldeer": true},
+          {"name": "The Roof Poitiers", "city": "Poitiers", "evidence_url": "https://www.parc-attraction-loisirs.fr/parcs-de-loisirs/salle-escalade-bloc/", "on_bouldeer": false},
+          {"name": "Block'Out Nantes", "city": "Nantes", "evidence_url": "https://www.parc-attraction-loisirs.fr/parcs-de-loisirs/salle-escalade-bloc/", "on_bouldeer": true},
+          {"name": "The Roof Rennes", "city": "Rennes", "evidence_url": "https://www.parc-attraction-loisirs.fr/parcs-de-loisirs/salle-escalade-bloc/", "on_bouldeer": false},
+          {"name": "Kern'Up", "city": "Sotteville-les-Rouen", "evidence_url": "https://www.parc-attraction-loisirs.fr/parcs-de-loisirs/salle-escalade-bloc/", "on_bouldeer": false},
+          {"name": "Altissimo Lille", "city": "Lomme", "evidence_url": "https://www.parc-attraction-loisirs.fr/parcs-de-loisirs/salle-escalade-bloc/", "on_bouldeer": false},
+          {"name": "Altissimo Metz", "city": "Moulins-les-Metz", "evidence_url": "https://www.parc-attraction-loisirs.fr/parcs-de-loisirs/salle-escalade-bloc/", "on_bouldeer": false},
+          {"name": "Block'Out Strasbourg", "city": "Strasbourg", "evidence_url": "https://www.parc-attraction-loisirs.fr/parcs-de-loisirs/salle-escalade-bloc/", "on_bouldeer": true},
+          {"name": "Arkose Bordeaux", "city": "Bordeaux", "evidence_url": "https://www.parc-attraction-loisirs.fr/parcs-de-loisirs/salle-escalade-bloc/", "on_bouldeer": true},
+          {"name": "The Roof Pays Basque", "city": "Bayonne", "evidence_url": "https://www.parc-attraction-loisirs.fr/parcs-de-loisirs/salle-escalade-bloc/", "on_bouldeer": false},
+          {"name": "Arkose Toulouse", "city": "L'Union", "evidence_url": "https://www.parc-attraction-loisirs.fr/parcs-de-loisirs/salle-escalade-bloc/", "on_bouldeer": true},
+          {"name": "Couleur Caillou", "city": "Millau", "evidence_url": "https://www.parc-attraction-loisirs.fr/parcs-de-loisirs/salle-escalade-bloc/", "on_bouldeer": false},
+          {"name": "Altissimo Montpellier Odysseum", "city": "Montpellier", "evidence_url": "https://www.parc-attraction-loisirs.fr/parcs-de-loisirs/salle-escalade-bloc/", "on_bouldeer": false},
+          {"name": "Bloc Session Avignon", "city": "Le Pontet", "evidence_url": "https://www.parc-attraction-loisirs.fr/parcs-de-loisirs/salle-escalade-bloc/", "on_bouldeer": true},
+          {"name": "Bloc n' roc", "city": "Vitrolles", "evidence_url": "https://www.parc-attraction-loisirs.fr/parcs-de-loisirs/salle-escalade-bloc/", "on_bouldeer": false},
+          {"name": "Climb Up Marseille La Valentine", "city": "Marseille", "evidence_url": "https://www.parc-attraction-loisirs.fr/parcs-de-loisirs/salle-escalade-bloc/", "on_bouldeer": true},
+          {"name": "Art Bloc", "city": "Nice", "evidence_url": "https://www.parc-attraction-loisirs.fr/parcs-de-loisirs/salle-escalade-bloc/", "on_bouldeer": false}
+        ]
+      },
+      "indicative_gap": {"low": 85, "high": 195, "basis": "High: 291 private gyms - 95 = 196 (includes rope-only, so upper bound). Low: (1-0.35) x 132 directory halls = 86. Sample is every 5th entry of the directory list (existence from the directory only; bouldering offer not confirmed on own sites for the independents)."},
+      "missing_cities": ["Grenoble city (only Saint-Martin-d'Heres)", "Poitiers", "Limoges", "Perpignan", "Dijon city (only Chenove)", "Villejuif", "Alfortville", "Courbevoie/La Defense", "Colmar", "Pau", "Bayonne", "Brest city (only Gouesnou)"],
+      "missing_chains": ["Blocbuster (Bouldeer 0)", "Murmur (0)", "M'Roc (1 of 3)", "Hueco Strasbourg (0)", "The Roof (1 of ~6)", "Altissimo (4 Toulouse/Marseille, missing Lille, Metz, Nantes area, Montpellier x3, Albi)", "Climb Up (about 11 on Bouldeer, missing Epinay, Dijon, Orleans, Limoges, Lille others, Eysines, Aix, Bouc-Bel-Air)", "Arkose Prado (Marseille)?"],
+      "evidence_confidence": "medium", "research_difficulty": "medium",
+      "difficulty_reason": "Many chains with official location pages (Arkose, Climb Up, Block'Out, Altissimo, Bloc Session, Vertical'Art) make branch reconciliation cheap; independents are small and French-language. ~290 gyms, needs regional sections.",
+      "recommendation": "research section now",
+      "notes": "Bouldeer has most Arkose, Block'Out, Vertical'Art, Bloc Session, Climbing District branches. Gap is Climb Up/Altissimo/The Roof/M'Roc/Murmur/Blocbuster branches and independents. Suggested order: Ile-de-France (Blocbuster, Murmur, Antrebloc, Hardbloc, Climb Up Epinay), Auvergne-Rhone-Alpes (Grenoble, Lyon M'Roc, Saint-Etienne), Occitanie (Altissimo cluster), Hauts-de-France, Bretagne/Pays de la Loire/Nouvelle-Aquitaine. Because chain lists are official, a chain-by-chain approach is cheaper than city sections."
+    },
+    {
+      "iso2": "GB", "name": "United Kingdom", "bouldeer_count": 99,
+      "bouldeer_cities": "Bristol 5, Greater London ~13 (incl. Vauxhall, Harrow, Croydon, Bromley, Kingston, Stoke Newington), Sheffield 4, Edinburgh 4-5, Glasgow 4, Leeds ~7, Manchester ~5, Newcastle 3-4; Wales 9, Belfast 1",
+      "independent_total": {
+        "low": 200, "high": 400,
+        "basis": "Low: ABC (Association of British Climbing Walls) represents 200+ walls across UK and Ireland, and RockHobbit lists 200+ UK/IE gyms (it flags many as bouldering-only); 46 percent of surveyed ABC walls are bouldering-only. High: BMC wall finder lists 400+ walls UK-wide (includes rope-only, leisure-centre walls and small club walls). No official bouldering-specific total found.",
+        "sources": [
+          {"title": "BMC Find a climbing wall", "url": "https://www.thebmc.co.uk/en/find-a-climbing-wall-uk-map", "language": "en", "number": 400, "counts": "over 400 wall locations, all types", "accessed": "2026-10-01"},
+          {"title": "ABC 2025 indoor climbing market research", "url": "https://www.abcwalls.co.uk/2025-indoor-climbing-market-research-published/", "language": "en", "number": 0, "counts": "no total given; 46 percent of surveyed walls bouldering-only, 62 percent of walls opened in last 4 years", "accessed": "2026-10-01"},
+          {"title": "RockHobbit UK Climbing Gyms Directory", "url": "https://www.rockhobbit.com/gyms", "language": "en", "number": 200, "counts": "200+ gyms UK and Ireland, bouldering-only flagged", "accessed": "2026-10-01"},
+          {"title": "BoulderingWall.com UK", "url": "https://boulderingwall.com/uk/", "language": "en", "number": 126, "counts": "indoor walls listed (London 19)", "accessed": "2026-10-01"}
+        ]
+      },
+      "sample": {
+        "size": 27, "found": 11, "ratio": 0.41,
+        "missing_examples": ["Climbing District Tottenham", "City Bouldering Aldgate", "BethWall (London)", "EustonWall (London)", "Font Wandsworth", "Boulder Brighton", "Boulders Newport Road (Cardiff)", "Flashpoint Cardiff", "Flashpoint Swansea", "Durham Climbing Centre", "Boulder UK Preston", "Birmingham Bouldering Centre"],
+        "gyms": [
+          {"name": "Depot Climbing Manchester", "city": "Manchester", "evidence_url": "https://www.rockhobbit.com/gyms", "on_bouldeer": true},
+          {"name": "Northway Climbing Centre", "city": "Newbury", "evidence_url": "https://www.rockhobbit.com/gyms", "on_bouldeer": false},
+          {"name": "The Climbing Lab", "city": "Leeds", "evidence_url": "https://www.rockhobbit.com/gyms", "on_bouldeer": true},
+          {"name": "The Climbing Works", "city": "Sheffield", "evidence_url": "https://www.rockhobbit.com/gyms", "on_bouldeer": true},
+          {"name": "The Peak Climbing Wall", "city": "Leek", "evidence_url": "https://www.rockhobbit.com/gyms", "on_bouldeer": false},
+          {"name": "Yonder Climbing", "city": "London", "evidence_url": "https://www.rockhobbit.com/gyms", "on_bouldeer": true},
+          {"name": "Aldgate City Bouldering", "city": "London", "evidence_url": "https://www.rockhobbit.com/gyms", "on_bouldeer": false},
+          {"name": "BethWall", "city": "London", "evidence_url": "https://www.abcwalls.co.uk/list-of-accredited-walls/", "on_bouldeer": false},
+          {"name": "Birmingham Bouldering Centre", "city": "Birmingham", "evidence_url": "https://www.rockhobbit.com/gyms", "on_bouldeer": false},
+          {"name": "Bloc10 Aberdeen", "city": "Aberdeen", "evidence_url": "https://www.rockhobbit.com/gyms", "on_bouldeer": true},
+          {"name": "Boulder Brighton", "city": "Brighton", "evidence_url": "https://www.rockhobbit.com/gyms", "on_bouldeer": false},
+          {"name": "Boulder Central West Bromwich", "city": "West Bromwich", "evidence_url": "https://www.rockhobbit.com/gyms", "on_bouldeer": false},
+          {"name": "Boulder UK", "city": "Preston", "evidence_url": "https://www.rockhobbit.com/gyms", "on_bouldeer": false},
+          {"name": "Boulder World Belfast", "city": "Belfast", "evidence_url": "https://www.rockhobbit.com/gyms", "on_bouldeer": true},
+          {"name": "Boulders Newport Road", "city": "Cardiff", "evidence_url": "https://www.rockhobbit.com/gyms", "on_bouldeer": false},
+          {"name": "Brushworks Climbing", "city": "Glasgow", "evidence_url": "https://www.rockhobbit.com/gyms", "on_bouldeer": true},
+          {"name": "Climbing District Tottenham", "city": "London", "evidence_url": "https://www.rockhobbit.com/gyms", "on_bouldeer": false},
+          {"name": "Durham Climbing Centre", "city": "Durham", "evidence_url": "https://www.rockhobbit.com/gyms", "on_bouldeer": false},
+          {"name": "Eden Rock Newcastle", "city": "Newcastle upon Tyne", "evidence_url": "https://www.rockhobbit.com/gyms", "on_bouldeer": true},
+          {"name": "EustonWall", "city": "London", "evidence_url": "https://www.abcwalls.co.uk/list-of-accredited-walls/", "on_bouldeer": false},
+          {"name": "Flashpoint Cardiff", "city": "Cardiff", "evidence_url": "https://www.rockhobbit.com/gyms", "on_bouldeer": false},
+          {"name": "Flashpoint Swansea", "city": "Swansea", "evidence_url": "https://www.rockhobbit.com/gyms", "on_bouldeer": false},
+          {"name": "Fenrock Climbing Centre", "city": "Wisbech", "evidence_url": "https://www.rockhobbit.com/gyms", "on_bouldeer": false},
+          {"name": "Font Wandsworth", "city": "London", "evidence_url": "https://www.rockhobbit.com/gyms", "on_bouldeer": false},
+          {"name": "alien bloc", "city": "Edinburgh", "evidence_url": "https://www.rockhobbit.com/gyms", "on_bouldeer": true},
+          {"name": "Depot Climbing Nottingham", "city": "Nottingham", "evidence_url": "https://www.rockhobbit.com/gyms", "on_bouldeer": true},
+          {"name": "Calshot Climbing Centre", "city": "New Forest", "evidence_url": "https://www.rockhobbit.com/gyms", "on_bouldeer": true}
+        ]
+      },
+      "indicative_gap": {"low": 100, "high": 240, "basis": "Low: 200 - 99 = 101 (RockHobbit/ABC order of magnitude; the 200 includes Ireland). Cross-check: (1-0.41) x 200 = 118. High: (1-0.41) x 400 = 236 (BMC 400+ includes rope-only/leisure walls so likely an overestimate). Sample drawn from the first 60 RockHobbit entries (alphabetical), existence per directory only."},
+      "missing_cities": ["Cardiff (0)", "Brighton (0)", "Oxford (0)", "Preston", "Durham", "Bath", "Leicester", "Ipswich", "Birmingham (only 2: Creation, Depot)", "London (many central gyms absent)"],
+      "missing_chains": ["Climbing District / The Arch (3 UK sites, Bouldeer 0; Bouldeer also lacks 'Arch')", "City Bouldering (Aldgate, Stratford, White City, Bouldeer 0)", "The Font (Wandsworth, Borough)", "Flashpoint Cardiff/Easton/Swansea", "ABC walls BethWall, EustonWall, CanaryWall (Bouldeer has only Harro/Croy/Ravens/Mile End)", "Blocfit, Substation Brixton, Westway, The Reach"],
+      "evidence_confidence": "medium", "research_difficulty": "medium",
+      "difficulty_reason": "English-language, good directories (RockHobbit, BMC finder, ABC), mostly own websites; large number of small leisure-centre walls makes the bouldering-offer boundary fuzzy; London is dense.",
+      "recommendation": "research section now",
+      "notes": "Suggested order: London (largest hole), Wales (Cardiff/Newport/Swansea), South coast (Brighton, Oxford, Bath), Midlands/Birmingham, North (Preston, Durham). Suspected duplicate in Bouldeer: 'Citybloc | West Yorkshire' and 'CityBloc | Leeds'. Bouldeer's GB list also contains 'Kelsey Kerridge' (Cambridge leisure centre) and similar sports-centre walls; not investigated."
+    },
+    {
+      "iso2": "JP", "name": "Japan", "bouldeer_count": 114,
+      "bouldeer_cities": "Tokyo ~45 (Shinjuku 6, Sumida 3, Minato 3, plus ~35 single wards/cities), Saitama ~10, Chiba ~8, Kanagawa/Yokohama/Kawasaki ~10, Osaka ~6, Kyoto ~7, Nagoya 4, Sendai 5, Fukuoka 3, Sapporo 3, Hiroshima 3, Naha 3, Nagano 5",
+      "independent_total": {
+        "low": 600, "high": 666,
+        "basis": "Nationwide counts of 'climbing gyms' (almost all offer bouldering): ~600 gyms in 2025 (trade/M&A summaries; JMSCA planning document cited ~800 for 2021 incl. facilities in sports centres), 646 per the Climbing For Everybody directory, 666 per a May 2020 Google-Maps count (broad definition incl. public facilities). Prefecture pages on rockgym.jp (Nov 2025): Tokyo 71, Osaka 37, Aichi 35. Broad definitions include some rope-only and public walls, so true bouldering-offer total may be lower.",
+        "sources": [
+          {"title": "Climbing gym number nationwide (micki-pedia, May 2020)", "url": "https://micki-pedia.com/01-number-of-climbing-gym-2020.html", "language": "ja", "number": 666, "counts": "all climbing gyms incl. sports-centre walls, May 2020; peak around 2019 then closures", "accessed": "2026-10-01"},
+          {"title": "Climbing For Everybody gym list (via search result)", "url": "https://climbing-for-everybody.com/climbing-gym/", "language": "ja", "number": 646, "counts": "climbing gyms nationwide; Kanto 210 (page itself not fetchable at check time)", "accessed": "2026-10-01"},
+          {"title": "rockgym.jp Tokyo", "url": "https://rockgym.jp/gym-all/tokyo/", "language": "ja", "number": 71, "counts": "Tokyo climbing facilities Nov 2025", "accessed": "2026-10-01"},
+          {"title": "rockgym.jp Osaka", "url": "https://rockgym.jp/gym-all/osaka/", "language": "ja", "number": 37, "counts": "Osaka prefecture facilities Nov 2025", "accessed": "2026-10-01"},
+          {"title": "rockgym.jp Aichi", "url": "https://rockgym.jp/gym-all/aichi/", "language": "ja", "number": 35, "counts": "Aichi facilities Nov 2025", "accessed": "2026-10-01"}
+        ]
+      },
+      "sample": {
+        "size": 28, "found": 10, "ratio": 0.36,
+        "missing_examples": ["Galera (Osaka)", "Mushrooming (Osaka)", "Kawasemi (Osaka)", "Luvrock (Osaka)", "Siesta Yoshida (Higashi-Osaka)", "Nakagai Sakai (Osaka)", "N Rock (Nagoya)", "Play Mountain (Nagoya)", "Jackarope (Kumamoto)", "CRAG (Hamamatsu)"],
+        "gyms": [
+          {"name": "Climbing Gym Galera", "city": "Osaka", "evidence_url": "https://rockgym.jp/gym-all/osaka/", "on_bouldeer": false},
+          {"name": "Mushrooming", "city": "Osaka", "evidence_url": "https://rockgym.jp/gym-all/osaka/", "on_bouldeer": false},
+          {"name": "Urban Climbing Club Kawasemi", "city": "Osaka", "evidence_url": "https://rockgym.jp/gym-all/osaka/", "on_bouldeer": false},
+          {"name": "Roca", "city": "Osaka", "evidence_url": "https://rockgym.jp/gym-all/osaka/", "on_bouldeer": true},
+          {"name": "Gravity Research Umeda", "city": "Osaka", "evidence_url": "https://rockgym.jp/gym-all/osaka/", "on_bouldeer": true},
+          {"name": "Luvrock", "city": "Osaka", "evidence_url": "https://rockgym.jp/gym-all/osaka/", "on_bouldeer": false},
+          {"name": "Clapple", "city": "Osaka", "evidence_url": "https://rockgym.jp/gym-all/osaka/", "on_bouldeer": false},
+          {"name": "Nakagai Shirasagi", "city": "Sakai", "evidence_url": "https://rockgym.jp/gym-all/osaka/", "on_bouldeer": false},
+          {"name": "Siesta Yoshida", "city": "Higashi-Osaka", "evidence_url": "https://rockgym.jp/gym-all/osaka/", "on_bouldeer": false},
+          {"name": "Hago", "city": "Suita", "evidence_url": "https://rockgym.jp/gym-all/osaka/", "on_bouldeer": false},
+          {"name": "N Rock", "city": "Nagoya", "evidence_url": "https://rockgym.jp/gym-all/aichi/", "on_bouldeer": false},
+          {"name": "Play Mountain", "city": "Nagoya", "evidence_url": "https://rockgym.jp/gym-all/aichi/", "on_bouldeer": false},
+          {"name": "Colorful Rock", "city": "Nagoya", "evidence_url": "https://rockgym.jp/gym-all/aichi/", "on_bouldeer": true},
+          {"name": "Thumbs Up", "city": "Nagoya", "evidence_url": "https://rockgym.jp/gym-all/aichi/", "on_bouldeer": true},
+          {"name": "Pinnacle Sakae", "city": "Nagoya", "evidence_url": "https://rockgym.jp/gym-all/aichi/", "on_bouldeer": true},
+          {"name": "Riot Climbing", "city": "Nagoya", "evidence_url": "https://rockgym.jp/gym-all/aichi/", "on_bouldeer": false},
+          {"name": "aim", "city": "Nagoya", "evidence_url": "https://rockgym.jp/gym-all/aichi/", "on_bouldeer": false},
+          {"name": "GANBA", "city": "Nagoya", "evidence_url": "https://rockgym.jp/gym-all/aichi/", "on_bouldeer": false},
+          {"name": "HEADROCK", "city": "Tokyo (Sumida)", "evidence_url": "https://rockgym.jp/gym-all/tokyo/", "on_bouldeer": true},
+          {"name": "PRIME", "city": "Tokyo (Chuo)", "evidence_url": "https://rockgym.jp/gym-all/tokyo/", "on_bouldeer": true},
+          {"name": "BOULCOM", "city": "Tokyo (Chiyoda)", "evidence_url": "https://rockgym.jp/gym-all/tokyo/", "on_bouldeer": true},
+          {"name": "Fish and Bird", "city": "Tokyo (Koto)", "evidence_url": "https://rockgym.jp/gym-all/tokyo/", "on_bouldeer": true},
+          {"name": "B-PUMP Akihabara", "city": "Tokyo (Bunkyo)", "evidence_url": "https://rockgym.jp/gym-all/tokyo/", "on_bouldeer": true},
+          {"name": "Jackarope Climbing", "city": "Kumamoto", "evidence_url": "https://www.clatsuku.net/shop/", "on_bouldeer": false},
+          {"name": "Smoothie Bouldering Gym", "city": "Miyazaki", "evidence_url": "https://www.clatsuku.net/shop/", "on_bouldeer": false},
+          {"name": "Kironinico Boulder Park", "city": "Kagoshima", "evidence_url": "https://www.clatsuku.net/shop/", "on_bouldeer": false},
+          {"name": "Climbing Gym Rockin", "city": "Utsunomiya", "evidence_url": "https://www.clatsuku.net/shop/?page=2", "on_bouldeer": false},
+          {"name": "CRAG Climbing Gym", "city": "Hamamatsu", "evidence_url": "https://www.clatsuku.net/shop/?page=2", "on_bouldeer": false}
+        ]
+      },
+      "indicative_gap": {"low": 380, "high": 550, "basis": "High: 600-666 national total - 114 = 486-552. Low: sample cross-check (1-0.36) x 600 = 384; the sample over-represents Tokyo (5 of 28 vs Tokyo about 11 percent of the national total), so a population-weighted coverage is closer to 114/620 = about 0.18, supporting the upper half. Prefecture view: Tokyo about 45 of 71, Osaka about 6 of 37, Aichi about 4 of 35."},
+      "missing_cities": ["Osaka prefecture (Bouldeer ~6 of 37)", "Nagoya/Aichi (4 of 35)", "Kanagawa beyond Yokohama/Kawasaki", "Utsunomiya", "Hamamatsu", "Kumamoto city", "Kagoshima", "Miyazaki", "Kochi", "Gifu", "Niigata", "Shizuoka", "Okayama"],
+      "missing_chains": ["Nakagai Climbing Gym (Osaka, 5+ sites)", "Siesta (Osaka)", "Gravity Research Namba/Kishiwada", "Noborock (4 of ~10 found? partial)", "Rocky (partial)", "Bouldeer has strong Kanto chain coverage (D.Bouldering, B-PUMP, T-WALL, Base Camp, Noborock)"],
+      "evidence_confidence": "medium", "research_difficulty": "high",
+      "difficulty_reason": "~600-650 gyms, 47 prefectures, Japanese-language sites and many small independents on Instagram/X only; closures since 2019 (stale-entry risk); but rockgym.jp offers prefecture pages with dated counts (Nov 2025) that give a verifiable per-prefecture target.",
+      "recommendation": "research section now",
+      "notes": "Largest absolute gap of the group. Suggested order by gap size and tractability: Osaka prefecture, Aichi, Kanagawa, Saitama/Chiba remainder, Hyogo/Kyoto, Fukuoka/Kyushu, then Tohoku/Hokkaido and rural prefectures. Tokyo only needs a reconcile (71 vs ~45). Bouldeer city names in the tool are ward names, so city counts above are approximate."
+    },
+    {
+      "iso2": "KR", "name": "South Korea", "bouldeer_count": 123,
+      "bouldeer_cities": "Seoul ~45 (Gangnam 4, Mapo 4, Jongno 2, Gangdong 3, Songpa 2...), Busan ~17, Jeju 4, Daejeon 4, Gwangju 3, Daegu 5, Incheon 4, Ulsan 2, Gyeonggi ~30, Jeonju/Gunsan/Iksan ~8, Gangwon 5, Chungbuk 5",
+      "independent_total": {
+        "low": null, "high": null,
+        "basis": "Could not determine. No national count was found in federation or press sources (searches returned only market-size reports); the search budget ran out before more local directories could be tried. The only aggregate seen: koreaclimbing.blogspot.com Seoul list of about 60 gyms (undated, entries from 2018, so partly outdated). Regional pages from the same blog (Wonju 12, Gwangju 13, Ulsan 10, Jeju 6, Goyang 5, Gumi 5, Daejeon 5, Gimhae 4) include outdoor/public/artificial walls.",
+        "sources": [
+          {"title": "Seoul indoor climbing gym list (Korea Climbing blog)", "url": "https://koreaclimbing.blogspot.com/p/indoor-climbing-place-seoul-siseoul.html", "language": "ko", "number": 60, "counts": "about 60 Seoul gyms, undated", "accessed": "2026-10-01"},
+          {"title": "Wonju list (Korea Climbing blog)", "url": "https://koreaclimbing.blogspot.com/p/blog-page_9.html", "language": "ko", "number": 12, "counts": "Wonju gyms/walls incl. outdoor", "accessed": "2026-10-01"},
+          {"title": "Gwangju list (Korea Climbing blog)", "url": "https://koreaclimbing.blogspot.com/p/blog-page_52.html", "language": "ko", "number": 13, "counts": "Gwangju gyms/walls", "accessed": "2026-10-01"},
+          {"title": "Ulsan list (Korea Climbing blog)", "url": "https://koreaclimbing.blogspot.com/p/indoor-climbing-place-ulsan-si-korea.html", "language": "ko", "number": 10, "counts": "Ulsan gyms/walls", "accessed": "2026-10-01"}
+        ]
+      },
+      "sample": {
+        "size": 26, "found": 11, "ratio": 0.42,
+        "missing_examples": ["Gogo Climbing (Wonju)", "Climbven (Gwangju)", "Raon Climbing (Ulsan)", "Mong Climbing (Ulsan)", "Four Season Climbing (Gumi)", "The Coa Climbing (Gimhae)", "Samsong Maeum Climbing (Goyang)"],
+        "gyms": [
+          {"name": "Gogo Climbing", "city": "Wonju", "evidence_url": "https://koreaclimbing.blogspot.com/p/blog-page_9.html", "on_bouldeer": false},
+          {"name": "The Ssen Climbing", "city": "Wonju", "evidence_url": "https://koreaclimbing.blogspot.com/p/blog-page_9.html", "on_bouldeer": false},
+          {"name": "Climbing Wonju", "city": "Wonju", "evidence_url": "https://koreaclimbing.blogspot.com/p/blog-page_9.html", "on_bouldeer": false},
+          {"name": "Gimhae Climbing", "city": "Gimhae", "evidence_url": "https://koreaclimbing.blogspot.com/p/blog-page_84.html", "on_bouldeer": false},
+          {"name": "The Coa Climbing", "city": "Gimhae", "evidence_url": "https://koreaclimbing.blogspot.com/p/blog-page_84.html", "on_bouldeer": false},
+          {"name": "Gumi Climbing Center", "city": "Gumi", "evidence_url": "https://koreaclimbing.blogspot.com/p/blog-page_43.html", "on_bouldeer": false},
+          {"name": "Four Season Climbing", "city": "Gumi", "evidence_url": "https://koreaclimbing.blogspot.com/p/blog-page_43.html", "on_bouldeer": false},
+          {"name": "Samsong Climbing Maeum", "city": "Goyang", "evidence_url": "https://koreaclimbing.blogspot.com/p/blog-page_5.html", "on_bouldeer": false},
+          {"name": "The Climb Ilsan", "city": "Goyang", "evidence_url": "https://koreaclimbing.blogspot.com/p/blog-page_5.html", "on_bouldeer": true},
+          {"name": "Climbven", "city": "Gwangju", "evidence_url": "https://koreaclimbing.blogspot.com/p/blog-page_52.html", "on_bouldeer": false},
+          {"name": "Bawi Climbing Center", "city": "Gwangju", "evidence_url": "https://koreaclimbing.blogspot.com/p/blog-page_52.html", "on_bouldeer": false},
+          {"name": "Raon Climbing", "city": "Ulsan", "evidence_url": "https://koreaclimbing.blogspot.com/p/indoor-climbing-place-ulsan-si-korea.html", "on_bouldeer": false},
+          {"name": "Mong Climbing Center", "city": "Ulsan", "evidence_url": "https://koreaclimbing.blogspot.com/p/indoor-climbing-place-ulsan-si-korea.html", "on_bouldeer": false},
+          {"name": "9 Climbing Gym", "city": "Ulsan", "evidence_url": "https://koreaclimbing.blogspot.com/p/indoor-climbing-place-ulsan-si-korea.html", "on_bouldeer": true},
+          {"name": "Daejeon Climbing Center", "city": "Daejeon", "evidence_url": "https://koreaclimbing.blogspot.com/p/blog-page_0.html", "on_bouldeer": true},
+          {"name": "Climbing Gym Lead Yuseong", "city": "Daejeon", "evidence_url": "https://koreaclimbing.blogspot.com/p/blog-page_0.html", "on_bouldeer": true},
+          {"name": "The Pass Climbing", "city": "Jeju", "evidence_url": "https://koreaclimbing.blogspot.com/p/blog-page_33.html", "on_bouldeer": true},
+          {"name": "Jeju Move Zone", "city": "Jeju", "evidence_url": "https://koreaclimbing.blogspot.com/p/blog-page_33.html", "on_bouldeer": true},
+          {"name": "Jeju Climbing School", "city": "Jeju", "evidence_url": "https://koreaclimbing.blogspot.com/p/blog-page_33.html", "on_bouldeer": true},
+          {"name": "V10 Climbing", "city": "Seoul Gangdong", "evidence_url": "https://koreaclimbing.blogspot.com/p/indoor-climbing-place-seoul-siseoul.html", "on_bouldeer": false},
+          {"name": "B-Block Climbing", "city": "Seoul Gangnam", "evidence_url": "https://koreaclimbing.blogspot.com/p/indoor-climbing-place-seoul-siseoul.html", "on_bouldeer": false},
+          {"name": "The Jas Climbing", "city": "Seoul Gangnam", "evidence_url": "https://koreaclimbing.blogspot.com/p/indoor-climbing-place-seoul-siseoul.html", "on_bouldeer": false},
+          {"name": "Route Climbing Gym", "city": "Seoul Songpa", "evidence_url": "https://koreaclimbing.blogspot.com/p/indoor-climbing-place-seoul-siseoul.html", "on_bouldeer": true},
+          {"name": "Gate One Climbing", "city": "Seoul Seocho", "evidence_url": "https://koreaclimbing.blogspot.com/p/indoor-climbing-place-seoul-siseoul.html", "on_bouldeer": true},
+          {"name": "Gangdong Climbing Gym", "city": "Seoul Gangdong", "evidence_url": "https://koreaclimbing.blogspot.com/p/indoor-climbing-place-seoul-siseoul.html", "on_bouldeer": true},
+          {"name": "The Climb Hongdae", "city": "Seoul Mapo", "evidence_url": "https://koreaclimbing.blogspot.com/p/indoor-climbing-place-seoul-siseoul.html", "on_bouldeer": true}
+        ]
+      },
+      "indicative_gap": {"low": null, "high": null, "basis": "Not quantifiable: no national total. Qualitative only: sample ratio 0.42 (Seoul 4/7, provincial cities 7/19), but the blog lists are old, mix in outdoor/municipal walls, and Korean names were matched to Bouldeer's romanised names by hand (match risk both ways). If the sample were representative the implied national total would be roughly 290 (123/0.42), which is only a cross-check, not a count. Bouldeer also lacks several The Climb / Seoul Forest Climbing branches (The Climb group ~10 sites, Bouldeer 5; Seoul Forest Climbing 5 sites, Bouldeer 1)."},
+      "missing_cities": ["Wonju/Gumi/Gimhae/Ulsan gaps are partial (each has 1-3 on Bouldeer but 4-12 on blog lists)"],
+      "missing_chains": ["The Climb (about 5 of ~10 branches)", "Seoul Forest Climbing (1 of 5)", "Climbing Park (partly)", "Peakers/Pickers etc. not verified"],
+      "evidence_confidence": "low", "research_difficulty": "high",
+      "difficulty_reason": "Korean-language only, gyms live on Naver Map/Instagram, no federation or national directory located, chain branch lists not fetched, blog lists dated. Needs a Naver Map-based method that this check could not use.",
+      "recommendation": "later",
+      "notes": "Bouldeer's 123 already looks thorough outside the chain gaps; potential gap probably moderate (tens to ~150) but unproven. Re-check with a Naver Map region count (Seoul, Gyeonggi first) before committing a section; closing the The Climb / Seoul Forest Climbing branch gaps is a cheap first step."
+    },
+    {
+      "iso2": "AU", "name": "Australia", "bouldeer_count": 74,
+      "bouldeer_cities": "Sydney metro ~25 (9 Degrees, BlocHaus, Climb Fit, Nomad, etc.), Melbourne ~17, Brisbane/Gold Coast/Sunshine Coast ~14, Perth 6, Adelaide 7, Canberra 5, Hobart/Launceston 2, Wollongong/Newcastle/Katoomba/Albury 6",
+      "independent_total": {
+        "low": 90, "high": 104,
+        "basis": "Scraped business directory (rentechdigital, April 2026): 104 rock climbing gyms in Australia (NSW 31, VIC 26, QLD 25, WA 11, SA 5, ACT 3, TAS 3); includes rope-only, kids and PCYC/fitness walls, so an upper bound. Low is an unmeasured allowance for those; no federation list or national press count found.",
+        "sources": [
+          {"title": "List of rock climbing gyms in Australia (April 2026)", "url": "https://rentechdigital.com/smartscraper/business-report-details/list-of-rock-climbing-gyms-in-australia", "language": "en", "number": 104, "counts": "all rock climbing gyms, April 2026", "accessed": "2026-10-01"},
+          {"title": "BoulderingWall.com Australia", "url": "https://boulderingwall.com/australia/", "language": "en", "number": 10, "counts": "thin directory, Sydney and Brisbane only", "accessed": "2026-10-01"},
+          {"title": "Boulderinglist.com Australia", "url": "https://www.boulderinglist.com/countries/australia", "language": "en", "number": 20, "counts": "thin directory, 17 cities", "accessed": "2026-10-01"}
+        ]
+      },
+      "sample": {
+        "size": 22, "found": 16, "ratio": 0.73,
+        "missing_examples": ["9 Degrees Chatswood", "9 Degrees Morningside (Brisbane)", "Khazm (Leumeah)", "The Cave Climbing Gym (Marsfield)", "Climb Oz (Blacktown)", "Boulder Heads (Baringa)", "Pulse Gosford / Maitland / Adamstown"],
+        "gyms": [
+          {"name": "9 Degrees Alexandria", "city": "Sydney", "evidence_url": "https://boulderingwall.com/australia/", "on_bouldeer": true},
+          {"name": "9 Degrees Waterloo", "city": "Sydney", "evidence_url": "https://boulderingwall.com/australia/", "on_bouldeer": true},
+          {"name": "9 Degrees Lane Cove", "city": "Sydney", "evidence_url": "https://boulderingwall.com/australia/", "on_bouldeer": true},
+          {"name": "9 Degrees Chatswood", "city": "Sydney", "evidence_url": "https://boulderingwall.com/australia/", "on_bouldeer": false},
+          {"name": "9 Degrees Parramatta", "city": "Sydney", "evidence_url": "https://boulderingwall.com/australia/", "on_bouldeer": true},
+          {"name": "Climb Fit Macquarie Park", "city": "Sydney", "evidence_url": "https://boulderingwall.com/australia/", "on_bouldeer": true},
+          {"name": "Climb Fit St Leonards", "city": "Sydney", "evidence_url": "https://boulderingwall.com/australia/", "on_bouldeer": true},
+          {"name": "Climb Fit Kirrawee", "city": "Sydney", "evidence_url": "https://boulderingwall.com/australia/", "on_bouldeer": true},
+          {"name": "9 Degrees Enoggera", "city": "Brisbane", "evidence_url": "https://boulderingwall.com/australia/", "on_bouldeer": true},
+          {"name": "9 Degrees Morningside", "city": "Brisbane", "evidence_url": "https://boulderingwall.com/australia/", "on_bouldeer": false},
+          {"name": "BlocHaus Bouldering Canberra", "city": "Fyshwick", "evidence_url": "https://www.boulderinglist.com/countries/australia", "on_bouldeer": true},
+          {"name": "Pulse Climbing", "city": "Newcastle area", "evidence_url": "https://www.boulderinglist.com/countries/australia", "on_bouldeer": true},
+          {"name": "Climb Oz", "city": "Blacktown", "evidence_url": "https://www.boulderinglist.com/countries/australia", "on_bouldeer": false},
+          {"name": "The Edge Adventure Centre", "city": "Castle Hill", "evidence_url": "https://www.boulderinglist.com/countries/australia", "on_bouldeer": true},
+          {"name": "Khazm", "city": "Leumeah", "evidence_url": "https://www.indoorclimbing.com/newsouthwales.html", "on_bouldeer": false},
+          {"name": "The Cave Climbing Gym", "city": "Marsfield", "evidence_url": "https://www.indoorclimbing.com/newsouthwales.html", "on_bouldeer": false},
+          {"name": "BlocHaus Leichhardt", "city": "Sydney", "evidence_url": "https://www.boulderinglist.com/countries/australia", "on_bouldeer": true},
+          {"name": "Dynomite Bouldering", "city": "North Wollongong", "evidence_url": "https://www.boulderinglist.com/countries/australia", "on_bouldeer": true},
+          {"name": "The Ledge Climbing Centre", "city": "Camperdown", "evidence_url": "https://www.boulderinglist.com/countries/australia", "on_bouldeer": true},
+          {"name": "Hangdog Climbing Gym", "city": "Wollongong", "evidence_url": "https://www.boulderinglist.com/countries/australia", "on_bouldeer": true},
+          {"name": "Boulder Heads Indoor Climb", "city": "Baringa", "evidence_url": "https://www.boulderinglist.com/countries/australia", "on_bouldeer": false},
+          {"name": "Bould Move", "city": "Birtinya", "evidence_url": "https://www.boulderinglist.com/countries/australia", "on_bouldeer": true}
+        ]
+      },
+      "indicative_gap": {"low": 15, "high": 30, "basis": "High: 104 - 74 = 30 (upper bound, directory includes rope-only/fitness walls). Cross-check: (1-0.73) x 104 = 28. Low is a judgement for non-bouldering entries. Sample came from thin directories (10 + 20 entries) so it mostly covers Sydney; gaps may be wider outside NSW (e.g. regional QLD/VIC)."},
+      "missing_cities": ["Newcastle area branches (Gosford, Maitland, Adamstown)", "Blacktown", "Sunshine Coast north (Baringa)", "Geelong (0)", "Cairns (0)", "Townsville (0)", "Darwin (0)", "Bendigo/Ballarat (0)", "Launceston (Bouldeer 'Hobart' only, plus Invermay)"],
+      "missing_chains": ["9 Degrees: Chatswood, Morningside (2 of ~8 missing)", "Pulse Climbing: Gosford, Maitland missing"],
+      "evidence_confidence": "medium", "research_difficulty": "low",
+      "difficulty_reason": "Small market, English-language, chain websites list branches; gap is a few dozen at most.",
+      "recommendation": "not needed",
+      "notes": "Bouldeer's Australia coverage looks close to complete versus the 104-gym directory; a short top-up (9 Degrees, Pulse, Blacktown/Leumeah/Marsfield, Flow Climbing in Melbourne, Boulder Heads, regional Vic/Qld cities with 0) could be done within a later general sweep rather than a dedicated section. 'Climbing Australia' federation list was unreachable."
+    }
+  ]
+}

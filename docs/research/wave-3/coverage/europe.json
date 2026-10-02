@@ -1,0 +1,1392 @@
+{
+ "group": "europe",
+ "generated": "2026-10-02",
+ "countries": [
+  {
+   "iso2": "NL",
+   "name": "Netherlands",
+   "bouldeer_count": 25,
+   "bouldeer_cities": "Amsterdam 8, Den Haag 7, Utrecht 6, Rotterdam 4 (only 4 cities)",
+   "independent_total": {
+    "low": 55,
+    "high": 80,
+    "basis": "POF!ZAK list (updated 2026-03) 53 bouldering halls (57 rows incl. branches); NKBV via Resole (2025-08): 38 climbing halls + 53 boulder halls in 42 cities; NKBV: ~80 locations to boulder or climb (all types, undated). Low = boulder halls + a few mixed halls with bouldering; high = NKBV ~80.",
+    "sources": [
+     {
+      "title": "Overzicht alle boulderhallen Nederland - POF!ZAK",
+      "url": "https://pofzak.nl/overzicht-alle-boulderhallen-nederland/",
+      "language": "nl",
+      "number": 53,
+      "counts": "bouldering halls (dedicated), branches listed separately",
+      "accessed": "2026-10-01"
+     },
+     {
+      "title": "Alle boulderhallen en klimhallen in Nederland (2025) - Resole (citing NKBV)",
+      "url": "https://resole.nl/en/blogs/news/alle-boulderhallen-en-klimhallen-in-nederland-2025",
+      "language": "nl",
+      "number": 91,
+      "counts": "38 climbing halls + 53 boulder halls, 42 cities (possible overlap)",
+      "accessed": "2026-10-01"
+     },
+     {
+      "title": "Klimmen in Nederland - NKBV",
+      "url": "https://nkbv.nl/kenniscentrum/klimmen-in-nederland.html",
+      "language": "nl",
+      "number": 80,
+      "counts": "approx. locations to boulder or climb, all types",
+      "accessed": "2026-10-01"
+     },
+     {
+      "title": "Boulderhallen Nederland - Salt",
+      "url": "https://getsalt.com/blog/overzicht-boulderhallen-nederland/",
+      "language": "nl",
+      "number": 54,
+      "counts": "bouldering halls listed",
+      "accessed": "2026-10-01"
+     }
+    ]
+   },
+   "sample": {
+    "size": 19,
+    "found": 5,
+    "ratio": 0.26,
+    "missing_examples": [
+     "Monk Eindhoven",
+     "Apex Boulders Groningen",
+     "Boulderhal Krachtstof Leiden",
+     "Beest Boulders Breda",
+     "Kei Boulderhal Amersfoort",
+     "Boulderhal Roest Zwolle"
+    ],
+    "gyms": [
+     {
+      "name": "Impact Boulderhal",
+      "city": "Almere",
+      "evidence_url": "https://pofzak.nl/overzicht-alle-boulderhallen-nederland/",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Boulderhal Sendmast",
+      "city": "Alkmaar",
+      "evidence_url": "https://pofzak.nl/overzicht-alle-boulderhallen-nederland/",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Kei Boulderhal De Hoef",
+      "city": "Amersfoort",
+      "evidence_url": "https://www.keiboulderhal.nl",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Be Boulder",
+      "city": "Amsterdam",
+      "evidence_url": "https://pofzak.nl/overzicht-alle-boulderhallen-nederland/",
+      "on_bouldeer": true
+     },
+     {
+      "name": "Beest Boulders Het Lab",
+      "city": "Amsterdam",
+      "evidence_url": "https://beestboulders.com",
+      "on_bouldeer": true
+     },
+     {
+      "name": "RijnBoulder",
+      "city": "Arnhem",
+      "evidence_url": "https://pofzak.nl/overzicht-alle-boulderhallen-nederland/",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Boulderhal Bruut",
+      "city": "Breda",
+      "evidence_url": "https://pofzak.nl/overzicht-alle-boulderhallen-nederland/",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Beest Boulders Breda",
+      "city": "Breda",
+      "evidence_url": "https://beestboulders.com",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Revolt Boulderhal",
+      "city": "Delft",
+      "evidence_url": "https://pofzak.nl/overzicht-alle-boulderhallen-nederland/",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Boulderhal de Campus",
+      "city": "Den Haag",
+      "evidence_url": "https://pofzak.nl/overzicht-alle-boulderhallen-nederland/",
+      "on_bouldeer": true
+     },
+     {
+      "name": "Beest Boulders Den Haag Centrum",
+      "city": "Den Haag",
+      "evidence_url": "https://beestboulders.com",
+      "on_bouldeer": true
+     },
+     {
+      "name": "Monk Eindhoven",
+      "city": "Eindhoven",
+      "evidence_url": "https://pofzak.nl/overzicht-alle-boulderhallen-nederland/",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Apex Boulders",
+      "city": "Groningen",
+      "evidence_url": "https://apexboulders.nl",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Boulderhal Krachtstof",
+      "city": "Leiden",
+      "evidence_url": "https://pofzak.nl/overzicht-alle-boulderhallen-nederland/",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Radium Boulders",
+      "city": "Maastricht",
+      "evidence_url": "https://www.radiumboulders.nl",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Grip Boulderhal",
+      "city": "Nijmegen",
+      "evidence_url": "https://gripnijmegen.nl/",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Boulder Rotterdam",
+      "city": "Rotterdam",
+      "evidence_url": "https://pofzak.nl/overzicht-alle-boulderhallen-nederland/",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Boulderhal Sterk Spoor",
+      "city": "Utrecht",
+      "evidence_url": "https://pofzak.nl/overzicht-alle-boulderhallen-nederland/",
+      "on_bouldeer": true
+     },
+     {
+      "name": "Boulderhal Roest",
+      "city": "Zwolle",
+      "evidence_url": "https://boulderhalroest.nl",
+      "on_bouldeer": false
+     }
+    ]
+   },
+   "indicative_gap": {
+    "low": 30,
+    "high": 55,
+    "basis": "independent total 55-80 minus Bouldeer 25; cross-check (1-0.26) x ~57 = 42"
+   },
+   "missing_cities": [
+    "Eindhoven",
+    "Groningen",
+    "Haarlem",
+    "Leiden",
+    "Delft",
+    "Breda",
+    "Nijmegen",
+    "Maastricht",
+    "Tilburg",
+    "Zwolle",
+    "Enschede",
+    "Amersfoort",
+    "Apeldoorn",
+    "Arnhem",
+    "Almere",
+    "Den Bosch",
+    "Ede",
+    "Alkmaar"
+   ],
+   "missing_chains": [
+    "Monk (Bouldeer has Amsterdam + Rotterdam only; also Eindhoven, Hilversum)",
+    "Kei Boulderhal (3 halls, 0)",
+    "Beest Boulders Breda and Delft (Bouldeer has other branches)",
+    "De Klimmuur Haarlem (sister brand)",
+    "Boulder Rotterdam / Boulder Eindhoven / Boulder Tilburg brand"
+   ],
+   "evidence_confidence": "medium",
+   "research_difficulty": "low",
+   "difficulty_reason": "About 35-45 missing gyms, mostly dedicated boulder halls with websites, two current aggregate lists (POF!ZAK, Salt) plus NKBV; chains have location pages; Dutch but easy.",
+   "recommendation": "research section now",
+   "notes": "Sample cities: 5 of 5 found are in Bouldeer's 4 cities; every sampled gym outside them is missing. Bouldeer entries such as 'Boulder - Amsterdam' and 'Klimmuur - Utrecht' have generic names worth a later dedup check (not investigated). Several sample entries rely on the two aggregate lists (updated 2026) rather than own sites; own sites confirmed for Apex, Roest, Radium, Kei, Beest."
+  },
+  {
+   "iso2": "PL",
+   "name": "Poland",
+   "bouldeer_count": 31,
+   "bouldeer_cities": "Warszawa 11, Wroclaw 8, Krakow 7, Poznan 5 (only 4 cities)",
+   "independent_total": {
+    "low": 60,
+    "high": 100,
+    "basis": "No authoritative national figure found. sciany-wspinaczkowe.pl directory: 86 climbing walls (bouldering + rope, undated); Redpoint directory: 35 gyms (partial); Portal Gorski DB: 110+ walls in 2012 (all wall types, stale). Bottom-up from named gyms outside Bouldeer's 4 cities: at least ~22 listed and missing. Estimate 60-100 bouldering-capable public facilities.",
+    "sources": [
+     {
+      "title": "Sciany wspinaczkowe w Polsce (directory)",
+      "url": "https://sciany-wspinaczkowe.pl/",
+      "language": "pl",
+      "number": 86,
+      "counts": "climbing walls incl. rope-only, undated",
+      "accessed": "2026-10-01"
+     },
+     {
+      "title": "Climbing Gyms in Poland - Redpoint",
+      "url": "https://gyms.redpoint-app.com/region/PL",
+      "language": "en",
+      "number": 35,
+      "counts": "gyms listed (partial)",
+      "accessed": "2026-10-01"
+     },
+     {
+      "title": "Indoor Climbing Gyms Poland - indoorclimbing.com",
+      "url": "https://www.indoorclimbing.com/poland.html",
+      "language": "en",
+      "number": 18,
+      "counts": "gyms listed (stale/partial)",
+      "accessed": "2026-10-01"
+     },
+     {
+      "title": "Nowa baza scianek wspinaczkowych - Portal Gorski (2012)",
+      "url": "http://www.portalgorski.pl/nowosci/rozne/924-nowa-baza-scianek-wspinaczkowych",
+      "language": "pl",
+      "number": 110,
+      "counts": "all climbing walls, 2012",
+      "accessed": "2026-10-01"
+     },
+     {
+      "title": "Scianki wspinaczkowe 2025 - Trojmiasto",
+      "url": "https://www.trojmiasto.pl/aktywne/Scianki-wspinaczkowe-2025-Gdzie-sa-w-Gdansku-Gdyni-Sopocie-Ile-kosztuja-n199308.html",
+      "language": "pl",
+      "number": 5,
+      "counts": "bouldering facilities in Gdansk/Gdynia named (Murall, Grimpado, Problem, Triblok, Elewator)",
+      "accessed": "2026-10-01"
+     }
+    ]
+   },
+   "sample": {
+    "size": 19,
+    "found": 6,
+    "ratio": 0.32,
+    "missing_examples": [
+     "VOLT Lodz",
+     "VOLT Torun",
+     "Murall Gdansk",
+     "Grimpado Gdansk",
+     "BLO Katowice",
+     "Bafard Lublin"
+    ],
+    "gyms": [
+     {
+      "name": "VOLT Boulderownia",
+      "city": "Warszawa",
+      "evidence_url": "https://voltboulderownia.pl/",
+      "on_bouldeer": true
+     },
+     {
+      "name": "Camp4",
+      "city": "Warszawa",
+      "evidence_url": "https://gyms.redpoint-app.com/region/PL",
+      "on_bouldeer": true
+     },
+     {
+      "name": "Obiekto",
+      "city": "Warszawa",
+      "evidence_url": "https://gyms.redpoint-app.com/region/PL",
+      "on_bouldeer": true
+     },
+     {
+      "name": "Fortress",
+      "city": "Krakow",
+      "evidence_url": "https://gyms.redpoint-app.com/region/PL",
+      "on_bouldeer": true
+     },
+     {
+      "name": "Climbing Spot Widlakowa",
+      "city": "Poznan",
+      "evidence_url": "https://www.climbingspot.pl",
+      "on_bouldeer": true
+     },
+     {
+      "name": "Fabryczna Boulder",
+      "city": "Wroclaw",
+      "evidence_url": "https://gyms.redpoint-app.com/region/PL",
+      "on_bouldeer": true
+     },
+     {
+      "name": "VOLT Lodz",
+      "city": "Lodz",
+      "evidence_url": "https://voltboulderownia.pl/",
+      "on_bouldeer": false
+     },
+     {
+      "name": "VOLT Torun",
+      "city": "Torun",
+      "evidence_url": "https://voltboulderownia.pl/",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Murall Gdansk",
+      "city": "Gdansk",
+      "evidence_url": "https://murall.pl",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Grimpado",
+      "city": "Gdansk",
+      "evidence_url": "https://www.trojmiasto.pl/aktywne/Scianki-wspinaczkowe-2025-Gdzie-sa-w-Gdansku-Gdyni-Sopocie-Ile-kosztuja-n199308.html",
+      "on_bouldeer": false
+     },
+     {
+      "name": "BlokFit Boulder Center",
+      "city": "Gdansk",
+      "evidence_url": "https://www.trojmiasto.pl/aktywne/Scianki-wspinaczkowe-2025-Gdzie-sa-w-Gdansku-Gdyni-Sopocie-Ile-kosztuja-n199308.html",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Elewator",
+      "city": "Gdansk",
+      "evidence_url": "https://www.trojmiasto.pl/aktywne/Scianki-wspinaczkowe-2025-Gdzie-sa-w-Gdansku-Gdyni-Sopocie-Ile-kosztuja-n199308.html",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Triblok",
+      "city": "Gdynia",
+      "evidence_url": "https://triblok.pl",
+      "on_bouldeer": false
+     },
+     {
+      "name": "BLO Katowice",
+      "city": "Katowice",
+      "evidence_url": "https://www.blokatowice.pl/",
+      "on_bouldeer": false
+     },
+     {
+      "name": "GEKO Szczecinskie Centrum Wspinaczkowe",
+      "city": "Szczecin",
+      "evidence_url": "https://www.indoorclimbing.com/poland.html",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Fiord Centrum Wspinaczkowe",
+      "city": "Lodz",
+      "evidence_url": "https://gyms.redpoint-app.com/region/PL",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Bafard",
+      "city": "Lublin",
+      "evidence_url": "https://sciany-wspinaczkowe.pl/scianka-wspinaczkowa-bafard/",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Balder",
+      "city": "Bialystok",
+      "evidence_url": "https://sciany-wspinaczkowe.pl/scianka-wspinaczkowa-balder/",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Poziom 450",
+      "city": "Sosnowiec",
+      "evidence_url": "https://poziom450.pl/boulderownia",
+      "on_bouldeer": false
+     }
+    ]
+   },
+   "indicative_gap": {
+    "low": 30,
+    "high": 65,
+    "basis": "independent total 60-100 minus Bouldeer 31 gives 29-69; cross-check (1-0.32) x ~85 = 58 (sample is biased toward uncovered cities, true ratio probably somewhat higher)"
+   },
+   "missing_cities": [
+    "Gdansk",
+    "Gdynia",
+    "Lodz",
+    "Katowice",
+    "Szczecin",
+    "Lublin",
+    "Torun",
+    "Bialystok",
+    "Sosnowiec",
+    "Gliwice",
+    "Bielsko-Biala",
+    "Rzeszow",
+    "Bydgoszcz"
+   ],
+   "missing_chains": [
+    "VOLT Boulderownia (3 branches, Bouldeer has Warszawa only; Lodz and Torun missing)",
+    "Murall (4 branches; Bouldeer has 2 Warsaw entries, Gdansk missing, third Warsaw branch unclear)"
+   ],
+   "evidence_confidence": "low",
+   "research_difficulty": "high",
+   "difficulty_reason": "Large country, Polish, no single national list; many regional cities with 1-3 gyms each, many small independent halls and Facebook-only operators; would need several regional sections (Pomorskie, Slask, Lodzkie, Zachodniopomorskie, east).",
+   "recommendation": "research section now",
+   "notes": "Poziom 450, GEKO, Fiord, Balder confirmed via directory pages only (own site fetch failed or 404); Grimpado site blocked by bot check. Murall Warsaw branch mapping to Bouldeer entries unclear so left out of sample. Bouldeer has no Gdansk/Lodz/Katowice at all."
+  },
+  {
+   "iso2": "AT",
+   "name": "Austria",
+   "bouldeer_count": 22,
+   "bouldeer_cities": "Wien 13, Graz 4, Linz 3, Salzburg 2 (only 4 cities)",
+   "independent_total": {
+    "low": 55,
+    "high": 90,
+    "basis": "climbing.plus directory: 55 climbing halls in Austria (rope + boulder, bouldering flagged for ~25); sportaktiv list (2015, stale) 98 facilities incl. many small valley halls. Low = climbing.plus all halls, high = broader inclusion of small Alpenverein/Naturfreunde halls with bouldering.",
+    "sources": [
+     {
+      "title": "Kletterhallen in Oesterreich - CLIMBING.PLUS",
+      "url": "https://climbing.plus/indoor/tag/country/at",
+      "language": "de",
+      "number": 55,
+      "counts": "climbing halls incl. rope-only",
+      "accessed": "2026-10-01"
+     },
+     {
+      "title": "Bouldern in Oesterreich: Alle Boulderhallen auf einen Blick - sportaktiv (2015)",
+      "url": "https://www.sportaktiv.com/bouldern-oesterreich-alle-boulderhallen-auf-einen-blick",
+      "language": "de",
+      "number": 98,
+      "counts": "bouldering/climbing halls, stale 2015, includes rope-only and walls",
+      "accessed": "2026-10-01"
+     },
+     {
+      "title": "boulderbar Austria locations",
+      "url": "https://www.boulderbar.net",
+      "language": "de",
+      "number": 7,
+      "counts": "boulderbar branches: 4 Wien, Salzburg, Linz, St. Poelten",
+      "accessed": "2026-10-01"
+     }
+    ]
+   },
+   "sample": {
+    "size": 19,
+    "found": 7,
+    "ratio": 0.37,
+    "missing_examples": [
+     "Das Ki Kletterzentrum Innsbruck",
+     "boulderbar Linz",
+     "boulderbar St. Poelten",
+     "NEWTON Kapfenberg",
+     "Volume Bouldern Villach",
+     "Boulderpoint Leoben"
+    ],
+    "gyms": [
+     {
+      "name": "boulderbar Hannovergasse",
+      "city": "Wien",
+      "evidence_url": "https://climbing.plus/indoor/tag/country/at",
+      "on_bouldeer": true
+     },
+     {
+      "name": "Blockfabrik",
+      "city": "Wien",
+      "evidence_url": "https://climbing.plus/indoor/tag/country/at",
+      "on_bouldeer": true
+     },
+     {
+      "name": "Edelweiss Walfischgasse",
+      "city": "Wien",
+      "evidence_url": "https://climbing.plus/indoor/tag/country/at",
+      "on_bouldeer": true
+     },
+     {
+      "name": "NEWTON Graz",
+      "city": "Graz",
+      "evidence_url": "https://climbing.plus/indoor/tag/country/at",
+      "on_bouldeer": true
+     },
+     {
+      "name": "Bloc House",
+      "city": "Graz",
+      "evidence_url": "https://climbing.plus/indoor/tag/country/at",
+      "on_bouldeer": true
+     },
+     {
+      "name": "Kletterzentrum am Turm",
+      "city": "Linz",
+      "evidence_url": "https://climbing.plus/indoor/tag/country/at",
+      "on_bouldeer": true
+     },
+     {
+      "name": "boulderbar Salzburg",
+      "city": "Salzburg",
+      "evidence_url": "https://www.boulderbar.net",
+      "on_bouldeer": true
+     },
+     {
+      "name": "Das Ki - Kletterzentrum Innsbruck",
+      "city": "Innsbruck",
+      "evidence_url": "https://www.kletterzentrum-innsbruck.at",
+      "on_bouldeer": false
+     },
+     {
+      "name": "boulderbar Linz",
+      "city": "Linz",
+      "evidence_url": "https://www.boulderbar.net",
+      "on_bouldeer": false
+     },
+     {
+      "name": "boulderbar St. Poelten",
+      "city": "St. Poelten",
+      "evidence_url": "https://www.boulderbar.net",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Bigwall Bouldering",
+      "city": "Wiener Neustadt",
+      "evidence_url": "https://bigwall-bouldering.at",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Volume Bouldern Villach",
+      "city": "Villach",
+      "evidence_url": "https://climbing.plus/indoor/tag/country/at",
+      "on_bouldeer": false
+     },
+     {
+      "name": "NEWTON Boulderhalle Kapfenberg",
+      "city": "Kapfenberg",
+      "evidence_url": "https://climbing.plus/indoor/tag/country/at",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Boulderpoint Leoben",
+      "city": "Leoben",
+      "evidence_url": "https://climbing.plus/indoor/tag/country/at",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Boulderhalle Leibnitz",
+      "city": "Leibnitz",
+      "evidence_url": "https://climbing.plus/indoor/tag/country/at",
+      "on_bouldeer": false
+     },
+     {
+      "name": "BoulderTown Salzburg",
+      "city": "Salzburg",
+      "evidence_url": "https://climbing.plus/indoor/tag/country/at",
+      "on_bouldeer": false
+     },
+     {
+      "name": "stoablock",
+      "city": "Gmunden",
+      "evidence_url": "https://climbing.plus/indoor/tag/country/at",
+      "on_bouldeer": false
+     },
+     {
+      "name": "FLAESH - Die Boulderhalle",
+      "city": "Kaernten",
+      "evidence_url": "https://climbing.plus/indoor/tag/country/at",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Bouldergarage",
+      "city": "Kaernten",
+      "evidence_url": "https://climbing.plus/indoor/tag/country/at",
+      "on_bouldeer": false
+     }
+    ]
+   },
+   "indicative_gap": {
+    "low": 30,
+    "high": 60,
+    "basis": "independent total 55-90 minus Bouldeer 22 = 33-68; cross-check (1-0.37) x ~70 = 44"
+   },
+   "missing_cities": [
+    "Innsbruck",
+    "Klagenfurt",
+    "Villach",
+    "St. Poelten",
+    "Wiener Neustadt",
+    "Leoben",
+    "Kapfenberg",
+    "Dornbirn/Vorarlberg",
+    "Wels",
+    "Steyr",
+    "Gmunden",
+    "Tirol valley towns"
+   ],
+   "missing_chains": [
+    "boulderbar (Bouldeer has Wien x4 + Salzburg; lacks Linz and St. Poelten)",
+    "NEWTON (Graz only; Kapfenberg missing)",
+    "Edelweiss Floridsdorf / Suedstadt branches (Bouldeer has 2 Wien branches)"
+   ],
+   "evidence_confidence": "medium",
+   "research_difficulty": "medium",
+   "difficulty_reason": "German, directory lists exist (climbing.plus, Alpenverein, Naturfreunde) but many small club/valley halls across 9 states with uneven bouldering info; needs 2-3 regional sections.",
+   "recommendation": "research section now",
+   "notes": "Das Ki Innsbruck (approx. 200 boulders, own site) is a notable gap. The 2015 sportaktiv list is stale and was only used for the upper bound. Kletterzentrum Austria and OeGV Wien were not checked against Bouldeer find (no 'Austria' match). Sample gyms from climbing.plus are flagged bouldering by that directory; own sites confirmed only for Das Ki, boulderbar, Bigwall."
+  },
+  {
+   "iso2": "NO",
+   "name": "Norway",
+   "bouldeer_count": 20,
+   "bouldeer_cities": "Bergen 4, Oslo 3, Trondheim 3, Stavanger 2, Bodo 2, plus 1 each Hemsedal, Kristiansand, Kristiansund, Lillehammer, Alesund, Skien",
+   "independent_total": {
+    "low": 35,
+    "high": 60,
+    "basis": "No federation list retrievable (klatring.no anlegg page and klatrehelse map not machine-readable). A search summary says over 60 indoor halls nationally (uncited, all types incl. rope/club walls). Oslo-area guide lists 11 halls with bouldering. Estimate 35-60 public facilities with bouldering.",
+    "sources": [
+     {
+      "title": "Klatring i Oslo - Friflyt",
+      "url": "https://www.friflyt.no/klatring/inneklatring/klatring-i-oslo",
+      "language": "no",
+      "number": 11,
+      "counts": "Oslo/Akershus/Buskerud halls with bouldering (of 16 listed)",
+      "accessed": "2026-10-01"
+     },
+     {
+      "title": "Klatreverket locations",
+      "url": "https://www.klatreverket.no",
+      "language": "no",
+      "number": 5,
+      "counts": "Klatreverket: Torshov, Lokka, Bryn, Loren in Oslo (+ Drammen, Kristiansand per site)",
+      "accessed": "2026-10-01"
+     },
+     {
+      "title": "Search summary: over 60 indoor climbing halls in Norway (uncited)",
+      "url": "https://www.friflyt.no/klatring/norges-fineste-buldrehall",
+      "language": "no",
+      "number": 60,
+      "counts": "indoor halls, all types, unverified",
+      "accessed": "2026-10-01"
+     }
+    ]
+   },
+   "sample": {
+    "size": 15,
+    "found": 4,
+    "ratio": 0.27,
+    "missing_examples": [
+     "Klatreverket Bryn",
+     "Klatreverket Loren",
+     "Klatreverket Drammen",
+     "Buldreterminalen Tromso",
+     "Buldrehallen Alesund",
+     "Arendal Buldresenter"
+    ],
+    "gyms": [
+     {
+      "name": "Oslo Klatresenter",
+      "city": "Oslo",
+      "evidence_url": "https://www.friflyt.no/klatring/inneklatring/klatring-i-oslo",
+      "on_bouldeer": true
+     },
+     {
+      "name": "Vulkan Klatresenter",
+      "city": "Oslo",
+      "evidence_url": "https://www.friflyt.no/klatring/inneklatring/klatring-i-oslo",
+      "on_bouldeer": true
+     },
+     {
+      "name": "Trondheim Klatresenter",
+      "city": "Trondheim",
+      "evidence_url": "https://xn--norsknring-i6a.no/klatring-innendors-nybegynner-guide",
+      "on_bouldeer": true
+     },
+     {
+      "name": "Klatreverket Kristiansand",
+      "city": "Kristiansand",
+      "evidence_url": "https://www.klatreverket.no",
+      "on_bouldeer": true
+     },
+     {
+      "name": "Klatreverket Bryn",
+      "city": "Oslo",
+      "evidence_url": "https://www.klatreverket.no",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Klatreverket Loren",
+      "city": "Oslo",
+      "evidence_url": "https://www.klatreverket.no",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Klatreverket Drammen",
+      "city": "Drammen",
+      "evidence_url": "https://www.friflyt.no/klatring/inneklatring/klatring-i-oslo",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Holmen klatresenter",
+      "city": "Asker",
+      "evidence_url": "https://www.friflyt.no/klatring/inneklatring/klatring-i-oslo",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Eika Sportssenter",
+      "city": "As",
+      "evidence_url": "https://www.friflyt.no/klatring/inneklatring/klatring-i-oslo",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Ski Alliansehall",
+      "city": "Ski",
+      "evidence_url": "https://www.friflyt.no/klatring/inneklatring/klatring-i-oslo",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Buldrerommet Blindern",
+      "city": "Oslo",
+      "evidence_url": "https://www.friflyt.no/klatring/inneklatring/klatring-i-oslo",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Friluftshuset Sorenga",
+      "city": "Oslo",
+      "evidence_url": "https://www.friflyt.no/klatring/inneklatring/klatring-i-oslo",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Buldreterminalen",
+      "city": "Tromso",
+      "evidence_url": "https://www.visittromso.no/buldreterminalen",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Buldrehallen",
+      "city": "Alesund",
+      "evidence_url": "https://www.buldrehallen.no/",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Arendal Buldresenter",
+      "city": "Arendal",
+      "evidence_url": "https://arendalbuldring.no/",
+      "on_bouldeer": false
+     }
+    ]
+   },
+   "indicative_gap": {
+    "low": 15,
+    "high": 40,
+    "basis": "independent total 35-60 minus Bouldeer 20; cross-check (1-0.27) x ~45 = 33"
+   },
+   "missing_cities": [
+    "Tromso",
+    "Drammen",
+    "Asker",
+    "As",
+    "Arendal",
+    "Fredrikstad (unverified)",
+    "Sandnes (unverified)",
+    "Hamar (unverified)"
+   ],
+   "missing_chains": [
+    "Klatreverket (Oslo x4 + Drammen + Kristiansand; Bouldeer has 'Klatreverket' in Oslo and Kristiansand only)"
+   ],
+   "evidence_confidence": "low",
+   "research_difficulty": "medium",
+   "difficulty_reason": "Norwegian, dispersed small halls and club walls, no machine-readable national list; but total is modest (maybe 15-40 gaps) and chain pages exist.",
+   "recommendation": "research section later",
+   "notes": "Possibly questionable Bouldeer entries (not investigated): Sparebanken More Arena (Alesund), Skien Fritidspark, SiS Sports Center, Kristiansund Klatresenter look like sports-arena walls; Buldrehallen Alesund (dedicated bouldering hall, own site, open) is absent while the arena entry is present. Sample ratio depends on an Oslo-heavy source."
+  },
+  {
+   "iso2": "BE",
+   "name": "Belgium",
+   "bouldeer_count": 14,
+   "bouldeer_cities": "Antwerpen 5, Gent 4, Liege 3, Bruxelles 2 (only 4 cities)",
+   "independent_total": {
+    "low": 45,
+    "high": 75,
+    "basis": "No complete national count found. KBF Flanders page showed 12 entries (page partial); BOVL lists ~18 bouldering-capable halls in Flanders; indoorclimbing.com 31 gyms (stale); a RTBF-related search summary says about 100 bouldering+lead halls nationally (all types, unverified). Bottom-up: Flanders 25-35, Brussels 8-10, Wallonia 10-15 with bouldering.",
+    "sources": [
+     {
+      "title": "Klimzalen - Klim- en Bergsportfederatie",
+      "url": "https://www.klimenbergsport.be/klimzalen",
+      "language": "nl",
+      "number": 12,
+      "counts": "halls shown on page (partial, Flanders + Brussels)",
+      "accessed": "2026-10-01"
+     },
+     {
+      "title": "Klimzalen - Bergsport Oost-Vlaanderen",
+      "url": "https://www.bovl.be/links/klimzalen",
+      "language": "nl",
+      "number": 18,
+      "counts": "halls with bouldering across Flemish provinces listed",
+      "accessed": "2026-10-01"
+     },
+     {
+      "title": "Belgium indoor climbing gyms - indoorclimbing.com",
+      "url": "https://www.indoorclimbing.com/belgium.html",
+      "language": "en",
+      "number": 31,
+      "counts": "gyms, stale, all types",
+      "accessed": "2026-10-01"
+     },
+     {
+      "title": "RTBF: Des salles aux sommets",
+      "url": "https://www.rtbf.be/article/des-salles-aux-sommets-quels-sont-les-spots-d-escalade-en-wallonie-et-a-bruxelles-11570614",
+      "language": "fr",
+      "number": 100,
+      "counts": "approx. bouldering+lead halls in Belgium per search summary, unverified",
+      "accessed": "2026-10-01"
+     }
+    ]
+   },
+   "sample": {
+    "size": 17,
+    "found": 8,
+    "ratio": 0.47,
+    "missing_examples": [
+     "Black Box Boulder Kortrijk",
+     "BeBloc Jambes (Namur)",
+     "A Bloc Evere (Brussels)",
+     "Monk Hasselt",
+     "Boulder One Herent",
+     "Level Up Edegem"
+    ],
+    "gyms": [
+     {
+      "name": "Beest Boulders Antwerpen",
+      "city": "Antwerpen",
+      "evidence_url": "https://www.klimenbergsport.be/klimzalen",
+      "on_bouldeer": true
+     },
+     {
+      "name": "Boulderzaal The Island",
+      "city": "Antwerpen",
+      "evidence_url": "https://www.klimenbergsport.be/klimzalen",
+      "on_bouldeer": true
+     },
+     {
+      "name": "Klimzaal Blok",
+      "city": "Antwerpen",
+      "evidence_url": "https://klimzaalblok.be/",
+      "on_bouldeer": true
+     },
+     {
+      "name": "Rising You",
+      "city": "Antwerpen",
+      "evidence_url": "https://www.bovl.be/links/klimzalen",
+      "on_bouldeer": true
+     },
+     {
+      "name": "Rhino Boulder Gym",
+      "city": "Gent",
+      "evidence_url": "https://www.bovl.be/links/klimzalen",
+      "on_bouldeer": true
+     },
+     {
+      "name": "Klimzaal Bleau",
+      "city": "Gent",
+      "evidence_url": "https://www.bovl.be/links/klimzalen",
+      "on_bouldeer": true
+     },
+     {
+      "name": "Arkose Canal",
+      "city": "Brussel",
+      "evidence_url": "https://www.klimenbergsport.be/klimzalen",
+      "on_bouldeer": true
+     },
+     {
+      "name": "Terres Neuves",
+      "city": "Bruxelles",
+      "evidence_url": "https://www.rtbf.be/article/des-salles-aux-sommets-quels-sont-les-spots-d-escalade-en-wallonie-et-a-bruxelles-11570614",
+      "on_bouldeer": true
+     },
+     {
+      "name": "Black Box Boulder",
+      "city": "Kortrijk",
+      "evidence_url": "https://www.blackboxboulder.be",
+      "on_bouldeer": false
+     },
+     {
+      "name": "BeBloc",
+      "city": "Jambes",
+      "evidence_url": "https://www.bebloc.be",
+      "on_bouldeer": false
+     },
+     {
+      "name": "A Bloc",
+      "city": "Evere (Brussels)",
+      "evidence_url": "https://abloc.brussels/",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Boulder One",
+      "city": "Herent",
+      "evidence_url": "https://www.klimenbergsport.be/klimzalen",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Boulderzaal Topo",
+      "city": "Tienen",
+      "evidence_url": "https://www.klimenbergsport.be/klimzalen",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Alpamayo",
+      "city": "Beringen",
+      "evidence_url": "https://www.klimenbergsport.be/klimzalen",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Level Up Bouldering",
+      "city": "Edegem",
+      "evidence_url": "https://www.bovl.be/links/klimzalen",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Monk Bouldergym",
+      "city": "Hasselt",
+      "evidence_url": "https://www.bovl.be/links/klimzalen",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Seafront Boulder",
+      "city": "Zeebrugge",
+      "evidence_url": "https://www.bovl.be/links/klimzalen",
+      "on_bouldeer": false
+     }
+    ]
+   },
+   "indicative_gap": {
+    "low": 28,
+    "high": 55,
+    "basis": "independent total 45-75 minus Bouldeer 14 = 31-61; cross-check (1-0.47) x ~55 = 29"
+   },
+   "missing_cities": [
+    "Brussels (only 2 of 8+ halls)",
+    "Kortrijk",
+    "Hasselt",
+    "Leuven/Herent",
+    "Namur/Jambes",
+    "Charleroi",
+    "Mons",
+    "Louvain-la-Neuve",
+    "Aalst",
+    "Tienen",
+    "Zeebrugge"
+   ],
+   "missing_chains": [
+    "Monk (Hasselt)",
+    "Maniak (Brussels Forest, Charleroi)",
+    "Blueberry Hill/Black Box (Kortrijk)",
+    "A Bloc, Petite Ile, Le Camp de Base, New Rock, BLDR (Brussels)",
+    "BeBloc (Namur, largest bloc hall in Wallonia per own site)"
+   ],
+   "evidence_confidence": "low",
+   "research_difficulty": "medium",
+   "difficulty_reason": "Bilingual (NL/FR), scattered small halls in Wallonia and Flanders; federation lists partial or timed out (Club Alpin Belge page 504); needs Flanders and Wallonia+Brussels sections.",
+   "recommendation": "research section now",
+   "notes": "Sample was taken from Flemish/Brussels lists so the ratio is flattered by Antwerp/Gent coverage; outside those two cities almost nothing is present. Some sample entries confirmed only by directories (Boulder One, Topo, Alpamayo, Level Up, Monk Hasselt, Seafront); own sites confirmed: BeBloc, A Bloc, Black Box, Klimzaal Blok."
+  },
+  {
+   "iso2": "DK",
+   "name": "Denmark",
+   "bouldeer_count": 14,
+   "bouldeer_cities": "Kobenhavn 7, Odense 4, Aarhus 2, Aalborg 1 (only 4 cities)",
+   "independent_total": {
+    "low": 30,
+    "high": 55,
+    "basis": "Boulders chain own site: 11 halls (5 Cph, 4 Aarhus, Odense, Aalborg); Beta Boulders 3 halls in Cph (BetaBuddy; possibly merged into Boulders); BetaBuddy directory ~30 Danish facilities (12 bouldering-only + ~18 multi/club); Outdoorhelte (2024): 54 clubs, many with own walls but public access varies; a search summary says 65 clubs + 12 commercial boulder halls (2024). Estimated 30-55 public-access facilities with bouldering.",
+    "sources": [
+     {
+      "title": "Boulders gyms",
+      "url": "https://boulders.dk/gyms",
+      "language": "da",
+      "number": 11,
+      "counts": "Boulders chain halls (Odense Rosengard opening 2027 excluded)",
+      "accessed": "2026-10-02"
+     },
+     {
+      "title": "Oversigt over Klatrehaller & Bouldering - BetaBuddy",
+      "url": "https://www.betabuddy.dk/klatrehaller/",
+      "language": "da",
+      "number": 30,
+      "counts": "Danish facilities of 50 listed (DK + abroad), bouldering-only and multi",
+      "accessed": "2026-10-01"
+     },
+     {
+      "title": "En komplet liste over klatre klubber i Danmark - Outdoorhelte (2024-09)",
+      "url": "https://outdoorhelte.dk/en-komplet-liste-over-klatre-klubber-i-danmark/",
+      "language": "da",
+      "number": 54,
+      "counts": "clubs (many with own walls; access varies)",
+      "accessed": "2026-10-02"
+     },
+     {
+      "title": "Klubliste - Klatring Danmark (as summarised by search)",
+      "url": "https://www.klatringdanmark.dk/klubliste",
+      "language": "da",
+      "number": 77,
+      "counts": "65 clubs + 12 commercial halls per search summary, unverified",
+      "accessed": "2026-10-01"
+     }
+    ]
+   },
+   "sample": {
+    "size": 20,
+    "found": 10,
+    "ratio": 0.5,
+    "missing_examples": [
+     "Boulders Hvidovre",
+     "Boulders Aarhus Syd",
+     "Boulders Aarhus Aaby",
+     "Boulders Aalborg",
+     "Esbjerg Boulderklub",
+     "Blocs & Walls"
+    ],
+    "gyms": [
+     {
+      "name": "Beta Boulders Osterbro",
+      "city": "Kobenhavn",
+      "evidence_url": "https://www.betabuddy.dk/klatrehaller/",
+      "on_bouldeer": true
+     },
+     {
+      "name": "Beta Boulders Sydhavn",
+      "city": "Kobenhavn",
+      "evidence_url": "https://www.betabuddy.dk/klatrehaller/",
+      "on_bouldeer": true
+     },
+     {
+      "name": "Beta Boulders Vanlose",
+      "city": "Kobenhavn",
+      "evidence_url": "https://www.betabuddy.dk/klatrehaller/",
+      "on_bouldeer": true
+     },
+     {
+      "name": "Boulders Amager",
+      "city": "Kobenhavn",
+      "evidence_url": "https://boulders.dk/gyms",
+      "on_bouldeer": true
+     },
+     {
+      "name": "Boulders Valby",
+      "city": "Kobenhavn",
+      "evidence_url": "https://boulders.dk/gyms",
+      "on_bouldeer": true
+     },
+     {
+      "name": "Boulders Sydhavn",
+      "city": "Kobenhavn",
+      "evidence_url": "https://boulders.dk/gyms",
+      "on_bouldeer": true
+     },
+     {
+      "name": "Boulders Odense City",
+      "city": "Odense",
+      "evidence_url": "https://boulders.dk/gyms",
+      "on_bouldeer": true
+     },
+     {
+      "name": "Boulders Aarhus City",
+      "city": "Aarhus",
+      "evidence_url": "https://boulders.dk/gyms",
+      "on_bouldeer": true
+     },
+     {
+      "name": "Boulders Aarhus Nord",
+      "city": "Aarhus",
+      "evidence_url": "https://boulders.dk/gyms",
+      "on_bouldeer": true
+     },
+     {
+      "name": "Norrebro Klatreklub",
+      "city": "Kobenhavn",
+      "evidence_url": "https://www.betabuddy.dk/klatrehaller/",
+      "on_bouldeer": true
+     },
+     {
+      "name": "Boulders Hvidovre",
+      "city": "Hvidovre",
+      "evidence_url": "https://boulders.dk/gyms",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Boulders Aarhus Syd",
+      "city": "Hojbjerg",
+      "evidence_url": "https://boulders.dk/gyms",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Boulders Aarhus Aaby",
+      "city": "Aarhus",
+      "evidence_url": "https://boulders.dk/gyms",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Boulders Aalborg",
+      "city": "Aalborg",
+      "evidence_url": "https://boulders.dk/gyms",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Esbjerg Boulderklub",
+      "city": "Esbjerg",
+      "evidence_url": "https://www.betabuddy.dk/klatrehaller/",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Vejle Bouldering",
+      "city": "Vejle",
+      "evidence_url": "https://www.betabuddy.dk/klatrehaller/",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Lillebaelt Bouldering",
+      "city": "Middelfart",
+      "evidence_url": "https://www.betabuddy.dk/klatrehaller/",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Blocs & Walls",
+      "city": "Kobenhavn",
+      "evidence_url": "https://www.betabuddy.dk/klatrehaller/",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Roskilde Klatreklub",
+      "city": "Roskilde",
+      "evidence_url": "https://www.betabuddy.dk/klatrehaller/",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Ry Klatreklub",
+      "city": "Ry",
+      "evidence_url": "https://www.betabuddy.dk/klatrehaller/",
+      "on_bouldeer": false
+     }
+    ]
+   },
+   "indicative_gap": {
+    "low": 15,
+    "high": 40,
+    "basis": "independent total 30-55 minus Bouldeer 14 = 16-41; cross-check (1-0.5) x ~40 = 20"
+   },
+   "missing_cities": [
+    "Esbjerg",
+    "Vejle",
+    "Roskilde",
+    "Kolding",
+    "Silkeborg",
+    "Viborg",
+    "Herning",
+    "Middelfart",
+    "Hvidovre",
+    "Ry",
+    "Hojbjerg (Aarhus Syd)"
+   ],
+   "missing_chains": [
+    "Boulders (11 halls; Bouldeer has 6: Amager, CPH Sydhavn, Valby, Odense, Aarhus City, Aarhus Nord; missing Hvidovre, Aarhus Syd, Aarhus Aaby, Aalborg, and Vanlose if it is now Boulders)"
+   ],
+   "evidence_confidence": "medium",
+   "research_difficulty": "medium",
+   "difficulty_reason": "Danish; chain list is clear (about 5 quick gaps) but the remaining gaps are 20-50 volunteer-run club halls where public access and drop-in rules vary and need per-club checking.",
+   "recommendation": "research section later",
+   "notes": "Possible stale or duplicate Bouldeer entries (not investigated): 'Beta Boulders - Sydhavn' vs 'Boulders - CPH Sydhavn' may be the same site after a rebrand/merger; 'Beta Boulders - Vanlose' vs Boulders Vanlose on the chain site. The five missing Boulders halls are a cheap first batch (could be done now). Only the Boulders chain was confirmed on its own site; club entries rely on BetaBuddy/Outdoorhelte."
+  },
+  {
+   "iso2": "FI",
+   "name": "Finland",
+   "bouldeer_count": 14,
+   "bouldeer_cities": "Helsinki 8, Lahti 2, Oulu 2, Tampere 2 (only 4 cities)",
+   "independent_total": {
+    "low": 31,
+    "high": 45,
+    "basis": "Finnish Climbing Federation (SKIL) list: 24 commercial centre entries, many multi-branch; counting branches (Boulderkeskus 6, KiipeilyAreena 3, Tampere 3, Turku 3, Jyvaskyla 2, Lahti 2, Oulu 2, plus single-site centres) gives about 31 open commercial branches (Turku Boulderkeskus and Slouppi opening 2026 excluded). SKIL also notes ~30 club walls and 70+ school/municipal walls (access unclear), so high = 45 with some club walls with public bouldering.",
+    "sources": [
+     {
+      "title": "Kiipeilykeskukset ja hallit Suomessa - Kiipeilyliitto",
+      "url": "https://kiipeilyliitto.fi/kiipeilemaan/sisakiipeily/kiipeilykeskukset-ja-hallit-suomessa/",
+      "language": "fi",
+      "number": 24,
+      "counts": "commercial centres (branches grouped; nearly all with bouldering), plus ~30 club walls and 70+ school/municipal walls",
+      "accessed": "2026-10-02"
+     },
+     {
+      "title": "Kiipeilyareena locations",
+      "url": "https://kiipeilyareena.com/",
+      "language": "fi",
+      "number": 3,
+      "counts": "Helsinki branches (Ristikko, Kalasatama, Salmisaari); a search summary also mentions Vantaa Tammisto, unconfirmed",
+      "accessed": "2026-10-02"
+     },
+     {
+      "title": "Missa voi kiipeilla Helsingissa - Kiipeilyareena",
+      "url": "https://kiipeilyareena.com/missa-voi-kiipeilla-helsingissa/",
+      "language": "fi",
+      "number": 0,
+      "counts": "city coverage statements only, no count",
+      "accessed": "2026-10-02"
+     }
+    ]
+   },
+   "sample": {
+    "size": 21,
+    "found": 7,
+    "ratio": 0.33,
+    "missing_examples": [
+     "Boulderkeskus Espoo",
+     "Bouldertehdas Turku",
+     "Kiipeilypalatsi Turku",
+     "Wasaup Vaasa",
+     "Hutunki Jyvaskyla",
+     "BoulderSaimaa Lappeenranta"
+    ],
+    "gyms": [
+     {
+      "name": "Boulderkeskus Pasila",
+      "city": "Helsinki",
+      "evidence_url": "https://kiipeilyliitto.fi/kiipeilemaan/sisakiipeily/kiipeilykeskukset-ja-hallit-suomessa/",
+      "on_bouldeer": true
+     },
+     {
+      "name": "Boulderkeskus Espoo",
+      "city": "Espoo",
+      "evidence_url": "https://kiipeilyliitto.fi/kiipeilemaan/sisakiipeily/kiipeilykeskukset-ja-hallit-suomessa/",
+      "on_bouldeer": false
+     },
+     {
+      "name": "KiipeilyAreena Kalasatama",
+      "city": "Helsinki",
+      "evidence_url": "https://kiipeilyareena.com/",
+      "on_bouldeer": true
+     },
+     {
+      "name": "Vanaja Boulder",
+      "city": "Hameenlinna",
+      "evidence_url": "https://kiipeilyliitto.fi/kiipeilemaan/sisakiipeily/kiipeilykeskukset-ja-hallit-suomessa/",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Ote",
+      "city": "Joensuu",
+      "evidence_url": "https://kiipeilyliitto.fi/kiipeilemaan/sisakiipeily/kiipeilykeskukset-ja-hallit-suomessa/",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Jyvaskylan Kiipeilykeskus",
+      "city": "Jyvaskyla",
+      "evidence_url": "https://kiipeilyliitto.fi/kiipeilemaan/sisakiipeily/kiipeilykeskukset-ja-hallit-suomessa/",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Hutunki",
+      "city": "Jyvaskyla",
+      "evidence_url": "https://kiipeilyliitto.fi/kiipeilemaan/sisakiipeily/kiipeilykeskukset-ja-hallit-suomessa/",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Ladeo",
+      "city": "Lahti",
+      "evidence_url": "https://kiipeilyliitto.fi/kiipeilemaan/sisakiipeily/kiipeilykeskukset-ja-hallit-suomessa/",
+      "on_bouldeer": true
+     },
+     {
+      "name": "yogaROCKS",
+      "city": "Lahti",
+      "evidence_url": "https://kiipeilyliitto.fi/kiipeilemaan/sisakiipeily/kiipeilykeskukset-ja-hallit-suomessa/",
+      "on_bouldeer": true
+     },
+     {
+      "name": "BoulderSaimaa",
+      "city": "Lappeenranta",
+      "evidence_url": "https://kiipeilyliitto.fi/kiipeilemaan/sisakiipeily/kiipeilykeskukset-ja-hallit-suomessa/",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Saimaa Stadiumi",
+      "city": "Mikkeli",
+      "evidence_url": "https://kiipeilyliitto.fi/kiipeilemaan/sisakiipeily/kiipeilykeskukset-ja-hallit-suomessa/",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Kaamos",
+      "city": "Oulu",
+      "evidence_url": "https://kiipeilyliitto.fi/kiipeilemaan/sisakiipeily/kiipeilykeskukset-ja-hallit-suomessa/",
+      "on_bouldeer": true
+     },
+     {
+      "name": "Oulun Kiipeilykeskus",
+      "city": "Oulu",
+      "evidence_url": "https://kiipeilyliitto.fi/kiipeilemaan/sisakiipeily/kiipeilykeskukset-ja-hallit-suomessa/",
+      "on_bouldeer": true
+     },
+     {
+      "name": "Boulder Porvoo",
+      "city": "Porvoo",
+      "evidence_url": "https://kiipeilyliitto.fi/kiipeilemaan/sisakiipeily/kiipeilykeskukset-ja-hallit-suomessa/",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Rocklands",
+      "city": "Riihimaki",
+      "evidence_url": "https://kiipeilyliitto.fi/kiipeilemaan/sisakiipeily/kiipeilykeskukset-ja-hallit-suomessa/",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Tampereen Kiipeilykeskus",
+      "city": "Tampere",
+      "evidence_url": "https://kiipeilyliitto.fi/kiipeilemaan/sisakiipeily/kiipeilykeskukset-ja-hallit-suomessa/",
+      "on_bouldeer": true
+     },
+     {
+      "name": "Kauppi Sports Center",
+      "city": "Tampere",
+      "evidence_url": "https://kiipeilyliitto.fi/kiipeilemaan/sisakiipeily/kiipeilykeskukset-ja-hallit-suomessa/",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Bouldertehdas",
+      "city": "Turku",
+      "evidence_url": "https://bouldertehdas.fi",
+      "on_bouldeer": false
+     },
+     {
+      "name": "K2",
+      "city": "Turku",
+      "evidence_url": "https://kiipeilyliitto.fi/kiipeilemaan/sisakiipeily/kiipeilykeskukset-ja-hallit-suomessa/",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Kiipeilypalatsi",
+      "city": "Turku",
+      "evidence_url": "https://kiipeilyliitto.fi/kiipeilemaan/sisakiipeily/kiipeilykeskukset-ja-hallit-suomessa/",
+      "on_bouldeer": false
+     },
+     {
+      "name": "Wasaup",
+      "city": "Vaasa",
+      "evidence_url": "https://wasaup.fi",
+      "on_bouldeer": false
+     }
+    ]
+   },
+   "indicative_gap": {
+    "low": 17,
+    "high": 30,
+    "basis": "independent total 31-45 minus Bouldeer 14 = 17-31; cross-check (1-0.33) x ~35 = 23"
+   },
+   "missing_cities": [
+    "Espoo",
+    "Vantaa (unconfirmed)",
+    "Turku",
+    "Jyvaskyla",
+    "Kuopio",
+    "Joensuu",
+    "Hameenlinna",
+    "Lappeenranta",
+    "Mikkeli",
+    "Porvoo",
+    "Riihimaki",
+    "Vaasa"
+   ],
+   "missing_chains": [
+    "Boulderkeskus (SKIL lists 6 branches incl. Espoo and Flash; Bouldeer has 4 Helsinki ones; Turku branch opening 2026)",
+    "Tampere: Nekala, Lielahti and Kauppi (Bouldeer has 2 Tampere entries, may overlap)"
+   ],
+   "evidence_confidence": "medium",
+   "research_difficulty": "low",
+   "difficulty_reason": "Finnish but a single official federation list names almost every commercial centre, with chain sites; about 15-25 gyms in 12 smaller cities.",
+   "recommendation": "research section now",
+   "notes": "Sample ratio is flattered because Bouldeer's 4 cities hold most chains; every sampled gym outside Helsinki/Lahti/Oulu/Tampere is missing. Own sites confirmed for KiipeilyAreena, Bouldertehdas, Wasaup; the rest rely on the federation list. Voema (Kuopio) is on the federation list but was not sampled because voema.fi turned out unrelated. Possible Bouldeer duplicates (not investigated): 'Tampere Climbing Center' vs 'Tampereen Kiipeilykeskus'; 'Helsinki Climbing Center' vs Kiipeilykeskus Helsinki."
+  }
+ ]
+}
