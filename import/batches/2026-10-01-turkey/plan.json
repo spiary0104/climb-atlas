@@ -1,0 +1,53 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-01-turkey",
+ "index": {
+  "sha256": "8dbddf7924c219a236c2ffff9c8fb005dd02d1dcfe61640f8817d49fb2484af2",
+  "count": 2127,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [],
+ "counts": {
+  "records": 3,
+  "new": 3,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "d1e17552a5ba6c588394d347348d733e49480ad1c2bb998d3378cb297c6a9720",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-49a3a48cc8",
+   "id_frozen": true,
+   "name": "Boulder Istanbul",
+   "country": "TR"
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-67f956b4f2",
+   "id_frozen": true,
+   "name": "Boulder Jungle",
+   "country": "TR"
+  },
+  {
+   "line": 3,
+   "class": "new",
+   "id": "g-bfa3da0734",
+   "id_frozen": true,
+   "name": "Tragos Boulder",
+   "country": "TR"
+  }
+ ]
+}
