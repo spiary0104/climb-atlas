@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-01-thailand",
+  "description": "Regional research \"Thailand (Tier A, wave 1)\": 6 new gym(s) accepted of 16 candidate(s)",
+  "created": "2026-10-02",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-10-01-thailand",
+    "section_sha256": "f3cbc17bee2f6a738c3bec9dc628fbd50d16886083f831b8b68a2033ad1a3b24",
+    "sources_sha256": "5d66ef9e6db78c0848837e1ce8911e44de5505b53e0e9ccf3108012bbf3d89fa",
+    "candidates_sha256": "21a8894c63663cd19db7da8174c7e77926023fd1e6c3f22a80b95858eef92c1b",
+    "reconcile_sha256": "debc22ec5c92f5ccda07e57c8483332b94018c6a8ece6131ebe7e2058829bfd8",
+    "review_sha256": "fc3d8c6086a692bbba1a29ff6ed188ff7a453c4393d9c656b413ceef7a0b8f0b",
+    "candidates": 16,
+    "staged": 6,
+    "decisions": {
+      "accept": 6,
+      "defer": 5,
+      "same-as": 5
+    }
+  },
+  "index_at_staging": {
+    "sha256": "1af3cbb6c73a9455b75e504be7d2d43b4aa1a199148346e14ffbf19d2ba9410c",
+    "count": 2136
+  }
+}
