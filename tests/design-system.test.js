@@ -12,7 +12,7 @@ const read = p => fs.readFileSync(path.join(ROOT, p), 'utf8');
 const stripCssComments = s => s.replace(/\/\*[\s\S]*?\*\//g, '');
 const stripJsComments = s => s.replace(/\/\*[\s\S]*?\*\//g, '').replace(/(^|[^:'"`\\])\/\/.*$/gm, '$1');
 const COMPONENT_CSS = ['css/base.css', 'css/components.css', 'css/explore.css', 'css/page.css', 'css/style.css', 'css/passport.css'];
-const PAGES = ['index.html', 'about.html'];
+const PAGES = ['index.html', 'about.html', 'privacy.html', 'terms.html', '404.html'];
 const modDir = path.join(ROOT, 'js', 'modules');
 const JS = ['js/main.js', 'js/auth.js', 'js/supabase-init.js', 'js/sw-register.js', ...fs.readdirSync(modDir).filter(f => f.endsWith('.js')).map(f => 'js/modules/' + f)];
 const tokens = T.parseTokensCss(read('css/tokens.css'));
@@ -286,8 +286,7 @@ test('mascot: brand marks only where sec. 12.2 allows (START, wordmark lockup, d
 });
 
 test('brand: Bouldeer everywhere a visitor reads it; "Climb Atlas" not reintroduced (the domain, contact address and storage keys are identifiers)', () => {
-  const withoutLegal = s => s.replace(/<div class="modal-backdrop hidden" id="(privacy|terms)ModalBackdrop">[\s\S]*?(?=<div class="modal-backdrop|<script)/g, '');
-  const visible = [...PAGES, 'manifest.json', ...JS].map(f => [f, withoutLegal(read(f)).replace(/climbatlas0104@gmail\.com/g, '').replace(/https:\/\/climbatlas\.org\/?/g, '').replace(/climbatlas[_-][a-z_-]+/g, '')]);
+  const visible = [...PAGES, 'manifest.json', ...JS].map(f => [f, read(f).replace(/Bouldeer \(formerly Climb Atlas\)/g, 'Bouldeer').replace(/https:\/\/climbatlas\.org\/?/g, '').replace(/climbatlas[_-][a-z_-]+/g, '')]);
   for (const [f, s] of visible) assert.ok(!/Climb ?<span>?Atlas|Climb Atlas|ClimbAtlas/i.test(s), f + ' shows the old brand');
   assert.match(read('index.html'), /<title>Bouldeer — /); assert.match(read('about.html'), /<title>About — Bouldeer<\/title>/);
   assert.match(read('index.html'), /<a class="wordmark"[^>]*>(<img class="wordmark-mark" src="assets\/mascot\/head\.svg" alt=""[^>]*>)?Bouldeer<\/a>/);

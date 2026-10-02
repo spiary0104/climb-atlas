@@ -17,7 +17,9 @@
 .gym-list{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;}
 .gym-list:focus{outline:none;}
 .list-footer{flex:none;padding:var(--space-3) var(--space-4);border-top:var(--border-width) solid var(--color-border-subtle);}
-.footer-links{display:flex;flex-wrap:wrap;gap:var(--space-3);justify-content:center;font-size:var(--type-caption-size);line-height:var(--type-caption-line);}
+.footer-links{display:flex;flex-wrap:wrap;column-gap:var(--space-4);row-gap:0;justify-content:center;font-size:var(--type-caption-size);line-height:var(--type-caption-line);}
+.footer-links a{display:inline-flex;align-items:center;}
+@media (max-width:1023px),(pointer:coarse){.footer-links a{min-height:var(--size-touch-min);}}
 
 /* ===== Filter chip row: one horizontal line, never wraps (sec. 7.6) ================================================ */
 .filter-bar{padding:var(--space-3) 0 var(--space-2);}

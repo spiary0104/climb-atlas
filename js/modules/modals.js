@@ -1,4 +1,4 @@
-// Modal keyboard/focus handling, edit/report spot forms, Privacy/Terms info modals. Adding a gym is the /add page.
+// Modal keyboard/focus handling, edit/report spot forms. Adding a gym is the /add page.
 import { ensureSeedData } from './data-load.js';
 import { map } from './map.js';
 import { STATES_BY_COUNTRY } from './regions.js';
@@ -151,12 +151,6 @@ function closeReportModal(){
   reportModalBackdrop.classList.add('hidden');
   appState.currentReportId = null;
 }
-
-// --- info modals: privacy / terms (About is now a standalone page, about.html) ---
-const infoModals = {
-  openPrivacy: 'privacyModalBackdrop',
-  openTerms: 'termsModalBackdrop'
-};
 
 export function initModalKeyboard(){
   document.querySelectorAll('.modal-backdrop').forEach(backdrop=>{
@@ -316,23 +310,5 @@ export function initForms(){
       rSubmitBtn.textContent = 'Send report';
       rSubmitBtn.disabled = false;
     }
-  });
-}
-
-export function initInfoModals(){
-  Object.keys(infoModals).forEach(btnId=>{
-    document.getElementById(btnId).addEventListener('click', ()=>{
-      document.getElementById(infoModals[btnId]).classList.remove('hidden');
-    });
-  });
-  document.querySelectorAll('.info-close').forEach(btn=>{
-    btn.addEventListener('click', (e)=>{
-      e.target.closest('.modal-backdrop').classList.add('hidden');
-    });
-  });
-  ['privacyModalBackdrop','termsModalBackdrop'].forEach(id=>{
-    document.getElementById(id).addEventListener('click', (e)=>{
-      if(e.target.id === id) e.target.classList.add('hidden');
-    });
   });
 }

@@ -69,7 +69,17 @@ body.app-body{overflow:hidden;}
 .static-header{display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);padding:var(--space-5) 0;margin-bottom:var(--space-6);border-bottom:var(--border-width) solid var(--color-border-subtle);}
 .static-content h1{margin:0 0 var(--space-2);}
 .static-content .lede{margin:0 0 var(--space-6);max-width:var(--size-measure);color:var(--color-text-secondary);}
-.static-content .close-row{justify-content:flex-start;margin-top:var(--space-6);}
+.static-content .close-row{justify-content:flex-start;flex-wrap:wrap;gap:var(--space-3);margin-top:var(--space-6);}
+.static-content h2{margin:var(--space-6) 0 var(--space-2);font-size:var(--type-text-lg-size);line-height:var(--type-text-lg-line);font-weight:var(--font-weight-semibold);}
+.static-content a:not(.btn){color:var(--color-text-link);text-underline-offset:var(--text-underline-offset);}
+.static-content a:not(.btn):hover{color:var(--color-accent-hover);}
+.static-notfound{padding:var(--space-5) 0 var(--space-4);}
+.static-notfound .brand-crest{display:block;width:var(--space-8);height:auto;margin:0 0 var(--space-4);}
+.static-footer{margin-top:var(--space-7);padding-top:var(--space-3);border-top:var(--border-width) solid var(--color-border-subtle);display:flex;flex-wrap:wrap;column-gap:var(--space-5);font-size:var(--type-text-md-size);}
+.static-footer a{display:inline-flex;align-items:center;min-height:var(--size-touch-min);color:var(--color-text-secondary);text-underline-offset:var(--text-underline-offset);}
+.static-footer a:hover{color:var(--color-text-primary);}
+.static-footer a[aria-current="page"]{color:var(--color-text-primary);font-weight:var(--font-weight-semibold);}
+@media (max-width:480px){.static-header{flex-wrap:wrap;}}
 
 /* ===== Moderation queue and logbook lists (re-tokened; Phase 3/4 move them to pages) ============================== */
 .pending-list,.session-list{display:flex;flex-direction:column;gap:var(--space-3);}
