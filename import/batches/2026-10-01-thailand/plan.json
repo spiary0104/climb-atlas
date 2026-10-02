@@ -1,0 +1,81 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-01-thailand",
+ "index": {
+  "sha256": "1af3cbb6c73a9455b75e504be7d2d43b4aa1a199148346e14ffbf19d2ba9410c",
+  "count": 2136,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [],
+ "counts": {
+  "records": 6,
+  "new": 6,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "de7b61bedeae52428a5c939157704c1c9c879c024d9f879964c68e80a132afba",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-5d2b19809d",
+   "id_frozen": true,
+   "name": "Balance Climbing Rama 9",
+   "country": "TH"
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-ee6ea57df4",
+   "id_frozen": true,
+   "name": "Balance Prime",
+   "country": "TH"
+  },
+  {
+   "line": 3,
+   "class": "new",
+   "id": "g-580b85b8e7",
+   "id_frozen": true,
+   "name": "Eagle Eye Climbing Gym",
+   "country": "TH"
+  },
+  {
+   "line": 4,
+   "class": "new",
+   "id": "g-97582d8b30",
+   "id_frozen": true,
+   "name": "Stonegoat Climbing Gym (The PARQ)",
+   "country": "TH",
+   "reviewed_distinct": {
+    "reason": "Distinct branch: Stonegoat The PARQ, Room 201, 2nd Floor, The PARQ, 88 Ratchadaphisek Rd (Khlong Toei), versus seed-1752 and th-004 which are the S69 branch at 36/3 Sukhumvit 69 Alley, about 3.8-4.3 km away. Single-source: SG own branch page (re-read) shows the branch, directions from MRT QSNCC and bouldering; the home site shows open daily hours. Pin is the Google place pin Stonegoat Climbing Gym (The PARQ) (13.72096,100.55854) linked from that page; OSM geocodes The Parq building about 60 m away, no disagreement.",
+    "reviewer": "Spiar (owner); decisions drafted by Claude (AI) on the owner's instruction, signed off by the owner 2026-10-02"
+   }
+  },
+  {
+   "line": 5,
+   "class": "new",
+   "id": "g-c6bdfc5509",
+   "id_frozen": true,
+   "name": "Boulder Planet Thailand (Rangsit)",
+   "country": "TH"
+  },
+  {
+   "line": 6,
+   "class": "new",
+   "id": "g-aaf76529ff",
+   "id_frozen": true,
+   "name": "The Bunker Koh Tao",
+   "country": "TH"
+  }
+ ]
+}

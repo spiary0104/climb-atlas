@@ -1,7 +1,7 @@
 # Regional research: Thailand (Tier A, wave 1) (2026-10-01-thailand)
 
 Scope: TH (whole country)
-Index: 2127 gyms, sha256 8dbddf7924c2… | staged batches compared: none | other sections compared: none
+Index: 2136 gyms, sha256 1af3cbb6c73a… | staged batches compared: none | other sections compared: none
 Review radii (stricter than the importer): any gym 150 m, related name 15 km, other country 2 km
 
 ## Summary
