@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-01-india",
+  "description": "Regional research \"India (Tier A, wave 1)\": 10 new gym(s) accepted of 16 candidate(s)",
+  "created": "2026-10-02",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-10-01-india",
+    "section_sha256": "e25b5f47e5be969ada6df49377d2796995060678bb1bc6c5bba016f34ec3df2a",
+    "sources_sha256": "99f77957de719633835f5bfb4a15ebef0ad3979ac3aca31be9e3cf72113a59a7",
+    "candidates_sha256": "a1050a21b82070ba5fbb827d91988b90d178a4a10014190e7cee870d2e96bd70",
+    "reconcile_sha256": "8f007414e3cfeea9fa15049babd5f10315eaaf8b9773b69c4fb673f04f3ba5dd",
+    "review_sha256": "b693afb175b31f70e090dd93b0e164b26a74cdadc165737433073d8004e6821e",
+    "candidates": 16,
+    "staged": 10,
+    "decisions": {
+      "accept": 10,
+      "defer": 5,
+      "same-as": 1
+    }
+  },
+  "index_at_staging": {
+    "sha256": "ea6ffb611573417c4b9b08cd750ea2a089fe018e6927377ea2929d7a34c43654",
+    "count": 2151
+  }
+}
