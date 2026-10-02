@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-01-russia",
+  "description": "Regional research \"Russia (Tier A, wave 1)\": 20 new gym(s) accepted of 29 candidate(s)",
+  "created": "2026-10-02",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-10-01-russia",
+    "section_sha256": "eac63ca18eb3b52433f12981b623e4cea55cd5d3ad700181cc956eaf08d33d66",
+    "sources_sha256": "c48d17103a1d430ff937a3d97f59431c953a3f71dc837beaa8f7b6b4ca50ce09",
+    "candidates_sha256": "4563c9cc46872d36663aa2cc861825a912f8f2c4320eb43e4a65673f0ea183d6",
+    "reconcile_sha256": "17084739682c72ed72c7d2701c84097b65ef2979505a635a381cbd6f9cc4e15c",
+    "review_sha256": "978e64857635098f6bdb290e169d192ccd21875f7265285cc4feafbf349fbcd8",
+    "candidates": 29,
+    "staged": 20,
+    "decisions": {
+      "accept": 20,
+      "defer": 1,
+      "reject": 2,
+      "same-as": 6
+    }
+  },
+  "index_at_staging": {
+    "sha256": "01924623fc29565df1873065783c94b4190bcff90d4055b149aed0719a5bb074",
+    "count": 2161
+  }
+}
