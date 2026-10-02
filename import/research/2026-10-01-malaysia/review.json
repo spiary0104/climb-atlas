@@ -1,0 +1,82 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-01-malaysia",
+ "reviewer": "Claude (AI) on the owner's instruction; owner sign-off pending",
+ "reviewed": "2026-10-03",
+ "decisions": {
+  "my-001": {
+   "decision": "accept",
+   "reason": "Distinct Camp5 branch (EZ501, 5th Floor, 1 Utama) with its own address; sibling Camp5 Eco City (my-002, 7.3 km) and Camp5 Jumpa (my-003, 10.5 km) are separate branches. S1 (Camp5 official location page, chain list) shows exists, open (hours, current posts) and bouldering. Pin is OSM node/4506377268 (sports_centre, climbing:boulder=yes, level 5, check_date 2026-06-26); no pin disagreement.",
+   "reviewed_against": [
+    "my-002",
+    "my-003"
+   ]
+  },
+  "my-002": {
+   "decision": "accept",
+   "reason": "Distinct Camp5 branch (4th Floor, KL Eco City Mall) with its own address, 7.3 km from my-001. S1 (Camp5 official location page) shows exists, open (hours listed) and a large bouldering area. Pin is OSM node/10701993373 (leisure=sports_centre, sport=climbing, named for KL Eco City); no pin disagreement found.",
+   "reviewed_against": [
+    "my-001"
+   ]
+  },
+  "my-003": {
+   "decision": "accept",
+   "reason": "Distinct Camp5 branch (3rd Floor, Jumpa Mall, Sungei Wang Plaza) with its own address, 10.5 km from my-001. S1 (Camp5 official location page) shows exists, open and bouldering. Pin is OSM node/11694943470 (Camp5 Climbing Gym Jumpa). Researcher noted the pin looks a bit east of the mall; I checked OSM: the node is at 3.14413,101.71086, about 90 m south of the Sungei Wang Plaza building centroid and level with the Giant hypermarket and another Sungei Wang unit (Blastacars 5F), so it is at the edge of or inside the mall, not off it. Accepted on that OSM element; no better pin source exists.",
+   "reviewed_against": [
+    "my-001"
+   ]
+  },
+  "my-004": {
+   "decision": "same-as",
+   "same_as": "seed-1693",
+   "reason": "Existing seed-1693 'Bump Bouldering' is at Jaya One, Jalan Profesor Diraja Ungku Aziz, Petaling Jaya, 48 m from this candidate (BUMP Jaya One, Level 1 The School, Jaya One, same road). Same gym (BUMP flagship, S2). Existing pin is within 150 m, so no location update."
+  },
+  "my-005": {
+   "decision": "accept",
+   "reason": "Different gym from seed-1693 (Bump Bouldering, Jaya One): this is BUMP's second gym, Lot 5.84-01 Level 5 Pavilion Bukit Jalil, KL, 8.4 km away with its own address. Single source but primary: S2 BUMP official page for this gym shows exists, opening hours (daily 10:00-22:00) and a bouldering-only gym with a Kilter Board. Pin is the gym's own published pin (Google short link on its page); I resolved it to the Pavilion Bukit Jalil place pin at 3.0502636,101.671016, which equals the recorded coordinate. Caveat: mall-level pin, not the gym entrance.",
+   "reviewed_against": [
+    "seed-1693"
+   ]
+  },
+  "my-006": {
+   "decision": "accept",
+   "reason": "Single source but primary: S3 Bhub official site shows exists, bouldering (about 80 problems rotated every ~5 weeks, bouldering passes and pricing) and an operating gym (live pricing, booking). Address 4 Lorong 51A/227C Seksyen 51A, Petaling Jaya. Pin is the gym's own published pin (Waze link and Waze embed on the site, 3.100097,101.631925), equal to the recorded coordinate; no disagreement. Caveat: no opening hours seen in the home page text I re-read; 'open' rests on live pricing and booking."
+  },
+  "my-007": {
+   "decision": "accept",
+   "reason": "S4 Project Rock official site (branch page and locations page) shows exists, open (daily 10:00-22:00) and bouldering/top rope at Gurney Plaza level 7. Pin is OSM node/13945334326 (leisure=sports_centre, level 7, same address as S4, 2026-06 edit); no flags. Separate branch from the Bouldeer seed Project Rock entry (IKEA Batu Kawan), which is about 23 km away."
+  },
+  "my-008": {
+   "decision": "same-as",
+   "same_as": "seed-1689",
+   "followup": "location-update",
+   "reason": "Existing seed-1689 'Project Rock' is at L1-10, IKEA Batu Kawan Link Building, Persiaran Cassia Barat 8 (this candidate: L1.10, same building and road), 268 m apart: same branch. Candidate pin is OSM node/13945330302 (Project Rock, addr:place IKEA Batu Kawan, level L1), inside the IKEA complex beside other L1 units of that building (Harvey Norman, L1.09 Machines); the existing pin (5.23403,100.43778) is on the road side west of the building, so the sourced candidate pin is clearly better and the existing one is more than 150 m off."
+  },
+  "my-009": {
+   "decision": "accept",
+   "reason": "S4 Project Rock official site (Bayana Hub branch page and locations page) shows exists, bouldering, top rope, lead and Moonboard; opened Sep 2025. OSM node/13945285869 (Project Rock, Bayana Hub L2, hours Mo-Su 10:00-22:00, same address as S4) is the pin; no flags or disagreement. Caveat: researcher found no opening hours on the branch page itself; hours come from the OSM node and the locations page."
+  },
+  "my-010": {
+   "decision": "accept",
+   "reason": "Single source but primary: S5 Klimbzone official site shows exists, bouldering (grading/boulder page), top rope, address (2nd Floor Lot 1275 Block 17 KCLD, Jalan Lapangan Terbang, Kuching) and hours (Mon-Fri 12-22, Sat-Sun 11-19), footer 2022-2026. Pin: I fetched the Google My Map embedded on the official site; its single placemark is named 'Klimbzone Indoor Rock Climbing Gym', carries the same address, and its coordinate 1.4936087,110.3499009 equals the recorded pin, so it is the gym's own published pin, not just a map centre. Caveat: the home page still shows an old 1 Nov soft-opening banner (2022); open status rests on the 2026 footer and current hours."
+  },
+  "my-011": {
+   "decision": "accept",
+   "reason": "S6 Bolder Ventures official site shows the Subang Jaya address (11 Jalan Industri USJ 1/2), coaching and a live booking button; its first-time page offers guided passes of 1 hour top rope OR 1 hour boulder, so bouldering and top rope are both shown; page content carries 2026 dates. Pin is OSM node/5568194821 (name Bolder Ventures Climbing Gym, addr:street Jalan Industri 1/2, version 1 from 2018), matching the S6 street. Caveats: the node is tagged tourism=attraction, not sports_centre, and the site gives no opening hours; 'open' rests on live booking and recent content."
+  },
+  "my-012": {
+   "decision": "defer",
+   "reason": "Primary evidence too thin: only directory S8 plus an OSM node (hours, 2023 edit) support it; the gym's Facebook page (pamparockclimbing) could not be read, so exists/open/bouldering are not confirmed by a primary source and bouldering is unknown. Street number also differs between sources (KSB 1 vs KSB 2). Needs a readable official page or post showing bouldering and current operation, plus the confirmed address."
+  },
+  "my-013": {
+   "decision": "defer",
+   "reason": "Primary evidence too thin: only directories S7/S8 and an OSM building (way/240481106, alt_name Sabah Indoor Games) support it; its own site did not load, so existence, open status and bouldering are all unconfirmed (status unknown, bouldering unknown). Described as semi-outdoor inside a youth challenge park. Needs an official page or social post showing it is open and has a bouldering wall."
+  },
+  "my-014": {
+   "decision": "same-as",
+   "same_as": "seed-1692",
+   "followup": "location-update",
+   "reason": "Candidate is the Putrajaya municipal climbing complex Kompleks Sukan Mendaki Putrajaya in Taman Cabaran, Presint 5 (OSM way/888188170, name:en Putrajaya Climbing Sports Complex). OSM names Taman Cabaran 'Challenge Park' (way/486754479), so seed-1692 'Putrajaya Challenge Park' (Presint 5, indoor-bouldering/lead/top-rope) is the same facility under its English name. Bouldering and open status remain unconfirmed by any primary source, which is moot for a same-as. The existing pin (2.8957,101.6648, 863 m away) lands among residential blocks with no sports facility in OSM, while the candidate pin is the OSM building of the climbing complex inside the park, so the candidate pin is clearly better. Owner may want to check the existing entry's own evidence."
+  }
+ }
+}

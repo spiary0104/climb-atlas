@@ -1,0 +1,126 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-01-czechia",
+ "reviewer": "Claude (AI) on the owner's instruction; owner sign-off pending",
+ "reviewed": "2026-10-03",
+ "decisions": {
+  "cz-001": {
+   "decision": "same-as",
+   "same_as": "seed-1450",
+   "reason": "Same gym: identical name and Křižíkova 684/91a address, 6 m apart (S HUDY own page, Mapy address point). No pin change needed."
+  },
+  "cz-002": {
+   "decision": "same-as",
+   "same_as": "seed-1452",
+   "reason": "Same gym as \"Smichoff Climbing Center\" (Křížová 6, Praha 5): same street and number, 108 m apart (S SMIC own site is the SmíchOFF centre). Existing pin is within 150 m; the candidate pin is only a Google embed centre, so no location update."
+  },
+  "cz-003": {
+   "decision": "same-as",
+   "same_as": "seed-1455",
+   "reason": "Same gym as \"BigWall Praha-Vysočany\": same address Ocelářská 891/16, 149 m apart (S BIGW own site). No location update (within 150 m)."
+  },
+  "cz-006": {
+   "decision": "same-as",
+   "same_as": "seed-1453",
+   "reason": "Same gym as \"JamJam Boulder Gym\": same address Vlastina 889, Praha 6, 130 m apart (S JAMJ own site is JamJam Boulderovka). No location update (within 150 m)."
+  },
+  "cz-007": {
+   "decision": "same-as",
+   "same_as": "seed-1454",
+   "reason": "Same gym: identical name and Jeremiášova 2581/2 address (S TRIN own site). Candidate pin is 183 m away but it is the map viewport centre (@ value) of the gym Google link; the link place marker (50.0404688, 14.3279133) is 1 m from the existing pin, so the existing pin is the better one. No location update."
+  },
+  "cz-004": {
+   "decision": "defer",
+   "reason": "coordinate unresolved: pin is the Google embed viewport centre on the contact page (S VSIT, embed names \"Boulder V Síti\"), but the embed own place marker (50.0826228, 14.4464384, Bořivojova 816/104) is 156 m east of the recorded pin 50.0826262, 14.4442497. Needs the place-marker pin re-recorded. Evidence otherwise fine (own site shows exists, bouldering, hours)."
+  },
+  "cz-005": {
+   "decision": "accept",
+   "reason": "S ULTR own site shows the boulder cellar wall, address and weekday hours (Mon-Fri afternoons, closed weekends). Pin is the gym Google place marker linked on its contact page (50.0886785, 14.4234319), identical to the recorded pin; the embed viewport on the same page is 153 m off and was not used. Not flagged against any existing Bouldeer gym or sibling.",
+   "reviewed_against": []
+  },
+  "cz-008": {
+   "decision": "defer",
+   "reason": "coordinate unresolved: recorded pin 50.0815736, 14.3092083 is the \"GPS parkoviště\" (parking lot) coordinate published on the home page (S RUZY), not the wall; the Mapy firm point embedded on the same page (50.0827257, 14.3044473) is 363 m away. The two published pins disagree and neither is confirmed as the building. Evidence otherwise fine (own bouldrovka page; distinct from SmíchOFF cz-002 by name, address and 7.5 km)."
+  },
+  "cz-009": {
+   "decision": "accept",
+   "reason": "S HNGB own site shows a boulder-only centre (1400 m2), address, weekly hours and live occupancy. Single source, but it is the primary own site and shows exists, open and bouldering. Pin is the gym own GPS (49°10'01.1\"N 16°36'08.2\"E) printed on the contact page next to the Pražákova 1027/53 address.",
+   "reviewed_against": []
+  },
+  "cz-010": {
+   "decision": "accept",
+   "reason": "S HUDY own page for HUDY Brno shows exists, open, bouldering, address and chain. Pin is the Mapy firm point linked from the official page (x=16.5998306, y=49.173724), identical to the recorded pin. Rope wall with a boulder area; a different Brno gym from cz-009 and cz-025 (different address).",
+   "reviewed_against": []
+  },
+  "cz-011": {
+   "decision": "accept",
+   "reason": "S HNGO own site shows the boulder-focused centre, address and opening hours. Single source, but primary and shows exists, open and bouldering. Pin is the gym own GPS (49.8199833N, 18.1790658E) printed next to the Nad Porubkou 2405 address on its contact page.",
+   "reviewed_against": []
+  },
+  "cz-012": {
+   "decision": "accept",
+   "reason": "S BLOK own site shows weekly hours (5-23 h via smart lock), a boulder wall price list and a \"Blok pro všechny\" (for everyone) page, so public access is shown; run by the Blok Centrum club but typed commercial-gym. Pin is the coordinates printed on the home page next to the address (49.8109169N, 18.2729556E); the Google embed on the same page is 157 m away and was not used. Caveat: leads call it Tendon Blok, own site says Blok Centrum.",
+   "reviewed_against": []
+  },
+  "cz-013": {
+   "decision": "reject",
+   "reason_code": "closed",
+   "reason": "S ELIA own opening-hours page states the wall operation ended on 31 Mar 2026 (rent dispute with the Sareza hall owner); re-read on 2026-10-03."
+  },
+  "cz-014": {
+   "decision": "accept",
+   "reason": "S REPL own site shows the 385 m2 boulder wall inside the sports centre and the contact page gives address and hours (Mon-Fri 9-21, weekends split hours). Pin from the gym Google link: the viewport value equals the recorded pin; the place marker (49.5461058, 18.2181079) is 20 m away, so building level holds.",
+   "reviewed_against": []
+  },
+  "cz-015": {
+   "decision": "defer",
+   "reason": "coordinate unresolved: recorded pin 50.0494197, 15.7586538 is the viewport centre (@ value) of the gym maps.app.goo.gl link (S JPAR), whose place marker is 50.0494163, 15.7612287, 184 m east. Needs the place-marker pin re-recorded. Evidence otherwise fine (own site shows boulder hall)."
+  },
+  "cz-016": {
+   "decision": "defer",
+   "reason": "coordinate unresolved: pin is the Google embed viewport centre on the contact page (S GEKO, embed names \"Gekon boulder bar\"); the embed own place marker (50.0331018, 15.7749599, Sladkovského 505) is 184 m east of the recorded 50.0331052, 15.772385. Needs the place-marker pin re-recorded. Own site shows exists, hours, boulder wall."
+  },
+  "cz-017": {
+   "decision": "defer",
+   "reason": "coordinate unresolved: recorded pin 50.7265758, 15.1463401 is the viewport centre (@ value) of the gym goo.gl link (S MAKA); the place marker (MAKAK climbing s.r.o.) is 50.7265758, 15.1485288, 154 m east. Needs the place-marker pin re-recorded. Evidence otherwise fine."
+  },
+  "cz-018": {
+   "decision": "accept",
+   "reason": "S PAJK own site shows the 4.5 m boulder room with seasonal hours (Jun-Sep Mon-Thu 16-22; Oct-May daily 16-22) and a current notice. Pin is the Mapy firm point linked from the site (x=17.2432036, y=49.5923285), identical to the recorded pin.",
+   "reviewed_against": []
+  },
+  "cz-019": {
+   "decision": "accept",
+   "reason": "S FLWA own site shows a 450 m2 boulder wall plus rope wall, address and the gym own GPS (49.6005936N 17.2948969E), which is the recorded pin. The Google embed on the same page is 164 m off and was not used. Different Olomouc gym from cz-018 (different address).",
+   "reviewed_against": []
+  },
+  "cz-020": {
+   "decision": "accept",
+   "reason": "S LANO own site shows a rope wall with a first-floor boulder section, address Lannova 2 and hours; the Google place link on its contact page gives 48.974243, 14.4796435, identical to the recorded pin. Distinct from Limit Boulder (cz-021): different name, address (Vrbenská 16a) and 1.9 km apart; sister gym, not a duplicate.",
+   "reviewed_against": [
+    "cz-021"
+   ]
+  },
+  "cz-021": {
+   "decision": "defer",
+   "reason": "coordinate unresolved: recorded pin 48.9743103, 14.5061776 is the viewport centre (@ value) of the gym goo.gl link (S LIMI), whose place marker is 48.9743068, 14.5087525, 188 m east. Needs the place-marker pin re-recorded. Single source and the home page shows no opening hours (open status rests on the site being live); distinct from cz-020 (own address, 1.9 km)."
+  },
+  "cz-022": {
+   "decision": "defer",
+   "reason": "coordinate unresolved: pin is the Google embed viewport centre on the contact page (S V16, embed names Kollárova 1239/19); the embed own place marker (49.7475265, 13.3683037) is 122 m from the recorded 49.7473775, 13.3666233. Needs the place-marker pin re-recorded. Own site shows exists, bouldering page, weekly hours."
+  },
+  "cz-023": {
+   "decision": "accept",
+   "reason": "S HUDY own page for HUDY Ústí nad Labem shows exists, open, bouldering, address (Pražská 21) and chain. Pin is the Mapy firm point linked from the page (x=14.0439114, y=50.6468142), identical to the recorded pin.",
+   "reviewed_against": []
+  },
+  "cz-024": {
+   "decision": "defer",
+   "reason": "coordinate unresolved: recorded pin 49.4051742, 15.5864831 is the schema.org Place geo of the operator company MARIAN VLK s.r.o. (registered at Pražská 2229/6), not the boulder bar; the same page gives the bar address Sokolovská 128 with its own GPS text that reads about 49.4207, 15.5964 (garbled format), roughly 1.9 km away. Needs re-recording and a visual check. Single source (operator page shows hours)."
+  },
+  "cz-025": {
+   "decision": "defer",
+   "reason": "coordinate unresolved: pin is the Google embed viewport centre on the page (S KOME, embed names \"Sportovní areál Komec\", Hněvkovského 630/62c); the embed own place marker (49.169882, 16.6234766) is 139 m from the recorded 49.169707, 16.621588. Needs the place-marker pin re-recorded. Own site shows boulder wall and hours. Also the suburb \"Královo Pole\" looks wrong: postcode 617 00 and the embed say Brno-jih."
+  }
+ }
+}

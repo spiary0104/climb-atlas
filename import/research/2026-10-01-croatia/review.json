@@ -1,0 +1,61 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-01-croatia",
+ "reviewer": "Claude (AI) on the owner's instruction; owner sign-off pending",
+ "reviewed": "2026-10-03",
+ "decisions": {
+  "hr-001": {
+   "decision": "same-as",
+   "same_as": "seed-1481",
+   "reason": "S HIVE own site (hivebouldering.com) gives Slavonska avenija 16, the same address as Bouldeer seed-1481 \"The Hive Zagreb - Climbing & Yoga\"; the candidate lists \"The Hive Climbing & Yoga\" as an alias and the pins are identical (0 m). seed-1479 (Boulder Zona) and seed-1480 (Fothia Velesajam) are other gyms whose existing pins were set to this same Hive coordinate; they are handled under hr-002 and hr-003."
+  },
+  "hr-002": {
+   "decision": "same-as",
+   "same_as": "seed-1479",
+   "followup": "location-update",
+   "reason": "Same gym: seed-1479 is \"Boulder Zona\" at Slavenskoga ulica 1, the address on its own site contact page (S ZONA: 3rd floor, Prečko Shopping Centre, western Zagreb). The existing pin is 9,560 m away and is the identical coordinate used for The Hive Zagreb (eastern Zagreb), so it is wrong; the candidate pin (45.7958918, 15.9002847) comes from the gym's own contact-page map. Location update needed; the exact coordinate should be re-checked on the map before it is applied because the contact-page embed is address-based."
+  },
+  "hr-003": {
+   "decision": "same-as",
+   "same_as": "seed-1480",
+   "followup": "location-update",
+   "reason": "Same gym: seed-1480 \"Fothia Velesajam dvorana za penjanje\" is the Fothia gym at the Zagreb Fair (Velesajam), the candidate's alias \"Fothia Velesajam\" (S FOTHIA own site lists the Zagreb Fair bouldering gym, Avenija Dubrovnik 15, Pavilion 25). The existing seed has no address and sits 4,617 m away on the identical coordinate as The Hive Zagreb, which is a different gym, so the seed pin is wrong. Candidate pin is OSM way/237011161 (building precision); confirm it is the Pavilion 25 hall when the update is applied."
+  },
+  "hr-004": {
+   "decision": "accept",
+   "reviewed_against": [],
+   "reason": "Single source but primary and sufficient (rule E): S BOLDERI own site (bolderi.hr, re-read 2026-10-03) shows a boulder hall with bouldering courses, a pricing page with day passes and memberships for the general public, and posted opening hours (daily 16:00-22:00) with a booking/ticket flow. Address Popovicev put 2d (contact page says Popovicev put 2), Matulji. Pin is the centre of the contact-page Google embed, whose place label is exactly \"Popovicev put 2d, 51211 Matulji\" and whose centre (45.3673637, 14.3296289) equals the recorded pin, so it agrees with the published address. Caveats: the embed names the address rather than the gym; the site footer is dated 2024 and the home page still shows lorem ipsum text; the site markets the hall as Opatija/Istria but it is in Matulji."
+  },
+  "hr-005": {
+   "decision": "same-as",
+   "same_as": "seed-1483",
+   "followup": "location-update",
+   "reason": "Same gym: seed-1483 \"Spk Lapis\" at Slobode ulica 28, Split; the candidate is SPK Lapis at Ulica slobode 28 (Dom mladih) (S LAPIS own site gives Slobode ul. 28 and weekday hours 17:00-22:00). The candidate pin comes from the club's own contact-page Google embed whose place is labelled \"Spk Lapis\", 204 m from the existing pin (over 150 m), so the club-published pin is the better source; verify before applying. Note: this is a club hall (category club); public access is by membership/arrangement, not shown as drop-in, and the site footer is dated 2021."
+  },
+  "hr-006": {
+   "decision": "same-as",
+   "same_as": "seed-1482",
+   "reason": "Same gym by name and address: seed-1482 \"Climbing Center Marulianus\" at Osmih mediteranskih igara 2, Split, versus the candidate's alias \"Climbing center Marulianus\" and address \"8. mediteranskih igara 2, Poljud stadium\" (S MARUL contact page). No location-update followup because no reliable pin is available: the candidate OSM node/3073524950 is area precision and, per the researcher, about 1.3 km from the Poljud address, and the existing pin is only 218 m from that node, so it may share the same problem. Existing pin quality is unresolved."
+  },
+  "hr-007": {
+   "decision": "defer",
+   "reason": "Not enough to accept: (1) current opening unconfirmed, S TUHOBIC own site was re-read 2026-10-03 and its latest news is from 2021 (hall opened March 2021), status_claim is unknown; (2) public access not shown, the site describes club kids training, adult training and courses only, no drop-in or day pass; (3) hall address unresolved, club site and Novi list say Zagrebacka 23a while the federation (HSPS) gives Spincicheva 2. Needs a dated recent primary source (club Facebook/Instagram) with hours and visitor access, and a confirmed hall address."
+  },
+  "hr-008": {
+   "decision": "defer",
+   "reason": "Limited access: S VERTIKAL own site (pk-vertikal.hr/treninzi, re-read 2026-10-03) states the climbing halls are intended exclusively for club members and that joining requires several visits to group training; no drop-in, day pass or public hours are shown (the old intro bouldering course page is from 2020). Hall address Ulica Dragutina Rakovca 3 (Vindija gymnastics centre) is consistent across the site, but the pin is an OSM node (14145309133) not otherwise verified against the hall. Accept only if a public-access source (day pass, public sessions) is found."
+  },
+  "hr-009": {
+   "decision": "defer",
+   "reason": "Primary bouldering evidence too thin: bouldering and status unknown. The only evidence is a City of Osijek news item (a boulder wall up to about 4 m and a lead wall installed at NSD Gradski vrt for club Bastion) and the club Facebook page, which could not be read without login, plus the federation list; no own site, no current opening or visitor access. Missing: a primary source (club page/social) confirming the wall is in use, opening times and public access (club hall)."
+  },
+  "hr-010": {
+   "decision": "defer",
+   "reason": "Primary bouldering evidence too thin: existence rests on the MultiSport card directory (S BENEFIT), the Facebook/Instagram pages are unreadable without login and no website was found; bouldering offer, opening status and the OSM pin (node/12285142110, only the OSM listing) are unconfirmed. The name says \"boulder\" but that is a brand name, not evidence. Missing: a readable primary source showing a bouldering area is open and the address."
+  },
+  "hr-011": {
+   "decision": "defer",
+   "reason": "Bouldering not established: S DIREKT own site (spk-direkt.hr/stranica/dvorana, re-read 2026-10-03) shows an 80 m2 club hall, weekday hours 18:00-21:30, a 2 EUR day ticket and invitation to visit (public access is shown), but does not state a bouldering wall; the visible routes are graded rope climbs and only the federation (HSPS) tags it as boulder. Missing: a primary statement or photos of a bouldering wall."
+  }
+ }
+}
