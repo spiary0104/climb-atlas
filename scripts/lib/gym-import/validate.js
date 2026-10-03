@@ -19,6 +19,11 @@ const UPDATE_KEYS = new Set(['id', 'intent', 'set', 'reason', 'source', 'expect_
 // expect_h: the gym's content hash (index-store h) when the update was researched; the plan and the updater refuse the update
 // if the gym no longer has exactly that content.
 const EXPECT_H = /^[0-9a-f]{16}$/;
+// A retire record ({"intent":"retire"}) marks an approved gym closed / a confirmed duplicate: updater.js sets status 'rejected' and
+// rejection_reason (the moderator UI's own decision format); the row is kept, never deleted.
+const RETIRE_KEYS = new Set(['id', 'intent', 'expect_h', 'reason_code', 'reason', 'source', 'duplicate_of']);
+const REASON_CODES = ['closed', 'duplicate'];
+const REASON_MIN = 8, REASON_MAX = 200;   // spots_rejection_reason_check allows 200; moderation.js rejectSpot slices to 200
 
 let _deps = null;
 async function deps() {
@@ -116,4 +121,23 @@ async function validateUpdateRecord(rec) {
   return { errors, warnings };
 }
 
-module.exports = { TYPES, UPDATABLE, RECORD_KEYS, EXPECT_H, validateNewRecord, validateUpdateRecord, deps };
+// Validate a "retire existing gym" record:
+// { intent:"retire", id, expect_h, reason_code:"closed"|"duplicate", reason, source, duplicate_of? (required iff duplicate) }.
+async function validateRetireRecord(rec) {
+  const errors = [], warnings = [];
+  const err = (code, field, message) => errors.push({ code, field, message });
+  for (const k of Object.keys(rec)) if (!RETIRE_KEYS.has(k)) err('unknown-field', k, `unknown field "${k}" in a retire record (allowed: ${[...RETIRE_KEYS].join(', ')})`);
+  if (rec.intent !== 'retire') err('bad-intent', 'intent', 'intent must be "retire"');
+  if (!isStr(rec.id) || !ID_ANY.test(rec.id)) err('bad-id', 'id', 'a retire record must name the existing gym id');
+  if (!isStr(rec.expect_h) || !EXPECT_H.test(rec.expect_h)) err('bad-expect-h', 'expect_h', 'expect_h is required: the 16-hex content hash of the gym when it was researched');
+  if (!REASON_CODES.includes(rec.reason_code)) err('bad-reason-code', 'reason_code', `reason_code must be one of ${REASON_CODES.join(', ')}`);
+  if (!isStr(rec.reason) || rec.reason.length < REASON_MIN || rec.reason.length > REASON_MAX || rec.reason !== rec.reason.trim() || CTRL.test(rec.reason) || /[\r\n\t]/.test(rec.reason)) err('bad-reason', 'reason', `reason is required: ${REASON_MIN}-${REASON_MAX} characters of plain trimmed text on one line (it becomes the rejection_reason shown to moderators)`);
+  if (!isStr(rec.source) || !rec.source.trim() || rec.source.length > 400) err('bad-source', 'source', 'source (where the evidence is) is required, max 400 chars');
+  if (rec.reason_code === 'duplicate') {
+    if (!isStr(rec.duplicate_of) || !ID_ANY.test(rec.duplicate_of)) err('duplicate-of-required', 'duplicate_of', 'a duplicate needs duplicate_of: the id of the gym that stays');
+    else if (rec.duplicate_of === rec.id) err('bad-duplicate-of', 'duplicate_of', 'duplicate_of cannot be the retired gym itself');
+  } else if (rec.duplicate_of !== undefined) err('duplicate-of-forbidden', 'duplicate_of', 'duplicate_of is only allowed with reason_code "duplicate"');
+  return { errors, warnings };
+}
+
+module.exports = { TYPES, UPDATABLE, RECORD_KEYS, EXPECT_H, REASON_CODES, validateNewRecord, validateUpdateRecord, validateRetireRecord, deps };

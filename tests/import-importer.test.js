@@ -750,24 +750,29 @@ test('production logic never derives state from a manifest: the importer reads o
 });
 
 // ============================================ 9. static guarantees ================================================================
-test('static: exactly two write paths -- a plain INSERT (importer.js) and a location PATCH (updater.js) -- and no delete/upsert/merge capability', () => {
+test('static: exactly three write call sites -- a plain INSERT (importer.js), a location PATCH and a retire PATCH (both via updater.js) -- and no delete/upsert/merge capability', () => {
   const dir = path.join(ROOT, 'scripts', 'lib', 'gym-import');
   const src = f => fs.readFileSync(path.join(dir, f), 'utf8').split('\n').filter(l => !/^\s*\/\//.test(l)).join('\n');
   const t = src('target.js'), im = src('importer.js'), up = src('updater.js');
   assert.equal((t.match(/_send\('POST'/g) || []).length, 1, 'exactly one POST call site (insertSpots)');
-  assert.equal((t.match(/_send\('PATCH'/g) || []).length, 1, 'exactly one PATCH call site (updateSpotLocation)');
+  assert.equal((t.match(/_send\('PATCH'/g) || []).length, 2, 'exactly two PATCH call sites (updateSpotLocation, retireSpot)');
   for (const bad of [/_send\('(PUT|DELETE)'/, /method:\s*['"](PUT|DELETE)/i, /on_conflict/, /resolution=(merge|ignore)/, /\/rpc\//, /upsert/i, /Prefer:[^,}]*(merge|ignore)-duplicates/]) for (const [n, s] of [['target.js', t], ['importer.js', im], ['updater.js', up]]) assert.ok(!bad.test(s), n + ': ' + bad);
   assert.ok(!/_send\('(PATCH|PUT|DELETE)'|method:\s*['"](PATCH|PUT|DELETE)/i.test(im + up), 'no raw write method outside target.js');
   // the PATCH changes one approved row, pinned to the version seen at the final re-check, and sends only the approved fields
   const patch = t.slice(t.indexOf('async updateSpotLocation('), t.indexOf("_send('PATCH'"));
   assert.match(patch, /id=eq\.\$\{encodeURIComponent\(u\.id\)\}&status=eq\.approved&updated_at=eq\.\$\{encodeURIComponent\(u\.updatedAt\)\}/);
   assert.match(t.slice(t.indexOf("_send('PATCH'")), /body: JSON\.stringify\(u\.set\)/);
+  // the retire PATCH is pinned the same way and its body is exactly {status:'rejected', rejection_reason}
+  const retire = t.slice(t.indexOf('async retireSpot('), t.indexOf("_send('PATCH'", t.indexOf('async retireSpot(')));
+  assert.match(retire, /id=eq\.\$\{encodeURIComponent\(u\.id\)\}&status=eq\.approved&updated_at=eq\.\$\{encodeURIComponent\(u\.updatedAt\)\}/);
+  assert.match(t.slice(t.indexOf('async retireSpot(')), /body: JSON\.stringify\(\{ status: 'rejected', rejection_reason: u\.reason \}\)/);
   assert.match(t, /const LOCATION_FIELDS = Object\.freeze\(\['address', 'lat', 'lng'\]\)/);
-  assert.ok(!/_send\('POST'|_send\('PATCH'|insertSpots\(|updateSpotLocation\(/.test(src('plan.js') + src('match.js') + src('validate.js') + src('stage.js') + src('index-store.js') + src('report.js') + src('manifest.js') + src('history.js') + src('research.js')), 'no other module writes');
+  assert.ok(!/_send\('POST'|_send\('PATCH'|insertSpots\(|updateSpotLocation\(|retireSpot\(/.test(src('plan.js') + src('match.js') + src('validate.js') + src('stage.js') + src('index-store.js') + src('report.js') + src('manifest.js') + src('history.js') + src('research.js')), 'no other module writes');
   assert.ok(!/require\('\.\/(target|importer|updater)'\)|fetch\(|mintWriteGate|mintUpdateGate/.test(src('research.js')), 'the research tooling is offline: no target, no network, no gate');
   assert.equal((im.match(/api\.insertSpots\(/g) || []).length, 1, 'the importer calls the insert exactly once, after the gates');
-  assert.ok(!/updateSpotLocation\(|mintUpdateGate\(/.test(im), 'the importer never updates');
+  assert.ok(!/updateSpotLocation\(|retireSpot\(|mintUpdateGate\(/.test(im), 'the importer never updates or retires');
   assert.equal((up.match(/api\.updateSpotLocation\(/g) || []).length, 1, 'the updater calls the update in one place, after the gates');
+  assert.equal((up.match(/api\.retireSpot\(/g) || []).length, 1, 'the updater calls the retire in one place, after the gates');
   assert.ok(!/insertSpots\(|mintWriteGate\(/.test(up), 'the updater never inserts');
   for (const [s, mint] of [[im, 'mintWriteGate('], [up, 'mintUpdateGate(']]) assert.ok(s.indexOf(mint) > s.indexOf("'gate: --confirm'") && s.indexOf(mint) > s.indexOf("'final re-check before write'") && s.indexOf("'final re-check before write'") > 0, mint + ' only after the safety checks');
   assert.ok(!/child_process|execSync|spawn\(/.test(t + im + up));
@@ -850,4 +855,94 @@ test('LOCAL STACK: a real update changes only address/lat/lng (slug kept, update
   const snap = JSON.stringify(await adm.all());
   const raced = await runImport({ batchDir: s2.b.dir, indexDir: s2.indexDir, env: e, mode: 'apply', confirm: dry2.token });
   assert.equal(raced.exit, 2, raced.report); assert.equal(JSON.stringify(await adm.all()), snap, 'nothing written');
+});
+
+// ============================================ retirements (intent "retire") against the real local database ====================
+const retRec = (index, id, over = {}) => ({ intent: 'retire', id, expect_h: index.byId.get(id).h, reason_code: 'closed', reason: 'permanently closed, confirmed on the gym website (test)', source: 'https://example.com/closed (test)', ...over });
+const DUP_REASON = 'duplicate of seed-100, the same gym listed twice (test)';
+const RET2 = ix => [retRec(ix, 'seed-101'), retRec(ix, 'seed-102', { reason_code: 'duplicate', duplicate_of: 'seed-100', reason: DUP_REASON })];
+async function retSetup(id, records = RET2) {
+  await adm.reset(); await adm.insert(PROD.map(prodRow));
+  const indexDir = tmp(); S.write(await anonApproved(), indexDir, { source: 'local test' });
+  const index = S.load(indexDir);
+  const b = makeBatch(records(index), { id });
+  fs.writeFileSync(path.join(b.dir, 'plan.json'), JSON.stringify(await P.planBatch({ dir: b.dir, index }), null, 1) + '\n');
+  return { b, indexDir, index };
+}
+const approvedCount = rows => rows.filter(r => r.status === 'approved').length;
+
+test('LOCAL STACK: a real retirement sets status rejected + the reason on exactly the targets (record kept, other spots byte-identical, approved count -2); re-run writes nothing', { skip }, async () => {
+  const e = env();
+  const { b, indexDir } = await retSetup('2026-02-02-local-retire');
+  const dry = await runImport({ batchDir: b.dir, indexDir, env: e });
+  assert.equal(dry.exit, 0, dry.report); assert.equal(dry.kind, 'update'); assert.equal(dry.coverage, 'FULL'); assert.equal(dry.state, 'fresh'); assert.match(dry.report, /Would retire \(2 gyms/);
+  const before = await adm.all();
+  assert.equal(JSON.stringify(await adm.all()), JSON.stringify(before), 'the dry-run wrote nothing');
+  const ok = await runImport({ batchDir: b.dir, indexDir, env: e, mode: 'apply', confirm: dry.token });
+  assert.equal(ok.exit, 0, ok.report); assert.deepEqual(ok.applied, ['seed-101', 'seed-102']);
+  const after = await adm.all();
+  const was = id => before.find(r => r.id === id), now = id => after.find(r => r.id === id);
+  assert.equal(after.length, before.length, 'nothing was deleted');
+  assert.equal(approvedCount(after), approvedCount(before) - 2, 'approved count went down by exactly the number of retirements');
+  for (const [id, reason] of [['seed-101', 'permanently closed, confirmed on the gym website (test)'], ['seed-102', DUP_REASON]]) {
+    assert.equal(now(id).status, 'rejected'); assert.equal(now(id).rejection_reason, reason);
+    assert.notEqual(now(id).updated_at, was(id).updated_at, 'the database records the edit time');
+    for (const f of ['name', 'suburb', 'state', 'country', 'lat', 'lng', 'address', 'types', 'notes', 'photo', 'community', 'edited', 'created_at', 'slug', 'submitted_by']) assert.deepEqual(now(id)[f], was(id)[f], id + ' unchanged: ' + f);
+  }
+  for (const id of ['seed-100', 'community-0f3a7c2e-1111-4222-8333-444455556666']) assert.deepEqual(now(id), was(id), id + ' is byte-identical, including updated_at');
+  const m = JSON.parse(fs.readFileSync(path.join(b.dir, 'manifest.json'), 'utf8'));
+  assert.equal(m.kind, 'update'); assert.equal(m.status, 'updated'); assert.deepEqual(m.retired, ['seed-101', 'seed-102']); assert.equal(m.rows_retired, 2); assert.equal(m.rows_updated, 0);
+  assert.equal(m.approved_before, approvedCount(before)); assert.equal(m.approved_after, approvedCount(before) - 2); assert.equal(m.verification.ok, true);
+  assert.equal((await anonApproved()).length, approvedCount(after), 'the public site no longer shows the retired gyms');
+  // idempotent: already applied -> nothing written, recovery manifest when the manifest is missing
+  const again = await runImport({ batchDir: b.dir, indexDir, env: e, mode: 'apply', confirm: dry.token });
+  assert.equal(again.exit, 0, again.report); assert.equal(again.state, 'already-updated'); assert.deepEqual(await adm.all(), after, 'the re-run wrote nothing');
+  assert.equal((await runImport({ batchDir: b.dir, indexDir, env: e, mode: 'verify' })).exit, 0);
+  fs.unlinkSync(path.join(b.dir, 'manifest.json'));
+  const rec = await runImport({ batchDir: b.dir, indexDir, env: e, mode: 'apply', confirm: 'irrelevant' });
+  assert.equal(rec.exit, 0, rec.report); assert.equal(rec.state, 'already-present'); assert.deepEqual(await adm.all(), after, 'recovery wrote nothing to the database');
+  assert.equal(JSON.parse(fs.readFileSync(path.join(b.dir, 'manifest.json'), 'utf8')).status, 'updated-recovered');
+});
+
+test('LOCAL STACK: a gym changed between the dry-run and the apply (or just before its PATCH) is refused and nothing is retired', { skip }, async () => {
+  const e = env();
+  // changed after the token was issued: the final re-check refuses
+  const s1 = await retSetup('2026-02-02-local-retire-race');
+  const dry1 = await runImport({ batchDir: s1.b.dir, indexDir: s1.indexDir, env: e });
+  await adm.patch('seed-102', { notes: 'edited by a moderator' });
+  const snap1 = JSON.stringify(await adm.all());
+  const r1 = await runImport({ batchDir: s1.b.dir, indexDir: s1.indexDir, env: e, mode: 'apply', confirm: dry1.token });
+  assert.equal(r1.exit, 2, r1.report); assert.equal(JSON.stringify(await adm.all()), snap1, 'nothing written');
+  // changed after the final re-check, just before the PATCH of the first target: zero rows match, nothing retired
+  const s2 = await retSetup('2026-02-02-local-retire-race2');
+  const dry2 = await runImport({ batchDir: s2.b.dir, indexDir: s2.indexDir, env: e });
+  const api = new T.Api(T.resolveTarget(e)), real = api.retireSpot.bind(api);
+  api.retireSpot = async (u, g) => { if (u.id === 'seed-101') await adm.patch('seed-101', { notes: 'edited in the last millisecond' }); return real(u, g); };
+  const r2 = await runImport({ batchDir: s2.b.dir, indexDir: s2.indexDir, env: e, mode: 'apply', confirm: dry2.token, api });
+  assert.equal(r2.exit, 2, r2.report); assert.match(r2.report, /0 row\(s\) matched/);
+  const rows = await adm.all();
+  assert.equal(approvedCount(rows), PROD.length, 'no spot was retired'); assert.equal(rows.find(r => r.id === 'seed-101').notes, 'edited in the last millisecond');
+  assert.equal(fs.existsSync(path.join(s2.b.dir, 'manifest.json')), false);
+});
+
+test('LOCAL STACK: a maintenance batch with an update and a retirement works; a batch mixing an insert with a retirement is refused and writes nothing', { skip }, async () => {
+  const e = env();
+  const s = await retSetup('2026-02-02-local-maintenance', ix => [updRec(ix, 'seed-100', { lat: -33.882, lng: 151.213 }), retRec(ix, 'seed-101')]);
+  const dry = await runImport({ batchDir: s.b.dir, indexDir: s.indexDir, env: e });
+  assert.equal(dry.exit, 0, dry.report); assert.match(dry.report, /Would update \(1 gyms/); assert.match(dry.report, /Would retire \(1 gyms/);
+  const before = await adm.all();
+  const ok = await runImport({ batchDir: s.b.dir, indexDir: s.indexDir, env: e, mode: 'apply', confirm: dry.token });
+  assert.equal(ok.exit, 0, ok.report);
+  const after = await adm.all(), now = id => after.find(r => r.id === id), was = id => before.find(r => r.id === id);
+  assert.equal(now('seed-100').lat, -33.882); assert.equal(now('seed-100').status, 'approved'); assert.equal(now('seed-101').status, 'rejected');
+  assert.equal(approvedCount(after), approvedCount(before) - 1);
+  for (const id of ['seed-102', 'community-0f3a7c2e-1111-4222-8333-444455556666']) assert.deepEqual(now(id), was(id), id + ' untouched');
+  const m = JSON.parse(fs.readFileSync(path.join(s.b.dir, 'manifest.json'), 'utf8'));
+  assert.deepEqual(m.ids, ['seed-100', 'seed-101']); assert.deepEqual(m.retired, ['seed-101']); assert.equal(m.rows_updated, 1); assert.equal(m.rows_retired, 1);
+
+  const x = await retSetup('2026-02-02-local-insert-retire', ix => [rec({ name: 'Brand New Gym', lat: -33.6, lng: 151.4 }), retRec(ix, 'seed-101')]);
+  const snap = JSON.stringify(await adm.all());
+  const r = await runImport({ batchDir: x.b.dir, indexDir: x.indexDir, env: e, mode: 'apply', confirm: 'x'.repeat(16) });
+  assert.equal(r.exit, 2); assert.equal(r.kind, undefined, 'not handed to the updater'); assert.ok(failing(r).includes('insert-only'), failing(r).join());
+  assert.equal(JSON.stringify(await adm.all()), snap, 'nothing written');
 });

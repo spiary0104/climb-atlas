@@ -25,6 +25,33 @@ test('validation: a good record passes; every required field is checked with a s
   assert.ok(codes(await V.validateNewRecord(rec({ lat: 0, lng: 0 }))).includes('bad-coordinate'));
 });
 
+const RETIRE = (over = {}) => ({ intent: 'retire', id: 'seed-433', expect_h: '0123456789abcdef', reason_code: 'closed', reason: 'permanently closed, confirmed on the gym website', source: 'https://example.com/closed', ...over });
+
+test('validation: a retire record -- good shapes pass; every bad shape gets a specific code', async () => {
+  assert.deepEqual((await V.validateRetireRecord(RETIRE())).errors, []);
+  assert.deepEqual((await V.validateRetireRecord(RETIRE({ reason_code: 'duplicate', duplicate_of: 'seed-434' }))).errors, []);
+  assert.deepEqual((await V.validateRetireRecord(RETIRE({ id: 'community-0f3a7c2e-1111-4222-8333-444455556666' }))).errors, []);
+  assert.deepEqual((await V.validateRetireRecord(RETIRE({ id: 'g-0123456789', reason: 'x'.repeat(200) }))).errors, []);
+  const bad = [
+    [{ intent: 'update' }, 'bad-intent'], [{ intent: undefined }, 'bad-intent'],
+    [{ id: undefined }, 'bad-id'], [{ id: 'seed 1' }, 'bad-id'], [{ id: '../x' }, 'bad-id'],
+    [{ expect_h: undefined }, 'bad-expect-h'], [{ expect_h: 'ABCDEF0123456789' }, 'bad-expect-h'], [{ expect_h: '0123' }, 'bad-expect-h'],
+    [{ reason_code: 'gone' }, 'bad-reason-code'], [{ reason_code: undefined }, 'bad-reason-code'],
+    [{ reason: undefined }, 'bad-reason'], [{ reason: 'short' }, 'bad-reason'], [{ reason: 'x'.repeat(7) }, 'bad-reason'], [{ reason: 'x'.repeat(201) }, 'bad-reason'], [{ reason: ' padded reason here ' }, 'bad-reason'], [{ reason: 'two\nlines of text' }, 'bad-reason'], [{ reason: 42 }, 'bad-reason'],
+    [{ source: undefined }, 'bad-source'], [{ source: '  ' }, 'bad-source'], [{ source: 'x'.repeat(401) }, 'bad-source'],
+    [{ reason_code: 'duplicate' }, 'duplicate-of-required'], [{ reason_code: 'duplicate', duplicate_of: '' }, 'duplicate-of-required'],
+    [{ reason_code: 'duplicate', duplicate_of: 'seed-433' }, 'bad-duplicate-of'],
+    [{ duplicate_of: 'seed-434' }, 'duplicate-of-forbidden'],
+    [{ set: { lat: 1 } }, 'unknown-field'], [{ status: 'rejected' }, 'unknown-field'], [{ delete: true }, 'unknown-field'],
+  ];
+  for (const [over, code] of bad) {
+    const r = await V.validateRetireRecord(RETIRE(over));
+    assert.ok(codes(r).includes(code), `${JSON.stringify(over)} should give ${code}, got ${codes(r)}`);
+    assert.ok(r.errors.every(e => e.message.length > 10), 'messages are descriptive');
+  }
+  assert.deepEqual(V.REASON_CODES, ['closed', 'duplicate']);
+});
+
 test('validation: photo must be a plain http(s) URL (same rule as the app: safeUrl)', async () => {
   for (const bad of ['javascript:alert(1)', 'JAVASCRIPT:alert(1)', 'data:text/html,x', '//evil.example/x.png', 'ftp://x.example/a', 'https://user:pw@x.example/a', 'not a url', 'https://x"onerror="alert(1)']) assert.ok(codes(await V.validateNewRecord(rec({ photo: bad }))).includes('unsafe-photo'), bad);
   for (const good of [null, '', 'https://example.com/a.jpg', 'http://example.com/a.png?x=1']) assert.deepEqual((await V.validateNewRecord(rec({ photo: good }))).errors, [], String(good));
