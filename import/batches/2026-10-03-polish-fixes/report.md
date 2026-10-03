@@ -12,7 +12,7 @@
 | Rejected by a human decision | 0 |
 | **Total records in batch** | 11 |
 
-Index: 2341 known gyms (sha256 3a79f5cf6f8d…). Plan: 3e0bfc717fd1…
+Index: 2341 known gyms (sha256 3a79f5cf6f8d…). Plan: 3e0bfc717fd1… Also compared against staged batches: 2026-10-03-czechia-pins.
 
 ## Updates to existing gyms (11)
 
