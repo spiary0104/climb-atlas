@@ -18,5 +18,14 @@ characters. Do not edit these files; add derivatives elsewhere. Copied from the 
 | `rest-day.png` | Wrapped in a mustard blanket with a mug [`…boulderin8.png`] | Quiet-week Log state |
 | `high-five.png` | Chalky high five [`…boulderin9.png`] | Onboarding welcome, first approved contribution |
 
+Added 2026-10-03: three poses generated from the renders above as references (same character, not a redesign). Their
+roles are proposed only; DESIGN.md sec. 12 does not list them yet and the app does not use them.
+
+| File | Pose | Proposed product role |
+|---|---|---|
+| `field-notes.png` | Seated, writing in a small notebook with a pencil | First-run /me Saved and Climbed (traced: `assets/mascot/field-notes.svg`) |
+| `fresh-stamp.png` | Arms up, holding the open passport with a fresh stamp overhead | Passport travel milestones (traced: `assets/mascot/fresh-stamp.svg`) |
+| `pin-drop.png` | Planting an orange map pin | Add-a-gym "in review" screen (not traced; not yet a sanctioned surface) |
+
 Panda reference screenshots (`design/references/panda/`) are third-party app captures used as design reference only.
 They are excluded from git (`.git/info/exclude`) because this repository is public: keep them local.

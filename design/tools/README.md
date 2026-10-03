@@ -16,6 +16,7 @@ One exception adds an opt-in sample group (7th argument), so groups never change
 |---|---|---|
 | `chalking-up`, `backpacker` (Brand Pass), `traveller-passport`, `dyno` (Phase 5) | none | |
 | `topped-out-flag` (Phase 5) | `granite` | the grey boulder needs granite + one shade, or its shadows snap to forest |
+| `field-notes`, `fresh-stamp` (2026-10-03) | `ground` | the source's soft beige ground shadow (bottom 14% of the image only) is background, not a cream ellipse |
 
 Background is only what is connected to the image edge: enclosed white inside the character (eye whites and highlights,
 chalk, socks, a map pin's hole) is traced as white. Real gaps between limbs are listed in `POCKETS` in the script as a
