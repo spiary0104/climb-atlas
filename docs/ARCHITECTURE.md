@@ -35,7 +35,7 @@ Line refs drift: re-grep function names rather than trusting numbers.
 | `js/modules/html-safe.js`, `utils.js` | Pure `escapeHtml` / `safeUrl` (http/https only); `directionsUrl`, `showToast` |
 | `js/modules/geo.js`, `metros.js` (curated city metros: centre + radius, membership computed, no DB; place key `AU:NSW:~sydney`), `search-index.js`, `pin-html.js`, `list-html.js`, `moderation-html.js`, `provenance.js`, `add-html.js`, `passport.js`, `stamp-html.js`, `gym-picker.js` | PURE (no DOM, unit-tested): Log a session gym picker (search, continent browse) · passport rules (stamps per city, passport line, milestones, grades) and stamp/passport/sheet markup · distance, antimeridian-safe bounds, stacked-pin offsets, URL state encode/decode, folding · search index + query · pin SVG · row/card/carousel/peek/empty/pill/search-option markup · /mod queue, diff, panel · provenance state/line, levels, display-name rule, `publicNotes` (hides internal research notes from the gym page About and the peek card; stored text untouched) · /add steps, nearest-gym area, duplicate note |
 | `js/modules/router.js` | History API router (+ `/#/` fallback): `matchRoute`, `navigate`, `registerView`, `refreshPage`, title/canonical, nav `aria-current`. Explore stays mounted behind pages |
-| `js/modules/slug.js` | Pure slug rule mirroring the DB migration (fallback for rows without `slug`) + `gymPath`/`countryPath`/`regionPath`/`cityPath` |
+| `js/modules/slug.js` | Pure slug rule mirroring the DB migration (fallback for rows without `slug`) + `gymPath`/`countryPath`/`regionPath`/`cityPath` · `seo-meta.js`: page titles/descriptions for gyms and places (router titles; same text for crawler metadata) |
 | `js/modules/page-html.js` | Pure page builders: gym page (+ provenance line, own-edit note, moderator verify), breadcrumb, map slot, page card/row, regions/place pages, calendar, log, me (+ contributions), not found |
 | `js/modules/gym-page.js`, `region-page.js`, `log-page.js`, `me-page.js`, `mod-page.js`, `add-page.js`, `passport-page.js` | Page controllers (views): data gathering + `data-page-action` / `data-mod-action` / `data-add-action` handlers |
 | `js/modules/community.js` | Provenance + contribution reads (`spot_contributor_counts`, `spot_provenance`, own edit, own points), `saveDisplayName`; all fail soft |
@@ -56,6 +56,7 @@ Line refs drift: re-grep function names rather than trusting numbers.
 | `data/gyms.reconciled.json` | FROZEN reconciliation/provenance dataset (2,127 records = production at the first import). Not a runtime file |
 | `supabase/migrations/` | Source of truth for the schema (`docs/migrations.md`); `…_add_spot_slugs.sql` (stored `spots.slug`), `…_community_provenance.sql` (Phase 4) |
 | `import/`, `scripts/gym-import.js`, `scripts/lib/gym-import/` | Gym import pipeline (`docs/import-workflow.md`); new locations via regional research sections (`import/research/`, `research.js`) |
+| `sitemap.xml`, `scripts/build-sitemap.js` | Generated from production (read-only); re-run after each data batch (`docs/import-workflow.md`); `robots.txt` points to it; canonical static URLs are `/about`, `/privacy`, `/terms` |
 | `sw.js` | Service worker (`SHELL_FILES` — add every new JS/CSS/asset file; bump `CACHE_VERSION`) |
 | `docs/TASKS.md` / `docs/archive/` | Open work only / old long-form docs (**never read**) |
 

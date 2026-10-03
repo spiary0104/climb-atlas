@@ -16,6 +16,7 @@ import { openEditModal, openReportModal } from './modals.js';
 import { gymPageHtml, notFoundHtml, pageSkeletonHtml } from './page-html.js';
 import { refreshPage, registerView, setPageTitle } from './router.js';
 import { provenanceLine } from './provenance.js';
+import { gymSeo } from './seo-meta.js';
 import { cityPath, countryPath, gymPath, metroPath, regionPath } from './slug.js';
 import { appState } from './state.js';
 
@@ -83,7 +84,7 @@ function enter({ slug }, view){
     isModerator: appState.isModerator,
     checkedIn: !!window.auth.user && checkedInRecently(g.id),
   });
-  setPageTitle([g.name, g.suburb].filter(Boolean).join(', '));
+  setPageTitle(gymSeo(g, { region: regionOf(g), country: COUNTRY_LABELS[g.country] || g.country }).title);
   mountMiniMaps(view);
   // Provenance (added by / contributors / last edited) and, for the signed-in editor, their own latest proposal.
   if(!appState.provenanceCache.has(g.id)) loadGymProvenance(g.id).then(refreshPage);

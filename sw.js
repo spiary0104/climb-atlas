@@ -25,7 +25,8 @@
 // v23: nearest-first sort, first-visit orientation, Nearby rows, START for signed-out visitors, photos chip rule.
 // v24: Explore loads only its columns, pages in parallel; full gym rows on demand.
 // v25: city metros (metros.js; search, filters, region/city pages, gym breadcrumb).
-const CACHE_VERSION = 'v25';
+// v26: gym and place page titles from seo-meta.js (router title pattern shared with the crawler metadata).
+const CACHE_VERSION = 'v26';
 const SHELL_CACHE = 'climbatlas-shell-' + CACHE_VERSION;
 const RUNTIME_CACHE = 'climbatlas-runtime-' + CACHE_VERSION;
 const TILE_CACHE = 'climbatlas-tiles-' + CACHE_VERSION;
@@ -81,6 +82,7 @@ const SHELL_FILES = [
   'js/modules/marks.js',
   'js/modules/router.js',
   'js/modules/slug.js',
+  'js/modules/seo-meta.js',
   'js/modules/page-html.js',
   'js/modules/gym-page.js',
   'js/modules/mini-map.js',
