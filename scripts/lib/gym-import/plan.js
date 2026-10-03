@@ -1,7 +1,7 @@
 // Batch loading, classification and the plan (dry-run) object. Pure with respect to production: reads a batch directory and
 // the local match index, returns a plan. Nothing here can write to Supabase.
 //
-// Classes:  new | existing | update | probable-duplicate | invalid | rejected
+// Classes:  new | existing | update | retire | probable-duplicate | invalid | rejected
 'use strict';
 const fs = require('fs');
 const path = require('path');
@@ -89,13 +89,22 @@ async function planBatch({ dir, index, batchesDir, includeStaged = true }) {
     if (parseError) { it.errors.push({ code: 'bad-json', field: null, message: 'line is not valid JSON: ' + parseError }); it.cls = 'invalid'; }
     else if (!rec || typeof rec !== 'object' || Array.isArray(rec)) { it.errors.push({ code: 'bad-record', field: null, message: 'line must be a JSON object' }); it.cls = 'invalid'; }
     else {
-      it.intent = rec.intent === 'update' ? 'update' : 'new';
-      const v = it.intent === 'update' ? await V.validateUpdateRecord(rec) : await V.validateNewRecord(rec);
+      it.intent = rec.intent === 'update' ? 'update' : rec.intent === 'retire' ? 'retire' : 'new';
+      const v = it.intent === 'update' ? await V.validateUpdateRecord(rec) : it.intent === 'retire' ? await V.validateRetireRecord(rec) : await V.validateNewRecord(rec);
       it.errors.push(...v.errors); it.warnings.push(...v.warnings);
       if (it.errors.length) it.cls = 'invalid';
     }
     items.push(it);
   }
+
+  // ---- maintenance records: one record per gym (an id may not be updated twice, retired twice, or both updated and retired) ----
+  // Only groups that involve a retire are flagged here; the updater has always refused duplicate updates on its own.
+  const maint = new Map();
+  items.forEach(it => { if (it.cls !== 'invalid' && (it.intent === 'update' || it.intent === 'retire') && typeof it.rec.id === 'string') { if (!maint.has(it.rec.id)) maint.set(it.rec.id, []); maint.get(it.rec.id).push(it); } });
+  for (const [id, group] of maint) {
+    if (group.length > 1 && group.some(it => it.intent === 'retire')) group.forEach(it => { it.errors.push({ code: 'one-record-per-gym', field: 'id', message: `${id} appears in ${group.length} update/retire records of this batch; one record per gym (a gym cannot be both updated and retired)` }); it.cls = 'invalid'; });
+  }
+  const retiringIds = new Set(items.filter(it => it.intent === 'retire' && it.rec && typeof it.rec.id === 'string').map(it => it.rec.id));
 
   // ---- ids: frozen ones are checked; missing ones get a provisional id (order-independent) ------------------------------
   const used = new Set([...index.byId.keys(), ...staged.map(s => s.id).filter(Boolean)]);
@@ -233,16 +242,34 @@ async function planBatch({ dir, index, batchesDir, includeStaged = true }) {
     if (moved > 500) it.warnings.push({ code: 'large-pin-move', field: 'lat', message: `moves the pin by ${moved} m` });
   }
 
+  // ---- retirements: an approved gym that is closed or a confirmed duplicate -> status 'rejected' (updater.js) ---------------------
+  for (const it of items) {
+    if (it.cls !== null || it.intent !== 'retire') continue;
+    const e = index.byId.get(it.rec.id);
+    if (!e) { it.errors.push({ code: 'unknown-id', field: 'id', message: `no gym with id ${it.rec.id} exists in production (per the index); there is nothing to retire` }); it.cls = 'invalid'; continue; }
+    if (it.rec.expect_h !== e.h) { it.errors.push({ code: 'changed-since-research', field: 'expect_h', message: `${e.id} no longer has the content this retirement was researched against (expect_h ${it.rec.expect_h}, index ${e.h}); re-research it` }); it.cls = 'invalid'; continue; }
+    if (it.rec.reason_code === 'duplicate') {
+      const keeper = index.byId.get(it.rec.duplicate_of);
+      if (!keeper) { it.errors.push({ code: 'duplicate-of-unknown', field: 'duplicate_of', message: `duplicate_of ${it.rec.duplicate_of} is not a gym in production (per the index); the gym that stays must exist` }); it.cls = 'invalid'; continue; }
+      if (retiringIds.has(it.rec.duplicate_of)) { it.errors.push({ code: 'duplicate-of-retired', field: 'duplicate_of', message: `duplicate_of ${it.rec.duplicate_of} is itself retired in this batch; the gym that stays must stay` }); it.cls = 'invalid'; continue; }
+      if (keeper.country !== e.country) it.warnings.push({ code: 'duplicate-other-country', field: 'duplicate_of', message: `${e.id} is in ${e.country} but ${keeper.id} (the gym that stays) is in ${keeper.country}` });
+      else { const m = Math.round(N.meters(e, keeper)); if (m > 500) it.warnings.push({ code: 'duplicate-far-apart', field: 'duplicate_of', message: `${e.id} and ${keeper.id} are ${m} m apart; check they are the same gym` }); }
+    }
+    it.id = e.id; it.expectH = e.h; it.entry = store.FIELDS.reduce((o, k) => (o[k] = e[k], o), {}); it.cls = 'retire';
+  }
+
   // ---- assemble ---------------------------------------------------------------------------------------------------------
   const unusedDecisions = Object.keys(decisions).filter(k => !usedDecisions.has(k));
   const records = items.map(it => {
     const o = { line: it.line, class: it.cls };
     if (it.id) { o.id = it.id; if (it.intent === 'new') o.id_frozen = !!it.frozen; }
     if (it.rec && it.rec.name) o.name = it.rec.name; else if (it.rec && it.cls === 'update' && it.match) o.name = it.match.name;
+    if (it.cls === 'retire') { o.name = it.entry.name; o.country = it.entry.country; }
     if (it.rec && it.rec.country) o.country = it.rec.country;
     if (it.cls === 'existing') { o.id = it.match.id; delete o.id_frozen; o.match ={ id: it.match.id, name: it.match.name, reason: it.match.reason, dist_m: it.match.dist_m }; o.same_content = it.sameContent !== false; if (it.differing) o.differing = it.differing; if (it.pinMovedM) o.pin_moved_m = it.pinMovedM; }
     if (it.cls === 'probable-duplicate') { o.candidates = it.candidates.map(c => ({ id: c.id, name: c.name, reason: c.reason, dist_m: c.dist_m, ...(c.batch ? { batch: c.batch } : {}) })); if (it.reason) o.reason = it.reason; if (it.decisionNote) o.decision_note = it.decisionNote; }
     if (it.cls === 'update') { o.changes = it.changes; o.expect_h = it.expectH; o.update_reason = it.rec.reason; }
+    if (it.cls === 'retire') { o.expect_h = it.expectH; o.reason_code = it.rec.reason_code; o.retire_reason = it.rec.reason; if (it.rec.duplicate_of) o.duplicate_of = it.rec.duplicate_of; o.entry = it.entry; }   // entry = the index entry BEFORE retirement, so history.js can restore it
     if (it.cls === 'new' && it.reviewedDistinct) o.reviewed_distinct = { reason: it.decision.reason, reviewer: it.decision.reviewer || null };
     if (it.cls === 'rejected') o.rejected_reason = it.decision.reason || null;
     if (it.errors.length) o.errors = it.errors;
@@ -251,6 +278,7 @@ async function planBatch({ dir, index, batchesDir, includeStaged = true }) {
   });
 
   const counts = { records: records.length, new: 0, existing: 0, update: 0, 'probable-duplicate': 0, invalid: 0, rejected: 0 };
+  if (records.some(r => r.class === 'retire')) counts.retire = 0;   // only present when used, so plans of insert/update batches are unchanged
   records.forEach(r => counts[r.class]++);
   const counts2 = { existing_identical: records.filter(r => r.class === 'existing' && r.same_content).length, existing_content_differs: records.filter(r => r.class === 'existing' && !r.same_content).length, new_id_not_frozen: records.filter(r => r.class === 'new' && !r.id_frozen).length, warnings: records.reduce((n, r) => n + (r.warnings ? r.warnings.length : 0), 0) };
   const blockers = [];
@@ -260,10 +288,10 @@ async function planBatch({ dir, index, batchesDir, includeStaged = true }) {
   if (counts2.new_id_not_frozen) blockers.push(`${counts2.new_id_not_frozen} new record(s) have no frozen id (run freeze-ids)`);
   if (unusedDecisions.length) blockers.push(`${unusedDecisions.length} decision(s) in decisions.json do not apply to any record: ${unusedDecisions.slice(0, 5).join(', ')}`);
   if (batch.imported) blockers.push('batch already has a manifest.json (already imported)');
-  if (!counts.new && !counts.update) blockers.push('nothing to import (no new or update records)');
+  if (!counts.new && !counts.update && !counts.retire) blockers.push('nothing to import (no new, update or retire records)');
   const importable = blockers.length === 0;
 
-  const core = { batch_id: batch.id, index_sha256: index.sha256, actions: records.filter(r => r.class === 'new' || r.class === 'update').map(r => r.class === 'new' ? { op: 'insert', id: r.id } : { op: 'update', id: r.id, changes: r.changes, expect_h: r.expect_h }).sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0) || (a.op < b.op ? -1 : 1)) };   // no line numbers: the hash must not depend on record order
+  const core = { batch_id: batch.id, index_sha256: index.sha256, actions: records.filter(r => r.class === 'new' || r.class === 'update' || r.class === 'retire').map(r => r.class === 'new' ? { op: 'insert', id: r.id } : r.class === 'update' ? { op: 'update', id: r.id, changes: r.changes, expect_h: r.expect_h } : { op: 'retire', id: r.id, expect_h: r.expect_h, reason_code: r.reason_code, reason: r.retire_reason, duplicate_of: r.duplicate_of }).sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0) || (a.op < b.op ? -1 : 1)) };   // no line numbers: the hash must not depend on record order
   const plan = {
     plan_version: 1, batch_id: batch.id,
     index: { sha256: index.sha256, count: index.entries.length, meta_matches: index.metaMatches },

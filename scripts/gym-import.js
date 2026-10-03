@@ -60,8 +60,8 @@ async function cmdValidate(dir) {
   for (const { line, rec, parseError } of b.lines) {
     if (parseError) { console.log(`line ${line}: bad-json: ${parseError}`); bad++; continue; }
     if (!rec || typeof rec !== 'object' || Array.isArray(rec)) { console.log(`line ${line}: bad-record: must be a JSON object`); bad++; continue; }
-    const v = rec.intent === 'update' ? await V.validateUpdateRecord(rec) : await V.validateNewRecord(rec);
-    if (rec.id && rec.intent !== 'update') { if (seen.has(rec.id)) { v.errors.push({ code: 'duplicate-id-in-batch', field: 'id', message: `id also used on line ${seen.get(rec.id)}` }); } else seen.set(rec.id, line); }
+    const v = rec.intent === 'update' ? await V.validateUpdateRecord(rec) : rec.intent === 'retire' ? await V.validateRetireRecord(rec) : await V.validateNewRecord(rec);
+    if (rec.id && rec.intent !== 'update' && rec.intent !== 'retire') { if (seen.has(rec.id)) { v.errors.push({ code: 'duplicate-id-in-batch', field: 'id', message: `id also used on line ${seen.get(rec.id)}` }); } else seen.set(rec.id, line); }
     v.errors.forEach(e => console.log(`line ${line}${rec.name ? ` "${rec.name}"` : ''}: ERROR ${e.code}${e.field ? ` (${e.field})` : ''}: ${e.message}`));
     v.warnings.forEach(e => { console.log(`line ${line}${rec.name ? ` "${rec.name}"` : ''}: warning ${e.code}: ${e.message}`); warn++; });
     if (v.errors.length) bad++;
@@ -80,7 +80,7 @@ async function cmdPlan(dir, flags) {
     console.log(`wrote ${rel(path.join(dir, 'plan.json'))} and ${rel(path.join(dir, 'report.md'))}\n`);
   }
   const c = plan.counts;
-  console.log(`${plan.batch_id}: ${c.records} records -> new ${c.new} | existing ${c.existing} (identical ${c.existing_identical}, differs ${c.existing_content_differs}) | update ${c.update} | probable-duplicate ${c['probable-duplicate']} | invalid ${c.invalid} | rejected ${c.rejected}`);
+  console.log(`${plan.batch_id}: ${c.records} records -> new ${c.new} | existing ${c.existing} (identical ${c.existing_identical}, differs ${c.existing_content_differs}) | update ${c.update}${c.retire ? ` | retire ${c.retire}` : ''} | probable-duplicate ${c['probable-duplicate']} | invalid ${c.invalid} | rejected ${c.rejected}`);
   console.log(plan.importable ? 'Importable after human review of the report. (Nothing was written to production.)' : 'NOT importable yet:\n  - ' + plan.blockers.join('\n  - '));
   return plan.importable ? 0 : 2;
 }
