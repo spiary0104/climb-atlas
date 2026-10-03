@@ -144,9 +144,9 @@ select count(*) from public.pending_edits e where e.submitted_by is not null and
 
 **Not covered by these migrations (found while testing, tell the owner):** the existing 10-gyms-a-day limit on `spots` lives in an RLS policy, which sees one statement snapshot, so one bulk insert (a JSON array in a single REST call) of 15+ gyms passes it (shown by the INFO case in `scripts/migration-tests/20-tests.sql`); the fix is to move that cap into the pin trigger like migration 1 does for edits and reports. Table-level TRUNCATE/REFERENCES/TRIGGER privileges are still granted to anon and authenticated on all tables (PostgREST does not expose them, but revoking them is cheap hardening). `supabase/schema.sql` is now guarded: it raises an error as its first statement, so `scripts/introspect-schema.js scratch` (which used to apply it for the historical comparison) stops there by design.
 
-## Gym submission cap in the trigger, 2026-10-03 (PREPARED — NOT APPLIED; owner applies with supabase db push --linked)
+## Gym submission cap in the trigger, 2026-10-03 (APPLIED TO PRODUCTION 2026-10-03)
 `20261003000100_spots_daily_cap_in_trigger`: pin_community_submission() also enforces the 10-gyms-a-day cap per row under a per-user
 advisory lock (like the edit/report caps), so one bulk insert can no longer pass the policy-only check. Error: 'daily gym limit reached'
 (the client shows a readable message). Service-role writes (importer) untouched; no data change. Tested in the throwaway container
-(`node scripts/migration-tests/run.js`: 74/74, the former INFO case now a passing refusal). Rollback: re-run the function body of
+(`node scripts/migration-tests/run.js`: 74/74, the former INFO case now a passing refusal). Applied 2026-10-03 by the owner (`supabase db push --linked` after a dry run listing exactly this migration); `migration list --linked` shows all eleven on both sides. Rollback: re-run the function body of
 `20261002000300_pin_verified_and_rejection.sql`.
