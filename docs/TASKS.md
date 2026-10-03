@@ -6,7 +6,7 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 (delete them; git keeps history). Keep this file under 60 lines.
 
 ## In progress
-### Post-launch polish sprint (2026-10-03) — PRs open, nothing merged or applied
+### Post-launch polish sprint (2026-10-03) — data applied; PRs #30-#34 merged 2026-10-03
 - PRs: #30 mascot (field-notes on first-run /me, fresh-stamp on travel milestones, Explore first run 7.10); #31 page header art
   (Regions, signed-out Log/Me; DESIGN 13A); #32 START "Check in", lake/plum final, boulder-tag + map-attribution contrast; #33 research
   notes hidden (97.5% of notes); #34 the two data batches below. All bump sw.js to v18: resolve by taking the next version on merge.
