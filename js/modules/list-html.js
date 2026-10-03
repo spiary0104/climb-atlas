@@ -6,7 +6,7 @@ import { TYPE_LABELS } from './constants.js';
 import { escapeHtml, safeUrl } from './html-safe.js';
 import { directionsUrl } from './utils.js';
 import { icon } from './icons.js';
-import { PROVENANCE_LABELS } from './provenance.js';
+import { PROVENANCE_LABELS, publicNotes } from './provenance.js';
 
 const TYPE_CLASS = { 'indoor-bouldering': 'boulder', 'top-rope': 'toprope', 'lead-climbing': 'lead' };
 const knownTypes = types => (Array.isArray(types) ? types : []).filter(t => TYPE_CLASS[t]);
@@ -76,6 +76,7 @@ export function peekHtml(g, ctx = {}){
   const photo = safeUrl(g.photo);
   const id = escapeHtml(g.id);
   const where = [g.suburb, ctx.region, ctx.country && ctx.country !== ctx.region ? ctx.country : ''].filter(Boolean).join(', ');
+  const notes = publicNotes(g.notes);
   return `<div class="peek-head"><h2 class="peek-name" id="peekTitle">${escapeHtml(g.name)}</h2>`
     + `<button type="button" class="btn btn-tertiary btn-icon btn-sm peek-close" data-gym-action="close" aria-label="Close">${icon('x', {size:'sm'})}</button></div>`
     + `${photo ? `<img class="gym-photo peek-photo" src="${escapeHtml(photo)}" alt="${escapeHtml(g.name)}" loading="lazy" referrerpolicy="no-referrer">` : ''}`
@@ -83,7 +84,7 @@ export function peekHtml(g, ctx = {}){
     + `<p class="peek-meta">${escapeHtml(where)}${ctx.distance ? ` · <span class="tnum">${escapeHtml(ctx.distance)}</span>` : ''}</p>`
     + `<p class="provenance-line">${provenanceMarkHtml(ctx.provenance)}${escapeHtml(PROVENANCE_LABELS[ctx.provenance] || PROVENANCE_LABELS['community-added'])}</p>`
     + `${g.address ? `<p class="peek-address">${escapeHtml(g.address)}</p>` : ''}`
-    + `${g.notes ? `<p class="peek-notes">${escapeHtml(g.notes)}</p>` : ''}`
+    + `${notes ? `<p class="peek-notes">${escapeHtml(notes)}</p>` : ''}`
     + `<div class="peek-actions">`
     + `<button type="button" class="btn btn-secondary btn-sm" data-gym-action="save" data-spot-id="${id}" aria-pressed="${ctx.saved ? 'true' : 'false'}">${icon('bookmark-simple', {size:'sm'})}Save</button>`
     + `<button type="button" class="btn btn-secondary btn-sm" data-gym-action="climbed" data-spot-id="${id}" aria-pressed="${ctx.climbed ? 'true' : 'false'}">${icon('check', {size:'sm'})}Climbed</button>`

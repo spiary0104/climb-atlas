@@ -9,6 +9,7 @@ import { directionsUrl } from './utils.js';
 import { icon } from './icons.js';
 import { provenanceMarkHtml, thumbHtml, typeTagsHtml } from './list-html.js';
 import { pinSvg } from './pin-html.js';
+import { publicNotes } from './provenance.js';
 
 const link = (href, text, cls = 'link link-quiet') => `<a class="${cls}" href="${escapeHtml(href)}" data-link>${escapeHtml(text)}</a>`;
 
@@ -52,6 +53,7 @@ export function pageRowHtml(g, ctx = {}){
 // The gym page (sec. 8.2). ctx: {crumbs, region, country, distance, saved, climbed, history, nearby: [{g, ctx}], exploreHref}
 export function gymPageHtml(g, ctx = {}){
   const photo = safeUrl(g.photo);
+  const notes = publicNotes(g.notes);                 // research remarks are not for visitors (provenance.js)
   const id = escapeHtml(g.id);
   const where = [g.suburb, ctx.region].filter(Boolean).join(', ');
   // One quiet line (sec. 10.2) + the editor-only note about their own latest proposal (sec. 10.4).
@@ -80,7 +82,7 @@ export function gymPageHtml(g, ctx = {}){
     + provenance + prompt + `</div></header>`
     + `${photo ? `<img class="gym-hero gym-photo" src="${escapeHtml(photo)}" alt="${escapeHtml(g.name)}" referrerpolicy="no-referrer">` : ''}`
     + `<div class="gym-layout"><div class="gym-main">`
-    + `${g.notes ? `<section class="page-section" aria-labelledby="aboutTitle"><h2 class="section-title" id="aboutTitle">About</h2><p class="prose">${escapeHtml(g.notes)}</p></section>` : ''}`
+    + `${notes ? `<section class="page-section" aria-labelledby="aboutTitle"><h2 class="section-title" id="aboutTitle">About</h2><p class="prose">${escapeHtml(notes)}</p></section>` : ''}`
     + nearby
     + `<section class="page-section" aria-labelledby="communityTitle"><h2 class="section-title" id="communityTitle">Community</h2>`
     + `<p class="section-note">${g.community ? 'Added by a Bouldeer climber and checked by a moderator.' : 'From the Bouldeer dataset, kept current by climbers.'} Every edit is checked by a moderator before it goes live. Spotted something out of date?</p>`

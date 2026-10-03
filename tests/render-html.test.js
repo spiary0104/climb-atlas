@@ -122,6 +122,31 @@ test('explore builders: quotes and HTML-special characters in ordinary text surv
   assert.equal(shape(html).length, shape(list.peekHtml(benignSpot, ctxBenign)).length);
 });
 
+test('internal research notes never reach visitors: peek card and gym page hide them, keep real descriptions, still escape', async () => {
+  const { list, page } = await modules;
+  const research = "Found via climbing-net.com (Japanese gym directory). Official news Sep 2026; bouldering gym. Pin is the Nominatim centroid of the chome/neighbourhood (house number not in OSM), so about 200-400 m. Added Sep 2026 via a native-language directory pass.";
+  const mixed = 'Nonprofit, pay-what-you-can gym. Address and position independently verified (Nominatim geocode confirmed by the US Census Bureau geocoder, within 0.05km).';
+  // (the gym page's map credit legitimately says "© OpenStreetMap", so that word is not a leak marker here)
+  const leaks = html => /nominatim|climbing-net|directory pass|independently verified|centroid|Pin is/i.test(html);
+  const stored = { ...benignSpot, notes: research };
+  const peek = list.peekHtml(stored, ctxBenign), gym = page.gymPageHtml(stored, pageCtx());
+  assert.ok(!/peek-notes/.test(peek) && !leaks(peek), 'peek card: research note hidden');
+  assert.ok(!/aboutTitle/.test(gym) && !leaks(gym), 'gym page: no About section for a research note');
+  assert.equal(stored.notes, research, 'the stored note is not modified (edit forms and /mod still show it)');
+  const peekMixed = list.peekHtml({ ...benignSpot, notes: mixed }, ctxBenign), gymMixed = page.gymPageHtml({ ...benignSpot, notes: mixed }, pageCtx());
+  assert.ok(allText(peekMixed).includes('Nonprofit, pay-what-you-can gym.') && !leaks(peekMixed), 'peek card: real sentence kept, boilerplate dropped');
+  assert.ok(/aboutTitle/.test(gymMixed) && allText(gymMixed).includes('Nonprofit, pay-what-you-can gym.') && !leaks(gymMixed), 'gym page: About keeps the real sentence only');
+  // a genuine note renders exactly as before, with HTML-special characters still escaped
+  const real = list.peekHtml({ ...benignSpot, notes: 'Day pass <$22> & "chalk" free' }, ctxBenign);
+  assert.ok(real.includes('<p class="peek-notes">Day pass &lt;$22&gt; &amp; &quot;chalk&quot; free</p>'));
+  assert.ok(page.gymPageHtml({ ...benignSpot, notes: 'Day pass <$22> & "chalk" free' }, pageCtx()).includes('<p class="prose">Day pass &lt;$22&gt; &amp; &quot;chalk&quot; free</p>'));
+  // missing or non-string notes render nothing and do not throw
+  for (const n of [undefined, null, '', '   ']) {
+    assert.ok(!/peek-notes/.test(list.peekHtml({ ...benignSpot, notes: n }, ctxBenign)), 'peek: ' + n);
+    assert.ok(!/aboutTitle/.test(page.gymPageHtml({ ...benignSpot, notes: n }, pageCtx())), 'page: ' + n);
+  }
+});
+
 test('explore builders: behaviour the popup had is preserved in the peek card, and rows carry the dense-row content', async () => {
   const { list } = await modules;
   const html = list.peekHtml(benignSpot, { ...ctxBenign, climbed: true, saved: false });
