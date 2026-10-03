@@ -6,6 +6,7 @@
 import { COUNTRY_LABELS, COUNTRY_TO_REGION, REGION_LABELS } from './constants.js';
 import { searchGroupHtml, searchOptionHtml } from './list-html.js';
 import { stateLabel } from './map.js';
+import { fold } from './geo.js';
 import { buildSearchIndex, querySearchIndex } from './search-index.js';
 import { appState } from './state.js';
 
@@ -144,7 +145,15 @@ export function initSearch(callbacks){
       e.preventDefault();
       clearTimeout(timer);
       if(active >= 0) choose(results[active]);
-      else if(field.value.trim()){ const text = field.value.trim(); field.value = ''; setOpen(false); field.blur(); cb.onText(text); }
+      else if(field.value.trim()){
+        const text = field.value.trim();
+        if(mode === 'query') render();            // results for exactly this text, even if typed faster than the debounce
+        // Enter on a query that names a place exactly ("Sydney", "Japan", "NSW") goes to that place; anything else stays a
+        // text search over gym names and areas (sec. 9.3).
+        const exact = results.find(r => r && r.kind && r.kind !== 'gym' && fold(r.label || '') === fold(text));
+        if(exact){ choose(exact); return; }
+        field.value = ''; setOpen(false); field.blur(); cb.onText(text);
+      }
     } else if(e.key === 'Escape' && isSearchOpen()){
       e.preventDefault();          // tells explore.js's Escape handler this key is handled (the peek card stays open)
       setOpen(false);

@@ -60,3 +60,15 @@ test('START: a signed-out visitor is told what check-in is and offered sign-in; 
   assert.ok(!/mark spots as climbed/.test(html), 'sign-in copy says gyms, and names check-ins');
   assert.match(read('css/passport.css'), /\.start-actions\[hidden\]\{display:none;\}/, 'the hidden action group really hides (display:flex would win otherwise)');
 });
+
+test('search: Enter on a query that names a place exactly goes to that place; other text stays a name search', () => {
+  const src = read('js/modules/search.js');
+  assert.match(src, /const exact = results\.find\(r => r && r\.kind && r\.kind !== 'gym' && fold\(r\.label \|\| ''\) === fold\(text\)\);/);
+  assert.match(src, /if\(exact\)\{ choose\(exact\); return; \}/);
+  assert.match(src, /if\(mode === 'query'\) render\(\);/, 'results are current even when Enter beats the debounce');
+});
+
+test('metro pages use the shared place title (seo-meta.js), like country, region and suburb pages', () => {
+  assert.match(read('js/modules/region-page.js'), /placeSeo\(\{ kind: 'city', name: metro\.name, within: regionName \+ ', ' \+ country, count: gyms\.length \}\)\.title/);
+});
+
