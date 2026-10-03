@@ -52,8 +52,8 @@ body.app-body{overflow:hidden;}
 .maplibregl-ctrl-group button{background:transparent !important;width:var(--size-control-sm) !important;height:var(--size-control-sm) !important;}
 .maplibregl-ctrl-group button:not(:last-child){border-bottom:var(--border-width) solid var(--map-control-border) !important;}
 .maplibregl-ctrl-group button:hover{background:var(--color-surface-raised) !important;}
-.maplibregl-ctrl-attrib{background:var(--map-control-surface) !important;color:var(--color-text-secondary) !important;}
-.maplibregl-ctrl-attrib a{color:var(--color-text-secondary) !important;}
+.maplibregl-ctrl-attrib{background:var(--map-control-surface) !important;color:var(--map-control-text) !important;}
+.maplibregl-ctrl-attrib a{color:var(--map-control-text) !important;}
 
 /* ===== Long-form text in dialogs and the About page ================================================================ */
 .modal.info-modal{width:var(--size-dialog-wide);max-height:78vh;}
