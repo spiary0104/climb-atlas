@@ -25,6 +25,7 @@ let indexedSpots = null;      // the spots array the search index and id map wer
 let urlApplied = false;
 let freshSearch = false;      // mobile: the first four results after a search render as photo cards
 let movedSinceScope = false;
+let focusSearchOnRender = false;  // first-run (sec. 7.10): focus the search once its index exists
 
 const spotById = id => byId.get(id) || null;
 
@@ -43,6 +44,7 @@ export function render(){
     else if(appState.placeFilter) setPlaceFilter(appState.searchIndex.places.find(p => p.key === appState.placeFilter.key) || null);
   }
   filtersChanged({write: false});
+  if(focusSearchOnRender){ focusSearchOnRender = false; if(isExplore() && appState.exploreFirstRun) $('searchInput').focus({preventScroll: true}); }
   if(appState.selectedId && !spotById(appState.selectedId)) clearSelection();
   renderPeek();
   refreshPage();                                // a page opened before the data arrived renders now
@@ -102,7 +104,11 @@ function homeCamera(){
 export function applyLanding(){
   if(landingCamera) return;
   const home = homeCamera();
-  if(home) map.jumpTo(home);
+  if(home){ map.jumpTo(home); return; }
+  // First-ever visit and no home area (sec. 7.10): the world view gets the first-run prompt (list.js) and, on desktop, the
+  // search field is focused. On phones focusing would open the full-height search over the map, so the prompt's button does it.
+  appState.exploreFirstRun = true;
+  focusSearchOnRender = !isSheetMode();
 }
 
 // ----- selection, hover, peek -------------------------------------------------------------------------------------

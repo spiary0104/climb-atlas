@@ -570,7 +570,7 @@ A "Map / List" pill toggle is not used; the sheet's snap points do that job.
 
 Loading: six skeleton rows (or three skeleton cards in card mode) mirroring the row layout; pins fade in at 60% opacity until data arrives; the count shows "…". No spinner, no character.
 
-Empty in viewport: "No gyms in this area yet" + two secondary buttons, "Zoom out" and "Add a gym". Empty from filters: "No gyms match" + "Clear filters". Empty from search: "Nothing for 'xyz'" + "Search a city instead". First-ever visit with location denied and no data: the character (backpacker pose, 96px) with "Where are you climbing?" and the search field focused (not built yet). The other first-run empties: Log with no sessions (chalking-up) and /me Saved when nothing is saved or climbed (backpacker); see §12.2.
+Empty in viewport: "No gyms in this area yet" + two secondary buttons, "Zoom out" and "Add a gym". Empty from filters: "No gyms match" + "Clear filters". Empty from search: "Nothing for 'xyz'" + "Search a city instead". First-ever visit with no home area (no camera in the URL or on this device, and the browser locale's country has no gyms): the character (backpacker pose, 96px) with "Where are you climbing?" and a "Search a city" button above "Worth traveling for", at world/continent zoom only; on desktop the search field is focused (on phones the button opens search, since focusing would cover the map). It ends for good once the person zooms past continent level, picks a place or searches; the camera saved on the first move means the next visit is not a first run. The other first-run empties: Log with no sessions (chalking-up) and /me Saved when nothing is saved or climbed (field-notes); see §12.2.
 
 No photo: the boulder placeholder (§13).
 
@@ -700,9 +700,12 @@ The deer is the brand's character (§1A). **Source of truth:** the owner's rende
 | Antler crest | `assets/brand/antlers.svg` | passport emblem, badges | done |
 | App icon, favicon | `icons/` | platform | done |
 | Chalking-up | `assets/mascot/chalking-up.svg` | first-run Log; long loads | done |
-| Backpacker | `assets/mascot/backpacker.svg` | first-run Saved; first-run Explore; new city/country | done |
+| Backpacker | `assets/mascot/backpacker.svg` | first-run Explore (sec. 7.10); new city/country | done |
+| Field notes | `assets/mascot/field-notes.svg` | first-run /me Saved (nothing saved or climbed yet) | done (2026-10-03) |
 | Traveller with passport | `assets/mascot/traveller-passport.svg` | empty passport (not the check-in sheet: the stamp head arrives with the stamp, one character per screen) | done |
-| Topped-out (flag) | `assets/mascot/topped-out-flag.svg` | milestone sheet | done |
+| Topped-out (flag) | `assets/mascot/topped-out-flag.svg` | milestone sheet: first stamp | done |
+| Fresh stamp | `assets/mascot/fresh-stamp.svg` | milestone sheet: travel milestones (first gym in a country, first stamp abroad, every 5th gym) | done (2026-10-03) |
+| Pin drop | `design/mascot/deer/pin-drop.png` (source only) | proposed: add-a-gym "in review" | not traced; not a sanctioned surface |
 | Dyno | `assets/mascot/dyno.svg` | new top grade (milestone) | done |
 | High five | from `high-five.png` | native onboarding; first approved contribution | Phase 5+ |
 | Rest day | from `rest-day.png` | a quiet week in the log (optional) | later |
@@ -713,7 +716,7 @@ The deer is the brand's character (§1A). **Source of truth:** the owner's rende
 1. **Brand marks** (identity, always): app icon; favicon; the wordmark lockup (desktop top bar and static pages); START (phones); the default avatar (compact seal); the lettered seal on owned/collected surfaces (/me now; stamps, passport and share cards in Phase 5).
 2. **Interaction anchor:** START; in Phase 5 the check-in stamp landing.
 3. **Collecting and progression** (Phase 5): passport cover and stamps, milestone sheet (topped-out, dyno), empty passport (traveller).
-4. **First run only, 96px max** (`--size-mascot-spot`): Log with no sessions (chalking-up); /me Saved when nothing is saved or climbed (backpacker); native onboarding (high-five); optionally rest-day for a quiet log week. All character markup comes from `js/modules/brand.js` (`firstRunArt`, `sealSvg`).
+4. **First run only, 96px max** (`--size-mascot-spot`): first-ever Explore visit with no home area (backpacker, sec. 7.10); Log with no sessions (chalking-up); /me Saved when nothing is saved or climbed (field-notes); native onboarding (high-five); optionally rest-day for a quiet log week. All character markup comes from `js/modules/brand.js` (`firstRunArt`, `sealSvg`).
 5. **Never:** forms and inputs; filters; sign-in; moderation; errors and toasts (the fell-off pose stays marketing: failure is not made cute in product); the map canvas, pins, clusters, labels; gym, region and city page bodies; dense rows; points and level displays; any empty state after the person has had content there; hover or tap reactions.
 
 **One character per screen** besides START (persistent chrome): where first-run art shows, the seal steps aside (/me). The lockup (top bar, >= 600px) and START (tab bar, < 600px) never share a screen.
@@ -722,7 +725,7 @@ Scale: 96px maximum in product, except the milestone sheet at 160px; always narr
 
 ### 12.3 Milestone sheet (the Companion contribution)
 
-A bottom sheet (dialog on desktop) over a dimmed page: the topped-out character breaking the top edge of the sheet at 160px, a title in Fraunces 600 26px in `collect.text` ("First V6" / "10 gyms" / "First stamp abroad"), one sentence of data, up to three milestone marks as 44px ink-outline glyphs, and two actions (Share card · Done). Triggers: first check-in; every 5th distinct gym; first gym in a new country; a new highest grade in the log. Never more than one per session; if several trigger, show the highest and list the others in one line.
+A bottom sheet (dialog on desktop) over a dimmed page: the character breaking the top edge of the sheet at 160px (topped-out for the first stamp, fresh-stamp for travel milestones, dyno for a new highest grade), a title in Fraunces 600 26px in `collect.text` ("First V6" / "10 gyms" / "First stamp abroad"), one sentence of data, up to three milestone marks as 44px ink-outline glyphs, and two actions (Share card · Done). Triggers: first check-in; every 5th distinct gym; first gym in a new country; a new highest grade in the log. Never more than one per session; if several trigger, show the highest and list the others in one line.
 
 ---
 
@@ -1021,6 +1024,11 @@ Run after every phase. Each line is pass/fail.
 **2026-09-29: second real-phone pass.**
 - *Deer eyes were see-through:* the tracer dropped every near-white pixel as background, so eye whites, highlights, chalk and socks were holes (visible where the milestone deer breaks the sheet edge over the dimmed page). Background is now only what touches the image edge; enclosed white is traced as white, and real gaps between limbs are listed per pose (`design/tools/README.md`). All five traced poses were regenerated; colours, outlines and proportions are otherwise unchanged.
 - *Log a session, Date vs Mood:* iOS Safari sizes date inputs natively, so the Date box did not match the Mood select. Single-line pickers share one fixed height; on iOS the date input drops its native box.
+
+**2026-10-03: two new traced poses; Explore first run built.**
+- *New poses:* `field-notes` (seated, writing in a notebook) and `fresh-stamp` (arms up, open passport with a fresh stamp) were generated from the owner's renders as references (same character sheet, sec. 12.0) and traced with the Brand Pass tracer (opt-in `ground` extra: the source's soft ground shadow is background). Reviewed at 48, 96 and 160px beside the existing poses.
+- *Roles:* field-notes replaces the backpacker on the first-run /me Saved tab (saving and marking is note-keeping; the backpacker is travel). fresh-stamp carries the travel milestones (first gym in a country, first stamp abroad, every 5th gym); topped-out keeps the first stamp, dyno a new highest grade. The third new source, `pin-drop`, is not traced and has no product surface yet.
+- *Explore first run (sec. 7.10):* built as specified with the backpacker; the "location denied" wording is read as "no home area", since Explore never asks for location on landing.
 
 **2026-10-03: page header art (sec. 13A).**
 - Regions, signed-out Log and signed-out Me open with a flat-vector scene (wall-as-world-map, session still life, climber's shelf). The pages were a title, one line and a button; Panda Bouldering screenshots were the mood reference for the warm illustrated header, nothing was copied.

@@ -27,6 +27,7 @@ export const appState = {
   inView: [],          // filtered spots inside scopeBounds, sorted
   scopeBounds: null,   // {west,south,east,north} the list is scoped to; follows the map while searchAsMove is on
   searchAsMove: true,
+  exploreFirstRun: false, // sec. 7.10: first visit on this device and no home area found (backpacker + "Where are you climbing?")
   sortBy: null,        // 'distance' | 'name' | 'recent'; null = default (distance when location is known, else name)
   listView: 'rows',    // 'rows' | 'cards' (remembered in localStorage)
   userLocation: null,  // {lat,lng} once the visitor used the locate control

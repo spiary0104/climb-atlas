@@ -213,3 +213,69 @@ test('provenance: states, levels, relative time, the page line and display-name 
   for (const bad of ['a', 'x'.repeat(41), 'me@example.com', '<b>', '   ']) assert.equal(prov.validDisplayName(bad), false, bad);
   for (const ok of ['mika.sends', 'Jo', 'Élodie M.']) assert.equal(prov.validDisplayName(ok), true, ok);
 });
+
+// publicNotes (provenance.js): imported gyms carry research remarks in `notes`; visitors must not see them.
+// The samples are shaped like the live styles (names changed): the source line + pin remark + "Added ... via a
+// native-language directory pass" template of the imported waves, the older "Sourced from ... directory" notes, verification
+// boilerplate after a real description, and evidence summaries ("Own site confirms ...").
+test('publicNotes: research notes are hidden, real descriptions survive, mixed notes keep only the real part', async () => {
+  const { prov } = await mods;
+  const research = [
+    // imported-wave template: source line, evidence/facts, pin remark, "Added ... via ..."
+    "Found via climbing-net.com (Japanese gym directory). Official news Sep 2026; bouldering gym with 4.5 m walls. Pin is the Nominatim centroid of the chome/neighbourhood (house number not in OSM), so about 200-400 m. Added Sep 2026 via a native-language directory pass (round 2).",
+    "From Arkose's branch list. 2026-27 Academy sign-ups; bouldering gym. Pin is the gym's own mapped OpenStreetMap feature (Nominatim), so building-level. Added Sep 2026 via a native-language directory pass.",
+    // pin remark alone, geocoder alone
+    "Pin is Nominatim's street-only match (house number not in OSM), so street-level; worth a check in supabase/geocode.html.",
+    'Address resolved directly against Nominatim.',
+    // older seed notes
+    "Sourced from climbing-gyms.com's city directory.",
+    "Sourced from Mountain Project's South Korea gym directory. Type defaults to bouldering-only.",
+    "Seen in the app's Shanghai directory (Chinese name 岩顶攀岩). Address confirmed via huodong.com's own Shanghai climbing directory; Nominatim matched Yunle Rd directly, not the exact building.",
+    'Medium confidence. Photon named-building match.',
+    // discipline evidence and data-correction remarks
+    'Own site confirms lead-climbing certification courses (Vorstieg) on walls up to 17m, plus a separate 600m² bouldering area.',
+    'Multiple sources explicitly describe it as a bouldering-only hall with no rope climbing.',
+    'Corrected suburb from "Shibuya" — verified address is Shinjuku City, near Akebonobashi Station, not Shibuya.',
+    'A different location from the Athens gym above.',
+    // verification boilerplate with nothing real left
+    'Address and position independently verified (Nominatim geocode confirmed by the US Census Bureau geocoder, within 0.35km).',
+    // only a discipline label would be left
+    "Bouldering only. Nominatim and Photon agree on 1001 King's Road, building level.",
+  ];
+  for (const n of research) assert.equal(prov.publicNotes(n), '', n);
+
+  // real descriptions are returned exactly as stored (line breaks included)
+  const real = [
+    'Friendly staff',
+    'Day pass $22, open 10-22 daily.\nShoe rental included.',
+    'Needs a membership and a medical certificate.',
+    'Formerly Summit, rebranded in 2021. Chalk-free walls.',
+    '5 < 6 & "quoted"',
+    'Located at 111 av. Victor Hugo. Enter through the courtyard.',
+  ];
+  for (const n of real) assert.equal(prov.publicNotes(n), n.trim(), n);
+  assert.equal(prov.publicNotes('  Friendly staff \n'), 'Friendly staff', 'surrounding whitespace is trimmed');
+
+  // mixed: real sentences followed by verification boilerplate keep only the real sentences
+  assert.equal(prov.publicNotes('Nonprofit, pay-what-you-can gym in the Soulsville community. Address and position independently verified (Nominatim geocode confirmed by the US Census Bureau geocoder, within 0.00km).'),
+    'Nonprofit, pay-what-you-can gym in the Soulsville community.');
+  assert.equal(prov.publicNotes("One of NYC's largest climbing gyms. Renamed from The Cliffs at LIC. Address and position independently verified."),
+    "One of NYC's largest climbing gyms. Renamed from The Cliffs at LIC.");
+  assert.equal(prov.publicNotes('About 5,000 sq ft of bouldering. Sassy HK 2026 and Esquire HK July 2025. Photon named-building match.'), 'About 5,000 sq ft of bouldering.');
+  // ... but when what is left still reads like research, the whole note goes
+  assert.equal(prov.publicNotes('Opened 2019, confirmed by the operator. Nominatim agrees.'), '');
+  // a real sentence next to the source line or pin remark is not rescued: the evidence between them cannot be separated
+  assert.equal(prov.publicNotes("Chalk-free walls. Pin is the gym's own mapped OpenStreetMap feature (Nominatim), so building-level."), '');
+  assert.equal(prov.publicNotes('Chalk-free walls. Sourced from climbing-gyms.com.'), '');
+
+  // not a string / empty
+  for (const v of [null, undefined, '', '   ', 5, {}, []]) assert.equal(prov.publicNotes(v), '', String(v));
+  // street abbreviations do not split a sentence into a fragment
+  assert.deepEqual(prov.splitSentences('Site also gives 111 av. Victor Hugo as an entrance. Open daily.'), ['Site also gives 111 av. Victor Hugo as an entrance.', 'Open daily.']);
+  // hostile text comes back verbatim (escaping is the builder's job), alone or beside boilerplate, never altered
+  for (const h of ['"><img src=x onerror=window.__pwned=1>', '</div><script>window.__pwned=4</script>', '<svg/onload=window.__pwned=5>']) {
+    assert.equal(prov.publicNotes(h), h);
+    const mixed = prov.publicNotes('Nonprofit gym. ' + h + ' Address and position independently verified.');
+    assert.ok(mixed === '' || mixed === 'Nonprofit gym.' || mixed === 'Nonprofit gym. ' + h, 'never altered, only kept or dropped: ' + h + ' -> ' + mixed);
+  }
+});
