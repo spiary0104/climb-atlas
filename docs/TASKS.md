@@ -6,6 +6,9 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 (delete them; git keeps history). Keep this file under 60 lines.
 
 ## In progress
+### Gym information batch 1 (website + hours, official sites only) — PAUSED 2026-10-04
+- Handoff: `import/info-research/batch-1/HANDOFF.md` (branch `research/gym-info-batch-1`): LA + NY/SF researched; AU and the
+  updater extension (`feature/import-info-updates`, uncommitted in its worktree) not finished. No production write yet.
 ### Final-stage sprint (gym information, metros, SEO, perf) — DONE: PR #37 merged and live in production 2026-10-03
 - Status: PR #37 (`integration/final-stage`) merged to master 2026-10-03 (merge commit `b58a79e`) and deployed by Vercel; production
   smoke test passed (/, gym, metro, region, /in, sitemap.xml 3,299 URLs, robots.txt, bot link previews; no console errors at
