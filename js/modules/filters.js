@@ -7,7 +7,7 @@ import { COUNTRY_LABELS } from './constants.js';
 import { ALL_TYPES, fold, inBounds } from './geo.js';
 import { appliedPillHtml } from './list-html.js';
 import { stateLabel } from './map.js';
-import { findPlace } from './search-index.js';
+import { findPlace, inPlace } from './search-index.js';
 import { safeUrl } from './html-safe.js';
 import { appState } from './state.js';
 
@@ -20,14 +20,6 @@ export const currentFilters = () => ({
   photos: appState.showPhotosOnly, place: appState.placeFilter, text: appState.searchTerm,
 });
 const defaultFilters = () => ({ types: new Set(ALL_TYPES), saved: false, climbed: false, photos: false, place: null, text: '' });
-
-function inPlace(g, place){
-  if(!place) return true;
-  if(g.country !== place.country) return false;
-  if(place.kind === 'country') return true;
-  if(g.state !== place.state) return false;
-  return place.kind === 'region' || (g.suburb || '').trim() === place.label;
-}
 
 export function matches(g, f){
   if(!(g.types || []).some(t => f.types.has(t))) return false;

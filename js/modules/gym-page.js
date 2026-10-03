@@ -8,13 +8,14 @@ import { loadGymProvenance, loadMyEditFor } from './community.js';
 import { loadSessions } from './logbook.js';
 import { destroyMiniMaps, mountMiniMaps } from './mini-map.js';
 import { stateLabel } from './map.js';
+import { metroOf } from './metros.js';
 import { toggleMark } from './marks.js';
 import { setVerified } from './moderation.js';
 import { openEditModal, openReportModal } from './modals.js';
 import { gymPageHtml, notFoundHtml, pageSkeletonHtml } from './page-html.js';
 import { refreshPage, registerView, setPageTitle } from './router.js';
 import { provenanceLine } from './provenance.js';
-import { cityPath, countryPath, gymPath, regionPath } from './slug.js';
+import { cityPath, countryPath, gymPath, metroPath, regionPath } from './slug.js';
 import { appState } from './state.js';
 
 const NEARBY_KM = 25;
@@ -26,13 +27,18 @@ export function findGym(slug){
   return appState.bySlug.get(slug) || appState.spots.find(s => s.id === slug) || null;
 }
 
-// Breadcrumb Country > Region > City; countries the map does not know (free-text "Other" submissions) get no link.
+// Breadcrumb Country > Region > Metro, or > Suburb when the gym is in no metro (metros.js) or in another region than the
+// metro's core (a Yokohama gym stays under Kanagawa; the metro page is under Tokyo). Countries the map does not know
+// (free-text "Other" submissions) get no link.
 export function placeCrumbs(g){
   const known = !!COUNTRY_LABELS[g.country];
+  const metro = known ? metroOf(g) : null;
+  const inCore = !!metro && metro.state === g.state;
   return [
     { label: COUNTRY_LABELS[g.country] || g.country, href: known ? countryPath(g.country) : null },
     { label: regionOf(g), href: known ? regionPath(g.country, g.state) : null },
-    { label: g.suburb, href: known && g.suburb ? cityPath(g.country, g.state, g.suburb) : null },
+    inCore ? { label: metro.name, href: metroPath(metro) }
+      : { label: g.suburb, href: known && g.suburb ? cityPath(g.country, g.state, g.suburb) : null },
   ].filter(c => c.label);
 }
 

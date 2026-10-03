@@ -148,9 +148,22 @@ export function regionSearchResultsHtml(query, items){
     + (i.kind === 'gym' ? '' : `<span class="gym-row-distance tnum">${escapeHtml(countLabel(i.count))}</span>`) + `</a></li>`).join('') + `</ul>`;
 }
 
-// Country / region / city page. p: {crumbs, title, meta, tilesTitle, tiles, gymsTitle, gyms: [{g, ctx}], map: mapThumbHtml args}
+// A region page's meta line: each kind counted as what it is. Metros are cities; the suburbs of gyms outside every metro are
+// "areas" ("other areas" once there are cities), never cities: "28 gyms · 1 city · 6 other areas".
+export function regionMeta({ gyms, cities = 0, areas = 0 }){
+  const n = (c, one, many) => c === 1 ? '1 ' + one : Number(c).toLocaleString('en-US') + ' ' + many;
+  return [n(gyms, 'gym', 'gyms'), cities ? n(cities, 'city', 'cities') : '',
+    areas ? (cities ? n(areas, 'other area', 'other areas') : n(areas, 'area', 'areas')) : ''].filter(Boolean).join(' · ');
+}
+
+// Country / region / city page. p: {crumbs, title, meta, tilesTitle, tiles | tileSections: [{title, tiles}], gymsTitle,
+// gyms: [{g, ctx}], map: mapThumbHtml args}. A region page has two tile sections: its metros ("Cities"), then "Other areas".
 export function placePageHtml(p){
-  const tiles = p.tiles && p.tiles.length ? `<section class="page-section" aria-labelledby="tilesTitle"><h2 class="section-title" id="tilesTitle">${escapeHtml(p.tilesTitle)}</h2>${tileGridHtml(p.tiles)}</section>` : '';
+  const sections = p.tileSections || [{ title: p.tilesTitle, tiles: p.tiles }];
+  const tiles = sections.filter(s => s.tiles && s.tiles.length).map((s, i) => {
+    const id = escapeHtml('tilesTitle' + (i || ''));
+    return `<section class="page-section" aria-labelledby="${id}"><h2 class="section-title" id="${id}">${escapeHtml(s.title)}</h2>${tileGridHtml(s.tiles)}</section>`;
+  }).join('');
   const gyms = p.gyms && p.gyms.length ? `<section class="page-section" aria-labelledby="gymsTitle"><h2 class="section-title" id="gymsTitle">${escapeHtml(p.gymsTitle || 'Gyms')}</h2>${gymCollectionHtml(p.gyms)}</section>` : '';
   return `<article class="page place-page">${breadcrumbHtml(p.crumbs || [])}`
     + `<header class="place-header"><h1 class="page-title">${escapeHtml(p.title)}</h1><p class="place-meta tnum">${escapeHtml(p.meta)}</p></header>`
