@@ -1,0 +1,884 @@
+{
+  "schema_version": 1,
+  "updater_version": 1,
+  "kind": "update",
+  "batch_id": "2026-10-04-gym-info-1",
+  "status": "updated",
+  "target": {
+    "kind": "production",
+    "host": "thayxaampaelvntoaido.supabase.co"
+  },
+  "coverage": "FULL",
+  "plan_sha256": "62417c3ffaa4d3fb32c5ab41fded326b1b0c3a60e0148aecaf8ae539a32ed2d6",
+  "payload_sha256": "442adad0fb4e5cde2744adb693f9ebb22d20ed164afce39a8cec8c00b972317a",
+  "confirm_token": "a4930d1fe31e98f8",
+  "live_state_sha256": "20757f8545c2516c487e6dfce3d08577ff9192a7202056c069a6841a573ec77c",
+  "rows_updated": 0,
+  "approved_before": 2348,
+  "approved_after": 2348,
+  "changes": [],
+  "rows_info_filled": 86,
+  "info_filled": [
+    {
+      "id": "seed-34",
+      "fields": [
+        "website"
+      ],
+      "expect_h": "1198a83c37a219b4",
+      "after_h": "1198a83c37a219b4"
+    },
+    {
+      "id": "seed-33",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "b6feb498bae6341e",
+      "after_h": "b6feb498bae6341e"
+    },
+    {
+      "id": "seed-39",
+      "fields": [
+        "website"
+      ],
+      "expect_h": "eb4c0a4a8f2601de",
+      "after_h": "eb4c0a4a8f2601de"
+    },
+    {
+      "id": "seed-43",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "535de3e3a4b8b44e",
+      "after_h": "535de3e3a4b8b44e"
+    },
+    {
+      "id": "seed-40",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "93ee168f475cc057",
+      "after_h": "93ee168f475cc057"
+    },
+    {
+      "id": "seed-31",
+      "fields": [
+        "website"
+      ],
+      "expect_h": "244fadf3029128ca",
+      "after_h": "244fadf3029128ca"
+    },
+    {
+      "id": "seed-42",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "895cc1143fe933a8",
+      "after_h": "895cc1143fe933a8"
+    },
+    {
+      "id": "seed-35",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "051fbd66d9fc88f0",
+      "after_h": "051fbd66d9fc88f0"
+    },
+    {
+      "id": "seed-36",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "371593d49c379f38",
+      "after_h": "371593d49c379f38"
+    },
+    {
+      "id": "seed-44",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "c4038650f8b5322b",
+      "after_h": "c4038650f8b5322b"
+    },
+    {
+      "id": "seed-41",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "b3498f5c6ce9e250",
+      "after_h": "b3498f5c6ce9e250"
+    },
+    {
+      "id": "seed-37",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "d038d45f607c43d4",
+      "after_h": "d038d45f607c43d4"
+    },
+    {
+      "id": "seed-38",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "8c9f4c0a1c98d37e",
+      "after_h": "8c9f4c0a1c98d37e"
+    },
+    {
+      "id": "seed-18",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "c8d35024f0b830ae",
+      "after_h": "c8d35024f0b830ae"
+    },
+    {
+      "id": "seed-0",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "70e62fbf89f9af2d",
+      "after_h": "70e62fbf89f9af2d"
+    },
+    {
+      "id": "seed-1",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "846778f0715c40f0",
+      "after_h": "846778f0715c40f0"
+    },
+    {
+      "id": "seed-2",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "bda3bb4d6b108ef9",
+      "after_h": "bda3bb4d6b108ef9"
+    },
+    {
+      "id": "seed-3",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "6a00f55d183ad29b",
+      "after_h": "6a00f55d183ad29b"
+    },
+    {
+      "id": "seed-16",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "221de7ab24488a6a",
+      "after_h": "221de7ab24488a6a"
+    },
+    {
+      "id": "seed-15",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "64e531d0552e79ea",
+      "after_h": "64e531d0552e79ea"
+    },
+    {
+      "id": "seed-14",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "cbc6e01d7cc3319f",
+      "after_h": "cbc6e01d7cc3319f"
+    },
+    {
+      "id": "seed-10",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "96637217af9c9d4d",
+      "after_h": "96637217af9c9d4d"
+    },
+    {
+      "id": "seed-9",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "5ecca7945515ccfb",
+      "after_h": "5ecca7945515ccfb"
+    },
+    {
+      "id": "seed-8",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "dd14ab957de2f1a3",
+      "after_h": "dd14ab957de2f1a3"
+    },
+    {
+      "id": "seed-17",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "5f374bb72aa828ee",
+      "after_h": "5f374bb72aa828ee"
+    },
+    {
+      "id": "seed-7",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "bf68b67e3cf8bf51",
+      "after_h": "bf68b67e3cf8bf51"
+    },
+    {
+      "id": "seed-4",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "c90738ffcccfb063",
+      "after_h": "c90738ffcccfb063"
+    },
+    {
+      "id": "seed-5",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "385fdb004f7528ea",
+      "after_h": "385fdb004f7528ea"
+    },
+    {
+      "id": "seed-19",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "3ba724f0deb5379d",
+      "after_h": "3ba724f0deb5379d"
+    },
+    {
+      "id": "seed-27",
+      "fields": [
+        "website"
+      ],
+      "expect_h": "aab1f8fc157133d2",
+      "after_h": "aab1f8fc157133d2"
+    },
+    {
+      "id": "seed-20",
+      "fields": [
+        "website"
+      ],
+      "expect_h": "37802a189a8a139e",
+      "after_h": "37802a189a8a139e"
+    },
+    {
+      "id": "seed-6",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "5d34eefd3f7821b5",
+      "after_h": "5d34eefd3f7821b5"
+    },
+    {
+      "id": "seed-13",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "0c11e0fa57e09dfb",
+      "after_h": "0c11e0fa57e09dfb"
+    },
+    {
+      "id": "seed-12",
+      "fields": [
+        "website"
+      ],
+      "expect_h": "8a726b734abecd96",
+      "after_h": "8a726b734abecd96"
+    },
+    {
+      "id": "seed-11",
+      "fields": [
+        "website"
+      ],
+      "expect_h": "1dbb357c11bbc78c",
+      "after_h": "1dbb357c11bbc78c"
+    },
+    {
+      "id": "seed-196",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "243e96857b9e97b1",
+      "after_h": "243e96857b9e97b1"
+    },
+    {
+      "id": "seed-197",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "fc796b20d584cbde",
+      "after_h": "fc796b20d584cbde"
+    },
+    {
+      "id": "seed-198",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "9058be00897ccd03",
+      "after_h": "9058be00897ccd03"
+    },
+    {
+      "id": "seed-200",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "54a77d2199b856f6",
+      "after_h": "54a77d2199b856f6"
+    },
+    {
+      "id": "seed-203",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "13b6ea6039043c67",
+      "after_h": "13b6ea6039043c67"
+    },
+    {
+      "id": "seed-208",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "a4e0a87949d3ebb5",
+      "after_h": "a4e0a87949d3ebb5"
+    },
+    {
+      "id": "seed-210",
+      "fields": [
+        "website"
+      ],
+      "expect_h": "7029762a95a88c04",
+      "after_h": "7029762a95a88c04"
+    },
+    {
+      "id": "seed-212",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "d180eda2974c0e05",
+      "after_h": "d180eda2974c0e05"
+    },
+    {
+      "id": "seed-213",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "34509401aaf7d553",
+      "after_h": "34509401aaf7d553"
+    },
+    {
+      "id": "seed-214",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "b05b98d33670f498",
+      "after_h": "b05b98d33670f498"
+    },
+    {
+      "id": "seed-193",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "474c96c51a5e522b",
+      "after_h": "474c96c51a5e522b"
+    },
+    {
+      "id": "seed-215",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "084de88bdd18d9f3",
+      "after_h": "084de88bdd18d9f3"
+    },
+    {
+      "id": "seed-226",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "b213d71873addac1",
+      "after_h": "b213d71873addac1"
+    },
+    {
+      "id": "seed-229",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "653112dc9fab0d3d",
+      "after_h": "653112dc9fab0d3d"
+    },
+    {
+      "id": "seed-230",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "de1a0368bebf057a",
+      "after_h": "de1a0368bebf057a"
+    },
+    {
+      "id": "seed-218",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "50e4e02db64fdf4f",
+      "after_h": "50e4e02db64fdf4f"
+    },
+    {
+      "id": "seed-231",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "a8073774eb096b50",
+      "after_h": "a8073774eb096b50"
+    },
+    {
+      "id": "seed-320",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "809a55a8491a2631",
+      "after_h": "809a55a8491a2631"
+    },
+    {
+      "id": "seed-319",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "eaaee3554c95c968",
+      "after_h": "eaaee3554c95c968"
+    },
+    {
+      "id": "seed-325",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "7096fb1d019c3aa7",
+      "after_h": "7096fb1d019c3aa7"
+    },
+    {
+      "id": "seed-330",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "afd987736c220a1f",
+      "after_h": "afd987736c220a1f"
+    },
+    {
+      "id": "seed-337",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "40ecca3f2ad6deab",
+      "after_h": "40ecca3f2ad6deab"
+    },
+    {
+      "id": "seed-351",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "0d244c8fd972ca17",
+      "after_h": "0d244c8fd972ca17"
+    },
+    {
+      "id": "seed-352",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "61c11826af1a58ac",
+      "after_h": "61c11826af1a58ac"
+    },
+    {
+      "id": "seed-360",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "dcd5e0dc14801f94",
+      "after_h": "dcd5e0dc14801f94"
+    },
+    {
+      "id": "seed-361",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "82e77ed70696d1d3",
+      "after_h": "82e77ed70696d1d3"
+    },
+    {
+      "id": "seed-362",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "1d54adb1caa7d29c",
+      "after_h": "1d54adb1caa7d29c"
+    },
+    {
+      "id": "seed-192",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "ef8fdda0f3b79867",
+      "after_h": "ef8fdda0f3b79867"
+    },
+    {
+      "id": "seed-368",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "b23f19c44a05c1ef",
+      "after_h": "b23f19c44a05c1ef"
+    },
+    {
+      "id": "seed-336",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "3b0915df3455bf89",
+      "after_h": "3b0915df3455bf89"
+    },
+    {
+      "id": "seed-389",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "67214b0b548606f2",
+      "after_h": "67214b0b548606f2"
+    },
+    {
+      "id": "seed-322",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "af3b152d1c006cd5",
+      "after_h": "af3b152d1c006cd5"
+    },
+    {
+      "id": "seed-323",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "3c9efee88e1ac31d",
+      "after_h": "3c9efee88e1ac31d"
+    },
+    {
+      "id": "seed-327",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "b3e59198b7813d48",
+      "after_h": "b3e59198b7813d48"
+    },
+    {
+      "id": "seed-328",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "07de485dd90dcf92",
+      "after_h": "07de485dd90dcf92"
+    },
+    {
+      "id": "seed-349",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "4cd49c5d8f09ebc1",
+      "after_h": "4cd49c5d8f09ebc1"
+    },
+    {
+      "id": "seed-341",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "42d46823314a4a9a",
+      "after_h": "42d46823314a4a9a"
+    },
+    {
+      "id": "seed-347",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "bf561e876efab7d6",
+      "after_h": "bf561e876efab7d6"
+    },
+    {
+      "id": "seed-350",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "b6aecbee79e5401e",
+      "after_h": "b6aecbee79e5401e"
+    },
+    {
+      "id": "seed-353",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "6a09393c2368cba8",
+      "after_h": "6a09393c2368cba8"
+    },
+    {
+      "id": "seed-354",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "f8a11985b064fcda",
+      "after_h": "f8a11985b064fcda"
+    },
+    {
+      "id": "seed-372",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "153387b2d096ecae",
+      "after_h": "153387b2d096ecae"
+    },
+    {
+      "id": "seed-379",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "701ee00a90aaaa84",
+      "after_h": "701ee00a90aaaa84"
+    },
+    {
+      "id": "seed-191",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "5684051916deadd4",
+      "after_h": "5684051916deadd4"
+    },
+    {
+      "id": "seed-382",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "5260c04f87e60ba3",
+      "after_h": "5260c04f87e60ba3"
+    },
+    {
+      "id": "seed-381",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "952dbc092d3f0c52",
+      "after_h": "952dbc092d3f0c52"
+    },
+    {
+      "id": "seed-385",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "627dd97d3c16668f",
+      "after_h": "627dd97d3c16668f"
+    },
+    {
+      "id": "seed-392",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "57d6207bdc0ddd36",
+      "after_h": "57d6207bdc0ddd36"
+    },
+    {
+      "id": "seed-393",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "3e92f0b0dfcc65b6",
+      "after_h": "3e92f0b0dfcc65b6"
+    },
+    {
+      "id": "seed-396",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "32aa7a8e4d75c3bd",
+      "after_h": "32aa7a8e4d75c3bd"
+    },
+    {
+      "id": "seed-397",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "6eede4294d25a35f",
+      "after_h": "6eede4294d25a35f"
+    }
+  ],
+  "verification": {
+    "ok": true,
+    "checked": 86,
+    "problems": []
+  },
+  "started_at": "2026-10-03T23:23:17.498Z",
+  "finished_at": "2026-10-03T23:23:40.362Z",
+  "ids": [
+    "seed-34",
+    "seed-33",
+    "seed-39",
+    "seed-43",
+    "seed-40",
+    "seed-31",
+    "seed-42",
+    "seed-35",
+    "seed-36",
+    "seed-44",
+    "seed-41",
+    "seed-37",
+    "seed-38",
+    "seed-18",
+    "seed-0",
+    "seed-1",
+    "seed-2",
+    "seed-3",
+    "seed-16",
+    "seed-15",
+    "seed-14",
+    "seed-10",
+    "seed-9",
+    "seed-8",
+    "seed-17",
+    "seed-7",
+    "seed-4",
+    "seed-5",
+    "seed-19",
+    "seed-27",
+    "seed-20",
+    "seed-6",
+    "seed-13",
+    "seed-12",
+    "seed-11",
+    "seed-196",
+    "seed-197",
+    "seed-198",
+    "seed-200",
+    "seed-203",
+    "seed-208",
+    "seed-210",
+    "seed-212",
+    "seed-213",
+    "seed-214",
+    "seed-193",
+    "seed-215",
+    "seed-226",
+    "seed-229",
+    "seed-230",
+    "seed-218",
+    "seed-231",
+    "seed-320",
+    "seed-319",
+    "seed-325",
+    "seed-330",
+    "seed-337",
+    "seed-351",
+    "seed-352",
+    "seed-360",
+    "seed-361",
+    "seed-362",
+    "seed-192",
+    "seed-368",
+    "seed-336",
+    "seed-389",
+    "seed-322",
+    "seed-323",
+    "seed-327",
+    "seed-328",
+    "seed-349",
+    "seed-341",
+    "seed-347",
+    "seed-350",
+    "seed-353",
+    "seed-354",
+    "seed-372",
+    "seed-379",
+    "seed-191",
+    "seed-382",
+    "seed-381",
+    "seed-385",
+    "seed-392",
+    "seed-393",
+    "seed-396",
+    "seed-397"
+  ]
+}
