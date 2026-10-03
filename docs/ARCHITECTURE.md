@@ -56,7 +56,7 @@ Line refs drift: re-grep function names rather than trusting numbers.
 | `data/gyms.reconciled.json` | FROZEN reconciliation/provenance dataset (2,127 records = production at the first import). Not a runtime file |
 | `supabase/migrations/` | Source of truth for the schema (`docs/migrations.md`); `…_add_spot_slugs.sql` (stored `spots.slug`), `…_community_provenance.sql` (Phase 4) |
 | `import/`, `scripts/gym-import.js`, `scripts/lib/gym-import/` | Gym import pipeline (`docs/import-workflow.md`); new locations via regional research sections (`import/research/`, `research.js`) |
-| `sitemap.xml`, `scripts/build-sitemap.js` | Generated from production (read-only); re-run after each data batch (`docs/import-workflow.md`); `robots.txt` points to it; canonical static URLs are `/about`, `/privacy`, `/terms` |
+| `sitemap.xml`, `scripts/build-sitemap.js`, `api/seo.mjs` | Sitemap generated from production (read-only; area pages only with 2+ gyms, metros always); the same run writes `api/_places.json`. `api/seo.mjs` (Vercel Function, `.mjs`, no package.json): crawler/unfurler user agents on `/gym/*`, `/in/*` (vercel.json `has` rewrites) get the shell with per-page title/description/canonical/OG; people get the static shell. Re-run after data batches; `robots.txt` points to the sitemap |
 | `sw.js` | Service worker (`SHELL_FILES` — add every new JS/CSS/asset file; bump `CACHE_VERSION`) |
 | `docs/TASKS.md` / `docs/archive/` | Open work only / old long-form docs (**never read**) |
 

@@ -200,6 +200,19 @@ export function groupByMetro(spots, country){
   return out;
 }
 
+// The metros a region page lists (country + region code): those whose core is the region, plus genuinely cross-region
+// ones with at least NEIGHBOUR_MIN of their gyms in it (Tokyo on the Kanagawa page, Seoul on Gyeonggi). [{metro, core,
+// total, here}]: total = every gym in the metro, here = its gyms in this region.
+export const NEIGHBOUR_MIN = 2;
+export function metrosForRegion(spots, country, state){
+  const out = [];
+  for(const [m, list] of groupByMetro(spots, country)){
+    const here = list.filter(g => g.state === state).length, core = m.state === state;
+    if(core || here >= NEIGHBOUR_MIN) out.push({ metro: m, core, total: list.length, here });
+  }
+  return out;
+}
+
 // True when a suburb text is just the metro's own name ("Sydney" in NSW, "Wien"): the metro subsumes that suburb in search.
 export function isMetroName(m, text){
   const t = fold(text).trim();

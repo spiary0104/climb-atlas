@@ -6,7 +6,7 @@ import { COUNTRY_LABELS, COUNTRY_TO_REGION, REGION_LABELS } from './constants.js
 import { encodeExploreState, fitCamera } from './geo.js';
 import { stateLabel } from './map.js';
 import { destroyMiniMaps, mountMiniMaps } from './mini-map.js';
-import { groupByMetro, metroByPath, metroKey, metroOf } from './metros.js';
+import { metroByPath, metroKey, metroOf, metrosForRegion } from './metros.js';
 import { notFoundHtml, pageSkeletonHtml, placePageHtml, regionMeta, regionSearchResultsHtml, regionsIndexHtml } from './page-html.js';
 import { registerView, setPageTitle } from './router.js';
 import { buildSearchIndex, placeKey, querySearchIndex } from './search-index.js';
@@ -101,10 +101,11 @@ function regionView({ country, region }, view){
   const gyms = regionGyms(country, region);
   if(!gyms.length || !COUNTRY_LABELS[cc]) return notFound(view);
   const state = gyms[0].state, name = stateLabel(cc, state);
-  // Cities are the curated metros whose core is this region (metros.js), counted over every gym in them; the suburbs of the
-  // gyms that belong to no metro follow as areas. The meta line counts each kind by what it is, never suburbs as cities.
-  const metros = [...groupByMetro(appState.spots, cc).entries()].filter(([m]) => regionSegment(m.state) === encodeURIComponent(region))
-    .map(([m, list]) => ({ label: m.name, href: metroPath(m), count: list.length })).sort((a, b) => b.count - a.count || byName(a, b));
+  // Cities are the curated metros of this region (metros.js): those whose core is here, counted over every gym in them, and
+  // cross-region ones with 2+ gyms here, counted by those gyms. The suburbs of gyms in no metro follow as areas. The meta
+  // line counts each kind by what it is, never suburbs as cities.
+  const metros = metrosForRegion(appState.spots, cc, state)
+    .map(x => ({ label: x.metro.name, href: metroPath(x.metro), count: x.core ? x.total : x.here })).sort((a, b) => b.count - a.count || byName(a, b));
   const loose = gyms.filter(g => !metroOf(g));
   const areas = groupTiles(loose.filter(g => (g.suburb || '').trim()), g => citySegment(g.suburb), g => g.suburb.trim(), g => cityPath(cc, state, g.suburb));
   render(view, placePageHtml({

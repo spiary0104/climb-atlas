@@ -9,7 +9,7 @@ import { loadGymProvenance, loadMyEditFor } from './community.js';
 import { loadSessions } from './logbook.js';
 import { destroyMiniMaps, mountMiniMaps } from './mini-map.js';
 import { stateLabel } from './map.js';
-import { metroOf } from './metros.js';
+import { metroOf, metrosForRegion } from './metros.js';
 import { toggleMark } from './marks.js';
 import { setVerified } from './moderation.js';
 import { openEditModal, openReportModal } from './modals.js';
@@ -29,13 +29,13 @@ export function findGym(slug){
   return appState.bySlug.get(slug) || appState.spots.find(s => s.id === slug) || null;
 }
 
-// Breadcrumb Country > Region > Metro, or > Suburb when the gym is in no metro (metros.js) or in another region than the
-// metro's core (a Yokohama gym stays under Kanagawa; the metro page is under Tokyo). Countries the map does not know
-// (free-text "Other" submissions) get no link.
+// Breadcrumb Country > Region > Metro when the gym's region page lists that metro (its core region, or a neighbour with 2+
+// of its gyms: Japan > Kanagawa > Tokyo), otherwise Country > Region > Suburb. Countries the map does not know (free-text
+// "Other" submissions) get no link.
 export function placeCrumbs(g){
   const known = !!COUNTRY_LABELS[g.country];
   const metro = known ? metroOf(g) : null;
-  const inCore = !!metro && metro.state === g.state;
+  const inCore = !!metro && (metro.state === g.state || metrosForRegion(appState.spots, g.country, g.state).some(x => x.metro === metro));
   return [
     { label: COUNTRY_LABELS[g.country] || g.country, href: known ? countryPath(g.country) : null },
     { label: regionOf(g), href: known ? regionPath(g.country, g.state) : null },

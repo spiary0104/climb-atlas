@@ -30,13 +30,15 @@ test('builder: every URL the app routes to, absolute on www.bouldeer.com, no dup
   assert.ok(u.every(x => x.startsWith('https://www.bouldeer.com/')));
   for (const p of STATIC_PAGES) assert.ok(u.includes('https://www.bouldeer.com' + p), p);
   assert.ok(!u.some(x => /about\.html|privacy\.html|terms\.html|index\.html/.test(x)), 'clean static URLs only');
-  for (const p of ['/in/au', '/in/au/nsw', '/in/au/nsw/marrickville', '/in/au/nsw/sydney', '/in/gb/eng/ile-de-leeds-co', '/gym/blochaus-marrickville']) {
+  for (const p of ['/in/au', '/in/au/nsw', '/in/au/nsw/marrickville', '/in/au/nsw/sydney', '/in/gb/eng', '/gym/blochaus-marrickville']) {
     assert.ok(u.includes('https://www.bouldeer.com' + p), p);
   }
+  // Suburb/area pages only with 2+ gyms (owner decision 2026-10-04): Marrickville and Sydney have two, Leeds one.
+  assert.ok(!u.includes('https://www.bouldeer.com/in/gb/eng/ile-de-leeds-co'), 'a single-gym area page is left out');
   assert.equal(counts.static, 5);
   assert.equal(counts.country, 3);   // AU, GB, JP (ZZ has no label: its place pages 404)
   assert.equal(counts.gym, 8);       // the row without a slug is skipped
-  assert.deepEqual(skipped, { noSlug: 1, unknownCountry: 1, noRegion: 1, noCity: 2 });
+  assert.deepEqual(skipped, { noSlug: 1, unknownCountry: 1, noRegion: 1, noCity: 2, singleGymArea: 1 });
 });
 
 test('builder: never emits a URL the router could not match (empty segments, unknown countries)', async () => {

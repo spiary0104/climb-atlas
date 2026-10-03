@@ -150,3 +150,12 @@ advisory lock (like the edit/report caps), so one bulk insert can no longer pass
 (the client shows a readable message). Service-role writes (importer) untouched; no data change. Tested in the throwaway container
 (`node scripts/migration-tests/run.js`: 74/74, the former INFO case now a passing refusal). Applied 2026-10-03 by the owner (`supabase db push --linked` after a dry run listing exactly this migration); `migration list --linked` shows all eleven on both sides. Rollback: re-run the function body of
 `20261002000300_pin_verified_and_rejection.sql`.
+
+## Gym information, 2026-10-04 (APPLIED TO PRODUCTION 2026-10-04)
+`20261004000100_gym_information`: nullable `description`, `website`, `hours` (jsonb, weekday keys, short strings), `day_pass`
+and `facilities[]` (fixed list) on `spots` and `pending_edits`, with checks; no row changed, RLS unchanged. Tested locally
+(`supabase db reset --local`, `node scripts/test-rls-local.js` 106/106). Preflight: `supabase migration list --linked`
+(remote at 20261003000100), `supabase db push --linked --dry-run` (exactly this file), the five columns absent (REST 400).
+Applied with `supabase db push --linked`; verified: listed as applied, the columns readable (null / `{}`), 2,348 approved,
+`gym-import.js verify-index --live` up to date (content hashes unaffected).
+

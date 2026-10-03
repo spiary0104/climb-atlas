@@ -170,3 +170,14 @@ test('urls: a metro lives at /in/{cc}/{region}/{slug} and resolves before a subu
   assert.equal(metros.metroByPath('xx', 'nsw', 'sydney'), null);
   assert.equal(slug.metroPath(metros.METROS.find(m => m.slug === 'xi-an')), '/in/cn/xian/xi-an');
 });
+
+test('cross-region metros: a neighbouring region lists a metro once 2+ of its gyms are there; the core region always does', async () => {
+  const { metros } = await mods;
+  const at = (id, state, dLat = 0) => ({ id, country: 'JP', state, suburb: 'X', lat: 35.6762 + dLat, lng: 139.6503 });
+  const spots = [at('t1', 'TOKYO'), at('k1', 'KANAGAWA', -0.2), at('k2', 'KANAGAWA', -0.21), at('s1', 'SAITAMA', 0.2)];
+  const pick = state => metros.metrosForRegion(spots, 'JP', state).map(x => [x.metro.slug, x.core, x.total, x.here]);
+  assert.deepEqual(pick('TOKYO'), [['tokyo', true, 4, 1]], 'core: counted over the whole metro');
+  assert.deepEqual(pick('KANAGAWA'), [['tokyo', false, 4, 2]], 'neighbour with 2 gyms: listed, counted by its own gyms');
+  assert.deepEqual(pick('SAITAMA'), [], 'a single gym is not a genuine cross-region metro');
+  assert.equal(metros.NEIGHBOUR_MIN, 2);
+});

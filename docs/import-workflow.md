@@ -169,7 +169,8 @@ saved JSON array instead. Plan against a stale index and you risk re-adding gyms
 ### Keeping `sitemap.xml` current
 After every data batch (and after a moderator approves new gyms in bulk) regenerate the sitemap and commit it:
 `node scripts/build-sitemap.js` (read-only GET of the approved gyms, same read as the site; `--dry` prints counts only). It lists `/`, `/in`,
-every country/region/city page the router resolves, every `/gym/{stored slug}` and the static pages; `robots.txt` points to it. Tested offline in `tests/sitemap.test.js`.
+every country/region/metro page, suburb/area pages with 2+ gyms, every `/gym/{stored slug}` and the static pages; `robots.txt` points to it. The same
+run writes `api/_places.json` (place titles for the link-preview function `api/seo.mjs`): commit both. Tested offline in `tests/sitemap.test.js`.
 
 ### Checking the reconciled dataset against production
 `node scripts/validate-reconciled.js` (read-only) compares `data/gyms.reconciled.json` with live production and the original `data/gyms.json`.

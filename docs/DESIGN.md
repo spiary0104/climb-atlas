@@ -1053,3 +1053,8 @@ Run after every phase. Each line is pass/fail.
 - *Nearby:* dense rows (name, area, distance) while none of the nearby gyms has a photo; the photo-card strip returns automatically when one does (DNA #2).
 - *START signed out:* the sheet says what check-in and the log are and offers "Sign in to start" instead of check-in buttons that only end in a sign-in prompt. The sign-in dialog names gyms and check-ins.
 
+**2026-10-04: metros across regions, sitemap scope, link previews.**
+- *Cross-region metros:* a region page lists a metro whose core is elsewhere once 2+ of the metro's gyms are in that region (Tokyo on Kanagawa, Seoul on Gyeonggi), counted by those gyms; the core region counts the whole metro. Gym breadcrumbs name the metro whenever their region page lists it.
+- *Sitemap:* suburb/area pages only with 2+ gyms (a single-gym area page repeats its gym page); metro pages always.
+- *Link previews:* chats and crawlers get each gym's and place's own title, description and link (photo when it has one) from a small function; people still load the static app. Day pass stays free text and photos one link for v1 (owner).
+
