@@ -81,7 +81,9 @@ async function runImport(opts) {
   // approved spots only, each bound to its researched content hash). Anything else -- including a batch that mixes inserts and
   // updates -- stays on this insert-only path and is refused by the insert-only check below.
   const peek = P.loadBatch(batchDir).lines;
-  if (peek.length && peek.every(l => !l.parseError && l.rec && typeof l.rec === 'object' && !Array.isArray(l.rec) && l.rec.intent === 'update')) return require('./updater').runUpdate(opts);
+  // A batch in which EVERY record is an update or a retire is a "maintenance" batch (updates: location; retires: closed / duplicate
+  // gyms set to 'rejected'); any mix with new/insert records stays here and is refused.
+  if (peek.length && peek.every(l => !l.parseError && l.rec && typeof l.rec === 'object' && !Array.isArray(l.rec) && (l.rec.intent === 'update' || l.rec.intent === 'retire'))) return require('./updater').runUpdate(opts);
   add('PASS', 'batch specified explicitly', res.batchId);
 
   // ---- target and credentials (offline) -----------------------------------------------------------------------------

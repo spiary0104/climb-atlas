@@ -4,10 +4,11 @@
 //    from SUPABASE_ANON_KEY. With a valid service-role key the same reads also see non-approved (pending) rows.
 //  - The service-role key is read from the environment ONLY (SUPABASE_SERVICE_ROLE_KEY). It is never read from a file, never
 //    printed (error text is redacted), and never written to a batch, manifest or report.
-//  - Two writes exist, each behind its own gate: Api.insertSpots() -- one plain `INSERT` of new rows (no upsert, no on_conflict,
-//    no PUT/DELETE, no rpc), gate minted only by importer.js -- and Api.updateSpotLocation() -- a PATCH of address/lat/lng on one
-//    approved row pinned by id + updated_at, gate minted only by updater.js. Both gates exist only after every preflight check and
-//    CLI safety flag has passed. Nothing can delete a spot or change any other field.
+//  - Three writes exist, behind two gates: Api.insertSpots() -- one plain `INSERT` of new rows (no upsert, no on_conflict,
+//    no PUT/DELETE, no rpc), gate minted only by importer.js -- and, behind the update gate minted only by updater.js,
+//    Api.updateSpotLocation() -- a PATCH of address/lat/lng on one approved row pinned by id + updated_at -- and Api.retireSpot() --
+//    a PATCH of status='rejected' + rejection_reason on one approved row pinned the same way. Both gates exist only after every
+//    preflight check and CLI safety flag has passed. Nothing can delete a spot or change any other field.
 'use strict';
 const fs = require('fs');
 const path = require('path');
@@ -122,7 +123,7 @@ class Api {
   // the approved payload entry. Returns the updated row(s) (Prefer: return=representation) so the caller can count them.
   async updateSpotLocation(u, gate) {
     if (!gate || gate[UPDATE_GATE] !== true || !MINTED_UPDATE_GATES.has(gate)) throw new Error('refusing to update: no update gate (all preflight checks and safety flags must pass first)');
-    if (!gate.payloadSha || sha256(JSON.stringify(gate.updates)) !== gate.payloadSha) throw new Error('refusing to update: the payload changed after it was approved (hash mismatch)');
+    if (!gate.payloadSha || sha256(JSON.stringify(opsPayload(gate.updates, gate.retires))) !== gate.payloadSha) throw new Error('refusing to update: the payload changed after it was approved (hash mismatch)');
     const approved = gate.updates.find(x => x.id === u.id);
     if (!approved || JSON.stringify(approved.set) !== JSON.stringify(u.set)) throw new Error('refusing to update: this change is not the approved one for ' + u.id);
     const keys = Object.keys(u.set);
@@ -135,13 +136,34 @@ class Api {
     const q = `/rest/v1/spots?id=eq.${encodeURIComponent(u.id)}&status=eq.approved&updated_at=eq.${encodeURIComponent(u.updatedAt)}`;
     return this._send('PATCH', q, { service: true, headers: { 'Content-Type': 'application/json', Prefer: 'return=representation' }, body: JSON.stringify(u.set) });
   }
+
+  // THE ONLY RETIREMENT in the importer (updater.js): one approved spot is marked rejected (closed / confirmed duplicate) -- the
+  // moderator UI's own decision format (status 'rejected' + rejection_reason); the row is kept, never deleted. Same gate as
+  // updateSpotLocation and the same optimistic concurrency: the row is pinned by id + status=approved + the exact updated_at observed
+  // at the final re-check, so a row touched since (or no longer approved) matches zero rows and nothing changes. The body is exactly
+  // {status, rejection_reason} and the reason must be the approved one for that id.
+  async retireSpot(u, gate) {
+    if (!gate || gate[UPDATE_GATE] !== true || !MINTED_UPDATE_GATES.has(gate)) throw new Error('refusing to retire: no update gate (all preflight checks and safety flags must pass first)');
+    if (!gate.payloadSha || sha256(JSON.stringify(opsPayload(gate.updates, gate.retires))) !== gate.payloadSha) throw new Error('refusing to retire: the payload changed after it was approved (hash mismatch)');
+    const approved = (gate.retires || []).find(x => x.id === u.id);
+    if (!approved || approved.reason !== u.reason) throw new Error('refusing to retire: this retirement is not the approved one for ' + u.id);
+    if (typeof u.id !== 'string' || !/^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$/.test(u.id)) throw new Error('refusing to retire: bad id');
+    if (typeof u.reason !== 'string' || u.reason.length < 8 || u.reason.length > 200 || u.reason !== u.reason.trim()) throw new Error('refusing to retire: the rejection reason must be 8-200 characters of trimmed text');
+    if (typeof u.updatedAt !== 'string' || !u.updatedAt) throw new Error('refusing to retire: the row version (updated_at) observed at the final re-check is required');
+    const q = `/rest/v1/spots?id=eq.${encodeURIComponent(u.id)}&status=eq.approved&updated_at=eq.${encodeURIComponent(u.updatedAt)}`;
+    return this._send('PATCH', q, { service: true, headers: { 'Content-Type': 'application/json', Prefer: 'return=representation' }, body: JSON.stringify({ status: 'rejected', rejection_reason: u.reason }) });
+  }
 }
+
+// What the update gate's payload hash covers: the location updates alone (exactly as before retirements existed), or updates AND
+// retirements when the batch has any, so the gate and the confirmation token can never authorise a different set of operations.
+const opsPayload = (updates, retires) => (retires && retires.length ? { updates, retires } : updates);
 
 // The fields an update batch may change (updater.js enforces the same list before a gate is ever minted).
 const LOCATION_FIELDS = Object.freeze(['address', 'lat', 'lng']);
 const UPDATE_GATE = Symbol('gym-import-update-gate');
 // Only the exact objects minted here are gates: a copy ({...gate} copies the symbol too) or a hand-built look-alike is refused.
 const MINTED_UPDATE_GATES = new WeakSet();
-const mintUpdateGate = ({ batchId, token, updates, payloadSha }) => { const g = Object.freeze({ [UPDATE_GATE]: true, batchId, token, updates, payloadSha }); MINTED_UPDATE_GATES.add(g); return g; };
+const mintUpdateGate = ({ batchId, token, updates, retires = [], payloadSha }) => { const g = Object.freeze({ [UPDATE_GATE]: true, batchId, token, updates, retires, payloadSha }); MINTED_UPDATE_GATES.add(g); return g; };
 
-module.exports = { ROOT, ENV, productionConfig, resolveTarget, validateServiceKey, decodeJwt, redact, mintWriteGate, mintUpdateGate, LOCATION_FIELDS, Api };
+module.exports = { ROOT, ENV, productionConfig, resolveTarget, validateServiceKey, decodeJwt, redact, mintWriteGate, mintUpdateGate, opsPayload, LOCATION_FIELDS, Api };

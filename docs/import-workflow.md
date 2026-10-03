@@ -249,8 +249,8 @@ derived from no credential. Before the write the payload is hashed again, so row
 
 The write itself is one plain `INSERT` of the staged rows (`status=approved, community=false, edited=false`), atomic: if any id already exists the
 whole statement fails and nothing is written. There is **no** upsert, `on_conflict`, PUT, DELETE or RPC anywhere in the importer. The call path is
-`gym-import.js import --apply` → `runImport` → (gates, final re-check) → `mintWriteGate` → `Api.insertSpots` → one `POST /rest/v1/spots`. The only other write
-is the location PATCH of an update-only batch (`updater.js` → `mintUpdateGate` → `Api.updateSpotLocation`, see below); a test enforces exactly these two
+`gym-import.js import --apply` → `runImport` → (gates, final re-check) → `mintWriteGate` → `Api.insertSpots` → one `POST /rest/v1/spots`. The only other writes
+are the location PATCH and the retire PATCH of a maintenance batch (`updater.js` → `mintUpdateGate` → `Api.updateSpotLocation` / `Api.retireSpot`, see below); a test enforces exactly these
 call sites, each reachable only through its own gate minted after the checks.
 
 ### Manifest lifecycle
@@ -283,13 +283,13 @@ and the refreshed index, run the tests, and update `docs/TASKS.md`. (Regression 
 hashes to `index_at_staging` recorded in `batch.json` — independent of the manifest; a wrong manifest makes them fail loudly. Production code never does this.)
 
 ### What the importer is intentionally NOT capable of
-Deleting, closing, merging or overwriting any spot; changing any field other than a location (address/lat/lng, see below); mixing
+Deleting, merging or overwriting any spot (a closed/duplicate gym can only be *retired*: status `rejected`, record kept, see below); changing any field other than a location (address/lat/lng, see below); mixing
 inserts and updates in one batch; importing batches with probable duplicates or invalid
 records; writing to any host other than production or localhost; running without an explicit batch; writing in dry-run/default mode; importing more
 than 1,000 rows in one go; changing the schema (no DDL, no migrations); touching any table other than `spots`.
 
 ## Updating the location of existing gyms (`updater.js`)
-A batch in which **every** record is an update is a location-update batch; `import` hands it to `scripts/lib/gym-import/updater.js`.
+A batch in which **every** record is an update (or a `retire`, see "Retiring a gym" below) is a location-update / maintenance batch; `import` hands it to `scripts/lib/gym-import/updater.js`.
 Same stages and gates as an insert: `validate` → `plan` (commit `plan.json`) → `import --dry-run` (FULL coverage with the
 service-role key prints the confirmation token) → `import --apply --confirm <token> --i-understand-this-writes-to-production`
 (with an explicit `SUPABASE_URL`; batch under `import/batches/`; repo index only) → `import --verify`. A batch that mixes inserts and
@@ -320,6 +320,28 @@ Provenance checks about the earlier state (`validate-reconciled.js`, the tests t
 every verified batch after the first import (location updates and inserts) with `scripts/lib/gym-import/history.js`: newest first by the
 manifest's `finished_at`, it undoes each batch's recorded changes or removes its inserted ids (its committed `plan.json`) and requires the
 result to hash to the index that batch was planned against; any unexplained difference (e.g. a gym approved outside the pipeline) throws.
+
+### Retiring a gym (closed / duplicate)
+A closed gym or a confirmed duplicate is **retired** by an explicit record, through the same updater and the same gates as a location update:
+`PATCH status='rejected', rejection_reason=<reason>` (the moderator UI's own decision format, `moderation.js rejectSpot`). The row is kept, never deleted; nothing else about it changes.
+
+Record: `{"intent":"retire","id":"seed-433","expect_h":"<16 hex>","reason_code":"closed"|"duplicate","reason":"<8..200 chars, becomes rejection_reason>","source":"<where the evidence is>","duplicate_of":"<id>"}`
+- `duplicate_of` is required for `duplicate` and forbidden for `closed`; no other keys. `expect_h` and `source` are required. `reason` is plain trimmed one-line text, stored verbatim.
+- A batch in which **every** record is an `update` or a `retire` is a *maintenance* batch (`updater.js`); at most 100 records, one record per gym (a gym cannot be both
+  updated and retired). Any mix with new/insert records is refused on the insert path.
+- Plan blockers (record becomes `invalid`): id not in the index; `expect_h` differs from the index `h`; `duplicate_of` missing from the index, equal to the id, or itself
+  retired in the batch. `plan.json` stores each retired gym's full index entry from before the retirement (`entry`) and the index sha it was planned against.
+- Per gym the live row is **before** (approved, content hash = `expect_h`) or **after** (`status` rejected and `rejection_reason` = the record's reason); anything else is
+  refused. All *after* = already applied (nothing written; a recovery manifest on `--apply`); a before/after mix is refused. A retired gym is only visible with the
+  service-role read, so re-running needs FULL coverage. Gates: FULL coverage, confirmation token (binds the retire ops too), production flag, a final re-check, then
+  one `PATCH` per gym (`Api.retireSpot`, behind the same update gate) filtered by `id` + `status=approved` + the exact `updated_at` seen at the re-check, body exactly
+  `{status:'rejected', rejection_reason}`; 0 rows matched = refusal. There is no DELETE anywhere.
+- **Verification:** every retire target is *after*, every update target is in its updated state, the approved count went **down by exactly the number of retirements**,
+  every other approved spot equals the index; then `manifest.json` (`kind: "update"`, status `updated`, with `retired` = the ids, `rows_retired`, `retirements`; `ids`
+  lists every target) or `import-failure.json` and exit 4. Afterwards rebuild the index (`build-index --live`; retired gyms leave it) and commit it with the manifest.
+- **History:** `history.js` looks through a verified maintenance batch with retirements: reverting restores each retired entry exactly as recorded in its `plan.json`
+  (and undoes updates), then requires the result to hash to that batch's recorded index sha; any unexplained difference throws. `revertLiveRows` also puts retired
+  gyms back, so the "2,127 at the first import" checks keep passing.
 
 **Applied:** `2026-09-30-location-updates` (11 gyms: 5 pins, 6 pins + addresses; 28 field changes) on 2026-09-30, verified (manifest
 `status: updated`, approved 2,127 unchanged); index rebuilt from production afterwards (`sha256 8dbddf79…`).
@@ -354,7 +376,7 @@ point `data-load.js` at it and update tests/docs; (3) move the original file byt
 4. **`data/gyms.json` as the offline fallback** (`js/modules/data-load.js`): it is stale against production. Options: replace it later by an
    export from production, or retire the fallback. Nothing changes until you decide.
 5. ~~`supabase/seed.html`~~ **Removed 2026-09-25** (nothing depended on it; its ids no longer matched production, so running it would have overwritten real rows).
-6. **Closures / removals** (a gym that closed) are not modelled: `spots.status` only allows pending/approved. Needs a schema decision.
+6. ~~Closures / removals~~ **Implemented**: `spots.status` allows `rejected` (kept with a reason); a closed gym or a confirmed duplicate is retired by a `retire` record (see "Retiring a gym").
 7. **Updating production content from research** (the 4 gyms whose repo content differs: seed-458 rename, 3 notes appended)
    is possible only through explicit `update` records; say whether to stage those.
 8. **New countries** need app support (constants/regions/chips) before their gyms display correctly; the pipeline only warns.

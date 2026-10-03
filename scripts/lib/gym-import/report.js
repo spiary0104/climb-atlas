@@ -13,6 +13,7 @@ function renderReport(plan) {
   L.push('| What would happen | Records |', '|---|---:|');
   L.push(`| Insert as NEW gyms | ${c.new} |`);
   L.push(`| Update existing gyms (explicit update records) | ${c.update} |`);
+  if (c.retire) L.push(`| Retire existing gyms (closed / duplicate: status becomes rejected, record kept) | ${c.retire} |`);
   L.push(`| Already exist — no action (identical content: ${c.existing_identical}; content differs, NOT applied: ${c.existing_content_differs}) | ${c.existing} |`);
   L.push(`| Probable duplicates — need a human decision | ${c['probable-duplicate']} |`);
   L.push(`| Invalid — rejected | ${c.invalid} |`);
@@ -51,6 +52,15 @@ function renderReport(plan) {
       L.push(`- line ${r.line} \`${r.id}\` — ${esc(r.update_reason)}`);
       r.changes.forEach(ch => L.push(`  - ${ch.field}: ${esc(JSON.stringify(ch.before))} → ${esc(JSON.stringify(ch.after))}`.slice(0, 300)));
     });
+    if (more) L.push(`- … and ${more} more (see plan.json)`);
+    L.push('');
+  }
+
+  const rt = by('retire');
+  if (rt.length) {
+    L.push(`## Retirements of existing gyms (${rt.length})`, '', 'Each gym is set to `rejected` with the reason below (the moderator UI\'s own decision format); the row is kept, never deleted. Listed apart from location changes.', '');
+    const { shown, more } = cut(rt);
+    shown.forEach(r => L.push(`- line ${r.line} \`${r.id}\` "${esc(r.name)}" (${r.country}) — ${r.reason_code}${r.duplicate_of ? ' of `' + r.duplicate_of + '`' : ''}: ${esc(r.retire_reason)}`));
     if (more) L.push(`- … and ${more} more (see plan.json)`);
     L.push('');
   }

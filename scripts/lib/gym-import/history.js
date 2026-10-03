@@ -2,8 +2,10 @@
 // checks about that earlier state of production (validate-reconciled.js and the tests that reconstruct the pre-import index).
 //
 // Two kinds of later batch, both recorded by a valid manifest.json and their committed plan.json:
-//  - a location-update batch (updater.js) changed address/lat/lng of existing gyms: plan.json lists every change as {field, before,
-//    after} plus the gym's content hash before it (expect_h);
+//  - a maintenance batch (updater.js; manifest kind "update") changed address/lat/lng of existing gyms: plan.json lists every change as
+//    {field, before, after} plus the gym's content hash before it (expect_h); and/or RETIRED gyms (closed / duplicate, status set to
+//    'rejected', so they left the approved set and the rebuilt index): plan.json records each retired gym's full index entry as it was
+//    BEFORE the retirement (class "retire", entry) and the manifest lists them in `retired`;
 //  - an insert batch (importer.js; e.g. a regional-research batch) added new gyms: plan.json lists them as class "new" and the
 //    manifest names exactly those ids.
 // Each plan.json also records the index it was planned against (index.sha256). revertIndex() undoes the batches on the current index,
@@ -21,7 +23,7 @@ const BASELINE_BATCH = '2026-09-24-reconciled-new-gyms';
 const INSERT_STATUSES = new Set(['imported', 'imported-recovered']);
 const sortedIds = ids => JSON.stringify([...ids].sort());
 
-// Verified batches finished after the baseline, newest first. Each: {id, kind:'update'|'insert', indexSha, updates, inserts}.
+// Verified batches finished after the baseline, newest first. Each: {id, kind:'update'|'insert', indexSha, updates, retires, inserts}.
 function laterBatches(root = S.ROOT) {
   const dir = path.join(root, 'import', 'batches');
   if (!fs.existsSync(dir)) return [];
@@ -38,14 +40,16 @@ function laterBatches(root = S.ROOT) {
       const plan = JSON.parse(fs.readFileSync(pf, 'utf8'));
       const indexSha = plan.index && plan.index.sha256;
       if (m.kind === 'update') {
-        const updates = plan.records.filter(r => r.class === 'update');
-        if (sortedIds(updates.map(r => r.id)) !== sortedIds(m.ids)) throw new Error(`update batch ${b.id}: plan.json and manifest.json name different gyms`);
-        return { id: b.id, kind: 'update', indexSha, updates, inserts: [] };
+        const updates = plan.records.filter(r => r.class === 'update'), retires = plan.records.filter(r => r.class === 'retire');
+        if (sortedIds([...updates, ...retires].map(r => r.id)) !== sortedIds(m.ids)) throw new Error(`update batch ${b.id}: plan.json and manifest.json name different gyms`);
+        if (sortedIds(retires.map(r => r.id)) !== sortedIds(m.retired || [])) throw new Error(`update batch ${b.id}: plan.json and manifest.json retire different gyms`);
+        for (const r of retires) if (!r.entry || r.entry.id !== r.id || !r.entry.h) throw new Error(`update batch ${b.id}: plan.json has no recorded index entry for the retired gym ${r.id}`);
+        return { id: b.id, kind: 'update', indexSha, updates, retires, inserts: [] };
       }
       if (!INSERT_STATUSES.has(m.status)) throw new Error(`batch ${b.id}: manifest status "${m.status}" is neither an insert nor an update`);
       const inserts = plan.records.filter(r => r.class === 'new').map(r => r.id);
       if (sortedIds(inserts) !== sortedIds(m.ids)) throw new Error(`insert batch ${b.id}: plan.json and manifest.json name different gyms`);
-      return { id: b.id, kind: 'insert', indexSha, updates: [], inserts };
+      return { id: b.id, kind: 'insert', indexSha, updates: [], retires: [], inserts };
     });
 }
 // Kept for callers that only care about location updates.
@@ -59,7 +63,7 @@ function revertIndex(index, root = S.ROOT) {
   const batches = laterBatches(root);
   if (!batches.length) return index;
   const byId = new Map(index.entries.map(e => [e.id, { ...e }]));
-  const reverted = [], removed = [], gone = new Set();   // removed ids; entries are filtered, never deleted (the static boundary test bans delete calls here)
+  const reverted = [], removed = [], restored = [], gone = new Set();   // removed ids; entries are filtered, never deleted (the static boundary test bans delete calls here)
   const current = () => [...byId.values()].filter(e => !gone.has(e.id));
   for (const b of batches) {
     for (const r of b.updates) {
@@ -72,6 +76,11 @@ function revertIndex(index, root = S.ROOT) {
       e.h = r.expect_h;
       reverted.push(r.id);
     }
+    for (const r of b.retires) {
+      if (byId.has(r.id) && !gone.has(r.id)) throw new Error(`update batch ${b.id}: retired gym ${r.id} is still in the index; the index does not reflect this batch`);
+      byId.set(r.id, { ...r.entry });   // put the gym back exactly as it was recorded before it was retired
+      restored.push(r.id);
+    }
     for (const id of b.inserts) {
       if (!byId.has(id) || gone.has(id)) throw new Error(`insert batch ${b.id}: ${id} is not in the index; the index does not reflect this batch`);
       gone.add(id);
@@ -83,23 +92,32 @@ function revertIndex(index, root = S.ROOT) {
   const entries = current().sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0)), byCountry = new Map();
   for (const e of entries) { if (!byCountry.has(e.country)) byCountry.set(e.country, []); byCountry.get(e.country).push(e); }
   const text = serialize(entries);
-  return { ...index, entries, byId: new Map(entries.map(e => [e.id, e])), byCountry, sha256: S.sha256(Buffer.from(text)), text, metaMatches: true, revertedUpdates: reverted, removedInserts: removed, revertedBatches: batches.map(b => b.id) };
+  return { ...index, entries, byId: new Map(entries.map(e => [e.id, e])), byCountry, sha256: S.sha256(Buffer.from(text)), text, metaMatches: true, revertedUpdates: reverted, restoredRetired: restored, removedInserts: removed, revertedBatches: batches.map(b => b.id) };
 }
 
 // Live rows ({id, name, country, lat, lng, address, ...}) seen as they were before the verified later batches. A row holding an updated
-// value is shown with the value before the update; a row a later insert batch added is left out; anything else is left exactly as it is
-// (so real drift still shows).
+// value is shown with the value before the update; a row a later insert batch added is left out; a gym a later batch RETIRED (it is no
+// longer an approved row) is put back as recorded in that batch's plan.json; anything else is left exactly as it is (so real drift
+// still shows). Batches are undone newest first, so a gym that was inserted and then retired (or updated and then retired) unwinds
+// correctly.
 function revertLiveRows(rows, root = S.ROOT) {
   const batches = laterBatches(root);
-  const inserted = new Set(batches.flatMap(b => b.inserts));
-  const out = rows.filter(r => !inserted.has(r.id)).map(r => ({ ...r }));
-  const byId = new Map(out.map(r => [r.id, r]));
-  let n = 0;
-  for (const b of batches) for (const u of b.updates) {
-    const r = byId.get(u.id); if (!r) continue;
-    if (u.changes.every(c => same(c.field === 'address' ? (r.address || null) : r[c.field], c.after))) { u.changes.forEach(c => { r[c.field] = c.before; }); n++; }
+  let out = rows.map(r => ({ ...r }));
+  let n = 0, removed = 0, restored = 0;
+  for (const b of batches) {
+    for (const r of b.retires) {
+      if (out.some(x => x.id === r.id)) continue;
+      const { h: _hash, ...row } = r.entry;   // the content hash is not a table column
+      out.push(row); restored++;
+    }
+    const byId = new Map(out.map(r => [r.id, r]));
+    for (const u of b.updates) {
+      const r = byId.get(u.id); if (!r) continue;
+      if (u.changes.every(c => same(c.field === 'address' ? (r.address || null) : r[c.field], c.after))) { u.changes.forEach(c => { r[c.field] = c.before; }); n++; }
+    }
+    if (b.inserts.length) { const ins = new Set(b.inserts), before = out.length; out = out.filter(r => !ins.has(r.id)); removed += before - out.length; }
   }
-  return { rows: out, reverted: n, removed: rows.length - out.length, batches: batches.map(b => b.id) };
+  return { rows: out, reverted: n, removed, restored, batches: batches.map(b => b.id) };
 }
 
 module.exports = { BASELINE_BATCH, laterBatches, updateBatches, revertIndex, revertLiveRows };
