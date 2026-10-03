@@ -490,3 +490,16 @@ test('target.js retireSpot: refuses without the update gate or with anything but
 
 // The real-database run of the update path lives in import-importer.test.js with the other local-stack tests: they all reset
 // the shared local `spots` table, and node --test runs test FILES in parallel.
+
+test('stateOfRetire: "after" needs the recorded reason AND an otherwise untouched row (content hash = expect_h)', () => {
+  const { stateOfRetire } = require('../scripts/lib/gym-import/updater');
+  const row = { id: 'seed-433', name: 'Gravity Research Sapporo', suburb: 'Sapporo', state: 'HOKKAIDO', country: 'JP', lat: 43.0618, lng: 141.3545, address: 'x', types: ['indoor-bouldering'], notes: null, photo: null, status: 'approved', updated_at: 't1' };
+  const expect_h = S.toEntry(row).h, reason = 'Closed 14 Apr 2025 (operator store list).';
+  const r = { id: row.id, expect_h, reason };
+  assert.equal(stateOfRetire(row, r).state, 'before');
+  assert.equal(stateOfRetire({ ...row, status: 'rejected', rejection_reason: reason }, r).state, 'after');
+  assert.equal(stateOfRetire({ ...row, status: 'rejected', rejection_reason: 'another reason here' }, r).state, 'changed');
+  assert.equal(stateOfRetire({ ...row, status: 'rejected', rejection_reason: reason, name: 'Renamed' }, r).state, 'changed', 'a rejected row that was also edited is not our retirement');
+  assert.equal(stateOfRetire({ ...row, name: 'Renamed' }, r).state, 'changed');
+  assert.equal(stateOfRetire(undefined, r).state, 'missing');
+});

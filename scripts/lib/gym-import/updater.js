@@ -78,7 +78,9 @@ function stateOf(live, e, rec) {
 // State of one retire target: live = the row (any status) or undefined; rec = the retire record.
 function stateOfRetire(live, rec) {
   if (!live) return { state: 'missing' };
-  if (live.status === 'rejected') return live.rejection_reason === rec.reason ? { state: 'after', h: S.toEntry(live).h, updatedAt: live.updated_at } : { state: 'changed', h: S.toEntry(live).h };
+  // "after" = rejected with exactly the recorded reason AND otherwise untouched: the content hash ignores status/rejection_reason,
+  // so a correctly retired row still hashes to expect_h. Any other rejected row is "changed" (never treated as our retirement).
+  if (live.status === 'rejected') { const rh = S.toEntry(live).h; return live.rejection_reason === rec.reason && rh === rec.expect_h ? { state: 'after', h: rh, updatedAt: live.updated_at } : { state: 'changed', h: rh }; }
   if (live.status !== 'approved') return { state: 'changed', h: S.toEntry(live).h };
   const h = S.toEntry(live).h;
   return h === rec.expect_h ? { state: 'before', h, updatedAt: live.updated_at } : { state: 'changed', h };
