@@ -79,4 +79,5 @@ test('vercel.json: only crawler and unfurler user agents reach the function, bef
   const places = JSON.parse(read('api/_places.json'));
   assert.equal(places.countries.AU, 'Australia'); assert.equal(places.places['/in/au/nsw/sydney'].title, 'Climbing gyms in Sydney, NSW, Australia');
   assert.ok(!/<script/i.test(read('api/seo.mjs').match(/injectMeta[\s\S]*?\n}/)[0]), 'no script is injected (CSP)');
+  assert.ok(!/'X-Robots-Tag'/.test(read('api/seo.mjs')), "Vercel's noindex on previews is never overridden");
 });
