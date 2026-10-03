@@ -24,7 +24,8 @@
 // v22: gym information (website, hours, day pass, facilities, description; gym-info.js).
 // v23: nearest-first sort, first-visit orientation, Nearby rows, START for signed-out visitors, photos chip rule.
 // v24: Explore loads only its columns, pages in parallel; full gym rows on demand.
-const CACHE_VERSION = 'v24';
+// v25: city metros (metros.js; search, filters, region/city pages, gym breadcrumb).
+const CACHE_VERSION = 'v25';
 const SHELL_CACHE = 'climbatlas-shell-' + CACHE_VERSION;
 const RUNTIME_CACHE = 'climbatlas-runtime-' + CACHE_VERSION;
 const TILE_CACHE = 'climbatlas-tiles-' + CACHE_VERSION;
@@ -69,6 +70,7 @@ const SHELL_FILES = [
   'js/modules/pin-html.js',
   'js/modules/geo.js',
   'js/modules/search-index.js',
+  'js/modules/metros.js',
   'js/modules/moderation-html.js',
   'js/modules/map.js',
   'js/modules/explore.js',

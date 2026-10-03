@@ -5,6 +5,7 @@ import { COUNTRY_FLY_TARGETS, COUNTRY_LABELS, LIST_CAP } from './constants.js';
 import { distanceKm, formatDistance, inBounds } from './geo.js';
 import { capRowHtml, carouselCardHtml, cardHtml, emptyHtml, introHtml, rowHtml, skeletonHtml } from './list-html.js';
 import { stateLabel } from './map.js';
+import { metroOf } from './metros.js';
 import { gymPath } from './slug.js';
 import { provenanceState } from './provenance.js';
 import { filtersActive } from './filters.js';
@@ -52,12 +53,19 @@ function sortSpots(list){
   return list.sort((a, b) => a.name.localeCompare(b.name));
 }
 
-// "84 gyms in view · NSW": the region name only when most of the view is one region and the map is zoomed to city
-// level, so the line never names a place the view does not mostly show.
+// "84 gyms in view · Sydney": the metro (metros.js), else the region ("· NSW"), only when most of the view is that one
+// place and the map is zoomed to city level, so the line never names a place the view does not mostly show.
 function dominantRegion(list){
   if(!list.length) return '';
-  const counts = new Map();
-  for(const g of list){ const k = g.country + ':' + g.state; counts.set(k, (counts.get(k) || 0) + 1); }
+  const metros = new Map(), counts = new Map();
+  for(const g of list){
+    const m = metroOf(g);
+    if(m) metros.set(m, (metros.get(m) || 0) + 1);
+    const k = g.country + ':' + g.state;
+    counts.set(k, (counts.get(k) || 0) + 1);
+  }
+  const topMetro = [...metros.entries()].sort((a, b) => b[1] - a[1])[0];
+  if(topMetro && topMetro[1] / list.length >= 0.6) return topMetro[0].name;
   const [key, n] = [...counts.entries()].sort((a, b) => b[1] - a[1])[0];
   if(n / list.length < 0.6) return '';
   const [country, ...rest] = key.split(':');

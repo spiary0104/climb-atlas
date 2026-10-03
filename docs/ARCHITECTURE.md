@@ -33,7 +33,7 @@ Line refs drift: re-grep function names rather than trusting numbers.
 | `js/modules/constants.js` | Type labels, country labels + fly targets, zoom thresholds (`PIN_DOT_MAX_ZOOM`, `LIST_CAP`), `motion()` |
 | `js/modules/regions.js` | `STATES_BY_COUNTRY` (static, ~620 lines) |
 | `js/modules/html-safe.js`, `utils.js` | Pure `escapeHtml` / `safeUrl` (http/https only); `directionsUrl`, `showToast` |
-| `js/modules/geo.js`, `search-index.js`, `pin-html.js`, `list-html.js`, `moderation-html.js`, `provenance.js`, `add-html.js`, `passport.js`, `stamp-html.js`, `gym-picker.js` | PURE (no DOM, unit-tested): Log a session gym picker (search, continent browse) · passport rules (stamps per city, passport line, milestones, grades) and stamp/passport/sheet markup · distance, antimeridian-safe bounds, stacked-pin offsets, URL state encode/decode, folding · search index + query · pin SVG · row/card/carousel/peek/empty/pill/search-option markup · /mod queue, diff, panel · provenance state/line, levels, display-name rule, `publicNotes` (hides internal research notes from the gym page About and the peek card; stored text untouched) · /add steps, nearest-gym area, duplicate note |
+| `js/modules/geo.js`, `metros.js` (curated city metros: centre + radius, membership computed, no DB; place key `AU:NSW:~sydney`), `search-index.js`, `pin-html.js`, `list-html.js`, `moderation-html.js`, `provenance.js`, `add-html.js`, `passport.js`, `stamp-html.js`, `gym-picker.js` | PURE (no DOM, unit-tested): Log a session gym picker (search, continent browse) · passport rules (stamps per city, passport line, milestones, grades) and stamp/passport/sheet markup · distance, antimeridian-safe bounds, stacked-pin offsets, URL state encode/decode, folding · search index + query · pin SVG · row/card/carousel/peek/empty/pill/search-option markup · /mod queue, diff, panel · provenance state/line, levels, display-name rule, `publicNotes` (hides internal research notes from the gym page About and the peek card; stored text untouched) · /add steps, nearest-gym area, duplicate note |
 | `js/modules/router.js` | History API router (+ `/#/` fallback): `matchRoute`, `navigate`, `registerView`, `refreshPage`, title/canonical, nav `aria-current`. Explore stays mounted behind pages |
 | `js/modules/slug.js` | Pure slug rule mirroring the DB migration (fallback for rows without `slug`) + `gymPath`/`countryPath`/`regionPath`/`cityPath` |
 | `js/modules/page-html.js` | Pure page builders: gym page (+ provenance line, own-edit note, moderator verify), breadcrumb, map slot, page card/row, regions/place pages, calendar, log, me (+ contributions), not found |
@@ -93,10 +93,10 @@ countries — always key on `country:state`.
    hover mirrors row ↔ pin (`refreshPin`, `setRowHover`); Esc / close / empty-map click clears.
 6. Writes: add (`/add`) → `spots` insert (pending); edit → `pending_edits`; report → `reports`; marks → `marks`.
 
-URL: `?q=<text>&place=AU:NSW[:Suburb]&c=lng,lat,z&t=boulder,toprope,lead&saved=1&climbed=1&photos=1`.
+URL: `?q=<text>&place=AU:NSW[:Suburb|:~metro-slug]&c=lng,lat,z&t=boulder,toprope,lead&saved=1&climbed=1&photos=1`.
 
 ## Pages (DESIGN.md sec. 6.2, 8; Phase 3)
-`/gym/{slug}` · `/in` · `/in/{cc}` · `/in/{cc}/{region}` · `/in/{cc}/{region}/{city}` · `/log` · `/me[/saved|/climbed]` · `/me/passport` · `/mod` · `/add`.
+`/gym/{slug}` · `/in` · `/in/{cc}` · `/in/{cc}/{region}` · `/in/{cc}/{region}/{city}` (a metro slug first, else a suburb; region pages list their metros as Cities) · `/log` · `/me[/saved|/climbed]` · `/me/passport` · `/mod` · `/add`.
 `vercel.json` (and `serve.json` for `npx serve`) rewrite these to `index.html`; `router.route()` hides Explore, renders the
 view into `#view`, sets title/canonical; Back pops to the Explore URL left behind. Internal links: `<a href data-link>`.
 
