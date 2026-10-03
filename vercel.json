@@ -103,6 +103,45 @@
   "rewrites": [
     {
       "source": "/gym/:slug",
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": {
+            "re": "(facebookexternalhit|Facebot|Twitterbot|Slackbot|Slack-ImgProxy|Discordbot|WhatsApp|TelegramBot|LinkedInBot|Pinterestbot|redditbot|Applebot|SkypeUriPreview|Embedly|Iframely|vkShare|Mastodon|Bluesky|Googlebot|Google-InspectionTool|bingbot|DuckDuckBot|YandexBot|Baiduspider|Yeti|Naverbot|SeznamBot|Qwantbot)"
+          }
+        }
+      ],
+      "destination": "/api/seo?slug=:slug"
+    },
+    {
+      "source": "/in",
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": {
+            "re": "(facebookexternalhit|Facebot|Twitterbot|Slackbot|Slack-ImgProxy|Discordbot|WhatsApp|TelegramBot|LinkedInBot|Pinterestbot|redditbot|Applebot|SkypeUriPreview|Embedly|Iframely|vkShare|Mastodon|Bluesky|Googlebot|Google-InspectionTool|bingbot|DuckDuckBot|YandexBot|Baiduspider|Yeti|Naverbot|SeznamBot|Qwantbot)"
+          }
+        }
+      ],
+      "destination": "/api/seo?path="
+    },
+    {
+      "source": "/in/:path*",
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": {
+            "re": "(facebookexternalhit|Facebot|Twitterbot|Slackbot|Slack-ImgProxy|Discordbot|WhatsApp|TelegramBot|LinkedInBot|Pinterestbot|redditbot|Applebot|SkypeUriPreview|Embedly|Iframely|vkShare|Mastodon|Bluesky|Googlebot|Google-InspectionTool|bingbot|DuckDuckBot|YandexBot|Baiduspider|Yeti|Naverbot|SeznamBot|Qwantbot)"
+          }
+        }
+      ],
+      "destination": "/api/seo?path=:path*"
+    },
+    {
+      "source": "/gym/:slug",
       "destination": "/index.html"
     },
     {
@@ -172,5 +211,10 @@
         }
       ]
     }
-  ]
+  ],
+  "functions": {
+    "api/seo.mjs": {
+      "includeFiles": "{index.html,js/supabase-init.js,js/modules/seo-meta.js,api/_places.json}"
+    }
+  }
 }

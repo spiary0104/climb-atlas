@@ -33,9 +33,9 @@ Line refs drift: re-grep function names rather than trusting numbers.
 | `js/modules/constants.js` | Type labels, country labels + fly targets, zoom thresholds (`PIN_DOT_MAX_ZOOM`, `LIST_CAP`), `motion()` |
 | `js/modules/regions.js` | `STATES_BY_COUNTRY` (static, ~620 lines) |
 | `js/modules/html-safe.js`, `utils.js` | Pure `escapeHtml` / `safeUrl` (http/https only); `directionsUrl`, `showToast` |
-| `js/modules/geo.js`, `search-index.js`, `pin-html.js`, `list-html.js`, `moderation-html.js`, `provenance.js`, `add-html.js`, `passport.js`, `stamp-html.js`, `gym-picker.js` | PURE (no DOM, unit-tested): Log a session gym picker (search, continent browse) · passport rules (stamps per city, passport line, milestones, grades) and stamp/passport/sheet markup · distance, antimeridian-safe bounds, stacked-pin offsets, URL state encode/decode, folding · search index + query · pin SVG · row/card/carousel/peek/empty/pill/search-option markup · /mod queue, diff, panel · provenance state/line, levels, display-name rule, `publicNotes` (hides internal research notes from the gym page About and the peek card; stored text untouched) · /add steps, nearest-gym area, duplicate note |
+| `js/modules/geo.js`, `metros.js` (curated city metros: centre + radius, membership computed, no DB; place key `AU:NSW:~sydney`), `search-index.js`, `pin-html.js`, `list-html.js`, `moderation-html.js`, `provenance.js`, `add-html.js`, `passport.js`, `stamp-html.js`, `gym-picker.js` | PURE (no DOM, unit-tested): Log a session gym picker (search, continent browse) · passport rules (stamps per city, passport line, milestones, grades) and stamp/passport/sheet markup · distance, antimeridian-safe bounds, stacked-pin offsets, URL state encode/decode, folding · search index + query · pin SVG · row/card/carousel/peek/empty/pill/search-option markup · /mod queue, diff, panel · provenance state/line, levels, display-name rule, `publicNotes` (hides internal research notes from the gym page About and the peek card; stored text untouched) · /add steps, nearest-gym area, duplicate note |
 | `js/modules/router.js` | History API router (+ `/#/` fallback): `matchRoute`, `navigate`, `registerView`, `refreshPage`, title/canonical, nav `aria-current`. Explore stays mounted behind pages |
-| `js/modules/slug.js` | Pure slug rule mirroring the DB migration (fallback for rows without `slug`) + `gymPath`/`countryPath`/`regionPath`/`cityPath` |
+| `js/modules/slug.js` | Pure slug rule mirroring the DB migration (fallback for rows without `slug`) + `gymPath`/`countryPath`/`regionPath`/`cityPath` · `seo-meta.js`: page titles/descriptions for gyms and places (router titles; same text for crawler metadata) |
 | `js/modules/page-html.js` | Pure page builders: gym page (+ provenance line, own-edit note, moderator verify), breadcrumb, map slot, page card/row, regions/place pages, calendar, log, me (+ contributions), not found |
 | `js/modules/gym-page.js`, `region-page.js`, `log-page.js`, `me-page.js`, `mod-page.js`, `add-page.js`, `passport-page.js` | Page controllers (views): data gathering + `data-page-action` / `data-mod-action` / `data-add-action` handlers |
 | `js/modules/community.js` | Provenance + contribution reads (`spot_contributor_counts`, `spot_provenance`, own edit, own points), `saveDisplayName`; all fail soft |
@@ -56,12 +56,13 @@ Line refs drift: re-grep function names rather than trusting numbers.
 | `data/gyms.reconciled.json` | FROZEN reconciliation/provenance dataset (2,127 records = production at the first import). Not a runtime file |
 | `supabase/migrations/` | Source of truth for the schema (`docs/migrations.md`); `…_add_spot_slugs.sql` (stored `spots.slug`), `…_community_provenance.sql` (Phase 4) |
 | `import/`, `scripts/gym-import.js`, `scripts/lib/gym-import/` | Gym import pipeline (`docs/import-workflow.md`); new locations via regional research sections (`import/research/`, `research.js`) |
+| `sitemap.xml`, `scripts/build-sitemap.js`, `api/seo.mjs` | Sitemap generated from production (read-only; area pages only with 2+ gyms, metros always); the same run writes `api/_places.json`. `api/seo.mjs` (Vercel Function, `.mjs`, no package.json): crawler/unfurler user agents on `/gym/*`, `/in/*` (vercel.json `has` rewrites) get the shell with per-page title/description/canonical/OG; people get the static shell. Re-run after data batches; `robots.txt` points to the sitemap |
 | `sw.js` | Service worker (`SHELL_FILES` — add every new JS/CSS/asset file; bump `CACHE_VERSION`) |
 | `docs/TASKS.md` / `docs/archive/` | Open work only / old long-form docs (**never read**) |
 
 ## Load order (end of `index.html`)
-MapLibre → Supercluster → Supabase CDN → `supabase-init.js` → `auth.js` →
-`main.js` (module, deferred) → `sw-register.js`.
+Supabase CDN → `supabase-init.js` → `auth.js` → `spots-prefetch.js` (gym-list read starts here, while MapLibre
+downloads; `loadSpots` takes it once) → MapLibre → Supercluster → `main.js` (module, deferred) → `sw-register.js`.
 
 ## Module conventions
 - Shared mutable state is only ever `appState.x`. No module-level `let`s another module needs to write.
@@ -76,7 +77,8 @@ MapLibre → Supercluster → Supabase CDN → `supabase-init.js` → `auth.js` 
 `marks`, `routes`, `sessions`, `session_climbs`, `profiles` (`display_name`, public read, own write), `checkins` (Phase 5:
 owner-only; user/time pinned by trigger; one per gym per 12 h, 30/day, checked in the trigger under a per-person lock; adds the `climbed` mark).
 Spot shape: `id` (`seed-N` legacy, `community-<uuid>`, or frozen `g-<hex>` for imported gyms), `name`, `suburb`, `state`,
-`country`, `lat`, `lng`, `address`, `types[]` (`indoor-bouldering` | `top-rope` | `lead-climbing`), `notes`, `photo`,
+`country`, `lat`, `lng`, `address`, `types[]` (`indoor-bouldering` | `top-rope` | `lead-climbing`), `notes` (research remark, not shown), `photo`,
+`description`, `website`, `hours` (jsonb mon..sun), `day_pass`, `facilities[]` (gym information, `gym-info.js`; same columns on `pending_edits`),
 `community`, `edited`, `created_at`, `slug` (stored, unique, set on insert, never changed), `verified_at`, `rejection_reason`. `state` codes collide across
 countries — always key on `country:state`.
 
@@ -92,10 +94,10 @@ countries — always key on `country:state`.
    hover mirrors row ↔ pin (`refreshPin`, `setRowHover`); Esc / close / empty-map click clears.
 6. Writes: add (`/add`) → `spots` insert (pending); edit → `pending_edits`; report → `reports`; marks → `marks`.
 
-URL: `?q=<text>&place=AU:NSW[:Suburb]&c=lng,lat,z&t=boulder,toprope,lead&saved=1&climbed=1&photos=1`.
+URL: `?q=<text>&place=AU:NSW[:Suburb|:~metro-slug]&c=lng,lat,z&t=boulder,toprope,lead&saved=1&climbed=1&photos=1`.
 
 ## Pages (DESIGN.md sec. 6.2, 8; Phase 3)
-`/gym/{slug}` · `/in` · `/in/{cc}` · `/in/{cc}/{region}` · `/in/{cc}/{region}/{city}` · `/log` · `/me[/saved|/climbed]` · `/me/passport` · `/mod` · `/add`.
+`/gym/{slug}` · `/in` · `/in/{cc}` · `/in/{cc}/{region}` · `/in/{cc}/{region}/{city}` (a metro slug first, else a suburb; region pages list their metros as Cities) · `/log` · `/me[/saved|/climbed]` · `/me/passport` · `/mod` · `/add`.
 `vercel.json` (and `serve.json` for `npx serve`) rewrite these to `index.html`; `router.route()` hides Explore, renders the
 view into `#view`, sets title/canonical; Back pops to the Explore URL left behind. Internal links: `<a href data-link>`.
 

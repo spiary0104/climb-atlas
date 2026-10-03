@@ -80,7 +80,7 @@ export function encodeExploreState(state){
   if(state.saved) p.set('saved', '1');
   if(state.climbed) p.set('climbed', '1');
   if(state.photos) p.set('photos', '1');
-  return p.toString().replace(/%2C/g, ',').replace(/%3A/g, ':');
+  return p.toString().replace(/%2C/g, ',').replace(/%3A/g, ':').replace(/%7E/g, '~');   // "~" marks a metro place ("AU:NSW:~sydney")
 }
 
 const num = (v, lo, hi) => { const n = Number(v); return Number.isFinite(n) && n >= lo && n <= hi ? n : null; };

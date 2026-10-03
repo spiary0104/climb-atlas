@@ -41,3 +41,5 @@ export const gymPath = g => '/gym/' + encodeURIComponent(g.slug || g.id);
 export const countryPath = country => '/in/' + encodeURIComponent(String(country || '').toLowerCase());
 export const regionPath = (country, state) => countryPath(country) + '/' + regionSegment(state);
 export const cityPath = (country, state, suburb) => regionPath(country, state) + '/' + citySegment(suburb);
+// A metro (metros.js) lives at its core region + its slug; the city route tries metros before suburbs.
+export const metroPath = m => regionPath(m.country, m.state) + '/' + m.slug;

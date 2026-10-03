@@ -372,7 +372,7 @@ test('moderation: the diff lists changed fields old -> new, counts the rest, and
   const html = mod.modPanelHtml({ kind: 'edit', name: 'Known Gym', row: pendingEdit, current: currentGym }, modCtx());
   const rows = [...html.matchAll(/<tr><th scope="row">([^<]+)<\/th><td>([^<]*)<\/td><td>([^<]*)<\/td><\/tr>/g)].map(m => m.slice(1));
   assert.deepEqual(rows, [['Name', 'Known Gym', 'N2']], 'only the changed field');
-  assert.ok(/8 fields unchanged/.test(html));
+  assert.ok(/13 fields unchanged/.test(html), 'core, gym-information and photo fields compared; research notes only when proposed');
   assert.ok(allText(html).includes('moved') && allText(html).includes('asked for a double-check'));
   assert.ok(/id="modReason"/.test(html) && /data-mod-field="name"/.test(html), 'reason field and correctable fields');
   assert.equal(mod.modQueueHtml([], []).includes('Nothing to review'), true);

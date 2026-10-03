@@ -580,7 +580,7 @@ No photo: the boulder placeholder (§13).
 
 ### 8.1 Data reality
 
-`spots` today: name, suburb, state, country, lat, lng, types[], notes?, photo?, address?, community, edited, status, timestamps. Proposed additive columns for later phases: slug (Phase 3, required), website, instagram, hours (jsonb), day_pass_price, currency, facilities (text[]). Everything below that references a field which does not yet exist must render nothing until it does.
+`spots`: name, suburb, state, country, lat, lng, types[], notes? (the import pipeline's research remark: never shown, never edited by users), photo?, address?, slug, community, edited, status, timestamps, and the gym information of migration 20261004000100: description? (public About text), website?, hours? (jsonb, keys mon..sun, short text each), day_pass? (free text as the gym states it), facilities[] (fixed list). Not built: instagram, grades/new-set day (routes). Everything below that references a field which does not yet exist, or is empty for a gym, renders nothing.
 
 ### 8.2 Hierarchy
 
@@ -931,7 +931,7 @@ Run after every phase. Each line is pass/fail.
 7. **App icon.** Resolved 2026-09-26 (Brand Pass): the cream head-on-boulder, installed now (§1A); the earlier sunset choice is superseded.
 8. **Check-in proximity rule.** Resolved 2026-09-27: 500 m on phones (location asked on tap; farther is refused), "I'm here" confirmation on desktop or when location is denied/unavailable.
 9. **Publish-then-review scope.** Which fields publish immediately with review flagged (proposed: hours, price, links, photo) versus queue (name, location, types, deletion). Confirm.
-10. **Data columns.** Approve adding nullable `hours`, `day_pass_price`, `currency`, `website`, `instagram`, `facilities` in Phase 4 so contribution can start filling them, even though the display is optional/Phase 6.
+10. **Data columns.** Resolved 2026-10-04: nullable `description`, `website`, `hours` (weekly jsonb), `day_pass` (free text instead of price + currency) and `facilities` (fixed list) on spots and edit proposals (migration 20261004000100); `instagram` not added.
 
 ---
 
@@ -1039,3 +1039,22 @@ Run after every phase. Each line is pass/fail.
 - *Lake and plum are final:* type-tag text lake.7 on lake.3 4.82:1 and plum.7 on plum.3 5.87:1 (AA); pins on the rock map lake 4.01:1, plum 2.88:1 (the ink outline and the paper dot carry the edge); simulated protan/deutan/tritan keep both clearly apart from ember; lake vs plum is the closest pair under red-green deficiency, which is why the type is always also named (tags, filters). Decision 19.1 resolved.
 - *Boulder tag text:* ember.7 `#B85A28` measured 2.95:1 on ember.3; now `#8A3F17` (4.77:1; 7.3:1 on paper).
 - *Map attribution:* Lighthouse (production, mobile, 2026-10-03) scored accessibility 96 on `/` with one failure: the attribution used the rock theme's secondary text on its paper chip (2.66:1). New token `--map-control-text` (ink.9, 5.26:1). `/in` and `/log` scored 100.
+
+**2026-10-04: gym information (Phase 4 data, sec. 8.1-8.2).**
+- *Fields:* description (the public About text), website, weekly hours (one short text per weekday, so the Essentials panel can show a week with today emphasised), day pass (free text, because prices come with conditions and currencies the gym states in its own words) and facilities (a fixed list of eight chips). Photos stay one link.
+- *Research notes are separate:* `notes` stays the import pipeline's research remark (part of its content hash, so it is not rewritten); visitors see `description`, falling back to the few genuine legacy lines `publicNotes()` keeps. The edit form edits `description`; approving an edit never overwrites `notes`.
+- *Progressive pages:* each Essentials row and the Facilities section appear only with data; the single contribution prompt now names exactly what the edit form accepts ("Add the hours, website, day-pass price or a photo") and opens the dialog at the hours. `/add` step 2 asks for website, day pass and description; hours and facilities come with a later edit.
+- *Deploy order:* the migration must be applied before this code ships (edit proposals and new gyms send the new columns).
+
+**2026-10-04: final-stage UX follow-ups (audit 2026-10-03).**
+- *Nearest first:* the list sorts by distance by default: to the visitor once located ("Nearest to you"), otherwise to the centre of the area in view ("Nearest to centre"). Alphabetical stays one tap away.
+- *Orientation:* a first-time visitor gets one line above the list, "Bouldeer maps thousands of climbing gyms in 80+ countries, researched gym by gym and kept current by climbers. About", once per device, dismissable. It renders at start-up with fixed wording: inserting it with live counts when the data arrived pushed the list down (layout shift 0.075 vs 0.026 measured). No character (the first-run Explore art stays as built).
+- *Filters only the data can answer:* "Has photos" (chip and All filters section) appears only once 5% of gyms have a photo; kept visible while it is on.
+- *Nearby:* dense rows (name, area, distance) while none of the nearby gyms has a photo; the photo-card strip returns automatically when one does (DNA #2).
+- *START signed out:* the sheet says what check-in and the log are and offers "Sign in to start" instead of check-in buttons that only end in a sign-in prompt. The sign-in dialog names gyms and check-ins.
+
+**2026-10-04: metros across regions, sitemap scope, link previews.**
+- *Cross-region metros:* a region page lists a metro whose core is elsewhere once 2+ of the metro's gyms are in that region (Tokyo on Kanagawa, Seoul on Gyeonggi), counted by those gyms; the core region counts the whole metro. Gym breadcrumbs name the metro whenever their region page lists it.
+- *Sitemap:* suburb/area pages only with 2+ gyms (a single-gym area page repeats its gym page); metro pages always.
+- *Link previews:* chats and crawlers get each gym's and place's own title, description and link (photo when it has one) from a small function; people still load the static app. Day pass stays free text and photos one link for v1 (owner).
+

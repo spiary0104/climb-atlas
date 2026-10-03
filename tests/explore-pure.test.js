@@ -93,7 +93,8 @@ test('search index: groups, counts, bounds, prefix-on-word-start and diacritic m
   const index = idx.buildSearchIndex(SPOTS, OPTS);
   assert.equal(index.gyms.length, 4, 'rows without coordinates are skipped');
   const mun = idx.querySearchIndex(index, 'munchen');
-  assert.deepEqual(mun.city.map(c => [c.label, c.count, c.secondary]), [['München', 2, 'Bayern · Germany']]);
+  // The München gyms are in the Munich metro (metros.js), which subsumes the suburb of the same name (tests/metros.test.js).
+  assert.deepEqual(mun.city.map(c => [c.label, c.count, c.secondary]), [['Munich', 2, 'BAYERN · Germany']]);
   assert.deepEqual(mun.gym.map(g => g.id), ['s3', 's4'], 'gyms match on suburb too; a name match ranks first');
   const de = idx.querySearchIndex(index, 'ger');
   assert.deepEqual(de.country.map(c => [c.key, c.count]), [['DE', 2]]);

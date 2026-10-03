@@ -31,7 +31,8 @@ const spotById = id => byId.get(id) || null;
 
 // ----- rendering --------------------------------------------------------------------------------------------------
 // Full refresh after data/auth/moderation changes (main.js, moderation.js).
-export function render(){
+// { page: false } refreshes Explore only, leaving an open page as it is (main.js: the boot's second render).
+export function render({ page = true } = {}){
   if(!appState.loaded) return;                 // skeleton rows until the first load (auth can fire earlier)
   if(indexedSpots !== appState.spots){
     indexedSpots = appState.spots;
@@ -47,7 +48,7 @@ export function render(){
   if(focusSearchOnRender){ focusSearchOnRender = false; if(isExplore() && appState.exploreFirstRun) $('searchInput').focus({preventScroll: true}); }
   if(appState.selectedId && !spotById(appState.selectedId)) clearSelection();
   renderPeek();
-  refreshPage();                                // a page opened before the data arrived renders now
+  if(page) refreshPage();                       // a page opened before the data arrived renders now
 }
 
 function refreshList(){

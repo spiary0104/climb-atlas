@@ -94,11 +94,11 @@ const SAFE_EXPR = [
   /^Number\([A-Za-z.]+\)$/,
   /^(cls|tiles|pin|history|actions)$/, /^items\.join\(''\)$/,
   /^link\(c\.href, c\.label\)$/, /^pinSvg\(\{ types \}\)$/, /^thumbHtml\(g, '(card|row)'\)$/,
-  /^ctx\.nearby\.map\(n => pageCardHtml\(n\.g, n\.ctx\)\)\.join\(''\)$/,
+  /^ctx\.nearby\.map\(n => page(?:Card|Row)Html\(n\.g, n\.ctx\)\)\.join\(''\)$/,
   // page-html.js region builders: the tile template escapes href/label/count; the rest compose reviewed builders
   /^items\.map\(t => `<li><a class="place-tile" href="\$\{escapeHtml\(t\.href\)\}" data-link>` \+ `<span class="place-tile-name">\$\{escapeHtml\(t\.label\)\}<\/span><span class="place-tile-count tnum">\$\{escapeHtml\(countLabel\(t\.count\)\)\}<\/span><\/a><\/li>`\)\.join\(''\)$/,
   /^items\.map\(i => page(Row|Card)Html\(i\.g, i\.ctx\)\)\.join\(''\)$/,
-  /^(tileGridHtml\((g\.items|p\.tiles)\)|gymCollectionHtml\(p\.gyms\)|breadcrumbHtml\(p\.crumbs \|\| \[\]\))$/,
+  /^(tileGridHtml\((g\.items|p\.tiles|s\.tiles)\)|gymCollectionHtml\(p\.gyms\)|breadcrumbHtml\(p\.crumbs \|\| \[\]\))$/,
   /^(dims|gyms)$/, /^mapThumbHtml\(\{ \.\.\.p\.map, wide: true, points: true \}\)$/,
   // calendar/log/me: assembled in the same builder from numbers, fixed names and escaped labels; p.sessions is
   // logbook.js sessionsHtml() (itself in this review), p.calendar is calendarHtml()

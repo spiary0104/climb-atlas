@@ -24,6 +24,7 @@ supabase/geocode.html    Maintenance tool — re-geocodes spot addresses against
 
 Script load order in `index.html` matters: the Supabase JS CDN script, then
 `supabase-init.js` (defines `window.sb`), then `auth.js` (defines `window.auth`), then
+`spots-prefetch.js` (starts the gym-list read before MapLibre downloads), then MapLibre and Supercluster, then
 `js/main.js` (an ES module, so the site must be served over HTTP), which depends on both.
 `data/gyms.json` (~900KB) is not loaded on page load — `js/modules/data-load.js` fetches it on demand (`ensureSeedData()`, sets `window.SEED_GYMS`) only when
 Supabase is unreachable (the offline fallback) or when an edited seed spot's original

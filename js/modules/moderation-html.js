@@ -6,6 +6,7 @@
 import { TYPE_LABELS } from './constants.js';
 import { escapeHtml, safeUrl } from './html-safe.js';
 import { icon } from './icons.js';
+import { DAYS, FACILITIES, cleanFacilities, cleanHours } from './gym-info.js';
 
 const KIND_LABEL = { spot: 'New gym', edit: 'Edit', report: 'Report' };
 const kindOf = k => (KIND_LABEL[k] ? k : 'report');
@@ -27,18 +28,28 @@ const FIELDS = [
   ['country', 'Country', v => escapeHtml(v)],
   ['address', 'Address', v => escapeHtml(v || '')],
   ['types', 'Types', v => escapeHtml(typesText(v))],
-  ['notes', 'Notes', v => escapeHtml(v || '')],
+  ['description', 'About', v => escapeHtml(v || '')],
+  ['website', 'Website', v => photoText(v)],
+  ['day_pass', 'Day pass', v => escapeHtml(v || '')],
+  ['hours', 'Hours', v => escapeHtml(hoursText(v))],
+  ['facilities', 'Facilities', v => escapeHtml(cleanFacilities(v).map(k => FACILITY_LABEL[k]).join(' · '))],
   ['photo', 'Photo', v => photoText(v)],
+  ['notes', 'Research notes', v => escapeHtml(v || ''), { onlyIfProposed: true }],   // legacy submissions only
 ];
-const same = (a, b) => JSON.stringify(a ?? '') === JSON.stringify(b ?? '');
+const FACILITY_LABEL = Object.fromEntries(FACILITIES);
+const hoursText = h => { const c = cleanHours(h) || {}; return DAYS.filter(([k]) => c[k]).map(([k, label]) => label.slice(0, 3) + ' ' + c[k]).join(' · '); };
+// Values compare in normal form: jsonb returns object keys in its own order, and empty means absent.
+const norm = (key, v) => key === 'hours' ? cleanHours(v) : key === 'facilities' ? cleanFacilities(v) : v;
+const same = (a, b, key) => JSON.stringify(norm(key, a) ?? '') === JSON.stringify(norm(key, b) ?? '') || (key === 'facilities' && !cleanFacilities(a).length && !cleanFacilities(b).length);
 const where = r => (Number.isFinite(r.lat) && Number.isFinite(r.lng)) ? Number(r.lat).toFixed(5) + ', ' + Number(r.lng).toFixed(5) : '';
 
 // Field-by-field diff (old -> new) of a proposed edit against the live gym; unchanged fields are counted, not listed.
 export function diffRowsHtml(current, proposed){
   const rows = [];
   let unchanged = 0;
-  for(const [key, label, show] of FIELDS){
-    if(current && same(current[key], proposed[key])){ unchanged++; continue; }
+  for(const [key, label, show, opts = {}] of FIELDS){
+    if(opts.onlyIfProposed && !proposed[key]) continue;
+    if(current && same(current[key], proposed[key], key)){ unchanged++; continue; }
     rows.push(`<tr><th scope="row">${label}</th><td>${current ? show(current[key]) : ''}</td><td>${show(proposed[key])}</td></tr>`);
   }
   if(current && where(current) === where(proposed)) unchanged++;
@@ -65,7 +76,7 @@ function correctionFieldsHtml(r){
   const input = (key, label) => `<div class="field"><label for="modField-${key}">${label}</label><input id="modField-${key}" data-mod-field="${key}" type="text" value="${escapeHtml(r[key] || '')}"></div>`;
   return `<fieldset class="mod-correct"><legend class="section-label">Check or correct before approving</legend>`
     + input('name', 'Name') + input('suburb', 'Suburb') + input('address', 'Address')
-    + `<div class="field"><label for="modField-notes">Notes</label><textarea id="modField-notes" data-mod-field="notes">${escapeHtml(r.notes || '')}</textarea></div></fieldset>`;
+    + `<div class="field"><label for="modField-description">About</label><textarea id="modField-description" data-mod-field="description" maxlength="600">${escapeHtml(r.description || '')}</textarea></div></fieldset>`;
 }
 
 const reasonHtml = () => `<div class="field mod-reason"><label for="modReason">Reason for rejecting (shown to the contributor)</label>`

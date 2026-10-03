@@ -4,6 +4,7 @@
 // <a href data-link> that the router turns into History API navigation. A section with no data renders nothing
 // (DNA #3); the only substitute is the single contribution prompt.
 import { firstRunArt, sealSvg } from './brand.js';
+import { essentialsRowsHtml, facilitiesHtml, hasPracticalInfo } from './gym-info.js';
 import { escapeHtml, safeUrl } from './html-safe.js';
 import { directionsUrl } from './utils.js';
 import { icon } from './icons.js';
@@ -53,7 +54,8 @@ export function pageRowHtml(g, ctx = {}){
 // The gym page (sec. 8.2). ctx: {crumbs, region, country, distance, saved, climbed, history, nearby: [{g, ctx}], exploreHref}
 export function gymPageHtml(g, ctx = {}){
   const photo = safeUrl(g.photo);
-  const notes = publicNotes(g.notes);                 // research remarks are not for visitors (provenance.js)
+  // The public description; legacy gyms fall back to the few genuine lines in their research notes (provenance.js).
+  const about = (typeof g.description === 'string' && g.description.trim()) || publicNotes(g.notes);
   const id = escapeHtml(g.id);
   const where = [g.suburb, ctx.region].filter(Boolean).join(', ');
   // One quiet line (sec. 10.2) + the editor-only note about their own latest proposal (sec. 10.4).
@@ -69,12 +71,17 @@ export function gymPageHtml(g, ctx = {}){
     + `<button type="button" class="btn btn-secondary" data-page-action="save" data-spot-id="${id}" aria-pressed="${ctx.saved ? 'true' : 'false'}">${icon('bookmark-simple', {size:'sm'})}Save</button>`
     + `<button type="button" class="btn btn-secondary" data-page-action="climbed" data-spot-id="${id}" aria-pressed="${ctx.climbed ? 'true' : 'false'}">${icon('check', {size:'sm'})}Climbed</button>`
     + `<a class="btn btn-secondary" href="${escapeHtml(directionsUrl(g))}" target="_blank" rel="noopener noreferrer">${icon('navigation-arrow', {size:'sm'})}Directions</a></div>`;
-  // The one contribution prompt: this page has no photo, and hours/price fields do not exist yet (sec. 8.2).
-  const prompt = photo ? '' : `<p class="contribute-prompt">Been here? <button type="button" class="link" data-page-action="edit" data-spot-id="${id}">Add the hours, a photo or the day-pass price.</button></p>`;
+  // The one contribution prompt (sec. 8.2): only while the page has no photo and none of hours, website or day pass.
+  // It opens the edit dialog at the hours field, so every field it names can be filled in there.
+  const prompt = photo || hasPracticalInfo(g) ? '' : `<p class="contribute-prompt">Been here? <button type="button" class="link" data-page-action="edit" data-edit-focus="hours" data-spot-id="${id}">Add the hours, website, day-pass price or a photo.</button></p>`;
   const history = ctx.history && ctx.history.count ? `<section class="panel history-panel" aria-labelledby="historyTitle"><h2 class="panel-title" id="historyTitle">Your history here</h2>`
     + `<p class="panel-row tnum">${escapeHtml(ctx.history.count === 1 ? '1 session' : ctx.history.count + ' sessions')}${ctx.history.last ? ` · last on ${escapeHtml(ctx.history.last)}` : ''}</p></section>` : '';
   const nearby = (ctx.nearby || []).length >= 1 ? `<section class="page-section" aria-labelledby="nearbyTitle"><h2 class="section-title" id="nearbyTitle">Nearby</h2>`
-    + `<div class="card-strip">${ctx.nearby.map(n => pageCardHtml(n.g, n.ctx)).join('')}</div></section>` : '';
+    // Photo cards only when a nearby gym has a photo; four identical placeholders read as "nothing here" (audit).
+    + (ctx.nearby.some(n => safeUrl(n.g.photo))
+      ? `<div class="card-strip">${ctx.nearby.map(n => pageCardHtml(n.g, n.ctx)).join('')}</div>`
+      : `<div class="page-list nearby-list">${ctx.nearby.map(n => pageRowHtml(n.g, n.ctx)).join('')}</div>`)
+    + `</section>` : '';
   return `<article class="page gym-page">`
     + breadcrumbHtml(ctx.crumbs || [])
     + `<header class="gym-header"><div class="gym-heading"><h1 class="page-title">${escapeHtml(g.name)}</h1>`
@@ -82,7 +89,8 @@ export function gymPageHtml(g, ctx = {}){
     + provenance + prompt + `</div></header>`
     + `${photo ? `<img class="gym-hero gym-photo" src="${escapeHtml(photo)}" alt="${escapeHtml(g.name)}" referrerpolicy="no-referrer">` : ''}`
     + `<div class="gym-layout"><div class="gym-main">`
-    + `${notes ? `<section class="page-section" aria-labelledby="aboutTitle"><h2 class="section-title" id="aboutTitle">About</h2><p class="prose">${escapeHtml(notes)}</p></section>` : ''}`
+    + `${about ? `<section class="page-section" aria-labelledby="aboutTitle"><h2 class="section-title" id="aboutTitle">About</h2><p class="prose">${escapeHtml(about)}</p></section>` : ''}`
+    + facilitiesHtml(g)
     + nearby
     + `<section class="page-section" aria-labelledby="communityTitle"><h2 class="section-title" id="communityTitle">Community</h2>`
     + `<p class="section-note">${g.community ? 'Added by a Bouldeer climber and checked by a moderator.' : 'From the Bouldeer dataset, kept current by climbers.'} Every edit is checked by a moderator before it goes live. Spotted something out of date?</p>`
@@ -91,6 +99,7 @@ export function gymPageHtml(g, ctx = {}){
     // Moderators only: "Verified" = confirmed by a moderator (sec. 10.1). RLS enforces it; this only shows the control.
     + `${ctx.isModerator ? `<button type="button" class="btn btn-tertiary btn-sm" data-page-action="${g.verified_at ? 'unverify' : 'verify'}" data-spot-id="${id}">${icon('check-circle', {size:'sm'})}${g.verified_at ? 'Remove verification' : 'Mark verified'}</button>` : ''}</div></section>`
     + `</div><aside class="gym-aside"><section class="panel essentials" aria-labelledby="essentialsTitle"><h2 class="panel-title" id="essentialsTitle">Essentials</h2>`
+    + essentialsRowsHtml(g)
     + `<div class="essentials-address"><p class="panel-row">${escapeHtml(g.address || where)}</p>`
     + mapThumbHtml({ lat: g.lat, lng: g.lng, zoom: 14, size: 120, href: ctx.exploreHref || '/', label: 'Show ' + (g.name || 'this gym') + ' on the map', types: g.types })
     + `</div></section>${history}</aside></div>${actions}</article>`;   // actions last: beside the title on desktop, sticky at the bottom on phones
@@ -148,9 +157,22 @@ export function regionSearchResultsHtml(query, items){
     + (i.kind === 'gym' ? '' : `<span class="gym-row-distance tnum">${escapeHtml(countLabel(i.count))}</span>`) + `</a></li>`).join('') + `</ul>`;
 }
 
-// Country / region / city page. p: {crumbs, title, meta, tilesTitle, tiles, gymsTitle, gyms: [{g, ctx}], map: mapThumbHtml args}
+// A region page's meta line: each kind counted as what it is. Metros are cities; the suburbs of gyms outside every metro are
+// "areas" ("other areas" once there are cities), never cities: "28 gyms · 1 city · 6 other areas".
+export function regionMeta({ gyms, cities = 0, areas = 0 }){
+  const n = (c, one, many) => c === 1 ? '1 ' + one : Number(c).toLocaleString('en-US') + ' ' + many;
+  return [n(gyms, 'gym', 'gyms'), cities ? n(cities, 'city', 'cities') : '',
+    areas ? (cities ? n(areas, 'other area', 'other areas') : n(areas, 'area', 'areas')) : ''].filter(Boolean).join(' · ');
+}
+
+// Country / region / city page. p: {crumbs, title, meta, tilesTitle, tiles | tileSections: [{title, tiles}], gymsTitle,
+// gyms: [{g, ctx}], map: mapThumbHtml args}. A region page has two tile sections: its metros ("Cities"), then "Other areas".
 export function placePageHtml(p){
-  const tiles = p.tiles && p.tiles.length ? `<section class="page-section" aria-labelledby="tilesTitle"><h2 class="section-title" id="tilesTitle">${escapeHtml(p.tilesTitle)}</h2>${tileGridHtml(p.tiles)}</section>` : '';
+  const sections = p.tileSections || [{ title: p.tilesTitle, tiles: p.tiles }];
+  const tiles = sections.filter(s => s.tiles && s.tiles.length).map((s, i) => {
+    const id = escapeHtml('tilesTitle' + (i || ''));
+    return `<section class="page-section" aria-labelledby="${id}"><h2 class="section-title" id="${id}">${escapeHtml(s.title)}</h2>${tileGridHtml(s.tiles)}</section>`;
+  }).join('');
   const gyms = p.gyms && p.gyms.length ? `<section class="page-section" aria-labelledby="gymsTitle"><h2 class="section-title" id="gymsTitle">${escapeHtml(p.gymsTitle || 'Gyms')}</h2>${gymCollectionHtml(p.gyms)}</section>` : '';
   return `<article class="page place-page">${breadcrumbHtml(p.crumbs || [])}`
     + `<header class="place-header"><h1 class="page-title">${escapeHtml(p.title)}</h1><p class="place-meta tnum">${escapeHtml(p.meta)}</p></header>`

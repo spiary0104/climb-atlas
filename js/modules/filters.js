@@ -7,7 +7,7 @@ import { COUNTRY_LABELS } from './constants.js';
 import { ALL_TYPES, fold, inBounds } from './geo.js';
 import { appliedPillHtml } from './list-html.js';
 import { stateLabel } from './map.js';
-import { findPlace } from './search-index.js';
+import { findPlace, inPlace } from './search-index.js';
 import { safeUrl } from './html-safe.js';
 import { appState } from './state.js';
 
@@ -20,14 +20,6 @@ export const currentFilters = () => ({
   photos: appState.showPhotosOnly, place: appState.placeFilter, text: appState.searchTerm,
 });
 const defaultFilters = () => ({ types: new Set(ALL_TYPES), saved: false, climbed: false, photos: false, place: null, text: '' });
-
-function inPlace(g, place){
-  if(!place) return true;
-  if(g.country !== place.country) return false;
-  if(place.kind === 'country') return true;
-  if(g.state !== place.state) return false;
-  return place.kind === 'region' || (g.suburb || '').trim() === place.label;
-}
 
 export function matches(g, f){
   if(!(g.types || []).some(t => f.types.has(t))) return false;
@@ -53,6 +45,14 @@ export const filtersActive = () => {
   return f.types.size < ALL_TYPES.length || f.saved || f.climbed || f.photos || !!f.place || !!f.text;
 };
 
+// Share of gyms with a usable photo link, recomputed only when the spots array changes.
+export const PHOTO_FILTER_MIN = 0.05;
+let shareOf = null, share = 0;
+function photoShare(){
+  if(shareOf !== appState.spots){ shareOf = appState.spots; share = shareOf.length ? shareOf.filter(g => safeUrl(g.photo)).length / shareOf.length : 0; }
+  return share;
+}
+
 // ----- chip row -----------------------------------------------------------------------------------------------------
 export function renderFilterBar(){
   const narrowed = appState.activeTypes.size < ALL_TYPES.length;
@@ -61,6 +61,9 @@ export function renderFilterBar(){
   });
   const flags = { saved: appState.showBookmarkedOnly, climbed: appState.showClimbedOnly, photos: appState.showPhotosOnly };
   document.querySelectorAll('#filterBar [data-filter-flag]').forEach(c => c.setAttribute('aria-pressed', String(!!flags[c.dataset.filterFlag])));
+  // "Has photos" only once at least 5% of gyms have one (it emptied the map everywhere); kept while the filter is on.
+  const photosHidden = !appState.showPhotosOnly && photoShare() < PHOTO_FILTER_MIN;
+  document.querySelectorAll('[data-filter-flag="photos"], #filterSheetPhotos').forEach(el => { el.hidden = photosHidden; });
   const pills = [];
   if(appState.placeFilter) pills.push(appliedPillHtml('place', appState.placeFilter.label));
   if(appState.searchTerm) pills.push(appliedPillHtml('text', appState.searchTerm));

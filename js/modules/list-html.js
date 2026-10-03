@@ -76,7 +76,8 @@ export function peekHtml(g, ctx = {}){
   const photo = safeUrl(g.photo);
   const id = escapeHtml(g.id);
   const where = [g.suburb, ctx.region, ctx.country && ctx.country !== ctx.region ? ctx.country : ''].filter(Boolean).join(', ');
-  const notes = publicNotes(g.notes);
+  // The public description (in the list read); legacy research notes only when the whole row has been loaded.
+  const notes = (typeof g.description === 'string' && g.description.trim()) || publicNotes(g.notes);
   return `<div class="peek-head"><h2 class="peek-name" id="peekTitle">${escapeHtml(g.name)}</h2>`
     + `<button type="button" class="btn btn-tertiary btn-icon btn-sm peek-close" data-gym-action="close" aria-label="Close">${icon('x', {size:'sm'})}</button></div>`
     + `${photo ? `<img class="gym-photo peek-photo" src="${escapeHtml(photo)}" alt="${escapeHtml(g.name)}" loading="lazy" referrerpolicy="no-referrer">` : ''}`
@@ -92,6 +93,14 @@ export function peekHtml(g, ctx = {}){
     + `<div class="peek-more">${ctx.href ? `<a class="btn btn-tertiary btn-sm" href="${escapeHtml(ctx.href)}" data-link>${icon('caret-right', {size:'sm'})}Open gym page</a>` : ''}`
     + `<button type="button" class="btn btn-tertiary btn-sm" data-gym-action="edit" data-spot-id="${id}">${icon('pencil-simple', {size:'sm'})}Suggest an edit</button>`
     + `<button type="button" class="btn btn-tertiary btn-sm" data-gym-action="report" data-spot-id="${id}">${icon('flag', {size:'sm'})}Report a problem</button></div>`;
+}
+
+// The one-line orientation shown to a first-time visitor (list.js renderIntro), before the data loads: fixed wording, no
+// character here.
+export function introHtml(){
+  return `<p class="explore-intro-text"><strong>Bouldeer</strong> maps thousands of climbing gyms in 80+ countries, `
+    + `researched gym by gym and kept current by climbers. <a class="link" href="/about.html">About</a></p>`
+    + `<button type="button" class="btn btn-tertiary btn-icon btn-sm" data-intro-close aria-label="Dismiss">${icon('x', {size:'sm'})}</button>`;
 }
 
 // The three list empty states (sec. 7.10). No character in any of them (it is reserved for the first-run empties).

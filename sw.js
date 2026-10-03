@@ -21,7 +21,15 @@
 // v19: field-notes / fresh-stamp poses and the Explore first run (brand.js, passport.js, list.js, explore.js).
 // v20: page header art on Regions and signed-out Log/Me (assets/art, page-html.js pageArtHtml).
 // v21: START reads "Check in"; boulder-tag and map-attribution contrast (tokens.css, style.css).
-const CACHE_VERSION = 'v21';
+// v22: gym information (website, hours, day pass, facilities, description; gym-info.js).
+// v23: nearest-first sort, first-visit orientation, Nearby rows, START for signed-out visitors, photos chip rule.
+// v24: Explore loads only its columns, pages in parallel; full gym rows on demand.
+// v25: city metros (metros.js; search, filters, region/city pages, gym breadcrumb).
+// v26: gym and place page titles from seo-meta.js (router title pattern shared with the crawler metadata).
+// v27: cross-region metros on neighbouring region pages and in gym breadcrumbs.
+// v28: orientation line rendered at start-up.
+// v29: metroOf memo; fewer gym-page re-renders.
+const CACHE_VERSION = 'v30';
 const SHELL_CACHE = 'climbatlas-shell-' + CACHE_VERSION;
 const RUNTIME_CACHE = 'climbatlas-runtime-' + CACHE_VERSION;
 const TILE_CACHE = 'climbatlas-tiles-' + CACHE_VERSION;
@@ -53,6 +61,7 @@ const SHELL_FILES = [
   'icons/icon.svg',
   'js/supabase-init.js',
   'js/auth.js',
+  'js/spots-prefetch.js',
   'js/main.js',
   'js/sw-register.js',
   'js/modules/state.js',
@@ -66,6 +75,7 @@ const SHELL_FILES = [
   'js/modules/pin-html.js',
   'js/modules/geo.js',
   'js/modules/search-index.js',
+  'js/modules/metros.js',
   'js/modules/moderation-html.js',
   'js/modules/map.js',
   'js/modules/explore.js',
@@ -76,6 +86,7 @@ const SHELL_FILES = [
   'js/modules/marks.js',
   'js/modules/router.js',
   'js/modules/slug.js',
+  'js/modules/seo-meta.js',
   'js/modules/page-html.js',
   'js/modules/gym-page.js',
   'js/modules/mini-map.js',
@@ -83,6 +94,7 @@ const SHELL_FILES = [
   'js/modules/log-page.js',
   'js/modules/me-page.js',
   'js/modules/provenance.js',
+  'js/modules/gym-info.js',
   'js/modules/community.js',
   'js/modules/mod-page.js',
   'js/modules/add-html.js',

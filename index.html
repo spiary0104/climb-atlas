@@ -26,6 +26,7 @@
 <link rel="preconnect" href="https://unpkg.com">
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="preconnect" href="https://basemaps.cartocdn.com">
+<link rel="preconnect" href="https://thayxaampaelvntoaido.supabase.co" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,500..600,50..100&family=Inter:wght@400;500;600&display=swap" crossorigin="anonymous">
 <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.css" integrity="sha384-uTttxo/aOKbdE5RlD/SPzSDoDmNvGlUYPjONi2MN/b7c9HPSvW07OIuyP7uL6jxK" crossorigin="anonymous">
 <link rel="stylesheet" href="css/tokens.css">
@@ -103,6 +104,7 @@
           </div>
           <div class="carousel" id="carousel" role="group" aria-label="Gyms at this spot" hidden></div>
         </div>
+        <div class="explore-intro" id="exploreIntro" hidden></div>
         <div class="empty-state explore-first-run" id="exploreFirstRun" hidden></div>
         <div class="featured-destinations" id="featuredDestinations" hidden>
           <div class="section-label">Worth traveling for</div>
@@ -319,10 +321,7 @@
         </label>
       </div>
     </div>
-    <div class="field">
-      <label for="eNotes">Notes (optional)</label>
-      <textarea id="eNotes" maxlength="2000"></textarea>
-    </div>
+    <div id="eInfoFields"></div>
     <div class="field">
       <label for="ePhoto">Photo link (optional)</label>
       <input id="ePhoto" type="text" maxlength="1000" placeholder="Link to a photo — their site, Instagram, Google Maps">
@@ -359,7 +358,7 @@
 <div class="modal-backdrop hidden" id="authModalBackdrop">
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="dlg-sign-in">
     <h2 id="dlg-sign-in">Sign in</h2>
-    <div class="sub">Sign in to mark spots as climbed, bookmark ones you want to try, and suggest edits or report problems.</div>
+    <div class="sub">Sign in to save gyms, mark the ones you’ve climbed, check in for passport stamps, keep a log of your sessions and suggest edits.</div>
     <button class="btn btn-secondary btn-block u-mb-4" id="googleSignInBtn">Continue with Google</button>
     <div class="auth-divider"><span>or</span></div>
     <div class="field">
@@ -392,7 +391,9 @@
 <div class="modal-backdrop hidden" id="startModalBackdrop">
   <div class="modal start-modal" role="dialog" aria-modal="true" aria-labelledby="dlg-start">
     <h2 id="dlg-start">Start</h2>
-    <div class="start-actions">
+    <p class="sub" id="startSignedOut" hidden>Check in at a gym to collect a stamp in your passport, and keep a log of your sessions. Both need an account.</p>
+    <div class="start-actions" id="startSignedOutActions" hidden><button type="button" class="btn btn-secondary btn-block" data-start-action="signin">Sign in to start</button></div>
+    <div class="start-actions" id="startSignedInActions">
       <button type="button" class="btn btn-secondary btn-block" data-start-action="checkin"><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-map-pin"/></svg><span id="startCheckinLabel">Check in here</span></button>
       <button type="button" class="btn btn-primary btn-block" data-start-action="log"><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-plus"/></svg>Log a session</button>
     </div>
@@ -464,7 +465,7 @@
       <label class="check-row"><input type="checkbox" data-sheet-flag="climbed">Climbed</label>
       <p class="form-hint" id="filterSheetMarksHint">Sign in to filter by the gyms you saved or climbed.</p>
     </fieldset>
-    <fieldset class="filter-section">
+    <fieldset class="filter-section" id="filterSheetPhotos">
       <legend class="section-label">Photos</legend>
       <label class="check-row"><input type="checkbox" data-sheet-flag="photos">Has photos</label>
     </fieldset>
@@ -475,11 +476,12 @@
   </div>
 </div>
 
-<script src="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.js" integrity="sha384-5+cfbwT0iiub6VsQAdn6yz16nr6sDiQoHx6tm4O8OVYXHYOxcffFmCJBL0dgdvGp" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/supercluster@8.0.1/dist/supercluster.min.js" integrity="sha384-HkQmq7PC2BUVUkCsRUnOyzpliMb5M4pVPnjEiyI92tdS8buRHN6ZnehP1n1Acj84" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.2/dist/umd/supabase.min.js" integrity="sha384-WgXwGL6fUsYJWNaKJgVbrJKGRQwc1vieh2oy4kw9nXqpNDz3tdSsqEYUgeHD/NuF" crossorigin="anonymous"></script>
 <script src="js/supabase-init.js"></script>
 <script src="js/auth.js"></script>
+<script src="js/spots-prefetch.js"></script>
+<script src="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.js" integrity="sha384-5+cfbwT0iiub6VsQAdn6yz16nr6sDiQoHx6tm4O8OVYXHYOxcffFmCJBL0dgdvGp" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/supercluster@8.0.1/dist/supercluster.min.js" integrity="sha384-HkQmq7PC2BUVUkCsRUnOyzpliMb5M4pVPnjEiyI92tdS8buRHN6ZnehP1n1Acj84" crossorigin="anonymous"></script>
 <!-- data/gyms.json (the bundled seed dataset) is fetched on demand by js/modules/data-load.js
      (ensureSeedData) -- only when Supabase is unreachable or an edited seed
      spot's original values are needed. -->

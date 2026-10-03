@@ -6,10 +6,12 @@ import { COUNTRY_LABELS, COUNTRY_TO_REGION, REGION_LABELS } from './constants.js
 import { encodeExploreState, fitCamera } from './geo.js';
 import { stateLabel } from './map.js';
 import { destroyMiniMaps, mountMiniMaps } from './mini-map.js';
-import { notFoundHtml, pageSkeletonHtml, placePageHtml, regionSearchResultsHtml, regionsIndexHtml } from './page-html.js';
+import { metroByPath, metroKey, metroOf, metrosForRegion } from './metros.js';
+import { notFoundHtml, pageSkeletonHtml, placePageHtml, regionMeta, regionSearchResultsHtml, regionsIndexHtml } from './page-html.js';
 import { registerView, setPageTitle } from './router.js';
 import { buildSearchIndex, placeKey, querySearchIndex } from './search-index.js';
-import { citySegment, cityPath, countryPath, gymPath, regionPath, regionSegment } from './slug.js';
+import { placeSeo } from './seo-meta.js';
+import { citySegment, cityPath, countryPath, gymPath, metroPath, regionPath, regionSegment } from './slug.js';
 import { appState } from './state.js';
 
 const MAP_W = 360, MAP_H = 270;
@@ -85,7 +87,7 @@ function countryView({ country }, view){
     // Small countries list their gyms right here; big ones go through their regions.
     gymsTitle: 'Gyms', gyms: gyms.length <= 60 ? gymItems(gyms) : [],
     map: mapFor(gyms, placeKey(cc), name),
-  }), gyms, name);
+  }), gyms, placeSeo({ kind: 'country', name, count: gyms.length }).title);
 }
 
 function regionGyms(country, region){
@@ -99,20 +101,45 @@ function regionView({ country, region }, view){
   const gyms = regionGyms(country, region);
   if(!gyms.length || !COUNTRY_LABELS[cc]) return notFound(view);
   const state = gyms[0].state, name = stateLabel(cc, state);
-  const cities = groupTiles(gyms, g => citySegment(g.suburb), g => (g.suburb || '').trim(), g => cityPath(cc, state, g.suburb));
+  // Cities are the curated metros of this region (metros.js): those whose core is here, counted over every gym in them, and
+  // cross-region ones with 2+ gyms here, counted by those gyms. The suburbs of gyms in no metro follow as areas. The meta
+  // line counts each kind by what it is, never suburbs as cities.
+  const metros = metrosForRegion(appState.spots, cc, state)
+    .map(x => ({ label: x.metro.name, href: metroPath(x.metro), count: x.core ? x.total : x.here })).sort((a, b) => b.count - a.count || byName(a, b));
+  const loose = gyms.filter(g => !metroOf(g));
+  const areas = groupTiles(loose.filter(g => (g.suburb || '').trim()), g => citySegment(g.suburb), g => g.suburb.trim(), g => cityPath(cc, state, g.suburb));
   render(view, placePageHtml({
     crumbs: [{ label: 'Regions', href: '/in' }, { label: COUNTRY_LABELS[cc], href: countryPath(cc) }, { label: name, current: true }],
     title: name,
-    meta: plural(gyms.length, 'gym', 'gyms') + ' · ' + plural(cities.length, 'city', 'cities'),
-    tilesTitle: 'Cities', tiles: cities.length > 1 && cities.length < gyms.length ? cities : [],   // only when a city has more than one gym
+    meta: regionMeta({ gyms: gyms.length, cities: metros.length, areas: areas.length }),
+    tileSections: [{ title: 'Cities', tiles: metros },
+      { title: metros.length ? 'Other areas' : 'Areas', tiles: areas.length > 1 && areas.length < loose.length ? areas : [] }],   // area tiles only when one holds more than one gym
     gymsTitle: 'Gyms', gyms: gymItems(gyms),
     map: mapFor(gyms, placeKey(cc, state), name),
-  }), gyms, name + ', ' + COUNTRY_LABELS[cc]);
+  }), gyms, placeSeo({ kind: 'region', name, within: COUNTRY_LABELS[cc], count: gyms.length }).title);
+}
+
+// A metro page (metros.js): every gym within the metro's radius, wherever its region code points.
+function metroView(metro, view){
+  const cc = metro.country;
+  const gyms = appState.spots.filter(g => g.country === cc && metroOf(g) === metro);
+  if(!gyms.length) return false;
+  const regionName = stateLabel(cc, metro.state), country = COUNTRY_LABELS[cc];
+  render(view, placePageHtml({
+    crumbs: [{ label: 'Regions', href: '/in' }, { label: country, href: countryPath(cc) }, { label: regionName, href: regionPath(cc, metro.state) }, { label: metro.name, current: true }],
+    title: metro.name,
+    meta: plural(gyms.length, 'gym', 'gyms') + ' · ' + regionName,
+    gymsTitle: 'Gyms', gyms: gymItems(gyms),
+    map: mapFor(gyms, metroKey(metro), metro.name),
+  }), gyms, placeSeo({ kind: 'city', name: metro.name, within: regionName + ', ' + country, count: gyms.length }).title);
+  return true;
 }
 
 function cityView({ country, region, city }, view){
   if(pending(view)) return;
   const cc = country.toUpperCase();
+  const metro = metroByPath(country, encodeURIComponent(region), city);      // a metro slug wins; anything else is a suburb
+  if(metro && COUNTRY_LABELS[cc] && metroView(metro, view)) return;
   const gyms = regionGyms(country, region).filter(g => citySegment(g.suburb) === encodeURIComponent(city) || citySegment(g.suburb) === city);
   if(!gyms.length || !COUNTRY_LABELS[cc]) return notFound(view);
   const state = gyms[0].state, name = gyms[0].suburb.trim(), regionName = stateLabel(cc, state);
@@ -122,7 +149,7 @@ function cityView({ country, region, city }, view){
     meta: plural(gyms.length, 'gym', 'gyms') + ' · ' + regionName,
     gymsTitle: 'Gyms', gyms: gymItems(gyms),
     map: mapFor(gyms, placeKey(cc, state, name), name),
-  }), gyms, name + ', ' + regionName);
+  }), gyms, placeSeo({ kind: 'city', name, within: regionName + ', ' + COUNTRY_LABELS[cc], count: gyms.length }).title);
 }
 
 // /in search: the app's search index (search-index.js, the one Explore uses): countries, regions, cities, then gyms, each
@@ -135,7 +162,7 @@ function regionSearchItems(text){
   return [
     ...r.country.filter(known).map(e => ({ kind: 'country', label: e.label, secondary: '', href: countryPath(e.country), count: e.count })),
     ...r.region.filter(known).map(e => ({ kind: 'region', label: e.label, secondary: e.secondary, href: regionPath(e.country, e.state), count: e.count })),
-    ...r.city.filter(known).map(e => ({ kind: 'city', label: e.label, secondary: e.secondary, href: cityPath(e.country, e.state, e.label), count: e.count })),
+    ...r.city.filter(known).map(e => ({ kind: 'city', label: e.label, secondary: e.secondary, href: e.metro ? metroPath(e) : cityPath(e.country, e.state, e.label), count: e.count })),
     ...r.gym.map(e => byId.get(e.id)).filter(Boolean).map(g => ({ kind: 'gym', label: g.name, secondary: [g.suburb, stateLabel(g.country, g.state)].filter(Boolean).join(' · '), href: gymPath(g), count: 0 })),
   ];
 }

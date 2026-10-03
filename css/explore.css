@@ -61,6 +61,11 @@
 /* First-ever visit, no home area (sec. 7.10): the backpacker at spot size above "Worth traveling for". */
 .explore-first-run{flex:none;padding:var(--space-5) var(--space-4) var(--space-4);border-bottom:var(--border-width) solid var(--color-border-divider);}
 .explore-first-run[hidden]{display:none;}
+/* First-visit orientation line (list.js renderIntro). */
+.explore-intro{flex:none;display:flex;align-items:flex-start;gap:var(--space-2);padding:var(--space-3) var(--space-2) var(--space-3) var(--space-4);border-bottom:var(--border-width) solid var(--color-border-divider);}
+.explore-intro[hidden]{display:none;}
+.explore-intro-text{flex:1;margin:0;font-size:var(--type-text-sm-size);line-height:var(--type-text-sm-line);color:var(--color-text-secondary);}
+.explore-intro-text strong{font-weight:var(--font-weight-semibold);color:var(--color-text-primary);}
 .featured-row{display:flex;flex-wrap:wrap;gap:var(--space-2);}
 
 /* ===== Dense row (56px) ============================================================================================= */
