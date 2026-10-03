@@ -1,7 +1,7 @@
 # Regional research: Iran (Tier B, wave 2) (2026-10-01-iran)
 
 Scope: IR (whole country)
-Index: 2306 gyms, sha256 3b20e7b458c7… | staged batches compared: none | other sections compared: none
+Index: 2307 gyms, sha256 ad010bc7c3c9… | staged batches compared: none | other sections compared: none
 Review radii (stricter than the importer): any gym 150 m, related name 15 km, other country 2 km
 
 ## Summary
