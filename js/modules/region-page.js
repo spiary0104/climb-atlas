@@ -9,6 +9,7 @@ import { destroyMiniMaps, mountMiniMaps } from './mini-map.js';
 import { notFoundHtml, pageSkeletonHtml, placePageHtml, regionSearchResultsHtml, regionsIndexHtml } from './page-html.js';
 import { registerView, setPageTitle } from './router.js';
 import { buildSearchIndex, placeKey, querySearchIndex } from './search-index.js';
+import { placeSeo } from './seo-meta.js';
 import { citySegment, cityPath, countryPath, gymPath, regionPath, regionSegment } from './slug.js';
 import { appState } from './state.js';
 
@@ -85,7 +86,7 @@ function countryView({ country }, view){
     // Small countries list their gyms right here; big ones go through their regions.
     gymsTitle: 'Gyms', gyms: gyms.length <= 60 ? gymItems(gyms) : [],
     map: mapFor(gyms, placeKey(cc), name),
-  }), gyms, name);
+  }), gyms, placeSeo({ kind: 'country', name, count: gyms.length }).title);
 }
 
 function regionGyms(country, region){
@@ -107,7 +108,7 @@ function regionView({ country, region }, view){
     tilesTitle: 'Cities', tiles: cities.length > 1 && cities.length < gyms.length ? cities : [],   // only when a city has more than one gym
     gymsTitle: 'Gyms', gyms: gymItems(gyms),
     map: mapFor(gyms, placeKey(cc, state), name),
-  }), gyms, name + ', ' + COUNTRY_LABELS[cc]);
+  }), gyms, placeSeo({ kind: 'region', name, within: COUNTRY_LABELS[cc], count: gyms.length }).title);
 }
 
 function cityView({ country, region, city }, view){
@@ -122,7 +123,7 @@ function cityView({ country, region, city }, view){
     meta: plural(gyms.length, 'gym', 'gyms') + ' · ' + regionName,
     gymsTitle: 'Gyms', gyms: gymItems(gyms),
     map: mapFor(gyms, placeKey(cc, state, name), name),
-  }), gyms, name + ', ' + regionName);
+  }), gyms, placeSeo({ kind: 'city', name, within: regionName + ', ' + COUNTRY_LABELS[cc], count: gyms.length }).title);
 }
 
 // /in search: the app's search index (search-index.js, the one Explore uses): countries, regions, cities, then gyms, each
