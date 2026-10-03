@@ -160,8 +160,19 @@ for(const m of METROS){ if(!BY_COUNTRY.has(m.country)) BY_COUNTRY.set(m.country,
 export const metroKey = m => m.country + ':' + m.state + ':~' + m.slug;
 
 // The metro a gym (anything with country, lat, lng) belongs to, or null. Nearest centre wins when radii overlap.
+// Memoised per spot object (the status line, search index and region pages ask for every gym on every render), keyed
+// on the fields the answer depends on, so an edited pin is recomputed.
+const memo = new WeakMap();
 export function metroOf(g){
-  const list = g && BY_COUNTRY.get(g.country);
+  if(!g || typeof g !== 'object') return null;
+  const hit = memo.get(g);
+  if(hit && hit.lat === g.lat && hit.lng === g.lng && hit.country === g.country) return hit.m;
+  const m = findMetro(g);
+  memo.set(g, { lat: g.lat, lng: g.lng, country: g.country, m });
+  return m;
+}
+function findMetro(g){
+  const list = BY_COUNTRY.get(g.country);
   if(!list || !Number.isFinite(g.lat) || !Number.isFinite(g.lng)) return null;
   let best = null, bestKm = Infinity;
   for(const m of list){

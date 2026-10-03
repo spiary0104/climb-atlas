@@ -22,7 +22,8 @@ test('whole rows load on demand where they are shown or edited, cached per gym',
   assert.match(data, /export function loadFullSpot\(g\)/);
   assert.match(data, /\.select\('\*'\)\.eq\('id', g\.id\)\.eq\('status', 'approved'\)\.maybeSingle\(\)/, 'one approved row (public, so the service worker may cache it)');
   assert.match(data, /await loadFullSpots\(appState\.pendingEdits\.map\(e => e\.spot_id\)\);/, '/mod diffs compare whole rows');
-  assert.match(read('js/modules/gym-page.js'), /if\(!g\._full\) loadFullSpot\(g\)\.then/);
+  const gp = read('js/modules/gym-page.js');
+  assert.match(gp, /const before = visibleInfo\(g\);/); assert.match(gp, /visibleInfo\(full\) !== before/, 're-render only when the whole row adds something visible');
   assert.match(read('js/modules/modals.js'), /await loadFullSpot\(g\);/);
 });
 

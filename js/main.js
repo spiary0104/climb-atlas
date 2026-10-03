@@ -67,7 +67,10 @@ async function init(){
   await counts;
   renderAuthUI(window.auth.user);
   renderPendingBadge();
-  render();
+  // The page is already showing; render it again only when these reads can change it: signed-in marks/history/moderator
+  // controls, or the contributor counts behind this gym's provenance mark (a re-render also rebuilds the mini map).
+  const shown = document.querySelector('#view .gym-page [data-spot-id]');
+  render({ page: !!window.auth.user || !shown || appState.contributorCounts.has(shown.dataset.spotId) });
   if(appState.usingFallback){
     document.getElementById('offlineBanner').classList.remove('hidden');
   }

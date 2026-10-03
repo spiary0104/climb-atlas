@@ -15,7 +15,7 @@ import { setVerified } from './moderation.js';
 import { openEditModal, openReportModal } from './modals.js';
 import { gymPageHtml, notFoundHtml, pageSkeletonHtml } from './page-html.js';
 import { refreshPage, registerView, setPageTitle } from './router.js';
-import { provenanceLine } from './provenance.js';
+import { provenanceLine, publicNotes } from './provenance.js';
 import { gymSeo } from './seo-meta.js';
 import { cityPath, countryPath, gymPath, metroPath, regionPath } from './slug.js';
 import { appState } from './state.js';
@@ -60,6 +60,9 @@ function historyOf(g){
   return here.length ? { count: here.length, last: here[0].session_date } : null;
 }
 
+// What the gym page shows from columns outside the Explore list read (gym-info.js, publicNotes): compared before/after.
+const visibleInfo = g => JSON.stringify([g.description || '', g.website || '', g.hours || null, g.day_pass || '', g.facilities || [], publicNotes(g.notes)]);
+
 function enter({ slug }, view){
   destroyMiniMaps();
   if(!appState.loaded){ view.innerHTML = pageSkeletonHtml(); setPageTitle('Loading'); return; }
@@ -68,7 +71,12 @@ function enter({ slug }, view){
   // An id or an outdated URL resolves to the canonical slug without adding a history entry.
   if(g.slug && slug !== g.slug) history.replaceState(null, '', gymPath(g));
   // The list read carries only Explore's columns: fetch the whole row once, then re-render if this page is still showing.
-  if(!g._full) loadFullSpot(g).then(full => { if(full._full && document.querySelector(`#view .gym-page [data-spot-id="${CSS.escape(g.id)}"]`)) refreshPage(); });
+  // Re-render only when the whole row adds something the page shows (a re-render also rebuilds the mini map, measurable on
+  // phones); for most gyms the list columns already hold everything visible.
+  if(!g._full){
+    const before = visibleInfo(g);
+    loadFullSpot(g).then(full => { if(full._full && visibleInfo(full) !== before && document.querySelector(`#view .gym-page [data-spot-id="${CSS.escape(g.id)}"]`)) refreshPage(); });
+  }
   view.innerHTML = gymPageHtml(g, {
     crumbs: placeCrumbs(g),
     region: regionOf(g),
