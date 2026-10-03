@@ -57,12 +57,14 @@ async function init(){
     if(user) closeAuthModal();
   });
   await loadSpots();
-  await loadContributorCounts();
   appState.loaded = true;
   applyLanding();
+  render();                                    // map and list as soon as the gyms are in; provenance marks follow
+  const counts = loadContributorCounts();      // in parallel with the signed-in reads below
   await loadMarks();
   await checkModerator();
   await loadPending();
+  await counts;
   renderAuthUI(window.auth.user);
   renderPendingBadge();
   render();

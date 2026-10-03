@@ -1,0 +1,36 @@
+'use strict';
+// Cold-load performance (final-stage audit): Explore reads only its columns, pages in parallel and renders before the
+// contributor counts; whole rows are fetched per gym where they are needed.
+const test = require('node:test');
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
+const read = f => fs.readFileSync(path.join(__dirname, '..', f), 'utf8');
+
+test('Explore reads only its columns: no research notes, no gym-information fields in the cold load', () => {
+  const src = read('js/modules/data-load.js');
+  const cols = /export const LIST_COLUMNS = '([^']+)';/.exec(src)[1].split(',');
+  for (const c of ['id', 'name', 'suburb', 'state', 'country', 'lat', 'lng', 'types', 'address', 'photo', 'slug', 'community', 'edited', 'verified_at', 'created_at', 'submitted_by'])
+    assert.ok(cols.includes(c), 'needed by Explore: ' + c);
+  for (const c of ['notes', 'hours', 'website', 'day_pass', 'facilities', 'rejection_reason']) assert.ok(!cols.includes(c), 'not in the cold load: ' + c);
+  assert.ok(!/from\('spots'\)\.select\('\*'\)\.eq\('status','approved'\)/.test(src), 'the bulk read is not select(*)');
+  assert.match(src, /select\(LIST_COLUMNS, opts\)/); assert.match(src, /page\(0, \{ count: 'exact' \}\)/); assert.match(src, /await Promise\.all\(rest\)/);
+});
+
+test('whole rows load on demand where they are shown or edited, cached per gym', () => {
+  const data = read('js/modules/data-load.js');
+  assert.match(data, /export function loadFullSpot\(g\)/);
+  assert.match(data, /\.select\('\*'\)\.eq\('id', g\.id\)\.eq\('status', 'approved'\)\.maybeSingle\(\)/, 'one approved row (public, so the service worker may cache it)');
+  assert.match(data, /await loadFullSpots\(appState\.pendingEdits\.map\(e => e\.spot_id\)\);/, '/mod diffs compare whole rows');
+  assert.match(read('js/modules/gym-page.js'), /if\(!g\._full\) loadFullSpot\(g\)\.then/);
+  assert.match(read('js/modules/modals.js'), /await loadFullSpot\(g\);/);
+});
+
+test('boot renders the map and list before the contributor counts and the signed-in reads', () => {
+  const main = read('js/main.js');
+  const i = main.indexOf('await loadSpots();');
+  const tail = main.slice(i);
+  assert.ok(tail.indexOf('render();') < tail.indexOf('loadContributorCounts()'), 'first render precedes the counts');
+  assert.ok(!/await loadContributorCounts\(\);\s*appState\.loaded = true;/.test(main));
+  assert.match(read('index.html'), /<link rel="preconnect" href="https:\/\/thayxaampaelvntoaido\.supabase\.co" crossorigin>/);
+});

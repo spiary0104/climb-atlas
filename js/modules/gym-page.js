@@ -2,6 +2,7 @@
 // Essentials (address + static map); Your history here; About; Nearby; Community. Sections without data do not render.
 // Markup is built by page-html.js (pure); this module finds the gym, gathers the per-user context and handles actions.
 import { COUNTRY_LABELS } from './constants.js';
+import { loadFullSpot } from './data-load.js';
 import { distanceKm, encodeExploreState, formatDistance } from './geo.js';
 import { checkedInRecently, loadCheckins, startCheckin } from './checkin.js';
 import { loadGymProvenance, loadMyEditFor } from './community.js';
@@ -59,6 +60,8 @@ function enter({ slug }, view){
   if(!g){ view.innerHTML = notFoundHtml('gym'); setPageTitle('Gym not found'); return; }
   // An id or an outdated URL resolves to the canonical slug without adding a history entry.
   if(g.slug && slug !== g.slug) history.replaceState(null, '', gymPath(g));
+  // The list read carries only Explore's columns: fetch the whole row once, then re-render if this page is still showing.
+  if(!g._full) loadFullSpot(g).then(full => { if(full._full && document.querySelector(`#view .gym-page [data-spot-id="${CSS.escape(g.id)}"]`)) refreshPage(); });
   view.innerHTML = gymPageHtml(g, {
     crumbs: placeCrumbs(g),
     region: regionOf(g),

@@ -23,7 +23,8 @@
 // v21: START reads "Check in"; boulder-tag and map-attribution contrast (tokens.css, style.css).
 // v22: gym information (website, hours, day pass, facilities, description; gym-info.js).
 // v23: nearest-first sort, first-visit orientation, Nearby rows, START for signed-out visitors, photos chip rule.
-const CACHE_VERSION = 'v23';
+// v24: Explore loads only its columns, pages in parallel; full gym rows on demand.
+const CACHE_VERSION = 'v24';
 const SHELL_CACHE = 'climbatlas-shell-' + CACHE_VERSION;
 const RUNTIME_CACHE = 'climbatlas-runtime-' + CACHE_VERSION;
 const TILE_CACHE = 'climbatlas-tiles-' + CACHE_VERSION;

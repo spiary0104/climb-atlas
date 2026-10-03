@@ -1,7 +1,7 @@
 // Modal keyboard/focus handling, edit/report spot forms. Adding a gym is the /add page.
 import { openAuthModal } from './auth-ui.js';
 import { infoFieldsHtml, readInfoFields } from './gym-info.js';
-import { ensureSeedData } from './data-load.js';
+import { ensureSeedData, loadFullSpot } from './data-load.js';
 import { map } from './map.js';
 import { STATES_BY_COUNTRY } from './regions.js';
 import { appState } from './state.js';
@@ -86,6 +86,7 @@ export async function openEditModal(id, { focus = '' } = {}){
   // Only an edited seed spot can be reverted, and only the seed file knows
   // its original values -- pull it in for that case alone.
   if(g.edited && !g.community) await ensureSeedData().catch(()=>{});
+  await loadFullSpot(g);            // the form shows (and an edit carries) the whole row, not just Explore's columns
   appState.currentEditId = id;
   appState.currentEditPin = {lat: g.lat, lng: g.lng};
   document.getElementById('eName').value = g.name;

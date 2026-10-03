@@ -14,21 +14,27 @@ export function ensureSeedData(){
   return appState.seedDataPromise;
 }
 
+// The columns Explore needs (map, list, search, filters, peek card, provenance marks, recent sort). The research notes
+// (most of the old payload) and the gym-information fields load per gym with loadFullSpot (gym page, edit dialog, /mod).
+export const LIST_COLUMNS = 'id,name,suburb,state,country,lat,lng,types,address,photo,slug,community,edited,verified_at,created_at,submitted_by,description';
+
 export async function loadSpots(){
   if(window.sb){
     try{
-      // PostgREST caps a single response at 1000 rows by default, so a
-      // bare select silently dropped everything past the first 1000 once
-      // the dataset outgrew that. Page through in 1000-row chunks until a
-      // short page comes back.
+      // PostgREST caps a response at 1000 rows by default. The first page also asks for the total, then the remaining
+      // pages load in parallel (they used to load one after another: one round trip per 1000 gyms).
       const PAGE = 1000;
-      const all = [];
-      for(let from = 0;; from += PAGE){
-        const {data, error} = await window.sb.from('spots').select('*').eq('status','approved')
-          .order('id').range(from, from + PAGE - 1);
+      const page = (from, opts) => window.sb.from('spots').select(LIST_COLUMNS, opts).eq('status','approved')
+        .order('id').range(from, from + PAGE - 1);
+      const first = await page(0, { count: 'exact' });
+      if(first.error) throw first.error;
+      const all = [...(first.data || [])];
+      const total = Number.isFinite(first.count) ? first.count : all.length;
+      const rest = [];
+      for(let from = PAGE; from < total; from += PAGE) rest.push(page(from));
+      for(const { data, error } of await Promise.all(rest)){
         if(error) throw error;
         all.push(...(data || []));
-        if(!data || data.length < PAGE) break;
       }
       appState.spots = all;
       appState.usingFallback = false;
@@ -38,7 +44,32 @@ export async function loadSpots(){
     }
   }
   appState.usingFallback = true;
-  appState.spots = (await ensureSeedData().catch(err=>{ console.error(err); return []; })).slice();
+  appState.spots = (await ensureSeedData().catch(err=>{ console.error(err); return []; })).map(g => ({ ...g, _full: true }));
+}
+
+// The whole row of one approved gym (research notes, gym information), merged into the shared spot object so every view
+// sees it. Fetched once per gym per session; the read carries status=eq.approved, so the service worker may cache it
+// (public data, like the list) and a gym page opened offline keeps its details.
+const fullLoads = new Map();
+export function loadFullSpot(g){
+  if(!g || g._full || !window.sb) return Promise.resolve(g);
+  if(!fullLoads.has(g.id)){
+    fullLoads.set(g.id, window.sb.from('spots').select('*').eq('id', g.id).eq('status', 'approved').maybeSingle()
+      .then(({ data, error }) => { if(error) throw error; if(data) Object.assign(g, data); g._full = true; return g; })
+      .catch(err => { fullLoads.delete(g.id); console.error('Failed to load gym details', err); return g; }));
+  }
+  return fullLoads.get(g.id);
+}
+// Several at once (moderation: the live rows behind pending edits, so the diff compares whole rows).
+export async function loadFullSpots(ids){
+  const want = [...new Set(ids)].map(id => appState.spots.find(s => s.id === id)).filter(g => g && !g._full);
+  if(!want.length || !window.sb) return;
+  try{
+    const { data, error } = await window.sb.from('spots').select('*').in('id', want.map(g => g.id)).eq('status', 'approved');
+    if(error) throw error;
+    const byId = new Map((data || []).map(r => [r.id, r]));
+    for(const g of want){ const r = byId.get(g.id); if(r){ Object.assign(g, r); g._full = true; } }
+  }catch(err){ console.error('Failed to load gym details', err); }
 }
 
 export async function checkModerator(){
@@ -71,6 +102,7 @@ export async function loadPending(){
     appState.pendingSpots = pSpots || [];
     appState.pendingEdits = pEdits || [];
     appState.pendingReports = pReports || [];
+    await loadFullSpots(appState.pendingEdits.map(e => e.spot_id));   // the diff's "Now" column needs whole rows
   }catch(err){
     console.error('Failed to load pending items', err);
   }

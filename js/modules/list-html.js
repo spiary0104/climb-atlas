@@ -76,7 +76,8 @@ export function peekHtml(g, ctx = {}){
   const photo = safeUrl(g.photo);
   const id = escapeHtml(g.id);
   const where = [g.suburb, ctx.region, ctx.country && ctx.country !== ctx.region ? ctx.country : ''].filter(Boolean).join(', ');
-  const notes = publicNotes(g.notes);
+  // The public description (in the list read); legacy research notes only when the whole row has been loaded.
+  const notes = (typeof g.description === 'string' && g.description.trim()) || publicNotes(g.notes);
   return `<div class="peek-head"><h2 class="peek-name" id="peekTitle">${escapeHtml(g.name)}</h2>`
     + `<button type="button" class="btn btn-tertiary btn-icon btn-sm peek-close" data-gym-action="close" aria-label="Close">${icon('x', {size:'sm'})}</button></div>`
     + `${photo ? `<img class="gym-photo peek-photo" src="${escapeHtml(photo)}" alt="${escapeHtml(g.name)}" loading="lazy" referrerpolicy="no-referrer">` : ''}`
