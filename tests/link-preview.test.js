@@ -32,6 +32,7 @@ test('gym: own title, description, canonical, og:url and (https photo) og:image,
     assert.match(tag(html, /<meta name="description" content="([^"]*)">/), /is a bouldering gym in Newtown, NSW, Australia\. Address: 1 Chalk St\./);
     assert.ok(!/<Barn>/.test(html), 'the name never reaches the markup unescaped');
     assert.equal((html.match(/<title>/g) || []).length, 1, 'tags are replaced, not duplicated');
+    assert.match(html, /<meta property="og:type" content="website">/);
   } finally { globalThis.fetch = realFetch; }
 });
 

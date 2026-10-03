@@ -74,7 +74,7 @@ async function gymMeta(a, slug){
   const region = a.places.regions[g.country + ':' + g.state] || g.state || '';
   const country = a.places.countries[g.country] || g.country || '';
   const { title, description } = a.meta.gymSeo(g, { region, country });
-  return { title: a.meta.fullTitle(title), description, url: `${ORIGIN}/gym/${g.slug}`, image: httpsUrl(g.photo), imageAlt: g.name, type: 'place' };
+  return { title: a.meta.fullTitle(title), description, url: `${ORIGIN}/gym/${g.slug}`, image: httpsUrl(g.photo), imageAlt: g.name };
 }
 
 function placeMeta(a, pathname){
@@ -84,7 +84,8 @@ function placeMeta(a, pathname){
 
 function html(body, status = 200){
   return new Response(body, { status, headers: { 'Content-Type': 'text/html; charset=utf-8',
-    'Cache-Control': 'public, max-age=0, s-maxage=3600, stale-while-revalidate=86400', 'X-Robots-Tag': 'all' } });
+    // No X-Robots-Tag here: Vercel's own (noindex on preview deployments, none in production) must apply unchanged.
+    'Cache-Control': 'public, max-age=0, s-maxage=3600, stale-while-revalidate=86400' } });
 }
 
 export async function GET(request){
