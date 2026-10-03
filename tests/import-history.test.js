@@ -157,3 +157,19 @@ test('history: an insert that was later retired unwinds (newest first): the reti
   const live = H.revertLiveRows(PROD.map(x => ({ id: x.id, name: x.name })), root);
   assert.equal(live.rows.length, PROD.length); assert.equal(live.restored, 1); assert.equal(live.removed, 1);
 });
+
+test('history: a gym-information fill (website/hours) leaves the index and the compared live fields alone when looking back', () => {
+  const root = tmp();
+  const A = indexOf(PROD);
+  S.write(PROD, path.join(root, 'import', 'index'), { source: 'test' });
+  writeBatch(root, H.BASELINE_BATCH, { manifest: { status: 'imported', ids: ['g-0000000000'], finished_at: '2026-09-24T00:00:00.000Z' } });
+  writeBatch(root, '2026-10-05-gym-info', { manifest: { kind: 'update', status: 'updated', ids: ['seed-100'], finished_at: '2026-10-05T00:00:00.000Z' },
+    plan: { index: { sha256: A.sha256, count: A.entries.length }, records: [{ class: 'update', id: 'seed-100', expect_h: contentHash(PROD[0]), changes: [{ field: 'website', before: null, after: 'https://example.com/' }, { field: 'hours', before: null, after: { mon: '9-5' } }] }] } });
+  const index = S.load(path.join(root, 'import', 'index'));
+  const r = H.revertIndex(index, root);
+  assert.equal(r.sha256, A.sha256, 'undoing a fill gives the index it was planned against (the index never carried these fields)');
+  assert.deepEqual(r.revertedUpdates, ['seed-100']);
+  const rows = PROD.map(p => ({ ...p, website: p.id === 'seed-100' ? 'https://example.com/' : null }));
+  const live = H.revertLiveRows(rows, root);
+  assert.equal(live.reverted, 0, 'nothing to revert in the compared fields'); assert.deepEqual(live.rows.map(x => x.lat), rows.map(x => x.lat));
+});

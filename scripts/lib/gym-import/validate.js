@@ -14,7 +14,13 @@ const LIMITS = { name: 200, suburb: 200, state: 100, address: 400, notes: 4000 }
 // Fields a batch record may carry. Everything else (status, community=true, edited, submitted_by, created_at, ...) is
 // decided by the importer, never by research data, so it is rejected instead of silently ignored.
 const RECORD_KEYS = new Set(['id', 'intent', 'name', 'suburb', 'state', 'country', 'lat', 'lng', 'types', 'address', 'notes', 'photo', 'community', 'source']);
-const UPDATABLE = ['name', 'suburb', 'state', 'lat', 'lng', 'types', 'address', 'notes', 'photo'];
+const UPDATABLE = ['name', 'suburb', 'state', 'lat', 'lng', 'types', 'address', 'notes', 'photo', 'website', 'hours'];
+// Gym-information fields (migration 20261004000100). An "info update" only FILLS them on a gym that has none (updater.js enforces
+// fill-only against production); it never carries any other field, so a record never mixes them with the location fields.
+const INFO_FIELDS = Object.freeze(['website', 'hours']);
+const HOUR_DAYS = Object.freeze(['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']);
+const INFO_LIMITS = Object.freeze({ website: 300, hour: 40 });   // = spots_website_check / spots_hours_check and js/modules/gym-info.js LIMITS
+const isInfoSet = set => !!set && typeof set === 'object' && !Array.isArray(set) && Object.keys(set).some(k => INFO_FIELDS.includes(k));
 const UPDATE_KEYS = new Set(['id', 'intent', 'set', 'reason', 'source', 'expect_h']);
 // expect_h: the gym's content hash (index-store h) when the update was researched; the plan and the updater refuse the update
 // if the gym no longer has exactly that content.
@@ -77,6 +83,27 @@ function checkField(field, v, full, d, out) {
       if (!isStr(v) || !d.safeUrl(v)) err('unsafe-photo', 'photo must be a plain http(s) URL (javascript:, data:, relative and credentialed URLs are rejected)');
       break;
     }
+    case 'website': {
+      if (!isStr(v)) return err('bad-website', 'website must be text (an http(s) URL)');
+      if (v.length > INFO_LIMITS.website) err('too-long', `website is ${v.length} chars (max ${INFO_LIMITS.website})`);
+      let ok = /^https?:\/\/\S+$/.test(v);
+      if (ok) { try { ok = ['http:', 'https:'].includes(new URL(v).protocol) && !!d.safeUrl(v); } catch (e) { ok = false; } }
+      if (!ok) err('bad-website', 'website must be a plain http(s) URL without whitespace (javascript:, data:, relative and credentialed URLs are rejected)');
+      break;
+    }
+    case 'hours': {
+      if (!v || typeof v !== 'object' || Array.isArray(v)) return err('bad-hours', 'hours must be an object like {"mon":"6am-10pm"}');
+      const keys = Object.keys(v);
+      if (!keys.length) return err('bad-hours', 'hours must have at least one day');
+      const unknown = keys.filter(k => !HOUR_DAYS.includes(k));
+      if (unknown.length) err('bad-hours', `unknown day key(s) ${JSON.stringify(unknown)}; allowed: ${HOUR_DAYS.join(', ')}`);
+      for (const k of keys.filter(k => HOUR_DAYS.includes(k))) {
+        const t = v[k];
+        if (!isStr(t) || !t.length || t.length > INFO_LIMITS.hour) err('bad-hours', `hours.${k} must be text of 1-${INFO_LIMITS.hour} characters`);
+        else if (t !== t.trim() || CTRL.test(t) || /[\r\n\t]/.test(t)) err('bad-hours', `hours.${k} must be trimmed single-line text (the database value must equal the record exactly)`);
+      }
+      break;
+    }
     default: break;
   }
 }
@@ -113,12 +140,29 @@ async function validateUpdateRecord(rec) {
   if (!isStr(rec.reason) || rec.reason.trim().length < 8) errors.push({ code: 'reason-required', field: 'reason', message: 'an update needs a reason (>= 8 chars) explaining why the existing data is being changed' });
   if (!rec.set || typeof rec.set !== 'object' || Array.isArray(rec.set) || !Object.keys(rec.set).length) errors.push({ code: 'empty-update', field: 'set', message: '"set" must be an object with at least one changed field' });
   else {
+    const nonInfo = Object.keys(rec.set).filter(k => !INFO_FIELDS.includes(k));
+    if (isInfoSet(rec.set) && nonInfo.length) errors.push({ code: 'mixed-families', field: 'set', message: `an info update (${INFO_FIELDS.join('/')}) cannot also change ${nonInfo.join(', ')}; one record per gym, so put the other change in a separate batch` });
     for (const k of Object.keys(rec.set)) {
       if (!UPDATABLE.includes(k)) errors.push({ code: 'field-not-updatable', field: k, message: `"${k}" cannot be changed by an import (updatable: ${UPDATABLE.join(', ')}); country/id/status/community are not import-editable` });
       else checkField(k, rec.set[k], rec.set, d, errors);
     }
   }
   return { errors, warnings };
+}
+
+// "website example.com + hours mon,tue,sat" -- what an info update fills, for reports (a review needs the host and the days, not the data).
+function describeInfoSet(set) {
+  const host = u => { try { return new URL(u).hostname.replace(/^www\./, ''); } catch (e) { return '?'; } };
+  return [set.website !== undefined && `website ${host(set.website)}`, set.hours && typeof set.hours === 'object' && `hours ${HOUR_DAYS.filter(k => k in set.hours).join(',')}`].filter(Boolean).join(' + ');
+}
+
+// Problems (plain strings) of an info "set" ({website?, hours?}): the same field rules as the record validator, reused by the write
+// gate in target.js so a hand-built payload can never carry a value the validator would have refused.
+async function infoSetProblems(set) {
+  if (!set || typeof set !== 'object' || Array.isArray(set) || !Object.keys(set).length) return ['"set" must list website and/or hours'];
+  const d = await deps(), errs = [];
+  for (const k of Object.keys(set)) { if (INFO_FIELDS.includes(k)) checkField(k, set[k], set, d, errs); else errs.push({ message: `${k} is not a gym-information field` }); }
+  return errs.map(e => e.message);
 }
 
 // Validate a "retire existing gym" record:
@@ -140,4 +184,4 @@ async function validateRetireRecord(rec) {
   return { errors, warnings };
 }
 
-module.exports = { TYPES, UPDATABLE, RECORD_KEYS, EXPECT_H, REASON_CODES, validateNewRecord, validateUpdateRecord, validateRetireRecord, deps };
+module.exports = { TYPES, UPDATABLE, INFO_FIELDS, HOUR_DAYS, INFO_LIMITS, isInfoSet, infoSetProblems, describeInfoSet, RECORD_KEYS, EXPECT_H, REASON_CODES, validateNewRecord, validateUpdateRecord, validateRetireRecord, deps };

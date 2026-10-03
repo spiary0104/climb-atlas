@@ -1,4 +1,5 @@
-// Location-update batches (scripts/lib/gym-import/updater.js): address / lat / lng of existing approved spots only, each bound to
+// Maintenance batches (scripts/lib/gym-import/updater.js): location updates (address / lat / lng) and gym-information fills (website /
+// hours; the "gym information" section at the end of this file) of existing approved spots, and retirements, each bound to
 // the gym's researched content hash (expect_h), with the importer's gates (FULL preflight, confirmation token, production flag),
 // a final re-check, one PATCH per gym pinned to updated_at, read-back verification and a manifest.   node --test tests/
 'use strict';
@@ -24,7 +25,7 @@ const TWO = ix => [upd(ix, 'seed-100', { lat: -33.882, lng: 151.213, address: '1
 // A fake production database for the update path: approved/pending reads, and a PATCH that behaves like PostgREST with the
 // updated_at filter (0 rows when the row changed). hooks: beforeRead(q, state), beforePatch(u, state) to simulate races.
 function fakeProd({ approved, pending = [] }) {
-  const state = { approved: approved.map(r => ({ ...r })), pending: pending.map(r => ({ ...r })), patches: [], retires: [], inserts: 0, hooks: {} };
+  const state = { approved: approved.map(r => ({ ...r })), pending: pending.map(r => ({ ...r })), patches: [], infoPatches: [], retires: [], inserts: 0, hooks: {} };
   let clock = 0;
   const api = {
     async probe() { return { ok: true, status: 200 }; },
@@ -40,6 +41,16 @@ function fakeProd({ approved, pending = [] }) {
       assert.ok(gate && Array.isArray(gate.updates) && gate.payloadSha, 'only a gated update reaches the database');
       if (state.hooks.beforePatch) state.hooks.beforePatch(u, state);
       state.patches.push({ id: u.id, set: u.set, updatedAt: u.updatedAt });
+      const row = state.approved.find(r => r.id === u.id && r.status === 'approved' && r.updated_at === u.updatedAt);
+      if (!row) return { ok: true, status: 200, json: [], text: '[]' };
+      Object.assign(row, u.set, { updated_at: 'ts-w' + (++clock) });
+      return { ok: true, status: 200, json: [{ ...row }], text: '' };
+    },
+    async updateSpotInfo(u, gate) {
+      assert.ok(gate && Array.isArray(gate.updates) && gate.payloadSha, 'only a gated information fill reaches the database');
+      assert.ok(Object.keys(u.set).every(k => ['website', 'hours'].includes(k)), 'an information fill carries website/hours only');
+      if (state.hooks.beforePatch) state.hooks.beforePatch(u, state);
+      state.infoPatches.push({ id: u.id, set: u.set, updatedAt: u.updatedAt });
       const row = state.approved.find(r => r.id === u.id && r.status === 'approved' && r.updated_at === u.updatedAt);
       if (!row) return { ok: true, status: 200, json: [], text: '[]' };
       Object.assign(row, u.set, { updated_at: 'ts-w' + (++clock) });
@@ -502,4 +513,242 @@ test('stateOfRetire: "after" needs the recorded reason AND an otherwise untouche
   assert.equal(stateOfRetire({ ...row, status: 'rejected', rejection_reason: reason, name: 'Renamed' }, r).state, 'changed', 'a rejected row that was also edited is not our retirement');
   assert.equal(stateOfRetire({ ...row, name: 'Renamed' }, r).state, 'changed');
   assert.equal(stateOfRetire(undefined, r).state, 'missing');
+});
+
+// ============================================ gym information (intent "update", set: website / hours) ==============================
+// FILL-ONLY: website and hours of an approved gym that has none. They are not part of the content hash, so the updater reads the fields
+// themselves; a field that already holds a value is never overwritten. Same gates, pin and one-PATCH-per-gym rule as location updates.
+const HOURS = { mon: '6am–10pm', tue: '6am–10pm', sat: '8am–6pm' };
+const info = (index, id, set = { website: 'https://www.example.com/gym', hours: HOURS }, over = {}) => upd(index, id, set, { reason: 'website and hours from the official site (test)', source: 'https://www.example.com/gym (official site, test)', ...over });
+const INFO2 = ix => [info(ix, 'seed-100'), info(ix, 'seed-102', { website: 'https://example.org/' })];
+const infoBase = () => BASE().map(r => ({ ...r, website: null, hours: null }));   // production rows carry the columns, empty
+
+test('info dry-run: planned as plain updates (no duplicate/new classes), the report names website host and hours days, nothing is written', async () => {
+  const w = await world({ records: INFO2, approved: infoBase(), id: '2026-03-01-gym-info' });
+  assert.equal(w.plan.counts.update, 2); assert.equal(w.plan.counts['probable-duplicate'], 0); assert.equal(w.plan.counts.new, 0); assert.equal(w.plan.counts.invalid, 0);
+  assert.equal(w.plan.importable, true, w.plan.blockers.join());
+  assert.deepEqual(w.plan.records[0].changes, [{ field: 'website', before: null, after: 'https://www.example.com/gym' }, { field: 'hours', before: null, after: HOURS }]);
+  const { renderReport } = require('../scripts/lib/gym-import/report');
+  const rep = renderReport(w.plan);
+  assert.match(rep, /FILLS gym information \(only if empty in production; never overwrites\): website example\.com \+ hours mon,tue,sat/);
+  assert.match(rep, /website example\.org/);
+  const dry = await runImport({ ...w.base });
+  assert.equal(dry.exit, 0, dry.report); assert.equal(dry.kind, 'update'); assert.equal(dry.coverage, 'FULL'); assert.equal(dry.state, 'fresh');
+  assert.match(dry.token, /^[0-9a-f]{16}$/);
+  assert.match(dry.report, /Would fill gym information \(2 gyms;/);
+  assert.match(dry.report, /seed-100 {2}Boulder Barn {2}website example\.com \+ hours mon,tue,sat/);
+  assert.doesNotMatch(dry.report, /Would update \(/, 'no location section when there are no location updates');
+  assert.equal(w.fake.state.patches.length + w.fake.state.infoPatches.length, 0);
+  assert.equal(fs.existsSync(path.join(w.b.dir, 'manifest.json')), false);
+});
+
+test('info apply: gates first; then ONE PATCH per gym with exactly {website, hours}; verified; manifest keeps fills apart; re-run is a no-op', async () => {
+  const w = await world({ records: INFO2, approved: infoBase(), id: '2026-03-01-gym-info' });
+  const before = JSON.parse(JSON.stringify(w.fake.state.approved));
+  const dry = await runImport({ ...w.base });
+  const noFlag = await runImport({ ...w.base, mode: 'apply', confirm: dry.token });
+  assert.equal(noFlag.exit, 2); assert.ok(failing(noFlag).includes('gate: --i-understand-this-writes-to-production'));
+  const noTok = await runImport({ ...w.base, mode: 'apply', productionFlag: true }); assert.equal(noTok.exit, 2); assert.ok(failing(noTok).includes('gate: --confirm'));
+  assert.equal(w.fake.state.infoPatches.length, 0, 'no write before every gate passes');
+
+  const ok = await runImport({ ...w.base, mode: 'apply', confirm: dry.token, productionFlag: true });
+  assert.equal(ok.exit, 0, ok.report); assert.equal(ok.wrote, true); assert.deepEqual(ok.applied, ['seed-100', 'seed-102']);
+  assert.equal(w.fake.state.patches.length, 0, 'the location PATCH is never used for an information fill');
+  assert.equal(w.fake.state.infoPatches.length, 2, 'one PATCH per gym');
+  assert.ok(w.fake.state.infoPatches.every(p => p.updatedAt === 'ts-0'), 'every PATCH is pinned to the row version seen at the final re-check');
+  assert.deepEqual(w.fake.state.infoPatches[0].set, { website: 'https://www.example.com/gym', hours: HOURS });
+  assert.deepEqual(w.fake.state.infoPatches[1].set, { website: 'https://example.org/' });
+  const a = row(w, 'seed-100'), b0 = before.find(r => r.id === 'seed-100');
+  assert.equal(a.website, 'https://www.example.com/gym'); assert.deepEqual(a.hours, HOURS);
+  for (const f of ['name', 'suburb', 'state', 'country', 'lat', 'lng', 'address', 'types', 'notes', 'photo', 'status', 'community', 'edited']) assert.deepEqual(a[f], b0[f], 'unchanged: ' + f);
+  assert.equal(row(w, 'seed-102').hours, null, 'a website-only fill leaves hours alone');
+  for (const id of ['seed-101', 'community-0f3a7c2e-1111-4222-8333-444455556666']) assert.deepEqual(row(w, id), before.find(r => r.id === id), 'other gyms untouched');
+  const m = JSON.parse(fs.readFileSync(path.join(w.b.dir, 'manifest.json'), 'utf8'));
+  assert.equal(m.status, 'updated'); assert.equal(m.kind, 'update'); assert.deepEqual(m.ids, ['seed-100', 'seed-102']);
+  assert.equal(m.rows_updated, 0, 'fills are not counted as location updates'); assert.deepEqual(m.changes, []);
+  assert.equal(m.rows_info_filled, 2); assert.deepEqual(m.info_filled.map(c => [c.id, c.fields]), [['seed-100', ['website', 'hours']], ['seed-102', ['website']]]);
+  assert.ok(m.info_filled.every(c => c.after_h === c.expect_h), 'the content hash is unchanged by a fill');
+  assert.equal(m.verification.ok, true); assert.equal(m.approved_before, m.approved_after);
+  assert.ok(!JSON.stringify(m).includes(w.key), 'no credential in the manifest');
+  assert.equal(MF.readManifest(w.b.dir).valid, true);
+
+  const again = await runImport({ ...w.base, mode: 'apply', confirm: dry.token, productionFlag: true });
+  assert.equal(again.exit, 0, again.report); assert.equal(again.state, 'already-updated'); assert.equal(w.fake.state.infoPatches.length, 2, 'a second apply writes nothing');
+  const ver = await runImport({ ...w.base, mode: 'verify' }); assert.equal(ver.exit, 0, ver.report); assert.equal(ver.state, 'already-updated');
+  fs.unlinkSync(path.join(w.b.dir, 'manifest.json'));
+  const rec2 = await runImport({ ...w.base, mode: 'apply', confirm: 'irrelevant', productionFlag: true });
+  assert.equal(rec2.exit, 0, rec2.report); assert.equal(rec2.state, 'already-present'); assert.equal(w.fake.state.infoPatches.length, 2, 'recovery writes nothing to the database');
+});
+
+test('info fill-only: a field that already holds a value is refused, naming the gym and field -- nothing is written; hours {} counts as empty', async () => {
+  const set = (id, patch) => { const a = infoBase(); Object.assign(a.find(r => r.id === id), patch); return a; };
+  for (const [patch, field] of [[{ website: 'https://community.example/edit' }, 'website'], [{ hours: { mon: '9-5' } }, 'hours'], [{ website: 'https://www.example.com/gym' }, 'website']]) {
+    const w = await world({ records: INFO2, approved: set('seed-100', patch) });
+    const r = await runImport({ ...w.base });
+    assert.equal(r.exit, 2, r.report); assert.ok(failing(r).includes('fill-only: gym information already set in production') || failing(r).includes('production still has the researched content (expect_h)'), failing(r).join());
+    assert.equal(w.fake.state.infoPatches.length, 0);
+    const apply = await runImport({ ...w.base, mode: 'apply', confirm: '0'.repeat(16), productionFlag: true });
+    assert.equal(apply.exit, 2); assert.equal(w.fake.state.infoPatches.length, 0, 'apply writes nothing either');
+    if (patch.website === 'https://www.example.com/gym') continue;   // website already equals the record but hours is empty: half applied, refused as changed
+    assert.ok(failing(r).includes('fill-only: gym information already set in production'), failing(r).join());
+    assert.match(r.report, new RegExp(`seed-100 "Boulder Barn": ${field} already has a value`));
+  }
+  // a gym edited since the research (content hash moved) is the generic refusal
+  const edited = await world({ records: INFO2, approved: set('seed-100', { notes: 'a moderator edited this' }) });
+  const re = await runImport({ ...edited.base }); assert.equal(re.exit, 2); assert.ok(!failing(re).includes('fill-only: gym information already set in production')); assert.ok(failing(re).includes('production still has the researched content (expect_h)'), failing(re).join());
+  // an empty hours object is empty: the fill goes ahead
+  const ok = await world({ records: INFO2, approved: set('seed-100', { hours: {} }) });
+  const dry = await runImport({ ...ok.base }); assert.equal(dry.exit, 0, dry.report);
+  const done = await runImport({ ...ok.base, mode: 'apply', confirm: dry.token, productionFlag: true }); assert.equal(done.exit, 0, done.report);
+  assert.deepEqual(row(ok, 'seed-100').hours, HOURS);
+});
+
+test('info records: website and hours values are validated strictly (byte for byte what the database will hold)', async () => {
+  const long = 'https://example.com/' + 'a'.repeat(281);
+  const cases = [
+    [{ website: 'javascript:alert(1)' }, 'javascript:'], [{ website: 'ftp://example.com/' }, 'ftp'], [{ website: 'example.com' }, 'no scheme'], [{ website: 'https://example.com/a b' }, 'whitespace'],
+    [{ website: ' https://example.com/' }, 'leading space'], [{ website: 'https://example.com/\n' }, 'newline'], [{ website: long }, '> 300 chars'], [{ website: 'https://user:pw@example.com/' }, 'credentials'],
+    [{ website: 42 }, 'non-string'], [{ website: '' }, 'empty'], [{ website: null }, 'null'],
+    [{ hours: { xyz: '9-5' } }, 'unknown key'], [{ hours: { mon: 9 } }, 'non-string value'], [{ hours: { mon: ' 9-5' } }, 'untrimmed (leading)'], [{ hours: { mon: '9-5 ' } }, 'untrimmed (trailing)'],
+    [{ hours: { mon: 'x'.repeat(41) } }, '> 40 chars'], [{ hours: {} }, 'empty object'], [{ hours: { mon: '' } }, 'empty value'], [{ hours: ['9-5'] }, 'array'], [{ hours: 'Mon 9-5' }, 'string'], [{ hours: null }, 'null'],
+    [{ hours: { Mon: '9-5' } }, 'upper-case key'], [{ hours: { mon: '9\n5' } }, 'line break'],
+  ];
+  for (const [set, what] of cases) {
+    const w = await world({ records: ix => [info(ix, 'seed-100', set)], approved: infoBase() });
+    assert.equal(w.plan.counts.invalid, 1, what); assert.equal(w.plan.importable, false, what);
+    const r = await runImport({ ...w.base });
+    assert.equal(r.exit, 2, what + '\n' + r.report); assert.ok(failing(r).some(n => /records validate/.test(n)), what + ': ' + failing(r).join());
+    assert.equal(w.fake.state.infoPatches.length, 0, what);
+  }
+  const edge = [{ website: 'https://example.com/' + 'a'.repeat(280) }, { hours: { sun: 'x'.repeat(40) } }, { website: 'http://example.com' }, { hours: { mon: 'Closed', tue: '24 hours' } }];   // exactly at the limits / minimal valid
+  for (const set of edge) { const w = await world({ records: ix => [info(ix, 'seed-100', set)], approved: infoBase() }); assert.equal(w.plan.counts.update, 1, JSON.stringify(set).slice(0, 60)); assert.equal(w.plan.importable, true, w.plan.blockers.join()); }
+});
+
+test('info records: one family per record (info never mixes with location or other fields) and one record per gym; a maintenance batch may mix the families across gyms', async () => {
+  for (const [set, what] of [[{ website: 'https://example.com/', lat: -33.882, lng: 151.213 }, 'website + pin'], [{ hours: HOURS, address: '1 St' }, 'hours + address'], [{ website: 'https://example.com/', name: 'Renamed' }, 'website + name']]) {
+    const w = await world({ records: ix => [info(ix, 'seed-100', set)], approved: infoBase() });
+    assert.equal(w.plan.counts.invalid, 1, what); assert.match(JSON.stringify(w.plan), /mixed-families/, what);
+    const r = await runImport({ ...w.base }); assert.equal(r.exit, 2, what); assert.ok(failing(r).some(n => /records validate/.test(n)), what); assert.equal(w.fake.state.infoPatches.length + w.fake.state.patches.length, 0);
+  }
+  const twice = await world({ records: ix => [info(ix, 'seed-100'), upd(ix, 'seed-100', { lat: -33.882, lng: 151.213 })], approved: infoBase() });
+  const rt = await runImport({ ...twice.base }); assert.equal(rt.exit, 2); assert.ok(failing(rt).includes('one update per gym'), failing(rt).join());
+
+  const mixed = ix => [info(ix, 'seed-100'), upd(ix, 'seed-102', { lat: -33.8785, lng: 151.196 }), ret(ix, 'seed-101')];
+  const w = await world({ records: mixed, approved: infoBase(), id: '2026-03-02-maintenance' });
+  assert.equal(w.plan.counts.update, 2); assert.equal(w.plan.counts.retire, 1); assert.equal(w.plan.importable, true, w.plan.blockers.join());
+  const dry = await runImport({ ...w.base });
+  assert.equal(dry.exit, 0, dry.report); assert.match(dry.report, /Would update \(1 gyms, 2 field changes/); assert.match(dry.report, /Would fill gym information \(1 gyms/); assert.match(dry.report, /Would retire \(1 gyms/);
+  const ok = await runImport({ ...w.base, mode: 'apply', confirm: dry.token, productionFlag: true });
+  assert.equal(ok.exit, 0, ok.report); assert.deepEqual(ok.applied, ['seed-100', 'seed-102', 'seed-101']);
+  assert.equal(w.fake.state.infoPatches.length, 1); assert.equal(w.fake.state.patches.length, 1); assert.equal(w.fake.state.retires.length, 1);
+  assert.equal(row(w, 'seed-100').website, 'https://www.example.com/gym'); assert.equal(row(w, 'seed-102').lat, -33.8785); assert.equal(row(w, 'seed-101').status, 'rejected');
+  const m = JSON.parse(fs.readFileSync(path.join(w.b.dir, 'manifest.json'), 'utf8'));
+  assert.equal(m.rows_updated, 1); assert.deepEqual(m.changes.map(c => c.id), ['seed-102'], 'location changes list only the location updates');
+  assert.equal(m.rows_info_filled, 1); assert.deepEqual(m.info_filled.map(c => c.id), ['seed-100']); assert.deepEqual(m.retired, ['seed-101']);
+  assert.deepEqual(m.ids, ['seed-100', 'seed-102', 'seed-101']);
+  const again = await runImport({ ...w.base, mode: 'apply', confirm: dry.token, productionFlag: true }); assert.equal(again.exit, 0); assert.equal(again.state, 'already-updated');
+  // the location update is applied but the fill is not: a mixed state is refused, never merged
+  const half = await world({ records: mixed, approved: infoBase() });
+  Object.assign(row(half, 'seed-102'), { lat: -33.8785, lng: 151.196, updated_at: 'ts-x' });
+  const rh = await runImport({ ...half.base }); assert.equal(rh.exit, 2); assert.ok(failing(rh).includes('no partly applied batch'), failing(rh).join());
+});
+
+test('info: a gym changed between the dry-run and the apply, or just before its PATCH, is refused and nothing is written', async () => {
+  // (a) a community edit approved after the token was issued (website filled) -> the final re-check refuses
+  const w1 = await world({ records: INFO2, approved: infoBase() }); const dry1 = await runImport({ ...w1.base });
+  let reads = 0;
+  w1.fake.state.hooks.beforeRead = (q, st) => { if (q.includes('status=eq.approved') && ++reads === 2) st.approved.find(r => r.id === 'seed-102').website = 'https://community.example/'; };
+  const r1 = await runImport({ ...w1.base, mode: 'apply', confirm: dry1.token, productionFlag: true });
+  assert.equal(r1.exit, 2, r1.report); assert.ok(failing(r1).includes('final re-check before write'), failing(r1).join()); assert.equal(w1.fake.state.infoPatches.length, 0);
+  assert.equal(row(w1, 'seed-102').website, 'https://community.example/', 'the community value stays');
+
+  // (b) the FIRST target is edited just before its PATCH: 0 rows match, refused, no manifest
+  const w2 = await world({ records: INFO2, approved: infoBase() }); const dry2 = await runImport({ ...w2.base });
+  w2.fake.state.hooks.beforePatch = (u, st) => { if (u.id === 'seed-100') { const r = st.approved.find(x => x.id === 'seed-100'); r.website = 'https://community.example/'; r.updated_at = 'ts-moderator'; } };
+  const r2 = await runImport({ ...w2.base, mode: 'apply', confirm: dry2.token, productionFlag: true });
+  assert.equal(r2.exit, 2, r2.report); assert.ok(failing(r2).includes('updates')); assert.match(r2.report, /0 row\(s\) matched/);
+  assert.equal(row(w2, 'seed-100').website, 'https://community.example/', 'not overwritten'); assert.equal(w2.fake.state.infoPatches.length, 1, 'stopped at the first refusal');
+  assert.equal(fs.existsSync(path.join(w2.b.dir, 'manifest.json')), false);
+
+  // (c) the SECOND target changes just before its PATCH: one gym filled -> partial state, failure record, exit 4, no manifest; a re-run refuses the mixed state
+  const w3 = await world({ records: INFO2, approved: infoBase() }); const dry3 = await runImport({ ...w3.base });
+  w3.fake.state.hooks.beforePatch = (u, st) => { if (u.id === 'seed-102') st.approved.find(r => r.id === 'seed-102').updated_at = 'ts-moderator'; };
+  const r3 = await runImport({ ...w3.base, mode: 'apply', confirm: dry3.token, productionFlag: true });
+  assert.equal(r3.exit, 4, r3.report); assert.equal(fs.existsSync(path.join(w3.b.dir, 'manifest.json')), false);
+  assert.deepEqual(JSON.parse(fs.readFileSync(path.join(w3.b.dir, 'import-failure.json'), 'utf8')).applied_ids, ['seed-100']);
+  const again = await runImport({ ...w3.base }); assert.equal(again.exit, 2); assert.ok(failing(again).includes('no partly applied batch'), failing(again).join());
+});
+
+test('info verification: another spot whose website/hours changed during the writes is a failure record (exit 4), never a manifest', async () => {
+  const w = await world({ records: INFO2, approved: infoBase() }); const dry = await runImport({ ...w.base });
+  w.fake.state.hooks.beforePatch = (u, st) => { if (u.id === 'seed-102') st.approved.find(r => r.id === 'seed-101').website = 'https://bystander.example/'; };
+  const r = await runImport({ ...w.base, mode: 'apply', confirm: dry.token, productionFlag: true });
+  assert.equal(r.exit, 4, r.report); assert.match(r.report, /website\/hours of other spots changed: seed-101/);
+  assert.equal(fs.existsSync(path.join(w.b.dir, 'manifest.json')), false); assert.equal(fs.existsSync(path.join(w.b.dir, 'import-failure.json')), true);
+});
+
+test('stateOf for info records: before = hash ok and every field empty; after = every field equals the record (hours deep equality); anything else is changed and lists the fields already set', () => {
+  const { stateOf } = require('../scripts/lib/gym-import/updater');
+  const base = { ...infoBase().find(r => r.id === 'seed-100'), updated_at: 'ts-0' }, h = S.toEntry(base).h;
+  const rec1 = { id: 'seed-100', expect_h: h, set: { website: 'https://example.com/', hours: { mon: '9-5', tue: '9-5' } } };
+  const st = r => stateOf(r, null, rec1);
+  assert.equal(st(base).state, 'before'); assert.equal(st({ ...base, hours: {} }).state, 'before', 'hours {} is empty'); assert.equal(st({ ...base, website: undefined, hours: undefined }).state, 'before');
+  assert.equal(st({ ...base, website: 'https://example.com/', hours: { tue: '9-5', mon: '9-5' } }).state, 'after', 'key order does not matter');
+  assert.deepEqual(st({ ...base, website: 'https://other.example/' }), { state: 'changed', h, filled: ['website'] });
+  assert.deepEqual(st({ ...base, hours: { mon: '9-6' } }).filled, ['hours']);
+  assert.equal(st({ ...base, website: 'https://example.com/' }).state, 'changed', 'half applied is not before, not after'); assert.deepEqual(st({ ...base, website: 'https://example.com/' }).filled, []);
+  assert.equal(st({ ...base, website: 'https://example.com/', hours: rec1.set.hours, notes: 'edited' }).state, 'changed', 'content hash moved');
+  assert.equal(stateOf({ ...base, hours: { mon: '9-5' } }, null, { ...rec1, set: { website: 'https://example.com/' } }).state, 'before', 'only the fields in "set" matter (hours is not being filled)');
+  assert.equal(st({ ...base, status: 'rejected' }).state, 'not-approved'); assert.equal(st(undefined).state, 'missing');
+});
+
+test('info: website/hours are not part of the content hash (a fill never changes expect_h)', () => {
+  const N = require('../scripts/lib/gym-import/normalize');
+  const g = infoBase()[0];
+  assert.equal(N.contentHash(g), N.contentHash({ ...g, website: 'https://example.com/', hours: { mon: '9-5' }, description: 'x', day_pass: '1', facilities: ['cafe'] }));
+  assert.equal(S.toEntry(g).h, S.toEntry({ ...g, website: 'https://example.com/' }).h);
+});
+
+test('target.js updateSpotInfo: refuses without the update gate or with anything but the approved change; sends one pinned PATCH with exactly the approved {website, hours}', async () => {
+  const api = new T.Api({ url: 'https://example.supabase.co', serviceKey: 'service-key-xxxxxxxx', anonKey: 'anon-key-xxxxxxxx' });
+  const sent = []; api._send = async (method, q, o) => { sent.push({ method, q, o }); return { ok: true, status: 200, json: [{}] }; };
+  const sha = (updates, retires = []) => crypto.createHash('sha256').update(JSON.stringify(T.opsPayload(updates, retires))).digest('hex');
+  const updates = [{ id: 'seed-100', set: { website: 'https://example.com/gym', hours: { mon: '6am–10pm' } }, expect_h: '0123456789abcdef' }];
+  const payloadSha = sha(updates), gate = T.mintUpdateGate({ batchId: 'b', token: 't', updates, payloadSha });
+  const u = { id: 'seed-100', set: updates[0].set, updatedAt: '2026-09-24T01:02:03.123456+00:00' };
+  await assert.rejects(api.updateSpotInfo(u, null), /no update gate/);
+  await assert.rejects(api.updateSpotInfo(u, T.mintWriteGate({ batchId: 'b', token: 't', rows: [], payloadSha })), /no update gate/, 'the insert gate cannot authorise a fill');
+  await assert.rejects(api.updateSpotInfo(u, { ...gate }), /no update gate/, 'a copied gate is not a gate');
+  await assert.rejects(api.updateSpotInfo(u, Object.freeze({ [Object.getOwnPropertySymbols(gate)[0]]: true, updates, retires: [], payloadSha })), /no update gate/, 'a hand-built look-alike is not a gate');
+  await assert.rejects(api.updateSpotInfo(u, T.mintUpdateGate({ batchId: 'b', token: 't', updates, payloadSha: 'f'.repeat(64) })), /hash mismatch/);
+  await assert.rejects(api.updateSpotInfo({ ...u, set: { ...u.set, website: 'https://evil.example/' } }, gate), /not the approved one/, 'a different body');
+  await assert.rejects(api.updateSpotInfo({ ...u, set: { website: u.set.website } }, gate), /not the approved one/, 'a subset of the approved body');
+  await assert.rejects(api.updateSpotInfo({ ...u, id: 'seed-101' }, gate), /not the approved one/, 'a different gym');
+  const bad = async (set, re) => { const g = T.mintUpdateGate({ batchId: 'b', token: 't', updates: [{ id: 'seed-100', set, expect_h: '0123456789abcdef' }], payloadSha: sha([{ id: 'seed-100', set, expect_h: '0123456789abcdef' }]) }); await assert.rejects(api.updateSpotInfo({ ...u, set }, g), re); };
+  await bad({ website: 'https://example.com/', name: 'x' }, /only website\/hours/);
+  await bad({ lat: 1, lng: 2 }, /only website\/hours/);
+  await bad({ website: 'https://example.com/', status: 'rejected' }, /only website\/hours/);
+  await bad({ website: 'javascript:alert(1)' }, /website must be/);
+  await bad({ website: 'https://example.com/a b' }, /website must be/);
+  await bad({ hours: { mon: ' 9-5' } }, /hours\.mon must be/);
+  await bad({ hours: { zzz: '9-5' } }, /unknown day/);
+  await bad({ hours: {} }, /at least one day/);
+  await assert.rejects(api.updateSpotInfo({ ...u, updatedAt: '' }, gate), /updated_at/);
+  await assert.rejects(api.updateSpotLocation(u, gate), /only address\/lat\/lng/, 'the location write cannot carry website/hours');
+  await assert.rejects(api.retireSpot({ id: 'seed-100', reason: 'permanently closed (test)', updatedAt: 'x' }, gate), /not the approved one/, 'an info gate retires nothing');
+  assert.equal(sent.length, 0, 'nothing sent for any refusal');
+  await api.updateSpotInfo(u, gate);
+  assert.equal(sent.length, 1); assert.equal(sent[0].method, 'PATCH'); assert.equal(sent[0].o.service, true);
+  assert.equal(sent[0].q, '/rest/v1/spots?id=eq.seed-100&status=eq.approved&updated_at=eq.2026-09-24T01%3A02%3A03.123456%2B00%3A00');
+  assert.equal(sent[0].o.body, JSON.stringify(updates[0].set), 'the body is exactly the approved set'); assert.match(sent[0].o.headers.Prefer, /return=representation/);
+});
+
+test('info confirmation token: bound to the exact values (a different website/hours never matches)', async () => {
+  const { confirmToken } = require('../scripts/lib/gym-import/updater');
+  const mk = set => confirmToken({ batchId: 'b', planSha: 'p', payload: crypto.createHash('sha256').update(JSON.stringify([{ id: 'seed-100', set, expect_h: '0123456789abcdef' }])).digest('hex'), host: 'h', kind: 'local', coverage: 'FULL', liveSha: 'l' });
+  assert.notEqual(mk({ website: 'https://example.com/' }), mk({ website: 'https://example.org/' }));
+  assert.notEqual(mk({ hours: { mon: '9-5' } }), mk({ hours: { mon: '9-6' } }));
+  assert.equal(mk({ website: 'https://example.com/' }), mk({ website: 'https://example.com/' }));
+  const w = await world({ records: INFO2, approved: infoBase() }); const w2 = await world({ records: ix => [info(ix, 'seed-100', { website: 'https://other.example/' }), info(ix, 'seed-102', { website: 'https://example.org/' })], approved: infoBase() });
+  assert.notEqual((await runImport({ ...w.base })).token, (await runImport({ ...w2.base })).token);
 });

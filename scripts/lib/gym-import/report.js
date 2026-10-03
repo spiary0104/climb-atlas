@@ -1,5 +1,6 @@
 // Human-readable dry-run report. Deterministic (no timestamps), size-capped, so it is cheap to read and to diff.
 'use strict';
+const V = require('./validate');
 
 const CAP = 25;
 const esc = s => String(s == null ? '' : s).replace(/\|/g, '\\|').replace(/\n/g, ' ');
@@ -50,7 +51,9 @@ function renderReport(plan) {
     const { shown, more } = cut(up);
     shown.forEach(r => {
       L.push(`- line ${r.line} \`${r.id}\` — ${esc(r.update_reason)}`);
-      r.changes.forEach(ch => L.push(`  - ${ch.field}: ${esc(JSON.stringify(ch.before))} → ${esc(JSON.stringify(ch.after))}`.slice(0, 300)));
+      const info = r.changes.filter(ch => V.INFO_FIELDS.includes(ch.field));
+      if (info.length) L.push(`  - FILLS gym information (only if empty in production; never overwrites): ${esc(V.describeInfoSet(Object.fromEntries(info.map(ch => [ch.field, ch.after]))))}`);
+      r.changes.filter(ch => !V.INFO_FIELDS.includes(ch.field)).forEach(ch => L.push(`  - ${ch.field}: ${esc(JSON.stringify(ch.before))} → ${esc(JSON.stringify(ch.after))}`.slice(0, 300)));
     });
     if (more) L.push(`- … and ${more} more (see plan.json)`);
     L.push('');

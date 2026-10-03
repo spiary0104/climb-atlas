@@ -15,7 +15,7 @@ research → import/batches/<batch>/records.ndjson   (staging; one gym per line;
         → freeze-ids (write the g-<hex> ids into the batch once)
         → review     (a human reads report.md; decisions.json resolves probable duplicates)
         → import --dry-run   (live read-only preflight + deterministic report; the DEFAULT)
-        → import --apply     (the only command that writes; inserts, or location updates in an update-only batch; gated; verified; manifest)
+        → import --apply     (the only command that writes; inserts, or location updates / gym-information fills / retirements in a maintenance batch; gated; verified; manifest)
 ```
 
 ## Directory layout
@@ -31,7 +31,7 @@ import/
     manifest.json            written by the future import step; its presence marks the batch as imported
   research/<YYYY-MM-DD-slug>/  one geographic section (see "Regional research"); becomes the batch of the same name
 scripts/gym-import.js        CLI (new-batch, stage-from-file, validate, plan, freeze-ids, build-index, verify-index, research new|reconcile|stage)
-scripts/lib/gym-import/      normalize, validate, match, plan, report, index-store, importer (inserts), updater (location updates),
+scripts/lib/gym-import/      normalize, validate, match, plan, report, index-store, importer (inserts), updater (location updates, website/hours fills, retirements),
                              research (regional sections; offline), history (look-back through later verified batches)
 tests/import-*.test.js       regression tests (run: node --test "tests/*.test.js")
 ```
@@ -56,9 +56,9 @@ after `freeze-ids`; `source` (free text, not stored) recommended. `country` = 2-
 `js/modules/regions.js`; `types` ⊆ `indoor-bouldering | top-rope | lead-climbing`; `lat/lng` JSON numbers; `photo` a plain
 http(s) URL (same `safeUrl` rule as the app). Any other field (`status`, `community: true`, `edited`, typos…) is an error.
 **Record (update existing gym):** `{"intent":"update","id":"<existing id>","reason":"why","set":{"types":[...]}}` — only
-`name, suburb, state, lat, lng, types, address, notes, photo` may be set for *planning*; a full record that differs from an existing
+`name, suburb, state, lat, lng, types, address, notes, photo, website, hours` may be set for *planning*; a full record that differs from an existing
 gym is never treated as an update. Optional `expect_h` (the gym's content hash when researched): the plan marks the record invalid
-if the index no longer has that content. **Only location updates can be written** (see "Updating the location of existing gyms").
+if the index no longer has that content. **Only location updates and gym-information fills (`website`, `hours`) can be written** (see "Updating the location of existing gyms" and "Filling gym information (website, hours)").
 
 ### Staging records that already exist as a JSON array
 `node scripts/gym-import.js stage-from-file <source.json> --slug <slug> --date YYYY-MM-DD --description "..." [--decisions <decisions.json>]`
@@ -89,7 +89,7 @@ node scripts/gym-import.js research stage <section>       # needs a current reco
 `lat`, `lng`, `coord_source{source, method: osm|official-map|chain-store-list|geocoded-address|map-service-pin, ref}`, `coord_precision`
 (`entrance|building|street|area`), `types`, `website`, `category` (`commercial-gym|university|club|outdoor-area|shop|other`), `status_claim`
 (`open|closed|opening-soon|temporary|unknown`), `bouldering` (`yes|no|unknown`), `evidence[{source, url, accessed, supports[]}]`, `research_notes`, `notes`,
-`photo`. Coordinates always come from an identified source; `website`, evidence and notes stay in the research files (there is no website column).
+`photo`. Coordinates always come from an identified source; `website`, evidence and notes stay in the research files; a gym's website and hours reach production only through a separate fill batch (see "Filling gym information (website, hours)").
 `types` includes `indoor-bouldering` exactly when `bouldering` is `yes`; a candidate whose bouldering is `unknown` or `no` may have an empty `types`
 list (never a placeholder). Such a candidate is always blocked, so nothing with an empty or unconfirmed type list can be accepted or staged.
 
@@ -256,7 +256,7 @@ derived from no credential. Before the write the payload is hashed again, so row
 The write itself is one plain `INSERT` of the staged rows (`status=approved, community=false, edited=false`), atomic: if any id already exists the
 whole statement fails and nothing is written. There is **no** upsert, `on_conflict`, PUT, DELETE or RPC anywhere in the importer. The call path is
 `gym-import.js import --apply` → `runImport` → (gates, final re-check) → `mintWriteGate` → `Api.insertSpots` → one `POST /rest/v1/spots`. The only other writes
-are the location PATCH and the retire PATCH of a maintenance batch (`updater.js` → `mintUpdateGate` → `Api.updateSpotLocation` / `Api.retireSpot`, see below); a test enforces exactly these
+are the location PATCH, the gym-information PATCH and the retire PATCH of a maintenance batch (`updater.js` → `mintUpdateGate` → `Api.updateSpotLocation` / `Api.updateSpotInfo` / `Api.retireSpot`, see below); a test enforces exactly these
 call sites, each reachable only through its own gate minted after the checks.
 
 ### Manifest lifecycle
@@ -289,7 +289,7 @@ and the refreshed index, run the tests, and update `docs/TASKS.md`. (Regression 
 hashes to `index_at_staging` recorded in `batch.json` — independent of the manifest; a wrong manifest makes them fail loudly. Production code never does this.)
 
 ### What the importer is intentionally NOT capable of
-Deleting, merging or overwriting any spot (a closed/duplicate gym can only be *retired*: status `rejected`, record kept, see below); changing any field other than a location (address/lat/lng, see below); mixing
+Deleting, merging or overwriting any spot (a closed/duplicate gym can only be *retired*: status `rejected`, record kept, see below); changing any field other than a location (address/lat/lng) or filling an empty website/hours (see below); mixing
 inserts and updates in one batch; importing batches with probable duplicates or invalid
 records; writing to any host other than production or localhost; running without an explicit batch; writing in dry-run/default mode; importing more
 than 1,000 rows in one go; changing the schema (no DDL, no migrations); touching any table other than `spots`.
@@ -326,6 +326,37 @@ Provenance checks about the earlier state (`validate-reconciled.js`, the tests t
 every verified batch after the first import (location updates and inserts) with `scripts/lib/gym-import/history.js`: newest first by the
 manifest's `finished_at`, it undoes each batch's recorded changes or removes its inserted ids (its committed `plan.json`) and requires the
 result to hash to the index that batch was planned against; any unexplained difference (e.g. a gym approved outside the pipeline) throws.
+
+### Filling gym information (website, hours)
+A maintenance batch can also **fill** the public gym-information fields `website` and `hours` (migration `20261004000100`) on existing approved gyms, through the
+same updater, gates and verification as a location update. It only ever fills empty fields; nothing is overwritten.
+
+Record: `{"intent":"update","id":"seed-884","expect_h":"<16 hex>","reason":"why (>= 8 chars)","source":"<official URL>","set":{"website":"https://…","hours":{"mon":"6am–10pm","sat":"8am–6pm"}}}`
+- `set` holds `website` and/or `hours` (an *info update*) **or** `address/lat/lng` (a location update), never both families in one record; one record per gym (so a gym
+  that needs both goes in two batches), at most 100 records; a batch may mix info updates, location updates and retirements across different gyms.
+- `website`: a string matching `^https?://\S+$`, parseable as an http(s) URL without credentials, at most 300 characters. `hours`: a plain object with at least one key,
+  keys ⊆ `mon tue wed thu fri sat sun`, each value a string of 1–40 characters that is already trimmed and on one line. Anything else is invalid (never silently cleaned), so the
+  database value equals the record byte for byte. These are the database's own checks (`spots_website_check`, `spots_hours_check`) and `js/modules/gym-info.js`.
+- **Sources: the gym's official website only** (put its URL in `source`); no aggregators, maps or social posts. Hours are written as the gym states them.
+- `website`/`hours` are not part of the content hash, so `expect_h` stays valid after a fill. Per gym the live row is **before** (approved, hash = `expect_h`, and every
+  field in `set` empty: `null`, for hours also `{}`), **after** (hash = `expect_h` and every field in `set` equals the record; hours by deep equality) or **changed**
+  (anything else). A field that already holds another value (e.g. a community edit approved since the research) refuses the whole batch with a message naming the gym
+  and field (`fill-only: gym information already set in production`); nothing is written. All *after* = already applied (nothing written, a recovery manifest on `--apply`
+  if none exists); a before/after mix is refused. Only the fields named in `set` matter: a gym whose hours were filled by the community can still get a website.
+- `plan`/`report.md` list per gym what will be filled (website host, hours days) for review; `plan.json` stores the full values (`before: null`).
+- The write: `Api.updateSpotInfo` (behind the same update gate), one `PATCH` per gym filtered by `id` + `status=approved` + the exact `updated_at` seen at the final
+  re-check, body exactly the approved `{website?, hours?}`; 0 rows matched = refusal. **Verification:** every info target in its *after* state, approved count unchanged,
+  every other spot unchanged (content hash vs the index; website/hours of every non-target compared directly); `manifest.json` (`kind: "update"`) lists the fills apart
+  from location changes: `rows_info_filled` and `info_filled[{id, fields, expect_h, after_h}]` (`changes`/`rows_updated` count location updates only; `ids` lists every target).
+
+Run (batch under `import/batches/`; `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` exported in the shell, never in a file):
+```
+node scripts/gym-import.js validate <batch>            # offline; checks every website/hours value
+node scripts/gym-import.js plan <batch>                # writes plan.json + report.md; review report.md, commit both
+node scripts/gym-import.js import <batch> --dry-run    # live read-only preflight (service-role key => FULL coverage + the confirmation token)
+node scripts/gym-import.js import <batch> --apply --confirm <token> --i-understand-this-writes-to-production
+node scripts/gym-import.js import <batch> --verify     # afterwards; then build-index --live and commit the manifest
+```
 
 ### Retiring a gym (closed / duplicate)
 A closed gym or a confirmed duplicate is **retired** by an explicit record, through the same updater and the same gates as a location update:
