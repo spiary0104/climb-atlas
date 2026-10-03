@@ -1,7 +1,7 @@
 # Regional research: New Zealand (pilot) (2026-09-30-new-zealand)
 
 Scope: NZ (whole country)
-Index: 2306 gyms, sha256 3b20e7b458c7… | staged batches compared: none | other sections compared: none
+Index: 2317 gyms, sha256 25eb60f4ba70… | staged batches compared: none | other sections compared: none
 Review radii (stricter than the importer): any gym 150 m, related name 15 km, other country 2 km
 
 ## Summary

@@ -1,0 +1,93 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-09-30-new-zealand",
+ "index": {
+  "sha256": "25eb60f4ba70d55fb0e65d64bb4a7bfc2d7b2af884859d9f5527a15f21f9c430",
+  "count": 2317,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [],
+ "counts": {
+  "records": 8,
+  "new": 8,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "6b4a23f4b35a66d5e609254e3517dd47ff474c615a1af5224ae6ca3f7992f6dc",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-4777e1dfc8",
+   "id_frozen": true,
+   "name": "Boulder Co. Hamilton",
+   "country": "NZ"
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-d6c9fc20c6",
+   "id_frozen": true,
+   "name": "Extreme Edge Hamilton",
+   "country": "NZ"
+  },
+  {
+   "line": 3,
+   "class": "new",
+   "id": "g-a3b46353a6",
+   "id_frozen": true,
+   "name": "Turangi Climbing Gym",
+   "country": "NZ"
+  },
+  {
+   "line": 4,
+   "class": "new",
+   "id": "g-7d5b01519a",
+   "id_frozen": true,
+   "name": "The Edge Indoor Rockwall (Taupo)",
+   "country": "NZ"
+  },
+  {
+   "line": 5,
+   "class": "new",
+   "id": "g-fd4da13330",
+   "id_frozen": true,
+   "name": "Rocktopia",
+   "country": "NZ"
+  },
+  {
+   "line": 6,
+   "class": "new",
+   "id": "g-5d090f1fec",
+   "id_frozen": true,
+   "name": "The Crux Climbing Space (YMCA Taranaki)",
+   "country": "NZ"
+  },
+  {
+   "line": 7,
+   "class": "new",
+   "id": "g-3d6c85ae88",
+   "id_frozen": true,
+   "name": "The Adventure Centre Climbing Wall (The Kind Foundation, formerly YMCA Roxx)",
+   "country": "NZ"
+  },
+  {
+   "line": 8,
+   "class": "new",
+   "id": "g-51ca2c73d6",
+   "id_frozen": true,
+   "name": "The Gravity Well",
+   "country": "NZ"
+  }
+ ]
+}
