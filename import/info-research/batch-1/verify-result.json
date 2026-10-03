@@ -1,0 +1,149 @@
+[
+ {
+  "id": "seed-0",
+  "name": "9 Degrees Alexandria",
+  "website_ok": "yes",
+  "hours_verdict": "OK",
+  "differences": [],
+  "notes": "Official 9degrees.com.au locations page. Alexandria block matches all 7 days (Mon 10am-10pm, Tue 4pm-10pm, Wed 6am-10pm, Thu/Fri 10am-10pm, weekends 8am-9pm). Chatswood-only temporary closure notice ignored."
+ },
+ {
+  "id": "seed-14",
+  "name": "BlocHaus Marrickville",
+  "website_ok": "yes",
+  "hours_verdict": "OK",
+  "differences": [],
+  "notes": "Official BlocHaus Sydney site (Marrickville MKV + Leichhardt LCT). MKV: Mon&Fri 6am-10pm, Tue-Thu 6am-11pm, Sat/Sun 8am-10pm - matches. Open daily except Xmas/NY Day."
+ },
+ {
+  "id": "seed-42",
+  "name": "La Roca Boulders",
+  "website_ok": "yes",
+  "hours_verdict": "OK",
+  "differences": [],
+  "notes": "Official site. Staffed hours Mon-Fri 11:30am-9:30pm, weekends 9am-7pm match; gym also has a 24/7 key-access annex (members only) which is not reflected in recorded hours, arguably fine."
+ },
+ {
+  "id": "seed-35",
+  "name": "Northside Boulders",
+  "website_ok": "yes",
+  "hours_verdict": "OK",
+  "differences": [],
+  "notes": "Official site covers 3 gyms. Brunswick and Northcote both list Mon-Fri 7am-10pm, Sat-Sun 10am-7pm (matches record); Abbotsford (Lactic Factory) differs (Mon-Fri 4:30-9:30pm, Sat-Sun 11am-6pm) so record is only correct if it is Brunswick/Northcote. Page also shows a 'Brunswick re-opening event' banner."
+ },
+ {
+  "id": "seed-34",
+  "name": "Bayside Rock Climbing",
+  "website_ok": "yes",
+  "hours_verdict": "MISMATCH",
+  "differences": [
+   "sat: recorded (missing) vs site 10am-8pm (footer Hours block) / 9am-6pm (Trading Hours page main text); holiday-trading text says 9am-8pm",
+   "sun: recorded (missing) vs site 10am-5pm (footer) / 9am-5pm (Trading Hours page main text)"
+  ],
+  "notes": "Mon-Fri 10am-9:30pm matches, but record omits Saturday and Sunday which the site lists. The site itself is internally inconsistent on weekend hours (footer vs trading-hours page; school-holiday block lists Sat 9-6, Sun 9-5)."
+ },
+ {
+  "id": "seed-218",
+  "name": "VITAL Climbing Gym – West Harlem",
+  "website_ok": "yes",
+  "hours_verdict": "OK",
+  "differences": [],
+  "notes": "Official VITAL page for West Harlem & Upper East Side. West Harlem: Mon-Fri 8am-11pm, Sat-Sun 9am-10pm matches (UES has different hours, not used)."
+ },
+ {
+  "id": "seed-320",
+  "name": "Benchmark Climbing – Berkeley",
+  "website_ok": "yes",
+  "hours_verdict": "OK",
+  "differences": [],
+  "notes": "Official site locations page. Berkeley: Mon-Fri 7am-10pm, Sat-Sun 10am-7pm matches."
+ },
+ {
+  "id": "seed-196",
+  "name": "Brooklyn Bouldering Project",
+  "website_ok": "yes",
+  "hours_verdict": "OK",
+  "differences": [],
+  "notes": "Official Bouldering Project Gowanus page (575 Degraw St). Mon-Fri 6am-10pm, Sat-Sun 8am-8pm matches."
+ },
+ {
+  "id": "seed-361",
+  "name": "Mosaic Boulders",
+  "website_ok": "yes",
+  "hours_verdict": "OK",
+  "differences": [],
+  "notes": "Official site. Public Mon-Fri 1pm-11pm, Sat-Sun 11am-11pm matches (member-only 9am-1pm weekdays correctly excluded)."
+ },
+ {
+  "id": "seed-379",
+  "name": "Sender One Climbing – Lakewood",
+  "website_ok": "yes",
+  "hours_verdict": "OK",
+  "differences": [],
+  "notes": "Official Lakewood page. Mon-Fri 6am-11pm, Sat/Sun 8am-6pm matches."
+ },
+ {
+  "id": "seed-322",
+  "name": "Boulderdash Indoor Rock Climbing",
+  "website_ok": "yes",
+  "hours_verdict": "OK",
+  "differences": [],
+  "notes": "Official Boulderdash site, Thousand Oaks location page (880 Hampshire Rd). Mon-Fri 11am-10pm, Sat 10am-8pm, Sun 10am-6pm matches. Note: Thousand Oaks is in Ventura County, labelled metro Los Angeles."
+ },
+ {
+  "id": "seed-372",
+  "name": "Rockreation – Los Angeles",
+  "website_ok": "yes",
+  "hours_verdict": "OK",
+  "differences": [],
+  "notes": "Official site; LA gym hours Mon/Wed/Fri 12pm-10pm, Tue/Thu 6am-10pm, Sat/Sun 10am-4pm match (Costa Mesa shows identical hours)."
+ },
+ {
+  "id": "seed-392",
+  "name": "The Post Climbing",
+  "website_ok": "yes",
+  "hours_verdict": "OK",
+  "differences": [],
+  "notes": "Official Touchstone page (Pasadena). M-Th 7am-11pm, F 7am-10pm, Sat/Sun 10am-7pm public matches (members-only Sat/Sun 9-10am excluded). Hours also confirmed on location-hours page."
+ },
+ {
+  "id": "seed-33",
+  "name": "BlocHaus Bouldering",
+  "website_ok": "yes",
+  "hours_verdict": "OK",
+  "differences": [],
+  "notes": "Official BlocHaus Melbourne site. Mon/Wed/Fri 6am-10pm, Tue/Thu 10am-10pm, Sat/Sun 9am-9pm matches."
+ },
+ {
+  "id": "seed-382",
+  "name": "Sender One Climbing – Playa Vista",
+  "website_ok": "yes",
+  "hours_verdict": "OK",
+  "differences": [],
+  "notes": "Official Playa Vista page. Mon-Fri 12pm-10pm, Sat 10am-7pm, Sun 10am-7pm matches."
+ },
+ {
+  "id": "seed-4",
+  "name": "NOMAD Bouldering",
+  "website_ok": "yes",
+  "hours_verdict": "OK",
+  "differences": [],
+  "notes": "Official NOMAD Annandale page. Weekdays 6am-10pm, weekends 8am-9:30pm matches (public holidays 8am-10pm not recorded; fine)."
+ },
+ {
+  "id": "seed-15",
+  "name": "BlocHaus Leichhardt",
+  "website_ok": "yes",
+  "hours_verdict": "OK",
+  "differences": [],
+  "notes": "Official BlocHaus Sydney site. LCT: Mon/Tue/Thu/Fri 10am-10pm, Wed 6am-10pm, Sat/Sun 8am-10pm matches."
+ },
+ {
+  "id": "seed-368",
+  "name": "Pacific Pipe",
+  "website_ok": "yes",
+  "hours_verdict": "OK",
+  "differences": [],
+  "notes": "Official Touchstone Pacific Pipe page (Oakland). M/W/F 7am-10pm, T/Th 7am-11pm, S/S 10am-7pm matches (members-only 9-10am weekend excluded)."
+ }
+]
