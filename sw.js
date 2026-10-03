@@ -26,7 +26,8 @@
 // v24: Explore loads only its columns, pages in parallel; full gym rows on demand.
 // v25: city metros (metros.js; search, filters, region/city pages, gym breadcrumb).
 // v26: gym and place page titles from seo-meta.js (router title pattern shared with the crawler metadata).
-const CACHE_VERSION = 'v26';
+// v27: cross-region metros on neighbouring region pages and in gym breadcrumbs.
+const CACHE_VERSION = 'v27';
 const SHELL_CACHE = 'climbatlas-shell-' + CACHE_VERSION;
 const RUNTIME_CACHE = 'climbatlas-runtime-' + CACHE_VERSION;
 const TILE_CACHE = 'climbatlas-tiles-' + CACHE_VERSION;
