@@ -20,7 +20,8 @@
 // v18: internal research notes are hidden on the gym page and peek card (publicNotes in provenance.js).
 // v19: field-notes / fresh-stamp poses and the Explore first run (brand.js, passport.js, list.js, explore.js).
 // v20: page header art on Regions and signed-out Log/Me (assets/art, page-html.js pageArtHtml).
-const CACHE_VERSION = 'v20';
+// v21: START reads "Check in"; boulder-tag and map-attribution contrast (tokens.css, style.css).
+const CACHE_VERSION = 'v21';
 const SHELL_CACHE = 'climbatlas-shell-' + CACHE_VERSION;
 const RUNTIME_CACHE = 'climbatlas-runtime-' + CACHE_VERSION;
 const TILE_CACHE = 'climbatlas-tiles-' + CACHE_VERSION;

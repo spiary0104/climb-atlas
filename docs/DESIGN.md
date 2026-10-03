@@ -183,7 +183,7 @@ bark.3 #B08A6E  bark.5 #754D33  bark.7 #52341F
 Climb-type hues (three, distinct from the accent):
 
 ```
-ember.3 #F5C4AC   ember.5 #E2793F   ember.7 #B85A28      (boulder)
+ember.3 #F5C4AC   ember.5 #E2793F   ember.7 #8A3F17      (boulder)
 lake.3  #BFD7E6   lake.5  #3F7FA6   lake.7  #2C5C7A      (top rope)
 plum.3  #DCC4D9   plum.5  #8A4E7A   plum.7  #63365A      (lead)
 ```
@@ -506,7 +506,7 @@ A 64px cream top bar with a bottom hairline: wordmark left (the deer head lockup
 
 ### 6.5 Mobile navigation
 
-An 84px tab bar (56px content + safe-area) on cream with a top hairline: Explore (map icon) · Regions (grid icon) · **START** · Log (book icon) · Me (person icon). Labels always visible, 11px 500, active item in forest with a 600 label. START is a 60px mustard disc with the 1.5px ink object line, raised 26px above the bar, carrying the deer head at 44px in a cream medallion (fawn on mustard alone measures 1.02:1); its label reads "Log". Tapping START opens a sheet with two actions: "Check in here" (if a gym is selected or nearby) and "Log a session". The tab bar hides while the bottom sheet is at the full snap.
+An 84px tab bar (56px content + safe-area) on cream with a top hairline: Explore (map icon) · Regions (grid icon) · **START** · Log (book icon) · Me (person icon). Labels always visible, 11px 500, active item in forest with a 600 label. START is a 60px mustard disc with the 1.5px ink object line, raised 26px above the bar, carrying the deer head at 44px in a cream medallion (fawn on mustard alone measures 1.02:1); its label reads "Check in" (2026-10-03; it read "Log", the same word as the Log tab beside it). Tapping START opens a sheet with two actions: "Check in here" (if a gym is selected or nearby) and "Log a session". The tab bar hides while the bottom sheet is at the full snap.
 
 ### 6.6 Removed navigation
 
@@ -922,7 +922,7 @@ Run after every phase. Each line is pass/fail.
 
 ## 19. Open decisions requiring the owner's input
 
-1. **Top-rope and lead colours.** Ember for boulder is fixed. Proposed lake blue `#3F7FA6` (top rope) and plum `#8A4E7A` (lead). Confirm or supply alternatives; they must stay distinct from forest and mustard.
+1. **Top-rope and lead colours.** Resolved 2026-10-03: lake `#3F7FA6` and plum `#8A4E7A` are final (in use since the redesign; measurements in the decision log). Ember for boulder is fixed; its tag text (ember.7) was darkened to pass AA.
 2. **Icon set.** Phosphor (friendlier, multiple weights available) or Lucide (sharper, single weight). Recommendation: Phosphor Regular at 1.5px stroke for a guidebook tone; either is acceptable.
 3. **Hosting rewrite.** Does the host (Vercel assumed) allow rewriting unknown paths to `index.html`? If yes, clean URLs; if no, hash routing ships first and clean URLs follow.
 4. **Slug policy.** `name-suburb` with numeric disambiguation is proposed. Renaming a gym should not change its slug (store it, don't derive it live). Confirm.
@@ -1033,3 +1033,9 @@ Run after every phase. Each line is pass/fail.
 **2026-10-03: page header art (sec. 13A).**
 - Regions, signed-out Log and signed-out Me open with a flat-vector scene (wall-as-world-map, session still life, climber's shelf). The pages were a title, one line and a button; Panda Bouldering screenshots were the mood reference for the warm illustrated header, nothing was copied.
 - Drawn as SVG by a seeded generator rather than AI raster renders: crisp at every width, about 10-40 KB each, and the brand palette exactly (the image-generation workspace was also out of credits). No character, so sec. 12.2 holds.
+
+**2026-10-03: START label, final type colours, two contrast fixes (Lighthouse).**
+- *START label:* "Check in". START opens the check-in / log-a-session sheet, and mustard is the collect colour (stamps), so check-in is its headline; "Log" duplicated the Log tab next to it (the diary). The visible text stays inside the accessible name ("Start: check in at a gym or log a session"), WCAG 2.5.3.
+- *Lake and plum are final:* type-tag text lake.7 on lake.3 4.82:1 and plum.7 on plum.3 5.87:1 (AA); pins on the rock map lake 4.01:1, plum 2.88:1 (the ink outline and the paper dot carry the edge); simulated protan/deutan/tritan keep both clearly apart from ember; lake vs plum is the closest pair under red-green deficiency, which is why the type is always also named (tags, filters). Decision 19.1 resolved.
+- *Boulder tag text:* ember.7 `#B85A28` measured 2.95:1 on ember.3; now `#8A3F17` (4.77:1; 7.3:1 on paper).
+- *Map attribution:* Lighthouse (production, mobile, 2026-10-03) scored accessibility 96 on `/` with one failure: the attribution used the rock theme's secondary text on its paper chip (2.66:1). New token `--map-control-text` (ink.9, 5.26:1). `/in` and `/log` scored 100.

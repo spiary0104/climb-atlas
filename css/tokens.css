@@ -38,7 +38,7 @@
   /* Bark: the deer's antlers and hooves (measured #754D33). Earthy support. */
   --palette-bark-3:#B08A6E;   --palette-bark-5:#754D33;   --palette-bark-7:#52341F;
   /* Climb-type hues (lake/plum provisional: DESIGN.md sec. 19 decision 1) */
-  --palette-ember-3:#F5C4AC;  --palette-ember-5:#E2793F;  --palette-ember-7:#B85A28;
+  --palette-ember-3:#F5C4AC;  --palette-ember-5:#E2793F;  --palette-ember-7:#8A3F17;
   --palette-lake-3:#BFD7E6;   --palette-lake-5:#3F7FA6;   --palette-lake-7:#2C5C7A;
   --palette-plum-3:#DCC4D9;   --palette-plum-5:#8A4E7A;   --palette-plum-7:#63365A;
   /* Status */
@@ -206,6 +206,7 @@
   --map-label-text:var(--palette-rock-8);
   --map-label-halo:var(--palette-rock-0);
   --map-control-surface:var(--palette-paper-0);
+  --map-control-text:var(--palette-ink-9);   /* text on paper map controls inside the rock map region (5.3:1) */
   --map-control-border:var(--palette-ink-alpha-20);
   /* Globe atmosphere and basemap label fix (read by js/modules/map.js at style.load) */
   --map-sky:var(--palette-rock-0);

@@ -347,3 +347,14 @@ test('field guide: chrome and the list sit on the cream canvas; cards, chips, fi
   assert.deepEqual([...read('index.html').matchAll(/<meta name="theme-color" content="([^"]+)"/g)].map(m => m[1]), [T.parseTokensCss(read('css/tokens.css')).base['--palette-paper-2']], 'browser chrome is cream');
   assert.match(read('js/modules/map.js'), /cssToken\('--map-tint'\)/, 'the basemap is warmed from a token');
 });
+
+test('START reads "Check in", never the Log tab\'s word; its visible label is inside its accessible name (WCAG 2.5.3)', () => {
+  const html = read('index.html');
+  const start = html.match(/<button type="button" class="start-btn"[^>]*aria-label="([^"]+)"[\s\S]*?<\/span><span>([^<]+)<\/span><\/button>/);
+  assert.ok(start, 'START button found');
+  assert.equal(start[2], 'Check in');
+  assert.ok(start[1].toLowerCase().includes(start[2].toLowerCase()), 'label in name');
+  const tabLabels = [...html.matchAll(/class="tabbar-item"[^>]*>[\s\S]*?<span>([^<]+)<\/span>/g)].map(m => m[1]);
+  assert.ok(tabLabels.includes('Log') && !tabLabels.includes(start[2]), 'no two tab-bar items share a label');
+  assert.match(read('css/style.css'), /\.maplibregl-ctrl-attrib\{[^}]*color:var\(--map-control-text\)/, 'attribution text uses the paper control token, not the rock secondary text');
+});
