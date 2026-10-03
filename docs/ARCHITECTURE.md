@@ -61,8 +61,8 @@ Line refs drift: re-grep function names rather than trusting numbers.
 | `docs/TASKS.md` / `docs/archive/` | Open work only / old long-form docs (**never read**) |
 
 ## Load order (end of `index.html`)
-MapLibre → Supercluster → Supabase CDN → `supabase-init.js` → `auth.js` →
-`main.js` (module, deferred) → `sw-register.js`.
+Supabase CDN → `supabase-init.js` → `auth.js` → `spots-prefetch.js` (gym-list read starts here, while MapLibre
+downloads; `loadSpots` takes it once) → MapLibre → Supercluster → `main.js` (module, deferred) → `sw-register.js`.
 
 ## Module conventions
 - Shared mutable state is only ever `appState.x`. No module-level `let`s another module needs to write.

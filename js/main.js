@@ -57,6 +57,9 @@ async function init(){
     if(user) closeAuthModal();
   });
   await loadSpots();
+  // The rows are usually here already (js/spots-prefetch.js): yield once so the shell paints before the first full
+  // render instead of both running as one long task.
+  await new Promise(resolve => setTimeout(resolve));
   appState.loaded = true;
   applyLanding();
   render();                                    // map and list as soon as the gyms are in; provenance marks follow

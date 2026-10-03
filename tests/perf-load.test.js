@@ -35,3 +35,17 @@ test('boot renders the map and list before the contributor counts and the signed
   assert.ok(!/await loadContributorCounts\(\);\s*appState\.loaded = true;/.test(main));
   assert.match(read('index.html'), /<link rel="preconnect" href="https:\/\/thayxaampaelvntoaido\.supabase\.co" crossorigin>/);
 });
+
+test('the gym-list read starts before MapLibre loads, with the same columns, and is taken once', () => {
+  const html = read('index.html');
+  const at = s => { const i = html.indexOf(s); assert.ok(i >= 0, 'script tag missing: ' + s); return i; };
+  assert.ok(at('js/supabase-init.js') < at('js/spots-prefetch.js') && at('js/auth.js') < at('js/spots-prefetch.js'), 'after the client exists');
+  assert.ok(at('js/spots-prefetch.js') < at('maplibre-gl.js') && at('maplibre-gl.js') < at('js/main.js'), 'before MapLibre, which still precedes the app');
+  const pre = read('js/spots-prefetch.js');
+  const data = read('js/modules/data-load.js');
+  assert.equal(/const columns = '([^']+)';/.exec(pre)[1], /export const LIST_COLUMNS = '([^']+)';/.exec(data)[1], 'same columns as loadSpots');
+  assert.match(pre, /\.eq\('status', 'approved'\)/); assert.match(pre, /page\(0, \{ count: 'exact' \}\)/); assert.match(pre, /await Promise\.all\(rest\)/);
+  assert.match(data, /window\.spotsPrefetch\.columns === LIST_COLUMNS/, 'ignored if the columns ever drift');
+  assert.match(data, /const early = prefetched; prefetched = null;/, 'a later reload (moderation) reads afresh');
+  assert.match(read('sw.js'), /'js\/spots-prefetch\.js',/);
+});

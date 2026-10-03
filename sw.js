@@ -29,7 +29,7 @@
 // v27: cross-region metros on neighbouring region pages and in gym breadcrumbs.
 // v28: orientation line rendered at start-up.
 // v29: metroOf memo; fewer gym-page re-renders.
-const CACHE_VERSION = 'v29';
+const CACHE_VERSION = 'v30';
 const SHELL_CACHE = 'climbatlas-shell-' + CACHE_VERSION;
 const RUNTIME_CACHE = 'climbatlas-runtime-' + CACHE_VERSION;
 const TILE_CACHE = 'climbatlas-tiles-' + CACHE_VERSION;
@@ -61,6 +61,7 @@ const SHELL_FILES = [
   'icons/icon.svg',
   'js/supabase-init.js',
   'js/auth.js',
+  'js/spots-prefetch.js',
   'js/main.js',
   'js/sw-register.js',
   'js/modules/state.js',
