@@ -1,0 +1,1023 @@
+[
+ {
+  "id": "seed-34",
+  "name": "Bayside Rock Climbing",
+  "metro": "Melbourne",
+  "expect_h": "1198a83c37a219b4",
+  "website": "https://baysiderock.com.au/",
+  "hours": {
+   "mon": "10am–9:30pm",
+   "tue": "10am–9:30pm",
+   "wed": "10am–9:30pm",
+   "thu": "10am–9:30pm",
+   "fri": "10am–9:30pm"
+  },
+  "sources": [
+   {
+    "url": "https://baysiderock.com.au/trading-hours",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://baysiderock.com.au/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Mon-Fri consistent across pages. Sat/Sun omitted: site gives conflicting values (Sat 9am-6pm vs 9am-8pm vs 10am-8pm; Sun 9am-5pm vs 10am-5pm)."
+ },
+ {
+  "id": "seed-33",
+  "name": "BlocHaus Bouldering",
+  "metro": "Melbourne",
+  "expect_h": "b6feb498bae6341e",
+  "website": "https://mlb.blochaus.com.au/",
+  "hours": {
+   "mon": "6am–10pm",
+   "tue": "10am–10pm",
+   "wed": "6am–10pm",
+   "thu": "10am–10pm",
+   "fri": "6am–10pm",
+   "sat": "9am–9pm",
+   "sun": "9am–9pm"
+  },
+  "sources": [
+   {
+    "url": "https://mlb.blochaus.com.au/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Closed Christmas Day and New Year's Day."
+ },
+ {
+  "id": "seed-39",
+  "name": "Boulder Lab",
+  "metro": "Melbourne",
+  "expect_h": "eb4c0a4a8f2601de",
+  "website": "https://boulderlab.com.au/",
+  "hours": {
+   "mon": "11am–10pm",
+   "wed": "11am–10pm",
+   "thu": "11am–10pm",
+   "fri": "11am–10pm",
+   "sat": "10am–8pm",
+   "sun": "10am–8pm"
+  },
+  "sources": [
+   {
+    "url": "https://boulderlab.com.au/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Ferntree Gully listed as weekdays 11am-10pm, weekends 10am-8pm, plus 'Early bird - Tuesdays 6am'; Tue omitted because the early-bird close time is not stated. One site covers all Boulder Lab gyms."
+ },
+ {
+  "id": "seed-43",
+  "name": "Cliffhanger Climbing Gym",
+  "metro": "Melbourne",
+  "expect_h": "535de3e3a4b8b44e",
+  "website": "https://cliffhanger.com.au/",
+  "hours": {
+   "mon": "4pm–10pm",
+   "tue": "4pm–10pm",
+   "wed": "4pm–10pm",
+   "thu": "4pm–10pm",
+   "fri": "4pm–10pm",
+   "sat": "11am–7pm",
+   "sun": "11am–7pm"
+  },
+  "sources": [
+   {
+    "url": "https://cliffhanger.com.au/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Term-time hours; school holidays Mon-Fri 10am-10pm. Rope-focused gym at Westgate Sports Centre, 61-65 Dohertys Rd."
+ },
+ {
+  "id": "seed-40",
+  "name": "Gravity Worx",
+  "metro": "Melbourne",
+  "expect_h": "93ee168f475cc057",
+  "website": "https://gravityworx.com.au/",
+  "hours": {
+   "mon": "4pm–9:30pm",
+   "tue": "4pm–9:30pm",
+   "wed": "4pm–9:30pm",
+   "thu": "4pm–9:30pm",
+   "fri": "4pm–9:30pm",
+   "sat": "11am–5pm",
+   "sun": "11am–5pm"
+  },
+  "sources": [
+   {
+    "url": "https://gravityworx.com.au/hours-location/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Regular hours; school holidays differ."
+ },
+ {
+  "id": "seed-31",
+  "name": "Hardrock Climbing",
+  "metro": "Melbourne",
+  "expect_h": "244fadf3029128ca",
+  "website": "https://www.hardrock.com.au/",
+  "hours": null,
+  "sources": [
+   {
+    "url": "https://www.hardrock.com.au/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   }
+  ],
+  "status": "website-only",
+  "notes": "Official site (4/8 Franklin St) states no regular hours; only temporary spring school holiday hours (weekdays 11am-9:30pm, weekends 11am-6:30pm) on /news-events/spring-school-holidays/."
+ },
+ {
+  "id": "seed-32",
+  "name": "Hardrock Climbing Company",
+  "metro": "Melbourne",
+  "expect_h": "a9597c4531503ca9",
+  "website": "https://www.hardrock.com.au/",
+  "hours": null,
+  "sources": [
+   {
+    "url": "https://www.hardrock.com.au/news-events/nunawading-closure/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   }
+  ],
+  "status": "flag",
+  "notes": "Permanently closed: operator notice dated 3 Dec 2025 says Nunawading closes permanently, last day of trade 19 Dec 2025 (site sold for redevelopment). Website is the operator's main site (Melbourne CBD gym), no Nunawading page."
+ },
+ {
+  "id": "seed-42",
+  "name": "La Roca Boulders",
+  "metro": "Melbourne",
+  "expect_h": "895cc1143fe933a8",
+  "website": "https://laroca.com.au/",
+  "hours": {
+   "mon": "11:30am–9:30pm",
+   "tue": "11:30am–9:30pm",
+   "wed": "11:30am–9:30pm",
+   "thu": "11:30am–9:30pm",
+   "fri": "11:30am–9:30pm",
+   "sat": "9am–7pm",
+   "sun": "9am–7pm"
+  },
+  "sources": [
+   {
+    "url": "https://laroca.com.au/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://laroca.com.au/faqs-2/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Staffed hours; members with a 24/7 key can use the annex at any time. Weekends 9am-7pm on home page and FAQ; contact-us page says 10am-7pm."
+ },
+ {
+  "id": "seed-35",
+  "name": "Northside Boulders",
+  "metro": "Melbourne",
+  "expect_h": "051fbd66d9fc88f0",
+  "website": "https://northsideboulders.com/",
+  "hours": {
+   "mon": "7am–10pm",
+   "tue": "7am–10pm",
+   "wed": "7am–10pm",
+   "thu": "7am–10pm",
+   "fri": "7am–10pm",
+   "sat": "10am–7pm",
+   "sun": "10am–7pm"
+  },
+  "sources": [
+   {
+    "url": "https://northsideboulders.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Locations section lists Brunswick hours; early community-only sessions mentioned separately."
+ },
+ {
+  "id": "seed-36",
+  "name": "Northside Boulders",
+  "metro": "Melbourne",
+  "expect_h": "371593d49c379f38",
+  "website": "https://northsideboulders.com/",
+  "hours": {
+   "mon": "7am–10pm",
+   "tue": "7am–10pm",
+   "wed": "7am–10pm",
+   "thu": "7am–10pm",
+   "fri": "7am–10pm",
+   "sat": "10am–7pm",
+   "sun": "10am–7pm"
+  },
+  "sources": [
+   {
+    "url": "https://northsideboulders.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Locations section lists Northcote hours; early community-only sessions mentioned separately."
+ },
+ {
+  "id": "seed-44",
+  "name": "Rocket Climbing",
+  "metro": "Melbourne",
+  "expect_h": "c4038650f8b5322b",
+  "website": "https://www.rocket-climbing.com.au/",
+  "hours": {
+   "mon": "6:30am–10pm",
+   "tue": "11am–10pm",
+   "wed": "6:30am–10pm",
+   "thu": "11am–10pm",
+   "fri": "11am–10pm",
+   "sat": "9am–9pm",
+   "sun": "9am–9pm"
+  },
+  "sources": [
+   {
+    "url": "https://www.rocket-climbing.com.au/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": ""
+ },
+ {
+  "id": "seed-41",
+  "name": "UP Climbing",
+  "metro": "Melbourne",
+  "expect_h": "b3498f5c6ce9e250",
+  "website": "https://upclimbing.com.au/",
+  "hours": {
+   "mon": "6am–10pm",
+   "tue": "6am–10pm",
+   "wed": "6am–10pm",
+   "thu": "6am–10pm",
+   "fri": "6am–10pm",
+   "sat": "8am–8pm",
+   "sun": "8am–8pm"
+  },
+  "sources": [
+   {
+    "url": "https://upclimbing.com.au/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Public holidays 8am-8pm."
+ },
+ {
+  "id": "seed-37",
+  "name": "Urban Climb",
+  "metro": "Melbourne",
+  "expect_h": "d038d45f607c43d4",
+  "website": "https://urbanclimb.com.au/locations/collingwood/",
+  "hours": {
+   "mon": "6am–10pm",
+   "tue": "6am–10pm",
+   "wed": "6am–10pm",
+   "thu": "6am–10pm",
+   "fri": "6am–10pm",
+   "sat": "8am–8pm",
+   "sun": "8am–8pm"
+  },
+  "sources": [
+   {
+    "url": "https://urbanclimb.com.au/locations/collingwood/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Bouldering open times (13+); public holidays 8am-8pm."
+ },
+ {
+  "id": "seed-38",
+  "name": "Urban Climb",
+  "metro": "Melbourne",
+  "expect_h": "8c9f4c0a1c98d37e",
+  "website": "https://urbanclimb.com.au/locations/blackburn/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "8am–8pm",
+   "sun": "8am–8pm"
+  },
+  "sources": [
+   {
+    "url": "https://urbanclimb.com.au/locations/blackburn/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Ropes and bouldering share the same times; site address 5/15-33 Alfred St. Public holidays 8am-8pm."
+ },
+ {
+  "id": "seed-18",
+  "name": "1UP Bouldering",
+  "metro": "Sydney",
+  "expect_h": "c8d35024f0b830ae",
+  "website": "https://www.oneupbouldering.com.au/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "8am–10pm",
+   "sun": "8am–10pm"
+  },
+  "sources": [
+   {
+    "url": "https://www.oneupbouldering.com.au/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours read from the site's page script (single-page app)."
+ },
+ {
+  "id": "seed-0",
+  "name": "9 Degrees Alexandria",
+  "metro": "Sydney",
+  "expect_h": "70e62fbf89f9af2d",
+  "website": "https://9degrees.com.au/locations",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "4pm–10pm",
+   "wed": "6am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "8am–9pm",
+   "sun": "8am–9pm"
+  },
+  "sources": [
+   {
+    "url": "https://9degrees.com.au/locations",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Shared locations page; 4pm start on Tuesday matches 'new climbs every Tuesday'."
+ },
+ {
+  "id": "seed-1",
+  "name": "9 Degrees Lane Cove",
+  "metro": "Sydney",
+  "expect_h": "846778f0715c40f0",
+  "website": "https://9degrees.com.au/locations",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "6am–10pm",
+   "wed": "4pm–10pm",
+   "thu": "6am–10pm",
+   "fri": "10am–10pm",
+   "sat": "8am–10pm",
+   "sun": "8am–10pm"
+  },
+  "sources": [
+   {
+    "url": "https://9degrees.com.au/locations",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Shared locations page; 4pm start on Wednesday matches 'new climbs every Wednesday'."
+ },
+ {
+  "id": "seed-2",
+  "name": "9 Degrees Parramatta",
+  "metro": "Sydney",
+  "expect_h": "bda3bb4d6b108ef9",
+  "website": "https://9degrees.com.au/locations",
+  "hours": {
+   "mon": "4pm–10pm",
+   "tue": "6am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "6am–10pm",
+   "sat": "8am–10pm",
+   "sun": "8am–10pm"
+  },
+  "sources": [
+   {
+    "url": "https://9degrees.com.au/locations",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Listed as Parramatta; address Unit 11, 38-46 South St Rydalmere matches. 4pm Monday start matches 'new climbs every Monday'."
+ },
+ {
+  "id": "seed-3",
+  "name": "9 Degrees Waterloo",
+  "metro": "Sydney",
+  "expect_h": "6a00f55d183ad29b",
+  "website": "https://9degrees.com.au/locations",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "6am–10pm",
+   "wed": "10am–10pm",
+   "thu": "4pm–10pm",
+   "fri": "6am–10pm",
+   "sat": "8am–10pm",
+   "sun": "8am–10pm"
+  },
+  "sources": [
+   {
+    "url": "https://9degrees.com.au/locations",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Shared locations page; 4pm Thursday start matches 'new climbs every Thursday'."
+ },
+ {
+  "id": "seed-16",
+  "name": "Beta One Bouldering Gym",
+  "metro": "Sydney",
+  "expect_h": "221de7ab24488a6a",
+  "website": "https://betaone.com.au/",
+  "hours": {
+   "mon": "4pm–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "4pm–10pm",
+   "fri": "10am–10pm",
+   "sat": "9am–9pm",
+   "sun": "9am–9pm"
+  },
+  "sources": [
+   {
+    "url": "https://betaone.com.au/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": ""
+ },
+ {
+  "id": "seed-15",
+  "name": "BlocHaus Leichhardt",
+  "metro": "Sydney",
+  "expect_h": "64e531d0552e79ea",
+  "website": "https://syd.blochaus.com.au/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "6am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "8am–10pm",
+   "sun": "8am–10pm"
+  },
+  "sources": [
+   {
+    "url": "https://syd.blochaus.com.au/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Shared Sydney page, Leichhardt (LCT) hours. Closed Christmas and New Year's Day."
+ },
+ {
+  "id": "seed-14",
+  "name": "BlocHaus Marrickville",
+  "metro": "Sydney",
+  "expect_h": "cbc6e01d7cc3319f",
+  "website": "https://syd.blochaus.com.au/",
+  "hours": {
+   "mon": "6am–10pm",
+   "tue": "6am–11pm",
+   "wed": "6am–11pm",
+   "thu": "6am–11pm",
+   "fri": "6am–10pm",
+   "sat": "8am–10pm",
+   "sun": "8am–10pm"
+  },
+  "sources": [
+   {
+    "url": "https://syd.blochaus.com.au/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Shared Sydney page, Marrickville (MKV) hours. Closed Christmas and New Year's Day."
+ },
+ {
+  "id": "seed-10",
+  "name": "Climb Fit Kirrawee",
+  "metro": "Sydney",
+  "expect_h": "96637217af9c9d4d",
+  "website": "https://www.climbfit.com.au/location/climbfit-kirrawee/",
+  "hours": {
+   "mon": "6am–10pm",
+   "tue": "6am–10pm",
+   "wed": "6am–10pm",
+   "thu": "6am–10pm",
+   "fri": "6am–10pm",
+   "sat": "8am–8pm",
+   "sun": "8am–8pm"
+  },
+  "sources": [
+   {
+    "url": "https://www.climbfit.com.au/location/climbfit-kirrawee/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Public holidays 9am-9pm."
+ },
+ {
+  "id": "seed-9",
+  "name": "Climb Fit Macquarie",
+  "metro": "Sydney",
+  "expect_h": "5ecca7945515ccfb",
+  "website": "https://www.climbfit.com.au/location/climb-fit-macquarie/",
+  "hours": {
+   "mon": "8am–10pm",
+   "tue": "8am–10pm",
+   "wed": "8am–10pm",
+   "thu": "8am–10pm",
+   "fri": "8am–10pm",
+   "sat": "8am–8pm",
+   "sun": "8am–8pm"
+  },
+  "sources": [
+   {
+    "url": "https://www.climbfit.com.au/location/climb-fit-macquarie/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.climbfit.com.au/location/contact/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Public holidays 9am-9pm. Page also notes Sat 26 Sep 2026 closed for a comp (one-off, ignored)."
+ },
+ {
+  "id": "seed-8",
+  "name": "Climb Fit St Leonards",
+  "metro": "Sydney",
+  "expect_h": "dd14ab957de2f1a3",
+  "website": "https://www.climbfit.com.au/location/climbfit-st-leonards/",
+  "hours": {
+   "mon": "6am–10pm",
+   "tue": "6am–10pm",
+   "wed": "6am–10pm",
+   "thu": "6am–10pm",
+   "fri": "6am–10pm",
+   "sat": "8am–8pm",
+   "sun": "8am–8pm"
+  },
+  "sources": [
+   {
+    "url": "https://www.climbfit.com.au/location/climbfit-st-leonards/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.climbfit.com.au/location/contact/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Public holidays 9am-9pm."
+ },
+ {
+  "id": "seed-17",
+  "name": "Climbing Collective",
+  "metro": "Sydney",
+  "expect_h": "5f374bb72aa828ee",
+  "website": "https://climbercollective.com.au/",
+  "hours": {
+   "mon": "4pm–9pm",
+   "tue": "4pm–9pm",
+   "wed": "4pm–9pm",
+   "thu": "4pm–9pm",
+   "fri": "4pm–9pm",
+   "sat": "9am–8pm",
+   "sun": "9am–6pm"
+  },
+  "sources": [
+   {
+    "url": "https://climbercollective.com.au/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Site name is 'Climber Collective'; address Unit 4/55-61 York Rd, Jamisontown matches."
+ },
+ {
+  "id": "seed-7",
+  "name": "Elevate Climbing Villawood",
+  "metro": "Sydney",
+  "expect_h": "bf68b67e3cf8bf51",
+  "website": "https://www.elevateclimbing.com.au/",
+  "hours": {
+   "mon": "10:30am–10pm",
+   "tue": "10:30am–10pm",
+   "wed": "10:30am–10pm",
+   "thu": "10:30am–10pm",
+   "fri": "10:30am–10pm",
+   "sat": "9:30am–9pm",
+   "sun": "9:30am–9pm"
+  },
+  "sources": [
+   {
+    "url": "https://www.elevateclimbing.com.au/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.elevateclimbing.com.au/contact",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Public holidays 10am-7pm."
+ },
+ {
+  "id": "seed-4",
+  "name": "NOMAD Bouldering",
+  "metro": "Sydney",
+  "expect_h": "c90738ffcccfb063",
+  "website": "https://www.nomadbouldering.com.au/locations/annandale",
+  "hours": {
+   "mon": "6am–10pm",
+   "tue": "6am–10pm",
+   "wed": "6am–10pm",
+   "thu": "6am–10pm",
+   "fri": "6am–10pm",
+   "sat": "8am–9:30pm",
+   "sun": "8am–9:30pm"
+  },
+  "sources": [
+   {
+    "url": "https://www.nomadbouldering.com.au/locations/annandale",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Public holidays 8am-10pm; site refers to Google for special hours."
+ },
+ {
+  "id": "seed-5",
+  "name": "NOMAD Bouldering Gladesville",
+  "metro": "Sydney",
+  "expect_h": "385fdb004f7528ea",
+  "website": "https://www.nomadbouldering.com.au/locations/gladesville",
+  "hours": {
+   "mon": "9am–10pm",
+   "tue": "9am–10pm",
+   "wed": "9am–10pm",
+   "thu": "9am–10pm",
+   "fri": "9am–10pm",
+   "sat": "8am–9:30pm",
+   "sun": "8am–9:30pm"
+  },
+  "sources": [
+   {
+    "url": "https://www.nomadbouldering.com.au/locations/gladesville",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": ""
+ },
+ {
+  "id": "seed-19",
+  "name": "Northern Beaches Rockhouse",
+  "metro": "Sydney",
+  "expect_h": "3ba724f0deb5379d",
+  "website": "https://www.rockhouse.com.au/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "9am–8pm",
+   "sun": "9am–8pm"
+  },
+  "sources": [
+   {
+    "url": "https://www.rockhouse.com.au/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": ""
+ },
+ {
+  "id": "seed-27",
+  "name": "Sandbox Bouldering Gym",
+  "metro": "Sydney",
+  "expect_h": "aab1f8fc157133d2",
+  "website": "https://sandboxbouldering.com.au/",
+  "hours": null,
+  "sources": [
+   {
+    "url": "https://sandboxbouldering.com.au/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://sandboxbouldering.com.au/1st-timer",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   }
+  ],
+  "status": "website-only",
+  "notes": "Site gives only staffed hours for first visits (Mon 5:30-9:30pm, Wed 5:30-9:30pm, Fri 11:30am-2:30pm, Sat 10am-1pm) and no general opening hours, so hours left null."
+ },
+ {
+  "id": "seed-20",
+  "name": "Skywood Climbing",
+  "metro": "Sydney",
+  "expect_h": "37802a189a8a139e",
+  "website": "https://www.skywoodclimbing.com/",
+  "hours": {
+   "mon": "9am–10pm",
+   "tue": "2pm–10pm",
+   "wed": "9am–10pm",
+   "thu": "9am–10pm",
+   "fri": "2pm–10pm",
+   "sat": "9am–9pm",
+   "sun": "9am–9pm"
+  },
+  "sources": [
+   {
+    "url": "https://www.skywoodclimbing.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   }
+  ],
+  "status": "flag",
+  "notes": "Probably moved: home page says 'Open now at 144 Old Pittwater Road, Brookvale' (hours recorded are those listed there; Tue and Fri set days open 2pm), while footer and other pages still show Shop 1/1-3 Moore Rd, Freshwater with 9am-10pm daily. Target address is Freshwater; verify."
+ },
+ {
+  "id": "seed-6",
+  "name": "Sydney Indoor Climbing Gym – St Peters",
+  "metro": "Sydney",
+  "expect_h": "5d34eefd3f7821b5",
+  "website": "https://indoorclimbing.com.au/stpeters/",
+  "hours": {
+   "mon": "9:30am–10pm",
+   "tue": "9:30am–10pm",
+   "wed": "6am–10pm",
+   "thu": "9:30am–11pm",
+   "fri": "9:30am–10pm",
+   "sat": "9:30am–9pm",
+   "sun": "9:30am–9pm"
+  },
+  "sources": [
+   {
+    "url": "https://indoorclimbing.com.au/stpeters/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Public holidays 9:30am-7pm."
+ },
+ {
+  "id": "seed-13",
+  "name": "The Climbing Centre",
+  "metro": "Sydney",
+  "expect_h": "0c11e0fa57e09dfb",
+  "website": "https://climbingcentre.com.au/",
+  "hours": {
+   "mon": "1pm–9pm",
+   "tue": "1pm–9pm",
+   "wed": "10am–9pm",
+   "thu": "10am–9pm",
+   "fri": "1pm–9pm",
+   "sat": "10am–8pm",
+   "sun": "10am–6pm"
+  },
+  "sources": [
+   {
+    "url": "https://climbingcentre.com.au/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Regular (non school-holiday) hours; address 3/16-24 Borec Rd, Penrith."
+ },
+ {
+  "id": "seed-12",
+  "name": "The Edge Rock Climbing Centre",
+  "metro": "Sydney",
+  "expect_h": "8a726b734abecd96",
+  "website": "https://www.edgerockclimbing.com.au/",
+  "hours": {
+   "mon": "12pm–10pm",
+   "tue": "12pm–10pm",
+   "wed": "12pm–10pm",
+   "thu": "12pm–10pm",
+   "fri": "12pm–10pm",
+   "sun": "9am–6pm"
+  },
+  "sources": [
+   {
+    "url": "https://www.edgerockclimbing.com.au/contact.html",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.edgerockclimbing.com.au/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Saturday omitted: contact page says Sat 9am-6pm but site footer says Saturdays 9am-10pm. School holiday weekdays 9am-10pm."
+ },
+ {
+  "id": "seed-11",
+  "name": "The Ledge Climbing Centre",
+  "metro": "Sydney",
+  "expect_h": "1dbb357c11bbc78c",
+  "website": "https://susf.com.au/the-ledge-climbing-centre/",
+  "hours": {
+   "wed": "5pm–9pm",
+   "thu": "5pm–9pm"
+  },
+  "sources": [
+   {
+    "url": "https://susf.com.au/the-ledge-climbing-centre/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Official page lists only 'Wednesday/Thursday 5pm-9pm'; other days not stated. Operated by Sydney Uni Sport; page text read via browser (site blocks plain HTTP clients)."
+ }
+]

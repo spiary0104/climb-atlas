@@ -13,8 +13,15 @@ content hashes taken from production and equal to the import index). Batch 2 = S
   - seed-228 The Wall at Palisades: nothing found (no official site; likely defunct). Owner may want a retire review.
   - seed-210 Island Rock Gym: website only, DROP hours (taken from hidden page data; third-party listings differ).
 
+- `research-au.json` (Sydney + Melbourne, 36): 32 found, 2 website-only, 2 flag; check clean. To review before the batch:
+  - seed-32 Hardrock Nunawading: PERMANENTLY CLOSED (operator notice, last day 19 Dec 2025): EXCLUDE; retire candidate.
+  - seed-20 Skywood Climbing: site says it moved to 144 Old Pittwater Rd, Brookvale (footer still Freshwater): EXCLUDE
+    hours until confirmed; location-update candidate.
+  - Partial-hours entries (seed-34, seed-12, seed-39, seed-11 Wed/Thu only): decide whether partial weeks are acceptable;
+    seed-11 (The Ledge) likely should be website-only.
+  - The worker read some JS-rendered pages via page data and susf.com.au in the browser pane; spot-check those.
+
 ## Not done
-- Sydney + Melbourne (36 gyms, `targets-au.json`): research was interrupted; rerun with `brief.md`.
 - Pipeline: the gated updater cannot write website/hours yet. Work in progress (uncommitted) on branch
   `feature/import-info-updates` in worktree `.claude/worktrees/agent-a7b3a0d8c0767c95b`: fill-only info updates
   (refuse if a field is already set), new `Api.updateSpotInfo` behind the update gate, tests, docs. Finish it, test,
