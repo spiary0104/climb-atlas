@@ -19,8 +19,8 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 - Status: gated importer built and tested; first batch (246) IMPORTED 2026-09-24 (1,881 → 2,127). Open: retire data/gyms.json (plan in docs).
 - Regional expansion (new locations, one geographic section at a time): `research new|reconcile|stage` built (`research.js`, docs
   "Regional research"). Wave 1 (9 Tier A sections) IMPORTED + verified (manifests; India recovered after #23). Wave 2 (6) IMPORTED + verified; Wave 3A (5, PR #13) and 3C paused.
-- Location data: 11 OSM-validated updates APPLIED 2026-09-30 (batch `2026-09-30-location-updates`, verified; index rebuilt). Open: 4 to
-  manual review (Balkan Climbing, OAKA, CELL, Mamouna); seed-1139 Manga Climbing has Rockspot's pin; 489 unresolved.
+- Location data: 11 OSM-validated updates APPLIED 2026-09-30 (batch `2026-09-30-location-updates`, verified; index rebuilt). Staged, owner applies:
+  `2026-10-03-polish-fixes` (4 manual-review gyms + 7 Wave 2 follow-ups) and `2026-10-03-czechia-pins` (7 Czech gyms). 489 unresolved.
 
 ## Backlog
 
