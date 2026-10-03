@@ -63,16 +63,23 @@ EXTRAS = {
   'granite': [('#787878', '#83817F'), ('#909090', '#83817F'), ('#848478', '#83817F'), ('#B4B4B4', '#83817F'),
               ('#606060', '#666462'), ('#545454', '#666462'), ('#484848', '#666462')],
 }
+# 'ground' (opt-in, 2026-10-03: field-notes, fresh-stamp): the source's soft beige ground shadow under the feet is background, not
+# character; otherwise it snaps to cream and traces as a cream ellipse. Only the bottom 14% of the image is affected, so cream
+# shading inside the figure can never be taken for the shadow.
+GROUND = []
 for name in (sys.argv[7].split(',') if len(sys.argv) > 7 and sys.argv[7] else []):
-    BRAND = BRAND + EXTRAS[name]
+    if name == 'ground': GROUND = [h2c(c) for c in ('#DBC8AE', '#DDC9B0', '#D9C8AC', '#DAC6AD', '#E2D2B8', '#D2BFA4')]
+    else: BRAND = BRAND + EXTRAS[name]
+GROUND_ROW = int(SIZE * 0.86)
 BG = -1
 if NCOL == 0:
     samples = [(h2c(a), h2c(b)) for a, b in BRAND]
     outs = sorted({b for _, b in samples})
     cols = outs
     grid = []
-    for p in px:
+    for i, p in enumerate(px):
         if dist(p, bg) <= 22: grid.append(BG); continue
+        if GROUND and i // SIZE >= GROUND_ROW and min(dist(p, g) for g in GROUND) <= 20: grid.append(BG); continue
         smp = min(samples, key=lambda sb: dist(p, sb[0]))
         grid.append(outs.index(smp[1]))
     palette = list(range(len(outs)))

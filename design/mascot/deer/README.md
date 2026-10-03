@@ -18,5 +18,14 @@ characters. Do not edit these files; add derivatives elsewhere. Copied from the 
 | `rest-day.png` | Wrapped in a mustard blanket with a mug [`…boulderin8.png`] | Quiet-week Log state |
 | `high-five.png` | Chalky high five [`…boulderin9.png`] | Onboarding welcome, first approved contribution |
 
+Added 2026-10-03: three poses generated from the renders above as references (same character, not a redesign). field-notes
+and fresh-stamp are in the product (DESIGN.md sec. 12.1); pin-drop's role is a proposal only.
+
+| File | Pose | Product role |
+|---|---|---|
+| `field-notes.png` | Seated, writing in a small notebook with a pencil | First-run /me Saved (traced: `assets/mascot/field-notes.svg`) |
+| `fresh-stamp.png` | Arms up, holding the open passport with a fresh stamp overhead | Milestone sheet: travel milestones (traced: `assets/mascot/fresh-stamp.svg`) |
+| `pin-drop.png` | Planting an orange map pin | Proposed: add-a-gym "in review" screen (not traced; not a sanctioned surface) |
+
 Panda reference screenshots (`design/references/panda/`) are third-party app captures used as design reference only.
 They are excluded from git (`.git/info/exclude`) because this repository is public: keep them local.

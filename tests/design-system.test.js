@@ -268,7 +268,10 @@ test('mascot: brand marks only where sec. 12.2 allows (START, wordmark lockup, d
   assert.ok(!/assets\/mascot\/(?!stamp-head\.svg)/.test(read('js/modules/stamp-html.js')), 'stamps carry only the single-ink stamp head');
   assert.deepEqual([...read('js/modules/share-card.js').matchAll(/assets\/mascot\/[a-z-]+\.svg/g)].map(m => m[0]).sort(), ['assets/mascot/head.svg', 'assets/mascot/stamp-head.svg'], 'share card: the stamp head and the lockup head');
   assert.deepEqual((read('js/modules/logbook.js').match(/firstRunArt\([^)]*\)/g) || []), ["firstRunArt('log')"], 'Log: chalking-up on the first-run empty state only');
-  assert.deepEqual((read('js/modules/page-html.js').match(/firstRunArt\([^)]*\)/g) || []), ["firstRunArt('saved')"], '/me: the backpacker on a first-run Saved tab only');
+  assert.deepEqual((read('js/modules/page-html.js').match(/firstRunArt\([^)]*\)/g) || []), ["firstRunArt('saved')"], '/me: field-notes on a first-run Saved tab only');
+  assert.deepEqual((read('js/modules/list.js').match(/firstRunArt\([^)]*\)/g) || []), ["firstRunArt('explore')"], 'Explore: the backpacker on the first-ever visit only (sec. 7.10)');
+  assert.match(read('js/modules/list.js'), /const show = appState\.exploreFirstRun && zoom < 4 && !appState\.placeFilter && !appState\.searchTerm;/, 'world/continent zoom, no place or search');
+  assert.ok(!/mascot/.test(read('index.html').match(/<div class="empty-state explore-first-run"[^>]*><\/div>/)[0]), 'the shell holds only an empty slot; brand.js supplies the art');
   assert.match(read('js/modules/page-html.js'), /const art = firstRun \? firstRunArt\('saved'\) : '';/, 'never on a repeat empty');
   assert.match(read('js/modules/auth-ui.js'), /<span class="avatar mascot mascot--avatar" aria-hidden="true"><img src="assets\/mascot\/head\.svg" alt=""><\/span>/);
   for (const f of ['assets/mascot/head.svg', 'assets/mascot/stamp-head.svg', 'assets/brand/antlers.svg', 'icons/favicon.svg', 'icons/icon.svg', 'icons/icon-maskable.svg']) {
