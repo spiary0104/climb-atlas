@@ -10,7 +10,8 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 - PRs: #30 mascot (field-notes on first-run /me, fresh-stamp on travel milestones, Explore first run 7.10); #31 page header art
   (Regions, signed-out Log/Me; DESIGN 13A); #32 START "Check in", lake/plum final, boulder-tag + map-attribution contrast; #33 research
   notes hidden (97.5% of notes); #34 the two data batches below. All bump sw.js to v18: resolve by taking the next version on merge.
-- Owner: apply `2026-10-03-polish-fixes` (11 pin/address updates) and `2026-10-03-czechia-pins` (7 new gyms) with the key (PR #34).
+- `2026-10-03-polish-fixes` APPLIED + verified 2026-10-03 (11 pins, 3 addresses; FULL coverage; index rebuilt). Owner: apply
+  `2026-10-03-czechia-pins` (7 new gyms; plan refreshed against the new index) with the key (PR #34).
 - Lighthouse a11y (production, PSI, mobile, 2026-10-03): `/` 96 (only the map attribution contrast, fixed in #32), `/in` 100,
   `/log` 100; desktop not captured. Re-run after deploy. Performance 33 on `/` mobile (TBT 6.3 s): the deferred first-load work.
 - Follow-ups: `pin-drop` pose (add-gym "in review") needs a DESIGN 12.2 decision before tracing; notes need a data fix to keep the
@@ -29,8 +30,8 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 - Status: gated importer built and tested; first batch (246) IMPORTED 2026-09-24 (1,881 → 2,127). Open: retire data/gyms.json (plan in docs).
 - Regional expansion (new locations, one geographic section at a time): `research new|reconcile|stage` built (`research.js`, docs
   "Regional research"). Wave 1 (9 Tier A sections) IMPORTED + verified (manifests; India recovered after #23). Wave 2 (6) IMPORTED + verified; Wave 3A (5, PR #13) and 3C paused.
-- Location data: updates APPLIED 2026-09-30 (11) and 2026-10-03 (5 incl. Manga Climbing); staged (PR #34): 4 manual-review gyms +
-  7 Wave 2 follow-ups, and the 7 Czech gyms. 489 unresolved.
+- Location data: updates APPLIED 2026-09-30 (11) and 2026-10-03 (5 incl. Manga Climbing; then 11: the 4 manual-review gyms + 7
+  Wave 2 follow-ups). Staged (PR #34): the 7 Czech gyms. 489 unresolved.
 
 ## Backlog
 
