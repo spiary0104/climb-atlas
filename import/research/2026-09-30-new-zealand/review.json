@@ -1,0 +1,97 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-09-30-new-zealand",
+ "reviewer": "Spiar (owner); decisions drafted by Claude (AI) on the owner's instruction, signed off by the owner 2026-10-03",
+ "reviewed": "2026-10-03",
+ "decisions": {
+  "nz-001": {
+   "decision": "same-as",
+   "same_as": "seed-477",
+   "reason": "BC chain location page: Boulder Co. Auckland, 33-47 Northside Drive, Westgate; same chain, name and street address as seed-477 (290 m apart). nz-003 and seed-479 (Auckland Climbing Gym, Eden Terrace, 14.9 km away) are a different gym. Pin gap 290 m is noted but not clearly in favour of either pin, so no location-update."
+  },
+  "nz-002": {
+   "decision": "same-as",
+   "same_as": "seed-478",
+   "followup": "location-update",
+   "reason": "Same gym: seed-478 is Northern Rocks at Unit 17/101-111 Diana Drive; the gym site (NR) gives 111 Diana Dr, Glenfield and its own map code comments the same unit address. Existing pin is 1548 m off. The gym site map centre is -36.7758619,174.7329933, about 45 m from the candidate pin, so the candidate pin is clearly better."
+  },
+  "nz-003": {
+   "decision": "same-as",
+   "same_as": "seed-479",
+   "reason": "ACG official site: Auckland Climbing Gym, 135 Newton Road, Eden Terrace; identical name and address as seed-479, pins 21 m apart."
+  },
+  "nz-004": {
+   "decision": "same-as",
+   "same_as": "seed-480",
+   "reason": "EEP official site: Extreme Edge Panmure, Morrin Road, Panmure; same gym as seed-480 (275 m apart; site says 32 Morrin Road, seed has 40 Morrin Road from a directory). Candidate pin is a Google embed centre on the contact page; not confirmed against the address, so no location-update recommended. Note: the site returned HTTP 500 on re-fetch although page content rendered."
+  },
+  "nz-005": {
+   "decision": "accept",
+   "reviewed_against": [],
+   "reason": "Single source but primary: BC chain location page for Hamilton shows the gym, address 15 Maxwell Place, weekday opening hours (06:00-22:00) and bouldering. Pin is the GeoCoordinates in the page structured data (re-checked, matches candidate). No existing Bouldeer gym flagged."
+  },
+  "nz-006": {
+   "decision": "accept",
+   "reviewed_against": [],
+   "reason": "EEH own site shows two dedicated bouldering areas next to the rope walls; contact page gives 90 Greenwood Street, Frankton. Pin is the centre of the Google embed on the contact page; re-checked: the embed names \"90 Greenwood St, Frankton, Hamilton 3204\" and its centre equals the recorded coordinate, so it agrees with the published address."
+  },
+  "nz-007": {
+   "decision": "accept",
+   "reviewed_against": [],
+   "reason": "TUR own site shows a refurbished bouldering cave plus rope walls and listed weekly hours; address 22 Ngawaka Place. Pin is the marker in the map plugin on the contact page (re-checked: lat -38.98859 in the page, matching the recorded value). Limited weekday hours, closed some days."
+  },
+  "nz-008": {
+   "decision": "accept",
+   "reviewed_against": [],
+   "reason": "TAU council (Taupo District Council) page, public facility inside AC Baths, 26 AC Baths Avenue, with published opening hours; says there is a bouldering section along the bottom of the wall. Public access: council-run, typed commercial-gym. Bouldering offer is minor (low section under a 12 m rope wall), owner may judge. Pin is the place link on the council location page (38.677836 appears in the page)."
+  },
+  "nz-009": {
+   "decision": "accept",
+   "reviewed_against": [],
+   "reason": "ROCK own site: two boulder caves (one 4.5 m), MoonBoard training room and rope walls; contact page gives 9 Triton Avenue and opening hours 7 days. Pin is the centre of the Google embed on the contact page, which names the place \"Rocktopia\" and carries the recorded coordinate. Site writes postcode 3116, candidate has 3118. Former name The Rock House."
+  },
+  "nz-010": {
+   "decision": "accept",
+   "reviewed_against": [],
+   "reason": "YTAR own site: The Crux Climbing Space, 83 Liardet Street, with a bouldering cave (30 problems), public sessions Thu-Sun with day passes and a bouldering-only price. Public access shown; typed commercial-gym although YMCA-run. Open only a few days a week. Pin is the place link published on the climbing page."
+  },
+  "nz-011": {
+   "decision": "defer",
+   "reason": "Limited access not resolved: MUAC page (only source) says the wall is open to members of the Massey University Alpine Club ($40/year, students and non-students); no drop-in, guest or day pass or public hours are shown. Missing: evidence of public access. Pin is the recreation centre place link, not the wall."
+  },
+  "nz-012": {
+   "decision": "same-as",
+   "same_as": "seed-481",
+   "reason": "FERGS official site: Fergs Wellington waterfront wall; same name and place as seed-481, 49 m apart. Pin gap too small for a location update."
+  },
+  "nz-013": {
+   "decision": "same-as",
+   "same_as": "seed-485",
+   "reason": "BC chain page: Boulder Co. Christchurch, 179 Blenheim Road, Riccarton; same address as seed-485 (name differs only by a full stop), 55 m apart."
+  },
+  "nz-014": {
+   "decision": "same-as",
+   "same_as": "seed-484",
+   "reason": "UP official site contact page: 199 Ferry Rd, Waltham; seed-484 Uprising Boulder Gym has the same address and a pin 0 m away, same gym under a slightly different name."
+  },
+  "nz-015": {
+   "decision": "accept",
+   "reviewed_against": [],
+   "reason": "KIND own site (single source, primary): casual entry prices with a separate bouldering price, open 7 days, dedicated bouldering area, address 239 Waltham Road. Public access shown (casual entry); former YMCA Roxx, now run by The Kind Foundation, typed commercial-gym. Pin is the place link on the page for 239 Waltham Road (-43.542724,172.646276). Separate from Uprising (199 Ferry Rd, about 1 km away)."
+  },
+  "nz-016": {
+   "decision": "defer",
+   "reason": "Coordinate unresolved: RES site map block carries a marker at the old Moray Place site (-45.875429,170.5019283) but a map centre at the new address (-45.8704261,170.5228189). The recorded pin is that map centre, street precision, which is neither the gym's published marker nor an OSM element. Gym relocation to 56 Parry Street West is stated on its own site. Missing: an OSM element or a pin confirmed at 56 Parry Street West."
+  },
+  "nz-017": {
+   "decision": "accept",
+   "reviewed_against": [],
+   "reason": "GW own site (single source, primary) says \"a bouldering gym\" in Nelson, lists opening hours and gives 37 Wakatu Lane; routesetting three times a week. Pin is the business location coordinates in the site data (-41.2720346,173.2818959), matching the address. Distinct from the closed Vertical Limits (nz-018), a separate venue about 300 m away."
+  },
+  "nz-018": {
+   "decision": "reject",
+   "reason_code": "closed",
+   "reason": "VL own site now shows \"WE ARE NOW CLOSED\" and says it is closed for good and will not reopen (re-checked on its home page)."
+  }
+ }
+}

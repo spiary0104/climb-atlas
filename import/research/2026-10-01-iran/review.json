@@ -1,0 +1,38 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-01-iran",
+ "reviewer": "Spiar (owner); decisions drafted by Claude (AI) on the owner's instruction, signed off by the owner 2026-10-03",
+ "reviewed": "2026-10-03",
+ "decisions": {
+  "ir-001": {
+   "decision": "accept",
+   "reason": "S1 own site (re-read 2026-10-03) shows bouldering programme and boulder walls (Moon Board, spray wall), an 18 m lead wall, daily hours 9:00-23:00, a paid day-entry ticket (public access) and the Saadatabad, Daoud Rashidi St address. Pin is the gym's own published map link (S1, building precision). Distinct from ir-002, ir-003 and ir-005 (separate gyms with their own addresses, 6-9 km away). The S5 directory lists an older Sarv Square address; the own site shows Saadatabad, so S5 is outdated, not a second gym.",
+   "reviewed_against": [
+    "ir-002",
+    "ir-003",
+    "ir-005"
+   ]
+  },
+  "ir-002": {
+   "decision": "defer",
+   "reason": "coordinate unresolved: the only pin is the Google embed on the S2 contact page (area precision, may mark the club office in the Qaem complex rather than the wall); no OSM element or own precise pin, and coarse-coordinates is a blocker. Also single-source club (limited-access): S2 pages seen do not show drop-in or day-pass public access. Needs a building-level pin from the club or OSM and evidence of public access."
+  },
+  "ir-003": {
+   "decision": "accept",
+   "reason": "Single source, but S3 is the gym's own page (re-read 2026-10-03): it names a boulder wall with standard mats, campus board and hang board, gives the address (No. 18, Azimi Alley, W Farmaniyeh), a phone and structured opening hours; it is a commercial sports club, so public access is normal. Pin is the geo data the gym publishes in its own page (S3, building), which matches the written district. Distinct from ir-001, ir-002 and ir-005 (different gyms and addresses, 6-14 km away). Caveat: the page is a general sports club with a shop-style article around it, so the wall size is not stated.",
+   "reviewed_against": [
+    "ir-001",
+    "ir-002",
+    "ir-005"
+   ]
+  },
+  "ir-004": {
+   "decision": "defer",
+   "reason": "limited-access club with thin bouldering evidence: S4 sessions page lists bouldering only as an instruction topic (a class list) and the homepage says courses 'can cover' bouldering; no boulder wall is described and no drop-in, day pass or public-session wording was found (course/membership oriented, opening hours 9-21 Sat-Thu only). Only the S5 directory states 'boulder' type, which cannot carry an accept. Needs a primary page or Instagram post showing a boulder wall and public/drop-in access. Pin (own map link, building) looks fine if resolved."
+  },
+  "ir-005": {
+   "decision": "defer",
+   "reason": "primary bouldering evidence too thin: status and bouldering are unknown; the S6 Instagram was only read through a summary (shows exists, Moon Board), the bouldering claim rests on the S5 directory and a 2021 federation article (S7, a past camp, not current), and current opening and public access are unconfirmed (club, limited-access). Pin (OSM way/506455685, named for the academy, building) would be acceptable. Needs a primary source, ideally the Instagram or a site read directly, showing it is open now with a boulder wall and public access."
+  }
+ }
+}

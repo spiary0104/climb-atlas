@@ -1,0 +1,151 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-01-portugal",
+ "reviewer": "Spiar (owner); decisions drafted by Claude (AI) on the owner's instruction, signed off by the owner 2026-10-03",
+ "reviewed": "2026-10-03",
+ "decisions": {
+  "pt-001": {
+   "decision": "accept",
+   "reason": "S1 own site shows the boulder-only gym exists, is open and has bouldering (home + contactos). Pin is OSM node/10793268621 (name Climb Up, about 17 m from the earlier directory pin, the only such element in the PT extract); the gym site publishes no pin, so the OSM element is the pin source. No flags.",
+   "reviewed_against": []
+  },
+  "pt-002": {
+   "decision": "same-as",
+   "same_as": "seed-1263",
+   "reason": "Same gym: Escala25 (S2 own site, under the 25 de Abril bridge) vs existing \"Escala 25 - Lisboa\" at \"Ponte 25 de Abril 52\"; same name, same bridge, no other Escala gym. Existing pin is 709 m from the candidate pin, which is the gym own Google Maps embed on its contact page (q=38.700331,-9.178835) and agrees with OSM node/13230741433 (Escala25, same website) within metres, so the existing pin is clearly worse.",
+   "followup": "location-update"
+  },
+  "pt-003": {
+   "decision": "accept",
+   "reason": "Distinct branch: Vertigo Marvila (Edificio Beira Rio) is 2.3-2.4 km from both the Oriente centre (pt-004) and the existing seed-1265 pin, which sits 123 m from Oriente. S3 own site shows exists, open and bouldering plus two training boards and lists both Lisbon centres. Pin is OSM node/3109770683 (name, vertigoclimbing.pt, Beira Rio street/postcode). Disagreement: OSM says Fracao S, S3 says Fracao P, same building. Note seed-1265 is treated as the Oriente entry (see pt-004).",
+   "reviewed_against": [
+    "pt-004",
+    "seed-1265"
+   ]
+  },
+  "pt-004": {
+   "decision": "same-as",
+   "same_as": "seed-1265",
+   "reason": "Same gym: Vertigo Oriente (Avenida Infante D. Henrique 334, S3 own site) vs existing \"Vertigo - Lisboa\" on Avenida Infante Dom Henrique, whose pin is 123 m from the Oriente OSM node (13815321376). The existing entry is generic and street-only, but its pin is at Oriente and 2.4 km from the Marvila centre (pt-003), so it is treated as the Oriente entry. Pin gap is under 150 m, so no location-update."
+  },
+  "pt-005": {
+   "decision": "accept",
+   "reason": "S4 own site shows exists, open (weekly hours) and bouldering (boulder zone, Kilter, Moonboard). Pin is the latitude/longitude published in the gym own site structured data (S4). No flags.",
+   "reviewed_against": []
+  },
+  "pt-006": {
+   "decision": "accept",
+   "reason": "S5 own site shows exists, open (address/hours page) and bouldering plus ropes. Pin is the marker labelled Altissimo - Lisboa on the gym own address page map (S5). Disagreement: OSM node/11284759292 (Altissimo Escalada, same website) is about 100 m away, at the old directory pin; the gym own marker was chosen over it. No flags.",
+   "reviewed_against": []
+  },
+  "pt-007": {
+   "decision": "defer",
+   "reason": "Primary bouldering evidence too thin: S6 own site shows exists and open (hours, prices, classes) but never says boulder or rope in the readable text; only directories (RCP, Atlas Lisboa) say bouldering. Needs a primary bouldering confirmation (Instagram or subpage). Pin (OSM node/12177125032) is fine."
+  },
+  "pt-008": {
+   "decision": "same-as",
+   "same_as": "seed-1264",
+   "reason": "Same gym: Rocodromo do Areeiro - Casal Vistoso, R. Joao da Silva 16B, vs existing \"Rocodromo FCMP Casal Vistoso - Lisboa\", Rua Joao da Silva 16B, 41 m apart. The candidate itself has no primary evidence of opening or bouldering (S20 is only a temporary 2023 closure notice) and a directory pin, so there is nothing to add."
+  },
+  "pt-009": {
+   "decision": "defer",
+   "reason": "Primary evidence missing: own site verticalwall.pt returned HTTP 522, so exists/open/bouldering are supported only by directories (RCP, Atlas Lisboa) and the OSM tag. Needs a readable own site or social page showing it is open and has bouldering. Pin (OSM node/3681007153) is fine."
+  },
+  "pt-010": {
+   "decision": "accept",
+   "reason": "S7 own site shows exists, open (weekly hours) and bouldering (45+ problems, kids wall). Pin is the place the gym own Google Maps short link resolves to (S7). No flags.",
+   "reviewed_against": []
+  },
+  "pt-011": {
+   "decision": "defer",
+   "reason": "Coordinate unresolved: directory pin (RCP structured-data pin, method map-service-pin), not an accepted pin source; the gym site (S8) map is only an address search and the evidence has no OSM element for it. Otherwise S8 shows exists, open, bouldering and top-rope. Needs an OSM element for the gym or a published pin."
+  },
+  "pt-012": {
+   "decision": "accept",
+   "reason": "S9 own site shows exists, open and bouldering plus top-rope. Pin is the place the gym own Google Maps short link resolves to (S9). No flags.",
+   "reviewed_against": []
+  },
+  "pt-013": {
+   "decision": "defer",
+   "reason": "Primary bouldering and opening evidence too thin: S10 hotel site shows the place exists and gives coordinates, but not that bouldering is offered or that it is open to the public (special rates for hotel guests; boulder offer only from RCP tags). Needs a primary page showing public access, status and bouldering."
+  },
+  "pt-014": {
+   "decision": "same-as",
+   "same_as": "seed-1267",
+   "reason": "Same gym: upa! Climbing Center, Rua dos Oleiros 76, Coimbra (S11 own site) vs existing \"upa! Climbing Center - Coimbra\", same street and number, 8 m apart; only the name suffix differs."
+  },
+  "pt-015": {
+   "decision": "accept",
+   "reason": "S12 own site shows exists and bouldering (sobre-nos) and open (weekly hours on the contactos page). Pin is the centre of the Google Maps embed on the gym contacts page; the embed names the place (Proa Climbing Center) and its centre equals the recorded pin; OSM node/8796445147 (Proa Climbing Center) is about 5 m away. No flags.",
+   "reviewed_against": []
+  },
+  "pt-016": {
+   "decision": "same-as",
+   "same_as": "seed-1269",
+   "reason": "Same gym: The North Wall (Porto area, thenorthwall.pt) vs existing \"The North Wall - Porto\" (no address). The existing pin is 4,419 m away and sits at exactly the same coordinates as seed-1268 Sao Rock (0 m), so it is a placeholder, not the North Wall site. The candidate pin is OSM node/13267464289 (name The North Wall, unique in the extract; address Rua do Tronco 375, Sao Mamede de Infesta). The candidate on its own would be blocked (S13 does not show open status), so same-as is the safe outcome; the existing pin should be corrected.",
+   "followup": "location-update"
+  },
+  "pt-017": {
+   "decision": "same-as",
+   "same_as": "seed-1268",
+   "reason": "Same gym: Sao Rock Climbing, R. de Godim 312, Porto vs existing \"Sao Rock - Porto\", Rua de Godim 312, 0 m apart; only the name suffix differs. The candidate itself has no primary evidence (own site HTTP 403; only USC and RCP directories), so there is nothing to add. Existing seed-1269 sits at the same coordinates but is The North Wall (see pt-016)."
+  },
+  "pt-018": {
+   "decision": "defer",
+   "reason": "Primary evidence missing: the Zone group site has no page found for the Gaia climbing space; exists/open/bouldering rest on RCP and the OSM tag only (OSM node/12211876533 links zone.com.pt/climb/). Needs that page, or a social page, showing it is open with bouldering."
+  },
+  "pt-019": {
+   "decision": "defer",
+   "reason": "Club wall: public access not shown, bouldering unknown, status unknown, and only the council page (S21) says it exists. Coordinate unresolved: directory pin (RCP map-service-pin), not an accepted source. Needs a primary club page showing bouldering, public/drop-in access and an accepted pin."
+  },
+  "pt-020": {
+   "decision": "defer",
+   "reason": "Status and bouldering unconfirmed: the own-site climbing page now returns 404 and the home page lists only training, Hyrox and pilates (possibly closed or folded into the fitness club); exists/open/bouldering have no primary support. Pin (own contactos map marker) is fine. Needs a current primary page showing bouldering."
+  },
+  "pt-021": {
+   "decision": "defer",
+   "reason": "Club wall: S16 club site shows the club exists but no indoor wall, hours, bouldering or public access; bouldering only from RCP tags. Coordinate unresolved: directory pin (RCP map-service-pin), not an accepted source."
+  },
+  "pt-022": {
+   "decision": "defer",
+   "reason": "Primary bouldering evidence too thin: S15 club site shows exists, open and drop-in day passes (public access, reservation required) but the site text never names bouldering (only RCP tags bloco). Coordinate unresolved: directory pin (RCP map-service-pin), not an accepted source."
+  },
+  "pt-023": {
+   "decision": "defer",
+   "reason": "Club wall: no readable primary source (only a Facebook page and a news article, S23), so exists/open/bouldering and public access are unsupported. Coordinate unresolved: directory pin (RCP map-service-pin), not an accepted source."
+  },
+  "pt-024": {
+   "decision": "defer",
+   "reason": "Coordinate unresolved: pin is the gym own site structured data at only 4 decimals (street precision, weak-coordinates), 446 m from the earlier RCP directory pin; the site address (Rua da Liberdade 41, 4810-441) differs from the directory address (postcode 4835-523); no OSM element and the site Como chegar link is a name search. Also S14 gives no hours, so open status is not shown. Needs the building pin and a primary address/hours page."
+  },
+  "pt-025": {
+   "decision": "defer",
+   "reason": "Not enough evidence: S22 is a news article only; no primary page, opening hours or public-access rules, bouldering unknown, status unknown. It is a municipal indoor boulder structure (category other), not a staffed gym. Owner to decide whether such public walls belong on Bouldeer; if not, reject not-a-gym."
+  },
+  "pt-026": {
+   "decision": "defer",
+   "reason": "Open status conflicting: S18 own post (Sept 2025) says the bouldering room runs, is open to everyone on Monday social hours 18h-21h and has 24/7 membership at 20 EUR (public access and bouldering shown), but the own homepage says it will become the wall (still in development) and the post is a year old. Needs a current statement that it is open. Pin (own post Google Maps link to Premissa Hibrida) is fine."
+  },
+  "pt-027": {
+   "decision": "accept",
+   "reason": "S19 own site shows exists, open and bouldering (only boulder gym on Madeira, Moonboard). Pin is the place pin of the Google Maps short link on the gym own site (!3d32.6512951 !4d-16.8985489); OSM way/1108191862 (Madeira Climbing Center, same website and street address) agrees within about 10 m. Disagreement: the site structured data (32.6469,-16.9076, 4 decimals) and the generic address-search embed (32.6467,-16.9126) are coarse and differ by 0.5-1 km; neither used.",
+   "reviewed_against": []
+  },
+  "pt-028": {
+   "decision": "defer",
+   "reason": "Not enough evidence: no primary page; bouldering, rope offer, status and public access unknown (category other, a public sports park wall). Coordinate caveat: OSM node/2905237279 is an unnamed climbing wall tied to the gym only by an information link to an opencrags page, 315 m from the directory pin. Owner to decide whether such park walls belong."
+  },
+  "pt-029": {
+   "decision": "defer",
+   "reason": "Club wall: S17 club site shows the club and a rocodromo section exist but no bouldering, hours or public access (bloco only inferred from the map place name). Needs a primary page showing bouldering, status and public access."
+  },
+  "pt-030": {
+   "decision": "defer",
+   "reason": "Primary evidence too thin: own site is a minimal page (logo, social links, contact form) with no text on bouldering or hours; bloco only from RCP tags; status unknown. Needs a primary bouldering and opening confirmation. Pin (OSM way/1123666029) is fine."
+  },
+  "pt-031": {
+   "decision": "defer",
+   "reason": "Single directory source only (RCP): no website, exists/open/bouldering all unverified, category other; and the pin is a directory pin (RCP map-service-pin), not an accepted source. Needs a primary source and an accepted pin."
+  }
+ }
+}
