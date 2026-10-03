@@ -21,7 +21,15 @@ content hashes taken from production and equal to the import index). Batch 2 = S
     seed-11 (The Ledge) likely should be website-only.
   - The worker read some JS-rendered pages via page data and susf.com.au in the browser pane; spot-check those.
 
-## Not done
+## Batch built (2026-10-04, after PR #39 review)
+- `import/batches/2026-10-04-gym-info-1`: 86 records (78 website + hours, 8 website only), built by `build-info-batch.js`. Rules:
+  hours only when all 7 days are stated (partial weeks -> website only: seed-34, seed-39, seed-12, seed-11); website only for seed-210,
+  seed-20 (moved, pending location fix), seed-31 and seed-27 (no usable hours); excluded seed-32 (closed), seed-227, seed-228.
+- Independent fact-check of 18 records (`verify-*.json`): 17 OK, 1 mismatch (seed-34, already website-only); all websites official.
+- validate: 86 OK; plan: 86 updates, 0 duplicates/invalid; live dry-run (public key): PREFLIGHT PASSED, PARTIAL coverage.
+- Follow-ups: retire seed-32 (closed 19 Dec 2025); check seed-20 move to Brookvale; retire review for seed-227, seed-228. Batch 2 next.
+
+## Not done (superseded by the section above where it says so)
 - Pipeline: DONE by a worker, NOT reviewed or merged: PR #39 (`feature/import-info-updates`, b4c7e65): fill-only website/hours
   updates through the gated updater (`Api.updateSpotInfo`), 319 tests / 318 pass / 0 fail / 1 skipped per the worker. Review it
   (brain), then merge only with the owner's approval. Commands: docs/import-workflow.md "Filling gym information".
