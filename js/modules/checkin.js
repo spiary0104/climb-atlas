@@ -147,6 +147,9 @@ function contextGym(){
 }
 export function openStartSheet(){
   const g = contextGym();
+  const signedIn = !!window.auth.user;
+  $('startSignedOut').hidden = $('startSignedOutActions').hidden = signedIn;
+  $('startSignedInActions').hidden = !signedIn;
   $('startCheckinLabel').textContent = g ? 'Check in at ' + g.name : 'Check in nearby';
   startBackdrop.dataset.spotId = g ? g.id : '';
   startBackdrop.classList.remove('hidden');
@@ -184,7 +187,8 @@ export function initCheckin(){
     if(!btn) return;
     const id = startBackdrop.dataset.spotId;
     startBackdrop.classList.add('hidden');
-    if(btn.dataset.startAction === 'log') startLogSession();
+    if(btn.dataset.startAction === 'signin') openAuthModal();
+    else if(btn.dataset.startAction === 'log') startLogSession();
     else if(btn.dataset.startAction === 'checkin') (id ? startCheckin(id) : checkInNearby());
   });
   $('startClose').addEventListener('click', () => startBackdrop.classList.add('hidden'));

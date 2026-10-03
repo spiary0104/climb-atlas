@@ -94,6 +94,13 @@ export function peekHtml(g, ctx = {}){
     + `<button type="button" class="btn btn-tertiary btn-sm" data-gym-action="report" data-spot-id="${id}">${icon('flag', {size:'sm'})}Report a problem</button></div>`;
 }
 
+// The one-line orientation shown to a first-time visitor (list.js renderIntro). Numbers only; no character here.
+export function introHtml(gyms, countries){
+  return `<p class="explore-intro-text"><strong>Bouldeer</strong> maps ${escapeHtml(Number(gyms).toLocaleString('en-US'))} climbing gyms in ${escapeHtml(Number(countries))} countries, `
+    + `researched gym by gym and kept current by climbers. <a class="link" href="/about.html">About</a></p>`
+    + `<button type="button" class="btn btn-tertiary btn-icon btn-sm" data-intro-close aria-label="Dismiss">${icon('x', {size:'sm'})}</button>`;
+}
+
 // The three list empty states (sec. 7.10). No character in any of them (it is reserved for the first-run empties).
 export function emptyHtml(kind, term = ''){
   if(kind === 'search') return `<div class="empty-state"><p class="empty-title">Nothing for “${escapeHtml(term)}”</p>`

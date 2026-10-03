@@ -3,7 +3,7 @@
 // selection and passes callbacks in initList().
 import { COUNTRY_FLY_TARGETS, COUNTRY_LABELS, LIST_CAP } from './constants.js';
 import { distanceKm, formatDistance, inBounds } from './geo.js';
-import { capRowHtml, carouselCardHtml, cardHtml, emptyHtml, rowHtml, skeletonHtml } from './list-html.js';
+import { capRowHtml, carouselCardHtml, cardHtml, emptyHtml, introHtml, rowHtml, skeletonHtml } from './list-html.js';
 import { stateLabel } from './map.js';
 import { gymPath } from './slug.js';
 import { provenanceState } from './provenance.js';
@@ -29,13 +29,24 @@ export function gymCtx(g){
   };
 }
 
-export const effectiveSort = () => appState.sortBy || (appState.userLocation ? 'distance' : 'name');
+// Nearest first by default (final-stage audit): to the visitor once located, otherwise to the centre of the area the list
+// shows, so a city's list starts in the middle of the city rather than at "A".
+export const effectiveSort = () => appState.sortBy || 'distance';
+function sortOrigin(){
+  if(appState.userLocation) return appState.userLocation;
+  const b = appState.scopeBounds;
+  if(!b) return null;
+  const east = b.east < b.west ? b.east + 360 : b.east;              // across the antimeridian
+  const lng = (b.west + east) / 2;
+  return { lat: (b.south + b.north) / 2, lng: lng > 180 ? lng - 360 : lng };
+}
 
 function sortSpots(list){
   const by = effectiveSort();
-  if(by === 'distance' && appState.userLocation){
-    const d = new Map(list.map(g => [g.id, distanceKm(appState.userLocation, g)]));
-    return list.sort((a, b) => d.get(a.id) - d.get(b.id));
+  const origin = by === 'distance' ? sortOrigin() : null;
+  if(origin){
+    const d = new Map(list.map(g => [g.id, distanceKm(origin, g)]));
+    return list.sort((a, b) => d.get(a.id) - d.get(b.id) || a.name.localeCompare(b.name));
   }
   if(by === 'recent') return list.sort((a, b) => String(b.created_at || '').localeCompare(String(a.created_at || '')) || a.name.localeCompare(b.name));
   return list.sort((a, b) => a.name.localeCompare(b.name));
@@ -60,8 +71,27 @@ function renderStatus(zoomedIn){
   const place = appState.placeFilter ? appState.placeFilter.label : zoomedIn ? dominantRegion(appState.inView) : '';
   $('statusPlace').textContent = place ? ' · ' + place : '';
   const sort = $('sortSelect');
-  sort.querySelector('option[value="distance"]').hidden = !appState.userLocation;
+  const nearest = sort.querySelector('option[value="distance"]');
+  nearest.hidden = false;
+  nearest.textContent = appState.userLocation ? 'Nearest to you' : 'Nearest to centre';
   sort.value = effectiveSort();
+}
+
+// Orientation (final-stage audit): a first-time visitor is told what Bouldeer is, in one line above the list, once per
+// device. Dismissed with its button; the counts come from the loaded data.
+export const INTRO_KEY = 'bouldeer_intro_seen';
+let introShown = false;
+function renderIntro(){
+  const el = $('exploreIntro');
+  if(introShown || !appState.spots.length) return;
+  introShown = true;
+  let seen = false;
+  try{ seen = localStorage.getItem(INTRO_KEY) === '1'; localStorage.setItem(INTRO_KEY, '1'); }catch(err){ /* private mode: show it */ }
+  if(seen) return;
+  const countries = new Set(appState.spots.map(g => g.country)).size;
+  el.innerHTML = introHtml(appState.spots.length, countries);
+  el.hidden = false;
+  el.querySelector('[data-intro-close]').addEventListener('click', () => { el.hidden = true; });
 }
 
 // Featured destinations ("Worth traveling for", kept at the owner's request): only at world/continent zoom.
@@ -86,6 +116,7 @@ export function renderList({zoom = 0} = {}){
   const scoped = appState.filtered.filter(g => inBounds(g, appState.scopeBounds));
   appState.inView = sortSpots(scoped);
   renderStatus(zoom >= 8);
+  renderIntro();
   renderFeatured(zoom);
   renderFirstRun(zoom);
   const list = $('gymList');

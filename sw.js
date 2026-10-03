@@ -22,7 +22,8 @@
 // v20: page header art on Regions and signed-out Log/Me (assets/art, page-html.js pageArtHtml).
 // v21: START reads "Check in"; boulder-tag and map-attribution contrast (tokens.css, style.css).
 // v22: gym information (website, hours, day pass, facilities, description; gym-info.js).
-const CACHE_VERSION = 'v22';
+// v23: nearest-first sort, first-visit orientation, Nearby rows, START for signed-out visitors, photos chip rule.
+const CACHE_VERSION = 'v23';
 const SHELL_CACHE = 'climbatlas-shell-' + CACHE_VERSION;
 const RUNTIME_CACHE = 'climbatlas-runtime-' + CACHE_VERSION;
 const TILE_CACHE = 'climbatlas-tiles-' + CACHE_VERSION;

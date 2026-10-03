@@ -77,7 +77,11 @@ export function gymPageHtml(g, ctx = {}){
   const history = ctx.history && ctx.history.count ? `<section class="panel history-panel" aria-labelledby="historyTitle"><h2 class="panel-title" id="historyTitle">Your history here</h2>`
     + `<p class="panel-row tnum">${escapeHtml(ctx.history.count === 1 ? '1 session' : ctx.history.count + ' sessions')}${ctx.history.last ? ` · last on ${escapeHtml(ctx.history.last)}` : ''}</p></section>` : '';
   const nearby = (ctx.nearby || []).length >= 1 ? `<section class="page-section" aria-labelledby="nearbyTitle"><h2 class="section-title" id="nearbyTitle">Nearby</h2>`
-    + `<div class="card-strip">${ctx.nearby.map(n => pageCardHtml(n.g, n.ctx)).join('')}</div></section>` : '';
+    // Photo cards only when a nearby gym has a photo; four identical placeholders read as "nothing here" (audit).
+    + (ctx.nearby.some(n => safeUrl(n.g.photo))
+      ? `<div class="card-strip">${ctx.nearby.map(n => pageCardHtml(n.g, n.ctx)).join('')}</div>`
+      : `<div class="page-list nearby-list">${ctx.nearby.map(n => pageRowHtml(n.g, n.ctx)).join('')}</div>`)
+    + `</section>` : '';
   return `<article class="page gym-page">`
     + breadcrumbHtml(ctx.crumbs || [])
     + `<header class="gym-header"><div class="gym-heading"><h1 class="page-title">${escapeHtml(g.name)}</h1>`

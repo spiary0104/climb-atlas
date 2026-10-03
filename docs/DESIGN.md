@@ -1046,3 +1046,10 @@ Run after every phase. Each line is pass/fail.
 - *Progressive pages:* each Essentials row and the Facilities section appear only with data; the single contribution prompt now names exactly what the edit form accepts ("Add the hours, website, day-pass price or a photo") and opens the dialog at the hours. `/add` step 2 asks for website, day pass and description; hours and facilities come with a later edit.
 - *Deploy order:* the migration must be applied before this code ships (edit proposals and new gyms send the new columns).
 
+**2026-10-04: final-stage UX follow-ups (audit 2026-10-03).**
+- *Nearest first:* the list sorts by distance by default: to the visitor once located ("Nearest to you"), otherwise to the centre of the area in view ("Nearest to centre"). Alphabetical stays one tap away.
+- *Orientation:* a first-time visitor gets one line above the list, "Bouldeer maps N climbing gyms in M countries, researched gym by gym and kept current by climbers. About", once per device, dismissable. No character (the first-run Explore art stays as built).
+- *Filters only the data can answer:* "Has photos" (chip and All filters section) appears only once 5% of gyms have a photo; kept visible while it is on.
+- *Nearby:* dense rows (name, area, distance) while none of the nearby gyms has a photo; the photo-card strip returns automatically when one does (DNA #2).
+- *START signed out:* the sheet says what check-in and the log are and offers "Sign in to start" instead of check-in buttons that only end in a sign-in prompt. The sign-in dialog names gyms and check-ins.
+
