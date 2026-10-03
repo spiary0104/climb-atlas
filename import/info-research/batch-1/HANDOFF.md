@@ -22,10 +22,9 @@ content hashes taken from production and equal to the import index). Batch 2 = S
   - The worker read some JS-rendered pages via page data and susf.com.au in the browser pane; spot-check those.
 
 ## Not done
-- Pipeline: the gated updater cannot write website/hours yet. Work in progress (uncommitted) on branch
-  `feature/import-info-updates` in worktree `.claude/worktrees/agent-a7b3a0d8c0767c95b`: fill-only info updates
-  (refuse if a field is already set), new `Api.updateSpotInfo` behind the update gate, tests, docs. Finish it, test,
-  open a PR (do not merge without review).
+- Pipeline: DONE by a worker, NOT reviewed or merged: PR #39 (`feature/import-info-updates`, b4c7e65): fill-only website/hours
+  updates through the gated updater (`Api.updateSpotInfo`), 319 tests / 318 pass / 0 fail / 1 skipped per the worker. Review it
+  (brain), then merge only with the owner's approval. Commands: docs/import-workflow.md "Filling gym information".
 - Then: spot-check research against the sites, build the maintenance batch (`intent:update`, `expect_h`, `source`,
   `set:{website,hours}`), validate / plan / dry-run, and hand the owner the apply command (owner's own PowerShell,
   service-role key never shared). No production write without the owner's explicit go-ahead.
