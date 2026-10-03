@@ -10,8 +10,8 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 - PRs: #30 mascot (field-notes on first-run /me, fresh-stamp on travel milestones, Explore first run 7.10); #31 page header art
   (Regions, signed-out Log/Me; DESIGN 13A); #32 START "Check in", lake/plum final, boulder-tag + map-attribution contrast; #33 research
   notes hidden (97.5% of notes); #34 the two data batches below. All bump sw.js to v18: resolve by taking the next version on merge.
-- `2026-10-03-polish-fixes` APPLIED + verified 2026-10-03 (11 pins, 3 addresses; FULL coverage; index rebuilt). Owner: apply
-  `2026-10-03-czechia-pins` (7 new gyms; plan refreshed against the new index) with the key (PR #34).
+- Data APPLIED + verified 2026-10-03 (FULL coverage, index rebuilt): `2026-10-03-polish-fixes` (11 pins, 3 addresses) and
+  `2026-10-03-czechia-pins` (7 new Czech gyms; live 2,341 -> 2,348).
 - Lighthouse a11y (production, PSI, mobile, 2026-10-03): `/` 96 (only the map attribution contrast, fixed in #32), `/in` 100,
   `/log` 100; desktop not captured. Re-run after deploy. Performance 33 on `/` mobile (TBT 6.3 s): the deferred first-load work.
 - Follow-ups: `pin-drop` pose (add-gym "in review") needs a DESIGN 12.2 decision before tracing; notes need a data fix to keep the
@@ -20,7 +20,7 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 ### Public launch (www.bouldeer.com) — LAUNCHED 2026-10-02
 - Status: launch-readiness merged (PRs #14-#16: /privacy, /terms, 404, security headers + CSP, climbatlas.org 308 redirect,
   pinned CDN + SRI, sign-in for edits/reports); all 10 migrations applied (security hardening 2026-10-02, docs/migrations.md);
-  owner tested sign-in, submissions and moderation on production. Wave 1 IMPORTED (179) + Wave 2 IMPORTED (38) 2026-10-03; 5 pin fixes and 3 retirements (2 closed, 1 duplicate) applied; live 2,341.
+  owner tested sign-in, submissions and moderation on production. Wave 1 IMPORTED (179) + Wave 2 IMPORTED (38) 2026-10-03; 5 + 11 pin fixes, 3 retirements (2 closed, 1 duplicate) and 7 Czech gyms applied; live 2,348.
 - Post-launch: gym-cap trigger migration 20261003000100 APPLIED; sitemap; link previews.
 - Open: real-phone retest (owner) of the 2026-09-29 fixes (eyes, Date/Mood) and check-in on production; Supabase Auth Redirect
   URLs: add preview domains (else sign-in lands on the Site URL); Privacy/Terms live 2026-10-02 (owner to confirm the 30-day
@@ -31,7 +31,7 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 - Regional expansion (new locations, one geographic section at a time): `research new|reconcile|stage` built (`research.js`, docs
   "Regional research"). Wave 1 (9 Tier A sections) IMPORTED + verified (manifests; India recovered after #23). Wave 2 (6) IMPORTED + verified; Wave 3A (5, PR #13) and 3C paused.
 - Location data: updates APPLIED 2026-09-30 (11) and 2026-10-03 (5 incl. Manga Climbing; then 11: the 4 manual-review gyms + 7
-  Wave 2 follow-ups). Staged (PR #34): the 7 Czech gyms. 489 unresolved.
+  Wave 2 follow-ups). 489 unresolved.
 
 ## Backlog
 
