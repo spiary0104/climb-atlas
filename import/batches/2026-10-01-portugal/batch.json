@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-01-portugal",
+  "description": "Regional research \"Portugal (Tier B, wave 2)\": 8 new gym(s) accepted of 31 candidate(s)",
+  "created": "2026-10-03",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-10-01-portugal",
+    "section_sha256": "befd652ad795cdd7dd301690d0e021a0ece7dc09345bc78113a6a2e9119b7646",
+    "sources_sha256": "40c107fa25d3117ce74ad9e4aba9ff042e9a6506834f47d02d77b90cd508063c",
+    "candidates_sha256": "e8d02a4f341cb809d423c4a0983e5ca1176b5ee9f4ff8ba3b249fb5c4ab3e7d6",
+    "reconcile_sha256": "80e975ee82c97df16a38c2eb1ff6a8cebd1594f5573440abaa1cceab4c0c971d",
+    "review_sha256": "322598fb1ccf424974c0cf86b4b92ecba352103eb969e16b2954a81c1529a649",
+    "candidates": 31,
+    "staged": 8,
+    "decisions": {
+      "accept": 8,
+      "defer": 17,
+      "same-as": 6
+    }
+  },
+  "index_at_staging": {
+    "sha256": "0be3e1b7fda4e20b090553afa43829d891ef9f41e6b7feadbd041080ed0e279a",
+    "count": 2309
+  }
+}

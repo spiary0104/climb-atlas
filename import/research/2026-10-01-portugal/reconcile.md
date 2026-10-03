@@ -1,7 +1,7 @@
 # Regional research: Portugal (Tier B, wave 2) (2026-10-01-portugal)
 
 Scope: PT (whole country)
-Index: 2306 gyms, sha256 3b20e7b458c7… | staged batches compared: none | other sections compared: none
+Index: 2309 gyms, sha256 0be3e1b7fda4… | staged batches compared: none | other sections compared: none
 Review radii (stricter than the importer): any gym 150 m, related name 15 km, other country 2 km
 
 ## Summary
