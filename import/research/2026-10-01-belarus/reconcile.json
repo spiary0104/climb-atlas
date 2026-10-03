@@ -1,0 +1,200 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-01-belarus",
+ "inputs": {
+  "section_sha256": "5213aeac36008741adb60002ad3437922c31e80ade592c04326d99b3b5bbff40",
+  "sources_sha256": "d931fe344f0799824f9cabe3748d5d6c5777fb53fa3592a1ebd6209ead2dce24",
+  "candidates_sha256": "5f0dc945e40ac34b345de0377e652de263cb3d8296a3ec6c8c117f814788d512",
+  "index": {
+   "sha256": "8dbddf7924c219a236c2ffff9c8fb005dd02d1dcfe61640f8817d49fb2484af2",
+   "count": 2127
+  },
+  "staged_batches_compared": [],
+  "other_sections_compared": []
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 5,
+  "ready": 0,
+  "review": 0,
+  "blocked": 1,
+  "existing": 4,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "by-001",
+   "line": 1,
+   "name": "Trapezia",
+   "class": "existing",
+   "suggested": "same-as seed-1810",
+   "importer": {
+    "class": "existing",
+    "id": "seed-1810",
+    "match": {
+     "id": "seed-1810",
+     "name": "Trapezia",
+     "reason": "same-name",
+     "dist_m": 114
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-1810 but content differs (suburb, lat, lng, address); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1810 \"Trapezia\": same-name (\"Trapezia\" / \"Trapezia\", 114 m)",
+     "ids": [
+      "seed-1810"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-1810"
+   ]
+  },
+  {
+   "cid": "by-002",
+   "line": 2,
+   "name": "Plato",
+   "class": "existing",
+   "suggested": "same-as seed-1809",
+   "importer": {
+    "class": "existing",
+    "id": "seed-1809",
+    "match": {
+     "id": "seed-1809",
+     "name": "Plato",
+     "reason": "same-name",
+     "dist_m": 29
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-1809 but content differs (suburb, lat, lng, address); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1809 \"Plato\": same-name (\"Plato\" / \"Plato\", 29 m)",
+     "ids": [
+      "seed-1809"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-1809"
+   ]
+  },
+  {
+   "cid": "by-003",
+   "line": 3,
+   "name": "Dinamo climbing wall",
+   "class": "existing",
+   "suggested": "same-as seed-1811",
+   "importer": {
+    "class": "existing",
+    "id": "seed-1811",
+    "match": {
+     "id": "seed-1811",
+     "name": "Dinamo climbing wall",
+     "reason": "same-name",
+     "dist_m": 178
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-1811 but content differs (suburb, lat, lng, address); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1811 \"Dinamo climbing wall\": same-name (\"Dinamo climbing wall\" / \"Dinamo climbing wall\", 178 m)",
+     "ids": [
+      "seed-1811"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-1811"
+   ]
+  },
+  {
+   "cid": "by-004",
+   "line": 4,
+   "name": "Vershina",
+   "class": "existing",
+   "suggested": "same-as seed-1812",
+   "importer": {
+    "class": "existing",
+    "id": "seed-1812",
+    "match": {
+     "id": "seed-1812",
+     "name": "Vershina",
+     "reason": "same-name",
+     "dist_m": 19
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-1812 but content differs (suburb, lat, lng, address); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1812 \"Vershina\": same-name (\"Vershina\" / \"Vershina\", 19 m)",
+     "ids": [
+      "seed-1812"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-1812"
+   ]
+  },
+  {
+   "cid": "by-005",
+   "line": 5,
+   "name": "GAGARIN Grodno",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-81a57f3d00"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-1813 \"GAGARIN sports and entertainment centre climbing\": related names \"GAGARIN\" / \"GAGARIN sports and entertainment centre climbing\" 351 m apart",
+     "ids": [
+      "seed-1813"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "seed-1813"
+   ]
+  }
+ ],
+ "reconcile_sha256": "92559917bb96786e08c61818555227bf458a095f77ec66627f1d17512922c296"
+}
