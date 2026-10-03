@@ -25,7 +25,7 @@ Line refs drift: re-grep function names rather than trusting numbers.
 | `assets/icons.svg` | The one icon system: Phosphor Regular sprite (MIT); use `icon(name)` from `js/modules/icons.js` |
 | `assets/boulder.svg`, `assets/contour.svg` | Photo placeholder (the deer art's holds boulder; colours from `--placeholder-*`) · contour symbol kept for the passport. SVG files must be well-formed XML (tested) |
 | `design/mascot/deer/` | The owner's deer renders: SOURCE of the character (README maps poses to roles). Product art is traced from these (sec. 12.0) |
-| `assets/mascot/`, `assets/brand/`, `icons/` | Head (START, lockup, avatar, seal), stamp head, first-run poses (chalking-up, backpacker) · antler crest, static seals · app icon (any/maskable/PNG), favicon (sec. 1A, 12; tests enforce placement) |
+| `assets/mascot/`, `assets/brand/`, `icons/` | Head (START, lockup, avatar, seal), stamp head, first-run and milestone poses (chalking-up, backpacker, field-notes, traveller, topped-out, fresh-stamp, dyno) · antler crest, static seals · app icon (any/maskable/PNG), favicon (sec. 1A, 12; tests enforce placement) |
 | `js/supabase-init.js`, `js/auth.js` | Classic scripts: `window.sb`; `window.auth` (`init`, `onChange`, sign-in/out, `user`) |
 | `js/main.js` | Entry module: `init*()` in order, then `init()` (boot: auth → spots → `applyLanding` → marks/mod/pending → `render`) |
 | `js/modules/state.js` | `appState` — every piece of mutable state (spots, marks, filters, Explore view, markers, form state) |

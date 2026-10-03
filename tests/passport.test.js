@@ -62,6 +62,9 @@ test('milestones: first stamp; every 5th distinct gym; first stamp abroad, then 
   const sixth = ci('h', '03-10');
   assert.deepEqual(milestonesFor([...five, sixth], sixth, byId, { home: 'AU' }), []);
   for (const m of milestonesFor([first], first, byId)) assert.equal(m.pose, 'topped-out');
+  // travel milestones carry the fresh-stamp pose (2026-10-03); the first stamp keeps topped-out
+  assert.deepEqual(abroad.map(m => m.pose), ['fresh-stamp']);
+  assert.deepEqual(milestonesFor(five, five[4], byId, { home: 'AU' }).map(m => m.pose), ['fresh-stamp']);
 });
 
 test('grades: V-scale and YDS rank within their system; a new highest SENT grade earns the dyno milestone; nothing else does', async () => {

@@ -17,7 +17,7 @@
 // v15: launch readiness: privacy/terms/404 pages, legal modals removed, pinned CDN with SRI, new footer links; submit-errors.js (sign-in + DB caps).
 // v16: Add a gym says what is still needed when Submit is blocked.
 // v17: 'Listed by Bouldeer' provenance for imported gyms; gym-cap error message.
-const CACHE_VERSION = 'v17';
+const CACHE_VERSION = 'v18';
 const SHELL_CACHE = 'climbatlas-shell-' + CACHE_VERSION;
 const RUNTIME_CACHE = 'climbatlas-runtime-' + CACHE_VERSION;
 const TILE_CACHE = 'climbatlas-tiles-' + CACHE_VERSION;

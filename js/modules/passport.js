@@ -76,12 +76,12 @@ export function milestonesFor(all, newest, spotById, { home = '', countryName = 
   if(!before.some(x => x.g.country === g.country) && before.length && (!home || g.country !== home)){
     const abroadBefore = home ? before.some(x => x.g.country !== home) : true;
     out.push(abroadBefore || !home
-      ? { kind: 'country', title: 'First gym in ' + countryName(g.country), sentence: plural(new Set([...before.map(x => x.g.country), g.country]).size, 'country', 'countries') + ' in your passport.', pose: 'topped-out' }
-      : { kind: 'abroad', title: 'First stamp abroad', sentence: g.name + ', ' + countryName(g.country) + '.', pose: 'topped-out' });
+      ? { kind: 'country', title: 'First gym in ' + countryName(g.country), sentence: plural(new Set([...before.map(x => x.g.country), g.country]).size, 'country', 'countries') + ' in your passport.', pose: 'fresh-stamp' }
+      : { kind: 'abroad', title: 'First stamp abroad', sentence: g.name + ', ' + countryName(g.country) + '.', pose: 'fresh-stamp' });
   }
   const gymsBefore = new Set(before.map(x => x.g.id)), gymsNow = new Set([...gymsBefore, g.id]).size;
   if(gymsNow > gymsBefore.size && gymsNow % 5 === 0){
-    out.push({ kind: 'gyms', title: gymsNow + ' gyms', sentence: 'Your ' + ordinal(gymsNow) + ' different gym: ' + g.name + '.', pose: 'topped-out' });
+    out.push({ kind: 'gyms', title: gymsNow + ' gyms', sentence: 'Your ' + ordinal(gymsNow) + ' different gym: ' + g.name + '.', pose: 'fresh-stamp' });
   }
   if(!before.length) out.push({ kind: 'first', title: 'First stamp', sentence: g.name + ' is the first stamp in your passport.', pose: 'topped-out' });
   return out;
