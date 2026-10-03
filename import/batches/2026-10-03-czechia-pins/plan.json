@@ -1,0 +1,85 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-03-czechia-pins",
+ "index": {
+  "sha256": "ef24cfe6fd4c90b6811dd8964015db47f47956d2e6277c0da5a2a0612e595234",
+  "count": 2341,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [],
+ "counts": {
+  "records": 7,
+  "new": 7,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "06c8f74280f9bd033ed3bb4c72a2dc8601b874255f739a0396ae9b6ef2d83311",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-0afab3b30c",
+   "id_frozen": true,
+   "name": "Boulder V síti",
+   "country": "CZ"
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-17381ec784",
+   "id_frozen": true,
+   "name": "Jungle Pardubice",
+   "country": "CZ"
+  },
+  {
+   "line": 3,
+   "class": "new",
+   "id": "g-5d6a16c6f8",
+   "id_frozen": true,
+   "name": "Gekon Boulder Bar",
+   "country": "CZ"
+  },
+  {
+   "line": 4,
+   "class": "new",
+   "id": "g-b083192899",
+   "id_frozen": true,
+   "name": "MakakAréna",
+   "country": "CZ"
+  },
+  {
+   "line": 5,
+   "class": "new",
+   "id": "g-e43165892c",
+   "id_frozen": true,
+   "name": "Limit Boulder",
+   "country": "CZ"
+  },
+  {
+   "line": 6,
+   "class": "new",
+   "id": "g-648f4f1542",
+   "id_frozen": true,
+   "name": "V16",
+   "country": "CZ"
+  },
+  {
+   "line": 7,
+   "class": "new",
+   "id": "g-4b13af1f36",
+   "id_frozen": true,
+   "name": "Komec",
+   "country": "CZ"
+  }
+ ]
+}

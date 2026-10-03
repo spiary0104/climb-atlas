@@ -41,7 +41,9 @@ test('staged batch: validates cleanly (schema, states, types, coordinates, photo
 });
 
 test('staged batch: the dry-run plan is 246 new and nothing else, with no blockers; committed plan.json/report.md are the current plan', async () => {
-  const plan = await P.planBatch({ dir: DIR, index: preImportIndex() });
+  // includeStaged:false = this batch on its own, as it was staged: a later batch that is staged but not yet imported (no manifest)
+  // must not change what this historical batch plans to (it would otherwise appear in staged_batches_compared)
+  const plan = await P.planBatch({ dir: DIR, index: preImportIndex(), includeStaged: false });
   const c = plan.counts;
   assert.deepEqual([c.records, c.new, c.existing, c.update, c['probable-duplicate'], c.invalid, c.rejected], [246, 246, 0, 0, 0, 0, 0]);
   assert.equal(c.new_id_not_frozen, 0);

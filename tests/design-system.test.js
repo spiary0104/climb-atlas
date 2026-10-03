@@ -235,7 +235,7 @@ test('one icon system: every icon reference exists in assets/icons.svg; the spri
 // A standalone SVG file must be well-formed XML or <img>/<use> render nothing (the contour placeholder never showed
 // because its comment held "--"). Guard the cheap, common failures: "--" inside comments and an unclosed root.
 test('every SVG asset is well-formed enough to load standalone (no "--" in comments, one closed <svg> root)', () => {
-  const svgs = ["assets", "assets/mascot", "assets/brand", "icons"].flatMap(d => fs.readdirSync(path.join(ROOT, d)).filter(n => n.endsWith(".svg")).map(n => d + "/" + n));
+  const svgs = ["assets", "assets/mascot", "assets/brand", "assets/art", "icons"].flatMap(d => fs.readdirSync(path.join(ROOT, d)).filter(n => n.endsWith(".svg")).map(n => d + "/" + n));
   assert.ok(svgs.length >= 9, "svg assets found");
   for (const f of svgs) {
     const src = read(f);
@@ -268,7 +268,10 @@ test('mascot: brand marks only where sec. 12.2 allows (START, wordmark lockup, d
   assert.ok(!/assets\/mascot\/(?!stamp-head\.svg)/.test(read('js/modules/stamp-html.js')), 'stamps carry only the single-ink stamp head');
   assert.deepEqual([...read('js/modules/share-card.js').matchAll(/assets\/mascot\/[a-z-]+\.svg/g)].map(m => m[0]).sort(), ['assets/mascot/head.svg', 'assets/mascot/stamp-head.svg'], 'share card: the stamp head and the lockup head');
   assert.deepEqual((read('js/modules/logbook.js').match(/firstRunArt\([^)]*\)/g) || []), ["firstRunArt('log')"], 'Log: chalking-up on the first-run empty state only');
-  assert.deepEqual((read('js/modules/page-html.js').match(/firstRunArt\([^)]*\)/g) || []), ["firstRunArt('saved')"], '/me: the backpacker on a first-run Saved tab only');
+  assert.deepEqual((read('js/modules/page-html.js').match(/firstRunArt\([^)]*\)/g) || []), ["firstRunArt('saved')"], '/me: field-notes on a first-run Saved tab only');
+  assert.deepEqual((read('js/modules/list.js').match(/firstRunArt\([^)]*\)/g) || []), ["firstRunArt('explore')"], 'Explore: the backpacker on the first-ever visit only (sec. 7.10)');
+  assert.match(read('js/modules/list.js'), /const show = appState\.exploreFirstRun && zoom < 4 && !appState\.placeFilter && !appState\.searchTerm;/, 'world/continent zoom, no place or search');
+  assert.ok(!/mascot/.test(read('index.html').match(/<div class="empty-state explore-first-run"[^>]*><\/div>/)[0]), 'the shell holds only an empty slot; brand.js supplies the art');
   assert.match(read('js/modules/page-html.js'), /const art = firstRun \? firstRunArt\('saved'\) : '';/, 'never on a repeat empty');
   assert.match(read('js/modules/auth-ui.js'), /<span class="avatar mascot mascot--avatar" aria-hidden="true"><img src="assets\/mascot\/head\.svg" alt=""><\/span>/);
   for (const f of ['assets/mascot/head.svg', 'assets/mascot/stamp-head.svg', 'assets/brand/antlers.svg', 'icons/favicon.svg', 'icons/icon.svg', 'icons/icon-maskable.svg']) {
@@ -283,6 +286,22 @@ test('mascot: brand marks only where sec. 12.2 allows (START, wordmark lockup, d
   for (const f of ['js/modules/moderation-html.js', 'js/modules/moderation.js', 'js/modules/modals.js', 'js/modules/map.js', 'js/modules/pin-html.js', 'js/modules/list-html.js', 'js/modules/filters.js', 'js/modules/gym-page.js', 'js/modules/region-page.js', 'js/modules/mod-page.js', 'js/modules/add-html.js', 'js/modules/add-page.js']) assert.ok(!/mascot|sealSvg/.test(read(f)), f);
   assert.deepEqual((read('js/modules/page-html.js').match(/sealSvg\([^)]*\)/g) || []), ['sealSvg()'], 'page-html: the seal once, in the /me brand block');
   assert.match(read('css/components.css'), /\.mascot--spot\{width:var\(--size-mascot-spot\)/);
+});
+
+test('page header art (sec. 13A): three decorative scenes, plain vector shapes, no character, only on Regions and signed-out Log/Me', async () => {
+  const art = fs.readdirSync(path.join(ROOT, 'assets/art')).filter(n => n.endsWith('.svg')).sort();
+  assert.deepEqual(art, ['log-still-life.svg', 'me-shelf.svg', 'regions-wall.svg']);
+  for (const n of art) {
+    const svg = read('assets/art/' + n);
+    assert.ok(!/<script|\son[a-z]+=|javascript:|href=|<image|<foreignObject|gradient|<filter/i.test(svg), n + ': plain flat vector shapes');
+    assert.ok(!/#E2793F|#3F7FA6|#8A4E7A/i.test(svg), n + ': no climb-type colour');
+    assert.ok(!/mascot|deer/i.test(svg), n + ': no character');
+  }
+  const src = read('js/modules/page-html.js');
+  assert.deepEqual([...src.matchAll(/pageArtHtml\('([a-z-]+)'\)/g)].map(m => m[1]), ['regions-wall', 'log-still-life', 'me-shelf']);
+  for (const f of ['js/modules/gym-page.js', 'js/modules/region-page.js', 'js/modules/add-html.js', 'js/modules/moderation-html.js', 'js/modules/list-html.js']) assert.ok(!/assets\/art\//.test(read(f)), f);
+  assert.match(read('css/page.css'), /\.page-art\{[^}]*aspect-ratio:3 \/ 1/);
+  assert.match(read('css/page.css'), /\.page-art\{aspect-ratio:16 \/ 9;/);
 });
 
 test('brand: Bouldeer everywhere a visitor reads it; "Climb Atlas" not reintroduced (the domain, contact address and storage keys are identifiers)', () => {

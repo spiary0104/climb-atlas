@@ -8,6 +8,7 @@ import { stateLabel } from './map.js';
 import { gymPath } from './slug.js';
 import { provenanceState } from './provenance.js';
 import { filtersActive } from './filters.js';
+import { firstRunArt } from './brand.js';
 import { appState } from './state.js';
 
 export const LIST_VIEW_KEY = 'bouldeer_list_view';
@@ -68,12 +69,25 @@ function renderFeatured(zoom){
   $('featuredDestinations').hidden = zoom >= 4;
 }
 
+// First-ever visit with no home area (sec. 7.10, flag set by explore.js applyLanding): the backpacker and "Where are you
+// climbing?" above the featured destinations, at world/continent zoom only. It ends for good once the person zooms in,
+// picks a place or searches; the camera saved on the first moveend means the next visit is not a first run.
+function renderFirstRun(zoom){
+  const el = $('exploreFirstRun');
+  const show = appState.exploreFirstRun && zoom < 4 && !appState.placeFilter && !appState.searchTerm;
+  if(appState.exploreFirstRun && !show) appState.exploreFirstRun = false;
+  if(show && !el.firstChild) el.innerHTML = firstRunArt('explore') + '<p class="empty-title">Where are you climbing?</p>'
+    + '<button type="button" class="btn btn-secondary btn-sm" data-list-action="search-city">Search a city</button>';
+  el.hidden = !show;
+}
+
 export function renderList({zoom = 0} = {}){
   if(!appState.loaded){ showSkeleton(); return; }
   const scoped = appState.filtered.filter(g => inBounds(g, appState.scopeBounds));
   appState.inView = sortSpots(scoped);
   renderStatus(zoom >= 8);
   renderFeatured(zoom);
+  renderFirstRun(zoom);
   const list = $('gymList');
   list.setAttribute('aria-busy', 'false');
   if(!appState.inView.length){
@@ -158,6 +172,10 @@ export function initList(callbacks){
     if(!act) return;
     if(act.dataset.listAction) cb.onListAction(act.dataset.listAction);
     else cb.onGymAction(act.dataset.gymAction, act.dataset.spotId);
+  });
+  $('exploreFirstRun').addEventListener('click', (e)=>{
+    const act = e.target.closest('[data-list-action]');
+    if(act) cb.onListAction(act.dataset.listAction);
   });
   list.addEventListener('mouseover', (e)=>{
     const item = e.target.closest('[data-id]');

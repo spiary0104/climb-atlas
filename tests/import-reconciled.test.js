@@ -32,7 +32,10 @@ test('index matches the production snapshot recorded at reconciliation time (1,8
   const idx = preImportIndex();
   assert.equal(idx.entries.length, 1881);
   assert.equal(S.load().metaMatches, true, 'index-meta.json sha256 must match gym-index.ndjson');
-  assert.ok(fs.statSync(path.join(ROOT, 'import', 'index', 'gym-index.ndjson')).size < 600 * 1024);
+  // "Small" = one compact line per gym (no full records): a per-gym budget, so the guard does not break as gyms are added
+  // (a fixed 600 KB cap failed at 2,348 gyms, 262 bytes each).
+  const live = S.load();
+  assert.ok(fs.statSync(path.join(ROOT, 'import', 'index', 'gym-index.ndjson')).size < live.entries.length * 300, 'index stays under 300 bytes per gym');
   assert.deepEqual(Object.keys(idx.entries[0]), S.FIELDS);
   assert.ok(!('notes' in idx.entries[0]) && !('photo' in idx.entries[0]), 'index must not duplicate full records');
 });
