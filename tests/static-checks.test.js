@@ -121,6 +121,8 @@ const SAFE_EXPR = [
   /^textField\('[a-zA-Z]+', '[A-Za-z ]+', d\.[a-zA-Z]+(, ' maxlength="\d+"')?\)$/,
   // brand.js: the seal builder takes only literal options and escapes its label
   /^sealSvg\(\)$/, /^(arc|clip|head|CREST|pose|art)$/,
+  // page-html.js page header art (sec. 13A): literal names only; pageArtHtml renders `name` only when it is in the PAGE_ART set
+  /^pageArtHtml\('[a-z-]+'\)$/, /^name$/,
   // gym-picker.js (Log a session): text/none/groups are assembled in the same builder from escapeHtml()ed names, places,
   // labels and codes, Number()ed counts and literal icon names
   /^(text|none|groups)$/,
