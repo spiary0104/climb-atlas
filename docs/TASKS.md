@@ -24,7 +24,7 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 - Post-launch: gym-cap trigger migration 20261003000100 APPLIED; sitemap; link previews.
 - Real-phone retest (check-in, eyes, Date/Mood) passed 2026-10-03; service-role key rotated 2026-10-03.
 - Open: Supabase Auth Redirect URLs: add preview domains (else sign-in lands on the Site URL); simplified About/Privacy/Terms on
-  local branch `docs/simplify-legal-pages` (not pushed): owner to approve the age wording and the 30-day deletion promise.
+  local branch `docs/simplify-legal-pages` (not pushed): age requirement removed and 30-day deletion promise confirmed (owner, 2026-10-03).
   Phase 4 not built (minimal schema, owner): publish-then-review for hours/price/links, website field, photo/confirm points.
 ### Gym import pipeline — first batch imported; follow-ups
 - Status: gated importer built and tested; first batch (246) IMPORTED 2026-09-24 (1,881 → 2,127). Open: retire data/gyms.json (plan in docs).
