@@ -6,19 +6,17 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 (delete them; git keeps history). Keep this file under 60 lines.
 
 ## In progress
-### Final-stage sprint (2026-10-04, audit 2026-10-03) — PR #37 open, preview verified, NOT merged
-- One combined PR from `integration/final-stage` (five stages + follow-ups). Migration `20261004000100_gym_information` APPLIED to
-  production 2026-10-04 (preflight clean; columns present; 2,348 approved; index unchanged; docs/migrations.md).
-- Gym information (website, weekly hours, day pass free text, facilities, description; one photo link), 102 city metros (cross-region
-  ones on neighbouring region pages with 2+ gyms), UX follow-ups, perf (spots 359 -> 191 KB; content ~1-1.5 s sooner locally).
-- SEO: sitemap.xml 3,299 URLs (area pages only with 2+ gyms) + `api/_places.json`; link previews via `api/seo.mjs` (bot user agents
-  only) verified on the preview for Facebook/Twitter/WhatsApp/Slack; unknown gym -> 404. Re-run `node scripts/build-sitemap.js` per batch.
-- PSI mobile (noisy): preview `/` 30-33 vs production 31 (a11y 100); TBT is MapLibre-bound (~2.3-2.9 s CPU throttled).
-- MapLibre pass: `js/spots-prefetch.js` starts the gym-list read before MapLibre (local 4x CPU / 1.6 Mbps, median of 3): list 8.8 ->
-  6.1 s, gym page 7.3 -> 6.2 s (LCP 7.4 -> 5.8 s); Explore LCP (intro line) 5.0 -> 5.6 s (bandwidth shared with MapLibre); TBT same.
-- Owner: re-enable Vercel preview protection; approve the merge; after deploy re-check link previews on www and submit the sitemap.
-- Follow-ups: seed website + hours for the top metros (import batch); self-serve account deletion; map-stack weight (MapLibre
-  still blocks the first paint of the app: rendering the list before the map exists would be the next, architectural, step).
+### Final-stage sprint (gym information, metros, SEO, perf) — DONE: PR #37 merged and live in production 2026-10-03
+- Status: PR #37 (`integration/final-stage`) merged to master 2026-10-03 (merge commit `b58a79e`) and deployed by Vercel; production
+  smoke test passed (/, gym, metro, region, /in, sitemap.xml 3,299 URLs, robots.txt, bot link previews; no console errors at
+  1280/375 px). Migration `20261004000100_gym_information` APPLIED (docs/migrations.md). Vercel preview protection re-enabled.
+- Shipped: gym information (website, weekly hours, day pass free text, facilities, description; one photo link); 102 city metros
+  (cross-region ones on neighbouring region pages with 2+ gyms); UX follow-ups; perf (spots 359 -> 191 KB; `js/spots-prefetch.js`
+  starts the gym-list read before MapLibre: list 8.8 -> 6.1 s locally, Explore LCP +0.6 s accepted); SEO (sitemap, area pages only
+  with 2+ gyms, + `api/_places.json`; link previews via `api/seo.mjs`, bot user agents only). Re-run `node scripts/build-sitemap.js` per batch.
+- Owner: submit the sitemap in Google Search Console.
+- Follow-ups: seed website + hours for the top metros (import batch); self-serve account deletion; map-stack weight (MapLibre still
+  blocks the first paint of the app; rendering the list before the map exists would be the next, architectural, step).
 ### Public launch (www.bouldeer.com) — LAUNCHED 2026-10-02
 - Status: launch-readiness merged (PRs #14-#16: /privacy, /terms, 404, security headers + CSP, climbatlas.org 308 redirect,
   pinned CDN + SRI, sign-in for edits/reports); all 10 migrations applied (security hardening 2026-10-02, docs/migrations.md);
