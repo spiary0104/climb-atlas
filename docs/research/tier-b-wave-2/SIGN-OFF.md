@@ -2,7 +2,7 @@
 
 Generated 2026-10-02 from the committed review files (never hand-edited). Index 2306 gyms (equals production). **Nothing is staged or imported yet.**
 
-All six sections were reviewed by Claude on your instruction (`reviewer` = "Claude (AI) on the owner's instruction; owner sign-off pending"). Staging checks the rules again, but the judgement calls are yours: read sections 2 and 3, skim 4–6, then sign off (section 7).
+**Signed off by the owner on 2026-10-03.** The decisions were drafted by Claude on the owner's instruction; no decision was changed at sign-off.
 
 ## 1. Summary
 
