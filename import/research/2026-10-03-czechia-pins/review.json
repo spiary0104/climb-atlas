@@ -1,0 +1,43 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-03-czechia-pins",
+ "reviewer": "Claude (AI worker), decisions drafted on the owner's instruction; owner sign-off pending",
+ "reviewed": "2026-10-03",
+ "decisions": {
+  "cz-004": {
+   "decision": "accept",
+   "reason": "Second pass of 2026-10-01-czechia#cz-004, deferred only for its pin. Re-read 2026-10-03: S VSIT own site shows the boulder bar at Bořivojova 104, and the place coordinates of the map on its contact page (50.0826228, 14.4464384, place Boulder V Síti) replace the embed viewport centre, 156 m west. The same-section earlier candidate is this very gym with the superseded pin (the first section stays unimported for it). Precision stays street, hence the weak-coordinates flag.",
+   "reviewed_against": ["2026-10-01-czechia#cz-004"]
+  },
+  "cz-015": {
+   "decision": "accept",
+   "reason": "Second pass of 2026-10-01-czechia#cz-015, deferred only for its pin. Re-read 2026-10-03: the gym link on S JPAR home page resolves to the place marker 50.0494163, 15.7612287 at Ohrazenická 323 (the address on the page); the first pass had the link viewport centre, 184 m west. Same gym, superseded pin.",
+   "reviewed_against": ["2026-10-01-czechia#cz-015"]
+  },
+  "cz-016": {
+   "decision": "accept",
+   "reason": "Second pass of 2026-10-01-czechia#cz-016, deferred only for its pin. Re-read 2026-10-03: S GEKO contact page embed (place Gekon boulder bar, Sladkovského 505) has the place coordinates 50.0331018, 15.7749599; the first pass had the viewport centre, 184 m west. Own site shows hours (Mon-Thu 15-23) and the boulder wall. Same gym, superseded pin; precision stays street, hence the weak-coordinates flag.",
+   "reviewed_against": ["2026-10-01-czechia#cz-016"]
+  },
+  "cz-017": {
+   "decision": "accept",
+   "reason": "Second pass of 2026-10-01-czechia#cz-017, deferred only for its pin. Re-read 2026-10-03: the gym link on S MAKA contact page resolves to the place MAKAK climbing s.r.o. at 50.7265758, 15.1485288, and OSM node/2206823587 (website makakarena.cz) is 20 m away; the first pass had the link viewport centre, 154 m west. Same gym, superseded pin.",
+   "reviewed_against": ["2026-10-01-czechia#cz-017"]
+  },
+  "cz-021": {
+   "decision": "accept",
+   "reason": "Second pass of 2026-10-01-czechia#cz-021, deferred for its pin and for no visible hours. Re-read 2026-10-03: the gym link on S LIMI home page resolves to the place Limit Boulder at 48.9743068, 14.5087525 (first pass: viewport centre, 188 m west), and the home page now shows dated 2026 notices (new opening hours from 1 May 2026, wall rebuild dates Aug-Sep 2026, Limit Academy 2026/2027), so it is open. Single source (own site) by design; sister gym Stěna Lanovka (cz-020, 2.1 km, own address Lannova 2) is a different gym, already imported.",
+   "reviewed_against": ["2026-10-01-czechia#cz-020", "2026-10-01-czechia#cz-021"]
+  },
+  "cz-022": {
+   "decision": "accept",
+   "reason": "Second pass of 2026-10-01-czechia#cz-022, deferred only for its pin. Re-read 2026-10-03: S V16 contact page Google place link (Lezecké centrum V16) gives 49.7475099, 13.3687661, 18 m from OSM node/6376522326 (Kollárova 19, website v16.cz, climbing:boulder); the first pass had the embed viewport centre, 155 m west. Own site shows weekly hours and the address. Same gym, superseded pin.",
+   "reviewed_against": ["2026-10-01-czechia#cz-022"]
+  },
+  "cz-025": {
+   "decision": "accept",
+   "reason": "Second pass of 2026-10-01-czechia#cz-025, deferred only for its pin and suburb. Re-read 2026-10-03: S KOME page embed (place KOMEC, Hněvkovského 62c) has the place coordinates 49.169882, 16.6234766, 9 m from OSM node/2957927321 (Komec, climbing:boulder); the first pass had the viewport centre, 139 m west. Suburb corrected to Brno - Komárov (own page: sportovní areál Brno Komárov, 617 00). Same gym, superseded pin.",
+   "reviewed_against": ["2026-10-01-czechia#cz-025"]
+  }
+ }
+}
