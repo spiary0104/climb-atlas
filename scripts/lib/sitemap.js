@@ -14,15 +14,15 @@ const ROOT = path.resolve(__dirname, '..', '..');
 async function loadRules() {
   if (typeof globalThis.window === 'undefined') globalThis.window = { matchMedia: () => ({ matches: false }) };
   const load = f => import(pathToFileURL(path.join(ROOT, 'js', 'modules', f)).href);
-  const [slug, constants] = await Promise.all([load('slug.js'), load('constants.js')]);
-  return { slug, COUNTRY_LABELS: constants.COUNTRY_LABELS };
+  const [slug, constants, metros] = await Promise.all([load('slug.js'), load('constants.js'), load('metros.js')]);
+  return { slug, COUNTRY_LABELS: constants.COUNTRY_LABELS, metroOf: metros.metroOf };
 }
 
 const xmlEscape = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&apos;');
 
 // rows: approved spots ({slug, country, state, suburb}). Returns {urls: [{path, type}], skipped: {...}}; deterministic order.
 async function collectUrls(rows) {
-  const { slug, COUNTRY_LABELS } = await loadRules();
+  const { slug, COUNTRY_LABELS, metroOf } = await loadRules();
   const skipped = { noSlug: 0, unknownCountry: 0, noRegion: 0, noCity: 0 };
   const gyms = new Set(), countries = new Set(), regions = new Set(), cities = new Set();
   for (const g of rows) {
@@ -32,6 +32,9 @@ async function collectUrls(rows) {
     // for a non-empty path segment (an empty one cannot match the router's [^/]+).
     if (!COUNTRY_LABELS[cc]) { skipped.unknownCountry++; continue; }
     countries.add(slug.countryPath(cc));
+    // A metro page (metros.js) exists once a gym falls inside it; it shares the city URL tier and wins over a suburb.
+    const metro = Number.isFinite(g.lat) && Number.isFinite(g.lng) ? metroOf(g) : null;
+    if (metro) cities.add(slug.metroPath(metro));
     if (!slug.regionSegment(g.state)) { skipped.noRegion++; continue; }
     regions.add(slug.regionPath(cc, g.state));
     if (!slug.citySegment(g.suburb)) { skipped.noCity++; continue; }
