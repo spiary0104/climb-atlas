@@ -6,26 +6,27 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 (delete them; git keeps history). Keep this file under 60 lines.
 
 ## In progress
-### Post-launch polish sprint (2026-10-03) — data applied; PRs #30-#34 merged 2026-10-03
-- PRs: #30 mascot (field-notes on first-run /me, fresh-stamp on travel milestones, Explore first run 7.10); #31 page header art
-  (Regions, signed-out Log/Me; DESIGN 13A); #32 START "Check in", lake/plum final, boulder-tag + map-attribution contrast; #33 research
-  notes hidden (97.5% of notes); #34 the two data batches below. All bump sw.js to v18: resolve by taking the next version on merge.
-- Data APPLIED + verified 2026-10-03 (FULL coverage, index rebuilt): `2026-10-03-polish-fixes` (11 pins, 3 addresses) and
-  `2026-10-03-czechia-pins` (7 new Czech gyms; live 2,341 -> 2,348).
-- Lighthouse a11y (production, PSI, mobile, 2026-10-03): `/` 96 (only the map attribution contrast, fixed in #32), `/in` 100,
-  `/log` 100; desktop not captured. Re-run after deploy. Performance 33 on `/` mobile (TBT 6.3 s): the deferred first-load work.
-- Follow-ups: `pin-drop` pose (add-gym "in review") needs a DESIGN 12.2 decision before tracing; notes need a data fix to keep the
-  real facts #33 hides (separate research field, rewrite user-facing notes in the pipeline); signed-in Log/Me have no header art
-  (by design); hr-005 SPK Lapis kept its pin (the candidate was a viewport centre).
+### Final-stage sprint (2026-10-04, audit 2026-10-03) — local branches, NOT pushed, NOT merged, migration NOT applied
+- Branches: `feature/gym-information` -> `feature/ux-final` -> `feature/perf-pass` (stacked), `feature/city-metros`,
+  `feature/seo-share`; all five merged and tested together on `integration/final-stage` (+ Enter-on-place, metro titles, sitemap metros).
+- Gym information: migration `20261004000100_gym_information.sql` (description, website, hours jsonb, day_pass, facilities on spots +
+  pending_edits; RLS suite 106/106 locally). Owner: `supabase db push --linked` BEFORE deploying (the app sends the new columns).
+- City discovery: 102 curated metros (centre + radius, `metros.js`), 55% of gyms; search/filters/URLs/region + metro pages/breadcrumb.
+- SEO: sitemap.xml (4,418 URLs, re-run `node scripts/build-sitemap.js` after data batches), robots Sitemap line, /about canonical,
+  per-page titles in the app. Link previews for crawlers NOT built: Vercel middleware needs a package.json (owner decision).
+- Perf (local, throttled phone, cold): spots 354 -> 190 KB, list 10.4 -> 8.7 s. PSI after deploy still to run (before: / 33).
+- UX: nearest-first list, first-visit orientation line, "Has photos" hidden < 5%, Nearby rows, START explains sign-in.
+- Follow-ups: link previews (api/seo.mjs function or accept); seed website + hours for the top metros (import batch);
+  self-serve account deletion; cross-region metros (Tokyo/Seoul) on neighbouring region pages; `pin-drop` placement.
 ### Public launch (www.bouldeer.com) — LAUNCHED 2026-10-02
 - Status: launch-readiness merged (PRs #14-#16: /privacy, /terms, 404, security headers + CSP, climbatlas.org 308 redirect,
   pinned CDN + SRI, sign-in for edits/reports); all 10 migrations applied (security hardening 2026-10-02, docs/migrations.md);
   owner tested sign-in, submissions and moderation on production. Wave 1 IMPORTED (179) + Wave 2 IMPORTED (38) 2026-10-03; 5 + 11 pin fixes, 3 retirements (2 closed, 1 duplicate) and 7 Czech gyms applied; live 2,348.
-- Post-launch: gym-cap trigger migration 20261003000100 APPLIED; sitemap; link previews.
+- Post-launch: gym-cap trigger migration 20261003000100 APPLIED.
 - Real-phone retest (check-in, eyes, Date/Mood) passed 2026-10-03; service-role key rotated 2026-10-03.
-- Open: Supabase Auth Redirect URLs: add preview domains (else sign-in lands on the Site URL); simplified About/Privacy/Terms on
-  local branch `docs/simplify-legal-pages` (not pushed): age requirement removed and 30-day deletion promise confirmed (owner, 2026-10-03).
-  Phase 4 not built (minimal schema, owner): publish-then-review for hours/price/links, website field, photo/confirm points.
+- Legal pages simplified (PR #36, merged): no minimum age; 30-day deletion promise confirmed.
+- Open: Supabase Auth Redirect URLs: add preview domains (else sign-in lands on the Site URL). Phase 4 publish-then-review and
+  photo/confirm points not built (gym-information fields still go through moderation).
 ### Gym import pipeline — first batch imported; follow-ups
 - Status: gated importer built and tested; first batch (246) IMPORTED 2026-09-24 (1,881 → 2,127). Open: retire data/gyms.json (plan in docs).
 - Regional expansion (new locations, one geographic section at a time): `research new|reconcile|stage` built (`research.js`, docs
