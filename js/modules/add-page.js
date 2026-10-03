@@ -13,10 +13,10 @@ import { submitErrorMessage } from './submit-errors.js';
 import { safeUrl, showToast } from './utils.js';
 
 const DRAFT_KEY = 'bouldeer_add_draft';
-const TEXT = ['name', 'suburb', 'country', 'state', 'countryOther', 'stateOther', 'address', 'photo', 'notes'];
+const TEXT = ['name', 'suburb', 'country', 'state', 'countryOther', 'stateOther', 'address', 'photo', 'website', 'day_pass', 'description'];
 const AREA_FIELDS = ['suburb', 'country', 'state', 'countryOther', 'stateOther'];
 const blank = () => ({ step: 1, name: '', types: [], suburb: '', country: '', state: '', countryOther: '', stateOther: '',
-  address: '', photo: '', notes: '', areaEdited: false, lat: null, lng: null, zoom: null });
+  address: '', photo: '', website: '', day_pass: '', description: '', areaEdited: false, lat: null, lng: null, zoom: null });
 
 let draft = blank();
 let pinMap = null;
@@ -133,6 +133,8 @@ async function submit(){
   }
   const photo = draft.photo.trim();
   if(photo && !safeUrl(photo)){ showToast('Photo link must be a full http:// or https:// address'); return; }
+  const website = draft.website.trim();
+  if(website && !safeUrl(website)){ showToast('Website must be a full http:// or https:// address'); return; }
   const user = window.auth && window.auth.user;
   if(!user){ saveDraft(); showToast('Sign in to submit — your draft stays on this device'); openAuthModal(); return; }
   if(!window.sb){ showToast('Supabase is not configured — see README.md'); return; }
@@ -146,7 +148,8 @@ async function submit(){
     const { error } = await window.sb.from('spots').insert({
       id: 'community-' + (window.crypto && crypto.randomUUID ? crypto.randomUUID() : Date.now()),
       name: draft.name.trim(), suburb: draft.suburb.trim(), state, country, types: draft.types.slice(),
-      address: draft.address.trim() || null, notes: draft.notes.trim() || null, photo: photo ? safeUrl(photo) : null,
+      address: draft.address.trim() || null, photo: photo ? safeUrl(photo) : null,
+      website: website ? safeUrl(website) : null, day_pass: draft.day_pass.trim() || null, description: draft.description.trim() || null,
       lat: draft.lat, lng: draft.lng, submitted_by: user.id, community: true, edited: false, status: 'pending',
     });
     if(error) throw error;

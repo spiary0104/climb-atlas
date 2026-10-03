@@ -21,7 +21,8 @@
 // v19: field-notes / fresh-stamp poses and the Explore first run (brand.js, passport.js, list.js, explore.js).
 // v20: page header art on Regions and signed-out Log/Me (assets/art, page-html.js pageArtHtml).
 // v21: START reads "Check in"; boulder-tag and map-attribution contrast (tokens.css, style.css).
-const CACHE_VERSION = 'v21';
+// v22: gym information (website, hours, day pass, facilities, description; gym-info.js).
+const CACHE_VERSION = 'v22';
 const SHELL_CACHE = 'climbatlas-shell-' + CACHE_VERSION;
 const RUNTIME_CACHE = 'climbatlas-runtime-' + CACHE_VERSION;
 const TILE_CACHE = 'climbatlas-tiles-' + CACHE_VERSION;
@@ -83,6 +84,7 @@ const SHELL_FILES = [
   'js/modules/log-page.js',
   'js/modules/me-page.js',
   'js/modules/provenance.js',
+  'js/modules/gym-info.js',
   'js/modules/community.js',
   'js/modules/mod-page.js',
   'js/modules/add-html.js',

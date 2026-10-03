@@ -95,6 +95,15 @@
 .field{margin-bottom:var(--space-3);}
 .field.field-row{display:flex;gap:var(--space-3);}
 .field.field-row > div{flex:1;min-width:0;}
+/* Gym information form groups (edit dialog): weekly hours as label/input rows, facilities as a two-column checklist. */
+fieldset.field{margin:0 0 var(--space-4);padding:0;border:0;min-width:0;}
+.hours-fields{display:grid;gap:var(--space-2);}
+.hours-fields .hours-field{display:grid;grid-template-columns:6.5rem 1fr;align-items:center;gap:var(--space-2);margin:0;
+  font-size:var(--type-text-sm-size);line-height:var(--type-text-sm-line);font-weight:var(--font-weight-regular);color:var(--color-text-secondary);}
+.facility-checks{display:grid;grid-template-columns:repeat(2, minmax(0, 1fr));gap:var(--space-1) var(--space-3);}
+.facility-checks .check-row{display:flex;align-items:center;gap:var(--space-2);margin:0;min-height:var(--size-control-sm);
+  font-size:var(--type-text-md-size);line-height:var(--type-text-md-line);font-weight:var(--font-weight-regular);color:var(--color-text-primary);}
+@media (max-width:359px){ .hours-fields .hours-field{grid-template-columns:1fr;} .facility-checks{grid-template-columns:1fr;} }
 .field label,.field .field-label{
   display:block;margin-bottom:var(--space-1);
   font-size:var(--type-caption-size);line-height:var(--type-caption-line);font-weight:var(--font-weight-semibold);

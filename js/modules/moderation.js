@@ -22,13 +22,13 @@ async function refreshAfterModeration(){
 }
 
 // Only the text fields a moderator can correct in the panel are taken from `fields`; anything else is ignored.
-const CORRECTABLE = ['name', 'suburb', 'address', 'notes'];
+const CORRECTABLE = ['name', 'suburb', 'address', 'description'];
 function corrections(fields = {}){
   const out = {};
   for(const k of CORRECTABLE){
     if(!(k in fields)) continue;
     const v = String(fields[k] == null ? '' : fields[k]).trim();
-    out[k] = v || (k === 'address' || k === 'notes' ? null : undefined);
+    out[k] = v || (k === 'address' || k === 'description' ? null : undefined);
     if(out[k] === undefined) delete out[k];          // name/suburb can't be blanked
   }
   return out;
@@ -60,7 +60,10 @@ export function approveEdit(pendingEditId, fields){
   return run('Edit approved', async () => {
     const {error: e1} = await window.sb.from('spots').update({
       name: pe.name, suburb: pe.suburb, state: pe.state, country: pe.country,
-      types: pe.types, address: pe.address, notes: pe.notes, photo: pe.photo, lat: pe.lat, lng: pe.lng,
+      types: pe.types, address: pe.address, photo: pe.photo, lat: pe.lat, lng: pe.lng,
+      // Gym information; `notes` (the research remark) is never overwritten by an edit.
+      description: pe.description ?? null, website: pe.website ?? null, day_pass: pe.day_pass ?? null, hours: pe.hours ?? null,
+      facilities: Array.isArray(pe.facilities) ? pe.facilities : [],
       ...corrections(fields), edited: true,
     }).eq('id', pe.spot_id);
     if(e1) throw e1;

@@ -76,7 +76,8 @@ MapLibre → Supercluster → Supabase CDN → `supabase-init.js` → `auth.js` 
 `marks`, `routes`, `sessions`, `session_climbs`, `profiles` (`display_name`, public read, own write), `checkins` (Phase 5:
 owner-only; user/time pinned by trigger; one per gym per 12 h, 30/day, checked in the trigger under a per-person lock; adds the `climbed` mark).
 Spot shape: `id` (`seed-N` legacy, `community-<uuid>`, or frozen `g-<hex>` for imported gyms), `name`, `suburb`, `state`,
-`country`, `lat`, `lng`, `address`, `types[]` (`indoor-bouldering` | `top-rope` | `lead-climbing`), `notes`, `photo`,
+`country`, `lat`, `lng`, `address`, `types[]` (`indoor-bouldering` | `top-rope` | `lead-climbing`), `notes` (research remark, not shown), `photo`,
+`description`, `website`, `hours` (jsonb mon..sun), `day_pass`, `facilities[]` (gym information, `gym-info.js`; same columns on `pending_edits`),
 `community`, `edited`, `created_at`, `slug` (stored, unique, set on insert, never changed), `verified_at`, `rejection_reason`. `state` codes collide across
 countries — always key on `country:state`.
 

@@ -99,7 +99,7 @@ export function initGymPage(){
       case 'checkin': startCheckin(id); break;
       case 'save': toggleMark(id, 'bookmarked'); break;
       case 'climbed': toggleMark(id, 'climbed'); break;
-      case 'edit': openEditModal(id); break;
+      case 'edit': openEditModal(id, { focus: btn.dataset.editFocus || '' }); break;
       case 'report': openReportModal(id); break;
       case 'verify': setVerified(id, true); break;
       case 'unverify': setVerified(id, false); break;

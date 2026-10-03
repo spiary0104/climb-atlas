@@ -1,5 +1,6 @@
 // Modal keyboard/focus handling, edit/report spot forms. Adding a gym is the /add page.
 import { openAuthModal } from './auth-ui.js';
+import { infoFieldsHtml, readInfoFields } from './gym-info.js';
 import { ensureSeedData } from './data-load.js';
 import { map } from './map.js';
 import { STATES_BY_COUNTRY } from './regions.js';
@@ -78,7 +79,7 @@ function renderFormHint(hintId, missing){
   el.textContent = missing.length ? 'Still needed: ' + missing.join(', ') + '.' : '';
 }
 // --- edit spot flow ---
-export async function openEditModal(id){
+export async function openEditModal(id, { focus = '' } = {}){
   const g = appState.spots.find(x=>x.id===id);
   if(!g) return;
   if(!requireSignIn('Sign in to suggest an edit')) return;
@@ -103,7 +104,7 @@ export async function openEditModal(id){
     document.getElementById('eStateOther').value = g.state;
   }
   document.getElementById('eAddress').value = g.address || '';
-  document.getElementById('eNotes').value = g.notes || '';
+  document.getElementById('eInfoFields').innerHTML = infoFieldsHtml('e', g);   // website, day pass, hours, facilities, description
   document.getElementById('ePhoto').value = g.photo || '';
   document.getElementById('eNote').value = '';
   document.getElementById('eReview').checked = false;
@@ -118,6 +119,11 @@ export async function openEditModal(id){
   document.getElementById('eRevertBtn').style.display = canRevert ? 'block' : 'none';
   checkEditFormReady();
   editModalBackdrop.classList.remove('hidden');
+  // The gym page prompt opens the dialog at the hours (sec. 8.2): after the dialog's own initial focus has run.
+  if(focus === 'hours') requestAnimationFrame(() => {
+    const el = document.getElementById('e-hours-mon');
+    if(el){ el.scrollIntoView({ block: 'center' }); el.focus({ preventScroll: true }); }
+  });
 }
 
 function closeEditModal(){
@@ -202,6 +208,9 @@ export function initModalKeyboard(){
 // "Add a gym": the top bar button, /me and the Explore empty state all go to the /add page (add-page.js).
 export function startAddGym(){ navigate('/add'); }
 
+const currentInfo = g => ({ description: g.description || null, website: g.website || null, day_pass: g.day_pass || null,
+  hours: g.hours || null, facilities: Array.isArray(g.facilities) ? g.facilities : [] });
+
 export function initForms(){
   document.getElementById('eCountry').addEventListener('change', (e)=>{ toggleOtherCountryFields('e', e.target.value); checkEditFormReady(); });
 
@@ -242,6 +251,11 @@ export function initForms(){
     const {country, state} = getCountryState('e');
     const ePhotoRaw = document.getElementById('ePhoto').value.trim();
     if(ePhotoRaw && !safeUrl(ePhotoRaw)){ showToast('Photo link must be a full http:// or https:// address'); return; }
+    const info = readInfoFields('e', id => document.getElementById(id), {
+      hourInputs: [...document.querySelectorAll('#eInfoFields [data-hours-day]')],
+      facilityInputs: [...document.querySelectorAll('#eInfoFields [data-facility]')],
+    });
+    if(info.website && !safeUrl(info.website)){ showToast('Website must be a full http:// or https:// address'); document.getElementById('e-website').focus(); return; }
     const proposal = {
       spot_id: appState.currentEditId,
       name: document.getElementById('eName').value.trim(),
@@ -250,8 +264,9 @@ export function initForms(){
       country,
       types: selectedEditTypes(),
       address: document.getElementById('eAddress').value.trim() || null,
-      notes: document.getElementById('eNotes').value.trim() || null,
       photo: ePhotoRaw ? safeUrl(ePhotoRaw) : null,
+      // The public gym information; research `notes` are never part of an edit (approval leaves them alone).
+      description: info.description, website: info.website, day_pass: info.day_pass, hours: info.hours, facilities: info.facilities,
       lat: appState.currentEditPin.lat,
       lng: appState.currentEditPin.lng,
       edit_note: document.getElementById('eNote').value.trim().slice(0, 200),
@@ -286,8 +301,10 @@ export function initForms(){
     const proposal = {
       spot_id: id,
       name: original.name, suburb: original.suburb, state: original.state, country: original.country,
-      types: original.types, address: original.address || null, notes: original.notes || null, photo: original.photo || null,
-      lat: original.lat, lng: original.lng, edit_note: 'Revert to the original dataset values'
+      types: original.types, address: original.address || null, photo: original.photo || null,
+      lat: original.lat, lng: original.lng, edit_note: 'Revert to the original dataset values',
+      // The seed file predates the gym-information fields: a revert keeps what the gym has now.
+      ...currentInfo(appState.spots.find(s => s.id === id) || {})
     };
     try{
       const {error} = await window.sb.from('pending_edits').insert(proposal);

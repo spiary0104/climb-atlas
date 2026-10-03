@@ -98,7 +98,23 @@ const denied = r => r.status >= 400 || (Array.isArray(r.json) && r.json.length =
   r = await api('PATCH', `/rest/v1/pending_edits?id=eq.${own && own.id}`, { token: A.token, body: { status: 'approved' }, prefer: rep }); t('user: cannot approve their own proposal', denied(r), 'HTTP ' + r.status);
   r = await api('POST', '/rest/v1/pending_edits', { token: A.token, body: { spot_id: spot, name: 'x', suburb: 'X', state: 'NSW', country: 'AU', lat: 1, lng: 1, types: [], edit_note: 'y'.repeat(201) } }); t('user: edit note over 200 characters is refused', r.status >= 400, 'HTTP ' + r.status);
   r = await api('POST', '/rest/v1/pending_edits', { token: A.token, body: { spot_id: spot, name: 'n'.repeat(201), suburb: 'X', state: 'NSW', country: 'AU', lat: 1, lng: 1, types: [] } }); t('user: edit name over 200 characters is refused (20261002000200)', r.status >= 400, 'HTTP ' + r.status);
-  r = await api('POST', '/rest/v1/reports', { token: A.token, body: { spot_id: spot, message: 'wrong pin' }, prefer: rep }); t('user: can submit a report, attributed to them', r.status === 201 && r.json[0].submitted_by === A.id, 'HTTP ' + r.status);
+  // Reports are readable by moderators only, so the insert cannot return its row (the app inserts without reading back);
+  // check the attribution with the service role instead.
+  r = await api('POST', '/rest/v1/reports', { token: A.token, body: { spot_id: spot, message: 'wrong pin (attribution check)' } });
+  { const back = await svc('GET', `/rest/v1/reports?select=submitted_by&spot_id=eq.${spot}&message=eq.${encodeURIComponent('wrong pin (attribution check)')}`);
+    t('user: can submit a report, attributed to them', r.status === 201 && back.json.length === 1 && back.json[0].submitted_by === A.id, 'HTTP ' + r.status); }
+  // Gym information (migration 20261004000100): edit proposals carry the public fields; the checks refuse bad values.
+  const info = { spot_id: spot, name: 'Info', suburb: 'X', state: 'NSW', country: 'AU', lat: 1, lng: 1, types: [] };
+  r = await api('POST', '/rest/v1/pending_edits', { token: A.token, body: { ...info, description: 'Big bouldering hall with a cafe.', website: 'https://example.com/gym',
+    hours: { mon: '6am-10pm', sun: 'Closed' }, day_pass: 'A$28 adult', facilities: ['cafe', 'shoe-hire'] } });
+  t('user: an edit proposal can carry website, hours, day pass, facilities and description', r.status === 201, 'HTTP ' + r.status);
+  for (const [label, extra] of [['website must be http(s)', { website: 'javascript:alert(1)' }], ['hours keys must be weekdays', { hours: { monday: '9-5' } }],
+    ['hours values must be short strings', { hours: { mon: 'x'.repeat(41) } }], ['hours values must be strings', { hours: { mon: 9 } }],
+    ['facilities must come from the fixed list', { facilities: ['casino'] }], ['description is capped at 600', { description: 'd'.repeat(601) }],
+    ['day pass is capped at 120', { day_pass: 'p'.repeat(121) }]]) {
+    r = await api('POST', '/rest/v1/pending_edits', { token: A.token, body: { ...info, ...extra } }); t('user: ' + label, r.status >= 400, 'HTTP ' + r.status);
+  }
+  r = await api('GET', `/rest/v1/spots?select=id,description,website,hours,day_pass,facilities&id=eq.${spot}`); t('anon: the gym-information columns are publicly readable on approved gyms', r.status === 200 && r.json.length === 1 && Array.isArray(r.json[0].facilities));
   r = await api('POST', '/rest/v1/reports', { token: A.token, body: { spot_id: spot, message: 'm'.repeat(2001) } }); t('user: report over 2000 characters is refused', r.status >= 400, 'HTTP ' + r.status);
   r = await api('POST', '/rest/v1/spots', { token: M.token, body: { id: 'community-' + uuid(), name: 'forged', suburb: 'x', state: 'NSW', country: 'AU', lat: 0, lng: 0, types: [], status: 'pending', submitted_by: M.id, verified_at: new Date().toISOString(), rejection_reason: 'forged' }, prefer: rep });
   t('user: a forged verified_at / rejection_reason on a new gym is nulled (20261002000300)', r.status === 201 && r.json[0].verified_at === null && r.json[0].rejection_reason === null, r.status === 201 ? 'verified_at=' + r.json[0].verified_at : 'HTTP ' + r.status);

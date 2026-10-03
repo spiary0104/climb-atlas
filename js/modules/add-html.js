@@ -8,6 +8,7 @@ import { distanceKm, formatDistance, ALL_TYPES } from './geo.js';
 import { escapeHtml } from './html-safe.js';
 import { icon } from './icons.js';
 import { STATES_BY_COUNTRY } from './regions.js';
+import { infoFieldsHtml } from './gym-info.js';
 
 export const PIN_ZOOM = 14;          // street level: the crosshair is precise enough to count as a placed pin
 export const AREA_KM = 25;           // take the area from the nearest gym only when it is this close
@@ -114,7 +115,7 @@ export function addStepHtml(d, ctx = {}){
       + `<div class="field field-row">${countrySelect(d)}${d.country === 'OTHER' ? '' : regionSelect(d)}</div>${other}`
       + textField('address', 'Street address', d.address, ' autocomplete="off" maxlength="300"')
       + textField('photo', 'Photo link', d.photo, ' inputmode="url" maxlength="1000" placeholder="https://"')
-      + `<div class="field"><label for="add-notes">Notes</label><textarea id="add-notes" data-add-field="notes" maxlength="2000" placeholder="Day pass price, opening hours, anything useful">${escapeHtml(d.notes || '')}</textarea></div>`
+      + infoFieldsHtml('add', d, { hoursAndFacilities: false, data: 'data-add-field' })   // hours and facilities come with a later edit
       + `<p class="form-hint" id="addHint" aria-live="polite"></p>`
       + `<div class="add-actions"><button type="button" class="btn btn-tertiary" data-add-action="back">${icon('arrow-left', {size:'sm'})}Back</button>${submit}</div>${signIn}`;
   }

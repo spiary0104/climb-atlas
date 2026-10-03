@@ -44,19 +44,24 @@ test('client text limits match the database caps (migration 20261002000200) and 
   assert.equal(max('eName'), TEXT_LIMITS.name);
   assert.equal(max('eSuburb'), TEXT_LIMITS.suburb);
   assert.equal(max('eAddress'), TEXT_LIMITS.address);
-  assert.equal(max('eNotes'), TEXT_LIMITS.notes);
   assert.equal(max('ePhoto'), TEXT_LIMITS.photo);
   assert.equal(max('rMessage'), TEXT_LIMITS.message);
   const add = read('js/modules/add-html.js');
   for (const [k, v] of Object.entries({ address: 300, photo: 1000, notes: 2000, suburb: 200 })) assert.equal(v, TEXT_LIMITS[k], k);
-  assert.match(add, /maxlength="300"/); assert.match(add, /maxlength="1000"/); assert.match(add, /maxlength="2000"/);
+  assert.match(add, /maxlength="300"/); assert.match(add, /maxlength="1000"/);
+  // Gym information (migration 20261004000100): the form caps are the database caps.
+  const { LIMITS, infoFieldsHtml } = await import('../js/modules/gym-info.js');
+  const gi = mig('20261004000100');
+  for (const s of ['char_length(description) <= ' + LIMITS.description, 'char_length(website) <= ' + LIMITS.website, 'char_length(day_pass) <= ' + LIMITS.day_pass, '^.{' + (LIMITS.hour + 1) + '}']) assert.ok(gi.includes(s), 'migration caps: ' + s);
+  const form = infoFieldsHtml('e', {});
+  for (const [id, cap] of [['e-website', LIMITS.website], ['e-day-pass', LIMITS.day_pass], ['e-description', LIMITS.description], ['e-hours-mon', LIMITS.hour]]) assert.match(form, new RegExp('id="' + id + '"[^>]*maxlength="' + cap + '"'), id);
 });
 
 test('edit, revert and report all require sign-in before opening AND before submitting', () => {
   const src = read('js/modules/modals.js');
   assert.match(src, /import \{ openAuthModal \} from '\.\/auth-ui\.js'/);
   assert.match(src, /function requireSignIn\(reason\)\{\s*if\(window\.auth && window\.auth\.user\) return true;\s*showToast\(reason\);\s*openAuthModal\(\);\s*return false;/);
-  const openEdit = /export async function openEditModal\(id\)\{[\s\S]*?\n\}/.exec(src)[0];
+  const openEdit = /export async function openEditModal\(id(?:, \{[^)]*\})?\)\{[\s\S]*?\n\}/.exec(src)[0];
   const openReport = /export function openReportModal\(id\)\{[\s\S]*?\n\}/.exec(src)[0];
   assert.ok(/requireSignIn\(/.test(openEdit) && /requireSignIn\(/.test(openReport), 'both dialogs are gated on open');
   for (const start of ["getElementById('eSaveBtn').addEventListener", "getElementById('eRevertBtn').addEventListener", 'rSubmitBtn.addEventListener']) {
