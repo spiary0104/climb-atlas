@@ -6,9 +6,9 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 (delete them; git keeps history). Keep this file under 60 lines.
 
 ## In progress
-### Gym information batch 1 (website + hours, official sites only) — STAGED 2026-10-04, NOT applied
-- PR #39 (updater: fill-only website/hours) reviewed; batch `2026-10-04-gym-info-1` (86 gyms: 78 website+hours, 8 website only) planned,
-  public dry-run passed. Owner: approve #39, run the service-role dry-run + apply. Notes: `import/info-research/batch-1/HANDOFF.md`.
+### Gym information (website + hours, official sites only) — batch 1 APPLIED 2026-10-04; batch 2 next
+- Batch `2026-10-04-gym-info-1` applied + verified: 86 gyms (78 website + hours, 8 website only); PRs #39 (fill-only updater) and #40 merged.
+  Next: batch 2 (Seattle, Denver, Boston, San Diego: `import/info-research/batch-1/targets-batch2.json`, 64 gyms); retire seed-32 (Hardrock Nunawading, closed); check seed-20 (Skywood moved?); retire review seed-227, seed-228. Notes: `import/info-research/batch-1/HANDOFF.md`.
 ### Final-stage sprint (gym information, metros, SEO, perf) — DONE: PR #37 merged and live in production 2026-10-03
 - Status: PR #37 (`integration/final-stage`) merged to master 2026-10-03 (merge commit `b58a79e`) and deployed by Vercel; production
   smoke test passed (/, gym, metro, region, /in, sitemap.xml 3,299 URLs, robots.txt, bot link previews; no console errors at
