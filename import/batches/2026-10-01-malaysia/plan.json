@@ -1,0 +1,101 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-01-malaysia",
+ "index": {
+  "sha256": "a1704f85980e1b01edd6aa74ab9d6641830d25297a9a565c45df8f621488c4d0",
+  "count": 2325,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [],
+ "counts": {
+  "records": 9,
+  "new": 9,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "1f411b29f559dbcfd53f0538568524591a65fb17d083757796f13323cb150f04",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-f1f37e170b",
+   "id_frozen": true,
+   "name": "Camp5 1Utama",
+   "country": "MY"
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-848aaca6f8",
+   "id_frozen": true,
+   "name": "Camp5 KL Eco City",
+   "country": "MY"
+  },
+  {
+   "line": 3,
+   "class": "new",
+   "id": "g-955c407d0e",
+   "id_frozen": true,
+   "name": "Camp5 Jumpa",
+   "country": "MY"
+  },
+  {
+   "line": 4,
+   "class": "new",
+   "id": "g-2db5533538",
+   "id_frozen": true,
+   "name": "BUMP Bouldering Pavilion Bukit Jalil",
+   "country": "MY"
+  },
+  {
+   "line": 5,
+   "class": "new",
+   "id": "g-346ab53621",
+   "id_frozen": true,
+   "name": "Bhub Bouldering",
+   "country": "MY"
+  },
+  {
+   "line": 6,
+   "class": "new",
+   "id": "g-549e82de6d",
+   "id_frozen": true,
+   "name": "Project Rock Gurney Plaza",
+   "country": "MY"
+  },
+  {
+   "line": 7,
+   "class": "new",
+   "id": "g-1e337682cf",
+   "id_frozen": true,
+   "name": "Project Rock Bayana Hub",
+   "country": "MY"
+  },
+  {
+   "line": 8,
+   "class": "new",
+   "id": "g-786d562102",
+   "id_frozen": true,
+   "name": "Klimbzone",
+   "country": "MY"
+  },
+  {
+   "line": 9,
+   "class": "new",
+   "id": "g-4bc446acee",
+   "id_frozen": true,
+   "name": "Bolder Ventures Climbing Gym",
+   "country": "MY"
+  }
+ ]
+}

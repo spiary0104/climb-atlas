@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-01-malaysia",
+  "description": "Regional research \"Malaysia (Tier B, wave 2)\": 9 new gym(s) accepted of 14 candidate(s)",
+  "created": "2026-10-03",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-10-01-malaysia",
+    "section_sha256": "77476e1ae0c302cc9c00344916e9d7f64b1dbaf6479ae1fc38ea73f56e54ddd2",
+    "sources_sha256": "b52a2495516a017c79c2f424a1085da381782a99b0f538b5f9ec0c964fd64a8b",
+    "candidates_sha256": "6e1a399b2e8e8f4943dec8366820ba3babd9407b1317b6052c3281c776899a7d",
+    "reconcile_sha256": "d4dae7f899ad50ecd9759316380517740717cb69cfa26655df57323c7c2ea87d",
+    "review_sha256": "4489daf0154f24fdc9c0dfb8afe9521c7ac43cdbd62adb98c2f0a64eb3474bd0",
+    "candidates": 14,
+    "staged": 9,
+    "decisions": {
+      "accept": 9,
+      "defer": 2,
+      "same-as": 3
+    }
+  },
+  "index_at_staging": {
+    "sha256": "a1704f85980e1b01edd6aa74ab9d6641830d25297a9a565c45df8f621488c4d0",
+    "count": 2325
+  }
+}
