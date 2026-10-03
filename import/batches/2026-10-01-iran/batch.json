@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-01-iran",
+  "description": "Regional research \"Iran (Tier B, wave 2)\": 2 new gym(s) accepted of 5 candidate(s)",
+  "created": "2026-10-03",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-10-01-iran",
+    "section_sha256": "e27aba4855f206b180577b7221e1da9df2efa07abca1cd159c4a309f34ad486e",
+    "sources_sha256": "8c318d4e8f048a38548b04e163b654ca00468d8a1325a78471367be91d5fa6a8",
+    "candidates_sha256": "30aa16ad016632eb3782705fba550074d2cec6bd76ec60af88ebd1a246761c2b",
+    "reconcile_sha256": "4efb684cb0693eb3e90f1ebf67e00880f707f6e02e5c5851564df83c6f1efe38",
+    "review_sha256": "b0f7227cc3bc4a57080362560604ca6ce24deae9112282dc14c3e0a659c3ed89",
+    "candidates": 5,
+    "staged": 2,
+    "decisions": {
+      "accept": 2,
+      "defer": 3
+    }
+  },
+  "index_at_staging": {
+    "sha256": "ad010bc7c3c9245c6814b5fba7aeb4d76d429f400908e9180f9d3b42b65bf8fd",
+    "count": 2307
+  }
+}

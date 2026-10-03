@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-01-croatia",
+  "description": "Regional research \"Croatia (Tier B, wave 2)\": 1 new gym(s) accepted of 11 candidate(s)",
+  "created": "2026-10-03",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-10-01-croatia",
+    "section_sha256": "07214276d4f4e47d05b399d2619e3ac0376ee2751f1c5bd57f70be95eed927cb",
+    "sources_sha256": "36fadd41f3e948d25f9d3735db4b59a3a9f3e9c2554bb9bb6ac98a1f645d3fe6",
+    "candidates_sha256": "64e8582c6f8a4ae2290695ef0885193c5eb74b97e2f399e98485039dee02a5b7",
+    "reconcile_sha256": "a82b9afe8ad58d07b80aab1b52771265062ed6b0c9292ef9851ed128f430a649",
+    "review_sha256": "e3652465ade4884810b6604b586e0e2523c9535ebd917028c3097169b3ae94da",
+    "candidates": 11,
+    "staged": 1,
+    "decisions": {
+      "accept": 1,
+      "defer": 5,
+      "same-as": 5
+    }
+  },
+  "index_at_staging": {
+    "sha256": "42c9a02d5f9b49a42a00a8bb22206675d9611941825428e46f076b945a2e3e04",
+    "count": 2306
+  }
+}

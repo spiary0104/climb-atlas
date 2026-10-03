@@ -1,7 +1,7 @@
 # Regional research: Czechia (Tier B, wave 2) (2026-10-01-czechia)
 
 Scope: CZ (whole country)
-Index: 2306 gyms, sha256 3b20e7b458c7… | staged batches compared: none | other sections compared: none
+Index: 2334 gyms, sha256 511af82ab9f7… | staged batches compared: none | other sections compared: none
 Review radii (stricter than the importer): any gym 150 m, related name 15 km, other country 2 km
 
 ## Summary

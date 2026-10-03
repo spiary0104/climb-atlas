@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-01-czechia",
+  "description": "Regional research \"Czechia (Tier B, wave 2)\": 10 new gym(s) accepted of 25 candidate(s)",
+  "created": "2026-10-03",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-10-01-czechia",
+    "section_sha256": "bcea2d8960913a702f1bd140601e4a002c2d6ffd3fb4d89c6a370cace7dff8e2",
+    "sources_sha256": "19e7ca82bd29ddf29d311b35a18505499ec84a4598d202c9cf8c67d6cc283f8b",
+    "candidates_sha256": "9bfec783adb9ac357a6204c800f1ff85ef58403c903faa82ce575eb7fb9c81f0",
+    "reconcile_sha256": "d5711d7ef88bd2c91539cb24efd07248de831139e2ff2d2ca484f285faacf96d",
+    "review_sha256": "97bacb0aa54974d42c9be3d70b22088037b8012c25de02d70c515e5d058311c3",
+    "candidates": 25,
+    "staged": 10,
+    "decisions": {
+      "accept": 10,
+      "defer": 9,
+      "reject": 1,
+      "same-as": 5
+    }
+  },
+  "index_at_staging": {
+    "sha256": "511af82ab9f745b8d299f4d943fb4d43f48aa7eb7c6ecc3ffa858138da57dd0c",
+    "count": 2334
+  }
+}

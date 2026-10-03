@@ -1,0 +1,45 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-01-iran",
+ "index": {
+  "sha256": "ad010bc7c3c9245c6814b5fba7aeb4d76d429f400908e9180f9d3b42b65bf8fd",
+  "count": 2307,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [],
+ "counts": {
+  "records": 2,
+  "new": 2,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "658c50f532f82f1554612644dcb7b868e03fab5e0ac4f0c92f7729c7fefe6a01",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-a50d448379",
+   "id_frozen": true,
+   "name": "Boulderland Climbing Gym",
+   "country": "IR"
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-6a1b8f68b9",
+   "id_frozen": true,
+   "name": "Moj Climbing Gym",
+   "country": "IR"
+  }
+ ]
+}

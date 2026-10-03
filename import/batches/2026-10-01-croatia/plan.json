@@ -1,0 +1,37 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-01-croatia",
+ "index": {
+  "sha256": "42c9a02d5f9b49a42a00a8bb22206675d9611941825428e46f076b945a2e3e04",
+  "count": 2306,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [],
+ "counts": {
+  "records": 1,
+  "new": 1,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "8636b0630d26ba29f5d4af8bd396ede6d0f246c39664d85a3429ebebd3dab437",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-2efa49968e",
+   "id_frozen": true,
+   "name": "BoldeRi",
+   "country": "HR"
+  }
+ ]
+}

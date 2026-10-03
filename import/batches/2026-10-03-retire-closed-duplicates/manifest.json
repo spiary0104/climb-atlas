@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "updater_version": 1,
+  "kind": "update",
+  "batch_id": "2026-10-03-retire-closed-duplicates",
+  "status": "updated",
+  "target": {
+    "kind": "production",
+    "host": "thayxaampaelvntoaido.supabase.co"
+  },
+  "coverage": "FULL",
+  "plan_sha256": "8211fc919f7e570f0de21bc4c23afb668a74279a8f24979f83561d48805b5120",
+  "payload_sha256": "c4b74d0e8ff7e75279b8e6f2603cb24e3c65bbb8cc66771862056283aa350e7b",
+  "confirm_token": "d9301aacc6a8d54c",
+  "live_state_sha256": "8f24b555e92d67f9fc78a31353899f070c15376c469c8d7f0e239d5b8a54f597",
+  "rows_updated": 0,
+  "approved_before": 2344,
+  "approved_after": 2341,
+  "changes": [],
+  "rows_retired": 3,
+  "retired": [
+    "seed-433",
+    "seed-461",
+    "seed-863"
+  ],
+  "retirements": [
+    {
+      "id": "seed-433",
+      "reason_code": "closed",
+      "reason": "Closed 14 Apr 2025 (operator store list); no relocation or successor.",
+      "expect_h": "bbb9687f98e7d830"
+    },
+    {
+      "id": "seed-461",
+      "reason_code": "closed",
+      "reason": "Closed 27 Dec 2020 (building sold and demolished; operator notice via Wayback); no successor.",
+      "expect_h": "1a7731f6a6009b25"
+    },
+    {
+      "id": "seed-863",
+      "reason_code": "duplicate",
+      "reason": "Duplicate of seed-906 CityBloc Leeds: one site only (1-4 Kitson Road, Leeds LS10 1NT).",
+      "duplicate_of": "seed-906",
+      "expect_h": "7d12a66bbabeeac2"
+    }
+  ],
+  "verification": {
+    "ok": true,
+    "checked": 3,
+    "problems": []
+  },
+  "started_at": "2026-10-03T01:27:32.582Z",
+  "finished_at": "2026-10-03T01:27:35.885Z",
+  "ids": [
+    "seed-433",
+    "seed-461",
+    "seed-863"
+  ]
+}

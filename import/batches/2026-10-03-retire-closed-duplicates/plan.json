@@ -1,0 +1,110 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-03-retire-closed-duplicates",
+ "index": {
+  "sha256": "ed7d2445d60db6a2f5a062f7ae388f8f6a2ed5c4897591fb6a8987ede1b0f18b",
+  "count": 2344,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [],
+ "counts": {
+  "records": 3,
+  "new": 0,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "retire": 3,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 1
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "8211fc919f7e570f0de21bc4c23afb668a74279a8f24979f83561d48805b5120",
+ "records": [
+  {
+   "line": 1,
+   "class": "retire",
+   "id": "seed-433",
+   "name": "Gravity Research Sapporo",
+   "country": "JP",
+   "expect_h": "bbb9687f98e7d830",
+   "reason_code": "closed",
+   "retire_reason": "Closed 14 Apr 2025 (operator store list); no relocation or successor.",
+   "entry": {
+    "id": "seed-433",
+    "name": "Gravity Research Sapporo",
+    "country": "JP",
+    "state": "HOKKAIDO",
+    "suburb": "Sapporo",
+    "lat": 43.0618,
+    "lng": 141.3545,
+    "address": "Sapporo Factory 1-jo Kan 1F, Kita 2 Higashi 4, Chuo Ward, Sapporo, Hokkaido 060-0032",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "bbb9687f98e7d830"
+   }
+  },
+  {
+   "line": 2,
+   "class": "retire",
+   "id": "seed-461",
+   "name": "T-WALL Ookayama",
+   "country": "JP",
+   "expect_h": "1a7731f6a6009b25",
+   "reason_code": "closed",
+   "retire_reason": "Closed 27 Dec 2020 (building sold and demolished; operator notice via Wayback); no successor.",
+   "entry": {
+    "id": "seed-461",
+    "name": "T-WALL Ookayama",
+    "country": "JP",
+    "state": "TOKYO",
+    "suburb": "Ota, Tokyo",
+    "lat": 35.561206,
+    "lng": 139.715843,
+    "address": "1-59-3 Kita-Senzoku, Ota City, Tokyo",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "1a7731f6a6009b25"
+   }
+  },
+  {
+   "line": 3,
+   "class": "retire",
+   "id": "seed-863",
+   "name": "Citybloc",
+   "country": "GB",
+   "expect_h": "7d12a66bbabeeac2",
+   "reason_code": "duplicate",
+   "retire_reason": "Duplicate of seed-906 CityBloc Leeds: one site only (1-4 Kitson Road, Leeds LS10 1NT).",
+   "duplicate_of": "seed-906",
+   "entry": {
+    "id": "seed-863",
+    "name": "Citybloc",
+    "country": "GB",
+    "state": "ENGLAND",
+    "suburb": "West Yorkshire",
+    "lat": 53.8008,
+    "lng": -1.5491,
+    "address": null,
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "7d12a66bbabeeac2"
+   },
+   "warnings": [
+    {
+     "code": "duplicate-far-apart",
+     "field": "duplicate_of",
+     "message": "seed-863 and seed-906 are 1938 m apart; check they are the same gym"
+    }
+   ]
+  }
+ ]
+}
