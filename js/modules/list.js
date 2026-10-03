@@ -86,18 +86,15 @@ function renderStatus(zoomedIn){
 }
 
 // Orientation (final-stage audit): a first-time visitor is told what Bouldeer is, in one line above the list, once per
-// device. Dismissed with its button; the counts come from the loaded data.
+// device. Shown at start-up, before the data, with fixed wording: inserting it when the gyms arrive pushed the list down
+// (a measured layout shift). Dismissed with its button.
 export const INTRO_KEY = 'bouldeer_intro_seen';
-let introShown = false;
 function renderIntro(){
   const el = $('exploreIntro');
-  if(introShown || !appState.spots.length) return;
-  introShown = true;
   let seen = false;
   try{ seen = localStorage.getItem(INTRO_KEY) === '1'; localStorage.setItem(INTRO_KEY, '1'); }catch(err){ /* private mode: show it */ }
   if(seen) return;
-  const countries = new Set(appState.spots.map(g => g.country)).size;
-  el.innerHTML = introHtml(appState.spots.length, countries);
+  el.innerHTML = introHtml();
   el.hidden = false;
   el.querySelector('[data-intro-close]').addEventListener('click', () => { el.hidden = true; });
 }
@@ -124,7 +121,6 @@ export function renderList({zoom = 0} = {}){
   const scoped = appState.filtered.filter(g => inBounds(g, appState.scopeBounds));
   appState.inView = sortSpots(scoped);
   renderStatus(zoom >= 8);
-  renderIntro();
   renderFeatured(zoom);
   renderFirstRun(zoom);
   const list = $('gymList');
@@ -202,6 +198,7 @@ function moveFocus(from, delta){
 }
 
 export function initList(callbacks){
+  renderIntro();
   cb = callbacks;
   try{ const v = localStorage.getItem(LIST_VIEW_KEY); if(v === 'rows' || v === 'cards') appState.listView = v; }catch(err){ /* ignore */ }
   syncViewToggle();

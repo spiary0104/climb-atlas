@@ -30,12 +30,14 @@ test('filters: "Has photos" is offered only once 5% of gyms have a photo, and st
 
 test('orientation: one escaped line with live counts, an About link and a dismiss button; once per device', async () => {
   const { introHtml } = await listHtml;
-  const html = introHtml(2348, 84);
-  assert.match(html, /<strong>Bouldeer<\/strong> maps 2,348 climbing gyms in 84 countries, researched gym by gym and kept current by climbers\./);
+  const html = introHtml();
+  assert.match(html, /<strong>Bouldeer<\/strong> maps thousands of climbing gyms in 80\+ countries, researched gym by gym and kept current by climbers\./);
   assert.match(html, /href="\/about\.html"/); assert.match(html, /data-intro-close aria-label="Dismiss"/);
   assert.ok(!/mascot/.test(read('js/modules/list-html.js')), 'no character in the list builders');
   const src = read('js/modules/list.js');
   assert.match(src, /export const INTRO_KEY = 'bouldeer_intro_seen';/);
+  assert.match(src, /export function initList\(callbacks\)\{\r?\n  renderIntro\(\);/, 'rendered at start-up, before the data (no layout shift when the gyms arrive)');
+  assert.ok(!/renderIntro\(\);\r?\n  renderFeatured/.test(src), 'not inserted on the first data render');
   assert.match(src, /seen = localStorage\.getItem\(INTRO_KEY\) === '1'; localStorage\.setItem\(INTRO_KEY, '1'\);/);
   assert.match(read('index.html'), /<div class="explore-intro" id="exploreIntro" hidden><\/div>/);
 });

@@ -95,9 +95,10 @@ export function peekHtml(g, ctx = {}){
     + `<button type="button" class="btn btn-tertiary btn-sm" data-gym-action="report" data-spot-id="${id}">${icon('flag', {size:'sm'})}Report a problem</button></div>`;
 }
 
-// The one-line orientation shown to a first-time visitor (list.js renderIntro). Numbers only; no character here.
-export function introHtml(gyms, countries){
-  return `<p class="explore-intro-text"><strong>Bouldeer</strong> maps ${escapeHtml(Number(gyms).toLocaleString('en-US'))} climbing gyms in ${escapeHtml(Number(countries))} countries, `
+// The one-line orientation shown to a first-time visitor (list.js renderIntro), before the data loads: fixed wording, no
+// character here.
+export function introHtml(){
+  return `<p class="explore-intro-text"><strong>Bouldeer</strong> maps thousands of climbing gyms in 80+ countries, `
     + `researched gym by gym and kept current by climbers. <a class="link" href="/about.html">About</a></p>`
     + `<button type="button" class="btn btn-tertiary btn-icon btn-sm" data-intro-close aria-label="Dismiss">${icon('x', {size:'sm'})}</button>`;
 }
