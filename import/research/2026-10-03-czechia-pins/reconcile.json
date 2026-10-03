@@ -1,0 +1,217 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-03-czechia-pins",
+ "inputs": {
+  "section_sha256": "677c61443d98707e2dbc84193416f2122d1dacfa9ffc40181a6e291c87656214",
+  "sources_sha256": "5172e64b413b9528b1e194d184297508249d0c08c08438a0885c83e06942f33f",
+  "candidates_sha256": "89114bea79fadd19d23294fa6001f79922084787e00e0cd738438493d9ad836f",
+  "index": {
+   "sha256": "3a79f5cf6f8d0c1fd14bf146b5e2cafbcfc0695160c19d81dc00ee65ddaaed18",
+   "count": 2341
+  },
+  "staged_batches_compared": [],
+  "other_sections_compared": [
+   {
+    "id": "2026-10-01-czechia",
+    "candidates_sha256": "9bfec783adb9ac357a6204c800f1ff85ef58403c903faa82ce575eb7fb9c81f0"
+   }
+  ]
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 7,
+  "ready": 0,
+  "review": 7,
+  "blocked": 0,
+  "existing": 0,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "cz-004",
+   "line": 1,
+   "name": "Boulder V síti",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-0afab3b30c"
+   },
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-01-czechia#cz-004 \"Boulder V síti\": name-match same-name (\"Boulder V síti\" / \"Boulder V síti\", 156 m)",
+     "ids": [
+      "2026-10-01-czechia#cz-004"
+     ]
+    },
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": [
+    "2026-10-01-czechia#cz-004"
+   ]
+  },
+  {
+   "cid": "cz-015",
+   "line": 2,
+   "name": "Jungle Pardubice",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-17381ec784"
+   },
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-01-czechia#cz-015 \"Jungle Pardubice\": name-match same-name (\"Jungle Pardubice\" / \"Jungle Pardubice\", 184 m)",
+     "ids": [
+      "2026-10-01-czechia#cz-015"
+     ]
+    }
+   ],
+   "review_ids": [
+    "2026-10-01-czechia#cz-015"
+   ]
+  },
+  {
+   "cid": "cz-016",
+   "line": 3,
+   "name": "Gekon Boulder Bar",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-5d6a16c6f8"
+   },
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-01-czechia#cz-016 \"Gekon Boulder Bar\": name-match same-name (\"Gekon Boulder Bar\" / \"Gekon Boulder Bar\", 184 m)",
+     "ids": [
+      "2026-10-01-czechia#cz-016"
+     ]
+    },
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": [
+    "2026-10-01-czechia#cz-016"
+   ]
+  },
+  {
+   "cid": "cz-017",
+   "line": 4,
+   "name": "MakakAréna",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-b083192899"
+   },
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-01-czechia#cz-017 \"MakakAréna\": name-match same-name (\"MakakAréna\" / \"MakakAréna\", 154 m)",
+     "ids": [
+      "2026-10-01-czechia#cz-017"
+     ]
+    }
+   ],
+   "review_ids": [
+    "2026-10-01-czechia#cz-017"
+   ]
+  },
+  {
+   "cid": "cz-021",
+   "line": 5,
+   "name": "Limit Boulder",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-e43165892c"
+   },
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-01-czechia#cz-020 \"Stěna Lanovka\": related-name-nearby related names \"Limit Boulder České Budějovice\" / \"Lanovka České Budějovice\" 2125 m apart",
+     "ids": [
+      "2026-10-01-czechia#cz-020"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-01-czechia#cz-021 \"Limit Boulder\": name-match same-name (\"Limit Boulder\" / \"Limit Boulder\", 188 m)",
+     "ids": [
+      "2026-10-01-czechia#cz-021"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "2026-10-01-czechia#cz-020",
+    "2026-10-01-czechia#cz-021"
+   ]
+  },
+  {
+   "cid": "cz-022",
+   "line": 6,
+   "name": "V16",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-648f4f1542"
+   },
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-01-czechia#cz-022 \"V16\": name-match same-name (\"V16\" / \"V16\", 155 m)",
+     "ids": [
+      "2026-10-01-czechia#cz-022"
+     ]
+    }
+   ],
+   "review_ids": [
+    "2026-10-01-czechia#cz-022"
+   ]
+  },
+  {
+   "cid": "cz-025",
+   "line": 7,
+   "name": "Komec",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-4b13af1f36"
+   },
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-01-czechia#cz-025 \"Komec\": name-match same-name (\"Komec\" / \"Komec\", 139 m)",
+     "ids": [
+      "2026-10-01-czechia#cz-025"
+     ]
+    }
+   ],
+   "review_ids": [
+    "2026-10-01-czechia#cz-025"
+   ]
+  }
+ ],
+ "reconcile_sha256": "78d26f252447cdc8ca9c5dfb9407da32266bc0626b986bdc1d64a017d5e0a4d1"
+}
