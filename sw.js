@@ -19,7 +19,8 @@
 // v17: 'Listed by Bouldeer' provenance for imported gyms; gym-cap error message.
 // v18: internal research notes are hidden on the gym page and peek card (publicNotes in provenance.js).
 // v19: field-notes / fresh-stamp poses and the Explore first run (brand.js, passport.js, list.js, explore.js).
-const CACHE_VERSION = 'v19';
+// v20: page header art on Regions and signed-out Log/Me (assets/art, page-html.js pageArtHtml).
+const CACHE_VERSION = 'v20';
 const SHELL_CACHE = 'climbatlas-shell-' + CACHE_VERSION;
 const RUNTIME_CACHE = 'climbatlas-runtime-' + CACHE_VERSION;
 const TILE_CACHE = 'climbatlas-tiles-' + CACHE_VERSION;

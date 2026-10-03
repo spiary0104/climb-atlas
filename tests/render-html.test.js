@@ -565,3 +565,14 @@ test('milestone sheet: topped-out by default, fresh-stamp for travel, dyno for a
     assert.equal(hasHandlerAttrs(out), false);
   }
 });
+
+test('page header art: Regions always; Log and Me only signed out; decorative; unknown names render nothing', async () => {
+  const { page } = await modules;
+  const art = s => [...s.matchAll(/<div class="page-art" aria-hidden="true"><img src="assets\/art\/([a-z-]+)\.svg" alt=""/g)].map(m => m[1]);
+  assert.deepEqual(art(page.regionsIndexHtml([], 0)), ['regions-wall']);
+  assert.deepEqual(art(page.logPageHtml({ signedIn: false })), ['log-still-life']);
+  assert.deepEqual(art(page.logPageHtml({ signedIn: true, count: 0, sessions: '', calendar: '' })), [], 'not over a signed-in log');
+  assert.deepEqual(art(page.mePageHtml({ signedIn: false })), ['me-shelf']);
+  assert.deepEqual(art(page.mePageHtml({ signedIn: true, section: 'saved', saved: [], climbed: [], isModerator: false, pendingCount: 0 })), [], 'not on a signed-in /me (first-run art and the seal live there)');
+  for (const k of ['', '../x', 'constructor', undefined]) assert.equal(page.pageArtHtml(k), '');
+});

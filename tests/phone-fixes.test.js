@@ -132,7 +132,7 @@ test('Regions page: a search field, continents collapsed, results escaped, an em
   for (const h of HOSTILE){
     assert.ok(!leaks(page.regionSearchResultsHtml(h, [{ kind: 'city', label: h, secondary: h, href: h, count: 1 }])));
     assert.ok(!leaks(page.regionSearchResultsHtml(h, [])));
-    assert.ok(!leaks(page.regionsIndexHtml([{ title: h, items: [{ label: h, href: h, count: 1 }] }], 1)));
+    assert.ok(!leaks(page.regionsIndexHtml([{ title: h, items: [{ label: h, href: h, count: 1 }] }], 1).replace(page.pageArtHtml('regions-wall'), '')), 'hostile names add no tags (the fixed header art aside)');
   }
 });
 

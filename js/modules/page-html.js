@@ -114,12 +114,19 @@ export function gymCollectionHtml(items){
     : `<div class="card-grid">${items.map(i => pageCardHtml(i.g, i.ctx)).join('')}</div>`;
 }
 
+// Page header art (sec. 13A): decorative flat-vector scenes (assets/art/, from design/tools/page_art.py), no character.
+// Only these names exist; the page title below carries the meaning, so the image is hidden from assistive tech.
+const PAGE_ART = new Set(['regions-wall', 'log-still-life', 'me-shelf']);
+export function pageArtHtml(name){
+  return PAGE_ART.has(name) ? `<div class="page-art" aria-hidden="true"><img src="assets/art/${name}.svg" alt="" width="1260" height="540" decoding="async"></div>` : '';
+}
+
 // /in: a search field over countries, regions, cities and gyms, then every country with gyms grouped by continent. The
 // continents start collapsed (real-phone test 2026-09-28: the fully expanded list was far too long on a phone); each
 // summary says how many countries and gyms it holds. groups: [{title, items: tiles}]
 export function regionsIndexHtml(groups, total){
   const countries = groups.reduce((n, g) => n + g.items.length, 0);
-  return `<article class="page place-page regions-page"><header class="place-header"><h1 class="page-title">Regions</h1>`
+  return `<article class="page place-page regions-page">${pageArtHtml('regions-wall')}<header class="place-header"><h1 class="page-title">Regions</h1>`
     + `<p class="place-meta tnum">${escapeHtml(countLabel(total))} in ${escapeHtml(countries)} countries</p></header>`
     + `<form class="regions-search" role="search" data-page-form="region-search"><label class="visually-hidden" for="regionSearch">Search countries, regions, cities and gyms</label>`
     + `${icon('magnifying-glass', {size:'sm'})}<input class="input" type="search" id="regionSearch" autocomplete="off" enterkeyhint="search" placeholder="Search a country, region, city or gym"></form>`
@@ -184,7 +191,7 @@ export function calendarHtml(year, month, counts = new Map(), today = ''){
 
 // /log. p: {signedIn, count, calendar (calendarHtml), sessions (logbook.js sessionsHtml)}
 export function logPageHtml(p){
-  if(!p.signedIn) return `<article class="page log-page"><header class="place-header"><h1 class="page-title">Log</h1>`
+  if(!p.signedIn) return `<article class="page log-page">${pageArtHtml('log-still-life')}<header class="place-header"><h1 class="page-title">Log</h1>`
     + `<p class="place-meta">Keep a diary of your sessions: where you climbed, what you sent and how it felt.</p></header>`
     + `<p class="page-cta"><button type="button" class="btn btn-primary" data-page-action="sign-in">Sign in to start your log</button></p></article>`;
   return `<article class="page log-page"><header class="page-header-row"><div><h1 class="page-title">Log</h1>`
@@ -200,7 +207,7 @@ export function mePageHtml(p){
   const links = `<section class="page-section me-brand" aria-labelledby="aboutMeTitle">${firstRun ? '' : sealSvg()}<div><h2 class="section-title" id="aboutMeTitle">Bouldeer</h2><p class="me-links">`
     + `<a class="link link-quiet" href="/about.html">About</a><a class="link link-quiet" href="/privacy">Privacy</a>`
     + `<a class="link link-quiet" href="/terms">Terms</a></p></div></section>`;
-  if(!p.signedIn) return `<article class="page me-page"><header class="place-header"><h1 class="page-title">Me</h1>`
+  if(!p.signedIn) return `<article class="page me-page">${pageArtHtml('me-shelf')}<header class="place-header"><h1 class="page-title">Me</h1>`
     + `<p class="place-meta">Save gyms, mark the ones you have climbed and keep a log of your sessions.</p></header>`
     + `<p class="page-cta"><button type="button" class="btn btn-primary" data-page-action="sign-in">Sign in</button></p>${links}</article>`;
   const section = p.section === 'climbed' ? 'climbed' : 'saved';
