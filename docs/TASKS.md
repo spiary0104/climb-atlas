@@ -22,9 +22,9 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
   pinned CDN + SRI, sign-in for edits/reports); all 10 migrations applied (security hardening 2026-10-02, docs/migrations.md);
   owner tested sign-in, submissions and moderation on production. Wave 1 IMPORTED (179) + Wave 2 IMPORTED (38) 2026-10-03; 5 + 11 pin fixes, 3 retirements (2 closed, 1 duplicate) and 7 Czech gyms applied; live 2,348.
 - Post-launch: gym-cap trigger migration 20261003000100 APPLIED; sitemap; link previews.
-- Open: real-phone retest (owner) of the 2026-09-29 fixes (eyes, Date/Mood) and check-in on production; Supabase Auth Redirect
-  URLs: add preview domains (else sign-in lands on the Site URL); Privacy/Terms live 2026-10-02 (owner to confirm the 30-day
-  deletion sentence and the age-13 line). Decisions: DESIGN.md log.
+- Real-phone retest (check-in, eyes, Date/Mood) passed 2026-10-03; service-role key rotated 2026-10-03.
+- Open: Supabase Auth Redirect URLs: add preview domains (else sign-in lands on the Site URL); simplified About/Privacy/Terms on
+  local branch `docs/simplify-legal-pages` (not pushed): age requirement removed and 30-day deletion promise confirmed (owner, 2026-10-03).
   Phase 4 not built (minimal schema, owner): publish-then-review for hours/price/links, website field, photo/confirm points.
 ### Gym import pipeline — first batch imported; follow-ups
 - Status: gated importer built and tested; first batch (246) IMPORTED 2026-09-24 (1,881 → 2,127). Open: retire data/gyms.json (plan in docs).

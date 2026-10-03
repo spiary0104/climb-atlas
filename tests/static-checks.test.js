@@ -222,7 +222,7 @@ test('legal pages are real pages: dated, no "draft / not legal advice" banner, n
   for (const f of LEGAL_PAGES) {
     const html = read(f);
     assert.match(html, /<html lang="en">/, f);
-    assert.match(html, /Last updated: 2 October 2026/, f + ' carries the current date');
+    assert.match(html, /Last updated: 3 October 2026/, f + ' carries the current date');
     assert.ok(!/starting draft|not legal advice|legal-note/i.test(html), f + ' still presents itself as a draft');
     assert.match(html, /<h1[^>]*>(Privacy Policy|Terms of Service)<\/h1>/, f);
   }
