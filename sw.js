@@ -27,7 +27,8 @@
 // v25: city metros (metros.js; search, filters, region/city pages, gym breadcrumb).
 // v26: gym and place page titles from seo-meta.js (router title pattern shared with the crawler metadata).
 // v27: cross-region metros on neighbouring region pages and in gym breadcrumbs.
-const CACHE_VERSION = 'v27';
+// v28: orientation line rendered at start-up.
+const CACHE_VERSION = 'v28';
 const SHELL_CACHE = 'climbatlas-shell-' + CACHE_VERSION;
 const RUNTIME_CACHE = 'climbatlas-runtime-' + CACHE_VERSION;
 const TILE_CACHE = 'climbatlas-tiles-' + CACHE_VERSION;
