@@ -4,15 +4,17 @@
 //    from SUPABASE_ANON_KEY. With a valid service-role key the same reads also see non-approved (pending) rows.
 //  - The service-role key is read from the environment ONLY (SUPABASE_SERVICE_ROLE_KEY). It is never read from a file, never
 //    printed (error text is redacted), and never written to a batch, manifest or report.
-//  - Three writes exist, behind two gates: Api.insertSpots() -- one plain `INSERT` of new rows (no upsert, no on_conflict,
+//  - Four writes exist, behind two gates: Api.insertSpots() -- one plain `INSERT` of new rows (no upsert, no on_conflict,
 //    no PUT/DELETE, no rpc), gate minted only by importer.js -- and, behind the update gate minted only by updater.js,
-//    Api.updateSpotLocation() -- a PATCH of address/lat/lng on one approved row pinned by id + updated_at -- and Api.retireSpot() --
-//    a PATCH of status='rejected' + rejection_reason on one approved row pinned the same way. Both gates exist only after every
-//    preflight check and CLI safety flag has passed. Nothing can delete a spot or change any other field.
+//    Api.updateSpotLocation() -- a PATCH of address/lat/lng on one approved row pinned by id + updated_at -- Api.updateSpotInfo() --
+//    a PATCH of website/hours on one approved row pinned the same way (the updater only fills fields that are empty) -- and
+//    Api.retireSpot() -- a PATCH of status='rejected' + rejection_reason on one approved row pinned the same way. Both gates exist
+//    only after every preflight check and CLI safety flag has passed. Nothing can delete a spot or change any other field.
 'use strict';
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
+const { INFO_FIELDS, infoSetProblems } = require('./validate');
 
 const ROOT = path.resolve(__dirname, '..', '..', '..');
 const ENV = { url: 'SUPABASE_URL', service: 'SUPABASE_SERVICE_ROLE_KEY', anon: 'SUPABASE_ANON_KEY' };
@@ -137,6 +139,25 @@ class Api {
     return this._send('PATCH', q, { service: true, headers: { 'Content-Type': 'application/json', Prefer: 'return=representation' }, body: JSON.stringify(u.set) });
   }
 
+  // THE ONLY GYM-INFORMATION WRITE in the importer (updater.js): fills website and/or hours of one existing approved spot. Same gate,
+  // same pin (id + status=approved + the exact updated_at observed at the final re-check) and the same one-PATCH-per-gym rule as
+  // updateSpotLocation. The body is exactly the approved {website?, hours?} and nothing else. That the fields are still empty is
+  // checked by the updater before this is called; the updated_at pin keeps it true at write time (a row edited since matches zero rows).
+  async updateSpotInfo(u, gate) {
+    if (!gate || gate[UPDATE_GATE] !== true || !MINTED_UPDATE_GATES.has(gate)) throw new Error('refusing to update: no update gate (all preflight checks and safety flags must pass first)');
+    if (!gate.payloadSha || sha256(JSON.stringify(opsPayload(gate.updates, gate.retires))) !== gate.payloadSha) throw new Error('refusing to update: the payload changed after it was approved (hash mismatch)');
+    const approved = gate.updates.find(x => x.id === u.id);
+    if (!approved || JSON.stringify(approved.set) !== JSON.stringify(u.set)) throw new Error('refusing to update: this change is not the approved one for ' + u.id);
+    const keys = Object.keys(u.set);
+    if (!keys.length || keys.some(k => !INFO_FIELDS.includes(k))) throw new Error('refusing to update: only ' + INFO_FIELDS.join('/') + ' may be changed');
+    const bad = await infoSetProblems(u.set);
+    if (bad.length) throw new Error('refusing to update: ' + bad[0]);
+    if (typeof u.id !== 'string' || !/^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$/.test(u.id)) throw new Error('refusing to update: bad id');
+    if (typeof u.updatedAt !== 'string' || !u.updatedAt) throw new Error('refusing to update: the row version (updated_at) observed at the final re-check is required');
+    const q = `/rest/v1/spots?id=eq.${encodeURIComponent(u.id)}&status=eq.approved&updated_at=eq.${encodeURIComponent(u.updatedAt)}`;
+    return this._send('PATCH', q, { service: true, headers: { 'Content-Type': 'application/json', Prefer: 'return=representation' }, body: JSON.stringify(u.set) });
+  }
+
   // THE ONLY RETIREMENT in the importer (updater.js): one approved spot is marked rejected (closed / confirmed duplicate) -- the
   // moderator UI's own decision format (status 'rejected' + rejection_reason); the row is kept, never deleted. Same gate as
   // updateSpotLocation and the same optimistic concurrency: the row is pinned by id + status=approved + the exact updated_at observed
@@ -166,4 +187,4 @@ const UPDATE_GATE = Symbol('gym-import-update-gate');
 const MINTED_UPDATE_GATES = new WeakSet();
 const mintUpdateGate = ({ batchId, token, updates, retires = [], payloadSha }) => { const g = Object.freeze({ [UPDATE_GATE]: true, batchId, token, updates, retires, payloadSha }); MINTED_UPDATE_GATES.add(g); return g; };
 
-module.exports = { ROOT, ENV, productionConfig, resolveTarget, validateServiceKey, decodeJwt, redact, mintWriteGate, mintUpdateGate, opsPayload, LOCATION_FIELDS, Api };
+module.exports = { ROOT, ENV, productionConfig, resolveTarget, validateServiceKey, decodeJwt, redact, mintWriteGate, mintUpdateGate, opsPayload, LOCATION_FIELDS, INFO_FIELDS, Api };

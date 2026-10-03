@@ -1,7 +1,9 @@
-// The location-update path of the production importer. See docs/import-workflow.md ("Updating the location of existing gyms").
+// The update path of the production importer. See docs/import-workflow.md ("Updating the location of existing gyms", "Filling gym
+// information (website, hours)").
 //
 // Same conventions as importer.js: modes dry-run (default) | verify | apply; only `apply` writes, and only after every check, the
-// confirmation token and the production flag pass. An update batch can change ONLY address / lat / lng of existing APPROVED spots.
+// confirmation token and the production flag pass. An update batch can change ONLY address / lat / lng (a "location update") or
+// FILL website / hours (an "info update") of existing APPROVED spots; one record never mixes the two families.
 // Every record names the gym's content hash when it was researched (expect_h); a gym whose content differs from that is refused,
 // never overwritten. Nothing here inserts, deletes, or touches any other field. importer.js hands a batch here when EVERY record is
 // {"intent":"update"}; a batch mixing inserts and updates stays in importer.js and is refused there.
@@ -10,6 +12,10 @@
 //   before   its content hash is exactly expect_h (nothing changed since the research)
 //   after    address/lat/lng hold the new values and every other field is unchanged (this batch was applied)
 //   changed  anything else -> refused
+// An info update is FILL-ONLY: website/hours are not part of the content hash, so its states are read from the fields themselves:
+//   before   approved, hash = expect_h, and every field in `set` is empty in production (null; hours {} counts as empty)
+//   after    approved, hash = expect_h, and every field in `set` equals the record (hours: deep equality)
+//   changed  anything else (a field already holds another value, e.g. a community edit approved since the research) -> refused
 // All before = a fresh update; all after = already applied (nothing to write); a mix = refused (never merged).
 //
 // The same path also runs RETIRE records ({"intent":"retire"}: an approved gym that is closed or a confirmed duplicate becomes
@@ -23,6 +29,7 @@
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
+const { isDeepStrictEqual } = require('util');
 const N = require('./normalize');
 const V = require('./validate');
 const M = require('./match');
@@ -49,22 +56,41 @@ const hasPin = set => set.lat !== undefined || set.lng !== undefined;
 const confirmToken = ({ batchId, planSha, payload, host, kind, coverage, liveSha, retires = [] }) =>
   sha256(JSON.stringify(['gym-update-confirm', UPDATER_VERSION, batchId, planSha, payload, host, kind, coverage, liveSha, ...(retires.length ? [retires] : [])])).slice(0, 16);
 
-// Location-only rules on top of validate.js (which allows more fields for planning). Returns a list of problems.
+const isInfo = u => V.isInfoSet(u.set);
+// Location-or-info rules on top of validate.js (which allows more fields for planning; the website/hours VALUES are checked there).
+// A record is an info update (website/hours only) or a location update (address/lat/lng only), never both. Returns a list of problems.
 function locationProblems(rec) {
   const out = [];
   const set = rec.set && typeof rec.set === 'object' && !Array.isArray(rec.set) ? rec.set : null;
-  if (!set || !Object.keys(set).length) return ['"set" must list the location fields to change'];
-  const other = Object.keys(set).filter(k => !T.LOCATION_FIELDS.includes(k));
-  if (other.length) out.push(`only ${T.LOCATION_FIELDS.join(', ')} may be changed (not ${other.join(', ')})`);
-  if ((set.lat === undefined) !== (set.lng === undefined)) out.push('lat and lng must change together');
-  if ('address' in set && (typeof set.address !== 'string' || !set.address.trim())) out.push('address can be corrected, never cleared (a non-empty text)');
+  if (!set || !Object.keys(set).length) return ['"set" must list the location fields (or website/hours) to change'];
+  if (V.isInfoSet(set)) {
+    const other = Object.keys(set).filter(k => !T.INFO_FIELDS.includes(k));
+    if (other.length) out.push(`an info update changes only ${T.INFO_FIELDS.join('/')}, never together with location fields (not ${other.join(', ')}); one record per gym, so use a separate batch`);
+  } else {
+    const other = Object.keys(set).filter(k => !T.LOCATION_FIELDS.includes(k));
+    if (other.length) out.push(`only ${T.LOCATION_FIELDS.join(', ')} (or website/hours as an info update) may be changed (not ${other.join(', ')})`);
+    if ((set.lat === undefined) !== (set.lng === undefined)) out.push('lat and lng must change together');
+    if ('address' in set && (typeof set.address !== 'string' || !set.address.trim())) out.push('address can be corrected, never cleared (a non-empty text)');
+  }
   if (typeof rec.expect_h !== 'string' || !V.EXPECT_H.test(rec.expect_h)) out.push('expect_h (the gym\'s content hash when researched) is required');
-  if (typeof rec.source !== 'string' || !rec.source.trim() || rec.source.length > 400) out.push('source (where the new location comes from) is required, max 400 chars');
+  if (typeof rec.source !== 'string' || !rec.source.trim() || rec.source.length > 400) out.push(`source (where the new ${V.isInfoSet(set) ? 'information' : 'location'} comes from${V.isInfoSet(set) ? ': the gym\'s official site' : ''}) is required, max 400 chars`);
   return out;
+}
+
+// State of one info-update target. Fill-only: `filled` lists the fields that already hold a value other than the record's.
+const emptyInfo = (f, v) => v === null || v === undefined || (f === 'hours' && !!v && typeof v === 'object' && !Array.isArray(v) && !Object.keys(v).length);
+function stateOfInfo(live, rec) {
+  if (!live) return { state: 'missing' };
+  if (live.status !== 'approved') return { state: 'not-approved' };
+  const h = S.toEntry(live).h, fields = Object.keys(rec.set), hashOk = h === rec.expect_h;
+  if (hashOk && fields.every(f => isDeepStrictEqual(live[f], rec.set[f]))) return { state: 'after', h, updatedAt: live.updated_at };
+  if (hashOk && fields.every(f => emptyInfo(f, live[f]))) return { state: 'before', h, updatedAt: live.updated_at };
+  return { state: 'changed', h, filled: fields.filter(f => !emptyInfo(f, live[f]) && !isDeepStrictEqual(live[f], rec.set[f])) };
 }
 
 // State of one gym in a snapshot. e = its index entry (the content researched against), rec = the update record.
 function stateOf(live, e, rec) {
+  if (V.isInfoSet(rec.set)) return stateOfInfo(live, rec);
   if (!live) return { state: 'missing' };
   if (live.status !== 'approved') return { state: 'not-approved' };
   const h = S.toEntry(live).h;
@@ -97,7 +123,7 @@ async function runUpdate(opts) {
 
   if (!['dry-run', 'verify', 'apply'].includes(mode)) throw new Error('unknown mode ' + mode);
   if (!batchDir || !fs.existsSync(batchDir)) { add('FAIL', 'batch specified', 'an existing batch directory must be given explicitly'); return refuse(); }
-  add('PASS', 'batch specified explicitly', res.batchId + ' (maintenance batch: location corrections and/or retirements of existing gyms)');
+  add('PASS', 'batch specified explicitly', res.batchId + ' (maintenance batch: location corrections, gym-information fills and/or retirements of existing gyms)');
 
   // ---- target and credentials (offline; same rules as importer.js) --------------------------------------------------------
   const target = T.resolveTarget(env, { root, requireExplicit: mode === 'apply' });
@@ -131,13 +157,14 @@ async function runUpdate(opts) {
     const probs = [...v.errors.map(e => `${e.code} (${e.field})`), ...(retire ? [] : locationProblems(x.rec))];
     if (probs.length) bad.push(`line ${x.line} ${x.rec.id || '?'}: ${probs.join('; ')}`);
   }
-  if (bad.length) add('FAIL', 'records validate (location updates only)', `${bad.length} invalid: ${sample(bad, 3)}`);
+  if (bad.length) add('FAIL', 'records validate (location or information updates)', `${bad.length} invalid: ${sample(bad, 3)}`);
   const idCount = new Map(); recs.forEach(x => idCount.set(x.rec.id, (idCount.get(x.rec.id) || 0) + 1));
   const dups = [...idCount].filter(([, n]) => n > 1).map(([id]) => id);
   if (dups.length) add('FAIL', 'one update per gym', sample(dups) + ' (one record per gym: a gym cannot be updated twice, retired twice, or both updated and retired)');
   if (!fails().length) {
     const nr = recs.filter(x => x.rec.intent === 'retire').length;
-    add('PASS', 'batch valid', `${recs.length - nr} update(s) and ${nr} retirement(s): updates change only ${T.LOCATION_FIELDS.join('/')} (lat+lng together, addresses non-empty); retirements only set status rejected + the reason; expect_h and source on every record, one per gym`);
+    const ni = recs.filter(x => x.rec.intent === 'update' && V.isInfoSet(x.rec.set)).length;
+    add('PASS', 'batch valid', `${recs.length - nr} update(s) (${recs.length - nr - ni} location, ${ni} gym information) and ${nr} retirement(s): location updates change only ${T.LOCATION_FIELDS.join('/')} (lat+lng together, addresses non-empty); information updates only fill ${T.INFO_FIELDS.join('/')}, one family per record; retirements only set status rejected + the reason; expect_h and source on every record, one per gym`);
   }
   if (fails().length) return refuse();
   res.updates = recs.filter(x => x.rec.intent === 'update').map(x => ({ id: x.rec.id, set: x.rec.set, expect_h: x.rec.expect_h }));
@@ -146,6 +173,8 @@ async function runUpdate(opts) {
   const ids = recs.map(x => x.rec.id);                            // every target, in record order
   res.ids = ids;
   const retireIds = new Set(res.retires.map(r => r.id));
+  const infoIds = new Set(res.updates.filter(isInfo).map(u => u.id));   // targets of an info (website/hours) update; the other updates are location updates
+  res.infoIds = [...infoIds];
 
   // ---- local index: integrity, and the research snapshot equals it --------------------------------------------------------------
   let index;
@@ -206,7 +235,14 @@ async function runUpdate(opts) {
     const gone = st.filter(x => x.state === 'missing' || x.state === 'not-approved');
     if (gone.length) { add('FAIL', 'every target gym is an approved spot', sample(gone.map(x => `${x.id} (${x.state})`)) + (res.retires.length && res.coverage !== 'FULL' ? ' -- a retired gym is no longer publicly visible: re-run with the service-role key (FULL coverage) to read it' : '')); return refuse(); }
     const changed = st.filter(x => x.state === 'changed');
-    if (changed.length) { add('FAIL', 'production still has the researched content (expect_h)', `${changed.length} gym(s) changed in production since the research and are not in the updated state either: ${sample(changed.map(x => x.id))}. Nothing will be overwritten; re-research them.`); return refuse(); }
+    if (changed.length) {
+      // Fill-only: a gym-information field that already holds a value (e.g. a community edit approved since the research) is never overwritten.
+      const filled = changed.filter(x => x.filled && x.filled.length);
+      if (filled.length) add('FAIL', 'fill-only: gym information already set in production', `${sample(filled.map(x => `${x.id} "${res.names[x.id]}": ${x.filled.join(' + ')} already ${x.filled.length > 1 ? 'have values' : 'has a value'}`), 4)}. Gym information is only ever filled in, never overwritten; drop these gyms/fields from the batch. Nothing was written.`);
+      const rest = changed.filter(x => !(x.filled && x.filled.length));
+      if (rest.length) add('FAIL', 'production still has the researched content (expect_h)', `${rest.length} gym(s) changed in production since the research and are not in the updated state either: ${sample(rest.map(x => x.id))}. Nothing will be overwritten; re-research them.`);
+      return refuse();
+    }
     const mf = MF.readManifest(batchDir);
     const mfMismatch = mf.exists ? (mf.valid ? MF.mismatches(mf.manifest, { batchId: res.batchId, payloadSha: res.payloadSha, host: target.host, ids }) : mf.problems) : [];
 
@@ -214,7 +250,7 @@ async function runUpdate(opts) {
     if (count(st, 'after') === ids.length) {
       if (mf.exists && mfMismatch.length) { add('FAIL', 'manifest matches this batch, payload and target', `manifest.json is not valid for this run (${mfMismatch.join('; ')})`); return refuse(); }
       res.state = mf.exists ? 'already-updated' : 'already-present';
-      add('PASS', 'idempotent re-run', `all ${ids.length} gyms are already in the applied state (${res.updates.length} new location(s) with every other field unchanged, ${res.retires.length} retired with the recorded reason); NOTHING will be written`);
+      add('PASS', 'idempotent re-run', `all ${ids.length} gyms are already in the applied state (${res.updates.length - infoIds.size} new location(s) with every other field unchanged, ${infoIds.size} filled gym-information record(s) with their content unchanged, ${res.retires.length} retired with the recorded reason); NOTHING will be written`);
       const others = driftExcept(snap.approved, index, new Set(ids));
       add(driftTotal(others) ? 'WARN' : 'PASS', 'index vs production (excluding this batch)', driftTotal(others) ? `${driftTotal(others)} other difference(s)` : 'identical');
       if (mode === 'apply' && !mf.exists) {
@@ -275,7 +311,9 @@ async function runUpdate(opts) {
     for (const u of [...res.updates, ...res.retires]) {
       const updatedAt = before.states.find(x => x.id === u.id).updatedAt;
       try {
-        const r = retireIds.has(u.id) ? await api.retireSpot({ id: u.id, reason: u.reason, updatedAt }, gate) : await api.updateSpotLocation({ id: u.id, set: u.set, updatedAt }, gate);
+        const r = retireIds.has(u.id) ? await api.retireSpot({ id: u.id, reason: u.reason, updatedAt }, gate)
+          : infoIds.has(u.id) ? await api.updateSpotInfo({ id: u.id, set: u.set, updatedAt }, gate)
+          : await api.updateSpotLocation({ id: u.id, set: u.set, updatedAt }, gate);
         if (!r.ok) { stopped = `${u.id}: HTTP ${r.status} ${String(r.text).slice(0, 200)}`; break; }
         if (!Array.isArray(r.json) || r.json.length !== 1) { stopped = `${u.id}: ${Array.isArray(r.json) ? r.json.length : 'no'} row(s) matched (the row changed after the final re-check, or is no longer approved)`; break; }
         res.applied.push(u.id);
@@ -296,20 +334,25 @@ async function runUpdate(opts) {
 
     // ---- post-write verification (read-only) -------------------------------------------------------------------------------------
     const problems = [];
-    after.states.forEach(x => { if (x.state !== 'after') problems.push(`${x.id}: ${x.state} (expected ${retireIds.has(x.id) ? "status rejected with the recorded reason" : 'the new location with every other field unchanged'})`); });
+    after.states.forEach(x => { if (x.state !== 'after') problems.push(`${x.id}: ${x.state} (expected ${retireIds.has(x.id) ? "status rejected with the recorded reason" : infoIds.has(x.id) ? 'website/hours exactly as recorded, content unchanged' : 'the new location with every other field unchanged'})`); });
     const expectCount = res.beforeCount - res.retires.length;
     if (after.approved.length !== expectCount) problems.push(`approved count ${after.approved.length}, expected ${expectCount} (${res.beforeCount} before; an update never adds or removes a spot, a retirement removes exactly one approved spot each)`);
     const drAfter = driftExcept(after.approved, index, new Set(ids));
     if (driftTotal(drAfter)) problems.push(`other spots changed: added ${drAfter.added.length}, removed ${drAfter.removed.length}, changed ${drAfter.changed.length}`);
+    if (infoIds.size) {   // website/hours are not in the content hash, so compare them directly: only the info targets may differ from before the write
+      const infoOf = r => JSON.stringify([r.website ?? null, r.hours ?? null]), was = new Map(before.approved.map(r => [r.id, infoOf(r)]));
+      const moved = after.approved.filter(r => !infoIds.has(r.id) && was.get(r.id) !== undefined && was.get(r.id) !== infoOf(r)).map(r => r.id);
+      if (moved.length) problems.push(`website/hours of other spots changed: ${sample(moved, 4)}`);
+    }
     res.verification = { ok: problems.length === 0, checked: ids.length, problems };
-    add(problems.length ? 'FAIL' : 'PASS', 'post-update verification', problems.length ? sample(problems, 4) : `all ${ids.length} gyms are in the applied state (${res.updates.length} hold exactly the new ${T.LOCATION_FIELDS.join('/')} with every other field unchanged, ${res.retires.length} are rejected with the recorded reason); approved count ${res.beforeCount} -> ${expectCount}; every other spot unchanged`);
+    add(problems.length ? 'FAIL' : 'PASS', 'post-update verification', problems.length ? sample(problems, 4) : `all ${ids.length} gyms are in the applied state (${res.updates.length - infoIds.size} hold exactly the new ${T.LOCATION_FIELDS.join('/')} with every other field unchanged, ${infoIds.size} hold exactly the filled ${T.INFO_FIELDS.join('/')} with their content unchanged, ${res.retires.length} are rejected with the recorded reason); approved count ${res.beforeCount} -> ${expectCount}; every other spot unchanged`);
     if (problems.length) {
       MF.writeFailure(batchDir, failureFor({ res, batch, target, now, phase: 'verification-failed', states: after.states, problems }));
       res.failureWritten = true;
       add('WARN', MF.FAILURE, 'wrote a failure record (NOT manifest.json); the updates ARE in production — inspect before re-running');
       return done(4);
     }
-    const m = manifestFor({ res, batch, target, now, status: 'updated', before: res.beforeCount, after: after.approved.length, verification: res.verification, updated: res.applied.filter(id => !retireIds.has(id)).length, startedAt: res.startedAt, liveSha: res.liveSha, states: after.states });
+    const m = manifestFor({ res, batch, target, now, status: 'updated', before: res.beforeCount, after: after.approved.length, verification: res.verification, updated: res.applied.filter(id => !retireIds.has(id) && !infoIds.has(id)).length, startedAt: res.startedAt, liveSha: res.liveSha, states: after.states });
     MF.writeManifest(batchDir, m); res.manifest = m; res.manifestWritten = true;
     add('PASS', 'manifest', 'wrote manifest.json (verified update; no credentials in it). Next: rebuild the index (build-index --live)');
     return done(0);
@@ -326,7 +369,9 @@ function manifestFor({ res, batch, target, now, status, before, after, verificat
     target: { kind: target.kind, host: target.host }, coverage: res.coverage,
     plan_sha256: res.planSha || null, payload_sha256: res.payloadSha, confirm_token: res.token || null, live_state_sha256: liveSha || null,
     rows_updated: updated, approved_before: before, approved_after: after,
-    changes: res.updates.map(u => ({ id: u.id, fields: Object.keys(u.set), expect_h: u.expect_h, after_h: (states.find(x => x.id === u.id) || {}).h || null })),
+    changes: res.updates.filter(u => !isInfo(u)).map(u => ({ id: u.id, fields: Object.keys(u.set), expect_h: u.expect_h, after_h: (states.find(x => x.id === u.id) || {}).h || null })),
+    // Gym-information fills are listed apart from location changes (absent when the batch has none): ids and the fields that were set.
+    ...(res.updates.some(isInfo) ? { rows_info_filled: res.updates.filter(isInfo).length, info_filled: res.updates.filter(isInfo).map(u => ({ id: u.id, fields: Object.keys(u.set), expect_h: u.expect_h, after_h: (states.find(x => x.id === u.id) || {}).h || null })) } : {}),
     // Retirements are listed separately (absent for an update-only batch): ids of every gym set to 'rejected', plus the recorded reasons.
     ...(res.retires.length ? { rows_retired: res.retires.length, retired: res.retires.map(r => r.id), retirements: res.retires.map(r => ({ id: r.id, reason_code: r.reason_code, reason: r.reason, ...(r.duplicate_of ? { duplicate_of: r.duplicate_of } : {}), expect_h: r.expect_h })) } : {}),
     verification, started_at: startedAt || now(), finished_at: now(),
@@ -352,10 +397,15 @@ function renderUpdateReport(res) {
   if (res.state === 'fresh') L.push(res.token ? `Confirmation token (required by --apply; bound to this batch, payload, target and production state): ${res.token}` : 'Confirmation token: none (PARTIAL coverage; run the dry-run with the service-role key to obtain one)');
   L.push('', '## Checks');
   res.checks.forEach(c => L.push(`- [${c.status}] ${c.name}${c.detail ? ': ' + c.detail : ''}`));
-  if (res.updates.length && res.state === 'fresh' && res.names) {
-    const fields = res.updates.reduce((n, u) => n + Object.keys(u.set).length, 0);
-    L.push('', `## ${res.mode === 'apply' ? 'Updated' : 'Would update'} (${res.updates.length} gyms, ${fields} field changes; nothing else changes)`, '');
-    res.updates.forEach((u, i) => L.push(`${String(i + 1).padStart(3)}. ${u.id}  ${res.names[u.id]}  ${Object.keys(u.set).join('+')}${res.moves[u.id] !== undefined ? `  pin moves ${res.moves[u.id]} m` : ''}`));
+  const locUpdates = res.updates.filter(u => !isInfo(u)), infoUpdates = res.updates.filter(isInfo);
+  if (locUpdates.length && res.state === 'fresh' && res.names) {
+    const fields = locUpdates.reduce((n, u) => n + Object.keys(u.set).length, 0);
+    L.push('', `## ${res.mode === 'apply' ? 'Updated' : 'Would update'} (${locUpdates.length} gyms, ${fields} field changes; nothing else changes)`, '');
+    locUpdates.forEach((u, i) => L.push(`${String(i + 1).padStart(3)}. ${u.id}  ${res.names[u.id]}  ${Object.keys(u.set).join('+')}${res.moves[u.id] !== undefined ? `  pin moves ${res.moves[u.id]} m` : ''}`));
+  }
+  if (infoUpdates.length && res.state === 'fresh' && res.names) {
+    L.push('', `## ${res.mode === 'apply' ? 'Filled' : 'Would fill'} gym information (${infoUpdates.length} gyms; only fields that are empty in production are filled, nothing is overwritten, nothing else changes)`, '');
+    infoUpdates.forEach((u, i) => L.push(`${String(i + 1).padStart(3)}. ${u.id}  ${res.names[u.id]}  ${V.describeInfoSet(u.set)}`));
   }
   if (res.retires.length && res.state === 'fresh' && res.names) {
     L.push('', `## ${res.mode === 'apply' ? 'Retired' : 'Would retire'} (${res.retires.length} gyms; status becomes rejected with the reason, the record is kept, nothing else changes)`, '');

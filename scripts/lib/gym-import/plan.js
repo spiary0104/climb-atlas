@@ -218,7 +218,10 @@ async function planBatch({ dir, index, batchesDir, includeStaged = true }) {
     const changes = [];
     let noop = 0;
     for (const [f, v] of Object.entries(it.rec.set)) {
-      if (VISIBLE.includes(f)) {
+      // website/hours are not in the index (nor in the content hash): the plan can only say they are FILLED; updater.js refuses the batch
+      // if production already holds a value (fill-only). `before: null` is therefore the only state an applied update can start from.
+      if (V.INFO_FIELDS.includes(f)) changes.push({ field: f, before: null, after: v });
+      else if (VISIBLE.includes(f)) {
         const before = e[f];
         const same = JSON.stringify(f === 'types' ? [...v].sort() : (f === 'address' ? N.emptyToNull(v) : v)) === JSON.stringify(f === 'types' ? [...before].sort() : (f === 'address' ? N.emptyToNull(before) : before));
         if (same) { noop++; it.warnings.push({ code: 'noop-field', field: f, message: `"${f}" already has this value` }); } else changes.push({ field: f, before, after: v });
