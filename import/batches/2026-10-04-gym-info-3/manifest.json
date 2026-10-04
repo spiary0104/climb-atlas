@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "updater_version": 1,
+  "kind": "update",
+  "batch_id": "2026-10-04-gym-info-3",
+  "status": "updated",
+  "target": {
+    "kind": "production",
+    "host": "thayxaampaelvntoaido.supabase.co"
+  },
+  "coverage": "FULL",
+  "plan_sha256": "d109f6d8974f0c15029706e78c9ad06b56dbdfc580f9f559b29296e07a0d3478",
+  "payload_sha256": "9daeac455c405e6d1e3071db6a188dee1fc4b2454bf7e16e71aab8ba33a59acd",
+  "confirm_token": "5ab729a9298f7b32",
+  "live_state_sha256": "06b7b01a327ad3b57e8b561ca800e453840f9b9dc7a09a03595fd785d0c1ad20",
+  "rows_updated": 0,
+  "approved_before": 2342,
+  "approved_after": 2342,
+  "changes": [],
+  "rows_info_filled": 1,
+  "info_filled": [
+    {
+      "id": "g-c4a08fc866",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "cacef791d1c0a37f",
+      "after_h": "cacef791d1c0a37f"
+    }
+  ],
+  "verification": {
+    "ok": true,
+    "checked": 1,
+    "problems": []
+  },
+  "started_at": "2026-10-04T01:40:28.876Z",
+  "finished_at": "2026-10-04T01:40:31.057Z",
+  "ids": [
+    "g-c4a08fc866"
+  ]
+}

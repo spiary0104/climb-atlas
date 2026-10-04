@@ -1,0 +1,37 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-04-vertical-hold-san-marcos",
+ "index": {
+  "sha256": "a98e6f727e9d304a794a4271cfc1c23ee50108198670040c90bd5ebeea57b21b",
+  "count": 2341,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [],
+ "counts": {
+  "records": 1,
+  "new": 1,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "7ce9aaf9683ac2ab686ad002cc375299e3a341c4da242c683ab1508d16a5fac8",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-c4a08fc866",
+   "id_frozen": true,
+   "name": "Vertical Hold San Marcos",
+   "country": "US"
+  }
+ ]
+}
