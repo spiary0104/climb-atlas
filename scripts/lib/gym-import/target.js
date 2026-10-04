@@ -7,7 +7,7 @@
 //  - Four writes exist, behind two gates: Api.insertSpots() -- one plain `INSERT` of new rows (no upsert, no on_conflict,
 //    no PUT/DELETE, no rpc), gate minted only by importer.js -- and, behind the update gate minted only by updater.js,
 //    Api.updateSpotLocation() -- a PATCH of address/lat/lng on one approved row pinned by id + updated_at -- Api.updateSpotInfo() --
-//    a PATCH of website/hours on one approved row pinned the same way (the updater only fills fields that are empty) -- and
+//    a PATCH of website/hours/day_pass/facilities on one approved row pinned the same way (the updater only fills fields that are empty) -- and
 //    Api.retireSpot() -- a PATCH of status='rejected' + rejection_reason on one approved row pinned the same way. Both gates exist
 //    only after every preflight check and CLI safety flag has passed. Nothing can delete a spot or change any other field.
 'use strict';
@@ -139,9 +139,9 @@ class Api {
     return this._send('PATCH', q, { service: true, headers: { 'Content-Type': 'application/json', Prefer: 'return=representation' }, body: JSON.stringify(u.set) });
   }
 
-  // THE ONLY GYM-INFORMATION WRITE in the importer (updater.js): fills website and/or hours of one existing approved spot. Same gate,
+  // THE ONLY GYM-INFORMATION WRITE in the importer (updater.js): fills website, hours, day_pass and/or facilities of one existing approved spot. Same gate,
   // same pin (id + status=approved + the exact updated_at observed at the final re-check) and the same one-PATCH-per-gym rule as
-  // updateSpotLocation. The body is exactly the approved {website?, hours?} and nothing else. That the fields are still empty is
+  // updateSpotLocation. The body is exactly the approved {website?, hours?, day_pass?, facilities?} and nothing else. That the fields are still empty is
   // checked by the updater before this is called; the updated_at pin keeps it true at write time (a row edited since matches zero rows).
   async updateSpotInfo(u, gate) {
     if (!gate || gate[UPDATE_GATE] !== true || !MINTED_UPDATE_GATES.has(gate)) throw new Error('refusing to update: no update gate (all preflight checks and safety flags must pass first)');

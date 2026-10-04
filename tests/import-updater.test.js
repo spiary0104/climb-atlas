@@ -48,7 +48,7 @@ function fakeProd({ approved, pending = [] }) {
     },
     async updateSpotInfo(u, gate) {
       assert.ok(gate && Array.isArray(gate.updates) && gate.payloadSha, 'only a gated information fill reaches the database');
-      assert.ok(Object.keys(u.set).every(k => ['website', 'hours'].includes(k)), 'an information fill carries website/hours only');
+      assert.ok(Object.keys(u.set).every(k => ['website', 'hours', 'day_pass', 'facilities'].includes(k)), 'an information fill carries the gym-information fields only');
       if (state.hooks.beforePatch) state.hooks.beforePatch(u, state);
       state.infoPatches.push({ id: u.id, set: u.set, updatedAt: u.updatedAt });
       const row = state.approved.find(r => r.id === u.id && r.status === 'approved' && r.updated_at === u.updatedAt);
@@ -683,7 +683,7 @@ test('info verification: another spot whose website/hours changed during the wri
   const w = await world({ records: INFO2, approved: infoBase() }); const dry = await runImport({ ...w.base });
   w.fake.state.hooks.beforePatch = (u, st) => { if (u.id === 'seed-102') st.approved.find(r => r.id === 'seed-101').website = 'https://bystander.example/'; };
   const r = await runImport({ ...w.base, mode: 'apply', confirm: dry.token, productionFlag: true });
-  assert.equal(r.exit, 4, r.report); assert.match(r.report, /website\/hours of other spots changed: seed-101/);
+  assert.equal(r.exit, 4, r.report); assert.match(r.report, /website\/hours\/day_pass\/facilities of other spots changed: seed-101/);
   assert.equal(fs.existsSync(path.join(w.b.dir, 'manifest.json')), false); assert.equal(fs.existsSync(path.join(w.b.dir, 'import-failure.json')), true);
 });
 
@@ -751,4 +751,165 @@ test('info confirmation token: bound to the exact values (a different website/ho
   assert.equal(mk({ website: 'https://example.com/' }), mk({ website: 'https://example.com/' }));
   const w = await world({ records: INFO2, approved: infoBase() }); const w2 = await world({ records: ix => [info(ix, 'seed-100', { website: 'https://other.example/' }), info(ix, 'seed-102', { website: 'https://example.org/' })], approved: infoBase() });
   assert.notEqual((await runImport({ ...w.base })).token, (await runImport({ ...w2.base })).token);
+});
+
+// ============================================ gym information, part 2: day_pass + facilities (same fill-only path) ================
+// day_pass: text, 1..120 chars, trimmed, single line. facilities: non-empty, unique keys of the fixed list, in CANONICAL order (the order of
+// js/modules/gym-info.js FACILITIES), so the stored text[] equals the record byte for byte. Empty in production = null / '' (day_pass),
+// null / [] (facilities; the column is not null default '{}').
+const DAYPASS = 'A$28 adult, A$22 concession', FAC = ['cafe', 'shoe-hire', 'parking'];
+const infoBase2 = () => infoBase().map(r => ({ ...r, day_pass: null, facilities: [] }));   // production: day_pass null, facilities '{}'
+const DP2 = ix => [info(ix, 'seed-100', { day_pass: DAYPASS, facilities: FAC }), info(ix, 'seed-102', { facilities: ['yoga'] })];
+
+test('info day pass + facilities: dry-run names them, ONE PATCH per gym with exactly the approved fields, verified, manifest, re-run is a no-op', async () => {
+  const w = await world({ records: DP2, approved: infoBase2(), id: '2026-03-03-gym-info-dp' });
+  assert.equal(w.plan.importable, true, w.plan.blockers.join());
+  assert.deepEqual(w.plan.records[0].changes, [{ field: 'day_pass', before: null, after: DAYPASS }, { field: 'facilities', before: null, after: FAC }]);
+  const dry = await runImport({ ...w.base });
+  assert.equal(dry.exit, 0, dry.report); assert.equal(dry.kind, 'update'); assert.equal(dry.state, 'fresh');
+  assert.match(dry.report, /seed-100 {2}Boulder Barn {2}day pass \+ facilities \(3\)/); assert.match(dry.report, /seed-102 {2}Granite Gym {2}facilities \(1\)/);
+  assert.match(require('../scripts/lib/gym-import/report').renderReport(w.plan), /FILLS gym information \(only if empty in production; never overwrites\): day pass \+ facilities \(3\)/);
+  assert.equal(w.fake.state.infoPatches.length, 0);
+  const before = JSON.parse(JSON.stringify(w.fake.state.approved));
+  const ok = await runImport({ ...w.base, mode: 'apply', confirm: dry.token, productionFlag: true });
+  assert.equal(ok.exit, 0, ok.report); assert.deepEqual(ok.applied, ['seed-100', 'seed-102']);
+  assert.equal(w.fake.state.patches.length, 0); assert.equal(w.fake.state.infoPatches.length, 2);
+  assert.deepEqual(w.fake.state.infoPatches[0].set, { day_pass: DAYPASS, facilities: FAC }); assert.deepEqual(w.fake.state.infoPatches[1].set, { facilities: ['yoga'] });
+  assert.equal(row(w, 'seed-100').day_pass, DAYPASS); assert.deepEqual(row(w, 'seed-100').facilities, FAC); assert.deepEqual(row(w, 'seed-102').facilities, ['yoga']); assert.equal(row(w, 'seed-102').day_pass, null);
+  for (const f of ['name', 'lat', 'lng', 'address', 'types', 'notes', 'status', 'website', 'hours']) assert.deepEqual(row(w, 'seed-100')[f], before.find(r => r.id === 'seed-100')[f], 'unchanged: ' + f);
+  for (const id of ['seed-101', 'community-0f3a7c2e-1111-4222-8333-444455556666']) assert.deepEqual(row(w, id), before.find(r => r.id === id), 'other gyms untouched');
+  const m = JSON.parse(fs.readFileSync(path.join(w.b.dir, 'manifest.json'), 'utf8'));
+  assert.equal(m.status, 'updated'); assert.equal(m.rows_updated, 0); assert.equal(m.rows_info_filled, 2);
+  assert.deepEqual(m.info_filled.map(c => [c.id, c.fields]), [['seed-100', ['day_pass', 'facilities']], ['seed-102', ['facilities']]]); assert.equal(m.verification.ok, true);
+  const again = await runImport({ ...w.base, mode: 'apply', confirm: dry.token, productionFlag: true });
+  assert.equal(again.exit, 0, again.report); assert.equal(again.state, 'already-updated'); assert.equal(w.fake.state.infoPatches.length, 2, 'a second apply writes nothing');
+  assert.equal((await runImport({ ...w.base, mode: 'verify' })).exit, 0);
+});
+
+test('info day pass + facilities fill-only: a different value is refused naming gym + field, nothing is written; "" / null / [] are empty', async () => {
+  const set = (id, patch) => { const a = infoBase2(); Object.assign(a.find(r => r.id === id), patch); return a; };
+  for (const [patch, field] of [[{ day_pass: 'A$30 adult' }, 'day_pass'], [{ facilities: ['kids'] }, 'facilities'], [{ facilities: ['parking', 'cafe', 'shoe-hire'] }, 'facilities'], [{ facilities: ['cafe'] }, 'facilities']]) {
+    const w = await world({ records: DP2, approved: set('seed-100', patch) });
+    const r = await runImport({ ...w.base });
+    assert.equal(r.exit, 2, r.report); assert.ok(failing(r).includes('fill-only: gym information already set in production'), failing(r).join());
+    assert.match(r.report, new RegExp(`seed-100 "Boulder Barn": ${field} already has a value`));
+    const apply = await runImport({ ...w.base, mode: 'apply', confirm: '0'.repeat(16), productionFlag: true });
+    assert.equal(apply.exit, 2); assert.equal(w.fake.state.infoPatches.length, 0, 'nothing written');
+  }
+  // one field already equals the record, the other is empty: half applied, refused (never merged)
+  const half = await world({ records: DP2, approved: set('seed-100', { day_pass: DAYPASS }) });
+  assert.equal((await runImport({ ...half.base })).exit, 2); assert.equal(half.fake.state.infoPatches.length, 0);
+  // "" for day_pass, null / [] for facilities are empty: the fill goes ahead
+  for (const patch of [{ day_pass: '' }, { facilities: null }, { facilities: [] }, { day_pass: null, facilities: undefined }]) {
+    const ok = await world({ records: DP2, approved: set('seed-100', patch) });
+    const dry = await runImport({ ...ok.base }); assert.equal(dry.exit, 0, JSON.stringify(patch) + dry.report);
+    const done = await runImport({ ...ok.base, mode: 'apply', confirm: dry.token, productionFlag: true }); assert.equal(done.exit, 0, done.report);
+    assert.equal(row(ok, 'seed-100').day_pass, DAYPASS); assert.deepEqual(row(ok, 'seed-100').facilities, FAC);
+  }
+  // only the fields in "set" matter: a gym that already has facilities still gets its day pass
+  const only = await world({ records: ix => [info(ix, 'seed-100', { day_pass: DAYPASS })], approved: set('seed-100', { facilities: ['kids'] }) });
+  const d2 = await runImport({ ...only.base }); assert.equal(d2.exit, 0, d2.report);
+  const x = await runImport({ ...only.base, mode: 'apply', confirm: d2.token, productionFlag: true }); assert.equal(x.exit, 0, x.report);
+  assert.equal(row(only, 'seed-100').day_pass, DAYPASS); assert.deepEqual(row(only, 'seed-100').facilities, ['kids'], 'facilities untouched');
+});
+
+test('info records: day_pass and facilities values are validated strictly (byte for byte what the database will hold)', async () => {
+  const cases = [
+    [{ day_pass: '' }, 'empty day pass'], [{ day_pass: 'x'.repeat(121) }, '> 120 chars'], [{ day_pass: ' A$28' }, 'untrimmed (leading)'], [{ day_pass: 'A$28 ' }, 'untrimmed (trailing)'],
+    [{ day_pass: 'A$28\nadult' }, 'newline'], [{ day_pass: 'A$28\tadult' }, 'tab'], [{ day_pass: 'A$28\r' }, 'carriage return'], [{ day_pass: 28 }, 'number'], [{ day_pass: null }, 'null'], [{ day_pass: ['A$28'] }, 'array'],
+    [{ facilities: [] }, 'empty array'], [{ facilities: ['cafe', 'spa'] }, 'unknown key'], [{ facilities: ['cafe', 'cafe'] }, 'duplicate'], [{ facilities: 'cafe' }, 'string'], [{ facilities: null }, 'null'],
+    [{ facilities: ['cafe', 7] }, 'non-string member'], [{ facilities: [null] }, 'null member'], [{ facilities: ['Cafe'] }, 'wrong case'], [{ facilities: ['shoe_hire'] }, 'wrong separator'],
+    [{ facilities: ['parking', 'cafe'] }, 'not in canonical order'], [{ facilities: ['yoga', 'training'] }, 'not in canonical order (2)'], [{ facilities: { cafe: true } }, 'object'],
+  ];
+  for (const [set, what] of cases) {
+    const w = await world({ records: ix => [info(ix, 'seed-100', set)], approved: infoBase2() });
+    assert.equal(w.plan.counts.invalid, 1, what); assert.equal(w.plan.importable, false, what);
+    const r = await runImport({ ...w.base });
+    assert.equal(r.exit, 2, what + '\n' + r.report); assert.ok(failing(r).some(n => /records validate/.test(n)), what + ': ' + failing(r).join());
+    assert.equal(w.fake.state.infoPatches.length, 0, what);
+  }
+  const edge = [{ day_pass: 'x'.repeat(120) }, { day_pass: 'Free' }, { facilities: ['cafe', 'training', 'kids', 'shoe-hire', 'shop', 'showers', 'parking', 'yoga'] }, { facilities: ['yoga'] }, { facilities: ['training', 'shop', 'yoga'] }];
+  for (const set of edge) { const w = await world({ records: ix => [info(ix, 'seed-100', set)], approved: infoBase2() }); assert.equal(w.plan.counts.update, 1, JSON.stringify(set).slice(0, 60)); assert.equal(w.plan.importable, true, w.plan.blockers.join()); }
+  const V = require('../scripts/lib/gym-import/validate');
+  assert.deepEqual([...V.FACILITY_KEYS], ['cafe', 'training', 'kids', 'shoe-hire', 'shop', 'showers', 'parking', 'yoga']);
+  assert.deepEqual([...V.INFO_FIELDS], ['website', 'hours', 'day_pass', 'facilities']);
+});
+
+test('info day pass + facilities: the validator keys equal the migration check and js/modules/gym-info.js (no drift)', () => {
+  const V = require('../scripts/lib/gym-import/validate');
+  const mig = fs.readFileSync(path.join(ROOT, 'supabase/migrations/20261004000100_gym_information.sql'), 'utf8');
+  const arr = /facilities <@ array\[([^\]]*)\]/.exec(mig)[1].split(',').map(x => x.trim().replace(/'/g, ''));
+  assert.deepEqual(arr, [...V.FACILITY_KEYS], 'the migration check list, in the same order');
+  assert.equal(Number(/char_length\(day_pass\) <= (\d+)/.exec(mig)[1]), V.INFO_LIMITS.day_pass);
+  const js = fs.readFileSync(path.join(ROOT, 'js/modules/gym-info.js'), 'utf8');
+  const keys = [...js.slice(js.indexOf('export const FACILITIES'), js.indexOf('// Database caps')).matchAll(/\['([a-z-]+)', '/g)].map(m => m[1]);
+  assert.deepEqual(keys, [...V.FACILITY_KEYS], 'js/modules/gym-info.js FACILITIES order');
+  assert.equal(Number(/day_pass: (\d+)/.exec(js)[1]), V.INFO_LIMITS.day_pass);
+});
+
+test('info day pass + facilities never mix with location or other fields in one record; a maintenance batch may mix the families across gyms', async () => {
+  for (const [set, what] of [[{ day_pass: DAYPASS, lat: -33.882, lng: 151.213 }, 'day pass + pin'], [{ facilities: FAC, address: '1 St' }, 'facilities + address'], [{ day_pass: DAYPASS, name: 'Renamed' }, 'day pass + name'], [{ facilities: FAC, website: 'https://example.com/', notes: 'x' }, 'info + notes']]) {
+    const w = await world({ records: ix => [info(ix, 'seed-100', set)], approved: infoBase2() });
+    assert.equal(w.plan.counts.invalid, 1, what); assert.match(JSON.stringify(w.plan), /mixed-families/, what);
+    const r = await runImport({ ...w.base }); assert.equal(r.exit, 2, what); assert.equal(w.fake.state.infoPatches.length + w.fake.state.patches.length, 0);
+  }
+  const mixed = ix => [info(ix, 'seed-100', { day_pass: DAYPASS, facilities: FAC }), upd(ix, 'seed-102', { lat: -33.8785, lng: 151.196 }), ret(ix, 'seed-101')];
+  const w = await world({ records: mixed, approved: infoBase2(), id: '2026-03-04-maintenance-dp' });
+  const dry = await runImport({ ...w.base }); assert.equal(dry.exit, 0, dry.report);
+  const ok = await runImport({ ...w.base, mode: 'apply', confirm: dry.token, productionFlag: true }); assert.equal(ok.exit, 0, ok.report);
+  assert.equal(w.fake.state.infoPatches.length, 1); assert.equal(w.fake.state.patches.length, 1); assert.equal(w.fake.state.retires.length, 1);
+  assert.deepEqual(row(w, 'seed-100').facilities, FAC); assert.equal(row(w, 'seed-102').lat, -33.8785);
+});
+
+test('info verification: another spot whose day pass or facilities changed during the writes is a failure record (exit 4), never a manifest', async () => {
+  for (const patch of [{ day_pass: 'A$1 bystander' }, { facilities: ['yoga'] }]) {
+    const w = await world({ records: DP2, approved: infoBase2() }); const dry = await runImport({ ...w.base });
+    w.fake.state.hooks.beforePatch = (u, st) => { if (u.id === 'seed-102') Object.assign(st.approved.find(r => r.id === 'seed-101'), patch); };
+    const r = await runImport({ ...w.base, mode: 'apply', confirm: dry.token, productionFlag: true });
+    assert.equal(r.exit, 4, r.report); assert.match(r.report, /of other spots changed: seed-101/);
+    assert.equal(fs.existsSync(path.join(w.b.dir, 'manifest.json')), false); assert.equal(fs.existsSync(path.join(w.b.dir, 'import-failure.json')), true);
+  }
+});
+
+test('stateOf for day pass + facilities: empty = null/\'\'/[]; after = deep equality (facilities in order); anything else is changed and names the field', () => {
+  const { stateOf } = require('../scripts/lib/gym-import/updater');
+  const base = { ...infoBase2().find(r => r.id === 'seed-100'), updated_at: 'ts-0' }, h = S.toEntry(base).h;
+  const rec1 = { id: 'seed-100', expect_h: h, set: { day_pass: DAYPASS, facilities: FAC } };
+  const st = r => stateOf(r, null, rec1);
+  for (const e of [{}, { day_pass: '' }, { facilities: null }, { facilities: undefined, day_pass: undefined }]) assert.equal(st({ ...base, ...e }).state, 'before', JSON.stringify(e));
+  assert.equal(st({ ...base, day_pass: DAYPASS, facilities: [...FAC] }).state, 'after');
+  assert.equal(st({ ...base, day_pass: DAYPASS, facilities: ['parking', 'shoe-hire', 'cafe'] }).state, 'changed', 'a reordered array is not the record');
+  assert.deepEqual(st({ ...base, facilities: ['kids'] }), { state: 'changed', h, filled: ['facilities'] });
+  assert.deepEqual(st({ ...base, day_pass: 'other' }).filled, ['day_pass']);
+  assert.deepEqual(st({ ...base, day_pass: DAYPASS }).filled, [], 'half applied: not before, not after, nothing foreign');
+  assert.equal(st({ ...base, day_pass: DAYPASS, facilities: FAC, notes: 'edited' }).state, 'changed', 'content hash moved');
+  assert.equal(stateOf({ ...base, facilities: ['kids'] }, null, { ...rec1, set: { day_pass: DAYPASS } }).state, 'before', 'only the fields in "set" matter');
+});
+
+test('target.js updateSpotInfo: the gate accepts day_pass/facilities exactly as approved and refuses invalid values and foreign fields', async () => {
+  const api = new T.Api({ url: 'https://example.supabase.co', serviceKey: 'service-key-xxxxxxxx', anonKey: 'anon-key-xxxxxxxx' });
+  const sent = []; api._send = async (method, q, o) => { sent.push({ method, q, o }); return { ok: true, status: 200, json: [{}] }; };
+  const sha = updates => crypto.createHash('sha256').update(JSON.stringify(T.opsPayload(updates, []))).digest('hex');
+  const gateFor = set => { const updates = [{ id: 'seed-100', set, expect_h: '0123456789abcdef' }]; return T.mintUpdateGate({ batchId: 'b', token: 't', updates, payloadSha: sha(updates) }); };
+  const u = set => ({ id: 'seed-100', set, updatedAt: '2026-09-24T01:02:03.123456+00:00' });
+  const bad = async (set, re) => assert.rejects(api.updateSpotInfo(u(set), gateFor(set)), re, JSON.stringify(set));
+  await bad({ day_pass: '' }, /day_pass must be/); await bad({ day_pass: 'x'.repeat(121) }, /day_pass is 121/); await bad({ day_pass: ' A$28' }, /day_pass must be trimmed/);
+  await bad({ day_pass: 'A$28\nadult' }, /day_pass must be trimmed/); await bad({ day_pass: 28 }, /day_pass must be/);
+  await bad({ facilities: [] }, /facilities must be a non-empty array/); await bad({ facilities: ['spa'] }, /unknown facility/); await bad({ facilities: ['cafe', 'cafe'] }, /duplicates/);
+  await bad({ facilities: 'cafe' }, /facilities must be a non-empty array/); await bad({ facilities: ['parking', 'cafe'] }, /canonical order/); await bad({ facilities: [7] }, /unknown facility/);
+  await bad({ day_pass: DAYPASS, status: 'rejected' }, /only website\/hours\/day_pass\/facilities/); await bad({ facilities: FAC, description: 'x' }, /only website\/hours\/day_pass\/facilities/);
+  assert.equal(sent.length, 0, 'nothing sent for any refusal');
+  const set = { day_pass: DAYPASS, facilities: FAC }, gate = gateFor(set);
+  await assert.rejects(api.updateSpotInfo(u({ day_pass: DAYPASS }), gate), /not the approved one/, 'a subset of the approved body');
+  await assert.rejects(api.updateSpotInfo(u({ day_pass: DAYPASS, facilities: ['cafe'] }), gate), /not the approved one/, 'a different body');
+  await api.updateSpotInfo(u(set), gate);
+  assert.equal(sent.length, 1); assert.equal(sent[0].method, 'PATCH'); assert.equal(sent[0].o.body, JSON.stringify(set), 'the body is exactly the approved set');
+  assert.equal(sent[0].q, '/rest/v1/spots?id=eq.seed-100&status=eq.approved&updated_at=eq.2026-09-24T01%3A02%3A03.123456%2B00%3A00');
+});
+
+test('info confirmation token is bound to the exact day pass and facilities', async () => {
+  const { confirmToken } = require('../scripts/lib/gym-import/updater');
+  const mk = set => confirmToken({ batchId: 'b', planSha: 'p', payload: crypto.createHash('sha256').update(JSON.stringify([{ id: 'seed-100', set, expect_h: '0123456789abcdef' }])).digest('hex'), host: 'h', kind: 'local', coverage: 'FULL', liveSha: 'l' });
+  assert.notEqual(mk({ day_pass: 'A$28' }), mk({ day_pass: 'A$29' })); assert.notEqual(mk({ facilities: ['cafe'] }), mk({ facilities: ['cafe', 'shop'] }));
+  assert.equal(mk({ facilities: ['cafe'] }), mk({ facilities: ['cafe'] }));
 });

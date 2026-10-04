@@ -767,7 +767,7 @@ test('static: exactly four write call sites -- a plain INSERT (importer.js), a l
   assert.match(info, /id=eq\.\$\{encodeURIComponent\(u\.id\)\}&status=eq\.approved&updated_at=eq\.\$\{encodeURIComponent\(u\.updatedAt\)\}/);
   assert.match(info, /body: JSON\.stringify\(u\.set\) \}\);\s*\}/, 'the info PATCH body is exactly the approved set');
   assert.match(info, /keys\.some\(k => !INFO_FIELDS\.includes\(k\)\)/);
-  assert.ok(/INFO_FIELDS = Object\.freeze\(\['website', 'hours'\]\)/.test(src('validate.js')), 'the information fields are exactly website and hours');
+  assert.ok(/INFO_FIELDS = Object\.freeze\(\['website', 'hours', 'day_pass', 'facilities'\]\)/.test(src('validate.js')), 'the information fields are exactly website, hours, day_pass and facilities');
   assert.ok(!/body: JSON\.stringify\(\{ \.\.\./.test(t), 'no PATCH body is built by spreading');
   // the retire PATCH is pinned the same way and its body is exactly {status:'rejected', rejection_reason}
   const retire = t.slice(t.indexOf('async retireSpot('), t.indexOf("_send('PATCH'", t.indexOf('async retireSpot(')));
@@ -1011,4 +1011,54 @@ test('LOCAL STACK: a real information fill writes exactly website/hours (hours a
   const rows4 = await adm.all();
   assert.equal(rows4.find(r => r.id === 'seed-100').website, 'https://community.example/last-millisecond', 'not overwritten'); assert.equal(rows4.find(r => r.id === 'seed-100').hours, null);
   assert.equal(fs.existsSync(path.join(s4.b.dir, 'manifest.json')), false);
+});
+
+// ============================================ gym information, part 2: day pass + facilities against the real local database ===
+const INFO_FAC = ['cafe', 'shoe-hire', 'parking'];
+const INFO_DP = 'A$28 adult, A$22 concession';
+const INFO_DP_TWO = ix => [infoRec(ix, 'seed-100', { day_pass: INFO_DP, facilities: INFO_FAC }), infoRec(ix, 'seed-102', { facilities: ['yoga'] })];
+
+test('LOCAL STACK: a real information fill writes exactly day_pass/facilities (facilities as text[], other columns and gyms byte-identical), re-run writes nothing; an already-filled field is refused; a concurrent edit is refused', { skip }, async () => {
+  const e = env();
+  const s = await retSetup('2026-02-04-local-gym-info-dp', INFO_DP_TWO);
+  const dry = await runImport({ batchDir: s.b.dir, indexDir: s.indexDir, env: e });
+  assert.equal(dry.exit, 0, dry.report); assert.equal(dry.kind, 'update'); assert.equal(dry.coverage, 'FULL'); assert.match(dry.report, /Would fill gym information \(2 gyms/); assert.match(dry.report, /day pass \+ facilities \(3\)/);
+  const before = await adm.all();
+  assert.ok(before.every(r => Array.isArray(r.facilities)), 'the column is a text[]');
+  const ok = await runImport({ batchDir: s.b.dir, indexDir: s.indexDir, env: e, mode: 'apply', confirm: dry.token });
+  assert.equal(ok.exit, 0, ok.report); assert.deepEqual(ok.applied, ['seed-100', 'seed-102']);
+  const after = await adm.all();
+  const was = id => before.find(r => r.id === id), now = id => after.find(r => r.id === id);
+  assert.equal(now('seed-100').day_pass, INFO_DP); assert.deepEqual(now('seed-100').facilities, INFO_FAC);
+  assert.equal(now('seed-102').day_pass, null, 'a facilities-only fill leaves the day pass empty'); assert.deepEqual(now('seed-102').facilities, ['yoga']);
+  for (const id of ['seed-100', 'seed-102']) {
+    assert.notEqual(now(id).updated_at, was(id).updated_at, 'the database records the edit time');
+    for (const f of ['name', 'suburb', 'state', 'country', 'lat', 'lng', 'address', 'types', 'notes', 'photo', 'status', 'community', 'edited', 'created_at', 'slug', 'description', 'website', 'hours']) assert.deepEqual(now(id)[f], was(id)[f], id + ' unchanged: ' + f);
+  }
+  for (const id of ['seed-101', 'community-0f3a7c2e-1111-4222-8333-444455556666']) assert.deepEqual(now(id), was(id), id + ' is byte-identical, including updated_at');
+  assert.equal(after.length, before.length);
+  const m = JSON.parse(fs.readFileSync(path.join(s.b.dir, 'manifest.json'), 'utf8'));
+  assert.equal(m.status, 'updated'); assert.equal(m.rows_info_filled, 2); assert.deepEqual(m.info_filled.map(c => [c.id, c.fields]), [['seed-100', ['day_pass', 'facilities']], ['seed-102', ['facilities']]]); assert.equal(m.verification.ok, true);
+  const again = await runImport({ batchDir: s.b.dir, indexDir: s.indexDir, env: e, mode: 'apply', confirm: dry.token });
+  assert.equal(again.exit, 0, again.report); assert.equal(again.state, 'already-updated'); assert.deepEqual(await adm.all(), after, 'the re-run wrote nothing');
+  assert.equal((await runImport({ batchDir: s.b.dir, indexDir: s.indexDir, env: e, mode: 'verify' })).exit, 0);
+
+  // fill-only: day_pass or facilities filled in production since the research (a community edit approved) is refused, nothing is written
+  for (const [patch, field] of [[{ day_pass: 'A$99 community' }, 'day_pass'], [{ facilities: ['kids'] }, 'facilities']]) {
+    const s2 = await retSetup('2026-02-04-local-gym-info-dp-filled-' + field.replace('_', ''), INFO_DP_TWO);
+    await adm.patch('seed-100', patch);
+    const snap2 = JSON.stringify(await adm.all());
+    const r2 = await runImport({ batchDir: s2.b.dir, indexDir: s2.indexDir, env: e });
+    assert.equal(r2.exit, 2, r2.report); assert.ok(failing(r2).includes('fill-only: gym information already set in production'), failing(r2).join()); assert.match(r2.report, new RegExp(`seed-100 "[^"]+": ${field} already has a value`));
+    assert.equal(JSON.stringify(await adm.all()), snap2, 'nothing written');
+    await adm.patch('seed-100', { day_pass: null, facilities: [] });   // restore the empty state for the next case
+  }
+
+  // a community edit lands after the dry-run (token already issued): the final re-check refuses, nothing is written
+  const s3 = await retSetup('2026-02-04-local-gym-info-dp-race', INFO_DP_TWO);
+  const dry3 = await runImport({ batchDir: s3.b.dir, indexDir: s3.indexDir, env: e });
+  await adm.patch('seed-102', { facilities: ['kids'] });
+  const snap3 = JSON.stringify(await adm.all());
+  const r3 = await runImport({ batchDir: s3.b.dir, indexDir: s3.indexDir, env: e, mode: 'apply', confirm: dry3.token });
+  assert.equal(r3.exit, 2, r3.report); assert.equal(JSON.stringify(await adm.all()), snap3, 'nothing written');
 });
