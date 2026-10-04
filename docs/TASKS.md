@@ -6,9 +6,9 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 (delete them; git keeps history). Keep this file under 60 lines.
 
 ## In progress
-### Gym information — batch 5 (+483 enriched, +25 retired) and all follow-ups APPLIED 2026-10-04 (PRs #44-#47 merged; #48-#50 open)
+### Gym information — batch 5 (+483 enriched, +25 retired) and all follow-ups APPLIED 2026-10-04 (PRs #44-#50 merged, live)
 - Applied + verified (704 records): batch 5 fills (468 + 15), 25 retirements, 4 new gyms, 126 location fixes, 52 identity edits
-  (#49 + review). `import/info-research/batch-5/{NOTES,REVIEW-RESOLUTIONS}.md`. Merge #48 -> #49 -> #50 to ship the sitemap.
+  (#49 + review). `import/info-research/batch-5/{NOTES,REVIEW-RESOLUTIONS}.md`. Sitemap 3,208 URLs live.
   Re-check: Arkose Cholet (not open), Klaettra Motala (temp. closed). Next: 456 gyms in unmeasured countries; CN/KR need a source decision.
 ### Final-stage sprint (gym information, metros, SEO, perf) — DONE: PR #37 merged and live in production 2026-10-03
 - Status: PR #37 (`integration/final-stage`) merged to master 2026-10-03 (merge commit `b58a79e`) and deployed by Vercel; production
