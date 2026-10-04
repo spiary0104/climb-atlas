@@ -18,6 +18,9 @@ body{
 /* Form controls don't inherit the page font by default (they fall back to the UA's 13.3px Arial). */
 button,input,select,textarea{font-family:inherit;font-size:inherit;line-height:inherit;color:inherit;}
 img{max-width:100%;}
+/* The hidden attribute always wins. Components set their own display (.chip and .btn are inline-flex), which beats the
+   UA's [hidden]{display:none} and left hidden controls showing. */
+[hidden]{display:none !important;}
 h1,h2,h3,h4,p{margin:0;}
 a{color:var(--color-text-link);text-underline-offset:var(--text-underline-offset);}
 a:hover{color:var(--color-accent-hover);}

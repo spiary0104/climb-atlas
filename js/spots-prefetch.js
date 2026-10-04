@@ -12,7 +12,7 @@
 
 window.spotsPrefetch = (function () {
   if (!window.sb) return null;
-  const columns = 'id,name,suburb,state,country,lat,lng,types,address,photo,slug,community,edited,verified_at,created_at,submitted_by,description';
+  const columns = 'id,name,suburb,state,country,lat,lng,types,address,photo,slug,community,edited,verified_at,created_at,submitted_by,description,hours';
   const PAGE = 1000;
   const page = (from, opts) => window.sb.from('spots').select(columns, opts).eq('status', 'approved')
     .order('id').range(from, from + PAGE - 1);

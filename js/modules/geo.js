@@ -66,7 +66,7 @@ export const TYPE_CODES = { 'indoor-bouldering': 'boulder', 'top-rope': 'toprope
 export const ALL_TYPES = Object.keys(TYPE_CODES);
 const CODE_TYPES = Object.fromEntries(Object.entries(TYPE_CODES).map(([k, v]) => [v, k]));
 
-// state: {camera:{lng,lat,zoom}|null, types:string[] (full type ids), saved, climbed, photos, place:string|null, q:string}
+// state: {camera:{lng,lat,zoom}|null, types:string[] (full type ids), saved, climbed, photos, open, place:string|null, q:string}
 export function encodeExploreState(state){
   const p = new URLSearchParams();
   if(state.q) p.set('q', state.q);
@@ -80,6 +80,7 @@ export function encodeExploreState(state){
   if(state.saved) p.set('saved', '1');
   if(state.climbed) p.set('climbed', '1');
   if(state.photos) p.set('photos', '1');
+  if(state.open) p.set('open', '1');
   return p.toString().replace(/%2C/g, ',').replace(/%3A/g, ':').replace(/%7E/g, '~');   // "~" marks a metro place ("AU:NSW:~sydney")
 }
 
@@ -89,7 +90,7 @@ const num = (v, lo, hi) => { const n = Number(v); return Number.isFinite(n) && n
 export function decodeExploreState(search){
   const p = new URLSearchParams(search || '');
   const out = { camera: null, types: ALL_TYPES.slice(), saved: p.get('saved') === '1', climbed: p.get('climbed') === '1',
-    photos: p.get('photos') === '1', place: null, q: (p.get('q') || '').slice(0, 100) };
+    photos: p.get('photos') === '1', open: p.get('open') === '1', place: null, q: (p.get('q') || '').slice(0, 100) };
   const c = (p.get('c') || '').split(',');
   if(c.length === 3){
     const lng = num(c[0], -540, 540), lat = num(c[1], -85, 85), zoom = num(c[2], 0, 22);

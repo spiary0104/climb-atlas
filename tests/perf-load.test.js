@@ -10,9 +10,10 @@ const read = f => fs.readFileSync(path.join(__dirname, '..', f), 'utf8');
 test('Explore reads only its columns: no research notes, no gym-information fields in the cold load', () => {
   const src = read('js/modules/data-load.js');
   const cols = /export const LIST_COLUMNS = '([^']+)';/.exec(src)[1].split(',');
-  for (const c of ['id', 'name', 'suburb', 'state', 'country', 'lat', 'lng', 'types', 'address', 'photo', 'slug', 'community', 'edited', 'verified_at', 'created_at', 'submitted_by'])
+  for (const c of ['id', 'name', 'suburb', 'state', 'country', 'lat', 'lng', 'types', 'address', 'photo', 'slug', 'community', 'edited', 'verified_at', 'created_at', 'submitted_by', 'hours'])
     assert.ok(cols.includes(c), 'needed by Explore: ' + c);
-  for (const c of ['notes', 'hours', 'website', 'day_pass', 'facilities', 'rejection_reason']) assert.ok(!cols.includes(c), 'not in the cold load: ' + c);
+  // hours rides along (rows, cards, the peek card and the Open now filter say open/closed from it); the rest of the gym information stays out
+  for (const c of ['notes', 'website', 'day_pass', 'facilities', 'rejection_reason']) assert.ok(!cols.includes(c), 'not in the cold load: ' + c);
   assert.ok(!/from\('spots'\)\.select\('\*'\)\.eq\('status','approved'\)/.test(src), 'the bulk read is not select(*)');
   assert.match(src, /select\(LIST_COLUMNS, opts\)/); assert.match(src, /page\(0, \{ count: 'exact' \}\)/); assert.match(src, /await Promise\.all\(rest\)/);
 });

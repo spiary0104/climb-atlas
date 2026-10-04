@@ -576,3 +576,70 @@ test('page header art: Regions always; Log and Me only signed out; decorative; u
   assert.deepEqual(art(page.mePageHtml({ signedIn: true, section: 'saved', saved: [], climbed: [], isModerator: false, pendingCount: 0 })), [], 'not on a signed-in /me (first-run art and the seal live there)');
   for (const k of ['', '../x', 'constructor', undefined]) assert.equal(page.pageArtHtml(k), '');
 });
+
+// ----- open / closed fragments (hours.js -> ctx.hours) ---------------------------------------------------------------
+test('open/closed fragment: row, card, carousel card and peek card carry it; row and card keep their structure; unknown renders nothing', async () => {
+  const { list } = await modules;
+  const open = { state: 'open', text: 'Open · until 10pm' }, closed = { state: 'closed', text: 'Closed · opens 6am' };
+  // the fragment is the state word plus an optional <span class="hours-detail"> (hidden in rows on phones); its text is the full line
+  const frag = (html) => [...html.matchAll(/<(span|p) class="([a-z-]+) hours-state hours-state--(open|closed) tnum" data-hours-id="([^"]*)">([^<]*(?:<span class="hours-detail">[^<]*<\/span>)?)<\/\1>/g)]
+    .map(m => [m[2], m[3], m[4], m[5].replace(/<[^>]+>/g, '')]);
+  // phones keep only the word: everything after it sits in the detail span
+  assert.match(list.rowHtml(benignSpot, { ...ctxBenign, hours: open }), /tnum" data-hours-id="[^"]*">Open<span class="hours-detail"> · until 10pm<\/span><\/span>/);
+  assert.match(list.rowHtml(benignSpot, { ...ctxBenign, hours: closed }), /tnum" data-hours-id="[^"]*">Closed<span class="hours-detail"> · opens 6am<\/span><\/span>/);
+  assert.match(list.rowHtml(benignSpot, { ...ctxBenign, hours: { state: 'closed', text: 'Closed' } }), /tnum" data-hours-id="[^"]*">Closed<\/span>/, 'no empty detail span');
+  assert.deepEqual(list.hoursParts('open', 'Open 24 hours'), { word: 'Open', detail: ' 24 hours' });
+  for (const [b, cls] of [['rowHtml', 'gym-row-hours'], ['cardHtml', 'gym-card-hours'], ['carouselCardHtml', 'carousel-card-hours'], ['peekHtml', 'peek-hours']]) {
+    assert.deepEqual(frag(list[b](benignSpot, { ...ctxBenign, hours: open })), [[cls, 'open', benignSpot.id, 'Open · until 10pm']], b);
+    assert.deepEqual(frag(list[b](benignSpot, { ...ctxBenign, hours: closed })), [[cls, 'closed', benignSpot.id, 'Closed · opens 6am']], b);
+    for (const none of [undefined, null, { state: 'unknown', text: 'Open' }, { state: 'open', text: '' }, { state: 'open' }, { state: 'maybe', text: 'x' }, 'open']) {
+      const html = list[b](benignSpot, { ...ctxBenign, hours: none });
+      assert.deepEqual(frag(html), [], b + ' renders nothing for ' + JSON.stringify(none));
+      assert.equal(html, list[b](benignSpot, ctxBenign), b + ': identical to no hours at all');
+    }
+  }
+  // the row stays one 56px line: the fragment is one extra span inside the meta line, not a new line or element type
+  const plain = shape(list.rowHtml(benignSpot, ctxBenign)), withHours = shape(list.rowHtml(benignSpot, { ...ctxBenign, hours: open }));
+  assert.deepEqual(withHours.filter((t, i) => t !== plain[i]).length >= 1, true);
+  assert.equal(withHours.length, plain.length + 2, 'the fragment span and its inline detail span, both inside the meta line');
+  assert.match(list.rowHtml(benignSpot, { ...ctxBenign, hours: open }), /aria-label="Boulder Barn, [^"]*, Surry Hills · New South Wales, Open · until 10pm"/, 'the row\'s accessible name says it');
+});
+
+test('open/closed fragment: hostile hours (strings in the database, or a hostile ctx.hours) cannot add markup', async () => {
+  const { list } = await modules;
+  const hours = await import('../js/modules/hours.js');
+  const info = await import('../js/modules/gym-info.js');
+  const now = new Date('2027-01-08T12:00:00Z');
+  for (const h of HOSTILE) {
+    // through the real pipeline: a hostile day string is not understood, so the gym is unknown and nothing renders
+    const gym = { ...benignSpot, country: 'GB', hours: { fri: h, thu: h } };
+    const line = hours.statusLine(hours.status(gym, now, { userLocation: null }));
+    assert.equal(line, null, 'unreadable hours => no status: ' + h);
+    for (const b of BUILDERS) {
+      const html = list[b](gym, { ...ctxBenign, hours: line });
+      assert.equal(html, list[b](gym, ctxBenign));
+      assert.ok(!/hours-state/.test(html), b + ': fragment rendered for hostile hours');
+    }
+    // a hostile ctx.hours text is escaped, a hostile state is dropped
+    for (const b of BUILDERS) {
+      const html = list[b](benignSpot, { ...ctxBenign, hours: { state: 'open', text: h } });
+      assert.deepEqual(shape(html).filter(t => !shape(list[b](benignSpot, { ...ctxBenign, hours: { state: 'open', text: 'Open' } })).includes(t)), [], b + ': structure changed for text ' + h);
+      assert.equal(hasHandlerAttrs(html), false);
+      assert.ok(!/<script/i.test(html));
+      assert.ok(!/hours-state/.test(list[b](benignSpot, { ...ctxBenign, hours: { state: h, text: 'Open' } })), b + ': hostile state accepted');
+    }
+    // the gym page's Today line shows the gym's own text, escaped, with the state word only when we know it
+    const rows = info.essentialsRowsHtml({ hours: { fri: h } }, { today: 'fri', hoursStatus: 'open' });
+    assert.ok(!/<script/i.test(rows) && !hasHandlerAttrs(rows), 'essentials: ' + h);
+  }
+});
+
+test('gym page Essentials: the Today line gets a dot and the word only when the state is known', async () => {
+  const info = await import('../js/modules/gym-info.js');
+  const g = { hours: { fri: '6am-10pm', sat: '8am-8pm' } };
+  assert.match(info.essentialsRowsHtml(g, { today: 'fri', hoursStatus: 'open' }), /<summary><span class="hours-state hours-state--open"><span class="hours-dot" aria-hidden="true"><\/span>Open<\/span> · Today: 6am-10pm<\/summary>/);
+  assert.match(info.essentialsRowsHtml(g, { today: 'sat', hoursStatus: 'closed' }), /<summary><span class="hours-state hours-state--closed"><span class="hours-dot" aria-hidden="true"><\/span>Closed<\/span> · Today: 8am-8pm<\/summary>/);
+  assert.match(info.essentialsRowsHtml(g, { today: 'fri' }), /<summary>Today: 6am-10pm<\/summary>/, 'unknown: as before');
+  assert.match(info.essentialsRowsHtml(g, { today: 'fri', hoursStatus: 'bogus' }), /<summary>Today: 6am-10pm<\/summary>/);
+  assert.match(info.essentialsRowsHtml(g, { today: 'tue', hoursStatus: 'open' }), /<summary>Opening hours<\/summary>/, 'no entry for today: no state word');
+});

@@ -6,9 +6,10 @@
 //   Landing (sec. 19 decision 5): URL camera -> last camera on this device -> densest gym area of the home country -> world.
 import { motion } from './constants.js';
 import { decodeExploreState, encodeExploreState } from './geo.js';
-import { applyFilters, applyUrlFilters, filterUrlState, initFilters, renderFilterBar, resetFilters, setPlaceFilter, setTextFilter } from './filters.js';
+import { applyFilters, applyUrlFilters, currentFilters, filterUrlState, initFilters, matches, renderFilterBar, resetFilters, setPlaceFilter, setTextFilter, updateHoursChip } from './filters.js';
+import { status, statusLine } from './hours.js';
 import { gymCtx, initList, markCarouselSelected, renderCarousel, renderList, scrollRowIntoView, setRowHover, setRowSelected, showSkeleton, updateRowMarks } from './list.js';
-import { peekHtml } from './list-html.js';
+import { peekHtml, hoursParts } from './list-html.js';
 import { exploreUrl, isExplore, navigate, refreshPage, registerView } from './router.js';
 import { assignMissingSlugs, gymPath } from './slug.js';
 import { LAST_CAMERA_KEY, clusterExpansionZoom, clusterLeafIds, flyToPlace, landingCamera, map, paintMarkers, rebuildClusterIndex, refreshPin, setMapHandlers, viewBounds } from './map.js';
@@ -52,8 +53,33 @@ export function render({ page = true } = {}){
 }
 
 function refreshList(){
-  renderList({zoom: map.getZoom()});
+  renderList({zoom: map.getZoom()});       // open/closed is worked out only for the gyms it renders (the view, capped)
+  updateHoursChip();                       // the area in view may have changed (needs the fresh inView)
 }
+
+// ----- the open/closed minute ------------------------------------------------------------------------------------
+// While Explore shows, once a minute: rewrite the open/closed text in place (rows, cards, carousel, peek: the scroll and
+// focus stay), and with Open now on re-apply the filter when the set of open gyms has changed. One timer, stopped when a
+// page is shown (the explore view's leave) and paused while the tab is hidden.
+let hoursTimer = null;
+function tickHours(){
+  if(!appState.loaded || !isExplore() || document.hidden) return;
+  if(appState.showOpenNow){
+    const f = currentFilters(), ids = new Set(appState.filtered.map(g => g.id));
+    const next = appState.spots.filter(g => matches(g, f));
+    if(next.length !== ids.size || next.some(g => !ids.has(g.id))){ filtersChanged({write: false}); return; }
+  }
+  document.querySelectorAll('[data-hours-id]').forEach(el => {
+    const g = spotById(el.dataset.hoursId), line = g && statusLine(status(g));
+    if(!line){ el.remove(); return; }
+    const { word, detail } = hoursParts(line.state, line.text);   // same split as list-html.js hoursHtml
+    el.textContent = word;
+    if(detail){ const d = document.createElement('span'); d.className = 'hours-detail'; d.textContent = detail; el.append(d); }
+    el.className = el.className.replace(/hours-state--\w+/, 'hours-state--' + line.state);
+  });
+}
+function startHoursClock(){ if(!hoursTimer) hoursTimer = setInterval(tickHours, 60000); }
+function stopHoursClock(){ clearInterval(hoursTimer); hoursTimer = null; }
 
 function filtersChanged({push = false, write = true} = {}){
   applyFilters();
@@ -309,6 +335,7 @@ export function initExplore(){
     onLocateError(){ showToast('Location unavailable — sorting by name'); },
   });
   map.on('moveend', onMoveEnd);
+  document.addEventListener('visibilitychange', () => { if(!document.hidden) tickHours(); });   // a tab left open catches up on return
   map.on('dragstart', ()=>{ freshSearch = false; });
   $('peek').addEventListener('click', (e)=>{
     const act = e.target.closest('[data-gym-action]');
@@ -322,7 +349,8 @@ export function initExplore(){
     refreshList();
   });
   // Back/forward are routed by router.js; Explore restores its query state whenever it is (re)entered.
-  registerView('explore', { enter(params, container, {returning, initial}){
+  registerView('explore', { leave: stopHoursClock, enter(params, container, {returning, initial}){
+    startHoursClock();
     if(initial) return;
     if(returning) map.resize();                // the map was hidden (0 x 0) while a page showed
     onPopState();

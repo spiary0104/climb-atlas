@@ -9,6 +9,7 @@ import { metroOf } from './metros.js';
 import { gymPath } from './slug.js';
 import { provenanceState } from './provenance.js';
 import { filtersActive } from './filters.js';
+import { status, statusLine } from './hours.js';
 import { firstRunArt } from './brand.js';
 import { appState } from './state.js';
 
@@ -27,6 +28,7 @@ export function gymCtx(g){
     distance: appState.userLocation ? formatDistance(distanceKm(appState.userLocation, g)) : '',
     href: gymPath(g),
     provenance: provenanceState(g, appState.contributorCounts.get(g.id)),
+    hours: statusLine(status(g)),      // null when unknown: nothing renders
   };
 }
 

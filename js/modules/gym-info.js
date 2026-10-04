@@ -40,14 +40,17 @@ export const hasPracticalInfo = g => !!(g && (websiteLabel(g.website) || cleanHo
 
 // ===== Gym page ======================================================================================================
 // Essentials rows that appear only when the data exists: day pass, hours (weekly, today emphasised), website.
-export function essentialsRowsHtml(g, { today = todayKey() } = {}){
+// hoursStatus: 'open' | 'closed' (from hours.js, passed in) puts a dot and the word before "Today"; null/absent leaves the line as it was.
+export function essentialsRowsHtml(g, { today = todayKey(), hoursStatus = null } = {}){
   const rows = [];
   const pass = str(g.day_pass);
   if(pass) rows.push(`<div class="essentials-row"><h3 class="essentials-label">Day pass</h3><p class="panel-row">${escapeHtml(pass)}</p></div>`);
   const hours = cleanHours(g.hours);
   if(hours){
     const todayText = hours[today] || '';
-    const summary = todayText ? `Today: ${escapeHtml(todayText)}` : 'Opening hours';
+    const state = hoursStatus === 'open' ? 'Open' : hoursStatus === 'closed' ? 'Closed' : '';
+    const stateHtml = state && todayText ? `<span class="hours-state hours-state--${state.toLowerCase()}"><span class="hours-dot" aria-hidden="true"></span>${state}</span> · ` : '';
+    const summary = todayText ? `${stateHtml}Today: ${escapeHtml(todayText)}` : 'Opening hours';
     const table = DAYS.filter(([k]) => hours[k]).map(([k, label]) => `<tr${k === today ? ' class="is-today"' : ''}><th scope="row">${escapeHtml(label)}</th><td>${escapeHtml(hours[k])}</td></tr>`).join('');
     rows.push(`<div class="essentials-row"><h3 class="essentials-label">Hours</h3><details class="hours"><summary>${summary}</summary>`
       + `<table class="hours-table"><caption class="visually-hidden">Opening hours as the gym states them</caption><tbody>${table}</tbody></table></details></div>`);

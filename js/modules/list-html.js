@@ -36,6 +36,24 @@ export function provenanceMarkHtml(state = 'community-added'){
 
 const placeLine = (g, ctx) => [g.suburb, ctx.region].filter(Boolean).join(' · ');
 
+// The open/closed fragment (hours.js statusLine, passed in as ctx.hours = {state, text}): fixed words and clock times, escaped
+// anyway. Unknown, unreadable or malformed renders nothing (DESIGN.md DNA #3). data-hours-id lets explore.js refresh the text
+// once a minute without rebuilding the list.
+const hoursOf = ctx => (ctx.hours && (ctx.hours.state === 'open' || ctx.hours.state === 'closed') && typeof ctx.hours.text === 'string' && ctx.hours.text ? ctx.hours : null);
+// "Open · until 10pm" -> word "Open" + detail " · until 10pm". On phones the row shows only the word (css/explore.css), so the
+// status never squeezes the place name; cards, the peek card and the gym page keep the full line. explore.js writes the same split.
+export function hoursParts(state, text){
+  const word = state === 'open' ? 'Open' : 'Closed';
+  return text.startsWith(word) ? { word, detail: text.slice(word.length) } : { word: text, detail: '' };
+}
+export function hoursHtml(g, ctx, tag, cls){
+  const h = hoursOf(ctx);
+  if(!h) return '';
+  const { word, detail } = hoursParts(h.state, h.text);
+  return `<${tag} class="${cls} hours-state hours-state--${h.state} tnum" data-hours-id="${escapeHtml(g.id)}">${escapeHtml(word)}`
+    + (detail ? `<span class="hours-detail">${escapeHtml(detail)}</span>` : '') + `</${tag}>`;
+}
+
 function saveButton(g, saved, extraClass){
   return `<button type="button" class="btn btn-tertiary btn-icon btn-sm save-toggle ${extraClass}" data-gym-action="save" data-spot-id="${escapeHtml(g.id)}"`
     + ` aria-pressed="${saved ? 'true' : 'false'}" aria-label="Save ${escapeHtml(g.name)}">${icon('bookmark-simple', {size:'sm'})}</button>`;
@@ -44,10 +62,10 @@ function saveButton(g, saved, extraClass){
 // Dense row (56px): thumb · name + provenance · type dots + "Suburb · Region" · distance + save toggle.
 export function rowHtml(g, ctx = {}){
   return `<div class="gym-row${ctx.selected ? ' is-selected' : ''}" data-id="${escapeHtml(g.id)}" role="listitem">`
-    + `<button type="button" class="gym-row-main" data-gym-action="open" data-spot-id="${escapeHtml(g.id)}" aria-label="${escapeHtml(g.name)}, ${escapeHtml(typeText(g.types))}, ${escapeHtml(placeLine(g, ctx))}">`
+    + `<button type="button" class="gym-row-main" data-gym-action="open" data-spot-id="${escapeHtml(g.id)}" aria-label="${escapeHtml(g.name)}, ${escapeHtml(typeText(g.types))}, ${escapeHtml(placeLine(g, ctx))}${hoursOf(ctx) ? ', ' + escapeHtml(hoursOf(ctx).text) : ''}">`
     + thumbHtml(g, 'row')
     + `<span class="gym-row-text"><span class="gym-row-name"><span class="gym-row-title">${escapeHtml(g.name)}</span>${provenanceMarkHtml(ctx.provenance)}</span>`
-    + `<span class="gym-row-meta">${typeDotsHtml(g.types)}<span class="gym-row-place">${escapeHtml(placeLine(g, ctx))}</span></span></span></button>`
+    + `<span class="gym-row-meta">${typeDotsHtml(g.types)}<span class="gym-row-place">${escapeHtml(placeLine(g, ctx))}</span>${hoursHtml(g, ctx, 'span', 'gym-row-hours')}</span></span></button>`
     + `<span class="gym-row-side">${ctx.distance ? `<span class="gym-row-distance tnum">${escapeHtml(ctx.distance)}</span>` : ''}${saveButton(g, ctx.saved, 'gym-row-save')}</span></div>`;
 }
 
@@ -58,7 +76,7 @@ export function cardHtml(g, ctx = {}){
     + `<button type="button" class="gym-card-main" data-gym-action="open" data-spot-id="${escapeHtml(g.id)}">`
     + thumbHtml(g, 'card')
     + `<span class="gym-card-body"><span class="gym-card-name">${escapeHtml(g.name)}${provenanceMarkHtml(ctx.provenance)}</span>`
-    + `<span class="gym-card-meta tnum">${escapeHtml(meta)}</span><span class="gym-card-tags">${typeTagsHtml(g.types)}</span></span></button>`
+    + `<span class="gym-card-meta tnum">${escapeHtml(meta)}</span>${hoursHtml(g, ctx, 'span', 'gym-card-hours')}<span class="gym-card-tags">${typeTagsHtml(g.types)}</span></span></button>`
     + saveButton(g, ctx.saved, 'gym-card-save') + `</div>`;
 }
 
@@ -67,7 +85,7 @@ export function carouselCardHtml(g, ctx = {}){
   return `<button type="button" class="carousel-card${ctx.selected ? ' is-selected' : ''}" data-gym-action="details" data-spot-id="${escapeHtml(g.id)}">`
     + thumbHtml(g, 'row')
     + `<span class="carousel-card-body"><span class="carousel-card-name">${escapeHtml(g.name)}</span>`
-    + `<span class="carousel-card-meta">${typeDotsHtml(g.types)}${escapeHtml(placeLine(g, ctx))}</span>`
+    + `<span class="carousel-card-meta">${typeDotsHtml(g.types)}${escapeHtml(placeLine(g, ctx))}</span>${hoursHtml(g, ctx, 'span', 'carousel-card-hours')}`
     + `${ctx.distance ? `<span class="carousel-card-distance tnum">${escapeHtml(ctx.distance)}</span>` : ''}</span></button>`;
 }
 
@@ -83,6 +101,7 @@ export function peekHtml(g, ctx = {}){
     + `${photo ? `<img class="gym-photo peek-photo" src="${escapeHtml(photo)}" alt="${escapeHtml(g.name)}" loading="lazy" referrerpolicy="no-referrer">` : ''}`
     + `<div class="peek-tags">${typeTagsHtml(g.types)}</div>`
     + `<p class="peek-meta">${escapeHtml(where)}${ctx.distance ? ` · <span class="tnum">${escapeHtml(ctx.distance)}</span>` : ''}</p>`
+    + hoursHtml(g, ctx, 'p', 'peek-hours')
     + `<p class="provenance-line">${provenanceMarkHtml(ctx.provenance)}${escapeHtml(PROVENANCE_LABELS[ctx.provenance] || PROVENANCE_LABELS['community-added'])}</p>`
     + `${g.address ? `<p class="peek-address">${escapeHtml(g.address)}</p>` : ''}`
     + `${notes ? `<p class="peek-notes">${escapeHtml(notes)}</p>` : ''}`

@@ -81,6 +81,7 @@
                 <button type="button" class="chip" data-filter-type="lead-climbing" aria-pressed="false"><span class="type-dot type-dot--lead" aria-hidden="true"></span>Lead</button>
                 <button type="button" class="chip" data-filter-flag="saved" aria-pressed="false">Saved</button>
                 <button type="button" class="chip" data-filter-flag="climbed" aria-pressed="false">Climbed</button>
+                <button type="button" class="chip" data-filter-flag="open" aria-pressed="false" hidden>Open now</button>
                 <button type="button" class="chip" data-filter-flag="photos" aria-pressed="false">Has photos</button>
                 <span class="applied-pills" id="appliedPills"></span>
                 <button type="button" class="chip chip-more" id="allFiltersBtn" aria-haspopup="dialog"><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-sliders-horizontal"/></svg>All filters</button>
@@ -464,6 +465,10 @@
       <label class="check-row"><input type="checkbox" data-sheet-flag="saved">Saved</label>
       <label class="check-row"><input type="checkbox" data-sheet-flag="climbed">Climbed</label>
       <p class="form-hint" id="filterSheetMarksHint">Sign in to filter by the gyms you saved or climbed.</p>
+    </fieldset>
+    <fieldset class="filter-section" id="filterSheetHours" hidden>
+      <legend class="section-label">Hours</legend>
+      <label class="check-row"><input type="checkbox" data-sheet-flag="open">Open now</label>
     </fieldset>
     <fieldset class="filter-section" id="filterSheetPhotos">
       <legend class="section-label">Photos</legend>
