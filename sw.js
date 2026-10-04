@@ -31,7 +31,9 @@
 // v29: metroOf memo; fewer gym-page re-renders.
 // v31: [hidden] always hides (base.css); "A newer Bouldeer is ready" prompt (sw-register.js, utils.js, main.js); open now + today's
 //      hours in discovery (hours.js).
-const CACHE_VERSION = 'v32';
+// v32: desktop chip row wraps in the list pane (explore.css).
+// v33: update prompt copy "Bouldeer has finished a climb, please refresh the page" (main.js).
+const CACHE_VERSION = 'v33';
 const SHELL_CACHE = 'climbatlas-shell-' + CACHE_VERSION;
 const RUNTIME_CACHE = 'climbatlas-runtime-' + CACHE_VERSION;
 const TILE_CACHE = 'climbatlas-tiles-' + CACHE_VERSION;
