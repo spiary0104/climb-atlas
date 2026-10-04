@@ -8,10 +8,10 @@
  },
  "staged_batches_compared": [],
  "counts": {
-  "records": 66,
+  "records": 67,
   "new": 0,
   "existing": 0,
-  "update": 59,
+  "update": 60,
   "probable-duplicate": 0,
   "invalid": 0,
   "rejected": 0,
@@ -24,7 +24,7 @@
  "importable": true,
  "blockers": [],
  "unused_decisions": [],
- "plan_sha256": "338cbd570dc81f48ccdb56ed3ea120f4eddf10bcc1550ad64092851b8d3fded6",
+ "plan_sha256": "4bb7f3a5b695752addfbdac0c9aa6163eb2cd7eaa826c48543789abea41622fc",
  "records": [
   {
    "line": 1,
@@ -1569,6 +1569,33 @@
   },
   {
    "line": 60,
+   "class": "update",
+   "id": "seed-86",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://g1climbing.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "6am–10pm",
+      "tue": "6am–10pm",
+      "wed": "6am–10pm",
+      "thu": "6am–10pm",
+      "fri": "6am–10pm",
+      "sat": "8am–8pm",
+      "sun": "8am–8pm"
+     }
+    }
+   ],
+   "expect_h": "3590553be2d6b379",
+   "update_reason": "Official website and weekly opening hours from the gym's own site (read by the owner 2026-10-04; the site blocks automated clients)"
+  },
+  {
+   "line": 61,
    "class": "retire",
    "id": "seed-32",
    "name": "Hardrock Climbing Company",
@@ -1593,7 +1620,7 @@
    }
   },
   {
-   "line": 61,
+   "line": 62,
    "class": "retire",
    "id": "seed-81",
    "name": "Denver Bouldering Club",
@@ -1617,7 +1644,7 @@
    }
   },
   {
-   "line": 62,
+   "line": 63,
    "class": "retire",
    "id": "seed-82",
    "name": "Denver Bouldering Club North",
@@ -1641,7 +1668,7 @@
    }
   },
   {
-   "line": 63,
+   "line": 64,
    "class": "retire",
    "id": "seed-83",
    "name": "Denver Bouldering Club South",
@@ -1665,7 +1692,7 @@
    }
   },
   {
-   "line": 64,
+   "line": 65,
    "class": "retire",
    "id": "seed-401",
    "name": "Solid Rock Gym",
@@ -1690,7 +1717,7 @@
    }
   },
   {
-   "line": 65,
+   "line": 66,
    "class": "retire",
    "id": "seed-227",
    "name": "The Rock Health and Fitness",
@@ -1715,7 +1742,7 @@
    }
   },
   {
-   "line": 66,
+   "line": 67,
    "class": "retire",
    "id": "seed-228",
    "name": "The Wall at Palisades",
