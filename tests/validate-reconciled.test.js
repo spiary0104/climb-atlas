@@ -32,7 +32,11 @@ const failedNames = r => r.results.filter(x => !x.ok).map(x => x.name.split('.')
 test('precondition: the committed index is the post-import index (2,127 gyms incl. the 246 imported ids, later verified batches looked through)', () => {
   // Later verified insert batches (e.g. regional research) grow the index; looking through them (history.js) must give the 2,127.
   assert.ok(index.entries.length >= 2127); assert.equal(liveRows(index).length, 2127); assert.equal(NEW_IDS.size, 246);
-  assert.ok([...NEW_IDS].every(id => index.byId.has(id)));
+  // A first-import gym may since have been retired by a verified maintenance batch (closed / duplicate); looking through the
+  // later batches restores it exactly as recorded, so every one of the 246 is there -- and nothing else may have removed one.
+  const pre = H.revertIndex(index);
+  assert.ok([...NEW_IDS].every(id => pre.byId.has(id)), 'every imported gym is in the index once later verified batches are looked through');
+  assert.ok([...NEW_IDS].every(id => index.byId.has(id) || pre.restoredRetired.includes(id)), 'a missing imported gym was retired by a verified batch');
   assert.equal(REAL_MANIFEST.valid, true);
 });
 
