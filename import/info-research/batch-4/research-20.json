@@ -1,0 +1,726 @@
+[
+ {
+  "id": "seed-418",
+  "name": "BOULDERING GYM CAL-COLO UMEDA",
+  "metro": "Osaka",
+  "expect_h": "925dcd0b756ae818",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [],
+  "status": "not-found",
+  "notes": "No official site for the Umeda gym found. cal-colo.com is the sister gym in Kizugawa (Kyoto), not Umeda; no Umeda page on it. Third-party listings ignored."
+ },
+ {
+  "id": "seed-414",
+  "name": "Bouldering Gym Roca",
+  "metro": "Osaka",
+  "expect_h": "ada5945b52de3702",
+  "website": "https://roca-gym.com/",
+  "hours": {
+   "mon": "12pm–10pm",
+   "tue": "12pm–10pm",
+   "wed": "12pm–10pm",
+   "thu": "12pm–10pm",
+   "fri": "12pm–10pm",
+   "sat": "10am–10pm",
+   "sun": "10am–10pm"
+  },
+  "day_pass": "¥2,200 adult, student ¥550 off",
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://roca-gym.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://roca-gym.com/price/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Address 3-1-22 Kyutaromachi (OSK Bldg 5F) matches. Weekday 12:00-22:00, Sat/Sun/holidays 10:00-22:00; closed only at New Year. Student discount stated as 550 yen off (elementary to university)."
+ },
+ {
+  "id": "seed-416",
+  "name": "City Rock Gym Osaka Branch",
+  "metro": "Osaka",
+  "expect_h": "1e80ce5ff6c2ccd8",
+  "website": "https://cityrockgym.com/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "10am–8pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": "¥2,500 adult all-day, ¥1,900 after 5pm",
+  "facilities": [
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://cityrockgym.com/access/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://cityrockgym.com/price/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   },
+   {
+    "url": "https://cityrockgym.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Osaka Juso address matches. Hours from the Osaka section of /access/ (weekday 10-22, Sat/Sun/holiday 10-20, no regular holiday, occasional temporary closures). Price page is shared with the Nara gym (single visitor table, 2,500 yen all-day); location page /osaka/ is 404. Shoe hire/shop not claimed (chain-wide pages only). Parking ~10 spaces next to building."
+ },
+ {
+  "id": "seed-417",
+  "name": "Climbing Gym TOBITO",
+  "metro": "Osaka",
+  "expect_h": "bc586ec6ff872242",
+  "website": "https://tobito.jp/",
+  "hours": {
+   "mon": "2pm–12am",
+   "tue": "10am–12am",
+   "wed": "10am–12am",
+   "thu": "10am–12am",
+   "fri": "10am–12am",
+   "sat": "12pm–12am",
+   "sun": "12pm–12am"
+  },
+  "day_pass": "¥3,000 adult visitor, ¥2,200 adult member",
+  "facilities": [
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://tobito.jp/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://tobito.jp/starterpack/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Prices read from the rates images on the home page (visitor: 1 day 3,000, no registration; member: 1 day 2,200, registration 1,000). Hours: Mon 14-24, Tue-Fri 10-24, Sat/Sun/holidays 12-24; 2 irregular closure days per month (usually month end). Shoe rental is part of the Starter Pack; kids via Youth page and kids hour/school."
+ },
+ {
+  "id": "g-cd08f3a8c3",
+  "name": "D.Bouldering Plus Lead Namba",
+  "metro": "Osaka",
+  "expect_h": "bc6b5c9c31f2892e",
+  "website": "https://www.d-b-c.jp/top/namba/",
+  "hours": {
+   "mon": "10am–11pm",
+   "tue": "10am–11pm",
+   "wed": "10am–11pm",
+   "thu": "10am–11pm",
+   "fri": "10am–11pm",
+   "sat": "10am–9pm",
+   "sun": "10am–9pm"
+  },
+  "day_pass": "¥2,300 adult weekday, ¥2,400 weekends/holidays",
+  "facilities": [
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.d-b-c.jp/top/namba/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Weekday 10-23, Sat/Sun/holidays 10-21, open all year. Visitor prices: adult all-day 2,300 weekday / 2,400 weekend. Kids-only area stated (age 2+), rental shoes 550 yen. Partner parking is only linked, so parking not claimed."
+ },
+ {
+  "id": "seed-436",
+  "name": "Gravity Research Kobe",
+  "metro": "Osaka",
+  "expect_h": "54d3c6720055cf8a",
+  "website": "https://www.gravity-research.jp/shop/mintkobe/",
+  "hours": null,
+  "day_pass": "¥2,100 adult all-day, ¥1,800 for 120 min",
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.gravity-research.jp/shop/mintkobe/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours are seasonal (Mar-Nov: weekday 14:00-22:00, Sat/Sun/holidays 10:00-18:00; Dec-Feb: weekday 11:00-20:00, weekend 11:00-18:30; closed Thursdays and in bad weather), so left null. Paid parking only."
+ },
+ {
+  "id": "seed-415",
+  "name": "GRAVITY RESEARCH UMEDA",
+  "metro": "Osaka",
+  "expect_h": "3561c33c9c10ee17",
+  "website": "https://www.gravity-research.jp/shop/umeda/",
+  "hours": {
+   "mon": "10am–11pm",
+   "tue": "10am–11pm",
+   "wed": "10am–11pm",
+   "thu": "10am–11pm",
+   "fri": "10am–11pm",
+   "sat": "10am–11pm",
+   "sun": "10am–10pm"
+  },
+  "day_pass": "¥2,100 adult all-day, ¥1,800 for 120 min",
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.gravity-research.jp/shop/umeda/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Page text: Mon-Sat 10:00-23:00, Sun/holidays 10:00-22:00. Free-time adult price 2,100 yen. Parking listed as paid parking, not claimed."
+ },
+ {
+  "id": "seed-437",
+  "name": "WAGOMU Climbing Gym",
+  "metro": "Osaka",
+  "expect_h": "d7507860bdf0c981",
+  "website": "https://outdoorlab.happy-osekkai.com/wagomu",
+  "hours": {
+   "mon": "10am–10:30pm",
+   "tue": "10am–10:30pm",
+   "wed": "10am–10:30pm",
+   "thu": "10am–10:30pm",
+   "fri": "10am–10:30pm",
+   "sat": "6am–10:30pm",
+   "sun": "6am–9:30pm"
+  },
+  "day_pass": null,
+  "facilities": [
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://outdoorlab.happy-osekkai.com/wagomu",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Gym domain wagomu.jp no longer resolves (DNS fails), so used the operator (Happy / OUTDOOR LAB) official page for WAGOMU. Hours: weekday 10:00-22:30, Sat 6:00-22:30, Sun/holidays 6:00-21:30, irregular closures. Page lists only student/child fees (no adult price) so day_pass null. Page also mentions a coffee break space, not claimed as cafe."
+ },
+ {
+  "id": "seed-420",
+  "name": "CAIRN Climbing Gym",
+  "metro": "Kyoto",
+  "expect_h": "15c3d37ea4cf05d9",
+  "website": "http://www.cairn-climbinggym.com/",
+  "hours": {
+   "mon": "1pm–11pm",
+   "tue": "1pm–11pm",
+   "wed": "1pm–11pm",
+   "thu": "1pm–11pm",
+   "fri": "1pm–11pm",
+   "sat": "1pm–11pm",
+   "sun": "1pm–11pm"
+  },
+  "day_pass": "¥2,200 adult, ¥1,370 high school/university",
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "http://www.cairn-climbinggym.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Site only reachable over http (https fails). Hours 13:00-23:00, irregular closures on days containing a 1 (1st, 11th, 21st, 31st). Address matches (Furukawa Bldg). Ladies day Tue/Fri 1,100."
+ },
+ {
+  "id": "seed-419",
+  "name": "Climbing Gym Adsummum",
+  "metro": "Kyoto",
+  "expect_h": "c650e40310a3f89f",
+  "website": "https://fine-works.cc/adsummum/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "10am–10pm",
+   "sun": "10am–10pm"
+  },
+  "day_pass": "¥2,200 adult, ¥1,700 university student",
+  "facilities": [
+   "shoe-hire",
+   "kids",
+   "shop"
+  ],
+  "sources": [
+   {
+    "url": "https://fine-works.cc/adsummum/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "http://fine-works.cc/adsummum/contents/useguide.php",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "http://fine-works.cc/adsummum/contents/floorguide.php",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "http://fine-works.cc/adsummum/contents/kidsschool.html",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Shinkyogoku store (Kyogoku 72 Bldg 3F, Nakasujicho 490) matches. Open 10:00-22:00 every day except New Year. Price is the member 1-day ticket (registration 1,500 first time). Shop area listed on floor guide; kids school page; shoe rental 300 yen."
+ },
+ {
+  "id": "g-6b181d6d0a",
+  "name": "D.Bouldering Plus Matsui-Yamate",
+  "metro": "Kyoto",
+  "expect_h": "d7c722202ddd42ad",
+  "website": "https://www.d-b-c.jp/top/matsui-yamate/",
+  "hours": {
+   "mon": "1pm–10pm",
+   "tue": "1pm–10pm",
+   "wed": "1pm–10pm",
+   "thu": "1pm–10pm",
+   "fri": "1pm–10pm",
+   "sat": "10am–9pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": "¥2,300 adult weekday, ¥2,400 weekends/holidays",
+  "facilities": [
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.d-b-c.jp/top/matsui-yamate/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.d-b-c.jp/top/matsui-yamate/price/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours shown as walk-in reception hours with last orders (weekday 13:00-22:00 LO 21:00, Sat 10:00-21:00 LO 20:00, Sun/holidays 10:00-20:00 LO 19:00); used the range ends. Kids-only area (age 4+), kids park on price page."
+ },
+ {
+  "id": "g-ca0e9a7f2b",
+  "name": "GRAVITY RESEARCH Sanga Stadium by KYOCERA",
+  "metro": "Kyoto",
+  "expect_h": "937e756d33ff7e00",
+  "website": "https://www.gravity-research.jp/shop/kyoto/",
+  "hours": {
+   "mon": "Closed",
+   "tue": "1:30pm–10pm",
+   "wed": "1:30pm–10pm",
+   "thu": "1:30pm–10pm",
+   "fri": "1:30pm–10pm",
+   "sat": "9:30am–6pm",
+   "sun": "9:30am–6pm"
+  },
+  "day_pass": "¥2,100 adult all-day, ¥1,100 for 60 min",
+  "facilities": [
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.gravity-research.jp/shop/kyoto/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Page: weekday 13:30-22:00, Sat/Sun/holidays 9:30-18:00, closed Mondays per business calendar. Kids area (grades 1-6) and rental shoes 400 yen stated. Parking is paid, not claimed."
+ },
+ {
+  "id": "seed-421",
+  "name": "Ignis Climbing Gym",
+  "metro": "Kyoto",
+  "expect_h": "47702c58a3b5966a",
+  "website": "https://www.ignis-jp.com/",
+  "hours": {
+   "mon": "Closed",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "10am–8pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": null,
+  "facilities": null,
+  "sources": [
+   {
+    "url": "https://www.ignis-jp.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Closed Mondays (open if public holiday) and New Year. Prices only in an image/booking widget (price revision from 2026-08-01 announced), so day_pass null. Parking: bicycles only."
+ },
+ {
+  "id": "seed-422",
+  "name": "Kyoto Bouldering Park Roches Momoyama",
+  "metro": "Kyoto",
+  "expect_h": "dfed6e166fc331d6",
+  "website": "https://bouldering-climbing.kyoto/",
+  "hours": {
+   "mon": "6pm–11pm",
+   "tue": "2:30pm–11pm",
+   "wed": "2:30pm–11pm",
+   "thu": "2:30pm–11pm",
+   "fri": "2:30pm–11pm",
+   "sat": "10am–11pm",
+   "sun": "10am–11pm"
+  },
+  "day_pass": "¥2,100 adult daily max (¥800 per 60 min)",
+  "facilities": [
+   "shoe-hire",
+   "kids",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://bouldering-climbing.kyoto/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Site name Roche Momoyama (Kyoto Bouldering Park). Hourly pricing: first visit adult 2,500 all-day; later 800 per 60 min, 300 per 30 min, daily max 2,100. Hours: Mon 18-23, Tue-Fri 14:30-23, Sat/Sun/holidays 10-23. Parking: 2 kei-car spaces in front (200 yen/3h). Kids wall stated."
+ },
+ {
+  "id": "seed-440",
+  "name": "BOLZ",
+  "metro": "Sendai",
+  "expect_h": "f3277e2c4c7a32b5",
+  "website": "https://bolz-climb.com/",
+  "hours": {
+   "mon": "2pm–10pm",
+   "tue": "2pm–10pm",
+   "wed": "Closed",
+   "thu": "2pm–10pm",
+   "fri": "2pm–10pm",
+   "sat": "10am–8pm",
+   "sun": "10am–6pm"
+  },
+  "day_pass": "¥2,000 adult weekday, ¥2,500 weekends/holidays",
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://bolz-climb.com/price/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours text: weekday 14-22, Sat/holidays 10-20, Sun 10-18, closed Wednesdays (and a Wed holiday). Prices read from the price-table image (visitor, no sign-up: adult all-day 2,000 weekday / 2,500 weekend; members 1,600/1,800). Rental shoes 300 yen (image)."
+ },
+ {
+  "id": "seed-439",
+  "name": "Climbing & Bouldering Zi;BOX",
+  "metro": "Sendai",
+  "expect_h": "2f91e289c48468aa",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [],
+  "status": "flag",
+  "notes": "Official domain zi-box.net now serves an unrelated betting-prediction site (fetched 2026-10-04); a search result reports the gym closed on 2021-12-30 (not verified on an official page). Likely permanently closed."
+ },
+ {
+  "id": "seed-441",
+  "name": "Climbing Gym B'nuts",
+  "metro": "Sendai",
+  "expect_h": "17d04acd6a131de6",
+  "website": "http://www.youyoukan.jp/gym/bnutsindex.html",
+  "hours": {
+   "mon": "12pm–10pm",
+   "tue": "Closed",
+   "wed": "12pm–10pm",
+   "thu": "12pm–10pm",
+   "fri": "12pm–10pm",
+   "sat": "10am–6pm",
+   "sun": "10am–6pm"
+  },
+  "day_pass": "¥2,600 adult visitor, ¥1,900 adult member",
+  "facilities": [
+   "shoe-hire",
+   "shop"
+  ],
+  "sources": [
+   {
+    "url": "http://www.youyoukan.jp/gym/bnutsindex.html",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "http://www.youyoukan.jp/gym/ryoukin.html",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "http://www.youyoukan.jp/gym/shop.html",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Site only reachable over http. Info block: weekday 12:00-22:00, Sat/Sun/holidays 10:00-18:00, Tuesday closed (next day if Tuesday is a holiday), other irregular closures. No contracted parking. Member price needs 1,100 registration; weekday daytime discounts exist."
+ },
+ {
+  "id": "g-f2df7534fa",
+  "name": "D.Bouldering Sendai Nagamachi",
+  "metro": "Sendai",
+  "expect_h": "782f6b2672333d28",
+  "website": "https://www.d-b-c.jp/top/sendai/",
+  "hours": {
+   "mon": "10am–11pm",
+   "tue": "10am–11pm",
+   "wed": "10am–11pm",
+   "thu": "10am–11pm",
+   "fri": "10am–11pm",
+   "sat": "10am–9pm",
+   "sun": "10am–9pm"
+  },
+  "day_pass": "¥2,090 adult weekday, ¥2,420 weekends/holidays",
+  "facilities": [
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.d-b-c.jp/top/sendai/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Sendai Nagamachi page (The Mall Sendai Nagamachi, 7-20-3 Nagamachi). Weekday 10-23, Sat/Sun/holidays 10-21; stated irregular holidays. Adult walk-in all-day prices. Kids-only area (age 2+). Parking section exists but content unclear, not claimed."
+ },
+ {
+  "id": "seed-442",
+  "name": "Moment Izumi",
+  "metro": "Sendai",
+  "expect_h": "6cddbe972f983c12",
+  "website": "http://moment-climb.jp/",
+  "hours": {
+   "mon": "2pm–10pm",
+   "tue": "2pm–10pm",
+   "wed": "2pm–10pm",
+   "thu": "Closed",
+   "fri": "2pm–10pm",
+   "sat": "10am–6pm",
+   "sun": "10am–6pm"
+  },
+  "day_pass": "¥2,530 adult visitor, ¥1,980 adult member",
+  "facilities": [
+   "shoe-hire",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "http://moment-climb.jp/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "http://moment-climb.jp/?cat=7",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "http://moment-climb.jp/?cat=6",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "http://moment-climb.jp/?cat=3",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Site only reachable over http. Izumi store (3-2-18 Shogun) matches. Closed Thursdays (open 10-18 if holiday). Member price needs 1,100 registration. Parking for 10+ cars."
+ },
+ {
+  "id": "seed-438",
+  "name": "STONER GYM",
+  "metro": "Sendai",
+  "expect_h": "02d05213bd2200f5",
+  "website": "https://www.stonergym-sendai.jp/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "10am–8pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": "¥2,400 adult, ¥2,000 student",
+  "facilities": [
+   "shoe-hire",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://www.stonergym-sendai.jp/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Weekday 10-22, Sat/Sun/holidays 10-20, irregular holidays. All-time ticket; registration 1,000. Parking up to 10 in front plus 2 in second lot."
+ }
+]

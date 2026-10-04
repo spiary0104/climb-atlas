@@ -1,0 +1,865 @@
+[
+ {
+  "id": "seed-961",
+  "name": "Bambule Kletterhalle",
+  "metro": "Nuremberg",
+  "expect_h": "b578a382931edffe",
+  "website": "https://bambule-kletterhalle.de/",
+  "hours": null,
+  "day_pass": "€18 adult, €16.50 reduced (bouldering included)",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://bambule-kletterhalle.de/info/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://bambule-kletterhalle.de/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours not set: site states Mon-Fri 10:00-22:30 but Sat/Sun as \"09:00-21:00/21:30\" without saying which day closes at which time. Day pass is Tageskarte (climbing + bouldering); Boulderkarte only is EUR 9.50. Moonboard included in entry. Address Industriestrasse 21a, 90441 Nuernberg."
+ },
+ {
+  "id": "seed-967",
+  "name": "Blockhelden Boulderhalle Erlangen",
+  "metro": "Nuremberg",
+  "expect_h": "b2c20d5f743de8de",
+  "website": "https://blockhelden.de/boulderhalle-erlangen/",
+  "hours": {
+   "mon": "9am–11pm",
+   "tue": "9am–11pm",
+   "wed": "9am–11pm",
+   "thu": "9am–11pm",
+   "fri": "9am–11pm",
+   "sat": "9am–11pm",
+   "sun": "9am–11pm"
+  },
+  "day_pass": "€15 adult, €13 reduced",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "yoga",
+   "shop"
+  ],
+  "sources": [
+   {
+    "url": "https://blockhelden.de/boulderhalle-erlangen/dein-besuch-bei-den-blockhelden-erlangen/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://blockhelden.de/boulderhalle-erlangen/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Operator footer gives Kurt-Albert-Strasse 1, 91088 Bubenreuth (next to Erlangen); name matches. Shop = Mountain Shop Frankenjura listed on the page; yoga = Yoga/Pilates/Fitnesskurse; cafe = Bistro; training = Kraftraum."
+ },
+ {
+  "id": "seed-978",
+  "name": "Boulderhalle E4",
+  "metro": "Nuremberg",
+  "expect_h": "3ef2626eca8a6aff",
+  "website": "https://www.boulderhalle-e4.de/",
+  "hours": {
+   "mon": "9am–11pm",
+   "tue": "9am–11pm",
+   "wed": "9am–11pm",
+   "thu": "9am–11pm",
+   "fri": "8am–11pm",
+   "sat": "8am–11pm",
+   "sun": "8am–11pm"
+  },
+  "day_pass": "€14 adult, €11 reduced",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "yoga",
+   "shop",
+   "showers"
+  ],
+  "sources": [
+   {
+    "url": "https://www.boulderhalle-e4.de/oeffnungszeiten-preise/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.boulderhalle-e4.de/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.boulderhalle-e4.de/trainingsbereiche-bouldern-klettern/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.boulderhalle-e4.de/faqs/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Address Allersberger Str. 185 matches. Showers per FAQ page; yoga per homepage (rooms for birthdays, yoga); shop and Bistro on homepage. Open 364 days; holiday exceptions ignored."
+ },
+ {
+  "id": "seed-993",
+  "name": "Café Kraft",
+  "metro": "Nuremberg",
+  "expect_h": "580685c8d0d5d9d4",
+  "website": "https://www.cafekraft.de/",
+  "hours": {
+   "mon": "9am–11pm",
+   "tue": "9am–11pm",
+   "wed": "9am–11pm",
+   "thu": "9am–11pm",
+   "fri": "9am–11pm",
+   "sat": "9am–10pm",
+   "sun": "9am–10pm"
+  },
+  "day_pass": "€14 adult, €12 reduced",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "shop"
+  ],
+  "sources": [
+   {
+    "url": "https://www.cafekraft.de/anfahrtoeffnungszeiten",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.cafekraft.de/preise",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.cafekraft.de/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Address Gebertstrasse 9, 90411 Nuernberg (now part of the steinbock/urban apes group). Facilities from site nav (Cafe, Shop, Trainingsbereich, MoonBoard, Kindergeburtstage, Kinderkurse) and rental price list (Leihschuhe)."
+ },
+ {
+  "id": "seed-994",
+  "name": "Climbing Factory",
+  "metro": "Nuremberg",
+  "expect_h": "5d3ff3bf03b138a3",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [],
+  "status": "not-found",
+  "notes": "Official domain climbing-factory.de is not usable: http serves an \"under construction\" placeholder and https returns 502 Bad Gateway (hosting-provider certificate), so no official page could be read. Third-party snippets for hours/prices not used. Gym appears to still operate (Fahrradstrasse 58, 90429 Nuernberg) per third-party listings; re-check later."
+ },
+ {
+  "id": "seed-995",
+  "name": "DAV Boulderzentrum Erlangen",
+  "metro": "Nuremberg",
+  "expect_h": "01715638fcfb9247",
+  "website": "https://www.alpenverein-erlangen.de/kletteranlagen/dav-boulderzentrum-erlangen/",
+  "hours": {
+   "mon": "7am–11pm",
+   "tue": "7am–11pm",
+   "wed": "7am–11pm",
+   "thu": "7am–11pm",
+   "fri": "7am–11pm",
+   "sat": "7am–11pm",
+   "sun": "7am–11pm"
+  },
+  "day_pass": "€13 adult guest, €9 DAV Erlangen member",
+  "facilities": [
+   "training",
+   "showers"
+  ],
+  "sources": [
+   {
+    "url": "https://www.alpenverein-erlangen.de/kletteranlagen/dav-boulderzentrum-erlangen/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.alpenverein-erlangen.de/kletteranlagen/dav-boulderzentrum-erlangen/tickets-und-eintritt/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "day_pass"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Unstaffed site with ticket/scanner access 7:00-23:00 daily (not 24/7); open to non-members, day tickets via online shop only. Guest reduced EUR 11; other-DAV-section members EUR 11.50. Showers/changing rooms are in the adjoining sports hall. Address Helene-Richter-Strasse 5, 91052 Erlangen. Training = Kilter Board and training area."
+ },
+ {
+  "id": "seed-997",
+  "name": "DAV Kletter- und Vereinszentrum Erlangen",
+  "metro": "Nuremberg",
+  "expect_h": "565edf71ef0f7afe",
+  "website": "https://www.kletter-und-vereinszentrum.de/",
+  "hours": {
+   "mon": "12pm–11pm",
+   "tue": "9am–11pm",
+   "wed": "9am–11pm",
+   "thu": "9am–11pm",
+   "fri": "9am–11pm",
+   "sat": "9am–9pm",
+   "sun": "9am–9pm"
+  },
+  "day_pass": "€17.80 adult guest, €13.50 DAV Erlangen member",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "yoga"
+  ],
+  "sources": [
+   {
+    "url": "https://www.kletter-und-vereinszentrum.de/auf-einen-blick/preise-oeffnungszeiten/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass"
+    ]
+   },
+   {
+    "url": "https://www.kletter-und-vereinszentrum.de/auf-einen-blick/was-wir-dir-bieten/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.kletter-und-vereinszentrum.de/klettern/ausruestung/ausruestung-ausleihen/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "This is the DAV Sparkassen Bergwelt, Hartmannstrasse 116, 91052 Erlangen. Site says it may close early on quiet evenings. Cheapest Einzeleintritt with Jahresmarke EUR 7.10; early bird -EUR 2.50 before 14:00 Mon-Fri. Yoga in Mehrzweckraum (Yoga und Sportkurse)."
+ },
+ {
+  "id": "seed-998",
+  "name": "DAV Kletterzentrum Hersbruck",
+  "metro": "Nuremberg",
+  "expect_h": "273bd1619a822522",
+  "website": "https://www.raiffeisenbank-kletterwelt.de/",
+  "hours": null,
+  "day_pass": "€15 adult guest, €11.50 DAV member, €8 Hersbruck section member",
+  "facilities": [
+   "cafe",
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.raiffeisenbank-kletterwelt.de/info-und-service/eintrittspreise",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "day_pass"
+    ]
+   },
+   {
+    "url": "https://www.raiffeisenbank-kletterwelt.de/bistro",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.raiffeisenbank-kletterwelt.de/info-und-service/verleih",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.raiffeisenbank-kletterwelt.de/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours not set: seasonal. Winter (05.10.-30.04.): Mon-Thu 17-22, Fri closed, Sat 14-20, Sun 10-18; Summer (01.05.-04.10.): Mon closed, Tue-Thu 17-22, Fri closed, Sat/Sun only per \"Oeffnungszeiten-Ampel\" (calendar). Bouldering-only entry EUR 8 guest. Kids = Kindergeburtstag, Krabbelklettern, Familienklettern pages. Address Happurger Str. 17, 91217 Hersbruck."
+ },
+ {
+  "id": "seed-1002",
+  "name": "Der Steinbock Nürnberg",
+  "metro": "Nuremberg",
+  "expect_h": "83bd2d62f0900949",
+  "website": "https://www.dersteinbock-nuernberg.de/",
+  "hours": {
+   "mon": "10am–11pm",
+   "tue": "7am–11pm",
+   "wed": "10am–11pm",
+   "thu": "10am–11pm",
+   "fri": "7am–11pm",
+   "sat": "9am–10pm",
+   "sun": "9am–10pm"
+  },
+  "day_pass": "€14.90 adult, €12.90 reduced",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "shop",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://www.dersteinbock-nuernberg.de/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Address Leyherstrasse 54, 90431 Nuernberg matches. Free parking stated. Also has a sauna (not in key list). Student Monday EUR 9.90."
+ },
+ {
+  "id": "seed-1003",
+  "name": "Der Steinbock Zirndorf",
+  "metro": "Nuremberg",
+  "expect_h": "b0ef95a672869546",
+  "website": "https://www.dersteinbock-zirndorf.de/",
+  "hours": {
+   "mon": "2pm–11pm",
+   "tue": "2pm–11pm",
+   "wed": "2pm–11pm",
+   "thu": "2pm–11pm",
+   "fri": "9am–11pm",
+   "sat": "9am–10pm",
+   "sun": "9am–10pm"
+  },
+  "day_pass": "€13.90 adult, €11.90 reduced",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "shop",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://www.dersteinbock-zirndorf.de/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Address Steinweg 9, 90513 Zirndorf. Hours are the \"Regulaer\" (term-time) schedule; school holidays Mon-Thu open 10:00-23:00. Free parking stated."
+ },
+ {
+  "id": "g-91aa548169",
+  "name": "7a+ bouldergym",
+  "metro": "Berlin",
+  "expect_h": "b2eb1644b9f4d445",
+  "website": "https://7aplus.de/",
+  "hours": {
+   "mon": "10am–11pm",
+   "tue": "10am–11pm",
+   "wed": "10am–11pm",
+   "thu": "10am–11pm",
+   "fri": "10am–11pm",
+   "sat": "9am–10pm",
+   "sun": "9am–10pm"
+  },
+  "day_pass": "€13.90 adult, €10.50 reduced",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://7aplus.de/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://7aplus.de/preise/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://7aplus.de/ueber-7a/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Address Gartenstrasse 2, 14482 Potsdam matches. Cafe = small gastronomy area; training = Trainingsbereich mit Campusboard."
+ },
+ {
+  "id": "seed-962",
+  "name": "Basement Boulderstudio",
+  "metro": "Berlin",
+  "expect_h": "c02cdef145549394",
+  "website": "https://www.urbanapes.de/basement/",
+  "hours": {
+   "mon": "8am–11pm",
+   "tue": "8am–11pm",
+   "wed": "8am–11pm",
+   "thu": "8am–11pm",
+   "fri": "8am–11pm",
+   "sat": "10am–10pm",
+   "sun": "10am–10pm"
+  },
+  "day_pass": "€13.90 adult, €11.90 reduced",
+  "facilities": [
+   "training",
+   "kids",
+   "shoe-hire",
+   "showers"
+  ],
+  "sources": [
+   {
+    "url": "https://www.urbanapes.de/basement/preise-zeiten/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass"
+    ]
+   },
+   {
+    "url": "https://www.urbanapes.de/basement/neu-hier/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.urbanapes.de/basement/neu-hier/fitness/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.urbanapes.de/basement/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "flag",
+  "notes": "Renamed/rebranded: now \"urban apes Basement Berlin\" (Stresemannstrasse 72, 10963 Berlin); old site basement-boulderstudio.de not reachable. Seed has no address so match is by name/location only (judgement call). Data supplied for review. Holiday hours same as Sat/Sun."
+ },
+ {
+  "id": "g-ddba9f3487",
+  "name": "Bouldergarten",
+  "metro": "Berlin",
+  "expect_h": "c6dbefd3d9089a98",
+  "website": "https://bouldergarten.de/",
+  "hours": {
+   "mon": "8am–11pm",
+   "tue": "8am–11pm",
+   "wed": "8am–11pm",
+   "thu": "8am–11pm",
+   "fri": "8am–11pm",
+   "sat": "10am–10pm",
+   "sun": "10am–10pm"
+  },
+  "day_pass": "€13.50 adult, €10 reduced",
+  "facilities": [
+   "kids",
+   "shoe-hire",
+   "yoga"
+  ],
+  "sources": [
+   {
+    "url": "https://bouldergarten.de/preise/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://bouldergarten.de/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://bouldergarten.de/garten-studio",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Address Thiemannstr. 1, 12059 Berlin matches. Kids = Kinderwald area; yoga = Yoga&Wellness studio classes. Sauna exists (EUR 8 extra), not in key list."
+ },
+ {
+  "id": "g-03977c72a2",
+  "name": "Boulderklub Kreuzberg",
+  "metro": "Berlin",
+  "expect_h": "8d8c1e5e3c0e76c5",
+  "website": "https://boulderklub.de/",
+  "hours": {
+   "mon": "7am–10pm",
+   "tue": "7am–10pm",
+   "wed": "7am–10pm",
+   "thu": "7am–10pm",
+   "fri": "7am–10pm",
+   "sat": "9am–10pm",
+   "sun": "9am–10pm"
+  },
+  "day_pass": "€13.50 adult, €11 reduced",
+  "facilities": [
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://boulderklub.de/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://boulderklub.de/impressum/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Address Ohlauer Str. 38, 10999 Berlin matches (imprint). Early bird EUR 11 before 15:00 Mon-Fri. Kids = Kinder section / Kinderbereich."
+ },
+ {
+  "id": "seed-1004",
+  "name": "Die Gämse",
+  "metro": "Berlin",
+  "expect_h": "d766a0b75088c1fc",
+  "website": "https://www.diegaemse.de/",
+  "hours": {
+   "mon": "Closed",
+   "tue": "3pm–10pm",
+   "wed": "3pm–10pm",
+   "thu": "3pm–10pm",
+   "fri": "3pm–10pm",
+   "sat": "10am–9pm",
+   "sun": "10am–9pm"
+  },
+  "day_pass": "€11 adult, €9 reduced",
+  "facilities": [
+   "kids",
+   "shoe-hire",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://www.diegaemse.de/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Address Schwartzkopffstr. 6, 15745 Wildau. Adult price is read from the price-table image on the homepage (file dated 2025-01); text version only lists child prices. Herbstferien hours differ (ignored). Parking behind hall (An der Mensa 11)."
+ },
+ {
+  "id": "seed-1045",
+  "name": "Magic Mountain",
+  "metro": "Berlin",
+  "expect_h": "48a56a78592cfa85",
+  "website": "https://www.magicmountain.de/",
+  "hours": {
+   "mon": "10am–11:30pm",
+   "tue": "10am–11:30pm",
+   "wed": "10am–11:30pm",
+   "thu": "9am–11:30pm",
+   "fri": "9am–11:30pm",
+   "sat": "9am–10pm",
+   "sun": "9am–10pm"
+  },
+  "day_pass": "€20 adult, €15 reduced",
+  "facilities": [
+   "training",
+   "kids",
+   "shoe-hire",
+   "showers",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://www.magicmountain.de/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.magicmountain.de/preise/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   },
+   {
+    "url": "https://www.magicmountain.de/faqs/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.magicmountain.de/klettern/kinder-und-familien/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Real address Boettgerstrasse 20, 13357 Berlin (Gesundbrunnen); seed coordinates are generic Berlin centre. Early bird EUR 14 (check-in before 14:00 Mon-Fri). Sauna exists (not in key list)."
+ },
+ {
+  "id": "seed-1052",
+  "name": "Ostbloc Boulderhalle",
+  "metro": "Berlin",
+  "expect_h": "97959f3c8f3146f1",
+  "website": "https://www.ostbloc.de/",
+  "hours": {
+   "mon": "10am–11pm",
+   "tue": "10am–11pm",
+   "wed": "10am–11pm",
+   "thu": "10am–11pm",
+   "fri": "10am–11pm",
+   "sat": "9am–11pm",
+   "sun": "9am–11pm"
+  },
+  "day_pass": "€12 adult, €10 reduced",
+  "facilities": [
+   "kids",
+   "shoe-hire",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://www.ostbloc.de/infos/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.ostbloc.de/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Address Hauptstrasse 13, 10317 Berlin (Lichtenberg); seed coordinates are generic. News post says prices rose EUR 2 from 2026-01-01; Infos table shows EUR 12 (taken as current, judgement call). Kids = Kinderland / Boulderfuehrerschein; parking next to hall."
+ },
+ {
+  "id": "g-1c93e516c3",
+  "name": "South Rock",
+  "metro": "Berlin",
+  "expect_h": "379549fc0765517a",
+  "website": "https://southrock-berlin.de/",
+  "hours": {
+   "mon": "10am–11pm",
+   "tue": "10am–11pm",
+   "wed": "10am–11pm",
+   "thu": "10am–11pm",
+   "fri": "10am–10pm",
+   "sat": "10am–9pm",
+   "sun": "10am–9pm"
+  },
+  "day_pass": "€18.50 adult, €14.50 reduced",
+  "facilities": [
+   "cafe",
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://southrock-berlin.de/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://southrock-berlin.de/besuch/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://southrock-berlin.de/ueberuns/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Address Trachenbergring 85, 12249 Berlin matches. Price table is labelled \"ab dem 01.01.2025\". Sauna included in entry (not in key list). Kids = Kindergeburtstag offer on homepage. Holidays usually 10-21."
+ },
+ {
+  "id": "seed-1061",
+  "name": "Südbloc",
+  "metro": "Berlin",
+  "expect_h": "87232527ad7770cf",
+  "website": "https://www.xn--sdbloc-3ya.de/",
+  "hours": {
+   "mon": "9am–11pm",
+   "tue": "9am–11pm",
+   "wed": "9am–11pm",
+   "thu": "9am–11pm",
+   "fri": "9am–11pm",
+   "sat": "9am–11pm",
+   "sun": "9am–11pm"
+  },
+  "day_pass": "€12 adult, €9 reduced",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "shop",
+   "showers"
+  ],
+  "sources": [
+   {
+    "url": "https://www.xn--sdbloc-3ya.de/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.xn--sdbloc-3ya.de/preise-1/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Domain is the IDN for suedbloc.de (redirects there). Address Grossbeerenstrasse 2-10 Haus 4, 12107 Berlin-Mariendorf. Price page is marked \"Stand: 1.2.2024\" (may be outdated, still the current official page). Shop = climbing shoes/chalk/tape for sale."
+ }
+]

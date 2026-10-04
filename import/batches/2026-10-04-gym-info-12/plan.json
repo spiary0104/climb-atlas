@@ -1,0 +1,1224 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-04-gym-info-12",
+ "index": {
+  "sha256": "19b373023bbb3a6d5de2e5b7f64bfaadc403416dc5fb636a3e5d53970d980efd",
+  "count": 2342,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [],
+ "counts": {
+  "records": 47,
+  "new": 0,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "retire": 47,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 5
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "e75a3401b92798fd8bc9009f303d8cfd78f749ea7cc88d765978795410405cbd",
+ "records": [
+  {
+   "line": 1,
+   "class": "retire",
+   "id": "seed-1082",
+   "name": "Le 8 assure - Paris",
+   "country": "FR",
+   "expect_h": "b1891127e488acb6",
+   "reason_code": "closed",
+   "retire_reason": "Association club training at municipal centres; no public opening or day pass (own FAQ: no trial sessions)",
+   "entry": {
+    "id": "seed-1082",
+    "name": "Le 8 assure - Paris",
+    "country": "FR",
+    "state": "ILE_DE_FRANCE",
+    "suburb": "Paris",
+    "lat": 48.8761255,
+    "lng": 2.3050738,
+    "address": "28 Rue Laure Diebold, 75008 Paris, France",
+    "types": [
+     "indoor-bouldering",
+     "lead-climbing"
+    ],
+    "h": "b1891127e488acb6"
+   }
+  },
+  {
+   "line": 2,
+   "class": "retire",
+   "id": "seed-698",
+   "name": "Banana Climbing (Qincheng Wanxiang Mall)",
+   "country": "CN",
+   "expect_h": "a0755ad67004769a",
+   "reason_code": "duplicate",
+   "retire_reason": "Duplicate of Banana Climbing (Qincheng MixC World): the chain lists one Qincheng location, L501 in the same mall",
+   "duplicate_of": "seed-693",
+   "entry": {
+    "id": "seed-698",
+    "name": "Banana Climbing (Qincheng Wanxiang Mall)",
+    "country": "CN",
+    "state": "WUHAN",
+    "suburb": "Wuchang District, Wuhan",
+    "lat": 30.5910865,
+    "lng": 114.3261939,
+    "address": "L501, Qincheng Wanxiang Mall, Xujiapeng, Wuchang District, Wuhan",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "a0755ad67004769a"
+   },
+   "warnings": [
+    {
+     "code": "duplicate-far-apart",
+     "field": "duplicate_of",
+     "message": "seed-698 and seed-693 are 5719 m apart; check they are the same gym"
+    }
+   ]
+  },
+  {
+   "line": 3,
+   "class": "retire",
+   "id": "seed-636",
+   "name": "Banana Climbing (Dongsheng Xiaoyuehe)",
+   "country": "CN",
+   "expect_h": "bff44223302c11cc",
+   "reason_code": "closed",
+   "retire_reason": "Address (768 Creative Park) matches the Banana location the chain marks as closed",
+   "entry": {
+    "id": "seed-636",
+    "name": "Banana Climbing (Dongsheng Xiaoyuehe)",
+    "country": "CN",
+    "state": "BEIJING",
+    "suburb": "Haidian District, Beijing",
+    "lat": 39.97,
+    "lng": 116.29,
+    "address": "768 Creative Park, Jia 5 Xueyuan Rd, D01-1 South Gate, Haidian District, Beijing",
+    "types": [
+     "indoor-bouldering",
+     "top-rope"
+    ],
+    "h": "bff44223302c11cc"
+   }
+  },
+  {
+   "line": 4,
+   "class": "retire",
+   "id": "seed-49",
+   "name": "BOUNCE Hendra",
+   "country": "AU",
+   "expect_h": "c6634bc6b1b6411e",
+   "reason_code": "closed",
+   "retire_reason": "Not a climbing gym: a trampoline and adventure park with one climbing wall as an attraction",
+   "entry": {
+    "id": "seed-49",
+    "name": "BOUNCE Hendra",
+    "country": "AU",
+    "state": "QLD",
+    "suburb": "Hendra",
+    "lat": -27.4204,
+    "lng": 153.0592,
+    "address": "Office 4, 370 Nudgee Rd, Hendra QLD 4011",
+    "types": [
+     "indoor-bouldering",
+     "top-rope"
+    ],
+    "h": "c6634bc6b1b6411e"
+   }
+  },
+  {
+   "line": 5,
+   "class": "retire",
+   "id": "seed-63",
+   "name": "Rockface",
+   "country": "AU",
+   "expect_h": "5076790c9dd2c692",
+   "reason_code": "closed",
+   "retire_reason": "Official domain rockface.com.au now redirects to an unrelated site; no current presence found",
+   "entry": {
+    "id": "seed-63",
+    "name": "Rockface",
+    "country": "AU",
+    "state": "WA",
+    "suburb": "Balcatta",
+    "lat": -31.8655263,
+    "lng": 115.8047783,
+    "address": "7B Ledgar Rd, Balcatta WA 6021",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "5076790c9dd2c692"
+   }
+  },
+  {
+   "line": 6,
+   "class": "retire",
+   "id": "seed-1524",
+   "name": "Golem Escalada",
+   "country": "AR",
+   "expect_h": "b450fa24e6ef4765",
+   "reason_code": "closed",
+   "retire_reason": "No current presence: the only web source is a news blog last updated 2011",
+   "entry": {
+    "id": "seed-1524",
+    "name": "Golem Escalada",
+    "country": "AR",
+    "state": "BUENOS_AIRES",
+    "suburb": "Avellaneda",
+    "lat": -34.6767474,
+    "lng": -58.3541837,
+    "address": "Coronel Brandsen 2255, Avellaneda, Buenos Aires, Argentina",
+    "types": [
+     "indoor-bouldering",
+     "top-rope"
+    ],
+    "h": "b450fa24e6ef4765"
+   }
+  },
+  {
+   "line": 7,
+   "class": "retire",
+   "id": "seed-66",
+   "name": "Adelaide's Bouldering Club (BoulderZone)",
+   "country": "AU",
+   "expect_h": "8d1ffa7485c97b08",
+   "reason_code": "closed",
+   "retire_reason": "No longer a public gym at this address: now a youth athlete club based at Urban Climb Adelaide",
+   "entry": {
+    "id": "seed-66",
+    "name": "Adelaide's Bouldering Club (BoulderZone)",
+    "country": "AU",
+    "state": "SA",
+    "suburb": "Thebarton",
+    "lat": -34.9134425,
+    "lng": 138.5668994,
+    "address": "10 Ware St, Thebarton SA 5031",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "8d1ffa7485c97b08"
+   }
+  },
+  {
+   "line": 8,
+   "class": "retire",
+   "id": "seed-69",
+   "name": "Beyond Bouldering",
+   "country": "AU",
+   "expect_h": "ac168e7a4fc0e84d",
+   "reason_code": "closed",
+   "retire_reason": "Closed permanently on 10 Jan 2024, per the operator",
+   "entry": {
+    "id": "seed-69",
+    "name": "Beyond Bouldering",
+    "country": "AU",
+    "state": "SA",
+    "suburb": "Clovelly Park",
+    "lat": -35.017,
+    "lng": 138.5658,
+    "address": "1190 South Rd, Clovelly Park SA 5042",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "ac168e7a4fc0e84d"
+   }
+  },
+  {
+   "line": 9,
+   "class": "retire",
+   "id": "seed-1496",
+   "name": "Climb Academy",
+   "country": "BG",
+   "expect_h": "08c528a44b047db2",
+   "reason_code": "duplicate",
+   "retire_reason": "Duplicate of Momentum Climbing Sofia: climbacademy.eu is its kids academy at the same address",
+   "duplicate_of": "seed-1499",
+   "entry": {
+    "id": "seed-1496",
+    "name": "Climb Academy",
+    "country": "BG",
+    "state": "SOFIA_CITY",
+    "suburb": "Sofia",
+    "lat": 42.6682265,
+    "lng": 23.3710644,
+    "address": "Boulevard \"Tsarigradsko shose\" 111в, Sofia, Bulgaria",
+    "types": [
+     "indoor-bouldering",
+     "top-rope"
+    ],
+    "h": "08c528a44b047db2"
+   }
+  },
+  {
+   "line": 10,
+   "class": "retire",
+   "id": "seed-1406",
+   "name": "FABRICA Escalada - Itaim",
+   "country": "BR",
+   "expect_h": "079265f15ed29901",
+   "reason_code": "closed",
+   "retire_reason": "Closed: the operator lists only its Chácara and Vila Madalena units",
+   "entry": {
+    "id": "seed-1406",
+    "name": "FABRICA Escalada - Itaim",
+    "country": "BR",
+    "state": "SAO_PAULO",
+    "suburb": "São Paulo",
+    "lat": -23.5828583,
+    "lng": -46.6739812,
+    "address": "Rua Dr. Renato Paes de Barros 484, São Paulo, Brazil",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "079265f15ed29901"
+   }
+  },
+  {
+   "line": 11,
+   "class": "retire",
+   "id": "g-4b38ee73ee",
+   "name": "Structure Pan d'Escalade",
+   "country": "CH",
+   "expect_h": "3df46f16973d0ea5",
+   "reason_code": "closed",
+   "retire_reason": "Did not reopen on 17 Aug 2026 after an inspection; the gym says it may not reopen",
+   "entry": {
+    "id": "g-4b38ee73ee",
+    "name": "Structure Pan d'Escalade",
+    "country": "CH",
+    "state": "GENEVE",
+    "suburb": "Vernier",
+    "lat": 46.2210352,
+    "lng": 6.0880368,
+    "address": null,
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "3df46f16973d0ea5"
+   }
+  },
+  {
+   "line": 12,
+   "class": "retire",
+   "id": "seed-1456",
+   "name": "Climbing Gym Holešovice",
+   "country": "CZ",
+   "expect_h": "1bdb9104b4ce483d",
+   "reason_code": "closed",
+   "retire_reason": "Closed: reported closed on 31 Dec 2022 for redevelopment; official domain now redirects to an unrelated site",
+   "entry": {
+    "id": "seed-1456",
+    "name": "Climbing Gym Holešovice",
+    "country": "CZ",
+    "state": "PRAHA",
+    "suburb": "Prague",
+    "lat": 50.1061121,
+    "lng": 14.4353907,
+    "address": "Bubenská 1536/43, Praha, Czech Republic",
+    "types": [
+     "indoor-bouldering",
+     "lead-climbing",
+     "top-rope"
+    ],
+    "h": "1bdb9104b4ce483d"
+   }
+  },
+  {
+   "line": 13,
+   "class": "retire",
+   "id": "seed-1249",
+   "name": "Salamandra Boulder Café - Madrid",
+   "country": "ES",
+   "expect_h": "230ab25b4d72c101",
+   "reason_code": "closed",
+   "retire_reason": "Closing permanently: the gym's homepage notice of 12 Sep 2026 says the climbing wall is closing for good",
+   "entry": {
+    "id": "seed-1249",
+    "name": "Salamandra Boulder Café - Madrid",
+    "country": "ES",
+    "state": "MADRID",
+    "suburb": "Madrid",
+    "lat": 40.4342579,
+    "lng": -3.7070182,
+    "address": "Calle de Escosura 5, Madrid, Spain",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "230ab25b4d72c101"
+   }
+  },
+  {
+   "line": 14,
+   "class": "retire",
+   "id": "seed-1020",
+   "name": "HotzenBlock Bouldering",
+   "country": "DE",
+   "expect_h": "6c6e8418e6add259",
+   "reason_code": "duplicate",
+   "retire_reason": "Duplicate of HotzenBlock: one gym (Waldshut-Tiengen) listed twice",
+   "duplicate_of": "seed-1019",
+   "entry": {
+    "id": "seed-1020",
+    "name": "HotzenBlock Bouldering",
+    "country": "DE",
+    "state": "BADEN_WURTTEMBERG",
+    "suburb": "Freiburg",
+    "lat": 48.015,
+    "lng": 7.865,
+    "address": null,
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "6c6e8418e6add259"
+   },
+   "warnings": [
+    {
+     "code": "duplicate-far-apart",
+     "field": "duplicate_of",
+     "message": "seed-1020 and seed-1019 are 669 m apart; check they are the same gym"
+    }
+   ]
+  },
+  {
+   "line": 15,
+   "class": "retire",
+   "id": "seed-1044",
+   "name": "LÖ bloc - die Boulderhalle",
+   "country": "DE",
+   "expect_h": "77c27ef647d48d75",
+   "reason_code": "closed",
+   "retire_reason": "No longer LÖ bloc: the hall at Im Fallberg 6 now runs as BoulderCenter Grenzach-Wyhlen and closes permanently after 31 Oct 2026",
+   "entry": {
+    "id": "seed-1044",
+    "name": "LÖ bloc - die Boulderhalle",
+    "country": "DE",
+    "state": "BADEN_WURTTEMBERG",
+    "suburb": "Freiburg",
+    "lat": 48.02,
+    "lng": 7.87,
+    "address": null,
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "77c27ef647d48d75"
+   }
+  },
+  {
+   "line": 16,
+   "class": "retire",
+   "id": "seed-879",
+   "name": "Parthian Climbing Manchester",
+   "country": "GB",
+   "expect_h": "f83bd08af8c3bcd7",
+   "reason_code": "closed",
+   "retire_reason": "Closed: the operator no longer lists a Manchester centre (its Manchester pages redirect or return 404)",
+   "entry": {
+    "id": "seed-879",
+    "name": "Parthian Climbing Manchester",
+    "country": "GB",
+    "state": "ENGLAND",
+    "suburb": "Greater Manchester",
+    "lat": 53.4808,
+    "lng": -2.2426,
+    "address": null,
+    "types": [
+     "indoor-bouldering",
+     "lead-climbing",
+     "top-rope"
+    ],
+    "h": "f83bd08af8c3bcd7"
+   }
+  },
+  {
+   "line": 17,
+   "class": "retire",
+   "id": "seed-905",
+   "name": "Undercover Rock",
+   "country": "GB",
+   "expect_h": "0b1f09a04c56322d",
+   "reason_code": "duplicate",
+   "retire_reason": "Duplicate of TCA The Church: the same climbing centre in St Werburgh's Church, Mina Road, Bristol",
+   "duplicate_of": "seed-889",
+   "entry": {
+    "id": "seed-905",
+    "name": "Undercover Rock",
+    "country": "GB",
+    "state": "ENGLAND",
+    "suburb": "Bristol",
+    "lat": 51.456,
+    "lng": -2.59,
+    "address": null,
+    "types": [
+     "indoor-bouldering",
+     "lead-climbing",
+     "top-rope"
+    ],
+    "h": "0b1f09a04c56322d"
+   },
+   "warnings": [
+    {
+     "code": "duplicate-far-apart",
+     "field": "duplicate_of",
+     "message": "seed-905 and seed-889 are 564 m apart; check they are the same gym"
+    }
+   ]
+  },
+  {
+   "line": 18,
+   "class": "retire",
+   "id": "seed-944",
+   "name": "Hang On Climbing Centre",
+   "country": "GB",
+   "expect_h": "c08d2c7b1111242a",
+   "reason_code": "closed",
+   "retire_reason": "Closed: the official site says permanently closed as of 14 March",
+   "entry": {
+    "id": "seed-944",
+    "name": "Hang On Climbing Centre",
+    "country": "GB",
+    "state": "SCOTLAND",
+    "suburb": "South Lanarkshire",
+    "lat": 55.778,
+    "lng": -4.0361,
+    "address": null,
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "c08d2c7b1111242a"
+   }
+  },
+  {
+   "line": 19,
+   "class": "retire",
+   "id": "seed-1442",
+   "name": "Epos Filis, Climbing Hall",
+   "country": "GR",
+   "expect_h": "8f1479d7a60f885d",
+   "reason_code": "closed",
+   "retire_reason": "Not a public climbing gym: a mountaineering club with no public opening hours or day entry",
+   "entry": {
+    "id": "seed-1442",
+    "name": "Epos Filis, Climbing Hall",
+    "country": "GR",
+    "state": "ATTICA",
+    "suburb": "Ano Liosia",
+    "lat": 38.0703877,
+    "lng": 23.7074346,
+    "address": "Iktinou 3, Ano Liosia, Greece",
+    "types": [
+     "indoor-bouldering",
+     "top-rope"
+    ],
+    "h": "8f1479d7a60f885d"
+   }
+  },
+  {
+   "line": 20,
+   "class": "retire",
+   "id": "g-4ca135ca76",
+   "name": "Alé Climbing Hyehwa (알레클라이밍 혜화)",
+   "country": "KR",
+   "expect_h": "8879951fe01db0f2",
+   "reason_code": "closed",
+   "retire_reason": "Probably closed: listed as closed (2023-10-24) in the business registry; no current own web presence",
+   "entry": {
+    "id": "g-4ca135ca76",
+    "name": "Alé Climbing Hyehwa (알레클라이밍 혜화)",
+    "country": "KR",
+    "state": "SEOUL",
+    "suburb": "Jongno-gu, Seoul",
+    "lat": 37.584120197028,
+    "lng": 127.000806455966,
+    "address": "서울 종로구 창경궁로34길 18-5",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "8879951fe01db0f2"
+   }
+  },
+  {
+   "line": 21,
+   "class": "retire",
+   "id": "seed-1066",
+   "name": "urban apes Boulderquartier Hamburg",
+   "country": "DE",
+   "expect_h": "e1fb9957b6d15740",
+   "reason_code": "closed",
+   "retire_reason": "No such location: urban apes lists Hamburg Ost, St. Pauli and West, none named Boulderquartier or at this pin",
+   "entry": {
+    "id": "seed-1066",
+    "name": "urban apes Boulderquartier Hamburg",
+    "country": "DE",
+    "state": "HAMBURG",
+    "suburb": "Hamburg",
+    "lat": 53.546,
+    "lng": 9.998,
+    "address": null,
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "e1fb9957b6d15740"
+   }
+  },
+  {
+   "line": 22,
+   "class": "retire",
+   "id": "seed-975",
+   "name": "Bouldercity Dresden",
+   "country": "DE",
+   "expect_h": "be36fab214bcea27",
+   "reason_code": "closed",
+   "retire_reason": "Not a public gym since March 2025: a members-only club hall with no public day entry",
+   "entry": {
+    "id": "seed-975",
+    "name": "Bouldercity Dresden",
+    "country": "DE",
+    "state": "SACHSEN",
+    "suburb": "Dresden",
+    "lat": 51.0504,
+    "lng": 13.7373,
+    "address": null,
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "be36fab214bcea27"
+   }
+  },
+  {
+   "line": 23,
+   "class": "retire",
+   "id": "seed-1364",
+   "name": "HikeandClimb",
+   "country": "IE",
+   "expect_h": "fbb2ec431e38882c",
+   "reason_code": "closed",
+   "retire_reason": "Not a climbing gym: a guiding and course company whose indoor courses run at Awesome Walls Dublin",
+   "entry": {
+    "id": "seed-1364",
+    "name": "HikeandClimb",
+    "country": "IE",
+    "state": "WICKLOW",
+    "suburb": "Bray",
+    "lat": 53.2063172,
+    "lng": -6.1179365,
+    "address": "Upper Dargle Road 6, Bray, Ireland",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "fbb2ec431e38882c"
+   }
+  },
+  {
+   "line": 24,
+   "class": "retire",
+   "id": "seed-1362",
+   "name": "The Wall Climbing Gym",
+   "country": "IE",
+   "expect_h": "f42ac173e0880337",
+   "reason_code": "closed",
+   "retire_reason": "Closed at this location: the site says it has moved (to Bloc Dublin) and shows the gym as closed",
+   "entry": {
+    "id": "seed-1362",
+    "name": "The Wall Climbing Gym",
+    "country": "IE",
+    "state": "DUBLIN",
+    "suburb": "Dublin",
+    "lat": 53.2777488,
+    "lng": -6.2095727,
+    "address": "Arkle Road 5, Dublin, Ireland",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "f42ac173e0880337"
+   }
+  },
+  {
+   "line": 25,
+   "class": "retire",
+   "id": "seed-1595",
+   "name": "Kirono Climbing Gym",
+   "country": "IL",
+   "expect_h": "d04fa485512ea0fe",
+   "reason_code": "closed",
+   "retire_reason": "No current presence: the domain no longer resolves and the wall was reportedly dismantled in 2019",
+   "entry": {
+    "id": "seed-1595",
+    "name": "Kirono Climbing Gym",
+    "country": "IL",
+    "state": "TEL_AVIV",
+    "suburb": "Kiryat Ono",
+    "lat": 32.0529631,
+    "lng": 34.8619806,
+    "address": "6 Ha'zait Street, Kiryat Ono, Israel",
+    "types": [
+     "indoor-bouldering",
+     "lead-climbing",
+     "top-rope"
+    ],
+    "h": "d04fa485512ea0fe"
+   }
+  },
+  {
+   "line": 26,
+   "class": "retire",
+   "id": "seed-1134",
+   "name": "Climbing Side Rome",
+   "country": "IT",
+   "expect_h": "c2f691f003888823",
+   "reason_code": "closed",
+   "retire_reason": "Not a public climbing gym: a coaching/club page with no hours, prices or gym facilities",
+   "entry": {
+    "id": "seed-1134",
+    "name": "Climbing Side Rome",
+    "country": "IT",
+    "state": "LAZIO",
+    "suburb": "Roma",
+    "lat": 41.8163635,
+    "lng": 12.4618273,
+    "address": "Via Cristoforo Colombo 1800, Roma, Italy",
+    "types": [
+     "indoor-bouldering",
+     "top-rope"
+    ],
+    "h": "c2f691f003888823"
+   }
+  },
+  {
+   "line": 27,
+   "class": "retire",
+   "id": "seed-457",
+   "name": "BEAM Toshima Bouldering Studio",
+   "country": "JP",
+   "expect_h": "93119cdcf85f7c4b",
+   "reason_code": "closed",
+   "retire_reason": "Probably closed: the official domain no longer resolves and the studio is listed as closed",
+   "entry": {
+    "id": "seed-457",
+    "name": "BEAM Toshima Bouldering Studio",
+    "country": "JP",
+    "state": "TOKYO",
+    "suburb": "Toshima, Tokyo",
+    "lat": 35.725913,
+    "lng": 139.7166365,
+    "address": "T&T Bldg 1F, 3-36-7 Minami-Otsuka, Toshima City, Tokyo",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "93119cdcf85f7c4b"
+   }
+  },
+  {
+   "line": 28,
+   "class": "retire",
+   "id": "seed-1603",
+   "name": "Bremgra Indoor Climbing Gym",
+   "country": "ID",
+   "expect_h": "5c01d96ae1aee141",
+   "reason_code": "closed",
+   "retire_reason": "Not a climbing gym: a go-kart and rope-course adventure park; no official climbing-gym site",
+   "entry": {
+    "id": "seed-1603",
+    "name": "Bremgra Indoor Climbing Gym",
+    "country": "ID",
+    "state": "BANTEN",
+    "suburb": "Serpong",
+    "lat": -6.3100521,
+    "lng": 106.6615356,
+    "address": "Jalan Raya Cilenggang 123, Serpong, Tangerang Selatan, Banten 15327, Indonesia",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "5c01d96ae1aee141"
+   }
+  },
+  {
+   "line": 29,
+   "class": "retire",
+   "id": "seed-1421",
+   "name": "Climberry",
+   "country": "HU",
+   "expect_h": "576f999d037b3c84",
+   "reason_code": "closed",
+   "retire_reason": "Not a public climbing gym: a children's climbing course school with no open-gym hours or day entry",
+   "entry": {
+    "id": "seed-1421",
+    "name": "Climberry",
+    "country": "HU",
+    "state": "BUDAPEST",
+    "suburb": "Budapest",
+    "lat": 47.4787734,
+    "lng": 19.0283527,
+    "address": "Bocskai út 77-79, Budapest, Hungary",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "576f999d037b3c84"
+   }
+  },
+  {
+   "line": 30,
+   "class": "retire",
+   "id": "g-eb8f7cf4c0",
+   "name": "Olla Climbing Center Gyeongsan",
+   "country": "KR",
+   "expect_h": "8824e6a25f9fdd2a",
+   "reason_code": "duplicate",
+   "retire_reason": "Duplicate of the Olla climbing gym at the same address (56 Hayang-ro, 3F)",
+   "duplicate_of": "seed-1232",
+   "entry": {
+    "id": "g-eb8f7cf4c0",
+    "name": "Olla Climbing Center Gyeongsan",
+    "country": "KR",
+    "state": "GYEONGSANGBUK",
+    "suburb": "Hayang-eup, Gyeongsan",
+    "lat": 35.9150587,
+    "lng": 128.8213976,
+    "address": "3F, 56 Hayang-ro, Hayang-eup, Gyeongsan, Gyeongsangbuk-do, South Korea",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "8824e6a25f9fdd2a"
+   },
+   "warnings": [
+    {
+     "code": "duplicate-far-apart",
+     "field": "duplicate_of",
+     "message": "g-eb8f7cf4c0 and seed-1232 are 776 m apart; check they are the same gym"
+    }
+   ]
+  },
+  {
+   "line": 31,
+   "class": "retire",
+   "id": "seed-1390",
+   "name": "Amanecer Climbing",
+   "country": "MX",
+   "expect_h": "08caa69577f7633d",
+   "reason_code": "closed",
+   "retire_reason": "No current presence: the official domain now serves unrelated online-casino content",
+   "entry": {
+    "id": "seed-1390",
+    "name": "Amanecer Climbing",
+    "country": "MX",
+    "state": "MEXICO",
+    "suburb": "Interlomas",
+    "lat": 19.4015192,
+    "lng": -99.2710477,
+    "address": "Boulevard Interlomas, Huixquilucan, Estado de México, Mexico",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "08caa69577f7633d"
+   }
+  },
+  {
+   "line": 32,
+   "class": "retire",
+   "id": "seed-439",
+   "name": "Climbing & Bouldering Zi;BOX",
+   "country": "JP",
+   "expect_h": "2f91e289c48468aa",
+   "reason_code": "closed",
+   "retire_reason": "Probably closed (reported 30 Dec 2021): the official domain now serves an unrelated betting site",
+   "entry": {
+    "id": "seed-439",
+    "name": "Climbing & Bouldering Zi;BOX",
+    "country": "JP",
+    "state": "MIYAGI",
+    "suburb": "Wakabayashi, Sendai",
+    "lat": 38.2440977,
+    "lng": 140.9006162,
+    "address": "31-1 Hatanaka, Arai, Wakabayashi Ward, Sendai, Miyagi 984-0032",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "2f91e289c48468aa"
+   }
+  },
+  {
+   "line": 33,
+   "class": "retire",
+   "id": "seed-430",
+   "name": "ZEN",
+   "country": "JP",
+   "expect_h": "64ae07b33e669941",
+   "reason_code": "closed",
+   "retire_reason": "Closed: its domain no longer resolves and a different gym (folk bouldering gym) now operates at this address",
+   "entry": {
+    "id": "seed-430",
+    "name": "ZEN",
+    "country": "JP",
+    "state": "KANAGAWA",
+    "suburb": "Kohoku, Yokohama",
+    "lat": 35.5075,
+    "lng": 139.6172,
+    "address": "576-1 Niibacho, Kohoku Ward, Yokohama, Kanagawa",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "64ae07b33e669941"
+   }
+  },
+  {
+   "line": 34,
+   "class": "retire",
+   "id": "g-f456ef9b91",
+   "name": "Climb Lab Butyrskaya",
+   "country": "RU",
+   "expect_h": "500c9d88403a0d97",
+   "reason_code": "duplicate",
+   "retire_reason": "Duplicate of Skalodrom Climb Lab: the same venue at Ogorodny proezd 10 str 6",
+   "duplicate_of": "seed-1490",
+   "entry": {
+    "id": "g-f456ef9b91",
+    "name": "Climb Lab Butyrskaya",
+    "country": "RU",
+    "state": "MOSKVA",
+    "suburb": "Moscow (Butyrskaya)",
+    "lat": 55.8143593,
+    "lng": 37.6048088,
+    "address": "Ogorodny pr-d 10 str. 6, Moscow",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "500c9d88403a0d97"
+   },
+   "warnings": [
+    {
+     "code": "duplicate-far-apart",
+     "field": "duplicate_of",
+     "message": "g-f456ef9b91 and seed-1490 are 856 m apart; check they are the same gym"
+    }
+   ]
+  },
+  {
+   "line": 35,
+   "class": "retire",
+   "id": "seed-1302",
+   "name": "Climbing Centre ON SIGHT",
+   "country": "PL",
+   "expect_h": "1743d49881a8169b",
+   "reason_code": "closed",
+   "retire_reason": "Closed permanently: the official site says the wall stopped operating on 29 April 2026",
+   "entry": {
+    "id": "seed-1302",
+    "name": "Climbing Centre ON SIGHT",
+    "country": "PL",
+    "state": "MAZOWIECKIE",
+    "suburb": "Warszawa",
+    "lat": 52.2481529,
+    "lng": 20.9547021,
+    "address": "Obozowa 60, Warszawa, Poland",
+    "types": [
+     "indoor-bouldering",
+     "lead-climbing",
+     "top-rope"
+    ],
+    "h": "1743d49881a8169b"
+   }
+  },
+  {
+   "line": 36,
+   "class": "retire",
+   "id": "seed-1307",
+   "name": "Stacja Grawitacja Warszawa",
+   "country": "PL",
+   "expect_h": "821b4e1281f02990",
+   "reason_code": "closed",
+   "retire_reason": "Not a climbing gym: a trampoline park whose only climbing is a game wall and a kids wall",
+   "entry": {
+    "id": "seed-1307",
+    "name": "Stacja Grawitacja Warszawa",
+    "country": "PL",
+    "state": "MAZOWIECKIE",
+    "suburb": "Warszawa",
+    "lat": 52.2126147,
+    "lng": 20.9621506,
+    "address": "aleja Bohaterów Września 12, Warszawa, Poland",
+    "types": [
+     "indoor-bouldering",
+     "top-rope"
+    ],
+    "h": "821b4e1281f02990"
+   }
+  },
+  {
+   "line": 37,
+   "class": "retire",
+   "id": "seed-1512",
+   "name": "Urban Peak Wall Climbing Center",
+   "country": "PH",
+   "expect_h": "1cda33ac2d021c31",
+   "reason_code": "closed",
+   "retire_reason": "No current presence: urbanpeak.ph is a parked redirect and the other domain does not respond",
+   "entry": {
+    "id": "seed-1512",
+    "name": "Urban Peak Wall Climbing Center",
+    "country": "PH",
+    "state": "CAVITE",
+    "suburb": "Imus",
+    "lat": 14.4234906,
+    "lng": 120.9399794,
+    "address": "4F Lotus Mall, Nueno Ave, Imus, Cavite, Philippines",
+    "types": [
+     "indoor-bouldering",
+     "top-rope"
+    ],
+    "h": "1cda33ac2d021c31"
+   }
+  },
+  {
+   "line": 38,
+   "class": "retire",
+   "id": "seed-1501",
+   "name": "Wall-Nut / MISA Climbing Systems",
+   "country": "PH",
+   "expect_h": "a702bd3a3993b587",
+   "reason_code": "closed",
+   "retire_reason": "No current presence: wallnut.ph is a closed online store; no gym site",
+   "entry": {
+    "id": "seed-1501",
+    "name": "Wall-Nut / MISA Climbing Systems",
+    "country": "PH",
+    "state": "RIZAL",
+    "suburb": "Antipolo City",
+    "lat": 14.5875901,
+    "lng": 121.1704224,
+    "address": "1 Ninoy Aquino Blvd, Antipolo City, Rizal, Philippines",
+    "types": [
+     "indoor-bouldering",
+     "top-rope"
+    ],
+    "h": "a702bd3a3993b587"
+   }
+  },
+  {
+   "line": 39,
+   "class": "retire",
+   "id": "seed-1504",
+   "name": "Camp Sandugo",
+   "country": "PH",
+   "expect_h": "11ed5a9277698c5e",
+   "reason_code": "closed",
+   "retire_reason": "No current presence: campsandugo.ph is a parked redirect; only old blogs and directories",
+   "entry": {
+    "id": "seed-1504",
+    "name": "Camp Sandugo",
+    "country": "PH",
+    "state": "NCR",
+    "suburb": "Taguig City",
+    "lat": 14.5492886,
+    "lng": 121.0559966,
+    "address": "McKinley Parkway, Bonifacio Global City, 5F Market! Market! Mall, Taguig, Metro Manila, Philippines",
+    "types": [
+     "indoor-bouldering",
+     "top-rope"
+    ],
+    "h": "11ed5a9277698c5e"
+   }
+  },
+  {
+   "line": 40,
+   "class": "retire",
+   "id": "seed-1264",
+   "name": "Rocódromo FCMP Casal Vistoso - Lisboa",
+   "country": "PT",
+   "expect_h": "03782eb83297fd6f",
+   "reason_code": "closed",
+   "retire_reason": "Closed: the operator (FCMP) posted a closure notice for this wall in 2023; no current page",
+   "entry": {
+    "id": "seed-1264",
+    "name": "Rocódromo FCMP Casal Vistoso - Lisboa",
+    "country": "PT",
+    "state": "LISBOA",
+    "suburb": "Lisboa",
+    "lat": 38.742971,
+    "lng": -9.1280887,
+    "address": "Rua João da Silva 16B, Lisboa, Portugal",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "03782eb83297fd6f"
+   }
+  },
+  {
+   "line": 41,
+   "class": "retire",
+   "id": "seed-1754",
+   "name": "Urban Playground Climbing",
+   "country": "TH",
+   "expect_h": "3d24af5a11e7e9fb",
+   "reason_code": "closed",
+   "retire_reason": "No current presence: the official domain no longer resolves and no other official page exists",
+   "entry": {
+    "id": "seed-1754",
+    "name": "Urban Playground Climbing",
+    "country": "TH",
+    "state": "BANGKOK",
+    "suburb": "Khlong Tan Nuea, Watthana",
+    "lat": 13.7254693,
+    "lng": 100.5794153,
+    "address": "8 Sukhumvit 49/9 Alley, Khlong Tan Nuea, Watthana, Bangkok 10110, Thailand",
+    "types": [
+     "indoor-bouldering",
+     "lead-climbing",
+     "top-rope"
+    ],
+    "h": "3d24af5a11e7e9fb"
+   }
+  },
+  {
+   "line": 42,
+   "class": "retire",
+   "id": "seed-110",
+   "name": "Brooklyn Boulders Chicago",
+   "country": "US",
+   "expect_h": "fdbc326fdf9214e3",
+   "reason_code": "closed",
+   "retire_reason": "Closed: Brooklyn Boulders now lists only NYC; its Chicago page returns 404",
+   "entry": {
+    "id": "seed-110",
+    "name": "Brooklyn Boulders Chicago",
+    "country": "US",
+    "state": "IL",
+    "suburb": "West Loop, Chicago",
+    "lat": 41.8800525,
+    "lng": -87.6523684,
+    "address": "100 S Morgan St, Chicago, IL 60607",
+    "types": [
+     "indoor-bouldering",
+     "top-rope"
+    ],
+    "h": "fdbc326fdf9214e3"
+   }
+  },
+  {
+   "line": 43,
+   "class": "retire",
+   "id": "seed-123",
+   "name": "Chicago Bouldering Collective",
+   "country": "US",
+   "expect_h": "45fdda861768fd92",
+   "reason_code": "closed",
+   "retire_reason": "Closed: the official site says CLOSED",
+   "entry": {
+    "id": "seed-123",
+    "name": "Chicago Bouldering Collective",
+    "country": "US",
+    "state": "IL",
+    "suburb": "Chicago",
+    "lat": 41.908,
+    "lng": -87.665,
+    "address": "1907 N Mendell St 4th Floor, Chicago, IL 60647",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "45fdda861768fd92"
+   }
+  },
+  {
+   "line": 44,
+   "class": "retire",
+   "id": "seed-124",
+   "name": "Old Town Indoor Rock Climbing",
+   "country": "US",
+   "expect_h": "4d35b586ef024256",
+   "reason_code": "closed",
+   "retire_reason": "Not a public climbing gym: a climbing wall inside a members-only health club (FFC Old Town)",
+   "entry": {
+    "id": "seed-124",
+    "name": "Old Town Indoor Rock Climbing",
+    "country": "US",
+    "state": "IL",
+    "suburb": "Chicago",
+    "lat": 41.912,
+    "lng": -87.638,
+    "address": null,
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "4d35b586ef024256"
+   }
+  },
+  {
+   "line": 45,
+   "class": "retire",
+   "id": "seed-1611",
+   "name": "Taipei Rock Climbing Gym",
+   "country": "TW",
+   "expect_h": "8e687216b6db7300",
+   "reason_code": "closed",
+   "retire_reason": "Probably obsolete: an old club wall with no official presence; the street's former gym is now MegaSTONE (seed-1608)",
+   "entry": {
+    "id": "seed-1611",
+    "name": "Taipei Rock Climbing Gym",
+    "country": "TW",
+    "state": "TAIPEI",
+    "suburb": "Datong District",
+    "lat": 25.0698499,
+    "lng": 121.52177,
+    "address": "30 Lanchow Street, Datong District, Taipei, Taiwan",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "8e687216b6db7300"
+   }
+  },
+  {
+   "line": 46,
+   "class": "retire",
+   "id": "seed-257",
+   "name": "Double-Diamond Climbing Wall",
+   "country": "US",
+   "expect_h": "17ffb2d196b53cef",
+   "reason_code": "closed",
+   "retire_reason": "Probably discontinued: the operator's Park City site no longer mentions a climbing wall or this address",
+   "entry": {
+    "id": "seed-257",
+    "name": "Double-Diamond Climbing Wall",
+    "country": "US",
+    "state": "UT",
+    "suburb": "Park City",
+    "lat": 40.6461,
+    "lng": -111.498,
+    "address": "6400 N Hwy 224 Suite D, Park City, UT 84098",
+    "types": [
+     "indoor-bouldering",
+     "top-rope"
+    ],
+    "h": "17ffb2d196b53cef"
+   }
+  },
+  {
+   "line": 47,
+   "class": "retire",
+   "id": "seed-158",
+   "name": "Power Spot Climbing",
+   "country": "US",
+   "expect_h": "afec57de16e85179",
+   "reason_code": "closed",
+   "retire_reason": "No current presence: the official domain is a parked page; only directory listings remain",
+   "entry": {
+    "id": "seed-158",
+    "name": "Power Spot Climbing",
+    "country": "US",
+    "state": "TX",
+    "suburb": "Austin",
+    "lat": 30.265,
+    "lng": -97.705,
+    "address": "2823 E MLK Jr Blvd Suite 115, Austin, TX 78702",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "afec57de16e85179"
+   }
+  }
+ ]
+}

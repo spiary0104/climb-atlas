@@ -1,0 +1,609 @@
+[
+ {
+  "id": "g-ac48cd40cf",
+  "name": "Block'Out - Évry",
+  "metro": "Paris",
+  "expect_h": "36d3d71559490615",
+  "website": "https://www.blockout.fr/evry/",
+  "hours": {
+   "mon": "11am–11pm",
+   "tue": "11am–11pm",
+   "wed": "11am–11pm",
+   "thu": "11am–11pm",
+   "fri": "11am–11pm",
+   "sat": "9am–8pm",
+   "sun": "9am–8pm"
+  },
+  "day_pass": "€18 adult, €16 reduced",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.blockout.fr/evry/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.blockout.fr/evry/tarifs-cours/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Site lists 20-22 Rue du Cantal, Lisses (matches). Kilter Board, cardio-musculation, restaurant and bar, Enfants section. Gym is named Evry but is in Lisses."
+ },
+ {
+  "id": "g-6209955eda",
+  "name": "Block'Out - Paris (Saint-Ouen)",
+  "metro": "Paris",
+  "expect_h": "8f56e2c5d33a4197",
+  "website": "https://www.blockout.fr/paris/",
+  "hours": {
+   "mon": "11am–11pm",
+   "tue": "11am–11pm",
+   "wed": "11am–11pm",
+   "thu": "11am–11pm",
+   "fri": "11am–11pm",
+   "sat": "9am–9pm",
+   "sun": "9am–9pm"
+  },
+  "day_pass": "€18 adult, €16 reduced",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "shop"
+  ],
+  "sources": [
+   {
+    "url": "https://www.blockout.fr/paris/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.blockout.fr/paris/tarifs-cours/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.blockout.fr/paris/la-grimpe/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Day pass is the 'La seance' classique/reduit price (valid in all Block'Out gyms except Toulouse/Nantes). Facilities: restaurant and bar, cardio-musculation room, children's area/courses, shoe rental (5 EUR), boutique escalade."
+ },
+ {
+  "id": "g-4c46ac5a73",
+  "name": "Climb Up - Aubervilliers",
+  "metro": "Paris",
+  "expect_h": "63d63427e7eda4be",
+  "website": "https://aubervilliers.climb-up.fr/",
+  "hours": {
+   "mon": "10am–11pm",
+   "tue": "10am–11pm",
+   "wed": "10am–11pm",
+   "thu": "10am–11pm",
+   "fri": "10am–11pm",
+   "sat": "9am–10pm",
+   "sun": "9am–10pm"
+  },
+  "day_pass": "€18 adult, €16 reduced",
+  "facilities": [
+   "cafe",
+   "kids",
+   "shoe-hire",
+   "shop"
+  ],
+  "sources": [
+   {
+    "url": "https://aubervilliers.climb-up.fr/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://aubervilliers.climb-up.fr/la-salle/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://aubervilliers.climb-up.fr/tarifs-escalade/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://logiciel.api.climb-up-gestion.fr/climb-up-aubervilliers/products/7904.json",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   },
+   {
+    "url": "https://logiciel.api.climb-up-gestion.fr/climb-up-aubervilliers/products/7905.json",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Prices are rendered by the gym's own ticketing widget on /tarifs-escalade/ (product ids 7904 adult 18 EUR, 7905 reduced 16 EUR, 7906 child 11 EUR), read from the site's own API. Address: access via 1 quai Lucien Lefranc / 111 avenue Victor Hugo (matches). Pass holders get -10% at the shop; restaurant on site."
+ },
+ {
+  "id": "seed-1081",
+  "name": "Climb Up - Paris Porte d'Italie",
+  "metro": "Paris",
+  "expect_h": "009ebc07079f0c35",
+  "website": "https://paris-portedItalie.climb-up.fr/",
+  "hours": {
+   "mon": "8am–11:30pm",
+   "tue": "8am–11:30pm",
+   "wed": "8am–11:30pm",
+   "thu": "8am–11:30pm",
+   "fri": "8am–11:30pm",
+   "sat": "8am–11pm",
+   "sun": "8am–11pm"
+  },
+  "day_pass": "€18 adult, €16 reduced",
+  "facilities": [
+   "cafe",
+   "kids",
+   "shoe-hire",
+   "shop",
+   "yoga"
+  ],
+  "sources": [
+   {
+    "url": "https://paris-portedItalie.climb-up.fr/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://paris-portedItalie.climb-up.fr/tarifs-escalade/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://logiciel.api.climb-up-gestion.fr/climb-up-paris-portedItalie/products/6506.json",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   },
+   {
+    "url": "https://logiciel.api.climb-up-gestion.fr/climb-up-paris-portedItalie/products/6507.json",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Prices read from the gym's own ticketing API behind the widget on /tarifs-escalade/ (6506 adult 18 EUR, 6507 reduced 16 EUR). Site states yoga space, cafe-bar and light food, children and family activities; shoe hire and shop (-10% for pass holders) on tarifs page."
+ },
+ {
+  "id": "seed-1076",
+  "name": "Climbing District - Bastille",
+  "metro": "Paris",
+  "expect_h": "4ff066e6456c5bd0",
+  "website": "https://climbingdistrict.com/salle-escalade/paris-11-bastille/",
+  "hours": {
+   "mon": "7am–11pm",
+   "tue": "7am–11pm",
+   "wed": "7am–11pm",
+   "thu": "7am–11pm",
+   "fri": "7am–11pm",
+   "sat": "8am–11pm",
+   "sun": "8am–11pm"
+  },
+  "day_pass": "€18 adult, €15 age 4-24",
+  "facilities": [
+   "cafe",
+   "training",
+   "showers",
+   "yoga",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://climbingdistrict.com/salle-escalade/paris-11-bastille/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://climbingdistrict.com/tarifs-et-abonnements/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours from the location page (7h-23h Mon-Fri, 8h-23h Sat-Sun); third-party sources say midnight, ignored. Day pass: 1 entree 18 EUR (24+), 15 EUR (4/24); new-climber first entry 10 EUR; Pass journee 20 EUR includes shoes. Yoga from dojo description. Access from age 11."
+ },
+ {
+  "id": "seed-1077",
+  "name": "Climbing District - Batignolles",
+  "metro": "Paris",
+  "expect_h": "e1c6c306278391c7",
+  "website": "https://climbingdistrict.com/salle-escalade/paris-17-batignolles/",
+  "hours": {
+   "mon": "7am–11pm",
+   "tue": "7am–11pm",
+   "wed": "7am–11pm",
+   "thu": "7am–11pm",
+   "fri": "7am–11pm",
+   "sat": "8am–11pm",
+   "sun": "8am–11pm"
+  },
+  "day_pass": "€18 adult, €15 age 4-24",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "showers",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://climbingdistrict.com/salle-escalade/paris-17-batignolles/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://climbingdistrict.com/tarifs-et-abonnements/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Day pass 1 entree 18 EUR (24+), 15 EUR (4/24); first-time offer 10 EUR; Pass journee 20 EUR includes shoes. Kids: connected wall for children, kids classes, access from age 4."
+ },
+ {
+  "id": "seed-1078",
+  "name": "Climbing District - Buttes-Chaumont",
+  "metro": "Paris",
+  "expect_h": "64a3b24068a657fd",
+  "website": "https://climbingdistrict.com/salle-escalade/paris-19-buttes-chaumont/",
+  "hours": {
+   "mon": "7am–11pm",
+   "tue": "7am–11pm",
+   "wed": "7am–11pm",
+   "thu": "7am–11pm",
+   "fri": "7am–11pm",
+   "sat": "8am–11pm",
+   "sun": "8am–11pm"
+  },
+  "day_pass": "€18 adult, €15 age 4-24",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "showers",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://climbingdistrict.com/salle-escalade/paris-19-buttes-chaumont/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://climbingdistrict.com/tarifs-et-abonnements/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Day pass 1 entree 18 EUR (24+), 15 EUR (4/24); first-time offer 10 EUR; Pass journee 20 EUR includes shoes. Has 'espace enfants'; dojo present but yoga not explicitly stated, so omitted."
+ },
+ {
+  "id": "seed-1079",
+  "name": "Climbing District - Saint-Lazare",
+  "metro": "Paris",
+  "expect_h": "698aedc3aed5eb48",
+  "website": "https://climbingdistrict.com/salle-escalade/paris-8-saint-lazare/",
+  "hours": {
+   "mon": "7am–11pm",
+   "tue": "7am–11pm",
+   "wed": "7am–11pm",
+   "thu": "7am–11pm",
+   "fri": "7am–11pm",
+   "sat": "8am–11pm",
+   "sun": "8am–11pm"
+  },
+  "day_pass": "€18 adult, €15 age 4-24",
+  "facilities": [
+   "cafe",
+   "training",
+   "showers",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://climbingdistrict.com/salle-escalade/paris-8-saint-lazare/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://climbingdistrict.com/tarifs-et-abonnements/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Site describes this as an auto-belay rope (voie sur enrouleurs) gym only, not bouldering; dataset type says indoor-bouldering. Same entry price template as other CD gyms (18/15 EUR). Page paris-9-saint-lazare is identical."
+ },
+ {
+  "id": "seed-1080",
+  "name": "Climbing District - Sèvres-Lecourbe",
+  "metro": "Paris",
+  "expect_h": "6ea087c4e76496da",
+  "website": "https://climbingdistrict.com/salle-escalade/paris-15-sevres-lecourbe/",
+  "hours": {
+   "mon": "7am–11pm",
+   "tue": "7am–11pm",
+   "wed": "7am–11pm",
+   "thu": "7am–11pm",
+   "fri": "7am–11pm",
+   "sat": "8am–11pm",
+   "sun": "8am–11pm"
+  },
+  "day_pass": "€18 adult, €15 age 4-24",
+  "facilities": [
+   "cafe",
+   "training",
+   "showers",
+   "yoga",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://climbingdistrict.com/salle-escalade/paris-15-sevres-lecourbe/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://climbingdistrict.com/tarifs-et-abonnements/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Site shows 31 auto-belay lanes (rosace, eglise) and 'mur de grimpe'; dataset type says indoor-bouldering. Same entry price template (18/15 EUR). Yoga/Pilates classes on the mezzanine stated. Access from age 11."
+ },
+ {
+  "id": "seed-1082",
+  "name": "Le 8 assure - Paris",
+  "metro": "Paris",
+  "expect_h": "b1891127e488acb6",
+  "website": "https://www.le8assure.club/",
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [
+   {
+    "url": "https://www.le8assure.club/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://www.le8assure.club/2026/08/24/foire-aux-questions/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   }
+  ],
+  "status": "website-only",
+  "notes": "Association climbing club (members only, FAQ: no trial sessions) that trains at municipal centres Jacqueline Auriol (Paris 8) and Jacques Bravo (Paris 9); 28 rue Laure Diebold is the club address. No public drop-in hours or day pass."
+ },
+ {
+  "id": "seed-1083",
+  "name": "Le Triangle - Paris",
+  "metro": "Paris",
+  "expect_h": "141695366a4080c4",
+  "website": "https://www.letriangle.net/",
+  "hours": {
+   "mon": "9am–11pm",
+   "tue": "9am–11pm",
+   "wed": "9am–11pm",
+   "thu": "9am–11pm",
+   "fri": "9am–11pm",
+   "sat": "9am–11pm",
+   "sun": "9am–11pm"
+  },
+  "day_pass": "€17 adult, €15 reduced",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.letriangle.net/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.letriangle.net/grimpe-libre/entree-unite-escalade/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Entry 17 EUR full / 15 EUR reduced (students, under 18, jobseekers, FFME, retirees); child 12 EUR; shoe hire 4 EUR. Bar with terrace, muscu room, kids area from age 3, sauna, vestiaires (showers not explicitly stated)."
+ },
+ {
+  "id": "g-32705ac5e8",
+  "name": "Vertical'Art - Rungis",
+  "metro": "Paris",
+  "expect_h": "430d29db9ac7aeb6",
+  "website": "https://rungis.vertical-art.fr/",
+  "hours": {
+   "mon": "11am–11pm",
+   "tue": "11am–11pm",
+   "wed": "11am–11pm",
+   "thu": "11am–11pm",
+   "fri": "11am–11pm",
+   "sat": "9am–9pm",
+   "sun": "9am–9pm"
+  },
+  "day_pass": "€18 adult, €16 reduced",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "shop"
+  ],
+  "sources": [
+   {
+    "url": "https://rungis.vertical-art.fr/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://rungis.vertical-art.fr/tarifs/adultes/entrees-libres/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours state Mon-Fri 11h-23h, Sat/Sun/holidays 9h-21h. Pass journee 18 EUR classique, 16 EUR reduit; shoes 4 EUR. Restaurant-bar, cardio/muscu area, Training Board, kids area from age 3, shop."
+ },
+ {
+  "id": "g-cda9e43f15",
+  "name": "Vertical'Art - Saint-Quentin-en-Yvelines",
+  "metro": "Paris",
+  "expect_h": "0bbcd0fd92f6d160",
+  "website": "https://montigny.vertical-art.fr/",
+  "hours": {
+   "mon": "11am–11pm",
+   "tue": "11am–11pm",
+   "wed": "11am–11pm",
+   "thu": "11am–11pm",
+   "fri": "11am–11pm",
+   "sat": "9am–9pm",
+   "sun": "9am–9pm"
+  },
+  "day_pass": "€18 adult, €16 reduced",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "shop"
+  ],
+  "sources": [
+   {
+    "url": "https://montigny.vertical-art.fr/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://montigny.vertical-art.fr/tarifs/adultes/entrees-libres/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Site is the Saint-Quentin-en-Yvelines (Montigny) page; address 10 avenue Andre Marie Ampere matches. Pass journee 18 EUR classique, 16 EUR reduit; shoes 4 EUR. Restaurant-bar, muscu mezzanine, shop, children's birthdays/courses."
+ }
+]

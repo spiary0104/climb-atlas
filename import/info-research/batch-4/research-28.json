@@ -1,0 +1,1069 @@
+[
+ {
+  "id": "seed-1311",
+  "name": "Climbing Centre Tarnogaj",
+  "metro": "Wrocław",
+  "expect_h": "4b786dee28dc089b",
+  "website": "https://centrumwspinaczkowe.pl/",
+  "hours": {
+   "mon": "10am–10:30pm",
+   "tue": "10am–10:30pm",
+   "wed": "10am–10:30pm",
+   "thu": "10am–10:30pm",
+   "fri": "10am–10pm",
+   "sat": "10am–10pm",
+   "sun": "10am–10pm"
+  },
+  "day_pass": "45 zł adult wall, 38 zł bouldering (Mon–Fri from 2pm, weekends); 30 zł Mon–Fri before 2pm",
+  "facilities": [
+   "cafe",
+   "kids",
+   "training",
+   "shop",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://centrumwspinaczkowe.pl/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://centrumwspinaczkowe.pl/cennik/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Facilities from home page list (Bistro, Kacik dzieciecy, Silownia, Sklep wspinaczkowy) and rental price list (buty). Entrance via Otmuchowska 15 per contact page."
+ },
+ {
+  "id": "seed-1312",
+  "name": "Climbing wall FPINKA",
+  "metro": "Wrocław",
+  "expect_h": "d1ef396555fd1549",
+  "website": "https://www.fpinka.pl/",
+  "hours": {
+   "mon": "10am–11pm",
+   "tue": "7am–11pm",
+   "wed": "10am–11pm",
+   "thu": "10am–11pm",
+   "fri": "7am–11pm",
+   "sat": "10am–11pm",
+   "sun": "10am–11pm"
+  },
+  "day_pass": "45 zł adult (Mon–Fri from 2pm, weekends), 38 zł Mon–Fri before 2pm",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.fpinka.pl/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.fpinka.pl/cennik,14,pl.html",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.fpinka.pl/kontakt,6,pl.html",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours text on pricing page: 10:00-23:00 daily (Tue and Fri from 7:00). Facilities: kafejka and silownia/tor ninja on home page, kids birthdays/sections, shoe rental on price list."
+ },
+ {
+  "id": "seed-1313",
+  "name": "EIGER - Ściana wspinaczkowa",
+  "metro": "Wrocław",
+  "expect_h": "e2da07f1e4ef1503",
+  "website": "https://eiger.pl/",
+  "hours": {
+   "mon": "3pm–10pm",
+   "tue": "3pm–10pm",
+   "wed": "8am–10pm",
+   "thu": "3pm–10pm",
+   "fri": "8am–10pm",
+   "sat": "10am–10pm",
+   "sun": "10am–10pm"
+  },
+  "day_pass": "45 zł adult (Mon–Fri from 3pm, weekends), 30 zł Mon–Fri before 3pm",
+  "facilities": [
+   "training",
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://eiger.pl/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://eiger.pl/scianka-wspinaczkowa-eiger-cennik/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours: Mon/Tue/Thu 15-22, Wed/Fri 8-22, Sat/Sun 10-22 per home page footer (differs from an older search snippet). Training = two Moonboards plus gym/boulder ticket on price page; kids = sekcje dla dzieci."
+ },
+ {
+  "id": "seed-1314",
+  "name": "Fabryczna Boulder",
+  "metro": "Wrocław",
+  "expect_h": "c51403099c851788",
+  "website": "https://www.noise-boulder.pl/",
+  "hours": {
+   "mon": "12:30pm–10:30pm",
+   "tue": "7:30am–10:30pm",
+   "wed": "7:30am–10:30pm",
+   "thu": "7:30am–10:30pm",
+   "fri": "7:30am–10:30pm",
+   "sat": "10am–10pm",
+   "sun": "10am–10pm"
+  },
+  "day_pass": "47 zł adult (Mon–Fri from 3pm, weekends), 35 zł Mon–Fri before 3pm",
+  "facilities": [
+   "training",
+   "shop",
+   "shoe-hire",
+   "parking",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.noise-boulder.pl/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://fabryczna-boulder.pl/kontakt",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://fabryczna-boulder.pl/cennik",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   },
+   {
+    "url": "https://fabryczna-boulder.pl/obiekt",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://fabryczna-boulder.pl/sklep-kawa",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://fabryczna-boulder.pl/faq",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "flag",
+  "notes": "RENAMED: fabryczna-boulder.pl now redirects to noise-boulder.pl (Noise Bouldering Spot), same address Grabiszynska 241D; data is for the same premises. Kids = FAQ says classes for children are offered; Kawa appears only as a menu label so cafe omitted."
+ },
+ {
+  "id": "seed-1315",
+  "name": "Flow Climbing Space",
+  "metro": "Wrocław",
+  "expect_h": "3e4b885febe4c4a4",
+  "website": "https://flowclimbingspace.pl/en/wroclaw-dlugosza-en/",
+  "hours": {
+   "mon": "7am–11pm",
+   "tue": "7am–11pm",
+   "wed": "7am–11pm",
+   "thu": "7am–11pm",
+   "fri": "7am–11pm",
+   "sat": "9am–11pm",
+   "sun": "9am–11pm"
+  },
+  "day_pass": "47 PLN adult, 42 PLN reduced; 42 PLN Mon–Fri before 3pm",
+  "facilities": [
+   "cafe",
+   "training",
+   "shop",
+   "shoe-hire",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://flowclimbingspace.pl/en/wroclaw-dlugosza-en/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://flowclimbingspace.pl/en/prices/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   },
+   {
+    "url": "https://flowclimbingspace.pl/en/training-weights/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://flowclimbingspace.pl/en/our-offer/climbing-store/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Kids zone is at the other site (Flow Kids, Robotnicza) so kids omitted; yoga only a chain menu label so omitted. Prices page covers both Flow gyms (single entry)."
+ },
+ {
+  "id": "seed-1316",
+  "name": "Groto bulderownia",
+  "metro": "Wrocław",
+  "expect_h": "ba6ab99ae716a143",
+  "website": "https://groto.pl/wroclaw/",
+  "hours": {
+   "mon": "10am–11pm",
+   "tue": "10am–11pm",
+   "wed": "10am–11pm",
+   "thu": "10am–11pm",
+   "fri": "10am–11pm",
+   "sat": "9am–10pm",
+   "sun": "9am–10pm"
+  },
+  "day_pass": "40 PLN adult (Mon–Fri from 3pm, weekends), 30 PLN Mon–Fri before 3pm",
+  "facilities": [
+   "cafe",
+   "training",
+   "shoe-hire",
+   "shop"
+  ],
+  "sources": [
+   {
+    "url": "https://groto.pl/wroclaw/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://groto.pl/wroclaw/cennik/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://groto.pl/wroclaw/sklep-i-wypozyczalnia/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Site groto.pl covers Wroclaw and Poznan; used the /wroclaw/ pages."
+ },
+ {
+  "id": "seed-1317",
+  "name": "Lokal 32 Boulderownia Wrocław",
+  "metro": "Wrocław",
+  "expect_h": "61241b502156dcdd",
+  "website": "https://lokal32.pl/",
+  "hours": {
+   "mon": "12pm–11pm",
+   "tue": "7am–11pm",
+   "wed": "7am–11pm",
+   "thu": "7am–11pm",
+   "fri": "9am–11pm",
+   "sat": "9am–10pm",
+   "sun": "9am–9pm"
+  },
+  "day_pass": "45 PLN adult (Mon–Fri from 3pm, weekends), 33 PLN Mon–Fri before 3pm",
+  "facilities": [
+   "cafe",
+   "shop",
+   "training",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://lokal32.pl/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://lokal32.pl/cennik/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://lokal32.pl/oferta/kawiarnia/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://lokal32.pl/oferta/strefa-treningowa/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://lokal32.pl/oferta/wypozyczalnia-sprzetu/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Shop = mini climbing shop inside the cafe (kawiarnia page)."
+ },
+ {
+  "id": "seed-1318",
+  "name": "WOW Zerwa",
+  "metro": "Wrocław",
+  "expect_h": "623904b1d30f8926",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [],
+  "status": "not-found",
+  "notes": "Official site zerwa.pl (WOW Zerwa) returned HTTP 403 (Cloudflare bot challenge) to curl and WebFetch; no page could be fetched, so all fields left null."
+ },
+ {
+  "id": "seed-1319",
+  "name": "AVATAR Balicka Boulder",
+  "metro": "Kraków",
+  "expect_h": "9ffe600c3380218a",
+  "website": "https://balickaboulder.myavatar.pl/",
+  "hours": {
+   "mon": "9am–10pm",
+   "tue": "9am–10pm",
+   "wed": "9am–10pm",
+   "thu": "9am–10pm",
+   "fri": "9am–10pm",
+   "sat": "9am–9pm",
+   "sun": "9am–9pm"
+  },
+  "day_pass": "48 zł (Mon–Fri from 3pm, weekends), 38 zł Mon–Fri before 3pm",
+  "facilities": [
+   "training",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://balickaboulder.myavatar.pl/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://balickaboulder.myavatar.pl/oferta/cennik",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://balickaboulder.myavatar.pl/oferta/strefa-rozgrzewkowa",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "bouldering.krakow.pl redirects here. Price page does not label adult (standard single-entry tiers). Training = Moon board plus warm-up/training zone."
+ },
+ {
+  "id": "seed-1320",
+  "name": "Avatar Centrala Ruchu",
+  "metro": "Kraków",
+  "expect_h": "8f54c1847a5e1fd3",
+  "website": "https://myavatar.pl/",
+  "hours": {
+   "mon": "7am–11pm",
+   "tue": "7am–11pm",
+   "wed": "7am–11pm",
+   "thu": "7am–11pm",
+   "fri": "7am–11pm",
+   "sat": "9am–10pm",
+   "sun": "9am–10pm"
+  },
+  "day_pass": "55 zł (Mon–Fri from 3pm, weekends), 45 zł Mon–Fri before 3pm",
+  "facilities": [
+   "training",
+   "kids",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://myavatar.pl/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://myavatar.pl/obiekt/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://myavatar.pl/cennik/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://myavatar.pl/portfolio/silownia/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://myavatar.pl/portfolio/parking/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Parking: paid (5 zl) lot under building plus free lot 3 min away. Training = silownia; kids = urodziny dla dzieci / kids sections. Price page does not label adult."
+ },
+ {
+  "id": "seed-1321",
+  "name": "CUBE Baldy",
+  "metro": "Kraków",
+  "expect_h": "7b8451f32d5be32a",
+  "website": "https://cubeboulder.com/",
+  "hours": {
+   "mon": "3pm–11pm",
+   "tue": "10am–11pm",
+   "wed": "10am–11pm",
+   "thu": "10am–11pm",
+   "fri": "10am–11pm",
+   "sat": "9am–10pm",
+   "sun": "9am–10pm"
+  },
+  "day_pass": null,
+  "facilities": [
+   "cafe",
+   "training",
+   "shoe-hire",
+   "showers",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://cubeboulder.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://cubeboulder.com/boulderownia-w-krakowie-kontakt-cube-czyzyny/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://cubeboulder.com/en/cube-cafe-cracow/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://cubeboulder.com/en/climbing-recovery-and-general-fitnes-zone/climbing-training-zone-in-cracow/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://cubeboulder.com/en/climbing-first-time-at-cube-climbing-wall/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Price list is rendered by a Fitssey widget (JS) so day pass left null. Parking: free lot per contact page."
+ },
+ {
+  "id": "seed-1322",
+  "name": "Fortress - Climbing Centre",
+  "metro": "Kraków",
+  "expect_h": "058c80564e7ac7f8",
+  "website": "https://cwf.pl/raclawicka-60/",
+  "hours": {
+   "mon": "10am–11pm",
+   "tue": "10am–11pm",
+   "wed": "10am–11pm",
+   "thu": "10am–11pm",
+   "fri": "10am–11pm",
+   "sat": "10am–10pm",
+   "sun": "10am–10pm"
+  },
+  "day_pass": "45 zł adult (Mon–Fri from 3pm, weekends), 40 zł Mon–Fri before 3pm",
+  "facilities": [
+   "showers",
+   "parking",
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://cwf.pl/raclawicka-60/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://cwf.pl/cennik/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Pricing page is shared by all Forteca sites (not location-specific); 2.5h limit per entry. Site name: Centrum Wspinaczkowe Forteca."
+ },
+ {
+  "id": "seed-1323",
+  "name": "MOOD Kraków",
+  "metro": "Kraków",
+  "expect_h": "99709753acc6893d",
+  "website": "https://hellomood.pl/",
+  "hours": {
+   "mon": "3pm–11pm",
+   "tue": "7am–11pm",
+   "wed": "7am–11pm",
+   "thu": "7am–11pm",
+   "fri": "7am–11pm",
+   "sat": "9am–11pm",
+   "sun": "9am–10pm"
+  },
+  "day_pass": null,
+  "facilities": [
+   "cafe",
+   "kids",
+   "training",
+   "shoe-hire",
+   "yoga",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://hellomood.pl/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://hellomood.pl/kontakt-boulderownia-w-centrum-krakowa/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://hellomood.pl/en/bakery-cafe-mood-climbing-cracow/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://hellomood.pl/en/climbing-for-kids-mood-cracow/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://hellomood.pl/en/climbing-recovery-cracow/gym-mood-strength-training/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://hellomood.pl/en/climbing-recovery-cracow/group-trainings-yoga-stretching/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://hellomood.pl/en/bouldering-for-beginners/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours from the Polish contact page; the English contact page currently shows temporary championship notes for Sat/Sun. Price list is a JS widget so day pass null. Parking is free 30 min then 5 PLN/hour."
+ },
+ {
+  "id": "seed-1324",
+  "name": "Reni-Sport",
+  "metro": "Kraków",
+  "expect_h": "1cf6696a26a422b4",
+  "website": "https://renisport.pl/",
+  "hours": {
+   "mon": "2pm–10pm",
+   "tue": "2pm–10pm",
+   "wed": "2pm–10pm",
+   "thu": "2pm–10pm",
+   "fri": "2pm–10pm",
+   "sat": "10am–7pm",
+   "sun": "10am–7pm"
+  },
+  "day_pass": "40 zł adult (Mon–Fri from 3pm, weekends), 35 zł Mon–Fri before 3pm",
+  "facilities": [
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://renisport.pl/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://renisport.pl/wp-content/uploads/2026/09/CENNIK-.pdf",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Day pass from the price PDF linked on the site (normal tariff; reduced 25/35 zl). Kids from the children's section schedule on the home page."
+ },
+ {
+  "id": "seed-1325",
+  "name": "Slab Bouldering Kraków",
+  "metro": "Kraków",
+  "expect_h": "4a0669b53b40af0c",
+  "website": "https://slabbouldering.pl/",
+  "hours": {
+   "mon": "10am–11pm",
+   "tue": "10am–11pm",
+   "wed": "10am–11pm",
+   "thu": "10am–11pm",
+   "fri": "10am–11pm",
+   "sat": "9am–11pm",
+   "sun": "9am–10pm"
+  },
+  "day_pass": "45 zł adult peak, 40 zł off-peak",
+  "facilities": [
+   "cafe",
+   "parking",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://slabbouldering.pl/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://slabbouldering.pl/menu/cennik",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Peak = Mon-Fri 3pm-9pm plus weekends/holidays. Free parking up to 3 hours in Solvay Park gallery lot."
+ },
+ {
+  "id": "g-4fbb4000f3",
+  "name": "Altissimo Lisboa",
+  "metro": "Lisbon",
+  "expect_h": "d046b5ed9e0b91e3",
+  "website": "https://www.altissimo.pt/index.html",
+  "hours": {
+   "mon": "10am–11pm",
+   "tue": "10am–11pm",
+   "wed": "10am–11pm",
+   "thu": "10am–11pm",
+   "fri": "10am–11pm",
+   "sat": "9am–8pm",
+   "sun": "9am–8pm"
+  },
+  "day_pass": "€14 adult, €11 student/child or weekdays before 4pm",
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.altissimo.pt/index.html",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://www.altissimo.pt/morada-horario-contato.html",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.altissimo.pt/precario-packs.html",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Site price page (14/11 EUR) is higher than 12 EUR quoted by older third-party listings; used the site. Shoe hire = Pes de Gato EUR 5."
+ },
+ {
+  "id": "g-426edfcfc3",
+  "name": "Climb UP",
+  "metro": "Lisbon",
+  "expect_h": "87754d081c6f9a3c",
+  "website": "https://climbup.pt/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "9am–7pm",
+   "sun": "9am–7pm"
+  },
+  "day_pass": "€12 adult, €10 student/child; €10 adult low-cost (weekdays 10am–4pm)",
+  "facilities": [
+   "shoe-hire",
+   "shop",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://climbup.pt/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://climbup.pt/precos",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   },
+   {
+    "url": "https://climbup.pt/contactos",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours are rendered from the site's own schedule data (Segunda a sexta 10:00-22:00; Fins de semana 09:00-19:00). Shoes (pes de gato) rent for EUR 4 per FAQ."
+ },
+ {
+  "id": "g-3f71a1851a",
+  "name": "CRUX Climbing Center",
+  "metro": "Lisbon",
+  "expect_h": "7c4b9ba319263a52",
+  "website": "https://www.cruxclimbing.pt/",
+  "hours": {
+   "mon": "11am–10pm",
+   "tue": "11am–10pm",
+   "wed": "11am–10pm",
+   "thu": "12pm–10pm",
+   "fri": "11am–10pm",
+   "sat": "10am–6pm",
+   "sun": "10am–6pm"
+  },
+  "day_pass": null,
+  "facilities": [
+   "cafe",
+   "shop",
+   "training",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.cruxclimbing.pt/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.cruxclimbing.pt/o-espa%C3%A7o",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Price page (precario) is an image so day pass null. Hours: Mon-Fri 11-22 (Thu 12-22), weekend/holidays 10-18. Kids = group classes for adults and children."
+ },
+ {
+  "id": "seed-1263",
+  "name": "Escala 25 - Lisboa",
+  "metro": "Lisbon",
+  "expect_h": "86497087e3b8d7ad",
+  "website": "https://escala25.com/en/",
+  "hours": {
+   "mon": "2pm–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–9pm",
+   "sat": "10am–6pm",
+   "sun": "10am–6pm"
+  },
+  "day_pass": "€13.50 adult, €11.50 kids/student/65+",
+  "facilities": [
+   "shoe-hire",
+   "kids",
+   "cafe",
+   "shop"
+  ],
+  "sources": [
+   {
+    "url": "https://escala25.com/en/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://escala25.com/en/contact/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://escala25.com/en/pricing/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://escala25.com/en/base-camp-cafe/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Contact page hours used; the page footer also lists winter/summer variants (21:00/22:00 closes), so closing times may vary seasonally."
+ },
+ {
+  "id": "seed-1264",
+  "name": "Rocódromo FCMP Casal Vistoso - Lisboa",
+  "metro": "Lisbon",
+  "expect_h": "03782eb83297fd6f",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [],
+  "status": "not-found",
+  "notes": "Operated by FCMP (fcmportugal.com) but the federation site has no page for the wall: only a 2023 closure notice for Rocodromo do Casal Vistoso. Current status/hours/prices not verifiable on an official page."
+ },
+ {
+  "id": "seed-1265",
+  "name": "Vertigo - Lisboa",
+  "metro": "Lisbon",
+  "expect_h": "aa04187a84324170",
+  "website": "https://vertigoclimbing.pt/",
+  "hours": {
+   "mon": "12pm–11pm",
+   "tue": "12pm–11pm",
+   "wed": "12pm–11pm",
+   "thu": "12pm–11pm",
+   "fri": "12pm–11pm",
+   "sat": "10am–8pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": "€12 adult, €10 happy hour (weekdays 12pm–4pm)",
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://vertigoclimbing.pt/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://vertigoclimbing.pt/precario/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "flag",
+  "notes": "DOUBTFUL MATCH: Vertigo has two sites on Av. Infante D. Henrique (Marvila, Edificio Beira Rio; and Oriente, no. 334 Armazem 6). Seed coords (38.7616,-9.1037) are ~2.4 km north of the Marvila entry g-18d02cfa65, so this is likely Vertigo Oriente; values given are Oriente's. Could instead be a duplicate of the Marvila entry."
+ },
+ {
+  "id": "g-18d02cfa65",
+  "name": "Vertigo Climbing Center Marvila",
+  "metro": "Lisbon",
+  "expect_h": "743954d0a23a9c79",
+  "website": "https://vertigoclimbing.pt/",
+  "hours": {
+   "mon": "10am–11pm",
+   "tue": "10am–11pm",
+   "wed": "7am–11pm",
+   "thu": "10am–11pm",
+   "fri": "10am–11pm",
+   "sat": "10am–8pm",
+   "sun": "10am–6pm"
+  },
+  "day_pass": "€11 adult, €9 happy hour (weekdays 10am–4pm)",
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://vertigoclimbing.pt/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://vertigoclimbing.pt/precario/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Marvila section of home page and price page (Fracao P matches). Cafe and shop are described only on a chain-wide services page so omitted."
+ }
+]

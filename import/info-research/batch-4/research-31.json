@@ -1,0 +1,789 @@
+[
+ {
+  "id": "seed-1783",
+  "name": "Balvanija",
+  "metro": "Ljubljana",
+  "expect_h": "5566c41f69176c92",
+  "website": "https://balvanija.si/",
+  "hours": {
+   "mon": "3pm–10:30pm",
+   "tue": "9am–10:30pm",
+   "wed": "9am–10:30pm",
+   "thu": "9am–10:30pm",
+   "fri": "9am–11pm",
+   "sat": "9am–10pm",
+   "sun": "9am–10pm"
+  },
+  "day_pass": "€13 adult afternoon, €10 morning (morning ticket bought before noon)",
+  "facilities": [
+   "kids",
+   "shoe-hire",
+   "showers",
+   "parking",
+   "shop"
+  ],
+  "sources": [
+   {
+    "url": "https://balvanija.si/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://balvanija.si/cenik/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://balvanija.si/prvi-obisk-in-samostojni-obisk/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://balvanija.si/lokacija-in-kontakt/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours and prices from the Cenik page (Slovenian). Facilities: shoe hire, changing room with showers, chalk/shoes sold on site (FAQ), small customer car park (location page), kids programmes (Cenik)."
+ },
+ {
+  "id": "seed-1784",
+  "name": "Bolder Scena Kranj",
+  "metro": "Ljubljana",
+  "expect_h": "9f04978893eb1b74",
+  "website": "https://bolderscena.si/en/kranj-en/",
+  "hours": {
+   "mon": "9am–10:30pm",
+   "tue": "9am–10:30pm",
+   "wed": "9am–10:30pm",
+   "thu": "9am–10:30pm",
+   "fri": "9am–10:30pm",
+   "sat": "9am–10:30pm",
+   "sun": "9am–10:30pm"
+  },
+  "day_pass": "€16 adult, €13 student",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "yoga"
+  ],
+  "sources": [
+   {
+    "url": "https://bolderscena.si/en/kranj-en/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://bolderscena.si/en/kranj-en/info/opening-times/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://bolderscena.si/en/kranj-en/info/pricelist/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://bolderscena.si/en/kranj-en/climbing-kranj/solo-visits-kranj/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours: opening-times page (bar until 11pm). Cafe = bar. Training = spray wall, Kilterboard, MoonBoard, Tension Board. Kids = Brlog kids area. Yoga only from a \"Joga\" (Gibalna vadba) block on the Kranj price list."
+ },
+ {
+  "id": "seed-1782",
+  "name": "Bolder Scena Ljubljana",
+  "metro": "Ljubljana",
+  "expect_h": "7f46fb5915690604",
+  "website": "https://bolderscena.si/en/ljubljana-en/",
+  "hours": {
+   "mon": "9am–10:30pm",
+   "tue": "9am–10:30pm",
+   "wed": "9am–10:30pm",
+   "thu": "9am–10:30pm",
+   "fri": "9am–10:30pm",
+   "sat": "9am–10:30pm",
+   "sun": "9am–10:30pm"
+  },
+  "day_pass": "€16 adult, €13 student",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "yoga"
+  ],
+  "sources": [
+   {
+    "url": "https://bolderscena.si/en/ljubljana-en/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://bolderscena.si/en/ljubljana-en/info/opening-times/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://bolderscena.si/en/ljubljana-en/info/price-list/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://bolderscena.si/en/ljubljana-en/climbing-ljubljana/solo-visits-ljubljana/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours: opening-times page (9:00-22:30 daily); the solo-visits page also says 9am-11pm, which matches bar closing. Cafe = bar (terrace and indoors). Training = spray wall and Moonboard. Kids = Brlog. Yoga = \"Joga\" block on the Ljubljana price list."
+ },
+ {
+  "id": "seed-1781",
+  "name": "Plezalni center Ljubljana",
+  "metro": "Ljubljana",
+  "expect_h": "74098a02f7992f19",
+  "website": "https://www.plezalnicenter.si/",
+  "hours": {
+   "mon": "9am–10:30pm",
+   "tue": "6:30am–10:30pm",
+   "wed": "9am–10:30pm",
+   "thu": "6:30am–10:30pm",
+   "fri": "9am–10:30pm",
+   "sat": "8am–9:30pm",
+   "sun": "8am–9:30pm"
+  },
+  "day_pass": "€16.50 adult all-day, €14 up to age 25",
+  "facilities": [
+   "cafe",
+   "shoe-hire",
+   "parking",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.plezalnicenter.si/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://www.plezalnicenter.si/urnik/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.plezalnicenter.si/cenik/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   },
+   {
+    "url": "https://www.plezalnicenter.si/grif-bar/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.plezalnicenter.si/izposoja-opreme/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.plezalnicenter.si/info/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours from the Urnik page (Sat/Sun and public holidays 8:00-21:30; 6:30 start on Tue/Thu). Price list valid from 24 Feb 2026; bouldering-only ticket is EUR 13.50. Cafe = Grif Bar; parking = free car park beside the centre (Info page); kids = children programmes (Info page)."
+ },
+ {
+  "id": "seed-1790",
+  "name": "Plezalni center Verd",
+  "metro": "Ljubljana",
+  "expect_h": "db63f48c7d8fb90c",
+  "website": "https://plezalnicenterverd.com/",
+  "hours": {
+   "mon": "9am–3pm, 6pm–10pm",
+   "tue": "6pm–10pm",
+   "wed": "6pm–10pm",
+   "thu": "9am–3pm, 6pm–10pm",
+   "fri": "7pm–10pm",
+   "sat": "7pm–10pm",
+   "sun": "7pm–10pm"
+  },
+  "day_pass": "€12 adult (non-member), €10 member",
+  "facilities": [
+   "kids",
+   "shoe-hire",
+   "training"
+  ],
+  "sources": [
+   {
+    "url": "https://plezalnicenterverd.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://plezalnicenterverd.com/urnik-2026-27/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://plezalnicenterverd.com/cenik-ugodne-cene-tecajev/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://plezalnicenterverd.com/obisk-igralnice/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours are the recreational-climbing schedule for season 2026/27 (varies on holidays and school breaks). Single visit EUR 12 non-member / 10 member; EUR 11 non-member student/pensioner. Training = spray walls (homepage). Kids = playroom and kids programmes. Pilates offered, not yoga."
+ },
+ {
+  "id": "seed-1785",
+  "name": "Plezarna",
+  "metro": "Ljubljana",
+  "expect_h": "f943d210de1386f3",
+  "website": "https://plezarna.si/",
+  "hours": {
+   "mon": "9am–11pm",
+   "tue": "9am–11pm",
+   "wed": "9am–11pm",
+   "thu": "9am–11pm",
+   "fri": "9am–11pm",
+   "sat": "9am–11pm",
+   "sun": "9am–11pm"
+  },
+  "day_pass": "€13 adult, €11 student/senior",
+  "facilities": [
+   "cafe",
+   "kids",
+   "training",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://plezarna.si/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://plezarna.si/kontakt-in-lokacija/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://plezarna.si/cenik/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://plezarna.si/lokal-z-otroskim-kotickom/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://plezarna.si/plezalne-dvorane/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours from the site footer (\"vsak dan od 9.00 do 23.00\"), which may be cafe-led; the evening ticket runs 20-22h so climbing may end before 23h. Training = campus, fitness, MoonBoard (halls page). Kids = kids corner in the cafe, Gibalnica and kids courses."
+ },
+ {
+  "id": "g-5d2b19809d",
+  "name": "Balance Climbing Rama 9",
+  "metro": "Bangkok",
+  "expect_h": "b967b190b4acf084",
+  "website": "https://www.balanceclimbing.com/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "10am–10pm",
+   "sun": "10am–10pm"
+  },
+  "day_pass": "฿450 adult, ฿350 student (weekdays)",
+  "facilities": [
+   "showers",
+   "training",
+   "shop",
+   "parking",
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.balanceclimbing.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.balanceclimbing.com/pricings",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.balanceclimbing.com/about",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.balanceclimbing.com/contact",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.balanceclimbing.com/classes",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Rama 9 tab of the pricing page (1-Day Pass 450, Student Pass 350 weekdays only). About page lists amenities per location; no cafe at Rama 9 (Prime only). Kids classes at both locations."
+ },
+ {
+  "id": "g-ee6ea57df4",
+  "name": "Balance Prime",
+  "metro": "Bangkok",
+  "expect_h": "e6ad8b9aaacb2189",
+  "website": "https://www.balanceclimbing.com/",
+  "hours": {
+   "mon": "12pm–10pm",
+   "tue": "12pm–10pm",
+   "wed": "12pm–10pm",
+   "thu": "12pm–10pm",
+   "fri": "12pm–10pm",
+   "sat": "10am–10pm",
+   "sun": "10am–10pm"
+  },
+  "day_pass": "฿495 adult (1-day pass)",
+  "facilities": [
+   "cafe",
+   "showers",
+   "training",
+   "shop",
+   "parking",
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.balanceclimbing.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.balanceclimbing.com/pricings",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.balanceclimbing.com/about",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.balanceclimbing.com/contact",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.balanceclimbing.com/classes",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Sathorn price (495) is the Sathorn-tab override in the pricing page script module (framerusercontent), not in the static HTML; Rama 9 shows 450. About page: cafe at Prime only."
+ },
+ {
+  "id": "g-c6bdfc5509",
+  "name": "Boulder Planet Thailand (Rangsit)",
+  "metro": "Bangkok",
+  "expect_h": "f4c783f62aeca225",
+  "website": "https://www.boulderplanet.co.th/",
+  "hours": {
+   "mon": "11am–9:30pm",
+   "tue": "11am–9:30pm",
+   "wed": "11am–9:30pm",
+   "thu": "11am–9:30pm",
+   "fri": "11am–9:30pm",
+   "sat": "10am–9:30pm",
+   "sun": "10am–9:30pm"
+  },
+  "day_pass": "฿500 single entry, ฿250 first-timer",
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.boulderplanet.co.th/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.boulderplanet.co.th/rates",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Weekends and public holidays 10:00-21:30. Rates page is Thailand-specific (shoe rental 100 baht). About page mixes in Singapore content, so no other facilities were taken from it."
+ },
+ {
+  "id": "g-580b85b8e7",
+  "name": "Eagle Eye Climbing Gym",
+  "metro": "Bangkok",
+  "expect_h": "a244185ff2166766",
+  "website": "https://eagleeyeclimb.com/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "10am–10pm",
+   "sun": "10am–10pm"
+  },
+  "day_pass": "฿400 adult, ฿350 kid/senior",
+  "facilities": [
+   "parking",
+   "training",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://eagleeyeclimb.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://eagleeyeclimb.com/pricing",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Home page says 10:00-22:00 every day; the contact page widget showed 10:00-23:00 on the day fetched (home page used). Parking: 30 slots. Training = bouldering and training board. eagleeyeclimbing.com is only a coming-soon placeholder."
+ },
+ {
+  "id": "seed-1751",
+  "name": "Gravity Lab",
+  "metro": "Bangkok",
+  "expect_h": "306b793159f32a24",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [],
+  "status": "not-found",
+  "notes": "No official site found: only the gravitylabth.com email domain (does not resolve), Facebook and Instagram."
+ },
+ {
+  "id": "seed-1753",
+  "name": "Proclimber Gym",
+  "metro": "Bangkok",
+  "expect_h": "98f2d39fd58162fc",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [],
+  "status": "not-found",
+  "notes": "Only Facebook found; proclimber.com is a parked domain (redirects to /lander, no content)."
+ },
+ {
+  "id": "seed-1695",
+  "name": "Rock Domain Climbing Gym",
+  "metro": "Bangkok",
+  "expect_h": "797c849a6574b25b",
+  "website": "https://www.rockdomaingym.com/",
+  "hours": {
+   "mon": "11am–10pm",
+   "tue": "11am–10pm",
+   "wed": "11am–10pm",
+   "thu": "11am–10pm",
+   "fri": "11am–10pm",
+   "sat": "10am–10pm",
+   "sun": "10am–9pm"
+  },
+  "day_pass": "฿450 adult, ฿350 under 18",
+  "facilities": [
+   "shop",
+   "parking",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.rockdomaingym.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.rockdomaingym.com/about",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.rockdomaingym.com/members",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Price table on /members is an image (RD_Pricing_2025_01.jpg), read visually. Address on site: 1780 Debaratna Road (Bangna-Trad). About page lists Pro Shop, locker rooms, plenty of parking spaces."
+ },
+ {
+  "id": "seed-1696",
+  "name": "Sports World at LadProa",
+  "metro": "Bangkok",
+  "expect_h": "7be7609d1e197de9",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [],
+  "status": "not-found",
+  "notes": "No official page for the climbing wall; sportsworld.co.th is the retail chain with no climbing page, and the operator site ptclimbing.com did not respond."
+ },
+ {
+  "id": "seed-1752",
+  "name": "Stonegoat Climbing Gym",
+  "metro": "Bangkok",
+  "expect_h": "6e71281d99f7a698",
+  "website": "https://www.stonegoatclimb.com/s69",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "10am–10pm",
+   "sun": "10am–10pm"
+  },
+  "day_pass": "฿450 regular, ฿360 under 18",
+  "facilities": [
+   "cafe",
+   "showers",
+   "parking",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.stonegoatclimb.com/s69",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.stonegoatclimb.com/price",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   },
+   {
+    "url": "https://www.stonegoatclimb.com/faq",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities",
+     "hours"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "FAQ lists weekday 11:00 start but says S69 opens daily 10:00-22:00 from 11 August; s69 and locations pages say daily 10:00-22:00. Day pass read from the S69 price image on /price. Cafe = Crux Cafe. Parking 77 spots, 4h free."
+ },
+ {
+  "id": "g-97582d8b30",
+  "name": "Stonegoat Climbing Gym (The PARQ)",
+  "metro": "Bangkok",
+  "expect_h": "aae0eeb9f18e8175",
+  "website": "https://www.stonegoatclimb.com/parq",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "10am–10pm",
+   "sun": "10am–10pm"
+  },
+  "day_pass": "฿495 regular, ฿420 under 18",
+  "facilities": [
+   "cafe",
+   "showers",
+   "parking",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.stonegoatclimb.com/parq",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://www.stonegoatclimb.com/locations",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.stonegoatclimb.com/price",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   },
+   {
+    "url": "https://www.stonegoatclimb.com/faq",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Day pass read from The PARQ price image on /price. Cafe = For GOAT's Sake. Parking at The PARQ building (3-4h free with stamp)."
+ },
+ {
+  "id": "seed-1754",
+  "name": "Urban Playground Climbing",
+  "metro": "Bangkok",
+  "expect_h": "3d24af5a11e7e9fb",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [],
+  "status": "not-found",
+  "notes": "Listed site urbanplaygroundclimbing.com does not resolve; no other official page found (gym operates inside The Racquet Club)."
+ }
+]

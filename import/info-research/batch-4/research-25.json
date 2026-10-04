@@ -1,0 +1,601 @@
+[
+ {
+  "id": "seed-1220",
+  "name": "Daegu Power Climbing Center",
+  "metro": "Daegu",
+  "expect_h": "d8948bb1b3f605fd",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [],
+  "status": "not-found",
+  "notes": "No own website found: the website cited by directory snippets (powerclimbing.org) does not resolve (DNS/connection failure); only blogs, Daum cafe and third-party listings."
+ },
+ {
+  "id": "seed-1218",
+  "name": "Dino Cat Climbing Gym",
+  "metro": "Daegu",
+  "expect_h": "142f75d80813d688",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [],
+  "status": "not-found",
+  "notes": "Only own page found was dynocat.modoo.at, which is dead (Naver modoo ended 2025-06-26); remaining sources are a Daum cafe and third-party listings, not acceptable."
+ },
+ {
+  "id": "seed-1221",
+  "name": "Dongseong-ro Climbing Gym",
+  "metro": "Daegu",
+  "expect_h": "6c543495688527f2",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [],
+  "status": "not-found",
+  "notes": "Only third-party directory listings (114.co.kr etc.) found; no own website."
+ },
+ {
+  "id": "seed-1180",
+  "name": "Monster Climbing Gym",
+  "metro": "Daegu",
+  "expect_h": "41f00c1d86c09e1b",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [],
+  "status": "not-found",
+  "notes": "No own website found; only third-party reviews/listings."
+ },
+ {
+  "id": "seed-1219",
+  "name": "Newbie Climbing",
+  "metro": "Daegu",
+  "expect_h": "c324eb203ff0c277",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [],
+  "status": "not-found",
+  "notes": "No own website found; only third-party blogs/listings (da-gym.co.kr, climbtourtv). Address per listings is Gyeongdae-ro 48 3F (Sinam-dong), consistent with target."
+ },
+ {
+  "id": "seed-1232",
+  "name": "Olla Climbing Center (올라클라이밍센터)",
+  "metro": "Daegu",
+  "expect_h": "5505c61dcaea7a47",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [],
+  "status": "not-found",
+  "notes": "No own website found; only Daangn and third-party listings. Same gym as g-eb8f7cf4c0 (same address 56 Hayang-ro 3F), duplicate record in the target file."
+ },
+ {
+  "id": "g-eb8f7cf4c0",
+  "name": "Olla Climbing Center Gyeongsan",
+  "metro": "Daegu",
+  "expect_h": "8824e6a25f9fdd2a",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [],
+  "status": "not-found",
+  "notes": "No own website found; only Daangn and third-party listings. Same gym as seed-1232 (same address 56 Hayang-ro 3F), duplicate record in the target file."
+ },
+ {
+  "id": "seed-1388",
+  "name": "Adamanta Escandón",
+  "metro": "Mexico City",
+  "expect_h": "77ed1b3e2cb1425e",
+  "website": "https://www.adamanta.mx/escandon",
+  "hours": {
+   "mon": "6am–11pm",
+   "tue": "6am–11pm",
+   "wed": "6am–11pm",
+   "thu": "6am–11pm",
+   "fri": "6am–10pm",
+   "sat": "8am–8pm",
+   "sun": "8am–8pm"
+  },
+  "day_pass": "MX$320 adult day pass",
+  "facilities": [
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.adamanta.mx/escandon",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Page lists no street address (Google map name only: Adamanta Escandon, Avenida Jose Marti). Hours: Mon-Thu, Fri, Sat/Sun/holidays. Equipment rental MX$50 extra but shoes not named so shoe-hire omitted. Page says this branch has no yoga. Kids = children's climbing classes (ages 5-16)."
+ },
+ {
+  "id": "seed-1389",
+  "name": "Adamanta Santa Fé",
+  "metro": "Mexico City",
+  "expect_h": "f7ded337e4039fa3",
+  "website": "https://www.adamanta.mx/santa-fe",
+  "hours": {
+   "mon": "7am–11pm",
+   "tue": "7am–11pm",
+   "wed": "7am–11pm",
+   "thu": "7am–11pm",
+   "fri": "7am–10pm",
+   "sat": "9am–6pm",
+   "sun": "9am–6pm"
+  },
+  "day_pass": "MX$320 adult day pass",
+  "facilities": [
+   "kids",
+   "yoga"
+  ],
+  "sources": [
+   {
+    "url": "https://www.adamanta.mx/santa-fe",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Official page names the Santa Fe branch but shows no street address; the address Calle 3 55 (Santa Fe, 01219) was only confirmed via a search snippet, and the target lat/lng (east CDMX) look wrong for Santa Fe. Equipment rental MX$50 extra but shoes not named so shoe-hire omitted. Yoga & more classes listed on this branch page; kids classes ages 5-16."
+ },
+ {
+  "id": "seed-1390",
+  "name": "Amanecer Climbing",
+  "metro": "Mexico City",
+  "expect_h": "08caa69577f7633d",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [],
+  "status": "not-found",
+  "notes": "amanecerclimbing.com (the gym's apparent domain) currently serves an unrelated online-casino spam page on every path (home, /faqs/, /amanecer/nosotros/), so it was not used as a source; no usable official site found."
+ },
+ {
+  "id": "seed-1391",
+  "name": "Loop Climbing Center",
+  "metro": "Mexico City",
+  "expect_h": "6cfa1a6cd2c792ee",
+  "website": "https://www.loopclimbing.com/",
+  "hours": null,
+  "day_pass": null,
+  "facilities": [
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.loopclimbing.com/contact/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://www.loopclimbing.com/services/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Contact page confirms C. Lago Wenner 37, Miguel Hidalgo. Site has no hours or prices. Kids = 'Clases para Ninos' on services page. loopclimbingcenter.com did not respond."
+ },
+ {
+  "id": "seed-1392",
+  "name": "Onix Sala De Escalada",
+  "metro": "Mexico City",
+  "expect_h": "5dc055a8b9ad91ac",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [],
+  "status": "not-found",
+  "notes": "Only Facebook (SalaOnix) and third-party listings found; no own website located (guessed domains did not resolve)."
+ },
+ {
+  "id": "seed-1393",
+  "name": "RockSolid",
+  "metro": "Mexico City",
+  "expect_h": "7c93fa56630e0ac8",
+  "website": "https://www.rocksolid.mx/es/coyoacan",
+  "hours": {
+   "mon": "7am–11pm",
+   "tue": "7am–11pm",
+   "wed": "7am–11pm",
+   "thu": "7am–11pm",
+   "fri": "7am–11pm",
+   "sat": "10am–6pm",
+   "sun": "10am–6pm"
+  },
+  "day_pass": "MX$220 adult day pass",
+  "facilities": [
+   "training",
+   "showers",
+   "shop",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://rocksolid.mx/es/coyoacan",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://rocksolid.mx/es/coyoacan/prices",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://rocksolid.mx/es/coyoacan/services",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Coyoacan branch page confirms Prol. Ayuntamiento 83, Santa Catarina. Shoe hire from 'Renta de gatas' on prices page; training = gym area + MoonBoard; showers = 'lockers y regaderas'. Parking mentioned only as bike parking so omitted."
+ },
+ {
+  "id": "seed-1394",
+  "name": "TOKA climbing",
+  "metro": "Mexico City",
+  "expect_h": "32799cb60bc3777e",
+  "website": "https://tokaclimbing.mx/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "10am–5pm",
+   "sun": "10am–5pm"
+  },
+  "day_pass": "MX$190 adult, MX$140 student",
+  "facilities": [
+   "cafe",
+   "shop",
+   "shoe-hire",
+   "parking",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://tokaclimbing.mx/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Home page footer: Tlatilco #5, Col. Agricultura, Miguel Hidalgo. Hours given as L-V 10:00-22:00, S-D 10:00-17:00. Parking = a few free own spaces per FAQ. Kids = Toka Kids classes."
+ },
+ {
+  "id": "seed-1395",
+  "name": "V+ Bouldering & Sport Center",
+  "metro": "Mexico City",
+  "expect_h": "1fb23d88dc4b9012",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [],
+  "status": "not-found",
+  "notes": "Only Facebook/Instagram (vmasboulder, vmas_climbing) and third-party listings found; no own website located (guessed domains did not resolve)."
+ },
+ {
+  "id": "g-346ab53621",
+  "name": "Bhub Bouldering",
+  "metro": "Kuala Lumpur",
+  "expect_h": "5cdd870d4ab0c1e4",
+  "website": "https://bhubbouldering.com/",
+  "hours": {
+   "mon": "11am–11pm",
+   "tue": "11am–11pm",
+   "wed": "11am–11pm",
+   "thu": "11am–11pm",
+   "fri": "11am–11pm",
+   "sat": "9am–8pm",
+   "sun": "9am–8pm"
+  },
+  "day_pass": "RM40 adult peak, RM30 off-peak, RM24 youth (9-16)",
+  "facilities": [
+   "cafe",
+   "training",
+   "shop",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://bhubbouldering.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Home page 'Visit Us' confirms 4, Lorong 51a/227c, Seksyen 51a. Hours: Mon-Fri 11:00-23:00, Sat/Sun/PH 09:00-20:00. Peak RM40 weekdays 4-9pm and all weekend/PH; off-peak RM30 weekdays 11am-4pm and 9-11pm. Facilities: PlusOne Cafe, Kilter/MoonBoard/gym equipment, Pro Shop, shoe rental RM11. Parking claims ('Free Parking' / 'Parking Nearby') ambiguous so omitted."
+ },
+ {
+  "id": "g-4bc446acee",
+  "name": "Bolder Ventures Climbing Gym",
+  "metro": "Kuala Lumpur",
+  "expect_h": "a08fb7382b27799c",
+  "website": "https://www.bolderventures.com.my/",
+  "hours": {
+   "mon": "2pm–10pm",
+   "tue": "2pm–10pm",
+   "wed": "2pm–10pm",
+   "thu": "2pm–10pm",
+   "fri": "2pm–10pm",
+   "sat": "10am–6pm",
+   "sun": "10am–6pm"
+  },
+  "day_pass": "RM25 adult, RM20 youth",
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.bolderventures.com.my/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://www.bolderventures.com.my/contact-us",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.bolderventures.com.my/first-time",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Address on site matches (11, Jalan Industri USJ 1/2). Hours: Mon-Fri 2-10pm, weekend 10am-6pm (public holidays follow weekday/weekend). Day pass excludes gear. Shoes rental RM5."
+ },
+ {
+  "id": "seed-1693",
+  "name": "Bump Bouldering",
+  "metro": "Kuala Lumpur",
+  "expect_h": "0a46dd275c55283a",
+  "website": "https://www.bumpbouldering.com/jaya-one",
+  "hours": {
+   "mon": "12pm–11pm",
+   "tue": "12pm–11pm",
+   "wed": "12pm–11pm",
+   "thu": "12pm–11pm",
+   "fri": "12pm–11pm",
+   "sat": "9am–8pm",
+   "sun": "9am–8pm"
+  },
+  "day_pass": "RM45 adult 1-day pass, RM36 off-peak (weekdays before 5pm)",
+  "facilities": [
+   "cafe",
+   "training",
+   "showers",
+   "shop"
+  ],
+  "sources": [
+   {
+    "url": "https://www.bumpbouldering.com/jaya-one",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.bumpbouldering.com/pricing",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Location page confirms Lot 1.051, Level 1, The School, Jaya One (target address is the Jaya One street address). Pricing page is shared by both BUMP gyms; no location-specific price split. Hours: weekdays 12:00-23:00, weekends and PH 9:00-20:00. Training = Moonboard, campus board, fitness area; cafe = in-house cafeteria. Bodyweight studio mentions yoga as an example use only, so yoga omitted; shoe rental only on chain-wide pricing page so shoe-hire omitted."
+ },
+ {
+  "id": "g-2db5533538",
+  "name": "BUMP Bouldering Pavilion Bukit Jalil",
+  "metro": "Kuala Lumpur",
+  "expect_h": "936887d9bb2d6b84",
+  "website": "https://www.bumpbouldering.com/pavilion-bukit-jalil",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "10am–10pm",
+   "sun": "10am–10pm"
+  },
+  "day_pass": "RM45 adult 1-day pass, RM36 off-peak (weekdays before 5pm)",
+  "facilities": [
+   "training",
+   "showers",
+   "shop"
+  ],
+  "sources": [
+   {
+    "url": "https://www.bumpbouldering.com/pavilion-bukit-jalil",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.bumpbouldering.com/pricing",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Location page confirms Lot 5.84-01, Level 5, Pavilion Bukit Jalil; hours stated 10:00-22:00 weekdays, weekends and PH. Page copy is partly written in future tense (opening announcement: Kilter Board, fitness area, lockers/showers/footwash, retail proshop), and the BUMP Gyms page still says 'Coming Soon'; facilities taken as stated. Pricing page is chain-wide (both gyms)."
+ },
+ {
+  "id": "g-f1f37e170b",
+  "name": "Camp5 1Utama",
+  "metro": "Kuala Lumpur",
+  "expect_h": "f8f79823abfe1d9e",
+  "website": "https://www.camp5.com/1utama/",
+  "hours": {
+   "mon": "12pm–11pm",
+   "tue": "12pm–11pm",
+   "wed": "12pm–11pm",
+   "thu": "12pm–11pm",
+   "fri": "12pm–11pm",
+   "sat": "10am–8pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": "RM56 adult peak, RM42 off-peak (weekdays before 4pm)",
+  "facilities": [
+   "cafe"
+  ],
+  "sources": [
+   {
+    "url": "https://www.camp5.com/1utama/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Page address EZ501, 5th Floor, 1 Utama matches. Hours: Mon-Fri 12PM-11PM, weekends and PH 10AM-8PM. Site states fees in MYR (written RM here). Visible fee table used (a second, hidden-on-all-breakpoints table with lower prices exists in the HTML and was ignored). Facilities: Eat Well Cafe; rental gear fees are image labels so shoe-hire omitted."
+ },
+ {
+  "id": "g-955c407d0e",
+  "name": "Camp5 Jumpa",
+  "metro": "Kuala Lumpur",
+  "expect_h": "e5ef6c23d5ac75ee",
+  "website": "https://www.camp5.com/jumpa/",
+  "hours": {
+   "mon": "12pm–10pm",
+   "tue": "12pm–10pm",
+   "wed": "12pm–10pm",
+   "thu": "12pm–10pm",
+   "fri": "12pm–10pm",
+   "sat": "10am–8pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": "RM56 adult peak, RM42 off-peak (weekdays before 4pm)",
+  "facilities": null,
+  "sources": [
+   {
+    "url": "https://www.camp5.com/jumpa/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Page address 3rd Floor Jumpa Mall, Sungei Wang Plaza matches. Hours: Mon-Fri 12PM-10PM, weekends and PH 10AM-8PM. Site states fees in MYR (written RM here). Visible fee table used (a second hidden table with lower prices exists in the HTML and was ignored). No explicit facility keywords for this outlet (Beastpark family park is not a kids climbing area claim)."
+ },
+ {
+  "id": "g-848aaca6f8",
+  "name": "Camp5 KL Eco City",
+  "metro": "Kuala Lumpur",
+  "expect_h": "40719c0b7a1f677a",
+  "website": "https://www.camp5.com/ecocity/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "10am–8pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": "RM56 adult peak, RM42 off-peak (weekdays before 4pm)",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.camp5.com/ecocity/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Page address 4th Floor, KL Eco City Mall matches. Hours: Mon-Fri 10AM-10PM, weekends and PH 10AM-8PM. Site states fees in MYR (written RM here). Visible fee table used (a second hidden table with lower prices exists in the HTML and was ignored). Facilities from intro: barista cafe, dedicated kids area, fitness studio, hydraulic/Tension/Moon training walls."
+ },
+ {
+  "id": "seed-1694",
+  "name": "Shah Alam Extreme Park",
+  "metro": "Kuala Lumpur",
+  "expect_h": "d1f45c32f090f2b3",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [],
+  "status": "not-found",
+  "notes": "Only Facebook/Instagram and third-party/tourism listings found; no own website located (extremepark.com.my is an unrelated maintenance placeholder). Third-party listings suggest the park may be slated for demolition (unverified, not from an official source)."
+ }
+]

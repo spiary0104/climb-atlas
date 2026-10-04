@@ -1,0 +1,314 @@
+{
+ "_note": "Per-gym corrections applied at batch build (field drops and facility-key removals), with reasons.",
+ "drop": {
+  "seed-534": [
+   "hours",
+   "day_pass"
+  ],
+  "seed-535": [
+   "hours",
+   "day_pass"
+  ],
+  "seed-533": [
+   "day_pass"
+  ],
+  "g-52f004dcce": [
+   "hours"
+  ],
+  "g-4897474222": [
+   "hours"
+  ],
+  "g-448ab1686d": [
+   "hours"
+  ],
+  "g-456aef8896": [
+   "hours"
+  ],
+  "g-3c56b92c68": [
+   "hours"
+  ],
+  "g-ecd324de99": [
+   "day_pass"
+  ],
+  "seed-1052": [
+   "day_pass"
+  ],
+  "seed-1061": [
+   "day_pass"
+  ],
+  "seed-1247": [
+   "hours"
+  ],
+  "seed-1246": [
+   "day_pass"
+  ],
+  "seed-872": [
+   "hours"
+  ],
+  "seed-979": [
+   "day_pass",
+   "facilities"
+  ],
+  "seed-1137": [
+   "day_pass"
+  ],
+  "g-23cfa74ce8": [
+   "hours"
+  ],
+  "seed-432": [
+   "day_pass"
+  ],
+  "seed-1432": [
+   "hours"
+  ],
+  "seed-1424": [
+   "day_pass"
+  ],
+  "g-7c8c2678c1": [
+   "hours"
+  ],
+  "g-c067efb2d5": [
+   "hours"
+  ],
+  "g-d8d207d948": [
+   "hours"
+  ],
+  "seed-1120": [
+   "hours"
+  ],
+  "seed-1462": [
+   "hours"
+  ],
+  "seed-1465": [
+   "day_pass"
+  ],
+  "g-fec3a85643": [
+   "hours"
+  ],
+  "g-0a824a8a09": [
+   "hours",
+   "day_pass"
+  ],
+  "seed-1513": [
+   "hours",
+   "day_pass"
+  ],
+  "seed-1510": [
+   "day_pass"
+  ],
+  "seed-1301": [
+   "day_pass"
+  ],
+  "seed-1309": [
+   "day_pass"
+  ],
+  "seed-1263": [
+   "hours"
+  ],
+  "seed-1319": [
+   "day_pass"
+  ],
+  "seed-1320": [
+   "day_pass"
+  ],
+  "g-580b85b8e7": [
+   "hours"
+  ],
+  "seed-1785": [
+   "hours"
+  ],
+  "g-ee6ea57df4": [
+   "day_pass"
+  ],
+  "seed-114": [
+   "day_pass"
+  ],
+  "seed-115": [
+   "day_pass"
+  ],
+  "seed-139": [
+   "day_pass"
+  ],
+  "seed-371": [
+   "hours"
+  ],
+  "seed-266": [
+   "day_pass"
+  ],
+  "seed-1102": [
+   "hours"
+  ],
+  "g-5661495368": [
+   "hours"
+  ],
+  "g-17842e61e2": [
+   "day_pass"
+  ]
+ },
+ "removeFacility": {
+  "seed-1073": [
+   "shop"
+  ],
+  "g-ca5c043dc1": [
+   "shop"
+  ],
+  "seed-1756": [
+   "showers"
+  ],
+  "seed-1498": [
+   "cafe"
+  ],
+  "g-bff1fd5a92": [
+   "parking"
+  ],
+  "g-91ffa7b866": [
+   "showers"
+  ],
+  "g-c193560732": [
+   "showers"
+  ],
+  "g-40302b9f55": [
+   "showers"
+  ],
+  "g-001304292f": [
+   "showers"
+  ],
+  "g-9ec447b565": [
+   "showers"
+  ],
+  "g-fbeebad0b1": [
+   "showers"
+  ],
+  "g-b6f99d2813": [
+   "shop",
+   "cafe"
+  ],
+  "g-714fb371cc": [
+   "cafe"
+  ],
+  "seed-982": [
+   "cafe"
+  ],
+  "seed-1054": [
+   "cafe"
+  ],
+  "seed-940": [
+   "yoga"
+  ],
+  "seed-455": [
+   "shop"
+  ],
+  "seed-407": [
+   "shop"
+  ],
+  "seed-406": [
+   "shop"
+  ],
+  "g-9d6058b392": [
+   "shop"
+  ],
+  "g-150d4e4fca": [
+   "shop"
+  ],
+  "g-4e4422310f": [
+   "shop"
+  ],
+  "g-845f52bdde": [
+   "shop"
+  ],
+  "g-9f83e6bb99": [
+   "shop"
+  ],
+  "seed-366": [
+   "kids"
+  ],
+  "seed-1466": [
+   "cafe"
+  ],
+  "seed-1308": [
+   "cafe"
+  ],
+  "seed-1784": [
+   "yoga"
+  ],
+  "seed-1782": [
+   "yoga"
+  ]
+ },
+ "reasons": {
+  "seed-1073": "shop only a tab label, no text",
+  "g-ca5c043dc1": "shop only a tab label, no text",
+  "seed-534": "hours had no day qualifier; chain-wide price may vary by location",
+  "seed-535": "hours had no day qualifier; chain-wide price may vary by location",
+  "seed-1756": "showers line carries a stale Covid note",
+  "seed-1498": "cafe only a navigation link",
+  "g-52f004dcce": "weekend hours only in templated JSON-LD, identical across sites",
+  "g-4897474222": "weekend hours only in templated JSON-LD, identical across sites",
+  "g-448ab1686d": "weekend hours only in templated JSON-LD, identical across sites",
+  "g-456aef8896": "weekend hours only in templated JSON-LD, identical across sites",
+  "g-3c56b92c68": "weekend hours only in templated JSON-LD, identical across sites",
+  "g-ecd324de99": "price list marked Stand Dezember 2019",
+  "g-bff1fd5a92": "adjacent car park with discount, not on-site",
+  "g-91ffa7b866": "showers only a chain-wide statement",
+  "g-c193560732": "showers only a chain-wide statement",
+  "g-40302b9f55": "showers only a chain-wide statement",
+  "g-001304292f": "showers only a chain-wide statement",
+  "g-9ec447b565": "showers only a chain-wide statement",
+  "g-fbeebad0b1": "showers only a chain-wide statement",
+  "seed-1052": "price list stale or contradicted by the gym's own 2026 notice",
+  "seed-1061": "price list stale or contradicted by the gym's own 2026 notice",
+  "seed-1247": "weekend Closed inferred from events-only",
+  "seed-1246": "price labels matched by page order",
+  "g-b6f99d2813": "cafe/shop only from menu items",
+  "g-714fb371cc": "cafe/shop only from menu items",
+  "seed-982": "cafe/shop only from menu items",
+  "seed-1054": "cafe/shop only from menu items",
+  "seed-872": "contact page and FAQ disagree on Friday hours",
+  "seed-940": "yoga studio but no classes stated",
+  "seed-979": "price/facilities from shared chain pages that do not name Darmstadt",
+  "seed-1137": "ambiguous price table",
+  "g-23cfa74ce8": "hours depend on reading a typo (22:008)",
+  "seed-455": "shop only chalk sold at the counter",
+  "seed-432": "recorded the member fee, not the visitor fee",
+  "seed-407": "shop only from captions/page titles",
+  "seed-406": "shop only from captions/page titles",
+  "g-9d6058b392": "shop only from captions/page titles",
+  "g-150d4e4fca": "shop only from captions/page titles",
+  "g-4e4422310f": "shop only from captions/page titles",
+  "g-845f52bdde": "shop only from captions/page titles",
+  "g-9f83e6bb99": "shop only from captions/page titles",
+  "seed-1432": "pages disagree on hours",
+  "seed-1424": "currency not stated",
+  "g-7c8c2678c1": "hours from a this-week booking widget",
+  "g-c067efb2d5": "hours from a this-week booking widget",
+  "g-d8d207d948": "hours from a this-week booking widget",
+  "seed-366": "kids only from a class listing",
+  "seed-1120": "hours page labels them summer opening hours",
+  "seed-1462": "contact page and footer disagree",
+  "seed-1465": "tariff and home pages disagree",
+  "g-fec3a85643": "closing time inferred from an adult-school slot",
+  "g-0a824a8a09": "site looks stale (2023 footer, COVID notice)",
+  "seed-1466": "cafe only from good coffee wording",
+  "seed-1513": "soft-opening hours; price from a class description",
+  "seed-1510": "price list dated Oct 2024",
+  "seed-1301": "currency assumed",
+  "seed-1309": "currency assumed",
+  "seed-1308": "snack shop, not a cafe",
+  "seed-1263": "footer lists seasonal variants",
+  "seed-1319": "price page has no adult column label",
+  "seed-1320": "price page has no adult column label",
+  "g-580b85b8e7": "home and contact pages disagree",
+  "seed-1785": "footer hours may be cafe hours",
+  "g-ee6ea57df4": "price from a script override",
+  "seed-1784": "yoga only a price-list block",
+  "seed-1782": "yoga only a price-list block",
+  "seed-114": "price from an older archived page (possibly stale)",
+  "seed-115": "price from an older archived page (possibly stale)",
+  "seed-139": "only a starting price (begin at)",
+  "seed-371": "hours block identical to LA, footer 2016: possibly stale",
+  "seed-266": "own FAQ and pricing table disagree",
+  "seed-1102": "hours from code defaults, not visible text",
+  "g-5661495368": "home and hours pages disagree",
+  "g-17842e61e2": "price layout ambiguous (200 vs 220 kr)"
+ }
+}

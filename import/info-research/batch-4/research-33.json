@@ -1,0 +1,946 @@
+[
+ {
+  "id": "seed-257",
+  "name": "Double-Diamond Climbing Wall",
+  "metro": "Salt Lake City",
+  "expect_h": "17ffb2d196b53cef",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [],
+  "status": "flag",
+  "notes": "Black Diamond Gymnastics (blackdiamondgym.com, Park City) pages fetched (home, /parkcity, /parkcityprograms, /faq) never mention a climbing wall or the 6400 N Hwy 224 address; wall not listed on operator site, possibly discontinued. Only directories mention it (not used)."
+ },
+ {
+  "id": "seed-262",
+  "name": "Momentum Fort Union",
+  "metro": "Salt Lake City",
+  "expect_h": "d656335a22ba39c1",
+  "website": "https://momentumclimbing.com/fortunion/",
+  "hours": {
+   "mon": "6am–11pm",
+   "tue": "6am–11pm",
+   "wed": "6am–11pm",
+   "thu": "6am–11pm",
+   "fri": "6am–11pm",
+   "sat": "10am–10pm",
+   "sun": "10am–6pm"
+  },
+  "day_pass": "$29 adult, $21 child (11 and under)",
+  "facilities": [
+   "kids",
+   "shoe-hire",
+   "showers",
+   "training",
+   "yoga"
+  ],
+  "sources": [
+   {
+    "url": "https://momentumclimbing.com/fortunion/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://momentumclimbing.com/fortunion/rates/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Public hours; Sat 8am-10am is members only (excluded). Showers from rates page (day pass includes showers)."
+ },
+ {
+  "id": "seed-263",
+  "name": "Momentum Indoor Climbing Gym",
+  "metro": "Salt Lake City",
+  "expect_h": "b90bc8c8c0b7a52f",
+  "website": "https://momentumclimbing.com/sandy/",
+  "hours": {
+   "mon": "6am–11pm",
+   "tue": "6am–11pm",
+   "wed": "6am–11pm",
+   "thu": "6am–11pm",
+   "fri": "6am–11pm",
+   "sat": "10am–10pm",
+   "sun": "10am–6pm"
+  },
+  "day_pass": "$29 adult, $21 child (11 and under)",
+  "facilities": [
+   "kids",
+   "shoe-hire",
+   "showers",
+   "training",
+   "yoga"
+  ],
+  "sources": [
+   {
+    "url": "https://momentumclimbing.com/sandy/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://momentumclimbing.com/sandy/rates/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Public hours; Sat 8am-10am is members only (excluded). Training = fitness equipment (rates page); kids = youth classes/programs."
+ },
+ {
+  "id": "seed-264",
+  "name": "Momentum Lehi",
+  "metro": "Salt Lake City",
+  "expect_h": "efb4519e2fe4c7a8",
+  "website": "https://momentumclimbing.com/lehi/",
+  "hours": {
+   "mon": "6am–11pm",
+   "tue": "6am–11pm",
+   "wed": "6am–11pm",
+   "thu": "6am–11pm",
+   "fri": "6am–11pm",
+   "sat": "10am–10pm",
+   "sun": "10am–6pm"
+  },
+  "day_pass": "$29 adult, $21 child (11 and under)",
+  "facilities": [
+   "kids",
+   "shoe-hire",
+   "shop",
+   "showers",
+   "training",
+   "yoga"
+  ],
+  "sources": [
+   {
+    "url": "https://momentumclimbing.com/lehi/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://momentumclimbing.com/lehi/rates/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Public hours; Sat 8am-10am is members only (excluded). Pro Shop and kids bouldering area stated on page."
+ },
+ {
+  "id": "seed-265",
+  "name": "Momentum Millcreek",
+  "metro": "Salt Lake City",
+  "expect_h": "ec5cbf1ce0211371",
+  "website": "https://momentumclimbing.com/millcreek/",
+  "hours": {
+   "mon": "6am–11pm",
+   "tue": "6am–11pm",
+   "wed": "6am–11pm",
+   "thu": "6am–11pm",
+   "fri": "6am–11pm",
+   "sat": "10am–10pm",
+   "sun": "10am–10pm"
+  },
+  "day_pass": "$29 adult, $21 child (11 and under)",
+  "facilities": [
+   "kids",
+   "shoe-hire",
+   "showers",
+   "training",
+   "yoga"
+  ],
+  "sources": [
+   {
+    "url": "https://momentumclimbing.com/millcreek/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://momentumclimbing.com/millcreek/rates/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Public hours; Sat 8am-10am is members only (excluded). Page also mentions sauna (not a list key)."
+ },
+ {
+  "id": "seed-266",
+  "name": "Salt Lake Bouldering Project",
+  "metro": "Salt Lake City",
+  "expect_h": "157f81568aa6984b",
+  "website": "https://boulderingproject.com/location/the-granary/",
+  "hours": {
+   "mon": "6am–11pm",
+   "tue": "6am–11pm",
+   "wed": "6am–11pm",
+   "thu": "6am–11pm",
+   "fri": "6am–11pm",
+   "sat": "6am–11pm",
+   "sun": "6am–11pm"
+  },
+  "day_pass": "$22 adult, $20 young adult (14-20)",
+  "facilities": [
+   "cafe",
+   "parking",
+   "shoe-hire",
+   "training",
+   "yoga"
+  ],
+  "sources": [
+   {
+    "url": "https://boulderingproject.com/location/the-granary/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://boulderingproject.com/pricing-membership/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Public 6am-11pm daily (members have 24/7 access, excluded). Day pass from the Granary section of the chain pricing page; the SLC pricing sub-page FAQ states $20 adult (and other numbers that disagree with its own widget), so used the pricing table. shoe-hire: first-visit rental shoes included. Site name: Bouldering Project The Granary (same address)."
+ },
+ {
+  "id": "seed-267",
+  "name": "The Front Climbing Club",
+  "metro": "Salt Lake City",
+  "expect_h": "36c2f6433cd6c8a1",
+  "website": "https://thefrontclimbingclub.com/slc/visit",
+  "hours": {
+   "mon": "5:30am–11pm",
+   "tue": "5:30am–11pm",
+   "wed": "5:30am–11pm",
+   "thu": "5:30am–11pm",
+   "fri": "5:30am–11pm",
+   "sat": "8am–10pm",
+   "sun": "8am–10pm"
+  },
+  "day_pass": "$39 adult, $25 youth (13 and under)",
+  "facilities": [
+   "cafe",
+   "kids",
+   "shoe-hire",
+   "shop",
+   "training",
+   "yoga"
+  ],
+  "sources": [
+   {
+    "url": "https://thefrontclimbingclub.com/slc/visit",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://thefrontclimbingclub.com/contact-us",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://thefrontclimbingclub.com/slc/amenities",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours from Contact Us page (gym hours, not Rumsy's cafe/Studio 1396). cafe = Rumsy's; kids = School Room (youth-oriented top rope) + youth programs; showers not explicitly stated (saunas in locker rooms only)."
+ },
+ {
+  "id": "seed-269",
+  "name": "The Front Climbing Club – South Main",
+  "metro": "Salt Lake City",
+  "expect_h": "03bfc94a961755d3",
+  "website": "https://thefrontclimbingclub.com/southmain/visit",
+  "hours": {
+   "mon": "5:30am–11pm",
+   "tue": "5:30am–11pm",
+   "wed": "5:30am–11pm",
+   "thu": "5:30am–11pm",
+   "fri": "5:30am–11pm",
+   "sat": "8am–10pm",
+   "sun": "8am–10pm"
+  },
+  "day_pass": "$39 adult, $25 youth (13 and under)",
+  "facilities": [
+   "parking",
+   "shoe-hire",
+   "shop",
+   "training",
+   "yoga"
+  ],
+  "sources": [
+   {
+    "url": "https://thefrontclimbingclub.com/southmain/visit",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://thefrontclimbingclub.com/contact-us",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://thefrontclimbingclub.com/southmain/amenities",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours from Contact Us page (gym hours, not Soma cafe). Parking = free visitors-only lot (visit page FAQ). Kids/cafe not stated on amenities page so omitted."
+ },
+ {
+  "id": "seed-271",
+  "name": "The Scratch Pad",
+  "metro": "Salt Lake City",
+  "expect_h": "6ad74d086d8dc6b4",
+  "website": "https://www.climbthescratchpad.com/",
+  "hours": null,
+  "day_pass": "$21 adult",
+  "facilities": [
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.climbthescratchpad.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.climbthescratchpad.com/first-visit",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours null: site lists Mon/Wed/Fri 4-10pm, Sat 10am-4pm, Tue/Thu 'Youth Clubs 4-6pm' only, no Sunday; not a complete public 7-day schedule. kids = Youth Climbing Club."
+ },
+ {
+  "id": "seed-130",
+  "name": "Austin Bouldering Project – Springdale",
+  "metro": "Austin",
+  "expect_h": "bed86ca00a2d6f55",
+  "website": "https://boulderingproject.com/location/springdale/",
+  "hours": {
+   "mon": "6am–11pm",
+   "tue": "6am–11pm",
+   "wed": "6am–11pm",
+   "thu": "6am–11pm",
+   "fri": "6am–11pm",
+   "sat": "8am–10pm",
+   "sun": "8am–10pm"
+  },
+  "day_pass": "$25 adult (21+)",
+  "facilities": [
+   "kids",
+   "parking",
+   "shoe-hire",
+   "training",
+   "yoga"
+  ],
+  "sources": [
+   {
+    "url": "https://boulderingproject.com/location/springdale/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://boulderingproject.com/pricing-membership/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Day pass from Springdale section of chain pricing page. kids = After School Clubs listed on page. Operator now brands as Bouldering Project (austinboulderingproject.com redirects)."
+ },
+ {
+  "id": "seed-134",
+  "name": "Austin Bouldering Project Westgate",
+  "metro": "Austin",
+  "expect_h": "99a55e4d1d1b975d",
+  "website": "https://boulderingproject.com/location/westgate/",
+  "hours": {
+   "mon": "6am–11pm",
+   "tue": "6am–11pm",
+   "wed": "6am–11pm",
+   "thu": "6am–11pm",
+   "fri": "6am–11pm",
+   "sat": "8am–10pm",
+   "sun": "8am–10pm"
+  },
+  "day_pass": "$25 adult (21+)",
+  "facilities": [
+   "kids",
+   "parking",
+   "shoe-hire",
+   "training",
+   "yoga"
+  ],
+  "sources": [
+   {
+    "url": "https://boulderingproject.com/location/westgate/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://boulderingproject.com/pricing-membership/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Day pass from Westgate section of chain pricing page. kids = youth spaces + After School Clubs."
+ },
+ {
+  "id": "seed-141",
+  "name": "Crux Climbing Center",
+  "metro": "Austin",
+  "expect_h": "4da532d6728c2be6",
+  "website": "https://www.cruxclimbingcenter.com/south-austin/",
+  "hours": {
+   "mon": "6am–11pm",
+   "tue": "6am–11pm",
+   "wed": "6am–11pm",
+   "thu": "6am–11pm",
+   "fri": "6am–11pm",
+   "sat": "10am–10pm",
+   "sun": "10am–10pm"
+  },
+  "day_pass": "$26 adult, $6 off students/seniors/military",
+  "facilities": [
+   "kids",
+   "shoe-hire",
+   "shop",
+   "training",
+   "yoga"
+  ],
+  "sources": [
+   {
+    "url": "https://www.cruxclimbingcenter.com/south-austin/contact-us/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.cruxclimbingcenter.com/south-austin/rates/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "flag",
+  "notes": "MOVED: operator site lists South Austin at 220 Ralph Ablanedo Dr, Austin TX 78748 (121 Pickle Rd appears nowhere on the site). Values are for the new South Austin location; address/pin should be updated, do not apply blindly. kids = Panda-monium Room. Site 403s curl; read via WebFetch."
+ },
+ {
+  "id": "seed-142",
+  "name": "Crux Climbing Center Central",
+  "metro": "Austin",
+  "expect_h": "08d5bef9cf739aea",
+  "website": "https://www.cruxclimbingcenter.com/central-austin/",
+  "hours": {
+   "mon": "6am–11pm",
+   "tue": "6am–11pm",
+   "wed": "6am–11pm",
+   "thu": "6am–11pm",
+   "fri": "6am–11pm",
+   "sat": "10am–10pm",
+   "sun": "10am–10pm"
+  },
+  "day_pass": "$26 adult, $6 off students/seniors/military",
+  "facilities": [
+   "kids",
+   "shoe-hire",
+   "shop",
+   "yoga"
+  ],
+  "sources": [
+   {
+    "url": "https://www.cruxclimbingcenter.com/central-austin/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.cruxclimbingcenter.com/central-austin/contact/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.cruxclimbingcenter.com/central-austin/rates/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Site 403s curl; read via WebFetch. Address 6015 Dillard Circle Unit B matches. A search snippet (not used) suggested members-only 6-11am weekdays at some Crux; not on fetched pages. kids = youth programs; shoe-hire = $5 gear rental incl. shoes."
+ },
+ {
+  "id": "seed-143",
+  "name": "Crux Climbing Center Pflugerville",
+  "metro": "Austin",
+  "expect_h": "16af4a38eeec1447",
+  "website": "https://www.cruxclimbingcenter.com/pflugerville/",
+  "hours": {
+   "mon": "6am–10pm",
+   "tue": "6am–10pm",
+   "wed": "6am–10pm",
+   "thu": "6am–10pm",
+   "fri": "6am–10pm",
+   "sat": "10am–10pm",
+   "sun": "10am–10pm"
+  },
+  "day_pass": "$26 adult, $6 off students/seniors/military",
+  "facilities": [
+   "kids",
+   "shoe-hire",
+   "shop",
+   "yoga"
+  ],
+  "sources": [
+   {
+    "url": "https://www.cruxclimbingcenter.com/pflugerville/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.cruxclimbingcenter.com/pflugerville/rates/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Read via WebFetch (site 403s curl). kids = youth programs/camps/parties."
+ },
+ {
+  "id": "seed-149",
+  "name": "Mesa Rim Austin",
+  "metro": "Austin",
+  "expect_h": "287a1b4ba8d7216c",
+  "website": "https://mesarim.com/austin/",
+  "hours": {
+   "mon": "6am–11pm",
+   "tue": "6am–11pm",
+   "wed": "6am–11pm",
+   "thu": "6am–11pm",
+   "fri": "6am–11pm",
+   "sat": "8am–9pm",
+   "sun": "8am–9pm"
+  },
+  "day_pass": null,
+  "facilities": [
+   "kids",
+   "shoe-hire",
+   "shop",
+   "showers",
+   "training",
+   "yoga"
+  ],
+  "sources": [
+   {
+    "url": "https://mesarim.com/austin/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://mesarim.com/austin/join-mesa-rim/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://mesarim.com/austin/first-visit/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Day pass price not rendered on account.mesarim.com page (booking widget), so null. showers from membership page 'Locker Rooms + Showers + Sauna'; shop = Pro Shop; shoe-hire = rental gear in intro package."
+ },
+ {
+  "id": "seed-158",
+  "name": "Power Spot Climbing",
+  "metro": "Austin",
+  "expect_h": "afec57de16e85179",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [],
+  "status": "not-found",
+  "notes": "powerspotclimbing.com is a parked GoDaddy page; no official site found (search returns only directories). Possibly closed."
+ },
+ {
+  "id": "seed-244",
+  "name": "Central Rock Gym – Atlanta",
+  "metro": "Atlanta",
+  "expect_h": "a33cbe2e8f09550a",
+  "website": "https://centralrockgym.com/atlanta",
+  "hours": {
+   "mon": "11am–10pm",
+   "tue": "6am–10pm",
+   "wed": "11am–10pm",
+   "thu": "6am–10pm",
+   "fri": "1pm–10pm",
+   "sat": "10am–8pm",
+   "sun": "11am–6pm"
+  },
+  "day_pass": null,
+  "facilities": [
+   "yoga"
+  ],
+  "sources": [
+   {
+    "url": "https://centralrockgym.com/atlanta",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours exactly as listed on location page (alternating 6am/11am openings; page does not say 6am is members-only). Day pass price not shown on site (day-pass page has no amount). yoga from this page's Yoga & Fitness section."
+ },
+ {
+  "id": "seed-245",
+  "name": "Central Rock Gym – Atlanta Bouldering",
+  "metro": "Atlanta",
+  "expect_h": "8e3839f760d45689",
+  "website": "https://centralrockgym.com/atlanta-bouldering",
+  "hours": {
+   "mon": "6am–10pm",
+   "tue": "11am–10pm",
+   "wed": "6am–10pm",
+   "thu": "11am–10pm",
+   "fri": "11am–10pm",
+   "sat": "10am–8pm",
+   "sun": "11am–6pm"
+  },
+  "day_pass": null,
+  "facilities": null,
+  "sources": [
+   {
+    "url": "https://centralrockgym.com/atlanta-bouldering",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours exactly as listed on location page (alternating 6am/11am openings; page does not say 6am is members-only). Day pass price not shown on site (day-pass page has no amount). No facility text for this location beyond chain menu labels."
+ },
+ {
+  "id": "seed-246",
+  "name": "Central Rock Gym – Kennesaw",
+  "metro": "Atlanta",
+  "expect_h": "c6b2fd7242b12cdb",
+  "website": "https://centralrockgym.com/kennesaw",
+  "hours": {
+   "mon": "11am–10pm",
+   "tue": "6am–10pm",
+   "wed": "11am–10pm",
+   "thu": "6am–10pm",
+   "fri": "1pm–10pm",
+   "sat": "10am–8pm",
+   "sun": "11am–6pm"
+  },
+  "day_pass": null,
+  "facilities": [
+   "kids",
+   "yoga"
+  ],
+  "sources": [
+   {
+    "url": "https://centralrockgym.com/kennesaw",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours exactly as listed on location page (alternating 6am/11am openings; page does not say 6am is members-only). Day pass price not shown on site (day-pass page has no amount). kids = summer camps offered at Kennesaw; yoga & fitness classes section."
+ },
+ {
+  "id": "seed-247",
+  "name": "Central Rock Gym – Midtown",
+  "metro": "Atlanta",
+  "expect_h": "98fbdb6415987e2d",
+  "website": "https://centralrockgym.com/midtown",
+  "hours": {
+   "mon": "6am–10pm",
+   "tue": "11am–10pm",
+   "wed": "6am–10pm",
+   "thu": "11am–10pm",
+   "fri": "11am–10pm",
+   "sat": "10am–8pm",
+   "sun": "11am–6pm"
+  },
+  "day_pass": null,
+  "facilities": null,
+  "sources": [
+   {
+    "url": "https://centralrockgym.com/midtown",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours exactly as listed on location page (alternating 6am/11am openings; page does not say 6am is members-only). Day pass price not shown on site (day-pass page has no amount). Also posts separate kids-12-and-under hours. No facility text beyond menu labels."
+ },
+ {
+  "id": "seed-248",
+  "name": "Escalade Rock Climbing Gym",
+  "metro": "Atlanta",
+  "expect_h": "e69431aadd618ce4",
+  "website": "https://www.escaladegym.com/",
+  "hours": {
+   "mon": "1pm–9pm",
+   "tue": "1pm–9pm",
+   "wed": "1pm–9pm",
+   "thu": "1pm–9pm",
+   "fri": "1pm–9pm",
+   "sat": "10am–8pm",
+   "sun": "12pm–6pm"
+  },
+  "day_pass": null,
+  "facilities": [
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.escaladegym.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://www.escaladegym.com/hours-directions",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.escaladegym.com/faq",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Rates page shows no price text (image only). kids = children's climbing and play area (FAQ); shoes to rent (FAQ)."
+ },
+ {
+  "id": "seed-252",
+  "name": "The Overlook Boulder + Fitness",
+  "metro": "Atlanta",
+  "expect_h": "8fb0e0522ebf03e7",
+  "website": "https://overlookclimbing.com/",
+  "hours": {
+   "mon": "6am–10pm",
+   "tue": "6am–10pm",
+   "wed": "6am–10pm",
+   "thu": "6am–10pm",
+   "fri": "10am–10pm",
+   "sat": "10am–8pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": "$23 adult ($28 with shoe and chalk rental)",
+  "facilities": [
+   "kids",
+   "shoe-hire",
+   "training",
+   "yoga"
+  ],
+  "sources": [
+   {
+    "url": "https://overlookclimbing.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://overlookclimbing.com/hours-location/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://overlookclimbing.com/passes/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://overlookclimbing.com/memberships/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Site 403s curl; read via WebFetch. kids = youth birthday parties/events."
+ },
+ {
+  "id": "seed-254",
+  "name": "Wall Crawler Rock Club",
+  "metro": "Atlanta",
+  "expect_h": "563cc165ef0219d7",
+  "website": "https://wallcrawlerclimbing.com/",
+  "hours": {
+   "mon": "12pm–10pm",
+   "tue": "12pm–10pm",
+   "wed": "12pm–10pm",
+   "thu": "12pm–10pm",
+   "fri": "12pm–10pm",
+   "sat": "10am–6pm",
+   "sun": "12pm–6pm"
+  },
+  "day_pass": "$18 adult, $15 student/under 18",
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://wallcrawlerclimbing.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://wallcrawlerclimbing.com/directions",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://wallcrawlerclimbing.com/indoor-classes",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Read via WebFetch. Shoe rental $6 stated on pricing page. Discount nights ignored."
+ }
+]

@@ -1,0 +1,956 @@
+[
+  {
+    "id": "seed-1455",
+    "name": "BigWall Praha-Vysočany",
+    "metro": "Prague",
+    "expect_h": "dc0152695d4228ab",
+    "website": "https://www.big-wall.cz/",
+    "hours": {
+      "mon": "9am–10pm",
+      "tue": "7am–10pm",
+      "wed": "7am–10pm",
+      "thu": "7am–10pm",
+      "fri": "9am–10pm",
+      "sat": "9am–10pm",
+      "sun": "9am–10pm"
+    },
+    "day_pass": "260 Kč adult peak, 170 Kč weekday 7am-2pm, 220 Kč student peak",
+    "facilities": [
+      "cafe",
+      "shop",
+      "shoe-hire",
+      "kids",
+      "parking"
+    ],
+    "sources": [
+      {
+        "url": "https://www.big-wall.cz/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "kids"
+        ]
+      },
+      {
+        "url": "https://www.big-wall.cz/?link=kontakty",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours",
+          "parking"
+        ]
+      },
+      {
+        "url": "https://www.big-wall.cz/cs/ceny-vstupneho/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass"
+        ]
+      },
+      {
+        "url": "https://www.big-wall.cz/cs/bistro/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.big-wall.cz/cs/obchod-s-vybavenim/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.big-wall.cz/cs/pujcovna-vybaveni/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Price varies by arrival time: adult 260 Kč weekday 2-8pm and weekends 9am-8pm; 170 Kč weekday 7am-2pm; 200 Kč after 8pm. Student peak 220 Kč. Holidays 9am-10pm. Free parking in front of entrance. Kids: children's boulders and kids clubs."
+  },
+  {
+    "id": "seed-1451",
+    "name": "Boulder Bar",
+    "metro": "Prague",
+    "expect_h": "1cbef92e96c3e19c",
+    "website": "https://holesovice.jungle.cz/",
+    "hours": {
+      "mon": "9am–2:30pm, 5:45pm–10pm",
+      "tue": "9am–2:30pm, 5:45pm–10pm",
+      "wed": "9am–2:30pm, 5:45pm–10pm",
+      "thu": "9am–2:30pm, 5:45pm–10pm",
+      "fri": "9am–2:30pm, 4:45pm–10pm",
+      "sat": "9am–10pm",
+      "sun": "9am–10pm"
+    },
+    "day_pass": "180 Kč adult",
+    "facilities": [
+      "cafe",
+      "shoe-hire",
+      "kids",
+      "yoga"
+    ],
+    "sources": [
+      {
+        "url": "https://holesovice.jungle.cz/boulder-bar-s421",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "day_pass"
+        ]
+      },
+      {
+        "url": "https://holesovice.jungle.cz/cenik-s158",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://holesovice.jungle.cz/bar-s276",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://holesovice.jungle.cz/deti-s227",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://holesovice.jungle.cz/joga-s420",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Site brand is Jungle Holešovice (formerly BB / Boulder Bar); address U Výstaviště 11 matches. Wall hours show a mid-day gap Mon-Fri as published; one-off 28 Sep note ignored. Adult price from the info panel on the page; the full price table is not in the HTML."
+  },
+  {
+    "id": "g-0afab3b30c",
+    "name": "Boulder V síti",
+    "metro": "Prague",
+    "expect_h": "1c01ffd16e2c631f",
+    "website": "https://www.bouldervsiti.cz/",
+    "hours": null,
+    "day_pass": "100 Kč (under 15: 65 Kč)",
+    "facilities": [
+      "cafe",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://www.bouldervsiti.cz/en/cenik/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.bouldervsiti.cz/en/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours null: site lists only Mon-Fri from 16:00 and Sat from 17:00 with closing time '??:??' and no Sunday. Price item 'Boulder 100 Kč' is not labelled adult. A 'Gym 60 Kč' item exists, not claimed as training."
+  },
+  {
+    "id": "seed-1456",
+    "name": "Climbing Gym Holešovice",
+    "metro": "Prague",
+    "expect_h": "1bdb9104b4ce483d",
+    "website": null,
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [
+      {
+        "url": "https://www.stenaholesovice.cz/",
+        "accessed": "2026-10-04",
+        "supports": []
+      }
+    ],
+    "status": "flag",
+    "notes": "Probably closed/demolished. The domain stenaholesovice.cz (www and root) no longer serves a gym site: it returns a 'Please wait' page that auto-redirects to regbu.com (unrelated, suspicious). Search results from horyinfo.cz (news, not used for fields) say the Bubenská wall closed 31 Dec 2022 for redevelopment. Website left null."
+  },
+  {
+    "id": "seed-1450",
+    "name": "HUDY Boulder Karlín",
+    "metro": "Prague",
+    "expect_h": "3abd942f8acc2d3c",
+    "website": "https://www.hudysteny.cz/boulderkarlin/",
+    "hours": {
+      "mon": "7am–9:30pm",
+      "tue": "7am–9:30pm",
+      "wed": "7am–9:30pm",
+      "thu": "7am–9:30pm",
+      "fri": "7am–9:30pm",
+      "sat": "9am–9:30pm",
+      "sun": "9am–9:30pm"
+    },
+    "day_pass": "300 Kč adult weekday (3 h), 260 Kč weekend/holiday",
+    "facilities": [
+      "cafe",
+      "training",
+      "kids",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://www.hudysteny.cz/boulderkarlin/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.hudysteny.cz/boulderkarlin/cenik/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.hudysteny.cz/boulderkarlin/wp-content/uploads/2025/01/Praha-pujcovna-vybaveni.pdf",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Weekday adult 240 Kč applies only if leaving before 5pm and only from prepaid credit; 300 Kč is the full weekday entry. Cafe inferred from price page text about purchases at the bar and refreshments. Shoe rental from the rental price-list PDF linked on the site. Training: campus board. Only free street parking at weekends, so not claimed."
+  },
+  {
+    "id": "seed-1453",
+    "name": "JamJam Boulder Gym",
+    "metro": "Prague",
+    "expect_h": "c68283c747a8779e",
+    "website": "https://www.jamjam.cz/",
+    "hours": {
+      "mon": "7:37am–10:33pm",
+      "tue": "7:37am–10:33pm",
+      "wed": "7:37am–10:33pm",
+      "thu": "7:37am–10:33pm",
+      "fri": "7:37am–10:33pm",
+      "sat": "8:08am–10:33pm",
+      "sun": "8:08am–10:33pm"
+    },
+    "day_pass": "250 Kč adult peak and weekend, 160 Kč weekday mornings, 200 Kč student peak",
+    "facilities": [
+      "cafe",
+      "training",
+      "kids",
+      "shoe-hire",
+      "parking"
+    ],
+    "sources": [
+      {
+        "url": "https://www.jamjam.cz/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.jamjam.cz/cenik",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Odd times (7:37, 22:33) are as published. 250 Kč weekday 2:14pm-8:19pm and weekends/holidays; 160 Kč weekday 7:37am-2:13pm; 200 Kč weekday after 8:20pm. Shop is only 'planned' on the site, so not listed."
+  },
+  {
+    "id": "seed-1452",
+    "name": "Smichoff Climbing Center",
+    "metro": "Prague",
+    "expect_h": "106d85570a08f517",
+    "website": "https://www.lezeckecentrum.cz/",
+    "hours": {
+      "mon": "6am–11:30pm",
+      "tue": "6am–11:30pm",
+      "wed": "6am–11:30pm",
+      "thu": "6am–11:30pm",
+      "fri": "6am–11pm",
+      "sat": "8am–11pm",
+      "sun": "8am–11pm"
+    },
+    "day_pass": "Men 300 Kč weekday evening, 250 Kč weekends; women/students 280/230 Kč",
+    "facilities": [
+      "cafe",
+      "shop",
+      "shoe-hire",
+      "kids",
+      "training",
+      "parking"
+    ],
+    "sources": [
+      {
+        "url": "https://www.lezeckecentrum.cz/en/contact-information",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.lezeckecentrum.cz/en/pricing",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.lezeckecentrum.cz/cs/stena-a-boulder/jak-to-u-nas-vypada",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Site calls itself SmíchOFF. Pricing is gender- and time-based: men weekdays 250 Kč from 3pm, 300 Kč from 5pm, 240 Kč from 8pm, weekends 250 Kč from 8am (150 Kč from 6pm); women/students 230/280 Kč; 100 Kč morning rate only if leaving by 4:15pm. Paid on-site parking (kiosk at reception) is on the contact page. Training: tilting wall."
+  },
+  {
+    "id": "seed-1454",
+    "name": "Třináctka",
+    "metro": "Prague",
+    "expect_h": "e769a6c5c8785f58",
+    "website": "https://stenastodulky.cz/",
+    "hours": {
+      "mon": "9am–9pm",
+      "tue": "9am–9pm",
+      "wed": "9am–9pm",
+      "thu": "9am–9pm",
+      "fri": "9am–9pm",
+      "sat": "9am–9pm",
+      "sun": "9am–9pm"
+    },
+    "day_pass": "240 Kč adult peak, 150 Kč weekday mornings, 210 Kč student",
+    "facilities": [
+      "cafe",
+      "shop",
+      "shoe-hire",
+      "kids",
+      "parking"
+    ],
+    "sources": [
+      {
+        "url": "https://stenastodulky.cz/cs/kontakt/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://stenastodulky.cz/cenik/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass"
+        ]
+      },
+      {
+        "url": "https://stenastodulky.cz/cs/restaurace/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://stenastodulky.cz/cs/obchod-s-vybavenim/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://stenastodulky.cz/cs/gear-rental/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Branded Třináctka (Stodůlky). Hours: contact page gives 9am-9pm daily via the Třináctka reception (price table also runs 9:00-20:59); the 7am-10:30pm times are for entry with a deposit via the Jeremi vestibule and were not used. Adult 240 Kč weekday 1-8pm and weekends 9am-8pm, 150 Kč weekday 9am-1pm, 190 Kč evening. Free covered parking. Kids from the kids clubs menu."
+  },
+  {
+    "id": "g-96713e45e8",
+    "name": "UltraAnt",
+    "metro": "Prague",
+    "expect_h": "2439c976ef22fec4",
+    "website": "https://ultraant.cz/",
+    "hours": {
+      "mon": "3pm–10pm",
+      "tue": "3pm–10pm",
+      "wed": "3pm–10pm",
+      "thu": "3pm–10pm",
+      "fri": "4pm–9pm",
+      "sat": "Closed",
+      "sun": "Closed"
+    },
+    "day_pass": "280 Kč adult (180 Kč with 50 Kč membership card)",
+    "facilities": [
+      "cafe",
+      "training",
+      "kids",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://ultraant.cz/kontakty/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      },
+      {
+        "url": "https://ultraant.cz/cenik/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://ultraant.cz/bar/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://ultraant.cz/boulder/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Price list valid from 1 Jan 2026; membership card needed for the 180 Kč rate and some rentals. Training: small gym with campus board and hangboard."
+  },
+  {
+    "id": "seed-988",
+    "name": "Boulderwelt Dortmund",
+    "metro": "Ruhr Area",
+    "expect_h": "7f67990a967fc8d2",
+    "website": "https://www.boulderwelt-dortmund.de/",
+    "hours": {
+      "mon": "7am–11pm",
+      "tue": "7am–11pm",
+      "wed": "7am–11pm",
+      "thu": "7am–11pm",
+      "fri": "7am–11pm",
+      "sat": "8am–11pm",
+      "sun": "8am–11pm"
+    },
+    "day_pass": "€16.90 adult Prime Time, €13.90 Happy Hour (Mon-Fri before 9am/after 9pm)",
+    "facilities": [
+      "cafe",
+      "shop",
+      "shoe-hire",
+      "kids",
+      "parking"
+    ],
+    "sources": [
+      {
+        "url": "https://www.boulderwelt-dortmund.de/preise/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.boulderwelt-dortmund.de/kontakt/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.boulderwelt-dortmund.de/cafe/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Seed address is null; official address Brennaborstraße 10 (Indupark), 44149 Dortmund; seed suburb 'Dortmund, Arnsberg' looks wrong. Hours are the banner on the price page. Free on-site parking per contact page."
+  },
+  {
+    "id": "g-820825d316",
+    "name": "Einstein Boulderhalle Recklinghausen",
+    "metro": "Ruhr Area",
+    "expect_h": "6a56c5097634eef6",
+    "website": "https://recklinghausen.einstein-boulder.com/",
+    "hours": {
+      "mon": "10am–11pm",
+      "tue": "10am–11pm",
+      "wed": "10am–11pm",
+      "thu": "10am–11pm",
+      "fri": "10am–11pm",
+      "sat": "10am–11pm",
+      "sun": "10am–11pm"
+    },
+    "day_pass": "€13.90 adult, €11.90 reduced",
+    "facilities": [
+      "shoe-hire",
+      "shop",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://recklinghausen.einstein-boulder.com/preisezeiten/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://recklinghausen.einstein-boulder.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Early Bird 11.50 EUR (Mon-Fri check-in before 2pm) not used. Page has an empty 'Eintrittspreise Yoga' heading, so yoga not listed. Kids from Kindergeburtstag and Kinderferienprogramm menu entries; shop from the 10% shop discount note."
+  },
+  {
+    "id": "seed-1047",
+    "name": "Monkeyspot Duisburg",
+    "metro": "Ruhr Area",
+    "expect_h": "0e418a2e77b38d6b",
+    "website": "https://monkeyspot.de/startseite-duisburg/",
+    "hours": {
+      "mon": "9am–11pm",
+      "tue": "9am–11pm",
+      "wed": "9am–11pm",
+      "thu": "9am–11pm",
+      "fri": "9am–11pm",
+      "sat": "9am–11pm",
+      "sun": "9am–10pm"
+    },
+    "day_pass": "€13.90 adult, €11.90 youth 14-17",
+    "facilities": [
+      "shop",
+      "training",
+      "kids",
+      "parking",
+      "cafe",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://monkeyspot.de/startseite-duisburg/informationen/preise-und-oeffnungszeiten/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://monkeyspot.de/startseite-duisburg/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Official address Neuenhofstraße 91, 47055 Duisburg (seed address null). Sun and holidays 9am-10pm."
+  },
+  {
+    "id": "g-91ffa7b866",
+    "name": "Neoliet Boulderbar Essen",
+    "metro": "Ruhr Area",
+    "expect_h": "8e32879dc8902d7f",
+    "website": "https://www.neoliet.de/boulderbar-essen/",
+    "hours": {
+      "mon": "12pm–10pm",
+      "tue": "12pm–10pm",
+      "wed": "12pm–10pm",
+      "thu": "12pm–10pm",
+      "fri": "10am–10pm",
+      "sat": "10am–10pm",
+      "sun": "10am–10pm"
+    },
+    "day_pass": "€13.90 adult, €12.90 reduced",
+    "facilities": [
+      "training",
+      "yoga",
+      "kids",
+      "shoe-hire",
+      "showers"
+    ],
+    "sources": [
+      {
+        "url": "https://www.neoliet.de/boulderbar-essen/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.neoliet.de/trainingsbereich-boulderbar-essen/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.neoliet.de/yoga-boulderbar-essen/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.neoliet.de/oeffnungszeiten/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours match the central hours page. Showers/changing rooms: stated for all Neoliet facilities on the Essen yoga page. Training: Kilterboard and campus board. Yoga: Thursday classes."
+  },
+  {
+    "id": "g-c193560732",
+    "name": "Neoliet Boulderbar Gelsenkirchen",
+    "metro": "Ruhr Area",
+    "expect_h": "e2f4f59b1bfd1c15",
+    "website": "https://www.neoliet.de/boulderbar-gelsenkirchen/",
+    "hours": {
+      "mon": "12pm–10pm",
+      "tue": "10am–10pm",
+      "wed": "12pm–10pm",
+      "thu": "12pm–10pm",
+      "fri": "12pm–10pm",
+      "sat": "10am–10pm",
+      "sun": "10am–10pm"
+    },
+    "day_pass": "€13.90 adult, €12.90 reduced",
+    "facilities": [
+      "training",
+      "kids",
+      "shoe-hire",
+      "showers"
+    ],
+    "sources": [
+      {
+        "url": "https://www.neoliet.de/boulderbar-gelsenkirchen/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.neoliet.de/yoga-boulderbar-essen/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.neoliet.de/oeffnungszeiten/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours match central hours page. Training area, Kilterboard and Moonboard listed on the page. Showers: chain-wide statement on Essen yoga page."
+  },
+  {
+    "id": "g-40302b9f55",
+    "name": "Neoliet Boulderbar Oberhausen",
+    "metro": "Ruhr Area",
+    "expect_h": "370efe4f7a5bd9cc",
+    "website": "https://www.neoliet.de/boulderbar-oberhausen/",
+    "hours": {
+      "mon": "12pm–10pm",
+      "tue": "12pm–10pm",
+      "wed": "12pm–10pm",
+      "thu": "10am–10pm",
+      "fri": "12pm–10pm",
+      "sat": "10am–10pm",
+      "sun": "10am–10pm"
+    },
+    "day_pass": "€13.90 adult, €12.90 reduced",
+    "facilities": [
+      "training",
+      "kids",
+      "shoe-hire",
+      "showers"
+    ],
+    "sources": [
+      {
+        "url": "https://www.neoliet.de/boulderbar-oberhausen/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.neoliet.de/yoga-boulderbar-essen/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.neoliet.de/oeffnungszeiten/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours match central hours page. Training area and Moonboard listed on the page. Showers: chain-wide statement on Essen yoga page."
+  },
+  {
+    "id": "g-001304292f",
+    "name": "Neoliet Boulderbar Wattenscheid",
+    "metro": "Ruhr Area",
+    "expect_h": "6d930150afaf2b9c",
+    "website": "https://www.neoliet.de/boulderbar/",
+    "hours": {
+      "mon": "12pm–10pm",
+      "tue": "12pm–10pm",
+      "wed": "10am–10pm",
+      "thu": "12pm–10pm",
+      "fri": "12pm–10pm",
+      "sat": "10am–10pm",
+      "sun": "10am–10pm"
+    },
+    "day_pass": "€13.90 adult, €12.90 reduced",
+    "facilities": [
+      "training",
+      "kids",
+      "shoe-hire",
+      "showers"
+    ],
+    "sources": [
+      {
+        "url": "https://www.neoliet.de/boulderbar/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.neoliet.de/yoga-boulderbar-essen/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.neoliet.de/oeffnungszeiten/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Boulderbar Wattenscheid (address Ottostraße 29, 44867 Bochum matches). Hours match central hours page. Training area and Moonboard listed. Showers: chain-wide statement on Essen yoga page."
+  },
+  {
+    "id": "g-9ec447b565",
+    "name": "Neoliet Kletterzentrum Bochum",
+    "metro": "Ruhr Area",
+    "expect_h": "e385ad3cfef9a464",
+    "website": "https://www.neoliet.de/neoliet-bochum/",
+    "hours": {
+      "mon": "12pm–10:30pm",
+      "tue": "12pm–10:30pm",
+      "wed": "12pm–10:30pm",
+      "thu": "12pm–10:30pm",
+      "fri": "12pm–10:30pm",
+      "sat": "10am–10:30pm",
+      "sun": "10am–10:30pm"
+    },
+    "day_pass": "€16.50 adult climbing, €9 adult bouldering; €14.50 reduced climbing",
+    "facilities": [
+      "kids",
+      "shoe-hire",
+      "shop",
+      "showers"
+    ],
+    "sources": [
+      {
+        "url": "https://www.neoliet.de/neoliet-bochum/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.neoliet.de/yoga-boulderbar-essen/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.neoliet.de/oeffnungszeiten/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Kletterzentrum Bochum; address Flottmannstr. 53 h matches. Adult climbing 16.50 EUR (reduced 14.50), bouldering-only 9 EUR (reduced 8). Shop: page mentions an item available at the gym shop. Showers: chain-wide statement on Essen yoga page."
+  },
+  {
+    "id": "g-fbeebad0b1",
+    "name": "Neoliet Kletterzentrum Mülheim",
+    "metro": "Ruhr Area",
+    "expect_h": "a9733179462ecd7e",
+    "website": "https://www.neoliet.de/neoliet-muelheim/",
+    "hours": {
+      "mon": "10am–10:30pm",
+      "tue": "10am–10:30pm",
+      "wed": "10am–10:30pm",
+      "thu": "10am–10:30pm",
+      "fri": "10am–11pm",
+      "sat": "10am–11pm",
+      "sun": "10am–10:30pm"
+    },
+    "day_pass": "€16.50 adult climbing, €9 adult bouldering; €14.50 reduced climbing",
+    "facilities": [
+      "kids",
+      "shoe-hire",
+      "showers"
+    ],
+    "sources": [
+      {
+        "url": "https://www.neoliet.de/neoliet-muelheim/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.neoliet.de/yoga-boulderbar-essen/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.neoliet.de/oeffnungszeiten/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Kletterzentrum Mülheim; address Ruhrorter Str. 51 matches. Adult climbing 16.50 EUR (reduced 14.50), bouldering-only 9 EUR (reduced 8). Showers: chain-wide statement on Essen yoga page."
+  },
+  {
+    "id": "g-52e5ee5e4f",
+    "name": "Wupperwände",
+    "metro": "Ruhr Area",
+    "expect_h": "028d603fd52a803c",
+    "website": "https://www.wupperwaende.de/",
+    "hours": {
+      "mon": "2pm–11pm",
+      "tue": "10am–11pm",
+      "wed": "2pm–11pm",
+      "thu": "10am–11pm",
+      "fri": "2pm–11pm",
+      "sat": "10am–10pm",
+      "sun": "10am–10pm"
+    },
+    "day_pass": "€17.50 adult (non-member), €14 reduced; bouldering only €10.50",
+    "facilities": [
+      "shoe-hire",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://www.wupperwaende.de/oeffnungszeiten-und-preise",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.wupperwaende.de/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "DAV-run centre. Price shown is the non-member rate (16 EUR for DAV members, 14 EUR for Sektion Wuppertal members). Kids: kids trainings and climbing birthdays in the site menu. Prices updated 1 Jan 2026."
+  }
+]

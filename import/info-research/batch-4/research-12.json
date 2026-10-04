@@ -1,0 +1,1022 @@
+[
+ {
+  "id": "seed-1089",
+  "name": "Altissimo - Marseille",
+  "metro": "Marseille",
+  "expect_h": "02fd3590668dd1d4",
+  "website": "https://marseille.altissimo.fr/",
+  "hours": {
+   "mon": "10:30am–10:30pm",
+   "tue": "10:30am–10:30pm",
+   "wed": "10:30am–10:30pm",
+   "thu": "10:30am–10:30pm",
+   "fri": "10:30am–10:30pm",
+   "sat": "10am–7pm",
+   "sun": "10am–7pm"
+  },
+  "day_pass": "€17 adult, €15 student, €13 child (under 12)",
+  "facilities": [
+   "shoe-hire",
+   "training",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://marseille.altissimo.fr/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://marseille.altissimo.fr/acces-horaires-contact",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://marseille.altissimo.fr/tarifs-formules",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Address 27 Bd Gay Lussac confirmed. Training = \"espace entrainement\" on home page; kids = children entry price and children courses."
+ },
+ {
+  "id": "seed-1090",
+  "name": "Arkose - Prado",
+  "metro": "Marseille",
+  "expect_h": "ca72f24f9025ed30",
+  "website": "https://arkose.com/prado",
+  "hours": {
+   "mon": "7am–12am",
+   "tue": "7am–12am",
+   "wed": "7am–12am",
+   "thu": "7am–12am",
+   "fri": "7am–12am",
+   "sat": "8am–12am",
+   "sun": "8am–12am"
+  },
+  "day_pass": "€17 adult single entry (first entry €10)",
+  "facilities": [
+   "cafe",
+   "kids",
+   "shoe-hire",
+   "yoga"
+  ],
+  "sources": [
+   {
+    "url": "https://arkose.com/en/prado",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://arkose.com/prado/tarifs-cours-resa/adultes",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Weekends and public holidays 8am-12am. Cantine restaurant/bar, yoga/pilates studio, kids area, shoe rental EUR 5."
+ },
+ {
+  "id": "g-2f12232d66",
+  "name": "Bloc Session - Aix-en-Provence",
+  "metro": "Marseille",
+  "expect_h": "7fba3ff9d1691312",
+  "website": "https://www.blocsession.com/salle-escalade/aix-en-provence/",
+  "hours": {
+   "mon": "12pm–10pm",
+   "tue": "12pm–10pm",
+   "wed": "12pm–10pm",
+   "thu": "12pm–10pm",
+   "fri": "12pm–10pm",
+   "sat": "10:30am–7pm",
+   "sun": "10:30am–7pm"
+  },
+  "day_pass": "€16 adult (day pass), €10 child under 12",
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.blocsession.com/salle-escalade/aix-en-provence/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://activiteez.com/u/85874833292266/description2",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.blocsession.com/salle-escalade/aix-en-provence/tarifs/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.blocsession.com/salle-escalade/aix-en-provence/contact/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours come from the activiteez booking widget embedded on the gym contact page. Address 4 rue des Boeufs confirmed."
+ },
+ {
+  "id": "seed-1091",
+  "name": "Bloc Session - BS.10 Marseille centre",
+  "metro": "Marseille",
+  "expect_h": "58650af97c746ba5",
+  "website": "https://www.blocsession.com/salle-escalade/marseille-centre/",
+  "hours": {
+   "mon": "11am–10pm",
+   "tue": "11am–10pm",
+   "wed": "11am–10pm",
+   "thu": "11am–10pm",
+   "fri": "11am–10pm",
+   "sat": "10:30am–8pm",
+   "sun": "10:30am–8pm"
+  },
+  "day_pass": "€16 adult (day pass), €10 child under 12",
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.blocsession.com/salle-escalade/marseille-centre/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://activiteez.com/u/15258814036454/description2",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.blocsession.com/salle-escalade/marseille-centre/tarifs/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours from activiteez widget embedded on the gym page. Site says 164 chemin Saint Jean du Desert, 13005 (seed says 13012); same street."
+ },
+ {
+  "id": "g-4d13e4d98b",
+  "name": "Block'Out - Vitrolles",
+  "metro": "Marseille",
+  "expect_h": "f49c4fbd3b8bffa0",
+  "website": "https://www.blockout.fr/vitrolles/",
+  "hours": {
+   "mon": "11am–11pm",
+   "tue": "11am–11pm",
+   "wed": "11am–11pm",
+   "thu": "11am–11pm",
+   "fri": "11am–11pm",
+   "sat": "9am–8pm",
+   "sun": "9am–8pm"
+  },
+  "day_pass": "€17 adult, €15 reduced, €11 under 10",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "shop"
+  ],
+  "sources": [
+   {
+    "url": "https://www.blockout.fr/vitrolles/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.blockout.fr/vitrolles/contact/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.blockout.fr/vitrolles/tarifs-cours/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Restaurant and bar, Kilter Board, cardio-musculation, boutique escalade, shoe rental EUR 5, kids stages/courses."
+ },
+ {
+  "id": "seed-1092",
+  "name": "Boite A Grimpe - Marseille",
+  "metro": "Marseille",
+  "expect_h": "0c1135d25fd9b3f2",
+  "website": "https://boiteagrimpe.wixstudio.com/labag",
+  "hours": null,
+  "day_pass": "€14 adult, €12 reduced, €8.50 child under 10",
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://boiteagrimpe.wixstudio.com/labag",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Official site (linked from Marseille tourist office page). Hours listed only for Mon/Tue/Thu/Fri 12-22, Wed 18-22, Sat 12-19; Sunday not stated, so hours left null rather than assume Closed. Address 31 traverse des Mameluks confirmed."
+ },
+ {
+  "id": "seed-1093",
+  "name": "Climb Up - Marseille La Valentine",
+  "metro": "Marseille",
+  "expect_h": "2c88187fb9bc1f1c",
+  "website": "https://marseille-lavalentine.climb-up.fr/",
+  "hours": {
+   "mon": "12pm–11pm",
+   "tue": "10:30am–11pm",
+   "wed": "9:30am–11pm",
+   "thu": "10:30am–11pm",
+   "fri": "12pm–11pm",
+   "sat": "9:30am–9pm",
+   "sun": "9:30am–9pm"
+  },
+  "day_pass": "€16 adult, €13 student, €11 child",
+  "facilities": [
+   "training",
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://marseille-lavalentine.climb-up.fr/acces-contact/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://marseille-lavalentine.climb-up.fr/tarifs-escalade/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://marseille-lavalentine.climb-up.fr/escalade-salle-climbup-marseille/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Prices are rendered on the tarifs page from the gym booking system (logiciel.api.climb-up-gestion.fr products 4261/18387/4263). Public holidays 2:30pm-8pm ignored."
+ },
+ {
+  "id": "seed-1094",
+  "name": "Le mur de Luminy - Marseille",
+  "metro": "Marseille",
+  "expect_h": "934b421a276f939f",
+  "website": "https://www.smucescalade.com/le-mur-de-luminy",
+  "hours": null,
+  "day_pass": "€14 single entry (otherwise SMUC membership €130/season)",
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.smucescalade.com/le-mur-de-luminy",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Run by SMUC Escalade (club). Page only states Tue and Thu 12h-22h non-stop; no full weekly hours, so null. Address 171 av. de Luminy confirmed. Shoe/harness rental EUR 3 each."
+ },
+ {
+  "id": "seed-1095",
+  "name": "Altissimo - Toulouse Montaudran",
+  "metro": "Toulouse",
+  "expect_h": "c15c05cf935b3046",
+  "website": "https://toulouse-montaudran.altissimo.fr/",
+  "hours": {
+   "mon": "10am–11pm",
+   "tue": "10am–11pm",
+   "wed": "10am–11pm",
+   "thu": "10am–11pm",
+   "fri": "10am–11pm",
+   "sat": "10am–8pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": "€17 adult, €15 student, €13 child (under 12)",
+  "facilities": [
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://toulouse-montaudran.altissimo.fr/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://toulouse-montaudran.altissimo.fr/acces-horaires-contact",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://toulouse-montaudran.altissimo.fr/tarifs-formules",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Address 5 rue Jean Rodier confirmed."
+ },
+ {
+  "id": "seed-1096",
+  "name": "Altissimo - Toulouse Portet",
+  "metro": "Toulouse",
+  "expect_h": "f8d1678342504981",
+  "website": "https://toulouse-portet.altissimo.fr/",
+  "hours": {
+   "mon": "10am–11pm",
+   "tue": "10am–11pm",
+   "wed": "10am–11pm",
+   "thu": "10am–11pm",
+   "fri": "10am–11pm",
+   "sat": "9am–8pm",
+   "sun": "9am–8pm"
+  },
+  "day_pass": "€17 adult, €15 student, €13 child (under 12)",
+  "facilities": [
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://toulouse-portet.altissimo.fr/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://toulouse-portet.altissimo.fr/acces-horaires-contact",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://toulouse-portet.altissimo.fr/tarifs-formules",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Address 37 avenue de Larrieu confirmed. Weekend/holiday 9am-8pm."
+ },
+ {
+  "id": "seed-1097",
+  "name": "Altissimo - Toulouse Saint Martin",
+  "metro": "Toulouse",
+  "expect_h": "57b24186d6f24d52",
+  "website": "https://toulouse-saint-martin.altissimo.fr/",
+  "hours": {
+   "mon": "10am–11pm",
+   "tue": "10am–11pm",
+   "wed": "10am–11pm",
+   "thu": "10am–11pm",
+   "fri": "10am–11pm",
+   "sat": "10am–8pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": "€17 adult, €15 student, €13 child (under 12)",
+  "facilities": [
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://toulouse-saint-martin.altissimo.fr/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://toulouse-saint-martin.altissimo.fr/acces-horaires-contact",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://toulouse-saint-martin.altissimo.fr/tarifs-formules",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Seed address is null; official address is 9 rue Marie Louise Dissard, 31300 Toulouse."
+ },
+ {
+  "id": "g-aa276e73e9",
+  "name": "Arkose - Toulouse",
+  "metro": "Toulouse",
+  "expect_h": "4dff5e64d9cbbe19",
+  "website": "https://arkose.com/toulouse",
+  "hours": {
+   "mon": "9am–12am",
+   "tue": "9am–12am",
+   "wed": "9am–12am",
+   "thu": "9am–12am",
+   "fri": "9am–12am",
+   "sat": "9am–12am",
+   "sun": "9am–12am"
+  },
+  "day_pass": "€17 adult single entry (first entry €10)",
+  "facilities": [
+   "cafe",
+   "kids",
+   "shoe-hire",
+   "yoga"
+  ],
+  "sources": [
+   {
+    "url": "https://arkose.com/toulouse",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://arkose.com/toulouse/tarifs-cours-resa/adultes",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Address 13 route de Lavaur, L'Union confirmed. Cantine restaurant, hatha/vinyasa yoga, kids area, shoe rental EUR 5."
+ },
+ {
+  "id": "seed-1098",
+  "name": "Block'Out - Toulouse",
+  "metro": "Toulouse",
+  "expect_h": "3b7bbd9d29d7aae8",
+  "website": "https://www.blockout.fr/toulouse/",
+  "hours": {
+   "mon": "11am–11pm",
+   "tue": "11am–11pm",
+   "wed": "11am–11pm",
+   "thu": "11am–11pm",
+   "fri": "11am–11pm",
+   "sat": "9am–9pm",
+   "sun": "9am–9pm"
+  },
+  "day_pass": "€17 adult, €15 reduced, €11 under 10",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "shop"
+  ],
+  "sources": [
+   {
+    "url": "https://www.blockout.fr/toulouse/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.blockout.fr/toulouse/contact/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.blockout.fr/toulouse/tarifs-cours/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Address Parc des 7 Deniers, 2 rue de l'Egalite confirmed. Weekend and public holidays 9am-9pm."
+ },
+ {
+  "id": "seed-1099",
+  "name": "SOLO Escalade - Toulouse",
+  "metro": "Toulouse",
+  "expect_h": "b16e40da9c692d6d",
+  "website": "https://www.soloescalade.fr/",
+  "hours": {
+   "mon": "10am–11pm",
+   "tue": "10am–11pm",
+   "wed": "10am–11pm",
+   "thu": "10am–11pm",
+   "fri": "10am–11pm",
+   "sat": "10am–10pm",
+   "sun": "10am–10pm"
+  },
+  "day_pass": "€16 adult",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "shop",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://www.soloescalade.fr/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.soloescalade.fr/s%C3%A9ances-libres-normal-solo-escalade",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   },
+   {
+    "url": "https://www.soloescalade.fr/faq-questions-solo-escalade-toulouse",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.soloescalade.fr/nos-prestations-services-solo-escalade-toulouse",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours are the September-June schedule (Mon-Fri 10am-11pm, Sat-Sun 10am-10pm); summer is 10am-10pm daily. Address 131 chemin du Sang de Serp confirmed. Bar-snack, Kilter/Moonboard/fitness, 2 kids areas, shoe rental, shop, 60 car spaces."
+ },
+ {
+  "id": "seed-1100",
+  "name": "The Roof - Toulouse",
+  "metro": "Toulouse",
+  "expect_h": "3f37d5010dd3085a",
+  "website": "https://toulouse.theroof.fr/",
+  "hours": {
+   "mon": "8am–11pm",
+   "tue": "8am–11pm",
+   "wed": "8am–11pm",
+   "thu": "8am–11pm",
+   "fri": "8am–11pm",
+   "sat": "9am–9pm",
+   "sun": "9am–8pm"
+  },
+  "day_pass": "€14.50 adult, €12.50 reduced",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "yoga"
+  ],
+  "sources": [
+   {
+    "url": "https://toulouse.theroof.fr/infos-pratiques.html",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://toulouse.theroof.fr/tarifs-seance.html",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://toulouse.theroof.fr/espace-grimpe.html",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://toulouse.theroof.fr/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Classic hours; some kids-class slots reserved Wed and Sat mornings. Shoe rental EUR 3. Cafe = Le Refuge restaurant/cafe-bar; yoga/pilates rooms."
+ },
+ {
+  "id": "g-eef9a68caf",
+  "name": "Bloc Session - Lyon Centre",
+  "metro": "Lyon",
+  "expect_h": "cbba84f382e0b9d8",
+  "website": "https://www.blocsession.com/salle-escalade/lyon-centre/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "10am–8pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": "€17 adult (day pass, 12+), €10 child under 12",
+  "facilities": [
+   "cafe",
+   "training",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.blocsession.com/salle-escalade/lyon-centre/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://activiteez.com/u/24900028735274/description2",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.blocsession.com/salle-escalade/lyon-centre/tarifs/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours from activiteez widget embedded on the gym page (exceptional Dec 25 closure ignored). Cafe = bar/snack; training = Kilter Board."
+ },
+ {
+  "id": "g-dd28de54a9",
+  "name": "Block'Out - Lyon",
+  "metro": "Lyon",
+  "expect_h": "1e842c9beb4deeb4",
+  "website": "https://www.blockout.fr/lyon/",
+  "hours": {
+   "mon": "11am–11pm",
+   "tue": "11am–11pm",
+   "wed": "11am–11pm",
+   "thu": "11am–11pm",
+   "fri": "11am–11pm",
+   "sat": "9am–8pm",
+   "sun": "9am–8pm"
+  },
+  "day_pass": "€17 adult, €15 reduced, €11 under 10",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "shop"
+  ],
+  "sources": [
+   {
+    "url": "https://www.blockout.fr/lyon/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.blockout.fr/lyon/contact/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.blockout.fr/lyon/tarifs-cours/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Address 1 rue des Vergers, Limonest confirmed. Dedicated kids climbing space."
+ },
+ {
+  "id": "seed-1084",
+  "name": "Climb Up - Lyon Confluence",
+  "metro": "Lyon",
+  "expect_h": "19762ee8dd0c829e",
+  "website": "https://lyon-confluence.climb-up.fr/",
+  "hours": {
+   "mon": "10am–10:30pm",
+   "tue": "10am–10:30pm",
+   "wed": "10am–10:30pm",
+   "thu": "10am–10:30pm",
+   "fri": "10am–10:30pm",
+   "sat": "9am–8pm",
+   "sun": "9am–8pm"
+  },
+  "day_pass": "€18 adult, €16 reduced",
+  "facilities": [
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://lyon-confluence.climb-up.fr/acces-contact/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://lyon-confluence.climb-up.fr/tarifs-escalade/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://lyon-confluence.climb-up.fr/la-salle/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Prices rendered from the gym booking system (products 3052/3053). Weekend and public holidays 9am-8pm. Parking is the mall car park (not counted)."
+ },
+ {
+  "id": "seed-1085",
+  "name": "Climb Up - Lyon Gerland",
+  "metro": "Lyon",
+  "expect_h": "e2a5fe77979d8518",
+  "website": "https://lyon-gerland.climb-up.fr/",
+  "hours": {
+   "mon": "8:30am–12am",
+   "tue": "8:30am–12am",
+   "wed": "8:30am–12am",
+   "thu": "8:30am–12am",
+   "fri": "8:30am–12am",
+   "sat": "8:30am–10:30pm",
+   "sun": "8:30am–10:30pm"
+  },
+  "day_pass": "€18 adult, €16 reduced",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://lyon-gerland.climb-up.fr/acces-contact/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://lyon-gerland.climb-up.fr/tarifs-escalade/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://lyon-gerland.climb-up.fr/la-salle/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Prices from the gym booking system (entry/reduced products). Cafe = \"espace accueil et restauration\"; training = fitness area; kids area."
+ },
+ {
+  "id": "seed-1086",
+  "name": "HAPIK - Lyon",
+  "metro": "Lyon",
+  "expect_h": "940edf7db4afe9fc",
+  "website": "https://hapik.fr/centres-tarifs/lyon-part-dieu",
+  "hours": null,
+  "day_pass": "€16 per 1-hour climbing session",
+  "facilities": [
+   "cafe",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://hapik.fr/centres-tarifs/lyon-part-dieu",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://hapik.fr/produits?center=lyon-part-dieu",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Fun auto-belay climbing centre (Part-Dieu mall, 133 rue Servient confirmed). Page shows two hour tables (school holidays vs rest of year) that cannot be mapped unambiguously to 7 days, so hours null. Cafe = \"espace snacking\"."
+ },
+ {
+  "id": "seed-1087",
+  "name": "Hold'up escalade - Lyon",
+  "metro": "Lyon",
+  "expect_h": "96ef79e24854539d",
+  "website": "https://www.holdup-escalade.fr/",
+  "hours": {
+   "mon": "12pm–10pm",
+   "tue": "12pm–10pm",
+   "wed": "12pm–10pm",
+   "thu": "12pm–10pm",
+   "fri": "12pm–10pm",
+   "sat": "10am–7pm",
+   "sun": "10am–7pm"
+  },
+  "day_pass": "€15 adult, €14 reduced, €10 child under 12",
+  "facilities": [
+   "training",
+   "kids",
+   "shoe-hire",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://www.holdup-escalade.fr/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Single-page site; no street address shown (says Lyon Vaise, 8 min from metro Valmy, private car park), matched by name and area. Weekend and public holidays 10am-7pm."
+ },
+ {
+  "id": "seed-1088",
+  "name": "MROC - Part-Dieu",
+  "metro": "Lyon",
+  "expect_h": "4cb2386982c3904a",
+  "website": "https://partdieu.mroc.fr/",
+  "hours": {
+   "mon": "7am–12am",
+   "tue": "7am–12am",
+   "wed": "7am–12am",
+   "thu": "7am–12am",
+   "fri": "7am–12am",
+   "sat": "8am–12am",
+   "sun": "8am–12am"
+  },
+  "day_pass": "€18 adult, €16 reduced, €10 child under 12",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "yoga"
+  ],
+  "sources": [
+   {
+    "url": "https://partdieu.mroc.fr/infos-pratiques/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://partdieu.mroc.fr/tarifs-cours/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://partdieu.mroc.fr/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Address 86 rue du Pensionnat confirmed. Bistro, training space, yoga, kids bloc area; shoe rental on site."
+ }
+]

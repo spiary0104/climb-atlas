@@ -1,0 +1,360 @@
+[
+  {
+    "id": "seed-1760",
+    "name": "Academy of Bouldering (AOB)",
+    "metro": "Shanghai",
+    "expect_h": "7c2887f2b8176867",
+    "website": null,
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [],
+    "status": "not-found",
+    "notes": "No official website found (only directories, Dianping/WeChat/social). Shown only on third-party sources, not used."
+  },
+  {
+    "id": "seed-1761",
+    "name": "Benchmark 2.0",
+    "metro": "Shanghai",
+    "expect_h": "cc74b550a918f2ed",
+    "website": null,
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [],
+    "status": "not-found",
+    "notes": "No official website found (only directories, Dianping/WeChat/social). Shown only on third-party sources, not used."
+  },
+  {
+    "id": "seed-1762",
+    "name": "1778 Climbing (Haichao Lu)",
+    "metro": "Shanghai",
+    "expect_h": "d54fae1440a704a1",
+    "website": null,
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [],
+    "status": "not-found",
+    "notes": "No official website found (only directories, Dianping/WeChat/social). Shown only on third-party sources, not used."
+  },
+  {
+    "id": "seed-1763",
+    "name": "Stonehaven",
+    "metro": "Shanghai",
+    "expect_h": "fcd35636a769a690",
+    "website": null,
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [],
+    "status": "not-found",
+    "notes": "No official website found (only directories, Dianping/WeChat/social). Shown only on third-party sources, not used."
+  },
+  {
+    "id": "seed-1764",
+    "name": "Howl Shanghai",
+    "metro": "Shanghai",
+    "expect_h": "cf8992f62d805b9b",
+    "website": null,
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [],
+    "status": "not-found",
+    "notes": "No official website found (only directories, Dianping/WeChat/social). Shown only on third-party sources, not used."
+  },
+  {
+    "id": "seed-533",
+    "name": "Banana Climbing (Kerry Centre)",
+    "metro": "Shanghai",
+    "expect_h": "d8ad29ce71ed6ba0",
+    "website": "https://www.bananaclimbing.com/",
+    "hours": {
+      "mon": "9am–11pm",
+      "tue": "9am–11pm",
+      "wed": "9am–11pm",
+      "thu": "9am–11pm",
+      "fri": "9am–11pm",
+      "sat": "9am–11pm",
+      "sun": "9am–11pm"
+    },
+    "day_pass": null,
+    "facilities": [
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://www.bananaclimbing.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      },
+      {
+        "url": "https://www.bananaclimbing.com/api/v1/locations",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.bananaclimbing.com/api/v1/pricing",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Chain site (own domain, no per-location page; locations/pricing served by its public API). Site lists 'BANANA+ Banana Climbing (Kerry Centre)', Mon-Sun 09:00-23:00, address only 'Kerry Centre, Jing'an District' (matched by name; site coords 31.2446,121.4571). Day pass null: API says prices are reference prices for standard locations and BANANA+ locations may vary. Facilities: shoe-hire per chain pricing page (climbing shoe rental CNY 15) and visitor info; the API lists only 'bouldering' as location facility."
+  },
+  {
+    "id": "seed-534",
+    "name": "Banana Climbing (West Yan'an Road)",
+    "metro": "Shanghai",
+    "expect_h": "2f8a76c9f5375a7d",
+    "website": "https://www.bananaclimbing.com/",
+    "hours": {
+      "mon": "7am–11pm",
+      "tue": "7am–11pm",
+      "wed": "7am–11pm",
+      "thu": "7am–11pm",
+      "fri": "7am–11pm",
+      "sat": "7am–11pm",
+      "sun": "7am–11pm"
+    },
+    "day_pass": "¥120 adult single entry (chain reference price)",
+    "facilities": [
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://www.bananaclimbing.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      },
+      {
+        "url": "https://www.bananaclimbing.com/api/v1/locations",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.bananaclimbing.com/api/v1/pricing",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Chain site, no per-location page. Site lists 'Banana Climbing (West Yan'an Road)' openingHours 07:00-23:00 with no day qualifier (treated as daily); address only 'West Yan'an Road, Changning' (seed street address 658 Zhaohua Rd not on site; matched by name). Day pass is the chain-wide reference price for standard locations (may vary by city/location). Facilities: shoe-hire per chain pricing page (climbing shoe rental CNY 15) and visitor info; the API lists only 'bouldering' as location facility."
+  },
+  {
+    "id": "seed-535",
+    "name": "Banana Climbing (Jinhongqiao)",
+    "metro": "Shanghai",
+    "expect_h": "d536f4e5618e35e4",
+    "website": "https://www.bananaclimbing.com/",
+    "hours": {
+      "mon": "7am–11pm",
+      "tue": "7am–11pm",
+      "wed": "7am–11pm",
+      "thu": "7am–11pm",
+      "fri": "7am–11pm",
+      "sat": "7am–11pm",
+      "sun": "7am–11pm"
+    },
+    "day_pass": "¥120 adult single entry (chain reference price)",
+    "facilities": [
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://www.bananaclimbing.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      },
+      {
+        "url": "https://www.bananaclimbing.com/api/v1/locations",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.bananaclimbing.com/api/v1/pricing",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Chain site, no per-location page. Site lists 'Banana Climbing (Jinhongqiao)', Jinhongqiao International Center L2, 179 Maotai Rd; openingHours 7:00-23:00 with no day qualifier (treated as daily). Seed address says 523-533 Loushanguan Rd (same mall complex; matched by name). Day pass is the chain-wide reference price for standard locations (may vary). Facilities: shoe-hire per chain pricing page (climbing shoe rental CNY 15) and visitor info; the API lists only 'bouldering' as location facility."
+  },
+  {
+    "id": "seed-536",
+    "name": "Yanwu Kongjian (Rock Dance Space)",
+    "metro": "Shanghai",
+    "expect_h": "031a434d40045297",
+    "website": null,
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [],
+    "status": "not-found",
+    "notes": "No official website found (only directories, Dianping/WeChat/social). Shown only on third-party sources, not used."
+  },
+  {
+    "id": "seed-537",
+    "name": "Jinfeng Climbing 189",
+    "metro": "Shanghai",
+    "expect_h": "abbbc886c5483515",
+    "website": null,
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [],
+    "status": "not-found",
+    "notes": "No official website found (only directories, Dianping/WeChat/social). Shown only on third-party sources, not used."
+  },
+  {
+    "id": "seed-538",
+    "name": "Benchmark Climbing Gym",
+    "metro": "Shanghai",
+    "expect_h": "d19e950473a0c222",
+    "website": null,
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [],
+    "status": "not-found",
+    "notes": "No official website found (only directories, Dianping/WeChat/social). Shown only on third-party sources, not used."
+  },
+  {
+    "id": "seed-539",
+    "name": "Dayan Yuedong (Changfeng Joy City)",
+    "metro": "Shanghai",
+    "expect_h": "a9223d9e53606c80",
+    "website": null,
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [],
+    "status": "not-found",
+    "notes": "No official website found (only directories, Dianping/WeChat/social). Shown only on third-party sources, not used."
+  },
+  {
+    "id": "seed-540",
+    "name": "Climbing Factory",
+    "metro": "Shanghai",
+    "expect_h": "b962110f1635b088",
+    "website": null,
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [],
+    "status": "not-found",
+    "notes": "No official site found; the domain factoryclimbing.com cited in search does not resolve (NXDOMAIN); only Facebook/Instagram."
+  },
+  {
+    "id": "seed-541",
+    "name": "YS Climbing (Gate M West Bund Dream Center)",
+    "metro": "Shanghai",
+    "expect_h": "c9265b97dbdf1a4f",
+    "website": null,
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [],
+    "status": "not-found",
+    "notes": "No official site found; Chinese-name listing appears as 岩时攀岩 (Gate M) on directories only."
+  },
+  {
+    "id": "seed-542",
+    "name": "Vmore Climbing (North Bund)",
+    "metro": "Shanghai",
+    "expect_h": "f6f233becf866ff7",
+    "website": null,
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [],
+    "status": "not-found",
+    "notes": "No official website found (only directories, Dianping/WeChat/social). Shown only on third-party sources, not used."
+  },
+  {
+    "id": "seed-544",
+    "name": "DOME Climbing Camp (Xuhui Vanke Plaza)",
+    "metro": "Shanghai",
+    "expect_h": "1b9cdd30a3ce2943",
+    "website": null,
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [],
+    "status": "not-found",
+    "notes": "No official website found (only directories, Dianping/WeChat/social). Shown only on third-party sources, not used."
+  },
+  {
+    "id": "seed-545",
+    "name": "GOAT Climbing Club (Xujiahui TPY Center)",
+    "metro": "Shanghai",
+    "expect_h": "620105db3d00c3fe",
+    "website": null,
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [],
+    "status": "not-found",
+    "notes": "No official website found (only directories, Dianping/WeChat/social). Shown only on third-party sources, not used."
+  },
+  {
+    "id": "seed-546",
+    "name": "Ledongli Jinfeng Climbing (West Bund)",
+    "metro": "Shanghai",
+    "expect_h": "73e9407f557084f3",
+    "website": null,
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [],
+    "status": "not-found",
+    "notes": "No official site found; operator listings point to WeChat mini-program / Dianping only."
+  },
+  {
+    "id": "seed-547",
+    "name": "Panzhuxia Climbing (Jiangqiao Wanda)",
+    "metro": "Shanghai",
+    "expect_h": "4f8555d8c17e86da",
+    "website": null,
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [],
+    "status": "not-found",
+    "notes": "No official website found (only directories, Dianping/WeChat/social). Shown only on third-party sources, not used."
+  },
+  {
+    "id": "seed-548",
+    "name": "SHU Climbing Gym (Hongkou Stadium)",
+    "metro": "Shanghai",
+    "expect_h": "00f1e1757ac42d3a",
+    "website": null,
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [],
+    "status": "not-found",
+    "notes": "No official website found (only directories, Dianping/WeChat/social). Shown only on third-party sources, not used."
+  }
+]

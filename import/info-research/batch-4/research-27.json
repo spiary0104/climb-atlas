@@ -1,0 +1,793 @@
+[
+ {
+  "id": "seed-1505",
+  "name": "Bloc Boulder",
+  "metro": "Manila",
+  "expect_h": "22fc13c162d0bc0c",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [],
+  "status": "not-found",
+  "notes": "Search shows only Facebook/directory listings; one directory snippet says private training facility accessed by member invitation. No official website found."
+ },
+ {
+  "id": "seed-1513",
+  "name": "Boulder Space",
+  "metro": "Manila",
+  "expect_h": "f32e0e3096531025",
+  "website": "https://www.boulderspaceph.com/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–11pm",
+   "sat": "9am–10pm",
+   "sun": "9am–10pm"
+  },
+  "day_pass": "₱700 adult",
+  "facilities": [
+   "kids",
+   "training",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.boulderspaceph.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass"
+    ]
+   },
+   {
+    "url": "https://boulderspaceph.com/kids-section",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Rezerv JS site: text read from the site's own page data/API (home section: hours; \"Day Pass: Php. 700\" in the Bouldering 101 class text; address 14 Economia St confirmed). Hours are labelled \"soft opening hours\". Facilities from kids-section page: kids wall, fitness area, rental shoes at the gym."
+ },
+ {
+  "id": "seed-1504",
+  "name": "Camp Sandugo",
+  "metro": "Manila",
+  "expect_h": "11ed5a9277698c5e",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [],
+  "status": "not-found",
+  "notes": "No official site found; campsandugo.ph is a parked redirect page. Only blogs/directories/Facebook."
+ },
+ {
+  "id": "seed-1510",
+  "name": "Climb Central Manila",
+  "metro": "Manila",
+  "expect_h": "77ce8bd569384422",
+  "website": "https://climbcentral.ph/",
+  "hours": {
+   "mon": "1pm–10pm",
+   "tue": "1pm–10pm",
+   "wed": "1pm–10pm",
+   "thu": "1pm–10pm",
+   "fri": "1pm–10pm",
+   "sat": "10am–10pm",
+   "sun": "10am–10pm"
+  },
+  "day_pass": "₱650 adult, ₱550 youth",
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://climbcentral.ph/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://climbcentral.ph/opening-hours-2/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://climbcentral.ph/facility-rates-2/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Day pass read from the price-list image on the Facility Rates page (effective Oct 1 2024; unlimited climbing for the day, excludes Php200 first-time registration and Php200 equipment set). Facilities: equipment day rental incl. climbing shoes. Sat/Sun/holidays 10am-10pm, Mon-Fri 1pm-10pm."
+ },
+ {
+  "id": "seed-1514",
+  "name": "Good Climbs",
+  "metro": "Manila",
+  "expect_h": "8410f9e7a3236dec",
+  "website": "https://goodclimbs.ph/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "10am–10pm",
+   "sun": "10am–10pm"
+  },
+  "day_pass": "₱680 adult",
+  "facilities": [
+   "showers",
+   "parking",
+   "cafe",
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://goodclimbs.ph/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://goodclimbs.ph/locations/eton-centris",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://goodclimbs.ph/pricing",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Eton Centris location page: \"Every day 10am-10pm\"; amenities list Showers, Parking, Cafe, Kids zone, Gear rental. Pricing page: Day Pass 680 per visit plus a one-time 250 membership fee on first visit; rental shoes add-on listed."
+ },
+ {
+  "id": "seed-1507",
+  "name": "Nature's Camp Rock Climbing Gym",
+  "metro": "Manila",
+  "expect_h": "c7f56ffc4ac59618",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [],
+  "status": "not-found",
+  "notes": "No official website found (only directories/blogs); guessed naturescamp domains do not resolve."
+ },
+ {
+  "id": "seed-1517",
+  "name": "The Bouldering Hive Greenhills",
+  "metro": "Manila",
+  "expect_h": "77568eea9cdb11b6",
+  "website": "https://bhiveph.com/",
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [
+   {
+    "url": "https://bhiveph.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   }
+  ],
+  "status": "website-only",
+  "notes": "Official chain site (Rezerv JS). Fetched home/kids/house-rules text only; location hours and adult pass prices are behind login/booking (home says \"Rates start at ₱700\", not a clear day pass); kids and rental-shoe statements are chain-wide so not used. Greenhills branch page not retrievable."
+ },
+ {
+  "id": "seed-1516",
+  "name": "The Bouldering Hive Makati",
+  "metro": "Manila",
+  "expect_h": "40dab81e180d5fdd",
+  "website": "https://bhiveph.com/",
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [
+   {
+    "url": "https://bhiveph.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   }
+  ],
+  "status": "website-only",
+  "notes": "Official chain site (Rezerv JS). Fetched home/kids/house-rules text only; location hours and adult pass prices are behind login/booking (home says \"Rates start at ₱700\", not a clear day pass); kids and rental-shoe statements are chain-wide so not used. Makati branch page not retrievable."
+ },
+ {
+  "id": "seed-1512",
+  "name": "Urban Peak Wall Climbing Center",
+  "metro": "Manila",
+  "expect_h": "1cda33ac2d021c31",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [],
+  "status": "not-found",
+  "notes": "Only Facebook/Instagram/directories found; urbanpeak.ph is a parked redirect page and urbanpeakclimbing.com does not respond."
+ },
+ {
+  "id": "seed-1501",
+  "name": "Wall-Nut / MISA Climbing Systems",
+  "metro": "Manila",
+  "expect_h": "a702bd3a3993b587",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [],
+  "status": "not-found",
+  "notes": "No official site found; wallnut.ph is a closed Shopify store, other results are directories."
+ },
+ {
+  "id": "seed-1300",
+  "name": "Arena Wspinaczkowa Makak",
+  "metro": "Warsaw",
+  "expect_h": "ff7a818d370a3d6c",
+  "website": "https://arenamakak.pl/",
+  "hours": {
+   "mon": "9am–11pm",
+   "tue": "7am–11pm",
+   "wed": "7am–11pm",
+   "thu": "7am–11pm",
+   "fri": "7am–11pm",
+   "sat": "8am–10pm",
+   "sun": "8am–10pm"
+  },
+  "day_pass": "48 zł adult, 43 zł concession",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shop",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://arenamakak.pl/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://arenamakak.pl/cennik",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://arenamakak.pl/kontakt",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Price list valid from 1 Jul 2026; also off-peak 35 zl (Mon-Fri to 3pm). Homepage: gym/spraywall/campus/Moonboard, kids zone, climbing shop, coffee bar; shoe rental 15 zl on price list."
+ },
+ {
+  "id": "seed-1301",
+  "name": "Camp4 Climbing Hall",
+  "metro": "Warsaw",
+  "expect_h": "3068c34175a9c202",
+  "website": "https://www.halawspinaczkowa.pl/",
+  "hours": {
+   "mon": "8am–11pm",
+   "tue": "8am–11pm",
+   "wed": "8am–11pm",
+   "thu": "8am–11pm",
+   "fri": "8am–10:30pm",
+   "sat": "9am–10pm",
+   "sun": "9am–10pm"
+  },
+  "day_pass": "47 zł adult peak, 35 zł off-peak (Mon–Fri 8am–3pm)",
+  "facilities": [
+   "cafe",
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.halawspinaczkowa.pl/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://www.halawspinaczkowa.pl/kontakt",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.halawspinaczkowa.pl/cennik",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.halawspinaczkowa.pl/infrastruktura",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Official domain is halawspinaczkowa.pl (camp4.pl is an unrelated furniture shop). Price list (from 1 Oct 2025) shows bare numbers without currency; assumed PLN. Cafe = bar (\"Barek na CAMP4\"); kids = FunWall, kids sections/birthdays."
+ },
+ {
+  "id": "seed-1302",
+  "name": "Climbing Centre ON SIGHT",
+  "metro": "Warsaw",
+  "expect_h": "1743d49881a8169b",
+  "website": "http://www.obozowa.waw.pl/",
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [
+   {
+    "url": "http://www.obozowa.waw.pl/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   }
+  ],
+  "status": "flag",
+  "notes": "Official site banner says \"Zamkniete na stale\" and that the wall ceased operating on 29 April 2026 (permanently closed). No hours/prices recorded."
+ },
+ {
+  "id": "seed-1303",
+  "name": "Crux Boulder - Warszawa",
+  "metro": "Warsaw",
+  "expect_h": "71583eab38c37b22",
+  "website": "https://www.crux.boulder.pl/",
+  "hours": {
+   "mon": "8am–11pm",
+   "tue": "8am–11pm",
+   "wed": "8am–11pm",
+   "thu": "8am–11pm",
+   "fri": "8am–11pm",
+   "sat": "10am–9pm",
+   "sun": "10am–9pm"
+  },
+  "day_pass": "44 zł adult Mon–Fri after 3pm, 39 zł weekend, 32 zł before 3pm",
+  "facilities": [
+   "cafe",
+   "training",
+   "shoe-hire",
+   "yoga"
+  ],
+  "sources": [
+   {
+    "url": "https://www.crux.boulder.pl/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.crux.boulder.pl/kontakt/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.crux.boulder.pl/cennik/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.crux.boulder.pl/o-nas/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hoza 51 confirmed on contact page. Training = strength/campus/free-weight area (o-nas); yoga listed under sports classes on homepage; cafe on site; shoe rental 16 zl."
+ },
+ {
+  "id": "seed-1304",
+  "name": "Murall Centrum Wspinaczkowe + FunClimb",
+  "metro": "Warsaw",
+  "expect_h": "f84259b71123b02e",
+  "website": "https://annopol.murall.pl/",
+  "hours": {
+   "mon": "7am–11pm",
+   "tue": "7am–11pm",
+   "wed": "7am–11pm",
+   "thu": "7am–11pm",
+   "fri": "7am–11pm",
+   "sat": "7am–11pm",
+   "sun": "7am–11pm"
+  },
+  "day_pass": "49 zł adult",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://annopol.murall.pl/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://annopol.murall.pl/kontakt/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://annopol.murall.pl/cennik/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   },
+   {
+    "url": "https://annopol.murall.pl/faq-najczesciej-zadawane-pytania/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://annopol.murall.pl/jak-zaczac/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Location subdomain of the Murall chain. FAQ: shoe rental 18 zl, free parking in front, cafe, kids sections; Jak zaczac page: gym/Kilter/campus."
+ },
+ {
+  "id": "seed-1305",
+  "name": "Murall Krakowska",
+  "metro": "Warsaw",
+  "expect_h": "20fd00025102ba66",
+  "website": "https://krakowska.murall.pl/",
+  "hours": {
+   "mon": "7am–11pm",
+   "tue": "7am–11pm",
+   "wed": "7am–11pm",
+   "thu": "7am–11pm",
+   "fri": "7am–11pm",
+   "sat": "7am–11pm",
+   "sun": "7am–11pm"
+  },
+  "day_pass": "49 zł adult",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://krakowska.murall.pl/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://krakowska.murall.pl/kontakt/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://krakowska.murall.pl/cennik/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   },
+   {
+    "url": "https://krakowska.murall.pl/faq-najczesciej-zadawane-pytania/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://krakowska.murall.pl/jak-zaczac/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Location subdomain of the Murall chain. FAQ: shoe rental 18 zl, free parking in front, cafe, kids sections; Jak zaczac page: gym/Kilter/campus and kids bouldering wall."
+ },
+ {
+  "id": "seed-1306",
+  "name": "Obiekto",
+  "metro": "Warsaw",
+  "expect_h": "8631168837fa5517",
+  "website": "https://obiekto.pl/",
+  "hours": {
+   "mon": "8am–10:30pm",
+   "tue": "8am–10:30pm",
+   "wed": "8am–10:30pm",
+   "thu": "8am–10:30pm",
+   "fri": "8am–10:30pm",
+   "sat": "9am–10pm",
+   "sun": "9am–10pm"
+  },
+  "day_pass": "45 zł adult (after 3pm and weekends), 33 zł Mon–Fri before 3pm",
+  "facilities": [
+   "training",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://obiekto.pl/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://obiekto.pl/kontakt",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://obiekto.pl/cennik",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://obiekto.pl/o-obiekto",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Price table columns parsed from raw HTML (single entry 45 zl / 33 zl). Training zone + Moonboard on o-obiekto; shoe rental 15 zl."
+ },
+ {
+  "id": "seed-1307",
+  "name": "Stacja Grawitacja Warszawa",
+  "metro": "Warsaw",
+  "expect_h": "821b4e1281f02990",
+  "website": "https://www.stacjagrawitacja.pl/warszawa/",
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [
+   {
+    "url": "https://www.stacjagrawitacja.pl/warszawa/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   }
+  ],
+  "status": "flag",
+  "notes": "Address matches but it is a trampoline park whose only climbing is an interactive game wall and a kids Happy Climb wall; not a climbing gym. Park hours/prices not recorded."
+ },
+ {
+  "id": "seed-1308",
+  "name": "VOLT Boulderownia",
+  "metro": "Warsaw",
+  "expect_h": "dce34e2fce99ac62",
+  "website": "https://voltboulderownia.pl/warszawa/",
+  "hours": {
+   "mon": "8am–11pm",
+   "tue": "8am–11pm",
+   "wed": "8am–11pm",
+   "thu": "8am–11pm",
+   "fri": "8am–11pm",
+   "sat": "9am–10pm",
+   "sun": "9am–10pm"
+  },
+  "day_pass": "45 zł adult peak/weekend, 35 zł off-peak (Mon–Fri 8am–3pm)",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "showers",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://voltboulderownia.pl/warszawa/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://voltboulderownia.pl/warszawa/kontakt/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://voltboulderownia.pl/warszawa/cennik/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Warsaw page: Zawodzie 16 confirmed; showers, parking, snack shop with coffee (counted as cafe), Moonboard/campus training, kids classes; shoe rental 15 zl."
+ },
+ {
+  "id": "seed-1309",
+  "name": "WEST Bouldering",
+  "metro": "Warsaw",
+  "expect_h": "a87d5e2482f1dc80",
+  "website": "https://westbouldering.pl/",
+  "hours": {
+   "mon": "8am–11pm",
+   "tue": "8am–11pm",
+   "wed": "8am–11pm",
+   "thu": "8am–11pm",
+   "fri": "8am–11pm",
+   "sat": "8am–11pm",
+   "sun": "8am–11pm"
+  },
+  "day_pass": "49 zł adult, 31 zł off-peak (Mon–Fri to 3pm)",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://westbouldering.pl/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://westbouldering.pl/cennik",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://westbouldering.pl/kontakt",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Prices on cennik page lack currency symbol; assumed PLN. Homepage: speciality cafe, gym + Kilter Board, Kids Wall; cennik: shoe rental 16, parking in front of hall."
+ },
+ {
+  "id": "seed-1310",
+  "name": "Wgórę. Climbing wall",
+  "metro": "Warsaw",
+  "expect_h": "e31ea8ab4278408b",
+  "website": "https://wgore.eu/",
+  "hours": {
+   "mon": "8am–10:30pm",
+   "tue": "8am–10:30pm",
+   "wed": "8am–10:30pm",
+   "thu": "8am–10:30pm",
+   "fri": "8am–10:30pm",
+   "sat": "9am–9pm",
+   "sun": "9am–9pm"
+  },
+  "day_pass": "45 zł adult, 35 zł Mon–Fri before 3pm",
+  "facilities": [
+   "training",
+   "showers",
+   "cafe",
+   "parking",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://wgore.eu/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://wgore.eu/o-nas/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://wgore.eu/oferta/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Homepage hours: Mon-Fri 8:00-22:30 (reception to 21:00), Sat-Sun 9:00-21:00. o-nas: training equipment, showers/lockers, restaurant on first floor (counted as cafe); homepage: own parking, kids page/sections. Shoe rental explicitly NOT offered."
+ }
+]

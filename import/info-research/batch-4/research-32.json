@@ -1,0 +1,738 @@
+[
+  {
+    "id": "seed-1627",
+    "name": "Civic Bouldergym Taipei",
+    "metro": "Taipei",
+    "expect_h": "c54b01a39b13afc5",
+    "website": null,
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [],
+    "status": "not-found",
+    "notes": "Only a Facebook/Instagram presence found (no official website); the web-search \"official site\" was the Facebook page."
+  },
+  {
+    "id": "seed-1622",
+    "name": "CORNER Bouldering Gym - Huashan",
+    "metro": "Taipei",
+    "expect_h": "ddc9fe3b646dbc6a",
+    "website": "https://www.cornerbouldering.com/en/locations/huashan",
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [
+      {
+        "url": "https://www.cornerbouldering.com/en/locations/huashan",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      }
+    ],
+    "status": "website-only",
+    "notes": "Official location page is client-rendered; hours, pricing and facility text are loaded at runtime from a CMS and are not in the fetched HTML (only meta description). Address confirmed (No. 86 Sec. 1 Xinsheng N. Rd)."
+  },
+  {
+    "id": "seed-1621",
+    "name": "CORNER Bouldering Gym - Zhongshan",
+    "metro": "Taipei",
+    "expect_h": "0559c0f404d70df3",
+    "website": "https://www.cornerbouldering.com/en/locations/zhongshan",
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [
+      {
+        "url": "https://www.cornerbouldering.com/en/locations/zhongshan",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      }
+    ],
+    "status": "website-only",
+    "notes": "Official location page is client-rendered; hours, pricing and facility text not in the fetched HTML (only meta description). Address confirmed (B1, No. 68 Sec. 2 Zhongshan N. Rd)."
+  },
+  {
+    "id": "seed-1626",
+    "name": "Kirin Climbing Gym",
+    "metro": "Taipei",
+    "expect_h": "f38154610b3f50f6",
+    "website": null,
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [],
+    "status": "not-found",
+    "notes": "Gym is Kirin Climbing Gym (奇岩攀岩館), 1F, No. 512, Sec. 7, Zhongxiao E. Rd. Its site kirinclimbing.com.tw returns a Cloudflare challenge/403 to automated clients, so nothing could be fetched; no website recorded."
+  },
+  {
+    "id": "seed-1608",
+    "name": "MegaSTONE Climbing Gym",
+    "metro": "Taipei",
+    "expect_h": "61939167960e5210",
+    "website": null,
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [],
+    "status": "not-found",
+    "notes": "No official website found (Facebook only). Address discrepancy: seed says No.58-12 Sanhe Rd, other sources place MegaSTONE on Zhongzheng Rd, Xinzhuang; seed address/location may need review."
+  },
+  {
+    "id": "seed-1610",
+    "name": "Red Rock Bouldering Training Center",
+    "metro": "Taipei",
+    "expect_h": "167a3ba62b5dd9c4",
+    "website": null,
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [],
+    "status": "not-found",
+    "notes": "Gym trades as RedRock 紅石攀岩 (Shilin); only a Facebook page found, no official website."
+  },
+  {
+    "id": "seed-1624",
+    "name": "T-UP Climbing Gym - Nangang",
+    "metro": "Taipei",
+    "expect_h": "e00d5102a075d456",
+    "website": "https://www.tupclimbing.tw/en/node/120/Nangang_Branch",
+    "hours": {
+      "mon": "12pm–11pm",
+      "tue": "12pm–11pm",
+      "wed": "12pm–11pm",
+      "thu": "12pm–11pm",
+      "fri": "12pm–11pm",
+      "sat": "9am–9pm",
+      "sun": "9am–9pm"
+    },
+    "day_pass": "NT$450 adult, NT$350 student (aged 13-24)",
+    "facilities": [
+      "training",
+      "kids",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://www.tupclimbing.tw/en/node/120/Nangang_Branch",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Official operator page for the Nangang branch (address No. 147 Sec. 2 Nangang Rd matches). Hours Mon-Fri 12:00-23:00, Sat-Sun 9:00-21:00. Price is the all-day weekday/weekend adult ticket (cheaper afternoon/evening tickets exist). Training = spray wall (stated for courses and climbing training); kids area and shoe rental (NT$100) stated."
+  },
+  {
+    "id": "seed-1623",
+    "name": "T-UP Climbing Gym - Wanhua",
+    "metro": "Taipei",
+    "expect_h": "fc5ab80c6919c5b1",
+    "website": "https://www.tupclimbing.tw/branch/wanhua",
+    "hours": {
+      "mon": "10am–11pm",
+      "tue": "10am–11pm",
+      "wed": "10am–11pm",
+      "thu": "10am–11pm",
+      "fri": "10am–11pm",
+      "sat": "9am–9pm",
+      "sun": "9am–9pm"
+    },
+    "day_pass": "NT$450 adult weekday, NT$500 weekend; student NT$350",
+    "facilities": [
+      "training",
+      "kids",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://www.tupclimbing.tw/branch/wanhua",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.tupclimbing.tw/en/node/120/Nangang_Branch",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Official operator page for Wanhua branch (No. 149 Dali St). Hours from the branch list in the site footer (Mon-Fri 10:00-23:00, Sat-Sun 9:00-21:00). Prices are all-day tickets. Training = Moonboard, Kilter board, spray wall; kids area; shoe rental NT$100."
+  },
+  {
+    "id": "seed-1625",
+    "name": "T-UP Climbing Gym - Zhonghe",
+    "metro": "Taipei",
+    "expect_h": "685cd82642fa8128",
+    "website": "https://www.tupclimbing.tw/branch/zhonghe",
+    "hours": {
+      "mon": "12pm–11pm",
+      "tue": "12pm–11pm",
+      "wed": "12pm–11pm",
+      "thu": "12pm–11pm",
+      "fri": "12pm–11pm",
+      "sat": "9am–10pm",
+      "sun": "9am–10pm"
+    },
+    "day_pass": "NT$500 adult weekday, NT$550 weekend; student NT$400",
+    "facilities": [
+      "training",
+      "kids",
+      "yoga",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://www.tupclimbing.tw/branch/zhonghe",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.tupclimbing.tw/en/node/120/Nangang_Branch",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Official operator page for Zhonghe branch (No. 41 Liyan St; rope gym with bouldering). Hours from site footer branch list (Mon-Fri 12:00-23:00, Sat-Sun 9:00-22:00). Prices are all-day tickets. Facilities: weights/gear area, 2F kids bouldering area, 3F yoga room, shoe rental NT$100."
+  },
+  {
+    "id": "seed-1611",
+    "name": "Taipei Rock Climbing Gym",
+    "metro": "Taipei",
+    "expect_h": "8e687216b6db7300",
+    "website": null,
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [],
+    "status": "flag",
+    "notes": "No official website found. Seed address (30 Lanchow St, Datong) matches an old Chinese Alpine Association club wall that third-party pages describe as small with irregular hours; the same street is also the former site of the STONE gym that became MegaSTONE (seed-1608). Likely obsolete or duplicate; unverified."
+  },
+  {
+    "id": "seed-1629",
+    "name": "The Little Rock - Tianmu",
+    "metro": "Taipei",
+    "expect_h": "a8bb15338b82ed87",
+    "website": null,
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [],
+    "status": "not-found",
+    "notes": "Trades as The Little Rock 小岩館 Tianmu. Only Facebook/Instagram/Linktree found; the domain thelittlerock.com.tw listed by a search does not resolve (DNS failure)."
+  },
+  {
+    "id": "seed-1612",
+    "name": "Y17 Climbing Gym",
+    "metro": "Taipei",
+    "expect_h": "33f78c3920239a5e",
+    "website": "https://double8-y17.rezio.shop/en-US",
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [
+      {
+        "url": "https://double8-y17.rezio.shop/en-US",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      },
+      {
+        "url": "https://youth.gov.taipei/venues/floor/6159793f-1511-4314-807f-4de42be45225",
+        "accessed": "2026-10-04",
+        "supports": []
+      }
+    ],
+    "status": "website-only",
+    "notes": "Operator (double8 / 岩究所) booking site for the Y17 9F gym, address matches. Hours not recorded: operator page says weekdays 08:30-21:30 with breaks 12-13 and 17-18, weekends 09:30-18:30; its product page says 08:00-21:30 and Wednesday closures vary; the city venue page says weekdays general climbing 13:00-21:30. Prices on site are experience packages (NT$500/600), not plain entry, so day_pass is null."
+  },
+  {
+    "id": "seed-1628",
+    "name": "Yonghe Climbing Field",
+    "metro": "Taipei",
+    "expect_h": "d506326b307335f4",
+    "website": "https://www.titohiking.com.tw/titorock-climbing/",
+    "hours": null,
+    "day_pass": "NT$200 adult weekday, NT$250 weekend (all-day)",
+    "facilities": [
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://www.titohiking.com.tw/titorock-climbing/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Operator (Tito Hiking) page for the gym at 6F, 250 Yongli Rd inside Yonghe sports centre; address matches. Student all-day NT$180/230; hourly NT$50-80. Hours left null: the FAQ says weekdays 13:00-22:00 (17:00-18:00 break) and weekends 9:00-22:00, while the info box says 14:00-22:00 for all days. Shoe rental NT$100."
+  },
+  {
+    "id": "seed-110",
+    "name": "Brooklyn Boulders Chicago",
+    "metro": "Chicago",
+    "expect_h": "fdbc326fdf9214e3",
+    "website": null,
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [
+      {
+        "url": "https://brooklynboulders.com/",
+        "accessed": "2026-10-04",
+        "supports": []
+      }
+    ],
+    "status": "flag",
+    "notes": "Official brooklynboulders.com now lists only NYC locations, the /chicago page 404s and wl.brooklynboulders.com (West Loop store) shows \"Store unavailable\". Third-party results list it as closed and the building as \"former Brooklyn Boulders\". Treat as closed."
+  },
+  {
+    "id": "seed-123",
+    "name": "Chicago Bouldering Collective",
+    "metro": "Chicago",
+    "expect_h": "45fdda861768fd92",
+    "website": null,
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [
+      {
+        "url": "http://www.chicagoboulderingcollective.com/",
+        "accessed": "2026-10-04",
+        "supports": []
+      }
+    ],
+    "status": "flag",
+    "notes": "Official site (http://www.chicagoboulderingcollective.com/, no valid https certificate) states \"The Chicago Bouldering Collective is CLOSED\" with hope to reopen someday. Website left null because https fails."
+  },
+  {
+    "id": "seed-112",
+    "name": "Climb On",
+    "metro": "Chicago",
+    "expect_h": "860bd0423f4f036a",
+    "website": "https://www.climbonrockgym.com/",
+    "hours": {
+      "mon": "Closed",
+      "tue": "4pm–10pm",
+      "wed": "4pm–10pm",
+      "thu": "4pm–10pm",
+      "fri": "4pm–10pm",
+      "sat": "12pm–8pm",
+      "sun": "12pm–8pm"
+    },
+    "day_pass": "$18 day pass (gear not included)",
+    "facilities": [
+      "shoe-hire",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://www.climbonrockgym.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.climbonrockgym.com/daily-prices",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Address 18120 Harwood Ave confirmed. Day Pass price is stated without an adult/child split. Shoes $5 rental. Kids: birthday/party packages and kids-under-14 safety class rules."
+  },
+  {
+    "id": "seed-113",
+    "name": "First Ascent – Arlington Heights",
+    "metro": "Chicago",
+    "expect_h": "6e29c2be07afd68c",
+    "website": "https://faclimbing.com/arlington-heights/info/",
+    "hours": {
+      "mon": "6am–10pm",
+      "tue": "6am–10pm",
+      "wed": "6am–10pm",
+      "thu": "6am–10pm",
+      "fri": "6am–10pm",
+      "sat": "10am–8pm",
+      "sun": "10am–8pm"
+    },
+    "day_pass": null,
+    "facilities": [
+      "training",
+      "yoga",
+      "showers",
+      "parking",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://faclimbing.com/arlington-heights/info/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://faclimbing.com/arlington-heights/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Live faclimbing.com blocks my IP (403 geo-block), so the page was read from an Internet Archive snapshot of the official page. Snapshots dated 2026-09-19. Address 701 Rohlwing Rd confirmed. No day-pass price found on the Arlington Heights pages. Training = Moonboard, Kilter, campus/hang boards, fitness area; free parking lot stated; kids = youth programs (classes, camps, team) on the home page."
+  },
+  {
+    "id": "seed-114",
+    "name": "First Ascent – Block 37",
+    "metro": "Chicago",
+    "expect_h": "c88f163a78fce0cc",
+    "website": "https://faclimbing.com/chicago/block-37/",
+    "hours": {
+      "mon": "6am–11pm",
+      "tue": "6am–11pm",
+      "wed": "6am–11pm",
+      "thu": "6am–11pm",
+      "fri": "6am–11pm",
+      "sat": "10am–8pm",
+      "sun": "10am–8pm"
+    },
+    "day_pass": "$28 adult, $23 student",
+    "facilities": [
+      "training",
+      "yoga",
+      "showers",
+      "shoe-hire",
+      "parking"
+    ],
+    "sources": [
+      {
+        "url": "https://faclimbing.com/chicago/block-37/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://faclimbing.com/chicago/block-37/pricing/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Live faclimbing.com blocks my IP (403 geo-block), so the page was read from an Internet Archive snapshot of the official page. Location page snapshot 2026-09-28; pricing page snapshot 2026-03-11 (older, may have changed). Paid parking in the building lower level is stated. Shoes $6."
+  },
+  {
+    "id": "seed-115",
+    "name": "First Ascent – Humboldt Park",
+    "metro": "Chicago",
+    "expect_h": "f1fc7508621b2934",
+    "website": "https://faclimbing.com/chicago/humboldt-park/",
+    "hours": {
+      "mon": "6am–11pm",
+      "tue": "6am–11pm",
+      "wed": "6am–11pm",
+      "thu": "6am–11pm",
+      "fri": "6am–11pm",
+      "sat": "10am–8pm",
+      "sun": "10am–8pm"
+    },
+    "day_pass": "$25 adult, $21 student",
+    "facilities": [
+      "training",
+      "yoga",
+      "showers",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://faclimbing.com/chicago/humboldt-park/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://faclimbing.com/chicago/humboldt-park/pricing/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Live faclimbing.com blocks my IP (403 geo-block), so the page was read from an Internet Archive snapshot of the official page. Location page snapshot 2026-09-28; pricing page snapshot 2025-11-14 (older, may have changed). Only street parking is mentioned, so no parking key. Shoes $6."
+  },
+  {
+    "id": "seed-117",
+    "name": "First Ascent – Uptown",
+    "metro": "Chicago",
+    "expect_h": "36c5946da8a76d57",
+    "website": "https://faclimbing.com/chicago/uptown/",
+    "hours": {
+      "mon": "6am–11pm",
+      "tue": "6am–11pm",
+      "wed": "6am–11pm",
+      "thu": "6am–11pm",
+      "fri": "6am–11pm",
+      "sat": "10am–8pm",
+      "sun": "10am–8pm"
+    },
+    "day_pass": "$25 adult, $21 student",
+    "facilities": [
+      "training",
+      "yoga",
+      "shop",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://faclimbing.com/chicago/uptown/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://faclimbing.com/chicago/uptown/pricing/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Live faclimbing.com blocks my IP (403 geo-block), so the page was read from an Internet Archive snapshot of the official page. Snapshots dated 2026-09-28. Training = Moonboard, campus boards, hang boards, cardio and free weights; pro shop stated; shoes $6. Street/surface-lot parking only, so no parking key."
+  },
+  {
+    "id": "seed-118",
+    "name": "First Ascent Avondale",
+    "metro": "Chicago",
+    "expect_h": "6989b8d3ff689947",
+    "website": "https://faclimbing.com/chicago/avondale/",
+    "hours": {
+      "mon": "6am–11pm",
+      "tue": "6am–11pm",
+      "wed": "6am–11pm",
+      "thu": "6am–11pm",
+      "fri": "6am–11pm",
+      "sat": "9am–8pm",
+      "sun": "9am–8pm"
+    },
+    "day_pass": "$28 adult, $23 student",
+    "facilities": [
+      "training",
+      "yoga",
+      "showers",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://faclimbing.com/chicago/avondale/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://faclimbing.com/chicago/avondale/pricing/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Live faclimbing.com blocks my IP (403 geo-block), so the page was read from an Internet Archive snapshot of the official page. Snapshots dated 2026-09-28. Page says \"Parking is free and plentiful\" without saying on-site, so no parking key. Shoes $6."
+  },
+  {
+    "id": "seed-120",
+    "name": "Movement Lincoln Park",
+    "metro": "Chicago",
+    "expect_h": "0f3d3967cffa381b",
+    "website": "https://movementgyms.com/lincoln-park/",
+    "hours": {
+      "mon": "6am–11pm",
+      "tue": "6am–11pm",
+      "wed": "6am–11pm",
+      "thu": "6am–11pm",
+      "fri": "6am–11pm",
+      "sat": "8am–8pm",
+      "sun": "8am–6pm"
+    },
+    "day_pass": "$28 adult",
+    "facilities": [
+      "training",
+      "yoga",
+      "shop",
+      "shoe-hire",
+      "parking"
+    ],
+    "sources": [
+      {
+        "url": "https://movementgyms.com/lincoln-park/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Address 1460 N Dayton St confirmed. Hours from the location hours block (M-F 6am-11pm, Sat 8am-8pm, Sun 8am-6pm). Facilities: cardio/weights, yoga classes, gear shop, rentals (shoes $6), Movement Garage (15 spaces, validated). Kids not stated for this location beyond a menu label."
+  },
+  {
+    "id": "seed-121",
+    "name": "Movement Wrigleyville",
+    "metro": "Chicago",
+    "expect_h": "7a03e9b70adbfdb9",
+    "website": "https://movementgyms.com/wrigleyville/",
+    "hours": {
+      "mon": "6am–11pm",
+      "tue": "6am–11pm",
+      "wed": "6am–11pm",
+      "thu": "6am–11pm",
+      "fri": "6am–11pm",
+      "sat": "8am–8pm",
+      "sun": "8am–6pm"
+    },
+    "day_pass": "$28 adult",
+    "facilities": [
+      "training",
+      "yoga",
+      "shop",
+      "showers",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://movementgyms.com/wrigleyville/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Address 1115 W Addison St confirmed. Facilities: weights/cardio floor, yoga, gear shop, locker rooms with showers, shoe and chalk rental $7. Parking is a validated garage across the street (not on-site), so no parking key."
+  },
+  {
+    "id": "seed-124",
+    "name": "Old Town Indoor Rock Climbing",
+    "metro": "Chicago",
+    "expect_h": "4d35b586ef024256",
+    "website": "https://ffc.com/club-locations/old-town/",
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [
+      {
+        "url": "https://ffc.com/club-locations/old-town/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      }
+    ],
+    "status": "flag",
+    "notes": "Seed has no address. This is the climbing wall inside FFC Old Town, a members health club at 1235 N LaSalle (not a standalone gym). ffc.com blocks my IP (503), so read from an Internet Archive snapshot dated 2026-08-19. Page lists club hours only (not wall-specific) and no wall pricing, so hours/day_pass left null."
+  },
+  {
+    "id": "seed-129",
+    "name": "Vertical Endeavors – Glendale Heights",
+    "metro": "Chicago",
+    "expect_h": "98c9fd2301b75a7e",
+    "website": "https://www.verticalendeavors.com/visit-us/hours-locations/glendale-heights-il/",
+    "hours": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "10am–6pm",
+      "sun": "10am–6pm"
+    },
+    "day_pass": "$24 adult, $20 youth/young adult (ages 4-20)",
+    "facilities": [
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://www.verticalendeavors.com/visit-us/hours-locations/glendale-heights-il/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.verticalendeavors.com/visit-us/locations-2/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.verticalendeavors.com/visit-us/pricing2/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Address 246 Windy Point Dr confirmed. Hours are the PUBLIC hours (Mon-Fri also has members-only 8-10am). Day pass is from the chain pricing page, which has a separate Duluth section, so $24 applies to the other gyms; rental/yoga/shop lines on that page are chain-wide so not used. Kids = youth climbing teams, club, camps on the location page."
+  }
+]

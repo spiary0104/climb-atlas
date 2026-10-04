@@ -1,0 +1,964 @@
+[
+  {
+    "id": "seed-1419",
+    "name": "Bigwall",
+    "metro": "Budapest",
+    "expect_h": "0a2865a08806eb61",
+    "website": "https://www.bigwall.hu/",
+    "hours": {
+      "mon": "8am–10:30pm",
+      "tue": "8am–10:30pm",
+      "wed": "8am–10:30pm",
+      "thu": "8am–10:30pm",
+      "fri": "8am–10:30pm",
+      "sat": "9am–8:30pm",
+      "sun": "9am–8:30pm"
+    },
+    "day_pass": "4,490 Ft adult, 3,290 Ft student",
+    "facilities": [
+      "kids",
+      "shoe-hire",
+      "showers",
+      "parking"
+    ],
+    "sources": [
+      {
+        "url": "https://www.bigwall.hu/nyitvatartas/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.bigwall.hu/arak/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.bigwall.hu/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Weekend hours are 9am-7pm from 15 June and in July/Aug per the hours page; regular hours used. Kids: kids training, parties, 6 m kids wall. Showers: site says the shower/changing room can be used with slippers. Parking in front of the building is free for guests during opening hours."
+  },
+  {
+    "id": "seed-1420",
+    "name": "Boulder Academy Budapest",
+    "metro": "Budapest",
+    "expect_h": "218ea71c21ca8fb7",
+    "website": "https://www.boulderacademy.hu/en",
+    "hours": {
+      "mon": "6am–11pm",
+      "tue": "6am–11pm",
+      "wed": "6am–11pm",
+      "thu": "2pm–11pm",
+      "fri": "6am–11pm",
+      "sat": "10am–9pm",
+      "sun": "10am–9pm"
+    },
+    "day_pass": null,
+    "facilities": [
+      "shoe-hire",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://www.boulderacademy.hu/en",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.boulderacademy.hu/en/gyakori-k%C3%A9rd%C3%A9sek",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Prices are loaded from an embedded ticket webshop (gymbase) and not readable, so day_pass is null. Kids from the home-page kids-room notice and kids workouts. Sat and Sun share one listed range (10:00-21:00)."
+  },
+  {
+    "id": "seed-1421",
+    "name": "Climberry",
+    "metro": "Budapest",
+    "expect_h": "576f999d037b3c84",
+    "website": "https://climberry.hu/",
+    "hours": null,
+    "day_pass": null,
+    "facilities": [
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://climberry.hu/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://climberry.hu/elerhetosegek/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Address matches (Bocskai ut 77-79) but this is a children's skill-development climbing school run on course passes (schedule-based groups, 6/12/24-session passes, 13,000 Ft trial ticket); no public open-gym hours or single day pass, so those are null. Doubtful as a drop-in gym."
+  },
+  {
+    "id": "seed-1422",
+    "name": "fless!",
+    "metro": "Budapest",
+    "expect_h": "66ef972193e443a8",
+    "website": "https://www.fless.hu/zuglo",
+    "hours": {
+      "mon": "8am–10pm",
+      "tue": "2pm–10pm",
+      "wed": "8am–10pm",
+      "thu": "8am–10pm",
+      "fri": "8am–10pm",
+      "sat": "10am–8pm",
+      "sun": "10am–8pm"
+    },
+    "day_pass": "3,800 Ft adult peak, 3,500 Ft off-peak",
+    "facilities": [
+      "shoe-hire",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://www.fless.hu/zuglo",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.fless.hu/zuglo/prices",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.fless.hu/zuglo/kid-wall",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "JS-rendered site read via headless browser. Hours: weekdays 8-22 except Tuesday 14-22; weekend 10-20. Peak = weekdays after 4pm and weekends/holidays; off-peak = weekdays before 4pm (a 3,000 Ft morning price before noon also exists)."
+  },
+  {
+    "id": "seed-1423",
+    "name": "fless! Buda",
+    "metro": "Budapest",
+    "expect_h": "549c352dab0d4856",
+    "website": "https://www.fless.hu/buda",
+    "hours": {
+      "mon": "8am–10pm",
+      "tue": "8am–10pm",
+      "wed": "8am–10pm",
+      "thu": "2pm–10pm",
+      "fri": "8am–10pm",
+      "sat": "10am–8pm",
+      "sun": "10am–8pm"
+    },
+    "day_pass": "3,500 Ft adult peak, 3,200 Ft off-peak",
+    "facilities": [
+      "shoe-hire",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://www.fless.hu/buda",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.fless.hu/buda/prices",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.fless.hu/buda/kid-wall",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "JS-rendered site read via headless browser. Address on site: 1031 Budapest, Aldomas u. 2. Hours: weekdays 8-22 except Thursday 14-22; weekend 10-20. Peak = weekdays after 4pm and weekends/holidays; off-peak = weekdays before 4pm."
+  },
+  {
+    "id": "seed-1424",
+    "name": "Flow Boulder",
+    "metro": "Budapest",
+    "expect_h": "c612dd26d6f57c86",
+    "website": "https://www.flowboulder.hu/en",
+    "hours": {
+      "mon": "6am–11pm",
+      "tue": "6am–11pm",
+      "wed": "6am–11pm",
+      "thu": "6am–11pm",
+      "fri": "6am–11pm",
+      "sat": "8am–10pm",
+      "sun": "8am–10pm"
+    },
+    "day_pass": "4,490 Ft adult, 3,790 Ft student",
+    "facilities": [
+      "cafe",
+      "training",
+      "kids",
+      "shoe-hire",
+      "parking",
+      "yoga"
+    ],
+    "sources": [
+      {
+        "url": "https://www.flowboulder.hu/en",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.flowboulder.hu/en/prices",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Prices table gives numbers with .- (no currency word); forints assumed from the Hungarian site. Off-peak single ticket 3,990 Ft (weekdays before 2pm). Cafe = Beta Bar; training = hangboard and fitness machines; parking = 3 hours free; kids from training courses for children and adults."
+  },
+  {
+    "id": "seed-1425",
+    "name": "GI Boulder Club",
+    "metro": "Budapest",
+    "expect_h": "ea51fdaf31dea182",
+    "website": "https://www.giboulder.hu/",
+    "hours": {
+      "mon": "3pm–10pm",
+      "tue": "10am–10pm",
+      "wed": "3pm–10pm",
+      "thu": "3pm–9pm",
+      "fri": "3pm–10pm",
+      "sat": "3pm–8pm",
+      "sun": "10am–8pm"
+    },
+    "day_pass": "3,900 Ft adult peak, 3,300 Ft off-peak",
+    "facilities": [
+      "shoe-hire",
+      "parking",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://www.giboulder.hu/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.giboulder.hu/nyitvatartas/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.giboulder.hu/araink/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.giboulder.hu/szulinap/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Address on site: 1163 Budapest, Pesti hatarut 1. Prices are images (Frame-35.jpg, read visually); peak = weekdays until 6:40pm, off-peak = weekdays after 6:40pm, Tue 10-15 and weekends. Kids from children's birthday parties and kids tickets/classes."
+  },
+  {
+    "id": "seed-1426",
+    "name": "Gravity Boulder",
+    "metro": "Budapest",
+    "expect_h": "d1ca135457b9c2f0",
+    "website": "https://gravitybudapest.com/en/home_en/",
+    "hours": {
+      "mon": "6am–11pm",
+      "tue": "6am–11pm",
+      "wed": "6am–11pm",
+      "thu": "6am–11pm",
+      "fri": "7am–11pm",
+      "sat": "9am–9pm",
+      "sun": "9am–9pm"
+    },
+    "day_pass": "4,700 Ft adult peak, 3,900 Ft off-peak",
+    "facilities": [
+      "shoe-hire",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://gravitybudapest.com/en/home_en/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      },
+      {
+        "url": "https://gravitybudapest.com/en/opening-hours/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://gravitybudapest.com/en/prices/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Price list is an image (gravity_arlista_2026_en.jpg, read visually). Peak = weekdays after 3pm and Sunday; off-peak = weekdays before 3pm and Saturday. Kids: children's climbing walls used by the Snow Leopard Foundation."
+  },
+  {
+    "id": "seed-1427",
+    "name": "Gravity CAMPUS",
+    "metro": "Budapest",
+    "expect_h": "b3be6cdd86072127",
+    "website": "https://gravitybudapest.com/en/gravity-campus-2/",
+    "hours": {
+      "mon": "6am–11pm",
+      "tue": "6am–11pm",
+      "wed": "6am–11pm",
+      "thu": "6am–11pm",
+      "fri": "11am–11pm",
+      "sat": "9am–9pm",
+      "sun": "9am–9pm"
+    },
+    "day_pass": "4,100 Ft adult peak, 3,600 Ft off-peak",
+    "facilities": [
+      "shoe-hire",
+      "training"
+    ],
+    "sources": [
+      {
+        "url": "https://gravitybudapest.com/en/gravity-campus-2/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://gravitybudapest.com/en/campus-opening-hours/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      },
+      {
+        "url": "https://gravitybudapest.com/en/campus-prices/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Campus price list is an image (campus_arlista_2026_en.jpg, read visually); the climbing ticket includes the fitness gym. Peak = weekdays after 3pm plus weekends; off-peak = weekdays before 3pm. Training = fitness gym with 30+ machines."
+  },
+  {
+    "id": "seed-1428",
+    "name": "MAG47 Kft.",
+    "metro": "Budapest",
+    "expect_h": "6bde9a5a2fdc6716",
+    "website": "https://mag47.hu/",
+    "hours": {
+      "mon": "8am–10pm",
+      "tue": "8am–10pm",
+      "wed": "8am–10pm",
+      "thu": "8am–10pm",
+      "fri": "8am–10pm",
+      "sat": "9am–8pm",
+      "sun": "9am–8pm"
+    },
+    "day_pass": "4,490 Ft adult, 3,100 Ft boulder only",
+    "facilities": [
+      "cafe",
+      "parking",
+      "shoe-hire",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://mag47.hu/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://mag47.hu/fooldal/arlista",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Student/pensioner day ticket 3,600 Ft. Cafe from the buffet FAQ (sandwiches, coffee); parking free in the MAG47 yard/streets; kids from the school-break kids camp notice and kids ticket (no childcare offered)."
+  },
+  {
+    "id": "seed-1429",
+    "name": "Monkey Boulder",
+    "metro": "Budapest",
+    "expect_h": "6bebf98a50d822c3",
+    "website": "https://monkeyboulder.hu/",
+    "hours": {
+      "mon": "8am–11pm",
+      "tue": "8am–11pm",
+      "wed": "8am–11pm",
+      "thu": "8am–11pm",
+      "fri": "8am–11pm",
+      "sat": "9am–8pm",
+      "sun": "9am–8pm"
+    },
+    "day_pass": "3,800 Ft adult peak, 3,500 Ft off-peak",
+    "facilities": [
+      "cafe",
+      "training",
+      "shop",
+      "shoe-hire",
+      "kids",
+      "parking"
+    ],
+    "sources": [
+      {
+        "url": "https://monkeyboulder.hu/rolunk/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://monkeyboulder.hu/arak/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://monkeyboulder.hu/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Address on site: Szentendrei ut 89-95. Peak 17-22h; off-peak weekdays 12-17h and weekends; weekday-morning ticket 2,700 Ft. Parking: first hour free then 300 Ft/h (home page)."
+  },
+  {
+    "id": "seed-1430",
+    "name": "Mountex Boulder",
+    "metro": "Budapest",
+    "expect_h": "513d60096facc2ed",
+    "website": "https://mountex.hu/szolgaltatasok/boulder",
+    "hours": {
+      "mon": "7am–11pm",
+      "tue": "7am–11pm",
+      "wed": "7am–11pm",
+      "thu": "7am–11pm",
+      "fri": "7am–11pm",
+      "sat": "10am–8pm",
+      "sun": "10am–8pm"
+    },
+    "day_pass": "3,900 Ft adult peak, 3,300 Ft off-peak",
+    "facilities": [
+      "cafe",
+      "showers",
+      "training",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://mountex.hu/szolgaltatasok/boulder",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Full (non-loyalty) prices used; loyalty-card prices are 2,900/2,300 Ft. Peak = weekdays 3-8pm and weekends 8am-8pm; off-peak otherwise. Cafe = Boulder x Presso specialty coffee; training = gym on the gallery above reception."
+  },
+  {
+    "id": "seed-1431",
+    "name": "Spider Club",
+    "metro": "Budapest",
+    "expect_h": "f93535bd490af2f2",
+    "website": "https://www.spiderclub.hu/",
+    "hours": {
+      "mon": "1pm–10pm",
+      "tue": "1pm–10pm",
+      "wed": "1pm–10pm",
+      "thu": "1pm–10pm",
+      "fri": "1pm–10pm",
+      "sat": "10am–10pm",
+      "sun": "10am–10pm"
+    },
+    "day_pass": "3,990 Ft adult, 3,590 Ft student/pensioner",
+    "facilities": [
+      "shoe-hire",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://www.spiderclub.hu/Nyitvatartas/20/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.spiderclub.hu/Elerhetoseg/21/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.spiderclub.hu/arak/22/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.spiderclub.hu/en/The-Hall/61/0",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours: Mon-Fri 13-22, Sat-Sun 10-22 (English hall page shows an older 13-23 on weekdays). Happy-hours weekday ticket (until 3:30pm) 3,590 Ft. Kids: separate kids wall, kids training and parties. Parking is paid street parking, so not listed."
+  },
+  {
+    "id": "seed-1433",
+    "name": "Spider Club Budaörs",
+    "metro": "Budapest",
+    "expect_h": "8f97d9b28bbb7d7b",
+    "website": "https://www.spiderclub.hu/budaors/",
+    "hours": {
+      "mon": "1pm–9:30pm",
+      "tue": "1pm–9:30pm",
+      "wed": "1pm–9:30pm",
+      "thu": "1pm–9:30pm",
+      "fri": "1pm–9:30pm",
+      "sat": "10am–9:30pm",
+      "sun": "10am–9:30pm"
+    },
+    "day_pass": "3,990 Ft adult, 3,590 Ft student/pensioner",
+    "facilities": [
+      "parking",
+      "shoe-hire",
+      "kids",
+      "training"
+    ],
+    "sources": [
+      {
+        "url": "https://www.spiderclub.hu/budaors/Nyitvatartas/12/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.spiderclub.hu/budaors/Elerhetoseg/13/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.spiderclub.hu/budaors/arak/14/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.spiderclub.hu/budaors/Terem/11/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Training = 120 sqm fitness room plus 30 sqm strength area; kids = separate wall section for young climbers; parking unlimited free (Fashion Trend Center)."
+  },
+  {
+    "id": "seed-1434",
+    "name": "Spirit Boulder Budaörs",
+    "metro": "Budapest",
+    "expect_h": "e463fe6f635e3b81",
+    "website": "https://www.spiritboulder.hu/",
+    "hours": {
+      "mon": "3pm–9pm",
+      "tue": "3pm–9pm",
+      "wed": "9am–9pm",
+      "thu": "3pm–9pm",
+      "fri": "3pm–9pm",
+      "sat": "2pm–7pm",
+      "sun": "Closed"
+    },
+    "day_pass": "3,500 Ft adult, 3,100 Ft student",
+    "facilities": [
+      "shoe-hire",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://www.spiritboulder.hu/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.spiritboulder.hu/prices",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.spiritboulder.hu/tudnivalok",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "JS-rendered site read via headless browser. Kids from preschool/children/school-age training groups."
+  },
+  {
+    "id": "seed-1432",
+    "name": "SPOT Boulder",
+    "metro": "Budapest",
+    "expect_h": "4253b1057531b252",
+    "website": "https://spotboulder.hu/",
+    "hours": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "3pm–10pm",
+      "thu": "3pm–10pm",
+      "fri": "3pm–10pm",
+      "sat": "Closed",
+      "sun": "Closed"
+    },
+    "day_pass": "2,900 Ft adult after 3pm, 2,200 Ft before 3pm",
+    "facilities": [
+      "shoe-hire",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://spotboulder.hu/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://spotboulder.hu/arak/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours: home page, /home/ (EN) and adult-training page show Mon-Tue 10-22, Wed-Fri 15-22; the /arak/ page lists Mon-Fri 15-22, so it differs (majority used). Prices from the price-list image SPOT_WEB_ARLISTA_2026_HU.png, read visually."
+  },
+  {
+    "id": "g-f9181ea448",
+    "name": "Boulder Planet Indonesia",
+    "metro": "Jakarta",
+    "expect_h": "7a476efa88700a61",
+    "website": "https://www.boulderplanet.id/",
+    "hours": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "10am–10pm",
+      "sun": "10am–10pm"
+    },
+    "day_pass": "Rp220,000 single entry, Rp140,000 off-peak",
+    "facilities": [
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://www.boulderplanet.id/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.boulderplanet.id/rates",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Address on site: Central Park 2 / Neo Soho Mall, Jl. S. Parman Kav. 28 Unit L3A-101. Off-peak = weekday check-in before 3pm."
+  },
+  {
+    "id": "seed-1603",
+    "name": "Bremgra Indoor Climbing Gym",
+    "metro": "Jakarta",
+    "expect_h": "5c01d96ae1aee141",
+    "website": null,
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [],
+    "status": "not-found",
+    "notes": "No official website found (searches and guessed domains bremgra.com/.co.id/.id failed; only third-party, Facebook and travel pages). Also an adventure park (go-kart, rope course) more than a bouldering gym."
+  },
+  {
+    "id": "g-62d88a54c8",
+    "name": "Dreamstone Boulders Alam Sutera",
+    "metro": "Jakarta",
+    "expect_h": "6086d86faa5c4639",
+    "website": "https://dreamstoneboulders.com/alamsutera",
+    "hours": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "10am–10pm",
+      "sun": "10am–10pm"
+    },
+    "day_pass": "Rp175,000 regular entry",
+    "facilities": [
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://dreamstoneboulders.com/alamsutera",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://dreamstoneboulders.com/package",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass"
+        ]
+      },
+      {
+        "url": "https://dreamstoneboulders.com/faqs",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "JS-rendered site read via headless browser. Hours: daily 10 AM to 10 PM (both Alam Sutera and Kelapa Gading) from the FAQ. Early Bird (before 2pm) / Night Owl (after 8pm) promos exist, bought at the gym."
+  },
+  {
+    "id": "g-7c8c2678c1",
+    "name": "Indoclimb FX Sudirman",
+    "metro": "Jakarta",
+    "expect_h": "8976ac169ac58c6f",
+    "website": "https://www.indoclimb.com/location/indoclimb-fxsudirman",
+    "hours": {
+      "mon": "11am–10pm",
+      "tue": "11am–10pm",
+      "wed": "11am–10pm",
+      "thu": "11am–10pm",
+      "fri": "11am–10pm",
+      "sat": "10am–9pm",
+      "sun": "10am–9pm"
+    },
+    "day_pass": "Rp215,000 single entry",
+    "facilities": null,
+    "sources": [
+      {
+        "url": "https://www.indoclimb.com/location/indoclimb-fxsudirman",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.indoclimb.com/package",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "JS-rendered booking-widget site read via headless browser. Hours are shown as Opening hours for this week (same pattern on all 3 branches), accepted as regular hours. Single Entry Pass valid at all three branches (7 days from purchase). No facilities explicitly listed."
+  },
+  {
+    "id": "g-c067efb2d5",
+    "name": "Indoclimb Kuningan City",
+    "metro": "Jakarta",
+    "expect_h": "1bcfe61408c5e8bb",
+    "website": "https://www.indoclimb.com/location/my_outlet_244917",
+    "hours": {
+      "mon": "11am–10pm",
+      "tue": "11am–10pm",
+      "wed": "11am–10pm",
+      "thu": "11am–10pm",
+      "fri": "11am–10pm",
+      "sat": "10am–9pm",
+      "sun": "10am–9pm"
+    },
+    "day_pass": "Rp215,000 single entry",
+    "facilities": null,
+    "sources": [
+      {
+        "url": "https://www.indoclimb.com/location/my_outlet_244917",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.indoclimb.com/package",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Same notes as FX Sudirman: hours from the this-week widget; shared single entry pass. No facilities explicitly listed."
+  },
+  {
+    "id": "g-d8d207d948",
+    "name": "Indoclimb Lippo Mall Kemang",
+    "metro": "Jakarta",
+    "expect_h": "83d4a2f7f57bb2ba",
+    "website": "https://www.indoclimb.com/location/indoclimb-kemvil",
+    "hours": {
+      "mon": "11am–10pm",
+      "tue": "11am–10pm",
+      "wed": "11am–10pm",
+      "thu": "11am–10pm",
+      "fri": "11am–10pm",
+      "sat": "10am–9pm",
+      "sun": "10am–9pm"
+    },
+    "day_pass": "Rp215,000 single entry",
+    "facilities": null,
+    "sources": [
+      {
+        "url": "https://www.indoclimb.com/location/indoclimb-kemvil",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.indoclimb.com/package",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Same notes as FX Sudirman: hours from the this-week widget; shared single entry pass. Bouldering-only gym per site."
+  }
+]

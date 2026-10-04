@@ -1,0 +1,614 @@
+[
+ {
+  "id": "seed-1071",
+  "name": "Arkose - Chevaleret",
+  "metro": "Paris",
+  "expect_h": "e3d9d3d7b8234be3",
+  "website": "https://arkose.com/chevaleret",
+  "hours": {
+   "mon": "7am–12am",
+   "tue": "7am–12am",
+   "wed": "7am–12am",
+   "thu": "7am–12am",
+   "fri": "7am–12am",
+   "sat": "8am–12am",
+   "sun": "8am–12am"
+  },
+  "day_pass": "€18 adult (single entry)",
+  "facilities": [
+   "cafe",
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://arkose.com/en/chevaleret",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://arkose.com/en/chevaleret/tarifs-cours-resa/adultes",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours are the standard (non-happy-hour) hours from the location page; midnight close. Single entry 18 EUR is the standard Arkose price on this location's tarifs page."
+ },
+ {
+  "id": "seed-1072",
+  "name": "Arkose - Didot",
+  "metro": "Paris",
+  "expect_h": "9fb4c52b0d38e95a",
+  "website": "https://arkose.com/didot",
+  "hours": {
+   "mon": "7am–12am",
+   "tue": "7am–12am",
+   "wed": "7am–12am",
+   "thu": "7am–12am",
+   "fri": "7am–12am",
+   "sat": "8am–12am",
+   "sun": "8am–12am"
+  },
+  "day_pass": "€18 adult (single entry)",
+  "facilities": [
+   "cafe",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://arkose.com/en/didot",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://arkose.com/en/didot/tarifs-cours-resa/adultes",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours are the standard (non-happy-hour) hours from the location page; midnight close. Single entry 18 EUR is the standard Arkose price on this location's tarifs page. Page says no kids area (teen area from 12 only), so kids omitted."
+ },
+ {
+  "id": "g-277a5d186d",
+  "name": "Arkose - Issy-les-Moulineaux Bloc",
+  "metro": "Paris",
+  "expect_h": "4ee900ecf3e8c3a9",
+  "website": "https://arkose.com/issy-les-moulineaux-bloc",
+  "hours": {
+   "mon": "8am–12am",
+   "tue": "8am–12am",
+   "wed": "8am–12am",
+   "thu": "8am–12am",
+   "fri": "8am–12am",
+   "sat": "8am–12am",
+   "sun": "8am–12am"
+  },
+  "day_pass": "€18 adult (single entry)",
+  "facilities": [
+   "cafe",
+   "kids",
+   "shop",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://arkose.com/en/issy-les-moulineaux-bloc",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://arkose.com/en/issy-les-moulineaux-bloc/tarifs-cours-resa/adultes-bloc",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours are the standard (non-happy-hour) hours from the location page; midnight close. Single entry 18 EUR is the standard Arkose price on this location's tarifs page."
+ },
+ {
+  "id": "g-67ecd19a4e",
+  "name": "Arkose - Issy-les-Moulineaux Voie",
+  "metro": "Paris",
+  "expect_h": "3a55ffbee4636720",
+  "website": "https://arkose.com/issy-les-moulineaux-voie",
+  "hours": {
+   "mon": "9am–12am",
+   "tue": "9am–12am",
+   "wed": "9am–12am",
+   "thu": "9am–12am",
+   "fri": "9am–12am",
+   "sat": "8am–12am",
+   "sun": "8am–12am"
+  },
+  "day_pass": "€18 adult (single entry)",
+  "facilities": [
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://arkose.com/en/issy-les-moulineaux-voie",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://arkose.com/en/issy-les-moulineaux-voie/tarifs-cours-resa/adultes-voie",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours are the standard (non-happy-hour) hours from the location page; midnight close. Single entry 18 EUR is the standard Arkose price on this location's tarifs page. Rope/lead site; price is the shared Arkose single-entry price on its adult tarifs page. Shoes 5 EUR and harness 5 EUR rental listed."
+ },
+ {
+  "id": "g-3ecf8de55a",
+  "name": "Arkose - Massy",
+  "metro": "Paris",
+  "expect_h": "f9dc9b762261f0f0",
+  "website": "https://arkose.com/massy",
+  "hours": {
+   "mon": "7am–12am",
+   "tue": "7am–12am",
+   "wed": "7am–12am",
+   "thu": "7am–12am",
+   "fri": "7am–12am",
+   "sat": "8am–12am",
+   "sun": "8am–12am"
+  },
+  "day_pass": "€18 adult (single entry)",
+  "facilities": [
+   "cafe",
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://arkose.com/en/massy",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://arkose.com/en/massy/tarifs-cours-resa/adultes",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours are the standard (non-happy-hour) hours from the location page; midnight close. Single entry 18 EUR is the standard Arkose price on this location's tarifs page."
+ },
+ {
+  "id": "seed-1073",
+  "name": "Arkose - Montmartre",
+  "metro": "Paris",
+  "expect_h": "261adb45f3bbbd3d",
+  "website": "https://arkose.com/montmartre",
+  "hours": {
+   "mon": "7am–12am",
+   "tue": "7am–12am",
+   "wed": "7am–12am",
+   "thu": "7am–12am",
+   "fri": "7am–12am",
+   "sat": "8am–12am",
+   "sun": "8am–12am"
+  },
+  "day_pass": "€18 adult (single entry)",
+  "facilities": [
+   "cafe",
+   "kids",
+   "shop",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://arkose.com/en/montmartre",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://arkose.com/en/montmartre/tarifs-cours-resa/adultes",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours are the standard (non-happy-hour) hours from the location page; midnight close. Single entry 18 EUR is the standard Arkose price on this location's tarifs page. Shop inferred from a Shop tab on the location page (no description text)."
+ },
+ {
+  "id": "g-52f135b4e4",
+  "name": "Arkose - Montreuil",
+  "metro": "Paris",
+  "expect_h": "87cd8f08d60e48d3",
+  "website": "https://arkose.com/montreuil",
+  "hours": {
+   "mon": "7am–12am",
+   "tue": "7am–12am",
+   "wed": "7am–12am",
+   "thu": "7am–12am",
+   "fri": "7am–12am",
+   "sat": "8am–12am",
+   "sun": "8am–12am"
+  },
+  "day_pass": "€18 adult (single entry)",
+  "facilities": [
+   "cafe",
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://arkose.com/en/montreuil",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://arkose.com/en/montreuil/tarifs-cours-resa/adultes",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours are the standard (non-happy-hour) hours from the location page; midnight close. Single entry 18 EUR is the standard Arkose price on this location's tarifs page."
+ },
+ {
+  "id": "g-ca5c043dc1",
+  "name": "Arkose - Nanterre-Arboretum",
+  "metro": "Paris",
+  "expect_h": "c08a42b38e139f4c",
+  "website": "https://arkose.com/nanterre-arboretum",
+  "hours": {
+   "mon": "9am–12am",
+   "tue": "9am–12am",
+   "wed": "9am–12am",
+   "thu": "9am–12am",
+   "fri": "9am–12am",
+   "sat": "8am–12am",
+   "sun": "8am–12am"
+  },
+  "day_pass": "€18 adult (single entry)",
+  "facilities": [
+   "cafe",
+   "kids",
+   "shop",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://arkose.com/en/nanterre-arboretum",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://arkose.com/en/nanterre-arboretum/tarifs-cours-resa/adultes",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours are the standard (non-happy-hour) hours from the location page; midnight close. Single entry 18 EUR is the standard Arkose price on this location's tarifs page. Shop inferred from a Shop tab on the location page (no description text)."
+ },
+ {
+  "id": "seed-1074",
+  "name": "Arkose - Nation",
+  "metro": "Paris",
+  "expect_h": "0e19b9524ac95640",
+  "website": "https://arkose.com/nation",
+  "hours": {
+   "mon": "7am–12am",
+   "tue": "7am–12am",
+   "wed": "7am–12am",
+   "thu": "7am–12am",
+   "fri": "7am–12am",
+   "sat": "8am–12am",
+   "sun": "8am–12am"
+  },
+  "day_pass": "€18 adult (single entry)",
+  "facilities": [
+   "cafe",
+   "kids",
+   "shop",
+   "yoga",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://arkose.com/en/nation",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://arkose.com/en/nation/tarifs-cours-resa/adultes",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours are the standard (non-happy-hour) hours from the location page; midnight close. Single entry 18 EUR is the standard Arkose price on this location's tarifs page."
+ },
+ {
+  "id": "g-b7c516ac9f",
+  "name": "Arkose - Pantin",
+  "metro": "Paris",
+  "expect_h": "879642d2e20b53e0",
+  "website": "https://arkose.com/pantin",
+  "hours": {
+   "mon": "8am–12am",
+   "tue": "8am–12am",
+   "wed": "8am–12am",
+   "thu": "8am–12am",
+   "fri": "8am–12am",
+   "sat": "8am–12am",
+   "sun": "8am–12am"
+  },
+  "day_pass": "€18 adult (single entry)",
+  "facilities": [
+   "cafe",
+   "kids",
+   "shop",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://arkose.com/en/pantin",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://arkose.com/en/pantin/tarifs-cours-resa/adultes",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours are the standard (non-happy-hour) hours from the location page; midnight close. Single entry 18 EUR is the standard Arkose price on this location's tarifs page. Bouldering and rope areas share one page; hours/price are the location-wide ones."
+ },
+ {
+  "id": "g-efb0106614",
+  "name": "Arkose - Pont de Sèvres",
+  "metro": "Paris",
+  "expect_h": "53b9fd9da5d1d7d6",
+  "website": "https://arkose.com/pont-de-sevres",
+  "hours": {
+   "mon": "7am–12am",
+   "tue": "7am–12am",
+   "wed": "7am–12am",
+   "thu": "7am–12am",
+   "fri": "7am–12am",
+   "sat": "8am–12am",
+   "sun": "8am–12am"
+  },
+  "day_pass": "€18 adult (single entry)",
+  "facilities": [
+   "cafe",
+   "kids",
+   "shop",
+   "yoga",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://arkose.com/en/pont-de-sevres",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://arkose.com/en/pont-de-sevres/tarifs-cours-resa/adultes",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours are the standard (non-happy-hour) hours from the location page; midnight close. Single entry 18 EUR is the standard Arkose price on this location's tarifs page."
+ },
+ {
+  "id": "g-d87bf9a2f3",
+  "name": "Arkose - Saint-Denis",
+  "metro": "Paris",
+  "expect_h": "296e9979ec596c2b",
+  "website": "https://arkose.com/saint-denis",
+  "hours": {
+   "mon": "9am–12am",
+   "tue": "9am–12am",
+   "wed": "9am–12am",
+   "thu": "9am–12am",
+   "fri": "9am–12am",
+   "sat": "9am–12am",
+   "sun": "9am–12am"
+  },
+  "day_pass": "€18 adult (single entry)",
+  "facilities": [
+   "cafe",
+   "kids",
+   "training",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://arkose.com/en/saint-denis",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://arkose.com/en/saint-denis/tarifs-cours-resa/adultes",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours are the standard (non-happy-hour) hours from the location page; midnight close. Single entry 18 EUR is the standard Arkose price on this location's tarifs page. Official page gives address 361-363 av. du President Wilson (target says 345, same street); treated as same gym."
+ },
+ {
+  "id": "seed-1075",
+  "name": "Arkose - Strasbourg Saint Denis",
+  "metro": "Paris",
+  "expect_h": "5f91b05c42941082",
+  "website": "https://arkose.com/strasbourg-st-denis",
+  "hours": {
+   "mon": "7am–12am",
+   "tue": "7am–12am",
+   "wed": "7am–12am",
+   "thu": "7am–12am",
+   "fri": "7am–12am",
+   "sat": "8am–12am",
+   "sun": "8am–12am"
+  },
+  "day_pass": "€18 adult (single entry)",
+  "facilities": [
+   "cafe",
+   "kids",
+   "shop",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://arkose.com/en/strasbourg-st-denis",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://arkose.com/en/strasbourg-st-denis/tarifs-cours-resa/adultes",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours are the standard (non-happy-hour) hours from the location page; midnight close. Single entry 18 EUR is the standard Arkose price on this location's tarifs page."
+ },
+ {
+  "id": "g-5a408f59e1",
+  "name": "Block'Out - Cergy",
+  "metro": "Paris",
+  "expect_h": "844e97f27dae9e56",
+  "website": "https://www.blockout.fr/cergy/",
+  "hours": {
+   "mon": "11am–11pm",
+   "tue": "11am–11pm",
+   "wed": "11am–11pm",
+   "thu": "11am–11pm",
+   "fri": "11am–11pm",
+   "sat": "9am–9pm",
+   "sun": "9am–9pm"
+  },
+  "day_pass": "€18 adult, €16 reduced",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shop",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.blockout.fr/cergy/adulte/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.blockout.fr/cergy/enfants/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours and price from the adult page footer/tariff block (La seance 18 EUR, reduced 16 EUR). Facilities: restaurant+bar, salle de muscu, shop link, shoe rental, kids school. Sauna/wellness not a listed key."
+ }
+]

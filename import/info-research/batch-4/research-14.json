@@ -1,0 +1,907 @@
+[
+ {
+  "id": "seed-912",
+  "name": "Awesome Walls Sheffield",
+  "metro": "Sheffield",
+  "expect_h": "b0ca3173d6cc7289",
+  "website": "https://awesomewalls.co.uk/sheffield/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "10am–8pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": null,
+  "facilities": [
+   "shoe-hire",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://awesomewalls.co.uk/sheffield/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://awesomewalls.co.uk/sheffield-plan-your-trip/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Home page shows two unlabelled pay-as-you-go price tables (adult 12.50/15 and 10/12 GBP), so day_pass left null. Facility labels (shop, refreshments, training hub) have no descriptive text, so omitted. Parking: over 100 cars; rock shoes hireable."
+ },
+ {
+  "id": "seed-913",
+  "name": "The Climbing Hangar Sheffield",
+  "metro": "Sheffield",
+  "expect_h": "81cda93fd2d2642c",
+  "website": "https://www.theclimbinghangar.com/locations/sheffield",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "6:30am–10pm",
+   "wed": "6:30am–10pm",
+   "thu": "10am–10pm",
+   "fri": "6:30am–9pm",
+   "sat": "9am–7pm",
+   "sun": "9am–7pm"
+  },
+  "day_pass": "£16 adult, £13 concession/under 18",
+  "facilities": [
+   "cafe",
+   "shoe-hire",
+   "training"
+  ],
+  "sources": [
+   {
+    "url": "https://www.theclimbinghangar.com/locations/sheffield",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Address on page: Unit A & B, 15 Sutherland St, S4 7WG. Free shoe rental; \"coffee shop under one roof\"; gym and training areas included."
+ },
+ {
+  "id": "seed-895",
+  "name": "The Climbing Works",
+  "metro": "Sheffield",
+  "expect_h": "bd59479e46b38fc2",
+  "website": "https://www.climbingworks.com/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "12pm–10pm",
+   "fri": "10am–10pm",
+   "sat": "10am–8pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": "£11.50 adult (weekend/after 4pm), £10.50 adult midweek before 4pm",
+  "facilities": [
+   "cafe",
+   "training",
+   "shop",
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.climbingworks.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.climbingworks.com/times-prices",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.climbingworks.com/our-facilities",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Thursday opens 12pm \"due to routesetting\" (recurring weekly, used). Cafe = The Works Tap bar/pizzeria plus coffee/snacks; kids = Mini Works centre, kids parties/classes. Shoe hire 3.50 GBP."
+ },
+ {
+  "id": "seed-914",
+  "name": "The Depot Climbing Sheffield",
+  "metro": "Sheffield",
+  "expect_h": "a094e345c798410f",
+  "website": "https://www.depotclimbing.co.uk/sheffield/",
+  "hours": {
+   "mon": "6am–10pm",
+   "tue": "6am–10pm",
+   "wed": "6am–10pm",
+   "thu": "6am–10pm",
+   "fri": "6am–10pm",
+   "sat": "9am–9pm",
+   "sun": "9am–9pm"
+  },
+  "day_pass": "£14 adult, £12.50 concession",
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.depotclimbing.co.uk/sheffield/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://www.depotclimbing.co.uk/sheffield/depot-climbing-opening-prices/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Address 232 Woodbourn Road S9 3LQ. Climbing shoes hire 3.50 GBP. Student day offer (9 GBP) ignored as temporary."
+ },
+ {
+  "id": "seed-911",
+  "name": "The Foundry",
+  "metro": "Sheffield",
+  "expect_h": "3c90451394b68cae",
+  "website": "https://www.foundryclimbing.com/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "10am–6pm",
+   "sun": "10am–6pm"
+  },
+  "day_pass": "£11 adult peak, £9 off-peak (before 4pm Mon-Fri)",
+  "facilities": [
+   "training",
+   "shoe-hire",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://www.foundryclimbing.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://www.foundryclimbing.com/location-opening-times-accessibility",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.foundryclimbing.com/memberships",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.foundryclimbing.com/the-climbing",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours page also says \"Winter Opening Hours Begin 24th October\" (hours not stated); current hours used. Single entry is a day membership; one-off registration not included."
+ },
+ {
+  "id": "seed-949",
+  "name": "Alien Bloc",
+  "metro": "Edinburgh",
+  "expect_h": "01bd8bc1aff3e711",
+  "website": "https://www.alienrock.co.uk/bouldering/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "10am–7pm",
+   "sun": "10am–7pm"
+  },
+  "day_pass": "£13.90 adult peak, £11.90 off-peak",
+  "facilities": [
+   "cafe",
+   "training",
+   "shoe-hire",
+   "parking",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.alienrock.co.uk/bouldering/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.alienrock.co.uk/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Page address 23 Dunedin Street EH7 4JG (target has 4GJ). Passes valid at both alien centres. Peak = after 4pm weekdays and weekends. Kids activities (courses, parties, kids club) are operator-wide; cafe area and training facilities named on home page."
+ },
+ {
+  "id": "seed-936",
+  "name": "alien rock",
+  "metro": "Edinburgh",
+  "expect_h": "c93aa8bd4abd0ca9",
+  "website": "https://www.alienrock.co.uk/top-rope-and-lead-climbing/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "10am–7pm",
+   "sun": "10am–7pm"
+  },
+  "day_pass": "£13.50 adult peak, £11.50 off-peak",
+  "facilities": [
+   "cafe",
+   "shop",
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.alienrock.co.uk/top-rope-and-lead-climbing/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.alienrock.co.uk/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Official address 8 Pier Place EH6 4LP (Newhaven); target coordinates are generic Edinburgh centre. Name match used. Peak = after 4pm weekdays and weekends."
+ },
+ {
+  "id": "seed-941",
+  "name": "Eden Rock Edinburgh",
+  "metro": "Edinburgh",
+  "expect_h": "9034b9cbe058d411",
+  "website": "https://www.edenrockclimbing.com/edinburgh-home",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "10am–8pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": "£16.50 adult non-member, £14 adult member",
+  "facilities": [
+   "cafe",
+   "shop",
+   "kids",
+   "parking",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.edenrockclimbing.com/edinburgh-home",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.edenrockclimbing.com/contact-edinburgh",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.edenrockclimbing.com/prices-edinburgh",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Address Edgefield Road Industrial Estate, Loanhead EH20 9TB. Member price needs 5 GBP annual / 2.50 GBP one-day membership (not included). Home page: Kids Room and clubs, climbing shop, eco-friendly cafe; customer parking outside entrance. Shoe hire stated on prices page."
+ },
+ {
+  "id": "seed-942",
+  "name": "Edinburgh International Climbing Arena",
+  "metro": "Edinburgh",
+  "expect_h": "2d7246cb3aac9bf7",
+  "website": "https://www.edinburghleisure.co.uk/venues/edinburgh-international-climbing-arena/",
+  "hours": {
+   "mon": "10am–9pm",
+   "tue": "10am–10pm",
+   "wed": "10am–9pm",
+   "thu": "10am–10pm",
+   "fri": "10am–9pm",
+   "sat": "9am–6pm",
+   "sun": "9am–6pm"
+  },
+  "day_pass": "£16 pay as you go (climbing)",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://www.edinburghleisure.co.uk/venues/edinburgh-international-climbing-arena/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.edinburghleisure.co.uk/activities/climbing/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Operator Edinburgh Leisure venue page (EICA Ratho, South Platt Hill EH28 8AA; target coordinates are generic Edinburgh). Hours = Climbing column of the venue table. Price shown only as \"16.00 PAYG\" on the climbing activity page, not labelled by age. Kids = Clip n Climb and soft play; gym and Cafe Refresh on site; on-site car parking."
+ },
+ {
+  "id": "seed-947",
+  "name": "The Climbing Hangar Edinburgh",
+  "metro": "Edinburgh",
+  "expect_h": "93b54f02ddec4c28",
+  "website": "https://www.theclimbinghangar.com/locations/edinburgh",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "6:30am–10pm",
+   "thu": "10am–10pm",
+   "fri": "6:30am–9pm",
+   "sat": "9am–7pm",
+   "sun": "9am–7pm"
+  },
+  "day_pass": "£18 adult, £15 concession/under 18",
+  "facilities": [
+   "cafe",
+   "training",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.theclimbinghangar.com/locations/edinburgh",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Address 4 E Telferton EH7 6XD. Page: \"epic climbing, plus a cafe and gym\"; free shoe rental."
+ },
+ {
+  "id": "seed-940",
+  "name": "Brushworks Climbing",
+  "metro": "Glasgow",
+  "expect_h": "ce4617bf89854191",
+  "website": "https://www.brushworksclimbing.co.uk/",
+  "hours": {
+   "mon": "7am–10pm",
+   "tue": "7am–10pm",
+   "wed": "7am–10pm",
+   "thu": "7am–10pm",
+   "fri": "7am–10pm",
+   "sat": "9am–9pm",
+   "sun": "9am–9pm"
+  },
+  "day_pass": "£14 adult, £12 concession, £10 under 18",
+  "facilities": [
+   "cafe",
+   "training",
+   "showers",
+   "yoga",
+   "kids",
+   "shoe-hire",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://www.brushworksclimbing.co.uk/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.brushworksclimbing.co.uk/prices-membership/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.brushworksclimbing.co.uk/facilities/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Address 74 Black Street. Yoga key based on a purpose-built yoga studio (classes not explicitly stated). Parking: \"plenty of parking\" on home page. Kids Coaching on home page; gear rental and shoe hire mentioned."
+ },
+ {
+  "id": "seed-943",
+  "name": "Glasgow Climbing Centre",
+  "metro": "Glasgow",
+  "expect_h": "7ff8ced02dc821e3",
+  "website": "https://glasgowclimbingcentre.com/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "9am–6pm",
+   "sun": "9am–6pm"
+  },
+  "day_pass": "£14.50 adult peak, £12.50 off-peak",
+  "facilities": [
+   "cafe",
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://glasgowclimbingcentre.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://glasgowclimbingcentre.com/prices-and-passes/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://glasgowclimbingcentre.com/the-cafe/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://glasgowclimbingcentre.com/youth-u16/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Ibrox Church, 534 Paisley Rd West. Peak = after 4pm weekdays and all weekend. Equipment hire listed; Flavourbomb Kitchen cafe on upper level; under-16 clubs, parties and taster sessions."
+ },
+ {
+  "id": "seed-944",
+  "name": "Hang On Climbing Centre",
+  "metro": "Glasgow",
+  "expect_h": "c08d2c7b1111242a",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [
+   {
+    "url": "https://hangonclimbing.com/",
+    "accessed": "2026-10-04",
+    "supports": []
+   }
+  ],
+  "status": "flag",
+  "notes": "Official site https://hangonclimbing.com/ shows a banner \"PERMANENTLY CLOSED AS OF 14TH MARCH\". Treat as closed."
+ },
+ {
+  "id": "seed-945",
+  "name": "TCA - The Newsroom",
+  "metro": "Glasgow",
+  "expect_h": "a6b723a390962278",
+  "website": "https://www.theclimbingacademy.com/locations/the-newsroom/",
+  "hours": {
+   "mon": "7am–10pm",
+   "tue": "7am–10pm",
+   "wed": "7am–10pm",
+   "thu": "7am–10pm",
+   "fri": "7am–10pm",
+   "sat": "8am–8pm",
+   "sun": "8am–8pm"
+  },
+  "day_pass": "£14.50 adult peak, £12.50 off-peak",
+  "facilities": [
+   "cafe",
+   "shop",
+   "training",
+   "kids",
+   "shoe-hire",
+   "parking",
+   "showers"
+  ],
+  "sources": [
+   {
+    "url": "https://www.theclimbingacademy.com/locations/the-newsroom/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.theclimbingacademy.com/prices/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "124 Portman Street, Kinning Park. Page: free parking, \"a shower\", kids climbing area, shop, cafe, gym equipment; hire shoes at reception. One price list for all TCA centres; peak 3-8pm Mon-Fri and before 3pm Sat-Sun."
+ },
+ {
+  "id": "seed-946",
+  "name": "TCA - The Prop Store",
+  "metro": "Glasgow",
+  "expect_h": "7277d9627309303b",
+  "website": "https://www.theclimbingacademy.com/locations/the-prop-store/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "8am–8pm",
+   "sun": "8am–8pm"
+  },
+  "day_pass": "£14.50 adult peak, £12.50 off-peak",
+  "facilities": [
+   "cafe",
+   "shop",
+   "training",
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.theclimbingacademy.com/locations/the-prop-store/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.theclimbingacademy.com/prices/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Unit B2, 24 Craigmont Street, Maryhill. Cafe, shop, gym and training room, kids classes (from age 6), hire shoes/kit. One price list for all TCA centres."
+ },
+ {
+  "id": "seed-1442",
+  "name": "Epos Filis, Climbing Hall",
+  "metro": "Athens",
+  "expect_h": "8f1479d7a60f885d",
+  "website": "https://eposfilis.gr/",
+  "hours": null,
+  "day_pass": null,
+  "facilities": [
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://eposfilis.gr/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://eposfilis.gr/%ce%bd%ce%ad%ce%bf-%cf%80%cf%81%cf%8c%ce%b3%cf%81%ce%b1%ce%bc%ce%bc%ce%b1-2026-2027/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Mountaineering club site (Greek). No public opening hours or day price found; only a 2026-27 training schedule for the climbing track including kids climbing classes (ages 4-5). Low confidence that it is a drop-in gym."
+ },
+ {
+  "id": "seed-1437",
+  "name": "Mamouna Climbing Spot",
+  "metro": "Athens",
+  "expect_h": "99404bf9ebefa0a2",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [],
+  "status": "not-found",
+  "notes": "No official website found; only a Facebook page appears in searches."
+ },
+ {
+  "id": "seed-1443",
+  "name": "Mono by Athens Climbing Project",
+  "metro": "Athens",
+  "expect_h": "380b6f1e35a14541",
+  "website": "https://monoclimb.gr/en/",
+  "hours": {
+   "mon": "10am–11:30pm",
+   "tue": "10am–11:30pm",
+   "wed": "10am–11:30pm",
+   "thu": "10am–11:30pm",
+   "fri": "10am–11:30pm",
+   "sat": "10am–10:30pm",
+   "sun": "10am–10:30pm"
+  },
+  "day_pass": "€14 daily",
+  "facilities": [
+   "shop",
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://monoclimb.gr/en/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://monoclimb.gr/en/the-place/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://monoclimb.gr/en/pricing-plans-en/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://monoclimb.gr/en/kids-parties/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "ADDRESS MISMATCH: site gives Iridos 44, Chalandri; target has Mesogion 345, Chalandri. Same name and suburb, treated as the same gym, but verify location. Bouldering area stays open 30 min later. Equipment price list includes shoes 4 EUR; climbing shop on home page; kids parties and kids competition team."
+ },
+ {
+  "id": "seed-1446",
+  "name": "OAKA Indoor Climbing",
+  "metro": "Athens",
+  "expect_h": "7088b4116e6bb115",
+  "website": "https://oakaindoorclimbing.gr/",
+  "hours": {
+   "mon": "2pm–10:30pm",
+   "tue": "2pm–10:30pm",
+   "wed": "11am–10:30pm",
+   "thu": "11am–10:30pm",
+   "fri": "11am–10:30pm",
+   "sat": "10am–9:30pm",
+   "sun": "10am–9:30pm"
+  },
+  "day_pass": "€12 adult, €10 student",
+  "facilities": [
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://oakaindoorclimbing.gr/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://oakaindoorclimbing.gr/prices_adults/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://oakaindoorclimbing.gr/activities_rock_climbing_kids/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Greek site. Daily entry (all hours, for experienced climbers) 12 EUR, student 10 EUR. Equipment hire list includes climbing shoes 3 EUR. Kids section (lessons, parties, camp) on site."
+ },
+ {
+  "id": "seed-1438",
+  "name": "Redpoint Athens Climbing Center",
+  "metro": "Athens",
+  "expect_h": "4054b4437dd02c5d",
+  "website": "https://redpointathens.wordpress.com/",
+  "hours": null,
+  "day_pass": "€5 daily entry",
+  "facilities": null,
+  "sources": [
+   {
+    "url": "https://redpointathens.wordpress.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://redpointathens.wordpress.com/%cf%83%cf%85%ce%bd%ce%b4%cf%81%ce%bf%ce%bc%ce%ad%cf%82/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Greek WordPress site, address Sofianopoulou 3 matches. Hours given only for weekdays (Tue-Thu 10-12, Mon-Fri 17-22); weekend says contact us, so hours null. Daily price 5 EUR listed under subscriptions; site looks old, price may be dated."
+ },
+ {
+  "id": "seed-1445",
+  "name": "RockWay",
+  "metro": "Athens",
+  "expect_h": "6700b28bb8e9119e",
+  "website": "https://rockwayclimbing.com/",
+  "hours": null,
+  "day_pass": "€12 day visit, €8 happy hour",
+  "facilities": [
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://rockwayclimbing.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://rockwayclimbing.com/anarrixis-times/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Greek site, Proveleggiou 4 matches. Contact page hours: weekdays given as \"11.30μμ με 22.30μμ\" (typo, ambiguous), Sat-Sun 11am-7pm, so hours left null. Day price 12 EUR; 8 EUR happy hour Mon-Fri to 15:30 and Sun 11-19. Children classes listed."
+ },
+ {
+  "id": "seed-1447",
+  "name": "THE WALL",
+  "metro": "Athens",
+  "expect_h": "66257bd8e2214e7f",
+  "website": "https://thewall.gr/",
+  "hours": {
+   "mon": "9am–10:30pm",
+   "tue": "9am–10:30pm",
+   "wed": "9am–10:30pm",
+   "thu": "9am–10:30pm",
+   "fri": "9am–10:30pm",
+   "sat": "9am–9pm",
+   "sun": "9am–9pm"
+  },
+  "day_pass": null,
+  "facilities": [
+   "cafe",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://thewall.gr/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Greek site. Hours: weekdays 9:00-22:30, Sat-Sun 9:00-21:00. Cafeteria/snack bar and kids parties/camps stated. Price list not available as text; day_pass null."
+ }
+]
