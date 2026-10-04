@@ -1,0 +1,176 @@
+{
+  "schema_version": 1,
+  "updater_version": 1,
+  "kind": "update",
+  "batch_id": "2026-10-04-identity-fixes-2",
+  "status": "updated",
+  "target": {
+    "kind": "production",
+    "host": "thayxaampaelvntoaido.supabase.co"
+  },
+  "coverage": "FULL",
+  "plan_sha256": "3c0d3033f5748c3e43d6600294c473f7e60824ebf91e34410763f5f48e164b40",
+  "payload_sha256": "ff5ebcd05dce3c48b2059b8da548985368d372e985b11fa3a8203c2f110d33a5",
+  "confirm_token": "e4854fd2926f1878",
+  "live_state_sha256": "f8e3c28b239c02bb4d9ad7eb78f674658db6b4af6b18048e529a52cb8c701bf0",
+  "rows_updated": 0,
+  "approved_before": 2272,
+  "approved_after": 2272,
+  "changes": [],
+  "rows_identity_changed": 16,
+  "identity_changed": [
+    {
+      "id": "seed-1265",
+      "fields": [
+        "name"
+      ],
+      "expect_h": "f6ba44453e43ea3f",
+      "after_h": "8d6c7d23f0d9cb86"
+    },
+    {
+      "id": "seed-970",
+      "fields": [
+        "suburb"
+      ],
+      "expect_h": "dfec9ed31f919ad7",
+      "after_h": "9c04545bb323d48a"
+    },
+    {
+      "id": "seed-986",
+      "fields": [
+        "suburb"
+      ],
+      "expect_h": "3b74b0e478c01403",
+      "after_h": "3a5c0662673d0ece"
+    },
+    {
+      "id": "seed-1019",
+      "fields": [
+        "suburb"
+      ],
+      "expect_h": "62812e7d6d68cef5",
+      "after_h": "c534b49f046203bc"
+    },
+    {
+      "id": "seed-1065",
+      "fields": [
+        "suburb"
+      ],
+      "expect_h": "a1435b85eb5a2567",
+      "after_h": "a300752b483cb1e1"
+    },
+    {
+      "id": "seed-971",
+      "fields": [
+        "suburb"
+      ],
+      "expect_h": "a9ed392a3418fc77",
+      "after_h": "0deffeb8e8f00955"
+    },
+    {
+      "id": "seed-1005",
+      "fields": [
+        "suburb"
+      ],
+      "expect_h": "49f9bb24c1b8d6a1",
+      "after_h": "3951f55d18d00f21"
+    },
+    {
+      "id": "seed-1017",
+      "fields": [
+        "suburb"
+      ],
+      "expect_h": "eed92808e586d3c5",
+      "after_h": "33fc87665f052f89"
+    },
+    {
+      "id": "seed-1054",
+      "fields": [
+        "suburb"
+      ],
+      "expect_h": "cc91296f6a53ecc7",
+      "after_h": "ba63820b1d443420"
+    },
+    {
+      "id": "seed-888",
+      "fields": [
+        "suburb"
+      ],
+      "expect_h": "bd345425f64bc1e9",
+      "after_h": "e1ae94039521d50c"
+    },
+    {
+      "id": "seed-872",
+      "fields": [
+        "suburb"
+      ],
+      "expect_h": "642775272885e33a",
+      "after_h": "5c4f09527b81ac82"
+    },
+    {
+      "id": "seed-1006",
+      "fields": [
+        "suburb"
+      ],
+      "expect_h": "2b0da9d27a0d7ce9",
+      "after_h": "2a2c95343df5f9c2"
+    },
+    {
+      "id": "seed-1033",
+      "fields": [
+        "suburb"
+      ],
+      "expect_h": "fd3b0e3dbaaadb7f",
+      "after_h": "5b942a356a44cd36"
+    },
+    {
+      "id": "seed-976",
+      "fields": [
+        "suburb"
+      ],
+      "expect_h": "d40da0d201209f54",
+      "after_h": "8340746ae0cf0625"
+    },
+    {
+      "id": "seed-988",
+      "fields": [
+        "suburb"
+      ],
+      "expect_h": "e14d9ed642351bfb",
+      "after_h": "3f6ab263b32b2e9b"
+    },
+    {
+      "id": "seed-1047",
+      "fields": [
+        "suburb"
+      ],
+      "expect_h": "1362c8f096f98a26",
+      "after_h": "18e4c8fdac879a15"
+    }
+  ],
+  "verification": {
+    "ok": true,
+    "checked": 16,
+    "problems": []
+  },
+  "started_at": "2026-10-04T10:24:09.669Z",
+  "finished_at": "2026-10-04T10:24:16.079Z",
+  "ids": [
+    "seed-1265",
+    "seed-970",
+    "seed-986",
+    "seed-1019",
+    "seed-1065",
+    "seed-971",
+    "seed-1005",
+    "seed-1017",
+    "seed-1054",
+    "seed-888",
+    "seed-872",
+    "seed-1006",
+    "seed-1033",
+    "seed-976",
+    "seed-988",
+    "seed-1047"
+  ]
+}
