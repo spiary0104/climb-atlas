@@ -24,6 +24,14 @@ const INFO_LIMITS = Object.freeze({ website: 300, hour: 40, day_pass: 120 });   
 // canonical order, so the database value equals the record byte for byte (compared with deep equality, never as a set).
 const FACILITY_KEYS = Object.freeze(['cafe', 'training', 'kids', 'shoe-hire', 'shop', 'showers', 'parking', 'yoga']);
 const isInfoSet = set => !!set && typeof set === 'object' && !Array.isArray(set) && Object.keys(set).some(k => INFO_FIELDS.includes(k));
+// Identity fields (an "identity update"): name, suburb and the type tags of an existing approved gym can be CORRECTED (replaced), never cleared. Unlike
+// gym information they ARE part of the content hash and of the match index, so updater.js reads their state from the hash. A record never mixes
+// them with location or information fields. `types` must be listed in TYPES order, so the database value equals the record byte for byte.
+const IDENTITY_FIELDS = Object.freeze(['name', 'suburb', 'types']);
+const isIdentitySet = set => !!set && typeof set === 'object' && !Array.isArray(set) && Object.keys(set).some(k => IDENTITY_FIELDS.includes(k));
+const typesOutOfOrder = v => Array.isArray(v) && v.some((t, i) => t !== TYPES.filter(x => v.includes(x))[i]);
+// Does `v` equal the gym's current value of `field`? (types: as a set, because the index stores them sorted and the content hash ignores their order)
+const sameIdentityValue = (field, v, cur) => (field === 'types' ? JSON.stringify([...(v || [])].sort()) === JSON.stringify([...(cur || [])].sort()) : v === cur);
 const UPDATE_KEYS = new Set(['id', 'intent', 'set', 'reason', 'source', 'expect_h']);
 // expect_h: the gym's content hash (index-store h) when the update was researched; the plan and the updater refuse the update
 // if the gym no longer has exactly that content.
@@ -159,6 +167,8 @@ async function validateUpdateRecord(rec) {
   else {
     const nonInfo = Object.keys(rec.set).filter(k => !INFO_FIELDS.includes(k));
     if (isInfoSet(rec.set) && nonInfo.length) errors.push({ code: 'mixed-families', field: 'set', message: `an info update (${INFO_FIELDS.join('/')}) cannot also change ${nonInfo.join(', ')}; one record per gym, so put the other change in a separate batch` });
+    else if (isIdentitySet(rec.set) && Object.keys(rec.set).some(k => !IDENTITY_FIELDS.includes(k))) errors.push({ code: 'mixed-families', field: 'set', message: `an identity update (${IDENTITY_FIELDS.join('/')}) cannot also change ${Object.keys(rec.set).filter(k => !IDENTITY_FIELDS.includes(k)).join(', ')}; one record per gym, so put the other change in a separate batch` });
+    if (typesOutOfOrder(rec.set.types)) errors.push({ code: 'bad-types', field: 'types', message: `types must be listed in the canonical order: ${TYPES.join(', ')}` });
     for (const k of Object.keys(rec.set)) {
       if (!UPDATABLE.includes(k)) errors.push({ code: 'field-not-updatable', field: k, message: `"${k}" cannot be changed by an import (updatable: ${UPDATABLE.join(', ')}); country/id/status/community are not import-editable` });
       else checkField(k, rec.set[k], rec.set, d, errors);
@@ -183,6 +193,16 @@ async function infoSetProblems(set) {
   return errs.map(e => e.message);
 }
 
+// Problems (plain strings) of an identity "set" ({name?, suburb?, types?}): the record validator's field rules plus the canonical types order, reused by the
+// write gate in target.js so a hand-built payload can never carry a value the validator would have refused.
+async function identitySetProblems(set) {
+  if (!set || typeof set !== 'object' || Array.isArray(set) || !Object.keys(set).length) return ['"set" must list name, suburb and/or types'];
+  const d = await deps(), errs = [];
+  for (const k of Object.keys(set)) { if (IDENTITY_FIELDS.includes(k)) checkField(k, set[k], set, d, errs); else errs.push({ message: `${k} is not an identity field` }); }
+  if (typesOutOfOrder(set.types)) errs.push({ message: `types must be listed in the canonical order: ${TYPES.join(', ')}` });
+  return errs.map(e => e.message);
+}
+
 // Validate a "retire existing gym" record:
 // { intent:"retire", id, expect_h, reason_code:"closed"|"duplicate", reason, source, duplicate_of? (required iff duplicate) }.
 async function validateRetireRecord(rec) {
@@ -202,4 +222,4 @@ async function validateRetireRecord(rec) {
   return { errors, warnings };
 }
 
-module.exports = { TYPES, UPDATABLE, INFO_FIELDS, HOUR_DAYS, INFO_LIMITS, FACILITY_KEYS, isInfoSet, infoSetProblems, describeInfoSet, RECORD_KEYS, EXPECT_H, REASON_CODES, validateNewRecord, validateUpdateRecord, validateRetireRecord, deps };
+module.exports = { TYPES, UPDATABLE, INFO_FIELDS, IDENTITY_FIELDS, isIdentitySet, typesOutOfOrder, sameIdentityValue, identitySetProblems, HOUR_DAYS, INFO_LIMITS, FACILITY_KEYS, isInfoSet, infoSetProblems, describeInfoSet, RECORD_KEYS, EXPECT_H, REASON_CODES, validateNewRecord, validateUpdateRecord, validateRetireRecord, deps };

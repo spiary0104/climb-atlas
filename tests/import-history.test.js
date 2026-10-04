@@ -173,3 +173,29 @@ test('history: a gym-information fill (website/hours) leaves the index and the c
   const live = H.revertLiveRows(rows, root);
   assert.equal(live.reverted, 0, 'nothing to revert in the compared fields'); assert.deepEqual(live.rows.map(x => x.lat), rows.map(x => x.lat));
 });
+
+test('history: an identity update (name/suburb/types) is reverted like a location change; the type tags are compared as a set (the index keeps them sorted, the record lists them in canonical order)', () => {
+  const RENAMED = { ...PROD[1], name: 'Vertical Works Fitzroy', suburb: 'Fitzroy North', types: ['indoor-bouldering', 'top-rope', 'lead-climbing'] };
+  const changes = [{ field: 'name', before: PROD[1].name, after: RENAMED.name }, { field: 'suburb', before: PROD[1].suburb, after: RENAMED.suburb }, { field: 'types', before: ['indoor-bouldering', 'top-rope'], after: RENAMED.types }];
+  const build = (current, recChanges = changes) => {
+    const root = tmp(), A = indexOf(PROD);
+    S.write(current, path.join(root, 'import', 'index'), { source: 'test' });
+    writeBatch(root, '2026-10-06-identity', { manifest: { kind: 'update', status: 'updated', ids: ['seed-101'], finished_at: '2026-10-06T00:00:00.000Z' },
+      plan: { index: { sha256: A.sha256, count: A.entries.length }, records: [{ class: 'update', id: 'seed-101', expect_h: contentHash(PROD[1]), changes: recChanges }] } });
+    return { root, A, index: S.load(path.join(root, 'import', 'index')) };
+  };
+  const { root, A, index } = build([PROD[0], RENAMED, ...PROD.slice(2)]);
+  assert.deepEqual(index.byId.get('seed-101').types, ['indoor-bouldering', 'lead-climbing', 'top-rope'], 'the index holds the tags sorted');
+  const r = H.revertIndex(index, root);
+  assert.equal(r.sha256, A.sha256, 'undoing the identity update gives exactly the index it was planned against'); assert.deepEqual(r.revertedUpdates, ['seed-101']);
+  assert.equal(r.byId.get('seed-101').name, 'Vertical Works'); assert.equal(r.byId.get('seed-101').suburb, 'Fitzroy'); assert.deepEqual(r.byId.get('seed-101').types, ['indoor-bouldering', 'top-rope']);
+  assert.equal(r.byId.get('seed-101').h, contentHash(PROD[1]));
+  const live = H.revertLiveRows([PROD[0], RENAMED, ...PROD.slice(2)].map(p => ({ ...p })), root);
+  assert.equal(live.reverted, 1); assert.equal(live.rows.find(x => x.id === 'seed-101').name, 'Vertical Works'); assert.deepEqual(live.rows.find(x => x.id === 'seed-101').types, ['indoor-bouldering', 'top-rope']);
+  // an index that does not hold the updated value (the batch is not reflected) throws instead of being "reverted"
+  const wrong = build([PROD[0], { ...RENAMED, name: 'Someone Else Renamed It' }, ...PROD.slice(2)]);
+  assert.throws(() => H.revertIndex(wrong.index, wrong.root), /seed-101\.name in the index is not the updated value/);
+  // a row holding another value is left exactly as it is (real drift still shows)
+  const drift = H.revertLiveRows([PROD[0], { ...RENAMED, name: 'Someone Else Renamed It' }, ...PROD.slice(2)].map(p => ({ ...p })), root);
+  assert.equal(drift.reverted, 0); assert.equal(drift.rows.find(x => x.id === 'seed-101').name, 'Someone Else Renamed It');
+});

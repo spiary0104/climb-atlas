@@ -2,7 +2,7 @@
 // checks about that earlier state of production (validate-reconciled.js and the tests that reconstruct the pre-import index).
 //
 // Two kinds of later batch, both recorded by a valid manifest.json and their committed plan.json:
-//  - a maintenance batch (updater.js; manifest kind "update") changed address/lat/lng of existing gyms (or filled their website/hours/day pass/facilities, which the index does not carry and
+//  - a maintenance batch (updater.js; manifest kind "update") changed address/lat/lng or the identity (name/suburb/types) of existing gyms (or filled their website/hours/day pass/facilities, which the index does not carry and
 //    which are skipped when reverting): plan.json lists every change as
 //    {field, before, after} plus the gym's content hash before it (expect_h); and/or RETIRED gyms (closed / duplicate, status set to
 //    'rejected', so they left the approved set and the rebuilt index): plan.json records each retired gym's full index entry as it was
@@ -59,6 +59,9 @@ const updateBatches = (root = S.ROOT) => laterBatches(root).filter(b => b.kind =
 
 const serialize = entries => [...entries].sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0)).map(e => JSON.stringify(S.FIELDS.reduce((o, k) => (o[k] = e[k], o), {}))).join('\n') + '\n';
 const same = (a, b) => JSON.stringify(a ?? null) === JSON.stringify(b ?? null);
+// Identity changes (name/suburb/types) are in the index like location changes and are reverted the same way. The type tags are compared as a set: the index
+// keeps them sorted while a record (and the database) lists them in the canonical order.
+const sameField = (field, a, b) => (field === 'types' && Array.isArray(a) && Array.isArray(b) ? same([...a].sort(), [...b].sort()) : same(a, b));
 
 // The index as it was before every verified later batch (or the given index unchanged when there are none).
 function revertIndex(index, root = S.ROOT) {
@@ -72,7 +75,7 @@ function revertIndex(index, root = S.ROOT) {
       const e = byId.get(r.id);
       if (!e || gone.has(r.id)) throw new Error(`update batch ${b.id}: ${r.id} is not in the index`);
       for (const c of r.changes.filter(c => !INFO_FIELDS.includes(c.field))) {   // gym information (website/hours/day pass/facilities) is not in the index
-        if (!same(e[c.field], c.after)) throw new Error(`update batch ${b.id}: ${r.id}.${c.field} in the index is not the updated value; the index does not reflect this batch`);
+        if (!sameField(c.field, e[c.field], c.after)) throw new Error(`update batch ${b.id}: ${r.id}.${c.field} in the index is not the updated value; the index does not reflect this batch`);
         e[c.field] = c.before;
       }
       e.h = r.expect_h;
@@ -116,7 +119,7 @@ function revertLiveRows(rows, root = S.ROOT) {
     for (const u of b.updates) {
       const r = byId.get(u.id); if (!r) continue;
       const cs = u.changes.filter(c => !INFO_FIELDS.includes(c.field));   // a gym-information fill leaves no trace in the compared fields
-      if (cs.length && cs.every(c => same(c.field === 'address' ? (r.address || null) : r[c.field], c.after))) { cs.forEach(c => { r[c.field] = c.before; }); n++; }
+      if (cs.length && cs.every(c => sameField(c.field, c.field === 'address' ? (r.address || null) : r[c.field], c.after))) { cs.forEach(c => { r[c.field] = c.before; }); n++; }
     }
     if (b.inserts.length) { const ins = new Set(b.inserts), before = out.length; out = out.filter(r => !ins.has(r.id)); removed += before - out.length; }
   }

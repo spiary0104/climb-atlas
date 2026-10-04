@@ -12,6 +12,11 @@
 //   before   its content hash is exactly expect_h (nothing changed since the research)
 //   after    address/lat/lng hold the new values and every other field is unchanged (this batch was applied)
 //   changed  anything else -> refused
+// An IDENTITY update ("set" holds name, suburb and/or types, nothing else) CORRECTS those fields of an existing approved gym. They are part of the content
+// hash (and of the index), so the states come from the hash: before = approved and hash = expect_h; after = the three fields hold exactly the record AND the row
+// with the fields restored to the researched values hashes to expect_h (every other compared field is unchanged); anything else = changed. A value equal to the
+// current one is refused (no-op), and plan.js refuses a change that would make the gym look like another existing gym. Its write (Api.updateSpotIdentity)
+// sends exactly the approved fields, never the slug (stored; the database never changes it), and the verification re-checks slugs.
 // An info update is FILL-ONLY: the gym-information fields are not part of the content hash, so its states are read from the fields themselves:
 //   before   approved, hash = expect_h, and every field in `set` is empty in production (website null; hours null or {}; day_pass null or '';
 //            facilities null or [] -- the column is not null default '{}', so a gym with none holds [])
@@ -59,23 +64,28 @@ const confirmToken = ({ batchId, planSha, payload, host, kind, coverage, liveSha
   sha256(JSON.stringify(['gym-update-confirm', UPDATER_VERSION, batchId, planSha, payload, host, kind, coverage, liveSha, ...(retires.length ? [retires] : [])])).slice(0, 16);
 
 const isInfo = u => V.isInfoSet(u.set);
-// Location-or-info rules on top of validate.js (which allows more fields for planning; the gym-information VALUES are checked there).
-// A record is an info update (website/hours/day_pass/facilities only) or a location update (address/lat/lng only), never both. Returns a list of problems.
+const isIdentity = u => !V.isInfoSet(u.set) && V.isIdentitySet(u.set);
+// Family rules on top of validate.js (which allows more fields for planning; the field VALUES are checked there).
+// A record is an info update (website/hours/day_pass/facilities only), an identity update (name/suburb/types only) or a location update (address/lat/lng only),
+// never a mix. Returns a list of problems.
 function locationProblems(rec) {
   const out = [];
   const set = rec.set && typeof rec.set === 'object' && !Array.isArray(rec.set) ? rec.set : null;
-  if (!set || !Object.keys(set).length) return [`"set" must list the location fields (or ${T.INFO_FIELDS.join('/')}) to change`];
+  if (!set || !Object.keys(set).length) return [`"set" must list the location fields (or ${T.INFO_FIELDS.join('/')}, or ${T.IDENTITY_FIELDS.join('/')}) to change`];
   if (V.isInfoSet(set)) {
     const other = Object.keys(set).filter(k => !T.INFO_FIELDS.includes(k));
     if (other.length) out.push(`an info update changes only ${T.INFO_FIELDS.join('/')}, never together with location fields (not ${other.join(', ')}); one record per gym, so use a separate batch`);
+  } else if (V.isIdentitySet(set)) {
+    const other = Object.keys(set).filter(k => !T.IDENTITY_FIELDS.includes(k));
+    if (other.length) out.push(`an identity update changes only ${T.IDENTITY_FIELDS.join('/')}, never together with location or information fields (not ${other.join(', ')}); one record per gym, so use a separate batch`);
   } else {
     const other = Object.keys(set).filter(k => !T.LOCATION_FIELDS.includes(k));
-    if (other.length) out.push(`only ${T.LOCATION_FIELDS.join(', ')} (or ${T.INFO_FIELDS.join('/')} as an info update) may be changed (not ${other.join(', ')})`);
+    if (other.length) out.push(`only ${T.LOCATION_FIELDS.join(', ')} (or ${T.INFO_FIELDS.join('/')} as an info update, ${T.IDENTITY_FIELDS.join('/')} as an identity update) may be changed (not ${other.join(', ')})`);
     if ((set.lat === undefined) !== (set.lng === undefined)) out.push('lat and lng must change together');
     if ('address' in set && (typeof set.address !== 'string' || !set.address.trim())) out.push('address can be corrected, never cleared (a non-empty text)');
   }
   if (typeof rec.expect_h !== 'string' || !V.EXPECT_H.test(rec.expect_h)) out.push('expect_h (the gym\'s content hash when researched) is required');
-  if (typeof rec.source !== 'string' || !rec.source.trim() || rec.source.length > 400) out.push(`source (where the new ${V.isInfoSet(set) ? 'information' : 'location'} comes from${V.isInfoSet(set) ? ': the gym\'s official site' : ''}) is required, max 400 chars`);
+  if (typeof rec.source !== 'string' || !rec.source.trim() || rec.source.length > 400) out.push(`source (where the new ${V.isInfoSet(set) ? 'information' : V.isIdentitySet(set) ? 'name / suburb / type tags' : 'location'} comes from${V.isInfoSet(set) || V.isIdentitySet(set) ? ': the gym\'s official site' : ''}) is required, max 400 chars`);
   return out;
 }
 
@@ -93,9 +103,25 @@ function stateOfInfo(live, rec) {
   return { state: 'changed', h, filled: fields.filter(f => !emptyInfo(f, live[f]) && !isDeepStrictEqual(live[f], rec.set[f])) };
 }
 
+// State of one identity-update target (name/suburb/types). The fields are in the content hash, so: before = hash is expect_h; after = the fields hold exactly the
+// record (types compared in order, byte for byte) and the row with those fields put back to the researched values hashes to expect_h, i.e. the content hash equals
+// that of the researched row with the set applied (every other compared field is unchanged); anything else = changed. A row that already holds the record's values
+// while still hashing to expect_h would be a no-op, which is refused earlier; it is "changed" here so it can never be written either.
+function stateOfIdentity(live, e, rec) {
+  if (!live) return { state: 'missing' };
+  if (live.status !== 'approved') return { state: 'not-approved' };
+  const h = S.toEntry(live).h, fields = Object.keys(rec.set);
+  const holds = fields.every(f => (f === 'types' ? isDeepStrictEqual(live.types, rec.set.types) : live[f] === rec.set[f]));
+  if (h === rec.expect_h) return holds ? { state: 'changed', h, noop: true } : { state: 'before', h, updatedAt: live.updated_at };
+  const restored = { ...live }; for (const f of fields) restored[f] = e[f];
+  if (holds && S.toEntry(restored).h === rec.expect_h) return { state: 'after', h, updatedAt: live.updated_at };
+  return { state: 'changed', h };
+}
+
 // State of one gym in a snapshot. e = its index entry (the content researched against), rec = the update record.
 function stateOf(live, e, rec) {
   if (V.isInfoSet(rec.set)) return stateOfInfo(live, rec);
+  if (V.isIdentitySet(rec.set)) return stateOfIdentity(live, e, rec);
   if (!live) return { state: 'missing' };
   if (live.status !== 'approved') return { state: 'not-approved' };
   const h = S.toEntry(live).h;
@@ -162,14 +188,14 @@ async function runUpdate(opts) {
     const probs = [...v.errors.map(e => `${e.code} (${e.field})`), ...(retire ? [] : locationProblems(x.rec))];
     if (probs.length) bad.push(`line ${x.line} ${x.rec.id || '?'}: ${probs.join('; ')}`);
   }
-  if (bad.length) add('FAIL', 'records validate (location or information updates)', `${bad.length} invalid: ${sample(bad, 3)}`);
+  if (bad.length) add('FAIL', 'records validate (location, information or identity updates)', `${bad.length} invalid: ${sample(bad, 3)}`);
   const idCount = new Map(); recs.forEach(x => idCount.set(x.rec.id, (idCount.get(x.rec.id) || 0) + 1));
   const dups = [...idCount].filter(([, n]) => n > 1).map(([id]) => id);
   if (dups.length) add('FAIL', 'one update per gym', sample(dups) + ' (one record per gym: a gym cannot be updated twice, retired twice, or both updated and retired)');
   if (!fails().length) {
     const nr = recs.filter(x => x.rec.intent === 'retire').length;
-    const ni = recs.filter(x => x.rec.intent === 'update' && V.isInfoSet(x.rec.set)).length;
-    add('PASS', 'batch valid', `${recs.length - nr} update(s) (${recs.length - nr - ni} location, ${ni} gym information) and ${nr} retirement(s): location updates change only ${T.LOCATION_FIELDS.join('/')} (lat+lng together, addresses non-empty); information updates only fill ${T.INFO_FIELDS.join('/')}, one family per record; retirements only set status rejected + the reason; expect_h and source on every record, one per gym`);
+    const ni = recs.filter(x => x.rec.intent === 'update' && V.isInfoSet(x.rec.set)).length, nd = recs.filter(x => x.rec.intent === 'update' && isIdentity(x.rec)).length;
+    add('PASS', 'batch valid', `${recs.length - nr} update(s) (${recs.length - nr - ni - nd} location, ${ni} gym information${nd ? `, ${nd} identity` : ''}) and ${nr} retirement(s): location updates change only ${T.LOCATION_FIELDS.join('/')} (lat+lng together, addresses non-empty); information updates only fill ${T.INFO_FIELDS.join('/')}${nd ? `; identity updates only correct ${T.IDENTITY_FIELDS.join('/')} (trimmed single-line text, types from the allowed list in canonical order)` : ''}, one family per record; retirements only set status rejected + the reason; expect_h and source on every record, one per gym`);
   }
   if (fails().length) return refuse();
   res.updates = recs.filter(x => x.rec.intent === 'update').map(x => ({ id: x.rec.id, set: x.rec.set, expect_h: x.rec.expect_h }));
@@ -180,6 +206,9 @@ async function runUpdate(opts) {
   const retireIds = new Set(res.retires.map(r => r.id));
   const infoIds = new Set(res.updates.filter(isInfo).map(u => u.id));   // targets of an info (website/hours/day pass/facilities) update; the other updates are location updates
   res.infoIds = [...infoIds];
+  const identityIds = new Set(res.updates.filter(isIdentity).map(u => u.id));   // targets of an identity (name/suburb/types) correction
+  res.identityIds = [...identityIds];
+  const nLoc = res.updates.length - infoIds.size - identityIds.size;            // the remaining updates are location updates
 
   // ---- local index: integrity, and the research snapshot equals it --------------------------------------------------------------
   let index;
@@ -191,7 +220,11 @@ async function runUpdate(opts) {
   const stale = recs.filter(x => index.byId.get(x.rec.id).h !== x.rec.expect_h).map(x => `${x.rec.id} (expect_h ${x.rec.expect_h}, index ${index.byId.get(x.rec.id).h})`);
   if (stale.length) { add('FAIL', 'researched content is the indexed content (expect_h)', `${stale.length} gym(s) changed since the update was researched: ${sample(stale, 3)}; re-research them`); return refuse(); }
   add('PASS', 'researched content is the indexed content (expect_h)', `all ${recs.length} gyms match their expect_h in the index`);
+  // An identity correction must change every field it lists (a value equal to the researched one is a no-op: refused, never dropped silently).
+  const noops = recs.filter(x => x.rec.intent === 'update' && isIdentity(x.rec)).flatMap(x => Object.keys(x.rec.set).filter(f => V.sameIdentityValue(f, x.rec.set[f], index.byId.get(x.rec.id)[f])).map(f => `${x.rec.id}.${f}`));
+  if (noops.length) { add('FAIL', 'identity update changes every field it lists', `${sample(noops, 4)} already hold${noops.length === 1 ? 's' : ''} the recorded value (no-op); drop the field/gym from the batch`); return refuse(); }
   res.names = Object.fromEntries(ids.map(id => [id, index.byId.get(id).name]));
+  res.identityBefore = Object.fromEntries([...identityIds].map(id => [id, Object.fromEntries(Object.keys(res.updates.find(u => u.id === id).set).map(f => [f, index.byId.get(id)[f]]))]));
   res.moves = Object.fromEntries(recs.filter(x => x.rec.intent === 'update' && hasPin(x.rec.set)).map(x => [x.rec.id, Math.round(N.meters(index.byId.get(x.rec.id), x.rec.set))]));
 
   // ---- live production reads (read-only) ----------------------------------------------------------------------------------------
@@ -255,7 +288,7 @@ async function runUpdate(opts) {
     if (count(st, 'after') === ids.length) {
       if (mf.exists && mfMismatch.length) { add('FAIL', 'manifest matches this batch, payload and target', `manifest.json is not valid for this run (${mfMismatch.join('; ')})`); return refuse(); }
       res.state = mf.exists ? 'already-updated' : 'already-present';
-      add('PASS', 'idempotent re-run', `all ${ids.length} gyms are already in the applied state (${res.updates.length - infoIds.size} new location(s) with every other field unchanged, ${infoIds.size} filled gym-information record(s) with their content unchanged, ${res.retires.length} retired with the recorded reason); NOTHING will be written`);
+      add('PASS', 'idempotent re-run', `all ${ids.length} gyms are already in the applied state (${nLoc} new location(s) with every other field unchanged, ${infoIds.size} filled gym-information record(s) with their content unchanged, ${identityIds.size ? `${identityIds.size} corrected identity record(s) (${T.IDENTITY_FIELDS.join('/')}) with every other field unchanged, ` : ''}${res.retires.length} retired with the recorded reason); NOTHING will be written`);
       const others = driftExcept(snap.approved, index, new Set(ids));
       add(driftTotal(others) ? 'WARN' : 'PASS', 'index vs production (excluding this batch)', driftTotal(others) ? `${driftTotal(others)} other difference(s)` : 'identical');
       if (mode === 'apply' && !mf.exists) {
@@ -278,7 +311,7 @@ async function runUpdate(opts) {
     const plan = await P.planBatch({ dir: batchDir, index });
     const c = plan.counts;
     const allUpdate = (c.update || 0) === res.updates.length && (c.retire || 0) === res.retires.length && !c.new && !c.existing && !c['probable-duplicate'] && !c.invalid && !c.rejected;
-    if (!allUpdate || !plan.importable) { add('FAIL', 'every record is (still) an update', `plan: update ${c.update}, retire ${c.retire || 0}, new ${c.new}, existing ${c.existing}, probable-duplicate ${c['probable-duplicate']}, invalid ${c.invalid}, rejected ${c.rejected}; blockers: ${plan.blockers.join(' | ') || 'none'}`); return refuse(); }
+    if (!allUpdate || !plan.importable) { add('FAIL', 'every record is (still) an update', `plan: update ${c.update}, retire ${c.retire || 0}, new ${c.new}, existing ${c.existing}, probable-duplicate ${c['probable-duplicate']}, invalid ${c.invalid}, rejected ${c.rejected}; blockers: ${plan.blockers.join(' | ') || 'none'}${(() => { const errs = plan.records.filter(r => r.class === 'invalid').flatMap(r => (r.errors || []).map(e => `${r.id || '?'}: ${e.message}`)); return errs.length ? '; invalid: ' + sample(errs, 3) : ''; })()}`); return refuse(); }
     add('PASS', 'every record is an update', `fresh plan: ${c.update || 0} update(s) and ${c.retire || 0} retirement(s), nothing else, no blockers`);
     const pf = path.join(batchDir, 'plan.json');
     if (!fs.existsSync(pf) || JSON.stringify(plan) !== JSON.stringify(JSON.parse(fs.readFileSync(pf, 'utf8')))) { add('FAIL', 'committed plan.json is current', 'plan.json is missing or differs from a fresh plan; re-run "plan", review report.md and commit'); return refuse(); }
@@ -318,6 +351,7 @@ async function runUpdate(opts) {
       try {
         const r = retireIds.has(u.id) ? await api.retireSpot({ id: u.id, reason: u.reason, updatedAt }, gate)
           : infoIds.has(u.id) ? await api.updateSpotInfo({ id: u.id, set: u.set, updatedAt }, gate)
+          : identityIds.has(u.id) ? await api.updateSpotIdentity({ id: u.id, set: u.set, updatedAt }, gate)
           : await api.updateSpotLocation({ id: u.id, set: u.set, updatedAt }, gate);
         if (!r.ok) { stopped = `${u.id}: HTTP ${r.status} ${String(r.text).slice(0, 200)}`; break; }
         if (!Array.isArray(r.json) || r.json.length !== 1) { stopped = `${u.id}: ${Array.isArray(r.json) ? r.json.length : 'no'} row(s) matched (the row changed after the final re-check, or is no longer approved)`; break; }
@@ -339,7 +373,7 @@ async function runUpdate(opts) {
 
     // ---- post-write verification (read-only) -------------------------------------------------------------------------------------
     const problems = [];
-    after.states.forEach(x => { if (x.state !== 'after') problems.push(`${x.id}: ${x.state} (expected ${retireIds.has(x.id) ? "status rejected with the recorded reason" : infoIds.has(x.id) ? `${T.INFO_FIELDS.join('/')} exactly as recorded, content unchanged` : 'the new location with every other field unchanged'})`); });
+    after.states.forEach(x => { if (x.state !== 'after') problems.push(`${x.id}: ${x.state} (expected ${retireIds.has(x.id) ? "status rejected with the recorded reason" : identityIds.has(x.id) ? `${T.IDENTITY_FIELDS.join('/')} exactly as recorded, every other field unchanged` : infoIds.has(x.id) ? `${T.INFO_FIELDS.join('/')} exactly as recorded, content unchanged` : 'the new location with every other field unchanged'})`); });
     const expectCount = res.beforeCount - res.retires.length;
     if (after.approved.length !== expectCount) problems.push(`approved count ${after.approved.length}, expected ${expectCount} (${res.beforeCount} before; an update never adds or removes a spot, a retirement removes exactly one approved spot each)`);
     const drAfter = driftExcept(after.approved, index, new Set(ids));
@@ -349,15 +383,24 @@ async function runUpdate(opts) {
       const moved = after.approved.filter(r => !infoIds.has(r.id) && was.get(r.id) !== undefined && was.get(r.id) !== infoOf(r)).map(r => r.id);
       if (moved.length) problems.push(`${T.INFO_FIELDS.join('/')} of other spots changed: ${sample(moved, 4)}`);
     }
+    if (identityIds.size) {   // identity targets: the content hash is the researched row with the set applied (computed from the row seen at the final re-check), and no slug ever moves
+      for (const u of res.updates.filter(isIdentity)) {
+        const was = before.byId.get(u.id), now = after.states.find(x => x.id === u.id);
+        if (was && now && now.state === 'after' && now.h !== S.toEntry({ ...was, ...u.set }).h) problems.push(`${u.id}: content hash ${now.h} is not the researched row with ${Object.keys(u.set).join('+')} applied`);
+      }
+      const slugs = new Map(before.approved.map(r => [r.id, r.slug]));
+      const slugMoved = after.approved.filter(r => slugs.has(r.id) && slugs.get(r.id) !== r.slug).map(r => r.id);
+      if (slugMoved.length) problems.push(`stored slug changed: ${sample(slugMoved, 4)}`);
+    }
     res.verification = { ok: problems.length === 0, checked: ids.length, problems };
-    add(problems.length ? 'FAIL' : 'PASS', 'post-update verification', problems.length ? sample(problems, 4) : `all ${ids.length} gyms are in the applied state (${res.updates.length - infoIds.size} hold exactly the new ${T.LOCATION_FIELDS.join('/')} with every other field unchanged, ${infoIds.size} hold exactly the filled ${T.INFO_FIELDS.join('/')} with their content unchanged, ${res.retires.length} are rejected with the recorded reason); approved count ${res.beforeCount} -> ${expectCount}; every other spot unchanged`);
+    add(problems.length ? 'FAIL' : 'PASS', 'post-update verification', problems.length ? sample(problems, 4) : `all ${ids.length} gyms are in the applied state (${nLoc} hold exactly the new ${T.LOCATION_FIELDS.join('/')} with every other field unchanged, ${infoIds.size} hold exactly the filled ${T.INFO_FIELDS.join('/')} with their content unchanged, ${identityIds.size ? `${identityIds.size} hold exactly the corrected ${T.IDENTITY_FIELDS.join('/')} with every other field and every slug unchanged, ` : ''}${res.retires.length} are rejected with the recorded reason); approved count ${res.beforeCount} -> ${expectCount}; every other spot unchanged`);
     if (problems.length) {
       MF.writeFailure(batchDir, failureFor({ res, batch, target, now, phase: 'verification-failed', states: after.states, problems }));
       res.failureWritten = true;
       add('WARN', MF.FAILURE, 'wrote a failure record (NOT manifest.json); the updates ARE in production — inspect before re-running');
       return done(4);
     }
-    const m = manifestFor({ res, batch, target, now, status: 'updated', before: res.beforeCount, after: after.approved.length, verification: res.verification, updated: res.applied.filter(id => !retireIds.has(id) && !infoIds.has(id)).length, startedAt: res.startedAt, liveSha: res.liveSha, states: after.states });
+    const m = manifestFor({ res, batch, target, now, status: 'updated', before: res.beforeCount, after: after.approved.length, verification: res.verification, updated: res.applied.filter(id => !retireIds.has(id) && !infoIds.has(id) && !identityIds.has(id)).length, startedAt: res.startedAt, liveSha: res.liveSha, states: after.states });
     MF.writeManifest(batchDir, m); res.manifest = m; res.manifestWritten = true;
     add('PASS', 'manifest', 'wrote manifest.json (verified update; no credentials in it). Next: rebuild the index (build-index --live)');
     return done(0);
@@ -374,9 +417,11 @@ function manifestFor({ res, batch, target, now, status, before, after, verificat
     target: { kind: target.kind, host: target.host }, coverage: res.coverage,
     plan_sha256: res.planSha || null, payload_sha256: res.payloadSha, confirm_token: res.token || null, live_state_sha256: liveSha || null,
     rows_updated: updated, approved_before: before, approved_after: after,
-    changes: res.updates.filter(u => !isInfo(u)).map(u => ({ id: u.id, fields: Object.keys(u.set), expect_h: u.expect_h, after_h: (states.find(x => x.id === u.id) || {}).h || null })),
+    changes: res.updates.filter(u => !isInfo(u) && !isIdentity(u)).map(u => ({ id: u.id, fields: Object.keys(u.set), expect_h: u.expect_h, after_h: (states.find(x => x.id === u.id) || {}).h || null })),
     // Gym-information fills are listed apart from location changes (absent when the batch has none): ids and the fields that were set.
     ...(res.updates.some(isInfo) ? { rows_info_filled: res.updates.filter(isInfo).length, info_filled: res.updates.filter(isInfo).map(u => ({ id: u.id, fields: Object.keys(u.set), expect_h: u.expect_h, after_h: (states.find(x => x.id === u.id) || {}).h || null })) } : {}),
+    // Identity corrections (name/suburb/types) are listed apart as well (absent when the batch has none): ids, the fields changed and the content hash before and after.
+    ...(res.updates.some(isIdentity) ? { rows_identity_changed: res.updates.filter(isIdentity).length, identity_changed: res.updates.filter(isIdentity).map(u => ({ id: u.id, fields: Object.keys(u.set), expect_h: u.expect_h, after_h: (states.find(x => x.id === u.id) || {}).h || null })) } : {}),
     // Retirements are listed separately (absent for an update-only batch): ids of every gym set to 'rejected', plus the recorded reasons.
     ...(res.retires.length ? { rows_retired: res.retires.length, retired: res.retires.map(r => r.id), retirements: res.retires.map(r => ({ id: r.id, reason_code: r.reason_code, reason: r.reason, ...(r.duplicate_of ? { duplicate_of: r.duplicate_of } : {}), expect_h: r.expect_h })) } : {}),
     verification, started_at: startedAt || now(), finished_at: now(),
@@ -402,7 +447,7 @@ function renderUpdateReport(res) {
   if (res.state === 'fresh') L.push(res.token ? `Confirmation token (required by --apply; bound to this batch, payload, target and production state): ${res.token}` : 'Confirmation token: none (PARTIAL coverage; run the dry-run with the service-role key to obtain one)');
   L.push('', '## Checks');
   res.checks.forEach(c => L.push(`- [${c.status}] ${c.name}${c.detail ? ': ' + c.detail : ''}`));
-  const locUpdates = res.updates.filter(u => !isInfo(u)), infoUpdates = res.updates.filter(isInfo);
+  const locUpdates = res.updates.filter(u => !isInfo(u) && !isIdentity(u)), infoUpdates = res.updates.filter(isInfo), idUpdates = res.updates.filter(isIdentity);
   if (locUpdates.length && res.state === 'fresh' && res.names) {
     const fields = locUpdates.reduce((n, u) => n + Object.keys(u.set).length, 0);
     L.push('', `## ${res.mode === 'apply' ? 'Updated' : 'Would update'} (${locUpdates.length} gyms, ${fields} field changes; nothing else changes)`, '');
@@ -411,6 +456,11 @@ function renderUpdateReport(res) {
   if (infoUpdates.length && res.state === 'fresh' && res.names) {
     L.push('', `## ${res.mode === 'apply' ? 'Filled' : 'Would fill'} gym information (${infoUpdates.length} gyms; only fields that are empty in production are filled, nothing is overwritten, nothing else changes)`, '');
     infoUpdates.forEach((u, i) => L.push(`${String(i + 1).padStart(3)}. ${u.id}  ${res.names[u.id]}  ${V.describeInfoSet(u.set)}`));
+  }
+  if (idUpdates.length && res.state === 'fresh' && res.names && res.identityBefore) {
+    const show = v => (Array.isArray(v) ? v.join('+') : String(v));
+    L.push('', `## ${res.mode === 'apply' ? 'Corrected' : 'Would correct'} gym identity (${idUpdates.length} gyms; name/suburb/types only, the stored slug and every other field stay as they are)`, '');
+    idUpdates.forEach((u, i) => L.push(`${String(i + 1).padStart(3)}. ${u.id}  ${Object.keys(u.set).map(f => `${f}: ${JSON.stringify(show(res.identityBefore[u.id][f]))} -> ${JSON.stringify(show(u.set[f]))}`).join('; ')}`.slice(0, 400)));
   }
   if (res.retires.length && res.state === 'fresh' && res.names) {
     L.push('', `## ${res.mode === 'apply' ? 'Retired' : 'Would retire'} (${res.retires.length} gyms; status becomes rejected with the reason, the record is kept, nothing else changes)`, '');

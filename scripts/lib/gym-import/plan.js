@@ -76,6 +76,27 @@ function diffVisible(rec, e) {
   return out;
 }
 
+// Duplicate protection for an identity update: would gym `e`, with the new name/suburb in `set`, look like ANOTHER existing gym (same country, the
+// matcher's evaluatePair rules)? `batchSets` = id -> set of the other identity updates in this batch, so two gyms renamed to related names nearby are
+// caught too. A pair already flagged before the change is not "made" by it, unless the change adds a name-based reason to a non-name one (co-located
+// gyms that now also share a name). Returns [{id, name, reason, dist_m, inBatch}].
+const NAME_DRIVEN = new Set(['same-name', 'same-address-related-name', 'same-name-but-pin-differs', 'same-name-same-suburb-far-pin', 'renamed-or-related-name-nearby', 'similar-name-nearby']);
+const withIdentity = (g, set) => ({ ...g, name: set.name !== undefined ? set.name : g.name, suburb: set.suburb !== undefined ? set.suburb : g.suburb });
+function identityDuplicates(e, set, index, batchSets) {
+  if (set.name === undefined && set.suburb === undefined) return [];   // type tags take no part in duplicate detection
+  const after = withIdentity(e, set), out = [];
+  for (const o of index.byCountry.get(e.country) || []) {
+    if (o.id === e.id) continue;
+    const oAfter = batchSets.has(o.id) ? withIdentity(o, batchSets.get(o.id)) : o;
+    const a = M.evaluatePair(after, oAfter);
+    if (!a) continue;
+    const b = M.evaluatePair(e, o);
+    if (b && !(NAME_DRIVEN.has(a.reason) && !NAME_DRIVEN.has(b.reason))) continue;
+    out.push({ id: o.id, name: oAfter.name, reason: a.reason, dist_m: a.dist_m, inBatch: batchSets.has(o.id) });
+  }
+  return out.sort((x, y) => x.dist_m - y.dist_m || (x.id < y.id ? -1 : 1));
+}
+
 async function planBatch({ dir, index, batchesDir, includeStaged = true }) {
   const d = await V.deps();
   const batch = loadBatch(dir);
@@ -211,6 +232,8 @@ async function planBatch({ dir, index, batchesDir, includeStaged = true }) {
   }
 
   // ---- updates ---------------------------------------------------------------------------------------------------------
+  // The identity changes of the whole batch (id -> set), fixed before the loop so the duplicate check is independent of record order.
+  const identitySets = new Map(items.filter(o => o.cls !== 'invalid' && o.intent === 'update' && o.rec && index.byId.has(o.rec.id) && V.isIdentitySet(o.rec.set) && !V.isInfoSet(o.rec.set)).map(o => [o.rec.id, o.rec.set]));
   for (const it of items) {
     if (it.cls !== null || it.intent !== 'update') continue;
     const e = index.byId.get(it.rec.id);
@@ -231,6 +254,15 @@ async function planBatch({ dir, index, batchesDir, includeStaged = true }) {
     // Researched against a different version of the gym: refuse rather than overwrite a change made since (moderator edit,
     // another import). expect_h is optional here; updater.js (the only thing that writes updates) requires it.
     if (it.rec.expect_h !== undefined && it.rec.expect_h !== e.h) { it.errors.push({ code: 'changed-since-research', field: 'expect_h', message: `${e.id} no longer has the content this update was researched against (expect_h ${it.rec.expect_h}, index ${e.h}); re-research it` }); it.cls = 'invalid'; continue; }
+    // Identity updates (name/suburb/types only): a value equal to the current one is a no-op (refused, never silently dropped), and a rename or a suburb
+    // change must not make the gym look like another existing gym (or another gym renamed in this batch): the matcher's own pair rules, see identityDuplicates.
+    if (V.isIdentitySet(it.rec.set) && !V.isInfoSet(it.rec.set) && Object.keys(it.rec.set).every(f => V.IDENTITY_FIELDS.includes(f))) {
+      const same = Object.keys(it.rec.set).filter(f => V.sameIdentityValue(f, it.rec.set[f], e[f]));
+      // (a record where EVERY value is the current one stays "existing / update-is-noop" below; the updater refuses it with a clear message)
+      if (same.length && same.length < Object.keys(it.rec.set).length) { it.errors.push({ code: 'identity-noop', field: same[0], message: `${e.id} already has this ${same.join(' + ')} (an identity update must change every field it lists; drop ${same.length > 1 ? 'those fields' : 'that field'})` }); it.cls = 'invalid'; continue; }
+      const dups = same.length ? [] : identityDuplicates(e, it.rec.set, index, identitySets);
+      if (dups.length) { it.errors.push({ code: 'rename-duplicates-other-gym', field: it.rec.set.name !== undefined ? 'name' : 'suburb', message: `the corrected identity of ${e.id} "${e.name}" would make it a probable duplicate of ${dups.slice(0, 3).map(d => `${d.id} "${d.name}"${d.inBatch ? ' (also changed in this batch)' : ''} -- ${d.reason}, ${d.dist_m} m`).join('; ')}${dups.length > 3 ? ` (+${dups.length - 3} more)` : ''}` }); it.cls = 'invalid'; continue; }
+    }
     // A moved pin must not land on another gym: the same 60 m rule that makes a new gym a probable duplicate.
     if (it.rec.set.lat !== undefined || it.rec.set.lng !== undefined) {
       const pin = { lat: it.rec.set.lat ?? e.lat, lng: it.rec.set.lng ?? e.lng };
