@@ -6,9 +6,9 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 (delete them; git keeps history). Keep this file under 60 lines.
 
 ## In progress
-### Gym information — 147 live; batch 3 (46) + batch 4 (574 gyms, 47 retirements) STAGED 2026-10-04, NOT applied
-- Batch 4 = every remaining metro (`gym-info-5`..`-12`); China and Korea skipped (gyms lack own sites). PRs #44/#45 + batch-4 PR. Notes:
-  `import/info-research/batch-4/NOTES.md`; follow-ups (renames, location fixes, new gyms) in its `reviews.json`. Remaining: 1,066 gyms outside metros.
+### Gym information — APPLIED 2026-10-04: 767 gyms with info (website 767, hours 665, day pass 524, facilities 596)
+- Batches 3 + 4 applied + verified (620 gyms filled, 49 retired; live 2,293); every metro done except China/Korea (gyms lack own sites).
+  PRs #44-#46. Follow-ups: `import/info-research/batch-4/reviews.json` (renames, location fixes, new gyms). Remaining: 1,066 gyms outside metros.
 ### Final-stage sprint (gym information, metros, SEO, perf) — DONE: PR #37 merged and live in production 2026-10-03
 - Status: PR #37 (`integration/final-stage`) merged to master 2026-10-03 (merge commit `b58a79e`) and deployed by Vercel; production
   smoke test passed (/, gym, metro, region, /in, sitemap.xml 3,299 URLs, robots.txt, bot link previews; no console errors at
