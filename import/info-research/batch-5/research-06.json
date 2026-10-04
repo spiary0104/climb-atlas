@@ -1,0 +1,929 @@
+[
+  {
+    "id": "seed-280",
+    "name": "Climb Murfreesboro",
+    "metro": null,
+    "expect_h": "3a3f803a833b845f",
+    "website": "https://theclimbgyms.com/murfreesboro/",
+    "hours": {
+      "mon": "9am–9pm",
+      "tue": "9am–9pm",
+      "wed": "9am–9pm",
+      "thu": "9am–9pm",
+      "fri": "9am–9pm",
+      "sat": "9am–9pm",
+      "sun": "11am–6pm"
+    },
+    "day_pass": "$26 adult (shoes and harness included), $22 youth 12 and under",
+    "facilities": null,
+    "sources": [
+      {
+        "url": "https://theclimbgyms.com/murfreesboro/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      },
+      {
+        "url": "https://theclimbgyms.com/murfreesboro/rates/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Operator brand 'Climb' (The Climb Gyms). Site banner advertises a $16 weekday-before-2pm July special; standard day pass $26 used. Facilities left null: no location-specific text for cafe/shop/etc beyond nav labels.",
+    "operating": "yes",
+    "official_address": "1660 Memorial Blvd, Murfreesboro, TN 37129",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-283",
+    "name": "High Point Climbing & Fitness – Cleveland",
+    "metro": null,
+    "expect_h": "c337d88f147d1d20",
+    "website": "https://www.highpointclimbing.com/locations/cleveland",
+    "hours": {
+      "mon": "12pm–9pm",
+      "tue": "12pm–9pm",
+      "wed": "12pm–9pm",
+      "thu": "12pm–9pm",
+      "fri": "12pm–9pm",
+      "sat": "10am–8pm",
+      "sun": "10am–8pm"
+    },
+    "day_pass": "$24 adult, $22 child 10 and under/senior",
+    "facilities": [
+      "training",
+      "kids",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://www.highpointclimbing.com/locations/cleveland",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.highpointclimbing.com/locations/cleveland/rates",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Location page holds two 'Opening hours' blocks; one (Mon-Fri 10am-10pm, Sat 9pm, Sun 8pm) is identical on every High Point location page (template), the other differs per location - used the per-location block (12pm-9pm weekdays). Judgement call. Gear rental (shoes $5) from Cleveland rates page. Location: official address geocodes (US Census geocoder) ~2.6 km from our pin (35.1595,-84.8766), same town (Cleveland, TN).",
+    "operating": "yes",
+    "official_address": "2499 Keith St NW, Cleveland, TN 37311",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-284",
+    "name": "High Point Climbing and Fitness",
+    "metro": null,
+    "expect_h": "13a2a60661551a2b",
+    "website": "https://www.highpointclimbing.com/locations/downtown",
+    "hours": {
+      "mon": "6am–10pm",
+      "tue": "6am–10pm",
+      "wed": "6am–10pm",
+      "thu": "6am–10pm",
+      "fri": "6am–10pm",
+      "sat": "10am–10pm",
+      "sun": "10am–8pm"
+    },
+    "day_pass": "$24 adult, $22 child 10 and under/senior",
+    "facilities": [
+      "kids",
+      "yoga",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://www.highpointclimbing.com/locations/downtown",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.highpointclimbing.com/locations/downtown/rates",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Page lists two hours blocks; one identical template block on every High Point page (10am-10pm), used the per-location block (6am-10pm weekdays). Judgement call. Downtown page text: 'Bouldering, top rope, lead, Kid Zone, yoga'.",
+    "operating": "yes",
+    "official_address": "219 Broad St, Chattanooga, TN 37402",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-285",
+    "name": "High Point Climbing and Fitness – Memphis",
+    "metro": null,
+    "expect_h": "c45d94dbb334a388",
+    "website": "https://www.highpointclimbing.com/locations/memphis",
+    "hours": null,
+    "day_pass": "$24 adult, $22 child 10 and under/senior",
+    "facilities": [
+      "training",
+      "kids",
+      "yoga",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://www.highpointclimbing.com/locations/memphis",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.highpointclimbing.com/locations/memphis/rates",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours null: the per-location block is internally inconsistent (Tuesday '10 pm - 9 pm', alternating 6am/10am weekdays) and conflicts with the template block. Page: 'yoga class or our full fitness and cardio gym - all included in a day pass'. ZIP differs (38120 official vs 38166 stored), same street.",
+    "operating": "yes",
+    "official_address": "21 N Humphreys Blvd, Memphis, TN 38120",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-286",
+    "name": "High Point Climbing and Fitness – Riverside",
+    "metro": null,
+    "expect_h": "75d986dfc8a133d9",
+    "website": "https://www.highpointclimbing.com/locations/riverside",
+    "hours": {
+      "mon": "12pm–9pm",
+      "tue": "12pm–9pm",
+      "wed": "12pm–9pm",
+      "thu": "12pm–9pm",
+      "fri": "12pm–9pm",
+      "sat": "10am–8pm",
+      "sun": "10am–8pm"
+    },
+    "day_pass": "$24 adult, $22 child 10 and under/senior",
+    "facilities": [
+      "training",
+      "kids",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://www.highpointclimbing.com/locations/riverside",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.highpointclimbing.com/locations/riverside/rates",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Two hours blocks on page; used the per-location one (template block identical across locations ignored). Judgement call. Page: 'bouldering, lead climbing and training areas', 'Kid Zone'.",
+    "operating": "yes",
+    "official_address": "1007 Appling St, Chattanooga, TN 37406",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-287",
+    "name": "Memphis Rox",
+    "metro": null,
+    "expect_h": "29d02e6fc1e51f2b",
+    "website": "https://www.memphisrox.com/",
+    "hours": {
+      "mon": "10am–9pm",
+      "tue": "10am–9pm",
+      "wed": "10am–9pm",
+      "thu": "10am–9pm",
+      "fri": "10am–9pm",
+      "sat": "12pm–6pm",
+      "sun": "12pm–6pm"
+    },
+    "day_pass": null,
+    "facilities": [
+      "cafe",
+      "training",
+      "shoe-hire",
+      "showers",
+      "parking",
+      "yoga"
+    ],
+    "sources": [
+      {
+        "url": "https://www.memphisrox.com/visit",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.memphisrox.com/faq",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.memphisrox.com/fitness",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Non-profit, pay-what-you-can day pass with a 'suggested price'; no amount stated on fetched pages (price list is in a JS portal), so day_pass null. FAQ: juice bar and cafe, showers, free on-site parking, $1 shoe rental, membership includes yoga classes; fitness page: fitness zone, LED climbing board.",
+    "operating": "yes",
+    "official_address": "879 E McLemore Ave, Memphis, TN 38106",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-288",
+    "name": "Onsight Rock Gym",
+    "metro": null,
+    "expect_h": "c30bd334fbe1ee23",
+    "website": "https://www.onsightrockgym.com/",
+    "hours": {
+      "mon": "11am–10pm",
+      "tue": "11am–10pm",
+      "wed": "11am–10pm",
+      "thu": "11am–10pm",
+      "fri": "11am–10pm",
+      "sat": "10am–8pm",
+      "sun": "10am–6pm"
+    },
+    "day_pass": "$20 adult (13+), $18 youth 12 and under",
+    "facilities": [
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://www.onsightrockgym.com/locationandhours",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.onsightrockgym.com/pricing",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Prices read from the pricing-sheet image on the /pricing page (adult day pass $20, youth $18; rental shoes $4). Member-only early hours Mon-Fri 7-11am ignored. Gym is mainly rope climbing with bouldering.",
+    "operating": "yes",
+    "official_address": "5335 Western Avenue, Knoxville, TN 37921",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-289",
+    "name": "River Sport Climbing Center",
+    "metro": null,
+    "expect_h": "6ce989399691e165",
+    "website": "https://tcc.riversportsoutfitters.com/",
+    "hours": {
+      "mon": "12pm–7pm",
+      "tue": "12pm–7pm",
+      "wed": "12pm–7pm",
+      "thu": "12pm–7pm",
+      "fri": "12pm–7pm",
+      "sat": "12pm–6pm",
+      "sun": "12pm–6pm"
+    },
+    "day_pass": null,
+    "facilities": [
+      "training",
+      "kids",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://tcc.riversportsoutfitters.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Trades as 'The Climbing Center' (operated by River Sports Outfitters), same address; our name 'River Sport Climbing Center' is a variant, not a relocation. Hours given as Weekdays 12pm-7pm, Weekends 12pm-6pm. Day-pass price is rendered by JS/booking widget, not readable. Kids: Parent's Day Out/Night Out and youth club events on site; training equipment and rental shoes stated.",
+    "operating": "yes",
+    "official_address": "2918 Sutherland Ave, Knoxville, TN 37919",
+    "location": "ok",
+    "renamed_to": "The Climbing Center",
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-290",
+    "name": "Synergy Climbing and Ninja",
+    "metro": null,
+    "expect_h": "4b7a44ea22332c52",
+    "website": "https://synergyclimbingandninja.com/",
+    "hours": {
+      "mon": "10am–9:30pm",
+      "tue": "10am–9:30pm",
+      "wed": "10am–9:30pm",
+      "thu": "10am–9:30pm",
+      "fri": "10am–9:30pm",
+      "sat": "10am–6pm",
+      "sun": "10am–6pm"
+    },
+    "day_pass": "$23 adult/13+ bouldering, $28 ninja + climbing, $20 age 12 and under",
+    "facilities": [
+      "training",
+      "kids",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://synergyclimbingandninja.com/hours/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://synergyclimbingandninja.com/rates/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Member-only 6am hours ignored. Hours page: Tilt/Kilter/Moon/campus boards, ninja zone with kids' area; rates page: shoe rental $4.",
+    "operating": "yes",
+    "official_address": "427 East Main Street, Chattanooga, TN 37408",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-131",
+    "name": "Armadillo Boulders",
+    "metro": null,
+    "expect_h": "337d7b5288577bae",
+    "website": "https://armadilloboulders.com/",
+    "hours": {
+      "mon": "8am–10pm",
+      "tue": "8am–10pm",
+      "wed": "8am–10pm",
+      "thu": "8am–10pm",
+      "fri": "8am–10pm",
+      "sat": "8am–10pm",
+      "sun": "8am–10pm"
+    },
+    "day_pass": "$19 adult (24+), $17 young adult 16-23",
+    "facilities": [
+      "training",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://armadilloboulders.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://armadilloboulders.com/daily-rates",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Stone Oak location. Member-only hours Mon/Thu 6-8am ignored. Home page lists for Stone Oak: fitness area, Tension 2 and Kilter boards, youth programs (Club Climb, Devo). Rental shoes $5 is on the chain-wide daily-rates page, not added as shoe-hire (not location-specific). Daily rates page is shared by all 3 locations.",
+    "operating": "yes",
+    "official_address": "23132 US-281, San Antonio, TX 78258",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-132",
+    "name": "Armadillo Boulders – Camden St",
+    "metro": null,
+    "expect_h": "2d4470854c35bd88",
+    "website": "https://armadilloboulders.com/",
+    "hours": {
+      "mon": "8am–10pm",
+      "tue": "8am–10pm",
+      "wed": "8am–10pm",
+      "thu": "8am–10pm",
+      "fri": "8am–10pm",
+      "sat": "8am–10pm",
+      "sun": "8am–10pm"
+    },
+    "day_pass": "$19 adult (24+), $17 young adult 16-23",
+    "facilities": [
+      "training",
+      "kids",
+      "yoga"
+    ],
+    "sources": [
+      {
+        "url": "https://armadilloboulders.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://armadilloboulders.com/daily-rates",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Downtown San Antonio location. Member-only hours Tue/Fri 6-8am ignored. Home page for Downtown: yoga studio and fitness room, Moonboard/circuit/campus boards, youth programs. Coffee and kombucha on tap not counted as cafe. Rental shoes $5 on chain-wide rates page only.",
+    "operating": "yes",
+    "official_address": "1119 Camden St, San Antonio, TX 78215",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-133",
+    "name": "Armadillo Boulders – San Marcos",
+    "metro": null,
+    "expect_h": "64885fe9e132ecca",
+    "website": "https://armadilloboulders.com/",
+    "hours": {
+      "mon": "8am–10pm",
+      "tue": "8am–10pm",
+      "wed": "8am–10pm",
+      "thu": "8am–10pm",
+      "fri": "8am–10pm",
+      "sat": "8am–10pm",
+      "sun": "8am–10pm"
+    },
+    "day_pass": "$19 adult (24+), $17 young adult 16-23",
+    "facilities": [
+      "training",
+      "kids",
+      "yoga"
+    ],
+    "sources": [
+      {
+        "url": "https://armadilloboulders.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://armadilloboulders.com/daily-rates",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "San Marcos location. Home page for San Marcos: fitness area, Kilterboard, campus board, yoga & fitness classes, youth programs (Picadillos). Rental shoes $5 on chain-wide rates page only.",
+    "operating": "yes",
+    "official_address": "211 S Stagecoach Trail, San Marcos, TX 78666",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-135",
+    "name": "Basin Climbing",
+    "metro": null,
+    "expect_h": "5648423af638ad91",
+    "website": "https://basinclimbing.com/",
+    "hours": {
+      "mon": "10am–9pm",
+      "tue": "10am–9pm",
+      "wed": "10am–9pm",
+      "thu": "10am–9pm",
+      "fri": "10am–9pm",
+      "sat": "9am–9pm",
+      "sun": "2pm–8pm"
+    },
+    "day_pass": "$25 adult (shoes and harness included online)",
+    "facilities": [
+      "training",
+      "kids",
+      "shoe-hire",
+      "parking"
+    ],
+    "sources": [
+      {
+        "url": "https://basinclimbing.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://basinclimbing.com/collections/day-passes",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://basinclimbing.com/pages/fitness",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Mon & Wed members-only until 10am, so public hours start 10am. Day-pass page: KidZone, shoe rental $3, on-site parking; fitness page/home: fitness floor and strength area.",
+    "operating": "yes",
+    "official_address": "650 Alliance Parkway, Hewitt, TX 76643",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-136",
+    "name": "Boulders Sport Climbing Center",
+    "metro": null,
+    "expect_h": "942528d796c1a9ae",
+    "website": null,
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [],
+    "status": "not-found",
+    "notes": "Search lists www.climbboulders.com (325 Indian Trail, Harker Heights) as the official site, but it returned 403 Forbidden / 500 and its TLS certificate is revoked/expired, so no content could be fetched. No closure notice found; no official page read. Third-party listings (not used) show it operating.",
+    "operating": "unknown",
+    "official_address": null,
+    "location": "unknown",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-138",
+    "name": "Cave Climbing Gym",
+    "metro": null,
+    "expect_h": "766b1490a4fef746",
+    "website": null,
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [
+      {
+        "url": "https://www.caveclimbingco.com/",
+        "accessed": "2026-10-04",
+        "supports": []
+      }
+    ],
+    "status": "flag",
+    "notes": "Official domain caveclimbingco.com now serves a Wayback-Downloader-recovered copy of the old Squarespace site (footer says so; /contact-1 is 404; /pricing serves unrelated spam content). Search-result snippet for the gym's own pages states the gym decided to close, regular hours through November 9th, memberships not renewing (I could not fetch that notice myself, year not confirmed). Treated as closed; no hours/prices recorded.",
+    "operating": "closed",
+    "official_address": "113 Executive Center Boulevard, El Paso, TX 79902",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-140",
+    "name": "CLIMB Woodlands",
+    "metro": null,
+    "expect_h": "944ec3a786299031",
+    "website": "https://climbwoodlands.com/",
+    "hours": {
+      "mon": "12pm–9pm",
+      "tue": "12pm–9pm",
+      "wed": "12pm–9pm",
+      "thu": "12pm–9pm",
+      "fri": "12pm–9pm",
+      "sat": "10am–8pm",
+      "sun": "1pm–6pm"
+    },
+    "day_pass": "$20 adult (11+), $18 youth 4-10",
+    "facilities": [
+      "training",
+      "kids",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://climbwoodlands.com/first-time-visit",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://climbwoodlands.com/facility-staff",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://climbwoodlands.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Pages disagree: home-page footer says Mon-Thu 12-8pm, Fri 12-9pm, Sat 10am-9pm, Sun 1-6pm; first-time-visit FAQ and facility page agree on Mon-Fri 12-9pm, Sat 10am-8pm, Sun 1-6pm (used). Day pass: first-time-visit page $20/$18, facility page still shows older $18/$15 (used the visit page). Member-only morning hours ignored. Facility page: fitness equipment, adventure course; rental shoes $6; youth classes/teams/parties. Location: official address (Magnolia, TX 77354) geocodes (US Census geocoder) to ~30.2155,-95.5831, about 13 km west-northwest of our pin (30.1658,-95.4613, The Woodlands); our suburb is The Woodlands, official city is Magnolia.",
+    "operating": "yes",
+    "official_address": "7515 Oak Bluff Dr, Suite C, Magnolia, TX 77354",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-145",
+    "name": "Elevator Rock",
+    "metro": null,
+    "expect_h": "ec5ae34df6716a34",
+    "website": null,
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [],
+    "status": "not-found",
+    "notes": "No official site found: WebSearch budget was exhausted, guessed domains (elevatorrock.com/.net/.org, elevatorrockgym.com, elevatorrockwf.com, elevatorrockclimbing.com) do not resolve, search engines block curl. Not verified either way. Our stored address 400 Bridge St geocodes ~1.0 km from our pin (unverified against an official address).",
+    "operating": "unknown",
+    "official_address": null,
+    "location": "unknown",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-147",
+    "name": "InSPIRE Rock Lubbock",
+    "metro": null,
+    "expect_h": "017fcd1d8263cc6a",
+    "website": "https://inspirerock.com/lubbock/",
+    "hours": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "10am–9pm",
+      "sun": "12pm–6pm"
+    },
+    "day_pass": "$22 adult (11+), $18 kids 4-10, $20 military/first responder",
+    "facilities": [
+      "training",
+      "kids",
+      "shoe-hire",
+      "shop",
+      "yoga"
+    ],
+    "sources": [
+      {
+        "url": "https://inspirerock.com/lubbock/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://inspirerock.com/lubbock/location-hours/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      },
+      {
+        "url": "https://inspirerock.com/lubbock/pricing/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Our pin (33.5533,-101.9875) is ~2.2 km north (US Census geocoder agrees ~2.2 km) of the gym: the official page's own geo is 33.5337,-101.9878 (same town, same street, different segment of Yonkers Ave). Lubbock is a 6,000 sq ft bouldering gym only (page: 'full bouldering gym'); our types list top-rope too. Lubbock page: Tension 2 + Kilter boards, fitness facility, r3 pro shop, yoga, youth programs, parties; shoes $6.",
+    "operating": "yes",
+    "official_address": "6703 Yonkers Ave, Lubbock, TX 79407",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-153",
+    "name": "Movement Denton",
+    "metro": null,
+    "expect_h": "89d3811c993afb2c",
+    "website": "https://movementgyms.com/denton/",
+    "hours": {
+      "mon": "9am–10pm",
+      "tue": "9am–10pm",
+      "wed": "9am–10pm",
+      "thu": "9am–10pm",
+      "fri": "9am–10pm",
+      "sat": "9am–8pm",
+      "sun": "9am–6pm"
+    },
+    "day_pass": "$23 adult, $17 child under 13, $20 student",
+    "facilities": [
+      "training",
+      "yoga",
+      "shop",
+      "shoe-hire",
+      "parking"
+    ],
+    "sources": [
+      {
+        "url": "https://movementgyms.com/denton/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://movementgyms.com/memberships-passes/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours from the Denton page FAQ. Denton page: 'We do not offer rope climbing at this location' (our types list top-rope too). Gym page: unlimited yoga and fitness classes, strength and conditioning area, on-site gear shop, public parking. Prices from the Denton block of the chain memberships-passes page (purchase links /denton/); shoes $6.",
+    "operating": "yes",
+    "official_address": "220 W Oak St, Denton, TX 76201",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-155",
+    "name": "Movement Fort Worth",
+    "metro": null,
+    "expect_h": "dd3949eae99f085c",
+    "website": "https://movementgyms.com/fort-worth/",
+    "hours": {
+      "mon": "8am–10pm",
+      "tue": "8am–10pm",
+      "wed": "8am–10pm",
+      "thu": "8am–10pm",
+      "fri": "8am–10pm",
+      "sat": "9am–8pm",
+      "sun": "9am–7pm"
+    },
+    "day_pass": "$23 adult, $17 child under 13, $20 student",
+    "facilities": [
+      "training",
+      "yoga",
+      "shop",
+      "shoe-hire",
+      "parking"
+    ],
+    "sources": [
+      {
+        "url": "https://movementgyms.com/fort-worth/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://movementgyms.com/memberships-passes/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours from the Fort Worth page FAQ. Page: 'We do not offer rope climbing at this location' (our types list top-rope too). Gym page: unlimited yoga and fitness classes, fitness area, gear shop, free parking in front. Prices from the Fort Worth block of the chain memberships-passes page (purchase links /fort-worth/); shoes $6.",
+    "operating": "yes",
+    "official_address": "2828 W Lancaster Ave, Fort Worth, TX",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-159",
+    "name": "Sessions Climbing & Fitness",
+    "metro": null,
+    "expect_h": "fa4a4af0c45d1f39",
+    "website": null,
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [],
+    "status": "not-found",
+    "notes": "No official site found: WebSearch budget exhausted. sessionsclimbing.com is behind a Cloudflare block (403 to curl and WebFetch) so I could not confirm it is this gym; sessionsclimbingfitness.com and sessionsclimbingandfitness.com resolve to blank 'Coming Soon' pages. Not verified either way.",
+    "operating": "unknown",
+    "official_address": null,
+    "location": "unknown",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-160",
+    "name": "Siloville Climbing Gym",
+    "metro": null,
+    "expect_h": "e5f2280d915e0fd2",
+    "website": "https://www.siloville.com/",
+    "hours": null,
+    "day_pass": "$15 day pass (belay yourself), cash only; $20 1 climb + 1 zip line",
+    "facilities": null,
+    "sources": [
+      {
+        "url": "https://www.siloville.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "day_pass"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Site says 'Open most Saturdays 2-6pm' and appointments on other days (check Facebook/phone), so no regular weekly hours recorded. Climbing silos, bouldering gym, zip line, low ropes and ninja course; established 2015.",
+    "operating": "yes",
+    "official_address": "455 S. Elm St., Hico, Texas 76457",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  }
+]

@@ -1,0 +1,1305 @@
+[
+ {
+  "id": "g-0a49bf9b5c",
+  "name": "Bouldergate Ettiswil",
+  "metro": null,
+  "expect_h": "3cd0e6c1d8484d72",
+  "website": "https://www.bouldergate.ch/",
+  "hours": null,
+  "day_pass": "CHF 10 adult, CHF 8 student/apprentice",
+  "facilities": [
+   "training",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.bouldergate.ch/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.bouldergate.ch/infrastruktur",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.bouldergate.ch/preise",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.bouldergate.ch/kontakt",
+    "accessed": "2026-10-04",
+    "supports": []
+   }
+  ],
+  "status": "found",
+  "notes": "Club-run hall; members 24/7 by code, non-members buy a one-day single entry (register before each visit). No staffed/public hours published, so hours null. Day pass is Einzeleintritt CHF 10 (student/apprentice CHF 8). Training = Moonboard, campus/fingerboard; shoes CHF 5 (Finken).",
+  "operating": "yes",
+  "official_address": "Rütimatt 2, 6218 Ettiswil",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-60e15efebd",
+  "name": "CITY BOULDER",
+  "metro": null,
+  "expect_h": "2a221c45b72cbe46",
+  "website": "https://www.cityboulder.ch/",
+  "hours": {
+   "mon": "9am–10pm",
+   "tue": "9am–10pm",
+   "wed": "9am–10pm",
+   "thu": "9am–10pm",
+   "fri": "9am–10pm",
+   "sat": "9am–6pm",
+   "sun": "9am–6pm"
+  },
+  "day_pass": "CHF 22 adult, CHF 17 in training (17-28)",
+  "facilities": [
+   "shoe-hire",
+   "shop",
+   "kids",
+   "training",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://www.cityboulder.ch/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.cityboulder.ch/index.php/infos/oeffnungszeiten",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.cityboulder.ch/index.php/infos/anreise",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours Mon-Fri 9-22, Sat/Sun 9-18 (seasonal changes reserved). Prices since 1.11.2025. Training = Kilterboard (home page news). Shop = home page \"CITY BOULDER Shop\". Kids = Kinder im CITY BOULDER / Kinder- & Familienkurse on home page. Parking = Parkhaus (anreise page). Third-party listings with 11:00 opening are outdated vs official page.",
+  "operating": "yes",
+  "official_address": "Nidfeldstrasse 1, 6010 Kriens",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-a24b51f264",
+  "name": "Kletterhalle Wolhusen",
+  "metro": null,
+  "expect_h": "bfd1a3fe5bbdaa23",
+  "website": "https://fitness-wolhusen.com/gesundheit-leistung/kletterhalle_boulderraum/",
+  "hours": {
+   "mon": "9am–10pm",
+   "tue": "9am–10pm",
+   "wed": "9am–10pm",
+   "thu": "9am–5pm",
+   "fri": "9am–10pm",
+   "sat": "8am–6pm",
+   "sun": "8am–6pm"
+  },
+  "day_pass": "CHF 20 adult (non-member), CHF 15 SAC/Connection member",
+  "facilities": [
+   "showers",
+   "shoe-hire",
+   "kids",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://fitness-wolhusen.com/gesundheit-leistung/kletterhalle_boulderraum/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://fitness-wolhusen.com/wp-content/uploads/2024/05/rz_kletterhalle_preisliste_a4_240513-scaled.jpg",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.sac-entlebuch.ch/kletterhalle/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hall run by Connection Wolhusen with SAC Entlebuch. Thu hall reserved for KinderKlettern/JO from 17:00 (public 9-17 on Thu, except school holidays). Sat/Sun close 13:00 in summer/holidays (regular 8-18 used). Day pass from price list image dated 05/2024 (Einzeleintritt Externe Erwachsene CHF 20; members CHF 15); may be outdated. Showers incl. in entry (price list). Parking from SAC page (Parkplaetze vor dem Haus). Address from Connection Wolhusen AG contact block. Not geocoded (Nominatim rate-limited); pin is in Wolhusen.",
+  "operating": "yes",
+  "official_address": "Bergboden 7, 6110 Wolhusen",
+  "location": "address_missing",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-2baf6ac488",
+  "name": "Pilatus Indoor",
+  "metro": null,
+  "expect_h": "1a2ce80f979a4f87",
+  "website": "https://www.pilatusindoor.ch/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "9am–10pm",
+   "wed": "9am–10pm",
+   "thu": "9am–10pm",
+   "fri": "9am–10pm",
+   "sat": "9am–6pm",
+   "sun": "9am–6pm"
+  },
+  "day_pass": "CHF 28 adult (CHF 18 bouldering only), CHF 20 student",
+  "facilities": [
+   "showers",
+   "shoe-hire",
+   "shop",
+   "cafe",
+   "training",
+   "kids",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://www.pilatusindoor.ch/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.pilatusindoor.ch/index.php/infos/oe",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.pilatusindoor.ch/index.php/infos/preise",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.pilatusindoor.ch/index.php/infos/zahlen-fakten",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.pilatusindoor.ch/index.php/infos/anreise",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.pilatusindoor.ch/index.php/kurse/kinder-und-familien",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.pilatusindoor.ch/index.php/infos-unten/kontakt",
+    "accessed": "2026-10-04",
+    "supports": []
+   }
+  ],
+  "status": "found",
+  "notes": "Facilities from Zahlen & Fakten (Umkleidekabinen mit Duschen, kleiner Shop, Restaurant mit Loungebereich, Moonboard und Trainingsbereich, Mietmaterial Schuhe). Parking: paid parking (Parkticket via Twint) on anreise page. Reduced hours on public holidays.",
+  "operating": "yes",
+  "official_address": "Park 8, 6039 Root D4",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-bc40a35e0e",
+  "name": "C+ Urban Climbing",
+  "metro": null,
+  "expect_h": "7555972621589100",
+  "website": "https://cplus-climbing.ch/",
+  "hours": {
+   "mon": "2pm–10pm",
+   "tue": "2pm–10pm",
+   "wed": "2pm–10pm",
+   "thu": "5pm–10pm",
+   "fri": "Closed",
+   "sat": "10am–6pm",
+   "sun": "10am–6pm"
+  },
+  "day_pass": "CHF 24 adult, CHF 21 student (CHF 15 bouldering only)",
+  "facilities": [
+   "cafe",
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://cplus-climbing.ch/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://cplus-climbing.ch/horaires-et-prix/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://cplus-climbing.ch/bar/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://cplus-climbing.ch/contact/",
+    "accessed": "2026-10-04",
+    "supports": []
+   }
+  ],
+  "status": "found",
+  "notes": "Friday 8-22 is listed but marked closed to the public (only annual adult subscribers, companies, events, schools), so public Friday = Closed (judgement call). Mon-Wed 14-22, Thu 17-22 per hours page; holidays 12-18. Day pass 'Entree a la salle' CHF 24 adult, student CHF 21 (to age 25); bloc-only CHF 15 adult. Kids = 'espaces enfants' on home page. Not geocoded (Nominatim rate-limited); pin is at the Colombier aerodrome area, consistent with Plaine d'Areuse.",
+  "operating": "yes",
+  "official_address": "Plaine d'Areuse 11, 2013 Colombier",
+  "location": "address_missing",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-7ba00f6381",
+  "name": "ARANEA+ Kletterzentrum",
+  "metro": null,
+  "expect_h": "4f55159de02d71b5",
+  "website": "https://www.aranea.ch/aranea/",
+  "hours": {
+   "mon": "9:30am–10:30pm",
+   "tue": "9:30am–10:30pm",
+   "wed": "9:30am–10:30pm",
+   "thu": "9:30am–10:30pm",
+   "fri": "9:30am–10:30pm",
+   "sat": "9:30am–6pm",
+   "sun": "9:30am–6pm"
+  },
+  "day_pass": "CHF 26 adult (CHF 22 bouldering only)",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://www.aranea.ch/aranea/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://www.aranea.ch/aranea/oeffnungszeiten/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.aranea.ch/klettern/preise/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.aranea.ch/gruppen/bistro/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.aranea.ch/aranea/neuhier/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.aranea.ch/aranea/lageplan/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Official hours page: Mon-Fri 9:30-22:30 (bistro page says to 23:00; hours page used). Prices valid from 1.1.2024: Einzel adult CHF 26 climbing+bouldering, bouldering only CHF 22 (includes training area incl. Kilterboard). Kids = discounted kids prices and Kinderboulderraum/Kindergeburtstag in site navigation. Parking: 10 free spaces. Navigation address Amsler-Laffon-Strasse 4 (entrance); postal Ebnatstrasse 65.",
+  "operating": "yes",
+  "official_address": "Ebnatstrasse 65, 8200 Schaffhausen",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-12a98088ff",
+  "name": "Spinnerei Indoor",
+  "metro": null,
+  "expect_h": "bda24014334a44ea",
+  "website": "https://www.spinnerei-indoor.ch/",
+  "hours": {
+   "mon": "11am–10pm",
+   "tue": "11am–10pm",
+   "wed": "11am–10pm",
+   "thu": "11am–10pm",
+   "fri": "9am–10pm",
+   "sat": "10am–6pm",
+   "sun": "10am–6pm"
+  },
+  "day_pass": "CHF 20 adult, CHF 17 reduced",
+  "facilities": [
+   "cafe",
+   "shoe-hire",
+   "kids",
+   "training"
+  ],
+  "sources": [
+   {
+    "url": "https://www.spinnerei-indoor.ch/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.spinnerei-indoor.ch/boulder",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Playground (Spielplatz) closes 18:00. Reduced = youth 13-19, students, apprentices, AHV. Bistro (coffee, snacks). Training area 110 m2 with Moonboard.",
+  "operating": "yes",
+  "official_address": "Assetstrasse 35, 6438 Ibach SZ",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-fac6ece162",
+  "name": "bimano solothurn",
+  "metro": null,
+  "expect_h": "7ef75e2ff3d4bbb6",
+  "website": "https://bimanosolothurn.ch/",
+  "hours": {
+   "mon": "5am–10pm",
+   "tue": "5am–10pm",
+   "wed": "5am–10pm",
+   "thu": "5am–10pm",
+   "fri": "5am–10pm",
+   "sat": "9am–6pm",
+   "sun": "9am–6pm"
+  },
+  "day_pass": "CHF 20 adult, CHF 16 student/apprentice",
+  "facilities": [
+   "cafe",
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://bimanosolothurn.ch/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://bimanosolothurn.ch/oeffnungszeiten",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://bimanosolothurn.ch/preise",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://bimanosolothurn.ch/kinder",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Weekdays digital (badge/QR ticket) entry 5:00-17:00, staffed till and bar 17:00-22:00; weekends 9-18 (summer 1.6.-4.9.26 weekends all-day badge). Table hours 5am-10pm used. Bistro with beer and snacks.",
+  "operating": "yes",
+  "official_address": "Schöngrünstrasse 58, 4500 Biberist",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-63a42146f7",
+  "name": "Boulder Box",
+  "metro": null,
+  "expect_h": "83179cf665f2e950",
+  "website": "https://www.boulderbox.ch/",
+  "hours": {
+   "mon": "7am–10:30pm",
+   "tue": "7am–10:30pm",
+   "wed": "7am–10:30pm",
+   "thu": "7am–10:30pm",
+   "fri": "7am–10:30pm",
+   "sat": "7am–10:30pm",
+   "sun": "7am–10:30pm"
+  },
+  "day_pass": "CHF 10 adult",
+  "facilities": [
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.boulderbox.ch/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.boulderbox.ch/Boulderbox/Offnungszeiten.html",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.tennishalle.ch/sport/boulder-box/",
+    "accessed": "2026-10-04",
+    "supports": []
+   }
+  ],
+  "status": "found",
+  "notes": "Association hall inside the Tennis- & Eventhalle Toggenburg; open daily 7:00-22:30, unattended (Boulderhalle unbetreut). Single CHF 10 adult. Kids = Boulder Kids courses and kids routes. Address from boulderbox.ch / tennishalle.ch. Not geocoded (rate-limited); pin is in Unterwasser.",
+  "operating": "yes",
+  "official_address": "Hauptstrasse 14, 9657 Unterwasser",
+  "location": "address_missing",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-d6954fb26c",
+  "name": "Boulderlounge St. Gallen",
+  "metro": null,
+  "expect_h": "8f7825f0c2057877",
+  "website": "https://www.boulderlounge.ch/st-gallen/",
+  "hours": {
+   "mon": "11:30am–10:30pm",
+   "tue": "11:30am–10:30pm",
+   "wed": "11:30am–10:30pm",
+   "thu": "11:30am–10:30pm",
+   "fri": "11:30am–10:30pm",
+   "sat": "10am–8pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": "CHF 20 adult, CHF 17 student (16-25)",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://www.boulderlounge.ch/st-gallen/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.boulderlounge.ch/st-gallen/zeiten/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.boulderlounge.ch/st-gallen/preise/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.boulderlounge.ch/st-gallen/kinder-familie/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.boulderlounge.ch/st-gallen/anfahrt/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Single entry normal CHF 20 adult; early rate before 15:00 Mon-Fri CHF 17. Subscribers may use the hall from 05:45. Bistro, Moonboard/Kilterboard, training area, kids area, 25 free parking spaces.",
+  "operating": "yes",
+  "official_address": "Zürcherstr. 160, 9014 St. Gallen",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-771f03fa19",
+  "name": "Kletterzentrum St. Gallen",
+  "metro": null,
+  "expect_h": "7a994311dbacfa86",
+  "website": "https://kletterzentrum-sg.ch/",
+  "hours": {
+   "mon": "9am–10pm",
+   "tue": "9am–10pm",
+   "wed": "9am–10pm",
+   "thu": "9am–10pm",
+   "fri": "9am–10pm",
+   "sat": "9am–6pm",
+   "sun": "9am–6pm"
+  },
+  "day_pass": "CHF 30 adult (CHF 24 bouldering only), CHF 22 age 11-18",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "shop",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://kletterzentrum-sg.ch/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://kletterzentrum-sg.ch/infos/oeffnungszeiten/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://kletterzentrum-sg.ch/infos/preise/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://kletterzentrum-sg.ch/infos/neu-hier/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://kletterzentrum-sg.ch/infos/",
+    "accessed": "2026-10-04",
+    "supports": []
+   }
+  ],
+  "status": "found",
+  "notes": "www.kletterhalle.ch redirects to kletterzentrum-sg.ch. Einzeleintritt rope climbing incl. bouldering/toppas/fitness CHF 30 adult; bouldering+toppas CHF 24. Kinderhort Wed/Sun 9-13; Bistro; Klettershop (discount mention); 26 paid parking spaces. Fitness included in all prices.",
+  "operating": "yes",
+  "official_address": "Edisonstrasse 9, 9015 St. Gallen",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-5668571748",
+  "name": "Sparta Bouldering",
+  "metro": null,
+  "expect_h": "6725b164d8417e22",
+  "website": "https://sparta-bouldering.com/",
+  "hours": {
+   "mon": "11:30am–10:30pm",
+   "tue": "11:30am–10:30pm",
+   "wed": "9am–10:30pm",
+   "thu": "11:30am–10:30pm",
+   "fri": "11:30am–10:30pm",
+   "sat": "9:30am–6pm",
+   "sun": "9:30am–6pm"
+  },
+  "day_pass": "CHF 22 adult, CHF 16.50 senior/youth/student",
+  "facilities": [
+   "cafe",
+   "kids",
+   "shoe-hire",
+   "training"
+  ],
+  "sources": [
+   {
+    "url": "https://sparta-bouldering.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://sparta-bouldering.com/impressum/",
+    "accessed": "2026-10-04",
+    "supports": []
+   }
+  ],
+  "status": "found",
+  "notes": "Price list valid from 1.1.2026; Mo-Fr before 15:00 CHF 17 adult. Bistro and kids play area stated on home page; \"Boulder- und Trainingsflaeche\" and Kilterboard abo mentioned.",
+  "operating": "yes",
+  "official_address": "Fabrikstrasse 16, 9470 Buchs",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-ace906808b",
+  "name": "Kletterhalle SAC Bodan",
+  "metro": null,
+  "expect_h": "777e527b0deeafbd",
+  "website": "https://sac-bodan.ch/kletterhalle/",
+  "hours": null,
+  "day_pass": "CHF 5 non-members (SAC Bodan members free)",
+  "facilities": [
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://sac-bodan.ch/kletterhalle/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "SAC section hall (not a commercial gym) but non-members can pay a single entry CHF 5 (status 01.01.2026), so counted as operating. Evening hours only: Mon 19-20:30 (youth 12+), Tue 19-21, Wed 19-20:30 (Apr-Nov), Thu 19-21, Fri 19-21; Sat/Sun not stated; closed in school and public holidays; hours left null because not all 7 days stated. Kinderklettern Wed afternoon. Address on page: Seetalstrasse 41A (Stutz AG hall). Not geocoded (rate-limited); pin is in Kreuzlingen.",
+  "operating": "yes",
+  "official_address": "Seetalstrasse 41A, Kreuzlingen",
+  "location": "address_missing",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-46ed95f76b",
+  "name": "thurclimb",
+  "metro": null,
+  "expect_h": "ca0dbc500cd898ae",
+  "website": "https://www.thurclimb.ch/",
+  "hours": null,
+  "day_pass": "CHF 16 adult (CHF 10 bouldering only)",
+  "facilities": [
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.thurclimb.ch/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.thurclimb.ch/preise-und-tarife/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.thurclimb.ch/%C3%BCber-uns-1/lageplan/",
+    "accessed": "2026-10-04",
+    "supports": []
+   }
+  ],
+  "status": "found",
+  "notes": "Club hall. Opening hours given only Mon 19-22, Tue closed (Jugendabend), Wed-Fri 17-22; Sat/Sun not stated, so hours left null. Single entry adult CHF 16, bouldering CHF 10; rental Kletterfinken CHF 8 adult. Kids = Kindertraining and kids prices. Navigation address Paul-Reinhartstrasse 11, Weinfelden (hall opposite the Hallenbad). Not geocoded (rate-limited); pin is at Weinfelden station area.",
+  "operating": "yes",
+  "official_address": "Paul-Reinhartstrasse 11, Weinfelden",
+  "location": "address_missing",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-fcab43fa8c",
+  "name": "Alpha Boulder",
+  "metro": null,
+  "expect_h": "4f9e6793e0001a0f",
+  "website": "https://www.alphaboulder.ch/en/",
+  "hours": {
+   "mon": "12pm–9pm",
+   "tue": "12pm–10pm",
+   "wed": "12pm–10pm",
+   "thu": "12pm–10pm",
+   "fri": "12pm–9pm",
+   "sat": "4pm–7pm",
+   "sun": "4pm–7pm"
+  },
+  "day_pass": "CHF 16 adult, CHF 13 student",
+  "facilities": [
+   "training",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.alphaboulder.ch/en/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://api.alphaboulder.ch/v1/site",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours are loaded by the page from the gym's own API (api.alphaboulder.ch/v1/site): winter schedule (from 2026-08-31, follows school calendar) used; summer (17.06-30.08) differs (Mon 16-21, Wed 16-22, Fri 16-21). Training = Moonboard, Pangullich, warm-up/strength area. Kids courses from age 6. Shoe rental listed only under outdoor-session equipment rental, so shoe-hire not claimed.",
+  "operating": "yes",
+  "official_address": "Viale Stazione 19, 6512 Giubiasco",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-b887ca86ea",
+  "name": "Granit Indoor",
+  "metro": null,
+  "expect_h": "44ef7b7debfe2d73",
+  "website": "https://www.granitindoor.ch/",
+  "hours": {
+   "mon": "6am–9pm",
+   "tue": "6am–9pm",
+   "wed": "6am–9pm",
+   "thu": "6am–9pm",
+   "fri": "6am–9pm",
+   "sat": "6am–9pm",
+   "sun": "7am–9pm"
+  },
+  "day_pass": "CHF 15 adult, CHF 10 in training (16-25)",
+  "facilities": [
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://www.granitindoor.ch/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://www.granitindoor.ch/bouldern/preise-und-oeffnungszeiten",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "day_pass"
+    ]
+   },
+   {
+    "url": "https://www.granitindoor.ch/kontakt",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Association hall; members 24/7 by badge; single-entry visitors collect a badge at the Landi Schattdorf fuel-station shop, hours Mon-Sat 6-21, Sun 7-21. Geocoded official address matches pin (~0.01 km, Nominatim).",
+  "operating": "yes",
+  "official_address": "Rüttistrasse 65, 6467 Schattdorf",
+  "location": "address_missing",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-5ab53036a3",
+  "name": "Vertic-Halle Baltschieder",
+  "metro": null,
+  "expect_h": "0d1187e1b2fddded",
+  "website": "https://www.vertic-halle.ch/de/baltschieder",
+  "hours": {
+   "mon": "9am–10pm",
+   "tue": "9am–10pm",
+   "wed": "9am–10pm",
+   "thu": "9am–10pm",
+   "fri": "9am–10pm",
+   "sat": "9am–8pm",
+   "sun": "9am–8pm"
+  },
+  "day_pass": "CHF 18 adult (bouldering and auto-belay), CHF 15 student",
+  "facilities": [
+   "training",
+   "kids",
+   "cafe",
+   "showers",
+   "shoe-hire",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://www.vertic-halle.ch/de/baltschieder",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.vertic-halle.ch/en/baltschieder/rates",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.vertic-halle.ch/en/baltschieder/directions",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Winter (Oct-May) hours used; summer (Jun-Sep) Mon-Fri opens 10am. Day pass covers bouldering + auto-belay areas (student to age 25). Bistro, single showers, Moonboard/training area, kids area stated on overview page. Parking: spaces reserved for clients (shared lot). The directions page mentions the entrance of Monthey in its parking text (copy error on their site).",
+  "operating": "yes",
+  "official_address": "Eschigrund 4, 3937 Baltschieder",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-61bc114f2c",
+  "name": "Vertic-Halle Monthey",
+  "metro": null,
+  "expect_h": "9c4e219c15749f13",
+  "website": "https://www.vertic-halle.ch/en/monthey",
+  "hours": {
+   "mon": "9am–10pm",
+   "tue": "9am–10pm",
+   "wed": "9am–10pm",
+   "thu": "9am–10pm",
+   "fri": "9am–10pm",
+   "sat": "9am–8pm",
+   "sun": "9am–8pm"
+  },
+  "day_pass": "CHF 18 adult (bouldering), CHF 15 student/guide/retiree",
+  "facilities": [
+   "training",
+   "kids",
+   "cafe",
+   "showers",
+   "shoe-hire",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://www.vertic-halle.ch/en/monthey",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.vertic-halle.ch/en/monthey/rates",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.vertic-halle.ch/en/monthey/directions",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Winter (Oct-May) hours used; summer (Jun-Sep) Mon-Fri opens 10am. Cafe key from \"reception area offers drinks and snacks\" (judgement call). Training room with moonboard; a yoga zone with mats is mentioned but no classes, so yoga not claimed. Fun Park for kids.",
+  "operating": "yes",
+  "official_address": "Route du Triboulet 10, 1870 Monthey",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-fb60f89fa9",
+  "name": "Vertic-Halle Saxon",
+  "metro": null,
+  "expect_h": "f03f9c67eac7a1bb",
+  "website": "https://www.vertic-halle.ch/en/saxon",
+  "hours": {
+   "mon": "9am–10pm",
+   "tue": "9am–10pm",
+   "wed": "9am–10pm",
+   "thu": "9am–10pm",
+   "fri": "9am–10pm",
+   "sat": "9am–8pm",
+   "sun": "9am–8pm"
+  },
+  "day_pass": "CHF 26 adult (whole gym), CHF 18 bouldering only, CHF 21 student",
+  "facilities": [
+   "training",
+   "kids",
+   "cafe",
+   "showers",
+   "shop",
+   "shoe-hire",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://www.vertic-halle.ch/en/saxon",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.vertic-halle.ch/en/saxon/rates",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.vertic-halle.ch/en/saxon/directions",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Winter (Oct-May) hours used; summer (Jun-Sep) Mon-Fri opens 10am. Day pass: whole gym CHF 26 adult/CHF 21 student; auto-belay CHF 23; bouldering CHF 18. Cafe key from \"reception area offers drinks and snacks\" (judgement call); boutique with Look Montagne; showers. Address from site footer. Not geocoded (rate-limited); pin is in the Saxon industrial zone.",
+  "operating": "yes",
+  "official_address": "Ch. de la Plâtrière 25D, 1907 Saxon",
+  "location": "address_missing",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-e16b22c855",
+  "name": "Escalade Chavornay",
+  "metro": null,
+  "expect_h": "6cf749121e84f46f",
+  "website": "https://www.escalade-chavornay.ch/",
+  "hours": {
+   "mon": "5pm–10pm",
+   "tue": "5pm–10pm",
+   "wed": "2pm–10pm",
+   "thu": "5pm–10pm",
+   "fri": "5pm–10pm",
+   "sat": "2pm–7pm",
+   "sun": "2pm–6pm"
+  },
+  "day_pass": "CHF 22 adult (wall), CHF 18 student",
+  "facilities": [
+   "cafe",
+   "shop",
+   "kids",
+   "training",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.escalade-chavornay.ch/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.escalade-chavornay.ch/tarifs/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.escalade-chavornay.ch/presentation/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours are for non-subscribers; holders of the 'Pass quand tu veux' can enter 8-22 daily. Entry CHF 22 adult for the wall (auto-belay+bouldering CHF 18, bouldering only CHF 12). Bar, boutique, salle de renforcement, kids courses, shoes CHF 4.",
+  "operating": "yes",
+  "official_address": "Rue de l'industrie 18, 1373 Chavornay",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-5dd3c45930",
+  "name": "Grimper.ch Villeneuve",
+  "metro": null,
+  "expect_h": "ce04ca9a806a0d0a",
+  "website": "https://www.grimper.ch/salles-descalade/villeneuve/",
+  "hours": {
+   "mon": "9am–10:30pm",
+   "tue": "9am–10:30pm",
+   "wed": "9am–10:30pm",
+   "thu": "9am–10:30pm",
+   "fri": "9am–10:30pm",
+   "sat": "9am–8pm",
+   "sun": "9am–8pm"
+  },
+  "day_pass": "CHF 28 adult, CHF 22 age 17-25/AVS",
+  "facilities": [
+   "kids",
+   "training",
+   "cafe",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.grimper.ch/salles-descalade/villeneuve/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Entree individuelle adult CHF 28 (17-25 and AVS CHF 22). Separate package auto-belay+bouldering incl. shoes and harness CHF 33 adult. Kids areas, training/warm-up areas and bar stated on the hall page; shoes CHF 6 (over 10 years).",
+  "operating": "yes",
+  "official_address": "Zone Industrielle D 107, 1844 Villeneuve",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-cb911a31d1",
+  "name": "La Pile",
+  "metro": null,
+  "expect_h": "6a7117b12d2b3b1c",
+  "website": "https://lapile.ch/",
+  "hours": {
+   "mon": "2:30pm–10:30pm",
+   "tue": "10am–10:30pm",
+   "wed": "10am–10:30pm",
+   "thu": "10am–10:30pm",
+   "fri": "10am–10:30pm",
+   "sat": "8:30am–8pm",
+   "sun": "8:30am–8pm"
+  },
+  "day_pass": "CHF 17 adult, CHF 14 reduced",
+  "facilities": [
+   "cafe",
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://lapile.ch/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://lapile.ch/acces-et-horaires/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://lapile.ch/tarifs-et-cours/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://lapile.ch/enfants/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Prices are in an image on the Tarifs page (upload 2026/09): Entree simple adult CHF 17, reduced (student, AVS/AI, guide) CHF 14, shoes CHF 5. Hours adapted seasonally (Mondays in Vaud school holidays open from 10:00). Zone kids and bar-restaurant stated on home page.",
+  "operating": "yes",
+  "official_address": "Avenue de Grandson 48, 1400 Yverdon-les-Bains",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-708d82e3b9",
+  "name": "TOTEM Gland",
+  "metro": null,
+  "expect_h": "075d340a61e1042b",
+  "website": "https://totem.ch/gland",
+  "hours": {
+   "mon": "10am–10:30pm",
+   "tue": "10am–10:30pm",
+   "wed": "10am–10:30pm",
+   "thu": "10am–10:30pm",
+   "fri": "10am–10:30pm",
+   "sat": "1:30pm–8pm",
+   "sun": "1:30pm–8pm"
+  },
+  "day_pass": "CHF 18 adult, CHF 16 student/AVS",
+  "facilities": [
+   "cafe",
+   "shoe-hire",
+   "kids",
+   "yoga",
+   "training"
+  ],
+  "sources": [
+   {
+    "url": "https://totem.ch/gland",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://totem.ch/gland/tarifs",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://totem.ch/gland/adultes",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://totem.ch/gland/kids",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours from the page JSON-LD (Mo-Fr 10:00-22:30, Sa-Su 13:30-20:00) and its live badge. Entree 1x adult CHF 18; Happy hour 10-14 Mon-Fri CHF 13.50. Yoga studio with weekly classes at Gland; fitness access stated in passes. JSON-LD geo matches our pin (~15 m).",
+  "operating": "yes",
+  "official_address": "Avenue du Mont-Blanc 38, 1196 Gland",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ }
+]

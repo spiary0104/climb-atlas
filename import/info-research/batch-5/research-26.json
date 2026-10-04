@@ -1,0 +1,1234 @@
+[
+  {
+    "id": "seed-992",
+    "name": "Bremerhaven Boulder Club",
+    "metro": null,
+    "expect_h": "9236ff7cbab5e733",
+    "website": "https://www.bremerhaven-boulderclub.de/",
+    "hours": null,
+    "day_pass": "€10 adult, €9 reduced",
+    "facilities": [
+      "shoe-hire",
+      "parking",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://www.bremerhaven-boulderclub.de/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.bremerhaven-boulderclub.de/impressum.html",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours stated only for Tue 5pm-7pm, Thu 5pm-7pm, Sun 4pm-6pm (members have own near-24/7 access); other days not stated, so hours left null rather than inferring Closed. Price list undated (site notes new hours from 11.08.2025). Our pin is ~1.7 km south of the real address.",
+    "operating": "yes",
+    "official_address": "Moltkestraße 13, 27576 Bremerhaven",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-1043",
+    "name": "Linie7",
+    "metro": null,
+    "expect_h": "5a8f264bf73e67d2",
+    "website": "https://www.linie7.com/",
+    "hours": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "10am–10pm",
+      "sun": "10am–10pm"
+    },
+    "day_pass": "€13 adult, €9.50 reduced",
+    "facilities": [
+      "shoe-hire",
+      "shop",
+      "yoga",
+      "parking"
+    ],
+    "sources": [
+      {
+        "url": "https://www.linie7.com/linie7_cms/oeffnungszeiten/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.linie7.com/linie7_cms/preise-ab-dezember/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.linie7.com/linie7_cms/anfahrt/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.linie7.com/linie7_cms/yoga/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours 10-22 daily; a Tue/Thu until 23:00 summer extension (8 Jul-9 Oct 2025) ignored as temporary. Price page URL is \"preise-ab-dezember\" (undated, mentions Wellhub so recent). Yoga by arrangement (min 2 people). Parking: 19 free spaces behind the hall. Pin matches (0.2 km).",
+    "operating": "yes",
+    "official_address": "Beim Handelsmuseum Tor 43, 28195 Bremen",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-1063",
+    "name": "UNTERWEGS - DAV Kletterzentrum Bremen",
+    "metro": null,
+    "expect_h": "f9da7ade3c2456e9",
+    "website": "https://www.alpenverein-bremen.de/kletterzentrum",
+    "hours": {
+      "mon": "10am–10:30pm",
+      "tue": "10am–10:30pm",
+      "wed": "10am–10:30pm",
+      "thu": "10am–10:30pm",
+      "fri": "10am–10:30pm",
+      "sat": "10am–9pm",
+      "sun": "10am–9pm"
+    },
+    "day_pass": null,
+    "facilities": [
+      "cafe",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://www.alpenverein-bremen.de/kletterzentrum",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      },
+      {
+        "url": "https://www.alpenverein-bremen.de/kletterzentrum/facts/oeffnungszeiten",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.alpenverein-bremen.de/kletterzentrum/service/bistro",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.alpenverein-bremen.de/kletterzentrum/service/verleih",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.alpenverein-bremen.de/kletterzentrum/facts/kontakt",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Mo-Fr 10:00-22:30, Sa/So/holidays 10:00-21:00 per the DAV Bremen hours page (a search snippet from another domain showed different, older-looking hours; not used). Public welcome (FAQ: all welcome, non-members pay guest rates). Price page is a dynamic widget with no readable price, so day_pass null. Our pin is ~5.9 km SW of the real address (Horn-Lehe, Bremen).",
+    "operating": "yes",
+    "official_address": "Robert-Hooke-Straße 19, 28359 Bremen",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-964",
+    "name": "Block Barock",
+    "metro": null,
+    "expect_h": "33021e94e6e962dd",
+    "website": "https://block-barock.de/",
+    "hours": {
+      "mon": "10am–11pm",
+      "tue": "10am–11pm",
+      "wed": "10am–11pm",
+      "thu": "10am–11pm",
+      "fri": "10am–11pm",
+      "sat": "10am–11pm",
+      "sun": "10am–11pm"
+    },
+    "day_pass": "€13.90 adult, €10.90 reduced",
+    "facilities": [
+      "cafe",
+      "shoe-hire",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://block-barock.de/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://block-barock.de/oeffnungszeiten/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      },
+      {
+        "url": "https://block-barock.de/preise/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://block-barock.de/impressum/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Block Barock is in FULDA (Kreuzbergstraße 40, 36043 Fulda), not Kassel; our pin is ~87 km north in Kassel. Homepage mentions Bistro Barock (cafe) and a Kinderbereich; shoe hire 3.50 on price page.",
+    "operating": "yes",
+    "official_address": "Kreuzbergstraße 40, 36043 Fulda",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-1010",
+    "name": "Element Boulders Kassel",
+    "metro": null,
+    "expect_h": "416d55c0a76e7e48",
+    "website": "https://kassel.element-boulders.de/",
+    "hours": {
+      "mon": "3pm–11pm",
+      "tue": "9am–11pm",
+      "wed": "9am–11pm",
+      "thu": "9am–11pm",
+      "fri": "9am–11pm",
+      "sat": "9am–11pm",
+      "sun": "9am–11pm"
+    },
+    "day_pass": "€16 adult at the desk (€15 online), €13 reduced",
+    "facilities": [
+      "cafe",
+      "training",
+      "kids",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://kassel.element-boulders.de/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      },
+      {
+        "url": "https://kassel.element-boulders.de/preise-oeffnungszeiten.html",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://kassel.element-boulders.de/halleninfos.html",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://kassel.element-boulders.de/impressum.html",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Mon 15:00-23:00, Tue-Sun 09:00-23:00. Bistro & Lounge, 150 m2 training area (Kilter, campus board), 400 m2 family area and Leihschuhe all stated. Pin ~2.1 km from the real address (same city).",
+    "operating": "yes",
+    "official_address": "Untere Königsstraße 95, 34117 Kassel",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-1030",
+    "name": "Kletterhalle Willingen",
+    "metro": null,
+    "expect_h": "b81036b5191610de",
+    "website": "https://kletterhalle-willingen.de/",
+    "hours": {
+      "mon": "Closed",
+      "tue": "10am–10pm",
+      "wed": "2pm–6pm",
+      "thu": "10am–10pm",
+      "fri": "2pm–6pm",
+      "sat": "10am–7pm",
+      "sun": "9am–6pm"
+    },
+    "day_pass": "€11 climbing incl. bouldering, €7 bouldering only",
+    "facilities": [
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://kletterhalle-willingen.de/Klettern",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      },
+      {
+        "url": "https://kletterhalle-willingen.de/Oeffnungszeiten",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      },
+      {
+        "url": "https://kletterhalle-willingen.de/Preise",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://kletterhalle-willingen.de/Impressum",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Site asks visitors to reserve a time by phone first. Monday explicitly \"Geschlossen\". Price list undated. Hall is in Willingen (Upland), Stryck district; our pin is ~1.7 km off, in the village centre.",
+    "operating": "yes",
+    "official_address": "Zur Hoppecke 9, 34508 Willingen (Upland)",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-1036",
+    "name": "Kletterzentrum Kassel Vertical World",
+    "metro": null,
+    "expect_h": "643f6ec56efdd1ac",
+    "website": null,
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [],
+    "status": "flag",
+    "notes": "Vertical World Kassel (Lilienthalstraße 23, 34123 Kassel). Official domain verticalworld.de returns HTTP 500 for every fetch (www and bare), so no page could be read. Web-search result excerpts (not fetched; mamilade and others) state the hall closed permanently on 17 Aug 2024 after about 25 years and cite a closure notice on the official site; treated as closed on that basis, but I could not read the notice myself. Pin ~3.4 km from the address.",
+    "operating": "closed",
+    "official_address": "Lilienthalstraße 23, 34123 Kassel",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-1037",
+    "name": "Kletterzentrum Nordhessen",
+    "metro": null,
+    "expect_h": "2b8894c18d32ec99",
+    "website": "https://www.kletterzentrum-nordhessen.de/",
+    "hours": {
+      "mon": "1pm–10:45pm",
+      "tue": "10am–10:45pm",
+      "wed": "1pm–10:45pm",
+      "thu": "10am–10:45pm",
+      "fri": "10am–10:45pm",
+      "sat": "10am–9:45pm",
+      "sun": "10am–9:45pm"
+    },
+    "day_pass": "€17 adult climbing & bouldering, €13 bouldering only",
+    "facilities": [
+      "cafe",
+      "training",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://www.kletterzentrum-nordhessen.de/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.kletterzentrum-nordhessen.de/info/preise.html",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass"
+        ]
+      },
+      {
+        "url": "https://www.kletterzentrum-nordhessen.de/die-halle/bistro.html",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.kletterzentrum-nordhessen.de/die-halle/boulderbereich.html",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.kletterzentrum-nordhessen.de/info/kontakt-anfahrt.html",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "DAV Sektion Kassel hall, open to guests (Gäste price table). Day pass = guest adult Kletterkarte 17 / Boulderkarte 13 (columns Jugend 14-17, Erwachsene, Kinder). Price list undated. Bistro, training area (campus board etc.) and the small boulder hall for children/groups are stated. A search snippet showed older hours; the official homepage hours are used. Pin ~3.3 km from the real address.",
+    "operating": "yes",
+    "official_address": "Johanna-Waescher-Str. 4, 34131 Kassel",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-1042",
+    "name": "Level 8",
+    "metro": null,
+    "expect_h": "9a385522a665c0cf",
+    "website": "https://levelacht.de/",
+    "hours": {
+      "mon": "2pm–10:30pm",
+      "tue": "10am–10:30pm",
+      "wed": "10am–10:30pm",
+      "thu": "10am–10:30pm",
+      "fri": "10am–10:30pm",
+      "sat": "10am–10:30pm",
+      "sun": "10am–9pm"
+    },
+    "day_pass": "€12.90 adult, €10.90 reduced",
+    "facilities": [
+      "cafe",
+      "training",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://levelacht.de/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours and prices both from the homepage (Sportbetrieb ends 10 min before closing; temporary anniversary hours ignored). Our pin is ~1.5 km east of the real address (Lehmweg 10, Weststadt). Site gives postcode 35398.",
+    "operating": "yes",
+    "official_address": "Lehmweg 10, 35398 Gießen",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-959",
+    "name": "45 Grad",
+    "metro": null,
+    "expect_h": "7b2c56f6a0ace434",
+    "website": "https://45grad.ro/",
+    "hours": {
+      "mon": "11am–10pm",
+      "tue": "11am–10pm",
+      "wed": "11am–10pm",
+      "thu": "11am–10pm",
+      "fri": "11am–10pm",
+      "sat": "10am–9pm",
+      "sun": "10am–9pm"
+    },
+    "day_pass": "€12.90 adult, €10.90 reduced",
+    "facilities": [
+      "cafe",
+      "training",
+      "shop",
+      "shoe-hire",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://45grad.ro/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://45grad.ro/boulderhalle/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://45grad.ro/impressum/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Mon-Fri 11:00-22:00, Sa/Su/holidays 10:00-21:00. Gastro area, Klettershop, training area, shoe/chalk hire, kids from 4 and birthday parties stated. Pin ~2.6 km east of the real address (Hafen City / Bramow).",
+    "operating": "yes",
+    "official_address": "Am Kayenmühlengraben 2, 18057 Rostock",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-1012",
+    "name": "Felshelden",
+    "metro": null,
+    "expect_h": "aad5dc5986c9fec0",
+    "website": "https://www.felshelden.de/",
+    "hours": {
+      "mon": "12pm–10pm",
+      "tue": "12pm–10pm",
+      "wed": "12pm–10pm",
+      "thu": "12pm–10pm",
+      "fri": "12pm–10pm",
+      "sat": "10am–9pm",
+      "sun": "10am–9pm"
+    },
+    "day_pass": "€12 adult, €10 reduced",
+    "facilities": [
+      "shoe-hire",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://www.felshelden.de/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.felshelden.de/preise",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.felshelden.de/infos-faq",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Homepage price block (11/9) differs from the dedicated Preise page (12/10); used the Preise page. Price page undated, footer 2025. Felshelden is in WARNEMUENDE (Zum Zollamt 4, in the Dock Inn building), ~9 km north of our pin in Rostock centre.",
+    "operating": "yes",
+    "official_address": "Zum Zollamt 4, 18119 Rostock-Warnemünde",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-1016",
+    "name": "Greifsbloc",
+    "metro": null,
+    "expect_h": "530a9d38a3c0f085",
+    "website": null,
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [],
+    "status": "not-found",
+    "notes": "Greifsbloc e.V. (club hall). No reachable official site: greifsbloc.de has no host; the club site listed in directories (greifsbloc.jimdo.com) fails the TLS handshake from curl, node and WebFetch, so nothing could be read. Other pages (greifswald.de directory, Facebook) are not allowed sources. Directory snippets give Grimmer Straße 11-14, Greifswald (~2 km from our pin) but this was not verified on an official page.",
+    "operating": "unknown",
+    "official_address": null,
+    "location": "unknown",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-1018",
+    "name": "Grips Boulderhalle Greifswald",
+    "metro": null,
+    "expect_h": "5bf16bd40a8eb986",
+    "website": "https://grips-boulderhalle.de/",
+    "hours": {
+      "mon": "1pm–10pm",
+      "tue": "1pm–10pm",
+      "wed": "1pm–10pm",
+      "thu": "1pm–10pm",
+      "fri": "10am–9pm",
+      "sat": "10am–9pm",
+      "sun": "10am–9pm"
+    },
+    "day_pass": "€13 adult, €11 reduced",
+    "facilities": [
+      "cafe",
+      "shoe-hire",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://grips-boulderhalle.de/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours stated as Mo-Do 13-22, Fr/weekend/holidays 10-21. Cafe & garden, rental equipment (Leihausrüstung tab, Leihschuhe in courses) and Kletterkids groups on the homepage. Pin ~1.5 km north of the real address (Am Gorzberg 16).",
+    "operating": "yes",
+    "official_address": "Am Gorzberg 16, 17489 Greifswald",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-977",
+    "name": "Boulderhalle Beta",
+    "metro": null,
+    "expect_h": "2e60f46979270346",
+    "website": "https://boulderhalle-beta.de/",
+    "hours": {
+      "mon": "10am–11pm",
+      "tue": "10am–11pm",
+      "wed": "10am–11pm",
+      "thu": "10am–11pm",
+      "fri": "10am–11pm",
+      "sat": "9am–10pm",
+      "sun": "9am–10pm"
+    },
+    "day_pass": "€14 adult, €11.50 reduced",
+    "facilities": [
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://boulderhalle-beta.de/besuch-planen/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      },
+      {
+        "url": "https://boulderhalle-beta.de/besuch-planen/oeffnungszeiten/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      },
+      {
+        "url": "https://boulderhalle-beta.de/besuch-planen/preise/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://boulderhalle-beta.de/besuch-planen/anfahrt/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Official address is Gertrud-Knebusch-Str. 15 (old Güterbahnhof); some directories list Weidendamm 2. Our pin is ~1.0 km south of it, borderline, same area. Parking is a paid car park (4 EUR/24h), not counted.",
+    "operating": "yes",
+    "official_address": "Gertrud-Knebusch-Str. 15, 30167 Hannover",
+    "location": "mismatch",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-999",
+    "name": "DAV Kletterzentrum hiclimb",
+    "metro": null,
+    "expect_h": "69978aab0ee2bc8c",
+    "website": "https://hiclimb.de/",
+    "hours": {
+      "mon": "2pm–10:30pm",
+      "tue": "2pm–10:30pm",
+      "wed": "2pm–10:30pm",
+      "thu": "2pm–10:30pm",
+      "fri": "2pm–10:30pm",
+      "sat": "10am–9pm",
+      "sun": "10am–9pm"
+    },
+    "day_pass": null,
+    "facilities": [
+      "showers",
+      "cafe",
+      "shop",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://hiclimb.de/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      },
+      {
+        "url": "https://hiclimb.de/infos/oeffnungszeiten/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      },
+      {
+        "url": "https://hiclimb.de/infos/kletterzentrum/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://hiclimb.de/infos/preise/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "DAV Hildesheim hall, open to guests. Price list states \"Gültig ab 01.09.2024\" (over 1 year old), so day_pass null (listed guest 18.50 climbing / 12.50 bouldering). Pin ~2.5 km south of the real address (Lerchenkamp 52).",
+    "operating": "yes",
+    "official_address": "Lerchenkamp 52, 31137 Hildesheim",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-1024",
+    "name": "KletterBar Hannover",
+    "metro": null,
+    "expect_h": "a085741434921754",
+    "website": "https://kletterbar-hannover.de/",
+    "hours": {
+      "mon": "10am–11pm",
+      "tue": "10am–11pm",
+      "wed": "10am–11pm",
+      "thu": "10am–11pm",
+      "fri": "10am–11pm",
+      "sat": "9am–10pm",
+      "sun": "9am–10pm"
+    },
+    "day_pass": "€17 adult climbing & bouldering, €10.50 bouldering only",
+    "facilities": [
+      "cafe",
+      "shoe-hire",
+      "shop",
+      "parking",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://kletterbar-hannover.de/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      },
+      {
+        "url": "https://kletterbar-hannover.de/oeffnungszeiten/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://kletterbar-hannover.de/preise/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://kletterbar-hannover.de/der-erste-besuch/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Prices page updated 2026-07-14 (adult 17, reduced 15). Free parking in front of the hall; bar/Kaminecke, shop articles and Kinderkletterclub stated. Pin ~4.7 km south of the real address (Brink-Hafen, Hannover Nord).",
+    "operating": "yes",
+    "official_address": "Reinhold-Schleese-Str. 21, 30179 Hannover",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-1039",
+    "name": "Kluntje Boulderhalle Aurich",
+    "metro": null,
+    "expect_h": "1c8a32df9bceb3e0",
+    "website": "https://www.kluntje-aurich.de/",
+    "hours": null,
+    "day_pass": "€13.50 adult, €12 reduced",
+    "facilities": [
+      "shoe-hire",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://www.kluntje-aurich.de/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      },
+      {
+        "url": "https://www.kluntje-aurich.de/Preise.html",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.kluntje-aurich.de/Oeffnungszeiten.html",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours and prices are images; I read them. Hours image lists Tue-Thu 16-21, Fri 16-20, Sat 10-18, Sun/holidays 10-18 but no Monday row, so not all 7 days stated and hours left null (no Closed inferred); the page also says hours are adapted Apr-Oct. Prices image \"Stand 01.01.2026\". Pin ~1.1 km SW of the real address (Weddigenstraße 5, Sandhorst).",
+    "operating": "yes",
+    "official_address": "Weddigenstraße 5, 26603 Aurich",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-1041",
+    "name": "Kraftwerk",
+    "metro": null,
+    "expect_h": "0c97aa5cdf62675a",
+    "website": "https://www.urbanapes.de/lueneburg/",
+    "hours": null,
+    "day_pass": "€15.90 adult, €12.90 reduced",
+    "facilities": [
+      "cafe",
+      "kids",
+      "training",
+      "shoe-hire",
+      "parking"
+    ],
+    "sources": [
+      {
+        "url": "https://www.urbanapes.de/lueneburg/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.urbanapes.de/lueneburg/preise-zeiten/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.urbanapes.de/lueneburg/kontakt/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "flag",
+    "notes": "Kraftwerk's own domain kraftwerk-lueneburg.de is now a parked 'domain is for sale' page. The same venue (Pulverweg 6, 21337 Lüneburg, tel 04131 720 86 12; the address/phone match with the old Kraftwerk listing came from a search snippet) now trades as urban apes Lüneburg. Hours are seasonal (summer 1 Jul-30 Sep Mo-Fr 14:30-22:30; winter 1 Oct-30 Jun Mo-Fr 13:00-22:30; Sa/Su 11:00-21:00), so hours left null. Bistro, Kinderbereich, Trainingsbereich, rental shoes and parking in front of the door are stated.",
+    "operating": "yes",
+    "official_address": "Pulverweg 6, 21337 Lüneburg",
+    "location": "ok",
+    "renamed_to": "urban apes Lüneburg",
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-1051",
+    "name": "Oldenbloc",
+    "metro": null,
+    "expect_h": "0dde61c7dcae96b4",
+    "website": "https://www.oldenbloc.de/",
+    "hours": {
+      "mon": "2pm–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "2pm–10pm",
+      "sun": "2pm–10pm"
+    },
+    "day_pass": "€14.50 adult, €13 reduced",
+    "facilities": [
+      "cafe",
+      "training",
+      "kids",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://www.oldenbloc.de/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.oldenbloc.de/halle",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.oldenbloc.de/infos-und-preise",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Sa-Mo 14-22, Di-Fr 10-22; summer-holiday weekend variation ignored. Homepage header \"Bouldern | Seilklettern | Café\", Moonboard/campusboard, kids offers and Kletterschuhmiete stated. Pin ~1.8 km SW of the real address (Melkbrink 76).",
+    "operating": "yes",
+    "official_address": "Melkbrink 76, 26121 Oldenburg",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-1057",
+    "name": "RoXx",
+    "metro": null,
+    "expect_h": "f98b43fa921186b2",
+    "website": "https://my.sport.uni-goettingen.de/roxx/",
+    "hours": {
+      "mon": "10am–11pm",
+      "tue": "10am–11pm",
+      "wed": "10am–11pm",
+      "thu": "10am–11pm",
+      "fri": "10am–11pm",
+      "sat": "10am–9:30pm",
+      "sun": "10am–9:30pm"
+    },
+    "day_pass": "€15 climbing, €10.50 bouldering (external adult)",
+    "facilities": [
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://my.sport.uni-goettingen.de/roxx/das-roxx/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      },
+      {
+        "url": "https://my.sport.uni-goettingen.de/roxx/preisumstellung-am-15-05-26/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass"
+        ]
+      },
+      {
+        "url": "https://my.sport.uni-goettingen.de/roxx/preise-und-verleih/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "University sports (ZESG) hall open to the public; \"Externe\" prices valid from 15.05.2026. Pin ~2.7 km west of the real address (Sprangerweg 2, Klausberg).",
+    "operating": "yes",
+    "official_address": "Sprangerweg 2, 37075 Göttingen",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-1064",
+    "name": "UP - Kletterzentrum",
+    "metro": null,
+    "expect_h": "ebe93f4edd9c1b66",
+    "website": "https://www.up-kletterzentrum.de/",
+    "hours": {
+      "mon": "3pm–10pm",
+      "tue": "3pm–10pm",
+      "wed": "3pm–10pm",
+      "thu": "3pm–10pm",
+      "fri": "3pm–10pm",
+      "sat": "10am–9pm",
+      "sun": "10am–9pm"
+    },
+    "day_pass": "€18 adult climbing, €14 bouldering only",
+    "facilities": [
+      "cafe"
+    ],
+    "sources": [
+      {
+        "url": "https://www.up-kletterzentrum.de/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      },
+      {
+        "url": "https://www.up-kletterzentrum.de/oeffnungszeiten-preise",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours",
+          "day_pass"
+        ]
+      },
+      {
+        "url": "https://www.up-kletterzentrum.de/service/bistro",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "UP-DAV Kletterzentrum Oldenburg, in Hundsmühlen (Wardenburg municipality). Guest prices (adult climbing 18, bouldering 14), \"Preisanpassung ab Januar 2026\". Pin ~8.3 km south of the real address.",
+    "operating": "yes",
+    "official_address": "Diedrich-Dannemann-Str. 87, 26203 Wardenburg",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-963",
+    "name": "Bergstation",
+    "metro": null,
+    "expect_h": "9c23403cbe200600",
+    "website": "https://bergstation.nrw/",
+    "hours": {
+      "mon": "10am–11pm",
+      "tue": "10am–11pm",
+      "wed": "10am–11pm",
+      "thu": "10am–11pm",
+      "fri": "10am–11pm",
+      "sat": "10am–10pm",
+      "sun": "10am–10pm"
+    },
+    "day_pass": "€18 adult climbing, €14 bouldering only",
+    "facilities": [
+      "cafe",
+      "shop",
+      "shoe-hire",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://bergstation.nrw/oeffnungszeiten",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      },
+      {
+        "url": "https://bergstation.nrw/preise",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://bergstation.nrw/infos-zur-bergstation/oeffnungszeiten/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Bergstation is in HILDEN (Bahnhofsallee 35, 40721 Hilden), not Düsseldorf; our pin is ~12 km away in Düsseldorf. Tables are in the raw HTML (text extraction tools saw nothing). Cafe/bistro and shop come from the navigation descriptions and footer (\"Kletterausrüstung direkt aus der Halle\"), kids area (Ersteinweisung in den Kinderbereich) and Kletterschuhe 4.50 from the price page.",
+    "operating": "yes",
+    "official_address": "Bahnhofsallee 35, 40721 Hilden",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "g-ec7c2992aa",
+    "name": "Einstein Boulderhalle Duisburg",
+    "metro": null,
+    "expect_h": "25ce1490590b4aab",
+    "website": "https://duisburg.einstein-boulder.com/",
+    "hours": {
+      "mon": "10am–11pm",
+      "tue": "10am–11pm",
+      "wed": "10am–11pm",
+      "thu": "10am–11pm",
+      "fri": "10am–11pm",
+      "sat": "10am–11pm",
+      "sun": "10am–11pm"
+    },
+    "day_pass": "€13.90 adult, €11.90 reduced",
+    "facilities": [
+      "cafe",
+      "training",
+      "kids",
+      "shoe-hire",
+      "shop"
+    ],
+    "sources": [
+      {
+        "url": "https://duisburg.einstein-boulder.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://duisburg.einstein-boulder.com/preisezeiten/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Daily 10-23 (last check-in 21:00). Bistro, Trainingsbereich, Kinderbereich, rental shoes and Shop stated. Pin matches the address.",
+    "operating": "yes",
+    "official_address": "Essenberger Straße 85, 47059 Duisburg",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-1048",
+    "name": "Monkeyspot Düsseldorf",
+    "metro": null,
+    "expect_h": "90d15c7ce0d27941",
+    "website": "https://monkeyspot.de/startseite-duesseldorf/",
+    "hours": {
+      "mon": "9am–11pm",
+      "tue": "9am–11pm",
+      "wed": "9am–11pm",
+      "thu": "9am–11pm",
+      "fri": "9am–11pm",
+      "sat": "9am–11pm",
+      "sun": "9am–10pm"
+    },
+    "day_pass": "€13.90 adult, €11.90 reduced (14-17)",
+    "facilities": [
+      "cafe",
+      "training",
+      "kids",
+      "shoe-hire",
+      "shop",
+      "parking"
+    ],
+    "sources": [
+      {
+        "url": "https://monkeyspot.de/startseite-duesseldorf/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://monkeyspot.de/startseite-duesseldorf/informationen/preise-und-oeffnungszeiten/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Mo-Sa 09:00-23:00, Sun/holidays 09:00-22:00. Homepage lists Bistro, Trainingsbereich, Kinderangebote, Monkeystore and Parkplatz; Kletterschuhe 4 EUR on the price page. Pin ~3.6 km SE of the real address (Schiessstraße 52, Heerdt).",
+    "operating": "yes",
+    "official_address": "Schiessstraße 52, 40549 Düsseldorf",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  }
+]

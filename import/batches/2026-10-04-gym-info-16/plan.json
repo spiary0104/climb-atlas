@@ -1,0 +1,3445 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-04-gym-info-16",
+ "index": {
+  "sha256": "805de07cc820a55436ad2af602b76d601b49e85346e808dfcfdee1e82e796738",
+  "count": 2293,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [],
+ "counts": {
+  "records": 94,
+  "new": 0,
+  "existing": 0,
+  "update": 94,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "140ed488e8314f309b72ed0c625312827a18357ee66250d4b58aaae26b3c0b58",
+ "records": [
+  {
+   "line": 1,
+   "class": "update",
+   "id": "g-9d32a01682",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://blokcentrum.cz/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "150 Kč adult, 110 Kč child/student"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "46321d08fe9783ba",
+   "update_reason": "Official website, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 2,
+   "class": "update",
+   "id": "g-6c864ad8fa",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.flashwall.cz/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "2pm–9pm",
+      "tue": "2pm–10pm",
+      "wed": "10am–10pm",
+      "thu": "2pm–10pm",
+      "fri": "10am–9pm",
+      "sat": "10am–8pm",
+      "sun": "10am–8pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "230 Kč adult, 190 Kč student"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "kids",
+      "shoe-hire",
+      "parking"
+     ]
+    }
+   ],
+   "expect_h": "e5943bd601a9401d",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 3,
+   "class": "update",
+   "id": "g-4aaf1c3c1c",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.pajkland.cz/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "150 Kč adult, 130 Kč student"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "a6fe4bf2e915b66e",
+   "update_reason": "Official website, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 4,
+   "class": "update",
+   "id": "g-5d6a16c6f8",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://gekon-boulderbar.cz/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "3pm–11pm",
+      "tue": "3pm–11pm",
+      "wed": "3pm–11pm",
+      "thu": "3pm–11pm",
+      "fri": "3pm–2am",
+      "sat": "3pm–2am",
+      "sun": "3pm–10pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "90 Kč adult, 70 Kč child under 10"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "5d5a869570ba7b44",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 5,
+   "class": "update",
+   "id": "g-17381ec784",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.junglepardubice.cz/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "220 Kč adult, 160 Kč student"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "kids",
+      "shoe-hire",
+      "yoga"
+     ]
+    }
+   ],
+   "expect_h": "73d5bba3ea1f532f",
+   "update_reason": "Official website, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 6,
+   "class": "update",
+   "id": "g-648f4f1542",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.v16.cz/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "8am–10pm",
+      "tue": "7am–10pm",
+      "wed": "8am–10pm",
+      "thu": "7am–10pm",
+      "fri": "8am–10pm",
+      "sat": "8am–10pm",
+      "sun": "8am–10pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "260 Kč adult, 220 Kč student/senior"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "kids",
+      "shoe-hire",
+      "shop"
+     ]
+    }
+   ],
+   "expect_h": "86e8c61b28bc5b9b",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 7,
+   "class": "update",
+   "id": "g-8cbc1eab88",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.hudysteny.cz/usti/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–9pm",
+      "tue": "10am–9pm",
+      "wed": "10am–9pm",
+      "thu": "10am–9pm",
+      "fri": "10am–9pm",
+      "sat": "8am–9pm",
+      "sun": "8am–9pm"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "kids",
+      "shoe-hire",
+      "showers",
+      "parking"
+     ]
+    }
+   ],
+   "expect_h": "5621f47948f2a71c",
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 8,
+   "class": "update",
+   "id": "g-4015941056",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://monoloco.se/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "150 kr adult, 95 kr child (0-15)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire",
+      "parking"
+     ]
+    }
+   ],
+   "expect_h": "a0af009ee5a65d43",
+   "update_reason": "Official website, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 9,
+   "class": "update",
+   "id": "g-5ca60b81fa",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://fyshuset.se/"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "parking"
+     ]
+    }
+   ],
+   "expect_h": "4de9c96ee82b5ad2",
+   "update_reason": "Official website, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 10,
+   "class": "update",
+   "id": "g-96d6ebb14f",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.hkk.nu/"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids"
+     ]
+    }
+   ],
+   "expect_h": "5b0a1f83e22371b9",
+   "update_reason": "Official website, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 11,
+   "class": "update",
+   "id": "g-a89df4690a",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://areklatterhall.se/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "11am–9pm",
+      "tue": "11am–9pm",
+      "wed": "11am–9pm",
+      "thu": "11am–9pm",
+      "fri": "11am–7pm",
+      "sat": "9am–7pm",
+      "sun": "9am–7pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "185 kr adult, 125 kr junior"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "kids",
+      "shoe-hire",
+      "shop",
+      "parking"
+     ]
+    }
+   ],
+   "expect_h": "bf0bb37a1cc91d34",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 12,
+   "class": "update",
+   "id": "g-98914c13ba",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://ostersundsklattercenter.se/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "175 kr adult, 125 kr junior"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "kids",
+      "shoe-hire",
+      "shop"
+     ]
+    }
+   ],
+   "expect_h": "fdebbc467dc7edec",
+   "update_reason": "Official website, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 13,
+   "class": "update",
+   "id": "g-be4954fdd3",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.hkt.nu/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "60 kr drop-in (Wednesdays, top-rope and bouldering)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "9fe76e4d2fd1c2ef",
+   "update_reason": "Official website, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 14,
+   "class": "update",
+   "id": "g-09b76c2974",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.klattervigoren.se/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "11am–10pm",
+      "tue": "11am–10pm",
+      "wed": "11am–10pm",
+      "thu": "11am–10pm",
+      "fri": "11am–9pm",
+      "sat": "12pm–7pm",
+      "sun": "12pm–7pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "150 kr adult, 120 kr student"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shoe-hire",
+      "showers",
+      "parking"
+     ]
+    }
+   ],
+   "expect_h": "2f408cd570286469",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 15,
+   "class": "update",
+   "id": "g-897c8f8d77",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://rcsport.se/sporter/klattring/"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe"
+     ]
+    }
+   ],
+   "expect_h": "ce6453c888eaf012",
+   "update_reason": "Official website, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 16,
+   "class": "update",
+   "id": "g-274d7923b8",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://klatterhuset.se/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "11am–9:30pm",
+      "tue": "11am–9:30pm",
+      "wed": "11am–9:30pm",
+      "thu": "11am–9:30pm",
+      "fri": "11am–9:30pm",
+      "sat": "9am–4pm",
+      "sun": "11am–8pm"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "kids",
+      "shoe-hire",
+      "shop",
+      "showers",
+      "parking",
+      "yoga"
+     ]
+    }
+   ],
+   "expect_h": "5e2132ca40b062dd",
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 17,
+   "class": "update",
+   "id": "g-84c25ac496",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.orebroklattergym.se/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "3pm–10pm",
+      "tue": "3pm–10pm",
+      "wed": "3pm–10pm",
+      "thu": "3pm–10pm",
+      "fri": "1pm–6pm",
+      "sat": "12pm–6pm",
+      "sun": "12pm–8pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "110 kr adult, 90 kr youth/student"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "1eb388901bed504f",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 18,
+   "class": "update",
+   "id": "g-fd7af4c044",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://linkopingsklatterklubb.se/"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "eda1a690341205e0",
+   "update_reason": "Official website, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 19,
+   "class": "update",
+   "id": "g-8cb5bbdef2",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://klatterhallen.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12pm–10pm",
+      "tue": "12pm–10pm",
+      "wed": "12pm–10pm",
+      "thu": "12pm–10pm",
+      "fri": "12pm–8pm",
+      "sat": "10am–6pm",
+      "sun": "10am–6pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "150 kr adult (single entry)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "c6e137a1f042216f",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 20,
+   "class": "update",
+   "id": "g-acc9aa22f2",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://urbanboulders.se/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "10am–8pm",
+      "sun": "10am–8pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "180 kr adult"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire",
+      "parking"
+     ]
+    }
+   ],
+   "expect_h": "8f582d0836bcbabc",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 21,
+   "class": "update",
+   "id": "g-03b424f0bf",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://betaboulders.se/malmo/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "7am–10pm",
+      "tue": "7am–10pm",
+      "wed": "7am–10pm",
+      "thu": "7am–10pm",
+      "fri": "7am–10pm",
+      "sat": "10am–8pm",
+      "sun": "10am–8pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "199 kr adult peak, 159 kr off-peak"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "kids",
+      "shoe-hire",
+      "showers"
+     ]
+    }
+   ],
+   "expect_h": "f24be4875fd08f99",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 22,
+   "class": "update",
+   "id": "g-f98bfcfa2e",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://c4climbing.se/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "100 kr member, 120 kr non-member"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "c157569d4754078e",
+   "update_reason": "Official website, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 23,
+   "class": "update",
+   "id": "g-daefae9168",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.klattercentret.se/helsingborg/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "9am–10pm",
+      "tue": "9am–10pm",
+      "wed": "9am–10pm",
+      "thu": "9am–10pm",
+      "fri": "9am–10pm",
+      "sat": "10am–8pm",
+      "sun": "10am–8pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "199 kr adult, 135 kr before 4pm weekdays, 130 kr under 18"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "kids",
+      "shop"
+     ]
+    }
+   ],
+   "expect_h": "6285223308093149",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 24,
+   "class": "update",
+   "id": "g-7e7da17e08",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.klattercentret.se/malmo/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "9am–10pm",
+      "tue": "9am–10pm",
+      "wed": "7am–10pm",
+      "thu": "9am–10pm",
+      "fri": "7am–10pm",
+      "sat": "10am–8pm",
+      "sun": "10am–8pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "199 kr adult, 135 kr before 4pm weekdays, 130 kr under 18"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "kids",
+      "shop"
+     ]
+    }
+   ],
+   "expect_h": "ab65f2c0ee88c605",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 25,
+   "class": "update",
+   "id": "seed-1107",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://malmoklatterklubb.se/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "6pm–9:30pm",
+      "tue": "6pm–9:30pm",
+      "wed": "6pm–9:30pm",
+      "thu": "6pm–9:30pm",
+      "fri": "Closed",
+      "sat": "1pm–4:30pm",
+      "sun": "1pm–4:30pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "80 kr adult, 60 kr student/junior"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "1acc468cbeeda525",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 26,
+   "class": "update",
+   "id": "g-32e871f338",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://skaneskk.se/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "100 kr entry (bouldering)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "471e585421b6b85b",
+   "update_reason": "Official website, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 27,
+   "class": "update",
+   "id": "g-f07f48beb2",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.klattercentret.se/uppsala/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "11am–10pm",
+      "tue": "11am–10pm",
+      "wed": "11am–10pm",
+      "thu": "11am–10pm",
+      "fri": "9am–10pm",
+      "sat": "10am–8pm",
+      "sun": "10am–8pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "190 kr adult, 135 kr before 4pm weekdays, 152 kr student"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire",
+      "shop"
+     ]
+    }
+   ],
+   "expect_h": "6d86e6aacef96e53",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 28,
+   "class": "update",
+   "id": "g-8567ba08fb",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.klattercentret.se/vasteras/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–9pm",
+      "tue": "10am–9pm",
+      "wed": "10am–9pm",
+      "thu": "10am–9pm",
+      "fri": "10am–8pm",
+      "sat": "10am–8pm",
+      "sun": "10am–8pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "180 kr adult, 140 kr before 4pm weekdays/student"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "0f360969a8d380c2",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 29,
+   "class": "update",
+   "id": "seed-1353",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://ladeo.fi/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "2pm–9pm",
+      "tue": "2pm–9pm",
+      "wed": "2pm–9pm",
+      "thu": "2pm–9pm",
+      "fri": "2pm–9pm",
+      "sat": "12pm–6pm",
+      "sun": "12pm–6pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "€12 adult, €10 student/pensioner/unemployed"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "kids",
+      "shoe-hire",
+      "parking"
+     ]
+    }
+   ],
+   "expect_h": "fe96a2a442ddb2a9",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 30,
+   "class": "update",
+   "id": "seed-1354",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://yogarocks.fi/fi/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "1pm–9pm",
+      "tue": "1pm–9pm",
+      "wed": "1pm–9pm",
+      "thu": "1pm–9pm",
+      "fri": "1pm–8pm",
+      "sat": "9am–5pm",
+      "sun": "12pm–5pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "€13 adult, €10 student/concession"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shoe-hire",
+      "shop",
+      "yoga"
+     ]
+    }
+   ],
+   "expect_h": "8480389499bb9f5e",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 31,
+   "class": "update",
+   "id": "seed-1357",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://tampereenkiipeilykeskus.fi/fi-fi/article/etusivu/tk-nekala/161/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "9am–9pm",
+      "tue": "9am–9pm",
+      "wed": "9am–9pm",
+      "thu": "9am–9pm",
+      "fri": "9am–9pm",
+      "sat": "9am–9pm",
+      "sun": "9am–9pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "€16 adult, €14 student/unemployed/pensioner"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shoe-hire",
+      "shop"
+     ]
+    }
+   ],
+   "expect_h": "daca8ce733ce620a",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 32,
+   "class": "update",
+   "id": "seed-1358",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://tampereenkiipeilykeskus.fi/fi-fi/article/etusivu/tk-lielahti/162/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "1pm–8pm",
+      "tue": "1pm–8pm",
+      "wed": "1pm–8pm",
+      "thu": "1pm–8pm",
+      "fri": "1pm–8pm",
+      "sat": "10am–5pm",
+      "sun": "10am–5pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "€16 adult, €14 student/unemployed/pensioner"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shoe-hire",
+      "shop"
+     ]
+    }
+   ],
+   "expect_h": "c2d5a6a8d5d3271c",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 33,
+   "class": "update",
+   "id": "seed-1355",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://kaamosclimbing.fi/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "€13 adult, €11 student"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "68a399b31743e0d1",
+   "update_reason": "Official website, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 34,
+   "class": "update",
+   "id": "seed-1356",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://oulunkiipeilykeskus.fi/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "8am–9pm",
+      "tue": "12pm–9pm",
+      "wed": "12pm–9pm",
+      "thu": "12pm–9pm",
+      "fri": "12pm–9pm",
+      "sat": "10am–6pm",
+      "sun": "10am–8pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "€14 adult, €11 under 18 (weekdays before 4pm €11)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "kids",
+      "shoe-hire",
+      "shop",
+      "showers"
+     ]
+    }
+   ],
+   "expect_h": "ad9d89cf0eb09288",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 35,
+   "class": "update",
+   "id": "seed-1435",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://ba-rock.wixsite.com/landing"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "2:30pm–9pm",
+      "tue": "2:30pm–9pm",
+      "wed": "2:30pm–9pm",
+      "thu": "2:30pm–9pm",
+      "fri": "2:30pm–9pm",
+      "sat": "2pm–7pm",
+      "sun": "Closed"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "3400 Ft adult, 3000 Ft age 14-18, 2600 Ft under 14"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "d4fe438570c6ce6c",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 36,
+   "class": "update",
+   "id": "seed-1436",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://ligetboulder.hu/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "8am–10pm",
+      "tue": "3pm–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "8am–9pm",
+      "sat": "10am–9pm",
+      "sun": "10am–8pm"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "3c28011170c95c03",
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 37,
+   "class": "update",
+   "id": "g-6f86cb6f45",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://iskraclimb.ru/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "10am–8pm",
+      "sun": "10am–8pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "₽750 adult (self-guided single visit)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire",
+      "showers"
+     ]
+    }
+   ],
+   "expect_h": "97e7720d1f52f853",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 38,
+   "class": "update",
+   "id": "g-245272594b",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://iskraclimb.ru/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "₽750 adult (self-guided single visit)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire",
+      "showers"
+     ]
+    }
+   ],
+   "expect_h": "897c6a81ef1768e6",
+   "update_reason": "Official website, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 39,
+   "class": "update",
+   "id": "g-adaffdabdd",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://kraisveta.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "8:15am–10:30pm",
+      "tue": "8:15am–10:30pm",
+      "wed": "8:15am–10:30pm",
+      "thu": "8:15am–10:30pm",
+      "fri": "8:15am–10:30pm",
+      "sat": "9am–10pm",
+      "sun": "9am–10pm"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "51edac8dc5c75221",
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 40,
+   "class": "update",
+   "id": "g-734d215c65",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://rockandwall.ru/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "₽500 weekdays before 12pm, ₽700 before 4pm, ₽950 after 4pm"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "shoe-hire",
+      "showers",
+      "parking",
+      "yoga"
+     ]
+    }
+   ],
+   "expect_h": "f42b20f084ed28f8",
+   "update_reason": "Official website, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 41,
+   "class": "update",
+   "id": "g-275a0398fd",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://performancerock.co.il/branch/haifa/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "8am–11pm",
+      "tue": "8am–11pm",
+      "wed": "8am–11pm",
+      "thu": "8am–11pm",
+      "fri": "9am–6pm",
+      "sat": "10am–11pm",
+      "sun": "8am–11pm"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "shoe-hire",
+      "showers",
+      "yoga"
+     ]
+    }
+   ],
+   "expect_h": "fa4ab3c41d679863",
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 42,
+   "class": "update",
+   "id": "seed-1591",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://iclimb.co.il/jerusalem/%d7%a8%d7%90%d7%a9%d7%99/"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "f7dc75355aa40119",
+   "update_reason": "Official website, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 43,
+   "class": "update",
+   "id": "g-c6ab5c3a50",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.thebloc.co.il/jlm"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–11pm",
+      "tue": "4pm–7pm",
+      "wed": "10am–11pm",
+      "thu": "8am–11pm",
+      "fri": "8am–5pm",
+      "sat": "10am–11pm",
+      "sun": "8am–11pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "₪75 (limited to 3 hours), ₪55 morning entry (Sun–Thu until 3pm)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "749b198fb5f5c4c3",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 44,
+   "class": "update",
+   "id": "g-cea6787feb",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.uclimb-en.com/jerusalemb"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "₪75 day pass"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "27246cf4a7bae06b",
+   "update_reason": "Official website, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 45,
+   "class": "update",
+   "id": "seed-1592",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.campuswall.co.il/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "4pm–10pm",
+      "tue": "4pm–10pm",
+      "wed": "4pm–10pm",
+      "thu": "4pm–11pm",
+      "fri": "10am–4pm",
+      "sat": "11am–6pm",
+      "sun": "4pm–11pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "₪75 adult, ₪65 student/soldier"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "0f292179ebe746a9",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 46,
+   "class": "update",
+   "id": "g-9b3aa1a5f8",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.rocaclimb.co.il/"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "kids",
+      "shop"
+     ]
+    }
+   ],
+   "expect_h": "738f8842da8d41b4",
+   "update_reason": "Official website, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 47,
+   "class": "update",
+   "id": "seed-1590",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://performancerock.co.il/branch/beer-sheva/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "4pm–11pm",
+      "tue": "4pm–10pm",
+      "wed": "4pm–10pm",
+      "thu": "4pm–11pm",
+      "fri": "9am–1pm",
+      "sat": "12pm–8pm",
+      "sun": "4pm–10pm"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "yoga"
+     ]
+    }
+   ],
+   "expect_h": "6c2d2672f347f3e0",
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 48,
+   "class": "update",
+   "id": "seed-29",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://cbr.blochaus.com.au/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "6am–10pm",
+      "tue": "10am–10pm",
+      "wed": "6am–10pm",
+      "thu": "10am–10pm",
+      "fri": "6am–10pm",
+      "sat": "8am–10pm",
+      "sun": "8am–10pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "A$26 adult, A$24 concession"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shoe-hire",
+      "showers",
+      "yoga"
+     ]
+    }
+   ],
+   "expect_h": "17d00bae65f2518b",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 49,
+   "class": "update",
+   "id": "seed-30",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://cbr.blochaus.com.au/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "6am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "9am–9pm",
+      "sun": "9am–9pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "A$26 adult, A$24 concession"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "shoe-hire",
+      "showers"
+     ]
+    }
+   ],
+   "expect_h": "4946a0b14e367e8e",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 50,
+   "class": "update",
+   "id": "seed-28",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.mountainstrongcbr.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "6am–10pm",
+      "tue": "9am–10pm",
+      "wed": "6am–10pm",
+      "thu": "9am–10pm",
+      "fri": "6am–10pm",
+      "sat": "10am–5pm",
+      "sun": "10am–5pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "A$23 adult, A$21 concession"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shoe-hire",
+      "parking"
+     ]
+    }
+   ],
+   "expect_h": "8348f0402ed254de",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 51,
+   "class": "update",
+   "id": "seed-26",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.dynomite.net.au/albion-park-gym"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12pm–9pm",
+      "tue": "12pm–9pm",
+      "wed": "3pm–9pm",
+      "thu": "8am–9pm",
+      "fri": "3pm–9pm",
+      "sat": "9am–6pm",
+      "sun": "9am–6pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "A$25 adult, A$23 concession/under 18"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shoe-hire",
+      "parking",
+      "yoga"
+     ]
+    }
+   ],
+   "expect_h": "25e806c58b0aaf97",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 52,
+   "class": "update",
+   "id": "seed-25",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.dynomite.net.au/north-wollongong"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12pm–9pm",
+      "tue": "12pm–9pm",
+      "wed": "10am–9:30pm",
+      "thu": "8am–9pm",
+      "fri": "10am–7pm",
+      "sat": "10am–6pm",
+      "sun": "10am–6pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "A$25 adult, A$23 concession/under 18"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "shoe-hire",
+      "parking"
+     ]
+    }
+   ],
+   "expect_h": "f9b06b58953c4ef7",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 53,
+   "class": "update",
+   "id": "seed-21",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://hangdog.com.au/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–9pm",
+      "tue": "10am–9pm",
+      "wed": "10am–9pm",
+      "thu": "10am–9pm",
+      "fri": "10am–9pm",
+      "sat": "9am–6pm",
+      "sun": "9am–5pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "A$28.50 adult, A$23.50 child (under 12)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "8479d83b3f9c873e",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 54,
+   "class": "update",
+   "id": "seed-23",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://pulseclimbing.com.au/locations/warners-bay/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12pm–10pm",
+      "tue": "12pm–10pm",
+      "wed": "12pm–10pm",
+      "thu": "6:30am–10pm",
+      "fri": "12pm–10pm",
+      "sat": "9am–6pm",
+      "sun": "9am–6pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "A$24 adult, A$21 concession"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shoe-hire",
+      "shop"
+     ]
+    }
+   ],
+   "expect_h": "2cd79991e0478b3e",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 55,
+   "class": "update",
+   "id": "seed-53",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://alpineindoorclimbing.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "9am–9pm",
+      "tue": "6am–9pm",
+      "wed": "9am–9pm",
+      "thu": "2pm–9pm",
+      "fri": "6am–9pm",
+      "sat": "9am–6pm",
+      "sun": "9am–6pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "A$25 adult (Robina and Currumbin), A$23 student"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "e565382baba787d5",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 56,
+   "class": "update",
+   "id": "seed-52",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://bouldmove.com.au/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "5am–9pm",
+      "tue": "5am–9pm",
+      "wed": "5am–9pm",
+      "thu": "5am–9pm",
+      "fri": "5am–9pm",
+      "sat": "9am–7pm",
+      "sun": "9am–7pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "A$26 adult (16+), A$22 youth"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "kids",
+      "shoe-hire",
+      "showers"
+     ]
+    }
+   ],
+   "expect_h": "fbb34d3e192b7d15",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 57,
+   "class": "update",
+   "id": "seed-54",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://climb-australia.com.au/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "2pm–9pm",
+      "tue": "2pm–9pm",
+      "wed": "2pm–9pm",
+      "thu": "3pm–9pm",
+      "fri": "2pm–9pm",
+      "sat": "8am–8pm",
+      "sun": "10am–4pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "A$26 adult, A$24 concession"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire",
+      "shop"
+     ]
+    }
+   ],
+   "expect_h": "02ada412814d879e",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 58,
+   "class": "update",
+   "id": "seed-51",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.coreclimbing.com.au/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12pm–10pm",
+      "tue": "6pm–10pm",
+      "wed": "12pm–10pm",
+      "thu": "6pm–10pm",
+      "fri": "12pm–10pm",
+      "sat": "8am–8pm",
+      "sun": "10am–8pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "A$27 adult, A$25 student"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "yoga"
+     ]
+    }
+   ],
+   "expect_h": "f536760bfdd0149b",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 59,
+   "class": "update",
+   "id": "seed-50",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.rockitclimbinggym.com.au/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "9am–9pm",
+      "tue": "9am–9pm",
+      "wed": "9am–9pm",
+      "thu": "9am–9pm",
+      "fri": "9am–9pm",
+      "sat": "8am–6pm",
+      "sun": "8am–6pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "A$27 adult (top rope + boulder), A$23 boulder-only adult"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shoe-hire",
+      "shop"
+     ]
+    }
+   ],
+   "expect_h": "e5bccfe908236fdf",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 60,
+   "class": "update",
+   "id": "seed-57",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.rockyclimb.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "8am–8pm",
+      "tue": "8am–8pm",
+      "wed": "8am–8pm",
+      "thu": "8am–8pm",
+      "fri": "8am–8pm",
+      "sat": "8am–8pm",
+      "sun": "8am–5pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "A$25 adult, A$20 concession"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "e9f3d2cfc137292d",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 61,
+   "class": "update",
+   "id": "seed-58",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://sixdegreesgym.com.au/"
+    }
+   ],
+   "expect_h": "06529fa14ff3528f",
+   "update_reason": "Official website from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 62,
+   "class": "update",
+   "id": "seed-72",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://betapark.com.au/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "7am–10pm",
+      "tue": "7am–10pm",
+      "wed": "7am–10pm",
+      "thu": "7am–10pm",
+      "fri": "7am–10pm",
+      "sat": "8am–8pm",
+      "sun": "8am–8pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "A$23 adult, A$21 student"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "shoe-hire",
+      "shop",
+      "showers",
+      "parking"
+     ]
+    }
+   ],
+   "expect_h": "f5f3746689317725",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 63,
+   "class": "update",
+   "id": "seed-73",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.rockitclimbing.com.au/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "8am–10pm",
+      "tue": "8am–10pm",
+      "wed": "8am–10pm",
+      "thu": "8am–10pm",
+      "fri": "8am–9pm",
+      "sat": "8am–8pm",
+      "sun": "8am–8pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "A$20 adult, A$18 student (12-18)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "78368b3e08bd0a5c",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 64,
+   "class": "update",
+   "id": "seed-426",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://colorfulrock.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–10:30pm",
+      "tue": "10am–10:30pm",
+      "wed": "10am–10:30pm",
+      "thu": "10am–10:30pm",
+      "fri": "10am–10:30pm",
+      "sat": "10am–9pm",
+      "sun": "10am–9pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥1,900 adult weekday, ¥2,200 weekends/holidays (all day)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shoe-hire",
+      "parking"
+     ]
+    }
+   ],
+   "expect_h": "f1b428948eb6848a",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 65,
+   "class": "update",
+   "id": "g-b0d49dc418",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.d-b-c.jp/top/sengen-cho/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "1pm–9pm",
+      "tue": "1pm–9pm",
+      "wed": "1pm–9pm",
+      "thu": "1pm–9pm",
+      "fri": "1pm–9pm",
+      "sat": "10am–6pm",
+      "sun": "10am–6pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,000 adult weekday, ¥2,200 weekends/holidays (all day)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "f788f0e1855d899c",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 66,
+   "class": "update",
+   "id": "seed-427",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://pinna2.com/sakae.html"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "9am–10pm",
+      "tue": "9am–10pm",
+      "wed": "9am–10pm",
+      "thu": "9am–10pm",
+      "fri": "9am–10pm",
+      "sat": "9am–9pm",
+      "sun": "9am–9pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥1,900 adult weekday, ¥2,300 weekends/holidays (free time)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "7e3b83569a7867b4",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 67,
+   "class": "update",
+   "id": "seed-428",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.omc-thumbsup.com/"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire",
+      "showers"
+     ]
+    }
+   ],
+   "expect_h": "ffebeebe9be955e8",
+   "update_reason": "Official website, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 68,
+   "class": "update",
+   "id": "seed-424",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://barehands.biz/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "1pm–11pm",
+      "tue": "1pm–11pm",
+      "wed": "1pm–11pm",
+      "thu": "1pm–11pm",
+      "fri": "Closed",
+      "sat": "10am–8pm",
+      "sun": "10am–8pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,100 adult, ¥1,650 high school/university student"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "f42d842a44f3dea5",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 69,
+   "class": "update",
+   "id": "seed-423",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://mono-climbing.com/shopinfo/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,090 adult (member 1 day), ¥2,640 adult visitor"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire",
+      "parking"
+     ]
+    }
+   ],
+   "expect_h": "ce4b738f753f91a5",
+   "update_reason": "Official website, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 70,
+   "class": "update",
+   "id": "seed-445",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://climbinggympuregreen.jimdofree.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "Closed",
+      "tue": "1pm–10pm",
+      "wed": "1pm–10pm",
+      "thu": "1pm–10pm",
+      "fri": "1pm–10pm",
+      "sat": "10am–7pm",
+      "sun": "10am–5pm"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "parking"
+     ]
+    }
+   ],
+   "expect_h": "ea58be2c77a821ea",
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 71,
+   "class": "update",
+   "id": "seed-443",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "http://switch-climbing.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "1pm–10pm",
+      "tue": "1pm–10pm",
+      "wed": "1pm–10pm",
+      "thu": "1pm–10pm",
+      "fri": "5pm–10pm",
+      "sat": "10am–9pm",
+      "sun": "10am–7pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥1,900 adult, ¥1,600 student (all day)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire",
+      "parking"
+     ]
+    }
+   ],
+   "expect_h": "e10a05b479723926",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 72,
+   "class": "update",
+   "id": "g-d1af7cf93f",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.d-b-c.jp/top/kushiro/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,090 adult weekday, ¥2,310 weekends/holidays (all day)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "c3bd4e3d8c0fafc5",
+   "update_reason": "Official website, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 73,
+   "class": "update",
+   "id": "g-12fe7b793e",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.gravity-research.jp/shop/himeji/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,100 adult free time, ¥1,800 adult 120 min"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "8f4a5a1685d376f8",
+   "update_reason": "Official website, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 74,
+   "class": "update",
+   "id": "g-8bffb8d031",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.rockyclimbing.com/tsukubaami/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–11pm",
+      "tue": "10am–11pm",
+      "wed": "10am–11pm",
+      "thu": "10am–11pm",
+      "fri": "10am–11pm",
+      "sat": "10am–9pm",
+      "sun": "10am–9pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,000 adult weekday, ¥2,200 weekends/holidays"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire",
+      "parking"
+     ]
+    }
+   ],
+   "expect_h": "ef5ea6a1ba4bdfc4",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 75,
+   "class": "update",
+   "id": "g-1051fd5339",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.d-b-c.jp/top/kumamoto-oyama/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "Closed",
+      "tue": "1pm–10pm",
+      "wed": "1pm–10pm",
+      "thu": "5pm–10pm",
+      "fri": "1pm–10pm",
+      "sat": "10am–6pm",
+      "sun": "10am–6pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,200 adult, ¥2,000 student (all day, same weekday/weekend)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "00ec5f419edc0be8",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 76,
+   "class": "update",
+   "id": "g-5e6f270e19",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://cg-sorani.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "Closed",
+      "tue": "2pm–10pm",
+      "wed": "2pm–10pm",
+      "thu": "5pm–10pm",
+      "fri": "2pm–10pm",
+      "sat": "10am–7pm",
+      "sun": "10am–8pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,500 adult visitor weekday, ¥2,700 weekends/holidays"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "0872435f4c3fb6bc",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 77,
+   "class": "update",
+   "id": "g-e13991e972",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.d-b-c.jp/top/suwa/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,150 adult weekday, ¥2,250 weekends (all day)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "121425cb56c48228",
+   "update_reason": "Official website, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 78,
+   "class": "update",
+   "id": "g-aebb393231",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.edgeandsofa.jp/gyminfo/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "Closed",
+      "tue": "1pm–10:30pm",
+      "wed": "1pm–10:30pm",
+      "thu": "1pm–10:30pm",
+      "fri": "1pm–10:30pm",
+      "sat": "11am–8pm",
+      "sun": "11am–7pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,970 adult member 1 day, ¥3,850 adult visitor"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire",
+      "shop"
+     ]
+    }
+   ],
+   "expect_h": "4993d7d79659ec20",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 79,
+   "class": "update",
+   "id": "g-60a5691c56",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.edgeandsofa.jp/gyminfo/index_ina.php"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "Closed",
+      "tue": "Closed",
+      "wed": "1pm–10pm",
+      "thu": "Closed",
+      "fri": "4pm–10pm",
+      "sat": "10am–7pm",
+      "sun": "10am–7pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,970 adult member 1 day (belay-only facility fee ¥550 extra)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire",
+      "shop",
+      "parking"
+     ]
+    }
+   ],
+   "expect_h": "51930a2755b3ac11",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 80,
+   "class": "update",
+   "id": "g-a506f5dd99",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.d-b-c.jp/top/okinawa/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–11pm",
+      "tue": "10am–11pm",
+      "wed": "10am–11pm",
+      "thu": "10am–11pm",
+      "fri": "10am–11pm",
+      "sat": "10am–9pm",
+      "sun": "10am–9pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,150 adult (all day), ¥1,800 adult 2 hours"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "kids",
+      "shoe-hire",
+      "shop"
+     ]
+    }
+   ],
+   "expect_h": "5b00a48ae44637b6",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 81,
+   "class": "update",
+   "id": "g-8d47c63847",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.d-b-c.jp/top/ishigaki/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "Closed",
+      "tue": "7pm–10pm",
+      "wed": "Closed",
+      "thu": "7pm–10pm",
+      "fri": "Closed",
+      "sat": "11am–6pm",
+      "sun": "11am–6pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,090 adult (all day), ¥1,540 university student or younger"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "d6235e9386a98360",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 82,
+   "class": "update",
+   "id": "seed-448",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.ounoyama.jp/each-facility-guidance/budokan/educate-traning-hall/climbing-and-sumo-hall/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "9am–9pm",
+      "tue": "Closed",
+      "wed": "9am–9pm",
+      "thu": "9am–9pm",
+      "fri": "9am–9pm",
+      "sat": "9am–9pm",
+      "sun": "9am–9pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥240 adult/student per 2 hours, ¥130 child/senior (65+)"
+    }
+   ],
+   "expect_h": "4128163ebd164dd6",
+   "update_reason": "Official website, weekly opening hours, day-pass price from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 83,
+   "class": "update",
+   "id": "g-dc46c81fcf",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://climbwarrior.com/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "€6 (bouldering / rocodromo free entry)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "eb956b04b9c2e937",
+   "update_reason": "Official website, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 84,
+   "class": "update",
+   "id": "g-8e84e4d87f",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.moveclimbing.es/mairena"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "€10 adult, €7 weekday morning pass"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "kids"
+     ]
+    }
+   ],
+   "expect_h": "22e2696a8c9b6963",
+   "update_reason": "Official website, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 85,
+   "class": "update",
+   "id": "g-7f006fb429",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.moveclimbing.es/hytasa"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "€12 adult, €8 weekday morning pass"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "kids",
+      "shop"
+     ]
+    }
+   ],
+   "expect_h": "65e57bcdc6f03cc8",
+   "update_reason": "Official website, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 86,
+   "class": "update",
+   "id": "g-606116f499",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.rockandwallclimbing.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "9:30am–10pm",
+      "tue": "9:30am–10pm",
+      "wed": "9:30am–10pm",
+      "thu": "9:30am–10pm",
+      "fri": "9:30am–10pm",
+      "sat": "9:30am–6pm",
+      "sun": "9:30am–6pm"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "kids",
+      "shoe-hire",
+      "showers"
+     ]
+    }
+   ],
+   "expect_h": "6c8239aebf0ea1da",
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 87,
+   "class": "update",
+   "id": "g-db0f20b48a",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://spaceblockclimbing.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "9am–11pm",
+      "tue": "9am–11pm",
+      "wed": "9am–11pm",
+      "thu": "9am–11pm",
+      "fri": "9am–11pm",
+      "sat": "10am–8pm",
+      "sun": "10am–8pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "€12 adult, €10 weekday morning (9am–4pm)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shoe-hire",
+      "showers"
+     ]
+    }
+   ],
+   "expect_h": "b8ad18c686e9e1c2",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 88,
+   "class": "update",
+   "id": "g-127b24e5bd",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://tokyowall.es/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "€8 single entry (afternoon/weekend), €6 morning"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "shoe-hire",
+      "yoga"
+     ]
+    }
+   ],
+   "expect_h": "feacbcb1aca3a785",
+   "update_reason": "Official website, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 89,
+   "class": "update",
+   "id": "g-959a6d86a1",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.bulderland.com/bulderland-delicias/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "9am–10pm",
+      "tue": "9am–10pm",
+      "wed": "9am–10pm",
+      "thu": "9am–10pm",
+      "fri": "9am–10pm",
+      "sat": "9am–9pm",
+      "sun": "9am–9pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "€10 adult (+€3 shoe hire)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "b429c4ad9a832d05",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 90,
+   "class": "update",
+   "id": "g-331ed17944",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.bulderland.com/bulderland-las-fuentes/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "9am–10pm",
+      "tue": "9am–10pm",
+      "wed": "9am–10pm",
+      "thu": "9am–10pm",
+      "fri": "9am–10pm",
+      "sat": "9am–10pm",
+      "sun": "9am–10pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "€13 adult (+€3 shoe hire)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "9110f1d253b819f8",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 91,
+   "class": "update",
+   "id": "g-fddd9062bb",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://climbat.com/centro/zaragoza/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "10am–10pm",
+      "sun": "10am–8pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "€11.30 adult, €8 weekdays 10am–5pm"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "2c1c5e8c5d1e8449",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 92,
+   "class": "update",
+   "id": "g-dc0eedb36f",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://climbat.com/centro/aviles/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "11am–10pm",
+      "tue": "Closed",
+      "wed": "11am–10pm",
+      "thu": "11am–10pm",
+      "fri": "11am–10pm",
+      "sat": "10am–9pm",
+      "sun": "10am–9pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "€11.50 adult, €8.50 weekdays until 5pm"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "7a796c80a98cfadc",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 93,
+   "class": "update",
+   "id": "g-898c692e96",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.one-move.org/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–2:30pm, 4:30pm–10:30pm",
+      "tue": "10am–2:30pm, 4:30pm–10:30pm",
+      "wed": "10am–2:30pm, 4:30pm–10:30pm",
+      "thu": "10am–2:30pm, 4:30pm–10:30pm",
+      "fri": "10am–2:30pm, 4:30pm–10:30pm",
+      "sat": "10am–9:30pm",
+      "sun": "10am–2:30pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "€11 adult afternoon, €9 morning"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "kids",
+      "shoe-hire",
+      "yoga"
+     ]
+    }
+   ],
+   "expect_h": "8ae6fe926ba89dd4",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 94,
+   "class": "update",
+   "id": "g-9c24ad87ee",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.inrockescalada.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "8:30am–10:30pm",
+      "tue": "8:30am–10:30pm",
+      "wed": "8:30am–10:30pm",
+      "thu": "8:30am–10:30pm",
+      "fri": "8:30am–10:30pm",
+      "sat": "10am–8pm",
+      "sun": "10am–8pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "€13.90 adult, €11 weekdays before 1pm"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "kids",
+      "shoe-hire",
+      "showers",
+      "yoga"
+     ]
+    }
+   ],
+   "expect_h": "eb7f2c7129ee119b",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  }
+ ]
+}

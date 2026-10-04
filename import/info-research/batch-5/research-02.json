@@ -1,0 +1,1061 @@
+[
+  {
+    "id": "seed-367",
+    "name": "Pacific Edge Climbing",
+    "expect_h": "7629b14100d99041",
+    "website": "https://pacificedgeclimbinggym.com/",
+    "hours": {
+      "mon": "3pm–10pm",
+      "tue": "6am–10pm",
+      "wed": "6am–10pm",
+      "thu": "6am–10pm",
+      "fri": "6am–10pm",
+      "sat": "9am–9pm",
+      "sun": "9am–9pm"
+    },
+    "day_pass": "$27 adult, $18 child (6-11)",
+    "facilities": [
+      "training",
+      "yoga",
+      "shop",
+      "kids",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://pacificedgeclimbinggym.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://pacificedgeclimbinggym.com/gym-info/driving-directions",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      },
+      {
+        "url": "https://pacificedgeclimbinggym.com/daily-rates-1",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours from the Hours and Directions page; matches the footer of the rates page. Facilities: weight room, yoga and pilates studio, pro-shop and youth programs on the home page; shoe rental $5 and weight-room/yoga rates on the daily rates page. A sauna is also mentioned (not in key list).",
+    "operating": "yes",
+    "official_address": "104 Bronson Street #12, Santa Cruz, CA 95062",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-369",
+    "name": "Rock Fitness",
+    "expect_h": "47da83053c831308",
+    "website": "https://www.rockfitnessgym.com/",
+    "hours": {
+      "mon": "8am–9pm",
+      "tue": "8am–9pm",
+      "wed": "8am–9pm",
+      "thu": "8am–9pm",
+      "fri": "8am–9pm",
+      "sat": "9am–9pm",
+      "sun": "9am–6pm"
+    },
+    "day_pass": "$24 adult, $20 student/military/police/fire/EMS",
+    "facilities": [
+      "shoe-hire",
+      "training",
+      "yoga",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://www.rockfitnessgym.com/info",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "yoga",
+          "kids"
+        ]
+      },
+      {
+        "url": "https://www.rockfitnessgym.com/contact-us",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.rockfitnessgym.com/daypasses",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Day passes page: adults $24, discounted $20; rental shoes $5; \"full gym\" for climbing and fitness training; Rock Tots child care. Site footer says 2023, so the hours may be slightly stale. Official address 24305 Prielipp Road matches ours, but OSM geocodes it about 3.7 km east-southeast of our pin (same town, Wildomar).",
+    "operating": "yes",
+    "official_address": "24305 Prielipp Road, Suite 107, Wildomar, CA 92595",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": "The site also lists a separate \"North County Gym Location\" (different venue)."
+  },
+  {
+    "id": "seed-370",
+    "name": "Rocknasium",
+    "expect_h": "42283868f0966493",
+    "website": "https://www.rocknasium.com/",
+    "hours": {
+      "mon": "7am–4pm",
+      "tue": "7am–4pm",
+      "wed": "7am–4pm",
+      "thu": "7am–4pm",
+      "fri": "9am–11pm",
+      "sat": "9am–4pm",
+      "sun": "9am–4pm"
+    },
+    "day_pass": "$22 adult, $18 student/military/senior",
+    "facilities": [
+      "shoe-hire",
+      "training"
+    ],
+    "sources": [
+      {
+        "url": "https://www.rocknasium.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      },
+      {
+        "url": "https://www.rocknasium.com/hours/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.rocknasium.com/rates/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours page lists PUBLIC hours (Mon-Thu 7am-4pm, Fri 9am-11pm, Sat-Sun 9am-4pm) plus members-only evening hours; the footer of the same page shows the combined 7am-11pm / 9am-8pm span. Used the public hours. Rates page: shoes only $6; training center with hangboards, spray wall and Kilter board.",
+    "operating": "yes",
+    "official_address": "720 Olive Drive, Suite S, Davis, CA 95616",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-373",
+    "name": "Rockzilla",
+    "expect_h": "9ef43c68a095b242",
+    "website": "https://www.climbrockzilla.rocks/",
+    "hours": null,
+    "day_pass": "$28 adult with gear, $23 without gear",
+    "facilities": [
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://www.climbrockzilla.rocks/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      },
+      {
+        "url": "https://www.climbrockzilla.rocks/visit",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Visit page shows hours labelled \"NEW HOURS FOR OCTOBER ONLY\" (temporary), so hours left null. Day pass includes shoes, harness and belay device when gear is chosen. Address zip on site is 94558 (ours 94559); OSM geocode about 1.1 km from our pin, within geocoder precision.",
+    "operating": "yes",
+    "official_address": "849 Jackson Street #5A, Napa, CA 94558",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-374",
+    "name": "Sacramento Pipeworks",
+    "expect_h": "903d84b3311efc71",
+    "website": "https://touchstoneclimbing.com/pipeworks/",
+    "hours": {
+      "mon": "6am–10pm",
+      "tue": "6am–10pm",
+      "wed": "6am–10pm",
+      "thu": "6am–10pm",
+      "fri": "6am–10pm",
+      "sat": "9am–6pm",
+      "sun": "9am–6pm"
+    },
+    "day_pass": "$35 adult after 3pm, $30 before 3pm Mon-Fri",
+    "facilities": [
+      "cafe",
+      "training",
+      "showers",
+      "shop",
+      "yoga",
+      "parking"
+    ],
+    "sources": [
+      {
+        "url": "https://touchstoneclimbing.com/pipeworks/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      },
+      {
+        "url": "https://touchstoneclimbing.com/pipeworks/location-hours/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://touchstoneclimbing.com/pipeworks/tour-and-amenities/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://touchstoneclimbing.com/pipeworks/first-timers/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Touchstone Climbing location page. Day pass: $35 after 3pm, $30 before 3pm Mon-Fri (excl. holidays); kids 12 and under $30. Amenities page: Pintworks taproom/restaurant, Kilter board, campus board, weights, yoga/TRX classes, showers, pro shop. Contact page: large adjacent parking lot.",
+    "operating": "yes",
+    "official_address": "116 North 16th Street, Sacramento, CA 95811",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-375",
+    "name": "Sage to Summit",
+    "expect_h": "30a2ccdae22ed2e3",
+    "website": "https://sagetosummit.com/",
+    "hours": {
+      "mon": "9am–7pm",
+      "tue": "9am–7pm",
+      "wed": "9am–7pm",
+      "thu": "9am–7pm",
+      "fri": "9am–7pm",
+      "sat": "9am–7pm",
+      "sun": "9am–7pm"
+    },
+    "day_pass": "$22 adult (19+), $18 student (13-18)",
+    "facilities": [
+      "training",
+      "shop"
+    ],
+    "sources": [
+      {
+        "url": "https://sagetosummit.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://sagetosummit.com/pages/rock-climbing-gym",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      },
+      {
+        "url": "https://climb.sagetosummit.com/s2s/passes/day-pass",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Gym is inside the Sage to Summit running/fastpacking store (store/gym hours 9am-7pm daily; members have 24-hour access). Home page: Moonboard and a training room with weights and hangboards; retail store. Day pass also youth (5-12) $12.",
+    "operating": "yes",
+    "official_address": "312 N. Main St., Bishop, CA",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-376",
+    "name": "Sancturary Climbing & Fitness",
+    "expect_h": "a048e582bce24049",
+    "website": "https://www.rockgym.com/",
+    "hours": {
+      "mon": "2pm–9pm",
+      "tue": "8am–9pm",
+      "wed": "8am–9pm",
+      "thu": "8am–9pm",
+      "fri": "8am–9pm",
+      "sat": "9am–6pm",
+      "sun": "12pm–6pm"
+    },
+    "day_pass": "$27 adult, $22 student/military/senior",
+    "facilities": [
+      "yoga",
+      "training",
+      "kids",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://www.rockgym.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.rockgym.com/day-use",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.rockgym.com/weightstudio",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.rockgym.com/fitness",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.rockgym.com/kidsclimbingclasses",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Official name is \"Sanctuary Climbing & Fitness\" (our record has a typo \"Sancturary\"). Day use page: individual $27; students/military and community heroes/seniors $22; rental shoes $6. Pin about 0.8 km from OSM geocode of the address.",
+    "operating": "yes",
+    "official_address": "1760 Fremont Boulevard #D2, Seaside, CA 93955",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-377",
+    "name": "Santa Barbara Rock Gym",
+    "expect_h": "9804e024a7fcf629",
+    "website": null,
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [
+      {
+        "url": "https://www.sbrockgym.com/",
+        "accessed": "2026-10-04",
+        "supports": []
+      }
+    ],
+    "status": "flag",
+    "notes": "Former domain sbrockgym.com now returns a 301 redirect chain (johnnyscoville.com, rodoturf.com, hitrotaxi.com, gibevents.com, darewomensfoundation.org); the site no longer shows a climbing gym and no other official presence was found, so treated as closed. Closure is inferred from the dead domain only; no official closure notice was seen.",
+    "operating": "closed",
+    "official_address": null,
+    "location": "unknown",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-383",
+    "name": "Session Climbing",
+    "expect_h": "308fff3a6d2ca547",
+    "website": "https://sessionclimbing.com/",
+    "hours": {
+      "mon": "6am–10pm",
+      "tue": "6am–10pm",
+      "wed": "6am–10pm",
+      "thu": "6am–10pm",
+      "fri": "6am–10pm",
+      "sat": "7am–8pm",
+      "sun": "7am–8pm"
+    },
+    "day_pass": "$30 adult, $26 student/senior/military/first responder",
+    "facilities": [
+      "yoga",
+      "training",
+      "showers",
+      "shoe-hire",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://sessionclimbing.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://sessionclimbing.com/session-pricing/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Home page: yoga studio, functional fitness mezzanine, showers and locker rooms, Monkey Club and Senders Club youth programs, 900 sq ft lounge (not counted as cafe). Pricing page: adult $30, youth $20, rentals $5 each.",
+    "operating": "yes",
+    "official_address": "965 South A Street, Santa Rosa, CA 95404",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-384",
+    "name": "Shasta Rock Club",
+    "expect_h": "ace41bc6b4a182ab",
+    "website": "https://www.shastarockclub.com/",
+    "hours": {
+      "mon": "2pm–9pm",
+      "tue": "2pm–9pm",
+      "wed": "2pm–9pm",
+      "thu": "2pm–9pm",
+      "fri": "2pm–9pm",
+      "sat": "10am–5pm",
+      "sun": "Closed"
+    },
+    "day_pass": "$18 adult, $15 youth/student/military/teacher/first responder",
+    "facilities": [
+      "shoe-hire",
+      "kids",
+      "parking"
+    ],
+    "sources": [
+      {
+        "url": "https://www.shastarockclub.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.shastarockclub.com/hours-location",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.shastarockclub.com/pricing",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours are staffed/public hours; members have 24/7 access. Pricing page: individual $18, discounted $15 with ID; rental shoes $5.50. Hours page: on-site parking in front.",
+    "operating": "yes",
+    "official_address": "2325 Athens Ave, Redding, CA 96001",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-386",
+    "name": "Terrain Park Climbing Center",
+    "expect_h": "cdb100bf5d176fac",
+    "website": "https://www.terrainparkclimbingcenter.com/",
+    "hours": {
+      "mon": "9am–9pm",
+      "tue": "9am–9pm",
+      "wed": "9am–9pm",
+      "thu": "9am–9pm",
+      "fri": "9am–9pm",
+      "sat": "10am–5pm",
+      "sun": "10am–5pm"
+    },
+    "day_pass": "$18 adult, $15 discount, $12 youth (10 and under)",
+    "facilities": [
+      "training",
+      "yoga",
+      "kids",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://www.terrainparkclimbingcenter.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.terrainparkclimbingcenter.com/rates",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Climbing hours used (play structure closes at 7pm on weekdays). Home page: weight room, Kilter and campus boards, hangboards, Tuesday-night yoga, kids play structure. Rates page: drop-in $18, shoe rental $4.",
+    "operating": "yes",
+    "official_address": "931 W 5th St. Suite 100, Chico, CA",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-387",
+    "name": "The BoardRoom",
+    "expect_h": "e63a7c69dd35d2c9",
+    "website": "https://thepadclimbing.org/santa-barbara/",
+    "hours": null,
+    "day_pass": "$33 adult 3pm-10pm, $25 early bird 11am-3pm Mon-Fri",
+    "facilities": [
+      "kids",
+      "shop",
+      "training",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://thepadclimbing.org/santa-barbara/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://thepadclimbing.org/location-hours-sb/",
+        "accessed": "2026-10-04",
+        "supports": []
+      },
+      {
+        "url": "https://thepadclimbing.org/rates-sb/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "flag",
+    "notes": "The Pad Climbing (thepadclimbing.org) lists 5160 Hollister Ave as the Full Service Gym \"The Pad Climbing - Santa Barbara\" and 5140 Hollister Ave as the BoardRoom (members-only 24/7 training annex across the parking lot). Our record is named BoardRoom but sits at the 5160 address and pin, i.e. the public gym. No staffed hours are published (only day-pass windows), so hours null. Showers are member-only in the BoardRoom, not listed.",
+    "operating": "yes",
+    "official_address": "5160 Hollister Ave (Full Service Gym) and 5140 Hollister Ave (BoardRoom), Goleta, CA 93111",
+    "location": "ok",
+    "renamed_to": "The Pad Climbing - Santa Barbara",
+    "duplicate_of_hint": "Same address as the public gym \"The Pad Climbing - Santa Barbara\" (5160 Hollister Ave); BoardRoom is the members-only annex at 5140 Hollister Ave. May appear twice under different names."
+  },
+  {
+    "id": "seed-388",
+    "name": "The Boulder Field",
+    "expect_h": "62d1e0eee8552cf2",
+    "website": "https://www.theboulderfield.com/",
+    "hours": {
+      "mon": "8am–10pm",
+      "tue": "8am–10pm",
+      "wed": "8am–10pm",
+      "thu": "8am–10pm",
+      "fri": "8am–10pm",
+      "sat": "8am–6pm",
+      "sun": "8am–6pm"
+    },
+    "day_pass": null,
+    "facilities": [
+      "training",
+      "yoga",
+      "showers",
+      "cafe",
+      "kids",
+      "shop",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://www.theboulderfield.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.theboulderfield.com/location-and-hours",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.theboulderfield.com/first-visit",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Day pass price is not stated as text (rates shown as an image), so null. Home page: fitness area, yoga studio, locker rooms with showers and saunas, cafe, children climbing area, retail shop. First-visit page: rental shoes $5.",
+    "operating": "yes",
+    "official_address": "8425 Belvedere Ave., Suite 100, Sacramento, CA 95826",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-390",
+    "name": "The Pad",
+    "expect_h": "cedac6ea7a3b226d",
+    "website": "https://thepadclimbing.org/san-luis-obispo/",
+    "hours": {
+      "mon": "11am–10pm",
+      "tue": "11am–10pm",
+      "wed": "11am–10pm",
+      "thu": "11am–10pm",
+      "fri": "11am–10pm",
+      "sat": "10am–10pm",
+      "sun": "10am–10pm"
+    },
+    "day_pass": "$27 adult 3pm-10pm, $20 early bird 11am-3pm Mon-Fri",
+    "facilities": [
+      "kids",
+      "yoga",
+      "shop",
+      "showers",
+      "training",
+      "shoe-hire",
+      "parking"
+    ],
+    "sources": [
+      {
+        "url": "https://thepadclimbing.org/san-luis-obispo/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://thepadclimbing.org/location-hours/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://thepadclimbing.org/rates-slo/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Staffed hours; members have 24/7 access. Rates page: day pass $27, early bird $20 Mon-Fri, youth $20; rental shoes always free. Location page: parking lot available.",
+    "operating": "yes",
+    "official_address": "888 Ricardo Court, San Luis Obispo, CA 93401",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-398",
+    "name": "Vert Rock Gym",
+    "expect_h": "a23dba5e9a2e06fa",
+    "website": "https://www.teamactionsports.com/about/rockwall-pg1187.htm",
+    "hours": {
+      "mon": "10am–6:30pm",
+      "tue": "10am–6:30pm",
+      "wed": "10am–6:30pm",
+      "thu": "10am–6:30pm",
+      "fri": "10am–6:30pm",
+      "sat": "10am–6pm",
+      "sun": "11am–5pm"
+    },
+    "day_pass": "$20 with gear rental, $16 without",
+    "facilities": [
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://www.teamactionsports.com/about/rockwall-pg1187.htm",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Vert Rock Gym is run by the Action Sports bike shop (store hours on the same page differ: 11am-7pm). Daily hours as listed; extra 18+ evening session Mon-Thu 6:30-8pm not included. Single visit with gear includes shoes and harness. Official address 9500 Brimhall Rd matches ours but OSM geocodes it about 8 km west of our pin (same city, Bakersfield).",
+    "operating": "yes",
+    "official_address": "9500 Brimhall Rd, #400, Bakersfield, CA 93312",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-399",
+    "name": "Vertex Climbing Center",
+    "expect_h": "8ab6d99249353db9",
+    "website": "https://www.climbvertex.com/",
+    "hours": {
+      "mon": "9am–10pm",
+      "tue": "9am–10pm",
+      "wed": "9am–10pm",
+      "thu": "9am–10pm",
+      "fri": "9am–10pm",
+      "sat": "9am–9pm",
+      "sun": "9am–9pm"
+    },
+    "day_pass": "$25 adult, $23 youth",
+    "facilities": [
+      "yoga",
+      "kids",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://www.climbvertex.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.climbvertex.com/contact/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.climbvertex.com/membership/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Public hours (members-only early access Mon/Wed/Fri 5:30am not included). Rates page: adult $25, youth $23, shoes $5. Home page: yoga classes and kids climbing programs.",
+    "operating": "yes",
+    "official_address": "3358a Coffey Lane, Santa Rosa, CA 95403",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-404",
+    "name": "VITAL Climbing Gym – Murrieta",
+    "expect_h": "58ac3d25f19e4087",
+    "website": "https://www.vitalclimbinggym.com/california",
+    "hours": {
+      "mon": "11:30am–8pm",
+      "tue": "11:30am–8pm",
+      "wed": "11:30am–8pm",
+      "thu": "11:30am–8pm",
+      "fri": "11:30am–8pm",
+      "sat": "11:30am–8pm",
+      "sun": "11:30am–8pm"
+    },
+    "day_pass": "$20 adult",
+    "facilities": [
+      "cafe",
+      "training"
+    ],
+    "sources": [
+      {
+        "url": "https://www.vitalclimbinggym.com/california",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "day_pass"
+        ]
+      },
+      {
+        "url": "https://www.vitalclimbinggym.com/california-gym",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Murrieta section of the VITAL California page: daily 11:30am-8pm, members 24-hour access; day pass $20 (price block shared by the California gyms). Murrieta gym page: self-serve cafe, fitness equipment, campus board and hangboards. Chain-wide rental/youth info not counted.",
+    "operating": "yes",
+    "official_address": "29990 Technology Dr Unit 22, Murrieta, CA 92563",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-76",
+    "name": "Adventure Unlimited Rock Gym",
+    "expect_h": "16cf0c3e2c510849",
+    "website": null,
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [
+      {
+        "url": "https://www.auranches.org/",
+        "accessed": "2026-10-04",
+        "supports": []
+      },
+      {
+        "url": "https://www.adventureunlimited.org/our-experiences/a-u-ranches/",
+        "accessed": "2026-10-04",
+        "supports": []
+      }
+    ],
+    "status": "flag",
+    "notes": "Adventure Unlimited Ranches is a Christian Science youth and family camp at 18325 County Road #366; its site lists \"rock gym\" only as a camper free-choice activity. No public day pass, hours or open-to-public gym found (the other adventureunlimited.org pages blocked automated access). Pin not geocoded (Nominatim returned nothing for the road).",
+    "operating": "not-a-gym",
+    "official_address": "18325 County Road #366, Buena Vista, CO 81211",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-77",
+    "name": "Ascent Studio",
+    "expect_h": "b918caf268c9a223",
+    "website": "https://ascentstudio.com/",
+    "hours": {
+      "mon": "6am–10pm",
+      "tue": "6am–10pm",
+      "wed": "6am–10pm",
+      "thu": "6am–10pm",
+      "fri": "6am–10pm",
+      "sat": "8am–8pm",
+      "sun": "8am–8pm"
+    },
+    "day_pass": "$25 adult, $21 student/discounted",
+    "facilities": [
+      "yoga",
+      "training"
+    ],
+    "sources": [
+      {
+        "url": "https://ascentstudio.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      },
+      {
+        "url": "https://ascentstudio.com/hours-location/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      },
+      {
+        "url": "https://ascentstudio.com/rates/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass"
+        ]
+      },
+      {
+        "url": "https://ascentstudio.com/about/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Open-to-public hours. About page: yoga studio with daily classes; dedicated training area with system walls, campus board, hangboards, free weights and cardio.",
+    "operating": "yes",
+    "official_address": "2150 Joseph Allen Drive, Fort Collins, CO 80525",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-78",
+    "name": "Basecamp Bouldering",
+    "expect_h": "97a46e4f4979b531",
+    "website": "https://basecampouray.com/",
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [
+      {
+        "url": "https://basecampouray.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      },
+      {
+        "url": "https://basecampouray.com/contact/",
+        "accessed": "2026-10-04",
+        "supports": []
+      }
+    ],
+    "status": "flag",
+    "notes": "Official site at 630 Main St is Basecamp Ouray, a guide service (rock, ice, via ferrata); neither the home nor the contact page mentions a bouldering gym or day passes. The 8am-4:30pm daily hours are guide-office hours, not used. Gym existence unconfirmed from the official site.",
+    "operating": "unknown",
+    "official_address": "630 Main Street, Ouray, CO 81427",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-80",
+    "name": "CityRock Colorado Springs",
+    "expect_h": "635d7c11f927785f",
+    "website": "https://climbcityrock.com/",
+    "hours": {
+      "mon": "6am–10pm",
+      "tue": "6am–10pm",
+      "wed": "6am–10pm",
+      "thu": "6am–10pm",
+      "fri": "6am–10pm",
+      "sat": "11am–8pm",
+      "sun": "11am–8pm"
+    },
+    "day_pass": "$25 adult",
+    "facilities": [
+      "shoe-hire",
+      "cafe"
+    ],
+    "sources": [
+      {
+        "url": "https://climbcityrock.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://climbcityrock.com/day-passes",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Official name \"CityROCK\". Weekend 9-11am is members only (excluded). Day passes page: $25 adult, climbing shoes $6. Home page links the on-site Commonfork cafe. The site is rendered client-side; the day-pass and cafe text were read through the page-to-text fetch, not raw HTML.",
+    "operating": "yes",
+    "official_address": "21 North Nevada Avenue, Colorado Springs, CO 80903",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-84",
+    "name": "Eagle Climbing + Fitness",
+    "expect_h": "755bc49d615cb81a",
+    "website": "https://eagleclimbing.com/",
+    "hours": {
+      "mon": "8am–9pm",
+      "tue": "6:30am–9pm",
+      "wed": "6:30am–9pm",
+      "thu": "6:30am–9pm",
+      "fri": "8am–8pm",
+      "sat": "11am–7pm",
+      "sun": "10am–7pm"
+    },
+    "day_pass": null,
+    "facilities": [
+      "yoga",
+      "training",
+      "parking",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://eagleclimbing.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://eagleclimbing.com/contact/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      },
+      {
+        "url": "https://eagleclimbing.com/rates/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Day pass price is only in an image / booking portal (portal returned 403), so null. Home page: fitness center and yoga studio, ample on-site parking. Rates page: rental shoes $5. Pin about 1 km from OSM geocode (borderline, same block area).",
+    "operating": "yes",
+    "official_address": "700 Chambers Ave. Unit 7, Eagle, CO 81631",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  }
+]

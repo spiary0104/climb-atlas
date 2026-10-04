@@ -1,0 +1,928 @@
+[
+ {
+  "id": "seed-29",
+  "name": "BlocHaus Bouldering Canberra",
+  "metro": null,
+  "expect_h": "17d00bae65f2518b",
+  "website": "https://cbr.blochaus.com.au/",
+  "hours": {
+   "mon": "6am–10pm",
+   "tue": "10am–10pm",
+   "wed": "6am–10pm",
+   "thu": "10am–10pm",
+   "fri": "6am–10pm",
+   "sat": "8am–10pm",
+   "sun": "8am–10pm"
+  },
+  "day_pass": "A$26 adult, A$24 concession",
+  "facilities": [
+   "training",
+   "kids",
+   "yoga",
+   "showers",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://cbr.blochaus.com.au/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://cbr.blochaus.com.au/about/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "facilities",
+     "operating",
+     "official_address"
+    ]
+   },
+   {
+    "url": "https://cbr.blochaus.com.au/pricing/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://cbr.blochaus.com.au/family-haus/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Canberra site covers both Fyshwick and Mitchell; hours are the FYS section. Day pass price is shared across both gyms. Facilities from the FYS list on the about page (Moonboard, FamilyHaus, yoga room, showers); shoe hire A$7 from pricing page. Bloc shop and Haus Brew cafe are described for the brand generally, not per location, so omitted. Geocode of official address 0.3 km from pin.",
+  "operating": "yes",
+  "official_address": "Unit 2, Building 2, 1 Dairy Road, Fyshwick ACT",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-30",
+  "name": "BlocHaus Bouldering Mitchell",
+  "metro": null,
+  "expect_h": "4946a0b14e367e8e",
+  "website": "https://cbr.blochaus.com.au/",
+  "hours": {
+   "mon": "6am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "9am–9pm",
+   "sun": "9am–9pm"
+  },
+  "day_pass": "A$26 adult, A$24 concession",
+  "facilities": [
+   "training",
+   "showers",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://cbr.blochaus.com.au/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://cbr.blochaus.com.au/about/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "facilities",
+     "operating",
+     "official_address"
+    ]
+   },
+   {
+    "url": "https://cbr.blochaus.com.au/pricing/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours are the MCL section of the shared Canberra site; day pass price shared across both gyms. Mitchell is a 12+ gym (parkour area, Kilter board, campus board, showers per about page); shoe hire A$7 from pricing page. Bloc shop/Haus Brew not stated per location, omitted.",
+  "operating": "yes",
+  "official_address": "1/2 Essington Street, Mitchell ACT",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-28",
+  "name": "Mountain Strong",
+  "metro": null,
+  "expect_h": "8348f0402ed254de",
+  "website": "https://www.mountainstrongcbr.com/",
+  "hours": {
+   "mon": "6am–10pm",
+   "tue": "9am–10pm",
+   "wed": "6am–10pm",
+   "thu": "9am–10pm",
+   "fri": "6am–10pm",
+   "sat": "10am–5pm",
+   "sun": "10am–5pm"
+  },
+  "day_pass": "A$23 adult, A$21 concession",
+  "facilities": [
+   "training",
+   "kids",
+   "shoe-hire",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://www.mountainstrongcbr.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "operating",
+     "official_address",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.mountainstrongcbr.com/bouldering-fyshwick",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.mountainstrongcbr.com/contact",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.mountainstrongcbr.com/bouldering-membership-canberra",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Old domain mountainstrong.com.au is an expired Squarespace site (404 Website Expired); current official site is mountainstrongcbr.com (found via web search, name and address match). Hours are staffed public hours; members have 24/7 training-area access. Training = strength and conditioning area, Moonboard. Kids = youth programs. Parking = private off-street car park. Day entry A$23 on home and membership pages.",
+  "operating": "yes",
+  "official_address": "66-68 Townsville St, Fyshwick ACT 2609",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-24",
+  "name": "Albury Indoor Rock Climbing",
+  "metro": null,
+  "expect_h": "1789e9c98ef13135",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [],
+  "status": "flag",
+  "notes": "No working official site found. alburyclimbing.com (the domain named by third-party directory listings, not by an official page I could fetch) now redirects to a parked GoDaddy for-sale page. No other official presence found; no official closure notice. Closed judged on dead/parked domain only; lower confidence than Camp Street. Different gym: Rise Climbing Albury opened Nov 2025 at 3/39 Bennu Circuit, Thugoona (different address), not a rename. Geocode of our address 15 Hudson Cres Lavington matches the pin.",
+  "operating": "closed",
+  "official_address": null,
+  "location": "unknown",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-22",
+  "name": "Camp Street Climbing",
+  "metro": null,
+  "expect_h": "419dd10cbf5b7b09",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [],
+  "status": "flag",
+  "notes": "Official domain campstreetclimbing.com (named in search results) no longer resolves: DNS non-existent domain (Google 8.8.8.8 and Cloudflare 1.1.1.1), fetch fails ENOTFOUND. No other official presence found; no closure notice read. Closed judged on dead domain only. Our address 102 Camp St geocodes to the pin. Some directories in search results mark it permanently closed (not used as a source).",
+  "operating": "closed",
+  "official_address": null,
+  "location": "unknown",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-26",
+  "name": "Dynomite Albion Park Rail",
+  "metro": null,
+  "expect_h": "25e806c58b0aaf97",
+  "website": "https://www.dynomite.net.au/albion-park-gym",
+  "hours": {
+   "mon": "12pm–9pm",
+   "tue": "12pm–9pm",
+   "wed": "3pm–9pm",
+   "thu": "8am–9pm",
+   "fri": "3pm–9pm",
+   "sat": "9am–6pm",
+   "sun": "9am–6pm"
+  },
+  "day_pass": "A$25 adult, A$23 concession/under 18",
+  "facilities": [
+   "training",
+   "kids",
+   "yoga",
+   "shoe-hire",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://www.dynomite.net.au/albion-park-gym",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities",
+     "operating",
+     "official_address"
+    ]
+   },
+   {
+    "url": "https://www.dynomite.net.au/membership-and-pricing",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.dynomite.net.au/parking",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "dynomite.com.au is a parked/spam domain (game-site template, 403); the real site is dynomite.net.au (found via search). Day pass shared by both Dynomite gyms. Training area, free Monday 6-7pm yoga class, function area for birthday celebrations (kids), parking page says both gyms have 20+ on-site spots. Thursday is reset day.",
+  "operating": "yes",
+  "official_address": "114 Princess Highway, Albion Park Rail NSW 2527 (access via 5 Hargraves Avenue)",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-25",
+  "name": "Dynomite North Wollongong",
+  "metro": null,
+  "expect_h": "f9b06b58953c4ef7",
+  "website": "https://www.dynomite.net.au/north-wollongong",
+  "hours": {
+   "mon": "12pm–9pm",
+   "tue": "12pm–9pm",
+   "wed": "10am–9:30pm",
+   "thu": "8am–9pm",
+   "fri": "10am–7pm",
+   "sat": "10am–6pm",
+   "sun": "10am–6pm"
+  },
+  "day_pass": "A$25 adult, A$23 concession/under 18",
+  "facilities": [
+   "training",
+   "shoe-hire",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://www.dynomite.net.au/north-wollongong",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities",
+     "operating",
+     "official_address"
+    ]
+   },
+   {
+    "url": "https://www.dynomite.net.au/membership-and-pricing",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.dynomite.net.au/parking",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "dynomite.com.au is a parked/spam domain; real site is dynomite.net.au. Day pass shared by both gyms; Wednesday 5-9pm student A$20 offer not used. Tuesday is reset day. Geocode of official address ~0.6 km from pin (street-level result).",
+  "operating": "yes",
+  "official_address": "Unit 1, Shop 2, 91-95 Montague St, North Wollongong NSW 2500",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-21",
+  "name": "Hangdog Climbing Gym",
+  "metro": null,
+  "expect_h": "8479d83b3f9c873e",
+  "website": "https://hangdog.com.au/",
+  "hours": {
+   "mon": "10am–9pm",
+   "tue": "10am–9pm",
+   "wed": "10am–9pm",
+   "thu": "10am–9pm",
+   "fri": "10am–9pm",
+   "sat": "9am–6pm",
+   "sun": "9am–5pm"
+  },
+  "day_pass": "A$28.50 adult, A$23.50 child (under 12)",
+  "facilities": [
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://hangdog.com.au/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities",
+     "operating",
+     "official_address"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "hangdogclimbing.com.au is an expired Squarespace site; real site is hangdog.com.au. Gym is mainly top-rope/auto-belay plus bouldering (our type lists bouldering only). Kids = parties, classes, school-holiday programs; shoes A$7 hire. Geocode of the street ~1.1 km from pin along a long road; suburb Coniston is within Wollongong, treated as ok.",
+  "operating": "yes",
+  "official_address": "130 Auburn Street, Wollongong NSW 2500",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-23",
+  "name": "Pulse Climbing",
+  "metro": null,
+  "expect_h": "2cd79991e0478b3e",
+  "website": "https://pulseclimbing.com.au/locations/warners-bay/",
+  "hours": {
+   "mon": "12pm–10pm",
+   "tue": "12pm–10pm",
+   "wed": "12pm–10pm",
+   "thu": "6:30am–10pm",
+   "fri": "12pm–10pm",
+   "sat": "9am–6pm",
+   "sun": "9am–6pm"
+  },
+  "day_pass": "A$24 adult, A$21 concession",
+  "facilities": [
+   "training",
+   "kids",
+   "shoe-hire",
+   "shop"
+  ],
+  "sources": [
+   {
+    "url": "https://pulseclimbing.com.au/locations/warners-bay/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities",
+     "operating",
+     "official_address"
+    ]
+   },
+   {
+    "url": "https://pulseclimbing.com.au/about/prices-and-times/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours match on location page and prices-and-times page (Warners Bay tab). Casual entry price is chain-wide (one list for all Pulse gyms), as is the A$7 shoe hire. Training area with gym equipment, youth clinics/party area, retail section on location page. Coffee machine mentioned but no cafe, so cafe omitted. Geocode ~0.8 km from pin (street-level).",
+  "operating": "yes",
+  "official_address": "2a/305 Hillsborough Road, Warners Bay 2282",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-53",
+  "name": "Alpine Indoor Climbing",
+  "metro": null,
+  "expect_h": "e565382baba787d5",
+  "website": "https://alpineindoorclimbing.com/",
+  "hours": {
+   "mon": "9am–9pm",
+   "tue": "6am–9pm",
+   "wed": "9am–9pm",
+   "thu": "2pm–9pm",
+   "fri": "6am–9pm",
+   "sat": "9am–6pm",
+   "sun": "9am–6pm"
+  },
+  "day_pass": "A$25 adult (Robina and Currumbin), A$23 student",
+  "facilities": [
+   "cafe",
+   "training",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://alpineindoorclimbing.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "operating"
+    ]
+   },
+   {
+    "url": "https://alpineindoorclimbing.com/locations/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "facilities",
+     "official_address"
+    ]
+   },
+   {
+    "url": "https://alpineindoorclimbing.com/pricing/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "alpineindoorclimbing.com.au did not load; official site is alpineindoorclimbing.com. Robina hours as listed (Monday 5 Oct public holiday 10am-6pm ignored). Cafe: locations page says Robina is steps away from cafe alpine. Training = MoonBoard. Shoe hire A$7.50. Day pass valid at both Alpine gyms.",
+  "operating": "yes",
+  "official_address": "86 Robina Town Centre Dr, Robina QLD 4226",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-52",
+  "name": "Bould Move",
+  "metro": null,
+  "expect_h": "fbb34d3e192b7d15",
+  "website": "https://bouldmove.com.au/",
+  "hours": {
+   "mon": "5am–9pm",
+   "tue": "5am–9pm",
+   "wed": "5am–9pm",
+   "thu": "5am–9pm",
+   "fri": "5am–9pm",
+   "sat": "9am–7pm",
+   "sun": "9am–7pm"
+  },
+  "day_pass": "A$26 adult (16+), A$22 youth",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "showers"
+  ],
+  "sources": [
+   {
+    "url": "https://bouldmove.com.au/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities",
+     "operating",
+     "official_address"
+    ]
+   },
+   {
+    "url": "https://bouldmove.com.au/day-passes/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Contact block on home page: Mon-Fri 5am-9pm, Sat-Sun 9am-7pm (cafe opens 6am). Bould Bean Cafe, gym/group training, showers listed; youth passes and classes; shoe hire A$7 (stated as not included in pass). Online price discount of 10% ignored.",
+  "operating": "yes",
+  "official_address": "24A Innovation Parkway, Birtinya QLD 4575",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-54",
+  "name": "Climb Toowoomba",
+  "metro": null,
+  "expect_h": "02ada412814d879e",
+  "website": "https://climb-australia.com.au/",
+  "hours": {
+   "mon": "2pm–9pm",
+   "tue": "2pm–9pm",
+   "wed": "2pm–9pm",
+   "thu": "3pm–9pm",
+   "fri": "2pm–9pm",
+   "sat": "8am–8pm",
+   "sun": "10am–4pm"
+  },
+  "day_pass": "A$26 adult, A$24 concession",
+  "facilities": [
+   "kids",
+   "shoe-hire",
+   "shop"
+  ],
+  "sources": [
+   {
+    "url": "https://climb-australia.com.au/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "operating",
+     "official_address"
+    ]
+   },
+   {
+    "url": "https://climb-australia.com.au/toowoomba-pricing/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://climb-australia.com.au/toowoomba-faq/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "climbtoowoomba.com.au redirects to climb-australia.com.au (operator Climb Australia). Hours identical on home, pricing and FAQ pages. Shoes A$6 hire; retail shop mentioned in membership terms; kids classes/birthdays in nav.",
+  "operating": "yes",
+  "official_address": "25 Prescott Street, Toowoomba QLD 4350",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-51",
+  "name": "Core Climbing",
+  "metro": null,
+  "expect_h": "f536760bfdd0149b",
+  "website": "https://www.coreclimbing.com.au/",
+  "hours": {
+   "mon": "12pm–10pm",
+   "tue": "6pm–10pm",
+   "wed": "12pm–10pm",
+   "thu": "6pm–10pm",
+   "fri": "12pm–10pm",
+   "sat": "8am–8pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": "A$27 adult, A$25 student",
+  "facilities": [
+   "yoga"
+  ],
+  "sources": [
+   {
+    "url": "https://www.coreclimbing.com.au/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "operating",
+     "official_address"
+    ]
+   },
+   {
+    "url": "https://www.coreclimbing.com.au/gold-coast-carrara/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.coreclimbing.com.au/pricing/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours footer: Mon|Wed|Fri 12pm-10pm, Tue|Thu 6pm-10pm (raw HTML confirms as written), Sat 8am-8pm, Sun 10am-8pm. Yoga/Pilates classes listed for Carrara. Site also covers a Cornubia gym; this is the Carrara section.",
+  "operating": "yes",
+  "official_address": "122 Eastlake St, Carrara QLD 4211",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-50",
+  "name": "Rockit Climbing Gym",
+  "metro": null,
+  "expect_h": "e5bccfe908236fdf",
+  "website": "https://www.rockitclimbinggym.com.au/",
+  "hours": {
+   "mon": "9am–9pm",
+   "tue": "9am–9pm",
+   "wed": "9am–9pm",
+   "thu": "9am–9pm",
+   "fri": "9am–9pm",
+   "sat": "8am–6pm",
+   "sun": "8am–6pm"
+  },
+  "day_pass": "A$27 adult (top rope + boulder), A$23 boulder-only adult",
+  "facilities": [
+   "training",
+   "kids",
+   "shoe-hire",
+   "shop"
+  ],
+  "sources": [
+   {
+    "url": "https://www.rockitclimbinggym.com.au/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities",
+     "operating",
+     "official_address"
+    ]
+   },
+   {
+    "url": "https://www.rockitclimbinggym.com.au/pricing",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.rockitclimbinggym.com.au/facilities",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "rockitclimbing.com.au is the Hobart gym; this Warana gym site is rockitclimbinggym.com.au. Training = Moonboards, spray wall, gym area; kids classes/parties/holiday program in nav; shoes A$5 hire; Shop in nav.",
+  "operating": "yes",
+  "official_address": "1/37 Premier Cct, Warana QLD 4575",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-57",
+  "name": "Rocky Climb",
+  "metro": null,
+  "expect_h": "e9f3d2cfc137292d",
+  "website": "https://www.rockyclimb.com/",
+  "hours": {
+   "mon": "8am–8pm",
+   "tue": "8am–8pm",
+   "wed": "8am–8pm",
+   "thu": "8am–8pm",
+   "fri": "8am–8pm",
+   "sat": "8am–8pm",
+   "sun": "8am–5pm"
+  },
+  "day_pass": "A$25 adult, A$20 concession",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.rockyclimb.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities",
+     "operating",
+     "official_address"
+    ]
+   },
+   {
+    "url": "https://www.rockyclimb.com/memberships/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.rockyclimb.com/first-visit/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "rockyclimb.com.au redirects to rockyclimb.com. Gym floor hours from the weekly timeline (Mon-Sat 8am-8pm, Sun 8am-5pm); rope wall shorter. Booking widget on the pages shows a preview-mode sample-data note (not used). Pocket Cafe Bar, mezzanine Training Zone (Campus/Moon/Kilter), Kids Parties, shoe hire A$5. Geocode ~0.8 km (street-level).",
+  "operating": "yes",
+  "official_address": "100 Bolsover St, Rockhampton",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-58",
+  "name": "SIX Degrees Bouldering Gym",
+  "metro": null,
+  "expect_h": "06529fa14ff3528f",
+  "website": "https://sixdegreesgym.com.au/",
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [
+   {
+    "url": "https://sixdegreesgym.com.au/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "official_address"
+    ]
+   }
+  ],
+  "status": "website-only",
+  "notes": "Official site is a one-page contact stub titled Six Degrees Gym / Atherton (operator SIX Degrees Functional Gym Pty Ltd per privacy page): phone, email, address only; no hours, prices, or mention of bouldering. Phone differs between http (4001 2539) and https (0422 573 083) versions. Operating yes rests on a live site with address matching ours; trading status not otherwise confirmed and bouldering offer not verified.",
+  "operating": "yes",
+  "official_address": "1-5 High St, Atherton, QLD 4883",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-71",
+  "name": "Southern Boulder",
+  "metro": null,
+  "expect_h": "8a72feb01c4f5d62",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [],
+  "status": "not-found",
+  "notes": "southernboulder.com.au now hosts an unrelated generic editorial site (Southern Boulder | Field Notes: stories, guides), no climbing gym content; not used as a source. No other official presence found. Third-party snippets (not used) gave 1870 Brookman Rd, Hope Forest as the old gym address; unverified, no official address available. Our pin is the Hope Forest town centroid, ~0.2 km from the Brookman Rd geocode. Possibly closed; domain repurposed.",
+  "operating": "unknown",
+  "official_address": null,
+  "location": "address_missing",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-72",
+  "name": "Beta Park",
+  "metro": null,
+  "expect_h": "f5f3746689317725",
+  "website": "https://betapark.com.au/",
+  "hours": {
+   "mon": "7am–10pm",
+   "tue": "7am–10pm",
+   "wed": "7am–10pm",
+   "thu": "7am–10pm",
+   "fri": "7am–10pm",
+   "sat": "8am–8pm",
+   "sun": "8am–8pm"
+  },
+  "day_pass": "A$23 adult, A$21 student",
+  "facilities": [
+   "cafe",
+   "training",
+   "shoe-hire",
+   "shop",
+   "showers",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://betapark.com.au/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "operating",
+     "official_address",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://betapark.com.au/first-time",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Regular hours used (school-holiday hours differ). Beta Park at The Hub (316-320 Invermay Rd, Mowbray) is a separate ropes site. Cafe, training area, showers, shoe hire A$5 and shoe sales stated on first-time FAQ; parking: Forster St and rear Sydney Place carpark listed on home page.",
+  "operating": "yes",
+  "official_address": "47 Forster Street, Invermay TAS 7248",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-73",
+  "name": "Rock It Climbing Centre",
+  "metro": null,
+  "expect_h": "78368b3e08bd0a5c",
+  "website": "https://www.rockitclimbing.com.au/",
+  "hours": {
+   "mon": "8am–10pm",
+   "tue": "8am–10pm",
+   "wed": "8am–10pm",
+   "thu": "8am–10pm",
+   "fri": "8am–9pm",
+   "sat": "8am–8pm",
+   "sun": "8am–8pm"
+  },
+  "day_pass": "A$20 adult, A$18 student (12-18)",
+  "facilities": [
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.rockitclimbing.com.au/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "operating",
+     "official_address"
+    ]
+   },
+   {
+    "url": "https://www.rockitclimbing.com.au/prices",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.rockitclimbing.com.au/first-time",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities",
+     "hours"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hobart CBD site has ropes, bouldering and kids tunnels (our type lists bouldering only). Separate bouldering-only Derwent Park gym at rockitbouldering.com.au; the Yoga link goes there, so yoga omitted. Rental shoes A$6; kids classes and parties.",
+  "operating": "yes",
+  "official_address": "54 Bathurst Street, Hobart, TAS 7000",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ }
+]

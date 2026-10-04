@@ -1,0 +1,966 @@
+[
+ {
+  "id": "seed-426",
+  "name": "Colorful Rock",
+  "metro": null,
+  "expect_h": "f1b428948eb6848a",
+  "website": "https://colorfulrock.com/",
+  "hours": {
+   "mon": "10am–10:30pm",
+   "tue": "10am–10:30pm",
+   "wed": "10am–10:30pm",
+   "thu": "10am–10:30pm",
+   "fri": "10am–10:30pm",
+   "sat": "10am–9pm",
+   "sun": "10am–9pm"
+  },
+  "day_pass": "¥1,900 adult weekday, ¥2,200 weekends/holidays (all day)",
+  "facilities": [
+   "parking",
+   "shoe-hire",
+   "training",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://colorfulrock.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://colorfulrock.com/access/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://colorfulrock.com/price/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours from access page (weekday 10:00-22:30, weekends/holidays 10:00-21:00, no regular closing day, last entry 45 min before close). Day-pass figures (adult all-day weekday 1,900, weekend 2,200) read from the price page's embedded fee data; first-visit trial 2,200 excluded. Facilities: 7 free spaces in front, rental shoes 300, MoonBoard, Kids School.",
+  "operating": "yes",
+  "official_address": "〒455-0072 愛知県名古屋市港区須成町3丁目14番",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-b0d49dc418",
+  "name": "D.Bouldering Plus Sengen-cho",
+  "metro": null,
+  "expect_h": "f788f0e1855d899c",
+  "website": "https://www.d-b-c.jp/top/sengen-cho/",
+  "hours": {
+   "mon": "1pm–9pm",
+   "tue": "1pm–9pm",
+   "wed": "1pm–9pm",
+   "thu": "1pm–9pm",
+   "fri": "1pm–9pm",
+   "sat": "10am–6pm",
+   "sun": "10am–6pm"
+  },
+  "day_pass": "¥2,000 adult weekday, ¥2,200 weekends/holidays (all day)",
+  "facilities": [
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.d-b-c.jp/top/sengen-cho/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.d-b-c.jp/top/sengen-cho/price/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours are the walk-in (都度利用) reception hours: weekdays 13:00-21:00, weekends/holidays 10:00-18:00; monthly-pass members have 24-hour access. Price page gives 都度 all-day 2,000 weekday / 2,200 weekend (the top page's trial pack shows 2,100 for the day-use component; price page used). A customer testimonial on the top page mentions 23:00 closing, ignored. Parking is coin parking (not on-site), so not listed.",
+  "operating": "yes",
+  "official_address": "〒451-0031 愛知県名古屋市西区城西2-11-13 第二泰水堂ビル2階",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-427",
+  "name": "Pinnacle 2 Sakae",
+  "metro": null,
+  "expect_h": "7e3b83569a7867b4",
+  "website": "https://pinna2.com/sakae.html",
+  "hours": {
+   "mon": "9am–10pm",
+   "tue": "9am–10pm",
+   "wed": "9am–10pm",
+   "thu": "9am–10pm",
+   "fri": "9am–10pm",
+   "sat": "9am–9pm",
+   "sun": "9am–9pm"
+  },
+  "day_pass": "¥1,900 adult weekday, ¥2,300 weekends/holidays (free time)",
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://pinna2.com/sakae.html",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://pinna2.com/access.html",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours: weekdays and holidays 9:00-22:00, Sat/Sun 9:00-21:00. Page also says closed from the first Monday to the first Wednesday of each month (rotating closure, not shown per day) plus Aug 13-15 and Dec 30-Jan 3. Prices are the adult free-time rates (2-hour rate 1,500 weekday / 1,800 weekend).",
+  "operating": "yes",
+  "official_address": "〒460-0008 愛知県名古屋市中区栄５丁目２５−１７",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-428",
+  "name": "Thumbs Up",
+  "metro": null,
+  "expect_h": "ffebeebe9be955e8",
+  "website": "https://www.omc-thumbsup.com/",
+  "hours": null,
+  "day_pass": "¥2,100 adult (1 day), ¥1,700 student",
+  "facilities": [
+   "showers",
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.omc-thumbsup.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.omc-thumbsup.com/%E3%81%94%E5%88%A9%E7%94%A8%E6%96%99/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours left null: the home page says weekdays 13:00-22:00, Sat/Sun/holidays 10:00-20:00, closed every Monday AND the 4th Tuesday of each month, while the price page says closed Mondays only (open if a holiday); pages disagree. Official site looks stale (home-page notices are from 2020, old omcwall.com points here) but shows no closure notice. Site mentions showers, rental of all gear, kids wall. Location: official address matches ours, but our pin (35.1747,136.9007) is ~2.4 km north of the Fujimicho centroid (35.153,136.907, Nominatim); real spot is near Kamimaezu station.",
+  "operating": "yes",
+  "official_address": "〒460-0014 愛知県名古屋市中区富士見町8-8 OMCビル B1F",
+  "location": "wrong_pin",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-424",
+  "name": "Bare Hands Climbing Gym",
+  "metro": null,
+  "expect_h": "f42d842a44f3dea5",
+  "website": "https://barehands.biz/",
+  "hours": {
+   "mon": "1pm–11pm",
+   "tue": "1pm–11pm",
+   "wed": "1pm–11pm",
+   "thu": "1pm–11pm",
+   "fri": "Closed",
+   "sat": "10am–8pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": "¥2,100 adult, ¥1,650 high school/university student",
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://barehands.biz/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours as stated: Mon-Thu 13:00-23:00, Sat/Sun/holidays 10:00-20:00, closed Friday. Day pass is the member 1-day rate (visitor without registration 2,800; first registration 1,100 excluded). Latest news item on the site is dated Oct 2025. Location: address matches ours, but our pin is ~1.9 km NNE of the Nanakuma 8-chome centroid (33.549,130.365 via Nominatim; chome-level precision).",
+  "operating": "yes",
+  "official_address": "〒814-0133 福岡市城南区七隈八丁目4-8 七隈ファミリープラザボウリング場内",
+  "location": "wrong_pin",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-423",
+  "name": "Mono Climbing Studio",
+  "metro": null,
+  "expect_h": "ce4b738f753f91a5",
+  "website": "https://mono-climbing.com/shopinfo/",
+  "hours": null,
+  "day_pass": "¥2,090 adult (member 1 day), ¥2,640 adult visitor",
+  "facilities": [
+   "parking",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://mono-climbing.com/shopinfo/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours left null: the Hakata block gives two inconsistent schedules (6:00-26:00 every day with staffed hours Mon-Fri 14:00-22:00 / weekends 10:00-22:00, and a second line Tue/Thu 10:00-24:00, weekends 10:00-22:00, weekdays 10:00-14:00 unstaffed). Unstaffed smart-lock use needs advance booking. Day pass = member 1-day rate; first-visit package 2,970 and 1,100 registration excluded. Parking: 6 spaces in front. Location: address matches ours but our pin (33.589,130.418) is ~3 km from the Naka 3-chome centroid (33.570,130.441, Nominatim).",
+  "operating": "yes",
+  "official_address": "福岡市博多区那珂３丁目２７−２７",
+  "location": "wrong_pin",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-425",
+  "name": "The Wall Bouldering Gym",
+  "metro": null,
+  "expect_h": "e2881542e25fc136",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [],
+  "status": "not-found",
+  "notes": "No working official site: thewallboulderinggym.jp and thewallboulderinggym.com (both named in search results) return NXDOMAIN (checked with curl and 8.8.8.8). Only a Facebook page appears in search, which is not an allowed source; no closure notice seen, so status not confirmed either way. Second search found nothing further. Our pin (33.595,130.423) is ~3.5 km from the Nishitsukiguma 3-chome centroid (33.571,130.453, Nominatim), but no official address could be verified.",
+  "operating": "unknown",
+  "official_address": null,
+  "location": "unknown",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-445",
+  "name": "Climbing Gym PURE GREEN",
+  "metro": null,
+  "expect_h": "ea58be2c77a821ea",
+  "website": "https://climbinggympuregreen.jimdofree.com/",
+  "hours": {
+   "mon": "Closed",
+   "tue": "1pm–10pm",
+   "wed": "1pm–10pm",
+   "thu": "1pm–10pm",
+   "fri": "1pm–10pm",
+   "sat": "10am–7pm",
+   "sun": "10am–5pm"
+  },
+  "day_pass": null,
+  "facilities": [
+   "parking",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://climbinggympuregreen.jimdofree.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://climbinggympuregreen.jimdofree.com/%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours: closed Monday, weekdays 13:00-22:00, Sat 10:00-19:00, Sun/holidays 10:00-17:00; irregular maintenance closures possible. Day pass null: price page is image-only; the only text price is the beginner experience course (90 min, 2,500 adult incl. rental), not a day pass. Free parking for 16 cars; kids bouldering school.",
+  "operating": "yes",
+  "official_address": "〒731-0223 広島市安佐北区可部南3-17-24",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-444",
+  "name": "pb climbing Yokogawa",
+  "metro": null,
+  "expect_h": "08c17c704ea79891",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [],
+  "status": "not-found",
+  "notes": "Official site (pb-climbing.com, found via search) returns HTTP 403 Forbidden to every automated client tried (curl with browser headers, WebFetch), likely a foreign-IP block on the Xserver host, so nothing was fetched and no website is recorded. Re-run from a Japan-based client or check manually.",
+  "operating": "unknown",
+  "official_address": null,
+  "location": "unknown",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-443",
+  "name": "Switch Climbing Gym",
+  "metro": null,
+  "expect_h": "e10a05b479723926",
+  "website": "http://switch-climbing.com/",
+  "hours": {
+   "mon": "1pm–10pm",
+   "tue": "1pm–10pm",
+   "wed": "1pm–10pm",
+   "thu": "1pm–10pm",
+   "fri": "5pm–10pm",
+   "sat": "10am–9pm",
+   "sun": "10am–7pm"
+  },
+  "day_pass": "¥1,900 adult, ¥1,600 student (all day)",
+  "facilities": [
+   "parking",
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "http://switch-climbing.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "http://switch-climbing.com/guide/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "http://switch-climbing.com/access/index.html",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours: weekdays 13:00-22:00 (Fridays open at 17:00), Sat/holidays 10:00-21:00, Sun 10:00-19:00; the site says to check its calendar for actual open days. Site is http-only (HTTPS handshake fails). Rental shoes 300, kids area, about 18 parking spaces.",
+  "operating": "yes",
+  "official_address": "〒731-5116 広島県広島市佐伯区八幡5丁目11-10-6",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-434",
+  "name": "Club Sol Station Sapporo",
+  "metro": null,
+  "expect_h": "ef57f9ae6f78d517",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [],
+  "status": "not-found",
+  "notes": "Nothing found: two searches (Japanese and quoted English name) returned no Club Sol Station / Sapporo Oyachi bouldering gym; guessed domains did not resolve to a gym. No official presence found, operating status unknown.",
+  "operating": "unknown",
+  "official_address": null,
+  "location": "unknown",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-d1af7cf93f",
+  "name": "D.Bouldering Kushiro",
+  "metro": null,
+  "expect_h": "c3bd4e3d8c0fafc5",
+  "website": "https://www.d-b-c.jp/top/kushiro/",
+  "hours": {
+   "mon": "10am–10:30pm",
+   "tue": "10am–10:30pm",
+   "wed": "10am–10:30pm",
+   "thu": "10am–10:30pm",
+   "fri": "10am–10:30pm",
+   "sat": "10am–10:30pm",
+   "sun": "10am–8:30pm"
+  },
+  "day_pass": "¥2,090 adult weekday, ¥2,310 weekends/holidays (all day)",
+  "facilities": [
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.d-b-c.jp/top/kushiro/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours as the page states opening times: weekdays 10:00-22:30, Sat/holidays 10:00-22:30, Sun 10:00-20:30, open all year. Staffed reception is shorter (weekdays 14:00-20:00, Sat/Sun/holidays 10:00-17:00; other times unstaffed), judgement call to give the full opening hours. Day pass = adult all-day (通日); 1-hour 1,540/1,760 and 2-hour 1,870/2,090 also listed. Rental shoes 330; kids school.",
+  "operating": "yes",
+  "official_address": "北海道釧路市幸町10丁目1 釧路パレスボウル2F",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-435",
+  "name": "NAC Sapporo Climbing Gym",
+  "metro": null,
+  "expect_h": "0be779e159d82152",
+  "website": "https://nacadventures.jp/2025/08/05/20250805/",
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [
+   {
+    "url": "https://nacadventures.jp/2025/08/05/20250805/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   }
+  ],
+  "status": "flag",
+  "notes": "Operator (NAC Niseko Adventure Centre) posted on 2025-08-05 that NAC Sapporo, open since 2008, closed on 2025-08-31; its current site lists only Niseko. Notice gives no street address. Website value is that notice page, since the old climbing page returns 404.",
+  "operating": "closed",
+  "official_address": null,
+  "location": "unknown",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-12fe7b793e",
+  "name": "GRAVITY RESEARCH Himeji",
+  "metro": null,
+  "expect_h": "8f4a5a1685d376f8",
+  "website": "https://www.gravity-research.jp/shop/himeji/",
+  "hours": null,
+  "day_pass": "¥2,100 adult free time, ¥1,800 adult 120 min",
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.gravity-research.jp/shop/himeji/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours left null: page says weekdays 13:00-22:00, Sat/Sun/holidays 10:00-21:00 but also 'closed Tuesdays, per the business calendar', so Tuesday is unclear. Prices are adult 120-min and free-time (first registration 1,200 excluded; happy hour/night rates exist). Rental shoes 400. Parking is paid, so not listed.",
+  "operating": "yes",
+  "official_address": "兵庫県姫路市駅前町27 テラッソ姫路 3F",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-8bffb8d031",
+  "name": "ROCKY Climbing & Fitness Gym Tsukuba Ami",
+  "metro": null,
+  "expect_h": "ef5ea6a1ba4bdfc4",
+  "website": "https://www.rockyclimbing.com/tsukubaami/",
+  "hours": {
+   "mon": "10am–11pm",
+   "tue": "10am–11pm",
+   "wed": "10am–11pm",
+   "thu": "10am–11pm",
+   "fri": "10am–11pm",
+   "sat": "10am–9pm",
+   "sun": "10am–9pm"
+  },
+  "day_pass": "¥2,000 adult weekday, ¥2,200 weekends/holidays",
+  "facilities": [
+   "parking",
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.rockyclimbing.com/tsukubaami/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.rockyclimbing.com/price/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours: weekdays 10:00-23:00, Sat/Sun/holidays 10:00-21:00 (a separate business-calendar page exists). Day pass = Tsukuba Ami single-day adult rate from the shared price page (first registration 1,100 excluded). Free dedicated parking at Pier City Arakawa-Hongo; rental shoes 300; kids school priced for this store.",
+  "operating": "yes",
+  "official_address": "〒300-1159 茨城県稲敷郡阿見町本郷3-1-1",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-1051fd5339",
+  "name": "D.Bouldering Plus Kumamoto Oyama",
+  "metro": null,
+  "expect_h": "00ec5f419edc0be8",
+  "website": "https://www.d-b-c.jp/top/kumamoto-oyama/",
+  "hours": {
+   "mon": "Closed",
+   "tue": "1pm–10pm",
+   "wed": "1pm–10pm",
+   "thu": "5pm–10pm",
+   "fri": "1pm–10pm",
+   "sat": "10am–6pm",
+   "sun": "10am–6pm"
+  },
+  "day_pass": "¥2,200 adult, ¥2,000 student (all day, same weekday/weekend)",
+  "facilities": [
+   "kids",
+   "training",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.d-b-c.jp/top/kumamoto-oyama/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.d-b-c.jp/top/kumamoto-oyama/price/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Walk-in hours: closed Monday; weekdays 13:00-22:00 except Thursday 17:00-22:00; Sat/Sun/holidays 10:00-18:00 (last entry 15 min before close); monthly-pass members have 24-hour access. Price page says fees are the same weekdays and weekends. Kids area from age 2, training area, shoe rental 330.",
+  "operating": "yes",
+  "official_address": "〒861-8045 熊本県熊本市東区小山2-25-38",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-5e6f270e19",
+  "name": "Climbing Gym SORANI",
+  "metro": null,
+  "expect_h": "0872435f4c3fb6bc",
+  "website": "https://cg-sorani.com/",
+  "hours": {
+   "mon": "Closed",
+   "tue": "2pm–10pm",
+   "wed": "2pm–10pm",
+   "thu": "5pm–10pm",
+   "fri": "2pm–10pm",
+   "sat": "10am–7pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": "¥2,500 adult visitor weekday, ¥2,700 weekends/holidays",
+  "facilities": [
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://cg-sorani.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://cg-sorani.com/guide",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://cg-sorani.com/access",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours: closed Monday, Tue/Wed/Fri 14:00-22:00, Thu 17:00-22:00, Sat 10:00-19:00, Sun 10:00-20:00, open on weekday holidays; summer/winter closures per calendar. Price is the visitor adult rate (member all-day 2,200 after 1,500 registration). Kids wall/space; rental shoes 300.",
+  "operating": "yes",
+  "official_address": "〒385-0012 長野県佐久市根々井49-1",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-e13991e972",
+  "name": "D.Bouldering Plus Nagano Suwa",
+  "metro": null,
+  "expect_h": "121425cb56c48228",
+  "website": "https://www.d-b-c.jp/top/suwa/",
+  "hours": null,
+  "day_pass": "¥2,150 adult weekday, ¥2,250 weekends (all day)",
+  "facilities": [
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.d-b-c.jp/top/suwa/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours left null: walk-in reception is stated only for Mon/Wed/Fri 12:00-20:00 and weekends 11:00-17:00 with irregular closures (不定休, monthly schedule posts). Site is active (news to 2026-10-03, 4th anniversary event in Oct). A ticker on the page says '10/20 pre-opening', which looks stale or about another event; ignored. Kids area from age 2, rental shoes 330.",
+  "operating": "yes",
+  "official_address": "〒392-0016 長野県諏訪市豊田240",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-aebb393231",
+  "name": "Edge and Sofa Bouldering Park Matsumoto",
+  "metro": null,
+  "expect_h": "4993d7d79659ec20",
+  "website": "https://www.edgeandsofa.jp/gyminfo/",
+  "hours": {
+   "mon": "Closed",
+   "tue": "1pm–10:30pm",
+   "wed": "1pm–10:30pm",
+   "thu": "1pm–10:30pm",
+   "fri": "1pm–10:30pm",
+   "sat": "11am–8pm",
+   "sun": "11am–7pm"
+  },
+  "day_pass": "¥2,970 adult member 1 day, ¥3,850 adult visitor",
+  "facilities": [
+   "shoe-hire",
+   "shop",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.edgeandsofa.jp/gyminfo/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.edgeandsofa.jp/company/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours: weekdays 13:00-22:30, Sat 11:00-20:00, Sun/holidays 11:00-19:00, closed Mondays (open if Monday is a holiday); gym reception ends 1-1.5 h earlier. Day pass: member 1-day 2,970 after 1,100 registration; visitor (no registration) 3,850. Pro shop on site, rental shoes, junior school.",
+  "operating": "yes",
+  "official_address": "〒390-0851 長野県松本市島内4179-1",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-60a5691c56",
+  "name": "Edge and Sofa Climb Wonderland Ina",
+  "metro": null,
+  "expect_h": "51930a2755b3ac11",
+  "website": "https://www.edgeandsofa.jp/gyminfo/index_ina.php",
+  "hours": {
+   "mon": "Closed",
+   "tue": "Closed",
+   "wed": "1pm–10pm",
+   "thu": "Closed",
+   "fri": "4pm–10pm",
+   "sat": "10am–7pm",
+   "sun": "10am–7pm"
+  },
+  "day_pass": "¥2,970 adult member 1 day (belay-only facility fee ¥550 extra)",
+  "facilities": [
+   "parking",
+   "shop",
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.edgeandsofa.jp/gyminfo/index_ina.php",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.edgeandsofa.jp/company/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours: Wed 13:00-22:00, Fri 16:00-22:00, Sat/Sun/holidays 10:00-19:00 in summer (Mar-Oct; 10:00-18:00 Nov-Feb); closed Mon/Tue/Thu (open if a holiday). Entry ends 1 hour before close. Day pass is the member 1-day rate after 1,100 registration; the page shows no separate visitor rate. About 15 spaces in front plus 10 behind; shop; junior school; rental shoes.",
+  "operating": "yes",
+  "official_address": "〒396-0001 長野県伊那市福島1675",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-447",
+  "name": "Boulbaka",
+  "metro": null,
+  "expect_h": "9ca8ae1e202757db",
+  "website": "http://www.boulbaka.com/",
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [
+   {
+    "url": "http://www.boulbaka.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   }
+  ],
+  "status": "flag",
+  "notes": "Doubtful: the official site's menu, hours (weekdays 13:00-22:00, weekends 10:00-19:00, closed Friday), prices and parking all describe BOULBAKA2 in Urasoe (1-1-5 Touyama, tel 098-917-1993); the original Naha Ameku gym appears only in the footer (882 Ameku, Naha, 098-988-4550), with no hours or closure notice. Hours and day pass left null because they belong to the Urasoe gym. Site is http-only (HTTPS handshake fails). Verify whether the Ameku gym still operates.",
+  "operating": "unknown",
+  "official_address": "882 Ameku, Naha (site footer, tel 098-988-4550)",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-a506f5dd99",
+  "name": "D.Bouldering Okinawa Toyosaki",
+  "metro": null,
+  "expect_h": "5b00a48ae44637b6",
+  "website": "https://www.d-b-c.jp/top/okinawa/",
+  "hours": {
+   "mon": "10am–11pm",
+   "tue": "10am–11pm",
+   "wed": "10am–11pm",
+   "thu": "10am–11pm",
+   "fri": "10am–11pm",
+   "sat": "10am–9pm",
+   "sun": "10am–9pm"
+  },
+  "day_pass": "¥2,150 adult (all day), ¥1,800 adult 2 hours",
+  "facilities": [
+   "training",
+   "cafe",
+   "shop",
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.d-b-c.jp/top/okinawa/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours: weekdays 10:00-23:00, Sat/Sun/holidays 10:00-21:00, open all year (reception ends 1 hour before close; a Sept 22-26 competition notice was ignored). Facilities from this page: Okinawa's first MoonBoard, on-site shop corner, rental shoes, kids school, and the adjoining BANANA BOON juice and craft-beer shop plus a terrace (counted as cafe).",
+  "operating": "yes",
+  "official_address": "沖縄県豊見城市豊崎3番地内 イーアス沖縄豊崎",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-8d47c63847",
+  "name": "D.Bouldering Plus Ishigaki",
+  "metro": null,
+  "expect_h": "d6235e9386a98360",
+  "website": "https://www.d-b-c.jp/top/ishigaki/",
+  "hours": {
+   "mon": "Closed",
+   "tue": "7pm–10pm",
+   "wed": "Closed",
+   "thu": "7pm–10pm",
+   "fri": "Closed",
+   "sat": "11am–6pm",
+   "sun": "11am–6pm"
+  },
+  "day_pass": "¥2,090 adult (all day), ¥1,540 university student or younger",
+  "facilities": [
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.d-b-c.jp/top/ishigaki/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.d-b-c.jp/top/ishigaki/price/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours are the staffed hours open to everyone: Tue/Thu 19:00-22:00, Sat/Sun/holidays 11:00-18:00, staffed closed Mon/Wed/Fri. Unstaffed hours (Mon/Wed/Fri 10:00-21:00, Tue/Thu 10:00-19:00, weekends 18:00-20:00) are only for pass holders and experienced climbers, and members have 24-hour access. Price page: all-day 2,090 in staffed and unstaffed hours, visitor 2,530. Rental shoes 440; kids school.",
+  "operating": "yes",
+  "official_address": "〒907-0004 沖縄県石垣市登野城639-2",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-446",
+  "name": "Naha Gym",
+  "metro": null,
+  "expect_h": "68bf8048ff4d71f8",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [],
+  "status": "not-found",
+  "notes": "No official site found after two searches and guessed domains. Search results show only Instagram/Facebook pages (not allowed sources) and listings describing a weight-training gym at 1-17-15 Izumizaki, Naha (third-party, unverified); no bouldering offer confirmed, so it may not be a climbing gym. Operating status unknown.",
+  "operating": "unknown",
+  "official_address": null,
+  "location": "unknown",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-448",
+  "name": "Onoyama Park Budokan Climbing & Sumo Hall",
+  "metro": null,
+  "expect_h": "4128163ebd164dd6",
+  "website": "https://www.ounoyama.jp/each-facility-guidance/budokan/educate-traning-hall/climbing-and-sumo-hall/",
+  "hours": {
+   "mon": "9am–9pm",
+   "tue": "Closed",
+   "wed": "9am–9pm",
+   "thu": "9am–9pm",
+   "fri": "9am–9pm",
+   "sat": "9am–9pm",
+   "sun": "9am–9pm"
+  },
+  "day_pass": "¥240 adult/student per 2 hours, ¥130 child/senior (65+)",
+  "facilities": null,
+  "sources": [
+   {
+    "url": "https://www.ounoyama.jp/each-facility-guidance/budokan/educate-traning-hall/climbing-and-sumo-hall/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass"
+    ]
+   },
+   {
+    "url": "https://www.ounoyama.jp/wp-content/uploads/2026/02/%E3%82%AF%E3%83%A9%E3%82%A4%E3%83%9F%E3%83%B3%E3%82%B0%E3%80%81%E7%9B%B8%E6%92%B2%E5%A0%B4%E6%96%99%E9%87%91%E8%A1%A8.pdf",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Public prefectural facility (Okinawa Prefectural Budokan): lead wall 12 m plus bouldering wall 4 m. Open 9:00-21:00, closed Tuesdays (next day if Tuesday is a holiday) and Dec 28-Jan 4. Individual-practice fee 240 per 2 hours (11-ticket book 2,400); the new fee schedule from April 2026 (PDF) shows the same figures. No gym-style facilities listed.",
+  "operating": "yes",
+  "official_address": "沖縄県那覇市奥武山町52番地",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ }
+]

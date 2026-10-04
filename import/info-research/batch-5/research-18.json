@@ -1,0 +1,365 @@
+[
+ {
+  "id": "g-275a0398fd",
+  "name": "Performance Rock Haifa",
+  "metro": null,
+  "expect_h": "fa4ab3c41d679863",
+  "website": "https://performancerock.co.il/branch/haifa/",
+  "hours": {
+   "mon": "8am–11pm",
+   "tue": "8am–11pm",
+   "wed": "8am–11pm",
+   "thu": "8am–11pm",
+   "fri": "9am–6pm",
+   "sat": "10am–11pm",
+   "sun": "8am–11pm"
+  },
+  "day_pass": null,
+  "facilities": [
+   "shoe-hire",
+   "showers",
+   "yoga",
+   "training"
+  ],
+  "sources": [
+   {
+    "url": "https://performancerock.co.il/branch/haifa/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities",
+     "location"
+    ]
+   },
+   {
+    "url": "https://performancerock.co.il/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "location"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours from the Haifa branch page (Sun-Thu 08:00-23:00, Fri 09:00-18:00, Sat 10:00-23:00). Day-pass price not published on the site (booking is via a JS-only fizikal.co.il cart; price not retrievable). Shoe hire 10 NIS and 'bring a towel if you want to shower' stated on the branch page; yoga studio classes listed for this branch; 'huge space for climbing and fitness' -> training. Site gives address as HaNamal 32 (Hebrew), and its Waze link pin 32.81993,34.99973 equals our pin.",
+  "operating": "yes",
+  "official_address": "הנמל 32, חיפה (HaNamal 32, Haifa)",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-1591",
+  "name": "iClimb Jerusalem",
+  "metro": null,
+  "expect_h": "f7dc75355aa40119",
+  "website": "https://iclimb.co.il/jerusalem/%d7%a8%d7%90%d7%a9%d7%99/",
+  "hours": null,
+  "day_pass": null,
+  "facilities": [
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://iclimb.co.il/jerusalem/%d7%a8%d7%90%d7%a9%d7%99/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://iclimb.co.il/jerusalem/%d7%a6%d7%a8%d7%95-%d7%a7%d7%a9%d7%a8/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "location"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours page for Jerusalem shows only a month-labelled ('August') schedule (Sun-Wed, Thu, Fri and Saturday-night slots, no Saturday daytime) with a 'hours may change' note -> treated as temporary/incomplete, hours null. No price page for the Jerusalem branch found. Home page states climbing-shoe rental and kids courses (from age 6). Contact page address: Beitar Jerusalem sports association, Teddy Stadium, Jerusalem (no street number); matches our Teddy Stadium pin.",
+  "operating": "yes",
+  "official_address": "אגודת ספורט בית\"ר ירושלים, אצטדיון טדי, ירושלים (Teddy Stadium, Jerusalem)",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-c6ab5c3a50",
+  "name": "The Bloc Jerusalem",
+  "metro": null,
+  "expect_h": "749b198fb5f5c4c3",
+  "website": "https://www.thebloc.co.il/jlm",
+  "hours": {
+   "mon": "10am–11pm",
+   "tue": "4pm–7pm",
+   "wed": "10am–11pm",
+   "thu": "8am–11pm",
+   "fri": "8am–5pm",
+   "sat": "10am–11pm",
+   "sun": "8am–11pm"
+  },
+  "day_pass": "₪75 (limited to 3 hours), ₪55 morning entry (Sun–Thu until 3pm)",
+  "facilities": [
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.thebloc.co.il/jlm",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities",
+     "location"
+    ]
+   },
+   {
+    "url": "https://www.thebloc.co.il/classjlm",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Judgement call: Tuesday is listed as 'for everyone 16:00-19:00' and 'for members 19:00-23:00'; public hours stated as 4pm–7pm. Shoe rental 10 NIS. Kids courses for Jerusalem on /classjlm. Address: Itzhak Eliashar 7 (English page).",
+  "operating": "yes",
+  "official_address": "Itzhak Eliashar 7, Jerusalem",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-cea6787feb",
+  "name": "Urban Climbing Jerusalem",
+  "metro": null,
+  "expect_h": "27246cf4a7bae06b",
+  "website": "https://www.uclimb-en.com/jerusalemb",
+  "hours": null,
+  "day_pass": "₪75 day pass",
+  "facilities": [
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.uclimb-en.com/jerusalemb",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities",
+     "location"
+    ]
+   },
+   {
+    "url": "https://www.uclimb-en.com/jerusalempricing",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Brand is 'Urban Climbing' / uClimb. Hours pages disagree: /jerusalemb says Sun-Thu 16:00-22:00, Fri 11:00-16:00, Sat 15:00-21:00; /main (COVID-era page) says Sat 15:00-20:00 -> hours set null per rule. Day pass 75 NIS; shoe rental 12 NIS; kids classes on /jerusalemb. /main lists espresso, beers, lockers/showers, shop for the brand in general (not specific to Jerusalem), so not used. Parking mentioned only as 'Lev-Hagiva level -5, call us' -> not claimed. Official address Beit Hadfus 11, Lobby 2, Floor -4 (our address also names Beit HaDfus 11, Givat Shaul).",
+  "operating": "yes",
+  "official_address": "Beit Hadfus 11, Lobby 2, Floor -4, Jerusalem",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-1592",
+  "name": "Campus Climbing",
+  "metro": null,
+  "expect_h": "0f292179ebe746a9",
+  "website": "https://www.campuswall.co.il/",
+  "hours": {
+   "mon": "4pm–10pm",
+   "tue": "4pm–10pm",
+   "wed": "4pm–10pm",
+   "thu": "4pm–11pm",
+   "fri": "10am–4pm",
+   "sat": "11am–6pm",
+   "sun": "4pm–11pm"
+  },
+  "day_pass": "₪75 adult, ₪65 student/soldier",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.campuswall.co.il/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities",
+     "location"
+    ]
+   },
+   {
+    "url": "https://www.campuswall.co.il/pricing",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours from the home page schedule (a banner says holiday hours differ; ignored). Café bar, Kilter board + training area, kids classes (climbing/ninja), shoe rental 10 NIS stated. Official address: רחוב החרמש 9 כרמיאל = HaKhermesh 9.",
+  "operating": "yes",
+  "official_address": "רחוב החרמש 9, כרמיאל (HaKhermesh St 9, Karmiel)",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-9b3aa1a5f8",
+  "name": "Roca Climbing Club",
+  "metro": null,
+  "expect_h": "738f8842da8d41b4",
+  "website": "https://www.rocaclimb.co.il/",
+  "hours": {
+   "mon": "Closed",
+   "tue": "4pm–10pm",
+   "wed": "4pm–10pm",
+   "thu": "4pm–10pm",
+   "fri": "10am–4pm",
+   "sat": "10am–8pm",
+   "sun": "4pm–10pm"
+  },
+  "day_pass": "₪65 single entry",
+  "facilities": [
+   "cafe",
+   "shop",
+   "kids",
+   "training"
+  ],
+  "sources": [
+   {
+    "url": "https://www.rocaclimb.co.il/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities",
+     "location"
+    ]
+   },
+   {
+    "url": "https://www.rocaclimb.co.il/%D7%9E%D7%97%D7%99%D7%A8%D7%95%D7%9F",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.rocaclimb.co.il/%D7%9E%D7%AA%D7%97%D7%9D-%D7%90%D7%99%D7%9E%D7%95%D7%A0%D7%99%D7%9D",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours text reads 'Sun-Thu 16:00-22:00 / Monday closed / Fri 10:00-16:00 / Sat 10:00-20:00' (written RTL, times appear reversed in source). Monday 'closed' is stated explicitly although it sits inside the Sun-Thu range; used as stated, flag for review. Day pass: the price-list page shows it only in image alt text ('2025-2026 ... single entry 65 NIS'). Facilities: café bar, equipment shop, kids area/classes, training area (pull-up bars, parallettes, fingerboards).",
+  "operating": "yes",
+  "official_address": "קיבוץ אפיקים, עמק הירדן (Kibbutz Afikim, Jordan Valley)",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-1594",
+  "name": "Toprope",
+  "metro": null,
+  "expect_h": "c6640269b5282201",
+  "website": "https://www.kayaks.co.il/%d7%a4%d7%90%d7%a8%d7%a7-%d7%90%d7%aa%d7%92%d7%a8%d7%99/",
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [
+   {
+    "url": "https://www.kayaks.co.il/%d7%a4%d7%90%d7%a8%d7%a7-%d7%90%d7%aa%d7%92%d7%a8%d7%99/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://www.kayaks.co.il/product/climbing-wall/",
+    "accessed": "2026-10-04",
+    "supports": []
+   },
+   {
+    "url": "https://www.kayaks.co.il/product/top-rope/",
+    "accessed": "2026-10-04",
+    "supports": []
+   }
+  ],
+  "status": "flag",
+  "notes": "Not a climbing gym: 'Top Rope' is the adventure park of Kayaks Kfar Blum (rope bridges, archery, 90 m zip-line to the Jordan, 12 m climbing wall). Park open Fri/Sat, holidays, July-August; other days only zip-line/wall tickets, and the product pages carry a notice that the park/wall is still closed to visitors. No gym hours or day pass recorded (wall-only ticket 36 NIS is an attraction ticket). toprope.co.il and top-rope.co.il are unrelated rope-access companies. Official address: Kibbutz Kfar Blum, Upper Galilee (no street); our pin in Kfar Blum is plausible.",
+  "operating": "not-a-gym",
+  "official_address": "קיבוץ כפר בלום, גליל עליון (Kibbutz Kfar Blum, Upper Galilee)",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-1590",
+  "name": "Performance Rock",
+  "metro": null,
+  "expect_h": "6c2d2672f347f3e0",
+  "website": "https://performancerock.co.il/branch/beer-sheva/",
+  "hours": {
+   "mon": "4pm–11pm",
+   "tue": "4pm–10pm",
+   "wed": "4pm–10pm",
+   "thu": "4pm–11pm",
+   "fri": "9am–1pm",
+   "sat": "12pm–8pm",
+   "sun": "4pm–10pm"
+  },
+  "day_pass": null,
+  "facilities": [
+   "cafe",
+   "yoga"
+  ],
+  "sources": [
+   {
+    "url": "https://performancerock.co.il/branch/beer-sheva/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities",
+     "location"
+    ]
+   },
+   {
+    "url": "https://performancerock.co.il/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "location"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours from the Be'er Sheva branch page. Day-pass price not published (booking system not retrievable). Cafe: 'sit with us over a beer or coffee'; yoga/yogilates studio classes listed for this branch. Official address HaAtsmaut 4 matches ours, but the site's Waze pin for this branch (31.2381,34.7930) is about 0.9 km SSE of our pin (31.2429,34.7858): same address text, pin possibly off; Nominatim geocoding did not respond, so not re-checked.",
+  "operating": "yes",
+  "official_address": "העצמאות 4, באר שבע (HaAtsmaut 4, Be'er Sheva)",
+  "location": "mismatch",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ }
+]

@@ -1,0 +1,226 @@
+[
+ {
+  "id": "seed-1129",
+  "name": "Beest Boulders - Rotterdam",
+  "metro": null,
+  "expect_h": "393e9d9492fbc603",
+  "website": "https://beestboulders.com/vestigingen/beest-boulders-rotterdam/",
+  "hours": {
+   "mon": "9am–11pm",
+   "tue": "9am–11pm",
+   "wed": "9am–11pm",
+   "thu": "9am–11pm",
+   "fri": "9am–11pm",
+   "sat": "9am–11pm",
+   "sun": "9am–11pm"
+  },
+  "day_pass": "€14.70 adult with member card, €19.70 first visit (€11.25 student off-peak)",
+  "facilities": [
+   "cafe",
+   "training",
+   "shop"
+  ],
+  "sources": [
+   {
+    "url": "https://beestboulders.com/vestigingen/beest-boulders-rotterdam/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://beestboulders.com/tarieven/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   }
+  ],
+  "status": "found",
+  "operating": "yes",
+  "official_address": "Benthemplein 10, 3032 CC Rotterdam",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null,
+  "notes": "Hours stated as 'Weekdagen 9:00-23:00 / Weekend 9:00-23:00' on the location page. Prices from the Beest Boulders tarieven page (shared across Beest locations; undated, site copyright 2026); shoe rental is listed there but not on the location page, so shoe-hire omitted. Nominatim geocodes the official address to our exact pin."
+ },
+ {
+  "id": "seed-1130",
+  "name": "Bolder Neoliet - Rotterdam",
+  "metro": null,
+  "expect_h": "86378022482054fb",
+  "website": "https://boulderneoliet.nl/en/rotterdam/",
+  "hours": {
+   "mon": "9am–11pm",
+   "tue": "9am–11pm",
+   "wed": "9am–11pm",
+   "thu": "9am–11pm",
+   "fri": "9am–11pm",
+   "sat": "11am–9pm",
+   "sun": "9am–7pm"
+  },
+  "day_pass": "€14.50 adult, €13.50 age 18-24",
+  "facilities": [
+   "cafe",
+   "training",
+   "shoe-hire",
+   "shop",
+   "showers",
+   "parking",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://boulderneoliet.nl/en/rotterdam/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://boulderneoliet.nl/en/rotterdam/openingstijden/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://boulderneoliet.nl/en/rotterdam/prijzen/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   },
+   {
+    "url": "https://boulderneoliet.nl/en/rotterdam/faciliteiten/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "operating": "yes",
+  "official_address": "Keilestraat 7J, 3029 BP Rotterdam",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null,
+  "notes": "Official trade name is 'Boulder Neoliet Rotterdam' (ours 'Bolder Neoliet' is a spelling variant, same address). Facilities page ticks free/paid parking, catering space, training room, showers, shop; shoe rental from home page ('huur een paar klimschoenen'), kids from the location's 'Boulderen voor kinderen' page link; the bar from the home page. Nominatim does not resolve 7J but 7F/7H on Keilestraat sit at 51.90806,4.43340, matching our pin."
+ },
+ {
+  "id": "seed-1131",
+  "name": "De Klimmuur - Rotterdam",
+  "metro": null,
+  "expect_h": "cefcd379bb6c80fa",
+  "website": "https://www.deklimmuur.nl/vestigingen/klimmuur-rotterdam/",
+  "hours": {
+   "mon": "1pm–11pm",
+   "tue": "1pm–11pm",
+   "wed": "1pm–11pm",
+   "thu": "1pm–11pm",
+   "fri": "1pm–11pm",
+   "sat": "9am–6pm",
+   "sun": "9am–6pm"
+  },
+  "day_pass": "€18.70 adult without member card, €17.70 with member card",
+  "facilities": [
+   "cafe",
+   "training",
+   "shop",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://www.deklimmuur.nl/vestigingen/klimmuur-rotterdam/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.deklimmuur.nl/tarieven/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   }
+  ],
+  "status": "found",
+  "operating": "yes",
+  "official_address": "Prinsenlaan 910, 3062 CT Rotterdam",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null,
+  "notes": "Official name 'De Klimmuur Rotterdam' (also called Klimmuur Rotterdam). Hours stated as 'ma t/m vrij 13:00-23:00, za-zo 9:00-18:00'. Facilities from location page (horeca binnen/buiten, klimwinkel, training room, free parking); shoe rental only on the chain tarieven page so omitted. Prices from chain tarieven page (undated, site copyright 2026). Nominatim places the address at our exact pin."
+ },
+ {
+  "id": "seed-1132",
+  "name": "Monk bouldergym - Rotterdam",
+  "metro": null,
+  "expect_h": "b0fc6ad71a53ad9d",
+  "website": "https://monk.nl/rotterdam/",
+  "hours": {
+   "mon": "9am–12am",
+   "tue": "9am–12am",
+   "wed": "9am–12am",
+   "thu": "9am–12am",
+   "fri": "9am–12am",
+   "sat": "9am–12am",
+   "sun": "9am–12am"
+  },
+  "day_pass": "€14.50 adult 25+, €13.50 age 18-24",
+  "facilities": [
+   "cafe",
+   "training",
+   "shoe-hire",
+   "shop",
+   "showers",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://monk.nl/rotterdam/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://monk.nl/rotterdam/openingstijden/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://monk.nl/rotterdam/lid-worden-rtm/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://monk.nl/rotterdam/eerste-keer/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "operating": "yes",
+  "official_address": "Ceintuurbaan 183, 3051 KC Rotterdam",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null,
+  "notes": "Hours page lists 09:00-00:00 for all seven days (a Koningsdag exception is ignored). Prices are the Monk toegangsprijzen on the Rotterdam member page (shared across Monk locations). Facilities: bar/cafe, training area, Monkshop, rental shoes, changing rooms and showers, youth bouldering/training pages. Nominatim places the address at our exact pin."
+ }
+]

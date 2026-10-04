@@ -1,0 +1,420 @@
+[
+ {
+  "id": "seed-954",
+  "name": "Overhang Climbing Centre",
+  "metro": null,
+  "expect_h": "a3bd29df05107cac",
+  "website": "https://overhangcarmarthen.co.uk/",
+  "hours": {
+   "mon": "2pm–9pm",
+   "tue": "2pm–9pm",
+   "wed": "2pm–9pm",
+   "thu": "2pm–9pm",
+   "fri": "2pm–9pm",
+   "sat": "10am–5pm",
+   "sun": "10am–5pm"
+  },
+  "day_pass": "£13 adult, £11 under 18/concession",
+  "facilities": [
+   "cafe",
+   "parking",
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://overhangcarmarthen.co.uk/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://overhangcarmarthen.co.uk/experienced-climbers/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "We have no stored address; official is Picton Terrace, Carmarthen SA31 3DF. Nominatim puts Picton Terrace ~0.4 km from our pin, so the pin is fine. Facilities: cafe (hot/cold drinks, cakes), on-site parking, harness/shoe hire, after-school/weekend kids clubs, all stated on site. Prices on experienced-climbers page: Adults 13, Under 18s/Concessions 11 (pound sign).",
+  "operating": "yes",
+  "official_address": "Picton Terrace, Carmarthen, SA31 3DF (former St David's Church)",
+  "location": "address_missing",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-955",
+  "name": "Spot Climbing Centre",
+  "metro": null,
+  "expect_h": "26a6121bcef9cc5c",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [],
+  "status": "not-found",
+  "notes": "spotclimbing.co.uk (the official domain) no longer resolves: no A/AAAA record via the local resolver or 8.8.8.8 (only NS, MS-verification TXT and an Office365 SPF record remain); WebFetch got ENOTFOUND. A Facebook page 'Spot Climbing' still shows up in search, so by the brief's rule this is 'unknown', not 'closed'. Strong non-official signals (not used as facts): a South Wales climbing wiki lists it as 'Closed Down' and Companies House shows The Spot Climbing Centre Ltd dissolved 3 Dec 2024. Treat as very likely closed; suggest confirming with the Facebook page.",
+  "operating": "unknown",
+  "official_address": null,
+  "location": "unknown",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-957",
+  "name": "The Hive Swansea",
+  "metro": null,
+  "expect_h": "bfe53d81952d8f53",
+  "website": "https://www.thehiveclimbingswansea.co.uk/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "9am–7pm",
+   "sun": "9am–7pm"
+  },
+  "day_pass": null,
+  "facilities": [
+   "cafe",
+   "shoe-hire",
+   "parking",
+   "shop"
+  ],
+  "sources": [
+   {
+    "url": "https://www.thehiveclimbingswansea.co.uk/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.thehiveclimbingswansea.co.uk/pricing-and-memberships",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.thehiveclimbingswansea.co.uk/cafe-and-community",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Our pin (51.621,-3.943) is central Swansea; the official address is Castell Close, Swansea Enterprise Park, Llansamlet (Nominatim 51.657,-3.908), roughly 4.7 km NE. We have no stored address. Day-pass price is not in the page text (day passes mentioned, amounts not shown), so null. Facilities: cafe (local coffee and food), free shoe rental, free parking, climbing shop (member discounts in the climbing shop). Search snippets say the site is run by Cullen Climbing CIC since 1 July 2026 (operator change, name unchanged).",
+  "operating": "yes",
+  "official_address": "Unit 3, Castell Close, Swansea Enterprise Park, Swansea, SA7 9FH",
+  "location": "wrong_pin",
+  "renamed_to": null,
+  "duplicate_of_hint": "Third-party listings show 'The Climbing Hangar' (Swansea) at the same site/listing id as The Hive (previous operator/name); check no second record exists for Castell Close, Llansamlet."
+ },
+ {
+  "id": "seed-136",
+  "name": "Boulders Sport Climbing Center",
+  "metro": null,
+  "expect_h": "942528d796c1a9ae",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [],
+  "status": "not-found",
+  "notes": "Official domain climbboulders.com is reachable but blocks automated clients: homepage returns 403 to curl/WebFetch, sub-pages return 500, and the TLS certificate is expired (Let's Encrypt cert valid only Apr-Jul 2019), so no page could be read. Search snippets (not usable as facts) show the same address 325 Indian Trail, hours and prices, and the gym looks active. Left website null because no page was successfully fetched; retry with a browser if needed. Our address geocodes to the pin exactly (Nominatim 31.0804,-97.6554) but the official address was not read.",
+  "operating": "unknown",
+  "official_address": null,
+  "location": "unknown",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-145",
+  "name": "Elevator Rock",
+  "metro": null,
+  "expect_h": "ec5ae34df6716a34",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [
+   {
+    "url": "https://elevatorrock.com/",
+    "accessed": "2026-10-04",
+    "supports": []
+   }
+  ],
+  "status": "flag",
+  "notes": "Judgement call: elevatorrock.com and www.elevatorrock.com do not resolve (NXDOMAIN) and three searches found no other official presence (no site, no social page surfaced; only directories). Per the brief that supports 'closed', but confidence is moderate; no official closure notice exists.",
+  "operating": "closed",
+  "official_address": null,
+  "location": "unknown",
+  "renamed_to": null,
+  "duplicate_of_hint": "400 Bridge St (Wichita Falls grain elevator) was the address of Center of Gravity Rock Gym, which third-party listings show as closed; Elevator Rock may be a renamed/successor or the same venue."
+ },
+ {
+  "id": "seed-159",
+  "name": "Sessions Climbing & Fitness",
+  "metro": null,
+  "expect_h": "fa4a4af0c45d1f39",
+  "website": "https://www.sessionsclimbing.com/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "9am–7pm",
+   "sun": "9am–7pm"
+  },
+  "day_pass": null,
+  "facilities": null,
+  "sources": [
+   {
+    "url": "https://www.sessionsclimbing.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Site blocks curl (403); the homepage was read via WebFetch, subpages (memberships, faq, about) return 403 so no day-pass price or facilities text was available. Homepage text 'M-F 10AM-10PM | Sa-Su 9AM-7PM'; a search snippet quoted Mon-Fri from 12pm, which I did not use. Pin check inconclusive: Nominatim only matches the street name (Cimarron Rialto Place, 31.887,-106.573, ~7 km from our 2-decimal pin 31.83,-106.54; ZIP 79912 centroid is 31.851,-106.547). Stored address equals the official one, so likely just a coarse pin; needs a better geocode.",
+  "operating": "yes",
+  "official_address": "1775 Cimarron Rialto Square, El Paso, TX 79912",
+  "location": "unknown",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-219",
+  "name": "Sunrise Bouldering",
+  "metro": null,
+  "expect_h": "430f65dac6fb6504",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [],
+  "status": "not-found",
+  "notes": "sunrisebouldering.com serves a Squarespace 'Website Expired' page (/ returns 404, /location 404). A Facebook page for the gym exists in search results and no closure notice was found, so by the brief this is 'unknown', not 'closed'. Search snippets (not used) still describe it as operating at 2 School St.",
+  "operating": "unknown",
+  "official_address": null,
+  "location": "unknown",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-277",
+  "name": "504 Climb",
+  "metro": null,
+  "expect_h": "f2c962253e093f94",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [],
+  "status": "not-found",
+  "notes": "504climb.com and www.504climb.com return NXDOMAIN (domain no longer registered or delegated). A Facebook page exists in search results and no closure notice or replacement site was found, so 'unknown' per the brief rather than 'closed'.",
+  "operating": "unknown",
+  "official_address": null,
+  "location": "unknown",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-206",
+  "name": "Climbing Cave",
+  "metro": null,
+  "expect_h": "f3e888f516cc1b45",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [],
+  "status": "not-found",
+  "notes": "No official website found in three searches (only directories and RockSport, a different Queensbury gym at 54 Carey Rd). Guessed domains do not resolve and are not counted. Phone 518-798-4023 and 28 Glen Dr appear only in directory snippets.",
+  "operating": "unknown",
+  "official_address": null,
+  "location": "unknown",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-207",
+  "name": "Cornerstone Climbing",
+  "metro": null,
+  "expect_h": "b1027fa1efea18a7",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [
+   {
+    "url": "https://cornerstoneclimbing.com/",
+    "accessed": "2026-10-04",
+    "supports": []
+   }
+  ],
+  "status": "flag",
+  "notes": "cornerstoneclimbing.com is now a pre-opening site for a different gym: 'Cornerstone Climbing, a bouldering gym in Ooltewah, TN' (24/7 member access, 3D renders coming soon), with no mention of Saratoga Springs. Repurposed domain and no other official presence found for the Saratoga Springs gym in three searches (directories only), so 'closed' per the brief; no explicit closure notice.",
+  "operating": "closed",
+  "official_address": null,
+  "location": "unknown",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-260",
+  "name": "iROCK Utah",
+  "metro": null,
+  "expect_h": "963dea554a9afefb",
+  "website": "https://irockutah.wordpress.com/",
+  "hours": null,
+  "day_pass": null,
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://irockutah.wordpress.com/f-a-q/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://irockutah.wordpress.com/how-does-it-work/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "irockutah.com is an empty one-page 'Home' site. The older WordPress site irockutah.wordpress.com has content (top-rope, lead, bouldering inside the Salomon Center, downtown Ogden; shoes for rent per FAQ) but was last modified 2018-06-20 and gives no street address, hours or prices, so operating cannot be confirmed from official material and location cannot be checked. Our address 2261 Kiesel Ave geocodes exactly to the pin (41.2254,-111.9715) via Nominatim.",
+  "operating": "unknown",
+  "official_address": null,
+  "location": "unknown",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-251",
+  "name": "The Climb'n Shop",
+  "metro": null,
+  "expect_h": "8174b67906cf4bcf",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [],
+  "status": "not-found",
+  "notes": "No official website or presence found in three searches; results are only Mountain Project/99Boulders-style directories and the University of West Georgia wall. The name suggests a retail shop; could not establish whether it is a gym at all. We have no address.",
+  "operating": "unknown",
+  "official_address": null,
+  "location": "unknown",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-125",
+  "name": "Rockaway Climbing Wall",
+  "metro": null,
+  "expect_h": "b16e3f00addde367",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [],
+  "status": "not-found",
+  "notes": "No official website found in three searches (only Mountain Project, theCrag and similar directories). Phone/address come only from directory snippets. Possibly long defunct.",
+  "operating": "unknown",
+  "official_address": null,
+  "location": "unknown",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-237",
+  "name": "North Peak",
+  "metro": null,
+  "expect_h": "1a5b8ff7b5232eba",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [],
+  "status": "not-found",
+  "notes": "northpeakreno.com resolves to a shared Bluehost server but is broken: https presents a cert for bluehost.com (hostname mismatch) and returns 404; http returns a generic error page. A Facebook page exists in search results, so 'unknown' rather than 'closed'. Search snippets (not used) give 1901 Silverada Blvd and Mon-Fri 10-10, Sat-Sun 10-8 hours, which agrees with our address. Website left null because no usable page could be fetched.",
+  "operating": "unknown",
+  "official_address": null,
+  "location": "unknown",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-927",
+  "name": "Rainbow Rocket North",
+  "metro": null,
+  "expect_h": "b737ab2e6d780f8f",
+  "website": "https://rainbowrocket.cc/centre/north/",
+  "hours": null,
+  "day_pass": "£15.50 adult, £11.50 student/concession",
+  "facilities": [
+   "parking",
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://rainbowrocket.cc/centre/north/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://rainbowrocket.cc/prices/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   },
+   {
+    "url": "https://rainbowrocket.cc/faqs/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://rainbowrocket.cc/under-18s-families/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Site blocks curl (403); pages were read via WebFetch. No opening hours appear on the North page, FAQs or home page, so hours null. Prices page lists one chain-wide set (adult 15.50, student/concession 11.50, under 18 9.50), not split by centre; a search snippet mentioned peak/off-peak but I did not use it. Facilities: FAQ says car and cycle parking at both sites and shoe/chalk-bag hire at all centres; kids: junior and NICAS clubs and family tasters at North. FAQ also mentions showers and cafes for the chain, not clearly for North, so omitted. Beadle Trading Estate geocodes to 52.2168,0.1573, matching our pin.",
+  "operating": "yes",
+  "official_address": "Rainbow Rocket North, Beadle Trading Estate (Ditton Walk), Cambridge, CB5 8PD",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ }
+]

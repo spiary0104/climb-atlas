@@ -1,0 +1,1232 @@
+[
+ {
+  "id": "g-4015941056",
+  "name": "Mono Loco",
+  "metro": null,
+  "expect_h": "a0af009ee5a65d43",
+  "website": "https://monoloco.se/",
+  "hours": null,
+  "day_pass": "150 kr adult, 95 kr child (0-15)",
+  "facilities": [
+   "shoe-hire",
+   "kids",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://monoloco.se/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://monoloco.se/pages/priser-klattring",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://monoloco.se/pages/oppettider",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours set null because pages disagree: /pages/oppettider and the homepage text give Mon-Thu 12-20, Fri 11-19, Sat-Sun 10-16 (ordinary hours from 31 Aug), but the footer on every page says Mon-Thu 13-21, Fri 13-19, Sat-Sun 10-16. Summer hours also published. Kids from family climbing / kids courses on homepage; parking: free parking in front of Främby hallar; shoe rental 45 kr.",
+  "operating": "yes",
+  "official_address": "Främbyvägen 20, Falun",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-5ca60b81fa",
+  "name": "Fyshuset Klätterhall",
+  "metro": null,
+  "expect_h": "4de9c96ee82b5ad2",
+  "website": "https://fyshuset.se/",
+  "hours": {
+   "mon": "5am–11pm",
+   "tue": "5am–11pm",
+   "wed": "5am–11pm",
+   "thu": "5am–11pm",
+   "fri": "5am–11pm",
+   "sat": "5am–11pm",
+   "sun": "5am–11pm"
+  },
+  "day_pass": null,
+  "facilities": [
+   "training",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://fyshuset.se/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://fyshuset.se/aktiviteter",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://fyshuset.se/priser",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Fyshuset is a general gym (weights, crossbox, group training) with a boulder hall (\"Kom och klättra i vår boulderhall\"). Hours are the facility-wide \"Öppet alla dagar 05.00-23.00\" (members use key fob; no separate staffed hours published). Day pass null: price list shows gym single visit 75 kr and a separate 30 kr climbing-hall add-on (Swish), not clearly a standalone climbing entry. Free parking (P-skiva required).",
+  "operating": "yes",
+  "official_address": "Södra Skeppsbron 28, 802 87 Gävle",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-96d6ebb14f",
+  "name": "Halmstad Klätterklubb",
+  "metro": null,
+  "expect_h": "5b0a1f83e22371b9",
+  "website": "https://www.hkk.nu/",
+  "hours": null,
+  "day_pass": null,
+  "facilities": [
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.hkk.nu/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://www.hkk.nu/priser-och-oppettider",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://www.hkk.nu/barnochungdom",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Non-profit club, volunteer-run. Opening hours page lists only Tue 18-21, Thu 18-21, Fri 17-20, Sat 14-18, Sun 14-18; Mon and Wed not stated, so hours left null (not inferring Closed). Prices not in page text (likely image/dynamic). Kids/youth training groups ages 10-19 stated.",
+  "operating": "yes",
+  "official_address": "Slottsmöllan, 302 31 Halmstad",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-a89df4690a",
+  "name": "Åre Klätterhall",
+  "metro": null,
+  "expect_h": "bf0bb37a1cc91d34",
+  "website": "https://areklatterhall.se/",
+  "hours": {
+   "mon": "11am–9pm",
+   "tue": "11am–9pm",
+   "wed": "11am–9pm",
+   "thu": "11am–9pm",
+   "fri": "11am–7pm",
+   "sat": "9am–7pm",
+   "sun": "9am–7pm"
+  },
+  "day_pass": "185 kr adult, 125 kr junior",
+  "facilities": [
+   "cafe",
+   "shop",
+   "parking",
+   "shoe-hire",
+   "training",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://areklatterhall.se/info-oppettider/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://areklatterhall.se/prislista/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://areklatterhall.se/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "curl was blocked (HTTP 454 WAF check), so pages were read via WebFetch. Hours Mon-Thu 11-21, Fri 11-19, Sat-Sun 09-19 (info page and homepage agree). Cafe & shop, free daytime parking, gym equipment and kids courses stated on info/home pages; klätterskor rental 50 kr on price list. Our address lacks the street (Duved, Åre); pin is about 0.16 km from Sågvägen 17.",
+  "operating": "yes",
+  "official_address": "Sågvägen 17, 837 71 Duved",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-98914c13ba",
+  "name": "Östersunds Klättercenter",
+  "metro": null,
+  "expect_h": "fdebbc467dc7edec",
+  "website": "https://ostersundsklattercenter.se/",
+  "hours": null,
+  "day_pass": "175 kr adult, 125 kr junior",
+  "facilities": [
+   "cafe",
+   "shop",
+   "training",
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://ostersundsklattercenter.se/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://ostersundsklattercenter.se/oppettider/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://ostersundsklattercenter.se/priser/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   },
+   {
+    "url": "https://ostersundsklattercenter.se/anlaggning/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://ostersundsklattercenter.se/cafe/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://ostersundsklattercenter.se/butik/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://ostersundsklattercenter.se/hyra-utrustning/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours set null because pages disagree on Friday: homepage/anlaggning footer say Fri 8.00-19.30, the dedicated /oppettider page says Fri 11:30-19.30 (Mon-Thu 11.30-19.30, Sat-Sun 11-17 on both). Members have unstaffed access 6-22. Prices page is dated 2018 but is the current price page. Training = MoonBoard + training area; kids = special småbarnsområde; shoes+chalk 60 kr.",
+  "operating": "yes",
+  "official_address": "Minnesgärdsgränd 4F, Östersund",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-be4954fdd3",
+  "name": "Höglandsklättrarna Tranås (Klättersilon)",
+  "metro": null,
+  "expect_h": "9fe76e4d2fd1c2ef",
+  "website": "https://www.hkt.nu/",
+  "hours": null,
+  "day_pass": "60 kr drop-in (Wednesdays, top-rope and bouldering)",
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.hkt.nu/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://www.hkt.nu/klattra/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Volunteer club in the old silo. Only Wed 17.30-19.30 drop-in and Mon 17.30-19.30 member climbing are stated, so hours null. Rental shoes 20 kr, harness included. Site footer copyright 2018; recent news items (AGM 2026) show it is active.",
+  "operating": "yes",
+  "official_address": "Ringvägen 10, Tranås",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-09b76c2974",
+  "name": "Klättervigören",
+  "metro": null,
+  "expect_h": "2f408cd570286469",
+  "website": "https://www.klattervigoren.se/",
+  "hours": {
+   "mon": "11am–10pm",
+   "tue": "11am–10pm",
+   "wed": "11am–10pm",
+   "thu": "11am–10pm",
+   "fri": "11am–9pm",
+   "sat": "12pm–7pm",
+   "sun": "12pm–7pm"
+  },
+  "day_pass": "150 kr adult, 120 kr student",
+  "facilities": [
+   "shoe-hire",
+   "showers",
+   "parking",
+   "training",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.klattervigoren.se/oppettider",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.klattervigoren.se/priser",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.klattervigoren.se/vanliga-fragor",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "FAQ: one shower per changing room, customer parking outside, gym usable alone, organised kids training at weekends, rental shoes 40 kr. Hours: Mon-Thu 11-22, Fri 11-21, Sat-Sun (Helg) 12-19.",
+  "operating": "yes",
+  "official_address": "Centralvägen 31, 553 05 Jönköping",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-897c8f8d77",
+  "name": "Racketcentrum (RC Sport klättring)",
+  "metro": null,
+  "expect_h": "ce6453c888eaf012",
+  "website": "https://rcsport.se/sporter/klattring/",
+  "hours": {
+   "mon": "7am–10pm",
+   "tue": "7am–10pm",
+   "wed": "7am–10pm",
+   "thu": "7am–10pm",
+   "fri": "7am–10pm",
+   "sat": "7am–10pm",
+   "sun": "7am–10pm"
+  },
+  "day_pass": "262 kr adult, 150 kr RC Club/SKF member",
+  "facilities": [
+   "cafe"
+  ],
+  "sources": [
+   {
+    "url": "https://rcsport.se/sporter/klattring/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://rcsport.se/kontakt/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Climbing is one sport inside the Racketcentrum arena. Hours 07-22 every day are the venue-wide hours in the RC Sport header (no climbing-specific hours stated). Price list \"strötid 1 gång 262 kr\". Page footer says copyright 2023, so prices may be dated. Rental shoes explicitly NOT available (harness/brake only). Cafe = RC Grill restaurant (\"kombinera klättring med mat på Rc Grill\").",
+  "operating": "yes",
+  "official_address": "Mässvägen 6, 554 54 Jönköping",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-44b68de98f",
+  "name": "Wallride",
+  "metro": null,
+  "expect_h": "ef4401b06c00325d",
+  "website": "https://wallride.se/",
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [
+   {
+    "url": "https://wallride.se/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://wallride.se/pages/priser",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://wallride.se/pages/klattring",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   }
+  ],
+  "status": "flag",
+  "notes": "Wallride is mainly an indoor action-sports park (skate, scooter, BMX, trampolines) that also has a bouldering section and courses (\"Bouldering & Klättring i Växjö\"). Doubtful as a dedicated climbing gym; entry fee covers the whole park (weekday 2h 199 kr, full day 249 kr; weekends 229/279/299), so day_pass left null. Hours null: only Fri 14-19 and Sat-Sun 10-18 stated; weekdays shown only as \"Skollov (vardag) 10-18\". Judgement call: operating yes, but caller may want to classify as not-a-gym / multi-sport park.",
+  "operating": "yes",
+  "official_address": "Arabygatan 13, Växjö",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-274d7923b8",
+  "name": "Klätterhuset",
+  "metro": null,
+  "expect_h": "5e2132ca40b062dd",
+  "website": "https://klatterhuset.se/",
+  "hours": {
+   "mon": "11am–9:30pm",
+   "tue": "11am–9:30pm",
+   "wed": "11am–9:30pm",
+   "thu": "11am–9:30pm",
+   "fri": "11am–9:30pm",
+   "sat": "9am–4pm",
+   "sun": "11am–8pm"
+  },
+  "day_pass": "185 kr adult, 135 kr youth (9-17)",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "shop",
+   "showers",
+   "parking",
+   "yoga"
+  ],
+  "sources": [
+   {
+    "url": "https://klatterhuset.se/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://klatterhuset.se/oppettider/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://klatterhuset.se/priser/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://klatterhuset.se/vanliga-fragor/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://klatterhuset.se/kontakt/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours: weekdays 11-21:30 (Vardagar), Sat 9-16, Sun 11-20. Price page says \"Priser från 1 maj 2023\". FAQ lists gym, yoga, café, shop; homepage says changing rooms with shower and sauna; contact page says free parking; kids: barnkalas, kids training and camps in news.",
+  "operating": "yes",
+  "official_address": "Ödlegatan 7, 973 34 Luleå",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-84c25ac496",
+  "name": "Örebro Klättergym",
+  "metro": null,
+  "expect_h": "1eb388901bed504f",
+  "website": "https://www.orebroklattergym.se/",
+  "hours": {
+   "mon": "3pm–10pm",
+   "tue": "3pm–10pm",
+   "wed": "3pm–10pm",
+   "thu": "3pm–10pm",
+   "fri": "1pm–6pm",
+   "sat": "12pm–6pm",
+   "sun": "12pm–8pm"
+  },
+  "day_pass": "110 kr adult, 90 kr youth/student",
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.orebroklattergym.se/priser-och-oppettider/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.orebroklattergym.se/hitta-hit/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Page notes they may close earlier Mon-Thu if no customers after 21:00. Rental shoes 30 kr. Barnkalas/youth pages exist but youth groups are currently not running, so kids not listed.",
+  "operating": "yes",
+  "official_address": "Södra Grev Rosengatan 27, 703 62 Örebro",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-fd7af4c044",
+  "name": "Hangaren Klätterhall",
+  "metro": null,
+  "expect_h": "eda1a690341205e0",
+  "website": "https://linkopingsklatterklubb.se/",
+  "hours": {
+   "mon": "3pm–8pm",
+   "tue": "3pm–8pm",
+   "wed": "3pm–8pm",
+   "thu": "3pm–8pm",
+   "fri": "3pm–8pm",
+   "sat": "12pm–8pm",
+   "sun": "12pm–8pm"
+  },
+  "day_pass": null,
+  "facilities": [
+   "cafe",
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://linkopingsklatterklubb.se/hallinfo/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://hangaren.org/ppettider.html",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://hangaren.org/prislista.html",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Climbing hall run by Linköpings Klätterklubb (volunteers) inside Hangaren Hot Sport Center; Hangaren reception handles entry/rental. Hours are Hangaren reception hours (Mon-Fri 15-20, Sat-Sun 12-20), a wall host stays open later Mon-Thu. Day pass null because the hangaren.org price list is inconsistent for climbing (Klättring: adult 80 kr non-member vs \"Drop-in 85 kr vuxen\"). hangaren.se is a parked domain (redirects to /lander), not used. Cafe outside the hall entrance; rental shoes via reception; junior training group stated. Official address given as 5A (LKK) and 5B (hangaren.org).",
+  "operating": "yes",
+  "official_address": "Rydsvägen 5B, Linköping",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-8cb5bbdef2",
+  "name": "Klätterhallen i Norrköping",
+  "metro": null,
+  "expect_h": "c6e137a1f042216f",
+  "website": "https://klatterhallen.com/",
+  "hours": {
+   "mon": "12pm–10pm",
+   "tue": "12pm–10pm",
+   "wed": "12pm–10pm",
+   "thu": "12pm–10pm",
+   "fri": "12pm–8pm",
+   "sat": "10am–6pm",
+   "sun": "10am–6pm"
+  },
+  "day_pass": "150 kr adult (single entry)",
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://klatterhallen.com/priser-och-oppettider/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://klatterhallen.com/jag-vill-klattra/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Regular hours Mon-Thu 12-22, Fri 12-20, Sat-Sun 10-18 (summer hours Jun-Aug differ and are ignored). Boulder hall always accessible without booking; rope hall drop-in with staff Sundays 10-14. Rental shoes 25 kr. Also runs a sauna (not a listed facility key).",
+  "operating": "yes",
+  "official_address": "Kronomagasinsgatan 5, 602 38 Norrköping",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-34538e5d42",
+  "name": "Klättra Motala Klätterhall",
+  "metro": null,
+  "expect_h": "9a82be3a7bb53cd7",
+  "website": "https://www.billobulls.se/klattra-motala-klatterhall/",
+  "hours": null,
+  "day_pass": "130 kr adult, 100 kr junior (to 17)",
+  "facilities": [
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.billobulls.se/klattra-motala-klatterhall/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.billobulls.se/HITTA%20HIT",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   }
+  ],
+  "status": "flag",
+  "notes": "Climbing hall run by Bill o Bulls Lekland in the same premises. The climbing page shows \"Öppettider: Tillfälligt stängt\" (temporarily closed) and no regular hours; homepage says \"Tillfälligt stängt (se klättringen med egna tider)\" for the playground. Some page content looks stale (course dates for January/Oct 2024). Unclear whether the climbing hall is currently open, so operating unknown. Rental shoes 40 kr; climbing school, camps and kids parties stated.",
+  "operating": "unknown",
+  "official_address": "Mineralvägen 16, 591 53 Motala",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-acc9aa22f2",
+  "name": "Urban Boulders",
+  "metro": null,
+  "expect_h": "8f582d0836bcbabc",
+  "website": "https://urbanboulders.se/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "10am–8pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": "180 kr adult",
+  "facilities": [
+   "shoe-hire",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://urbanboulders.se/kontakt/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://urbanboulders.se/priser-och-medlmeskap/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   },
+   {
+    "url": "https://urbanboulders.se/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Single entry sold only at reception. Rental shoes stated on homepage; parking outside (3-hour registration on tablet). URL slug of price page is spelled \"medlmeskap\" on the site.",
+  "operating": "yes",
+  "official_address": "Industrigatan 5, 582 77 Linköping",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-03b424f0bf",
+  "name": "Beta Boulders Malmö",
+  "metro": null,
+  "expect_h": "f24be4875fd08f99",
+  "website": "https://betaboulders.se/malmo/",
+  "hours": {
+   "mon": "7am–10pm",
+   "tue": "7am–10pm",
+   "wed": "7am–10pm",
+   "thu": "7am–10pm",
+   "fri": "7am–10pm",
+   "sat": "10am–8pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": "199 kr adult peak, 159 kr off-peak",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "showers"
+  ],
+  "sources": [
+   {
+    "url": "https://betaboulders.se/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://betaboulders.se/malmo/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://betaboulders.se/prices/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://betaboulders.se/workspace-and-cafe/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Prices page is for Beta Boulders Sweden (single pass peak/off-peak; off-peak before 14:00 weekdays/after 17:00 weekends). Malmo page lists 100 sqm training area, Kilter board, kids climbing wall, cafe, showers, sauna; rental shoes 59 kr. Hours from homepage contact block.",
+  "operating": "yes",
+  "official_address": "Spångatan 3B, 211 44 Malmö",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-f98bfcfa2e",
+  "name": "C4 Climbing",
+  "metro": null,
+  "expect_h": "c157569d4754078e",
+  "website": "https://c4climbing.se/",
+  "hours": null,
+  "day_pass": "100 kr member, 120 kr non-member",
+  "facilities": [
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://c4climbing.se/climb",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://c4climbing.se/contact-us",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://c4climbing.se/membership",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Non-profit club. Stated open times: Tue-Thu 18:30-21:00, Sat 10:00-13:00, Sun 18:30-21:00 (extra times announced on social media); Mon and Fri not stated, so hours null rather than inferring Closed. Rental shoes 25/35 kr; kids groups stated for members.",
+  "operating": "yes",
+  "official_address": "Rörvägen 18, 291 59 Kristianstad",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-daefae9168",
+  "name": "Klättercentret Helsingborg",
+  "metro": null,
+  "expect_h": "6285223308093149",
+  "website": "https://www.klattercentret.se/helsingborg/",
+  "hours": {
+   "mon": "9am–10pm",
+   "tue": "9am–10pm",
+   "wed": "9am–10pm",
+   "thu": "9am–10pm",
+   "fri": "9am–10pm",
+   "sat": "10am–8pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": "199 kr adult, 135 kr before 4pm weekdays, 130 kr under 18",
+  "facilities": [
+   "cafe",
+   "shop",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.klattercentret.se/helsingborg/kontakt-oppettider-2/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.klattercentret.se/helsingborg/entre-oppettider/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   },
+   {
+    "url": "https://www.klattercentret.se/helsingborg/butik-cafe/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.klattercentret.se/helsingborg/barnkalas/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours text: Vardagar 09-22, Helger 10-20 (the entry page image agrees). Entry prices read from the image on the entry page. Homepage shows \"Klätterskor 59:-\" but without explicit rental wording, so shoe-hire not listed.",
+  "operating": "yes",
+  "official_address": "Juelsgatan 5, 254 42 Helsingborg",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-7e7da17e08",
+  "name": "Klättercentret Malmö",
+  "metro": null,
+  "expect_h": "ab65f2c0ee88c605",
+  "website": "https://www.klattercentret.se/malmo/",
+  "hours": {
+   "mon": "9am–10pm",
+   "tue": "9am–10pm",
+   "wed": "7am–10pm",
+   "thu": "9am–10pm",
+   "fri": "7am–10pm",
+   "sat": "10am–8pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": "199 kr adult, 135 kr before 4pm weekdays, 130 kr under 18",
+  "facilities": [
+   "cafe",
+   "shop",
+   "training",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.klattercentret.se/malmo/kontakt-oppettider/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.klattercentret.se/malmo/entre-oppettider/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   },
+   {
+    "url": "https://www.klattercentret.se/malmo/cafe/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.klattercentret.se/malmo/klatterbutik/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.klattercentret.se/malmo/gymmet/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.klattercentret.se/malmo/kurser/barnkalas/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours: Mon, Tue, Thu 09-22; Wed and Fri 07-22; weekends 10-20. Entry prices read from image on the entry page (199 / 135 before 16:00 weekdays / 130 under 18). \"Klätterskor 59:-\" shown without explicit rental wording, so shoe-hire not listed.",
+  "operating": "yes",
+  "official_address": "Kopparbergsgatan 8, 214 44 Malmö",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-1107",
+  "name": "Malmö Klätterklubb",
+  "metro": null,
+  "expect_h": "1acc468cbeeda525",
+  "website": "https://malmoklatterklubb.se/",
+  "hours": {
+   "mon": "6pm–9:30pm",
+   "tue": "6pm–9:30pm",
+   "wed": "6pm–9:30pm",
+   "thu": "6pm–9:30pm",
+   "fri": "Closed",
+   "sat": "1pm–4:30pm",
+   "sun": "1pm–4:30pm"
+  },
+  "day_pass": "80 kr adult, 60 kr student/junior",
+  "facilities": [
+   "shoe-hire",
+   "training",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://malmoklatterklubb.se/oppettider/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://malmoklatterklubb.se/priser/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://malmoklatterklubb.se/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://malmoklatterklubb.se/kontakt/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Volunteer-run club in Stadionskolan (\"Stadion Klätterhall\"). Hours are the staffed hours (Friday explicitly \"Stängt\"); key-tag holders have wider access. Single entry \"Endags träning\" 80 kr senior, 60 kr student/junior. Rental shoes free of charge; harness 20 kr. Moonboards and small gym; junior groups stated.",
+  "operating": "yes",
+  "official_address": "Eric Perssons väg 1 E, 217 62 Malmö",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-32e871f338",
+  "name": "Skånes Klätterklubb",
+  "metro": null,
+  "expect_h": "471e585421b6b85b",
+  "website": "https://skaneskk.se/",
+  "hours": null,
+  "day_pass": "100 kr entry (bouldering)",
+  "facilities": [
+   "shoe-hire",
+   "training",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://skaneskk.se/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://skaneskk.se/information/vanliga-fragor/show",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://skaneskk.se/information/findus",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://skaneskk.se/information/prova-pa-att-klattra/show",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Club sells bookable time slots (calendar, 2x1.5 h sessions) rather than regular weekly hours, so hours null. FAQ: boulder entry 100 kr, club rents shoes and harnesses. Findus page: bouldering and rope walls, training room with campus. Family climbing and junior training pages exist. Official address spelled \"Östra Tornsvägen 2\".",
+  "operating": "yes",
+  "official_address": "Östra Tornsvägen 2, 224 68 Lund",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-f07f48beb2",
+  "name": "Klättercentret Uppsala",
+  "metro": null,
+  "expect_h": "6d86e6aacef96e53",
+  "website": "https://www.klattercentret.se/uppsala/",
+  "hours": {
+   "mon": "11am–10pm",
+   "tue": "11am–10pm",
+   "wed": "11am–10pm",
+   "thu": "11am–10pm",
+   "fri": "9am–10pm",
+   "sat": "10am–8pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": "190 kr adult, 135 kr before 4pm weekdays, 152 kr student",
+  "facilities": [
+   "shop",
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.klattercentret.se/uppsala/kontakt-oppettider/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.klattercentret.se/uppsala/engangsbesok/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.klattercentret.se/uppsala/butik/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.klattercentret.se/uppsala/kurser/barnkalas/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours: Mon-Thu 11-22, Fri 9-22, weekends 10-20. Rental shoes 50 kr. A \"Café & Butik\" menu item exists but only the shop page has explicit text, so cafe not listed.",
+  "operating": "yes",
+  "official_address": "Rapsgatan 8, 754 50 Uppsala",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-8567ba08fb",
+  "name": "Klättercentret Västerås",
+  "metro": null,
+  "expect_h": "0f360969a8d380c2",
+  "website": "https://www.klattercentret.se/vasteras/",
+  "hours": {
+   "mon": "10am–9pm",
+   "tue": "10am–9pm",
+   "wed": "10am–9pm",
+   "thu": "10am–9pm",
+   "fri": "10am–8pm",
+   "sat": "10am–8pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": "180 kr adult, 140 kr before 4pm weekdays/student",
+  "facilities": [
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.klattercentret.se/vasteras/kontakt",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.klattercentret.se/vasteras/priser/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.klattercentret.se/vasteras/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours: Mon-Thu 10-21, Fri-Sun 10-20 (contact and home pages agree). Premises called K7 Aktivitetscenter på Stenby; home page says parking at Stenby handelsplats (shared retail parking, not listed as facility). Rental shoes 50 kr; klätterskola for children 6-18 and barnkalas on home page.",
+  "operating": "yes",
+  "official_address": "Stenbygatan 3A, 721 36 Västerås",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ }
+]
