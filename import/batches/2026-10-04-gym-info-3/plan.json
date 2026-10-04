@@ -1,0 +1,56 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-04-gym-info-3",
+ "index": {
+  "sha256": "19b373023bbb3a6d5de2e5b7f64bfaadc403416dc5fb636a3e5d53970d980efd",
+  "count": 2342,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [],
+ "counts": {
+  "records": 1,
+  "new": 0,
+  "existing": 0,
+  "update": 1,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "d109f6d8974f0c15029706e78c9ad06b56dbdfc580f9f559b29296e07a0d3478",
+ "records": [
+  {
+   "line": 1,
+   "class": "update",
+   "id": "g-c4a08fc866",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.verticalhold.com/san-marcos"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12pm–10pm",
+      "tue": "12pm–10pm",
+      "wed": "12pm–10pm",
+      "thu": "12pm–10pm",
+      "fri": "12pm–10pm",
+      "sat": "9am–9pm",
+      "sun": "9am–9pm"
+     }
+    }
+   ],
+   "expect_h": "cacef791d1c0a37f",
+   "update_reason": "Official website and weekly opening hours from the gym's own site (checked 2026-10-04)"
+  }
+ ]
+}
