@@ -97,6 +97,7 @@ const SHELL_FILES = [
   'js/modules/me-page.js',
   'js/modules/provenance.js',
   'js/modules/gym-info.js',
+  'js/modules/hours.js',
   'js/modules/community.js',
   'js/modules/mod-page.js',
   'js/modules/add-html.js',

@@ -251,6 +251,7 @@
   --color-text-on-accent:var(--palette-paper-0);
   --color-text-on-collect:var(--palette-ink-12);
   --color-text-brand:var(--palette-fawn-8);      /* brand eyebrows and section labels on paper (5.2:1) */
+  --color-text-success:var(--palette-forest-7);  /* "Open" in rows, cards and the gym page: 6.4:1 on canvas, 7.1:1 on cards (sec. 7.4) */
 
   --color-border-subtle:var(--palette-ink-alpha-20);
   --color-border-strong:var(--palette-ink-12);
@@ -285,6 +286,7 @@
   --color-text-primary:var(--palette-rock-9);
   --color-text-secondary:var(--palette-rock-7);
   --color-text-muted:var(--palette-rock-6);
+  --color-text-success:var(--palette-forest-4);     /* 8.6:1 on rock-0, 7.2:1 on rock-2 */
   --color-border-subtle:var(--palette-rock-3);
   --color-border-strong:var(--palette-rock-9);
   --color-focus-ring:var(--palette-forest-4);       /* visible on rock (sec. 15) */

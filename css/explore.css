@@ -91,6 +91,16 @@
 .gym-row-side{flex:none;display:flex;align-items:center;gap:var(--space-1);padding-right:var(--space-2);}
 .gym-row-distance{font-size:var(--type-text-sm-size);line-height:var(--type-text-sm-line);color:var(--color-text-secondary);}
 .provenance-mark{flex:none;}
+/* Open / closed (hours.js): a quiet fragment, never a badge. "Open" reads in text-success, "Closed" in text-secondary; the
+   words carry the meaning, so colour is never the only cue. In a row it sits at the right of the second line and never wraps
+   (the place name ellipsises first), so a row stays 56px. */
+.hours-state{white-space:nowrap;font-size:var(--type-text-sm-size);line-height:var(--type-text-sm-line);}
+.hours-state--open{color:var(--color-text-success);}
+.hours-state--closed{color:var(--color-text-secondary);}
+.gym-row-hours{flex:none;margin-left:auto;padding-left:var(--space-2);}
+.gym-card-hours,.carousel-card-hours{display:block;}
+.carousel-card-hours{overflow:hidden;text-overflow:ellipsis;}
+.hours-dot{display:inline-block;width:var(--pin-size-dot);height:var(--pin-size-dot);margin-right:var(--space-1);border-radius:var(--radius-circle);background:currentColor;vertical-align:middle;}
 
 /* ===== Thumbnails and the boulder placeholder (sec. 13): the placeholder always sits under the photo =============== */
 .thumb{position:relative;display:block;flex:none;overflow:hidden;background:var(--placeholder-ground);border-radius:var(--radius-sm);}
@@ -287,6 +297,7 @@
 .peek-name{margin:0;font-family:var(--font-display);font-size:var(--type-display-md-size);line-height:var(--type-display-md-line);font-weight:var(--type-display-md-weight);}
 .peek-photo{display:block;position:static;width:100%;height:auto;aspect-ratio:var(--card-photo-ratio);object-fit:cover;margin-bottom:var(--space-3);border-radius:var(--radius-md);background:var(--color-surface-subtle);}
 .peek-tags{display:flex;flex-wrap:wrap;gap:var(--space-1);margin-bottom:var(--space-2);}
+.peek-hours{margin:0 0 var(--space-2);}
 .peek-meta,.peek-address,.peek-notes,.peek .provenance-line{margin:0 0 var(--space-2);font-size:var(--type-text-sm-size);line-height:var(--type-text-sm-line);color:var(--color-text-secondary);}
 .peek-notes{overflow-wrap:anywhere;}
 .peek .provenance-line{display:flex;align-items:center;gap:var(--space-1);}

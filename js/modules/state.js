@@ -19,6 +19,7 @@ export const appState = {
   showClimbedOnly: false,
   showBookmarkedOnly: false,
   showPhotosOnly: false,
+  showOpenNow: false,  // "Open now" chip: only gyms hours.js says are open right now (URL ?open=1)
   placeFilter: null,   // search-index place entry ({kind, key, label, country, state?, bounds}) shown as the region pill
   searchTerm: '',      // free-text filter applied with Enter in the search field (shown as a pill)
 

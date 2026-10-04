@@ -33,7 +33,7 @@ Line refs drift: re-grep function names rather than trusting numbers.
 | `js/modules/constants.js` | Type labels, country labels + fly targets, zoom thresholds (`PIN_DOT_MAX_ZOOM`, `LIST_CAP`), `motion()` |
 | `js/modules/regions.js` | `STATES_BY_COUNTRY` (static, ~620 lines) |
 | `js/modules/html-safe.js`, `utils.js` | Pure `escapeHtml` / `safeUrl` (http/https only); `directionsUrl`, `showToast` |
-| `js/modules/geo.js`, `metros.js` (curated city metros: centre + radius, membership computed, no DB; place key `AU:NSW:~sydney`), `search-index.js`, `pin-html.js`, `list-html.js`, `moderation-html.js`, `provenance.js`, `add-html.js`, `passport.js`, `stamp-html.js`, `gym-picker.js` | PURE (no DOM, unit-tested): Log a session gym picker (search, continent browse) · passport rules (stamps per city, passport line, milestones, grades) and stamp/passport/sheet markup · distance, antimeridian-safe bounds, stacked-pin offsets, URL state encode/decode, folding · search index + query · pin SVG · row/card/carousel/peek/empty/pill/search-option markup · /mod queue, diff, panel · provenance state/line, levels, display-name rule, `publicNotes` (hides internal research notes from the gym page About and the peek card; stored text untouched) · /add steps, nearest-gym area, duplicate note |
+| `js/modules/geo.js`, `metros.js` (curated city metros: centre + radius, membership computed, no DB; place key `AU:NSW:~sydney`), `search-index.js`, `pin-html.js`, `list-html.js`, `moderation-html.js`, `provenance.js`, `add-html.js`, `passport.js`, `stamp-html.js`, `gym-picker.js`, `hours.js` | PURE (no DOM, unit-tested): hours.js: a gym's free-text day hours -> ranges (`parseDay`, null when unsure), its time zone from country/state (`gymTimeZone`), open/closed/unknown now (`status`; unknown beats wrong) · Log a session gym picker (search, continent browse) · passport rules (stamps per city, passport line, milestones, grades) and stamp/passport/sheet markup · distance, antimeridian-safe bounds, stacked-pin offsets, URL state encode/decode, folding · search index + query · pin SVG · row/card/carousel/peek/empty/pill/search-option markup · /mod queue, diff, panel · provenance state/line, levels, display-name rule, `publicNotes` (hides internal research notes from the gym page About and the peek card; stored text untouched) · /add steps, nearest-gym area, duplicate note |
 | `js/modules/router.js` | History API router (+ `/#/` fallback): `matchRoute`, `navigate`, `registerView`, `refreshPage`, title/canonical, nav `aria-current`. Explore stays mounted behind pages |
 | `js/modules/slug.js` | Pure slug rule mirroring the DB migration (fallback for rows without `slug`) + `gymPath`/`countryPath`/`regionPath`/`cityPath` · `seo-meta.js`: page titles/descriptions for gyms and places (router titles; same text for crawler metadata) |
 | `js/modules/page-html.js` | Pure page builders: gym page (+ provenance line, own-edit note, moderator verify), breadcrumb, map slot, page card/row, regions/place pages, calendar, log, me (+ contributions), not found |
@@ -45,7 +45,7 @@ Line refs drift: re-grep function names rather than trusting numbers.
 | `js/modules/explore.js` | Explore controller: `render()` (full refresh), selection/hover sync, peek card, URL + last camera, landing, Esc, the `explore` view |
 | `js/modules/map.js` | Map, `rebuildClusterIndex`/`paintMarkers` (supercluster r48/max15, pins, clusters, label tiers), `refreshPin`, `flyToPlace`, locate control; handlers set by explore.js |
 | `js/modules/list.js` | Scoped list: `renderList` (scope → sort → cap 400), status line, skeletons, empty states, carousel, row keyboard |
-| `js/modules/filters.js` | `matches`/`applyFilters`, chip row, applied pills, All filters sheet (draft + live count), URL filter half |
+| `js/modules/filters.js` | `matches`/`applyFilters`, chip row, applied pills, All filters sheet (draft + live count), URL filter half; "Open now" (`open=1`, no sign-in; chip hidden below 10% readable hours in the area, `updateHoursChip`) |
 | `js/modules/search.js` | Search combobox (desktop popover / mobile full height), recent searches, Regions browse |
 | `js/modules/sheet.js` | Mobile bottom sheet: snaps 18/52/92%, drag rules, tab bar hides at full |
 | `js/modules/marks.js` | `toggleMark` (Supabase `marks`, optimistic + rollback); explore.js listens |
@@ -57,7 +57,7 @@ Line refs drift: re-grep function names rather than trusting numbers.
 | `supabase/migrations/` | Source of truth for the schema (`docs/migrations.md`); `…_add_spot_slugs.sql` (stored `spots.slug`), `…_community_provenance.sql` (Phase 4) |
 | `import/`, `scripts/gym-import.js`, `scripts/lib/gym-import/` | Gym import pipeline (`docs/import-workflow.md`); new locations via regional research sections (`import/research/`, `research.js`) |
 | `sitemap.xml`, `scripts/build-sitemap.js`, `api/seo.mjs` | Sitemap generated from production (read-only; area pages only with 2+ gyms, metros always); the same run writes `api/_places.json`. `api/seo.mjs` (Vercel Function, `.mjs`, no package.json): crawler/unfurler user agents on `/gym/*`, `/in/*` (vercel.json `has` rewrites) get the shell with per-page title/description/canonical/OG; people get the static shell. Re-run after data batches; `robots.txt` points to the sitemap |
-| `sw.js` | Service worker (`SHELL_FILES` — add every new JS/CSS/asset file; bump `CACHE_VERSION`) |
+| `sw.js`, `js/sw-register.js` | Service worker (`SHELL_FILES` — add every new JS/CSS/asset file; bump `CACHE_VERSION`) · registrar (classic script): dispatches `bouldeer:sw-updated` once per installed update (not on first install), `registration.update()` on tab visible; main.js shows the "A newer Bouldeer is ready" / Refresh toast (`showActionToast`, utils.js), reload only on Refresh |
 | `docs/TASKS.md` / `docs/archive/` | Open work only / old long-form docs (**never read**) |
 
 ## Load order (end of `index.html`)
@@ -94,7 +94,7 @@ countries — always key on `country:state`.
    hover mirrors row ↔ pin (`refreshPin`, `setRowHover`); Esc / close / empty-map click clears.
 6. Writes: add (`/add`) → `spots` insert (pending); edit → `pending_edits`; report → `reports`; marks → `marks`.
 
-URL: `?q=<text>&place=AU:NSW[:Suburb|:~metro-slug]&c=lng,lat,z&t=boulder,toprope,lead&saved=1&climbed=1&photos=1`.
+URL: `?q=<text>&place=AU:NSW[:Suburb|:~metro-slug]&c=lng,lat,z&t=boulder,toprope,lead&saved=1&climbed=1&photos=1&open=1`.
 
 ## Pages (DESIGN.md sec. 6.2, 8; Phase 3)
 `/gym/{slug}` · `/in` · `/in/{cc}` · `/in/{cc}/{region}` · `/in/{cc}/{region}/{city}` (a metro slug first, else a suburb; region pages list their metros as Cities) · `/log` · `/me[/saved|/climbed]` · `/me/passport` · `/mod` · `/add`.

@@ -8,8 +8,7 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 ## In progress
 ### Gym information — batch 5 (+483 enriched, +25 retired) and all follow-ups APPLIED 2026-10-04 (PRs #44-#47 merged; #48-#50 open)
 - Applied + verified (704 records): batch 5 fills (468 + 15), 25 retirements, 4 new gyms, 126 location fixes, 52 identity edits
-  (#49 + review). `import/info-research/batch-5/{NOTES,REVIEW-RESOLUTIONS}.md`. Merge #48 -> #49 -> #50 to ship the sitemap.
-  Re-check: Arkose Cholet (not open), Klaettra Motala (temp. closed). Next: 456 gyms in unmeasured countries; CN/KR need a source decision.
+  (#49 + review). `import/info-research/batch-5/{NOTES,REVIEW-RESOLUTIONS}.md`. Merge #48 -> #49 -> #50 to ship the sitemap. Re-check: Arkose Cholet (not open), Klaettra Motala (temp. closed). Next: 456 gyms in unmeasured countries; CN/KR need a source decision.
 ### Final-stage sprint (gym information, metros, SEO, perf) — DONE: PR #37 merged and live in production 2026-10-03
 - Status: PR #37 (`integration/final-stage`) merged to master 2026-10-03 (merge commit `b58a79e`) and deployed by Vercel; production
   smoke test passed (/, gym, metro, region, /in, sitemap.xml 3,299 URLs, robots.txt, bot link previews; no console errors at
@@ -21,6 +20,7 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 - Owner: submit the sitemap in Google Search Console.
 - Follow-ups: seed website + hours for the top metros (import batch); self-serve account deletion; map-stack weight (MapLibre still
   blocks the first paint of the app; rendering the list before the map exists would be the next, architectural, step).
+- Open now + today's hours in discovery, update toast, global `[hidden]` (branch `feature/open-now-and-update-toast`, awaiting review 2026-10-04; list read adds `hours`, +19.5 KB gzip).
 ### Public launch (www.bouldeer.com) — LAUNCHED 2026-10-02
 - Status: launch-readiness merged (PRs #14-#16: /privacy, /terms, 404, security headers + CSP, climbatlas.org 308 redirect,
   pinned CDN + SRI, sign-in for edits/reports); all 10 migrations applied (security hardening 2026-10-02, docs/migrations.md);

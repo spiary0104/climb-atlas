@@ -15,8 +15,9 @@ export function ensureSeedData(){
 }
 
 // The columns Explore needs (map, list, search, filters, peek card, provenance marks, recent sort). The research notes
-// (most of the old payload) and the gym-information fields load per gym with loadFullSpot (gym page, edit dialog, /mod).
-export const LIST_COLUMNS = 'id,name,suburb,state,country,lat,lng,types,address,photo,slug,community,edited,verified_at,created_at,submitted_by,description';
+// (most of the old payload) and the other gym-information fields load per gym with loadFullSpot (gym page, edit dialog, /mod).
+// `hours` rides along: rows, cards, the peek card and the Open now filter all need it to say open or closed.
+export const LIST_COLUMNS = 'id,name,suburb,state,country,lat,lng,types,address,photo,slug,community,edited,verified_at,created_at,submitted_by,description,hours';
 
 // The first load takes the read js/spots-prefetch.js started before MapLibre (once, and only for these exact columns); a
 // later reload (moderation) reads afresh.

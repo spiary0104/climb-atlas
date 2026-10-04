@@ -14,6 +14,7 @@ import { toggleMark } from './marks.js';
 import { setVerified } from './moderation.js';
 import { openEditModal, openReportModal } from './modals.js';
 import { gymPageHtml, notFoundHtml, pageSkeletonHtml } from './page-html.js';
+import { gymDayKey, status } from './hours.js';
 import { refreshPage, registerView, setPageTitle } from './router.js';
 import { provenanceLine, publicNotes } from './provenance.js';
 import { gymSeo } from './seo-meta.js';
@@ -61,6 +62,11 @@ function historyOf(g){
 }
 
 // What the gym page shows from columns outside the Explore list read (gym-info.js, publicNotes): compared before/after.
+// Essentials "Today" line: the gym's own weekday (when its time zone is known) and an Open / Closed word when its hours are readable.
+function hoursContext(g){
+  const st = status(g);
+  return { today: gymDayKey(g) || undefined, hoursStatus: st.state === 'unknown' ? null : st.state };
+}
 const visibleInfo = g => JSON.stringify([g.description || '', g.website || '', g.hours || null, g.day_pass || '', g.facilities || [], publicNotes(g.notes)]);
 
 function enter({ slug }, view){
@@ -91,6 +97,7 @@ function enter({ slug }, view){
     myEdit: appState.myEditCache.get(g.id) || null,
     isModerator: appState.isModerator,
     checkedIn: !!window.auth.user && checkedInRecently(g.id),
+    hours: hoursContext(g),
   });
   setPageTitle(gymSeo(g, { region: regionOf(g), country: COUNTRY_LABELS[g.country] || g.country }).title);
   mountMiniMaps(view);

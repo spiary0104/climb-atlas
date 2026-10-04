@@ -53,11 +53,11 @@ test('geo: gyms sharing a coordinate get a deterministic spread; singletons get 
 
 test('geo: explore URL state round-trips and rejects malformed input without throwing (sec. 6.2)', async () => {
   const { geo } = await mods;
-  const state = { q: 'blochaus', place: 'AU:NSW', camera: { lng: 151.2093, lat: -33.8688, zoom: 12.5 }, types: ['indoor-bouldering', 'top-rope'], saved: true, climbed: false, photos: true };
+  const state = { q: 'blochaus', place: 'AU:NSW', camera: { lng: 151.2093, lat: -33.8688, zoom: 12.5 }, types: ['indoor-bouldering', 'top-rope'], saved: true, climbed: false, photos: true, open: true };
   const qs = geo.encodeExploreState(state);
-  assert.equal(qs, 'q=blochaus&place=AU:NSW&c=151.2093,-33.8688,12.50&t=boulder,toprope&saved=1&photos=1');
+  assert.equal(qs, 'q=blochaus&place=AU:NSW&c=151.2093,-33.8688,12.50&t=boulder,toprope&saved=1&photos=1&open=1');
   const back = geo.decodeExploreState('?' + qs);
-  assert.deepEqual(back, { camera: { lng: 151.2093, lat: -33.8688, zoom: 12.5 }, types: ['indoor-bouldering', 'top-rope'], saved: true, climbed: false, photos: true, place: 'AU:NSW', q: 'blochaus' });
+  assert.deepEqual(back, { camera: { lng: 151.2093, lat: -33.8688, zoom: 12.5 }, types: ['indoor-bouldering', 'top-rope'], saved: true, climbed: false, photos: true, open: true, place: 'AU:NSW', q: 'blochaus' });
   assert.equal(geo.encodeExploreState({ types: geo.ALL_TYPES }), '', 'all types on = no t= parameter');
   const junk = geo.decodeExploreState('?c=NaN,1,2&t=nope,,x&place=<script>&saved=yes&q=' + 'x'.repeat(500));
   assert.equal(junk.camera, null);
@@ -68,6 +68,21 @@ test('geo: explore URL state round-trips and rejects malformed input without thr
   assert.equal(geo.decodeExploreState('?c=10,95,3').camera, null, 'latitude out of range');
   assert.equal(geo.decodeExploreState('?c=190,10,3').camera.lng, -170, 'longitude wrapped');
   assert.doesNotThrow(() => geo.decodeExploreState('%%%&&=='));
+});
+
+test('geo: open=1 (Open now) round-trips on its own, is absent when off and never truthy for anything but "1"', async () => {
+  const { geo } = await mods;
+  const on = geo.encodeExploreState({ types: geo.ALL_TYPES, open: true });
+  assert.equal(on, 'open=1');
+  assert.equal(geo.decodeExploreState('?' + on).open, true);
+  assert.equal(geo.encodeExploreState({ types: geo.ALL_TYPES, open: false }), '');
+  assert.equal(geo.decodeExploreState('').open, false);
+  for (const junk of ['?open=0', '?open=yes', '?open=true', '?open=', '?open=1x', '?OPEN=1']) assert.equal(geo.decodeExploreState(junk).open, false, junk);
+  // alongside the other filters and the camera, in a stable position
+  const qs = geo.encodeExploreState({ types: geo.ALL_TYPES, saved: true, open: true, camera: { lng: 1, lat: 2, zoom: 3 } });
+  assert.deepEqual(geo.decodeExploreState('?' + qs).camera, { lng: 1, lat: 2, zoom: 3 });
+  assert.equal(geo.decodeExploreState('?' + qs).open, true);
+  assert.equal(geo.decodeExploreState('?' + qs).saved, true);
 });
 
 test('geo: case- and diacritic-insensitive folding and word starts (sec. 9.1)', async () => {

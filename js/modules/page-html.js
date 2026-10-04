@@ -99,7 +99,7 @@ export function gymPageHtml(g, ctx = {}){
     // Moderators only: "Verified" = confirmed by a moderator (sec. 10.1). RLS enforces it; this only shows the control.
     + `${ctx.isModerator ? `<button type="button" class="btn btn-tertiary btn-sm" data-page-action="${g.verified_at ? 'unverify' : 'verify'}" data-spot-id="${id}">${icon('check-circle', {size:'sm'})}${g.verified_at ? 'Remove verification' : 'Mark verified'}</button>` : ''}</div></section>`
     + `</div><aside class="gym-aside"><section class="panel essentials" aria-labelledby="essentialsTitle"><h2 class="panel-title" id="essentialsTitle">Essentials</h2>`
-    + essentialsRowsHtml(g)
+    + essentialsRowsHtml(g, ctx.hours || {})
     + `<div class="essentials-address"><p class="panel-row">${escapeHtml(g.address || where)}</p>`
     + mapThumbHtml({ lat: g.lat, lng: g.lng, zoom: 14, size: 120, href: ctx.exploreHref || '/', label: 'Show ' + (g.name || 'this gym') + ' on the map', types: g.types })
     + `</div></section>${history}</aside></div>${actions}</article>`;   // actions last: beside the title on desktop, sticky at the bottom on phones

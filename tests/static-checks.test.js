@@ -83,6 +83,9 @@ const SAFE_EXPR = [
   /^moodHtml\(s\.mood\)$/,                                                       // builds from MOODS only; unknown moods render nothing
   // list-html.js (Explore builders): helpers that escape internally or emit fixed class names / literal icon names
   /^(provenanceHtml\(g\)|typeDotsHtml\(g\.types\)|typeTagsHtml\(g\.types\)|saveButton\(g, ctx\.saved, '[a-z-]+'\))$/,
+  /^(tag|h\.state)$/,                                                           // hoursHtml: tag is a literal 'span'|'p' from the callers; h.state is checked to be 'open'|'closed' by hoursOf
+  /^hoursHtml\(g, ctx, '(span|p)', '[a-z-]+'\)$/,                                // escapes its text internally; unknown hours render ''
+  /^hoursOf\(ctx\) \? ', ' \+ escapeHtml\(hoursOf\(ctx\)\.text\) : ''$/,       // row aria-label suffix
   /^TYPE_CLASS\[t\]$/,                                                          // fixed map, filtered to known types first (knownTypes)
   /^(extraClass|which|count|optionsHtml)$/,                                      // literal class from callers / 'place'|'text' / escaped count span / searchGroupHtml(options already built)
   /^Number\(index\)$/,                                                          // search option index: a number, never data
@@ -281,4 +284,31 @@ test('base.css: [hidden] always wins over a component\'s own display (the "Has p
   for (const f of ['css/explore.css', 'css/page.css', 'css/passport.css']) {
     assert.ok(!/\[hidden\]\{display:none;?\}/.test(read(f)), f + ' repeats the global [hidden] rule');
   }
+});
+
+test('Open now: chip between Climbed and All filters (hidden until the 10% rule shows it), sheet checkbox under "Hours", no sign-in gate, minute clock stopped on leave', () => {
+  const html = read('index.html');
+  const chips = [...html.matchAll(/<button type="button" class="chip[^"]*"[^>]*>(?:<[^>]*>)*([^<]+)<\/button>/g)].map((m) => m[1].trim());
+  const iClimbed = chips.indexOf('Climbed'), iOpen = chips.indexOf('Open now'), iAll = chips.indexOf('All filters');
+  assert.ok(iClimbed >= 0 && iOpen === iClimbed + 1 || (iOpen > iClimbed && iOpen < iAll), 'Open now follows Climbed and precedes All filters: ' + chips.join(' | '));
+  assert.match(html, /<button type="button" class="chip" data-filter-flag="open" aria-pressed="false" hidden>Open now<\/button>/);
+  assert.match(html, /<fieldset class="filter-section" id="filterSheetHours" hidden>\s*<legend class="section-label">Hours<\/legend>\s*<label class="check-row"><input type="checkbox" data-sheet-flag="open">Open now<\/label>/);
+  const f = read('js/modules/filters.js');
+  assert.match(f, /if\(f\.open && status\(g\)\.state !== 'open'\) return false;/, 'only open gyms match; unknown never does');
+  assert.match(f, /NEEDS_SIGN_IN = new Set\(\['saved', 'climbed'\]\)/, 'Open now (like Has photos) is not behind sign-in');
+  assert.match(f, /OPEN_FILTER_MIN = 0\.10/);
+  assert.match(f, /const hide = !appState\.showOpenNow && hoursAreaShare\(\) < OPEN_FILTER_MIN;/, 'hidden under 10%, always shown while on');
+  const ex = read('js/modules/explore.js');
+  assert.equal((ex.match(/setInterval\(/g) || []).length, 1, 'one interval');
+  assert.match(ex, /registerView\('explore', \{ leave: stopHoursClock,/);
+  assert.match(ex, /function stopHoursClock\(\)\{ clearInterval\(hoursTimer\);/);
+  assert.match(ex, /function refreshList\(\)\{[\s\S]*?updateHoursChip\(\);/, 'the chip rule is re-checked whenever the view changes');
+  assert.ok(!/document|window|localStorage/.test(stripComments(read('js/modules/hours.js'))), 'hours.js has no DOM');
+});
+
+test('text-success token exists in both themes and is used for the Open fragment (no raw colour in components)', () => {
+  const t = read('css/tokens.css');
+  assert.equal((t.match(/--color-text-success:var\(--palette-forest-[0-9]\)/g) || []).length, 2, 'paper and rock');
+  assert.match(read('css/explore.css'), /\.hours-state--open\{color:var\(--color-text-success\);\}/);
+  assert.match(read('css/explore.css'), /\.hours-state--closed\{color:var\(--color-text-secondary\);\}/);
 });
