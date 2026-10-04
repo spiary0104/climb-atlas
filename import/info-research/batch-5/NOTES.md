@@ -30,7 +30,9 @@ address_missing / mismatch / unknown), `renamed_to`, `duplicate_of_hint` for eve
 - Fill: `2026-10-04-gym-info-13` .. `-17` (468 gyms: website 468, hours 384, day pass 402, facilities 454; 329 with all four).
 - Retire: `2026-10-04-nonmetro-retire` (21: closed, not climbing gyms, or no gym at the listed place and no current
   official presence; owner rule "if unsure, retire").
-- Location fixes: see `locations.json` / the location batch (official address + OSM or official coordinates).
+- Location fixes: `2026-10-04-nonmetro-locations-1` (64 of the first 69 candidates; `locations.json`: official address + OSM element,
+  house-number geocode or the official site's own place pin, per record). 3 unresolved (no building-level point), 2 held
+  (Treadstone: moved to another state; Flashpoint Swindon: possibly replaced by Rockstar). Part 2: `locations-2.json`.
 - validate/plan: 0 errors, 0 duplicates, 0 invalid; public-key dry-run: PREFLIGHT PASSED for each.
-- Apply order: any; fills do not change the content hash. Location batches change it, so a later identity batch for the
-  same gyms re-takes expect_h after them.
+- Apply order: fills and retirements FIRST, then the location batches (a location change alters the content hash, and
+  62 of the 64 location gyms are also in a fill batch, which checks expect_h). Identity edits for the same gyms come last.
