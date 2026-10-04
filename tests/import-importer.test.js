@@ -15,11 +15,14 @@ const T = require('../scripts/lib/gym-import/target');
 const N = require('../scripts/lib/gym-import/normalize');
 const { runImport, toRow, diffRow } = require('../scripts/lib/gym-import/importer');
 const { ROOT, tmp, PROD, makeBatch, makeIndex, rec } = require('./helpers/import-helpers');
-const { localStack, admin, prodRow, fakeJwt } = require('./helpers/local-stack');
+const { localStack, admin, prodRow, fakeJwt, acquireStackLock } = require('./helpers/local-stack');
 
 const stack = localStack();
 const skip = stack ? false : 'local Supabase stack is not running (supabase start)';
 const adm = stack ? admin(stack) : null;
+// The local database is shared by every checkout and session on this machine and these tests reset it: hold the machine-wide lock
+// for the whole file so a second test run (another worktree or session) waits instead of wiping rows mid-test.
+if (stack) { let release = () => {}; test.before(async () => { release = await acquireStackLock(stack); }); test.after(() => release()); }
 const env = (over = {}) => ({ SUPABASE_URL: stack.url, SUPABASE_ANON_KEY: stack.anon, SUPABASE_SERVICE_ROLE_KEY: stack.service, ...over });
 const CLI = path.join(ROOT, 'scripts', 'gym-import.js');
 
@@ -1107,7 +1110,8 @@ test('LOCAL STACK: a real identity correction writes exactly name/suburb/types (
   // idempotent: already applied -> nothing written
   const again = await runImport({ batchDir: s.b.dir, indexDir: s.indexDir, env: e, mode: 'apply', confirm: dry.token });
   assert.equal(again.exit, 0, again.report); assert.equal(again.state, 'already-updated'); assert.deepEqual(await adm.all(), after, 'the re-run wrote nothing');
-  assert.equal((await runImport({ batchDir: s.b.dir, indexDir: s.indexDir, env: e, mode: 'verify' })).exit, 0);
+  const ver = await runImport({ batchDir: s.b.dir, indexDir: s.indexDir, env: e, mode: 'verify' });
+  assert.equal(ver.exit, 0, ver.report);
 
   // a moderator edits a target gym after the dry-run (token already issued): refused, nothing written
   const s2 = await retSetup('2026-02-05-local-identity-race', IDENT_TWO);
