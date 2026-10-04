@@ -37,7 +37,7 @@ body.app-body{overflow:hidden;}
   transition:opacity var(--motion-slow) var(--ease-standard), transform var(--motion-slow) var(--ease-standard);
 }
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
-/* A toast with one action (utils.js showActionToast: "A newer Bouldeer is ready" / Refresh). The tertiary button is
+/* A toast with one action (utils.js showActionToast: "Bouldeer has finished a climb, please refresh the page" / Refresh). The tertiary button is
    recoloured for the inverse surface and keeps a 44px touch target. */
 .toast--action{display:flex;align-items:center;gap:var(--space-2);text-align:left;padding-right:var(--space-2);}
 .toast--action.show{pointer-events:auto;}

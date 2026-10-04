@@ -1,6 +1,6 @@
 // Registers the offline-caching service worker (sw.js) and tells the app when a newer one has taken over.
 // Classic script with no dependencies: an update is announced as a `bouldeer:sw-updated` event on window (main.js turns it
-// into the "A newer Bouldeer is ready" toast). It never reloads the page itself.
+// into the "Bouldeer has finished a climb, please refresh the page" toast). It never reloads the page itself.
 (function () {
   if (!('serviceWorker' in navigator)) return;
 

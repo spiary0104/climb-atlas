@@ -114,7 +114,7 @@ test('the registrar never reloads the page itself', () => {
 
 test('main.js turns the event into a toast whose only reload is the Refresh action', () => {
   const main = fs.readFileSync(path.join(ROOT, 'js', 'main.js'), 'utf8');
-  assert.match(main, /addEventListener\('bouldeer:sw-updated'[\s\S]*?showActionToast\('A newer Bouldeer is ready', 'Refresh', \(\) => location\.reload\(\)\)/);
+  assert.match(main, /addEventListener\('bouldeer:sw-updated'[\s\S]*?showActionToast\('Bouldeer has finished a climb, please refresh the page', 'Refresh', \(\) => location\.reload\(\)\)/);
   assert.equal((main.match(/location\.reload/g) || []).length, 1, 'location.reload appears once, inside the Refresh callback');
   assert.ok(!/serviceWorker/.test(main), 'main.js stays out of the registration');
 });

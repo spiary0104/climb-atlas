@@ -24,7 +24,7 @@ import { showActionToast } from './modules/utils.js';
 
 // sw-register.js (a classic script) announces a newer service worker; the person chooses when to reload, never us.
 window.addEventListener('bouldeer:sw-updated', () => {
-  showActionToast('A newer Bouldeer is ready', 'Refresh', () => location.reload());
+  showActionToast('Bouldeer has finished a climb, please refresh the page', 'Refresh', () => location.reload());
 });
 
 // Wire up each area. The list shows skeleton rows until the first load finishes.
