@@ -1,0 +1,199 @@
+{
+  "schema_version": 1,
+  "updater_version": 1,
+  "kind": "update",
+  "batch_id": "2026-10-04-review-identity-2",
+  "status": "updated",
+  "target": {
+    "kind": "production",
+    "host": "thayxaampaelvntoaido.supabase.co"
+  },
+  "coverage": "FULL",
+  "plan_sha256": "d8323bf7c5d66aaf43c5b1ea027b4cc847246180ae2bce8a8fb3e210339c2aa4",
+  "payload_sha256": "b82b1b4ad21a0ee20ef101fe324e52d81199b0a1786276c8b30118ff0816f5f7",
+  "confirm_token": "d4ae62d03d4ecf0b",
+  "live_state_sha256": "c3cf6ffb5d57050b323f96466fe9347e264e9e8c3c2a29ef0a2ea000741c8c65",
+  "rows_updated": 0,
+  "approved_before": 2272,
+  "approved_after": 2272,
+  "changes": [],
+  "rows_identity_changed": 18,
+  "identity_changed": [
+    {
+      "id": "seed-308",
+      "fields": [
+        "name"
+      ],
+      "expect_h": "85c22321f82d6706",
+      "after_h": "08e1305b6e1ce5d0"
+    },
+    {
+      "id": "seed-428",
+      "fields": [
+        "types"
+      ],
+      "expect_h": "072b174872edbb92",
+      "after_h": "8d79e8a4fdceef6e"
+    },
+    {
+      "id": "seed-866",
+      "fields": [
+        "name",
+        "suburb"
+      ],
+      "expect_h": "c48da7a4d6169b15",
+      "after_h": "eac6057a5b9a4f2d"
+    },
+    {
+      "id": "seed-891",
+      "fields": [
+        "name",
+        "suburb"
+      ],
+      "expect_h": "95cd6391ec60600e",
+      "after_h": "cba65d182379ac6a"
+    },
+    {
+      "id": "seed-871",
+      "fields": [
+        "name"
+      ],
+      "expect_h": "c5cb5916498170b8",
+      "after_h": "afd30e72a261290c"
+    },
+    {
+      "id": "seed-877",
+      "fields": [
+        "name",
+        "suburb",
+        "types"
+      ],
+      "expect_h": "059d34e6734ef1f8",
+      "after_h": "a6ad40e78074333f"
+    },
+    {
+      "id": "seed-973",
+      "fields": [
+        "name"
+      ],
+      "expect_h": "38bcaa8ffbaacec8",
+      "after_h": "40d5e5005118e276"
+    },
+    {
+      "id": "seed-972",
+      "fields": [
+        "name",
+        "suburb"
+      ],
+      "expect_h": "bd4140ce450a9bb0",
+      "after_h": "f4b37418701fc09c"
+    },
+    {
+      "id": "seed-1041",
+      "fields": [
+        "name"
+      ],
+      "expect_h": "94c47abea0114788",
+      "after_h": "354733ebb473d1b8"
+    },
+    {
+      "id": "seed-1013",
+      "fields": [
+        "name"
+      ],
+      "expect_h": "bd0b45f325d79f88",
+      "after_h": "5026549e20ca8bac"
+    },
+    {
+      "id": "seed-1050",
+      "fields": [
+        "name"
+      ],
+      "expect_h": "cde576d3c77bc0fa",
+      "after_h": "ca849ac594e80baf"
+    },
+    {
+      "id": "seed-935",
+      "fields": [
+        "suburb"
+      ],
+      "expect_h": "e07405db4ce6f338",
+      "after_h": "f00d87745989c27f"
+    },
+    {
+      "id": "seed-951",
+      "fields": [
+        "suburb"
+      ],
+      "expect_h": "a548b5f4c513c91d",
+      "after_h": "b4aaab8e6ad62926"
+    },
+    {
+      "id": "seed-956",
+      "fields": [
+        "suburb"
+      ],
+      "expect_h": "d1566e8fcced0eee",
+      "after_h": "7c58053ba52141e6"
+    },
+    {
+      "id": "seed-1062",
+      "fields": [
+        "suburb"
+      ],
+      "expect_h": "7c86411a245a49a7",
+      "after_h": "09e85501cd6406c0"
+    },
+    {
+      "id": "seed-1029",
+      "fields": [
+        "suburb"
+      ],
+      "expect_h": "35c3b494cdc13a5e",
+      "after_h": "8775a3061b896866"
+    },
+    {
+      "id": "seed-964",
+      "fields": [
+        "suburb"
+      ],
+      "expect_h": "a6953eef85b28b1e",
+      "after_h": "d125d9a82fa16baf"
+    },
+    {
+      "id": "seed-963",
+      "fields": [
+        "suburb"
+      ],
+      "expect_h": "3db84fb2f607988d",
+      "after_h": "2f7cc5c95c7e71f8"
+    }
+  ],
+  "verification": {
+    "ok": true,
+    "checked": 18,
+    "problems": []
+  },
+  "started_at": "2026-10-04T10:25:30.478Z",
+  "finished_at": "2026-10-04T10:25:37.349Z",
+  "ids": [
+    "seed-308",
+    "seed-428",
+    "seed-866",
+    "seed-891",
+    "seed-871",
+    "seed-877",
+    "seed-973",
+    "seed-972",
+    "seed-1041",
+    "seed-1013",
+    "seed-1050",
+    "seed-935",
+    "seed-951",
+    "seed-956",
+    "seed-1062",
+    "seed-1029",
+    "seed-964",
+    "seed-963"
+  ]
+}
