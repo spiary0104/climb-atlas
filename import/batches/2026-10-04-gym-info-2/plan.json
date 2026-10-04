@@ -1,0 +1,1769 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-04-gym-info-2",
+ "index": {
+  "sha256": "9e84b8d4a14bbc2086440e2cf5112554851efbd82ccfc52a8407db5a47db0fac",
+  "count": 2348,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [],
+ "counts": {
+  "records": 67,
+  "new": 0,
+  "existing": 0,
+  "update": 60,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "retire": 7,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "4bb7f3a5b695752addfbdac0c9aa6163eb2cd7eaa826c48543789abea41622fc",
+ "records": [
+  {
+   "line": 1,
+   "class": "update",
+   "id": "seed-79",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://boulderrockclub.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "6am–10pm",
+      "tue": "6am–10pm",
+      "wed": "6am–10pm",
+      "thu": "6am–10pm",
+      "fri": "6am–10pm",
+      "sat": "8am–8pm",
+      "sun": "8am–8pm"
+     }
+    }
+   ],
+   "expect_h": "b5e78ea42696e7ef",
+   "update_reason": "Official website and weekly opening hours from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 2,
+   "class": "update",
+   "id": "seed-75",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://movementgyms.com/baker/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "6am–11pm",
+      "tue": "6am–11pm",
+      "wed": "6am–11pm",
+      "thu": "6am–11pm",
+      "fri": "6am–11pm",
+      "sat": "8am–8pm",
+      "sun": "8am–6pm"
+     }
+    }
+   ],
+   "expect_h": "d3feb28e348ce618",
+   "update_reason": "Official website and weekly opening hours from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 3,
+   "class": "update",
+   "id": "seed-74",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://movementgyms.com/boulder/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "6am–10:30pm",
+      "tue": "6am–10:30pm",
+      "wed": "6am–10:30pm",
+      "thu": "6am–10:30pm",
+      "fri": "6am–10:30pm",
+      "sat": "8am–8pm",
+      "sun": "8am–8pm"
+     }
+    }
+   ],
+   "expect_h": "124de98b7e25b215",
+   "update_reason": "Official website and weekly opening hours from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 4,
+   "class": "update",
+   "id": "seed-94",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://movementgyms.com/centennial/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "6am–11pm",
+      "tue": "6am–11pm",
+      "wed": "6am–11pm",
+      "thu": "6am–11pm",
+      "fri": "6am–11pm",
+      "sat": "8am–8pm",
+      "sun": "8am–6pm"
+     }
+    }
+   ],
+   "expect_h": "f6d819629d0c04cc",
+   "update_reason": "Official website and weekly opening hours from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 5,
+   "class": "update",
+   "id": "seed-95",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://movementgyms.com/englewood/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "6am–11pm",
+      "tue": "6am–11pm",
+      "wed": "6am–11pm",
+      "thu": "6am–11pm",
+      "fri": "6am–11pm",
+      "sat": "8am–8pm",
+      "sun": "8am–6pm"
+     }
+    }
+   ],
+   "expect_h": "8821e13430d3c0ea",
+   "update_reason": "Official website and weekly opening hours from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 6,
+   "class": "update",
+   "id": "seed-96",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://movementgyms.com/golden/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "6am–11pm",
+      "tue": "6am–11pm",
+      "wed": "6am–11pm",
+      "thu": "6am–11pm",
+      "fri": "6am–11pm",
+      "sat": "8am–8pm",
+      "sun": "8am–6pm"
+     }
+    }
+   ],
+   "expect_h": "442953e11fa07821",
+   "update_reason": "Official website and weekly opening hours from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 7,
+   "class": "update",
+   "id": "seed-97",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://movementgyms.com/rino/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "6am–11pm",
+      "tue": "6am–11pm",
+      "wed": "6am–11pm",
+      "thu": "6am–11pm",
+      "fri": "6am–11pm",
+      "sat": "8am–8pm",
+      "sun": "8am–6pm"
+     }
+    }
+   ],
+   "expect_h": "f547b07134aeca10",
+   "update_reason": "Official website and weekly opening hours from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 8,
+   "class": "update",
+   "id": "seed-102",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.thespotgym.com/locations/boulder/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "8am–11pm",
+      "tue": "8am–11pm",
+      "wed": "8am–11pm",
+      "thu": "8am–11pm",
+      "fri": "8am–11pm",
+      "sat": "8am–8pm",
+      "sun": "8am–8pm"
+     }
+    }
+   ],
+   "expect_h": "a8f7c8a138d271ce",
+   "update_reason": "Official website and weekly opening hours from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 9,
+   "class": "update",
+   "id": "seed-103",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.thespotgym.com/locations/denver/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "8am–11pm",
+      "tue": "8am–11pm",
+      "wed": "8am–11pm",
+      "thu": "8am–11pm",
+      "fri": "8am–11pm",
+      "sat": "8am–8pm",
+      "sun": "8am–8pm"
+     }
+    }
+   ],
+   "expect_h": "dbe82269acaabacc",
+   "update_reason": "Official website and weekly opening hours from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 10,
+   "class": "update",
+   "id": "seed-104",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.thespotgym.com/locations/golden/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "8am–10pm",
+      "tue": "8am–10pm",
+      "wed": "8am–10pm",
+      "thu": "8am–10pm",
+      "fri": "8am–10pm",
+      "sat": "8am–8pm",
+      "sun": "8am–8pm"
+     }
+    }
+   ],
+   "expect_h": "fe2e4e7cd87034cc",
+   "update_reason": "Official website and weekly opening hours from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 11,
+   "class": "update",
+   "id": "seed-105",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.thespotgym.com/locations/louisville/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "6am–11pm",
+      "tue": "6am–11pm",
+      "wed": "6am–11pm",
+      "thu": "6am–11pm",
+      "fri": "6am–11pm",
+      "sat": "8am–8pm",
+      "sun": "8am–8pm"
+     }
+    }
+   ],
+   "expect_h": "3a5614bb4d9d3ca4",
+   "update_reason": "Official website and weekly opening hours from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 12,
+   "class": "update",
+   "id": "seed-106",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.thespotgym.com/locations/thornton/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "9am–8pm",
+      "sun": "9am–8pm"
+     }
+    }
+   ],
+   "expect_h": "8d5d852f2e914109",
+   "update_reason": "Official website and weekly opening hours from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 13,
+   "class": "update",
+   "id": "seed-107",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://ugclimbing.com/castle-rock/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "6am–10pm",
+      "tue": "6am–10pm",
+      "wed": "6am–10pm",
+      "thu": "6am–10pm",
+      "fri": "6am–10pm",
+      "sat": "8am–8pm",
+      "sun": "8am–8pm"
+     }
+    }
+   ],
+   "expect_h": "9ea9ee09141d3487",
+   "update_reason": "Official website and weekly opening hours from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 14,
+   "class": "update",
+   "id": "seed-166",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.castleclimbingclub.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "6am–12am",
+      "tue": "6am–12am",
+      "wed": "6am–12am",
+      "thu": "6am–12am",
+      "fri": "6am–12am",
+      "sat": "9am–12am",
+      "sun": "9am–12am"
+     }
+    }
+   ],
+   "expect_h": "5226d79b2eccdeb5",
+   "update_reason": "Official website and weekly opening hours from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 15,
+   "class": "update",
+   "id": "seed-168",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.climbnora.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12pm–8pm",
+      "tue": "12pm–8pm",
+      "wed": "12pm–8pm",
+      "thu": "12pm–8pm",
+      "fri": "12pm–8pm",
+      "sat": "10am–8pm",
+      "sun": "10am–8pm"
+     }
+    }
+   ],
+   "expect_h": "f4034097ecc55f80",
+   "update_reason": "Official website and weekly opening hours from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 16,
+   "class": "update",
+   "id": "seed-169",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.climbtacoma.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "10am–8pm",
+      "sun": "10am–8pm"
+     }
+    }
+   ],
+   "expect_h": "90727bfd030a5e14",
+   "update_reason": "Official website and weekly opening hours from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 17,
+   "class": "update",
+   "id": "seed-170",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://edgeworksclimbing.com/bellevue/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "6am–11pm",
+      "tue": "6am–11pm",
+      "wed": "6am–11pm",
+      "thu": "6am–11pm",
+      "fri": "6am–11pm",
+      "sat": "8am–10pm",
+      "sun": "8am–8pm"
+     }
+    }
+   ],
+   "expect_h": "863414c73b1db426",
+   "update_reason": "Official website and weekly opening hours from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 18,
+   "class": "update",
+   "id": "seed-171",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://edgeworksclimbing.com/belred/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "8am–10pm",
+      "sun": "8am–8pm"
+     }
+    }
+   ],
+   "expect_h": "7a0ffc7d3742d214",
+   "update_reason": "Official website and weekly opening hours from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 19,
+   "class": "update",
+   "id": "seed-173",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://edgeworksclimbing.com/seattle/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "6am–10pm",
+      "tue": "6am–10pm",
+      "wed": "6am–10pm",
+      "thu": "6am–10pm",
+      "fri": "6am–10pm",
+      "sat": "8am–10pm",
+      "sun": "8am–8pm"
+     }
+    }
+   ],
+   "expect_h": "2234b061273d8588",
+   "update_reason": "Official website and weekly opening hours from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 20,
+   "class": "update",
+   "id": "seed-172",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://edgeworksclimbing.com/tacoma/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "6am–10pm",
+      "tue": "6am–10pm",
+      "wed": "6am–10pm",
+      "thu": "6am–10pm",
+      "fri": "6am–10pm",
+      "sat": "8am–10pm",
+      "sun": "8am–8pm"
+     }
+    }
+   ],
+   "expect_h": "0aacdd09d204616f",
+   "update_reason": "Official website and weekly opening hours from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 21,
+   "class": "update",
+   "id": "seed-175",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.halfmoonbouldering.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "8am–10pm",
+      "tue": "7am–10pm",
+      "wed": "8am–10pm",
+      "thu": "7am–10pm",
+      "fri": "8am–10pm",
+      "sat": "8am–7pm",
+      "sun": "8am–7pm"
+     }
+    }
+   ],
+   "expect_h": "7977ee10cea0e5e8",
+   "update_reason": "Official website and weekly opening hours from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 22,
+   "class": "update",
+   "id": "seed-177",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.insightclimbing.com/bainbridge-visit"
+    }
+   ],
+   "expect_h": "1b7436da468fd452",
+   "update_reason": "Official website from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 23,
+   "class": "update",
+   "id": "seed-178",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://momentumclimbing.com/sodo/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "6am–10pm",
+      "tue": "6am–10pm",
+      "wed": "6am–10pm",
+      "thu": "6am–10pm",
+      "fri": "6am–10pm",
+      "sat": "8am–8pm",
+      "sun": "8am–8pm"
+     }
+    }
+   ],
+   "expect_h": "7abff5be7085b546",
+   "update_reason": "Official website and weekly opening hours from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 24,
+   "class": "update",
+   "id": "seed-182",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://boulderingproject.com/location/fremont-upper-walls/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "6am–10pm",
+      "tue": "6am–10pm",
+      "wed": "6am–10pm",
+      "thu": "6am–10pm",
+      "fri": "6am–10pm",
+      "sat": "7am–10pm",
+      "sun": "7am–10pm"
+     }
+    }
+   ],
+   "expect_h": "45b2fe47279d66f4",
+   "update_reason": "Official website and weekly opening hours from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 25,
+   "class": "update",
+   "id": "seed-181",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://boulderingproject.com/location/poplar/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "6am–11pm",
+      "tue": "6am–11pm",
+      "wed": "6am–11pm",
+      "thu": "6am–11pm",
+      "fri": "6am–11pm",
+      "sat": "7am–10pm",
+      "sun": "7am–10pm"
+     }
+    }
+   ],
+   "expect_h": "3facc7056c342352",
+   "update_reason": "Official website and weekly opening hours from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 26,
+   "class": "update",
+   "id": "seed-183",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://boulderingproject.com/location/university-district/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "6am–10pm",
+      "tue": "6am–10pm",
+      "wed": "6am–10pm",
+      "thu": "6am–10pm",
+      "fri": "6am–10pm",
+      "sat": "7am–10pm",
+      "sun": "7am–10pm"
+     }
+    }
+   ],
+   "expect_h": "2450f451236f5c23",
+   "update_reason": "Official website and weekly opening hours from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 27,
+   "class": "update",
+   "id": "seed-184",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://boulderingproject.com/location/fremont-upper-walls/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "3pm–10pm",
+      "tue": "3pm–10pm",
+      "wed": "3pm–10pm",
+      "thu": "3pm–10pm",
+      "fri": "3pm–10pm",
+      "sat": "9am–5pm",
+      "sun": "9am–5pm"
+     }
+    }
+   ],
+   "expect_h": "9401c0e407307bac",
+   "update_reason": "Official website and weekly opening hours from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 28,
+   "class": "update",
+   "id": "seed-186",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://summiteverett.com/"
+    }
+   ],
+   "expect_h": "fc61afb7ca2ebf90",
+   "update_reason": "Official website from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 29,
+   "class": "update",
+   "id": "seed-187",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.upliftclimbing.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12pm–10pm",
+      "tue": "6am–10pm",
+      "wed": "12pm–10pm",
+      "thu": "6am–10pm",
+      "fri": "12pm–10pm",
+      "sat": "8am–8pm",
+      "sun": "8am–8pm"
+     }
+    }
+   ],
+   "expect_h": "1c6626803fbb6174",
+   "update_reason": "Official website and weekly opening hours from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 30,
+   "class": "update",
+   "id": "seed-188",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://north.verticalworld.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–10pm",
+      "tue": "6am–10pm",
+      "wed": "6am–10pm",
+      "thu": "6am–10pm",
+      "fri": "10am–10pm",
+      "sat": "8am–8pm",
+      "sun": "8am–8pm"
+     }
+    }
+   ],
+   "expect_h": "6b7039b2fc17233d",
+   "update_reason": "Official website and weekly opening hours from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 31,
+   "class": "update",
+   "id": "seed-164",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://seattle.verticalworld.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "6am–10pm",
+      "tue": "6am–10pm",
+      "wed": "6am–10pm",
+      "thu": "6am–10pm",
+      "fri": "6am–10pm",
+      "sat": "8am–8pm",
+      "sun": "8am–8pm"
+     }
+    }
+   ],
+   "expect_h": "30860cd6b67e7e4c",
+   "update_reason": "Official website and weekly opening hours from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 32,
+   "class": "update",
+   "id": "seed-109",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://boulderingproject.com/location/somerville/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "6am–11pm",
+      "tue": "6am–11pm",
+      "wed": "6am–11pm",
+      "thu": "6am–11pm",
+      "fri": "6am–11pm",
+      "sat": "8am–10pm",
+      "sun": "8am–10pm"
+     }
+    }
+   ],
+   "expect_h": "65b94ddce6f77b40",
+   "update_reason": "Official website and weekly opening hours from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 33,
+   "class": "update",
+   "id": "seed-298",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://centralrockgym.com/arsenalyards"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "1:30pm–9:30pm",
+      "tue": "1:30pm–9:30pm",
+      "wed": "1:30pm–9:30pm",
+      "thu": "1:30pm–9:30pm",
+      "fri": "12pm–8pm",
+      "sat": "10am–6pm",
+      "sun": "10am–4pm"
+     }
+    }
+   ],
+   "expect_h": "e621b727f970c921",
+   "update_reason": "Official website and weekly opening hours from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 34,
+   "class": "update",
+   "id": "seed-299",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://centralrockgym.com/northstation"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12pm–10pm",
+      "tue": "6am–10pm",
+      "wed": "12pm–10pm",
+      "thu": "6am–10pm",
+      "fri": "12pm–10pm",
+      "sat": "10am–8pm",
+      "sun": "10am–8pm"
+     }
+    }
+   ],
+   "expect_h": "c1a5aaedfab397a6",
+   "update_reason": "Official website and weekly opening hours from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 35,
+   "class": "update",
+   "id": "seed-300",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://centralrockgym.com/cambridge"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "7am–10:30pm",
+      "tue": "7am–10:30pm",
+      "wed": "7am–10:30pm",
+      "thu": "7am–10:30pm",
+      "fri": "11am–10:30pm",
+      "sat": "10am–6pm",
+      "sun": "10am–6pm"
+     }
+    }
+   ],
+   "expect_h": "c0c1fac7669468f3",
+   "update_reason": "Official website and weekly opening hours from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 36,
+   "class": "update",
+   "id": "seed-301",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://centralrockgym.com/fenway"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "6am–10pm",
+      "tue": "10am–10pm",
+      "wed": "6am–10pm",
+      "thu": "10am–10pm",
+      "fri": "6am–10pm",
+      "sat": "9am–9pm",
+      "sun": "9am–9pm"
+     }
+    }
+   ],
+   "expect_h": "db103154489f80b6",
+   "update_reason": "Official website and weekly opening hours from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 37,
+   "class": "update",
+   "id": "seed-297",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://centralrockgym.com/framingham"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "2pm–10pm",
+      "tue": "11am–10pm",
+      "wed": "8am–10pm",
+      "thu": "11am–10pm",
+      "fri": "11am–9pm",
+      "sat": "9am–8pm",
+      "sun": "9am–6pm"
+     }
+    }
+   ],
+   "expect_h": "fa8ce39f68547534",
+   "update_reason": "Official website and weekly opening hours from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 38,
+   "class": "update",
+   "id": "seed-302",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://centralrockgym.com/harvard-square"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "6am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "6am–10pm",
+      "sat": "9am–7pm",
+      "sun": "9am–7pm"
+     }
+    }
+   ],
+   "expect_h": "7f1753ef56dd6e8d",
+   "update_reason": "Official website and weekly opening hours from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 39,
+   "class": "update",
+   "id": "seed-303",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://centralrockgym.com/randolph"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "9am–10:30pm",
+      "tue": "8am–10:30pm",
+      "wed": "9am–10:30pm",
+      "thu": "8am–10:30pm",
+      "fri": "9am–9:30pm",
+      "sat": "9am–8pm",
+      "sun": "9am–8pm"
+     }
+    }
+   ],
+   "expect_h": "ccc11e8c88d6d817",
+   "update_reason": "Official website and weekly opening hours from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 40,
+   "class": "update",
+   "id": "seed-304",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://centralrockgym.com/stoneham"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "6am–10pm",
+      "tue": "10am–10pm",
+      "wed": "6am–10pm",
+      "thu": "10am–10pm",
+      "fri": "6am–9pm",
+      "sat": "9am–8pm",
+      "sun": "9am–8pm"
+     }
+    }
+   ],
+   "expect_h": "b55b032dcef8f8fe",
+   "update_reason": "Official website and weekly opening hours from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 41,
+   "class": "update",
+   "id": "seed-305",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://centralrockgym.com/waltham"
+    }
+   ],
+   "expect_h": "83e7cfb9f9288fb3",
+   "update_reason": "Official website from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 42,
+   "class": "update",
+   "id": "seed-294",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://centralrockgym.com/watertown"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "6am–11pm",
+      "tue": "6am–11pm",
+      "wed": "6am–11pm",
+      "thu": "6am–11pm",
+      "fri": "8am–10pm",
+      "sat": "8am–8pm",
+      "sun": "8am–8pm"
+     }
+    }
+   ],
+   "expect_h": "409285ff623ddb46",
+   "update_reason": "Official website and weekly opening hours from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 43,
+   "class": "update",
+   "id": "seed-306",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://metrorock.com/everett-home"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "9am–8pm",
+      "sun": "9am–8pm"
+     }
+    }
+   ],
+   "expect_h": "1ffb33aa9156b51a",
+   "update_reason": "Official website and weekly opening hours from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 44,
+   "class": "update",
+   "id": "seed-309",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://boston.rockspotclimbing.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "10am–10pm",
+      "sun": "10am–9pm"
+     }
+    }
+   ],
+   "expect_h": "aab2754f1ed705c5",
+   "update_reason": "Official website and weekly opening hours from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 45,
+   "class": "update",
+   "id": "seed-311",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://brookline.rockspotclimbing.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "11am–10pm",
+      "tue": "11am–10pm",
+      "wed": "11am–10pm",
+      "thu": "11am–10pm",
+      "fri": "11am–10pm",
+      "sat": "10am–10pm",
+      "sun": "10am–9pm"
+     }
+    }
+   ],
+   "expect_h": "33b573fea76a4350",
+   "update_reason": "Official website and weekly opening hours from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 46,
+   "class": "update",
+   "id": "seed-312",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://malden.rockspotclimbing.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "2pm–10pm",
+      "tue": "12pm–10pm",
+      "wed": "2pm–10pm",
+      "thu": "12pm–10pm",
+      "fri": "2pm–10pm",
+      "sat": "10am–9pm",
+      "sun": "10am–9pm"
+     }
+    }
+   ],
+   "expect_h": "de339f7b0330e682",
+   "update_reason": "Official website and weekly opening hours from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 47,
+   "class": "update",
+   "id": "seed-310",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://rockspotclimbing.com/locations/ma/southboston/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "8am–10pm",
+      "tue": "6:30am–10pm",
+      "wed": "6:30am–10pm",
+      "thu": "6:30am–10pm",
+      "fri": "8am–10pm",
+      "sat": "8am–10pm",
+      "sun": "8am–10pm"
+     }
+    }
+   ],
+   "expect_h": "458c3c0a44920688",
+   "update_reason": "Official website and weekly opening hours from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 48,
+   "class": "update",
+   "id": "seed-318",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.climbasylum.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "2pm–9pm",
+      "tue": "2pm–9pm",
+      "wed": "2pm–9pm",
+      "thu": "2pm–9pm",
+      "fri": "2pm–9pm",
+      "sat": "11am–6pm",
+      "sun": "11am–6pm"
+     }
+    }
+   ],
+   "expect_h": "82aa99220b420f46",
+   "update_reason": "Official website and weekly opening hours from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 49,
+   "class": "update",
+   "id": "seed-333",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://fluxtrainingcenter.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "10am–9pm",
+      "sun": "10am–9pm"
+     }
+    }
+   ],
+   "expect_h": "a9f57ba0d25976b7",
+   "update_reason": "Official website and weekly opening hours from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 50,
+   "class": "update",
+   "id": "seed-338",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.grottoclimbing.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "7am–10pm",
+      "tue": "7am–10pm",
+      "wed": "7am–10pm",
+      "thu": "7am–10pm",
+      "fri": "7am–10pm",
+      "sat": "9am–7pm",
+      "sun": "9am–7pm"
+     }
+    }
+   ],
+   "expect_h": "644d92e2df95dcec",
+   "update_reason": "Official website and weekly opening hours from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 51,
+   "class": "update",
+   "id": "seed-355",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://mesarim.com/academy"
+    }
+   ],
+   "expect_h": "3966862ea3818bff",
+   "update_reason": "Official website from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 52,
+   "class": "update",
+   "id": "seed-356",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://mesarim.com/miramesa/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "6am–10pm",
+      "tue": "6am–10pm",
+      "wed": "6am–10pm",
+      "thu": "6am–10pm",
+      "fri": "6am–10pm",
+      "sat": "8am–9pm",
+      "sun": "8am–9pm"
+     }
+    }
+   ],
+   "expect_h": "5f0c595121f1b5c0",
+   "update_reason": "Official website and weekly opening hours from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 53,
+   "class": "update",
+   "id": "seed-357",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://mesarim.com/missionvalley/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "6am–11pm",
+      "tue": "6am–11pm",
+      "wed": "6am–11pm",
+      "thu": "6am–11pm",
+      "fri": "6am–11pm",
+      "sat": "8am–9pm",
+      "sun": "8am–9pm"
+     }
+    }
+   ],
+   "expect_h": "a71faadd4b944115",
+   "update_reason": "Official website and weekly opening hours from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 54,
+   "class": "update",
+   "id": "seed-358",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://mesarim.com/northcity/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "6am–10pm",
+      "tue": "6am–10pm",
+      "wed": "6am–10pm",
+      "thu": "6am–10pm",
+      "fri": "6am–10pm",
+      "sat": "8am–9pm",
+      "sun": "8am–9pm"
+     }
+    }
+   ],
+   "expect_h": "5d5982fd4b3f9d6b",
+   "update_reason": "Official website and weekly opening hours from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 55,
+   "class": "update",
+   "id": "seed-395",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.thewallclimbinggym.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "12pm–8pm",
+      "sun": "12pm–8pm"
+     }
+    }
+   ],
+   "expect_h": "2906b89398dc5414",
+   "update_reason": "Official website and weekly opening hours from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 56,
+   "class": "update",
+   "id": "seed-400",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.verticalhold.com/san-diego"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "9am–10pm",
+      "tue": "9am–10pm",
+      "wed": "9am–10pm",
+      "thu": "9am–10pm",
+      "fri": "9am–10pm",
+      "sat": "9am–9pm",
+      "sun": "9am–9pm"
+     }
+    }
+   ],
+   "expect_h": "82690cc7f3e41ac5",
+   "update_reason": "Official website and weekly opening hours from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 57,
+   "class": "update",
+   "id": "seed-402",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.verticalhold.com/poway"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "9am–10pm",
+      "tue": "9am–10pm",
+      "wed": "9am–10pm",
+      "thu": "9am–10pm",
+      "fri": "9am–10pm",
+      "sat": "9am–9pm",
+      "sun": "9am–9pm"
+     }
+    }
+   ],
+   "expect_h": "5671da97b2634210",
+   "update_reason": "Official website and weekly opening hours from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 58,
+   "class": "update",
+   "id": "seed-403",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.vitalclimbinggym.com/california"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "4pm–8pm",
+      "tue": "4pm–8pm",
+      "wed": "4pm–8pm",
+      "thu": "4pm–8pm",
+      "fri": "4pm–8pm",
+      "sat": "11am–3pm",
+      "sun": "11am–3pm"
+     }
+    }
+   ],
+   "expect_h": "da32759a52bea601",
+   "update_reason": "Official website and weekly opening hours from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 59,
+   "class": "update",
+   "id": "seed-405",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.vitalclimbinggym.com/california"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "11am–9pm",
+      "tue": "11am–9pm",
+      "wed": "11am–9pm",
+      "thu": "11am–9pm",
+      "fri": "11am–9pm",
+      "sat": "11am–9pm",
+      "sun": "11am–9pm"
+     }
+    }
+   ],
+   "expect_h": "53e432c792cde10d",
+   "update_reason": "Official website and weekly opening hours from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 60,
+   "class": "update",
+   "id": "seed-86",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://g1climbing.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "6am–10pm",
+      "tue": "6am–10pm",
+      "wed": "6am–10pm",
+      "thu": "6am–10pm",
+      "fri": "6am–10pm",
+      "sat": "8am–8pm",
+      "sun": "8am–8pm"
+     }
+    }
+   ],
+   "expect_h": "3590553be2d6b379",
+   "update_reason": "Official website and weekly opening hours from the gym's own site (read by the owner 2026-10-04; the site blocks automated clients)"
+  },
+  {
+   "line": 61,
+   "class": "retire",
+   "id": "seed-32",
+   "name": "Hardrock Climbing Company",
+   "country": "AU",
+   "expect_h": "a9597c4531503ca9",
+   "reason_code": "closed",
+   "retire_reason": "Permanently closed: last day of trade 19 Dec 2025 (site sold for redevelopment), per the operator",
+   "entry": {
+    "id": "seed-32",
+    "name": "Hardrock Climbing Company",
+    "country": "AU",
+    "state": "VIC",
+    "suburb": "Nunawading",
+    "lat": -37.8201856,
+    "lng": 145.1720359,
+    "address": "16-18 Varman Ct, Nunawading VIC 3131",
+    "types": [
+     "indoor-bouldering",
+     "top-rope"
+    ],
+    "h": "a9597c4531503ca9"
+   }
+  },
+  {
+   "line": 62,
+   "class": "retire",
+   "id": "seed-81",
+   "name": "Denver Bouldering Club",
+   "country": "US",
+   "expect_h": "7b67642ea7a73c1c",
+   "reason_code": "closed",
+   "retire_reason": "Closed: official site expired; company reported to have closed its remaining locations on 2026-05-29 after bankruptcy",
+   "entry": {
+    "id": "seed-81",
+    "name": "Denver Bouldering Club",
+    "country": "US",
+    "state": "CO",
+    "suburb": "Denver",
+    "lat": 39.7392,
+    "lng": -104.9903,
+    "address": "2485 W 2nd Ave #18/20, Denver, CO 80223",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "7b67642ea7a73c1c"
+   }
+  },
+  {
+   "line": 63,
+   "class": "retire",
+   "id": "seed-82",
+   "name": "Denver Bouldering Club North",
+   "country": "US",
+   "expect_h": "bd6ed11541b646a0",
+   "reason_code": "closed",
+   "retire_reason": "Closed: official site expired; company reported to have closed its remaining locations on 2026-05-29 after bankruptcy",
+   "entry": {
+    "id": "seed-82",
+    "name": "Denver Bouldering Club North",
+    "country": "US",
+    "state": "CO",
+    "suburb": "Thornton",
+    "lat": 39.868,
+    "lng": -104.9719,
+    "address": "698 W 84th Ave, Denver, CO 80260",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "bd6ed11541b646a0"
+   }
+  },
+  {
+   "line": 64,
+   "class": "retire",
+   "id": "seed-83",
+   "name": "Denver Bouldering Club South",
+   "country": "US",
+   "expect_h": "921d46a238712df7",
+   "reason_code": "closed",
+   "retire_reason": "Closed: official site expired; company reported to have closed its remaining locations on 2026-05-29 after bankruptcy",
+   "entry": {
+    "id": "seed-83",
+    "name": "Denver Bouldering Club South",
+    "country": "US",
+    "state": "CO",
+    "suburb": "Sheridan",
+    "lat": 39.6403,
+    "lng": -105.0286,
+    "address": "4131 S Natches Ct Unit E/F, Sheridan, CO 80110",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "921d46a238712df7"
+   }
+  },
+  {
+   "line": 65,
+   "class": "retire",
+   "id": "seed-401",
+   "name": "Solid Rock Gym",
+   "country": "US",
+   "expect_h": "dce5471055076c8b",
+   "reason_code": "closed",
+   "retire_reason": "No longer operating as Solid Rock Gym: the address is now Vertical Hold San Marcos; old domain serves unrelated content",
+   "entry": {
+    "id": "seed-401",
+    "name": "Solid Rock Gym",
+    "country": "US",
+    "state": "CA",
+    "suburb": "San Marcos",
+    "lat": 33.136771,
+    "lng": -117.1328158,
+    "address": "992 Rancheros Dr, San Marcos, CA 92069",
+    "types": [
+     "indoor-bouldering",
+     "top-rope"
+    ],
+    "h": "dce5471055076c8b"
+   }
+  },
+  {
+   "line": 66,
+   "class": "retire",
+   "id": "seed-227",
+   "name": "The Rock Health and Fitness",
+   "country": "US",
+   "expect_h": "4b0b574f3837c632",
+   "reason_code": "closed",
+   "retire_reason": "Not a climbing gym: the official site (Rock Fitness, Astoria) is a general fitness gym and never mentions climbing",
+   "entry": {
+    "id": "seed-227",
+    "name": "The Rock Health and Fitness",
+    "country": "US",
+    "state": "NY",
+    "suburb": "Astoria, Queens",
+    "lat": 40.7644,
+    "lng": -73.9235,
+    "address": "22-15 31st St, Astoria, NY 11105",
+    "types": [
+     "indoor-bouldering",
+     "top-rope"
+    ],
+    "h": "4b0b574f3837c632"
+   }
+  },
+  {
+   "line": 67,
+   "class": "retire",
+   "id": "seed-228",
+   "name": "The Wall at Palisades",
+   "country": "US",
+   "expect_h": "2998fd22cfdaf8a6",
+   "reason_code": "closed",
+   "retire_reason": "No evidence the gym exists: no official site, no address; only differently named mall attractions found nearby",
+   "entry": {
+    "id": "seed-228",
+    "name": "The Wall at Palisades",
+    "country": "US",
+    "state": "NY",
+    "suburb": "West Nyack",
+    "lat": 41.0956,
+    "lng": -73.9668,
+    "address": null,
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "2998fd22cfdaf8a6"
+   }
+  }
+ ]
+}

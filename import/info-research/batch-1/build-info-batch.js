@@ -4,7 +4,7 @@ const fs = require('fs');
 const [,, researchDir, outFile, dropHoursCsv = '', excludeCsv = '', websiteOnlyFlagsCsv = ''] = process.argv;
 const csv = s => new Set(s.split(',').filter(Boolean));
 const dropHours = csv(dropHoursCsv), exclude = csv(excludeCsv), websiteOnlyFlags = csv(websiteOnlyFlagsCsv);
-const files = ['research-au.json', 'research-nysf.json', 'research-la.json'];
+const files = (process.env.RESEARCH_FILES || 'research-au.json,research-nysf.json,research-la.json').split(',');
 const all = files.flatMap(f => JSON.parse(fs.readFileSync(researchDir + '/' + f, 'utf8')));
 const lines = [], skipped = [], websiteOnly = [];
 for (const r of all) {
