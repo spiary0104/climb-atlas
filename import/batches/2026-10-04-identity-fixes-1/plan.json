@@ -1,0 +1,231 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-04-identity-fixes-1",
+ "index": {
+  "sha256": "af9c78d5f3eeb4f9337651a588bad3ce8dbcc4f6fb92443bc35e343982749e9b",
+  "count": 2293,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [],
+ "counts": {
+  "records": 10,
+  "new": 0,
+  "existing": 0,
+  "update": 10,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 7
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "7a2bec596762aabc68cbca59ce18591fe38bf3888693dd4a225019df6c79b3b3",
+ "records": [
+  {
+   "line": 1,
+   "class": "update",
+   "id": "seed-60",
+   "changes": [
+    {
+     "field": "name",
+     "before": "City Summit",
+     "after": "Oasis Climbing Gym Malaga"
+    }
+   ],
+   "expect_h": "724d5afcf22fd8eb",
+   "update_reason": "Official name changed (same venue, same address) (verified 2026-10-04)",
+   "warnings": [
+    {
+     "code": "rename",
+     "field": "name",
+     "message": "renames \"City Summit\" -> \"Oasis Climbing Gym Malaga\""
+    }
+   ]
+  },
+  {
+   "line": 2,
+   "class": "update",
+   "id": "seed-962",
+   "changes": [
+    {
+     "field": "name",
+     "before": "Basement Boulderstudio",
+     "after": "urban apes Basement Berlin"
+    }
+   ],
+   "expect_h": "c02cdef145549394",
+   "update_reason": "Official name changed (same venue, same address) (verified 2026-10-04)",
+   "warnings": [
+    {
+     "code": "rename",
+     "field": "name",
+     "message": "renames \"Basement Boulderstudio\" -> \"urban apes Basement Berlin\""
+    }
+   ]
+  },
+  {
+   "line": 3,
+   "class": "update",
+   "id": "seed-458",
+   "changes": [
+    {
+     "field": "name",
+     "before": "T-WALL Kinshicho",
+     "after": "BASE CAMP TOKYO Kinshicho"
+    }
+   ],
+   "expect_h": "9264089e37989049",
+   "update_reason": "Official name changed (same venue, same address) (verified 2026-10-04)",
+   "warnings": [
+    {
+     "code": "rename",
+     "field": "name",
+     "message": "renames \"T-WALL Kinshicho\" -> \"BASE CAMP TOKYO Kinshicho\""
+    }
+   ]
+  },
+  {
+   "line": 4,
+   "class": "update",
+   "id": "seed-1108",
+   "changes": [
+    {
+     "field": "name",
+     "before": "Be Boulder Amsterdam",
+     "after": "Boulderhal Luchthaven"
+    }
+   ],
+   "expect_h": "11a8ac5fbdf1a9a4",
+   "update_reason": "Official name changed (same venue, same address) (verified 2026-10-04)",
+   "warnings": [
+    {
+     "code": "rename",
+     "field": "name",
+     "message": "renames \"Be Boulder Amsterdam\" -> \"Boulderhal Luchthaven\""
+    }
+   ]
+  },
+  {
+   "line": 5,
+   "class": "update",
+   "id": "seed-1115",
+   "changes": [
+    {
+     "field": "name",
+     "before": "Mountain Network - Amsterdam",
+     "after": "Climbing Center Amsterdam"
+    }
+   ],
+   "expect_h": "2bbb7008df317845",
+   "update_reason": "Official name changed (same venue, same address) (verified 2026-10-04)",
+   "warnings": [
+    {
+     "code": "rename",
+     "field": "name",
+     "message": "renames \"Mountain Network - Amsterdam\" -> \"Climbing Center Amsterdam\""
+    }
+   ]
+  },
+  {
+   "line": 6,
+   "class": "update",
+   "id": "seed-1121",
+   "changes": [
+    {
+     "field": "name",
+     "before": "De Klimmuur - Den Haag de Uithof",
+     "after": "BOK Den Haag"
+    }
+   ],
+   "expect_h": "0a02eabcd1100222",
+   "update_reason": "Official name changed (same venue, same address) (verified 2026-10-04)",
+   "warnings": [
+    {
+     "code": "rename",
+     "field": "name",
+     "message": "renames \"De Klimmuur - Den Haag de Uithof\" -> \"BOK Den Haag\""
+    }
+   ]
+  },
+  {
+   "line": 7,
+   "class": "update",
+   "id": "seed-1314",
+   "changes": [
+    {
+     "field": "name",
+     "before": "Fabryczna Boulder",
+     "after": "NOISE Bouldering Spot"
+    }
+   ],
+   "expect_h": "c51403099c851788",
+   "update_reason": "Official name changed (same venue, same address) (verified 2026-10-04)",
+   "warnings": [
+    {
+     "code": "rename",
+     "field": "name",
+     "message": "renames \"Fabryczna Boulder\" -> \"NOISE Bouldering Spot\""
+    }
+   ]
+  },
+  {
+   "line": 8,
+   "class": "update",
+   "id": "seed-1079",
+   "changes": [
+    {
+     "field": "types",
+     "before": [
+      "indoor-bouldering"
+     ],
+     "after": [
+      "top-rope"
+     ]
+    }
+   ],
+   "expect_h": "698aedc3aed5eb48",
+   "update_reason": "Type tags corrected to what the official site states (verified 2026-10-04)"
+  },
+  {
+   "line": 9,
+   "class": "update",
+   "id": "seed-1080",
+   "changes": [
+    {
+     "field": "types",
+     "before": [
+      "indoor-bouldering"
+     ],
+     "after": [
+      "indoor-bouldering",
+      "top-rope"
+     ]
+    }
+   ],
+   "expect_h": "6ea087c4e76496da",
+   "update_reason": "Type tags corrected to what the official site states (verified 2026-10-04)"
+  },
+  {
+   "line": 10,
+   "class": "update",
+   "id": "seed-1257",
+   "changes": [
+    {
+     "field": "types",
+     "before": [
+      "indoor-bouldering"
+     ],
+     "after": [
+      "top-rope"
+     ]
+    }
+   ],
+   "expect_h": "b19c122d2f0047aa",
+   "update_reason": "Type tags corrected to what the official site states (verified 2026-10-04)"
+  }
+ ]
+}

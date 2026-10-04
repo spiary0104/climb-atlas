@@ -1,0 +1,260 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-04-identity-fixes-2",
+ "index": {
+  "sha256": "af9c78d5f3eeb4f9337651a588bad3ce8dbcc4f6fb92443bc35e343982749e9b",
+  "count": 2293,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [],
+ "counts": {
+  "records": 16,
+  "new": 0,
+  "existing": 0,
+  "update": 16,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 1
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "ce2fa97f8949647936256c4c5f852a4bd2756fbd2a3a9cb65803b607f3028715",
+ "records": [
+  {
+   "line": 1,
+   "class": "update",
+   "id": "seed-1265",
+   "changes": [
+    {
+     "field": "name",
+     "before": "Vertigo - Lisboa",
+     "after": "Vertigo Oriente"
+    }
+   ],
+   "expect_h": "f6ba44453e43ea3f",
+   "update_reason": "Official name changed (same venue, same address) (verified 2026-10-04)",
+   "warnings": [
+    {
+     "code": "rename",
+     "field": "name",
+     "message": "renames \"Vertigo - Lisboa\" -> \"Vertigo Oriente\""
+    }
+   ]
+  },
+  {
+   "line": 2,
+   "class": "update",
+   "id": "seed-970",
+   "changes": [
+    {
+     "field": "suburb",
+     "before": "Freiburg",
+     "after": "Villingen-Schwenningen"
+    }
+   ],
+   "expect_h": "dfec9ed31f919ad7",
+   "update_reason": "Suburb corrected to the town of the official address (verified 2026-10-04)"
+  },
+  {
+   "line": 3,
+   "class": "update",
+   "id": "seed-986",
+   "changes": [
+    {
+     "field": "suburb",
+     "before": "Freiburg",
+     "after": "Laufenburg (Baden)"
+    }
+   ],
+   "expect_h": "3b74b0e478c01403",
+   "update_reason": "Suburb corrected to the town of the official address (verified 2026-10-04)"
+  },
+  {
+   "line": 4,
+   "class": "update",
+   "id": "seed-1019",
+   "changes": [
+    {
+     "field": "suburb",
+     "before": "Freiburg",
+     "after": "Waldshut-Tiengen"
+    }
+   ],
+   "expect_h": "62812e7d6d68cef5",
+   "update_reason": "Suburb corrected to the town of the official address (verified 2026-10-04)"
+  },
+  {
+   "line": 5,
+   "class": "update",
+   "id": "seed-1065",
+   "changes": [
+    {
+     "field": "suburb",
+     "before": "Freiburg",
+     "after": "Villingen-Schwenningen"
+    }
+   ],
+   "expect_h": "a1435b85eb5a2567",
+   "update_reason": "Suburb corrected to the town of the official address (verified 2026-10-04)"
+  },
+  {
+   "line": 6,
+   "class": "update",
+   "id": "seed-971",
+   "changes": [
+    {
+     "field": "suburb",
+     "before": "Tübingen",
+     "after": "Ravensburg"
+    }
+   ],
+   "expect_h": "a9ed392a3418fc77",
+   "update_reason": "Suburb corrected to the town of the official address (verified 2026-10-04)"
+  },
+  {
+   "line": 7,
+   "class": "update",
+   "id": "seed-1005",
+   "changes": [
+    {
+     "field": "suburb",
+     "before": "Tübingen",
+     "after": "Albstadt"
+    }
+   ],
+   "expect_h": "49f9bb24c1b8d6a1",
+   "update_reason": "Suburb corrected to the town of the official address (verified 2026-10-04)"
+  },
+  {
+   "line": 8,
+   "class": "update",
+   "id": "seed-1017",
+   "changes": [
+    {
+     "field": "suburb",
+     "before": "Stuttgart",
+     "after": "Ludwigsburg"
+    }
+   ],
+   "expect_h": "eed92808e586d3c5",
+   "update_reason": "Suburb corrected to the town of the official address (verified 2026-10-04)"
+  },
+  {
+   "line": 9,
+   "class": "update",
+   "id": "seed-1054",
+   "changes": [
+    {
+     "field": "suburb",
+     "before": "Stuttgart",
+     "after": "Böblingen"
+    }
+   ],
+   "expect_h": "cc91296f6a53ecc7",
+   "update_reason": "Suburb corrected to the town of the official address (verified 2026-10-04)"
+  },
+  {
+   "line": 10,
+   "class": "update",
+   "id": "seed-888",
+   "changes": [
+    {
+     "field": "suburb",
+     "before": "West Yorkshire",
+     "after": "Brighouse"
+    }
+   ],
+   "expect_h": "bd345425f64bc1e9",
+   "update_reason": "Suburb corrected to the town of the official address (verified 2026-10-04)"
+  },
+  {
+   "line": 11,
+   "class": "update",
+   "id": "seed-872",
+   "changes": [
+    {
+     "field": "suburb",
+     "before": "Winchester, Hampshire",
+     "after": "Romsey"
+    }
+   ],
+   "expect_h": "642775272885e33a",
+   "update_reason": "Suburb corrected to the town of the official address (verified 2026-10-04)"
+  },
+  {
+   "line": 12,
+   "class": "update",
+   "id": "seed-1006",
+   "changes": [
+    {
+     "field": "suburb",
+     "before": "Darmstadt",
+     "after": "Frankfurt am Main"
+    }
+   ],
+   "expect_h": "2b0da9d27a0d7ce9",
+   "update_reason": "Suburb corrected to the town of the official address (verified 2026-10-04)"
+  },
+  {
+   "line": 13,
+   "class": "update",
+   "id": "seed-1033",
+   "changes": [
+    {
+     "field": "suburb",
+     "before": "Oberbayern",
+     "after": "Weyarn"
+    }
+   ],
+   "expect_h": "fd3b0e3dbaaadb7f",
+   "update_reason": "Suburb corrected to the town of the official address (verified 2026-10-04)"
+  },
+  {
+   "line": 14,
+   "class": "update",
+   "id": "seed-976",
+   "changes": [
+    {
+     "field": "suburb",
+     "before": "Dresden",
+     "after": "Radebeul"
+    }
+   ],
+   "expect_h": "d40da0d201209f54",
+   "update_reason": "Suburb corrected to the town of the official address (verified 2026-10-04)"
+  },
+  {
+   "line": 15,
+   "class": "update",
+   "id": "seed-988",
+   "changes": [
+    {
+     "field": "suburb",
+     "before": "Dortmund, Arnsberg",
+     "after": "Dortmund"
+    }
+   ],
+   "expect_h": "e14d9ed642351bfb",
+   "update_reason": "Suburb corrected to the town of the official address (verified 2026-10-04)"
+  },
+  {
+   "line": 16,
+   "class": "update",
+   "id": "seed-1047",
+   "changes": [
+    {
+     "field": "suburb",
+     "before": "Duisburg, Düsseldorf",
+     "after": "Duisburg"
+    }
+   ],
+   "expect_h": "1362c8f096f98a26",
+   "update_reason": "Suburb corrected to the town of the official address (verified 2026-10-04)"
+  }
+ ]
+}
