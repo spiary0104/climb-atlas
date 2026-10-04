@@ -1,0 +1,752 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-04-location-fixes",
+ "index": {
+  "sha256": "805de07cc820a55436ad2af602b76d601b49e85346e808dfcfdee1e82e796738",
+  "count": 2293,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [],
+ "counts": {
+  "records": 24,
+  "new": 0,
+  "existing": 0,
+  "update": 24,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 21
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "a187364bd6cde92d025f1bef163d3d5f3ebf36d25bafa6f7413b78437d273752",
+ "records": [
+  {
+   "line": 1,
+   "class": "update",
+   "id": "seed-988",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Brennaborstraße 10 (Indupark), 44149 Dortmund"
+    },
+    {
+     "field": "lat",
+     "before": 51.5136,
+     "after": 51.4946156
+    },
+    {
+     "field": "lng",
+     "before": 7.4653,
+     "after": 7.3774043
+    }
+   ],
+   "expect_h": "7f67990a967fc8d2",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 6439 m"
+    }
+   ]
+  },
+  {
+   "line": 2,
+   "class": "update",
+   "id": "seed-1047",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Neuenhofstraße 91, 47055 Duisburg"
+    },
+    {
+     "field": "lat",
+     "before": 51.4344,
+     "after": 51.3924731
+    },
+    {
+     "field": "lng",
+     "before": 6.7623,
+     "after": 6.7494732
+    }
+   ],
+   "expect_h": "0e418a2e77b38d6b",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 4746 m"
+    }
+   ]
+  },
+  {
+   "line": 3,
+   "class": "update",
+   "id": "seed-1097",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "9, Rue Marie Louise Dissard, 31300 Toulouse"
+    },
+    {
+     "field": "lat",
+     "before": 43.5668198,
+     "after": 43.6019656
+    },
+    {
+     "field": "lng",
+     "before": 1.4874717,
+     "after": 1.3672417
+    }
+   ],
+   "expect_h": "57b24186d6f24d52",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 10443 m"
+    }
+   ]
+  },
+  {
+   "line": 4,
+   "class": "update",
+   "id": "seed-1336",
+   "changes": [
+    {
+     "field": "address",
+     "before": "Vigerslev Allé 47, København, Denmark",
+     "after": "Pakkerivej 27, 2500 Valby"
+    },
+    {
+     "field": "lat",
+     "before": 55.661383,
+     "after": 55.6610635
+    },
+    {
+     "field": "lng",
+     "before": 12.515262,
+     "after": 12.5152288
+    }
+   ],
+   "expect_h": "d599c9328a8dd6e7",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)"
+  },
+  {
+   "line": 5,
+   "class": "update",
+   "id": "seed-970",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Am Klosterhof 5, 78052 Villingen-Schwenningen"
+    },
+    {
+     "field": "lat",
+     "before": 48,
+     "after": 48.074933
+    },
+    {
+     "field": "lng",
+     "before": 7.85,
+     "after": 8.4937141
+    }
+   ],
+   "expect_h": "9aa32b5aa8fb3d2b",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 48580 m"
+    }
+   ]
+  },
+  {
+   "line": 6,
+   "class": "update",
+   "id": "seed-986",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Dr.Rudolf-Eberle-Straße 12, 79725 Laufenburg"
+    },
+    {
+     "field": "lat",
+     "before": 48.005,
+     "after": 47.5644736
+    },
+    {
+     "field": "lng",
+     "before": 7.83,
+     "after": 8.079016
+    }
+   ],
+   "expect_h": "aea44640bed6805c",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 52398 m"
+    }
+   ]
+  },
+  {
+   "line": 7,
+   "class": "update",
+   "id": "seed-1019",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Feldbergstraße 9-11, 79761 Waldshut-Tiengen"
+    },
+    {
+     "field": "lat",
+     "before": 48.01,
+     "after": 47.6324043
+    },
+    {
+     "field": "lng",
+     "before": 7.86,
+     "after": 8.2663117
+    }
+   ],
+   "expect_h": "46a8128a69727a80",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 51799 m"
+    }
+   ]
+  },
+  {
+   "line": 8,
+   "class": "update",
+   "id": "seed-1065",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Wilhelm-Binder-Str.15, 78048 VS-Villingen"
+    },
+    {
+     "field": "lat",
+     "before": 48.025,
+     "after": 48.0644538
+    },
+    {
+     "field": "lng",
+     "before": 7.875,
+     "after": 8.4563609
+    }
+   ],
+   "expect_h": "ed244d7b511cb1de",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 43440 m"
+    }
+   ]
+  },
+  {
+   "line": 9,
+   "class": "update",
+   "id": "seed-971",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Deisenfangstr. 7, 88212 Ravensburg"
+    },
+    {
+     "field": "lat",
+     "before": 48.5216,
+     "after": 47.7917058
+    },
+    {
+     "field": "lng",
+     "before": 9.0576,
+     "after": 9.6079062
+    }
+   ],
+   "expect_h": "4524f9885833d2b9",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 90847 m"
+    }
+   ]
+  },
+  {
+   "line": 10,
+   "class": "update",
+   "id": "seed-1005",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Vogelsangstraße 41, 72461 Albstadt"
+    },
+    {
+     "field": "lat",
+     "before": 48.525,
+     "after": 48.2539719
+    },
+    {
+     "field": "lng",
+     "before": 9.05,
+     "after": 8.9970367
+    }
+   ],
+   "expect_h": "aa88b0b6c416f065",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 30390 m"
+    }
+   ]
+  },
+  {
+   "line": 11,
+   "class": "update",
+   "id": "seed-1017",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Fuchshofstraße 66, 71638 Ludwigsburg"
+    },
+    {
+     "field": "lat",
+     "before": 48.7758,
+     "after": 48.8923245
+    },
+    {
+     "field": "lng",
+     "before": 9.1829,
+     "after": 9.2168722
+    }
+   ],
+   "expect_h": "f13010f5c30e4e1d",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 13193 m"
+    }
+   ]
+  },
+  {
+   "line": 12,
+   "class": "update",
+   "id": "seed-1054",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Silberweg 22, 71032 Böblingen"
+    },
+    {
+     "field": "lat",
+     "before": 48.77,
+     "after": 48.6956055
+    },
+    {
+     "field": "lng",
+     "before": 9.175,
+     "after": 9.022941
+    }
+   ],
+   "expect_h": "462c2e8b398507ca",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 13885 m"
+    }
+   ]
+  },
+  {
+   "line": 13,
+   "class": "update",
+   "id": "seed-888",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "The Old Flour Mill, Millroyd Street, Brighouse, West Yorkshire HD6 1EY"
+    },
+    {
+     "field": "lat",
+     "before": 53.798,
+     "after": 53.699638
+    },
+    {
+     "field": "lng",
+     "before": -1.547,
+     "after": -1.7817564
+    }
+   ],
+   "expect_h": "d14366fbf6763d0a",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 18918 m"
+    }
+   ]
+  },
+  {
+   "line": 14,
+   "class": "update",
+   "id": "seed-872",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "34 Romsey Industrial Estate, Greatbridge Road, Romsey SO51 0HR"
+    },
+    {
+     "field": "lat",
+     "before": 51.0632,
+     "after": 50.9938231
+    },
+    {
+     "field": "lng",
+     "before": -1.308,
+     "after": -1.4929263
+    }
+   ],
+   "expect_h": "010adc68593b4ac2",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 15059 m"
+    }
+   ]
+  },
+  {
+   "line": 15,
+   "class": "update",
+   "id": "seed-916",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Unit A5/A6, Southmoor Industrial Estate, Wythenshawe, Manchester M23 9XD"
+    },
+    {
+     "field": "lat",
+     "before": 53.477,
+     "after": 53.3966252
+    },
+    {
+     "field": "lng",
+     "before": -2.23,
+     "after": -2.2962942
+    }
+   ],
+   "expect_h": "e00a775f83049ee5",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 9958 m"
+    }
+   ]
+  },
+  {
+   "line": 16,
+   "class": "update",
+   "id": "seed-917",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Unit 1, 30-34 Wood St, Openshaw, Manchester M11 2FB"
+    },
+    {
+     "field": "lat",
+     "before": 53.47,
+     "after": 53.4742999
+    },
+    {
+     "field": "lng",
+     "before": -2.245,
+     "after": -2.183509
+    }
+   ],
+   "expect_h": "76b9f989520c5c56",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 4098 m"
+    }
+   ]
+  },
+  {
+   "line": 17,
+   "class": "update",
+   "id": "seed-1443",
+   "changes": [
+    {
+     "field": "address",
+     "before": "Mesogion 345, Chalandri, Greece",
+     "after": "Iridos 44, 15231 Chalandri"
+    },
+    {
+     "field": "lat",
+     "before": 38.0092607,
+     "after": 38.0106735
+    },
+    {
+     "field": "lng",
+     "before": 23.8056266,
+     "after": 23.80697
+    }
+   ],
+   "expect_h": "380b6f1e35a14541",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)"
+  },
+  {
+   "line": 18,
+   "class": "update",
+   "id": "seed-936",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "8 Pier Place, Edinburgh EH6 4LP"
+    },
+    {
+     "field": "lat",
+     "before": 55.9533,
+     "after": 55.9805434
+    },
+    {
+     "field": "lng",
+     "before": -3.1883,
+     "after": -3.1963641
+    }
+   ],
+   "expect_h": "c93aa8bd4abd0ca9",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 3071 m"
+    }
+   ]
+  },
+  {
+   "line": 19,
+   "class": "update",
+   "id": "seed-942",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "EICA Ratho, South Platt Hill, Edinburgh EH28 8AA"
+    },
+    {
+     "field": "lat",
+     "before": 55.935,
+     "after": 55.9233974
+    },
+    {
+     "field": "lng",
+     "before": -3.21,
+     "after": -3.3978315
+    }
+   ],
+   "expect_h": "2d7246cb3aac9bf7",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 11772 m"
+    }
+   ]
+  },
+  {
+   "line": 20,
+   "class": "update",
+   "id": "seed-1006",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Flinschstr. 45, 60388 Frankfurt a. M."
+    },
+    {
+     "field": "lat",
+     "before": 49.8728,
+     "after": 50.1367437
+    },
+    {
+     "field": "lng",
+     "before": 8.6512,
+     "after": 8.7327533
+    }
+   ],
+   "expect_h": "e9fa712b779a9ae1",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 29922 m"
+    }
+   ]
+  },
+  {
+   "line": 21,
+   "class": "update",
+   "id": "seed-1033",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Am Weiglfeld 30, 83629 Weyarn"
+    },
+    {
+     "field": "lat",
+     "before": 48.145,
+     "after": 47.8656845
+    },
+    {
+     "field": "lng",
+     "before": 11.575,
+     "after": 11.7897362
+    }
+   ],
+   "expect_h": "ce6a8e311c57bff7",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 34926 m"
+    }
+   ]
+  },
+  {
+   "line": 22,
+   "class": "update",
+   "id": "seed-976",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Nach der Schiffsmühle 6, 01445 Radebeul"
+    },
+    {
+     "field": "lat",
+     "before": 51.055,
+     "after": 51.120224
+    },
+    {
+     "field": "lng",
+     "before": 13.742,
+     "after": 13.5919276
+    }
+   ],
+   "expect_h": "6645bf45f5fe8dc7",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 12746 m"
+    }
+   ]
+  },
+  {
+   "line": 23,
+   "class": "update",
+   "id": "seed-1467",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Strada Baicului, Nr. 80, Sector 2, București (in the grounds of the former Electronica Industrială, entrance from Strada Sergent Nicolae Culea)"
+    },
+    {
+     "field": "lat",
+     "before": 44.4791012,
+     "after": 44.4484934
+    },
+    {
+     "field": "lng",
+     "before": 26.1212459,
+     "after": 26.151457
+    }
+   ],
+   "expect_h": "a183a456ce6e4ff3",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 4163 m"
+    }
+   ]
+  },
+  {
+   "line": 24,
+   "class": "update",
+   "id": "seed-1265",
+   "changes": [
+    {
+     "field": "address",
+     "before": "Avenida Infante Dom Henrique, Lisboa, Portugal",
+     "after": "Av. Infante D. Henrique, Nº 334, Armazém 6, 1800-224 Lisboa"
+    },
+    {
+     "field": "lat",
+     "before": 38.761625,
+     "after": 38.7609451
+    },
+    {
+     "field": "lng",
+     "before": -9.103712,
+     "after": -9.1025956
+    }
+   ],
+   "expect_h": "aa04187a84324170",
+   "update_reason": "Location correction: this is the Vertigo Oriente site (the official site lists Marvila and Oriente); address from the official site, pin from OpenStreetMap (checked 2026-10-04)"
+  }
+ ]
+}
