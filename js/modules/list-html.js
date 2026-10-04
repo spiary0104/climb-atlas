@@ -40,9 +40,18 @@ const placeLine = (g, ctx) => [g.suburb, ctx.region].filter(Boolean).join(' · '
 // anyway. Unknown, unreadable or malformed renders nothing (DESIGN.md DNA #3). data-hours-id lets explore.js refresh the text
 // once a minute without rebuilding the list.
 const hoursOf = ctx => (ctx.hours && (ctx.hours.state === 'open' || ctx.hours.state === 'closed') && typeof ctx.hours.text === 'string' && ctx.hours.text ? ctx.hours : null);
+// "Open · until 10pm" -> word "Open" + detail " · until 10pm". On phones the row shows only the word (css/explore.css), so the
+// status never squeezes the place name; cards, the peek card and the gym page keep the full line. explore.js writes the same split.
+export function hoursParts(state, text){
+  const word = state === 'open' ? 'Open' : 'Closed';
+  return text.startsWith(word) ? { word, detail: text.slice(word.length) } : { word: text, detail: '' };
+}
 export function hoursHtml(g, ctx, tag, cls){
   const h = hoursOf(ctx);
-  return h ? `<${tag} class="${cls} hours-state hours-state--${h.state} tnum" data-hours-id="${escapeHtml(g.id)}">${escapeHtml(h.text)}</${tag}>` : '';
+  if(!h) return '';
+  const { word, detail } = hoursParts(h.state, h.text);
+  return `<${tag} class="${cls} hours-state hours-state--${h.state} tnum" data-hours-id="${escapeHtml(g.id)}">${escapeHtml(word)}`
+    + (detail ? `<span class="hours-detail">${escapeHtml(detail)}</span>` : '') + `</${tag}>`;
 }
 
 function saveButton(g, saved, extraClass){

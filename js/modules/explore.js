@@ -9,7 +9,7 @@ import { decodeExploreState, encodeExploreState } from './geo.js';
 import { applyFilters, applyUrlFilters, currentFilters, filterUrlState, initFilters, matches, renderFilterBar, resetFilters, setPlaceFilter, setTextFilter, updateHoursChip } from './filters.js';
 import { status, statusLine } from './hours.js';
 import { gymCtx, initList, markCarouselSelected, renderCarousel, renderList, scrollRowIntoView, setRowHover, setRowSelected, showSkeleton, updateRowMarks } from './list.js';
-import { peekHtml } from './list-html.js';
+import { peekHtml, hoursParts } from './list-html.js';
 import { exploreUrl, isExplore, navigate, refreshPage, registerView } from './router.js';
 import { assignMissingSlugs, gymPath } from './slug.js';
 import { LAST_CAMERA_KEY, clusterExpansionZoom, clusterLeafIds, flyToPlace, landingCamera, map, paintMarkers, rebuildClusterIndex, refreshPin, setMapHandlers, viewBounds } from './map.js';
@@ -72,7 +72,9 @@ function tickHours(){
   document.querySelectorAll('[data-hours-id]').forEach(el => {
     const g = spotById(el.dataset.hoursId), line = g && statusLine(status(g));
     if(!line){ el.remove(); return; }
-    el.textContent = line.text;
+    const { word, detail } = hoursParts(line.state, line.text);   // same split as list-html.js hoursHtml
+    el.textContent = word;
+    if(detail){ const d = document.createElement('span'); d.className = 'hours-detail'; d.textContent = detail; el.append(d); }
     el.className = el.className.replace(/hours-state--\w+/, 'hours-state--' + line.state);
   });
 }

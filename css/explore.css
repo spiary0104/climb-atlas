@@ -394,5 +394,7 @@
   .list-status{flex-wrap:wrap;row-gap:var(--space-1);}
   .list-count{flex:1 0 100%;}
   .list-tools{margin-left:auto;}
+  /* Rows show only Open / Closed so the status never squeezes the place name; cards, peek card and gym page keep the full line. */
+  .gym-row-hours .hours-detail{display:none;}
 }
 

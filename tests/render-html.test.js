@@ -581,7 +581,14 @@ test('page header art: Regions always; Log and Me only signed out; decorative; u
 test('open/closed fragment: row, card, carousel card and peek card carry it; row and card keep their structure; unknown renders nothing', async () => {
   const { list } = await modules;
   const open = { state: 'open', text: 'Open · until 10pm' }, closed = { state: 'closed', text: 'Closed · opens 6am' };
-  const frag = (html) => [...html.matchAll(/<(span|p) class="([a-z-]+) hours-state hours-state--(open|closed) tnum" data-hours-id="([^"]*)">([^<]*)<\/\1>/g)].map(m => m.slice(2));
+  // the fragment is the state word plus an optional <span class="hours-detail"> (hidden in rows on phones); its text is the full line
+  const frag = (html) => [...html.matchAll(/<(span|p) class="([a-z-]+) hours-state hours-state--(open|closed) tnum" data-hours-id="([^"]*)">([^<]*(?:<span class="hours-detail">[^<]*<\/span>)?)<\/\1>/g)]
+    .map(m => [m[2], m[3], m[4], m[5].replace(/<[^>]+>/g, '')]);
+  // phones keep only the word: everything after it sits in the detail span
+  assert.match(list.rowHtml(benignSpot, { ...ctxBenign, hours: open }), /tnum" data-hours-id="[^"]*">Open<span class="hours-detail"> · until 10pm<\/span><\/span>/);
+  assert.match(list.rowHtml(benignSpot, { ...ctxBenign, hours: closed }), /tnum" data-hours-id="[^"]*">Closed<span class="hours-detail"> · opens 6am<\/span><\/span>/);
+  assert.match(list.rowHtml(benignSpot, { ...ctxBenign, hours: { state: 'closed', text: 'Closed' } }), /tnum" data-hours-id="[^"]*">Closed<\/span>/, 'no empty detail span');
+  assert.deepEqual(list.hoursParts('open', 'Open 24 hours'), { word: 'Open', detail: ' 24 hours' });
   for (const [b, cls] of [['rowHtml', 'gym-row-hours'], ['cardHtml', 'gym-card-hours'], ['carouselCardHtml', 'carousel-card-hours'], ['peekHtml', 'peek-hours']]) {
     assert.deepEqual(frag(list[b](benignSpot, { ...ctxBenign, hours: open })), [[cls, 'open', benignSpot.id, 'Open · until 10pm']], b);
     assert.deepEqual(frag(list[b](benignSpot, { ...ctxBenign, hours: closed })), [[cls, 'closed', benignSpot.id, 'Closed · opens 6am']], b);
@@ -594,7 +601,7 @@ test('open/closed fragment: row, card, carousel card and peek card carry it; row
   // the row stays one 56px line: the fragment is one extra span inside the meta line, not a new line or element type
   const plain = shape(list.rowHtml(benignSpot, ctxBenign)), withHours = shape(list.rowHtml(benignSpot, { ...ctxBenign, hours: open }));
   assert.deepEqual(withHours.filter((t, i) => t !== plain[i]).length >= 1, true);
-  assert.equal(withHours.length, plain.length + 1);
+  assert.equal(withHours.length, plain.length + 2, 'the fragment span and its inline detail span, both inside the meta line');
   assert.match(list.rowHtml(benignSpot, { ...ctxBenign, hours: open }), /aria-label="Boulder Barn, [^"]*, Surry Hills · New South Wales, Open · until 10pm"/, 'the row\'s accessible name says it');
 });
 
