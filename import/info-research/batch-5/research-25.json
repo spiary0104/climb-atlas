@@ -1,0 +1,1243 @@
+[
+ {
+  "id": "seed-980",
+  "name": "Boulderhaus Heidelberg",
+  "metro": null,
+  "expect_h": "536e7b9f4293366e",
+  "website": "https://www.boulderhaus.net/heidelberg/",
+  "hours": {
+   "mon": "9am–11pm",
+   "tue": "9am–11pm",
+   "wed": "9am–11pm",
+   "thu": "9am–11pm",
+   "fri": "9am–11pm",
+   "sat": "9am–11pm",
+   "sun": "9am–11pm"
+  },
+  "day_pass": "€13 adult, €12 student/concession",
+  "facilities": null,
+  "sources": [
+   {
+    "url": "https://www.boulderhaus.net/heidelberg/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://www.boulderhaus.net/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.boulderhaus.net/preise/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours from the Heidelberg block on the boulderhaus.net homepage (Mo - So 09:00 - 23:00). Day pass from the site-wide /preise/ list, which is not labelled per location (judgement call: applies to all Boulderhaus halls; the Mannheim page mentions a separate Studenten Montag 8 euro offer). No facilities stated for this location. Pin check (Nominatim, Im Bosseldorn 25): official address is about 1.5 km SSE of our pin, still Heidelberg (Suedstadt/Bosseldorn).",
+  "operating": "yes",
+  "official_address": "Im Bosseldorn 25/1, 69126 Heidelberg",
+  "location": "wrong_pin",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-981",
+  "name": "Boulderhaus Mannheim",
+  "metro": null,
+  "expect_h": "fd90f8abbf922a3a",
+  "website": "https://www.boulderhaus.net/mannheim/",
+  "hours": {
+   "mon": "9am–11pm",
+   "tue": "9am–11pm",
+   "wed": "9am–11pm",
+   "thu": "9am–11pm",
+   "fri": "9am–11pm",
+   "sat": "9am–11pm",
+   "sun": "9am–11pm"
+  },
+  "day_pass": "€13 adult, €12 student/concession",
+  "facilities": [
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.boulderhaus.net/mannheim/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.boulderhaus.net/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.boulderhaus.net/preise/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   },
+   {
+    "url": "https://www.boulderhaus.net/mannheim/kontakt-parken-anfahrt/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours from the Mannheim block on the homepage (Mo - So 09:00 - 23:00). Day pass from the site-wide /preise/ list (not labelled per location; judgement call). Facilities from the Mannheim page: kids boulder wall for ages 2-5; student offer 'inkl. Leihschuhe' implies shoe hire. The page also has Kaffee and Parken labels but no explicit text, so cafe/parking left out. Pin check: official address is in Mannheim-Franklin/Kaefertal, about 6 km NE of our pin (city centre).",
+  "operating": "yes",
+  "official_address": "Abraham-Lincoln-Allee 3, 68309 Mannheim",
+  "location": "wrong_pin",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-8a1e5b62a5",
+  "name": "Boulderwelt Karlsruhe",
+  "metro": null,
+  "expect_h": "066b9bff2f560b57",
+  "website": "https://www.boulderwelt-karlsruhe.de/",
+  "hours": {
+   "mon": "7am–11pm",
+   "tue": "7am–11pm",
+   "wed": "7am–11pm",
+   "thu": "7am–11pm",
+   "fri": "7am–11pm",
+   "sat": "8am–11pm",
+   "sun": "8am–11pm"
+  },
+  "day_pass": "€16.90 adult (prime time), €12.90 concession; happy hour €12.90",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shop",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.boulderwelt-karlsruhe.de/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://www.boulderwelt-karlsruhe.de/kontakt-anfahrt/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.boulderwelt-karlsruhe.de/preise/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.boulderwelt-karlsruhe.de/halle/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours: Mo-Fr 7-23, Sa/So/holidays 8-23 (365 days). Day pass: prime-time single entry normal 16.90, concession 12.90; happy hour (Mo-Fr before 9 / after 21) 12.90 normal. /halle/ states cafe, small shop, training area, Kilterboard, kids boulders; /preise/ has shoe rental. Nominatim puts Karlstrasse 14 at our pin (0.0 km).",
+  "operating": "yes",
+  "official_address": "Karlstraße 14, 76133 Karlsruhe",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-9b81a0ceac",
+  "name": "der steinbock Konstanz",
+  "metro": null,
+  "expect_h": "690014efe85bb0f3",
+  "website": "https://www.dersteinbock-konstanz.de/",
+  "hours": {
+   "mon": "10am–11pm",
+   "tue": "10am–11pm",
+   "wed": "10am–11pm",
+   "thu": "10am–11pm",
+   "fri": "10am–11pm",
+   "sat": "9am–10pm",
+   "sun": "9am–10pm"
+  },
+  "day_pass": "€14.90 adult, €12.90 concession",
+  "facilities": [
+   "kids",
+   "training",
+   "cafe",
+   "shop",
+   "shoe-hire",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://www.dersteinbock-konstanz.de/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.dersteinbock-konstanz.de/anfahrt",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours Mo-Fr 10-23, Sa+So 9-22 (holidays 9-22; a wall section is closed Wed 21:00 to Thu afternoon for resetting). Adult day ticket 14.90, concession 12.90 (page notes a changeover to new tariffs). Facilities from the hall list (Kinderbereich, Trainingsbereich, Café, Shop, Kilter/Moon Board), rental shoes 4.90 and free car park on /anfahrt. Nominatim: 0.02 km from our pin.",
+  "operating": "yes",
+  "official_address": "August-Borsig-Str. 20, 78467 Konstanz",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-1009",
+  "name": "Einstein Boulderhalle Ulm",
+  "metro": null,
+  "expect_h": "32da608e7df77c96",
+  "website": "https://ulm.einstein-boulder.com/",
+  "hours": {
+   "mon": "10am–11pm",
+   "tue": "10am–11pm",
+   "wed": "10am–11pm",
+   "thu": "10am–11pm",
+   "fri": "10am–11pm",
+   "sat": "10am–10pm",
+   "sun": "10am–10pm"
+  },
+  "day_pass": "€15.50 adult, €12.90 concession",
+  "facilities": [
+   "yoga",
+   "kids",
+   "cafe"
+  ],
+  "sources": [
+   {
+    "url": "https://ulm.einstein-boulder.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://ulm.einstein-boulder.com/de-de/bouldern/preise-zeiten/157/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "day_pass"
+    ]
+   },
+   {
+    "url": "https://ulm.einstein-boulder.com/de-de/das-einstein/anfahrt/205/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://ulm.einstein-boulder.com/daseinsteinulm/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours Mo-Fr 10-23, Sa/So/holidays 10-22. Day ticket normal 15.50, concession 12.90 (Early Bird 12.50 not used). Facilities: yoga (BoYoCross/yoga offered), kids courses and birthdays, Bistro mentioned on the homepage. Pin check: Blaubeurer Strasse 100 is about 1.8 km WSW of our pin (Ulm city centre), same city.",
+  "operating": "yes",
+  "official_address": "Blaubeurer Strasse 100, 89077 Ulm",
+  "location": "wrong_pin",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-1026",
+  "name": "Kletterbox Ravensburg",
+  "metro": null,
+  "expect_h": "bbddac7af38d9e83",
+  "website": "https://www.kletterbox.com/",
+  "hours": {
+   "mon": "5:30pm–10:30pm",
+   "tue": "5:30pm–10:30pm",
+   "wed": "5:30pm–10:30pm",
+   "thu": "5:30pm–10:30pm",
+   "fri": "5:30pm–10:30pm",
+   "sat": "12pm–8pm",
+   "sun": "10am–9pm"
+  },
+  "day_pass": "€16 adult (non-member), €13 members of other DAV sections",
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.kletterbox.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://www.kletterbox.com/oeffnungszeiten/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.kletterbox.com/eintrittspreise/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   },
+   {
+    "url": "https://www.kletterbox.com/materialverleih/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.kletterbox.com/kontakt/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "DAV Sektion Ravensburg hall (school sports hall, mainly rope climbing, small boulder area). Hours as stated; a line 'Bis einschliesslich 30.08. 12:00 bis 19:00 Uhr' sits between Sunday and holidays and was ignored as seasonal/ambiguous. Price list valid from 01.01.2026: adult day ticket 16 non-member, 13 other-section member, 11 own-section member. Rental shoes 4.50. kletterbox-ravensburg.de and kletterbox.de are not the gym (kletterbox.de is a parked for-sale page); the official site is kletterbox.com. Pin check (Nominatim Bruehlstr. 31): about 1.0 km from our pin, same town.",
+  "operating": "yes",
+  "official_address": "Brühlstr. 31, 88212 Ravensburg",
+  "location": "mismatch",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-1032",
+  "name": "Kletterwerk Radolfzell",
+  "metro": null,
+  "expect_h": "eb94113901132944",
+  "website": "https://www.kletterwerk.de/",
+  "hours": {
+   "mon": "3pm–10:30pm",
+   "tue": "9am–10:30pm",
+   "wed": "3pm–10:30pm",
+   "thu": "9am–10:30pm",
+   "fri": "3pm–10:30pm",
+   "sat": "10am–9pm",
+   "sun": "10am–9pm"
+  },
+  "day_pass": null,
+  "facilities": [
+   "cafe",
+   "shop",
+   "training",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.kletterwerk.de/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://www.kletterwerk.de/Infos/%C3%96ffnungszeiten",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.kletterwerk.de/Halle/Bistro",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.kletterwerk.de/Halle/Training%20-%20Slackline",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.kletterwerk.de/Halle/Kinder",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.kletterwerk.de/Infos/Anfahrt",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "DAV Sektion Konstanz hall. Hours as stated (Mo/We/Fr 15-22:30, Tu/Th 9-22:30, Sa/Su/holidays 10-21; may close early at low attendance). Prices page is marked 'gueltig seit 01.01.2023' so day_pass left null. Facilities: Bistro, Shop, Trainingsraum (campus board, gym equipment), Kinderbereich. Equipment rental mentioned only generally, so shoe-hire not set. Pin check: 0.4 km from our pin.",
+  "operating": "yes",
+  "official_address": "Werner-Messmer-Str. 12, 78315 Radolfzell",
+  "location": "address_missing",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-960",
+  "name": "Alte Ziegelei Boulderhalle Straubing",
+  "metro": null,
+  "expect_h": "5c6853545fc73133",
+  "website": "https://boulderhalle-straubing.de/",
+  "hours": null,
+  "day_pass": "€14.20 adult, €12.50 concession",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://boulderhalle-straubing.de/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://boulderhalle-straubing.de/preise/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   },
+   {
+    "url": "https://boulderhalle-straubing.de/kontakt-anfahrt/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours deliberately null: the Oeffnungszeiten block reads 'Montag -Mittwoch - Donnerstag 13:00-22:30; Dienstag 10:00-22:30; Freitag 10:00-21:00; Sa/So/Feiertag 08:30-20:00'. The Monday label is ambiguous (looks like Mon, Wed, Thu but written like a range), so it was not read through. Day pass: regular 14.20, concession 12.50 (Early Bird Mo-Fr 10-14: 12.50 regular). Facilities: Bistro, LED Moonboard/campus/spray wall, Kinderbouldern, rental shoes, free parking in front of the hall. Pin check: 0.7 km from our pin.",
+  "operating": "yes",
+  "official_address": "Alte Ziegelei 16, 94315 Straubing",
+  "location": "address_missing",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-966",
+  "name": "Blockhelden Boulderhalle Bamberg",
+  "metro": null,
+  "expect_h": "b282ae208780ec99",
+  "website": "https://blockhelden.de/boulderhalle-bamberg/",
+  "hours": {
+   "mon": "9am–11pm",
+   "tue": "9am–11pm",
+   "wed": "9am–11pm",
+   "thu": "9am–11pm",
+   "fri": "9am–11pm",
+   "sat": "9am–11pm",
+   "sun": "9am–11pm"
+  },
+  "day_pass": "€15 adult, €13 concession",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://blockhelden.de/boulderhalle-bamberg/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Page states 'jeden Tag 9-23 Uhr'. Day ticket adult 15 (Mo-Fr from 15:00, Sa/So/holidays/school holidays), 14 for Mo-Fr before 15:00; concession 13/12. Facilities: Bistro, Kraftraum, Kinderbereich, rental shoes 4. A Yoga Loft is described but not as classes, so yoga not set. Pin check: Memmelsdorfer Str. 211 is about 2.5 km NNE of our pin (Bamberg centre).",
+  "operating": "yes",
+  "official_address": "Memmelsdorfer Str. 211, 96052 Bamberg",
+  "location": "wrong_pin",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-973",
+  "name": "Boulder House Rödental",
+  "metro": null,
+  "expect_h": "7957642b31a66f4e",
+  "website": "https://www.cogito-coburg.de/",
+  "hours": {
+   "mon": "8am–10pm",
+   "tue": "8am–10pm",
+   "wed": "8am–10pm",
+   "thu": "8am–10pm",
+   "fri": "8am–10pm",
+   "sat": "8am–10pm",
+   "sun": "8am–10pm"
+  },
+  "day_pass": "€13.90 adult, €11.90 concession (Cogito hall); BoulderHouse kids/family hall €9.90",
+  "facilities": [
+   "shoe-hire",
+   "training",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.cogito-coburg.de/kontakt",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.cogito-coburg.de/cogito-tagespreise",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.cogito-coburg.de/boulderhouse-tagespreise",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.cogito-coburg.de/boulderhouse-umbau",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "flag",
+  "notes": "boulderhouse-roedental.de now redirects to cogito-coburg.de ('Cogito | BoulderHouse', Brueckenstrasse 6, Roedental). The site now has an adult hall 'Cogito' (single entry 13.90/11.90) and 'BoulderHouse' converted to a kids/family hall (single entry 9.90) which is closed for rebuild until mid-October 2026. Hours Mo-So 8-22 for the venue. Facilities: rental shoes, training/technique areas (Cogito), kids/family hall. Pin check: Nominatim finds Brueckenstrasse 6 in Moenchroeden/Roedental about 5 km SW of our pin.",
+  "operating": "yes",
+  "official_address": "Brückenstraße 6, 96472 Rödental",
+  "location": "wrong_pin",
+  "renamed_to": "Cogito | BoulderHouse (Cogito Boulderhalle Coburg)",
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-987",
+  "name": "Bouldertreff Illschwang",
+  "metro": null,
+  "expect_h": "61995c79986b6e81",
+  "website": "https://www.bouldertreff-illschwang.de/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "10am–10pm",
+   "sun": "10am–10pm"
+  },
+  "day_pass": "€7 adult (4 hours)",
+  "facilities": [
+   "training",
+   "parking",
+   "shop",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.bouldertreff-illschwang.de/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.bouldertreff-illschwang.de/eintrittspreise/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.bouldertreff-illschwang.de/anfahrt/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Entry needs a 'boulder card' (5 euro, bought in the freizeit-outdoor shop, prepaid credit). Prices per 4 hours: adults 7.00, 14-17 5.50, children 4.00. Training wall upstairs, parking in the yard, equipment shop on site, Kindergeburtstage page (kids). No shoe hire (page says so). Pin check: Gewerbepark 3 in Illschwang is about 6 km NNW of our pin.",
+  "operating": "yes",
+  "official_address": "Gewerbepark 3, 92278 Illschwang",
+  "location": "wrong_pin",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-991",
+  "name": "Boulderwelt Regensburg",
+  "metro": null,
+  "expect_h": "a211b83707f32ee3",
+  "website": "https://www.boulderwelt-regensburg.de/",
+  "hours": {
+   "mon": "7am–11pm",
+   "tue": "7am–11pm",
+   "wed": "7am–11pm",
+   "thu": "7am–11pm",
+   "fri": "7am–11pm",
+   "sat": "8am–11pm",
+   "sun": "8am–11pm"
+  },
+  "day_pass": "€16.90 adult (prime time), €12.90 concession; happy hour €12.90",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.boulderwelt-regensburg.de/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.boulderwelt-regensburg.de/preise/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.boulderwelt-regensburg.de/halle/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.boulderwelt-regensburg.de/bouldercafe/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours Mo-Fr 7-23, Sa/So/holidays 8-23. Price table identical to the other Boulderwelt halls (prime time normal 16.90, concession 12.90). Cafe, training area with Kilterboard/campus, kids area (300 m2 Kinderwelt) and shoe rental stated. A 'Shop' appears only as a menu label so not set. Pin check: Im Gewerbepark A46 is about 2.9 km NE of our pin (city centre).",
+  "operating": "yes",
+  "official_address": "Im Gewerbepark, A46, 93059 Regensburg",
+  "location": "wrong_pin",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-996",
+  "name": "DAV Kletter Boulder Zentrum Landshut",
+  "metro": null,
+  "expect_h": "cfc38e3e8f31c43d",
+  "website": "https://www.kletterzentrum-landshut.de/",
+  "hours": {
+   "mon": "2pm–10pm",
+   "tue": "10am–10pm",
+   "wed": "2pm–10pm",
+   "thu": "2pm–10pm",
+   "fri": "10am–10pm",
+   "sat": "10am–8pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": "€15 adult (non-DAV, climbing + bouldering), €10.50 bouldering only",
+  "facilities": [
+   "cafe",
+   "shoe-hire",
+   "training",
+   "kids",
+   "yoga"
+  ],
+  "sources": [
+   {
+    "url": "https://www.kletterzentrum-landshut.de/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://www.kletterzentrum-landshut.de/service/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.kletterzentrum-landshut.de/kletterzentrum/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Opening times listed Mo 14-22, Tu 10-22, We/Th/Fr 14-22, Sa/Su 10-20 (holidays 10-20) but the same page adds 'Ab 17.04.2026 oeffnen wir freitags um 10:00 Uhr', so Friday is set to 10am (judgement call). Climbing stops 15 min before closing. Price list 'Stand 01.01.2026': non-member adult day ticket 15 (climbing+bouldering), 10.50 bouldering only; DAV members pay less. Facilities: cafe/bistro, rental shoes, boulder hall with campus board and system wall, kids courses/birthday, yoga course. Pin check: Ritter-von-Schoch-Str. 6 is about 2.5 km NE of our pin.",
+  "operating": "yes",
+  "official_address": "Ritter-von-Schoch-Str. 6, 84036 Landshut",
+  "location": "wrong_pin",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-1000",
+  "name": "DAV Kletterzentrum Regensburg",
+  "metro": null,
+  "expect_h": "20f4b36400760691",
+  "website": "https://www.kletterzentrum-regensburg.de/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "10am–10pm",
+   "sun": "10am–10pm"
+  },
+  "day_pass": null,
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "showers",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://www.kletterzentrum-regensburg.de/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.kletterzentrum-regensburg.de/kletterzentrum/kletterzentrum-zahlen-und-fakten",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.kletterzentrum-regensburg.de/kletterzentrum/oeffnungszeiten",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.kletterzentrum-regensburg.de/kletterzentrum/eintrittspreise",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours Mo-So 10-22. The entry price page says 'gueltig ab 01.01.2024' (older than one year; the table itself is not in the page text), so day_pass null. Facilities per 'Zahlen und Fakten': Bistro KletterBar, system wall/campus board, separate kids boulder area, showers, free parking. Rental is only stated as 'Ausruestungsverleih', so shoe-hire not set. The hall is in Lappersdorf/Kareth, not Regensburg proper: official address about 3.8 km N of our pin.",
+  "operating": "yes",
+  "official_address": "Am Silbergarten 6, 93138 Lappersdorf/Kareth",
+  "location": "wrong_pin",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-1001",
+  "name": "Der Steinbock",
+  "metro": null,
+  "expect_h": "fdaa84bad2ec923c",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [
+   {
+    "url": "https://www.dersteinbock.de/",
+    "accessed": "2026-10-04",
+    "supports": []
+   }
+  ],
+  "status": "flag",
+  "notes": "The official der steinbock network (dersteinbock.de, fetched) lists Zirndorf, Nuernberg, Erlangen, Cafe Kraft, Passau, Konstanz and Linz only; no Straubing location. Web search for 'Steinbock Boulderhalle Straubing' returns only Boulderhalle Straubing (Alte Ziegelei) and der steinbock Passau. Likely a mis-located duplicate of der steinbock Passau, or of the Straubing hall about 0.4 km from our pin.",
+  "operating": "unknown",
+  "official_address": null,
+  "location": "unknown",
+  "renamed_to": null,
+  "duplicate_of_hint": "Probably duplicates g-b4c5c6ca78 (der steinbock Passau, Suedtiroler Str. 2, Passau) mis-pinned in Straubing; the only boulder gym in Straubing is seed-960 Alte Ziegelei Boulderhalle (Alte Ziegelei 16), about 0.4 km from this pin."
+ },
+ {
+  "id": "g-b4c5c6ca78",
+  "name": "der steinbock Passau",
+  "metro": null,
+  "expect_h": "d2c4ce0083b119c0",
+  "website": "https://www.dersteinbock-passau.de/",
+  "hours": {
+   "mon": "10am–11pm",
+   "tue": "10am–11pm",
+   "wed": "10am–11pm",
+   "thu": "10am–11pm",
+   "fri": "10am–11pm",
+   "sat": "9am–10pm",
+   "sun": "9am–10pm"
+  },
+  "day_pass": "€13.90 adult, €11.90 concession",
+  "facilities": [
+   "kids",
+   "training",
+   "cafe",
+   "shop",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.dersteinbock-passau.de/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Opening times on the page: Mo-Fr 10-23, Sa+So 9-22. Day ticket adult 13.90, concession 11.90. Facilities from the hall list (Kinderbereich, Trainingsbereich, Café, Shop) and rental shoes 4.90. Nominatim: 0.0 km from our pin.",
+  "operating": "yes",
+  "official_address": "Südtiroler Straße 2, 94036 Passau",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-291605e51c",
+  "name": "Einstein Boulderhalle Neu-Ulm",
+  "metro": null,
+  "expect_h": "201e3e97a32e31f8",
+  "website": "https://neu-ulm.einstein-boulder.com/",
+  "hours": {
+   "mon": "2pm–10pm",
+   "tue": "2pm–10pm",
+   "wed": "2pm–10pm",
+   "thu": "2pm–10pm",
+   "fri": "2pm–10pm",
+   "sat": "10am–10pm",
+   "sun": "10am–10pm"
+  },
+  "day_pass": "€15.50 adult, €12.90 concession",
+  "facilities": [
+   "training"
+  ],
+  "sources": [
+   {
+    "url": "https://neu-ulm.einstein-boulder.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://neu-ulm.einstein-boulder.com/de-de/bouldern/preise/20/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "day_pass"
+    ]
+   },
+   {
+    "url": "https://neu-ulm.einstein-boulder.com/de-de/das-einstein/17/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities",
+     "hours"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours Mo-Fr 14-22, Sa/So/holidays 10-22. Day ticket normal 15.50, concession 12.90. Facilities: campus board and Kilterboard stated. Nominatim: Leibnizstrasse 12 is 0.04 km from our pin.",
+  "operating": "yes",
+  "official_address": "Leibnizstraße 12, 89231 Neu-Ulm",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-1011",
+  "name": "eXXpozed climbing",
+  "metro": null,
+  "expect_h": "c33f85a959325a63",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [],
+  "status": "not-found",
+  "notes": "exxpozed-climbing.de (the domain web search lists for this gym) now serves a 'This domain is for sale' parked page, and exxpozed.com returned HTTP 526. No other official page found. Search results (third-party, unverified) place eXXpozed climbing at Baumeisterstrasse 3, Dietmannsried (Allgaeu, near Kempten), not Augsburg, so our Augsburg pin is probably wrong (about 90 km), but this is not confirmed from an official page.",
+  "operating": "unknown",
+  "official_address": null,
+  "location": "unknown",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-1022",
+  "name": "Kletter-Boulderhalle Rosenheim",
+  "metro": null,
+  "expect_h": "190ac81a3d5a9163",
+  "website": "https://kletterhalle-rosenheim.de/",
+  "hours": {
+   "mon": "9am–10:30pm",
+   "tue": "9am–10:30pm",
+   "wed": "9am–10:30pm",
+   "thu": "9am–10:30pm",
+   "fri": "9am–10:30pm",
+   "sat": "9am–9:30pm",
+   "sun": "9am–9:30pm"
+  },
+  "day_pass": "€16.50 adult climbing (bouldering incl.), €13 bouldering only",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shop",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://kletterhalle-rosenheim.de/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://kletterhalle-rosenheim.de/preise/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours Mo-Fr 9-22:30, Sa-So 9-21:30. Day ticket read from the price-list image on /preise/ (Stand September 2026): climbing incl. bouldering adult 16.50 (concession 14.50), bouldering only adult 13.00. Facilities from the site menu (Bistro, Trainingsbereich, Kinderland, Shop & Verleih) and rental shoes 4.50 on the price list. The hall is in Stephanskirchen (operator SKB GmbH address); Nominatim places Finsterwalderstrasse 4 about 2.9 km ESE of our pin (Rosenheim centre).",
+  "operating": "yes",
+  "official_address": "Finsterwalderstrasse 4, 83071 Stephanskirchen",
+  "location": "wrong_pin",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-1027",
+  "name": "Kletterhalle Bernau",
+  "metro": null,
+  "expect_h": "9a990f78be5b1fad",
+  "website": "https://www.alpenverein-prien.de/unsere-standorte/kletterhalle",
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [
+   {
+    "url": "https://www.alpenverein-prien.de/unsere-standorte/kletterhalle",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   }
+  ],
+  "status": "website-only",
+  "notes": "DAV Sektion Prien hall. Page says there is no regular public operation, only fixed group times, with volunteer-supervised open climbing sessions (e.g. Mo 18-21, Tu 18:30-21:30, Fr 9:30-11:30 and 18-20); guests can pay the supervisor (cash only; guest adult 7.50, but labelled with 'Jahreskarte 2025', so not treated as a current price). Counted as operating with limited public access; no public hours or day pass set. Domain kletterhalle-bernau.de is a parked page, not the club. Pin check: Buchenstrasse 17 in Bernau is about 4.6 km from our pin (Nominatim result may be approximate).",
+  "operating": "yes",
+  "official_address": "Buchenstraße 17, 83233 Bernau am Chiemsee",
+  "location": "wrong_pin",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-1029",
+  "name": "Kletterhalle Seltmans",
+  "metro": null,
+  "expect_h": "d62cb6aaae075f20",
+  "website": "https://kletterhalleseltmans.de/",
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [
+   {
+    "url": "https://kletterhalleseltmans.de/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   }
+  ],
+  "status": "website-only",
+  "notes": "Kletterhalle Seltmans is in Weitnau-Seltmans (Oberallgaeu), about 100 km SW of our Augsburg-area pin. The site is a JavaScript app; its embedded text states daily 5:00-23:00 via the new self-service entry system, with staff only at 'Servicezeiten' (currently none, 'Im Herbst wieder zu festen Zeiten'), so no public staffed hours set. Prices are loaded from a shop API and were not readable, so day_pass null. Facilities not stated in readable text.",
+  "operating": "yes",
+  "official_address": "Heinrich-Nikolaus-Straße 15, 87480 Weitnau-Seltmans",
+  "location": "wrong_pin",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-1059",
+  "name": "Sport Sheds",
+  "metro": null,
+  "expect_h": "31962331045860ec",
+  "website": "https://www.sport-sheds.de/",
+  "hours": {
+   "mon": "8am–10pm",
+   "tue": "8am–10pm",
+   "wed": "8am–10pm",
+   "thu": "8am–10pm",
+   "fri": "8am–10pm",
+   "sat": "9:30am–8pm",
+   "sun": "9:30am–8pm"
+  },
+  "day_pass": "€14.90 adult (prime time), €13.90 student; happy hour €12.90",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "yoga",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://www.sport-sheds.de/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://www.sport-sheds.de/boulder-sheds/boulder-hallen-infos/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.sport-sheds.de/wp-content/uploads/2025/12/Preise_Boulder-Sheds_ab-01-01-26.pdf",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.sport-sheds.de/kontakt/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.sport-sheds.de/bistro/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours Mo-Fr 8-22, Sa/So/holidays 9:30-20. Day pass from the Boulder Sheds price list PDF (ab 01.01.26): prime time regular 14.90 (cross-checked: 11er card 149 = pay 10), student 13.90, happy hour (enter Mo-Fr 8-14) 12.90. Facilities: Bistro, training area (Moonboard, Kilter), kids boulder jungle, rental shoes 4.50, Yoga Sheds/courses, parking in front of the hall. Pin check: Eberlestr. 29 is about 1.4 km WSW of our pin, same city (Pfersee).",
+  "operating": "yes",
+  "official_address": "Eberlestr. 29, 86157 Augsburg",
+  "location": "wrong_pin",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-1062",
+  "name": "Swoboda Alpin",
+  "metro": null,
+  "expect_h": "0d6e977f8e018e31",
+  "website": "https://www.dav-kempten.de/swoboda-alpin",
+  "hours": {
+   "mon": "11am–10:30pm",
+   "tue": "11am–10:30pm",
+   "wed": "11am–10:30pm",
+   "thu": "11am–10:30pm",
+   "fri": "11am–10:30pm",
+   "sat": "9am–10:30pm",
+   "sun": "9am–9pm"
+  },
+  "day_pass": "€18.50 adult (non-member), €15.50 concession",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://www.dav-kempten.de/swoboda-alpin",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://www.dav-kempten.de/swoboda-alpin/oeffnungszeiten-preise-formulare",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.dav-kempten.de/swoboda-alpin/klettern-bouldern/bouldern",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.dav-kempten.de/swoboda-alpin/alpinzentrum",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "swoboda alpin is the DAV Allgaeu-Kempten climbing centre in Kempten, not Augsburg: official address is about 86 km SW of our pin. Hours Mo-Fr 11-22:30, Sa 9-22:30, Su/holidays 9-21 (Bavarian school holidays open from 9; card-holder early access from 6 ignored). Single entry non-member adult 18.50, concession 15.50. Facilities: Gastro/Biwak, training areas with Kilterboard and campus board, kids boulders, equipment rental incl. shoes, free parking.",
+  "operating": "yes",
+  "official_address": "Aybühlweg 69, 87439 Kempten",
+  "location": "wrong_pin",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-972",
+  "name": "Boulder Base Bremen",
+  "metro": null,
+  "expect_h": "4407bc93015ffbd2",
+  "website": "https://www.boulderbasebremen.de/",
+  "hours": {
+   "mon": "2pm–10pm",
+   "tue": "2pm–10pm",
+   "wed": "2pm–10pm",
+   "thu": "2pm–10pm",
+   "fri": "2pm–10pm",
+   "sat": "10am–10pm",
+   "sun": "10am–9pm"
+  },
+  "day_pass": "€13.50 adult, €10 concession",
+  "facilities": [
+   "cafe",
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.boulderbasebremen.de/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://www.boulderbasebremen.de/walle",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.boulderbasebremen.de/tabakquartier",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.boulderbasebremen.de/walle/preise",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Boulder Base Bremen has two halls: Walle (Hohweg 5) and Tabakquartier (Am Tabakquartier 14, Halle 2); both pages give identical hours (Mo-Fr 14-22, Sa 10-22, Su/holidays 10-21; personnel-free early access from 6:00 ignored) and the shared price list (day ticket adult 13.50, concession 10). Cafe/barista corner, kids offers and rental shoes stated on both pages. Training area (gallery) only stated for Walle, so not set. Our pin (city centre) is about 2.1 km from Tabakquartier and 3.0 km from Walle.",
+  "operating": "yes",
+  "official_address": "Hohweg 5, 28219 Bremen (Walle); Am Tabakquartier 14, Halle 2, 28197 Bremen (Tabakquartier)",
+  "location": "wrong_pin",
+  "renamed_to": null,
+  "duplicate_of_hint": "Two venues of the same brand (Walle and Tabakquartier) are covered by this one record; consider two records."
+ }
+]

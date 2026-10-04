@@ -1,0 +1,1197 @@
+[
+  {
+    "id": "seed-1049",
+    "name": "Monolith Boulderhalle Münster",
+    "metro": null,
+    "expect_h": "a31ef2eae0a45479",
+    "website": "https://monolith-boulderhalle.de/",
+    "hours": {
+      "mon": "10am–11pm",
+      "tue": "10am–11pm",
+      "wed": "10am–11pm",
+      "thu": "10am–11pm",
+      "fri": "10am–11pm",
+      "sat": "10am–10pm",
+      "sun": "10am–10pm"
+    },
+    "day_pass": "€12.50 adult, €11 concession",
+    "facilities": [
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://monolith-boulderhalle.de/preise-zeiten/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://monolith-boulderhalle.de/kontakt/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Prices page undated. Hours: Mon-Fri 10-23, Sat/Sun/holidays 10-22. Earlybird Mon-Fri before 1pm is cheaper (EUR 10.50). Our pin is central Muenster; hall is at Eulerstrasse 2 in Gremmendorf, ~2.8 km SE (Nominatim).",
+    "operating": "yes",
+    "official_address": "Eulerstraße 2, 48155 Münster",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-1056",
+    "name": "Rockvibes",
+    "metro": null,
+    "expect_h": "6d4c8fb4fbe261ba",
+    "website": "https://rockvibes.de/HP/",
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [
+      {
+        "url": "https://rockvibes.de/HP/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      },
+      {
+        "url": "https://rockvibes.de/HP/anfahrt-kontakt/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      }
+    ],
+    "status": "flag",
+    "notes": "Official homepage announces closure: last opening day 2 May 2026 (hall closes, daily business ends). Also not in Muenster: the venue (Rockvibes GmbH, Zeche Westfalen 1) is in Ahlen, ~30 km SE of our pin (Nominatim). Hours/price/facilities left null because the hall is closed.",
+    "operating": "closed",
+    "official_address": "Zeche Westfalen 1, 59229 Ahlen",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "g-9a69458355",
+    "name": "Cube Trier",
+    "metro": null,
+    "expect_h": "6cdfad424dcb2de9",
+    "website": "https://www.cube-trier.de/",
+    "hours": {
+      "mon": "4pm–10pm",
+      "tue": "4pm–10pm",
+      "wed": "12pm–10pm",
+      "thu": "4pm–10pm",
+      "fri": "12pm–10pm",
+      "sat": "10am–6pm",
+      "sun": "10am–6pm"
+    },
+    "day_pass": null,
+    "facilities": [
+      "cafe",
+      "shoe-hire",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://www.cube-trier.de/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.cube-trier.de/preise",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.cube-trier.de/bistro",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.cube-trier.de/kindergeburtstag",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.cube-trier.de/kontakt",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours from homepage table; a one-off note (Wed 30.9 opens 4pm for route setting) ignored. day_pass left null: price list states 'prices valid since 17.10.23' (Tageskarte climbing+bouldering EUR 14 adult, EUR 7 bouldering only), older than 1 year. Holidays 10am-6pm.",
+    "operating": "yes",
+    "official_address": "Diedenhofenerstraße 27c, 54294 Trier",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "g-14944a5327",
+    "name": "DAV Kletterzentrum Kaiserslautern",
+    "metro": null,
+    "expect_h": "c109ba7173f52474",
+    "website": "https://www.dav-kaiserslautern.de/kletterzentrum",
+    "hours": {
+      "mon": "5pm–10pm",
+      "tue": "5pm–10pm",
+      "wed": "5pm–10pm",
+      "thu": "9am–2pm, 5pm–10pm",
+      "fri": "5pm–10pm",
+      "sat": "Closed",
+      "sun": "3pm–10pm"
+    },
+    "day_pass": null,
+    "facilities": [
+      "training",
+      "kids",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://www.dav-kaiserslautern.de/kletterzentrum",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.dav-kaiserslautern.de/kletterzentrum/eintrittspreise",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.dav-kaiserslautern.de/kletterzentrum/info-kletterhalle-und-belegungsplan",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Homepage: Mo-Fr 17-22, Thu additionally 9-14, Sat geschlossen, Sun/holidays 15-22. The info page lists only weekday 17-22 and Sun 15-22 (does not mention Thu morning or Sat); judged omission, not conflict. Public guest prices exist (Gaeste) but the price page is 'gueltig ab 01.05.2023' so day_pass left null. Official name: DAV Kletterzentrum Barbarossahalle. Facilities: Kilterboard, campus/fingerboards, kids bouldering area, rental incl. Kletterschuhe.",
+    "operating": "yes",
+    "official_address": "Ludwig-Thoma-Straße 1, 67663 Kaiserslautern",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-1007",
+    "name": "Eifelblock",
+    "metro": null,
+    "expect_h": "463162d39a484e2a",
+    "website": "https://www.eifelblock.de/metternich/",
+    "hours": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "11am–10pm",
+      "sun": "10am–10pm"
+    },
+    "day_pass": "€13 adult, €11.50 concession",
+    "facilities": [
+      "cafe",
+      "training",
+      "kids",
+      "shoe-hire",
+      "shop",
+      "showers",
+      "parking"
+    ],
+    "sources": [
+      {
+        "url": "https://www.eifelblock.de/metternich/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.eifelblock.de/infometternich/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.eifelblock.de/kids/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Eifelblock Koblenz-Metternich (Mo-Fr 10-22, Sa 11-22, So 10-22). Price page undated. Separate kids hall (Eifelblock Kids) at same address. Our pin is central Koblenz; hall is in Metternich, ~2.9 km NW (Nominatim). Eifelblock also has a Trier hall (not this record).",
+    "operating": "yes",
+    "official_address": "Rübenacher Str. 104, 56072 Koblenz (Metternich)",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": "Eifelblock Kids (Koblenz) is a second hall at the same address; may appear as a separate record."
+  },
+  {
+    "id": "seed-1013",
+    "name": "Fitz Rocks",
+    "metro": null,
+    "expect_h": "d19319811de420fd",
+    "website": "https://felswerk-landau.de/",
+    "hours": {
+      "mon": "10am–10pm",
+      "tue": "8am–10pm",
+      "wed": "10am–10pm",
+      "thu": "8am–10pm",
+      "fri": "10am–10pm",
+      "sat": "10am–10pm",
+      "sun": "10am–10pm"
+    },
+    "day_pass": "€16 adult climbing & bouldering, €11 bouldering only",
+    "facilities": [
+      "shoe-hire",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://felswerk-landau.de/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      },
+      {
+        "url": "https://felswerk-landau.de/kontakt/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      },
+      {
+        "url": "https://felswerk-landau.de/neue-oeffnungszeiten-ab-oktober/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      },
+      {
+        "url": "https://felswerk-landau.de/preise-2026/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://felswerk-landau.de/kids-boulderbereich/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://felswerk-landau.de/altguthaben-fitzrocks/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      }
+    ],
+    "status": "flag",
+    "notes": "Renamed: FitzRocks is now Felswerk (felswerk-landau.de has an 'Altguthaben FitzRocks' page about carrying over old FitzRocks credit; fitzrocks.de returns HTTP 500). Hours: contact page still shows Fri/Sat to 23:00 'ab Okt. bis 22:00'; news post of 24.9.2026 confirms Fri/Sat close 22:00 from October. Tue/Thu open 8:00 (Early Climb). Price page created 30.9.2026 (new prices from 1 Oct): EUR 16 adult climbing+bouldering, EUR 14 concession, bouldering only EUR 11. Cafe not yet open (announced for Nov). Pin is Landau centre; hall in Queichheim ~1.6 km SSE.",
+    "operating": "yes",
+    "official_address": "Albert-Einstein-Straße 6, 76829 Landau in der Pfalz",
+    "location": "wrong_pin",
+    "renamed_to": "Felswerk",
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-1035",
+    "name": "Kletterzentrum EXTREM",
+    "metro": null,
+    "expect_h": "445388fd1fd551b9",
+    "website": "https://kletterzentrum.de/",
+    "hours": null,
+    "day_pass": "€15 adult climbing, €9 bouldering",
+    "facilities": [
+      "training",
+      "kids",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://kletterzentrum.de/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://kletterzentrum.de/eintrittspreise-verleihservice/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://kletterzentrum.de/faq/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://kletterzentrum.de/anfahrt-wegbeschreibung/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours null: pages disagree. Main text on homepage and Anfahrt page says Mo-Fr 9:30-22:00, Sa/So/holidays 9:30-21:00; the footer widget on the same pages says Ludwigshafen Mo-Fr 10:00-23:00, Sa/So 10:00-21:00 (and Mannheim hall Mo 13-23, Di-Fr 10-23). Price page undated: Tageskarte EUR 15 normal / 13 reduced / 10 child; early tariff (Mo-Fr before 13:00) EUR 11; bouldering EUR 9 / 7. Operator also runs a Mannheim hall. Pin is ~3.1 km east of the hall (Nominatim).",
+    "operating": "yes",
+    "official_address": "Saarburger Str. 25, 67071 Ludwigshafen",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-1021",
+    "name": "KBA-Saar",
+    "metro": null,
+    "expect_h": "d592816a64096a05",
+    "website": "https://www.kba-saar.de/",
+    "hours": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "10am–10pm",
+      "sun": "10am–8pm"
+    },
+    "day_pass": null,
+    "facilities": [
+      "cafe"
+    ],
+    "sources": [
+      {
+        "url": "https://www.kba-saar.de/preise-zeiten",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.kba-saar.de/halleninfo",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.kba-saar.de/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Official name Kletter- und Boulderarena GmbH (KBA), in Saarbruecken-Dudweiler (Herrensohr). Hours page: Mo-Sa 10-22, So 10-20, holidays 10-20 (Wix page). Price values are not in the page text ('Neue Preise ab 01.02.2026' heading only, likely images), so day_pass null. Bistro mentioned on Halleninfo page. Pin is ~4.1 km SW of the hall (Nominatim).",
+    "operating": "yes",
+    "official_address": "Herrensohrer Wiesen 1, 66125 Saarbrücken",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-1038",
+    "name": "Kletterzentrum Saarbrücken",
+    "metro": null,
+    "expect_h": "d321727ff0aa9e2e",
+    "website": "http://www.kletterzentrum-saarbruecken.de/",
+    "hours": {
+      "mon": "2pm–10pm",
+      "tue": "2pm–10pm",
+      "wed": "2pm–10pm",
+      "thu": "2pm–10pm",
+      "fri": "2pm–10pm",
+      "sat": "10am–8pm",
+      "sun": "10am–9pm"
+    },
+    "day_pass": "€12 adult climbing, €9.50 concession, bouldering €8.50",
+    "facilities": [
+      "cafe",
+      "kids",
+      "shoe-hire",
+      "shop",
+      "parking"
+    ],
+    "sources": [
+      {
+        "url": "http://www.kletterzentrum-saarbruecken.de/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "http://www.kletterzentrum-saarbruecken.de/oeffnungszeiten-preise/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Site is served over http (https fails), so the website value is http. Hours: Mo-Fr 14-22, Sat (+holidays) 10-20, Sun 10-21. Price page undated. Bistro, kids area, retail ('Kletterzubehoer ... in der Halle erworben') and free customer parking in the courtyard are stated. Hall is at Mainzer Str. 30 near St. Johanner Markt; pin is ~1.5 km away (Nominatim).",
+    "operating": "yes",
+    "official_address": "Mainzerstr. 30, 66111 Saarbrücken",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "g-57dfe1efab",
+    "name": "Bloc No Limit",
+    "metro": null,
+    "expect_h": "a4ba499e73a82ef6",
+    "website": "https://boulderhalle-leipzig.de/",
+    "hours": {
+      "mon": "10am–11pm",
+      "tue": "10am–11pm",
+      "wed": "10am–11pm",
+      "thu": "10am–11pm",
+      "fri": "10am–11pm",
+      "sat": "10am–11pm",
+      "sun": "10am–11pm"
+    },
+    "day_pass": "€10 adult, €8 concession",
+    "facilities": [
+      "cafe",
+      "training",
+      "kids",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://boulderhalle-leipzig.de/bouldern/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://boulderhalle-leipzig.de/kontakt/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      },
+      {
+        "url": "https://boulderhalle-leipzig.de/rundgang/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Daily 10-23, 365 days. Early Bird Mo-Fr 10:00-14:30 adult EUR 7. Bistro with coffee/pizza, BLOC KIDZ kids group, Trainingsbereich (360 tour page). Sister venue Kletterhalle No Limit (Dessauer Str. 2) is a separate hall, same operator.",
+    "operating": "yes",
+    "official_address": "Brandenburger Str. 26, 04347 Leipzig",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-983",
+    "name": "Boulderlounge Chemnitz",
+    "metro": null,
+    "expect_h": "9276ece8f4a526fb",
+    "website": "https://www.boulderlounge-chemnitz.de/",
+    "hours": {
+      "mon": "3pm–11pm",
+      "tue": "9am–11pm",
+      "wed": "9am–11pm",
+      "thu": "9am–11pm",
+      "fri": "9am–11pm",
+      "sat": "9am–11pm",
+      "sun": "9am–11pm"
+    },
+    "day_pass": "€16 adult at the door (€15 online), €13 concession",
+    "facilities": [
+      "cafe",
+      "training",
+      "kids",
+      "shoe-hire",
+      "parking"
+    ],
+    "sources": [
+      {
+        "url": "https://www.boulderlounge-chemnitz.de/start.html",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.boulderlounge-chemnitz.de/preise-oeffnungszeiten.html",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.boulderlounge-chemnitz.de/halleninfos.html",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours page: Mon 15-23, Tue-Fri 9-23, Sat/Sun/holidays 9-23 (bouldering until 22:45; Thu family hall closes 20:00, Sun parts of main hall closed from 20:00). A stale one-off notice about 18.07 ignored. Price page undated. Hall address Altchemnitzer Str. 27; pin is ~1.3 km NE (Nominatim).",
+    "operating": "yes",
+    "official_address": "Altchemnitzer Str. 27, 09120 Chemnitz",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "g-95d5dd7d30",
+    "name": "Kletterhalle No Limit",
+    "metro": null,
+    "expect_h": "ff6832560319ffdd",
+    "website": "https://kletterhalle-leipzig.de/",
+    "hours": {
+      "mon": "10am–11pm",
+      "tue": "10am–11pm",
+      "wed": "10am–11pm",
+      "thu": "10am–11pm",
+      "fri": "10am–11pm",
+      "sat": "10am–11pm",
+      "sun": "10am–11pm"
+    },
+    "day_pass": "€15 adult climbing, €9.50 concession",
+    "facilities": [
+      "shoe-hire",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://kletterhalle-leipzig.de/preise/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://kletterhalle-leipzig.de/kurse/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://kletterhalle-leipzig.de/kontakt/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Daily 10-23, 365 days. Tageskarte climbing (incl. bouldering) EUR 15 regular, early bird Mo-Fr 10-14:30 EUR 7.50; bouldering only EUR 7.50. Kids courses/groups/birthdays on the courses page. Same operator as Bloc No Limit (separate hall ~1 km away).",
+    "operating": "yes",
+    "official_address": "Dessauer Str. 2, 04129 Leipzig",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-1031",
+    "name": "Kletterwelt Erzgebirge",
+    "metro": null,
+    "expect_h": "77fc6f79a6aaf091",
+    "website": "https://www.kletterwelt-erzgebirge.de/",
+    "hours": null,
+    "day_pass": "€8.50 adult, €6 concession (up to 4 hours)",
+    "facilities": [
+      "kids",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://www.kletterwelt-erzgebirge.de/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      },
+      {
+        "url": "https://www.kletterwelt-erzgebirge.de/tarife",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.kletterwelt-erzgebirge.de/indoor-klettern",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours null: site only gives 'Winteroeffnungszeiten ab Oktober bis Ostern' (Tue-Thu 17-21, Fri/Sat 14-21, Sun/Mon closed) plus autumn-holiday specials, i.e. a seasonal schedule. Kletterhalle between Pockau and Marienberg run by CVJM Strobel-Muehle; pin is ~7.7 km from the official address (Nominatim, Pockau). Kids climbing area and kids boulder/play area stated.",
+    "operating": "yes",
+    "official_address": "Marienberger Straße 36, 09509 Pockau-Lengefeld",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-1034",
+    "name": "Kletterzentrum Chemnitz",
+    "metro": null,
+    "expect_h": "36d791f21b492cbd",
+    "website": "https://www.kletter-zentrum.de/",
+    "hours": {
+      "mon": "3pm–10:30pm",
+      "tue": "10am–10:30pm",
+      "wed": "3pm–10:30pm",
+      "thu": "10am–10:30pm",
+      "fri": "3pm–10:30pm",
+      "sat": "10am–8pm",
+      "sun": "10am–8pm"
+    },
+    "day_pass": "€14 adult, €12 concession",
+    "facilities": [
+      "cafe",
+      "kids",
+      "shoe-hire",
+      "yoga"
+    ],
+    "sources": [
+      {
+        "url": "https://www.kletter-zentrum.de/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.kletter-zentrum.de/informationen/kontakt/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.kletter-zentrum.de/informationen/preise/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.kletter-zentrum.de/informationen/haeufige-fragen/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.kletter-zentrum.de/gesundheitskurse/yoga/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours (Mo/Mi/Fr 15-22:30, Di/Do 10-22:30, Sa/So 10-20) agree on homepage, FAQ and contact page; the contact page still carries an old 'ab 1.6.2018' notice (Mo-Fr 14-22, Sa/So 9:30-19:30) which is stale and ignored. Day pass: Tageskarte EUR 14 for people who can belay; 'Einsteigerklettern' (incl. induction/harness) EUR 24. Price page undated. Yoga course Tuesdays; Cafeteria; kids boulder area; also sauna. Pin is ~1.6 km SE of the hall (Nominatim).",
+    "operating": "yes",
+    "official_address": "Matthesstraße 20, 09113 Chemnitz",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-1040",
+    "name": "Kosmos",
+    "metro": null,
+    "expect_h": "0c7ed5ace8219ae7",
+    "website": "https://kosmos-bouldern.de/",
+    "hours": {
+      "mon": "9am–11pm",
+      "tue": "9am–11pm",
+      "wed": "9am–11pm",
+      "thu": "9am–11pm",
+      "fri": "9am–11pm",
+      "sat": "10am–10pm",
+      "sun": "10am–10pm"
+    },
+    "day_pass": null,
+    "facilities": [
+      "cafe",
+      "training",
+      "yoga",
+      "kids",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://kosmos-bouldern.de/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://kosmos-bouldern.de/die-halle/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://kosmos-bouldern.de/kinder/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours Mo-Fr 9-23, Sa/So/holidays 10-22. day_pass null: price page headed '(ab 7. Mai 2025)', more than a year old (Normaltarif EUR 11.50 then). Cafe/seating area with coffee and beer, yoga/movement room, training area, rental shoes at the counter stated. Hall is in Plagwitz (Erich-Zeigner-Allee 64c); pin is ~3.1 km away in the centre (Nominatim).",
+    "operating": "yes",
+    "official_address": "Erich-Zeigner-Allee 64c, 04229 Leipzig",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-969",
+    "name": "BlocSchmiede",
+    "metro": null,
+    "expect_h": "f6f8662287636c43",
+    "website": "https://blocschmiede-boulderhalle.de/",
+    "hours": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "10am–10pm",
+      "sun": "10am–10pm"
+    },
+    "day_pass": "€12 adult, €11 concession",
+    "facilities": [
+      "shoe-hire",
+      "kids",
+      "parking"
+    ],
+    "sources": [
+      {
+        "url": "https://blocschmiede-boulderhalle.de/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://blocschmiede-boulderhalle.de/kontakt",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Homepage: 'taeglich 10:00 bis 22:00 Uhr'; price table undated; rental shoes EUR 4; kids holiday courses with trainers on the news; Kontakt page says parking available (Neustaedter Hoefe). Pin is ~4.7 km from the official address (Nominatim).",
+    "operating": "yes",
+    "official_address": "Lübecker Straße 53–63, Haus 16A, 39124 Magdeburg",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-974",
+    "name": "Boulder-Point",
+    "metro": null,
+    "expect_h": "87a8ab625c29e37d",
+    "website": "https://boulder-point.de/",
+    "hours": null,
+    "day_pass": "€13.90 adult, €11.50 concession",
+    "facilities": [
+      "kids",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://boulder-point.de/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://boulder-point.de/impressum/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours null: homepage states Tue-Thu 15-22, Fri 15-20, Sat 13-20, Sun 11-20, holidays 11-20, but gives nothing for Monday (not inferred as closed). Price table undated; kids training and birthdays; rental shoes EUR 4. Pin is ~1.6 km from the official address (Nominatim, Kisdorfer Weg 15, Gewerbegebiet Sued).",
+    "operating": "yes",
+    "official_address": "Kisdorfer Weg 15 a–c, 24568 Kaltenkirchen",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-1015",
+    "name": "FlensBloc",
+    "metro": null,
+    "expect_h": "ce262338dab48d77",
+    "website": "https://www.flensbloc.de/",
+    "hours": {
+      "mon": "10am–10pm",
+      "tue": "12pm–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "12pm–10pm",
+      "sat": "10am–10pm",
+      "sun": "10am–10pm"
+    },
+    "day_pass": "€15 adult, €11 concession",
+    "facilities": [
+      "shoe-hire",
+      "kids",
+      "yoga",
+      "parking"
+    ],
+    "sources": [
+      {
+        "url": "https://www.flensbloc.de/zeiten-preise/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.flensbloc.de/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.flensbloc.de/yoga/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Price page undated. Kids area and rules on homepage; 65 sqm yoga room with courses (Yoga Community Flensburg); 'genuegend Stellplaetze'; also sauna. Hall is Westerallee 159; pin is ~3.8 km away (Nominatim).",
+    "operating": "yes",
+    "official_address": "Westerallee 159, 24941 Flensburg",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-1050",
+    "name": "NORDBLOC",
+    "metro": null,
+    "expect_h": "6be37efae7ab335e",
+    "website": "https://www.urbanapes.de/kiel/",
+    "hours": {
+      "mon": "9am–11pm",
+      "tue": "9am–11pm",
+      "wed": "9am–11pm",
+      "thu": "9am–11pm",
+      "fri": "9am–11pm",
+      "sat": "9am–10pm",
+      "sun": "9am–10pm"
+    },
+    "day_pass": "€16.90 adult, €13.90 concession",
+    "facilities": [
+      "training",
+      "kids",
+      "shoe-hire",
+      "showers"
+    ],
+    "sources": [
+      {
+        "url": "https://www.urbanapes.de/kiel/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.urbanapes.de/kiel/preise-zeiten/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.urbanapes.de/kiel/neu-hier/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.nordbloc-kiel.de/preise",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "day_pass"
+        ]
+      }
+    ],
+    "status": "flag",
+    "notes": "NORDBLOC at Grasweg 40 now trades as urban apes Kiel (old domain nordbloc-kiel.de still serves the urban apes page but its TLS certificate has expired; fetched ignoring the cert). Hours Mo-Fr 9-23, Sa/So/holidays 9-22 (preise-zeiten page, updated Sept 2026). Early bird Mo-Fr until 16:00 EUR 12.90. A 'Bistro' appears only as a section label, so cafe not claimed. Pin is ~1.7 km S of the hall (Nominatim).",
+    "operating": "yes",
+    "official_address": "Grasweg 40, 24118 Kiel",
+    "location": "wrong_pin",
+    "renamed_to": "urban apes Kiel",
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-1067",
+    "name": "urban apes Kletterwerk Lübeck",
+    "metro": null,
+    "expect_h": "a68d7a1edcf0e82c",
+    "website": "https://www.urbanapes.de/luebeck/",
+    "hours": {
+      "mon": "2:30pm–10:30pm",
+      "tue": "2:30pm–10:30pm",
+      "wed": "2:30pm–10:30pm",
+      "thu": "2:30pm–10:30pm",
+      "fri": "10am–10pm",
+      "sat": "10am–10pm",
+      "sun": "10am–10pm"
+    },
+    "day_pass": "€16.90 adult, €12.90 concession",
+    "facilities": [
+      "kids",
+      "shoe-hire",
+      "showers"
+    ],
+    "sources": [
+      {
+        "url": "https://www.urbanapes.de/luebeck/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.urbanapes.de/luebeck/preise-zeiten/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.urbanapes.de/luebeck/kinder/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.urbanapes.de/luebeck/neu-hier/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Official name urban apes Luebeck (the word 'Kletterwerk' does not appear on the site). Hours Mo-Do 14:30-22:30, Fr-So and holidays 10-22. Early bird Mo-Fr until 16:00 is cheaper. A winter sauna schedule also exists (not a list key). Hall in the old Gasanstalt; pin is ~1.9 km from it (Nominatim).",
+    "operating": "yes",
+    "official_address": "Bei der Gasanstalt 5, 23560 Lübeck",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-968",
+    "name": "Blockpark Erfurt",
+    "metro": null,
+    "expect_h": "32724c1bfca93746",
+    "website": "https://www.blockpark.de/",
+    "hours": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "10am–10pm",
+      "sun": "10am–10pm"
+    },
+    "day_pass": null,
+    "facilities": [
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://www.blockpark.de/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.blockpark.de/kinder",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Homepage: 'taeglich von 10-22 Uhr', also on holidays (24.12. closed). Price table is not available as text (only the footnote), so day_pass null. Kids birthdays and a junior climbing group on the Kinder page. Hall (Kressepark) at Motzstrasse 8; pin is ~2.9 km away in the centre (Nominatim).",
+    "operating": "yes",
+    "official_address": "Motzstraße 8, 99094 Erfurt",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-1053",
+    "name": "Plan B Boulderhalle Jena",
+    "metro": null,
+    "expect_h": "2adb797e1d3f2f7c",
+    "website": "https://planb-jena.de/",
+    "hours": {
+      "mon": "10am–11pm",
+      "tue": "10am–11pm",
+      "wed": "10am–11pm",
+      "thu": "10am–11pm",
+      "fri": "10am–11pm",
+      "sat": "10am–11pm",
+      "sun": "10am–11pm"
+    },
+    "day_pass": "€14 adult, €12 concession",
+    "facilities": [
+      "cafe",
+      "training",
+      "yoga",
+      "shoe-hire",
+      "shop",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://planb-jena.de/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://planb-jena.de/zeiten-preise/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://planb-jena.de/anfahrt/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Daily 10-23, holidays too (except 24/25.12, 31.12/1.1). Price page undated; early bird EUR 11.50 adult before 15:00 on weekdays. Homepage text: training area, yoga, well-stocked shop, drinks/soup/cake. Pin is ~1.4 km from the hall (Nominatim).",
+    "operating": "yes",
+    "official_address": "Carl-Pulfrich-Str. 4, 07745 Jena",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  }
+]

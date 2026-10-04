@@ -1,0 +1,201 @@
+{
+ "drop": {
+  "seed-334": [
+   "hours"
+  ],
+  "seed-276": [
+   "hours"
+  ],
+  "g-86f95e1310": [
+   "hours"
+  ],
+  "seed-948": [
+   "hours"
+  ],
+  "seed-211": [
+   "day_pass"
+  ],
+  "seed-162": [
+   "hours"
+  ],
+  "seed-165": [
+   "hours"
+  ],
+  "seed-270": [
+   "hours"
+  ],
+  "seed-241": [
+   "hours"
+  ],
+  "seed-243": [
+   "hours"
+  ],
+  "seed-93": [
+   "day_pass"
+  ],
+  "seed-111": [
+   "facilities"
+  ],
+  "seed-127": [
+   "hours"
+  ],
+  "seed-468": [
+   "hours"
+  ],
+  "seed-1743": [
+   "hours"
+  ],
+  "seed-883": [
+   "day_pass"
+  ],
+  "seed-1457": [
+   "day_pass"
+  ],
+  "g-b083192899": [
+   "day_pass"
+  ],
+  "g-8cbc1eab88": [
+   "day_pass"
+  ],
+  "g-9b3aa1a5f8": [
+   "hours",
+   "day_pass"
+  ],
+  "g-adaffdabdd": [
+   "day_pass"
+  ],
+  "seed-1436": [
+   "day_pass"
+  ],
+  "g-a24b51f264": [
+   "day_pass"
+  ],
+  "g-fcab43fa8c": [
+   "hours"
+  ],
+  "g-5ab53036a3": [
+   "hours"
+  ],
+  "g-61bc114f2c": [
+   "hours"
+  ],
+  "g-fb60f89fa9": [
+   "hours"
+  ],
+  "g-606116f499": [
+   "day_pass"
+  ],
+  "g-245e85c7f1": [
+   "hours"
+  ],
+  "g-f2360c9cf0": [
+   "day_pass"
+  ],
+  "g-89723e8915": [
+   "day_pass"
+  ],
+  "g-1e91e78898": [
+   "day_pass"
+  ],
+  "g-26f92b9797": [
+   "day_pass"
+  ],
+  "g-d1af7cf93f": [
+   "hours"
+  ],
+  "seed-428": [
+   "day_pass"
+  ],
+  "seed-1288": [
+   "hours"
+  ],
+  "g-897c8f8d77": [
+   "hours",
+   "day_pass"
+  ],
+  "g-5ca60b81fa": [
+   "hours"
+  ],
+  "g-fd7af4c044": [
+   "hours"
+  ],
+  "g-274d7923b8": [
+   "day_pass"
+  ],
+  "seed-256": [
+   "day_pass"
+  ],
+  "seed-316": [
+   "day_pass"
+  ],
+  "seed-1012": [
+   "day_pass"
+  ]
+ },
+ "removeFacility": {
+  "seed-958": [
+   "cafe",
+   "shop"
+  ],
+  "g-61bc114f2c": [
+   "cafe"
+  ],
+  "g-fb60f89fa9": [
+   "cafe"
+  ],
+  "seed-1130": [
+   "kids"
+  ],
+  "seed-295": [
+   "training"
+  ]
+ },
+ "reasons": {
+  "seed-334": "Closed days inferred from listed public hours",
+  "seed-276": "hours depend on reading a typo (12 om)",
+  "g-86f95e1310": "Wednesday opening is self-check-in only; staffed start uncertain",
+  "seed-948": "contact page gives two different opening times",
+  "seed-958": "cafe/shop only from gift-card wording",
+  "seed-211": "site footer dated 2023: prices may be stale",
+  "seed-162": "footer and First Visit page disagree",
+  "seed-165": "page header and per-day list disagree",
+  "seed-270": "seasonal (winter/summer) hours",
+  "seed-241": "footer and main hours block disagree",
+  "seed-243": "Monday Closed inferred",
+  "seed-93": "price read through a typo ($2 2)",
+  "seed-111": "facilities from a pre-opening announcement",
+  "seed-127": "hours page and footer disagree",
+  "seed-468": "am/pm not stated",
+  "seed-1743": "contact page and home page disagree",
+  "seed-883": "site footer dated 2022: price may be stale",
+  "seed-1457": "price list dated 2022-2024 (stale)",
+  "g-b083192899": "price list dated 2022-2024 (stale)",
+  "g-8cbc1eab88": "price list dated 2022-2024 (stale)",
+  "g-9b3aa1a5f8": "Monday Closed inside a Sun-Thu range (contradictory); price only in an image alt text",
+  "g-adaffdabdd": "price page and services page disagree",
+  "seed-1436": "site footer dated 2023: price may be stale",
+  "g-a24b51f264": "price image dated 05/2024",
+  "g-fcab43fa8c": "seasonal (winter/summer) schedule",
+  "g-5ab53036a3": "seasonal (winter/summer) schedule",
+  "g-61bc114f2c": "seasonal (winter/summer) schedule; cafe only drinks/snacks at reception",
+  "g-fb60f89fa9": "seasonal (winter/summer) schedule; cafe only drinks/snacks at reception",
+  "seed-1130": "kids only from a link to an unfetched page",
+  "g-606116f499": "summer-season tariff (verano 2026)",
+  "g-245e85c7f1": "sports-centre hours, not the climbing wall",
+  "g-f2360c9cf0": "price list valid from 2022-12-01 (stale)",
+  "g-89723e8915": "price next to an unrelated label (ambiguous)",
+  "g-1e91e78898": "site footer dated 2022: price may be stale",
+  "g-26f92b9797": "price tab layout ambiguous",
+  "g-d1af7cf93f": "hours include unstaffed access; staffed reception shorter",
+  "seed-428": "site looks stale (2020 notices)",
+  "seed-1288": "seasonal (Normalsaison) schedule",
+  "g-897c8f8d77": "arena-wide hours, not the climbing hall; page carries a 2023 copyright",
+  "g-5ca60b81fa": "facility-wide hours",
+  "g-fd7af4c044": "venue reception hours",
+  "g-274d7923b8": "prices dated May 2023",
+  "seed-295": "fact-check A: training rests only on fitness classes / personal training, no training area stated",
+  "seed-256": "fact-check B: price page is titled Pricing (Old), may be stale",
+  "seed-316": "fact-check B: price-to-label mapping only inferable from text order",
+  "seed-1012": "homepage price block (11/9) disagrees with the Preise page (12/10)"
+ }
+}

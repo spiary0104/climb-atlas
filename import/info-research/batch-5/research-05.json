@@ -1,0 +1,895 @@
+[
+  {
+    "id": "seed-195",
+    "name": "B.C's Climbing",
+    "expect_h": "d6a9277e66d8f2e0",
+    "website": "https://bcclimbinggym.com/",
+    "hours": {
+      "mon": "2pm–9pm",
+      "tue": "2pm–9pm",
+      "wed": "2pm–9pm",
+      "thu": "2pm–9pm",
+      "fri": "2pm–9pm",
+      "sat": "12pm–9pm",
+      "sun": "12pm–6pm"
+    },
+    "day_pass": "$19 adult (all-day climbing entry)",
+    "facilities": [
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://bcclimbinggym.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      },
+      {
+        "url": "https://bcclimbinggym.com/pricing",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Bouldering-focused; site says primarily a 13+ facility. Shoe rental $5 stated on pricing page.",
+    "operating": "yes",
+    "official_address": "234 Main Street, New Paltz, NY 12561",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-199",
+    "name": "Cayuga Climbs",
+    "expect_h": "ea431f7fa87919b6",
+    "website": "https://www.cayugaclimbs.com/",
+    "hours": {
+      "mon": "12pm–10pm",
+      "tue": "12pm–10pm",
+      "wed": "12pm–10pm",
+      "thu": "12pm–10pm",
+      "fri": "12pm–10pm",
+      "sat": "10am–6pm",
+      "sun": "10am–6pm"
+    },
+    "day_pass": "$18 adult",
+    "facilities": [
+      "shoe-hire",
+      "shop",
+      "training"
+    ],
+    "sources": [
+      {
+        "url": "https://www.cayugaclimbs.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.cayugaclimbs.com/pricing-and-memberships",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.cayugaclimbs.com/new-climbers",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours: weekdays 12pm-10pm, weekends 10am-6pm (weekend 10am-12pm is family time but open to all). Facilities: rental shoes $4 and 10% off retail store (pricing page), weight lifting equipment (rules page). Renovations page: gym closes Nov and Dec to rebuild walls and reopens in January; currently operating.",
+    "operating": "yes",
+    "official_address": "53 Hall Rd. Suite A, Ithaca, NY 14850",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-204",
+    "name": "Central Rock Gym – Troy",
+    "expect_h": "cdcf2640ffeba8d7",
+    "website": "https://centralrockgym.com/troy/",
+    "hours": {
+      "mon": "6am–10pm",
+      "tue": "9am–10pm",
+      "wed": "6am–10pm",
+      "thu": "9am–10pm",
+      "fri": "6am–10pm",
+      "sat": "8am–8pm",
+      "sun": "8am–8pm"
+    },
+    "day_pass": null,
+    "facilities": [
+      "yoga"
+    ],
+    "sources": [
+      {
+        "url": "https://centralrockgym.com/troy/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://centralrockgym.com/day-pass/",
+        "accessed": "2026-10-04",
+        "supports": []
+      }
+    ],
+    "status": "found",
+    "notes": "Hours from the location page. Day-pass price is not published on the location page, day-pass page or FAQ (sold via online checkout), so day_pass is null. Yoga from location page text (yoga and fitness classes at this location).",
+    "operating": "yes",
+    "official_address": "547 River St., Troy, New York 12180",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-201",
+    "name": "Central Rock Gym (Buffalo)",
+    "expect_h": "5fd9804e82b9e357",
+    "website": "https://centralrockgym.com/buffalo/",
+    "hours": {
+      "mon": "6am–10pm",
+      "tue": "6am–11pm",
+      "wed": "6am–10pm",
+      "thu": "6am–11pm",
+      "fri": "6am–10pm",
+      "sat": "9am–7pm",
+      "sun": "9am–6pm"
+    },
+    "day_pass": null,
+    "facilities": [
+      "yoga"
+    ],
+    "sources": [
+      {
+        "url": "https://centralrockgym.com/buffalo/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://centralrockgym.com/day-pass/",
+        "accessed": "2026-10-04",
+        "supports": []
+      }
+    ],
+    "status": "found",
+    "notes": "Hours from the location page. Day-pass price is not published on the location page, day-pass page or FAQ (sold via online checkout), so day_pass is null. Yoga from location page text (yoga and fitness classes at this location).",
+    "operating": "yes",
+    "official_address": "55 Chicago St, Buffalo, New York 14204",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-202",
+    "name": "Central Rock Gym (Rochester)",
+    "expect_h": "99c35da200fbaf3d",
+    "website": "https://centralrockgym.com/rochester/",
+    "hours": {
+      "mon": "6am–10pm",
+      "tue": "10am–10pm",
+      "wed": "6am–10pm",
+      "thu": "10am–10pm",
+      "fri": "6am–10pm",
+      "sat": "9am–6pm",
+      "sun": "9am–6pm"
+    },
+    "day_pass": null,
+    "facilities": [
+      "yoga"
+    ],
+    "sources": [
+      {
+        "url": "https://centralrockgym.com/rochester/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://centralrockgym.com/day-pass/",
+        "accessed": "2026-10-04",
+        "supports": []
+      }
+    ],
+    "status": "found",
+    "notes": "Hours from the location page. Day-pass price is not published on the location page, day-pass page or FAQ (sold via online checkout), so day_pass is null. Yoga from location page text (yoga and fitness classes at this location).",
+    "operating": "yes",
+    "official_address": "725 Averill Ave, Rochester, New York 14607",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-205",
+    "name": "Central Rock Gym Syracuse",
+    "expect_h": "a80ff959e93d553a",
+    "website": "https://centralrockgym.com/syracuse/",
+    "hours": {
+      "mon": "9am–10pm",
+      "tue": "9am–10pm",
+      "wed": "6am–10pm",
+      "thu": "9am–10pm",
+      "fri": "6am–10pm",
+      "sat": "9am–7pm",
+      "sun": "9am–7pm"
+    },
+    "day_pass": null,
+    "facilities": [
+      "yoga"
+    ],
+    "sources": [
+      {
+        "url": "https://centralrockgym.com/syracuse/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://centralrockgym.com/day-pass/",
+        "accessed": "2026-10-04",
+        "supports": []
+      }
+    ],
+    "status": "found",
+    "notes": "Hours from the location page. Day-pass price is not published on the location page, day-pass page or FAQ (sold via online checkout), so day_pass is null. Yoga from location page text (yoga and fitness classes at this location). Page spells Thursday as \"Thurday\" (read as Thursday).",
+    "operating": "yes",
+    "official_address": "600 N Franklin St., Syracuse, New York 13204",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-206",
+    "name": "Climbing Cave",
+    "expect_h": "f3e888f516cc1b45",
+    "website": null,
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [],
+    "status": "not-found",
+    "notes": "No official site or page found for a Climbing Cave at 28 Glen Dr, Queensbury (web search budget ran out; guessed domains do not resolve). The established Queensbury gym found is RockSport (seed-211).",
+    "operating": "unknown",
+    "official_address": null,
+    "location": "unknown",
+    "renamed_to": null,
+    "duplicate_of_hint": "Unverified: possibly a former or alternative name for another Queensbury venue (RockSport seed-211, 54 Carey Rd); no evidence either way."
+  },
+  {
+    "id": "seed-207",
+    "name": "Cornerstone Climbing",
+    "expect_h": "b1027fa1efea18a7",
+    "website": null,
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [],
+    "status": "not-found",
+    "notes": "No official site found for Cornerstone Climbing at 165 Highrock Ave, Saratoga Springs. cornerstoneclimbing.com now serves a different gym (a bouldering gym in Ooltewah, TN, fetched 2026-10-04). Guessed alternative domains do not resolve.",
+    "operating": "unknown",
+    "official_address": null,
+    "location": "unknown",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-209",
+    "name": "Hudson Boulders",
+    "expect_h": "89a0495a41298e6d",
+    "website": "https://hudsonboulders.com/",
+    "hours": {
+      "mon": "6am–10pm",
+      "tue": "9am–10pm",
+      "wed": "6am–10pm",
+      "thu": "9am–10pm",
+      "fri": "9am–10pm",
+      "sat": "10am–8pm",
+      "sun": "10am–8pm"
+    },
+    "day_pass": "$24 adult",
+    "facilities": [
+      "shoe-hire",
+      "showers",
+      "shop",
+      "training",
+      "yoga",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://hudsonboulders.com/rates/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://hudsonboulders.com/contact/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      },
+      {
+        "url": "https://hudsonboulders.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Rates and contact pages agree on hours (Sat-Sun 10am-8pm). Day pass $24 ($30 with gear). Facilities from rates page amenity list (rental gear, showers, retail shop, fitness/training area, yoga studio) and home page (youth classes and camps).",
+    "operating": "yes",
+    "official_address": "195 Troy-Schenectady Rd, Latham, NY 12110",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-216",
+    "name": "Mustangs Bouldering",
+    "expect_h": "7fe68541e3fa2a02",
+    "website": "https://www.mustangsbouldering.com/",
+    "hours": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "10am–9pm",
+      "sun": "10am–7pm"
+    },
+    "day_pass": "$21 adult, $19 discounted (22 and under, 65+, teachers etc.)",
+    "facilities": [
+      "cafe",
+      "training",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://www.mustangsbouldering.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.mustangsbouldering.com/passes",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Cafe (coffee, pastries, snacks), strength training equipment and Tension Board on home page; shoe rental $4 on passes page. FAQ states no youth programming or kids parties.",
+    "operating": "yes",
+    "official_address": "316 Plaza Road, Kingston, NY 12401",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-232",
+    "name": "Niagara Climbing Center",
+    "expect_h": "a2dd88fdb080ae68",
+    "website": "https://www.niagaraclimbingcenter.com/",
+    "hours": {
+      "mon": "4pm–11pm",
+      "tue": "11am–11pm",
+      "wed": "4pm–11pm",
+      "thu": "11am–11pm",
+      "fri": "4pm–11pm",
+      "sat": "10am–10pm",
+      "sun": "10am–8pm"
+    },
+    "day_pass": "$25 adult, $20 youth/senior 55+/military",
+    "facilities": [
+      "training",
+      "shoe-hire",
+      "yoga",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://www.niagaraclimbingcenter.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.niagaraclimbingcenter.com/day-pricing",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours from the footer of the day-pricing page (same on home page). Home page: training area, Kilter board room, yoga centre, youth/team programs and youth climbing clubs. Shoe rental $5. Home page also mentions a new gym (check out the new gym); address unchanged on the site.",
+    "operating": "yes",
+    "official_address": "1333 Strad Ave, North Tonawanda, NY 14120",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-211",
+    "name": "RockSport",
+    "expect_h": "bb85db9cfff03b92",
+    "website": "https://www.rocksportny.com/",
+    "hours": {
+      "mon": "4pm–9pm",
+      "tue": "4pm–9pm",
+      "wed": "4pm–9pm",
+      "thu": "4pm–9pm",
+      "fri": "4pm–9pm",
+      "sat": "10am–6pm",
+      "sun": "10am–6pm"
+    },
+    "day_pass": "$22 adult, $20 youth/student",
+    "facilities": [
+      "training",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://www.rocksportny.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.rocksportny.com/day-rates-hours",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.rocksportny.com/tour-the-gym",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Site footer shows copyright 2023, so prices and hours may lag. Fitness area with Moonboard and hangboard (tour page); rental shoes $6 (rates page).",
+    "operating": "yes",
+    "official_address": "54 Carey Road, Queensbury, NY 12804",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-217",
+    "name": "Rocventures",
+    "expect_h": "229982dc1d80fcb6",
+    "website": "https://www.rocventuresclimbing.com/",
+    "hours": {
+      "mon": "9am–10pm",
+      "tue": "11am–10pm",
+      "wed": "9am–10pm",
+      "thu": "11am–10pm",
+      "fri": "9am–11pm",
+      "sat": "9am–9pm",
+      "sun": "9am–7pm"
+    },
+    "day_pass": "$20 adult (23+), $17 college/military/youth/senior",
+    "facilities": [
+      "training",
+      "shoe-hire",
+      "shop",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://www.rocventuresclimbing.com/about",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.rocventuresclimbing.com/pricing",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.rocventuresclimbing.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Public hours only (member-only Sun 7pm-9pm excluded; new as of Fall 2026). Training tools, retail, shoe rental $5, and kids programs / guided climbing for kids stated on the site.",
+    "operating": "yes",
+    "official_address": "1044 University Ave, Rochester, NY 14607",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-219",
+    "name": "Sunrise Bouldering",
+    "expect_h": "430f65dac6fb6504",
+    "website": null,
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [],
+    "status": "flag",
+    "notes": "sunrisebouldering.com (and www) returns the Squarespace page \"Website Expired\" (HTTP 404, fetched 2026-10-04); no other official presence found (web search budget ran out). Could be closed or only a lapsed domain, so operating is unknown, not closed.",
+    "operating": "unknown",
+    "official_address": null,
+    "location": "unknown",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-220",
+    "name": "Table Rock Bouldering",
+    "expect_h": "968f07c791e97bfb",
+    "website": "https://www.tablerockbouldering.com/",
+    "hours": null,
+    "day_pass": "$18 day pass",
+    "facilities": [
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://www.tablerockbouldering.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      },
+      {
+        "url": "https://www.tablerockbouldering.com/pricing",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours left null because the site disagrees with itself: page footer table says Mon-Thu 3pm-10pm, Fri 2pm-10pm, Sat 3pm-10pm, Sun 12pm-5pm; home page Business Hours block says Tue and Thu 3pm-9pm, Sat 2pm-8pm; About page says closed on Mondays (footer says Mon 3pm-10pm). Shoe rentals $2.",
+    "operating": "yes",
+    "official_address": "6 Market St. Unit B9, Oneonta, NY 13820",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-221",
+    "name": "The Crux – Champlain Valley Climbing Center",
+    "expect_h": "5816b050779290ac",
+    "website": "https://www.pokomac.com/crux-rock-climbing/",
+    "hours": null,
+    "day_pass": null,
+    "facilities": [
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://www.pokomac.com/crux-rock-climbing/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Operated by Pok-O-MacCready Camps. Page says public hours are closed for the summer, expected re-opening mid-October; rates and times only via a Book Online link (not fetched). Harness and shoes available for rental. climbthecrux.com does not resolve (NXDOMAIN). Seasonal closure, so operating is yes.",
+    "operating": "yes",
+    "official_address": "56 Rogers Lane, Willsboro, NY 12996",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-222",
+    "name": "The Edge Halfmoon",
+    "expect_h": "321ed4e925d9accc",
+    "website": "https://theedgehalfmoon.com/",
+    "hours": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "9am–9pm",
+      "sun": "1pm–7pm"
+    },
+    "day_pass": "$20 adult (two-hour pass)",
+    "facilities": [
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://theedgehalfmoon.com/hours-rates/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Standard pass is a two-hour pass ($20 adult and youth). Non-member climbing must be pre-reserved online. Gear rental list (shoes $5). Site titles the gym Clifton Park Climbing Gym; our listing says Halfmoon (same US-9 address).",
+    "operating": "yes",
+    "official_address": "1544 US-9, Clifton Park, NY 12065",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-223",
+    "name": "The Gravity Vault – Melville",
+    "expect_h": "c2c3f7d6cb0cc8db",
+    "website": "https://gravityvault.com/locations/melville-ny",
+    "hours": {
+      "mon": "9am–10pm",
+      "tue": "9am–10pm",
+      "wed": "9am–10pm",
+      "thu": "9am–10pm",
+      "fri": "9am–10pm",
+      "sat": "9am–8pm",
+      "sun": "9am–8pm"
+    },
+    "day_pass": "$28 adult, $25 youth (20 & under)",
+    "facilities": [
+      "training",
+      "yoga",
+      "showers",
+      "kids",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://gravityvault.com/locations/melville-ny",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://gravityvault.com/locations/melville-ny/pricing",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours from the location page Hours of Operation block. Facilities from the location page: weights/cardio training room, yoga/meditation room, locker rooms with showers, kids birthday parties; shoe rental $6 on pricing page.",
+    "operating": "yes",
+    "official_address": "40 Melville Park Rd., Melville, NY 11747",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-224",
+    "name": "The Gravity Vault – Poughkeepsie",
+    "expect_h": "998cffd4a0e8b015",
+    "website": "https://gravityvault.com/locations/poughkeepsie-ny",
+    "hours": {
+      "mon": "9am–10pm",
+      "tue": "9am–10pm",
+      "wed": "9am–10pm",
+      "thu": "9am–10pm",
+      "fri": "9am–10pm",
+      "sat": "9am–8pm",
+      "sun": "9am–8pm"
+    },
+    "day_pass": "$28 adult, $25 youth (20 & under), $14 senior 70+",
+    "facilities": [
+      "training",
+      "shop",
+      "kids",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://gravityvault.com/locations/poughkeepsie-ny",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://gravityvault.com/locations/poughkeepsie-ny/pricing",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours from the location page Hours of Operation block. Facilities from the location page: Rogue rig, cardio and weight training, retail shop, kids classes and birthday parties; shoe rental $6 on pricing page.",
+    "operating": "yes",
+    "official_address": "6 Neptune Rd., Poughkeepsie, NY 12601",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-225",
+    "name": "The Pad Binghamton",
+    "expect_h": "52237096e1a16ade",
+    "website": "https://thepadclimbing.org/binghamton/",
+    "hours": {
+      "mon": "12pm–9pm",
+      "tue": "12pm–9pm",
+      "wed": "12pm–9pm",
+      "thu": "12pm–9pm",
+      "fri": "12pm–9pm",
+      "sat": "10am–9pm",
+      "sun": "10am–9pm"
+    },
+    "day_pass": "$24 adult (3pm–10pm), $18 youth / early bird (12pm–3pm Mon–Fri)",
+    "facilities": [
+      "training",
+      "kids",
+      "shoe-hire",
+      "shop",
+      "showers",
+      "yoga",
+      "parking"
+    ],
+    "sources": [
+      {
+        "url": "https://thepadclimbing.org/binghamton/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://thepadclimbing.org/location-hours-bing/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://thepadclimbing.org/rates-bing/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Staffed hours used (members have 24/7 access). Facilities: gym-at-a-glance list (weights and cardio, kids area, yoga studio, retail, shower), parking lot on the location page, free rental shoes on the rates page. Our listing says suburb Binghamton; the gym is in Vestal.",
+    "operating": "yes",
+    "official_address": "2220 Vestal Rd, Vestal, NY 13850",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-277",
+    "name": "504 Climb",
+    "expect_h": "f2c962253e093f94",
+    "website": null,
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [],
+    "status": "flag",
+    "notes": "504climb.com does not resolve (DNS NXDOMAIN, checked 2026-10-04 with nslookup and curl); no other official presence verifiable. Search snippets of an older cached site showed Tue-Sat 12pm-8pm, Sun 12pm-6pm and a $15 day pass, but I did not fetch that page, so nothing is recorded. Could be closed or only a lapsed domain, so operating is unknown, not closed.",
+    "operating": "unknown",
+    "official_address": null,
+    "location": "unknown",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-278",
+    "name": "Appalachian Bouldering Center",
+    "expect_h": "389cac404c24214a",
+    "website": "https://www.appalachianboulderingcenter.com/",
+    "hours": {
+      "mon": "10am–9pm",
+      "tue": "3pm–9pm",
+      "wed": "10am–9pm",
+      "thu": "10am–9pm",
+      "fri": "10am–9pm",
+      "sat": "10am–9pm",
+      "sun": "1pm–7pm"
+    },
+    "day_pass": "$18 adult, $15 youth",
+    "facilities": [
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://www.appalachianboulderingcenter.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.appalachianboulderingcenter.com/rates",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Shoe rental $5 on rates page. Ten Dollar Thursdays special not used.",
+    "operating": "yes",
+    "official_address": "1225 Volunteer Parkway, Bristol, TN 37620",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  }
+]

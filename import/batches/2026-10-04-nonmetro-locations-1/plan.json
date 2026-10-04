@@ -1,0 +1,1929 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-04-nonmetro-locations-1",
+ "index": {
+  "sha256": "7c4c1eded8f36c068f85d6f5a0309d78587a8e4894d3f14b6ba8e1bca4170dbc",
+  "count": 2272,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [],
+ "counts": {
+  "records": 64,
+  "new": 0,
+  "existing": 0,
+  "update": 64,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 68
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "5007c82f93b7c437de924287ce7b1527a124973be91faca25e3ff9b363c95b2f",
+ "records": [
+  {
+   "line": 1,
+   "class": "update",
+   "id": "seed-275",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 34.7304,
+     "after": 34.7378338
+    },
+    {
+     "field": "lng",
+     "before": -86.5861,
+     "after": -86.666931
+    }
+   ],
+   "expect_h": "cdb93dfa91b7c994",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "noop-field",
+     "field": "address",
+     "message": "\"address\" already has this value"
+    },
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 7432 m"
+    }
+   ]
+  },
+  {
+   "line": 2,
+   "class": "update",
+   "id": "seed-276",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 34.75,
+     "after": 34.747692
+    },
+    {
+     "field": "lng",
+     "before": -86.61,
+     "after": -86.583581
+    }
+   ],
+   "expect_h": "29daa79f1d90f3f0",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "noop-field",
+     "field": "address",
+     "message": "\"address\" already has this value"
+    },
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 2427 m"
+    }
+   ]
+  },
+  {
+   "line": 3,
+   "class": "update",
+   "id": "seed-324",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 34.2746,
+     "after": 34.2442175
+    },
+    {
+     "field": "lng",
+     "before": -119.229,
+     "after": -119.2120011
+    }
+   ],
+   "expect_h": "bb002129628f1c8c",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "noop-field",
+     "field": "address",
+     "message": "\"address\" already has this value"
+    },
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 3722 m"
+    }
+   ]
+  },
+  {
+   "line": 4,
+   "class": "update",
+   "id": "seed-329",
+   "changes": [
+    {
+     "field": "address",
+     "before": "1220 Diamond Way Suite 140, Concord, CA 94520",
+     "after": "1220 Diamond Way #140, Concord, CA 94520"
+    },
+    {
+     "field": "lat",
+     "before": 37.978,
+     "after": 37.9649036
+    },
+    {
+     "field": "lng",
+     "before": -122.0311,
+     "after": -122.0532666
+    }
+   ],
+   "expect_h": "9eff75ef4fb16b57",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 2428 m"
+    }
+   ]
+  },
+  {
+   "line": 5,
+   "class": "update",
+   "id": "seed-334",
+   "changes": [
+    {
+     "field": "address",
+     "before": "416 Crown Point Cir Unit 5, Grass Valley, CA 95945",
+     "after": "416 Crown Point Circle, Unit 5, Grass Valley, CA 95945"
+    },
+    {
+     "field": "lat",
+     "before": 39.2191,
+     "after": 39.2188055
+    },
+    {
+     "field": "lng",
+     "before": -121.0611,
+     "after": -121.033059
+    }
+   ],
+   "expect_h": "a5e723cb16d6d79b",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 2416 m"
+    }
+   ]
+  },
+  {
+   "line": 6,
+   "class": "update",
+   "id": "seed-339",
+   "changes": [
+    {
+     "field": "address",
+     "before": "2111 Iowa Ave Unit A, Riverside, CA 92507",
+     "after": "2111 Iowa Ave, Unit A, Riverside, CA 92507"
+    },
+    {
+     "field": "lat",
+     "before": 33.95,
+     "after": 33.9914562
+    },
+    {
+     "field": "lng",
+     "before": -117.39,
+     "after": -117.3410676
+    }
+   ],
+   "expect_h": "542bf0f53c245ba3",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 6451 m"
+    }
+   ]
+  },
+  {
+   "line": 7,
+   "class": "update",
+   "id": "seed-340",
+   "changes": [
+    {
+     "field": "address",
+     "before": "15315 Cholame Rd Unit D, Victorville, CA 92392",
+     "after": "15315 Cholame Rd, Unit D, Victorville, CA 92392"
+    },
+    {
+     "field": "lat",
+     "before": 34.5362,
+     "after": 34.5020598
+    },
+    {
+     "field": "lng",
+     "before": -117.2928,
+     "after": -117.3297115
+    }
+   ],
+   "expect_h": "c28aeea111210c3d",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 5084 m"
+    }
+   ]
+  },
+  {
+   "line": 8,
+   "class": "update",
+   "id": "seed-346",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 33.4269,
+     "after": 33.4536328
+    },
+    {
+     "field": "lng",
+     "before": -117.612,
+     "after": -117.6007953
+    }
+   ],
+   "expect_h": "262c7acb8525918b",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "noop-field",
+     "field": "address",
+     "message": "\"address\" already has this value"
+    },
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 3149 m"
+    }
+   ]
+  },
+  {
+   "line": 9,
+   "class": "update",
+   "id": "seed-919",
+   "changes": [
+    {
+     "field": "address",
+     "before": "Sandhills Lane, Kirkdale, Liverpool, L5 9AA",
+     "after": "6 Birchall Street, Liverpool L20 8PD"
+    },
+    {
+     "field": "lat",
+     "before": 53.4295369,
+     "after": 53.4317564
+    },
+    {
+     "field": "lng",
+     "before": -2.9920015,
+     "after": -2.9912064
+    }
+   ],
+   "expect_h": "51c778f9c71f79a5",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)"
+  },
+  {
+   "line": 10,
+   "class": "update",
+   "id": "seed-932",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Unit 9, Burrington Business Park, Burrington Way, Plymouth PL5 3LX"
+    },
+    {
+     "field": "lat",
+     "before": 50.3714122,
+     "after": 50.4037603
+    },
+    {
+     "field": "lng",
+     "before": -4.1424451,
+     "after": -4.1670056
+    }
+   ],
+   "expect_h": "99c4b97203db6963",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 3996 m"
+    }
+   ]
+  },
+  {
+   "line": 11,
+   "class": "update",
+   "id": "seed-897",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "The Tram Depot, 4 King Edward Street, Nottingham NG1 1EU"
+    },
+    {
+     "field": "lat",
+     "before": 52.95,
+     "after": 52.9571166
+    },
+    {
+     "field": "lng",
+     "before": -1.15,
+     "after": -1.1435437
+    }
+   ],
+   "expect_h": "2459048e78221af1",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 902 m"
+    }
+   ]
+  },
+  {
+   "line": 12,
+   "class": "update",
+   "id": "seed-900",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Unit 5D, The Royal Ordnance Depot, Weedon, Northamptonshire NN7 4PS"
+    },
+    {
+     "field": "lat",
+     "before": 52.2405,
+     "after": 52.2309435
+    },
+    {
+     "field": "lng",
+     "before": -0.9027,
+     "after": -1.0835719
+    }
+   ],
+   "expect_h": "4fb6edf206ffcc62",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 12363 m"
+    }
+   ]
+  },
+  {
+   "line": 13,
+   "class": "update",
+   "id": "seed-958",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "41 Boucher Road, Belfast BT12 6HR"
+    },
+    {
+     "field": "lat",
+     "before": 54.5973,
+     "after": 54.5820345
+    },
+    {
+     "field": "lng",
+     "before": -5.9301,
+     "after": -5.9580259
+    }
+   ],
+   "expect_h": "abcae4822d60f5a9",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 2474 m"
+    }
+   ]
+  },
+  {
+   "line": 14,
+   "class": "update",
+   "id": "seed-935",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Fassifern Road, Fort William PH33 6QX"
+    },
+    {
+     "field": "lat",
+     "before": 57.4778,
+     "after": 56.8169714
+    },
+    {
+     "field": "lng",
+     "before": -4.2247,
+     "after": -5.1110553
+    }
+   ],
+   "expect_h": "a11cedf0204be850",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 90872 m"
+    }
+   ]
+  },
+  {
+   "line": 15,
+   "class": "update",
+   "id": "seed-938",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Unit 5, 5-19 Holland St, Aberdeen AB25 3UJ"
+    },
+    {
+     "field": "lat",
+     "before": 57.1497,
+     "after": 57.1540967
+    },
+    {
+     "field": "lng",
+     "before": -2.0943,
+     "after": -2.1100469
+    }
+   ],
+   "expect_h": "96e677eb1cc43f9f",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1068 m"
+    }
+   ]
+  },
+  {
+   "line": 16,
+   "class": "update",
+   "id": "seed-939",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Unit 3, Angus Works, North Isla Street, Dundee DD3 7JQ"
+    },
+    {
+     "field": "lat",
+     "before": 56.46,
+     "after": 56.4735918
+    },
+    {
+     "field": "lng",
+     "before": -2.968,
+     "after": -2.9701357
+    }
+   ],
+   "expect_h": "fa86ccfa28244bea",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1517 m"
+    }
+   ]
+  },
+  {
+   "line": 17,
+   "class": "update",
+   "id": "seed-950",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Transition Extreme Sports Ltd, Links Road, Aberdeen AB24 5NN"
+    },
+    {
+     "field": "lat",
+     "before": 57.144,
+     "after": 57.1542183
+    },
+    {
+     "field": "lng",
+     "before": -2.098,
+     "after": -2.0822949
+    }
+   ],
+   "expect_h": "3c498e828e305c7b",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1479 m"
+    }
+   ]
+  },
+  {
+   "line": 18,
+   "class": "update",
+   "id": "seed-951",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Zone 5, Cibyn Estate, Caernarfon LL55 2BD"
+    },
+    {
+     "field": "lat",
+     "before": 53.1424,
+     "after": 53.138368
+    },
+    {
+     "field": "lng",
+     "before": -4.2758,
+     "after": -4.2525655
+    }
+   ],
+   "expect_h": "07fab54c371ad49b",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1613 m"
+    }
+   ]
+  },
+  {
+   "line": 19,
+   "class": "update",
+   "id": "seed-952",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "16-18 Hebron Road, Clydach, Swansea SA6 5EJ"
+    },
+    {
+     "field": "lat",
+     "before": 51.6214,
+     "after": 51.6942515
+    },
+    {
+     "field": "lng",
+     "before": -3.9436,
+     "after": -3.8984646
+    }
+   ],
+   "expect_h": "f7894639b2f70df1",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 8678 m"
+    }
+   ]
+  },
+  {
+   "line": 20,
+   "class": "update",
+   "id": "seed-953",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Indy Climbing Wall, Plas Llanfair, Llanfairpwllgwyngyll LL61 6NT"
+    },
+    {
+     "field": "lat",
+     "before": 53.266,
+     "after": 53.2188452
+    },
+    {
+     "field": "lng",
+     "before": -4.3313,
+     "after": -4.1991969
+    }
+   ],
+   "expect_h": "076c647881b53d4c",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 10235 m"
+    }
+   ]
+  },
+  {
+   "line": 21,
+   "class": "update",
+   "id": "seed-956",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Rectors Lane, Pentre, Queensferry, North Wales CH5 2DH"
+    },
+    {
+     "field": "lat",
+     "before": 53.1668,
+     "after": 53.2014411
+    },
+    {
+     "field": "lng",
+     "before": -3.1319,
+     "after": -3.0104076
+    }
+   ],
+   "expect_h": "96044ff712eeaec0",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 8965 m"
+    }
+   ]
+  },
+  {
+   "line": 22,
+   "class": "update",
+   "id": "seed-283",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 35.1595,
+     "after": 35.182381
+    },
+    {
+     "field": "lng",
+     "before": -84.8766,
+     "after": -84.8738768
+    }
+   ],
+   "expect_h": "c337d88f147d1d20",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "noop-field",
+     "field": "address",
+     "message": "\"address\" already has this value"
+    },
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 2556 m"
+    }
+   ]
+  },
+  {
+   "line": 23,
+   "class": "update",
+   "id": "seed-147",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 33.5532868,
+     "after": 33.5336958
+    },
+    {
+     "field": "lng",
+     "before": -101.9874537,
+     "after": -101.9878323
+    }
+   ],
+   "expect_h": "017fcd1d8263cc6a",
+   "update_reason": "Location correction from the gym's official address; pin from the official site's own place coordinates (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "noop-field",
+     "field": "address",
+     "message": "\"address\" already has this value"
+    },
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 2179 m"
+    }
+   ]
+  },
+  {
+   "line": 24,
+   "class": "update",
+   "id": "seed-91",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 38.9230002,
+     "after": 38.9222493
+    },
+    {
+     "field": "lng",
+     "before": -104.7169159,
+     "after": -104.718526
+    }
+   ],
+   "expect_h": "484fc84a78e5e57b",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "noop-field",
+     "field": "address",
+     "message": "\"address\" already has this value"
+    }
+   ]
+  },
+  {
+   "line": 25,
+   "class": "update",
+   "id": "seed-92",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 40.1672,
+     "after": 40.1625758
+    },
+    {
+     "field": "lng",
+     "before": -105.1019,
+     "after": -105.0418573
+    }
+   ],
+   "expect_h": "2638a5d3ace31716",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "noop-field",
+     "field": "address",
+     "message": "\"address\" already has this value"
+    },
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 5128 m"
+    }
+   ]
+  },
+  {
+   "line": 26,
+   "class": "update",
+   "id": "seed-100",
+   "changes": [
+    {
+     "field": "address",
+     "before": "2673 Jacob Cir Suite 300, Steamboat Springs, CO 80487",
+     "after": "2673 Jacob Circle Unit 300, Steamboat, CO 80487"
+    },
+    {
+     "field": "lat",
+     "before": 40.485,
+     "after": 40.5069169
+    },
+    {
+     "field": "lng",
+     "before": -106.8317,
+     "after": -106.8579824
+    }
+   ],
+   "expect_h": "abb86b7c90d352f2",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 3298 m"
+    }
+   ]
+  },
+  {
+   "line": 27,
+   "class": "update",
+   "id": "seed-122",
+   "changes": [
+    {
+     "field": "address",
+     "before": "824 S Main St Ste 106, Crystal Lake, IL 60014",
+     "after": "824 S. Main St. Suite #106, Crystal Lake, Illinois 60014"
+    },
+    {
+     "field": "lat",
+     "before": 42.2411,
+     "after": 42.2183955
+    },
+    {
+     "field": "lng",
+     "before": -88.3162,
+     "after": -88.3157414
+    }
+   ],
+   "expect_h": "fc7c5593de9c4d97",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 2525 m"
+    }
+   ]
+  },
+  {
+   "line": 28,
+   "class": "update",
+   "id": "seed-128",
+   "changes": [
+    {
+     "field": "address",
+     "before": "1502 N Cunningham Ave Suite A, Urbana, IL 61802",
+     "after": "1502 North Cunningham Ave, Urbana, IL 61802"
+    },
+    {
+     "field": "lat",
+     "before": 40.1106,
+     "after": 40.1259173
+    },
+    {
+     "field": "lng",
+     "before": -88.2073,
+     "after": -88.19902
+    }
+   ],
+   "expect_h": "720c6471c44545c9",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1843 m"
+    }
+   ]
+  },
+  {
+   "line": 29,
+   "class": "update",
+   "id": "seed-238",
+   "changes": [
+    {
+     "field": "address",
+     "before": "8201 W Charleston Blvd Suite 150, Las Vegas, NV 89117",
+     "after": "8201 W. Charleston Blvd. Suite 150, Las Vegas, NV 89117"
+    },
+    {
+     "field": "lat",
+     "before": 36.145,
+     "after": 36.158926
+    },
+    {
+     "field": "lng",
+     "before": -115.26,
+     "after": -115.271299
+    }
+   ],
+   "expect_h": "2bc2b4c0f3ead383",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1851 m"
+    }
+   ]
+  },
+  {
+   "line": 30,
+   "class": "update",
+   "id": "seed-194",
+   "changes": [
+    {
+     "field": "address",
+     "before": "4 Vatrano Rd Ste C, Albany, NY 12205",
+     "after": "4C Vatrano Road, Albany, NY 12205"
+    },
+    {
+     "field": "lat",
+     "before": 42.6526,
+     "after": 42.6882025
+    },
+    {
+     "field": "lng",
+     "before": -73.7562,
+     "after": -73.7978112
+    }
+   ],
+   "expect_h": "c27cd047871e2d9f",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 5220 m"
+    }
+   ]
+  },
+  {
+   "line": 31,
+   "class": "update",
+   "id": "seed-369",
+   "changes": [
+    {
+     "field": "address",
+     "before": "24305 Prielipp Rd STE 107, Wildomar, CA 92595",
+     "after": "24305 Prielipp Road, Suite 107, Wildomar, CA 92595"
+    },
+    {
+     "field": "lat",
+     "before": 33.5997,
+     "after": 33.5891602
+    },
+    {
+     "field": "lng",
+     "before": -117.2748,
+     "after": -117.2361421
+    }
+   ],
+   "expect_h": "47da83053c831308",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 3768 m"
+    }
+   ]
+  },
+  {
+   "line": 32,
+   "class": "update",
+   "id": "seed-398",
+   "changes": [
+    {
+     "field": "address",
+     "before": "9500 Brimhall Rd Ste 400, Bakersfield, CA 93312",
+     "after": "9500 Brimhall Rd, #400, Bakersfield, CA 93312"
+    },
+    {
+     "field": "lat",
+     "before": 35.3733,
+     "after": 35.3687343
+    },
+    {
+     "field": "lng",
+     "before": -119.0187,
+     "after": -119.1072671
+    }
+   ],
+   "expect_h": "a23dba5e9a2e06fa",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 8046 m"
+    }
+   ]
+  },
+  {
+   "line": 33,
+   "class": "update",
+   "id": "seed-860",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Unit 4, Bond Avenue, Bletchley, Milton Keynes, MK1 1JJ"
+    },
+    {
+     "field": "lat",
+     "before": 52.0406,
+     "after": 52.0099055
+    },
+    {
+     "field": "lng",
+     "before": -0.7594,
+     "after": -0.716975
+    }
+   ],
+   "expect_h": "e0ad7c74add2872e",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 4480 m"
+    }
+   ]
+  },
+  {
+   "line": 34,
+   "class": "update",
+   "id": "seed-861",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Mandeville Drive, Kingston, Milton Keynes, MK10 0AG"
+    },
+    {
+     "field": "lat",
+     "before": 52.04,
+     "after": 52.0386334
+    },
+    {
+     "field": "lng",
+     "before": -0.758,
+     "after": -0.6875682
+    }
+   ],
+   "expect_h": "3291fc6faa01b44d",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 4820 m"
+    }
+   ]
+  },
+  {
+   "line": 35,
+   "class": "update",
+   "id": "seed-933",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Lower Grange Farm Activity Centre, Grange Lane, Sandling, Maidstone, ME14 3DA"
+    },
+    {
+     "field": "lat",
+     "before": 51.265,
+     "after": 51.2973605
+    },
+    {
+     "field": "lng",
+     "before": 0.53,
+     "after": 0.5218835
+    }
+   ],
+   "expect_h": "d91728ac1a8959cf",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 3642 m"
+    }
+   ]
+  },
+  {
+   "line": 36,
+   "class": "update",
+   "id": "seed-864",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Unit 1, Olympic Park, Poole Hall Rd, Ellesmere Port, CH66 1ST"
+    },
+    {
+     "field": "lat",
+     "before": 53.2856,
+     "after": 53.2936304
+    },
+    {
+     "field": "lng",
+     "before": -2.8968,
+     "after": -2.9186197
+    }
+   ],
+   "expect_h": "f574dec8790e0575",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1703 m"
+    }
+   ]
+  },
+  {
+   "line": 37,
+   "class": "update",
+   "id": "seed-865",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Unit 3, Market Place, Battlefield Road, Shrewsbury, SY1 4AN"
+    },
+    {
+     "field": "lat",
+     "before": 52.7069,
+     "after": 52.7407651
+    },
+    {
+     "field": "lng",
+     "before": -2.7538,
+     "after": -2.7238633
+    }
+   ],
+   "expect_h": "198b97edc9a78da9",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 4271 m"
+    }
+   ]
+  },
+  {
+   "line": 38,
+   "class": "update",
+   "id": "seed-866",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Unit 9 Cobbett Park, Slyfield Industrial Estate, Moorfeld Road, Guildford, Surrey GU1 1RU"
+    },
+    {
+     "field": "lat",
+     "before": 51.2362,
+     "after": 51.2600047
+    },
+    {
+     "field": "lng",
+     "before": -0.5704,
+     "after": -0.5682169
+    }
+   ],
+   "expect_h": "404a6f757d6022be",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 2651 m"
+    }
+   ]
+  },
+  {
+   "line": 39,
+   "class": "update",
+   "id": "seed-867",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "582 Moseley Road, Birmingham, B12 9AA"
+    },
+    {
+     "field": "lat",
+     "before": 52.4862,
+     "after": 52.4542854
+    },
+    {
+     "field": "lng",
+     "before": -1.8904,
+     "after": -1.8857382
+    }
+   ],
+   "expect_h": "4d9172e2b88c27ef",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 3563 m"
+    }
+   ]
+  },
+  {
+   "line": 40,
+   "class": "update",
+   "id": "seed-918",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "10 Sherlock Street, Birmingham, B5 6LU"
+    },
+    {
+     "field": "lat",
+     "before": 52.4948994,
+     "after": 52.4718056
+    },
+    {
+     "field": "lng",
+     "before": -1.8518439,
+     "after": -1.8920782
+    }
+   ],
+   "expect_h": "7c7026ed482ed03b",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 3744 m"
+    }
+   ]
+  },
+  {
+   "line": 41,
+   "class": "update",
+   "id": "seed-869",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "9 Brunel Way, Durranhill Industrial Estate, Carlisle, CA1 3NQ"
+    },
+    {
+     "field": "lat",
+     "before": 54.8951,
+     "after": 54.8830931
+    },
+    {
+     "field": "lng",
+     "before": -2.9382,
+     "after": -2.9097024
+    }
+   ],
+   "expect_h": "14ab81300a6b5cdc",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 2259 m"
+    }
+   ]
+  },
+  {
+   "line": 42,
+   "class": "update",
+   "id": "seed-934",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Unit 16, Kettlestring Lane, Clifton Moor, York, YO30 4XF"
+    },
+    {
+     "field": "lat",
+     "before": 53.955,
+     "after": 53.9892833
+    },
+    {
+     "field": "lng",
+     "before": -1.08,
+     "after": -1.0975598
+    }
+   ],
+   "expect_h": "baf5c9911ea3429e",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 3981 m"
+    }
+   ]
+  },
+  {
+   "line": 43,
+   "class": "update",
+   "id": "seed-874",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Unit 7, 5 Whiffler Road, Norwich, NR3 2AG"
+    },
+    {
+     "field": "lat",
+     "before": 52.6309,
+     "after": 52.650376
+    },
+    {
+     "field": "lng",
+     "before": 1.2974,
+     "after": 1.2657805
+    }
+   ],
+   "expect_h": "96775a0cd099608f",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 3040 m"
+    }
+   ]
+  },
+  {
+   "line": 44,
+   "class": "update",
+   "id": "seed-876",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "St Marks Church House, 285 Shields Road, Newcastle upon Tyne, NE6 2UQ"
+    },
+    {
+     "field": "lat",
+     "before": 54.9783,
+     "after": 54.9787048
+    },
+    {
+     "field": "lng",
+     "before": -1.6178,
+     "after": -1.575384
+    }
+   ],
+   "expect_h": "0d74430ee28f7f0e",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 2707 m"
+    }
+   ]
+  },
+  {
+   "line": 45,
+   "class": "update",
+   "id": "seed-922",
+   "changes": [
+    {
+     "field": "address",
+     "before": "NG7 6AT, City of Nottingham",
+     "after": "212 Noel St, New Basford, Nottingham NG7 7FR"
+    },
+    {
+     "field": "lat",
+     "before": 52.9705416,
+     "after": 52.9716215
+    },
+    {
+     "field": "lng",
+     "before": -1.1702991,
+     "after": -1.1708036
+    }
+   ],
+   "expect_h": "46b0f20e2c035d0b",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)"
+  },
+  {
+   "line": 46,
+   "class": "update",
+   "id": "seed-880",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Britten Road, Reading, Berkshire, RG2 0AU"
+    },
+    {
+     "field": "lat",
+     "before": 51.4543,
+     "after": 51.4424799
+    },
+    {
+     "field": "lng",
+     "before": -0.9781,
+     "after": -0.9701714
+    }
+   ],
+   "expect_h": "373f1d4b1a248438",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1425 m"
+    }
+   ]
+  },
+  {
+   "line": 47,
+   "class": "update",
+   "id": "seed-883",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "The Red Goat Climbing Wall, 6 Redeness Street, York, YO31 7UU"
+    },
+    {
+     "field": "lat",
+     "before": 53.96,
+     "after": 53.9622968
+    },
+    {
+     "field": "lng",
+     "before": -1.0873,
+     "after": -1.0718749
+    }
+   ],
+   "expect_h": "c7d3b385035a613e",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1041 m"
+    }
+   ]
+  },
+  {
+   "line": 48,
+   "class": "update",
+   "id": "seed-891",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "11 South Street, Torquay, TQ2 5AE"
+    },
+    {
+     "field": "lat",
+     "before": 50.4619,
+     "after": 50.470871
+    },
+    {
+     "field": "lng",
+     "before": -3.5253,
+     "after": -3.5401041
+    }
+   ],
+   "expect_h": "9754e0bbc6397e63",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1447 m"
+    }
+   ]
+  },
+  {
+   "line": 49,
+   "class": "update",
+   "id": "seed-1590",
+   "changes": [
+    {
+     "field": "address",
+     "before": "4 HaAtsmaut St, Be'er Sheva, Israel",
+     "after": "העצמאות 4, באר שבע"
+    },
+    {
+     "field": "lat",
+     "before": 31.2429473,
+     "after": 31.2381012
+    },
+    {
+     "field": "lng",
+     "before": 34.7857884,
+     "after": 34.7929965
+    }
+   ],
+   "expect_h": "6c2d2672f347f3e0",
+   "update_reason": "Location correction from the gym's official address; pin from the official site's own place coordinates (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 872 m"
+    }
+   ]
+  },
+  {
+   "line": 50,
+   "class": "update",
+   "id": "seed-1357",
+   "changes": [
+    {
+     "field": "address",
+     "before": "Mäntyhaantie 2, Tampere, Finland",
+     "after": "GRIP Action Sports Hub, Viinikankatu 55, 33800 Tampere"
+    },
+    {
+     "field": "lat",
+     "before": 61.4805327,
+     "after": 61.4765768
+    },
+    {
+     "field": "lng",
+     "before": 23.7845094,
+     "after": 23.7841015
+    }
+   ],
+   "expect_h": "daca8ce733ce620a",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)"
+  },
+  {
+   "line": 51,
+   "class": "update",
+   "id": "g-a24b51f264",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Bergboden 7, 6110 Wolhusen"
+    },
+    {
+     "field": "lng",
+     "before": 8.066453,
+     "after": 8.0664531
+    }
+   ],
+   "expect_h": "bfd1a3fe5bbdaa23",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "noop-field",
+     "field": "lat",
+     "message": "\"lat\" already has this value"
+    }
+   ]
+  },
+  {
+   "line": 52,
+   "class": "update",
+   "id": "g-bc40a35e0e",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Plaine d'Areuse 11, 2013 Colombier"
+    }
+   ],
+   "expect_h": "7555972621589100",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "noop-field",
+     "field": "lat",
+     "message": "\"lat\" already has this value"
+    },
+    {
+     "code": "noop-field",
+     "field": "lng",
+     "message": "\"lng\" already has this value"
+    }
+   ]
+  },
+  {
+   "line": 53,
+   "class": "update",
+   "id": "g-63a42146f7",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Hauptstrasse 14, 9657 Unterwasser"
+    }
+   ],
+   "expect_h": "83179cf665f2e950",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "noop-field",
+     "field": "lat",
+     "message": "\"lat\" already has this value"
+    },
+    {
+     "code": "noop-field",
+     "field": "lng",
+     "message": "\"lng\" already has this value"
+    }
+   ]
+  },
+  {
+   "line": 54,
+   "class": "update",
+   "id": "g-ace906808b",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Seetalstrasse 41A, Kreuzlingen"
+    }
+   ],
+   "expect_h": "777e527b0deeafbd",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "noop-field",
+     "field": "lat",
+     "message": "\"lat\" already has this value"
+    },
+    {
+     "code": "noop-field",
+     "field": "lng",
+     "message": "\"lng\" already has this value"
+    }
+   ]
+  },
+  {
+   "line": 55,
+   "class": "update",
+   "id": "g-46ed95f76b",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Paul-Reinhartstrasse 11, Weinfelden"
+    },
+    {
+     "field": "lat",
+     "before": 47.5645544,
+     "after": 47.5645461
+    },
+    {
+     "field": "lng",
+     "before": 9.1046045,
+     "after": 9.104055
+    }
+   ],
+   "expect_h": "ca0dbc500cd898ae",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)"
+  },
+  {
+   "line": 56,
+   "class": "update",
+   "id": "g-b887ca86ea",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Rüttistrasse 65, 6467 Schattdorf"
+    },
+    {
+     "field": "lat",
+     "before": 46.8592211,
+     "after": 46.8592036
+    },
+    {
+     "field": "lng",
+     "before": 8.6422206,
+     "after": 8.6423374
+    }
+   ],
+   "expect_h": "44ef7b7debfe2d73",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)"
+  },
+  {
+   "line": 57,
+   "class": "update",
+   "id": "g-fb60f89fa9",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Ch. de la Plâtrière 25D, 1907 Saxon"
+    },
+    {
+     "field": "lat",
+     "before": 46.1387468,
+     "after": 46.1387376
+    }
+   ],
+   "expect_h": "f03f9c67eac7a1bb",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "noop-field",
+     "field": "lng",
+     "message": "\"lng\" already has this value"
+    }
+   ]
+  },
+  {
+   "line": 58,
+   "class": "update",
+   "id": "g-dc0eedb36f",
+   "changes": [
+    {
+     "field": "address",
+     "before": "CC Parque Astur, Pedrero 50, 33468 Trasona, Spain",
+     "after": "CC Parque Astur, Pedrero 50, 33468 Trasona"
+    },
+    {
+     "field": "lat",
+     "before": 43.5533421,
+     "after": 43.5461454
+    },
+    {
+     "field": "lng",
+     "before": -5.8832523,
+     "after": -5.8700183
+    }
+   ],
+   "expect_h": "7a796c80a98cfadc",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1333 m"
+    }
+   ]
+  },
+  {
+   "line": 59,
+   "class": "update",
+   "id": "g-507ec10349",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Simmendamm, 3775 Lenk"
+    }
+   ],
+   "expect_h": "602d3191eecc32f6",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "noop-field",
+     "field": "lat",
+     "message": "\"lat\" already has this value"
+    },
+    {
+     "code": "noop-field",
+     "field": "lng",
+     "message": "\"lng\" already has this value"
+    }
+   ]
+  },
+  {
+   "line": 60,
+   "class": "update",
+   "id": "g-4e26a94cb8",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Höhenweg, 3550 Langnau i.E."
+    },
+    {
+     "field": "lat",
+     "before": 46.9395675,
+     "after": 46.9395282
+    },
+    {
+     "field": "lng",
+     "before": 7.7902919,
+     "after": 7.7902927
+    }
+   ],
+   "expect_h": "e8ad1ba4467fedff",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)"
+  },
+  {
+   "line": 61,
+   "class": "update",
+   "id": "seed-424",
+   "changes": [
+    {
+     "field": "address",
+     "before": "8-4-8 Nanakuma, Jonan Ward, Fukuoka, inside Nanakuma Family Bowl",
+     "after": "〒814-0133 福岡市城南区七隈八丁目4-8 七隈ファミリープラザボウリング場内"
+    },
+    {
+     "field": "lat",
+     "before": 33.5657,
+     "after": 33.5519414
+    },
+    {
+     "field": "lng",
+     "before": 130.3711,
+     "after": 130.3650518
+    }
+   ],
+   "expect_h": "f42d842a44f3dea5",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1629 m"
+    }
+   ]
+  },
+  {
+   "line": 62,
+   "class": "update",
+   "id": "seed-1329",
+   "changes": [
+    {
+     "field": "address",
+     "before": "28 Czerwca 1956 r. 390, Poznań, Poland",
+     "after": "ul. 28 Czerwca 1956 r. 390/A, 61-001 Poznań"
+    },
+    {
+     "field": "lat",
+     "before": 52.3805138,
+     "after": 52.3620384
+    },
+    {
+     "field": "lng",
+     "before": 16.9103329,
+     "after": 16.9032511
+    }
+   ],
+   "expect_h": "df3a9fcabeeaddaa",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 2110 m"
+    }
+   ]
+  },
+  {
+   "line": 63,
+   "class": "update",
+   "id": "seed-954",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Picton Terrace, Carmarthen, SA31 3DF"
+    },
+    {
+     "field": "lat",
+     "before": 51.856,
+     "after": 51.8566985
+    },
+    {
+     "field": "lng",
+     "before": -4.311,
+     "after": -4.316889
+    }
+   ],
+   "expect_h": "a3bd29df05107cac",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)"
+  },
+  {
+   "line": 64,
+   "class": "update",
+   "id": "seed-957",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Unit 3, Castell Close, Swansea Enterprise Park, Swansea, SA7 9FH"
+    },
+    {
+     "field": "lat",
+     "before": 51.621,
+     "after": 51.6565615
+    },
+    {
+     "field": "lng",
+     "before": -3.943,
+     "after": -3.9077879
+    }
+   ],
+   "expect_h": "bfe53d81952d8f53",
+   "update_reason": "Location correction from the gym's official address; pin from the official site's own place coordinates (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 4641 m"
+    }
+   ]
+  }
+ ]
+}

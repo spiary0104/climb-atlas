@@ -1,0 +1,170 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-04-review-new-gym-info",
+ "index": {
+  "sha256": "c97e3035f0208405f11b34c45813a104e2c9b1d4f25a4a3a6a6a349f627e2918",
+  "count": 2272,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [],
+ "counts": {
+  "records": 4,
+  "new": 0,
+  "existing": 0,
+  "update": 4,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "bc1652fb3704660b1d8d20ca9f2710790a59c37c509dd97be93eacbb84b5047f",
+ "records": [
+  {
+   "line": 1,
+   "class": "update",
+   "id": "g-93b94b6196",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.treadstoneclimbing.com/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$20 day pass without gear, $25 with gear"
+    }
+   ],
+   "expect_h": "7b41f0f2381bb04a",
+   "update_reason": "Official website, day-pass price from the gym's own site (new gym from the review follow-ups, researched 2026-10-04)"
+  },
+  {
+   "line": 2,
+   "class": "update",
+   "id": "g-0bf1f11379",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.rockstarclimbing.co.uk/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:30am–10pm",
+      "tue": "10:30am–10pm",
+      "wed": "10:30am–10pm",
+      "thu": "10:30am–10pm",
+      "fri": "10:30am–10pm",
+      "sat": "9am–6pm",
+      "sun": "9am–6pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "£15 adult (all day), £12.50 concession, £10 junior (under 18)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "shoe-hire",
+      "shop"
+     ]
+    }
+   ],
+   "expect_h": "61f5c0549ea926bc",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (new gym from the review follow-ups, researched 2026-10-04)"
+  },
+  {
+   "line": 3,
+   "class": "update",
+   "id": "g-1c0ffa88fd",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "http://www.boulbaka.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "1pm–10pm",
+      "tue": "1pm–10pm",
+      "wed": "1pm–10pm",
+      "thu": "1pm–10pm",
+      "fri": "Closed",
+      "sat": "10am–7pm",
+      "sun": "10am–7pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥660 per hour; 4+ hours ¥1,980 weekdays, ¥2,640 weekends/holidays (tax incl.)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire",
+      "parking"
+     ]
+    }
+   ],
+   "expect_h": "d11961606db89467",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (new gym from the review follow-ups, researched 2026-10-04)"
+  },
+  {
+   "line": 4,
+   "class": "update",
+   "id": "g-2432050418",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.boulderbasebremen.de/tabakquartier"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "2pm–10pm",
+      "tue": "2pm–10pm",
+      "wed": "2pm–10pm",
+      "thu": "2pm–10pm",
+      "fri": "2pm–10pm",
+      "sat": "10am–10pm",
+      "sun": "10am–9pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "€13.50 adult, €10 concession (Tageskarte)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "2205e414c3924af3",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (new gym from the review follow-ups, researched 2026-10-04)"
+  }
+ ]
+}

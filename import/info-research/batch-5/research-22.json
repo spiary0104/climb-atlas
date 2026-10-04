@@ -1,0 +1,746 @@
+[
+ {
+  "id": "g-89723e8915",
+  "name": "GekoAventura - Valladolid",
+  "metro": null,
+  "expect_h": "1ab61725dba5c37a",
+  "website": "https://gekoaventura.com/",
+  "hours": {
+   "mon": "5pm–9pm",
+   "tue": "5pm–9pm",
+   "wed": "5pm–9pm",
+   "thu": "5pm–9pm",
+   "fri": "5pm–9pm",
+   "sat": "5pm–9pm",
+   "sun": "5pm–9pm"
+  },
+  "day_pass": "€10 adult, €8 under 16",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://gekoaventura.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://gekoaventura.com/tarifas/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://gekoaventura.com/instalaciones/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://gekoaventura.com/normas-rocodromo/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours come only from the climbing-wall rules page (Art. 2: use hours 17:00-21:00 every day of the week, other hours only on request); no dedicated hours page, none on the home page. Day pass: 'Entrada general' 10 euro under 'Entradas adulto' (a stray '1 dia a la semana' label sits next to it, read as belonging to the pass cards; judgement call); under 16: 8 euro. Facilities: cafeteria zone, Kilter campus + gym zone, kids climbing wall, rental feet-shoes 3 euro. Site mixes climbing gym with an adventure park (circuits/zip lines). Location check: Nominatim geocode of the official address is 0.03 km from our pin.",
+  "operating": "yes",
+  "official_address": "Avda de El Norte de Castilla 32, Pol de Argales, Valladolid",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-189e8f9f0d",
+  "name": "Camaleon Boulder - Valencia",
+  "metro": null,
+  "expect_h": "272ef80206ea1dda",
+  "website": "https://camaleonboulder.com/",
+  "hours": null,
+  "day_pass": "€10.50 adult, €9.50 reduced (university students)",
+  "facilities": [
+   "cafe",
+   "training",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://camaleonboulder.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://camaleonboulder.com/tarifas-escalada/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   },
+   {
+    "url": "https://camaleonboulder.com/preguntas-frecuentes/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours set null because official pages disagree on weekend closing: home page and tarifas page say Sat/Sun/holidays 10:00-22:00, FAQ page says 10:00-21:00 (Mon-Fri 9:30-22:00 agrees everywhere). Day pass read from the price image on the tarifas page (1 ENTRADA DE DIA 10.50, reduced 9.50 for Spanish university students). Facilities: home page lists CAMPUS and CAFETERIA under 'nuestras instalaciones'; FAQ states rental climbing shoes 3 euro. Location check: The official site shows no street address (only 'rocodromo urbano en el centro de Valencia'), so our address could not be confirmed from it; our address geocodes to our pin (0.0 km).",
+  "operating": "yes",
+  "official_address": null,
+  "location": "unknown",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-e90214ba71",
+  "name": "Natural Climb - Valencia",
+  "metro": null,
+  "expect_h": "31e1ec7c36051935",
+  "website": "https://naturalclimb.es/",
+  "hours": {
+   "mon": "8am–10pm",
+   "tue": "8am–10pm",
+   "wed": "8am–10pm",
+   "thu": "8am–10pm",
+   "fri": "8am–10pm",
+   "sat": "8am–10pm",
+   "sun": "8am–10pm"
+  },
+  "day_pass": "€12.95 adult (afternoons, weekends), €9.95 weekday mornings",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "yoga"
+  ],
+  "sources": [
+   {
+    "url": "https://naturalclimb.es/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "day_pass",
+     "facilities",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://naturalclimb.es/contacto/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://naturalclimb.es/instalaciones/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours: 'Abierto todos los dias de la semana, incluidos los festivos, de 08.00 a 22.00' (footer and contact page agree). Day pass: Mon-Fri 12-22h 12.95, Mon-Fri 8-12h 9.95, weekends/holidays 12.95, under 16 8.95. Facilities from the instalaciones page (zona infantil, cafeteria, Kilter, gimnasio/zona crossfit, warm-up/yoga zone) and home page (yoga y fitness, gastrobar); shoe hire: 'todo el material se puede alquilar en recepcion' (FAQ; pies de gato mandatory). Location check: Geocode 0.0 km from our pin.",
+  "operating": "yes",
+  "official_address": "Carrer dels Campaners 6, 46014 Valencia",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-6e04989a5a",
+  "name": "Hangar4 - A Coruña",
+  "metro": null,
+  "expect_h": "e68b17ce04f0d3c4",
+  "website": "https://hangar4.es/",
+  "hours": {
+   "mon": "10:30am–10pm",
+   "tue": "10:30am–10pm",
+   "wed": "10:30am–10pm",
+   "thu": "10:30am–10pm",
+   "fri": "10:30am–10pm",
+   "sat": "10am–8pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": "€12 adult, €10 reduced (students, federated, under 18)",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "yoga"
+  ],
+  "sources": [
+   {
+    "url": "https://hangar4.es/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://hangar4.es/contacto/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://hangar4.es/tarifas/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://hangar4.es/instalaciones/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours use the regular schedule on the contact page (Mon-Fri 10:30-22:00, Sat 10:00-20:00, Sun and holidays 10:00-20:00); the page also lists a Jun-Sep summer schedule (Sun/holidays 10:00-15:00) which was not used. Facilities: cafeteria, 200 m2 training zone with Moonboard/campus/system board, kids courses (Hangar4 Academy, 6-15), 100 m2 yoga studio, rental feet-shoes 4 euro/day. WARNING: the home page and instalaciones page contain injected off-topic spam text (dating-site article, ghostwriter link), which suggests the WordPress site was compromised; facts used here come from the normal page sections. Location check: Geocode 0.0-0.07 km from our pin (official street is Rua Madame Curie).",
+  "operating": "yes",
+  "official_address": "Calle Marie Curie 2-4, 15008 A Coruna",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-1e91e78898",
+  "name": "Mapache Climbing - Vigo",
+  "metro": null,
+  "expect_h": "09ecfe33ed1ac7fd",
+  "website": "https://mapacheclimbing.com/",
+  "hours": {
+   "mon": "10am–2pm, 4pm–10:30pm",
+   "tue": "10am–2pm, 4pm–10:30pm",
+   "wed": "10am–2pm, 4pm–10:30pm",
+   "thu": "10am–2pm, 4pm–10:30pm",
+   "fri": "10am–2pm, 4pm–10:30pm",
+   "sat": "11am–8pm",
+   "sun": "11am–8pm"
+  },
+  "day_pass": "€10 adult, €8 under 14",
+  "facilities": [
+   "cafe",
+   "training",
+   "shoe-hire",
+   "shop"
+  ],
+  "sources": [
+   {
+    "url": "https://mapacheclimbing.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://mapacheclimbing.com/tarifas",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://mapacheclimbing.com/instalaciones",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours identical in header, footer and tarifas page. Day pass 'Entrada diaria adultos 10 euro'; under 14: 8 euro (6.50 with a paying adult). Facilities: cafeteria/rest area, campus + Moonboard, rental feet-shoes 3 euro, merchandising shop (Tienda). Site footer says copyright 2022 and a home-page promo refers to July, so pages may be out of date; no closure notice seen. Location check: Geocode 0.0 km from our pin.",
+  "operating": "yes",
+  "official_address": "Av. Ricardo Mella 123, Vigo",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-5a6a2eb9b3",
+  "name": "Mg12 Rocódromo - Vigo",
+  "metro": null,
+  "expect_h": "c0c5e3a3f60639fe",
+  "website": "https://mg12.es/",
+  "hours": {
+   "mon": "10am–2pm, 4pm–10pm",
+   "tue": "10am–2pm, 4pm–10pm",
+   "wed": "10am–2pm, 4pm–10pm",
+   "thu": "10am–2pm, 4pm–10pm",
+   "fri": "10am–2pm, 4pm–10pm",
+   "sat": "11am–8pm",
+   "sun": "11am–8pm"
+  },
+  "day_pass": "€11 adult (over 14), €8 under 14",
+  "facilities": [
+   "cafe",
+   "shop",
+   "training",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://mg12.es/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://mg12.es/tarifas/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://mg12.es/instalaciones/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours from the home page (Mon-Fri 10-14 and 16-22, Sat-Sun 11-20); the tarifas page only says welcome all day every day of the year (not read as hours). Facilities: cafeteria with covered terrace and shop, training zone + campus + Moonboard, rental feet-shoes 3.50 euro. Home page also says 'aparcamiento facil' (easy parking), not explicit on-site parking, so parking omitted. Location check: Geocode of the official address is 0.0 km from our pin (OSM places the Rebullon industrial estate in Mos, on the Vigo boundary).",
+  "operating": "yes",
+  "official_address": "Poligono Industrial del Rebullon 72, 36416 Vigo (Pontevedra)",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-4c7b039c70",
+  "name": "The Other Climb - Santiago de Compostela",
+  "metro": null,
+  "expect_h": "a95d8244e444d816",
+  "website": "https://theotherclimb.com/",
+  "hours": {
+   "mon": "11am–10:30pm",
+   "tue": "11am–10:30pm",
+   "wed": "11am–10:30pm",
+   "thu": "11am–10:30pm",
+   "fri": "11am–9:30pm",
+   "sat": "11am–8pm",
+   "sun": "11am–8pm"
+  },
+  "day_pass": "€12.50 adult, €11.50 federated adult",
+  "facilities": [
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://theotherclimb.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://theotherclimb.com/tarifas",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours from home page (Mon-Thu 11:00-22:30, Fri 11:00-21:30, Sat/Sun/holidays 11:00-20:00); a July/August variant (Sat 11-15, Sun closed) was ignored as seasonal. Day pass 'Entrada Adulto >=16': 12.50 non-federated, 11.50 federated; child 9.50. Facilities: rental feet-shoes and harness (tarifas); kids school and supervised free practice from age 4 (home page). Official address taken from the Google Maps embed query on the home page (the site shows no written street address). Location check: Geocode 0.0 km from our pin.",
+  "operating": "yes",
+  "official_address": "Rua da Republica Checa 9, 15707 Santiago de Compostela",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-a2991c82dc",
+  "name": "GUD Climbing - Murcia",
+  "metro": null,
+  "expect_h": "9551a0389b7413e1",
+  "website": "https://gudclimbing.com/",
+  "hours": {
+   "mon": "8am–10pm",
+   "tue": "8am–10pm",
+   "wed": "8am–10pm",
+   "thu": "8am–10pm",
+   "fri": "8am–10pm",
+   "sat": "9am–9pm",
+   "sun": "9am–9pm"
+  },
+  "day_pass": "€12.50 adult, €9.50 child",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "yoga"
+  ],
+  "sources": [
+   {
+    "url": "https://gudclimbing.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://gudclimbing.com/tarifas/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   },
+   {
+    "url": "https://gudclimbing.com/empezar-a-escalar/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://gudclimbing.com/servicios/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours from the footer 'HORARIOS' block (Mon-Fri 08:00-22:00, Sat/Sun 09:00-21:00; restaurant and kitchen hours listed separately). Day pass 'Bono de dia' adult 12.50, child 9.50 (child up to 13). Facilities: restaurant (El Altillo), Gud Gym, Gud Kids zone, yoga classes, rental climbing shoes ('puedes alquilarlos aqui mismo'). Google-review text embedded on the home page was not used. Location check: Street-level geocode matched only the avenue (1.03 km along it); a geocode of 'Centro Comercial Thader' is 0.2 km from our pin, so the pin is at the shopping centre.",
+  "operating": "yes",
+  "official_address": "Centro Comercial Thader, Av. Juan de Borbon s/n, 30110 Churra, Murcia",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": "Climbat Murcia-Thader (climbat.com/centro/thader/, a different operator with Climbat Kids/trampolines) lists the same shopping-centre address (CC Thader, Av. Juan de Borbon s/n); GUD's own site does not mention Climbat. Probably two venues in one mall rather than a duplicate of this record; check whether the database also holds a Climbat Thader entry."
+ },
+ {
+  "id": "g-f005fcd504",
+  "name": "Rocópolis - Pamplona",
+  "metro": null,
+  "expect_h": "097f48025c66434b",
+  "website": "https://www.rocopolis.com/",
+  "hours": {
+   "mon": "8am–9:45pm",
+   "tue": "8am–9:45pm",
+   "wed": "8am–9:45pm",
+   "thu": "8am–9:45pm",
+   "fri": "8am–9pm",
+   "sat": "10am–8pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": "€12 adult full access, €8 boulder only, €9 under 22",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "showers"
+  ],
+  "sources": [
+   {
+    "url": "https://www.rocopolis.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.rocopolis.com/horario-contacto/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.rocopolis.com/tarifas/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   },
+   {
+    "url": "https://www.rocopolis.com/instalaciones/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours are for the main 'Rocopolis' hall (Mon-Thu 8:00-21:45, Fri 8:00-21:00, Sat/Sun/holidays 10:00-20:00). The boulder room has shorter hours (Mon-Thu 10-14 and 16-21:45, Fri 10-14 and 16-21, Sat/Sun 11-14 and 16:30-20). July closure notes ignored. Day pass: adult 'Completo' 12, 'Solo Boulder' 8, under 22: 9. Facilities from instalaciones: bar-restaurant, sala de musculacion, changing rooms with showers; children's play area (home page: 48 games). Shoe hire not stated on fetched pages. Location check: Geocode 0.0 km from our pin. The gym is in Berrioplano, a few km outside Pamplona (our name says Pamplona).",
+  "operating": "yes",
+  "official_address": "C/ Canada Real 20, Centro Empresarial Sarrio, 31195 Berrioplano (Navarra)",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-c413cc2f48",
+  "name": "Biwak Climbing - Derio",
+  "metro": null,
+  "expect_h": "9ec946abe2fe7775",
+  "website": "https://biwakexperience.com/",
+  "hours": {
+   "mon": "9am–9pm",
+   "tue": "9am–9pm",
+   "wed": "9am–9pm",
+   "thu": "9am–9pm",
+   "fri": "9am–9pm",
+   "sat": "9am–9pm",
+   "sun": "9am–9pm"
+  },
+  "day_pass": "€14.50 adult, €11 child",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "yoga",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://biwakexperience.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://biwakexperience.com/contacto/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://biwakexperience.com/rocodromo-en-bilbao/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://biwakexperience.com/tarifas-2025/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://biwakexperience.com/wp-content/uploads/2026/09/TARIFARIO-2026-abril-11.pdf",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours: contact page gives Mon-Fri 07:00-22:00 (including unstaffed reception), reception Mon-Fri 09:00-21:00, Sat/Sun/holidays 09:00-21:00; staffed hours used per brief. Day pass 'Entrada de dia' adult 14.5, child 11 from the official tarifa PDF 2026/27 linked on the site. Facilities: Brutal Gastrobar restaurant, training zone/Kilter/gym, Zona Txiki kids area, rental shoes 6 euro (tarifa PDF), yoga/pilates classes (tarifas page), 'Parking privado disponible' (footer). Gym is part of a multi-sport centre (padel, fitness). Location check: Geocode 0.0 km from our pin. Official domain is biwakexperience.com (biwakclimbing.com redirects there).",
+  "operating": "yes",
+  "official_address": "Astintze Kalea 4, 48160 Derio, Bizkaia",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-cb2731f0d2",
+  "name": "Climbat - Barakaldo",
+  "metro": null,
+  "expect_h": "66303e904348feec",
+  "website": "https://climbat.com/centro/barakaldo/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "10am–10pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": "€10.70 adult, €8.10 Mon-Fri 10am-5pm only",
+  "facilities": [
+   "cafe",
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://climbat.com/centro/barakaldo/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://climbat.com/wp-content/uploads/2026/07/TARIFA_BARAKALDO_ESP_2026_compressed.pdf",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Chain location page lists hours per day. Day pass from the official Barakaldo tarifa PDF 2026 linked from the location page: full-hours entry 10.70, reduced-hours (Mon-Fri 10-17h) 8.10, juvenil 7.50, infantil 6.80. Facilities: cafeteria (mentioned in the parents-school text), kids school/parties, rental feet-shoes 3.50 euro (tarifa PDF). Address on page: Avenida de la Ribera s/n (next to Yelmo cinemas); chain home page lists the centre as Barakaldo - Megapark. Location check: Geocode of Megapark / Avenida de la Ribera is 0.03-0.1 km from our pin.",
+  "operating": "yes",
+  "official_address": "Avenida de la Ribera s/n (junto a los Cines Yelmo), 48902 Barakaldo",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-26f92b9797",
+  "name": "Sputnik Climbing - Berango",
+  "metro": null,
+  "expect_h": "be6fdf9cb531e646",
+  "website": "https://sputnikclimbing.com/rocodromo-bizkaia/berango/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "10am–9pm",
+   "sun": "10am–9pm"
+  },
+  "day_pass": "€13 adult (online), €10 child 3-15",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://sputnikclimbing.com/rocodromo-bizkaia/berango/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://sputnikclimbing.com/rocodromo-bizkaia/berango/tarifas/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   },
+   {
+    "url": "https://sputnikclimbing.com/rocodromo-bizkaia/berango/instalaciones/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours 'Rocodromo' block (Mon-Fri 10-22h, Sat/Sun/holidays 10-21h). Day pass: Adulto tab 13 euro (online entry, valid 48 h); Infantil tab 10 euro (sold at reception; accompanying non-climbing adult 5). Facilities: La Cantina (cafe), training room with Kilter/campus plus fitness room, kids climbing zone, 'Parking privado disponible'. Chain site (Madrid, Lugones, Berango); only the Berango section used. Rental shoes not explicitly stated (tarifas say 'No incluye material'). Location check: Geocode of 'Sputnik Climbing Berango' is 0.0 km from our pin.",
+  "operating": "yes",
+  "official_address": "Errementariena Kalea 6, Berango, Bizkaia",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-5c0787a275",
+  "name": "The Factory Boulder - San Sebastián",
+  "metro": null,
+  "expect_h": "193e224cb1819bdc",
+  "website": "https://www.thefactoryboulder.com/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "10am–9pm",
+   "sun": "10am–9pm"
+  },
+  "day_pass": "€14 adult, €11 reduced (students 18-25), €10 under 18",
+  "facilities": [
+   "training",
+   "kids",
+   "shoe-hire",
+   "showers"
+  ],
+  "sources": [
+   {
+    "url": "https://www.thefactoryboulder.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://www.thefactoryboulder.com/contacto",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.thefactoryboulder.com/tarifas",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.thefactoryboulder.com/instalaciones",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours from contact page (Mon-Fri 10-22h, Sat/Sun/holidays 10-21h). Day pass 'Entrada general' 14, reduced 11 (students 18-25; over-25 weekday mornings until 16:00), minors 10. Facilities: specific training zone (campus, spray wall) and multi-function room, kids zone (250 m2), rental feet-shoes 4 euro, changing rooms with lockers and showers; chill-out seating area is not a cafe. Online shop exists, no on-site retail stated. Location check: Geocode 0.0 km from our pin.",
+  "operating": "yes",
+  "official_address": "Ursalto kalea 4, 20014 Donostia-San Sebastian",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ }
+]

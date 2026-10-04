@@ -1,0 +1,608 @@
+[
+ {
+  "item": 2,
+  "id": "seed-153",
+  "name": "Movement Denton",
+  "decisions": [
+   "retype",
+   "fill"
+  ],
+  "values": {
+   "types": [
+    "indoor-bouldering"
+   ],
+   "website": "https://movementgyms.com/denton/",
+   "hours": {
+    "mon": "9am–10pm",
+    "tue": "9am–10pm",
+    "wed": "9am–10pm",
+    "thu": "9am–10pm",
+    "fri": "9am–10pm",
+    "sat": "9am–8pm",
+    "sun": "9am–6pm"
+   },
+   "day_pass": "$23 adult; $17 child (under 13); $20 student (M-F before 5pm with ID); USD",
+   "facilities": [
+    "yoga",
+    "training",
+    "shop",
+    "parking",
+    "shoe-hire"
+   ]
+  },
+  "evidence": [
+   {
+    "url": "https://movementgyms.com/denton/",
+    "supports": [
+     "types",
+     "hours",
+     "website",
+     "facilities"
+    ],
+    "accessed": "2026-10-04"
+   },
+   {
+    "url": "https://movementgyms.com/memberships-passes/",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ],
+    "accessed": "2026-10-04"
+   }
+  ],
+  "confidence": "high",
+  "notes": "Denton page states 'bouldering-only facility' (page meta/intro) and in the FAQ 'We do not offer rope climbing at this location'. Hours from the FAQ sentence on the Denton page. Day pass from the Denton block of the chain memberships-passes page (purchase links /denton/); shoes $6. Facilities: yoga studio, training area (Moon/Kilter boards, circuit wall, fitness area), fully-stocked gear shop, public parking behind gym (all on the Denton page)."
+ },
+ {
+  "item": 3,
+  "id": "seed-155",
+  "name": "Movement Fort Worth",
+  "decisions": [
+   "retype",
+   "fill"
+  ],
+  "values": {
+   "types": [
+    "indoor-bouldering"
+   ],
+   "website": "https://movementgyms.com/fort-worth/",
+   "hours": {
+    "mon": "8am–10pm",
+    "tue": "8am–10pm",
+    "wed": "8am–10pm",
+    "thu": "8am–10pm",
+    "fri": "8am–10pm",
+    "sat": "9am–8pm",
+    "sun": "9am–7pm"
+   },
+   "day_pass": "$23 adult; $17 child (under 13); $20 student (M-F before 5pm with ID); USD",
+   "facilities": [
+    "yoga",
+    "training",
+    "shop",
+    "parking",
+    "shoe-hire"
+   ]
+  },
+  "evidence": [
+   {
+    "url": "https://movementgyms.com/fort-worth/",
+    "supports": [
+     "types",
+     "hours",
+     "website",
+     "facilities"
+    ],
+    "accessed": "2026-10-04"
+   },
+   {
+    "url": "https://movementgyms.com/memberships-passes/",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ],
+    "accessed": "2026-10-04"
+   }
+  ],
+  "confidence": "high",
+  "notes": "Fort Worth page states 'bouldering-only facility' and in the FAQ 'We do not offer rope climbing at this location'. Hours from the FAQ sentence on the page. Day pass from the Fort Worth block of the chain memberships-passes page (purchase links /fort-worth/); shoes $6. Facilities from the page: in-house yoga studio, fitness areas and training boards, gear shop, free parking in front."
+ },
+ {
+  "item": 4,
+  "id": "seed-206",
+  "name": "Climbing Cave",
+  "decisions": [
+   "retire"
+  ],
+  "values": {
+   "reason_code": "closed",
+   "reason": "No official website, announcement or listing for a climbing gym at 28 Glen Dr, Queensbury could be found; it is not RockSport (which moved from the Sports Page on Quaker Road to 54 Carey Rd), so it is not a duplicate."
+  },
+  "evidence": [
+   {
+    "url": "https://www.rocksportny.com/",
+    "supports": [
+     "other: RockSport official site gives only 54 Carey Road, Queensbury; no mention of Climbing Cave or Glen Drive"
+    ],
+    "accessed": "2026-10-04"
+   }
+  ],
+  "confidence": "low",
+  "notes": "Duplicate hypothesis rejected: RockSport official site (rocksportny.com) shows only 54 Carey Rd; the Glens Falls Chronicle article 'Rocksport's big move' (news, used as a lead only) says RockSport relocated from the Sports Page on Quaker Road to Carey Road, never Glen Dr, so seed-206 is not an old RockSport name. Searched the web (several queries on Climbing Cave Queensbury / Glen Dr) and tried guessed domains (none resolve): only directory snippets (phone 518-798-4023, 9,000 sq ft) exist, no official source, no 2025/26 trace. No positive evidence of closure either; retire follows the owner's 'if unsure, retire' rule, so it is a judgement call (reason_code 'closed' is used for 'no verifiable gym at this place'). Fallback if the owner prefers not to retire without closure evidence: no-change."
+ },
+ {
+  "item": 5,
+  "id": "seed-253",
+  "name": "Treadstone Columbus",
+  "decisions": [
+   "retire",
+   "add-gym",
+   "fill"
+  ],
+  "values": {
+   "reason_code": "closed",
+   "reason": "Treadstone Climbing's official site no longer lists Milgen Rd, Columbus GA; it gives only 'New Location ON The River!' at 400 Brickyard Rd, Phenix City, AL 36869 (replaced by a new listing).",
+   "website": "https://www.treadstoneclimbing.com/",
+   "day_pass": "$25 with gear; $20 without gear (20% off military/first responders, 15% off students); USD",
+   "new_gym": {
+    "name": "Treadstone Climbing",
+    "address": "400 Brickyard Rd, Phenix City, AL 36869",
+    "suburb": "Phenix City",
+    "state": "Alabama",
+    "country": "US",
+    "lat": 32.409468,
+    "lng": -85.027365,
+    "coord_source": "OSM way 7955326 (house-number geocode of 400 Brickyard Road per the earlier location check; no OSM element for the gym itself); official address from treadstoneclimbing.com",
+    "types": [
+     "indoor-bouldering",
+     "top-rope"
+    ],
+    "website": "https://www.treadstoneclimbing.com/"
+   }
+  },
+  "evidence": [
+   {
+    "url": "https://www.treadstoneclimbing.com/",
+    "supports": [
+     "address",
+     "website"
+    ],
+    "accessed": "2026-10-04"
+   },
+   {
+    "url": "https://www.treadstoneclimbing.com/our-story",
+    "supports": [
+     "address"
+    ],
+    "accessed": "2026-10-04"
+   },
+   {
+    "url": "https://www.treadstoneclimbing.com/day-passes-memberships",
+    "supports": [
+     "day_pass",
+     "address"
+    ],
+    "accessed": "2026-10-04"
+   }
+  ],
+  "confidence": "medium",
+  "notes": "Official site (home, our-story, services, day-passes pages) lists only 400 Brickyard Rd, Phenix City, AL 36869 labelled 'New Location ON The River!'; Milgen Rd/Columbus is not mentioned anywhere, so treated as a move (retire + add). Name: the site calls itself 'Treadstone Climbing Gym' / 'Treadstone Climbing'; I propose 'Treadstone Climbing'. Coordinates are the earlier location_check values (not geocoded by me). Types are UNVERIFIED: the official site never names bouldering/top-rope (describes 'Parkour, Climbing and Ninja Warrior Training', gear rentals, belay-related classes); I carried over the old record's types. Hours deliberately not given: Sunday is inconsistent on the site (home page 'Sun: Closed *'; other pages 'Sun: 2-6*', Sundays to become members-only); M-F 3-9pm, Sat 12-8pm (EST). Site footer reads (c) 2021, so the site is not obviously maintained; operation in 2026 could not be confirmed from official sources beyond the site still being live."
+ },
+ {
+  "item": 6,
+  "id": "seed-111",
+  "name": "Boneyard Boulders",
+  "decisions": [
+   "no-change",
+   "fill"
+  ],
+  "values": {
+   "website": "https://www.urbanaboulders.com/",
+   "hours": {
+    "mon": "12pm–10pm",
+    "tue": "12pm–10pm",
+    "wed": "12pm–10pm",
+    "thu": "12pm–10pm",
+    "fri": "12pm–10pm",
+    "sat": "12pm–10pm",
+    "sun": "12pm–10pm"
+   },
+   "day_pass": "$20 adult (22+); $18 ages 21 and under; USD (one pass works at both Urbana Boulders and Boneyard Boulders)",
+   "facilities": [
+    "shoe-hire"
+   ]
+  },
+  "evidence": [
+   {
+    "url": "https://www.urbanaboulders.com/",
+    "supports": [
+     "address",
+     "hours",
+     "not-duplicate"
+    ],
+    "accessed": "2026-10-04"
+   },
+   {
+    "url": "https://www.urbanaboulders.com/membership-passes",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ],
+    "accessed": "2026-10-04"
+   },
+   {
+    "url": "https://www.urbanaboulders.com/frequentlyaskedquestions",
+    "supports": [
+     "not-duplicate"
+    ],
+    "accessed": "2026-10-04"
+   }
+  ],
+  "confidence": "high",
+  "notes": "Not a duplicate: the official home page lists two separate gyms ('Two Locations, One Membership'): Urbana Boulders, 1502 N Cunningham Ave, Urbana, and Boneyard Boulders, 119 E University Ave, Champaign, with different hours, phones and emails; the FAQ calls them an extension of each other. Keep both. Boneyard hours 'Open Daily from 12pm - 10pm'. Day pass prices from the shared pricing page. Rental shoes $4 (shoes + chalk bag $6). No separate Boneyard website resolved (www.boneyardboulders.com did not respond), so the shared site is used. Yoga/fitness not confirmed on current pages, so not listed."
+ },
+ {
+  "item": 8,
+  "id": "seed-308",
+  "name": "MetroRock Newburyport",
+  "decisions": [
+   "rename",
+   "fill"
+  ],
+  "values": {
+   "name": "Salt Pump Newburyport",
+   "website": "https://www.saltpumpclimbing.com/newburyport-massachusetts/",
+   "hours": {
+    "mon": "10am–10pm",
+    "tue": "10am–10pm",
+    "wed": "10am–10pm",
+    "thu": "10am–10pm",
+    "fri": "10am–10pm",
+    "sat": "9am–6pm",
+    "sun": "9am–6pm"
+   },
+   "day_pass": "$23 adult (18+); $20.70 discounted (youth 17 & under, students, military/veterans, 65+, AAC members); $18.50 child (12 & under); $10 kids (5 & under); USD",
+   "facilities": [
+    "shoe-hire",
+    "kids"
+   ]
+  },
+  "evidence": [
+   {
+    "url": "https://www.saltpumpclimbing.com/newburyport-massachusetts/",
+    "supports": [
+     "name",
+     "address",
+     "website"
+    ],
+    "accessed": "2026-10-04"
+   },
+   {
+    "url": "https://www.saltpumpclimbing.com/newburyport-massachusetts/hours/",
+    "supports": [
+     "hours"
+    ],
+    "accessed": "2026-10-04"
+   },
+   {
+    "url": "https://www.saltpumpclimbing.com/newburyport-massachusetts/rates/",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ],
+    "accessed": "2026-10-04"
+   }
+  ],
+  "confidence": "high",
+  "notes": "Official Salt Pump page: 'Welcome to Salt Pump Newburyport', facility at 40 Parker Street, Newburyport, MA 01950 (zip differs from our 01913; same street address). Hours: Mon-Thu 10am-10pm, Fri 10am-9pm, Sat/Sun 9am-6pm. Rentals: shoes $6, harness $6, belay device $3, package $13. Site offers Intro to Bouldering and Intro to Ropes, so existing types stay. Kids: youth programs (after-school, group, parties, team) listed. Pages read via the r.jina.ai reader for clean text (official page text)."
+ },
+ {
+  "item": 9,
+  "id": "seed-116",
+  "name": "First Ascent – Peoria",
+  "decisions": [
+   "no-change",
+   "fill"
+  ],
+  "values": {
+   "website": "https://www.faclimbing.com/peoria",
+   "hours": {
+    "mon": "12pm–9pm",
+    "tue": "12pm–9pm",
+    "wed": "12pm–9pm",
+    "thu": "12pm–9pm",
+    "fri": "12pm–9pm",
+    "sat": "10am–6pm",
+    "sun": "10am–6pm"
+   },
+   "facilities": [
+    "yoga",
+    "training",
+    "shoe-hire",
+    "kids"
+   ]
+  },
+  "evidence": [
+   {
+    "url": "https://www.faclimbing.com/peoria",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ],
+    "accessed": "2026-10-04"
+   },
+   {
+    "url": "https://www.faclimbing.com/locations",
+    "supports": [
+     "address"
+    ],
+    "accessed": "2026-10-04"
+   },
+   {
+    "url": "https://www.faclimbing.com/faqs",
+    "supports": [
+     "types",
+     "facilities"
+    ],
+    "accessed": "2026-10-04"
+   }
+  ],
+  "confidence": "medium",
+  "notes": "faclimbing.com returns 403 (IP geo-block) to direct curl; read via the r.jina.ai reader (official page text). Locations page confirms 927 SW Washington St, Peoria, IL 61602, matching our record. Peoria page hours: M-F 12:00 PM-9:00 PM, Sa/Su 10:00 AM-6:00 PM. FAQ names Peoria as a roped climbing gym with auto belays and also covers bouldering, so top-rope + bouldering stays. The FAQ also mentions belay checks for lead climbing chain-wide, but a Peoria-specific lead statement was not confirmed, so no lead-climbing retype. Facilities from the chain FAQ (all locations: yoga schedule, cardio/weights/functional training; rental shoes) plus the Peoria youth programs page. Day pass and rental prices are not on the reachable pages (they sit behind the bot-protected member portal), so day_pass is omitted."
+ },
+ {
+  "item": 10,
+  "id": "seed-293",
+  "name": "Carabiner's Climbing Wall",
+  "decisions": [
+   "rename",
+   "retype",
+   "fill"
+  ],
+  "values": {
+   "name": "Carabiner's Climbing & Fitness",
+   "types": [
+    "indoor-bouldering",
+    "top-rope",
+    "lead-climbing"
+   ],
+   "website": "https://www.carabiners.com/",
+   "hours": {
+    "mon": "12pm–10pm",
+    "tue": "12pm–10pm",
+    "wed": "12pm–10pm",
+    "thu": "12pm–10pm",
+    "fri": "12pm–10pm",
+    "sat": "10am–8pm",
+    "sun": "10am–7pm"
+   },
+   "day_pass": "$20 adult (without gear); $17 student; $15 child (under 10); USD",
+   "facilities": [
+    "training",
+    "showers",
+    "parking",
+    "shop",
+    "shoe-hire"
+   ]
+  },
+  "evidence": [
+   {
+    "url": "https://www.carabiners.com/",
+    "supports": [
+     "name",
+     "types",
+     "hours",
+     "facilities",
+     "address"
+    ],
+    "accessed": "2026-10-04"
+   },
+   {
+    "url": "https://www.carabiners.com/hours-rates",
+    "supports": [
+     "day_pass",
+     "hours",
+     "facilities"
+    ],
+    "accessed": "2026-10-04"
+   }
+  ],
+  "confidence": "high",
+  "notes": "Site title, footer and address block all read 'Carabiner's Climbing & Fitness', 328 Parker St, New Bedford, MA 02740 (same venue, address unchanged). Home page: '65-ft walls ... top-rope, lead, bouldering, plus a full fitness floor ... auto-belays', so lead-climbing is added. Amenities list: Kilter + Moon board, free weights/cardio, showers, lockers, parking, retail shop, rental gear (shoes $5, harness $5). Hours: Mon-Fri 12pm-10pm, Sat 10am-8pm, Sun 10am-7pm. $10 first-visit offer ignored. Read via the r.jina.ai reader."
+ },
+ {
+  "item": 11,
+  "id": "seed-1744",
+  "name": "Grand River Rocks",
+  "decisions": [
+   "no-change",
+   "fill"
+  ],
+  "values": {
+   "website": "https://grandriverrocks.com/kitchener/",
+   "hours": {
+    "mon": "12pm–10pm",
+    "tue": "12pm–10pm",
+    "wed": "12pm–10pm",
+    "thu": "12pm–10pm",
+    "fri": "12pm–10pm",
+    "sat": "10am–10pm",
+    "sun": "10am–8pm"
+   },
+   "day_pass": "$24 adult; $21 discount (student, under 18, 55+); $14 toddler (3 and under); CAD, excluding HST",
+   "facilities": [
+    "yoga",
+    "training",
+    "shop",
+    "kids",
+    "shoe-hire"
+   ]
+  },
+  "evidence": [
+   {
+    "url": "https://grandriverrocks.com/kitchener/",
+    "supports": [
+     "hours",
+     "website"
+    ],
+    "accessed": "2026-10-04"
+   },
+   {
+    "url": "https://grandriverrocks.com/kitchener/contact-us/us/",
+    "supports": [
+     "address"
+    ],
+    "accessed": "2026-10-04"
+   },
+   {
+    "url": "https://grandriverrocks.com/kitchener/pricing/general-pricing/",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ],
+    "accessed": "2026-10-04"
+   },
+   {
+    "url": "https://grandriverrocks.com/kitchener/first-time/",
+    "supports": [
+     "types",
+     "facilities"
+    ],
+    "accessed": "2026-10-04"
+   }
+  ],
+  "confidence": "high",
+  "notes": "Site geo-blocks this network; read via the r.jina.ai reader (official page text). Official about text: in June 2024 the Kitchener location moved to 264 Victoria St N, matching our record (we hold N2H 5C8; the page text gives no postal code). Record stays: gym is open; boulders, top-rope/auto-belays and a Lead Course are all listed, so the three types stay. FAQ says 'We have 2 boulders in our gym' (bouldering-light), kept as is. Hours exclude members-only Tue/Thu 6am-noon. Rentals: shoes/harness $6+tax each. Facilities: large yoga studio and workout area, gear shop (10% member discount), Kids Corner, rentals."
+ },
+ {
+  "item": 12,
+  "id": "seed-387",
+  "name": "The BoardRoom",
+  "decisions": [
+   "rename",
+   "retype",
+   "fill"
+  ],
+  "values": {
+   "name": "The Pad Climbing – Santa Barbara",
+   "types": [
+    "indoor-bouldering",
+    "top-rope",
+    "lead-climbing"
+   ],
+   "website": "https://thepadclimbing.org/santa-barbara/",
+   "hours": {
+    "mon": "11am–10pm",
+    "tue": "11am–10pm",
+    "wed": "11am–10pm",
+    "thu": "11am–10pm",
+    "fri": "11am–10pm",
+    "sat": "10am–9pm",
+    "sun": "10am–9pm"
+   },
+   "day_pass": "$33 adult day pass (3pm–10pm); $25 early bird (11am–3pm Mon–Fri); $25 youth (under 18); free rental shoes; USD",
+   "facilities": [
+    "training",
+    "kids",
+    "shop",
+    "parking",
+    "shoe-hire"
+   ]
+  },
+  "evidence": [
+   {
+    "url": "https://thepadclimbing.org/santa-barbara/",
+    "supports": [
+     "name",
+     "types",
+     "facilities"
+    ],
+    "accessed": "2026-10-04"
+   },
+   {
+    "url": "https://thepadclimbing.org/location-hours-sb/",
+    "supports": [
+     "address",
+     "hours",
+     "facilities"
+    ],
+    "accessed": "2026-10-04"
+   },
+   {
+    "url": "https://thepadclimbing.org/rates-sb/",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ],
+    "accessed": "2026-10-04"
+   }
+  ],
+  "confidence": "high",
+  "notes": "Official site: 5160 Hollister Ave = 'Full Service Gym' (The Pad Climbing - Santa Barbara; rope 9,500 sq ft with 25-37 ft walls and 10 auto belays, bouldering 5,000 sq ft, lead climbs, Moon/Woods/spray wall/campus board, kids area, retail, weights+cardio); 5140 Hollister Ave = BoardRoom, a members-only 24/7 annex across the parking lot. Our pin/address are the public gym, so rename (not duplicate: no other seed record for the Santa Barbara Pad; seed-390 is the San Luis Obispo gym). Hours are the staffed hours (11am-10pm Mon-Fri, 10am-9pm Sat/Sun); members have 24/7 access and member rope mornings 8:30-11am M-F. Showers are member-only in the BoardRoom, so not listed. A separate add-gym for the members-only BoardRoom is not proposed."
+ },
+ {
+  "item": 13,
+  "id": "seed-376",
+  "name": "Sancturary Climbing & Fitness",
+  "decisions": [
+   "rename",
+   "retype",
+   "fill"
+  ],
+  "values": {
+   "name": "Sanctuary Climbing & Fitness",
+   "types": [
+    "indoor-bouldering",
+    "top-rope"
+   ],
+   "website": "https://www.rockgym.com/",
+   "hours": {
+    "mon": "2pm–9pm",
+    "tue": "8am–9pm",
+    "wed": "8am–9pm",
+    "thu": "8am–9pm",
+    "fri": "8am–9pm",
+    "sat": "9am–6pm",
+    "sun": "12pm–6pm"
+   },
+   "day_pass": "$27 individual; $22 students/military; $22 community heroes/seniors (55+); $35 kid & their grown-up; USD",
+   "facilities": [
+    "yoga",
+    "training",
+    "kids",
+    "shoe-hire"
+   ]
+  },
+  "evidence": [
+   {
+    "url": "https://www.rockgym.com/",
+    "supports": [
+     "name",
+     "address",
+     "hours",
+     "website"
+    ],
+    "accessed": "2026-10-04"
+   },
+   {
+    "url": "https://www.rockgym.com/day-use",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ],
+    "accessed": "2026-10-04"
+   },
+   {
+    "url": "https://www.rockgym.com/faqs",
+    "supports": [
+     "types",
+     "facilities"
+    ],
+    "accessed": "2026-10-04"
+   }
+  ],
+  "confidence": "high",
+  "notes": "Official name 'Sanctuary Climbing & Fitness' at 1760 Fremont Boulevard #D2, Seaside, CA 93955 (matches our record). FAQ: 'Bouldering and roped climbing', 16-18 ft walls, TRUBLUE auto-belay devices, rent shoes/harnesses/belay hardware, belayer/ropes class, so top-rope is added; lead is not stated. Yoga and Pilates, weight and cardio studio, kids climbing classes. No lockers (cubbies). Rentals: shoes $6, harness & shoes $11. Closed on listed holidays. Read via the r.jina.ai reader."
+ }
+]

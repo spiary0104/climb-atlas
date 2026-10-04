@@ -1,0 +1,224 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-04-review-identity-1",
+ "index": {
+  "sha256": "30b57d53427d387e17b4bd4f6c192ec8063875fd05d3d2d405279fa706ff55ca",
+  "count": 2272,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [],
+ "counts": {
+  "records": 8,
+  "new": 0,
+  "existing": 0,
+  "update": 8,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 5
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "e5e48d3f1eaf7e6190bf42568c8428b713a311c21eee63d94dd8d22728df5165",
+ "records": [
+  {
+   "line": 1,
+   "class": "update",
+   "id": "seed-153",
+   "changes": [
+    {
+     "field": "types",
+     "before": [
+      "indoor-bouldering",
+      "top-rope"
+     ],
+     "after": [
+      "indoor-bouldering"
+     ]
+    }
+   ],
+   "expect_h": "89d3811c993afb2c",
+   "update_reason": "Type tags: the official page says the gym is bouldering-only (no rope climbing at this location) (verified 2026-10-04)"
+  },
+  {
+   "line": 2,
+   "class": "update",
+   "id": "seed-155",
+   "changes": [
+    {
+     "field": "types",
+     "before": [
+      "indoor-bouldering",
+      "top-rope"
+     ],
+     "after": [
+      "indoor-bouldering"
+     ]
+    }
+   ],
+   "expect_h": "dd3949eae99f085c",
+   "update_reason": "Type tags: the official page says the gym is bouldering-only (no rope climbing at this location) (verified 2026-10-04)"
+  },
+  {
+   "line": 3,
+   "class": "update",
+   "id": "seed-293",
+   "changes": [
+    {
+     "field": "name",
+     "before": "Carabiner's Climbing Wall",
+     "after": "Carabiner's Climbing & Fitness"
+    },
+    {
+     "field": "types",
+     "before": [
+      "indoor-bouldering",
+      "top-rope"
+     ],
+     "after": [
+      "indoor-bouldering",
+      "top-rope",
+      "lead-climbing"
+     ]
+    }
+   ],
+   "expect_h": "997f1d82737b240e",
+   "update_reason": "Current official name; the home page offers top-rope, lead and bouldering (verified 2026-10-04)",
+   "warnings": [
+    {
+     "code": "rename",
+     "field": "name",
+     "message": "renames \"Carabiner's Climbing Wall\" -> \"Carabiner's Climbing & Fitness\""
+    }
+   ]
+  },
+  {
+   "line": 4,
+   "class": "update",
+   "id": "seed-387",
+   "changes": [
+    {
+     "field": "name",
+     "before": "The BoardRoom",
+     "after": "The Pad Climbing – Santa Barbara"
+    },
+    {
+     "field": "types",
+     "before": [
+      "indoor-bouldering"
+     ],
+     "after": [
+      "indoor-bouldering",
+      "top-rope",
+      "lead-climbing"
+     ]
+    }
+   ],
+   "expect_h": "e63a7c69dd35d2c9",
+   "update_reason": "The public full-service gym at 5160 Hollister Ave is The Pad Climbing - Santa Barbara (ropes with auto-belays, lead, bouldering); The BoardRoom is its members-only annex (verified 2026-10-04)",
+   "warnings": [
+    {
+     "code": "rename",
+     "field": "name",
+     "message": "renames \"The BoardRoom\" -> \"The Pad Climbing – Santa Barbara\""
+    }
+   ]
+  },
+  {
+   "line": 5,
+   "class": "update",
+   "id": "seed-376",
+   "changes": [
+    {
+     "field": "name",
+     "before": "Sancturary Climbing & Fitness",
+     "after": "Sanctuary Climbing & Fitness"
+    },
+    {
+     "field": "types",
+     "before": [
+      "indoor-bouldering"
+     ],
+     "after": [
+      "indoor-bouldering",
+      "top-rope"
+     ]
+    }
+   ],
+   "expect_h": "a048e582bce24049",
+   "update_reason": "Name typo (Sancturary); the FAQ lists bouldering and roped climbing with auto-belays (verified 2026-10-04)",
+   "warnings": [
+    {
+     "code": "rename",
+     "field": "name",
+     "message": "renames \"Sancturary Climbing & Fitness\" -> \"Sanctuary Climbing & Fitness\""
+    }
+   ]
+  },
+  {
+   "line": 6,
+   "class": "update",
+   "id": "seed-1130",
+   "changes": [
+    {
+     "field": "name",
+     "before": "Bolder Neoliet - Rotterdam",
+     "after": "Boulder Neoliet Rotterdam"
+    }
+   ],
+   "expect_h": "86378022482054fb",
+   "update_reason": "Official trade name (Bolder was a misspelling) (verified 2026-10-04)",
+   "warnings": [
+    {
+     "code": "rename",
+     "field": "name",
+     "message": "renames \"Bolder Neoliet - Rotterdam\" -> \"Boulder Neoliet Rotterdam\""
+    }
+   ]
+  },
+  {
+   "line": 7,
+   "class": "update",
+   "id": "g-db0f20b48a",
+   "changes": [
+    {
+     "field": "types",
+     "before": [
+      "indoor-bouldering"
+     ],
+     "after": [
+      "indoor-bouldering",
+      "top-rope"
+     ]
+    }
+   ],
+   "expect_h": "b8ad18c686e9e1c2",
+   "update_reason": "Type tags: the official site lists 40+ rope / auto-belay routes besides bouldering (verified 2026-10-04)"
+  },
+  {
+   "line": 8,
+   "class": "update",
+   "id": "seed-1285",
+   "changes": [
+    {
+     "field": "name",
+     "before": "City Adventure Center CAC - Graz",
+     "after": "Kletterhalle Graz"
+    }
+   ],
+   "expect_h": "bbc6a6c4f0776289",
+   "update_reason": "Same venue (Idlhofgasse 74) now named Kletterhalle Graz under a new operator (verified 2026-10-04)",
+   "warnings": [
+    {
+     "code": "rename",
+     "field": "name",
+     "message": "renames \"City Adventure Center CAC - Graz\" -> \"Kletterhalle Graz\""
+    }
+   ]
+  }
+ ]
+}

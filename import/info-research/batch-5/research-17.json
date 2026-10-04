@@ -1,0 +1,650 @@
+[
+ {
+  "id": "seed-1353",
+  "name": "Ladeo Oy",
+  "expect_h": "fe96a2a442ddb2a9",
+  "website": "https://ladeo.fi/",
+  "hours": {
+   "mon": "2pm–9pm",
+   "tue": "2pm–9pm",
+   "wed": "2pm–9pm",
+   "thu": "2pm–9pm",
+   "fri": "2pm–9pm",
+   "sat": "12pm–6pm",
+   "sun": "12pm–6pm"
+  },
+  "day_pass": "€12 adult, €10 student/pensioner/unemployed",
+  "facilities": [
+   "cafe",
+   "training",
+   "shoe-hire",
+   "kids",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://ladeo.fi/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://ladeo.fi/?sivu=info",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://ladeo.fi/?sivu=hinnat",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://ladeo.fi/?sivu=kiipeily",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours Mon-Fri 14-21, Sat-Sun 12-18 on home and info pages; site also says current hours/shifts are posted on Instagram (not read). Facilities: Kahvio (cafe), Treeniparvi (training loft), shoe rental 3 EUR, children's wall, parking spaces on the site plot. Nominatim geocode of Laakerikatu 10 = our pin.",
+  "operating": "yes",
+  "official_address": "Laakerikatu 10, 15700 Lahti",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-1354",
+  "name": "yogaROCKS",
+  "expect_h": "8480389499bb9f5e",
+  "website": "https://yogarocks.fi/fi/",
+  "hours": {
+   "mon": "1pm–9pm",
+   "tue": "1pm–9pm",
+   "wed": "1pm–9pm",
+   "thu": "1pm–9pm",
+   "fri": "1pm–8pm",
+   "sat": "9am–5pm",
+   "sun": "12pm–5pm"
+  },
+  "day_pass": "€13 adult, €10 student/concession",
+  "facilities": [
+   "training",
+   "shoe-hire",
+   "shop",
+   "kids",
+   "yoga"
+  ],
+  "sources": [
+   {
+    "url": "https://yogarocks.fi/fi/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://yogarocks.fi/fi/kiipeily/tutustu-boulderointiin.html",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://yogarocks.fi/fi/kiipeily/kiipeily-hinnasto.html",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours are given as customer-service hours on the home page and as the bouldering opening hours (no exceptions listed) on the climbing page; both agree. Training: Moonboard, system board, strength area; shop: 10% off in 'our shop' climbing products; kids: children's climbing groups/parties; yoga: yoga studio at same address (Saksalankatu 26). Nominatim geocode of address = our pin.",
+  "operating": "yes",
+  "official_address": "Saksalankatu 26, 15100 Lahti",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-1357",
+  "name": "Tampere Climbing Center",
+  "expect_h": "daca8ce733ce620a",
+  "website": "https://tampereenkiipeilykeskus.fi/fi-fi/article/etusivu/tk-nekala/161/",
+  "hours": {
+   "mon": "9am–9pm",
+   "tue": "9am–9pm",
+   "wed": "9am–9pm",
+   "thu": "9am–9pm",
+   "fri": "9am–9pm",
+   "sat": "9am–9pm",
+   "sun": "9am–9pm"
+  },
+  "day_pass": "€16 adult, €14 student/unemployed/pensioner",
+  "facilities": [
+   "training",
+   "shoe-hire",
+   "shop",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://tampereenkiipeilykeskus.fi/fi-fi/article/etusivu/tk-nekala/161/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://tampereenkiipeilykeskus.fi/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://tampereenkiipeilykeskus.fi/fi-fi/hinnasto/41/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://tampereenkiipeilykeskus.fi/yhteystiedot",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   }
+  ],
+  "status": "flag",
+  "notes": "MOVED. Operator Tampereen Kiipeilykeskus Oy (English: Tampere Climbing Center) says the original TK Nekala hall (2009-2025) was replaced by a new hall that opened 27.12.2025 on the 3rd floor of GRIP Action Sports Hub, Viinikankatu 55, 33800 Tampere. Official pages do not state the old street address (a web-search snippet, not used as a source, gave Mantyhaantie 2 with Nekala's phone 010 420 4422). Hours, price and facilities below are for the NEW hall (Nekala daily 9-21; sauna 18-20.45 not listed). Price list is shared by both TK halls (adult single entry 16 EUR, 12 EUR weekdays before 15:00, student 14 EUR). Nominatim: Mantyhaantie 2 = our pin; Viinikankatu 55 is ~0.45 km from our pin. Same business as seed-1358 (separate hall, Lielahti).",
+  "operating": "yes",
+  "official_address": "GRIP Action Sports Hub, Viinikankatu 55, 33800 Tampere",
+  "location": "mismatch",
+  "renamed_to": null,
+  "duplicate_of_hint": "Our record = old TK Nekala location (Mantyhaantie 2) of Tampereen Kiipeilykeskus / 'Tampere Climbing Center'; the hall now trades as TK Nekala at Viinikankatu 55 (~0.45 km away). Not a duplicate of seed-1358, which is the same operator's other hall (TK Lielahti)."
+ },
+ {
+  "id": "seed-1358",
+  "name": "Tampereen Kiipeilykeskus",
+  "expect_h": "c2d5a6a8d5d3271c",
+  "website": "https://tampereenkiipeilykeskus.fi/fi-fi/article/etusivu/tk-lielahti/162/",
+  "hours": {
+   "mon": "1pm–8pm",
+   "tue": "1pm–8pm",
+   "wed": "1pm–8pm",
+   "thu": "1pm–8pm",
+   "fri": "1pm–8pm",
+   "sat": "10am–5pm",
+   "sun": "10am–5pm"
+  },
+  "day_pass": "€16 adult, €14 student/unemployed/pensioner",
+  "facilities": [
+   "training",
+   "shoe-hire",
+   "shop",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://tampereenkiipeilykeskus.fi/fi-fi/article/etusivu/tk-lielahti/162/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://tampereenkiipeilykeskus.fi/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://tampereenkiipeilykeskus.fi/fi-fi/hinnasto/41/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://tampereenkiipeilykeskus.fi/yhteystiedot",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "TK Lielahti: Mon-Fri 13-20, Sat-Sun 10-17 (staffed hours; card holders and members 16+ have 24/7 app access, ignored). Price list shared by both TK halls (adult 16 EUR; 12 EUR weekdays before 15:00; student 14 EUR). Facilities: gym, Kilter training board, street workout, family (age-free) climbing area, rental shoes 3 EUR, TK Shop. Nominatim: Harjuntausta 6 = our pin.",
+  "operating": "yes",
+  "official_address": "Harjuntausta 6, 33400 Tampere",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": "Same operator as seed-1357 (TK Nekala); separate hall."
+ },
+ {
+  "id": "seed-1355",
+  "name": "Kaamos Climbing",
+  "expect_h": "68a399b31743e0d1",
+  "website": "https://kaamosclimbing.fi/",
+  "hours": null,
+  "day_pass": "€13 adult, €11 student",
+  "facilities": [
+   "training",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://kaamosclimbing.fi/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://kaamosclimbing.fi/info/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://kaamosclimbing.fi/hinnasto/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours null: climbing is 24/7 via online ticket; the only staffed hours are 'Asiakaspalvelu palvelee 28.9.-4.10.' (Tue-Fri 17-20, Sat 11-16, Mon/Sun closed), a dated one-week notice, so not used. Day pass 13 EUR (17 EUR with rental shoes), student 11 EUR (15-18 y, students, conscripts, unemployed). Facilities: gym area, Kilter Board, spray wall; rental shoes priced. Nominatim: Kallisenhaara 3 = our pin.",
+  "operating": "yes",
+  "official_address": "Kallisenhaara 3 B5, 90400 Oulu",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-1356",
+  "name": "Oulu Climbing Center",
+  "expect_h": "ad9d89cf0eb09288",
+  "website": "https://oulunkiipeilykeskus.fi/",
+  "hours": {
+   "mon": "8am–9pm",
+   "tue": "12pm–9pm",
+   "wed": "12pm–9pm",
+   "thu": "12pm–9pm",
+   "fri": "12pm–9pm",
+   "sat": "10am–6pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": "€14 adult, €11 under 18 (weekdays before 4pm €11)",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "shop",
+   "showers"
+  ],
+  "sources": [
+   {
+    "url": "https://oulunkiipeilykeskus.fi/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://oulunkiipeilykeskus.fi/yhteystiedot-aukioloajat/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://oulunkiipeilykeskus.fi/hinnat/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://oulunkiipeilykeskus.fi/kiipeilytilat/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Main hall hours (the 24/7 boulder across the road is separate, ignored). Single entry 14 EUR excludes rental; rental shoes 4 EUR. Facilities: kahvio and climbing shop at entrance, changing rooms with showers, warm-up/training equipment, Saturday family session (perhevuoro), kids birthday courses. Hours page lists only dated exceptions (28.9-4.10), not used. Nominatim: Paakakatu 7 = our pin.",
+  "operating": "yes",
+  "official_address": "Paakakatu 7, 90520 Oulu",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-1435",
+  "name": "Ba-Rock Boulder",
+  "expect_h": "d4fe438570c6ce6c",
+  "website": "https://ba-rock.wixsite.com/landing",
+  "hours": {
+   "mon": "2:30pm–9pm",
+   "tue": "2:30pm–9pm",
+   "wed": "2:30pm–9pm",
+   "thu": "2:30pm–9pm",
+   "fri": "2:30pm–9pm",
+   "sat": "2pm–7pm",
+   "sun": "Closed"
+  },
+  "day_pass": "3400 Ft adult, 3000 Ft age 14-18, 2600 Ft under 14",
+  "facilities": [
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://ba-rock.wixsite.com/landing",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "ba-rock.hu redirects (meta refresh) to this Wix page, the only official page. Sunday 'zarva vagyunk' stated explicitly; holiday hours may differ. Facilities: shoe rental 700 Ft, children's climbing sessions (4-7 y) run by an independent club. Page warns GPS misdirects: enter Vac, II. Rakoczi Ferenc ter, then follow HORNOS signs (inside an electronics industrial site). Nominatim: Zrinyi Miklos utca 39 (Hornos Kft) = our pin.",
+  "operating": "yes",
+  "official_address": "Zrínyi utca 39, 2600 Vác",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-1436",
+  "name": "Liget Boulder",
+  "expect_h": "3c28011170c95c03",
+  "website": "https://ligetboulder.hu/",
+  "hours": {
+   "mon": "8am–10pm",
+   "tue": "3pm–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "8am–9pm",
+   "sat": "10am–9pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": "3600 Ft adult, 2900 Ft student/teacher, 2600 Ft child",
+  "facilities": [
+   "cafe",
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://ligetboulder.hu/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://ligetboulder.hu/website/html/html-hun/opening_hours-hun.html",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://ligetboulder.hu/website/html/html-hun/prices-hun.html",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://ligetboulder.hu/website/html/html-hun/about_us-hun.html",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours page is undated and the site footer says 2023; Tuesday opening 15:00 is as published. Discounted off-peak entry (weekdays before 2pm and after 8pm) is 2800 Ft adult. Facilities: terrace with coffee/beer (about page), rental shoes 800 Ft, children's wall priced. Parking is a public garage with voucher (not on-site, not listed). Nominatim: Hovirag utca 1 = our pin.",
+  "operating": "yes",
+  "official_address": "Hóvirág utca 1, 8200 Veszprém",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-6f86cb6f45",
+  "name": "Iskra Center",
+  "expect_h": "97e7720d1f52f853",
+  "website": "https://iskraclimb.ru/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "10am–8pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": "₽750 adult (self-guided single visit)",
+  "facilities": [
+   "showers",
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://iskraclimb.ru/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://iskraclimb.ru/contacts",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://iskraclimb.ru/about",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://iskraclimb.ru/shares",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Official site is iskraclimb.ru (iskra-center.ru and iskracenter.ru are unrelated Moscow sites, not used). Official name 'Iskra.Tsentr' (Iskra Center), bouldering, at the Kalibr shopping complex. Hours: Mon-Fri 10-22, Sat-Sun 10-20 on both contacts and about pages (exception: summer camp). Price list is shared by all Iskra branches (adult self-guided visit 750 RUB; rental shoes 300 RUB); children's party only at Khudyakova. Facilities: changing rooms with showers, children's section 3.5 m. Nominatim: Khudyakova 12 k1 = our pin (0.05 km).",
+  "operating": "yes",
+  "official_address": "ул. Худякова, 12 к1 (ТК «Калибр»), Челябинск",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": "Same operator as g-245272594b (Iskra Severok, Moldavskaya 16); different hall."
+ },
+ {
+  "id": "g-245272594b",
+  "name": "Iskra Severok",
+  "expect_h": "897c6a81ef1768e6",
+  "website": "https://iskraclimb.ru/",
+  "hours": null,
+  "day_pass": "₽750 adult (self-guided single visit)",
+  "facilities": [
+   "showers",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://iskraclimb.ru/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://iskraclimb.ru/about",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://iskraclimb.ru/shares",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours null, official pages disagree: /contacts says Mon-Fri 9-22, Sat-Sun 10-20; /about says Mon 8:30-21, Tue-Fri 9-22, Sat 9:30-21, Sun 11-19. Official name 'Iskra.Severok', bouldering, 2nd floor of TRK Fokus, entrance left of M.Video. Price list is shared by all Iskra branches (750 RUB adult self-guided; rental shoes 300 RUB). Facilities: changing rooms with showers. Nominatim: Moldavskaya 16 (TRK Fokus) = our pin.",
+  "operating": "yes",
+  "official_address": "ул. Молдавская, 16 (ТРК «Фокус»), Челябинск",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": "Same operator as g-6f86cb6f45 (Iskra Center); different hall."
+ },
+ {
+  "id": "g-adaffdabdd",
+  "name": "Kray Sveta",
+  "expect_h": "51edac8dc5c75221",
+  "website": "https://kraisveta.com/",
+  "hours": {
+   "mon": "8:15am–10:30pm",
+   "tue": "8:15am–10:30pm",
+   "wed": "8:15am–10:30pm",
+   "thu": "8:15am–10:30pm",
+   "fri": "8:15am–10:30pm",
+   "sat": "9am–10pm",
+   "sun": "9am–10pm"
+  },
+  "day_pass": "₽750 adult, ₽1200 peak (self-guided, 16+)",
+  "facilities": [
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://kraisveta.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://kraisveta.com/contacts",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://kraisveta.com/price",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours: weekdays 8:15-22:30, weekends 9:00-22:00 (home, contacts and service pages agree). Day pass per /price: 750 RUB weekdays 8:15-16:00 and weekends after 18:00, 1200 RUB weekdays after 16:00 and weekends 9-18; but /uslugi/free shows 700/1000 RUB, so the exact price is uncertain (used the dedicated price page). Facilities: rental shoes/harness, children's room and kids climbing zone/school. Nominatim: Tveritina 45 = our pin.",
+  "operating": "yes",
+  "official_address": "ул. Тверитина, 45, Екатеринбург",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-734d215c65",
+  "name": "Rock and Wall (bouldering hall)",
+  "expect_h": "f42b20f084ed28f8",
+  "website": "https://rockandwall.ru/",
+  "hours": null,
+  "day_pass": "₽500 weekdays before 12pm, ₽700 before 4pm, ₽950 after 4pm",
+  "facilities": [
+   "training",
+   "yoga",
+   "showers",
+   "parking",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://rockandwall.ru/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://rockandwall.ru/price",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://rockandwall.ru/shop",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours null: home page says every day 8:00-23:00 for ul. Radishcheva 55, but the footer on /price and /shop says 09:00-23:00 daily. Day pass from the price table 'Svobodnye poseshcheniya' (weekday columns before 12:00 / before 16:00 / after 16:00); the weekend row reads 950/950/500 which looks like a typo, so not used. Facilities for the Radishcheva bouldering hall: workout zone, weights machines, campus, stretching/yoga hall, changing rooms with showers, free parking at the shopping centre, rental shoes. Nominatim: Radishcheva 55 = our pin.",
+  "operating": "yes",
+  "official_address": "ул. Радищева, 55, ТЦ «На Московской горке», 5 этаж, Екатеринбург",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": "Same operator also runs a lead hall at ul. Cherkasskaya 25 (not in our list)."
+ }
+]

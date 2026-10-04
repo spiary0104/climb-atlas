@@ -6,9 +6,10 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 (delete them; git keeps history). Keep this file under 60 lines.
 
 ## In progress
-### Gym information — 767 gyms covered (620 enriched + 49 retired 2026-10-04; PRs #44-#46, follow-up PR staged)
-- 54 follow-ups (`import/info-research/batch-4/FOLLOWUPS.md`): 24 location fixes staged (`2026-10-04-location-fixes`), 12 app edits (renames,
-  type tags) + 15 suburb edits, 17 need a decision. Future research: China/Korea (no own sites: needs a source decision), 1,066 non-metro gyms.
+### Gym information — batch 5 (+483 enriched, +25 retired) and all follow-ups APPLIED 2026-10-04 (PRs #44-#47 merged; #48-#50 open)
+- Applied + verified (704 records): batch 5 fills (468 + 15), 25 retirements, 4 new gyms, 126 location fixes, 52 identity edits
+  (#49 + review). `import/info-research/batch-5/{NOTES,REVIEW-RESOLUTIONS}.md`. Merge #48 -> #49 -> #50 to ship the sitemap.
+  Re-check: Arkose Cholet (not open), Klaettra Motala (temp. closed). Next: 456 gyms in unmeasured countries; CN/KR need a source decision.
 ### Final-stage sprint (gym information, metros, SEO, perf) — DONE: PR #37 merged and live in production 2026-10-03
 - Status: PR #37 (`integration/final-stage`) merged to master 2026-10-03 (merge commit `b58a79e`) and deployed by Vercel; production
   smoke test passed (/, gym, metro, region, /in, sitemap.xml 3,299 URLs, robots.txt, bot link previews; no console errors at
@@ -24,7 +25,6 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 - Status: launch-readiness merged (PRs #14-#16: /privacy, /terms, 404, security headers + CSP, climbatlas.org 308 redirect,
   pinned CDN + SRI, sign-in for edits/reports); all 10 migrations applied (security hardening 2026-10-02, docs/migrations.md);
   owner tested sign-in, submissions and moderation on production. Wave 1 IMPORTED (179) + Wave 2 IMPORTED (38) 2026-10-03; 5 + 11 pin fixes, 3 retirements (2 closed, 1 duplicate) and 7 Czech gyms applied; live 2,348.
-- Post-launch: gym-cap trigger migration 20261003000100 APPLIED.
 - Real-phone retest (check-in, eyes, Date/Mood) passed 2026-10-03; service-role key rotated 2026-10-03.
 - Legal pages simplified (PR #36, merged): no minimum age; 30-day deletion promise confirmed.
 - Open: Supabase Auth Redirect URLs: add preview domains (else sign-in lands on the Site URL). Phase 4 publish-then-review and

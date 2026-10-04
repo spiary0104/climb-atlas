@@ -1,0 +1,1190 @@
+[
+  {
+    "id": "seed-921",
+    "name": "Awesome Walls Liverpool",
+    "expect_h": "da9e4510c3ede307",
+    "website": "https://awesomewalls.co.uk/liverpool/",
+    "hours": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "10am–8pm",
+      "sun": "10am–8pm"
+    },
+    "day_pass": "£12 adult, £11.50 kids/student/over 60 (pay as you go, non-member)",
+    "facilities": [
+      "shoe-hire",
+      "shop",
+      "training"
+    ],
+    "sources": [
+      {
+        "url": "https://awesomewalls.co.uk/liverpool/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://awesomewalls.co.uk/liverpool-contact-us/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours from the Contact page (10-10 Mon-Fri, 10-8 Sat-Sun); the site footer shows different registration-desk hours (12-10pm, 10-5pm) which were not used. Liverpool page has two pay-as-you-go tables (adult 10/12 and 12.50/15); used the one matching the page hero \"Walk in from £12\"; judgement call. Facilities list refreshments, shop, training hub (cafe not stated explicitly so omitted). New climbers must book an induction first; experienced climbers can walk in.",
+    "operating": "yes",
+    "official_address": "St Albans Church, Athol Street, Liverpool, L5 9TN",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-860",
+    "name": "Big Rock Bond",
+    "expect_h": "e0ad7c74add2872e",
+    "website": "https://www.bigrockclimbing.com/centre/using-big-rock-bond/",
+    "hours": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "9am–8pm",
+      "sun": "9am–8pm"
+    },
+    "day_pass": "£14.80 adult, £13 concession, £11.30 under 18",
+    "facilities": [
+      "cafe",
+      "shop",
+      "training",
+      "parking",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://www.bigrockclimbing.com/centre/using-big-rock-bond/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.bigrockclimbing.com/prices/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Big Rock Bond, Unit 4 Bond Avenue, Bletchley MK1 1JJ. Our pin (Milton Keynes centre) is about 4.5 km NNW of the official address (Nominatim MK1 1JJ = 52.0102,-0.7168). Prices page is shared by both Big Rock centres. Shoe hire from the shared prices page.",
+    "operating": "yes",
+    "official_address": "Unit 4, Bond Avenue, Bletchley, Milton Keynes, MK1 1JJ",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-861",
+    "name": "Big Rock Hub",
+    "expect_h": "3291fc6faa01b44d",
+    "website": "https://www.bigrockclimbing.com/centre/using-big-rock-hub/",
+    "hours": {
+      "mon": "2:30pm–10pm",
+      "tue": "2:30pm–10pm",
+      "wed": "11am–10pm",
+      "thu": "2:30pm–10pm",
+      "fri": "2:30pm–10pm",
+      "sat": "9am–6pm",
+      "sun": "9am–6pm"
+    },
+    "day_pass": "£14.80 adult, £13 concession, £11.30 under 18",
+    "facilities": [
+      "cafe",
+      "shop",
+      "training",
+      "parking",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://www.bigrockclimbing.com/centre/using-big-rock-hub/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.bigrockclimbing.com/prices/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Big Rock Hub, Mandeville Drive, Kingston MK10 0AG. Our pin (52.04,-0.758) is about 4.8 km west of the official address (Nominatim MK10 0AG = 52.0386,-0.6876). Hours as published on the Hub page (weekday afternoons only, Wed from 11am); unusual but stated as the regular hours. Prices page shared with Bond.",
+    "operating": "yes",
+    "official_address": "Mandeville Drive, Kingston, Milton Keynes, MK10 0AG",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-931",
+    "name": "Boulder Exe",
+    "expect_h": "dd0d3794bd9f53a0",
+    "website": "https://boulderexe.co.uk/",
+    "hours": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "9am–7pm",
+      "sun": "9am–7pm"
+    },
+    "day_pass": "£14 adult, £12 concession",
+    "facilities": [
+      "cafe",
+      "training",
+      "kids",
+      "yoga",
+      "parking",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://boulderexe.co.uk/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://boulderexe.co.uk/contact/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://boulderexe.co.uk/pricing/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Pay as you go adult £14 (first climb £8 online). Parking: 6 hours free for paying climbers. Shoe hire only mentioned in passing on the homepage (rental shoes). Kids: young climbers 7+ programmes.",
+    "operating": "yes",
+    "official_address": "Boulder Exe, Tudor St, Exeter EX4 3BR",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-933",
+    "name": "Climb Kent",
+    "expect_h": "d91728ac1a8959cf",
+    "website": "https://www.climbkent.co.uk/page-public_climbing",
+    "hours": null,
+    "day_pass": "£12 adult open session (£2 discounts for BMC members and others)",
+    "facilities": [
+      "shoe-hire",
+      "parking"
+    ],
+    "sources": [
+      {
+        "url": "https://www.climbkent.co.uk/page-public_climbing",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.climbkent.co.uk/spage-public_climbing-open_sessions",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Kent Scouts-run roped centre (Lower Grange Farm) with a small bouldering area; public access is by booked sessions only (adult open session Tuesday 7-10pm, youth session Saturday 6-7pm), so no general weekly hours published (hours null). First visit needs a booked induction. Counts as public gym since sessions are bookable. Our pin (51.265,0.53) is about 3.5 km SSE of official address (Nominatim ME14 3DA = 51.2965,0.5225).",
+    "operating": "yes",
+    "official_address": "Lower Grange Farm Activity Centre, Grange Lane, Sandling, Maidstone, ME14 3DA",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-864",
+    "name": "Climbing Hut Ellesmere Port",
+    "expect_h": "f574dec8790e0575",
+    "website": "https://www.climbinghut.com/ellesmereport",
+    "hours": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "9am–8pm",
+      "sun": "9am–8pm"
+    },
+    "day_pass": "£14 adult, £12 concession",
+    "facilities": [
+      "kids",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://www.climbinghut.com/ellesmereport",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.climbinghut.com/ellesmereport/pricing",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass"
+        ]
+      },
+      {
+        "url": "https://www.climbinghut.com/ellesmereport/faqs",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Price is Main Walls adult (Ellesmere Port pricing page). Boulder Zoo / Boulder Play kids areas on homepage. Pin (53.2856,-2.8968) is about 1.6 km SW of the official address (Nominatim CH66 1ST = 53.2932,-2.9174), same town, so wrong_pin by the 1 km rule.",
+    "operating": "yes",
+    "official_address": "Unit 1, Olympic Park, Poole Hall Rd, Ellesmere Port, CH66 1ST",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-865",
+    "name": "Climbing Hut Shrewsbury",
+    "expect_h": "198b97edc9a78da9",
+    "website": "https://www.climbinghut.com/shrewsbury",
+    "hours": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "10am–8pm",
+      "sun": "10am–8pm"
+    },
+    "day_pass": "£14 adult bouldering, £12 concession",
+    "facilities": [
+      "shoe-hire",
+      "parking"
+    ],
+    "sources": [
+      {
+        "url": "https://www.climbinghut.com/shrewsbury",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.climbinghut.com/shrewsbury/pricing",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass"
+        ]
+      },
+      {
+        "url": "https://www.climbinghut.com/shrewsbury/faqs",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Bouldering adult £14 (tall walls £15.50). Free all-day parking per FAQ. Pin (52.7069,-2.7538) is about 4.2 km SSW of official address (Nominatim SY1 4AN = 52.7402,-2.7237).",
+    "operating": "yes",
+    "official_address": "Unit 3, Market Place, Battlefield Road, Shrewsbury, SY1 4AN",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-866",
+    "name": "Craggy Island",
+    "expect_h": "404a6f757d6022be",
+    "website": "https://spiderclimbing.com/blue-spider/",
+    "hours": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "9am–7:30pm",
+      "sun": "9am–7:30pm"
+    },
+    "day_pass": "£15.25 adult peak, £12.25 off-peak",
+    "facilities": [
+      "shoe-hire",
+      "shop"
+    ],
+    "sources": [
+      {
+        "url": "https://spiderclimbing.com/blue-spider/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://spiderclimbing.com/blue-spider/prices-and-memberships/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://spiderclimbing.com/craggy-island-are-now-part-of-the-spider-climbing-family/",
+        "accessed": "2026-10-04",
+        "supports": []
+      }
+    ],
+    "status": "flag",
+    "notes": "Craggy Island Guildford joined Spider Climbing (announcement on the old craggy-island.com redirect) and now trades as Blue Spider Climbing at the same address (Unit 9 Cobbett Park, Slyfield). Peak = weekdays 5-10pm and all weekend. Our pin (51.2362,-0.5704) is about 2.7 km SSW of the official address (Nominatim GU1 1RU = 51.2602,-0.5666).",
+    "operating": "yes",
+    "official_address": "Unit 9 Cobbett Park, Slyfield Industrial Estate, Moorfeld Road, Guildford, Surrey GU1 1RU",
+    "location": "wrong_pin",
+    "renamed_to": "Blue Spider Climbing",
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-867",
+    "name": "Creation Climbing Centre",
+    "expect_h": "4d9172e2b88c27ef",
+    "website": "https://creationwall.co.uk/",
+    "hours": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "10am–6pm",
+      "sun": "10am–6pm"
+    },
+    "day_pass": "£12.50 adult, £10.50 under 18/concession",
+    "facilities": [
+      "cafe",
+      "shop",
+      "training",
+      "kids",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://creationwall.co.uk/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://creationwall.co.uk/opening-times-prices/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://creationwall.co.uk/find-us/",
+        "accessed": "2026-10-04",
+        "supports": []
+      }
+    ],
+    "status": "found",
+    "notes": "Prices read from the price graphic (CCC-Prices.png) on the opening-times-prices page; the graphic also shows cafe, shop, training area and hire prices. Pin (52.4862,-1.8904) is about 3.5 km N of the official address (Nominatim B12 9AA = 52.4548,-1.8861).",
+    "operating": "yes",
+    "official_address": "582 Moseley Road, Birmingham, B12 9AA",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-918",
+    "name": "Depot Climbing Birmingham",
+    "expect_h": "7c7026ed482ed03b",
+    "website": "https://www.depotclimbing.co.uk/birmingham/",
+    "hours": {
+      "mon": "6am–10pm",
+      "tue": "6am–10pm",
+      "wed": "6am–10pm",
+      "thu": "6am–10pm",
+      "fri": "6am–10pm",
+      "sat": "9am–9pm",
+      "sun": "9am–9pm"
+    },
+    "day_pass": "£14 adult, £12.50 concession, £8.50 under 18",
+    "facilities": [
+      "training",
+      "kids",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://www.depotclimbing.co.uk/birmingham/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.depotclimbing.co.uk/birmingham/depot-climbing-opening-prices/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Digbeth, Sherlock Street. Pin (52.4949,-1.8518) is about 4.2 km NE of the official street (Nominatim Sherlock Street = 52.4683,-1.8965). Training = gym plus Tension 2 board; kids = Depot Play early-years sessions.",
+    "operating": "yes",
+    "official_address": "10 Sherlock Street, Birmingham, B5 6LU",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-869",
+    "name": "Eden Rock Carlisle",
+    "expect_h": "14ab81300a6b5cdc",
+    "website": "https://www.edenrockclimbing.com/carlisle-home",
+    "hours": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "10am–8pm",
+      "sun": "10am–8pm"
+    },
+    "day_pass": "£12.50 adult non-member, £10.50 concession",
+    "facilities": [
+      "cafe",
+      "shop",
+      "kids",
+      "parking"
+    ],
+    "sources": [
+      {
+        "url": "https://www.edenrockclimbing.com/carlisle-home",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.edenrockclimbing.com/contact-carlisle",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.edenrockclimbing.com/prices-carlisle",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Adult member entry £11.50, non-member £12.50 (annual membership £5). Pin (54.8951,-2.9382) is about 2.3 km NW of the official address (Nominatim Brunel Way = 54.8837,-2.9105).",
+    "operating": "yes",
+    "official_address": "9 Brunel Way, Durranhill Industrial Estate, Carlisle, CA1 3NQ",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-923",
+    "name": "Eden Rock Newcastle",
+    "expect_h": "4f05f24a908aa61f",
+    "website": "https://www.edenrockclimbing.com/newcastle",
+    "hours": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "9am–8pm",
+      "sun": "9am–8pm"
+    },
+    "day_pass": "£13.50 adult non-member, £12.50 adult member",
+    "facilities": [
+      "cafe",
+      "shop",
+      "training",
+      "kids",
+      "parking"
+    ],
+    "sources": [
+      {
+        "url": "https://www.edenrockclimbing.com/newcastle",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      },
+      {
+        "url": "https://www.edenrockclimbing.com/newcastle-opening-times-contact",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.edenrockclimbing.com/newcastle-prices",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass"
+        ]
+      },
+      {
+        "url": "https://www.edenrockclimbing.com/newcastle-facilities",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Benfield Business Park, NE6 4NQ; pin matches the postcode exactly. Facilities page lists Kids Area, Gym Area, Shop, Cafe and parking.",
+    "operating": "yes",
+    "official_address": "Benfield Business Park, Newcastle upon Tyne, NE6 4NQ",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-871",
+    "name": "Flashpoint Swindon",
+    "expect_h": "d33382e82abda8af",
+    "website": "https://www.rockstarclimbing.co.uk/",
+    "hours": {
+      "mon": "10:30am–10pm",
+      "tue": "10:30am–10pm",
+      "wed": "10:30am–10pm",
+      "thu": "10:30am–10pm",
+      "fri": "10:30am–10pm",
+      "sat": "9am–6pm",
+      "sun": "9am–6pm"
+    },
+    "day_pass": "£15 adult, £12.50 concession, £10 junior",
+    "facilities": [
+      "cafe",
+      "shop",
+      "shoe-hire",
+      "parking",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://www.rockstarclimbing.co.uk/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.rockstarclimbing.co.uk/prices",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.rockstarclimbing.co.uk/casual-climbing",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.rockstarclimbing.co.uk/contact-us",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "flag",
+    "notes": "No site found under the name Flashpoint Swindon: flashpointswindon.com answers with a 301 redirect to rockstarclimbing.co.uk (Rockstar Climbing Centre, Radway Road, Swindon SN3 4WH), and no fetched page states the rename, so the match is doubtful (judgement: probably the same venue renamed). Facilities and prices are Rockstar's. Pin (51.5558,-1.7797) is about 3.4 km SW of SN3 4WH (postcodes.io 51.5824,-1.7538).",
+    "operating": "yes",
+    "official_address": "Rockstar Climbing Centre, Radway Road, Swindon, Wiltshire SN3 4WH",
+    "location": "wrong_pin",
+    "renamed_to": "Rockstar Climbing Centre",
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-934",
+    "name": "Freeklime",
+    "expect_h": "baf5c9911ea3429e",
+    "website": "https://www.freeklime.co.uk/york",
+    "hours": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "10am–8pm",
+      "sun": "10am–8pm"
+    },
+    "day_pass": "£10.50 adult, £9 student/under 18, £9.50 over 60",
+    "facilities": [
+      "shoe-hire",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://www.freeklime.co.uk/york",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Freeklime York, Clifton Moor. Kids classes (NICAS, Lil/Mini Freeks) and shoe hire stated on the York page. Pin (53.955,-1.08) is about 3.9 km SSE of the official address (postcodes.io YO30 4XF = 53.9878,-1.0995).",
+    "operating": "yes",
+    "official_address": "Unit 16, Kettlestring Lane, Clifton Moor, York, YO30 4XF",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-874",
+    "name": "Highball Climbing Centre",
+    "expect_h": "96775a0cd099608f",
+    "website": "https://highballnorwich.co.uk/",
+    "hours": {
+      "mon": "12pm–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "8am–6pm",
+      "sun": "8am–6pm"
+    },
+    "day_pass": "£14 adult online (£15 at desk), £12 concession",
+    "facilities": [
+      "cafe",
+      "shop",
+      "kids",
+      "parking",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://highballnorwich.co.uk/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://highballnorwich.co.uk/info/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://highballnorwich.co.uk/info/prices/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://highballnorwich.co.uk/info/faqs/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Highball Norwich (Whiffler Road). Standard hours; Mondays 10am-10pm in summer holidays. All sessions are booked in advance. Beta Cafe, shop and kids climbing on the nav; 42 dedicated parking spaces per FAQ. Pin (52.6309,1.2974) is about 3.1 km SE of the official address (postcodes.io NR3 2AG = 52.6511,1.2662).",
+    "operating": "yes",
+    "official_address": "Unit 7, 5 Whiffler Road, Norwich, NR3 2AG",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-926",
+    "name": "Kelsey Kerridge",
+    "expect_h": "dfab79ff2f970b63",
+    "website": "https://kelseykerridge.co.uk/climbing-wall/",
+    "hours": {
+      "mon": "9am–11pm",
+      "tue": "9am–11pm",
+      "wed": "9am–11pm",
+      "thu": "9am–11pm",
+      "fri": "9am–11pm",
+      "sat": "9am–11pm",
+      "sun": "9am–11pm"
+    },
+    "day_pass": "£8.55 adult non-member peak, £7.50 off-peak",
+    "facilities": [
+      "training",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://kelseykerridge.co.uk/climbing-wall/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://kelseykerridge.co.uk/get-in-touch/",
+        "accessed": "2026-10-04",
+        "supports": []
+      }
+    ],
+    "status": "found",
+    "notes": "Cambridge Climbing Centre inside Kelsey Kerridge Sports Centre (leisure-centre wall; public pays per session). Peak = Mon-Fri 5-11pm and all day Sunday. Page says the centre does not hire out shoes or harnesses. Sports-centre hours on the Contact page are 9am-11pm daily (bank holidays to 8pm). Address from the Contact page: Cambridge, CB1 1NA (opposite Parkers Piece); pin matches that postcode.",
+    "operating": "yes",
+    "official_address": "Kelsey Kerridge Sports Centre, Gonville Place, Cambridge, CB1 1NA",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-876",
+    "name": "Newcastle Climbing Centre",
+    "expect_h": "0d74430ee28f7f0e",
+    "website": "https://www.newcastleclimbingcentre.co.uk/",
+    "hours": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "9am–8pm",
+      "sun": "9am–8pm"
+    },
+    "day_pass": "£15 adult day pass (all climbing), £9 boulder only",
+    "facilities": [
+      "shoe-hire",
+      "shop",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://www.newcastleclimbingcentre.co.uk/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.newcastleclimbingcentre.co.uk/about/opening-hours/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.newcastleclimbingcentre.co.uk/about/prices/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.newcastleclimbingcentre.co.uk/about/facilities/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "St Marks Church, Shields Road: roped walls, bouldering zone and auto belays. Pricing page: Day Pass £15 (all climbing), Boulder Only £9, member adult £13.50. Pin (54.9783,-1.6178) is about 2.7 km west of the official address (postcodes.io NE6 2UQ = 54.9787,-1.5754). Separate gym from seed-923 Eden Rock Newcastle.",
+    "operating": "yes",
+    "official_address": "St Marks Church House, 285 Shields Road, Newcastle upon Tyne, NE6 2UQ",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-877",
+    "name": "Nottingham Climbing Centre",
+    "expect_h": "27ac9021538ff608",
+    "website": "https://www.nottinghamclimbing.co.uk/",
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [
+      {
+        "url": "https://www.nottinghamclimbing.co.uk/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      }
+    ],
+    "status": "flag",
+    "notes": "Doubtful match. Nottingham Climbing Centre runs two sites: New Basford (212 Noel St, roped and bouldering; matches seed-922) and Lenton (3 Prospect Pl, NG7 1RS, bouldering only, 200+ problems). This entry has no address and its pin (52.9548,-1.1581) is about 1.2 km from Lenton and 2.2 km from Basford; its types include top-rope and lead (Basford-like). Likely a duplicate of seed-922, or the Lenton centre with a poor pin. No per-site data given here to avoid mixing the two.",
+    "operating": "yes",
+    "official_address": null,
+    "location": "unknown",
+    "renamed_to": null,
+    "duplicate_of_hint": "Probably the same venue as seed-922 (Nottingham Climbing Centre - Basford); Lenton site (3 Prospect Pl, NG7 1RS) has no other entry in this chunk."
+  },
+  {
+    "id": "seed-922",
+    "name": "Nottingham Climbing Centre - Basford",
+    "expect_h": "46b0f20e2c035d0b",
+    "website": "https://www.nottinghamclimbing.co.uk/basford",
+    "hours": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "9am–8pm",
+      "sun": "9am–8pm"
+    },
+    "day_pass": null,
+    "facilities": [
+      "cafe",
+      "shop",
+      "training",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://www.nottinghamclimbing.co.uk/basford",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.nottinghamclimbing.co.uk/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "New Basford centre: 28 lead lines, 26 top-rope lines, 150+ boulder problems, two training areas, cafe, kids bouldering area and party room. No prices on the site (booking system only), so day_pass null. Official address 212 Noel St, NG7 7FR (home page also prints NG7 AT); our stored postcode NG7 6AT differs but pin is only about 250 m from the official address.",
+    "operating": "yes",
+    "official_address": "212 Noel St, New Basford, Nottingham NG7 7FR",
+    "location": "mismatch",
+    "renamed_to": null,
+    "duplicate_of_hint": "seed-877 (Nottingham Climbing Centre) may be the same venue."
+  },
+  {
+    "id": "seed-880",
+    "name": "Parthian Climbing Reading",
+    "expect_h": "373f1d4b1a248438",
+    "website": "https://parthianclimbing.com/reading/",
+    "hours": {
+      "mon": "9am–10pm",
+      "tue": "9am–10pm",
+      "wed": "9am–10pm",
+      "thu": "9am–10pm",
+      "fri": "9am–10pm",
+      "sat": "9am–7pm",
+      "sun": "9am–7pm"
+    },
+    "day_pass": "£16 adult, £14 junior/concession, £10 youth/student",
+    "facilities": [
+      "cafe",
+      "shop",
+      "training",
+      "kids",
+      "parking"
+    ],
+    "sources": [
+      {
+        "url": "https://parthianclimbing.com/reading/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://parthianclimbing.com/reading/facilities/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Parthian Reading, Britten Road. One-time £3.50 registration fee excluded. Pin (51.4543,-0.9781) is about 1.4 km NNW of the official address (postcodes.io RG2 0AU = 51.4423,-0.9704).",
+    "operating": "yes",
+    "official_address": "Britten Road, Reading, Berkshire, RG2 0AU",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-927",
+    "name": "Rainbow Rocket North",
+    "expect_h": "b737ab2e6d780f8f",
+    "website": null,
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [],
+    "status": "not-found",
+    "notes": "No official site found. Probed likely domains: rainbowrocket.com redirects to a parked GoDaddy for-sale page (not confirmed to have been theirs); other guesses did not resolve. Web search budget was exhausted.",
+    "operating": "unknown",
+    "official_address": null,
+    "location": "unknown",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-883",
+    "name": "Red Goat",
+    "expect_h": "c7d3b385035a613e",
+    "website": "https://www.redgoatclimbing.co.uk/",
+    "hours": {
+      "mon": "9am–10pm",
+      "tue": "6:30am–10pm",
+      "wed": "6:30am–10pm",
+      "thu": "6:30am–10pm",
+      "fri": "9am–10pm",
+      "sat": "9am–8pm",
+      "sun": "10am–8pm"
+    },
+    "day_pass": "£10 adult single session",
+    "facilities": [
+      "cafe",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://www.redgoatclimbing.co.uk/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.redgoatclimbing.co.uk/times/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.redgoatclimbing.co.uk/prices/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.redgoatclimbing.co.uk/find-us/",
+        "accessed": "2026-10-04",
+        "supports": []
+      }
+    ],
+    "status": "found",
+    "notes": "Prices page: one-off session £10, shoe rental £3, induction £20. The site footer says 2022 and some pages look dated, so prices may be old. Official address 6 Redeness Street YO31 7UU (find-us page). Pin (53.96,-1.0873) is about 1.1 km west of it (postcodes.io 53.9618,-1.0710).",
+    "operating": "yes",
+    "official_address": "The Red Goat Climbing Wall, 6 Redeness Street, York, YO31 7UU",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-886",
+    "name": "Rock Punk",
+    "expect_h": "95c678b8e09021ca",
+    "website": "https://www.rockpunk.co.uk/",
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [
+      {
+        "url": "https://www.rockpunk.co.uk/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      }
+    ],
+    "status": "website-only",
+    "notes": "Spray-wall bouldering studio, 26a Magdalen Street NR3 1HU (address in the site structured data; pin about 0.7 km away). The home page shows only a notice \"Rock Punk is unable to take bookings\", while /home still offers session booking. No prices or displayed hours, so operating status unclear (possibly paused).",
+    "operating": "unknown",
+    "official_address": "26a Magdalen Street, Norwich, NR3 1HU",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-891",
+    "name": "The Boulder Bunker",
+    "expect_h": "9754e0bbc6397e63",
+    "website": "https://theboulderbunker.com/",
+    "hours": {
+      "mon": "2pm–9:30pm",
+      "tue": "10am–9:30pm",
+      "wed": "2pm–9:30pm",
+      "thu": "10am–9:30pm",
+      "fri": "2pm–9:30pm",
+      "sat": "10:30am–5:30pm",
+      "sun": "10:30am–5:30pm"
+    },
+    "day_pass": "£14 adult peak, £12 off-peak, £10 concession",
+    "facilities": [
+      "training",
+      "shoe-hire",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://theboulderbunker.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "flag",
+    "notes": "Now trades as The Bunker (formerly The Boulder Bunker), 11 South Street, Torquay TQ2 5AE, with escape room and paint-battle activities alongside bouldering. Hours: Opening Hours section says Mon-Fri 10am-9:30pm with the main room closed until 2pm Mon, Wed, Fri, Sat-Sun 10:30am-5:30pm; used the main-room times. Peak = after 4pm weekdays and weekends. Pin (50.4619,-3.5253) is about 1.5 km SE of the official address (postcodes.io TQ2 5AE = 50.4710,-3.5401).",
+    "operating": "yes",
+    "official_address": "11 South Street, Torquay, TQ2 5AE",
+    "location": "wrong_pin",
+    "renamed_to": "The Bunker",
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-893",
+    "name": "The Climbing Experience",
+    "expect_h": "e5f47bff58f1b1af",
+    "website": "https://theclimbingexperience.co.uk/",
+    "hours": {
+      "mon": "10am–10pm",
+      "tue": "1pm–10pm",
+      "wed": "10am–10pm",
+      "thu": "1pm–10pm",
+      "fri": "10am–10pm",
+      "sat": "10am–7pm",
+      "sun": "10am–7pm"
+    },
+    "day_pass": "£15 adult, £12 concession",
+    "facilities": [
+      "shoe-hire",
+      "kids",
+      "yoga",
+      "parking"
+    ],
+    "sources": [
+      {
+        "url": "https://theclimbingexperience.co.uk/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://theclimbingexperience.co.uk/passes",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://theclimbingexperience.co.uk/experienced-climbers",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Baltic Wharf, Maidstone. Tue/Thu open from 1pm in term time (10am in school holidays). Parking is free per the FAQ. Pin (51.2704,0.5227) is about 0.9 km from the official address (postcodes.io ME16 0ST = 51.2770,0.5162), within tolerance.",
+    "operating": "yes",
+    "official_address": "Unit G13 Baltic Wharf, St Peters Street, Maidstone, ME16 0ST",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  }
+]

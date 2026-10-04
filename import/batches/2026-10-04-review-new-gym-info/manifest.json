@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "updater_version": 1,
+  "kind": "update",
+  "batch_id": "2026-10-04-review-new-gym-info",
+  "status": "updated",
+  "target": {
+    "kind": "production",
+    "host": "thayxaampaelvntoaido.supabase.co"
+  },
+  "coverage": "FULL",
+  "plan_sha256": "bc1652fb3704660b1d8d20ca9f2710790a59c37c509dd97be93eacbb84b5047f",
+  "payload_sha256": "581b1c36b0db149fd6a81706bda0d522363f46f6f44dcefc5472e8371670726d",
+  "confirm_token": "ddb59734c6ccc34c",
+  "live_state_sha256": "d8a07609fac37a082f6d23366e50ab048d8e6faba26fdc977ee4f000d7645b61",
+  "rows_updated": 0,
+  "approved_before": 2272,
+  "approved_after": 2272,
+  "changes": [],
+  "rows_info_filled": 4,
+  "info_filled": [
+    {
+      "id": "g-93b94b6196",
+      "fields": [
+        "website",
+        "day_pass"
+      ],
+      "expect_h": "7b41f0f2381bb04a",
+      "after_h": "7b41f0f2381bb04a"
+    },
+    {
+      "id": "g-0bf1f11379",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "61f5c0549ea926bc",
+      "after_h": "61f5c0549ea926bc"
+    },
+    {
+      "id": "g-1c0ffa88fd",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "d11961606db89467",
+      "after_h": "d11961606db89467"
+    },
+    {
+      "id": "g-2432050418",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "2205e414c3924af3",
+      "after_h": "2205e414c3924af3"
+    }
+  ],
+  "verification": {
+    "ok": true,
+    "checked": 4,
+    "problems": []
+  },
+  "started_at": "2026-10-04T10:25:59.223Z",
+  "finished_at": "2026-10-04T10:26:02.898Z",
+  "ids": [
+    "g-93b94b6196",
+    "g-0bf1f11379",
+    "g-1c0ffa88fd",
+    "g-2432050418"
+  ]
+}

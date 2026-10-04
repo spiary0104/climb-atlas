@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "updater_version": 1,
+  "kind": "update",
+  "batch_id": "2026-10-04-review-identity-1",
+  "status": "updated",
+  "target": {
+    "kind": "production",
+    "host": "thayxaampaelvntoaido.supabase.co"
+  },
+  "coverage": "FULL",
+  "plan_sha256": "e5e48d3f1eaf7e6190bf42568c8428b713a311c21eee63d94dd8d22728df5165",
+  "payload_sha256": "954117b6b66b4b0fdd69ba57c83ff1e80b824cf4c64a7ed736f142bf7b8d9cba",
+  "confirm_token": "152f206fdfd3e405",
+  "live_state_sha256": "84ea148755c5838981e053b3b0f8ae942d336232d758abaac020014f68a32633",
+  "rows_updated": 0,
+  "approved_before": 2272,
+  "approved_after": 2272,
+  "changes": [],
+  "rows_identity_changed": 8,
+  "identity_changed": [
+    {
+      "id": "seed-153",
+      "fields": [
+        "types"
+      ],
+      "expect_h": "89d3811c993afb2c",
+      "after_h": "6145917ab2466061"
+    },
+    {
+      "id": "seed-155",
+      "fields": [
+        "types"
+      ],
+      "expect_h": "dd3949eae99f085c",
+      "after_h": "47cce80a5dd1f115"
+    },
+    {
+      "id": "seed-293",
+      "fields": [
+        "name",
+        "types"
+      ],
+      "expect_h": "997f1d82737b240e",
+      "after_h": "833d7bf60505f8ae"
+    },
+    {
+      "id": "seed-387",
+      "fields": [
+        "name",
+        "types"
+      ],
+      "expect_h": "e63a7c69dd35d2c9",
+      "after_h": "0a2a1357ce8c92f1"
+    },
+    {
+      "id": "seed-376",
+      "fields": [
+        "name",
+        "types"
+      ],
+      "expect_h": "a048e582bce24049",
+      "after_h": "5e1da037a9aef618"
+    },
+    {
+      "id": "seed-1130",
+      "fields": [
+        "name"
+      ],
+      "expect_h": "86378022482054fb",
+      "after_h": "05276bf0c80cd190"
+    },
+    {
+      "id": "g-db0f20b48a",
+      "fields": [
+        "types"
+      ],
+      "expect_h": "b8ad18c686e9e1c2",
+      "after_h": "37152a75c5cf36ee"
+    },
+    {
+      "id": "seed-1285",
+      "fields": [
+        "name"
+      ],
+      "expect_h": "bbc6a6c4f0776289",
+      "after_h": "3f6b51b049df70b7"
+    }
+  ],
+  "verification": {
+    "ok": true,
+    "checked": 8,
+    "problems": []
+  },
+  "started_at": "2026-10-04T10:25:03.648Z",
+  "finished_at": "2026-10-04T10:25:07.897Z",
+  "ids": [
+    "seed-153",
+    "seed-155",
+    "seed-293",
+    "seed-387",
+    "seed-376",
+    "seed-1130",
+    "g-db0f20b48a",
+    "seed-1285"
+  ]
+}

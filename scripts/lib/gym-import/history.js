@@ -118,7 +118,9 @@ function revertLiveRows(rows, root = S.ROOT) {
     const byId = new Map(out.map(r => [r.id, r]));
     for (const u of b.updates) {
       const r = byId.get(u.id); if (!r) continue;
-      const cs = u.changes.filter(c => !INFO_FIELDS.includes(c.field));   // a gym-information fill leaves no trace in the compared fields
+      // a gym-information fill leaves no trace in the compared fields; a field the row does not carry (callers select e.g. only
+      // id,name,country,lat,lng,address, without suburb/types) can neither confirm nor contradict the update, so only carried fields count
+      const cs = u.changes.filter(c => !INFO_FIELDS.includes(c.field) && (c.field === 'address' || c.field in r));
       if (cs.length && cs.every(c => sameField(c.field, c.field === 'address' ? (r.address || null) : r[c.field], c.after))) { cs.forEach(c => { r[c.field] = c.before; }); n++; }
     }
     if (b.inserts.length) { const ins = new Set(b.inserts), before = out.length; out = out.filter(r => !ins.has(r.id)); removed += before - out.length; }

@@ -1,0 +1,858 @@
+[
+ {
+  "id": "g-e43165892c",
+  "name": "Limit Boulder",
+  "expect_h": "fbd0dd948024a8c6",
+  "website": "https://limitboulder.cz/",
+  "hours": {
+   "mon": "1pm–9:30pm",
+   "tue": "1pm–9:30pm",
+   "wed": "1pm–9:30pm",
+   "thu": "1pm–9:30pm",
+   "fri": "9:30am–9:30pm",
+   "sat": "9:30am–9:30pm",
+   "sun": "9:30am–9:30pm"
+  },
+  "day_pass": "250 Kč adult (afternoons, weekends), 210 Kč student/senior",
+  "facilities": [
+   "cafe",
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://limitboulder.cz/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://limitboulder.cz/cenik-otviracka/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Site name: Limit Movement Therapy / Limit Boulder. Hours from the ceník-otvíračka page (new hours from 1 May). Adult is 200 Kč on weekday mornings 7-13h (not covered by the hours since it opens at 1pm Mon-Thu). Sister gym Stěna Lanovka is a separate venue.",
+  "operating": "yes",
+  "official_address": "Vrbenská 16a, 370 06 České Budějovice",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-a32198c132",
+  "name": "Stěna Lanovka",
+  "expect_h": "122075ea6a35fe3c",
+  "website": "https://stenalanovka.cz/",
+  "hours": {
+   "mon": "1pm–10pm",
+   "tue": "1pm–10pm",
+   "wed": "7am–10pm",
+   "thu": "1pm–10pm",
+   "fri": "1pm–10pm",
+   "sat": "10am–10pm",
+   "sun": "10am–10pm"
+  },
+  "day_pass": "230 Kč adult, 190 Kč student/senior",
+  "facilities": [
+   "cafe",
+   "shop",
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://stenalanovka.cz/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://stenalanovka.cz/cenik-otviracka/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Rope and bouldering wall, 1st floor. Wednesday opens at 7am per the hours table; adult morning entry on Wed 7-13h is 180 Kč.",
+  "operating": "yes",
+  "official_address": "Lannova 2, 370 01 České Budějovice (1. patro)",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-1457",
+  "name": "DURO Climbing Gym",
+  "expect_h": "8d0912a3f2440433",
+  "website": "https://www.klajda.cz/duro-singing-rock/",
+  "hours": {
+   "mon": "2pm–10pm",
+   "tue": "2pm–10pm",
+   "wed": "2pm–10pm",
+   "thu": "2pm–10pm",
+   "fri": "2pm–10pm",
+   "sat": "10am–10pm",
+   "sun": "10am–10pm"
+  },
+  "day_pass": "240 Kč adult, 180 Kč student",
+  "facilities": [
+   "cafe",
+   "shop",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.klajda.cz/duro-singing-rock/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Official name on the operator (Klajda / Horolezecké centrum Brno) site is \"Lezecká stěna Duro Singing Rock\". Price list on the page is dated valid from 1.11.2022; adult 240 Kč applies Mon-Fri from 15:00 and weekends; 160 Kč listed for Mon-Fri 10-15h although the hours table opens at 14:00. Hours also confirmed in klajda.cz homepage news (Mon-Fri 14-22, weekend 10-22).",
+  "operating": "yes",
+  "official_address": "Slaměníkova 23b, 614 00 Brno",
+  "location": "ok",
+  "renamed_to": "Duro Singing Rock",
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-7cdfe857b7",
+  "name": "HANGAR Brno",
+  "expect_h": "97b18f7923b10261",
+  "website": "https://hangarbrno.cz/",
+  "hours": {
+   "mon": "9am–10pm",
+   "tue": "7am–10pm",
+   "wed": "7am–10pm",
+   "thu": "7am–10pm",
+   "fri": "7am–10pm",
+   "sat": "9am–10pm",
+   "sun": "9am–10pm"
+  },
+  "day_pass": "265 Kč adult (from 3pm, weekends), 215 Kč adult before 3pm",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://hangarbrno.cz/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://hangarbrno.cz/kontakt/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://hangarbrno.cz/cenik/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://hangarbrno.cz/hangar/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://hangarbrno.cz/hangar-cafe/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://hangarbrno.cz/poprve-na-hangaru/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Training = two Moonboards, campus, spray wall, fingerboard (hangar page). Shoe hire stated on first-visit FAQ and price page. Parking stated on FAQ and contact page. Official coordinates match our pin.",
+  "operating": "yes",
+  "official_address": "Pražákova 1027/53, 619 00 Brno",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-9ddf6a0d6e",
+  "name": "HUDY lezecká stěna Brno",
+  "expect_h": "8bec69e71cc2b39b",
+  "website": "https://www.hudysteny.cz/brno/",
+  "hours": {
+   "mon": "8am–10pm",
+   "tue": "8am–10pm",
+   "wed": "8am–10pm",
+   "thu": "8am–10pm",
+   "fri": "8am–10pm",
+   "sat": "8am–10pm",
+   "sun": "8am–10pm"
+  },
+  "day_pass": "275 Kč adult (from 3pm, weekends), 210 Kč adult weekdays before 3pm",
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.hudysteny.cz/brno/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.hudysteny.cz/brno/kontakt/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.hudysteny.cz/brno/cenik/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   },
+   {
+    "url": "https://www.hudysteny.cz/brno/cenik/pujcovne/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Price is the standard (non-HUDY-partner-card) price; entry includes boulder. Homepage has a temporary notice about the sport profile closed for competitions (ignored).",
+  "operating": "yes",
+  "official_address": "Vídeňská 297/99, Brno - Štýřice",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-4b13af1f36",
+  "name": "Komec",
+  "expect_h": "798c727077e0451a",
+  "website": "https://www.komec.cz/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "9am–10pm",
+   "sun": "9am–10pm"
+  },
+  "day_pass": "260 Kč adult, 215 Kč student",
+  "facilities": [
+   "cafe",
+   "kids",
+   "training",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.komec.cz/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.komec.cz/cenik/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.komec.cz/lezecka-stena/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.komec.cz/bistro-a-bar/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours from the site footer (Mon-Fri 10-22, Sat+Sun 9-22); a second hours set exists only as an HTML comment (ignored). Price is from the ceník image valid from 1.1.2026 (non-member single entry; registered members pay less). Training = campus board.",
+  "operating": "yes",
+  "official_address": "Hněvkovského 62c, 617 00 Brno",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-b083192899",
+  "name": "MakakAréna",
+  "expect_h": "2c3eb3c86d6a5356",
+  "website": "https://www.makakarena.cz/",
+  "hours": {
+   "mon": "8:30am–10pm",
+   "tue": "8:30am–10pm",
+   "wed": "8:30am–10pm",
+   "thu": "8:30am–10pm",
+   "fri": "8:30am–10pm",
+   "sat": "8:30am–10pm",
+   "sun": "8:30am–10pm"
+  },
+  "day_pass": "240 Kč adult (from 3pm, weekends), 180 Kč adult weekdays before 3pm",
+  "facilities": [
+   "cafe",
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.makakarena.cz/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://www.makakarena.cz/cenik",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.makakarena.cz/kontakt",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.makakarena.cz/bar-obchod",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.makakarena.cz/detska-stena",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Ceník page states \"platný od 26.08.2024\". One entry price covers rope wall and the new boulder (opened 23.1.2026).",
+  "operating": "yes",
+  "official_address": "Liberecká 480/104, 466 01 Jablonec nad Nisou",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-4ec0acdd4f",
+  "name": "HANGAR Ostrava",
+  "expect_h": "6ac8d9cfc9494431",
+  "website": "https://hangarostrava.cz/",
+  "hours": {
+   "mon": "9am–10pm",
+   "tue": "7am–10pm",
+   "wed": "9am–10pm",
+   "thu": "7am–10pm",
+   "fri": "9am–10pm",
+   "sat": "9am–10pm",
+   "sun": "9am–10pm"
+  },
+  "day_pass": "260 Kč adult (from 3pm, weekends), 210 Kč adult before 3pm",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://hangarostrava.cz/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://hangarostrava.cz/kontakt/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://hangarostrava.cz/cenik/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://hangarostrava.cz/hangar/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://hangarostrava.cz/hangar-cafe/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://hangarostrava.cz/nejcastejsi-otazky/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Training = Moonboards, Kilterboard, spray wall, campus. Shoe hire and parking from FAQ. Official coordinates match our pin.",
+  "operating": "yes",
+  "official_address": "Nad Porubkou 2405, 708 00 Ostrava-Poruba",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-491eb60dc0",
+  "name": "Replay boulder",
+  "expect_h": "9b3639efb8d7accb",
+  "website": "https://www.replaysc.cz/boulder-lezecka-stena-2/",
+  "hours": {
+   "mon": "9am–9pm",
+   "tue": "9am–9pm",
+   "wed": "9am–9pm",
+   "thu": "9am–9pm",
+   "fri": "9am–9pm",
+   "sat": "9am–12pm, 2pm–8pm",
+   "sun": "9am–12pm, 2pm–8pm"
+  },
+  "day_pass": "100 Kč adult",
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.replaysc.cz/boulder-lezecka-stena-2/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.replaysc.cz/kontakt-2/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Boulder wall inside Replay sports centre. Page states that on Wednesdays during the school year the wall is closed to the public 16-19h (club training); not reflected in the hours. Weekend hours also apply to public holidays. Loose magnesium not allowed.",
+  "operating": "yes",
+  "official_address": "U Příkopy 1915, 744 01 Frenštát pod Radhoštěm",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-9d32a01682",
+  "name": "Tendon Blok",
+  "expect_h": "46321d08fe9783ba",
+  "website": "https://blokcentrum.cz/",
+  "hours": null,
+  "day_pass": "150 Kč adult, 110 Kč child/student",
+  "facilities": [
+   "cafe",
+   "training",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://blokcentrum.cz/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://blokcentrum.cz/boulderingova-stena/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://blokcentrum.cz/vstupy-pres-smart-lock/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours null: the site shows 5-23 daily but \"pouze přes SmartLock\" (self check-in only), with training/school restrictions. Pricing page: single entry via smart lock 150/110 Kč. Training = spray wall, Moonboard, campus, Climbro, gym; self-service refreshments/bar and rental shoes (50 Kč) stated. Official coordinates match our pin. Website brands it BLOK CENTRUM / Tendon Blok.",
+  "operating": "yes",
+  "official_address": "Vítkovice 967, 703 00 Ostrava",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-6c864ad8fa",
+  "name": "Flash Wall Olomouc",
+  "expect_h": "e5943bd601a9401d",
+  "website": "https://www.flashwall.cz/",
+  "hours": {
+   "mon": "2pm–9pm",
+   "tue": "2pm–10pm",
+   "wed": "10am–10pm",
+   "thu": "2pm–10pm",
+   "fri": "10am–9pm",
+   "sat": "10am–8pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": "230 Kč adult, 190 Kč student",
+  "facilities": [
+   "cafe",
+   "training",
+   "parking",
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.flashwall.cz/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.flashwall.cz/cenik-vstupne-na-lezeni/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Site says hours differ on holidays and during summer holidays. Facilities: free parking, bar with refreshments, Flashboard/Moonboard/campus, rental (lezečky 50 Kč); kids = children courses/clubs on site. Official coordinates match our pin.",
+  "operating": "yes",
+  "official_address": "Chválkovice 615, 772 00 Olomouc",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-4aaf1c3c1c",
+  "name": "Pajkland",
+  "expect_h": "a6fe4bf2e915b66e",
+  "website": "https://www.pajkland.cz/",
+  "hours": null,
+  "day_pass": "150 Kč adult, 130 Kč student",
+  "facilities": [
+   "cafe",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.pajkland.cz/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.pajkland.cz/cenik/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.pajkland.cz/pujcovna/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours null because they are seasonal: Oct-May Mon-Sun 16-22h; June-Sept Mon-Thu 16-22h, Fri-Sun closed. Cash only.",
+  "operating": "yes",
+  "official_address": "Karolíny Světlé 14, 779 00 Olomouc",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-5d6a16c6f8",
+  "name": "Gekon Boulder Bar",
+  "expect_h": "5d5a869570ba7b44",
+  "website": "https://gekon-boulderbar.cz/",
+  "hours": {
+   "mon": "3pm–11pm",
+   "tue": "3pm–11pm",
+   "wed": "3pm–11pm",
+   "thu": "3pm–11pm",
+   "fri": "3pm–2am",
+   "sat": "3pm–2am",
+   "sun": "3pm–10pm"
+  },
+  "day_pass": "90 Kč adult, 70 Kč child under 10",
+  "facilities": [
+   "cafe",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://gekon-boulderbar.cz/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://gekon-boulderbar.cz/bouldrovka",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://gekon-boulderbar.cz/kontakt",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours are the venue single \"Otevírací doba\" (boulder bar and wall; Fri-Sat until 2am).",
+  "operating": "yes",
+  "official_address": "Sladkovského 505, 530 02 Pardubice I",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-17381ec784",
+  "name": "Jungle Pardubice",
+  "expect_h": "73d5bba3ea1f532f",
+  "website": "https://www.junglepardubice.cz/",
+  "hours": null,
+  "day_pass": "220 Kč adult, 160 Kč student",
+  "facilities": [
+   "cafe",
+   "kids",
+   "shoe-hire",
+   "yoga"
+  ],
+  "sources": [
+   {
+    "url": "https://www.junglepardubice.cz/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.junglepardubice.cz/cenik-a-kontakty/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours null: the 1.9.2026-27.6.2027 table lists Mon-Wed 18:15-22, Thu 16:15-22, Sat 9-16, Sun 9-19 and has no Friday entry. Yoga: multi-entry pass usable \"na jógu\". Kids = school-year children clubs on home page.",
+  "operating": "yes",
+  "official_address": "Ohrazenická 323, 530 09 Pardubice",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-648f4f1542",
+  "name": "V16",
+  "expect_h": "86e8c61b28bc5b9b",
+  "website": "https://www.v16.cz/",
+  "hours": {
+   "mon": "8am–10pm",
+   "tue": "7am–10pm",
+   "wed": "8am–10pm",
+   "thu": "7am–10pm",
+   "fri": "8am–10pm",
+   "sat": "8am–10pm",
+   "sun": "8am–10pm"
+  },
+  "day_pass": "260 Kč adult, 220 Kč student/senior",
+  "facilities": [
+   "cafe",
+   "shop",
+   "training",
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.v16.cz/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.v16.cz/cenik",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Price list valid from 27.10.2025. Weekdays until 17:00 reduced adult 220 Kč. Shop = \"shop s mágem a tejpkou\", cafe = Kavárna, training = spray wall/campus/strength room, kids = children courses.",
+  "operating": "yes",
+  "official_address": "Kollárova 19, 301 00 Plzeň",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-8cbc1eab88",
+  "name": "HUDY lezecká stěna Ústí nad Labem",
+  "expect_h": "5621f47948f2a71c",
+  "website": "https://www.hudysteny.cz/usti/",
+  "hours": {
+   "mon": "10am–9pm",
+   "tue": "10am–9pm",
+   "wed": "10am–9pm",
+   "thu": "10am–9pm",
+   "fri": "10am–9pm",
+   "sat": "8am–9pm",
+   "sun": "8am–9pm"
+  },
+  "day_pass": "240 Kč adult (Mon-Fri from 2pm, weekends), 200 Kč adult weekdays 10am-2pm",
+  "facilities": [
+   "cafe",
+   "showers",
+   "parking",
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.hudysteny.cz/usti/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.hudysteny.cz/usti/kontakt/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.hudysteny.cz/usti/cenik/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   },
+   {
+    "url": "https://www.hudysteny.cz/usti/cenik/pujcovne/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Judgement call: weekend hours show \"08.00-19.00\" then bold \"08.00-21.00\" under \"POZOR od 3.10. ZMĚNA\"; used 8am-9pm (new, effective 3 Oct). Price list says valid from 16.10.2023. Facilities from site text: bar (45 seats), showers, 2 car parks, children wall, rental.",
+  "operating": "yes",
+  "official_address": "Pražská 21, 400 01 Ústí nad Labem",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ }
+]

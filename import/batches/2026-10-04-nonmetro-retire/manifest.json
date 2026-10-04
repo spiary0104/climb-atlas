@@ -1,0 +1,234 @@
+{
+  "schema_version": 1,
+  "updater_version": 1,
+  "kind": "update",
+  "batch_id": "2026-10-04-nonmetro-retire",
+  "status": "updated",
+  "target": {
+    "kind": "production",
+    "host": "thayxaampaelvntoaido.supabase.co"
+  },
+  "coverage": "FULL",
+  "plan_sha256": "0e7d9e1d983dffb9e03acf8ad1aaef6a450d45c69221ab159911d30c3ceda3a5",
+  "payload_sha256": "d76acdc88b3a042de02caea2a2b57d40f80467bdd46c13e3a5df257efbd236cb",
+  "confirm_token": "81c5f6979b4bd439",
+  "live_state_sha256": "4f0c62ff921ec68524e2fc61bafa7fab01ab14ca8962ec3a2cfed3dba5ec2dab",
+  "rows_updated": 0,
+  "approved_before": 2293,
+  "approved_after": 2268,
+  "changes": [],
+  "rows_retired": 25,
+  "retired": [
+    "seed-326",
+    "seed-899",
+    "seed-138",
+    "seed-314",
+    "seed-377",
+    "seed-76",
+    "seed-78",
+    "seed-1594",
+    "seed-22",
+    "seed-24",
+    "seed-71",
+    "seed-435",
+    "g-44b68de98f",
+    "seed-145",
+    "seed-207",
+    "seed-955",
+    "seed-260",
+    "seed-1001",
+    "seed-1011",
+    "seed-1036",
+    "seed-1056",
+    "seed-206",
+    "seed-253",
+    "seed-447",
+    "seed-446"
+  ],
+  "retirements": [
+    {
+      "id": "seed-326",
+      "reason_code": "closed",
+      "reason": "Not a climbing gym: a general fitness centre; a climbing wall appears only in member testimonials, with no public climbing",
+      "expect_h": "83b6fd38e305c3f9"
+    },
+    {
+      "id": "seed-899",
+      "reason_code": "closed",
+      "reason": "No climbing centre at this location: Tide lists only its Padstow and Helston centres, none in Truro",
+      "expect_h": "14579f9845f9e492"
+    },
+    {
+      "id": "seed-138",
+      "reason_code": "closed",
+      "reason": "Probably closed: the official domain now serves a recovered copy of the old site and unrelated spam; a closure notice was reported",
+      "expect_h": "766b1490a4fef746"
+    },
+    {
+      "id": "seed-314",
+      "reason_code": "closed",
+      "reason": "Not a climbing gym: a multi-sport health club with a rock wall; no public climbing entry or climbing price",
+      "expect_h": "a9b4d71c3dad6c6a"
+    },
+    {
+      "id": "seed-377",
+      "reason_code": "closed",
+      "reason": "No current presence: the official domain now redirects through unrelated sites; no gym shown and no other official presence",
+      "expect_h": "9804e024a7fcf629"
+    },
+    {
+      "id": "seed-76",
+      "reason_code": "closed",
+      "reason": "Not a public climbing gym: the wall is a camper activity at a youth and family camp, with no public entry",
+      "expect_h": "16cf0c3e2c510849"
+    },
+    {
+      "id": "seed-78",
+      "reason_code": "closed",
+      "reason": "No climbing gym at this address: the official site at 630 Main St is a guide service and never mentions a bouldering gym or day entry",
+      "expect_h": "97a46e4f4979b531"
+    },
+    {
+      "id": "seed-1594",
+      "reason_code": "closed",
+      "reason": "Not a climbing gym: an adventure park (rope bridges, zip-line, archery) whose 12 m wall is one attraction, open seasonally",
+      "expect_h": "c6640269b5282201"
+    },
+    {
+      "id": "seed-22",
+      "reason_code": "closed",
+      "reason": "No current presence: the domain no longer resolves and no other official presence was found",
+      "expect_h": "419dd10cbf5b7b09"
+    },
+    {
+      "id": "seed-24",
+      "reason_code": "closed",
+      "reason": "No current presence: the domain is a parked for-sale page and no other official presence was found",
+      "expect_h": "1789e9c98ef13135"
+    },
+    {
+      "id": "seed-71",
+      "reason_code": "closed",
+      "reason": "No current presence: the domain now hosts an unrelated site with no gym content; no other official presence",
+      "expect_h": "8a72feb01c4f5d62"
+    },
+    {
+      "id": "seed-435",
+      "reason_code": "closed",
+      "reason": "Closed: the operator announced the gym closed on 31 Aug 2025",
+      "expect_h": "0be779e159d82152"
+    },
+    {
+      "id": "g-44b68de98f",
+      "reason_code": "closed",
+      "reason": "Not a climbing gym: a skate, scooter, BMX and trampoline park with a bouldering section",
+      "expect_h": "ef4401b06c00325d"
+    },
+    {
+      "id": "seed-145",
+      "reason_code": "closed",
+      "reason": "No current presence: the official domain no longer resolves and no other official presence was found",
+      "expect_h": "ec5ae34df6716a34"
+    },
+    {
+      "id": "seed-207",
+      "reason_code": "closed",
+      "reason": "No current presence: its domain now serves an unrelated gym in Tennessee; no other official presence found",
+      "expect_h": "b1027fa1efea18a7"
+    },
+    {
+      "id": "seed-955",
+      "reason_code": "closed",
+      "reason": "Closed: the operating company was dissolved (Companies House, 3 Dec 2024) and the official domain no longer resolves",
+      "expect_h": "26a6121bcef9cc5c"
+    },
+    {
+      "id": "seed-260",
+      "reason_code": "closed",
+      "reason": "No current presence: the only official site was last updated in 2018 and the domain is an empty page",
+      "expect_h": "963dea554a9afefb"
+    },
+    {
+      "id": "seed-1001",
+      "reason_code": "closed",
+      "reason": "No der steinbock hall in Straubing: the operator lists Zirndorf, Nuernberg, Erlangen, Passau, Konstanz and Linz only; the only Straubing boulder gym is already listed (Alte Ziegelei)",
+      "expect_h": "fdaa84bad2ec923c"
+    },
+    {
+      "id": "seed-1011",
+      "reason_code": "closed",
+      "reason": "No official presence: the gym domain exxpozed-climbing.de is a for-sale parked page and no official page was found; not confirmed at this location",
+      "expect_h": "c33f85a959325a63"
+    },
+    {
+      "id": "seed-1036",
+      "reason_code": "closed",
+      "reason": "Vertical World Kassel closed permanently on 17 Aug 2024 per published closure reports; the official site verticalworld.de no longer serves any page",
+      "expect_h": "643f6ec56efdd1ac"
+    },
+    {
+      "id": "seed-1056",
+      "reason_code": "closed",
+      "reason": "Rockvibes (Ahlen) closed: the official homepage announces 2 May 2026 as the last opening day",
+      "expect_h": "6d4c8fb4fbe261ba"
+    },
+    {
+      "id": "seed-206",
+      "reason_code": "closed",
+      "reason": "No current presence: no official site or listing for a climbing gym at 28 Glen Dr, Queensbury; not RockSport (54 Carey Rd), so not a duplicate",
+      "expect_h": "f3e888f516cc1b45"
+    },
+    {
+      "id": "seed-253",
+      "reason_code": "closed",
+      "reason": "Moved: Treadstone Climbing no longer lists Milgen Rd, Columbus GA; its only location is 400 Brickyard Rd, Phenix City, AL (added as a new gym)",
+      "expect_h": "ecbdfc9620b72184"
+    },
+    {
+      "id": "seed-447",
+      "reason_code": "closed",
+      "reason": "The Naha gym (BOULBAKA1) is gone from the official site: menu, hours, prices and gallery cover only BOULBAKA2 in Urasoe (added as a new gym)",
+      "expect_h": "9ca8ae1e202757db"
+    },
+    {
+      "id": "seed-446",
+      "reason_code": "closed",
+      "reason": "Not a climbing gym: no official site; the venue is a weight-training gym with no bouldering offer found",
+      "expect_h": "68bf8048ff4d71f8"
+    }
+  ],
+  "verification": {
+    "ok": true,
+    "checked": 25,
+    "problems": []
+  },
+  "started_at": "2026-10-04T10:14:06.506Z",
+  "finished_at": "2026-10-04T10:14:16.171Z",
+  "ids": [
+    "seed-326",
+    "seed-899",
+    "seed-138",
+    "seed-314",
+    "seed-377",
+    "seed-76",
+    "seed-78",
+    "seed-1594",
+    "seed-22",
+    "seed-24",
+    "seed-71",
+    "seed-435",
+    "g-44b68de98f",
+    "seed-145",
+    "seed-207",
+    "seed-955",
+    "seed-260",
+    "seed-1001",
+    "seed-1011",
+    "seed-1036",
+    "seed-1056",
+    "seed-206",
+    "seed-253",
+    "seed-447",
+    "seed-446"
+  ]
+}

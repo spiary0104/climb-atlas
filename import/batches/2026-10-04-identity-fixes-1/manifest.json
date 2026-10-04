@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "updater_version": 1,
+  "kind": "update",
+  "batch_id": "2026-10-04-identity-fixes-1",
+  "status": "updated",
+  "target": {
+    "kind": "production",
+    "host": "thayxaampaelvntoaido.supabase.co"
+  },
+  "coverage": "FULL",
+  "plan_sha256": "1183d7039255a3a481f9941421cc3837c88504e5d5a34b6ff06ce7227d892f8d",
+  "payload_sha256": "6dffbb8f10da1f75240e6702c1b9de15ee4cbb45ae059da2de70ca74ab54e9b9",
+  "confirm_token": "f0a787a5a65b1b99",
+  "live_state_sha256": "47da81eb3b2fd37684e04549ca33b641a5afc5b0209f4dad7cdc2f109da92a7f",
+  "rows_updated": 0,
+  "approved_before": 2272,
+  "approved_after": 2272,
+  "changes": [],
+  "rows_identity_changed": 10,
+  "identity_changed": [
+    {
+      "id": "seed-60",
+      "fields": [
+        "name"
+      ],
+      "expect_h": "724d5afcf22fd8eb",
+      "after_h": "7175ba045507c1bd"
+    },
+    {
+      "id": "seed-962",
+      "fields": [
+        "name"
+      ],
+      "expect_h": "c02cdef145549394",
+      "after_h": "188ef071a504f96d"
+    },
+    {
+      "id": "seed-458",
+      "fields": [
+        "name"
+      ],
+      "expect_h": "9264089e37989049",
+      "after_h": "3c55826c2dcdf050"
+    },
+    {
+      "id": "seed-1108",
+      "fields": [
+        "name"
+      ],
+      "expect_h": "11a8ac5fbdf1a9a4",
+      "after_h": "6df47a71f4db72a6"
+    },
+    {
+      "id": "seed-1115",
+      "fields": [
+        "name"
+      ],
+      "expect_h": "2bbb7008df317845",
+      "after_h": "9ba86827c082d0f8"
+    },
+    {
+      "id": "seed-1121",
+      "fields": [
+        "name"
+      ],
+      "expect_h": "0a02eabcd1100222",
+      "after_h": "74af8380cc9a7d3c"
+    },
+    {
+      "id": "seed-1314",
+      "fields": [
+        "name"
+      ],
+      "expect_h": "c51403099c851788",
+      "after_h": "1ccbfc2b7aaa2015"
+    },
+    {
+      "id": "seed-1079",
+      "fields": [
+        "types"
+      ],
+      "expect_h": "698aedc3aed5eb48",
+      "after_h": "7ccbb15cf689d7d1"
+    },
+    {
+      "id": "seed-1080",
+      "fields": [
+        "types"
+      ],
+      "expect_h": "6ea087c4e76496da",
+      "after_h": "cebb82105f4883f5"
+    },
+    {
+      "id": "seed-1257",
+      "fields": [
+        "types"
+      ],
+      "expect_h": "b19c122d2f0047aa",
+      "after_h": "50f165e2f5b0379f"
+    }
+  ],
+  "verification": {
+    "ok": true,
+    "checked": 10,
+    "problems": []
+  },
+  "started_at": "2026-10-04T10:23:27.799Z",
+  "finished_at": "2026-10-04T10:23:32.952Z",
+  "ids": [
+    "seed-60",
+    "seed-962",
+    "seed-458",
+    "seed-1108",
+    "seed-1115",
+    "seed-1121",
+    "seed-1314",
+    "seed-1079",
+    "seed-1080",
+    "seed-1257"
+  ]
+}

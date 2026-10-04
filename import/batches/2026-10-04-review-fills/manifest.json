@@ -1,0 +1,203 @@
+{
+  "schema_version": 1,
+  "updater_version": 1,
+  "kind": "update",
+  "batch_id": "2026-10-04-review-fills",
+  "status": "updated",
+  "target": {
+    "kind": "production",
+    "host": "thayxaampaelvntoaido.supabase.co"
+  },
+  "coverage": "FULL",
+  "plan_sha256": "b9d0f8a2ecc341f5b37bc438f1c3fb8c280beda16e2ac5ea18df4b505d1ef8e3",
+  "payload_sha256": "0d55b1ee95db857c090c54ed6b52a255d419e78fe108893e416c541b94f55c7c",
+  "confirm_token": "ae53d6aecc24577d",
+  "live_state_sha256": "4f0c62ff921ec68524e2fc61bafa7fab01ab14ca8962ec3a2cfed3dba5ec2dab",
+  "rows_updated": 0,
+  "approved_before": 2293,
+  "approved_after": 2293,
+  "changes": [],
+  "rows_info_filled": 15,
+  "info_filled": [
+    {
+      "id": "seed-308",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "8910016536804aab",
+      "after_h": "8910016536804aab"
+    },
+    {
+      "id": "seed-116",
+      "fields": [
+        "website",
+        "hours",
+        "facilities"
+      ],
+      "expect_h": "2adcb2158cc04824",
+      "after_h": "2adcb2158cc04824"
+    },
+    {
+      "id": "seed-1744",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "46805f4a461ba242",
+      "after_h": "46805f4a461ba242"
+    },
+    {
+      "id": "seed-387",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "e63a7c69dd35d2c9",
+      "after_h": "e63a7c69dd35d2c9"
+    },
+    {
+      "id": "seed-866",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "404a6f757d6022be",
+      "after_h": "404a6f757d6022be"
+    },
+    {
+      "id": "seed-891",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "9754e0bbc6397e63",
+      "after_h": "9754e0bbc6397e63"
+    },
+    {
+      "id": "seed-877",
+      "fields": [
+        "website",
+        "hours",
+        "facilities"
+      ],
+      "expect_h": "27ac9021538ff608",
+      "after_h": "27ac9021538ff608"
+    },
+    {
+      "id": "g-e20d3b95e9",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "8656999a4da855e1",
+      "after_h": "8656999a4da855e1"
+    },
+    {
+      "id": "g-6e04989a5a",
+      "fields": [
+        "hours",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "e68b17ce04f0d3c4",
+      "after_h": "e68b17ce04f0d3c4"
+    },
+    {
+      "id": "seed-1285",
+      "fields": [
+        "website",
+        "facilities"
+      ],
+      "expect_h": "bbc6a6c4f0776289",
+      "after_h": "bbc6a6c4f0776289"
+    },
+    {
+      "id": "seed-973",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "7957642b31a66f4e",
+      "after_h": "7957642b31a66f4e"
+    },
+    {
+      "id": "seed-1041",
+      "fields": [
+        "website",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "0c97aa5cdf62675a",
+      "after_h": "0c97aa5cdf62675a"
+    },
+    {
+      "id": "seed-1013",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "d19319811de420fd",
+      "after_h": "d19319811de420fd"
+    },
+    {
+      "id": "seed-1050",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "6be37efae7ab335e",
+      "after_h": "6be37efae7ab335e"
+    },
+    {
+      "id": "seed-871",
+      "fields": [
+        "website"
+      ],
+      "expect_h": "d33382e82abda8af",
+      "after_h": "d33382e82abda8af"
+    }
+  ],
+  "verification": {
+    "ok": true,
+    "checked": 15,
+    "problems": []
+  },
+  "started_at": "2026-10-04T09:40:32.562Z",
+  "finished_at": "2026-10-04T09:40:38.868Z",
+  "ids": [
+    "seed-308",
+    "seed-116",
+    "seed-1744",
+    "seed-387",
+    "seed-866",
+    "seed-891",
+    "seed-877",
+    "g-e20d3b95e9",
+    "g-6e04989a5a",
+    "seed-1285",
+    "seed-973",
+    "seed-1041",
+    "seed-1013",
+    "seed-1050",
+    "seed-871"
+  ]
+}

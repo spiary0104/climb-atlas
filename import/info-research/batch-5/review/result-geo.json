@@ -1,0 +1,566 @@
+[
+ {
+  "item": 7,
+  "id": "seed-88",
+  "name": "Gravity Lab",
+  "decisions": [
+   "location"
+  ],
+  "values": {
+   "address": "732 CR 233, Durango, CO 81301",
+   "lat": 37.2291837,
+   "lng": -107.8085475,
+   "coord_source": "Marker coordinates (markerLat/markerLng, addressTitle 'Gravity Lab Climbing Gym') of the map block on the gym's own location-hours page; independently consistent with OSM, where CR 233 carries house numbers 563-841 within ~300 m of this marker"
+  },
+  "evidence": [
+   {
+    "url": "https://www.gravitylabclimbing.com/location-hours",
+    "supports": [
+     "address",
+     "lat",
+     "lng"
+    ],
+    "accessed": "2026-10-04"
+   }
+  ],
+  "confidence": "medium",
+  "notes": "Nominatim/Overpass: no OSM element for the gym, no house point for 732 CR 233. OSM ways ref 'CR 233' (17092100, 17092103) lie at ~37.229,-107.81 east of Durango (our pin 37.279,-107.883 is ~7 km WNW, wrong). Official page text says '732 CR 233 Durango, CO 81301' but the map block's own address line reads '29703 U.S. 160' (the CR 233 / US 160 junction area); the marker sits ~70 m from an OSM building and ~250 m from where house number 732 falls on CR 233. Marker is an explicit place marker, not a viewport guess, but the address-line mismatch keeps confidence at medium."
+ },
+ {
+  "item": 36,
+  "id": "seed-140",
+  "name": "CLIMB Woodlands",
+  "decisions": [
+   "location"
+  ],
+  "values": {
+   "address": "7515 Oak Bluff Dr, Suite C, Magnolia, TX 77354",
+   "lat": 30.2155007,
+   "lng": -95.5830892,
+   "coord_source": "US Census Bureau geocoder (Public_AR_Current), house-number match for '7515 Oak Bluff Dr, Magnolia, TX 77354' (TIGER address-range interpolation along the street, ~50-100 m accuracy); not OSM"
+  },
+  "evidence": [
+   {
+    "url": "https://climbwoodlands.com/",
+    "supports": [
+     "address"
+    ],
+    "accessed": "2026-10-04"
+   }
+  ],
+  "confidence": "medium",
+  "notes": "Nominatim (q, structured), Overpass (name~climb in bbox, addr:street Oak Bluff): no element or house point; site is a Framer page with no coordinates/map pin (no JSON-LD, no map link). Fell back to the US Census house-number geocode, which is outside the brief's Nominatim list: it is a house-number match, not street/town level, and sits in a cluster of commercial buildings ~400 m W of the midpoint of OSM's Oak Bluff Drive way; our current pin (The Woodlands, 30.1658,-95.4613) is ~13 km off, so this is a clear improvement. If a strict OSM/official-only rule applies, treat as no-change."
+ },
+ {
+  "item": 37,
+  "id": "seed-428",
+  "name": "Thumbs Up",
+  "decisions": [
+   "location",
+   "retype"
+  ],
+  "values": {
+   "address": "〒460-0014 愛知県名古屋市中区富士見町8-8 OMCビル B1F",
+   "lat": 35.153152,
+   "lng": 136.905869,
+   "coord_source": "Geospatial Information Authority of Japan (GSI) address search, '愛知県名古屋市中区富士見町８番８号' (block/house-number level point); not OSM",
+   "types": [
+    "indoor-bouldering",
+    "top-rope"
+   ]
+  },
+  "evidence": [
+   {
+    "url": "https://www.omc-thumbsup.com/",
+    "supports": [
+     "address",
+     "types"
+    ],
+    "accessed": "2026-10-04"
+   }
+  ],
+  "confidence": "medium",
+  "notes": "OSM has no element (Overpass: no name OMC/Thumbs/climbing within 800 m; no sport=climbing element in the area) and Nominatim only returns the Fujimicho quarter node (35.15307,136.90707). The official site's embed is an address query (q=...富士見町8-8), no pin. GSI geocode gives the 8-8 block point 35.153152,136.905869 (~65 m from the quarter node; our pin 35.1747,136.9007 is ~2.4 km north and wrong). Retype: the home page lists 'OMC Wall for Rope Climbing' and calls itself a free-climbing & bouldering gym; no lead climbing is stated. Site content is dated (2020 notices) but shows no closure; hours still conflict between pages so no fill."
+ },
+ {
+  "item": 38,
+  "id": "seed-423",
+  "name": "Mono Climbing Studio",
+  "decisions": [
+   "location"
+  ],
+  "values": {
+   "address": "福岡市博多区那珀３丁目２７−２７",
+   "lat": 33.56776,
+   "lng": 130.441788,
+   "coord_source": "Geospatial Information Authority of Japan (GSI) address search, '福岡県福岡市博多区那珀三丁目２７番２７号' (house-number level point); not OSM"
+  },
+  "evidence": [
+   {
+    "url": "https://mono-climbing.com/shopinfo/",
+    "supports": [
+     "address"
+    ],
+    "accessed": "2026-10-04"
+   }
+  ],
+  "confidence": "medium",
+  "notes": "OSM: no gym element or house point. GSI point 33.56776,130.441788 is only ~25 m from the viewport centre of the official page's Hakata map embed (33.5678188,130.4420689, place query for 'Mono Climbing Studio'), which corroborates it; our pin 33.589,130.418 is ~3 km off."
+ },
+ {
+  "item": 24,
+  "id": "seed-447",
+  "name": "Boulbaka",
+  "decisions": [
+   "retire",
+   "add-gym"
+  ],
+  "values": {
+   "reason_code": "closed",
+   "reason": "The gym's own site (last modified 2026-05-19) presents only BOULBAKA2 in Urasoe (menu, hours, prices, parking); the BOULBAKA1 menu entry and gallery for the Naha (Ameku) gym are empty, leaving only its address and phone in the footer.",
+   "new_gym": {
+    "name": "BOULBAKA2",
+    "address": "1-1-5 Touyama, Urasoe, Okinawa",
+    "suburb": "Urasoe",
+    "state": "Okinawa",
+    "country": "JP",
+    "lat": 26.254219,
+    "lng": 127.73407,
+    "coord_source": "Geospatial Information Authority of Japan (GSI) address search, '沖縄県浦添市当山一丁目１番５号' (house-number level); not OSM",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "website": "http://www.boulbaka.com/"
+   },
+   "new_gym_fill": {
+    "hours": {
+     "mon": "1pm–10pm",
+     "tue": "1pm–10pm",
+     "wed": "1pm–10pm",
+     "thu": "1pm–10pm",
+     "fri": "Closed",
+     "sat": "10am–7pm",
+     "sun": "10am–7pm"
+    },
+    "day_pass": "¥660 per hour (tax incl.); ¥1,980 for 4+ hours on weekdays, ¥2,640 on weekends/holidays; no registration fee",
+    "facilities": [
+     "shoe-hire",
+     "parking"
+    ]
+   }
+  },
+  "evidence": [
+   {
+    "url": "http://www.boulbaka.com/",
+    "supports": [
+     "retire",
+     "new_gym",
+     "address",
+     "hours",
+     "day_pass",
+     "facilities"
+    ],
+    "accessed": "2026-10-04"
+   }
+  ],
+  "confidence": "medium",
+  "notes": "Official page is http-only. Fetched via curl: the menu has only BOULBAKA2 (the BOULBAKA1 menu cell and the 'boulbaka1' gallery section are empty), all hours/prices/parking are for BOULBAKA2, and the footer still lists '882 AMEKU NAHA tel 098 988 4550' with no hours or closure notice. A 2020 Facebook post (seen only via the churatown.com aggregator, lead only) says there were then two branches, so the Naha gym existed in 2020; no official closure statement was found, so 'closed' rests on the removal of all Naha content (judgement call under the owner rule 'if unsure, retire'). Our Naha pin (26.2122,127.6791) is just the Naha city node; GSI puts '882 Ameku' at 26.237066,127.684242, so the pin was wrong regardless. BOULBAKA2 (Urasoe) is the live gym; I could not check whether it is already in our data (data/ is off limits) so de-dupe before adding. Hours: site says weekday 13:00-22:00, weekend/holiday 10:00-19:00, closed Friday (open if a public holiday); I mapped weekday to Mon-Thu."
+ },
+ {
+  "item": 25,
+  "id": "seed-446",
+  "name": "Naha Gym",
+  "decisions": [
+   "retire"
+  ],
+  "values": {
+   "reason_code": "closed",
+   "reason": "No official site exists; the venue at 1-17-15 Izumizaki, Naha ('那覇ジム') is described by its own social-media tagline and listings as a weight-training gym (visitor 2,000 yen), with no bouldering offer found."
+  },
+  "evidence": [],
+  "confidence": "medium",
+  "notes": "No official website found after web searches (Japanese and English) and the earlier guessed domains. Only Facebook/Instagram profiles (@nahagym, not allowed as sources; used only as a lead) and listing sites turned up, all describing a weight-training gym (open 10:00-22:00, visitor 2,000 yen, joining fee 10,000, monthly 6,000, 2nd floor). Nothing mentions climbing or bouldering. Our pin is just the Izumizaki quarter node in OSM. Retire under the owner rule 'if unsure, retire' (not-a-climbing-gym evidence is third-party only)."
+ },
+ {
+  "item": 28,
+  "id": "seed-973",
+  "name": "Boulder House Rödental",
+  "decisions": [
+   "rename",
+   "location",
+   "fill"
+  ],
+  "values": {
+   "name": "Cogito Boulderhalle Coburg",
+   "address": "Brückenstraße 6, 96472 Rödental",
+   "suburb": "Rödental",
+   "lat": 50.2939992,
+   "lng": 11.0501736,
+   "coord_source": "OSM building way 88524116 at Brückenstraße 6, 96472 Rödental (house-number match via Nominatim); the OSM pizzeria node at the same address carries the BoulderHouse website",
+   "website": "https://www.cogito-coburg.de/",
+   "hours": {
+    "mon": "8am–10pm",
+    "tue": "8am–10pm",
+    "wed": "8am–10pm",
+    "thu": "8am–10pm",
+    "fri": "8am–10pm",
+    "sat": "8am–10pm",
+    "sun": "8am–10pm"
+   },
+   "day_pass": "€13.90 regular, €11.90 concession (Cogito single visit, no time limit)",
+   "facilities": [
+    "shoe-hire",
+    "training",
+    "kids"
+   ]
+  },
+  "evidence": [
+   {
+    "url": "https://www.cogito-coburg.de/",
+    "supports": [
+     "name",
+     "address",
+     "hours"
+    ],
+    "accessed": "2026-10-04"
+   },
+   {
+    "url": "https://www.cogito-coburg.de/kontakt",
+    "supports": [
+     "address",
+     "hours"
+    ],
+    "accessed": "2026-10-04"
+   },
+   {
+    "url": "https://www.cogito-coburg.de/cogito-tagespreise",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ],
+    "accessed": "2026-10-04"
+   },
+   {
+    "url": "https://www.cogito-coburg.de/boulderhouse-umbau",
+    "supports": [
+     "name",
+     "facilities"
+    ],
+    "accessed": "2026-10-04"
+   }
+  ],
+  "confidence": "medium",
+  "notes": "boulderhouse-roedental.de now redirects to cogito-coburg.de (page title 'Cogito Boulderhalle Coburg - Cogito & BoulderHouse'; contact block 'Cogito | BoulderHouse'). One venue, one address: Cogito = adult/training hall (open, regular), BoulderHouse = being rebuilt as kids/family hall, closed until mid-Oct 2026. Name is a judgement call: 'Cogito Boulderhalle Coburg' is the site's own title; 'Cogito | BoulderHouse' is the alternative. Pin was ~5 km off (our 50.3167,11.1167). Hours Mo-So 8-22 apply to the venue. Shoe hire 2.90 EUR, training modules and kids/family hall stated; kids hall not open until mid-Oct."
+ },
+ {
+  "item": 29,
+  "id": "seed-972",
+  "name": "Boulder Base Bremen",
+  "decisions": [
+   "location",
+   "suburb",
+   "rename",
+   "add-gym",
+   "fill"
+  ],
+  "values": {
+   "name": "Boulder Base Bremen Walle",
+   "suburb": "Walle",
+   "address": "Hohweg 5, 28219 Bremen",
+   "lat": 53.1061722,
+   "lng": 8.7975242,
+   "coord_source": "OSM node 3966827862 (leisure=sports_centre 'Boulder Base Bremen', Hohweg 5, Walle)",
+   "website": "https://www.boulderbasebremen.de/walle",
+   "hours": {
+    "mon": "2pm–10pm",
+    "tue": "2pm–10pm",
+    "wed": "2pm–10pm",
+    "thu": "2pm–10pm",
+    "fri": "2pm–10pm",
+    "sat": "10am–10pm",
+    "sun": "10am–9pm"
+   },
+   "day_pass": "€13.50 adult, €10 concession (Tageskarte)",
+   "facilities": [
+    "cafe",
+    "kids",
+    "shoe-hire",
+    "training"
+   ],
+   "new_gym": {
+    "name": "Boulder Base Bremen Tabakquartier",
+    "address": "Am Tabakquartier 14, Halle 2, 28197 Bremen",
+    "suburb": "Tabakquartier",
+    "state": "Bremen",
+    "country": "DE",
+    "lat": 53.0755916,
+    "lng": 8.7706974,
+    "coord_source": "OSM node 9537691218 (leisure=sports_centre 'Boulder Base Bremen', Am Tabakquartier 14)",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "website": "https://www.boulderbasebremen.de/tabakquartier"
+   },
+   "new_gym_fill": {
+    "hours": {
+     "mon": "2pm–10pm",
+     "tue": "2pm–10pm",
+     "wed": "2pm–10pm",
+     "thu": "2pm–10pm",
+     "fri": "2pm–10pm",
+     "sat": "10am–10pm",
+     "sun": "10am–9pm"
+    },
+    "day_pass": "€13.50 adult, €10 concession (Tageskarte)",
+    "facilities": [
+     "cafe",
+     "kids",
+     "shoe-hire"
+    ]
+   }
+  },
+  "evidence": [
+   {
+    "url": "https://www.boulderbasebremen.de/impressum",
+    "supports": [
+     "address",
+     "new_gym"
+    ],
+    "accessed": "2026-10-04"
+   },
+   {
+    "url": "https://www.boulderbasebremen.de/walle",
+    "supports": [
+     "hours",
+     "facilities",
+     "name"
+    ],
+    "accessed": "2026-10-04"
+   },
+   {
+    "url": "https://www.boulderbasebremen.de/tabakquartier",
+    "supports": [
+     "hours",
+     "facilities",
+     "new_gym"
+    ],
+    "accessed": "2026-10-04"
+   },
+   {
+    "url": "https://www.boulderbasebremen.de/eintrittspreise",
+    "supports": [
+     "day_pass"
+    ],
+    "accessed": "2026-10-04"
+   },
+   {
+    "url": "https://www.boulderbasebremen.de/neu-hier",
+    "supports": [
+     "facilities"
+    ],
+    "accessed": "2026-10-04"
+   }
+  ],
+  "confidence": "high",
+  "notes": "Both halls confirmed on the official Impressum (Hohweg 5 / Ingolstädter Straße 9, 28219 Bremen (Walle); Am Tabakquartier 14 / Halle 2, 28197 Bremen (Tabakquartier)) and each has its own page with identical hours. Nominatim returns OSM elements that ARE each gym (both named 'Boulder Base Bremen'), so coordinates are element-level. Walle chosen for seed-972 per the hint (the original 2015 hall); Tabakquartier added as new gym. The rename adding 'Walle'/'Tabakquartier' is only for disambiguation (the site headings are 'Walle' and 'Tabakquartier'); skip it if you prefer the bare brand name on seed-972. Early access from 6:00 (staff-less, registration needed) ignored. Training area (gallery) stated only for Walle. Shoe hire 4.00 EUR. Parking: TQ has only a garage 2 min away (not set). Concession price: the price table lists 10.00 / 9.00 / 3.50 under Ermäßigt; used 10 as earlier research did."
+ },
+ {
+  "item": 30,
+  "id": "seed-1041",
+  "name": "Kraftwerk",
+  "decisions": [
+   "rename",
+   "location",
+   "fill"
+  ],
+  "values": {
+   "name": "urban apes Lüneburg",
+   "address": "Pulverweg 6, 21337 Lüneburg",
+   "lat": 53.2500372,
+   "lng": 10.4224786,
+   "coord_source": "OSM node 2972986420 (leisure=sports_centre 'urban apes', Pulverweg 6, Lüneburg)",
+   "website": "https://www.urbanapes.de/lueneburg/",
+   "hours": {
+    "mon": "1pm–10:30pm",
+    "tue": "1pm–10:30pm",
+    "wed": "1pm–10:30pm",
+    "thu": "1pm–10:30pm",
+    "fri": "1pm–10:30pm",
+    "sat": "11am–9pm",
+    "sun": "11am–9pm"
+   },
+   "day_pass": "€15.90 adult, €12.90 concession, €9.90 child (Tageskarte)",
+   "facilities": [
+    "cafe",
+    "training",
+    "kids",
+    "shoe-hire"
+   ]
+  },
+  "evidence": [
+   {
+    "url": "https://www.urbanapes.de/lueneburg/kontakt/",
+    "supports": [
+     "name",
+     "address"
+    ],
+    "accessed": "2026-10-04"
+   },
+   {
+    "url": "https://www.urbanapes.de/lueneburg/preise-zeiten/",
+    "supports": [
+     "hours",
+     "day_pass",
+     "facilities"
+    ],
+    "accessed": "2026-10-04"
+   },
+   {
+    "url": "https://www.urbanapes.de/lueneburg/",
+    "supports": [
+     "facilities",
+     "name"
+    ],
+    "accessed": "2026-10-04"
+   },
+   {
+    "url": "https://www.urbanapes.de/lueneburg/kurse/",
+    "supports": [
+     "types"
+    ],
+    "accessed": "2026-10-04"
+   }
+  ],
+  "confidence": "high",
+  "notes": "Official contact page (updated 2026-09-08) names 'urban apes Lüneburg, Pulverweg 6, 21337 Lüneburg'. The Kraftwerk=same venue link rests on earlier research (address/phone match from a search snippet; old domain parked); OSM has an 'urban apes' node at Pulverweg 6, ~500 m E of our pin (53.2497,10.4149). Hours are seasonal: I gave the WINTER schedule (1 Oct-30 Jun, in force today): Mo-Fr 13:00-22:30, Sa/Su 11:00-21:00, holidays 11:00-21:00; summer (1 Jul-30 Sep) Mo-Fr opens 14:30. Home page lists Bistro, Kinderbereich, Kletterwand, Trainingsbereich; course page offers Toprope and Vorstieg courses; types left unchanged (bouldering + top-rope)."
+ },
+ {
+  "item": 31,
+  "id": "seed-1013",
+  "name": "Fitz Rocks",
+  "decisions": [
+   "rename",
+   "location",
+   "fill"
+  ],
+  "values": {
+   "name": "Felswerk",
+   "address": "Albert-Einstein-Straße 6, 76829 Landau in der Pfalz",
+   "lat": 49.188012,
+   "lng": 8.1331402,
+   "coord_source": "OSM node 2538103057 (leisure=sports_centre 'Felswerk Kletterhalle', Albert-Einstein-Straße 6, Landau-Queichheim)",
+   "website": "https://felswerk-landau.de/",
+   "hours": {
+    "mon": "10am–10pm",
+    "tue": "8am–10pm",
+    "wed": "10am–10pm",
+    "thu": "8am–10pm",
+    "fri": "10am–10pm",
+    "sat": "10am–10pm",
+    "sun": "10am–10pm"
+   },
+   "day_pass": "€16 adult climbing & bouldering, €14 concession, €9 kids/teens 6-17; bouldering only €11 adult",
+   "facilities": [
+    "shoe-hire",
+    "kids"
+   ]
+  },
+  "evidence": [
+   {
+    "url": "https://felswerk-landau.de/kontakt/",
+    "supports": [
+     "name",
+     "address",
+     "hours"
+    ],
+    "accessed": "2026-10-04"
+   },
+   {
+    "url": "https://felswerk-landau.de/preise-2026/",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ],
+    "accessed": "2026-10-04"
+   },
+   {
+    "url": "https://felswerk-landau.de/kids-boulderbereich/",
+    "supports": [
+     "facilities"
+    ],
+    "accessed": "2026-10-04"
+   },
+   {
+    "url": "https://felswerk-landau.de/altguthaben-fitzrocks/",
+    "supports": [
+     "rename"
+    ],
+    "accessed": "2026-10-04"
+   }
+  ],
+  "confidence": "high",
+  "notes": "Name as the site writes it: 'Felswerk' (tagline 'Klettern & Bouldern'; OSM calls it 'Felswerk Kletterhalle'). Hours from the contact page with the October change applied (Fri/Sat close 22:00 'ab Okt.'; Tue/Thu open 8:00 for Early Climb). Cafe is announced for Nov, not open: not set. Shoe hire 4 EUR, kids bouldering area stated. Types unchanged (bouldering, top-rope, lead: site mentions Vorstieg/ProGrade autobelay and rope hire)."
+ },
+ {
+  "item": 32,
+  "id": "seed-1050",
+  "name": "NORDBLOC",
+  "decisions": [
+   "rename",
+   "location",
+   "fill"
+  ],
+  "values": {
+   "name": "urban apes Kiel",
+   "address": "Grasweg 40, 24118 Kiel",
+   "lat": 54.33849,
+   "lng": 10.1186983,
+   "coord_source": "OSM way 743193876 (leisure=sports_centre 'Urban Apes', Grasweg 40, Kiel)",
+   "website": "https://www.urbanapes.de/kiel/",
+   "hours": {
+    "mon": "9am–11pm",
+    "tue": "9am–11pm",
+    "wed": "9am–11pm",
+    "thu": "9am–11pm",
+    "fri": "9am–11pm",
+    "sat": "9am–10pm",
+    "sun": "9am–10pm"
+   },
+   "day_pass": "€16.90 adult, €13.90 concession, €9.90 child (Tageskarte)",
+   "facilities": [
+    "training",
+    "kids",
+    "showers",
+    "shoe-hire"
+   ]
+  },
+  "evidence": [
+   {
+    "url": "https://www.urbanapes.de/kiel/",
+    "supports": [
+     "name",
+     "facilities"
+    ],
+    "accessed": "2026-10-04"
+   },
+   {
+    "url": "https://www.urbanapes.de/kiel/preise-zeiten/",
+    "supports": [
+     "hours",
+     "day_pass",
+     "facilities"
+    ],
+    "accessed": "2026-10-04"
+   },
+   {
+    "url": "https://www.urbanapes.de/kiel/neu-hier/",
+    "supports": [
+     "facilities"
+    ],
+    "accessed": "2026-10-04"
+   }
+  ],
+  "confidence": "high",
+  "notes": "Name per the site: 'urban apes Kiel'; address Grasweg 40 confirmed by earlier research and matched by the OSM element (54.33849,10.11870), ~1.7 km N of our pin (54.3233,10.1228). Hours Mo-Fr 9-23, Sa/So/holidays 9-22. Home page: Kinderbereich, Trainingsbereich with Kilterboard; first-visit page lists Duschen and rental shoes. A 'Cafe Kraft' entry in the chain menu is another site, so cafe is not claimed. No rope offer seen: types unchanged."
+ }
+]

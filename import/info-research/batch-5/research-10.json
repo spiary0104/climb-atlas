@@ -1,0 +1,1200 @@
+[
+  {
+    "id": "g-5e4ca0a4d9",
+    "name": "Ablok - Annecy",
+    "expect_h": "7530d63c92aaafbf",
+    "website": "https://ablok.fr/annecy",
+    "hours": null,
+    "day_pass": "€14 adult, €12 reduced",
+    "facilities": [
+      "cafe",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://ablok.fr/annecy",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://ablok.fr/annecy/nos-tarifs",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass"
+        ]
+      },
+      {
+        "url": "https://ablok.fr/annecy/faq-64",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Official pages say open 7/7 (also holidays) but fetched pages give no weekly hours, so hours null. Facilities: bar/petite restauration and courses for children (home page). FAQ says no dedicated kids area. Formerly Bloc Trotters/Freestone (FAQ).",
+    "operating": "yes",
+    "official_address": "67 impasse des Marais, 74370 Argonay",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "g-fc6325fd76",
+    "name": "Arkose - Genevois",
+    "expect_h": "e165e377b98bcc07",
+    "website": "https://arkose.com/en/genevois",
+    "hours": {
+      "mon": "7am–12am",
+      "tue": "7am–12am",
+      "wed": "7am–12am",
+      "thu": "7am–12am",
+      "fri": "7am–12am",
+      "sat": "8am–12am",
+      "sun": "8am–12am"
+    },
+    "day_pass": "€17 adult (single entry, on site)",
+    "facilities": [
+      "cafe",
+      "kids",
+      "shop"
+    ],
+    "sources": [
+      {
+        "url": "https://arkose.com/en/genevois",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://arkose.com/genevois/tarifs-cours-resa/adultes",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours: Mon-Fri 7h-midnight, weekends/holidays 8h-midnight. Facilities from location page: La Cantine (restaurant), Shop, kids area/courses. Single entry EUR 17 valid in the gym only; first-visit discovery pass EUR 10 not used.",
+    "operating": "yes",
+    "official_address": "10 allée des Chênes, 74100 Vétraz-Monthoux",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "g-bc8418368d",
+    "name": "B'up - Brézet",
+    "expect_h": "49925a5d7a296238",
+    "website": "https://b-upclermont.fr/fr/b-up-brezet",
+    "hours": {
+      "mon": "9am–11pm",
+      "tue": "9am–11pm",
+      "wed": "9am–11pm",
+      "thu": "9am–11pm",
+      "fri": "9am–11pm",
+      "sat": "9am–9pm",
+      "sun": "9am–9pm"
+    },
+    "day_pass": "€15 adult, €12 reduced",
+    "facilities": [
+      "cafe",
+      "training",
+      "kids",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://b-upclermont.fr/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      },
+      {
+        "url": "https://b-upclermont.fr/fr/b-up-brezet",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://b-upclermont.fr/fr/tarifs",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours from home page: Brezet Mon-Fri 9h-23h, weekends/holidays 9h-21h. Training = B'strong room (pan Gullich, pegboard) on Brezet page; kids = children birthday sessions; cafe = Boire et manger section; shoe rental EUR 3 on tarifs page (shared with Delille).",
+    "operating": "yes",
+    "official_address": "11 rue Élisée Reclus, 63100 Clermont-Ferrand",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "g-5a9e9590e4",
+    "name": "B'up - Delille",
+    "expect_h": "5de7e06e10c3749d",
+    "website": "https://b-upclermont.fr/fr/b-up-delille",
+    "hours": {
+      "mon": "11am–11pm",
+      "tue": "11am–11pm",
+      "wed": "11am–11pm",
+      "thu": "11am–11pm",
+      "fri": "11am–11pm",
+      "sat": "9am–9pm",
+      "sun": "9am–9pm"
+    },
+    "day_pass": "€15 adult, €12 reduced",
+    "facilities": [
+      "cafe",
+      "training",
+      "kids",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://b-upclermont.fr/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      },
+      {
+        "url": "https://b-upclermont.fr/fr/b-up-delille",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://b-upclermont.fr/fr/tarifs",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours from home page: Delille Mon-Fri 11h-23h (10h in school holidays, ignored), weekends/holidays 9h-21h. Cafe = La Coursive; kids = B'fun children area from age 3; training = 15 m training wall; shoe rental EUR 3 on tarifs page (shared with Brezet).",
+    "operating": "yes",
+    "official_address": "43 rue Montlosier, 63000 Clermont-Ferrand",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "g-1b773ea6ba",
+    "name": "Climb Up - Chambéry",
+    "expect_h": "343883b0c63905a6",
+    "website": "https://chambery.climb-up.fr/",
+    "hours": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "10am–7pm",
+      "sun": "10am–7pm"
+    },
+    "day_pass": "€15 adult, €12 reduced",
+    "facilities": [
+      "cafe",
+      "kids",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://chambery.climb-up.fr/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      },
+      {
+        "url": "https://chambery.climb-up.fr/acces-contact/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      },
+      {
+        "url": "https://chambery.climb-up.fr/tarifs-escalade/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://chambery.climb-up.fr/la-salle/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours: Mon-Fri 10h-22h, Sat/Sun/holidays 10h-19h. Day pass read from the location shop price feed that the tarifs page loads (ENTREE CHAMBERY 15, REDUIT 12). Kids = ecole d'escalade/holiday activities; shoe loan from Pack Decouverte text; cafe = Restauration section.",
+    "operating": "yes",
+    "official_address": "Savoie Technolac, 10 allée du Lac de Tignes, 73290 La Motte-Servolex",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "g-0e3863a1a0",
+    "name": "Climb Up - Saint-Étienne",
+    "expect_h": "aeff3ce449e4f623",
+    "website": "https://saint-etienne.climb-up.fr/",
+    "hours": {
+      "mon": "10am–11pm",
+      "tue": "10am–11pm",
+      "wed": "10am–11pm",
+      "thu": "10am–11pm",
+      "fri": "10am–11pm",
+      "sat": "9am–8pm",
+      "sun": "9am–8pm"
+    },
+    "day_pass": "€15 adult, €13 reduced",
+    "facilities": [
+      "cafe",
+      "kids",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://saint-etienne.climb-up.fr/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      },
+      {
+        "url": "https://saint-etienne.climb-up.fr/acces-contact/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      },
+      {
+        "url": "https://saint-etienne.climb-up.fr/tarifs-escalade/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://saint-etienne.climb-up.fr/la-salle/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours: Mon-Fri 10h-23h, Sat/Sun 9h-20h (separate sauna hours ignored). Day pass from the location shop price feed (ENTREE 15, REDUIT 13). Cafe = accueil et restauration; kids = children courses/holiday activities, bouldering from age 4.",
+    "operating": "yes",
+    "official_address": "9 esplanade Bénévent (access via 19 allée Jean Lauer), 42000 Saint-Étienne",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "g-880857e1d9",
+    "name": "Vertical'Art - Grenoble",
+    "expect_h": "eee3ca5a553e89cb",
+    "website": "https://grenoble.vertical-art.fr/",
+    "hours": {
+      "mon": "11am–11pm",
+      "tue": "11am–11pm",
+      "wed": "11am–11pm",
+      "thu": "11am–11pm",
+      "fri": "11am–11pm",
+      "sat": "9am–9pm",
+      "sun": "9am–9pm"
+    },
+    "day_pass": "€16 adult, €14 reduced",
+    "facilities": [
+      "cafe",
+      "training",
+      "kids",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://grenoble.vertical-art.fr/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://grenoble.vertical-art.fr/tarifs/adultes/entrees-libres/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours: Mon-Fri 11h-23h, Sat/Sun/holidays 9h-21h. Pass journee EUR 16 classic, EUR 14 reduced (students/job seekers etc.); shoe rental EUR 4. Pan Gullich, spray wall and cardio/muscu room per home page; kids from age 3.",
+    "operating": "yes",
+    "official_address": "41 rue des Glairons, 38400 Saint-Martin-d'Hères",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "g-86f95e1310",
+    "name": "Bloc Session - BS.25 Besançon",
+    "expect_h": "0fac6d37a5730e44",
+    "website": "https://www.blocsession.com/salle-escalade/besancon/",
+    "hours": {
+      "mon": "12pm–10pm",
+      "tue": "12pm–10pm",
+      "wed": "10am–10pm",
+      "thu": "12pm–10pm",
+      "fri": "12pm–10pm",
+      "sat": "10am–8pm",
+      "sun": "10am–8pm"
+    },
+    "day_pass": "€16 adult, €14 student/reduced",
+    "facilities": [
+      "kids",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://www.blocsession.com/salle-escalade/besancon/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      },
+      {
+        "url": "https://activiteez.com/u/87870604103419/description2",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.blocsession.com/salle-escalade/besancon/tarifs/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.blocsession.com/salle-escalade/besancon/activites/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours are loaded into the official page from the gym booking system (activiteez). Wednesday reads \"10:00 (uniquement en auto-pointage) - 22:00\": used 10am as stated; staffed start may be 12pm like other weekdays (uncertain). Pass journee EUR 16 (12+), reduced EUR 14 students. Kids = birthdays, stages jeunes, ecole d'escalade.",
+    "operating": "yes",
+    "official_address": "1A rue du Murgelot, 25220 Chalezeule",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "g-1dd168bca8",
+    "name": "Vertical'Art - Dijon",
+    "expect_h": "b9b94bfb5872f5d3",
+    "website": "https://dijon.vertical-art.fr/",
+    "hours": {
+      "mon": "11am–11pm",
+      "tue": "11am–11pm",
+      "wed": "11am–11pm",
+      "thu": "11am–11pm",
+      "fri": "11am–11pm",
+      "sat": "9am–9pm",
+      "sun": "9am–9pm"
+    },
+    "day_pass": "€16 adult, €14 reduced",
+    "facilities": [
+      "cafe",
+      "training",
+      "kids",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://dijon.vertical-art.fr/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://dijon.vertical-art.fr/tarifs/adultes/entrees-libres/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours: Mon-Fri 11h-23h, Sat/Sun/holidays 9h-21h. Pass journee EUR 16 classic, EUR 14 reduced (students/job seekers etc.); shoe rental EUR 4. Kids = P'tits durs area from age 3; pan Gullich, spray wall, cardio-musculation.",
+    "operating": "yes",
+    "official_address": "17 rue Nicolas Cugnot, 21300 Chenôve",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "g-438f860619",
+    "name": "Block'Out - Rennes",
+    "expect_h": "7af363e92283b4da",
+    "website": "https://www.blockout.fr/rennes/",
+    "hours": {
+      "mon": "11am–11pm",
+      "tue": "11am–11pm",
+      "wed": "11am–11pm",
+      "thu": "11am–11pm",
+      "fri": "11am–11pm",
+      "sat": "9am–8pm",
+      "sun": "9am–8pm"
+    },
+    "day_pass": "€18 adult, €16 reduced",
+    "facilities": [
+      "cafe",
+      "training",
+      "kids",
+      "shoe-hire",
+      "shop"
+    ],
+    "sources": [
+      {
+        "url": "https://www.blockout.fr/rennes/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.blockout.fr/rennes/tarifs-cours/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Services list: restaurant & bar, cardio-musculation, sauna, boutique escalade, anniversaries; pan Gullich. Shoe rental EUR 5.",
+    "operating": "yes",
+    "official_address": "1 rue de Bray (Eco-Pôle Sud-Est), 35510 Cesson-Sévigné",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "g-0c73418922",
+    "name": "Vertical'Art - Brest",
+    "expect_h": "990fd0b54f316314",
+    "website": "https://brest.vertical-art.fr/",
+    "hours": {
+      "mon": "11am–11pm",
+      "tue": "11am–11pm",
+      "wed": "11am–11pm",
+      "thu": "11am–11pm",
+      "fri": "11am–11pm",
+      "sat": "9am–9pm",
+      "sun": "9am–9pm"
+    },
+    "day_pass": "€16 adult, €14 reduced",
+    "facilities": [
+      "cafe",
+      "training",
+      "kids",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://brest.vertical-art.fr/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://brest.vertical-art.fr/tarifs/adultes/entrees-libres/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours: Mon-Fri 11h-23h, Sat/Sun/holidays 9h-21h. Pass journee EUR 16 classic, EUR 14 reduced (students/job seekers etc.); shoe rental EUR 4. Kids = P'tits Durs zone from age 3; pan Gullich, spray wall, cardio-fitness. Hours text says \"Une fois ouverte\" (stale boilerplate) but the site shows current events (Oct 2026).",
+    "operating": "yes",
+    "official_address": "8 avenue Baron Lacrosse, 29850 Gouesnou",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "g-037048230e",
+    "name": "Arkose - Tours Nord",
+    "expect_h": "9289f791ec7c1b43",
+    "website": "https://arkose.com/en/tours",
+    "hours": {
+      "mon": "9am–11pm",
+      "tue": "9am–11pm",
+      "wed": "9am–11pm",
+      "thu": "9am–11pm",
+      "fri": "9am–11pm",
+      "sat": "9am–11pm",
+      "sun": "9am–11pm"
+    },
+    "day_pass": "€16 adult (single entry, on site)",
+    "facilities": [
+      "cafe",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://arkose.com/en/tours",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://arkose.com/en/tours/tarifs-cours-resa/adultes",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours: Mon-Fri 9h-23h, weekends/holidays 9h-23h. Cantine (restaurant) and kids section on page. Block'Out Tours is a separate gym at 7-9 av du Danemark.",
+    "operating": "yes",
+    "official_address": "15 avenue du Danemark, 37100 Tours",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "g-2a29f35d9d",
+    "name": "Arkose - Tours Sud",
+    "expect_h": "e11a06da93b4de27",
+    "website": "https://arkose.com/tours-sud",
+    "hours": {
+      "mon": "10am–11:30pm",
+      "tue": "10am–11:30pm",
+      "wed": "10am–11:30pm",
+      "thu": "10am–11:30pm",
+      "fri": "10am–11:30pm",
+      "sat": "9am–10pm",
+      "sun": "9am–10pm"
+    },
+    "day_pass": "€16 adult (single entry, on site)",
+    "facilities": [
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://arkose.com/tours-sud",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://arkose.com/tours-sud/tarifs-cours-resa/adultes",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours: Mon-Fri 10h-23h30, Sat/Sun/holidays 9h-22h. Housed in an Urban Soccer complex with sports bar; not stated as an Arkose cafe so cafe omitted. Kids courses stated.",
+    "operating": "yes",
+    "official_address": "2 rue Joseph Cugnot, 37300 Joué-lès-Tours",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "g-e16d7c02e8",
+    "name": "Block'Out - Tours",
+    "expect_h": "c5cd021d0ce4868c",
+    "website": "https://www.blockout.fr/tours/",
+    "hours": {
+      "mon": "10:30am–10:30pm",
+      "tue": "10:30am–10:30pm",
+      "wed": "10:30am–10:30pm",
+      "thu": "10:30am–10:30pm",
+      "fri": "10:30am–10:30pm",
+      "sat": "9am–8pm",
+      "sun": "9am–8pm"
+    },
+    "day_pass": "€17 adult, €15 reduced",
+    "facilities": [
+      "cafe",
+      "training",
+      "kids",
+      "shoe-hire",
+      "shop"
+    ],
+    "sources": [
+      {
+        "url": "https://www.blockout.fr/tours/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.blockout.fr/tours/tarifs-cours/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Services list: restaurant & bar, cardio-musculation, boutique escalade. Shoe rental EUR 5. Arkose Tours Nord is a different gym nearby (15 av du Danemark).",
+    "operating": "yes",
+    "official_address": "7-9 avenue du Danemark, 37100 Tours",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "g-cfcbee7042",
+    "name": "Vertical'Art - Orléans",
+    "expect_h": "7f3d980fa0b36083",
+    "website": "https://orleans.vertical-art.fr/",
+    "hours": {
+      "mon": "11am–11pm",
+      "tue": "11am–11pm",
+      "wed": "11am–11pm",
+      "thu": "11am–11pm",
+      "fri": "11am–11pm",
+      "sat": "9am–9pm",
+      "sun": "9am–9pm"
+    },
+    "day_pass": "€16 adult, €14 reduced",
+    "facilities": [
+      "cafe",
+      "training",
+      "kids",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://orleans.vertical-art.fr/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://orleans.vertical-art.fr/tarifs/adultes/entrees-libres/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours: Mon-Fri 11h-23h, Sat/Sun/holidays 9h-21h. Pass journee EUR 16 classic, EUR 14 reduced (students/job seekers etc.); shoe rental EUR 4. Kids judged from the Enfants/Ados tariff and course menu; pan Gullich and muscu area on home page.",
+    "operating": "yes",
+    "official_address": "Avenue Pierre Mendès France, 45140 Saint-Jean-de-la-Ruelle",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "g-7a108cee9b",
+    "name": "Bloc Session - BS.14 Nancy",
+    "expect_h": "9240ac014cc17da0",
+    "website": "https://www.blocsession.com/salle-escalade/nancy/",
+    "hours": {
+      "mon": "11am–10pm",
+      "tue": "11am–10pm",
+      "wed": "11am–10pm",
+      "thu": "11am–10pm",
+      "fri": "11am–10pm",
+      "sat": "10am–8pm",
+      "sun": "10am–8pm"
+    },
+    "day_pass": "€16 (12 and over), €10 under 12",
+    "facilities": [
+      "kids",
+      "shoe-hire",
+      "parking"
+    ],
+    "sources": [
+      {
+        "url": "https://www.blocsession.com/salle-escalade/nancy/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://activiteez.com/u/45874655681334/description2",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.blocsession.com/salle-escalade/nancy/tarifs/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.blocsession.com/salle-escalade/nancy/activites/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours from the gym booking widget: Mon-Fri 9:30-22:00 but 9:30-11:00 reserved for subscribers, so public hours given as 11am-10pm; Sat/Sun 10h-20h. Parking: \"Grand parking\" in page description. Kids = birthdays/stages/ecole d'escalade, from age 4.",
+    "operating": "yes",
+    "official_address": "23/25 rue Marcel Brot, 54000 Nancy",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "g-d98a18d2be",
+    "name": "Block'Out - Metz",
+    "expect_h": "f5586e3fca55e080",
+    "website": "https://www.blockout.fr/metz/",
+    "hours": {
+      "mon": "5pm–9pm",
+      "tue": "12pm–10:30pm",
+      "wed": "9am–10:30pm",
+      "thu": "12pm–10:30pm",
+      "fri": "12pm–10:30pm",
+      "sat": "9am–8pm",
+      "sun": "9am–8pm"
+    },
+    "day_pass": "€17 adult, €15 reduced",
+    "facilities": [
+      "cafe",
+      "training",
+      "kids",
+      "shoe-hire",
+      "shop"
+    ],
+    "sources": [
+      {
+        "url": "https://www.blockout.fr/metz/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.blockout.fr/metz/tarifs-cours/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours as stated: Mon 17h-21h, Tue/Thu/Fri 12h-22h30, Wed 9h-22h30, weekends/holidays 9h-20h. Snacking + bar counted as cafe; training = beams + cardio-musculation; boutique escalade listed. Shoe rental EUR 5.",
+    "operating": "yes",
+    "official_address": "601 rue du Bois d'Orly, 57685 Augny",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "g-102dc060a3",
+    "name": "Block'Out - Reims",
+    "expect_h": "ac5b32d98a8c450a",
+    "website": "https://www.blockout.fr/reims/",
+    "hours": {
+      "mon": "10:30am–10pm",
+      "tue": "10:30am–10pm",
+      "wed": "10:30am–10pm",
+      "thu": "10:30am–10pm",
+      "fri": "10:30am–10pm",
+      "sat": "9am–8pm",
+      "sun": "9am–8pm"
+    },
+    "day_pass": "€17 adult, €15 reduced",
+    "facilities": [
+      "cafe",
+      "training",
+      "kids",
+      "shoe-hire",
+      "parking"
+    ],
+    "sources": [
+      {
+        "url": "https://www.blockout.fr/reims/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.blockout.fr/reims/tarifs-cours/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours: Mon-Fri 10h30-22h, weekends/holidays 9h-20h. Services: restaurant & bar, 4D beams + cardio-musculation, \"Grand parking gratuit\". Shop not in this location services list. Shoe rental EUR 5.",
+    "operating": "yes",
+    "official_address": "33 rue Jacques de la Giraudière, 51100 Reims",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "g-5fc24d9c85",
+    "name": "Block'Out - Strasbourg",
+    "expect_h": "1aa4673199ffe401",
+    "website": "https://www.blockout.fr/strasbourg/",
+    "hours": {
+      "mon": "11am–11pm",
+      "tue": "11am–11pm",
+      "wed": "11am–11pm",
+      "thu": "11am–11pm",
+      "fri": "11am–11pm",
+      "sat": "9am–8pm",
+      "sun": "9am–8pm"
+    },
+    "day_pass": "€18 adult, €16 reduced",
+    "facilities": [
+      "cafe",
+      "training",
+      "kids",
+      "shoe-hire",
+      "shop"
+    ],
+    "sources": [
+      {
+        "url": "https://www.blockout.fr/strasbourg/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.blockout.fr/strasbourg/tarifs-cours/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Services: restaurant & bar, musculation room, boutique escalade. Shoe rental EUR 5.",
+    "operating": "yes",
+    "official_address": "4 rue Alexandre Dumas, 67200 Strasbourg",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "g-47d662e918",
+    "name": "Climb Up - Nancy",
+    "expect_h": "f5f330837c612dc7",
+    "website": "https://nancy.climb-up.fr/",
+    "hours": {
+      "mon": "10am–11pm",
+      "tue": "10am–11pm",
+      "wed": "10am–11pm",
+      "thu": "10am–11pm",
+      "fri": "2pm–11pm",
+      "sat": "9am–8pm",
+      "sun": "9am–8pm"
+    },
+    "day_pass": "€16 adult, €14 reduced, €11 under 12",
+    "facilities": [
+      "cafe",
+      "kids",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://nancy.climb-up.fr/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      },
+      {
+        "url": "https://nancy.climb-up.fr/acces-contact/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      },
+      {
+        "url": "https://nancy.climb-up.fr/tarifs-escalade/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://nancy.climb-up.fr/la-salle/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours: Mon-Thu 10h-23h, Fri 14h-23h, Sat/Sun 9h-20h. Day pass from the location shop price feed (SEANCE 16, REDUIT 14, ENFANT 11). Cafe = petite restauration, bar; kids = children bouldering area. Official address has no street number; street geocodes about 300 m from our pin (fine).",
+    "operating": "yes",
+    "official_address": "Parc d'activités Lafayette / rue Jean Jaurès, 54320 Maxéville",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "g-fa62612c5f",
+    "name": "Arkose - Lille",
+    "expect_h": "323d25fadb83ee49",
+    "website": "https://arkose.com/en/lille-bloc",
+    "hours": {
+      "mon": "9am–12am",
+      "tue": "9am–12am",
+      "wed": "9am–12am",
+      "thu": "9am–12am",
+      "fri": "9am–12am",
+      "sat": "9am–12am",
+      "sun": "9am–12am"
+    },
+    "day_pass": "€16 adult (single entry, on site)",
+    "facilities": [
+      "cafe",
+      "kids",
+      "shop"
+    ],
+    "sources": [
+      {
+        "url": "https://arkose.com/en/lille-bloc",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://arkose.com/en/lille-bloc/tarifs-cours-resa/adultes",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours: Mon-Fri 9h-midnight, weekends/holidays 9h-midnight. Cantine (restaurant), Shop in menu, kids section.",
+    "operating": "yes",
+    "official_address": "75 rue des Postes, 59000 Lille",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "g-2309c9eeb7",
+    "name": "Climb Up - Lille Centre",
+    "expect_h": "1bb28c9bb48bceb4",
+    "website": "https://lille-centre.climb-up.fr/",
+    "hours": {
+      "mon": "9am–11pm",
+      "tue": "9am–11pm",
+      "wed": "9am–11pm",
+      "thu": "9am–11pm",
+      "fri": "9am–11pm",
+      "sat": "9am–10pm",
+      "sun": "9am–10pm"
+    },
+    "day_pass": "€17 adult, €15 reduced",
+    "facilities": [
+      "cafe",
+      "kids",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://lille-centre.climb-up.fr/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      },
+      {
+        "url": "https://lille-centre.climb-up.fr/acces-contact/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      },
+      {
+        "url": "https://lille-centre.climb-up.fr/tarifs-escalade/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://lille-centre.climb-up.fr/la-salle/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours: Mon-Fri 9h-23h, Sat/Sun/holidays 9h-22h. Day pass from the location shop price feed (ENTREE 17, REDUIT 15). Cafe = espace accueil pour boire un verre ou se restaurer; kids = children courses. Pilates listed, not yoga, so yoga omitted.",
+    "operating": "yes",
+    "official_address": "Le 31, 12 rue de la Riviérette, 59800 Lille",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "g-42003f3bcd",
+    "name": "Grimp'A Bloc - Amiens",
+    "expect_h": "bae05d6261dd2289",
+    "website": "https://www.grimpabloc.fr/",
+    "hours": {
+      "mon": "1pm–10:30pm",
+      "tue": "11am–10:30pm",
+      "wed": "10am–10:30pm",
+      "thu": "11am–10:30pm",
+      "fri": "11am–10:30pm",
+      "sat": "9:30am–9pm",
+      "sun": "9:30am–9pm"
+    },
+    "day_pass": "€15 adult, €13 reduced",
+    "facilities": [
+      "cafe",
+      "training",
+      "kids",
+      "shoe-hire",
+      "parking",
+      "shop"
+    ],
+    "sources": [
+      {
+        "url": "https://www.grimpabloc.fr/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.grimpabloc.fr/infos",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.grimpabloc.fr/entrees-et-abonnements",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.grimpabloc.fr/la-boutique",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.grimpabloc.fr/bloc-park-adulte",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours as on /infos (same as home page). Training = Moon Board, pan Gullich, muscu cage; parking 40 spaces; shop on site; shoe hire EUR 3; kids blocpark ages 5-11. A yoga page link returns 404, so yoga omitted.",
+    "operating": "yes",
+    "official_address": "54 rue du Château Milan, 80000 Amiens",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  }
+]

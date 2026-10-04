@@ -1,0 +1,1015 @@
+[
+  {
+    "id": "seed-272",
+    "name": "Crux Climbing",
+    "metro": null,
+    "expect_h": "730ab95b96dd65b4",
+    "website": "https://www.cruxclimbingal.com/",
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [
+      {
+        "url": "https://www.cruxclimbingal.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      }
+    ],
+    "status": "website-only",
+    "notes": "Wix site renders content in JS; only the page JSON-LD is readable: address 1790 Harper Road and hours Mon-Fri 12pm-10pm, Sat 10am-10pm, no Sunday listed, so hours left null (not all 7 days). No prices readable on the fetched pages.",
+    "operating": "yes",
+    "official_address": "1790 Harper Road, Northport, AL 35476",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-273",
+    "name": "Gadrock",
+    "metro": null,
+    "expect_h": "8628984ea9eee2fa",
+    "website": "https://www.climbgadrock.com/",
+    "hours": {
+      "mon": "12pm–8pm",
+      "tue": "12pm–8pm",
+      "wed": "12pm–8pm",
+      "thu": "12pm–8pm",
+      "fri": "12pm–8pm",
+      "sat": "10am–8pm",
+      "sun": "1pm–6pm"
+    },
+    "day_pass": "$15 adult",
+    "facilities": [
+      "shoe-hire",
+      "training",
+      "yoga"
+    ],
+    "sources": [
+      {
+        "url": "https://www.climbgadrock.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.climbgadrock.com/ratesandmembership",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.climbgadrock.com/faq",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Day pass listed as $15 (no adult/child split). Shoes listed in the gear rental package (shoes, harness, chalk $5). FAQ: yoga classes and a multi-purpose room with limited fitness equipment.",
+    "operating": "yes",
+    "official_address": "1403 Rainbow Drive, Gadsden, AL 35901",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-274",
+    "name": "High Point Climbing – Birmingham",
+    "metro": null,
+    "expect_h": "037388dce28dbb87",
+    "website": "https://www.highpointclimbing.com/locations/birmingham",
+    "hours": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "10am–9pm",
+      "sun": "10am–8pm"
+    },
+    "day_pass": "$24 adult, $22 child/senior",
+    "facilities": [
+      "kids",
+      "yoga",
+      "training",
+      "shoe-hire",
+      "shop"
+    ],
+    "sources": [
+      {
+        "url": "https://www.highpointclimbing.com/locations/birmingham",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.highpointclimbing.com/locations/birmingham/rates",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours from the location page. Kid Zone, yoga classes, fitness and cardio gym on the location page; rental shoes and pro shop on the location rates page (gear rental table and \"rental gear & proshop\" perk). Showers/towel service is stated only as a membership perk in a chain-wide block, so not listed.",
+    "operating": "yes",
+    "official_address": "4766 US-280, Birmingham, AL 35242",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-275",
+    "name": "High Point Climbing – Huntsville",
+    "metro": null,
+    "expect_h": "cdb93dfa91b7c994",
+    "website": "https://www.highpointclimbing.com/locations/midcity",
+    "hours": {
+      "mon": "6am–9pm",
+      "tue": "10am–9pm",
+      "wed": "6am–9pm",
+      "thu": "10am–9pm",
+      "fri": "6am–9pm",
+      "sat": "10am–9pm",
+      "sun": "10am–8pm"
+    },
+    "day_pass": "$24 adult, $22 child/senior",
+    "facilities": [
+      "kids",
+      "yoga",
+      "shoe-hire",
+      "shop"
+    ],
+    "sources": [
+      {
+        "url": "https://www.highpointclimbing.com/locations/midcity",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.highpointclimbing.com/locations/midcity/rates",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Official name \"High Point Climbing and Fitness - Mid City\". Page shows two hours blocks; used the first (location-specific: Mon/Wed/Fri 6am-9pm, Tue/Thu/Sat 10am-9pm, Sun 10am-8pm); the second block repeats the Birmingham hours. Day pass price is the table shown on this location rates page. Pin is in Huntsville but about 7.4 km east of the OSM position of 1020 Nunnahsae Park Dr NW (approx 34.7378,-86.6669).",
+    "operating": "yes",
+    "official_address": "1020 Nunnahsae Park Dr NW, Huntsville, AL 35806",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-276",
+    "name": "High Point Climbing and Fitness – Lincoln Mill",
+    "metro": null,
+    "expect_h": "29daa79f1d90f3f0",
+    "website": "https://www.highpointclimbing.com/locations/lincoln-mill",
+    "hours": {
+      "mon": "2pm–9pm",
+      "tue": "2pm–9pm",
+      "wed": "2pm–9pm",
+      "thu": "2pm–9pm",
+      "fri": "2pm–9pm",
+      "sat": "12pm–8pm",
+      "sun": "12pm–8pm"
+    },
+    "day_pass": "$24 adult, $22 child/senior",
+    "facilities": [
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://www.highpointclimbing.com/locations/lincoln-mill",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.highpointclimbing.com/locations/lincoln-mill/rates",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Bouldering-only location. Sunday typed \"12 om\" on the page, read as 12pm. Official address typed \"Unity D400\" (ours: Unit D400). Pin (34.75,-86.61) is about 2.4 km from OSM position of 1300 Meridian St N, Huntsville (approx 34.7477,-86.5836).",
+    "operating": "yes",
+    "official_address": "1300 Meridian St N Unity D400, Huntsville, AL 35801",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-316",
+    "name": "Agility Boulders",
+    "metro": null,
+    "expect_h": "a53829d2a5a2292c",
+    "website": "https://www.agilityboulders.com/",
+    "hours": {
+      "mon": "10am–9pm",
+      "tue": "10am–9pm",
+      "wed": "10am–9pm",
+      "thu": "10am–9pm",
+      "fri": "10am–9pm",
+      "sat": "10am–6pm",
+      "sun": "10am–6pm"
+    },
+    "day_pass": "$25 adult, $15 youth (13 and under)",
+    "facilities": [
+      "kids",
+      "training",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://www.agilityboulders.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.agilityboulders.com/pricing",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.agilityboulders.com/facilities",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Site gives the address as 1404 38th Ave, Capitola, CA 95010 (our record says Santa Cruz 95062; same street address, Capitola/Santa Cruz border area). Facilities page: children climbing area, Kilter Board, fitness equipment; pricing page: rental climbing shoes $5.",
+    "operating": "yes",
+    "official_address": "1404 38th Ave, Capitola, CA 95010",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-317",
+    "name": "Alpine",
+    "metro": null,
+    "expect_h": "79bc3beda0c957ff",
+    "website": "https://climbatalpine.com/",
+    "hours": {
+      "mon": "6am–10pm",
+      "tue": "6am–10pm",
+      "wed": "6am–10pm",
+      "thu": "6am–10pm",
+      "fri": "6am–10pm",
+      "sat": "8am–8pm",
+      "sun": "11am–6pm"
+    },
+    "day_pass": "$30 adult (13+)",
+    "facilities": [
+      "kids",
+      "shoe-hire",
+      "yoga",
+      "training"
+    ],
+    "sources": [
+      {
+        "url": "https://climbatalpine.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      },
+      {
+        "url": "https://climbatalpine.com/membership/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://climbatalpine.com/first-time-visit/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://climbatalpine.com/yoga-and-fitness/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours from site footer. Official name \"Alpine Climbing Adventure Fitness\". Day pass for participants 13 or older; Adventure Center (kids) session $30. Yoga page: yoga room, cardio equipment and gym access included with day pass.",
+    "operating": "yes",
+    "official_address": "1450 Garrison Way, Ripon, CA 95366",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-321",
+    "name": "Blue Granite Climbing Gym",
+    "metro": null,
+    "expect_h": "d6188ecb68e221c7",
+    "website": "https://bluegraniteclimbing.com/",
+    "hours": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "10am–10pm",
+      "sun": "10am–10pm"
+    },
+    "day_pass": "$25 adult",
+    "facilities": [
+      "yoga",
+      "training",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://bluegraniteclimbing.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      },
+      {
+        "url": "https://bluegraniteclimbing.com/contact-us/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      },
+      {
+        "url": "https://bluegraniteclimbing.com/rates/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours everyday 10am-10pm; members-only hours 7am-10am excluded. Day pass includes yoga/fitness classes and cardio/free weight equipment; gear rental package (shoes, harness, chalk bag) listed.",
+    "operating": "yes",
+    "official_address": "1259 Emerald Bay Rd, South Lake Tahoe, CA 96150",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-324",
+    "name": "Boulderdash Ventura",
+    "metro": null,
+    "expect_h": "bb002129628f1c8c",
+    "website": "https://v.boulderdashclimbing.com/",
+    "hours": {
+      "mon": "11am–10pm",
+      "tue": "11am–10pm",
+      "wed": "11am–10pm",
+      "thu": "11am–10pm",
+      "fri": "11am–10pm",
+      "sat": "10am–8pm",
+      "sun": "10am–6pm"
+    },
+    "day_pass": "$25 adult, $20 youth (15 and under)",
+    "facilities": [
+      "shoe-hire",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://v.boulderdashclimbing.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      },
+      {
+        "url": "https://v.boulderdashclimbing.com/rates/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://v.boulderdashclimbing.com/boulderdash-faq/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Ventura location site (multi-location operator). Kids classes \"Off The Deck\" / \"Climb Time\" per FAQ. Pin (34.2746,-119.229) is about 3.7 km from OSM position of 2879 Seaborg Ave, Ventura (approx 34.2442,-119.2120).",
+    "operating": "yes",
+    "official_address": "2879 Seaborg Ave #101, Ventura, CA 93003",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-326",
+    "name": "Class 5 Fitness",
+    "metro": null,
+    "expect_h": "83b6fd38e305c3f9",
+    "website": "https://www.24-7at5.com/",
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [
+      {
+        "url": "https://www.24-7at5.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      }
+    ],
+    "status": "flag",
+    "notes": "General fitness center (Class 5 Fitness) with a climbing wall; the wall is mentioned only inside member testimonials, and no day pass, climbing prices or public-climbing policy is stated. www.24-7at5.com redirects to motherlodewebsites.com/class5fitsonora (footer says Class5FitSonora.com). Posted staffed hours Mon-Thu 6am-8pm, Fri 6am-7pm, Sat 8am-1pm, Sunday only for 24/7 card-key members; Sunday not stated as closed, so hours left null. Doubtful as a public climbing gym.",
+    "operating": "yes",
+    "official_address": "20860 Mechanical Drive, Sonora, CA 95370",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-329",
+    "name": "Diablo Rock Gym",
+    "metro": null,
+    "expect_h": "9eff75ef4fb16b57",
+    "website": "https://touchstoneclimbing.com/diablorock/",
+    "hours": {
+      "mon": "6am–10pm",
+      "tue": "6am–10pm",
+      "wed": "6am–10pm",
+      "thu": "6am–10pm",
+      "fri": "6am–10pm",
+      "sat": "9am–6pm",
+      "sun": "9am–6pm"
+    },
+    "day_pass": "$35 adult (after 3pm), $30 before 3pm Mon-Fri",
+    "facilities": [
+      "training",
+      "shoe-hire",
+      "parking",
+      "kids",
+      "yoga"
+    ],
+    "sources": [
+      {
+        "url": "https://touchstoneclimbing.com/diablorock/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      },
+      {
+        "url": "https://touchstoneclimbing.com/diablorock/contact-us/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://touchstoneclimbing.com/diablorock/membership-and-passes/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://touchstoneclimbing.com/diablorock/tour-and-amenities/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Touchstone Climbing location. Hours \"M-F 6am-10pm, S/S 9am-6pm\". Parking lot directly in front (contact page); gear rental table with shoes (membership page); hangboards/campus board/fitness machines/free weights (amenities); yoga and fitness classes (membership page); Climbing with Kids/youth programs in the site menu. Pin (37.978,-122.0311) is about 2.1 km from OSM position of 1220 Diamond Way, Concord (approx 37.9679,-122.0519).",
+    "operating": "yes",
+    "official_address": "1220 Diamond Way #140, Concord, CA 94520",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-331",
+    "name": "Far North Climbing Gym",
+    "metro": null,
+    "expect_h": "e3b59bf9ec69428b",
+    "website": "https://climbfarnorth.com/",
+    "hours": {
+      "mon": "9am–9pm",
+      "tue": "9am–9pm",
+      "wed": "9am–9pm",
+      "thu": "9am–9pm",
+      "fri": "9am–9pm",
+      "sat": "9am–9pm",
+      "sun": "9am–9pm"
+    },
+    "day_pass": "$15 adult, $12 child (12 and under)",
+    "facilities": [
+      "shoe-hire",
+      "training"
+    ],
+    "sources": [
+      {
+        "url": "https://climbfarnorth.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Site states \"Open 9AM - 9PM every day\". Day pass $15 for adult/student/military/youth 13-17. FAQ: rental shoes $5; yes to weights, Kilter board, tension board, treadwall. Pin is about 0.8 km from OSM position of 1065 K St, Arcata.",
+    "operating": "yes",
+    "official_address": "1065 K St Suite C, Arcata, CA 95521",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-332",
+    "name": "Flowstone Climbing",
+    "metro": null,
+    "expect_h": "cf0aa765a2ef6f18",
+    "website": "https://www.flowstoneclimbing.com/",
+    "hours": {
+      "mon": "8am–10pm",
+      "tue": "6am–10pm",
+      "wed": "8am–10pm",
+      "thu": "6am–10pm",
+      "fri": "8am–10pm",
+      "sat": "8am–7pm",
+      "sun": "8am–7pm"
+    },
+    "day_pass": "$30 adult, $25 youth (17 and under)",
+    "facilities": [
+      "yoga",
+      "training",
+      "showers",
+      "shop",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://www.flowstoneclimbing.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.flowstoneclimbing.com/pricing.html",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.flowstoneclimbing.com/facility.html",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Facility page: yoga studio, fitness gym, MoonBoard and Kilter training room, lockers and showers, full-scale retail outlet; walk-up cafe listed as under construction/coming soon so not listed. Rental shoes mentioned on pricing page (intro package).",
+    "operating": "yes",
+    "official_address": "1411 W. State St., Redlands, CA 92373",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-334",
+    "name": "Gold Crush Climbing Gym",
+    "metro": null,
+    "expect_h": "a5e723cb16d6d79b",
+    "website": "https://www.goldcrushclimbing.com/",
+    "hours": {
+      "mon": "Closed",
+      "tue": "Closed",
+      "wed": "4pm–9pm",
+      "thu": "4pm–9pm",
+      "fri": "4pm–9pm",
+      "sat": "10am–3pm",
+      "sun": "Closed"
+    },
+    "day_pass": "$22 adult, $19 student/service/youth/senior",
+    "facilities": [
+      "shoe-hire",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://www.goldcrushclimbing.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.goldcrushclimbing.com/rates",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Public hours stated as \"W-F 4-9pm & Sat 10-3pm\" (members 24/7 with orientation); Mon, Tue, Sun set to Closed on the reading that these are the only public hours (not stated explicitly as closed). Kids Crush youth drop-in/classes on rates page; shoes $6 rental. Pin (39.2191,-121.0611) is about 2.4 km from OSM position of 416 Crown Point Cir, Grass Valley (approx 39.2188,-121.0331).",
+    "operating": "yes",
+    "official_address": "416 Crown Point Circle, Unit 5, Grass Valley, CA 95945",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-335",
+    "name": "Granite Arch Climbing Center",
+    "metro": null,
+    "expect_h": "dcbf092be949db22",
+    "website": "https://www.granitearch.com/",
+    "hours": {
+      "mon": "11am–10pm",
+      "tue": "11am–10pm",
+      "wed": "11am–10pm",
+      "thu": "11am–10pm",
+      "fri": "11am–10pm",
+      "sat": "11am–10pm",
+      "sun": "12pm–5pm"
+    },
+    "day_pass": "$25 adult, $22 youth/young adult (21 and under)",
+    "facilities": [
+      "training",
+      "kids",
+      "shop",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://www.granitearch.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.granitearch.com/memberships-pricing",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "hours",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Footer hours Mon-Sat 11am-10pm, Sun 12pm-5pm (member-only hours Mon-Thu 9-11am excluded). Home page: training area with hangboards, campus board, free weights; kids recreational and competitive programs; Gear Shop; pricing page gear rental (shoes $5). Nominatim could only geocode the street, not the house number; pin lies on Folsom Blvd in Rancho Cordova so treated as ok.",
+    "operating": "yes",
+    "official_address": "11335-G Folsom Blvd, Rancho Cordova, CA 95742",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-339",
+    "name": "Hangar 18 – East Riverside",
+    "metro": null,
+    "expect_h": "542bf0f53c245ba3",
+    "website": "https://climbhangar18.com/east-riverside/",
+    "hours": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–9pm",
+      "sat": "10am–8pm",
+      "sun": "10am–8pm"
+    },
+    "day_pass": null,
+    "facilities": [
+      "yoga",
+      "training"
+    ],
+    "sources": [
+      {
+        "url": "https://climbhangar18.com/east-riverside/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Day pass price not shown on any fetched page (prices only in the member portal booking flow). Location page: dedicated yoga room, full fitness center, Kilter board and training area. Pin (33.95,-117.39) is about 6.5 km from OSM position of 2111 Iowa Ave, Riverside (approx 33.9917,-117.3408).",
+    "operating": "yes",
+    "official_address": "2111 Iowa Ave, Unit A, Riverside, CA 92507",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-340",
+    "name": "Hangar 18 – High Desert",
+    "metro": null,
+    "expect_h": "c28aeea111210c3d",
+    "website": "https://climbhangar18.com/high-desert/",
+    "hours": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–9pm",
+      "sat": "10am–8pm",
+      "sun": "10am–8pm"
+    },
+    "day_pass": null,
+    "facilities": [
+      "yoga"
+    ],
+    "sources": [
+      {
+        "url": "https://climbhangar18.com/high-desert/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Day pass price not shown on any fetched page (prices only in the member portal booking flow). Location page: yoga/party deck. Pin (34.5362,-117.2928) is about 5.1 km from OSM position of 15315 Cholame Rd, Victorville (approx 34.5021,-117.3297).",
+    "operating": "yes",
+    "official_address": "15315 Cholame Rd, Unit D, Victorville, CA 92392",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-344",
+    "name": "Hangar 18 – Rancho Cucamonga",
+    "metro": null,
+    "expect_h": "8be1900ec8bc3f8d",
+    "website": "https://climbhangar18.com/rancho-cucamonga/",
+    "hours": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–9pm",
+      "sat": "10am–8pm",
+      "sun": "10am–8pm"
+    },
+    "day_pass": null,
+    "facilities": [
+      "training"
+    ],
+    "sources": [
+      {
+        "url": "https://climbhangar18.com/rancho-cucamonga/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Day pass price not shown on any fetched page (prices only in the member portal booking flow). Location page: training area, Kilter board and two adjustable system boards.",
+    "operating": "yes",
+    "official_address": "9004 Hyssop Dr, Rancho Cucamonga, CA 91730",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-345",
+    "name": "Hangar 18 – Riverside",
+    "metro": null,
+    "expect_h": "260442ed55083b12",
+    "website": "https://climbhangar18.com/riverside/",
+    "hours": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–9pm",
+      "sat": "10am–8pm",
+      "sun": "10am–8pm"
+    },
+    "day_pass": null,
+    "facilities": [
+      "yoga",
+      "training"
+    ],
+    "sources": [
+      {
+        "url": "https://climbhangar18.com/riverside/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Day pass price not shown on any fetched page (prices only in the member portal booking flow). Location page: dedicated yoga and fitness room, training area, party room.",
+    "operating": "yes",
+    "official_address": "6935 Arlington Avenue, Riverside, CA 92503",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-346",
+    "name": "Hangar 18 – San Clemente",
+    "metro": null,
+    "expect_h": "262c7acb8525918b",
+    "website": "https://climbhangar18.com/san-clemente/",
+    "hours": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–9pm",
+      "sat": "10am–8pm",
+      "sun": "10am–8pm"
+    },
+    "day_pass": null,
+    "facilities": [
+      "yoga",
+      "training"
+    ],
+    "sources": [
+      {
+        "url": "https://climbhangar18.com/san-clemente/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Day pass price not shown on any fetched page (prices only in the member portal booking flow). Location page: dedicated yoga room, Kilter board, yoga classes free to members. Pin (33.4269,-117.612) is about 3.2 km from OSM position of 1031 Calle Trepadora, San Clemente (approx 33.4536,-117.6008).",
+    "operating": "yes",
+    "official_address": "1031 Calle Trepadora Unit A, San Clemente, CA 92673",
+    "location": "wrong_pin",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-348",
+    "name": "Hangar 18 – Upland",
+    "metro": null,
+    "expect_h": "2e8f4f0194baceb0",
+    "website": "https://climbhangar18.com/upland/",
+    "hours": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–9pm",
+      "sat": "10am–8pm",
+      "sun": "10am–8pm"
+    },
+    "day_pass": null,
+    "facilities": [
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://climbhangar18.com/upland/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Day pass price not shown on any fetched page (prices only in the member portal booking flow). Location page: youth wall, party deck. Pin about 0.4 km from the official address.",
+    "operating": "yes",
+    "official_address": "256 E Stowell St, Upland, CA 91786",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-359",
+    "name": "Metal Mark",
+    "metro": null,
+    "expect_h": "8cfc8457bfbeaeb7",
+    "website": "https://touchstoneclimbing.com/metalmark/",
+    "hours": {
+      "mon": "5am–10pm",
+      "tue": "5am–10pm",
+      "wed": "5am–10pm",
+      "thu": "5am–10pm",
+      "fri": "5am–10pm",
+      "sat": "9am–6pm",
+      "sun": "9am–6pm"
+    },
+    "day_pass": "$30 adult (after 3pm), $25 before 3pm Mon-Fri",
+    "facilities": [
+      "training",
+      "yoga",
+      "shoe-hire",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://touchstoneclimbing.com/metalmark/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      },
+      {
+        "url": "https://touchstoneclimbing.com/metalmark/tour-and-amenities/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://touchstoneclimbing.com/metalmark/membership-and-passes/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Touchstone Climbing location, trades as \"MetalMark\" (our record: \"Metal Mark\"; spelling only). Hours \"M-F 5am-10pm, S/S 9am-6pm\". Amenities page: fitness machines, free weights, campus board/training apparatuses, yoga and fitness classes; gear rental table with shoes; Climbing with Kids / youth programs in site menu.",
+    "operating": "yes",
+    "official_address": "4042 N. Cedar Ave, Fresno, CA 93726",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  }
+]

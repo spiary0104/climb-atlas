@@ -1,0 +1,362 @@
+[
+ {
+  "item": 7,
+  "id": "seed-88",
+  "our_record": {
+   "name": "Gravity Lab",
+   "suburb": "Durango",
+   "state": "CO",
+   "country": "US",
+   "address": "732 County Road 233, Durango, CO 81301",
+   "lat": 37.279,
+   "lng": -107.883,
+   "types": [
+    "indoor-bouldering"
+   ]
+  },
+  "issue": "location unknown: gym on CR 233, our pin in central Durango",
+  "earlier_research": {
+   "website": "https://www.gravitylabclimbing.com/",
+   "official_address": "732 CR 233, Durango, CO 81301",
+   "notes": "Mon-Thu 6am-9pm, Fri-Sun 9am-8pm. Training: Kilter, campus board, free weights, cardio. Nominatim could not geocode 'CR 233'; our pin sits in central Durango while the gym is on a county road, so the pin may be off, unverified.",
+   "sources": [
+    "https://www.gravitylabclimbing.com/",
+    "https://www.gravitylabclimbing.com/location-hours",
+    "https://www.gravitylabclimbing.com/memberships",
+    "https://www.gravitylabclimbing.com/the-gym",
+    "https://www.gravitylabclimbing.com/yoga",
+    "https://www.gravitylabclimbing.com/basics-for-first-time-climbers"
+   ]
+  },
+  "related_gyms": []
+ },
+ {
+  "item": 36,
+  "id": "seed-140",
+  "our_record": {
+   "name": "CLIMB Woodlands",
+   "suburb": "The Woodlands",
+   "state": "TX",
+   "country": "US",
+   "address": "7515 Oak Bluff Dr Unit C, Magnolia, TX 77354",
+   "lat": 30.1658,
+   "lng": -95.4613,
+   "types": [
+    "indoor-bouldering"
+   ]
+  },
+  "issue": "location unresolved: no building-level point for the official address (Magnolia, TX)",
+  "earlier_research": {
+   "website": "https://climbwoodlands.com/",
+   "official_address": "7515 Oak Bluff Dr, Suite C, Magnolia, TX 77354",
+   "notes": "Pages disagree: home-page footer says Mon-Thu 12-8pm, Fri 12-9pm, Sat 10am-9pm, Sun 1-6pm; first-time-visit FAQ and facility page agree on Mon-Fri 12-9pm, Sat 10am-8pm, Sun 1-6pm (used). Day pass: first-time-visit page $20/$18, facility page still shows older $18/$15 (used the visit page). Member-only morning hours ignored. Facility page: fitness equipment, adventure course; rental shoes $6; youth classes/teams/parties. Location: official address (Magnolia, TX 77354) geocodes (US Census geocoder) to ~30.2155,-95.5831, about 13 km west-northwest of our pin (30.1658,-95.4613, The Woodlands); our",
+   "sources": [
+    "https://climbwoodlands.com/first-time-visit",
+    "https://climbwoodlands.com/facility-staff",
+    "https://climbwoodlands.com/"
+   ]
+  },
+  "location_check": {
+   "status": "unresolved",
+   "address": "7515 Oak Bluff Dr, Suite C, Magnolia, TX 77354",
+   "lat": null,
+   "lng": null,
+   "coord_source": null,
+   "notes": "No building-level OSM coordinate: Nominatim finds no element or house point for CLIMB Woodlands or 7515 Oak Bluff Dr; OSM has Oak Bluff Drive (Magnolia) only as a street (way 21874984, about 30.2155,-95.5793) and the official site (climbwoodlands.com) publishes no coordinates or map pin. Street-level only, so not used."
+  },
+  "related_gyms": []
+ },
+ {
+  "item": 37,
+  "id": "seed-428",
+  "our_record": {
+   "name": "Thumbs Up",
+   "suburb": "Naka, Nagoya",
+   "state": "AICHI",
+   "country": "JP",
+   "address": "8-8 Fujimicho, Naka Ward, Nagoya 460-0014, OMC Bldg B1",
+   "lat": 35.1747,
+   "lng": 136.9007,
+   "types": [
+    "indoor-bouldering"
+   ]
+  },
+  "issue": "location unresolved: no building-level point for the official address (Nagoya)",
+  "earlier_research": {
+   "website": "https://www.omc-thumbsup.com/",
+   "official_address": "〒460-0014 愛知県名古屋市中区富士見町8-8 OMCビル B1F",
+   "notes": "Hours left null: the home page says weekdays 13:00-22:00, Sat/Sun/holidays 10:00-20:00, closed every Monday AND the 4th Tuesday of each month, while the price page says closed Mondays only (open if a holiday); pages disagree. Official site looks stale (home-page notices are from 2020, old omcwall.com points here) but shows no closure notice. Site mentions showers, rental of all gear, kids wall. Location: official address matches ours, but our pin (35.1747,136.9007) is ~2.4 km north of the Fujimicho centroid (35.153,136.907, Nominatim); real spot is near Kamimaezu station.",
+   "sources": [
+    "https://www.omc-thumbsup.com/",
+    "https://www.omc-thumbsup.com/%E3%81%94%E5%88%A9%E7%94%A8%E6%96%99/"
+   ]
+  },
+  "location_check": {
+   "status": "unresolved",
+   "address": "〒460-0014 愛知県名古屋市中区富士見町8-8 OMCビル B1F",
+   "lat": null,
+   "lng": null,
+   "coord_source": null,
+   "notes": "No building-level coordinate: OSM has no element or house point for Thumbs Up / OMC Building (Nominatim only returns the Fujimicho neighbourhood centroid 35.1531,136.9071) and the official site's map embed is an address query (q=愛知県名古屋市中区富士見町8-8), not a place pin. Not guessed."
+  },
+  "related_gyms": []
+ },
+ {
+  "item": 38,
+  "id": "seed-423",
+  "our_record": {
+   "name": "Mono Climbing Studio",
+   "suburb": "Hakata, Fukuoka",
+   "state": "FUKUOKA",
+   "country": "JP",
+   "address": "3-27-27 Naka, Hakata Ward, Fukuoka 812-0893",
+   "lat": 33.589,
+   "lng": 130.418,
+   "types": [
+    "indoor-bouldering"
+   ]
+  },
+  "issue": "location unresolved: no building-level point (Hakata, Fukuoka); official map viewport ~33.56782,130.44207 needs a manual check",
+  "earlier_research": {
+   "website": "https://mono-climbing.com/shopinfo/",
+   "official_address": "福岡市博多区那珂３丁目２７−２７",
+   "notes": "Hours left null: the Hakata block gives two inconsistent schedules (6:00-26:00 every day with staffed hours Mon-Fri 14:00-22:00 / weekends 10:00-22:00, and a second line Tue/Thu 10:00-24:00, weekends 10:00-22:00, weekdays 10:00-14:00 unstaffed). Unstaffed smart-lock use needs advance booking. Day pass = member 1-day rate; first-visit package 2,970 and 1,100 registration excluded. Parking: 6 spaces in front. Location: address matches ours but our pin (33.589,130.418) is ~3 km from the Naka 3-chome centroid (33.570,130.441, Nominatim).",
+   "sources": [
+    "https://mono-climbing.com/shopinfo/"
+   ]
+  },
+  "location_check": {
+   "status": "unresolved",
+   "address": "福岡市博多区那珂３丁目２７−２７",
+   "lat": null,
+   "lng": null,
+   "coord_source": null,
+   "notes": "No building-level coordinate from an allowed source: OSM has no element or house point for Mono Climbing Studio Hakata (Nominatim only returns the Naka 3-chome neighbourhood centroid 33.5700,130.4406). The official shopinfo page embeds a Google place map whose viewport centre is 33.5678188,130.4420689, but that is a map viewport centre, not an explicit place pin, so it is NOT used (candidate only, about 270 m from the neighbourhood centroid; needs a manual check)."
+  },
+  "related_gyms": []
+ },
+ {
+  "item": 24,
+  "id": "seed-447",
+  "our_record": {
+   "name": "Boulbaka",
+   "suburb": "Amakyu, Naha",
+   "state": "OKINAWA",
+   "country": "JP",
+   "address": "882 Amakyu, Naha, Okinawa 900-0005",
+   "lat": 26.2122345,
+   "lng": 127.6791452,
+   "types": [
+    "indoor-bouldering"
+   ]
+  },
+  "issue": "Boulbaka (Naha): official site now describes BOULBAKA2 in Urasoe; Naha gym only in the footer: moved or closed?",
+  "earlier_research": {
+   "website": "http://www.boulbaka.com/",
+   "official_address": "882 Ameku, Naha (site footer, tel 098-988-4550)",
+   "notes": "Doubtful: the official site's menu, hours (weekdays 13:00-22:00, weekends 10:00-19:00, closed Friday), prices and parking all describe BOULBAKA2 in Urasoe (1-1-5 Touyama, tel 098-917-1993); the original Naha Ameku gym appears only in the footer (882 Ameku, Naha, 098-988-4550), with no hours or closure notice. Hours and day pass left null because they belong to the Urasoe gym. Site is http-only (HTTPS handshake fails). Verify whether the Ameku gym still operates.",
+   "sources": [
+    "http://www.boulbaka.com/"
+   ]
+  },
+  "related_gyms": [
+   {
+    "id": "seed-446",
+    "name": "Naha Gym",
+    "suburb": "Izumizaki, Naha",
+    "address": "1-17-15 Izumizaki, Naha, Okinawa",
+    "lat": 26.2119418,
+    "lng": 127.6811698,
+    "types": [
+     "indoor-bouldering"
+    ]
+   }
+  ]
+ },
+ {
+  "item": 25,
+  "id": "seed-446",
+  "our_record": {
+   "name": "Naha Gym",
+   "suburb": "Izumizaki, Naha",
+   "state": "OKINAWA",
+   "country": "JP",
+   "address": "1-17-15 Izumizaki, Naha, Okinawa",
+   "lat": 26.2119418,
+   "lng": 127.6811698,
+   "types": [
+    "indoor-bouldering"
+   ]
+  },
+  "issue": "Naha Gym: third-party listings describe a weight-training gym at this address: not a climbing gym?",
+  "earlier_research": {
+   "website": null,
+   "official_address": null,
+   "notes": "No official site found after two searches and guessed domains. Search results show only Instagram/Facebook pages (not allowed sources) and listings describing a weight-training gym at 1-17-15 Izumizaki, Naha (third-party, unverified); no bouldering offer confirmed, so it may not be a climbing gym. Operating status unknown.",
+   "sources": []
+  },
+  "related_gyms": [
+   {
+    "id": "seed-447",
+    "name": "Boulbaka",
+    "suburb": "Amakyu, Naha",
+    "address": "882 Amakyu, Naha, Okinawa 900-0005",
+    "lat": 26.2122345,
+    "lng": 127.6791452,
+    "types": [
+     "indoor-bouldering"
+    ]
+   }
+  ]
+ },
+ {
+  "item": 28,
+  "id": "seed-973",
+  "our_record": {
+   "name": "Boulder House Rödental",
+   "suburb": "Rödental, Oberfranken",
+   "state": "BAYERN",
+   "country": "DE",
+   "address": null,
+   "lat": 50.3167,
+   "lng": 11.1167,
+   "types": [
+    "indoor-bouldering"
+   ]
+  },
+  "issue": "Rebranded: boulderhouse-roedental.de redirects to cogito-coburg.de (Cogito adult hall + BoulderHouse now a kids/family hall, closed for rebuild until mid-Oct 2026), Brueckenstrasse 6 about 5 km from pin. Decide rename/re-type before info.",
+  "earlier_research": {
+   "website": "https://www.cogito-coburg.de/",
+   "official_address": "Brückenstraße 6, 96472 Rödental",
+   "notes": "boulderhouse-roedental.de now redirects to cogito-coburg.de ('Cogito | BoulderHouse', Brueckenstrasse 6, Roedental). The site now has an adult hall 'Cogito' (single entry 13.90/11.90) and 'BoulderHouse' converted to a kids/family hall (single entry 9.90) which is closed for rebuild until mid-October 2026. Hours Mo-So 8-22 for the venue. Facilities: rental shoes, training/technique areas (Cogito), kids/family hall. Pin check: Nominatim finds Brueckenstrasse 6 in Moenchroeden/Roedental about 5 km SW of our pin.",
+   "sources": [
+    "https://www.cogito-coburg.de/kontakt",
+    "https://www.cogito-coburg.de/cogito-tagespreise",
+    "https://www.cogito-coburg.de/boulderhouse-tagespreise",
+    "https://www.cogito-coburg.de/boulderhouse-umbau"
+   ]
+  },
+  "related_gyms": []
+ },
+ {
+  "item": 29,
+  "id": "seed-972",
+  "our_record": {
+   "name": "Boulder Base Bremen",
+   "suburb": "Bremen",
+   "state": "BREMEN",
+   "country": "DE",
+   "address": null,
+   "lat": 53.0793,
+   "lng": 8.8017,
+   "types": [
+    "indoor-bouldering"
+   ]
+  },
+  "issue": "One record covers two halls (Walle, Hohweg 5 and Tabakquartier, Am Tabakquartier 14); pin is in the city centre between them. Decide: move this record to one hall and add the other via the import pipeline. Info fill (shared hours/prices) still staged.",
+  "earlier_research": {
+   "website": "https://www.boulderbasebremen.de/",
+   "official_address": "Hohweg 5, 28219 Bremen (Walle); Am Tabakquartier 14, Halle 2, 28197 Bremen (Tabakquartier)",
+   "notes": "Boulder Base Bremen has two halls: Walle (Hohweg 5) and Tabakquartier (Am Tabakquartier 14, Halle 2); both pages give identical hours (Mo-Fr 14-22, Sa 10-22, Su/holidays 10-21; personnel-free early access from 6:00 ignored) and the shared price list (day ticket adult 13.50, concession 10). Cafe/barista corner, kids offers and rental shoes stated on both pages. Training area (gallery) only stated for Walle, so not set. Our pin (city centre) is about 2.1 km from Tabakquartier and 3.0 km from Walle.",
+   "sources": [
+    "https://www.boulderbasebremen.de/",
+    "https://www.boulderbasebremen.de/walle",
+    "https://www.boulderbasebremen.de/tabakquartier",
+    "https://www.boulderbasebremen.de/walle/preise"
+   ]
+  },
+  "related_gyms": [],
+  "hint": "Proposed shape: location (move seed-972 to the Walle hall, Hohweg 5) + add-gym for the Tabakquartier hall, if both halls are confirmed on the official site."
+ },
+ {
+  "item": 30,
+  "id": "seed-1041",
+  "our_record": {
+   "name": "Kraftwerk",
+   "suburb": "Lüneburg",
+   "state": "NIEDERSACHSEN",
+   "country": "DE",
+   "address": null,
+   "lat": 53.2497,
+   "lng": 10.4149,
+   "types": [
+    "indoor-bouldering",
+    "top-rope"
+   ]
+  },
+  "issue": "Renamed: Kraftwerk Lueneburg (kraftwerk-lueneburg.de now parked) trades as urban apes Lueneburg at Pulverweg 6 (https://www.urbanapes.de/lueneburg/). Rename via identity batch, then add info.",
+  "earlier_research": {
+   "website": "https://www.urbanapes.de/lueneburg/",
+   "official_address": "Pulverweg 6, 21337 Lüneburg",
+   "notes": "Kraftwerk's own domain kraftwerk-lueneburg.de is now a parked 'domain is for sale' page. The same venue (Pulverweg 6, 21337 Lüneburg, tel 04131 720 86 12; the address/phone match with the old Kraftwerk listing came from a search snippet) now trades as urban apes Lüneburg. Hours are seasonal (summer 1 Jul-30 Sep Mo-Fr 14:30-22:30; winter 1 Oct-30 Jun Mo-Fr 13:00-22:30; Sa/Su 11:00-21:00), so hours left null. Bistro, Kinderbereich, Trainingsbereich, rental shoes and parking in front of the door are stated.",
+   "sources": [
+    "https://www.urbanapes.de/lueneburg/",
+    "https://www.urbanapes.de/lueneburg/preise-zeiten/",
+    "https://www.urbanapes.de/lueneburg/kontakt/"
+   ]
+  },
+  "related_gyms": []
+ },
+ {
+  "item": 31,
+  "id": "seed-1013",
+  "our_record": {
+   "name": "Fitz Rocks",
+   "suburb": "Landau in der Pfalz",
+   "state": "RHEINLAND_PFALZ",
+   "country": "DE",
+   "address": null,
+   "lat": 49.1975,
+   "lng": 8.117,
+   "types": [
+    "indoor-bouldering",
+    "lead-climbing",
+    "top-rope"
+   ]
+  },
+  "issue": "Renamed: Fitz Rocks is now Felswerk (https://felswerk-landau.de/, Albert-Einstein-Str. 6, Landau-Queichheim, about 1.6 km from pin; site has an Altguthaben FitzRocks page). Rename via identity batch, then add info.",
+  "earlier_research": {
+   "website": "https://felswerk-landau.de/",
+   "official_address": "Albert-Einstein-Straße 6, 76829 Landau in der Pfalz",
+   "notes": "Renamed: FitzRocks is now Felswerk (felswerk-landau.de has an 'Altguthaben FitzRocks' page about carrying over old FitzRocks credit; fitzrocks.de returns HTTP 500). Hours: contact page still shows Fri/Sat to 23:00 'ab Okt. bis 22:00'; news post of 24.9.2026 confirms Fri/Sat close 22:00 from October. Tue/Thu open 8:00 (Early Climb). Price page created 30.9.2026 (new prices from 1 Oct): EUR 16 adult climbing+bouldering, EUR 14 concession, bouldering only EUR 11. Cafe not yet open (announced for Nov). Pin is Landau centre; hall in Queichheim ~1.6 km SSE.",
+   "sources": [
+    "https://felswerk-landau.de/",
+    "https://felswerk-landau.de/kontakt/",
+    "https://felswerk-landau.de/neue-oeffnungszeiten-ab-oktober/",
+    "https://felswerk-landau.de/preise-2026/",
+    "https://felswerk-landau.de/kids-boulderbereich/",
+    "https://felswerk-landau.de/altguthaben-fitzrocks/"
+   ]
+  },
+  "related_gyms": []
+ },
+ {
+  "item": 32,
+  "id": "seed-1050",
+  "our_record": {
+   "name": "NORDBLOC",
+   "suburb": "Kiel",
+   "state": "SCHLESWIG_HOLSTEIN",
+   "country": "DE",
+   "address": null,
+   "lat": 54.3233,
+   "lng": 10.1228,
+   "types": [
+    "indoor-bouldering"
+   ]
+  },
+  "issue": "Renamed: NORDBLOC now trades as urban apes Kiel (https://www.urbanapes.de/kiel/, Grasweg 40, about 1.7 km from pin). Rename via identity batch, then add info.",
+  "earlier_research": {
+   "website": "https://www.urbanapes.de/kiel/",
+   "official_address": "Grasweg 40, 24118 Kiel",
+   "notes": "NORDBLOC at Grasweg 40 now trades as urban apes Kiel (old domain nordbloc-kiel.de still serves the urban apes page but its TLS certificate has expired; fetched ignoring the cert). Hours Mo-Fr 9-23, Sa/So/holidays 9-22 (preise-zeiten page, updated Sept 2026). Early bird Mo-Fr until 16:00 EUR 12.90. A 'Bistro' appears only as a section label, so cafe not claimed. Pin is ~1.7 km S of the hall (Nominatim).",
+   "sources": [
+    "https://www.urbanapes.de/kiel/",
+    "https://www.urbanapes.de/kiel/preise-zeiten/",
+    "https://www.urbanapes.de/kiel/neu-hier/",
+    "https://www.nordbloc-kiel.de/preise"
+   ]
+  },
+  "related_gyms": []
+ }
+]

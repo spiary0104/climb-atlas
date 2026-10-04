@@ -1,0 +1,387 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-04-review-identity-2",
+ "index": {
+  "sha256": "fd9a5cf85872d21fc7c34442e63473f28121f51c0bc1cf7c5c2c84349ff24b6e",
+  "count": 2272,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [],
+ "counts": {
+  "records": 18,
+  "new": 0,
+  "existing": 0,
+  "update": 18,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 10
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "d8323bf7c5d66aaf43c5b1ea027b4cc847246180ae2bce8a8fb3e210339c2aa4",
+ "records": [
+  {
+   "line": 1,
+   "class": "update",
+   "id": "seed-308",
+   "changes": [
+    {
+     "field": "name",
+     "before": "MetroRock Newburyport",
+     "after": "Salt Pump Newburyport"
+    }
+   ],
+   "expect_h": "85c22321f82d6706",
+   "update_reason": "Renamed: same address, now Salt Pump Newburyport (verified 2026-10-04)",
+   "warnings": [
+    {
+     "code": "rename",
+     "field": "name",
+     "message": "renames \"MetroRock Newburyport\" -> \"Salt Pump Newburyport\""
+    }
+   ]
+  },
+  {
+   "line": 2,
+   "class": "update",
+   "id": "seed-428",
+   "changes": [
+    {
+     "field": "types",
+     "before": [
+      "indoor-bouldering"
+     ],
+     "after": [
+      "indoor-bouldering",
+      "top-rope"
+     ]
+    }
+   ],
+   "expect_h": "072b174872edbb92",
+   "update_reason": "Type tags: the official home page lists an OMC wall for rope climbing (verified 2026-10-04)"
+  },
+  {
+   "line": 3,
+   "class": "update",
+   "id": "seed-866",
+   "changes": [
+    {
+     "field": "name",
+     "before": "Craggy Island",
+     "after": "Blue Spider Climbing"
+    },
+    {
+     "field": "suburb",
+     "before": "Surrey",
+     "after": "Guildford"
+    }
+   ],
+   "expect_h": "c48da7a4d6169b15",
+   "update_reason": "Renamed: Craggy Island Guildford is now Blue Spider Climbing (same address); suburb is the town, not the county (verified 2026-10-04)",
+   "warnings": [
+    {
+     "code": "rename",
+     "field": "name",
+     "message": "renames \"Craggy Island\" -> \"Blue Spider Climbing\""
+    }
+   ]
+  },
+  {
+   "line": 4,
+   "class": "update",
+   "id": "seed-891",
+   "changes": [
+    {
+     "field": "name",
+     "before": "The Boulder Bunker",
+     "after": "The Bunker"
+    },
+    {
+     "field": "suburb",
+     "before": "Torbay",
+     "after": "Torquay"
+    }
+   ],
+   "expect_h": "95cd6391ec60600e",
+   "update_reason": "Renamed: The Bunker, formerly The Boulder Bunker (same address); suburb is the town (verified 2026-10-04)",
+   "warnings": [
+    {
+     "code": "rename",
+     "field": "name",
+     "message": "renames \"The Boulder Bunker\" -> \"The Bunker\""
+    }
+   ]
+  },
+  {
+   "line": 5,
+   "class": "update",
+   "id": "seed-871",
+   "changes": [
+    {
+     "field": "name",
+     "before": "Flashpoint Swindon",
+     "after": "Rockstar Bouldering (Techno)"
+    }
+   ],
+   "expect_h": "c5cb5916498170b8",
+   "update_reason": "Flashpoint Swindon joined Rockstar and is now Rockstar Bouldering (Techno), Techno Trading Estate (verified 2026-10-04)",
+   "warnings": [
+    {
+     "code": "rename",
+     "field": "name",
+     "message": "renames \"Flashpoint Swindon\" -> \"Rockstar Bouldering (Techno)\""
+    }
+   ]
+  },
+  {
+   "line": 6,
+   "class": "update",
+   "id": "seed-877",
+   "changes": [
+    {
+     "field": "name",
+     "before": "Nottingham Climbing Centre",
+     "after": "Nottingham Climbing Centre - Lenton"
+    },
+    {
+     "field": "suburb",
+     "before": "Nottingham",
+     "after": "Lenton, Nottingham"
+    },
+    {
+     "field": "types",
+     "before": [
+      "indoor-bouldering",
+      "lead-climbing",
+      "top-rope"
+     ],
+     "after": [
+      "indoor-bouldering"
+     ]
+    }
+   ],
+   "expect_h": "059d34e6734ef1f8",
+   "update_reason": "The operator has two sites; Basford is listed separately, so this record is the Lenton bouldering site (3 Prospect Place) (verified 2026-10-04)",
+   "warnings": [
+    {
+     "code": "rename",
+     "field": "name",
+     "message": "renames \"Nottingham Climbing Centre\" -> \"Nottingham Climbing Centre - Lenton\""
+    }
+   ]
+  },
+  {
+   "line": 7,
+   "class": "update",
+   "id": "seed-973",
+   "changes": [
+    {
+     "field": "name",
+     "before": "Boulder House Rödental",
+     "after": "Cogito Boulderhalle Coburg"
+    }
+   ],
+   "expect_h": "38bcaa8ffbaacec8",
+   "update_reason": "Rebranded: boulderhouse-roedental.de redirects to Cogito Boulderhalle Coburg (Cogito hall + BoulderHouse kids hall, Brueckenstrasse 6) (verified 2026-10-04)",
+   "warnings": [
+    {
+     "code": "rename",
+     "field": "name",
+     "message": "renames \"Boulder House Rödental\" -> \"Cogito Boulderhalle Coburg\""
+    }
+   ]
+  },
+  {
+   "line": 8,
+   "class": "update",
+   "id": "seed-972",
+   "changes": [
+    {
+     "field": "name",
+     "before": "Boulder Base Bremen",
+     "after": "Boulder Base Bremen Walle"
+    },
+    {
+     "field": "suburb",
+     "before": "Bremen",
+     "after": "Walle, Bremen"
+    }
+   ],
+   "expect_h": "bd4140ce450a9bb0",
+   "update_reason": "Boulder Base Bremen has two halls; this record is the Walle hall (Hohweg 5); Tabakquartier is added separately (verified 2026-10-04)",
+   "warnings": [
+    {
+     "code": "rename",
+     "field": "name",
+     "message": "renames \"Boulder Base Bremen\" -> \"Boulder Base Bremen Walle\""
+    }
+   ]
+  },
+  {
+   "line": 9,
+   "class": "update",
+   "id": "seed-1041",
+   "changes": [
+    {
+     "field": "name",
+     "before": "Kraftwerk",
+     "after": "urban apes Lüneburg"
+    }
+   ],
+   "expect_h": "94c47abea0114788",
+   "update_reason": "Renamed: Kraftwerk (domain parked) trades as urban apes Lüneburg at Pulverweg 6 (verified 2026-10-04)",
+   "warnings": [
+    {
+     "code": "rename",
+     "field": "name",
+     "message": "renames \"Kraftwerk\" -> \"urban apes Lüneburg\""
+    }
+   ]
+  },
+  {
+   "line": 10,
+   "class": "update",
+   "id": "seed-1013",
+   "changes": [
+    {
+     "field": "name",
+     "before": "Fitz Rocks",
+     "after": "Felswerk"
+    }
+   ],
+   "expect_h": "bd0b45f325d79f88",
+   "update_reason": "Renamed: Fitz Rocks is now Felswerk (the site honours old FitzRocks credit) (verified 2026-10-04)",
+   "warnings": [
+    {
+     "code": "rename",
+     "field": "name",
+     "message": "renames \"Fitz Rocks\" -> \"Felswerk\""
+    }
+   ]
+  },
+  {
+   "line": 11,
+   "class": "update",
+   "id": "seed-1050",
+   "changes": [
+    {
+     "field": "name",
+     "before": "NORDBLOC",
+     "after": "urban apes Kiel"
+    }
+   ],
+   "expect_h": "cde576d3c77bc0fa",
+   "update_reason": "Renamed: NORDBLOC now trades as urban apes Kiel at Grasweg 40 (verified 2026-10-04)",
+   "warnings": [
+    {
+     "code": "rename",
+     "field": "name",
+     "message": "renames \"NORDBLOC\" -> \"urban apes Kiel\""
+    }
+   ]
+  },
+  {
+   "line": 12,
+   "class": "update",
+   "id": "seed-935",
+   "changes": [
+    {
+     "field": "suburb",
+     "before": "Inverness, Highland",
+     "after": "Fort William"
+    }
+   ],
+   "expect_h": "e07405db4ce6f338",
+   "update_reason": "Suburb: the official address is Fassifern Road, Fort William (not Inverness) (verified 2026-10-04)"
+  },
+  {
+   "line": 13,
+   "class": "update",
+   "id": "seed-951",
+   "changes": [
+    {
+     "field": "suburb",
+     "before": "Bangor, Gwynedd",
+     "after": "Caernarfon"
+    }
+   ],
+   "expect_h": "a548b5f4c513c91d",
+   "update_reason": "Suburb: the official address is Cibyn Estate, Caernarfon (not Bangor) (verified 2026-10-04)"
+  },
+  {
+   "line": 14,
+   "class": "update",
+   "id": "seed-956",
+   "changes": [
+    {
+     "field": "suburb",
+     "before": "Mold, Flintshire",
+     "after": "Queensferry"
+    }
+   ],
+   "expect_h": "d1566e8fcced0eee",
+   "update_reason": "Suburb: the official address is Rectors Lane, Pentre, Queensferry (not Mold) (verified 2026-10-04)"
+  },
+  {
+   "line": 15,
+   "class": "update",
+   "id": "seed-1062",
+   "changes": [
+    {
+     "field": "suburb",
+     "before": "Augsburg, Schwaben",
+     "after": "Kempten"
+    }
+   ],
+   "expect_h": "7c86411a245a49a7",
+   "update_reason": "Suburb: the official address is Aybuehlweg 69, Kempten (not Augsburg) (verified 2026-10-04)"
+  },
+  {
+   "line": 16,
+   "class": "update",
+   "id": "seed-1029",
+   "changes": [
+    {
+     "field": "suburb",
+     "before": "Schwaben",
+     "after": "Weitnau"
+    }
+   ],
+   "expect_h": "35c3b494cdc13a5e",
+   "update_reason": "Suburb: the official address is in Weitnau-Seltmans (verified 2026-10-04)"
+  },
+  {
+   "line": 17,
+   "class": "update",
+   "id": "seed-964",
+   "changes": [
+    {
+     "field": "suburb",
+     "before": "Kassel",
+     "after": "Fulda"
+    }
+   ],
+   "expect_h": "a6953eef85b28b1e",
+   "update_reason": "Suburb: the official address is Kreuzbergstrasse 40, Fulda (not Kassel) (verified 2026-10-04)"
+  },
+  {
+   "line": 18,
+   "class": "update",
+   "id": "seed-963",
+   "changes": [
+    {
+     "field": "suburb",
+     "before": "Düsseldorf",
+     "after": "Hilden"
+    }
+   ],
+   "expect_h": "3db84fb2f607988d",
+   "update_reason": "Suburb: the official address is Bahnhofsallee 35, Hilden (not Duesseldorf) (verified 2026-10-04)"
+  }
+ ]
+}

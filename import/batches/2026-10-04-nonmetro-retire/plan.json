@@ -1,0 +1,644 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-04-nonmetro-retire",
+ "index": {
+  "sha256": "af9c78d5f3eeb4f9337651a588bad3ce8dbcc4f6fb92443bc35e343982749e9b",
+  "count": 2293,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-04-review-new-gyms"
+ ],
+ "counts": {
+  "records": 25,
+  "new": 0,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "retire": 25,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "0e7d9e1d983dffb9e03acf8ad1aaef6a450d45c69221ab159911d30c3ceda3a5",
+ "records": [
+  {
+   "line": 1,
+   "class": "retire",
+   "id": "seed-326",
+   "name": "Class 5 Fitness",
+   "country": "US",
+   "expect_h": "83b6fd38e305c3f9",
+   "reason_code": "closed",
+   "retire_reason": "Not a climbing gym: a general fitness centre; a climbing wall appears only in member testimonials, with no public climbing",
+   "entry": {
+    "id": "seed-326",
+    "name": "Class 5 Fitness",
+    "country": "US",
+    "state": "CA",
+    "suburb": "Sonora",
+    "lat": 37.9997662,
+    "lng": -120.2665502,
+    "address": "20860 Mechanical Dr, Sonora, CA 95370",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "83b6fd38e305c3f9"
+   }
+  },
+  {
+   "line": 2,
+   "class": "retire",
+   "id": "seed-899",
+   "name": "The Tide Climbing Centre",
+   "country": "GB",
+   "expect_h": "14579f9845f9e492",
+   "reason_code": "closed",
+   "retire_reason": "No climbing centre at this location: Tide lists only its Padstow and Helston centres, none in Truro",
+   "entry": {
+    "id": "seed-899",
+    "name": "The Tide Climbing Centre",
+    "country": "GB",
+    "state": "ENGLAND",
+    "suburb": "Truro, Cornwall",
+    "lat": 50.266,
+    "lng": -5.0527,
+    "address": null,
+    "types": [
+     "indoor-bouldering",
+     "lead-climbing",
+     "top-rope"
+    ],
+    "h": "14579f9845f9e492"
+   }
+  },
+  {
+   "line": 3,
+   "class": "retire",
+   "id": "seed-138",
+   "name": "Cave Climbing Gym",
+   "country": "US",
+   "expect_h": "766b1490a4fef746",
+   "reason_code": "closed",
+   "retire_reason": "Probably closed: the official domain now serves a recovered copy of the old site and unrelated spam; a closure notice was reported",
+   "entry": {
+    "id": "seed-138",
+    "name": "Cave Climbing Gym",
+    "country": "US",
+    "state": "TX",
+    "suburb": "El Paso",
+    "lat": 31.7954092,
+    "lng": -106.5117736,
+    "address": "113 Executive Center Blvd, El Paso, TX 79902",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "766b1490a4fef746"
+   }
+  },
+  {
+   "line": 4,
+   "class": "retire",
+   "id": "seed-314",
+   "name": "Willy's World Adventure",
+   "country": "US",
+   "expect_h": "a9b4d71c3dad6c6a",
+   "reason_code": "closed",
+   "retire_reason": "Not a climbing gym: a multi-sport health club with a rock wall; no public climbing entry or climbing price",
+   "entry": {
+    "id": "seed-314",
+    "name": "Willy's World Adventure",
+    "country": "US",
+    "state": "MA",
+    "suburb": "Eastham",
+    "lat": 41.8306,
+    "lng": -69.9709,
+    "address": "4730 State Hwy, Eastham, MA 02642",
+    "types": [
+     "indoor-bouldering",
+     "top-rope"
+    ],
+    "h": "a9b4d71c3dad6c6a"
+   }
+  },
+  {
+   "line": 5,
+   "class": "retire",
+   "id": "seed-377",
+   "name": "Santa Barbara Rock Gym",
+   "country": "US",
+   "expect_h": "9804e024a7fcf629",
+   "reason_code": "closed",
+   "retire_reason": "No current presence: the official domain now redirects through unrelated sites; no gym shown and no other official presence",
+   "entry": {
+    "id": "seed-377",
+    "name": "Santa Barbara Rock Gym",
+    "country": "US",
+    "state": "CA",
+    "suburb": "Santa Barbara",
+    "lat": 34.4156933,
+    "lng": -119.6934994,
+    "address": "322 State St, Santa Barbara, CA 93101",
+    "types": [
+     "indoor-bouldering",
+     "top-rope"
+    ],
+    "h": "9804e024a7fcf629"
+   }
+  },
+  {
+   "line": 6,
+   "class": "retire",
+   "id": "seed-76",
+   "name": "Adventure Unlimited Rock Gym",
+   "country": "US",
+   "expect_h": "16cf0c3e2c510849",
+   "reason_code": "closed",
+   "retire_reason": "Not a public climbing gym: the wall is a camper activity at a youth and family camp, with no public entry",
+   "entry": {
+    "id": "seed-76",
+    "name": "Adventure Unlimited Rock Gym",
+    "country": "US",
+    "state": "CO",
+    "suburb": "Buena Vista",
+    "lat": 38.8422,
+    "lng": -106.131,
+    "address": "18325 County Road 366, Buena Vista, CO 81211",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "16cf0c3e2c510849"
+   }
+  },
+  {
+   "line": 7,
+   "class": "retire",
+   "id": "seed-78",
+   "name": "Basecamp Bouldering",
+   "country": "US",
+   "expect_h": "97a46e4f4979b531",
+   "reason_code": "closed",
+   "retire_reason": "No climbing gym at this address: the official site at 630 Main St is a guide service and never mentions a bouldering gym or day entry",
+   "entry": {
+    "id": "seed-78",
+    "name": "Basecamp Bouldering",
+    "country": "US",
+    "state": "CO",
+    "suburb": "Ouray",
+    "lat": 38.0231,
+    "lng": -107.6714,
+    "address": "630 Main St, Ouray, CO 81427",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "97a46e4f4979b531"
+   }
+  },
+  {
+   "line": 8,
+   "class": "retire",
+   "id": "seed-1594",
+   "name": "Toprope",
+   "country": "IL",
+   "expect_h": "c6640269b5282201",
+   "reason_code": "closed",
+   "retire_reason": "Not a climbing gym: an adventure park (rope bridges, zip-line, archery) whose 12 m wall is one attraction, open seasonally",
+   "entry": {
+    "id": "seed-1594",
+    "name": "Toprope",
+    "country": "IL",
+    "state": "NORTHERN",
+    "suburb": "Kfar Blum",
+    "lat": 33.1723656,
+    "lng": 35.6101218,
+    "address": null,
+    "types": [
+     "top-rope"
+    ],
+    "h": "c6640269b5282201"
+   }
+  },
+  {
+   "line": 9,
+   "class": "retire",
+   "id": "seed-22",
+   "name": "Camp Street Climbing",
+   "country": "AU",
+   "expect_h": "419dd10cbf5b7b09",
+   "reason_code": "closed",
+   "retire_reason": "No current presence: the domain no longer resolves and no other official presence was found",
+   "entry": {
+    "id": "seed-22",
+    "name": "Camp Street Climbing",
+    "country": "AU",
+    "state": "NSW",
+    "suburb": "Katoomba",
+    "lat": -33.7054787,
+    "lng": 150.3061391,
+    "address": "102 Camp St, Katoomba NSW 2780",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "419dd10cbf5b7b09"
+   }
+  },
+  {
+   "line": 10,
+   "class": "retire",
+   "id": "seed-24",
+   "name": "Albury Indoor Rock Climbing",
+   "country": "AU",
+   "expect_h": "1789e9c98ef13135",
+   "reason_code": "closed",
+   "retire_reason": "No current presence: the domain is a parked for-sale page and no other official presence was found",
+   "entry": {
+    "id": "seed-24",
+    "name": "Albury Indoor Rock Climbing",
+    "country": "AU",
+    "state": "NSW",
+    "suburb": "Albury",
+    "lat": -36.0402395,
+    "lng": 146.9641282,
+    "address": "15 Hudson Cres, Lavington NSW 2641",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "1789e9c98ef13135"
+   }
+  },
+  {
+   "line": 11,
+   "class": "retire",
+   "id": "seed-71",
+   "name": "Southern Boulder",
+   "country": "AU",
+   "expect_h": "8a72feb01c4f5d62",
+   "reason_code": "closed",
+   "retire_reason": "No current presence: the domain now hosts an unrelated site with no gym content; no other official presence",
+   "entry": {
+    "id": "seed-71",
+    "name": "Southern Boulder",
+    "country": "AU",
+    "state": "SA",
+    "suburb": "Hope Forest",
+    "lat": -35.2833,
+    "lng": 138.6167,
+    "address": null,
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "8a72feb01c4f5d62"
+   }
+  },
+  {
+   "line": 12,
+   "class": "retire",
+   "id": "seed-435",
+   "name": "NAC Sapporo Climbing Gym",
+   "country": "JP",
+   "expect_h": "0be779e159d82152",
+   "reason_code": "closed",
+   "retire_reason": "Closed: the operator announced the gym closed on 31 Aug 2025",
+   "entry": {
+    "id": "seed-435",
+    "name": "NAC Sapporo Climbing Gym",
+    "country": "JP",
+    "state": "HOKKAIDO",
+    "suburb": "Shiroishi, Sapporo",
+    "lat": 43.0540228,
+    "lng": 141.3833251,
+    "address": "1-chome-1, Shiroishi Ward, Sapporo, Hokkaido 003-0003",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "0be779e159d82152"
+   }
+  },
+  {
+   "line": 13,
+   "class": "retire",
+   "id": "g-44b68de98f",
+   "name": "Wallride",
+   "country": "SE",
+   "expect_h": "ef4401b06c00325d",
+   "reason_code": "closed",
+   "retire_reason": "Not a climbing gym: a skate, scooter, BMX and trampoline park with a bouldering section",
+   "entry": {
+    "id": "g-44b68de98f",
+    "name": "Wallride",
+    "country": "SE",
+    "state": "KRONOBERG",
+    "suburb": "Växjö",
+    "lat": 56.881911,
+    "lng": 14.7837914,
+    "address": "Arabygatan 13, 352 46 Växjö",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "ef4401b06c00325d"
+   }
+  },
+  {
+   "line": 14,
+   "class": "retire",
+   "id": "seed-145",
+   "name": "Elevator Rock",
+   "country": "US",
+   "expect_h": "ec5ae34df6716a34",
+   "reason_code": "closed",
+   "retire_reason": "No current presence: the official domain no longer resolves and no other official presence was found",
+   "entry": {
+    "id": "seed-145",
+    "name": "Elevator Rock",
+    "country": "US",
+    "state": "TX",
+    "suburb": "Wichita Falls",
+    "lat": 33.9137,
+    "lng": -98.4934,
+    "address": "400 Bridge St #4, Wichita Falls, TX 76306",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "ec5ae34df6716a34"
+   }
+  },
+  {
+   "line": 15,
+   "class": "retire",
+   "id": "seed-207",
+   "name": "Cornerstone Climbing",
+   "country": "US",
+   "expect_h": "b1027fa1efea18a7",
+   "reason_code": "closed",
+   "retire_reason": "No current presence: its domain now serves an unrelated gym in Tennessee; no other official presence found",
+   "entry": {
+    "id": "seed-207",
+    "name": "Cornerstone Climbing",
+    "country": "US",
+    "state": "NY",
+    "suburb": "Saratoga Springs",
+    "lat": 43.0831,
+    "lng": -73.7846,
+    "address": "165 Highrock Ave, Saratoga Springs, NY 12866",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "b1027fa1efea18a7"
+   }
+  },
+  {
+   "line": 16,
+   "class": "retire",
+   "id": "seed-955",
+   "name": "Spot Climbing Centre",
+   "country": "GB",
+   "expect_h": "26a6121bcef9cc5c",
+   "reason_code": "closed",
+   "retire_reason": "Closed: the operating company was dissolved (Companies House, 3 Dec 2024) and the official domain no longer resolves",
+   "entry": {
+    "id": "seed-955",
+    "name": "Spot Climbing Centre",
+    "country": "GB",
+    "state": "WALES",
+    "suburb": "Pontypridd, Rhondda Cynon Taff",
+    "lat": 51.6144,
+    "lng": -3.4319,
+    "address": null,
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "26a6121bcef9cc5c"
+   }
+  },
+  {
+   "line": 17,
+   "class": "retire",
+   "id": "seed-260",
+   "name": "iROCK Utah",
+   "country": "US",
+   "expect_h": "963dea554a9afefb",
+   "reason_code": "closed",
+   "retire_reason": "No current presence: the only official site was last updated in 2018 and the domain is an empty page",
+   "entry": {
+    "id": "seed-260",
+    "name": "iROCK Utah",
+    "country": "US",
+    "state": "UT",
+    "suburb": "Ogden",
+    "lat": 41.2253758,
+    "lng": -111.9715131,
+    "address": "2261 Kiesel Ave, Ogden, UT 84401",
+    "types": [
+     "indoor-bouldering",
+     "top-rope"
+    ],
+    "h": "963dea554a9afefb"
+   }
+  },
+  {
+   "line": 18,
+   "class": "retire",
+   "id": "seed-1001",
+   "name": "Der Steinbock",
+   "country": "DE",
+   "expect_h": "fdaa84bad2ec923c",
+   "reason_code": "closed",
+   "retire_reason": "No der steinbock hall in Straubing: the operator lists Zirndorf, Nuernberg, Erlangen, Passau, Konstanz and Linz only; the only Straubing boulder gym is already listed (Alte Ziegelei)",
+   "entry": {
+    "id": "seed-1001",
+    "name": "Der Steinbock",
+    "country": "DE",
+    "state": "BAYERN",
+    "suburb": "Straubing, Niederbayern",
+    "lat": 48.878,
+    "lng": 12.57,
+    "address": null,
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "fdaa84bad2ec923c"
+   }
+  },
+  {
+   "line": 19,
+   "class": "retire",
+   "id": "seed-1011",
+   "name": "eXXpozed climbing",
+   "country": "DE",
+   "expect_h": "c33f85a959325a63",
+   "reason_code": "closed",
+   "retire_reason": "No official presence: the gym domain exxpozed-climbing.de is a for-sale parked page and no official page was found; not confirmed at this location",
+   "entry": {
+    "id": "seed-1011",
+    "name": "eXXpozed climbing",
+    "country": "DE",
+    "state": "BAYERN",
+    "suburb": "Augsburg, Schwaben",
+    "lat": 48.3705,
+    "lng": 10.8978,
+    "address": null,
+    "types": [
+     "indoor-bouldering",
+     "lead-climbing",
+     "top-rope"
+    ],
+    "h": "c33f85a959325a63"
+   }
+  },
+  {
+   "line": 20,
+   "class": "retire",
+   "id": "seed-1036",
+   "name": "Kletterzentrum Kassel Vertical World",
+   "country": "DE",
+   "expect_h": "643f6ec56efdd1ac",
+   "reason_code": "closed",
+   "retire_reason": "Vertical World Kassel closed permanently on 17 Aug 2024 per published closure reports; the official site verticalworld.de no longer serves any page",
+   "entry": {
+    "id": "seed-1036",
+    "name": "Kletterzentrum Kassel Vertical World",
+    "country": "DE",
+    "state": "HESSEN",
+    "suburb": "Kassel",
+    "lat": 51.315,
+    "lng": 9.485,
+    "address": null,
+    "types": [
+     "indoor-bouldering",
+     "lead-climbing",
+     "top-rope"
+    ],
+    "h": "643f6ec56efdd1ac"
+   }
+  },
+  {
+   "line": 21,
+   "class": "retire",
+   "id": "seed-1056",
+   "name": "Rockvibes",
+   "country": "DE",
+   "expect_h": "6d4c8fb4fbe261ba",
+   "reason_code": "closed",
+   "retire_reason": "Rockvibes (Ahlen) closed: the official homepage announces 2 May 2026 as the last opening day",
+   "entry": {
+    "id": "seed-1056",
+    "name": "Rockvibes",
+    "country": "DE",
+    "state": "NORDRHEIN_WESTFALEN",
+    "suburb": "Münster",
+    "lat": 51.955,
+    "lng": 7.63,
+    "address": null,
+    "types": [
+     "indoor-bouldering",
+     "lead-climbing",
+     "top-rope"
+    ],
+    "h": "6d4c8fb4fbe261ba"
+   }
+  },
+  {
+   "line": 22,
+   "class": "retire",
+   "id": "seed-206",
+   "name": "Climbing Cave",
+   "country": "US",
+   "expect_h": "f3e888f516cc1b45",
+   "reason_code": "closed",
+   "retire_reason": "No current presence: no official site or listing for a climbing gym at 28 Glen Dr, Queensbury; not RockSport (54 Carey Rd), so not a duplicate",
+   "entry": {
+    "id": "seed-206",
+    "name": "Climbing Cave",
+    "country": "US",
+    "state": "NY",
+    "suburb": "Queensbury",
+    "lat": 43.348,
+    "lng": -73.675,
+    "address": "28 Glen Dr, Queensbury, NY 12804",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "f3e888f516cc1b45"
+   }
+  },
+  {
+   "line": 23,
+   "class": "retire",
+   "id": "seed-253",
+   "name": "Treadstone Columbus",
+   "country": "US",
+   "expect_h": "ecbdfc9620b72184",
+   "reason_code": "closed",
+   "retire_reason": "Moved: Treadstone Climbing no longer lists Milgen Rd, Columbus GA; its only location is 400 Brickyard Rd, Phenix City, AL (added as a new gym)",
+   "entry": {
+    "id": "seed-253",
+    "name": "Treadstone Columbus",
+    "country": "US",
+    "state": "GA",
+    "suburb": "Columbus",
+    "lat": 32.461,
+    "lng": -84.9877,
+    "address": "4209 Milgen Rd Suite 7, Columbus, GA 31907",
+    "types": [
+     "indoor-bouldering",
+     "top-rope"
+    ],
+    "h": "ecbdfc9620b72184"
+   }
+  },
+  {
+   "line": 24,
+   "class": "retire",
+   "id": "seed-447",
+   "name": "Boulbaka",
+   "country": "JP",
+   "expect_h": "9ca8ae1e202757db",
+   "reason_code": "closed",
+   "retire_reason": "The Naha gym (BOULBAKA1) is gone from the official site: menu, hours, prices and gallery cover only BOULBAKA2 in Urasoe (added as a new gym)",
+   "entry": {
+    "id": "seed-447",
+    "name": "Boulbaka",
+    "country": "JP",
+    "state": "OKINAWA",
+    "suburb": "Amakyu, Naha",
+    "lat": 26.2122345,
+    "lng": 127.6791452,
+    "address": "882 Amakyu, Naha, Okinawa 900-0005",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "9ca8ae1e202757db"
+   }
+  },
+  {
+   "line": 25,
+   "class": "retire",
+   "id": "seed-446",
+   "name": "Naha Gym",
+   "country": "JP",
+   "expect_h": "68bf8048ff4d71f8",
+   "reason_code": "closed",
+   "retire_reason": "Not a climbing gym: no official site; the venue is a weight-training gym with no bouldering offer found",
+   "entry": {
+    "id": "seed-446",
+    "name": "Naha Gym",
+    "country": "JP",
+    "state": "OKINAWA",
+    "suburb": "Izumizaki, Naha",
+    "lat": 26.2119418,
+    "lng": 127.6811698,
+    "address": "1-17-15 Izumizaki, Naha, Okinawa",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "68bf8048ff4d71f8"
+   }
+  }
+ ]
+}

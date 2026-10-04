@@ -1,0 +1,727 @@
+[
+ {
+  "id": "seed-1287",
+  "name": "Der Steinbock - Linz",
+  "expect_h": "33ef6a36cae16601",
+  "website": "https://www.dersteinbock-linz.at/",
+  "hours": {
+   "mon": "9am–11pm",
+   "tue": "9am–11pm",
+   "wed": "9am–11pm",
+   "thu": "9am–11pm",
+   "fri": "9am–11pm",
+   "sat": "9am–10pm",
+   "sun": "9am–10pm"
+  },
+  "day_pass": "€14.90 adult, €12.90 concession",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "shop",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://www.dersteinbock-linz.at/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.dersteinbock-linz.at/anfahrt-ffnungszeiten",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours from Anfahrt & Oeffnungszeiten page; blog post of 27 Aug 2026 confirms the same winter hours and open on holidays. Day pass = Tageskarte adult (Early Bird weekdays before 3pm is 12.90 for adults; not used). Cafe/shop/kids/training/Kilterboard listed under Halle; shoe hire shown as included in the trial month.",
+  "operating": "yes",
+  "official_address": "Kapuzinerstraße 84f, 4020 Linz",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-1288",
+  "name": "Kletterhalle Linz/Auwiesen",
+  "expect_h": "6fd4af8aad0e1c75",
+  "website": "https://www.kletterhallelinz.at/",
+  "hours": {
+   "mon": "9am–10pm",
+   "tue": "9am–10pm",
+   "wed": "9am–10pm",
+   "thu": "9am–10pm",
+   "fri": "9am–10pm",
+   "sat": "9am–7pm",
+   "sun": "9am–7pm"
+  },
+  "day_pass": "€12 adult bouldering, €16.50 adult climbing (reduced €11 / €15.50)",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "shop",
+   "showers",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://www.kletterhallelinz.at/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.kletterhallelinz.at/frontend/kunden/kletterhallelinz.at/uploads/tbl_downloads/vcP_pdf_PDFDokument/34/20260109_PreislisteKletterhalle.pdf",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Naturfreunde Linz hall. Hours are the Normalsaison schedule (season dates show as 0.0. bis 0.0. on the site); a separate Sommerferien schedule exists and was not used. Prices from Preisliste 2026 (valid since 1.1.2026), Normalpreis column (reduced = alpine-club members). Cafe = on-site Pizzeria La Dolce; shop = small climbing items via Bergwerk Mountain Store.",
+  "operating": "yes",
+  "official_address": "Auwiesenstr. 202, 4030 Linz",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-1289",
+  "name": "Kletterzentrum AM TURM - Linz",
+  "expect_h": "808b9605a1b67135",
+  "website": "https://www.klettern-amturm.at/",
+  "hours": null,
+  "day_pass": "€16 adult, €14 reduced (member or student)",
+  "facilities": [
+   "showers",
+   "shoe-hire",
+   "kids",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://www.klettern-amturm.at/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours left null: facility opening times (Mon-Fri 8-22, Sat 8-20, Sun/holiday 10-20) include unstaffed self-access windows (before 10:00 and the 12-14 lunch break, registered customers only) and the Saturday cash-desk hours are not given, so public staffed hours cannot be stated for all 7 days. Prices valid 1.1.-31.12.2026. Boulder room had short temporary closures in Aug/Sep 2026 (news posts); new spraywall 21 Sep 2026.",
+  "operating": "yes",
+  "official_address": "Julius-Raab-Straße 4, 4040 Linz",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-1290",
+  "name": "boulderbar - Salzburg",
+  "expect_h": "2048ff9a2267978e",
+  "website": "https://boulderbar.net/standorte/salzburg/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "7am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "9am–10pm",
+   "sun": "9am–9pm"
+  },
+  "day_pass": "€13.90 adult, €12.50 student",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "shop"
+  ],
+  "sources": [
+   {
+    "url": "https://boulderbar.net/standorte/salzburg/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://boulderbar.net/preise/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours exactly as published on the Salzburg location page, incl. Wed 7:00 (unusual vs 10:00 on other weekdays but stated per day; the Linz page differs). Sun/holiday 9-21. Prices from the Salzburg & Linz table (undated); student = up to age 25 with ID. Yoga only mentioned as space, not classes, so not listed.",
+  "operating": "yes",
+  "official_address": "Richard-Kürth-Straße 9, 5020 Salzburg",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-1291",
+  "name": "Kletterhalle Salzburg",
+  "expect_h": "ed84cde7251f96f5",
+  "website": "https://kletterhallesalzburg.at/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "10am–9pm",
+   "sun": "10am–9pm"
+  },
+  "day_pass": "€12.70 adult bouldering, €16.90 adult climbing + bouldering",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "shop",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://kletterhallesalzburg.at/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://kletterhallesalzburg.at/kletterhalle",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://kletterhallesalzburg.at/preise",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   },
+   {
+    "url": "https://kletterhallesalzburg.at/faqs",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Prices are an image (Deine Preise 2026) on /preise, read visually. Hours from /kletterhalle (Sa/So/holidays 10-21); third-party sites show older hours, ignored. Old domain kletterhalle-salzburg.at redirects to kletterhallesalzburg.at. Operator denkundstein Sportkletter GmbH.",
+  "operating": "yes",
+  "official_address": "Wasserfeldstr. 23, 5020 Salzburg",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-1283",
+  "name": "BLOC house - Boulderhalle",
+  "expect_h": "354e65c8dc66098e",
+  "website": "https://bloc-house.at/",
+  "hours": {
+   "mon": "9am–10pm",
+   "tue": "7am–10pm",
+   "wed": "7am–10pm",
+   "thu": "7am–10pm",
+   "fri": "7am–10pm",
+   "sat": "9am–9pm",
+   "sun": "9am–9pm"
+  },
+  "day_pass": "€15 adult (€13.40 before 4pm), €13.40 reduced (€12 before 4pm)",
+  "facilities": [
+   "training",
+   "kids",
+   "yoga",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://bloc-house.at/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://bloc-house.at/hardfacts/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://bloc-house.at/kontakt-anreise/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Regular hours (Mo 9-22, Di-Fr 7-22, Sa-So 9-21; holidays 9-21); Jul-Sep summer hours with lunch break are separate and not used. Hard Facts page says it will be updated after a summer 2026 refurbishment. Yoga = Yoga fuer Boulderer/Kletterer course page in the site menu; kids = playground corner + kids courses.",
+  "operating": "yes",
+  "official_address": "Puchstraße 17-21, 8020 Graz",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-1284",
+  "name": "Boulderclub - Graz",
+  "expect_h": "2a614843ad7aa70a",
+  "website": "https://www.boulderclub.at/",
+  "hours": {
+   "mon": "9am–10pm",
+   "tue": "9am–10pm",
+   "wed": "9am–10pm",
+   "thu": "9am–10pm",
+   "fri": "9am–10pm",
+   "sat": "9am–10pm",
+   "sun": "9am–10pm"
+  },
+  "day_pass": "€15.90 adult, €14.90 concession, €13.90 early bird (weekdays before 4pm)",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://www.boulderclub.at/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.boulderclub.at/wp-content/uploads/2026/01/Preisliste-A4-02-2026.png",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   },
+   {
+    "url": "https://www.boulderclub.at/kontakt/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Price list is an image (Preisliste, Stand 01.02.2026), read visually; day pass = Einzeleintritt Erwachsene. Hours Mo-So 9-22, holidays 9-22. Cafe = Bar & Lounge; free parking stated.",
+  "operating": "yes",
+  "official_address": "Triesterstraße 391, 8055 Graz",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-1285",
+  "name": "City Adventure Center CAC - Graz",
+  "expect_h": "bbc6a6c4f0776289",
+  "website": "https://www.c-a-c.at/",
+  "hours": null,
+  "day_pass": null,
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.c-a-c.at/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://www.c-a-c.at/preise/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "flag",
+  "notes": "Site now trades as Kletterhalle Graz (kletterhalle-graz.at e-mail); notice says the CAC gets a new operator and the indoor area is being rebuilt, bouldering currently not possible, only the outdoor rope-climbing area is open (interim hours Mo 15-22, Di-Fr 9-22, Sa/So 9-21; interim Baustellenpreise). Hours and day pass left null because they are temporary and outdoor-rope-only. Shoe hire (4 EUR) is on the price page. Our record (indoor bouldering/top-rope/lead) is not accurate at the moment.",
+  "operating": "yes",
+  "official_address": "Idlhofgasse 74, 8020 Graz",
+  "location": "ok",
+  "renamed_to": "Kletterhalle Graz",
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-1286",
+  "name": "Newton - Graz",
+  "expect_h": "9cfd2d15d284747d",
+  "website": "https://www.newton-graz.com/",
+  "hours": {
+   "mon": "7am–10pm",
+   "tue": "7am–10pm",
+   "wed": "7am–10pm",
+   "thu": "7am–10pm",
+   "fri": "7am–10pm",
+   "sat": "9:30am–10pm",
+   "sun": "9:30am–10pm"
+  },
+  "day_pass": "€13.90 adult, €12.90 concession",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://www.newton-graz.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.newton-graz.com/neue-seite",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.newton-graz.com/beschreibung-unsere-halle",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   },
+   {
+    "url": "https://www.newton-graz.com/infos-zur-halle",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Home page, contact page and footer agree on Graz hours (Mo-Fr 7-22, Sa/So 9:30-22; Kapfenberg sister hall ignored; members' self check-in from 6:00 is not public). Price page Preise beider Standorte is undated; Early Bird before 14:00 is 12.40. newton-graz.at redirects to newton-graz.com. Facilities from the Graz section of the info page (Kinderbereich, Trainingsbereich, Leihschuhe, Cafe) and the Graz parking text.",
+  "operating": "yes",
+  "official_address": "Ägydigasse 18, 8020 Graz",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-1326",
+  "name": "Climbing Spot - Pułaskiego",
+  "expect_h": "f446b1276db8997c",
+  "website": "https://www.climbingspot.pl/",
+  "hours": null,
+  "day_pass": "35 zł adult, 30 zł reduced (student/under 18)",
+  "facilities": [
+   "training",
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.climbingspot.pl/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.climbingspot.pl/cennik/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours null: pages disagree - /kontakt/ gives Pulaskiego 08:00-00:00 daily, while the home page and /cennik/ footers give 8:00-22:30 daily. Day pass is the Pulaskiego row of the Cennik (Widlakowa is higher). Shoe hire (15 zl) is on the shared price list. Showers/parking appear only in a generic Obiekt text not tied to this site, so not listed.",
+  "operating": "yes",
+  "official_address": "ul. Kazimierza Pułaskiego 30, 60-607 Poznań",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-1327",
+  "name": "Climbing Spot - Widłakowa",
+  "expect_h": "7d9bcf55dfe3d5a5",
+  "website": "https://www.climbingspot.pl/",
+  "hours": {
+   "mon": "8am–10:30pm",
+   "tue": "8am–10:30pm",
+   "wed": "8am–10:30pm",
+   "thu": "8am–10:30pm",
+   "fri": "8am–10:30pm",
+   "sat": "8am–10:30pm",
+   "sun": "8am–10:30pm"
+  },
+  "day_pass": "40 zł adult, 35 zł reduced (student/under 18)",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.climbingspot.pl/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.climbingspot.pl/kontakt/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.climbingspot.pl/cennik/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Widlakowa hours 08:00-22:30 Mon-Sun on both the contact page and the home page. Day pass is the Widlakowa row of the Cennik. Cafe, kids area, training zone from the Widlakowa description on the home page; shoe hire (15 zl) from the shared price list.",
+  "operating": "yes",
+  "official_address": "ul. Widłakowa 2, 61-680 Poznań",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": "Same operator (Climbing Spot) as seed-1326 on the same website; two different addresses, so two venues, not a duplicate."
+ },
+ {
+  "id": "seed-1328",
+  "name": "Groto Poznań Boulderownia",
+  "expect_h": "8521a8da88985fdc",
+  "website": "https://groto.pl/poznan/",
+  "hours": {
+   "mon": "7am–10:30pm",
+   "tue": "7am–10:30pm",
+   "wed": "7am–10:30pm",
+   "thu": "9am–10:30pm",
+   "fri": "9am–10:30pm",
+   "sat": "9am–10pm",
+   "sun": "9am–10pm"
+  },
+  "day_pass": "45 zł adult, 38 zł reduced (30 zł Mon-Fri before 3pm)",
+  "facilities": [
+   "cafe",
+   "training",
+   "shop",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://groto.pl/poznan/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://groto.pl/poznan/cennik/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   },
+   {
+    "url": "https://groto.pl/poznan/kontakt/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://groto.pl/poznan/strefy-treningowe/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://groto.pl/poznan/kawiarnia/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://groto.pl/poznan/sklep-i-wypozyczalnia/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours from the news banner (new hours from September), same as footer and contact page. Day pass: weekdays before 15:00 30 zl (single price listed), after 15:00/weekends/holidays 45 normal, 38 reduced. Address Romana Maya 1 is given on the site as correspondence address; the map link on groto.pl for Poznan points about 0.2 km from our pin, so judged ok. Yoga is only a stretching/yoga zone, no classes stated.",
+  "operating": "yes",
+  "official_address": "Romana Maya 1, 61-371 Poznań (listed as correspondence address)",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-1329",
+  "name": "Karma Centrum Wspinaczkowe",
+  "expect_h": "df3a9fcabeeaddaa",
+  "website": "https://karmaclimb.pl/debiec/",
+  "hours": {
+   "mon": "8am–10:30pm",
+   "tue": "8am–10:30pm",
+   "wed": "8am–10:30pm",
+   "thu": "8am–10:30pm",
+   "fri": "8am–10:30pm",
+   "sat": "8am–10:30pm",
+   "sun": "8am–10:30pm"
+  },
+  "day_pass": "45 zł adult, 38 zł reduced (30 zł Mon-Fri before 3pm)",
+  "facilities": [
+   "cafe",
+   "kids",
+   "shoe-hire",
+   "yoga"
+  ],
+  "sources": [
+   {
+    "url": "https://karmaclimb.pl/debiec/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://karmaclimb.pl/kontakt/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://karmaclimb.pl/cennik/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://karmaclimb.pl/kalistenika-poznan/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Karma Debiec (a second hall, Karma Grunwald, exists and is ignored). Hours 8:00-22:30 Mon-Sun (Pon-Pt and Sob-Nd listed separately). Day pass from Cennik 2026: Poranne ulgowe/normalne 30 zl weekdays before 15:00. Official address is in Debiec; OSM geocode of building no. 390 on 28 Czerwca 1956 r. is about 52.3622,16.9022, ~2.1 km SSW of our pin (52.3805,16.9103): wrong_pin, same city (Poznan). Cafe = good coffee/menu; yoga = Lama Studio classes above the wall; kids = birthday parties and parent+child entry.",
+  "operating": "yes",
+  "official_address": "ul. 28 Czerwca 1956 r. 390/A, 61-001 Poznań",
+  "location": "wrong_pin",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "seed-1330",
+  "name": "Ścianka Wspinaczkowa Blok Line",
+  "expect_h": "7e48b73c6a829eb8",
+  "website": "https://blokline.pl/",
+  "hours": {
+   "mon": "9am–11pm",
+   "tue": "9am–11pm",
+   "wed": "9am–11pm",
+   "thu": "9am–11pm",
+   "fri": "9am–11pm",
+   "sat": "8am–11pm",
+   "sun": "8am–11pm"
+  },
+  "day_pass": "38 zł adult bouldering, 44 zł adult rope climbing (reduced 35 / 39 zł)",
+  "facilities": [
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://blokline.pl/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://blokline.pl/cennik/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "hours",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Located in the Kinepolis building. Cennik valid from 1.1.2026; weekdays before 15:00 30 zl. Kids = birthday parties, holiday camps and family tickets; shoe hire from the price list.",
+  "operating": "yes",
+  "official_address": "Bolesława Krzywoustego 72, 61-144 Poznań",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ }
+]

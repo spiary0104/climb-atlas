@@ -1,0 +1,739 @@
+[
+ {
+  "id": "g-dc46c81fcf",
+  "name": "Climb Warrior - Granada",
+  "expect_h": "eb956b04b9c2e937",
+  "website": "https://climbwarrior.com/",
+  "hours": {
+   "mon": "10am–1:30pm, 5pm–9:30pm",
+   "tue": "10am–1:30pm, 5pm–9:30pm",
+   "wed": "10am–1:30pm, 5pm–9:30pm",
+   "thu": "10am–1:30pm, 5pm–9:30pm",
+   "fri": "10am–1:30pm, 5pm–9pm",
+   "sat": "10am–2pm"
+  },
+  "day_pass": "€6 (bouldering / rocodromo free entry)",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://climbwarrior.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://climbwarrior.com/?page_id=435",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "website"
+    ]
+   },
+   {
+    "url": "https://climbwarrior.com/?page_id=159",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://climbwarrior.com/?page_id=168",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours (contact page 'Donde estamos'): Mon-Thu 10-13:30 & 17-21:30, Fri 10-13:30 & 17-21, Sat 10-14; Sunday not stated so sun omitted (not inferred as Closed). Day pass: 'Entrada libre Rocodromo 6 EUR' (OCR 8, combined 10). Facilities: cafe/bar and strength/aerobic zone on home page; kids = birthday/school group activities page; shoe-hire: tarifas page says cat's feet of all sizes 'disponibles en recepcion' (rental implied, price not stated). Hybrid gym/OCR/climbing centre with a 100 m2 bouldering area.",
+  "operating": "yes",
+  "official_address": "Avenida Gandhi, 46, La Zubia - Granada",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-8e84e4d87f",
+  "name": "MOVE Climbing - Mairena del Aljarafe",
+  "expect_h": "22e2696a8c9b6963",
+  "website": "https://www.moveclimbing.es/mairena",
+  "hours": null,
+  "day_pass": "€10 adult, €7 weekday morning pass",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.moveclimbing.es/mairena",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.moveclimbing.es/tarifas",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   },
+   {
+    "url": "https://www.moveclimbing.es/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours: site only links 'Horario Mairena' to a Google Maps listing, no hours text on the site, so null. Day pass per tarifas table (Mairena column): Normal 10, Reducido 8, Matinal 7 (Mon-Fri 9-14). Facilities: bar-cafeteria zone, training zone (Kilter Board, hangboards), family zone (kids). Shoe rental not claimed: 'Primer dia' page says you can bring gear or be given it but is chain-wide.",
+  "operating": "yes",
+  "official_address": "C. Artesanía, 21, 41927 Mairena del Aljarafe, Sevilla",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-7f006fb429",
+  "name": "MOVE Climbing - Sevilla Hytasa",
+  "expect_h": "65e57bcdc6f03cc8",
+  "website": "https://www.moveclimbing.es/hytasa",
+  "hours": null,
+  "day_pass": "€12 adult, €8 weekday morning pass",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shop"
+  ],
+  "sources": [
+   {
+    "url": "https://www.moveclimbing.es/hytasa",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.moveclimbing.es/tarifas",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   },
+   {
+    "url": "https://www.moveclimbing.es/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours: site only links 'Horario Hytasa' to a Google Maps listing, no hours text, so null. Day pass per tarifas table (Hytasa column): Normal 12, Reducido 10, Matinal 8. Facilities from Hytasa page banner: CUERDA, BOULDER, ENTRENAMIENTO, FAMILY ZONE, RESTAURANTE, TIENDA (restaurant mapped to cafe). New centre (2026).",
+  "operating": "yes",
+  "official_address": "C. Pedro Muñoz Torres, 4, 41006 Sevilla",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-606116f499",
+  "name": "Rock & Wall Climbing - Sevilla",
+  "expect_h": "6c8239aebf0ea1da",
+  "website": "https://www.rockandwallclimbing.com/",
+  "hours": {
+   "mon": "9:30am–10pm",
+   "tue": "9:30am–10pm",
+   "wed": "9:30am–10pm",
+   "thu": "9:30am–10pm",
+   "fri": "9:30am–10pm",
+   "sat": "9:30am–6pm",
+   "sun": "9:30am–6pm"
+  },
+  "day_pass": "€10 adult, €8 under 18",
+  "facilities": [
+   "training",
+   "showers",
+   "cafe",
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.rockandwallclimbing.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.rockandwallclimbing.com/tarifas-y-horarios/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.rockandwallclimbing.com/instalaciones-escalada-sevilla/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Day pass read from the site's own price image (TARIFAS verano 2026): 'Pase 1 dia 10 EUR / 8 EUR*' (*menores 18). Image is titled summer 2026 but is the live tariff on 2026-10-04. Hours as stated site-wide: Mon-Fri 9:30-22:00, Sat-Sun 9:30-18:00. Facilities: campus/specific training area, Moon/Kilter, lockers, changing rooms, showers, bar-cafe (instalaciones page); pies de gato/harness rental (price image); escuelas de escalada incl. infantil.",
+  "operating": "yes",
+  "official_address": "Calle Labrador 8, Sevilla",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-db0f20b48a",
+  "name": "SpaceBlock Climbing - Málaga",
+  "expect_h": "b8ad18c686e9e1c2",
+  "website": "https://spaceblockclimbing.com/",
+  "hours": {
+   "mon": "9am–11pm",
+   "tue": "9am–11pm",
+   "wed": "9am–11pm",
+   "thu": "9am–11pm",
+   "fri": "9am–11pm",
+   "sat": "10am–8pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": "€12 adult, €10 weekday morning (9am–4pm)",
+  "facilities": [
+   "kids",
+   "training",
+   "shoe-hire",
+   "showers"
+  ],
+  "sources": [
+   {
+    "url": "https://spaceblockclimbing.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://spaceblockclimbing.com/contacto",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://spaceblockclimbing.com/tarifas",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://spaceblockclimbing.com/instalaciones",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours 'Lunes a viernes de 9 a 23h; sabados, domingos y festivos de 10 a 20h' (contact page and footer). Facilities: Space Kids zone, campus + functional training zone, rental pies de gato (tarifas), changing rooms with showers (instalaciones). Yoga: classes for members are given at Brilla Yoga, a studio 3 min away, so not listed. Our stored types lack rope climbing; site lists 40+ rope/autobelay routes plus a speed wall (data-quality hint).",
+  "operating": "yes",
+  "official_address": "C/ La Bohème, 21, 29006 Málaga",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-127b24e5bd",
+  "name": "Tokyo Wall - Granada",
+  "expect_h": "feacbcb1aca3a785",
+  "website": "https://tokyowall.es/",
+  "hours": null,
+  "day_pass": "€8 single entry (afternoon/weekend), €6 morning",
+  "facilities": [
+   "yoga",
+   "training",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://tokyowall.es/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://tokyowall.es/precios/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   },
+   {
+    "url": "https://tokyowall.es/horarios/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://tokyowall.es/rocodromo/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://tokyowall.es/preguntas-frecuentes/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours set to null: /horarios/ gives free-climb access Tue/Thu/Sat 10:00-13:30 and Mon-Fri 17:00-22:30 with no Sunday, while /precios/ prices mornings as 10:00-14:00 and weekends/holidays 'cualquier horario', so pages disagree and Sunday is not stated. Day pass per /precios/: morning 6, afternoon 8, weekend and holidays 8 (not labelled adult). Facilities: yoga room, strength training room, shoe rental 'pies de gato 2 EUR' (FAQ). Shop link goes to a separate store site (storetokyowall.es), not listed. Training centre (yoga, calisthenics) with a 250 m2 climbing area.",
+  "operating": "yes",
+  "official_address": "C/ La Pinta Nave 9, Churriana de la Vega",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-959a6d86a1",
+  "name": "Bulderland - Zaragoza Delicias",
+  "expect_h": "b429c4ad9a832d05",
+  "website": "https://www.bulderland.com/bulderland-delicias/",
+  "hours": {
+   "mon": "9am–10pm",
+   "tue": "9am–10pm",
+   "wed": "9am–10pm",
+   "thu": "9am–10pm",
+   "fri": "9am–10pm",
+   "sat": "9am–9pm",
+   "sun": "9am–9pm"
+  },
+  "day_pass": "€10 adult (+€3 shoe hire)",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.bulderland.com/bulderland-delicias/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://www.bulderland.com/contacto-delicias/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.bulderland.com/tarifas/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   },
+   {
+    "url": "https://www.bulderland.com/instalaciones-delicias/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours (contact page): Mon-Fri 9-22, Sat-Sun 9-21, holidays 'consultar'. Day pass 'Entrada dia Delicias 10 EUR' (3 EUR shoes extra). Facilities: bar/cafe, gym + campus/Moon/Kilter, kids zone (zona ninos) and school, shoe rental ('Alquiler gatos'). Bike parking only, so parking not listed.",
+  "operating": "yes",
+  "official_address": "Avda de Navarra 22, local 50010 Zaragoza",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-331ed17944",
+  "name": "Bulderland - Zaragoza Las Fuentes",
+  "expect_h": "9110f1d253b819f8",
+  "website": "https://www.bulderland.com/bulderland-las-fuentes/",
+  "hours": {
+   "mon": "9am–10pm",
+   "tue": "9am–10pm",
+   "wed": "9am–10pm",
+   "thu": "9am–10pm",
+   "fri": "9am–10pm",
+   "sat": "9am–10pm",
+   "sun": "9am–10pm"
+  },
+  "day_pass": "€13 adult (+€3 shoe hire)",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.bulderland.com/bulderland-las-fuentes/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://www.bulderland.com/contacto-las-fuentes/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "website"
+    ]
+   },
+   {
+    "url": "https://www.bulderland.com/tarifas/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   },
+   {
+    "url": "https://www.bulderland.com/instalaciones-las-fuentes/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours (contact page): Mon-Sun 9-22, holidays 'consultar'. Day pass 'Entrada dia Las Fuentes 13 EUR' (3 EUR shoes extra). Facilities: bar/cafe and terrace, gym, Tension board/campus/fingerboards, kids zone with autobelay routes, rental of harness and shoes.",
+  "operating": "yes",
+  "official_address": "Camino La Raya s/n, Zaragoza",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-fddd9062bb",
+  "name": "Climbat - Zaragoza",
+  "expect_h": "2c1c5e8c5d1e8449",
+  "website": "https://climbat.com/centro/zaragoza/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "10am–10pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": "€11.30 adult, €8 weekdays 10am–5pm",
+  "facilities": [
+   "cafe",
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://climbat.com/centro/zaragoza/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://climbat.com/wp-content/uploads/2026/07/TARIFA_ZARAGOZA_2026_ESP_compressed.pdf",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours from the centre page weekly table (Mon-Sat 10-22, Sun 10-20). Day pass from the official 2026 tariff PDF: full-hours entry 11.30; reduced hours (Mon-Fri 10-17) 8. Facilities: cafeteria mentioned on centre page (parents' school text); rental pies de gato/harness (tariff PDF); kids school, Clip n Climb, birthdays. Official address is the road/La Torre Outlet; Nominatim places Ctra. de Logrono ~440 m from our pin, same area.",
+  "operating": "yes",
+  "official_address": "Climbat Zaragoza, Ctra. de Logroño km 6.5, 50011 Zaragoza",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-dc0eedb36f",
+  "name": "Climbat - Avilés",
+  "expect_h": "7a796c80a98cfadc",
+  "website": "https://climbat.com/centro/aviles/",
+  "hours": {
+   "mon": "11am–10pm",
+   "tue": "Closed",
+   "wed": "11am–10pm",
+   "thu": "11am–10pm",
+   "fri": "11am–10pm",
+   "sat": "10am–9pm",
+   "sun": "10am–9pm"
+  },
+  "day_pass": "€11.50 adult, €8.50 weekdays until 5pm",
+  "facilities": [
+   "cafe",
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://climbat.com/centro/aviles/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://climbat.com/wp-content/uploads/2026/07/TARIFA_AVILES_ESP_2026_compressed.pdf",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours from the centre page weekly table; Tuesday is listed 'Cerrado' explicitly (Mon/Wed-Fri 11-22, Sat-Sun 10-21). Day pass from the 2026 tariff PDF: full hours 11.50; reduced (Mon-Fri opening to 17:00) 8.50. Facilities as for Zaragoza (cafeteria text, rental, kids school/birthdays). PIN: the official page gives GPS 43.54417,-5.88306 (about 1.0 km from our pin 43.5533,-5.8833) and OSM puts El Pedrero 50 / Parque Astur near 43.545,-5.869 (about 1.4 km from our pin); our pin seems to sit at 'Parque de Los Ocalitos' in Trasona rather than the shopping centre. Same Trasona/Corvera area, distance ~1-1.4 km.",
+  "operating": "yes",
+  "official_address": "CC Parque Astur, Pedrero 50, 33468 Trasona (Avilés)",
+  "location": "wrong_pin",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-898c692e96",
+  "name": "One Move - Gijón",
+  "expect_h": "8ae6fe926ba89dd4",
+  "website": "https://www.one-move.org/",
+  "hours": {
+   "mon": "10am–2:30pm, 4:30pm–10:30pm",
+   "tue": "10am–2:30pm, 4:30pm–10:30pm",
+   "wed": "10am–2:30pm, 4:30pm–10:30pm",
+   "thu": "10am–2:30pm, 4:30pm–10:30pm",
+   "fri": "10am–2:30pm, 4:30pm–10:30pm",
+   "sat": "10am–9:30pm",
+   "sun": "10am–2:30pm"
+  },
+  "day_pass": "€11 adult afternoon, €9 morning",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "yoga"
+  ],
+  "sources": [
+   {
+    "url": "https://www.one-move.org/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.one-move.org/tarifas",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Home page note: climbing time ends 30 minutes before the stated closing time (hours given as published). Tarifas: Entrada Matinal 9, Entrada de Tarde 11, Festivos 10, under 16 8. Facilities: cafeteria and gym among the 8 spaces, multi-function rooms for yoga and pilates, escuela de escalada / OneMove Criu kids, shoe rental 4 EUR. Not onemove.es (unrelated mobility campus; one web search used to find the real domain).",
+  "operating": "yes",
+  "official_address": "Calle Esperanza, 20, 33211 Gijón (Asturias)",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-9c24ad87ee",
+  "name": "In Rock Escalada - Palma",
+  "expect_h": "eb7f2c7129ee119b",
+  "website": "https://www.inrockescalada.com/",
+  "hours": {
+   "mon": "8:30am–10:30pm",
+   "tue": "8:30am–10:30pm",
+   "wed": "8:30am–10:30pm",
+   "thu": "8:30am–10:30pm",
+   "fri": "8:30am–10:30pm",
+   "sat": "10am–8pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": "€13.90 adult, €11 weekdays before 1pm",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "yoga",
+   "shoe-hire",
+   "showers"
+  ],
+  "sources": [
+   {
+    "url": "https://www.inrockescalada.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.inrockescalada.com/tarifes",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Site in Catalan. Hours: Dilluns-Divendres 8:30-22:30, Dissabte-Diumenge/Festius 10:00-20:00. Tarifes: adult single entry 13.90 (senzilla), reduced 11 (weekdays before 13:00). Facilities: Kilter/sprayboard/training, kids and baby zone, yoga, cafe & bar, shoe rental (FAQ), showers/changing rooms/lockers (tarifes).",
+  "operating": "yes",
+  "official_address": "Carrer Ca na Melis, 15, Polígon Industrial Son Morro, Palma (Mallorca)",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-ede7b78434",
+  "name": "Centro de Escalada Tenerife",
+  "expect_h": "d1650037f2074ac1",
+  "website": "https://centroescaladatenerife.com/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "11am–9pm"
+  },
+  "day_pass": "€12 adult (daily entry)",
+  "facilities": [
+   "training",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://centroescaladatenerife.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://centroescaladatenerife.com/tarifas/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   },
+   {
+    "url": "https://centroescaladatenerife.com/areas/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours 'Lunes a Viernes 10:00-22:00 / Sabados 11:00-21:00'; Sunday not stated, so sun omitted (not inferred). Day pass read from the tarifas page graphic (adult 'Entrada diaria 12 EUR'; 10-entry bono 90 EUR). Facilities: functional training zone, Kilter and Moonboard; escuela for kids 5-17. Rental graphics on tarifas are not clearly labelled, so shoe-hire not listed. Our pin matches the OSM POI for the centre at Curva de Gracia (a plain geocode of the street number lands ~1.3 km away because the avenida is long).",
+  "operating": "yes",
+  "official_address": "Avda. Los Menceyes, 113 (en la Curva de Gracia), 38205 San Cristóbal de La Laguna",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ },
+ {
+  "id": "g-12abbc515f",
+  "name": "Campo Base Escalada - Burgos",
+  "expect_h": "cfe4a62da2409ce8",
+  "website": "https://campobaseburgos.com/",
+  "hours": null,
+  "day_pass": "€11.95 adult, €8.95 child",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://campobaseburgos.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://campobaseburgos.com/tarifas/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   },
+   {
+    "url": "https://campobaseburgos.com/campo-base/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://campobaseburgos.com/el-refugio/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours set to null because pages disagree: /contacto/ gives L-V 07:00-22:30, S 10:00-22:00, D 10:00-21:00; /tarifas/ describes the morning pass as Mon-Fri 7:30-15:00; /el-refugio/ (the cafe) lists Mon-Fri 7:30-23:00, Sat 10-23, Sun 10-22. Day pass per /tarifas/: Pase de dia 11.95, infantil 8.95. Facilities: El Refugio cafe/bar, full gym (free weights, cardio), Ocio infantil and birthdays, rental of all gear at reception (FAQ).",
+  "operating": "yes",
+  "official_address": "C. Condado de Treviño, 87, Nave blanca, 09001 Burgos",
+  "location": "ok",
+  "renamed_to": null,
+  "duplicate_of_hint": null
+ }
+]

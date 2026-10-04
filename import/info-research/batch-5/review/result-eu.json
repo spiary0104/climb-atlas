@@ -1,0 +1,259 @@
+[
+ {
+  "item": 1,
+  "id": "g-9e0a4cb76f",
+  "name": "Arkose - Cholet",
+  "decisions": ["no-change"],
+  "values": {},
+  "evidence": [
+   {"url": "https://arkose.com/cholet/arkose-cholet-preventes", "supports": ["not-open-yet"], "accessed": "2026-10-04"},
+   {"url": "https://arkose.com/cholet", "supports": ["address", "planned-hours", "website"], "accessed": "2026-10-04"}
+  ],
+  "confidence": "medium",
+  "notes": "Still not confirmed open. The official presale page is still titled 'Arkose Cholet ouvre bientot !' and the Cholet page still shows 'Decouvre nos preventes' (menu 'Decouvrez nos preventes !'); no opening date anywhere. The Cholet page now also shows generic offers (Entree Decouverte EUR 10 incl. shoes, 'au lieu de 24 EUR', valid in all Arkose halls) and hours (Mon-Fri 9am-11pm, Sat-Sun and holidays 9am-9pm), but the generic offers and hours are not proof it is open, and the tariff page /cholet/tarifs-cours-resa/adultes returns 404, so no Cholet-specific single-entry price. Left unfilled; re-check after opening. FYI for location: the Cholet page's Google-Maps place link embeds a pin 47.0686485,-0.850473, about 150 m WSW of our pin (47.068981,-0.848592); not a decision here (no geocoding allowed, official address unchanged: 7 Bd du Poitou Batiment C, 49300 Cholet). Fetched with curl and r.jina.ai proxy (official pages)."
+ },
+ {
+  "item": 14,
+  "id": "seed-866",
+  "name": "Craggy Island",
+  "decisions": ["rename", "suburb", "location", "fill"],
+  "values": {
+   "name": "Blue Spider Climbing",
+   "suburb": "Guildford",
+   "address": "Unit 9 Cobbett Park, Slyfield Industrial Estate, Moorfeld Road, Guildford, Surrey GU1 1RU",
+   "lat": 51.2600047,
+   "lng": -0.5682169,
+   "coord_source": "OSM way 1100608283 (the gym: Blue Spider (formerly Craggy Island), Cobbett Park), taken from the supplied location_check",
+   "website": "https://spiderclimbing.com/blue-spider/",
+   "hours": {"mon": "10am–10pm", "tue": "10am–10pm", "wed": "10am–10pm", "thu": "10am–10pm", "fri": "10am–10pm", "sat": "9am–7:30pm", "sun": "9am–7:30pm"},
+   "day_pass": "Adult £15.25 peak (weekdays 5pm-10pm, all day weekends and bank holidays), £12.25 off-peak (10am-5pm); junior/concession £12.25 peak, £10.25 off-peak",
+   "facilities": ["shoe-hire"]
+  },
+  "evidence": [
+   {"url": "https://spiderclimbing.com/blue-spider/", "supports": ["name", "address", "hours", "website"], "accessed": "2026-10-04"},
+   {"url": "https://spiderclimbing.com/blue-spider/prices-and-memberships/", "supports": ["day_pass", "shoe-hire"], "accessed": "2026-10-04"},
+   {"url": "https://spiderclimbing.com/craggy-island-are-now-part-of-the-spider-climbing-family/", "supports": ["rename"], "accessed": "2026-10-04"}
+  ],
+  "confidence": "high",
+  "notes": "Page title 'Blue Spider Climbing | Indoor Climbing Centre at Guildford'; same Cobbett Park/Slyfield address as old Craggy Island. Bank holidays 10am-10pm (not in table). Kit hire: shoes £3.90. Types left as is (bouldering, top-rope, lead): site sells Bouldering Induction, Auto Belay Session and Learn to Lead. Suburb 'Surrey' is a county; official address town is Guildford. Pin moves about 2.7 km to the OSM gym element."
+ },
+ {
+  "item": 15,
+  "id": "seed-871",
+  "name": "Flashpoint Swindon",
+  "decisions": ["rename", "location", "add-gym"],
+  "values": {
+   "name": "Rockstar Bouldering (Techno)",
+   "address": "Unit 30b, Techno Trading Estate, Bramble Road, Swindon, SN2 8HB",
+   "lat": null,
+   "lng": null,
+   "coord_source": "NEEDS GEOCODE (not allowed for this agent): geocode the official address 'Unit 30b, Techno Trading Estate, Bramble Road, Swindon SN2 8HB' (look for an OSM element for the bouldering gym on Techno Trading Estate, next to Play Football). Do NOT use the supplied location_check coordinates: they are for a different gym (Rockstar IO, Radway Road).",
+   "website": "https://www.rockstarclimbing.co.uk/",
+   "new_gym": {
+    "name": "Rockstar Climbing Centre",
+    "address": "Buildings 3-5, The I.O Centre, Radway Road, Swindon, Wiltshire SN3 4WH",
+    "suburb": "Swindon",
+    "state": "England",
+    "country": "GB",
+    "lat": 51.5821333,
+    "lng": -1.7542191,
+    "coord_source": "OSM node 7986028756 (the gym: Rockstar Climbing Centre, Radway Road), from the supplied location_check; not re-verified here",
+    "types": ["indoor-bouldering", "top-rope"],
+    "website": "https://www.rockstarclimbing.co.uk/",
+    "fill": {
+     "hours": {"mon": "10:30am–10pm", "tue": "10:30am–10pm", "wed": "10:30am–10pm", "thu": "10:30am–10pm", "fri": "10:30am–10pm", "sat": "9am–6pm", "sun": "9am–6pm"},
+     "day_pass": "Adult £15.00 (all day, every day); concession £12.50; junior (under 18) £10.00",
+     "facilities": ["cafe", "shop", "shoe-hire"]
+    }
+   }
+  },
+  "evidence": [
+   {"url": "https://www.rockstarclimbing.co.uk/transition-faq", "supports": ["rename", "separate-venue", "still-open"], "accessed": "2026-10-04"},
+   {"url": "https://web.archive.org/web/20240226150038/https://flashpointswindon.com/contact/", "supports": ["address"], "accessed": "2026-10-04"},
+   {"url": "https://web.archive.org/web/20240716060740/https://flashpointswindon.com/", "supports": ["address"], "accessed": "2026-10-04"},
+   {"url": "https://www.rockstarclimbing.co.uk/prices", "supports": ["new_gym.day_pass", "new_gym.facilities"], "accessed": "2026-10-04"},
+   {"url": "https://www.rockstarclimbing.co.uk/contact-us", "supports": ["new_gym.address", "new_gym.hours"], "accessed": "2026-10-04"}
+  ],
+  "confidence": "medium",
+  "notes": "Earlier judgement (Flashpoint = Rockstar, Radway Road) is WRONG. Flashpoint Swindon was a separate bouldering gym at Unit 30b, Techno Trading Estate, Bramble Rd, SN2 8HB (its own site, archived Feb-Jul 2024; our pin is Swindon town centre, wrong either way). Rockstar's official 'Flashpoint & Freedog Swindon Transition' FAQ says Flashpoint Swindon joined Rockstar, 'all three centres will remain open', brand gradually transitions, and names the sites 'Rockstar Climbing (IO)' and 'Rockstar Bouldering (Techno)' / 'Techno (formerly Flashpoint)'. That is why flashpointswindon.com redirects to rockstarclimbing.co.uk. So: rename this record to Rockstar Bouldering (Techno), move it to Bramble Road (needs geocode; I may not geocode), and add Rockstar Climbing Centre (IO, Radway Road) as its own gym if not already on the map (I cannot check the database; dedupe first, coordinates from location_check are for this IO site). Name wording is the FAQ's own phrase 'Rockstar Bouldering (Techno)'; Rockstar has not yet published a dedicated Techno page, so alternative is to keep 'Flashpoint Swindon' until it does. No official hours/price found for the Techno site (the Rockstar footer hours are the IO site's), so not filled. Types for Techno unchanged (bouldering). Rockstar IO has a Bouldering Arena plus High Walls Arena (rope), Crux Cafe & Bar, climbing shop, shoe hire £4; lead climbing not stated beyond 'Learn to Lead' classes, so only top-rope listed. Web search was used only to find these pages (a third-party snippet gave the Bramble Road address; confirmed on the archived official Flashpoint site)."
+ },
+ {
+  "item": 16,
+  "id": "seed-891",
+  "name": "The Boulder Bunker",
+  "decisions": ["rename", "suburb", "location", "fill"],
+  "values": {
+   "name": "The Bunker",
+   "suburb": "Torquay",
+   "address": "11 South Street, Torquay, TQ2 5AE",
+   "lat": 50.470871,
+   "lng": -3.5401041,
+   "coord_source": "OSM node 13039810475 (the gym: The Boulder Bunker, 11 South Street), taken from the supplied location_check",
+   "website": "https://theboulderbunker.com/",
+   "hours": {"mon": "2pm–9:30pm", "tue": "10am–9:30pm", "wed": "2pm–9:30pm", "thu": "10am–9:30pm", "fri": "2pm–9:30pm", "sat": "10:30am–5:30pm", "sun": "10:30am–5:30pm"},
+   "day_pass": "Adult (14+) £14 peak (after 4pm weekdays and weekends), £12 off-peak (10am-4pm weekdays); ages 7-13 £10; concession £10",
+   "facilities": ["training", "shoe-hire", "kids"]
+  },
+  "evidence": [
+   {"url": "https://theboulderbunker.com/", "supports": ["name", "address", "hours", "day_pass", "facilities", "website"], "accessed": "2026-10-04"}
+  ],
+  "confidence": "high",
+  "notes": "Home page: 'The Bunker, formerly The Boulder Bunker, is Torquay's first and only dedicated bouldering facility'; footer '11 South Street, Torquay, TQ2 5AE', Mon-Fri 10:00-21:30, Sat-Sun 10:30-17:30; 'Main room closed until 14:00 Mon, Wed, Fri', so Mon/Wed/Fri hours use 2pm start (general climbing times, same approach as earlier research). Last entry 30 min before close. Prices 'from 01/11/2025'. Facilities: Warm-up & Training Gym (systems board, campus, fingerboards), shoe hire £4, Bambinos/messy play for under-6s (kids). Types unchanged (bouldering only). Suburb 'Torbay' is the district; the official address town is Torquay."
+ },
+ {
+  "item": 17,
+  "id": "seed-877",
+  "name": "Nottingham Climbing Centre",
+  "decisions": ["rename", "retype", "suburb", "location", "fill"],
+  "values": {
+   "name": "Nottingham Climbing Centre - Lenton",
+   "types": ["indoor-bouldering"],
+   "suburb": "Lenton",
+   "address": "3 Prospect Pl, Lenton, NG7 1RS",
+   "lat": null,
+   "lng": null,
+   "coord_source": "NEEDS GEOCODE (not allowed for this agent): house-number geocode of '3 Prospect Place, Lenton, Nottingham NG7 1RS' or an OSM element for the Lenton bouldering gym. The supplied location_check for this item gave none.",
+   "website": "https://www.nottinghamclimbing.co.uk/lenton",
+   "hours": {"mon": "6am–10pm", "tue": "9am–10pm", "wed": "6am–10pm", "thu": "9am–10pm", "fri": "6am–10pm", "sat": "9am–8pm", "sun": "9am–8pm"},
+   "facilities": ["cafe", "shop", "training"]
+  },
+  "evidence": [
+   {"url": "https://www.nottinghamclimbing.co.uk/", "supports": ["two-sites", "address", "hours", "facilities"], "accessed": "2026-10-04"},
+   {"url": "https://www.nottinghamclimbing.co.uk/lenton", "supports": ["types", "address", "hours", "facilities"], "accessed": "2026-10-04"},
+   {"url": "https://www.nottinghamclimbing.co.uk/basford", "supports": ["basford-is-separate"], "accessed": "2026-10-04"}
+  ],
+  "confidence": "medium",
+  "notes": "The operator has exactly two sites: New Basford (212 Noel St, NG7 7FR; 60+ rope lines, 100+ boulders; = seed-922) and Lenton (3 Prospect Pl, NG7 1RS; 'Bouldering Wall', 200+ problems, 2 training boards, shop, cafe). This record has no address and no site name, so it cannot be tied to either with certainty. Judgement: the Lenton site is the one NOT already on the map (related list shows only Basford), so convert this record to Lenton (bouldering only, no ropes) rather than retire it as a duplicate of seed-922. Equivalent alternative: retire as duplicate of seed-922 and add-gym Lenton; the end state is the same. Coordinates not given, so apply this only after the Lenton position is geocoded. Day pass not stated on the site (booking system only). Separate flag: seed-922's stored address 'NG7 6AT' does not match the site's Basford address (212 Noel St, New Basford, Nottingham NG7 7FR). seed-897 The Depot Climbing Centre Nottingham is unrelated to this operator."
+ },
+ {
+  "item": 19,
+  "id": "seed-1130",
+  "name": "Bolder Neoliet - Rotterdam",
+  "decisions": ["rename", "fill"],
+  "values": {
+   "name": "Boulder Rotterdam",
+   "website": "https://boulderneoliet.nl/en/rotterdam/",
+   "hours": {"mon": "9am–11pm", "tue": "9am–11pm", "wed": "9am–11pm", "thu": "9am–11pm", "fri": "9am–11pm", "sat": "11am–9pm", "sun": "9am–7pm"},
+   "day_pass": "€14.50 adult; €13.50 age 18-24; €12.50 age 8-17; €9.25 age 6-8",
+   "facilities": ["parking", "training", "showers", "shop", "shoe-hire"]
+  },
+  "evidence": [
+   {"url": "https://boulderneoliet.nl/en/rotterdam/", "supports": ["name", "address", "website"], "accessed": "2026-10-04"},
+   {"url": "https://boulderneoliet.nl/en/rotterdam/openingstijden/", "supports": ["hours"], "accessed": "2026-10-04"},
+   {"url": "https://boulderneoliet.nl/en/rotterdam/prijzen/", "supports": ["day_pass", "shoe-hire"], "accessed": "2026-10-04"},
+   {"url": "https://boulderneoliet.nl/en/rotterdam/faciliteiten/", "supports": ["facilities"], "accessed": "2026-10-04"}
+  ],
+  "confidence": "medium",
+  "notes": "Same venue and address (Keilestraat 7J). Name judgement: the site writes the location as 'Boulder Rotterdam' (page titles 'Boulder Rotterdam - Boulder Neoliet'; group list 'BOULDER NEOLIET NETHERLANDS: Boulder Rotterdam, Boulder Tilburg ...'); the brand is 'Boulder Neoliet'. The review item suggested 'Boulder Neoliet Rotterdam'; that exact string does not appear as the gym's name, so I give the site's own form. If the owner wants the brand in the name, 'Boulder Neoliet Rotterdam' is the safe alternative. Facilities page ticks free parking, paid parking, bicycle parking, training room, showers, shop; shoe rental (Rental section, 'huur een paar klimschoenen') on the home/price pages; the 'gezellige bar' is described on the home page but I did not list a cafe tag (a bar, not stated as cafe). Kids workshops are classes, not a stated kids area, so no kids tag. Pin already matched the address per earlier research."
+ },
+ {
+  "item": 20,
+  "id": "g-db0f20b48a",
+  "name": "SpaceBlock Climbing - Málaga",
+  "decisions": ["retype", "fill"],
+  "values": {
+   "types": ["indoor-bouldering", "top-rope"],
+   "website": "https://spaceblockclimbing.com/",
+   "hours": {"mon": "9am–11pm", "tue": "9am–11pm", "wed": "9am–11pm", "thu": "9am–11pm", "fri": "9am–11pm", "sat": "10am–8pm", "sun": "10am–8pm"},
+   "day_pass": "€12 adult, all day (€10 morning pass Mon-Fri 9am-4pm); child 4-14 €12 (€8 for children of members and federated children)",
+   "facilities": ["kids", "training", "shoe-hire", "showers"]
+  },
+  "evidence": [
+   {"url": "https://spaceblockclimbing.com/instalaciones", "supports": ["types", "facilities", "hours"], "accessed": "2026-10-04"},
+   {"url": "https://spaceblockclimbing.com/tarifas", "supports": ["day_pass", "shoe-hire"], "accessed": "2026-10-04"},
+   {"url": "https://spaceblockclimbing.com/yoga", "supports": ["yoga-not-on-site"], "accessed": "2026-10-04"}
+  ],
+  "confidence": "high",
+  "notes": "Instalaciones page: 400+ m2 boulder, 'Mas de 40 vias para escalar con cuerda y autoseguro', speed wall, Space Kids zone, campus + functional training zone, changing rooms with showers and lockers. Rope/autobelay = top-rope; lead climbing is not explicitly stated so not added. Hours: Mon-Fri 9-23h, Sat/Sun/holidays 10-20h. Shoe hire (pies de gato) €5. Yoga classes are now held at Brilla Yoga, a studio 3 min away, so no yoga tag."
+ },
+ {
+  "item": 21,
+  "id": "g-e20d3b95e9",
+  "name": "Kletterzentrum Ap'n Daun",
+  "decisions": ["fill"],
+  "values": {
+   "website": "https://www.kletterzentrumchur.ch/",
+   "hours": {"mon": "9am–10:30pm", "tue": "9am–10:30pm", "wed": "9am–10:30pm", "thu": "9am–10:30pm", "fri": "9am–9:30pm", "sat": "10am–6pm", "sun": "10am–6pm"},
+   "day_pass": "CHF 26 adult, CHF 20 youth/senior, CHF 14 child (climbing incl. bouldering); bouldering only CHF 16 adult, CHF 13 youth/senior, CHF 10 child",
+   "facilities": ["cafe", "shop", "parking"]
+  },
+  "evidence": [
+   {"url": "https://www.kletterzentrumchur.ch/", "supports": ["name", "address", "hours", "day_pass", "facilities", "website"], "accessed": "2026-10-04"},
+   {"url": "https://www.kletterzentrumchur.ch/offnungszeiten", "supports": ["hours"], "accessed": "2026-10-04"},
+   {"url": "https://www.kletterzentrumchur.ch/anreise", "supports": ["parking"], "accessed": "2026-10-04"},
+   {"url": "https://www.kletterzentrumchur.ch/Erstbesuch", "supports": ["types"], "accessed": "2026-10-04"}
+  ],
+  "confidence": "high",
+  "notes": "Found the official site (kletterzentrumchur.ch; earlier domain guesses missed it). Operating, address Pulvermuehlestrasse 8, 7000 Chur matches our record. Types stay as is: bouldering, 5 auto-belays, top-rope and lead (Vorstieg) courses. Hours are the 'generellen Oeffnungszeiten' (Mon-Thu 9-22:30, Fri 9-21:30, Sat/Sun/holidays 10-18); the site also shows 'Sommer-Oeffnungszeiten ab 01.06.2026' with the same times. Cafe = Bistro, shop = Klettershop; parking = about 25 spaces next to the hall (paid until 7pm) plus a larger car park 2 min away. Kombi annual pass is shared with Quadrel Boulder (separate gym). Pin/address not re-checked here."
+ },
+ {
+  "item": 22,
+  "id": "g-6e04989a5a",
+  "name": "Hangar4 - A Coruña",
+  "decisions": ["fill"],
+  "values": {
+   "hours": {"mon": "10:30am–10pm", "tue": "10:30am–10pm", "wed": "10:30am–10pm", "thu": "10:30am–10pm", "fri": "10:30am–10pm", "sat": "10am–8pm", "sun": "10am–8pm"},
+   "day_pass": "€12 adult (€10 reduced: students, federated, under 18)",
+   "facilities": ["cafe", "training", "shoe-hire", "yoga"]
+  },
+  "evidence": [
+   {"url": "https://hangar4.es/contacto/", "supports": ["hours", "address"], "accessed": "2026-10-04"},
+   {"url": "https://hangar4.es/tarifas/", "supports": ["day_pass", "shoe-hire"], "accessed": "2026-10-04"},
+   {"url": "https://hangar4.es/instalaciones/", "supports": ["facilities", "types"], "accessed": "2026-10-04"}
+  ],
+  "confidence": "medium",
+  "notes": "Re-checked: the home page (and one sentence of /instalaciones) still carries injected off-topic spam (a 'single fathers dating sites' article, a ghostwriter-service link), so the WordPress site is still compromised. The contacto and tarifas pages are clean and coherent, so hours/price/facilities are taken from them; website deliberately NOT set (https://hangar4.es/ is the real official site; add it once the spam is gone). Hours are the regular schedule (summer Jun-Sep: Sun/holidays 10am-3pm). Facilities: cafeteria, 200 m2 training zone (campus, MoonBoard, system board), 100 m2 yoga studio, shoe hire €4/day. Types unchanged: rope walls (17 lines, 10 m) + autobelay + 300 m2 boulder; lead not stated. Medium confidence because of the compromise."
+ },
+ {
+  "item": 23,
+  "id": "g-a2991c82dc",
+  "name": "GUD Climbing - Murcia",
+  "decisions": ["fill"],
+  "values": {
+   "website": "https://gudclimbing.com/",
+   "hours": {"mon": "8am–10pm", "tue": "8am–10pm", "wed": "8am–10pm", "thu": "8am–10pm", "fri": "8am–10pm", "sat": "9am–9pm", "sun": "9am–9pm"},
+   "day_pass": "€12.50 adult, €9.50 child (day pass)",
+   "facilities": ["cafe", "training", "kids", "yoga", "shoe-hire"]
+  },
+  "evidence": [
+   {"url": "https://gudclimbing.com/", "supports": ["address", "hours", "facilities"], "accessed": "2026-10-04"},
+   {"url": "https://gudclimbing.com/tarifas/", "supports": ["day_pass"], "accessed": "2026-10-04"},
+   {"url": "https://gudclimbing.com/servicios/", "supports": ["facilities"], "accessed": "2026-10-04"},
+   {"url": "https://climbat.com/en/centro/thader/", "supports": ["separate-venue"], "accessed": "2026-10-04"}
+  ],
+  "confidence": "high",
+  "notes": "Not a duplicate: two separate venues in the Thader shopping centre. GUD Climbing (Parcela CC Thader, next to Decathlon) is the adult climbing gym; Climbat Murcia-Thader is 'Climbat Kids Thader' (children's playground: Clip'n Climb, trampolines, Ninja Warrior; daily 12-14h and 17-21h), per Climbat's own page. GUD keeps its record unchanged; whether the Climbat Kids record should stay on the map is a separate question (it is a kids play centre, not a climbing gym in the usual sense). Hours from the footer HORARIOS block (restaurant 8:00-23:30 is separate). Facilities: restaurant, Gud Gym, Gud Kids, yoga (Gud Yoga), shoe rental on site per earlier research. Showers are not stated on the official pages, so no showers tag."
+ },
+ {
+  "item": 26,
+  "id": "seed-1285",
+  "name": "City Adventure Center CAC - Graz",
+  "decisions": ["rename", "fill"],
+  "values": {
+   "name": "Kletterhalle Graz",
+   "website": "https://www.c-a-c.at/",
+   "facilities": ["shoe-hire"]
+  },
+  "evidence": [
+   {"url": "https://www.c-a-c.at/", "supports": ["name", "address", "interim-status", "website"], "accessed": "2026-10-04"},
+   {"url": "https://www.c-a-c.at/preise/", "supports": ["shoe-hire", "interim-status"], "accessed": "2026-10-04"}
+  ],
+  "confidence": "medium",
+  "notes": "Site title and footer: 'Kletterhalle Graz, Idlhofgasse 74, 8020 Graz'; the Preise page says 'Das CAC bekommt einen neuen Betreiber und der Indoorbereich wird umgebaut. Bouldern ist zur Zeit nicht moeglich. Der Outdoorbereich ist fuer euch zum Seilklettern geoeffnet.' kletterhalle-graz.at redirects to c-a-c.at, so website stays c-a-c.at. Interim hours (Mon 3pm-10pm, Tue-Fri 9am-10pm, Sat/Sun 9am-9pm) and interim 'Baustellenpreise' (adult EUR 9.50 morning / 11.00 afternoon, outdoor rope area only) are temporary, so hours and day_pass NOT filled; types NOT changed (indoor area is being rebuilt, bouldering expected to return). Shoe hire EUR 4 confirmed. Re-check hours, price and types after the indoor reopening."
+ },
+ {
+  "item": 27,
+  "id": "g-34538e5d42",
+  "name": "Klättra Motala Klätterhall",
+  "decisions": ["no-change"],
+  "values": {},
+  "evidence": [
+   {"url": "https://www.billobulls.se/klattra-motala-klatterhall/", "supports": ["address", "types", "temporarily-closed"], "accessed": "2026-10-04"},
+   {"url": "https://www.billobulls.se/", "supports": ["temporarily-closed"], "accessed": "2026-10-04"},
+   {"url": "https://www.billobulls.se/PRIS", "supports": ["prices"], "accessed": "2026-10-04"},
+   {"url": "https://www.billobulls.se/HITTA%20HIT", "supports": ["address"], "accessed": "2026-10-04"}
+  ],
+  "confidence": "low",
+  "notes": "Cannot be settled from official sources. The climbing page and home page both show 'Oeppettider: Tillfaelligt staengt (se klattringen med egna tider)' = temporarily closed, no regular hours, no end date. Yet the same pages still sell instructor 'prova pa' sessions (SEK 270 child / 300 adult), an adult course 'Start onsdag 14 januari' (a Wednesday in 2026), parties and a price list (climbing hall adult SEK 130, junior SEK 100, 10-card SEK 1100; shoe hire SEK 40 per earlier research), and the booking site billobulls.bokamera.se is a JS app that I could not read. So the hall may run by booking only, or the page may be stale. Not enough for the owner's 'closed' retire rule (the site says temporary, not closed). Address Mineralvaegen 16, 591 53 Motala confirmed; types match (bouldering 16 m wall, top-rope 10 m with 4 ropes, lead stated: 'bouldering, topprepsklattring och ledklattring'). Nothing filled; if the owner wants it filled anyway: website https://www.billobulls.se/klattra-motala-klatterhall/, day pass 'Adult SEK 130, junior SEK 100 (to age 17)'. Re-check hours later."
+ }
+]

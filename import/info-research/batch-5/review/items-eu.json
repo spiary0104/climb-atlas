@@ -1,0 +1,420 @@
+[
+ {
+  "item": 1,
+  "id": "g-9e0a4cb76f",
+  "our_record": {
+   "name": "Arkose - Cholet",
+   "suburb": "Cholet",
+   "state": "PAYS_DE_LA_LOIRE",
+   "country": "FR",
+   "address": "7 boulevard du Poitou, 49300 Cholet, France",
+   "lat": 47.068981,
+   "lng": -0.848592,
+   "types": [
+    "indoor-bouldering"
+   ]
+  },
+  "issue": "not open yet (presales page \"ouvre bientôt\"): not filled; re-check after opening",
+  "earlier_research": {
+   "website": "https://arkose.com/cholet",
+   "official_address": "7 Bd du Poitou Bâtiment C, 49300 Cholet",
+   "notes": "Not yet open: the official presale page is titled \"Arkose Cholet ouvre bientôt !\" and sells launch presales for a \"nouvelle salle\". The location page lists planned hours (Mon-Fri 9am-11pm, Sat-Sun 9am-9pm) but no single-entry price, so hours/day_pass left null. Facilities (kids area, shop, bar-restaurant) are stated in the page text for the planned gym. No opening date seen.",
+   "sources": [
+    "https://arkose.com/cholet",
+    "https://arkose.com/cholet/arkose-cholet-preventes"
+   ]
+  },
+  "related_gyms": []
+ },
+ {
+  "item": 14,
+  "id": "seed-866",
+  "our_record": {
+   "name": "Craggy Island",
+   "suburb": "Surrey",
+   "state": "ENGLAND",
+   "country": "GB",
+   "address": null,
+   "lat": 51.2362,
+   "lng": -0.5704,
+   "types": [
+    "indoor-bouldering",
+    "lead-climbing",
+    "top-rope"
+   ]
+  },
+  "issue": "renamed: now Blue Spider Climbing (Spider Climbing), same address in Guildford: identity rename; not filled",
+  "earlier_research": {
+   "website": "https://spiderclimbing.com/blue-spider/",
+   "official_address": "Unit 9 Cobbett Park, Slyfield Industrial Estate, Moorfeld Road, Guildford, Surrey GU1 1RU",
+   "notes": "Craggy Island Guildford joined Spider Climbing (announcement on the old craggy-island.com redirect) and now trades as Blue Spider Climbing at the same address (Unit 9 Cobbett Park, Slyfield). Peak = weekdays 5-10pm and all weekend. Our pin (51.2362,-0.5704) is about 2.7 km SSW of the official address (Nominatim GU1 1RU = 51.2602,-0.5666).",
+   "sources": [
+    "https://spiderclimbing.com/blue-spider/",
+    "https://spiderclimbing.com/blue-spider/prices-and-memberships/",
+    "https://spiderclimbing.com/craggy-island-are-now-part-of-the-spider-climbing-family/"
+   ]
+  },
+  "location_check": {
+   "status": "resolved",
+   "address": "Unit 9 Cobbett Park, Slyfield Industrial Estate, Moorfeld Road, Guildford, Surrey GU1 1RU",
+   "lat": 51.2600047,
+   "lng": -0.5682169,
+   "coord_source": "OSM way 1100608283 (the gym: Blue Spider (formerly Craggy Island), Cobbett Park)",
+   "notes": ""
+  },
+  "related_gyms": []
+ },
+ {
+  "item": 15,
+  "id": "seed-871",
+  "our_record": {
+   "name": "Flashpoint Swindon",
+   "suburb": "Swindon",
+   "state": "ENGLAND",
+   "country": "GB",
+   "address": null,
+   "lat": 51.5558,
+   "lng": -1.7797,
+   "types": [
+    "indoor-bouldering"
+   ]
+  },
+  "issue": "Flashpoint Swindon domain redirects to Rockstar Climbing Centre (Radway Road): rename or replaced? not filled",
+  "earlier_research": {
+   "website": "https://www.rockstarclimbing.co.uk/",
+   "official_address": "Rockstar Climbing Centre, Radway Road, Swindon, Wiltshire SN3 4WH",
+   "notes": "No site found under the name Flashpoint Swindon: flashpointswindon.com answers with a 301 redirect to rockstarclimbing.co.uk (Rockstar Climbing Centre, Radway Road, Swindon SN3 4WH), and no fetched page states the rename, so the match is doubtful (judgement: probably the same venue renamed). Facilities and prices are Rockstar's. Pin (51.5558,-1.7797) is about 3.4 km SW of SN3 4WH (postcodes.io 51.5824,-1.7538).",
+   "sources": [
+    "https://www.rockstarclimbing.co.uk/",
+    "https://www.rockstarclimbing.co.uk/prices",
+    "https://www.rockstarclimbing.co.uk/casual-climbing",
+    "https://www.rockstarclimbing.co.uk/contact-us"
+   ]
+  },
+  "location_check": {
+   "status": "resolved",
+   "address": "Rockstar Climbing Centre, Radway Road, Swindon, Wiltshire SN3 4WH",
+   "lat": 51.5821333,
+   "lng": -1.7542191,
+   "coord_source": "OSM node 7986028756 (the gym: Rockstar Climbing Centre, Radway Road (identity as Flashpoint unconfirmed on official pages))",
+   "notes": "Address is that of Rockstar Climbing Centre (flashpointswindon.com redirects there); the Flashpoint = Rockstar identity is a judgement from research, not confirmed on the official pages."
+  },
+  "related_gyms": [
+   {
+    "id": "seed-870",
+    "name": "Flashpoint Bristol",
+    "suburb": "Bristol",
+    "address": null,
+    "lat": 51.4545,
+    "lng": -2.5879,
+    "types": [
+     "indoor-bouldering"
+    ]
+   }
+  ]
+ },
+ {
+  "item": 16,
+  "id": "seed-891",
+  "our_record": {
+   "name": "The Boulder Bunker",
+   "suburb": "Torbay",
+   "state": "ENGLAND",
+   "country": "GB",
+   "address": null,
+   "lat": 50.4619,
+   "lng": -3.5253,
+   "types": [
+    "indoor-bouldering"
+   ]
+  },
+  "issue": "renamed: now The Bunker, 11 South Street, Torquay: identity rename; not filled",
+  "earlier_research": {
+   "website": "https://theboulderbunker.com/",
+   "official_address": "11 South Street, Torquay, TQ2 5AE",
+   "notes": "Now trades as The Bunker (formerly The Boulder Bunker), 11 South Street, Torquay TQ2 5AE, with escape room and paint-battle activities alongside bouldering. Hours: Opening Hours section says Mon-Fri 10am-9:30pm with the main room closed until 2pm Mon, Wed, Fri, Sat-Sun 10:30am-5:30pm; used the main-room times. Peak = after 4pm weekdays and weekends. Pin (50.4619,-3.5253) is about 1.5 km SE of the official address (postcodes.io TQ2 5AE = 50.4710,-3.5401).",
+   "sources": [
+    "https://theboulderbunker.com/"
+   ]
+  },
+  "location_check": {
+   "status": "resolved",
+   "address": "11 South Street, Torquay, TQ2 5AE",
+   "lat": 50.470871,
+   "lng": -3.5401041,
+   "coord_source": "OSM node 13039810475 (the gym: The Boulder Bunker, 11 South Street)",
+   "notes": ""
+  },
+  "related_gyms": []
+ },
+ {
+  "item": 17,
+  "id": "seed-877",
+  "our_record": {
+   "name": "Nottingham Climbing Centre",
+   "suburb": "Nottingham",
+   "state": "ENGLAND",
+   "country": "GB",
+   "address": null,
+   "lat": 52.9548,
+   "lng": -1.1581,
+   "types": [
+    "indoor-bouldering",
+    "lead-climbing",
+    "top-rope"
+   ]
+  },
+  "issue": "Nottingham Climbing Centre: no address, pin between the Lenton and Basford sites; probably a duplicate of seed-922 (Basford)",
+  "earlier_research": {
+   "website": "https://www.nottinghamclimbing.co.uk/",
+   "official_address": null,
+   "notes": "Doubtful match. Nottingham Climbing Centre runs two sites: New Basford (212 Noel St, roped and bouldering; matches seed-922) and Lenton (3 Prospect Pl, NG7 1RS, bouldering only, 200+ problems). This entry has no address and its pin (52.9548,-1.1581) is about 1.2 km from Lenton and 2.2 km from Basford; its types include top-rope and lead (Basford-like). Likely a duplicate of seed-922, or the Lenton centre with a poor pin. No per-site data given here to avoid mixing the two.",
+   "sources": [
+    "https://www.nottinghamclimbing.co.uk/"
+   ]
+  },
+  "related_gyms": [
+   {
+    "id": "seed-922",
+    "name": "Nottingham Climbing Centre - Basford",
+    "suburb": "Basford, Nottingham",
+    "address": "NG7 6AT, City of Nottingham",
+    "lat": 52.9705416,
+    "lng": -1.1702991,
+    "types": [
+     "indoor-bouldering",
+     "lead-climbing",
+     "top-rope"
+    ]
+   },
+   {
+    "id": "seed-897",
+    "name": "The Depot Climbing Centre Nottingham",
+    "suburb": "Nottingham",
+    "address": null,
+    "lat": 52.95,
+    "lng": -1.15,
+    "types": [
+     "indoor-bouldering",
+     "lead-climbing",
+     "top-rope"
+    ]
+   }
+  ]
+ },
+ {
+  "item": 19,
+  "id": "seed-1130",
+  "our_record": {
+   "name": "Bolder Neoliet - Rotterdam",
+   "suburb": "Rotterdam",
+   "state": "ZUID_HOLLAND",
+   "country": "NL",
+   "address": "Keilestraat 7J, Rotterdam, Netherlands",
+   "lat": 51.908056,
+   "lng": 4.4334012,
+   "types": [
+    "indoor-bouldering"
+   ]
+  },
+  "issue": "name typo: Bolder Neoliet -> Boulder Neoliet Rotterdam (identity rename)",
+  "earlier_research": {
+   "website": "https://boulderneoliet.nl/en/rotterdam/",
+   "official_address": "Keilestraat 7J, 3029 BP Rotterdam",
+   "notes": "Official trade name is 'Boulder Neoliet Rotterdam' (ours 'Bolder Neoliet' is a spelling variant, same address). Facilities page ticks free/paid parking, catering space, training room, showers, shop; shoe rental from home page ('huur een paar klimschoenen'), kids from the location's 'Boulderen voor kinderen' page link; the bar from the home page. Nominatim does not resolve 7J but 7F/7H on Keilestraat sit at 51.90806,4.43340, matching our pin.",
+   "sources": [
+    "https://boulderneoliet.nl/en/rotterdam/",
+    "https://boulderneoliet.nl/en/rotterdam/openingstijden/",
+    "https://boulderneoliet.nl/en/rotterdam/prijzen/",
+    "https://boulderneoliet.nl/en/rotterdam/faciliteiten/"
+   ]
+  },
+  "related_gyms": []
+ },
+ {
+  "item": 20,
+  "id": "g-db0f20b48a",
+  "our_record": {
+   "name": "SpaceBlock Climbing - Málaga",
+   "suburb": "Málaga",
+   "state": "ANDALUCIA",
+   "country": "ES",
+   "address": "C/ La Bohème 21, 29006 Málaga, Spain",
+   "lat": 36.7105206,
+   "lng": -4.4693952,
+   "types": [
+    "indoor-bouldering"
+   ]
+  },
+  "issue": "type tags: site lists 40+ rope/autobelay routes and a speed wall (we have bouldering only)",
+  "earlier_research": {
+   "website": "https://spaceblockclimbing.com/",
+   "official_address": "C/ La Bohème, 21, 29006 Málaga",
+   "notes": "Hours 'Lunes a viernes de 9 a 23h; sabados, domingos y festivos de 10 a 20h' (contact page and footer). Facilities: Space Kids zone, campus + functional training zone, rental pies de gato (tarifas), changing rooms with showers (instalaciones). Yoga: classes for members are given at Brilla Yoga, a studio 3 min away, so not listed. Our stored types lack rope climbing; site lists 40+ rope/autobelay routes plus a speed wall (data-quality hint).",
+   "sources": [
+    "https://spaceblockclimbing.com/",
+    "https://spaceblockclimbing.com/contacto",
+    "https://spaceblockclimbing.com/tarifas",
+    "https://spaceblockclimbing.com/instalaciones"
+   ]
+  },
+  "related_gyms": []
+ },
+ {
+  "item": 21,
+  "id": "g-e20d3b95e9",
+  "our_record": {
+   "name": "Kletterzentrum Ap'n Daun",
+   "suburb": "Chur",
+   "state": "GRAUBUNDEN",
+   "country": "CH",
+   "address": "Pulvermühlestrasse 8, 7000 Chur",
+   "lat": 46.8522861,
+   "lng": 9.5169166,
+   "types": [
+    "indoor-bouldering",
+    "lead-climbing",
+    "top-rope"
+   ]
+  },
+  "issue": "Kletterzentrum Ap'n Daun (Chur): not found while search was unavailable; Quadrel still sells a combined pass: re-check",
+  "earlier_research": {
+   "website": null,
+   "official_address": null,
+   "notes": "No official site found: guessed domains (apndaun.ch, apn-daun.ch, kletterzentrum-chur.ch and others) do not resolve. Web search budget was exhausted, so no site could be located. Quadrel's official price list (quadrel.ch) still advertises a 'Kombiabo Ap'n Daun' for climbing, which suggests the hall exists, but this is not a verification of operation or address.",
+   "sources": []
+  },
+  "related_gyms": []
+ },
+ {
+  "item": 22,
+  "id": "g-6e04989a5a",
+  "our_record": {
+   "name": "Hangar4 - A Coruña",
+   "suburb": "A Coruña",
+   "state": "GALICIA",
+   "country": "ES",
+   "address": "Calle Marie Curie 2-4, 15008 A Coruña, Spain",
+   "lat": 43.3499279,
+   "lng": -8.4192596,
+   "types": [
+    "indoor-bouldering",
+    "top-rope"
+   ]
+  },
+  "issue": "official site shows injected spam links (likely compromised): not linked/filled; re-check",
+  "earlier_research": {
+   "website": "https://hangar4.es/",
+   "official_address": "Calle Marie Curie 2-4, 15008 A Coruna",
+   "notes": "Hours use the regular schedule on the contact page (Mon-Fri 10:30-22:00, Sat 10:00-20:00, Sun and holidays 10:00-20:00); the page also lists a Jun-Sep summer schedule (Sun/holidays 10:00-15:00) which was not used. Facilities: cafeteria, 200 m2 training zone with Moonboard/campus/system board, kids courses (Hangar4 Academy, 6-15), 100 m2 yoga studio, rental feet-shoes 4 euro/day. WARNING: the home page and instalaciones page contain injected off-topic spam text (dating-site article, ghostwriter link), which suggests the WordPress site was compromised; facts used here come from the normal page s",
+   "sources": [
+    "https://hangar4.es/",
+    "https://hangar4.es/contacto/",
+    "https://hangar4.es/tarifas/",
+    "https://hangar4.es/instalaciones/"
+   ]
+  },
+  "related_gyms": []
+ },
+ {
+  "item": 23,
+  "id": "g-a2991c82dc",
+  "our_record": {
+   "name": "GUD Climbing - Murcia",
+   "suburb": "Churra",
+   "state": "MURCIA",
+   "country": "ES",
+   "address": "CC Thader, Av. Juan de Borbón s/n, 30110 Churra, Murcia, Spain",
+   "lat": 38.0313564,
+   "lng": -1.1471501,
+   "types": [
+    "indoor-bouldering",
+    "top-rope"
+   ]
+  },
+  "issue": "shares the Centro Comercial Thader address with Climbat Murcia-Thader: two venues or duplicate?",
+  "earlier_research": {
+   "website": "https://gudclimbing.com/",
+   "official_address": "Centro Comercial Thader, Av. Juan de Borbon s/n, 30110 Churra, Murcia",
+   "notes": "Hours from the footer 'HORARIOS' block (Mon-Fri 08:00-22:00, Sat/Sun 09:00-21:00; restaurant and kitchen hours listed separately). Day pass 'Bono de dia' adult 12.50, child 9.50 (child up to 13). Facilities: restaurant (El Altillo), Gud Gym, Gud Kids zone, yoga classes, rental climbing shoes ('puedes alquilarlos aqui mismo'). Google-review text embedded on the home page was not used. Location check: Street-level geocode matched only the avenue (1.03 km along it); a geocode of 'Centro Comercial Thader' is 0.2 km from our pin, so the pin is at the shopping centre.",
+   "sources": [
+    "https://gudclimbing.com/",
+    "https://gudclimbing.com/tarifas/",
+    "https://gudclimbing.com/empezar-a-escalar/",
+    "https://gudclimbing.com/servicios/"
+   ]
+  },
+  "related_gyms": [
+   {
+    "id": "g-cb2731f0d2",
+    "name": "Climbat - Barakaldo",
+    "suburb": "Barakaldo",
+    "address": "Megapark, Avenida de la Ribera s/n, 48902 Barakaldo, Spain",
+    "lat": 43.293446,
+    "lng": -3.0041918,
+    "types": [
+     "indoor-bouldering",
+     "top-rope"
+    ]
+   }
+  ]
+ },
+ {
+  "item": 26,
+  "id": "seed-1285",
+  "our_record": {
+   "name": "City Adventure Center CAC - Graz",
+   "suburb": "Graz",
+   "state": "STEIERMARK",
+   "country": "AT",
+   "address": "Idlhofgasse 74, Graz, Austria",
+   "lat": 47.0651946,
+   "lng": 15.4223304,
+   "types": [
+    "indoor-bouldering",
+    "lead-climbing",
+    "top-rope"
+   ]
+  },
+  "issue": "now Kletterhalle Graz under a new operator (same address); indoor area being rebuilt, only outdoor ropes open: rename + re-check after reopening; not filled",
+  "earlier_research": {
+   "website": "https://www.c-a-c.at/",
+   "official_address": "Idlhofgasse 74, 8020 Graz",
+   "notes": "Site now trades as Kletterhalle Graz (kletterhalle-graz.at e-mail); notice says the CAC gets a new operator and the indoor area is being rebuilt, bouldering currently not possible, only the outdoor rope-climbing area is open (interim hours Mo 15-22, Di-Fr 9-22, Sa/So 9-21; interim Baustellenpreise). Hours and day pass left null because they are temporary and outdoor-rope-only. Shoe hire (4 EUR) is on the price page. Our record (indoor bouldering/top-rope/lead) is not accurate at the moment.",
+   "sources": [
+    "https://www.c-a-c.at/",
+    "https://www.c-a-c.at/preise/"
+   ]
+  },
+  "related_gyms": []
+ },
+ {
+  "item": 27,
+  "id": "g-34538e5d42",
+  "our_record": {
+   "name": "Klättra Motala Klätterhall",
+   "suburb": "Motala",
+   "state": "OSTERGOTLAND",
+   "country": "SE",
+   "address": "Mineralvägen 16, 591 53 Motala",
+   "lat": 58.555811,
+   "lng": 15.0449195,
+   "types": [
+    "indoor-bouldering",
+    "lead-climbing",
+    "top-rope"
+   ]
+  },
+  "issue": "Klättra Motala: climbing page says temporarily closed (Tillfälligt stängt): not filled; re-check",
+  "earlier_research": {
+   "website": "https://www.billobulls.se/klattra-motala-klatterhall/",
+   "official_address": "Mineralvägen 16, 591 53 Motala",
+   "notes": "Climbing hall run by Bill o Bulls Lekland in the same premises. The climbing page shows \"Öppettider: Tillfälligt stängt\" (temporarily closed) and no regular hours; homepage says \"Tillfälligt stängt (se klättringen med egna tider)\" for the playground. Some page content looks stale (course dates for January/Oct 2024). Unclear whether the climbing hall is currently open, so operating unknown. Rental shoes 40 kr; climbing school, camps and kids parties stated.",
+   "sources": [
+    "https://www.billobulls.se/klattra-motala-klatterhall/",
+    "https://www.billobulls.se/HITTA%20HIT"
+   ]
+  },
+  "related_gyms": []
+ }
+]

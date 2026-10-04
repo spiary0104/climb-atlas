@@ -1,0 +1,963 @@
+[
+  {
+    "id": "seed-162",
+    "name": "Stone Co. Climbing",
+    "expect_h": "d6746e2da4b49ff5",
+    "website": "https://stonecoclimbing.com/",
+    "hours": {
+      "mon": "9am–10pm",
+      "tue": "9am–10pm",
+      "wed": "9am–10pm",
+      "thu": "9am–10pm",
+      "fri": "9am–10pm",
+      "sat": "9am–10pm",
+      "sun": "12pm–10pm"
+    },
+    "day_pass": "$18 adult, $14 youth (13-17)",
+    "facilities": [
+      "cafe",
+      "training",
+      "kids",
+      "shoe-hire",
+      "shop",
+      "parking",
+      "yoga"
+    ],
+    "sources": [
+      {
+        "url": "https://stonecoclimbing.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      },
+      {
+        "url": "https://stonecoclimbing.com/first-visit/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://stonecoclimbing.com/our-facility/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://stonecoclimbing.com/memberships-and-fees/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours from the First Visit page (Mon-Sat 9am-10pm, Sun 12pm-10pm). The site footer differs (Mon-Thu 8am-11pm, Fri-Sat 8am-10pm, Sun 12pm-10pm); used the visit page. Member-only early hours (Tue/Thu) excluded. Parking: First Visit page lists Free Parking as a perk. Pin geocoded: 0.0 km from official address.",
+    "operating": "yes",
+    "official_address": "777 Graham Road, College Station, TX 77845",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-163",
+    "name": "The District",
+    "expect_h": "50e46c4432a88018",
+    "website": "https://www.thedistrictsa.com/",
+    "hours": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "10am–10pm",
+      "sun": "10am–10pm"
+    },
+    "day_pass": "$15 adult (18+), $7 on Friday after 5pm",
+    "facilities": [
+      "cafe",
+      "training",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://www.thedistrictsa.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.thedistrictsa.com/coffee",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.thedistrictsa.com/about",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Site calls it an 18+ climbing gym; members have 24/7 access, staffed hours 10am-10pm daily used. On-site coffee shop (own hours 7am-2pm). Day pass includes bouldering area and Olympic weight room; shoe rental $3. Pin geocoded: ~0 km.",
+    "operating": "yes",
+    "official_address": "2424 Broadway, San Antonio, TX 78215",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-255",
+    "name": "Climb Moab",
+    "expect_h": "c2bdeac429bd9282",
+    "website": "https://www.climbmoabgym.com/",
+    "hours": {
+      "mon": "12pm–9pm",
+      "tue": "12pm–9pm",
+      "wed": "12pm–9pm",
+      "thu": "12pm–9pm",
+      "fri": "12pm–9pm",
+      "sat": "12pm–9pm",
+      "sun": "Closed"
+    },
+    "day_pass": "$25 adult",
+    "facilities": [
+      "training",
+      "kids",
+      "shoe-hire",
+      "showers",
+      "yoga"
+    ],
+    "sources": [
+      {
+        "url": "https://www.climbmoabgym.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.climbmoabgym.com/faqs",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.climbmoabgym.com/the-gym",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Site states M-S: 12PM-9pm, Sun: Closed (read M-S as Mon-Sat). Older third-party listings show longer hours; the official site is used. Unit A8 in Moab Business Park; pin is at the Hwy 191 address area. Kids: kids clubs and summer camps. Yoga/aerial classes via the FAQ and calendar.",
+    "operating": "yes",
+    "official_address": "11850 S Hwy 191, Unit A8, Moab, UT 84532",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-256",
+    "name": "Contact Climbing",
+    "expect_h": "e8ef3f35b7db8d12",
+    "website": "https://www.contactclimbinggym.com/",
+    "hours": {
+      "mon": "6am–10pm",
+      "tue": "6am–10pm",
+      "wed": "6am–10pm",
+      "thu": "6am–10pm",
+      "fri": "6am–10pm",
+      "sat": "10am–10pm",
+      "sun": "10am–6pm"
+    },
+    "day_pass": "$22 adult, 10% off military/student/first responder",
+    "facilities": [
+      "training",
+      "kids",
+      "shoe-hire",
+      "shop",
+      "yoga"
+    ],
+    "sources": [
+      {
+        "url": "https://www.contactclimbinggym.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.contactclimbinggym.com/pricing",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours: Mon-Fri 6am-10pm, Sat 10am-10pm, Sun 10am-6pm. Gear rental (shoes/harness) and a retail shop (10% member discount) on the pricing page; fitness center, Yoga Via studio, youth teams/camps/birthday parties on the home page. Pin town matches.",
+    "operating": "yes",
+    "official_address": "2875 E 850 N St, St. George, UT 84790",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-258",
+    "name": "Elevation Rock Gym",
+    "expect_h": "c38b89a20fd79764",
+    "website": "https://www.elevationrockgym.com/",
+    "hours": {
+      "mon": "6am–10pm",
+      "tue": "6am–10pm",
+      "wed": "6am–10pm",
+      "thu": "6am–10pm",
+      "fri": "6am–10pm",
+      "sat": "10am–10pm",
+      "sun": "10am–6pm"
+    },
+    "day_pass": "$19 adult (12+), $16 child (3-11)",
+    "facilities": [
+      "kids",
+      "shoe-hire",
+      "yoga"
+    ],
+    "sources": [
+      {
+        "url": "https://www.elevationrockgym.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.elevationrockgym.com/visit",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Visit page: Mon-Fri 6am-10pm, Sat 10am-10pm, Sun 10am-6pm; $19 day pass (12+), $7 extra for rentals. Home page lists yoga, youth camps and afterschool programs. Pin town matches.",
+    "operating": "yes",
+    "official_address": "1780 N 200 E, North Logan, UT 84341",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-259",
+    "name": "Fit Stop Rock Climbing Gym",
+    "expect_h": "eb1bc7348e3879af",
+    "website": "https://www.fitstophealthclub.com/",
+    "hours": {
+      "mon": "5am–10pm",
+      "tue": "5am–10pm",
+      "wed": "5am–10pm",
+      "thu": "5am–10pm",
+      "fri": "5am–8pm",
+      "sat": "7am–8pm",
+      "sun": "9am–4pm"
+    },
+    "day_pass": "$15 adult, $10 child",
+    "facilities": [
+      "kids",
+      "shoe-hire",
+      "yoga"
+    ],
+    "sources": [
+      {
+        "url": "https://www.fitstophealthclub.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.fitstophealthclub.com/general-7-1",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.fitstophealthclub.com/blank-2",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.fitstophealthclub.com/about-6",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "The climbing wall is The Crag inside The Fit Stop Health Club (same address); open-climb hours equal club hours. Day rates from The Crag page (older third-party listings show $10/$5). Site also has a smoothie bar and Kid Stop childcare; cafe and training not listed (no explicit gym-equipment text). The old domain the-fitstop.com does not resolve. Pin town matches; address shown without Ste 200.",
+    "operating": "yes",
+    "official_address": "345 W 600 S, Heber City, UT 84032",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-260",
+    "name": "iROCK Utah",
+    "expect_h": "963dea554a9afefb",
+    "website": null,
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [],
+    "status": "not-found",
+    "notes": "irockutah.com (fetched) is an empty one-page site (title and body only Home; sitemap lists one URL, lastmod 2026-06-03) with no address, hours or prices. salomoncenter.com (host complex) is a parked domain page (registrar: does not redirect to a website). Only an old irockutah.wordpress.com site (not the gym domain) describes iROCK inside the Salomon Center; no closure notice found. Unverified, so operating unknown rather than closed. It is a climbing wall inside an entertainment complex.",
+    "operating": "unknown",
+    "official_address": null,
+    "location": "unknown",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-261",
+    "name": "Iron Cliffs",
+    "expect_h": "e573e9c2ce79cc0d",
+    "website": "https://ironcliffs.com/",
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [
+      {
+        "url": "https://ironcliffs.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      }
+    ],
+    "status": "website-only",
+    "notes": "Official site (copyright 2026, blog posts 2025) describes climbing, bouldering and aerial silks but has no address, hours or prices; passes and memberships are on an ironcliffs.portal.approach.app page that returned 403 / JavaScript-only. Location not verifiable from the official site (only a Google Maps embed by name).",
+    "operating": "yes",
+    "official_address": null,
+    "location": "unknown",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-268",
+    "name": "The Front Climbing Club – Ogden",
+    "expect_h": "7f16e2a3468e84e0",
+    "website": "https://thefrontclimbingclub.com/ogden",
+    "hours": {
+      "mon": "6am–11pm",
+      "tue": "6am–11pm",
+      "wed": "6am–11pm",
+      "thu": "6am–11pm",
+      "fri": "6am–11pm",
+      "sat": "9am–10pm",
+      "sun": "9am–10pm"
+    },
+    "day_pass": "$32 adult, $22 youth (13 and under)",
+    "facilities": [
+      "training",
+      "kids",
+      "shoe-hire",
+      "shop",
+      "yoga",
+      "parking"
+    ],
+    "sources": [
+      {
+        "url": "https://thefrontclimbingclub.com/ogden",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://thefrontclimbingclub.com/ogden/visit",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://thefrontclimbingclub.com/ogden/amenities",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://thefrontclimbingclub.com/contact-us",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Ogden section of the Contact Us page: Mon-Fri 6am-11pm, Sat-Sun 9am-10pm. Day pass includes rentals, classes, yoga and fitness. Parking: FAQ says free parking structure at 2060 Lincoln Ave. Fitness area, Tension Board and MoonBoard, gear shop and YogaLoft on the amenities page; youth programs and camps on the Ogden page. Pin town/street matches.",
+    "operating": "yes",
+    "official_address": "225 20th St, Ogden, UT 84401",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-270",
+    "name": "The Quarry",
+    "expect_h": "c396e524d5637244",
+    "website": "https://quarryclimbing.com/",
+    "hours": {
+      "mon": "10am–10pm",
+      "tue": "6am–10pm",
+      "wed": "10am–10pm",
+      "thu": "6am–10pm",
+      "fri": "10am–10pm",
+      "sat": "10am–10pm",
+      "sun": "12pm–6pm"
+    },
+    "day_pass": "$20 adult (12+), $15 youth (11 and under)",
+    "facilities": [
+      "kids",
+      "shoe-hire",
+      "yoga"
+    ],
+    "sources": [
+      {
+        "url": "https://quarryclimbing.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://quarryclimbing.com/hours-location/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://quarryclimbing.com/rates/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Judgement call: the site publishes two seasonal schedules; winter hours (Oct 1-Apr 30, current on 2026-10-04) used. Summer (May 1-Sep 30) differs: Mon/Wed/Fri/Sat 10am-10pm, Tue/Thu 6am-10pm, Sun Closed. Rentals extra (shoes $6, harness $5). Youth programs and yoga classes appear on the site navigation / hours page. Pin town matches.",
+    "operating": "yes",
+    "official_address": "2494 North University Parkway, Provo, UT 84604",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-165",
+    "name": "Bloc Yard Bouldering Gym",
+    "expect_h": "f00d9c81534549ca",
+    "website": "https://www.blocyardgym.com/",
+    "hours": {
+      "mon": "7am–10pm",
+      "tue": "10am–10pm",
+      "wed": "7am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "10am–8pm",
+      "sun": "10am–6pm"
+    },
+    "day_pass": "$20 adult, $17 student/military/first responder/teacher",
+    "facilities": [
+      "training",
+      "kids",
+      "shoe-hire",
+      "shop"
+    ],
+    "sources": [
+      {
+        "url": "https://www.blocyardgym.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.blocyardgym.com/contact/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.blocyardgym.com/rates/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Pages disagree: the header line says Mon-Fri 10am-10pm, while the body/footer lists Mon and Wed from 7:00AM; the detailed per-day list used. Workout area, beginners area with top-out boulder and slide, youth page, pro shop (10% member discount) stated. blocyard.com is a parked domain, not used. Pin town matches.",
+    "operating": "yes",
+    "official_address": "233 E. Lyons, Spokane, WA 99208",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-167",
+    "name": "Cirque Climbing",
+    "expect_h": "12c1861db39a8adc",
+    "website": "https://www.cirqueclimbing.com/",
+    "hours": {
+      "mon": "11am–9:30pm",
+      "tue": "11am–9:30pm",
+      "wed": "11am–9:30pm",
+      "thu": "11am–9:30pm",
+      "fri": "11am–9:30pm",
+      "sat": "9am–9:30pm",
+      "sun": "9am–6pm"
+    },
+    "day_pass": "$24.50 adult, $23.50 college/military (before tax)",
+    "facilities": [
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://www.cirqueclimbing.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.cirqueclimbing.com/pricing/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours and prices from the official site; rentals: shoes $6, harness $4 (chalk free). Former Warehouse Rock Gym (waiver link still uses the old name). No other facilities explicitly stated. Pin town matches.",
+    "operating": "yes",
+    "official_address": "8276 28th Ct. NE, Lacey, WA 98516",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-174",
+    "name": "Endurance Climbing Gym",
+    "expect_h": "477e4fda26b03a50",
+    "website": "https://www.enduranceclimbing.com/",
+    "hours": {
+      "mon": "12pm–9pm",
+      "tue": "12pm–9pm",
+      "wed": "12pm–9pm",
+      "thu": "12pm–9pm",
+      "fri": "12pm–9pm",
+      "sat": "10am–7pm",
+      "sun": "12pm–7pm"
+    },
+    "day_pass": "$21 adult, $19 youth (3-17) or service",
+    "facilities": [
+      "kids",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://www.enduranceclimbing.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.enduranceclimbing.com/day-rates",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Home page footer: Sun 12-7pm, Mon-Fri 12-9pm, Sat 10am-7pm; address shown as Unit 4 (a Google Maps link on the same page says Unit D). Youth teams, youth programs and parties on the site. Shoes $6, harness $4. Pin town matches.",
+    "operating": "yes",
+    "official_address": "1625 S Walnut, Unit 4, Burlington, WA 98233",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-176",
+    "name": "High Steppe Climbing Center",
+    "expect_h": "126cd18bc4d32225",
+    "website": "https://highsteppeclimbing.com/",
+    "hours": {
+      "mon": "10am–8pm",
+      "tue": "10am–8pm",
+      "wed": "10am–8pm",
+      "thu": "10am–8pm",
+      "fri": "10am–8pm",
+      "sat": "10am–6pm",
+      "sun": "12pm–6pm"
+    },
+    "day_pass": "$20 adult (11+), $16 youth (4-10)",
+    "facilities": [
+      "training",
+      "kids",
+      "shoe-hire",
+      "shop"
+    ],
+    "sources": [
+      {
+        "url": "https://highsteppeclimbing.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://highsteppeclimbing.com/day-pass-gear-indoor-rock-climbing-yakima/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://highsteppeclimbing.com/fitness-training-gym-moonboard-yakima/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours from home page footer (Mon-Fri 10am-8pm, Sat 10am-6pm, Sun noon-6pm); older third-party listings differ and were ignored. Day pass page also lists a $10 weekend special. Fitness and training area with MoonBoard, kid zone, retail shop, rental shoes $4. Pin town matches.",
+    "operating": "yes",
+    "official_address": "1015 E Lincoln Ave, Suite 101, Yakima, WA 98901",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-179",
+    "name": "Riverfront Rock Gym",
+    "expect_h": "7ed2044cae1b54d0",
+    "website": "https://www.riverfrontrockgym.com/",
+    "hours": {
+      "mon": "8:30am–10pm",
+      "tue": "6:30am–10pm",
+      "wed": "8:30am–10pm",
+      "thu": "6:30am–10pm",
+      "fri": "10am–10pm",
+      "sat": "10am–7pm",
+      "sun": "10am–7pm"
+    },
+    "day_pass": "$24 adult (14+), $18 youth (13 and under)",
+    "facilities": [
+      "cafe",
+      "training",
+      "kids",
+      "shoe-hire",
+      "shop",
+      "showers"
+    ],
+    "sources": [
+      {
+        "url": "https://www.riverfrontrockgym.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      },
+      {
+        "url": "https://www.riverfrontrockgym.com/rates-memberships",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.riverfrontrockgym.com/bio",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.riverfrontrockgym.com/cafe",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours & Rates page. Facility text: Last Pitch Cafe, retail gear store, campus/hang boards, locker rooms and showers, birthday party areas; youth team and camp on the site menu. Rental shoes $6. Pin town matches.",
+    "operating": "yes",
+    "official_address": "1319 Walla Walla Ave, Wenatchee, WA 98801",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-180",
+    "name": "Rock Shop",
+    "expect_h": "a19daa002666e084",
+    "website": "https://www.rockshopclimbing.com/",
+    "hours": null,
+    "day_pass": "$18 adult, $15 student/youth (with ID)",
+    "facilities": [
+      "training",
+      "kids",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://www.rockshopclimbing.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.rockshopclimbing.com/pricing",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.rockshopclimbing.com/faq",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Location & Hours page gives one unlabeled range 10:00 am - 10:00 pm with no days, so hours left null (not inferred as daily). FAQ: training area with campus boards and free weights, lounge, coffee, locker rooms. Shoes $5 for day users. Kids: Youth, Junior Program and parties on the site menu. Pin town matches.",
+    "operating": "yes",
+    "official_address": "1965 Fowler Street, Richland, WA 99352",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-185",
+    "name": "Source Climbing Center",
+    "expect_h": "37c8869fef21bd2f",
+    "website": "https://www.sourceclimbing.com/",
+    "hours": {
+      "mon": "9am–10pm",
+      "tue": "6am–10pm",
+      "wed": "9am–10pm",
+      "thu": "6am–10pm",
+      "fri": "9am–10pm",
+      "sat": "9am–9pm",
+      "sun": "9am–6pm"
+    },
+    "day_pass": "$20 adult, $18 youth/student (24 and under with ID)",
+    "facilities": [
+      "training",
+      "kids",
+      "shoe-hire",
+      "shop"
+    ],
+    "sources": [
+      {
+        "url": "https://www.sourceclimbing.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.sourceclimbing.com/contact",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.sourceclimbing.com/rates",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.sourceclimbing.com/facility",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Day pass $20 adult / $18 youth (students 24 and under with ID); a Happy Hour pass before 3pm Mon-Fri is $18/$16. Facility page lists a separate kids area, treadwall, elliptical, rower and free weights; pro shop mentioned on the home page; shoes $5. Pin town matches.",
+    "operating": "yes",
+    "official_address": "1118 Main Street, Vancouver, WA 98660",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-189",
+    "name": "Vital Climbing Gym",
+    "expect_h": "f0cba72c54f3f80c",
+    "website": "https://www.vitalclimbinggym.com/bellingham",
+    "hours": {
+      "mon": "11am–9pm",
+      "tue": "11am–9pm",
+      "wed": "11am–9pm",
+      "thu": "11am–9pm",
+      "fri": "11am–9pm",
+      "sat": "11am–9pm",
+      "sun": "11am–9pm"
+    },
+    "day_pass": "$24 (includes one class)",
+    "facilities": [
+      "cafe",
+      "training",
+      "kids",
+      "shoe-hire",
+      "yoga"
+    ],
+    "sources": [
+      {
+        "url": "https://www.vitalclimbinggym.com/bellingham",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.vitalclimbinggym.com/bellingham-gym",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Bellingham location page of the VITAL chain: daily 11am-9pm, 24-hour access for members only (staffed hours used). Gym page: fitness area, Kilter Board, campus/hangboards, yoga studio, self-serve cafe; youth clubs, camps and parties on the location page. Shoes $5. Pin town matches.",
+    "operating": "yes",
+    "official_address": "1421 North State Street, Bellingham, WA 98225",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  },
+  {
+    "id": "seed-190",
+    "name": "Wild Walls, Inc.",
+    "expect_h": "45e9582365af002f",
+    "website": "https://wildwalls.com/",
+    "hours": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "9am–7pm",
+      "sun": "10am–7pm"
+    },
+    "day_pass": "$22 adult, $19 college/military (plus tax)",
+    "facilities": [
+      "kids",
+      "shoe-hire",
+      "yoga"
+    ],
+    "sources": [
+      {
+        "url": "https://wildwalls.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://wildwalls.com/contact/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      },
+      {
+        "url": "https://wildwalls.com/daily-rates/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Day pass includes same-day yoga; rentals (harness, shoes, belay device) $7 extra. Youth programs, kids rate and birthday parties on the site. Closed New Year Day, July 4, Memorial Day, Labor Day, Thanksgiving, Christmas. Pin town matches.",
+    "operating": "yes",
+    "official_address": "202 W. 2nd Ave, Spokane, WA 99201",
+    "location": "ok",
+    "renamed_to": null,
+    "duplicate_of_hint": null
+  }
+]
