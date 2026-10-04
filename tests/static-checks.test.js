@@ -274,3 +274,11 @@ test('footer and /me legal links are at least 44px tall on phones', () => {
   assert.match(page, /\.me-links a\{display:inline-flex;align-items:center;min-height:var\(--size-touch-min\);\}/);
   assert.match(read('css/style.css'), /\.static-footer a\{[^}]*min-height:var\(--size-touch-min\)/);
 });
+
+test('base.css: [hidden] always wins over a component\'s own display (the "Has photos" chip stayed visible without it)', () => {
+  assert.match(read('css/base.css'), /^\[hidden\]\{display:none !important;\}$/m);
+  // the per-component copies are redundant now; a new one would only blur this rule's job
+  for (const f of ['css/explore.css', 'css/page.css', 'css/passport.css']) {
+    assert.ok(!/\[hidden\]\{display:none;?\}/.test(read(f)), f + ' repeats the global [hidden] rule');
+  }
+});

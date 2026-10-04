@@ -57,13 +57,10 @@
 .seg-btn:focus-visible{outline-offset:calc(var(--focus-ring-width) * -1);}
 
 .featured-destinations{flex:none;padding:var(--space-3) var(--space-4);border-bottom:var(--border-width) solid var(--color-border-divider);}
-.featured-destinations[hidden]{display:none;}
 /* First-ever visit, no home area (sec. 7.10): the backpacker at spot size above "Worth traveling for". */
 .explore-first-run{flex:none;padding:var(--space-5) var(--space-4) var(--space-4);border-bottom:var(--border-width) solid var(--color-border-divider);}
-.explore-first-run[hidden]{display:none;}
 /* First-visit orientation line (list.js renderIntro). */
 .explore-intro{flex:none;display:flex;align-items:flex-start;gap:var(--space-2);padding:var(--space-3) var(--space-2) var(--space-3) var(--space-4);border-bottom:var(--border-width) solid var(--color-border-divider);}
-.explore-intro[hidden]{display:none;}
 .explore-intro-text{flex:1;margin:0;font-size:var(--type-text-sm-size);line-height:var(--type-text-sm-line);color:var(--color-text-secondary);}
 .explore-intro-text strong{font-weight:var(--font-weight-semibold);color:var(--color-text-primary);}
 .featured-row{display:flex;flex-wrap:wrap;gap:var(--space-2);}
@@ -158,7 +155,6 @@
   border:var(--border-width) solid var(--color-border-subtle);border-radius:var(--radius-lg);
   box-shadow:var(--shadow-overlay);
 }
-.search-panel[hidden]{display:none;}
 .search-group{padding:var(--space-1) 0;}
 .search-group-title{padding:var(--space-2) var(--space-4) var(--space-1);font-size:var(--type-label-size);line-height:var(--type-label-line);font-weight:var(--type-label-weight);letter-spacing:var(--type-label-tracking);color:var(--color-text-secondary);}
 .search-option{display:flex;align-items:center;gap:var(--space-3);min-height:var(--size-touch-min);padding:var(--space-1) var(--space-4);cursor:pointer;}
@@ -195,7 +191,6 @@
   position:absolute;top:var(--space-4);left:50%;z-index:var(--z-map-overlay);
   display:flex;gap:var(--space-2);transform:translateX(-50%);white-space:nowrap;
 }
-.map-move-controls [hidden]{display:none;}
 /* "Search as I move the map": a paper chip with a checkbox look, so "on" does not read as a forest-filled action. */
 .map-toggle{
   appearance:none;display:inline-flex;align-items:center;gap:var(--space-2);
@@ -288,7 +283,6 @@
   padding:var(--space-4);border-radius:var(--radius-lg);
 }
 .peek.map-float{border-color:var(--color-border-strong);}   /* the ink hairline (sec. 4.2); beats .map-float's subtle border */
-.peek[hidden]{display:none;}
 .peek-head{display:flex;align-items:flex-start;justify-content:space-between;gap:var(--space-2);margin-bottom:var(--space-3);}
 .peek-name{margin:0;font-family:var(--font-display);font-size:var(--type-display-md-size);line-height:var(--type-display-md-line);font-weight:var(--type-display-md-weight);}
 .peek-photo{display:block;position:static;width:100%;height:auto;aspect-ratio:var(--card-photo-ratio);object-fit:cover;margin-bottom:var(--space-3);border-radius:var(--radius-md);background:var(--color-surface-subtle);}
@@ -303,7 +297,6 @@
 /* ===== Carousel (mobile pin tap) ======================================================================================= */
 .carousel{display:flex;gap:var(--space-2);overflow-x:auto;scroll-snap-type:x mandatory;padding:var(--space-1) var(--space-4) var(--space-3);scrollbar-width:none;}
 .carousel::-webkit-scrollbar{display:none;}
-.carousel[hidden]{display:none;}
 .carousel-card{
   appearance:none;flex:0 0 min(var(--size-carousel-card), 82%);scroll-snap-align:center;
   display:flex;align-items:center;gap:var(--space-3);padding:var(--space-2);
@@ -392,5 +385,3 @@
   .list-tools{margin-left:auto;}
 }
 
-/* Controls that toggle with the hidden attribute keep their own display otherwise (.btn is inline-flex). */
-.search-clear[hidden],.map-move-controls .btn[hidden]{display:none;}

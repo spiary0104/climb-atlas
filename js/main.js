@@ -20,6 +20,12 @@ import { initNavigation } from './modules/nav.js';
 import { initRegionPages } from './modules/region-page.js';
 import { initRouter } from './modules/router.js';
 import { appState } from './modules/state.js';
+import { showActionToast } from './modules/utils.js';
+
+// sw-register.js (a classic script) announces a newer service worker; the person chooses when to reload, never us.
+window.addEventListener('bouldeer:sw-updated', () => {
+  showActionToast('A newer Bouldeer is ready', 'Refresh', () => location.reload());
+});
 
 // Wire up each area. The list shows skeleton rows until the first load finishes.
 initMap();

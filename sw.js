@@ -29,7 +29,9 @@
 // v27: cross-region metros on neighbouring region pages and in gym breadcrumbs.
 // v28: orientation line rendered at start-up.
 // v29: metroOf memo; fewer gym-page re-renders.
-const CACHE_VERSION = 'v30';
+// v31: [hidden] always hides (base.css); "A newer Bouldeer is ready" prompt (sw-register.js, utils.js, main.js); open now + today's
+//      hours in discovery (hours.js).
+const CACHE_VERSION = 'v31';
 const SHELL_CACHE = 'climbatlas-shell-' + CACHE_VERSION;
 const RUNTIME_CACHE = 'climbatlas-runtime-' + CACHE_VERSION;
 const TILE_CACHE = 'climbatlas-tiles-' + CACHE_VERSION;

@@ -1,8 +1,7 @@
 /* Pages (docs/DESIGN.md sec. 8, 14): gym, region/city, log and me pages rendered by js/modules/router.js into <main id="view">.
    Paper documents on the cream canvas: hairlines, Fraunces titles, Inter body, no shadows. Semantic tokens only. */
 
-/* Explore and the page view swap with the hidden attribute (both set their own display otherwise). */
-.explore[hidden],.page-view[hidden]{display:none;}
+/* Explore and the page view swap with the hidden attribute (base.css makes [hidden] win over their own display). */
 .page-view{flex:1;min-height:0;overflow-y:auto;background:var(--color-surface-canvas);}
 .page-view:focus{outline:none;}
 

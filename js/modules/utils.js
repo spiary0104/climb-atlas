@@ -10,9 +10,42 @@ export function directionsUrl(g){
 }
 
 // --- toast ---
+let hideTimer = null, restoreTimer = null;
+let pendingAction = null;   // {message, label, onAction}: a toast with an action stays until it is used, and returns after a plain toast
+
 export function showToast(msg){
   const t = document.getElementById('toast');
-  t.textContent = msg;
+  t.textContent = msg;                   // also removes an action button
+  t.classList.remove('toast--action');
   t.classList.add('show');
-  setTimeout(()=>t.classList.remove('show'), 2400);
+  clearTimeout(hideTimer); clearTimeout(restoreTimer);
+  hideTimer = setTimeout(()=>{
+    t.classList.remove('show');
+    if(pendingAction) restoreTimer = setTimeout(()=>paintActionToast(t), 400);   // after the fade-out
+  }, 2400);
+}
+
+// A toast with one action button (the "newer version is ready" prompt). It does not time out: the person decides when.
+export function showActionToast(message, label, onAction){
+  pendingAction = { message, label, onAction };
+  clearTimeout(hideTimer); clearTimeout(restoreTimer);
+  paintActionToast(document.getElementById('toast'));
+}
+
+function paintActionToast(t){
+  if(!pendingAction) return;
+  const { message, label, onAction } = pendingAction;
+  t.textContent = '';
+  const text = document.createElement('span');
+  text.textContent = message;
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'btn btn-tertiary toast-action';
+  btn.textContent = label;
+  btn.addEventListener('click', ()=>{
+    pendingAction = null;
+    onAction();
+  });
+  t.append(text, btn);
+  t.classList.add('toast--action', 'show');
 }

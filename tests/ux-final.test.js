@@ -60,7 +60,7 @@ test('START: a signed-out visitor is told what check-in is and offered sign-in; 
   assert.match(src, /\$\('startSignedOut'\)\.hidden = \$\('startSignedOutActions'\)\.hidden = signedIn;/);
   assert.match(src, /if\(btn\.dataset\.startAction === 'signin'\) openAuthModal\(\);/);
   assert.ok(!/mark spots as climbed/.test(html), 'sign-in copy says gyms, and names check-ins');
-  assert.match(read('css/passport.css'), /\.start-actions\[hidden\]\{display:none;\}/, 'the hidden action group really hides (display:flex would win otherwise)');
+  assert.match(read('css/base.css'), /^\[hidden\]\{display:none !important;\}$/m, 'the hidden action group really hides (.start-actions is display:flex; the global [hidden] rule wins)');
 });
 
 test('search: Enter on a query that names a place exactly goes to that place; other text stays a name search', () => {

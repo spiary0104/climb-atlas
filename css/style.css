@@ -37,6 +37,12 @@ body.app-body{overflow:hidden;}
   transition:opacity var(--motion-slow) var(--ease-standard), transform var(--motion-slow) var(--ease-standard);
 }
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+/* A toast with one action (utils.js showActionToast: "A newer Bouldeer is ready" / Refresh). The tertiary button is
+   recoloured for the inverse surface and keeps a 44px touch target. */
+.toast--action{display:flex;align-items:center;gap:var(--space-2);text-align:left;padding-right:var(--space-2);}
+.toast--action.show{pointer-events:auto;}
+.toast .toast-action{min-height:var(--size-touch-min);color:var(--color-text-inverse);text-decoration:underline;}
+.toast .toast-action:hover:not(:disabled){background:transparent;color:var(--color-text-inverse);}
 
 .placing-banner{
   position:absolute;top:var(--space-4);left:50%;z-index:var(--z-toast);
