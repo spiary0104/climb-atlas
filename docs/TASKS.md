@@ -6,9 +6,9 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 (delete them; git keeps history). Keep this file under 60 lines.
 
 ## In progress
-### Gym information (website + hours, official sites only) — batches 1 + 2 APPLIED 2026-10-04
-- 146 gyms filled (9 metros: SYD, MEL, NYC, LA, SF Bay, SEA, DEN, BOS, SD), 7 retired (closed / not a gym; live 2,341); PRs #39, #40, #42.
-  Next: add Vertical Hold San Marcos (import); Skywood (seed-20) moved to Brookvale? (location fix); Asylum (seed-318) type tag (site: outdoor). Notes: `import/info-research/`.
+### Gym information — 147 gyms live (9 metros, website + hours); batch 3 STAGED 2026-10-04, NOT applied
+- Batch 3 (Zurich, Vienna, London, Toronto; `2026-10-04-gym-info-4`, PR #44 adds day pass + facilities): 46 gyms, 176 values, 2 retirements;
+  fact-checked. Next: London coverage gap; White Spider/Yonder pins; then Paris, Madrid (non-English). Notes: `import/info-research/batch-3/NOTES.md`.
 ### Final-stage sprint (gym information, metros, SEO, perf) — DONE: PR #37 merged and live in production 2026-10-03
 - Status: PR #37 (`integration/final-stage`) merged to master 2026-10-03 (merge commit `b58a79e`) and deployed by Vercel; production
   smoke test passed (/, gym, metro, region, /in, sitemap.xml 3,299 URLs, robots.txt, bot link previews; no console errors at

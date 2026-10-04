@@ -1,0 +1,582 @@
+[
+ {
+  "id": "seed-1270",
+  "name": "Blockfabrik",
+  "metro": "Vienna",
+  "expect_h": "a2a5d40f21a25e11",
+  "website": "https://www.blockfabrik.at/",
+  "hours": {
+   "mon": "7:30am–11pm",
+   "tue": "7:30am–11pm",
+   "wed": "7:30am–11pm",
+   "thu": "7:30am–11pm",
+   "fri": "7:30am–11pm",
+   "sat": "7:30am–10pm",
+   "sun": "7:30am–10pm"
+  },
+  "day_pass": "€13.40 adult, €12.40 reduced",
+  "facilities": [
+   "cafe",
+   "training",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.blockfabrik.at/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.blockfabrik.at/preise",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours: Mon-Fri 7:30-23:00, Sat/Sun/holiday 7:30-22:00. Price table is a grid with detached cells; read €13.40 as adult Einzeleintritt and €11.00 as Ermäßigt by DOM order, not visually confirmed. Facilities: Bistro, Kilter/Tension/Moonboard + training area, Leihschuhe €4. Day pass corrected 2026-10-04 by the independent fact-check (blockfabrik.at/preise Einzeleintritt row: Erwachsene 13,40, Ermäßigt 12,40; 11,00 is the youth price)."
+ },
+ {
+  "id": "seed-1275",
+  "name": "Boulder Monkeys - Wien",
+  "metro": "Vienna",
+  "expect_h": "42fa241bbe900df1",
+  "website": "https://bouldermonkeys.at/",
+  "hours": {
+   "mon": "9am–11pm",
+   "tue": "9am–11pm",
+   "wed": "9am–11pm",
+   "thu": "9am–11pm",
+   "fri": "9am–11pm",
+   "sat": "9am–11pm",
+   "sun": "9am–10pm"
+  },
+  "day_pass": "€13.90 adult prime time, €11.90 happy hour (weekdays to 3pm)",
+  "facilities": [
+   "cafe",
+   "training",
+   "yoga",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://bouldermonkeys.at/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://bouldermonkeys.at/preise/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://bouldermonkeys.at/unser-angebot/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Site address is Haidingergasse 1-15, 1030 Wien. Facilities: BIO Bistro, training area + TensionBoard, 50 m2 yoga/meditation area (offers Yoga- und Meditationsangebote), rental shoes 4.10 on price page."
+ },
+ {
+  "id": "seed-1271",
+  "name": "Boulderbar - Hannovergasse",
+  "metro": "Vienna",
+  "expect_h": "2a93c6996176a46d",
+  "website": "https://boulderbar.net/standorte/wien-hannovergasse/",
+  "hours": {
+   "mon": "9am–11pm",
+   "tue": "9am–11pm",
+   "wed": "9am–11pm",
+   "thu": "9am–11pm",
+   "fri": "9am–11pm",
+   "sat": "9am–10pm",
+   "sun": "9am–10pm"
+  },
+  "day_pass": "€14.50 adult, €13.10 student, €12.30 adult weekday to 3pm",
+  "facilities": [
+   "cafe",
+   "shop",
+   "training",
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://boulderbar.net/standorte/wien-hannovergasse/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://boulderbar.net/preise/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Prices page (modified 2026-08-03) is the shared Vienna/St. Pölten list. Courtyard parking only at limited times (Mo-Fr from 19:00, Sa from 18:00, Sun all day). Kids = children courses listed; Yoga Bereich is an area, not classes, so no yoga key. Rental shoes 4.50 adult. Removed facility \"parking\" after the 2026-10-04 fact-check (parking only evenings/weekends)."
+ },
+ {
+  "id": "seed-1272",
+  "name": "Boulderbar - Hauptbahnhof",
+  "metro": "Vienna",
+  "expect_h": "2911ddc850fe2914",
+  "website": "https://boulderbar.net/standorte/wien-hauptbahnhof/",
+  "hours": {
+   "mon": "9am–11pm",
+   "tue": "9am–11pm",
+   "wed": "9am–11pm",
+   "thu": "9am–11pm",
+   "fri": "9am–11pm",
+   "sat": "9am–10pm",
+   "sun": "9am–10pm"
+  },
+  "day_pass": "€14.50 adult, €13.10 student, €12.30 adult weekday to 3pm",
+  "facilities": [
+   "cafe",
+   "shop",
+   "training",
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://boulderbar.net/standorte/wien-hauptbahnhof/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://boulderbar.net/preise/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Page lists address as Maria-Lassnig-Straße 18/2, 1100 Wien. Separate Kinderbereich, Kilterboards, training area, shop, bar/gastro. Shared Vienna price list."
+ },
+ {
+  "id": "seed-1273",
+  "name": "Boulderbar - Seestadt",
+  "metro": "Vienna",
+  "expect_h": "2b80dfe3a959eb2f",
+  "website": "https://boulderbar.net/standorte/wien-seestadt/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "9am–10pm",
+   "sun": "9am–10pm"
+  },
+  "day_pass": "€14.50 adult, €13.10 student, €12.30 adult weekday to 3pm",
+  "facilities": [
+   "cafe",
+   "shop",
+   "training",
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://boulderbar.net/standorte/wien-seestadt/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://boulderbar.net/preise/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Site notice: from 2026-10-01 weekday opening is 10:00 (earlier 9:00); Mo-Fr 10-22, Sa/Su/holiday 9-22. Garage parking is 3 min away (not on-site), so no parking key. Moonboard + Kilterboard, Kinderbereich, bar/gastro, shop."
+ },
+ {
+  "id": "seed-1274",
+  "name": "Boulderbar - Wienerberg",
+  "metro": "Vienna",
+  "expect_h": "c80be0f945ca6592",
+  "website": "https://boulderbar.net/standorte/wien-wienerberg/",
+  "hours": {
+   "mon": "9am–11pm",
+   "tue": "9am–11pm",
+   "wed": "9am–11pm",
+   "thu": "9am–11pm",
+   "fri": "9am–11pm",
+   "sat": "9am–10pm",
+   "sun": "9am–10pm"
+  },
+  "day_pass": "€14.50 adult, €13.10 student, €12.30 adult weekday to 3pm",
+  "facilities": [
+   "cafe",
+   "shop",
+   "training",
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://boulderbar.net/standorte/wien-wienerberg/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://boulderbar.net/preise/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Page says 5 Stunden Gratis Parken without saying on-site, so no parking key. Bar/gastro, shop, Kilter + Moonboard, Kinderbereich, training area."
+ },
+ {
+  "id": "seed-1276",
+  "name": "Climb On Marswiese - Wien",
+  "metro": "Vienna",
+  "expect_h": "68d68f139134d41f",
+  "website": "https://marswiese.at/kletterhalle/",
+  "hours": {
+   "mon": "8am–10pm",
+   "tue": "8am–10pm",
+   "wed": "8am–10pm",
+   "thu": "8am–10pm",
+   "fri": "8am–10pm",
+   "sat": "8am–10pm",
+   "sun": "8am–10pm"
+  },
+  "day_pass": "€14.50 adult, €13.50 early/late weekday; €12.50 youth/student/senior",
+  "facilities": [
+   "training",
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://marswiese.at/kletterhalle/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://marswiese.at/kletterhalle/hallenfacts/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://marswiese.at/kletterhalle/preise/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://marswiese.at/kletterhalle/besuch-mit-kindern/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "climbonmarswiese.at redirects to marswiese.at/kletterhalle/. Price table has columns Ermäßigt (alpine club members) and Normalpreis; used Normalpreis (adult normal tariff 14.50; early before 14:30 / late after 20:00 weekday 13.50). Closed Good Friday and 24 Dec."
+ },
+ {
+  "id": "seed-1277",
+  "name": "Das Flash - Wien",
+  "metro": "Vienna",
+  "expect_h": "82bf7e45da095d62",
+  "website": "https://www.dasflash.at/",
+  "hours": {
+   "mon": "8am–11pm",
+   "tue": "8am–11pm",
+   "wed": "8am–11pm",
+   "thu": "8am–11pm",
+   "fri": "8am–11pm",
+   "sat": "9am–10pm",
+   "sun": "9am–10pm"
+  },
+  "day_pass": "€13 adult, €12 reduced",
+  "facilities": [
+   "cafe",
+   "training",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.dasflash.at/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Mo-Fr 8-23, Sa/Su/holiday 9-22 (from footer; header hours widget loads via JS). Vegan-vegetarian bistro/cafe, Kilterboard, two Moonboards, Woods Board; rental shoes stated."
+ },
+ {
+  "id": "seed-1278",
+  "name": "Edelweiss - Hegelgasse",
+  "metro": "Vienna",
+  "expect_h": "f61a928e73c395a7",
+  "website": "https://edelweiss-klettern.at/alpenverein-edelweiss/ek/standorte/hegelgasse/",
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [
+   {
+    "url": "https://edelweiss-klettern.at/alpenverein-edelweiss/ek/standorte/hegelgasse/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   }
+  ],
+  "status": "flag",
+  "notes": "Official page says Edelweiss Hegelgasse (BORG Hegelgasse 12) is a pure course hall, open only for course operation; no public drop-in hours or day pass. Check-in is at Walfischgasse. Not a public gym; website is the location page."
+ },
+ {
+  "id": "seed-1279",
+  "name": "Edelweiss - Walfischgasse Wien",
+  "metro": "Vienna",
+  "expect_h": "bc04a0477e5d5d66",
+  "website": "https://edelweiss-klettern.at/alpenverein-edelweiss/ek/standorte/walfischgasse/",
+  "hours": {
+   "mon": "9am–10pm",
+   "tue": "7am–10pm",
+   "wed": "9am–10pm",
+   "thu": "7am–10pm",
+   "fri": "9am–10pm",
+   "sat": "9am–9pm",
+   "sun": "9am–9pm"
+  },
+  "day_pass": "€11.50 adult (25+), €9.50 Early Bird until 3pm",
+  "facilities": [
+   "training",
+   "kids",
+   "shoe-hire",
+   "shop",
+   "yoga"
+  ],
+  "sources": [
+   {
+    "url": "https://edelweiss-klettern.at/alpenverein-edelweiss/ek/standorte/walfischgasse/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://edelweiss-klettern.at/alpenverein-edelweiss/ek/preise/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Price table shows a single column headed ermäßigt (alpine-club member rate; membership required from 2nd visit); no separate non-member price shown, so 11.50 is the only adult day price stated. Fitness room, 100 m2 kids area, shop + rental (shoes 3.50), yoga courses mentioned. Getränke und Snacks not counted as cafe. Holiday 9-21."
+ },
+ {
+  "id": "seed-1280",
+  "name": "Kletteranlage Flakturm - Wien",
+  "metro": "Vienna",
+  "expect_h": "1025bab11097e57a",
+  "website": "https://www.kletteranlage-flakturm.at/",
+  "hours": null,
+  "day_pass": "€12 adult (rope climbing), €9 adult (bouldering)",
+  "facilities": [
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.kletteranlage-flakturm.at/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.kletteranlage-flakturm.at/die-halle/bouldern/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Seasonal: open 7 Apr-31 Oct 2026 only; Mo-Fr 14-22, Sa/Su/holiday 12-22 (Apr-Jun, Sep, Oct) or 14-22 (Jul-Aug). Hours set null as seasonal/varying. AV member prices lower (10 / 7). Kids boulder wall, Kindergeburtstage, rental shoes 3."
+ },
+ {
+  "id": "seed-1281",
+  "name": "Kletterhalle Wien",
+  "metro": "Vienna",
+  "expect_h": "971615884a07f51d",
+  "website": "https://www.kletterhallewien.at/",
+  "hours": {
+   "mon": "9am–11pm",
+   "tue": "9am–11pm",
+   "wed": "9am–11pm",
+   "thu": "9am–11pm",
+   "fri": "9am–11pm",
+   "sat": "9am–11pm",
+   "sun": "9am–11pm"
+  },
+  "day_pass": "€16.70 adult, €14.50 early (Mon-Fri before 2pm) or evening (from 8:15pm)",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://www.kletterhallewien.at/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://www.kletterhallewien.at/halle/oeffnungszeiten/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.kletterhallewien.at/halle/preise/erwachsene-preise/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   },
+   {
+    "url": "https://www.kletterhallewien.at/halle/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.kletterhallewien.at/halle/anfahrt/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.kletterhallewien.at/halle/preise/leihmaterial/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.kletterhallewien.at/kaffee-und-kuchen/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Prices valid from 2026-01-01; Normalpreis column used (Ermäßigt 16.20 for alpine-club members). Bistro page Kaffee und Kuchen 7+; numerous free parking spots; Klettershop in nav; Kinder- & Trainings-Kletterbereich. Removed facility \"shop\" after the 2026-10-04 fact-check (shop is only an empty menu item)."
+ },
+ {
+  "id": "seed-1282",
+  "name": "ÖTK Kletterhalle - Wien",
+  "metro": "Vienna",
+  "expect_h": "f6fa60157b4ca52a",
+  "website": "https://www.oetk.at/kletterhalle/",
+  "hours": {
+   "mon": "8am–10pm",
+   "tue": "10am–10pm",
+   "wed": "8am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "12pm–8pm",
+   "sun": "Closed"
+  },
+  "day_pass": "€11.90 adult (up to 3 hours), €7.90 ÖTK member",
+  "facilities": [
+   "training",
+   "kids",
+   "shoe-hire",
+   "shop"
+  ],
+  "sources": [
+   {
+    "url": "https://www.oetk.at/kletterhalle/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Site hours list Sunday as nur Familienkurse (courses only); set Closed for general public (judgement call). kletterhalle.at redirects here. Campusboard/Trainingsräume, kids courses, rental shoes 3, ÖTK Alpin-Shop (separate shop hours)."
+ }
+]
