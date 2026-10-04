@@ -1,0 +1,915 @@
+[
+ {
+  "id": "seed-1298",
+  "name": "6a plus - Winterthur",
+  "metro": "Zurich",
+  "expect_h": "29f1ac0715fadb03",
+  "website": "https://www.sechsaplus.ch/",
+  "hours": {
+   "mon": "9am–10:30pm",
+   "tue": "9am–10:30pm",
+   "wed": "8am–10:30pm",
+   "thu": "9am–10:30pm",
+   "fri": "9am–10:30pm",
+   "sat": "9am–7pm",
+   "sun": "9am–7pm"
+  },
+  "day_pass": "CHF 33 adult (full facility), CHF 25 adult bouldering only",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "shop",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://www.sechsaplus.ch/anfahrt_und_oeffnungszeiten?view=opening_hours",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.sechsaplus.ch/preise",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.sechsaplus.ch/halle_uebersicht?venue=bistro",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.sechsaplus.ch/halle_uebersicht?venue=trainingsbereich",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.sechsaplus.ch/halle_uebersicht?venue=spielplatz",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.sechsaplus.ch/halle_uebersicht?venue=shop",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.sechsaplus.ch/anfahrt_und_oeffnungszeiten?view=direction",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Wednesday 'Early Bird' opens 8am per hours page. Price: full facility CHF 33, bouldering only CHF 25 (ages 25+; 16-24 pay 26/20). Shoes rent CHF 7 adult."
+ },
+ {
+  "id": "g-6b4f6bf992",
+  "name": "Blockchäfer",
+  "metro": "Zurich",
+  "expect_h": "399cafe11ff4faaa",
+  "website": "https://blockchaefer.ch/",
+  "hours": {
+   "mon": "7am–10pm",
+   "tue": "7am–10pm",
+   "wed": "7am–10pm",
+   "thu": "7am–10pm",
+   "fri": "7am–10pm",
+   "sat": "7am–10pm",
+   "sun": "7am–10pm"
+  },
+  "day_pass": "CHF 17 adult, CHF 12 youth 14-18",
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://blockchaefer.ch/seiten/halle.html",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://blockchaefer.ch/seiten/infos.html",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Volunteer-run, unstaffed. Open daily 7:00-22:00; first Monday of each month opens 09:30 (not reflected). Rental shoes (Kletterfinken) CHF 3."
+ },
+ {
+  "id": "seed-1299",
+  "name": "Blockfeld Boulderpark & Bistro",
+  "metro": "Zurich",
+  "expect_h": "e070db95f35fd98c",
+  "website": "https://blockfeld.ch/",
+  "hours": {
+   "mon": "12pm–10pm",
+   "tue": "12pm–10pm",
+   "wed": "12pm–10pm",
+   "thu": "12pm–10pm",
+   "fri": "12pm–10pm",
+   "sat": "12pm–6:30pm",
+   "sun": "12pm–6:30pm"
+  },
+  "day_pass": "CHF 20 adult (25+), CHF 15 age 12-24",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "shop",
+   "showers"
+  ],
+  "sources": [
+   {
+    "url": "https://blockfeld.ch/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://blockfeld.ch/kontakt/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Address Oberer Deutweg 4, 8400 Winterthur confirmed on kontakt page. Facilities from 'Facts' text (Bistro, Bar, Shop, Garderoben mit Dusche, Materialvermietung, KidsEcke, Trainings-/Fitnessterrasse, MoonBoard)."
+ },
+ {
+  "id": "g-17adf20ff5",
+  "name": "BOUBA Boulder Baden",
+  "metro": "Zurich",
+  "expect_h": "9caa6b2ce0b630e6",
+  "website": "https://boulder-baden.ch/",
+  "hours": {
+   "mon": "11am–11pm",
+   "tue": "11am–11pm",
+   "wed": "11am–11pm",
+   "thu": "11am–11pm",
+   "fri": "11am–11pm",
+   "sat": "10am–7pm",
+   "sun": "10am–7pm"
+  },
+  "day_pass": "CHF 24 adult (21+), CHF 20 reduced (18-20, students to 28)",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "showers",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://boulder-baden.ch/oeffnungszeiten-preise/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass"
+    ]
+   },
+   {
+    "url": "https://boulder-baden.ch/infos/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://boulder-baden.ch/standort/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://boulder-baden.ch/kurse/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Parking: 60 paid spaces on site per standort page. Price columns mapped by order Erwachsene / Ermaessigt / Jugend / Kinder / Mini (24/20/20/14/10)."
+ },
+ {
+  "id": "g-355493a118",
+  "name": "BoulderBaar",
+  "metro": "Zurich",
+  "expect_h": "4ff02a03cfa9e1ec",
+  "website": "https://boulderbaar.ch/",
+  "hours": {
+   "mon": "11:30am–10pm",
+   "tue": "11:30am–10pm",
+   "wed": "9am–10pm",
+   "thu": "11:30am–10pm",
+   "fri": "9am–10pm",
+   "sat": "10am–7pm",
+   "sun": "10am–7pm"
+  },
+  "day_pass": "CHF 22 adult, CHF 16 reduced",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://boulderbaar.ch/kontakt-und-anfahrt/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://boulderbaar.ch/preise/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://boulderbaar.ch/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Sun and Zug public holidays 10am-7pm. No own parking (kontakt page). Shoe rental CHF 6."
+ },
+ {
+  "id": "g-1c53e4ff94",
+  "name": "Boulderhalle Adliswil",
+  "metro": "Zurich",
+  "expect_h": "ec2d01f9f5a71be0",
+  "website": "https://www.climbing.ch/",
+  "hours": null,
+  "day_pass": "CHF 13 adult (20+), CHF 8 age 6-19",
+  "facilities": [
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.climbing.ch/einzeleintritt",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.climbing.ch/infos",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://www.climbing.ch/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Unstaffed, code entry. Day visitors Mon-Fri 7am-6pm only; Sat/Sun/holidays members only (24/7 with annual pass), so hours left null. Rental shoes CHF 5; kids courses listed."
+ },
+ {
+  "id": "g-07480139ca",
+  "name": "Boulderlounge Schlieren",
+  "metro": "Zurich",
+  "expect_h": "f1f91ac0e0d3d312",
+  "website": "https://www.boulderlounge.ch/schlieren/",
+  "hours": {
+   "mon": "11:30am–10:30pm",
+   "tue": "11:30am–10:30pm",
+   "wed": "11:30am–10:30pm",
+   "thu": "11:30am–10:30pm",
+   "fri": "11:30am–10:30pm",
+   "sat": "10am–8pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": "CHF 25 adult, CHF 21 adult early bird (Mon-Fri before 3pm)",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://www.boulderlounge.ch/schlieren/zeiten/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.boulderlounge.ch/schlieren/preise/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.boulderlounge.ch/schlieren/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.boulderlounge.ch/schlieren/anfahrt/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.boulderlounge.ch/schlieren/kinder-familie/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Sat/Sun/holidays 10am-8pm. Members with cards may enter from 6:15am (not reflected). 11 free parking spaces on site (6-18h). Address Zuercherstr. 39 matches."
+ },
+ {
+  "id": "g-663777c19b",
+  "name": "GRIFFIG Kletterhalle Uster",
+  "metro": "Zurich",
+  "expect_h": "232e74ca750bcbe4",
+  "website": "https://www.griffig.com/",
+  "hours": {
+   "mon": "10am–10:30pm",
+   "tue": "9am–10:30pm",
+   "wed": "10am–10:30pm",
+   "thu": "9am–10:30pm",
+   "fri": "10am–10:30pm",
+   "sat": "9am–6pm",
+   "sun": "9am–6pm"
+  },
+  "day_pass": "CHF 33 adult (climbing + bouldering), CHF 24 adult bouldering only",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "shop"
+  ],
+  "sources": [
+   {
+    "url": "https://www.griffig.com/%C3%B6ffnungszeiten.html",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.griffig.com/preise.html",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.griffig.com/kafi.html",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.griffig.com/training.html",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.griffig.com/kids.html",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.griffig.com/shop.html",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.griffig.com/anfahrt.html",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Official address Hallenbadweg 2, 8610 Uster (target address null; Uster, same gym). Parking is the public Sportanlage Buchholz lot, so parking not listed."
+ },
+ {
+  "id": "g-14c2acd7c6",
+  "name": "GrindelBoulder",
+  "metro": "Zurich",
+  "expect_h": "b81de1ceb5b59ddd",
+  "website": "https://grindelboulder.ch/",
+  "hours": {
+   "mon": "3pm–11pm",
+   "tue": "3pm–11pm",
+   "wed": "12pm–11pm",
+   "thu": "3pm–11pm",
+   "fri": "3pm–11pm",
+   "sat": "12pm–7pm",
+   "sun": "12pm–7pm"
+  },
+  "day_pass": "CHF 23 adult, CHF 20 student/apprentice (17-30)",
+  "facilities": [
+   "cafe",
+   "shoe-hire",
+   "showers"
+  ],
+  "sources": [
+   {
+    "url": "https://grindelboulder.ch/preise-oeffnungszeiten/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://grindelboulder.ch/halle/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://grindelboulder.ch/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Address Grindelstrasse 12, 8303 Bassersdorf matches. Annual pass Plus holders enter from 7am (not reflected). Rental shoes CHF 7 adult. Kids: kids/youth trainings, family offers, birthdays. Removed facility \"kids\" after the 2026-10-04 fact-check (only family prices, no kids area or courses stated)."
+ },
+ {
+  "id": "g-1281064e8f",
+  "name": "Kletterzentrum Gaswerk Greifensee",
+  "metro": "Zurich",
+  "expect_h": "3c2fab00759845e1",
+  "website": "https://www.kletterzentrum.com/standorte/greifensee/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "7:30am–10pm",
+   "fri": "10am–10pm",
+   "sat": "9am–8pm",
+   "sun": "9am–8pm"
+  },
+  "day_pass": "CHF 38.10 adult off-peak, CHF 43.70 evening/Sun; bouldering only CHF 25.40/31.90",
+  "facilities": [
+   "cafe",
+   "kids",
+   "shoe-hire",
+   "shop"
+  ],
+  "sources": [
+   {
+    "url": "https://www.kletterzentrum.com/standorte/greifensee/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.kletterzentrum.com/preise/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.kletterzentrum.com/kurse/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Thu is 'Frühklettern' from 7:30am. Pricing page is shared by all 3 Gaswerk halls (valid from 1 Jul 2026): off-peak = Mon-Fri check-in before 4pm and Saturday; evening Mon-Fri from 4pm and Sunday/holidays 43.70 (climbing incl. bouldering). Bistro and climbing store listed in facts table."
+ },
+ {
+  "id": "g-66e5d68350",
+  "name": "Kletterzentrum Gaswerk Schlieren",
+  "metro": "Zurich",
+  "expect_h": "5594e71940edc56e",
+  "website": "https://www.kletterzentrum.com/standorte/schlieren/",
+  "hours": {
+   "mon": "11am–11pm",
+   "tue": "7:30am–11pm",
+   "wed": "11am–11pm",
+   "thu": "11am–11pm",
+   "fri": "11am–11pm",
+   "sat": "9am–8pm",
+   "sun": "9am–8pm"
+  },
+  "day_pass": "CHF 38.10 adult off-peak, CHF 43.70 evening/Sun; bouldering only CHF 25.40/31.90",
+  "facilities": [
+   "cafe",
+   "kids",
+   "shoe-hire",
+   "shop"
+  ],
+  "sources": [
+   {
+    "url": "https://www.kletterzentrum.com/standorte/schlieren/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.kletterzentrum.com/preise/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.kletterzentrum.com/kurse/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Tue is 'Frühklettern' from 7:30am. Shared Gaswerk price list (valid from 1 Jul 2026): off-peak = Mon-Fri check-in before 4pm and Saturday; evening/Sunday 43.70 (climbing incl. bouldering). Bistro and climbing store listed in facts table."
+ },
+ {
+  "id": "g-028ee01351",
+  "name": "Kletterzentrum Gaswerk Wädenswil",
+  "metro": "Zurich",
+  "expect_h": "2f3084364dd6bc62",
+  "website": "https://www.kletterzentrum.com/standorte/waedenswil/",
+  "hours": {
+   "mon": "11am–11pm",
+   "tue": "11am–11pm",
+   "wed": "7:30am–11pm",
+   "thu": "11am–11pm",
+   "fri": "11am–11pm",
+   "sat": "9am–8pm",
+   "sun": "9am–8pm"
+  },
+  "day_pass": "CHF 38.10 adult off-peak, CHF 43.70 evening/Sun; bouldering only CHF 25.40/31.90",
+  "facilities": [
+   "cafe",
+   "kids",
+   "shoe-hire",
+   "shop",
+   "training"
+  ],
+  "sources": [
+   {
+    "url": "https://www.kletterzentrum.com/standorte/waedenswil/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.kletterzentrum.com/preise/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.kletterzentrum.com/kurse/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.kletterzentrum.com/standorte/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Wed is 'Frühklettern' from 7:30am. Shared Gaswerk price list (valid from 1 Jul 2026): off-peak = Mon-Fri check-in before 4pm and Saturday; evening/Sunday 43.70 (climbing incl. bouldering). Training area stated on standorte page."
+ },
+ {
+  "id": "g-dd666c2e64",
+  "name": "Kraftreaktor Lenzburg",
+  "metro": "Zurich",
+  "expect_h": "bcd5018c8724cb08",
+  "website": "https://kraftreaktor.ch/",
+  "hours": {
+   "mon": "1pm–10pm",
+   "tue": "9am–10pm",
+   "wed": "9am–10pm",
+   "thu": "9am–10pm",
+   "fri": "1pm–10pm",
+   "sat": "9am–8pm",
+   "sun": "9am–8pm"
+  },
+  "day_pass": "CHF 25 adult, CHF 22 student",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "shop",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://kraftreaktor.ch/ueber/oeffnungszeiten/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://kraftreaktor.ch/ueber/eintrittspreise/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://kraftreaktor.ch/kontakt/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://kraftreaktor.ch/angebot/kafi/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://kraftreaktor.ch/angebot/kraftraum/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://kraftreaktor.ch/angebot/shop/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://kraftreaktor.ch/kurse/kinder/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Shared kraftreaktor.ch site (Aarau and Lenzburg); hours/prices pages and footer/contact show Lenzburg address Hammermattenstrasse 18. Rental shoes (Kletterfinken) CHF 5. Free parking around building."
+ },
+ {
+  "id": "seed-1292",
+  "name": "Minimum - Flüela Zürich",
+  "metro": "Zurich",
+  "expect_h": "7af58fbca5297122",
+  "website": "https://minimum.ch/bouldern/hallen/flueela/",
+  "hours": {
+   "mon": "8am–11pm",
+   "tue": "8am–11pm",
+   "wed": "8am–11pm",
+   "thu": "8am–11pm",
+   "fri": "8am–11pm",
+   "sat": "10am–8pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": "CHF 25 adult, CHF 19 student (to 26), CHF 16 youth",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://minimum.ch/bouldern/oeffnungszeiten/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://minimum.ch/bouldern/neue-preise/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://minimum.ch/bouldern/hallen/flueela/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://minimum.ch/restaurant/oeffnungszeiten/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://minimum.ch/bouldern/kinderangebot/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Prices are the new list effective 1 Aug 2026 (first of two columns, Flüela; Leutsch is dearer). Rental shoes CHF 6. Restaurant/café Minimum Flüela on site."
+ },
+ {
+  "id": "seed-1293",
+  "name": "Minimum - Zürich Leutsch",
+  "metro": "Zurich",
+  "expect_h": "d3d9959042d34c0c",
+  "website": "https://minimum.ch/bouldern/hallen/leutschenbach/",
+  "hours": {
+   "mon": "8am–11pm",
+   "tue": "8am–11pm",
+   "wed": "8am–11pm",
+   "thu": "8am–11pm",
+   "fri": "8am–11pm",
+   "sat": "10am–8pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": "CHF 27 adult, CHF 21 student (to 26), CHF 18 youth",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://minimum.ch/bouldern/oeffnungszeiten/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://minimum.ch/bouldern/neue-preise/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://minimum.ch/bouldern/hallen/leutschenbach/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://minimum.ch/bouldern/kinderangebot/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Prices are the new list effective 1 Aug 2026 (second column, Leutschenbach). Rental shoes CHF 6. Café Leutsch, training room + Kilterboard, 6 parking spaces per hall page."
+ },
+ {
+  "id": "g-067ede39c1",
+  "name": "Quergang",
+  "metro": "Zurich",
+  "expect_h": "ed144cf93d5ce104",
+  "website": "https://www.quergang.ch/",
+  "hours": null,
+  "day_pass": "CHF 15 adult, CHF 10 child/youth (public entry Tue 6-10pm only)",
+  "facilities": [
+   "cafe",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.quergang.ch/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://www.quergang.ch/abospreise",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.quergang.ch/bistro",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Volunteer club hall. Public bouldering and bistro only Tue 18:00-22:00; all other days subscribers only (24h code access), so hours left null. Address Schachenstrasse 82 matches."
+ }
+]
