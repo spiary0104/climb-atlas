@@ -1,0 +1,808 @@
+[
+ {
+  "id": "seed-66",
+  "name": "Adelaide's Bouldering Club (BoulderZone)",
+  "metro": "Adelaide",
+  "expect_h": "8d1ffa7485c97b08",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [
+   {
+    "url": "https://www.aboulderclub.com/",
+    "accessed": "2026-10-04",
+    "supports": []
+   }
+  ],
+  "status": "flag",
+  "notes": "Official site (aboulderclub.com) now says Adelaide's Bouldering Club is a non-profit athlete-development/youth organisation operating out of Urban Climb Adelaide, 128 Hindley St, Adelaide 5000; no Ware St (Thebarton) gym or public day-pass/hours listed. Looks moved / no longer a public gym at 10 Ware St."
+ },
+ {
+  "id": "seed-67",
+  "name": "Beyond Bouldering",
+  "metro": "Adelaide",
+  "expect_h": "6b941d75580d2bb1",
+  "website": "https://beyondbouldering.com.au/kenttown/",
+  "hours": {
+   "mon": "6am–10pm",
+   "tue": "6am–10pm",
+   "wed": "6am–10pm",
+   "thu": "6am–10pm",
+   "fri": "6am–10pm",
+   "sat": "8am–8pm",
+   "sun": "8am–8pm"
+  },
+  "day_pass": "A$25 adult, A$23 student",
+  "facilities": [
+   "training",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://beyondbouldering.com.au/kenttown/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://beyondbouldering.com.au/pricing/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Day pass is one-location entry (chain pricing page). Training: MoonBoards, hangboards, gym. Shoe hire A$7."
+ },
+ {
+  "id": "seed-68",
+  "name": "Beyond Bouldering",
+  "metro": "Adelaide",
+  "expect_h": "ea4280224e192777",
+  "website": "https://beyondbouldering.com.au/keswick/",
+  "hours": {
+   "mon": "6am–10pm",
+   "tue": "3pm–10pm",
+   "wed": "6am–10pm",
+   "thu": "3pm–10pm",
+   "fri": "3pm–10pm",
+   "sat": "12pm–8pm",
+   "sun": "8am–8pm"
+  },
+  "day_pass": "A$25 adult, A$23 student",
+  "facilities": [
+   "training",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://beyondbouldering.com.au/keswick/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://beyondbouldering.com.au/pricing/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours as published on the location page (Tue/Thu/Fri open 3pm; Mon/Wed 6am). Training: Kilter Board, hangboards, campus boards, gym."
+ },
+ {
+  "id": "seed-69",
+  "name": "Beyond Bouldering",
+  "metro": "Adelaide",
+  "expect_h": "ac168e7a4fc0e84d",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [
+   {
+    "url": "https://beyondbouldering.com.au/open-hours-setting-updates/",
+    "accessed": "2026-10-04",
+    "supports": []
+   }
+  ],
+  "status": "flag",
+  "notes": "Official site states Clovelly Park closed permanently (final day 10/01/2024, doors closed 8pm); current site lists only Keswick, Kent Town, Thebarton."
+ },
+ {
+  "id": "seed-70",
+  "name": "Vertical Reality Climbing",
+  "metro": "Adelaide",
+  "expect_h": "cdaa2e0e609dd9ec",
+  "website": "https://www.verticalrealityclimbing.com/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "10am–6pm",
+   "sun": "10am–6pm"
+  },
+  "day_pass": "A$23 adult, A$20 student, A$18 bouldering only",
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.verticalrealityclimbing.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Casual pass; separate one-off A$5.50 belay induction excluded. Shoe hire A$7.50."
+ },
+ {
+  "id": "seed-1494",
+  "name": "Balkan Climbing",
+  "metro": "Sofia",
+  "expect_h": "6e2edf05dc8fbb19",
+  "website": "https://balkanclimbing.com/",
+  "hours": {
+   "mon": "7:30am–11pm",
+   "tue": "7:30am–11pm",
+   "wed": "7:30am–11pm",
+   "thu": "7:30am–11pm",
+   "fri": "7:30am–11pm",
+   "sat": "9am–10pm",
+   "sun": "9am–10pm"
+  },
+  "day_pass": "€15.25 adult, €10.15 child under 14, €7.60 student",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://balkanclimbing.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://balkanclimbing.com/prices",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Bulgarian site. Adult pass €15.25 (€10.15 until 3pm weekdays/12pm weekends). Own free parking lot (100 spaces). Climbing shoes available for hire per FAQ."
+ },
+ {
+  "id": "seed-1495",
+  "name": "Bons - Europe climbing center",
+  "metro": "Sofia",
+  "expect_h": "1e25b7020f63cbde",
+  "website": "https://bons.sportcentereurope.bg/",
+  "hours": {
+   "mon": "7am–11pm",
+   "tue": "7am–11pm",
+   "wed": "7am–11pm",
+   "thu": "7am–11pm",
+   "fri": "7am–11pm",
+   "sat": "8am–10pm",
+   "sun": "8am–10pm"
+  },
+  "day_pass": "20 лв (€10.23) adult, 13 лв (€6.64) student, 17 лв (€8.69) under 14",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://bons.sportcentereurope.bg/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://bons.sportcentereurope.bg/prices/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Matched by name only (target has no address and generic Sofia coordinates); official site puts Bons Europe at Studentski grad, ul. Osmi dekemvri 2. Parking is free around the hall (street), so not listed."
+ },
+ {
+  "id": "seed-1496",
+  "name": "Climb Academy",
+  "metro": "Sofia",
+  "expect_h": "08c528a44b047db2",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [
+   {
+    "url": "https://momentumclimbing.bg/tsarigradsko-shose/",
+    "accessed": "2026-10-04",
+    "supports": []
+   }
+  ],
+  "status": "flag",
+  "notes": "climbacademy.eu redirects to Momentum Climbing Sofia (momentumclimbing.bg, Tsarigradsko shose 111V, same address as seed-1499); it is the Momentum Climbing Academy kids programme, not a separate public gym. Likely duplicate of seed-1499."
+ },
+ {
+  "id": "seed-1497",
+  "name": "Climbing and mountaineering NSA",
+  "metro": "Sofia",
+  "expect_h": "541ffca088281952",
+  "website": "https://climbnsa.com/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "10am–9pm",
+   "sun": "10am–9pm"
+  },
+  "day_pass": "€7.16 adult, €6.13 student",
+  "facilities": [
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://climbnsa.com/%D1%86%D0%B5%D0%BD%D0%B8-%D0%B8-%D0%B0%D0%B4%D1%80%D0%B5%D1%81/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "NSA climbing club site (sports complex of National Sports Academy, Studentski grad; no street address given). A temporary closure notice for 22-28 Sep 2026 was ignored. Kids courses listed on same page."
+ },
+ {
+  "id": "seed-1498",
+  "name": "Climbing center Europe",
+  "metro": "Sofia",
+  "expect_h": "d9613cc7f906567c",
+  "website": "https://climbing.sportcentereurope.bg/",
+  "hours": {
+   "mon": "7am–11pm",
+   "tue": "7am–11pm",
+   "wed": "7am–11pm",
+   "thu": "7am–11pm",
+   "fri": "7am–11pm",
+   "sat": "8am–10pm",
+   "sun": "8am–10pm"
+  },
+  "day_pass": "20 лв (€10.23) adult, 17 лв (€8.69) under 14, 13 лв (€6.64) student",
+  "facilities": [
+   "cafe",
+   "kids",
+   "shoe-hire",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://climbing.sportcentereurope.bg/%D0%B7%D0%B0-%D0%BD%D0%B0%D1%81/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://climbing.sportcentereurope.bg/%D1%86%D0%B5%D0%BD%D0%B8/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Address on site: Iskarsko shose 7, TCE building 1, floor 1 (badminton hall Europe). Cafe-fresh-bar menu linked in site nav; free parking 4h weekdays / 6h weekends; kids routes and kids prices stated."
+ },
+ {
+  "id": "seed-1499",
+  "name": "Momentum Indoor Climbing Sofia",
+  "metro": "Sofia",
+  "expect_h": "8865a6b5cb56f475",
+  "website": "https://momentumclimbing.bg/tsarigradsko-shose/",
+  "hours": {
+   "mon": "7am–11pm",
+   "tue": "7am–11pm",
+   "wed": "7am–11pm",
+   "thu": "7am–11pm",
+   "fri": "7am–11pm",
+   "sat": "8am–10pm",
+   "sun": "8am–10pm"
+  },
+  "day_pass": "€13.80 adult, €9.20 early access or child under 16",
+  "facilities": [
+   "training",
+   "kids",
+   "yoga",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://momentumclimbing.bg/tsarigradsko-shose/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://momentumclimbing.bg/tsarigradsko-shose/tseni/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Bulgarian site. Early access = until 3pm weekdays / 10am weekends. Training boards and gym; yoga in the Mushmula studio; kids via Momentum Climbing Academy; espadrille (shoe) hire. Weekend hours listed as weekends/holidays 08:00-22:00."
+ },
+ {
+  "id": "seed-1409",
+  "name": "90 Graus",
+  "metro": "São Paulo",
+  "expect_h": "4cfdab61dd5ccc63",
+  "website": "https://www.90grausescalada.com.br/",
+  "hours": {
+   "mon": "4pm–11pm",
+   "tue": "4pm–11pm",
+   "wed": "4pm–11pm",
+   "thu": "4pm–11pm",
+   "fri": "4pm–11pm",
+   "sat": "2pm–9pm",
+   "sun": "2pm–9pm"
+  },
+  "day_pass": null,
+  "facilities": null,
+  "sources": [
+   {
+    "url": "https://www.90grausescalada.com.br/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Official site is 90grausescalada.com.br (90graus.com.br is an unrelated blog). Site gives Av. Joao Pedro Cardoso 107 (target says 111). Weekend/holiday hours 14h-21h. No prices or facilities on the site."
+ },
+ {
+  "id": "seed-1405",
+  "name": "Casa de Pedra - Moema",
+  "metro": "São Paulo",
+  "expect_h": "70a98ea462fdfb2c",
+  "website": "https://casadepedra.com.br/unidade-moema/",
+  "hours": {
+   "mon": "7am–10pm",
+   "tue": "7am–10pm",
+   "wed": "7am–10pm",
+   "thu": "7am–10pm",
+   "fri": "7am–10pm",
+   "sat": "1pm–9pm",
+   "sun": "1pm–9pm"
+  },
+  "day_pass": "R$ 90 weekdays, R$ 110 weekends and holidays",
+  "facilities": [
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://casadepedra.com.br/unidade-moema/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://casadepedra.com.br/contato/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://casadepedra.com.br/precos-e-planos-sp/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Price is per avulso period (up to 2h50); shared price page for both SP units. Climb4Fun kids walls; shoe hire R$20. Address Av. Irai 634 confirmed."
+ },
+ {
+  "id": "seed-1404",
+  "name": "Casa de Pedra - Perdizes",
+  "metro": "São Paulo",
+  "expect_h": "3c5ff6926ab180e9",
+  "website": "https://casadepedra.com.br/unidade-perdizes/",
+  "hours": {
+   "mon": "6am–10pm",
+   "tue": "6am–10pm",
+   "wed": "6am–10pm",
+   "thu": "6am–10pm",
+   "fri": "6am–10pm",
+   "sat": "1pm–9pm",
+   "sun": "1pm–9pm"
+  },
+  "day_pass": "R$ 90 weekdays, R$ 110 weekends and holidays",
+  "facilities": [
+   "training",
+   "kids",
+   "shoe-hire",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://casadepedra.com.br/unidade-perdizes/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://casadepedra.com.br/contato/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://casadepedra.com.br/precos-e-planos-sp/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Price is per avulso period (up to 2h50); shared price page. Training = musculacao (gym) Mon-Fri 6-22h; Climb4Fun kids walls; parking on site. Rua Venancio Aires 31 confirmed."
+ },
+ {
+  "id": "seed-1407",
+  "name": "FABRICA Escalada - Chácara Santo Antônio",
+  "metro": "São Paulo",
+  "expect_h": "cd47e3ad8b98d655",
+  "website": "https://www.fabricaescalada.com/unidades",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "7am–10pm",
+   "wed": "10am–10pm",
+   "thu": "7am–10pm",
+   "fri": "10am–10pm",
+   "sat": "10am–7pm",
+   "sun": "10am–7pm"
+  },
+  "day_pass": null,
+  "facilities": [
+   "cafe",
+   "training",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.fabricaescalada.com/unidades",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.fabricaescalada.com/aulas-fabrikids",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours: Mon/Wed/Fri 10-22h, Tue/Thu 7-22h, Sat/Sun/holidays 10-19h. Cafe Pies de Gato; Spray Wall + Kilter Board; Fabrikids classes at this unit. Day-pass price not on fetched pages."
+ },
+ {
+  "id": "seed-1406",
+  "name": "FABRICA Escalada - Itaim",
+  "metro": "São Paulo",
+  "expect_h": "079265f15ed29901",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [
+   {
+    "url": "https://www.fabricaescalada.com/unidades",
+    "accessed": "2026-10-04",
+    "supports": []
+   },
+   {
+    "url": "https://www.fabricaescalada.com/faq",
+    "accessed": "2026-10-04",
+    "supports": []
+   }
+  ],
+  "status": "flag",
+  "notes": "Official site lists only two units (Chacara Santo Antonio and Vila Madalena; FAQ says choose one of the two units). Itaim (Rua Dr. Renato Paes de Barros 484) is no longer listed, so it appears closed."
+ },
+ {
+  "id": "seed-1408",
+  "name": "FABRICA Escalada - Vila Madalena",
+  "metro": "São Paulo",
+  "expect_h": "a4cf054dcc183b04",
+  "website": "https://www.fabricaescalada.com/unidades",
+  "hours": null,
+  "day_pass": null,
+  "facilities": [
+   "training"
+  ],
+  "sources": [
+   {
+    "url": "https://www.fabricaescalada.com/unidades",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Units page gives Mon-Fri 7am-10pm and Sat 10am-7pm but no Sunday hours, so hours left null. Spray Wall + Moonboard. Day-pass price not on fetched pages."
+ },
+ {
+  "id": "seed-471",
+  "name": "Allez Up",
+  "metro": "Montreal",
+  "expect_h": "80a4fe0d534cd8e0",
+  "website": "https://allezup.com/en/pointe_saint_charles/",
+  "hours": {
+   "mon": "6:30am–11pm",
+   "tue": "6:30am–11pm",
+   "wed": "6:30am–11pm",
+   "thu": "6:30am–11pm",
+   "fri": "6:30am–11pm",
+   "sat": "8:30am–10pm",
+   "sun": "8:30am–10pm"
+  },
+  "day_pass": "C$23.75 adult",
+  "facilities": [
+   "training",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://allezup.com/en/pointe_saint_charles/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://allezup.com/en/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   },
+   {
+    "url": "https://allezup.com/en/pointe_saint_charles/info/facility/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Training room, Moon Board, Tension Board; youth programs (try climbing kids, junior team) in nav."
+ },
+ {
+  "id": "seed-470",
+  "name": "Bloc Shop",
+  "metro": "Montreal",
+  "expect_h": "0f157f8a7661d1b1",
+  "website": "https://blocshop.com/chabanel/",
+  "hours": {
+   "mon": "10am–11pm",
+   "tue": "10am–11pm",
+   "wed": "10am–11pm",
+   "thu": "10am–11pm",
+   "fri": "10am–11pm",
+   "sat": "9am–9pm",
+   "sun": "9am–9pm"
+  },
+  "day_pass": "C$19 adult, C$10 age 18 and under",
+  "facilities": [
+   "cafe",
+   "training",
+   "shop",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://blocshop.com/chabanel/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://blocshop.com/en/pricing/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Chabanel location page (1370 Chabanel O.). Cafe + craft beer, training section (Kilter, campus board), climbing shop. Shoe rental per pricing page."
+ },
+ {
+  "id": "seed-472",
+  "name": "Café Bloc",
+  "metro": "Montreal",
+  "expect_h": "63ce69ca6f5f9708",
+  "website": "https://cafebloc.com/",
+  "hours": {
+   "mon": "7am–11pm",
+   "tue": "7am–11pm",
+   "wed": "7am–11pm",
+   "thu": "7am–11pm",
+   "fri": "7am–11pm",
+   "sat": "9am–9pm",
+   "sun": "9am–9pm"
+  },
+  "day_pass": "C$25.95 adult, C$19 child 2-12",
+  "facilities": [
+   "cafe",
+   "training",
+   "shop",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://cafebloc.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://cafebloc.com/tarifs-escalade-bloc-montreal",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Home page shows regular C$24.75 / child C$18 but the dedicated tarifs page says C$25.95 / C$19; used the tarifs page. Cafe-bistro, training room + Kilter, Pro Shop, shoe rental."
+ },
+ {
+  "id": "seed-473",
+  "name": "Cepsum Climbing Gym",
+  "metro": "Montreal",
+  "expect_h": "d00ad27e7ebd9a73",
+  "website": "https://www.cepsum.umontreal.ca/",
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [
+   {
+    "url": "https://www.cepsum.umontreal.ca/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   }
+  ],
+  "status": "website-only",
+  "notes": "University sports complex; footer hours (weekdays 6:30-23:00, weekends 8:30-20:30) are for CEPSUM overall, not stated for the climbing wall, so hours left null. Wall use needs membership plus accreditation; no day pass listed."
+ },
+ {
+  "id": "seed-1749",
+  "name": "Le Mouv' espace bloc",
+  "metro": "Montreal",
+  "expect_h": "da1db6d3908c36be",
+  "website": "https://www.lemouv.ca/",
+  "hours": {
+   "mon": "8am–10pm",
+   "tue": "8am–10pm",
+   "wed": "8am–10pm",
+   "thu": "8am–10pm",
+   "fri": "8am–10pm",
+   "sat": "8am–9pm",
+   "sun": "8am–9pm"
+  },
+  "day_pass": "C$22.50 adult, C$20.50 reduced, C$15.50 off-peak",
+  "facilities": [
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.lemouv.ca/nous-trouver.html",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.lemouv.ca/tarifs.html",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.lemouv.ca/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Off-peak = 8-16h and 20-22h on weekdays. Shoe rental C$5. Youth programmes (Club 9-15 etc.) listed in site nav only."
+ }
+]

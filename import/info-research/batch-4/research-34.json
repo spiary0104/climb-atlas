@@ -1,0 +1,1139 @@
+[
+ {
+  "id": "seed-315",
+  "name": "Aesthetic Climbing Gym",
+  "metro": "Orange County",
+  "expect_h": "e760388a9c97a02b",
+  "website": "https://aestheticclimbinggym.com/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "10am–8pm",
+   "sun": "10am–6pm"
+  },
+  "day_pass": "$32 single day admission",
+  "facilities": [
+   "training",
+   "shoe-hire",
+   "shop",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://aestheticclimbinggym.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://aestheticclimbinggym.com/passes-memberships/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "shoe-hire",
+     "shop",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://aestheticclimbinggym.com/first-visit/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "training",
+     "kids",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Day pass page lists SINGLE DAY Admission $32 (a 'Kids after student discount' $29 line is ambiguous, omitted). Shop from membership perk '10% off Pro Shop & Merch'; kids from FAQ mention of youth programs."
+ },
+ {
+  "id": "seed-342",
+  "name": "Hangar 18 – Mission Viejo",
+  "metro": "Orange County",
+  "expect_h": "d48e3777ca7a100c",
+  "website": "https://climbhangar18.com/mission-viejo/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–9pm",
+   "sat": "10am–8pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": null,
+  "facilities": [
+   "training"
+  ],
+  "sources": [
+   {
+    "url": "https://climbhangar18.com/mission-viejo/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Features: Kilter Board, fitness area, campus area. Day pass price is only in the JS booking portal (not available as text)."
+ },
+ {
+  "id": "seed-343",
+  "name": "Hangar 18 – Orange",
+  "metro": "Orange County",
+  "expect_h": "fafb69a301e4f160",
+  "website": "https://climbhangar18.com/orange/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–9pm",
+   "sat": "10am–8pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": null,
+  "facilities": [
+   "training"
+  ],
+  "sources": [
+   {
+    "url": "https://climbhangar18.com/orange/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Features: fitness area, training area, member lounge. Day pass price only in the JS booking portal."
+ },
+ {
+  "id": "seed-363",
+  "name": "Movement – Fountain Valley",
+  "metro": "Orange County",
+  "expect_h": "baea8fff037080bb",
+  "website": "https://movementgyms.com/fountain-valley/",
+  "hours": {
+   "mon": "6am–10pm",
+   "tue": "6am–10pm",
+   "wed": "6am–10pm",
+   "thu": "6am–10pm",
+   "fri": "6am–10pm",
+   "sat": "8am–8pm",
+   "sun": "8am–6pm"
+  },
+  "day_pass": "$32 adult, $23 child (under 13), $28 student",
+  "facilities": [
+   "training",
+   "yoga",
+   "shop",
+   "shoe-hire",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://movementgyms.com/fountain-valley/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "training",
+     "yoga",
+     "shoe-hire",
+     "parking",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://movementgyms.com/memberships-passes/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "shop",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Shop from the location feature list ('Fully stocked gear shop') on the memberships-passes page (embedded Fountain Valley data). Parking from location FAQ (on-site lot)."
+ },
+ {
+  "id": "seed-371",
+  "name": "Rockreation – Costa Mesa",
+  "metro": "Orange County",
+  "expect_h": "c19b43aabaca6c9b",
+  "website": "https://www.rockreation.com/",
+  "hours": {
+   "mon": "12pm–10pm",
+   "tue": "6am–10pm",
+   "wed": "12pm–10pm",
+   "thu": "6am–10pm",
+   "fri": "12pm–10pm",
+   "sat": "10am–4pm",
+   "sun": "10am–4pm"
+  },
+  "day_pass": null,
+  "facilities": [
+   "kids",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://www.rockreation.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://www.rockreation.com/about",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.rockreation.com/contact-us",
+    "accessed": "2026-10-04",
+    "supports": [
+     "parking",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://app.rockgympro.com/b/widget/?a=offering&offering_guid=2556c16833b54431b079b2ed0f8bc281&random=6387e27dedf95&iframeid=&mode=p",
+    "accessed": "2026-10-04",
+    "supports": [
+     "kids",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours from the labelled 'Costa Mesa Gym Hours' block (identical to the LA block; site footer dated 2016, so may be stale). Day pass prices only in booking system. Kids from Costa Mesa birthday party booking page."
+ },
+ {
+  "id": "seed-378",
+  "name": "Sender One Climbing – Aliso Viejo",
+  "metro": "Orange County",
+  "expect_h": "f127f06d1c7b9473",
+  "website": "https://www.senderoneclimbing.com/aliso-viejo/",
+  "hours": {
+   "mon": "6am–11pm",
+   "tue": "6am–11pm",
+   "wed": "6am–11pm",
+   "thu": "6am–11pm",
+   "fri": "6am–11pm",
+   "sat": "8am–8pm",
+   "sun": "8am–8pm"
+  },
+  "day_pass": "$34 adult, $29 youth",
+  "facilities": [
+   "kids",
+   "yoga",
+   "training"
+  ],
+  "sources": [
+   {
+    "url": "https://www.senderoneclimbing.com/aliso-viejo/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "kids",
+     "yoga",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.senderoneclimbing.com/pricing/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "training",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Day pass from the group pricing page, location section. Training from day pass inclusion 'fitness areas'. Sender City hours differ and are not used."
+ },
+ {
+  "id": "seed-380",
+  "name": "Sender One Climbing – SNA",
+  "metro": "Orange County",
+  "expect_h": "6098b1253939f8e5",
+  "website": "https://www.senderoneclimbing.com/santa-ana/",
+  "hours": {
+   "mon": "6am–11pm",
+   "tue": "6am–11pm",
+   "wed": "6am–11pm",
+   "thu": "6am–11pm",
+   "fri": "6am–11pm",
+   "sat": "8am–8pm",
+   "sun": "8am–8pm"
+  },
+  "day_pass": "$34 adult, $29 youth",
+  "facilities": [
+   "kids",
+   "yoga",
+   "training"
+  ],
+  "sources": [
+   {
+    "url": "https://www.senderoneclimbing.com/santa-ana/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "kids",
+     "yoga",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.senderoneclimbing.com/pricing/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "training",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Day pass from the group pricing page, location section. Training from day pass inclusion 'fitness areas'. Sender City hours differ and are not used."
+ },
+ {
+  "id": "seed-137",
+  "name": "Canyons Rock Climbing",
+  "metro": "Dallas",
+  "expect_h": "3a4209f0f80cd480",
+  "website": "https://www.canyonsclimbinggym.com/",
+  "hours": {
+   "mon": "12pm–9pm",
+   "tue": "12pm–9pm",
+   "wed": "12pm–9pm",
+   "thu": "12pm–9pm",
+   "fri": "12pm–10pm",
+   "sat": "9am–10pm",
+   "sun": "12pm–7pm"
+  },
+  "day_pass": "$19 adult (13+), $13 youth (12 and under)",
+  "facilities": [
+   "training",
+   "yoga",
+   "shop",
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.canyonsclimbinggym.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "training",
+     "yoga",
+     "shop",
+     "shoe-hire",
+     "kids",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Training: MoonBoard and weight zone. Yoga Mon/Wed/Fri 6-7pm. Shoe rental $4 each. Pro shop discount text. Kids from 'Kid-Focused Programs'."
+ },
+ {
+  "id": "seed-144",
+  "name": "Dyno-Rock",
+  "metro": "Dallas",
+  "expect_h": "f7b4426eb0b8da3c",
+  "website": "https://www.dynorock.com/",
+  "hours": {
+   "mon": "12pm–10pm",
+   "tue": "12pm–10pm",
+   "wed": "12pm–10pm",
+   "thu": "12pm–10pm",
+   "fri": "12pm–10pm",
+   "sat": "2pm–10pm",
+   "sun": "12pm–6pm"
+  },
+  "day_pass": "$12 adult day pass, + tax",
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.dynorock.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "shoe-hire",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Home page: price 'does not include tax'. Weekday specials exist ($10 Monday) but not used. Shoe rental $5."
+ },
+ {
+  "id": "seed-152",
+  "name": "Movement Dallas – The Hill",
+  "metro": "Dallas",
+  "expect_h": "f1572ae00cc1b23b",
+  "website": "https://movementgyms.com/the-hill/",
+  "hours": {
+   "mon": "6am–11pm",
+   "tue": "6am–11pm",
+   "wed": "6am–11pm",
+   "thu": "6am–11pm",
+   "fri": "6am–11pm",
+   "sat": "8am–8pm",
+   "sun": "8am–6pm"
+  },
+  "day_pass": "$25 adult, $18 child (under 13), $22 student",
+  "facilities": [
+   "training",
+   "showers",
+   "yoga",
+   "shop",
+   "parking",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://movementgyms.com/the-hill/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "training",
+     "showers",
+     "yoga",
+     "shop",
+     "parking",
+     "shoe-hire",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://movementgyms.com/memberships-passes/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Day pass from the memberships-passes page, The Hill data block (identified by its portal URLs). Parking: location FAQ says free parking."
+ },
+ {
+  "id": "seed-154",
+  "name": "Movement Design District",
+  "metro": "Dallas",
+  "expect_h": "3108566371dcd946",
+  "website": "https://movementgyms.com/design-district/",
+  "hours": {
+   "mon": "6am–11pm",
+   "tue": "6am–11pm",
+   "wed": "6am–11pm",
+   "thu": "6am–11pm",
+   "fri": "6am–11pm",
+   "sat": "8am–8pm",
+   "sun": "8am–6pm"
+  },
+  "day_pass": "$25 adult, $18 child (under 13), $22 student",
+  "facilities": [
+   "training",
+   "showers",
+   "yoga",
+   "shop",
+   "parking",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://movementgyms.com/design-district/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "training",
+     "showers",
+     "yoga",
+     "shop",
+     "parking",
+     "shoe-hire",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://movementgyms.com/memberships-passes/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Day pass from the memberships-passes page, Design District data block. Parking: location FAQ says free parking."
+ },
+ {
+  "id": "seed-156",
+  "name": "Movement Grapevine",
+  "metro": "Dallas",
+  "expect_h": "da6a4af7b9b46730",
+  "website": "https://movementgyms.com/grapevine/",
+  "hours": {
+   "mon": "6am–10pm",
+   "tue": "6am–10pm",
+   "wed": "6am–10pm",
+   "thu": "6am–10pm",
+   "fri": "6am–10pm",
+   "sat": "9am–10pm",
+   "sun": "9am–7pm"
+  },
+  "day_pass": "$25 adult, $18 child (under 13), $22 student",
+  "facilities": [
+   "training",
+   "showers",
+   "yoga",
+   "shop",
+   "parking",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://movementgyms.com/grapevine/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "training",
+     "showers",
+     "yoga",
+     "shop",
+     "parking",
+     "shoe-hire",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://movementgyms.com/memberships-passes/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Day pass from the memberships-passes page, Grapevine data block. Parking: location FAQ says plenty of parking."
+ },
+ {
+  "id": "seed-157",
+  "name": "Movement Plano",
+  "metro": "Dallas",
+  "expect_h": "66ba117c5798cb9c",
+  "website": "https://movementgyms.com/plano/",
+  "hours": {
+   "mon": "6am–10pm",
+   "tue": "6am–10pm",
+   "wed": "6am–10pm",
+   "thu": "6am–10pm",
+   "fri": "6am–10pm",
+   "sat": "9am–10pm",
+   "sun": "9am–7pm"
+  },
+  "day_pass": "$25 adult, $18 child (under 13), $22 student",
+  "facilities": [
+   "training",
+   "showers",
+   "yoga",
+   "shop",
+   "parking",
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://movementgyms.com/plano/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "training",
+     "showers",
+     "yoga",
+     "shop",
+     "parking",
+     "shoe-hire",
+     "kids",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://movementgyms.com/memberships-passes/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Kids: mezzanine 'kids area' stated on the location page. Day pass from the memberships-passes page, Plano data block."
+ },
+ {
+  "id": "seed-139",
+  "name": "Climb Capuchin",
+  "metro": "Houston",
+  "expect_h": "6d57f8f3b9eef485",
+  "website": "https://climb-capuchin.com/",
+  "hours": {
+   "mon": "6:15pm–10pm",
+   "tue": "6:15pm–10pm",
+   "wed": "6:15pm–10pm",
+   "thu": "6:15pm–10pm",
+   "fri": "6:15pm–10pm",
+   "sat": "10am–10pm",
+   "sun": "10am–6pm"
+  },
+  "day_pass": "$22 day pass (no gear), $10 boulder pass",
+  "facilities": [
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://climb-capuchin.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://climb-capuchin.com/day-rates",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "shoe-hire",
+     "kids",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Day Pass $22 comes from the page meta description 'Day passes begin at just $22' (rendered price cell missing); the $10 Boulder Pass is in the page text. Shoes $6 a la carte; kids bundle $29."
+ },
+ {
+  "id": "seed-146",
+  "name": "Inspire Cypress",
+  "metro": "Houston",
+  "expect_h": "6d6a412bd0eb12b8",
+  "website": "https://inspirerock.com/cypress/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "6:30am–10pm",
+   "thu": "10am–10pm",
+   "fri": "6:30am–10pm",
+   "sat": "10am–9pm",
+   "sun": "12pm–6pm"
+  },
+  "day_pass": "$22 adult (11+), $18 kids 4-10",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "shop",
+   "yoga"
+  ],
+  "sources": [
+   {
+    "url": "https://inspirerock.com/cypress/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "cafe",
+     "training",
+     "kids",
+     "shop",
+     "yoga",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://inspirerock.com/cypress/hours-location/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://inspirerock.com/cypress/pricing/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "shoe-hire",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Day pass includes climbing, yoga and fitness; gear rental extra (shoes $6)."
+ },
+ {
+  "id": "seed-148",
+  "name": "Inspire Spring",
+  "metro": "Houston",
+  "expect_h": "0b6d594a16f1d620",
+  "website": "https://inspirerock.com/spring/",
+  "hours": {
+   "mon": "6:30am–10pm",
+   "tue": "6:30am–10pm",
+   "wed": "10am–10pm",
+   "thu": "6:30am–10pm",
+   "fri": "10am–10pm",
+   "sat": "9am–9pm",
+   "sun": "12pm–6pm"
+  },
+  "day_pass": "$22 adult (11+), $18 kids 4-10, $20 military/first responder",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "shop",
+   "yoga"
+  ],
+  "sources": [
+   {
+    "url": "https://inspirerock.com/spring/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "cafe",
+     "training",
+     "kids",
+     "shop",
+     "yoga",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://inspirerock.com/spring/location-hours/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://inspirerock.com/spring/pricing/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "shoe-hire",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "5.Ate Cafe, Kidz Cave, pro shop and yoga studio stated on the Spring page."
+ },
+ {
+  "id": "seed-150",
+  "name": "Momentum – Katy",
+  "metro": "Houston",
+  "expect_h": "a1be2ac60c7bb8be",
+  "website": "https://momentumclimbing.com/katy/",
+  "hours": {
+   "mon": "8am–11pm",
+   "tue": "8am–11pm",
+   "wed": "8am–11pm",
+   "thu": "8am–11pm",
+   "fri": "8am–11pm",
+   "sat": "8am–10pm",
+   "sun": "8am–8pm"
+  },
+  "day_pass": "$29 adult (12+), $21 child (11 and under)",
+  "facilities": [
+   "training",
+   "yoga",
+   "showers",
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://momentumclimbing.com/katy/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "yoga",
+     "kids",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://momentumclimbing.com/katy/rates/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "shoe-hire",
+     "showers",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://momentumclimbing.com/katy/tour/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "training",
+     "showers",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Training: system wall, hangboards, weights/cardio room (tour page)."
+ },
+ {
+  "id": "seed-151",
+  "name": "Momentum Silver Street",
+  "metro": "Houston",
+  "expect_h": "a2995b8778ea404f",
+  "website": "https://momentumclimbing.com/silver-street/",
+  "hours": {
+   "mon": "6am–11pm",
+   "tue": "6am–11pm",
+   "wed": "6am–11pm",
+   "thu": "6am–11pm",
+   "fri": "6am–11pm",
+   "sat": "10am–10pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": "$29 adult (12+), $21 child (11 and under)",
+  "facilities": [
+   "training",
+   "yoga",
+   "showers",
+   "shoe-hire",
+   "shop",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://momentumclimbing.com/silver-street/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "shop",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://momentumclimbing.com/silver-street/rates/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "shoe-hire",
+     "showers",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://momentumclimbing.com/silver-street/tour/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "training",
+     "yoga",
+     "showers",
+     "kids",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Sat/Sun members-only 8-10am excluded (public from 10am). Kids: 1,100+ sq ft kids bouldering (tour page). Shop: 'Visit our Pro Shop' on the home page."
+ },
+ {
+  "id": "seed-161",
+  "name": "Space City Rock Climbing Gym",
+  "metro": "Houston",
+  "expect_h": "de7a137eb22ed65c",
+  "website": "https://spacecityrockclimbing.com/",
+  "hours": {
+   "mon": "3:30pm–9pm",
+   "tue": "3:30pm–8pm",
+   "wed": "3:30pm–9pm",
+   "thu": "3:30pm–8pm",
+   "fri": "3:30pm–9pm",
+   "sat": "12pm–8pm",
+   "sun": "2pm–8pm"
+  },
+  "day_pass": "$15 climbing pass, $10 bouldering pass (2-hour session)",
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://spacecityrockclimbing.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "shoe-hire",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Tue/Thu 8-9pm is stated as members only, so public hours end 8pm those days (judgement). Reservation required."
+ },
+ {
+  "id": "seed-279",
+  "name": "Climb Kraft",
+  "metro": "Nashville",
+  "expect_h": "30852a735362514f",
+  "website": "https://theclimbgyms.com/kraft/",
+  "hours": {
+   "mon": "9am–9pm",
+   "tue": "9am–9pm",
+   "wed": "9am–9pm",
+   "thu": "9am–9pm",
+   "fri": "9am–9pm",
+   "sat": "9am–9pm",
+   "sun": "11am–6pm"
+  },
+  "day_pass": "$26 adult (climbing shoes included)",
+  "facilities": [
+   "cafe",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://theclimbgyms.com/kraft/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://theclimbgyms.com/kraft/rates/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "shoe-hire",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://theclimbgyms.com/kraft/cafe/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "cafe",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Mon-Fri 6-9am is listed as 'Members Hours', excluded. Temporary July $16 special ignored."
+ },
+ {
+  "id": "seed-281",
+  "name": "Climb Nashville – West",
+  "metro": "Nashville",
+  "expect_h": "25962a7126ab8d73",
+  "website": "https://theclimbgyms.com/nashville/",
+  "hours": {
+   "mon": "6am–10pm",
+   "tue": "6am–10pm",
+   "wed": "6am–10pm",
+   "thu": "6am–10pm",
+   "fri": "6am–10pm",
+   "sat": "9am–9pm",
+   "sun": "11am–6pm"
+  },
+  "day_pass": "$26 adult (shoes and harness included), $22 youth",
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://theclimbgyms.com/nashville/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://theclimbgyms.com/nashville/rates/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "shoe-hire",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Day pass includes shoes + harness (rental gear)."
+ },
+ {
+  "id": "seed-282",
+  "name": "Climb Nashville East",
+  "metro": "Nashville",
+  "expect_h": "46758291b0daa03a",
+  "website": "https://theclimbgyms.com/nashville-east/",
+  "hours": {
+   "mon": "10am–9pm",
+   "tue": "10am–9pm",
+   "wed": "10am–9pm",
+   "thu": "10am–9pm",
+   "fri": "10am–9pm",
+   "sat": "10am–6pm",
+   "sun": "11am–6pm"
+  },
+  "day_pass": "$26 adult (climbing shoes included)",
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://theclimbgyms.com/nashville-east/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://theclimbgyms.com/nashville-east/rates/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "shoe-hire",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Bouldering-only gym, ages 13+."
+ },
+ {
+  "id": "seed-291",
+  "name": "The Crag – Franklin",
+  "metro": "Nashville",
+  "expect_h": "894499fe87698194",
+  "website": "https://iloverockclimbing.com/franklin/",
+  "hours": {
+   "mon": "10am–9pm",
+   "tue": "9am–9pm",
+   "wed": "10am–9pm",
+   "thu": "9am–9pm",
+   "fri": "10am–9pm",
+   "sat": "10am–7pm",
+   "sun": "12pm–6pm"
+  },
+  "day_pass": "$18 day pass (12+, no gear), $23 with shoes and harness",
+  "facilities": [
+   "training",
+   "yoga",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://iloverockclimbing.com/franklin/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "training",
+     "yoga",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://iloverockclimbing.com/dayrates/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "shoe-hire",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Tue/Thu 7-9am is reserved for members, so public hours start 9am (derived from the stated members-only window). Training: Kilter adjustable wall. Day rates page covers both Crag locations."
+ },
+ {
+  "id": "seed-292",
+  "name": "The Crag – South Nashville",
+  "metro": "Nashville",
+  "expect_h": "43c73847b9dc88c5",
+  "website": "https://iloverockclimbing.com/nashville/",
+  "hours": {
+   "mon": "9am–9pm",
+   "tue": "9am–10pm",
+   "wed": "9am–9pm",
+   "thu": "9am–10pm",
+   "fri": "9am–9pm",
+   "sat": "9am–7pm",
+   "sun": "11am–6pm"
+  },
+  "day_pass": "$18 day pass (12+, no gear), $23 with shoes and harness",
+  "facilities": [
+   "training",
+   "yoga",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://iloverockclimbing.com/nashville/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "training",
+     "yoga",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://iloverockclimbing.com/dayrates/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "shoe-hire",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Mon/Wed/Fri 6-9am is reserved for members, so public hours start 9am (derived). Training: Moon Board, fitness classes. Day rates page covers both Crag locations."
+ }
+]

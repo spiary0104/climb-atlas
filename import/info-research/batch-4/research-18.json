@@ -1,0 +1,899 @@
+[
+ {
+  "id": "g-0a82f7a1b0",
+  "name": "D.Bouldering Honatsugi",
+  "metro": "Tokyo",
+  "expect_h": "3a3eeea2e904cac3",
+  "website": "https://www.d-b-c.jp/top/honatsugi/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "10am–8pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": "¥2,090 adult weekday, ¥2,310 weekend/holiday; ¥1,430 student weekday",
+  "facilities": [
+   "kids",
+   "training",
+   "shoe-hire",
+   "shop"
+  ],
+  "sources": [
+   {
+    "url": "https://www.d-b-c.jp/top/honatsugi/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass"
+    ]
+   },
+   {
+    "url": "https://www.d-b-c.jp/top/honatsugi/facility/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours/prices from location top page (weekday vs weekend/holiday). Kilter Board, kids wall, rental shoes, shop space per facility page. Day pass = 1-day adult fee, excludes 1,650 first-visit registration."
+ },
+ {
+  "id": "g-f277b39f92",
+  "name": "D.Bouldering Kawasaki",
+  "metro": "Tokyo",
+  "expect_h": "fcea94be59722a54",
+  "website": "https://www.d-b-c.jp/top/kawasaki/",
+  "hours": {
+   "mon": "10am–11pm",
+   "tue": "10am–11pm",
+   "wed": "10am–11pm",
+   "thu": "10am–11pm",
+   "fri": "10am–11pm",
+   "sat": "11am–9pm",
+   "sun": "11am–9pm"
+  },
+  "day_pass": "¥2,090 adult weekday, ¥2,200 weekend/holiday; ¥1,650 student weekday",
+  "facilities": [
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.d-b-c.jp/top/kawasaki/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.d-b-c.jp/top/kawasaki/price/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Weekday 10-23, Sat/Sun 11-21 (holidays 10-21). Weekday evening after 21:00 has separate rules (not used)."
+ },
+ {
+  "id": "g-4b4a986251",
+  "name": "D.Bouldering Plus Funabashi",
+  "metro": "Tokyo",
+  "expect_h": "33501f96b492d46d",
+  "website": "https://www.d-b-c.jp/top/funabashi/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "10am–9pm",
+   "sun": "10am–9pm"
+  },
+  "day_pass": "¥2,100 men / ¥1,900 women weekday, ¥2,200 / ¥2,000 weekend; ¥1,700 student",
+  "facilities": [
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.d-b-c.jp/top/funabashi/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.d-b-c.jp/top/funabashi/price/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours are the pass-member/single-use reception hours (L.O. 1h before close). Prices are gender-split on the page (men / women)."
+ },
+ {
+  "id": "g-f1ff2432cb",
+  "name": "D.Bouldering Plus Lead Kaihin-Makuhari",
+  "metro": "Tokyo",
+  "expect_h": "23d45f554e1b1007",
+  "website": "https://www.d-b-c.jp/top/kaihin-makuhari/",
+  "hours": {
+   "mon": "1pm–11pm",
+   "tue": "1pm–11pm",
+   "wed": "1pm–11pm",
+   "thu": "1pm–11pm",
+   "fri": "1pm–11pm",
+   "sat": "10am–8pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": "¥2,150 men / ¥1,900 women weekday, ¥2,250 / ¥2,000 weekend; ¥1,800 student",
+  "facilities": [
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.d-b-c.jp/top/kaihin-makuhari/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.d-b-c.jp/top/kaihin-makuhari/price/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Weekday 13:00-23:00, weekend/holiday 10:00-20:00 (L.O. 1h before). Auto-belay/lead stated on page but no facility key for it. Prices gender-split."
+ },
+ {
+  "id": "g-6419a4e7b5",
+  "name": "D.Bouldering Plus Lead Kasukabe",
+  "metro": "Tokyo",
+  "expect_h": "cf4ef8d1dd97ca26",
+  "website": "https://www.d-b-c.jp/top/kasukabe/",
+  "hours": {
+   "mon": "2pm–10pm",
+   "tue": "2pm–10pm",
+   "wed": "2pm–10pm",
+   "thu": "2pm–10pm",
+   "fri": "2pm–10pm",
+   "sat": "9am–6pm",
+   "sun": "9am–6pm"
+  },
+  "day_pass": "¥2,300 men / ¥1,700 women and student (weekday rate)",
+  "facilities": [
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.d-b-c.jp/top/kasukabe/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Staffed single-use hours used (pass members 24h). Page also says Saturday only: entry by 17:00 and use until 22:00; Sat kept at 9am-6pm. Table row 2 (2,400/1,800/1,700) is labelled weekday+weekend/holiday, so only the weekday row is stated. Rental shoes 330."
+ },
+ {
+  "id": "g-4847fac950",
+  "name": "D.Bouldering Plus Lead Tachikawa",
+  "metro": "Tokyo",
+  "expect_h": "addc72814f23d496",
+  "website": "https://www.d-b-c.jp/top/tachikawa/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "10am–7pm",
+   "sun": "10am–7pm"
+  },
+  "day_pass": "¥2,300 men / ¥1,700 women, student weekday; ¥2,400 / ¥1,800 weekend",
+  "facilities": [
+   "kids",
+   "training",
+   "shop",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.d-b-c.jp/top/tachikawa/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Single-use (都度利用) hours; pass holders have 24h access. Page text: training area and shop. Gender-split prices. Address matches."
+ },
+ {
+  "id": "g-f2796e3f1f",
+  "name": "D.Bouldering Plus Soga",
+  "metro": "Tokyo",
+  "expect_h": "c6ff0138452e77d1",
+  "website": "https://www.d-b-c.jp/top/soga/",
+  "hours": {
+   "mon": "12:30pm–9pm",
+   "tue": "12:30pm–9pm",
+   "wed": "12:30pm–9pm",
+   "thu": "12:30pm–9pm",
+   "fri": "12:30pm–9pm",
+   "sat": "10am–6pm",
+   "sun": "10am–6pm"
+  },
+  "day_pass": "¥2,200 men / ¥2,000 women weekday, ¥2,400 / ¥2,200 weekend; ¥1,500 student",
+  "facilities": [
+   "kids",
+   "training",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.d-b-c.jp/top/soga/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.d-b-c.jp/top/soga/price/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Single-use reception hours (pass members 24h). Training board stated on page. Gender-split prices."
+ },
+ {
+  "id": "g-b6c0194546",
+  "name": "D.Bouldering Plus Tsudanuma",
+  "metro": "Tokyo",
+  "expect_h": "180812d06935b532",
+  "website": "https://www.d-b-c.jp/top/tsudanuma/",
+  "hours": {
+   "mon": "Closed",
+   "tue": "12pm–9pm",
+   "wed": "12pm–9pm",
+   "thu": "12pm–9pm",
+   "fri": "12pm–9pm",
+   "sat": "10am–8pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": "¥2,090 men / ¥1,870 women weekday, ¥2,200 / ¥1,980 weekend; ¥1,760 student",
+  "facilities": [
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.d-b-c.jp/top/tsudanuma/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.d-b-c.jp/top/tsudanuma/price/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Single-use hours; page says closed Mondays (定休日 月曜); not stated whether it opens on Monday holidays. First price row labelled 一般 (assumed men, next row is 女性)."
+ },
+ {
+  "id": "g-f99ce5762c",
+  "name": "D.Bouldering Tamachi",
+  "metro": "Tokyo",
+  "expect_h": "a77ad3668d4dbb61",
+  "website": "https://www.d-b-c.jp/top/tamachi/",
+  "hours": {
+   "mon": "7am–11pm",
+   "tue": "7am–11pm",
+   "wed": "7am–11pm",
+   "thu": "7am–11pm",
+   "fri": "7am–11pm",
+   "sat": "11am–9pm",
+   "sun": "11am–9pm"
+  },
+  "day_pass": "¥2,300 adult, ¥1,540 student",
+  "facilities": [
+   "training",
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.d-b-c.jp/top/tamachi/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.d-b-c.jp/top/tamachi/price/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Single-use hours (weekend 11-21; monthly-pass members from 9:00). Training board stated on page."
+ },
+ {
+  "id": "seed-431",
+  "name": "D.Bouldering Tsunashima",
+  "metro": "Tokyo",
+  "expect_h": "e75019a993af1169",
+  "website": "https://www.d-b-c.jp/top/tsunashima/",
+  "hours": {
+   "mon": "10am–11pm",
+   "tue": "10am–11pm",
+   "wed": "10am–11pm",
+   "thu": "10am–11pm",
+   "fri": "10am–11pm",
+   "sat": "10am–9pm",
+   "sun": "10am–9pm"
+  },
+  "day_pass": "¥2,090 adult weekday, ¥2,310 weekend/holiday; ¥1,650 student weekday",
+  "facilities": [
+   "kids",
+   "showers",
+   "training",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.d-b-c.jp/top/tsunashima/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.d-b-c.jp/top/tsunashima/facility/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Last entry 30 min before close. Shower room, Moonboard, kids area and rental shoes stated. Address matches."
+ },
+ {
+  "id": "g-478f41fdba",
+  "name": "D.Bouldering Yokohama",
+  "metro": "Tokyo",
+  "expect_h": "b24b6306b7b6ee69",
+  "website": "https://www.d-b-c.jp/top/yokohama/",
+  "hours": {
+   "mon": "10am–11pm",
+   "tue": "10am–11pm",
+   "wed": "10am–11pm",
+   "thu": "10am–11pm",
+   "fri": "10am–11pm",
+   "sat": "10am–9pm",
+   "sun": "10am–9pm"
+  },
+  "day_pass": "¥2,200 adult, ¥1,650 student",
+  "facilities": [
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.d-b-c.jp/top/yokohama/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.d-b-c.jp/top/yokohama/price/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Staffed hours used (10-23 weekday, 10-21 weekend/holiday); unstaffed access 6:00-26:00 also exists."
+ },
+ {
+  "id": "seed-449",
+  "name": "Energy Climbing Gym Urawa",
+  "metro": "Tokyo",
+  "expect_h": "989d97516a8fc58e",
+  "website": "https://energy-climbing.co.jp/urawa/",
+  "hours": {
+   "mon": "Closed",
+   "tue": "10:30am–10:30pm",
+   "wed": "10:30am–10:30pm",
+   "thu": "10:30am–10:30pm",
+   "fri": "10:30am–10:30pm",
+   "sat": "10am–9pm",
+   "sun": "10am–9pm"
+  },
+  "day_pass": "¥1,980 adult weekday, ¥2,310 weekend/holiday",
+  "facilities": [
+   "shoe-hire",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://energy-climbing.co.jp/urawa/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Closed Monday (next Tuesday if Monday is a holiday). A 2026-04-30 price-revision notice exists; the page table was used. On-site free parking for 17 cars."
+ },
+ {
+  "id": "g-90fa0f29e1",
+  "name": "Ever Free Climbing Gym",
+  "metro": "Tokyo",
+  "expect_h": "f7bff38e72114300",
+  "website": "https://everfree-climbing.com/",
+  "hours": {
+   "mon": "1pm–11pm",
+   "tue": "1pm–11pm",
+   "wed": "1pm–11pm",
+   "thu": "1pm–11pm",
+   "fri": "1pm–11pm",
+   "sat": "10am–8pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": "¥1,840 adult, ¥1,370 student",
+  "facilities": [
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://everfree-climbing.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://everfree-climbing.com/price/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Weekday 13:00-23:00, Sat/Sun/holiday 10:00-20:00. Kids School stated on home page. Weekday has cheaper time bands (1,520 until 18:00, 1,630 after); 1-day rate given."
+ },
+ {
+  "id": "seed-453",
+  "name": "Exciting Sancha",
+  "metro": "Tokyo",
+  "expect_h": "78f73f7416ebd171",
+  "website": "https://exciting-sancha.com/",
+  "hours": {
+   "mon": "1pm–10pm",
+   "tue": "1pm–10pm",
+   "wed": "1pm–10pm",
+   "thu": "1pm–10pm",
+   "fri": "1pm–10pm",
+   "sat": "10am–8pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": "¥3,000 day use (first visit by reservation)",
+  "facilities": [
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://exciting-sancha.com/about/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://exciting-sancha.com/fee/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Reservation-based gym; pass members have 24h access; staff not present some days after 17:00. Old members pay 2,200 (registered before June 2025). Kids School and rental shoes (500) stated."
+ },
+ {
+  "id": "seed-459",
+  "name": "Fish and Bird Toyocho",
+  "metro": "Tokyo",
+  "expect_h": "5da687a190b06800",
+  "website": "https://fish-bird.co.jp/fishandbird/",
+  "hours": {
+   "mon": "2pm–11pm",
+   "tue": "2pm–11pm",
+   "wed": "2pm–11pm",
+   "thu": "2pm–11pm",
+   "fri": "2pm–11pm",
+   "sat": "10am–9pm",
+   "sun": "10am–9pm"
+  },
+  "day_pass": null,
+  "facilities": [
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://fish-bird.co.jp/fishandbird/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours: weekday 14-23, Sat/Sun/holiday 10-21. Price table columns are ambiguous (3-hour pack / after 18:00 / 1-day; adult 1,650, 1,650, 1,980, 2,200) so day_pass left null. Kids school/wall and rental shoes (330) stated."
+ },
+ {
+  "id": "seed-412",
+  "name": "HEADROCK CLIMBING GYM",
+  "metro": "Tokyo",
+  "expect_h": "10f072b333598d01",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [],
+  "status": "not-found",
+  "notes": "Official site https://headrock-climbing.com/ returns HTTP 403 to automated fetches (curl and WebFetch); not bypassed, nothing fetched. Old domain headrock-climbing.jp is a for-sale parking page. Search snippets (not usable) suggest Mon-Fri 13:00-23:30, Sat/Sun/holiday 10:00-21:00."
+ },
+ {
+  "id": "seed-455",
+  "name": "J&S Nakano",
+  "metro": "Tokyo",
+  "expect_h": "1c40fc44f021a2de",
+  "website": "https://jandsnakano.wixsite.com/jandsnakano",
+  "hours": {
+   "mon": "Closed",
+   "tue": "2pm–11pm",
+   "wed": "2pm–11pm",
+   "thu": "2pm–11pm",
+   "fri": "2pm–11pm",
+   "sat": "12pm–8pm",
+   "sun": "12pm–8pm"
+  },
+  "day_pass": "¥2,400 adult (visitor use); ¥2,000 1-hour trial pack",
+  "facilities": [
+   "shoe-hire",
+   "shop"
+  ],
+  "sources": [
+   {
+    "url": "https://jandsnakano.wixsite.com/jandsnakano",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://jandsnakano.wixsite.com/jandsnakano/q-a",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Page: weekday 14-23, Sat/Sun/holiday 10-20 but 10-12 is Kids Time (no general use), so weekend general hours given as 12pm-8pm; closed Monday (open on holidays). Day pass: visitor rate 2,400 per Q&A; registered one-day rate shown only as 2,700 incl. registration. Shop = chalk sold at counter; rental shoes in Q&A."
+ },
+ {
+  "id": "seed-460",
+  "name": "Katsushika Sports Climbing Center",
+  "metro": "Tokyo",
+  "expect_h": "3ece16b5dea7b1a2",
+  "website": "https://spo.katsushika-web.net/facility/higashikanamachi-climbing/",
+  "hours": null,
+  "day_pass": "¥400 per 2 hours adult, ¥80 elementary/junior high",
+  "facilities": [
+   "shoe-hire",
+   "showers"
+  ],
+  "sources": [
+   {
+    "url": "https://spo.katsushika-web.net/facility/higashikanamachi-climbing/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://spo.katsushika-web.net/personal_guide/higashikanamachi-climbing/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Municipal facility. Individual use only Tue/Thu/Sat/Sun and holidays, 9:00-21:00 (last entry 20:15); other days group/rental use, so hours left null. Closed 2nd Wednesday monthly (city page). Rental shoes 100."
+ },
+ {
+  "id": "g-08c7cff32d",
+  "name": "NOBOROCK Asakusa",
+  "metro": "Tokyo",
+  "expect_h": "c7e39ccb145d4962",
+  "website": "https://noborock-climbing.com/program/%e6%b5%85%e8%8d%89%e5%ba%97/",
+  "hours": {
+   "mon": "10am–11pm",
+   "tue": "10am–11pm",
+   "wed": "10am–11pm",
+   "thu": "10am–11pm",
+   "fri": "10am–11pm",
+   "sat": "10am–9pm",
+   "sun": "10am–9pm"
+  },
+  "day_pass": "¥1,890 men / ¥1,490 women weekday, ¥2,190 / ¥1,690 weekend; ¥1,390 student weekday",
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://noborock-climbing.com/program/%e6%b5%85%e8%8d%89%e5%ba%97/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://noborock-climbing.com/%E6%96%99%E9%87%91%E3%83%97%E3%83%A9%E3%83%B3/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Prices and shoe rental (300) from the chain-wide NOBOROCK price page. Weekday 10-23, Sat/Sun/holiday 10-21. Address on location page matches."
+ },
+ {
+  "id": "g-e5ab905c5c",
+  "name": "NOBOROCK Ikebukuro",
+  "metro": "Tokyo",
+  "expect_h": "662c6e4b878c65f1",
+  "website": "https://noborock-climbing.com/program/ikebukuro/",
+  "hours": {
+   "mon": "10am–11pm",
+   "tue": "10am–11pm",
+   "wed": "10am–11pm",
+   "thu": "10am–11pm",
+   "fri": "10am–11pm",
+   "sat": "10am–9pm",
+   "sun": "10am–9pm"
+  },
+  "day_pass": "¥1,890 men / ¥1,490 women weekday, ¥2,190 / ¥1,690 weekend; ¥1,390 student weekday",
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://noborock-climbing.com/program/ikebukuro/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://noborock-climbing.com/%E6%96%99%E9%87%91%E3%83%97%E3%83%A9%E3%83%B3/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Prices and shoe rental (300) from the chain-wide NOBOROCK price page. Weekday 10-23, Sat/Sun/holiday 10-21. Address matches."
+ },
+ {
+  "id": "g-510f6bfacd",
+  "name": "NOBOROCK Machida",
+  "metro": "Tokyo",
+  "expect_h": "0ad160f7deedd5cf",
+  "website": "https://noborock-climbing.com/program/machida/",
+  "hours": {
+   "mon": "10am–11pm",
+   "tue": "10am–11pm",
+   "wed": "10am–11pm",
+   "thu": "10am–11pm",
+   "fri": "10am–11pm",
+   "sat": "10am–9pm",
+   "sun": "10am–9pm"
+  },
+  "day_pass": "¥1,890 men / ¥1,490 women weekday, ¥2,190 / ¥1,690 weekend; ¥1,390 student weekday",
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://noborock-climbing.com/program/machida/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://noborock-climbing.com/%E6%96%99%E9%87%91%E3%83%97%E3%83%A9%E3%83%B3/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Prices and shoe rental (300) from the chain-wide NOBOROCK price page. Weekday 10-23, Sat/Sun/holiday 10-21. Address matches."
+ },
+ {
+  "id": "g-d5c04e7c5b",
+  "name": "NOBOROCK Mizonokuchi",
+  "metro": "Tokyo",
+  "expect_h": "28121ac1b6f64523",
+  "website": "https://noborock-climbing.com/program/mizonokuchi/",
+  "hours": {
+   "mon": "10am–11pm",
+   "tue": "10am–11pm",
+   "wed": "Closed",
+   "thu": "10am–11pm",
+   "fri": "10am–11pm",
+   "sat": "10am–8pm",
+   "sun": "10am–7pm"
+  },
+  "day_pass": "¥1,890 men / ¥1,490 women weekday, ¥2,190 / ¥1,690 weekend; ¥1,390 student weekday",
+  "facilities": [
+   "shoe-hire",
+   "showers"
+  ],
+  "sources": [
+   {
+    "url": "https://noborock-climbing.com/program/mizonokuchi/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://noborock-climbing.com/%E6%96%99%E9%87%91%E3%83%97%E3%83%A9%E3%83%B3/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Inside Central Sports building; location page: shower and jacuzzi, closed Wednesday, Sat 10-20, Sun/holiday 10-19. Prices and shoe rental from the chain-wide price page (location page does not restate them)."
+ },
+ {
+  "id": "seed-450",
+  "name": "NOBOROCK Omiya",
+  "metro": "Tokyo",
+  "expect_h": "9432a12ed7c1d92f",
+  "website": "https://noborock-climbing.com/program/omiya/",
+  "hours": {
+   "mon": "10am–11pm",
+   "tue": "10am–11pm",
+   "wed": "10am–11pm",
+   "thu": "10am–11pm",
+   "fri": "10am–11pm",
+   "sat": "10am–9pm",
+   "sun": "10am–9pm"
+  },
+  "day_pass": "¥1,890 men / ¥1,490 women weekday, ¥2,190 / ¥1,690 weekend; ¥1,390 student weekday",
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://noborock-climbing.com/program/omiya/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://noborock-climbing.com/%E6%96%99%E9%87%91%E3%83%97%E3%83%A9%E3%83%B3/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Prices and shoe rental (300) from the chain-wide NOBOROCK price page. Weekday 10-23, Sat/Sun/holiday 10-21. Address matches."
+ }
+]

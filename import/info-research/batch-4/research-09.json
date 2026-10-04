@@ -1,0 +1,923 @@
+[
+ {
+  "id": "seed-1255",
+  "name": "9a Poblenou Climbing - Rocòdrom Barcelona",
+  "metro": "Barcelona",
+  "expect_h": "3d4b921bbcf58ca0",
+  "website": "https://www.9poble9.cat/",
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [
+   {
+    "url": "https://www.9poble9.cat/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   }
+  ],
+  "status": "website-only",
+  "notes": "Official site found via search (page title \"9a poblenou\") but the fetched page is an empty placeholder (HTTP 200, blank body, TLS certificate mismatch); no hours, prices or facilities readable. Third-party listings not used."
+ },
+ {
+  "id": "seed-1256",
+  "name": "Bloc District - Barcelona Marina",
+  "metro": "Barcelona",
+  "expect_h": "8641702ddc4fff5c",
+  "website": "https://www.blocdistrict.com/es/marina/",
+  "hours": {
+   "mon": "8am–10pm",
+   "tue": "8am–10pm",
+   "wed": "8am–10pm",
+   "thu": "8am–10pm",
+   "fri": "8am–10pm",
+   "sat": "10am–8pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": "€15 adult",
+  "facilities": [
+   "cafe",
+   "training",
+   "shoe-hire",
+   "shop",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.blocdistrict.com/es/marina/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.blocdistrict.com/es/contacto/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.blocdistrict.com/es/tarifas-y-actividades/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.blocdistrict.com/es/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours from Contacto page (Horario Marina). Day pass is Entrada puntual (Marina, bouldering). Shop mention is on the chain homepage; kids = Actividades infantiles / Extraescolar Marina; shoe hire = Lloguer EUR 5."
+ },
+ {
+  "id": "seed-1257",
+  "name": "Bloc District - Barcelona Tetuan",
+  "metro": "Barcelona",
+  "expect_h": "b19c122d2f0047aa",
+  "website": "https://www.blocdistrict.com/es/tetuan/",
+  "hours": {
+   "mon": "7am–10pm",
+   "tue": "7am–10pm",
+   "wed": "7am–10pm",
+   "thu": "7am–10pm",
+   "fri": "7am–10pm",
+   "sat": "9am–9pm",
+   "sun": "9am–9pm"
+  },
+  "day_pass": "€15 adult",
+  "facilities": [
+   "cafe",
+   "training",
+   "shoe-hire",
+   "shop",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.blocdistrict.com/es/tetuan/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.blocdistrict.com/es/contacto/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.blocdistrict.com/es/tarifas-y-actividades/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.blocdistrict.com/es/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours from Contacto page (Horario Tetuan). Site describes Tetuan as a rope-climbing gym (autobelays, 120+ routes); our record types list bouldering only. Day pass is Tetuan Entrada puntual; shop mention is on the chain homepage."
+ },
+ {
+  "id": "seed-1258",
+  "name": "Climbat - La Foixarda Barcelona",
+  "metro": "Barcelona",
+  "expect_h": "962c90ef4cfd12b6",
+  "website": "https://climbat.com/centro/la-foixarda/",
+  "hours": {
+   "mon": "9am–11pm",
+   "tue": "9am–11pm",
+   "wed": "9am–11pm",
+   "thu": "9am–11pm",
+   "fri": "9am–11pm",
+   "sat": "10am–9pm",
+   "sun": "10am–9pm"
+  },
+  "day_pass": "€13.90 adult",
+  "facilities": [
+   "cafe",
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://climbat.com/centro/la-foixarda/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://climbat.com/wp-content/uploads/2026/07/TARIFA_BARCELONA_ESP26_compressed.pdf",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "hours",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Day pass is Entrada 1 dia, full schedule, from the 2026 tariff PDF on the gym site (child/youth rates listed separately). Cafe: site text mentions the cafeteria (parents school); kids = escuela infantil and birthdays; shoe hire = pies de gato EUR 3.65."
+ },
+ {
+  "id": "g-a59db58713",
+  "name": "Geo Boulder - Terrassa",
+  "metro": "Barcelona",
+  "expect_h": "2f5e67b6b267f60c",
+  "website": "https://geoboulder.es/",
+  "hours": null,
+  "day_pass": "€10 adult, €8 reduced",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://geoboulder.es/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://geoboulder.es/catalogo&lang=esp",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://geoboulder.es/contacto&lang=esp",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Contact page shows only a temporary August schedule, so hours null. Day pass is Entrada simple Dia 10 / 8 EUR (discount groups: minors 6-16, students to 25, families, over 65). Cafe = zona de bar; training = Kilter board, campus board, gimnasio; kids = extraescolares and birthday parties."
+ },
+ {
+  "id": "seed-1259",
+  "name": "Indoorwall - El Clot, Barcelona",
+  "metro": "Barcelona",
+  "expect_h": "418ca2820895947a",
+  "website": "https://www.indoorwall.com/en/indoorwall-climbing-gyms/indoorwall-el-clot-barcelona/",
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [
+   {
+    "url": "https://www.indoorwall.com/en/indoorwall-climbing-gyms/indoorwall-el-clot-barcelona/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   }
+  ],
+  "status": "website-only",
+  "notes": "Official location page URL found via search, but indoorwall.com blocks automated clients (Cloudflare HTTP 403 via WebFetch and curl); no content could be read, so no hours, price or facilities."
+ },
+ {
+  "id": "g-08aaf7046f",
+  "name": "Kimera Climbing - Gavà",
+  "metro": "Barcelona",
+  "expect_h": "d558ac2e0021ddc3",
+  "website": "https://kimeraclimbingbcn.com/",
+  "hours": {
+   "mon": "9:30am–10pm",
+   "tue": "9:30am–10pm",
+   "wed": "9:30am–10pm",
+   "thu": "9:30am–10pm",
+   "fri": "9:30am–10pm",
+   "sat": "10am–8pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": null,
+  "facilities": [
+   "cafe",
+   "training",
+   "showers",
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://kimeraclimbingbcn.com/en/rates/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://kimeraclimbingbcn.com/en/facilities/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Rates page shows only Regular EUR 42.50 / student 32.50 / minors-morning 28.50 under the Entrada puntual heading, but the pack/month tab panes are not distinguishable and 42.50 looks like a monthly pass, so day_pass null. Facilities: bar, gym (Moonboard, campus), changing room with showers, material rental, extracurricular kids classes."
+ },
+ {
+  "id": "seed-1260",
+  "name": "Monobloc - La Sagrera, Barcelona",
+  "metro": "Barcelona",
+  "expect_h": "b74867088140ba42",
+  "website": "https://www.monobloc.es/la-sagrera",
+  "hours": {
+   "mon": "9am–10pm",
+   "tue": "9am–10pm",
+   "wed": "9am–10pm",
+   "thu": "9am–10pm",
+   "fri": "9am–10pm",
+   "sat": "10am–8pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": "€13 adult, €9 weekday morning",
+  "facilities": [
+   "cafe",
+   "training",
+   "showers",
+   "shoe-hire",
+   "shop"
+  ],
+  "sources": [
+   {
+    "url": "https://www.monobloc.es/ca/la-sagrera",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Site lists Kilterboard, campus, gimnas, dutxes, botiga, bar and cat-feet rental EUR 3. Kids key omitted: gym states there is no kids zone. A one-day holiday exception (12 Oct) ignored."
+ },
+ {
+  "id": "seed-1261",
+  "name": "Monobloc - Sants, Barcelona",
+  "metro": "Barcelona",
+  "expect_h": "4adc272c9eb9b1e3",
+  "website": "https://www.monobloc.es/sants",
+  "hours": {
+   "mon": "9am–10pm",
+   "tue": "9am–10pm",
+   "wed": "9am–10pm",
+   "thu": "9am–10pm",
+   "fri": "9am–10pm",
+   "sat": "10am–9pm",
+   "sun": "10am–9pm"
+  },
+  "day_pass": "€13 adult, €9 weekday morning",
+  "facilities": [
+   "training",
+   "showers",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.monobloc.es/sants",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Facilities listed: zona de entreno, Kilterboard XXL, Moonboard, duchas personales, pies de gato rental EUR 3. A member shop discount is mentioned but no shop is listed, so shop omitted; no bar listed; no kids zone."
+ },
+ {
+  "id": "g-1e9a7aa578",
+  "name": "Sala Batec - Sabadell",
+  "metro": "Barcelona",
+  "expect_h": "306ffb104b911d24",
+  "website": "https://salabatec.com/",
+  "hours": {
+   "mon": "9:30am–10pm",
+   "tue": "9:30am–10pm",
+   "wed": "9:30am–10pm",
+   "thu": "9:30am–10pm",
+   "fri": "9:30am–10pm",
+   "sat": "10am–8pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": "€12 adult, €10 minors/students",
+  "facilities": [
+   "cafe",
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://salabatec.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://salabatec.com/sab-tarifes/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "day_pass"
+    ]
+   },
+   {
+    "url": "https://salabatec.com/sab-contacte/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours are the stated access hours (weekends and holidays 10-20) on the Sabadell tariff page. Facilities: zona infantil, bar and terrace, equipment rental."
+ },
+ {
+  "id": "seed-1262",
+  "name": "Sharma Climbing - Barcelona",
+  "metro": "Barcelona",
+  "expect_h": "c875857038992a56",
+  "website": "https://sharmaclimbing.com/en/spain/barcelona-poble-nou/",
+  "hours": null,
+  "day_pass": "€15 adult, €13 reduced",
+  "facilities": [
+   "cafe",
+   "training",
+   "yoga",
+   "shop",
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://sharmaclimbing.com/en/spain/barcelona-poble-nou/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://sharmaclimbing.com/en/spain/barcelona-poble-nou/schedules-and-rates/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   },
+   {
+    "url": "https://sharmaclimbing.com/en/spain/barcelona-poble-nou/climbing-gym/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://sharmaclimbing.com/en/spain/barcelona-poble-nou/first-experience/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://sharmaclimbing.com/en/spain/barcelona-poble-nou/kids/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Opening hours not shown on the fetched pages (rules page says hours are in the footer/Google profile), so null. Reduced rate is under 18 / students under 25. Site gives address as Carrer del Marroc 206."
+ },
+ {
+  "id": "g-79ffabdd90",
+  "name": "Sharma Climbing - Gavà",
+  "metro": "Barcelona",
+  "expect_h": "d8c0a625a3437d88",
+  "website": "https://sharmaclimbing.com/en/spain/barcelona-gava/",
+  "hours": null,
+  "day_pass": "€16 adult, €14 reduced",
+  "facilities": [
+   "cafe",
+   "training",
+   "yoga",
+   "shop",
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://sharmaclimbing.com/en/spain/barcelona-gava/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://sharmaclimbing.com/en/spain/barcelona-gava/schedules-and-rates/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   },
+   {
+    "url": "https://sharmaclimbing.com/en/spain/barcelona-gava/climbing-gym/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://sharmaclimbing.com/en/spain/barcelona-gava/first-experience/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://sharmaclimbing.com/en/spain/barcelona-gava/kids/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://sharmaclimbing.com/en/spain/barcelona-gava/fitness/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Opening hours not shown on the fetched pages, so null. Reduced rate is under 18 / students under 25; a weekday morning entry (EUR 13) also exists."
+ },
+ {
+  "id": "seed-1345",
+  "name": "Boulder Center Pasila",
+  "metro": "Helsinki",
+  "expect_h": "4ab36504c84e0e9e",
+  "website": "https://www.boulderkeskus.com/en/content/73-bk-pasila",
+  "hours": {
+   "mon": "10am–9pm",
+   "tue": "10am–9pm",
+   "wed": "10am–9pm",
+   "thu": "10am–9pm",
+   "fri": "10am–9pm",
+   "sat": "12pm–6pm",
+   "sun": "12pm–6pm"
+  },
+  "day_pass": "€13 adult, €11 weekdays 10am–3pm",
+  "facilities": [
+   "training",
+   "showers",
+   "shop",
+   "cafe",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.boulderkeskus.com/en/content/73-bk-pasila",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://boulderkeskus.com/en/content/7-opening-hours",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://boulderkeskus.com/en/content/6-pricing",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Listed here as Boulder Center Pasila; operator calls it BK Pasila (Boulderkeskus), Veturitallinkuja 4, address matches. Regular hours used (summer 2026 reduced hours ended 16 Aug). Cafe = coffee, cold drinks and snacks; shoe rental EUR 4 from pricing page."
+ },
+ {
+  "id": "seed-1346",
+  "name": "Boulderkeskus - Herttoniemi",
+  "metro": "Helsinki",
+  "expect_h": "adaa73f7571a6972",
+  "website": "https://www.boulderkeskus.com/en/content/72-bk-herttoniemi",
+  "hours": {
+   "mon": "10am–9pm",
+   "tue": "10am–9pm",
+   "wed": "10am–9pm",
+   "thu": "10am–9pm",
+   "fri": "10am–9pm",
+   "sat": "12pm–6pm",
+   "sun": "12pm–6pm"
+  },
+  "day_pass": "€13 adult, €11 weekdays 10am–3pm",
+  "facilities": [
+   "training",
+   "kids",
+   "showers",
+   "shop",
+   "cafe",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.boulderkeskus.com/en/content/72-bk-herttoniemi",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://boulderkeskus.com/en/content/7-opening-hours",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://boulderkeskus.com/en/content/6-pricing",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Regular hours used (summer 2026 reduced hours ended 16 Aug). Facilities: Kilter Board, gym, kids climbing area, showers, shop, coffee/snacks; shoe rental EUR 4 from pricing page."
+ },
+ {
+  "id": "seed-1347",
+  "name": "Boulderkeskus Kino",
+  "metro": "Helsinki",
+  "expect_h": "859f3788478fcdf5",
+  "website": "https://www.boulderkeskus.com/en/content/14-bk-kino",
+  "hours": null,
+  "day_pass": null,
+  "facilities": [
+   "training",
+   "showers"
+  ],
+  "sources": [
+   {
+    "url": "https://www.boulderkeskus.com/en/content/14-bk-kino",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://boulderkeskus.com/en/content/7-opening-hours",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://boulderkeskus.com/en/content/6-pricing",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Kino is access with Premium card, Collective or Kino yearly membership only (24/7); no staffed public hours and no single-entry price, so hours and day_pass null. Facilities: spray wall, gym equipment, campus board, MoonBoard, showers."
+ },
+ {
+  "id": "seed-1348",
+  "name": "Boulderkeskus Konala",
+  "metro": "Helsinki",
+  "expect_h": "e5394b423625d1e8",
+  "website": "https://www.boulderkeskus.com/en/content/71-bk-konala",
+  "hours": {
+   "mon": "10am–9pm",
+   "tue": "10am–9pm",
+   "wed": "10am–9pm",
+   "thu": "10am–9pm",
+   "fri": "10am–9pm",
+   "sat": "10am–6pm",
+   "sun": "10am–6pm"
+  },
+  "day_pass": "€13 adult, €11 weekdays 10am–3pm",
+  "facilities": [
+   "training",
+   "kids",
+   "showers",
+   "shop",
+   "cafe",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.boulderkeskus.com/en/content/71-bk-konala",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://boulderkeskus.com/en/content/7-opening-hours",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://boulderkeskus.com/en/content/6-pricing",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Regular hours used (summer 2026 reduced hours ended 16 Aug). Facilities: Tension Board 2, fitness gym, campus board, kids climbing area, showers, shop, coffee/snacks; shoe rental EUR 4 from pricing page."
+ },
+ {
+  "id": "seed-1349",
+  "name": "Helsinki Climbing Center",
+  "metro": "Helsinki",
+  "expect_h": "f61426826c245d3f",
+  "website": "https://kiipeilykeskus.com/",
+  "hours": {
+   "mon": "9am–10pm",
+   "tue": "9am–10pm",
+   "wed": "9am–10pm",
+   "thu": "9am–10pm",
+   "fri": "9am–10pm",
+   "sat": "10am–8pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": "€14 adult peak/weekend, €11 weekday off-peak",
+  "facilities": [
+   "shop",
+   "shoe-hire",
+   "kids",
+   "training"
+  ],
+  "sources": [
+   {
+    "url": "https://kiipeilykeskus.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://kiipeilykeskus.com/hinnasto/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://kiipeilykeskus.com/tilat/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://kiipeilykeskus.com/info/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Listed as Helsinki Climbing Center; operator is Helsingin Kiipeilykeskus, Erätie 3, address matches. Day pass excludes equipment; off-peak = weekdays 9-16 or after 20, peak = weekdays 16-20 and weekends; child EUR 8. Special closure 16-17 Oct 2026 ignored. Training = spray wall."
+ },
+ {
+  "id": "seed-1350",
+  "name": "Kiipeilyareena - Kalasatama",
+  "metro": "Helsinki",
+  "expect_h": "38b1eba691c46fb9",
+  "website": "https://kiipeilyareena.com/halli/kalasatama/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "10am–8pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": "€17 adult, €13.50 weekdays before 3pm",
+  "facilities": [
+   "shop",
+   "training",
+   "cafe",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://kiipeilyareena.com/halli/kalasatama/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://kiipeilyareena.com/hinnat/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Member-only morning hours (Wed-Fri 8-10) ignored. Training = campus board, finger boards, training wall, top-floor gym."
+ },
+ {
+  "id": "seed-1351",
+  "name": "KiipeilyAreena Ristikko - Konala",
+  "metro": "Helsinki",
+  "expect_h": "f00f43eb555ad6cd",
+  "website": "https://kiipeilyareena.com/halli/ristikko/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "10am–8pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": "€17 adult, €13.50 weekdays before 3pm",
+  "facilities": [
+   "shop",
+   "training",
+   "cafe",
+   "shoe-hire",
+   "kids",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://kiipeilyareena.com/halli/ristikko/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://kiipeilyareena.com/hinnat/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   },
+   {
+    "url": "https://kiipeilyareena.com/ryhmat/lasten-syntymapaivat/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Member-only morning hours ignored; restaurant hours (Fri/Sat) are separate. Parking = 2 hours free in the Ristikko shopping centre car park. Kids = birthday parties (offered only at Ristikko). Training = Kilter, spray wall, member gym."
+ },
+ {
+  "id": "seed-1352",
+  "name": "KiipeilyAreena Salmisaari",
+  "metro": "Helsinki",
+  "expect_h": "4d3966008418a196",
+  "website": "https://kiipeilyareena.com/halli/salmisaari/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "10am–8pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": "€17 adult, €13.50 weekdays before 3pm",
+  "facilities": [
+   "shop",
+   "training",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://kiipeilyareena.com/halli/salmisaari/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://kiipeilyareena.com/hinnat/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Member-only morning hours ignored. Sauna and changing rooms exist but are not list keys. Training = member gym."
+ }
+]

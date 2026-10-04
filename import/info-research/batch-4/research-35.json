@@ -1,0 +1,229 @@
+[
+ {
+  "id": "seed-364",
+  "name": "Movement Mountain View",
+  "metro": "San Jose",
+  "expect_h": "bf3f52dbe6bb4083",
+  "website": "https://movementgyms.com/mountain-view/",
+  "hours": {
+   "mon": "6am–11pm",
+   "tue": "6am–11pm",
+   "wed": "6am–11pm",
+   "thu": "6am–11pm",
+   "fri": "6am–11pm",
+   "sat": "8am–8pm",
+   "sun": "8am–6pm"
+  },
+  "day_pass": null,
+  "facilities": [
+   "training",
+   "kids",
+   "yoga",
+   "shop",
+   "showers",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://movementgyms.com/mountain-view/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Location page lists no day-pass price (chain-wide movementgyms.com/memberships-passes/ says $35 but is not location-specific), so day_pass null. Shoe hire not stated on this location page. Facilities from highlights/FAQ: Kilter & TB2 boards, kids' climbing area, yoga studio, gear shop, locker rooms with showers, free parking."
+ },
+ {
+  "id": "seed-365",
+  "name": "Movement Santa Clara",
+  "metro": "San Jose",
+  "expect_h": "47504ecc43629d7b",
+  "website": "https://movementgyms.com/santa-clara/",
+  "hours": {
+   "mon": "6am–11pm",
+   "tue": "6am–11pm",
+   "wed": "6am–11pm",
+   "thu": "6am–11pm",
+   "fri": "6am–11pm",
+   "sat": "8am–8pm",
+   "sun": "8am–6pm"
+  },
+  "day_pass": "$35 adult, $30 student (M-F before 5pm), $25 child",
+  "facilities": [
+   "training",
+   "kids",
+   "yoga",
+   "shop",
+   "showers",
+   "parking",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://movementgyms.com/santa-clara/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Rental gear: climbing shoes $6. Fitness space with weight and cardio equipment counted as training."
+ },
+ {
+  "id": "seed-366",
+  "name": "Movement Sunnyvale",
+  "metro": "San Jose",
+  "expect_h": "03397c8625685118",
+  "website": "https://movementgyms.com/sunnyvale/",
+  "hours": {
+   "mon": "6am–11pm",
+   "tue": "6am–11pm",
+   "wed": "6am–11pm",
+   "thu": "6am–11pm",
+   "fri": "6am–11pm",
+   "sat": "8am–8pm",
+   "sun": "8am–6pm"
+  },
+  "day_pass": "$35 adult, $30 student (M-F before 5pm), $25 child",
+  "facilities": [
+   "training",
+   "kids",
+   "yoga",
+   "shop",
+   "showers",
+   "parking",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://movementgyms.com/sunnyvale/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Training: two MoonBoards and fitness space. Kids inferred only from a 'Kids Climb Time' class on the location page and the under-13 child day pass; drop kids if stricter evidence needed. Rental shoes $6."
+ },
+ {
+  "id": "seed-391",
+  "name": "The Peak of Fremont",
+  "metro": "San Jose",
+  "expect_h": "088ec94d86c05d1f",
+  "website": "https://thepeakoffremont.com/",
+  "hours": {
+   "mon": "12pm–10pm",
+   "tue": "12pm–10pm",
+   "wed": "12pm–10pm",
+   "thu": "12pm–10pm",
+   "fri": "12pm–10pm",
+   "sat": "10am–6pm",
+   "sun": "10am–6pm"
+  },
+  "day_pass": "$30 adult (weekdays after 4pm, weekends), $22.50 early bird",
+  "facilities": [
+   "training",
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://thepeakoffremont.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://thepeakoffremont.com/climbing/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://thepeakoffremont.com/amenities/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://thepeakoffremont.com/plan-a-visit/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Early bird $22.50 is weekdays before 4pm. Training = fitness equipment + Kilterboard (amenities page). Kids = youth programs/parties on site. Shoe rental $6 (daily rates). Shop link is merch only, so omitted."
+ },
+ {
+  "id": "seed-394",
+  "name": "The Studio",
+  "metro": "San Jose",
+  "expect_h": "1cd5dab2e1e330a9",
+  "website": "https://touchstoneclimbing.com/the-studio/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "10am–5pm",
+   "sun": "10am–5pm"
+  },
+  "day_pass": "$30 adult after 3pm, $25 before 3pm M-F, $25 kids 12 and under",
+  "facilities": [
+   "training",
+   "kids",
+   "yoga",
+   "shop",
+   "showers",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://touchstoneclimbing.com/the-studio/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://touchstoneclimbing.com/the-studio/tour-and-amenities/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://touchstoneclimbing.com/the-studio/first-timers/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Touchstone Climbing location page. A $10 Access to Climbing tier (EBT/MediCal with ID) also exists. Kids: Climbing with Kids + youth programs. Parking only referenced via a link, omitted. The thestudiosj.com domain is an unrelated photography studio."
+ }
+]

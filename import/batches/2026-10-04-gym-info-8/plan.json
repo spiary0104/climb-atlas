@@ -1,0 +1,3702 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-04-gym-info-8",
+ "index": {
+  "sha256": "fef143b83a8ca86eccca259c9ba25b6291c0651e7193a58ba5ef462782cdec73",
+  "count": 2340,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [],
+ "counts": {
+  "records": 97,
+  "new": 0,
+  "existing": 0,
+  "update": 97,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "11e2494b26a167639421add407a4d582b28a74a764db401421253c47e9f4ce74",
+ "records": [
+  {
+   "line": 1,
+   "class": "update",
+   "id": "seed-1363",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://awesomewalls.ie/dublin/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "10am–8pm",
+      "sun": "10am–8pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "€20 adult, €17 concession (non-member pay as you go)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "shoe-hire",
+      "shop"
+     ]
+    }
+   ],
+   "expect_h": "973e65ba0f0719a5",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 2,
+   "class": "update",
+   "id": "seed-1359",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://blocdublin.ie/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "11am–10pm",
+      "tue": "11am–10pm",
+      "wed": "11am–10pm",
+      "thu": "11am–10pm",
+      "fri": "11am–10pm",
+      "sat": "11am–8pm",
+      "sun": "11am–8pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "€14.50 adult, €12.50 concession"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "fe035d8104cf3d6c",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 3,
+   "class": "update",
+   "id": "seed-1360",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.gravityclimbing.ie/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12pm–10pm",
+      "tue": "12pm–10pm",
+      "wed": "12pm–10pm",
+      "thu": "12pm–10pm",
+      "fri": "12pm–10pm",
+      "sat": "10am–8pm",
+      "sun": "10am–8pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "€14.50 adult peak, €12.50 off-peak"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "kids",
+      "shoe-hire",
+      "shop"
+     ]
+    }
+   ],
+   "expect_h": "0ab4c5cd020329ee",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 4,
+   "class": "update",
+   "id": "seed-1361",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.dublinclimbingcentre.ie/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "11am–10pm",
+      "tue": "11am–10pm",
+      "wed": "11am–10pm",
+      "thu": "11am–10pm",
+      "fri": "12pm–10pm",
+      "sat": "10am–8pm",
+      "sun": "10am–8pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "€15.50 adult, €12.50 bouldering only/student/senior"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "9c2731d21e2c3bb2",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 5,
+   "class": "update",
+   "id": "seed-1593",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://iclimb.co.il/kfar_saba/%D7%A8%D7%90%D7%A9%D7%99/"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids"
+     ]
+    }
+   ],
+   "expect_h": "28a09f283311d019",
+   "update_reason": "Official website, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 6,
+   "class": "update",
+   "id": "g-ac215a02d6",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://iclimb-rishon.co.il/"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire",
+      "showers"
+     ]
+    }
+   ],
+   "expect_h": "54af868dd5be9da6",
+   "update_reason": "Official website, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 7,
+   "class": "update",
+   "id": "seed-1596",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://monkeysclimbinggym.co.il/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–10:30pm",
+      "tue": "9am–10:30pm",
+      "wed": "10am–10:30pm",
+      "thu": "10am–10:30pm",
+      "fri": "9am–5pm",
+      "sat": "10am–10pm",
+      "sun": "10am–10:30pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "₪79 adult (bouldering), ₪69 soldier/student"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "kids",
+      "shoe-hire",
+      "shop"
+     ]
+    }
+   ],
+   "expect_h": "51f61c2814c50356",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 8,
+   "class": "update",
+   "id": "g-23cfa74ce8",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://performancerock.co.il/branch/midtown-tlv/"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "kids",
+      "yoga"
+     ]
+    }
+   ],
+   "expect_h": "d57950d33b0f9cae",
+   "update_reason": "Official website, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 9,
+   "class": "update",
+   "id": "g-4e37aad496",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.thebloc.co.il/en/tlv"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "8am–11pm",
+      "tue": "9am–11pm",
+      "wed": "9am–11pm",
+      "thu": "8am–11pm",
+      "fri": "10am–4pm",
+      "sat": "10am–10pm",
+      "sun": "4pm–11pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "₪65 adult (from 3pm and weekends), ₪55 until 3pm"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "0a5b7e28fda0bb32",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 10,
+   "class": "update",
+   "id": "g-6e5ed8fefe",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.uclimb-en.com/rehovotb"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "4pm–11pm",
+      "tue": "4pm–11pm",
+      "wed": "4pm–11pm",
+      "thu": "4pm–11pm",
+      "fri": "11am–4pm",
+      "sat": "4pm–9pm",
+      "sun": "4pm–11pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "₪75 adult"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "57831103c57c3f54",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 11,
+   "class": "update",
+   "id": "seed-1597",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://vengavenga.co.il/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "3pm–11pm",
+      "tue": "3pm–11pm",
+      "wed": "3pm–11pm",
+      "thu": "3pm–11pm",
+      "fri": "10am–6pm",
+      "sat": "12pm–10pm",
+      "sun": "3pm–11pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "₪75 adult, ₪70 student/soldier"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shoe-hire",
+      "shop"
+     ]
+    }
+   ],
+   "expect_h": "586dead9e2de81c3",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 12,
+   "class": "update",
+   "id": "g-0a211b9124",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://vking.co.il/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "7am–11pm",
+      "tue": "7am–11pm",
+      "wed": "3pm–11pm",
+      "thu": "7am–11pm",
+      "fri": "9am–5pm",
+      "sat": "12pm–10pm",
+      "sun": "7am–11pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "₪65 daily entry"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shop"
+     ]
+    }
+   ],
+   "expect_h": "9d89acec553148f6",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 13,
+   "class": "update",
+   "id": "seed-1133",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.ramblavertical.it/wp/"
+    }
+   ],
+   "expect_h": "f7eb7d3a1f1c3df6",
+   "update_reason": "Official website from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 14,
+   "class": "update",
+   "id": "seed-1135",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://monkeyislandroma.com/site/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "8am–11pm",
+      "tue": "8am–11pm",
+      "wed": "8am–11pm",
+      "thu": "8am–11pm",
+      "fri": "8am–11pm",
+      "sat": "9am–8pm",
+      "sun": "10am–7pm"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids"
+     ]
+    }
+   ],
+   "expect_h": "f45780c582f08de1",
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 15,
+   "class": "update",
+   "id": "seed-1136",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://movimentoverticale.it/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "€10 single entry"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids"
+     ]
+    }
+   ],
+   "expect_h": "5d28a57fef94abff",
+   "update_reason": "Official website, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 16,
+   "class": "update",
+   "id": "seed-1137",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.rockit-arrampicataroma.it/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "8am–11pm",
+      "tue": "8am–11pm",
+      "wed": "8am–11pm",
+      "thu": "8am–11pm",
+      "fri": "8am–11pm",
+      "sat": "10am–7pm",
+      "sun": "10am–7pm"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "kids"
+     ]
+    }
+   ],
+   "expect_h": "9176c24f7ef42c22",
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 17,
+   "class": "update",
+   "id": "seed-1138",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.starwall.it/"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids"
+     ]
+    }
+   ],
+   "expect_h": "9bce2b357f5b6e9a",
+   "update_reason": "Official website, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 18,
+   "class": "update",
+   "id": "seed-407",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://pump-climbing.com/gym/bpump/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "1pm–11pm",
+      "tue": "1pm–11pm",
+      "wed": "1pm–11pm",
+      "thu": "1pm–11pm",
+      "fri": "1pm–11pm",
+      "sat": "10am–9pm",
+      "sun": "10am–9pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,530 adult, ¥1,870 student"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "b89c054e7dfcd69a",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 19,
+   "class": "update",
+   "id": "seed-406",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://pump-climbing.com/gym/akiba/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12pm–11pm",
+      "tue": "12pm–11pm",
+      "wed": "12pm–11pm",
+      "thu": "12pm–11pm",
+      "fri": "12pm–11pm",
+      "sat": "11am–9pm",
+      "sun": "10am–9pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,420 adult, ¥1,870 student"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "8da6e0e4a2e118f0",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 20,
+   "class": "update",
+   "id": "g-9d6058b392",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://pump-climbing.com/gym/bpump2/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "1pm–11pm",
+      "tue": "1pm–11pm",
+      "wed": "1pm–11pm",
+      "thu": "1pm–11pm",
+      "fri": "1pm–11pm",
+      "sat": "11am–9pm",
+      "sun": "10am–9pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,420 adult, ¥1,870 student"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "1d60d171224021f4",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 21,
+   "class": "update",
+   "id": "g-150d4e4fca",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://b-camp.jp/edogawabashi/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12pm–11pm",
+      "tue": "12pm–11pm",
+      "wed": "12pm–11pm",
+      "thu": "12pm–11pm",
+      "fri": "12pm–11pm",
+      "sat": "10am–9pm",
+      "sun": "10am–9pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,420 adult, ¥1,870 student"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "7ca280f340d25962",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 22,
+   "class": "update",
+   "id": "seed-408",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://beta-climbing.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–11pm",
+      "tue": "10am–11pm",
+      "wed": "10am–11pm",
+      "thu": "10am–11pm",
+      "fri": "10am–11pm",
+      "sat": "8am–11pm",
+      "sun": "8am–11pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,200 adult, ¥1,650 student/senior"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "0cf9ff86160be104",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 23,
+   "class": "update",
+   "id": "seed-429",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://big-rock.jp/hiyoshi"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "1pm–10:30pm",
+      "tue": "1pm–10:30pm",
+      "wed": "1pm–10:30pm",
+      "thu": "1pm–10:30pm",
+      "fri": "Closed",
+      "sat": "10am–8pm",
+      "sun": "10am–8pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,420 adult (¥1,870 bouldering-only weekday)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire",
+      "parking"
+     ]
+    }
+   ],
+   "expect_h": "190cab9f892597c7",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 24,
+   "class": "update",
+   "id": "g-d4f4c087b5",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://boulcom.jp/tokyo/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "7am–11pm",
+      "tue": "7am–11pm",
+      "wed": "7am–11pm",
+      "thu": "7am–11pm",
+      "fri": "7am–11pm",
+      "sat": "10am–9pm",
+      "sun": "10am–9pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥1,760–¥2,200 adult weekday, ¥1,980–¥2,420 weekend (door price by entry time)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "c632c678f6c0f7f3",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 25,
+   "class": "update",
+   "id": "g-016cfa0379",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://b-camp.jp/hanno/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12:30pm–10:30pm",
+      "tue": "12:30pm–10:30pm",
+      "wed": "12:30pm–10:30pm",
+      "thu": "12:30pm–10:30pm",
+      "fri": "12:30pm–10:30pm",
+      "sat": "10am–9pm",
+      "sun": "10am–8pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,420 adult, ¥1,870 student"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shoe-hire",
+      "parking"
+     ]
+    }
+   ],
+   "expect_h": "f5d5eab04ae3694e",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 26,
+   "class": "update",
+   "id": "g-4e4422310f",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://b-camp.jp/higashimurayama/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "2pm–10:30pm",
+      "tue": "2pm–10:30pm",
+      "wed": "2pm–10:30pm",
+      "thu": "2pm–10:30pm",
+      "fri": "2pm–10:30pm",
+      "sat": "10am–9pm",
+      "sun": "10am–8pm"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire",
+      "parking"
+     ]
+    }
+   ],
+   "expect_h": "7923df9510d21aae",
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 27,
+   "class": "update",
+   "id": "g-845f52bdde",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://b-camp.jp/kawagoe/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "2pm–10:30pm",
+      "tue": "Closed",
+      "wed": "2pm–10:30pm",
+      "thu": "2pm–10:30pm",
+      "fri": "2pm–10:30pm",
+      "sat": "10am–9pm",
+      "sun": "10am–8pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,090 adult weekday, ¥2,420 weekend/holiday"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire",
+      "showers",
+      "parking"
+     ]
+    }
+   ],
+   "expect_h": "c329428b85992134",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 28,
+   "class": "update",
+   "id": "g-5a3527de6f",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://bouldering-bleau.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "1pm–10pm",
+      "tue": "1pm–10pm",
+      "wed": "1pm–10pm",
+      "thu": "1pm–10pm",
+      "fri": "1pm–10pm",
+      "sat": "1pm–9pm",
+      "sun": "1pm–8pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥1,800 adult weekday, ¥2,000 weekend/holiday"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "f1d57d668d841c3c",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 29,
+   "class": "update",
+   "id": "g-9f83e6bb99",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://b-camp.jp/iruma/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12:30pm–10:30pm",
+      "tue": "12:30pm–10:30pm",
+      "wed": "12:30pm–10:30pm",
+      "thu": "12:30pm–10:30pm",
+      "fri": "12:30pm–10:30pm",
+      "sat": "10am–9pm",
+      "sun": "10am–8pm"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shoe-hire",
+      "showers",
+      "parking"
+     ]
+    }
+   ],
+   "expect_h": "3559d66e85480b55",
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 30,
+   "class": "update",
+   "id": "seed-432",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://climbingbum.jp/yokohama/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12pm–11pm",
+      "tue": "12pm–11pm",
+      "wed": "12pm–11pm",
+      "thu": "12pm–11pm",
+      "fri": "12pm–11pm",
+      "sat": "10am–9pm",
+      "sun": "10am–9pm"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shoe-hire",
+      "parking"
+     ]
+    }
+   ],
+   "expect_h": "8c246bf869a87ad6",
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 31,
+   "class": "update",
+   "id": "g-758d79d131",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://climbing-girigiri.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "2pm–10pm",
+      "tue": "2pm–10pm",
+      "wed": "2pm–10pm",
+      "thu": "2pm–10pm",
+      "fri": "2pm–10pm",
+      "sat": "10am–9pm",
+      "sun": "10am–9pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,000 adult weekday, ¥2,200 weekend/holiday"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire",
+      "showers",
+      "parking"
+     ]
+    }
+   ],
+   "expect_h": "d3480de7342e9c75",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 32,
+   "class": "update",
+   "id": "g-6416915691",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://climbing-hangout.com/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥1,700 adult weekday, ¥1,900 weekend/holiday"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "ea1a6a3ceb947d70",
+   "update_reason": "Official website, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 33,
+   "class": "update",
+   "id": "seed-451",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://penguin-climb.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "Closed",
+      "tue": "1pm–11pm",
+      "wed": "1pm–11pm",
+      "thu": "1pm–11pm",
+      "fri": "1pm–11pm",
+      "sat": "11am–9pm",
+      "sun": "10am–8pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥1,800 adult weekday, ¥2,300 weekend"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shoe-hire",
+      "parking"
+     ]
+    }
+   ],
+   "expect_h": "c6fef82536f3d2f6",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 34,
+   "class": "update",
+   "id": "g-bf2121f388",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://runout.info/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "Closed",
+      "tue": "1pm–10:30pm",
+      "wed": "1pm–10:30pm",
+      "thu": "1pm–10:30pm",
+      "fri": "1pm–10:30pm",
+      "sat": "10am–8pm",
+      "sun": "10am–8pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,600 adult visitor (¥2,200 bouldering only)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire",
+      "parking"
+     ]
+    }
+   ],
+   "expect_h": "9a1683d2ee4d89a1",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 35,
+   "class": "update",
+   "id": "g-cce5eb239a",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://climbing-spider.com/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,200 adult, ¥1,650 student"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "264bc89ac9de8500",
+   "update_reason": "Official website, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 36,
+   "class": "update",
+   "id": "g-d105c76f01",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://camelopardalis-tokyo.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "Closed",
+      "tue": "1pm–10:30pm",
+      "wed": "1pm–10:30pm",
+      "thu": "1pm–10:30pm",
+      "fri": "1pm–10:30pm",
+      "sat": "9am–8pm",
+      "sun": "9am–8pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥1,800 adult weekday (4 hours), ¥2,000 weekend (4 hours)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "b14d6dfa39e79ada",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 37,
+   "class": "update",
+   "id": "g-e67c010f95",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.d-b-c.jp/top/hachioji/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "11:30am–9pm",
+      "sun": "11:30am–9pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,200 adult weekday, ¥2,300 weekend/holiday"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shoe-hire",
+      "showers"
+     ]
+    }
+   ],
+   "expect_h": "c3ee26b82e0d32ee",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 38,
+   "class": "update",
+   "id": "g-0a82f7a1b0",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.d-b-c.jp/top/honatsugi/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "10am–8pm",
+      "sun": "10am–8pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,090 adult weekday, ¥2,310 weekend/holiday; ¥1,430 student weekday"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shoe-hire",
+      "shop"
+     ]
+    }
+   ],
+   "expect_h": "3a3eeea2e904cac3",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 39,
+   "class": "update",
+   "id": "g-f277b39f92",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.d-b-c.jp/top/kawasaki/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–11pm",
+      "tue": "10am–11pm",
+      "wed": "10am–11pm",
+      "thu": "10am–11pm",
+      "fri": "10am–11pm",
+      "sat": "11am–9pm",
+      "sun": "11am–9pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,090 adult weekday, ¥2,200 weekend/holiday; ¥1,650 student weekday"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "fcea94be59722a54",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 40,
+   "class": "update",
+   "id": "g-4b4a986251",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.d-b-c.jp/top/funabashi/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "10am–9pm",
+      "sun": "10am–9pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,100 men / ¥1,900 women weekday, ¥2,200 / ¥2,000 weekend; ¥1,700 student"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "33501f96b492d46d",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 41,
+   "class": "update",
+   "id": "g-f1ff2432cb",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.d-b-c.jp/top/kaihin-makuhari/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "1pm–11pm",
+      "tue": "1pm–11pm",
+      "wed": "1pm–11pm",
+      "thu": "1pm–11pm",
+      "fri": "1pm–11pm",
+      "sat": "10am–8pm",
+      "sun": "10am–8pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,150 men / ¥1,900 women weekday, ¥2,250 / ¥2,000 weekend; ¥1,800 student"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "23d45f554e1b1007",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 42,
+   "class": "update",
+   "id": "g-6419a4e7b5",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.d-b-c.jp/top/kasukabe/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "2pm–10pm",
+      "tue": "2pm–10pm",
+      "wed": "2pm–10pm",
+      "thu": "2pm–10pm",
+      "fri": "2pm–10pm",
+      "sat": "9am–6pm",
+      "sun": "9am–6pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,300 men / ¥1,700 women and student (weekday rate)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "cf4ef8d1dd97ca26",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 43,
+   "class": "update",
+   "id": "g-4847fac950",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.d-b-c.jp/top/tachikawa/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "10am–7pm",
+      "sun": "10am–7pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,300 men / ¥1,700 women, student weekday; ¥2,400 / ¥1,800 weekend"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shoe-hire",
+      "shop"
+     ]
+    }
+   ],
+   "expect_h": "addc72814f23d496",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 44,
+   "class": "update",
+   "id": "g-f2796e3f1f",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.d-b-c.jp/top/soga/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12:30pm–9pm",
+      "tue": "12:30pm–9pm",
+      "wed": "12:30pm–9pm",
+      "thu": "12:30pm–9pm",
+      "fri": "12:30pm–9pm",
+      "sat": "10am–6pm",
+      "sun": "10am–6pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,200 men / ¥2,000 women weekday, ¥2,400 / ¥2,200 weekend; ¥1,500 student"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "c6ff0138452e77d1",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 45,
+   "class": "update",
+   "id": "g-b6c0194546",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.d-b-c.jp/top/tsudanuma/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "Closed",
+      "tue": "12pm–9pm",
+      "wed": "12pm–9pm",
+      "thu": "12pm–9pm",
+      "fri": "12pm–9pm",
+      "sat": "10am–8pm",
+      "sun": "10am–8pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,090 men / ¥1,870 women weekday, ¥2,200 / ¥1,980 weekend; ¥1,760 student"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "180812d06935b532",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 46,
+   "class": "update",
+   "id": "g-f99ce5762c",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.d-b-c.jp/top/tamachi/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "7am–11pm",
+      "tue": "7am–11pm",
+      "wed": "7am–11pm",
+      "thu": "7am–11pm",
+      "fri": "7am–11pm",
+      "sat": "11am–9pm",
+      "sun": "11am–9pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,300 adult, ¥1,540 student"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "a77ad3668d4dbb61",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 47,
+   "class": "update",
+   "id": "seed-431",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.d-b-c.jp/top/tsunashima/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–11pm",
+      "tue": "10am–11pm",
+      "wed": "10am–11pm",
+      "thu": "10am–11pm",
+      "fri": "10am–11pm",
+      "sat": "10am–9pm",
+      "sun": "10am–9pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,090 adult weekday, ¥2,310 weekend/holiday; ¥1,650 student weekday"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shoe-hire",
+      "showers"
+     ]
+    }
+   ],
+   "expect_h": "e75019a993af1169",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 48,
+   "class": "update",
+   "id": "g-478f41fdba",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.d-b-c.jp/top/yokohama/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–11pm",
+      "tue": "10am–11pm",
+      "wed": "10am–11pm",
+      "thu": "10am–11pm",
+      "fri": "10am–11pm",
+      "sat": "10am–9pm",
+      "sun": "10am–9pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,200 adult, ¥1,650 student"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "b24b6306b7b6ee69",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 49,
+   "class": "update",
+   "id": "seed-449",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://energy-climbing.co.jp/urawa/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "Closed",
+      "tue": "10:30am–10:30pm",
+      "wed": "10:30am–10:30pm",
+      "thu": "10:30am–10:30pm",
+      "fri": "10:30am–10:30pm",
+      "sat": "10am–9pm",
+      "sun": "10am–9pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥1,980 adult weekday, ¥2,310 weekend/holiday"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire",
+      "parking"
+     ]
+    }
+   ],
+   "expect_h": "989d97516a8fc58e",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 50,
+   "class": "update",
+   "id": "g-90fa0f29e1",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://everfree-climbing.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "1pm–11pm",
+      "tue": "1pm–11pm",
+      "wed": "1pm–11pm",
+      "thu": "1pm–11pm",
+      "fri": "1pm–11pm",
+      "sat": "10am–8pm",
+      "sun": "10am–8pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥1,840 adult, ¥1,370 student"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "f7bff38e72114300",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 51,
+   "class": "update",
+   "id": "seed-453",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://exciting-sancha.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "1pm–10pm",
+      "tue": "1pm–10pm",
+      "wed": "1pm–10pm",
+      "thu": "1pm–10pm",
+      "fri": "1pm–10pm",
+      "sat": "10am–8pm",
+      "sun": "10am–8pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥3,000 day use (first visit by reservation)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "78f73f7416ebd171",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 52,
+   "class": "update",
+   "id": "seed-459",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://fish-bird.co.jp/fishandbird/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "2pm–11pm",
+      "tue": "2pm–11pm",
+      "wed": "2pm–11pm",
+      "thu": "2pm–11pm",
+      "fri": "2pm–11pm",
+      "sat": "10am–9pm",
+      "sun": "10am–9pm"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "5da687a190b06800",
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 53,
+   "class": "update",
+   "id": "seed-455",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://jandsnakano.wixsite.com/jandsnakano"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "Closed",
+      "tue": "2pm–11pm",
+      "wed": "2pm–11pm",
+      "thu": "2pm–11pm",
+      "fri": "2pm–11pm",
+      "sat": "12pm–8pm",
+      "sun": "12pm–8pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,400 adult (visitor use); ¥2,000 1-hour trial pack"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "1c40fc44f021a2de",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 54,
+   "class": "update",
+   "id": "seed-460",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://spo.katsushika-web.net/facility/higashikanamachi-climbing/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥400 per 2 hours adult, ¥80 elementary/junior high"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire",
+      "showers"
+     ]
+    }
+   ],
+   "expect_h": "3ece16b5dea7b1a2",
+   "update_reason": "Official website, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 55,
+   "class": "update",
+   "id": "g-08c7cff32d",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://noborock-climbing.com/program/%e6%b5%85%e8%8d%89%e5%ba%97/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–11pm",
+      "tue": "10am–11pm",
+      "wed": "10am–11pm",
+      "thu": "10am–11pm",
+      "fri": "10am–11pm",
+      "sat": "10am–9pm",
+      "sun": "10am–9pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥1,890 men / ¥1,490 women weekday, ¥2,190 / ¥1,690 weekend; ¥1,390 student weekday"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "c7e39ccb145d4962",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 56,
+   "class": "update",
+   "id": "g-e5ab905c5c",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://noborock-climbing.com/program/ikebukuro/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–11pm",
+      "tue": "10am–11pm",
+      "wed": "10am–11pm",
+      "thu": "10am–11pm",
+      "fri": "10am–11pm",
+      "sat": "10am–9pm",
+      "sun": "10am–9pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥1,890 men / ¥1,490 women weekday, ¥2,190 / ¥1,690 weekend; ¥1,390 student weekday"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "662c6e4b878c65f1",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 57,
+   "class": "update",
+   "id": "g-510f6bfacd",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://noborock-climbing.com/program/machida/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–11pm",
+      "tue": "10am–11pm",
+      "wed": "10am–11pm",
+      "thu": "10am–11pm",
+      "fri": "10am–11pm",
+      "sat": "10am–9pm",
+      "sun": "10am–9pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥1,890 men / ¥1,490 women weekday, ¥2,190 / ¥1,690 weekend; ¥1,390 student weekday"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "0ad160f7deedd5cf",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 58,
+   "class": "update",
+   "id": "g-d5c04e7c5b",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://noborock-climbing.com/program/mizonokuchi/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–11pm",
+      "tue": "10am–11pm",
+      "wed": "Closed",
+      "thu": "10am–11pm",
+      "fri": "10am–11pm",
+      "sat": "10am–8pm",
+      "sun": "10am–7pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥1,890 men / ¥1,490 women weekday, ¥2,190 / ¥1,690 weekend; ¥1,390 student weekday"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire",
+      "showers"
+     ]
+    }
+   ],
+   "expect_h": "28121ac1b6f64523",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 59,
+   "class": "update",
+   "id": "seed-450",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://noborock-climbing.com/program/omiya/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–11pm",
+      "tue": "10am–11pm",
+      "wed": "10am–11pm",
+      "thu": "10am–11pm",
+      "fri": "10am–11pm",
+      "sat": "10am–9pm",
+      "sun": "10am–9pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥1,890 men / ¥1,490 women weekday, ¥2,190 / ¥1,690 weekend; ¥1,390 student weekday"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "9432a12ed7c1d92f",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 60,
+   "class": "update",
+   "id": "seed-409",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://noborock-climbing.com/program/shibuya/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–11pm",
+      "tue": "10am–11pm",
+      "wed": "10am–11pm",
+      "thu": "10am–11pm",
+      "fri": "10am–11pm",
+      "sat": "10am–10pm",
+      "sun": "10am–10pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥1,890 adult (men) / ¥1,490 (women) weekday; ¥2,190 / ¥1,690 weekend"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire",
+      "parking"
+     ]
+    }
+   ],
+   "expect_h": "38dd6b47d0dc3bc8",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 61,
+   "class": "update",
+   "id": "g-adea093719",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://noborock-climbing.com/program/%e6%96%b0%e5%ae%bf%e5%ba%97/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–11pm",
+      "tue": "10am–11pm",
+      "wed": "10am–11pm",
+      "thu": "10am–11pm",
+      "fri": "10am–11pm",
+      "sat": "10am–9pm",
+      "sun": "10am–9pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥1,890 adult (men) / ¥1,490 (women) weekday; ¥2,190 / ¥1,690 weekend"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "ec710818842ab703",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 62,
+   "class": "update",
+   "id": "g-708f28b761",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://noborock-climbing.com/program/takadanobaba/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–10:45pm",
+      "tue": "10am–10:45pm",
+      "wed": "10am–10:45pm",
+      "thu": "10am–10:45pm",
+      "fri": "10am–10:45pm",
+      "sat": "10am–9pm",
+      "sun": "10am–9pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥1,890 adult (men) / ¥1,490 (women) weekday; ¥2,190 / ¥1,690 weekend"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire",
+      "shop"
+     ]
+    }
+   ],
+   "expect_h": "8b55634d8f6b4eaa",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 63,
+   "class": "update",
+   "id": "g-040cb8f7bc",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://primeclimbing.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–10:30pm",
+      "tue": "10am–10:30pm",
+      "wed": "10am–10:30pm",
+      "thu": "10am–10:30pm",
+      "fri": "10am–10:30pm",
+      "sat": "10am–6pm",
+      "sun": "10am–6pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥1,500 men, ¥1,400 women/student (weekday from open); ¥2,050 / ¥1,900 weekend"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shoe-hire",
+      "shop"
+     ]
+    }
+   ],
+   "expect_h": "8a7e653134cb1fb6",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 64,
+   "class": "update",
+   "id": "g-271ed72c15",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://pump-climbing.com/gym/pump1/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "Closed",
+      "tue": "12pm–11pm",
+      "wed": "12pm–11pm",
+      "thu": "12pm–11pm",
+      "fri": "12pm–11pm",
+      "sat": "10am–8pm",
+      "sun": "10am–8pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,420 adult all-day, ¥1,870 student (tax incl.)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire",
+      "shop",
+      "parking"
+     ]
+    }
+   ],
+   "expect_h": "19536901cc02e6e4",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 65,
+   "class": "update",
+   "id": "g-f0c935db39",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://pump-climbing.com/gym/pump2/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "Closed",
+      "tue": "12pm–11pm",
+      "wed": "12pm–11pm",
+      "thu": "12pm–11pm",
+      "fri": "12pm–11pm",
+      "sat": "10am–10pm",
+      "sun": "10am–9pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,420 adult all-day, ¥1,870 student (tax incl.)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire",
+      "shop",
+      "parking"
+     ]
+    }
+   ],
+   "expect_h": "6b6a4ed2f7aa1ec9",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 66,
+   "class": "update",
+   "id": "seed-454",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "http://quail-climbing.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "1pm–11pm",
+      "tue": "1pm–11pm",
+      "wed": "1pm–11pm",
+      "thu": "1pm–11pm",
+      "fri": "1pm–11pm",
+      "sat": "1pm–11pm",
+      "sun": "1pm–11pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,500 adult weekday all-day (visitor), ¥2,800 weekend/holiday"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "049de61691d8a0d0",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 67,
+   "class": "update",
+   "id": "seed-413",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.rocklands.tokyo/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12pm–11pm",
+      "tue": "12pm–11pm",
+      "wed": "12pm–11pm",
+      "thu": "12pm–11pm",
+      "fri": "12pm–11pm",
+      "sat": "9am–9pm",
+      "sun": "9am–9pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,310 adult weekday 1-day, ¥2,530 weekend/holiday (tax incl.)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire",
+      "parking"
+     ]
+    }
+   ],
+   "expect_h": "371bc53bcead5dc8",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 68,
+   "class": "update",
+   "id": "seed-410",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.rockyclimbing.com/shinagawa/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–11pm",
+      "tue": "10am–11pm",
+      "wed": "10am–11pm",
+      "thu": "10am–11pm",
+      "fri": "10am–11pm",
+      "sat": "10am–9pm",
+      "sun": "10am–9pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,100 adult weekday, ¥2,310 weekend/holiday (tax incl.)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire",
+      "parking"
+     ]
+    }
+   ],
+   "expect_h": "a1af2f872c2d3da8",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 69,
+   "class": "update",
+   "id": "g-e883807567",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.rockyclimbing.com/funabashi/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–11pm",
+      "tue": "10am–11pm",
+      "wed": "10am–11pm",
+      "thu": "10am–11pm",
+      "fri": "10am–11pm",
+      "sat": "10am–9pm",
+      "sun": "10am–9pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,000 adult weekday, ¥2,200 weekend/holiday (tax incl.)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "7455a9fed4d36d95",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 70,
+   "class": "update",
+   "id": "g-04c4db247b",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.rockyclimbing.com/inzai/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–11pm",
+      "tue": "10am–11pm",
+      "wed": "10am–11pm",
+      "thu": "10am–11pm",
+      "fri": "10am–11pm",
+      "sat": "10am–9pm",
+      "sun": "10am–9pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,000 adult weekday, ¥2,200 weekend/holiday (tax incl.)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "220f4e46234f541a",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 71,
+   "class": "update",
+   "id": "g-13fabcbebc",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.rockyclimbing.com/ryougoku/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–11pm",
+      "tue": "10am–11pm",
+      "wed": "10am–11pm",
+      "thu": "10am–11pm",
+      "fri": "10am–11pm",
+      "sat": "10am–9pm",
+      "sun": "10am–9pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,100 adult weekday, ¥2,310 weekend/holiday (tax incl.)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "be01cba36238e752",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 72,
+   "class": "update",
+   "id": "g-df232e8416",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.rockyclimbing.com/shinjukuakebonobashi/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–11pm",
+      "tue": "10am–11pm",
+      "wed": "10am–11pm",
+      "thu": "10am–11pm",
+      "fri": "10am–11pm",
+      "sat": "10am–9pm",
+      "sun": "10am–9pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,100 adult weekday, ¥2,310 weekend/holiday (tax incl.)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "7bbf68a904ab2f1b",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 73,
+   "class": "update",
+   "id": "seed-456",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://thefactory-climbing.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "2pm–11pm",
+      "tue": "10am–11pm",
+      "wed": "2pm–11pm",
+      "thu": "10am–11pm",
+      "fri": "2pm–11pm",
+      "sat": "1pm–10pm",
+      "sun": "1pm–10pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,200 adult, ¥1,800 student"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "9a3e821bbcef4bbc",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 74,
+   "class": "update",
+   "id": "g-2648503cd3",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://underground-climb.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "11am–11pm",
+      "tue": "11am–11pm",
+      "wed": "11am–11pm",
+      "thu": "11am–11pm",
+      "fri": "11am–11pm",
+      "sat": "11am–11pm",
+      "sun": "10am–9pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥1,800 adult weekday (up to 4h), ¥2,200 weekday all-day/weekend"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "3cd6a88b5e766122",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 75,
+   "class": "update",
+   "id": "g-e2864a4de4",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://b-camp.jp/shinbashi/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–11pm",
+      "tue": "10am–11pm",
+      "wed": "10am–11pm",
+      "thu": "10am–11pm",
+      "fri": "10am–11pm",
+      "sat": "10am–9pm",
+      "sun": "10am–9pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,090 men / ¥1,650 women weekday all-day; ¥2,420 / ¥1,870 weekend"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire",
+      "shop"
+     ]
+    }
+   ],
+   "expect_h": "81856e5475d490a4",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 76,
+   "class": "update",
+   "id": "g-027d4e2c8f",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://b-camp.jp/shinjuku/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–11pm",
+      "tue": "10am–11pm",
+      "wed": "10am–11pm",
+      "thu": "10am–11pm",
+      "fri": "10am–11pm",
+      "sat": "10am–10pm",
+      "sun": "10am–10pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,090 men / ¥1,650 women weekday all-day; ¥2,420 / ¥1,870 weekend"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire",
+      "shop"
+     ]
+    }
+   ],
+   "expect_h": "36b4ec6985841f62",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 77,
+   "class": "update",
+   "id": "g-64d95e6af3",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.westrock-climbing.com/intro_chofu/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "1pm–11pm",
+      "tue": "1pm–11pm",
+      "wed": "1pm–11pm",
+      "thu": "1pm–11pm",
+      "fri": "1pm–11pm",
+      "sat": "10am–10pm",
+      "sun": "10am–9pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥1,760 adult weekday, ¥1,980 weekend/holiday (tax incl.)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire",
+      "shop",
+      "parking"
+     ]
+    }
+   ],
+   "expect_h": "c850f17325ab4401",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 78,
+   "class": "update",
+   "id": "g-e7a431952a",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.westrock-climbing.com/intro_fuchu/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "1pm–11pm",
+      "tue": "1pm–11pm",
+      "wed": "1pm–11pm",
+      "thu": "1pm–11pm",
+      "fri": "1pm–11pm",
+      "sat": "10am–10pm",
+      "sun": "10am–9pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥1,760 adult weekday, ¥1,980 weekend/holiday (tax incl.)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shoe-hire",
+      "shop",
+      "parking"
+     ]
+    }
+   ],
+   "expect_h": "10223d718c1f2ad0",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 79,
+   "class": "update",
+   "id": "seed-414",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://roca-gym.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12pm–10pm",
+      "tue": "12pm–10pm",
+      "wed": "12pm–10pm",
+      "thu": "12pm–10pm",
+      "fri": "12pm–10pm",
+      "sat": "10am–10pm",
+      "sun": "10am–10pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,200 adult, student ¥550 off"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "ada5945b52de3702",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 80,
+   "class": "update",
+   "id": "seed-416",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://cityrockgym.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "10am–8pm",
+      "sun": "10am–8pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,500 adult all-day, ¥1,900 after 5pm"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "parking"
+     ]
+    }
+   ],
+   "expect_h": "1e80ce5ff6c2ccd8",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 81,
+   "class": "update",
+   "id": "seed-417",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://tobito.jp/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "2pm–12am",
+      "tue": "10am–12am",
+      "wed": "10am–12am",
+      "thu": "10am–12am",
+      "fri": "10am–12am",
+      "sat": "12pm–12am",
+      "sun": "12pm–12am"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥3,000 adult visitor, ¥2,200 adult member"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "bc586ec6ff872242",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 82,
+   "class": "update",
+   "id": "g-cd08f3a8c3",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.d-b-c.jp/top/namba/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–11pm",
+      "tue": "10am–11pm",
+      "wed": "10am–11pm",
+      "thu": "10am–11pm",
+      "fri": "10am–11pm",
+      "sat": "10am–9pm",
+      "sun": "10am–9pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,300 adult weekday, ¥2,400 weekends/holidays"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "bc6b5c9c31f2892e",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 83,
+   "class": "update",
+   "id": "seed-436",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.gravity-research.jp/shop/mintkobe/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,100 adult all-day, ¥1,800 for 120 min"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "54d3c6720055cf8a",
+   "update_reason": "Official website, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 84,
+   "class": "update",
+   "id": "seed-415",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.gravity-research.jp/shop/umeda/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–11pm",
+      "tue": "10am–11pm",
+      "wed": "10am–11pm",
+      "thu": "10am–11pm",
+      "fri": "10am–11pm",
+      "sat": "10am–11pm",
+      "sun": "10am–10pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,100 adult all-day, ¥1,800 for 120 min"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "3561c33c9c10ee17",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 85,
+   "class": "update",
+   "id": "seed-437",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://outdoorlab.happy-osekkai.com/wagomu"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–10:30pm",
+      "tue": "10am–10:30pm",
+      "wed": "10am–10:30pm",
+      "thu": "10am–10:30pm",
+      "fri": "10am–10:30pm",
+      "sat": "6am–10:30pm",
+      "sun": "6am–9:30pm"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "d7507860bdf0c981",
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 86,
+   "class": "update",
+   "id": "seed-420",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "http://www.cairn-climbinggym.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "1pm–11pm",
+      "tue": "1pm–11pm",
+      "wed": "1pm–11pm",
+      "thu": "1pm–11pm",
+      "fri": "1pm–11pm",
+      "sat": "1pm–11pm",
+      "sun": "1pm–11pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,200 adult, ¥1,370 high school/university"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "15c3d37ea4cf05d9",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 87,
+   "class": "update",
+   "id": "seed-419",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://fine-works.cc/adsummum/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "10am–10pm",
+      "sun": "10am–10pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,200 adult, ¥1,700 university student"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire",
+      "shop"
+     ]
+    }
+   ],
+   "expect_h": "c650e40310a3f89f",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 88,
+   "class": "update",
+   "id": "g-6b181d6d0a",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.d-b-c.jp/top/matsui-yamate/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "1pm–10pm",
+      "tue": "1pm–10pm",
+      "wed": "1pm–10pm",
+      "thu": "1pm–10pm",
+      "fri": "1pm–10pm",
+      "sat": "10am–9pm",
+      "sun": "10am–8pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,300 adult weekday, ¥2,400 weekends/holidays"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "d7c722202ddd42ad",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 89,
+   "class": "update",
+   "id": "g-ca0e9a7f2b",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.gravity-research.jp/shop/kyoto/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "Closed",
+      "tue": "1:30pm–10pm",
+      "wed": "1:30pm–10pm",
+      "thu": "1:30pm–10pm",
+      "fri": "1:30pm–10pm",
+      "sat": "9:30am–6pm",
+      "sun": "9:30am–6pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,100 adult all-day, ¥1,100 for 60 min"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "937e756d33ff7e00",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 90,
+   "class": "update",
+   "id": "seed-421",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.ignis-jp.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "Closed",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "10am–8pm",
+      "sun": "10am–8pm"
+     }
+    }
+   ],
+   "expect_h": "47702c58a3b5966a",
+   "update_reason": "Official website, weekly opening hours from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 91,
+   "class": "update",
+   "id": "seed-422",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://bouldering-climbing.kyoto/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "6pm–11pm",
+      "tue": "2:30pm–11pm",
+      "wed": "2:30pm–11pm",
+      "thu": "2:30pm–11pm",
+      "fri": "2:30pm–11pm",
+      "sat": "10am–11pm",
+      "sun": "10am–11pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,100 adult daily max (¥800 per 60 min)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire",
+      "parking"
+     ]
+    }
+   ],
+   "expect_h": "dfed6e166fc331d6",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 92,
+   "class": "update",
+   "id": "seed-440",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://bolz-climb.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "2pm–10pm",
+      "tue": "2pm–10pm",
+      "wed": "Closed",
+      "thu": "2pm–10pm",
+      "fri": "2pm–10pm",
+      "sat": "10am–8pm",
+      "sun": "10am–6pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,000 adult weekday, ¥2,500 weekends/holidays"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "f3277e2c4c7a32b5",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 93,
+   "class": "update",
+   "id": "seed-441",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "http://www.youyoukan.jp/gym/bnutsindex.html"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12pm–10pm",
+      "tue": "Closed",
+      "wed": "12pm–10pm",
+      "thu": "12pm–10pm",
+      "fri": "12pm–10pm",
+      "sat": "10am–6pm",
+      "sun": "10am–6pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,600 adult visitor, ¥1,900 adult member"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire",
+      "shop"
+     ]
+    }
+   ],
+   "expect_h": "17d04acd6a131de6",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 94,
+   "class": "update",
+   "id": "g-f2df7534fa",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.d-b-c.jp/top/sendai/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–11pm",
+      "tue": "10am–11pm",
+      "wed": "10am–11pm",
+      "thu": "10am–11pm",
+      "fri": "10am–11pm",
+      "sat": "10am–9pm",
+      "sun": "10am–9pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,090 adult weekday, ¥2,420 weekends/holidays"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "782f6b2672333d28",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 95,
+   "class": "update",
+   "id": "seed-442",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "http://moment-climb.jp/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "2pm–10pm",
+      "tue": "2pm–10pm",
+      "wed": "2pm–10pm",
+      "thu": "Closed",
+      "fri": "2pm–10pm",
+      "sat": "10am–6pm",
+      "sun": "10am–6pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,530 adult visitor, ¥1,980 adult member"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire",
+      "parking"
+     ]
+    }
+   ],
+   "expect_h": "6cddbe972f983c12",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 96,
+   "class": "update",
+   "id": "seed-438",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.stonergym-sendai.jp/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "10am–8pm",
+      "sun": "10am–8pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,400 adult, ¥2,000 student"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire",
+      "parking"
+     ]
+    }
+   ],
+   "expect_h": "02d05213bd2200f5",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (researched 2026-10-04)"
+  },
+  {
+   "line": 97,
+   "class": "update",
+   "id": "seed-1163",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://ayersrock.kr/"
+    }
+   ],
+   "expect_h": "52474be6079d12cc",
+   "update_reason": "Official website from the gym's own site (researched 2026-10-04)"
+  }
+ ]
+}

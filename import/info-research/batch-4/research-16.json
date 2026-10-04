@@ -1,0 +1,749 @@
+[
+ {
+  "id": "seed-1363",
+  "name": "Awesome Walls - Dublin",
+  "metro": "Dublin",
+  "expect_h": "973e65ba0f0719a5",
+  "website": "https://awesomewalls.ie/dublin/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "10am–8pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": "€20 adult, €17 concession (non-member pay as you go)",
+  "facilities": [
+   "shoe-hire",
+   "shop",
+   "training"
+  ],
+  "sources": [
+   {
+    "url": "https://awesomewalls.ie/dublin/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://awesomewalls.ie/dublin/plan-your-trip/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours from Plan Your Trip page (Dublin block; Finglas address matches). Facilities from home page 'Our Facilities' list (Refreshments, Shop, Training Hub) plus FAQ 'hire rock shoes at any of our centres'; 'Refreshments' not mapped to cafe. Members pay EUR 15.50 adult."
+ },
+ {
+  "id": "seed-1359",
+  "name": "Bloc Climbing Gym",
+  "metro": "Dublin",
+  "expect_h": "fe035d8104cf3d6c",
+  "website": "https://blocdublin.ie/",
+  "hours": {
+   "mon": "11am–10pm",
+   "tue": "11am–10pm",
+   "wed": "11am–10pm",
+   "thu": "11am–10pm",
+   "fri": "11am–10pm",
+   "sat": "11am–8pm",
+   "sun": "11am–8pm"
+  },
+  "day_pass": "€14.50 adult, €12.50 concession",
+  "facilities": [
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://blocdublin.ie/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://blocdublin.ie/prices/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://blocdublin.ie/first-time/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Address Unit 23a Robinhood Industrial Estate, Robinhood Road, D22 matches. Shoe hire EUR 4.50. Kids from site menu pages (Kids 8-13, Birthday Parties) and first-time page text 'our kids sessions'."
+ },
+ {
+  "id": "seed-1360",
+  "name": "Gravity Climbing Centre",
+  "metro": "Dublin",
+  "expect_h": "0ab4c5cd020329ee",
+  "website": "https://www.gravityclimbing.ie/",
+  "hours": {
+   "mon": "12pm–10pm",
+   "tue": "12pm–10pm",
+   "wed": "12pm–10pm",
+   "thu": "12pm–10pm",
+   "fri": "12pm–10pm",
+   "sat": "10am–8pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": "€14.50 adult peak, €12.50 off-peak",
+  "facilities": [
+   "cafe",
+   "shop",
+   "training",
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.gravityclimbing.ie/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.gravityclimbing.ie/findus",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.gravityclimbing.ie/ourprices",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.gravityclimbing.ie/new-page-1",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Target has no address and generic Dublin coordinates; matched by name to Gravity Climbing Centre, 6a Goldenbridge Industrial Estate, Inchicore, Dublin 8 (the only gym of that name). Prices 'effective from 2nd Jan 2025' per page. Kids from family induction sessions page. Car 'Parking is available' stated but not mapped to parking."
+ },
+ {
+  "id": "seed-1364",
+  "name": "HikeandClimb",
+  "metro": "Dublin",
+  "expect_h": "fbb2ec431e38882c",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [
+   {
+    "url": "https://hikeandclimb.ie/indoor-climbing/",
+    "accessed": "2026-10-04",
+    "supports": []
+   }
+  ],
+  "status": "flag",
+  "notes": "HikeandClimb (hikeandclimb.ie) is a guiding/course provider; its indoor climbing page says courses run at Awesome Walls Dublin. No gym with opening hours or day pass at Upper Dargle Road, Bray, found on its site. Not a climbing gym."
+ },
+ {
+  "id": "seed-1361",
+  "name": "The Dublin Climbing Centre",
+  "metro": "Dublin",
+  "expect_h": "9c2731d21e2c3bb2",
+  "website": "https://www.dublinclimbingcentre.ie/",
+  "hours": {
+   "mon": "11am–10pm",
+   "tue": "11am–10pm",
+   "wed": "11am–10pm",
+   "thu": "11am–10pm",
+   "fri": "12pm–10pm",
+   "sat": "10am–8pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": "€15.50 adult, €12.50 bouldering only/student/senior",
+  "facilities": [
+   "cafe",
+   "training",
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.dublinclimbingcentre.ie/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://www.dublinclimbingcentre.ie/info/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.dublinclimbingcentre.ie/pricing/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Square Industrial Complex, Belgard Square E, Tallaght D24 matches. Cafe = 'coffee shop' on info page; training = weights and training room; kids = NICAS classes/parties. Once-off EUR 10 registration fee not included."
+ },
+ {
+  "id": "seed-1362",
+  "name": "The Wall Climbing Gym",
+  "metro": "Dublin",
+  "expect_h": "f42ac173e0880337",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [
+   {
+    "url": "https://thewall.ie/",
+    "accessed": "2026-10-04",
+    "supports": []
+   }
+  ],
+  "status": "flag",
+  "notes": "thewall.ie home page says 'We have moved! Check out our new location' (link goes to blocdublin.ie) and shows hours as 'Closed' for 5 Arkle Road, Sandyford Business Park. Gym appears closed/moved; no current hours or prices."
+ },
+ {
+  "id": "seed-1593",
+  "name": "Boulderland Israel",
+  "metro": "Tel Aviv",
+  "expect_h": "28a09f283311d019",
+  "website": "https://iclimb.co.il/kfar_saba/%D7%A8%D7%90%D7%A9%D7%99/",
+  "hours": null,
+  "day_pass": null,
+  "facilities": [
+   "training",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://iclimb.co.il/kfar_saba/%D7%A8%D7%90%D7%A9%D7%99/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Boulderland Kfar Saba is run by the iClimb network; official page is on iclimb.co.il (phone 09-7749223). Its hours page shows only an 'August' table with a note that hours may change, so hours null. No day-pass price found. Training = 'complementary training equipment and strength corners'; kids = Funtopia kids area and classes."
+ },
+ {
+  "id": "g-ac215a02d6",
+  "name": "iClimb Rishon LeZion",
+  "metro": "Tel Aviv",
+  "expect_h": "54af868dd5be9da6",
+  "website": "https://iclimb-rishon.co.il/",
+  "hours": null,
+  "day_pass": null,
+  "facilities": [
+   "showers",
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://iclimb-rishon.co.il/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://iclimb-rishon.co.il/english/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://iclimb-rishon.co.il/%d7%9e%d7%97%d7%99%d7%a8%d7%95%d7%9f/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Address Nadav Baskind 12 matches. Hours null: English home page (Sun-Thu 11-23, Fri 11-17, Sat 10-22:30), contact page (Sun-Thu 10-23, Fri 8-17, Sat 10-23) and price/hours page ('August' table) disagree. Price list is an image (2025); single entry 75 NIS shown but the section label is unreadable, so day_pass null. Showers from price page text (showers and locker rooms); shoe rental 10 NIS from the price-list image; kids from courses/Funtopia/birthdays."
+ },
+ {
+  "id": "seed-1595",
+  "name": "Kirono Climbing Gym",
+  "metro": "Tel Aviv",
+  "expect_h": "d04fa485512ea0fe",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [],
+  "status": "not-found",
+  "notes": "No official site reachable: kirono.co.il (only seen in search results) does not resolve in DNS. Third-party sources suggest the old Kir Ono wall was dismantled in 2019 and a new one was planned; could not verify the gym operates."
+ },
+ {
+  "id": "seed-1596",
+  "name": "Monkeys climbing gym",
+  "metro": "Tel Aviv",
+  "expect_h": "51f61c2814c50356",
+  "website": "https://monkeysclimbinggym.co.il/",
+  "hours": {
+   "mon": "10am–10:30pm",
+   "tue": "9am–10:30pm",
+   "wed": "10am–10:30pm",
+   "thu": "10am–10:30pm",
+   "fri": "9am–5pm",
+   "sat": "10am–10pm",
+   "sun": "10am–10:30pm"
+  },
+  "day_pass": "₪79 adult (bouldering), ₪69 soldier/student",
+  "facilities": [
+   "cafe",
+   "training",
+   "shop",
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://monkeysclimbinggym.co.il/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://monkeysclimbinggym.co.il/%d7%9e%d7%97%d7%99%d7%a8%d7%95%d7%9f/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours are the bouldering column (the high-wall column differs). Price page is titled 'מחירון 2025' but is the live price page. Nitsba Poleg complex, 1st floor matches. Cafe = bar-cafe, shop = equipment shop, kids = kids/youth classes."
+ },
+ {
+  "id": "g-23cfa74ce8",
+  "name": "Performance Rock Tel Aviv",
+  "metro": "Tel Aviv",
+  "expect_h": "d57950d33b0f9cae",
+  "website": "https://performancerock.co.il/branch/midtown-tlv/",
+  "hours": {
+   "mon": "7am–6pm",
+   "tue": "7am–11pm",
+   "wed": "7am–6pm",
+   "thu": "7am–12am",
+   "fri": "8am–6pm",
+   "sat": "10am–10pm",
+   "sun": "7am–11pm"
+  },
+  "day_pass": null,
+  "facilities": [
+   "cafe",
+   "yoga",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://performancerock.co.il/branch/midtown-tlv/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://performancerock.co.il/kids-2/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Page lists Sun 7-23, Mon 7-23 (members only from 18:00), Tue 7-23, Wed 7-23 (members only from 18:00), Thu 7-24, Fri 8-18, Sat 10-22 (page text shows '22:008', read as 22:00). Mon and Wed public hours cut at 18:00 (judgement call). No day-pass price on site. Cafe = 'beer or coffee'; yoga = studio classes."
+ },
+ {
+  "id": "g-4e37aad496",
+  "name": "The Bloc Tel Aviv",
+  "metro": "Tel Aviv",
+  "expect_h": "0a5b7e28fda0bb32",
+  "website": "https://www.thebloc.co.il/en/tlv",
+  "hours": {
+   "mon": "8am–11pm",
+   "tue": "9am–11pm",
+   "wed": "9am–11pm",
+   "thu": "8am–11pm",
+   "fri": "10am–4pm",
+   "sat": "10am–10pm",
+   "sun": "4pm–11pm"
+  },
+  "day_pass": "₪65 adult (from 3pm and weekends), ₪55 until 3pm",
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.thebloc.co.il/en/tlv",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours as on the TLV page (Sun 16-23, Mon and Thu 8-23, Tue and Wed 9-23, Fri 10-16, Sat 10-22); a Pesach notice ignored. Shoe rental 10 NIS. Footer address HaMeretz 4 matches."
+ },
+ {
+  "id": "g-6e5ed8fefe",
+  "name": "Urban Climbing Rehovot",
+  "metro": "Tel Aviv",
+  "expect_h": "57831103c57c3f54",
+  "website": "https://www.uclimb-en.com/rehovotb",
+  "hours": {
+   "mon": "4pm–11pm",
+   "tue": "4pm–11pm",
+   "wed": "4pm–11pm",
+   "thu": "4pm–11pm",
+   "fri": "11am–4pm",
+   "sat": "4pm–9pm",
+   "sun": "4pm–11pm"
+  },
+  "day_pass": "₪75 adult",
+  "facilities": [
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.uclimb-en.com/rehovotb",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.uclimb-en.com/rehovotpricing",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Antin St., floor -1 matches. Shoe rental 12 NIS; family day pass 174 NIS. Kids = kids climbing classes."
+ },
+ {
+  "id": "seed-1597",
+  "name": "Venga",
+  "metro": "Tel Aviv",
+  "expect_h": "586dead9e2de81c3",
+  "website": "https://vengavenga.co.il/",
+  "hours": {
+   "mon": "3pm–11pm",
+   "tue": "3pm–11pm",
+   "wed": "3pm–11pm",
+   "thu": "3pm–11pm",
+   "fri": "10am–6pm",
+   "sat": "12pm–10pm",
+   "sun": "3pm–11pm"
+  },
+  "day_pass": "₪75 adult, ₪70 student/soldier",
+  "facilities": [
+   "shoe-hire",
+   "training",
+   "shop",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://vengavenga.co.il/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Target has no address; matched by name/city to Moshe Shwaleb 7, Petah Tikva. Shoe rental extra 10 NIS. Training = Moon Board and supplementary training area; kids = kids classes."
+ },
+ {
+  "id": "g-0a211b9124",
+  "name": "VKING Tel Aviv",
+  "metro": "Tel Aviv",
+  "expect_h": "9d89acec553148f6",
+  "website": "https://vking.co.il/",
+  "hours": {
+   "mon": "7am–11pm",
+   "tue": "7am–11pm",
+   "wed": "3pm–11pm",
+   "thu": "7am–11pm",
+   "fri": "9am–5pm",
+   "sat": "12pm–10pm",
+   "sun": "7am–11pm"
+  },
+  "day_pass": "₪65 daily entry",
+  "facilities": [
+   "training",
+   "shop",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://vking.co.il/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://vking.co.il/%d7%a4%d7%a2%d7%9d-%d7%a8%d7%90%d7%a9%d7%95%d7%a0%d7%94-%d7%91%d7%a7%d7%99%d7%a8/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Address HaShlosha 3, first floor entrance matches. Hours: Sun, Mon, Tue, Thu 7-23; Wed 15-23; Fri 9-17; Sat 12-22."
+ },
+ {
+  "id": "seed-1133",
+  "name": "ASD Rambla Vertical",
+  "metro": "Rome",
+  "expect_h": "f7eb7d3a1f1c3df6",
+  "website": "https://www.ramblavertical.it/wp/",
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [
+   {
+    "url": "https://www.ramblavertical.it/wp/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://www.ramblavertical.it/wp/?page_id=34",
+    "accessed": "2026-10-04",
+    "supports": []
+   },
+   {
+    "url": "https://www.ramblavertical.it/wp/?page_id=89",
+    "accessed": "2026-10-04",
+    "supports": []
+   }
+  ],
+  "status": "website-only",
+  "notes": "Site lists Mon-Thu 10-13 and 17-22, Fri 17-22 but nothing for Sat/Sun, so hours null. Only a 10-entry card (EUR 80) is published, no single-entry price. Site gives Via Cesarea 17bis."
+ },
+ {
+  "id": "seed-1134",
+  "name": "Climbing Side Rome",
+  "metro": "Rome",
+  "expect_h": "c2f691f003888823",
+  "website": "https://www.ciclopeclimb.com/",
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [
+   {
+    "url": "https://www.ciclopeclimb.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   }
+  ],
+  "status": "website-only",
+  "notes": "Official site is the club/coach page; its meta description gives the address Queen's Club, Via Cristoforo Colombo 1800. No hours, prices or facilities on the site."
+ },
+ {
+  "id": "seed-1135",
+  "name": "Monkey Island",
+  "metro": "Rome",
+  "expect_h": "f45780c582f08de1",
+  "website": "https://monkeyislandroma.com/site/",
+  "hours": {
+   "mon": "8am–11pm",
+   "tue": "8am–11pm",
+   "wed": "8am–11pm",
+   "thu": "8am–11pm",
+   "fri": "8am–11pm",
+   "sat": "9am–8pm",
+   "sun": "10am–7pm"
+  },
+  "day_pass": null,
+  "facilities": [
+   "training",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://monkeyislandroma.com/site/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours from the 'Aperti 7 giorni su 7' text. Forum Sport Center, Via Cornelia 493 matches. Training = MoonBoard/Japan/System wall/functional area; kids = kids courses from age 5. No single-entry price on site."
+ },
+ {
+  "id": "seed-1136",
+  "name": "Movimento Verticale Roma",
+  "metro": "Rome",
+  "expect_h": "5d28a57fef94abff",
+  "website": "https://movimentoverticale.it/",
+  "hours": null,
+  "day_pass": "€10 single entry",
+  "facilities": [
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://movimentoverticale.it/orari-tariffe/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours null: schedule table covers Mon-Thu with split sessions and no Sunday, while footer says Mon-Fri 17-22 and Sat closed unless announced. Annual association fee EUR 35 not included. Kids = kids course 6-10. Via Simone Martini 143 matches."
+ },
+ {
+  "id": "seed-1137",
+  "name": "Rock it Climbing Roma",
+  "metro": "Rome",
+  "expect_h": "9176c24f7ef42c22",
+  "website": "https://www.rockit-arrampicataroma.it/",
+  "hours": {
+   "mon": "8am–11pm",
+   "tue": "8am–11pm",
+   "wed": "8am–11pm",
+   "thu": "8am–11pm",
+   "fri": "8am–11pm",
+   "sat": "10am–7pm",
+   "sun": "10am–7pm"
+  },
+  "day_pass": "€12 first entry, €18 without membership from second entry",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.rockit-arrampicataroma.it/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.rockit-arrampicataroma.it/abbonamenti/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Via Biordo Michelotti 22 int. 14/17 matches. Price table is ambiguous: 'Primo ingresso' EUR 12; 'ingresso senza tesseramento (dal secondo ingresso)' EUR 18; single-entry row shows EUR 12. Registration EUR 40. Cafe = bistrot; training = fitness area; kids = courses from age 3-4."
+ },
+ {
+  "id": "seed-1138",
+  "name": "Star Wall Climbing Park",
+  "metro": "Rome",
+  "expect_h": "9bce2b357f5b6e9a",
+  "website": "https://www.starwall.it/",
+  "hours": null,
+  "day_pass": null,
+  "facilities": [
+   "training",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.starwall.it/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://www.starwall.it/climbingpark/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.starwall.it/arrampicata-bambini/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Site states only Mon-Fri 9-22 (no weekend), so hours null. No day-pass price on site. Via Edoardo Maragliano 5 matches. 'Area ristoro' (refreshment area) not mapped to cafe."
+ }
+]

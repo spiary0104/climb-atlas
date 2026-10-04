@@ -1,0 +1,941 @@
+[
+ {
+  "id": "seed-910",
+  "name": "Big Depot Leeds",
+  "metro": "Leeds",
+  "expect_h": "e33f6397b8efd8db",
+  "website": "https://www.depotclimbing.co.uk/big-depot/",
+  "hours": {
+   "mon": "9am–10pm",
+   "tue": "9am–10pm",
+   "wed": "9am–10pm",
+   "thu": "9am–10pm",
+   "fri": "9am–10pm",
+   "sat": "9am–9pm",
+   "sun": "9am–9pm"
+  },
+  "day_pass": "£14 adult, £12.50 concession",
+  "facilities": [
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.depotclimbing.co.uk/big-depot/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.depotclimbing.co.uk/big-depot/prices/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours from the Opening & Prices page (Mon-Fri 09:00-22:00, Sat-Sun 09:00-21:00). Kids = junior sessions/classes."
+ },
+ {
+  "id": "seed-906",
+  "name": "CityBloc",
+  "metro": "Leeds",
+  "expect_h": "6e01e8120516fb4b",
+  "website": "https://citybloc.co.uk/",
+  "hours": {
+   "mon": "7am–10pm",
+   "tue": "10am–10pm",
+   "wed": "7am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "10am–8pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": "£12 adult, £10.50 concession",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "showers",
+   "yoga"
+  ],
+  "sources": [
+   {
+    "url": "https://citybloc.co.uk/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://citybloc.co.uk/prices/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://citybloc.co.uk/facilities/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Site lists Weekends 10:00-20:00 (applied to Sat and Sun). Shoe hire stated as included in the first-3-visits offer."
+ },
+ {
+  "id": "seed-878",
+  "name": "Live For Today Climbing Centre (Formerly Parthian Harrogate)",
+  "metro": "Leeds",
+  "expect_h": "c5c8b3c3c3ac7cf2",
+  "website": "https://live-for-today.com/locations/harrogate-climbing-centre",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "10am–8pm",
+   "sun": "10am–8pm"
+  },
+  "day_pass": "£12.50 adult, £11.50 concession",
+  "facilities": [
+   "cafe",
+   "shop",
+   "showers",
+   "parking",
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://live-for-today.com/locations/harrogate-climbing-centre",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Operator is Live For Today (former Parthian Harrogate); address Hornbeam Park Avenue HG2 8QT. Amenities list: showers, parking, shop, cafe."
+ },
+ {
+  "id": "seed-888",
+  "name": "ROKT Climbing Gym",
+  "metro": "Leeds",
+  "expect_h": "d14366fbf6763d0a",
+  "website": "https://www.rokt.co.uk/",
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [
+   {
+    "url": "https://www.rokt.co.uk/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   }
+  ],
+  "status": "website-only",
+  "notes": "Official site is a one-page site: address The Old Flour Mill, Millroyd Street, Brighouse HD6 1EY; no hours or prices published (opening times shows only 'Currently closed'). Brighouse is outside Leeds; the seed pin (Leeds centre) is far from the official address."
+ },
+ {
+  "id": "seed-907",
+  "name": "The Climbing Lab",
+  "metro": "Leeds",
+  "expect_h": "b87702d0db30131a",
+  "website": "https://www.climbinglab.co.uk/",
+  "hours": {
+   "mon": "9am–10pm",
+   "tue": "6am–10pm",
+   "wed": "6am–10pm",
+   "thu": "6am–10pm",
+   "fri": "6am–10pm",
+   "sat": "10am–9pm",
+   "sun": "10am–9pm"
+  },
+  "day_pass": "£12.50 adult, £11 concession",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "shop",
+   "showers"
+  ],
+  "sources": [
+   {
+    "url": "https://www.climbinglab.co.uk/visit-us",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.climbinglab.co.uk/entry-prices",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.climbinglab.co.uk/facilities",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Entry price page lists concession as 11 pounds (not 11.50). Induction fee excluded. Address Units 11,12,14&15 Kirkstall Industrial Park LS4 2AZ."
+ },
+ {
+  "id": "seed-908",
+  "name": "The Depot Climbing Leeds - Armley",
+  "metro": "Leeds",
+  "expect_h": "5792717877d75ea8",
+  "website": "https://www.depotclimbing.co.uk/leeds-armley/",
+  "hours": {
+   "mon": "6am–10pm",
+   "tue": "6am–10pm",
+   "wed": "6am–10pm",
+   "thu": "6am–10pm",
+   "fri": "6am–10pm",
+   "sat": "9am–9pm",
+   "sun": "9am–9pm"
+  },
+  "day_pass": "£14 adult, £12.50 concession",
+  "facilities": [
+   "shoe-hire",
+   "kids",
+   "training",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://www.depotclimbing.co.uk/leeds-armley/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.depotclimbing.co.uk/leeds-armley/opening-prices/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.depotclimbing.co.uk/big-depot/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Training = 'dedicated bouldering wall with a fully stocked gym (Depot Armley)' on the Big Depot page. Parking from the car-park note on the prices page. Address 1 Maybrook Industrial Estate, Armley Road LS12 2EL."
+ },
+ {
+  "id": "seed-909",
+  "name": "The Depot Climbing Leeds - Pudsey",
+  "metro": "Leeds",
+  "expect_h": "749c7a2dec9de72e",
+  "website": "https://www.depotclimbing.co.uk/leeds/",
+  "hours": {
+   "mon": "9am–10pm",
+   "tue": "9am–10pm",
+   "wed": "9am–10pm",
+   "thu": "9am–10pm",
+   "fri": "9am–10pm",
+   "sat": "9am–9pm",
+   "sun": "9am–9pm"
+  },
+  "day_pass": "£11.50 adult, £10.50 concession",
+  "facilities": [
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.depotclimbing.co.uk/leeds/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.depotclimbing.co.uk/leeds/depot-climbing-opening-prices/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Address 173 Richardshaw Lane, Stanningley, Pudsey LS28 6AA. Page mentions 'great coffee' but no explicit cafe, so cafe omitted."
+ },
+ {
+  "id": "seed-862",
+  "name": "Boulder Shack",
+  "metro": "Southampton",
+  "expect_h": "633139e316f8a54d",
+  "website": "https://bouldershack.co.uk/",
+  "hours": {
+   "mon": "7am–10:15pm",
+   "tue": "10am–10:15pm",
+   "wed": "7am–10:15pm",
+   "thu": "10am–10:15pm",
+   "fri": "7am–10:15pm",
+   "sat": "9:30am–8:30pm",
+   "sun": "9:30am–8:30pm"
+  },
+  "day_pass": "£14 adult peak, £12.50 off-peak",
+  "facilities": [
+   "cafe",
+   "parking",
+   "showers",
+   "training",
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://bouldershack.co.uk/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://bouldershack.co.uk/contact-opening-times/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://bouldershack.co.uk/activities/day-entry",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Off-peak is weekdays 10:00-16:00. Mon/Wed/Fri 07:00 opening is the 'Rise and Climb' early open at no extra charge. Address Unit 4 Imperial Park, Empress Road SO14 0JW."
+ },
+ {
+  "id": "seed-872",
+  "name": "Golden Gecko",
+  "metro": "Southampton",
+  "expect_h": "010adc68593b4ac2",
+  "website": "https://www.ggclimbing.com/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "10am–7pm",
+   "sun": "12pm–7pm"
+  },
+  "day_pass": "£12.50 adult, £10.50 concession",
+  "facilities": [
+   "cafe",
+   "parking",
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.ggclimbing.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://www.ggclimbing.com/contact-us",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.ggclimbing.com/prices",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   },
+   {
+    "url": "https://www.ggclimbing.com/faq",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Gym is in Romsey (34 Romsey Industrial Estate, SO51 0HR), not Winchester; seed pin is off. Contact page says Mon-Fri 10-22; the FAQ says Friday 10-20 in term time (contact page used). Standard registered-climber entry, kit included."
+ },
+ {
+  "id": "seed-881",
+  "name": "Parthian Climbing Southampton",
+  "metro": "Southampton",
+  "expect_h": "f4a8f1af2898e6e7",
+  "website": "https://parthianclimbing.com/southampton/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "10am–7pm",
+   "sun": "10am–7pm"
+  },
+  "day_pass": "£16 adult, £14 concession",
+  "facilities": [
+   "cafe",
+   "shop",
+   "training",
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://parthianclimbing.com/southampton/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://parthianclimbing.com/southampton/facilities/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://parthianclimbing.com/prices-and-memberships/prices-southampton/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "day_pass"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "One-time 3.50 pound registration fee for new customers excluded. Address Unit E1 Adanac Park, Nursling SO16 0BT."
+ },
+ {
+  "id": "seed-929",
+  "name": "The Climbing Hangar Southampton",
+  "metro": "Southampton",
+  "expect_h": "f2e6e57072e21117",
+  "website": "https://www.theclimbinghangar.com/locations/southampton",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–9pm",
+   "sat": "9am–7pm",
+   "sun": "9am–7pm"
+  },
+  "day_pass": "£17 adult, £14 concession",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "shop",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://www.theclimbinghangar.com/locations/southampton",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Concession price also covers under-18s. Free shoe rental and gym included with entry. Address Third Ave SO15 0LD."
+ },
+ {
+  "id": "seed-898",
+  "name": "The Hanger @ Calshot",
+  "metro": "Southampton",
+  "expect_h": "8d90a5a2d13662e4",
+  "website": "https://www.hants.gov.uk/thingstodo/calshot/hangar",
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [
+   {
+    "url": "https://www.hants.gov.uk/thingstodo/calshot/hangar",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   }
+  ],
+  "status": "website-only",
+  "notes": "Hampshire County Council site (The Hangar at Calshot Activities Centre). Cloudflare challenge returned HTTP 403 to curl and WebFetch, so no page was read; URL taken from the search result and not fetched. Hours/prices not verified, left null."
+ },
+ {
+  "id": "seed-870",
+  "name": "Flashpoint Bristol",
+  "metro": "Bristol",
+  "expect_h": "8893eccbcc5a31ab",
+  "website": "https://flashpointbristol.com/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "7am–10pm",
+   "wed": "7am–10pm",
+   "thu": "7am–10pm",
+   "fri": "9am–10pm",
+   "sat": "9am–7pm",
+   "sun": "9am–7pm"
+  },
+  "day_pass": "£16 adult, £14 concession",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://flashpointbristol.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://flashpointbristol.com/opening-times/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://flashpointbristol.com/prices/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://flashpointbristol.com/offerings/first-visit/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://flashpointbristol.com/find-us/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Climbing wall hours (not cafe hours). Page lists 'Weekend' 09:00-19:00 (applied to Sat and Sun). Address 2a Templegate Park, Mead Street BS3 4RP; car park is APCOA-managed."
+ },
+ {
+  "id": "seed-884",
+  "name": "Redpoint Bristol",
+  "metro": "Bristol",
+  "expect_h": "42809c5ea8c23c27",
+  "website": "https://redpointbristol.co.uk/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "10am–7pm",
+   "sun": "10am–7pm"
+  },
+  "day_pass": "£16 adult, £14 concession",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://redpointbristol.co.uk/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://redpointbristol.co.uk/opening-times/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://redpointbristol.co.uk/prices/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://redpointbristol.co.uk/offerings/first-visit/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Climbing wall hours (not cafe). Free kit hire for pass holders implies hire for others."
+ },
+ {
+  "id": "seed-889",
+  "name": "TCA - The Church",
+  "metro": "Bristol",
+  "expect_h": "78c6cce4b1a9fa6d",
+  "website": "https://www.theclimbingacademy.com/locations/the-church/",
+  "hours": {
+   "mon": "12pm–10pm",
+   "tue": "12pm–10pm",
+   "wed": "12pm–10pm",
+   "thu": "12pm–10pm",
+   "fri": "12pm–10pm",
+   "sat": "9am–6pm",
+   "sun": "9am–6pm"
+  },
+  "day_pass": "£14.50 adult peak, £12.50 off-peak",
+  "facilities": [
+   "cafe",
+   "shop",
+   "training",
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.theclimbingacademy.com/locations/the-church/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.theclimbingacademy.com/prices/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "St Werburgh's Church, Mina Road BS2 9YQ (roped climbing, auto belays, limited bouldering). Peak 3-8pm Mon-Fri / before 3pm Sat-Sun; off-peak otherwise. Prices are the same at every TCA centre."
+ },
+ {
+  "id": "seed-890",
+  "name": "TCA - The Mothership",
+  "metro": "Bristol",
+  "expect_h": "4bac172e0febc27b",
+  "website": "https://www.theclimbingacademy.com/locations/the-mothership/",
+  "hours": {
+   "mon": "7am–10pm",
+   "tue": "7am–10pm",
+   "wed": "7am–10pm",
+   "thu": "7am–10pm",
+   "fri": "7am–10pm",
+   "sat": "8am–8pm",
+   "sun": "8am–8pm"
+  },
+  "day_pass": "£14.50 adult peak, £12.50 off-peak",
+  "facilities": [
+   "cafe",
+   "shop",
+   "training",
+   "shoe-hire",
+   "kids",
+   "showers",
+   "parking",
+   "yoga"
+  ],
+  "sources": [
+   {
+    "url": "https://www.theclimbingacademy.com/locations/the-mothership/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.theclimbingacademy.com/prices/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   },
+   {
+    "url": "https://www.theclimbingacademy.com/locations/the-mothership/adults/yoga/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "85 Barrow Road BS5 0FD. Yoga from the centre's own yoga page. Peak 3-8pm Mon-Fri / before 3pm Sat-Sun."
+ },
+ {
+  "id": "seed-905",
+  "name": "Undercover Rock",
+  "metro": "Bristol",
+  "expect_h": "0b1f09a04c56322d",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [],
+  "status": "flag",
+  "notes": "Probable duplicate/renamed: Undercover Rock (Mina Road, St Werburgh's Church) is now The Climbing Academy's The Church (seed-889, https://www.theclimbingacademy.com/locations/the-church/). Official TCA pages fetched do not mention the old name, so the link rests on non-official listings; no data filled."
+ },
+ {
+  "id": "seed-916",
+  "name": "Big Depot Manchester",
+  "metro": "Manchester",
+  "expect_h": "e00a775f83049ee5",
+  "website": "https://www.depotclimbing.co.uk/big-depot-manchester/",
+  "hours": {
+   "mon": "6am–10pm",
+   "tue": "6am–10pm",
+   "wed": "6am–10pm",
+   "thu": "6am–10pm",
+   "fri": "6am–10pm",
+   "sat": "9am–9pm",
+   "sun": "9am–9pm"
+  },
+  "day_pass": "£14 adult, £12.50 concession",
+  "facilities": [
+   "shoe-hire",
+   "training",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.depotclimbing.co.uk/big-depot-manchester/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.depotclimbing.co.uk/big-depot-manchester/prices/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Official address Unit A5/A6 Southmoor Industrial Estate, Wythenshawe M23 9XD, about 10 km from the seed pin. Training = ground-floor gym."
+ },
+ {
+  "id": "seed-917",
+  "name": "BlocHaus",
+  "metro": "Manchester",
+  "expect_h": "76b9f989520c5c56",
+  "website": "https://www.blochausclimbing.com/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "6:30am–10pm",
+   "wed": "10am–10pm",
+   "thu": "6:30am–10pm",
+   "fri": "10am–10pm",
+   "sat": "10am–7pm",
+   "sun": "10am–7pm"
+  },
+  "day_pass": "£12 adult peak, £9 off-peak",
+  "facilities": [
+   "cafe",
+   "shop",
+   "training",
+   "kids",
+   "shoe-hire",
+   "showers",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://www.blochausclimbing.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.blochausclimbing.com/about-us/contact",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.blochausclimbing.com/prices",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   },
+   {
+    "url": "https://www.blochausclimbing.com/about-us/facilities",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Off-peak 9 pounds is Mon-Fri until 2pm. Unit 1, 30-34 Wood Street, Openshaw M11 2FB (about 5 km east of seed pin). Dedicated kids soft-play area is 'coming soon'; kids sessions/clubs exist."
+ },
+ {
+  "id": "seed-879",
+  "name": "Parthian Climbing Manchester",
+  "metro": "Manchester",
+  "expect_h": "f83bd08af8c3bcd7",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [
+   {
+    "url": "https://parthianclimbing.com/parthian-climbing-locations/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   }
+  ],
+  "status": "flag",
+  "notes": "Official parthianclimbing.com no longer lists Manchester (only Southampton, Reading and The Font centres); /manchester/ redirects to the homepage and /manchester/prices/ 404s. Likely closed (a non-official search result says closed July 2025), but no official statement was fetched."
+ },
+ {
+  "id": "seed-915",
+  "name": "Rock Over Climbing",
+  "metro": "Manchester",
+  "expect_h": "70bfd5d49c6b7188",
+  "website": "https://www.rockoverclimbing.com/",
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [
+   {
+    "url": "https://www.rockoverclimbing.com/locations",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   }
+  ],
+  "status": "flag",
+  "notes": "Doubtful location match: Rock Over has Central (Park Garage, Cheviot St M3 1LW), Sharston (Shentonfield Rd M22 4RW) and Bolton; the seed pin (53.4425,-2.2325) matches none and no address is given. No data filled. For reference, Central: Mon-Fri 11am-10pm, Sat-Sun 10am-8pm; non-member adult day pass 15 pounds (pages fetched)."
+ },
+ {
+  "id": "seed-896",
+  "name": "The Depot Climbing Centre Manchester",
+  "metro": "Manchester",
+  "expect_h": "cbb9f6fe0b08476e",
+  "website": "https://www.depotclimbing.co.uk/manchester/",
+  "hours": {
+   "mon": "6am–10pm",
+   "tue": "6am–10pm",
+   "wed": "6am–10pm",
+   "thu": "6am–10pm",
+   "fri": "6am–10pm",
+   "sat": "9am–9pm",
+   "sun": "9am–9pm"
+  },
+  "day_pass": "£14 adult, £12.50 concession",
+  "facilities": [
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.depotclimbing.co.uk/manchester/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.depotclimbing.co.uk/manchester/depot-climbing-opening-prices/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Depot Manchester (Trafford): Unit N1/N2 Mosley Road, Central Park Estate, Trafford Park M17 1PG, about 4 km from seed pin."
+ }
+]

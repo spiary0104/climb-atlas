@@ -1,0 +1,834 @@
+[
+ {
+  "id": "seed-1296",
+  "name": "Bimano - Zentweg",
+  "metro": "Bern",
+  "expect_h": "816bc3aea3969878",
+  "website": "https://www.bimano.ch/boulder",
+  "hours": {
+   "mon": "9am–11pm",
+   "tue": "9am–11pm",
+   "wed": "9am–11pm",
+   "thu": "9am–11pm",
+   "fri": "9am–11pm",
+   "sat": "10am–6pm",
+   "sun": "10am–6pm"
+  },
+  "day_pass": "CHF 22 adult, CHF 19 reduced",
+  "facilities": [
+   "training",
+   "showers",
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.bimano.ch/boulder",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours from the \"boulder\" tab of the opening-hours widget (tabs: skate, kids, boulder, zent). Subscribers get 7am access (ignored). Kids = Boulderkids/Boulderteens courses. Shoe rental CHF 5."
+ },
+ {
+  "id": "seed-1297",
+  "name": "BoulderBad Muubeeri - Bern",
+  "metro": "Bern",
+  "expect_h": "d4aeaeb2cff41be8",
+  "website": "https://www.muubeeri.ch/",
+  "hours": {
+   "mon": "7am–10:30pm",
+   "tue": "7am–10:30pm",
+   "wed": "7am–10:30pm",
+   "thu": "11:30am–10:30pm",
+   "fri": "9am–10:30pm",
+   "sat": "9am–7pm",
+   "sun": "9am–7pm"
+  },
+  "day_pass": "CHF 20 adult, CHF 18 reduced",
+  "facilities": [
+   "cafe",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.muubeeri.ch/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.muubeeri.ch/bouldern/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Interim use of former pool; site states last operating day is 31.12.2026 (will close). Cafe stated on home page (coffee and cake); shoe rental on /bouldern/."
+ },
+ {
+  "id": "g-ecd324de99",
+  "name": "Boulderpark Schwarzenburg",
+  "metro": "Bern",
+  "expect_h": "7d08dd919e551765",
+  "website": "https://boulderpark.ch/",
+  "hours": {
+   "mon": "5pm–8:30pm",
+   "tue": "5pm–8:30pm",
+   "wed": "5pm–8:30pm",
+   "thu": "5pm–8:30pm",
+   "fri": "5pm–8:30pm",
+   "sat": "1pm–5pm",
+   "sun": "1pm–5pm"
+  },
+  "day_pass": "CHF 10 adult, CHF 5 youth up to 15",
+  "facilities": null,
+  "sources": [
+   {
+    "url": "https://boulderpark.ch/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours are the \"ohne Abo\" (public) hours; subscribers get 8am-10pm access. Price footnote says \"Stand Dezember 2019\", so prices may be outdated. Address Dorfstrasse 5 matches."
+ },
+ {
+  "id": "g-43e3aa35f3",
+  "name": "BoulderWorb",
+  "metro": "Bern",
+  "expect_h": "08ee34b985487e6b",
+  "website": "https://www.boulderworb.ch/",
+  "hours": {
+   "mon": "8:30am–11pm",
+   "tue": "8:30am–11pm",
+   "wed": "8:30am–11pm",
+   "thu": "8:30am–11pm",
+   "fri": "8:30am–11pm",
+   "sat": "8:30am–11pm",
+   "sun": "8:30am–11pm"
+  },
+  "day_pass": "CHF 15 adult, CHF 10 student/trainee",
+  "facilities": [
+   "cafe",
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.boulderworb.ch/boulderworb/offnungszeiten",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.boulderworb.ch/angebot/ticketpreise",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.boulderworb.ch/boulderworb/anlage",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.boulderworb.ch/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Largely unstaffed, QR-ticket access, open daily 8:30-23:00. Cafe = Bistro/chill area with coffee; kids area stated on home page; shoe rental CHF 5."
+ },
+ {
+  "id": "g-4cf80c7ffc",
+  "name": "griffbar Boulderwand Thun",
+  "metro": "Bern",
+  "expect_h": "a0edfc87e5558a57",
+  "website": "https://griffbar.ch/",
+  "hours": {
+   "mon": "6am–11pm",
+   "tue": "6am–11pm",
+   "wed": "6am–11pm",
+   "thu": "6am–11pm",
+   "fri": "6am–11pm",
+   "sat": "6am–11pm",
+   "sun": "6am–11pm"
+  },
+  "day_pass": "CHF 18 adult, CHF 15 reduced",
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://griffbar.ch/oeffnungszeiten_und_preise/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Judgement call: site says open daily 06:00-23:00 for anyone with an online ticket or subscription (staffed only Tue/Wed/Thu/Sat/Sun for part of the day). Used 6am-11pm. Car parking at the hall is prohibited."
+ },
+ {
+  "id": "g-54c13827ff",
+  "name": "Magnet Trainingszentrum für Sportkletterer",
+  "metro": "Bern",
+  "expect_h": "3d01b877a100e5a2",
+  "website": "https://www.klettern-bern.ch/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "9am–8pm",
+   "sun": "9am–8pm"
+  },
+  "day_pass": "CHF 14 adult bouldering (CHF 12 student), CHF 24 adult climbing",
+  "facilities": [
+   "shoe-hire",
+   "parking",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.klettern-bern.ch/home/infos",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Weekend hours are the winter/regular hours (9-20) valid from 1 Sept; summer weekend hours were 9-18 until 31 Aug. Kids = children courses/birthday events in site menu. Parking in front of the hall."
+ },
+ {
+  "id": "g-04a7320e40",
+  "name": "O'Bloc",
+  "metro": "Bern",
+  "expect_h": "5ed1a5cef7603da0",
+  "website": "https://obloc.ch/",
+  "hours": {
+   "mon": "10am–11pm",
+   "tue": "10am–11pm",
+   "wed": "8am–11pm",
+   "thu": "10am–11pm",
+   "fri": "8am–11pm",
+   "sat": "9am–7pm",
+   "sun": "9am–7pm"
+  },
+  "day_pass": "CHF 27 adult day ticket, CHF 22 reduced",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "showers"
+  ],
+  "sources": [
+   {
+    "url": "https://obloc.ch/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://obloc.ch/dein-besuch",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://obloc.ch/impressum",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Target address was null; impressum gives Forelstrasse 11, 3072 Ostermundigen (matches location). Also offers 1-hour entry CHF 22 adult. Kids = Lern- und Familienzone + birthdays."
+ },
+ {
+  "id": "g-bff1fd5a92",
+  "name": "Grimper.ch Meyrin-Satigny",
+  "metro": "Geneva",
+  "expect_h": "7cbcb8502ff23340",
+  "website": "https://www.grimper.ch/salles-descalade/satigny/",
+  "hours": {
+   "mon": "9am–10:30pm",
+   "tue": "9am–10:30pm",
+   "wed": "9am–10:30pm",
+   "thu": "9am–10:30pm",
+   "fri": "9am–10:30pm",
+   "sat": "9am–8pm",
+   "sun": "9am–8pm"
+  },
+  "day_pass": "CHF 30 adult, CHF 24 age 17-25/AVS",
+  "facilities": [
+   "cafe",
+   "training",
+   "shoe-hire",
+   "shop",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://www.grimper.ch/salles-descalade/satigny/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Prices are for the Meyrin-Satigny page (rope climbing + bouldering entry). Parking: page says next to a large car park (50% discount for clients), not strictly on-site. Shop: 10% discount on equipment sold in the halls."
+ },
+ {
+  "id": "g-33c8ddaa88",
+  "name": "Planet Climbing Lancy",
+  "metro": "Geneva",
+  "expect_h": "84f567abaeb2ba58",
+  "website": "https://planetclimbing.ch/lancy/",
+  "hours": {
+   "mon": "12pm–10pm",
+   "tue": "12pm–10pm",
+   "wed": "12pm–10pm",
+   "thu": "12pm–10pm",
+   "fri": "12pm–10pm",
+   "sat": "2pm–9pm",
+   "sun": "2pm–9pm"
+  },
+  "day_pass": "CHF 19.50 adult, CHF 17.50 reduced",
+  "facilities": [
+   "shoe-hire",
+   "yoga",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://planetclimbing.ch/lancy/heures-douverture-et-tarifs/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://planetclimbing.ch/lancy/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Yoga stated in entry text (yoga included) and yoga course page; kids = children courses/birthdays."
+ },
+ {
+  "id": "g-8952111b89",
+  "name": "Planet Climbing Plan-les-Ouates",
+  "metro": "Geneva",
+  "expect_h": "8d701ddd955e6be8",
+  "website": "https://planetclimbing.ch/plan-les-ouates/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "10am–9pm",
+   "sun": "10am–9pm"
+  },
+  "day_pass": "CHF 23 adult, CHF 19 reduced",
+  "facilities": [
+   "cafe",
+   "shoe-hire",
+   "yoga",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://planetclimbing.ch/plan-les-ouates/heures-douverture-et-tarifs/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://planetclimbing.ch/plan-les-ouates/planet-kitchen/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://planetclimbing.ch/plan-les-ouates/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Cafe = Planet Kitchen restaurant on site (own opening times). Entry also includes sauna and yoga."
+ },
+ {
+  "id": "g-4b38ee73ee",
+  "name": "Structure Pan d'Escalade",
+  "metro": "Geneva",
+  "expect_h": "3df46f16973d0ea5",
+  "website": "https://panstructure.ch/",
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [
+   {
+    "url": "https://panstructure.ch/fermeture-de-structure/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   }
+  ],
+  "status": "flag",
+  "notes": "Address 18 chemin des Batailles, 1214 Vernier (matches). News post of 15 Aug 2026 (image): gym did NOT reopen on 17 Aug after an inspection about norms; \"Pan Structure may not reopen\". Homepage still lists old hours and CHF 12 entry, so hours/price left null. Likely closed/uncertain."
+ },
+ {
+  "id": "g-52f004dcce",
+  "name": "TOTEM Meyrin",
+  "metro": "Geneva",
+  "expect_h": "a059eb8d3d1b2e9c",
+  "website": "https://totem.ch/meyrin",
+  "hours": {
+   "mon": "9am–11pm",
+   "tue": "9am–11pm",
+   "wed": "9am–11pm",
+   "thu": "9am–11pm",
+   "fri": "9am–11pm",
+   "sat": "9am–11pm",
+   "sun": "9am–9pm"
+  },
+  "day_pass": "CHF 20 adult, CHF 18 student/AVS",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "yoga",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://totem.ch/meyrin",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://totem.ch/meyrin/tarifs",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Weekly hours from the JSON-LD openingHours on the location page (Mo-Fr 9-23, Sa 9-23, Su 9-21); page header shows 09:00-23:00. Free parking stated."
+ },
+ {
+  "id": "g-4897474222",
+  "name": "TOTEM Vernier (Le Môll)",
+  "metro": "Geneva",
+  "expect_h": "fdff244691dd1686",
+  "website": "https://totem.ch/vernier",
+  "hours": {
+   "mon": "9am–11pm",
+   "tue": "9am–11pm",
+   "wed": "9am–11pm",
+   "thu": "9am–11pm",
+   "fri": "9am–11pm",
+   "sat": "9am–11pm",
+   "sun": "9am–9pm"
+  },
+  "day_pass": "CHF 20 adult, CHF 18 student/AVS",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "yoga",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://totem.ch/vernier",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://totem.ch/vernier/tarifs",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours from JSON-LD openingHours on the location page (Mo-Fr 9-23, Sa 9-23, Su 9-21). Underground car park stated. Also has trampoline park and toddler playground."
+ },
+ {
+  "id": "g-448ab1686d",
+  "name": "TOTEM Versoix",
+  "metro": "Geneva",
+  "expect_h": "8406e53608cd632c",
+  "website": "https://totem.ch/versoix",
+  "hours": {
+   "mon": "10am–10:30pm",
+   "tue": "10am–10:30pm",
+   "wed": "10am–10:30pm",
+   "thu": "10am–10:30pm",
+   "fri": "10am–10:30pm",
+   "sat": "1:30pm–8pm",
+   "sun": "1:30pm–8pm"
+  },
+  "day_pass": "CHF 18 adult, CHF 16 student/AVS",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "yoga",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://totem.ch/versoix",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://totem.ch/versoix/tarifs",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours from JSON-LD openingHours on the location page (Mo-Fr 10-22:30, Sa-Su 13:30-20); header shows 10:00-22:30. Underground parking available. Training = Pan Gullich/fitness; Ninja kids zone."
+ },
+ {
+  "id": "g-772cc22e11",
+  "name": "Gecko Escalade",
+  "metro": "Lausanne",
+  "expect_h": "a120ff3ce574537e",
+  "website": "https://geckoescalade.ch/",
+  "hours": {
+   "mon": "4pm–10:30pm",
+   "tue": "4pm–10:30pm",
+   "wed": "2pm–10:30pm",
+   "thu": "4pm–10:30pm",
+   "fri": "4pm–10:30pm",
+   "sat": "10am–7:30pm",
+   "sun": "10am–7:30pm"
+  },
+  "day_pass": "CHF 15 adult bouldering (CHF 13 student), CHF 23 adult wall",
+  "facilities": [
+   "cafe",
+   "kids",
+   "shop",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://geckoescalade.ch/horaires-tarifs/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://geckoescalade.ch/le-centre/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://geckoescalade.ch/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Regular hours used (summer reduced hours ended 24 July). Members get access from 8am (ignored). Resto, climbing shop and kids play area stated."
+ },
+ {
+  "id": "g-e5b91dc731",
+  "name": "Grimper.ch Echandens (Rocspot)",
+  "metro": "Lausanne",
+  "expect_h": "9c37451eb8b2c2c4",
+  "website": "https://www.grimper.ch/salles-descalade/echandens/",
+  "hours": {
+   "mon": "9am–10:30pm",
+   "tue": "9am–10:30pm",
+   "wed": "9am–10:30pm",
+   "thu": "9am–10:30pm",
+   "fri": "9am–10:30pm",
+   "sat": "9am–8pm",
+   "sun": "9am–8pm"
+  },
+  "day_pass": "CHF 28 adult, CHF 22 age 17-25/AVS",
+  "facilities": [
+   "cafe",
+   "kids",
+   "shoe-hire",
+   "shop"
+  ],
+  "sources": [
+   {
+    "url": "https://www.grimper.ch/salles-descalade/echandens/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Prices are the Echandens page (rope climbing + bouldering entry). Bar/terrace and beginner/children area stated; shop = 10% discount on equipment sold in the halls."
+ },
+ {
+  "id": "g-a8e0820931",
+  "name": "Grimper.ch Lausanne-Beaulieu",
+  "metro": "Lausanne",
+  "expect_h": "e3e245dfcccf0c95",
+  "website": "https://www.grimper.ch/salles-descalade/lausanne-beaulieu/",
+  "hours": {
+   "mon": "9am–10:30pm",
+   "tue": "9am–10:30pm",
+   "wed": "9am–10:30pm",
+   "thu": "9am–10:30pm",
+   "fri": "9am–10:30pm",
+   "sat": "9am–8pm",
+   "sun": "9am–8pm"
+  },
+  "day_pass": "CHF 19 adult, CHF 16 age 17-25/AVS",
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.grimper.ch/salles-descalade/lausanne-beaulieu/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Bouldering-only hall. Rental table on the page."
+ },
+ {
+  "id": "g-104902e680",
+  "name": "Le Cube",
+  "metro": "Lausanne",
+  "expect_h": "ddb9a6ec2058aff5",
+  "website": "https://lecube.ch/",
+  "hours": {
+   "mon": "9am–10:30pm",
+   "tue": "9am–10:30pm",
+   "wed": "9am–10:30pm",
+   "thu": "9am–10:30pm",
+   "fri": "9am–10:30pm",
+   "sat": "9am–8pm",
+   "sun": "9am–8pm"
+  },
+  "day_pass": "CHF 16 adult, CHF 14 student",
+  "facilities": [
+   "cafe",
+   "kids",
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://lecube.ch/horaires-tarifs/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://lecube.ch/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Target address was null; site gives Rionzi 52A, 1052 Le Mont-sur-Lausanne (matches). Bar with food and family zone on home page; shoe rental CHF 5."
+ },
+ {
+  "id": "g-456aef8896",
+  "name": "TOTEM Ecublens",
+  "metro": "Lausanne",
+  "expect_h": "0ac11aa45a6e4c57",
+  "website": "https://totem.ch/ecublens",
+  "hours": {
+   "mon": "9am–11pm",
+   "tue": "9am–11pm",
+   "wed": "9am–11pm",
+   "thu": "9am–11pm",
+   "fri": "9am–11pm",
+   "sat": "9am–11pm",
+   "sun": "9am–9pm"
+  },
+  "day_pass": "CHF 18 adult, CHF 16 student/AVS",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "yoga",
+   "parking"
+  ],
+  "sources": [
+   {
+    "url": "https://totem.ch/ecublens",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://totem.ch/ecublens/tarifs",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours from JSON-LD openingHours on the location page (Mo-Fr 9-23, Sa 9-23, Su 9-21). Free parking stated; fitness zone, bar, yoga mezzanine, kids courses stated."
+ },
+ {
+  "id": "g-3c56b92c68",
+  "name": "TOTEM Vevey",
+  "metro": "Lausanne",
+  "expect_h": "d96efca480913666",
+  "website": "https://totem.ch/vevey",
+  "hours": {
+   "mon": "10am–10:30pm",
+   "tue": "10am–10:30pm",
+   "wed": "10am–10:30pm",
+   "thu": "10am–10:30pm",
+   "fri": "10am–10:30pm",
+   "sat": "1:30pm–8pm",
+   "sun": "1:30pm–8pm"
+  },
+  "day_pass": "CHF 18 adult, CHF 16 student/AVS",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shoe-hire",
+   "yoga"
+  ],
+  "sources": [
+   {
+    "url": "https://totem.ch/vevey",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://totem.ch/vevey/tarifs",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours from JSON-LD openingHours on the location page (Mo-Fr 10-22:30, Sa-Su 13:30-20). Only public car parks mentioned, so parking omitted. Training = fitness listed among offerings."
+ }
+]

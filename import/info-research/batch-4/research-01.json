@@ -1,0 +1,850 @@
+[
+  {
+    "id": "seed-1518",
+    "name": "AADED Escalando",
+    "metro": "Buenos Aires",
+    "expect_h": "2575490493fe8da8",
+    "website": "http://www.escalando.com.ar/",
+    "hours": {
+      "mon": "3pm–9pm",
+      "tue": "3pm–9pm",
+      "wed": "3pm–9pm",
+      "thu": "3pm–9pm",
+      "fri": "3pm–9pm",
+      "sat": "2pm–6:30pm",
+      "sun": "2pm–6:30pm"
+    },
+    "day_pass": null,
+    "facilities": [
+      "shoe-hire",
+      "shop",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "http://www.escalando.com.ar/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "facilities"
+        ]
+      },
+      {
+        "url": "http://www.escalando.com.ar/contacto.html",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "http://www.escalando.com.ar/muro-escalada.html",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Address Sebastian Elcano 794 at Club Peru Beach matches. Hours: wall Mon-Fri 3pm-9pm, Sat/Sun/holidays 2pm-6:30pm. Day pass left null: the only price listed (ARS 850 non-member daily) is on a page marked 2022 and looks stale. Facilities: shoe rental, Tienda, escuelita for children."
+  },
+  {
+    "id": "seed-1519",
+    "name": "Ahonikenk Naturaleza Recreativa",
+    "metro": "Buenos Aires",
+    "expect_h": "7bcf9a9cdca5f530",
+    "website": "http://ahonikenknr.blogspot.com/",
+    "hours": null,
+    "day_pass": null,
+    "facilities": [
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "http://ahonikenknr.blogspot.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Own blog (single 2013 info post): address Manuel Porcel de Peralta 1458 matches; lists wall, boulder and Escuela de Escalada Infantil. No hours or prices published. Info is old."
+  },
+  {
+    "id": "seed-1520",
+    "name": "Bien Alto Escuela de Montaña",
+    "metro": "Buenos Aires",
+    "expect_h": "2a6d4f927b8e87ab",
+    "website": "https://bienaltoescuelademontana.com/",
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [
+      {
+        "url": "https://bienaltoescuelademontana.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      }
+    ],
+    "status": "website-only",
+    "notes": "Malabia 538, Villa Crespo matches. Only a class timetable (not open hours) and no prices; hours/day pass left null."
+  },
+  {
+    "id": "seed-1757",
+    "name": "Centro Andino Buenos Aires (CABA Sede Rivadavia)",
+    "metro": "Buenos Aires",
+    "expect_h": "d8748f25e141a5e0",
+    "website": "https://www.caba.org.ar/",
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [
+      {
+        "url": "https://www.caba.org.ar/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      }
+    ],
+    "status": "website-only",
+    "notes": "Official site of Centro Andino Buenos Aires showed only a \"down for maintenance\" page (HTTP 503) when fetched, so address, hours and prices could not be confirmed there. Search snippets mention /boulder/horarios but that URL returned 404."
+  },
+  {
+    "id": "seed-1521",
+    "name": "Cima Escuela de Escalada",
+    "metro": "Buenos Aires",
+    "expect_h": "27b3fd5c03d841c2",
+    "website": "http://cima-mg.blogspot.com/",
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [
+      {
+        "url": "http://cima-mg.blogspot.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      }
+    ],
+    "status": "website-only",
+    "notes": "Own blog lists only Dardo Rocha 371, Monte Grande (matches); no posts, hours or prices."
+  },
+  {
+    "id": "seed-1523",
+    "name": "Club Andino Burzaco (CABur)",
+    "metro": "Buenos Aires",
+    "expect_h": "ed985db5654ed472",
+    "website": null,
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [],
+    "status": "not-found",
+    "notes": "Search points to cabur.com.ar but the site could not be fetched (connection failed on http/https, www and non-www), so nothing verified. Search snippets also gave a different address (San Lorenzo 317, Burzaco) than the seed (Garzon 378, Monte Grande); address doubt, unconfirmed."
+  },
+  {
+    "id": "seed-1756",
+    "name": "Estación Vertical",
+    "metro": "Buenos Aires",
+    "expect_h": "925fc5ee569a95ea",
+    "website": "https://www.estacionvertical.com.ar/",
+    "hours": {
+      "mon": "8am–10pm",
+      "tue": "8am–10pm",
+      "wed": "8am–10pm",
+      "thu": "8am–10pm",
+      "fri": "8am–10pm",
+      "sat": "8am–10pm",
+      "sun": "9am–9pm"
+    },
+    "day_pass": "ARS 18,000 climbing day pass (ARS 16,000 if paying cash)",
+    "facilities": [
+      "kids",
+      "shoe-hire",
+      "showers"
+    ],
+    "sources": [
+      {
+        "url": "https://www.estacionvertical.com.ar/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      },
+      {
+        "url": "https://www.estacionvertical.com.ar/secciones/turnos.html",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.estacionvertical.com.ar/secciones/precios.html",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.estacionvertical.com.ar/secciones/instalaciones.html",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours Mon-Sat 8am-10pm, Sun 9am-9pm per Turnos page; Wednesdays 5pm-7:30pm the wall is closed to public (Club Vertical), Mon/Tue 5:30-7pm half wall closed. Prices valid from 1 Oct 2026; \"pase de escalada\" read as the adult day pass. Cafe not listed (site says confiteria closed pending Covid protocol, so stale); showers listed on Instalaciones page (also with a stale Covid note)."
+  },
+  {
+    "id": "seed-1524",
+    "name": "Golem Escalada",
+    "metro": "Buenos Aires",
+    "expect_h": "b450fa24e6ef4765",
+    "website": null,
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [],
+    "status": "not-found",
+    "notes": "Only an old news blog (golemescalada.blogspot.com, 2008-2011 posts) and Facebook found; blog states no address, hours or prices, so not confirmed as this gym. No working official site found."
+  },
+  {
+    "id": "seed-1525",
+    "name": "K2 Escalada Deportiva",
+    "metro": "Buenos Aires",
+    "expect_h": "01d08cfab276675b",
+    "website": null,
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [],
+    "status": "not-found",
+    "notes": "No official website found by search (only directories and social media)."
+  },
+  {
+    "id": "seed-1530",
+    "name": "Limite Sur",
+    "metro": "Buenos Aires",
+    "expect_h": "a0c91832027d759b",
+    "website": null,
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [],
+    "status": "not-found",
+    "notes": "Only a Facebook page and directory listings found; no official website."
+  },
+  {
+    "id": "seed-1755",
+    "name": "V Once Escalada",
+    "metro": "Buenos Aires",
+    "expect_h": "ee4caabfe0052818",
+    "website": "https://v11escalada.com/",
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [
+      {
+        "url": "https://v11escalada.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      }
+    ],
+    "status": "website-only",
+    "notes": "Site shows \"V_ONCE Club de Escalada, Proximamente...\" with General Urquiza 124, Capital Federal; no hours, prices or facilities published."
+  },
+  {
+    "id": "seed-45",
+    "name": "9 Degrees Bouldering",
+    "metro": "Brisbane",
+    "expect_h": "26b3049abd1120b6",
+    "website": "https://9degreesbrisbane.com.au/location/enoggera-qld/",
+    "hours": {
+      "mon": "9am–10pm",
+      "tue": "9am–10pm",
+      "wed": "6am–10pm",
+      "thu": "9am–10pm",
+      "fri": "6am–10pm",
+      "sat": "8am–10pm",
+      "sun": "8am–10pm"
+    },
+    "day_pass": "A$26 adult, A$24 student",
+    "facilities": [
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://9degreesbrisbane.com.au/location/enoggera-qld/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      },
+      {
+        "url": "https://www.9degrees.com.au/locations",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.9degrees.com.au/info",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours from 9degrees.com.au/locations (Enoggera, 72 Pickering St); weekends listed as one range. Casual visit price is chain-wide; shoe hire A$7."
+  },
+  {
+    "id": "seed-49",
+    "name": "BOUNCE Hendra",
+    "metro": "Brisbane",
+    "expect_h": "c6634bc6b1b6411e",
+    "website": "https://bounceinc.com.au/venues/hendra/",
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [
+      {
+        "url": "https://bounceinc.com.au/venues/hendra/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      }
+    ],
+    "status": "flag",
+    "notes": "Not a bouldering gym: BOUNCE Hendra (formerly Urban Xtreme) is a trampoline/adventure park with a 10.5 m wall climb attraction, cafe and bar. Address 4/370 Nudgee Rd matches. Hours/prices not recorded as they are for the whole venue."
+  },
+  {
+    "id": "seed-55",
+    "name": "Crank",
+    "metro": "Brisbane",
+    "expect_h": "e44dbf1691713a61",
+    "website": "https://www.crankclimbing.com.au/",
+    "hours": {
+      "mon": "9am–9:30pm",
+      "tue": "9am–9:30pm",
+      "wed": "9am–9:30pm",
+      "thu": "9am–9:30pm",
+      "fri": "9am–9:30pm",
+      "sat": "8am–8pm",
+      "sun": "9am–6pm"
+    },
+    "day_pass": "A$27 adult, A$25 student, A$22 youth",
+    "facilities": [
+      "training",
+      "kids",
+      "shoe-hire",
+      "shop"
+    ],
+    "sources": [
+      {
+        "url": "https://www.crankclimbing.com.au/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.crankclimbing.com.au/crankpricing/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "537 Kessels Rd matches. Site says times subject to change. Entry covers climbing, bouldering, Ninja Warrior; harness hire A$5 extra. Facilities: Kilter/campus/weights gym, kids wall and parties, shoe hire, Pro Shop."
+  },
+  {
+    "id": "seed-56",
+    "name": "Rocksports",
+    "metro": "Brisbane",
+    "expect_h": "10b9a6a01d6e1b41",
+    "website": "https://www.rocksports.com.au/",
+    "hours": {
+      "mon": "10am–9pm",
+      "tue": "10am–9pm",
+      "wed": "10am–9pm",
+      "thu": "10am–9pm",
+      "fri": "10am–9pm",
+      "sat": "10am–6pm",
+      "sun": "10am–6pm"
+    },
+    "day_pass": "A$22 adult, A$18 student",
+    "facilities": [
+      "training",
+      "shoe-hire",
+      "showers"
+    ],
+    "sources": [
+      {
+        "url": "https://www.rocksports.com.au/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.rocksports.com.au/contact-us",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.rocksports.com.au/pricing",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "224 Barry Pde matches. Hours stated as weekdays 10am-9pm, weekends 10am-6pm. Casual visit priced per day; shoe hire A$5."
+  },
+  {
+    "id": "seed-46",
+    "name": "Urban Climb Milton",
+    "metro": "Brisbane",
+    "expect_h": "f4dd61079a965a75",
+    "website": "https://urbanclimb.com.au/locations/milton/",
+    "hours": {
+      "mon": "6am–10pm",
+      "tue": "6am–10pm",
+      "wed": "6am–10pm",
+      "thu": "6am–10pm",
+      "fri": "6am–10pm",
+      "sat": "8am–8pm",
+      "sun": "8am–8pm"
+    },
+    "day_pass": "A$26 adult, A$24 student",
+    "facilities": [
+      "cafe",
+      "yoga",
+      "training",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://urbanclimb.com.au/locations/milton/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://urbanclimb.com.au/pricing/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Location page data (embedded JSON): bouldering weekdays 6am-10pm, weekends 8am-8pm; public holidays 8am-8pm ignored. Gear hire (shoes) on chain pricing page. Address 17 Roy St matches."
+  },
+  {
+    "id": "seed-47",
+    "name": "Urban Climb Newstead",
+    "metro": "Brisbane",
+    "expect_h": "92577288ae0f13d9",
+    "website": "https://urbanclimb.com.au/locations/newstead/",
+    "hours": {
+      "mon": "6am–10pm",
+      "tue": "6am–10pm",
+      "wed": "6am–10pm",
+      "thu": "6am–10pm",
+      "fri": "6am–10pm",
+      "sat": "8am–8pm",
+      "sun": "8am–8pm"
+    },
+    "day_pass": "A$26 adult, A$24 student",
+    "facilities": [
+      "training",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://urbanclimb.com.au/locations/newstead/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://urbanclimb.com.au/pricing/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Location page data (embedded JSON): bouldering weekdays 6am-10pm, weekends 8am-8pm; public holidays 8am-8pm ignored. Gear hire (shoes) on chain pricing page. Address 5 Morse St matches. Location lists bouldering only (no ropes), unlike the seed types."
+  },
+  {
+    "id": "seed-48",
+    "name": "Urban Climb West End",
+    "metro": "Brisbane",
+    "expect_h": "4269cf14c68a6821",
+    "website": "https://urbanclimb.com.au/locations/west-end/",
+    "hours": {
+      "mon": "6am–10pm",
+      "tue": "6am–10pm",
+      "wed": "6am–10pm",
+      "thu": "6am–10pm",
+      "fri": "6am–10pm",
+      "sat": "8am–8pm",
+      "sun": "8am–8pm"
+    },
+    "day_pass": "A$26 adult, A$24 student",
+    "facilities": [
+      "cafe",
+      "training",
+      "yoga",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://urbanclimb.com.au/locations/west-end/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://urbanclimb.com.au/pricing/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Location page data (embedded JSON): bouldering weekdays 6am-10pm, weekends 8am-8pm; public holidays 8am-8pm ignored. Gear hire (shoes) on chain pricing page. Address 2/220 Montague Rd matches. Bouldering and ropes times are the same."
+  },
+  {
+    "id": "seed-59",
+    "name": "Adrenaline Vault",
+    "metro": "Perth",
+    "expect_h": "86e8e3e83f1017e9",
+    "website": "https://adrenalinevault.com.au/locations/belmont/",
+    "hours": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "6am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "8am–7pm",
+      "sun": "8am–7pm"
+    },
+    "day_pass": "A$26 adult, A$24 concession",
+    "facilities": [
+      "cafe",
+      "training",
+      "shoe-hire",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://adrenalinevault.com.au/locations/belmont/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://adrenalinevault.com.au/pricing/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "72 Robinson Ave matches. Cafe with pizza, training vault (kilter/tension/weights); kids from birthdays and Youth Squad; gear hire on pricing page (shoes A$8)."
+  },
+  {
+    "id": "seed-60",
+    "name": "City Summit",
+    "metro": "Perth",
+    "expect_h": "724d5afcf22fd8eb",
+    "website": "https://www.oasisclimbing.com.au/",
+    "hours": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "11am–7pm",
+      "sun": "11am–7pm"
+    },
+    "day_pass": "A$20 adult, A$18 kids and student",
+    "facilities": [
+      "shop",
+      "shoe-hire",
+      "training",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://www.oasisclimbing.com.au/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.oasisclimbing.com.au/contact-us",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.oasisclimbing.com.au/prices",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "flag",
+    "notes": "Renamed: contact page says \"We used to be City Summit Climbing Malaga\", now Oasis Climbing Gym Malaga, same address 2/26 Harris Rd. Data above is for Oasis. Seed name/website should be updated."
+  },
+  {
+    "id": "seed-61",
+    "name": "Portside Boulders",
+    "metro": "Perth",
+    "expect_h": "3725b3e063df89bc",
+    "website": "https://www.portsideboulders.com.au/locations/oconnor",
+    "hours": {
+      "mon": "10am–10pm",
+      "tue": "6am–10pm",
+      "wed": "10am–10pm",
+      "thu": "6am–10pm",
+      "fri": "10am–10pm",
+      "sat": "8am–7pm",
+      "sun": "8am–7pm"
+    },
+    "day_pass": "A$25 adult, A$22.50 concession",
+    "facilities": [
+      "yoga",
+      "training",
+      "shop",
+      "shoe-hire",
+      "parking"
+    ],
+    "sources": [
+      {
+        "url": "https://www.portsideboulders.com.au/locations/oconnor",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.portsideboulders.com.au/pricing",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "12 Murphy St matches. Single entry A$25 adult, A$22.50 concession (A$16 students on Fridays); shoe hire A$7. Parking bays at front of gym; facilities incl. yoga studio, weights gym, retail shop."
+  },
+  {
+    "id": "seed-62",
+    "name": "Portside Boulders",
+    "metro": "Perth",
+    "expect_h": "c5d4d03a0325d290",
+    "website": "https://www.portsideboulders.com.au/locations/osborne-park",
+    "hours": {
+      "mon": "10am–10pm",
+      "tue": "6am–10pm",
+      "wed": "10am–10pm",
+      "thu": "6am–10pm",
+      "fri": "10am–10pm",
+      "sat": "8am–7pm",
+      "sun": "8am–7pm"
+    },
+    "day_pass": "A$25 adult, A$22.50 concession",
+    "facilities": [
+      "yoga",
+      "training",
+      "shop",
+      "shoe-hire",
+      "parking"
+    ],
+    "sources": [
+      {
+        "url": "https://www.portsideboulders.com.au/locations/osborne-park",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.portsideboulders.com.au/pricing",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Seed address Warehouse E/73 Walters Dr; site lists 73 Walters Dr (matches). Yoga from timetable (Hatha/Power Yoga), Kilter/Moonboard, weights gym, shop, marked parking bays."
+  },
+  {
+    "id": "seed-63",
+    "name": "Rockface",
+    "metro": "Perth",
+    "expect_h": "5076790c9dd2c692",
+    "website": null,
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [],
+    "status": "not-found",
+    "notes": "Official domain rockface.com.au (and www) now 301-redirects to an unrelated site (locateconference.com, Cloudflare 403), so no usable official site; no other official site found. Address 7B Ledgar Rd, Balcatta only seen via directories. Gym may have closed or changed domain; not verified."
+  },
+  {
+    "id": "seed-64",
+    "name": "The Boulder Hub",
+    "metro": "Perth",
+    "expect_h": "e55d36100bffb491",
+    "website": "https://theboulderhub.com.au/",
+    "hours": {
+      "mon": "3pm–10pm",
+      "tue": "3pm–10pm",
+      "wed": "3pm–10pm",
+      "thu": "3pm–10pm",
+      "fri": "3pm–10pm",
+      "sat": "10am–6pm",
+      "sun": "10am–6pm"
+    },
+    "day_pass": "A$23 adult, A$20 student",
+    "facilities": [
+      "cafe",
+      "training",
+      "showers",
+      "shoe-hire",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://theboulderhub.com.au/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://theboulderhub.com.au/your-visit/hours-and-location/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      },
+      {
+        "url": "https://theboulderhub.com.au/your-visit/price-list/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass"
+        ]
+      },
+      {
+        "url": "https://theboulderhub.com.au/about-us/facility/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "1-2/84 Berriman Dr, Wangara matches. Snacks, drinks and coffee on site; studio gym equipment; 2 showers; shoe hire; kids parties and youth programs listed in site menu."
+  },
+  {
+    "id": "seed-65",
+    "name": "Urban Jungle",
+    "metro": "Perth",
+    "expect_h": "f2c88d56565e20d6",
+    "website": "https://www.urbanjungleirc.com/",
+    "hours": null,
+    "day_pass": "A$24 adult, A$20 concession, A$18 child",
+    "facilities": [
+      "shoe-hire",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://www.urbanjungleirc.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      },
+      {
+        "url": "https://www.urbanjungleirc.com/pricing",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.urbanjungleirc.com/squad",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "83 Solomon Rd matches. No opening hours published on the pages fetched (hours null). Shoe hire A$5; Youth Squad and birthday parties for kids."
+  }
+]

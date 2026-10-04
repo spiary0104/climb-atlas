@@ -1,0 +1,1095 @@
+[
+  {
+    "id": "seed-979",
+    "name": "Boulderhaus Darmstadt",
+    "metro": "Frankfurt",
+    "expect_h": "663fb17f63edef43",
+    "website": "https://www.boulderhaus.net/darmstadt/",
+    "hours": {
+      "mon": "9am–11pm",
+      "tue": "9am–11pm",
+      "wed": "9am–11pm",
+      "thu": "9am–11pm",
+      "fri": "9am–11pm",
+      "sat": "9am–11pm",
+      "sun": "9am–11pm"
+    },
+    "day_pass": "€13 adult, €12 student/reduced",
+    "facilities": [
+      "shoe-hire",
+      "training",
+      "yoga"
+    ],
+    "sources": [
+      {
+        "url": "https://www.boulderhaus.net/darmstadt/kontakt-und-anfahrt/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.boulderhaus.net/preise/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.boulderhaus.net/neu-hier/erster-besuch/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.boulderhaus.net/darmstadt/boulder-yoga/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.boulderhaus.net/darmstadt/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Site gives address as Landwehrstraße 75 (target says 79). Prices and shoe hire come from the shared boulderhaus.net /preise/ page (one page for all locations, not labelled Darmstadt); training/Kilterboard from the shared 'Erster Besuch' page."
+  },
+  {
+    "id": "seed-989",
+    "name": "Boulderwelt Frankfurt",
+    "metro": "Frankfurt",
+    "expect_h": "ee0d00e067d8de2a",
+    "website": "https://www.boulderwelt-frankfurt.de/",
+    "hours": {
+      "mon": "7am–11pm",
+      "tue": "7am–11pm",
+      "wed": "7am–11pm",
+      "thu": "7am–11pm",
+      "fri": "7am–11pm",
+      "sat": "8am–11pm",
+      "sun": "8am–11pm"
+    },
+    "day_pass": "€16.90 adult Prime Time, €13.90 Happy Hour (Mo-Fr before 9am/after 9pm)",
+    "facilities": [
+      "cafe",
+      "shop",
+      "shoe-hire",
+      "kids",
+      "parking",
+      "training",
+      "showers"
+    ],
+    "sources": [
+      {
+        "url": "https://www.boulderwelt-frankfurt.de/kontakt/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.boulderwelt-frankfurt.de/preise/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.boulderwelt-frankfurt.de/faq/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Address on site: August-Schanz-Straße 50, 60433 Frankfurt (target has none). Hours: Mo-Fr 7-23, Sa/So/holidays 8-23. Price shown is the normal (non-reduced) adult rate; Prime Time = all other times."
+  },
+  {
+    "id": "seed-1006",
+    "name": "Dynochrom",
+    "metro": "Frankfurt",
+    "expect_h": "e9fa712b779a9ae1",
+    "website": "https://dynochrom.com/",
+    "hours": {
+      "mon": "3pm–11:30pm",
+      "tue": "8:15am–11:30pm",
+      "wed": "9am–11:30pm",
+      "thu": "8:15am–11:30pm",
+      "fri": "9am–11:30pm",
+      "sat": "9am–11:30pm",
+      "sun": "8:15am–9:30pm"
+    },
+    "day_pass": "€14 adult, €12 reduced",
+    "facilities": [
+      "shoe-hire",
+      "training",
+      "cafe",
+      "shop",
+      "kids",
+      "yoga"
+    ],
+    "sources": [
+      {
+        "url": "https://dynochrom.com/preise-und-oeffnungszeiten/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://dynochrom.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "flag",
+    "notes": "Real gym is Dynochrom Boulderhalle Frankfurt, Flinschstr. 45, 60388 Frankfurt a.M.; seed record has suburb Darmstadt and Darmstadt coordinates (49.8728, 8.6512), so the pin/suburb look wrong (name matches, location does not). Hours page: bouldering closes 30 min before closing (e.g. 23:00); listed hours are the open times. Hours page says current hours may vary (Google profile)."
+  },
+  {
+    "id": "seed-1025",
+    "name": "KletterBar Offenbach",
+    "metro": "Frankfurt",
+    "expect_h": "015e6b9fd4a3ab20",
+    "website": "https://kletterbar-offenbach.de/",
+    "hours": {
+      "mon": "10am–11pm",
+      "tue": "10am–11pm",
+      "wed": "10am–11pm",
+      "thu": "10am–11pm",
+      "fri": "10am–11pm",
+      "sat": "9am–10pm",
+      "sun": "9am–10pm"
+    },
+    "day_pass": "€18 adult, €16 reduced",
+    "facilities": [
+      "cafe",
+      "shop",
+      "shoe-hire",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://kletterbar-offenbach.de/oeffnungszeiten/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      },
+      {
+        "url": "https://kletterbar-offenbach.de/preise/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://kletterbar-offenbach.de/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Address on site: Sprendlinger Landstr. 177 B, 63069 Offenbach (target has none). Prices valid from 01.01.2026; Early Bird/Late cheaper."
+  },
+  {
+    "id": "g-18e55d74e7",
+    "name": "Kletterkiste Mainz",
+    "metro": "Frankfurt",
+    "expect_h": "404871cfe47fcef5",
+    "website": "https://www.kletterkiste-mainz.de/",
+    "hours": {
+      "mon": "5pm–10pm",
+      "tue": "10am–2pm, 5pm–10pm",
+      "wed": "5pm–10pm",
+      "thu": "5pm–10pm",
+      "fri": "3pm–8pm",
+      "sat": "2pm–7pm",
+      "sun": "2pm–7pm"
+    },
+    "day_pass": "€15 adult (non-member), €10 DAV Sektion Mainz member",
+    "facilities": [
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://www.kletterkiste-mainz.de/infos",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.kletterkiste-mainz.de/preise",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Volunteer-run DAV hall: the home page says there are no fixed opening hours, only weekly bookable climbing slots; the Infos page lists 'regulären Öffnungszeiten', used here (deviations possible, check booking page). Tickets online only."
+  },
+  {
+    "id": "seed-1068",
+    "name": "Wiesbadener Nordwand",
+    "metro": "Frankfurt",
+    "expect_h": "643d6ecb7145de6f",
+    "website": "https://wiesbadener-nordwand.de/",
+    "hours": {
+      "mon": "9am–11pm",
+      "tue": "9am–11pm",
+      "wed": "9am–11pm",
+      "thu": "9am–11pm",
+      "fri": "9am–11pm",
+      "sat": "9am–10pm",
+      "sun": "9am–10pm"
+    },
+    "day_pass": "€17 adult climbing + bouldering, €13 bouldering only",
+    "facilities": [
+      "shoe-hire",
+      "shop",
+      "kids",
+      "parking"
+    ],
+    "sources": [
+      {
+        "url": "https://wiesbadener-nordwand.de/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      },
+      {
+        "url": "https://wiesbadener-nordwand.de/preise/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://wiesbadener-nordwand.de/location/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://wiesbadener-nordwand.de/kontakt/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Address not checked on page (Hagenauer Straße 49 per search only). Standard tariff; Happy Hour (Mo-Fr 9-15, 21-23; Sa/So 20-22) is cheaper. Hours Sa/So/holidays 9-22."
+  },
+  {
+    "id": "seed-990",
+    "name": "Boulderwelt München Ost",
+    "metro": "Munich",
+    "expect_h": "a12d0d29862049d5",
+    "website": "https://www.boulderwelt-muenchen-ost.de/",
+    "hours": {
+      "mon": "6am–11pm",
+      "tue": "6am–11pm",
+      "wed": "6am–11pm",
+      "thu": "6am–11pm",
+      "fri": "6am–11pm",
+      "sat": "7am–11pm",
+      "sun": "7am–11pm"
+    },
+    "day_pass": "€17.90 adult Prime Time, €14.90 Happy Hour (Mo-Fr before 9am/after 9pm)",
+    "facilities": [
+      "cafe",
+      "shoe-hire",
+      "kids",
+      "showers",
+      "training"
+    ],
+    "sources": [
+      {
+        "url": "https://www.boulderwelt-muenchen-ost.de/kontakt/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.boulderwelt-muenchen-ost.de/preise/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.boulderwelt-muenchen-ost.de/faq/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Address on site: Hanne-Hiob-Str. 4, 81671 München (target has none). Hours: Mo-Fr 6-23, Sa/So/holidays 7-23. Price is normal (non-reduced) adult rate. Parking: only street parking and paid garage, so not listed."
+  },
+  {
+    "id": "g-7fa2372189",
+    "name": "Boulderwelt München Süd",
+    "metro": "Munich",
+    "expect_h": "592db9f5b8b57a19",
+    "website": "https://www.boulderwelt-muenchen-sued.de/",
+    "hours": {
+      "mon": "7am–11pm",
+      "tue": "7am–11pm",
+      "wed": "7am–11pm",
+      "thu": "7am–11pm",
+      "fri": "7am–11pm",
+      "sat": "8am–11pm",
+      "sun": "8am–11pm"
+    },
+    "day_pass": "€16.90 adult Prime Time, €13.90 Happy Hour (Mo-Fr before 9am/after 9pm)",
+    "facilities": [
+      "cafe",
+      "shoe-hire",
+      "kids",
+      "showers",
+      "parking",
+      "training"
+    ],
+    "sources": [
+      {
+        "url": "https://www.boulderwelt-muenchen-sued.de/kontakt/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.boulderwelt-muenchen-sued.de/preise/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.boulderwelt-muenchen-sued.de/faq/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Address on site: Eugen-Sänger-Ring 4, 85649 Brunnthal. Price is normal (non-reduced) adult rate. Training = campusboard and Kilter Board on FAQ page."
+  },
+  {
+    "id": "g-33676a6dbf",
+    "name": "Boulderwelt München West",
+    "metro": "Munich",
+    "expect_h": "3d717e2928cd9aa5",
+    "website": "https://www.boulderwelt-muenchen-west.de/",
+    "hours": {
+      "mon": "7am–11pm",
+      "tue": "7am–11pm",
+      "wed": "7am–11pm",
+      "thu": "7am–11pm",
+      "fri": "7am–11pm",
+      "sat": "8am–11pm",
+      "sun": "8am–11pm"
+    },
+    "day_pass": "€16.90 adult Prime Time, €13.90 Happy Hour (Mo-Fr before 9am/after 9pm)",
+    "facilities": [
+      "cafe",
+      "shoe-hire",
+      "kids",
+      "showers",
+      "training"
+    ],
+    "sources": [
+      {
+        "url": "https://www.boulderwelt-muenchen-west.de/kontakt/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.boulderwelt-muenchen-west.de/preise/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.boulderwelt-muenchen-west.de/faq/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Address on site: Bertha-Kipfmüller-Str. 19, 81249 München. Price is normal (non-reduced) adult rate."
+  },
+  {
+    "id": "seed-1008",
+    "name": "Einstein Boulderhalle München",
+    "metro": "Munich",
+    "expect_h": "8fe6f6610bd7ac60",
+    "website": "https://muenchen.einstein-boulder.com/",
+    "hours": {
+      "mon": "6am–11pm",
+      "tue": "6am–11pm",
+      "wed": "6am–11pm",
+      "thu": "6am–11pm",
+      "fri": "6am–11pm",
+      "sat": "9am–11pm",
+      "sun": "9am–11pm"
+    },
+    "day_pass": "€15.50 adult, €12.90 reduced",
+    "facilities": [
+      "shoe-hire",
+      "kids",
+      "shop",
+      "parking",
+      "training"
+    ],
+    "sources": [
+      {
+        "url": "https://muenchen.einstein-boulder.com/preisezeiten/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://muenchen.einstein-boulder.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Address on site: Landsberger Straße 185, 80687 München (Laim); seed has no address and a more central pin (48.14, 11.59), so pin may be off. Early Bird (Mo-Fr check-in before 2pm) cheaper. Parking = 14 marked customer spaces in courtyard."
+  },
+  {
+    "id": "seed-1028",
+    "name": "Kletterhalle High-east",
+    "metro": "Munich",
+    "expect_h": "0c43fc225422b05c",
+    "website": "https://high-east.de/",
+    "hours": null,
+    "day_pass": "€15.50 adult climbing, €8 adult bouldering only",
+    "facilities": [
+      "shoe-hire",
+      "showers",
+      "cafe",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://high-east.de/oeffnungszeiten/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      },
+      {
+        "url": "https://high-east.de/wp-content/uploads/2025/12/Preisliste2026-1-pdf.jpg",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://high-east.de/das-high-east/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Gym is in Heimstetten/Kirchheim bei München (Sonnenallee 2, 85551), outside Munich proper; seed pin 48.13, 11.6 is approximate. Hours left null: site publishes separate winter (Oct-May) and summer (Jun-Sep) hours that differ on Tue/Wed (10:00 vs 14:00 start), Mon/Thu/Fri-Sun 10-23 (Thu from 08:00); also may close early ~21:00. Prices read from the site's Preisliste (Stand Januar 2026) image."
+  },
+  {
+    "id": "seed-1033",
+    "name": "KletterZ",
+    "metro": "Munich",
+    "expect_h": "ce6a8e311c57bff7",
+    "website": "https://www.kletterz.de/",
+    "hours": {
+      "mon": "9:30am–11pm",
+      "tue": "9:30am–11pm",
+      "wed": "2pm–11pm",
+      "thu": "9:30am–11pm",
+      "fri": "9:30am–11pm",
+      "sat": "9:30am–9pm",
+      "sun": "9:30am–9pm"
+    },
+    "day_pass": "€17 adult, €15.50 reduced",
+    "facilities": [
+      "cafe",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://www.kletterz.de/preise",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "day_pass"
+        ]
+      },
+      {
+        "url": "https://www.kletterz.de/infos",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.kletterz.de/bistro",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.kletterz.de/kletterz-boulderz-1",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "flag",
+    "notes": "Real gym is KletterZ' Kletterzentrum Weyarn, Am Weiglfeld 30, 83629 Weyarn (~25 km south of Munich); seed pin (48.145, 11.575) is central Munich, so location looks wrong (name matches). Price from the site's price table (Wix data: Klettern Erwachsen Tageseintritt 17.00, ermäßigt 15.50; happy hour before 1pm Mo-Fr 15.00). Hours: Mo/Tu/Th/Fr 9:30-23, We 14-23, Sa/Su/holidays 9:30-21."
+  },
+  {
+    "id": "g-7fda9b39cf",
+    "name": "Boulderwelt Hamburg",
+    "metro": "Hamburg",
+    "expect_h": "5dc1da771025da5e",
+    "website": "https://www.boulderwelt-hamburg.de/",
+    "hours": {
+      "mon": "7am–11pm",
+      "tue": "7am–11pm",
+      "wed": "7am–11pm",
+      "thu": "7am–11pm",
+      "fri": "7am–11pm",
+      "sat": "8am–11pm",
+      "sun": "8am–11pm"
+    },
+    "day_pass": "€17.90 adult Prime Time, €14.90 Happy Hour (Mo-Fr before 9am/after 9pm)",
+    "facilities": [
+      "cafe",
+      "shoe-hire",
+      "kids",
+      "showers"
+    ],
+    "sources": [
+      {
+        "url": "https://www.boulderwelt-hamburg.de/kontakt/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.boulderwelt-hamburg.de/preise/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.boulderwelt-hamburg.de/faq/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Address on site: Beim Strohhause 17, 20097 Hamburg. No own parking per site. Price is normal (non-reduced) adult rate."
+  },
+  {
+    "id": "g-a3116311c9",
+    "name": "DAV Kletterzentrum Hamburg",
+    "metro": "Hamburg",
+    "expect_h": "9d8513a21038990a",
+    "website": "https://www.dav-hamburg.de/kletterzentrum",
+    "hours": {
+      "mon": "10am–11pm",
+      "tue": "10am–11pm",
+      "wed": "10am–11pm",
+      "thu": "10am–11pm",
+      "fri": "10am–11pm",
+      "sat": "9am–10pm",
+      "sun": "9am–10pm"
+    },
+    "day_pass": "€19 adult guest, €13.50 DAV member",
+    "facilities": [
+      "cafe",
+      "shoe-hire",
+      "yoga",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://www.dav-hamburg.de/kletterzentrum/oeffnungszeiten",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.dav-hamburg.de/kletterzentrum/Preise",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.dav-hamburg.de/kletterzentrum",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.dav-hamburg.de/kletterzentrum/Yoga-Kurse",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.dav-hamburg.de/kletterzentrum/Anreise",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Address on site: Döhrnstraße 4, 22529 Hamburg. Hours: Mo-Fr 10-23, Sa/Su/holidays 9-22, 360 days a year. Reduced/early-bird (before 3pm weekdays) €16.50 non-member. Cafe = Edelweiß Bistro; kids = Eltern-Kind-Kurs and Kindergeburtstage."
+  },
+  {
+    "id": "seed-1014",
+    "name": "FLASHH Hamburg",
+    "metro": "Hamburg",
+    "expect_h": "e4f41ba68c94db5a",
+    "website": "https://www.flashh.de/",
+    "hours": {
+      "mon": "10am–11pm",
+      "tue": "10am–11pm",
+      "wed": "10am–11pm",
+      "thu": "10am–11pm",
+      "fri": "10am–11pm",
+      "sat": "9am–10pm",
+      "sun": "9am–10pm"
+    },
+    "day_pass": "€15.90 adult, €11.90 early bird (Mo-Fr before 4pm)",
+    "facilities": [
+      "training",
+      "cafe",
+      "shop",
+      "kids",
+      "shoe-hire",
+      "parking"
+    ],
+    "sources": [
+      {
+        "url": "https://www.flashh.de/oeffnungszeiten",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.flashh.de/preise",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass"
+        ]
+      },
+      {
+        "url": "https://www.flashh.de/fitness",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.flashh.de/faq",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.flashh.de/anfahrt",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Address on site: Gasstraße 18, 22761 Hamburg (Bahrenfeld); seed has no address and a central-Hamburg pin (53.5511, 9.9937), so the pin may be off. Hours: Mo-Fr 10-23, Sa/Su/holidays 9-22. 'Normal' adult 15.9 shown first on page; reduced 12.9. Cafe and shop are menu entries on the site; Monday is early-bird price all day."
+  },
+  {
+    "id": "seed-1058",
+    "name": "Salon du Bloc",
+    "metro": "Hamburg",
+    "expect_h": "d934d0f635707076",
+    "website": "https://www.salondubloc.de/",
+    "hours": {
+      "mon": "3pm–12am",
+      "tue": "3pm–12am",
+      "wed": "3pm–12am",
+      "thu": "3pm–12am",
+      "fri": "3pm–10pm",
+      "sat": "4pm–10pm",
+      "sun": "12pm–10pm"
+    },
+    "day_pass": "€11.90 adult, €10.50 reduced",
+    "facilities": [
+      "cafe",
+      "shop",
+      "shoe-hire",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://www.salondubloc.de/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.salondubloc.de/preise",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Address on site: Eppendorfer Weg 4, 20259 Hamburg. Early Bird tariff Mo-Fr before 4:30pm exists but price not listed on pages read. Also has a sauna (extra charge, not a listed key). Kids = Kindergeburtstage and kids training groups."
+  },
+  {
+    "id": "seed-1066",
+    "name": "urban apes Boulderquartier Hamburg",
+    "metro": "Hamburg",
+    "expect_h": "e1fb9957b6d15740",
+    "website": null,
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [
+      {
+        "url": "https://www.urbanapes.de/",
+        "accessed": "2026-10-04",
+        "supports": []
+      }
+    ],
+    "status": "flag",
+    "notes": "No gym called 'urban apes Boulderquartier Hamburg' found on urbanapes.de. The operator lists three Hamburg gyms: Hamburg Ost (Wandsbeker Zollstraße 87-89, 22041; Mo-Fr 10-23 Sa/Su 9-21), Hamburg St. Pauli (Bunker Feldstraße), Hamburg West (22525). None obviously matches the seed pin (53.546, 9.998) or the 'Boulderquartier' name, so no data recorded; needs a human to map it to one location or retire it."
+  },
+  {
+    "id": "seed-975",
+    "name": "Bouldercity Dresden",
+    "metro": "Dresden",
+    "expect_h": "be36fab214bcea27",
+    "website": "https://bouldercity-dresden.de/",
+    "hours": null,
+    "day_pass": null,
+    "facilities": [
+      "kids",
+      "parking"
+    ],
+    "sources": [
+      {
+        "url": "https://bouldercity-dresden.de/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://bouldercity-dresden.de/kontakt-anfahrt/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://bouldercity-dresden.de/faq/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "flag",
+    "notes": "Bouldercity Dresden (Bischofsweg 32, 2. Hinterhof, 01099) became a members-only club hall (Bouldercity Dresden e.V.) in March 2025: no public day pass, access only as member or a member's guest (FAQ); members have key access daily 6-22. So no public hours/day pass recorded. Kids = children's climbing courses; parking = a few marked spaces in front of the hall, open only during opening hours."
+  },
+  {
+    "id": "seed-976",
+    "name": "boulderdrome",
+    "metro": "Dresden",
+    "expect_h": "6645bf45f5fe8dc7",
+    "website": "https://www.boulderdrome.de/",
+    "hours": {
+      "mon": "2pm–10pm",
+      "tue": "2pm–10pm",
+      "wed": "2pm–10pm",
+      "thu": "2pm–10pm",
+      "fri": "2pm–10pm",
+      "sat": "10am–10pm",
+      "sun": "10am–10pm"
+    },
+    "day_pass": "€14.90 adult, €11.90 reduced",
+    "facilities": [
+      "training",
+      "cafe",
+      "shop",
+      "kids",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://www.boulderdrome.de/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.boulderdrome.de/neuhier",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.boulderdrome.de/kids",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Gym is in Radebeul (Nach der Schiffsmühle 6, 01445), just NW of Dresden; seed suburb/pin (51.055, 13.742) is in Dresden proper so pin looks off. Hours Mo-Fr 14-22, Sa/So and holidays 10-22."
+  },
+  {
+    "id": "seed-1023",
+    "name": "Kletterarena Dresden",
+    "metro": "Dresden",
+    "expect_h": "91857a8fe74d57ba",
+    "website": "https://kletterarena-dresden.de/",
+    "hours": {
+      "mon": "3pm–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "9am–10pm",
+      "sun": "9am–10pm"
+    },
+    "day_pass": "€12.50 adult, €9.90 student/Azubi",
+    "facilities": [
+      "training",
+      "kids",
+      "shoe-hire",
+      "parking"
+    ],
+    "sources": [
+      {
+        "url": "https://kletterarena-dresden.de/bouldern/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://kletterarena-dresden.de/faq/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Address on site: Zwickauer Str. 42, 01069 Dresden. Boulder hall with only a small toprope wall (seed also lists top-rope/lead). Holidays and school holidays daily 9-22. Also has sauna and beach volleyball."
+  },
+  {
+    "id": "seed-1046",
+    "name": "Mandala Boulderhalle",
+    "metro": "Dresden",
+    "expect_h": "371a2d922e787cc5",
+    "website": "https://www.boulderhalle-dresden.de/",
+    "hours": {
+      "mon": "8am–11pm",
+      "tue": "8am–11pm",
+      "wed": "8am–11pm",
+      "thu": "8am–11pm",
+      "fri": "8am–11pm",
+      "sat": "9am–10pm",
+      "sun": "9am–10pm"
+    },
+    "day_pass": "€16 adult, €13 reduced (€15/€12 online)",
+    "facilities": [
+      "cafe",
+      "training",
+      "kids",
+      "shoe-hire",
+      "yoga"
+    ],
+    "sources": [
+      {
+        "url": "https://www.boulderhalle-dresden.de/preise-oeffnungszeiten/preise-oeffnungszeiten.html",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "day_pass"
+        ]
+      },
+      {
+        "url": "https://www.boulderhalle-dresden.de/mandala/standort-zeitenstroemung.html",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.boulderhalle-dresden.de/mandala/faq.html",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Mandala has two sites: Zeitenströmung (Königsbrücker Str. 96, 01099) and Postplatz (Annenstraße 1-3, 01067). The seed has no address and one pin (51.06, 13.745); cannot tell which site. The site shows one shared price/hours page for both, used here; facilities read from the Zeitenströmung page (training/kids/bistro) and shared FAQ."
+  },
+  {
+    "id": "seed-1069",
+    "name": "YOYO",
+    "metro": "Dresden",
+    "expect_h": "dd2d7eee557efd81",
+    "website": "https://www.yoyo-kletterhalle.de/",
+    "hours": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "10am–9pm",
+      "sun": "10am–9pm"
+    },
+    "day_pass": "€17.50 adult climbing, €13.50 bouldering",
+    "facilities": [
+      "training",
+      "cafe",
+      "shoe-hire",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://www.yoyo-kletterhalle.de/preisezeiten/zeiten/zeiten.html",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.yoyo-kletterhalle.de/preisezeiten/preise/preise.html",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.yoyo-kletterhalle.de/unsere-halle/unsere-halle.html",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.yoyo-kletterhalle.de/kurse/kurse.html",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Address on site: Weststraße 32, 01809 Heidenau. Hours Mo-Fr 10-22, Sa/So/holidays 10-21 (Sundays only until 6pm 7 June-16 Aug, ignored as seasonal). Early tariff €12 (check-in before 1pm Mo-Fr). Kids = Kindergeburtstage."
+  }
+]

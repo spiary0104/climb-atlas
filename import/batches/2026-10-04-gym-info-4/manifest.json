@@ -1,0 +1,597 @@
+{
+  "schema_version": 1,
+  "updater_version": 1,
+  "kind": "update",
+  "batch_id": "2026-10-04-gym-info-4",
+  "status": "updated",
+  "target": {
+    "kind": "production",
+    "host": "thayxaampaelvntoaido.supabase.co"
+  },
+  "coverage": "FULL",
+  "plan_sha256": "c47921ba8b87a2202ba9b087810919768378e5c084879c8ba04bfae90fa9a96c",
+  "payload_sha256": "fc4fb038978a2b6217f5a74652bb7c581aab3270c5a609af6288d28c47e843f3",
+  "confirm_token": "281ec9a56fa5c856",
+  "live_state_sha256": "06b7b01a327ad3b57e8b561ca800e453840f9b9dc7a09a03595fd785d0c1ad20",
+  "rows_updated": 0,
+  "approved_before": 2342,
+  "approved_after": 2340,
+  "changes": [],
+  "rows_info_filled": 46,
+  "info_filled": [
+    {
+      "id": "seed-1298",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "29f1ac0715fadb03",
+      "after_h": "29f1ac0715fadb03"
+    },
+    {
+      "id": "g-6b4f6bf992",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "399cafe11ff4faaa",
+      "after_h": "399cafe11ff4faaa"
+    },
+    {
+      "id": "seed-1299",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "e070db95f35fd98c",
+      "after_h": "e070db95f35fd98c"
+    },
+    {
+      "id": "g-17adf20ff5",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "9caa6b2ce0b630e6",
+      "after_h": "9caa6b2ce0b630e6"
+    },
+    {
+      "id": "g-355493a118",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "4ff02a03cfa9e1ec",
+      "after_h": "4ff02a03cfa9e1ec"
+    },
+    {
+      "id": "g-1c53e4ff94",
+      "fields": [
+        "website",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "ec2d01f9f5a71be0",
+      "after_h": "ec2d01f9f5a71be0"
+    },
+    {
+      "id": "g-07480139ca",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "f1f91ac0e0d3d312",
+      "after_h": "f1f91ac0e0d3d312"
+    },
+    {
+      "id": "g-663777c19b",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "232e74ca750bcbe4",
+      "after_h": "232e74ca750bcbe4"
+    },
+    {
+      "id": "g-14c2acd7c6",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "b81de1ceb5b59ddd",
+      "after_h": "b81de1ceb5b59ddd"
+    },
+    {
+      "id": "g-1281064e8f",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "3c2fab00759845e1",
+      "after_h": "3c2fab00759845e1"
+    },
+    {
+      "id": "g-66e5d68350",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "5594e71940edc56e",
+      "after_h": "5594e71940edc56e"
+    },
+    {
+      "id": "g-028ee01351",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "2f3084364dd6bc62",
+      "after_h": "2f3084364dd6bc62"
+    },
+    {
+      "id": "g-dd666c2e64",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "bcd5018c8724cb08",
+      "after_h": "bcd5018c8724cb08"
+    },
+    {
+      "id": "seed-1292",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "7af58fbca5297122",
+      "after_h": "7af58fbca5297122"
+    },
+    {
+      "id": "seed-1293",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "d3d9959042d34c0c",
+      "after_h": "d3d9959042d34c0c"
+    },
+    {
+      "id": "g-067ede39c1",
+      "fields": [
+        "website",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "ed144cf93d5ce104",
+      "after_h": "ed144cf93d5ce104"
+    },
+    {
+      "id": "seed-1270",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "a2a5d40f21a25e11",
+      "after_h": "a2a5d40f21a25e11"
+    },
+    {
+      "id": "seed-1275",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "42fa241bbe900df1",
+      "after_h": "42fa241bbe900df1"
+    },
+    {
+      "id": "seed-1271",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "2a93c6996176a46d",
+      "after_h": "2a93c6996176a46d"
+    },
+    {
+      "id": "seed-1272",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "2911ddc850fe2914",
+      "after_h": "2911ddc850fe2914"
+    },
+    {
+      "id": "seed-1273",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "2b80dfe3a959eb2f",
+      "after_h": "2b80dfe3a959eb2f"
+    },
+    {
+      "id": "seed-1274",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "c80be0f945ca6592",
+      "after_h": "c80be0f945ca6592"
+    },
+    {
+      "id": "seed-1276",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "68d68f139134d41f",
+      "after_h": "68d68f139134d41f"
+    },
+    {
+      "id": "seed-1277",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "82bf7e45da095d62",
+      "after_h": "82bf7e45da095d62"
+    },
+    {
+      "id": "seed-1279",
+      "fields": [
+        "website",
+        "hours",
+        "facilities"
+      ],
+      "expect_h": "bc04a0477e5d5d66",
+      "after_h": "bc04a0477e5d5d66"
+    },
+    {
+      "id": "seed-1280",
+      "fields": [
+        "website",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "1025bab11097e57a",
+      "after_h": "1025bab11097e57a"
+    },
+    {
+      "id": "seed-1281",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "971615884a07f51d",
+      "after_h": "971615884a07f51d"
+    },
+    {
+      "id": "seed-1282",
+      "fields": [
+        "website",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "f6fa60157b4ca52a",
+      "after_h": "f6fa60157b4ca52a"
+    },
+    {
+      "id": "seed-868",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "ce4f68d241e286f5",
+      "after_h": "ce4f68d241e286f5"
+    },
+    {
+      "id": "seed-873",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "7b3ef1abef39d178",
+      "after_h": "7b3ef1abef39d178"
+    },
+    {
+      "id": "seed-875",
+      "fields": [
+        "website",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "e3a2aaea33eee08a",
+      "after_h": "e3a2aaea33eee08a"
+    },
+    {
+      "id": "seed-882",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "acd5a13f8e8f0f63",
+      "after_h": "acd5a13f8e8f0f63"
+    },
+    {
+      "id": "seed-885",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "57d91f9344cf8655",
+      "after_h": "57d91f9344cf8655"
+    },
+    {
+      "id": "seed-892",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "b7aef7842a2d5887",
+      "after_h": "b7aef7842a2d5887"
+    },
+    {
+      "id": "seed-901",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "c43aabd55a3e90b3",
+      "after_h": "c43aabd55a3e90b3"
+    },
+    {
+      "id": "seed-902",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "cdb7be54f588d649",
+      "after_h": "cdb7be54f588d649"
+    },
+    {
+      "id": "seed-903",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "398925bc95dc7f44",
+      "after_h": "398925bc95dc7f44"
+    },
+    {
+      "id": "seed-904",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "d6e08098cc1c37c6",
+      "after_h": "d6e08098cc1c37c6"
+    },
+    {
+      "id": "seed-464",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "7c74597e3375d0ed",
+      "after_h": "7c74597e3375d0ed"
+    },
+    {
+      "id": "seed-462",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "e722d237eb7f44c6",
+      "after_h": "e722d237eb7f44c6"
+    },
+    {
+      "id": "seed-1747",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "52d46f45519ae1e8",
+      "after_h": "52d46f45519ae1e8"
+    },
+    {
+      "id": "seed-1748",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "866ceda46232382b",
+      "after_h": "866ceda46232382b"
+    },
+    {
+      "id": "seed-465",
+      "fields": [
+        "website",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "325ee775a5cc3dc2",
+      "after_h": "325ee775a5cc3dc2"
+    },
+    {
+      "id": "seed-463",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "cc7f874ddbfe2bad",
+      "after_h": "cc7f874ddbfe2bad"
+    },
+    {
+      "id": "seed-1746",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "a7a76ea2e9f25ddc",
+      "after_h": "a7a76ea2e9f25ddc"
+    },
+    {
+      "id": "seed-1745",
+      "fields": [
+        "website",
+        "day_pass",
+        "facilities"
+      ],
+      "expect_h": "7af7cf42104c873b",
+      "after_h": "7af7cf42104c873b"
+    }
+  ],
+  "rows_retired": 2,
+  "retired": [
+    "seed-887",
+    "seed-894"
+  ],
+  "retirements": [
+    {
+      "id": "seed-887",
+      "reason_code": "closed",
+      "reason": "No climbing gym of this name in Kingston upon Thames: the only Rockcity is in Kingston upon Hull (likely a mix-up of the two Kingstons)",
+      "expect_h": "9641340243fe23e7"
+    },
+    {
+      "id": "seed-894",
+      "reason_code": "closed",
+      "reason": "The Climbing Hangar no longer lists a London centre (nine UK locations, none in London; London pages return 404)",
+      "expect_h": "bb29fe888d7feef5"
+    }
+  ],
+  "verification": {
+    "ok": true,
+    "checked": 48,
+    "problems": []
+  },
+  "started_at": "2026-10-04T03:27:59.879Z",
+  "finished_at": "2026-10-04T03:28:15.150Z",
+  "ids": [
+    "seed-1298",
+    "g-6b4f6bf992",
+    "seed-1299",
+    "g-17adf20ff5",
+    "g-355493a118",
+    "g-1c53e4ff94",
+    "g-07480139ca",
+    "g-663777c19b",
+    "g-14c2acd7c6",
+    "g-1281064e8f",
+    "g-66e5d68350",
+    "g-028ee01351",
+    "g-dd666c2e64",
+    "seed-1292",
+    "seed-1293",
+    "g-067ede39c1",
+    "seed-1270",
+    "seed-1275",
+    "seed-1271",
+    "seed-1272",
+    "seed-1273",
+    "seed-1274",
+    "seed-1276",
+    "seed-1277",
+    "seed-1279",
+    "seed-1280",
+    "seed-1281",
+    "seed-1282",
+    "seed-868",
+    "seed-873",
+    "seed-875",
+    "seed-882",
+    "seed-885",
+    "seed-892",
+    "seed-901",
+    "seed-902",
+    "seed-903",
+    "seed-904",
+    "seed-464",
+    "seed-462",
+    "seed-1747",
+    "seed-1748",
+    "seed-465",
+    "seed-463",
+    "seed-1746",
+    "seed-1745",
+    "seed-887",
+    "seed-894"
+  ]
+}

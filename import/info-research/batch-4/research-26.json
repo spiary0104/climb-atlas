@@ -1,0 +1,1118 @@
+[
+ {
+  "id": "seed-1108",
+  "name": "Be Boulder Amsterdam",
+  "metro": "Amsterdam",
+  "expect_h": "11a8ac5fbdf1a9a4",
+  "website": "https://www.boulderhalluchthaven.nl/",
+  "hours": {
+   "mon": "9am–11pm",
+   "tue": "9am–11pm",
+   "wed": "9am–11pm",
+   "thu": "9am–11pm",
+   "fri": "9am–11pm",
+   "sat": "9am–10pm",
+   "sun": "9am–10pm"
+  },
+  "day_pass": "€14.50 adult (25+), €13.40 age 18-24",
+  "facilities": [
+   "cafe",
+   "training",
+   "shoe-hire",
+   "shop",
+   "parking",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.boulderhalluchthaven.nl/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.boulderhalluchthaven.nl/openingstijden",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.boulderhalluchthaven.nl/prijzen",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.boulderhalluchthaven.nl/contact",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.boulderhalluchthaven.nl/jeugd",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "flag",
+  "notes": "Seed name Be Boulder Amsterdam is stale: this address (Anthony Fokkerweg 75) is now Boulderhal Luchthaven (reopening Jan 2026, same group as Energiehaven/Zuidhaven). Data is for Boulderhal Luchthaven. Parking: limited free parking on own site. Shop: members get 10% shop discount (prices page). Bar usually stays open an hour later on weekdays."
+ },
+ {
+  "id": "seed-1109",
+  "name": "Beest Boulders - Amsterdam",
+  "metro": "Amsterdam",
+  "expect_h": "ffca7b16c1359d60",
+  "website": "https://beestboulders.com/vestigingen/beest-boulders-amsterdam/",
+  "hours": {
+   "mon": "7am–11pm",
+   "tue": "7am–11pm",
+   "wed": "7am–11pm",
+   "thu": "7am–11pm",
+   "fri": "7am–11pm",
+   "sat": "9am–11pm",
+   "sun": "9am–11pm"
+  },
+  "day_pass": "€14.70 adult with member card, €19.70 first visit",
+  "facilities": [
+   "cafe",
+   "training",
+   "shop"
+  ],
+  "sources": [
+   {
+    "url": "https://beestboulders.com/vestigingen/beest-boulders-amsterdam/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://beestboulders.com/tarieven/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Prices from chain-wide Beest Boulders tarieven page (registration EUR 5 required for member-card price). Hours: weekdays 7:00-23:00, weekend 9:00-23:00."
+ },
+ {
+  "id": "seed-1110",
+  "name": "Beest Boulders - Het Lab Amsterdam",
+  "metro": "Amsterdam",
+  "expect_h": "88188375921a34fa",
+  "website": "https://beestboulders.com/vestigingen/het-lab-amsterdam/",
+  "hours": {
+   "mon": "1pm–11pm",
+   "tue": "1pm–11pm",
+   "wed": "1pm–11pm",
+   "thu": "1pm–11pm",
+   "fri": "1pm–11pm",
+   "sat": "9am–6pm",
+   "sun": "9am–6pm"
+  },
+  "day_pass": "€14.70 adult with member card, €19.70 first visit",
+  "facilities": [
+   "cafe",
+   "training",
+   "kids",
+   "shop"
+  ],
+  "sources": [
+   {
+    "url": "https://beestboulders.com/vestigingen/het-lab-amsterdam/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://beestboulders.com/tarieven/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Prices from chain-wide Beest Boulders tarieven page. Location page has a Jeugd section (children from 8 may climb with a parent)."
+ },
+ {
+  "id": "seed-1111",
+  "name": "Beta Boulders - Amsterdam",
+  "metro": "Amsterdam",
+  "expect_h": "75fb7ebc489d9457",
+  "website": "https://betaboulders.nl/",
+  "hours": {
+   "mon": "9am–11pm",
+   "tue": "9am–11pm",
+   "wed": "9am–11pm",
+   "thu": "9am–11pm",
+   "fri": "9am–11pm",
+   "sat": "9am–9pm",
+   "sun": "9am–9pm"
+  },
+  "day_pass": "€14.9 peak, €13.5 off-peak",
+  "facilities": [
+   "cafe",
+   "training",
+   "shoe-hire",
+   "showers"
+  ],
+  "sources": [
+   {
+    "url": "https://betaboulders.nl/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://betaboulders.nl/prices/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://betaboulders.nl/the-gym/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://betaboulders.nl/first-time/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Single pass: peak after 14:00 weekdays / before 17:00 weekends; off-peak otherwise. Price as written by the gym (EUR 14.9 / 13.5). Cafe = The Climbing Cafe."
+ },
+ {
+  "id": "seed-1112",
+  "name": "Boulder - Amsterdam",
+  "metro": "Amsterdam",
+  "expect_h": "c180943b436bd9d8",
+  "website": "https://boulderneoliet.nl/en/amsterdam/",
+  "hours": {
+   "mon": "10am–11pm",
+   "tue": "10am–11pm",
+   "wed": "10am–11pm",
+   "thu": "10am–11pm",
+   "fri": "10am–11pm",
+   "sat": "9am–7pm",
+   "sun": "9am–9pm"
+  },
+  "day_pass": "€14.50 adult, €13.50 age 18-24",
+  "facilities": [
+   "cafe",
+   "training",
+   "shoe-hire",
+   "shop",
+   "yoga",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://boulderneoliet.nl/en/amsterdam/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://boulderneoliet.nl/en/amsterdam/openingstijden/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://boulderneoliet.nl/en/amsterdam/prijzen/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://boulderneoliet.nl/en/amsterdam/faciliteiten/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://boulderneoliet.nl/en/amsterdam/yoga/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Operator brand Boulder (Neoliet group), same address Gillis van Ledenberchstraat 62. Facilities page marks showers and free parking as not available (dash vs check icon), so omitted."
+ },
+ {
+  "id": "seed-1113",
+  "name": "Klimmuur - Centraal Amsterdam",
+  "metro": "Amsterdam",
+  "expect_h": "7ea94e6434ba8c31",
+  "website": "https://www.deklimmuur.nl/klimmen/klimmuur-centraal/",
+  "hours": {
+   "mon": "9am–11pm",
+   "tue": "9am–11pm",
+   "wed": "9am–11pm",
+   "thu": "9am–11pm",
+   "fri": "9am–11pm",
+   "sat": "9am–8pm",
+   "sun": "9am–11pm"
+  },
+  "day_pass": "€18.70 adult, €17.70 with member card",
+  "facilities": [
+   "cafe",
+   "shop"
+  ],
+  "sources": [
+   {
+    "url": "https://www.deklimmuur.nl/klimmen/klimmuur-centraal/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.deklimmuur.nl/tarieven/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Price from chain-wide De Klimmuur tarieven page (climbing and bouldering entry)."
+ },
+ {
+  "id": "seed-1114",
+  "name": "Monk bouldergym - Amsterdam",
+  "metro": "Amsterdam",
+  "expect_h": "019b579e03cdd36c",
+  "website": "https://monk.nl/amsterdam/",
+  "hours": {
+   "mon": "9am–12am",
+   "tue": "9am–12am",
+   "wed": "9am–12am",
+   "thu": "9am–12am",
+   "fri": "9am–12am",
+   "sat": "9am–12am",
+   "sun": "9am–12am"
+  },
+  "day_pass": "€14.50 adult (25+), €13.50 age 18-24",
+  "facilities": [
+   "cafe",
+   "training",
+   "shoe-hire",
+   "shop",
+   "showers",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://monk.nl/amsterdam/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://monk.nl/amsterdam/openingstijden/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://monk.nl/amsterdam/lid-worden-ams/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Day pass from the Monk Amsterdam prices page (also valid at other Monk locations). Home page: kleedkamers, douches en gratis lockers aanwezig."
+ },
+ {
+  "id": "seed-1115",
+  "name": "Mountain Network - Amsterdam",
+  "metro": "Amsterdam",
+  "expect_h": "2bbb7008df317845",
+  "website": "https://www.climbingnetwork.nl/indoor/locatie/climbingcenter-amsterdam",
+  "hours": {
+   "mon": "12pm–11pm",
+   "tue": "12pm–11pm",
+   "wed": "9am–11pm",
+   "thu": "12pm–11pm",
+   "fri": "12pm–11pm",
+   "sat": "9am–9pm",
+   "sun": "9am–9pm"
+  },
+  "day_pass": null,
+  "facilities": [
+   "cafe",
+   "training",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.climbingnetwork.nl/indoor/locatie/climbingcenter-amsterdam",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "flag",
+  "notes": "Seed name Mountain Network is stale: Erasmusgracht 297 is now Climbing Network Climbing Center Amsterdam (rebrand, same site). Data is for that gym. Day pass not found: the tarieven page loads prices by script and shows no amounts."
+ },
+ {
+  "id": "seed-1116",
+  "name": "Beest Boulders - Den Haag Centrum",
+  "metro": "The Hague",
+  "expect_h": "77ae92732c61b7e2",
+  "website": "https://beestboulders.com/vestigingen/beest-boulders-den-haag-centrum/",
+  "hours": {
+   "mon": "7am–11pm",
+   "tue": "7am–11pm",
+   "wed": "7am–11pm",
+   "thu": "7am–11pm",
+   "fri": "7am–11pm",
+   "sat": "9am–11pm",
+   "sun": "9am–11pm"
+  },
+  "day_pass": "€14.70 adult with member card, €19.70 first visit",
+  "facilities": [
+   "cafe",
+   "training",
+   "shop"
+  ],
+  "sources": [
+   {
+    "url": "https://beestboulders.com/vestigingen/beest-boulders-den-haag-centrum/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://beestboulders.com/tarieven/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Prices from chain-wide Beest Boulders tarieven page. Hours: weekdays 7:00-23:00, weekend 9:00-23:00."
+ },
+ {
+  "id": "seed-1117",
+  "name": "Beest Boulders - Den Haag Hollands Spoor",
+  "metro": "The Hague",
+  "expect_h": "6751e13ba8ace474",
+  "website": "https://beestboulders.com/vestigingen/beest-boulders-den-haag/",
+  "hours": {
+   "mon": "1pm–11pm",
+   "tue": "1pm–11pm",
+   "wed": "1pm–11pm",
+   "thu": "1pm–11pm",
+   "fri": "9am–11pm",
+   "sat": "9am–6pm",
+   "sun": "9am–9pm"
+  },
+  "day_pass": "€14.70 adult with member card, €19.70 first visit",
+  "facilities": [
+   "cafe",
+   "training",
+   "shop"
+  ],
+  "sources": [
+   {
+    "url": "https://beestboulders.com/vestigingen/beest-boulders-den-haag/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://beestboulders.com/tarieven/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Location page is Beest Boulders Den Haag Hollands Spoor (Waldorpstraat 15F). Prices from chain-wide tarieven page."
+ },
+ {
+  "id": "seed-1118",
+  "name": "Boulderhal de Campus - Den Haag",
+  "metro": "The Hague",
+  "expect_h": "4659f24599bf8085",
+  "website": "https://www.boulderhaldecampus.nl/nl",
+  "hours": {
+   "mon": "12pm–11:30pm",
+   "tue": "12pm–11:30pm",
+   "wed": "9am–11:30pm",
+   "thu": "12pm–11:30pm",
+   "fri": "9am–11:30pm",
+   "sat": "9am–11pm",
+   "sun": "9am–11pm"
+  },
+  "day_pass": "€13.75 adult, €12.75 age 19-24, €9.95 student",
+  "facilities": [
+   "cafe",
+   "training",
+   "shoe-hire",
+   "shop",
+   "parking",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.boulderhaldecampus.nl/nl",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.boulderhaldecampus.nl/nl/content/openingstijden",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.boulderhaldecampus.nl/nl/content/prijzen",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.boulderhaldecampus.nl/nl/content/faciliteiten",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.boulderhaldecampus.nl/nl/content/winkel",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Hours page gives one closing time (23:30 Mon-Fri, 23:00 Sat-Sun); home page splits hall (23:00 / 22:30) and bar (23:30 / 23:00). Used the dedicated hours page. Student price is Mondays only. Parking: free until 18:00 at the hall."
+ },
+ {
+  "id": "seed-1119",
+  "name": "Boulderhal Nirvana - Scheveningen",
+  "metro": "The Hague",
+  "expect_h": "66edf253f8953af1",
+  "website": "https://www.boulderhalnirvana.nl/nl",
+  "hours": {
+   "mon": "4pm–10pm",
+   "tue": "4pm–10pm",
+   "wed": "1pm–10pm",
+   "thu": "1pm–10pm",
+   "fri": "11am–10pm",
+   "sat": "9am–7pm",
+   "sun": "9am–9pm"
+  },
+  "day_pass": "€13.75 adult, €12.75 age 19-24",
+  "facilities": [
+   "shoe-hire",
+   "shop",
+   "yoga",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.boulderhalnirvana.nl/nl",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.boulderhalnirvana.nl/nl/content/openingstijden",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.boulderhalnirvana.nl/nl/content/prijzen",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.boulderhalnirvana.nl/nl/content/winkel",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.boulderhalnirvana.nl/nl/content/yoga",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Kids: Jeugd and Kids Klim Clinic pages in site navigation. Weekly yoga class Wednesdays 19:30."
+ },
+ {
+  "id": "seed-1120",
+  "name": "Boulderhal Walhalla - Den Haag",
+  "metro": "The Hague",
+  "expect_h": "1232079f5f0d7c07",
+  "website": "https://www.boulderhalwalhalla.nl/nl",
+  "hours": {
+   "mon": "1pm–11pm",
+   "tue": "1pm–11pm",
+   "wed": "1pm–11pm",
+   "thu": "1pm–11pm",
+   "fri": "1pm–11pm",
+   "sat": "11am–7pm",
+   "sun": "11am–10pm"
+  },
+  "day_pass": "€13.75 adult, €10.25 age 13-24/student",
+  "facilities": [
+   "shoe-hire",
+   "shop",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.boulderhalwalhalla.nl/nl",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.boulderhalwalhalla.nl/nl/content/openingstijden",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.boulderhalwalhalla.nl/nl/content/prijzen",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.boulderhalwalhalla.nl/nl/content/winkel-cadeaubon",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "The hours page headed these times \"Zomer Openingstijden\" (summer); the home page shows the same times unlabelled, so used as regular. Thursday route-setting until 17:00 may close some walls. Kids: Jeugd and Kids Klim Clinic in navigation."
+ },
+ {
+  "id": "seed-1121",
+  "name": "De Klimmuur - Den Haag de Uithof",
+  "metro": "The Hague",
+  "expect_h": "0a02eabcd1100222",
+  "website": "https://www.bok-denhaag.nl/klimmuur/",
+  "hours": {
+   "mon": "3pm–11pm",
+   "tue": "5pm–11pm",
+   "wed": "1pm–11pm",
+   "thu": "3pm–11pm",
+   "fri": "1pm–11pm",
+   "sat": "9am–6pm",
+   "sun": "9am–6pm"
+  },
+  "day_pass": "€18.70 adult climbing, €17.70 with member card; boulder-only €11",
+  "facilities": [
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.bok-denhaag.nl/klimmuur/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.bok-denhaag.nl/tarievenlijst/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.bok-denhaag.nl/boulderen-entrees/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   }
+  ],
+  "status": "flag",
+  "notes": "Jaap Edenweg 10 is now operated as Klimmuur Bok (BOK Den Haag); the old De Klimmuur page just says \"Zie website Klimmuur Bok\" for hours. Data is for Klimmuur Bok at the same address. Kids: youth training and kids entry prices listed."
+ },
+ {
+  "id": "seed-1122",
+  "name": "De Klimmuur - Den Haag Hollands Spoor",
+  "metro": "The Hague",
+  "expect_h": "c224e62bf85fae15",
+  "website": "https://www.deklimmuur.nl/klimmen/klimmuur-hollandsspoor/",
+  "hours": {
+   "mon": "1pm–11pm",
+   "tue": "1pm–11pm",
+   "wed": "1pm–11pm",
+   "thu": "1pm–11pm",
+   "fri": "9am–11pm",
+   "sat": "9am–6pm",
+   "sun": "9am–9pm"
+  },
+  "day_pass": "€18.70 adult, €17.70 with member card",
+  "facilities": [
+   "cafe",
+   "shop"
+  ],
+  "sources": [
+   {
+    "url": "https://www.deklimmuur.nl/klimmen/klimmuur-hollandsspoor/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.deklimmuur.nl/tarieven/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Price from chain-wide De Klimmuur tarieven page. Location page mentions bar and shop."
+ },
+ {
+  "id": "seed-1123",
+  "name": "Boulderhal Energiehaven",
+  "metro": "Utrecht",
+  "expect_h": "ab878eecfd7fe9db",
+  "website": "https://www.boulderhalenergiehaven.nl/",
+  "hours": {
+   "mon": "8:30am–11pm",
+   "tue": "8:30am–11pm",
+   "wed": "8:30am–11pm",
+   "thu": "8:30am–11pm",
+   "fri": "8:30am–11pm",
+   "sat": "8:30am–10pm",
+   "sun": "8:30am–10pm"
+  },
+  "day_pass": "€14.50 adult (25+), €13.40 age 18-24",
+  "facilities": [
+   "cafe",
+   "training",
+   "shoe-hire",
+   "shop",
+   "parking",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.boulderhalenergiehaven.nl/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.boulderhalenergiehaven.nl/openingstijden",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.boulderhalenergiehaven.nl/prijzen",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.boulderhalenergiehaven.nl/contact",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Contact page: \"Parkeren is gratis\". Training: fitness room, campusboard, two Kilter boards (home page). Youth training prices listed."
+ },
+ {
+  "id": "seed-1125",
+  "name": "Boulderhal Sterk",
+  "metro": "Utrecht",
+  "expect_h": "9c1da1993b1b8950",
+  "website": "https://www.boulderhalsterk.nl/sterk",
+  "hours": {
+   "mon": "8am–12am",
+   "tue": "8am–12am",
+   "wed": "8am–12am",
+   "thu": "8am–12am",
+   "fri": "8am–12am",
+   "sat": "8am–12am",
+   "sun": "8am–12am"
+  },
+  "day_pass": "€14 adult (25+), €13 age 19-24",
+  "facilities": [
+   "cafe",
+   "training",
+   "shoe-hire",
+   "parking",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.boulderhalsterk.nl/sterk",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.boulderhalsterk.nl/openingstijden",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.boulderhalsterk.nl/prijzen",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.boulderhalsterk.nl/jeugdtraining",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Prices page covers both Sterk halls. Location page says Sterk has no showers. Parking: free spots in front reserved for visitors."
+ },
+ {
+  "id": "seed-1124",
+  "name": "Boulderhal Sterk Spoor",
+  "metro": "Utrecht",
+  "expect_h": "11dd01e451986208",
+  "website": "https://www.boulderhalsterk.nl/sterkspoor",
+  "hours": {
+   "mon": "9am–11pm",
+   "tue": "9am–11pm",
+   "wed": "9am–11pm",
+   "thu": "9am–11pm",
+   "fri": "9am–11pm",
+   "sat": "9am–7pm",
+   "sun": "9am–7pm"
+  },
+  "day_pass": "€14 adult (25+), €13 age 19-24",
+  "facilities": [
+   "cafe",
+   "training",
+   "shoe-hire",
+   "showers",
+   "parking",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.boulderhalsterk.nl/sterkspoor",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.boulderhalsterk.nl/openingstijden",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.boulderhalsterk.nl/prijzen",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.boulderhalsterk.nl/jeugdtraining",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.boulderhalsterk.nl/parkeren",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Prices page covers both Sterk halls. Showers in both changing rooms (location page). Parking: free spaces in front of and behind the hall."
+ },
+ {
+  "id": "seed-1126",
+  "name": "Boulderhal Zuidhaven",
+  "metro": "Utrecht",
+  "expect_h": "f3fc6ea0f0cfc0ee",
+  "website": "https://www.boulderhalzuidhaven.nl/",
+  "hours": {
+   "mon": "8:30am–11pm",
+   "tue": "8:30am–11pm",
+   "wed": "8:30am–11pm",
+   "thu": "8:30am–11pm",
+   "fri": "8:30am–11pm",
+   "sat": "8:30am–10pm",
+   "sun": "8:30am–10pm"
+  },
+  "day_pass": "€14.50 adult (25+), €13.40 age 18-24",
+  "facilities": [
+   "cafe",
+   "shoe-hire",
+   "shop",
+   "showers",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.boulderhalzuidhaven.nl/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "hours",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.boulderhalzuidhaven.nl/openingstijden/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.boulderhalzuidhaven.nl/prijzen",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.boulderhalzuidhaven.nl/boulderen/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Cafe: bar mentioned on hours page and first-visit page. Kids: Klautereiland (from age 2) and youth training. Shop: Shop and crashpad rental section on home page."
+ },
+ {
+  "id": "seed-1127",
+  "name": "Klimcentrum Neoliet",
+  "metro": "Utrecht",
+  "expect_h": "91d6222454571b88",
+  "website": "https://www.neoliet.nl/en/utrecht/",
+  "hours": {
+   "mon": "10am–11pm",
+   "tue": "10am–11pm",
+   "wed": "10am–11pm",
+   "thu": "10am–11pm",
+   "fri": "9am–11pm",
+   "sat": "9am–7pm",
+   "sun": "9am–9pm"
+  },
+  "day_pass": "€14.50 adult bouldering, €17.75 adult climbing",
+  "facilities": [
+   "cafe",
+   "training",
+   "shoe-hire",
+   "shop",
+   "showers",
+   "parking",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.neoliet.nl/en/utrecht/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website"
+    ]
+   },
+   {
+    "url": "https://www.neoliet.nl/en/utrecht/openingstijden/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.neoliet.nl/en/utrecht/tarieven/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.neoliet.nl/en/utrecht/faciliteiten/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Facilities page uses check icons (yes) vs dash (no): hospitality space, training room, shop, showers, free parking are checked. Kids: youth team and children workshops in navigation/rates. Seed type lists bouldering only; the site also offers climbing."
+ },
+ {
+  "id": "seed-1128",
+  "name": "Klimmuur",
+  "metro": "Utrecht",
+  "expect_h": "4ba9996424b252e7",
+  "website": "https://www.klimmuur-utrecht.nl/",
+  "hours": {
+   "mon": "4pm–11pm",
+   "tue": "7pm–11pm",
+   "wed": "12pm–11pm",
+   "thu": "7pm–11pm",
+   "fri": "10am–11pm",
+   "sat": "10am–5pm",
+   "sun": "10am–5pm"
+  },
+  "day_pass": "€15.25 adult, €14.25 under 25, €12.25 under 12",
+  "facilities": [
+   "cafe",
+   "shoe-hire",
+   "kids"
+  ],
+  "sources": [
+   {
+    "url": "https://www.klimmuur-utrecht.nl/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.klimmuur-utrecht.nl/openingstijden",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.klimmuur-utrecht.nl/tarieven",
+    "accessed": "2026-10-04",
+    "supports": [
+     "day_pass",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Regular hours; separate summer hours 20 Jul-23 Aug ignored. Cafe: bar on home page. Kids: Jeugdtraining and Kidzklimmen in navigation. Mostly top-rope/lead wall."
+ }
+]

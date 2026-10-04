@@ -1,0 +1,634 @@
+[
+ {
+  "id": "seed-486",
+  "name": "Banana Climbing (OCT PARK Happy Time)",
+  "metro": "Shenzhen",
+  "expect_h": "142c8914825d131e",
+  "website": "https://www.bananaclimbing.com/",
+  "hours": null,
+  "day_pass": null,
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.bananaclimbing.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Matched by name (API zh: OCT Happy Time L1-19/20/21/22, Nanshan). Hours \"10:00-23:00\" have no day qualifier -> null. day_pass null: chain pricing gives only a chain-wide reference price (¥120) that \"may vary\" by location/city. shoe-hire from home page: shoes \"available for rent at all locations\"."
+ },
+ {
+  "id": "seed-487",
+  "name": "Banana Climbing (Shangmeilin Zhuoyuehui)",
+  "metro": "Shenzhen",
+  "expect_h": "321c28d210dea5ea",
+  "website": "https://www.bananaclimbing.com/",
+  "hours": null,
+  "day_pass": null,
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.bananaclimbing.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Matched by name; API address Zhuoyuehui Mall 2F, Shangmeilin, Futian (target address is the mall cross streets). Hours \"10:00 - 23:00\" have no day qualifier -> null. day_pass null: chain pricing gives only a chain-wide reference price (¥120) that \"may vary\" by location/city. shoe-hire from home page: shoes \"available for rent at all locations\"."
+ },
+ {
+  "id": "seed-488",
+  "name": "Banana Climbing (Joyful Ave)",
+  "metro": "Shenzhen",
+  "expect_h": "3f3407e42bab541b",
+  "website": "https://www.bananaclimbing.com/",
+  "hours": {
+   "mon": "8am–11pm",
+   "tue": "8am–11pm",
+   "wed": "8am–11pm",
+   "thu": "8am–11pm",
+   "fri": "8am–11pm",
+   "sat": "8am–11pm",
+   "sun": "8am–11pm"
+  },
+  "day_pass": null,
+  "facilities": [
+   "shoe-hire",
+   "training"
+  ],
+  "sources": [
+   {
+    "url": "https://www.bananaclimbing.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.bananaclimbing.com/api/v1/locations",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Matched by name; API lists it as \"BANANA+ Banana Climbing (Joyful Ave)\" at KALEDO Mall 4F, Poly Cultural Plaza, Nanshan. Hours stated \"Mon-Sun 8:00-23:00\". training from API facilities \"fitness\". day_pass null: chain pricing gives only a chain-wide reference price (¥120) that \"may vary\" by location/city. shoe-hire from home page: shoes \"available for rent at all locations\"."
+ },
+ {
+  "id": "seed-489",
+  "name": "Banana Climbing (Nanshan Houhai)",
+  "metro": "Shenzhen",
+  "expect_h": "d7fb70303250b0b5",
+  "website": "https://www.bananaclimbing.com/",
+  "hours": null,
+  "day_pass": null,
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.bananaclimbing.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Matched by name and address (B2-01 Houhai Hui, 3288 Houhaibin Rd). Bouldering-area hours \"10:00-23:00\" have no day qualifier (outdoor wall has its own weekday/weekend hours) -> hours null. day_pass null: chain pricing gives only a chain-wide reference price (¥120) that \"may vary\" by location/city. shoe-hire from home page: shoes \"available for rent at all locations\"."
+ },
+ {
+  "id": "seed-490",
+  "name": "Banana Climbing (iN City Plaza)",
+  "metro": "Shenzhen",
+  "expect_h": "e26020727069b8da",
+  "website": "https://www.bananaclimbing.com/",
+  "hours": {
+   "mon": "10am–11pm",
+   "tue": "10am–11pm",
+   "wed": "10am–11pm",
+   "thu": "10am–11pm",
+   "fri": "10am–11pm",
+   "sat": "10am–11pm",
+   "sun": "10am–11pm"
+  },
+  "day_pass": null,
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.bananaclimbing.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.bananaclimbing.com/api/v1/locations",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Matched by name and address (L5-01/02, 1095 Shennan Ave). Hours stated \"Mon to Sun 10:00-23:00\". day_pass null: chain pricing gives only a chain-wide reference price (¥120) that \"may vary\" by location/city. shoe-hire from home page: shoes \"available for rent at all locations\"."
+ },
+ {
+  "id": "seed-491",
+  "name": "Banana Climbing (Link Plaza)",
+  "metro": "Shenzhen",
+  "expect_h": "49ea4c9707834b48",
+  "website": "https://www.bananaclimbing.com/",
+  "hours": null,
+  "day_pass": null,
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.bananaclimbing.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Matched by name and address (Link CentralWalk L1017, 3 Fuhua 1st Rd). Indoor hours \"10:00-22:00\" have no day qualifier; outdoor wall weekend only -> hours null. day_pass null: chain pricing gives only a chain-wide reference price (¥120) that \"may vary\" by location/city. shoe-hire from home page: shoes \"available for rent at all locations\"."
+ },
+ {
+  "id": "seed-492",
+  "name": "Banana Climbing (Kingdee)",
+  "metro": "Shenzhen",
+  "expect_h": "ec6cfcba14921d3d",
+  "website": "https://www.bananaclimbing.com/",
+  "hours": {
+   "mon": "2pm–10pm",
+   "tue": "11am–10pm",
+   "wed": "11am–10pm",
+   "thu": "11am–10pm",
+   "fri": "11am–10pm",
+   "sat": "10am–10pm",
+   "sun": "10am–10pm"
+  },
+  "day_pass": null,
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.bananaclimbing.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.bananaclimbing.com/api/v1/locations",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Matched by name and address (Kingdee Tower 5F, 2 Keji South 12th Rd). Hours stated by day: Mon 14:00-22:00, Tue-Fri 11:00-22:00, weekends and holidays 10:00-22:00. day_pass null: chain pricing gives only a chain-wide reference price (¥120) that \"may vary\" by location/city. shoe-hire from home page: shoes \"available for rent at all locations\"."
+ },
+ {
+  "id": "seed-493",
+  "name": "Banana Climbing (Bao'an Center)",
+  "metro": "Shenzhen",
+  "expect_h": "cf1872457fbf0c11",
+  "website": "https://www.bananaclimbing.com/",
+  "hours": null,
+  "day_pass": null,
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.bananaclimbing.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Matched by name and address (Room 304, Block B, 1006 Chuangye 1st Rd; API says \"Lijing International\", target says \"Regal International\", same address). Hours \"10:00-22:00 (Wed, Fri until 24:00)\" have no day qualifier for the base range -> null. day_pass null: chain pricing gives only a chain-wide reference price (¥120) that \"may vary\" by location/city. shoe-hire from home page: shoes \"available for rent at all locations\"."
+ },
+ {
+  "id": "seed-606",
+  "name": "Banana Climbing (COSMO)",
+  "metro": "Chengdu",
+  "expect_h": "cda1fbf0ddf922de",
+  "website": "https://www.bananaclimbing.com/",
+  "hours": null,
+  "day_pass": null,
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.bananaclimbing.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Matched by name (API: BANANA+ Banana Climbing (COSMO); zh address 6 Daye Rd COSMO 5F, Jinjiang). Hours \"10:00-22:00\" no day qualifier -> null. day_pass null: chain pricing gives only a chain-wide reference price (¥120) that \"may vary\" by location/city. shoe-hire from home page: shoes \"available for rent at all locations\"."
+ },
+ {
+  "id": "seed-607",
+  "name": "Banana Climbing (ICD)",
+  "metro": "Chengdu",
+  "expect_h": "8be0541057eb95b6",
+  "website": "https://www.bananaclimbing.com/",
+  "hours": null,
+  "day_pass": null,
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.bananaclimbing.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Matched by name. API English address says Wuhou District but zh address is Jinjiang District, ICD L201 (matches target). Hours \"10:00-22:00\" no day qualifier -> null. day_pass null: chain pricing gives only a chain-wide reference price (¥120) that \"may vary\" by location/city. shoe-hire from home page: shoes \"available for rent at all locations\"."
+ },
+ {
+  "id": "seed-608",
+  "name": "Banana Climbing (CapitaLand Tianfu)",
+  "metro": "Chengdu",
+  "expect_h": "67201ba797c59235",
+  "website": "https://www.bananaclimbing.com/",
+  "hours": null,
+  "day_pass": null,
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.bananaclimbing.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Matched by name and zh address (388 Tianren Rd, CapitaLand Tianfu L5-15). Hours \"10:00-22:00\" no day qualifier -> null. day_pass null: chain pricing gives only a chain-wide reference price (¥120) that \"may vary\" by location/city. shoe-hire from home page: shoes \"available for rent at all locations\"."
+ },
+ {
+  "id": "seed-636",
+  "name": "Banana Climbing (Dongsheng Xiaoyuehe)",
+  "metro": "Beijing",
+  "expect_h": "bff44223302c11cc",
+  "website": null,
+  "hours": null,
+  "day_pass": null,
+  "facilities": null,
+  "sources": [],
+  "status": "flag",
+  "notes": "Doubtful match. Name \"Dongsheng Xiaoyuehe\" matches active API location bj-xiaoyuehe (Dongsheng Science Park Phase III, Xiaoyuehe Rd, Haidian), but the target address (768 Creative Park, Jia 5 Xueyuan Rd) matches the separate API location bj-768 \"Banana Climbing (768)\", which the API marks isClosed=true. Cannot tell which gym the record is; no values taken."
+ },
+ {
+  "id": "seed-637",
+  "name": "Banana Climbing (Shangdi)",
+  "metro": "Beijing",
+  "expect_h": "79d13a3bab57bd01",
+  "website": "https://www.bananaclimbing.com/",
+  "hours": {
+   "mon": "10am–11pm",
+   "tue": "10am–11pm",
+   "wed": "10am–11pm",
+   "thu": "10am–11pm",
+   "fri": "10am–11pm",
+   "sat": "10am–11pm",
+   "sun": "10am–11pm"
+  },
+  "day_pass": null,
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.bananaclimbing.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.bananaclimbing.com/api/v1/locations",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Matched by name; zh address 58 Dongbeiwang West Rd, Shangke Office Community West Gate 1 matches target. Hours stated \"Mon to Sun 10:00-23:00\". day_pass null: chain pricing gives only a chain-wide reference price (¥120) that \"may vary\" by location/city. shoe-hire from home page: shoes \"available for rent at all locations\"."
+ },
+ {
+  "id": "seed-692",
+  "name": "Banana Climbing (Huafa Midtown)",
+  "metro": "Wuhan",
+  "expect_h": "1d9c904f1a5f95ed",
+  "website": "https://www.bananaclimbing.com/",
+  "hours": null,
+  "day_pass": null,
+  "facilities": [
+   "shoe-hire",
+   "cafe"
+  ],
+  "sources": [
+   {
+    "url": "https://www.bananaclimbing.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.bananaclimbing.com/api/v1/locations",
+    "accessed": "2026-10-04",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Matched by name (API: BANANA+ Banana Climbing (Huafa Midtown), Jianghan District). Address differs: API zh gives Qingnian Rd 299, Huafa Midtown Shangdu B1 bldg 1F; target says 6 Huaihai Rd. Hours \"10:00-22:00\" no day qualifier -> null. cafe from API facilities. day_pass null: chain pricing gives only a chain-wide reference price (¥120) that \"may vary\" by location/city. shoe-hire from home page: shoes \"available for rent at all locations\"."
+ },
+ {
+  "id": "seed-693",
+  "name": "Banana Climbing (Qincheng MixC World)",
+  "metro": "Wuhan",
+  "expect_h": "e97067623d94b666",
+  "website": "https://www.bananaclimbing.com/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "10am–10pm",
+   "sun": "10am–10pm"
+  },
+  "day_pass": null,
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.bananaclimbing.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.bananaclimbing.com/api/v1/locations",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Matched by name; API zh address is 66 Xudong Ave, Qincheng MixC World L501, Wuchang (matches target district; API English address wrongly says Dongxihu). Hours stated \"Mon to Sun 10:00-22:00\". Same venue as seed-698. day_pass null: chain pricing gives only a chain-wide reference price (¥120) that \"may vary\" by location/city. shoe-hire from home page: shoes \"available for rent at all locations\"."
+ },
+ {
+  "id": "seed-694",
+  "name": "Banana Climbing (Hang Lung Plaza)",
+  "metro": "Wuhan",
+  "expect_h": "ac8f7d67989c4d02",
+  "website": "https://www.bananaclimbing.com/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "10am–10pm",
+   "sun": "10am–10pm"
+  },
+  "day_pass": null,
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.bananaclimbing.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.bananaclimbing.com/api/v1/locations",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Matched by name and zh address (668 Jinghan Ave, Hang Lung Plaza West, 5F L501B, Qiaokou). Hours stated \"Mon to Sun 10:00-22:00\". day_pass null: chain pricing gives only a chain-wide reference price (¥120) that \"may vary\" by location/city. shoe-hire from home page: shoes \"available for rent at all locations\"."
+ },
+ {
+  "id": "seed-695",
+  "name": "Banana Climbing (Optics Valley K11)",
+  "metro": "Wuhan",
+  "expect_h": "87efe344e50022a1",
+  "website": "https://www.bananaclimbing.com/",
+  "hours": null,
+  "day_pass": null,
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.bananaclimbing.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Matched by name and address (355 Guanshan Ave, Optics Valley K11). Hours \"10:00-22:00\" no day qualifier -> null. day_pass null: chain pricing gives only a chain-wide reference price (¥120) that \"may vary\" by location/city. shoe-hire from home page: shoes \"available for rent at all locations\"."
+ },
+ {
+  "id": "seed-698",
+  "name": "Banana Climbing (Qincheng Wanxiang Mall)",
+  "metro": "Wuhan",
+  "expect_h": "a0755ad67004769a",
+  "website": "https://www.bananaclimbing.com/",
+  "hours": {
+   "mon": "10am–10pm",
+   "tue": "10am–10pm",
+   "wed": "10am–10pm",
+   "thu": "10am–10pm",
+   "fri": "10am–10pm",
+   "sat": "10am–10pm",
+   "sun": "10am–10pm"
+  },
+  "day_pass": null,
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.bananaclimbing.com/api/v1/locations",
+    "accessed": "2026-10-04",
+    "supports": [
+     "hours"
+    ]
+   },
+   {
+    "url": "https://www.bananaclimbing.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "flag",
+  "notes": "Probable duplicate of seed-693: API location wh-qincheng (zh: Qincheng MixC World L501, 66 Xudong Ave, Wuchang) is the same venue (L501, Qincheng, Xujiapeng/Xudong, Wuchang); the chain lists only one Qincheng location in Wuhan. Values given are for that venue (hours stated \"Mon to Sun 10:00-22:00\"); not an independent gym."
+ },
+ {
+  "id": "seed-714",
+  "name": "Banana Climbing (Raffles City)",
+  "metro": "Hangzhou",
+  "expect_h": "c80b188341f09bec",
+  "website": "https://www.bananaclimbing.com/",
+  "hours": null,
+  "day_pass": null,
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.bananaclimbing.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Matched by name and address (228 Xinye Rd, Raffles City 4F per zh). Hours \"10:00-22:00\" no day qualifier -> null. day_pass null: chain pricing gives only a chain-wide reference price (¥120) that \"may vary\" by location/city. shoe-hire from home page: shoes \"available for rent at all locations\"."
+ },
+ {
+  "id": "seed-715",
+  "name": "Banana Climbing (Xixi Tianjie)",
+  "metro": "Hangzhou",
+  "expect_h": "61b304aa9391fe73",
+  "website": "https://www.bananaclimbing.com/",
+  "hours": null,
+  "day_pass": null,
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.bananaclimbing.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Matched by name; API: Longfor Xixi Tianjie 4F No.46-47, Yuhangtang Rd, Xihu District (target has no address). Hours \"10:00-22:00\" no day qualifier -> null. day_pass null: chain pricing gives only a chain-wide reference price (¥120) that \"may vary\" by location/city. shoe-hire from home page: shoes \"available for rent at all locations\"."
+ },
+ {
+  "id": "seed-716",
+  "name": "Banana Climbing (Impression City Olympic)",
+  "metro": "Hangzhou",
+  "expect_h": "2c0eb2e1d35cb221",
+  "website": "https://www.bananaclimbing.com/",
+  "hours": null,
+  "day_pass": null,
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.bananaclimbing.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Matched by name; API: Huidelong Impression City L6-01a, Yingfeng St, Xiaoshan (target has no address). Hours \"10:00-22:00\" no day qualifier -> null. day_pass null: chain pricing gives only a chain-wide reference price (¥120) that \"may vary\" by location/city. shoe-hire from home page: shoes \"available for rent at all locations\"."
+ },
+ {
+  "id": "seed-735",
+  "name": "Banana Climbing (Grantral Centre)",
+  "metro": "Guangzhou",
+  "expect_h": "4cf45c6e51808d14",
+  "website": "https://www.bananaclimbing.com/",
+  "hours": null,
+  "day_pass": null,
+  "facilities": [
+   "shoe-hire"
+  ],
+  "sources": [
+   {
+    "url": "https://www.bananaclimbing.com/",
+    "accessed": "2026-10-04",
+    "supports": [
+     "website",
+     "facilities"
+    ]
+   }
+  ],
+  "status": "found",
+  "notes": "Matched by name; API: Grantral Centre, Tianhe District (zh: 652 Huangpu Ave Middle). Target has no address. Hours \"10:00-22:00\" no day qualifier -> null. day_pass null: chain pricing gives only a chain-wide reference price (¥120) that \"may vary\" by location/city. shoe-hire from home page: shoes \"available for rent at all locations\"."
+ }
+]

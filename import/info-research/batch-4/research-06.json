@@ -1,0 +1,984 @@
+[
+  {
+    "id": "seed-984",
+    "name": "Boulders Habitat Beuel",
+    "metro": "Cologne",
+    "expect_h": "e5340ca788bdf918",
+    "website": "https://www.bouldershabitat.de/",
+    "hours": {
+      "mon": "9am–11pm",
+      "tue": "9am–11pm",
+      "wed": "9am–11pm",
+      "thu": "9am–11pm",
+      "fri": "9am–11pm",
+      "sat": "9am–10pm",
+      "sun": "9am–10pm"
+    },
+    "day_pass": "€13 adult, €11 reduced",
+    "facilities": [
+      "shoe-hire",
+      "kids",
+      "parking"
+    ],
+    "sources": [
+      {
+        "url": "https://www.bouldershabitat.de/home/info/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.bouldershabitat.de/boulders-habitat-home/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Beuel hall (Paulusstr. 22). Same hours as the Bonn hall; prices shared by both halls. Free parking stated directly at the Beuel hall. Kids = Kindergeburtstag/Familienkurse/Bouldern mit Kids."
+  },
+  {
+    "id": "seed-985",
+    "name": "Boulders Habitat Bonn",
+    "metro": "Cologne",
+    "expect_h": "d4bbd4c747580755",
+    "website": "https://www.bouldershabitat.de/",
+    "hours": {
+      "mon": "9am–11pm",
+      "tue": "9am–11pm",
+      "wed": "9am–11pm",
+      "thu": "9am–11pm",
+      "fri": "9am–11pm",
+      "sat": "9am–10pm",
+      "sun": "9am–10pm"
+    },
+    "day_pass": "€13 adult, €11 reduced",
+    "facilities": [
+      "shoe-hire",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://www.bouldershabitat.de/home/info/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.bouldershabitat.de/boulders-habitat-home/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Bonn hall (Siemensstr. 20, Dransdorf). Same hours and prices as the Beuel hall. Parking is street/nearby lot, not on-site, so not listed."
+  },
+  {
+    "id": "g-b6f99d2813",
+    "name": "Bronx Rock",
+    "metro": "Cologne",
+    "expect_h": "18814bf284b1ba79",
+    "website": "https://www.bronxrock.de/",
+    "hours": {
+      "mon": "9am–11pm",
+      "tue": "9am–11pm",
+      "wed": "9am–11pm",
+      "thu": "9am–11pm",
+      "fri": "9am–11pm",
+      "sat": "9am–10pm",
+      "sun": "9am–10pm"
+    },
+    "day_pass": "€15.50 adult climbing, €9.50 bouldering",
+    "facilities": [
+      "shoe-hire",
+      "shop",
+      "cafe",
+      "kids",
+      "parking"
+    ],
+    "sources": [
+      {
+        "url": "https://www.bronxrock.de/grosse-halle/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.bronxrock.de/preise-gutscheine/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.bronxrock.de/kontakt-anfahrt/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Standard tariff (weekdays after 4pm, weekends). Weekday check-in 9am-4pm Happy Hour is EUR12 climbing. Cafe inferred from 'Bistroartikel' and shop from 'Kletter-Shop' on the price page; parking = own car park (stated on the directions page)."
+  },
+  {
+    "id": "g-714fb371cc",
+    "name": "Canyon Chorweiler",
+    "metro": "Cologne",
+    "expect_h": "5da0d933d3feef1e",
+    "website": "https://canyon-chorweiler.de/",
+    "hours": {
+      "mon": "10am–10:45pm",
+      "tue": "10am–10:45pm",
+      "wed": "10am–10:45pm",
+      "thu": "10am–10:45pm",
+      "fri": "10am–10:45pm",
+      "sat": "10am–9pm",
+      "sun": "10am–9pm"
+    },
+    "day_pass": "€15.50 adult climbing, €7.50 bouldering, €13.50 reduced",
+    "facilities": [
+      "shoe-hire",
+      "cafe",
+      "kids",
+      "yoga"
+    ],
+    "sources": [
+      {
+        "url": "https://canyon-chorweiler.de/kletterhalle/eintrittspreise/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://canyon-chorweiler.de/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Not-for-profit climbing hall plus StadtteilWerkstatt. Bistro, kids/youth courses and birthdays, and Yoga are listed in the site menu/home page. Hours line also covers holidays like weekends."
+  },
+  {
+    "id": "g-4e936088eb",
+    "name": "Chimpanzodrome",
+    "metro": "Cologne",
+    "expect_h": "73ffc63c9fe48677",
+    "website": "https://chimpanzodrome.de/",
+    "hours": {
+      "mon": "10am–11pm",
+      "tue": "10am–11pm",
+      "wed": "10am–11pm",
+      "thu": "10am–11pm",
+      "fri": "10am–11pm",
+      "sat": "10am–10pm",
+      "sun": "10am–10pm"
+    },
+    "day_pass": "€17.30 adult climbing, €14.20 bouldering",
+    "facilities": [
+      "training",
+      "shoe-hire",
+      "cafe",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://chimpanzodrome.de/kontakt/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      },
+      {
+        "url": "https://chimpanzodrome.de/preise/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://chimpanzodrome.de/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Climbing entry includes bouldering and training area. Cafe = 'Bistroebene'; kids = kids training/holiday camps. Prices differ from older third-party listings."
+  },
+  {
+    "id": "g-e6697f0797",
+    "name": "Einstein Boulderhalle Köln",
+    "metro": "Cologne",
+    "expect_h": "791ad503a7e16519",
+    "website": "https://koeln.einstein-boulder.com/",
+    "hours": {
+      "mon": "9am–11pm",
+      "tue": "9am–11pm",
+      "wed": "9am–11pm",
+      "thu": "6:30am–11pm",
+      "fri": "9am–11pm",
+      "sat": "9am–11pm",
+      "sun": "9am–11pm"
+    },
+    "day_pass": "€14.90 adult (online ticket), €12.90 reduced",
+    "facilities": [
+      "kids",
+      "parking"
+    ],
+    "sources": [
+      {
+        "url": "https://koeln.einstein-boulder.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://shop.einstein-boulder-koeln.de/cg/eintritte/696/tageskarten/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass"
+        ]
+      },
+      {
+        "url": "https://koeln.einstein-boulder.com/de-de/das-einstein/anfahrt/884/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours from the site header 'Taeglich 9-23 Uhr, Do 630-23 Uhr' (the prices and hours page returns 404). The shop lists only 'Tageskarte Onlineticket' as the adult day ticket (no separate on-site adult price shown)."
+  },
+  {
+    "id": "g-27e1b21ca8",
+    "name": "Kletterfabrik Köln",
+    "metro": "Cologne",
+    "expect_h": "bad880801b28856c",
+    "website": "https://www.kletterfabrik.koeln/",
+    "hours": {
+      "mon": "9:30am–11pm",
+      "tue": "9:30am–11pm",
+      "wed": "8am–11pm",
+      "thu": "9:30am–11pm",
+      "fri": "9:30am–11pm",
+      "sat": "10am–9pm",
+      "sun": "10am–9pm"
+    },
+    "day_pass": "€16 adult climbing, €12 bouldering",
+    "facilities": [
+      "cafe",
+      "shop",
+      "kids",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://www.kletterfabrik.koeln/%C3%96ffnungszeiten.html",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.kletterfabrik.koeln/preise-tarife-klettern.html",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Wednesday Early Bird opens 8am (used for Wed). Cafe = Bistro, shop = Klettershop Compania Vertical, kids = Kindergeburtstag/Kinderkurse (site menu)."
+  },
+  {
+    "id": "seed-1060",
+    "name": "Stuntwerk Köln",
+    "metro": "Cologne",
+    "expect_h": "6a6c3faf673695c6",
+    "website": null,
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [],
+    "status": "flag",
+    "notes": "Doubtful match: seed has no address and its pin (50.9375, 6.9603) is Cologne city centre. Stuntwerk runs two Cologne halls, Muelheim (Schanzenstr. 6-20, daily 9am-11pm) and Zollstock (Weyerstrasserweg 10A, daily 8am-10pm), neither at the pin, so it is unclear which is meant; no data filled. Pages: https://stuntwerk.de/koeln-muelheim/ and https://stuntwerk.de/koeln-zollstock/"
+  },
+  {
+    "id": "seed-965",
+    "name": "BLOCKHAUS FREIBURG",
+    "metro": "Freiburg",
+    "expect_h": "6204726c00e26480",
+    "website": "https://www.blockhaus-freiburg.de/",
+    "hours": {
+      "mon": "9am–11pm",
+      "tue": "9am–11pm",
+      "wed": "9am–11pm",
+      "thu": "9am–11pm",
+      "fri": "9am–11pm",
+      "sat": "9am–10pm",
+      "sun": "9am–10pm"
+    },
+    "day_pass": "€14 adult, €12 reduced",
+    "facilities": [
+      "kids",
+      "training",
+      "shop",
+      "cafe",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://www.blockhaus-freiburg.de/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.blockhaus-freiburg.de/preise-und-formulare",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Merdinger Weg 6, Freiburg. Site news mentions 'Oeffnungszeiten ab Montag (31.08.)' but the hours shown on the home page are Mo-Fr 9-23, Sa/So 9-22."
+  },
+  {
+    "id": "seed-970",
+    "name": "blocwald",
+    "metro": "Freiburg",
+    "expect_h": "9aa32b5aa8fb3d2b",
+    "website": "https://www.blocwald.de/",
+    "hours": {
+      "mon": "2pm–10pm",
+      "tue": "2pm–10pm",
+      "wed": "2pm–10pm",
+      "thu": "2pm–10pm",
+      "fri": "10am–10pm",
+      "sat": "10am–8pm",
+      "sun": "10am–8pm"
+    },
+    "day_pass": "€13.50 adult, €11 reduced",
+    "facilities": [
+      "training",
+      "yoga",
+      "cafe",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://www.blocwald.de/preise-zeiten/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "day_pass"
+        ]
+      },
+      {
+        "url": "https://www.blocwald.de/unsere-halle/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "flag",
+    "notes": "Location mismatch: blocwald is in Villingen-Schwenningen (Am Klosterhof 5, 78052), about 80 km from Freiburg; seed pin is Freiburg. Data is for the real gym."
+  },
+  {
+    "id": "seed-982",
+    "name": "BOULDERkitchen",
+    "metro": "Freiburg",
+    "expect_h": "c431b56ddff1bcbe",
+    "website": "https://www.freiburg-boulderkitchen.de/",
+    "hours": {
+      "mon": "9am–11pm",
+      "tue": "9am–11pm",
+      "wed": "9am–11pm",
+      "thu": "9am–11pm",
+      "fri": "9am–11pm",
+      "sat": "9am–10pm",
+      "sun": "9am–10pm"
+    },
+    "day_pass": "€14 adult, €12 reduced",
+    "facilities": [
+      "training",
+      "shoe-hire",
+      "cafe",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://www.freiburg-boulderkitchen.de/preise-offnungszeiten/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.freiburg-boulderkitchen.de/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Munzinger Str. 4, Freiburg. Kids taken from the site menu item 'Feiern / Kids / Gruppen'. Training corner incl. campus board, Beastmakers, Kilterboard."
+  },
+  {
+    "id": "seed-986",
+    "name": "Boulderstube",
+    "metro": "Freiburg",
+    "expect_h": "aea44640bed6805c",
+    "website": "https://halle12.com/",
+    "hours": {
+      "mon": "2:30pm–10pm",
+      "tue": "2:30pm–10pm",
+      "wed": "2:30pm–10pm",
+      "thu": "9am–12pm, 2:30pm–10pm",
+      "fri": "2:30pm–10pm",
+      "sat": "10am–9pm",
+      "sun": "10am–7pm"
+    },
+    "day_pass": "€15 adult, €13 reduced",
+    "facilities": [
+      "cafe",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://halle12.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://halle12.com/newpage1fbccf20",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      },
+      {
+        "url": "https://halle12.com/preisebb5848d9",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass"
+        ]
+      }
+    ],
+    "status": "flag",
+    "notes": "Location mismatch: Boulderstube is in Halle12, Laufenburg (Baden) (Dr.-Rudolf-Eberle-Str. 12), about 70 km from Freiburg. Thursday also lists a 9am-12pm slot on the hours page (used as stated)."
+  },
+  {
+    "id": "seed-1019",
+    "name": "HotzenBlock",
+    "metro": "Freiburg",
+    "expect_h": "46a8128a69727a80",
+    "website": "https://hotzenblock.de/",
+    "hours": {
+      "mon": "Closed",
+      "tue": "5pm–10pm",
+      "wed": "5pm–10pm",
+      "thu": "5pm–10pm",
+      "fri": "5pm–10pm",
+      "sat": "10am–8pm",
+      "sun": "10am–8pm"
+    },
+    "day_pass": null,
+    "facilities": [
+      "training",
+      "kids",
+      "shop",
+      "shoe-hire",
+      "cafe"
+    ],
+    "sources": [
+      {
+        "url": "https://www.hotzenblock.de/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://hotzenblock.de/unsere-halle/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "flag",
+    "notes": "Location mismatch: real gym is HotzenBlock in Waldshut-Tiengen (Feldbergstr. 9-11), about 60 km from Freiburg; seed pin is Freiburg. Entry is donation-based (no fixed price) so day_pass is null. Wednesday has a kids/family afternoon from 3pm; used the 5pm-10pm general hours. seed-1020 'HotzenBlock Bouldering' is the same gym."
+  },
+  {
+    "id": "seed-1020",
+    "name": "HotzenBlock Bouldering",
+    "metro": "Freiburg",
+    "expect_h": "6c6e8418e6add259",
+    "website": "https://hotzenblock.de/",
+    "hours": {
+      "mon": "Closed",
+      "tue": "5pm–10pm",
+      "wed": "5pm–10pm",
+      "thu": "5pm–10pm",
+      "fri": "5pm–10pm",
+      "sat": "10am–8pm",
+      "sun": "10am–8pm"
+    },
+    "day_pass": null,
+    "facilities": [
+      "training",
+      "kids",
+      "shop",
+      "shoe-hire",
+      "cafe"
+    ],
+    "sources": [
+      {
+        "url": "https://www.hotzenblock.de/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://hotzenblock.de/unsere-halle/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "flag",
+    "notes": "Location mismatch: real gym is HotzenBlock in Waldshut-Tiengen (Feldbergstr. 9-11), about 60 km from Freiburg; seed pin is Freiburg. Entry is donation-based (no fixed price) so day_pass is null. Wednesday has a kids/family afternoon from 3pm; used the 5pm-10pm general hours. Duplicate of seed-1019."
+  },
+  {
+    "id": "seed-1044",
+    "name": "LÖ bloc - die Boulderhalle",
+    "metro": "Freiburg",
+    "expect_h": "77c27ef647d48d75",
+    "website": "https://bouldercenter-grenzach-wyhlen.de/",
+    "hours": null,
+    "day_pass": null,
+    "facilities": null,
+    "sources": [
+      {
+        "url": "https://bouldercenter-grenzach-wyhlen.de/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      }
+    ],
+    "status": "flag",
+    "notes": "Renamed and closing: the site at Im Fallberg 6, Grenzach-Wyhlen (about 45 km from Freiburg) is now 'BoulderCenter Grenzach-Wyhlen' and states it closes for good after 31 Oct 2026, so hours and prices were not recorded. The LOE bloc to BoulderCenter rename itself is only third-party reported; the site address matches the former LOE bloc address."
+  },
+  {
+    "id": "seed-1065",
+    "name": "UPJOY",
+    "metro": "Freiburg",
+    "expect_h": "ed244d7b511cb1de",
+    "website": "https://upjoy.de/",
+    "hours": {
+      "mon": "6am–10pm",
+      "tue": "8am–10pm",
+      "wed": "6am–10pm",
+      "thu": "8am–10pm",
+      "fri": "6am–10:30pm",
+      "sat": "9am–10pm",
+      "sun": "9am–9pm"
+    },
+    "day_pass": "€11.50 adult, €10 student",
+    "facilities": [
+      "shoe-hire",
+      "kids",
+      "parking"
+    ],
+    "sources": [
+      {
+        "url": "https://upjoy.de/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://upjoy.de/preise-gutscheine/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://upjoy.de/contact-us/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "flag",
+    "notes": "Location mismatch: UPJOY is in Villingen-Schwenningen (Wilhelm-Binder-Str. 15, 78048), about 80 km from Freiburg. Parking = customers may use the adjoining INJOY car park. Sunday/holiday hours 9am-9pm."
+  },
+  {
+    "id": "seed-1070",
+    "name": "[cityrock]",
+    "metro": "Stuttgart",
+    "expect_h": "e3427bd8d5a30043",
+    "website": "https://cityrock.de/",
+    "hours": {
+      "mon": "Closed",
+      "tue": "6pm–11pm",
+      "wed": "6pm–11pm",
+      "thu": "6pm–11pm",
+      "fri": "6pm–11pm",
+      "sat": "6pm–11pm",
+      "sun": "6pm–11pm"
+    },
+    "day_pass": "€8 adult (climbing and bouldering), €7 reduced",
+    "facilities": [
+      "training",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://cityrock.de/oeffnungszeiten-preise/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Fritz-Elsas-Str. 44. Open Tue-Sun 6pm-11pm, Monday listed Geschlossen; closed in school summer holidays and different hours in other school holidays. Training = system wall (Moonboard/Kilter) in the bouldering cellar."
+  },
+  {
+    "id": "seed-971",
+    "name": "Blöckle Boulderhalle",
+    "metro": "Stuttgart",
+    "expect_h": "4524f9885833d2b9",
+    "website": "https://www.boulderhalle-ravensburg.de/",
+    "hours": {
+      "mon": "3pm–10pm",
+      "tue": "10am–10pm",
+      "wed": "8am–10pm",
+      "thu": "10am–10pm",
+      "fri": "8am–10pm",
+      "sat": "10am–8:30pm",
+      "sun": "10am–8:30pm"
+    },
+    "day_pass": "€12 adult, €10 reduced",
+    "facilities": [
+      "training",
+      "cafe",
+      "kids",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://www.boulderhalle-ravensburg.de/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      },
+      {
+        "url": "https://www.boulderhalle-ravensburg.de/preise-2026/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass"
+        ]
+      },
+      {
+        "url": "https://www.boulderhalle-ravensburg.de/das-bloeckle/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "flag",
+    "notes": "Location mismatch: Bloeckle is in Ravensburg (Deisenfangstr. 7, 88212), about 120 km from Tuebingen/Stuttgart; seed says Tuebingen. Day pass is from the 'Preise ab 01.10.26' page (in force on the accessed date). Hours labels map positionally Mon..Fri then Sa/So/holidays (checked in the HTML)."
+  },
+  {
+    "id": "g-f4ae8e8c93",
+    "name": "DAV Kletterzentrum Stuttgart",
+    "metro": "Stuttgart",
+    "expect_h": "b51b3152c7a3d4dd",
+    "website": "https://www.kletterzentrum-stuttgart.de/",
+    "hours": {
+      "mon": "1pm–11pm",
+      "tue": "9am–11pm",
+      "wed": "1pm–11pm",
+      "thu": "9am–11pm",
+      "fri": "1pm–11pm",
+      "sat": "9am–10pm",
+      "sun": "9am–10pm"
+    },
+    "day_pass": "€17 adult climbing, €11.50 bouldering (guest rate)",
+    "facilities": [
+      "cafe",
+      "shop",
+      "shoe-hire",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://www.kletterzentrum-stuttgart.de/oeffnungszeiten-preise/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "day_pass"
+        ]
+      },
+      {
+        "url": "https://www.kletterzentrum-stuttgart.de/bistro/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.kletterzentrum-stuttgart.de/verleih/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.kletterzentrum-stuttgart.de/kinder/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Guest (non-DAV) rates; DAV Schwaben members pay EUR13 climbing / EUR9.50 bouldering. Parking is off-site (Koenigstraessle), not listed."
+  },
+  {
+    "id": "seed-1005",
+    "name": "Dolomiti-Boulderbox",
+    "metro": "Stuttgart",
+    "expect_h": "aa88b0b6c416f065",
+    "website": "https://www.dolomiti-boulderbox.de/",
+    "hours": {
+      "mon": "2pm–10pm",
+      "tue": "2pm–11pm",
+      "wed": "2pm–10pm",
+      "thu": "10am–11pm",
+      "fri": "2pm–10pm",
+      "sat": "10am–9pm",
+      "sun": "10am–9pm"
+    },
+    "day_pass": "€11.50 adult, €9.50 reduced",
+    "facilities": [
+      "training",
+      "kids",
+      "shop",
+      "shoe-hire",
+      "yoga"
+    ],
+    "sources": [
+      {
+        "url": "https://www.dolomiti-boulderbox.de/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "flag",
+    "notes": "Location mismatch: Dolomiti-Boulderbox is in Albstadt-Tailfingen (Vogelsangstr. 41, 72461), about 45 km from Tuebingen; seed says Tuebingen. The Gastronomie page was empty so cafe is not listed."
+  },
+  {
+    "id": "seed-1017",
+    "name": "Griffwerk",
+    "metro": "Stuttgart",
+    "expect_h": "f13010f5c30e4e1d",
+    "website": "https://www.griffwerk-klettern.de/",
+    "hours": {
+      "mon": "12pm–11pm",
+      "tue": "12pm–11pm",
+      "wed": "12pm–11pm",
+      "thu": "12pm–11pm",
+      "fri": "12pm–11pm",
+      "sat": "9am–9pm",
+      "sun": "9am–9pm"
+    },
+    "day_pass": "€18 adult climbing (incl. bouldering), €11 bouldering",
+    "facilities": [
+      "training",
+      "kids",
+      "cafe",
+      "shoe-hire",
+      "showers"
+    ],
+    "sources": [
+      {
+        "url": "https://www.griffwerk-klettern.de/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://www.griffwerk-klettern.de/preis%C3%BCbersicht",
+        "accessed": "2026-10-04",
+        "supports": [
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "flag",
+    "notes": "Location mismatch: Griffwerk climbing hall is in Ludwigsburg (Fuchshofstr. 66, 71638), about 15 km north of Stuttgart centre; seed pin is Stuttgart. Staffed hours used (self check-in daily from 8am). Cafe = restaurant/Gastronomie."
+  },
+  {
+    "id": "seed-1054",
+    "name": "Roccadion",
+    "metro": "Stuttgart",
+    "expect_h": "462c2e8b398507ca",
+    "website": "https://www.roccadion.de/",
+    "hours": {
+      "mon": "10am–11pm",
+      "tue": "2pm–11pm",
+      "wed": "10am–11pm",
+      "thu": "2pm–11pm",
+      "fri": "10am–11pm",
+      "sat": "9am–10pm",
+      "sun": "9am–10pm"
+    },
+    "day_pass": "€16.50 adult climbing & bouldering, €13.50 bouldering only",
+    "facilities": [
+      "shoe-hire",
+      "cafe",
+      "kids"
+    ],
+    "sources": [
+      {
+        "url": "https://www.roccadion.de/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "flag",
+    "notes": "Location mismatch: Roccadion is in Boeblingen (about 15 km SW of Stuttgart), not Stuttgart; the site title reads 'Roccadion die Kletterhalle in Boeblingen'. Street address was not read on a fetched page. Cafe/kids come from the site menu (Gastro, Kinder). The site notes different Tuesday hours on holidays and in school holidays."
+  },
+  {
+    "id": "seed-1055",
+    "name": "rockerei",
+    "metro": "Stuttgart",
+    "expect_h": "76cfd3930d82045a",
+    "website": "https://rockerei-stuttgart.de/",
+    "hours": {
+      "mon": "1pm–11pm",
+      "tue": "9am–11pm",
+      "wed": "9am–11pm",
+      "thu": "1pm–11pm",
+      "fri": "9am–11pm",
+      "sat": "9am–10pm",
+      "sun": "9am–10pm"
+    },
+    "day_pass": "€16 adult guest climbing & bouldering, €15 bouldering only",
+    "facilities": [
+      "kids",
+      "training",
+      "cafe",
+      "shop",
+      "shoe-hire"
+    ],
+    "sources": [
+      {
+        "url": "https://rockerei-stuttgart.de/infos/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours",
+          "day_pass",
+          "facilities"
+        ]
+      },
+      {
+        "url": "https://rockerei-stuttgart.de/die-rockerei/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "facilities"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "DAV Kletter- und Boulderzentrum Schwaben, Stammheimer Str. 41, 70435 Stuttgart. Guest rate; DAV Schwaben members pay EUR12 / EUR11. Cafe = Bistro."
+  }
+]
