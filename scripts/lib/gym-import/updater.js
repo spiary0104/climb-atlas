@@ -1,9 +1,9 @@
 // The update path of the production importer. See docs/import-workflow.md ("Updating the location of existing gyms", "Filling gym
-// information (website, hours)").
+// information (website, hours, day pass, facilities)").
 //
 // Same conventions as importer.js: modes dry-run (default) | verify | apply; only `apply` writes, and only after every check, the
 // confirmation token and the production flag pass. An update batch can change ONLY address / lat / lng (a "location update") or
-// FILL website / hours (an "info update") of existing APPROVED spots; one record never mixes the two families.
+// FILL website / hours / day_pass / facilities (an "info update") of existing APPROVED spots; one record never mixes the two families.
 // Every record names the gym's content hash when it was researched (expect_h); a gym whose content differs from that is refused,
 // never overwritten. Nothing here inserts, deletes, or touches any other field. importer.js hands a batch here when EVERY record is
 // {"intent":"update"}; a batch mixing inserts and updates stays in importer.js and is refused there.
@@ -12,9 +12,11 @@
 //   before   its content hash is exactly expect_h (nothing changed since the research)
 //   after    address/lat/lng hold the new values and every other field is unchanged (this batch was applied)
 //   changed  anything else -> refused
-// An info update is FILL-ONLY: website/hours are not part of the content hash, so its states are read from the fields themselves:
-//   before   approved, hash = expect_h, and every field in `set` is empty in production (null; hours {} counts as empty)
-//   after    approved, hash = expect_h, and every field in `set` equals the record (hours: deep equality)
+// An info update is FILL-ONLY: the gym-information fields are not part of the content hash, so its states are read from the fields themselves:
+//   before   approved, hash = expect_h, and every field in `set` is empty in production (website null; hours null or {}; day_pass null or '';
+//            facilities null or [] -- the column is not null default '{}', so a gym with none holds [])
+//   after    approved, hash = expect_h, and every field in `set` equals the record (hours / facilities: deep equality; facilities are
+//            compared in order, which is why validate.js requires the record in the canonical FACILITIES order)
 //   changed  anything else (a field already holds another value, e.g. a community edit approved since the research) -> refused
 // All before = a fresh update; all after = already applied (nothing to write); a mix = refused (never merged).
 //
@@ -57,18 +59,18 @@ const confirmToken = ({ batchId, planSha, payload, host, kind, coverage, liveSha
   sha256(JSON.stringify(['gym-update-confirm', UPDATER_VERSION, batchId, planSha, payload, host, kind, coverage, liveSha, ...(retires.length ? [retires] : [])])).slice(0, 16);
 
 const isInfo = u => V.isInfoSet(u.set);
-// Location-or-info rules on top of validate.js (which allows more fields for planning; the website/hours VALUES are checked there).
-// A record is an info update (website/hours only) or a location update (address/lat/lng only), never both. Returns a list of problems.
+// Location-or-info rules on top of validate.js (which allows more fields for planning; the gym-information VALUES are checked there).
+// A record is an info update (website/hours/day_pass/facilities only) or a location update (address/lat/lng only), never both. Returns a list of problems.
 function locationProblems(rec) {
   const out = [];
   const set = rec.set && typeof rec.set === 'object' && !Array.isArray(rec.set) ? rec.set : null;
-  if (!set || !Object.keys(set).length) return ['"set" must list the location fields (or website/hours) to change'];
+  if (!set || !Object.keys(set).length) return [`"set" must list the location fields (or ${T.INFO_FIELDS.join('/')}) to change`];
   if (V.isInfoSet(set)) {
     const other = Object.keys(set).filter(k => !T.INFO_FIELDS.includes(k));
     if (other.length) out.push(`an info update changes only ${T.INFO_FIELDS.join('/')}, never together with location fields (not ${other.join(', ')}); one record per gym, so use a separate batch`);
   } else {
     const other = Object.keys(set).filter(k => !T.LOCATION_FIELDS.includes(k));
-    if (other.length) out.push(`only ${T.LOCATION_FIELDS.join(', ')} (or website/hours as an info update) may be changed (not ${other.join(', ')})`);
+    if (other.length) out.push(`only ${T.LOCATION_FIELDS.join(', ')} (or ${T.INFO_FIELDS.join('/')} as an info update) may be changed (not ${other.join(', ')})`);
     if ((set.lat === undefined) !== (set.lng === undefined)) out.push('lat and lng must change together');
     if ('address' in set && (typeof set.address !== 'string' || !set.address.trim())) out.push('address can be corrected, never cleared (a non-empty text)');
   }
@@ -78,7 +80,10 @@ function locationProblems(rec) {
 }
 
 // State of one info-update target. Fill-only: `filled` lists the fields that already hold a value other than the record's.
-const emptyInfo = (f, v) => v === null || v === undefined || (f === 'hours' && !!v && typeof v === 'object' && !Array.isArray(v) && !Object.keys(v).length);
+const emptyInfo = (f, v) => v === null || v === undefined
+  || (f === 'hours' && !!v && typeof v === 'object' && !Array.isArray(v) && !Object.keys(v).length)
+  || (f === 'day_pass' && v === '')
+  || (f === 'facilities' && Array.isArray(v) && !v.length);
 function stateOfInfo(live, rec) {
   if (!live) return { state: 'missing' };
   if (live.status !== 'approved') return { state: 'not-approved' };
@@ -173,7 +178,7 @@ async function runUpdate(opts) {
   const ids = recs.map(x => x.rec.id);                            // every target, in record order
   res.ids = ids;
   const retireIds = new Set(res.retires.map(r => r.id));
-  const infoIds = new Set(res.updates.filter(isInfo).map(u => u.id));   // targets of an info (website/hours) update; the other updates are location updates
+  const infoIds = new Set(res.updates.filter(isInfo).map(u => u.id));   // targets of an info (website/hours/day pass/facilities) update; the other updates are location updates
   res.infoIds = [...infoIds];
 
   // ---- local index: integrity, and the research snapshot equals it --------------------------------------------------------------
@@ -334,15 +339,15 @@ async function runUpdate(opts) {
 
     // ---- post-write verification (read-only) -------------------------------------------------------------------------------------
     const problems = [];
-    after.states.forEach(x => { if (x.state !== 'after') problems.push(`${x.id}: ${x.state} (expected ${retireIds.has(x.id) ? "status rejected with the recorded reason" : infoIds.has(x.id) ? 'website/hours exactly as recorded, content unchanged' : 'the new location with every other field unchanged'})`); });
+    after.states.forEach(x => { if (x.state !== 'after') problems.push(`${x.id}: ${x.state} (expected ${retireIds.has(x.id) ? "status rejected with the recorded reason" : infoIds.has(x.id) ? `${T.INFO_FIELDS.join('/')} exactly as recorded, content unchanged` : 'the new location with every other field unchanged'})`); });
     const expectCount = res.beforeCount - res.retires.length;
     if (after.approved.length !== expectCount) problems.push(`approved count ${after.approved.length}, expected ${expectCount} (${res.beforeCount} before; an update never adds or removes a spot, a retirement removes exactly one approved spot each)`);
     const drAfter = driftExcept(after.approved, index, new Set(ids));
     if (driftTotal(drAfter)) problems.push(`other spots changed: added ${drAfter.added.length}, removed ${drAfter.removed.length}, changed ${drAfter.changed.length}`);
-    if (infoIds.size) {   // website/hours are not in the content hash, so compare them directly: only the info targets may differ from before the write
-      const infoOf = r => JSON.stringify([r.website ?? null, r.hours ?? null]), was = new Map(before.approved.map(r => [r.id, infoOf(r)]));
+    if (infoIds.size) {   // the gym-information fields are not in the content hash, so compare them directly: only the info targets may differ from before the write
+      const infoOf = r => JSON.stringify(T.INFO_FIELDS.map(f => r[f] ?? null)), was = new Map(before.approved.map(r => [r.id, infoOf(r)]));
       const moved = after.approved.filter(r => !infoIds.has(r.id) && was.get(r.id) !== undefined && was.get(r.id) !== infoOf(r)).map(r => r.id);
-      if (moved.length) problems.push(`website/hours of other spots changed: ${sample(moved, 4)}`);
+      if (moved.length) problems.push(`${T.INFO_FIELDS.join('/')} of other spots changed: ${sample(moved, 4)}`);
     }
     res.verification = { ok: problems.length === 0, checked: ids.length, problems };
     add(problems.length ? 'FAIL' : 'PASS', 'post-update verification', problems.length ? sample(problems, 4) : `all ${ids.length} gyms are in the applied state (${res.updates.length - infoIds.size} hold exactly the new ${T.LOCATION_FIELDS.join('/')} with every other field unchanged, ${infoIds.size} hold exactly the filled ${T.INFO_FIELDS.join('/')} with their content unchanged, ${res.retires.length} are rejected with the recorded reason); approved count ${res.beforeCount} -> ${expectCount}; every other spot unchanged`);

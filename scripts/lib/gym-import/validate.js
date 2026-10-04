@@ -14,12 +14,15 @@ const LIMITS = { name: 200, suburb: 200, state: 100, address: 400, notes: 4000 }
 // Fields a batch record may carry. Everything else (status, community=true, edited, submitted_by, created_at, ...) is
 // decided by the importer, never by research data, so it is rejected instead of silently ignored.
 const RECORD_KEYS = new Set(['id', 'intent', 'name', 'suburb', 'state', 'country', 'lat', 'lng', 'types', 'address', 'notes', 'photo', 'community', 'source']);
-const UPDATABLE = ['name', 'suburb', 'state', 'lat', 'lng', 'types', 'address', 'notes', 'photo', 'website', 'hours'];
+const UPDATABLE = ['name', 'suburb', 'state', 'lat', 'lng', 'types', 'address', 'notes', 'photo', 'website', 'hours', 'day_pass', 'facilities'];
 // Gym-information fields (migration 20261004000100). An "info update" only FILLS them on a gym that has none (updater.js enforces
 // fill-only against production); it never carries any other field, so a record never mixes them with the location fields.
-const INFO_FIELDS = Object.freeze(['website', 'hours']);
+const INFO_FIELDS = Object.freeze(['website', 'hours', 'day_pass', 'facilities']);
 const HOUR_DAYS = Object.freeze(['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']);
-const INFO_LIMITS = Object.freeze({ website: 300, hour: 40 });   // = spots_website_check / spots_hours_check and js/modules/gym-info.js LIMITS
+const INFO_LIMITS = Object.freeze({ website: 300, hour: 40, day_pass: 120 });   // = spots_website_check / spots_hours_check / spots_day_pass_len_check and js/modules/gym-info.js LIMITS
+// = spots_facilities_check and the keys of js/modules/gym-info.js FACILITIES, in that file's order: a record must list them in this
+// canonical order, so the database value equals the record byte for byte (compared with deep equality, never as a set).
+const FACILITY_KEYS = Object.freeze(['cafe', 'training', 'kids', 'shoe-hire', 'shop', 'showers', 'parking', 'yoga']);
 const isInfoSet = set => !!set && typeof set === 'object' && !Array.isArray(set) && Object.keys(set).some(k => INFO_FIELDS.includes(k));
 const UPDATE_KEYS = new Set(['id', 'intent', 'set', 'reason', 'source', 'expect_h']);
 // expect_h: the gym's content hash (index-store h) when the update was researched; the plan and the updater refuse the update
@@ -104,6 +107,20 @@ function checkField(field, v, full, d, out) {
       }
       break;
     }
+    case 'day_pass': {
+      if (!isStr(v) || !v.length) return err('bad-day-pass', 'day_pass must be text of 1-' + INFO_LIMITS.day_pass + ' characters (the price as the gym states it)');
+      if (v.length > INFO_LIMITS.day_pass) err('too-long', `day_pass is ${v.length} chars (max ${INFO_LIMITS.day_pass})`);
+      if (v !== v.trim() || CTRL.test(v) || /[\r\n\t]/.test(v)) err('bad-day-pass', 'day_pass must be trimmed single-line text (the database value must equal the record exactly)');
+      break;
+    }
+    case 'facilities': {
+      if (!Array.isArray(v) || !v.length) return err('bad-facilities', `facilities must be a non-empty array of: ${FACILITY_KEYS.join(', ')}`);
+      const bad = v.filter(k => !isStr(k) || !FACILITY_KEYS.includes(k));
+      if (bad.length) return err('bad-facilities', `unknown facility ${JSON.stringify(bad)}; allowed: ${FACILITY_KEYS.join(', ')}`);
+      if (new Set(v).size !== v.length) return err('bad-facilities', 'facilities contains duplicates');
+      if (v.some((k, i) => k !== FACILITY_KEYS.filter(x => v.includes(x))[i])) err('bad-facilities', `facilities must be in the canonical order: ${FACILITY_KEYS.join(', ')}`);
+      break;
+    }
     default: break;
   }
 }
@@ -150,16 +167,17 @@ async function validateUpdateRecord(rec) {
   return { errors, warnings };
 }
 
-// "website example.com + hours mon,tue,sat" -- what an info update fills, for reports (a review needs the host and the days, not the data).
+// "website example.com + hours mon,tue,sat + day pass + facilities (3)" -- what an info update fills, for reports (a review needs the host and the days, not the data).
 function describeInfoSet(set) {
   const host = u => { try { return new URL(u).hostname.replace(/^www\./, ''); } catch (e) { return '?'; } };
-  return [set.website !== undefined && `website ${host(set.website)}`, set.hours && typeof set.hours === 'object' && `hours ${HOUR_DAYS.filter(k => k in set.hours).join(',')}`].filter(Boolean).join(' + ');
+  return [set.website !== undefined && `website ${host(set.website)}`, set.hours && typeof set.hours === 'object' && `hours ${HOUR_DAYS.filter(k => k in set.hours).join(',')}`,
+    set.day_pass !== undefined && 'day pass', Array.isArray(set.facilities) && `facilities (${set.facilities.length})`].filter(Boolean).join(' + ');
 }
 
-// Problems (plain strings) of an info "set" ({website?, hours?}): the same field rules as the record validator, reused by the write
+// Problems (plain strings) of an info "set" ({website?, hours?, day_pass?, facilities?}): the same field rules as the record validator, reused by the write
 // gate in target.js so a hand-built payload can never carry a value the validator would have refused.
 async function infoSetProblems(set) {
-  if (!set || typeof set !== 'object' || Array.isArray(set) || !Object.keys(set).length) return ['"set" must list website and/or hours'];
+  if (!set || typeof set !== 'object' || Array.isArray(set) || !Object.keys(set).length) return ['"set" must list website, hours, day_pass and/or facilities'];
   const d = await deps(), errs = [];
   for (const k of Object.keys(set)) { if (INFO_FIELDS.includes(k)) checkField(k, set[k], set, d, errs); else errs.push({ message: `${k} is not a gym-information field` }); }
   return errs.map(e => e.message);
@@ -184,4 +202,4 @@ async function validateRetireRecord(rec) {
   return { errors, warnings };
 }
 
-module.exports = { TYPES, UPDATABLE, INFO_FIELDS, HOUR_DAYS, INFO_LIMITS, isInfoSet, infoSetProblems, describeInfoSet, RECORD_KEYS, EXPECT_H, REASON_CODES, validateNewRecord, validateUpdateRecord, validateRetireRecord, deps };
+module.exports = { TYPES, UPDATABLE, INFO_FIELDS, HOUR_DAYS, INFO_LIMITS, FACILITY_KEYS, isInfoSet, infoSetProblems, describeInfoSet, RECORD_KEYS, EXPECT_H, REASON_CODES, validateNewRecord, validateUpdateRecord, validateRetireRecord, deps };

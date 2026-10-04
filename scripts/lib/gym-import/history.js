@@ -2,7 +2,7 @@
 // checks about that earlier state of production (validate-reconciled.js and the tests that reconstruct the pre-import index).
 //
 // Two kinds of later batch, both recorded by a valid manifest.json and their committed plan.json:
-//  - a maintenance batch (updater.js; manifest kind "update") changed address/lat/lng of existing gyms (or filled their website/hours, which the index does not carry and
+//  - a maintenance batch (updater.js; manifest kind "update") changed address/lat/lng of existing gyms (or filled their website/hours/day pass/facilities, which the index does not carry and
 //    which are skipped when reverting): plan.json lists every change as
 //    {field, before, after} plus the gym's content hash before it (expect_h); and/or RETIRED gyms (closed / duplicate, status set to
 //    'rejected', so they left the approved set and the rebuilt index): plan.json records each retired gym's full index entry as it was
@@ -71,7 +71,7 @@ function revertIndex(index, root = S.ROOT) {
     for (const r of b.updates) {
       const e = byId.get(r.id);
       if (!e || gone.has(r.id)) throw new Error(`update batch ${b.id}: ${r.id} is not in the index`);
-      for (const c of r.changes.filter(c => !INFO_FIELDS.includes(c.field))) {   // gym information (website/hours) is not in the index
+      for (const c of r.changes.filter(c => !INFO_FIELDS.includes(c.field))) {   // gym information (website/hours/day pass/facilities) is not in the index
         if (!same(e[c.field], c.after)) throw new Error(`update batch ${b.id}: ${r.id}.${c.field} in the index is not the updated value; the index does not reflect this batch`);
         e[c.field] = c.before;
       }

@@ -218,7 +218,7 @@ async function planBatch({ dir, index, batchesDir, includeStaged = true }) {
     const changes = [];
     let noop = 0;
     for (const [f, v] of Object.entries(it.rec.set)) {
-      // website/hours are not in the index (nor in the content hash): the plan can only say they are FILLED; updater.js refuses the batch
+      // website/hours/day_pass/facilities are not in the index (nor in the content hash): the plan can only say they are FILLED; updater.js refuses the batch
       // if production already holds a value (fill-only). `before: null` is therefore the only state an applied update can start from.
       if (V.INFO_FIELDS.includes(f)) changes.push({ field: f, before: null, after: v });
       else if (VISIBLE.includes(f)) {
