@@ -32,7 +32,8 @@ address_missing / mismatch / unknown), `renamed_to`, `duplicate_of_hint` for eve
   official presence; owner rule "if unsure, retire").
 - Location fixes: `2026-10-04-nonmetro-locations-1` (64 of the first 69 candidates; `locations.json`: official address + OSM element,
   house-number geocode or the official site's own place pin, per record). 3 unresolved (no building-level point), 2 held
-  (Treadstone: moved to another state; Flashpoint Swindon: possibly replaced by Rockstar). Part 2: `locations-2.json`.
+  (Treadstone: moved to another state; Flashpoint Swindon: possibly replaced by Rockstar). Part 2: `2026-10-04-nonmetro-locations-2` (50 of 50, German chunks; `locations-2.json`, all OSM gym elements).
 - validate/plan: 0 errors, 0 duplicates, 0 invalid; public-key dry-run: PREFLIGHT PASSED for each.
 - Apply order: fills and retirements FIRST, then the location batches (a location change alters the content hash, and
-  62 of the 64 location gyms are also in a fill batch, which checks expect_h). Identity edits for the same gyms come last.
+  62 of the 64 location gyms are also in a fill batch, which checks expect_h). Identity edits (7 suburbs of
+  gyms that moved town, listed in `reviews.json`) come last.

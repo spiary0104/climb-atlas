@@ -1,0 +1,1572 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-04-nonmetro-locations-2",
+ "index": {
+  "sha256": "805de07cc820a55436ad2af602b76d601b49e85346e808dfcfdee1e82e796738",
+  "count": 2293,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [],
+ "counts": {
+  "records": 50,
+  "new": 0,
+  "existing": 0,
+  "update": 50,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 49
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "5d3f54afd079ab2c5c835d594772ce3b7df456479977c1cec5b66ac43187e2ca",
+ "records": [
+  {
+   "line": 1,
+   "class": "update",
+   "id": "seed-980",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Im Bosseldorn 25/1, 69126 Heidelberg"
+    },
+    {
+     "field": "lat",
+     "before": 49.3988,
+     "after": 49.3861699
+    },
+    {
+     "field": "lng",
+     "before": 8.6724,
+     "after": 8.6791896
+    }
+   ],
+   "expect_h": "536e7b9f4293366e",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1488 m"
+    }
+   ]
+  },
+  {
+   "line": 2,
+   "class": "update",
+   "id": "seed-981",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Abraham-Lincoln-Allee 3, 68309 Mannheim"
+    },
+    {
+     "field": "lat",
+     "before": 49.4875,
+     "after": 49.5182161
+    },
+    {
+     "field": "lng",
+     "before": 8.466,
+     "after": 8.5350574
+    }
+   ],
+   "expect_h": "fd90f8abbf922a3a",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 6044 m"
+    }
+   ]
+  },
+  {
+   "line": 3,
+   "class": "update",
+   "id": "seed-1009",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Blaubeurer Strasse 100, 89077 Ulm"
+    },
+    {
+     "field": "lat",
+     "before": 48.4011,
+     "after": 48.4007404
+    },
+    {
+     "field": "lng",
+     "before": 9.9876,
+     "after": 9.9627343
+    }
+   ],
+   "expect_h": "32da608e7df77c96",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1836 m"
+    }
+   ]
+  },
+  {
+   "line": 4,
+   "class": "update",
+   "id": "seed-1026",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Brühlstr. 31, 88212 Ravensburg"
+    },
+    {
+     "field": "lat",
+     "before": 47.7817,
+     "after": 47.7896653
+    },
+    {
+     "field": "lng",
+     "before": 9.6117,
+     "after": 9.6050315
+    }
+   ],
+   "expect_h": "bbddac7af38d9e83",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1016 m"
+    }
+   ]
+  },
+  {
+   "line": 5,
+   "class": "update",
+   "id": "seed-1032",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Werner-Messmer-Str. 12, 78315 Radolfzell"
+    },
+    {
+     "field": "lat",
+     "before": 47.7392,
+     "after": 47.7413024
+    },
+    {
+     "field": "lng",
+     "before": 8.9686,
+     "after": 8.9733637
+    }
+   ],
+   "expect_h": "eb94113901132944",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)"
+  },
+  {
+   "line": 6,
+   "class": "update",
+   "id": "seed-960",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Alte Ziegelei 16, 94315 Straubing"
+    },
+    {
+     "field": "lat",
+     "before": 48.8809,
+     "after": 48.8779433
+    },
+    {
+     "field": "lng",
+     "before": 12.573,
+     "after": 12.5643637
+    }
+   ],
+   "expect_h": "5c6853545fc73133",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 712 m"
+    }
+   ]
+  },
+  {
+   "line": 7,
+   "class": "update",
+   "id": "seed-966",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Memmelsdorfer Str. 211, 96052 Bamberg"
+    },
+    {
+     "field": "lat",
+     "before": 49.8988,
+     "after": 49.9185181
+    },
+    {
+     "field": "lng",
+     "before": 10.9028,
+     "after": 10.9184917
+    }
+   ],
+   "expect_h": "b282ae208780ec99",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 2464 m"
+    }
+   ]
+  },
+  {
+   "line": 8,
+   "class": "update",
+   "id": "seed-987",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Gewerbepark 3, 92278 Illschwang"
+    },
+    {
+     "field": "lat",
+     "before": 49.4167,
+     "after": 49.4575709
+    },
+    {
+     "field": "lng",
+     "before": 11.7333,
+     "after": 11.6731486
+    }
+   ],
+   "expect_h": "61995c79986b6e81",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 6291 m"
+    }
+   ]
+  },
+  {
+   "line": 9,
+   "class": "update",
+   "id": "seed-991",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Im Gewerbepark, A46, 93059 Regensburg"
+    },
+    {
+     "field": "lat",
+     "before": 49.0134,
+     "after": 49.0321913
+    },
+    {
+     "field": "lng",
+     "before": 12.1016,
+     "after": 12.128645
+    }
+   ],
+   "expect_h": "a211b83707f32ee3",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 2873 m"
+    }
+   ]
+  },
+  {
+   "line": 10,
+   "class": "update",
+   "id": "seed-996",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Ritter-von-Schoch-Str. 6, 84036 Landshut"
+    },
+    {
+     "field": "lat",
+     "before": 48.5372,
+     "after": 48.5478954
+    },
+    {
+     "field": "lng",
+     "before": 12.1522,
+     "after": 12.1820285
+    }
+   ],
+   "expect_h": "cfc38e3e8f31c43d",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 2497 m"
+    }
+   ]
+  },
+  {
+   "line": 11,
+   "class": "update",
+   "id": "seed-1000",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Am Silbergarten 6, 93138 Lappersdorf/Kareth"
+    },
+    {
+     "field": "lat",
+     "before": 49.01,
+     "after": 49.0426619
+    },
+    {
+     "field": "lng",
+     "before": 12.1,
+     "after": 12.0860927
+    }
+   ],
+   "expect_h": "20f4b36400760691",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 3771 m"
+    }
+   ]
+  },
+  {
+   "line": 12,
+   "class": "update",
+   "id": "seed-1022",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Finsterwalderstrasse 4, 83071 Stephanskirchen"
+    },
+    {
+     "field": "lat",
+     "before": 47.8564,
+     "after": 47.8473302
+    },
+    {
+     "field": "lng",
+     "before": 12.1289,
+     "after": 12.1654285
+    }
+   ],
+   "expect_h": "190ac81a3d5a9163",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 2906 m"
+    }
+   ]
+  },
+  {
+   "line": 13,
+   "class": "update",
+   "id": "seed-1027",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Buchenstraße 17, 83233 Bernau am Chiemsee"
+    },
+    {
+     "field": "lat",
+     "before": 47.7833,
+     "after": 47.8093934
+    },
+    {
+     "field": "lng",
+     "before": 12.3333,
+     "after": 12.381801
+    }
+   ],
+   "expect_h": "9a990f78be5b1fad",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 4642 m"
+    }
+   ]
+  },
+  {
+   "line": 14,
+   "class": "update",
+   "id": "seed-1029",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Heinrich-Nikolaus-Straße 15, 87480 Weitnau-Seltmans"
+    },
+    {
+     "field": "lat",
+     "before": 48.36,
+     "after": 47.6423217
+    },
+    {
+     "field": "lng",
+     "before": 10.9,
+     "after": 10.087591
+    }
+   ],
+   "expect_h": "d62cb6aaae075f20",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 100109 m"
+    }
+   ]
+  },
+  {
+   "line": 15,
+   "class": "update",
+   "id": "seed-1059",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Eberlestr. 29, 86157 Augsburg"
+    },
+    {
+     "field": "lat",
+     "before": 48.365,
+     "after": 48.367704
+    },
+    {
+     "field": "lng",
+     "before": 10.89,
+     "after": 10.8720182
+    }
+   ],
+   "expect_h": "31962331045860ec",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1362 m"
+    }
+   ]
+  },
+  {
+   "line": 16,
+   "class": "update",
+   "id": "seed-1062",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Aybühlweg 69, 87439 Kempten"
+    },
+    {
+     "field": "lat",
+     "before": 48.375,
+     "after": 47.7198799
+    },
+    {
+     "field": "lng",
+     "before": 10.905,
+     "after": 10.2897441
+    }
+   ],
+   "expect_h": "0d6e977f8e018e31",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 86012 m"
+    }
+   ]
+  },
+  {
+   "line": 17,
+   "class": "update",
+   "id": "seed-992",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Moltkestraße 13, 27576 Bremerhaven"
+    },
+    {
+     "field": "lat",
+     "before": 53.5396,
+     "after": 53.5546553
+    },
+    {
+     "field": "lng",
+     "before": 8.5809,
+     "after": 8.5778481
+    }
+   ],
+   "expect_h": "9236ff7cbab5e733",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1686 m"
+    }
+   ]
+  },
+  {
+   "line": 18,
+   "class": "update",
+   "id": "seed-1063",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Robert-Hooke-Straße 19, 28359 Bremen"
+    },
+    {
+     "field": "lat",
+     "before": 53.075,
+     "after": 53.1129349
+    },
+    {
+     "field": "lng",
+     "before": 8.795,
+     "after": 8.8559314
+    }
+   ],
+   "expect_h": "f9da7ade3c2456e9",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 5861 m"
+    }
+   ]
+  },
+  {
+   "line": 19,
+   "class": "update",
+   "id": "seed-964",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Kreuzbergstraße 40, 36043 Fulda"
+    },
+    {
+     "field": "lat",
+     "before": 51.3127,
+     "after": 50.5380419
+    },
+    {
+     "field": "lng",
+     "before": 9.4797,
+     "after": 9.6972624
+    }
+   ],
+   "expect_h": "33021e94e6e962dd",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 87477 m"
+    }
+   ]
+  },
+  {
+   "line": 20,
+   "class": "update",
+   "id": "seed-1010",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Untere Königsstraße 95, 34117 Kassel"
+    },
+    {
+     "field": "lat",
+     "before": 51.31,
+     "after": 51.3199641
+    },
+    {
+     "field": "lng",
+     "before": 9.475,
+     "after": 9.5007242
+    }
+   ],
+   "expect_h": "416d55c0a76e7e48",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 2103 m"
+    }
+   ]
+  },
+  {
+   "line": 21,
+   "class": "update",
+   "id": "seed-1030",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Zur Hoppecke 9, 34508 Willingen (Upland)"
+    },
+    {
+     "field": "lat",
+     "before": 51.2833,
+     "after": 51.2922558
+    },
+    {
+     "field": "lng",
+     "before": 8.6167,
+     "after": 8.5966912
+    }
+   ],
+   "expect_h": "b81036b5191610de",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1711 m"
+    }
+   ]
+  },
+  {
+   "line": 22,
+   "class": "update",
+   "id": "seed-1037",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Johanna-Waescher-Str. 4, 34131 Kassel"
+    },
+    {
+     "field": "lat",
+     "before": 51.32,
+     "after": 51.3062799
+    },
+    {
+     "field": "lng",
+     "before": 9.49,
+     "after": 9.4469601
+    }
+   ],
+   "expect_h": "2b8894c18d32ec99",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 3358 m"
+    }
+   ]
+  },
+  {
+   "line": 23,
+   "class": "update",
+   "id": "seed-1042",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Lehmweg 10, 35398 Gießen"
+    },
+    {
+     "field": "lat",
+     "before": 50.5841,
+     "after": 50.5874053
+    },
+    {
+     "field": "lng",
+     "before": 8.6785,
+     "after": 8.6582678
+    }
+   ],
+   "expect_h": "9a385522a665c0cf",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1475 m"
+    }
+   ]
+  },
+  {
+   "line": 24,
+   "class": "update",
+   "id": "seed-959",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Am Kayenmühlengraben 2, 18057 Rostock"
+    },
+    {
+     "field": "lat",
+     "before": 54.0887,
+     "after": 54.0968376
+    },
+    {
+     "field": "lng",
+     "before": 12.14,
+     "after": 12.1025283
+    }
+   ],
+   "expect_h": "7b2c56f6a0ace434",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 2606 m"
+    }
+   ]
+  },
+  {
+   "line": 25,
+   "class": "update",
+   "id": "seed-1012",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Zum Zollamt 4, 18119 Rostock-Warnemünde"
+    },
+    {
+     "field": "lat",
+     "before": 54.093,
+     "after": 54.1699326
+    },
+    {
+     "field": "lng",
+     "before": 12.135,
+     "after": 12.0857178
+    }
+   ],
+   "expect_h": "aad5dc5986c9fec0",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 9137 m"
+    }
+   ]
+  },
+  {
+   "line": 26,
+   "class": "update",
+   "id": "seed-1018",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Am Gorzberg 16, 17489 Greifswald"
+    },
+    {
+     "field": "lat",
+     "before": 54.09,
+     "after": 54.0766152
+    },
+    {
+     "field": "lng",
+     "before": 13.397,
+     "after": 13.3941631
+    }
+   ],
+   "expect_h": "5bf16bd40a8eb986",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1500 m"
+    }
+   ]
+  },
+  {
+   "line": 27,
+   "class": "update",
+   "id": "seed-977",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Gertrud-Knebusch-Str. 15, 30167 Hannover"
+    },
+    {
+     "field": "lat",
+     "before": 52.3759,
+     "after": 52.3850954
+    },
+    {
+     "field": "lng",
+     "before": 9.732,
+     "after": 9.7311904
+    }
+   ],
+   "expect_h": "2e60f46979270346",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1024 m"
+    }
+   ]
+  },
+  {
+   "line": 28,
+   "class": "update",
+   "id": "seed-999",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Lerchenkamp 52, 31137 Hildesheim"
+    },
+    {
+     "field": "lat",
+     "before": 52.1508,
+     "after": 52.1724812
+    },
+    {
+     "field": "lng",
+     "before": 9.9511,
+     "after": 9.9436049
+    }
+   ],
+   "expect_h": "69978aab0ee2bc8c",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 2464 m"
+    }
+   ]
+  },
+  {
+   "line": 29,
+   "class": "update",
+   "id": "seed-1024",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Reinhold-Schleese-Str. 21, 30179 Hannover"
+    },
+    {
+     "field": "lat",
+     "before": 52.38,
+     "after": 52.4216977
+    },
+    {
+     "field": "lng",
+     "before": 9.735,
+     "after": 9.7255038
+    }
+   ],
+   "expect_h": "a085741434921754",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 4681 m"
+    }
+   ]
+  },
+  {
+   "line": 30,
+   "class": "update",
+   "id": "seed-1039",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Weddigenstraße 5, 26603 Aurich"
+    },
+    {
+     "field": "lat",
+     "before": 53.4711,
+     "after": 53.4808683
+    },
+    {
+     "field": "lng",
+     "before": 7.4844,
+     "after": 7.4882842
+    }
+   ],
+   "expect_h": "1c8a32df9bceb3e0",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1116 m"
+    }
+   ]
+  },
+  {
+   "line": 31,
+   "class": "update",
+   "id": "seed-1051",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Melkbrink 76, 26121 Oldenburg"
+    },
+    {
+     "field": "lat",
+     "before": 53.1435,
+     "after": 53.1570851
+    },
+    {
+     "field": "lng",
+     "before": 8.2146,
+     "after": 8.2009491
+    }
+   ],
+   "expect_h": "0dde61c7dcae96b4",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1764 m"
+    }
+   ]
+  },
+  {
+   "line": 32,
+   "class": "update",
+   "id": "seed-1057",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Sprangerweg 2, 37075 Göttingen"
+    },
+    {
+     "field": "lat",
+     "before": 51.5413,
+     "after": 51.5502305
+    },
+    {
+     "field": "lng",
+     "before": 9.9158,
+     "after": 9.952578
+    }
+   ],
+   "expect_h": "f98b43fa921186b2",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 2730 m"
+    }
+   ]
+  },
+  {
+   "line": 33,
+   "class": "update",
+   "id": "seed-1064",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Diedrich-Dannemann-Str. 87, 26203 Wardenburg"
+    },
+    {
+     "field": "lat",
+     "before": 53.0333,
+     "after": 53.1063966
+    },
+    {
+     "field": "lng",
+     "before": 8.1917,
+     "after": 8.1678682
+    }
+   ],
+   "expect_h": "ebe93f4edd9c1b66",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 8282 m"
+    }
+   ]
+  },
+  {
+   "line": 34,
+   "class": "update",
+   "id": "seed-963",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Bahnhofsallee 35, 40721 Hilden"
+    },
+    {
+     "field": "lat",
+     "before": 51.2277,
+     "after": 51.170386
+    },
+    {
+     "field": "lng",
+     "before": 6.7735,
+     "after": 6.9168885
+    }
+   ],
+   "expect_h": "9c23403cbe200600",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 11850 m"
+    }
+   ]
+  },
+  {
+   "line": 35,
+   "class": "update",
+   "id": "seed-1048",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Schiessstraße 52, 40549 Düsseldorf"
+    },
+    {
+     "field": "lat",
+     "before": 51.225,
+     "after": 51.2392931
+    },
+    {
+     "field": "lng",
+     "before": 6.77,
+     "after": 6.7235248
+    }
+   ],
+   "expect_h": "90d15c7ce0d27941",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 3605 m"
+    }
+   ]
+  },
+  {
+   "line": 36,
+   "class": "update",
+   "id": "seed-1049",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Eulerstraße 2, 48155 Münster"
+    },
+    {
+     "field": "lat",
+     "before": 51.9607,
+     "after": 51.9377777
+    },
+    {
+     "field": "lng",
+     "before": 7.6261,
+     "after": 7.6429326
+    }
+   ],
+   "expect_h": "a31ef2eae0a45479",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 2798 m"
+    }
+   ]
+  },
+  {
+   "line": 37,
+   "class": "update",
+   "id": "seed-1007",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Rübenacher Str. 104, 56072 Koblenz (Metternich)"
+    },
+    {
+     "field": "lat",
+     "before": 50.3569,
+     "after": 50.3695876
+    },
+    {
+     "field": "lng",
+     "before": 7.589,
+     "after": 7.553065
+    }
+   ],
+   "expect_h": "463162d39a484e2a",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 2913 m"
+    }
+   ]
+  },
+  {
+   "line": 38,
+   "class": "update",
+   "id": "seed-1035",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Saarburger Str. 25, 67071 Ludwigshafen"
+    },
+    {
+     "field": "lat",
+     "before": 49.4741,
+     "after": 49.4864812
+    },
+    {
+     "field": "lng",
+     "before": 8.446,
+     "after": 8.4073646
+    }
+   ],
+   "expect_h": "445388fd1fd551b9",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 3112 m"
+    }
+   ]
+  },
+  {
+   "line": 39,
+   "class": "update",
+   "id": "seed-1021",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Herrensohrer Wiesen 1, 66125 Saarbrücken"
+    },
+    {
+     "field": "lat",
+     "before": 49.2401,
+     "after": 49.2732328
+    },
+    {
+     "field": "lng",
+     "before": 6.9969,
+     "after": 7.0215449
+    }
+   ],
+   "expect_h": "d592816a64096a05",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 4095 m"
+    }
+   ]
+  },
+  {
+   "line": 40,
+   "class": "update",
+   "id": "seed-1038",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Mainzerstr. 30, 66111 Saarbrücken"
+    },
+    {
+     "field": "lat",
+     "before": 49.245,
+     "after": 49.231282
+    },
+    {
+     "field": "lng",
+     "before": 7,
+     "after": 7.0019761
+    }
+   ],
+   "expect_h": "d321727ff0aa9e2e",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1532 m"
+    }
+   ]
+  },
+  {
+   "line": 41,
+   "class": "update",
+   "id": "seed-983",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Altchemnitzer Str. 27, 09120 Chemnitz"
+    },
+    {
+     "field": "lat",
+     "before": 50.8278,
+     "after": 50.8171629
+    },
+    {
+     "field": "lng",
+     "before": 12.9214,
+     "after": 12.9213063
+    }
+   ],
+   "expect_h": "9276ece8f4a526fb",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1183 m"
+    }
+   ]
+  },
+  {
+   "line": 42,
+   "class": "update",
+   "id": "seed-1031",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Marienberger Straße 36, 09509 Pockau-Lengefeld"
+    },
+    {
+     "field": "lat",
+     "before": 50.6167,
+     "after": 50.6814285
+    },
+    {
+     "field": "lng",
+     "before": 13.1667,
+     "after": 13.2108477
+    }
+   ],
+   "expect_h": "77fc6f79a6aaf091",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 7842 m"
+    }
+   ]
+  },
+  {
+   "line": 43,
+   "class": "update",
+   "id": "seed-1034",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Matthesstraße 20, 09113 Chemnitz"
+    },
+    {
+     "field": "lat",
+     "before": 50.832,
+     "after": 50.8398612
+    },
+    {
+     "field": "lng",
+     "before": 12.926,
+     "after": 12.9073476
+    }
+   ],
+   "expect_h": "36d791f21b492cbd",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1575 m"
+    }
+   ]
+  },
+  {
+   "line": 44,
+   "class": "update",
+   "id": "seed-1040",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Erich-Zeigner-Allee 64c, 04229 Leipzig"
+    },
+    {
+     "field": "lat",
+     "before": 51.3397,
+     "after": 51.3230068
+    },
+    {
+     "field": "lng",
+     "before": 12.3731,
+     "after": 12.3354688
+    }
+   ],
+   "expect_h": "0c7ed5ace8219ae7",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 3206 m"
+    }
+   ]
+  },
+  {
+   "line": 45,
+   "class": "update",
+   "id": "seed-969",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Lübecker Straße 53–63, Haus 16A, 39124 Magdeburg"
+    },
+    {
+     "field": "lat",
+     "before": 52.1205,
+     "after": 52.162656
+    },
+    {
+     "field": "lng",
+     "before": 11.6276,
+     "after": 11.6282961
+    }
+   ],
+   "expect_h": "f6f8662287636c43",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 4688 m"
+    }
+   ]
+  },
+  {
+   "line": 46,
+   "class": "update",
+   "id": "seed-974",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Kisdorfer Weg 15 a–c, 24568 Kaltenkirchen"
+    },
+    {
+     "field": "lat",
+     "before": 53.8367,
+     "after": 53.8282311
+    },
+    {
+     "field": "lng",
+     "before": 9.9613,
+     "after": 9.9819197
+    }
+   ],
+   "expect_h": "87a8ab625c29e37d",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1649 m"
+    }
+   ]
+  },
+  {
+   "line": 47,
+   "class": "update",
+   "id": "seed-1015",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Westerallee 159, 24941 Flensburg"
+    },
+    {
+     "field": "lat",
+     "before": 54.7937,
+     "after": 54.7764082
+    },
+    {
+     "field": "lng",
+     "before": 9.4464,
+     "after": 9.3957162
+    }
+   ],
+   "expect_h": "ce262338dab48d77",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 3776 m"
+    }
+   ]
+  },
+  {
+   "line": 48,
+   "class": "update",
+   "id": "seed-1067",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Bei der Gasanstalt 5, 23560 Lübeck"
+    },
+    {
+     "field": "lat",
+     "before": 53.8655,
+     "after": 53.8495864
+    },
+    {
+     "field": "lng",
+     "before": 10.6866,
+     "after": 10.6756954
+    }
+   ],
+   "expect_h": "a68d7a1edcf0e82c",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1909 m"
+    }
+   ]
+  },
+  {
+   "line": 49,
+   "class": "update",
+   "id": "seed-968",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Motzstraße 8, 99094 Erfurt"
+    },
+    {
+     "field": "lat",
+     "before": 50.9848,
+     "after": 50.9612113
+    },
+    {
+     "field": "lng",
+     "before": 11.0299,
+     "after": 11.0144774
+    }
+   ],
+   "expect_h": "32724c1bfca93746",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 2837 m"
+    }
+   ]
+  },
+  {
+   "line": 50,
+   "class": "update",
+   "id": "seed-1053",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Carl-Pulfrich-Str. 4, 07745 Jena"
+    },
+    {
+     "field": "lat",
+     "before": 50.9271,
+     "after": 50.920836
+    },
+    {
+     "field": "lng",
+     "before": 11.5892,
+     "after": 11.5720119
+    }
+   ],
+   "expect_h": "2adb797e1d3f2f7c",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1392 m"
+    }
+   ]
+  }
+ ]
+}
