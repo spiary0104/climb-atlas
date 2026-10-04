@@ -312,3 +312,11 @@ test('text-success token exists in both themes and is used for the Open fragment
   assert.match(read('css/explore.css'), /\.hours-state--open\{color:var\(--color-text-success\);\}/);
   assert.match(read('css/explore.css'), /\.hours-state--closed\{color:var\(--color-text-secondary\);\}/);
 });
+
+test('desktop chip row wraps in the list pane instead of hiding chips off-screen; the map slot (phones) keeps one swipeable row', () => {
+  const css = read('css/explore.css');
+  assert.match(css, /\.filter-slot \.chip-scroll\{flex-wrap:wrap;overflow-x:visible;/, 'list-pane chip row wraps');
+  assert.match(css, /\.chip-scroll\{display:flex;[^}]*overflow-x:auto;/, 'the base row still scrolls (phones, over the map)');
+  assert.match(read('index.html'), /class="filter-slot" id="listFilterSlot"/, 'the list-pane slot carries .filter-slot');
+  assert.match(read('index.html'), /class="map-filter-slot" id="mapFilterSlot"/, 'the map slot does not match .filter-slot');
+});
