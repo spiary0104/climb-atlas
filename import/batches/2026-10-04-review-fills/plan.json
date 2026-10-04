@@ -1,0 +1,575 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-04-review-fills",
+ "index": {
+  "sha256": "af9c78d5f3eeb4f9337651a588bad3ce8dbcc4f6fb92443bc35e343982749e9b",
+  "count": 2293,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-04-review-new-gyms"
+ ],
+ "counts": {
+  "records": 15,
+  "new": 0,
+  "existing": 0,
+  "update": 15,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "b9d0f8a2ecc341f5b37bc438f1c3fb8c280beda16e2ac5ea18df4b505d1ef8e3",
+ "records": [
+  {
+   "line": 1,
+   "class": "update",
+   "id": "seed-308",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.saltpumpclimbing.com/newburyport-massachusetts/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–9pm",
+      "sat": "9am–6pm",
+      "sun": "9am–6pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$23 adult, $20.70 discounted (youth, students, military, 65+), $18.50 child (12 & under)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "8910016536804aab",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (review follow-up, researched 2026-10-04)"
+  },
+  {
+   "line": 2,
+   "class": "update",
+   "id": "seed-116",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.faclimbing.com/peoria"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12pm–9pm",
+      "tue": "12pm–9pm",
+      "wed": "12pm–9pm",
+      "thu": "12pm–9pm",
+      "fri": "12pm–9pm",
+      "sat": "10am–6pm",
+      "sun": "10am–6pm"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shoe-hire",
+      "yoga"
+     ]
+    }
+   ],
+   "expect_h": "2adcb2158cc04824",
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (review follow-up, researched 2026-10-04)"
+  },
+  {
+   "line": 3,
+   "class": "update",
+   "id": "seed-1744",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://grandriverrocks.com/kitchener/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12pm–10pm",
+      "tue": "12pm–10pm",
+      "wed": "12pm–10pm",
+      "thu": "12pm–10pm",
+      "fri": "12pm–10pm",
+      "sat": "10am–10pm",
+      "sun": "10am–8pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "C$24 adult, C$21 discount (student, under 18, 55+), excluding HST"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shoe-hire",
+      "shop",
+      "yoga"
+     ]
+    }
+   ],
+   "expect_h": "46805f4a461ba242",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (review follow-up, researched 2026-10-04)"
+  },
+  {
+   "line": 4,
+   "class": "update",
+   "id": "seed-387",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://thepadclimbing.org/santa-barbara/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "11am–10pm",
+      "tue": "11am–10pm",
+      "wed": "11am–10pm",
+      "thu": "11am–10pm",
+      "fri": "11am–10pm",
+      "sat": "10am–9pm",
+      "sun": "10am–9pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$33 adult (3pm–10pm), $25 early bird (11am–3pm Mon–Fri), $25 youth (under 18)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shoe-hire",
+      "shop",
+      "parking"
+     ]
+    }
+   ],
+   "expect_h": "e63a7c69dd35d2c9",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (review follow-up, researched 2026-10-04)"
+  },
+  {
+   "line": 5,
+   "class": "update",
+   "id": "seed-866",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://spiderclimbing.com/blue-spider/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "9am–7:30pm",
+      "sun": "9am–7:30pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "£15.25 adult peak, £12.25 off-peak (weekdays 10am–5pm); junior/concession £12.25 peak"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "404a6f757d6022be",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (review follow-up, researched 2026-10-04)"
+  },
+  {
+   "line": 6,
+   "class": "update",
+   "id": "seed-891",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://theboulderbunker.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "2pm–9:30pm",
+      "tue": "10am–9:30pm",
+      "wed": "2pm–9:30pm",
+      "thu": "10am–9:30pm",
+      "fri": "2pm–9:30pm",
+      "sat": "10:30am–5:30pm",
+      "sun": "10:30am–5:30pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "£14 adult peak, £12 off-peak (weekdays 10am–4pm), £10 ages 7–13"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "9754e0bbc6397e63",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (review follow-up, researched 2026-10-04)"
+  },
+  {
+   "line": 7,
+   "class": "update",
+   "id": "seed-877",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.nottinghamclimbing.co.uk/lenton"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "6am–10pm",
+      "tue": "9am–10pm",
+      "wed": "6am–10pm",
+      "thu": "9am–10pm",
+      "fri": "6am–10pm",
+      "sat": "9am–8pm",
+      "sun": "9am–8pm"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "shop"
+     ]
+    }
+   ],
+   "expect_h": "27ac9021538ff608",
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (review follow-up, researched 2026-10-04)"
+  },
+  {
+   "line": 8,
+   "class": "update",
+   "id": "g-e20d3b95e9",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.kletterzentrumchur.ch/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "9am–10:30pm",
+      "tue": "9am–10:30pm",
+      "wed": "9am–10:30pm",
+      "thu": "9am–10:30pm",
+      "fri": "9am–9:30pm",
+      "sat": "10am–6pm",
+      "sun": "10am–6pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "CHF 26 adult, CHF 20 youth/senior (climbing incl. bouldering); bouldering only CHF 16 adult"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "shop",
+      "parking"
+     ]
+    }
+   ],
+   "expect_h": "8656999a4da855e1",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (review follow-up, researched 2026-10-04)"
+  },
+  {
+   "line": 9,
+   "class": "update",
+   "id": "g-6e04989a5a",
+   "changes": [
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:30am–10pm",
+      "tue": "10:30am–10pm",
+      "wed": "10:30am–10pm",
+      "thu": "10:30am–10pm",
+      "fri": "10:30am–10pm",
+      "sat": "10am–8pm",
+      "sun": "10am–8pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "€12 adult (€10 reduced: students, federated, under 18)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "shoe-hire",
+      "yoga"
+     ]
+    }
+   ],
+   "expect_h": "e68b17ce04f0d3c4",
+   "update_reason": "Official weekly opening hours, day-pass price, facilities from the gym's own site (review follow-up, researched 2026-10-04)"
+  },
+  {
+   "line": 10,
+   "class": "update",
+   "id": "seed-1285",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.c-a-c.at/"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "bbc6a6c4f0776289",
+   "update_reason": "Official website, facilities from the gym's own site (review follow-up, researched 2026-10-04)"
+  },
+  {
+   "line": 11,
+   "class": "update",
+   "id": "seed-973",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.cogito-coburg.de/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "8am–10pm",
+      "tue": "8am–10pm",
+      "wed": "8am–10pm",
+      "thu": "8am–10pm",
+      "fri": "8am–10pm",
+      "sat": "8am–10pm",
+      "sun": "8am–10pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "€13.90 regular, €11.90 concession (Cogito single visit, no time limit)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "7957642b31a66f4e",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (review follow-up, researched 2026-10-04)"
+  },
+  {
+   "line": 12,
+   "class": "update",
+   "id": "seed-1041",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.urbanapes.de/lueneburg/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "€15.90 adult, €12.90 concession, €9.90 child (Tageskarte)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "0c97aa5cdf62675a",
+   "update_reason": "Official website, day-pass price, facilities from the gym's own site (review follow-up, researched 2026-10-04)"
+  },
+  {
+   "line": 13,
+   "class": "update",
+   "id": "seed-1013",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://felswerk-landau.de/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–10pm",
+      "tue": "8am–10pm",
+      "wed": "10am–10pm",
+      "thu": "8am–10pm",
+      "fri": "10am–10pm",
+      "sat": "10am–10pm",
+      "sun": "10am–10pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "€16 adult climbing & bouldering, €14 concession, €9 kids/teens 6-17; bouldering only €11 adult"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "d19319811de420fd",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (review follow-up, researched 2026-10-04)"
+  },
+  {
+   "line": 14,
+   "class": "update",
+   "id": "seed-1050",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.urbanapes.de/kiel/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "9am–11pm",
+      "tue": "9am–11pm",
+      "wed": "9am–11pm",
+      "thu": "9am–11pm",
+      "fri": "9am–11pm",
+      "sat": "9am–10pm",
+      "sun": "9am–10pm"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "€16.90 adult, €13.90 concession, €9.90 child (Tageskarte)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shoe-hire",
+      "showers"
+     ]
+    }
+   ],
+   "expect_h": "6be37efae7ab335e",
+   "update_reason": "Official website, weekly opening hours, day-pass price, facilities from the gym's own site (review follow-up, researched 2026-10-04)"
+  },
+  {
+   "line": 15,
+   "class": "update",
+   "id": "seed-871",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.rockstarclimbing.co.uk/"
+    }
+   ],
+   "expect_h": "d33382e82abda8af",
+   "update_reason": "Official website from the gym's own site (review follow-up, researched 2026-10-04)"
+  }
+ ]
+}

@@ -6,16 +6,18 @@
   "count": 2293,
   "meta_matches": true
  },
- "staged_batches_compared": [],
+ "staged_batches_compared": [
+  "2026-10-04-review-new-gyms"
+ ],
  "counts": {
-  "records": 21,
+  "records": 25,
   "new": 0,
   "existing": 0,
   "update": 0,
   "probable-duplicate": 0,
   "invalid": 0,
   "rejected": 0,
-  "retire": 21,
+  "retire": 25,
   "existing_identical": 0,
   "existing_content_differs": 0,
   "new_id_not_frozen": 0,
@@ -24,7 +26,7 @@
  "importable": true,
  "blockers": [],
  "unused_decisions": [],
- "plan_sha256": "104a580e266bbc1c60c760cb7bc8d444c7460e895f864b977fefd7fc62ec84e1",
+ "plan_sha256": "0e7d9e1d983dffb9e03acf8ad1aaef6a450d45c69221ab159911d30c3ceda3a5",
  "records": [
   {
    "line": 1,
@@ -539,6 +541,103 @@
      "top-rope"
     ],
     "h": "6d4c8fb4fbe261ba"
+   }
+  },
+  {
+   "line": 22,
+   "class": "retire",
+   "id": "seed-206",
+   "name": "Climbing Cave",
+   "country": "US",
+   "expect_h": "f3e888f516cc1b45",
+   "reason_code": "closed",
+   "retire_reason": "No current presence: no official site or listing for a climbing gym at 28 Glen Dr, Queensbury; not RockSport (54 Carey Rd), so not a duplicate",
+   "entry": {
+    "id": "seed-206",
+    "name": "Climbing Cave",
+    "country": "US",
+    "state": "NY",
+    "suburb": "Queensbury",
+    "lat": 43.348,
+    "lng": -73.675,
+    "address": "28 Glen Dr, Queensbury, NY 12804",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "f3e888f516cc1b45"
+   }
+  },
+  {
+   "line": 23,
+   "class": "retire",
+   "id": "seed-253",
+   "name": "Treadstone Columbus",
+   "country": "US",
+   "expect_h": "ecbdfc9620b72184",
+   "reason_code": "closed",
+   "retire_reason": "Moved: Treadstone Climbing no longer lists Milgen Rd, Columbus GA; its only location is 400 Brickyard Rd, Phenix City, AL (added as a new gym)",
+   "entry": {
+    "id": "seed-253",
+    "name": "Treadstone Columbus",
+    "country": "US",
+    "state": "GA",
+    "suburb": "Columbus",
+    "lat": 32.461,
+    "lng": -84.9877,
+    "address": "4209 Milgen Rd Suite 7, Columbus, GA 31907",
+    "types": [
+     "indoor-bouldering",
+     "top-rope"
+    ],
+    "h": "ecbdfc9620b72184"
+   }
+  },
+  {
+   "line": 24,
+   "class": "retire",
+   "id": "seed-447",
+   "name": "Boulbaka",
+   "country": "JP",
+   "expect_h": "9ca8ae1e202757db",
+   "reason_code": "closed",
+   "retire_reason": "The Naha gym (BOULBAKA1) is gone from the official site: menu, hours, prices and gallery cover only BOULBAKA2 in Urasoe (added as a new gym)",
+   "entry": {
+    "id": "seed-447",
+    "name": "Boulbaka",
+    "country": "JP",
+    "state": "OKINAWA",
+    "suburb": "Amakyu, Naha",
+    "lat": 26.2122345,
+    "lng": 127.6791452,
+    "address": "882 Amakyu, Naha, Okinawa 900-0005",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "9ca8ae1e202757db"
+   }
+  },
+  {
+   "line": 25,
+   "class": "retire",
+   "id": "seed-446",
+   "name": "Naha Gym",
+   "country": "JP",
+   "expect_h": "68bf8048ff4d71f8",
+   "reason_code": "closed",
+   "retire_reason": "Not a climbing gym: no official site; the venue is a weight-training gym with no bouldering offer found",
+   "entry": {
+    "id": "seed-446",
+    "name": "Naha Gym",
+    "country": "JP",
+    "state": "OKINAWA",
+    "suburb": "Izumizaki, Naha",
+    "lat": 26.2119418,
+    "lng": 127.6811698,
+    "address": "1-17-15 Izumizaki, Naha, Okinawa",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "68bf8048ff4d71f8"
    }
   }
  ]

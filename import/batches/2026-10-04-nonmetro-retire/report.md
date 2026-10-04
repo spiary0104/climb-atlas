@@ -6,16 +6,16 @@
 |---|---:|
 | Insert as NEW gyms | 0 |
 | Update existing gyms (explicit update records) | 0 |
-| Retire existing gyms (closed / duplicate: status becomes rejected, record kept) | 21 |
+| Retire existing gyms (closed / duplicate: status becomes rejected, record kept) | 25 |
 | Already exist — no action (identical content: 0; content differs, NOT applied: 0) | 0 |
 | Probable duplicates — need a human decision | 0 |
 | Invalid — rejected | 0 |
 | Rejected by a human decision | 0 |
-| **Total records in batch** | 21 |
+| **Total records in batch** | 25 |
 
-Index: 2293 known gyms (sha256 af9c78d5f3ee…). Plan: 104a580e266b…
+Index: 2293 known gyms (sha256 af9c78d5f3ee…). Plan: 0e7d9e1d983d… Also compared against staged batches: 2026-10-04-review-new-gyms.
 
-## Retirements of existing gyms (21)
+## Retirements of existing gyms (25)
 
 Each gym is set to `rejected` with the reason below (the moderator UI's own decision format); the row is kept, never deleted. Listed apart from location changes.
 
@@ -40,4 +40,8 @@ Each gym is set to `rejected` with the reason below (the moderator UI's own deci
 - line 19 `seed-1011` "eXXpozed climbing" (DE) — closed: No official presence: the gym domain exxpozed-climbing.de is a for-sale parked page and no official page was found; not confirmed at this location
 - line 20 `seed-1036` "Kletterzentrum Kassel Vertical World" (DE) — closed: Vertical World Kassel closed permanently on 17 Aug 2024 per published closure reports; the official site verticalworld.de no longer serves any page
 - line 21 `seed-1056` "Rockvibes" (DE) — closed: Rockvibes (Ahlen) closed: the official homepage announces 2 May 2026 as the last opening day
+- line 22 `seed-206` "Climbing Cave" (US) — closed: No current presence: no official site or listing for a climbing gym at 28 Glen Dr, Queensbury; not RockSport (54 Carey Rd), so not a duplicate
+- line 23 `seed-253` "Treadstone Columbus" (US) — closed: Moved: Treadstone Climbing no longer lists Milgen Rd, Columbus GA; its only location is 400 Brickyard Rd, Phenix City, AL (added as a new gym)
+- line 24 `seed-447` "Boulbaka" (JP) — closed: The Naha gym (BOULBAKA1) is gone from the official site: menu, hours, prices and gallery cover only BOULBAKA2 in Urasoe (added as a new gym)
+- line 25 `seed-446` "Naha Gym" (JP) — closed: Not a climbing gym: no official site; the venue is a weight-training gym with no bouldering offer found
 

@@ -1,0 +1,386 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-04-review-locations",
+ "index": {
+  "sha256": "af9c78d5f3eeb4f9337651a588bad3ce8dbcc4f6fb92443bc35e343982749e9b",
+  "count": 2293,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-04-review-new-gyms"
+ ],
+ "counts": {
+  "records": 12,
+  "new": 0,
+  "existing": 0,
+  "update": 12,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 15
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "ae03070a43e5c845c0ee59d29dec7b5b332a77f2010c7ea8b56ba25fd13f928c",
+ "records": [
+  {
+   "line": 1,
+   "class": "update",
+   "id": "seed-88",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 37.279,
+     "after": 37.2291837
+    },
+    {
+     "field": "lng",
+     "before": -107.883,
+     "after": -107.8085475
+    }
+   ],
+   "expect_h": "e1667246fe0b7668",
+   "update_reason": "Location correction from the gym's official address; pin from the gym's own site map marker (review follow-up, checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "noop-field",
+     "field": "address",
+     "message": "\"address\" already has this value"
+    },
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 8608 m"
+    }
+   ]
+  },
+  {
+   "line": 2,
+   "class": "update",
+   "id": "seed-140",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 30.1658,
+     "after": 30.2155007
+    },
+    {
+     "field": "lng",
+     "before": -95.4613,
+     "after": -95.5830892
+    }
+   ],
+   "expect_h": "944ec3a786299031",
+   "update_reason": "Location correction from the gym's official address; pin from the US Census address geocoder (review follow-up, checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "noop-field",
+     "field": "address",
+     "message": "\"address\" already has this value"
+    },
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 12944 m"
+    }
+   ]
+  },
+  {
+   "line": 3,
+   "class": "update",
+   "id": "seed-428",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 35.1747,
+     "after": 35.153152
+    },
+    {
+     "field": "lng",
+     "before": 136.9007,
+     "after": 136.905869
+    }
+   ],
+   "expect_h": "ffebeebe9be955e8",
+   "update_reason": "Location correction from the gym's official address; pin from Japan's national address geocoder (GSI) (review follow-up, checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "noop-field",
+     "field": "address",
+     "message": "\"address\" already has this value"
+    },
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 2442 m"
+    }
+   ]
+  },
+  {
+   "line": 4,
+   "class": "update",
+   "id": "seed-423",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 33.589,
+     "after": 33.56776
+    },
+    {
+     "field": "lng",
+     "before": 130.418,
+     "after": 130.441788
+    }
+   ],
+   "expect_h": "ce4b738f753f91a5",
+   "update_reason": "Location correction from the gym's official address; pin from Japan's national address geocoder (GSI) (review follow-up, checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "noop-field",
+     "field": "address",
+     "message": "\"address\" already has this value"
+    },
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 3230 m"
+    }
+   ]
+  },
+  {
+   "line": 5,
+   "class": "update",
+   "id": "seed-973",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Brückenstraße 6, 96472 Rödental"
+    },
+    {
+     "field": "lat",
+     "before": 50.3167,
+     "after": 50.2939992
+    },
+    {
+     "field": "lng",
+     "before": 11.1167,
+     "after": 11.0501736
+    }
+   ],
+   "expect_h": "7957642b31a66f4e",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (review follow-up, checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 5357 m"
+    }
+   ]
+  },
+  {
+   "line": 6,
+   "class": "update",
+   "id": "seed-972",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Hohweg 5, 28219 Bremen"
+    },
+    {
+     "field": "lat",
+     "before": 53.0793,
+     "after": 53.1061722
+    },
+    {
+     "field": "lng",
+     "before": 8.8017,
+     "after": 8.7975242
+    }
+   ],
+   "expect_h": "4407bc93015ffbd2",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (review follow-up, checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 3001 m"
+    }
+   ]
+  },
+  {
+   "line": 7,
+   "class": "update",
+   "id": "seed-1041",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Pulverweg 6, 21337 Lüneburg"
+    },
+    {
+     "field": "lat",
+     "before": 53.2497,
+     "after": 53.2500372
+    },
+    {
+     "field": "lng",
+     "before": 10.4149,
+     "after": 10.4224786
+    }
+   ],
+   "expect_h": "0c97aa5cdf62675a",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (review follow-up, checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 506 m"
+    }
+   ]
+  },
+  {
+   "line": 8,
+   "class": "update",
+   "id": "seed-1013",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Albert-Einstein-Straße 6, 76829 Landau in der Pfalz"
+    },
+    {
+     "field": "lat",
+     "before": 49.1975,
+     "after": 49.188012
+    },
+    {
+     "field": "lng",
+     "before": 8.117,
+     "after": 8.1331402
+    }
+   ],
+   "expect_h": "d19319811de420fd",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (review follow-up, checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1578 m"
+    }
+   ]
+  },
+  {
+   "line": 9,
+   "class": "update",
+   "id": "seed-1050",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Grasweg 40, 24118 Kiel"
+    },
+    {
+     "field": "lat",
+     "before": 54.3233,
+     "after": 54.33849
+    },
+    {
+     "field": "lng",
+     "before": 10.1228,
+     "after": 10.1186983
+    }
+   ],
+   "expect_h": "6be37efae7ab335e",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (review follow-up, checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1710 m"
+    }
+   ]
+  },
+  {
+   "line": 10,
+   "class": "update",
+   "id": "seed-871",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Unit 30b, Techno Trading Estate, Bramble Road, Swindon SN2 8HB"
+    },
+    {
+     "field": "lat",
+     "before": 51.5558,
+     "after": 51.5761594
+    },
+    {
+     "field": "lng",
+     "before": -1.7797,
+     "after": -1.7639164
+    }
+   ],
+   "expect_h": "d33382e82abda8af",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (review follow-up, checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 2513 m"
+    }
+   ]
+  },
+  {
+   "line": 11,
+   "class": "update",
+   "id": "seed-877",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "3 Prospect Pl, Lenton, Nottingham NG7 1RS"
+    },
+    {
+     "field": "lat",
+     "before": 52.9548,
+     "after": 52.9476842
+    },
+    {
+     "field": "lng",
+     "before": -1.1581,
+     "after": -1.1718441
+    }
+   ],
+   "expect_h": "27ac9021538ff608",
+   "update_reason": "Location correction from the gym's official address; pin from OpenStreetMap (review follow-up, checked 2026-10-04)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1214 m"
+    }
+   ]
+  },
+  {
+   "line": 12,
+   "class": "update",
+   "id": "seed-308",
+   "changes": [
+    {
+     "field": "address",
+     "before": "40 Parker St, Newburyport, MA 01913",
+     "after": "40 Parker St, Newburyport, MA 01950"
+    }
+   ],
+   "expect_h": "8910016536804aab",
+   "update_reason": "Address correction: the official site gives ZIP 01950 for 40 Parker Street, Newburyport (review follow-up, checked 2026-10-04)"
+  }
+ ]
+}

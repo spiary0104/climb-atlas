@@ -1,0 +1,61 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-04-review-new-gyms",
+ "index": {
+  "sha256": "af9c78d5f3eeb4f9337651a588bad3ce8dbcc4f6fb92443bc35e343982749e9b",
+  "count": 2293,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [],
+ "counts": {
+  "records": 4,
+  "new": 4,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "72341340f0e647dc5560c20e6fd4f19d6ee84243a789eeb548b51c18db817337",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-93b94b6196",
+   "id_frozen": true,
+   "name": "Treadstone Climbing",
+   "country": "US"
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-0bf1f11379",
+   "id_frozen": true,
+   "name": "Rockstar Climbing Centre",
+   "country": "GB"
+  },
+  {
+   "line": 3,
+   "class": "new",
+   "id": "g-1c0ffa88fd",
+   "id_frozen": true,
+   "name": "BOULBAKA2",
+   "country": "JP"
+  },
+  {
+   "line": 4,
+   "class": "new",
+   "id": "g-2432050418",
+   "id_frozen": true,
+   "name": "Boulder Base Bremen Tabakquartier",
+   "country": "DE"
+  }
+ ]
+}

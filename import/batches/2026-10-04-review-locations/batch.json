@@ -1,0 +1,6 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-04-review-locations",
+  "description": "Location corrections from the batch-5 review follow-ups: 12 gyms (renamed or re-identified gyms at their real address, and the pins that had no building-level point before). Address from the official site; pin from the OpenStreetMap gym element, the gym's own map marker, or a national address geocoder (Japan GSI, US Census) where OSM has no point (named per record); checked 2026-10-04. Apply after the fills; identity edits for these gyms come after it.",
+  "created": "2026-10-04"
+}

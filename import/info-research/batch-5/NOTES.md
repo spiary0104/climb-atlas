@@ -37,3 +37,11 @@ address_missing / mismatch / unknown), `renamed_to`, `duplicate_of_hint` for eve
 - Apply order: fills and retirements FIRST, then the location batches (a location change alters the content hash, and
   62 of the 64 location gyms are also in a fill batch, which checks expect_h). Identity edits (7 suburbs of
   gyms that moved town, listed in `reviews.json`) come last.
+
+## Review follow-ups (all 42 `reviews.json` items resolved; `REVIEW-RESOLUTIONS.md`, evidence in `review/`)
+- `2026-10-04-review-fills` (15), 4 retirements added to `nonmetro-retire` (now 25), `2026-10-04-review-new-gyms` (4 inserts:
+  Treadstone Phenix City, Rockstar Climbing Centre Swindon, BOULBAKA2 Urasoe, Boulder Base Bremen Tabakquartier),
+  `2026-10-04-review-locations` (12), `2026-10-04-review-identity-1` (8), `-2` (18; expect_h = content after the location
+  batches), `2026-10-04-review-new-gym-info` (4; expect_h = the inserted rows).
+- Full apply order: fills -> retirements -> new gyms -> locations -> identity (#49 batches, review-identity-1) -> plan and
+  apply review-identity-2 and review-new-gym-info after the rest is live.

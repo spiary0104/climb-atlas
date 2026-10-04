@@ -1,0 +1,20 @@
+[
+ {
+  "id": "seed-871",
+  "address": "Unit 30b, Techno Trading Estate, Bramble Road, Swindon SN2 8HB",
+  "address_source": "rockstarclimbing.co.uk event pages (e.g. /events-competitions/ycs-round-three, /sybc-sybkh): venue address 'Bramble Road, Swindon, England, SN2 8HB' and a map link to 'Techno, Unit 30b, Techno Trading Estate, Bramble Rd, Swindon SN2 8HB'; /transition-faq names the site 'Rockstar Bouldering (Techno)' = 'Techno (formerly Flashpoint)'. The full unit line appears only in that map link, not as printed page text.",
+  "lat": 51.5761594,
+  "lng": -1.7639164,
+  "coord_source": "OSM node 11537001823 (leisure=sports_centre 'Flashpoint Swindon', 30 Bramble Road, SN2 8HB; the gym itself, found by Nominatim). Cross-check: the official events iCal GEO 51.576299;-1.764173 is ~20 m away.",
+  "notes": "Our-record check: the OSM element still carries the old Flashpoint name and website (flashpointswindon.com now redirects to rockstarclimbing.co.uk). Official site has no dedicated Techno page; the transition FAQ confirms Flashpoint Swindon joined Rockstar and trades as 'Rockstar Bouldering (Techno)'. Do not confuse with Rockstar Climbing Centre at Buildings 3-5, The I.O. Centre, Radway Road, SN3 4WH (OSM node 7986028756, 51.5821,-1.7542), the other Rockstar site. Confidence high."
+ },
+ {
+  "id": "seed-877",
+  "address": "3 Prospect Pl, Lenton, Nottingham NG7 1RS",
+  "address_source": "https://www.nottinghamclimbing.co.uk/ (home page and /lenton footer): 'Lenton - 3 Prospect Pl, Lenton, NG7 1RS', lenton@nottinghamclimbing.co.uk",
+  "lat": 52.9476842,
+  "lng": -1.1718441,
+  "coord_source": "Centre of OSM building way 242285863, the only building tagged addr:street=Prospect Place, addr:postcode=NG7 1RS (no house number or gym name in OSM; tagged 'Vacant?' from old council data). Prospect Place is a short street (OSM way 17101581, 52.94782,-1.17205) and this building sits on it.",
+  "notes": "No OSM gym element for NCC Lenton (OSM only has the Noel Street/Basford site, way 218255070 at 52.9716,-1.1707). Nominatim finds only the street for '3 Prospect Place', and the official Lenton page publishes no coordinates or map pin. The building match is by street+postcode, not house number, so confidence medium; it is the building on Prospect Place, ~30 m from the street's centre point. Third-party listings (lead only) list the same address for the former Skateland unit."
+ }
+]

@@ -12,7 +12,7 @@
 | Rejected by a human decision | 0 |
 | **Total records in batch** | 16 |
 
-Index: 2293 known gyms (sha256 af9c78d5f3ee…). Plan: ce2fa97f8949…
+Index: 2293 known gyms (sha256 af9c78d5f3ee…). Plan: ce2fa97f8949… Also compared against staged batches: 2026-10-04-review-new-gyms.
 
 ## Updates to existing gyms (16)
 

@@ -1,0 +1,350 @@
+[
+ {
+  "item": 2,
+  "id": "seed-153",
+  "our_record": {
+   "name": "Movement Denton",
+   "suburb": "Denton",
+   "state": "TX",
+   "country": "US",
+   "address": "220 W Oak St, Denton, TX 76201",
+   "lat": 33.2158494,
+   "lng": -97.1347886,
+   "types": [
+    "indoor-bouldering",
+    "top-rope"
+   ]
+  },
+  "issue": "type tag: site says bouldering only (we list top-rope)",
+  "earlier_research": {
+   "website": "https://movementgyms.com/denton/",
+   "official_address": "220 W Oak St, Denton, TX 76201",
+   "notes": "Hours from the Denton page FAQ. Denton page: 'We do not offer rope climbing at this location' (our types list top-rope too). Gym page: unlimited yoga and fitness classes, strength and conditioning area, on-site gear shop, public parking. Prices from the Denton block of the chain memberships-passes page (purchase links /denton/); shoes $6.",
+   "sources": [
+    "https://movementgyms.com/denton/",
+    "https://movementgyms.com/memberships-passes/"
+   ]
+  },
+  "related_gyms": []
+ },
+ {
+  "item": 3,
+  "id": "seed-155",
+  "our_record": {
+   "name": "Movement Fort Worth",
+   "suburb": "Fort Worth",
+   "state": "TX",
+   "country": "US",
+   "address": "2828 W Lancaster Ave, Fort Worth, TX 76107",
+   "lat": 32.7476595,
+   "lng": -97.3580622,
+   "types": [
+    "indoor-bouldering",
+    "top-rope"
+   ]
+  },
+  "issue": "type tag: site says bouldering only (we list top-rope)",
+  "earlier_research": {
+   "website": "https://movementgyms.com/fort-worth/",
+   "official_address": "2828 W Lancaster Ave, Fort Worth, TX",
+   "notes": "Hours from the Fort Worth page FAQ. Page: 'We do not offer rope climbing at this location' (our types list top-rope too). Gym page: unlimited yoga and fitness classes, fitness area, gear shop, free parking in front. Prices from the Fort Worth block of the chain memberships-passes page (purchase links /fort-worth/); shoes $6.",
+   "sources": [
+    "https://movementgyms.com/fort-worth/",
+    "https://movementgyms.com/memberships-passes/"
+   ]
+  },
+  "related_gyms": []
+ },
+ {
+  "item": 4,
+  "id": "seed-206",
+  "our_record": {
+   "name": "Climbing Cave",
+   "suburb": "Queensbury",
+   "state": "NY",
+   "country": "US",
+   "address": "28 Glen Dr, Queensbury, NY 12804",
+   "lat": 43.348,
+   "lng": -73.675,
+   "types": [
+    "indoor-bouldering"
+   ]
+  },
+  "issue": "possibly an old name of RockSport (seed-211): duplicate check",
+  "earlier_research": {
+   "website": null,
+   "official_address": null,
+   "notes": "No official website found in three searches (only directories and RockSport, a different Queensbury gym at 54 Carey Rd). Guessed domains do not resolve and are not counted. Phone 518-798-4023 and 28 Glen Dr appear only in directory snippets.",
+   "sources": []
+  },
+  "related_gyms": [
+   {
+    "id": "seed-211",
+    "name": "RockSport",
+    "suburb": "Queensbury",
+    "address": "54 Carey Rd, Queensbury, NY 12804",
+    "lat": 43.2932106,
+    "lng": -73.6919721,
+    "types": [
+     "indoor-bouldering",
+     "top-rope"
+    ]
+   }
+  ]
+ },
+ {
+  "item": 5,
+  "id": "seed-253",
+  "our_record": {
+   "name": "Treadstone Columbus",
+   "suburb": "Columbus",
+   "state": "GA",
+   "country": "US",
+   "address": "4209 Milgen Rd Suite 7, Columbus, GA 31907",
+   "lat": 32.461,
+   "lng": -84.9877,
+   "types": [
+    "indoor-bouldering",
+    "top-rope"
+   ]
+  },
+  "issue": "moved: official site gives 400 Brickyard Rd, Phenix City, AL (we have Columbus GA): location + state change, not filled",
+  "earlier_research": {
+   "website": "https://www.treadstoneclimbing.com/",
+   "official_address": "400 Brickyard Rd, Phenix City, AL 36869",
+   "notes": "MOVED: official site says 'New Location ON The River! 400 Brickyard Rd, Phenix City, AL 36869' (Alabama, across the river from Columbus); our stored Milgen Rd, Columbus GA address is the old location. Nominatim puts 400 Brickyard Rd at 32.4095,-85.0274, about 7 km from our pin (Milgen Rd itself is about 8 km from the pin). Hours null: site shows M-F 3-9, Sat 12-8 but Sun 'Closed*' on the home page vs 'Sun 2-6*' on other pages, Sundays going 'Members Only'. Gear rentals mentioned but shoes not named.",
+   "sources": [
+    "https://www.treadstoneclimbing.com/",
+    "https://www.treadstoneclimbing.com/day-passes-memberships"
+   ]
+  },
+  "location_check": {
+   "status": "resolved",
+   "address": "400 Brickyard Rd, Phenix City, AL 36869",
+   "lat": 32.409468,
+   "lng": -85.027365,
+   "coord_source": "OSM way 7955326 (house-number geocode, may be address-interpolated of 400 Brickyard Road; no OSM element for the gym itself)",
+   "notes": "New location after the move (Phenix City, AL), per official site."
+  },
+  "related_gyms": [],
+  "hint": "If Treadstone left Columbus GA for Phenix City AL: retire seed-253 (closed at Columbus) and add-gym for the Phenix City hall (a location check already found OSM coordinates for 400 Brickyard Rd: see location_check)."
+ },
+ {
+  "item": 6,
+  "id": "seed-111",
+  "our_record": {
+   "name": "Boneyard Boulders",
+   "suburb": "Champaign",
+   "state": "IL",
+   "country": "US",
+   "address": "119 E University Ave, Champaign, IL 61820",
+   "lat": 40.1160685,
+   "lng": -88.237797,
+   "types": [
+    "indoor-bouldering"
+   ]
+  },
+  "issue": "shares website and day pass with Urbana Boulders: same operator, check for duplicate",
+  "earlier_research": {
+   "website": "https://www.urbanaboulders.com/",
+   "official_address": "119 E University Ave, Champaign, IL 61820",
+   "notes": "Boneyard Boulders is the Champaign sister gym of Urbana Boulders (shared site and day pass). Yoga/movement studios and fitness area are from the official pre-opening announcement post.",
+   "sources": [
+    "https://www.urbanaboulders.com/",
+    "https://www.urbanaboulders.com/membership-passes",
+    "https://www.urbanaboulders.com/blog-1-1/Blog%20Post%20Title%20One-fyel4"
+   ]
+  },
+  "related_gyms": [
+   {
+    "id": "seed-128",
+    "name": "Urbana Boulders",
+    "suburb": "Urbana",
+    "address": "1502 N Cunningham Ave Suite A, Urbana, IL 61802",
+    "lat": 40.1106,
+    "lng": -88.2073,
+    "types": [
+     "indoor-bouldering"
+    ]
+   }
+  ]
+ },
+ {
+  "item": 8,
+  "id": "seed-308",
+  "our_record": {
+   "name": "MetroRock Newburyport",
+   "suburb": "Newburyport",
+   "state": "MA",
+   "country": "US",
+   "address": "40 Parker St, Newburyport, MA 01913",
+   "lat": 42.802086,
+   "lng": -70.8800619,
+   "types": [
+    "indoor-bouldering",
+    "top-rope"
+   ]
+  },
+  "issue": "renamed: now Salt Pump Newburyport (same address, new owners, opened 1 Oct 2026): identity rename; not filled",
+  "earlier_research": {
+   "website": "https://www.saltpumpclimbing.com/newburyport-massachusetts/",
+   "official_address": "40 Parker Street, Newburyport, MA 01950",
+   "notes": "Renamed/new operator: nbpt.metrorock.com says 'MetroRock Newburyport now under new ownership, please visit saltpumpclimbing.com'; Salt Pump page says it opened at 40 Parker St on October 1, 2026. Same address. Discounted = youth 17 & under, students, military/veterans, 65+, AAC members. Kids = recreational youth programs (5+).",
+   "sources": [
+    "https://www.saltpumpclimbing.com/newburyport-massachusetts/hours/",
+    "https://www.saltpumpclimbing.com/newburyport-massachusetts/rates/",
+    "https://www.saltpumpclimbing.com/newburyport-massachusetts/"
+   ]
+  },
+  "related_gyms": []
+ },
+ {
+  "item": 9,
+  "id": "seed-116",
+  "our_record": {
+   "name": "First Ascent – Peoria",
+   "suburb": "Peoria",
+   "state": "IL",
+   "country": "US",
+   "address": "927 SW Washington St, Peoria, IL 61602",
+   "lat": 40.6842408,
+   "lng": -89.5993377,
+   "types": [
+    "indoor-bouldering",
+    "top-rope"
+   ]
+  },
+  "issue": "First Ascent Peoria: official site geo-blocks this network; re-check",
+  "earlier_research": {
+   "website": null,
+   "official_address": null,
+   "notes": "Official site faclimbing.com (chain; found via search) returns HTTP 403 Access Denied (IP country blocker) to curl and WebFetch, so nothing could be fetched. No value taken from third parties.",
+   "sources": []
+  },
+  "related_gyms": []
+ },
+ {
+  "item": 10,
+  "id": "seed-293",
+  "our_record": {
+   "name": "Carabiner's Climbing Wall",
+   "suburb": "New Bedford",
+   "state": "MA",
+   "country": "US",
+   "address": "328 Parker St, New Bedford, MA 02740",
+   "lat": 41.6422315,
+   "lng": -70.9479919,
+   "types": [
+    "indoor-bouldering",
+    "top-rope"
+   ]
+  },
+  "issue": "name variant: Carabiner's Climbing & Fitness (optional rename)",
+  "earlier_research": {
+   "website": "https://www.carabiners.com/",
+   "official_address": "Carabiner's Climbing & Fitness, 328 Parker St, New Bedford, MA 02740",
+   "notes": "Same venue under a slightly longer current name. Amenities list on home page: Kilter + Moon Board, free weights/cardio, showers, parking, retail shop, rental gear; shoes $5. Not flagged as renamed: same business, name variant only. First visit $10 intro offer ignored.",
+   "sources": [
+    "https://www.carabiners.com/hours-rates",
+    "https://www.carabiners.com/"
+   ]
+  },
+  "related_gyms": []
+ },
+ {
+  "item": 11,
+  "id": "seed-1744",
+  "our_record": {
+   "name": "Grand River Rocks",
+   "suburb": "Kitchener",
+   "state": "ON",
+   "country": "CA",
+   "address": "264 Victoria Street N, Kitchener, ON N2H 5C8, Canada",
+   "lat": 43.4576315,
+   "lng": -80.4867109,
+   "types": [
+    "indoor-bouldering",
+    "lead-climbing",
+    "top-rope"
+   ]
+  },
+  "issue": "Grand River Rocks: site geo-blocked from this network; re-check",
+  "earlier_research": {
+   "website": null,
+   "official_address": null,
+   "notes": "Official site grandriverrocks.com/kitchener/ only returns a geo-block redirect (HTTP 307 to blocked.iplocationblock.com) from this machine; no page could be fetched, so nothing is verified. Did not attempt to bypass the block. Search listings suggest the gym is open at 264 Victoria St N, but that is unverified.",
+   "sources": []
+  },
+  "related_gyms": []
+ },
+ {
+  "item": 12,
+  "id": "seed-387",
+  "our_record": {
+   "name": "The BoardRoom",
+   "suburb": "Goleta",
+   "state": "CA",
+   "country": "US",
+   "address": "5160 Hollister Ave, Goleta, CA 93111",
+   "lat": 34.4368168,
+   "lng": -119.8040126,
+   "types": [
+    "indoor-bouldering"
+   ]
+  },
+  "issue": "The BoardRoom is a members-only annex; the public gym at our address is The Pad Climbing - Santa Barbara: rename, possible duplicate; not filled",
+  "earlier_research": {
+   "website": "https://thepadclimbing.org/santa-barbara/",
+   "official_address": "5160 Hollister Ave (Full Service Gym) and 5140 Hollister Ave (BoardRoom), Goleta, CA 93111",
+   "notes": "The Pad Climbing (thepadclimbing.org) lists 5160 Hollister Ave as the Full Service Gym \"The Pad Climbing - Santa Barbara\" and 5140 Hollister Ave as the BoardRoom (members-only 24/7 training annex across the parking lot). Our record is named BoardRoom but sits at the 5160 address and pin, i.e. the public gym. No staffed hours are published (only day-pass windows), so hours null. Showers are member-only in the BoardRoom, not listed.",
+   "sources": [
+    "https://thepadclimbing.org/santa-barbara/",
+    "https://thepadclimbing.org/location-hours-sb/",
+    "https://thepadclimbing.org/rates-sb/"
+   ]
+  },
+  "related_gyms": [
+   {
+    "id": "seed-390",
+    "name": "The Pad",
+    "suburb": "San Luis Obispo",
+    "address": "888 Ricardo Ct, San Luis Obispo, CA 93401",
+    "lat": 35.2574476,
+    "lng": -120.6416543,
+    "types": [
+     "indoor-bouldering"
+    ]
+   }
+  ]
+ },
+ {
+  "item": 13,
+  "id": "seed-376",
+  "our_record": {
+   "name": "Sancturary Climbing & Fitness",
+   "suburb": "Seaside",
+   "state": "CA",
+   "country": "US",
+   "address": "1760 Fremont Blvd D2, Seaside, CA 93955",
+   "lat": 36.6111,
+   "lng": -121.8516,
+   "types": [
+    "indoor-bouldering"
+   ]
+  },
+  "issue": "name typo: Sancturary -> Sanctuary Climbing & Fitness (identity rename)",
+  "earlier_research": {
+   "website": "https://www.rockgym.com/",
+   "official_address": "1760 Fremont Boulevard #D2, Seaside, CA 93955",
+   "notes": "Official name is \"Sanctuary Climbing & Fitness\" (our record has a typo \"Sancturary\"). Day use page: individual $27; students/military and community heroes/seniors $22; rental shoes $6. Pin about 0.8 km from OSM geocode of the address.",
+   "sources": [
+    "https://www.rockgym.com/",
+    "https://www.rockgym.com/day-use",
+    "https://www.rockgym.com/weightstudio",
+    "https://www.rockgym.com/fitness",
+    "https://www.rockgym.com/kidsclimbingclasses"
+   ]
+  },
+  "related_gyms": []
+ }
+]
