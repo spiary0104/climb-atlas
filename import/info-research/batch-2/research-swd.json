@@ -1,0 +1,990 @@
+[
+  {
+    "id": "seed-79",
+    "name": "Boulder Rock Club",
+    "metro": "Denver",
+    "expect_h": "b5e78ea42696e7ef",
+    "website": "https://boulderrockclub.com/",
+    "hours": {
+      "mon": "6am–10pm",
+      "tue": "6am–10pm",
+      "wed": "6am–10pm",
+      "thu": "6am–10pm",
+      "fri": "6am–10pm",
+      "sat": "8am–8pm",
+      "sun": "8am–8pm"
+    },
+    "sources": [
+      {
+        "url": "https://boulderrockclub.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Site states Mon-Fri and Sat/Sun ranges; address 2829 Mapleton Ave matches."
+  },
+  {
+    "id": "seed-81",
+    "name": "Denver Bouldering Club",
+    "metro": "Denver",
+    "expect_h": "7b67642ea7a73c1c",
+    "website": null,
+    "hours": null,
+    "sources": [
+      {
+        "url": "https://www.denverboulderingclub.com/",
+        "accessed": "2026-10-04",
+        "supports": []
+      }
+    ],
+    "status": "flag",
+    "notes": "Official site denverboulderingclub.com currently shows a Squarespace \"Website Expired\" page (fetched). BusinessDen (news, not a data source) reported on 2026-05-20 the company would close its remaining locations on 2026-05-29 after a 2025 bankruptcy. Central location (2485 W 2nd Ave)."
+  },
+  {
+    "id": "seed-82",
+    "name": "Denver Bouldering Club North",
+    "metro": "Denver",
+    "expect_h": "bd6ed11541b646a0",
+    "website": null,
+    "hours": null,
+    "sources": [
+      {
+        "url": "https://www.denverboulderingclub.com/",
+        "accessed": "2026-10-04",
+        "supports": []
+      }
+    ],
+    "status": "flag",
+    "notes": "Official site denverboulderingclub.com currently shows a Squarespace \"Website Expired\" page (fetched). BusinessDen (news, not a data source) reported on 2026-05-20 the company would close its remaining locations on 2026-05-29 after a 2025 bankruptcy. North/Thornton location; search results (not used as a source) indicate it closed earlier, before the 2025 bankruptcy filing."
+  },
+  {
+    "id": "seed-83",
+    "name": "Denver Bouldering Club South",
+    "metro": "Denver",
+    "expect_h": "921d46a238712df7",
+    "website": null,
+    "hours": null,
+    "sources": [
+      {
+        "url": "https://www.denverboulderingclub.com/",
+        "accessed": "2026-10-04",
+        "supports": []
+      }
+    ],
+    "status": "flag",
+    "notes": "Official site denverboulderingclub.com currently shows a Squarespace \"Website Expired\" page (fetched). BusinessDen (news, not a data source) reported on 2026-05-20 the company would close its remaining locations on 2026-05-29 after a 2025 bankruptcy. South location (4131 S Natches Ct)."
+  },
+  {
+    "id": "seed-86",
+    "name": "G1 Climbing + Fitness",
+    "metro": "Denver",
+    "expect_h": "3590553be2d6b379",
+    "website": "https://g1climbing.com/",
+    "hours": null,
+    "sources": [],
+    "status": "website-only",
+    "notes": "Official domain g1climbing.com identified via search (page titled Hours + Location - G1 Climbing + Fitness, g1climbing.com/hours-location/), but every fetch (curl, WebFetch) returned an HTTP 403 bot block, so the page could not be read and the address was not confirmed. Hours not recorded. A search snippet (not a valid source) suggested Mon-Fri 6am-10pm, Sat-Sun 8am-8pm; verify manually."
+  },
+  {
+    "id": "seed-75",
+    "name": "Movement Baker",
+    "metro": "Denver",
+    "expect_h": "d3feb28e348ce618",
+    "website": "https://movementgyms.com/baker/",
+    "hours": {
+      "mon": "6am–11pm",
+      "tue": "6am–11pm",
+      "wed": "6am–11pm",
+      "thu": "6am–11pm",
+      "fri": "6am–11pm",
+      "sat": "8am–8pm",
+      "sun": "8am–6pm"
+    },
+    "sources": [
+      {
+        "url": "https://movementgyms.com/baker/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "M-F is stated as one range on the page."
+  },
+  {
+    "id": "seed-74",
+    "name": "Movement Boulder",
+    "metro": "Denver",
+    "expect_h": "124de98b7e25b215",
+    "website": "https://movementgyms.com/boulder/",
+    "hours": {
+      "mon": "6am–10:30pm",
+      "tue": "6am–10:30pm",
+      "wed": "6am–10:30pm",
+      "thu": "6am–10:30pm",
+      "fri": "6am–10:30pm",
+      "sat": "8am–8pm",
+      "sun": "8am–8pm"
+    },
+    "sources": [
+      {
+        "url": "https://movementgyms.com/boulder/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "M-F is stated as one range on the page."
+  },
+  {
+    "id": "seed-94",
+    "name": "Movement Centennial",
+    "metro": "Denver",
+    "expect_h": "f6d819629d0c04cc",
+    "website": "https://movementgyms.com/centennial/",
+    "hours": {
+      "mon": "6am–11pm",
+      "tue": "6am–11pm",
+      "wed": "6am–11pm",
+      "thu": "6am–11pm",
+      "fri": "6am–11pm",
+      "sat": "8am–8pm",
+      "sun": "8am–6pm"
+    },
+    "sources": [
+      {
+        "url": "https://movementgyms.com/centennial/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "M-F is stated as one range on the page."
+  },
+  {
+    "id": "seed-95",
+    "name": "Movement Englewood",
+    "metro": "Denver",
+    "expect_h": "8821e13430d3c0ea",
+    "website": "https://movementgyms.com/englewood/",
+    "hours": {
+      "mon": "6am–11pm",
+      "tue": "6am–11pm",
+      "wed": "6am–11pm",
+      "thu": "6am–11pm",
+      "fri": "6am–11pm",
+      "sat": "8am–8pm",
+      "sun": "8am–6pm"
+    },
+    "sources": [
+      {
+        "url": "https://movementgyms.com/englewood/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "M-F is stated as one range on the page."
+  },
+  {
+    "id": "seed-96",
+    "name": "Movement Golden",
+    "metro": "Denver",
+    "expect_h": "442953e11fa07821",
+    "website": "https://movementgyms.com/golden/",
+    "hours": {
+      "mon": "6am–11pm",
+      "tue": "6am–11pm",
+      "wed": "6am–11pm",
+      "thu": "6am–11pm",
+      "fri": "6am–11pm",
+      "sat": "8am–8pm",
+      "sun": "8am–6pm"
+    },
+    "sources": [
+      {
+        "url": "https://movementgyms.com/golden/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "M-F is stated as one range on the page."
+  },
+  {
+    "id": "seed-97",
+    "name": "Movement RiNo",
+    "metro": "Denver",
+    "expect_h": "f547b07134aeca10",
+    "website": "https://movementgyms.com/rino/",
+    "hours": {
+      "mon": "6am–11pm",
+      "tue": "6am–11pm",
+      "wed": "6am–11pm",
+      "thu": "6am–11pm",
+      "fri": "6am–11pm",
+      "sat": "8am–8pm",
+      "sun": "8am–6pm"
+    },
+    "sources": [
+      {
+        "url": "https://movementgyms.com/rino/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "M-F is stated as one range on the page."
+  },
+  {
+    "id": "seed-102",
+    "name": "The Spot – Boulder",
+    "metro": "Denver",
+    "expect_h": "a8f7c8a138d271ce",
+    "website": "https://www.thespotgym.com/locations/boulder/",
+    "hours": {
+      "mon": "8am–11pm",
+      "tue": "8am–11pm",
+      "wed": "8am–11pm",
+      "thu": "8am–11pm",
+      "fri": "8am–11pm",
+      "sat": "8am–8pm",
+      "sun": "8am–8pm"
+    },
+    "sources": [
+      {
+        "url": "https://www.thespotgym.com/locations/boulder/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Mon-Fri and Sat-Sun are stated as ranges."
+  },
+  {
+    "id": "seed-103",
+    "name": "The Spot – Denver",
+    "metro": "Denver",
+    "expect_h": "dbe82269acaabacc",
+    "website": "https://www.thespotgym.com/locations/denver/",
+    "hours": {
+      "mon": "8am–11pm",
+      "tue": "8am–11pm",
+      "wed": "8am–11pm",
+      "thu": "8am–11pm",
+      "fri": "8am–11pm",
+      "sat": "8am–8pm",
+      "sun": "8am–8pm"
+    },
+    "sources": [
+      {
+        "url": "https://www.thespotgym.com/locations/denver/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Mon-Fri and Sat-Sun are stated as ranges."
+  },
+  {
+    "id": "seed-104",
+    "name": "The Spot Golden",
+    "metro": "Denver",
+    "expect_h": "fe2e4e7cd87034cc",
+    "website": "https://www.thespotgym.com/locations/golden/",
+    "hours": {
+      "mon": "8am–10pm",
+      "tue": "8am–10pm",
+      "wed": "8am–10pm",
+      "thu": "8am–10pm",
+      "fri": "8am–10pm",
+      "sat": "8am–8pm",
+      "sun": "8am–8pm"
+    },
+    "sources": [
+      {
+        "url": "https://www.thespotgym.com/locations/golden/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Mon-Fri and Sat-Sun are stated as ranges."
+  },
+  {
+    "id": "seed-105",
+    "name": "The Spot Louisville",
+    "metro": "Denver",
+    "expect_h": "3a5614bb4d9d3ca4",
+    "website": "https://www.thespotgym.com/locations/louisville/",
+    "hours": {
+      "mon": "6am–11pm",
+      "tue": "6am–11pm",
+      "wed": "6am–11pm",
+      "thu": "6am–11pm",
+      "fri": "6am–11pm",
+      "sat": "8am–8pm",
+      "sun": "8am–8pm"
+    },
+    "sources": [
+      {
+        "url": "https://www.thespotgym.com/locations/louisville/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Mon-Fri and Sat-Sun are stated as ranges."
+  },
+  {
+    "id": "seed-106",
+    "name": "The Spot Thornton",
+    "metro": "Denver",
+    "expect_h": "8d5d852f2e914109",
+    "website": "https://www.thespotgym.com/locations/thornton/",
+    "hours": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "9am–8pm",
+      "sun": "9am–8pm"
+    },
+    "sources": [
+      {
+        "url": "https://www.thespotgym.com/locations/thornton/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Mon-Fri and Sat-Sun are stated as ranges."
+  },
+  {
+    "id": "seed-107",
+    "name": "Übergrippen Indoor Climbing Crag",
+    "metro": "Denver",
+    "expect_h": "9ea9ee09141d3487",
+    "website": "https://ugclimbing.com/castle-rock/",
+    "hours": {
+      "mon": "6am–10pm",
+      "tue": "6am–10pm",
+      "wed": "6am–10pm",
+      "thu": "6am–10pm",
+      "fri": "6am–10pm",
+      "sat": "8am–8pm",
+      "sun": "8am–8pm"
+    },
+    "sources": [
+      {
+        "url": "https://ugclimbing.com/castle-rock/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      },
+      {
+        "url": "https://ugclimbing.com/castle-rock/hours-location/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      },
+      {
+        "url": "https://ugclimbing.com/castle-rock/contact-us/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Castle Rock location page; address 3690 Bilberry St confirmed on contact page. Hours page gives Weekdays and Weekends ranges (fetched via WebFetch; curl returned 406)."
+  },
+  {
+    "id": "seed-166",
+    "name": "Castle Climbing Club",
+    "metro": "Seattle",
+    "expect_h": "5226d79b2eccdeb5",
+    "website": "https://www.castleclimbingclub.com/",
+    "hours": {
+      "mon": "6am–12am",
+      "tue": "6am–12am",
+      "wed": "6am–12am",
+      "thu": "6am–12am",
+      "fri": "6am–12am",
+      "sat": "9am–12am",
+      "sun": "9am–12am"
+    },
+    "sources": [
+      {
+        "url": "https://www.castleclimbingclub.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Membership club; page lists \"Club Hours\" weekdays/weekends (sauna hours differ and are excluded). Address 6327 W Marginal Way SW matches."
+  },
+  {
+    "id": "seed-168",
+    "name": "Climb NORA",
+    "metro": "Seattle",
+    "expect_h": "f4034097ecc55f80",
+    "website": "https://www.climbnora.com/",
+    "hours": {
+      "mon": "12pm–8pm",
+      "tue": "12pm–8pm",
+      "wed": "12pm–8pm",
+      "thu": "12pm–8pm",
+      "fri": "12pm–8pm",
+      "sat": "10am–8pm",
+      "sun": "10am–8pm"
+    },
+    "sources": [
+      {
+        "url": "https://www.climbnora.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      },
+      {
+        "url": "https://www.climbnora.com/hours",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "JS-rendered site; read from the site JS bundle (/hours page content). Hours here are the \"open to everyone\" window (weekdays 12pm-8pm, weekends 10am-8pm). The facility is open longer (Mon/Wed/Fri 10am-10pm, Tue/Thu 6am-10pm, Sat/Sun 8am-10pm) but the rest is members-only. Address 30820 Pacific Hwy S confirmed in the bundle."
+  },
+  {
+    "id": "seed-169",
+    "name": "Climb Tacoma",
+    "metro": "Seattle",
+    "expect_h": "90727bfd030a5e14",
+    "website": "https://www.climbtacoma.com/",
+    "hours": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "10am–8pm",
+      "sun": "10am–8pm"
+    },
+    "sources": [
+      {
+        "url": "https://www.climbtacoma.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Footer states Weekdays and Weekend ranges; address 3729 S Lawrence St matches."
+  },
+  {
+    "id": "seed-170",
+    "name": "Edgeworks Bellevue",
+    "metro": "Seattle",
+    "expect_h": "863414c73b1db426",
+    "website": "https://edgeworksclimbing.com/bellevue/",
+    "hours": {
+      "mon": "6am–11pm",
+      "tue": "6am–11pm",
+      "wed": "6am–11pm",
+      "thu": "6am–11pm",
+      "fri": "6am–11pm",
+      "sat": "8am–10pm",
+      "sun": "8am–8pm"
+    },
+    "sources": [
+      {
+        "url": "https://edgeworksclimbing.com/bellevue/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Address 15600 NE 8th St Suite C-1 matches."
+  },
+  {
+    "id": "seed-171",
+    "name": "Edgeworks Climbing Bel-Red",
+    "metro": "Seattle",
+    "expect_h": "7a0ffc7d3742d214",
+    "website": "https://edgeworksclimbing.com/belred/",
+    "hours": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "8am–10pm",
+      "sun": "8am–8pm"
+    },
+    "sources": [
+      {
+        "url": "https://edgeworksclimbing.com/belred/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Site calls it Edgeworks Bel-Red Boulders; address 1645 140th Ave NE Suite A4 matches."
+  },
+  {
+    "id": "seed-173",
+    "name": "Edgeworks Seattle",
+    "metro": "Seattle",
+    "expect_h": "2234b061273d8588",
+    "website": "https://edgeworksclimbing.com/seattle/",
+    "hours": {
+      "mon": "6am–10pm",
+      "tue": "6am–10pm",
+      "wed": "6am–10pm",
+      "thu": "6am–10pm",
+      "fri": "6am–10pm",
+      "sat": "8am–10pm",
+      "sun": "8am–8pm"
+    },
+    "sources": [
+      {
+        "url": "https://edgeworksclimbing.com/seattle/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Address 2839 NW Market St matches."
+  },
+  {
+    "id": "seed-172",
+    "name": "Edgeworks Tacoma",
+    "metro": "Seattle",
+    "expect_h": "0aacdd09d204616f",
+    "website": "https://edgeworksclimbing.com/tacoma/",
+    "hours": {
+      "mon": "6am–10pm",
+      "tue": "6am–10pm",
+      "wed": "6am–10pm",
+      "thu": "6am–10pm",
+      "fri": "6am–10pm",
+      "sat": "8am–10pm",
+      "sun": "8am–8pm"
+    },
+    "sources": [
+      {
+        "url": "https://edgeworksclimbing.com/tacoma/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Site names it Edgeworks Climbing + Fitness; address 6102 North 9th St Ste 100 matches."
+  },
+  {
+    "id": "seed-175",
+    "name": "Half Moon Bouldering",
+    "metro": "Seattle",
+    "expect_h": "7977ee10cea0e5e8",
+    "website": "https://www.halfmoonbouldering.com/",
+    "hours": {
+      "mon": "8am–10pm",
+      "tue": "7am–10pm",
+      "wed": "8am–10pm",
+      "thu": "7am–10pm",
+      "fri": "8am–10pm",
+      "sat": "8am–7pm",
+      "sun": "8am–7pm"
+    },
+    "sources": [
+      {
+        "url": "https://www.halfmoonbouldering.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Address 124 N 85th St matches."
+  },
+  {
+    "id": "seed-177",
+    "name": "Insight Climbing and Movement",
+    "metro": "Seattle",
+    "expect_h": "1b7436da468fd452",
+    "website": "https://www.insightclimbing.com/bainbridge-visit",
+    "hours": {
+      "mon": "10am–9pm",
+      "tue": "10am–9pm",
+      "wed": "Closed",
+      "thu": "10am–9pm",
+      "fri": "10am–9pm",
+      "sat": "10am–5pm",
+      "sun": "10am–5pm"
+    },
+    "sources": [
+      {
+        "url": "https://www.insightclimbing.com/bainbridge-visit",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Bainbridge Island section of a two-location page (Bremerton ignored). Wednesday listed CLOSED with a ** marker whose footnote was not found on the page."
+  },
+  {
+    "id": "seed-178",
+    "name": "Momentum Indoor Climbing – SODO",
+    "metro": "Seattle",
+    "expect_h": "7abff5be7085b546",
+    "website": "https://momentumclimbing.com/sodo/",
+    "hours": {
+      "mon": "6am–10pm",
+      "tue": "6am–10pm",
+      "wed": "6am–10pm",
+      "thu": "6am–10pm",
+      "fri": "6am–10pm",
+      "sat": "8am–8pm",
+      "sun": "8am–8pm"
+    },
+    "sources": [
+      {
+        "url": "https://momentumclimbing.com/sodo/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Address 2759 1st Ave S matches."
+  },
+  {
+    "id": "seed-182",
+    "name": "Seattle Bouldering Project – Fremont",
+    "metro": "Seattle",
+    "expect_h": "45b2fe47279d66f4",
+    "website": "https://boulderingproject.com/location/fremont-upper-walls/",
+    "hours": {
+      "mon": "6am–10pm",
+      "tue": "6am–10pm",
+      "wed": "6am–10pm",
+      "thu": "6am–10pm",
+      "fri": "6am–10pm",
+      "sat": "7am–10pm",
+      "sun": "7am–10pm"
+    },
+    "sources": [
+      {
+        "url": "https://boulderingproject.com/location/fremont-upper-walls/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Shared Fremont/Upper Walls page lists Fremont (3535 Interlake Ave N) separately from Upper Walls. Read via WebFetch (curl blocked by Cloudflare 403). Mon-Fri and Sat-Sun stated as ranges."
+  },
+  {
+    "id": "seed-181",
+    "name": "Seattle Bouldering Project – Poplar",
+    "metro": "Seattle",
+    "expect_h": "3facc7056c342352",
+    "website": "https://boulderingproject.com/location/poplar/",
+    "hours": {
+      "mon": "6am–11pm",
+      "tue": "6am–11pm",
+      "wed": "6am–11pm",
+      "thu": "6am–11pm",
+      "fri": "6am–11pm",
+      "sat": "7am–10pm",
+      "sun": "7am–10pm"
+    },
+    "sources": [
+      {
+        "url": "https://boulderingproject.com/location/poplar/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Read via WebFetch (curl blocked by Cloudflare 403). Address 900 Poplar Pl S matches."
+  },
+  {
+    "id": "seed-183",
+    "name": "Seattle Bouldering Project – U-District",
+    "metro": "Seattle",
+    "expect_h": "2450f451236f5c23",
+    "website": "https://boulderingproject.com/location/university-district/",
+    "hours": {
+      "mon": "6am–10pm",
+      "tue": "6am–10pm",
+      "wed": "6am–10pm",
+      "thu": "6am–10pm",
+      "fri": "6am–10pm",
+      "sat": "7am–10pm",
+      "sun": "7am–10pm"
+    },
+    "sources": [
+      {
+        "url": "https://boulderingproject.com/location/university-district/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Read via WebFetch (curl blocked by Cloudflare 403). Address 4502 University Way NE matches."
+  },
+  {
+    "id": "seed-184",
+    "name": "Seattle Bouldering Project – Upper Walls",
+    "metro": "Seattle",
+    "expect_h": "9401c0e407307bac",
+    "website": "https://boulderingproject.com/location/fremont-upper-walls/",
+    "hours": {
+      "mon": "3pm–10pm",
+      "tue": "3pm–10pm",
+      "wed": "3pm–10pm",
+      "thu": "3pm–10pm",
+      "fri": "3pm–10pm",
+      "sat": "9am–5pm",
+      "sun": "9am–5pm"
+    },
+    "sources": [
+      {
+        "url": "https://boulderingproject.com/location/fremont-upper-walls/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Shared Fremont/Upper Walls page; Upper Walls (3625 Interlake Ave N) hours listed separately from Fremont. Read via WebFetch (curl blocked by Cloudflare 403)."
+  },
+  {
+    "id": "seed-186",
+    "name": "Summit Everett",
+    "metro": "Seattle",
+    "expect_h": "fc61afb7ca2ebf90",
+    "website": "https://summiteverett.com/",
+    "hours": {
+      "mon": "12pm–8pm",
+      "tue": "12pm–8pm",
+      "wed": "12pm–8pm",
+      "thu": "12pm–8pm",
+      "fri": "12pm–8pm",
+      "sat": "10am–6pm",
+      "sun": "10am–6pm"
+    },
+    "sources": [
+      {
+        "url": "https://summiteverett.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      },
+      {
+        "url": "https://summiteverett.com/faq",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      },
+      {
+        "url": "https://summiteverett.com/about",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours are the staffed hours from the FAQ page (members have 24-hour access). The About page hours widget shows only \"Open today 2pm-8pm\" (a single day, day not identifiable) which differs from FAQ weekend hours. Address 2900 Grand Ave Suite A matches."
+  },
+  {
+    "id": "seed-187",
+    "name": "Uplift Climbing",
+    "metro": "Seattle",
+    "expect_h": "1c6626803fbb6174",
+    "website": "https://www.upliftclimbing.com/",
+    "hours": {
+      "mon": "12pm–10pm",
+      "tue": "6am–10pm",
+      "wed": "12pm–10pm",
+      "thu": "6am–10pm",
+      "fri": "12pm–10pm",
+      "sat": "8am–8pm",
+      "sun": "8am–8pm"
+    },
+    "sources": [
+      {
+        "url": "https://www.upliftclimbing.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website",
+          "hours"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "A Vertical World gym; address 17229 15th Ave NE matches."
+  },
+  {
+    "id": "seed-188",
+    "name": "Vertical World North",
+    "metro": "Seattle",
+    "expect_h": "6b7039b2fc17233d",
+    "website": "https://north.verticalworld.com/",
+    "hours": {
+      "mon": "10am–10pm",
+      "tue": "6am–10pm",
+      "wed": "6am–10pm",
+      "thu": "6am–10pm",
+      "fri": "10am–10pm",
+      "sat": "8am–8pm",
+      "sun": "8am–8pm"
+    },
+    "sources": [
+      {
+        "url": "https://north.verticalworld.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      },
+      {
+        "url": "https://north.verticalworld.com/hours-rates/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      },
+      {
+        "url": "https://north.verticalworld.com/contact-us/contact-us/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours page: \"M F 10am-10pm, T W TH 6am-10pm, Sat Sun 8am-8pm\". Address 12300 Beverly Park Rd confirmed on contact page."
+  },
+  {
+    "id": "seed-164",
+    "name": "Vertical World Seattle",
+    "metro": "Seattle",
+    "expect_h": "30860cd6b67e7e4c",
+    "website": "https://seattle.verticalworld.com/",
+    "hours": {
+      "mon": "6am–10pm",
+      "tue": "6am–10pm",
+      "wed": "6am–10pm",
+      "thu": "6am–10pm",
+      "fri": "6am–10pm",
+      "sat": "8am–8pm",
+      "sun": "8am–8pm"
+    },
+    "sources": [
+      {
+        "url": "https://seattle.verticalworld.com/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      },
+      {
+        "url": "https://seattle.verticalworld.com/hours-rates/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "hours"
+        ]
+      },
+      {
+        "url": "https://seattle.verticalworld.com/contact-us/",
+        "accessed": "2026-10-04",
+        "supports": [
+          "website"
+        ]
+      }
+    ],
+    "status": "found",
+    "notes": "Hours page: \"M-F 6am-10pm, Sat Sun 8am-8pm\". Address 2330 W Commodore Way confirmed on contact page."
+  }
+]
