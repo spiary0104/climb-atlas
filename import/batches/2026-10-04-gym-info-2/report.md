@@ -6,14 +6,14 @@
 |---|---:|
 | Insert as NEW gyms | 0 |
 | Update existing gyms (explicit update records) | 59 |
-| Retire existing gyms (closed / duplicate: status becomes rejected, record kept) | 1 |
+| Retire existing gyms (closed / duplicate: status becomes rejected, record kept) | 7 |
 | Already exist — no action (identical content: 0; content differs, NOT applied: 0) | 0 |
 | Probable duplicates — need a human decision | 0 |
 | Invalid — rejected | 0 |
 | Rejected by a human decision | 0 |
-| **Total records in batch** | 60 |
+| **Total records in batch** | 66 |
 
-Index: 2348 known gyms (sha256 9e84b8d4a14b…). Plan: f44d1efe1d87…
+Index: 2348 known gyms (sha256 9e84b8d4a14b…). Plan: 338cbd570dc8…
 
 ## Updates to existing gyms (59)
 
@@ -69,9 +69,15 @@ Index: 2348 known gyms (sha256 9e84b8d4a14b…). Plan: f44d1efe1d87…
   - FILLS gym information (only if empty in production; never overwrites): website boulderingproject.com + hours mon,tue,wed,thu,fri,sat,sun
 - … and 34 more (see plan.json)
 
-## Retirements of existing gyms (1)
+## Retirements of existing gyms (7)
 
 Each gym is set to `rejected` with the reason below (the moderator UI's own decision format); the row is kept, never deleted. Listed apart from location changes.
 
 - line 60 `seed-32` "Hardrock Climbing Company" (AU) — closed: Permanently closed: last day of trade 19 Dec 2025 (site sold for redevelopment), per the operator
+- line 61 `seed-81` "Denver Bouldering Club" (US) — closed: Closed: official site expired; company reported to have closed its remaining locations on 2026-05-29 after bankruptcy
+- line 62 `seed-82` "Denver Bouldering Club North" (US) — closed: Closed: official site expired; company reported to have closed its remaining locations on 2026-05-29 after bankruptcy
+- line 63 `seed-83` "Denver Bouldering Club South" (US) — closed: Closed: official site expired; company reported to have closed its remaining locations on 2026-05-29 after bankruptcy
+- line 64 `seed-401` "Solid Rock Gym" (US) — closed: No longer operating as Solid Rock Gym: the address is now Vertical Hold San Marcos; old domain serves unrelated content
+- line 65 `seed-227` "The Rock Health and Fitness" (US) — closed: Not a climbing gym: the official site (Rock Fitness, Astoria) is a general fitness gym and never mentions climbing
+- line 66 `seed-228` "The Wall at Palisades" (US) — closed: No evidence the gym exists: no official site, no address; only differently named mall attractions found nearby
 

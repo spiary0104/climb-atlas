@@ -8,14 +8,14 @@
  },
  "staged_batches_compared": [],
  "counts": {
-  "records": 60,
+  "records": 66,
   "new": 0,
   "existing": 0,
   "update": 59,
   "probable-duplicate": 0,
   "invalid": 0,
   "rejected": 0,
-  "retire": 1,
+  "retire": 7,
   "existing_identical": 0,
   "existing_content_differs": 0,
   "new_id_not_frozen": 0,
@@ -24,7 +24,7 @@
  "importable": true,
  "blockers": [],
  "unused_decisions": [],
- "plan_sha256": "f44d1efe1d87cf429a42b00b48b312d956aaba8c291703cfa0de3e36c80d142c",
+ "plan_sha256": "338cbd570dc81f48ccdb56ed3ea120f4eddf10bcc1550ad64092851b8d3fded6",
  "records": [
   {
    "line": 1,
@@ -1590,6 +1590,152 @@
      "top-rope"
     ],
     "h": "a9597c4531503ca9"
+   }
+  },
+  {
+   "line": 61,
+   "class": "retire",
+   "id": "seed-81",
+   "name": "Denver Bouldering Club",
+   "country": "US",
+   "expect_h": "7b67642ea7a73c1c",
+   "reason_code": "closed",
+   "retire_reason": "Closed: official site expired; company reported to have closed its remaining locations on 2026-05-29 after bankruptcy",
+   "entry": {
+    "id": "seed-81",
+    "name": "Denver Bouldering Club",
+    "country": "US",
+    "state": "CO",
+    "suburb": "Denver",
+    "lat": 39.7392,
+    "lng": -104.9903,
+    "address": "2485 W 2nd Ave #18/20, Denver, CO 80223",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "7b67642ea7a73c1c"
+   }
+  },
+  {
+   "line": 62,
+   "class": "retire",
+   "id": "seed-82",
+   "name": "Denver Bouldering Club North",
+   "country": "US",
+   "expect_h": "bd6ed11541b646a0",
+   "reason_code": "closed",
+   "retire_reason": "Closed: official site expired; company reported to have closed its remaining locations on 2026-05-29 after bankruptcy",
+   "entry": {
+    "id": "seed-82",
+    "name": "Denver Bouldering Club North",
+    "country": "US",
+    "state": "CO",
+    "suburb": "Thornton",
+    "lat": 39.868,
+    "lng": -104.9719,
+    "address": "698 W 84th Ave, Denver, CO 80260",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "bd6ed11541b646a0"
+   }
+  },
+  {
+   "line": 63,
+   "class": "retire",
+   "id": "seed-83",
+   "name": "Denver Bouldering Club South",
+   "country": "US",
+   "expect_h": "921d46a238712df7",
+   "reason_code": "closed",
+   "retire_reason": "Closed: official site expired; company reported to have closed its remaining locations on 2026-05-29 after bankruptcy",
+   "entry": {
+    "id": "seed-83",
+    "name": "Denver Bouldering Club South",
+    "country": "US",
+    "state": "CO",
+    "suburb": "Sheridan",
+    "lat": 39.6403,
+    "lng": -105.0286,
+    "address": "4131 S Natches Ct Unit E/F, Sheridan, CO 80110",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "921d46a238712df7"
+   }
+  },
+  {
+   "line": 64,
+   "class": "retire",
+   "id": "seed-401",
+   "name": "Solid Rock Gym",
+   "country": "US",
+   "expect_h": "dce5471055076c8b",
+   "reason_code": "closed",
+   "retire_reason": "No longer operating as Solid Rock Gym: the address is now Vertical Hold San Marcos; old domain serves unrelated content",
+   "entry": {
+    "id": "seed-401",
+    "name": "Solid Rock Gym",
+    "country": "US",
+    "state": "CA",
+    "suburb": "San Marcos",
+    "lat": 33.136771,
+    "lng": -117.1328158,
+    "address": "992 Rancheros Dr, San Marcos, CA 92069",
+    "types": [
+     "indoor-bouldering",
+     "top-rope"
+    ],
+    "h": "dce5471055076c8b"
+   }
+  },
+  {
+   "line": 65,
+   "class": "retire",
+   "id": "seed-227",
+   "name": "The Rock Health and Fitness",
+   "country": "US",
+   "expect_h": "4b0b574f3837c632",
+   "reason_code": "closed",
+   "retire_reason": "Not a climbing gym: the official site (Rock Fitness, Astoria) is a general fitness gym and never mentions climbing",
+   "entry": {
+    "id": "seed-227",
+    "name": "The Rock Health and Fitness",
+    "country": "US",
+    "state": "NY",
+    "suburb": "Astoria, Queens",
+    "lat": 40.7644,
+    "lng": -73.9235,
+    "address": "22-15 31st St, Astoria, NY 11105",
+    "types": [
+     "indoor-bouldering",
+     "top-rope"
+    ],
+    "h": "4b0b574f3837c632"
+   }
+  },
+  {
+   "line": 66,
+   "class": "retire",
+   "id": "seed-228",
+   "name": "The Wall at Palisades",
+   "country": "US",
+   "expect_h": "2998fd22cfdaf8a6",
+   "reason_code": "closed",
+   "retire_reason": "No evidence the gym exists: no official site, no address; only differently named mall attractions found nearby",
+   "entry": {
+    "id": "seed-228",
+    "name": "The Wall at Palisades",
+    "country": "US",
+    "state": "NY",
+    "suburb": "West Nyack",
+    "lat": 41.0956,
+    "lng": -73.9668,
+    "address": null,
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "2998fd22cfdaf8a6"
    }
   }
  ]
