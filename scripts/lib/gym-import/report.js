@@ -53,6 +53,7 @@ function renderReport(plan) {
       L.push(`- line ${r.line} \`${r.id}\` — ${esc(r.update_reason)}`);
       const info = r.changes.filter(ch => V.INFO_FIELDS.includes(ch.field));
       if (info.length) L.push(`  - FILLS gym information (only if empty in production; never overwrites): ${esc(V.describeInfoSet(Object.fromEntries(info.map(ch => [ch.field, ch.after]))))}`);
+      if (r.changes.some(ch => V.IDENTITY_FIELDS.includes(ch.field))) L.push(`  - CORRECTS identity (${r.changes.map(ch => ch.field).join(' + ')}; the stored slug and every other field stay as they are):`);
       r.changes.filter(ch => !V.INFO_FIELDS.includes(ch.field)).forEach(ch => L.push(`  - ${ch.field}: ${esc(JSON.stringify(ch.before))} → ${esc(JSON.stringify(ch.after))}`.slice(0, 300)));
     });
     if (more) L.push(`- … and ${more} more (see plan.json)`);

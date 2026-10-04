@@ -750,12 +750,12 @@ test('production logic never derives state from a manifest: the importer reads o
 });
 
 // ============================================ 9. static guarantees ================================================================
-test('static: exactly four write call sites -- a plain INSERT (importer.js), a location PATCH, a gym-information PATCH and a retire PATCH (all three via updater.js) -- and no delete/upsert/merge capability', () => {
+test('static: exactly five write call sites -- a plain INSERT (importer.js), a location PATCH, a gym-information PATCH, an identity PATCH and a retire PATCH (all four via updater.js) -- and no delete/upsert/merge capability', () => {
   const dir = path.join(ROOT, 'scripts', 'lib', 'gym-import');
   const src = f => fs.readFileSync(path.join(dir, f), 'utf8').split('\n').filter(l => !/^\s*\/\//.test(l)).join('\n');
   const t = src('target.js'), im = src('importer.js'), up = src('updater.js');
   assert.equal((t.match(/_send\('POST'/g) || []).length, 1, 'exactly one POST call site (insertSpots)');
-  assert.equal((t.match(/_send\('PATCH'/g) || []).length, 3, 'exactly three PATCH call sites (updateSpotLocation, updateSpotInfo, retireSpot)');
+  assert.equal((t.match(/_send\('PATCH'/g) || []).length, 4, 'exactly four PATCH call sites (updateSpotLocation, updateSpotInfo, updateSpotIdentity, retireSpot)');
   for (const bad of [/_send\('(PUT|DELETE)'/, /method:\s*['"](PUT|DELETE)/i, /on_conflict/, /resolution=(merge|ignore)/, /\/rpc\//, /upsert/i, /Prefer:[^,}]*(merge|ignore)-duplicates/]) for (const [n, s] of [['target.js', t], ['importer.js', im], ['updater.js', up]]) assert.ok(!bad.test(s), n + ': ' + bad);
   assert.ok(!/_send\('(PATCH|PUT|DELETE)'|method:\s*['"](PATCH|PUT|DELETE)/i.test(im + up), 'no raw write method outside target.js');
   // the PATCH changes one approved row, pinned to the version seen at the final re-check, and sends only the approved fields
@@ -769,17 +769,25 @@ test('static: exactly four write call sites -- a plain INSERT (importer.js), a l
   assert.match(info, /keys\.some\(k => !INFO_FIELDS\.includes\(k\)\)/);
   assert.ok(/INFO_FIELDS = Object\.freeze\(\['website', 'hours', 'day_pass', 'facilities'\]\)/.test(src('validate.js')), 'the information fields are exactly website, hours, day_pass and facilities');
   assert.ok(!/body: JSON\.stringify\(\{ \.\.\./.test(t), 'no PATCH body is built by spreading');
+  // the identity PATCH is pinned the same way; its body is exactly the approved {name?, suburb?, types?}, it only accepts those fields, and the slug never appears in it
+  const ident = t.slice(t.indexOf('async updateSpotIdentity('), t.indexOf("_send('PATCH'", t.indexOf('async updateSpotIdentity(')) + 400);
+  assert.match(ident, /id=eq\.\$\{encodeURIComponent\(u\.id\)\}&status=eq\.approved&updated_at=eq\.\$\{encodeURIComponent\(u\.updatedAt\)\}/);
+  assert.match(ident, /body: JSON\.stringify\(u\.set\) \}\);\s*\}/, 'the identity PATCH body is exactly the approved set');
+  assert.match(ident, /keys\.some\(k => !IDENTITY_FIELDS\.includes\(k\)\)/);
+  assert.ok(!/slug/i.test(ident), 'the identity write never mentions (let alone sends) the stored slug');
+  assert.ok(/IDENTITY_FIELDS = Object\.freeze\(\['name', 'suburb', 'types'\]\)/.test(src('validate.js')), 'the identity fields are exactly name, suburb and types');
   // the retire PATCH is pinned the same way and its body is exactly {status:'rejected', rejection_reason}
   const retire = t.slice(t.indexOf('async retireSpot('), t.indexOf("_send('PATCH'", t.indexOf('async retireSpot(')));
   assert.match(retire, /id=eq\.\$\{encodeURIComponent\(u\.id\)\}&status=eq\.approved&updated_at=eq\.\$\{encodeURIComponent\(u\.updatedAt\)\}/);
   assert.match(t.slice(t.indexOf('async retireSpot(')), /body: JSON\.stringify\(\{ status: 'rejected', rejection_reason: u\.reason \}\)/);
   assert.match(t, /const LOCATION_FIELDS = Object\.freeze\(\['address', 'lat', 'lng'\]\)/);
-  assert.ok(!/_send\('POST'|_send\('PATCH'|insertSpots\(|updateSpotLocation\(|updateSpotInfo\(|retireSpot\(/.test(src('plan.js') + src('match.js') + src('validate.js') + src('stage.js') + src('index-store.js') + src('report.js') + src('manifest.js') + src('history.js') + src('research.js')), 'no other module writes');
+  assert.ok(!/_send\('POST'|_send\('PATCH'|insertSpots\(|updateSpotLocation\(|updateSpotInfo\(|updateSpotIdentity\(|retireSpot\(/.test(src('plan.js') + src('match.js') + src('validate.js') + src('stage.js') + src('index-store.js') + src('report.js') + src('manifest.js') + src('history.js') + src('research.js')), 'no other module writes');
   assert.ok(!/require\('\.\/(target|importer|updater)'\)|fetch\(|mintWriteGate|mintUpdateGate/.test(src('research.js')), 'the research tooling is offline: no target, no network, no gate');
   assert.equal((im.match(/api\.insertSpots\(/g) || []).length, 1, 'the importer calls the insert exactly once, after the gates');
-  assert.ok(!/updateSpotLocation\(|updateSpotInfo\(|retireSpot\(|mintUpdateGate\(/.test(im), 'the importer never updates or retires');
+  assert.ok(!/updateSpotLocation\(|updateSpotInfo\(|updateSpotIdentity\(|retireSpot\(|mintUpdateGate\(/.test(im), 'the importer never updates or retires');
   assert.equal((up.match(/api\.updateSpotLocation\(/g) || []).length, 1, 'the updater calls the update in one place, after the gates');
   assert.equal((up.match(/api\.updateSpotInfo\(/g) || []).length, 1, 'the updater calls the information fill in one place, after the gates');
+  assert.equal((up.match(/api\.updateSpotIdentity\(/g) || []).length, 1, 'the updater calls the identity correction in one place, after the gates');
   assert.equal((up.match(/api\.retireSpot\(/g) || []).length, 1, 'the updater calls the retire in one place, after the gates');
   assert.ok(!/insertSpots\(|mintWriteGate\(/.test(up), 'the updater never inserts');
   for (const [s, mint] of [[im, 'mintWriteGate('], [up, 'mintUpdateGate(']]) assert.ok(s.indexOf(mint) > s.indexOf("'gate: --confirm'") && s.indexOf(mint) > s.indexOf("'final re-check before write'") && s.indexOf("'final re-check before write'") > 0, mint + ' only after the safety checks');
@@ -1061,4 +1069,67 @@ test('LOCAL STACK: a real information fill writes exactly day_pass/facilities (f
   const snap3 = JSON.stringify(await adm.all());
   const r3 = await runImport({ batchDir: s3.b.dir, indexDir: s3.indexDir, env: e, mode: 'apply', confirm: dry3.token });
   assert.equal(r3.exit, 2, r3.report); assert.equal(JSON.stringify(await adm.all()), snap3, 'nothing written');
+});
+
+// ============================================ gym identity (name / suburb / types) against the real local database =============
+const IDENT_FULL = ['indoor-bouldering', 'top-rope', 'lead-climbing'];   // canonical TYPES order
+const identRec = (index, id, set) => ({ ...updRec(index, id, set), reason: 'name, suburb and type tags from the official site (test)', source: 'https://www.example.com/about (official site, test)' });
+const IDENT_TWO = ix => [identRec(ix, 'seed-100', { name: 'Boulder Barn Sydney', suburb: 'Surry Hills North', types: IDENT_FULL }), identRec(ix, 'seed-102', { name: 'Granite Gym Ultimo' })];
+
+test('LOCAL STACK: a real identity correction writes exactly name/suburb/types (types as text[], slug kept, other columns and gyms byte-identical), re-run writes nothing; a concurrent edit is refused', { skip }, async () => {
+  const e = env();
+  const s = await retSetup('2026-02-05-local-identity', IDENT_TWO);
+  const dry = await runImport({ batchDir: s.b.dir, indexDir: s.indexDir, env: e });
+  assert.equal(dry.exit, 0, dry.report); assert.equal(dry.kind, 'update'); assert.equal(dry.coverage, 'FULL'); assert.equal(dry.state, 'fresh'); assert.match(dry.report, /Would correct gym identity \(2 gyms/);
+  const before = await adm.all();
+  assert.equal(JSON.stringify(await adm.all()), JSON.stringify(before), 'the dry-run wrote nothing');
+  // a spy on the real Api proves the PATCH bodies: exactly the approved fields, never a slug
+  const api = new T.Api(T.resolveTarget(e)), bodies = [], orig = api._send.bind(api);
+  api._send = (method, p, o) => { if (method !== 'GET') bodies.push({ method, p, body: o && o.body }); return orig(method, p, o); };
+  const ok = await runImport({ batchDir: s.b.dir, indexDir: s.indexDir, env: e, mode: 'apply', confirm: dry.token, api });
+  assert.equal(ok.exit, 0, ok.report); assert.deepEqual(ok.applied, ['seed-100', 'seed-102']);
+  assert.deepEqual(bodies.map(b => [b.method, JSON.parse(b.body)]), [['PATCH', { name: 'Boulder Barn Sydney', suburb: 'Surry Hills North', types: IDENT_FULL }], ['PATCH', { name: 'Granite Gym Ultimo' }]], 'one PATCH per gym, exactly the approved set');
+  assert.ok(bodies.every(b => /^\/rest\/v1\/spots\?id=eq\.[^&]+&status=eq\.approved&updated_at=eq\./.test(b.p) && !/slug/.test(b.body)), 'pinned by id + status + updated_at; no slug in any body');
+  const after = await adm.all();
+  const was = id => before.find(r => r.id === id), now = id => after.find(r => r.id === id);
+  assert.equal(now('seed-100').name, 'Boulder Barn Sydney'); assert.equal(now('seed-100').suburb, 'Surry Hills North'); assert.deepEqual(now('seed-100').types, IDENT_FULL, 'types are stored as text[] in the recorded order');
+  assert.equal(now('seed-102').name, 'Granite Gym Ultimo'); assert.equal(now('seed-102').suburb, was('seed-102').suburb, 'a name-only correction leaves the suburb alone'); assert.deepEqual(now('seed-102').types, was('seed-102').types);
+  for (const id of ['seed-100', 'seed-102']) {
+    assert.equal(now(id).slug, was(id).slug, id + ': a rename never moves the stored slug');
+    assert.notEqual(now(id).updated_at, was(id).updated_at, 'the database records the edit time');
+    for (const f of ['state', 'country', 'lat', 'lng', 'address', 'notes', 'photo', 'status', 'community', 'edited', 'created_at', 'submitted_by', 'website', 'hours', 'day_pass', 'facilities']) assert.deepEqual(now(id)[f], was(id)[f], id + ' unchanged: ' + f);
+  }
+  for (const id of ['seed-101', 'community-0f3a7c2e-1111-4222-8333-444455556666']) assert.deepEqual(now(id), was(id), id + ' is byte-identical, including updated_at');
+  assert.equal(after.length, before.length);
+  const m = JSON.parse(fs.readFileSync(path.join(s.b.dir, 'manifest.json'), 'utf8'));
+  assert.equal(m.status, 'updated'); assert.equal(m.rows_updated, 0); assert.equal(m.rows_identity_changed, 2); assert.deepEqual(m.identity_changed.map(c => [c.id, c.fields]), [['seed-100', ['name', 'suburb', 'types']], ['seed-102', ['name']]]); assert.equal(m.verification.ok, true);
+  assert.equal(m.identity_changed[0].after_h, S.toEntry(now('seed-100')).h);
+  // idempotent: already applied -> nothing written
+  const again = await runImport({ batchDir: s.b.dir, indexDir: s.indexDir, env: e, mode: 'apply', confirm: dry.token });
+  assert.equal(again.exit, 0, again.report); assert.equal(again.state, 'already-updated'); assert.deepEqual(await adm.all(), after, 'the re-run wrote nothing');
+  assert.equal((await runImport({ batchDir: s.b.dir, indexDir: s.indexDir, env: e, mode: 'verify' })).exit, 0);
+
+  // a moderator edits a target gym after the dry-run (token already issued): refused, nothing written
+  const s2 = await retSetup('2026-02-05-local-identity-race', IDENT_TWO);
+  const dry2 = await runImport({ batchDir: s2.b.dir, indexDir: s2.indexDir, env: e });
+  await adm.patch('seed-102', { notes: 'edited by a moderator' });
+  const snap2 = JSON.stringify(await adm.all());
+  const r2 = await runImport({ batchDir: s2.b.dir, indexDir: s2.indexDir, env: e, mode: 'apply', confirm: dry2.token });
+  assert.equal(r2.exit, 2, r2.report); assert.equal(JSON.stringify(await adm.all()), snap2, 'nothing written');
+
+  // an edit just before the PATCH of the first target: zero rows match (the updated_at pin), nothing is overwritten
+  const s3 = await retSetup('2026-02-05-local-identity-race2', IDENT_TWO);
+  const dry3 = await runImport({ batchDir: s3.b.dir, indexDir: s3.indexDir, env: e });
+  const api3 = new T.Api(T.resolveTarget(e)), real = api3.updateSpotIdentity.bind(api3);
+  api3.updateSpotIdentity = async (u, g) => { if (u.id === 'seed-100') await adm.patch('seed-100', { name: 'Renamed by a moderator in the last millisecond' }); return real(u, g); };
+  const r3 = await runImport({ batchDir: s3.b.dir, indexDir: s3.indexDir, env: e, mode: 'apply', confirm: dry3.token, api: api3 });
+  assert.equal(r3.exit, 2, r3.report); assert.match(r3.report, /0 row\(s\) matched/);
+  assert.equal((await adm.all()).find(r => r.id === 'seed-100').name, 'Renamed by a moderator in the last millisecond', 'not overwritten');
+  assert.equal(fs.existsSync(path.join(s3.b.dir, 'manifest.json')), false);
+
+  // a rename onto another approved gym's name is refused by the plan (duplicate protection), nothing written
+  const s4 = await retSetup('2026-02-05-local-identity-dup', ix => [identRec(ix, 'seed-102', { name: 'Boulder Barn' })]);
+  const snap4 = JSON.stringify(await adm.all());
+  const r4 = await runImport({ batchDir: s4.b.dir, indexDir: s4.indexDir, env: e });
+  assert.equal(r4.exit, 2, r4.report); assert.match(r4.report, /would make it a probable duplicate of seed-100/); assert.equal(JSON.stringify(await adm.all()), snap4, 'nothing written');
 });

@@ -25,7 +25,7 @@ const TWO = ix => [upd(ix, 'seed-100', { lat: -33.882, lng: 151.213, address: '1
 // A fake production database for the update path: approved/pending reads, and a PATCH that behaves like PostgREST with the
 // updated_at filter (0 rows when the row changed). hooks: beforeRead(q, state), beforePatch(u, state) to simulate races.
 function fakeProd({ approved, pending = [] }) {
-  const state = { approved: approved.map(r => ({ ...r })), pending: pending.map(r => ({ ...r })), patches: [], infoPatches: [], retires: [], inserts: 0, hooks: {} };
+  const state = { approved: approved.map(r => ({ ...r })), pending: pending.map(r => ({ ...r })), patches: [], infoPatches: [], identityPatches: [], retires: [], inserts: 0, hooks: {} };
   let clock = 0;
   const api = {
     async probe() { return { ok: true, status: 200 }; },
@@ -54,6 +54,17 @@ function fakeProd({ approved, pending = [] }) {
       const row = state.approved.find(r => r.id === u.id && r.status === 'approved' && r.updated_at === u.updatedAt);
       if (!row) return { ok: true, status: 200, json: [], text: '[]' };
       Object.assign(row, u.set, { updated_at: 'ts-w' + (++clock) });
+      return { ok: true, status: 200, json: [{ ...row }], text: '' };
+    },
+    async updateSpotIdentity(u, gate) {
+      assert.ok(gate && Array.isArray(gate.updates) && gate.payloadSha, 'only a gated identity correction reaches the database');
+      assert.ok(Object.keys(u.set).every(k => ['name', 'suburb', 'types'].includes(k)), 'an identity correction carries name/suburb/types only (never a slug)');
+      if (state.hooks.beforePatch) state.hooks.beforePatch(u, state);
+      state.identityPatches.push({ id: u.id, set: u.set, updatedAt: u.updatedAt });
+      const row = state.approved.find(r => r.id === u.id && r.status === 'approved' && r.updated_at === u.updatedAt);
+      if (!row) return { ok: true, status: 200, json: [], text: '[]' };
+      Object.assign(row, u.set, { updated_at: 'ts-w' + (++clock) });
+      if (state.hooks.afterIdentityPatch) state.hooks.afterIdentityPatch(row, u);
       return { ok: true, status: 200, json: [{ ...row }], text: '' };
     },
     async retireSpot(u, gate) {
@@ -187,12 +198,11 @@ test('a change between the dry-run and apply is caught by the final re-check; a 
 });
 
 // ============================================ location-only rules ===============================================================
-test('only address, lat and lng can change: every other field, a half pin, a cleared address, or a missing expect_h/source is refused', async () => {
+test('location updates: only address, lat and lng can change (name/suburb/types are the identity family, tested below): every other field, a half pin, a cleared address, or a missing expect_h/source is refused', async () => {
   const cases = [
-    [ix => [upd(ix, 'seed-100', { name: 'Hijacked' })], 'name'],
-    [ix => [upd(ix, 'seed-100', { types: ['top-rope'] })], 'types'],
     [ix => [upd(ix, 'seed-100', { notes: 'x' })], 'notes'],
-    [ix => [upd(ix, 'seed-100', { suburb: 'Elsewhere' })], 'suburb'],
+    [ix => [upd(ix, 'seed-100', { photo: 'https://example.com/p.jpg' })], 'photo'],
+    [ix => [upd(ix, 'seed-100', { state: 'VIC' })], 'state'],
     [ix => [upd(ix, 'seed-100', { country: 'NZ' })], 'country'],
     [ix => [upd(ix, 'seed-100', { status: 'rejected' })], 'status'],
     [ix => [upd(ix, 'seed-100', { lat: -33.882 })], 'lat without lng'],
@@ -912,4 +922,339 @@ test('info confirmation token is bound to the exact day pass and facilities', as
   const mk = set => confirmToken({ batchId: 'b', planSha: 'p', payload: crypto.createHash('sha256').update(JSON.stringify([{ id: 'seed-100', set, expect_h: '0123456789abcdef' }])).digest('hex'), host: 'h', kind: 'local', coverage: 'FULL', liveSha: 'l' });
   assert.notEqual(mk({ day_pass: 'A$28' }), mk({ day_pass: 'A$29' })); assert.notEqual(mk({ facilities: ['cafe'] }), mk({ facilities: ['cafe', 'shop'] }));
   assert.equal(mk({ facilities: ['cafe'] }), mk({ facilities: ['cafe'] }));
+});
+
+// ============================================ gym identity (intent "update", set: name / suburb / types) =========================
+// A CORRECTION of the identity fields of an existing approved gym. Unlike gym information they ARE in the content hash and in the index, so the states
+// come from the hash: before = hash is expect_h; after = the fields hold exactly the record AND the row with them restored hashes to expect_h.
+// Same gates, pin and one-PATCH-per-gym rule as location updates; a rename must not make the gym look like another gym; the stored slug never moves.
+const H = require('../scripts/lib/gym-import/history');
+const M = require('../scripts/lib/gym-import/match');
+const slugged = () => BASE().map(r => ({ ...r, slug: 'slug-' + r.id }));   // production rows carry the stored slug the database keeps
+const idRec = (ix, id, set, over = {}) => upd(ix, id, set, { reason: 'name, suburb and type tags confirmed on the official site (test)', source: 'https://www.example.com/about (official site, test)', ...over });
+const FULL_TYPES = ['indoor-bouldering', 'top-rope', 'lead-climbing'];   // canonical TYPES order (the index keeps them sorted: indoor, lead, top)
+const ID3 = ix => [idRec(ix, 'seed-100', { name: 'Boulder Barn Sydney' }), idRec(ix, 'seed-101', { suburb: 'Fitzroy North', types: FULL_TYPES }), idRec(ix, 'seed-102', { name: 'Granite Gym Ultimo', suburb: 'Ultimo NSW', types: ['indoor-bouldering', 'top-rope'] })];
+const identityKeys = r => ({ id: r.id, name: r.name, suburb: r.suburb, types: r.types });
+
+test('identity: a rename, a suburb change and a type change are planned with before -> after, written with ONE pinned PATCH each, verified, and the slug stays', async () => {
+  const w = await world({ records: ID3, approved: slugged(), id: '2026-04-01-gym-identity' });
+  assert.equal(w.plan.counts.update, 3); assert.equal(w.plan.counts.invalid, 0); assert.equal(w.plan.importable, true, w.plan.blockers.join());
+  assert.deepEqual(w.plan.records[0].changes, [{ field: 'name', before: 'Boulder Barn', after: 'Boulder Barn Sydney' }]);
+  assert.deepEqual(w.plan.records[1].changes, [{ field: 'suburb', before: 'Fitzroy', after: 'Fitzroy North' }, { field: 'types', before: ['indoor-bouldering', 'top-rope'], after: FULL_TYPES }]);
+  const rep = require('../scripts/lib/gym-import/report').renderReport(w.plan);
+  assert.match(rep, /CORRECTS identity \(name; the stored slug and every other field stay as they are\)/);
+  assert.match(rep, /name: "Boulder Barn" → "Boulder Barn Sydney"/); assert.match(rep, /suburb: "Fitzroy" → "Fitzroy North"/); assert.match(rep, /types: \["indoor-bouldering","top-rope"\] → \["indoor-bouldering","top-rope","lead-climbing"\]/);
+  const before = JSON.parse(JSON.stringify(w.fake.state.approved));
+  const dry = await runImport({ ...w.base });
+  assert.equal(dry.exit, 0, dry.report); assert.equal(dry.kind, 'update'); assert.equal(dry.coverage, 'FULL'); assert.equal(dry.state, 'fresh'); assert.match(dry.token, /^[0-9a-f]{16}$/);
+  assert.match(dry.report, /Would correct gym identity \(3 gyms; name\/suburb\/types only/);
+  assert.match(dry.report, /seed-100 {2}name: "Boulder Barn" -> "Boulder Barn Sydney"/); assert.match(dry.report, /seed-101 {2}suburb: "Fitzroy" -> "Fitzroy North"; types: "indoor-bouldering\+top-rope" -> "indoor-bouldering\+top-rope\+lead-climbing"/);
+  assert.doesNotMatch(dry.report, /Would update \(/, 'no location section when there are no location updates');
+  assert.equal(w.fake.state.identityPatches.length, 0, 'a dry-run writes nothing');
+  // the gates come first
+  const noFlag = await runImport({ ...w.base, mode: 'apply', confirm: dry.token }); assert.equal(noFlag.exit, 2); assert.ok(failing(noFlag).includes('gate: --i-understand-this-writes-to-production'));
+  const noTok = await runImport({ ...w.base, mode: 'apply', productionFlag: true }); assert.equal(noTok.exit, 2); assert.ok(failing(noTok).includes('gate: --confirm'));
+  assert.equal(w.fake.state.identityPatches.length, 0, 'no write before every gate passes');
+
+  const ok = await runImport({ ...w.base, mode: 'apply', confirm: dry.token, productionFlag: true });
+  assert.equal(ok.exit, 0, ok.report); assert.equal(ok.wrote, true); assert.deepEqual(ok.applied, ['seed-100', 'seed-101', 'seed-102']); assert.deepEqual(ok.identityIds, ['seed-100', 'seed-101', 'seed-102']);
+  assert.equal(w.fake.state.identityPatches.length, 3, 'one PATCH per gym'); assert.equal(w.fake.state.patches.length + w.fake.state.infoPatches.length, 0, 'no other write is used for an identity correction');
+  assert.ok(w.fake.state.identityPatches.every(p => p.updatedAt === 'ts-0'), 'every PATCH is pinned to the row version seen at the final re-check');
+  assert.deepEqual(w.fake.state.identityPatches.map(p => p.set), [{ name: 'Boulder Barn Sydney' }, { suburb: 'Fitzroy North', types: FULL_TYPES }, { name: 'Granite Gym Ultimo', suburb: 'Ultimo NSW', types: ['indoor-bouldering', 'top-rope'] }], 'each body is exactly the approved set (no slug, nothing else)');
+  assert.equal(row(w, 'seed-100').name, 'Boulder Barn Sydney'); assert.equal(row(w, 'seed-101').suburb, 'Fitzroy North'); assert.deepEqual(row(w, 'seed-101').types, FULL_TYPES);
+  for (const id of ['seed-100', 'seed-101', 'seed-102']) {
+    const was = before.find(r => r.id === id);
+    for (const f of ['state', 'country', 'lat', 'lng', 'address', 'notes', 'photo', 'status', 'community', 'edited', 'submitted_by', 'created_at', 'slug']) assert.deepEqual(row(w, id)[f], was[f], id + ' unchanged: ' + f);
+    assert.equal(row(w, id).slug, 'slug-' + id, 'the stored slug never changes');
+  }
+  assert.equal(row(w, 'seed-100').suburb, 'Surry Hills', 'a rename leaves the suburb alone'); assert.deepEqual(row(w, 'seed-100').types, ['indoor-bouldering']);
+  assert.deepEqual(row(w, 'community-0f3a7c2e-1111-4222-8333-444455556666'), before.find(r => r.id === 'community-0f3a7c2e-1111-4222-8333-444455556666'), 'other gyms untouched');
+  const m = JSON.parse(fs.readFileSync(path.join(w.b.dir, 'manifest.json'), 'utf8'));
+  assert.equal(m.status, 'updated'); assert.equal(m.kind, 'update'); assert.deepEqual(m.ids, ['seed-100', 'seed-101', 'seed-102']);
+  assert.equal(m.rows_updated, 0, 'identity corrections are not counted as location updates'); assert.deepEqual(m.changes, []);
+  assert.equal(m.rows_identity_changed, 3); assert.deepEqual(m.identity_changed.map(c => [c.id, c.fields]), [['seed-100', ['name']], ['seed-101', ['suburb', 'types']], ['seed-102', ['name', 'suburb', 'types']]]);
+  for (const c of m.identity_changed) { assert.notEqual(c.after_h, c.expect_h, 'the content hash changes with the identity'); assert.equal(c.after_h, S.toEntry(row(w, c.id)).h, 'after_h is the hash of the row now in production'); assert.equal(c.after_h, S.toEntry({ ...before.find(r => r.id === c.id), ...w.fake.state.identityPatches.find(p => p.id === c.id).set }).h, 'and of the researched row with the set applied'); }
+  assert.equal(m.verification.ok, true); assert.equal(m.approved_before, m.approved_after); assert.ok(!JSON.stringify(m).includes(w.key), 'no credential in the manifest');
+  assert.equal(MF.readManifest(w.b.dir).valid, true);
+
+  // a re-run of the fully applied batch is a safe no-op; verify agrees; a lost manifest is recovered without a write
+  const again = await runImport({ ...w.base, mode: 'apply', confirm: dry.token, productionFlag: true });
+  assert.equal(again.exit, 0, again.report); assert.equal(again.state, 'already-updated'); assert.equal(w.fake.state.identityPatches.length, 3, 'a second apply writes nothing');
+  const ver = await runImport({ ...w.base, mode: 'verify' }); assert.equal(ver.exit, 0, ver.report); assert.equal(ver.state, 'already-updated');
+  // history: once the index is rebuilt from production, the look-back reverts the identity changes exactly like location changes
+  S.write(approvedOf(w), path.join(w.root, 'import', 'index'), { source: 'rebuilt after the batch' });
+  const rebuilt = S.load(path.join(w.root, 'import', 'index'));
+  assert.equal(rebuilt.byId.get('seed-101').name, 'Vertical Works'); assert.deepEqual(rebuilt.byId.get('seed-101').types, ['indoor-bouldering', 'lead-climbing', 'top-rope'], 'the index keeps the tags sorted');
+  const rev = H.revertIndex(rebuilt, w.root);
+  assert.equal(rev.sha256, w.index.sha256, 'undoing the batch gives exactly the index it was planned against'); assert.deepEqual(rev.revertedUpdates.sort(), ['seed-100', 'seed-101', 'seed-102']);
+  assert.equal(rev.byId.get('seed-100').name, 'Boulder Barn'); assert.equal(rev.byId.get('seed-102').suburb, 'Ultimo'); assert.deepEqual(rev.byId.get('seed-102').types, ['top-rope']);
+  const live = H.revertLiveRows(approvedOf(w).map(r => ({ id: r.id, name: r.name, suburb: r.suburb, types: r.types, country: r.country, lat: r.lat, lng: r.lng, address: r.address })), w.root);
+  assert.equal(live.reverted, 3); assert.equal(live.rows.find(r => r.id === 'seed-100').name, 'Boulder Barn'); assert.equal(live.rows.find(r => r.id === 'seed-101').suburb, 'Fitzroy');
+  fs.unlinkSync(path.join(w.b.dir, 'manifest.json'));
+  const rec2 = await runImport({ ...w.base, mode: 'apply', confirm: 'irrelevant', productionFlag: true });
+  assert.equal(rec2.exit, 2, 'the index was rebuilt, so the researched hashes are stale and the batch is refused (re-research), exactly like a location update');
+  assert.equal(w.fake.state.identityPatches.length, 3, 'nothing written');
+});
+
+test('identity: a lost manifest is recovered (nothing written to the database) while the index still holds the researched content', async () => {
+  const w = await world({ records: ID3, approved: slugged(), id: '2026-04-01-gym-identity-recover' });
+  const dry = await runImport({ ...w.base });
+  const ok = await runImport({ ...w.base, mode: 'apply', confirm: dry.token, productionFlag: true }); assert.equal(ok.exit, 0, ok.report);
+  fs.unlinkSync(path.join(w.b.dir, 'manifest.json'));
+  const rec2 = await runImport({ ...w.base, mode: 'apply', confirm: 'irrelevant', productionFlag: true });
+  assert.equal(rec2.exit, 0, rec2.report); assert.equal(rec2.state, 'already-present'); assert.equal(w.fake.state.identityPatches.length, 3, 'recovery writes nothing to the database');
+  assert.equal(JSON.parse(fs.readFileSync(path.join(w.b.dir, 'manifest.json'), 'utf8')).status, 'updated-recovered');
+});
+
+test('identity: a gym changed since the research is refused, never overwritten (stale expect_h, a production edit, a partly applied batch, a race)', async () => {
+  // (a) researched against different content
+  const stale = await world({ records: ix => [idRec(ix, 'seed-100', { name: 'Boulder Barn Sydney' }, { expect_h: '0000000000000000' })], approved: slugged() });
+  assert.equal(stale.plan.counts.invalid, 1); assert.match(JSON.stringify(stale.plan), /changed-since-research/);
+  const r0 = await runImport({ ...stale.base }); assert.equal(r0.exit, 2); assert.ok(failing(r0).includes('researched content is the indexed content (expect_h)'), failing(r0).join()); assert.equal(stale.fake.state.identityPatches.length, 0);
+  // (b) any field edited in production since (a moderator edit; also a rename to something else)
+  for (const edit of [{ notes: 'a moderator edited this' }, { name: 'Boulder Barn (moderator rename)' }, { suburb: 'Redfern' }, { types: ['top-rope'] }]) {
+    const approved = slugged(); Object.assign(approved.find(r => r.id === 'seed-100'), edit);
+    const w = await world({ approved, records: ix => [idRec(ix, 'seed-100', { name: 'Boulder Barn Sydney' })] });
+    const r = await runImport({ ...w.base });
+    assert.equal(r.exit, 2, JSON.stringify(edit)); assert.ok(failing(r).includes('production still has the researched content (expect_h)'), failing(r).join()); assert.equal(w.fake.state.identityPatches.length, 0);
+  }
+  // (c) one target already holds its new values and another does not: a before/after mix is refused, never merged
+  const half = await world({ records: ID3, approved: slugged() });
+  Object.assign(row(half, 'seed-100'), { name: 'Boulder Barn Sydney', updated_at: 'ts-x' });
+  const rh = await runImport({ ...half.base }); assert.equal(rh.exit, 2); assert.ok(failing(rh).includes('no partly applied batch'), failing(rh).join()); assert.equal(half.fake.state.identityPatches.length, 0);
+  // an "after" row whose OTHER content also changed is "changed", not "after"
+  const drift = await world({ records: ID3, approved: slugged() });
+  for (const id of ['seed-100', 'seed-101', 'seed-102']) Object.assign(row(drift, id), JSON.parse(JSON.stringify(ID3(drift.index).find(r => r.id === id).set)), { updated_at: 'ts-x' });
+  row(drift, 'seed-101').notes = 'edited after the correction';
+  const rd = await runImport({ ...drift.base }); assert.equal(rd.exit, 2); assert.ok(failing(rd).includes('production still has the researched content (expect_h)'), failing(rd).join());
+  // (d) a change between the dry-run and the apply is caught by the final re-check
+  const w1 = await world({ records: ID3, approved: slugged() }); const dry1 = await runImport({ ...w1.base });
+  let reads = 0; w1.fake.state.hooks.beforeRead = (q, st) => { if (q.includes('status=eq.approved') && ++reads === 2) st.approved.find(r => r.id === 'community-0f3a7c2e-1111-4222-8333-444455556666').notes = 'edited mid-flight'; };
+  const r1 = await runImport({ ...w1.base, mode: 'apply', confirm: dry1.token, productionFlag: true });
+  assert.equal(r1.exit, 2); assert.ok(failing(r1).includes('final re-check before write'), failing(r1).join()); assert.equal(w1.fake.state.identityPatches.length, 0);
+  // (e) the FIRST target is edited just before its PATCH: 0 rows match (the updated_at pin), nothing is overwritten, no manifest
+  const w2 = await world({ records: ID3, approved: slugged() }); const dry2 = await runImport({ ...w2.base });
+  w2.fake.state.hooks.beforePatch = (u, st) => { if (u.id === 'seed-100') st.approved.find(r => r.id === 'seed-100').updated_at = 'ts-moderator'; };
+  const r2 = await runImport({ ...w2.base, mode: 'apply', confirm: dry2.token, productionFlag: true });
+  assert.equal(r2.exit, 2, r2.report); assert.match(r2.report, /0 row\(s\) matched/); assert.equal(row(w2, 'seed-100').name, 'Boulder Barn', 'not overwritten'); assert.equal(fs.existsSync(path.join(w2.b.dir, 'manifest.json')), false);
+  // (f) the SECOND target is edited just before its PATCH: a partial state, a failure record, exit 4, no manifest; a re-run refuses to finish it
+  const w3 = await world({ records: ID3, approved: slugged() }); const dry3 = await runImport({ ...w3.base });
+  w3.fake.state.hooks.beforePatch = (u, st) => { if (u.id === 'seed-101') st.approved.find(r => r.id === 'seed-101').updated_at = 'ts-moderator'; };
+  const r3 = await runImport({ ...w3.base, mode: 'apply', confirm: dry3.token, productionFlag: true });
+  assert.equal(r3.exit, 4, r3.report); assert.equal(fs.existsSync(path.join(w3.b.dir, 'manifest.json')), false);
+  assert.deepEqual(JSON.parse(fs.readFileSync(path.join(w3.b.dir, 'import-failure.json'), 'utf8')).applied_ids, ['seed-100']);
+  const again = await runImport({ ...w3.base }); assert.equal(again.exit, 2); assert.ok(failing(again).includes('no partly applied batch'), failing(again).join());
+});
+
+test('identity records: name, suburb and types are validated strictly (trimmed single-line text within the limits; types from the list, unique, canonical order); nothing is cleaned silently', async () => {
+  const cases = [
+    [{ name: '' }, 'empty name'], [{ name: '   ' }, 'blank name'], [{ name: ' Boulder Barn Sydney' }, 'leading space'], [{ name: 'Boulder Barn Sydney ' }, 'trailing space'],
+    [{ name: 'Boulder\nBarn' }, 'newline'], [{ name: 'Boulder\tBarn' }, 'tab'], [{ name: 'Boulder\u0007Barn' }, 'control char'], [{ name: 'x'.repeat(201) }, 'name too long'],
+    [{ name: 42 }, 'numeric name'], [{ name: null }, 'null name'],
+    [{ suburb: '' }, 'empty suburb'], [{ suburb: ' Surry Hills North' }, 'untrimmed suburb'], [{ suburb: 'Surry\nHills' }, 'suburb line break'], [{ suburb: 'y'.repeat(201) }, 'suburb too long'], [{ suburb: null }, 'null suburb'],
+    [{ types: [] }, 'empty types'], [{ types: 'top-rope' }, 'types not an array'], [{ types: ['bouldering'] }, 'unknown type'], [{ types: ['top-rope', 'top-rope'] }, 'duplicate type'],
+    [{ types: ['top-rope', 'indoor-bouldering'] }, 'wrong order'], [{ types: ['lead-climbing', 'top-rope'] }, 'wrong order 2'], [{ types: [1] }, 'non-string type'], [{ types: null }, 'null types'],
+  ];
+  for (const [set, what] of cases) {
+    const w = await world({ records: ix => [idRec(ix, 'seed-100', set)], approved: slugged() });
+    assert.equal(w.plan.counts.invalid, 1, what + ': ' + JSON.stringify(w.plan.records[0]));
+    const r = await runImport({ ...w.base });
+    assert.equal(r.exit, 2, what + '\n' + r.report); assert.ok(failing(r).some(n => /records validate/.test(n)), what + ': ' + failing(r).join()); assert.equal(w.fake.state.identityPatches.length, 0, what);
+  }
+  // the same fields at their limits are fine (200 chars)
+  const edge = await world({ records: ix => [idRec(ix, 'seed-100', { name: 'x'.repeat(200), suburb: 'y'.repeat(200) })], approved: slugged() });
+  assert.equal(edge.plan.counts.invalid, 0, JSON.stringify(edge.plan.records[0].errors)); assert.equal(edge.plan.counts.update, 1);
+  // record-level rules: a reason, expect_h and a source are required; one record per gym
+  for (const [over, what] of [[{ reason: 'short' }, 'reason too short'], [{ expect_h: undefined }, 'no expect_h'], [{ source: undefined }, 'no source'], [{ source: '  ' }, 'blank source'], [{ source: 'https://example.com/' + 'a'.repeat(400) }, 'source too long']]) {
+    const w = await world({ records: ix => [idRec(ix, 'seed-100', { name: 'Boulder Barn Sydney' }, over)], approved: slugged() });
+    const r = await runImport({ ...w.base }); assert.equal(r.exit, 2, what); assert.ok(failing(r).some(n => /records validate/.test(n)), what + ': ' + failing(r).join()); assert.equal(w.fake.state.identityPatches.length, 0, what);
+  }
+  const twice = await world({ records: ix => [idRec(ix, 'seed-100', { name: 'Boulder Barn Sydney' }), idRec(ix, 'seed-100', { suburb: 'Redfern' })], approved: slugged() });
+  const rt = await runImport({ ...twice.base }); assert.equal(rt.exit, 2); assert.ok(failing(rt).includes('one update per gym'), failing(rt).join());
+  const both = await world({ records: ix => [idRec(ix, 'seed-100', { name: 'Boulder Barn Sydney' }), ret(ix, 'seed-100')], approved: slugged() });
+  const rb = await runImport({ ...both.base }); assert.equal(rb.exit, 2); assert.equal(both.fake.state.identityPatches.length + both.fake.state.retires.length, 0);
+  // the batch size limit is the updater's (100 records)
+  const many = await world({ records: ix => Array.from({ length: 101 }, (_, i) => idRec(ix, 'seed-100', { name: 'Name ' + i })), approved: slugged() });
+  const rm = await runImport({ ...many.base }); assert.equal(rm.exit, 2); assert.ok(failing(rm).includes('batch size'), failing(rm).join());
+});
+
+test('identity: one family per record -- never mixed with location, information or any other field; a maintenance batch may mix the families across DIFFERENT gyms', async () => {
+  for (const [set, what] of [[{ name: 'Boulder Barn Sydney', lat: -33.882, lng: 151.213 }, 'name + pin'], [{ suburb: 'Redfern', address: '1 St' }, 'suburb + address'], [{ types: ['top-rope'], notes: 'x' }, 'types + notes'],
+    [{ name: 'Boulder Barn Sydney', website: 'https://example.com/' }, 'name + website'], [{ name: 'Boulder Barn Sydney', state: 'VIC' }, 'name + state'], [{ name: 'Boulder Barn Sydney', slug: 'new-slug' }, 'name + slug'], [{ name: 'Boulder Barn Sydney', status: 'rejected' }, 'name + status']]) {
+    const w = await world({ records: ix => [idRec(ix, 'seed-100', set)], approved: slugged() });
+    assert.equal(w.plan.counts.invalid, 1, what); assert.match(JSON.stringify(w.plan), /mixed-families|field-not-updatable/, what);
+    const r = await runImport({ ...w.base }); assert.equal(r.exit, 2, what); assert.ok(failing(r).some(n => /records validate/.test(n)), what);
+    assert.equal(w.fake.state.identityPatches.length + w.fake.state.patches.length + w.fake.state.infoPatches.length, 0, what);
+  }
+  const mixed = ix => [idRec(ix, 'seed-100', { name: 'Boulder Barn Sydney' }), upd(ix, 'seed-102', { lat: -33.8785, lng: 151.196 }), info(ix, 'seed-101'), ret(ix, 'community-0f3a7c2e-1111-4222-8333-444455556666')];
+  const w = await world({ records: mixed, approved: infoBase().map(r => ({ ...r, slug: 'slug-' + r.id })), id: '2026-04-02-maintenance-identity' });
+  assert.equal(w.plan.counts.update, 3); assert.equal(w.plan.counts.retire, 1); assert.equal(w.plan.importable, true, w.plan.blockers.join());
+  const dry = await runImport({ ...w.base });
+  assert.equal(dry.exit, 0, dry.report); assert.match(dry.report, /Would update \(1 gyms, 2 field changes/); assert.match(dry.report, /Would fill gym information \(1 gyms/); assert.match(dry.report, /Would correct gym identity \(1 gyms/); assert.match(dry.report, /Would retire \(1 gyms/);
+  const ok = await runImport({ ...w.base, mode: 'apply', confirm: dry.token, productionFlag: true });
+  assert.equal(ok.exit, 0, ok.report); assert.deepEqual(ok.applied, ['seed-100', 'seed-102', 'seed-101', 'community-0f3a7c2e-1111-4222-8333-444455556666']);
+  assert.equal(w.fake.state.identityPatches.length, 1); assert.equal(w.fake.state.patches.length, 1); assert.equal(w.fake.state.infoPatches.length, 1); assert.equal(w.fake.state.retires.length, 1);
+  const m = JSON.parse(fs.readFileSync(path.join(w.b.dir, 'manifest.json'), 'utf8'));
+  assert.equal(m.rows_updated, 1); assert.deepEqual(m.changes.map(c => c.id), ['seed-102'], 'location changes list only the location updates');
+  assert.deepEqual(m.identity_changed.map(c => c.id), ['seed-100']); assert.equal(m.rows_identity_changed, 1); assert.deepEqual(m.info_filled.map(c => c.id), ['seed-101']); assert.deepEqual(m.retired, ['community-0f3a7c2e-1111-4222-8333-444455556666']);
+  const again = await runImport({ ...w.base, mode: 'apply', confirm: dry.token, productionFlag: true }); assert.equal(again.exit, 0); assert.equal(again.state, 'already-updated');
+});
+
+test('identity: a value equal to the current one is refused as a no-op, and says so; nothing is dropped silently', async () => {
+  for (const [set, what] of [[{ name: 'Boulder Barn' }, 'same name'], [{ suburb: 'Surry Hills' }, 'same suburb'], [{ types: ['indoor-bouldering'] }, 'same types'], [{ name: 'Boulder Barn', suburb: 'Surry Hills' }, 'all same'],
+    [{ name: 'Boulder Barn', suburb: 'Redfern' }, 'one same, one new'], [{ types: ['indoor-bouldering', 'top-rope'] }, 'same types on another gym (set equality)']]) {
+    const id = what.includes('another') ? 'seed-101' : 'seed-100';
+    const w = await world({ records: ix => [idRec(ix, id, set)], approved: slugged() });
+    const r = await runImport({ ...w.base });
+    assert.equal(r.exit, 2, what + '\n' + r.report); assert.ok(failing(r).includes('identity update changes every field it lists'), what + ': ' + failing(r).join());
+    assert.match(r.report, /already holds? the recorded value \(no-op\)/, what); assert.equal(w.fake.state.identityPatches.length, 0, what);
+  }
+  // the plan flags a half no-op as invalid with its own code; a whole no-op stays "existing, update-is-noop"
+  const half = await world({ records: ix => [idRec(ix, 'seed-100', { name: 'Boulder Barn', suburb: 'Redfern' })], approved: slugged() });
+  assert.equal(half.plan.counts.invalid, 1); assert.match(JSON.stringify(half.plan), /identity-noop/);
+  const whole = await world({ records: ix => [idRec(ix, 'seed-100', { name: 'Boulder Barn' })], approved: slugged() });
+  assert.equal(whole.plan.records[0].class, 'existing'); assert.equal(whole.plan.records[0].match.reason, 'update-is-noop');
+});
+
+// Production rows for the duplicate-protection tests: far from the PROD gyms, so only the pairs below interact.
+const dupRow = (id, name, lat, lng, over = {}) => ({ id, name, suburb: 'Test Town', state: 'NSW', country: 'AU', lat, lng, address: null, types: ['indoor-bouldering'], notes: null, photo: null, ...over });
+const DUPS = () => [dupRow('seed-200', 'Summit Climbing', -33.9, 151.2), dupRow('seed-201', 'Boulder Lab', -33.9005, 151.2005),   // ~70 m apart, unrelated names
+  dupRow('seed-202', 'Alpha Wall', -33.7, 151.1), dupRow('seed-203', 'Beta Rock', -33.70015, 151.1),                                 // ~17 m apart already (co-located), unrelated names
+  dupRow('seed-204', 'Peak One', -33.6, 151.0), dupRow('seed-205', 'Crux Climbing', -33.6007, 151.0)];                              // ~78 m apart, unrelated names
+const dupWorld = records => { const rows = [...BASE(), ...DUPS().map(r => prodRow({ ...r, created_at: 'x', updated_at: 'ts-0', submitted_by: null, slug: 'slug-' + r.id }))]; return world({ records, approved: rows, indexRows: rows }); };
+
+test('identity duplicate protection: a rename or suburb change that would make the gym a probable duplicate of ANOTHER approved gym is refused, naming the other gym', async () => {
+  // same name as another gym (Boulder Barn, seed-100, 1.4 km away): the matcher's "same name, pin differs"
+  const same = await dupWorld(ix => [idRec(ix, 'seed-102', { name: 'Boulder Barn' })]);
+  assert.equal(same.plan.counts.invalid, 1); assert.match(JSON.stringify(same.plan.records[0].errors), /rename-duplicates-other-gym/); assert.match(same.plan.records[0].errors[0].message, /seed-100 "Boulder Barn" -- same-name-but-pin-differs, \d+ m/);
+  const r1 = await runImport({ ...same.base }); assert.equal(r1.exit, 2); assert.ok(failing(r1).includes('every record is (still) an update'), failing(r1).join()); assert.match(r1.report, /would make it a probable duplicate of seed-100/); assert.equal(same.fake.state.identityPatches.length, 0);
+  // a related name within the matcher's "renamed" distance of another gym (seed-200 "Summit Climbing", ~70 m): "Summit Climbing Gym" is related
+  const rel = await dupWorld(ix => [idRec(ix, 'seed-201', { name: 'Summit Climbing Gym' })]);
+  assert.equal(rel.plan.counts.invalid, 1); assert.match(rel.plan.records[0].errors[0].message, /seed-200 "Summit Climbing" -- renamed-or-related-name-nearby, \d+ m/);
+  const r2 = await runImport({ ...rel.base }); assert.equal(r2.exit, 2); assert.equal(rel.fake.state.identityPatches.length, 0);
+  assert.equal(M.evaluatePair({ ...DUPS()[1], name: 'Summit Climbing Gym' }, DUPS()[0]).tier, 'probable', 'the plan uses the matcher\'s own pair rules (match.js)');
+  // an unrelated new name at the same place is fine; so is a type-only change, and a rename far from every related name
+  const fine = await dupWorld(ix => [idRec(ix, 'seed-201', { name: 'Boulder Lab Redfern' }), idRec(ix, 'seed-102', { types: FULL_TYPES }), idRec(ix, 'seed-100', { name: 'Boulder Barn Sydney' })]);
+  assert.equal(fine.plan.counts.invalid, 0, JSON.stringify(fine.plan.records.map(r => r.errors))); assert.equal(fine.plan.importable, true, fine.plan.blockers.join());
+  // a pair that was ALREADY flagged before the change is not "made" by it (seed-202/203 are 17 m apart: a rename between unrelated names keeps them co-located)
+  const pre = await dupWorld(ix => [idRec(ix, 'seed-203', { name: 'Beta Rocks Gym' })]);
+  assert.equal(pre.plan.counts.invalid, 0, JSON.stringify(pre.plan.records[0].errors));
+  // ... but giving two already co-located gyms the SAME name adds a name-based reason and is refused
+  const joined = await dupWorld(ix => [idRec(ix, 'seed-203', { name: 'Alpha Wall' })]);
+  assert.equal(joined.plan.counts.invalid, 1); assert.match(joined.plan.records[0].errors[0].message, /seed-202/);
+  // a suburb-only change is checked with the same rules: giving seed-102 (Granite Gym) the suburb of another gym of that name is only a duplicate if the names match, so it passes
+  const sub = await dupWorld(ix => [idRec(ix, 'seed-102', { suburb: 'Surry Hills' })]);
+  assert.equal(sub.plan.counts.invalid, 0, JSON.stringify(sub.plan.records[0].errors));
+});
+
+test('identity duplicate protection: two records in one batch that rename different gyms to related names nearby are both refused (order independent)', async () => {
+  const recs = ix => [idRec(ix, 'seed-204', { name: 'Vertex Climbing' }), idRec(ix, 'seed-205', { name: 'Vertex Gym' })];   // ~78 m apart; each alone is fine
+  for (const order of [recs, ix => recs(ix).reverse()]) {
+    const w = await dupWorld(order);
+    assert.equal(w.plan.counts.invalid, 2, JSON.stringify(w.plan.records.map(r => r.errors))); assert.ok(w.plan.records.every(r => /also changed in this batch/.test(r.errors[0].message)), 'both sides name the other record');
+    const r = await runImport({ ...w.base }); assert.equal(r.exit, 2); assert.equal(w.fake.state.identityPatches.length, 0);
+  }
+  for (const one of [ix => [idRec(ix, 'seed-204', { name: 'Vertex Climbing' })], ix => [idRec(ix, 'seed-205', { name: 'Vertex Gym' })]]) { const w = await dupWorld(one); assert.equal(w.plan.counts.invalid, 0); assert.equal(w.plan.counts.update, 1); }
+});
+
+test('stateOf for identity records: before = hash is expect_h; after = the fields equal the record (types in order) and the restored row hashes to expect_h; anything else is changed', () => {
+  const { stateOf } = require('../scripts/lib/gym-import/updater');
+  const base = { ...BASE().find(r => r.id === 'seed-101'), slug: 's' };   // Vertical Works, Fitzroy, [indoor-bouldering, top-rope]
+  const e = S.toEntry(base), rec1 = { id: 'seed-101', expect_h: e.h, set: { name: 'Vertical Works Fitzroy', suburb: 'Fitzroy North', types: FULL_TYPES } };
+  const applied = { ...base, ...rec1.set };
+  assert.equal(stateOf(base, e, rec1).state, 'before'); assert.equal(stateOf(base, e, rec1).updatedAt, 'ts-0');
+  const a = stateOf(applied, e, rec1); assert.equal(a.state, 'after'); assert.equal(a.h, S.toEntry(applied).h); assert.notEqual(a.h, e.h);
+  assert.equal(a.h, S.toEntry({ ...base, ...rec1.set }).h, 'the after-hash is the content hash of the researched row with the set applied');
+  assert.equal(stateOf({ ...applied, notes: 'edited since' }, e, rec1).state, 'changed', 'another compared field changed as well');
+  assert.equal(stateOf({ ...applied, lat: -37.8 }, e, rec1).state, 'changed'); assert.equal(stateOf({ ...applied, address: 'elsewhere' }, e, rec1).state, 'changed');
+  assert.equal(stateOf({ ...applied, name: 'Another Name' }, e, rec1).state, 'changed', 'a field holding a third value');
+  assert.equal(stateOf({ ...applied, suburb: 'Fitzroy' }, e, rec1).state, 'changed', 'only some fields applied');
+  assert.equal(stateOf({ ...applied, types: ['lead-climbing', 'top-rope', 'indoor-bouldering'] }, e, rec1).state, 'changed', 'types in another order: not byte for byte');
+  assert.equal(stateOf({ ...base, notes: 'edited' }, e, rec1).state, 'changed', 'before needs the exact researched hash');
+  assert.equal(stateOf({ ...base, status: 'rejected' }, e, rec1).state, 'not-approved'); assert.equal(stateOf(undefined, e, rec1).state, 'missing');
+  const same = stateOf(base, e, { ...rec1, set: { name: 'Vertical Works' } });
+  assert.equal(same.state, 'changed'); assert.equal(same.noop, true, 'a no-op is never "before": it can not be written');
+  // trailing/leading whitespace differences are real differences (the database value must equal the record)
+  assert.equal(stateOf({ ...applied, name: 'Vertical Works Fitzroy ' }, e, rec1).state, 'changed');
+});
+
+test('identity verification: a database that moved a slug, or changed another field of a target or another spot during the writes, is a failure record (exit 4), never a manifest', async () => {
+  for (const [hook, what] of [
+    [(row0) => { row0.slug = 'a-new-slug'; }, 'slug of a target changed'],
+    [(row0) => { row0.notes = 'trigger touched notes'; }, 'another compared field of a target changed'],
+    [(row0) => { row0.name = row0.name + ' (trigger)'; }, 'the stored name is not the approved one'],
+  ]) {
+    const w = await world({ records: ID3, approved: slugged() }); const dry = await runImport({ ...w.base });
+    w.fake.state.hooks.afterIdentityPatch = (row0, u) => { if (u.id === 'seed-101') hook(row0); };
+    const r = await runImport({ ...w.base, mode: 'apply', confirm: dry.token, productionFlag: true });
+    assert.equal(r.exit, 4, what + '\n' + r.report); assert.equal(fs.existsSync(path.join(w.b.dir, 'manifest.json')), false, what); assert.equal(fs.existsSync(path.join(w.b.dir, 'import-failure.json')), true, what);
+  }
+  // another spot's slug moved during the writes
+  const w2 = await world({ records: ID3, approved: slugged() }); const dry2 = await runImport({ ...w2.base });
+  w2.fake.state.hooks.beforePatch = (u, st) => { if (u.id === 'seed-102') st.approved.find(r => r.id === 'community-0f3a7c2e-1111-4222-8333-444455556666').slug = 'moved'; };
+  const r2 = await runImport({ ...w2.base, mode: 'apply', confirm: dry2.token, productionFlag: true });
+  assert.equal(r2.exit, 4, r2.report); assert.match(r2.report, /stored slug changed: community-0f3a7c2e/);
+  // an approved count that moves (a spot removed during the writes)
+  const w3 = await world({ records: ID3, approved: slugged() }); const dry3 = await runImport({ ...w3.base });
+  w3.fake.state.hooks.beforePatch = (u, st) => { if (u.id === 'seed-102') st.approved.find(r => r.id === 'community-0f3a7c2e-1111-4222-8333-444455556666').status = 'rejected'; };
+  const r3 = await runImport({ ...w3.base, mode: 'apply', confirm: dry3.token, productionFlag: true });
+  assert.equal(r3.exit, 4, r3.report); assert.match(r3.report, /approved count/);
+});
+
+test('target.js updateSpotIdentity: refuses without the update gate, with anything but the approved change, any non-identity key (a slug included) or an invalid value; sends one pinned PATCH with exactly the approved set', async () => {
+  const api = new T.Api({ url: 'https://example.supabase.co', serviceKey: 'service-key-xxxxxxxx', anonKey: 'anon-key-xxxxxxxx' });
+  const sent = []; api._send = async (method, q, o) => { sent.push({ method, q, o }); return { ok: true, status: 200, json: [{}] }; };
+  const sha = (updates, retires = []) => crypto.createHash('sha256').update(JSON.stringify(T.opsPayload(updates, retires))).digest('hex');
+  const updates = [{ id: 'seed-100', set: { name: 'Boulder Barn Sydney', suburb: 'Redfern', types: ['indoor-bouldering', 'top-rope'] }, expect_h: '0123456789abcdef' }];
+  const payloadSha = sha(updates), gate = T.mintUpdateGate({ batchId: 'b', token: 't', updates, payloadSha });
+  const u = { id: 'seed-100', set: updates[0].set, updatedAt: '2026-09-24T01:02:03.123456+00:00' };
+  await assert.rejects(api.updateSpotIdentity(u, null), /no update gate/);
+  await assert.rejects(api.updateSpotIdentity(u, undefined), /no update gate/);
+  await assert.rejects(api.updateSpotIdentity(u, T.mintWriteGate({ batchId: 'b', token: 't', rows: [], payloadSha })), /no update gate/, 'the insert gate cannot authorise an identity correction');
+  await assert.rejects(api.updateSpotIdentity(u, { ...gate }), /no update gate/, 'a copied gate is not a gate');
+  await assert.rejects(api.updateSpotIdentity(u, Object.freeze({ [Object.getOwnPropertySymbols(gate)[0]]: true, updates, retires: [], payloadSha })), /no update gate/, 'a hand-built look-alike is not a gate');
+  await assert.rejects(api.updateSpotIdentity(u, T.mintUpdateGate({ batchId: 'b', token: 't', updates, payloadSha: 'f'.repeat(64) })), /hash mismatch/);
+  await assert.rejects(api.updateSpotIdentity({ ...u, set: { ...u.set, name: 'Hijacked' } }, gate), /not the approved one/, 'a different body');
+  await assert.rejects(api.updateSpotIdentity({ ...u, set: { name: u.set.name } }, gate), /not the approved one/, 'a subset of the approved body');
+  await assert.rejects(api.updateSpotIdentity({ ...u, id: 'seed-101' }, gate), /not the approved one/, 'a different gym');
+  const bad = async (set, re) => { const g = T.mintUpdateGate({ batchId: 'b', token: 't', updates: [{ id: 'seed-100', set, expect_h: '0123456789abcdef' }], payloadSha: sha([{ id: 'seed-100', set, expect_h: '0123456789abcdef' }]) }); await assert.rejects(api.updateSpotIdentity({ ...u, set }, g), re, JSON.stringify(set)); };
+  await bad({ name: 'Boulder Barn Sydney', lat: 1, lng: 2 }, /only name\/suburb\/types/); await bad({ name: 'X', notes: 'x' }, /only name\/suburb\/types/); await bad({ name: 'X', slug: 'new-slug' }, /only name\/suburb\/types/);
+  await bad({ slug: 'new-slug' }, /only name\/suburb\/types/); await bad({ name: 'X', status: 'rejected' }, /only name\/suburb\/types/); await bad({ website: 'https://example.com/' }, /only name\/suburb\/types/); await bad({}, /only name\/suburb\/types/);
+  await bad({ name: '' }, /name is required/); await bad({ name: ' X' }, /name has leading\/trailing whitespace/); await bad({ name: 'a\nb' }, /name contains control characters/); await bad({ name: 'x'.repeat(201) }, /name is 201 chars/); await bad({ name: 7 }, /name is required/);
+  await bad({ suburb: '' }, /suburb is required/); await bad({ suburb: 'y'.repeat(201) }, /suburb is 201 chars/); await bad({ suburb: 'a\tb' }, /suburb contains control characters/);
+  await bad({ types: [] }, /types must be a non-empty array/); await bad({ types: 'top-rope' }, /types must be a non-empty array/); await bad({ types: ['nope'] }, /unknown type/); await bad({ types: ['top-rope', 'top-rope'] }, /duplicates/);
+  await bad({ types: ['top-rope', 'indoor-bouldering'] }, /canonical order/); await bad({ types: [3] }, /unknown type/);
+  await assert.rejects(api.updateSpotIdentity({ ...u, id: '../x' }, gate), /not the approved one|bad id/);
+  await assert.rejects(api.updateSpotIdentity({ ...u, updatedAt: '' }, gate), /updated_at/);
+  await assert.rejects(api.updateSpotLocation(u, gate), /only address\/lat\/lng/, 'the location write cannot carry identity fields');
+  await assert.rejects(api.updateSpotInfo(u, gate), /only website\/hours\/day_pass\/facilities/, 'the information write cannot carry identity fields');
+  await assert.rejects(api.retireSpot({ id: 'seed-100', reason: 'permanently closed (test)', updatedAt: 'x' }, gate), /not the approved one/, 'an identity gate retires nothing');
+  assert.equal(sent.length, 0, 'nothing sent for any refusal');
+  await api.updateSpotIdentity(u, gate);
+  assert.equal(sent.length, 1); assert.equal(sent[0].method, 'PATCH'); assert.equal(sent[0].o.service, true);
+  assert.equal(sent[0].q, '/rest/v1/spots?id=eq.seed-100&status=eq.approved&updated_at=eq.2026-09-24T01%3A02%3A03.123456%2B00%3A00');
+  assert.equal(sent[0].o.body, JSON.stringify(updates[0].set), 'the body is exactly the approved set'); assert.ok(!/slug/.test(sent[0].o.body), 'no slug in the body'); assert.match(sent[0].o.headers.Prefer, /return=representation/);
+  assert.deepEqual(T.IDENTITY_FIELDS, ['name', 'suburb', 'types']);
+});
+
+test('identity confirmation token: bound to the exact values (a different name, suburb or types never matches)', async () => {
+  const { confirmToken } = require('../scripts/lib/gym-import/updater');
+  const mk = set => confirmToken({ batchId: 'b', planSha: 'p', payload: crypto.createHash('sha256').update(JSON.stringify([{ id: 'seed-100', set, expect_h: '0123456789abcdef' }])).digest('hex'), host: 'h', kind: 'local', coverage: 'FULL', liveSha: 'l' });
+  assert.notEqual(mk({ name: 'A' }), mk({ name: 'B' })); assert.notEqual(mk({ suburb: 'A' }), mk({ suburb: 'B' })); assert.notEqual(mk({ types: ['top-rope'] }), mk({ types: ['indoor-bouldering', 'top-rope'] }));
+  assert.equal(mk({ name: 'A' }), mk({ name: 'A' }));
+  const a = await world({ records: ix => [idRec(ix, 'seed-100', { name: 'Boulder Barn Sydney' })], approved: slugged() }), b = await world({ records: ix => [idRec(ix, 'seed-100', { name: 'Boulder Barn Redfern' })], approved: slugged() });
+  assert.notEqual((await runImport({ ...a.base })).token, (await runImport({ ...b.base })).token, 'the token a dry-run prints is bound to the exact corrections');
+  const w = await world({ records: ix => [idRec(ix, 'seed-100', { name: 'Boulder Barn Sydney' })], approved: slugged() });
+  const dry = await runImport({ ...w.base });
+  const swapped = fs.readFileSync(path.join(w.b.dir, 'records.ndjson'), 'utf8').replace('Boulder Barn Sydney', 'Boulder Barn Elsewhere');
+  fs.writeFileSync(path.join(w.b.dir, 'records.ndjson'), swapped);
+  const r = await runImport({ ...w.base, mode: 'apply', confirm: dry.token, productionFlag: true });
+  assert.equal(r.exit, 2); assert.equal(w.fake.state.identityPatches.length, 0, 'records edited after the dry-run: the committed plan.json is stale, nothing is written');
+});
+
+test('identity: name, suburb and types are part of the content hash (an identity correction always changes it); the slug is not', () => {
+  const N = require('../scripts/lib/gym-import/normalize');
+  const g = BASE()[0];
+  assert.notEqual(N.contentHash(g), N.contentHash({ ...g, name: g.name + ' 2' })); assert.notEqual(N.contentHash(g), N.contentHash({ ...g, suburb: 'Elsewhere' })); assert.notEqual(N.contentHash(g), N.contentHash({ ...g, types: ['top-rope'] }));
+  assert.equal(N.contentHash(g), N.contentHash({ ...g, slug: 'another-slug' }), 'the slug is not part of the content hash');
 });

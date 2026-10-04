@@ -58,7 +58,7 @@ http(s) URL (same `safeUrl` rule as the app). Any other field (`status`, `commun
 **Record (update existing gym):** `{"intent":"update","id":"<existing id>","reason":"why","set":{"types":[...]}}` — only
 `name, suburb, state, lat, lng, types, address, notes, photo, website, hours, day_pass, facilities` may be set for *planning*; a full record that differs from an existing
 gym is never treated as an update. Optional `expect_h` (the gym's content hash when researched): the plan marks the record invalid
-if the index no longer has that content. **Only location updates and gym-information fills (`website`, `hours`, `day_pass`, `facilities`) can be written** (see "Updating the location of existing gyms" and "Filling gym information (website, hours, day pass, facilities)").
+if the index no longer has that content. **Only location updates, gym-information fills (`website`, `hours`, `day_pass`, `facilities`) and identity corrections (`name`, `suburb`, `types`) can be written** (see "Updating the location of existing gyms", "Filling gym information (website, hours, day pass, facilities)" and "Correcting gym identity (name, suburb, type tags)").
 
 ### Staging records that already exist as a JSON array
 `node scripts/gym-import.js stage-from-file <source.json> --slug <slug> --date YYYY-MM-DD --description "..." [--decisions <decisions.json>]`
@@ -359,6 +359,41 @@ Run (batch under `import/batches/`; `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KE
 ```
 node scripts/gym-import.js validate <batch>            # offline; checks every website/hours/day_pass/facilities value
 node scripts/gym-import.js plan <batch>                # writes plan.json + report.md; review report.md, commit both
+node scripts/gym-import.js import <batch> --dry-run    # live read-only preflight (service-role key => FULL coverage + the confirmation token)
+node scripts/gym-import.js import <batch> --apply --confirm <token> --i-understand-this-writes-to-production
+node scripts/gym-import.js import <batch> --verify     # afterwards; then build-index --live and commit the manifest
+```
+
+### Correcting gym identity (name, suburb, type tags)
+A maintenance batch can **correct** the `name`, `suburb` and `types` of existing approved gyms (a wrong or outdated name, a mistyped suburb, missing/extra type tags) through the same updater, gates, pin and
+verification as a location update. Before this, these fields could only be changed in the app's edit form. Replacing a value is allowed; clearing one is not.
+
+Record: `{"intent":"update","id":"seed-884","expect_h":"<16 hex>","reason":"why (>= 8 chars)","source":"<official URL, max 400>","set":{"name":"…","suburb":"…","types":["indoor-bouldering","top-rope"]}}`
+- `set` holds one or more of `name`, `suburb`, `types` and **nothing else** (an *identity update*): never mixed with location or information fields in one record (`mixed-families`). One record per gym, at most
+  100 records; a batch may mix identity updates, location updates, information fills and retirements across **different** gyms. `expect_h` and `source` (the gym's official site) are required.
+- `name` and `suburb`: trimmed, single-line, non-empty text of at most 200 characters (`LIMITS` in `validate.js`), no control characters. `types`: a non-empty array of **unique** values from
+  `indoor-bouldering | top-rope | lead-climbing`, **listed in exactly that order** (so the stored `text[]` equals the record byte for byte; compared with deep equality). Anything else is invalid, never silently cleaned.
+- A value equal to the gym's current one is refused as a **no-op** (`identity update changes every field it lists`, naming `<id>.<field>`); drop that field or gym from the batch. `types` are compared as a set (order is not a change).
+- Unlike gym information, these fields **are** part of the content hash and of the index, so the states come from the hash: **before** = approved and hash = `expect_h`; **after** = name/suburb/types hold exactly the
+  record **and** the row with those fields put back to the researched values hashes to `expect_h` (i.e. the live hash equals the hash of the researched row with the set applied: every other compared field is
+  unchanged); anything else (a moderator edit, a third value, a different field changed too) = **changed**, refused, nothing written. All *after* = already applied (nothing written; a recovery manifest on `--apply`
+  if none exists); a before/after mix is refused. Rebuilding the index afterwards makes `expect_h` stale, exactly as for a location update, so re-run or verify a batch before `build-index --live`.
+- **Duplicate protection** (`plan.js identityDuplicates`, the matcher's own `match.js evaluatePair` rules): a rename or suburb change that would make the gym look like a duplicate of **another** approved gym
+  (same country; e.g. the same name within 15 km, a related name within 100 m, the same address) makes the record `invalid` (`rename-duplicates-other-gym`), naming the other gym, the reason and the distance. A pair
+  already flagged before the change is not "made" by it (unless the change adds a name-based reason to a purely co-located pair). Two records of the batch that rename different gyms to related names nearby are
+  both refused, in any record order (the other record is evaluated with its new name). Type-only changes skip this check. Pending submissions are not part of it (only approved gyms).
+- `plan.json`/`report.md` show `field: before → after` for each field under "CORRECTS identity …"; `import --dry-run` lists them too ("Would correct gym identity"), with the token bound to the exact values.
+- The write: `Api.updateSpotIdentity` (behind the same update gate; refuses a copied gate, a payload-hash mismatch, any change other than the approved one, any key outside `name/suburb/types` — a `slug` included —
+  and re-validates the values), one `PATCH` per gym filtered by `id` + `status=approved` + the exact `updated_at` seen at the final re-check, body exactly the approved set; 0 rows matched = refusal. The
+  stored **slug is never sent**: the database sets it once and never changes it (`spots_set_slug`), so a rename does not move the gym's `/gym/<slug>` URL.
+- **Verification:** every identity target in its *after* state **and** its content hash equal to the researched row with the set applied; approved count unchanged; every other spot unchanged vs the index; no stored
+  slug changed (any spot); then `manifest.json` (`kind: "update"`) lists them apart: `rows_identity_changed` and `identity_changed[{id, fields, expect_h, after_h}]` (`changes`/`rows_updated` count location updates
+  only; `ids` lists every target) — or `import-failure.json` and exit 4. `history.js` reverts identity changes like location changes (`types` compared as a set: the index keeps them sorted).
+
+Run (same commands as the other maintenance batches; batch under `import/batches/`; `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` exported in the shell, never in a file):
+```
+node scripts/gym-import.js validate <batch>            # offline; checks every name/suburb/types value and the one-family rule
+node scripts/gym-import.js plan <batch>                # writes plan.json + report.md (before -> after, duplicate protection); review, commit both
 node scripts/gym-import.js import <batch> --dry-run    # live read-only preflight (service-role key => FULL coverage + the confirmation token)
 node scripts/gym-import.js import <batch> --apply --confirm <token> --i-understand-this-writes-to-production
 node scripts/gym-import.js import <batch> --verify     # afterwards; then build-index --live and commit the manifest
