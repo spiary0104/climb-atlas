@@ -6,10 +6,10 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 (delete them; git keeps history). Keep this file under 60 lines.
 
 ## In progress
-### Gym information — 767 gyms covered (PRs #44-#46); follow-ups #47-#49; batch 5 (non-metro) staged, NOT applied
-- #47 24 location fixes, #49 26 identity edits (part 2 after #47). Batch 5 (`import/info-research/batch-5/NOTES.md`): 520 non-metro gyms;
-  fills gym-info-13..17 (468), nonmetro-retire (21), nonmetro-locations-1+2 (64+50). Apply fills/retire before locations.
-  42 reviews resolved (REVIEW-RESOLUTIONS.md; review-* batches, 4 new gyms). Next: 456 gyms in unmeasured countries (IT, NO, HK, SG, IN, NZ, BE...); CN/KR need a source decision.
+### Gym information — batch 5 (+483 enriched, +25 retired) and all follow-ups APPLIED 2026-10-04 (PRs #44-#47 merged; #48-#50 open)
+- Applied + verified (704 records): batch 5 fills (468 + 15), 25 retirements, 4 new gyms, 126 location fixes, 52 identity edits
+  (#49 + review). `import/info-research/batch-5/{NOTES,REVIEW-RESOLUTIONS}.md`. Merge #48 -> #49 -> #50 to ship the sitemap.
+  Re-check: Arkose Cholet (not open), Klaettra Motala (temp. closed). Next: 456 gyms in unmeasured countries; CN/KR need a source decision.
 ### Final-stage sprint (gym information, metros, SEO, perf) — DONE: PR #37 merged and live in production 2026-10-03
 - Status: PR #37 (`integration/final-stage`) merged to master 2026-10-03 (merge commit `b58a79e`) and deployed by Vercel; production
   smoke test passed (/, gym, metro, region, /in, sitemap.xml 3,299 URLs, robots.txt, bot link previews; no console errors at
