@@ -192,6 +192,13 @@ test('history: an identity update (name/suburb/types) is reverted like a locatio
   assert.equal(r.byId.get('seed-101').h, contentHash(PROD[1]));
   const live = H.revertLiveRows([PROD[0], RENAMED, ...PROD.slice(2)].map(p => ({ ...p })), root);
   assert.equal(live.reverted, 1); assert.equal(live.rows.find(x => x.id === 'seed-101').name, 'Vertical Works'); assert.deepEqual(live.rows.find(x => x.id === 'seed-101').types, ['indoor-bouldering', 'top-rope']);
+  // rows that carry only some columns (validate-reconciled selects id,name,country,lat,lng,address: no suburb/types) are still reverted
+  // on the fields they carry; a carried field holding another value still blocks the revert (drift shows)
+  const narrow = p => ({ id: p.id, name: p.name, country: p.country, lat: p.lat, lng: p.lng, address: p.address });
+  const slim = H.revertLiveRows([PROD[0], RENAMED, ...PROD.slice(2)].map(narrow), root);
+  assert.equal(slim.reverted, 1); assert.equal(slim.rows.find(x => x.id === 'seed-101').name, 'Vertical Works'); assert.equal('suburb' in slim.rows.find(x => x.id === 'seed-101'), false);
+  const slimDrift = H.revertLiveRows([PROD[0], { ...RENAMED, name: 'Someone Else Renamed It' }, ...PROD.slice(2)].map(narrow), root);
+  assert.equal(slimDrift.reverted, 0); assert.equal(slimDrift.rows.find(x => x.id === 'seed-101').name, 'Someone Else Renamed It');
   // an index that does not hold the updated value (the batch is not reflected) throws instead of being "reverted"
   const wrong = build([PROD[0], { ...RENAMED, name: 'Someone Else Renamed It' }, ...PROD.slice(2)]);
   assert.throws(() => H.revertIndex(wrong.index, wrong.root), /seed-101\.name in the index is not the updated value/);
