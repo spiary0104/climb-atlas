@@ -1,0 +1,55 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-05-pin-fixes-2",
+ "index": {
+  "sha256": "e1d9ef5216f87602ccefe7b8e4fac9c10be4c8fa3e59d6e76219e3f5d3154dad",
+  "count": 2385,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [],
+ "counts": {
+  "records": 1,
+  "new": 0,
+  "existing": 0,
+  "update": 1,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 1
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "58c9702df2ca30538d93a2b22316938c4513d7425e6a424a15c8e7d87f96a29f",
+ "records": [
+  {
+   "line": 1,
+   "class": "update",
+   "id": "seed-1175",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 35.1722187,
+     "after": 35.2049069
+    },
+    {
+     "field": "lng",
+     "before": 126.8172814,
+     "after": 126.819462
+    }
+   ],
+   "expect_h": "137b23a178b6493c",
+   "update_reason": "Pin about 3.6 km from the gym at 507 Imbangul-daero (Allpins Building D, B102); the gym own Naver Place pin and Kakao agree within 2 m (research korea-holds kr-h-002)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 3640 m"
+    }
+   ]
+  }
+ ]
+}
