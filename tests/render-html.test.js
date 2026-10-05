@@ -214,7 +214,8 @@ test('gym page: the minimum page renders no empty sections; the photo page shows
   assert.ok(/aboutTitle/.test(withPhoto));
   for (const bad of ['javascript:alert(1)', 'data:image/png;base64,AAA', '//evil/x.png']) assert.ok(!/gym-hero/.test(page.gymPageHtml({ ...minimal, photo: bad }, pageCtx())), bad);
   const acts = tags(html).filter(t => t.attrs['data-page-action']).map(t => t.attrs['data-page-action']);
-  assert.deepEqual(acts, ['edit', 'edit', 'report', 'checkin', 'save', 'climbed'], 'prompt, community actions, then the action row (Check in first, sec. 11.1)');
+  // Share (beside the name, in the header) comes first; the action row after the prompt and community actions is unchanged.
+  assert.deepEqual(acts, ['share', 'edit', 'edit', 'report', 'checkin', 'save', 'climbed'], 'Share by the name, prompt, community actions, then the action row (Check in first, sec. 11.1)');
   assert.equal(tags(html).find(t => t.attrs['data-page-action'] === 'checkin').attrs.class, 'btn btn-primary', 'Check in is the one primary action');
   const done = page.gymPageHtml(minimal, pageCtx({ checkedIn: true }));
   assert.ok(!/data-page-action="checkin"/.test(done) && /Checked in today/.test(done) && !/btn-primary/.test(done), 'after a check-in: "Checked in today", disabled, no primary');
@@ -642,4 +643,39 @@ test('gym page Essentials: the Today line gets a dot and the word only when the 
   assert.match(info.essentialsRowsHtml(g, { today: 'fri' }), /<summary>Today: 6am-10pm<\/summary>/, 'unknown: as before');
   assert.match(info.essentialsRowsHtml(g, { today: 'fri', hoursStatus: 'bogus' }), /<summary>Today: 6am-10pm<\/summary>/);
   assert.match(info.essentialsRowsHtml(g, { today: 'tue', hoursStatus: 'open' }), /<summary>Opening hours<\/summary>/, 'no entry for today: no state word');
+});
+
+// ----- Share on the gym page (beside the name; the action row stays at four) ----------------------------------------
+test('gym page Share: a compact icon button in the title row, labelled "Share <name>", outside the four-action row', async () => {
+  const { page } = await modules;
+  const html = page.gymPageHtml(benignSpot, pageCtx());
+  const all = tags(html);
+  const share = all.filter(t => t.attrs['data-page-action'] === 'share');
+  assert.equal(share.length, 1, 'exactly one Share control');
+  assert.equal(share[0].tag, 'button'); assert.equal(share[0].attrs.type, 'button');
+  assert.equal(share[0].attrs.class, 'btn btn-secondary btn-icon gym-share', 'the existing icon-button tier (40px, 44px hit area), not a new style');
+  assert.equal(share[0].attrs['data-spot-id'], benignSpot.id);
+  assert.equal(share[0].attrs['aria-label'], 'Share Boulder Barn', 'screen readers hear which gym');
+  // placement: inside the title row next to the h1, before the action row; the action row is still exactly four actions
+  const titleRow = html.indexOf('class="gym-title-row"'), h1 = html.indexOf('<h1 class="page-title">'), btn = html.indexOf('data-page-action="share"'), row = html.indexOf('class="gym-actions"');
+  assert.ok(titleRow > -1 && titleRow < h1 && h1 < btn && btn < row, 'title row > h1 > Share, all before the action row');
+  const actionRow = html.slice(row, html.indexOf('</div>', row));
+  assert.ok(!/data-page-action="share"/.test(actionRow), 'Share is not in the action row');
+  assert.deepEqual([...actionRow.matchAll(/data-page-action="([a-z]+)"/g)].map(m => m[1]), ['checkin', 'save', 'climbed']);
+  assert.match(actionRow, /Directions<\/a>$/, 'Directions closes the four-action row');
+  assert.equal((actionRow.match(/class="btn /g) || []).length, 4, 'four actions');
+  // it renders for everyone (no sign-in), and after a check-in too
+  assert.ok(/data-page-action="share"/.test(page.gymPageHtml(benignSpot, pageCtx({ checkedIn: true }))));
+});
+
+test('gym page Share: hostile gym names stay text in the accessible label', async () => {
+  const { escapeHtml } = await import('../js/modules/html-safe.js');
+  const { page } = await modules;
+  for (const bad of HOSTILE) {
+    const html = page.gymPageHtml({ ...benignSpot, name: bad }, pageCtx());
+    const share = tags(html).find(t => t.attrs['data-page-action'] === 'share');
+    // the tokenizer keeps attribute text as written: the label is the name escaped exactly once (html-safe.js escapeHtml)
+    assert.equal(share.attrs['aria-label'], 'Share ' + escapeHtml(bad), 'label is the escaped name: ' + bad);
+    assert.ok(!/<img|<script|<svg\/onload|onmouseover='/i.test(html.slice(html.indexOf('gym-title-row'), html.indexOf('</h1>') + 200)), 'no markup from the name: ' + bad);
+  }
 });

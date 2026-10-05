@@ -58,6 +58,13 @@
 .gym-page > .gym-layout{grid-area:layout;}
 .gym-header{min-width:0;}
 .gym-heading{min-width:0;}
+/* The name and its Share control: the title takes only the width its text needs (so Share follows the name and never
+   drifts towards the action row) and wraps when it must, so long names never push the button off-screen or overflow. */
+.gym-title-row{display:flex;align-items:flex-start;gap:var(--space-3);}
+.gym-title-row .page-title{flex:0 1 auto;min-width:0;overflow-wrap:anywhere;}
+.gym-share{flex:none;}
+/* .btn-icon's ::after sits in the padding box, so a bordered (secondary) icon button gets 42px; widen by the border to 44px. */
+.gym-share::after{inset:calc((var(--size-touch-min) - var(--size-control-md)) / -2 - var(--border-width));}
 .gym-meta{display:flex;flex-wrap:wrap;align-items:center;gap:var(--space-2);margin:var(--space-3) 0 var(--space-2);font-size:var(--type-text-md-size);line-height:var(--type-text-md-line);color:var(--color-text-secondary);}
 .gym-meta-tags{display:inline-flex;flex-wrap:wrap;gap:var(--space-1);}
 .gym-meta-tags:empty{display:none;}
