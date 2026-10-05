@@ -81,7 +81,10 @@ async function init(){
   const shown = document.querySelector('#view .gym-page [data-spot-id]');
   render({ page: !!window.auth.user || !shown || appState.contributorCounts.has(shown.dataset.spotId) });
   if(appState.usingFallback){
-    document.getElementById('offlineBanner').classList.remove('hidden');
+    // The text lives here, not in the static shell: a crawler or reader mode must never pick up a warning that is not true.
+    const banner = document.getElementById('offlineBanner');
+    banner.textContent = 'Showing offline seed data — Supabase isn’t configured yet, so live data, sign-in, and marks are unavailable. See README.md.';
+    banner.classList.remove('hidden');
   }
 }
 

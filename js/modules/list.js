@@ -94,11 +94,20 @@ export const INTRO_KEY = 'bouldeer_intro_seen';
 function renderIntro(){
   const el = $('exploreIntro');
   let seen = false;
-  try{ seen = localStorage.getItem(INTRO_KEY) === '1'; localStorage.setItem(INTRO_KEY, '1'); }catch(err){ /* private mode: show it */ }
+  try{ seen = localStorage.getItem(INTRO_KEY) === '1'; }catch(err){ /* private mode: show it */ }
   if(seen) return;
   el.innerHTML = introHtml();
   el.hidden = false;
   el.querySelector('[data-intro-close]').addEventListener('click', () => { el.hidden = true; });
+  // Counted as seen only once Explore is actually on screen: a first visit that lands on a shared gym page (Explore
+  // hidden behind it) must still get the line when the person reaches the map.
+  const markSeen = () => { try{ localStorage.setItem(INTRO_KEY, '1'); }catch(err){ /* private mode */ } };
+  const explore = document.getElementById('explore');
+  if(explore && !explore.hidden) markSeen();
+  else if(explore && typeof MutationObserver === 'function'){
+    const mo = new MutationObserver(() => { if(!explore.hidden){ markSeen(); mo.disconnect(); } });
+    mo.observe(explore, { attributes: true, attributeFilter: ['hidden'] });
+  }
 }
 
 // Featured destinations ("Worth traveling for", kept at the owner's request): only at world/continent zoom.

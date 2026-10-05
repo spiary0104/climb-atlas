@@ -26,7 +26,7 @@ function makeWorker() {
     const m = stores.get(name);
     return {
       match: async (req) => { const r = m.get(typeof req === 'string' ? req : req.url); return r ? r.clone() : undefined; },
-      put: async (req, res) => { puts.push({ cache: name, url: req.url }); m.set(req.url, res); },
+      put: async (req, res) => { puts.push({ cache: name, url: req.url, headers: [...(req.headers ? req.headers.keys() : [])] }); m.set(req.url, res); },
       delete: async (req) => m.delete(typeof req === 'string' ? req : req.url),
       keys: async () => [...m.keys()].map((u) => new Request(u)),
       // Like the real Cache API: URLs resolve against the worker's location, and the whole batch rejects on a duplicate
@@ -131,6 +131,11 @@ test('the public approved-spots read IS cached network-first and still works off
   // the same public URL requested by a signed-in user is the same public data: still fine
   const signedIn = await w.dispatchFetch(get(PUBLIC_SPOTS, { apikey: ANON, Authorization: 'Bearer user-jwt' }));
   assert.ok(signedIn.responded);
+  // The stored key is the URL alone: the Cache API persists Request headers, and the signed-in person's JWT must not be
+  // written to disk next to public rows.
+  w.net.impl = async () => new Response('[]', { status: 200, headers: { 'Content-Type': 'application/json' } });
+  await w.dispatchFetch(get(PUBLIC_SPOTS, { apikey: ANON, Authorization: 'Bearer user-jwt' }));
+  for (const p of w.puts.filter((x) => x.cache === 'climbatlas-data-' + CUR)) assert.deepEqual(p.headers, [], 'data cache key carries headers: ' + p.headers);
 });
 
 test('a Supabase response that declares itself private / no-store is not stored even on the public URL', async () => {

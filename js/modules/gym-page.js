@@ -15,7 +15,7 @@ import { setVerified } from './moderation.js';
 import { openEditModal, openReportModal } from './modals.js';
 import { gymPageHtml, notFoundHtml, pageSkeletonHtml } from './page-html.js';
 import { gymDayKey, status } from './hours.js';
-import { refreshPage, registerView, setPageTitle } from './router.js';
+import { currentRoute, refreshPage, registerView, setPageTitle } from './router.js';
 import { provenanceLine, publicNotes } from './provenance.js';
 import { gymSeo } from './seo-meta.js';
 import { cityPath, countryPath, gymPath, metroPath, regionPath } from './slug.js';
@@ -69,6 +69,14 @@ function hoursContext(g){
 }
 const visibleInfo = g => JSON.stringify([g.description || '', g.website || '', g.hours || null, g.day_pass || '', g.facilities || [], publicNotes(g.notes)]);
 
+// Late reads re-render only while this gym's page is still the one showing: a person who has moved on to another page
+// (Nearby, Back, /add) must not have it torn down under them. The reads are batched so the page re-renders once, not four
+// times (each render rebuilds the mini map).
+function refreshIfShowing(g){
+  const r = currentRoute();
+  if(r && r.name === 'gym' && findGym(r.params.slug) === g) refreshPage();
+}
+
 function enter({ slug }, view){
   destroyMiniMaps();
   if(!appState.loaded){ view.innerHTML = pageSkeletonHtml(); setPageTitle('Loading'); return; }
@@ -81,7 +89,7 @@ function enter({ slug }, view){
   // phones); for most gyms the list columns already hold everything visible.
   if(!g._full){
     const before = visibleInfo(g);
-    loadFullSpot(g).then(full => { if(full._full && visibleInfo(full) !== before && document.querySelector(`#view .gym-page [data-spot-id="${CSS.escape(g.id)}"]`)) refreshPage(); });
+    loadFullSpot(g).then(full => { if(full._full && visibleInfo(full) !== before) refreshIfShowing(g); });
   }
   view.innerHTML = gymPageHtml(g, {
     crumbs: placeCrumbs(g),
@@ -102,15 +110,17 @@ function enter({ slug }, view){
   setPageTitle(gymSeo(g, { region: regionOf(g), country: COUNTRY_LABELS[g.country] || g.country }).title);
   mountMiniMaps(view);
   // Provenance (added by / contributors / last edited) and, for the signed-in editor, their own latest proposal.
-  if(!appState.provenanceCache.has(g.id)) loadGymProvenance(g.id).then(refreshPage);
-  if(window.auth.user && !appState.myEditCache.has(g.id)) loadMyEditFor(g.id).then(refreshPage);
+  const late = [];
+  if(!appState.provenanceCache.has(g.id)) late.push(loadGymProvenance(g.id));
+  if(window.auth.user && !appState.myEditCache.has(g.id)) late.push(loadMyEditFor(g.id));
   // Signed-in: fetch the check-ins once so the action reads "Checked in today" when it should.
-  if(window.auth.user && !appState.checkinsLoaded) loadCheckins().then(refreshPage);
+  if(window.auth.user && !appState.checkinsLoaded) late.push(loadCheckins());
   // Signed-in: fetch the logbook once so "Your history here" can appear.
   if(window.auth.user && !appState.sessionsLoaded){
     appState.sessionsLoaded = true;
-    loadSessions().then(refreshPage);
+    late.push(loadSessions());
   }
+  if(late.length) Promise.allSettled(late).then(() => refreshIfShowing(g));
 }
 
 export function initGymPage(){

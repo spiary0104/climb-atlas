@@ -23,9 +23,14 @@ window.auth = (function () {
     const { data } = await window.sb.auth.getSession();
     currentUser = data.session ? data.session.user : null;
     notify();
+    // supabase-js emits INITIAL_SESSION right away and TOKEN_REFRESHED about hourly (and on tab focus). Those are the same
+    // person with a new token: refreshing the user object is enough. Listeners (main.js) refetch marks, moderator status
+    // and pending work and re-render the page, so they hear only a real sign-in, sign-out or account switch.
     window.sb.auth.onAuthStateChange((_event, session) => {
-      currentUser = session ? session.user : null;
-      notify();
+      const next = session ? session.user : null;
+      const changed = (next && next.id) !== (currentUser && currentUser.id);
+      currentUser = next;
+      if (changed) notify();
     });
   }
 
