@@ -56,6 +56,17 @@ function nearbyOf(g){
     .map(({ o, d }) => ({ g: o, ctx: { region: regionOf(o), href: gymPath(o), distance: formatDistance(d) + ' away' } }));
 }
 
+// "All 22 gyms in Sydney": the gym's metro page and how many gyms it lists, counted with the metro page's own rule
+// (region-page.js metroView: same country, metroOf === metro) so the number on the link is the number on the page.
+// Null when the gym is in no metro or is the metro's only gym. Uses the gyms already loaded; no extra read.
+function metroLinkOf(g){
+  const metro = COUNTRY_LABELS[g.country] ? metroOf(g) : null;
+  if(!metro) return null;
+  let total = 0;
+  for(const o of appState.spots) if(o.country === metro.country && metroOf(o) === metro) total++;
+  return total >= 2 ? { name: metro.name, total, href: metroPath(metro) } : null;
+}
+
 function historyOf(g){
   if(!window.auth.user) return null;
   const here = (appState.sessions || []).filter(s => s.spot_id === g.id);
@@ -101,6 +112,7 @@ function enter({ slug }, view){
     climbed: appState.climbedIds.has(g.id),
     history: historyOf(g),
     nearby: nearbyOf(g),
+    metroLink: metroLinkOf(g),
     exploreHref: '/?' + encodeExploreState({ camera: { lng: g.lng, lat: g.lat, zoom: 15 } }),
     provenance: provenanceLine(g, appState.provenanceCache.get(g.id) || { contributors: appState.contributorCounts.get(g.id) }),
     myEdit: appState.myEditCache.get(g.id) || null,

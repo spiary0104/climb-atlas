@@ -51,7 +51,7 @@ export function pageRowHtml(g, ctx = {}){
     + `${ctx.distance ? `<span class="gym-row-distance tnum">${escapeHtml(ctx.distance)}</span>` : ''}</a>`;
 }
 
-// The gym page (sec. 8.2). ctx: {crumbs, region, country, distance, saved, climbed, history, nearby: [{g, ctx}], exploreHref}
+// The gym page (sec. 8.2). ctx: {crumbs, region, country, distance, saved, climbed, history, nearby: [{g, ctx}], metroLink: {name, total, href}, exploreHref}
 export function gymPageHtml(g, ctx = {}){
   const photo = safeUrl(g.photo);
   // The public description; legacy gyms fall back to the few genuine lines in their research notes (provenance.js).
@@ -82,6 +82,11 @@ export function gymPageHtml(g, ctx = {}){
       ? `<div class="card-strip">${ctx.nearby.map(n => pageCardHtml(n.g, n.ctx)).join('')}</div>`
       : `<div class="page-list nearby-list">${ctx.nearby.map(n => pageRowHtml(n.g, n.ctx)).join('')}</div>`)
     + `</section>` : '';
+  // One step from this gym to its whole city (the metro page): "All 22 gyms in Sydney" ("Both gyms in …" for two). Only
+  // when the gym is in a metro that lists other gyms; the count is the metro page's own (gym-page.js metroLinkOf).
+  const ml = ctx.metroLink;
+  const metroLink = ml && ml.total >= 2 && ml.href && ml.name
+    ? `<p class="metro-link"><a class="link" href="${escapeHtml(ml.href)}" data-link>${escapeHtml(ml.total === 2 ? 'Both gyms in ' + ml.name : 'All ' + ml.total + ' gyms in ' + ml.name)}</a></p>` : '';
   return `<article class="page gym-page">`
     + breadcrumbHtml(ctx.crumbs || [])
     // Share sits beside the name, not in the action row: four actions are what fits a phone (the tab bar's round Check in
@@ -94,7 +99,7 @@ export function gymPageHtml(g, ctx = {}){
     + `<div class="gym-layout"><div class="gym-main">`
     + `${about ? `<section class="page-section" aria-labelledby="aboutTitle"><h2 class="section-title" id="aboutTitle">About</h2><p class="prose">${escapeHtml(about)}</p></section>` : ''}`
     + facilitiesHtml(g)
-    + nearby
+    + nearby + metroLink
     + `<section class="page-section" aria-labelledby="communityTitle"><h2 class="section-title" id="communityTitle">Community</h2>`
     + `<p class="section-note">${g.community ? 'Added by a Bouldeer climber and checked by a moderator.' : 'From the Bouldeer dataset, kept current by climbers.'} Every edit is checked by a moderator before it goes live. Spotted something out of date?</p>`
     + `<div class="community-actions"><button type="button" class="btn btn-secondary btn-sm" data-page-action="edit" data-spot-id="${id}">${icon('pencil-simple', {size:'sm'})}Suggest an edit</button>`
