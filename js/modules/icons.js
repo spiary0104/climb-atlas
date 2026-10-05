@@ -3,7 +3,7 @@
 export const ICON_NAMES = Object.freeze([
   'arrow-left', 'book-open', 'bookmark-simple', 'buildings', 'caret-down', 'caret-right', 'caret-up', 'check', 'check-circle',
   'clock-counter-clockwise', 'crosshair-simple', 'flag', 'globe-hemisphere-west', 'info', 'list', 'magnifying-glass', 'map-pin',
-  'map-trifold', 'mountains', 'navigation-arrow', 'pencil-simple', 'plus', 'sliders-horizontal', 'smiley', 'smiley-meh',
+  'map-trifold', 'mountains', 'navigation-arrow', 'pencil-simple', 'plus', 'share-network', 'sliders-horizontal', 'smiley', 'smiley-meh',
   'smiley-nervous', 'smiley-sad', 'smiley-wink', 'squares-four', 'user', 'warning-circle', 'x',
 ]);
 const KNOWN = new Set(ICON_NAMES);

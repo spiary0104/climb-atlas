@@ -84,7 +84,10 @@ export function gymPageHtml(g, ctx = {}){
     + `</section>` : '';
   return `<article class="page gym-page">`
     + breadcrumbHtml(ctx.crumbs || [])
-    + `<header class="gym-header"><div class="gym-heading"><h1 class="page-title">${escapeHtml(g.name)}</h1>`
+    // Share sits beside the name, not in the action row: four actions are what fits a phone (the tab bar's round Check in
+    // covers a fifth, middle one). A compact icon button with the 44px hit area .btn-icon carries; no sign-in needed.
+    + `<header class="gym-header"><div class="gym-heading"><div class="gym-title-row"><h1 class="page-title">${escapeHtml(g.name)}</h1>`
+    + `<button type="button" class="btn btn-secondary btn-icon gym-share" data-page-action="share" data-spot-id="${id}" aria-label="Share ${escapeHtml(g.name)}" title="Share">${icon('share-network', {size:'sm'})}</button></div>`
     + `<p class="gym-meta"><span class="gym-meta-tags">${typeTagsHtml(g.types)}</span><span>${escapeHtml(where)}</span>${ctx.distance ? `<span class="tnum">${escapeHtml(ctx.distance)}</span>` : ''}</p>`
     + provenance + prompt + `</div></header>`
     + `${photo ? `<img class="gym-hero gym-photo" src="${escapeHtml(photo)}" alt="${escapeHtml(g.name)}" referrerpolicy="no-referrer">` : ''}`

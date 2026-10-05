@@ -18,6 +18,7 @@ import { gymDayKey, status } from './hours.js';
 import { currentRoute, refreshPage, registerView, setPageTitle } from './router.js';
 import { provenanceLine, publicNotes } from './provenance.js';
 import { gymSeo } from './seo-meta.js';
+import { gymShareText, sharePlace } from './share.js';
 import { cityPath, countryPath, gymPath, metroPath, regionPath } from './slug.js';
 import { appState } from './state.js';
 
@@ -136,6 +137,11 @@ export function initGymPage(){
       case 'climbed': toggleMark(id, 'climbed'); break;
       case 'edit': openEditModal(id, { focus: btn.dataset.editFocus || '' }); break;
       case 'report': openReportModal(id); break;
+      case 'share': {   // the gym is already loaded: no extra read; Web Share, else copy the link (share.js)
+        const g = appState.spots.find(s => s.id === id);
+        if(g) sharePlace(gymShareText(g, { region: regionOf(g) }));
+        break;
+      }
       case 'verify': setVerified(id, true); break;
       case 'unverify': setVerified(id, false); break;
     }
