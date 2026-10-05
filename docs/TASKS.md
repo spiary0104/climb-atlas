@@ -9,8 +9,8 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 ### Gym update 2026-10-05 (combined PR) — STAGED, awaiting the owner apply (scripts/apply-batch.ps1, all batches in one run)
 - 5 research sections (+114 new): UK single-gym towns 30, DE Thüringen/Sachsen-Anhalt/Saarland/Berlin 18, ES Asturias 4, IT Torino/Bologna/Palermo 8,
   FR chains (Climb Up, Bloc Session, M'ROC, Antrebloc, Le Pan) 43, KR Gwangju/Jeollanam 11 (+3 same-as). Pin fixes (4) and the Klättra Motala note. Arkose Cholet filled + live.
-- Follow-ups: rename seed-1181 Monta Rex -> OneClimb (identity batch); deferred gyms (each section's review-notes.md): Boatyard Boulders Nottingham
-  (indoor?), Lancaster Wall, 4 IT gyms (re-check via social), 3 KR (bouldering unstated), Arkose Issy; KR source standard; the merged Jeonnam-Gwangju region name.
+- Follow-ups: rename seed-1181 Monta Rex -> OneClimb (identity batch); deferred gyms (each section's review-notes.md):
+  Lancaster Wall, 4 IT gyms (re-check via social), 3 KR (bouldering unstated), Arkose Issy; KR source standard; the merged Jeonnam-Gwangju region name.
 ### Gym information — batch 5 (+483 enriched, +25 retired) and all follow-ups APPLIED 2026-10-04 (PRs #44-#50 merged, live)
 - Applied + verified (704 records): batch 5 fills (468 + 15), 25 retirements, 4 new gyms, 126 location fixes, 52 identity edits
   (#49 + review). `import/info-research/batch-5/{NOTES,REVIEW-RESOLUTIONS}.md`. Sitemap 3,208 URLs live. Next: 456 gyms in unmeasured countries; CN/KR need a source decision.

@@ -12,7 +12,7 @@
 | Rejected by a human decision | 0 |
 | **Total records in batch** | 11 |
 
-Index: 2272 known gyms (sha256 c97e3035f020…). Plan: 9ee98709095a… Also compared against staged batches: 2026-10-05-france-chains, 2026-10-05-germany-east-saar-berlin, 2026-10-05-italy-city-gaps, 2026-10-05-spain-asturias, 2026-10-05-uk-single-gym-towns.
+Index: 2375 known gyms (sha256 e79025272af3…). Plan: f2cead7b603b…
 
 ## New gyms (11)
 
