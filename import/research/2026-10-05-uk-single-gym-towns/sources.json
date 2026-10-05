@@ -1,0 +1,432 @@
+{
+ "schema_version": 1,
+ "sources": {
+  "OSM": {
+   "kind": "map-data",
+   "title": "OpenStreetMap (Overpass extract 2026-10-05: sport=climbing venues in GB)",
+   "url": "https://www.openstreetmap.org/",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "NOM": {
+   "kind": "map-data",
+   "title": "OpenStreetMap Nominatim geocoder",
+   "url": "https://nominatim.openstreetmap.org/",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "APPLE": {
+   "kind": "map-data",
+   "title": "Apple Maps place entry (map-service pin)",
+   "url": "https://maps.apple.com/",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "BW": {
+   "kind": "directory",
+   "title": "boulderingwall.com UK bouldering directory (discovery aid only)",
+   "url": "https://boulderingwall.com/uk/",
+   "accessed": "2026-10-05",
+   "language": "en"
+  },
+  "BOULDERUKPRESTON": {
+   "kind": "official-site",
+   "title": "Boulder UK",
+   "url": "https://www.boulderuk.co.uk/",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "AMBLESIDEWALL": {
+   "kind": "official-site",
+   "title": "Ambleside Climbing Wall",
+   "url": "https://www.amblesideadventure.co.uk/ambleside-wall/",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "ROCKCITYHULL": {
+   "kind": "official-site",
+   "title": "Rockcity Climbing",
+   "url": "https://rockcity.co.uk/",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "CHALKUPNETHERSTOWEY": {
+   "kind": "official-site",
+   "title": "ChalkUp Bouldering",
+   "url": "https://chalkup.uk/",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "CHIMERACANTERBURY": {
+   "kind": "official-site",
+   "title": "Chimera Climbing Canterbury",
+   "url": "https://www.chimeraclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "CHIMERACHATHAM": {
+   "kind": "official-site",
+   "title": "Chimera Climbing Chatham",
+   "url": "https://www.chimeraclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "CHIMERATUNBRIDGEWELLS": {
+   "kind": "official-site",
+   "title": "Chimera Climbing Tunbridge Wells",
+   "url": "https://www.chimeraclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "DURHAMCLIMBINGCENTRE": {
+   "kind": "official-site",
+   "title": "Durham Climbing Centre",
+   "url": "https://www.durhamclimbingcentre.co.uk/",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "F51FOLKESTONE": {
+   "kind": "official-site",
+   "title": "F51 Climbing Centre",
+   "url": "https://f51.co.uk/",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "FENROCKWISBECH": {
+   "kind": "official-site",
+   "title": "Fenrock Climbing",
+   "url": "https://fenrock.com/",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "FREEKLIMEHUDDERSFIELD": {
+   "kind": "official-site",
+   "title": "Freeklime Huddersfield",
+   "url": "https://www.freeklime.co.uk/huddersfield",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "FREEKLIMELINCOLN": {
+   "kind": "official-site",
+   "title": "Freeklime Lincoln",
+   "url": "https://www.freeklime.co.uk/lincoln",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "FREEKLIMEYORK": {
+   "kind": "official-site",
+   "title": "Freeklime York",
+   "url": "https://www.freeklime.co.uk/york",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "FLASHPOINTSWANSEA": {
+   "kind": "official-site",
+   "title": "Flashpoint Swansea",
+   "url": "https://flashpointswansea.com/",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "FROMEBOULDERROOMS": {
+   "kind": "official-site",
+   "title": "Frome Boulder Rooms",
+   "url": "https://boulderrooms.co.uk/",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "IBEXDARLINGTON": {
+   "kind": "official-site",
+   "title": "Ibex Bouldering",
+   "url": "https://www.ibexbouldering.co.uk/",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "NORTHWAYNEWBURY": {
+   "kind": "official-site",
+   "title": "Northway Climbing Centre",
+   "url": "https://northwayclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "OAKWOODWOKINGHAM": {
+   "kind": "official-site",
+   "title": "Oakwood Climbing Centre",
+   "url": "https://www.oakwoodclimbingcentre.com/",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "ORDINARYCLIMBERS": {
+   "kind": "official-site",
+   "title": "The Ordinary Climbers",
+   "url": "https://www.theordinaryclimbers.com/",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "ROCKBURNBRIDPORT": {
+   "kind": "official-site",
+   "title": "Rockburn",
+   "url": "https://rockburn-bridport.com/",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "ROF59NEWTONAYCLIFFE": {
+   "kind": "official-site",
+   "title": "The Wall @ ROF59 Climbing Centre",
+   "url": "https://rof59climbingcentre.com/",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "ROMFORDROCKBOULDER": {
+   "kind": "official-site",
+   "title": "Romford Rock & Boulder",
+   "url": "https://www.romfordrockandboulder.co.uk/",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "VOLUME1EASTGRINSTEAD": {
+   "kind": "official-site",
+   "title": "Volume 1 Climbing",
+   "url": "https://www.volume1climbing.co.uk/",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "BOULDERCENTRALWESTBROMWICH": {
+   "kind": "official-site",
+   "title": "Boulder Central",
+   "url": "https://www.bouldercentral.co.uk/",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "CLIMBINGHUTELLESMEREPORT": {
+   "kind": "official-site",
+   "title": "Climbing Hut Ellesmere Port",
+   "url": "https://www.climbinghut.com/ellesmereport",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "PROJECTCLIMBINGPOOLE": {
+   "kind": "official-site",
+   "title": "The Project Climbing Centre",
+   "url": "https://www.theprojectclimbingcentre.co.uk/",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "WEEDONPROJECT": {
+   "kind": "official-site",
+   "title": "The Weedon Project",
+   "url": "https://www.theweedonproject.co.uk/",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "PINNACLEBOULDERINGNORTHAMPTON": {
+   "kind": "official-site",
+   "title": "The Pinnacle Bouldering Centre",
+   "url": "https://thepinnaclecentre.co.uk/bouldering",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "TIDECLIMBINGPADSTOW": {
+   "kind": "official-site",
+   "title": "The Tide Climbing Centre Padstow",
+   "url": "https://www.tideclimbing.com/locations/padstow/",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "TIDECLIMBINGHELSTON": {
+   "kind": "official-site",
+   "title": "The Tide Climbing Centre Helston",
+   "url": "https://www.tideclimbing.com/locations/helston/",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "CLIMBINGHUBBRADFORD": {
+   "kind": "official-site",
+   "title": "The Climbing Hub",
+   "url": "https://www.theclimbinghub.co.uk/",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "EDENROCKCARLISLE": {
+   "kind": "official-site",
+   "title": "Eden Rock Carlisle",
+   "url": "https://www.edenrockclimbing.com/carlisle-home",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "XCHEMELHEMPSTEAD": {
+   "kind": "official-site",
+   "title": "The XC",
+   "url": "https://thexc.co.uk/",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "BOULDERSCHELTENHAM": {
+   "kind": "official-site",
+   "title": "Boulders Cheltenham",
+   "url": "https://cheltenham.bouldersuk.com/",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "NORTHERNPROBLEMSWHITEHAVEN": {
+   "kind": "official-site",
+   "title": "Northern Problems",
+   "url": "https://northernproblems.co.uk/",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "AVIDIPSWICH": {
+   "kind": "official-site",
+   "title": "Avid Climbing",
+   "url": "https://www.avidclimbing.co.uk/",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "KESWICKCLIMBINGWALL": {
+   "kind": "official-site",
+   "title": "Keswick Climbing Wall",
+   "url": "https://www.activity-centre.com/keswick-climbing-wall/",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "SUNDERLANDWALL": {
+   "kind": "official-site",
+   "title": "Sunderland Wall",
+   "url": "https://sunderlandwall.com/",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "INGLETONWALL": {
+   "kind": "official-site",
+   "title": "Ingleton Wall",
+   "url": "https://www.ingletonwall.co.uk/",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "LANCASTERWALL": {
+   "kind": "official-site",
+   "title": "Lancaster Wall",
+   "url": "https://www.lancasterwall.co.uk/",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "BOULDERUKBLACKBURN": {
+   "kind": "official-site",
+   "title": "Boulder UK Blackburn",
+   "url": "https://www.boulderuk.co.uk/",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "HANGONHAMILTON": {
+   "kind": "official-site",
+   "title": "Hang On Climbing Centre",
+   "url": "https://hangonclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "BOATYARDBOULDERSNOTTINGHAM": {
+   "kind": "official-site",
+   "title": "Boatyard Boulders",
+   "url": "https://boatyardboulders.co.uk/",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "REDGOATYORK": {
+   "kind": "official-site",
+   "title": "Red Goat Climbing Wall",
+   "url": "https://www.redgoatclimbing.co.uk/",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "BOULDERBUNKER": {
+   "kind": "official-site",
+   "title": "The Boulder Bunker",
+   "url": "https://theboulderbunker.com/",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "GOLDENGECKO": {
+   "kind": "official-site",
+   "title": "Golden Gecko Climbing",
+   "url": "https://www.ggclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "HIGHBALLNORWICH": {
+   "kind": "official-site",
+   "title": "Highball Norwich",
+   "url": "https://highballnorwich.co.uk/",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "LEDGEINVERNESS": {
+   "kind": "official-site",
+   "title": "The Ledge Climbing Gym",
+   "url": "https://www.theledgeclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "BOARDROOMDEESIDE": {
+   "kind": "official-site",
+   "title": "The Boardroom Climbing",
+   "url": "https://theboardroomclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "AVERTICALDUNDEE": {
+   "kind": "official-site",
+   "title": "Avertical World",
+   "url": "https://www.averticalworld.co.uk/",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "BLOC10DUNDEE": {
+   "kind": "official-site",
+   "title": "Bloc10 Dundee",
+   "url": "https://bloc10.co.uk/",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "BOULDEREXE": {
+   "kind": "official-site",
+   "title": "Boulder Exe",
+   "url": "https://boulderexe.co.uk/",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "CLIMBINGHUTSHREWSBURY": {
+   "kind": "official-site",
+   "title": "Climbing Hut Shrewsbury",
+   "url": "https://www.climbinghut.com/shrewsbury",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "DYNAMICROCK": {
+   "kind": "official-site",
+   "title": "Dynamic Rock",
+   "url": "https://dynamicrock.co.uk/",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "OVERHANGCARMARTHEN": {
+   "kind": "official-site",
+   "title": "Overhang Climbing Centre",
+   "url": "https://overhangcarmarthen.co.uk/",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "ROCKSTARSWINDON": {
+   "kind": "official-site",
+   "title": "Rockstar Climbing Centre",
+   "url": "https://www.rockstarclimbing.co.uk/",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "ROKTBRIGHOUSE": {
+   "kind": "official-site",
+   "title": "ROKT Climbing Gym",
+   "url": "https://www.rokt.co.uk/",
+   "language": "en",
+   "accessed": "2026-10-05"
+  }
+ }
+}

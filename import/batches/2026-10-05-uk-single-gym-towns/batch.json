@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-05-uk-single-gym-towns",
+  "description": "Regional research \"UK: single-gym towns (boulderingwall.com follow-up)\": 30 new gym(s) accepted of 57 candidate(s)",
+  "created": "2026-10-05",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-10-05-uk-single-gym-towns",
+    "section_sha256": "8059f11639f5bc7b5d7e2b6fd62f37b9b0b425ca1a7ac8f9e0699cc547b75be3",
+    "sources_sha256": "bac40d8f971c8fcc151504810e5759bea65039708ae796c4ed90711137a7fb71",
+    "candidates_sha256": "9efd107c59669800da69a72115e752f13c332b8cd5c81efaf0d44908c5553033",
+    "reconcile_sha256": "35ea0d9f98002f6db44fee8be8e95c767b294fc768af6f67080877244b64eaec",
+    "review_sha256": "f0b7c8ce172d6527fc5d5f87bd8bb901675bcacc53fff4eeb92224cbf5516511",
+    "candidates": 57,
+    "staged": 30,
+    "decisions": {
+      "accept": 30,
+      "defer": 6,
+      "reject": 3,
+      "same-as": 18
+    }
+  },
+  "index_at_staging": {
+    "sha256": "c97e3035f0208405f11b34c45813a104e2c9b1d4f25a4a3a6a6a349f627e2918",
+    "count": 2272
+  }
+}

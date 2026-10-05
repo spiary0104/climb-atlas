@@ -1,0 +1,1280 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-05-uk-single-gym-towns",
+ "inputs": {
+  "section_sha256": "8059f11639f5bc7b5d7e2b6fd62f37b9b0b425ca1a7ac8f9e0699cc547b75be3",
+  "sources_sha256": "bac40d8f971c8fcc151504810e5759bea65039708ae796c4ed90711137a7fb71",
+  "candidates_sha256": "9efd107c59669800da69a72115e752f13c332b8cd5c81efaf0d44908c5553033",
+  "index": {
+   "sha256": "c97e3035f0208405f11b34c45813a104e2c9b1d4f25a4a3a6a6a349f627e2918",
+   "count": 2272
+  },
+  "staged_batches_compared": [],
+  "other_sections_compared": []
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 57,
+  "ready": 25,
+  "review": 12,
+  "blocked": 8,
+  "existing": 12,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "ambleside-wall",
+   "line": 2,
+   "name": "Ambleside Climbing Wall",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-b8390e87bd"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "avertical-dundee",
+   "line": 50,
+   "name": "Avertical World",
+   "class": "existing",
+   "suggested": "same-as seed-937",
+   "importer": {
+    "class": "existing",
+    "id": "seed-937",
+    "match": {
+     "id": "seed-937",
+     "name": "Avertical world",
+     "reason": "same-name",
+     "dist_m": 663
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-937 but content differs (name, lat, lng, types); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-937 \"Avertical world\": same-name (\"Avertical World\" / \"Avertical world\", 663 m)",
+     "ids": [
+      "seed-937"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-937"
+   ]
+  },
+  {
+   "cid": "avid-ipswich",
+   "line": 36,
+   "name": "Avid Climbing",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-4ab9b915c3"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "bloc10-dundee",
+   "line": 51,
+   "name": "Bloc10 Dundee",
+   "class": "existing",
+   "suggested": "same-as seed-939",
+   "importer": {
+    "class": "existing",
+    "id": "seed-939",
+    "match": {
+     "id": "seed-939",
+     "name": "Bloc10 Dundee",
+     "reason": "same-name",
+     "dist_m": 0
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-939 but content differs (lat, lng, address); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-939 \"Bloc10 Dundee\": same-name (\"Bloc10 Dundee\" / \"Bloc10 Dundee\", 0 m)",
+     "ids": [
+      "seed-939"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-939"
+   ]
+  },
+  {
+   "cid": "boardroom-deeside",
+   "line": 49,
+   "name": "The Boardroom Climbing",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-a0a797894a"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-956 renamed-or-related-name-nearby 0 m",
+     "ids": [
+      "seed-956"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-956 \"The Boardroom\": renamed-or-related-name-nearby (\"The Boardroom Climbing\" / \"The Boardroom\", 0 m)",
+     "ids": [
+      "seed-956"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-956"
+   ]
+  },
+  {
+   "cid": "boatyard-boulders-nottingham",
+   "line": 43,
+   "name": "Boatyard Boulders",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-e4d7627940"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "boulder-bunker",
+   "line": 45,
+   "name": "The Boulder Bunker",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-8d34346f85"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-891 renamed-or-related-name-nearby 0 m",
+     "ids": [
+      "seed-891"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-891 \"The Bunker\": renamed-or-related-name-nearby (\"The Boulder Bunker\" / \"The Bunker\", 0 m)",
+     "ids": [
+      "seed-891"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-891"
+   ]
+  },
+  {
+   "cid": "boulder-central-west-bromwich",
+   "line": 24,
+   "name": "Boulder Central",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-e70e0ce27b"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "boulder-exe",
+   "line": 52,
+   "name": "Boulder Exe",
+   "class": "existing",
+   "suggested": "same-as seed-931",
+   "importer": {
+    "class": "existing",
+    "id": "seed-931",
+    "match": {
+     "id": "seed-931",
+     "name": "Boulder Exe",
+     "reason": "same-name",
+     "dist_m": 39
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-931 but content differs (lat, lng, address); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-931 \"Boulder Exe\": same-name (\"Boulder Exe\" / \"Boulder Exe\", 39 m)",
+     "ids": [
+      "seed-931"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-931"
+   ]
+  },
+  {
+   "cid": "boulder-uk-blackburn",
+   "line": 41,
+   "name": "Boulder UK Blackburn",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-862bed3632"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate boulder-uk-preston \"Boulder UK\": related names \"Boulder UK Blackburn\" / \"Boulder UK\" 10571 m apart",
+     "ids": [
+      "boulder-uk-preston"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate boulder-uk-preston has the same website",
+     "ids": [
+      "boulder-uk-preston"
+     ]
+    }
+   ],
+   "review_ids": [
+    "boulder-uk-preston"
+   ]
+  },
+  {
+   "cid": "boulder-uk-preston",
+   "line": 1,
+   "name": "Boulder UK",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-c864f05fb2"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate boulder-uk-blackburn \"Boulder UK Blackburn\": related names \"Boulder UK\" / \"Boulder UK Blackburn\" 10571 m apart",
+     "ids": [
+      "boulder-uk-blackburn"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate boulder-uk-blackburn has the same website",
+     "ids": [
+      "boulder-uk-blackburn"
+     ]
+    }
+   ],
+   "review_ids": [
+    "boulder-uk-blackburn"
+   ]
+  },
+  {
+   "cid": "boulders-cheltenham",
+   "line": 34,
+   "name": "Boulders Cheltenham",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-9407057021"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "chalkup-nether-stowey",
+   "line": 4,
+   "name": "ChalkUp Bouldering",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-63acfceb55"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "chimera-canterbury",
+   "line": 5,
+   "name": "Chimera Climbing Canterbury",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-ddc23cf03e"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate chimera-chatham has the same website",
+     "ids": [
+      "chimera-chatham"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate chimera-tunbridge-wells has the same website",
+     "ids": [
+      "chimera-tunbridge-wells"
+     ]
+    }
+   ],
+   "review_ids": [
+    "chimera-chatham",
+    "chimera-tunbridge-wells"
+   ]
+  },
+  {
+   "cid": "chimera-chatham",
+   "line": 6,
+   "name": "Chimera Climbing Chatham",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-10d0030e4b"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate chimera-canterbury has the same website",
+     "ids": [
+      "chimera-canterbury"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate chimera-tunbridge-wells has the same website",
+     "ids": [
+      "chimera-tunbridge-wells"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    },
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": [
+    "chimera-canterbury",
+    "chimera-tunbridge-wells"
+   ]
+  },
+  {
+   "cid": "chimera-tunbridge-wells",
+   "line": 7,
+   "name": "Chimera Climbing Tunbridge Wells",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-c1ed5435a3"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate chimera-canterbury has the same website",
+     "ids": [
+      "chimera-canterbury"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate chimera-chatham has the same website",
+     "ids": [
+      "chimera-chatham"
+     ]
+    }
+   ],
+   "review_ids": [
+    "chimera-canterbury",
+    "chimera-chatham"
+   ]
+  },
+  {
+   "cid": "climbing-hub-bradford",
+   "line": 31,
+   "name": "The Climbing Hub",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-c57e7edfac"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "climbing-hut-ellesmere-port",
+   "line": 25,
+   "name": "Climbing Hut Ellesmere Port",
+   "class": "existing",
+   "suggested": "same-as seed-864",
+   "importer": {
+    "class": "existing",
+    "id": "seed-864",
+    "match": {
+     "id": "seed-864",
+     "name": "Climbing Hut Ellesmere Port",
+     "reason": "same-name",
+     "dist_m": 3
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-864 but content differs (suburb, lat, lng, address); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-864 \"Climbing Hut Ellesmere Port\": same-name (\"Climbing Hut Ellesmere Port\" / \"Climbing Hut Ellesmere Port\", 3 m)",
+     "ids": [
+      "seed-864"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-864"
+   ]
+  },
+  {
+   "cid": "climbing-hut-shrewsbury",
+   "line": 53,
+   "name": "Climbing Hut Shrewsbury",
+   "class": "existing",
+   "suggested": "same-as seed-865",
+   "importer": {
+    "class": "existing",
+    "id": "seed-865",
+    "match": {
+     "id": "seed-865",
+     "name": "Climbing Hut Shrewsbury",
+     "reason": "same-name",
+     "dist_m": 0
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-865 but content differs (lat, lng, address, types); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-865 \"Climbing Hut Shrewsbury\": same-name (\"Climbing Hut Shrewsbury\" / \"Climbing Hut Shrewsbury\", 0 m)",
+     "ids": [
+      "seed-865"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-865"
+   ]
+  },
+  {
+   "cid": "durham-climbing-centre",
+   "line": 8,
+   "name": "Durham Climbing Centre",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-28e7f5f683"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "dynamic-rock",
+   "line": 54,
+   "name": "Dynamic Rock",
+   "class": "existing",
+   "suggested": "same-as seed-952",
+   "importer": {
+    "class": "existing",
+    "id": "seed-952",
+    "match": {
+     "id": "seed-952",
+     "name": "Dynamic Rock",
+     "reason": "same-name",
+     "dist_m": 0
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-952 but content differs (suburb, lat, lng, address, types); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-952 \"Dynamic Rock\": same-name (\"Dynamic Rock\" / \"Dynamic Rock\", 0 m)",
+     "ids": [
+      "seed-952"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-952"
+   ]
+  },
+  {
+   "cid": "eden-rock-carlisle",
+   "line": 32,
+   "name": "Eden Rock Carlisle",
+   "class": "existing",
+   "suggested": "same-as seed-869",
+   "importer": {
+    "class": "existing",
+    "id": "seed-869",
+    "match": {
+     "id": "seed-869",
+     "name": "Eden Rock Carlisle",
+     "reason": "same-name",
+     "dist_m": 0
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-869 but content differs (suburb, lat, lng, address); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-869 \"Eden Rock Carlisle\": same-name (\"Eden Rock Carlisle\" / \"Eden Rock Carlisle\", 0 m)",
+     "ids": [
+      "seed-869"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "seed-869"
+   ]
+  },
+  {
+   "cid": "f51-folkestone",
+   "line": 9,
+   "name": "F51 Climbing Centre",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-a43e94dabf"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "fenrock-wisbech",
+   "line": 10,
+   "name": "Fenrock Climbing",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-7794b00025"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "flashpoint-swansea",
+   "line": 14,
+   "name": "Flashpoint Swansea",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-2ebcda8553"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "freeklime-huddersfield",
+   "line": 11,
+   "name": "Freeklime Huddersfield",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-57ce52c3f2"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "freeklime-lincoln",
+   "line": 12,
+   "name": "Freeklime Lincoln",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-e41f03bb5d"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "freeklime-york",
+   "line": 13,
+   "name": "Freeklime York",
+   "class": "existing",
+   "suggested": "same-as seed-934",
+   "importer": {
+    "class": "existing",
+    "id": "seed-934",
+    "match": {
+     "id": "seed-934",
+     "name": "Freeklime",
+     "reason": "same-address-related-name",
+     "dist_m": 1
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-934 but content differs (name, lat, lng, address); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-934 \"Freeklime\": same-address-related-name (\"Freeklime York\" / \"Freeklime\", 1 m)",
+     "ids": [
+      "seed-934"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-934"
+   ]
+  },
+  {
+   "cid": "frome-boulder-rooms",
+   "line": 15,
+   "name": "Frome Boulder Rooms",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-b9d648164b"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "golden-gecko",
+   "line": 46,
+   "name": "Golden Gecko Climbing",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-3cfa795577"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-872 renamed-or-related-name-nearby 1 m",
+     "ids": [
+      "seed-872"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-872 \"Golden Gecko\": renamed-or-related-name-nearby (\"Golden Gecko Climbing\" / \"Golden Gecko\", 1 m)",
+     "ids": [
+      "seed-872"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-872"
+   ]
+  },
+  {
+   "cid": "hang-on-hamilton",
+   "line": 42,
+   "name": "Hang On Climbing Centre",
+   "class": "blocked",
+   "suggested": "reject closed",
+   "importer": {
+    "class": "new",
+    "id": "g-ba260d7a57"
+   },
+   "blockers": [
+    {
+     "code": "closed",
+     "detail": "status_claim is closed"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "highball-norwich",
+   "line": 47,
+   "name": "Highball Norwich",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-0aca65ed83"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-874 renamed-or-related-name-nearby 0 m",
+     "ids": [
+      "seed-874"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-874 \"Highball Climbing Centre\": renamed-or-related-name-nearby (\"Highball Norwich\" / \"Highball Climbing Centre\", 0 m)",
+     "ids": [
+      "seed-874"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-874"
+   ]
+  },
+  {
+   "cid": "ibex-darlington",
+   "line": 16,
+   "name": "Ibex Bouldering",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-93f568c4e0"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ingleton-wall",
+   "line": 39,
+   "name": "Ingleton Wall",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-a4dcc719c5"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "keswick-climbing-wall",
+   "line": 37,
+   "name": "Keswick Climbing Wall",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-3dd3441c21"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "lancaster-wall",
+   "line": 40,
+   "name": "Lancaster Wall",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-1381086b37"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "ledge-inverness",
+   "line": 48,
+   "name": "The Ledge Climbing Gym",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-1847b5a682"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-948 renamed-or-related-name-nearby 69 m",
+     "ids": [
+      "seed-948"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-948 \"The Ledge\": renamed-or-related-name-nearby (\"The Ledge Climbing Gym\" / \"The Ledge\", 69 m)",
+     "ids": [
+      "seed-948"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-948"
+   ]
+  },
+  {
+   "cid": "northern-problems-whitehaven",
+   "line": 35,
+   "name": "Northern Problems",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-039b6ea9b5"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "northway-newbury",
+   "line": 17,
+   "name": "Northway Climbing Centre",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-9696d8d616"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "oakwood-wokingham",
+   "line": 18,
+   "name": "Oakwood Climbing Centre",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-f64ef6ed0b"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ordinary-climbers",
+   "line": 19,
+   "name": "The Ordinary Climbers",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-4c7b1d339e"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "overhang-carmarthen",
+   "line": 55,
+   "name": "Overhang Climbing Centre",
+   "class": "existing",
+   "suggested": "same-as seed-954",
+   "importer": {
+    "class": "existing",
+    "id": "seed-954",
+    "match": {
+     "id": "seed-954",
+     "name": "Overhang Climbing Centre",
+     "reason": "same-name",
+     "dist_m": 2
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-954 but content differs (suburb, lat, lng, address, types); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-954 \"Overhang Climbing Centre\": same-name (\"Overhang Climbing Centre\" / \"Overhang Climbing Centre\", 2 m)",
+     "ids": [
+      "seed-954"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-954"
+   ]
+  },
+  {
+   "cid": "pinnacle-bouldering-northampton",
+   "line": 28,
+   "name": "The Pinnacle Bouldering Centre",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-1cf22ea51f"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "project-climbing-poole",
+   "line": 26,
+   "name": "The Project Climbing Centre",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-ae1c3cccf4"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    },
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "red-goat-york",
+   "line": 44,
+   "name": "Red Goat Climbing Wall",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-2ad2779f75"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-883 renamed-or-related-name-nearby 0 m",
+     "ids": [
+      "seed-883"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-883 \"Red Goat\": renamed-or-related-name-nearby (\"Red Goat Climbing Wall\" / \"Red Goat\", 0 m)",
+     "ids": [
+      "seed-883"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-883"
+   ]
+  },
+  {
+   "cid": "rockburn-bridport",
+   "line": 20,
+   "name": "Rockburn",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-8773360f57"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "rockcity-hull",
+   "line": 3,
+   "name": "Rockcity Climbing",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-8e9f3f2af7"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "rockstar-swindon",
+   "line": 56,
+   "name": "Rockstar Climbing Centre",
+   "class": "existing",
+   "suggested": "same-as g-0bf1f11379",
+   "importer": {
+    "class": "existing",
+    "id": "g-0bf1f11379",
+    "match": {
+     "id": "g-0bf1f11379",
+     "name": "Rockstar Climbing Centre",
+     "reason": "same-name",
+     "dist_m": 0
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing g-0bf1f11379 but content differs (lat, lng, address, types); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "g-0bf1f11379 \"Rockstar Climbing Centre\": same-name (\"Rockstar Climbing Centre\" / \"Rockstar Climbing Centre\", 0 m)",
+     "ids": [
+      "g-0bf1f11379"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-871 \"Rockstar Bouldering (Techno)\": related names \"Rockstar Climbing Centre\" / \"Rockstar Bouldering (Techno)\" 944 m apart",
+     "ids": [
+      "seed-871"
+     ]
+    }
+   ],
+   "review_ids": [
+    "g-0bf1f11379",
+    "seed-871"
+   ]
+  },
+  {
+   "cid": "rof59-newton-aycliffe",
+   "line": 21,
+   "name": "The Wall @ ROF59 Climbing Centre",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-669ac10d78"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "rokt-brighouse",
+   "line": 57,
+   "name": "ROKT Climbing Gym",
+   "class": "existing",
+   "suggested": "same-as seed-888",
+   "importer": {
+    "class": "existing",
+    "id": "seed-888",
+    "match": {
+     "id": "seed-888",
+     "name": "ROKT Climbing Gym",
+     "reason": "same-name",
+     "dist_m": 1
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-888 but content differs (lat, lng, address, types); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-888 \"ROKT Climbing Gym\": same-name (\"ROKT Climbing Gym\" / \"ROKT Climbing Gym\", 1 m)",
+     "ids": [
+      "seed-888"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-888"
+   ]
+  },
+  {
+   "cid": "romford-rock-boulder",
+   "line": 22,
+   "name": "Romford Rock & Boulder",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-81bd5e75df"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "sunderland-wall",
+   "line": 38,
+   "name": "Sunderland Wall",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-497773db3f"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "tide-climbing-helston",
+   "line": 30,
+   "name": "The Tide Climbing Centre Helston",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-52ec7ba665"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "tide-climbing-padstow",
+   "line": 29,
+   "name": "The Tide Climbing Centre Padstow",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-91a140e194"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "volume-1-east-grinstead",
+   "line": 23,
+   "name": "Volume 1 Climbing",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-b8678a0b64"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "weedon-project",
+   "line": 27,
+   "name": "The Weedon Project",
+   "class": "existing",
+   "suggested": "same-as seed-900",
+   "importer": {
+    "class": "existing",
+    "id": "seed-900",
+    "match": {
+     "id": "seed-900",
+     "name": "The Weedon Project",
+     "reason": "same-name",
+     "dist_m": 0
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-900 but content differs (suburb, lat, lng, address); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-900 \"The Weedon Project\": same-name (\"The Weedon Project\" / \"The Weedon Project\", 0 m)",
+     "ids": [
+      "seed-900"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-900"
+   ]
+  },
+  {
+   "cid": "xc-hemel-hempstead",
+   "line": 33,
+   "name": "The XC",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-ad7bbd34af"
+   },
+   "review_ids": []
+  }
+ ],
+ "reconcile_sha256": "1f46123d95eb3c7357dd8d8f87aff46216c668f7d3d3d66f74265fda698002b9"
+}
