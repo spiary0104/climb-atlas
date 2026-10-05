@@ -15,7 +15,6 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
   1280/375 px). Migration `20261004000100_gym_information` APPLIED (docs/migrations.md). Vercel preview protection re-enabled.
 - Shipped: gym information (website, hours, day pass, facilities, description, one photo); 102 city metros; perf (spots 359 -> 191 KB, `js/spots-prefetch.js`: list
   8.8 -> 6.1 s, LCP +0.6 s accepted); SEO (sitemap, 2+ gym area pages, `api/_places.json`, bot link previews via `api/seo.mjs`). Re-run `node scripts/build-sitemap.js` per batch.
-- Owner: submit the sitemap in Google Search Console.
 - Follow-ups: seed website + hours for top metros; self-serve account deletion; map-stack weight (MapLibre blocks first paint; next step is architectural).
 - Shipped 2026-10-05: open now + today's hours (PR #52), desktop chip row wraps (#53), update prompt "Bouldeer has finished a climb, please refresh the page" (#55).
 ### Public launch (www.bouldeer.com) — LAUNCHED 2026-10-02
