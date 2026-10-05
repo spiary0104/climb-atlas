@@ -1,0 +1,1076 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-05-pin-check-uk-ie",
+ "index": {
+  "sha256": "e1d9ef5216f87602ccefe7b8e4fac9c10be4c8fa3e59d6e76219e3f5d3154dad",
+  "count": 2385,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [],
+ "counts": {
+  "records": 35,
+  "new": 0,
+  "existing": 0,
+  "update": 35,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 31
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "ee86cfcc20ed5ebda05a5a664f2a16d8e2a91c0043ba9d5d79af76509a0921e4",
+ "records": [
+  {
+   "line": 1,
+   "class": "update",
+   "id": "g-8e9f3f2af7",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Hawthorn Avenue, Hull HU3 5GL"
+    }
+   ],
+   "expect_h": "be45b5861e97603e",
+   "update_reason": "Add official address; pin already on the building (13 m from OSM element)"
+  },
+  {
+   "line": 2,
+   "class": "update",
+   "id": "seed-1359",
+   "changes": [
+    {
+     "field": "address",
+     "before": "Robinhood Road, Dublin, Ireland",
+     "after": "Unit 23a, Robinhood Industrial Estate, Robinhood Road, Dublin 22, D22 WP86"
+    },
+    {
+     "field": "lat",
+     "before": 53.3253085,
+     "after": 53.3184325
+    },
+    {
+     "field": "lng",
+     "before": -6.3454706,
+     "after": -6.3469192
+    }
+   ],
+   "expect_h": "fe035d8104cf3d6c",
+   "update_reason": "Pin was 771 m off the gym building (shares-coords-with:seed-1360); set building-level pin and official address",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 771 m"
+    }
+   ]
+  },
+  {
+   "line": 3,
+   "class": "update",
+   "id": "seed-1360",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "6a Goldenbridge Industrial Estate, Inchicore, Dublin 8"
+    },
+    {
+     "field": "lat",
+     "before": 53.3253085,
+     "after": 53.335835
+    },
+    {
+     "field": "lng",
+     "before": -6.3454706,
+     "after": -6.3236231
+    }
+   ],
+   "expect_h": "0ab4c5cd020329ee",
+   "update_reason": "Pin was 1864 m off the gym building (no-address,shares-coords-with:seed-1359); set building-level pin and official address",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1864 m"
+    }
+   ]
+  },
+  {
+   "line": 4,
+   "class": "update",
+   "id": "seed-862",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Unit 4 Imperial Park, Empress Road, Southampton SO14 0JW"
+    },
+    {
+     "field": "lat",
+     "before": 50.9097,
+     "after": 50.9165249
+    },
+    {
+     "field": "lng",
+     "before": -1.4044,
+     "after": -1.3937588
+    }
+   ],
+   "expect_h": "633139e316f8a54d",
+   "update_reason": "Pin was 1064 m off the gym building (no-address); set building-level pin and official address",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1064 m"
+    }
+   ]
+  },
+  {
+   "line": 5,
+   "class": "update",
+   "id": "seed-868",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Unit 7 New South Quarter, Whitestone Way, Croydon CR0 4WN"
+    },
+    {
+     "field": "lat",
+     "before": 51.3762,
+     "after": 51.374156
+    },
+    {
+     "field": "lng",
+     "before": -0.0982,
+     "after": -0.1155061
+    }
+   ],
+   "expect_h": "ce4f68d241e286f5",
+   "update_reason": "Pin was 1223 m off the gym building (no-address); set building-level pin and official address",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1223 m"
+    }
+   ]
+  },
+  {
+   "line": 6,
+   "class": "update",
+   "id": "seed-870",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "2a Templegate Park, Mead Street, Bristol BS3 4RP"
+    },
+    {
+     "field": "lat",
+     "before": 51.4545,
+     "after": 51.4455997
+    },
+    {
+     "field": "lng",
+     "before": -2.5879,
+     "after": -2.5811842
+    }
+   ],
+   "expect_h": "8893eccbcc5a31ab",
+   "update_reason": "Pin was 1094 m off the gym building (no-address); set building-level pin and official address",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1094 m"
+    }
+   ]
+  },
+  {
+   "line": 7,
+   "class": "update",
+   "id": "seed-873",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Unit 2a & 3a, Neptune Trading Estate, Neptune Road, Harrow HA1 4HX"
+    },
+    {
+     "field": "lat",
+     "before": 51.5804,
+     "after": 51.5806563
+    },
+    {
+     "field": "lng",
+     "before": -0.3417,
+     "after": -0.3443853
+    }
+   ],
+   "expect_h": "7b3ef1abef39d178",
+   "update_reason": "Pin was 188 m off the gym building (no-address); set building-level pin and official address"
+  },
+  {
+   "line": 8,
+   "class": "update",
+   "id": "seed-875",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Haverfield Road, London E3 5BE"
+    },
+    {
+     "field": "lat",
+     "before": 51.525,
+     "after": 51.5276743
+    },
+    {
+     "field": "lng",
+     "before": -0.033,
+     "after": -0.0397471
+    }
+   ],
+   "expect_h": "e3a2aaea33eee08a",
+   "update_reason": "Pin was 553 m off the gym building (coarse-coords,no-address); set building-level pin and official address",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 553 m"
+    }
+   ]
+  },
+  {
+   "line": 9,
+   "class": "update",
+   "id": "seed-881",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Unit E1 Adanac Park, Adanac Drive, Southampton SO16 0BT"
+    },
+    {
+     "field": "lat",
+     "before": 50.905,
+     "after": 50.9401749
+    },
+    {
+     "field": "lng",
+     "before": -1.4,
+     "after": -1.469902
+    }
+   ],
+   "expect_h": "f4a8f1af2898e6e7",
+   "update_reason": "Pin was 6269 m off the gym building (coarse-coords,no-address); set building-level pin and official address",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 6269 m"
+    }
+   ]
+  },
+  {
+   "line": 10,
+   "class": "update",
+   "id": "seed-882",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Arch 105 Ravenscourt Road, London W6 0UQ"
+    },
+    {
+     "field": "lat",
+     "before": 51.56,
+     "after": 51.4943104
+    },
+    {
+     "field": "lng",
+     "before": -0.1,
+     "after": -0.2361399
+    }
+   ],
+   "expect_h": "acd5a13f8e8f0f63",
+   "update_reason": "Pin was 11919 m off the gym building (coarse-coords,no-address); set building-level pin and official address",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 11919 m"
+    }
+   ]
+  },
+  {
+   "line": 11,
+   "class": "update",
+   "id": "seed-886",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "26a Magdalen Street, Norwich NR3 1HU"
+    },
+    {
+     "field": "lat",
+     "before": 52.628,
+     "after": 52.6343725
+    },
+    {
+     "field": "lng",
+     "before": 1.295,
+     "after": 1.2965235
+    }
+   ],
+   "expect_h": "95c678b8e09021ca",
+   "update_reason": "Pin was 716 m off the gym building (coarse-coords,no-address); set building-level pin and official address",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 716 m"
+    }
+   ]
+  },
+  {
+   "line": 12,
+   "class": "update",
+   "id": "seed-889",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "St Werburgh's Church, Mina Road, Bristol BS2 9YQ"
+    },
+    {
+     "field": "lat",
+     "before": 51.46,
+     "after": 51.4717733
+    },
+    {
+     "field": "lng",
+     "before": -2.595,
+     "after": -2.57639
+    }
+   ],
+   "expect_h": "78c6cce4b1a9fa6d",
+   "update_reason": "Pin was 1837 m off the gym building (coarse-coords,no-address); set building-level pin and official address",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1837 m"
+    }
+   ]
+  },
+  {
+   "line": 13,
+   "class": "update",
+   "id": "seed-890",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "85 Barrow Road, Bristol BS5 0FD"
+    },
+    {
+     "field": "lat",
+     "before": 51.45,
+     "after": 51.455418
+    },
+    {
+     "field": "lng",
+     "before": -2.6,
+     "after": -2.569119
+    }
+   ],
+   "expect_h": "4bac172e0febc27b",
+   "update_reason": "Pin was 2223 m off the gym building (coarse-coords,no-address); set building-level pin and official address",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 2223 m"
+    }
+   ]
+  },
+  {
+   "line": 14,
+   "class": "update",
+   "id": "seed-892",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "The Castle, Green Lanes, London N4 2HA"
+    },
+    {
+     "field": "lat",
+     "before": 51.57,
+     "after": 51.5652897
+    },
+    {
+     "field": "lng",
+     "before": -0.085,
+     "after": -0.0924406
+    }
+   ],
+   "expect_h": "b7aef7842a2d5887",
+   "update_reason": "Pin was 734 m off the gym building (coarse-coords,no-address); set building-level pin and official address",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 734 m"
+    }
+   ]
+  },
+  {
+   "line": 15,
+   "class": "update",
+   "id": "seed-895",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Unit B2, Centenary Works, 150 Little London Road, Sheffield S8 0UJ"
+    },
+    {
+     "field": "lat",
+     "before": 53.3811,
+     "after": 53.3519519
+    },
+    {
+     "field": "lng",
+     "before": -1.4701,
+     "after": -1.4850489
+    }
+   ],
+   "expect_h": "bd59479e46b38fc2",
+   "update_reason": "Pin was 3389 m off the gym building (no-address); set building-level pin and official address",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 3389 m"
+    }
+   ]
+  },
+  {
+   "line": 16,
+   "class": "update",
+   "id": "seed-896",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Unit N1/N2 Mosley Road, Central Park Estate, Trafford Park, Manchester M17 1PG"
+    },
+    {
+     "field": "lat",
+     "before": 53.475,
+     "after": 53.4641431
+    },
+    {
+     "field": "lng",
+     "before": -2.235,
+     "after": -2.3209203
+    }
+   ],
+   "expect_h": "cbb9f6fe0b08476e",
+   "update_reason": "Pin was 5814 m off the gym building (coarse-coords,no-address); set building-level pin and official address",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 5814 m"
+    }
+   ]
+  },
+  {
+   "line": 17,
+   "class": "update",
+   "id": "seed-898",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Calshot Activities Centre, Calshot Spit, Fawley, Southampton SO45 1BR"
+    },
+    {
+     "field": "lat",
+     "before": 50.818,
+     "after": 50.8187141
+    },
+    {
+     "field": "lng",
+     "before": -1.3093,
+     "after": -1.3074291
+    }
+   ],
+   "expect_h": "8d90a5a2d13662e4",
+   "update_reason": "Pin was 154 m off the gym building (coarse-coords,no-address); set building-level pin and official address"
+  },
+  {
+   "line": 18,
+   "class": "update",
+   "id": "seed-901",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "1 Cabanel Place, Lollard Street, London SE11 6BD"
+    },
+    {
+     "field": "lat",
+     "before": 51.486,
+     "after": 51.49233
+    },
+    {
+     "field": "lng",
+     "before": -0.124,
+     "after": -0.114591
+    }
+   ],
+   "expect_h": "c43aabd55a3e90b3",
+   "update_reason": "Pin was 959 m off the gym building (coarse-coords,no-address); set building-level pin and official address",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 959 m"
+    }
+   ]
+  },
+  {
+   "line": 19,
+   "class": "update",
+   "id": "seed-902",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Arches 45b-47c South Lambeth Road, London SW8 1SR"
+    },
+    {
+     "field": "lat",
+     "before": 51.487,
+     "after": 51.485051
+    },
+    {
+     "field": "lng",
+     "before": -0.126,
+     "after": -0.122917
+    }
+   ],
+   "expect_h": "cdb7be54f588d649",
+   "update_reason": "Pin was 304 m off the gym building (coarse-coords,no-address); set building-level pin and official address"
+  },
+  {
+   "line": 20,
+   "class": "update",
+   "id": "seed-903",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "225 Hook Rise South, Surbiton KT6 7LD"
+    },
+    {
+     "field": "lat",
+     "before": 51.54,
+     "after": 51.3723558
+    },
+    {
+     "field": "lng",
+     "before": -0.11,
+     "after": -0.2914609
+    }
+   ],
+   "expect_h": "398925bc95dc7f44",
+   "update_reason": "Pin was 22485 m off the gym building (coarse-coords,no-address); set building-level pin and official address",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 22485 m"
+    }
+   ]
+  },
+  {
+   "line": 21,
+   "class": "update",
+   "id": "seed-904",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "4-6 Hookers Road, London E17 6DP"
+    },
+    {
+     "field": "lat",
+     "before": 51.5,
+     "after": 51.5896021
+    },
+    {
+     "field": "lng",
+     "before": -0.1,
+     "after": -0.0409418
+    }
+   ],
+   "expect_h": "d6e08098cc1c37c6",
+   "update_reason": "Pin was 10768 m off the gym building (coarse-coords,no-address); set building-level pin and official address",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 10768 m"
+    }
+   ]
+  },
+  {
+   "line": 22,
+   "class": "update",
+   "id": "seed-907",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Units 11, 12, 14 & 15, Kirkstall Industrial Park, Leeds LS4 2AZ"
+    },
+    {
+     "field": "lat",
+     "before": 53.799,
+     "after": 53.8031732
+    },
+    {
+     "field": "lng",
+     "before": -1.551,
+     "after": -1.5798206
+    }
+   ],
+   "expect_h": "b87702d0db30131a",
+   "update_reason": "Pin was 1949 m off the gym building (coarse-coords,no-address); set building-level pin and official address",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1949 m"
+    }
+   ]
+  },
+  {
+   "line": 23,
+   "class": "update",
+   "id": "seed-910",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "100A Gelderd Road, Leeds LS12 6BY"
+    },
+    {
+     "field": "lat",
+     "before": 53.801,
+     "after": 53.7842461
+    },
+    {
+     "field": "lng",
+     "before": -1.545,
+     "after": -1.5762472
+    }
+   ],
+   "expect_h": "e33f6397b8efd8db",
+   "update_reason": "Pin was 2772 m off the gym building (coarse-coords,no-address); set building-level pin and official address",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 2772 m"
+    }
+   ]
+  },
+  {
+   "line": 24,
+   "class": "update",
+   "id": "seed-911",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "45 Mowbray Street, Sheffield S3 8EN"
+    },
+    {
+     "field": "lat",
+     "before": 53.383,
+     "after": 53.390117
+    },
+    {
+     "field": "lng",
+     "before": -1.468,
+     "after": -1.4715444
+    }
+   ],
+   "expect_h": "3c90451394b68cae",
+   "update_reason": "Pin was 826 m off the gym building (coarse-coords,no-address); set building-level pin and official address",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 826 m"
+    }
+   ]
+  },
+  {
+   "line": 25,
+   "class": "update",
+   "id": "seed-912",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Unit 2 Garter Street, Sheffield S4 7QX"
+    },
+    {
+     "field": "lat",
+     "before": 53.3806626,
+     "after": 53.3992496
+    },
+    {
+     "field": "lng",
+     "before": -1.4702278,
+     "after": -1.4467377
+    }
+   ],
+   "expect_h": "b0ca3173d6cc7289",
+   "update_reason": "Pin was 2588 m off the gym building (no-address); set building-level pin and official address",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 2588 m"
+    }
+   ]
+  },
+  {
+   "line": 26,
+   "class": "update",
+   "id": "seed-913",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Unit A & B, 15 Sutherland Street, Sheffield S4 7WG"
+    },
+    {
+     "field": "lat",
+     "before": 53.385,
+     "after": 53.3908394
+    },
+    {
+     "field": "lng",
+     "before": -1.465,
+     "after": -1.4507539
+    }
+   ],
+   "expect_h": "81cda93fd2d2642c",
+   "update_reason": "Pin was 1146 m off the gym building (coarse-coords,no-address); set building-level pin and official address",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1146 m"
+    }
+   ]
+  },
+  {
+   "line": 27,
+   "class": "update",
+   "id": "seed-914",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "232 Woodbourn Road, Sheffield S9 3LQ"
+    },
+    {
+     "field": "lat",
+     "before": 53.379,
+     "after": 53.3851737
+    },
+    {
+     "field": "lng",
+     "before": -1.472,
+     "after": -1.4410991
+    }
+   ],
+   "expect_h": "a094e345c798410f",
+   "update_reason": "Pin was 2161 m off the gym building (coarse-coords,no-address); set building-level pin and official address",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 2161 m"
+    }
+   ]
+  },
+  {
+   "line": 28,
+   "class": "update",
+   "id": "seed-915",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Park Garage, Cheviot Street, Manchester M3 1LW"
+    },
+    {
+     "field": "lat",
+     "before": 53.4424618,
+     "after": 53.4914119
+    },
+    {
+     "field": "lng",
+     "before": -2.2324547,
+     "after": -2.2452626
+    }
+   ],
+   "expect_h": "70bfd5d49c6b7188",
+   "update_reason": "Pin was 5509 m off the gym building (no-address); set building-level pin and official address",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 5509 m"
+    }
+   ]
+  },
+  {
+   "line": 29,
+   "class": "update",
+   "id": "seed-937",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "7-11 Blinshall Street, Dundee DD1 5DF"
+    },
+    {
+     "field": "lat",
+     "before": 56.462,
+     "after": 56.4605032
+    },
+    {
+     "field": "lng",
+     "before": -2.9707,
+     "after": -2.9811413
+    }
+   ],
+   "expect_h": "481bc2111eb27121",
+   "update_reason": "Pin was 663 m off the gym building (coarse-coords,no-address); set building-level pin and official address",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 663 m"
+    }
+   ]
+  },
+  {
+   "line": 30,
+   "class": "update",
+   "id": "seed-940",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "74 Black Street, Glasgow G4 0EF"
+    },
+    {
+     "field": "lat",
+     "before": 55.8642,
+     "after": 55.8674594
+    },
+    {
+     "field": "lng",
+     "before": -4.2518,
+     "after": -4.2401257
+    }
+   ],
+   "expect_h": "ce4617bf89854191",
+   "update_reason": "Pin was 814 m off the gym building (no-address); set building-level pin and official address",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 814 m"
+    }
+   ]
+  },
+  {
+   "line": 31,
+   "class": "update",
+   "id": "seed-941",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Edgefield Road Industrial Estate, Loanhead EH20 9TB"
+    },
+    {
+     "field": "lat",
+     "before": 55.945,
+     "after": 55.8837025
+    },
+    {
+     "field": "lng",
+     "before": -3.17,
+     "after": -3.1503166
+    }
+   ],
+   "expect_h": "9034b9cbe058d411",
+   "update_reason": "Pin was 6925 m off the gym building (coarse-coords,no-address); set building-level pin and official address",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 6925 m"
+    }
+   ]
+  },
+  {
+   "line": 32,
+   "class": "update",
+   "id": "seed-943",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Ibrox Church, 534 Paisley Road West, Glasgow G51 1RN"
+    },
+    {
+     "field": "lat",
+     "before": 55.86,
+     "after": 55.8507207
+    },
+    {
+     "field": "lng",
+     "before": -4.26,
+     "after": -4.3054003
+    }
+   ],
+   "expect_h": "7ff8ced02dc821e3",
+   "update_reason": "Pin was 3016 m off the gym building (coarse-coords,no-address); set building-level pin and official address",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 3016 m"
+    }
+   ]
+  },
+  {
+   "line": 33,
+   "class": "update",
+   "id": "seed-945",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "124 Portman Street, Kinning Park, Glasgow G41 1EJ"
+    },
+    {
+     "field": "lat",
+     "before": 55.868,
+     "after": 55.8504352
+    },
+    {
+     "field": "lng",
+     "before": -4.245,
+     "after": -4.281947
+    }
+   ],
+   "expect_h": "a6b723a390962278",
+   "update_reason": "Pin was 3022 m off the gym building (coarse-coords,no-address); set building-level pin and official address",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 3022 m"
+    }
+   ]
+  },
+  {
+   "line": 34,
+   "class": "update",
+   "id": "seed-946",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Unit B2, 24 Craigmont Street, Maryhill, Glasgow G20 9BT"
+    },
+    {
+     "field": "lat",
+     "before": 55.855,
+     "after": 55.8904447
+    },
+    {
+     "field": "lng",
+     "before": -4.27,
+     "after": -4.286474
+    }
+   ],
+   "expect_h": "7277d9627309303b",
+   "update_reason": "Pin was 4073 m off the gym building (coarse-coords,no-address); set building-level pin and official address",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 4073 m"
+    }
+   ]
+  },
+  {
+   "line": 35,
+   "class": "update",
+   "id": "seed-947",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "4 East Telferton, Edinburgh EH7 6XD"
+    },
+    {
+     "field": "lat",
+     "before": 55.96,
+     "after": 55.9560589
+    },
+    {
+     "field": "lng",
+     "before": -3.2,
+     "after": -3.1241059
+    }
+   ],
+   "expect_h": "93b54f02ddec4c28",
+   "update_reason": "Pin was 4744 m off the gym building (coarse-coords,no-address); set building-level pin and official address",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 4744 m"
+    }
+   ]
+  }
+ ]
+}
