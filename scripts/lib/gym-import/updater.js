@@ -1,9 +1,9 @@
 // The update path of the production importer. See docs/import-workflow.md ("Updating the location of existing gyms", "Filling gym
-// information (website, hours, day pass, facilities)").
+// information (website, hours, day pass, facilities, notes)").
 //
 // Same conventions as importer.js: modes dry-run (default) | verify | apply; only `apply` writes, and only after every check, the
 // confirmation token and the production flag pass. An update batch can change ONLY address / lat / lng (a "location update") or
-// FILL website / hours / day_pass / facilities (an "info update") of existing APPROVED spots; one record never mixes the two families.
+// FILL website / hours / day_pass / facilities / notes (an "info update") of existing APPROVED spots; one record never mixes the two families.
 // Every record names the gym's content hash when it was researched (expect_h); a gym whose content differs from that is refused,
 // never overwritten. Nothing here inserts, deletes, or touches any other field. importer.js hands a batch here when EVERY record is
 // {"intent":"update"}; a batch mixing inserts and updates stays in importer.js and is refused there.
@@ -17,9 +17,10 @@
 // with the fields restored to the researched values hashes to expect_h (every other compared field is unchanged); anything else = changed. A value equal to the
 // current one is refused (no-op), and plan.js refuses a change that would make the gym look like another existing gym. Its write (Api.updateSpotIdentity)
 // sends exactly the approved fields, never the slug (stored; the database never changes it), and the verification re-checks slugs.
-// An info update is FILL-ONLY: the gym-information fields are not part of the content hash, so its states are read from the fields themselves:
+// An info update is FILL-ONLY: the gym-information fields (website/hours/day_pass/facilities) are not part of the content hash, so its states are read from the
+// fields themselves (`notes` is the exception, see stateOfInfo: its hash is taken with notes removed, "h0"):
 //   before   approved, hash = expect_h, and every field in `set` is empty in production (website null; hours null or {}; day_pass null or '';
-//            facilities null or [] -- the column is not null default '{}', so a gym with none holds [])
+//            facilities null or [] -- the column is not null default '{}', so a gym with none holds []; notes null or '')
 //   after    approved, hash = expect_h, and every field in `set` equals the record (hours / facilities: deep equality; facilities are
 //            compared in order, which is why validate.js requires the record in the canonical FACILITIES order)
 //   changed  anything else (a field already holds another value, e.g. a community edit approved since the research) -> refused
@@ -93,11 +94,15 @@ function locationProblems(rec) {
 const emptyInfo = (f, v) => v === null || v === undefined
   || (f === 'hours' && !!v && typeof v === 'object' && !Array.isArray(v) && !Object.keys(v).length)
   || (f === 'day_pass' && v === '')
-  || (f === 'facilities' && Array.isArray(v) && !v.length);
+  || (f === 'facilities' && Array.isArray(v) && !v.length)
+  || (f === 'notes' && v === '');
+// `notes` is the one info field that IS in the content hash. For a record that sets notes the "content unchanged" test therefore uses h0, the hash of the row
+// with notes removed: in the before state notes is empty, so h0 equals the live hash (= expect_h, which the researcher takes from the index); in the after state
+// h0 is still expect_h while the live hash `h` (reported in the manifest as after_h) is the new one. Records without notes compare the live hash, as always.
 function stateOfInfo(live, rec) {
   if (!live) return { state: 'missing' };
   if (live.status !== 'approved') return { state: 'not-approved' };
-  const h = S.toEntry(live).h, fields = Object.keys(rec.set), hashOk = h === rec.expect_h;
+  const h = S.toEntry(live).h, fields = Object.keys(rec.set), hashOk = (fields.includes('notes') ? S.toEntry({ ...live, notes: null }).h : h) === rec.expect_h;
   if (hashOk && fields.every(f => isDeepStrictEqual(live[f], rec.set[f]))) return { state: 'after', h, updatedAt: live.updated_at };
   if (hashOk && fields.every(f => emptyInfo(f, live[f]))) return { state: 'before', h, updatedAt: live.updated_at };
   return { state: 'changed', h, filled: fields.filter(f => !emptyInfo(f, live[f]) && !isDeepStrictEqual(live[f], rec.set[f])) };
@@ -378,10 +383,10 @@ async function runUpdate(opts) {
     if (after.approved.length !== expectCount) problems.push(`approved count ${after.approved.length}, expected ${expectCount} (${res.beforeCount} before; an update never adds or removes a spot, a retirement removes exactly one approved spot each)`);
     const drAfter = driftExcept(after.approved, index, new Set(ids));
     if (driftTotal(drAfter)) problems.push(`other spots changed: added ${drAfter.added.length}, removed ${drAfter.removed.length}, changed ${drAfter.changed.length}`);
-    if (infoIds.size) {   // the gym-information fields are not in the content hash, so compare them directly: only the info targets may differ from before the write
-      const infoOf = r => JSON.stringify(T.INFO_FIELDS.map(f => r[f] ?? null)), was = new Map(before.approved.map(r => [r.id, infoOf(r)]));
+    if (infoIds.size) {   // website/hours/day_pass/facilities are not in the content hash, so compare them directly: only the info targets may differ from before the write (notes of other spots IS in the hash, so the drift check above already covers it)
+      const infoOf = r => JSON.stringify(T.INFO_FIELDS.filter(f => f !== 'notes').map(f => r[f] ?? null)), was = new Map(before.approved.map(r => [r.id, infoOf(r)]));
       const moved = after.approved.filter(r => !infoIds.has(r.id) && was.get(r.id) !== undefined && was.get(r.id) !== infoOf(r)).map(r => r.id);
-      if (moved.length) problems.push(`${T.INFO_FIELDS.join('/')} of other spots changed: ${sample(moved, 4)}`);
+      if (moved.length) problems.push(`${T.INFO_FIELDS.filter(f => f !== 'notes').join('/')} of other spots changed: ${sample(moved, 4)}`);
     }
     if (identityIds.size) {   // identity targets: the content hash is the researched row with the set applied (computed from the row seen at the final re-check), and no slug ever moves
       for (const u of res.updates.filter(isIdentity)) {

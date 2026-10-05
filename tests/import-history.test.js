@@ -174,6 +174,30 @@ test('history: a gym-information fill (website/hours) leaves the index and the c
   assert.equal(live.reverted, 0, 'nothing to revert in the compared fields'); assert.deepEqual(live.rows.map(x => x.lat), rows.map(x => x.lat));
 });
 
+test('history: a notes fill CHANGES the content hash: the index is restored with expect_h, and a live row that carries notes is reverted to its pre-fill value', () => {
+  const NOTE = 'Temporarily closed (last checked 5 October 2026).';
+  const FILLED = { ...PROD[1], notes: NOTE };   // seed-101 has no notes before
+  const root = tmp(), A = indexOf(PROD);
+  S.write([PROD[0], FILLED, ...PROD.slice(2)], path.join(root, 'import', 'index'), { source: 'test' });   // the index rebuilt from production after the fill: seed-101's h moved
+  assert.notEqual(S.toEntry(FILLED).h, S.toEntry(PROD[1]).h, 'precondition: notes is in the hash');
+  writeBatch(root, H.BASELINE_BATCH, { manifest: { status: 'imported', ids: ['g-0000000000'], finished_at: '2026-09-24T00:00:00.000Z' } });
+  writeBatch(root, '2026-10-05-notes-fill', { manifest: { kind: 'update', status: 'updated', ids: ['seed-101'], finished_at: '2026-10-05T00:00:00.000Z' },
+    plan: { index: { sha256: A.sha256, count: A.entries.length }, records: [{ class: 'update', id: 'seed-101', expect_h: contentHash(PROD[1]), changes: [{ field: 'notes', before: null, after: NOTE }] }] } });
+  const index = S.load(path.join(root, 'import', 'index'));
+  const r = H.revertIndex(index, root);
+  assert.equal(r.sha256, A.sha256, 'undoing the fill gives the index it was planned against (h restored to expect_h; the index never carried notes)');
+  assert.deepEqual(r.revertedUpdates, ['seed-101']);
+  assert.equal(r.byId.get('seed-101').h, contentHash(PROD[1]));
+  // a live row that carries notes holding exactly the filled value is compared at its value before the fill; a row holding anything else is left alone (real drift still shows)
+  const live = H.revertLiveRows([PROD[0], FILLED, ...PROD.slice(2)], root);
+  assert.equal(live.reverted, 1); assert.equal(live.rows.find(x => x.id === 'seed-101').notes, null);
+  const edited = H.revertLiveRows([PROD[0], { ...PROD[1], notes: 'edited by a moderator' }, ...PROD.slice(2)], root);
+  assert.equal(edited.reverted, 0); assert.equal(edited.rows.find(x => x.id === 'seed-101').notes, 'edited by a moderator');
+  // rows selected without a notes column (validate-reconciled.js reads id,name,country,lat,lng,address) can neither confirm nor contradict the fill
+  const narrow = H.revertLiveRows(PROD.map(({ notes, photo, ...p }) => p), root);
+  assert.equal(narrow.reverted, 0);
+});
+
 test('history: an identity update (name/suburb/types) is reverted like a location change; the type tags are compared as a set (the index keeps them sorted, the record lists them in canonical order)', () => {
   const RENAMED = { ...PROD[1], name: 'Vertical Works Fitzroy', suburb: 'Fitzroy North', types: ['indoor-bouldering', 'top-rope', 'lead-climbing'] };
   const changes = [{ field: 'name', before: PROD[1].name, after: RENAMED.name }, { field: 'suburb', before: PROD[1].suburb, after: RENAMED.suburb }, { field: 'types', before: ['indoor-bouldering', 'top-rope'], after: RENAMED.types }];

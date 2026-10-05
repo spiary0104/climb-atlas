@@ -59,7 +59,7 @@ http(s) URL (same `safeUrl` rule as the app). Any other field (`status`, `commun
 **Record (update existing gym):** `{"intent":"update","id":"<existing id>","reason":"why","set":{"types":[...]}}` — only
 `name, suburb, state, lat, lng, types, address, notes, photo, website, hours, day_pass, facilities` may be set for *planning*; a full record that differs from an existing
 gym is never treated as an update. Optional `expect_h` (the gym's content hash when researched): the plan marks the record invalid
-if the index no longer has that content. **Only location updates, gym-information fills (`website`, `hours`, `day_pass`, `facilities`) and identity corrections (`name`, `suburb`, `types`) can be written** (see "Updating the location of existing gyms", "Filling gym information (website, hours, day pass, facilities)" and "Correcting gym identity (name, suburb, type tags)").
+if the index no longer has that content. **Only location updates, gym-information fills (`website`, `hours`, `day_pass`, `facilities`, `notes`) and identity corrections (`name`, `suburb`, `types`) can be written** (see "Updating the location of existing gyms", "Filling gym information (website, hours, day pass, facilities, notes)" and "Correcting gym identity (name, suburb, type tags)").
 
 ### Staging records that already exist as a JSON array
 `node scripts/gym-import.js stage-from-file <source.json> --slug <slug> --date YYYY-MM-DD --description "..." [--decisions <decisions.json>]`
@@ -90,7 +90,7 @@ node scripts/gym-import.js research stage <section>       # needs a current reco
 `lat`, `lng`, `coord_source{source, method: osm|official-map|chain-store-list|geocoded-address|map-service-pin, ref}`, `coord_precision`
 (`entrance|building|street|area`), `types`, `website`, `category` (`commercial-gym|university|club|outdoor-area|shop|other`), `status_claim`
 (`open|closed|opening-soon|temporary|unknown`), `bouldering` (`yes|no|unknown`), `evidence[{source, url, accessed, supports[]}]`, `research_notes`, `notes`,
-`photo`. Coordinates always come from an identified source; `website`, evidence and notes stay in the research files; a gym's website, hours, day pass and facilities reach production only through a separate fill batch (see "Filling gym information (website, hours, day pass, facilities)").
+`photo`. Coordinates always come from an identified source; `website`, evidence and notes stay in the research files; a gym's website, hours, day pass and facilities reach production only through a separate fill batch (see "Filling gym information (website, hours, day pass, facilities, notes)").
 `types` includes `indoor-bouldering` exactly when `bouldering` is `yes`; a candidate whose bouldering is `unknown` or `no` may have an empty `types`
 list (never a placeholder). Such a candidate is always blocked, so nothing with an empty or unconfirmed type list can be accepted or staged.
 
@@ -331,8 +331,8 @@ every verified batch after the first import (location updates and inserts) with 
 manifest's `finished_at`, it undoes each batch's recorded changes or removes its inserted ids (its committed `plan.json`) and requires the
 result to hash to the index that batch was planned against; any unexplained difference (e.g. a gym approved outside the pipeline) throws.
 
-### Filling gym information (website, hours, day pass, facilities)
-A maintenance batch can also **fill** the public gym-information fields `website`, `hours`, `day_pass` and `facilities` (migration `20261004000100`) on existing approved gyms, through the
+### Filling gym information (website, hours, day pass, facilities, notes)
+A maintenance batch can also **fill** the public gym-information fields `website`, `hours`, `day_pass`, `facilities` (migration `20261004000100`) and `notes` on existing approved gyms, through the
 same updater, gates and verification as a location update. It only ever fills empty fields; nothing is overwritten.
 
 Record: `{"intent":"update","id":"seed-884","expect_h":"<16 hex>","reason":"why (>= 8 chars)","source":"<official URL>","set":{"website":"https://…","hours":{"mon":"6am–10pm","sat":"8am–6pm"},"day_pass":"A$28 adult, A$22 concession","facilities":["cafe","shoe-hire","parking"]}}`
@@ -347,16 +347,24 @@ Record: `{"intent":"update","id":"seed-884","expect_h":"<16 hex>","reason":"why 
   `js/modules/gym-info.js` FACILITIES), **listed in exactly that canonical order** (the order above; `["cafe","parking"]` is valid, `["parking","cafe"]` is not). The order is required so the
   stored `text[]` equals the record byte for byte; it is compared with deep equality, never as a set. Unknown keys, duplicates, non-strings, a non-array and `[]` are invalid. List only
   facilities the official site states; a gym that states none gets no `facilities` key (an empty array is never written).
+- `notes`: a non-empty string of at most 2000 characters (the database cap), already trimmed and on **one line** (no control characters, \r, \n or \t; chosen like `day_pass` so the stored text
+  equals the record byte for byte). Empty, null, a non-string, untrimmed, multi-line or longer is invalid (never silently cleaned). It may be combined with the other info fields in one record
+  (`{"notes":"Temporarily closed (last checked 5 October 2026).","hours":{…}}`). **Notes are public**: the gym page shows them (`js/modules/provenance.js` `publicNotes` hides research-style
+  sentences), so a notes fill must read as a visitor-facing sentence (what a climber should know), never as research ("per the gym's site…", sources, confidence).
 - **Sources: the gym's official website only** (put its URL in `source`); no aggregators, maps or social posts. Hours are written as the gym states them.
-- The gym-information fields are not part of the content hash, so `expect_h` stays valid after a fill. Per gym the live row is **before** (approved, hash = `expect_h`, and every
-  field in `set` empty: `null`; for hours also `{}`, for `day_pass` also `''`, for `facilities` also `[]` (the column is `not null default '{}'`, so a gym with none holds `[]`)), **after** (hash = `expect_h` and every field in `set` equals the record; hours and facilities by deep equality) or **changed**
+- `website`/`hours`/`day_pass`/`facilities` are not part of the content hash, so `expect_h` stays valid after such a fill. **`notes` IS in the hash**, so a notes fill moves the gym's real hash: for a record that
+  sets `notes` the updater uses **h0**, the hash of the live row *with notes removed* (`contentHash({...live, notes: null})`), wherever it compares against `expect_h`. Before the fill notes is empty,
+  so h0 equals the live hash and `expect_h` is still simply the gym's `h` from the current index; after it, h0 is still `expect_h` while the manifest's `after_h` is the real new hash. Another hashed
+  field changed (name, pin, photo, …) makes h0 differ = **changed**. After applying, run `build-index --live` (the gym's index `h` changes; `history.js` restores it from `expect_h` when looking back, and a
+  re-run of the same batch is then refused as a stale `expect_h`, like any location update). Per gym the live row is **before** (approved, hash = `expect_h`, and every
+  field in `set` empty: `null`; for hours also `{}`, for `day_pass` also `''`, for `facilities` also `[]` (the column is `not null default '{}'`, so a gym with none holds `[]`), for `notes` also `''`), **after** (hash = `expect_h` and every field in `set` equals the record; hours and facilities by deep equality) or **changed**
   (anything else). A field that already holds another value (e.g. a community edit approved since the research) refuses the whole batch with a message naming the gym
   and field (`fill-only: gym information already set in production`); nothing is written. All *after* = already applied (nothing written, a recovery manifest on `--apply`
   if none exists); a before/after mix is refused. Only the fields named in `set` matter: a gym whose hours were filled by the community can still get a website; a gym that already has facilities can still get its day pass.
-- `plan`/`report.md` list per gym what will be filled (website host, hours days, "day pass", "facilities (n)") for review; `plan.json` stores the full values (`before: null`).
+- `plan`/`report.md` list per gym what will be filled (website host, hours days, "day pass", "facilities (n)", the note text) for review; `plan.json` stores the full values (`before: null`).
 - The write: `Api.updateSpotInfo` (behind the same update gate), one `PATCH` per gym filtered by `id` + `status=approved` + the exact `updated_at` seen at the final
-  re-check, body exactly the approved `{website?, hours?, day_pass?, facilities?}`; 0 rows matched = refusal. **Verification:** every info target in its *after* state, approved count unchanged,
-  every other spot unchanged (content hash vs the index; website/hours/day pass/facilities of every non-target compared directly); `manifest.json` (`kind: "update"`) lists the fills apart
+  re-check, body exactly the approved `{website?, hours?, day_pass?, facilities?, notes?}`; 0 rows matched = refusal. **Verification:** every info target in its *after* state, approved count unchanged,
+  every other spot unchanged (content hash vs the index, which covers the notes of every non-target; website/hours/day pass/facilities compared directly); a notes target must still hash to `expect_h` with notes removed; `manifest.json` (`kind: "update"`) lists the fills apart
   from location changes: `rows_info_filled` and `info_filled[{id, fields, expect_h, after_h}]` (`changes`/`rows_updated` count location updates only; `ids` lists every target).
 
 Run (batch under `import/batches/`; `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` exported in the shell, never in a file):

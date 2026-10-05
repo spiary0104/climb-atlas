@@ -48,7 +48,7 @@ function fakeProd({ approved, pending = [] }) {
     },
     async updateSpotInfo(u, gate) {
       assert.ok(gate && Array.isArray(gate.updates) && gate.payloadSha, 'only a gated information fill reaches the database');
-      assert.ok(Object.keys(u.set).every(k => ['website', 'hours', 'day_pass', 'facilities'].includes(k)), 'an information fill carries the gym-information fields only');
+      assert.ok(Object.keys(u.set).every(k => ['website', 'hours', 'day_pass', 'facilities', 'notes'].includes(k)), 'an information fill carries the gym-information fields only');
       if (state.hooks.beforePatch) state.hooks.beforePatch(u, state);
       state.infoPatches.push({ id: u.id, set: u.set, updatedAt: u.updatedAt });
       const row = state.approved.find(r => r.id === u.id && r.status === 'approved' && r.updated_at === u.updatedAt);
@@ -200,7 +200,7 @@ test('a change between the dry-run and apply is caught by the final re-check; a 
 // ============================================ location-only rules ===============================================================
 test('location updates: only address, lat and lng can change (name/suburb/types are the identity family, tested below): every other field, a half pin, a cleared address, or a missing expect_h/source is refused', async () => {
   const cases = [
-    [ix => [upd(ix, 'seed-100', { notes: 'x' })], 'notes'],
+    [ix => [upd(ix, 'seed-100', { notes: 'x', lat: -33.882, lng: 151.213 })], 'notes + pin (notes is an info fill)'],
     [ix => [upd(ix, 'seed-100', { photo: 'https://example.com/p.jpg' })], 'photo'],
     [ix => [upd(ix, 'seed-100', { state: 'VIC' })], 'state'],
     [ix => [upd(ix, 'seed-100', { country: 'NZ' })], 'country'],
@@ -842,7 +842,7 @@ test('info records: day_pass and facilities values are validated strictly (byte 
   for (const set of edge) { const w = await world({ records: ix => [info(ix, 'seed-100', set)], approved: infoBase2() }); assert.equal(w.plan.counts.update, 1, JSON.stringify(set).slice(0, 60)); assert.equal(w.plan.importable, true, w.plan.blockers.join()); }
   const V = require('../scripts/lib/gym-import/validate');
   assert.deepEqual([...V.FACILITY_KEYS], ['cafe', 'training', 'kids', 'shoe-hire', 'shop', 'showers', 'parking', 'yoga']);
-  assert.deepEqual([...V.INFO_FIELDS], ['website', 'hours', 'day_pass', 'facilities']);
+  assert.deepEqual([...V.INFO_FIELDS], ['website', 'hours', 'day_pass', 'facilities', 'notes']);
 });
 
 test('info day pass + facilities: the validator keys equal the migration check and js/modules/gym-info.js (no drift)', () => {
@@ -858,7 +858,7 @@ test('info day pass + facilities: the validator keys equal the migration check a
 });
 
 test('info day pass + facilities never mix with location or other fields in one record; a maintenance batch may mix the families across gyms', async () => {
-  for (const [set, what] of [[{ day_pass: DAYPASS, lat: -33.882, lng: 151.213 }, 'day pass + pin'], [{ facilities: FAC, address: '1 St' }, 'facilities + address'], [{ day_pass: DAYPASS, name: 'Renamed' }, 'day pass + name'], [{ facilities: FAC, website: 'https://example.com/', notes: 'x' }, 'info + notes']]) {
+  for (const [set, what] of [[{ day_pass: DAYPASS, lat: -33.882, lng: 151.213 }, 'day pass + pin'], [{ facilities: FAC, address: '1 St' }, 'facilities + address'], [{ day_pass: DAYPASS, name: 'Renamed' }, 'day pass + name'], [{ facilities: FAC, website: 'https://example.com/', notes: 'x', name: 'Renamed' }, 'info + notes + name']]) {
     const w = await world({ records: ix => [info(ix, 'seed-100', set)], approved: infoBase2() });
     assert.equal(w.plan.counts.invalid, 1, what); assert.match(JSON.stringify(w.plan), /mixed-families/, what);
     const r = await runImport({ ...w.base }); assert.equal(r.exit, 2, what); assert.equal(w.fake.state.infoPatches.length + w.fake.state.patches.length, 0);
@@ -1257,4 +1257,149 @@ test('identity: name, suburb and types are part of the content hash (an identity
   const g = BASE()[0];
   assert.notEqual(N.contentHash(g), N.contentHash({ ...g, name: g.name + ' 2' })); assert.notEqual(N.contentHash(g), N.contentHash({ ...g, suburb: 'Elsewhere' })); assert.notEqual(N.contentHash(g), N.contentHash({ ...g, types: ['top-rope'] }));
   assert.equal(N.contentHash(g), N.contentHash({ ...g, slug: 'another-slug' }), 'the slug is not part of the content hash');
+});
+
+// ============================================ gym information: notes (fill-only; the one info field that IS in the content hash) =====
+// A notes fill is an info update ({"set":{"notes":"..."}}, alone or with website/hours/day_pass/facilities). Because notes is part of the content hash, its state is
+// read from h0 = the hash of the row with notes removed: before = h0 is expect_h and notes empty; after = h0 is expect_h and notes equal the record; else changed.
+const NOTE = 'Temporarily closed (last checked 5 October 2026).';
+const notesRec = (ix, id, set = { notes: NOTE }, over = {}) => info(ix, id, set, { reason: 'temporarily closed, per the gym website (test)', ...over });
+const NOTES2 = ix => [notesRec(ix, 'seed-101'), notesRec(ix, 'seed-102', { notes: NOTE, hours: HOURS })];
+
+test('notes fill records: a notes-only record and notes + hours validate; invalid notes values are refused, never cleaned', async () => {
+  const V = require('../scripts/lib/gym-import/validate');
+  const rec1 = set => ({ intent: 'update', id: 'seed-101', expect_h: '0123456789abcdef', reason: 'temporarily closed, per the gym website (test)', source: 'https://example.com/', set });
+  const errs = async set => (await V.validateUpdateRecord(rec1(set))).errors;
+  for (const set of [{ notes: NOTE }, { notes: NOTE, hours: HOURS }, { notes: 'x' }, { notes: 'y'.repeat(2000) }, { notes: NOTE, website: 'https://example.com/', day_pass: 'Free', facilities: ['cafe'] }]) assert.deepEqual(await errs(set), [], JSON.stringify(set).slice(0, 60));
+  assert.ok(V.isInfoSet({ notes: NOTE }) && V.INFO_FIELDS.includes('notes'));
+  for (const [v, code] of [['', 'bad-notes'], [null, 'bad-notes'], [7, 'bad-notes'], [['a'], 'bad-notes'], [' leading', 'untrimmed'], ['trailing ', 'untrimmed'], ['two\nlines', 'control-chars'], ['tab\there', 'control-chars'], ['cr\r', 'control-chars'], ['bell\u0007', 'control-chars'], ['z'.repeat(2001), 'too-long']]) {
+    const e = await errs({ notes: v }); assert.ok(e.some(x => x.code === code && x.field === 'notes'), JSON.stringify(v).slice(0, 30) + ' -> ' + JSON.stringify(e));
+  }
+  assert.ok((await errs({ notes: NOTE, name: 'Renamed' })).some(x => x.code === 'mixed-families'), 'notes never mixes with identity fields');
+  assert.ok((await errs({ notes: NOTE, lat: -33.9, lng: 151.2 })).some(x => x.code === 'mixed-families'), 'notes never mixes with location fields');
+  assert.deepEqual(await V.infoSetProblems({ notes: NOTE }), []); assert.match((await V.infoSetProblems({ notes: '' }))[0], /notes must be non-empty/);
+  assert.match(V.describeInfoSet({ notes: NOTE, hours: HOURS }), /hours mon,tue,sat \+ notes "Temporarily closed/);
+  // the notes of a NEW gym record keep their own (lenient) rules
+  assert.deepEqual((await V.validateNewRecord({ name: 'N', suburb: 'S', state: 'NSW', country: 'AU', lat: -33.9, lng: 151.2, types: ['indoor-bouldering'], notes: 'two\nlines' })).errors, []);
+});
+
+test('stateOf for notes records (real content hash): before = h0 is expect_h and notes empty; after = notes equal the record; a different value is changed and names notes', () => {
+  const { stateOf } = require('../scripts/lib/gym-import/updater');
+  const N = require('../scripts/lib/gym-import/normalize');
+  const base = { ...infoBase2().find(r => r.id === 'seed-101'), updated_at: 'ts-0' }, h = S.toEntry(base).h;
+  const rec1 = { id: 'seed-101', expect_h: h, set: { notes: NOTE } };
+  const st = r => stateOf(r, null, rec1);
+  for (const e of [{ notes: null }, { notes: '' }, { notes: undefined }]) assert.deepEqual(st({ ...base, ...e }), { state: 'before', h, updatedAt: 'ts-0' }, JSON.stringify(e));
+  const filled = { ...base, notes: NOTE }, hAfter = S.toEntry(filled).h;
+  assert.notEqual(hAfter, h, 'the fill moves the real content hash');
+  assert.equal(N.contentHash({ ...filled, notes: null }), h, 'but h0 (notes removed) is still expect_h');
+  assert.deepEqual(st(filled), { state: 'after', h: hAfter, updatedAt: 'ts-0' }, 'after reports the REAL new hash (the manifest after_h)');
+  assert.deepEqual(st({ ...base, notes: 'Closed on Sundays.' }), { state: 'changed', h: S.toEntry({ ...base, notes: 'Closed on Sundays.' }).h, filled: ['notes'] }, 'fill-only: another value is never overwritten');
+  assert.deepEqual(st({ ...base, notes: NOTE + ' ' }).filled, ['notes'], 'not the record byte for byte');
+  assert.equal(st({ ...filled, name: base.name + ' 2' }).state, 'changed', 'another hashed field moved: not after');
+  assert.equal(st({ ...base, name: base.name + ' 2' }).state, 'changed', 'another hashed field moved: not before');
+  assert.deepEqual(st({ ...base, name: base.name + ' 2' }).filled, []);
+  assert.equal(st({ ...filled, status: 'rejected' }).state, 'not-approved'); assert.equal(st(undefined).state, 'missing');
+  // notes together with another info field: every listed field must be empty (before) or equal (after); h0 is used because notes is listed
+  const both = { id: 'seed-101', expect_h: h, set: { notes: NOTE, hours: { mon: '9-5' } } };
+  assert.equal(stateOf(base, null, both).state, 'before'); assert.equal(stateOf({ ...filled, hours: { mon: '9-5' } }, null, both).state, 'after');
+  assert.deepEqual(stateOf({ ...filled, hours: { mon: '9-6' } }, null, both).filled, ['hours']); assert.equal(stateOf(filled, null, both).state, 'changed', 'half applied');
+  // a record WITHOUT notes still compares the live hash, exactly as before: a moderator's notes edit is "content changed"
+  const web = { id: 'seed-101', expect_h: h, set: { website: 'https://example.com/' } };
+  assert.equal(stateOf(base, null, web).state, 'before'); assert.equal(stateOf({ ...base, notes: 'edited' }, null, web).state, 'changed', 'content hash moved');
+});
+
+test('notes fill: dry-run names the note, ONE info PATCH per gym with exactly the approved fields, verified, manifest keeps the real after_h, re-run is a no-op', async () => {
+  const w = await world({ records: NOTES2, approved: infoBase2(), id: '2026-10-05-notes-fill' });
+  assert.equal(w.plan.counts.update, 2); assert.equal(w.plan.importable, true, w.plan.blockers.join());
+  assert.deepEqual(w.plan.records[0].changes, [{ field: 'notes', before: null, after: NOTE }]);
+  const before = JSON.parse(JSON.stringify(w.fake.state.approved));
+  const dry = await runImport({ ...w.base }); assert.equal(dry.exit, 0, dry.report);
+  assert.match(dry.report, /seed-101  Vertical Works  notes "Temporarily closed \(last checked 5 October 2026\)\."/);
+  assert.equal(w.fake.state.infoPatches.length, 0, 'a dry-run writes nothing');
+  const ok = await runImport({ ...w.base, mode: 'apply', confirm: dry.token, productionFlag: true });
+  assert.equal(ok.exit, 0, ok.report); assert.deepEqual(ok.applied, ['seed-101', 'seed-102']);
+  assert.equal(w.fake.state.patches.length, 0); assert.equal(w.fake.state.infoPatches.length, 2);
+  assert.deepEqual(w.fake.state.infoPatches[0].set, { notes: NOTE }); assert.deepEqual(w.fake.state.infoPatches[1].set, { notes: NOTE, hours: HOURS });
+  assert.ok(w.fake.state.infoPatches.every(p => p.updatedAt === 'ts-0'), 'pinned to the row version seen at the final re-check');
+  const a = row(w, 'seed-101'), b0 = before.find(r => r.id === 'seed-101');
+  assert.equal(a.notes, NOTE);
+  for (const f of ['name', 'suburb', 'state', 'country', 'lat', 'lng', 'address', 'types', 'photo', 'status', 'website', 'hours']) assert.deepEqual(a[f], b0[f], 'unchanged: ' + f);
+  for (const id of ['seed-100', 'community-0f3a7c2e-1111-4222-8333-444455556666']) assert.deepEqual(row(w, id), before.find(r => r.id === id), 'other gyms untouched');
+  const m = JSON.parse(fs.readFileSync(path.join(w.b.dir, 'manifest.json'), 'utf8'));
+  assert.equal(m.status, 'updated'); assert.equal(m.rows_info_filled, 2); assert.deepEqual(m.info_filled.map(c => [c.id, c.fields]), [['seed-101', ['notes']], ['seed-102', ['notes', 'hours']]]);
+  assert.ok(m.info_filled.every(c => c.after_h !== c.expect_h && c.after_h === S.toEntry(row(w, c.id)).h), 'after_h is the real new hash (notes is in it)');
+  assert.equal(m.verification.ok, true); assert.equal(MF.readManifest(w.b.dir).valid, true);
+  const again = await runImport({ ...w.base, mode: 'apply', confirm: dry.token, productionFlag: true });
+  assert.equal(again.exit, 0, again.report); assert.equal(again.state, 'already-updated'); assert.equal(w.fake.state.infoPatches.length, 2, 'a second apply writes nothing');
+  const ver = await runImport({ ...w.base, mode: 'verify' }); assert.equal(ver.exit, 0, ver.report); assert.equal(ver.state, 'already-updated');
+});
+
+test('notes fill-only: a gym whose notes already hold another value is refused, naming the gym and notes; nothing is written; "" counts as empty', async () => {
+  const set = (id, patch) => infoBase2().map(r => (r.id === id ? { ...r, ...patch } : r));
+  const held = await world({ records: ix => [notesRec(ix, 'seed-101')], approved: set('seed-101', { notes: 'Closed on Sundays.' }) });
+  const r = await runImport({ ...held.base }); assert.equal(r.exit, 2, r.report);
+  assert.ok(failing(r).includes('fill-only: gym information already set in production'), failing(r).join());
+  assert.match(r.report, /seed-101 "Vertical Works": notes already has a value/);
+  const apply = await runImport({ ...held.base, mode: 'apply', confirm: '0'.repeat(16), productionFlag: true });
+  assert.equal(apply.exit, 2); assert.equal(held.fake.state.infoPatches.length, 0);
+  // seed-100 already has notes in production AND in the index (researched against that content): the fill is still refused as fill-only, naming notes
+  const had = await world({ records: ix => [notesRec(ix, 'seed-100')], approved: infoBase2() });
+  const rh = await runImport({ ...had.base }); assert.equal(rh.exit, 2); assert.ok(failing(rh).includes('fill-only: gym information already set in production'), failing(rh).join());
+  assert.match(rh.report, /seed-100 "Boulder Barn": notes already has a value/);
+  // another hashed field edited since the research is the generic refusal, not a fill-only one
+  const edited = await world({ records: ix => [notesRec(ix, 'seed-101')], approved: set('seed-101', { name: 'Vertical Works 2' }) });
+  const re = await runImport({ ...edited.base }); assert.equal(re.exit, 2); assert.ok(failing(re).includes('production still has the researched content (expect_h)'), failing(re).join());
+  // an empty string is empty: the fill goes ahead
+  const ok = await world({ records: ix => [notesRec(ix, 'seed-101')], approved: set('seed-101', { notes: '' }) });
+  const dry = await runImport({ ...ok.base }); assert.equal(dry.exit, 0, dry.report);
+  const done = await runImport({ ...ok.base, mode: 'apply', confirm: dry.token, productionFlag: true }); assert.equal(done.exit, 0, done.report);
+  assert.equal(row(ok, 'seed-101').notes, NOTE);
+});
+
+test('notes fill plan: invalid notes are invalid records; an expect_h from another content is refused', async () => {
+  for (const [set, what] of [[{ notes: '' }, 'empty'], [{ notes: ' padded ' }, 'untrimmed'], [{ notes: 'a\nb' }, 'newline'], [{ notes: 'x'.repeat(2001) }, '2001 chars'], [{ notes: 5 }, 'non-string'], [{ notes: NOTE, name: 'Renamed' }, 'notes + name']]) {
+    const w = await world({ records: ix => [notesRec(ix, 'seed-101', set)], approved: infoBase2() });
+    assert.equal(w.plan.counts.invalid, 1, what); assert.equal(w.plan.importable, false, what);
+    const r = await runImport({ ...w.base }); assert.equal(r.exit, 2, what); assert.ok(failing(r).some(n => /records validate/.test(n)), what + ': ' + failing(r).join());
+    assert.equal(w.fake.state.infoPatches.length, 0, what);
+  }
+  const w = await world({ records: ix => [notesRec(ix, 'seed-101', { notes: NOTE }, { expect_h: '0123456789abcdef' })], approved: infoBase2() });
+  assert.equal(w.plan.counts.invalid, 1); assert.match(JSON.stringify(w.plan), /changed-since-research/);
+});
+
+test('notes fill verification: another hashed field of the target, or another spot (notes or any hashed field), changing during the writes is a failure record (exit 4), never a manifest', async () => {
+  for (const [hook, what] of [
+    [(u, st) => { if (u.id === 'seed-101') st.approved.find(r => r.id === 'seed-101').name = 'Vertical Works (renamed)'; }, 'target name'],
+    [(u, st) => { if (u.id === 'seed-102') st.approved.find(r => r.id === 'seed-101').photo = 'https://example.com/p.jpg'; }, 'target photo (hashed)'],
+    [(u, st) => { if (u.id === 'seed-102') st.approved.find(r => r.id === 'seed-100').notes = 'edited by a moderator'; }, 'bystander notes'],
+  ]) {
+    const w = await world({ records: NOTES2, approved: infoBase2() }); const dry = await runImport({ ...w.base });
+    w.fake.state.hooks.beforePatch = hook;
+    const r = await runImport({ ...w.base, mode: 'apply', confirm: dry.token, productionFlag: true });
+    assert.equal(r.exit, 4, what + '\n' + r.report); assert.equal(fs.existsSync(path.join(w.b.dir, 'manifest.json')), false, what); assert.equal(fs.existsSync(path.join(w.b.dir, 'import-failure.json')), true, what);
+  }
+});
+
+test('target.js updateSpotInfo: notes go through the same gate; invalid notes and foreign fields are refused; sends one pinned PATCH with exactly the approved body', async () => {
+  const api = new T.Api({ url: 'https://example.supabase.co', serviceKey: 'service-key-xxxxxxxx', anonKey: 'anon-key-xxxxxxxx' });
+  const sent = []; api._send = async (method, q, o) => { sent.push({ method, q, o }); return { ok: true, status: 200, json: [{}] }; };
+  const sha = updates => crypto.createHash('sha256').update(JSON.stringify(T.opsPayload(updates, []))).digest('hex');
+  const gateFor = set => { const updates = [{ id: 'seed-101', set, expect_h: '0123456789abcdef' }]; return T.mintUpdateGate({ batchId: 'b', token: 't', updates, payloadSha: sha(updates) }); };
+  const u = set => ({ id: 'seed-101', set, updatedAt: '2026-09-24T01:02:03.123456+00:00' });
+  const bad = async (set, re) => assert.rejects(api.updateSpotInfo(u(set), gateFor(set)), re, JSON.stringify(set));
+  await bad({ notes: '' }, /notes must be non-empty/); await bad({ notes: null }, /notes must be non-empty/); await bad({ notes: ' x' }, /notes has leading/); await bad({ notes: 'a\nb' }, /single-line/);
+  await bad({ notes: 'x'.repeat(2001) }, /notes is 2001/); await bad({ notes: NOTE, photo: 'https://example.com/p.jpg' }, /only website\/hours\/day_pass\/facilities\/notes/);
+  assert.equal(sent.length, 0, 'nothing sent for any refusal');
+  const set = { notes: NOTE }, gate = gateFor(set);
+  await assert.rejects(api.updateSpotInfo(u({ notes: NOTE + '!' }), gate), /not the approved one/);
+  await api.updateSpotInfo(u(set), gate);
+  assert.equal(sent.length, 1); assert.equal(sent[0].method, 'PATCH'); assert.equal(sent[0].o.body, JSON.stringify(set));
+  assert.equal(sent[0].q, '/rest/v1/spots?id=eq.seed-101&status=eq.approved&updated_at=eq.2026-09-24T01%3A02%3A03.123456%2B00%3A00');
+});
+
+test('notes fill: the confirmation token is bound to the exact note', async () => {
+  const { confirmToken } = require('../scripts/lib/gym-import/updater');
+  const mk = set => confirmToken({ batchId: 'b', planSha: 'p', payload: crypto.createHash('sha256').update(JSON.stringify([{ id: 'seed-101', set, expect_h: '0123456789abcdef' }])).digest('hex'), host: 'h', kind: 'local', coverage: 'FULL', liveSha: 'l' });
+  assert.notEqual(mk({ notes: 'Temporarily closed.' }), mk({ notes: 'Permanently closed.' })); assert.equal(mk({ notes: NOTE }), mk({ notes: NOTE }));
 });

@@ -770,7 +770,7 @@ test('static: exactly five write call sites -- a plain INSERT (importer.js), a l
   assert.match(info, /id=eq\.\$\{encodeURIComponent\(u\.id\)\}&status=eq\.approved&updated_at=eq\.\$\{encodeURIComponent\(u\.updatedAt\)\}/);
   assert.match(info, /body: JSON\.stringify\(u\.set\) \}\);\s*\}/, 'the info PATCH body is exactly the approved set');
   assert.match(info, /keys\.some\(k => !INFO_FIELDS\.includes\(k\)\)/);
-  assert.ok(/INFO_FIELDS = Object\.freeze\(\['website', 'hours', 'day_pass', 'facilities'\]\)/.test(src('validate.js')), 'the information fields are exactly website, hours, day_pass and facilities');
+  assert.ok(/INFO_FIELDS = Object\.freeze\(\['website', 'hours', 'day_pass', 'facilities', 'notes'\]\)/.test(src('validate.js')), 'the information fields are exactly website, hours, day_pass, facilities and notes');
   assert.ok(!/body: JSON\.stringify\(\{ \.\.\./.test(t), 'no PATCH body is built by spreading');
   // the identity PATCH is pinned the same way; its body is exactly the approved {name?, suburb?, types?}, it only accepts those fields, and the slug never appears in it
   const ident = t.slice(t.indexOf('async updateSpotIdentity('), t.indexOf("_send('PATCH'", t.indexOf('async updateSpotIdentity(')) + 400);
@@ -1069,6 +1069,53 @@ test('LOCAL STACK: a real information fill writes exactly day_pass/facilities (f
   const s3 = await retSetup('2026-02-04-local-gym-info-dp-race', INFO_DP_TWO);
   const dry3 = await runImport({ batchDir: s3.b.dir, indexDir: s3.indexDir, env: e });
   await adm.patch('seed-102', { facilities: ['kids'] });
+  const snap3 = JSON.stringify(await adm.all());
+  const r3 = await runImport({ batchDir: s3.b.dir, indexDir: s3.indexDir, env: e, mode: 'apply', confirm: dry3.token });
+  assert.equal(r3.exit, 2, r3.report); assert.equal(JSON.stringify(await adm.all()), snap3, 'nothing written');
+});
+
+// ============================================ gym information: notes (fill-only; in the content hash) against the real local database ===
+const NOTES_TXT = 'Temporarily closed (last checked 5 October 2026).';
+const NOTES_TWO = ix => [{ ...infoRec(ix, 'seed-101', { notes: NOTES_TXT }), reason: 'temporarily closed, per the gym website (test)' }, { ...infoRec(ix, 'seed-102', { notes: NOTES_TXT, facilities: ['yoga'] }), reason: 'temporarily closed, per the gym website (test)' }];
+
+test('LOCAL STACK: a real notes fill writes exactly notes (+ facilities), the content hash moves as expected, other columns and gyms byte-identical, re-run writes nothing; held notes and a concurrent edit are refused', { skip }, async () => {
+  const e = env();
+  const s = await retSetup('2026-02-05-local-gym-notes', NOTES_TWO);
+  const dry = await runImport({ batchDir: s.b.dir, indexDir: s.indexDir, env: e });
+  assert.equal(dry.exit, 0, dry.report); assert.equal(dry.kind, 'update'); assert.equal(dry.coverage, 'FULL'); assert.match(dry.report, /Would fill gym information \(2 gyms/); assert.match(dry.report, /notes "Temporarily closed/);
+  const before = await adm.all();
+  const ok = await runImport({ batchDir: s.b.dir, indexDir: s.indexDir, env: e, mode: 'apply', confirm: dry.token });
+  assert.equal(ok.exit, 0, ok.report); assert.deepEqual(ok.applied, ['seed-101', 'seed-102']);
+  const after = await adm.all();
+  const was = id => before.find(r => r.id === id), now = id => after.find(r => r.id === id);
+  assert.equal(now('seed-101').notes, NOTES_TXT); assert.equal(now('seed-102').notes, NOTES_TXT); assert.deepEqual(now('seed-102').facilities, ['yoga']); assert.deepEqual(now('seed-101').facilities, was('seed-101').facilities);
+  for (const id of ['seed-101', 'seed-102']) {
+    assert.notEqual(now(id).updated_at, was(id).updated_at, 'the database records the edit time');
+    assert.notEqual(S.toEntry(now(id)).h, S.toEntry(was(id)).h, 'notes is in the content hash');
+    assert.equal(S.toEntry({ ...now(id), notes: null }).h, s.index.byId.get(id).h, 'h0 (notes removed) is the researched hash');
+    for (const f of ['name', 'suburb', 'state', 'country', 'lat', 'lng', 'address', 'types', 'photo', 'status', 'community', 'edited', 'created_at', 'slug', 'description', 'website', 'hours', 'day_pass']) assert.deepEqual(now(id)[f], was(id)[f], id + ' unchanged: ' + f);
+  }
+  for (const id of ['seed-100', 'community-0f3a7c2e-1111-4222-8333-444455556666']) assert.deepEqual(now(id), was(id), id + ' is byte-identical, including updated_at');
+  assert.equal(after.length, before.length);
+  const m = JSON.parse(fs.readFileSync(path.join(s.b.dir, 'manifest.json'), 'utf8'));
+  assert.equal(m.status, 'updated'); assert.equal(m.rows_info_filled, 2); assert.deepEqual(m.info_filled.map(c => [c.id, c.fields]), [['seed-101', ['notes']], ['seed-102', ['notes', 'facilities']]]);
+  assert.ok(m.info_filled.every(c => c.after_h === S.toEntry(now(c.id)).h && c.after_h !== c.expect_h)); assert.equal(m.verification.ok, true);
+  const again = await runImport({ batchDir: s.b.dir, indexDir: s.indexDir, env: e, mode: 'apply', confirm: dry.token });
+  assert.equal(again.exit, 0, again.report); assert.equal(again.state, 'already-updated'); assert.deepEqual(await adm.all(), after, 'the re-run wrote nothing');
+  assert.equal((await runImport({ batchDir: s.b.dir, indexDir: s.indexDir, env: e, mode: 'verify' })).exit, 0);
+
+  // fill-only: notes written in production since the research (a moderator edit) is refused, nothing is written
+  const s2 = await retSetup('2026-02-05-local-gym-notes-held', NOTES_TWO);
+  await adm.patch('seed-101', { notes: 'Closed on Sundays.' });
+  const snap2 = JSON.stringify(await adm.all());
+  const r2 = await runImport({ batchDir: s2.b.dir, indexDir: s2.indexDir, env: e });
+  assert.equal(r2.exit, 2, r2.report); assert.ok(failing(r2).includes('fill-only: gym information already set in production'), failing(r2).join()); assert.match(r2.report, /seed-101 "[^"]+": notes already has a value/);
+  assert.equal(JSON.stringify(await adm.all()), snap2, 'nothing written');
+
+  // a moderator edit lands after the dry-run (token already issued): the final re-check refuses, nothing is written
+  const s3 = await retSetup('2026-02-05-local-gym-notes-race', NOTES_TWO);
+  const dry3 = await runImport({ batchDir: s3.b.dir, indexDir: s3.indexDir, env: e });
+  await adm.patch('seed-102', { notes: 'Closed on Sundays.' });
   const snap3 = JSON.stringify(await adm.all());
   const r3 = await runImport({ batchDir: s3.b.dir, indexDir: s3.indexDir, env: e, mode: 'apply', confirm: dry3.token });
   assert.equal(r3.exit, 2, r3.report); assert.equal(JSON.stringify(await adm.all()), snap3, 'nothing written');

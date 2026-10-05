@@ -15,11 +15,13 @@ const LIMITS = { name: 200, suburb: 200, state: 100, address: 400, notes: 4000 }
 // decided by the importer, never by research data, so it is rejected instead of silently ignored.
 const RECORD_KEYS = new Set(['id', 'intent', 'name', 'suburb', 'state', 'country', 'lat', 'lng', 'types', 'address', 'notes', 'photo', 'community', 'source']);
 const UPDATABLE = ['name', 'suburb', 'state', 'lat', 'lng', 'types', 'address', 'notes', 'photo', 'website', 'hours', 'day_pass', 'facilities'];
-// Gym-information fields (migration 20261004000100). An "info update" only FILLS them on a gym that has none (updater.js enforces
+// Gym-information fields (migration 20261004000100) plus `notes`. An "info update" only FILLS them on a gym that has none (updater.js enforces
 // fill-only against production); it never carries any other field, so a record never mixes them with the location fields.
-const INFO_FIELDS = Object.freeze(['website', 'hours', 'day_pass', 'facilities']);
+// website/hours/day_pass/facilities are not in the content hash; `notes` IS (normalize.js contentHash), so updater.js reads a notes fill's state from
+// the hash of the row with notes removed (see stateOfInfo there). The index carries none of the five.
+const INFO_FIELDS = Object.freeze(['website', 'hours', 'day_pass', 'facilities', 'notes']);
 const HOUR_DAYS = Object.freeze(['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']);
-const INFO_LIMITS = Object.freeze({ website: 300, hour: 40, day_pass: 120 });   // = spots_website_check / spots_hours_check / spots_day_pass_len_check and js/modules/gym-info.js LIMITS
+const INFO_LIMITS = Object.freeze({ website: 300, hour: 40, day_pass: 120, notes: 2000 });   // = spots_website_check / spots_hours_check / spots_day_pass_len_check and js/modules/gym-info.js LIMITS; notes 2000 = the text-length cap (migration 20261002000200)
 // = spots_facilities_check and the keys of js/modules/gym-info.js FACILITIES, in that file's order: a record must list them in this
 // canonical order, so the database value equals the record byte for byte (compared with deep equality, never as a set).
 const FACILITY_KEYS = Object.freeze(['cafe', 'training', 'kids', 'shoe-hire', 'shop', 'showers', 'parking', 'yoga']);
@@ -133,6 +135,19 @@ function checkField(field, v, full, d, out) {
   }
 }
 
+// The notes of an info FILL: a non-empty, already trimmed, single-line sentence of at most 2000 characters (= the database cap), so the value in the database equals
+// the record byte for byte. Unlike the notes of a new gym record (checkField: may be null, may hold newlines) it is never cleaned and never empty. It is shown publicly
+// on the gym page (js/modules/provenance.js publicNotes hides research-style notes), so it must read as a visitor-facing sentence.
+function checkNotesFill(v, out) {
+  const err = (code, message) => out.push({ code, field: 'notes', message });
+  if (!isStr(v) || !v.length) return err('bad-notes', 'notes must be non-empty text (a visitor-facing sentence); never null or empty');
+  if (v.length > INFO_LIMITS.notes) err('too-long', `notes is ${v.length} chars (max ${INFO_LIMITS.notes})`);
+  if (v !== v.trim()) err('untrimmed', 'notes has leading/trailing whitespace (the database value must equal the record exactly)');
+  if (CTRL.test(v) || /[\r\n\t]/.test(v)) err('control-chars', 'notes must be single-line text without control characters, tabs or line breaks');
+}
+// Field check inside an UPDATE record's "set": same as checkField, except `notes` (always an info fill there) is held to checkNotesFill.
+const checkUpdateField = (field, v, full, d, out) => (field === 'notes' ? checkNotesFill(v, out) : checkField(field, v, full, d, out));
+
 // Validate a "new gym" record (intent omitted or "new").
 async function validateNewRecord(rec) {
   const d = await deps(), errors = [], warnings = [];
@@ -171,7 +186,7 @@ async function validateUpdateRecord(rec) {
     if (typesOutOfOrder(rec.set.types)) errors.push({ code: 'bad-types', field: 'types', message: `types must be listed in the canonical order: ${TYPES.join(', ')}` });
     for (const k of Object.keys(rec.set)) {
       if (!UPDATABLE.includes(k)) errors.push({ code: 'field-not-updatable', field: k, message: `"${k}" cannot be changed by an import (updatable: ${UPDATABLE.join(', ')}); country/id/status/community are not import-editable` });
-      else checkField(k, rec.set[k], rec.set, d, errors);
+      else checkUpdateField(k, rec.set[k], rec.set, d, errors);
     }
   }
   return { errors, warnings };
@@ -181,15 +196,16 @@ async function validateUpdateRecord(rec) {
 function describeInfoSet(set) {
   const host = u => { try { return new URL(u).hostname.replace(/^www\./, ''); } catch (e) { return '?'; } };
   return [set.website !== undefined && `website ${host(set.website)}`, set.hours && typeof set.hours === 'object' && `hours ${HOUR_DAYS.filter(k => k in set.hours).join(',')}`,
-    set.day_pass !== undefined && 'day pass', Array.isArray(set.facilities) && `facilities (${set.facilities.length})`].filter(Boolean).join(' + ');
+    set.day_pass !== undefined && 'day pass', Array.isArray(set.facilities) && `facilities (${set.facilities.length})`,
+    typeof set.notes === 'string' && `notes "${set.notes.length > 140 ? set.notes.slice(0, 137) + '...' : set.notes}"`].filter(Boolean).join(' + ');
 }
 
 // Problems (plain strings) of an info "set" ({website?, hours?, day_pass?, facilities?}): the same field rules as the record validator, reused by the write
 // gate in target.js so a hand-built payload can never carry a value the validator would have refused.
 async function infoSetProblems(set) {
-  if (!set || typeof set !== 'object' || Array.isArray(set) || !Object.keys(set).length) return ['"set" must list website, hours, day_pass and/or facilities'];
+  if (!set || typeof set !== 'object' || Array.isArray(set) || !Object.keys(set).length) return ['"set" must list website, hours, day_pass, facilities and/or notes'];
   const d = await deps(), errs = [];
-  for (const k of Object.keys(set)) { if (INFO_FIELDS.includes(k)) checkField(k, set[k], set, d, errs); else errs.push({ message: `${k} is not a gym-information field` }); }
+  for (const k of Object.keys(set)) { if (INFO_FIELDS.includes(k)) checkUpdateField(k, set[k], set, d, errs); else errs.push({ message: `${k} is not a gym-information field` }); }
   return errs.map(e => e.message);
 }
 
