@@ -1,0 +1,92 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-05-korea-owner-checks",
+ "inputs": {
+  "section_sha256": "42e5c78210a642f7d7fdc8cf4c3c5875304d993ba9fc3c17c6901d39b4978a42",
+  "sources_sha256": "0173fc56093a659c8e2c5f4c5973fa48e3ea230e3a8686122231255e3fbd6d7c",
+  "candidates_sha256": "d6d0aa289502fce33cd00c4b695f65d41053095ab60e020beb4fad9f3cccf227",
+  "index": {
+   "sha256": "930823b07e4d056c2035db29a8800083b2a822dc8be5313ad0538173bce8a8c1",
+   "count": 2412
+  },
+  "staged_batches_compared": [
+   "2026-10-05-germany-owner-checks",
+   "2026-10-05-italy-owner-checks",
+   "2026-10-05-spain-owner-checks",
+   "2026-10-05-uk-owner-checks"
+  ],
+  "other_sections_compared": [
+   {
+    "id": "2026-10-05-korea-gwangju-jeollanam",
+    "candidates_sha256": "f4858cc28d4f7eb5ff4a243da82dea80ec3fe7700505d83ec1d3bd869a1aacb7"
+   },
+   {
+    "id": "2026-10-05-korea-holds",
+    "candidates_sha256": "5d20a4add212fcf30638867628a92a2c7721187d7f8e1870e937e6f0a1fabe06"
+   }
+  ]
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 1,
+  "ready": 0,
+  "review": 1,
+  "blocked": 0,
+  "existing": 0,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "kro-001",
+   "line": 1,
+   "name": "Mokpo International Sport Climbing Center",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-f412ee9caf"
+   },
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-05-korea-gwangju-jeollanam#kr-jn-002 \"Carpe Climb\": related-name-nearby related names \"목포국제스포츠클라이밍센터\" / \"카르페클라임 클라이밍센터\" 2019 m apart",
+     "ids": [
+      "2026-10-05-korea-gwangju-jeollanam#kr-jn-002"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-05-korea-gwangju-jeollanam#kr-jn-003 \"Mokpo Lead Climbing Center\": related-name-nearby related names \"목포국제스포츠클라이밍센터\" / \"리드클라이밍센터\" 2157 m apart",
+     "ids": [
+      "2026-10-05-korea-gwangju-jeollanam#kr-jn-003"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-05-korea-gwangju-jeollanam#kr-jn-006 \"Mokpo International Sport Climbing Center\": name-match same-name (\"Mokpo International Sport Climbing Center\" / \"Mokpo International Sport Climbing Center\", 0 m)",
+     "ids": [
+      "2026-10-05-korea-gwangju-jeollanam#kr-jn-006"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-05-korea-holds#kr-h-006 \"Mokpo International Sport Climbing Center\": name-match same-name (\"Mokpo International Sport Climbing Center\" / \"Mokpo International Sport Climbing Center\", 0 m)",
+     "ids": [
+      "2026-10-05-korea-holds#kr-h-006"
+     ]
+    }
+   ],
+   "review_ids": [
+    "2026-10-05-korea-gwangju-jeollanam#kr-jn-002",
+    "2026-10-05-korea-gwangju-jeollanam#kr-jn-003",
+    "2026-10-05-korea-gwangju-jeollanam#kr-jn-006",
+    "2026-10-05-korea-holds#kr-h-006"
+   ]
+  }
+ ],
+ "reconcile_sha256": "4df8b3260c447343fd6efd62eabe64f319e521a768f6f04872a1dd1d0d85a092"
+}

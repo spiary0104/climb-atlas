@@ -1,0 +1,994 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-05-pin-check-rest-of-world",
+ "index": {
+  "sha256": "9cf211e32933bb0088a6ed4bac8e7c8416b9f6d3e0e6689fd053ed4028d02079",
+  "count": 2411,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-05-germany-owner-checks",
+  "2026-10-05-italy-owner-checks",
+  "2026-10-05-korea-owner-checks",
+  "2026-10-05-spain-owner-checks",
+  "2026-10-05-uk-owner-checks"
+ ],
+ "counts": {
+  "records": 39,
+  "new": 0,
+  "existing": 0,
+  "update": 39,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 29
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "57c091c2b80e418270496eddde73a26bc4fdad9e74634276e1add02c3342b20b",
+ "records": [
+  {
+   "line": 1,
+   "class": "update",
+   "id": "seed-114",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 41.8836,
+     "after": 41.884044
+    },
+    {
+     "field": "lng",
+     "before": -87.628,
+     "after": -87.628772
+    }
+   ],
+   "expect_h": "c88f163a78fce0cc",
+   "update_reason": "Pin did not match the gym's building (81 m off): coarse-coords; corrected to the verified location"
+  },
+  {
+   "line": 2,
+   "class": "update",
+   "id": "seed-134",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 30.245,
+     "after": 30.23086
+    },
+    {
+     "field": "lng",
+     "before": -97.81,
+     "after": -97.799285
+    }
+   ],
+   "expect_h": "99a55e4d1d1b975d",
+   "update_reason": "Pin did not match the gym's building (1879 m off): coarse-coords; corrected to the verified location",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1879 m"
+    }
+   ]
+  },
+  {
+   "line": 3,
+   "class": "update",
+   "id": "seed-141",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 30.235,
+     "after": 30.227274
+    },
+    {
+     "field": "lng",
+     "before": -97.755,
+     "after": -97.76306
+    }
+   ],
+   "expect_h": "4da532d6728c2be6",
+   "update_reason": "Pin did not match the gym's building (1157 m off): coarse-coords; corrected to the verified location",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1157 m"
+    }
+   ]
+  },
+  {
+   "line": 4,
+   "class": "update",
+   "id": "seed-159",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 31.83,
+     "after": 31.8873001
+    },
+    {
+     "field": "lng",
+     "before": -106.54,
+     "after": -106.5736689
+    }
+   ],
+   "expect_h": "fa4a4af0c45d1f39",
+   "update_reason": "Pin did not match the gym's building (7121 m off): coarse-coords; corrected to the verified location",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 7121 m"
+    }
+   ]
+  },
+  {
+   "line": 5,
+   "class": "update",
+   "id": "seed-170",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 47.625,
+     "after": 47.619673
+    },
+    {
+     "field": "lng",
+     "before": -122.16,
+     "after": -122.128687
+    }
+   ],
+   "expect_h": "863414c73b1db426",
+   "update_reason": "Pin did not match the gym's building (2420 m off): coarse-coords; corrected to the verified location",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 2420 m"
+    }
+   ]
+  },
+  {
+   "line": 6,
+   "class": "update",
+   "id": "seed-171",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 47.628,
+     "after": 47.625306
+    },
+    {
+     "field": "lng",
+     "before": -122.155,
+     "after": -122.154663
+    }
+   ],
+   "expect_h": "7a0ffc7d3742d214",
+   "update_reason": "Pin did not match the gym's building (301 m off): coarse-coords; corrected to the verified location"
+  },
+  {
+   "line": 7,
+   "class": "update",
+   "id": "seed-172",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 47.265,
+     "after": 47.257215
+    },
+    {
+     "field": "lng",
+     "before": -122.46,
+     "after": -122.519502
+    }
+   ],
+   "expect_h": "0aacdd09d204616f",
+   "update_reason": "Pin did not match the gym's building (4573 m off): coarse-coords; corrected to the verified location",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 4573 m"
+    }
+   ]
+  },
+  {
+   "line": 8,
+   "class": "update",
+   "id": "seed-186",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 47.979,
+     "after": 47.978269
+    },
+    {
+     "field": "lng",
+     "before": -122.2021,
+     "after": -122.213316
+    }
+   ],
+   "expect_h": "fc61afb7ca2ebf90",
+   "update_reason": "Pin did not match the gym's building (839 m off): coarse-coords; corrected to the verified location",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 839 m"
+    }
+   ]
+  },
+  {
+   "line": 9,
+   "class": "update",
+   "id": "seed-199",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 42.443,
+     "after": 42.472467
+    },
+    {
+     "field": "lng",
+     "before": -76.5019,
+     "after": -76.408615
+    }
+   ],
+   "expect_h": "ea431f7fa87919b6",
+   "update_reason": "Pin did not match the gym's building (8325 m off): coarse-coords; corrected to the verified location",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 8325 m"
+    }
+   ]
+  },
+  {
+   "line": 10,
+   "class": "update",
+   "id": "seed-239",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 39.535,
+     "after": 39.532677
+    },
+    {
+     "field": "lng",
+     "before": -119.8,
+     "after": -119.801448
+    }
+   ],
+   "expect_h": "2f36a80e72023aac",
+   "update_reason": "Pin did not match the gym's building (287 m off): coarse-coords; corrected to the verified location"
+  },
+  {
+   "line": 11,
+   "class": "update",
+   "id": "seed-244",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 33.735,
+     "after": 33.884126
+    },
+    {
+     "field": "lng",
+     "before": -84.37,
+     "after": -84.268022
+    }
+   ],
+   "expect_h": "a33cbe2e8f09550a",
+   "update_reason": "Pin did not match the gym's building (19072 m off): coarse-coords; corrected to the verified location",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 19072 m"
+    }
+   ]
+  },
+  {
+   "line": 12,
+   "class": "update",
+   "id": "seed-245",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 33.907,
+     "after": 33.88318
+    },
+    {
+     "field": "lng",
+     "before": -84.265,
+     "after": -84.267248
+    }
+   ],
+   "expect_h": "8e3839f760d45689",
+   "update_reason": "Pin did not match the gym's building (2657 m off): coarse-coords; corrected to the verified location",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 2657 m"
+    }
+   ]
+  },
+  {
+   "line": 13,
+   "class": "update",
+   "id": "seed-266",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 40.745,
+     "after": 40.754505
+    },
+    {
+     "field": "lng",
+     "before": -111.905,
+     "after": -111.903479
+    }
+   ],
+   "expect_h": "157f81568aa6984b",
+   "update_reason": "Pin did not match the gym's building (1065 m off): coarse-coords; corrected to the verified location",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1065 m"
+    }
+   ]
+  },
+  {
+   "line": 14,
+   "class": "update",
+   "id": "seed-279",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 36.12,
+     "after": 36.108862
+    },
+    {
+     "field": "lng",
+     "before": -86.785,
+     "after": -86.757443
+    }
+   ],
+   "expect_h": "30852a735362514f",
+   "update_reason": "Pin did not match the gym's building (2768 m off): coarse-coords; corrected to the verified location",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 2768 m"
+    }
+   ]
+  },
+  {
+   "line": 15,
+   "class": "update",
+   "id": "seed-282",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 36.175,
+     "after": 36.181698
+    },
+    {
+     "field": "lng",
+     "before": -86.73,
+     "after": -86.735552
+    }
+   ],
+   "expect_h": "46758291b0daa03a",
+   "update_reason": "Pin did not match the gym's building (896 m off): coarse-coords; corrected to the verified location",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 896 m"
+    }
+   ]
+  },
+  {
+   "line": 16,
+   "class": "update",
+   "id": "seed-292",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 36.1,
+     "after": 36.045116
+    },
+    {
+     "field": "lng",
+     "before": -86.75,
+     "after": -86.715222
+    }
+   ],
+   "expect_h": "43c73847b9dc88c5",
+   "update_reason": "Pin did not match the gym's building (6857 m off): coarse-coords; corrected to the verified location",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 6857 m"
+    }
+   ]
+  },
+  {
+   "line": 17,
+   "class": "update",
+   "id": "seed-302",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 42.373,
+     "after": 42.373142
+    },
+    {
+     "field": "lng",
+     "before": -71.119,
+     "after": -71.12024
+    }
+   ],
+   "expect_h": "7f1753ef56dd6e8d",
+   "update_reason": "Pin did not match the gym's building (103 m off): coarse-coords; corrected to the verified location"
+  },
+  {
+   "line": 18,
+   "class": "update",
+   "id": "seed-323",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 34.17,
+     "after": 34.236247
+    },
+    {
+     "field": "lng",
+     "before": -118.44,
+     "after": -118.565195
+    }
+   ],
+   "expect_h": "3c9efee88e1ac31d",
+   "update_reason": "Pin did not match the gym's building (13668 m off): coarse-coords; corrected to the verified location",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 13668 m"
+    }
+   ]
+  },
+  {
+   "line": 19,
+   "class": "update",
+   "id": "seed-342",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 33.6,
+     "after": 33.617205
+    },
+    {
+     "field": "lng",
+     "before": -117.672,
+     "after": -117.682288
+    }
+   ],
+   "expect_h": "d48e3777ca7a100c",
+   "update_reason": "Pin did not match the gym's building (2137 m off): coarse-coords; corrected to the verified location",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 2137 m"
+    }
+   ]
+  },
+  {
+   "line": 20,
+   "class": "update",
+   "id": "seed-382",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 33.98,
+     "after": 33.976318
+    },
+    {
+     "field": "lng",
+     "before": -118.42,
+     "after": -118.417147
+    }
+   ],
+   "expect_h": "5260c04f87e60ba3",
+   "update_reason": "Pin did not match the gym's building (487 m off): coarse-coords; corrected to the verified location"
+  },
+  {
+   "line": 21,
+   "class": "update",
+   "id": "seed-97",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 39.766,
+     "after": 39.765669
+    },
+    {
+     "field": "lng",
+     "before": -104.98,
+     "after": -104.978413
+    }
+   ],
+   "expect_h": "f547b07134aeca10",
+   "update_reason": "Pin did not match the gym's building (141 m off): coarse-coords; corrected to the verified location"
+  },
+  {
+   "line": 22,
+   "class": "update",
+   "id": "seed-470",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 45.54,
+     "after": 45.531928
+    },
+    {
+     "field": "lng",
+     "before": -73.58,
+     "after": -73.657783
+    }
+   ],
+   "expect_h": "0f157f8a7661d1b1",
+   "update_reason": "Pin did not match the gym's building (6124 m off): coarse-coords; corrected to the verified location",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 6124 m"
+    }
+   ]
+  },
+  {
+   "line": 23,
+   "class": "update",
+   "id": "seed-475",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 51.008,
+     "after": 50.990456
+    },
+    {
+     "field": "lng",
+     "before": -114.062,
+     "after": -114.067723
+    }
+   ],
+   "expect_h": "307d1ad3a5273876",
+   "update_reason": "Pin did not match the gym's building (1991 m off): coarse-coords; corrected to the verified location",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1991 m"
+    }
+   ]
+  },
+  {
+   "line": 24,
+   "class": "update",
+   "id": "seed-17",
+   "changes": [
+    {
+     "field": "lat",
+     "before": -33.758,
+     "after": -33.7672959
+    },
+    {
+     "field": "lng",
+     "before": 150.695,
+     "after": 150.687486
+    }
+   ],
+   "expect_h": "5f374bb72aa828ee",
+   "update_reason": "Pin did not match the gym's building (1245 m off): coarse-coords; corrected to the verified location",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1245 m"
+    }
+   ]
+  },
+  {
+   "line": 25,
+   "class": "update",
+   "id": "seed-2",
+   "changes": [
+    {
+     "field": "lat",
+     "before": -33.8153,
+     "after": -33.8156872
+    },
+    {
+     "field": "lng",
+     "before": 151.027,
+     "after": 151.0398003
+    }
+   ],
+   "expect_h": "bda3bb4d6b108ef9",
+   "update_reason": "Pin did not match the gym's building (1183 m off): coarse-coords; corrected to the verified location",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1183 m"
+    }
+   ]
+  },
+  {
+   "line": 26,
+   "class": "update",
+   "id": "seed-33",
+   "changes": [
+    {
+     "field": "lat",
+     "before": -37.8397,
+     "after": -37.83225
+    },
+    {
+     "field": "lng",
+     "before": 144.933,
+     "after": 144.921763
+    }
+   ],
+   "expect_h": "b6feb498bae6341e",
+   "update_reason": "Pin did not match the gym's building (1288 m off): coarse-coords; corrected to the verified location",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1288 m"
+    }
+   ]
+  },
+  {
+   "line": 27,
+   "class": "update",
+   "id": "seed-64",
+   "changes": [
+    {
+     "field": "lat",
+     "before": -31.791,
+     "after": -31.7938051
+    },
+    {
+     "field": "lng",
+     "before": 115.825,
+     "after": 115.825514
+    }
+   ],
+   "expect_h": "e55d36100bffb491",
+   "update_reason": "Pin did not match the gym's building (316 m off): coarse-coords; corrected to the verified location"
+  },
+  {
+   "line": 28,
+   "class": "update",
+   "id": "seed-409",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 35.658,
+     "after": 35.654869
+    },
+    {
+     "field": "lng",
+     "before": 139.7016,
+     "after": 139.703003
+    }
+   ],
+   "expect_h": "38dd6b47d0dc3bc8",
+   "update_reason": "Pin did not match the gym's building (371 m off): coarse-coords; corrected to the verified location"
+  },
+  {
+   "line": 29,
+   "class": "update",
+   "id": "seed-417",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 34.679,
+     "after": 34.646999
+    },
+    {
+     "field": "lng",
+     "before": 135.495,
+     "after": 135.517166
+    }
+   ],
+   "expect_h": "bc586ec6ff872242",
+   "update_reason": "Pin did not match the gym's building (4095 m off): coarse-coords; corrected to the verified location",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 4095 m"
+    }
+   ]
+  },
+  {
+   "line": 30,
+   "class": "update",
+   "id": "seed-420",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 35.005,
+     "after": 35.000298
+    },
+    {
+     "field": "lng",
+     "before": 135.76,
+     "after": 135.751556
+    }
+   ],
+   "expect_h": "15c3d37ea4cf05d9",
+   "update_reason": "Pin did not match the gym's building (930 m off): coarse-coords; corrected to the verified location",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 930 m"
+    }
+   ]
+  },
+  {
+   "line": 31,
+   "class": "update",
+   "id": "seed-421",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 35.018,
+     "after": 35.028944
+    },
+    {
+     "field": "lng",
+     "before": 135.775,
+     "after": 135.769362
+    }
+   ],
+   "expect_h": "47702c58a3b5966a",
+   "update_reason": "Pin did not match the gym's building (1321 m off): coarse-coords; corrected to the verified location",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1321 m"
+    }
+   ]
+  },
+  {
+   "line": 32,
+   "class": "update",
+   "id": "seed-425",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 33.595,
+     "after": 33.569324
+    },
+    {
+     "field": "lng",
+     "before": 130.423,
+     "after": 130.455688
+    }
+   ],
+   "expect_h": "e2881542e25fc136",
+   "update_reason": "Pin did not match the gym's building (4162 m off): coarse-coords; corrected to the verified location",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 4162 m"
+    }
+   ]
+  },
+  {
+   "line": 33,
+   "class": "update",
+   "id": "seed-458",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 35.6727747,
+     "after": 35.692955
+    },
+    {
+     "field": "lng",
+     "before": 139.8169621,
+     "after": 139.817093
+    }
+   ],
+   "expect_h": "3c55826c2dcdf050",
+   "update_reason": "Pin did not match the gym's building (2244 m off): shares-coords-with:seed-459; corrected to the verified location",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 2244 m"
+    }
+   ]
+  },
+  {
+   "line": 34,
+   "class": "update",
+   "id": "seed-459",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 35.6727747,
+     "after": 35.6760361
+    },
+    {
+     "field": "lng",
+     "before": 139.8169621,
+     "after": 139.8180126
+    }
+   ],
+   "expect_h": "5da687a190b06800",
+   "update_reason": "Pin did not match the gym's building (375 m off): shares-coords-with:seed-458; corrected to the verified location"
+  },
+  {
+   "line": 35,
+   "class": "update",
+   "id": "seed-1416",
+   "changes": [
+    {
+     "field": "address",
+     "before": "Rua Treze de Maio 102, Curitiba, Brazil",
+     "after": "Rua Tibagi 674, Centro, Curitiba, Brazil"
+    },
+    {
+     "field": "lat",
+     "before": -25.4275722,
+     "after": -25.4329066
+    },
+    {
+     "field": "lng",
+     "before": -49.2670452,
+     "after": -49.2625706
+    }
+   ],
+   "expect_h": "c6ac8ca0fabd576f",
+   "update_reason": "Pin did not match the gym's building (744 m off): shares-coords-with:seed-1418; corrected to the verified location and address",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 744 m"
+    }
+   ]
+  },
+  {
+   "line": 36,
+   "class": "update",
+   "id": "seed-1418",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Avenida Cândido Hartmann 1377, Bigorrilho, Curitiba, Brazil"
+    },
+    {
+     "field": "lat",
+     "before": -25.4275722,
+     "after": -25.426953
+    },
+    {
+     "field": "lng",
+     "before": -49.2670452,
+     "after": -49.298997
+    }
+   ],
+   "expect_h": "14c6c7f6590266e5",
+   "update_reason": "Pin did not match the gym's building (3209 m off): no-address, shares-coords-with:seed-1416; corrected to the verified location and address",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 3209 m"
+    }
+   ]
+  },
+  {
+   "line": 37,
+   "class": "update",
+   "id": "seed-1593",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "HaTa'as St 16, Kfar Saba, Israel"
+    },
+    {
+     "field": "lat",
+     "before": 32.1773471,
+     "after": 32.1748269
+    },
+    {
+     "field": "lng",
+     "before": 34.907459,
+     "after": 34.9274941
+    }
+   ],
+   "expect_h": "28a09f283311d019",
+   "update_reason": "Pin did not match the gym's building (1906 m off): no-address; corrected to the verified location and address",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1906 m"
+    }
+   ]
+  },
+  {
+   "line": 38,
+   "class": "update",
+   "id": "seed-1597",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Moshe Shwalb 7, Segula Industrial Zone (2nd floor), Petah Tikva, Israel"
+    },
+    {
+     "field": "lat",
+     "before": 32.0877639,
+     "after": 32.107497
+    },
+    {
+     "field": "lng",
+     "before": 34.8859985,
+     "after": 34.89389
+    }
+   ],
+   "expect_h": "586dead9e2de81c3",
+   "update_reason": "Pin did not match the gym's building (2317 m off): no-address; corrected to the verified location and address",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 2317 m"
+    }
+   ]
+  },
+  {
+   "line": 39,
+   "class": "update",
+   "id": "g-aaf76529ff",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "2/55 Moo 3, Koh Tao, Surat Thani 84360, Thailand"
+    }
+   ],
+   "expect_h": "650bd646c9aa9a8c",
+   "update_reason": "Pin confirmed at the gym; address was empty, filled from the best available source"
+  }
+ ]
+}

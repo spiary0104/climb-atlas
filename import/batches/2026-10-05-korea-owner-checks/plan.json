@@ -1,0 +1,37 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-05-korea-owner-checks",
+ "index": {
+  "sha256": "699275522554d903123c800a5bcf7d216735cb87c9c750cacefea18a7b810fe5",
+  "count": 2418,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [],
+ "counts": {
+  "records": 1,
+  "new": 1,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "7870f0cc1d726f981c212bf522d08a08c0d2281ddc59c304c071b4b960be6b9e",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-f412ee9caf",
+   "id_frozen": true,
+   "name": "Mokpo International Sport Climbing Center",
+   "country": "KR"
+  }
+ ]
+}

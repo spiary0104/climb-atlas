@@ -1,0 +1,50 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-05-uk-owner-checks",
+ "index": {
+  "sha256": "c57110b06cdaf2bd70ea042ae11604f20a0a57e16741e6f3f78d668533603ecd",
+  "count": 2411,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-05-germany-owner-checks",
+  "2026-10-05-italy-owner-checks",
+  "2026-10-05-korea-owner-checks",
+  "2026-10-05-spain-owner-checks"
+ ],
+ "counts": {
+  "records": 2,
+  "new": 2,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "9e23bf4bec77385250dc6b58de2952bb40dfbb6267e20a8e770635a476014275",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-039b6ea9b5",
+   "id_frozen": true,
+   "name": "Northern Problems",
+   "country": "GB"
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-ddbd31743b",
+   "id_frozen": true,
+   "name": "The Adventure Hub",
+   "country": "GB"
+  }
+ ]
+}

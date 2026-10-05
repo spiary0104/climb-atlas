@@ -1,0 +1,1569 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-05-pin-check-europe",
+ "index": {
+  "sha256": "8738189db740d3b042d1a9cbd4d2f85c3ad988c6a8d7a931567fef7e2b6f81bf",
+  "count": 2411,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-05-germany-owner-checks",
+  "2026-10-05-italy-owner-checks",
+  "2026-10-05-korea-owner-checks",
+  "2026-10-05-spain-owner-checks",
+  "2026-10-05-uk-owner-checks"
+ ],
+ "counts": {
+  "records": 53,
+  "new": 0,
+  "existing": 0,
+  "update": 53,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 46
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "fb5e702fbd30b936da32d31be9b5d1992a61c4d379d6f06f96caaf9b0f37a869",
+ "records": [
+  {
+   "line": 1,
+   "class": "update",
+   "id": "g-04a7320e40",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Forelstrasse 11, 3072 Ostermundigen"
+    }
+   ],
+   "expect_h": "5ed1a5cef7603da0",
+   "update_reason": "Official address added; pin confirmed on the building"
+  },
+  {
+   "line": 2,
+   "class": "update",
+   "id": "g-104902e680",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Chemin du Rionzi 52A, 1052 Le Mont-sur-Lausanne"
+    }
+   ],
+   "expect_h": "ddb9a6ec2058aff5",
+   "update_reason": "Official address added; pin confirmed"
+  },
+  {
+   "line": 3,
+   "class": "update",
+   "id": "g-663777c19b",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Hallenbadweg 2, 8610 Uster"
+    }
+   ],
+   "expect_h": "232e74ca750bcbe4",
+   "update_reason": "Official address added; pin confirmed"
+  },
+  {
+   "line": 4,
+   "class": "update",
+   "id": "g-8df63dd5be",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Wassergrabe 5, 6210 Sursee"
+    }
+   ],
+   "expect_h": "30221955f9fbb0f5",
+   "update_reason": "Official address added; pin confirmed"
+  },
+  {
+   "line": 5,
+   "class": "update",
+   "id": "seed-1003",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Steinweg 9, 90513 Zirndorf"
+    },
+    {
+     "field": "lat",
+     "before": 49.4453,
+     "after": 49.4427777
+    },
+    {
+     "field": "lng",
+     "before": 10.955,
+     "after": 10.9596556
+    }
+   ],
+   "expect_h": "b0ef95a672869546",
+   "update_reason": "Coarse placeholder pin moved onto the gym; official address added"
+  },
+  {
+   "line": 6,
+   "class": "update",
+   "id": "seed-1004",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Schwartzkopffstraße 6, 15745 Wildau"
+    },
+    {
+     "field": "lat",
+     "before": 52.3103,
+     "after": 52.3202392
+    },
+    {
+     "field": "lng",
+     "before": 13.6317,
+     "after": 13.6325419
+    }
+   ],
+   "expect_h": "d766a0b75088c1fc",
+   "update_reason": "Pin was 1.1 km off the gym; official address added",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1107 m"
+    }
+   ]
+  },
+  {
+   "line": 7,
+   "class": "update",
+   "id": "seed-1008",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Landsberger Straße 185, 80687 München"
+    },
+    {
+     "field": "lat",
+     "before": 48.14,
+     "after": 48.1405664
+    },
+    {
+     "field": "lng",
+     "before": 11.59,
+     "after": 11.5227977
+    }
+   ],
+   "expect_h": "8fe6f6610bd7ac60",
+   "update_reason": "Coarse city pin (5 km off) moved onto the gym; official address added",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 4987 m"
+    }
+   ]
+  },
+  {
+   "line": 8,
+   "class": "update",
+   "id": "seed-1014",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Gasstraße 18, 22761 Hamburg"
+    },
+    {
+     "field": "lat",
+     "before": 53.5511,
+     "after": 53.5631115
+    },
+    {
+     "field": "lng",
+     "before": 9.9937,
+     "after": 9.9130305
+    }
+   ],
+   "expect_h": "e4f41ba68c94db5a",
+   "update_reason": "Pin was 5.5 km off (city centre); official address added",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 5493 m"
+    }
+   ]
+  },
+  {
+   "line": 9,
+   "class": "update",
+   "id": "seed-1016",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Am Neuen Friedhof 11c, 17489 Greifswald"
+    },
+    {
+     "field": "lat",
+     "before": 54.0865,
+     "after": 54.0966119
+    },
+    {
+     "field": "lng",
+     "before": 13.3923,
+     "after": 13.3621377
+    }
+   ],
+   "expect_h": "530a9d38a3c0f085",
+   "update_reason": "Pin was 2.3 km off; official address added",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 2266 m"
+    }
+   ]
+  },
+  {
+   "line": 10,
+   "class": "update",
+   "id": "seed-1023",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Zwickauer Straße 42, 01069 Dresden"
+    },
+    {
+     "field": "lat",
+     "before": 51.045,
+     "after": 51.0411658
+    },
+    {
+     "field": "lng",
+     "before": 13.73,
+     "after": 13.7154671
+    }
+   ],
+   "expect_h": "91857a8fe74d57ba",
+   "update_reason": "Coarse pin (1.1 km off) moved onto the gym; official address added",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1102 m"
+    }
+   ]
+  },
+  {
+   "line": 11,
+   "class": "update",
+   "id": "seed-1025",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Sprendlinger Landstraße 177 B, 63069 Offenbach am Main"
+    },
+    {
+     "field": "lat",
+     "before": 50.105,
+     "after": 50.085141
+    },
+    {
+     "field": "lng",
+     "before": 8.76,
+     "after": 8.7437126
+    }
+   ],
+   "expect_h": "015e6b9fd4a3ab20",
+   "update_reason": "Coarse pin (2.5 km off) moved onto the gym; official address added",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 2495 m"
+    }
+   ]
+  },
+  {
+   "line": 12,
+   "class": "update",
+   "id": "seed-1028",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Sonnenallee 2, 85551 Kirchheim bei München"
+    },
+    {
+     "field": "lat",
+     "before": 48.13,
+     "after": 48.1564309
+    },
+    {
+     "field": "lng",
+     "before": 11.6,
+     "after": 11.7603471
+    }
+   ],
+   "expect_h": "0c43fc225422b05c",
+   "update_reason": "Gym is in Kirchheim bei München (Heimstetten), 12 km from the München pin; official address added",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 12255 m"
+    }
+   ]
+  },
+  {
+   "line": 13,
+   "class": "update",
+   "id": "seed-1043",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Beim Handelsmuseum 9, Tor 43, 28195 Bremen"
+    },
+    {
+     "field": "lat",
+     "before": 53.085,
+     "after": 53.0860619
+    },
+    {
+     "field": "lng",
+     "before": 8.81,
+     "after": 8.8055064
+    }
+   ],
+   "expect_h": "5a8f264bf73e67d2",
+   "update_reason": "Coarse pin (320 m off) moved onto the gym; official address added"
+  },
+  {
+   "line": 14,
+   "class": "update",
+   "id": "seed-1045",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Böttgerstraße 20, 13357 Berlin"
+    },
+    {
+     "field": "lat",
+     "before": 52.515,
+     "after": 52.5486014
+    },
+    {
+     "field": "lng",
+     "before": 13.41,
+     "after": 13.3820988
+    }
+   ],
+   "expect_h": "48a56a78592cfa85",
+   "update_reason": "Coarse city pin (4.2 km off) moved onto the gym; official address added",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 4186 m"
+    }
+   ]
+  },
+  {
+   "line": 15,
+   "class": "update",
+   "id": "seed-1052",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Hauptstraße 13, 10317 Berlin"
+    },
+    {
+     "field": "lat",
+     "before": 52.525,
+     "after": 52.4915616
+    },
+    {
+     "field": "lng",
+     "before": 13.4,
+     "after": 13.4879599
+    }
+   ],
+   "expect_h": "97959f3c8f3146f1",
+   "update_reason": "Coarse city pin (7 km off) moved onto the gym; official address added",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 7019 m"
+    }
+   ]
+  },
+  {
+   "line": 16,
+   "class": "update",
+   "id": "seed-1055",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Stammheimer Straße 41, 70435 Stuttgart"
+    },
+    {
+     "field": "lat",
+     "before": 48.78,
+     "after": 48.8345647
+    },
+    {
+     "field": "lng",
+     "before": 9.19,
+     "after": 9.1634091
+    }
+   ],
+   "expect_h": "76cfd3930d82045a",
+   "update_reason": "Coarse city pin (6.4 km off) moved onto the gym; official address added",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 6372 m"
+    }
+   ]
+  },
+  {
+   "line": 17,
+   "class": "update",
+   "id": "seed-1058",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Eppendorfer Weg 4, 20259 Hamburg"
+    },
+    {
+     "field": "lat",
+     "before": 53.556,
+     "after": 53.5683257
+    },
+    {
+     "field": "lng",
+     "before": 9.99,
+     "after": 9.956588
+    }
+   ],
+   "expect_h": "d934d0f635707076",
+   "update_reason": "Coarse pin (2.6 km off) moved onto the gym; official address added",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 2598 m"
+    }
+   ]
+  },
+  {
+   "line": 18,
+   "class": "update",
+   "id": "seed-1061",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Großbeerenstraße 2-10, Haus 4, 12107 Berlin"
+    },
+    {
+     "field": "lat",
+     "before": 52.495,
+     "after": 52.4402348
+    },
+    {
+     "field": "lng",
+     "before": 13.425,
+     "after": 13.379587
+    }
+   ],
+   "expect_h": "87232527ad7770cf",
+   "update_reason": "Coarse city pin (6.8 km off) moved onto the gym; official address added",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 6823 m"
+    }
+   ]
+  },
+  {
+   "line": 19,
+   "class": "update",
+   "id": "seed-1068",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Hagenauer Straße 49, 65203 Wiesbaden"
+    },
+    {
+     "field": "lat",
+     "before": 50.0782,
+     "after": 50.0497579
+    },
+    {
+     "field": "lng",
+     "before": 8.2398,
+     "after": 8.2142908
+    }
+   ],
+   "expect_h": "643d6ecb7145de6f",
+   "update_reason": "Pin was 3.6 km off; official address added",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 3649 m"
+    }
+   ]
+  },
+  {
+   "line": 20,
+   "class": "update",
+   "id": "seed-1069",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Weststraße 32, 01809 Heidenau"
+    },
+    {
+     "field": "lat",
+     "before": 50.9767,
+     "after": 50.9822474
+    },
+    {
+     "field": "lng",
+     "before": 13.859,
+     "after": 13.8452102
+    }
+   ],
+   "expect_h": "dd2d7eee557efd81",
+   "update_reason": "Coarse pin (1.1 km off) moved onto the gym; official address added",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1146 m"
+    }
+   ]
+  },
+  {
+   "line": 21,
+   "class": "update",
+   "id": "seed-1070",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Fritz-Elsas-Straße 44, 70174 Stuttgart"
+    },
+    {
+     "field": "lat",
+     "before": 48.765,
+     "after": 48.7768626
+    },
+    {
+     "field": "lng",
+     "before": 9.17,
+     "after": 9.1693628
+    }
+   ],
+   "expect_h": "e3427bd8d5a30043",
+   "update_reason": "Coarse pin (1.3 km off) moved onto the gym; official address added",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1320 m"
+    }
+   ]
+  },
+  {
+   "line": 22,
+   "class": "update",
+   "id": "seed-961",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Industriestraße 21a, 90441 Nürnberg"
+    },
+    {
+     "field": "lat",
+     "before": 49.4521,
+     "after": 49.431584
+    },
+    {
+     "field": "lng",
+     "before": 11.0767,
+     "after": 11.0591933
+    }
+   ],
+   "expect_h": "b578a382931edffe",
+   "update_reason": "Pin was 2.6 km off; official address added",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 2609 m"
+    }
+   ]
+  },
+  {
+   "line": 23,
+   "class": "update",
+   "id": "seed-965",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Merdinger Weg 6, 79111 Freiburg"
+    },
+    {
+     "field": "lat",
+     "before": 47.999,
+     "after": 47.9941724
+    },
+    {
+     "field": "lng",
+     "before": 7.8421,
+     "after": 7.7911964
+    }
+   ],
+   "expect_h": "6204726c00e26480",
+   "update_reason": "Coarse pin (3.8 km off) moved onto the gym; official address added",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 3826 m"
+    }
+   ]
+  },
+  {
+   "line": 24,
+   "class": "update",
+   "id": "seed-967",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Kurt-Albert-Straße 1, 91088 Bubenreuth"
+    },
+    {
+     "field": "lat",
+     "before": 49.5897,
+     "after": 49.630542
+    },
+    {
+     "field": "lng",
+     "before": 11.004,
+     "after": 11.0113167
+    }
+   ],
+   "expect_h": "b2c20d5f743de8de",
+   "update_reason": "Gym is in Bubenreuth (4.6 km from the Erlangen pin); official address added",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 4572 m"
+    }
+   ]
+  },
+  {
+   "line": 25,
+   "class": "update",
+   "id": "seed-982",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Munzinger Straße 4, 79111 Freiburg"
+    },
+    {
+     "field": "lat",
+     "before": 47.995,
+     "after": 47.9905856
+    },
+    {
+     "field": "lng",
+     "before": 7.838,
+     "after": 7.795203
+    }
+   ],
+   "expect_h": "c431b56ddff1bcbe",
+   "update_reason": "Coarse pin (3.2 km off) moved onto the gym; official address added",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 3222 m"
+    }
+   ]
+  },
+  {
+   "line": 26,
+   "class": "update",
+   "id": "seed-984",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Paulusstraße 22a, 53227 Bonn"
+    },
+    {
+     "field": "lat",
+     "before": 50.737,
+     "after": 50.7385994
+    },
+    {
+     "field": "lng",
+     "before": 7.0982,
+     "after": 7.1310351
+    }
+   ],
+   "expect_h": "e5340ca788bdf918",
+   "update_reason": "Coarse pin (2.3 km off) moved onto the gym; official address added",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 2318 m"
+    }
+   ]
+  },
+  {
+   "line": 27,
+   "class": "update",
+   "id": "seed-985",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Siemensstraße 20, 53121 Bonn"
+    },
+    {
+     "field": "lat",
+     "before": 50.74,
+     "after": 50.7379498
+    },
+    {
+     "field": "lng",
+     "before": 7.105,
+     "after": 7.0708698
+    }
+   ],
+   "expect_h": "d4bbd4c747580755",
+   "update_reason": "Coarse pin (2.4 km off) moved onto the gym; official address added",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 2413 m"
+    }
+   ]
+  },
+  {
+   "line": 28,
+   "class": "update",
+   "id": "seed-989",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "August-Schanz-Straße 50, 60433 Frankfurt"
+    },
+    {
+     "field": "lat",
+     "before": 50.1109,
+     "after": 50.1641543
+    },
+    {
+     "field": "lng",
+     "before": 8.6821,
+     "after": 8.6847962
+    }
+   ],
+   "expect_h": "ee0d00e067d8de2a",
+   "update_reason": "Pin was 5.9 km off (city centre); official address added",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 5925 m"
+    }
+   ]
+  },
+  {
+   "line": 29,
+   "class": "update",
+   "id": "seed-990",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Hanne-Hiob-Straße 4, 81671 München"
+    },
+    {
+     "field": "lat",
+     "before": 48.1351,
+     "after": 48.1256328
+    },
+    {
+     "field": "lng",
+     "before": 11.582,
+     "after": 11.6106607
+    }
+   ],
+   "expect_h": "a12d0d29862049d5",
+   "update_reason": "Coarse pin (2.4 km off) moved onto the gym; official address added",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 2373 m"
+    }
+   ]
+  },
+  {
+   "line": 30,
+   "class": "update",
+   "id": "seed-993",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Gebertstraße 9, 90411 Nürnberg"
+    },
+    {
+     "field": "lat",
+     "before": 49.455,
+     "after": 49.4797711
+    },
+    {
+     "field": "lng",
+     "before": 11.07,
+     "after": 11.1224848
+    }
+   ],
+   "expect_h": "580685c8d0d5d9d4",
+   "update_reason": "Coarse pin (4.7 km off) moved onto the gym; official address added",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 4687 m"
+    }
+   ]
+  },
+  {
+   "line": 31,
+   "class": "update",
+   "id": "seed-995",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Helene-Richter-Straße 5, 91052 Erlangen"
+    },
+    {
+     "field": "lat",
+     "before": 49.595,
+     "after": 49.5928261
+    },
+    {
+     "field": "lng",
+     "before": 11.01,
+     "after": 11.0306744
+    }
+   ],
+   "expect_h": "01715638fcfb9247",
+   "update_reason": "Coarse pin (1.5 km off) moved to the gym address; official address added",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1510 m"
+    }
+   ]
+  },
+  {
+   "line": 32,
+   "class": "update",
+   "id": "seed-997",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Hartmannstraße 116, 91052 Erlangen"
+    },
+    {
+     "field": "lat",
+     "before": 49.6,
+     "after": 49.584031
+    },
+    {
+     "field": "lng",
+     "before": 11.005,
+     "after": 11.0224874
+    }
+   ],
+   "expect_h": "565edf71ef0f7afe",
+   "update_reason": "Coarse pin (2.2 km off) moved onto the gym; official address added",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 2178 m"
+    }
+   ]
+  },
+  {
+   "line": 33,
+   "class": "update",
+   "id": "seed-998",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Happurger Straße 17, 91217 Hersbruck"
+    },
+    {
+     "field": "lat",
+     "before": 49.5083,
+     "after": 49.5053287
+    },
+    {
+     "field": "lng",
+     "before": 11.4333,
+     "after": 11.4394297
+    }
+   ],
+   "expect_h": "273bd1619a822522",
+   "update_reason": "Pin was 550 m off the hall; official hall address added (the DAV section office, Hirtengasse 6, is a different address)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 552 m"
+    }
+   ]
+  },
+  {
+   "line": 34,
+   "class": "update",
+   "id": "seed-1089",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 43.3339402,
+     "after": 43.3339071
+    },
+    {
+     "field": "lng",
+     "before": 5.3745716,
+     "after": 5.3731517
+    }
+   ],
+   "expect_h": "02fd3590668dd1d4",
+   "update_reason": "Pin was a street-centre geocode shared with another gym; moved to the gym OSM element (address already correct)"
+  },
+  {
+   "line": 35,
+   "class": "update",
+   "id": "seed-1092",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 43.3339402,
+     "after": 43.2622503
+    },
+    {
+     "field": "lng",
+     "before": 5.3745716,
+     "after": 5.3912607
+    }
+   ],
+   "expect_h": "0c1135d25fd9b3f2",
+   "update_reason": "Pin was 8 km away (shared with Altissimo Marseille); moved to the gym OSM element (address already correct)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 8085 m"
+    }
+   ]
+  },
+  {
+   "line": 36,
+   "class": "update",
+   "id": "seed-1144",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 44.6602249,
+     "after": 44.6440782
+    },
+    {
+     "field": "lng",
+     "before": 10.9153636,
+     "after": 10.8999739
+    }
+   ],
+   "expect_h": "d4c53e0252296d32",
+   "update_reason": "Pin was 2.2 km away (shared with Equilibrium); moved to the gym OSM element (address already correct, official site gives no house number)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 2169 m"
+    }
+   ]
+  },
+  {
+   "line": 37,
+   "class": "update",
+   "id": "seed-1368",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Vulkan 13, 0178 Oslo"
+    },
+    {
+     "field": "lat",
+     "before": 59.9133301,
+     "after": 59.9229349
+    },
+    {
+     "field": "lng",
+     "before": 10.7389701,
+     "after": 10.7521397
+    }
+   ],
+   "expect_h": "437ea10ef2d0e13d",
+   "update_reason": "Placeholder pin (1.3 km off) moved onto the gym; official address added",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1296 m"
+    }
+   ]
+  },
+  {
+   "line": 38,
+   "class": "update",
+   "id": "seed-1370",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Olaf Helsets vei 5, 0694 Oslo"
+    },
+    {
+     "field": "lat",
+     "before": 59.9053301,
+     "after": 59.8676378
+    },
+    {
+     "field": "lng",
+     "before": 10.7469701,
+     "after": 10.8415319
+    }
+   ],
+   "expect_h": "4e53fadb58c00c03",
+   "update_reason": "Placeholder pin (6.7 km off) moved onto the gym; official address added",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 6738 m"
+    }
+   ]
+  },
+  {
+   "line": 39,
+   "class": "update",
+   "id": "seed-1371",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Vilhelm Bjerknes' vei 24, 5081 Bergen"
+    },
+    {
+     "field": "lat",
+     "before": 60.3943055,
+     "after": 60.354019
+    },
+    {
+     "field": "lng",
+     "before": 5.3259192,
+     "after": 5.3594266
+    }
+   ],
+   "expect_h": "8a87ed5c133992ce",
+   "update_reason": "Placeholder pin (4.8 km off) moved onto the hall building; official address added",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 4844 m"
+    }
+   ]
+  },
+  {
+   "line": 40,
+   "class": "update",
+   "id": "seed-1372",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Helleveien 30, 5045 Bergen"
+    },
+    {
+     "field": "lat",
+     "before": 60.4023055,
+     "after": 60.4227375
+    },
+    {
+     "field": "lng",
+     "before": 5.3339192,
+     "after": 5.3047266
+    }
+   ],
+   "expect_h": "25c540895d2d107d",
+   "update_reason": "Placeholder pin (2.8 km off) moved onto the hall building; official address added",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 2780 m"
+    }
+   ]
+  },
+  {
+   "line": 41,
+   "class": "update",
+   "id": "seed-1373",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Johan Berentsens vei 63, 5160 Laksevåg"
+    },
+    {
+     "field": "lat",
+     "before": 60.3863055,
+     "after": 60.391971
+    },
+    {
+     "field": "lng",
+     "before": 5.3339192,
+     "after": 5.282697
+    }
+   ],
+   "expect_h": "8315a1f379bc9226",
+   "update_reason": "Placeholder pin (2.9 km off) moved onto the gym; official address added",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 2884 m"
+    }
+   ]
+  },
+  {
+   "line": 42,
+   "class": "update",
+   "id": "seed-1374",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Kokstadveien 23A, 5257 Kokstad"
+    },
+    {
+     "field": "lat",
+     "before": 60.4023055,
+     "after": 60.294218
+    },
+    {
+     "field": "lng",
+     "before": 5.3179192,
+     "after": 5.2658817
+    }
+   ],
+   "expect_h": "389372a1c5d8780c",
+   "update_reason": "Placeholder pin (12 km off) moved to the gym address; official address added",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 12355 m"
+    }
+   ]
+  },
+  {
+   "line": 43,
+   "class": "update",
+   "id": "seed-1377",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Ormen langes vei 15, 7041 Trondheim"
+    },
+    {
+     "field": "lat",
+     "before": 63.4224475,
+     "after": 63.4454571
+    },
+    {
+     "field": "lng",
+     "before": 10.4032118,
+     "after": 10.4215578
+    }
+   ],
+   "expect_h": "19c17611b43f530d",
+   "update_reason": "Gym now at Ormen langes vei 15 per its own site (older OSM/directories: Stiklestadveien 2); pin was a placeholder 2.7 km off",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 2716 m"
+    }
+   ]
+  },
+  {
+   "line": 44,
+   "class": "update",
+   "id": "seed-1379",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Rennebergstien 24, 4021 Stavanger"
+    },
+    {
+     "field": "lat",
+     "before": 58.9779675,
+     "after": 58.937077
+    },
+    {
+     "field": "lng",
+     "before": 5.7398101,
+     "after": 5.692717
+    }
+   ],
+   "expect_h": "c7fb2a8c05c75f6b",
+   "update_reason": "Placeholder pin (5.3 km off) moved to the gym address; official address added",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 5288 m"
+    }
+   ]
+  },
+  {
+   "line": 45,
+   "class": "update",
+   "id": "seed-1380",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 67.2844313,
+     "after": 67.2863232
+    },
+    {
+     "field": "lng",
+     "before": 14.3817503,
+     "after": 14.5692944
+    }
+   ],
+   "expect_h": "f7b61b10e8b03c5f",
+   "update_reason": "Placeholder pin (8 km off) moved onto the gym OSM element",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 8055 m"
+    }
+   ]
+  },
+  {
+   "line": 46,
+   "class": "update",
+   "id": "seed-1382",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Holleskardvegen 35, 3560 Hemsedal"
+    },
+    {
+     "field": "lat",
+     "before": 60.9282437,
+     "after": 60.8625091
+    },
+    {
+     "field": "lng",
+     "before": 8.3834869,
+     "after": 8.5192647
+    }
+   ],
+   "expect_h": "391c93f46f76b00a",
+   "update_reason": "Pin was 10 km off; official address added",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 10361 m"
+    }
+   ]
+  },
+  {
+   "line": 47,
+   "class": "update",
+   "id": "seed-1383",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Jørgen Moes gate 10, 4616 Kristiansand"
+    },
+    {
+     "field": "lat",
+     "before": 58.0856276,
+     "after": 58.146859
+    },
+    {
+     "field": "lng",
+     "before": 7.931858,
+     "after": 7.9801845
+    }
+   ],
+   "expect_h": "388f8277a341e7b9",
+   "update_reason": "Placeholder pin (7.4 km off) moved to the gym address; official address added",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 7377 m"
+    }
+   ]
+  },
+  {
+   "line": 48,
+   "class": "update",
+   "id": "seed-1384",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Bytesteinen 1, 6517 Kristiansund"
+    },
+    {
+     "field": "lat",
+     "before": 63.2168194,
+     "after": 63.109463
+    },
+    {
+     "field": "lng",
+     "before": 7.545259,
+     "after": 7.7883928
+    }
+   ],
+   "expect_h": "fdd94785f7e714c6",
+   "update_reason": "Pin was 17 km off (north of town); official address added",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 17072 m"
+    }
+   ]
+  },
+  {
+   "line": 49,
+   "class": "update",
+   "id": "seed-1385",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Anders Johansens veg 10, 2615 Lillehammer"
+    },
+    {
+     "field": "lat",
+     "before": 61.1333408,
+     "after": 61.118592
+    },
+    {
+     "field": "lng",
+     "before": 10.4265855,
+     "after": 10.457314
+    }
+   ],
+   "expect_h": "c506c237a7bc09d8",
+   "update_reason": "Placeholder pin (2.3 km off) moved to the gym; official address added",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 2326 m"
+    }
+   ]
+  },
+  {
+   "line": 50,
+   "class": "update",
+   "id": "seed-1386",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Sjømannsvegen 16, 6008 Ålesund"
+    },
+    {
+     "field": "lat",
+     "before": 62.4802364,
+     "after": 62.4700567
+    },
+    {
+     "field": "lng",
+     "before": 6.5550739,
+     "after": 6.1837388
+    }
+   ],
+   "expect_h": "3c71fb4eaab39aaa",
+   "update_reason": "Pin was 19 km off (wrong spot east of Ålesund); official address added",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 19115 m"
+    }
+   ]
+  },
+  {
+   "line": 51,
+   "class": "update",
+   "id": "seed-1387",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Moflatvegen 38, 3733 Skien"
+    },
+    {
+     "field": "lat",
+     "before": 59.2662883,
+     "after": 59.18583
+    },
+    {
+     "field": "lng",
+     "before": 9.5311354,
+     "after": 9.596602
+    }
+   ],
+   "expect_h": "6f3f711338f51f8f",
+   "update_reason": "Pin was 9.7 km off; official address added",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 9691 m"
+    }
+   ]
+  },
+  {
+   "line": 52,
+   "class": "update",
+   "id": "seed-1474",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Piața 1 Mai, Cluj-Napoca"
+    },
+    {
+     "field": "lat",
+     "before": 46.7640327,
+     "after": 46.7868234
+    },
+    {
+     "field": "lng",
+     "before": 23.5702568,
+     "after": 23.6033412
+    }
+   ],
+   "expect_h": "8d9c4db83dfc5c0a",
+   "update_reason": "Pin was 3.6 km off (shared with Free Wall); moved to the gym OSM element; official address added",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 3574 m"
+    }
+   ]
+  },
+  {
+   "line": 53,
+   "class": "update",
+   "id": "seed-1497",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Sports complex of the National Sports Academy (NSA), Studentski grad, 1700 Sofia, Bulgaria"
+    },
+    {
+     "field": "lat",
+     "before": 42.6682265,
+     "after": 42.645149
+    },
+    {
+     "field": "lng",
+     "before": 23.3710644,
+     "after": 23.349001
+    }
+   ],
+   "expect_h": "541ffca088281952",
+   "update_reason": "Pin was 3 km off (city centre, shared with Bons); moved onto the NSA sports complex that houses the wall",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 3137 m"
+    }
+   ]
+  }
+ ]
+}

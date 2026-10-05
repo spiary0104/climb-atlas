@@ -1,0 +1,47 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-05-germany-owner-checks",
+ "index": {
+  "sha256": "4af41ddba4215c71116d61b55c0adca400284b8d861137056e0c39566a5882fb",
+  "count": 2416,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-05-korea-owner-checks"
+ ],
+ "counts": {
+  "records": 2,
+  "new": 2,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "5784811a42165406004786ab29cafcdf5e9aba1c5da367964781f9cc9ec35b55",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-6a37cf87df",
+   "id_frozen": true,
+   "name": "Kletter- & Freizeithalle Schmölln",
+   "country": "DE"
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-c3eb253cd7",
+   "id_frozen": true,
+   "name": "Kletterzentrum Zuckerturm",
+   "country": "DE"
+  }
+ ]
+}

@@ -1,0 +1,41 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-05-spain-owner-checks",
+ "index": {
+  "sha256": "cb1b724ef04e8400321d4ae823963decfd3256c6d6d2fcd0dd80a601a8332d1c",
+  "count": 2413,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-05-germany-owner-checks",
+  "2026-10-05-italy-owner-checks",
+  "2026-10-05-korea-owner-checks"
+ ],
+ "counts": {
+  "records": 1,
+  "new": 1,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "80109072c232deb1a30973b85c0db78d083932c74ee64bbb8410ecdd1470f72d",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-9be2fb9806",
+   "id_frozen": true,
+   "name": "El Roko",
+   "country": "ES"
+  }
+ ]
+}

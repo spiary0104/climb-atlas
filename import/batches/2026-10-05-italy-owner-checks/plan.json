@@ -1,0 +1,48 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-05-italy-owner-checks",
+ "index": {
+  "sha256": "709afa4c844f56631bc7110a05c71f974954ab0305f27d3d2b2190f8953a67ad",
+  "count": 2414,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-05-germany-owner-checks",
+  "2026-10-05-korea-owner-checks"
+ ],
+ "counts": {
+  "records": 2,
+  "new": 2,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "9422b621048c35dbff12bf9838c9fd5df262c9abd7c70e5c78df56262584382e",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-a03da7a667",
+   "id_frozen": true,
+   "name": "La Mole Sports Academy",
+   "country": "IT"
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-569cef7574",
+   "id_frozen": true,
+   "name": "Free Climbing Palermo",
+   "country": "IT"
+  }
+ ]
+}

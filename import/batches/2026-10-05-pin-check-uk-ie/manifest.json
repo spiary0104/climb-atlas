@@ -1,0 +1,413 @@
+{
+  "schema_version": 1,
+  "updater_version": 1,
+  "kind": "update",
+  "batch_id": "2026-10-05-pin-check-uk-ie",
+  "status": "updated",
+  "target": {
+    "kind": "production",
+    "host": "thayxaampaelvntoaido.supabase.co"
+  },
+  "coverage": "FULL",
+  "plan_sha256": "29bb9e78dcdccae57fecceb9a297ffc8ed00f78ab81b983239a1bebf08e2190a",
+  "payload_sha256": "9fcba020ab62b1114f0b5001609463649871b2c4b72e4957e7dde0302c90870d",
+  "confirm_token": "4b030f7a0eba50b3",
+  "live_state_sha256": "0c790e9b22a43ca08e50edc5658c8c729b9cbd45231db2b932e9ae6fc6b2daf7",
+  "rows_updated": 35,
+  "approved_before": 2411,
+  "approved_after": 2411,
+  "changes": [
+    {
+      "id": "g-8e9f3f2af7",
+      "fields": [
+        "address"
+      ],
+      "expect_h": "be45b5861e97603e",
+      "after_h": "aac335e932e91bf2"
+    },
+    {
+      "id": "seed-1359",
+      "fields": [
+        "address",
+        "lat",
+        "lng"
+      ],
+      "expect_h": "fe035d8104cf3d6c",
+      "after_h": "a597b396f5bf1470"
+    },
+    {
+      "id": "seed-1360",
+      "fields": [
+        "address",
+        "lat",
+        "lng"
+      ],
+      "expect_h": "0ab4c5cd020329ee",
+      "after_h": "0b88485a30b50233"
+    },
+    {
+      "id": "seed-862",
+      "fields": [
+        "address",
+        "lat",
+        "lng"
+      ],
+      "expect_h": "633139e316f8a54d",
+      "after_h": "2a00ff946b7d7aaa"
+    },
+    {
+      "id": "seed-868",
+      "fields": [
+        "address",
+        "lat",
+        "lng"
+      ],
+      "expect_h": "ce4f68d241e286f5",
+      "after_h": "7b1f654d1ec0edde"
+    },
+    {
+      "id": "seed-870",
+      "fields": [
+        "address",
+        "lat",
+        "lng"
+      ],
+      "expect_h": "8893eccbcc5a31ab",
+      "after_h": "a697e22ea943abf9"
+    },
+    {
+      "id": "seed-873",
+      "fields": [
+        "address",
+        "lat",
+        "lng"
+      ],
+      "expect_h": "7b3ef1abef39d178",
+      "after_h": "b83822531e7afff8"
+    },
+    {
+      "id": "seed-875",
+      "fields": [
+        "address",
+        "lat",
+        "lng"
+      ],
+      "expect_h": "e3a2aaea33eee08a",
+      "after_h": "333b927d1df31f83"
+    },
+    {
+      "id": "seed-881",
+      "fields": [
+        "address",
+        "lat",
+        "lng"
+      ],
+      "expect_h": "f4a8f1af2898e6e7",
+      "after_h": "6b9b73a7ebe37d44"
+    },
+    {
+      "id": "seed-882",
+      "fields": [
+        "address",
+        "lat",
+        "lng"
+      ],
+      "expect_h": "acd5a13f8e8f0f63",
+      "after_h": "e74bd23fbc43716e"
+    },
+    {
+      "id": "seed-886",
+      "fields": [
+        "address",
+        "lat",
+        "lng"
+      ],
+      "expect_h": "95c678b8e09021ca",
+      "after_h": "47abbb6b5868a968"
+    },
+    {
+      "id": "seed-889",
+      "fields": [
+        "address",
+        "lat",
+        "lng"
+      ],
+      "expect_h": "78c6cce4b1a9fa6d",
+      "after_h": "da7d5e807b758493"
+    },
+    {
+      "id": "seed-890",
+      "fields": [
+        "address",
+        "lat",
+        "lng"
+      ],
+      "expect_h": "4bac172e0febc27b",
+      "after_h": "123c2279040b706d"
+    },
+    {
+      "id": "seed-892",
+      "fields": [
+        "address",
+        "lat",
+        "lng"
+      ],
+      "expect_h": "b7aef7842a2d5887",
+      "after_h": "18137c199f8c08ed"
+    },
+    {
+      "id": "seed-895",
+      "fields": [
+        "address",
+        "lat",
+        "lng"
+      ],
+      "expect_h": "bd59479e46b38fc2",
+      "after_h": "cc787a6490e1ab62"
+    },
+    {
+      "id": "seed-896",
+      "fields": [
+        "address",
+        "lat",
+        "lng"
+      ],
+      "expect_h": "cbb9f6fe0b08476e",
+      "after_h": "7384a56962109102"
+    },
+    {
+      "id": "seed-898",
+      "fields": [
+        "address",
+        "lat",
+        "lng"
+      ],
+      "expect_h": "8d90a5a2d13662e4",
+      "after_h": "6da1e0a810b4c62d"
+    },
+    {
+      "id": "seed-901",
+      "fields": [
+        "address",
+        "lat",
+        "lng"
+      ],
+      "expect_h": "c43aabd55a3e90b3",
+      "after_h": "fe8510c83a99e2af"
+    },
+    {
+      "id": "seed-902",
+      "fields": [
+        "address",
+        "lat",
+        "lng"
+      ],
+      "expect_h": "cdb7be54f588d649",
+      "after_h": "482eb7773a444c69"
+    },
+    {
+      "id": "seed-903",
+      "fields": [
+        "address",
+        "lat",
+        "lng"
+      ],
+      "expect_h": "398925bc95dc7f44",
+      "after_h": "e215ebd07996ac47"
+    },
+    {
+      "id": "seed-904",
+      "fields": [
+        "address",
+        "lat",
+        "lng"
+      ],
+      "expect_h": "d6e08098cc1c37c6",
+      "after_h": "3c58e5ec0ee30a20"
+    },
+    {
+      "id": "seed-907",
+      "fields": [
+        "address",
+        "lat",
+        "lng"
+      ],
+      "expect_h": "b87702d0db30131a",
+      "after_h": "527d138c865878f8"
+    },
+    {
+      "id": "seed-910",
+      "fields": [
+        "address",
+        "lat",
+        "lng"
+      ],
+      "expect_h": "e33f6397b8efd8db",
+      "after_h": "fce48e3057ba7938"
+    },
+    {
+      "id": "seed-911",
+      "fields": [
+        "address",
+        "lat",
+        "lng"
+      ],
+      "expect_h": "3c90451394b68cae",
+      "after_h": "0854023a2103407e"
+    },
+    {
+      "id": "seed-912",
+      "fields": [
+        "address",
+        "lat",
+        "lng"
+      ],
+      "expect_h": "b0ca3173d6cc7289",
+      "after_h": "b1daf2df75c09378"
+    },
+    {
+      "id": "seed-913",
+      "fields": [
+        "address",
+        "lat",
+        "lng"
+      ],
+      "expect_h": "81cda93fd2d2642c",
+      "after_h": "1b0730f8bc33b0fd"
+    },
+    {
+      "id": "seed-914",
+      "fields": [
+        "address",
+        "lat",
+        "lng"
+      ],
+      "expect_h": "a094e345c798410f",
+      "after_h": "d168ca361be328c6"
+    },
+    {
+      "id": "seed-915",
+      "fields": [
+        "address",
+        "lat",
+        "lng"
+      ],
+      "expect_h": "70bfd5d49c6b7188",
+      "after_h": "d91dd18d51e4a464"
+    },
+    {
+      "id": "seed-937",
+      "fields": [
+        "address",
+        "lat",
+        "lng"
+      ],
+      "expect_h": "481bc2111eb27121",
+      "after_h": "84bf6f7fb353e363"
+    },
+    {
+      "id": "seed-940",
+      "fields": [
+        "address",
+        "lat",
+        "lng"
+      ],
+      "expect_h": "ce4617bf89854191",
+      "after_h": "2703b4bb6549fcff"
+    },
+    {
+      "id": "seed-941",
+      "fields": [
+        "address",
+        "lat",
+        "lng"
+      ],
+      "expect_h": "9034b9cbe058d411",
+      "after_h": "8a72b0da5ed86a8b"
+    },
+    {
+      "id": "seed-943",
+      "fields": [
+        "address",
+        "lat",
+        "lng"
+      ],
+      "expect_h": "7ff8ced02dc821e3",
+      "after_h": "d295df218b95c51f"
+    },
+    {
+      "id": "seed-945",
+      "fields": [
+        "address",
+        "lat",
+        "lng"
+      ],
+      "expect_h": "a6b723a390962278",
+      "after_h": "d8ad46982a2aa21e"
+    },
+    {
+      "id": "seed-946",
+      "fields": [
+        "address",
+        "lat",
+        "lng"
+      ],
+      "expect_h": "7277d9627309303b",
+      "after_h": "edccdd53504207ba"
+    },
+    {
+      "id": "seed-947",
+      "fields": [
+        "address",
+        "lat",
+        "lng"
+      ],
+      "expect_h": "93b54f02ddec4c28",
+      "after_h": "4310be3cb96f6559"
+    }
+  ],
+  "verification": {
+    "ok": true,
+    "checked": 35,
+    "problems": []
+  },
+  "started_at": "2026-10-05T15:30:47.054Z",
+  "finished_at": "2026-10-05T15:30:58.447Z",
+  "ids": [
+    "g-8e9f3f2af7",
+    "seed-1359",
+    "seed-1360",
+    "seed-862",
+    "seed-868",
+    "seed-870",
+    "seed-873",
+    "seed-875",
+    "seed-881",
+    "seed-882",
+    "seed-886",
+    "seed-889",
+    "seed-890",
+    "seed-892",
+    "seed-895",
+    "seed-896",
+    "seed-898",
+    "seed-901",
+    "seed-902",
+    "seed-903",
+    "seed-904",
+    "seed-907",
+    "seed-910",
+    "seed-911",
+    "seed-912",
+    "seed-913",
+    "seed-914",
+    "seed-915",
+    "seed-937",
+    "seed-940",
+    "seed-941",
+    "seed-943",
+    "seed-945",
+    "seed-946",
+    "seed-947"
+  ]
+}

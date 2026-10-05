@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "section_id": "2026-10-05-uk-owner-checks",
+  "reviewer": "Spiar (owner); owner manual checks 2026-10-06, decisions recorded by Claude (AI) from the owner's answers",
+  "reviewed": "2026-10-06",
+  "decisions": {
+    "uko-001": {
+      "decision": "accept",
+      "reason": "Owner confirmed the bouldering wall on the gym Instagram; flagged ids are the same gym in an earlier section, deferred there and never staged",
+      "reviewed_against": [
+        "2026-10-05-uk-holds-gaps#northern-problems-whitehaven",
+        "2026-10-05-uk-single-gym-towns#northern-problems-whitehaven"
+      ]
+    },
+    "uko-002": {
+      "decision": "accept",
+      "reason": "Owner confirmed address and hours; the official site states a bouldering wall; flagged id is the same gym in an earlier section, deferred there and never staged",
+      "reviewed_against": [
+        "2026-10-05-uk-holds-gaps#adventure-hub-bamford"
+      ]
+    },
+    "uko-003": {
+      "decision": "reject",
+      "reason_code": "no-bouldering",
+      "reason": "Owner manual check: lead climbing only"
+    }
+  }
+}
