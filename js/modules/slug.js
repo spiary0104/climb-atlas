@@ -1,6 +1,6 @@
 // URL slugs (docs/DESIGN.md sec. 6.2; owner decision 2026-09-26: name-suburb, stored). Pure, unit-tested.
 // The database owns gym slugs (supabase/migrations/*_add_spot_slugs.sql: stored, set once, never changed). This module
-// mirrors that rule for two cases only: rows that arrive without a slug (the offline data/gyms.json fallback, or a
+// mirrors that rule for two cases only: rows that arrive without a slug (the offline data/spots-fallback.json fallback, or a
 // database the migration has not reached yet), and region/city path segments, which are derived, not stored.
 import { fold } from './geo.js';
 

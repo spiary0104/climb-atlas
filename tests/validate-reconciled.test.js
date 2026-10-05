@@ -15,7 +15,7 @@ const { ROOT, tmp } = require('./helpers/import-helpers');
 
 const read = p => JSON.parse(fs.readFileSync(path.join(ROOT, p), 'utf8'));
 const BATCH = path.join(ROOT, 'import', 'batches', '2026-09-24-reconciled-new-gyms');
-const orig = read('data/gyms.json'), out = read('data/gyms.reconciled.json'), decisions = read('data/reconciliation/2026-09-24/decisions.json');
+const orig = read('data/reconciliation/gyms.original.json'), out = read('data/gyms.reconciled.json'), decisions = read('data/reconciliation/2026-09-24/decisions.json');
 const REAL_MANIFEST = readManifest(BATCH);
 const index = S.load();
 const H = require('../scripts/lib/gym-import/history');
@@ -100,20 +100,20 @@ test('dataset/production disagreements are caught (each independently)', () => {
   const back = clone(out); back.push(clone(decisions.duplicates_removed.find(d => d.rejected_record).rejected_record)); assert.ok(failedNames(run({ out: back })).length >= 1, 'rejected duplicate re-added');
 });
 
-test('an altered or lost record in the dataset (vs the original data/gyms.json + documented changes) is caught', () => {
+test('an altered or lost record in the dataset (vs the original data/reconciliation/gyms.original.json + documented changes) is caught', () => {
   const edited = clone(out); edited.find(g => !g.id.startsWith('g-')).notes = 'silently edited notes';
   assert.ok(failedNames(run({ out: edited })).includes('7'), 'altered');
   const lost = clone(out).slice(1); assert.ok(failedNames(run({ out: lost })).includes('7'), 'lost');
 });
 
-test('check 9: the ORIGINAL data/gyms.json is verified against a pinned git blob id (and the tag / local backup when present)', () => {
+test('check 9: the ORIGINAL data/reconciliation/gyms.original.json is verified against a pinned git blob id (and the tag / local backup when present)', () => {
   const inGit = (() => { try { cp.execSync('git rev-parse --git-dir', { cwd: ROOT, stdio: 'ignore' }); return true; } catch (e) { return false; } })();
   if (inGit) {
     const r = checkOriginalGymsJson(ROOT);
     assert.equal(r.ok, true, r.detail); assert.match(r.detail, /= pinned original/);
-    assert.equal(cp.execSync('git hash-object --path=data/gyms.json data/gyms.json', { cwd: ROOT }).toString().trim(), ORIGINAL_GYMS_JSON_BLOB);
+    assert.equal(cp.execSync('git hash-object --path=data/reconciliation/gyms.original.json data/reconciliation/gyms.original.json', { cwd: ROOT }).toString().trim(), ORIGINAL_GYMS_JSON_BLOB);
   }
   // any other content (not a git checkout, different file) can never pass
-  const root = tmp(); fs.mkdirSync(path.join(root, 'data'), { recursive: true }); fs.writeFileSync(path.join(root, 'data', 'gyms.json'), '[]');
+  const root = tmp(); fs.mkdirSync(path.join(root, 'data', 'reconciliation'), { recursive: true }); fs.writeFileSync(path.join(root, 'data', 'reconciliation', 'gyms.original.json'), '[]');
   const bad = checkOriginalGymsJson(root); assert.equal(bad.ok, false); assert.doesNotMatch(bad.detail, /= pinned original/);
 });

@@ -1,7 +1,7 @@
 // Modal keyboard/focus handling, edit/report spot forms. Adding a gym is the /add page.
 import { openAuthModal } from './auth-ui.js';
 import { infoFieldsHtml, readInfoFields } from './gym-info.js';
-import { ensureSeedData, loadFullSpot } from './data-load.js';
+import { loadFullSpot } from './data-load.js';
 import { map } from './map.js';
 import { STATES_BY_COUNTRY } from './regions.js';
 import { appState } from './state.js';
@@ -83,9 +83,6 @@ export async function openEditModal(id, { focus = '' } = {}){
   const g = appState.spots.find(x=>x.id===id);
   if(!g) return;
   if(!requireSignIn('Sign in to suggest an edit')) return;
-  // Only an edited seed spot can be reverted, and only the seed file knows
-  // its original values -- pull it in for that case alone.
-  if(g.edited && !g.community) await ensureSeedData().catch(()=>{});
   await loadFullSpot(g);            // the form shows (and an edit carries) the whole row, not just Explore's columns
   appState.currentEditId = id;
   appState.currentEditPin = {lat: g.lat, lng: g.lng};
@@ -114,10 +111,6 @@ export async function openEditModal(id, { focus = '' } = {}){
   document.getElementById('eTypeLead').checked = g.types.includes('lead-climbing');
   editPinStatus.textContent = `Current pin: ${g.lat.toFixed(4)}, ${g.lng.toFixed(4)}`;
   editPinStatus.classList.remove('set');
-  // Revert only makes sense for un-edited-back-to seed spots — community
-  // submissions have no "original" snapshot stored anywhere to revert to.
-  const canRevert = g.edited && !g.community && (window.SEED_GYMS||[]).some(s=>s.id===id);
-  document.getElementById('eRevertBtn').style.display = canRevert ? 'block' : 'none';
   checkEditFormReady();
   editModalBackdrop.classList.remove('hidden');
   // The gym page prompt opens the dialog at the hours (sec. 8.2): after the dialog's own initial focus has run.
@@ -209,9 +202,6 @@ export function initModalKeyboard(){
 // "Add a gym": the top bar button, /me and the Explore empty state all go to the /add page (add-page.js).
 export function startAddGym(){ navigate('/add'); }
 
-const currentInfo = g => ({ description: g.description || null, website: g.website || null, day_pass: g.day_pass || null,
-  hours: g.hours || null, facilities: Array.isArray(g.facilities) ? g.facilities : [] });
-
 export function initForms(){
   document.getElementById('eCountry').addEventListener('change', (e)=>{ toggleOtherCountryFields('e', e.target.value); checkEditFormReady(); });
 
@@ -292,36 +282,6 @@ export function initForms(){
     }
   });
 
-  document.getElementById('eRevertBtn').addEventListener('click', async (e)=>{
-    if(!appState.currentEditId) return;
-    if(!window.sb){ showToast('Supabase is not configured — see README.md'); return; }
-    if(!requireSignIn('Sign in to submit your edit')) return;
-    const btn = e.currentTarget;
-    if(btn.disabled) return;
-    btn.disabled = true;                 // one proposal per click: the seed fetch and the insert take a moment
-    try{ await revertToOriginal(appState.currentEditId); }finally{ btn.disabled = false; }
-  });
-  async function revertToOriginal(id){
-    const original = (await ensureSeedData().catch(()=>[])).find(s=>s.id===id);
-    if(!original){ showToast('No original data to revert to'); return; }
-    const proposal = {
-      spot_id: id,
-      name: original.name, suburb: original.suburb, state: original.state, country: original.country,
-      types: original.types, address: original.address || null, photo: original.photo || null,
-      lat: original.lat, lng: original.lng, edit_note: 'Revert to the original dataset values',
-      // The seed file predates the gym-information fields: a revert keeps what the gym has now.
-      ...currentInfo(appState.spots.find(s => s.id === id) || {})
-    };
-    try{
-      const {error} = await window.sb.from('pending_edits').insert(proposal);
-      if(error) throw error;
-      showToast('Revert submitted — a moderator will review it before it goes live.');
-      closeEditModal();
-    }catch(err){
-      showToast(submitErrorMessage(err, 'Could not submit revert — try again'));
-      console.error(err);
-    }
-  }
   document.getElementById('rCancelBtn').addEventListener('click', closeReportModal);
 
   rMessage.addEventListener('input', ()=>{

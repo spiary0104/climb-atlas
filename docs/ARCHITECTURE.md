@@ -51,12 +51,12 @@ Line refs drift: re-grep function names rather than trusting numbers.
 | `js/modules/marks.js` | `toggleMark` (Supabase `marks`, optimistic + rollback); explore.js listens |
 | `js/modules/nav.js`, `icons.js` | Top bar/tab bar (`[data-nav]` → explore, `/in`, `/log`, START, `/me`, add-gym); `icon(name)` (unknown names throw) |
 | `js/modules/modals.js` | Modal focus/Escape handling, edit (required note + review toggle) and report forms; `startAddGym` → `/add` |
-| `js/modules/auth-ui.js`, `data-load.js`, `logbook.js`, `moderation.js` | Sign-in dialog + account slot · `loadSpots` (Supabase → `data/gyms.json` fallback), marks, moderator, pending · sessions + "Log a session" dialog (searchable gym picker) · moderator actions (approve with corrections, reject with reason, dismiss, verify) |
-| `data/gyms.json` | LEGACY seed dataset: offline fallback + "Revert to original" source (ids stale vs production), reconciliation input. **Never read; never edit** |
+| `js/modules/auth-ui.js`, `data-load.js`, `logbook.js`, `moderation.js` | Sign-in dialog + account slot · `loadSpots` (Supabase → `data/spots-fallback.json` fallback via `ensureFallbackData`), marks, moderator, pending · sessions + "Log a session" dialog (searchable gym picker) · moderator actions (approve with corrections, reject with reason, dismiss, verify) |
+| `data/spots-fallback.json`, `data/reconciliation/gyms.original.json` | Offline list: id-correct export of the approved gyms from production, Explore list columns only, written by `scripts/build-sitemap.js` (regenerated each data batch; fetched on demand, not precached) · the LEGACY original dataset moved there byte for byte (blob `23bca878…`; provenance input for the reconciliation scripts/tests, `supabase/geocode.html`; not served, ids stale). **Never read either; never edit** |
 | `data/gyms.reconciled.json` | FROZEN reconciliation/provenance dataset (2,127 records = production at the first import). Not a runtime file |
 | `supabase/migrations/` | Source of truth for the schema (`docs/migrations.md`); `…_add_spot_slugs.sql` (stored `spots.slug`), `…_community_provenance.sql` (Phase 4) |
 | `import/`, `scripts/gym-import.js`, `scripts/lib/gym-import/` | Gym import pipeline (`docs/import-workflow.md`); new locations via regional research sections (`import/research/`, `research.js`) |
-| `sitemap.xml`, `scripts/build-sitemap.js`, `api/seo.mjs` | Sitemap generated from production (read-only; area pages only with 2+ gyms, metros always); the same run writes `api/_places.json`. `api/seo.mjs` (Vercel Function, `.mjs`, no package.json): crawler/unfurler user agents on `/gym/*`, `/in/*` (vercel.json `has` rewrites) get the shell with per-page title/description/canonical/OG; people get the static shell. Re-run after data batches; `robots.txt` points to the sitemap |
+| `sitemap.xml`, `scripts/build-sitemap.js`, `api/seo.mjs` | Sitemap generated from production (read-only; area pages only with 2+ gyms, metros always); the same run writes `api/_places.json` and `data/spots-fallback.json`. `api/seo.mjs` (Vercel Function, `.mjs`, no package.json): crawler/unfurler user agents on `/gym/*`, `/in/*` (vercel.json `has` rewrites) get the shell with per-page title/description/canonical/OG; people get the static shell. Re-run after data batches; `robots.txt` points to the sitemap |
 | `sw.js`, `js/sw-register.js` | Service worker (`SHELL_FILES` — add every new JS/CSS/asset file; bump `CACHE_VERSION`) · registrar (classic script): dispatches `bouldeer:sw-updated` once per installed update (not on first install), `registration.update()` on tab visible; main.js shows the "Bouldeer has finished a climb, please refresh the page" / Refresh toast (`showActionToast`, utils.js), reload only on Refresh |
 | `docs/TASKS.md` / `docs/archive/` | Open work only / old long-form docs (**never read**) |
 
@@ -83,7 +83,7 @@ Spot shape: `id` (`seed-N` legacy, `community-<uuid>`, or frozen `g-<hex>` for i
 countries — always key on `country:state`.
 
 ## Data flow (Explore, DESIGN.md sec. 7)
-1. `init()` → `auth.init()` → `loadSpots()`; unreachable Supabase → `data/gyms.json` + offline banner.
+1. `init()` → `auth.init()` → `loadSpots()`; unreachable Supabase → `data/spots-fallback.json` + offline banner.
 2. `appState.loaded = true` → `applyLanding()`: URL `?c=` → last camera (`bouldeer_last_camera`) → densest gym
    cluster of the home country (browser locale, supercluster r60 @ z7) → world view.
 3. `render()` (explore.js): rebuild search index + id map when spots change; apply URL filters once;
@@ -141,10 +141,10 @@ escaping/URL safety, hostile-input rendering of every Explore builder, /mod pane
 RLS: `node scripts/test-rls-local.js` against the local stack (`supabase start`, then `supabase db reset --local`), check-ins included.
 Artwork: `design/tools/` (Python, dev-only) regenerates the traced poses and static seals byte for byte (README there).
 
-## Querying the seed data
+## Querying the gym data
 ```
-jq length data/gyms.json
-jq '[.[]|select(.country=="JP")]|length' data/gyms.json
+jq length data/spots-fallback.json
+jq '[.[]|select(.country=="JP")]|length' data/spots-fallback.json
 ```
-Read-only queries only: do not edit `data/gyms.json` (legacy, stale ids). New gyms go through the
+Read-only queries only: never edit `data/spots-fallback.json` (generated) or the legacy original. New gyms go through the
 import pipeline (`docs/import-workflow.md`).

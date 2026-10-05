@@ -1,17 +1,18 @@
-// Loading spots (Supabase, or the data/gyms.json fallback), marks, moderator status, pending items.
+// Loading spots (Supabase, or the data/spots-fallback.json offline list), marks, moderator status, pending items.
 import { appState } from './state.js';
-// data/gyms.json (the ~900KB bundled seed dataset) is only needed when Supabase
-// is unreachable, or to offer "Revert to original" on an edited seed spot
-// -- so it's fetched on demand rather than on every page load.
-export function ensureSeedData(){
-  if(window.SEED_GYMS) return Promise.resolve(window.SEED_GYMS);
-  if(!appState.seedDataPromise){
-    appState.seedDataPromise = fetch('data/gyms.json')
+// data/spots-fallback.json is an id-correct export of the approved gyms from production (the LIST_COLUMNS below; written
+// by scripts/build-sitemap.js, regenerated after each data batch). It is only needed when Supabase is unreachable, so
+// it's fetched on demand rather than on every page load, and the service worker does not precache it.
+let fallbackRows = null;
+export function ensureFallbackData(){
+  if(fallbackRows) return Promise.resolve(fallbackRows);
+  if(!appState.fallbackDataPromise){
+    appState.fallbackDataPromise = fetch('data/spots-fallback.json')
       .then(r=>{ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
-      .then(d=>{ window.SEED_GYMS = Array.isArray(d) ? d : []; return window.SEED_GYMS; })
-      .catch(err=>{ appState.seedDataPromise = null; throw new Error('Could not load data/gyms.json: '+err.message); });
+      .then(d=>{ fallbackRows = Array.isArray(d) ? d : []; return fallbackRows; })
+      .catch(err=>{ appState.fallbackDataPromise = null; throw new Error('Could not load data/spots-fallback.json: '+err.message); });
   }
-  return appState.seedDataPromise;
+  return appState.fallbackDataPromise;
 }
 
 // The columns Explore needs (map, list, search, filters, peek card, provenance marks, recent sort). The research notes
@@ -54,7 +55,7 @@ export async function loadSpots(){
     }
   }
   appState.usingFallback = true;
-  appState.spots = (await ensureSeedData().catch(err=>{ console.error(err); return []; })).map(g => ({ ...g, _full: true }));
+  appState.spots = (await ensureFallbackData().catch(err=>{ console.error(err); return []; })).map(g => ({ ...g, _full: true }));
 }
 
 // The whole row of one approved gym (research notes, gym information), merged into the shared spot object so every view

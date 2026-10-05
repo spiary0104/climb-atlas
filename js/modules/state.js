@@ -2,7 +2,7 @@
 // Modules read and write it as appState.<name>.
 export const appState = {
   spots: [],            // approved spot rows only — what the public map shows
-  usingFallback: false, // true if Supabase is unreachable/unconfigured and we fell back to the bundled seed data
+  usingFallback: false, // true if Supabase is unreachable/unconfigured and we fell back to data/spots-fallback.json
   loaded: false,        // false until the first loadSpots() finishes (the list shows skeletons until then)
   climbedIds: new Set(),
   bookmarkedIds: new Set(),
@@ -65,5 +65,5 @@ export const appState = {
   placingMode: null, // 'edit' (the edit form's pin; adding a gym uses the /add page's own map)
   lastFocused: null,
 
-  seedDataPromise: null, // in-flight fetch of data/gyms.json (see data-load.js ensureSeedData)
+  fallbackDataPromise: null, // in-flight fetch of data/spots-fallback.json (see data-load.js ensureFallbackData)
 };

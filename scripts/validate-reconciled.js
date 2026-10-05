@@ -20,7 +20,7 @@ const { execSync } = require('child_process');
 
 const ROOT = path.resolve(__dirname, '..');
 const BATCH_ID = '2026-09-24-reconciled-new-gyms';
-// git blob id of data/gyms.json at tag pre-id-reconciliation: platform-independent (line-ending filters applied), so the original
+// git blob id of data/reconciliation/gyms.original.json at tag pre-id-reconciliation: platform-independent (line-ending filters applied), so the original
 // dataset can be proven unchanged even where the tag is unavailable.
 const ORIGINAL_GYMS_JSON_BLOB = '23bca878ed8324de4dd0fd4f76b514c7028bee1d';
 
@@ -31,18 +31,18 @@ const fullHash = g => crypto.createHash('sha1').update([g.country, norm(g.name),
 const sortKeys = o => Object.keys(o).sort().reduce((a, k) => (a[k] = o[k], a), {});
 const keyOf = g => [g.country, g.name, g.lat, g.lng].join('|');
 
-// Check 9: the ORIGINAL data/gyms.json is unchanged. Durable references: the git blob id (pinned above) and, when available, the tag.
+// Check 9: the ORIGINAL data/reconciliation/gyms.original.json is unchanged. Durable references: the git blob id (pinned above) and, when available, the tag.
 function checkOriginalGymsJson(root = ROOT) {
   const sh = (c) => execSync(c, { cwd: root, stdio: ['ignore', 'pipe', 'ignore'] }).toString().trim();
-  const cur = fs.readFileSync(path.join(root, 'data', 'gyms.json'));
+  const cur = fs.readFileSync(path.join(root, 'data', 'reconciliation', 'gyms.original.json'));
   const sha = b => crypto.createHash('sha256').update(b).digest('hex');
-  let blob = null; try { blob = sh('git hash-object --path=data/gyms.json data/gyms.json'); } catch (e) { /* not a git checkout */ }
+  let blob = null; try { blob = sh('git hash-object --path=data/reconciliation/gyms.original.json data/reconciliation/gyms.original.json'); } catch (e) { /* not a git checkout */ }
   const pinned = blob === ORIGINAL_GYMS_JSON_BLOB;
   let tag = 'tag not available here';
   let tagOk = true;
-  try { sh('git rev-parse -q --verify refs/tags/pre-id-reconciliation'); try { sh('git diff --quiet pre-id-reconciliation -- data/gyms.json'); tag = 'identical to git tag pre-id-reconciliation'; } catch (e) { tagOk = false; tag = 'DIFFERS from git tag pre-id-reconciliation'; } } catch (e) { /* tag absent: the pinned blob id is the reference */ }
+  try { sh('git rev-parse -q --verify refs/tags/pre-id-reconciliation'); try { sh('git diff --quiet pre-id-reconciliation:data/gyms.json :data/reconciliation/gyms.original.json'); tag = 'identical to git tag pre-id-reconciliation'; } catch (e) { tagOk = false; tag = 'DIFFERS from git tag pre-id-reconciliation'; } } catch (e) { /* tag absent: the pinned blob id is the reference */ }
   // No UNSTAGED edits. (A deliberate, staged change during an integration is allowed; committed history is covered by the blob/tag checks.)
-  let unstaged = true; try { unstaged = sh('git diff --name-only -- data/gyms.json') === ''; } catch (e) { /* not a git checkout */ }
+  let unstaged = true; try { unstaged = sh('git diff --name-only -- data/reconciliation/gyms.original.json') === ''; } catch (e) { /* not a git checkout */ }
   const backupPath = path.join(root, 'data', 'backups', 'gyms.pre-reconciliation-2026-09-24.json');
   const haveBackup = fs.existsSync(backupPath);
   const backupOk = !haveBackup || sha(fs.readFileSync(backupPath)) === sha(cur);
@@ -51,7 +51,7 @@ function checkOriginalGymsJson(root = ROOT) {
 }
 
 // ctx: { orig, out, decisions, live, manifest, originalCheck }
-//   orig      data/gyms.json (original 2,133 records)         out       data/gyms.reconciled.json
+//   orig      data/reconciliation/gyms.original.json (original 2,133 records)         out       data/gyms.reconciled.json
 //   decisions data/reconciliation/<date>/decisions.json         live      approved production rows ({id,name,country,lat,lng,address})
 //   manifest  result of manifest.readManifest() for the batch (or null)   originalCheck  () => {ok, detail}
 function runChecks(ctx) {
@@ -143,14 +143,14 @@ function runChecks(ctx) {
   check('7. no records silently lost or altered (documented notes appends / field carry-overs excepted)', lost.length === 0 && changed.length === 0 && out.length === expected.length, `expected ${expected.length} (=${orig.length} - ${dropIds.size} documented duplicates); got ${out.length}; lost ${lost.length}; altered ${changed.length}`);
 
   // 7b. every documented removal is auditable: the full rejected record is preserved in decisions.json, equals the record in
-  //     data/gyms.json, is absent from the reconciled file, and points at a retained record that IS in the reconciled file
+  //     data/reconciliation/gyms.original.json, is absent from the reconciled file, and points at a retained record that IS in the reconciled file
   const audit = [];
   decisions.duplicates_removed.forEach(d => {
     const o = orig.find(x => x.id === d.remove_repo_id);
-    if (!o) audit.push(d.remove_repo_id + ' not in gyms.json');
+    if (!o) audit.push(d.remove_repo_id + ' not in gyms.original.json');
     if (d.same_gym_as_new_final_id) {
       const { final_id, ...snap } = d.rejected_record || {};
-      if (!d.rejected_record || JSON.stringify(snap) !== JSON.stringify(o)) audit.push(d.remove_repo_id + ': rejected_record snapshot missing or differs from gyms.json');
+      if (!d.rejected_record || JSON.stringify(snap) !== JSON.stringify(o)) audit.push(d.remove_repo_id + ': rejected_record snapshot missing or differs from gyms.original.json');
       if (out.some(g => g.id === d.remove_final_id)) audit.push(d.remove_final_id + ' still in reconciled file');
       if (!out.some(g => g.id === d.retained_final_id)) audit.push(d.retained_final_id + ' (retained) missing from reconciled file');
       if (!d.evidence || !d.evidence.length || !d.action || !d.conclusion) audit.push(d.remove_repo_id + ': relationship/evidence/action not recorded');
@@ -158,9 +158,9 @@ function runChecks(ctx) {
   });
   check('7b. every rejected duplicate is documented and auditable', audit.length === 0, `${decisions.duplicates_removed.length} documented removals (${internalDups.length} among new records); problems: ${audit.length}${audit.length ? ' e.g. ' + audit[0] : ''}`);
 
-  // 9. original data/gyms.json untouched (durable references: pinned blob id, tag, local backup when present)
+  // 9. original data/reconciliation/gyms.original.json untouched (durable references: pinned blob id, tag, local backup when present)
   const orig9 = (ctx.originalCheck || checkOriginalGymsJson)();
-  check('9. original data/gyms.json is unchanged', orig9.ok, orig9.detail);
+  check('9. original data/reconciliation/gyms.original.json is unchanged', orig9.ok, orig9.detail);
 
   // 10. the import manifest agrees with the dataset and with production (cross-check only: the mode came from live facts)
   const mf = ctx.manifest || { exists: false };
@@ -209,7 +209,7 @@ async function main() {
   const looked = H.revertLiveRows(await fetchLive(), ROOT);
   const live = looked.rows;
   if (looked.batches.length) console.log(`Looking through ${looked.batches.length} later verified batch(es) (${looked.batches.join(', ')}): ${looked.reverted} live row(s) compared at their pre-update values, ${looked.removed} row(s) added by later insert batches left out.`);
-  const r = runChecks({ orig: JSON.parse(read('data/gyms.json')), out: JSON.parse(read('data/gyms.reconciled.json')), decisions: JSON.parse(fs.readFileSync(path.join(DIR, 'decisions.json'), 'utf8')), live, manifest: readManifest(path.join(ROOT, 'import', 'batches', BATCH_ID)) });
+  const r = runChecks({ orig: JSON.parse(read('data/reconciliation/gyms.original.json')), out: JSON.parse(read('data/gyms.reconciled.json')), decisions: JSON.parse(fs.readFileSync(path.join(DIR, 'decisions.json'), 'utf8')), live, manifest: readManifest(path.join(ROOT, 'import', 'batches', BATCH_ID)) });
   const s = r.summary;
   console.log(`\nSTATE: ${s.mode}`);
   console.log('BEFORE: ' + s.before + ' records | AFTER: ' + s.after + ' records');

@@ -15,7 +15,7 @@ const DECISIONS = path.join(ROOT, 'data', 'reconciliation', '2026-09-24', 'decis
 const decisions = () => JSON.parse(fs.readFileSync(DECISIONS, 'utf8'));
 // Frozen ids are derived from the fields as they were when assigned; an approved carry-over may have replaced some since.
 const basis = g => { const c = Object.values(decisions().field_carryovers || {}).find(x => x.retained_final_id === g.id); return c ? { ...g, ...c.was } : g; };
-const ORIGINAL = path.join(ROOT, 'data', 'gyms.json');
+const ORIGINAL = path.join(ROOT, 'data', 'reconciliation', 'gyms.original.json');
 const HAVE = fs.existsSync(RECONCILED) && fs.existsSync(path.join(ROOT, 'import', 'index', 'gym-index.ndjson'));
 const opts = { skip: HAVE ? false : 'data/gyms.reconciled.json or import/index not present' };
 
@@ -124,7 +124,7 @@ test('the rejected records are still recognised as duplicates if they ever come 
   assert.equal(plan.counts.new, 246 - 3);
 });
 
-test('the 3 previously confirmed duplicate Korean records do not reappear as new (fed in from the original gyms.json)', { skip: HAVE && fs.existsSync(ORIGINAL) ? false : 'gyms.json/fixture not present' }, async () => {
+test('the 3 previously confirmed duplicate Korean records do not reappear as new (fed in from the original gyms.original.json)', { skip: HAVE && fs.existsSync(ORIGINAL) ? false : 'gyms.original.json/fixture not present' }, async () => {
   const orig = JSON.parse(fs.readFileSync(ORIGINAL, 'utf8'));
   const dups = ['seed-1966', 'seed-1970', 'seed-1971'].map(id => orig.find(g => g.id === id));
   assert.ok(dups.every(Boolean));

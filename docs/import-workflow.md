@@ -35,9 +35,10 @@ scripts/lib/gym-import/      normalize, validate, match, plan, report, index-sto
                              research (regional sections; offline), history (look-back through later verified batches)
 tests/import-*.test.js       regression tests (run: node --test "tests/*.test.js")
 ```
-`data/gyms.json` is **legacy** and is not used by the import pipeline itself, but the reconciliation provenance depends on its exact original
-content (`build-reconciled.js`, `reconcile-ids.js`, `validate-reconciled.js`, three test files) and the app still uses it as its offline fallback
-(see "Retiring `data/gyms.json`" below). **`data/gyms.reconciled.json` is tracked and frozen**: the reconciliation/provenance dataset (2,127 records =
+The legacy original dataset (formerly `data/gyms.json`, now `data/reconciliation/gyms.original.json`, same git blob) is **provenance only**: not used by
+the import pipeline itself and not served; the reconciliation provenance depends on its exact original content (`build-reconciled.js`,
+`reconcile-ids.js`, `validate-reconciled.js`, three test files). The app's offline fallback is a separate, generated file, `data/spots-fallback.json`
+(see "`data/gyms.json` retired" below). **`data/gyms.reconciled.json` is tracked and frozen**: the reconciliation/provenance dataset (2,127 records =
 production as of the first import). It is the source the first batch was staged from and a test fixture; it is *not* the application's runtime fallback.
 
 ## Adding a research batch
@@ -170,13 +171,15 @@ saved JSON array instead. Plan against a stale index and you risk re-adding gyms
 After every data batch (and after a moderator approves new gyms in bulk) regenerate the sitemap and commit it:
 `node scripts/build-sitemap.js` (read-only GET of the approved gyms, same read as the site; `--dry` prints counts only). It lists `/`, `/in`,
 every country/region/metro page, suburb/area pages with 2+ gyms, every `/gym/{stored slug}` and the static pages; `robots.txt` points to it. The same
-run writes `api/_places.json` (place titles for the link-preview function `api/seo.mjs`): commit both. Tested offline in `tests/sitemap.test.js`.
+run writes `api/_places.json` (place titles for the link-preview function `api/seo.mjs`) and `data/spots-fallback.json` (the app's offline gym list: the
+Explore list columns of the same approved rows, id order, one gym per line; `scripts/lib/fallback.js`): commit all three. Tested offline in `tests/sitemap.test.js`
+and `tests/fallback.test.js`.
 
 ### Checking the reconciled dataset against production
-`node scripts/validate-reconciled.js` (read-only) compares `data/gyms.reconciled.json` with live production and the original `data/gyms.json`.
+`node scripts/validate-reconciled.js` (read-only) compares `data/gyms.reconciled.json` with live production and the original `data/reconciliation/gyms.original.json`.
 It works in two states, **decided from live facts, never from the manifest**: *pre-import* (none of the 246 new `g-` gyms exist in production:
 the original Stage 0 expectations, 246 new and absent from live) and *post-import* (all exist, identical, and the batch's `manifest.json`
-must agree: ids, 246 rows, 1,881 → 2,127, production target). Some-but-not-all is a failure. The original `gyms.json` is checked against a pinned
+must agree: ids, 246 rows, 1,881 → 2,127, production target). Some-but-not-all is a failure. The original `gyms.original.json` is checked against a pinned
 git blob id (and the tag / local backup when present). Tested offline in `tests/validate-reconciled.test.js`, including a simulated pre-import world.
 
 ## Context efficiency (for Claude sessions)
@@ -424,35 +427,29 @@ Record: `{"intent":"retire","id":"seed-433","expect_h":"<16 hex>","reason_code":
 **Applied:** `2026-09-30-location-updates` (11 gyms: 5 pins, 6 pins + addresses; 28 field changes) on 2026-09-30, verified (manifest
 `status: updated`, approved 2,127 unchanged); index rebuilt from production afterwards (`sha256 8dbddf79…`).
 
-## Retiring `data/gyms.json` (analysis 2026-09-25; NOT done)
-It is **not** safe to remove yet. Everything that depends on it:
-- **App runtime** (`js/modules/data-load.js` `ensureSeedData`, fetched on demand; not precached by `sw.js`): (a) the offline fallback when Supabase is
-  unreachable (`loadSpots`, then the offline banner in `main.js`); (b) **"Revert to original"** (`modals.js` `openEditModal` / `eRevertBtn`), which looks the
-  original up **by id** and submits it as a pending edit; (c) `window.SEED_GYMS` lookups in `logbook.js` and `moderation.js` as a fallback when an id is not
-  among the loaded spots.
-- **Tooling:** `supabase/geocode.html` (pin checker, fetches it).
-- **Provenance:** `scripts/reconcile-ids.js`, `build-reconciled.js`, `validate-reconciled.js` (pins its git blob id `23bca878…`), three test files, and
-  `decisions.json` (its snapshots refer to repo ids). All need the *original 2,133-record content* to keep the reconciliation reproducible.
-- **Docs:** README, CLAUDE.md, ARCHITECTURE.md, this file.
-
-Why it should be retired anyway: about 650 of its ids are held by a *different* gym in production, it has 6 known duplicates and lacks every gym added by
-the community since. Revert is a latent hazard: no approved production spot is `edited=true` today (checked read-only), so the button never shows, but the first
-approved community edit to a seed spot would make it offer a **wrong gym's** data as the "original" for a moderator to approve.
-
-Safest path (each step separately reviewable; nothing below is done): (1) decide "Revert to original" (originals are not stored in the database; disable it, or
-store originals); (2) add a generator that exports an id-correct runtime fallback from production (read-only GET) into a *new* file (not `gyms.reconciled.json`),
-point `data-load.js` at it and update tests/docs; (3) move the original file byte-for-byte (blob `23bca878…`) to a provenance path, or read it from tag
-`pre-id-reconciliation`, and update the scripts, tests and `geocode.html`; (4) only then delete it from the runtime path.
+## `data/gyms.json` retired (done 2026-10-05)
+The 2026-09-25 analysis found four dependants; each is handled:
+- **Offline fallback:** the app now fetches `data/spots-fallback.json` (`js/modules/data-load.js` `ensureFallbackData`, on demand, not precached by `sw.js`).
+  It is an id-correct export of the approved gyms from production, only the Explore list columns (`LIST_COLUMNS`), written by `scripts/build-sitemap.js`
+  (`scripts/lib/fallback.js`; read-only GET, anon key). **Regenerate it with the sitemap run after each data batch** and commit it. The `window.SEED_GYMS`
+  lookup in `logbook.js` was removed (the list always holds every approved gym, offline or not, so it was redundant and its ids were wrong).
+- **"Revert to original" removed** from the edit form (`modals.js`, `index.html`, `style.css`): originals are not stored in the database and about 650 of the
+  old file's ids belong to a different gym in production, so the button could have offered a wrong gym's data. A bad edit is reverted by rejecting it or approving a new edit.
+- **Provenance:** the original file moved byte for byte (`git mv`, blob `23bca878…` unchanged) to `data/reconciliation/gyms.original.json`, which `vercel.json` keeps
+  off the public site. `scripts/reconcile-ids.js`, `build-reconciled.js`, `validate-reconciled.js` (its tag comparison now reads `pre-id-reconciliation:data/gyms.json`
+  from the tag), `supabase/geocode.html` and the three test files read the new path. Nothing else changed in them.
+- **Guard:** `tests/fallback.test.js` fails if any runtime file mentions the old path again, if the edit form regains a revert control, or if the fallback file
+  stops matching the list columns.
 
 ## Open decisions
 1. ~~Mechanism and credentials~~ **Implemented** (service-role key from the shell environment, PostgREST insert; see above). Running it against production still needs your explicit go-ahead and credential.
 2. ~~The 3 in-batch duplicate pairs among the 249~~ **Resolved 2026-09-24** (approved): Mad Gym Gwangmyeong keeps `g-8213f51019`,
    Chamonix Climbing keeps `g-e8a005400e`, Climb Days keeps `g-138cbc8020`; the other record of each pair is rejected (full record,
-   evidence and relationship kept in `data/reconciliation/2026-09-24/decisions.json`; originals remain in `data/gyms.json`) and
+   evidence and relationship kept in `data/reconciliation/2026-09-24/decisions.json`; originals remain in `data/reconciliation/gyms.original.json`) and
    listed carry-overs were applied. The reconciled file now has 2,127 records: 1,881 existing + **246 new**.
 3. ~~How the 246 get staged~~ **Done 2026-09-24**: `import/batches/2026-09-24-reconciled-new-gyms/` (246 new, plan clean); imported and verified 2026-09-24 (`manifest.json`).
-4. **`data/gyms.json` as the offline fallback** (`js/modules/data-load.js`): it is stale against production. Options: replace it later by an
-   export from production, or retire the fallback. Nothing changes until you decide.
+4. ~~`data/gyms.json` as the offline fallback~~ **Done 2026-10-05**: the offline fallback is `data/spots-fallback.json`, an id-correct export from production
+   (regenerated by `node scripts/build-sitemap.js`); the legacy file is retired from the runtime (see "`data/gyms.json` retired").
 5. ~~`supabase/seed.html`~~ **Removed 2026-09-25** (nothing depended on it; its ids no longer matched production, so running it would have overwritten real rows).
 6. ~~Closures / removals~~ **Implemented**: `spots.status` allows `rejected` (kept with a reason); a closed gym or a confirmed duplicate is retired by a `retire` record (see "Retiring a gym").
 7. **Updating production content from research** (the 4 gyms whose repo content differs: seed-458 rename, 3 notes appended)
@@ -460,7 +457,7 @@ point `data-load.js` at it and update tests/docs; (3) move the original file byt
 8. **New countries** need app support (constants/regions/chips) before their gyms display correctly; the pipeline only warns.
 
 ## Never do manually any more
-- Add or edit gyms in `data/gyms.json`, or hand-number `seed-N` ids.
+- Add or edit gyms in `data/reconciliation/gyms.original.json` or `data/spots-fallback.json` (generated), or hand-number `seed-N` ids.
 - Seed or re-seed `spots` with generated SQL (the old `supabase/seed.html` was removed: its ids no longer matched production).
 - Insert or edit `spots` rows in the Supabase dashboard/SQL editor; change gym content without an `update` record.
 - Put a Supabase key in any file, batch, chat or commit; run `import --apply` without having read the dry-run report first.

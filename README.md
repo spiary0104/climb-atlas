@@ -13,7 +13,7 @@ index.html             Page shell — header, sidebar, map container, all the mo
 css/style.css           All styling (dark "chalk & rock" theme, MapLibre GL overrides)
 js/supabase-init.js     Creates the shared Supabase client — put your project URL/key here
 js/auth.js              Thin wrapper around Supabase Auth (magic link + Google)
-data/gyms.json          The seed dataset — every gym pin as pure JSON (fetched on demand, see below)
+data/spots-fallback.json  Offline gym list, exported from production (fetched on demand, see below)
 js/main.js              Entry point (ES module) — wires up js/modules/* in order
 js/modules/             map, sidebar, modals, auth-ui, data-load, logbook, moderation, state, …
 css/chips.css           Per-region chip colours (keyed on data-country/data-state)
@@ -26,10 +26,11 @@ Script load order in `index.html` matters: the Supabase JS CDN script, then
 `supabase-init.js` (defines `window.sb`), then `auth.js` (defines `window.auth`), then
 `spots-prefetch.js` (starts the gym-list read before MapLibre downloads), then MapLibre and Supercluster, then
 `js/main.js` (an ES module, so the site must be served over HTTP), which depends on both.
-`data/gyms.json` (~900KB) is not loaded on page load — `js/modules/data-load.js` fetches it on demand (`ensureSeedData()`, sets `window.SEED_GYMS`) only when
-Supabase is unreachable (the offline fallback) or when an edited seed spot's original
-values are needed for "Revert to original". `supabase/geocode.html` fetches it too.
-(It is a legacy dataset whose ids no longer match production; see `docs/import-workflow.md`, "Retiring `data/gyms.json`".)
+`data/spots-fallback.json` (~1.1MB) is not loaded on page load — `js/modules/data-load.js` fetches it on demand (`ensureFallbackData()`) only when
+Supabase is unreachable (the offline fallback). It is an id-correct export of the approved gyms from production (the Explore list columns), written by
+`node scripts/build-sitemap.js`, which is run after each data batch; do not edit it by hand. The legacy original dataset (the old `data/gyms.json`, whose ids
+no longer match production) lives on only as provenance input at `data/reconciliation/gyms.original.json` (not served; `supabase/geocode.html` reads it).
+See `docs/import-workflow.md`, "`data/gyms.json` retired".
 
 ## Setup (required — the app doesn't do anything useful until this is done)
 
@@ -62,7 +63,7 @@ means the first request after a pause takes a few seconds to wake it back up).
 5. **Fill in `js/supabase-init.js`** with your project's URL and anon/public key
    (Dashboard → Project Settings → API). The anon key is meant to be public/client-side —
    access control comes from the RLS policies in `supabase/migrations/`, not from hiding this key.
-6. **Seed the spots table.** The old browser seeding page (`supabase/seed.html`) was removed: `data/gyms.json`'s ids no
+6. **Seed the spots table.** The old browser seeding page (`supabase/seed.html`) was removed: the legacy `gyms.json` ids no
    longer match production, so re-running it would have overwritten real rows. The production database is already
    populated and new gyms are added only through the import pipeline (`docs/import-workflow.md`). Bootstrapping an *empty*
    Supabase project is not currently a supported workflow (the importer targets the production project or localhost, 1,000
@@ -76,7 +77,7 @@ means the first request after a pause takes a few seconds to wake it back up).
    ```
    Reload the app — a "Pending review" button appears in the header once you're recognised
    as a moderator. Add more moderators the same way, one row per account.
-8. Open `index.html`. If it just shows a banner saying it's using offline seed data,
+8. Open `index.html`. If it just shows a banner saying it's using offline data,
    something above didn't take — check the browser console for the actual error.
 
 Because the app fetches map tiles, fonts, and the Supabase/MapLibre CDN scripts over the
@@ -103,7 +104,7 @@ before they're publicly visible (or, for reports, before anyone acts on them):
 - **Adding a spot** (sign-in required, 10 a day) inserts it into `spots` with `status = 'pending'` — the RLS policy
   forces this server-side, so a tampered client can't insert a pre-approved row. Pending
   spots don't appear on the public map at all until approved.
-- **Editing a spot** (including "Revert to original data"; sign-in required, 20 a day) doesn't touch the live row —
+- **Editing a spot** (sign-in required, 20 a day) doesn't touch the live row —
   it inserts a proposal into `pending_edits`. The spot keeps showing its current approved
   data on the map until a moderator approves the proposal, at which point its fields are
   copied onto the live row and the proposal is removed. Reject just deletes the proposal;
@@ -134,8 +135,8 @@ and lets you review and select individual corrections rather than applying anyth
 each row includes the raw Nominatim match text and map links for both the old and new
 position so you can sanity-check before accepting. Selected corrections generate both:
 ready-to-run SQL (paste into the Supabase SQL Editor to fix the live map immediately) and a
-JSON list of the same changes to apply to `data/gyms.json` too, so the offline fallback and any
-future re-seed stay in sync. Nominatim's usage policy caps requests around 1/second, so a
+JSON list of the same changes (apply corrections through the import pipeline; the offline fallback is regenerated from
+production). The checker reads `data/reconciliation/gyms.original.json`. Nominatim's usage policy caps requests around 1/second, so a
 full pass over ~600 addressed spots takes roughly 10–15 minutes.
 
 ## Before it's actually public
@@ -149,9 +150,9 @@ full pass over ~600 addressed spots takes roughly 10–15 minutes.
 - **Photos are links, not uploads** — the photo field stores a URL to an existing image
   (their site, Instagram, etc.), not a file you host. A real upload flow needs object
   storage (Supabase Storage, Cloudflare R2, or S3).
-- **"Revert to original data"** only works for un-edited seed spots (it looks up the
-  original values in `data/gyms.json`). Community-submitted spots have no stored "original" to
-  revert to, so the button is hidden for those even if they've since been edited.
+- **"Revert to original data"** was removed from the edit form (2026-10-05): originals are not stored in the
+  database, and the legacy dataset's ids no longer match production, so the button could have offered a different
+  gym's data. A moderator reverts a bad edit by rejecting it, or by approving a new edit that restores the values.
 - **Outdoor bouldering was removed as a category** — the app now only tracks indoor gyms
   (bouldering, top rope). The 23 seed spots that were outdoor-only (crags/climbing areas
   researched from thecrag.com) were deleted outright rather than recategorized, per an
@@ -208,7 +209,7 @@ and add a custom domain from the host's dashboard once you've bought one.
   chosen (Japan and NZ use city/region names since neither has a widely-known
   short-code convention; Canada uses standard 2-letter province codes like AU/US;
   China uses the 9 city names its one data source itself groups by).
-- Seed data in `data/gyms.json` was researched and cross-checked spot-by-spot rather than
+- The seed data (the original dataset) was researched and cross-checked spot-by-spot rather than
   pulled from one source — see the in-app About section for the full story. It's not
   exhaustive; that's what the community add/edit flow is for. The US portion currently
   covers 12 states' worth of major-city indoor gyms, Japan covers 8 cities/prefectures,
