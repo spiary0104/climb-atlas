@@ -1,8 +1,10 @@
 # Pin check 2026-10-06: Europe (DE, NO, CH, RO, FR, IT, GR, BG, BY)
 
-69 gyms (`targets-europe.json`). Verdicts: **fix 50**, **confirmed 8** (4 address-only updates for CH gyms with no address; 4 with no record needed), **retire 0**, **manual 11**.
-Records: `import/batches/2026-10-05-pin-check-europe/records.ndjson` (54 update records; the batch folder is stamped 2026-10-05 by the CLI). Manual gyms: `MANUAL-CHECK-europe.md`.
+69 gyms (`targets-europe.json`). Verdicts: **fix 49**, **confirmed 8** (4 address-only updates for CH gyms with no address; 4 with no record needed), **retire 0**, **manual 12**.
+Records: `import/batches/2026-10-05-pin-check-europe/records.ndjson` (53 update records; the batch folder is stamped 2026-10-05 by the CLI). Manual gyms: `MANUAL-CHECK-europe.md`.
 Format: id | name | verdict | distance moved / pin check | source. OSM = OpenStreetMap element (Nominatim lookup); house node = Nominatim house-number geocode of the official address.
+
+Note: Kletterhalle High-east (seed-1028) needs a suburb correction (München -> Kirchheim bei München / Heimstetten) in a later identity batch; the pin and address fix in this batch already point at Sonnenallee 2, Kirchheim.
 
 ## Fix and confirmed
 - g-04a7320e40 | O'Bloc | confirmed (pin 8 m from gym element; address-only update) | obloc.ch/impressum (o'bloc AG, Forelstrasse 11); pin 8 m from OSM way 443636191 (O'Bloc, same street)
@@ -48,7 +50,6 @@ Format: id | name | verdict | distance moved / pin check | source. OSM = OpenStr
 - seed-1372 | Lehmkuhlhallen | fix | moved 2780 m + address | sammen.no Lehmkuhl treningssenter (Helleveien 30; klatrevegg); OSM way 359319461 (Lehmkuhlhallen building)
 - seed-1373 | Bergen Klatresenter - Laksevåg | fix | moved 2884 m + address | bergenklatresenter.no (Bergen Klatresenter Laksevåg, Johan Berentsens vei 63, 5160 Laksevåg); OSM node 7265666685 (Bergen klatresenter Laksevåg, website bergenklatresenter.no)
 - seed-1374 | Bergen Klatresenter - Kokstad | fix | moved 12355 m + address | bergenklatresenter.no (Bergen Klatresenter Fana, Kokstadveien 23A, 5257 Kokstad); OSM Nominatim house node 3125996006 (23 Kokstadvegen, Ytrebygda)
-- seed-1375 | Trondheim Klatresenter | fix | moved 3544 m + address | trondheim-klatresenter.no redirects to gripklatring.no (Grip Leangen, Travbanevegen 7, 7061 Trondheim; Leangen = the large centre opened 2023-08-01); OSM node 2207456459 (Grip Leangen, website gripklatring.no)
 - seed-1377 | Trondheim Buldresenter | fix | moved 2716 m + address | buld.no (Trondheim Buldresenter, Ormen langes vei 15, 7041 Trondheim; operator Ute på tur AS); OSM Nominatim house node 2958668700 (15 Ormen Langes vei)
 - seed-1379 | SiS Sports Center | fix | moved 5288 m + address | sissportssenter.no (Rennebergstien 24, 4021 Stavanger); OSM Nominatim house node 2836120171 (24 Rennebergstien)
 - seed-1380 | Mørkvedhallen klatresenter | fix | moved 8055 m | OSM node 6548832330 (Mørkvedhallen klatresenter, Steggveien, Bodø; sport=climbing); official site morkvedhallen.no does not render an address (JS-only), so address left for the owner
@@ -65,6 +66,7 @@ Format: id | name | verdict | distance moved / pin check | source. OSM = OpenStr
 - seed-1810 | Trapezia | confirmed (pin 0 m from gym element; no record) | trapezia.by (Минск, Партизанский проспект 2/1, 2 этаж); OSM building 25326169 at Партызанскі праспект 2 is 10 m from the pin
 
 ## Manual (no record written)
+- seed-1375 | Trondheim Klatresenter | manual | n/a | trondheim-klatresenter.no redirects to gripklatring.no (Grip Leangen, Travbanevegen 7; Grip Sluppen, Sluppenvegen 11); a redirect does not show the hall moved, so no record
 - seed-1046 | Mandala Boulderhalle | manual | n/a | two sites (Zeitenströmung, Königsbrücker Str. 96 and Postplatz, Annenstraße 1-3): which one is this record?
 - seed-1060 | Stuntwerk Köln | manual | n/a | two halls (Mülheim, Zollstock): which one is this record?
 - seed-1369 | Klatreverket | manual | n/a | four Oslo halls (Torshov, Løkka, Bryn, Løren): which one is this record?

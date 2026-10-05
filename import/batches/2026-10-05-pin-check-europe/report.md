@@ -5,16 +5,16 @@
 | What would happen | Records |
 |---|---:|
 | Insert as NEW gyms | 0 |
-| Update existing gyms (explicit update records) | 54 |
+| Update existing gyms (explicit update records) | 53 |
 | Already exist — no action (identical content: 0; content differs, NOT applied: 0) | 0 |
 | Probable duplicates — need a human decision | 0 |
 | Invalid — rejected | 0 |
 | Rejected by a human decision | 0 |
-| **Total records in batch** | 54 |
+| **Total records in batch** | 53 |
 
-Index: 2385 known gyms (sha256 e1d9ef5216f8…). Plan: b071983cb7ec…
+Index: 2385 known gyms (sha256 e1d9ef5216f8…). Plan: faea6a064a51…
 
-## Updates to existing gyms (54)
+## Updates to existing gyms (53)
 
 - line 1 `g-04a7320e40` — Official address added; pin confirmed on the building
   - address: null → "Forelstrasse 11, 3072 Ostermundigen"
@@ -108,9 +108,9 @@ Index: 2385 known gyms (sha256 e1d9ef5216f8…). Plan: b071983cb7ec…
   - address: null → "Munzinger Straße 4, 79111 Freiburg"
   - lat: 47.995 → 47.9905856
   - lng: 7.838 → 7.795203
-- … and 29 more (see plan.json)
+- … and 28 more (see plan.json)
 
 ## Warnings
 
-- `large-pin-move` × 47: lines 6, 7, 8, 9, 10, 11, 12, 14, 15, 16, 17, 18, …
+- `large-pin-move` × 46: lines 6, 7, 8, 9, 10, 11, 12, 14, 15, 16, 17, 18, …
 

@@ -8,22 +8,22 @@
  },
  "staged_batches_compared": [],
  "counts": {
-  "records": 54,
+  "records": 53,
   "new": 0,
   "existing": 0,
-  "update": 54,
+  "update": 53,
   "probable-duplicate": 0,
   "invalid": 0,
   "rejected": 0,
   "existing_identical": 0,
   "existing_content_differs": 0,
   "new_id_not_frozen": 0,
-  "warnings": 47
+  "warnings": 46
  },
  "importable": true,
  "blockers": [],
  "unused_decisions": [],
- "plan_sha256": "b071983cb7ecf02d2b5a8fa00487509135985bb7214b3ba10b24c29865187860",
+ "plan_sha256": "faea6a064a51a04eb982a9111a7be10dc89fb68b9d329b3179d48698368a28e4",
  "records": [
   {
    "line": 1,
@@ -1226,37 +1226,6 @@
   {
    "line": 43,
    "class": "update",
-   "id": "seed-1375",
-   "changes": [
-    {
-     "field": "address",
-     "before": null,
-     "after": "Travbanevegen 7, 7061 Trondheim"
-    },
-    {
-     "field": "lat",
-     "before": 63.4304475,
-     "after": 63.4326574
-    },
-    {
-     "field": "lng",
-     "before": 10.3952118,
-     "after": 10.4662988
-    }
-   ],
-   "expect_h": "23e311e601c4e4e2",
-   "update_reason": "Placeholder pin (3.5 km off) moved to the Leangen centre (Trondheim Klatresenter / Grip); official address added",
-   "warnings": [
-    {
-     "code": "large-pin-move",
-     "field": "lat",
-     "message": "moves the pin by 3544 m"
-    }
-   ]
-  },
-  {
-   "line": 44,
-   "class": "update",
    "id": "seed-1377",
    "changes": [
     {
@@ -1286,7 +1255,7 @@
    ]
   },
   {
-   "line": 45,
+   "line": 44,
    "class": "update",
    "id": "seed-1379",
    "changes": [
@@ -1317,7 +1286,7 @@
    ]
   },
   {
-   "line": 46,
+   "line": 45,
    "class": "update",
    "id": "seed-1380",
    "changes": [
@@ -1343,7 +1312,7 @@
    ]
   },
   {
-   "line": 47,
+   "line": 46,
    "class": "update",
    "id": "seed-1382",
    "changes": [
@@ -1374,7 +1343,7 @@
    ]
   },
   {
-   "line": 48,
+   "line": 47,
    "class": "update",
    "id": "seed-1383",
    "changes": [
@@ -1405,7 +1374,7 @@
    ]
   },
   {
-   "line": 49,
+   "line": 48,
    "class": "update",
    "id": "seed-1384",
    "changes": [
@@ -1436,7 +1405,7 @@
    ]
   },
   {
-   "line": 50,
+   "line": 49,
    "class": "update",
    "id": "seed-1385",
    "changes": [
@@ -1467,7 +1436,7 @@
    ]
   },
   {
-   "line": 51,
+   "line": 50,
    "class": "update",
    "id": "seed-1386",
    "changes": [
@@ -1498,7 +1467,7 @@
    ]
   },
   {
-   "line": 52,
+   "line": 51,
    "class": "update",
    "id": "seed-1387",
    "changes": [
@@ -1529,7 +1498,7 @@
    ]
   },
   {
-   "line": 53,
+   "line": 52,
    "class": "update",
    "id": "seed-1474",
    "changes": [
@@ -1560,7 +1529,7 @@
    ]
   },
   {
-   "line": 54,
+   "line": 53,
    "class": "update",
    "id": "seed-1497",
    "changes": [

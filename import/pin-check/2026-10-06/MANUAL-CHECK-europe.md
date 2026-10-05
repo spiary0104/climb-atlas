@@ -1,7 +1,7 @@
-# Manual check: Europe (11 gyms)
+# Manual check: Europe (12 gyms)
 
 Each gym below could not be settled from a readable primary source. One question each; what was found is under it.
-The other 58 gyms of `targets-europe.json` are in `europe-results.md` (50 fixes in the batch `import/batches/2026-10-05-pin-check-europe/`).
+The other 57 gyms of `targets-europe.json` are in `europe-results.md` (49 fixes in the batch `import/batches/2026-10-05-pin-check-europe/`).
 
 ## seed-1046 Mandala Boulderhalle (Dresden)
 - Open: https://boulderhalle-dresden.de/mandala/standort-zeitenstroemung.html and https://boulderhalle-dresden.de/mandala/standort-postplatz.html
@@ -17,6 +17,11 @@ The other 58 gyms of `targets-europe.json` are in `europe-results.md` (50 fixes 
 - Open: https://klatreverket.no/kontakt-klatreverket/
 - **Question: which Oslo hall is this record (and add the others)?**
 - Found: four Oslo halls: Torshov (Myrens verksted 3K, 0476; OSM node 1465714083, 59.9348620, 10.7594470), Løkka (Thorvald Meyers gt 9, 0555; OSM node 13307891995, 59.9293595, 10.7579196), Bryn (Brynsveien 3, 0667; OSM node 4499176529, 59.9100690, 10.8112958), Løren (Peter Møllers vei 4, 0585; OSM node 13996442386, 59.9315200, 10.7926714). Only one Klatreverket Oslo record exists (also Klatreverket Kristiansand, fixed in the batch). The current pin is a placeholder in central Oslo.
+
+## seed-1375 Trondheim Klatresenter
+- Open: https://trondheim-klatresenter.no/ (redirects to https://gripklatring.no/) and https://gripklatring.no/2023/07/20/leangen-apner-1-august/
+- **Question: Is Trondheim Klatresenter now Grip Leangen at Travbanevegen 7, or is the old hall elsewhere still open?**
+- Found: the domain redirects to Grip Klatring, which lists Grip Leangen (Travbanevegen 7, 7061; OSM node 2207456459, 63.4326574, 10.4662988; opened 2023-08-01 as the largest centre) and Grip Sluppen (Sluppenvegen 11, 7037). Directories also give Gildheimsvegen 2 and an older Falkenborgvegen 37. A redirect alone does not prove which hall the record is. The current pin (63.4304475, 10.3952118) is a placeholder.
 
 ## seed-1376 Gekko Klatring (Trondheim)
 - Open: https://breogfjellsport.com/articles37f8.html?articleID=350&s_id=82 (old article: Reina 8, 7042 Trondheim, opened 2004) and https://buld.no/ (Trondheim Buldresenter, the successor at Lademoen).
