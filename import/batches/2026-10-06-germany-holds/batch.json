@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-06-germany-holds",
+  "description": "Regional research \"Germany: Thüringen, Sachsen-Anhalt, Saarland gyms on hold (second pass)\": 3 new gym(s) accepted of 6 candidate(s)",
+  "created": "2026-10-06",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-10-06-germany-holds",
+    "section_sha256": "0c178870b03b4a2b04f464373336314f34d278312246e04800c9be8bec5b03ef",
+    "sources_sha256": "dffa18a6770fbbbbe054e2926a1ab9755acbbbd74a7265dcd2f71ed8b82425ad",
+    "candidates_sha256": "dbe14541976f26079126560fb8204597917ffe13fc44f8c3eac59718529ef314",
+    "reconcile_sha256": "d96716b2e63e8d73c8bec38540f9533c21c64137267802b364c8f7816651f39e",
+    "review_sha256": "ab8ed3ce90f3db58af00c293da0e22aed3b6ca42f561a2f4d64c30003eaaf557",
+    "candidates": 6,
+    "staged": 3,
+    "decisions": {
+      "accept": 3,
+      "defer": 3
+    }
+  },
+  "index_at_staging": {
+    "sha256": "e1d9ef5216f87602ccefe7b8e4fac9c10be4c8fa3e59d6e76219e3f5d3154dad",
+    "count": 2385
+  }
+}

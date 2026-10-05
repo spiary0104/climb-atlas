@@ -1,0 +1,47 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-06-italy-holds-napoli",
+ "index": {
+  "sha256": "9df0026afd52e7dd3124b8cf880c9ada709a8872075e0c259f810335afd4cefe",
+  "count": 2407,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-05-korea-holds"
+ ],
+ "counts": {
+  "records": 2,
+  "new": 2,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "14455b3f77e8eb533a47853543cb41dedd7d4f790c2de5d709040f8146834071",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-0dad847caf",
+   "id_frozen": true,
+   "name": "Palaroccia Napoli",
+   "country": "IT"
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-600115a43b",
+   "id_frozen": true,
+   "name": "Eden Climbing (Eden Park)",
+   "country": "IT"
+  }
+ ]
+}

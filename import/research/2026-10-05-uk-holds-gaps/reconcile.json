@@ -1,0 +1,745 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-05-uk-holds-gaps",
+ "inputs": {
+  "section_sha256": "63a1e2a07e62c42056e0d45f9c29c7ab376beedb833bf56dcd05d922ba40f118",
+  "sources_sha256": "3e9592f31f7c7fa5bba9151acff492da213d2ca9d0b4c67891e143b5d0c0fbf6",
+  "candidates_sha256": "f8f1f6cdb1f2fc74670363080b86d1650877358efe97fb50d5ca6a49b1567ec0",
+  "index": {
+   "sha256": "e1d9ef5216f87602ccefe7b8e4fac9c10be4c8fa3e59d6e76219e3f5d3154dad",
+   "count": 2385
+  },
+  "staged_batches_compared": [],
+  "other_sections_compared": [
+   {
+    "id": "2026-10-05-uk-single-gym-towns",
+    "candidates_sha256": "9efd107c59669800da69a72115e752f13c332b8cd5c81efaf0d44908c5553033"
+   }
+  ]
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 29,
+  "ready": 5,
+  "review": 15,
+  "blocked": 4,
+  "existing": 5,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "adventure-hub-bamford",
+   "line": 21,
+   "name": "The Adventure Hub",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-31256d2950"
+   },
+   "blockers": [
+    {
+     "code": "coarse-coordinates",
+     "detail": "coordinates only locate the area, not the gym"
+    }
+   ],
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "arc-chippenham",
+   "line": 29,
+   "name": "The Arc",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-1d224ac512"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "avid-ipswich",
+   "line": 1,
+   "name": "AVID Climbing",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-4ab9b915c3"
+   },
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-05-uk-single-gym-towns#avid-ipswich \"Avid Climbing\": name-match same-name (\"AVID Climbing\" / \"Avid Climbing\", 0 m)",
+     "ids": [
+      "2026-10-05-uk-single-gym-towns#avid-ipswich"
+     ]
+    }
+   ],
+   "review_ids": [
+    "2026-10-05-uk-single-gym-towns#avid-ipswich"
+   ]
+  },
+  {
+   "cid": "beacon-caernarfon",
+   "line": 25,
+   "name": "Beacon Climbing Centre",
+   "class": "existing",
+   "suggested": "same-as seed-951",
+   "importer": {
+    "class": "existing",
+    "id": "seed-951",
+    "match": {
+     "id": "seed-951",
+     "name": "Beacon Climbing Centre",
+     "reason": "same-name",
+     "dist_m": 0
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-951 but content differs (lat, lng, types); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-951 \"Beacon Climbing Centre\": same-name (\"Beacon Climbing Centre\" / \"Beacon Climbing Centre\", 0 m)",
+     "ids": [
+      "seed-951"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-951"
+   ]
+  },
+  {
+   "cid": "blue-spider-guildford",
+   "line": 10,
+   "name": "Blue Spider",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-d651f290ca"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-866 renamed-or-related-name-nearby 0 m",
+     "ids": [
+      "seed-866"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-866 \"Blue Spider Climbing\": renamed-or-related-name-nearby (\"Blue Spider\" / \"Blue Spider Climbing\", 0 m)",
+     "ids": [
+      "seed-866"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-866"
+   ]
+  },
+  {
+   "cid": "boulderryn-penryn",
+   "line": 24,
+   "name": "BoulderRyn",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-0e0952ce1c"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "climb-kent-maidstone",
+   "line": 16,
+   "name": "Climb Kent",
+   "class": "existing",
+   "suggested": "same-as seed-933",
+   "importer": {
+    "class": "existing",
+    "id": "seed-933",
+    "match": {
+     "id": "seed-933",
+     "name": "Climb Kent",
+     "reason": "same-name",
+     "dist_m": 187
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-933 but content differs (suburb, lat, lng, address); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-933 \"Climb Kent\": same-name (\"Climb Kent\" / \"Climb Kent\", 187 m)",
+     "ids": [
+      "seed-933"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    },
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": [
+    "seed-933"
+   ]
+  },
+  {
+   "cid": "climbing-experience-maidstone",
+   "line": 15,
+   "name": "The Climbing Experience",
+   "class": "existing",
+   "suggested": "same-as seed-893",
+   "importer": {
+    "class": "existing",
+    "id": "seed-893",
+    "match": {
+     "id": "seed-893",
+     "name": "The Climbing Experience",
+     "reason": "same-name",
+     "dist_m": 853
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-893 but content differs (suburb, lat, lng, address); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-893 \"The Climbing Experience\": same-name (\"The Climbing Experience\" / \"The Climbing Experience\", 853 m)",
+     "ids": [
+      "seed-893"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-893"
+   ]
+  },
+  {
+   "cid": "climbing-station-loughborough",
+   "line": 14,
+   "name": "The Climbing Station",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-f964aba515"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "cragg-stowmarket",
+   "line": 18,
+   "name": "The Cragg Climbing Wall",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-ac94fa456f"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "dyno-buckfastleigh",
+   "line": 17,
+   "name": "Dyno Climbing Centre",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-202afa086a"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    },
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "green-spider-hereford",
+   "line": 13,
+   "name": "Green Spider",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-66083cf9e6"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "indirock-southend",
+   "line": 8,
+   "name": "IndiRock",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-25ed1dbdbf"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "indy-climbing-wall",
+   "line": 7,
+   "name": "Indy Climbing Wall",
+   "class": "existing",
+   "suggested": "same-as seed-953",
+   "importer": {
+    "class": "existing",
+    "id": "seed-953",
+    "match": {
+     "id": "seed-953",
+     "name": "INDY Climbing Wall",
+     "reason": "same-name",
+     "dist_m": 149
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-953 but content differs (name, suburb, lat, lng, address, types); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-953 \"INDY Climbing Wall\": same-name (\"Indy Climbing Wall\" / \"INDY Climbing Wall\", 149 m)",
+     "ids": [
+      "seed-953"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    },
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": [
+    "seed-953"
+   ]
+  },
+  {
+   "cid": "keswick-climbing-wall",
+   "line": 3,
+   "name": "Keswick Climbing Wall",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-3dd3441c21"
+   },
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-05-uk-single-gym-towns#keswick-climbing-wall \"Keswick Climbing Wall\": name-match same-name (\"Keswick Climbing Wall\" / \"Keswick Climbing Wall\", 3 m)",
+     "ids": [
+      "2026-10-05-uk-single-gym-towns#keswick-climbing-wall"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kong-keswick \"Kong Adventure Centre\": related names \"Keswick Climbing Wall\" / \"Kong Keswick\" 2920 m apart",
+     "ids": [
+      "kong-keswick"
+     ]
+    }
+   ],
+   "review_ids": [
+    "2026-10-05-uk-single-gym-towns#keswick-climbing-wall",
+    "kong-keswick"
+   ]
+  },
+  {
+   "cid": "kong-keswick",
+   "line": 6,
+   "name": "Kong Adventure Centre",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-08845e976a"
+   },
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-05-uk-single-gym-towns#keswick-climbing-wall \"Keswick Climbing Wall\": related-name-nearby related names \"Kong Keswick\" / \"Keswick Climbing Wall\" 2919 m apart",
+     "ids": [
+      "2026-10-05-uk-single-gym-towns#keswick-climbing-wall"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate keswick-climbing-wall \"Keswick Climbing Wall\": related names \"Kong Keswick\" / \"Keswick Climbing Wall\" 2920 m apart",
+     "ids": [
+      "keswick-climbing-wall"
+     ]
+    }
+   ],
+   "review_ids": [
+    "2026-10-05-uk-single-gym-towns#keswick-climbing-wall",
+    "keswick-climbing-wall"
+   ]
+  },
+  {
+   "cid": "lancaster-wall",
+   "line": 5,
+   "name": "LancasterWall",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-b8639826ea"
+   },
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-05-uk-single-gym-towns#lancaster-wall \"Lancaster Wall\": name-match renamed-or-related-name-nearby (\"LancasterWall\" / \"Lancaster Wall\", 0 m)",
+     "ids": [
+      "2026-10-05-uk-single-gym-towns#lancaster-wall"
+     ]
+    }
+   ],
+   "review_ids": [
+    "2026-10-05-uk-single-gym-towns#lancaster-wall"
+   ]
+  },
+  {
+   "cid": "live-for-today-harrogate",
+   "line": 26,
+   "name": "Live For Today Climbing Centre",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-b629c9fba5"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-878 same-name-but-pin-differs 1937 m",
+     "ids": [
+      "seed-878"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-878 \"Live For Today Climbing Centre (Formerly Parthian Harrogate)\": same-name-but-pin-differs (\"Live For Today Climbing Centre\" / \"Live For Today Climbing Centre (Formerly Parthian Harrogate)\", 1937 m)",
+     "ids": [
+      "seed-878"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    },
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": [
+    "seed-878"
+   ]
+  },
+  {
+   "cid": "mad-volume-hull",
+   "line": 22,
+   "name": "Mad Volume",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-19829aff2a"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "northern-problems-whitehaven",
+   "line": 2,
+   "name": "Northern Problems",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-039b6ea9b5"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-05-uk-single-gym-towns#northern-problems-whitehaven \"Northern Problems\": name-match same-name (\"Northern Problems\" / \"Northern Problems\", 0 m)",
+     "ids": [
+      "2026-10-05-uk-single-gym-towns#northern-problems-whitehaven"
+     ]
+    }
+   ],
+   "review_ids": [
+    "2026-10-05-uk-single-gym-towns#northern-problems-whitehaven"
+   ]
+  },
+  {
+   "cid": "northwest-face-warrington",
+   "line": 28,
+   "name": "The Northwest Face",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-a8ed00161d"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "peak-climbing-wall-leek",
+   "line": 27,
+   "name": "The Peak Climbing Wall",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-e44595a7e9"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "red-spider-fareham",
+   "line": 12,
+   "name": "Red Spider",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-fc40b51763"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "rhino-boulder-bromley",
+   "line": 23,
+   "name": "Rhino Boulder",
+   "class": "existing",
+   "suggested": "same-as seed-885",
+   "importer": {
+    "class": "existing",
+    "id": "seed-885",
+    "match": {
+     "id": "seed-885",
+     "name": "Rhino Boulder",
+     "reason": "same-name",
+     "dist_m": 87
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-885 but content differs (lat, lng, address); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-885 \"Rhino Boulder\": same-name (\"Rhino Boulder\" / \"Rhino Boulder\", 87 m)",
+     "ids": [
+      "seed-885"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "seed-885"
+   ]
+  },
+  {
+   "cid": "ridge-marple",
+   "line": 20,
+   "name": "The Ridge Climbing Centre",
+   "class": "blocked",
+   "suggested": "reject closed",
+   "importer": {
+    "class": "new",
+    "id": "g-cb992ef01b"
+   },
+   "blockers": [
+    {
+     "code": "closed",
+     "detail": "status_claim is closed"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "coarse-coordinates",
+     "detail": "coordinates only locate the area, not the gym"
+    }
+   ],
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "street-rocks-scarborough",
+   "line": 19,
+   "name": "Street Rocks",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-8e4be61d30"
+   },
+   "blockers": [
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "coarse-coordinates",
+     "detail": "coordinates only locate the area, not the gym"
+    }
+   ],
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "sunderland-wall",
+   "line": 4,
+   "name": "Sunderland Wall",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-1e3663e189"
+   },
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-05-uk-single-gym-towns#sunderland-wall \"Sunderland Wall\": name-match same-name (\"Sunderland Wall\" / \"Sunderland Wall\", 35 m)",
+     "ids": [
+      "2026-10-05-uk-single-gym-towns#sunderland-wall"
+     ]
+    }
+   ],
+   "review_ids": [
+    "2026-10-05-uk-single-gym-towns#sunderland-wall"
+   ]
+  },
+  {
+   "cid": "white-spider-surbiton",
+   "line": 9,
+   "name": "White Spider",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-7061a1fbb1"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "yellow-spider-carshalton",
+   "line": 11,
+   "name": "Yellow Spider",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-d8019fc80a"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  }
+ ],
+ "reconcile_sha256": "bba2aba4b8fc5a1edc1bc8255dea170eb59b846c0c465f37e88f65df8259ef44"
+}

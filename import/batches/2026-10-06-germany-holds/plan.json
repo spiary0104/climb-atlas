@@ -1,0 +1,57 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-06-germany-holds",
+ "index": {
+  "sha256": "1e7c66220b9f99790e2abd2b98292d7fdc194d1ef8676474215f10a5996c20ed",
+  "count": 2403,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-05-korea-holds",
+  "2026-10-06-france-holds",
+  "2026-10-06-italy-holds-napoli"
+ ],
+ "counts": {
+  "records": 3,
+  "new": 3,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "aaa16aa6f4cb40dad02df7e12f6b74fba9e266be85ee30642a8e77ecddda26da",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-0336b04f7e",
+   "id_frozen": true,
+   "name": "Life Kletterhalle Saalfeld",
+   "country": "DE"
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-2a33a4832d",
+   "id_frozen": true,
+   "name": "St. Veit Climbing Tower (DAV Meiningen)",
+   "country": "DE"
+  },
+  {
+   "line": 3,
+   "class": "new",
+   "id": "g-e5002a3142",
+   "id_frozen": true,
+   "name": "DAV Kletterhalle Ensdorf",
+   "country": "DE"
+  }
+ ]
+}

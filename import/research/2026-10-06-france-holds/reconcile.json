@@ -1,0 +1,109 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-06-france-holds",
+ "inputs": {
+  "section_sha256": "ad0ae0de60cdcb9e149feb4e229cad5e0a8e3e004454a2f935fc861429fd622c",
+  "sources_sha256": "e7fd8a231871624b55d7b260cdc3a5bc3dc18c87da4e6c1de1301a54ac8ef65b",
+  "candidates_sha256": "53e389b78dd116efa617b95d7c752d3c28f19353efd2d0a82b4697cbb925cace",
+  "index": {
+   "sha256": "e1d9ef5216f87602ccefe7b8e4fac9c10be4c8fa3e59d6e76219e3f5d3154dad",
+   "count": 2385
+  },
+  "staged_batches_compared": [],
+  "other_sections_compared": [
+   {
+    "id": "2026-10-05-france-chains",
+    "candidates_sha256": "4f69658a1eff5a5c61b387894c1fbf1d95a91c9b20d6585c7a0ef3e762379fcd"
+   }
+  ]
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 2,
+  "ready": 0,
+  "review": 1,
+  "blocked": 0,
+  "existing": 1,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "frh-001",
+   "line": 1,
+   "name": "Arkose Issy-les-Moulineaux voie",
+   "class": "existing",
+   "suggested": "same-as g-67ecd19a4e",
+   "importer": {
+    "class": "existing",
+    "id": "g-67ecd19a4e",
+    "match": {
+     "id": "g-67ecd19a4e",
+     "name": "Arkose - Issy-les-Moulineaux Voie",
+     "reason": "same-name",
+     "dist_m": 0
+    }
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing g-67ecd19a4e but content differs (name, lat, lng, address); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "g-67ecd19a4e \"Arkose - Issy-les-Moulineaux Voie\": same-name (\"Arkose Issy-les-Moulineaux voie\" / \"Arkose - Issy-les-Moulineaux Voie\", 0 m)",
+     "ids": [
+      "g-67ecd19a4e"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-05-france-chains#fr-067 \"Arkose Issy-les-Moulineaux (voie)\": name-match same-address-related-name (\"Arkose Issy-les-Moulineaux voie\" / \"Arkose Issy-les-Moulineaux (voie)\", 0 m)",
+     "ids": [
+      "2026-10-05-france-chains#fr-067"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "g-277a5d186d \"Arkose - Issy-les-Moulineaux Bloc\": related names \"Arkose Issy-les-Moulineaux voie\" / \"Arkose - Issy-les-Moulineaux Bloc\" 347 m apart",
+     "ids": [
+      "g-277a5d186d"
+     ]
+    }
+   ],
+   "review_ids": [
+    "2026-10-05-france-chains#fr-067",
+    "g-277a5d186d",
+    "g-67ecd19a4e"
+   ]
+  },
+  {
+   "cid": "frh-002",
+   "line": 2,
+   "name": "Bloc Session Ardennes",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-d014ec9e78"
+   },
+   "flags": [
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": []
+  }
+ ],
+ "reconcile_sha256": "b5f21770c7ca727747446d9f133de612229db52d0d5522cfb0bfd82987ac409c"
+}
