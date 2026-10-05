@@ -1,0 +1,64 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-05-retire-dup-white-spider",
+ "index": {
+  "sha256": "930823b07e4d056c2035db29a8800083b2a822dc8be5313ad0538173bce8a8c1",
+  "count": 2412,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [],
+ "counts": {
+  "records": 1,
+  "new": 0,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "retire": 1,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 1
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "13d3c5b21437ab013a8ba9ef48fa93861524a5e77b86eefd55939d90cf685a02",
+ "records": [
+  {
+   "line": 1,
+   "class": "retire",
+   "id": "g-7061a1fbb1",
+   "name": "White Spider",
+   "country": "GB",
+   "expect_h": "923a13f769685a26",
+   "reason_code": "duplicate",
+   "retire_reason": "Duplicate of seed-903 white Spider (same gym; seed-903 had a placeholder pin in Islington, corrected to 225 Hook Rise South)",
+   "duplicate_of": "seed-903",
+   "entry": {
+    "id": "g-7061a1fbb1",
+    "name": "White Spider",
+    "country": "GB",
+    "state": "ENGLAND",
+    "suburb": "Surbiton",
+    "lat": 51.3723558,
+    "lng": -0.2914609,
+    "address": "225 Hook Rise South, Surbiton, Greater London KT6 7LD",
+    "types": [
+     "indoor-bouldering",
+     "lead-climbing",
+     "top-rope"
+    ],
+    "h": "923a13f769685a26"
+   },
+   "warnings": [
+    {
+     "code": "duplicate-far-apart",
+     "field": "duplicate_of",
+     "message": "g-7061a1fbb1 and seed-903 are 22485 m apart; check they are the same gym"
+    }
+   ]
+  }
+ ]
+}
