@@ -1,0 +1,53 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-05-korea-holds",
+ "index": {
+  "sha256": "e1d9ef5216f87602ccefe7b8e4fac9c10be4c8fa3e59d6e76219e3f5d3154dad",
+  "count": 2385,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [],
+ "counts": {
+  "records": 3,
+  "new": 3,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "1a7f9c2b51e13b4966947890b9e0fcea9ef5ef49140927adbff80376ca2f9fb3",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-6b428efbbf",
+   "id_frozen": true,
+   "name": "Climb Lounge",
+   "country": "KR"
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-104198715a",
+   "id_frozen": true,
+   "name": "Hwasun Rock Climbing Center",
+   "country": "KR"
+  },
+  {
+   "line": 3,
+   "class": "new",
+   "id": "g-872a27e5d8",
+   "id_frozen": true,
+   "name": "Yeosu Climbing Gym",
+   "country": "KR"
+  }
+ ]
+}
