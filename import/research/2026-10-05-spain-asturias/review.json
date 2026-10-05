@@ -1,0 +1,16 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-05-spain-asturias",
+ "reviewer": "Spiar (owner); decisions drafted by Claude (AI) on the owner's instruction, pending owner sign-off",
+ "reviewed": "2026-10-05",
+ "decisions": {
+  "as-001": {"decision": "accept", "reason": "S SPUT own centre page (read 2026-10-05) says open ('ESTAMOS ABIERTOS') with hours, 500 m2 bouldering and rope routes; El Fielato reports the opening on 25 Sep 2026. Pin is the place pin of the gym's own Google Maps link. New Sputnik branch, no existing Bouldeer gym nearby.", "reviewed_against": []},
+  "as-002": {"decision": "accept", "reason": "S BUP own site shows exists, open (hours), address and, on the facilities page, 80+ boulder problems and rope lines; pin is OSM node 14054816401 for the gym.", "reviewed_against": []},
+  "as-003": {"decision": "same-as", "same_as": "g-898c692e96", "reason": "Same gym: One Move at Calle Esperanza 20 is 'One Move - Gijon' (g-898c692e96), 186 m apart; the candidate pin comes from the site's structured data and is only street-level. No location-update: the existing pin is not shown to be worse."},
+  "as-004": {"decision": "accept", "reason": "Limited-access cleared: S BMOSS own rates page says non-members can buy a day pass (8 EUR) and the hall is open 6-24 h every day; own site shows a boulder-only hall (overhanging panels, MoonBoard, system board). Pin is OSM node 9662295744 with the gym's address. Caveat: it is a club hall with member key access.", "reviewed_against": []},
+  "as-005": {"decision": "accept", "reason": "S TORRES own rocodromo page shows exists, open (hours), address and boulder problems with MoonBoard and Clifft Board; pin is OSM node 12143672538, which agrees with the gym's own Google Maps pin within 15 m. Bouldering only (no rope offer seen).", "reviewed_against": []},
+  "as-006": {"decision": "same-as", "same_as": "g-dc0eedb36f", "reason": "Same gym: Climbat Aviles at Pedrero 50, Trasona is 'Climbat - Aviles' (g-dc0eedb36f). The GPS printed on the Climbat page is 1,074 m from the existing pin and about 1 km west of the Parque Astur shopping area, so the existing pin looks right; no location-update."},
+  "as-007": {"decision": "defer", "reason": "Bouldering not established on a primary source: S ROKO own site shows an open rope-climbing school and day entry (9 EUR) but its only boulder mention is a 2020 competition post; boulder-room claims come from directories only. Re-check with a page or social post showing the boulder area."},
+  "as-008": {"decision": "defer", "reason": "Municipal sports-hall wall (Gijon city council) with a 45 m2 boulder wall and rope walls, entry by reservation; not a commercial gym and read only through a search-result excerpt of the council page. Owner decides whether municipal walls belong in Bouldeer."}
+ }
+}

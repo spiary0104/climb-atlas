@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-05-italy-city-gaps",
+  "description": "Regional research \"Italy: Torino, Bologna, Palermo, Napoli gaps\": 8 new gym(s) accepted of 15 candidate(s)",
+  "created": "2026-10-05",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-10-05-italy-city-gaps",
+    "section_sha256": "ad9282c4335c289d688f061898c377c8a1182663fd76a0e7a9499914e5ae4443",
+    "sources_sha256": "d67529ef544a1cb32ee746d0189bb2432a7c2f338dd58f80ee04fb0c6102854d",
+    "candidates_sha256": "8af9380b03f755505790d7bb22c1805a59dde1db03ab7bca637128c4bb3c357e",
+    "reconcile_sha256": "4f1f425d97f0a0096bb28edc72d5a7710d4df8ba76f5444a142735d4f8d413a9",
+    "review_sha256": "a82be3b87fb8b8a1e44f4af512d59b71b08d991f497d490270b6246dacc74b40",
+    "candidates": 15,
+    "staged": 8,
+    "decisions": {
+      "accept": 8,
+      "defer": 6,
+      "same-as": 1
+    }
+  },
+  "index_at_staging": {
+    "sha256": "c97e3035f0208405f11b34c45813a104e2c9b1d4f25a4a3a6a6a349f627e2918",
+    "count": 2272
+  }
+}
