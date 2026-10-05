@@ -411,12 +411,12 @@ node scripts/gym-import.js import <batch> --apply --confirm <token> --i-understa
 node scripts/gym-import.js import <batch> --verify     # afterwards; then build-index --live and commit the manifest
 ```
 
-### Retiring a gym (closed / duplicate)
-A closed gym or a confirmed duplicate is **retired** by an explicit record, through the same updater and the same gates as a location update:
+### Retiring a gym (closed / duplicate / insufficient evidence)
+A closed gym, a confirmed duplicate, or a gym whose listing a re-check could not support (`insufficient-evidence`, e.g. bouldering unconfirmed) is **retired** by an explicit record, through the same updater and the same gates as a location update:
 `PATCH status='rejected', rejection_reason=<reason>` (the moderator UI's own decision format, `moderation.js rejectSpot`). The row is kept, never deleted; nothing else about it changes.
 
-Record: `{"intent":"retire","id":"seed-433","expect_h":"<16 hex>","reason_code":"closed"|"duplicate","reason":"<8..200 chars, becomes rejection_reason>","source":"<where the evidence is>","duplicate_of":"<id>"}`
-- `duplicate_of` is required for `duplicate` and forbidden for `closed`; no other keys. `expect_h` and `source` are required. `reason` is plain trimmed one-line text, stored verbatim.
+Record: `{"intent":"retire","id":"seed-433","expect_h":"<16 hex>","reason_code":"closed"|"duplicate"|"insufficient-evidence","reason":"<8..200 chars, becomes rejection_reason>","source":"<where the evidence is>","duplicate_of":"<id>"}`
+- `duplicate_of` is required for `duplicate` and forbidden otherwise; no other keys. `expect_h` and `source` are required. `reason` is plain trimmed one-line text, stored verbatim.
 - A batch in which **every** record is an `update` or a `retire` is a *maintenance* batch (`updater.js`); at most 100 records, one record per gym (a gym cannot be both
   updated and retired). Any mix with new/insert records is refused on the insert path.
 - Plan blockers (record becomes `invalid`): id not in the index; `expect_h` differs from the index `h`; `duplicate_of` missing from the index, equal to the id, or itself

@@ -38,10 +38,10 @@ const UPDATE_KEYS = new Set(['id', 'intent', 'set', 'reason', 'source', 'expect_
 // expect_h: the gym's content hash (index-store h) when the update was researched; the plan and the updater refuse the update
 // if the gym no longer has exactly that content.
 const EXPECT_H = /^[0-9a-f]{16}$/;
-// A retire record ({"intent":"retire"}) marks an approved gym closed / a confirmed duplicate: updater.js sets status 'rejected' and
+// A retire record ({"intent":"retire"}) marks an approved gym closed / a confirmed duplicate / no longer supported by evidence (insufficient-evidence: e.g. a bouldering offer that a re-check could not confirm): updater.js sets status 'rejected' and
 // rejection_reason (the moderator UI's own decision format); the row is kept, never deleted.
 const RETIRE_KEYS = new Set(['id', 'intent', 'expect_h', 'reason_code', 'reason', 'source', 'duplicate_of']);
-const REASON_CODES = ['closed', 'duplicate'];
+const REASON_CODES = ['closed', 'duplicate', 'insufficient-evidence'];
 const REASON_MIN = 8, REASON_MAX = 200;   // spots_rejection_reason_check allows 200; moderation.js rejectSpot slices to 200
 
 let _deps = null;
@@ -220,7 +220,7 @@ async function identitySetProblems(set) {
 }
 
 // Validate a "retire existing gym" record:
-// { intent:"retire", id, expect_h, reason_code:"closed"|"duplicate", reason, source, duplicate_of? (required iff duplicate) }.
+// { intent:"retire", id, expect_h, reason_code:"closed"|"duplicate"|"insufficient-evidence", reason, source, duplicate_of? (required iff duplicate) }.
 async function validateRetireRecord(rec) {
   const errors = [], warnings = [];
   const err = (code, field, message) => errors.push({ code, field, message });
