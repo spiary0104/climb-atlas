@@ -3,7 +3,7 @@
 ## Result
 - 1 candidate (esh-001 El Roko, Oviedo), 4 sources registered.
 - Reconcile: ready 0 | review 1 | blocked 0 | existing 0 | invalid 0 (the review flag is the same gym as first-pass as-007).
-- Decision: accept 1.
+- Decision: defer 1 (accept 0); nothing staged.
 
 ## What was checked
 - El Roko's own site (https://elroko.com/): prices, hours, phone, address C/Ronda 2; its own news post of 7 July 2021 states a zone of 95 blocs plus a smaller rope zone; the home page says rope use needs a request. The website has had no news since September 2021.

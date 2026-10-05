@@ -5,11 +5,8 @@
  "reviewed": "2026-10-06",
  "decisions": {
   "esh-001": {
-   "decision": "accept",
-   "reason": "El Roko (Calle Ronda 2, Oviedo) does offer bouldering now: its own news post of 7 July 2021 (S ROKOP) describes \"una gran zona con 95 bloques escalables\" beside a smaller rope zone, and the home page (S ROKO) says rope use needs a request, so bouldering is the default offer; own hours, prices and phone are published. Open now: Instagram @el_roko_oviedo (S ROKOIG, official-social) shows activity up to 16 Sep 2026 with 2026/2027 course enrolment and a Kilter Board (read through a fetch summary because the page is login-walled; the website itself has no news since Sep 2021, so the owner may want a spot check, see MANUAL-CHECK.md). The OSM building (way 1196100517) carries the gym's name, address and phone. The only other-section hit is the same gym as first-pass as-007 (0 m), which stayed deferred there; the importer finds no existing Bouldeer gym.",
-   "reviewed_against": [
-    "2026-10-05-spain-asturias#as-007"
-   ]
+   "decision": "defer",
+   "reason": "Low confidence that it is open now, so it is kept out and checked by hand (MANUAL-CHECK.md, mandatory). Bouldering is established on a primary source: the own news post of 7 July 2021 (S ROKOP) describes 95 blocs beside a smaller rope zone, and the home page treats rope use as the exception. But \"open now\" rests only on Instagram @el_roko_oviedo (S ROKOIG), which is login-walled and was read through a fetch summary (latest post 16 Sep 2026, a Kilter Board), while the website has had no news since September 2021. Same gym as first-pass as-007 (0 m), which stays deferred there. Needs a confirmed 2026 post or hours."
   }
  }
 }
