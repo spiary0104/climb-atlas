@@ -35,6 +35,9 @@ const t = (name, ok, detail) => { results.push({ name, ok: !!ok, detail: detail 
 const denied = r => r.status >= 400 || (Array.isArray(r.json) && r.json.length === 0);
 
 (async () => {
+  // the local database is shared with the importer tests (which reset spots): take turns with any running test run
+  const releaseStack = await require('../tests/helpers/local-stack').acquireStackLock({ url: BASE });
+  process.once('exit', releaseStack);
   const A = await signup('a'), B = await signup('b'), M = await signup('mod');
   await svc('POST', '/rest/v1/moderators', { user_id: M.id });
   const tag = 'rlstest-' + Date.now();

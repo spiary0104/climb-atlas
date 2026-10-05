@@ -5,6 +5,8 @@
 const cp = require('child_process');
 const fs = require('fs');
 const path = require('path');
+const os = require('os');
+const crypto = require('crypto');
 const ROOT = path.resolve(__dirname, '..', '..');
 
 function cliPath() {
@@ -49,10 +51,44 @@ function admin(stack) {
   };
 }
 
+// One local Supabase database serves every checkout, worktree and session on this machine, and the local-stack tests reset it
+// (DELETE every spot). Two runs at the same time wipe each other's rows mid-test, which showed up as a rare failure far from its
+// cause. acquireStackLock() makes runs take turns: an exclusive lock file in the OS temp directory (shared by every worktree),
+// created atomically ('wx'); a waiter takes over a lock only when the process that holds it is gone. Returns release().
+const lockFile = url => path.join(os.tmpdir(), 'bouldeer-local-stack-' + crypto.createHash('sha1').update(new URL(url).host).digest('hex').slice(0, 8) + '.lock');
+const alive = pid => { try { process.kill(pid, 0); return true; } catch (e) { return e.code === 'EPERM'; } };
+async function acquireStackLock(stack, { timeoutMs = 15 * 60 * 1000, pollMs = 200, file = lockFile(stack.url) } = {}) {
+  const started = Date.now();
+  for (;;) {
+    try {
+      fs.writeFileSync(file, JSON.stringify({ pid: process.pid, cwd: process.cwd(), at: new Date().toISOString() }), { flag: 'wx' });
+      let released = false;
+      const release = () => {
+        if (released) return; released = true;
+        try { if (JSON.parse(fs.readFileSync(file, 'utf8')).pid === process.pid) fs.unlinkSync(file); } catch (e) { /* already gone */ }
+      };
+      process.once('exit', release);   // a run that ends without its after() hook still frees the stack
+      return release;
+    } catch (e) {
+      if (e.code !== 'EEXIST') throw e;
+    }
+    let text = null, owner = null;
+    try { text = fs.readFileSync(file, 'utf8'); owner = JSON.parse(text); } catch (e) { /* vanished or still being written */ }
+    const stale = owner ? !alive(owner.pid) : (() => { try { return Date.now() - fs.statSync(file).mtimeMs > 5000; } catch (e) { return false; } })();
+    if (stale) {
+      // remove it only if it is still the same stale lock (another waiter may have replaced it a moment ago)
+      try { const now = fs.readFileSync(file, 'utf8'); if (text === null || now === text) fs.unlinkSync(file); } catch (e) { /* gone already */ }
+      continue;
+    }
+    if (Date.now() - started > timeoutMs) throw new Error(`the local Supabase stack is in use by another test run (pid ${owner && owner.pid}, ${owner && owner.cwd}); waited ${Math.round(timeoutMs / 1000)} s for ${file}`);
+    await new Promise(r => setTimeout(r, pollMs));
+  }
+}
+
 // A spot as the live table stores it (used to seed the local "production").
 const prodRow = (o = {}) => ({ community: false, edited: false, status: 'approved', photo: null, notes: null, address: null, types: ['indoor-bouldering'], ...o });
 
 // A syntactically valid JWT (unsigned/garbage signature) for credential-validation tests.
 const fakeJwt = claims => ['{"alg":"HS256","typ":"JWT"}', JSON.stringify(claims), 'sig'].map(x => Buffer.from(x).toString('base64url')).join('.');
 
-module.exports = { localStack, admin, prodRow, fakeJwt };
+module.exports = { localStack, admin, prodRow, fakeJwt, acquireStackLock, lockFile };
