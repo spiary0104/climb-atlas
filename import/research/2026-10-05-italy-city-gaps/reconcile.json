@@ -1,0 +1,341 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-05-italy-city-gaps",
+ "inputs": {
+  "section_sha256": "ad9282c4335c289d688f061898c377c8a1182663fd76a0e7a9499914e5ae4443",
+  "sources_sha256": "d67529ef544a1cb32ee746d0189bb2432a7c2f338dd58f80ee04fb0c6102854d",
+  "candidates_sha256": "8af9380b03f755505790d7bb22c1805a59dde1db03ab7bca637128c4bb3c357e",
+  "index": {
+   "sha256": "c97e3035f0208405f11b34c45813a104e2c9b1d4f25a4a3a6a6a349f627e2918",
+   "count": 2272
+  },
+  "staged_batches_compared": [
+   "2026-10-05-spain-asturias"
+  ],
+  "other_sections_compared": []
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 15,
+  "ready": 5,
+  "review": 6,
+  "blocked": 4,
+  "existing": 0,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "it-001",
+   "line": 1,
+   "name": "SASP Arrampicata",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-31c1a16852"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "it-002",
+   "line": 2,
+   "name": "BoulderBar",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-7da020b015"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    },
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "it-003",
+   "line": 3,
+   "name": "La Mole Sports Academy",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-971a59d3c7"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "it-004",
+   "line": 4,
+   "name": "Escape Climbing Garden",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-b9cb399ce3"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "it-005",
+   "line": 5,
+   "name": "Bside Climbing Village",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-c4b997cec9"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    },
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "it-006",
+   "line": 6,
+   "name": "Centro Arrampicata Torino (Palabraccini)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-037627fa1d"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "it-007",
+   "line": 7,
+   "name": "Presa B+",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-ea5b1d6ce2"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "g-6c9121ff1a renamed-or-related-name-nearby 18 m",
+     "ids": [
+      "g-6c9121ff1a"
+     ]
+    },
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "name-match",
+     "detail": "g-6c9121ff1a \"Presa B+ - Bologna\": renamed-or-related-name-nearby (\"Presa B+\" / \"Presa B+ - Bologna\", 18 m)",
+     "ids": [
+      "g-6c9121ff1a"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "g-6c9121ff1a"
+   ]
+  },
+  {
+   "cid": "it-008",
+   "line": 8,
+   "name": "UP Urban Climbing",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-ee2642434a"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "it-009",
+   "line": 9,
+   "name": "Level24",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-94c5fd66d3"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "it-010",
+   "line": 10,
+   "name": "Monkeys' Planet",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-fa313f080a"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "it-011",
+   "line": 11,
+   "name": "Eden Park San Lazzaro (climbing)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-7a97e066a7"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "it-012",
+   "line": 12,
+   "name": "SCALART Climbing Palermo",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-213fd25aed"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "it-013",
+   "line": 13,
+   "name": "Free Climbing Palermo",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-569cef7574"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    },
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "it-014",
+   "line": 14,
+   "name": "Palaroccia Napoli (DEMON Rock Wall)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-d6da1a6364"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    },
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "it-015",
+   "line": 15,
+   "name": "BlueRock Climbing Gym",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-4a58c8dce7"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    },
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": []
+  }
+ ],
+ "reconcile_sha256": "ba1322a7b0e9e99226491a6d0690d583a876b7bc1739e2c4e1fbc10dc9895741"
+}
