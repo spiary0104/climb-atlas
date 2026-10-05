@@ -37,7 +37,8 @@
 //      in place; mark double-tap guard; revert guard; intro flag; touch targets; offline banner text out of the shell;
 //      the public spots read is cached by URL (the signed-in JWT is no longer written to disk).
 // v35: Share on the gym page, beside the name (share.js; share-network icon in the sprite).
-const CACHE_VERSION = 'v35';
+// v36: gym page links to its whole city: "All 22 gyms in Sydney" (gym-page.js, page-html.js, page.css).
+const CACHE_VERSION = 'v36';
 const SHELL_CACHE = 'climbatlas-shell-' + CACHE_VERSION;
 const RUNTIME_CACHE = 'climbatlas-runtime-' + CACHE_VERSION;
 const TILE_CACHE = 'climbatlas-tiles-' + CACHE_VERSION;

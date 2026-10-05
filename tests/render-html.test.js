@@ -679,3 +679,29 @@ test('gym page Share: hostile gym names stay text in the accessible label', asyn
     assert.ok(!/<img|<script|<svg\/onload|onmouseover='/i.test(html.slice(html.indexOf('gym-title-row'), html.indexOf('</h1>') + 200)), 'no markup from the name: ' + bad);
   }
 });
+
+// ----- "All N gyms in <metro>": the gym page's one link to its whole city --------------------------------------------
+test('gym page metro link: "All N gyms in <metro>" (Both for two), only with a real metro of 2+, right after Nearby, escaped', async () => {
+  const { page } = await modules;
+  const link = html => { const m = /<p class="metro-link"><a class="link" href="([^"]*)" data-link>([^<]*)<\/a><\/p>/.exec(html); return m && { href: m[1], text: m[2] }; };
+  assert.deepEqual(link(page.gymPageHtml(benignSpot, pageCtx({ metroLink: { name: 'Sydney', total: 22, href: '/in/au/nsw/sydney' } }))),
+    { href: '/in/au/nsw/sydney', text: 'All 22 gyms in Sydney' }, 'the count is the whole metro, this gym included');
+  assert.equal(link(page.gymPageHtml(benignSpot, pageCtx({ metroLink: { name: 'Lismore', total: 2, href: '/in/au/nsw/lismore' } }))).text, 'Both gyms in Lismore');
+  for (const none of [undefined, null, { name: 'Solo', total: 1, href: '/in/x' }, { name: 'X', total: 5, href: '' }, { name: '', total: 5, href: '/in/x' }]) {
+    assert.ok(!/metro-link/.test(page.gymPageHtml(benignSpot, pageCtx({ metroLink: none }))), 'no link for ' + JSON.stringify(none));
+  }
+  // placement: after the Nearby section, before Community
+  const nearby = [{ g: { ...benignSpot, id: 'n1', name: 'Next Door' }, ctx: { href: '/gym/next-door', region: 'NSW', distance: '1 km away' } }];
+  const html = page.gymPageHtml(benignSpot, pageCtx({ nearby, metroLink: { name: 'Sydney', total: 22, href: '/in/au/nsw/sydney' } }));
+  const iNearby = html.indexOf('id="nearbyTitle"'), iLink = html.indexOf('class="metro-link"'), iCommunity = html.indexOf('id="communityTitle"');
+  assert.ok(iNearby > -1 && iNearby < iLink && iLink < iCommunity, 'Nearby > metro link > Community');
+  // without Nearby (a metro wider than the 25 km Nearby radius) the link still stands on its own
+  assert.ok(/metro-link/.test(page.gymPageHtml(benignSpot, pageCtx({ nearby: [], metroLink: { name: 'Sydney', total: 22, href: '/in/au/nsw/sydney' } }))));
+  // hostile metro data stays text / an inert attribute value
+  for (const bad of HOSTILE) {
+    const out = page.gymPageHtml(benignSpot, pageCtx({ metroLink: { name: bad, total: 3, href: '/in/' + bad } }));
+    const seg = out.slice(out.indexOf('class="metro-link"'), out.indexOf('</p>', out.indexOf('class="metro-link"')));
+    assert.ok(!/<img|<script|<svg\/onload|onmouseover='/i.test(seg), 'no markup from the metro: ' + bad);
+    assert.equal((seg.match(/<a /g) || []).length, 1, 'still one link: ' + bad);
+  }
+});
