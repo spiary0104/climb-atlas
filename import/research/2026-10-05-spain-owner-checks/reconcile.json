@@ -1,0 +1,73 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-05-spain-owner-checks",
+ "inputs": {
+  "section_sha256": "2617879841a9cec3cd9c42e16dfb7bb2bf1b7707976a8ca0fe715da742a58cb1",
+  "sources_sha256": "bedf9f90d17a18c19b54c259a07ac4643ef452a2bee31c60bb29218578fa01b3",
+  "candidates_sha256": "d597a3a009e127d62197e63852ada80cbe055666817d16b2d076192de05685c0",
+  "index": {
+   "sha256": "930823b07e4d056c2035db29a8800083b2a822dc8be5313ad0538173bce8a8c1",
+   "count": 2412
+  },
+  "staged_batches_compared": [
+   "2026-10-05-uk-owner-checks"
+  ],
+  "other_sections_compared": [
+   {
+    "id": "2026-10-05-spain-asturias",
+    "candidates_sha256": "c72b1268303123549564cb5428982e998d6f70592d8652ce724604edc7ba56f8"
+   },
+   {
+    "id": "2026-10-06-spain-holds",
+    "candidates_sha256": "46467d7e5a0c3a074e8d7bc80a7e29d71f438d56122a77b1e636700bfbe3357a"
+   }
+  ]
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 1,
+  "ready": 0,
+  "review": 1,
+  "blocked": 0,
+  "existing": 0,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "eso-001",
+   "line": 1,
+   "name": "El Roko",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-9be2fb9806"
+   },
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-05-spain-asturias#as-007 \"El Roko\": name-match same-name (\"El Roko\" / \"El Roko\", 0 m)",
+     "ids": [
+      "2026-10-05-spain-asturias#as-007"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-06-spain-holds#esh-001 \"El Roko\": name-match same-name (\"El Roko\" / \"El Roko\", 0 m)",
+     "ids": [
+      "2026-10-06-spain-holds#esh-001"
+     ]
+    }
+   ],
+   "review_ids": [
+    "2026-10-05-spain-asturias#as-007",
+    "2026-10-06-spain-holds#esh-001"
+   ]
+  }
+ ],
+ "reconcile_sha256": "6c97962db6b3f0e9c6f964ca0b2899661eb6993e3229acea3de3d4f8e1f82516"
+}

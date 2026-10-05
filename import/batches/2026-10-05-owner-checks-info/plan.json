@@ -1,0 +1,80 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-05-owner-checks-info",
+ "index": {
+  "sha256": "930823b07e4d056c2035db29a8800083b2a822dc8be5313ad0538173bce8a8c1",
+  "count": 2412,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-05-italy-owner-checks",
+  "2026-10-05-spain-owner-checks",
+  "2026-10-05-uk-owner-checks"
+ ],
+ "counts": {
+  "records": 4,
+  "new": 0,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 4,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": false,
+ "blockers": [
+  "4 invalid record(s) must be fixed or removed",
+  "nothing to import (no new, update or retire records)"
+ ],
+ "unused_decisions": [],
+ "plan_sha256": "8757ca4bcf714260f74957237159d194dc406e589816dd51701573a717514375",
+ "records": [
+  {
+   "line": 1,
+   "class": "invalid",
+   "errors": [
+    {
+     "code": "unknown-id",
+     "field": "id",
+     "message": "no gym with id g-039b6ea9b5 exists in production (per the index); an update cannot create a gym"
+    }
+   ]
+  },
+  {
+   "line": 2,
+   "class": "invalid",
+   "errors": [
+    {
+     "code": "unknown-id",
+     "field": "id",
+     "message": "no gym with id g-ddbd31743b exists in production (per the index); an update cannot create a gym"
+    }
+   ]
+  },
+  {
+   "line": 3,
+   "class": "invalid",
+   "errors": [
+    {
+     "code": "unknown-id",
+     "field": "id",
+     "message": "no gym with id g-9be2fb9806 exists in production (per the index); an update cannot create a gym"
+    }
+   ]
+  },
+  {
+   "line": 4,
+   "class": "invalid",
+   "errors": [
+    {
+     "code": "unknown-id",
+     "field": "id",
+     "message": "no gym with id g-569cef7574 exists in production (per the index); an update cannot create a gym"
+    }
+   ]
+  }
+ ]
+}

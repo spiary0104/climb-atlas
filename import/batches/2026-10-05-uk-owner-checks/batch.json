@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-05-uk-owner-checks",
+  "description": "Regional research \"UK: owner manual checks (2026-10-06)\": 2 new gym(s) accepted of 3 candidate(s)",
+  "created": "2026-10-06",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-10-05-uk-owner-checks",
+    "section_sha256": "03be144458724630878fa9ab3af684238a431fa3b8def729a6c4abcb126faad7",
+    "sources_sha256": "e24d34cc2d82f556fce9498198b9bcbe410ad218d2495885feb783cfae813ec7",
+    "candidates_sha256": "87986d5acd243b0b5c48856fbdedeaf2122ad770a1d98a7d9d21250b977d00db",
+    "reconcile_sha256": "0046b93d795fbc97c334a7cd44aed63b98470bfc8873c20fe6c4e69fd1dc8b4d",
+    "review_sha256": "88b5084bdd91b2a250bca10e7d93a2671a51c698a6c01bf41a9aa52668e9b1c7",
+    "candidates": 3,
+    "staged": 2,
+    "decisions": {
+      "accept": 2,
+      "reject": 1
+    }
+  },
+  "index_at_staging": {
+    "sha256": "930823b07e4d056c2035db29a8800083b2a822dc8be5313ad0538173bce8a8c1",
+    "count": 2412
+  }
+}
