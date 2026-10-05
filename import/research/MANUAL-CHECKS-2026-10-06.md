@@ -8,7 +8,9 @@ column (yes / no / a pin), and Claude finishes each gym through a small follow-u
 - Added: Northern Problems (Instagram @northern.problems as its link, hours from its site), The Adventure Hub (address + hours from the owner), El Roko (open; hours from the owner), La Mole Sports Academy (non-members welcome), Free Climbing Palermo (non-members welcome; pin still unsure).
 - Not listed: Street Rocks (lead only), Granite Planet (closed), MAD Climbing Wall (owner: retire; it was never listed).
 - DEMON Rock Wall = Palaroccia Napoli (g-0dad847caf): its own site calls itself the Demon Rock Wall gym at Via Viticella 98, Quarto. Nothing to add.
-- Still open: CAT Torino (hours given; bouldering for day visitors not yet answered), rows 12-17.
+- Added (second answers): Kletterhalle Schmölln (Wed 17:00-20:00), Kletterzentrum Zuckerturm (public access), Mokpo International Sport Climbing Center (open to the public). Arkose Issy voie: tags corrected to lead only.
+- Not listed: Kletterhütte Ilmenau (not open yet; re-check later), Hwang Pyeong-ju Climbing Class (owner unsure).
+- Still open: CAT Torino (hours given; bouldering for day visitors not yet answered).
 
 ## A. Not on Bouldeer yet: your answer decides (17)
 

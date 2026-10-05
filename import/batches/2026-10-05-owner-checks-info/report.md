@@ -8,17 +8,17 @@
 | Update existing gyms (explicit update records) | 0 |
 | Already exist — no action (identical content: 0; content differs, NOT applied: 0) | 0 |
 | Probable duplicates — need a human decision | 0 |
-| Invalid — rejected | 4 |
+| Invalid — rejected | 7 |
 | Rejected by a human decision | 0 |
-| **Total records in batch** | 4 |
+| **Total records in batch** | 7 |
 
-Index: 2412 known gyms (sha256 930823b07e4d…). Plan: 8757ca4bcf71… Also compared against staged batches: 2026-10-05-italy-owner-checks, 2026-10-05-spain-owner-checks, 2026-10-05-uk-owner-checks.
+Index: 2412 known gyms (sha256 930823b07e4d…). Plan: 8757ca4bcf71… Also compared against staged batches: 2026-10-05-germany-owner-checks, 2026-10-05-italy-owner-checks, 2026-10-05-korea-owner-checks, 2026-10-05-spain-owner-checks, 2026-10-05-uk-owner-checks.
 
 ## Blockers
-- 4 invalid record(s) must be fixed or removed
+- 7 invalid record(s) must be fixed or removed
 - nothing to import (no new, update or retire records)
 
-## Invalid records (4)
+## Invalid records (7)
 
 - line 1:
   - `unknown-id` (id): no gym with id g-039b6ea9b5 exists in production (per the index); an update cannot create a gym
@@ -28,4 +28,10 @@ Index: 2412 known gyms (sha256 930823b07e4d…). Plan: 8757ca4bcf71… Also comp
   - `unknown-id` (id): no gym with id g-9be2fb9806 exists in production (per the index); an update cannot create a gym
 - line 4:
   - `unknown-id` (id): no gym with id g-569cef7574 exists in production (per the index); an update cannot create a gym
+- line 5:
+  - `unknown-id` (id): no gym with id g-6a37cf87df exists in production (per the index); an update cannot create a gym
+- line 6:
+  - `unknown-id` (id): no gym with id g-c3eb253cd7 exists in production (per the index); an update cannot create a gym
+- line 7:
+  - `unknown-id` (id): no gym with id g-f412ee9caf exists in production (per the index); an update cannot create a gym
 

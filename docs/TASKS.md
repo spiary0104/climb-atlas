@@ -6,12 +6,14 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 (delete them; git keeps history). Keep this file under 60 lines.
 
 ## In progress
-### Pin check 2026-10-06 (PR) — STAGED, awaiting the owner apply
-- 121 pin fixes + 6 addresses (177 unconfirmed pins outside China) and 1 duplicate retired (new White Spider = seed-903). `import/pin-check/2026-10-06/README.md`.
+### Pin check + owner checks (PR #76) — STAGED, awaiting the owner apply
+- 121 pin fixes + 6 addresses (177 unconfirmed pins outside China), 1 duplicate retired (new White Spider = seed-903), +8 owner-checked gyms
+  with websites/hours, Arkose Issy voie tags. `import/pin-check/2026-10-06/README.md`.
 
 ## Gym data
-### Owner manual checks: `import/research/MANUAL-CHECKS-2026-10-06.md`
-- 17 gyms not on Bouldeer until the owner answers (UK 4, IT 6, ES 1, DE 3, KR 2, FR 1 tag); optional spot checks of 6 added gyms.
+### Owner manual checks (2026-10-06)
+- Done: 8 gyms added, 1 tag fix, the rest declined (`import/research/MANUAL-CHECKS-2026-10-06.md`). Open: CAT Torino (bouldering for day visitors?);
+  re-check later: Kletterhütte Ilmenau (not open yet), Hwang Pyeong-ju (unsure).
 - Decisions: the merged Jeonnam-Gwangju region name in Korean addresses.
 ### Chain expansions
 - Camp5 MY (~6), Hive CA (~4), Boulderwelt DE (~4), B-PUMP JP (~3), 9 Degrees AU (~2), Boulder Co NZ (~1). Verify each branch.
