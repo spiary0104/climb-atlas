@@ -13,20 +13,17 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 - Status: PR #37 (`integration/final-stage`) merged to master 2026-10-03 (merge commit `b58a79e`) and deployed by Vercel; production
   smoke test passed (/, gym, metro, region, /in, sitemap.xml 3,299 URLs, robots.txt, bot link previews; no console errors at
   1280/375 px). Migration `20261004000100_gym_information` APPLIED (docs/migrations.md). Vercel preview protection re-enabled.
-- Shipped: gym information (website, weekly hours, day pass free text, facilities, description; one photo link); 102 city metros
-  (cross-region ones on neighbouring region pages with 2+ gyms); UX follow-ups; perf (spots 359 -> 191 KB; `js/spots-prefetch.js`
-  starts the gym-list read before MapLibre: list 8.8 -> 6.1 s locally, Explore LCP +0.6 s accepted); SEO (sitemap, area pages only
-  with 2+ gyms, + `api/_places.json`; link previews via `api/seo.mjs`, bot user agents only). Re-run `node scripts/build-sitemap.js` per batch.
+- Shipped: gym information (website, hours, day pass, facilities, description, one photo); 102 city metros; perf (spots 359 -> 191 KB, `js/spots-prefetch.js`: list
+  8.8 -> 6.1 s, LCP +0.6 s accepted); SEO (sitemap, 2+ gym area pages, `api/_places.json`, bot link previews via `api/seo.mjs`). Re-run `node scripts/build-sitemap.js` per batch.
 - Owner: submit the sitemap in Google Search Console.
-- Follow-ups: seed website + hours for the top metros (import batch); self-serve account deletion; map-stack weight (MapLibre still
-  blocks the first paint of the app; rendering the list before the map exists would be the next, architectural, step).
-- Open now + today's hours in discovery, update toast, global `[hidden]` (branch `feature/open-now-and-update-toast`, awaiting review 2026-10-04; list read adds `hours`, +19.5 KB gzip).
+- Follow-ups: seed website + hours for top metros; self-serve account deletion; map-stack weight (MapLibre blocks first paint; next step is architectural).
+- Shipped 2026-10-05: open now + today's hours (PR #52), desktop chip row wraps (#53), update prompt "Bouldeer has finished a climb, please refresh the page" (#55).
 ### Public launch (www.bouldeer.com) — LAUNCHED 2026-10-02
 - Status: launch-readiness merged (PRs #14-#16: /privacy, /terms, 404, security headers + CSP, climbatlas.org 308 redirect,
   pinned CDN + SRI, sign-in for edits/reports); all 10 migrations applied (security hardening 2026-10-02, docs/migrations.md);
   owner tested sign-in, submissions and moderation on production. Wave 1 IMPORTED (179) + Wave 2 IMPORTED (38) 2026-10-03; 5 + 11 pin fixes, 3 retirements (2 closed, 1 duplicate) and 7 Czech gyms applied; live 2,348.
-- Real-phone retest (check-in, eyes, Date/Mood) passed 2026-10-03; service-role key rotated 2026-10-03.
-- Legal pages simplified (PR #36, merged): no minimum age; 30-day deletion promise confirmed.
+- Real-phone retest passed + service-role key rotated 2026-10-03; legal pages simplified (PR #36): no minimum age, 30-day deletion.
+- Auth email: custom SMTP via Resend (mail.bouldeer.com, DKIM/SPF/DMARC) + Bouldeer confirm/magic-link templates, owner set up 2026-10-05.
 - Open: Supabase Auth Redirect URLs: add preview domains (else sign-in lands on the Site URL). Phase 4 publish-then-review and
   photo/confirm points not built (gym-information fields still go through moderation).
 ### Gym import pipeline — first batch imported; follow-ups
@@ -51,6 +48,9 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 
 ### Fill missing addresses (299 spots)
 - Status: backlog. `address` empty for DE 112, GB 82, CN 54, NO 20, CO 5, IL 3, US 3, VE 3, others ≤2.
+
+### Welcome after the first email confirmation
+- Backlog (owner, 2026-10-05): one-time welcome after a new user first confirms their email (log, save, add gyms); never on later sign-ins.
 
 ### Monetization: paid "offline mode" (Stripe)
 - Status: backlog, needs scoping with the owner: gate the PWA caching behind a subscription (Stripe checkout, a webhook as a
