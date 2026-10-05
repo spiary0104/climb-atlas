@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-05-uk-holds-gaps",
+  "description": "Regional research \"UK: gyms on hold + gaps (second pass)\": 18 new gym(s) accepted of 29 candidate(s)",
+  "created": "2026-10-06",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-10-05-uk-holds-gaps",
+    "section_sha256": "63a1e2a07e62c42056e0d45f9c29c7ab376beedb833bf56dcd05d922ba40f118",
+    "sources_sha256": "3e9592f31f7c7fa5bba9151acff492da213d2ca9d0b4c67891e143b5d0c0fbf6",
+    "candidates_sha256": "f8f1f6cdb1f2fc74670363080b86d1650877358efe97fb50d5ca6a49b1567ec0",
+    "reconcile_sha256": "3dc7a6c472af0f38d0b167b68faefe578f2dc1c44fb8ef1412abdc0033b0ac0e",
+    "review_sha256": "e63fa745c6f2dba77136b87075087c047b72321c4aec44c49fb8b1f9285381a5",
+    "candidates": 29,
+    "staged": 18,
+    "decisions": {
+      "accept": 18,
+      "defer": 3,
+      "reject": 1,
+      "same-as": 7
+    }
+  },
+  "index_at_staging": {
+    "sha256": "e1d9ef5216f87602ccefe7b8e4fac9c10be4c8fa3e59d6e76219e3f5d3154dad",
+    "count": 2385
+  }
+}

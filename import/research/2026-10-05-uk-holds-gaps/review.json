@@ -1,0 +1,146 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-05-uk-holds-gaps",
+ "reviewer": "Spiar (owner); decisions drafted by Claude (AI) on the owner's instruction, pending owner sign-off",
+ "reviewed": "2026-10-06",
+ "decisions": {
+  "adventure-hub-bamford": {
+   "decision": "defer",
+   "reason": "Official page states a bouldering wall and hours (public sessions Saturday 13:00-17:00 only), but the building could not be placed (only a postcode centroid; area coordinates are blocked). Owner to drop a pin and decide whether one public afternoon a week qualifies. See MANUAL-CHECK.md."
+  },
+  "arc-chippenham": {
+   "decision": "accept",
+   "reason": "Flag is only that all evidence is from one source: the gym's own site, which states the bouldering offering, the address and live opening hours; the pin is its own map link / an OSM object."
+  },
+  "avid-ipswich": {
+   "decision": "accept",
+   "reason": "Other-section flag is the same candidate deferred in 2026-10-05-uk-single-gym-towns (never staged, no decision to accept there). This pass found the official About and Our Spaces pages stating bouldering, so it is accepted here and only here.",
+   "reviewed_against": [
+    "2026-10-05-uk-single-gym-towns#avid-ipswich"
+   ]
+  },
+  "beacon-caernarfon": {
+   "decision": "same-as",
+   "same_as": "seed-951",
+   "reason": "Importer same-name match, 0 m. (The Deiniolen lead is this Caernarfon centre; Beacon moved from Deiniolen years ago.)"
+  },
+  "blue-spider-guildford": {
+   "decision": "same-as",
+   "same_as": "seed-866",
+   "reason": "Importer match with \"Blue Spider Climbing\", 0 m: same gym, shorter name."
+  },
+  "boulderryn-penryn": {
+   "decision": "accept",
+   "reason": "Flag is only that all evidence is from one source: the gym's own site, which states the bouldering offering, the address and live opening hours; the pin is its own map link / an OSM object."
+  },
+  "climb-kent-maidstone": {
+   "decision": "same-as",
+   "same_as": "seed-933",
+   "reason": "Importer same-name match, 187 m (existing pin kept; the site's own map pin is on the farm)."
+  },
+  "climbing-experience-maidstone": {
+   "decision": "same-as",
+   "same_as": "seed-893",
+   "reason": "Importer same-name match, but the existing pin is 853 m from the OSM node named Climbing Experience (35 m from the ME16 0ST postcode centroid). Same gym; a pin correction is worth a separate update batch.",
+   "followup": "location-update"
+  },
+  "climbing-station-loughborough": {
+   "decision": "accept",
+   "reason": "Flag is only that all evidence is from one source: the gym's own site, which states the bouldering offering, the address and live opening hours; the pin is its own map link / an OSM object."
+  },
+  "cragg-stowmarket": {
+   "decision": "accept"
+  },
+  "dyno-buckfastleigh": {
+   "decision": "accept",
+   "reason": "Flag is only that all evidence is from one source: the gym's own site, which states the bouldering offering, the address and live opening hours; the pin is its own map link / an OSM object. Flag weak-coordinates: the pin is the official site's own map marker, about 215 m from the postcode centroid, labelled street-level because the site prints no street address (the address comes from the company register); the centre sits at Dart Mills, Old Totnes Road."
+  },
+  "green-spider-hereford": {
+   "decision": "accept"
+  },
+  "indirock-southend": {
+   "decision": "accept"
+  },
+  "indy-climbing-wall": {
+   "decision": "same-as",
+   "same_as": "seed-953",
+   "reason": "Importer same-name match, 149 m (existing pin kept). Indy is at Llanfairpwll on Anglesey, not Llanberis."
+  },
+  "keswick-climbing-wall": {
+   "decision": "accept",
+   "reason": "Two flags. (1) Other-section: the same candidate was deferred in 2026-10-05-uk-single-gym-towns (never staged); this pass found the official indoor-climbing-wall page stating a 100 sqm bouldering area. (2) kong-keswick: a different centre 2.9 km away (Heads Road, CA12 5EZ vs Goosewell Farm, CA12 4RN), different operator and website; the shared \"Keswick\" name is the only link.",
+   "reviewed_against": [
+    "2026-10-05-uk-single-gym-towns#keswick-climbing-wall",
+    "kong-keswick"
+   ]
+  },
+  "kong-keswick": {
+   "decision": "accept",
+   "reason": "Flags are the related names \"Kong Keswick\" / \"Keswick Climbing Wall\": two distinct centres 2.9 km apart with different operators, sites and addresses (Heads Road CA12 5EZ vs Goosewell Farm CA12 4RN). The other-section entry is the deferred first-pass Keswick Climbing Wall, never staged.",
+   "reviewed_against": [
+    "2026-10-05-uk-single-gym-towns#keswick-climbing-wall",
+    "keswick-climbing-wall"
+   ]
+  },
+  "lancaster-wall": {
+   "decision": "accept",
+   "reason": "Other-section flag is the same candidate deferred in 2026-10-05-uk-single-gym-towns (never staged) because lancasterwall.co.uk returned HTTP 526. This pass read the operator's (Lakeland Climbing Centres) own page for the centre: \"Indoor Bouldering in Lancaster\", Unit 31 Lune Industrial Estate, hours, September 2026 news.",
+   "reviewed_against": [
+    "2026-10-05-uk-single-gym-towns#lancaster-wall"
+   ]
+  },
+  "live-for-today-harrogate": {
+   "decision": "same-as",
+   "same_as": "seed-878",
+   "reason": "Importer match with \"Live For Today Climbing Centre (Formerly Parthian Harrogate)\": same centre (Live For Today acquired Parthian Harrogate on 28 March 2024; both pages give Hornbeam Park). The existing pin is 1,937 m from the HG2 8QT postcode centroid and from Hornbeam Park Avenue, so it is probably wrong: worth a separate location-update batch after a pin check.",
+   "followup": "location-update"
+  },
+  "mad-volume-hull": {
+   "decision": "accept",
+   "reason": "Flag is only that all evidence is from one source: the gym's own site, which states the bouldering offering, the address and live opening hours; the pin is its own map link / an OSM object."
+  },
+  "northern-problems-whitehaven": {
+   "decision": "defer",
+   "reason": "Official one-page site (re-read) shows hours, price, Unit B5 CA28 9AN, but never says bouldering or climbing. Local news calls it a bouldering wall, but news is not a primary source for the offering. Owner to confirm on the venue's Facebook/Instagram or in person. See MANUAL-CHECK.md."
+  },
+  "northwest-face-warrington": {
+   "decision": "accept",
+   "reason": "Flag is only that all evidence is from one source: the gym's own site, which states the bouldering offering, the address and live opening hours; the pin is its own map link / an OSM object."
+  },
+  "peak-climbing-wall-leek": {
+   "decision": "accept",
+   "reason": "Flag is only that all evidence is from one source: the gym's own site, which states the bouldering offering, the address and live opening hours; the pin is its own map link / an OSM object."
+  },
+  "red-spider-fareham": {
+   "decision": "accept"
+  },
+  "rhino-boulder-bromley": {
+   "decision": "same-as",
+   "same_as": "seed-885",
+   "reason": "Importer same-name match, 87 m (existing pin kept)."
+  },
+  "ridge-marple": {
+   "decision": "reject",
+   "reason_code": "closed",
+   "reason": "The official About & Contact page says the centre closed for good: final day of regular trading Saturday 25 July 2026, direct debits frozen."
+  },
+  "street-rocks-scarborough": {
+   "decision": "defer",
+   "reason": "Operator page (CaVCA) states a 14 m climbing wall and a bouldering room at \"The Street\" with prices and kids club times, but gives no street address, no opening hours and no map; the only pin is CaVCA's head-office street (area). Owner to place the entrance and check hours. See MANUAL-CHECK.md."
+  },
+  "sunderland-wall": {
+   "decision": "accept",
+   "reason": "Other-section flag is the same candidate deferred in 2026-10-05-uk-single-gym-towns (never staged) because the landing page never said bouldering. This pass found the About page: \"A bouldering area which boasts around 200 problems\", and a 2026 copyright footer.",
+   "reviewed_against": [
+    "2026-10-05-uk-single-gym-towns#sunderland-wall"
+   ]
+  },
+  "white-spider-surbiton": {
+   "decision": "accept"
+  },
+  "yellow-spider-carshalton": {
+   "decision": "accept",
+   "reason": "Flag is only that all evidence is from one source: the gym's own site, which states the bouldering offering, the address and live opening hours; the pin is its own map link / an OSM object."
+  }
+ }
+}

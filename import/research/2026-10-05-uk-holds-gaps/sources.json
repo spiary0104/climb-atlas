@@ -1,0 +1,194 @@
+{
+ "schema_version": 1,
+ "sources": {
+  "OSM": {
+   "kind": "map-data",
+   "title": "OpenStreetMap (Overpass / Nominatim object lookups 2026-10-06)",
+   "url": "https://www.openstreetmap.org/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "NOM": {
+   "kind": "map-data",
+   "title": "OpenStreetMap Nominatim geocoder (postcode lookups)",
+   "url": "https://nominatim.openstreetmap.org/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "AVID": {
+   "kind": "official-site",
+   "title": "AVID Climbing",
+   "url": "https://www.avidclimbing.co.uk/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "NPW": {
+   "kind": "official-site",
+   "title": "Northern Problems",
+   "url": "https://northernproblems.co.uk/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "KESWICKWALL": {
+   "kind": "official-site",
+   "title": "Keswick Climbing Wall (Newlands Adventure Centre & Keswick Climbing Wall)",
+   "url": "https://www.activity-centre.com/keswick-climbing-wall/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "SUNDERLANDWALL": {
+   "kind": "official-site",
+   "title": "Sunderland Wall",
+   "url": "https://sunderlandwall.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "LAKELAND": {
+   "kind": "official-site",
+   "title": "Lakeland Climbing Centres (LancasterWall page)",
+   "url": "https://lakelandclimbingcentres.co.uk/centre/lancasterwall/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "KONG": {
+   "kind": "official-site",
+   "title": "Kong Adventure Centre, Keswick",
+   "url": "https://www.kongadventure.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "INDY": {
+   "kind": "official-site",
+   "title": "Indy Climbing Wall",
+   "url": "https://www.indyclimbingwall.co.uk/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "INDIROCK": {
+   "kind": "official-site",
+   "title": "IndiRock",
+   "url": "https://indirock.co.uk/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "SPIDER": {
+   "kind": "official-site",
+   "title": "Spider Climbing (White, Blue, Yellow, Red and Green Spider)",
+   "url": "https://spiderclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "CLIMBSTATION": {
+   "kind": "official-site",
+   "title": "The Climbing Station",
+   "url": "https://theclimbingstation.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "CLIMBEXP": {
+   "kind": "official-site",
+   "title": "The Climbing Experience",
+   "url": "https://theclimbingexperience.co.uk/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "CLIMBKENT": {
+   "kind": "official-site",
+   "title": "Climb Kent (Lower Grange Farm, Kent Scouts)",
+   "url": "https://www.climbkent.co.uk/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "DYNO": {
+   "kind": "official-site",
+   "title": "Dyno Climbing Centre",
+   "url": "https://www.dynoclimbingcentre.co.uk/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "CRAGG": {
+   "kind": "official-site",
+   "title": "The Cragg Climbing Wall (Everyone Active, Mid Suffolk Leisure Centre)",
+   "url": "https://www.everyoneactive.com/centre/mid-suffolk-leisure-centre/climbing-wall/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "STREETROCKS": {
+   "kind": "official-site",
+   "title": "Street Rocks (CaVCA)",
+   "url": "https://cavca.org.uk/street-rocks/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "RIDGE": {
+   "kind": "official-site",
+   "title": "The Ridge Climbing",
+   "url": "https://www.theridgeclimbing.co.uk/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "ADVHUB": {
+   "kind": "official-site",
+   "title": "The Adventure Hub",
+   "url": "https://adventure-hub.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "MADVOLUME": {
+   "kind": "official-site",
+   "title": "Mad Volume",
+   "url": "https://www.madvolume.co.uk/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "RHINO": {
+   "kind": "official-site",
+   "title": "Rhino Boulder",
+   "url": "https://rhinoboulder.co.uk/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "BOULDERRYN": {
+   "kind": "official-site",
+   "title": "BoulderRyn",
+   "url": "https://boulderryn.co.uk/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "BEACON": {
+   "kind": "official-site",
+   "title": "Beacon Climbing Centre",
+   "url": "https://www.beaconclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "LFT": {
+   "kind": "official-site",
+   "title": "Live For Today Climbing Centre, Harrogate",
+   "url": "https://live-for-today.com/locations/harrogate-climbing-centre",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "PEAK": {
+   "kind": "official-site",
+   "title": "The Peak Climbing Wall",
+   "url": "https://www.peakclimbingwall.co.uk/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "NWFACE": {
+   "kind": "official-site",
+   "title": "The Northwest Face",
+   "url": "https://www.northwestface.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "TCA": {
+   "kind": "official-site",
+   "title": "The Climbing Academy: The Arc, Chippenham",
+   "url": "https://www.theclimbingacademy.com/locations/the-arc/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  }
+ }
+}
