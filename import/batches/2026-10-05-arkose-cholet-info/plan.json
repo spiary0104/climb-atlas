@@ -1,0 +1,66 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-05-arkose-cholet-info",
+ "index": {
+  "sha256": "c97e3035f0208405f11b34c45813a104e2c9b1d4f25a4a3a6a6a349f627e2918",
+  "count": 2272,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [],
+ "counts": {
+  "records": 1,
+  "new": 0,
+  "existing": 0,
+  "update": 1,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "b1e11829dce5a8063e31dbecfc7fd9db076aa2b9e0ed5480a5d1234d5a697585",
+ "records": [
+  {
+   "line": 1,
+   "class": "update",
+   "id": "g-9e0a4cb76f",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://arkose.com/cholet"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "9h-23h",
+      "tue": "9h-23h",
+      "wed": "9h-23h",
+      "thu": "9h-23h",
+      "fri": "9h-23h",
+      "sat": "9h-21h",
+      "sun": "9h-21h"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "kids",
+      "shoe-hire",
+      "shop"
+     ]
+    }
+   ],
+   "expect_h": "e596a4210625e148",
+   "update_reason": "Now open (owner re-check 2026-10-05): website, opening hours and facilities from the official branch page"
+  }
+ ]
+}
