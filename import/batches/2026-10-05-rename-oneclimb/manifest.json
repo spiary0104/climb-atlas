@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "updater_version": 1,
+  "kind": "update",
+  "batch_id": "2026-10-05-rename-oneclimb",
+  "status": "updated",
+  "target": {
+    "kind": "production",
+    "host": "thayxaampaelvntoaido.supabase.co"
+  },
+  "coverage": "FULL",
+  "plan_sha256": "9d9d9e3b735e687973a51d524e0e7ac6940af31867b61d71c5040048100bf543",
+  "payload_sha256": "60572b2b1a9b3c06f0048280341ad2643d56f49902a594ccc7a6b6f80d0bb8f9",
+  "confirm_token": "7c89126ce7a414e0",
+  "live_state_sha256": "c3f13d7d1c8882d68bea12ee5d520daa9ea8b5f85ff2e5cdef8fc4f988e065fb",
+  "rows_updated": 0,
+  "approved_before": 2385,
+  "approved_after": 2385,
+  "changes": [],
+  "rows_identity_changed": 1,
+  "identity_changed": [
+    {
+      "id": "seed-1181",
+      "fields": [
+        "name"
+      ],
+      "expect_h": "6d763400d0b926f7",
+      "after_h": "a55431a7807eae6e"
+    }
+  ],
+  "verification": {
+    "ok": true,
+    "checked": 1,
+    "problems": []
+  },
+  "started_at": "2026-10-05T14:48:33.960Z",
+  "finished_at": "2026-10-05T14:48:37.788Z",
+  "ids": [
+    "seed-1181"
+  ]
+}

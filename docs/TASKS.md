@@ -6,8 +6,7 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 (delete them; git keeps history). Keep this file under 60 lines.
 
 ## In progress
-### Holds and gaps second pass (PR, 2026-10-06) — STAGED, awaiting the owner apply
-- +27 gyms (UK 18, DE 3, FR 1, IT 2, KR 3), rename seed-1181 Monta Rex -> OneClimb, 3 pin fixes (Grabit, The Climbing Experience, Live For Today).
+- _(none; the 2026-10-06 holds-and-gaps update is live: 2,412 gyms)_
 
 ## Gym data
 ### Owner manual checks: `import/research/MANUAL-CHECKS-2026-10-06.md`
