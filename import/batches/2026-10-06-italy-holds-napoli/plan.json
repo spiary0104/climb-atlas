@@ -1,0 +1,53 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-06-italy-holds-napoli",
+ "index": {
+  "sha256": "e1d9ef5216f87602ccefe7b8e4fac9c10be4c8fa3e59d6e76219e3f5d3154dad",
+  "count": 2385,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [],
+ "counts": {
+  "records": 3,
+  "new": 3,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "ea41a292e9470ea7d5263d2713326b4d0783ac4c86fe6d5f4c03557a2d779f0a",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-0dad847caf",
+   "id_frozen": true,
+   "name": "Palaroccia Napoli",
+   "country": "IT"
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-600115a43b",
+   "id_frozen": true,
+   "name": "Eden Climbing (Eden Park)",
+   "country": "IT"
+  },
+  {
+   "line": 3,
+   "class": "new",
+   "id": "g-569cef7574",
+   "id_frozen": true,
+   "name": "Free Climbing Palermo",
+   "country": "IT"
+  }
+ ]
+}
