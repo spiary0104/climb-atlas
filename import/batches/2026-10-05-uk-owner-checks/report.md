@@ -12,7 +12,7 @@
 | Rejected by a human decision | 0 |
 | **Total records in batch** | 2 |
 
-Index: 2412 known gyms (sha256 930823b07e4d…). Plan: d34e9d879de8…
+Index: 2411 known gyms (sha256 c57110b06cda…). Plan: 9e23bf4bec77… Also compared against staged batches: 2026-10-05-germany-owner-checks, 2026-10-05-italy-owner-checks, 2026-10-05-korea-owner-checks, 2026-10-05-spain-owner-checks.
 
 ## New gyms (2)
 

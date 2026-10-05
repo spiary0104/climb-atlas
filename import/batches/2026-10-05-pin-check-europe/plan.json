@@ -2,11 +2,17 @@
  "plan_version": 1,
  "batch_id": "2026-10-05-pin-check-europe",
  "index": {
-  "sha256": "930823b07e4d056c2035db29a8800083b2a822dc8be5313ad0538173bce8a8c1",
-  "count": 2412,
+  "sha256": "8738189db740d3b042d1a9cbd4d2f85c3ad988c6a8d7a931567fef7e2b6f81bf",
+  "count": 2411,
   "meta_matches": true
  },
- "staged_batches_compared": [],
+ "staged_batches_compared": [
+  "2026-10-05-germany-owner-checks",
+  "2026-10-05-italy-owner-checks",
+  "2026-10-05-korea-owner-checks",
+  "2026-10-05-spain-owner-checks",
+  "2026-10-05-uk-owner-checks"
+ ],
  "counts": {
   "records": 53,
   "new": 0,
@@ -23,7 +29,7 @@
  "importable": true,
  "blockers": [],
  "unused_decisions": [],
- "plan_sha256": "cda1af5eccfc522f9ee0c28a7b72d0834de9d4db8f78c0e30e3fe3cf0c074a36",
+ "plan_sha256": "fb5e702fbd30b936da32d31be9b5d1992a61c4d379d6f06f96caaf9b0f37a869",
  "records": [
   {
    "line": 1,

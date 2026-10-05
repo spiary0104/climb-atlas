@@ -6,9 +6,7 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 (delete them; git keeps history). Keep this file under 60 lines.
 
 ## In progress
-### Pin check + owner checks (PR #76) — STAGED, awaiting the owner apply
-- 121 pin fixes + 6 addresses (177 unconfirmed pins outside China), 1 duplicate retired (new White Spider = seed-903), +8 owner-checked gyms
-  with websites/hours, Arkose Issy voie tags. `import/pin-check/2026-10-06/README.md`.
+- _(none; pin check + owner checks live 2026-10-06: 2,419 gyms)_
 
 ## Gym data
 ### Owner manual checks (2026-10-06)

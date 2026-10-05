@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "updater_version": 1,
+  "kind": "update",
+  "batch_id": "2026-10-05-retire-dup-white-spider",
+  "status": "updated",
+  "target": {
+    "kind": "production",
+    "host": "thayxaampaelvntoaido.supabase.co"
+  },
+  "coverage": "FULL",
+  "plan_sha256": "13d3c5b21437ab013a8ba9ef48fa93861524a5e77b86eefd55939d90cf685a02",
+  "payload_sha256": "8d5376e5b78defc74bae1eaf164b2c3ffa58eccbb4e82483de82a7cdcaa7d45d",
+  "confirm_token": "c7c6997c68e16055",
+  "live_state_sha256": "0035dd64c50c81175f44c43ea4ac30ec21373facf08065b53706d143d812eeda",
+  "rows_updated": 0,
+  "approved_before": 2412,
+  "approved_after": 2411,
+  "changes": [],
+  "rows_retired": 1,
+  "retired": [
+    "g-7061a1fbb1"
+  ],
+  "retirements": [
+    {
+      "id": "g-7061a1fbb1",
+      "reason_code": "duplicate",
+      "reason": "Duplicate of seed-903 white Spider (same gym; seed-903 had a placeholder pin in Islington, corrected to 225 Hook Rise South)",
+      "duplicate_of": "seed-903",
+      "expect_h": "923a13f769685a26"
+    }
+  ],
+  "verification": {
+    "ok": true,
+    "checked": 1,
+    "problems": []
+  },
+  "started_at": "2026-10-05T15:30:27.827Z",
+  "finished_at": "2026-10-05T15:30:30.584Z",
+  "ids": [
+    "g-7061a1fbb1"
+  ]
+}

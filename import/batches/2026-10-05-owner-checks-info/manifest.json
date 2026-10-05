@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "updater_version": 1,
+  "kind": "update",
+  "batch_id": "2026-10-05-owner-checks-info",
+  "status": "updated",
+  "target": {
+    "kind": "production",
+    "host": "thayxaampaelvntoaido.supabase.co"
+  },
+  "coverage": "FULL",
+  "plan_sha256": "30fae7ab041575798d604d9e0fb11d4b6c7480028c8e50d72434475294f8005a",
+  "payload_sha256": "d899a556ed9c43ba9f6b5fd6e5ee21e0afa410f0d09ba67fdf033019080e83c2",
+  "confirm_token": "74cb43b30e7009c4",
+  "live_state_sha256": "d6e42edd507ca2ba1fb06582c04f4064acc7591a3c87874d4257284016d5d187",
+  "rows_updated": 0,
+  "approved_before": 2419,
+  "approved_after": 2419,
+  "changes": [],
+  "rows_info_filled": 7,
+  "info_filled": [
+    {
+      "id": "g-039b6ea9b5",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "23096848f2ed1d6e",
+      "after_h": "23096848f2ed1d6e"
+    },
+    {
+      "id": "g-ddbd31743b",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "37050c86a9f72dee",
+      "after_h": "37050c86a9f72dee"
+    },
+    {
+      "id": "g-9be2fb9806",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "a570d2e1751b9304",
+      "after_h": "a570d2e1751b9304"
+    },
+    {
+      "id": "g-569cef7574",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "3ff14feb21dd5e27",
+      "after_h": "3ff14feb21dd5e27"
+    },
+    {
+      "id": "g-6a37cf87df",
+      "fields": [
+        "website",
+        "hours"
+      ],
+      "expect_h": "1cd13854160be0d7",
+      "after_h": "1cd13854160be0d7"
+    },
+    {
+      "id": "g-c3eb253cd7",
+      "fields": [
+        "website"
+      ],
+      "expect_h": "bf99fd371560fc7e",
+      "after_h": "bf99fd371560fc7e"
+    },
+    {
+      "id": "g-f412ee9caf",
+      "fields": [
+        "website"
+      ],
+      "expect_h": "9045e495e1b37524",
+      "after_h": "9045e495e1b37524"
+    }
+  ],
+  "verification": {
+    "ok": true,
+    "checked": 7,
+    "problems": []
+  },
+  "started_at": "2026-10-05T15:33:58.705Z",
+  "finished_at": "2026-10-05T15:34:03.193Z",
+  "ids": [
+    "g-039b6ea9b5",
+    "g-ddbd31743b",
+    "g-9be2fb9806",
+    "g-569cef7574",
+    "g-6a37cf87df",
+    "g-c3eb253cd7",
+    "g-f412ee9caf"
+  ]
+}

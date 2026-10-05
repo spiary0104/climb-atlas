@@ -2,11 +2,16 @@
  "plan_version": 1,
  "batch_id": "2026-10-05-uk-owner-checks",
  "index": {
-  "sha256": "930823b07e4d056c2035db29a8800083b2a822dc8be5313ad0538173bce8a8c1",
-  "count": 2412,
+  "sha256": "c57110b06cdaf2bd70ea042ae11604f20a0a57e16741e6f3f78d668533603ecd",
+  "count": 2411,
   "meta_matches": true
  },
- "staged_batches_compared": [],
+ "staged_batches_compared": [
+  "2026-10-05-germany-owner-checks",
+  "2026-10-05-italy-owner-checks",
+  "2026-10-05-korea-owner-checks",
+  "2026-10-05-spain-owner-checks"
+ ],
  "counts": {
   "records": 2,
   "new": 2,
@@ -23,7 +28,7 @@
  "importable": true,
  "blockers": [],
  "unused_decisions": [],
- "plan_sha256": "d34e9d879de8cc7239cf91ebff202a5e42e9392f686e6bbbbf27913f7b92800e",
+ "plan_sha256": "9e23bf4bec77385250dc6b58de2952bb40dfbb6267e20a8e770635a476014275",
  "records": [
   {
    "line": 1,

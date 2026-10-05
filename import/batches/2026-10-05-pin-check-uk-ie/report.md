@@ -1,28 +1,20 @@
 # Import dry-run: 2026-10-05-pin-check-uk-ie
 
-**Result: NOT importable yet** — this report is a dry-run; nothing was written anywhere except this batch directory.
+**Result: READY for review/import** — this report is a dry-run; nothing was written anywhere except this batch directory.
 
 | What would happen | Records |
 |---|---:|
 | Insert as NEW gyms | 0 |
-| Update existing gyms (explicit update records) | 34 |
+| Update existing gyms (explicit update records) | 35 |
 | Already exist — no action (identical content: 0; content differs, NOT applied: 0) | 0 |
 | Probable duplicates — need a human decision | 0 |
-| Invalid — rejected | 1 |
+| Invalid — rejected | 0 |
 | Rejected by a human decision | 0 |
 | **Total records in batch** | 35 |
 
-Index: 2412 known gyms (sha256 930823b07e4d…). Plan: 58ecfd995652…
+Index: 2411 known gyms (sha256 cc019adb691a…). Plan: 29bb9e78dcdc… Also compared against staged batches: 2026-10-05-germany-owner-checks, 2026-10-05-italy-owner-checks, 2026-10-05-korea-owner-checks, 2026-10-05-spain-owner-checks, 2026-10-05-uk-owner-checks.
 
-## Blockers
-- 1 invalid record(s) must be fixed or removed
-
-## Invalid records (1)
-
-- line 20:
-  - `pin-near-other-gym` (lat): the new pin is within 60 m of g-7061a1fbb1 (White Spider)
-
-## Updates to existing gyms (34)
+## Updates to existing gyms (35)
 
 - line 1 `g-8e9f3f2af7` — Add official address; pin already on the building (13 m from OSM element)
   - address: null → "Hawthorn Avenue, Hull HU3 5GL"
@@ -98,6 +90,10 @@ Index: 2412 known gyms (sha256 930823b07e4d…). Plan: 58ecfd995652…
   - address: null → "Arches 45b-47c South Lambeth Road, London SW8 1SR"
   - lat: 51.487 → 51.485051
   - lng: -0.126 → -0.122917
+- line 20 `seed-903` — Pin was 22485 m off the gym building (coarse-coords,no-address); set building-level pin and official address
+  - address: null → "225 Hook Rise South, Surbiton KT6 7LD"
+  - lat: 51.54 → 51.3723558
+  - lng: -0.11 → -0.2914609
 - line 21 `seed-904` — Pin was 10768 m off the gym building (coarse-coords,no-address); set building-level pin and official address
   - address: null → "4-6 Hookers Road, London E17 6DP"
   - lat: 51.5 → 51.5896021
@@ -118,13 +114,9 @@ Index: 2412 known gyms (sha256 930823b07e4d…). Plan: 58ecfd995652…
   - address: null → "Unit 2 Garter Street, Sheffield S4 7QX"
   - lat: 53.3806626 → 53.3992496
   - lng: -1.4702278 → -1.4467377
-- line 26 `seed-913` — Pin was 1146 m off the gym building (coarse-coords,no-address); set building-level pin and official address
-  - address: null → "Unit A & B, 15 Sutherland Street, Sheffield S4 7WG"
-  - lat: 53.385 → 53.3908394
-  - lng: -1.465 → -1.4507539
-- … and 9 more (see plan.json)
+- … and 10 more (see plan.json)
 
 ## Warnings
 
-- `large-pin-move` × 30: lines 2, 3, 4, 5, 6, 8, 9, 10, 11, 12, 13, 14, …
+- `large-pin-move` × 31: lines 2, 3, 4, 5, 6, 8, 9, 10, 11, 12, 13, 14, …
 

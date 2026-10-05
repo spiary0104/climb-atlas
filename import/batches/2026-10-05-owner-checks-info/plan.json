@@ -2,114 +2,181 @@
  "plan_version": 1,
  "batch_id": "2026-10-05-owner-checks-info",
  "index": {
-  "sha256": "930823b07e4d056c2035db29a8800083b2a822dc8be5313ad0538173bce8a8c1",
-  "count": 2412,
+  "sha256": "e50072d61b4cd2133f160099a4444c918e7cc2eb73e18f243e28f9117b29ceb6",
+  "count": 2419,
   "meta_matches": true
  },
- "staged_batches_compared": [
-  "2026-10-05-germany-owner-checks",
-  "2026-10-05-italy-owner-checks",
-  "2026-10-05-korea-owner-checks",
-  "2026-10-05-spain-owner-checks",
-  "2026-10-05-uk-owner-checks"
- ],
+ "staged_batches_compared": [],
  "counts": {
   "records": 7,
   "new": 0,
   "existing": 0,
-  "update": 0,
+  "update": 7,
   "probable-duplicate": 0,
-  "invalid": 7,
+  "invalid": 0,
   "rejected": 0,
   "existing_identical": 0,
   "existing_content_differs": 0,
   "new_id_not_frozen": 0,
   "warnings": 0
  },
- "importable": false,
- "blockers": [
-  "7 invalid record(s) must be fixed or removed",
-  "nothing to import (no new, update or retire records)"
- ],
+ "importable": true,
+ "blockers": [],
  "unused_decisions": [],
- "plan_sha256": "8757ca4bcf714260f74957237159d194dc406e589816dd51701573a717514375",
+ "plan_sha256": "30fae7ab041575798d604d9e0fb11d4b6c7480028c8e50d72434475294f8005a",
  "records": [
   {
    "line": 1,
-   "class": "invalid",
-   "errors": [
+   "class": "update",
+   "id": "g-039b6ea9b5",
+   "changes": [
     {
-     "code": "unknown-id",
-     "field": "id",
-     "message": "no gym with id g-039b6ea9b5 exists in production (per the index); an update cannot create a gym"
+     "field": "website",
+     "before": null,
+     "after": "https://www.instagram.com/northern.problems/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "16:00-22:00",
+      "tue": "12:00-21:00",
+      "wed": "12:00-21:00",
+      "thu": "12:00-21:00",
+      "fri": "16:00-22:00",
+      "sun": "12:00-19:00"
+     }
     }
-   ]
+   ],
+   "expect_h": "23096848f2ed1d6e",
+   "update_reason": "Website (the gym Instagram, owner request) and opening hours from the official site"
   },
   {
    "line": 2,
-   "class": "invalid",
-   "errors": [
+   "class": "update",
+   "id": "g-ddbd31743b",
+   "changes": [
     {
-     "code": "unknown-id",
-     "field": "id",
-     "message": "no gym with id g-ddbd31743b exists in production (per the index); an update cannot create a gym"
+     "field": "website",
+     "before": null,
+     "after": "https://adventure-hub.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "6.30am–4pm",
+      "tue": "6.30am–10pm",
+      "wed": "6.30am–10pm",
+      "thu": "6.30am–10pm",
+      "fri": "6.30am–10pm",
+      "sat": "6.30–9am, 12–10pm",
+      "sun": "6.30–9am, 12–10pm"
+     }
     }
-   ]
+   ],
+   "expect_h": "37050c86a9f72dee",
+   "update_reason": "Website and opening hours (official site; confirmed by the owner 2026-10-06)"
   },
   {
    "line": 3,
-   "class": "invalid",
-   "errors": [
+   "class": "update",
+   "id": "g-9be2fb9806",
+   "changes": [
     {
-     "code": "unknown-id",
-     "field": "id",
-     "message": "no gym with id g-9be2fb9806 exists in production (per the index); an update cannot create a gym"
+     "field": "website",
+     "before": null,
+     "after": "https://elroko.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00-22:00",
+      "tue": "10:00-22:00",
+      "wed": "10:00-22:00",
+      "thu": "10:00-22:00",
+      "fri": "10:00-22:00",
+      "sat": "10:00-14:00, 16:00-22:00",
+      "sun": "10:00-14:00, 16:00-22:00"
+     }
     }
-   ]
+   ],
+   "expect_h": "a570d2e1751b9304",
+   "update_reason": "Website and opening hours (official site and Instagram; confirmed by the owner 2026-10-06)"
   },
   {
    "line": 4,
-   "class": "invalid",
-   "errors": [
+   "class": "update",
+   "id": "g-569cef7574",
+   "changes": [
     {
-     "code": "unknown-id",
-     "field": "id",
-     "message": "no gym with id g-569cef7574 exists in production (per the index); an update cannot create a gym"
+     "field": "website",
+     "before": null,
+     "after": "https://freeclimbingpalermo.wordpress.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "19:30-22:00",
+      "tue": "19:30-22:00",
+      "wed": "19:30-22:00",
+      "thu": "19:30-22:00"
+     }
     }
-   ]
+   ],
+   "expect_h": "3ff14feb21dd5e27",
+   "update_reason": "Website and opening hours from the official site"
   },
   {
    "line": 5,
-   "class": "invalid",
-   "errors": [
+   "class": "update",
+   "id": "g-6a37cf87df",
+   "changes": [
     {
-     "code": "unknown-id",
-     "field": "id",
-     "message": "no gym with id g-6a37cf87df exists in production (per the index); an update cannot create a gym"
+     "field": "website",
+     "before": null,
+     "after": "https://www.thebaseschmoelln.de/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "wed": "17:00-20:00"
+     }
     }
-   ]
+   ],
+   "expect_h": "1cd13854160be0d7",
+   "update_reason": "Website and public opening hours (owner manual check 2026-10-06)"
   },
   {
    "line": 6,
-   "class": "invalid",
-   "errors": [
+   "class": "update",
+   "id": "g-c3eb253cd7",
+   "changes": [
     {
-     "code": "unknown-id",
-     "field": "id",
-     "message": "no gym with id g-c3eb253cd7 exists in production (per the index); an update cannot create a gym"
+     "field": "website",
+     "before": null,
+     "after": "https://www.zuckerturm.de/"
     }
-   ]
+   ],
+   "expect_h": "bf99fd371560fc7e",
+   "update_reason": "Official website"
   },
   {
    "line": 7,
-   "class": "invalid",
-   "errors": [
+   "class": "update",
+   "id": "g-f412ee9caf",
+   "changes": [
     {
-     "code": "unknown-id",
-     "field": "id",
-     "message": "no gym with id g-f412ee9caf exists in production (per the index); an update cannot create a gym"
+     "field": "website",
+     "before": null,
+     "after": "https://cafe.daum.net/mokposccenter"
     }
-   ]
+   ],
+   "expect_h": "9045e495e1b37524",
+   "update_reason": "Official cafe as its website"
   }
  ]
 }
