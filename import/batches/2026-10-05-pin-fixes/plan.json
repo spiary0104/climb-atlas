@@ -1,0 +1,136 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-05-pin-fixes",
+ "index": {
+  "sha256": "c97e3035f0208405f11b34c45813a104e2c9b1d4f25a4a3a6a6a349f627e2918",
+  "count": 2272,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-05-france-chains",
+  "2026-10-05-germany-east-saar-berlin",
+  "2026-10-05-italy-city-gaps",
+  "2026-10-05-korea-gwangju-jeollanam",
+  "2026-10-05-spain-asturias",
+  "2026-10-05-uk-single-gym-towns"
+ ],
+ "counts": {
+  "records": 4,
+  "new": 0,
+  "existing": 0,
+  "update": 4,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 2
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "430f27897c18f1ef930f9b640c46fc98242666c4244871eae8199dfbac3ac007",
+ "records": [
+  {
+   "line": 1,
+   "class": "update",
+   "id": "seed-962",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Stresemannstraße 72, 10963 Berlin"
+    },
+    {
+     "field": "lat",
+     "before": 52.52,
+     "after": 52.5038087
+    },
+    {
+     "field": "lng",
+     "before": 13.405,
+     "after": 13.3843469
+    }
+   ],
+   "expect_h": "188ef071a504f96d",
+   "update_reason": "Placeholder pin in central Berlin and no address; the branch is at Stresemannstraße 72 (research 2026-10-05-germany-east-saar-berlin dee-028)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 2279 m"
+    }
+   ]
+  },
+  {
+   "line": 2,
+   "class": "update",
+   "id": "seed-1167",
+   "changes": [
+    {
+     "field": "address",
+     "before": "42 Chungjangroan-gil, Chungjang-dong, Dong-gu, Gwangju, South Korea",
+     "after": "4F, 40-2 Chungjangroan-gil, Dong-gu, Gwangju, South Korea"
+    },
+    {
+     "field": "lat",
+     "before": 35.1471085,
+     "after": 35.146783
+    },
+    {
+     "field": "lng",
+     "before": 126.9123641,
+     "after": 126.917134
+    }
+   ],
+   "expect_h": "84e053eb9be2416c",
+   "update_reason": "Pin about 435 m off; the gym is at 40-2 Chungjangroan-gil, 4F (research 2026-10-05-korea-gwangju-jeollanam kr-gj-001; Naver and Kakao pins agree within 6 m)"
+  },
+  {
+   "line": 3,
+   "class": "update",
+   "id": "seed-1176",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 35.2120312,
+     "after": 35.2111132
+    },
+    {
+     "field": "lng",
+     "before": 126.8740137,
+     "after": 126.8735756
+    }
+   ],
+   "expect_h": "27ca475a3821b3c6",
+   "update_reason": "Pin about 110 m from the building at 1068 Imbangul-daero (research 2026-10-05-korea-gwangju-jeollanam kr-gj-006, the gym own Naver Place pin)"
+  },
+  {
+   "line": 4,
+   "class": "update",
+   "id": "seed-1181",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 34.9133187,
+     "after": 34.9104312
+    },
+    {
+     "field": "lng",
+     "before": 127.5356436,
+     "after": 127.5294181
+    }
+   ],
+   "expect_h": "2dc406f44a711b7e",
+   "update_reason": "Pin about 650 m from 2 Nakseon-gil, Haeryong-myeon (the gym now trades as OneClimb; research 2026-10-05-korea-gwangju-jeollanam kr-jn-001, own Naver Place pin)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 652 m"
+    }
+   ]
+  }
+ ]
+}

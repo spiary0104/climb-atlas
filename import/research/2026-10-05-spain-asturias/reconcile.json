@@ -1,0 +1,197 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-05-spain-asturias",
+ "inputs": {
+  "section_sha256": "3fb820f489adcd85650ffd335afe60f7afeceaa0983cf35bc52607e26f43727d",
+  "sources_sha256": "95bbb40d78f81511a372ba3b9d03995859e9fd80c55f24a66af62743803911e1",
+  "candidates_sha256": "c72b1268303123549564cb5428982e998d6f70592d8652ce724604edc7ba56f8",
+  "index": {
+   "sha256": "c97e3035f0208405f11b34c45813a104e2c9b1d4f25a4a3a6a6a349f627e2918",
+   "count": 2272
+  },
+  "staged_batches_compared": [],
+  "other_sections_compared": []
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 8,
+  "ready": 3,
+  "review": 3,
+  "blocked": 2,
+  "existing": 0,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "as-001",
+   "line": 1,
+   "name": "Sputnik Climbing Asturias",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-e058446ef8"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "as-002",
+   "line": 2,
+   "name": "Boulder Up Climbing Café",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-8ac1bedb31"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "as-003",
+   "line": 3,
+   "name": "One Move",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-3ddf4ebd10"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "g-898c692e96 similar-name-nearby 186 m",
+     "ids": [
+      "g-898c692e96"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "g-898c692e96 \"One Move - Gijón\": similar-name-nearby (\"One Move\" / \"One Move - Gijón\", 186 m)",
+     "ids": [
+      "g-898c692e96"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    },
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": [
+    "g-898c692e96"
+   ]
+  },
+  {
+   "cid": "as-004",
+   "line": 4,
+   "name": "Boulder Moss Club de Escalada",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-98833b356d"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "as-005",
+   "line": 5,
+   "name": "Torresamper Climbing Center",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-042e011bc3"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "as-006",
+   "line": 6,
+   "name": "Climbat Avilés",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-d0763aa449"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "g-dc0eedb36f same-name-but-pin-differs 1074 m",
+     "ids": [
+      "g-dc0eedb36f"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "g-dc0eedb36f \"Climbat - Avilés\": same-name-but-pin-differs (\"Climbat Avilés\" / \"Climbat - Avilés\", 1074 m)",
+     "ids": [
+      "g-dc0eedb36f"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    },
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": [
+    "g-dc0eedb36f"
+   ]
+  },
+  {
+   "cid": "as-007",
+   "line": 7,
+   "name": "El Roko",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-9be2fb9806"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "as-008",
+   "line": 8,
+   "name": "Rocódromo La Calzada (Mata Jove)",
+   "class": "blocked",
+   "suggested": "reject not-a-gym",
+   "importer": {
+    "class": "new",
+    "id": "g-0304b6a970"
+   },
+   "blockers": [
+    {
+     "code": "not-a-gym",
+     "detail": "category other"
+    }
+   ],
+   "review_ids": []
+  }
+ ],
+ "reconcile_sha256": "764f769557bfb1389c07c740266dc643984b58ec1e2df08e20596e0fbab1b699"
+}

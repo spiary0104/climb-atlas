@@ -1,0 +1,54 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-05-retire-mokpo-lead",
+ "index": {
+  "sha256": "c39a34e746be744f3915d00339c5027b80c661ab41b39ef97e7adb102265b4e8",
+  "count": 2386,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [],
+ "counts": {
+  "records": 1,
+  "new": 0,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "retire": 1,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "e4f48fc789ee7edfb2040ccdcc0d4d64202280341957e5f30eba06db44e2ccbb",
+ "records": [
+  {
+   "line": 1,
+   "class": "retire",
+   "id": "g-7b824ae5b6",
+   "name": "Mokpo Lead Climbing Center",
+   "country": "KR",
+   "expect_h": "91e8e5098b06a1d0",
+   "reason_code": "insufficient-evidence",
+   "retire_reason": "Bouldering not confirmed: the gym pages only carry a #볼더링 hashtag and keyword, no bouldering area (re-check 2026-10-05)",
+   "entry": {
+    "id": "g-7b824ae5b6",
+    "name": "Mokpo Lead Climbing Center",
+    "country": "KR",
+    "state": "JEOLLANAM",
+    "suburb": "Mokpo-si",
+    "lat": 34.8046775,
+    "lng": 126.422869,
+    "address": "전라남도 목포시 백년대로 324 2층",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "91e8e5098b06a1d0"
+   }
+  }
+ ]
+}

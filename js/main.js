@@ -83,7 +83,7 @@ async function init(){
   if(appState.usingFallback){
     // The text lives here, not in the static shell: a crawler or reader mode must never pick up a warning that is not true.
     const banner = document.getElementById('offlineBanner');
-    banner.textContent = 'Showing offline seed data — Supabase isn’t configured yet, so live data, sign-in, and marks are unavailable. See README.md.';
+    banner.textContent = 'Can’t reach Bouldeer right now. Showing a saved list of gyms; sign-in, saving and check-ins come back when you’re online.';
     banner.classList.remove('hidden');
   }
 }

@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "updater_version": 1,
+  "kind": "update",
+  "batch_id": "2026-10-05-klattra-motala-note",
+  "status": "updated",
+  "target": {
+    "kind": "production",
+    "host": "thayxaampaelvntoaido.supabase.co"
+  },
+  "coverage": "FULL",
+  "plan_sha256": "9179a85ac9ad2392a72d4d772031d4e692d86cf4a1847c5ca54688ca1321614b",
+  "payload_sha256": "6eb10d48b68ed47241abf16eb9bd60fa9c2d93716d2676a3c25194d04613c7bc",
+  "confirm_token": "9cff4646a456ac7d",
+  "live_state_sha256": "262784098477938ca49322ac574ccfaea9126cf7d68db034adeea5a1c3a08bff",
+  "rows_updated": 0,
+  "approved_before": 2272,
+  "approved_after": 2272,
+  "changes": [],
+  "rows_info_filled": 1,
+  "info_filled": [
+    {
+      "id": "g-34538e5d42",
+      "fields": [
+        "notes"
+      ],
+      "expect_h": "9a82be3a7bb53cd7",
+      "after_h": "79eceb24fe4e154a"
+    }
+  ],
+  "verification": {
+    "ok": true,
+    "checked": 1,
+    "problems": []
+  },
+  "started_at": "2026-10-05T12:03:57.348Z",
+  "finished_at": "2026-10-05T12:04:00.521Z",
+  "ids": [
+    "g-34538e5d42"
+  ]
+}

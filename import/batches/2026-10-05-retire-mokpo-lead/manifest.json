@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "updater_version": 1,
+  "kind": "update",
+  "batch_id": "2026-10-05-retire-mokpo-lead",
+  "status": "updated",
+  "target": {
+    "kind": "production",
+    "host": "thayxaampaelvntoaido.supabase.co"
+  },
+  "coverage": "FULL",
+  "plan_sha256": "e4f48fc789ee7edfb2040ccdcc0d4d64202280341957e5f30eba06db44e2ccbb",
+  "payload_sha256": "08cb8700a878c1ecd80277e43c4cfb8e5518b8f2583bfd98e854f2af467082e1",
+  "confirm_token": "a32fcfc108e6d4d8",
+  "live_state_sha256": "f56879ba8890da6c87c9cef03c612b7f82eaa5abbc66bf9c01e928f0e5bcef9e",
+  "rows_updated": 0,
+  "approved_before": 2386,
+  "approved_after": 2385,
+  "changes": [],
+  "rows_retired": 1,
+  "retired": [
+    "g-7b824ae5b6"
+  ],
+  "retirements": [
+    {
+      "id": "g-7b824ae5b6",
+      "reason_code": "insufficient-evidence",
+      "reason": "Bouldering not confirmed: the gym pages only carry a #볼더링 hashtag and keyword, no bouldering area (re-check 2026-10-05)",
+      "expect_h": "91e8e5098b06a1d0"
+    }
+  ],
+  "verification": {
+    "ok": true,
+    "checked": 1,
+    "problems": []
+  },
+  "started_at": "2026-10-05T13:02:58.125Z",
+  "finished_at": "2026-10-05T13:03:01.006Z",
+  "ids": [
+    "g-7b824ae5b6"
+  ]
+}

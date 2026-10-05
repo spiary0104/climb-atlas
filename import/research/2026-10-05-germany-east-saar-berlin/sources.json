@@ -1,0 +1,264 @@
+{
+ "schema_version": 1,
+ "sources": {
+  "OSM": {
+   "kind": "map-data",
+   "title": "OpenStreetMap (Overpass extract and element pages, 2026-10-05)",
+   "url": "https://www.openstreetmap.org/",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "NOM": {
+   "kind": "map-data",
+   "title": "OpenStreetMap Nominatim geocoder",
+   "url": "https://nominatim.openstreetmap.org/",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "BLOCKPARK": {
+   "kind": "official-site",
+   "title": "Blockpark Erfurt (Kletterhalle Erfurt)",
+   "url": "https://www.blockpark.de/",
+   "language": "de",
+   "accessed": "2026-10-05"
+  },
+  "NORDWAND": {
+   "kind": "official-site",
+   "title": "Nordwand Erfurt",
+   "url": "https://www.nordwand-erfurt.de/",
+   "language": "de",
+   "accessed": "2026-10-05"
+  },
+  "PLANB": {
+   "kind": "official-site",
+   "title": "Plan B Boulderhalle Jena",
+   "url": "https://planb-jena.de/",
+   "language": "de",
+   "accessed": "2026-10-05"
+  },
+  "ROCKS": {
+   "kind": "official-site",
+   "title": "rocks. Kletterzentrum Jena",
+   "url": "https://www.rocks-jena.de/",
+   "language": "de",
+   "accessed": "2026-10-05"
+  },
+  "DAVJENA": {
+   "kind": "official-site",
+   "title": "DAV Sektion Jena: DAV Kletterhalle (Umspannwerk Jena-Nord)",
+   "url": "https://alpenverein-jena.de/klettersport/dav-kletterhalle/",
+   "language": "de",
+   "accessed": "2026-10-05"
+  },
+  "BNR": {
+   "kind": "official-site",
+   "title": "Block'n'Roll Weimar (Pure Climbing e.V.)",
+   "url": "https://blockandroll.de/",
+   "language": "de",
+   "accessed": "2026-10-05"
+  },
+  "WEIMAR": {
+   "kind": "official-site",
+   "title": "Kletter- und Boulderhalle Weimar (DAV Sektion Weimar)",
+   "url": "https://kletterhalle-weimar.de/",
+   "language": "de",
+   "accessed": "2026-10-05"
+  },
+  "KHILM": {
+   "kind": "official-site",
+   "title": "Kletterhütte Ilmenau",
+   "url": "https://xn--kletterhtte-0hb.de/en/",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "SCHMOELLN": {
+   "kind": "other",
+   "title": "Stadt Schmölln: Kletterhalle (municipal page)",
+   "url": "https://www.schmoelln.de/leben-und-wohnen/sportstaetten-und-buergerhaeuser/sport-und-turnhallen/kletterhalle",
+   "language": "de",
+   "accessed": "2026-10-05"
+  },
+  "LIFE": {
+   "kind": "official-site",
+   "title": "Life Fitness und Gesundheitsclub Saalfeld: Life Kletterhalle",
+   "url": "https://life-saalfeld.de/life-kletterhalle/",
+   "language": "de",
+   "accessed": "2026-10-05"
+  },
+  "KEISENACH": {
+   "kind": "official-site",
+   "title": "Indoor-Kletterpark Alte Brauerei Eisenach",
+   "url": "https://www.kletterpark-eisenach.de/",
+   "language": "de",
+   "accessed": "2026-10-05"
+  },
+  "MEININGEN": {
+   "kind": "official-site",
+   "title": "DAV Sektion Meiningen: St. Veit Kletterturm",
+   "url": "https://dav-meiningen.de/kletterturm/",
+   "language": "de",
+   "accessed": "2026-10-05"
+  },
+  "BKOMB": {
+   "kind": "official-site",
+   "title": "Boulderkombinat Halle",
+   "url": "https://boulderkombinat.de/",
+   "language": "de",
+   "accessed": "2026-10-05"
+  },
+  "THALIA": {
+   "kind": "official-site",
+   "title": "IG Klettern Halle/Loebejuen: Kletterthalia",
+   "url": "https://ig-klettern-halle.de/kletterthalia",
+   "language": "de",
+   "accessed": "2026-10-05"
+  },
+  "BLOC": {
+   "kind": "official-site",
+   "title": "BlocSchmiede Boulderhalle Magdeburg",
+   "url": "https://www.blocschmiede-boulderhalle.de/",
+   "language": "de",
+   "accessed": "2026-10-05"
+  },
+  "SCHMIEDEBLOC": {
+   "kind": "official-site",
+   "title": "Schmiedebloc Bad Schmiedeberg",
+   "url": "https://www.schmiedebloc.de/",
+   "language": "de",
+   "accessed": "2026-10-05"
+  },
+  "ATELIER": {
+   "kind": "official-site",
+   "title": "DAV Sektion Suedharz/Sangerhausen: Kletteratelier",
+   "url": "https://www.dav-suedharz.de/kletteranlagen/oeffnungszeiten/",
+   "language": "de",
+   "accessed": "2026-10-05"
+  },
+  "ZUCKER": {
+   "kind": "official-site",
+   "title": "Kletterzentrum Zuckerturm Dessau",
+   "url": "https://www.zuckerturm.de/",
+   "language": "de",
+   "accessed": "2026-10-05"
+  },
+  "KZSB": {
+   "kind": "official-site",
+   "title": "Kletterzentrum Saarbruecken (de. subdomain; main host has an expired TLS certificate)",
+   "url": "http://de.kletterzentrum-saarbruecken.de/",
+   "language": "de",
+   "accessed": "2026-10-05"
+  },
+  "BWERK": {
+   "kind": "official-site",
+   "title": "Boulderwerk Saarbruecken",
+   "url": "https://www.boulderwerk.com/",
+   "language": "de",
+   "accessed": "2026-10-05"
+  },
+  "KBA": {
+   "kind": "official-site",
+   "title": "KBA Kletter- und Boulderarena Saarbruecken",
+   "url": "https://www.kba-saar.de/",
+   "language": "de",
+   "accessed": "2026-10-05"
+  },
+  "ROCKL": {
+   "kind": "official-site",
+   "title": "Rocklands Climbing (Saarlouis, St. Wendel)",
+   "url": "https://www.rocklands-climbing.com/",
+   "language": "de",
+   "accessed": "2026-10-05"
+  },
+  "DADA": {
+   "kind": "official-site",
+   "title": "Dada Boulders Wadgassen",
+   "url": "https://dadaboulders.de/",
+   "language": "de",
+   "accessed": "2026-10-05"
+  },
+  "OLYMP": {
+   "kind": "official-site",
+   "title": "Boulder Olymp Bexbach",
+   "url": "https://www.boulderolymp.de/",
+   "language": "de",
+   "accessed": "2026-10-05"
+  },
+  "DAVSB": {
+   "kind": "official-site",
+   "title": "DAV Sektion Saarbruecken: Kletterhalle Ensdorf",
+   "url": "https://www.dav-saarbruecken.de/unsere-angebote/kletterhalle/",
+   "language": "de",
+   "accessed": "2026-10-05"
+  },
+  "HOCHWALD": {
+   "kind": "official-site",
+   "title": "DAV Sektion Hochwald: Kletterzentrum Hochwald",
+   "url": "https://www.dav-hochwald.de/kletterzentrum-hochwald/",
+   "language": "de",
+   "accessed": "2026-10-05"
+  },
+  "UA": {
+   "kind": "chain-store-list",
+   "title": "urban apes (chain site, all locations)",
+   "url": "https://www.urbanapes.de/",
+   "language": "de",
+   "accessed": "2026-10-05"
+  },
+  "UABASE": {
+   "kind": "official-site",
+   "title": "urban apes Basement Berlin",
+   "url": "https://www.urbanapes.de/basement/",
+   "language": "de",
+   "accessed": "2026-10-05"
+  },
+  "UABRIGHT": {
+   "kind": "official-site",
+   "title": "urban apes bright site Berlin",
+   "url": "https://www.urbanapes.de/brightsite/",
+   "language": "de",
+   "accessed": "2026-10-05"
+  },
+  "UAFHAIN": {
+   "kind": "official-site",
+   "title": "urban apes Fhain Berlin",
+   "url": "https://www.urbanapes.de/fhain/",
+   "language": "de",
+   "accessed": "2026-10-05"
+  },
+  "UAWEDD": {
+   "kind": "official-site",
+   "title": "urban apes Berlin Wedding",
+   "url": "https://www.urbanapes.de/wedding/",
+   "language": "de",
+   "accessed": "2026-10-05"
+  },
+  "KEGEL": {
+   "kind": "official-site",
+   "title": "Der Kegel Berlin",
+   "url": "https://www.derkegel.de/",
+   "language": "de",
+   "accessed": "2026-10-05"
+  },
+  "BL": {
+   "kind": "directory",
+   "title": "Boulderland (directory, discovery aid only)",
+   "url": "https://www.boulderland.de/",
+   "language": "de",
+   "accessed": "2026-10-05"
+  },
+  "BHF": {
+   "kind": "directory",
+   "title": "boulderhallenfinder.de (directory, discovery aid only)",
+   "url": "https://boulderhallenfinder.de/",
+   "language": "de",
+   "accessed": "2026-10-05"
+  },
+  "KVFL": {
+   "kind": "directory",
+   "title": "kvfl.com: Kuenstliche Waende in Thueringen (directory, discovery aid only)",
+   "url": "https://kvfl.com/blog/kuenstliche-waende-in-thueringen/42/",
+   "language": "de",
+   "accessed": "2026-10-05"
+  }
+ }
+}

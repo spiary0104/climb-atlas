@@ -1,0 +1,178 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-05-germany-east-saar-berlin",
+ "reviewer": "Spiar (owner); decisions drafted by Claude (AI) on the owner's instruction, pending owner sign-off",
+ "reviewed": "2026-10-05",
+ "decisions": {
+  "dee-001": {
+   "decision": "same-as",
+   "same_as": "seed-968",
+   "reason": "Importer exact match: same name, same address (Motzstraße 8), 0 m. Own site re-read 2026-10-05 (open daily 10-22). No location update needed."
+  },
+  "dee-002": {
+   "decision": "accept",
+   "reason": "Own site (re-read 2026-10-05) shows exists, open (hours, autumn camps dated Oct 2026), address and 580 m2 of boulder walls plus rope walls; pin is OSM way 290564048 with the same address.",
+   "reviewed_against": []
+  },
+  "dee-003": {
+   "decision": "same-as",
+   "same_as": "seed-1053",
+   "reason": "Importer exact match: same name and address (Carl-Pulfrich-Straße 4), 2 m from the existing pin. No location update needed."
+  },
+  "dee-004": {
+   "decision": "accept",
+   "reason": "Own site shows an open centre with a bouldering hall (opened Aug 2023), hours, news dated Sep 2026; pin is OSM way 56460634 with the address.",
+   "reviewed_against": []
+  },
+  "dee-005": {
+   "decision": "accept",
+   "reason": "Club hall (DAV Sektion Jena) but public: own page lists public sessions Tue 18:30-22:00 and Thu 19:00-22:00 with a EUR 4 guest day pass, a dedicated boulder area and wall bouldering; pin is OSM way 56462696 (Löbstedter Straße 67). Access is limited to two evenings a week and unsupervised, hence a club-wall flag only.",
+   "reviewed_against": []
+  },
+  "dee-006": {
+   "decision": "accept",
+   "reason": "Volunteer-run club hall but public: own site gives day tickets for non-members (EUR 15 / reduced EUR 10), Mon-Fri 17-22 and Sun 16-22, bouldering only; pin is OSM node 9397842769 with the address. Hours may change at short notice (stated on the site).",
+   "reviewed_against": []
+  },
+  "dee-007": {
+   "decision": "accept",
+   "reason": "DAV Sektion Weimar centre with public opening hours every day (Mon-Wed 14-23, Thu-Fri 10-23, Sat-Sun 10-21), a boulder area (new section opened 1 October) and event dates in Nov 2026; pin is OSM way 412943125 with the address. Separate from Block'n'Roll (dee-006, 0.6 km away, different address).",
+   "reviewed_against": []
+  },
+  "dee-008": {
+   "decision": "defer",
+   "reason": "Kletterhütte Ilmenau is announced, not open: own site (2026-10-05) says \"opening soon\", no date, newsletter only. Re-check when it opens; bouldering walls are announced."
+  },
+  "dee-009": {
+   "decision": "defer",
+   "reason": "Only a municipal page was found (not the operator): public climbing Wednesday 17-20 and a \"small bouldering cave\"; no operator or official-social confirmation and street-level pin. Needs an operator source and a house-level pin."
+  },
+  "dee-010": {
+   "decision": "defer",
+   "reason": "Fitness and health club with a climbing hall; own page mentions only a consent form for \"Selbstständiges Bouldern\", no boulder area or description. Need a source showing a real boulder area before it counts as a bouldering gym."
+  },
+  "dee-011": {
+   "decision": "reject",
+   "reason_code": "not-a-gym",
+   "reason": "Indoor climbing park (rope parcours, tickets booked online): own site shows no boulder area; only a third-party directory claims boulder areas. Not a bouldering gym on the evidence."
+  },
+  "dee-012": {
+   "decision": "defer",
+   "reason": "Church-tower climbing wall of DAV Meiningen: own page shows 125 m2 of rope climbing, certificate needed outside course times, no boulder area; street address not published. Needs a bouldering source and an address."
+  },
+  "dee-013": {
+   "decision": "accept",
+   "reason": "Own site shows the public bouldering hall open daily 10-22; pin is OSM node 4769234378 with the same address.",
+   "reviewed_against": []
+  },
+  "dee-014": {
+   "decision": "accept",
+   "reason": "Club hall of IG Klettern Halle but with public single-entry passes (EUR 6 non-members, max three visits before joining) on weekdays 17-22 and Sundays; own page calls it a pure bouldering hall; pin is OSM way 163721424 (Thaliapassage 3). Site news dated Sep 2026.",
+   "reviewed_against": []
+  },
+  "dee-015": {
+   "decision": "same-as",
+   "same_as": "seed-969",
+   "reason": "Importer exact match: same name, 0 m. No location update needed."
+  },
+  "dee-016": {
+   "decision": "accept",
+   "reason": "Single-source, street-level pin, accepted: own site (home and /training/) shows an open bouldering hall in a former church (opened June 2024), free bouldering sessions Tue-Fri for members and interested visitors, address Promenade 9. The pin is the Promenade street way from Nominatim (precision recorded as street; no house point exists in OSM) and Promenade is a short street, so the error should be well under 100 m. Not an exact entrance; a later pin correction is possible.",
+   "reviewed_against": []
+  },
+  "dee-017": {
+   "decision": "accept",
+   "reason": "DAV Sektion Suedharz hall; own opening-hours page says the facilities are open to all interested people and members Mon 17-19, Tue 17-19, Fri 17-18:30 and the section runs \"Kletter- und Boulderbetrieb\", with guest climbing and rental. Pin is OSM node 2806894774. Boulder size comes only from the DAV hall directory (70 m2 indoor).",
+   "reviewed_against": []
+  },
+  "dee-018": {
+   "decision": "defer",
+   "reason": "DAV hall with no fixed opening hours (course times or arrangement only; members with key); own pages mention boulder rules and a mobile boulder block but no fixed boulder area. Need current public access and a boulder-area source."
+  },
+  "dee-019": {
+   "decision": "same-as",
+   "same_as": "seed-1038",
+   "reason": "Importer exact match: same name and address (Mainzer Straße 30), 0 m. Own site re-read via the de. host (expired certificate on www): open, 400 m2 bouldering."
+  },
+  "dee-020": {
+   "decision": "accept",
+   "reason": "Own site shows the 2023-opened bouldering hall (1,500 m2, Kilter Board) with hours and address; pin is OSM node 10694355774. Separate gym from KBA and Kletterzentrum (different address, 3+ km).",
+   "reviewed_against": []
+  },
+  "dee-021": {
+   "decision": "same-as",
+   "same_as": "seed-1021",
+   "reason": "Same gym: existing seed-1021 \"KBA-Saar\" is at the same address (Herrensohrer Wiesen 1), 5 m from the candidate pin (OSM way 116595831). Name differs only in the long form. No location update needed."
+  },
+  "dee-022": {
+   "decision": "accept",
+   "reason": "Own chain site shows Saarlouis hall with 400 m2 bouldering and hours; pin is OSM way 642011313 with the address. Sister hall Rocklands St. Wendel (dee-023) is 35 km away and a separate gym.",
+   "reviewed_against": []
+  },
+  "dee-023": {
+   "decision": "accept",
+   "reason": "Own chain site shows St. Wendel hall with 600 m2 bouldering and hours; pin is OSM way 116357625 with the address.",
+   "reviewed_against": []
+  },
+  "dee-024": {
+   "decision": "reject",
+   "reason_code": "closed",
+   "reason": "Own site (re-read 2026-10-05) states \"Dada Boulders ist dauerhaft geschlossen\" (permanently closed) while old hours are still shown."
+  },
+  "dee-025": {
+   "decision": "accept",
+   "reason": "Own site shows an open hall with 800 m2 of bouldering, hours and address; pin is OSM node 7836824296.",
+   "reviewed_against": []
+  },
+  "dee-026": {
+   "decision": "defer",
+   "reason": "DAV Sektion Saarbruecken hall with an 80 m2 boulder area and guest sessions (Mon, Wed, Fri evenings), but the only published schedule is an announcement dated 27 Feb 2022 and use requires an application form and fee. Need a current schedule or confirmation that it is open to the public."
+  },
+  "dee-027": {
+   "decision": "accept",
+   "reason": "DAV Sektion Hochwald hall; own page says the offer applies to everyone, not only members, with public hours Tue-Thu 16:30-21:30, Fri 16-21, Sun 10-14, and states climbing and bouldering since Sep 2019. Pin is OSM way 1009120545 with the address.",
+   "reviewed_against": []
+  },
+  "dee-028": {
+   "decision": "same-as",
+   "same_as": "seed-962",
+   "reason": "Same gym: existing seed-962 \"urban apes Basement Berlin\" has the identical name. The candidate pin is the OSM sports-centre node at Stresemannstraße 72 (address confirmed on the branch page and chain list) but the existing pin is 2,279 m away, so the existing record is mislocated (a different urban apes branch is not at that distance: Fhain is 4.1 km from this pin). followup location-update recommended; the owner should look at the existing pin before the update batch.",
+   "followup": "location-update"
+  },
+  "dee-029": {
+   "decision": "accept",
+   "reason": "Chain list and own branch page show urban apes bright site (Wilhelm-Kabus-Straße 40, 800 m2 indoors, open daily 9-23); pin is the same-named OSM way 338316877. No existing Bouldeer gym within 150 m. Related-name flags are the other urban apes branches (2.7 to 7.9 km apart, each with its own address on the chain list) and seed-962, which is the Basement branch (same-as in dee-028), not this one.",
+   "reviewed_against": [
+    "dee-028",
+    "dee-030",
+    "dee-031",
+    "seed-962"
+   ]
+  },
+  "dee-030": {
+   "decision": "accept",
+   "reason": "Chain list and own branch page show urban apes Fhain (Friedenstraße 91 B, open daily 9-21:45); pin is the same-named OSM node 11586008955. No existing Bouldeer gym within 150 m. Related-name flags are the other urban apes branches (2.7 to 7.9 km apart, each with its own address on the chain list) and seed-962, which is the Basement branch (same-as in dee-028), not this one.",
+   "reviewed_against": [
+    "dee-028",
+    "dee-029",
+    "dee-031",
+    "seed-962"
+   ]
+  },
+  "dee-031": {
+   "decision": "accept",
+   "reason": "Chain list and own branch page show urban apes Berlin Wedding (Müllerstraße 46, daily 9-22); pin is the same-named OSM node 13120990283. No existing Bouldeer gym within 150 m. Related-name flags are the other urban apes branches (2.7 to 7.9 km apart, each with its own address on the chain list) and seed-962, which is the Basement branch (same-as in dee-028), not this one.",
+   "reviewed_against": [
+    "dee-028",
+    "dee-029",
+    "dee-030",
+    "seed-962"
+   ]
+  },
+  "dee-032": {
+   "decision": "accept",
+   "reason": "Own site shows the open bouldering and climbing hall (indoor and outdoor bouldering up to 4 m), daily 9-23, Revaler Straße 99; pin is the same-named OSM way 317216617. No existing Bouldeer gym matched by the importer or the review radii.",
+   "reviewed_against": []
+  }
+ }
+}

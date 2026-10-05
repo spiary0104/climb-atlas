@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "updater_version": 1,
+  "kind": "update",
+  "batch_id": "2026-10-05-arkose-cholet-info",
+  "status": "updated",
+  "target": {
+    "kind": "production",
+    "host": "thayxaampaelvntoaido.supabase.co"
+  },
+  "coverage": "FULL",
+  "plan_sha256": "b1e11829dce5a8063e31dbecfc7fd9db076aa2b9e0ed5480a5d1234d5a697585",
+  "payload_sha256": "9e078a40b1490e50f17471cde3debf89a66fba08b134e25826ddcda3e560503e",
+  "confirm_token": "1f9ef9c156669577",
+  "live_state_sha256": "d8a07609fac37a082f6d23366e50ab048d8e6faba26fdc977ee4f000d7645b61",
+  "rows_updated": 0,
+  "approved_before": 2272,
+  "approved_after": 2272,
+  "changes": [],
+  "rows_info_filled": 1,
+  "info_filled": [
+    {
+      "id": "g-9e0a4cb76f",
+      "fields": [
+        "website",
+        "hours",
+        "facilities"
+      ],
+      "expect_h": "e596a4210625e148",
+      "after_h": "e596a4210625e148"
+    }
+  ],
+  "verification": {
+    "ok": true,
+    "checked": 1,
+    "problems": []
+  },
+  "started_at": "2026-10-05T10:59:39.018Z",
+  "finished_at": "2026-10-05T10:59:42.124Z",
+  "ids": [
+    "g-9e0a4cb76f"
+  ]
+}

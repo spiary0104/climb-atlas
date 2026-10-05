@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-05-korea-gwangju-jeollanam",
+  "description": "Regional research \"Korea: Gwangju + Jeollanam-do\": 11 new gym(s) accepted of 26 candidate(s)",
+  "created": "2026-10-05",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-10-05-korea-gwangju-jeollanam",
+    "section_sha256": "0796482a12c254bdd27999a78d08bef664f8301867131eb5e5f9974156b6d6b7",
+    "sources_sha256": "0dbd0ccd626773a19db43ade0b67230cbbefbe75b7c83669d71c594904d8f631",
+    "candidates_sha256": "f4858cc28d4f7eb5ff4a243da82dea80ec3fe7700505d83ec1d3bd869a1aacb7",
+    "reconcile_sha256": "f717c1318e7aa967ff5c6848830e14b775734fb4bfc2966972f86a4146693324",
+    "review_sha256": "a89567ac468ea8f0c727c31418689add3c8ed70a04d884977d8c8c2f3fea3168",
+    "candidates": 26,
+    "staged": 11,
+    "decisions": {
+      "accept": 11,
+      "defer": 6,
+      "reject": 6,
+      "same-as": 3
+    }
+  },
+  "index_at_staging": {
+    "sha256": "c97e3035f0208405f11b34c45813a104e2c9b1d4f25a4a3a6a6a349f627e2918",
+    "count": 2272
+  }
+}

@@ -1,0 +1,96 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-05-italy-city-gaps",
+ "index": {
+  "sha256": "a06c363f1aef6e1b428e42f402827f39b99b8e8d816fb1f604f9fabf383de06b",
+  "count": 2324,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-05-france-chains",
+  "2026-10-05-korea-gwangju-jeollanam"
+ ],
+ "counts": {
+  "records": 8,
+  "new": 8,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "fbea4b0d0052343a0cb919ba9bc7c14366815f7be54fbe34874f14ded7034d81",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-31c1a16852",
+   "id_frozen": true,
+   "name": "SASP Arrampicata",
+   "country": "IT"
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-7da020b015",
+   "id_frozen": true,
+   "name": "BoulderBar",
+   "country": "IT"
+  },
+  {
+   "line": 3,
+   "class": "new",
+   "id": "g-b9cb399ce3",
+   "id_frozen": true,
+   "name": "Escape Climbing Garden",
+   "country": "IT"
+  },
+  {
+   "line": 4,
+   "class": "new",
+   "id": "g-c4b997cec9",
+   "id_frozen": true,
+   "name": "Bside Climbing Village",
+   "country": "IT"
+  },
+  {
+   "line": 5,
+   "class": "new",
+   "id": "g-ee2642434a",
+   "id_frozen": true,
+   "name": "UP Urban Climbing",
+   "country": "IT"
+  },
+  {
+   "line": 6,
+   "class": "new",
+   "id": "g-94c5fd66d3",
+   "id_frozen": true,
+   "name": "Level24",
+   "country": "IT"
+  },
+  {
+   "line": 7,
+   "class": "new",
+   "id": "g-fa313f080a",
+   "id_frozen": true,
+   "name": "Monkeys' Planet",
+   "country": "IT"
+  },
+  {
+   "line": 8,
+   "class": "new",
+   "id": "g-213fd25aed",
+   "id_frozen": true,
+   "name": "SCALART Climbing Palermo",
+   "country": "IT"
+  }
+ ]
+}

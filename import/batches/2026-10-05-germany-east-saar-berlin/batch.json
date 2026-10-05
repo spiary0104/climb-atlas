@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-05-germany-east-saar-berlin",
+  "description": "Regional research \"Germany: Thüringen, Sachsen-Anhalt, Saarland + Berlin gaps\": 18 new gym(s) accepted of 32 candidate(s)",
+  "created": "2026-10-05",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-10-05-germany-east-saar-berlin",
+    "section_sha256": "053181c375e1a3a9f4aca3d9125b2267924367247ef340a1085175e624d76aef",
+    "sources_sha256": "8fd2f9554724beec9ab32b39aa262b21208e945428696cb8d5a33e1c419b9eb2",
+    "candidates_sha256": "3d8ce4141e610ea206427a1828236611ca36c185fbdf09d67ae4878e05b099b6",
+    "reconcile_sha256": "899f88ce108a91c2c04aaeef86aff77bff214bad5a6abd1198df3e8b7de202c0",
+    "review_sha256": "2b619f5094a68c7b227e8ad4d10980a147eba31adac63bd1b0bf6422d2ea9865",
+    "candidates": 32,
+    "staged": 18,
+    "decisions": {
+      "accept": 18,
+      "defer": 6,
+      "reject": 2,
+      "same-as": 6
+    }
+  },
+  "index_at_staging": {
+    "sha256": "c97e3035f0208405f11b34c45813a104e2c9b1d4f25a4a3a6a6a349f627e2918",
+    "count": 2272
+  }
+}

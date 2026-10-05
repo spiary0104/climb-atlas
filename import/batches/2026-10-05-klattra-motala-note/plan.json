@@ -1,0 +1,50 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-05-klattra-motala-note",
+ "index": {
+  "sha256": "faac8086d857550e06d9c15b6eacfa32cfd6a5649a40e8a136c3847aee17737a",
+  "count": 2272,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-05-france-chains",
+  "2026-10-05-germany-east-saar-berlin",
+  "2026-10-05-italy-city-gaps",
+  "2026-10-05-korea-gwangju-jeollanam",
+  "2026-10-05-spain-asturias",
+  "2026-10-05-uk-single-gym-towns"
+ ],
+ "counts": {
+  "records": 1,
+  "new": 0,
+  "existing": 0,
+  "update": 1,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "9179a85ac9ad2392a72d4d772031d4e692d86cf4a1847c5ca54688ca1321614b",
+ "records": [
+  {
+   "line": 1,
+   "class": "update",
+   "id": "g-34538e5d42",
+   "changes": [
+    {
+     "field": "notes",
+     "before": null,
+     "after": "Temporarily closed (last checked 5 October 2026)."
+    }
+   ],
+   "expect_h": "9a82be3a7bb53cd7",
+   "update_reason": "Official climbing page says Tillfälligt stängt (temporarily closed); owner re-check 2026-10-05"
+  }
+ ]
+}

@@ -32,6 +32,8 @@ test('validation: a retire record -- good shapes pass; every bad shape gets a sp
   assert.deepEqual((await V.validateRetireRecord(RETIRE({ reason_code: 'duplicate', duplicate_of: 'seed-434' }))).errors, []);
   assert.deepEqual((await V.validateRetireRecord(RETIRE({ id: 'community-0f3a7c2e-1111-4222-8333-444455556666' }))).errors, []);
   assert.deepEqual((await V.validateRetireRecord(RETIRE({ id: 'g-0123456789', reason: 'x'.repeat(200) }))).errors, []);
+  assert.deepEqual((await V.validateRetireRecord(RETIRE({ reason_code: 'insufficient-evidence', reason: 'bouldering not confirmed on a re-check of the gym pages' }))).errors, []);
+  assert.ok(codes(await V.validateRetireRecord(RETIRE({ reason_code: 'insufficient-evidence', duplicate_of: 'seed-434' }))).includes('duplicate-of-forbidden'));
   const bad = [
     [{ intent: 'update' }, 'bad-intent'], [{ intent: undefined }, 'bad-intent'],
     [{ id: undefined }, 'bad-id'], [{ id: 'seed 1' }, 'bad-id'], [{ id: '../x' }, 'bad-id'],
@@ -49,7 +51,7 @@ test('validation: a retire record -- good shapes pass; every bad shape gets a sp
     assert.ok(codes(r).includes(code), `${JSON.stringify(over)} should give ${code}, got ${codes(r)}`);
     assert.ok(r.errors.every(e => e.message.length > 10), 'messages are descriptive');
   }
-  assert.deepEqual(V.REASON_CODES, ['closed', 'duplicate']);
+  assert.deepEqual(V.REASON_CODES, ['closed', 'duplicate', 'insufficient-evidence']);
 });
 
 test('validation: photo must be a plain http(s) URL (same rule as the app: safeUrl)', async () => {

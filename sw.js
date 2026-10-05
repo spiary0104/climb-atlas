@@ -40,7 +40,7 @@
 // v36: gym page links to its whole city: "All 22 gyms in Sydney" (gym-page.js, page-html.js, page.css).
 // v37: the legacy seed file is retired from the runtime: offline list from data/spots-fallback.json (fetched on demand, not precached);
 //      "Revert to original" removed from the edit form (modals.js, index.html, style.css).
-const CACHE_VERSION = 'v37';
+const CACHE_VERSION = 'v38';
 const SHELL_CACHE = 'climbatlas-shell-' + CACHE_VERSION;
 const RUNTIME_CACHE = 'climbatlas-runtime-' + CACHE_VERSION;
 const TILE_CACHE = 'climbatlas-tiles-' + CACHE_VERSION;

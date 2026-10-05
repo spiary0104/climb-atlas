@@ -1,0 +1,1724 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-05-france-chains",
+ "inputs": {
+  "section_sha256": "85845df5325fed862f19e6dcc7bb179d4595f514c87754281abef7184b8f6557",
+  "sources_sha256": "f497b80fbdf8e52723446d0e49dc4c39c525d1abbac4574a665412a3e183f8b2",
+  "candidates_sha256": "4f69658a1eff5a5c61b387894c1fbf1d95a91c9b20d6585c7a0ef3e762379fcd",
+  "index": {
+   "sha256": "c97e3035f0208405f11b34c45813a104e2c9b1d4f25a4a3a6a6a349f627e2918",
+   "count": 2272
+  },
+  "staged_batches_compared": [],
+  "other_sections_compared": []
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 69,
+  "ready": 33,
+  "review": 17,
+  "blocked": 3,
+  "existing": 16,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "fr-001",
+   "line": 1,
+   "name": "Climb Up Aix - Bouc Bel Air",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-da2ba86580"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "fr-002",
+   "line": 2,
+   "name": "Climb Up Aubagne",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-cc0571d0a8"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "fr-003",
+   "line": 3,
+   "name": "Climb Up Marseille - La Valentine",
+   "class": "existing",
+   "suggested": "same-as seed-1093",
+   "importer": {
+    "class": "existing",
+    "id": "seed-1093",
+    "match": {
+     "id": "seed-1093",
+     "name": "Climb Up - Marseille La Valentine",
+     "reason": "same-name",
+     "dist_m": 45
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-1093 but content differs (name, lat, lng, address); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1093 \"Climb Up - Marseille La Valentine\": same-name (\"Climb Up Marseille - La Valentine\" / \"Climb Up - Marseille La Valentine\", 45 m)",
+     "ids": [
+      "seed-1093"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-1093"
+   ]
+  },
+  {
+   "cid": "fr-004",
+   "line": 4,
+   "name": "Climb Up Lyon Gerland",
+   "class": "existing",
+   "suggested": "same-as seed-1085",
+   "importer": {
+    "class": "existing",
+    "id": "seed-1085",
+    "match": {
+     "id": "seed-1085",
+     "name": "Climb Up - Lyon Gerland",
+     "reason": "same-name",
+     "dist_m": 29
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-1085 but content differs (name, lat, lng, address); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1085 \"Climb Up - Lyon Gerland\": same-name (\"Climb Up Lyon Gerland\" / \"Climb Up - Lyon Gerland\", 29 m)",
+     "ids": [
+      "seed-1085"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate fr-015 \"Climb Up Lyon - Confluence\": related names \"Climb Up Lyon Gerland\" / \"Climb Up Lyon - Confluence\" 1412 m apart",
+     "ids": [
+      "fr-015"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-1084 \"Climb Up - Lyon Confluence\": related names \"Climb Up Lyon Gerland\" / \"Climb Up - Lyon Confluence\" 1523 m apart",
+     "ids": [
+      "seed-1084"
+     ]
+    }
+   ],
+   "review_ids": [
+    "fr-015",
+    "seed-1084",
+    "seed-1085"
+   ]
+  },
+  {
+   "cid": "fr-005",
+   "line": 5,
+   "name": "Climb Up Brest",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-e7fb9ec054"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "fr-006",
+   "line": 6,
+   "name": "Climb Up Angers - Les Ponts de Cé",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-375b427b55"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "fr-007",
+   "line": 7,
+   "name": "Climb Up Nancy",
+   "class": "existing",
+   "suggested": "same-as g-47d662e918",
+   "importer": {
+    "class": "existing",
+    "id": "g-47d662e918",
+    "match": {
+     "id": "g-47d662e918",
+     "name": "Climb Up - Nancy",
+     "reason": "same-name",
+     "dist_m": 12
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing g-47d662e918 but content differs (name, suburb, lat, lng, address, types); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "g-47d662e918 \"Climb Up - Nancy\": same-name (\"Climb Up Nancy\" / \"Climb Up - Nancy\", 12 m)",
+     "ids": [
+      "g-47d662e918"
+     ]
+    }
+   ],
+   "review_ids": [
+    "g-47d662e918"
+   ]
+  },
+  {
+   "cid": "fr-008",
+   "line": 8,
+   "name": "Climb Up Limoges",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-fa22decd6e"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "fr-009",
+   "line": 9,
+   "name": "Climb Up Bordeaux - Mérignac",
+   "class": "existing",
+   "suggested": "same-as g-e0d5a84e0e",
+   "importer": {
+    "class": "existing",
+    "id": "g-e0d5a84e0e",
+    "match": {
+     "id": "g-e0d5a84e0e",
+     "name": "Climb Up - Bordeaux Mérignac",
+     "reason": "same-name",
+     "dist_m": 0
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing g-e0d5a84e0e but content differs (name, lat, lng, address, types); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "g-e0d5a84e0e \"Climb Up - Bordeaux Mérignac\": same-name (\"Climb Up Bordeaux - Mérignac\" / \"Climb Up - Bordeaux Mérignac\", 0 m)",
+     "ids": [
+      "g-e0d5a84e0e"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate fr-010 \"Climb Up Bordeaux - Eysines\": related names \"Climb Up Bordeaux - Mérignac\" / \"Climb Up Bordeaux - Eysines\" 3424 m apart",
+     "ids": [
+      "fr-010"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate fr-021 \"Climb Up Bordeaux Villenave\": related names \"Climb Up Bordeaux - Mérignac\" / \"Climb Up Bordeaux Villenave\" 10945 m apart",
+     "ids": [
+      "fr-021"
+     ]
+    }
+   ],
+   "review_ids": [
+    "fr-010",
+    "fr-021",
+    "g-e0d5a84e0e"
+   ]
+  },
+  {
+   "cid": "fr-010",
+   "line": 10,
+   "name": "Climb Up Bordeaux - Eysines",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-1691bbd032"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate fr-009 \"Climb Up Bordeaux - Mérignac\": related names \"Climb Up Bordeaux - Eysines\" / \"Climb Up Bordeaux - Mérignac\" 3424 m apart",
+     "ids": [
+      "fr-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate fr-021 \"Climb Up Bordeaux Villenave\": related names \"Climb Up Bordeaux - Eysines\" / \"Climb Up Bordeaux Villenave\" 11953 m apart",
+     "ids": [
+      "fr-021"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "g-e0d5a84e0e \"Climb Up - Bordeaux Mérignac\": related names \"Climb Up Bordeaux - Eysines\" / \"Climb Up - Bordeaux Mérignac\" 3424 m apart",
+     "ids": [
+      "g-e0d5a84e0e"
+     ]
+    }
+   ],
+   "review_ids": [
+    "fr-009",
+    "fr-021",
+    "g-e0d5a84e0e"
+   ]
+  },
+  {
+   "cid": "fr-011",
+   "line": 11,
+   "name": "Climb Up Chambéry",
+   "class": "existing",
+   "suggested": "same-as g-1b773ea6ba",
+   "importer": {
+    "class": "existing",
+    "id": "g-1b773ea6ba",
+    "match": {
+     "id": "g-1b773ea6ba",
+     "name": "Climb Up - Chambéry",
+     "reason": "same-name",
+     "dist_m": 0
+    }
+   },
+   "blockers": [
+    {
+     "code": "no-bouldering",
+     "detail": "confirmed rope-only (new additions need a bouldering offering)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing g-1b773ea6ba but content differs (name, lat, address, types); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "g-1b773ea6ba \"Climb Up - Chambéry\": same-name (\"Climb Up Chambéry\" / \"Climb Up - Chambéry\", 0 m)",
+     "ids": [
+      "g-1b773ea6ba"
+     ]
+    }
+   ],
+   "review_ids": [
+    "g-1b773ea6ba"
+   ]
+  },
+  {
+   "cid": "fr-012",
+   "line": 12,
+   "name": "Climb Up Epinay",
+   "class": "blocked",
+   "suggested": "reject no-bouldering",
+   "importer": {
+    "class": "new",
+    "id": "g-849dbba264"
+   },
+   "blockers": [
+    {
+     "code": "no-bouldering",
+     "detail": "confirmed rope-only (new additions need a bouldering offering)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "fr-013",
+   "line": 13,
+   "name": "Climb Up Aix - Les Milles",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-c2b82e827f"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "fr-014",
+   "line": 14,
+   "name": "Climb Up Dijon",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-7172d8c9eb"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "fr-015",
+   "line": 15,
+   "name": "Climb Up Lyon - Confluence",
+   "class": "existing",
+   "suggested": "same-as seed-1084",
+   "importer": {
+    "class": "existing",
+    "id": "seed-1084",
+    "match": {
+     "id": "seed-1084",
+     "name": "Climb Up - Lyon Confluence",
+     "reason": "same-name",
+     "dist_m": 146
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-1084 but content differs (name, lat, lng, address); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1084 \"Climb Up - Lyon Confluence\": same-name (\"Climb Up Lyon - Confluence\" / \"Climb Up - Lyon Confluence\", 146 m)",
+     "ids": [
+      "seed-1084"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate fr-004 \"Climb Up Lyon Gerland\": related names \"Climb Up Lyon - Confluence\" / \"Climb Up Lyon Gerland\" 1412 m apart",
+     "ids": [
+      "fr-004"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-1085 \"Climb Up - Lyon Gerland\": related names \"Climb Up Lyon - Confluence\" / \"Climb Up - Lyon Gerland\" 1391 m apart",
+     "ids": [
+      "seed-1085"
+     ]
+    }
+   ],
+   "review_ids": [
+    "fr-004",
+    "seed-1084",
+    "seed-1085"
+   ]
+  },
+  {
+   "cid": "fr-016",
+   "line": 16,
+   "name": "Climb Up Lille Lesquin",
+   "class": "blocked",
+   "suggested": "reject no-bouldering",
+   "importer": {
+    "class": "new",
+    "id": "g-51d30a3311"
+   },
+   "blockers": [
+    {
+     "code": "no-bouldering",
+     "detail": "confirmed rope-only (new additions need a bouldering offering)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate fr-017 \"Climb Up Lille - Wambrechies\": related names \"Climb Up Lille Lesquin\" / \"Climb Up Lille - Wambrechies\" 11375 m apart",
+     "ids": [
+      "fr-017"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate fr-023 \"Climb Up Lille Centre\": related names \"Climb Up Lille Lesquin\" / \"Climb Up Lille Centre\" 6138 m apart",
+     "ids": [
+      "fr-023"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "g-2309c9eeb7 \"Climb Up - Lille Centre\": related names \"Climb Up Lille Lesquin\" / \"Climb Up - Lille Centre\" 6138 m apart",
+     "ids": [
+      "g-2309c9eeb7"
+     ]
+    }
+   ],
+   "review_ids": [
+    "fr-017",
+    "fr-023",
+    "g-2309c9eeb7"
+   ]
+  },
+  {
+   "cid": "fr-017",
+   "line": 17,
+   "name": "Climb Up Lille - Wambrechies",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-8067294135"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate fr-016 \"Climb Up Lille Lesquin\": related names \"Climb Up Lille - Wambrechies\" / \"Climb Up Lille Lesquin\" 11375 m apart",
+     "ids": [
+      "fr-016"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate fr-023 \"Climb Up Lille Centre\": related names \"Climb Up Lille - Wambrechies\" / \"Climb Up Lille Centre\" 5275 m apart",
+     "ids": [
+      "fr-023"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "g-2309c9eeb7 \"Climb Up - Lille Centre\": related names \"Climb Up Lille - Wambrechies\" / \"Climb Up - Lille Centre\" 5275 m apart",
+     "ids": [
+      "g-2309c9eeb7"
+     ]
+    }
+   ],
+   "review_ids": [
+    "fr-016",
+    "fr-023",
+    "g-2309c9eeb7"
+   ]
+  },
+  {
+   "cid": "fr-018",
+   "line": 18,
+   "name": "Climb Up Lille Villeneuve d'Ascq",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-9c59152858"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate fr-023 \"Climb Up Lille Centre\": related names \"Climb Up Lille Villeneuve d'Ascq\" / \"Climb Up Lille Centre\" 5162 m apart",
+     "ids": [
+      "fr-023"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "g-2309c9eeb7 \"Climb Up - Lille Centre\": related names \"Climb Up Lille Villeneuve d'Ascq\" / \"Climb Up - Lille Centre\" 5162 m apart",
+     "ids": [
+      "g-2309c9eeb7"
+     ]
+    }
+   ],
+   "review_ids": [
+    "fr-023",
+    "g-2309c9eeb7"
+   ]
+  },
+  {
+   "cid": "fr-019",
+   "line": 19,
+   "name": "Climb Up Caen",
+   "class": "existing",
+   "suggested": "same-as g-db854888ca",
+   "importer": {
+    "class": "existing",
+    "id": "g-db854888ca",
+    "match": {
+     "id": "g-db854888ca",
+     "name": "Climb Up - Caen",
+     "reason": "same-name",
+     "dist_m": 0
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing g-db854888ca but content differs (name, address, types); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "g-db854888ca \"Climb Up - Caen\": same-name (\"Climb Up Caen\" / \"Climb Up - Caen\", 0 m)",
+     "ids": [
+      "g-db854888ca"
+     ]
+    }
+   ],
+   "review_ids": [
+    "g-db854888ca"
+   ]
+  },
+  {
+   "cid": "fr-020",
+   "line": 20,
+   "name": "Climb Up Paris - Porte d'Italie",
+   "class": "existing",
+   "suggested": "same-as seed-1081",
+   "importer": {
+    "class": "existing",
+    "id": "seed-1081",
+    "match": {
+     "id": "seed-1081",
+     "name": "Climb Up - Paris Porte d'Italie",
+     "reason": "same-name",
+     "dist_m": 27
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-1081 but content differs (name, lat, lng, address); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1081 \"Climb Up - Paris Porte d'Italie\": same-name (\"Climb Up Paris - Porte d'Italie\" / \"Climb Up - Paris Porte d'Italie\", 27 m)",
+     "ids": [
+      "seed-1081"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-1081"
+   ]
+  },
+  {
+   "cid": "fr-021",
+   "line": 21,
+   "name": "Climb Up Bordeaux Villenave",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-a1fabd0c05"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate fr-009 \"Climb Up Bordeaux - Mérignac\": related names \"Climb Up Bordeaux Villenave\" / \"Climb Up Bordeaux - Mérignac\" 10945 m apart",
+     "ids": [
+      "fr-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate fr-010 \"Climb Up Bordeaux - Eysines\": related names \"Climb Up Bordeaux Villenave\" / \"Climb Up Bordeaux - Eysines\" 11953 m apart",
+     "ids": [
+      "fr-010"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "g-e0d5a84e0e \"Climb Up - Bordeaux Mérignac\": related names \"Climb Up Bordeaux Villenave\" / \"Climb Up - Bordeaux Mérignac\" 10945 m apart",
+     "ids": [
+      "g-e0d5a84e0e"
+     ]
+    }
+   ],
+   "review_ids": [
+    "fr-009",
+    "fr-010",
+    "g-e0d5a84e0e"
+   ]
+  },
+  {
+   "cid": "fr-022",
+   "line": 22,
+   "name": "Climb Up Mulhouse Wittenheim",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-d190d816e7"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "fr-023",
+   "line": 23,
+   "name": "Climb Up Lille Centre",
+   "class": "existing",
+   "suggested": "same-as g-2309c9eeb7",
+   "importer": {
+    "class": "existing",
+    "id": "g-2309c9eeb7",
+    "match": {
+     "id": "g-2309c9eeb7",
+     "name": "Climb Up - Lille Centre",
+     "reason": "same-name",
+     "dist_m": 0
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing g-2309c9eeb7 but content differs (name, lat, lng, address, types); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "g-2309c9eeb7 \"Climb Up - Lille Centre\": same-name (\"Climb Up Lille Centre\" / \"Climb Up - Lille Centre\", 0 m)",
+     "ids": [
+      "g-2309c9eeb7"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate fr-016 \"Climb Up Lille Lesquin\": related names \"Climb Up Lille Centre\" / \"Climb Up Lille Lesquin\" 6138 m apart",
+     "ids": [
+      "fr-016"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate fr-017 \"Climb Up Lille - Wambrechies\": related names \"Climb Up Lille Centre\" / \"Climb Up Lille - Wambrechies\" 5275 m apart",
+     "ids": [
+      "fr-017"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate fr-018 \"Climb Up Lille Villeneuve d'Ascq\": related names \"Climb Up Lille Centre\" / \"Climb Up Lille Villeneuve d'Ascq\" 5162 m apart",
+     "ids": [
+      "fr-018"
+     ]
+    }
+   ],
+   "review_ids": [
+    "fr-016",
+    "fr-017",
+    "fr-018",
+    "g-2309c9eeb7"
+   ]
+  },
+  {
+   "cid": "fr-024",
+   "line": 24,
+   "name": "Climb Up Aubervilliers",
+   "class": "existing",
+   "suggested": "same-as g-4c46ac5a73",
+   "importer": {
+    "class": "existing",
+    "id": "g-4c46ac5a73",
+    "match": {
+     "id": "g-4c46ac5a73",
+     "name": "Climb Up - Aubervilliers",
+     "reason": "same-name",
+     "dist_m": 0
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing g-4c46ac5a73 but content differs (name, lat, lng, address, types); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "g-4c46ac5a73 \"Climb Up - Aubervilliers\": same-name (\"Climb Up Aubervilliers\" / \"Climb Up - Aubervilliers\", 0 m)",
+     "ids": [
+      "g-4c46ac5a73"
+     ]
+    }
+   ],
+   "review_ids": [
+    "g-4c46ac5a73"
+   ]
+  },
+  {
+   "cid": "fr-025",
+   "line": 25,
+   "name": "Climb Up Saint-Étienne",
+   "class": "existing",
+   "suggested": "same-as g-0e3863a1a0",
+   "importer": {
+    "class": "existing",
+    "id": "g-0e3863a1a0",
+    "match": {
+     "id": "g-0e3863a1a0",
+     "name": "Climb Up - Saint-Étienne",
+     "reason": "same-name",
+     "dist_m": 0
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing g-0e3863a1a0 but content differs (name, lat, lng, address, types); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "g-0e3863a1a0 \"Climb Up - Saint-Étienne\": same-name (\"Climb Up Saint-Étienne\" / \"Climb Up - Saint-Étienne\", 0 m)",
+     "ids": [
+      "g-0e3863a1a0"
+     ]
+    }
+   ],
+   "review_ids": [
+    "g-0e3863a1a0"
+   ]
+  },
+  {
+   "cid": "fr-026",
+   "line": 26,
+   "name": "Climb Up Cergy",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-2d669a7807"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "fr-027",
+   "line": 27,
+   "name": "Climb Up Orléans",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-4fb4fbed4d"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "fr-028",
+   "line": 28,
+   "name": "Climb Up Le Mans",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-d2164daa6d"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "fr-029",
+   "line": 29,
+   "name": "Climb Up Nîmes",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-8543d8c840"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "fr-030",
+   "line": 30,
+   "name": "Climb Up Istres",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-c9b603935b"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "fr-031",
+   "line": 31,
+   "name": "MRoc Part-Dieu",
+   "class": "existing",
+   "suggested": "same-as seed-1088",
+   "importer": {
+    "class": "existing",
+    "id": "seed-1088",
+    "match": {
+     "id": "seed-1088",
+     "name": "MROC - Part-Dieu",
+     "reason": "same-name",
+     "dist_m": 0
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-1088 but content differs (name, lng, address); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1088 \"MROC - Part-Dieu\": same-name (\"MRoc Part-Dieu\" / \"MROC - Part-Dieu\", 0 m)",
+     "ids": [
+      "seed-1088"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-1088"
+   ]
+  },
+  {
+   "cid": "fr-032",
+   "line": 32,
+   "name": "MRoc Laennec",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-28f182daaf"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate fr-033 \"MRoc Villeurbanne\": related names \"M'ROC Laennec\" / \"M'ROC Villeurbanne\" 4207 m apart",
+     "ids": [
+      "fr-033"
+     ]
+    }
+   ],
+   "review_ids": [
+    "fr-033"
+   ]
+  },
+  {
+   "cid": "fr-033",
+   "line": 33,
+   "name": "MRoc Villeurbanne",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-4c156c806c"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate fr-032 \"MRoc Laennec\": related names \"M'ROC Villeurbanne\" / \"M'ROC Laennec\" 4207 m apart",
+     "ids": [
+      "fr-032"
+     ]
+    }
+   ],
+   "review_ids": [
+    "fr-032"
+   ]
+  },
+  {
+   "cid": "fr-034",
+   "line": 34,
+   "name": "Bloc Session Aix-en-Provence",
+   "class": "existing",
+   "suggested": "same-as g-2f12232d66",
+   "importer": {
+    "class": "existing",
+    "id": "g-2f12232d66",
+    "match": {
+     "id": "g-2f12232d66",
+     "name": "Bloc Session - Aix-en-Provence",
+     "reason": "same-name",
+     "dist_m": 0
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing g-2f12232d66 but content differs (name, address); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "g-2f12232d66 \"Bloc Session - Aix-en-Provence\": same-name (\"Bloc Session Aix-en-Provence\" / \"Bloc Session - Aix-en-Provence\", 0 m)",
+     "ids": [
+      "g-2f12232d66"
+     ]
+    }
+   ],
+   "review_ids": [
+    "g-2f12232d66"
+   ]
+  },
+  {
+   "cid": "fr-035",
+   "line": 35,
+   "name": "Bloc Session Ajaccio",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-59d3478619"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "fr-036",
+   "line": 36,
+   "name": "Bloc Session Avignon",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-26d534bd15"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "g-9ad5571912 renamed-or-related-name-nearby 0 m",
+     "ids": [
+      "g-9ad5571912"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "g-9ad5571912 \"Bloc Session - BS.6 Avignon\": renamed-or-related-name-nearby (\"Bloc Session Avignon\" / \"Bloc Session - BS.6 Avignon\", 0 m)",
+     "ids": [
+      "g-9ad5571912"
+     ]
+    }
+   ],
+   "review_ids": [
+    "g-9ad5571912"
+   ]
+  },
+  {
+   "cid": "fr-037",
+   "line": 37,
+   "name": "Bloc Session Belfort",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-7007ead23e"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "fr-038",
+   "line": 38,
+   "name": "Bloc Session Besançon",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-95c6963d8d"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "g-86f95e1310 renamed-or-related-name-nearby 90 m",
+     "ids": [
+      "g-86f95e1310"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "g-86f95e1310 \"Bloc Session - BS.25 Besançon\": renamed-or-related-name-nearby (\"Bloc Session Besançon\" / \"Bloc Session - BS.25 Besançon\", 90 m)",
+     "ids": [
+      "g-86f95e1310"
+     ]
+    }
+   ],
+   "review_ids": [
+    "g-86f95e1310"
+   ]
+  },
+  {
+   "cid": "fr-039",
+   "line": 39,
+   "name": "Bloc Session Béziers",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-15ffed3aa2"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "fr-040",
+   "line": 40,
+   "name": "Bloc Session Biarritz",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-86f45a6c06"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "fr-041",
+   "line": 41,
+   "name": "Bloc Session Chalon-sur-Saône",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-d92771320e"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "fr-042",
+   "line": 42,
+   "name": "Bloc Session Chinon",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-4724015231"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "fr-043",
+   "line": 43,
+   "name": "Bloc Session Gap",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-ef5b48f0bb"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "fr-044",
+   "line": 44,
+   "name": "Bloc Session Haguenau",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-63613953bc"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "fr-045",
+   "line": 45,
+   "name": "Bloc Session La Ciotat",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-95a27d6ef5"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "fr-046",
+   "line": 46,
+   "name": "Bloc Session Loire Estuaire",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-16ce0a549b"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "fr-047",
+   "line": 47,
+   "name": "Bloc Session Lyon Beynost",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-f99ac1d300"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate fr-048 \"Bloc Session Lyon Centre\": related names \"Bloc Session Lyon Beynost\" / \"Bloc Session Lyon Centre\" 12982 m apart",
+     "ids": [
+      "fr-048"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "g-eef9a68caf \"Bloc Session - Lyon Centre\": related names \"Bloc Session Lyon Beynost\" / \"Bloc Session - Lyon Centre\" 13026 m apart",
+     "ids": [
+      "g-eef9a68caf"
+     ]
+    }
+   ],
+   "review_ids": [
+    "fr-048",
+    "g-eef9a68caf"
+   ]
+  },
+  {
+   "cid": "fr-048",
+   "line": 48,
+   "name": "Bloc Session Lyon Centre",
+   "class": "existing",
+   "suggested": "same-as g-eef9a68caf",
+   "importer": {
+    "class": "existing",
+    "id": "g-eef9a68caf",
+    "match": {
+     "id": "g-eef9a68caf",
+     "name": "Bloc Session - Lyon Centre",
+     "reason": "same-name",
+     "dist_m": 51
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing g-eef9a68caf but content differs (name, lat, lng, address); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "g-eef9a68caf \"Bloc Session - Lyon Centre\": same-name (\"Bloc Session Lyon Centre\" / \"Bloc Session - Lyon Centre\", 51 m)",
+     "ids": [
+      "g-eef9a68caf"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate fr-047 \"Bloc Session Lyon Beynost\": related names \"Bloc Session Lyon Centre\" / \"Bloc Session Lyon Beynost\" 12982 m apart",
+     "ids": [
+      "fr-047"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate fr-049 \"Bloc Session Lyon Craponne\": related names \"Bloc Session Lyon Centre\" / \"Bloc Session Lyon Craponne\" 10061 m apart",
+     "ids": [
+      "fr-049"
+     ]
+    }
+   ],
+   "review_ids": [
+    "fr-047",
+    "fr-049",
+    "g-eef9a68caf"
+   ]
+  },
+  {
+   "cid": "fr-049",
+   "line": 49,
+   "name": "Bloc Session Lyon Craponne",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-00ef0fe045"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate fr-048 \"Bloc Session Lyon Centre\": related names \"Bloc Session Lyon Craponne\" / \"Bloc Session Lyon Centre\" 10061 m apart",
+     "ids": [
+      "fr-048"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "g-eef9a68caf \"Bloc Session - Lyon Centre\": related names \"Bloc Session Lyon Craponne\" / \"Bloc Session - Lyon Centre\" 10043 m apart",
+     "ids": [
+      "g-eef9a68caf"
+     ]
+    }
+   ],
+   "review_ids": [
+    "fr-048",
+    "g-eef9a68caf"
+   ]
+  },
+  {
+   "cid": "fr-050",
+   "line": 50,
+   "name": "Bloc Session Marne-la-Vallée",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-96d0b309b5"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "fr-051",
+   "line": 51,
+   "name": "Bloc Session Marseille centre",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-e669da8e12"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1091 renamed-or-related-name-nearby 83 m",
+     "ids": [
+      "seed-1091"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1091 \"Bloc Session - BS.10 Marseille centre\": renamed-or-related-name-nearby (\"Bloc Session Marseille centre\" / \"Bloc Session - BS.10 Marseille centre\", 83 m)",
+     "ids": [
+      "seed-1091"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate fr-052 \"Bloc Session Marseille sud\": related names \"Bloc Session Marseille centre\" / \"Bloc Session Marseille sud\" 5799 m apart",
+     "ids": [
+      "fr-052"
+     ]
+    }
+   ],
+   "review_ids": [
+    "fr-052",
+    "seed-1091"
+   ]
+  },
+  {
+   "cid": "fr-052",
+   "line": 52,
+   "name": "Bloc Session Marseille sud",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-c325ca9c55"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate fr-051 \"Bloc Session Marseille centre\": related names \"Bloc Session Marseille sud\" / \"Bloc Session Marseille centre\" 5799 m apart",
+     "ids": [
+      "fr-051"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-1091 \"Bloc Session - BS.10 Marseille centre\": related names \"Bloc Session Marseille sud\" / \"Bloc Session - BS.10 Marseille centre\" 5880 m apart",
+     "ids": [
+      "seed-1091"
+     ]
+    }
+   ],
+   "review_ids": [
+    "fr-051",
+    "seed-1091"
+   ]
+  },
+  {
+   "cid": "fr-053",
+   "line": 53,
+   "name": "Bloc Session Montpellier nord",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-8cd1e04821"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "g-ac8596310d renamed-or-related-name-nearby 37 m",
+     "ids": [
+      "g-ac8596310d"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "g-ac8596310d \"Bloc Session - BS.17 Montpellier Nord\": renamed-or-related-name-nearby (\"Bloc Session Montpellier nord\" / \"Bloc Session - BS.17 Montpellier Nord\", 37 m)",
+     "ids": [
+      "g-ac8596310d"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate fr-054 \"Bloc Session Montpellier sud\": related names \"Bloc Session Montpellier nord\" / \"Bloc Session Montpellier sud\" 11214 m apart",
+     "ids": [
+      "fr-054"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "g-d423156d92 \"Bloc Session - BS Montpellier Sud\": related names \"Bloc Session Montpellier nord\" / \"Bloc Session - BS Montpellier Sud\" 11214 m apart",
+     "ids": [
+      "g-d423156d92"
+     ]
+    }
+   ],
+   "review_ids": [
+    "fr-054",
+    "g-ac8596310d",
+    "g-d423156d92"
+   ]
+  },
+  {
+   "cid": "fr-054",
+   "line": 54,
+   "name": "Bloc Session Montpellier sud",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-197e38d8bb"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "g-d423156d92 renamed-or-related-name-nearby 0 m",
+     "ids": [
+      "g-d423156d92"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "g-d423156d92 \"Bloc Session - BS Montpellier Sud\": renamed-or-related-name-nearby (\"Bloc Session Montpellier sud\" / \"Bloc Session - BS Montpellier Sud\", 0 m)",
+     "ids": [
+      "g-d423156d92"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate fr-053 \"Bloc Session Montpellier nord\": related names \"Bloc Session Montpellier sud\" / \"Bloc Session Montpellier nord\" 11214 m apart",
+     "ids": [
+      "fr-053"
+     ]
+    }
+   ],
+   "review_ids": [
+    "fr-053",
+    "g-d423156d92"
+   ]
+  },
+  {
+   "cid": "fr-055",
+   "line": 55,
+   "name": "Bloc Session Nancy",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-7a2048ac4a"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "g-7a108cee9b renamed-or-related-name-nearby 63 m",
+     "ids": [
+      "g-7a108cee9b"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "g-7a108cee9b \"Bloc Session - BS.14 Nancy\": renamed-or-related-name-nearby (\"Bloc Session Nancy\" / \"Bloc Session - BS.14 Nancy\", 63 m)",
+     "ids": [
+      "g-7a108cee9b"
+     ]
+    }
+   ],
+   "review_ids": [
+    "g-7a108cee9b"
+   ]
+  },
+  {
+   "cid": "fr-056",
+   "line": 56,
+   "name": "Bloc Session Nîmes",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-22fb01e0ac"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "g-79b2e38409 renamed-or-related-name-nearby 0 m",
+     "ids": [
+      "g-79b2e38409"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "g-79b2e38409 \"Bloc Session - BS.3 Nîmes\": renamed-or-related-name-nearby (\"Bloc Session Nîmes\" / \"Bloc Session - BS.3 Nîmes\", 0 m)",
+     "ids": [
+      "g-79b2e38409"
+     ]
+    }
+   ],
+   "review_ids": [
+    "g-79b2e38409"
+   ]
+  },
+  {
+   "cid": "fr-057",
+   "line": 57,
+   "name": "Bloc Session Pertuis",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-5671a2c0e4"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "fr-058",
+   "line": 58,
+   "name": "Bloc Session Pontarlier",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-3515cabc4e"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "fr-059",
+   "line": 59,
+   "name": "Bloc Session Rouen",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-a51b939708"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "fr-060",
+   "line": 60,
+   "name": "Bloc Session Salon",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-66ac06b0d9"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "fr-061",
+   "line": 61,
+   "name": "Bloc Session Strasbourg",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-685df4d86d"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "fr-062",
+   "line": 62,
+   "name": "Bloc Session Toulon centre",
+   "class": "existing",
+   "suggested": "same-as g-bba5dfa0ec",
+   "importer": {
+    "class": "existing",
+    "id": "g-bba5dfa0ec",
+    "match": {
+     "id": "g-bba5dfa0ec",
+     "name": "Bloc Session - Toulon Centre",
+     "reason": "same-name",
+     "dist_m": 0
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing g-bba5dfa0ec but content differs (name, address); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "g-bba5dfa0ec \"Bloc Session - Toulon Centre\": same-name (\"Bloc Session Toulon centre\" / \"Bloc Session - Toulon Centre\", 0 m)",
+     "ids": [
+      "g-bba5dfa0ec"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate fr-063 \"Bloc Session Toulon ouest\": related names \"Bloc Session Toulon centre\" / \"Bloc Session Toulon ouest\" 7741 m apart",
+     "ids": [
+      "fr-063"
+     ]
+    }
+   ],
+   "review_ids": [
+    "fr-063",
+    "g-bba5dfa0ec"
+   ]
+  },
+  {
+   "cid": "fr-063",
+   "line": 63,
+   "name": "Bloc Session Toulon ouest",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-b54d1864e5"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate fr-062 \"Bloc Session Toulon centre\": related names \"Bloc Session Toulon ouest\" / \"Bloc Session Toulon centre\" 7741 m apart",
+     "ids": [
+      "fr-062"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "g-bba5dfa0ec \"Bloc Session - Toulon Centre\": related names \"Bloc Session Toulon ouest\" / \"Bloc Session - Toulon Centre\" 7741 m apart",
+     "ids": [
+      "g-bba5dfa0ec"
+     ]
+    }
+   ],
+   "review_ids": [
+    "fr-062",
+    "g-bba5dfa0ec"
+   ]
+  },
+  {
+   "cid": "fr-064",
+   "line": 64,
+   "name": "Bloc Session Vienne",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-ee78f54336"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "fr-065",
+   "line": 65,
+   "name": "Antrebloc",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-deb0b9f45f"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "fr-066",
+   "line": 66,
+   "name": "Arkose Pantin",
+   "class": "existing",
+   "suggested": "same-as g-b7c516ac9f",
+   "importer": {
+    "class": "existing",
+    "id": "g-b7c516ac9f",
+    "match": {
+     "id": "g-b7c516ac9f",
+     "name": "Arkose - Pantin",
+     "reason": "same-name",
+     "dist_m": 86
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing g-b7c516ac9f but content differs (name, lat, lng, address); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "g-b7c516ac9f \"Arkose - Pantin\": same-name (\"Arkose Pantin\" / \"Arkose - Pantin\", 86 m)",
+     "ids": [
+      "g-b7c516ac9f"
+     ]
+    }
+   ],
+   "review_ids": [
+    "g-b7c516ac9f"
+   ]
+  },
+  {
+   "cid": "fr-067",
+   "line": 67,
+   "name": "Arkose Issy-les-Moulineaux (voie)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-feccbde9ff"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "g-67ecd19a4e renamed-or-related-name-nearby 0 m",
+     "ids": [
+      "g-67ecd19a4e"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "g-67ecd19a4e \"Arkose - Issy-les-Moulineaux Voie\": renamed-or-related-name-nearby (\"Arkose Issy-les-Moulineaux (voie)\" / \"Arkose - Issy-les-Moulineaux Voie\", 0 m)",
+     "ids": [
+      "g-67ecd19a4e"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "g-277a5d186d \"Arkose - Issy-les-Moulineaux Bloc\": related names \"Arkose Issy-les-Moulineaux (voie)\" / \"Arkose - Issy-les-Moulineaux Bloc\" 347 m apart",
+     "ids": [
+      "g-277a5d186d"
+     ]
+    }
+   ],
+   "review_ids": [
+    "g-277a5d186d",
+    "g-67ecd19a4e"
+   ]
+  },
+  {
+   "cid": "fr-068",
+   "line": 68,
+   "name": "Le Pan d'Avignon",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-f53224b303"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "fr-069",
+   "line": 69,
+   "name": "Vertical Park Le Pontet",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-5ac47ca5ea"
+   },
+   "review_ids": []
+  }
+ ],
+ "reconcile_sha256": "f0eb35a19403d9959b6301bf76054ad74e79bc8f53628553afb44f4373e57f7e"
+}
