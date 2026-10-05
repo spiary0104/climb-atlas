@@ -1,8 +1,8 @@
 # Coverage: Italy, gyms on hold + Napoli gap (second pass, 2026-10-06)
 
 ## Result
-- 9 candidates (ih-001 to ih-009), 22 sources registered. Decisions: accept 3 | reject 1 | defer 5 | same-as 0.
-- Resolves the six on-hold gyms of 2026-10-05-italy-city-gaps (it-003, it-006, it-011, it-013, it-014, it-015): three can now be accepted (Palaroccia, Eden Park, Free Climbing Palermo), three stay deferred (CAT, La Mole, BlueRock).
+- 9 candidates (ih-001 to ih-009), 22 sources registered. Decisions: accept 2 | reject 1 | defer 6 | same-as 0.
+- Resolves the six on-hold gyms of 2026-10-05-italy-city-gaps (it-003, it-006, it-011, it-013, it-014, it-015): two can now be accepted (Palaroccia, Eden Park), four stay deferred (CAT, La Mole, BlueRock, Free Climbing Palermo).
 - Napoli gap: only one open bouldering gym with a primary source (Palaroccia, Quarto). "Pozzuoli Boulder" turned out to be an outdoor boulder area, not a gym.
 
 ## What was checked
@@ -19,6 +19,6 @@
 - Mad Climbers (madclimbers.com) is a Brescia gym, unrelated to MAD Climbing Wall in Napoli.
 
 ## Open points
-- Five deferred gyms are in MANUAL-CHECK.md. Instagram posts and Facebook posts could not be read (no login); the questions there are mostly answerable in a minute by a person looking at the pages.
+- Six deferred gyms are in MANUAL-CHECK.md. Instagram posts and Facebook posts could not be read (no login); the questions there are mostly answerable in a minute by a person looking at the pages.
 - Pins: Palaroccia, Eden Park and CAT are OSM objects at building level; La Mole is the gym's own Google place; Free Climbing Palermo, BlueRock and DEMON Trincone are street-level.
 - The first-pass candidates it-003, it-006, it-011, it-013, it-014, it-015 stay deferred in their own section; this section supersedes them (the importer will still treat a later same-place record as a duplicate, so none should be staged twice).

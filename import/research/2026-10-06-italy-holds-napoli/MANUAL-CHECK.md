@@ -1,7 +1,7 @@
 # Manual checks: Italy holds + Napoli (2026-10-06-italy-holds-napoli)
 
 Gyms that could NOT be settled from a primary source I could read (no logged-in Instagram/Facebook access; only public page text and
-og:description previews were readable). All five stay `defer` in review.json. Answer the ONE question per row; if yes, a follow-up section
+og:description previews were readable). All six stay `defer` in review.json. Answer the ONE question per row; if yes, a follow-up section
 (or a note on the brain's TASKS.md) can accept it.
 
 | Gym | Town | URLs to open | Question | Found so far |
@@ -11,9 +11,4 @@ og:description previews were readable). All five stay `defer` in review.json. An
 | ih-006 BlueRock Climbing Gym | Torre Annunziata (Via Penniniello 13, near Leroy Merlin) | https://www.instagram.com/bluerockclimb/ , https://www.instagram.com/lithium_beer_e_climb/ (instructor, bio links the gym) | Does this gym have a bouldering wall? (Bonus: drop a pin on the entrance.) | Instagram bio: "Palestra di arrampicata indoor, OPEN LUN/VEN 9-13/17-22, SAB 9-13". No boulder mention. Beware: https://www.facebook.com/BlueRock2016/ and bluerock.it are BlueRock in Martinsicuro (Abruzzo), a different site. Pin is street-level (Nominatim found no house node). |
 | ih-008 MAD Climbing Wall (Ex OPG Je so pazzo) | Napoli (Via Matteo Renato Imbriani 218, Materdei) | https://www.jesopazzo.org/attivita/sport-popolare/ , https://www.facebook.com/exopgjesopazzo/ , https://r-ange.it/item/arrampicata-sportiva/ | Does the climbing wall still run, and is it open to the public (which days)? | Only an undated R-ange.it entry: wall 7.5 x 4.5 m, vertical/overhanging, boulder with crash pads, free entry, Tue and Thu 20:00-21:30, FASI instructor. The centre's current weekly schedule lists no climbing. Pin is the OSM node of the whole centre. |
 | ih-009 DEMON Rock Wall (Palasport Trincone) | Pozzuoli / Monterusciello (Via Cosimo Luigi Miccoli 6) | https://www.facebook.com/freeclimbingna/ , https://www.facebook.com/Palatrincone/ , https://www.freeclimbingnapoli.it/ | Is the old wall inside the Palasport Trincone still open, or did it close when Palaroccia opened (June 2021)? | DEMON's Facebook page ("Arrampicata bouldering", Monterusciello) still exists. Palaroccia's site says the historic DEMON Rock Wall now lives inside Palaroccia in a bigger space. No source says the Trincone wall closed. Pin is street-level. |
-
-## Accepted but worth a quick look (not blocking)
-
-| Gym | Town | URLs | Question | Found so far |
-|---|---|---|---|---|
-| ih-003 Free Climbing Palermo (accepted, street-level pin) | Palermo (Via Andrea Cirrincione 63) | https://freeclimbingpalermo.wordpress.com/dove-siamo/ , https://www.instagram.com/freeclimbingpalermo/ | Drop a pin on the entrance of no. 63, and confirm a drop-in visitor can climb. | Own site: bouldering hall, Mon-Thu 19:30-22:00, beginner trial days; Instagram bio "Vieni a provare!". Pin = the site's own Google link, east end of the street, house number not verified. |
+| ih-003 Free Climbing Palermo | Palermo (Via Andrea Cirrincione 63) | https://freeclimbingpalermo.wordpress.com/dove-siamo/ , https://freeclimbingpalermo.wordpress.com/attivita-2/ , https://www.instagram.com/freeclimbingpalermo/ , https://www.facebook.com/freeclimbingpalermo | 1) Can a non-member climb (price / day entry)? 2) Drop a pin on the entrance of no. 63. | Own site: "palestra boulder in indoor", Mon-Thu 19:30-22:00, beginner "climbing day" trials; Instagram bio "Palestra di arrampicata indoor - Bouldering ... Vieni a provare!"; Facebook "Indoor bouldering - Baby bouldering". No price or public-entry statement. Pin = the site's own Google link (38.146043, 13.354041), east end of the street, house number not verified (street-level). |
