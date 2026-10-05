@@ -6,9 +6,7 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 (delete them; git keeps history). Keep this file under 60 lines.
 
 ## In progress
-### Gym update 2026-10-05 (PR #74) — APPLIED, one step left
-- Live 2026-10-05: +114 gyms (UK 30, DE 18, ES 4, IT 8, FR 43, KR 11), 4 pin fixes, Klättra Motala note, Arkose Cholet info; 2,386 gyms.
-- Left: apply `2026-10-05-retire-mokpo-lead` (bouldering unconfirmed on the re-check; the other 5 weak KR gyms were confirmed).
+- _(none; the 2026-10-05 gym update is live: 2,385 gyms)_
 
 ## Gym data
 ### Research follow-ups (from the 2026-10-05 sections; details in each section's `review-notes.md` / `coverage.md`)
