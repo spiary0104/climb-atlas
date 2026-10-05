@@ -1,50 +1,6 @@
 {
   "redirects": [
     {
-      "source": "/",
-      "has": [
-        {
-          "type": "host",
-          "value": "climbatlas.org"
-        }
-      ],
-      "destination": "https://www.bouldeer.com/",
-      "permanent": true
-    },
-    {
-      "source": "/",
-      "has": [
-        {
-          "type": "host",
-          "value": "www.climbatlas.org"
-        }
-      ],
-      "destination": "https://www.bouldeer.com/",
-      "permanent": true
-    },
-    {
-      "source": "/:path*",
-      "has": [
-        {
-          "type": "host",
-          "value": "climbatlas.org"
-        }
-      ],
-      "destination": "https://www.bouldeer.com/:path*",
-      "permanent": true
-    },
-    {
-      "source": "/:path*",
-      "has": [
-        {
-          "type": "host",
-          "value": "www.climbatlas.org"
-        }
-      ],
-      "destination": "https://www.bouldeer.com/:path*",
-      "permanent": true
-    },
-    {
       "source": "/import/:path*",
       "destination": "/",
       "permanent": false
