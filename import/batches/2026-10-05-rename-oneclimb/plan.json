@@ -1,0 +1,50 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-05-rename-oneclimb",
+ "index": {
+  "sha256": "e1d9ef5216f87602ccefe7b8e4fac9c10be4c8fa3e59d6e76219e3f5d3154dad",
+  "count": 2385,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [],
+ "counts": {
+  "records": 1,
+  "new": 0,
+  "existing": 0,
+  "update": 1,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 1
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "9d9d9e3b735e687973a51d524e0e7ac6940af31867b61d71c5040048100bf543",
+ "records": [
+  {
+   "line": 1,
+   "class": "update",
+   "id": "seed-1181",
+   "changes": [
+    {
+     "field": "name",
+     "before": "Monta Rex",
+     "after": "OneClimb"
+    }
+   ],
+   "expect_h": "6d763400d0b926f7",
+   "update_reason": "Same gym, new name: the Naver Place listing and Instagram at 2 Nakseon-gil, Haeryong-myeon now trade as 원클라임 (OneClimb)",
+   "warnings": [
+    {
+     "code": "rename",
+     "field": "name",
+     "message": "renames \"Monta Rex\" -> \"OneClimb\""
+    }
+   ]
+  }
+ ]
+}
