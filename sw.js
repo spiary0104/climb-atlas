@@ -33,7 +33,10 @@
 //      hours in discovery (hours.js).
 // v32: desktop chip row wraps in the list pane (explore.css).
 // v33: update prompt copy "Bouldeer has finished a climb, please refresh the page" (main.js).
-const CACHE_VERSION = 'v33';
+// v34: engineering fixes: auth listeners on real user changes only; gym page late reads re-render once; Save/Climbed
+//      in place; mark double-tap guard; revert guard; intro flag; touch targets; offline banner text out of the shell;
+//      the public spots read is cached by URL (the signed-in JWT is no longer written to disk).
+const CACHE_VERSION = 'v34';
 const SHELL_CACHE = 'climbatlas-shell-' + CACHE_VERSION;
 const RUNTIME_CACHE = 'climbatlas-runtime-' + CACHE_VERSION;
 const TILE_CACHE = 'climbatlas-tiles-' + CACHE_VERSION;
