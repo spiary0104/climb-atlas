@@ -23,7 +23,7 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
   owner tested sign-in, submissions and moderation on production. Wave 1 IMPORTED (179) + Wave 2 IMPORTED (38) 2026-10-03; 5 + 11 pin fixes, 3 retirements (2 closed, 1 duplicate) and 7 Czech gyms applied; live 2,348.
 - Real-phone retest passed + service-role key rotated 2026-10-03; legal pages simplified (PR #36): no minimum age, 30-day deletion.
 - Auth email: custom SMTP via Resend (mail.bouldeer.com, DKIM/SPF/DMARC) + Bouldeer confirm/magic-link templates, owner set up 2026-10-05.
-- Open: Supabase Auth Redirect URLs: add preview domains (else sign-in lands on the Site URL). Phase 4 publish-then-review and
+- Sign-in on previews: preview.bouldeer.com (branch `preview`), owner set up + tested 2026-10-05. Open: Phase 4 publish-then-review and
   photo/confirm points not built (gym-information fields still go through moderation).
 ### Gym import pipeline — first batch imported; follow-ups
 - Status: gated importer built and tested; first batch (246) IMPORTED 2026-09-24 (1,881 → 2,127). Open: retire data/gyms.json (plan in docs).
