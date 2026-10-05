@@ -1,0 +1,272 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-05-korea-gwangju-jeollanam",
+ "reviewer": "Spiar (owner); decisions drafted by Claude (AI) on the owner's instruction, pending owner sign-off",
+ "reviewed": "2026-10-05",
+ "decisions": {
+  "kr-gj-001": {
+   "decision": "same-as",
+   "same_as": "seed-1167",
+   "followup": "location-update",
+   "reason": "Already in Bouldeer as seed-1167 'Cl!mben Climbing Company' (alias-match, same name). The seed pin is 435 m from the pin in this section; Naver Place (own listing) and Kakao agree on Chungjang-ro-an-gil 40-2 (6 m apart), so the production pin looks wrong and needs a location-update batch."
+  },
+  "kr-gj-002": {
+   "decision": "accept",
+   "reason": "Own Naver Place text (bouldering + lead, keyword 광주볼더링), own blog 2026-09-22 and Instagram 2026-10-04; pin is the Naver Place pin (Kakao 2 m). The related-name flags against the other Gwangju candidates come from the shared generic word 'climbing' only: each is a separate gym with its own address and its own official pages (distances 0.4-10 km in the report).",
+   "reviewed_against": [
+    "kr-gj-001",
+    "kr-gj-003",
+    "kr-gj-004",
+    "kr-gj-005",
+    "kr-gj-006",
+    "kr-gj-007",
+    "kr-gj-008",
+    "kr-gj-009",
+    "kr-gj-010",
+    "kr-gj-011",
+    "kr-gj-012",
+    "kr-gj-014",
+    "kr-gj-015",
+    "kr-gj-016",
+    "kr-jn-005"
+   ]
+  },
+  "kr-gj-003": {
+   "decision": "accept",
+   "reason": "Own Naver Place text ('new bouldering problems every week'), own blog to 2026-09-16; Nam-gu branch of Red One, 11.4 km from the Cheomdan branch (kr-gj-004), a different gym. The related-name flags against the other Gwangju candidates come from the shared generic word 'climbing' only: each is a separate gym with its own address and its own official pages (distances 0.4-10 km in the report).",
+   "reviewed_against": [
+    "kr-gj-001",
+    "kr-gj-002",
+    "kr-gj-004",
+    "kr-gj-005",
+    "kr-gj-006",
+    "kr-gj-007",
+    "kr-gj-008",
+    "kr-gj-009",
+    "kr-gj-010",
+    "kr-gj-011",
+    "kr-gj-012",
+    "kr-gj-014",
+    "kr-gj-015",
+    "kr-gj-016",
+    "kr-jn-005"
+   ]
+  },
+  "kr-gj-004": {
+   "decision": "accept",
+   "reason": "Own Naver Place text ('new bouldering problems every week'), own Instagram bio with address and hours, blog 2026-09-16 (first anniversary). Different branch of the same owner, 11.4 km from kr-gj-003. The related-name flags against the other Gwangju candidates come from the shared generic word 'climbing' only: each is a separate gym with its own address and its own official pages (distances 0.4-10 km in the report).",
+   "reviewed_against": [
+    "kr-gj-001",
+    "kr-gj-002",
+    "kr-gj-003",
+    "kr-gj-005",
+    "kr-gj-006",
+    "kr-gj-007",
+    "kr-gj-008",
+    "kr-gj-009",
+    "kr-gj-010",
+    "kr-gj-011",
+    "kr-gj-012",
+    "kr-gj-014",
+    "kr-gj-015",
+    "kr-gj-016"
+   ]
+  },
+  "kr-gj-005": {
+   "decision": "accept",
+   "reason": "Own Naver Place price list names bouldering; own chain blog posts a Jeondae bouldering party (2026-02-13). Branch no. 1 at Seobang-ro 10, 5.6 km from the Yangsan branch (kr-gj-006 = seed-1176) and 5.8 km from Bongseon, so seed-1176 (110 m from Yangsan only) is not this gym. Same-website flags are the chain's shared blog. The related-name flags against the other Gwangju candidates come from the shared generic word 'climbing' only: each is a separate gym with its own address and its own official pages (distances 0.4-10 km in the report).",
+   "reviewed_against": [
+    "kr-gj-001",
+    "kr-gj-002",
+    "kr-gj-003",
+    "kr-gj-004",
+    "kr-gj-006",
+    "kr-gj-007",
+    "kr-gj-008",
+    "kr-gj-009",
+    "kr-gj-010",
+    "kr-gj-011",
+    "kr-gj-012",
+    "kr-gj-014",
+    "kr-gj-015",
+    "kr-gj-016",
+    "kr-jn-005",
+    "seed-1176"
+   ]
+  },
+  "kr-gj-006": {
+   "decision": "same-as",
+   "same_as": "seed-1176",
+   "followup": "location-update",
+   "reason": "Existing seed-1176 'Handwerk Climbing' is 110 m from this branch (Imbangul-daero 1068); the other two Handwerk branches are 5.6 and 10.4 km away, so the seed can only be the Yangsan branch. Seed pin is 110 m off the Naver Place pin (Kakao 5 m), worth a location-update; the seed's address and name were not opened (seed data is not read)."
+  },
+  "kr-gj-007": {
+   "decision": "accept",
+   "reason": "Branch no. 3 of Handwerk at Jeseok-ro 79 (own Naver Place: '3rd branch Bongseon opened'), Instagram @handwerk_climbing__bongsun, chain blog bouldering-party posts. 5.8 km from the Jeondae branch and 10.4 km from Yangsan, 0.9 km from Red One Nam-gu (kr-gj-003, different gym, Bongseon 2-ro 81); seed-1176 (Yangsan) is a different branch. Bouldering evidence is chain-level (see review-notes). Same-website flags are the shared chain blog. The related-name flags against the other Gwangju candidates come from the shared generic word 'climbing' only: each is a separate gym with its own address and its own official pages (distances 0.4-10 km in the report).",
+   "reviewed_against": [
+    "kr-gj-001",
+    "kr-gj-002",
+    "kr-gj-003",
+    "kr-gj-004",
+    "kr-gj-005",
+    "kr-gj-006",
+    "kr-gj-008",
+    "kr-gj-009",
+    "kr-gj-010",
+    "kr-gj-011",
+    "kr-gj-012",
+    "kr-gj-014",
+    "kr-gj-015",
+    "kr-gj-016",
+    "kr-jn-005",
+    "seed-1176"
+   ]
+  },
+  "kr-gj-008": {
+   "decision": "accept",
+   "reason": "Own blog bouldering posts (route-setting notice 2025-02-10, competition 2025-10-07), blog 2026-05-18, Instagram Oct 2026, own Naver Place hours. The related-name flags against the other Gwangju candidates come from the shared generic word 'climbing' only: each is a separate gym with its own address and its own official pages (distances 0.4-10 km in the report).",
+   "reviewed_against": [
+    "kr-gj-001",
+    "kr-gj-002",
+    "kr-gj-003",
+    "kr-gj-004",
+    "kr-gj-005",
+    "kr-gj-006",
+    "kr-gj-007",
+    "kr-gj-009",
+    "kr-gj-010",
+    "kr-gj-011",
+    "kr-gj-012",
+    "kr-gj-014",
+    "kr-gj-015",
+    "kr-gj-016"
+   ]
+  },
+  "kr-gj-009": {
+   "decision": "defer",
+   "reason": "Open, but the gym's own pages never say bouldering (only a moon-board pass and a pegboard in Instagram highlights). Need a statement from the gym (Instagram caption, Naver Place text or blog) that it has a bouldering wall, then re-research."
+  },
+  "kr-gj-010": {
+   "decision": "accept",
+   "reason": "Own Instagram @bit_climbing_boulder_ (name and bio: address, hours), own Naver Place price list, blog 2025-12-19; bouldering rests on the account's own name. Kakao's second 'Cheomdan Bitgoeul Indoor Rock Wall' entry is the same gym (same address and phone) and is not a candidate. The related-name flags against the other Gwangju candidates come from the shared generic word 'climbing' only: each is a separate gym with its own address and its own official pages (distances 0.4-10 km in the report).",
+   "reviewed_against": [
+    "kr-gj-001",
+    "kr-gj-002",
+    "kr-gj-003",
+    "kr-gj-004",
+    "kr-gj-005",
+    "kr-gj-006",
+    "kr-gj-007",
+    "kr-gj-008",
+    "kr-gj-009",
+    "kr-gj-011",
+    "kr-gj-012",
+    "kr-gj-014",
+    "kr-gj-015",
+    "kr-gj-016"
+   ]
+  },
+  "kr-gj-011": {
+   "decision": "accept",
+   "reason": "Own Naver Place (prices, announced closures 12 and 26 Oct), own Instagram Sept-Oct 2026, own blog 'bouldering party' (2022). Bouldering evidence is dated but the gym is operating now. The related-name flags against the other Gwangju candidates come from the shared generic word 'climbing' only: each is a separate gym with its own address and its own official pages (distances 0.4-10 km in the report).",
+   "reviewed_against": [
+    "kr-gj-001",
+    "kr-gj-002",
+    "kr-gj-003",
+    "kr-gj-004",
+    "kr-gj-005",
+    "kr-gj-006",
+    "kr-gj-007",
+    "kr-gj-008",
+    "kr-gj-009",
+    "kr-gj-010",
+    "kr-gj-012",
+    "kr-gj-014",
+    "kr-gj-015",
+    "kr-gj-016"
+   ]
+  },
+  "kr-gj-012": {
+   "decision": "defer",
+   "reason": "Open (Instagram to late Sept 2026, Naver Place closure notice 15 Oct) but the gym's own pages never say bouldering (pegboard and spray wall in highlights only). Need an own statement of a bouldering wall."
+  },
+  "kr-gj-013": {
+   "decision": "accept",
+   "reason": "Own Naver Place owner keywords include 볼더링 and show live hours, prices and booking; Instagram last post 2026-02-28 and blog 2026-01-11, so activity is lower than the others. Related flag kr-gj-015 (Gwangju Indoor Rock Wall, Buk-gu, 8.2 km away) is an old listing in another district.",
+   "reviewed_against": [
+    "kr-gj-015"
+   ]
+  },
+  "kr-gj-014": {
+   "decision": "defer",
+   "reason": "National-team training hall (lessons and athlete classes, price 'ask'): no day pass or public drop-in found, so general public access is not established. Need a source showing walk-in use."
+  },
+  "kr-gj-015": {
+   "decision": "reject",
+   "reason_code": "insufficient-evidence",
+   "reason": "Old club-style listing; no own site or social, unmanaged Naver Place with one review; existence today cannot be confirmed."
+  },
+  "kr-gj-016": {
+   "decision": "reject",
+   "reason_code": "insufficient-evidence",
+   "reason": "Directory listing only (municipal sports-park wall?); no primary source for existence, access or bouldering."
+  },
+  "kr-jn-001": {
+   "decision": "accept",
+   "reason": "Own Naver Place (keywords 볼더링/리드클라이밍, booking item lead 50 min + bouldering 50 min, closures announced for 12/19/26 Oct) and own Instagram to 2026-09-30. The related flags are other candidates in Suncheon, all unconfirmed and not accepted (Palma wall, Nepa wall, Taki wall in Gwangyang).",
+   "reviewed_against": [
+    "kr-jn-008",
+    "kr-jn-009",
+    "kr-jn-010"
+   ]
+  },
+  "kr-jn-002": {
+   "decision": "accept",
+   "reason": "Own Instagram (hours, posts to 2026-08-23), own Naver Place; bouldering rests on own-blog bouldering parties (2022). Related flags: kr-jn-003 Mokpo Lead Climbing Center (3.7 km away, different gym and address) and kr-jn-006 (municipal venue, 2.0 km away).",
+   "reviewed_against": [
+    "kr-jn-003",
+    "kr-jn-006"
+   ]
+  },
+  "kr-jn-003": {
+   "decision": "accept",
+   "reason": "Own Naver Place (keywords bouldering/Bouldering, hours, prices) and own blog to 2026-08-03. Related flags: kr-jn-002 Carpe Climb (Namak, 3.7 km away, different gym) and kr-jn-006 (municipal venue, 2.2 km away).",
+   "reviewed_against": [
+    "kr-jn-002",
+    "kr-jn-006"
+   ]
+  },
+  "kr-jn-004": {
+   "decision": "defer",
+   "reason": "No 2025-2026 sign of life in the gym's own channels (Naver Place text and reviews end in 2024, Instagram @yuuuth_ is private); possibly taken over by the OneClimb owner (@yeosuclimbinggym). Bouldering is not stated by the gym either. Need a current primary source."
+  },
+  "kr-jn-005": {
+   "decision": "defer",
+   "reason": "Open (Naver Place holiday notice, Instagram Sept 2026) but its own pages say only 'indoor wall / natural rock', no bouldering wall. Need an own statement."
+  },
+  "kr-jn-006": {
+   "decision": "defer",
+   "reason": "Municipal competition venue with an indoor bouldering room (directory info only); its official Daum cafe is script-rendered and could not be read, so public hours and bouldering are not confirmed from a primary source. Check the cafe or the Mokpo city page, then re-research as a public wall."
+  },
+  "kr-jn-007": {
+   "decision": "reject",
+   "reason_code": "insufficient-evidence",
+   "reason": "Unmanaged Naver Place with no hours, newest review 2020; looks like a former kids climbing class or health club."
+  },
+  "kr-jn-008": {
+   "decision": "reject",
+   "reason_code": "insufficient-evidence",
+   "reason": "Unmanaged Naver Place inside a stadium; likely a municipal outdoor wall; nothing on access or bouldering."
+  },
+  "kr-jn-009": {
+   "decision": "reject",
+   "reason_code": "insufficient-evidence",
+   "reason": "Old Kakao listing only; no social, no Naver Place; existence today cannot be confirmed."
+  },
+  "kr-jn-010": {
+   "decision": "reject",
+   "reason_code": "insufficient-evidence",
+   "reason": "Kakao sports-facility listing only (no phone, site or social); existence today cannot be confirmed."
+  }
+ }
+}

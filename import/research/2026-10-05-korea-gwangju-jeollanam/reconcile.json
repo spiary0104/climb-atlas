@@ -1,0 +1,2664 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-05-korea-gwangju-jeollanam",
+ "inputs": {
+  "section_sha256": "0796482a12c254bdd27999a78d08bef664f8301867131eb5e5f9974156b6d6b7",
+  "sources_sha256": "0dbd0ccd626773a19db43ade0b67230cbbefbe75b7c83669d71c594904d8f631",
+  "candidates_sha256": "e45638844aa546e3982e2454b7f99cfeeaf1bb3a6109edb19d46dbd375e3c2bb",
+  "index": {
+   "sha256": "c97e3035f0208405f11b34c45813a104e2c9b1d4f25a4a3a6a6a349f627e2918",
+   "count": 2272
+  },
+  "staged_batches_compared": [],
+  "other_sections_compared": []
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 26,
+  "ready": 0,
+  "review": 15,
+  "blocked": 11,
+  "existing": 0,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "kr-gj-001",
+   "line": 1,
+   "name": "Climben Climbing Company",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-cd0bec953e"
+   },
+   "flags": [
+    {
+     "code": "alias-match",
+     "detail": "seed-1167 \"Cl!mben Climbing Company\": same-name (\"CL!MBEN CLIMBING COMPANY\" / \"Cl!mben Climbing Company\", 435 m)",
+     "ids": [
+      "seed-1167"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-002 \"Bawi Climbing Center\": related names \"클라이븐 클라이밍 컴퍼니\" / \"바위 클라이밍 센터\" 422 m apart",
+     "ids": [
+      "kr-gj-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-003 \"Red One Climbing\": related names \"클라이븐 클라이밍 컴퍼니\" / \"레드원클라이밍\" 2304 m apart",
+     "ids": [
+      "kr-gj-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-004 \"Red One Climbing Cheomdan\": related names \"클라이븐 클라이밍 컴퍼니\" / \"레드원클라이밍 첨단\" 9646 m apart",
+     "ids": [
+      "kr-gj-004"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-005 \"Handwerk Climbing Jeondae\": related names \"클라이븐 클라이밍 컴퍼니\" / \"핸드워크 클라이밍 전대점\" 2962 m apart",
+     "ids": [
+      "kr-gj-005"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-006 \"Handwerk Climbing Yangsan\": related names \"클라이븐 클라이밍 컴퍼니\" / \"핸드워크 클라이밍 양산점\" 8176 m apart",
+     "ids": [
+      "kr-gj-006"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-007 \"Handwerk Climbing Bongseon\": related names \"클라이븐 클라이밍 컴퍼니\" / \"핸드워크 클라이밍 봉선점\" 2970 m apart",
+     "ids": [
+      "kr-gj-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-008 \"Incave Climbing Sangmu\": related names \"클라이븐 클라이밍 컴퍼니\" / \"인케이브 클라이밍 상무\" 6221 m apart",
+     "ids": [
+      "kr-gj-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-009 \"Climb Lounge\": related names \"클라이븐 클라이밍 컴퍼니\" / \"클라임라운지\" 2746 m apart",
+     "ids": [
+      "kr-gj-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-010 \"Bitgoeul Climbing Cheomdan\": related names \"클라이븐 클라이밍 컴퍼니\" / \"첨단 빛고을 클라이밍\" 10344 m apart",
+     "ids": [
+      "kr-gj-010"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-011 \"On Climbing\": related names \"클라이븐 클라이밍 컴퍼니\" / \"온클라이밍\" 10246 m apart",
+     "ids": [
+      "kr-gj-011"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-012 \"Grabit Climbing\": related names \"클라이븐 클라이밍 컴퍼니\" / \"그랩잇 클라이밍\" 10981 m apart",
+     "ids": [
+      "kr-gj-012"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-014 \"Hwang Pyeong-ju Climbing Class\": related names \"클라이븐 클라이밍 컴퍼니\" / \"황평주등반교실\" 5668 m apart",
+     "ids": [
+      "kr-gj-014"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-015 \"Gwangju Indoor Rock Wall\": related names \"클라이븐 클라이밍 컴퍼니\" / \"광주실내암벽\" 4074 m apart",
+     "ids": [
+      "kr-gj-015"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-016 \"Sangmu Artificial Climbing Wall\": related names \"클라이븐 클라이밍 컴퍼니\" / \"상무인공암벽장\" 7150 m apart",
+     "ids": [
+      "kr-gj-016"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-jn-005 \"Hwasun Rock Climbing Center\": related names \"클라이븐 클라이밍 컴퍼니\" / \"화순락클라이밍센터\" 11325 m apart",
+     "ids": [
+      "kr-jn-005"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-gj-002",
+    "kr-gj-003",
+    "kr-gj-004",
+    "kr-gj-005",
+    "kr-gj-006",
+    "kr-gj-007",
+    "kr-gj-008",
+    "kr-gj-009",
+    "kr-gj-010",
+    "kr-gj-011",
+    "kr-gj-012",
+    "kr-gj-014",
+    "kr-gj-015",
+    "kr-gj-016",
+    "kr-jn-005",
+    "seed-1167"
+   ]
+  },
+  {
+   "cid": "kr-gj-002",
+   "line": 2,
+   "name": "Bawi Climbing Center",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-af7c69e9d0"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-001 \"Climben Climbing Company\": related names \"바위 클라이밍 센터\" / \"클라이븐 클라이밍 컴퍼니\" 422 m apart",
+     "ids": [
+      "kr-gj-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-003 \"Red One Climbing\": related names \"바위 클라이밍 센터\" / \"레드원클라이밍\" 2675 m apart",
+     "ids": [
+      "kr-gj-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-004 \"Red One Climbing Cheomdan\": related names \"바위 클라이밍 센터\" / \"레드원클라이밍 첨단\" 9534 m apart",
+     "ids": [
+      "kr-gj-004"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-005 \"Handwerk Climbing Jeondae\": related names \"바위 클라이밍 센터\" / \"핸드워크 클라이밍 전대점\" 2657 m apart",
+     "ids": [
+      "kr-gj-005"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-006 \"Handwerk Climbing Yangsan\": related names \"바위 클라이밍 센터\" / \"핸드워크 클라이밍 양산점\" 8000 m apart",
+     "ids": [
+      "kr-gj-006"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-007 \"Handwerk Climbing Bongseon\": related names \"바위 클라이밍 센터\" / \"핸드워크 클라이밍 봉선점\" 3375 m apart",
+     "ids": [
+      "kr-gj-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-008 \"Incave Climbing Sangmu\": related names \"바위 클라이밍 센터\" / \"인케이브 클라이밍 상무\" 6446 m apart",
+     "ids": [
+      "kr-gj-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-009 \"Climb Lounge\": related names \"바위 클라이밍 센터\" / \"클라임라운지\" 3060 m apart",
+     "ids": [
+      "kr-gj-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-010 \"Bitgoeul Climbing Cheomdan\": related names \"바위 클라이밍 센터\" / \"첨단 빛고을 클라이밍\" 10242 m apart",
+     "ids": [
+      "kr-gj-010"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-011 \"On Climbing\": related names \"바위 클라이밍 센터\" / \"온클라이밍\" 10303 m apart",
+     "ids": [
+      "kr-gj-011"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-012 \"Grabit Climbing\": related names \"바위 클라이밍 센터\" / \"그랩잇 클라이밍\" 10981 m apart",
+     "ids": [
+      "kr-gj-012"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-014 \"Hwang Pyeong-ju Climbing Class\": related names \"바위 클라이밍 센터\" / \"황평주등반교실\" 6044 m apart",
+     "ids": [
+      "kr-gj-014"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-015 \"Gwangju Indoor Rock Wall\": related names \"바위 클라이밍 센터\" / \"광주실내암벽\" 4054 m apart",
+     "ids": [
+      "kr-gj-015"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-016 \"Sangmu Artificial Climbing Wall\": related names \"바위 클라이밍 센터\" / \"상무인공암벽장\" 7349 m apart",
+     "ids": [
+      "kr-gj-016"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-jn-005 \"Hwasun Rock Climbing Center\": related names \"바위 클라이밍 센터\" / \"화순락클라이밍센터\" 11484 m apart",
+     "ids": [
+      "kr-jn-005"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-gj-001",
+    "kr-gj-003",
+    "kr-gj-004",
+    "kr-gj-005",
+    "kr-gj-006",
+    "kr-gj-007",
+    "kr-gj-008",
+    "kr-gj-009",
+    "kr-gj-010",
+    "kr-gj-011",
+    "kr-gj-012",
+    "kr-gj-014",
+    "kr-gj-015",
+    "kr-gj-016",
+    "kr-jn-005"
+   ]
+  },
+  {
+   "cid": "kr-gj-003",
+   "line": 3,
+   "name": "Red One Climbing",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-ea311662bf"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-001 \"Climben Climbing Company\": related names \"레드원클라이밍\" / \"클라이븐 클라이밍 컴퍼니\" 2304 m apart",
+     "ids": [
+      "kr-gj-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-002 \"Bawi Climbing Center\": related names \"레드원클라이밍\" / \"바위 클라이밍 센터\" 2675 m apart",
+     "ids": [
+      "kr-gj-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-004 \"Red One Climbing Cheomdan\": related names \"Red One Climbing\" / \"Red One Climbing Cheomdan\" 11448 m apart",
+     "ids": [
+      "kr-gj-004"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-005 \"Handwerk Climbing Jeondae\": related names \"레드원클라이밍\" / \"핸드워크 클라이밍 전대점\" 5246 m apart",
+     "ids": [
+      "kr-gj-005"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-006 \"Handwerk Climbing Yangsan\": related names \"레드원클라이밍\" / \"핸드워크 클라이밍 양산점\" 10181 m apart",
+     "ids": [
+      "kr-gj-006"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-007 \"Handwerk Climbing Bongseon\": related names \"레드원클라이밍\" / \"핸드워크 클라이밍 봉선점\" 918 m apart",
+     "ids": [
+      "kr-gj-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-008 \"Incave Climbing Sangmu\": related names \"레드원클라이밍\" / \"인케이브 클라이밍 상무\" 6639 m apart",
+     "ids": [
+      "kr-gj-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-009 \"Climb Lounge\": related names \"레드원클라이밍\" / \"클라임라운지\" 3112 m apart",
+     "ids": [
+      "kr-gj-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-010 \"Bitgoeul Climbing Cheomdan\": related names \"레드원클라이밍\" / \"첨단 빛고을 클라이밍\" 12106 m apart",
+     "ids": [
+      "kr-gj-010"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-011 \"On Climbing\": related names \"레드원클라이밍\" / \"온클라이밍\" 11383 m apart",
+     "ids": [
+      "kr-gj-011"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-012 \"Grabit Climbing\": related names \"레드원클라이밍\" / \"그랩잇 클라이밍\" 12351 m apart",
+     "ids": [
+      "kr-gj-012"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-014 \"Hwang Pyeong-ju Climbing Class\": related names \"레드원클라이밍\" / \"황평주등반교실\" 4881 m apart",
+     "ids": [
+      "kr-gj-014"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-015 \"Gwangju Indoor Rock Wall\": related names \"레드원클라이밍\" / \"광주실내암벽\" 5750 m apart",
+     "ids": [
+      "kr-gj-015"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-016 \"Sangmu Artificial Climbing Wall\": related names \"레드원클라이밍\" / \"상무인공암벽장\" 7666 m apart",
+     "ids": [
+      "kr-gj-016"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-jn-005 \"Hwasun Rock Climbing Center\": related names \"레드원클라이밍\" / \"화순락클라이밍센터\" 9616 m apart",
+     "ids": [
+      "kr-jn-005"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-gj-001",
+    "kr-gj-002",
+    "kr-gj-004",
+    "kr-gj-005",
+    "kr-gj-006",
+    "kr-gj-007",
+    "kr-gj-008",
+    "kr-gj-009",
+    "kr-gj-010",
+    "kr-gj-011",
+    "kr-gj-012",
+    "kr-gj-014",
+    "kr-gj-015",
+    "kr-gj-016",
+    "kr-jn-005"
+   ]
+  },
+  {
+   "cid": "kr-gj-004",
+   "line": 4,
+   "name": "Red One Climbing Cheomdan",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-814f33fdfa"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-001 \"Climben Climbing Company\": related names \"레드원클라이밍 첨단\" / \"클라이븐 클라이밍 컴퍼니\" 9646 m apart",
+     "ids": [
+      "kr-gj-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-002 \"Bawi Climbing Center\": related names \"레드원클라이밍 첨단\" / \"바위 클라이밍 센터\" 9534 m apart",
+     "ids": [
+      "kr-gj-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-003 \"Red One Climbing\": related names \"Red One Climbing Cheomdan\" / \"Red One Climbing\" 11448 m apart",
+     "ids": [
+      "kr-gj-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-005 \"Handwerk Climbing Jeondae\": related names \"레드원클라이밍 첨단\" / \"핸드워크 클라이밍 전대점\" 7330 m apart",
+     "ids": [
+      "kr-gj-005"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-006 \"Handwerk Climbing Yangsan\": related names \"레드원클라이밍 첨단\" / \"핸드워크 클라이밍 양산점\" 2067 m apart",
+     "ids": [
+      "kr-gj-006"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-007 \"Handwerk Climbing Bongseon\": related names \"레드원클라이밍 첨단\" / \"핸드워크 클라이밍 봉선점\" 11554 m apart",
+     "ids": [
+      "kr-gj-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-008 \"Incave Climbing Sangmu\": related names \"레드원클라이밍 첨단\" / \"인케이브 클라이밍 상무\" 7092 m apart",
+     "ids": [
+      "kr-gj-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-009 \"Climb Lounge\": related names \"레드원클라이밍 첨단\" / \"클라임라운지\" 8695 m apart",
+     "ids": [
+      "kr-gj-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-010 \"Bitgoeul Climbing Cheomdan\": related names \"레드원클라이밍 첨단\" / \"첨단 빛고을 클라이밍\" 744 m apart",
+     "ids": [
+      "kr-gj-010"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-011 \"On Climbing\": related names \"레드원클라이밍 첨단\" / \"온클라이밍\" 4054 m apart",
+     "ids": [
+      "kr-gj-011"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-012 \"Grabit Climbing\": related names \"레드원클라이밍 첨단\" / \"그랩잇 클라이밍\" 3093 m apart",
+     "ids": [
+      "kr-gj-012"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-014 \"Hwang Pyeong-ju Climbing Class\": related names \"레드원클라이밍 첨단\" / \"황평주등반교실\" 10195 m apart",
+     "ids": [
+      "kr-gj-014"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-015 \"Gwangju Indoor Rock Wall\": related names \"레드원클라이밍 첨단\" / \"광주실내암벽\" 5698 m apart",
+     "ids": [
+      "kr-gj-015"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-016 \"Sangmu Artificial Climbing Wall\": related names \"레드원클라이밍 첨단\" / \"상무인공암벽장\" 6620 m apart",
+     "ids": [
+      "kr-gj-016"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-gj-001",
+    "kr-gj-002",
+    "kr-gj-003",
+    "kr-gj-005",
+    "kr-gj-006",
+    "kr-gj-007",
+    "kr-gj-008",
+    "kr-gj-009",
+    "kr-gj-010",
+    "kr-gj-011",
+    "kr-gj-012",
+    "kr-gj-014",
+    "kr-gj-015",
+    "kr-gj-016"
+   ]
+  },
+  {
+   "cid": "kr-gj-005",
+   "line": 5,
+   "name": "Handwerk Climbing Jeondae",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-fc5df41c96"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-001 \"Climben Climbing Company\": related names \"핸드워크 클라이밍 전대점\" / \"클라이븐 클라이밍 컴퍼니\" 2962 m apart",
+     "ids": [
+      "kr-gj-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-002 \"Bawi Climbing Center\": related names \"핸드워크 클라이밍 전대점\" / \"바위 클라이밍 센터\" 2657 m apart",
+     "ids": [
+      "kr-gj-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-003 \"Red One Climbing\": related names \"핸드워크 클라이밍 전대점\" / \"레드원클라이밍\" 5246 m apart",
+     "ids": [
+      "kr-gj-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-004 \"Red One Climbing Cheomdan\": related names \"핸드워크 클라이밍 전대점\" / \"레드원클라이밍 첨단\" 7330 m apart",
+     "ids": [
+      "kr-gj-004"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-006 \"Handwerk Climbing Yangsan\": related names \"핸드워크 클라이밍 전대점\" / \"핸드워크 클라이밍 양산점\" 5580 m apart",
+     "ids": [
+      "kr-gj-006"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-007 \"Handwerk Climbing Bongseon\": related names \"핸드워크 클라이밍 전대점\" / \"핸드워크 클라이밍 봉선점\" 5804 m apart",
+     "ids": [
+      "kr-gj-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-008 \"Incave Climbing Sangmu\": related names \"핸드워크 클라이밍 전대점\" / \"인케이브 클라이밍 상무\" 6406 m apart",
+     "ids": [
+      "kr-gj-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-009 \"Climb Lounge\": related names \"핸드워크 클라이밍 전대점\" / \"클라임라운지\" 4195 m apart",
+     "ids": [
+      "kr-gj-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-010 \"Bitgoeul Climbing Cheomdan\": related names \"핸드워크 클라이밍 전대점\" / \"첨단 빛고을 클라이밍\" 8066 m apart",
+     "ids": [
+      "kr-gj-010"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-011 \"On Climbing\": related names \"핸드워크 클라이밍 전대점\" / \"온클라이밍\" 8931 m apart",
+     "ids": [
+      "kr-gj-011"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-012 \"Grabit Climbing\": related names \"핸드워크 클라이밍 전대점\" / \"그랩잇 클라이밍\" 9276 m apart",
+     "ids": [
+      "kr-gj-012"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-014 \"Hwang Pyeong-ju Climbing Class\": related names \"핸드워크 클라이밍 전대점\" / \"황평주등반교실\" 7294 m apart",
+     "ids": [
+      "kr-gj-014"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-015 \"Gwangju Indoor Rock Wall\": related names \"핸드워크 클라이밍 전대점\" / \"광주실내암벽\" 2809 m apart",
+     "ids": [
+      "kr-gj-015"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-016 \"Sangmu Artificial Climbing Wall\": related names \"핸드워크 클라이밍 전대점\" / \"상무인공암벽장\" 7047 m apart",
+     "ids": [
+      "kr-gj-016"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-jn-005 \"Hwasun Rock Climbing Center\": related names \"핸드워크 클라이밍 전대점\" / \"화순락클라이밍센터\" 14006 m apart",
+     "ids": [
+      "kr-jn-005"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-1176 \"Handwerk Climbing\": related names \"Handwerk Climbing Jeondae\" / \"Handwerk Climbing\" 5631 m apart",
+     "ids": [
+      "seed-1176"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate kr-gj-006 has the same website",
+     "ids": [
+      "kr-gj-006"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate kr-gj-007 has the same website",
+     "ids": [
+      "kr-gj-007"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-gj-001",
+    "kr-gj-002",
+    "kr-gj-003",
+    "kr-gj-004",
+    "kr-gj-006",
+    "kr-gj-007",
+    "kr-gj-008",
+    "kr-gj-009",
+    "kr-gj-010",
+    "kr-gj-011",
+    "kr-gj-012",
+    "kr-gj-014",
+    "kr-gj-015",
+    "kr-gj-016",
+    "kr-jn-005",
+    "seed-1176"
+   ]
+  },
+  {
+   "cid": "kr-gj-006",
+   "line": 6,
+   "name": "Handwerk Climbing Yangsan",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-9b8b7b1a64"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1176 similar-name-nearby 110 m",
+     "ids": [
+      "seed-1176"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1176 \"Handwerk Climbing\": similar-name-nearby (\"Handwerk Climbing Yangsan\" / \"Handwerk Climbing\", 110 m)",
+     "ids": [
+      "seed-1176"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-001 \"Climben Climbing Company\": related names \"핸드워크 클라이밍 양산점\" / \"클라이븐 클라이밍 컴퍼니\" 8176 m apart",
+     "ids": [
+      "kr-gj-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-002 \"Bawi Climbing Center\": related names \"핸드워크 클라이밍 양산점\" / \"바위 클라이밍 센터\" 8000 m apart",
+     "ids": [
+      "kr-gj-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-003 \"Red One Climbing\": related names \"핸드워크 클라이밍 양산점\" / \"레드원클라이밍\" 10181 m apart",
+     "ids": [
+      "kr-gj-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-004 \"Red One Climbing Cheomdan\": related names \"핸드워크 클라이밍 양산점\" / \"레드원클라이밍 첨단\" 2067 m apart",
+     "ids": [
+      "kr-gj-004"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-005 \"Handwerk Climbing Jeondae\": related names \"Handwerk Climbing Yangsan\" / \"Handwerk Climbing Gym\" 5580 m apart",
+     "ids": [
+      "kr-gj-005"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-007 \"Handwerk Climbing Bongseon\": related names \"핸드워크 클라이밍 양산점\" / \"핸드워크 클라이밍 봉선점\" 10427 m apart",
+     "ids": [
+      "kr-gj-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-008 \"Incave Climbing Sangmu\": related names \"핸드워크 클라이밍 양산점\" / \"인케이브 클라이밍 상무\" 7044 m apart",
+     "ids": [
+      "kr-gj-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-009 \"Climb Lounge\": related names \"핸드워크 클라이밍 양산점\" / \"클라임라운지\" 7742 m apart",
+     "ids": [
+      "kr-gj-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-010 \"Bitgoeul Climbing Cheomdan\": related names \"핸드워크 클라이밍 양산점\" / \"첨단 빛고을 클라이밍\" 2780 m apart",
+     "ids": [
+      "kr-gj-010"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-011 \"On Climbing\": related names \"핸드워크 클라이밍 양산점\" / \"온클라이밍\" 5547 m apart",
+     "ids": [
+      "kr-gj-011"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-012 \"Grabit Climbing\": related names \"핸드워크 클라이밍 양산점\" / \"그랩잇 클라이밍\" 4965 m apart",
+     "ids": [
+      "kr-gj-012"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-014 \"Hwang Pyeong-ju Climbing Class\": related names \"핸드워크 클라이밍 양산점\" / \"황평주등반교실\" 9800 m apart",
+     "ids": [
+      "kr-gj-014"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-015 \"Gwangju Indoor Rock Wall\": related names \"핸드워크 클라이밍 양산점\" / \"광주실내암벽\" 4579 m apart",
+     "ids": [
+      "kr-gj-015"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-016 \"Sangmu Artificial Climbing Wall\": related names \"핸드워크 클라이밍 양산점\" / \"상무인공암벽장\" 6866 m apart",
+     "ids": [
+      "kr-gj-016"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate kr-gj-005 has the same website",
+     "ids": [
+      "kr-gj-005"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate kr-gj-007 has the same website",
+     "ids": [
+      "kr-gj-007"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-gj-001",
+    "kr-gj-002",
+    "kr-gj-003",
+    "kr-gj-004",
+    "kr-gj-005",
+    "kr-gj-007",
+    "kr-gj-008",
+    "kr-gj-009",
+    "kr-gj-010",
+    "kr-gj-011",
+    "kr-gj-012",
+    "kr-gj-014",
+    "kr-gj-015",
+    "kr-gj-016",
+    "seed-1176"
+   ]
+  },
+  {
+   "cid": "kr-gj-007",
+   "line": 7,
+   "name": "Handwerk Climbing Bongseon",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-8f000570f8"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-001 \"Climben Climbing Company\": related names \"핸드워크 클라이밍 봉선점\" / \"클라이븐 클라이밍 컴퍼니\" 2970 m apart",
+     "ids": [
+      "kr-gj-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-002 \"Bawi Climbing Center\": related names \"핸드워크 클라이밍 봉선점\" / \"바위 클라이밍 센터\" 3375 m apart",
+     "ids": [
+      "kr-gj-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-003 \"Red One Climbing\": related names \"핸드워크 클라이밍 봉선점\" / \"레드원클라이밍\" 918 m apart",
+     "ids": [
+      "kr-gj-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-004 \"Red One Climbing Cheomdan\": related names \"핸드워크 클라이밍 봉선점\" / \"레드원클라이밍 첨단\" 11554 m apart",
+     "ids": [
+      "kr-gj-004"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-005 \"Handwerk Climbing Jeondae\": related names \"Handwerk Climbing Bongseon\" / \"Handwerk Climbing Gym\" 5804 m apart",
+     "ids": [
+      "kr-gj-005"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-006 \"Handwerk Climbing Yangsan\": related names \"핸드워크 클라이밍 봉선점\" / \"핸드워크 클라이밍 양산점\" 10427 m apart",
+     "ids": [
+      "kr-gj-006"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-008 \"Incave Climbing Sangmu\": related names \"핸드워크 클라이밍 봉선점\" / \"인케이브 클라이밍 상무\" 6224 m apart",
+     "ids": [
+      "kr-gj-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-009 \"Climb Lounge\": related names \"핸드워크 클라이밍 봉선점\" / \"클라임라운지\" 2935 m apart",
+     "ids": [
+      "kr-gj-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-010 \"Bitgoeul Climbing Cheomdan\": related names \"핸드워크 클라이밍 봉선점\" / \"첨단 빛고을 클라이밍\" 12183 m apart",
+     "ids": [
+      "kr-gj-010"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-011 \"On Climbing\": related names \"핸드워크 클라이밍 봉선점\" / \"온클라이밍\" 11164 m apart",
+     "ids": [
+      "kr-gj-011"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-012 \"Grabit Climbing\": related names \"핸드워크 클라이밍 봉선점\" / \"그랩잇 클라이밍\" 12226 m apart",
+     "ids": [
+      "kr-gj-012"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-014 \"Hwang Pyeong-ju Climbing Class\": related names \"핸드워크 클라이밍 봉선점\" / \"황평주등반교실\" 4125 m apart",
+     "ids": [
+      "kr-gj-014"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-015 \"Gwangju Indoor Rock Wall\": related names \"핸드워크 클라이밍 봉선점\" / \"광주실내암벽\" 5892 m apart",
+     "ids": [
+      "kr-gj-015"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-016 \"Sangmu Artificial Climbing Wall\": related names \"핸드워크 클라이밍 봉선점\" / \"상무인공암벽장\" 7260 m apart",
+     "ids": [
+      "kr-gj-016"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-jn-005 \"Hwasun Rock Climbing Center\": related names \"핸드워크 클라이밍 봉선점\" / \"화순락클라이밍센터\" 9777 m apart",
+     "ids": [
+      "kr-jn-005"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-1176 \"Handwerk Climbing\": related names \"Handwerk Climbing Bongseon\" / \"Handwerk Climbing\" 10513 m apart",
+     "ids": [
+      "seed-1176"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate kr-gj-005 has the same website",
+     "ids": [
+      "kr-gj-005"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate kr-gj-006 has the same website",
+     "ids": [
+      "kr-gj-006"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-gj-001",
+    "kr-gj-002",
+    "kr-gj-003",
+    "kr-gj-004",
+    "kr-gj-005",
+    "kr-gj-006",
+    "kr-gj-008",
+    "kr-gj-009",
+    "kr-gj-010",
+    "kr-gj-011",
+    "kr-gj-012",
+    "kr-gj-014",
+    "kr-gj-015",
+    "kr-gj-016",
+    "kr-jn-005",
+    "seed-1176"
+   ]
+  },
+  {
+   "cid": "kr-gj-008",
+   "line": 8,
+   "name": "Incave Climbing Sangmu",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-2c472ea4af"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-001 \"Climben Climbing Company\": related names \"인케이브 클라이밍 상무\" / \"클라이븐 클라이밍 컴퍼니\" 6221 m apart",
+     "ids": [
+      "kr-gj-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-002 \"Bawi Climbing Center\": related names \"인케이브 클라이밍 상무\" / \"바위 클라이밍 센터\" 6446 m apart",
+     "ids": [
+      "kr-gj-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-003 \"Red One Climbing\": related names \"인케이브 클라이밍 상무\" / \"레드원클라이밍\" 6639 m apart",
+     "ids": [
+      "kr-gj-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-004 \"Red One Climbing Cheomdan\": related names \"인케이브 클라이밍 상무\" / \"레드원클라이밍 첨단\" 7092 m apart",
+     "ids": [
+      "kr-gj-004"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-005 \"Handwerk Climbing Jeondae\": related names \"인케이브 클라이밍 상무\" / \"핸드워크 클라이밍 전대점\" 6406 m apart",
+     "ids": [
+      "kr-gj-005"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-006 \"Handwerk Climbing Yangsan\": related names \"인케이브 클라이밍 상무\" / \"핸드워크 클라이밍 양산점\" 7044 m apart",
+     "ids": [
+      "kr-gj-006"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-007 \"Handwerk Climbing Bongseon\": related names \"인케이브 클라이밍 상무\" / \"핸드워크 클라이밍 봉선점\" 6224 m apart",
+     "ids": [
+      "kr-gj-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-009 \"Climb Lounge\": related names \"인케이브 클라이밍 상무\" / \"클라임라운지\" 3630 m apart",
+     "ids": [
+      "kr-gj-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-010 \"Bitgoeul Climbing Cheomdan\": related names \"인케이브 클라이밍 상무\" / \"첨단 빛고을 클라이밍\" 7481 m apart",
+     "ids": [
+      "kr-gj-010"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-011 \"On Climbing\": related names \"인케이브 클라이밍 상무\" / \"온클라이밍\" 5217 m apart",
+     "ids": [
+      "kr-gj-011"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-012 \"Grabit Climbing\": related names \"인케이브 클라이밍 상무\" / \"그랩잇 클라이밍\" 6559 m apart",
+     "ids": [
+      "kr-gj-012"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-014 \"Hwang Pyeong-ju Climbing Class\": related names \"인케이브 클라이밍 상무\" / \"황평주등반교실\" 3275 m apart",
+     "ids": [
+      "kr-gj-014"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-015 \"Gwangju Indoor Rock Wall\": related names \"인케이브 클라이밍 상무\" / \"광주실내암벽\" 3804 m apart",
+     "ids": [
+      "kr-gj-015"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-016 \"Sangmu Artificial Climbing Wall\": related names \"인케이브 클라이밍 상무\" / \"상무인공암벽장\" 1036 m apart",
+     "ids": [
+      "kr-gj-016"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-gj-001",
+    "kr-gj-002",
+    "kr-gj-003",
+    "kr-gj-004",
+    "kr-gj-005",
+    "kr-gj-006",
+    "kr-gj-007",
+    "kr-gj-009",
+    "kr-gj-010",
+    "kr-gj-011",
+    "kr-gj-012",
+    "kr-gj-014",
+    "kr-gj-015",
+    "kr-gj-016"
+   ]
+  },
+  {
+   "cid": "kr-gj-009",
+   "line": 9,
+   "name": "Climb Lounge",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-ec6871922f"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-001 \"Climben Climbing Company\": related names \"클라임라운지\" / \"클라이븐 클라이밍 컴퍼니\" 2746 m apart",
+     "ids": [
+      "kr-gj-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-002 \"Bawi Climbing Center\": related names \"클라임라운지\" / \"바위 클라이밍 센터\" 3060 m apart",
+     "ids": [
+      "kr-gj-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-003 \"Red One Climbing\": related names \"클라임라운지\" / \"레드원클라이밍\" 3112 m apart",
+     "ids": [
+      "kr-gj-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-004 \"Red One Climbing Cheomdan\": related names \"클라임라운지\" / \"레드원클라이밍 첨단\" 8695 m apart",
+     "ids": [
+      "kr-gj-004"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-005 \"Handwerk Climbing Jeondae\": related names \"클라임라운지\" / \"핸드워크 클라이밍 전대점\" 4195 m apart",
+     "ids": [
+      "kr-gj-005"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-006 \"Handwerk Climbing Yangsan\": related names \"클라임라운지\" / \"핸드워크 클라이밍 양산점\" 7742 m apart",
+     "ids": [
+      "kr-gj-006"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-007 \"Handwerk Climbing Bongseon\": related names \"클라임라운지\" / \"핸드워크 클라이밍 봉선점\" 2935 m apart",
+     "ids": [
+      "kr-gj-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-008 \"Incave Climbing Sangmu\": related names \"클라임라운지\" / \"인케이브 클라이밍 상무\" 3630 m apart",
+     "ids": [
+      "kr-gj-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-010 \"Bitgoeul Climbing Cheomdan\": related names \"클라임라운지\" / \"첨단 빛고을 클라이밍\" 9299 m apart",
+     "ids": [
+      "kr-gj-010"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-011 \"On Climbing\": related names \"클라임라운지\" / \"온클라이밍\" 8279 m apart",
+     "ids": [
+      "kr-gj-011"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-012 \"Grabit Climbing\": related names \"클라임라운지\" / \"그랩잇 클라이밍\" 9297 m apart",
+     "ids": [
+      "kr-gj-012"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-014 \"Hwang Pyeong-ju Climbing Class\": related names \"클라임라운지\" / \"황평주등반교실\" 3145 m apart",
+     "ids": [
+      "kr-gj-014"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-015 \"Gwangju Indoor Rock Wall\": related names \"클라임라운지\" / \"광주실내암벽\" 3168 m apart",
+     "ids": [
+      "kr-gj-015"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-016 \"Sangmu Artificial Climbing Wall\": related names \"클라임라운지\" / \"상무인공암벽장\" 4630 m apart",
+     "ids": [
+      "kr-gj-016"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-jn-005 \"Hwasun Rock Climbing Center\": related names \"클라임라운지\" / \"화순락클라이밍센터\" 12676 m apart",
+     "ids": [
+      "kr-jn-005"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-gj-001",
+    "kr-gj-002",
+    "kr-gj-003",
+    "kr-gj-004",
+    "kr-gj-005",
+    "kr-gj-006",
+    "kr-gj-007",
+    "kr-gj-008",
+    "kr-gj-010",
+    "kr-gj-011",
+    "kr-gj-012",
+    "kr-gj-014",
+    "kr-gj-015",
+    "kr-gj-016",
+    "kr-jn-005"
+   ]
+  },
+  {
+   "cid": "kr-gj-010",
+   "line": 10,
+   "name": "Bitgoeul Climbing Cheomdan",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-7d319df411"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-001 \"Climben Climbing Company\": related names \"첨단 빛고을 클라이밍\" / \"클라이븐 클라이밍 컴퍼니\" 10344 m apart",
+     "ids": [
+      "kr-gj-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-002 \"Bawi Climbing Center\": related names \"첨단 빛고을 클라이밍\" / \"바위 클라이밍 센터\" 10242 m apart",
+     "ids": [
+      "kr-gj-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-003 \"Red One Climbing\": related names \"첨단 빛고을 클라이밍\" / \"레드원클라이밍\" 12106 m apart",
+     "ids": [
+      "kr-gj-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-004 \"Red One Climbing Cheomdan\": related names \"첨단 빛고을 클라이밍\" / \"레드원클라이밍 첨단\" 744 m apart",
+     "ids": [
+      "kr-gj-004"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-005 \"Handwerk Climbing Jeondae\": related names \"첨단 빛고을 클라이밍\" / \"핸드워크 클라이밍 전대점\" 8066 m apart",
+     "ids": [
+      "kr-gj-005"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-006 \"Handwerk Climbing Yangsan\": related names \"첨단 빛고을 클라이밍\" / \"핸드워크 클라이밍 양산점\" 2780 m apart",
+     "ids": [
+      "kr-gj-006"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-007 \"Handwerk Climbing Bongseon\": related names \"첨단 빛고을 클라이밍\" / \"핸드워크 클라이밍 봉선점\" 12183 m apart",
+     "ids": [
+      "kr-gj-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-008 \"Incave Climbing Sangmu\": related names \"첨단 빛고을 클라이밍\" / \"인케이브 클라이밍 상무\" 7481 m apart",
+     "ids": [
+      "kr-gj-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-009 \"Climb Lounge\": related names \"첨단 빛고을 클라이밍\" / \"클라임라운지\" 9299 m apart",
+     "ids": [
+      "kr-gj-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-011 \"On Climbing\": related names \"첨단 빛고을 클라이밍\" / \"온클라이밍\" 3895 m apart",
+     "ids": [
+      "kr-gj-011"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-012 \"Grabit Climbing\": related names \"첨단 빛고을 클라이밍\" / \"그랩잇 클라이밍\" 2695 m apart",
+     "ids": [
+      "kr-gj-012"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-014 \"Hwang Pyeong-ju Climbing Class\": related names \"첨단 빛고을 클라이밍\" / \"황평주등반교실\" 10650 m apart",
+     "ids": [
+      "kr-gj-014"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-015 \"Gwangju Indoor Rock Wall\": related names \"첨단 빛고을 클라이밍\" / \"광주실내암벽\" 6361 m apart",
+     "ids": [
+      "kr-gj-015"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-016 \"Sangmu Artificial Climbing Wall\": related names \"첨단 빛고을 클라이밍\" / \"상무인공암벽장\" 6925 m apart",
+     "ids": [
+      "kr-gj-016"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-gj-001",
+    "kr-gj-002",
+    "kr-gj-003",
+    "kr-gj-004",
+    "kr-gj-005",
+    "kr-gj-006",
+    "kr-gj-007",
+    "kr-gj-008",
+    "kr-gj-009",
+    "kr-gj-011",
+    "kr-gj-012",
+    "kr-gj-014",
+    "kr-gj-015",
+    "kr-gj-016"
+   ]
+  },
+  {
+   "cid": "kr-gj-011",
+   "line": 11,
+   "name": "On Climbing",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-1fc04454be"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-001 \"Climben Climbing Company\": related names \"온클라이밍\" / \"클라이븐 클라이밍 컴퍼니\" 10246 m apart",
+     "ids": [
+      "kr-gj-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-002 \"Bawi Climbing Center\": related names \"온클라이밍\" / \"바위 클라이밍 센터\" 10303 m apart",
+     "ids": [
+      "kr-gj-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-003 \"Red One Climbing\": related names \"온클라이밍\" / \"레드원클라이밍\" 11383 m apart",
+     "ids": [
+      "kr-gj-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-004 \"Red One Climbing Cheomdan\": related names \"온클라이밍\" / \"레드원클라이밍 첨단\" 4054 m apart",
+     "ids": [
+      "kr-gj-004"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-005 \"Handwerk Climbing Jeondae\": related names \"온클라이밍\" / \"핸드워크 클라이밍 전대점\" 8931 m apart",
+     "ids": [
+      "kr-gj-005"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-006 \"Handwerk Climbing Yangsan\": related names \"온클라이밍\" / \"핸드워크 클라이밍 양산점\" 5547 m apart",
+     "ids": [
+      "kr-gj-006"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-007 \"Handwerk Climbing Bongseon\": related names \"온클라이밍\" / \"핸드워크 클라이밍 봉선점\" 11164 m apart",
+     "ids": [
+      "kr-gj-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-008 \"Incave Climbing Sangmu\": related names \"온클라이밍\" / \"인케이브 클라이밍 상무\" 5217 m apart",
+     "ids": [
+      "kr-gj-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-009 \"Climb Lounge\": related names \"온클라이밍\" / \"클라임라운지\" 8279 m apart",
+     "ids": [
+      "kr-gj-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-010 \"Bitgoeul Climbing Cheomdan\": related names \"온클라이밍\" / \"첨단 빛고을 클라이밍\" 3895 m apart",
+     "ids": [
+      "kr-gj-010"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-012 \"Grabit Climbing\": related names \"온클라이밍\" / \"그랩잇 클라이밍\" 1601 m apart",
+     "ids": [
+      "kr-gj-012"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-014 \"Hwang Pyeong-ju Climbing Class\": related names \"온클라이밍\" / \"황평주등반교실\" 8449 m apart",
+     "ids": [
+      "kr-gj-014"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-015 \"Gwangju Indoor Rock Wall\": related names \"온클라이밍\" / \"광주실내암벽\" 6327 m apart",
+     "ids": [
+      "kr-gj-015"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-016 \"Sangmu Artificial Climbing Wall\": related names \"온클라이밍\" / \"상무인공암벽장\" 4298 m apart",
+     "ids": [
+      "kr-gj-016"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-gj-001",
+    "kr-gj-002",
+    "kr-gj-003",
+    "kr-gj-004",
+    "kr-gj-005",
+    "kr-gj-006",
+    "kr-gj-007",
+    "kr-gj-008",
+    "kr-gj-009",
+    "kr-gj-010",
+    "kr-gj-012",
+    "kr-gj-014",
+    "kr-gj-015",
+    "kr-gj-016"
+   ]
+  },
+  {
+   "cid": "kr-gj-012",
+   "line": 12,
+   "name": "Grabit Climbing",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-2de5b8d501"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-001 \"Climben Climbing Company\": related names \"그랩잇 클라이밍\" / \"클라이븐 클라이밍 컴퍼니\" 10981 m apart",
+     "ids": [
+      "kr-gj-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-002 \"Bawi Climbing Center\": related names \"그랩잇 클라이밍\" / \"바위 클라이밍 센터\" 10981 m apart",
+     "ids": [
+      "kr-gj-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-003 \"Red One Climbing\": related names \"그랩잇 클라이밍\" / \"레드원클라이밍\" 12351 m apart",
+     "ids": [
+      "kr-gj-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-004 \"Red One Climbing Cheomdan\": related names \"그랩잇 클라이밍\" / \"레드원클라이밍 첨단\" 3093 m apart",
+     "ids": [
+      "kr-gj-004"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-005 \"Handwerk Climbing Jeondae\": related names \"그랩잇 클라이밍\" / \"핸드워크 클라이밍 전대점\" 9276 m apart",
+     "ids": [
+      "kr-gj-005"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-006 \"Handwerk Climbing Yangsan\": related names \"그랩잇 클라이밍\" / \"핸드워크 클라이밍 양산점\" 4965 m apart",
+     "ids": [
+      "kr-gj-006"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-007 \"Handwerk Climbing Bongseon\": related names \"그랩잇 클라이밍\" / \"핸드워크 클라이밍 봉선점\" 12226 m apart",
+     "ids": [
+      "kr-gj-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-008 \"Incave Climbing Sangmu\": related names \"그랩잇 클라이밍\" / \"인케이브 클라이밍 상무\" 6559 m apart",
+     "ids": [
+      "kr-gj-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-009 \"Climb Lounge\": related names \"그랩잇 클라이밍\" / \"클라임라운지\" 9297 m apart",
+     "ids": [
+      "kr-gj-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-010 \"Bitgoeul Climbing Cheomdan\": related names \"그랩잇 클라이밍\" / \"첨단 빛고을 클라이밍\" 2695 m apart",
+     "ids": [
+      "kr-gj-010"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-011 \"On Climbing\": related names \"그랩잇 클라이밍\" / \"온클라이밍\" 1601 m apart",
+     "ids": [
+      "kr-gj-011"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-014 \"Hwang Pyeong-ju Climbing Class\": related names \"그랩잇 클라이밍\" / \"황평주등반교실\" 9830 m apart",
+     "ids": [
+      "kr-gj-014"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-015 \"Gwangju Indoor Rock Wall\": related names \"그랩잇 클라이밍\" / \"광주실내암벽\" 6929 m apart",
+     "ids": [
+      "kr-gj-015"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-016 \"Sangmu Artificial Climbing Wall\": related names \"그랩잇 클라이밍\" / \"상무인공암벽장\" 5721 m apart",
+     "ids": [
+      "kr-gj-016"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-1175 \"Grabit\": related names \"Grabit Climbing\" / \"Grabit\" 3640 m apart",
+     "ids": [
+      "seed-1175"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-gj-001",
+    "kr-gj-002",
+    "kr-gj-003",
+    "kr-gj-004",
+    "kr-gj-005",
+    "kr-gj-006",
+    "kr-gj-007",
+    "kr-gj-008",
+    "kr-gj-009",
+    "kr-gj-010",
+    "kr-gj-011",
+    "kr-gj-014",
+    "kr-gj-015",
+    "kr-gj-016",
+    "seed-1175"
+   ]
+  },
+  {
+   "cid": "kr-gj-013",
+   "line": 13,
+   "name": "G1 Climbing Songjeong",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-a13f42d494"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-015 \"Gwangju Indoor Rock Wall\": related names \"G1 Climbing Center Gwangju\" / \"Gwangju Indoor Rock Wall\" 8209 m apart",
+     "ids": [
+      "kr-gj-015"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-gj-015"
+   ]
+  },
+  {
+   "cid": "kr-gj-014",
+   "line": 14,
+   "name": "Hwang Pyeong-ju Climbing Class",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-bd6e0ad1fa"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-001 \"Climben Climbing Company\": related names \"황평주등반교실\" / \"클라이븐 클라이밍 컴퍼니\" 5668 m apart",
+     "ids": [
+      "kr-gj-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-002 \"Bawi Climbing Center\": related names \"황평주등반교실\" / \"바위 클라이밍 센터\" 6044 m apart",
+     "ids": [
+      "kr-gj-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-003 \"Red One Climbing\": related names \"황평주등반교실\" / \"레드원클라이밍\" 4881 m apart",
+     "ids": [
+      "kr-gj-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-004 \"Red One Climbing Cheomdan\": related names \"황평주등반교실\" / \"레드원클라이밍 첨단\" 10195 m apart",
+     "ids": [
+      "kr-gj-004"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-005 \"Handwerk Climbing Jeondae\": related names \"황평주등반교실\" / \"핸드워크 클라이밍 전대점\" 7294 m apart",
+     "ids": [
+      "kr-gj-005"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-006 \"Handwerk Climbing Yangsan\": related names \"황평주등반교실\" / \"핸드워크 클라이밍 양산점\" 9800 m apart",
+     "ids": [
+      "kr-gj-006"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-007 \"Handwerk Climbing Bongseon\": related names \"황평주등반교실\" / \"핸드워크 클라이밍 봉선점\" 4125 m apart",
+     "ids": [
+      "kr-gj-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-008 \"Incave Climbing Sangmu\": related names \"황평주등반교실\" / \"인케이브 클라이밍 상무\" 3275 m apart",
+     "ids": [
+      "kr-gj-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-009 \"Climb Lounge\": related names \"황평주등반교실\" / \"클라임라운지\" 3145 m apart",
+     "ids": [
+      "kr-gj-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-010 \"Bitgoeul Climbing Cheomdan\": related names \"황평주등반교실\" / \"첨단 빛고을 클라이밍\" 10650 m apart",
+     "ids": [
+      "kr-gj-010"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-011 \"On Climbing\": related names \"황평주등반교실\" / \"온클라이밍\" 8449 m apart",
+     "ids": [
+      "kr-gj-011"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-012 \"Grabit Climbing\": related names \"황평주등반교실\" / \"그랩잇 클라이밍\" 9830 m apart",
+     "ids": [
+      "kr-gj-012"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-015 \"Gwangju Indoor Rock Wall\": related names \"황평주등반교실\" / \"광주실내암벽\" 5598 m apart",
+     "ids": [
+      "kr-gj-015"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-016 \"Sangmu Artificial Climbing Wall\": related names \"황평주등반교실\" / \"상무인공암벽장\" 4153 m apart",
+     "ids": [
+      "kr-gj-016"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-jn-005 \"Hwasun Rock Climbing Center\": related names \"황평주등반교실\" / \"화순락클라이밍센터\" 13237 m apart",
+     "ids": [
+      "kr-jn-005"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-gj-001",
+    "kr-gj-002",
+    "kr-gj-003",
+    "kr-gj-004",
+    "kr-gj-005",
+    "kr-gj-006",
+    "kr-gj-007",
+    "kr-gj-008",
+    "kr-gj-009",
+    "kr-gj-010",
+    "kr-gj-011",
+    "kr-gj-012",
+    "kr-gj-015",
+    "kr-gj-016",
+    "kr-jn-005"
+   ]
+  },
+  {
+   "cid": "kr-gj-015",
+   "line": 15,
+   "name": "Gwangju Indoor Rock Wall",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-89cb0a1d7a"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-001 \"Climben Climbing Company\": related names \"광주실내암벽\" / \"클라이븐 클라이밍 컴퍼니\" 4074 m apart",
+     "ids": [
+      "kr-gj-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-002 \"Bawi Climbing Center\": related names \"광주실내암벽\" / \"바위 클라이밍 센터\" 4054 m apart",
+     "ids": [
+      "kr-gj-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-003 \"Red One Climbing\": related names \"광주실내암벽\" / \"레드원클라이밍\" 5750 m apart",
+     "ids": [
+      "kr-gj-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-004 \"Red One Climbing Cheomdan\": related names \"광주실내암벽\" / \"레드원클라이밍 첨단\" 5698 m apart",
+     "ids": [
+      "kr-gj-004"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-005 \"Handwerk Climbing Jeondae\": related names \"광주실내암벽\" / \"핸드워크 클라이밍 전대점\" 2809 m apart",
+     "ids": [
+      "kr-gj-005"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-006 \"Handwerk Climbing Yangsan\": related names \"광주실내암벽\" / \"핸드워크 클라이밍 양산점\" 4579 m apart",
+     "ids": [
+      "kr-gj-006"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-007 \"Handwerk Climbing Bongseon\": related names \"광주실내암벽\" / \"핸드워크 클라이밍 봉선점\" 5892 m apart",
+     "ids": [
+      "kr-gj-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-008 \"Incave Climbing Sangmu\": related names \"광주실내암벽\" / \"인케이브 클라이밍 상무\" 3804 m apart",
+     "ids": [
+      "kr-gj-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-009 \"Climb Lounge\": related names \"광주실내암벽\" / \"클라임라운지\" 3168 m apart",
+     "ids": [
+      "kr-gj-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-010 \"Bitgoeul Climbing Cheomdan\": related names \"광주실내암벽\" / \"첨단 빛고을 클라이밍\" 6361 m apart",
+     "ids": [
+      "kr-gj-010"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-011 \"On Climbing\": related names \"광주실내암벽\" / \"온클라이밍\" 6327 m apart",
+     "ids": [
+      "kr-gj-011"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-012 \"Grabit Climbing\": related names \"광주실내암벽\" / \"그랩잇 클라이밍\" 6929 m apart",
+     "ids": [
+      "kr-gj-012"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-013 \"G1 Climbing Songjeong\": related names \"Gwangju Indoor Rock Wall\" / \"G1 Climbing Center Gwangju\" 8209 m apart",
+     "ids": [
+      "kr-gj-013"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-014 \"Hwang Pyeong-ju Climbing Class\": related names \"광주실내암벽\" / \"황평주등반교실\" 5598 m apart",
+     "ids": [
+      "kr-gj-014"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-016 \"Sangmu Artificial Climbing Wall\": related names \"광주실내암벽\" / \"상무인공암벽장\" 4306 m apart",
+     "ids": [
+      "kr-gj-016"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "kr-gj-001",
+    "kr-gj-002",
+    "kr-gj-003",
+    "kr-gj-004",
+    "kr-gj-005",
+    "kr-gj-006",
+    "kr-gj-007",
+    "kr-gj-008",
+    "kr-gj-009",
+    "kr-gj-010",
+    "kr-gj-011",
+    "kr-gj-012",
+    "kr-gj-013",
+    "kr-gj-014",
+    "kr-gj-016"
+   ]
+  },
+  {
+   "cid": "kr-gj-016",
+   "line": 16,
+   "name": "Sangmu Artificial Climbing Wall",
+   "class": "blocked",
+   "suggested": "reject not-a-gym",
+   "importer": {
+    "class": "new",
+    "id": "g-ba9857dccb"
+   },
+   "blockers": [
+    {
+     "code": "not-a-gym",
+     "detail": "category other"
+    },
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-001 \"Climben Climbing Company\": related names \"상무인공암벽장\" / \"클라이븐 클라이밍 컴퍼니\" 7150 m apart",
+     "ids": [
+      "kr-gj-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-002 \"Bawi Climbing Center\": related names \"상무인공암벽장\" / \"바위 클라이밍 센터\" 7349 m apart",
+     "ids": [
+      "kr-gj-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-003 \"Red One Climbing\": related names \"상무인공암벽장\" / \"레드원클라이밍\" 7666 m apart",
+     "ids": [
+      "kr-gj-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-004 \"Red One Climbing Cheomdan\": related names \"상무인공암벽장\" / \"레드원클라이밍 첨단\" 6620 m apart",
+     "ids": [
+      "kr-gj-004"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-005 \"Handwerk Climbing Jeondae\": related names \"상무인공암벽장\" / \"핸드워크 클라이밍 전대점\" 7047 m apart",
+     "ids": [
+      "kr-gj-005"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-006 \"Handwerk Climbing Yangsan\": related names \"상무인공암벽장\" / \"핸드워크 클라이밍 양산점\" 6866 m apart",
+     "ids": [
+      "kr-gj-006"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-007 \"Handwerk Climbing Bongseon\": related names \"상무인공암벽장\" / \"핸드워크 클라이밍 봉선점\" 7260 m apart",
+     "ids": [
+      "kr-gj-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-008 \"Incave Climbing Sangmu\": related names \"상무인공암벽장\" / \"인케이브 클라이밍 상무\" 1036 m apart",
+     "ids": [
+      "kr-gj-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-009 \"Climb Lounge\": related names \"상무인공암벽장\" / \"클라임라운지\" 4630 m apart",
+     "ids": [
+      "kr-gj-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-010 \"Bitgoeul Climbing Cheomdan\": related names \"상무인공암벽장\" / \"첨단 빛고을 클라이밍\" 6925 m apart",
+     "ids": [
+      "kr-gj-010"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-011 \"On Climbing\": related names \"상무인공암벽장\" / \"온클라이밍\" 4298 m apart",
+     "ids": [
+      "kr-gj-011"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-012 \"Grabit Climbing\": related names \"상무인공암벽장\" / \"그랩잇 클라이밍\" 5721 m apart",
+     "ids": [
+      "kr-gj-012"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-014 \"Hwang Pyeong-ju Climbing Class\": related names \"상무인공암벽장\" / \"황평주등반교실\" 4153 m apart",
+     "ids": [
+      "kr-gj-014"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-015 \"Gwangju Indoor Rock Wall\": related names \"상무인공암벽장\" / \"광주실내암벽\" 4306 m apart",
+     "ids": [
+      "kr-gj-015"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "kr-gj-001",
+    "kr-gj-002",
+    "kr-gj-003",
+    "kr-gj-004",
+    "kr-gj-005",
+    "kr-gj-006",
+    "kr-gj-007",
+    "kr-gj-008",
+    "kr-gj-009",
+    "kr-gj-010",
+    "kr-gj-011",
+    "kr-gj-012",
+    "kr-gj-014",
+    "kr-gj-015"
+   ]
+  },
+  {
+   "cid": "kr-jn-001",
+   "line": 17,
+   "name": "OneClimb Suncheon",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-5b76ff0665"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-jn-008 \"Palma Artificial Climbing Wall\": related names \"원클라임\" / \"팔마인공암벽장\" 3486 m apart",
+     "ids": [
+      "kr-jn-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-jn-009 \"Nepa Suncheon Climbing Center\": related names \"원클라임\" / \"네파순천클라이밍센터\" 4948 m apart",
+     "ids": [
+      "kr-jn-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-jn-010 \"Taki Indoor Rock Climbing\": related names \"원클라임\" / \"타기 실내암벽등반\" 9159 m apart",
+     "ids": [
+      "kr-jn-010"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-jn-008",
+    "kr-jn-009",
+    "kr-jn-010"
+   ]
+  },
+  {
+   "cid": "kr-jn-002",
+   "line": 18,
+   "name": "Carpe Climb",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-949814e4cb"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-jn-003 \"Mokpo Lead Climbing Center\": related names \"카르페클라임 클라이밍센터\" / \"리드클라이밍센터\" 3659 m apart",
+     "ids": [
+      "kr-jn-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-jn-006 \"Mokpo International Sport Climbing Center\": related names \"카르페클라임 클라이밍센터\" / \"목포국제스포츠클라이밍센터\" 2019 m apart",
+     "ids": [
+      "kr-jn-006"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-jn-003",
+    "kr-jn-006"
+   ]
+  },
+  {
+   "cid": "kr-jn-003",
+   "line": 19,
+   "name": "Mokpo Lead Climbing Center",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-6bb20a1cc4"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-jn-002 \"Carpe Climb\": related names \"리드클라이밍센터\" / \"카르페클라임 클라이밍센터\" 3659 m apart",
+     "ids": [
+      "kr-jn-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-jn-006 \"Mokpo International Sport Climbing Center\": related names \"리드클라이밍센터\" / \"목포국제스포츠클라이밍센터\" 2157 m apart",
+     "ids": [
+      "kr-jn-006"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-jn-002",
+    "kr-jn-006"
+   ]
+  },
+  {
+   "cid": "kr-jn-004",
+   "line": 20,
+   "name": "Yeosu Climbing Gym",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-09bd77c64c"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-jn-007 \"Spider Gym Yeosu\": related names \"Yeosu Climbing Gym\" / \"Spider Gym Yeosu\" 2954 m apart",
+     "ids": [
+      "kr-jn-007"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "kr-jn-007"
+   ]
+  },
+  {
+   "cid": "kr-jn-005",
+   "line": 21,
+   "name": "Hwasun Rock Climbing Center",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-18fb523f7f"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-001 \"Climben Climbing Company\": related names \"화순락클라이밍센터\" / \"클라이븐 클라이밍 컴퍼니\" 11325 m apart",
+     "ids": [
+      "kr-gj-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-002 \"Bawi Climbing Center\": related names \"화순락클라이밍센터\" / \"바위 클라이밍 센터\" 11484 m apart",
+     "ids": [
+      "kr-gj-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-003 \"Red One Climbing\": related names \"화순락클라이밍센터\" / \"레드원클라이밍\" 9616 m apart",
+     "ids": [
+      "kr-gj-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-005 \"Handwerk Climbing Jeondae\": related names \"화순락클라이밍센터\" / \"핸드워크 클라이밍 전대점\" 14006 m apart",
+     "ids": [
+      "kr-gj-005"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-007 \"Handwerk Climbing Bongseon\": related names \"화순락클라이밍센터\" / \"핸드워크 클라이밍 봉선점\" 9777 m apart",
+     "ids": [
+      "kr-gj-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-009 \"Climb Lounge\": related names \"화순락클라이밍센터\" / \"클라임라운지\" 12676 m apart",
+     "ids": [
+      "kr-gj-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-gj-014 \"Hwang Pyeong-ju Climbing Class\": related names \"화순락클라이밍센터\" / \"황평주등반교실\" 13237 m apart",
+     "ids": [
+      "kr-gj-014"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-gj-001",
+    "kr-gj-002",
+    "kr-gj-003",
+    "kr-gj-005",
+    "kr-gj-007",
+    "kr-gj-009",
+    "kr-gj-014"
+   ]
+  },
+  {
+   "cid": "kr-jn-006",
+   "line": 22,
+   "name": "Mokpo International Sport Climbing Center",
+   "class": "blocked",
+   "suggested": "reject not-a-gym",
+   "importer": {
+    "class": "new",
+    "id": "g-513238d996"
+   },
+   "blockers": [
+    {
+     "code": "not-a-gym",
+     "detail": "category other"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-jn-002 \"Carpe Climb\": related names \"목포국제스포츠클라이밍센터\" / \"카르페클라임 클라이밍센터\" 2019 m apart",
+     "ids": [
+      "kr-jn-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-jn-003 \"Mokpo Lead Climbing Center\": related names \"목포국제스포츠클라이밍센터\" / \"리드클라이밍센터\" 2157 m apart",
+     "ids": [
+      "kr-jn-003"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-jn-002",
+    "kr-jn-003"
+   ]
+  },
+  {
+   "cid": "kr-jn-007",
+   "line": 23,
+   "name": "Spider Gym Yeosu",
+   "class": "blocked",
+   "suggested": "reject not-a-gym",
+   "importer": {
+    "class": "new",
+    "id": "g-5d2f7b1115"
+   },
+   "blockers": [
+    {
+     "code": "not-a-gym",
+     "detail": "category other"
+    },
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-jn-004 \"Yeosu Climbing Gym\": related names \"Spider Gym Yeosu\" / \"Yeosu Climbing Gym\" 2954 m apart",
+     "ids": [
+      "kr-jn-004"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "kr-jn-004"
+   ]
+  },
+  {
+   "cid": "kr-jn-008",
+   "line": 24,
+   "name": "Palma Artificial Climbing Wall",
+   "class": "blocked",
+   "suggested": "reject not-a-gym",
+   "importer": {
+    "class": "new",
+    "id": "g-32637d8bdf"
+   },
+   "blockers": [
+    {
+     "code": "not-a-gym",
+     "detail": "category other"
+    },
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-jn-001 \"OneClimb Suncheon\": related names \"팔마인공암벽장\" / \"원클라임\" 3486 m apart",
+     "ids": [
+      "kr-jn-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-jn-009 \"Nepa Suncheon Climbing Center\": related names \"팔마인공암벽장\" / \"네파순천클라이밍센터\" 1964 m apart",
+     "ids": [
+      "kr-jn-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-jn-010 \"Taki Indoor Rock Climbing\": related names \"팔마인공암벽장\" / \"타기 실내암벽등반\" 7409 m apart",
+     "ids": [
+      "kr-jn-010"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "kr-jn-001",
+    "kr-jn-009",
+    "kr-jn-010"
+   ]
+  },
+  {
+   "cid": "kr-jn-009",
+   "line": 25,
+   "name": "Nepa Suncheon Climbing Center",
+   "class": "blocked",
+   "suggested": "reject not-a-gym",
+   "importer": {
+    "class": "new",
+    "id": "g-d007f9c0ee"
+   },
+   "blockers": [
+    {
+     "code": "not-a-gym",
+     "detail": "category other"
+    },
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-jn-001 \"OneClimb Suncheon\": related names \"네파순천클라이밍센터\" / \"원클라임\" 4948 m apart",
+     "ids": [
+      "kr-jn-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-jn-008 \"Palma Artificial Climbing Wall\": related names \"네파순천클라이밍센터\" / \"팔마인공암벽장\" 1964 m apart",
+     "ids": [
+      "kr-jn-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-jn-010 \"Taki Indoor Rock Climbing\": related names \"네파순천클라이밍센터\" / \"타기 실내암벽등반\" 5591 m apart",
+     "ids": [
+      "kr-jn-010"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "kr-jn-001",
+    "kr-jn-008",
+    "kr-jn-010"
+   ]
+  },
+  {
+   "cid": "kr-jn-010",
+   "line": 26,
+   "name": "Taki Indoor Rock Climbing",
+   "class": "blocked",
+   "suggested": "reject not-a-gym",
+   "importer": {
+    "class": "new",
+    "id": "g-67928c7bfe"
+   },
+   "blockers": [
+    {
+     "code": "not-a-gym",
+     "detail": "category other"
+    },
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-jn-001 \"OneClimb Suncheon\": related names \"타기 실내암벽등반\" / \"원클라임\" 9159 m apart",
+     "ids": [
+      "kr-jn-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-jn-008 \"Palma Artificial Climbing Wall\": related names \"타기 실내암벽등반\" / \"팔마인공암벽장\" 7409 m apart",
+     "ids": [
+      "kr-jn-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-jn-009 \"Nepa Suncheon Climbing Center\": related names \"타기 실내암벽등반\" / \"네파순천클라이밍센터\" 5591 m apart",
+     "ids": [
+      "kr-jn-009"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "kr-jn-001",
+    "kr-jn-008",
+    "kr-jn-009"
+   ]
+  }
+ ],
+ "reconcile_sha256": "288fdc7aa95e905ef89f2c723b2be4e5b430ea21d8ae663102d0a670b017460e"
+}
