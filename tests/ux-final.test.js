@@ -38,7 +38,12 @@ test('orientation: one escaped line with live counts, an About link and a dismis
   assert.match(src, /export const INTRO_KEY = 'bouldeer_intro_seen';/);
   assert.match(src, /export function initList\(callbacks\)\{\r?\n  renderIntro\(\);/, 'rendered at start-up, before the data (no layout shift when the gyms arrive)');
   assert.ok(!/renderIntro\(\);\r?\n  renderFeatured/.test(src), 'not inserted on the first data render');
-  assert.match(src, /seen = localStorage\.getItem\(INTRO_KEY\) === '1'; localStorage\.setItem\(INTRO_KEY, '1'\);/);
+  assert.match(src, /seen = localStorage\.getItem\(INTRO_KEY\) === '1';/);
+  // Seen means seen: the flag is set when Explore is on screen (or when it next becomes so), not on a first visit that lands
+  // on a shared gym page with Explore hidden behind it.
+  assert.match(src, /if\(explore && !explore\.hidden\) markSeen\(\);/);
+  assert.match(src, /mo\.observe\(explore, \{ attributes: true, attributeFilter: \['hidden'\] \}\)/);
+  assert.ok(!/getItem\(INTRO_KEY\) === '1'; localStorage\.setItem/.test(src), 'no longer marked seen on read');
   assert.match(read('index.html'), /<div class="explore-intro" id="exploreIntro" hidden><\/div>/);
 });
 

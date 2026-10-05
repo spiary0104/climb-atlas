@@ -292,11 +292,16 @@ export function initForms(){
     }
   });
 
-  document.getElementById('eRevertBtn').addEventListener('click', async ()=>{
+  document.getElementById('eRevertBtn').addEventListener('click', async (e)=>{
     if(!appState.currentEditId) return;
     if(!window.sb){ showToast('Supabase is not configured — see README.md'); return; }
     if(!requireSignIn('Sign in to submit your edit')) return;
-    const id = appState.currentEditId;
+    const btn = e.currentTarget;
+    if(btn.disabled) return;
+    btn.disabled = true;                 // one proposal per click: the seed fetch and the insert take a moment
+    try{ await revertToOriginal(appState.currentEditId); }finally{ btn.disabled = false; }
+  });
+  async function revertToOriginal(id){
     const original = (await ensureSeedData().catch(()=>[])).find(s=>s.id===id);
     if(!original){ showToast('No original data to revert to'); return; }
     const proposal = {
@@ -316,7 +321,7 @@ export function initForms(){
       showToast(submitErrorMessage(err, 'Could not submit revert — try again'));
       console.error(err);
     }
-  });
+  }
   document.getElementById('rCancelBtn').addEventListener('click', closeReportModal);
 
   rMessage.addEventListener('input', ()=>{

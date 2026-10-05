@@ -15,10 +15,16 @@ export function markAdded(spotId, markType){
   listener(spotId);
 }
 
+// One request per mark at a time: a second tap while the first is saving used to read the optimistic state and send
+// the opposite write, leaving the screen and the table disagreeing until the next load.
+const inFlight = new Set();
 export async function toggleMark(spotId, markType){
   if(!window.sb){ showToast('Supabase is not configured — see README.md'); return; }
   const user = window.auth.user;
   if(!user){ openAuthModal(); return; }
+  const key = spotId + '\u0000' + markType;
+  if(inFlight.has(key)) return;
+  inFlight.add(key);
   const set = markType === 'climbed' ? appState.climbedIds : appState.bookmarkedIds;
   const wasActive = set.has(spotId);
   if(wasActive) set.delete(spotId); else set.add(spotId);
@@ -37,5 +43,7 @@ export async function toggleMark(spotId, markType){
     listener(spotId);
     showToast('Could not save — try again');
     console.error(err);
+  }finally{
+    inFlight.delete(key);
   }
 }

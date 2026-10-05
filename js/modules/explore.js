@@ -10,7 +10,7 @@ import { applyFilters, applyUrlFilters, currentFilters, filterUrlState, initFilt
 import { status, statusLine } from './hours.js';
 import { gymCtx, initList, markCarouselSelected, renderCarousel, renderList, scrollRowIntoView, setRowHover, setRowSelected, showSkeleton, updateRowMarks } from './list.js';
 import { peekHtml, hoursParts } from './list-html.js';
-import { exploreUrl, isExplore, navigate, refreshPage, registerView } from './router.js';
+import { currentRoute, exploreUrl, isExplore, navigate, refreshPage, registerView } from './router.js';
 import { assignMissingSlugs, gymPath } from './slug.js';
 import { LAST_CAMERA_KEY, clusterExpansionZoom, clusterLeafIds, flyToPlace, landingCamera, map, paintMarkers, rebuildClusterIndex, refreshPin, setMapHandlers, viewBounds } from './map.js';
 import { setMarksListener, toggleMark } from './marks.js';
@@ -270,7 +270,21 @@ function onMarksChanged(id){
   if(appState.showBookmarkedOnly || appState.showClimbedOnly){ filtersChanged({write: false}); }
   else { updateRowMarks(id); refreshPin(id); }
   if(appState.selectedId === id) renderPeek();
+  // The gym page flips its two buttons in place (a full re-render rebuilt the mini map and dropped focus from the button
+  // that was just pressed); /me's Saved and Climbed lists change membership, so they still re-render.
+  const r = currentRoute();
+  if(r && r.name === 'gym' && updatePageMarks(id)) return;
   refreshPage();
+}
+
+// aria-pressed on the gym page's Save / Climbed buttons for one gym; true when the page showed them.
+function updatePageMarks(id){
+  let found = false;
+  for(const [action, set] of [['save', appState.bookmarkedIds], ['climbed', appState.climbedIds]]){
+    const btn = document.querySelector(`#view .gym-page [data-page-action="${action}"][data-spot-id="${CSS.escape(id)}"]`);
+    if(btn){ btn.setAttribute('aria-pressed', String(set.has(id))); found = true; }
+  }
+  return found;
 }
 
 // ----- search as I move -------------------------------------------------------------------------------------------
