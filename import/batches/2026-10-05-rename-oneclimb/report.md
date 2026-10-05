@@ -12,7 +12,7 @@
 | Rejected by a human decision | 0 |
 | **Total records in batch** | 1 |
 
-Index: 2385 known gyms (sha256 e1d9ef5216f8…). Plan: 9d9d9e3b735e…
+Index: 2385 known gyms (sha256 e1d9ef5216f8…). Plan: 9d9d9e3b735e… Also compared against staged batches: 2026-10-05-korea-holds, 2026-10-05-uk-holds-gaps, 2026-10-06-france-holds, 2026-10-06-germany-holds, 2026-10-06-italy-holds-napoli.
 
 ## Updates to existing gyms (1)
 

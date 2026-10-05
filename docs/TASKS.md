@@ -6,16 +6,13 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 (delete them; git keeps history). Keep this file under 60 lines.
 
 ## In progress
-- _(none; the 2026-10-05 gym update is live: 2,385 gyms)_
+### Holds and gaps second pass (PR, 2026-10-06) — STAGED, awaiting the owner apply
+- +27 gyms (UK 18, DE 3, FR 1, IT 2, KR 3), rename seed-1181 Monta Rex -> OneClimb, 3 pin fixes (Grabit, The Climbing Experience, Live For Today).
 
 ## Gym data
-### Research follow-ups (from the 2026-10-05 sections; details in each section's `review-notes.md` / `coverage.md`)
-- Rename seed-1181 Monta Rex -> OneClimb (identity batch; same address, rebrand).
-- Deferred: Lancaster Wall (site down), 4 UK gyms whose sites never say bouldering, 4 IT gyms (re-check via social), 3 KR
-  (bouldering unstated), Arkose Issy (ex-MurMur), 6 DE (Ilmenau opening soon; Dessau, Ensdorf no current hours; 3 weak). Not to be listed: Boatyard Boulders (owner).
-- Gaps: Napoli (no gym confirmed), UK towns not probed (uk-single-gym-towns coverage.md), Bloc Session Ardennes (no pin), sites that block
-  automated reads (Kong Keswick, Indy Llanberis, Indirock, Spider Climbing).
-- Decisions: KR evidence standard (Naver Place / Instagram); the merged Jeonnam-Gwangju region name in Korean addresses.
+### Owner manual checks: `import/research/MANUAL-CHECKS-2026-10-06.md`
+- 17 gyms not on Bouldeer until the owner answers (UK 4, IT 6, ES 1, DE 3, KR 2, FR 1 tag); optional spot checks of 6 added gyms.
+- Decisions: the merged Jeonnam-Gwangju region name in Korean addresses.
 ### Chain expansions
 - Camp5 MY (~6), Hive CA (~4), Boulderwelt DE (~4), B-PUMP JP (~3), 9 Degrees AU (~2), Boulder Co NZ (~1). Verify each branch.
 ### Gym information (website, hours, day pass, facilities)

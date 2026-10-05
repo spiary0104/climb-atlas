@@ -6,24 +6,30 @@
   "count": 2385,
   "meta_matches": true
  },
- "staged_batches_compared": [],
+ "staged_batches_compared": [
+  "2026-10-05-korea-holds",
+  "2026-10-05-uk-holds-gaps",
+  "2026-10-06-france-holds",
+  "2026-10-06-germany-holds",
+  "2026-10-06-italy-holds-napoli"
+ ],
  "counts": {
-  "records": 1,
+  "records": 3,
   "new": 0,
   "existing": 0,
-  "update": 1,
+  "update": 3,
   "probable-duplicate": 0,
   "invalid": 0,
   "rejected": 0,
   "existing_identical": 0,
   "existing_content_differs": 0,
   "new_id_not_frozen": 0,
-  "warnings": 1
+  "warnings": 3
  },
  "importable": true,
  "blockers": [],
  "unused_decisions": [],
- "plan_sha256": "58c9702df2ca30538d93a2b22316938c4513d7425e6a424a15c8e7d87f96a29f",
+ "plan_sha256": "327995089057fe4bd66e1150ae120b145a724978fca451deb5470ba258de2cd2",
  "records": [
   {
    "line": 1,
@@ -48,6 +54,68 @@
      "code": "large-pin-move",
      "field": "lat",
      "message": "moves the pin by 3640 m"
+    }
+   ]
+  },
+  {
+   "line": 2,
+   "class": "update",
+   "id": "seed-893",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Unit G13, Baltic Wharf, St Peter's Street, Maidstone ME16 0ST"
+    },
+    {
+     "field": "lat",
+     "before": 51.2704,
+     "after": 51.2767513
+    },
+    {
+     "field": "lng",
+     "before": 0.5227,
+     "after": 0.5158326
+    }
+   ],
+   "expect_h": "e5f47bff58f1b1af",
+   "update_reason": "Pin about 850 m from the centre at Unit G13, Baltic Wharf (OSM node of the gym); no address before (research uk-holds-gaps)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 853 m"
+    }
+   ]
+  },
+  {
+   "line": 3,
+   "class": "update",
+   "id": "seed-878",
+   "changes": [
+    {
+     "field": "address",
+     "before": null,
+     "after": "Hornbeam Park Avenue, Hornbeam Park, Harrogate HG2 8QT"
+    },
+    {
+     "field": "lat",
+     "before": 53.9919,
+     "after": 53.97705
+    },
+    {
+     "field": "lng",
+     "before": -1.5378,
+     "after": -1.52232
+    }
+   ],
+   "expect_h": "c5c8b3c3c3ac7cf2",
+   "update_reason": "Pin about 1.9 km from the centre at Hornbeam Park Avenue (postcode HG2 8QT, street level; Live For Today took over Parthian Harrogate in 2024); no address before (research uk-holds-gaps)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1937 m"
     }
    ]
   }
