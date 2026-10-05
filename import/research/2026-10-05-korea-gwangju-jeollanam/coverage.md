@@ -3,7 +3,7 @@
 ## Result
 - 26 candidates (kr-gj-001..016 Gwangju, kr-jn-001..010 Jeollanam-do), 49 sources registered.
 - Reconcile: ready 0 | review 15 | blocked 11 | existing 0 | invalid 0. Two candidates match gyms already in Bouldeer (seed-1167 Climben, seed-1176 Handwerk Climbing) and are decided `same-as`.
-- Decisions: accept 12, same-as 2, defer 6, reject 6.
+- Decisions: accept 11, same-as 3 (seed-1167 Climben, seed-1176 Handwerk Yangsan, seed-1181 'Monta Rex' = OneClimb Suncheon), defer 6, reject 6.
 
 ## Which sources were used, per gym
 Korean gyms rarely have a website. As instructed, the gym's own Instagram and its own Naver Place listing (the owner-managed page: description, owner keywords, price list, hours, booking items, announced closures) count as `official-social`; the gym's own Naver Blog too. Third parties (Spirit gym list, Gwangju News, Daum/Naver blog reviews, Kakao Map) were used for the roster and as a pin cross-check only.
@@ -32,7 +32,7 @@ Coordinates: the gym's own Naver Place pin (`map-service-pin`, precision `buildi
 
 ## Not found / uncertain
 - Naju, Gwangyang, Damyang, Haenam, Yeongam, Jangseong, Goheung, Boseong, Gangjin, Wando, Gurye, Yeonggwang, Hampyeong, Sinan, Jindo, Jangheung: no climbing gym with a map listing (Gwangyang has an old Kakao entry, kr-jn-010, and a city sports climbing centre was in construction tender in Oct 2024; no opening found).
-- Yeosu has only the old Yeosu Climbing Gym (deferred) and Spider Gym (rejected). The Instagram @yeosuclimbinggym (named OneClimb, uses #여수클라이밍짐) could mean a newer Yeosu site or a rebrand; it could not be tied to an address.
+- Yeosu has only the old Yeosu Climbing Gym (deferred) and Spider Gym (rejected). The Instagram @yeosuclimbinggym (named OneClimb, uses #여수클라이밍짐) is most likely the OneClimb owner's account (OneClimb = existing seed-1181 'Monta Rex' site in Suncheon), not proof of a Yeosu site; it could not be tied to an address.
 - Gyms deferred because their own pages never say bouldering: Climb Lounge, Grabit Climbing, Hwasun Rock Climbing Center. They are probably bouldering gyms (board walls, a 220 pyeong hall; Spirit calls Climb Lounge a bouldering gym); a one-line statement from the gym would clear them.
 - Naver Place pages cannot show closure by themselves; "open now" status there is only the time of day. Open status was taken from announced future closures, price lists, booking items and recent posts.
 - Administrative note: Kakao and Naver (Oct 2026) now print the merged name "Jeonnam-Gwangju Integrated Special City" in addresses. The app's `STATES_BY_COUNTRY` still has GWANGJU and JEOLLANAM, so the section uses them; addresses in the candidates use the old 광주광역시 / 전라남도 wording that the gyms themselves still publish.

@@ -8,7 +8,7 @@ Review radii (stricter than the importer): any gym 150 m, related name 15 km, ot
 26 candidate(s): ready 0 | review 15 | blocked 11 | already in Bouldeer 0 | invalid 0
 
 ## Needs review (accept needs a reason and reviewed_against covering every listed id) (15)
-- kr-gj-001 "Climben Climbing Company" [g-cd0bec953e] reviewed_against must include: kr-gj-002, kr-gj-003, kr-gj-004, kr-gj-005, kr-gj-006, kr-gj-007, kr-gj-008, kr-gj-009, kr-gj-010, kr-gj-011, kr-gj-012, kr-gj-014, kr-gj-015, kr-gj-016, kr-jn-005, seed-1167
+- kr-gj-001 "Climben Climbing Company" [g-f6175ef6a2] reviewed_against must include: kr-gj-002, kr-gj-003, kr-gj-004, kr-gj-005, kr-gj-006, kr-gj-007, kr-gj-008, kr-gj-009, kr-gj-010, kr-gj-011, kr-gj-012, kr-gj-014, kr-gj-015, kr-gj-016, kr-jn-005, seed-1167
   - alias-match: seed-1167 "Cl!mben Climbing Company": same-name ("CL!MBEN CLIMBING COMPANY" / "Cl!mben Climbing Company", 435 m)
   - related-name-nearby: candidate kr-gj-002 "Bawi Climbing Center": related names "클라이븐 클라이밍 컴퍼니" / "바위 클라이밍 센터" 422 m apart
   - related-name-nearby: candidate kr-gj-003 "Red One Climbing": related names "클라이븐 클라이밍 컴퍼니" / "레드원클라이밍" 2304 m apart
@@ -25,7 +25,7 @@ Review radii (stricter than the importer): any gym 150 m, related name 15 km, ot
   - related-name-nearby: candidate kr-gj-015 "Gwangju Indoor Rock Wall": related names "클라이븐 클라이밍 컴퍼니" / "광주실내암벽" 4074 m apart
   - related-name-nearby: candidate kr-gj-016 "Sangmu Artificial Climbing Wall": related names "클라이븐 클라이밍 컴퍼니" / "상무인공암벽장" 7150 m apart
   - related-name-nearby: candidate kr-jn-005 "Hwasun Rock Climbing Center": related names "클라이븐 클라이밍 컴퍼니" / "화순락클라이밍센터" 11325 m apart
-- kr-gj-002 "Bawi Climbing Center" [g-af7c69e9d0] reviewed_against must include: kr-gj-001, kr-gj-003, kr-gj-004, kr-gj-005, kr-gj-006, kr-gj-007, kr-gj-008, kr-gj-009, kr-gj-010, kr-gj-011, kr-gj-012, kr-gj-014, kr-gj-015, kr-gj-016, kr-jn-005
+- kr-gj-002 "Bawi Climbing Center" [g-8effe6e7cb] reviewed_against must include: kr-gj-001, kr-gj-003, kr-gj-004, kr-gj-005, kr-gj-006, kr-gj-007, kr-gj-008, kr-gj-009, kr-gj-010, kr-gj-011, kr-gj-012, kr-gj-014, kr-gj-015, kr-gj-016, kr-jn-005
   - related-name-nearby: candidate kr-gj-001 "Climben Climbing Company": related names "바위 클라이밍 센터" / "클라이븐 클라이밍 컴퍼니" 422 m apart
   - related-name-nearby: candidate kr-gj-003 "Red One Climbing": related names "바위 클라이밍 센터" / "레드원클라이밍" 2675 m apart
   - related-name-nearby: candidate kr-gj-004 "Red One Climbing Cheomdan": related names "바위 클라이밍 센터" / "레드원클라이밍 첨단" 9534 m apart
@@ -41,7 +41,7 @@ Review radii (stricter than the importer): any gym 150 m, related name 15 km, ot
   - related-name-nearby: candidate kr-gj-015 "Gwangju Indoor Rock Wall": related names "바위 클라이밍 센터" / "광주실내암벽" 4054 m apart
   - related-name-nearby: candidate kr-gj-016 "Sangmu Artificial Climbing Wall": related names "바위 클라이밍 센터" / "상무인공암벽장" 7349 m apart
   - related-name-nearby: candidate kr-jn-005 "Hwasun Rock Climbing Center": related names "바위 클라이밍 센터" / "화순락클라이밍센터" 11484 m apart
-- kr-gj-003 "Red One Climbing" [g-ea311662bf] reviewed_against must include: kr-gj-001, kr-gj-002, kr-gj-004, kr-gj-005, kr-gj-006, kr-gj-007, kr-gj-008, kr-gj-009, kr-gj-010, kr-gj-011, kr-gj-012, kr-gj-014, kr-gj-015, kr-gj-016, kr-jn-005
+- kr-gj-003 "Red One Climbing" [g-563f41e62b] reviewed_against must include: kr-gj-001, kr-gj-002, kr-gj-004, kr-gj-005, kr-gj-006, kr-gj-007, kr-gj-008, kr-gj-009, kr-gj-010, kr-gj-011, kr-gj-012, kr-gj-014, kr-gj-015, kr-gj-016, kr-jn-005
   - related-name-nearby: candidate kr-gj-001 "Climben Climbing Company": related names "레드원클라이밍" / "클라이븐 클라이밍 컴퍼니" 2304 m apart
   - related-name-nearby: candidate kr-gj-002 "Bawi Climbing Center": related names "레드원클라이밍" / "바위 클라이밍 센터" 2675 m apart
   - related-name-nearby: candidate kr-gj-004 "Red One Climbing Cheomdan": related names "Red One Climbing" / "Red One Climbing Cheomdan" 11448 m apart
@@ -57,7 +57,7 @@ Review radii (stricter than the importer): any gym 150 m, related name 15 km, ot
   - related-name-nearby: candidate kr-gj-015 "Gwangju Indoor Rock Wall": related names "레드원클라이밍" / "광주실내암벽" 5750 m apart
   - related-name-nearby: candidate kr-gj-016 "Sangmu Artificial Climbing Wall": related names "레드원클라이밍" / "상무인공암벽장" 7666 m apart
   - related-name-nearby: candidate kr-jn-005 "Hwasun Rock Climbing Center": related names "레드원클라이밍" / "화순락클라이밍센터" 9616 m apart
-- kr-gj-004 "Red One Climbing Cheomdan" [g-814f33fdfa] reviewed_against must include: kr-gj-001, kr-gj-002, kr-gj-003, kr-gj-005, kr-gj-006, kr-gj-007, kr-gj-008, kr-gj-009, kr-gj-010, kr-gj-011, kr-gj-012, kr-gj-014, kr-gj-015, kr-gj-016
+- kr-gj-004 "Red One Climbing Cheomdan" [g-7eb5a242e3] reviewed_against must include: kr-gj-001, kr-gj-002, kr-gj-003, kr-gj-005, kr-gj-006, kr-gj-007, kr-gj-008, kr-gj-009, kr-gj-010, kr-gj-011, kr-gj-012, kr-gj-014, kr-gj-015, kr-gj-016
   - related-name-nearby: candidate kr-gj-001 "Climben Climbing Company": related names "레드원클라이밍 첨단" / "클라이븐 클라이밍 컴퍼니" 9646 m apart
   - related-name-nearby: candidate kr-gj-002 "Bawi Climbing Center": related names "레드원클라이밍 첨단" / "바위 클라이밍 센터" 9534 m apart
   - related-name-nearby: candidate kr-gj-003 "Red One Climbing": related names "Red One Climbing Cheomdan" / "Red One Climbing" 11448 m apart
@@ -72,7 +72,7 @@ Review radii (stricter than the importer): any gym 150 m, related name 15 km, ot
   - related-name-nearby: candidate kr-gj-014 "Hwang Pyeong-ju Climbing Class": related names "레드원클라이밍 첨단" / "황평주등반교실" 10195 m apart
   - related-name-nearby: candidate kr-gj-015 "Gwangju Indoor Rock Wall": related names "레드원클라이밍 첨단" / "광주실내암벽" 5698 m apart
   - related-name-nearby: candidate kr-gj-016 "Sangmu Artificial Climbing Wall": related names "레드원클라이밍 첨단" / "상무인공암벽장" 6620 m apart
-- kr-gj-005 "Handwerk Climbing Jeondae" [g-fc5df41c96] reviewed_against must include: kr-gj-001, kr-gj-002, kr-gj-003, kr-gj-004, kr-gj-006, kr-gj-007, kr-gj-008, kr-gj-009, kr-gj-010, kr-gj-011, kr-gj-012, kr-gj-014, kr-gj-015, kr-gj-016, kr-jn-005, seed-1176
+- kr-gj-005 "Handwerk Climbing Jeondae" [g-1ea3385419] reviewed_against must include: kr-gj-001, kr-gj-002, kr-gj-003, kr-gj-004, kr-gj-006, kr-gj-007, kr-gj-008, kr-gj-009, kr-gj-010, kr-gj-011, kr-gj-012, kr-gj-014, kr-gj-015, kr-gj-016, kr-jn-005, seed-1176
   - related-name-nearby: candidate kr-gj-001 "Climben Climbing Company": related names "핸드워크 클라이밍 전대점" / "클라이븐 클라이밍 컴퍼니" 2962 m apart
   - related-name-nearby: candidate kr-gj-002 "Bawi Climbing Center": related names "핸드워크 클라이밍 전대점" / "바위 클라이밍 센터" 2657 m apart
   - related-name-nearby: candidate kr-gj-003 "Red One Climbing": related names "핸드워크 클라이밍 전대점" / "레드원클라이밍" 5246 m apart
@@ -91,7 +91,7 @@ Review radii (stricter than the importer): any gym 150 m, related name 15 km, ot
   - related-name-nearby: seed-1176 "Handwerk Climbing": related names "Handwerk Climbing Jeondae" / "Handwerk Climbing" 5631 m apart
   - same-website: candidate kr-gj-006 has the same website
   - same-website: candidate kr-gj-007 has the same website
-- kr-gj-006 "Handwerk Climbing Yangsan" [g-9b8b7b1a64] reviewed_against must include: kr-gj-001, kr-gj-002, kr-gj-003, kr-gj-004, kr-gj-005, kr-gj-007, kr-gj-008, kr-gj-009, kr-gj-010, kr-gj-011, kr-gj-012, kr-gj-014, kr-gj-015, kr-gj-016, seed-1176
+- kr-gj-006 "Handwerk Climbing Yangsan" [g-91bb9680ec] reviewed_against must include: kr-gj-001, kr-gj-002, kr-gj-003, kr-gj-004, kr-gj-005, kr-gj-007, kr-gj-008, kr-gj-009, kr-gj-010, kr-gj-011, kr-gj-012, kr-gj-014, kr-gj-015, kr-gj-016, seed-1176
   - importer-probable-duplicate: seed-1176 similar-name-nearby 110 m
   - name-match: seed-1176 "Handwerk Climbing": similar-name-nearby ("Handwerk Climbing Yangsan" / "Handwerk Climbing", 110 m)
   - related-name-nearby: candidate kr-gj-001 "Climben Climbing Company": related names "핸드워크 클라이밍 양산점" / "클라이븐 클라이밍 컴퍼니" 8176 m apart
@@ -110,7 +110,7 @@ Review radii (stricter than the importer): any gym 150 m, related name 15 km, ot
   - related-name-nearby: candidate kr-gj-016 "Sangmu Artificial Climbing Wall": related names "핸드워크 클라이밍 양산점" / "상무인공암벽장" 6866 m apart
   - same-website: candidate kr-gj-005 has the same website
   - same-website: candidate kr-gj-007 has the same website
-- kr-gj-007 "Handwerk Climbing Bongseon" [g-8f000570f8] reviewed_against must include: kr-gj-001, kr-gj-002, kr-gj-003, kr-gj-004, kr-gj-005, kr-gj-006, kr-gj-008, kr-gj-009, kr-gj-010, kr-gj-011, kr-gj-012, kr-gj-014, kr-gj-015, kr-gj-016, kr-jn-005, seed-1176
+- kr-gj-007 "Handwerk Climbing Bongseon" [g-d9c58244ce] reviewed_against must include: kr-gj-001, kr-gj-002, kr-gj-003, kr-gj-004, kr-gj-005, kr-gj-006, kr-gj-008, kr-gj-009, kr-gj-010, kr-gj-011, kr-gj-012, kr-gj-014, kr-gj-015, kr-gj-016, kr-jn-005, seed-1176
   - related-name-nearby: candidate kr-gj-001 "Climben Climbing Company": related names "핸드워크 클라이밍 봉선점" / "클라이븐 클라이밍 컴퍼니" 2970 m apart
   - related-name-nearby: candidate kr-gj-002 "Bawi Climbing Center": related names "핸드워크 클라이밍 봉선점" / "바위 클라이밍 센터" 3375 m apart
   - related-name-nearby: candidate kr-gj-003 "Red One Climbing": related names "핸드워크 클라이밍 봉선점" / "레드원클라이밍" 918 m apart
@@ -129,7 +129,7 @@ Review radii (stricter than the importer): any gym 150 m, related name 15 km, ot
   - related-name-nearby: seed-1176 "Handwerk Climbing": related names "Handwerk Climbing Bongseon" / "Handwerk Climbing" 10513 m apart
   - same-website: candidate kr-gj-005 has the same website
   - same-website: candidate kr-gj-006 has the same website
-- kr-gj-008 "Incave Climbing Sangmu" [g-2c472ea4af] reviewed_against must include: kr-gj-001, kr-gj-002, kr-gj-003, kr-gj-004, kr-gj-005, kr-gj-006, kr-gj-007, kr-gj-009, kr-gj-010, kr-gj-011, kr-gj-012, kr-gj-014, kr-gj-015, kr-gj-016
+- kr-gj-008 "Incave Climbing Sangmu" [g-63f79b82f4] reviewed_against must include: kr-gj-001, kr-gj-002, kr-gj-003, kr-gj-004, kr-gj-005, kr-gj-006, kr-gj-007, kr-gj-009, kr-gj-010, kr-gj-011, kr-gj-012, kr-gj-014, kr-gj-015, kr-gj-016
   - related-name-nearby: candidate kr-gj-001 "Climben Climbing Company": related names "인케이브 클라이밍 상무" / "클라이븐 클라이밍 컴퍼니" 6221 m apart
   - related-name-nearby: candidate kr-gj-002 "Bawi Climbing Center": related names "인케이브 클라이밍 상무" / "바위 클라이밍 센터" 6446 m apart
   - related-name-nearby: candidate kr-gj-003 "Red One Climbing": related names "인케이브 클라이밍 상무" / "레드원클라이밍" 6639 m apart
@@ -144,7 +144,7 @@ Review radii (stricter than the importer): any gym 150 m, related name 15 km, ot
   - related-name-nearby: candidate kr-gj-014 "Hwang Pyeong-ju Climbing Class": related names "인케이브 클라이밍 상무" / "황평주등반교실" 3275 m apart
   - related-name-nearby: candidate kr-gj-015 "Gwangju Indoor Rock Wall": related names "인케이브 클라이밍 상무" / "광주실내암벽" 3804 m apart
   - related-name-nearby: candidate kr-gj-016 "Sangmu Artificial Climbing Wall": related names "인케이브 클라이밍 상무" / "상무인공암벽장" 1036 m apart
-- kr-gj-010 "Bitgoeul Climbing Cheomdan" [g-7d319df411] reviewed_against must include: kr-gj-001, kr-gj-002, kr-gj-003, kr-gj-004, kr-gj-005, kr-gj-006, kr-gj-007, kr-gj-008, kr-gj-009, kr-gj-011, kr-gj-012, kr-gj-014, kr-gj-015, kr-gj-016
+- kr-gj-010 "Bitgoeul Climbing Cheomdan" [g-42b42d4d24] reviewed_against must include: kr-gj-001, kr-gj-002, kr-gj-003, kr-gj-004, kr-gj-005, kr-gj-006, kr-gj-007, kr-gj-008, kr-gj-009, kr-gj-011, kr-gj-012, kr-gj-014, kr-gj-015, kr-gj-016
   - related-name-nearby: candidate kr-gj-001 "Climben Climbing Company": related names "첨단 빛고을 클라이밍" / "클라이븐 클라이밍 컴퍼니" 10344 m apart
   - related-name-nearby: candidate kr-gj-002 "Bawi Climbing Center": related names "첨단 빛고을 클라이밍" / "바위 클라이밍 센터" 10242 m apart
   - related-name-nearby: candidate kr-gj-003 "Red One Climbing": related names "첨단 빛고을 클라이밍" / "레드원클라이밍" 12106 m apart
@@ -159,7 +159,7 @@ Review radii (stricter than the importer): any gym 150 m, related name 15 km, ot
   - related-name-nearby: candidate kr-gj-014 "Hwang Pyeong-ju Climbing Class": related names "첨단 빛고을 클라이밍" / "황평주등반교실" 10650 m apart
   - related-name-nearby: candidate kr-gj-015 "Gwangju Indoor Rock Wall": related names "첨단 빛고을 클라이밍" / "광주실내암벽" 6361 m apart
   - related-name-nearby: candidate kr-gj-016 "Sangmu Artificial Climbing Wall": related names "첨단 빛고을 클라이밍" / "상무인공암벽장" 6925 m apart
-- kr-gj-011 "On Climbing" [g-1fc04454be] reviewed_against must include: kr-gj-001, kr-gj-002, kr-gj-003, kr-gj-004, kr-gj-005, kr-gj-006, kr-gj-007, kr-gj-008, kr-gj-009, kr-gj-010, kr-gj-012, kr-gj-014, kr-gj-015, kr-gj-016
+- kr-gj-011 "On Climbing" [g-dbdf4c16a4] reviewed_against must include: kr-gj-001, kr-gj-002, kr-gj-003, kr-gj-004, kr-gj-005, kr-gj-006, kr-gj-007, kr-gj-008, kr-gj-009, kr-gj-010, kr-gj-012, kr-gj-014, kr-gj-015, kr-gj-016
   - related-name-nearby: candidate kr-gj-001 "Climben Climbing Company": related names "온클라이밍" / "클라이븐 클라이밍 컴퍼니" 10246 m apart
   - related-name-nearby: candidate kr-gj-002 "Bawi Climbing Center": related names "온클라이밍" / "바위 클라이밍 센터" 10303 m apart
   - related-name-nearby: candidate kr-gj-003 "Red One Climbing": related names "온클라이밍" / "레드원클라이밍" 11383 m apart
@@ -174,9 +174,9 @@ Review radii (stricter than the importer): any gym 150 m, related name 15 km, ot
   - related-name-nearby: candidate kr-gj-014 "Hwang Pyeong-ju Climbing Class": related names "온클라이밍" / "황평주등반교실" 8449 m apart
   - related-name-nearby: candidate kr-gj-015 "Gwangju Indoor Rock Wall": related names "온클라이밍" / "광주실내암벽" 6327 m apart
   - related-name-nearby: candidate kr-gj-016 "Sangmu Artificial Climbing Wall": related names "온클라이밍" / "상무인공암벽장" 4298 m apart
-- kr-gj-013 "G1 Climbing Songjeong" [g-a13f42d494] reviewed_against must include: kr-gj-015
+- kr-gj-013 "G1 Climbing Songjeong" [g-f9ee389d86] reviewed_against must include: kr-gj-015
   - related-name-nearby: candidate kr-gj-015 "Gwangju Indoor Rock Wall": related names "G1 Climbing Center Gwangju" / "Gwangju Indoor Rock Wall" 8209 m apart
-- kr-gj-014 "Hwang Pyeong-ju Climbing Class" [g-bd6e0ad1fa] reviewed_against must include: kr-gj-001, kr-gj-002, kr-gj-003, kr-gj-004, kr-gj-005, kr-gj-006, kr-gj-007, kr-gj-008, kr-gj-009, kr-gj-010, kr-gj-011, kr-gj-012, kr-gj-015, kr-gj-016, kr-jn-005
+- kr-gj-014 "Hwang Pyeong-ju Climbing Class" [g-e666fa4a8b] reviewed_against must include: kr-gj-001, kr-gj-002, kr-gj-003, kr-gj-004, kr-gj-005, kr-gj-006, kr-gj-007, kr-gj-008, kr-gj-009, kr-gj-010, kr-gj-011, kr-gj-012, kr-gj-015, kr-gj-016, kr-jn-005
   - limited-access: club wall: check it is open to the public
   - related-name-nearby: candidate kr-gj-001 "Climben Climbing Company": related names "황평주등반교실" / "클라이븐 클라이밍 컴퍼니" 5668 m apart
   - related-name-nearby: candidate kr-gj-002 "Bawi Climbing Center": related names "황평주등반교실" / "바위 클라이밍 센터" 6044 m apart
@@ -193,14 +193,14 @@ Review radii (stricter than the importer): any gym 150 m, related name 15 km, ot
   - related-name-nearby: candidate kr-gj-015 "Gwangju Indoor Rock Wall": related names "황평주등반교실" / "광주실내암벽" 5598 m apart
   - related-name-nearby: candidate kr-gj-016 "Sangmu Artificial Climbing Wall": related names "황평주등반교실" / "상무인공암벽장" 4153 m apart
   - related-name-nearby: candidate kr-jn-005 "Hwasun Rock Climbing Center": related names "황평주등반교실" / "화순락클라이밍센터" 13237 m apart
-- kr-jn-001 "OneClimb Suncheon" [g-5b76ff0665] reviewed_against must include: kr-jn-008, kr-jn-009, kr-jn-010
+- kr-jn-001 "OneClimb Suncheon" [g-8980eb8ec2] reviewed_against must include: kr-jn-008, kr-jn-009, kr-jn-010
   - related-name-nearby: candidate kr-jn-008 "Palma Artificial Climbing Wall": related names "원클라임" / "팔마인공암벽장" 3486 m apart
   - related-name-nearby: candidate kr-jn-009 "Nepa Suncheon Climbing Center": related names "원클라임" / "네파순천클라이밍센터" 4948 m apart
   - related-name-nearby: candidate kr-jn-010 "Taki Indoor Rock Climbing": related names "원클라임" / "타기 실내암벽등반" 9159 m apart
-- kr-jn-002 "Carpe Climb" [g-949814e4cb] reviewed_against must include: kr-jn-003, kr-jn-006
+- kr-jn-002 "Carpe Climb" [g-f4248196e5] reviewed_against must include: kr-jn-003, kr-jn-006
   - related-name-nearby: candidate kr-jn-003 "Mokpo Lead Climbing Center": related names "카르페클라임 클라이밍센터" / "리드클라이밍센터" 3659 m apart
   - related-name-nearby: candidate kr-jn-006 "Mokpo International Sport Climbing Center": related names "카르페클라임 클라이밍센터" / "목포국제스포츠클라이밍센터" 2019 m apart
-- kr-jn-003 "Mokpo Lead Climbing Center" [g-6bb20a1cc4] reviewed_against must include: kr-jn-002, kr-jn-006
+- kr-jn-003 "Mokpo Lead Climbing Center" [g-7b824ae5b6] reviewed_against must include: kr-jn-002, kr-jn-006
   - related-name-nearby: candidate kr-jn-002 "Carpe Climb": related names "리드클라이밍센터" / "카르페클라임 클라이밍센터" 3659 m apart
   - related-name-nearby: candidate kr-jn-006 "Mokpo International Sport Climbing Center": related names "리드클라이밍센터" / "목포국제스포츠클라이밍센터" 2157 m apart
 
