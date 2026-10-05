@@ -57,21 +57,21 @@ test('client text limits match the database caps (migration 20261002000200) and 
   for (const [id, cap] of [['e-website', LIMITS.website], ['e-day-pass', LIMITS.day_pass], ['e-description', LIMITS.description], ['e-hours-mon', LIMITS.hour]]) assert.match(form, new RegExp('id="' + id + '"[^>]*maxlength="' + cap + '"'), id);
 });
 
-test('edit, revert and report all require sign-in before opening AND before submitting', () => {
+test('edit and report both require sign-in before opening AND before submitting', () => {
   const src = read('js/modules/modals.js');
   assert.match(src, /import \{ openAuthModal \} from '\.\/auth-ui\.js'/);
   assert.match(src, /function requireSignIn\(reason\)\{\s*if\(window\.auth && window\.auth\.user\) return true;\s*showToast\(reason\);\s*openAuthModal\(\);\s*return false;/);
   const openEdit = /export async function openEditModal\(id(?:, \{[^)]*\})?\)\{[\s\S]*?\n\}/.exec(src)[0];
   const openReport = /export function openReportModal\(id\)\{[\s\S]*?\n\}/.exec(src)[0];
   assert.ok(/requireSignIn\(/.test(openEdit) && /requireSignIn\(/.test(openReport), 'both dialogs are gated on open');
-  for (const start of ["getElementById('eSaveBtn').addEventListener", "getElementById('eRevertBtn').addEventListener", 'rSubmitBtn.addEventListener']) {
+  for (const start of ["getElementById('eSaveBtn').addEventListener", 'rSubmitBtn.addEventListener']) {
     const at = src.indexOf(start);
     assert.ok(at > 0, start + ' found');
     const body = src.slice(at);
     const upToInsert = body.slice(0, body.search(/\.insert\(/));
     assert.ok(/requireSignIn\(/.test(upToInsert), start + ' re-checks sign-in before inserting');
   }
-  assert.equal((src.match(/submitErrorMessage\(err,/g) || []).length, 3, 'all three submit handlers use the readable messages');
+  assert.equal((src.match(/submitErrorMessage\(err,/g) || []).length, 2, 'both submit handlers use the readable messages');
 });
 
 test('approving a gym never keeps a submitter-supplied verified_at; moderators verify separately', () => {

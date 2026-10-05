@@ -119,8 +119,8 @@ test('staging never stages existing records, and refuses to stage anything the d
   assert.deepEqual(fs.readdirSync(guarded), [], 'a refused staging writes nothing');
 });
 
-test('production boundary for staging: data/gyms.json is unchanged; before import nothing is imported, after import the manifest matches the batch', () => {
-  cp.execSync('git diff --quiet -- data/gyms.json', { cwd: ROOT });                           // no unstaged edits (compares with the index, so a deliberate, staged change during an integration is fine)
+test('production boundary for staging: data/reconciliation/gyms.original.json is unchanged; before import nothing is imported, after import the manifest matches the batch', () => {
+  cp.execSync('git diff --quiet -- data/reconciliation/gyms.original.json', { cwd: ROOT });                           // no unstaged edits (compares with the index, so a deliberate, staged change during an integration is fine)
   const idx = S.load();
   assert.equal(idx.metaMatches, true);
   const mf = path.join(DIR, 'manifest.json');

@@ -31,7 +31,7 @@ export async function loadSessions(){
 
 function spotLabel(spotId){
   if(!spotId) return 'No specific gym';
-  const g = appState.spots.find(s=>s.id===spotId) || (window.SEED_GYMS||[]).find(s=>s.id===spotId);
+  const g = appState.spots.find(s=>s.id===spotId);
   return g ? g.name : 'Unknown gym';
 }
 

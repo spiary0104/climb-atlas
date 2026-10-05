@@ -1,10 +1,10 @@
 #!/usr/bin/env node
-// Read-only reconciliation of data/gyms.json against the LIVE Supabase `spots` table.
+// Read-only reconciliation of data/reconciliation/gyms.original.json against the LIVE Supabase `spots` table.
 //
 //   node scripts/reconcile-ids.js [outDir]
 //
 // Live `spots.id` values are canonical: marks / sessions / routes reference them.
-// This script NEVER writes to Supabase and NEVER modifies data/gyms.json. It fetches the
+// This script NEVER writes to Supabase and NEVER modifies data/reconciliation/gyms.original.json. It fetches the
 // approved live rows with the public anon key (same access any site visitor has), matches
 // each repo gym to at most one live gym, and writes review files to outDir
 // (default data/reconciliation/<date>/). No dependencies beyond Node >= 18.
@@ -33,7 +33,7 @@ function meters(a, b) {
 }
 
 // ---- inputs ----------------------------------------------------------------
-const repo = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'gyms.json'), 'utf8'));
+const repo = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'reconciliation', 'gyms.original.json'), 'utf8'));
 const init = fs.readFileSync(path.join(ROOT, 'js', 'supabase-init.js'), 'utf8');
 const URL_ = (init.match(/https:\/\/[a-z0-9]+\.supabase\.co/) || [])[0];
 const KEY = (init.match(/sb_publishable_[A-Za-z0-9_-]+/) || [])[0];

@@ -80,8 +80,8 @@
 <h3>Generated output</h3>
 <p>
   1) Run the SQL directly in Supabase's SQL Editor to fix the live map immediately.
-  2) Hand the JSON to Claude (or apply by hand) to update the matching <code>lat</code>/<code>lng</code>
-  values in <code>data/gyms.json</code> too, so the offline fallback and any future re-seed stay in sync.
+  2) Hand the JSON to Claude (or apply by hand) to correct the matching <code>lat</code>/<code>lng</code> through the import pipeline
+  (docs/import-workflow.md). The checker reads the original dataset (<code>data/reconciliation/gyms.original.json</code>, never edited); the offline fallback is regenerated from production.
 </p>
 <button id="copySqlBtn" disabled>Copy SQL to clipboard</button>
 <button id="copyJsonBtn" disabled>Copy JSON to clipboard</button>
@@ -89,8 +89,8 @@
 <pre id="jsonOut" style="display:none"></pre>
 
 <script>
-  // Seed dataset: data/gyms.json (pure JSON). Handlers await SEED_GYMS_READY.
-  window.SEED_GYMS_READY = fetch('../data/gyms.json').then(r => r.json()).then(d => (window.SEED_GYMS = d));
+  // Seed dataset: data/reconciliation/gyms.original.json (pure JSON). Handlers await SEED_GYMS_READY.
+  window.SEED_GYMS_READY = fetch('../data/reconciliation/gyms.original.json').then(r => r.json()).then(d => (window.SEED_GYMS = d));
 </script>
 <script>
   function haversineKm(lat1, lng1, lat2, lng2) {
