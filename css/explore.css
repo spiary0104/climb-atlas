@@ -54,6 +54,17 @@
   padding:0;border:0;background:transparent;color:var(--color-text-secondary);cursor:pointer;
   transition:background-color var(--motion-fast) var(--ease-standard);
 }
+/* Touch: the 32px list/card toggle and sort select sit where the sheet drag starts; a missed tap became a drag. The toggle
+   gets the 44px hit area .btn-icon has (an ::after beyond its box); the select grows to the touch minimum. .seg's
+   overflow:hidden would clip that hit area back to 32px, so on touch it is released and the end buttons round their own
+   corners instead (the pressed background still stays inside the rounded border). */
+@media (pointer:coarse){
+  .seg{overflow:visible;}
+  .seg-btn:first-child{border-radius:var(--radius-md) 0 0 var(--radius-md);}
+  .seg-btn:last-child{border-radius:0 var(--radius-md) var(--radius-md) 0;}
+  .seg-btn::after{content:"";position:absolute;inset:calc((var(--size-touch-min) - var(--size-control-sm)) / -2);}
+  .select.select-sm{min-height:var(--size-touch-min);}
+}
 .seg-btn + .seg-btn{border-left:var(--border-width) solid var(--color-border-subtle);}
 .seg-btn:hover{color:var(--color-text-primary);}
 .seg-btn[aria-pressed="true"]{background:var(--color-surface-raised);color:var(--color-text-primary);}
