@@ -216,7 +216,7 @@ $env:SUPABASE_SERVICE_ROLE_KEY = Read-Host "service-role key"   # or paste; neve
 # ...run the importer...
 Remove-Item Env:SUPABASE_SERVICE_ROLE_KEY; Remove-Item Env:SUPABASE_URL
 ```
-**One command (owner):** `powershell -ExecutionPolicy Bypass -File scriptsapply-batch.ps1 <batch>` asks only for the key (hidden), runs the FULL dry run, takes the token from it, applies only if it passed, verifies and clears the key. Entering the key is the go-ahead: run it only for a reviewed batch.
+**One command (owner):** `powershell -ExecutionPolicy Bypass -File scripts\apply-batch.ps1 <batch> [<batch> ...]` asks only for the key (hidden); per batch, in order: `build-index --live`, `plan`, FULL dry run, token, apply (only if it passed), verify; stops at the first failure; then `build-index --live` + `build-sitemap.js`. Entering the key is the go-ahead: run it only for reviewed batches. Afterwards commit the manifests, plans, index, sitemap and fallback.
 `.env`, `.env.*` and `*.pem` are git-ignored as a backstop, and a test scans every tracked file for service-role keys.
 **Production credentials must never be committed, pasted into a batch/report/issue, or shared in chat.**
 
