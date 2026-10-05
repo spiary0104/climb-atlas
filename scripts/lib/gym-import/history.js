@@ -2,7 +2,7 @@
 // checks about that earlier state of production (validate-reconciled.js and the tests that reconstruct the pre-import index).
 //
 // Two kinds of later batch, both recorded by a valid manifest.json and their committed plan.json:
-//  - a maintenance batch (updater.js; manifest kind "update") changed address/lat/lng or the identity (name/suburb/types) of existing gyms (or filled their website/hours/day pass/facilities, which the index does not carry and
+//  - a maintenance batch (updater.js; manifest kind "update") changed address/lat/lng or the identity (name/suburb/types) of existing gyms (or filled their website/hours/day pass/facilities/notes, which the index does not carry and
 //    which are skipped when reverting): plan.json lists every change as
 //    {field, before, after} plus the gym's content hash before it (expect_h); and/or RETIRED gyms (closed / duplicate, status set to
 //    'rejected', so they left the approved set and the rebuilt index): plan.json records each retired gym's full index entry as it was
@@ -19,6 +19,8 @@ const path = require('path');
 const S = require('./index-store');
 const MF = require('./manifest');
 const { INFO_FIELDS } = require('./validate');
+// Info fields that no live row carries as a compared field. `notes` is the exception: it IS a column of a live row (and in the content hash), so a row that carries it is reverted like a location change.
+const HIDDEN_INFO = INFO_FIELDS.filter(f => f !== 'notes');
 
 // The batch whose pre-import world the provenance checks describe. Everything verified after it is looked through.
 const BASELINE_BATCH = '2026-09-24-reconciled-new-gyms';
@@ -74,7 +76,7 @@ function revertIndex(index, root = S.ROOT) {
     for (const r of b.updates) {
       const e = byId.get(r.id);
       if (!e || gone.has(r.id)) throw new Error(`update batch ${b.id}: ${r.id} is not in the index`);
-      for (const c of r.changes.filter(c => !INFO_FIELDS.includes(c.field))) {   // gym information (website/hours/day pass/facilities) is not in the index
+      for (const c of r.changes.filter(c => !INFO_FIELDS.includes(c.field))) {   // gym information (website/hours/day pass/facilities/notes) is not in the index; its notes fill changes the gym's hash, restored below with expect_h
         if (!sameField(c.field, e[c.field], c.after)) throw new Error(`update batch ${b.id}: ${r.id}.${c.field} in the index is not the updated value; the index does not reflect this batch`);
         e[c.field] = c.before;
       }
@@ -118,9 +120,9 @@ function revertLiveRows(rows, root = S.ROOT) {
     const byId = new Map(out.map(r => [r.id, r]));
     for (const u of b.updates) {
       const r = byId.get(u.id); if (!r) continue;
-      // a gym-information fill leaves no trace in the compared fields; a field the row does not carry (callers select e.g. only
+      // a website/hours/day pass/facilities fill leaves no trace in the compared fields (a notes fill does, when the row carries notes); a field the row does not carry (callers select e.g. only
       // id,name,country,lat,lng,address, without suburb/types) can neither confirm nor contradict the update, so only carried fields count
-      const cs = u.changes.filter(c => !INFO_FIELDS.includes(c.field) && (c.field === 'address' || c.field in r));
+      const cs = u.changes.filter(c => !HIDDEN_INFO.includes(c.field) && (c.field === 'address' || c.field in r));
       if (cs.length && cs.every(c => sameField(c.field, c.field === 'address' ? (r.address || null) : r[c.field], c.after))) { cs.forEach(c => { r[c.field] = c.before; }); n++; }
     }
     if (b.inserts.length) { const ins = new Set(b.inserts), before = out.length; out = out.filter(r => !ins.has(r.id)); removed += before - out.length; }

@@ -140,9 +140,9 @@ class Api {
     return this._send('PATCH', q, { service: true, headers: { 'Content-Type': 'application/json', Prefer: 'return=representation' }, body: JSON.stringify(u.set) });
   }
 
-  // THE ONLY GYM-INFORMATION WRITE in the importer (updater.js): fills website, hours, day_pass and/or facilities of one existing approved spot. Same gate,
+  // THE ONLY GYM-INFORMATION WRITE in the importer (updater.js): fills website, hours, day_pass, facilities and/or notes of one existing approved spot. Same gate,
   // same pin (id + status=approved + the exact updated_at observed at the final re-check) and the same one-PATCH-per-gym rule as
-  // updateSpotLocation. The body is exactly the approved {website?, hours?, day_pass?, facilities?} and nothing else. That the fields are still empty is
+  // updateSpotLocation. The body is exactly the approved {website?, hours?, day_pass?, facilities?, notes?} and nothing else. That the fields are still empty is
   // checked by the updater before this is called; the updated_at pin keeps it true at write time (a row edited since matches zero rows).
   async updateSpotInfo(u, gate) {
     if (!gate || gate[UPDATE_GATE] !== true || !MINTED_UPDATE_GATES.has(gate)) throw new Error('refusing to update: no update gate (all preflight checks and safety flags must pass first)');
