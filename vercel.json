@@ -166,6 +166,21 @@
           "value": "geolocation=(self), camera=(), microphone=(), payment=(), usb=(), interest-cohort=()"
         }
       ]
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "preview.bouldeer.com"
+        }
+      ],
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
     }
   ],
   "functions": {
