@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-06-france-holds",
+  "description": "Regional research \"France: gyms on hold (second pass)\": 1 new gym(s) accepted of 2 candidate(s)",
+  "created": "2026-10-06",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-10-06-france-holds",
+    "section_sha256": "ad0ae0de60cdcb9e149feb4e229cad5e0a8e3e004454a2f935fc861429fd622c",
+    "sources_sha256": "e7fd8a231871624b55d7b260cdc3a5bc3dc18c87da4e6c1de1301a54ac8ef65b",
+    "candidates_sha256": "53e389b78dd116efa617b95d7c752d3c28f19353efd2d0a82b4697cbb925cace",
+    "reconcile_sha256": "0f6e85bdc7698623e064003abf7350eaf71653dfd48c6a256023327c6c0bb183",
+    "review_sha256": "8b56f6509b257cd7c7fcd43e8c9ddd1f6b446fa9088ef3a3bffb873907a39c04",
+    "candidates": 2,
+    "staged": 1,
+    "decisions": {
+      "accept": 1,
+      "same-as": 1
+    }
+  },
+  "index_at_staging": {
+    "sha256": "e1d9ef5216f87602ccefe7b8e4fac9c10be4c8fa3e59d6e76219e3f5d3154dad",
+    "count": 2385
+  }
+}

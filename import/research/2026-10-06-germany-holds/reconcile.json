@@ -1,0 +1,226 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-06-germany-holds",
+ "inputs": {
+  "section_sha256": "0c178870b03b4a2b04f464373336314f34d278312246e04800c9be8bec5b03ef",
+  "sources_sha256": "dffa18a6770fbbbbe054e2926a1ab9755acbbbd74a7265dcd2f71ed8b82425ad",
+  "candidates_sha256": "dbe14541976f26079126560fb8204597917ffe13fc44f8c3eac59718529ef314",
+  "index": {
+   "sha256": "e1d9ef5216f87602ccefe7b8e4fac9c10be4c8fa3e59d6e76219e3f5d3154dad",
+   "count": 2385
+  },
+  "staged_batches_compared": [
+   "2026-10-06-france-holds"
+  ],
+  "other_sections_compared": [
+   {
+    "id": "2026-10-05-germany-east-saar-berlin",
+    "candidates_sha256": "3d8ce4141e610ea206427a1828236611ca36c185fbdf09d67ae4878e05b099b6"
+   }
+  ]
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 6,
+  "ready": 0,
+  "review": 3,
+  "blocked": 3,
+  "existing": 0,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "dh-001",
+   "line": 1,
+   "name": "Kletterhütte Ilmenau",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-52c5182388"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is opening-soon"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-05-germany-east-saar-berlin#dee-008 \"Kletterhütte Ilmenau\": name-match same-name (\"Kletterhütte Ilmenau\" / \"Kletterhütte Ilmenau\", 0 m)",
+     "ids": [
+      "2026-10-05-germany-east-saar-berlin#dee-008"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    },
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": [
+    "2026-10-05-germany-east-saar-berlin#dee-008"
+   ]
+  },
+  {
+   "cid": "dh-002",
+   "line": 2,
+   "name": "Kletter- & Freizeithalle Schmölln",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-6a37cf87df"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-05-germany-east-saar-berlin#dee-009 \"Freizeit- und Kletterhalle Schmölln\": name-match co-located (\"Kletter- & Freizeithalle Schmölln\" / \"Freizeit- und Kletterhalle Schmölln\", 27 m)",
+     "ids": [
+      "2026-10-05-germany-east-saar-berlin#dee-009"
+     ]
+    }
+   ],
+   "review_ids": [
+    "2026-10-05-germany-east-saar-berlin#dee-009"
+   ]
+  },
+  {
+   "cid": "dh-003",
+   "line": 3,
+   "name": "Life Kletterhalle Saalfeld",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-0336b04f7e"
+   },
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-05-germany-east-saar-berlin#dee-010 \"Life Kletterhalle Saalfeld\": name-match same-name (\"Life Kletterhalle Saalfeld\" / \"Life Kletterhalle Saalfeld\", 677 m)",
+     "ids": [
+      "2026-10-05-germany-east-saar-berlin#dee-010"
+     ]
+    }
+   ],
+   "review_ids": [
+    "2026-10-05-germany-east-saar-berlin#dee-010"
+   ]
+  },
+  {
+   "cid": "dh-004",
+   "line": 4,
+   "name": "St. Veit Climbing Tower (DAV Meiningen)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-2a33a4832d"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-05-germany-east-saar-berlin#dee-012 \"St. Veit Kletterturm (DAV Meiningen)\": name-match renamed-or-related-name-nearby (\"St. Veit Climbing Tower (DAV Meiningen)\" / \"St. Veit Kletterturm (DAV Meiningen)\", 9 m)",
+     "ids": [
+      "2026-10-05-germany-east-saar-berlin#dee-012"
+     ]
+    }
+   ],
+   "review_ids": [
+    "2026-10-05-germany-east-saar-berlin#dee-012"
+   ]
+  },
+  {
+   "cid": "dh-005",
+   "line": 5,
+   "name": "Kletterzentrum Zuckerturm",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-c3eb253cd7"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-05-germany-east-saar-berlin#dee-018 \"Kletterzentrum Zuckerturm\": name-match same-name (\"Kletterzentrum Zuckerturm\" / \"Kletterzentrum Zuckerturm\", 0 m)",
+     "ids": [
+      "2026-10-05-germany-east-saar-berlin#dee-018"
+     ]
+    }
+   ],
+   "review_ids": [
+    "2026-10-05-germany-east-saar-berlin#dee-018"
+   ]
+  },
+  {
+   "cid": "dh-006",
+   "line": 6,
+   "name": "DAV Kletterhalle Ensdorf",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-e5002a3142"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-05-germany-east-saar-berlin#dee-026 \"DAV Kletterhalle Ensdorf\": name-match same-name (\"DAV Kletterhalle Ensdorf\" / \"DAV Kletterhalle Ensdorf\", 0 m)",
+     "ids": [
+      "2026-10-05-germany-east-saar-berlin#dee-026"
+     ]
+    }
+   ],
+   "review_ids": [
+    "2026-10-05-germany-east-saar-berlin#dee-026"
+   ]
+  }
+ ],
+ "reconcile_sha256": "5cb6334ba401d29cd58f14ce65b0809c56c68c3f8fef757803441f69de8532f8"
+}

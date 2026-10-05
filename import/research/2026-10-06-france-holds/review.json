@@ -1,0 +1,18 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-06-france-holds",
+ "reviewer": "Spiar (owner); decisions drafted by Claude (AI) on the owner's instruction, pending owner sign-off",
+ "reviewed": "2026-10-06",
+ "decisions": {
+  "frh-001": {
+   "decision": "same-as",
+   "same_as": "g-67ecd19a4e",
+   "reason": "The importer matches it to g-67ecd19a4e \"Arkose - Issy-les-Moulineaux Voie\" (same name, 0 m): already in Bouldeer, so nothing is inserted. Second-pass finding: the own page (S AKV) describes a rope-only hall (\"salle de voie\", \"Autonomie en escalade de voie OBLIGATOIRE\") and never mentions a bouldering area; the 200-block hall is the separate Arkose Issy-les-Moulineaux bloc (Rue du Bateau-Lavoir). Whether the existing record's tags are right is an owner check (see MANUAL-CHECK.md)."
+  },
+  "frh-002": {
+   "decision": "accept",
+   "reason": "Open: own home and contact pages (S BSA, read 2026-10-06: \"ouverte 7j/7\", phone, e-mail) and the chain list (S BSL, Ardennes is BS.19); opened 19 July 2024 (ADT listing, PlanetGrimpe press release); bouldering: it is a Bloc Session bouldering hall with 80 blocks (press release, own site \"Les blocs\"). The importer finds no existing gym and no gym within 150 m. Pin caveat: no OSM element and no address-database point exist for this new street; the pin is the viewport centre of the gym's own Google directions link (49.7062712, 4.8735219), on the D24 at the north edge of Donchery, which agrees with the \"D24\" in the press release. It is street-level (tens to about 150 m); the owner should look at it on the satellite view.",
+   "reviewed_against": []
+  }
+ }
+}
