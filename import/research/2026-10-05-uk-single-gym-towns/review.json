@@ -1,0 +1,250 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-05-uk-single-gym-towns",
+ "reviewer": "Spiar (owner); decisions drafted by Claude (AI) on the owner's instruction, pending owner sign-off",
+ "reviewed": "2026-10-05",
+ "decisions": {
+  "ambleside-wall": {
+   "decision": "accept"
+  },
+  "boulder-central-west-bromwich": {
+   "decision": "accept"
+  },
+  "chalkup-nether-stowey": {
+   "decision": "accept"
+  },
+  "climbing-hub-bradford": {
+   "decision": "accept"
+  },
+  "durham-climbing-centre": {
+   "decision": "accept"
+  },
+  "f51-folkestone": {
+   "decision": "accept"
+  },
+  "fenrock-wisbech": {
+   "decision": "accept"
+  },
+  "flashpoint-swansea": {
+   "decision": "accept"
+  },
+  "freeklime-huddersfield": {
+   "decision": "accept"
+  },
+  "freeklime-lincoln": {
+   "decision": "accept"
+  },
+  "frome-boulder-rooms": {
+   "decision": "accept"
+  },
+  "ibex-darlington": {
+   "decision": "accept"
+  },
+  "northway-newbury": {
+   "decision": "accept"
+  },
+  "oakwood-wokingham": {
+   "decision": "accept"
+  },
+  "ordinary-climbers": {
+   "decision": "accept"
+  },
+  "rockburn-bridport": {
+   "decision": "accept"
+  },
+  "rockcity-hull": {
+   "decision": "accept"
+  },
+  "rof59-newton-aycliffe": {
+   "decision": "accept"
+  },
+  "romford-rock-boulder": {
+   "decision": "accept"
+  },
+  "tide-climbing-helston": {
+   "decision": "accept"
+  },
+  "tide-climbing-padstow": {
+   "decision": "accept"
+  },
+  "volume-1-east-grinstead": {
+   "decision": "accept"
+  },
+  "boulders-cheltenham": {
+   "decision": "accept"
+  },
+  "xc-hemel-hempstead": {
+   "decision": "accept"
+  },
+  "boulder-uk-preston": {
+   "decision": "accept",
+   "reviewed_against": [
+    "boulder-uk-blackburn"
+   ],
+   "reason": "Flag is only the shared website / related name with boulder-uk-blackburn, which is rejected: the Boulder UK site advertises one centre (Preston, PR5 8AN) and mentions Blackburn only as where the business began in 2003, 10.6 km away; they are not the same venue and not duplicates in the index."
+  },
+  "chimera-canterbury": {
+   "decision": "accept",
+   "reviewed_against": [
+    "chimera-chatham",
+    "chimera-tunbridge-wells"
+   ],
+   "reason": "Flags are the shared chain website with the other two Chimera candidates. They are three different centres on the chain page with different addresses (Canterbury CT1 3RH, Chatham ME4 4ZJ, Tunbridge Wells TN2 3DR), tens of km apart, so not duplicates."
+  },
+  "chimera-tunbridge-wells": {
+   "decision": "accept",
+   "reviewed_against": [
+    "chimera-canterbury",
+    "chimera-chatham"
+   ],
+   "reason": "Flags are the shared chain website with the other two Chimera candidates. They are three different centres on the chain page with different addresses (Canterbury CT1 3RH, Chatham ME4 4ZJ, Tunbridge Wells TN2 3DR), tens of km apart, so not duplicates."
+  },
+  "chimera-chatham": {
+   "decision": "accept",
+   "reviewed_against": [
+    "chimera-canterbury",
+    "chimera-tunbridge-wells"
+   ],
+   "reason": "Flags are the shared chain website with the other two Chimera candidates. They are three different centres on the chain page with different addresses (Canterbury CT1 3RH, Chatham ME4 4ZJ, Tunbridge Wells TN2 3DR), tens of km apart, so not duplicates. Also single-source and street-level: the chain page (official site, address, hours, bouldering FAQ) is the only source and the pin is the Nominatim position of Dock Head Road / ME4 4ZJ, 60 m from the postcode centroid; accepted with that precision."
+  },
+  "pinnacle-bouldering-northampton": {
+   "decision": "accept",
+   "reviewed_against": [],
+   "reason": "Single-source flag only: the official Pinnacle site (bouldering page, home page with both centres) is the evidence; the Apple Maps place pin for this venue agrees with the NN3 8JZ postcode (35 m). The rope centre at Far Cotton is a different venue and not a candidate."
+  },
+  "project-climbing-poole": {
+   "decision": "accept",
+   "reviewed_against": [],
+   "reason": "Flags are single-source and street-level. The official site (home page: indoor bouldering, hours, address The Dolphin Centre BH15 1UD) is the only source, and the pin is the Nominatim position of the Dolphin Centre, 65 m from the postcode centroid, inside the same shopping centre; accepted with street precision."
+  },
+  "avertical-dundee": {
+   "decision": "same-as",
+   "same_as": "seed-937",
+   "reason": "Importer exact name match (663 m; existing pin kept)."
+  },
+  "bloc10-dundee": {
+   "decision": "same-as",
+   "same_as": "seed-939",
+   "reason": "Importer exact match, 0 m."
+  },
+  "boulder-exe": {
+   "decision": "same-as",
+   "same_as": "seed-931",
+   "reason": "Importer exact match, 39 m."
+  },
+  "climbing-hut-ellesmere-port": {
+   "decision": "same-as",
+   "same_as": "seed-864",
+   "reason": "Importer exact match, 3 m (OSM way is named Boulder Hut, the earlier name)."
+  },
+  "climbing-hut-shrewsbury": {
+   "decision": "same-as",
+   "same_as": "seed-865",
+   "reason": "Importer exact match, 0 m."
+  },
+  "dynamic-rock": {
+   "decision": "same-as",
+   "same_as": "seed-952",
+   "reason": "Importer exact match, 0 m."
+  },
+  "freeklime-york": {
+   "decision": "same-as",
+   "same_as": "seed-934",
+   "reason": "Importer match: same address, related name (\"Freeklime\"), 1 m."
+  },
+  "overhang-carmarthen": {
+   "decision": "same-as",
+   "same_as": "seed-954",
+   "reason": "Importer exact match, 2 m."
+  },
+  "rockstar-swindon": {
+   "decision": "same-as",
+   "same_as": "g-0bf1f11379",
+   "reason": "Importer exact match, 0 m."
+  },
+  "rokt-brighouse": {
+   "decision": "same-as",
+   "same_as": "seed-888",
+   "reason": "Importer exact match, 1 m."
+  },
+  "weedon-project": {
+   "decision": "same-as",
+   "same_as": "seed-900",
+   "reason": "Importer exact match, 0 m."
+  },
+  "eden-rock-carlisle": {
+   "decision": "same-as",
+   "same_as": "seed-869",
+   "reason": "Importer exact match, 0 m."
+  },
+  "boardroom-deeside": {
+   "decision": "same-as",
+   "same_as": "seed-956",
+   "reason": "Same gym: \"The Boardroom Climbing\" vs \"The Boardroom\" at the same pin (0 m)."
+  },
+  "boulder-bunker": {
+   "decision": "same-as",
+   "same_as": "seed-891",
+   "reason": "Same gym: \"The Boulder Bunker\" vs \"The Bunker\" at the same pin (0 m)."
+  },
+  "golden-gecko": {
+   "decision": "same-as",
+   "same_as": "seed-872",
+   "reason": "Same gym: \"Golden Gecko Climbing\" vs \"Golden Gecko\", 1 m."
+  },
+  "highball-norwich": {
+   "decision": "same-as",
+   "same_as": "seed-874",
+   "reason": "Same gym: \"Highball Norwich\" vs \"Highball Climbing Centre\", 0 m."
+  },
+  "ledge-inverness": {
+   "decision": "same-as",
+   "same_as": "seed-948",
+   "reason": "Same gym: \"The Ledge Climbing Gym\" vs \"The Ledge\", 69 m, both in Inverness."
+  },
+  "red-goat-york": {
+   "decision": "same-as",
+   "same_as": "seed-883",
+   "reason": "Same gym: \"Red Goat Climbing Wall\" vs \"Red Goat\", 0 m."
+  },
+  "northern-problems-whitehaven": {
+   "decision": "defer",
+   "reason": "Official one-page site shows hours, price and a partial address but never says bouldering; need a primary source (site page or social) stating the bouldering offering."
+  },
+  "avid-ipswich": {
+   "decision": "defer",
+   "reason": "Official site (home, prices, contact) lists address and hours but the text never says bouldering or ropes; need a primary source showing a bouldering offering."
+  },
+  "keswick-climbing-wall": {
+   "decision": "defer",
+   "reason": "Activity-centre page shows a climbing wall (9-5 daily) with no mention of bouldering and no street address; need a source for the bouldering offering and an address."
+  },
+  "sunderland-wall": {
+   "decision": "defer",
+   "reason": "Current site shows hours and a menu (climbing, kids camps, archery, battlezone) but nothing about bouldering was found; need a primary source for the offering."
+  },
+  "lancaster-wall": {
+   "decision": "defer",
+   "reason": "The official domain was unreadable on 2026-10-05 (HTTP 526 invalid certificate, 403 on http); retry later and confirm bouldering and open status from the site or social."
+  },
+  "boatyard-boulders-nottingham": {
+   "decision": "defer",
+   "reason": "Described as \"the UK's first ultra realistic bouldering park\" at an adventure base with pre-booked time slots from 4 August 2026; not established that this is an indoor gym (it may be outdoor-style rock replicas). Owner to decide whether it belongs in Bouldeer."
+  },
+  "ingleton-wall": {
+   "decision": "reject",
+   "reason_code": "insufficient-evidence",
+   "reason": "The ingletonwall.co.uk domain now shows a registrar parked page; the OSM element is the only evidence it ever existed, no primary source for existence, bouldering or open status."
+  },
+  "hang-on-hamilton": {
+   "decision": "reject",
+   "reason_code": "closed",
+   "reason": "Official site banner: \"PERMANENTLY CLOSED AS OF 14TH MARCH\"."
+  },
+  "boulder-uk-blackburn": {
+   "decision": "reject",
+   "reason_code": "insufficient-evidence",
+   "reason": "Old OSM node only. The Boulder UK site advertises a single centre (Preston); Blackburn is mentioned only as where the business started in 2003. No primary source for a current Blackburn centre."
+  }
+ }
+}
