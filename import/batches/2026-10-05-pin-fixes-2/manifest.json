@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "updater_version": 1,
+  "kind": "update",
+  "batch_id": "2026-10-05-pin-fixes-2",
+  "status": "updated",
+  "target": {
+    "kind": "production",
+    "host": "thayxaampaelvntoaido.supabase.co"
+  },
+  "coverage": "FULL",
+  "plan_sha256": "d3c210750ad0c78ebedb9f5d77ba9ae8a5d8f69009dad53b5b7e1f92d2b4f708",
+  "payload_sha256": "88bb0c8356e5f9d6a48621d514d624fd76ef79ab78c51afa2d06e559d5e2f359",
+  "confirm_token": "32425d0d0f9835ba",
+  "live_state_sha256": "1b48b0686ba23e74d5264622b19d2cdb9616574df7b5696105ee5ea87f0bcb9c",
+  "rows_updated": 3,
+  "approved_before": 2385,
+  "approved_after": 2385,
+  "changes": [
+    {
+      "id": "seed-1175",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "137b23a178b6493c",
+      "after_h": "4d7f1267b79e63d6"
+    },
+    {
+      "id": "seed-893",
+      "fields": [
+        "address",
+        "lat",
+        "lng"
+      ],
+      "expect_h": "e5f47bff58f1b1af",
+      "after_h": "949265fc8c52124f"
+    },
+    {
+      "id": "seed-878",
+      "fields": [
+        "address",
+        "lat",
+        "lng"
+      ],
+      "expect_h": "c5c8b3c3c3ac7cf2",
+      "after_h": "06fca5c77f03ebbb"
+    }
+  ],
+  "verification": {
+    "ok": true,
+    "checked": 3,
+    "problems": []
+  },
+  "started_at": "2026-10-05T14:48:53.316Z",
+  "finished_at": "2026-10-05T14:48:56.192Z",
+  "ids": [
+    "seed-1175",
+    "seed-893",
+    "seed-878"
+  ]
+}

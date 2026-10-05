@@ -1,0 +1,40 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-06-france-holds",
+ "index": {
+  "sha256": "bf268ec5efbf3b7052989e201e20ef66a3d2ae3839ffafd9f203d4c13099665a",
+  "count": 2406,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-05-korea-holds",
+  "2026-10-06-italy-holds-napoli"
+ ],
+ "counts": {
+  "records": 1,
+  "new": 1,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "8429fb3c6e9a11d2d0976722459b7e70de23ec17cefc2e4ddcbc418b6aebb7e8",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-d014ec9e78",
+   "id_frozen": true,
+   "name": "Bloc Session Ardennes",
+   "country": "FR"
+  }
+ ]
+}

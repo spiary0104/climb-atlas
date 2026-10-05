@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-05-korea-holds",
+  "description": "Regional research \"Korea: Gwangju + Jeollanam gyms on hold (second pass)\": 3 new gym(s) accepted of 6 candidate(s)",
+  "created": "2026-10-06",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-10-05-korea-holds",
+    "section_sha256": "4e0cbd518eae17eb2a846707a3f2221b220cc7e73dada205dce5283429caf03e",
+    "sources_sha256": "42dbb0b3001b631b7be0e2b703d1d8c8c645532883a7fdb10737b302487b46ec",
+    "candidates_sha256": "5d20a4add212fcf30638867628a92a2c7721187d7f8e1870e937e6f0a1fabe06",
+    "reconcile_sha256": "364630a7b1ab4144668cdb0af6f2f5eb7312646a344002d5f232c5d80f3945a5",
+    "review_sha256": "22e5ee8d3a78e62dbd14b82512b440641aef80c3ac02f6e2fdfaf91d1eaaee4a",
+    "candidates": 6,
+    "staged": 3,
+    "decisions": {
+      "accept": 3,
+      "defer": 2,
+      "same-as": 1
+    }
+  },
+  "index_at_staging": {
+    "sha256": "e1d9ef5216f87602ccefe7b8e4fac9c10be4c8fa3e59d6e76219e3f5d3154dad",
+    "count": 2385
+  }
+}

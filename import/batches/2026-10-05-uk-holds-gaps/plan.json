@@ -1,0 +1,178 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-05-uk-holds-gaps",
+ "index": {
+  "sha256": "87d515544e09dadc93c7cf83d1ab956f81590a8b0bfb44d29bb544502be3b949",
+  "count": 2385,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-05-korea-holds",
+  "2026-10-06-france-holds",
+  "2026-10-06-germany-holds",
+  "2026-10-06-italy-holds-napoli"
+ ],
+ "counts": {
+  "records": 18,
+  "new": 18,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "37c6b9abc6794303d2935eed82f4ce1bc843328aeda2d66d62db025f2a53d6e7",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-1d224ac512",
+   "id_frozen": true,
+   "name": "The Arc",
+   "country": "GB"
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-4ab9b915c3",
+   "id_frozen": true,
+   "name": "AVID Climbing",
+   "country": "GB"
+  },
+  {
+   "line": 3,
+   "class": "new",
+   "id": "g-0e0952ce1c",
+   "id_frozen": true,
+   "name": "BoulderRyn",
+   "country": "GB"
+  },
+  {
+   "line": 4,
+   "class": "new",
+   "id": "g-f964aba515",
+   "id_frozen": true,
+   "name": "The Climbing Station",
+   "country": "GB"
+  },
+  {
+   "line": 5,
+   "class": "new",
+   "id": "g-ac94fa456f",
+   "id_frozen": true,
+   "name": "The Cragg Climbing Wall",
+   "country": "GB"
+  },
+  {
+   "line": 6,
+   "class": "new",
+   "id": "g-202afa086a",
+   "id_frozen": true,
+   "name": "Dyno Climbing Centre",
+   "country": "GB"
+  },
+  {
+   "line": 7,
+   "class": "new",
+   "id": "g-66083cf9e6",
+   "id_frozen": true,
+   "name": "Green Spider",
+   "country": "GB"
+  },
+  {
+   "line": 8,
+   "class": "new",
+   "id": "g-25ed1dbdbf",
+   "id_frozen": true,
+   "name": "IndiRock",
+   "country": "GB"
+  },
+  {
+   "line": 9,
+   "class": "new",
+   "id": "g-3dd3441c21",
+   "id_frozen": true,
+   "name": "Keswick Climbing Wall",
+   "country": "GB"
+  },
+  {
+   "line": 10,
+   "class": "new",
+   "id": "g-08845e976a",
+   "id_frozen": true,
+   "name": "Kong Adventure Centre",
+   "country": "GB"
+  },
+  {
+   "line": 11,
+   "class": "new",
+   "id": "g-b8639826ea",
+   "id_frozen": true,
+   "name": "LancasterWall",
+   "country": "GB"
+  },
+  {
+   "line": 12,
+   "class": "new",
+   "id": "g-19829aff2a",
+   "id_frozen": true,
+   "name": "Mad Volume",
+   "country": "GB"
+  },
+  {
+   "line": 13,
+   "class": "new",
+   "id": "g-a8ed00161d",
+   "id_frozen": true,
+   "name": "The Northwest Face",
+   "country": "GB"
+  },
+  {
+   "line": 14,
+   "class": "new",
+   "id": "g-e44595a7e9",
+   "id_frozen": true,
+   "name": "The Peak Climbing Wall",
+   "country": "GB"
+  },
+  {
+   "line": 15,
+   "class": "new",
+   "id": "g-fc40b51763",
+   "id_frozen": true,
+   "name": "Red Spider",
+   "country": "GB"
+  },
+  {
+   "line": 16,
+   "class": "new",
+   "id": "g-1e3663e189",
+   "id_frozen": true,
+   "name": "Sunderland Wall",
+   "country": "GB"
+  },
+  {
+   "line": 17,
+   "class": "new",
+   "id": "g-7061a1fbb1",
+   "id_frozen": true,
+   "name": "White Spider",
+   "country": "GB"
+  },
+  {
+   "line": 18,
+   "class": "new",
+   "id": "g-d8019fc80a",
+   "id_frozen": true,
+   "name": "Yellow Spider",
+   "country": "GB"
+  }
+ ]
+}

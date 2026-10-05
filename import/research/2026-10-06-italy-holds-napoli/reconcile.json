@@ -1,0 +1,321 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-06-italy-holds-napoli",
+ "inputs": {
+  "section_sha256": "e552b5e4b7f0ab0c319109c1337edfcadf5d492ac2c622cdb39cfc36ea421f95",
+  "sources_sha256": "fc10270a172741f44082c989024365ed24edd1b98cf7a9486db7adb39017f46d",
+  "candidates_sha256": "479a19d4cb2f1eaca9733043e7030d22a93d7a485db8758b4b0ac5ad29590449",
+  "index": {
+   "sha256": "e1d9ef5216f87602ccefe7b8e4fac9c10be4c8fa3e59d6e76219e3f5d3154dad",
+   "count": 2385
+  },
+  "staged_batches_compared": [],
+  "other_sections_compared": [
+   {
+    "id": "2026-10-05-italy-city-gaps",
+    "candidates_sha256": "8af9380b03f755505790d7bb22c1805a59dde1db03ab7bca637128c4bb3c357e"
+   }
+  ]
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 9,
+  "ready": 0,
+  "review": 4,
+  "blocked": 5,
+  "existing": 0,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "ih-001",
+   "line": 1,
+   "name": "Palaroccia Napoli",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-0dad847caf"
+   },
+   "flags": [
+    {
+     "code": "alias-match",
+     "detail": "candidate ih-009 \"DEMON Rock Wall (Palasport Trincone)\": same-name-but-pin-differs (\"DEMON Rock Wall\" / \"DEMON Rock Wall (Palasport Trincone)\", 2358 m)",
+     "ids": [
+      "ih-009"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-05-italy-city-gaps#it-014 \"Palaroccia Napoli (DEMON Rock Wall)\": name-match same-name (\"Palaroccia Napoli\" / \"Palaroccia Napoli (DEMON Rock Wall)\", 136 m)",
+     "ids": [
+      "2026-10-05-italy-city-gaps#it-014"
+     ]
+    }
+   ],
+   "review_ids": [
+    "2026-10-05-italy-city-gaps#it-014",
+    "ih-009"
+   ]
+  },
+  {
+   "cid": "ih-002",
+   "line": 2,
+   "name": "Eden Climbing (Eden Park)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-600115a43b"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-05-italy-city-gaps#it-011 \"Eden Park San Lazzaro (climbing)\": name-match renamed-or-related-name-nearby (\"Eden Climbing (Eden Park)\" / \"Eden Park San Lazzaro (climbing)\", 22 m)",
+     "ids": [
+      "2026-10-05-italy-city-gaps#it-011"
+     ]
+    }
+   ],
+   "review_ids": [
+    "2026-10-05-italy-city-gaps#it-011"
+   ]
+  },
+  {
+   "cid": "ih-003",
+   "line": 3,
+   "name": "Free Climbing Palermo",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-569cef7574"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-05-italy-city-gaps#it-013 \"Free Climbing Palermo\": name-match same-name (\"Free Climbing Palermo\" / \"Free Climbing Palermo\", 0 m)",
+     "ids": [
+      "2026-10-05-italy-city-gaps#it-013"
+     ]
+    },
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": [
+    "2026-10-05-italy-city-gaps#it-013"
+   ]
+  },
+  {
+   "cid": "ih-004",
+   "line": 4,
+   "name": "Centro Arrampicata Torino (Palabraccini)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-037627fa1d"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-05-italy-city-gaps#it-006 \"Centro Arrampicata Torino (Palabraccini)\": name-match same-name (\"Centro Arrampicata Torino (Palabraccini)\" / \"Centro Arrampicata Torino (Palabraccini)\", 0 m)",
+     "ids": [
+      "2026-10-05-italy-city-gaps#it-006"
+     ]
+    }
+   ],
+   "review_ids": [
+    "2026-10-05-italy-city-gaps#it-006"
+   ]
+  },
+  {
+   "cid": "ih-005",
+   "line": 5,
+   "name": "La Mole Sports Academy",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-a03da7a667"
+   },
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-05-italy-city-gaps#it-003 \"La Mole Sports Academy\": name-match same-name (\"La Mole Sports Academy\" / \"La Mole Sports Academy\", 33 m)",
+     "ids": [
+      "2026-10-05-italy-city-gaps#it-003"
+     ]
+    }
+   ],
+   "review_ids": [
+    "2026-10-05-italy-city-gaps#it-003"
+   ]
+  },
+  {
+   "cid": "ih-006",
+   "line": 6,
+   "name": "BlueRock Climbing Gym",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-13e018a5eb"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-05-italy-city-gaps#it-015 \"BlueRock Climbing Gym\": name-match same-name (\"BlueRock Climbing Gym\" / \"BlueRock Climbing Gym\", 633 m)",
+     "ids": [
+      "2026-10-05-italy-city-gaps#it-015"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    },
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": [
+    "2026-10-05-italy-city-gaps#it-015"
+   ]
+  },
+  {
+   "cid": "ih-007",
+   "line": 7,
+   "name": "Pozzuoli Boulder",
+   "class": "blocked",
+   "suggested": "reject outdoor-area",
+   "importer": {
+    "class": "new",
+    "id": "g-9b4650077d"
+   },
+   "blockers": [
+    {
+     "code": "outdoor-area",
+     "detail": "outdoor climbing areas are not gyms"
+    },
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    },
+    {
+     "code": "coarse-coordinates",
+     "detail": "coordinates only locate the area, not the gym"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "ih-008",
+   "line": 8,
+   "name": "MAD Climbing Wall (Ex OPG Je so pazzo)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-5fe1dd8043"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "ih-009",
+   "line": 9,
+   "name": "DEMON Rock Wall (Palasport Trincone)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-e0983d15d9"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "flags": [
+    {
+     "code": "alias-match",
+     "detail": "candidate ih-001 \"Palaroccia Napoli\": same-name-but-pin-differs (\"DEMON Rock Wall (Palasport Trincone)\" / \"DEMON Rock Wall\", 2358 m)",
+     "ids": [
+      "ih-001"
+     ]
+    },
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": [
+    "ih-001"
+   ]
+  }
+ ],
+ "reconcile_sha256": "7780997e2457f00f6903eeca374b7b6a2689f5efb7004a15aea981e3dc7b42dc"
+}
