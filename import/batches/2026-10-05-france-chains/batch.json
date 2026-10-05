@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-05-france-chains",
+  "description": "Regional research \"France: chain gaps (Climb Up, Bloc Session, MurMur, Antrebloc, Le Pan)\": 43 new gym(s) accepted of 69 candidate(s)",
+  "created": "2026-10-05",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-10-05-france-chains",
+    "section_sha256": "85845df5325fed862f19e6dcc7bb179d4595f514c87754281abef7184b8f6557",
+    "sources_sha256": "f497b80fbdf8e52723446d0e49dc4c39c525d1abbac4574a665412a3e183f8b2",
+    "candidates_sha256": "4f69658a1eff5a5c61b387894c1fbf1d95a91c9b20d6585c7a0ef3e762379fcd",
+    "reconcile_sha256": "89abb0db76f8f0060069563b560f5786d2e6dbb96f6778797d7944a5db95e962",
+    "review_sha256": "43bae20bc7c2e48aa4ae4ac2fe8f8d9d420595b7b0a68e32c0fc5ab6b6f97673",
+    "candidates": 69,
+    "staged": 43,
+    "decisions": {
+      "accept": 43,
+      "defer": 1,
+      "reject": 2,
+      "same-as": 23
+    }
+  },
+  "index_at_staging": {
+    "sha256": "c97e3035f0208405f11b34c45813a104e2c9b1d4f25a4a3a6a6a349f627e2918",
+    "count": 2272
+  }
+}

@@ -1,0 +1,383 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-05-france-chains",
+ "reviewer": "Spiar (owner); decisions drafted by Claude (AI) on the owner's instruction, pending owner sign-off",
+ "reviewed": "2026-10-05",
+ "decisions": {
+  "fr-001": {
+   "decision": "accept",
+   "reason": "own Climb Up branch page (https://aix-boucbelair.climb-up.fr/) shows exists, open, address and bouldering; the chain store list also lists it; pin is OSM way/666261176 (precision building).",
+   "reviewed_against": []
+  },
+  "fr-002": {
+   "decision": "accept",
+   "reason": "own Climb Up branch page (https://aubagne.climb-up.fr/) shows exists, open, address and bouldering; the chain store list also lists it; pin is OSM way/92603382 (precision building).",
+   "reviewed_against": []
+  },
+  "fr-003": {
+   "decision": "same-as",
+   "same_as": "seed-1093",
+   "reason": "Importer exact match: same name within  of seed-1093; pin differences are small, the existing pin is kept (no location update)."
+  },
+  "fr-004": {
+   "decision": "same-as",
+   "same_as": "seed-1085",
+   "reason": "Importer exact match: same name within  of seed-1085; pin differences are small, the existing pin is kept (no location update)."
+  },
+  "fr-005": {
+   "decision": "accept",
+   "reason": "own Climb Up branch page (https://brest.climb-up.fr/) shows exists, open, address and bouldering; the chain store list also lists it; pin is OSM way/910137896 (precision building).",
+   "reviewed_against": []
+  },
+  "fr-006": {
+   "decision": "accept",
+   "reason": "own Climb Up branch page (https://angers-lespontsdece.climb-up.fr/) shows exists, open, address and bouldering; the chain store list also lists it; pin is OSM way/902977953 (precision building).",
+   "reviewed_against": []
+  },
+  "fr-007": {
+   "decision": "same-as",
+   "same_as": "g-47d662e918",
+   "reason": "Importer exact match: same name within  of g-47d662e918; pin differences are small, the existing pin is kept (no location update)."
+  },
+  "fr-008": {
+   "decision": "accept",
+   "reason": "own Climb Up branch page (https://limoges.climb-up.fr/) shows exists, open, address and bouldering; the chain store list also lists it; pin is OSM way/70116553 (precision building).",
+   "reviewed_against": []
+  },
+  "fr-009": {
+   "decision": "same-as",
+   "same_as": "g-e0d5a84e0e",
+   "reason": "Importer exact match: same name within  of g-e0d5a84e0e; pin differences are small, the existing pin is kept (no location update)."
+  },
+  "fr-010": {
+   "decision": "accept",
+   "reason": "own Climb Up branch page (https://bordeaux-eysines.climb-up.fr/) shows exists, open, address and bouldering; the chain store list also lists it; pin is OSM node/5014463697 (precision building). Flags reviewed: other Climb Up branches with their own address/city, not the same gym: fr-009 (Climb Up Bordeaux - Mérignac, 3424 m); fr-021 (Climb Up Bordeaux Villenave, 11953 m); g-e0d5a84e0e (g-e0d5a84e0e, 3424 m).",
+   "reviewed_against": [
+    "fr-009",
+    "fr-021",
+    "g-e0d5a84e0e"
+   ]
+  },
+  "fr-011": {
+   "decision": "same-as",
+   "same_as": "g-1b773ea6ba",
+   "reason": "Importer exact match (same name, 0 m). It is an existing rope-only record in Bouldeer (own page: \"salle de voies\", no bouldering), so this candidate could never be added as a new gym anyway; it is left untouched."
+  },
+  "fr-012": {
+   "decision": "reject",
+   "reason_code": "no-bouldering",
+   "reason": "Own page (epinay.climb-up.fr) describes \"la salle de voies à Épinay sur Seine\"; the chain store list tags it VOIE only. Confirmed rope-only, so it cannot be added as a bouldering gym."
+  },
+  "fr-013": {
+   "decision": "accept",
+   "reason": "own Climb Up branch page (https://aix-lesmilles.climb-up.fr/) shows exists, open, address and bouldering; the chain store list also lists it; pin is OSM way/88764819 (precision building).",
+   "reviewed_against": []
+  },
+  "fr-014": {
+   "decision": "accept",
+   "reason": "own Climb Up branch page (https://dijon.climb-up.fr/) shows exists, open, address and bouldering; the chain store list also lists it; pin is OSM way/58266307 (precision building).",
+   "reviewed_against": []
+  },
+  "fr-015": {
+   "decision": "same-as",
+   "same_as": "seed-1084",
+   "reason": "Importer exact match (same name). The existing pin is 146 m from the candidate pin (OSM node inside the Confluence centre), same centre; no location update."
+  },
+  "fr-016": {
+   "decision": "reject",
+   "reason_code": "no-bouldering",
+   "reason": "Own page (lille-lesquin.climb-up.fr) describes \"plus de 250 voies\" up to 15.5 m plus a Fun Climbing area; the chain store list tags it VOIE - FUN CLIMBING only. Confirmed rope-only. (It was on the owner's backlog; it does not offer bouldering, so it is not added.)"
+  },
+  "fr-017": {
+   "decision": "accept",
+   "reason": "own Climb Up branch page (https://lille-wambrechies.climb-up.fr/) shows exists, open, address and bouldering; the chain store list also lists it; pin is OSM way/192504628 (precision building). Flags reviewed: other Climb Up branches with their own address/city, not the same gym: fr-016 (Climb Up Lille Lesquin, 11375 m); fr-023 (Climb Up Lille Centre, 5275 m); g-2309c9eeb7 (g-2309c9eeb7, 5275 m). Own page says only \"un petit espace de blocs\": a small bouldering area next to the rope hall, bouldering confirmed on the primary page.",
+   "reviewed_against": [
+    "fr-016",
+    "fr-023",
+    "g-2309c9eeb7"
+   ]
+  },
+  "fr-018": {
+   "decision": "accept",
+   "reason": "own Climb Up branch page (https://lille-villeneuvedascq.climb-up.fr/) shows exists, open, address and bouldering; the chain store list also lists it; pin is OSM node/6096312717 (precision building). Flags reviewed: other Climb Up branches with their own address/city, not the same gym: fr-023 (Climb Up Lille Centre, 5162 m); g-2309c9eeb7 (g-2309c9eeb7, 5162 m).",
+   "reviewed_against": [
+    "fr-023",
+    "g-2309c9eeb7"
+   ]
+  },
+  "fr-019": {
+   "decision": "same-as",
+   "same_as": "g-db854888ca",
+   "reason": "Importer exact match: same name within  of g-db854888ca; pin differences are small, the existing pin is kept (no location update)."
+  },
+  "fr-020": {
+   "decision": "same-as",
+   "same_as": "seed-1081",
+   "reason": "Importer exact match: same name within  of seed-1081; pin differences are small, the existing pin is kept (no location update)."
+  },
+  "fr-021": {
+   "decision": "accept",
+   "reason": "own Climb Up branch page (https://bordeaux-villenave.climb-up.fr/) shows exists, open, address and bouldering; the chain store list also lists it; pin is OSM way/999229013 (precision building). Flags reviewed: other Climb Up branches with their own address/city, not the same gym: fr-009 (Climb Up Bordeaux - Mérignac, 10945 m); fr-010 (Climb Up Bordeaux - Eysines, 11953 m); g-e0d5a84e0e (g-e0d5a84e0e, 10945 m).",
+   "reviewed_against": [
+    "fr-009",
+    "fr-010",
+    "g-e0d5a84e0e"
+   ]
+  },
+  "fr-022": {
+   "decision": "accept",
+   "reason": "own Climb Up branch page (https://mulhouse-wittenheim.climb-up.fr/) shows exists, open, address and bouldering; the chain store list also lists it; pin is OSM node/9221660455 (precision building). Caveat: the chain store-list pin lies 542 m east on a house; the OSM node carries the gym's own phone/website/hours, so the OSM node is used.",
+   "reviewed_against": []
+  },
+  "fr-023": {
+   "decision": "same-as",
+   "same_as": "g-2309c9eeb7",
+   "reason": "Importer exact match: same name within  of g-2309c9eeb7; pin differences are small, the existing pin is kept (no location update)."
+  },
+  "fr-024": {
+   "decision": "same-as",
+   "same_as": "g-4c46ac5a73",
+   "reason": "Importer exact match: same name within  of g-4c46ac5a73; pin differences are small, the existing pin is kept (no location update)."
+  },
+  "fr-025": {
+   "decision": "same-as",
+   "same_as": "g-0e3863a1a0",
+   "reason": "Importer exact match: same name within  of g-0e3863a1a0; pin differences are small, the existing pin is kept (no location update)."
+  },
+  "fr-026": {
+   "decision": "accept",
+   "reason": "own Climb Up branch page (https://cergy.climb-up.fr/) shows exists, open, address and bouldering; the chain store list also lists it; pin is OSM node/10009378335 (precision building). Caveat: the chain store-list pin lies on a school about 406 m away; the OSM node (website cergy.climb-up.fr) is used.",
+   "reviewed_against": []
+  },
+  "fr-027": {
+   "decision": "accept",
+   "reason": "own Climb Up branch page (https://orleans.climb-up.fr/) shows exists, open, address and bouldering; the chain store list also lists it; pin is OSM node/3472124903 (precision building).",
+   "reviewed_against": []
+  },
+  "fr-028": {
+   "decision": "accept",
+   "reason": "own Climb Up branch page (https://lemans.climb-up.fr/) shows exists, open, address and bouldering; the chain store list also lists it; pin is OSM node/11805377664 (precision building).",
+   "reviewed_against": []
+  },
+  "fr-029": {
+   "decision": "accept",
+   "reason": "own Climb Up branch page (https://nimes.climb-up.fr/) shows exists, open, address and bouldering; the chain store list also lists it; pin is OSM node/12951349769 (precision building).",
+   "reviewed_against": []
+  },
+  "fr-030": {
+   "decision": "accept",
+   "reason": "own Climb Up branch page (https://istres.climb-up.fr/) shows exists, open, address and bouldering; the chain store list also lists it; pin is OSM node/13700786801 (precision building).",
+   "reviewed_against": []
+  },
+  "fr-031": {
+   "decision": "same-as",
+   "same_as": "seed-1088",
+   "reason": "Importer exact match (same name, 0 m): MRoc Part-Dieu is already in Bouldeer as seed-1088."
+  },
+  "fr-032": {
+   "decision": "accept",
+   "reason": "own M'ROC page (https://laennec.mroc.fr/) shows exists, open, address and bouldering; the chain store list also lists it; pin is OSM node/5149785264 (precision building). Flags reviewed: other M'ROC (Climb Up network) branches with their own address/city, not the same gym: fr-033 (MRoc Villeurbanne, 4207 m).",
+   "reviewed_against": [
+    "fr-033"
+   ]
+  },
+  "fr-033": {
+   "decision": "accept",
+   "reason": "own M'ROC page (https://villeurbanne.mroc.fr/) shows exists, open, address and bouldering; the chain store list also lists it; pin is OSM node/4401373247 (precision building). Flags reviewed: other M'ROC (Climb Up network) branches with their own address/city, not the same gym: fr-032 (MRoc Laennec, 4207 m).",
+   "reviewed_against": [
+    "fr-032"
+   ]
+  },
+  "fr-034": {
+   "decision": "same-as",
+   "same_as": "g-2f12232d66",
+   "reason": "Importer exact match: same name within  of g-2f12232d66; pin differences are small, the existing pin is kept (no location update)."
+  },
+  "fr-035": {
+   "decision": "accept",
+   "reason": "own Bloc Session branch page (https://www.blocsession.com/salle-escalade/ajaccio/contact/) shows exists, open, address and bouldering; the chain store list also lists it; pin is OSM node/13256433700 (precision building).",
+   "reviewed_against": []
+  },
+  "fr-036": {
+   "decision": "same-as",
+   "same_as": "g-9ad5571912",
+   "reason": "Same gym: BS.6 Avignon (15 rue des Vanniers, Le Pontet) is 0 m from g-9ad5571912 \"Bloc Session - BS.6 Avignon\" (the chain numbers its branches). No location update."
+  },
+  "fr-037": {
+   "decision": "accept",
+   "reason": "own Bloc Session branch page (https://www.blocsession.com/salle-escalade/belfort/contact/) shows exists, open, address and bouldering; the chain store list also lists it; pin is OSM node/13389491957 (precision building).",
+   "reviewed_against": []
+  },
+  "fr-038": {
+   "decision": "same-as",
+   "same_as": "g-86f95e1310",
+   "reason": "Same gym: BS.25 Besançon (Chalezeule) is 90 m from g-86f95e1310 \"Bloc Session - BS.25 Besançon\", same branch number. Pin gap under 150 m, no location update."
+  },
+  "fr-039": {
+   "decision": "accept",
+   "reason": "own Bloc Session branch page (https://www.blocsession.com/salle-escalade/beziers/contact/) shows exists, open, address and bouldering; the chain store list also lists it; pin is a BAN house-number point (Nominatim street way/38480598 (rue de l'Olivette, Bastit, Béziers) 90 m away).",
+   "reviewed_against": []
+  },
+  "fr-040": {
+   "decision": "accept",
+   "reason": "own Bloc Session branch page (https://www.blocsession.com/salle-escalade/salle-club-escalade-biarritz-baynone-anglet/contact/) shows exists, open, address and bouldering; the chain store list also lists it; pin is a BAN house-number point (Nominatim street way/121832857 25 m away).",
+   "reviewed_against": []
+  },
+  "fr-041": {
+   "decision": "accept",
+   "reason": "own Bloc Session branch page (https://www.blocsession.com/salle-escalade/chalon-sur-saone/contact/) shows exists, open, address and bouldering; the chain store list also lists it; pin is a BAN house-number point (Nominatim street way/885487348 68 m away).",
+   "reviewed_against": []
+  },
+  "fr-042": {
+   "decision": "accept",
+   "reason": "own Bloc Session branch page (https://www.blocsession.com/salle-escalade/chinon/contact/) shows exists, open, address and bouldering; the chain store list also lists it; pin is OSM way/62466507 (precision building).",
+   "reviewed_against": []
+  },
+  "fr-043": {
+   "decision": "accept",
+   "reason": "own Bloc Session branch page (https://www.blocsession.com/salle-escalade/gap/contact/) shows exists, open, address and bouldering; the chain store list also lists it; pin is OSM node/9196037002 (precision building).",
+   "reviewed_against": []
+  },
+  "fr-044": {
+   "decision": "accept",
+   "reason": "own Bloc Session branch page (https://www.blocsession.com/salle-escalade/haguenau/contact/) shows exists, open, address and bouldering; the chain store list also lists it; pin is OSM node/10017665397 (precision building).",
+   "reviewed_against": []
+  },
+  "fr-045": {
+   "decision": "accept",
+   "reason": "own Bloc Session branch page (https://www.blocsession.com/salle-escalade/la-ciotat/contact/) shows exists, open, address and bouldering; the chain store list also lists it; pin is OSM node/8090719797 (precision building).",
+   "reviewed_against": []
+  },
+  "fr-046": {
+   "decision": "accept",
+   "reason": "own Bloc Session branch page (https://www.blocsession.com/salle-escalade/loire-estuaire/contact/) shows exists, open, address and bouldering; the chain store list also lists it; pin is OSM node/1407087447 (precision building).",
+   "reviewed_against": []
+  },
+  "fr-047": {
+   "decision": "accept",
+   "reason": "own Bloc Session branch page (https://www.blocsession.com/salle-escalade/lyon-beynost/contact/) shows exists, open, address and bouldering; the chain store list also lists it; pin is OSM way/1162023288 (precision building). Flags reviewed: other Bloc Session branches with their own address/city, not the same gym: fr-048 (Bloc Session Lyon Centre, 12982 m); g-eef9a68caf (g-eef9a68caf, 13026 m).",
+   "reviewed_against": [
+    "fr-048",
+    "g-eef9a68caf"
+   ]
+  },
+  "fr-048": {
+   "decision": "same-as",
+   "same_as": "g-eef9a68caf",
+   "reason": "Importer exact match: same name within  of g-eef9a68caf; pin differences are small, the existing pin is kept (no location update)."
+  },
+  "fr-049": {
+   "decision": "accept",
+   "reason": "own Bloc Session branch page (https://www.blocsession.com/salle-escalade/lyon-craponne/contact/) shows exists, open, address and bouldering; the chain store list also lists it; pin is OSM node/12786971901 (precision building). Flags reviewed: other Bloc Session branches with their own address/city, not the same gym: fr-048 (Bloc Session Lyon Centre, 10061 m); g-eef9a68caf (g-eef9a68caf, 10043 m).",
+   "reviewed_against": [
+    "fr-048",
+    "g-eef9a68caf"
+   ]
+  },
+  "fr-050": {
+   "decision": "accept",
+   "reason": "own Bloc Session branch page (https://www.blocsession.com/salle-escalade/marne-la-vallee/contact/) shows exists, open, address and bouldering; the chain store list also lists it; pin is OSM node/13694804677 (precision building).",
+   "reviewed_against": []
+  },
+  "fr-051": {
+   "decision": "same-as",
+   "same_as": "seed-1091",
+   "reason": "Same gym: BS.10 Marseille centre (164 chemin Saint-Jean-du-Désert) is 83 m from seed-1091 \"Bloc Session - BS.10 Marseille centre\", same branch number. No location update."
+  },
+  "fr-052": {
+   "decision": "accept",
+   "reason": "own Bloc Session branch page (https://www.blocsession.com/salle-escalade/marseille-sud/contact/) shows exists, open, address and bouldering; the chain store list also lists it; pin is OSM node/11883185570 (precision building). Flags reviewed: other Bloc Session branches with their own address/city, not the same gym: fr-051 (Bloc Session Marseille centre, 5799 m); seed-1091 (seed-1091, 5880 m).",
+   "reviewed_against": [
+    "fr-051",
+    "seed-1091"
+   ]
+  },
+  "fr-053": {
+   "decision": "same-as",
+   "same_as": "g-ac8596310d",
+   "reason": "Same gym: BS.17 Montpellier nord (468 rue de la Croix Verte) is 37 m from g-ac8596310d \"Bloc Session - BS.17 Montpellier Nord\", same branch number."
+  },
+  "fr-054": {
+   "decision": "same-as",
+   "same_as": "g-d423156d92",
+   "reason": "Same gym: BS.7 Montpellier sud (Pérols, allée de la Bouvine) is 0 m from g-d423156d92 \"Bloc Session - BS Montpellier Sud\" (same branch, name lacks the number)."
+  },
+  "fr-055": {
+   "decision": "same-as",
+   "same_as": "g-7a108cee9b",
+   "reason": "Same gym: BS.14 Nancy (rue Marcel Brot) is 63 m from g-7a108cee9b \"Bloc Session - BS.14 Nancy\", same branch number. The chain's own link and the OSM node agree with this candidate pin within 25 m; the existing pin is 63 m off, no update needed."
+  },
+  "fr-056": {
+   "decision": "same-as",
+   "same_as": "g-79b2e38409",
+   "reason": "Same gym: BS.3 Nîmes (53 rue Pierre Lescot) is 0 m from g-79b2e38409 \"Bloc Session - BS.3 Nîmes\"."
+  },
+  "fr-057": {
+   "decision": "accept",
+   "reason": "own Bloc Session branch page (https://www.blocsession.com/salle-escalade/pertuis/contact/) shows exists, open, address and bouldering; the chain store list also lists it; pin is OSM way/1244171808 (precision building).",
+   "reviewed_against": []
+  },
+  "fr-058": {
+   "decision": "accept",
+   "reason": "own Bloc Session branch page (https://www.blocsession.com/salle-escalade/pontarlier/contact/) shows exists, open, address and bouldering; the chain store list also lists it; pin is OSM node/13398721955 (precision building).",
+   "reviewed_against": []
+  },
+  "fr-059": {
+   "decision": "accept",
+   "reason": "own Bloc Session branch page (https://www.blocsession.com/salle-escalade/rouen/contact/) shows exists, open, address and bouldering; the chain store list also lists it; pin is a BAN house-number point (Nominatim address node/11052963350 (19 rue de Constantine) 5 m away). Rouen BAN house point and the OSM address node agree within 5 m; there is no gym POI in OSM yet.",
+   "reviewed_against": []
+  },
+  "fr-060": {
+   "decision": "accept",
+   "reason": "own Bloc Session branch page (https://www.blocsession.com/salle-escalade/salon/contact/) shows exists, open, address and bouldering; the chain store list also lists it; pin is OSM node/13919489511 (precision building).",
+   "reviewed_against": []
+  },
+  "fr-061": {
+   "decision": "accept",
+   "reason": "own Bloc Session branch page (https://www.blocsession.com/salle-escalade/strasbourg/contact/) shows exists, open, address and bouldering; the chain store list also lists it; pin is OSM node/9076652615 (precision building).",
+   "reviewed_against": []
+  },
+  "fr-062": {
+   "decision": "same-as",
+   "same_as": "g-bba5dfa0ec",
+   "reason": "Importer exact match: same name within  of g-bba5dfa0ec; pin differences are small, the existing pin is kept (no location update)."
+  },
+  "fr-063": {
+   "decision": "accept",
+   "reason": "own Bloc Session branch page (https://www.blocsession.com/salle-escalade/toulon-ouest/contact/) shows exists, open, address and bouldering; the chain store list also lists it; pin is a BAN house-number point (Nominatim returns only the chemin des Négadoux street). Flags reviewed: other Bloc Session branches with their own address/city, not the same gym: fr-062 (Bloc Session Toulon centre, 7741 m); g-bba5dfa0ec (g-bba5dfa0ec, 7741 m). Pin is BAN-only at house-number level (OSM has no POI at this address); the OSM node named Bloc Session in La Seyne-sur-Mer is a different address and was not used.",
+   "reviewed_against": [
+    "fr-062",
+    "g-bba5dfa0ec"
+   ]
+  },
+  "fr-064": {
+   "decision": "accept",
+   "reason": "own Bloc Session branch page (https://www.blocsession.com/salle-escalade/vienne/contact/) shows exists, open, address and bouldering; the chain store list also lists it; pin is OSM node/11582081404 (precision building).",
+   "reviewed_against": []
+  },
+  "fr-065": {
+   "decision": "accept",
+   "reason": "own Antrebloc site (https://antrebloc.com/contact) shows exists, open, address and bouldering; pin is OSM node/3427783125 (precision building).",
+   "reviewed_against": []
+  },
+  "fr-066": {
+   "decision": "same-as",
+   "same_as": "g-b7c516ac9f",
+   "reason": "Same gym: Arkose Pantin (ex MurMur, 55 rue Cartier Bresson) is 86 m from g-b7c516ac9f \"Arkose - Pantin\" (importer exact match). MurMur Pantin is therefore already in Bouldeer under its Arkose name. No location update (86 m)."
+  },
+  "fr-067": {
+   "decision": "defer",
+   "reason": "Bouldering not established: the Arkose page for the former MurMur Issy describes a rope gym (\"salle de voie\") and mentions no bouldering area; the older MurMur text (a small bouldering warm-up area) was not confirmable because murmur.fr was unreachable. Arkose Issy bloc is a separate gym. Re-check if Arkose or MurMur publishes a bouldering area at boulevard Garibaldi."
+  },
+  "fr-068": {
+   "decision": "accept",
+   "reason": "own Le Pan site (https://www.lepandavignon.fr/) shows exists, open, address and bouldering; pin is OSM node/4408108149 (precision building).",
+   "reviewed_against": []
+  },
+  "fr-069": {
+   "decision": "accept",
+   "reason": "own Vertical Park site (https://www.verticalpark.fr/) shows exists, open, address and bouldering; pin is OSM way/1447459997 (precision building).",
+   "reviewed_against": []
+  }
+ }
+}

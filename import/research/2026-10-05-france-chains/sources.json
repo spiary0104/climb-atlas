@@ -1,0 +1,82 @@
+{
+ "schema_version": 1,
+ "sources": {
+  "CUL": {
+   "kind": "chain-store-list",
+   "title": "Climb Up: Le réseau de salles d'escalade (official store map, 'Trouve ta salle')",
+   "url": "https://www.climb-up.fr/les-salles/",
+   "language": "fr",
+   "accessed": "2026-10-05"
+  },
+  "CUS": {
+   "kind": "official-site",
+   "title": "Climb Up branch sites (one subdomain per salle, e.g. brest.climb-up.fr)",
+   "url": "https://www.climb-up.fr/",
+   "language": "fr",
+   "accessed": "2026-10-05"
+  },
+  "MROC": {
+   "kind": "official-site",
+   "title": "M'ROC Lyon (partdieu.mroc.fr, laennec.mroc.fr, villeurbanne.mroc.fr)",
+   "url": "https://partdieu.mroc.fr/",
+   "language": "fr",
+   "accessed": "2026-10-05"
+  },
+  "BSL": {
+   "kind": "chain-store-list",
+   "title": "Bloc Session: Toutes les salles d'escalade en France (official list)",
+   "url": "https://www.blocsession.com/salles-escalade/",
+   "language": "fr",
+   "accessed": "2026-10-05"
+  },
+  "BSS": {
+   "kind": "official-site",
+   "title": "Bloc Session branch pages (one page per salle, /salle-escalade/<slug>/)",
+   "url": "https://www.blocsession.com/",
+   "language": "fr",
+   "accessed": "2026-10-05"
+  },
+  "ANT": {
+   "kind": "official-site",
+   "title": "Antrebloc (Villejuif)",
+   "url": "https://antrebloc.com/",
+   "language": "fr",
+   "accessed": "2026-10-05"
+  },
+  "ARK": {
+   "kind": "official-site",
+   "title": "Arkose (Pantin and Issy-les-Moulineaux voie, formerly MurMur)",
+   "url": "https://arkose.com/",
+   "language": "fr",
+   "accessed": "2026-10-05"
+  },
+  "PAN": {
+   "kind": "official-site",
+   "title": "Le Pan d'Avignon",
+   "url": "https://www.lepandavignon.fr/",
+   "language": "fr",
+   "accessed": "2026-10-05"
+  },
+  "VP": {
+   "kind": "official-site",
+   "title": "Vertical Park (Avignon / Le Pontet)",
+   "url": "https://www.verticalpark.fr/",
+   "language": "fr",
+   "accessed": "2026-10-05"
+  },
+  "OSM": {
+   "kind": "map-data",
+   "title": "OpenStreetMap (objects read through Nominatim lookup/search, 2026-10-05)",
+   "url": "https://www.openstreetmap.org/",
+   "language": "en",
+   "accessed": "2026-10-05"
+  },
+  "BAN": {
+   "kind": "map-data",
+   "title": "Base Adresse Nationale (api-adresse.data.gouv.fr)",
+   "url": "https://adresse.data.gouv.fr/",
+   "language": "fr",
+   "accessed": "2026-10-05"
+  }
+ }
+}
