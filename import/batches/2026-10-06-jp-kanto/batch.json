@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-06-jp-kanto",
+  "description": "Regional research \"Japan: Kantō (Tokyo + commuter belt) coverage gap\": 53 new gym(s) accepted of 72 candidate(s)",
+  "created": "2026-10-06",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-10-06-jp-kanto",
+    "section_sha256": "efabfa613212519dacea1e53ec46b21fb71a76598a77e394112742d0168a736e",
+    "sources_sha256": "bc60eb09c6a07381786f2a63a8a0902621915ef9e8d7c7342e4cbad46dd9d9dc",
+    "candidates_sha256": "50ec39fe6e8e50e5818968a473901167e21ae9f2d751502e3a20210703fa12ab",
+    "reconcile_sha256": "c913e62e294fa94a8fd572e4e59196be2c9027eed6505ddde310b156a77dca87",
+    "review_sha256": "1d61550fc684d5f3980e5fa2f0b66fb8c3886808d65917dcd442fd12bbb76eb5",
+    "candidates": 72,
+    "staged": 53,
+    "decisions": {
+      "accept": 53,
+      "defer": 16,
+      "reject": 3
+    }
+  },
+  "index_at_staging": {
+    "sha256": "27073d25c2df373c17caef0c24ebfe759b8d457953a461c62786486d588e661d",
+    "count": 2438
+  }
+}
