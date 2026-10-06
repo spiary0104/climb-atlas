@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-06-jp-kansai",
+  "description": "Regional research \"Japan: Kansai coverage gap\": 32 new gym(s) accepted of 59 candidate(s)",
+  "created": "2026-10-06",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-10-06-jp-kansai",
+    "section_sha256": "62fab0bc0d1909521b247772cc294df42d231faceb9fb93f77ad8f09336a621d",
+    "sources_sha256": "07a3b38546772d7743e5db1231a6defdaf7411c5ef169f8ec322566c8206dfa0",
+    "candidates_sha256": "422563898a9fb3fffbebbe19482585f20b3c1b6c1d924cf51139d547cd11b938",
+    "reconcile_sha256": "4a14a0bc387451887e6b044753357771be2f6da7b634e890b97c406642e86e83",
+    "review_sha256": "ad521db6042fa67e6c9452ec5ac05b2b1973205333af0a5601897824b7a66e94",
+    "candidates": 59,
+    "staged": 32,
+    "decisions": {
+      "accept": 32,
+      "defer": 23,
+      "reject": 2,
+      "same-as": 2
+    }
+  },
+  "index_at_staging": {
+    "sha256": "27073d25c2df373c17caef0c24ebfe759b8d457953a461c62786486d588e661d",
+    "count": 2438
+  }
+}
