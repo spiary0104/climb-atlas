@@ -6,7 +6,7 @@ import { checkModerator, loadMarks, loadPending, loadSpots } from './modules/dat
 import { applyLanding, initExplore, render } from './modules/explore.js';
 import { initGymPage } from './modules/gym-page.js';
 import { initLogbook } from './modules/logbook.js';
-import { initMap } from './modules/map.js';
+import { initMap, startMap } from './modules/map.js';
 import { initForms, initModalKeyboard } from './modules/modals.js';
 import { initModeration, renderPendingBadge } from './modules/moderation.js';
 import { initLogPage } from './modules/log-page.js';
@@ -62,13 +62,18 @@ async function init(){
     render();
     if(user) closeAuthModal();
   });
+  // MapLibre (270 KB) loads after the first render, so on a slow phone it doesn't compete with the gym rows or the list.
+  // A slow or failing read must not hold the map back: after 4 s it starts anyway.
+  const mapTimer = setTimeout(startMap, 4000);
   await loadSpots();
   // The rows are usually here already (js/spots-prefetch.js): yield once so the shell paints before the first full
   // render instead of both running as one long task.
   await new Promise(resolve => setTimeout(resolve));
   appState.loaded = true;
   applyLanding();
-  render();                                    // map and list as soon as the gyms are in; provenance marks follow
+  render();                                    // list (and pins, once the map is there) as soon as the gyms are in
+  clearTimeout(mapTimer);
+  startMap();
   const counts = loadContributorCounts();      // in parallel with the signed-in reads below
   await loadMarks();
   await checkModerator();

@@ -484,10 +484,65 @@
 <script src="js/supabase-init.js"></script>
 <script src="js/auth.js"></script>
 <script src="js/spots-prefetch.js"></script>
-<script src="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.js" integrity="sha384-5+cfbwT0iiub6VsQAdn6yz16nr6sDiQoHx6tm4O8OVYXHYOxcffFmCJBL0dgdvGp" crossorigin="anonymous"></script>
+<!-- MapLibre (maplibre-gl.js) is not loaded here: js/modules/map.js loads it after the first list render. -->
 <script src="https://unpkg.com/supercluster@8.0.1/dist/supercluster.min.js" integrity="sha384-HkQmq7PC2BUVUkCsRUnOyzpliMb5M4pVPnjEiyI92tdS8buRHN6ZnehP1n1Acj84" crossorigin="anonymous"></script>
 <!-- data/spots-fallback.json (the offline list, exported from production) is fetched on demand by
      js/modules/data-load.js (ensureFallbackData), only when Supabase is unreachable. -->
+<!-- The app's whole module graph, fetched in parallel instead of one import level at a time. After the classic scripts
+     above, so the gym-list read (spots-prefetch.js) is requested first (tests/perf-load.test.js keeps this list equal to
+     what js/main.js imports). -->
+<link rel="modulepreload" href="js/main.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/auth-ui.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/state.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/utils.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/html-safe.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/community.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/provenance.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/data-load.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/explore.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/constants.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/geo.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/filters.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/list-html.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/icons.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/map.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/pin-html.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/regions.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/search-index.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/metros.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/hours.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/gym-info.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/list.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/slug.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/brand.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/router.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/marks.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/modals.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/submit-errors.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/search.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/sheet.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/gym-page.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/checkin.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/logbook.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/milestone-sheet.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/share-card.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/stamp-html.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/passport.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/gym-picker.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/mini-map.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/moderation.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/page-html.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/seo-meta.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/share.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/log-page.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/me-page.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/mod-page.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/moderation-html.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/add-page.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/add-html.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/passport-page.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/nav.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/region-page.js" fetchpriority="low">
 <script type="module" src="js/main.js"></script>
 <script src="js/sw-register.js"></script>
 </body>

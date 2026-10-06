@@ -1,6 +1,7 @@
 // Pure geometry and Explore-state helpers (no DOM, no MapLibre), unit-tested in tests/explore-pure.test.js.
 //   distanceKm / formatDistance     the list's distance column (DESIGN.md sec. 7.4)
 //   boundsOf / inBounds             viewport scoping, antimeridian-safe (sec. 7.2)
+//   viewBox / fitCamera             a camera's box / the camera for a box (Web Mercator; the map before MapLibre loads)
 //   stackOffsets                    deterministic spread for gyms that share one coordinate (sec. 7.8)
 //   encodeExploreState / decode...  the ?q=&c=lng,lat,z&t=… query state (sec. 6.2)
 //   fold / wordStarts               case- and diacritic-insensitive matching (sec. 9.1)
@@ -117,16 +118,27 @@ export function wordStarts(s){
 }
 
 
+const mercY = lat => Math.log(Math.tan(Math.PI / 4 + Math.max(-85, Math.min(85, lat)) * Math.PI / 360));
+const latOfY = y => (2 * Math.atan(Math.exp(y)) - Math.PI / 2) * 180 / Math.PI;
+
 // Centre and zoom that fit a {west,south,east,north} box into a width x height px map (Web Mercator), clamped.
-export function fitCamera(b, width, height, { minZoom = 2, maxZoom = 13, padding = 24 } = {}){
-  const mercY = lat => Math.log(Math.tan(Math.PI / 4 + Math.max(-85, Math.min(85, lat)) * Math.PI / 360));
+// tileSize 512 is MapLibre's own zoom scale (map.js); region pages keep the 256 they were tuned with.
+export function fitCamera(b, width, height, { minZoom = 2, maxZoom = 13, padding = 24, tileSize = 256 } = {}){
   const lngSpan = Math.max(1e-6, b.east - b.west);
   const ySpan = Math.max(1e-9, mercY(b.north) - mercY(b.south));
   const w = Math.max(1, width - padding * 2), h = Math.max(1, height - padding * 2);
-  const zx = Math.log2(w * 360 / (256 * lngSpan));
-  const zy = Math.log2(h * 2 * Math.PI / (256 * ySpan));
+  const zx = Math.log2(w * 360 / (tileSize * lngSpan));
+  const zy = Math.log2(h * 2 * Math.PI / (tileSize * ySpan));
   const zoom = Math.max(minZoom, Math.min(maxZoom, Math.min(zx, zy)));
-  const midY = (mercY(b.north) + mercY(b.south)) / 2;
-  const lat = (2 * Math.atan(Math.exp(midY)) - Math.PI / 2) * 180 / Math.PI;
+  const lat = latOfY((mercY(b.north) + mercY(b.south)) / 2);
   return { lng: (b.west + b.east) / 2, lat, zoom: Math.round(zoom * 100) / 100 };
+}
+
+// The box a width x height px view shows around {lng, lat, zoom} on a flat Web Mercator map (MapLibre's 512 px world at
+// zoom 0). map.js scopes the list with it until MapLibre has loaded. It is what a new MapLibre map reports too (the globe
+// is switched on at style load); from zoom 7 up the globe agrees within ~3%, further out it shows more.
+export function viewBox({ lng, lat, zoom }, width, height){
+  const world = 512 * 2 ** zoom;
+  const halfLng = width / 2 / world * 360, halfY = height / 2 / world * 2 * Math.PI, y = mercY(lat);
+  return boundsOf(lng - halfLng, latOfY(y - halfY), lng + halfLng, latOfY(y + halfY));
 }

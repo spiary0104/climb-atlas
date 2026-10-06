@@ -7,7 +7,7 @@ Line refs drift: re-grep function names rather than trusting numbers.
 ## Stack
 - Plain static site: HTML + CSS + vanilla JS as native ES modules. No build
   step, no package.json. Must be served over HTTP (modules + fetch + Auth).
-- Map: MapLibre GL 5 (globe) + Supercluster, both from CDN.
+- Map: MapLibre GL 5 (globe; loaded lazily by map.js after the first list render) + Supercluster, both from CDN.
 - Backend: Supabase (Postgres + Auth + RLS), client from CDN.
 - Hosting: Vercel (`vercel.json`), www.bouldeer.com. The old climbatlas.org was detached from Vercel 2026-10-05 (redirects removed; Supabase/Google auth list bouldeer.com only). Sign-in test builds: preview.bouldeer.com = the `preview` branch, the only preview origin Supabase allows; noindex. Push a branch with an empty commit on top (Vercel skips a commit it already built, leaving "No Deployment"): PowerShell `$b="<branch>"; git fetch origin; $c = git commit-tree -p "origin/$b" -m "preview build" "origin/$b^{tree}"; git push -f origin "${c}:refs/heads/preview"`. PWA via `sw.js`.
 
@@ -43,7 +43,7 @@ Line refs drift: re-grep function names rather than trusting numbers.
 | `js/modules/brand.js` | Pure: `sealSvg()`, `firstRunArt(kind)`, `milestoneArt(pose)`: the only JS source of character markup besides the avatar |
 | `js/modules/checkin.js`, `milestone-sheet.js`, `share-card.js` | Check-in flow (500 m geofence on phones / "I'm here" confirm, insert, stamp landing, START sheet) · milestone sheet (once per session) · 1080x1350 share card (Web Share / download) |
 | `js/modules/explore.js` | Explore controller: `render()` (full refresh), selection/hover sync, peek card, URL + last camera, landing, Esc, the `explore` view |
-| `js/modules/map.js` | Map, `rebuildClusterIndex`/`paintMarkers` (supercluster r48/max15, pins, clusters, label tiers), `refreshPin`, `flyToPlace`, locate control; handlers set by explore.js |
+| `js/modules/map.js` | `map` stand-in (holds the camera, scopes the list via geo.js `viewBox` and queues listeners until `startMap` makes the MapLibre map; `mapLibrary()` injects the pinned script, `whenMap`), `rebuildClusterIndex`/`paintMarkers` (supercluster r48/max15, pins, clusters, label tiers), `refreshPin`, `flyToPlace`, locate control; handlers set by explore.js |
 | `js/modules/list.js` | Scoped list: `renderList` (scope → sort → cap 400), status line, skeletons, empty states, carousel, row keyboard |
 | `js/modules/filters.js` | `matches`/`applyFilters`, chip row, applied pills, All filters sheet (draft + live count), URL filter half; "Open now" (`open=1`, no sign-in; chip hidden below 10% readable hours in the area, `updateHoursChip`) |
 | `js/modules/search.js` | Search combobox (desktop popover / mobile full height), recent searches, Regions browse |
@@ -61,8 +61,8 @@ Line refs drift: re-grep function names rather than trusting numbers.
 | `docs/TASKS.md` / `docs/archive/` | Open work only / old long-form docs (**never read**) |
 
 ## Load order (end of `index.html`)
-Supabase CDN → `supabase-init.js` → `auth.js` → `spots-prefetch.js` (gym-list read starts here, while MapLibre
-downloads; `loadSpots` takes it once) → MapLibre → Supercluster → `main.js` (module, deferred) → `sw-register.js`.
+Supabase CDN → `supabase-init.js` → `auth.js` → `spots-prefetch.js` (gym-list read starts here; `loadSpots` takes it once) →
+Supercluster → `modulepreload` of main.js's whole graph (`fetchpriority="low"` so the read goes first; a test keeps it in step) → `main.js` (module) → `sw-register.js`. MapLibre: `startMap()` after the first render (4 s backstop); mini maps / `/add` await `mapLibrary()`.
 
 ## Module conventions
 - Shared mutable state is only ever `appState.x`. No module-level `let`s another module needs to write.
@@ -70,7 +70,7 @@ downloads; `loadSpots` takes it once) → MapLibre → Supercluster → `main.js
 - Markup from data is built by the pure `*-html.js` builders (escapeHtml/safeUrl) and read back only through
   `data-gym-action` / `data-list-action` / `data-spot-id` + delegated listeners. No inline handlers, no `window.__*`.
 - map.js does not import the list; explore.js registers map handlers (`setMapHandlers`). Import cycles
-  (explore ↔ modals ↔ map) are safe because top-level code only does DOM lookups and `new maplibregl.Map`.
+  (explore ↔ modals ↔ map) are safe because top-level code only does DOM lookups (no map is made at import).
 
 ## Data model (`supabase/migrations/`; `schema.sql` is stale)
 `moderators`, `spots` (status pending/approved/rejected; insert needs sign-in + rate limit), `pending_edits` and `reports` (sign-in + 20/day each, `submitted_by` pinned; migrations 20261002*), `routes` (unused, read-only),
@@ -126,7 +126,7 @@ Buttons: `.btn` + exactly one of `.btn-primary` (one per surface) / `-secondary`
 `.btn-icon`; destructive = `.btn-danger` (Escape never clicks it). New icon: add Phosphor path data to the sprite +
 `ICON_NAMES`. After editing tokens.css run `node scripts/build-tokens-json.js`.
 
-## Offline / PWA (`sw.js`, v12)
+## Offline / PWA (`sw.js`, v39)
 Shell precached (`SHELL_FILES`). Page loads (`mode: navigate`) of every app route share one cached shell (keyed `/`),
 whatever the path or query; other pages (about.html, privacy.html, terms.html) are cached per path. Tiles cache-first; other same-origin + CDN files stale-while-revalidate;
 CDN tags carry `crossorigin="anonymous"`. Supabase: ONLY the public `GET /rest/v1/spots?...status=eq.approved` read

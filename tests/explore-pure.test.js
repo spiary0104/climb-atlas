@@ -205,6 +205,26 @@ test('geo: fitCamera frames a box (region pages) and clamps the zoom', async () 
   assert.ok(sydney.zoom > 8 && sydney.zoom < 11, 'city-scale zoom: ' + sydney.zoom);
   assert.equal(geo.fitCamera({ west: 151.2, south: -33.9, east: 151.2, north: -33.9 }, 360, 270).zoom, 13, 'a single point clamps to maxZoom');
   assert.equal(geo.fitCamera({ west: -170, south: -60, east: 170, north: 70 }, 360, 270).zoom, 2, 'the world clamps to minZoom');
+  const flat = geo.fitCamera({ west: 150.9, south: -34.1, east: 151.4, north: -33.7 }, 360, 270, { tileSize: 512 });
+  assert.ok(Math.abs(flat.zoom - (sydney.zoom - 1)) < 0.011, 'MapLibre scale (512 px world) is one zoom level out from the 256 one');
+});
+
+test('geo: viewBox is the box a flat MapLibre view shows (the scope before the map loads)', async () => {
+  const { geo } = await mods;
+  // MapLibre getBounds() for these cameras on a 375 x 755 map, measured in Chrome (2026-10-06)
+  for (const [cam, want] of [
+    [{ lng: 2.35, lat: 48.85, zoom: 10 }, [2.221, 48.679, 2.479, 49.021]],
+    [{ lng: 151.2, lat: -33.9, zoom: 10 }, [151.071, -34.115, 151.329, -33.685]],
+    [{ lng: 139.7, lat: 35.7, zoom: 13 }, [139.684, 35.674, 139.716, 35.726]],
+  ]){
+    const b = geo.viewBox(cam, 375, 755);
+    [b.west, b.south, b.east, b.north].forEach((v, i) => assert.ok(Math.abs(v - want[i]) < 1e-3, `${JSON.stringify(cam)} [${i}]: ${v} vs ${want[i]}`));
+  }
+  const world = geo.viewBox({ lng: 10, lat: 0, zoom: 0 }, 1280, 800);
+  assert.ok(world.west === -180 && world.east === 180, 'wider than the world: every longitude');
+  const anti = geo.viewBox({ lng: 179.9, lat: -17, zoom: 9 }, 375, 755);
+  assert.ok(anti.west > anti.east, 'across the antimeridian west > east after wrapping');
+  assert.ok(geo.inBounds({ lng: -179.95, lat: -17 }, anti) && geo.inBounds({ lng: 179.85, lat: -17 }, anti));
 });
 
 test('provenance: states, levels, relative time, the page line and display-name rules (sec. 10)', async () => {

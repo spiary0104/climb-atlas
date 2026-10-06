@@ -32,20 +32,19 @@ export async function loadSpots(){
         appState.usingFallback = false;
         return;
       }
-      // PostgREST caps a response at 1000 rows by default. The first page also asks for the total, then the remaining
-      // pages load in parallel (they used to load one after another: one round trip per 1000 gyms).
-      const PAGE = 1000;
-      const page = (from, opts) => window.sb.from('spots').select(LIST_COLUMNS, opts).eq('status','approved')
+      // PostgREST caps a response at 1000 rows by default. Pages load BATCH at a time in parallel, without asking for the
+      // total first (that cost a whole round trip before the rest could start); a full last page means read on.
+      const PAGE = 1000, BATCH = 3;
+      const page = from => window.sb.from('spots').select(LIST_COLUMNS).eq('status','approved')
         .order('id').range(from, from + PAGE - 1);
-      const first = await page(0, { count: 'exact' });
-      if(first.error) throw first.error;
-      const all = [...(first.data || [])];
-      const total = Number.isFinite(first.count) ? first.count : all.length;
-      const rest = [];
-      for(let from = PAGE; from < total; from += PAGE) rest.push(page(from));
-      for(const { data, error } of await Promise.all(rest)){
-        if(error) throw error;
-        all.push(...(data || []));
+      const all = [];
+      for(let from = 0, more = true; more; from += PAGE * BATCH){
+        const res = await Promise.all(Array.from({ length: BATCH }, (_, k) => page(from + k * PAGE)));
+        for(const { data, error } of res){
+          if(error) throw error;
+          all.push(...(data || []));
+        }
+        more = (res[BATCH - 1].data || []).length === PAGE;
       }
       appState.spots = all;
       appState.usingFallback = false;

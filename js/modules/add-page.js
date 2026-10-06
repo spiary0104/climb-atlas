@@ -5,7 +5,7 @@
 import { addDoneHtml, addPageHtml, addStepHtml, areaFor, areaMissing, countryState, nearHtml, PIN_ZOOM, stepOneMissing } from './add-html.js';
 import { openAuthModal } from './auth-ui.js';
 import { ALL_TYPES } from './geo.js';
-import { BASEMAP_STYLE, map as exploreMap, warmBasemap } from './map.js';
+import { BASEMAP_STYLE, map as exploreMap, mapLibrary, warmBasemap } from './map.js';
 import { currentRoute, registerView, setPageTitle } from './router.js';
 import { gymPath } from './slug.js';
 import { appState } from './state.js';
@@ -20,6 +20,7 @@ const blank = () => ({ step: 1, name: '', types: [], suburb: '', country: '', st
 
 let draft = blank();
 let pinMap = null;
+let pinMapToken = 0;         // bumped on destroy: a mount still waiting for MapLibre is dropped
 let done = false;
 let busy = false;
 
@@ -86,6 +87,11 @@ function onMove(){
 
 function mountPinMap(el){
   destroyPinMap();
+  const mine = pinMapToken;
+  mapLibrary().then(maplibregl => { if(mine === pinMapToken && el.isConnected) makePinMap(maplibregl, el); })
+    .catch(err => { console.warn('MapLibre could not load', err); showToast("The map couldn't load — check your connection"); });
+}
+function makePinMap(maplibregl, el){
   const c = exploreMap.getCenter();
   const center = Number.isFinite(draft.lat) ? [draft.lng, draft.lat] : [c.lng, c.lat];
   const zoom = Number.isFinite(draft.zoom) ? draft.zoom : Math.max(exploreMap.getZoom(), 3);
@@ -97,7 +103,7 @@ function mountPinMap(el){
   pinMap.on('moveend', onMove);
   pinMap.once('load', onMove);
 }
-function destroyPinMap(){ if(pinMap){ pinMap.remove(); pinMap = null; } }
+function destroyPinMap(){ pinMapToken++; if(pinMap){ pinMap.remove(); pinMap = null; } }
 
 function locate(){
   if(!navigator.geolocation){ showToast('Location is not available in this browser'); return; }
