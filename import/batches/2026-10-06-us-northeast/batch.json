@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-06-us-northeast",
+  "description": "Regional research \"USA: Mid-Atlantic + New England (states with no Bouldeer coverage)\": 76 new gym(s) accepted of 85 candidate(s)",
+  "created": "2026-10-06",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-10-06-us-northeast",
+    "section_sha256": "5a600effaf912844d95ca932efbd469ee48c72f257cec12d8257dc0a2204603a",
+    "sources_sha256": "914272856f4c234ca045c235fcf9a6624b8b0f0c16daeb9659a060c0ba13b43d",
+    "candidates_sha256": "4c9a7e2c3dccd4177279b92e7aacd810837a5ba728388f5b6df8bb9d0fcea38c",
+    "reconcile_sha256": "a03619960f0d00dc3e5055cbc259a8309aeed0ffc1a3ff356774d99da3b9f55d",
+    "review_sha256": "c1ef733a294774061c2096cbfe41105cb2d5a2acdd63fd7bec0f94878d0e2f39",
+    "candidates": 85,
+    "staged": 76,
+    "decisions": {
+      "accept": 76,
+      "defer": 9
+    }
+  },
+  "index_at_staging": {
+    "sha256": "27073d25c2df373c17caef0c24ebfe759b8d457953a461c62786486d588e661d",
+    "count": 2438
+  }
+}

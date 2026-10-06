@@ -1,0 +1,637 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-06-us-northeast",
+ "index": {
+  "sha256": "27073d25c2df373c17caef0c24ebfe759b8d457953a461c62786486d588e661d",
+  "count": 2438,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [],
+ "counts": {
+  "records": 76,
+  "new": 76,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "e44c9bea413075e01d8564ac978ca9118547fd206377b040504e85cfd6ac4756",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-87c3d44f76",
+   "id_frozen": true,
+   "name": "ASCEND Erie",
+   "country": "US"
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-a82d4b2d1d",
+   "id_frozen": true,
+   "name": "ASCEND Point Breeze",
+   "country": "US"
+  },
+  {
+   "line": 3,
+   "class": "new",
+   "id": "g-cbc82c6f80",
+   "id_frozen": true,
+   "name": "ASCEND South Side",
+   "country": "US"
+  },
+  {
+   "line": 4,
+   "class": "new",
+   "id": "g-4260371011",
+   "id_frozen": true,
+   "name": "Ascent Climbing Gym New Haven",
+   "country": "US"
+  },
+  {
+   "line": 5,
+   "class": "new",
+   "id": "g-29a42976be",
+   "id_frozen": true,
+   "name": "The Boulder Yard",
+   "country": "US"
+  },
+  {
+   "line": 6,
+   "class": "new",
+   "id": "g-af5bfaf816",
+   "id_frozen": true,
+   "name": "DC Bouldering Project (Eckington)",
+   "country": "US"
+  },
+  {
+   "line": 7,
+   "class": "new",
+   "id": "g-db009918d3",
+   "id_frozen": true,
+   "name": "Climbnasium",
+   "country": "US"
+  },
+  {
+   "line": 8,
+   "class": "new",
+   "id": "g-a4b7d5df5a",
+   "id_frozen": true,
+   "name": "Central Rock Gym Glastonbury",
+   "country": "US"
+  },
+  {
+   "line": 9,
+   "class": "new",
+   "id": "g-2b442ff003",
+   "id_frozen": true,
+   "name": "Central Rock Gym Warwick",
+   "country": "US"
+  },
+  {
+   "line": 10,
+   "class": "new",
+   "id": "g-53ee9d4039",
+   "id_frozen": true,
+   "name": "Central Rock Gym West Hartford",
+   "country": "US"
+  },
+  {
+   "line": 11,
+   "class": "new",
+   "id": "g-562339feca",
+   "id_frozen": true,
+   "name": "The Delaware Rock Gym",
+   "country": "US"
+  },
+  {
+   "line": 12,
+   "class": "new",
+   "id": "g-ebb5c15528",
+   "id_frozen": true,
+   "name": "Downingtown Rock Gym",
+   "country": "US"
+  },
+  {
+   "line": 13,
+   "class": "new",
+   "id": "g-9485a7db4d",
+   "id_frozen": true,
+   "name": "Doylestown Rock Gym & Adventure Center",
+   "country": "US"
+  },
+  {
+   "line": 14,
+   "class": "new",
+   "id": "g-c8ad94eac7",
+   "id_frozen": true,
+   "name": "Elite Climbing",
+   "country": "US"
+  },
+  {
+   "line": 15,
+   "class": "new",
+   "id": "g-16ff5289b4",
+   "id_frozen": true,
+   "name": "EVO Rock + Fitness Portland",
+   "country": "US"
+  },
+  {
+   "line": 16,
+   "class": "new",
+   "id": "g-5d099a25a0",
+   "id_frozen": true,
+   "name": "Garden State Rocks",
+   "country": "US"
+  },
+  {
+   "line": 17,
+   "class": "new",
+   "id": "g-a27e00571c",
+   "id_frozen": true,
+   "name": "Green Mountain Rock Climbing Center",
+   "country": "US"
+  },
+  {
+   "line": 18,
+   "class": "new",
+   "id": "g-8af5a4ccf0",
+   "id_frozen": true,
+   "name": "The Gravity Vault Brick",
+   "country": "US"
+  },
+  {
+   "line": 19,
+   "class": "new",
+   "id": "g-5f6da6cb74",
+   "id_frozen": true,
+   "name": "The Gravity Vault Chatham",
+   "country": "US"
+  },
+  {
+   "line": 20,
+   "class": "new",
+   "id": "g-ba5f04ffb2",
+   "id_frozen": true,
+   "name": "The Gravity Vault Flemington",
+   "country": "US"
+  },
+  {
+   "line": 21,
+   "class": "new",
+   "id": "g-732a02e965",
+   "id_frozen": true,
+   "name": "The Gravity Vault Hoboken",
+   "country": "US"
+  },
+  {
+   "line": 22,
+   "class": "new",
+   "id": "g-b171f6e09c",
+   "id_frozen": true,
+   "name": "The Gravity Vault Lehigh Valley (Whitehall)",
+   "country": "US"
+  },
+  {
+   "line": 23,
+   "class": "new",
+   "id": "g-f794c64b4f",
+   "id_frozen": true,
+   "name": "The Gravity Vault Middletown",
+   "country": "US"
+  },
+  {
+   "line": 24,
+   "class": "new",
+   "id": "g-501f122240",
+   "id_frozen": true,
+   "name": "The Gravity Vault Montclair",
+   "country": "US"
+  },
+  {
+   "line": 25,
+   "class": "new",
+   "id": "g-87f9eeef70",
+   "id_frozen": true,
+   "name": "The Gravity Vault Princeton (Plainsboro)",
+   "country": "US"
+  },
+  {
+   "line": 26,
+   "class": "new",
+   "id": "g-9e238aa61f",
+   "id_frozen": true,
+   "name": "The Gravity Vault Upper Saddle River",
+   "country": "US"
+  },
+  {
+   "line": 27,
+   "class": "new",
+   "id": "g-f466f0ad1b",
+   "id_frozen": true,
+   "name": "The Gravity Vault Voorhees",
+   "country": "US"
+  },
+  {
+   "line": 28,
+   "class": "new",
+   "id": "g-bcca4dc01a",
+   "id_frozen": true,
+   "name": "Iron City Boulders",
+   "country": "US"
+  },
+  {
+   "line": 29,
+   "class": "new",
+   "id": "g-4cf4058e86",
+   "id_frozen": true,
+   "name": "Latitude Climbing and Fitness Hampton",
+   "country": "US"
+  },
+  {
+   "line": 30,
+   "class": "new",
+   "id": "g-9c978532b0",
+   "id_frozen": true,
+   "name": "Latitude Climbing and Fitness Norfolk",
+   "country": "US"
+  },
+  {
+   "line": 31,
+   "class": "new",
+   "id": "g-ebd14f4357",
+   "id_frozen": true,
+   "name": "Latitude Climbing and Fitness Virginia Beach",
+   "country": "US"
+  },
+  {
+   "line": 32,
+   "class": "new",
+   "id": "g-f10b4991df",
+   "id_frozen": true,
+   "name": "Method Climbing",
+   "country": "US"
+  },
+  {
+   "line": 33,
+   "class": "new",
+   "id": "g-fd52b20bc5",
+   "id_frozen": true,
+   "name": "MetroRock Vermont",
+   "country": "US"
+  },
+  {
+   "line": 34,
+   "class": "new",
+   "id": "g-c432ac435a",
+   "id_frozen": true,
+   "name": "Movement Callowhill",
+   "country": "US"
+  },
+  {
+   "line": 35,
+   "class": "new",
+   "id": "g-b754b42b1e",
+   "id_frozen": true,
+   "name": "Movement Columbia",
+   "country": "US"
+  },
+  {
+   "line": 36,
+   "class": "new",
+   "id": "g-0457e68e62",
+   "id_frozen": true,
+   "name": "Movement Crystal City",
+   "country": "US"
+  },
+  {
+   "line": 37,
+   "class": "new",
+   "id": "g-5b590dea54",
+   "id_frozen": true,
+   "name": "Movement Fishtown",
+   "country": "US"
+  },
+  {
+   "line": 38,
+   "class": "new",
+   "id": "g-45345fb0c5",
+   "id_frozen": true,
+   "name": "Movement Hampden",
+   "country": "US"
+  },
+  {
+   "line": 39,
+   "class": "new",
+   "id": "g-653934814e",
+   "id_frozen": true,
+   "name": "Movement Rockville",
+   "country": "US"
+  },
+  {
+   "line": 40,
+   "class": "new",
+   "id": "g-0da862988b",
+   "id_frozen": true,
+   "name": "Movement Timonium",
+   "country": "US"
+  },
+  {
+   "line": 41,
+   "class": "new",
+   "id": "g-b3eb9516e2",
+   "id_frozen": true,
+   "name": "New Jersey Rock Gym",
+   "country": "US"
+  },
+  {
+   "line": 42,
+   "class": "new",
+   "id": "g-58f777d036",
+   "id_frozen": true,
+   "name": "NH Climbing & Fitness",
+   "country": "US"
+  },
+  {
+   "line": 43,
+   "class": "new",
+   "id": "g-5fcefcf39d",
+   "id_frozen": true,
+   "name": "North Summit Climbing Gym",
+   "country": "US"
+  },
+  {
+   "line": 44,
+   "class": "new",
+   "id": "g-1e1e481950",
+   "id_frozen": true,
+   "name": "The Notch Climbing Gym",
+   "country": "US"
+  },
+  {
+   "line": 45,
+   "class": "new",
+   "id": "g-d0cd33c30c",
+   "id_frozen": true,
+   "name": "Peak Experiences Midlothian (Peak Midlo)",
+   "country": "US"
+  },
+  {
+   "line": 46,
+   "class": "new",
+   "id": "g-44e36401ba",
+   "id_frozen": true,
+   "name": "Peak Experiences Richmond (Peak RVA)",
+   "country": "US"
+  },
+  {
+   "line": 47,
+   "class": "new",
+   "id": "g-af1ef56407",
+   "id_frozen": true,
+   "name": "Petra Cliffs Climbing Center",
+   "country": "US"
+  },
+  {
+   "line": 48,
+   "class": "new",
+   "id": "g-cbe6440d07",
+   "id_frozen": true,
+   "name": "PRG East Falls",
+   "country": "US"
+  },
+  {
+   "line": 49,
+   "class": "new",
+   "id": "g-8d36f85e1d",
+   "id_frozen": true,
+   "name": "PRG Fishtown",
+   "country": "US"
+  },
+  {
+   "line": 50,
+   "class": "new",
+   "id": "g-fc4da48f01",
+   "id_frozen": true,
+   "name": "PRG Malvern",
+   "country": "US"
+  },
+  {
+   "line": 51,
+   "class": "new",
+   "id": "g-21ef272712",
+   "id_frozen": true,
+   "name": "PRG Oaks",
+   "country": "US"
+  },
+  {
+   "line": 52,
+   "class": "new",
+   "id": "g-5af10a33de",
+   "id_frozen": true,
+   "name": "PRG Wyncote",
+   "country": "US"
+  },
+  {
+   "line": 53,
+   "class": "new",
+   "id": "g-c2096aac03",
+   "id_frozen": true,
+   "name": "Randolph Climbing Center",
+   "country": "US"
+  },
+  {
+   "line": 54,
+   "class": "new",
+   "id": "g-14654a7fa8",
+   "id_frozen": true,
+   "name": "Rapp Rocks Climbing Gym",
+   "country": "US"
+  },
+  {
+   "line": 55,
+   "class": "new",
+   "id": "g-1a7e5322bb",
+   "id_frozen": true,
+   "name": "Reach Climbing & Fitness",
+   "country": "US"
+  },
+  {
+   "line": 56,
+   "class": "new",
+   "id": "g-8a8b76ad8a",
+   "id_frozen": true,
+   "name": "Rise Up Climbing",
+   "country": "US"
+  },
+  {
+   "line": 57,
+   "class": "new",
+   "id": "g-c73223d617",
+   "id_frozen": true,
+   "name": "The River Rock Climbing Gym",
+   "country": "US"
+  },
+  {
+   "line": 58,
+   "class": "new",
+   "id": "g-7eca034c96",
+   "id_frozen": true,
+   "name": "Rock Climb Fairfield",
+   "country": "US"
+  },
+  {
+   "line": 59,
+   "class": "new",
+   "id": "g-bc3a64a8c9",
+   "id_frozen": true,
+   "name": "Rockville Climbing Center",
+   "country": "US"
+  },
+  {
+   "line": 60,
+   "class": "new",
+   "id": "g-214f78f469",
+   "id_frozen": true,
+   "name": "Rocky Top Climbing",
+   "country": "US"
+  },
+  {
+   "line": 61,
+   "class": "new",
+   "id": "g-872ed2fa23",
+   "id_frozen": true,
+   "name": "Rock Spot Climbing Lincoln",
+   "country": "US"
+  },
+  {
+   "line": 62,
+   "class": "new",
+   "id": "g-c794c4cc80",
+   "id_frozen": true,
+   "name": "Rock Spot Climbing New Haven",
+   "country": "US"
+  },
+  {
+   "line": 63,
+   "class": "new",
+   "id": "g-cbea01008a",
+   "id_frozen": true,
+   "name": "Rock Spot Climbing Peace Dale",
+   "country": "US"
+  },
+  {
+   "line": 64,
+   "class": "new",
+   "id": "g-4db85bedc1",
+   "id_frozen": true,
+   "name": "Rock Spot Climbing Providence",
+   "country": "US"
+  },
+  {
+   "line": 65,
+   "class": "new",
+   "id": "g-c50c5bc950",
+   "id_frozen": true,
+   "name": "Rock Spot Climbing Wallingford",
+   "country": "US"
+  },
+  {
+   "line": 66,
+   "class": "new",
+   "id": "g-f0167e0bfc",
+   "id_frozen": true,
+   "name": "Salt Pump Portsmouth (The Donut Factory)",
+   "country": "US"
+  },
+  {
+   "line": 67,
+   "class": "new",
+   "id": "g-a3a2fe1749",
+   "id_frozen": true,
+   "name": "Salt Pump Scarborough",
+   "country": "US"
+  },
+  {
+   "line": 68,
+   "class": "new",
+   "id": "g-0ac95f6449",
+   "id_frozen": true,
+   "name": "Sportrock Alexandria",
+   "country": "US"
+  },
+  {
+   "line": 69,
+   "class": "new",
+   "id": "g-db1d9479a2",
+   "id_frozen": true,
+   "name": "Sportrock Lorton",
+   "country": "US"
+  },
+  {
+   "line": 70,
+   "class": "new",
+   "id": "g-b4ae887869",
+   "id_frozen": true,
+   "name": "Sportrock Rio (Gaithersburg)",
+   "country": "US"
+  },
+  {
+   "line": 71,
+   "class": "new",
+   "id": "g-ae66a649b1",
+   "id_frozen": true,
+   "name": "Sportrock Sterling",
+   "country": "US"
+  },
+  {
+   "line": 72,
+   "class": "new",
+   "id": "g-38c15fa8d0",
+   "id_frozen": true,
+   "name": "State Climb",
+   "country": "US"
+  },
+  {
+   "line": 73,
+   "class": "new",
+   "id": "g-a159c7a336",
+   "id_frozen": true,
+   "name": "Tufas Boulder Lounge",
+   "country": "US"
+  },
+  {
+   "line": 74,
+   "class": "new",
+   "id": "g-2fed1e9638",
+   "id_frozen": true,
+   "name": "Volta Climbing Gym",
+   "country": "US"
+  },
+  {
+   "line": 75,
+   "class": "new",
+   "id": "g-cbfbb6faed",
+   "id_frozen": true,
+   "name": "Vertical Rock Manassas",
+   "country": "US"
+  },
+  {
+   "line": 76,
+   "class": "new",
+   "id": "g-b74d4e830b",
+   "id_frozen": true,
+   "name": "Vertical Rock Tysons",
+   "country": "US"
+  }
+ ]
+}
