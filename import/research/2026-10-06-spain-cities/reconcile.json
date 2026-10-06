@@ -3,8 +3,8 @@
  "section_id": "2026-10-06-spain-cities",
  "inputs": {
   "section_sha256": "443ac1e762ea2a9ea39a57aa5b683ed630f7d3031034080b2c0b1333121743bc",
-  "sources_sha256": "cee33cba83c55d1387e98bba166205435d7fc12aa491756577c409599abdcadf",
-  "candidates_sha256": "daf3044617c4cc3fb39e3bd93886e49751860510c647a7a036b18c771a8617c2",
+  "sources_sha256": "7ffbee930ee48272bbba7f36d7a666af718f0f0fba8a9ea214fd91959a881a21",
+  "candidates_sha256": "c0284e833a0992e156cd5680a9b7945adbd514fef526c8e7d26daec626f3162b",
   "index": {
    "sha256": "27073d25c2df373c17caef0c24ebfe759b8d457953a461c62786486d588e661d",
    "count": 2438
@@ -31,9 +31,9 @@
   "OTHER_COUNTRY_M": 2000
  },
  "counts": {
-  "candidates": 41,
-  "ready": 30,
-  "review": 8,
+  "candidates": 43,
+  "ready": 33,
+  "review": 7,
   "blocked": 3,
   "existing": 0,
   "invalid": 0
@@ -416,13 +416,6 @@
    "flags": [
     {
      "code": "related-name-nearby",
-     "detail": "candidate es-030 \"The Climb\": related names \"Arkose Madrid Carabanchel\" / \"The Climb Madrid\" 7194 m apart",
-     "ids": [
-      "es-030"
-     ]
-    },
-    {
-     "code": "related-name-nearby",
      "detail": "seed-1241 \"Arkose - Madrid\": related names \"Arkose Madrid Carabanchel\" / \"Arkose - Madrid\" 7098 m apart",
      "ids": [
       "seed-1241"
@@ -437,7 +430,6 @@
     }
    ],
    "review_ids": [
-    "es-030",
     "seed-1241",
     "seed-1242"
    ]
@@ -482,104 +474,13 @@
    "cid": "es-030",
    "line": 30,
    "name": "The Climb",
-   "class": "review",
-   "suggested": "review",
+   "class": "ready",
+   "suggested": "accept",
    "importer": {
     "class": "new",
     "id": "g-fdcaf7d815"
    },
-   "flags": [
-    {
-     "code": "related-name-nearby",
-     "detail": "candidate es-026 \"Arkose Madrid Carabanchel\": related names \"The Climb Madrid\" / \"Arkose Madrid Carabanchel\" 7194 m apart",
-     "ids": [
-      "es-026"
-     ]
-    },
-    {
-     "code": "related-name-nearby",
-     "detail": "g-d5df7ee6d2 \"Climbat - X-Madrid\": related names \"The Climb Madrid\" / \"Climbat - X-Madrid\" 4106 m apart",
-     "ids": [
-      "g-d5df7ee6d2"
-     ]
-    },
-    {
-     "code": "related-name-nearby",
-     "detail": "seed-1241 \"Arkose - Madrid\": related names \"The Climb Madrid\" / \"Arkose - Madrid\" 13836 m apart",
-     "ids": [
-      "seed-1241"
-     ]
-    },
-    {
-     "code": "related-name-nearby",
-     "detail": "seed-1242 \"Boulder Madrid\": related names \"The Climb Madrid\" / \"Boulder Madrid\" 12190 m apart",
-     "ids": [
-      "seed-1242"
-     ]
-    },
-    {
-     "code": "related-name-nearby",
-     "detail": "seed-1243 \"Bulder Queen - Madrid\": related names \"The Climb Madrid\" / \"Bulder Queen - Madrid\" 6811 m apart",
-     "ids": [
-      "seed-1243"
-     ]
-    },
-    {
-     "code": "related-name-nearby",
-     "detail": "seed-1245 \"Monkey Fingers - Madrid\": related names \"The Climb Madrid\" / \"Monkey Fingers - Madrid\" 4407 m apart",
-     "ids": [
-      "seed-1245"
-     ]
-    },
-    {
-     "code": "related-name-nearby",
-     "detail": "seed-1246 \"Roc 30 FMM - Madrid\": related names \"The Climb Madrid\" / \"Roc 30 FMM - Madrid\" 8938 m apart",
-     "ids": [
-      "seed-1246"
-     ]
-    },
-    {
-     "code": "related-name-nearby",
-     "detail": "seed-1248 \"RockTown Climbing - Madrid\": related names \"The Climb Madrid\" / \"RockTown Climbing - Madrid\" 14904 m apart",
-     "ids": [
-      "seed-1248"
-     ]
-    },
-    {
-     "code": "related-name-nearby",
-     "detail": "seed-1251 \"Sputnik Climbing - Chamberí Madrid\": related names \"The Climb Madrid\" / \"Sputnik Climbing - Chamberí Madrid\" 12945 m apart",
-     "ids": [
-      "seed-1251"
-     ]
-    },
-    {
-     "code": "related-name-nearby",
-     "detail": "seed-1253 \"Urban Monkey - Madrid\": related names \"The Climb Madrid\" / \"Urban Monkey - Madrid\" 10685 m apart",
-     "ids": [
-      "seed-1253"
-     ]
-    },
-    {
-     "code": "related-name-nearby",
-     "detail": "seed-1254 \"Uuadibloc - Madrid\": related names \"The Climb Madrid\" / \"Uuadibloc - Madrid\" 11952 m apart",
-     "ids": [
-      "seed-1254"
-     ]
-    }
-   ],
-   "review_ids": [
-    "es-026",
-    "g-d5df7ee6d2",
-    "seed-1241",
-    "seed-1242",
-    "seed-1243",
-    "seed-1245",
-    "seed-1246",
-    "seed-1248",
-    "seed-1251",
-    "seed-1253",
-    "seed-1254"
-   ]
+   "review_ids": []
   },
   {
    "cid": "es-031",
@@ -710,6 +611,30 @@
   {
    "cid": "es-041",
    "line": 41,
+   "name": "Cal Mico",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-5e5bc8e1ac"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "es-042",
+   "line": 42,
+   "name": "Klimb Zarautz",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-b5f67ffe7a"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "es-043",
+   "line": 43,
    "name": "Boulder Vallecas",
    "class": "ready",
    "suggested": "accept",
@@ -720,5 +645,5 @@
    "review_ids": []
   }
  ],
- "reconcile_sha256": "3d0eab479d2e1e32ce9779e623b8b1e8e5d00f08037f36c9a05f265dc035e6d8"
+ "reconcile_sha256": "b77b6f0393294caaf5b5dfba6bf48cfd53d54d14df3a259d3a4236bc19bff984"
 }
