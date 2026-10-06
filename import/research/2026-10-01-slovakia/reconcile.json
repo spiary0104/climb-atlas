@@ -4,7 +4,7 @@
  "inputs": {
   "section_sha256": "6f33b3fdd48cd06ca6689325f79b72289dc1011530c28f4edb91a081e648b6fa",
   "sources_sha256": "97002e944482077ae4e793aefca46c48550989a3583f070671bda7de8d926db0",
-  "candidates_sha256": "c1e653e01b6461bf8ba768be7f45188785b3f68bf91c376e6cc69a964bab11c6",
+  "candidates_sha256": "3c6e23e6ad6d7fc7552af8563fc2b6104a654ddf4d37c1be6c3291c6d15a135a",
   "index": {
    "sha256": "e50072d61b4cd2133f160099a4444c918e7cc2eb73e18f243e28f9117b29ceb6",
    "count": 2419
@@ -99,34 +99,32 @@
    "cid": "sk-003",
    "line": 3,
    "name": "Spot Climbing Gym",
-   "class": "review",
-   "suggested": "review",
+   "class": "blocked",
+   "suggested": "defer",
    "importer": {
     "class": "new",
-    "id": "g-8db1852f11"
+    "id": "g-cddd069398"
    },
+   "blockers": [
+    {
+     "code": "coarse-coordinates",
+     "detail": "coordinates only locate the area, not the gym"
+    }
+   ],
    "flags": [
     {
      "code": "related-name-nearby",
-     "detail": "candidate sk-004 \"Fanatix\": related names \"Spot lezecká stena\" / \"Fanatix lezecká stena\" 11613 m apart",
+     "detail": "candidate sk-004 \"Fanatix\": related names \"Spot lezecká stena\" / \"Fanatix lezecká stena\" 10975 m apart",
      "ids": [
       "sk-004"
      ]
     },
     {
      "code": "related-name-nearby",
-     "detail": "candidate sk-006 \"Lezecká stena K2 Bratislava\": related names \"Spot lezecká stena\" / \"Lezecká stena K2\" 14139 m apart",
+     "detail": "candidate sk-006 \"Lezecká stena K2 Bratislava\": related names \"Spot lezecká stena\" / \"Lezecká stena K2\" 13163 m apart",
      "ids": [
       "sk-006"
      ]
-    },
-    {
-     "code": "single-source",
-     "detail": "all evidence comes from one source"
-    },
-    {
-     "code": "weak-coordinates",
-     "detail": "coordinates are street-level, not the building"
     }
    ],
    "review_ids": [
@@ -147,7 +145,7 @@
    "flags": [
     {
      "code": "related-name-nearby",
-     "detail": "candidate sk-003 \"Spot Climbing Gym\": related names \"Fanatix lezecká stena\" / \"Spot lezecká stena\" 11613 m apart",
+     "detail": "candidate sk-003 \"Spot Climbing Gym\": related names \"Fanatix lezecká stena\" / \"Spot lezecká stena\" 10975 m apart",
      "ids": [
       "sk-003"
      ]
@@ -212,7 +210,7 @@
    "flags": [
     {
      "code": "related-name-nearby",
-     "detail": "candidate sk-003 \"Spot Climbing Gym\": related names \"Lezecká stena K2\" / \"Spot lezecká stena\" 14139 m apart",
+     "detail": "candidate sk-003 \"Spot Climbing Gym\": related names \"Lezecká stena K2\" / \"Spot lezecká stena\" 13163 m apart",
      "ids": [
       "sk-003"
      ]
@@ -309,7 +307,7 @@
    "flags": [
     {
      "code": "related-name-nearby",
-     "detail": "candidate sk-013 \"Steam Factory Košice – lezecká stena\": related names \"Lezecká stena Košice\" / \"Steam Factory Košice – lezecká stena\" 5030 m apart",
+     "detail": "candidate sk-013 \"Steam Factory Košice – lezecká stena\": related names \"Lezecká stena Košice\" / \"Steam Factory Košice – lezecká stena\" 5000 m apart",
      "ids": [
       "sk-013"
      ]
@@ -339,19 +337,15 @@
    "suggested": "review",
    "importer": {
     "class": "new",
-    "id": "g-51644a3953"
+    "id": "g-5cc8fb69c7"
    },
    "flags": [
     {
      "code": "related-name-nearby",
-     "detail": "candidate sk-011 \"Lezecká stena Rozlomity\": related names \"Steam Factory Košice – lezecká stena\" / \"Lezecká stena Košice\" 5030 m apart",
+     "detail": "candidate sk-011 \"Lezecká stena Rozlomity\": related names \"Steam Factory Košice – lezecká stena\" / \"Lezecká stena Košice\" 5000 m apart",
      "ids": [
       "sk-011"
      ]
-    },
-    {
-     "code": "single-source",
-     "detail": "all evidence comes from one source"
     }
    ],
    "review_ids": [
@@ -362,18 +356,12 @@
    "cid": "sk-014",
    "line": 14,
    "name": "WoodRock",
-   "class": "blocked",
-   "suggested": "defer",
+   "class": "review",
+   "suggested": "review",
    "importer": {
     "class": "new",
     "id": "g-9565fc6597"
    },
-   "blockers": [
-    {
-     "code": "bouldering-unknown",
-     "detail": "bouldering offering not established (never assumed)"
-    }
-   ],
    "flags": [
     {
      "code": "limited-access",
@@ -550,5 +538,5 @@
    "review_ids": []
   }
  ],
- "reconcile_sha256": "5128ae57fb2d8a1c04364f65c2d4078228bf48316353a0b8179791d6eac19c68"
+ "reconcile_sha256": "52e99651b0c54a999000ae484eda11ec5d62034820f3adf2d5242f76f8c6c060"
 }

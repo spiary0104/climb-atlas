@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-01-slovakia",
+  "description": "Regional research \"Slovakia (Tier C, wave 3A)\": 13 new gym(s) accepted of 22 candidate(s)",
+  "created": "2026-10-06",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-10-01-slovakia",
+    "section_sha256": "6f33b3fdd48cd06ca6689325f79b72289dc1011530c28f4edb91a081e648b6fa",
+    "sources_sha256": "97002e944482077ae4e793aefca46c48550989a3583f070671bda7de8d926db0",
+    "candidates_sha256": "3c6e23e6ad6d7fc7552af8563fc2b6104a654ddf4d37c1be6c3291c6d15a135a",
+    "reconcile_sha256": "783316ae7eaed3f6e76b4f93ecaacc5d3bfaac2d0aecae38c13cf3d07cbac46f",
+    "review_sha256": "774d0696e1684af5d8e1cba1e68edf7a398032394fe4e9aea8bfa445e2409520",
+    "candidates": 22,
+    "staged": 13,
+    "decisions": {
+      "accept": 13,
+      "defer": 4,
+      "reject": 1,
+      "same-as": 4
+    }
+  },
+  "index_at_staging": {
+    "sha256": "e50072d61b4cd2133f160099a4444c918e7cc2eb73e18f243e28f9117b29ceb6",
+    "count": 2419
+  }
+}
