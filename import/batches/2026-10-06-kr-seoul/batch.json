@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-06-kr-seoul",
+  "description": "Regional research \"Korea: Seoul coverage gap\": 41 new gym(s) accepted of 66 candidate(s)",
+  "created": "2026-10-06",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-10-06-kr-seoul",
+    "section_sha256": "85bc1874b12a83a28209f32277fc24c487b3781843f8d22df1ab958bbfdccf75",
+    "sources_sha256": "10326fc30cf95a984a08c0a780001b39224d41cf2e81a911a6f9e5e61599d270",
+    "candidates_sha256": "f78315198a507d6235619c81ff4be71a037392dfbb0c6658a6d40cee9b000487",
+    "reconcile_sha256": "5665f78acc55f7b2034901520050ce2e63c083da889c176cd945e9c5e62fabaf",
+    "review_sha256": "8b1bfff6cd9e776d62516811e9f904611648961159e734f87775ad3bdb9ef97e",
+    "candidates": 66,
+    "staged": 41,
+    "decisions": {
+      "accept": 41,
+      "defer": 9,
+      "same-as": 16
+    }
+  },
+  "index_at_staging": {
+    "sha256": "27073d25c2df373c17caef0c24ebfe759b8d457953a461c62786486d588e661d",
+    "count": 2438
+  }
+}
