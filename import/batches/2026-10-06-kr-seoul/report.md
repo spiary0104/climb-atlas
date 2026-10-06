@@ -4,19 +4,19 @@
 
 | What would happen | Records |
 |---|---:|
-| Insert as NEW gyms | 41 |
+| Insert as NEW gyms | 40 |
 | Update existing gyms (explicit update records) | 0 |
 | Already exist — no action (identical content: 0; content differs, NOT applied: 0) | 0 |
 | Probable duplicates — need a human decision | 0 |
 | Invalid — rejected | 0 |
 | Rejected by a human decision | 0 |
-| **Total records in batch** | 41 |
+| **Total records in batch** | 40 |
 
-Index: 2438 known gyms (sha256 27073d25c2df…). Plan: 4c6c311ce60a…
+Index: 2438 known gyms (sha256 27073d25c2df…). Plan: f86ef30cacea…
 
-## New gyms (41)
+## New gyms (40)
 
-By country: KR 41
+By country: KR 40
 
 - line 1 `g-8e602c80d8` "The Climb Gangnam (더클라임 강남점)" (KR)
 - line 2 `g-d23d3b2a39` "The Climb Nonhyeon (더클라임 논현점)" (KR)
@@ -33,5 +33,5 @@ By country: KR 41
 - line 13 `g-03dd8f9575` "Son Sang-won Climbing Gangnam Station (손상원 클라이밍짐 강남역점)" (KR)
 - line 14 `g-5e19b30de5` "Son Sang-won Climbing Euljiro (손상원 클라이밍짐 을지로점)" (KR)
 - line 15 `g-f97c14f87e` "Peakers Climbing Guro (피커스 클라이밍 구로)" (KR)
-- … and 26 more (see plan.json)
+- … and 25 more (see plan.json)
 

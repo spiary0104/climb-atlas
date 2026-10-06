@@ -1,6 +1,6 @@
 # Manual check list: Korea Seoul coverage gap (2026-10-06-kr-seoul)
 
-Nine gyms I could not settle; all stay `defer` in review.json and are not in the staged batch. Instagram is not readable without a login, so any "check Instagram" step needs your own logged-in browser. Naver Place pages are `https://m.place.naver.com/place/<id>/home` (Photos tab for owner uploads).
+Ten gyms I could not settle; all stay `defer` in review.json and are not in the staged batch. Instagram is not readable without a login, so any "check Instagram" step needs your own logged-in browser. Naver Place pages are `https://m.place.naver.com/place/<id>/home` (Photos tab for owner uploads).
 
 | Gym | District | Open these | The ONE question | Found so far |
 |---|---|---|---|---|
@@ -13,5 +13,6 @@ Nine gyms I could not settle; all stay `defer` in review.json and are not in the
 | Summit Climbing Center (SUMMIT클라이밍센터, kr-se-048) | Mapo-gu (신촌로24안길 14) | https://m.place.naver.com/place/36939626/home | Is it still operating in 2026 (any gym post)? | Bouldering clear from owner photos (crash pads). Price list only; no booking, no gym posts; visitor review 2026-10-02. |
 | Boulder Climbing Gym (볼더 클라이밍 짐, kr-se-049) | Nowon-gu (동일로241길 53) | https://m.place.naver.com/place/37351333/home ; http://cafe.daum.net/we-climbingcenter | Still open (any 2026-09/10 review or post)? | Naver booking and price list; newest visitor review 2026-02-12. Photos not inspected. |
 | Gangdong Climbing Gym (강동클라이밍짐, kr-se-050) | Gangdong-gu (천호대로 1178 B1) | https://m.place.naver.com/place/13495026/home | Does it sell adult walk-in day passes, and is it the same gym as existing seed-1202 "Gangdong Climbing Gym" (pin 1.9 km away)? | Owner photos: kids on mat-floored bouldering walls. Price list has an adult 1-hour trial (20,000) and monthly free use; reviews to 2026-07-30. If it is seed-1202, decision becomes same-as + location-update. |
+| One Bailey Invite Climbing (원베일리 인바이트 클라이밍, kr-se-034) | Seocho-gu (반포대로 333, 지역건강센터 B3) | https://m.place.naver.com/place/1418889797/home ; https://www.instagram.com/invait_climbing/ | Can non-residents buy a walk-in pass? | Bouldering is clear (owner photos: tall mat-floored walls); gym posts 2026-07-15 to 2026-08-03; Naver booking. The venue is a residential-complex health centre labelled public-open (공공개방시설); no price list on the listing. |
 
-Weakest of the 41 accepts (veto if you want extra confidence): see review-notes.md "Weaker accepts".
+Weakest of the 40 accepts (veto if you want extra confidence): see review-notes.md "Weaker accepts".

@@ -2,16 +2,16 @@
 
 ## Result
 - 66 candidates (kr-se-001..066), 68 sources registered (one Naver Place listing per gym, the chain blog, Kakao Map).
-- Reconcile: ready 1 | review 40 | blocked 14 | already in Bouldeer 11 | invalid 0. Decisions: accept 41, same-as 16, defer 9, reject 0.
-- Staged batch `2026-10-06-kr-seoul`: 41 new gyms; plan exit 0 (new 41, probable-duplicate 0, invalid 0); read-only dry-run: PREFLIGHT PASSED (partial coverage, no service-role read).
-- Seoul had 32 gyms in Bouldeer; the section adds 41 (to 73) and re-identifies 16 existing ones.
+- Reconcile: ready 1 | review 40 | blocked 14 | already in Bouldeer 11 | invalid 0. Decisions: accept 40, same-as 16, defer 10, reject 0.
+- Staged batch `2026-10-06-kr-seoul`: 40 new gyms; plan exit 0 (new 40, probable-duplicate 0, invalid 0); read-only dry-run: PREFLIGHT PASSED (partial coverage, no service-role read).
+- Seoul had 32 gyms in Bouldeer; the section adds 40 (to 72) and re-identifies 16 existing ones.
 
 ## Per district: accepted (found) vs the real-world estimate
 The real-world per-district counts are not published anywhere reliable; the city-wide estimate is about 150 listed gyms (Kakao 140+ in Jan 2024, many of them kids schools, associations and rope-only walls). Counts below are gyms accepted in this section / candidates found there (deferred) / left out.
 | District | Accepted | Deferred | Leads / left out |
 |---|---|---|---|
 | Gangnam-gu | 3 (The Climb Gangnam, Yangjae; Climbing Park Gangnam) | 0 | Yeoksam Climbing Lab (역삼클라이밍랩, Kakao + modoo site only) |
-| Seocho-gu | 3 (The Climb Nonhyeon; Son Sang-won Gangnam Station; One Bailey Invite) | 1 (The Climbing Gym) | |
+| Seocho-gu | 2 (The Climb Nonhyeon; Son Sang-won Gangnam Station) | 2 (The Climbing Gym, One Bailey Invite) | |
 | Songpa-gu | 1 (Bricks) | 4 (Seoul Forest Jamsil, Climb to the Moon, Dot, The Top) | Route Climbing re-identified (existing) |
 | Gangdong-gu | 2 (Onfleek Cheonho, Onsedae) | 1 (Gangdong Climbing Gym) | Cookids Climbing (kids school) not added |
 | Gangseo-gu | 3 (Climbing 88, Gangseo Climbing Center, August) | 1 (2 Years Climb House) | Magok Leports Center (public sports hall) not added |
