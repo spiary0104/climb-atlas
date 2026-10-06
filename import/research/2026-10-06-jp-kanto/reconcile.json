@@ -4,7 +4,7 @@
  "inputs": {
   "section_sha256": "efabfa613212519dacea1e53ec46b21fb71a76598a77e394112742d0168a736e",
   "sources_sha256": "bc60eb09c6a07381786f2a63a8a0902621915ef9e8d7c7342e4cbad46dd9d9dc",
-  "candidates_sha256": "50ec39fe6e8e50e5818968a473901167e21ae9f2d751502e3a20210703fa12ab",
+  "candidates_sha256": "80db339a2fc86a29899aea6363361180608316f1fc37b990010998aa056b94aa",
   "index": {
    "sha256": "27073d25c2df373c17caef0c24ebfe759b8d457953a461c62786486d588e661d",
    "count": 2438
@@ -19,9 +19,9 @@
  },
  "counts": {
   "candidates": 72,
-  "ready": 36,
+  "ready": 34,
   "review": 17,
-  "blocked": 19,
+  "blocked": 21,
   "existing": 0,
   "invalid": 0
  },
@@ -98,12 +98,22 @@
    "cid": "jp-bolbol-hashimoto",
    "line": 15,
    "name": "BolBol",
-   "class": "ready",
-   "suggested": "accept",
+   "class": "blocked",
+   "suggested": "defer",
    "importer": {
     "class": "new",
     "id": "g-2bf8014fa6"
    },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
    "review_ids": []
   },
   {
@@ -496,12 +506,16 @@
    "line": 72,
    "name": "Fukagawa Sports Center climbing wall",
    "class": "blocked",
-   "suggested": "defer",
+   "suggested": "reject not-a-gym",
    "importer": {
     "class": "new",
     "id": "g-0ecf79ffd0"
    },
    "blockers": [
+    {
+     "code": "not-a-gym",
+     "detail": "category other"
+    },
     {
      "code": "status-not-open",
      "detail": "status_claim is unknown"
@@ -807,12 +821,26 @@
    "cid": "jp-miyake-recreation-center-bouldering",
    "line": 36,
    "name": "Miyake Village Recreation Center Bouldering",
-   "class": "ready",
-   "suggested": "accept",
+   "class": "blocked",
+   "suggested": "reject not-a-gym",
    "importer": {
     "class": "new",
     "id": "g-922ec0493a"
    },
+   "blockers": [
+    {
+     "code": "not-a-gym",
+     "detail": "category other"
+    },
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
    "review_ids": []
   },
   {
@@ -1290,5 +1318,5 @@
    "review_ids": []
   }
  ],
- "reconcile_sha256": "536ba6da6ce7734e890ab99a3792b6cdc0eee98e93a80dd6695f697503522c9b"
+ "reconcile_sha256": "fc24ce1fc48e1b589a31098acd632ba42781b3292e6c7ac137519cf7de95940b"
 }

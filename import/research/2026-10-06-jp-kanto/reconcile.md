@@ -5,7 +5,7 @@ Index: 2438 gyms, sha256 27073d25c2df… | staged batches compared: none | other
 Review radii (stricter than the importer): any gym 150 m, related name 15 km, other country 2 km
 
 ## Summary
-72 candidate(s): ready 36 | review 17 | blocked 19 | already in Bouldeer 0 | invalid 0
+72 candidate(s): ready 34 | review 17 | blocked 21 | already in Bouldeer 0 | invalid 0
 
 ## Needs review (accept needs a reason and reviewed_against covering every listed id) (17)
 - jp-be-born-koshigaya "Be born Climbing Gym" [g-ce178e385e]
@@ -46,17 +46,19 @@ Review radii (stricter than the importer): any gym 150 m, related name 15 km, ot
 - jp-speedy-bouldering "Bouldering Gym SPEEDY" [g-a3a5a38132] reviewed_against must include: jp-rock-and-wall
   - related-name-nearby: candidate jp-rock-and-wall "Bouldering Gym Rock&Wall": related names "ボルダリングジム SPEEDY（スピーディー）" / "ボルダリングジム Rock&Wall（ロックアンドウォール）" 14465 m apart
 
-## Blocked: cannot be accepted (19)
+## Blocked: cannot be accepted (21)
 - jp-arc-climbing-otawara "Climbing Gym ARC": status-not-open (status_claim is unknown); insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough); bouldering-unknown (bouldering offering not established (never assumed)) -> suggested: defer
+- jp-bolbol-hashimoto "BolBol": status-not-open (status_claim is unknown); insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough) -> suggested: defer
 - jp-bonobo-ageo "BONOBO bouldering space": status-not-open (status_claim is unknown); insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough) -> suggested: defer
 - jp-bouldering-deer-edogawa "Bouldering deer": closed (status_claim is closed); insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough); no-bouldering-evidence (bouldering is "yes" but no primary source confirms it) -> suggested: reject closed
 - jp-craze-bouldering-kawaguchi "craze bouldering gym Kawaguchi": status-not-open (status_claim is unknown); insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough) -> suggested: defer
 - jp-dogwood-takatsu "DOGWOOD Climbing Gym Takatsu": status-not-open (status_claim is unknown); insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough); bouldering-unknown (bouldering offering not established (never assumed)) -> suggested: defer
-- jp-fukagawa-sports-center "Fukagawa Sports Center climbing wall": status-not-open (status_claim is unknown); insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough) -> suggested: defer
+- jp-fukagawa-sports-center "Fukagawa Sports Center climbing wall": not-a-gym (category other); status-not-open (status_claim is unknown); insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough) -> suggested: reject not-a-gym
 - jp-grimrock-yokohama "GRIMROCK Climbing Gym": status-not-open (status_claim is unknown); insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough); bouldering-unknown (bouldering offering not established (never assumed)) -> suggested: defer
 - jp-kachill-chigasaki "KaChill": status-not-open (status_claim is unknown); insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough) -> suggested: defer
 - jp-lost-canyon-utsunomiya "LOST CANYON Climbing Gym": status-not-open (status_claim is unknown); insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough) -> suggested: defer
 - jp-maghreb-est-tama "Maghreb EST": status-not-open (status_claim is unknown); insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough) -> suggested: defer
+- jp-miyake-recreation-center-bouldering "Miyake Village Recreation Center Bouldering": not-a-gym (category other); status-not-open (status_claim is unknown); insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough) -> suggested: reject not-a-gym
 - jp-monolithe-kawagoe "Monolithe Bouldering Gym Kawagoe": status-not-open (status_claim is unknown); insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough) -> suggested: defer
 - jp-next-gen-bouldering-niiza "Next Gen Bouldering": status-not-open (status_claim is unknown); insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough) -> suggested: defer
 - jp-parkers-tokyo-shinjuku "PARKERS TOKYO": status-not-open (status_claim is unknown); insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough) -> suggested: defer
@@ -67,10 +69,9 @@ Review radii (stricter than the importer): any gym 150 m, related name 15 km, ot
 - jp-tohan-dojo-chiba "Tohan Dojo Bouldering Gym": status-not-open (status_claim is unknown); insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough) -> suggested: defer
 - jp-villars-climbing-ariake "VILLARS climbing Ariake": closed (status_claim is closed); insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough); no-bouldering-evidence (bouldering is "yes" but no primary source confirms it) -> suggested: reject closed
 
-## Ready (no flags; still needs an explicit accept) (36)
+## Ready (no flags; still needs an explicit accept) (34)
 - jp-bears-rock-katsushika "BEAR'S ROCK" [g-e70c70e764]
 - jp-blue-bird-bouldering "Blue Bird Bouldering Gym" [g-232da60cf5]
-- jp-bolbol-hashimoto "BolBol" [g-2bf8014fa6]
 - jp-boulcom-kawasaki "BOULCOM Kawasaki" [g-880f74656c]
 - jp-bouldering-garage-funny "Bouldering Garage FUNNY" [g-e935c40916]
 - jp-bouldering-gym-share "Bouldering Gym Share" [g-c3801488f1]
@@ -90,7 +91,6 @@ Review radii (stricter than the importer): any gym 150 m, related name 15 km, ot
 - jp-j-wall-fujisawa "J-WALL Climbing Gym" [g-d09420ac73]
 - jp-lago-fitness-climbing-studio "Fitness Climbing Studio LAGO" [g-790419942b]
 - jp-lutra-lutra-fukaya "Lutra Lutra" [g-a2044b33e1]
-- jp-miyake-recreation-center-bouldering "Miyake Village Recreation Center Bouldering" [g-922ec0493a]
 - jp-olioli-ichinomiya "Climbing Gym OLIOLI" [g-4ea11241b3]
 - jp-overground-kounosu "Bouldering Gym OVERGROUND" [g-6b5fb7ba4e]
 - jp-piglet-climbing-gym "PIGLET Climbing Gym" [g-1ca71a08ef]

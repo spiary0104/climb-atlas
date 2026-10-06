@@ -1,17 +1,17 @@
 # Coverage: Japan Kanto (2026-10-06-jp-kanto)
 
 ## Result
-- 72 candidates: 53 accept, 16 defer, 3 reject (closed: THREE PEAKS Honjo 2026-05-31, deer Edogawa 2025-12-27, VILLARS Ariake 2024-06-30). 0 same-as: none of the candidates matched an existing Bouldeer gym.
-- reconcile: ready 36 | review 17 | blocked 19 | existing 0 | invalid 0. plan: new 53, 0 invalid, 0 probable duplicates. Dry-run preflight passed (partial coverage, no credentials).
+- 72 candidates: 51 accept, 18 defer, 3 reject (closed: THREE PEAKS Honjo 2026-05-31, deer Edogawa 2025-12-27, VILLARS Ariake 2024-06-30). 0 same-as: none of the candidates matched an existing Bouldeer gym.
+- reconcile: ready 34 | review 17 | blocked 21 | existing 0 | invalid 0. plan: new 51, 0 invalid, 0 probable duplicates. Dry-run preflight passed (partial coverage, no credentials).
 - Coordinates: GSI address search (house-level for 58, block-level "street" for 14). No OSM-based pins (OSM covers few of these gyms; two OSM nodes within 43 m and 14 m corroborate Pocket and Fits).
 
 ## Per prefecture (real-world estimate from rockgym.jp counts, 2025-11, vs Bouldeer before / accepted here)
 | Prefecture | Directory count | In Bouldeer before | Accepted | Deferred / lead |
 |---|---|---|---|---|
-| Kanagawa | 38 | 9 | 16 (Yokosuka 1, Yokohama 5, Kawasaki 2, Sagamihara 1, Fujisawa 2, Ebina, Atsugi, Yamato, Yugawara, Matsuda) | 5 deferred, ~12 leads |
+| Kanagawa | 38 | 9 | 15 (Yokosuka 1, Yokohama 5, Kawasaki 2, Sagamihara 1, Fujisawa 2, Ebina, Atsugi, Yamato, Yugawara, Matsuda) | 6 deferred, ~12 leads |
 | Saitama | 30 | 8 | 9 (Niiza, Koshigaya 2, Kawaguchi, Sakado, Kawagoe, Miyoshi, Fukaya, Kounosu) | 4 deferred, ~12 leads |
 | Chiba | 17 | 6 | 6 (Kamagaya, Ichinomiya, Chiba, Kashiwa, Yachiyo, Togane) | 1 deferred, ~6 leads |
-| Tokyo | 72 (many non-gyms/closed) | 42 | 13 (D.Bouldering Shinkoiwa, Adachi, Nishi-Hachioji; Katsushika, Miyake, Shinagawa, Hachioji, Machida, Musashino, Mitaka, Suginami, Bunkyo, Toshima) | 4 deferred, ~15 leads |
+| Tokyo | 72 (many non-gyms/closed) | 42 | 12 (D.Bouldering Shinkoiwa, Adachi, Nishi-Hachioji; Katsushika, Shinagawa, Hachioji, Machida, Musashino, Mitaka, Suginami, Bunkyo, Toshima) | 6 deferred, ~15 leads |
 | Ibaraki | 10 | 1 | 2 (Tsukuba, Kasama) | ~5 leads |
 | Tochigi | 15 | 0 | 3 (Utsunomiya 2, Sano) | 2 deferred, ~8 leads |
 | Gunma | 9 | 0 | 4 (Shibukawa, Maebashi, Ota, Takasaki) | ~4 leads |
