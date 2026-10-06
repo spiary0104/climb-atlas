@@ -1,0 +1,11 @@
+# Unlocated (real gyms, no coordinate source yet)
+
+Each needs a coordinate from OSM, an official map pin, or a chain list. None of these appear in the OSM extract and their own sites publish no coordinates.
+
+1. **Climbing SPACE** (Скеледром SPACE), Kyiv, vul. Verbova 59 (Maiak plant territory, near Pochaina metro). Older guides give Stepana Bandery Ave 8 (Obolon), probably the same complex or a former address: reviewer to confirm. Site https://www.climbingspace.com.ua/ (400 m2 bouldering zone, about 80 problems, "SPACE ANNIVERSARY 2026" on the homepage, so likely open). Part of SPACE Group.
+2. **Boulder Space**, Kyiv, vul. Kioto 25 (Lisova metro). Site https://www.boulderspace.ua/ and https://www.boulderspace.ua/contacts (bouldering-only gym, hours labelled 2025/2026, SPACE ANNIVERSARY 2026). Likely open, bouldering yes; only the coordinates are missing.
+3. **Skelia (Скеледром "Скеля")**, Lviv, inside the Plyazh aqua park, vul. Kniahyni Olhy 114. Page https://aqualviv.com.ua/skeledrom-skelia/ (new bouldering hall, hours 07:00-21:00, prices; assets from 2026). Contacts page https://aqualviv.com.ua/contacts/ has no map pin.
+4. **ShelRocks**, Odesa, ak. Filatova 13B (2nd floor); a directory also shows Gen. Tsvetaeva 3/5 (possibly a former address). Facebook https://www.facebook.com/shelrocks/ ; directory https://odesa.dityvmisti.ua/skalodrom-shelrocks/ (bouldering listed). No dated sign of operation seen.
+5. **ON-SITE (Irbis mountain club)**, Poltava, vul. Koval 3, Olimp sports complex, 2nd floor. Site https://irbis.pl.ua/ru/ (adult section "climbing and bouldering", over 100 routes, footer 2001-2025). Map embed is a text query with no coordinates.
+6. **CaFa Climb and Fun anyway**, Vinnytsia, vul. Pyrohova 71a (Financial-Economic University, 4th floor). Instagram https://www.instagram.com/cafa.vn/ ; directory https://list.in.ua/ (CaFa). Bouldering and climbing over 600 m2 per a 2024 listing; no readable official page.
+7. **NAU Climbing Gym**, Kyiv, Liubomyra Huzara Ave 1 (National Aviation University). Facebook https://www.facebook.com/nauskalodrom (page not readable here). Listed with bouldering in a 2023 Kyiv guide (https://nashkiev.ua/life/skeledromi-u-kievi-de-polaziti-ta-skilki-tse-koshtue).
