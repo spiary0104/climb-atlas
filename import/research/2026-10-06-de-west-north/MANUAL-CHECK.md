@@ -25,3 +25,5 @@ Low-confidence gyms kept out of the batch (decision `defer` in review.json). One
     Question: is it open now (2026 posts/hours)? Static site, no dated content; hours table shown. (Candidate dewn-rocktown-kaiserslautern.)
 11. **BoulderEck Erftstadt**, Erftstadt. https://bouldereck.de/
     Question: is it open now (2026 posts/hours)? Latest dated content 2024; hours shown. (Candidate dewn-bouldereck-erftstadt.)
+
+| 12 | Boulderplanet (dewn-boulderplanet-koeln) | Köln-Ehrenfeld, Oskar-Jäger-Str. 143h | https://boulderplanet.de/standort-oeffnungszeiten/ | Is this the same hall as the existing Bouldeer entry "Einstein Boulderhalle Köln" (pin 186 m away)? If Einstein Köln closed or was renamed, which record should stay? | Open (hours, 15.90 EUR day ticket), operator Sportall GmbH; added by the brain review 2026-10-06. |

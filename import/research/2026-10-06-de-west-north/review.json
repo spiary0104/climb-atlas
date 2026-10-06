@@ -1,350 +1,350 @@
 {
- "schema_version": 1,
- "section_id": "2026-10-06-de-west-north",
- "reviewer": "Spiar (owner); decisions drafted by Claude (AI) on the owner's instruction, pending owner sign-off",
- "reviewed": "2026-10-06",
- "decisions": {
-  "dewn-ua-hamburg-ost": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address. Three separate urban apes locations in Hamburg with their own addresses and OSM elements (Wandsbeker Zollstraße 87-89, Kieler Straße 565, Feldstraße 66; 6-11 km apart); the chain lists them as separate halls.",
-   "reviewed_against": [
-    "dewn-ua-hamburg-stpauli",
-    "dewn-ua-hamburg-west"
-   ]
-  },
-  "dewn-ua-hamburg-west": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address. Three separate urban apes locations in Hamburg with their own addresses and OSM elements (Wandsbeker Zollstraße 87-89, Kieler Straße 565, Feldstraße 66; 6-11 km apart); the chain lists them as separate halls.",
-   "reviewed_against": [
-    "dewn-ua-hamburg-ost",
-    "dewn-ua-hamburg-stpauli"
-   ]
-  },
-  "dewn-ua-hamburg-stpauli": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address. Three separate urban apes locations in Hamburg with their own addresses and OSM elements (Wandsbeker Zollstraße 87-89, Kieler Straße 565, Feldstraße 66; 6-11 km apart); the chain lists them as separate halls.",
-   "reviewed_against": [
-    "dewn-ua-hamburg-ost",
-    "dewn-ua-hamburg-west"
-   ]
-  },
-  "dewn-ua-norderstedt": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
-  },
-  "dewn-ua-hannover": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
-  },
-  "dewn-boulderplanet-koeln": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
-  },
-  "dewn-element-koeln-city": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address. Distinct from the unopened Element Köln Deutz (own address and site, 2.4 km apart; Deutz is deferred); Köln City is open and operating at Schildergasse 70.",
-   "reviewed_against": [
-    "dewn-element-koeln-deutz"
-   ]
-  },
-  "dewn-element-essen": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
-  },
-  "dewn-k11-koeln": {
-   "decision": "defer",
-   "reason": "Weak freshness: static site, latest dated content 2024; hours and prices are shown but no 2026 post or date confirms it is open now."
-  },
-  "dewn-stuntwerk-koeln-zollstock": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address. Separate branch from seed-1060 Stuntwerk Köln (Mülheim, Stuntwerk's own list shows Köln Mülheim and Köln Zollstock as two locations, different addresses, 2.6 km apart).",
-   "reviewed_against": [
-    "seed-1060"
-   ]
-  },
-  "dewn-stuntwerk-essen": {
-   "decision": "accept",
-   "reason": "Official location page checked 2026-10-06 (address, timetable, bouldering). Single source accepted: the official location page gives address, hours/timetable and bouldering, and the pin is the gym's own Google Maps link on that page (no OSM element or house-level geocode exists).",
-   "reviewed_against": []
-  },
-  "dewn-stuntwerk-krefeld": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
-  },
-  "dewn-stuntwerk-troisdorf": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
-  },
-  "dewn-stuntwerk-duisburg": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
-  },
-  "dewn-diehalle-aachen": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address. Different gym from CAMPUS Boulderhalle (Grüner Weg 22-24 vs Tempelhofer Str. 16, 2.0 km apart); the related-name flag comes from the MooVe alias (moove-aachen.de redirects to diehalle-aachen.de, so MooVe and dieHalle are one gym).",
-   "reviewed_against": [
-    "dewn-campus-boulderhalle-aachen"
-   ]
-  },
-  "dewn-campus-boulderhalle-aachen": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address. Different gym from dieHalle Aachen (Tempelhofer Str. 16 vs Grüner Weg 22-24, own site and own OSM element, 2.0 km apart); the related-name flag comes from dieHalle's former MooVe alias.",
-   "reviewed_against": [
-    "dewn-diehalle-aachen"
-   ]
-  },
-  "dewn-gluecksgriff-dortmund": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
-  },
-  "dewn-bergwerk-dortmund": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
-  },
-  "dewn-bootshaus-bielefeld": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address. Naturfreunde club hall, but the site advertises open sessions (Tue/Thu/Fri evenings) with a non-member price (7 EUR), so it is publicly usable.",
-   "reviewed_against": []
-  },
-  "dewn-cog-bielefeld": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
-  },
-  "dewn-boulder-factory-muenster": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
-  },
-  "dewn-kletterbar-muenster": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
-  },
-  "dewn-prisma-wuppertal": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
-  },
-  "dewn-bahnhof-blo-wuppertal": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
-  },
-  "dewn-superblock-duesseldorf": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
-  },
-  "dewn-monkeyspot-moenchengladbach": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
-  },
-  "dewn-kletterkirche-moenchengladbach": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
-  },
-  "dewn-blocbuster-paderborn": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
-  },
-  "dewn-felsmeister-bad-oeynhausen": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
-  },
-  "dewn-blox-finnentrop": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
-  },
-  "dewn-kletterwelt-sauerland-altena": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
-  },
-  "dewn-studio-bloc-wiesbaden": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
-  },
-  "dewn-studio-bloc-darmstadt": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
-  },
-  "dewn-gaia-marburg": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
-  },
-  "dewn-dav-kletterzentrum-frankfurt": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address. Club (DAV/Naturfreunde/Verein) hall that sells guest day tickets to non-members on its own price page, so it is open to the public; bouldering area shown on the official site.",
-   "reviewed_against": []
-  },
-  "dewn-blockwerk-mainz": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
-  },
-  "dewn-blocschokolade-trier": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
-  },
-  "dewn-eifelblock-trier": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
-  },
-  "dewn-griffreich-hannover": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address. Club (DAV/Naturfreunde/Verein) hall that sells guest day tickets to non-members on its own price page, so it is open to the public; bouldering area shown on the official site.",
-   "reviewed_against": []
-  },
-  "dewn-zenit-osnabrueck": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
-  },
-  "dewn-osnabloc-osnabrueck": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
-  },
-  "dewn-fliegerhalle-braunschweig": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
-  },
-  "dewn-greifhaus-braunschweig": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
-  },
-  "dewn-big-goettingen": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
-  },
-  "dewn-hoehenrausch-stadthagen": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
-  },
-  "dewn-kletterbar-kiel": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
-  },
-  "dewn-nordwandhalle-hamburg": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
-  },
-  "dewn-schluesselstelle-siegen": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
-  },
-  "dewn-dav-kletterzentrum-siegerland": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address. Club (DAV/Naturfreunde/Verein) hall that sells guest day tickets to non-members on its own price page, so it is open to the public; bouldering area shown on the official site.",
-   "reviewed_against": []
-  },
-  "dewn-2t-lindlar": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
-  },
-  "dewn-dav-kletterzentrum-owl-brakel": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address. Club (DAV/Naturfreunde/Verein) hall that sells guest day tickets to non-members on its own price page, so it is open to the public; bouldering area shown on the official site.",
-   "reviewed_against": []
-  },
-  "dewn-gravidrom-lippstadt": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
-  },
-  "dewn-kraftraum-bocholt": {
-   "decision": "defer",
-   "reason": "Weak freshness: static site, home page last modified Dec 2024, last feed item Sep 2025; no 2026 post or date confirms it is open now."
-  },
-  "dewn-kliff-kleve": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
-  },
-  "dewn-dav-alpinzentrum-bielefeld": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address. Club (DAV/Naturfreunde/Verein) hall that sells guest day tickets to non-members on its own price page, so it is open to the public; bouldering area shown on the official site.",
-   "reviewed_against": []
-  },
-  "dewn-volksbank-kletterhalle-marburg": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address. Club (DAV/Naturfreunde/Verein) hall that sells guest day tickets to non-members on its own price page, so it is open to the public; bouldering area shown on the official site.",
-   "reviewed_against": []
-  },
-  "dewn-dav-kletterzentrum-giessen": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address. Club (DAV/Naturfreunde/Verein) hall that sells guest day tickets to non-members on its own price page, so it is open to the public; bouldering area shown on the official site.",
-   "reviewed_against": []
-  },
-  "dewn-cube-wetzlar": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address. Club (DAV/Naturfreunde/Verein) hall that sells guest day tickets to non-members on its own price page, so it is open to the public; bouldering area shown on the official site.",
-   "reviewed_against": []
-  },
-  "dewn-dav-kletterzentrum-fulda": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address. Club (DAV/Naturfreunde/Verein) hall that sells guest day tickets to non-members on its own price page, so it is open to the public; bouldering area shown on the official site.",
-   "reviewed_against": []
-  },
-  "dewn-sportpark-kelkheim": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
-  },
-  "dewn-boulderchurch-bad-orb": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
-  },
-  "dewn-dav-kletterzentrum-darmstadt": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address. Club (DAV/Naturfreunde/Verein) hall that sells guest day tickets to non-members on its own price page, so it is open to the public; bouldering area shown on the official site.",
-   "reviewed_against": []
-  },
-  "dewn-kletterzentrum-buchholz": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address. Club (DAV/Naturfreunde/Verein) hall that sells guest day tickets to non-members on its own price page, so it is open to the public; bouldering area shown on the official site.",
-   "reviewed_against": []
-  },
-  "dewn-camp4-zweibruecken": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
-  },
-  "dewn-rocktown-kaiserslautern": {
-   "decision": "defer",
-   "reason": "Weak freshness: static site with no dated content; hours table shown but nothing in 2026 confirms it is open now."
-  },
-  "dewn-petz-neustadt": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
-  },
-  "dewn-gravity-bad-kreuznach": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
-  },
-  "dewn-freiraum-basecamp-andernach": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
-  },
-  "dewn-hold-on-tide-hedwigenkoog": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
-  },
-  "dewn-the-cave-wittlich": {
-   "decision": "accept",
-   "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
-  },
-  "dewn-rockvibes-ahlen": {
-   "decision": "reject",
-   "reason_code": "closed",
-   "reason": "The official site announces (news of 17 Feb 2026) that the hall closed on 02.05.2026."
-  },
-  "dewn-bouldereck-erftstadt": {
-   "decision": "defer",
-   "reason": "Weak freshness: latest dated content on the site is 2024; hours shown but nothing in 2026 confirms it is open now."
-  },
-  "dewn-element-koeln-deutz": {
-   "decision": "defer",
-   "reason": "Not yet confirmed open: the chain site lists Köln Deutz as 'new location - coming autumn 2026' and no opening date or hours were found. Re-check once it opens."
-  },
-  "dewn-pfalz-rock-frankenthal": {
-   "decision": "defer",
-   "reason": "Bouldering offer not established: the official pages show a rope-climbing price list and only 3 mentions of bouldering; no boulder area or boulder ticket seen."
-  },
-  "dewn-sportpoint-meckenheim": {
-   "decision": "defer",
-   "reason": "Address and pin disagree: the official address is Am Tennisplatz 27 (geocodes 3.5 km away) while the gym's OSM way is on Am Alten Stauwehr 2; the pin needs confirming against the site's own map before adding."
-  },
-  "dewn-fingerfood-lingen": {
-   "decision": "defer",
-   "reason": "Open status could not be read from the primary site (fingerfood-bouldern.com timed out in this session); only search snippets were seen. Re-check the site."
+  "schema_version": 1,
+  "section_id": "2026-10-06-de-west-north",
+  "reviewer": "Spiar (owner); decisions drafted by Claude (AI) on the owner's instruction, pending owner sign-off",
+  "reviewed": "2026-10-06",
+  "decisions": {
+    "dewn-ua-hamburg-ost": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address. Three separate urban apes locations in Hamburg with their own addresses and OSM elements (Wandsbeker Zollstraße 87-89, Kieler Straße 565, Feldstraße 66; 6-11 km apart); the chain lists them as separate halls.",
+      "reviewed_against": [
+        "dewn-ua-hamburg-stpauli",
+        "dewn-ua-hamburg-west"
+      ]
+    },
+    "dewn-ua-hamburg-west": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address. Three separate urban apes locations in Hamburg with their own addresses and OSM elements (Wandsbeker Zollstraße 87-89, Kieler Straße 565, Feldstraße 66; 6-11 km apart); the chain lists them as separate halls.",
+      "reviewed_against": [
+        "dewn-ua-hamburg-ost",
+        "dewn-ua-hamburg-stpauli"
+      ]
+    },
+    "dewn-ua-hamburg-stpauli": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address. Three separate urban apes locations in Hamburg with their own addresses and OSM elements (Wandsbeker Zollstraße 87-89, Kieler Straße 565, Feldstraße 66; 6-11 km apart); the chain lists them as separate halls.",
+      "reviewed_against": [
+        "dewn-ua-hamburg-ost",
+        "dewn-ua-hamburg-west"
+      ]
+    },
+    "dewn-ua-norderstedt": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
+    },
+    "dewn-ua-hannover": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
+    },
+    "dewn-boulderplanet-koeln": {
+      "decision": "defer",
+      "reason": "Brain review: 186 m from the existing Einstein Boulderhalle Köln in Ehrenfeld; may be the same hall under a new operator (Sportall GmbH) or a replacement. Owner to confirm before adding."
+    },
+    "dewn-element-koeln-city": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address. Distinct from the unopened Element Köln Deutz (own address and site, 2.4 km apart; Deutz is deferred); Köln City is open and operating at Schildergasse 70.",
+      "reviewed_against": [
+        "dewn-element-koeln-deutz"
+      ]
+    },
+    "dewn-element-essen": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
+    },
+    "dewn-k11-koeln": {
+      "decision": "defer",
+      "reason": "Weak freshness: static site, latest dated content 2024; hours and prices are shown but no 2026 post or date confirms it is open now."
+    },
+    "dewn-stuntwerk-koeln-zollstock": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address. Separate branch from seed-1060 Stuntwerk Köln (Mülheim, Stuntwerk's own list shows Köln Mülheim and Köln Zollstock as two locations, different addresses, 2.6 km apart).",
+      "reviewed_against": [
+        "seed-1060"
+      ]
+    },
+    "dewn-stuntwerk-essen": {
+      "decision": "accept",
+      "reason": "Official location page checked 2026-10-06 (address, timetable, bouldering). Single source accepted: the official location page gives address, hours/timetable and bouldering, and the pin is the gym's own Google Maps link on that page (no OSM element or house-level geocode exists).",
+      "reviewed_against": []
+    },
+    "dewn-stuntwerk-krefeld": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
+    },
+    "dewn-stuntwerk-troisdorf": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
+    },
+    "dewn-stuntwerk-duisburg": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
+    },
+    "dewn-diehalle-aachen": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address. Different gym from CAMPUS Boulderhalle (Grüner Weg 22-24 vs Tempelhofer Str. 16, 2.0 km apart); the related-name flag comes from the MooVe alias (moove-aachen.de redirects to diehalle-aachen.de, so MooVe and dieHalle are one gym).",
+      "reviewed_against": [
+        "dewn-campus-boulderhalle-aachen"
+      ]
+    },
+    "dewn-campus-boulderhalle-aachen": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address. Different gym from dieHalle Aachen (Tempelhofer Str. 16 vs Grüner Weg 22-24, own site and own OSM element, 2.0 km apart); the related-name flag comes from dieHalle's former MooVe alias.",
+      "reviewed_against": [
+        "dewn-diehalle-aachen"
+      ]
+    },
+    "dewn-gluecksgriff-dortmund": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
+    },
+    "dewn-bergwerk-dortmund": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
+    },
+    "dewn-bootshaus-bielefeld": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address. Naturfreunde club hall, but the site advertises open sessions (Tue/Thu/Fri evenings) with a non-member price (7 EUR), so it is publicly usable.",
+      "reviewed_against": []
+    },
+    "dewn-cog-bielefeld": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
+    },
+    "dewn-boulder-factory-muenster": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
+    },
+    "dewn-kletterbar-muenster": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
+    },
+    "dewn-prisma-wuppertal": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
+    },
+    "dewn-bahnhof-blo-wuppertal": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
+    },
+    "dewn-superblock-duesseldorf": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
+    },
+    "dewn-monkeyspot-moenchengladbach": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
+    },
+    "dewn-kletterkirche-moenchengladbach": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
+    },
+    "dewn-blocbuster-paderborn": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
+    },
+    "dewn-felsmeister-bad-oeynhausen": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
+    },
+    "dewn-blox-finnentrop": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
+    },
+    "dewn-kletterwelt-sauerland-altena": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
+    },
+    "dewn-studio-bloc-wiesbaden": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
+    },
+    "dewn-studio-bloc-darmstadt": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
+    },
+    "dewn-gaia-marburg": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
+    },
+    "dewn-dav-kletterzentrum-frankfurt": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address. Club (DAV/Naturfreunde/Verein) hall that sells guest day tickets to non-members on its own price page, so it is open to the public; bouldering area shown on the official site.",
+      "reviewed_against": []
+    },
+    "dewn-blockwerk-mainz": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
+    },
+    "dewn-blocschokolade-trier": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
+    },
+    "dewn-eifelblock-trier": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
+    },
+    "dewn-griffreich-hannover": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address. Club (DAV/Naturfreunde/Verein) hall that sells guest day tickets to non-members on its own price page, so it is open to the public; bouldering area shown on the official site.",
+      "reviewed_against": []
+    },
+    "dewn-zenit-osnabrueck": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
+    },
+    "dewn-osnabloc-osnabrueck": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
+    },
+    "dewn-fliegerhalle-braunschweig": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
+    },
+    "dewn-greifhaus-braunschweig": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
+    },
+    "dewn-big-goettingen": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
+    },
+    "dewn-hoehenrausch-stadthagen": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
+    },
+    "dewn-kletterbar-kiel": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
+    },
+    "dewn-nordwandhalle-hamburg": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
+    },
+    "dewn-schluesselstelle-siegen": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
+    },
+    "dewn-dav-kletterzentrum-siegerland": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address. Club (DAV/Naturfreunde/Verein) hall that sells guest day tickets to non-members on its own price page, so it is open to the public; bouldering area shown on the official site.",
+      "reviewed_against": []
+    },
+    "dewn-2t-lindlar": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
+    },
+    "dewn-dav-kletterzentrum-owl-brakel": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address. Club (DAV/Naturfreunde/Verein) hall that sells guest day tickets to non-members on its own price page, so it is open to the public; bouldering area shown on the official site.",
+      "reviewed_against": []
+    },
+    "dewn-gravidrom-lippstadt": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
+    },
+    "dewn-kraftraum-bocholt": {
+      "decision": "defer",
+      "reason": "Weak freshness: static site, home page last modified Dec 2024, last feed item Sep 2025; no 2026 post or date confirms it is open now."
+    },
+    "dewn-kliff-kleve": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
+    },
+    "dewn-dav-alpinzentrum-bielefeld": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address. Club (DAV/Naturfreunde/Verein) hall that sells guest day tickets to non-members on its own price page, so it is open to the public; bouldering area shown on the official site.",
+      "reviewed_against": []
+    },
+    "dewn-volksbank-kletterhalle-marburg": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address. Club (DAV/Naturfreunde/Verein) hall that sells guest day tickets to non-members on its own price page, so it is open to the public; bouldering area shown on the official site.",
+      "reviewed_against": []
+    },
+    "dewn-dav-kletterzentrum-giessen": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address. Club (DAV/Naturfreunde/Verein) hall that sells guest day tickets to non-members on its own price page, so it is open to the public; bouldering area shown on the official site.",
+      "reviewed_against": []
+    },
+    "dewn-cube-wetzlar": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address. Club (DAV/Naturfreunde/Verein) hall that sells guest day tickets to non-members on its own price page, so it is open to the public; bouldering area shown on the official site.",
+      "reviewed_against": []
+    },
+    "dewn-dav-kletterzentrum-fulda": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address. Club (DAV/Naturfreunde/Verein) hall that sells guest day tickets to non-members on its own price page, so it is open to the public; bouldering area shown on the official site.",
+      "reviewed_against": []
+    },
+    "dewn-sportpark-kelkheim": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
+    },
+    "dewn-boulderchurch-bad-orb": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
+    },
+    "dewn-dav-kletterzentrum-darmstadt": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address. Club (DAV/Naturfreunde/Verein) hall that sells guest day tickets to non-members on its own price page, so it is open to the public; bouldering area shown on the official site.",
+      "reviewed_against": []
+    },
+    "dewn-kletterzentrum-buchholz": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address. Club (DAV/Naturfreunde/Verein) hall that sells guest day tickets to non-members on its own price page, so it is open to the public; bouldering area shown on the official site.",
+      "reviewed_against": []
+    },
+    "dewn-camp4-zweibruecken": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
+    },
+    "dewn-rocktown-kaiserslautern": {
+      "decision": "defer",
+      "reason": "Weak freshness: static site with no dated content; hours table shown but nothing in 2026 confirms it is open now."
+    },
+    "dewn-petz-neustadt": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
+    },
+    "dewn-gravity-bad-kreuznach": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
+    },
+    "dewn-freiraum-basecamp-andernach": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
+    },
+    "dewn-hold-on-tide-hedwigenkoog": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
+    },
+    "dewn-the-cave-wittlich": {
+      "decision": "accept",
+      "reason": "Official site checked 2026-10-06 (hours/prices/bouldering) and gym's own map element agrees with the official address."
+    },
+    "dewn-rockvibes-ahlen": {
+      "decision": "reject",
+      "reason_code": "closed",
+      "reason": "The official site announces (news of 17 Feb 2026) that the hall closed on 02.05.2026."
+    },
+    "dewn-bouldereck-erftstadt": {
+      "decision": "defer",
+      "reason": "Weak freshness: latest dated content on the site is 2024; hours shown but nothing in 2026 confirms it is open now."
+    },
+    "dewn-element-koeln-deutz": {
+      "decision": "defer",
+      "reason": "Not yet confirmed open: the chain site lists Köln Deutz as 'new location - coming autumn 2026' and no opening date or hours were found. Re-check once it opens."
+    },
+    "dewn-pfalz-rock-frankenthal": {
+      "decision": "defer",
+      "reason": "Bouldering offer not established: the official pages show a rope-climbing price list and only 3 mentions of bouldering; no boulder area or boulder ticket seen."
+    },
+    "dewn-sportpoint-meckenheim": {
+      "decision": "defer",
+      "reason": "Address and pin disagree: the official address is Am Tennisplatz 27 (geocodes 3.5 km away) while the gym's OSM way is on Am Alten Stauwehr 2; the pin needs confirming against the site's own map before adding."
+    },
+    "dewn-fingerfood-lingen": {
+      "decision": "defer",
+      "reason": "Open status could not be read from the primary site (fingerfood-bouldern.com timed out in this session); only search snippets were seen. Re-check the site."
+    }
   }
- }
 }

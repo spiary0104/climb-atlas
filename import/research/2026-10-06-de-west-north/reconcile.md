@@ -1,7 +1,7 @@
 # Regional research: Germany: NRW, Hessen, Niedersachsen, Hamburg, Bremen, SH, RLP coverage gap (2026-10-06-de-west-north)
 
 Scope: DE / NORDRHEIN_WESTFALEN, HESSEN, NIEDERSACHSEN, HAMBURG, BREMEN, SCHLESWIG_HOLSTEIN, RHEINLAND_PFALZ
-Index: 2438 gyms, sha256 27073d25c2df… | staged batches compared: none | other sections compared: 2026-10-05-germany-east-saar-berlin, 2026-10-05-germany-owner-checks, 2026-10-06-germany-holds
+Index: 2438 gyms, sha256 27073d25c2df… | staged batches compared: 2026-10-06-canada, 2026-10-06-de-south, 2026-10-06-france-cities, 2026-10-06-jp-chubu, 2026-10-06-jp-kansai, 2026-10-06-jp-kanto, 2026-10-06-jp-kyushu-hokkaido, 2026-10-06-kr-seoul, 2026-10-06-london, 2026-10-06-spain-cities, 2026-10-06-us-midwest, 2026-10-06-us-northeast, 2026-10-06-us-south, 2026-10-06-us-west | other sections compared: 2026-10-05-germany-east-saar-berlin, 2026-10-05-germany-owner-checks, 2026-10-06-de-south, 2026-10-06-germany-holds
 Review radii (stricter than the importer): any gym 150 m, related name 15 km, other country 2 km
 
 ## Summary
