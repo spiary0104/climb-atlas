@@ -1,0 +1,1013 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-06-us-south",
+ "inputs": {
+  "section_sha256": "edfccfd4e2b7f1a267273f2b9e6a2777ae5810329d853f2f1ceb652dc1acbe94",
+  "sources_sha256": "006cd290a1cc45e9db18dd01c7573d60db62bbc6bfb9d6d153d25a26eed2a54c",
+  "candidates_sha256": "0970aae878d6abc42a0634c5964cde388688d391639dac2685d81fb40a687327",
+  "index": {
+   "sha256": "27073d25c2df373c17caef0c24ebfe759b8d457953a461c62786486d588e661d",
+   "count": 2438
+  },
+  "staged_batches_compared": [],
+  "other_sections_compared": []
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 69,
+  "ready": 54,
+  "review": 9,
+  "blocked": 6,
+  "existing": 0,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "ar-boulders-and-brews",
+   "line": 50,
+   "name": "Boulders and Brews: Climbing and Coffee",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-3a2df6f38b"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ar-climb-bentonville",
+   "line": 51,
+   "name": "Climb Bentonville",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-cfd8d60ae9"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ar-climb-conway",
+   "line": 52,
+   "name": "Climb Conway",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-a9fd5d942d"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "ar-little-rock-climbing-center",
+   "line": 49,
+   "name": "Little Rock Climbing Center",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-2ae52cb7f9"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ar-ozark-climbing-gym",
+   "line": 53,
+   "name": "Ozark Climbing Gym",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-ef6f0389e0"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ar-vertical-horizons-fort-smith",
+   "line": 54,
+   "name": "Vertical Horizons Climbing Gym",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-0bf586b230"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "fl-aiguille",
+   "line": 7,
+   "name": "Aiguille Climbing Gym",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-86ba9680ae"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "fl-alchemy-climbing",
+   "line": 20,
+   "name": "Alchemy Climbing",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-a365f2b47a"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "fl-beaches-rock-gym",
+   "line": 18,
+   "name": "Beaches Rock Gym",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-bbffd01df7"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "fl-blocker-boulders",
+   "line": 16,
+   "name": "Blocker Boulders",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-3345dad57e"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "fl-blue-swan-boulders",
+   "line": 5,
+   "name": "Blue Swan Boulders",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-bb66536a97"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "fl-boulder-bloc-gym",
+   "line": 12,
+   "name": "Boulder Bloc Gym",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-7ffd0a810f"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "fl-central-rock-citrus-park",
+   "line": 2,
+   "name": "Central Rock Gym – Citrus Park",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-5ce45b33c8"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "fl-central-rock-fort-myers",
+   "line": 4,
+   "name": "Central Rock Gym – Fort Myers",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-b44e368e24"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "fl-central-rock-orlando",
+   "line": 3,
+   "name": "Central Rock Gym – Orlando",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-cc9bdf12ab"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate fl-rox-orlando \"ROX Climbing Gym (Lake Nona Performance Club)\": related names \"Central Rock Gym – Orlando\" / \"Orlando Rock\" 14793 m apart",
+     "ids": [
+      "fl-rox-orlando"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "fl-rox-orlando"
+   ]
+  },
+  {
+   "cid": "fl-central-rock-tampa",
+   "line": 1,
+   "name": "Central Rock Gym – Tampa",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-d235f59aea"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "fl-cornerstone-rock-gym",
+   "line": 24,
+   "name": "Cornerstone Rock Gym",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-0b9c383efa"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "fl-daytona-climbing-company",
+   "line": 67,
+   "name": "Daytona Climbing Company",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-80b1db68b4"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "fl-dynoclimb-deland",
+   "line": 21,
+   "name": "DynoClimb",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-e3e0f197a6"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "fl-edge-rock-gym-jacksonville",
+   "line": 17,
+   "name": "The Edge Rock Gym – Jacksonville",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-b8a62fe579"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "fl-edge-rock-gym-miami",
+   "line": 10,
+   "name": "The Edge Rock Gym – Miami",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-e5f92d09db"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "fl-hexrock-sarasota",
+   "line": 14,
+   "name": "HEXROCK Climbing",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-43260b83d3"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "fl-high-point-orlando",
+   "line": 6,
+   "name": "High Point Climbing & Fitness – Orlando",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-8c098943d0"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "fl-las-rocas",
+   "line": 9,
+   "name": "Las Rocas Climbing",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-da0b46ff43"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "fl-on-the-edge-melbourne",
+   "line": 25,
+   "name": "On The Edge Rock Climbing Gym",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-c2cacb5509"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "fl-projectrock",
+   "line": 11,
+   "name": "projectROCK",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-39318a79cb"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "fl-rock-out-destin",
+   "line": 22,
+   "name": "Rock Out Climbing Gym",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-c91e7bd02c"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "fl-rox-orlando",
+   "line": 23,
+   "name": "ROX Climbing Gym (Lake Nona Performance Club)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-11a94254a5"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate fl-central-rock-orlando \"Central Rock Gym – Orlando\": related names \"Orlando Rock\" / \"Central Rock Gym – Orlando\" 14793 m apart",
+     "ids": [
+      "fl-central-rock-orlando"
+     ]
+    }
+   ],
+   "review_ids": [
+    "fl-central-rock-orlando"
+   ]
+  },
+  {
+   "cid": "fl-stone-climbing-jacksonville",
+   "line": 15,
+   "name": "Stone Climbing – Jacksonville",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-6de0ea4507"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "fl-the-knot-gainesville",
+   "line": 19,
+   "name": "The Knot Climbing Gym",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-df8d5a97fa"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "fl-velocity-climbing",
+   "line": 8,
+   "name": "Velocity Climbing",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-0ecd718597"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "fl-vertical-ventures-st-pete",
+   "line": 13,
+   "name": "Vertical Ventures",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-9374dd90c7"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "la-new-orleans-boulder-lounge",
+   "line": 55,
+   "name": "New Orleans Boulder Lounge",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-d860013f2f"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "la-risen-rock-climbing-gym",
+   "line": 57,
+   "name": "Risen Rock Climbing Gym",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-992692de06"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "la-southern-stone-indoor-climbing",
+   "line": 58,
+   "name": "Southern Stone Indoor Climbing",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-2128925ed6"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "la-uptown-climbing",
+   "line": 56,
+   "name": "Uptown Climbing",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-858db9a57b"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "nc-bigfoot-climbing-gym",
+   "line": 40,
+   "name": "Bigfoot Climbing Gym",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-825771ca52"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "nc-brevard-rock-gym",
+   "line": 41,
+   "name": "Brevard Rock Gym",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-05e0c1e557"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "nc-center-45",
+   "line": 36,
+   "name": "Center 45 Climbing",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-67b9785683"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "nc-cliff-hangers-mooresville",
+   "line": 37,
+   "name": "Cliff Hangers Climbing and Fitness",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-3b3d7d1cef"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "nc-cultivate-foundy-street",
+   "line": 38,
+   "name": "Cultivate Climbing – Foundy Street",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-559897cf32"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "nc-cultivate-the-bunker",
+   "line": 39,
+   "name": "Cultivate Climbing – The Bunker",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-253268432a"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "nc-firsthand-climbing",
+   "line": 44,
+   "name": "FirstHand Climbing",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-e9dba71ba2"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "nc-inner-peaks-matthews",
+   "line": 33,
+   "name": "Inner Peaks – Matthews",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-9679fde155"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "nc-inner-peaks-noda",
+   "line": 32,
+   "name": "Inner Peaks – NoDa",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-cc6ae437da"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate nc-inner-peaks-south-end \"Inner Peaks – South End\": related names \"Inner Peaks – NoDa\" / \"Inner Peaks Climbing Center\" 5304 m apart",
+     "ids": [
+      "nc-inner-peaks-south-end"
+     ]
+    }
+   ],
+   "review_ids": [
+    "nc-inner-peaks-south-end"
+   ]
+  },
+  {
+   "cid": "nc-inner-peaks-south-end",
+   "line": 31,
+   "name": "Inner Peaks – South End",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-4a7882f6b0"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate nc-inner-peaks-noda \"Inner Peaks – NoDa\": related names \"Inner Peaks Climbing Center\" / \"Inner Peaks – NoDa\" 5304 m apart",
+     "ids": [
+      "nc-inner-peaks-noda"
+     ]
+    }
+   ],
+   "review_ids": [
+    "nc-inner-peaks-noda"
+   ]
+  },
+  {
+   "cid": "nc-progression-climbing",
+   "line": 34,
+   "name": "Progression Climbing",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-28b4bfa1e6"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "nc-ruckus-climbing-gym",
+   "line": 43,
+   "name": "Ruckus Climbing Gym",
+   "class": "blocked",
+   "suggested": "reject closed",
+   "importer": {
+    "class": "new",
+    "id": "g-99ef430930"
+   },
+   "blockers": [
+    {
+     "code": "closed",
+     "detail": "status_claim is closed"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "nc-the-boulder-garden",
+   "line": 35,
+   "name": "The Boulder Garden",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-0dfe2a4119"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "nc-the-climbing-place",
+   "line": 42,
+   "name": "The Climbing Place",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-16c06a619c"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "nc-triangle-rock-club-durham",
+   "line": 28,
+   "name": "Triangle Rock Club – Durham",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-97f314f31e"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "nc-triangle-rock-club-fayetteville",
+   "line": 30,
+   "name": "Triangle Rock Club – Fayetteville",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-c3281c4833"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "nc-triangle-rock-club-morrisville",
+   "line": 26,
+   "name": "Triangle Rock Club – Morrisville",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-6c6ac002e4"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "nc-triangle-rock-club-raleigh",
+   "line": 27,
+   "name": "Triangle Rock Club – Raleigh",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-b8c730b3a7"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "nc-triangle-rock-club-salvage-yard",
+   "line": 29,
+   "name": "Triangle Rock Club – Salvage Yard",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-2d1d95c0a7"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ok-blocworks-edmond",
+   "line": 60,
+   "name": "Blocworks – Edmond",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-4703549eef"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate ok-blocworks-midtown has the same website",
+     "ids": [
+      "ok-blocworks-midtown"
+     ]
+    }
+   ],
+   "review_ids": [
+    "ok-blocworks-midtown"
+   ]
+  },
+  {
+   "cid": "ok-blocworks-midtown",
+   "line": 61,
+   "name": "Blocworks – Midtown",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-bbad29dc93"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate ok-blocworks-edmond has the same website",
+     "ids": [
+      "ok-blocworks-edmond"
+     ]
+    }
+   ],
+   "review_ids": [
+    "ok-blocworks-edmond"
+   ]
+  },
+  {
+   "cid": "ok-climb-tulsa",
+   "line": 59,
+   "name": "Climb Tulsa",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-d5b7c05b27"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ok-gravity-bear-tulsa",
+   "line": 62,
+   "name": "Gravity Bear Bouldering Gym",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-179440d317"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ok-rose-rock-climbing",
+   "line": 63,
+   "name": "Rose Rock Climbing",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-18e9a6aff6"
+   },
+   "flags": [
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "ok-the-silos-climbing",
+   "line": 69,
+   "name": "The Silos Climbing, Yoga and Fitness",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-f2eb421088"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "no-bouldering-evidence",
+     "detail": "bouldering is \"yes\" but no primary source confirms it"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "ok-threshold-climbing-okc",
+   "line": 64,
+   "name": "Threshold Climbing + Fitness + Yoga",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-55c05fe217"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "sc-blochaven-greenville",
+   "line": 47,
+   "name": "BlocHaven",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-3e1daf2704"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "sc-climb-at-blue-ridge",
+   "line": 46,
+   "name": "Climb @ Blue Ridge",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-c60bb027ad"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "sc-coastal-climbing",
+   "line": 45,
+   "name": "Coastal Climbing",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-7a32b4535f"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "sc-projectrock-easley",
+   "line": 48,
+   "name": "projectROCK Easley",
+   "class": "blocked",
+   "suggested": "reject closed",
+   "importer": {
+    "class": "new",
+    "id": "g-220de3d128"
+   },
+   "blockers": [
+    {
+     "code": "closed",
+     "detail": "status_claim is closed"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "no-bouldering-evidence",
+     "detail": "bouldering is \"yes\" but no primary source confirms it"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "wv-energy-rock-gym",
+   "line": 66,
+   "name": "eNeRGy Rock Gym",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-08725caec9"
+   },
+   "blockers": [
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "wv-gripped-fitness",
+   "line": 68,
+   "name": "Gripped Fitness",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-8c84c5c4ea"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "wv-outside-in-beckley",
+   "line": 65,
+   "name": "Outside In Climbing Gym",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-196602369a"
+   },
+   "review_ids": []
+  }
+ ],
+ "reconcile_sha256": "2e7e841885f04c161a92e113833f385f0371c1ecaa61e86a0d76bf90c0870e43"
+}

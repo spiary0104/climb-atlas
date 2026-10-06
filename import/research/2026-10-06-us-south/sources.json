@@ -1,0 +1,418 @@
+{
+ "schema_version": 1,
+ "sources": {
+  "OSM": {
+   "kind": "map-data",
+   "title": "OpenStreetMap (Overpass extract 2026-10-06)",
+   "url": "https://www.openstreetmap.org/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "NOM": {
+   "kind": "map-data",
+   "title": "OpenStreetMap Nominatim (house-number geocode of the official address, 2026-10-06)",
+   "url": "https://nominatim.openstreetmap.org/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "CRG": {
+   "kind": "chain-store-list",
+   "title": "Central Rock Gym (chain site, location list and location pages)",
+   "url": "https://centralrockgym.com/locations/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "BLUESWAN": {
+   "kind": "official-site",
+   "title": "Blue Swan Boulders",
+   "url": "https://blueswanboulders.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "HPC": {
+   "kind": "chain-store-list",
+   "title": "High Point Climbing and Fitness (chain site, Orlando page)",
+   "url": "https://www.highpointclimbing.com/locations/orlando",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "AIGUILLE": {
+   "kind": "official-site",
+   "title": "Aiguille Climbing Gym",
+   "url": "https://www.aiguille.com/home",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "VELOCITY": {
+   "kind": "official-site",
+   "title": "Velocity Climbing",
+   "url": "https://www.velocityclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "LASROCAS": {
+   "kind": "official-site",
+   "title": "Las Rocas Climbing",
+   "url": "https://lasrocasclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "EDGEMIA": {
+   "kind": "official-site",
+   "title": "The Edge Rock Gym - Miami",
+   "url": "https://www.theedgerockgymmiami.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "PROJECTROCK": {
+   "kind": "official-site",
+   "title": "projectROCK (Oakland Park)",
+   "url": "https://projectrock.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "BOULDERBLOC": {
+   "kind": "official-site",
+   "title": "Boulder Bloc Gym",
+   "url": "https://www.boulderblocgym.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "VERTVENT": {
+   "kind": "official-site",
+   "title": "Vertical Ventures",
+   "url": "https://verticalventures.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "HEXROCK": {
+   "kind": "official-site",
+   "title": "HEXROCK Climbing",
+   "url": "https://www.hexrockclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "STONE": {
+   "kind": "official-site",
+   "title": "Stone Climbing",
+   "url": "https://www.stoneclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "BLOCKER": {
+   "kind": "official-site",
+   "title": "Blocker Boulders",
+   "url": "https://www.blockerboulders.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "EDGEJAX": {
+   "kind": "official-site",
+   "title": "The Edge Rock Gym (Jacksonville)",
+   "url": "https://theedgerockgym.com/home/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "BEACHESRG": {
+   "kind": "official-site",
+   "title": "Beaches Rock Gym",
+   "url": "https://www.beachesrockgym.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "KNOT": {
+   "kind": "official-site",
+   "title": "The Knot Climbing Gym",
+   "url": "https://climbtheknot.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "ALCHEMY": {
+   "kind": "official-site",
+   "title": "Alchemy Climbing",
+   "url": "https://www.alchemyclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "DYNO": {
+   "kind": "official-site",
+   "title": "DynoClimb",
+   "url": "https://www.dynoclimb.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "ROCKOUT": {
+   "kind": "official-site",
+   "title": "Rock Out Climbing Gym",
+   "url": "https://www.rockoutclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "ROX": {
+   "kind": "official-site",
+   "title": "ROX Climbing Gym at Lake Nona Performance Club",
+   "url": "https://lakenonaperformanceclub.com/program/rox-climbing-gym/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "CORNERSTONE": {
+   "kind": "official-site",
+   "title": "Cornerstone Rock Gym",
+   "url": "https://cornerstonerockgym.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "ONEDGE": {
+   "kind": "official-site",
+   "title": "On The Edge Rock Climbing Gym",
+   "url": "https://ontheedgerockclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "TRC": {
+   "kind": "chain-store-list",
+   "title": "Triangle Rock Club (chain home page, all locations)",
+   "url": "https://trianglerockclub.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "IP": {
+   "kind": "official-site",
+   "title": "Inner Peaks",
+   "url": "https://innerpeaks.com/south-end/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "PROGRESSION": {
+   "kind": "official-site",
+   "title": "Progression Climbing",
+   "url": "http://climbprogression.com/index.html",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "BGARDEN": {
+   "kind": "official-site",
+   "title": "The Boulder Garden",
+   "url": "https://www.thebouldergarden.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "CENTER45": {
+   "kind": "official-site",
+   "title": "Center 45 Climbing",
+   "url": "https://www.center45.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "CLIFFH": {
+   "kind": "official-site",
+   "title": "Cliff Hangers Climbing",
+   "url": "https://www.cliffhangersclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "CULT": {
+   "kind": "official-site",
+   "title": "Cultivate Climbing",
+   "url": "https://cultivateclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "BIGFOOT": {
+   "kind": "official-site",
+   "title": "Bigfoot Climbing Gym",
+   "url": "https://www.bigfootclimbinggym.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "BREVARD": {
+   "kind": "official-site",
+   "title": "Brevard Rock Gym",
+   "url": "https://www.brevardrockgym.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "CLIMBPLACE": {
+   "kind": "official-site",
+   "title": "The Climbing Place (Fayetteville)",
+   "url": "https://www.theclimbingplace.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "RUCKUS": {
+   "kind": "official-site",
+   "title": "Ruckus Climbing Gym",
+   "url": "https://ruckusclimbinggym.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "FIRSTHAND": {
+   "kind": "official-site",
+   "title": "FirstHand Climbing",
+   "url": "https://www.firsthandclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "COASTAL": {
+   "kind": "official-site",
+   "title": "Coastal Climbing",
+   "url": "https://www.coastalclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "CLIMBBR": {
+   "kind": "official-site",
+   "title": "Climb @ Blue Ridge",
+   "url": "https://www.climbbr.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "BLOCHAVEN": {
+   "kind": "official-site",
+   "title": "BlocHaven",
+   "url": "https://www.blochaven.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "LRCC": {
+   "kind": "official-site",
+   "title": "Little Rock Climbing Center",
+   "url": "https://www.littlerockclimbingcenter.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "BNB": {
+   "kind": "official-site",
+   "title": "Boulders and Brews",
+   "url": "https://bouldersandbrews.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "CLIMBGYMS": {
+   "kind": "chain-store-list",
+   "title": "The Climb Gyms (Bentonville)",
+   "url": "https://theclimbgyms.com/bentonville/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "CONWAY": {
+   "kind": "official-site",
+   "title": "Climb Conway",
+   "url": "https://www.climbconway.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "OZARK": {
+   "kind": "official-site",
+   "title": "Ozark Climbing Gym (Stoneyard)",
+   "url": "https://stoneyardclimbing.com/ozark-climbing-gym",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "VERTHOR": {
+   "kind": "official-site",
+   "title": "Vertical Horizons Climbing Gym",
+   "url": "https://www.verticalhorizonsclimbinggym.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "NOBL": {
+   "kind": "official-site",
+   "title": "New Orleans Boulder Lounge",
+   "url": "https://www.climbnobl.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "UPTOWN": {
+   "kind": "official-site",
+   "title": "Uptown Climbing",
+   "url": "https://www.uptownclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "RISEN": {
+   "kind": "official-site",
+   "title": "Risen Rock Climbing Gym",
+   "url": "https://www.risenrockclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "SSTONE": {
+   "kind": "official-site",
+   "title": "Southern Stone Indoor Climbing",
+   "url": "https://www.southernstoneclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "CLIMBTULSA": {
+   "kind": "official-site",
+   "title": "Climb Tulsa",
+   "url": "https://climbtulsa.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "BLOCWORKS": {
+   "kind": "official-site",
+   "title": "Blocworks Climbing Gym",
+   "url": "https://www.climbblocworks.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "GBEAR": {
+   "kind": "official-site",
+   "title": "Gravity Bear Bouldering Gym",
+   "url": "https://www.climbgravitybear.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "ROSEROCK": {
+   "kind": "official-site",
+   "title": "Rose Rock Climbing",
+   "url": "https://www.roserockclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "THRESHOLD": {
+   "kind": "official-site",
+   "title": "Threshold Climbing",
+   "url": "https://www.thresholdclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "OUTSIDEIN": {
+   "kind": "official-site",
+   "title": "Chocolate Moose WV / Outside-In Gym",
+   "url": "https://chocolatemoosewv.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "ENERGY": {
+   "kind": "official-site",
+   "title": "eNeRGy Rock Gym",
+   "url": "https://energyrockgym.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "DCC": {
+   "kind": "official-site",
+   "title": "Daytona Climbing Company",
+   "url": "https://www.daytonaclimbingcompany.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "GRIPPED": {
+   "kind": "official-site",
+   "title": "Gripped Fitness",
+   "url": "https://www.grippedfitness.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "INDOORCG": {
+   "kind": "directory",
+   "title": "indoorclimbinggym.com listing for The Silos",
+   "url": "https://www.indoorclimbinggym.com/gyms/the-silos-climbing-yoga-and-fitness-oklahoma-city",
+   "language": "en",
+   "accessed": "2026-10-06"
+  }
+ }
+}

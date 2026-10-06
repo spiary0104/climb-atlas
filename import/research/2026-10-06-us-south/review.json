@@ -1,0 +1,303 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-06-us-south",
+ "reviewer": "Spiar (owner); decisions drafted by Claude (AI) on the owner's instruction, pending owner sign-off",
+ "reviewed": "2026-10-06",
+ "decisions": {
+  "ar-boulders-and-brews": {
+   "decision": "accept",
+   "reason": "Primary source read on 2026-10-06 (BNB): open, address and bouldering confirmed; pin from the gym's own OSM element way/468186904."
+  },
+  "ar-climb-bentonville": {
+   "decision": "accept",
+   "reason": "Primary source read on 2026-10-06 (CLIMBGYMS): open, address and bouldering confirmed; pin from the gym's own OSM element way/866141126."
+  },
+  "ar-climb-conway": {
+   "decision": "accept",
+   "reason": "Only one source: the gym's own site (read 2026-10-06), which gives the address, hours and bouldering and carries the map pin used for the coordinates. Nothing else in Bouldeer is within 150 m or has a related name nearby. Primary source read on 2026-10-06 (CONWAY): open, address and bouldering confirmed; pin from the official site's own map pin.",
+   "reviewed_against": []
+  },
+  "ar-little-rock-climbing-center": {
+   "decision": "accept",
+   "reason": "Primary source read on 2026-10-06 (LRCC): open, address and bouldering confirmed; pin from the gym's own OSM element node/10693864454."
+  },
+  "ar-ozark-climbing-gym": {
+   "decision": "accept",
+   "reason": "Primary source read on 2026-10-06 (OZARK): open, address and bouldering confirmed; pin from a Nominatim house-number match of the official address."
+  },
+  "ar-vertical-horizons-fort-smith": {
+   "decision": "accept",
+   "reason": "Primary source read on 2026-10-06 (VERTHOR): open, address and bouldering confirmed; pin from the gym's own OSM element node/11914333923."
+  },
+  "fl-aiguille": {
+   "decision": "accept",
+   "reason": "Primary source read on 2026-10-06 (AIGUILLE): open, address and bouldering confirmed; pin from the gym's own OSM element node/2853709364."
+  },
+  "fl-alchemy-climbing": {
+   "decision": "accept",
+   "reason": "Primary source read on 2026-10-06 (ALCHEMY): open, address and bouldering confirmed; pin from the gym's own OSM element way/175342789."
+  },
+  "fl-beaches-rock-gym": {
+   "decision": "accept",
+   "reason": "Primary source read on 2026-10-06 (BEACHESRG): open, address and bouldering confirmed; pin from a Nominatim house-number match of the official address."
+  },
+  "fl-blocker-boulders": {
+   "decision": "accept",
+   "reason": "Primary source read on 2026-10-06 (BLOCKER): open, address and bouldering confirmed; pin from the gym's own OSM element node/14080539202."
+  },
+  "fl-blue-swan-boulders": {
+   "decision": "accept",
+   "reason": "Primary source read on 2026-10-06 (BLUESWAN): open, address and bouldering confirmed; pin from the gym's own OSM element node/8960679281."
+  },
+  "fl-boulder-bloc-gym": {
+   "decision": "accept",
+   "reason": "Primary source read on 2026-10-06 (BOULDERBLOC): open, address and bouldering confirmed; pin from the gym's own OSM element node/13427587101."
+  },
+  "fl-central-rock-citrus-park": {
+   "decision": "accept",
+   "reason": "Only one source: the chain's own location page (read 2026-10-06), which gives the address, hours and bouldering and carries the map pin used for the coordinates. Nothing else in Bouldeer is within 150 m or has a related name nearby. Primary source read on 2026-10-06 (CRG): open, address and bouldering confirmed; pin from the official site's own map pin.",
+   "reviewed_against": []
+  },
+  "fl-central-rock-fort-myers": {
+   "decision": "accept",
+   "reason": "Primary source read on 2026-10-06 (CRG): open, address and bouldering confirmed; pin from the gym's own OSM element node/14246529701."
+  },
+  "fl-central-rock-orlando": {
+   "decision": "accept",
+   "reason": "Related-name flag is a different gym: ROX Climbing Gym (alias Orlando Rock, fl-rox-orlando, deferred) is a separate operator inside the Lake Nona Performance Club, 14.8 km away at 6775 Chopra Terrace; Central Rock Gym is on W Sand Lake Rd. Single source: the chain own Orlando page (hours, \"400 LN FT of Bouldering\", address and the map pin used for the coordinates). Primary source read on 2026-10-06 (CRG): open, address and bouldering confirmed; pin from the chain Orlando page map (maps?q=28.4488954,-81.4044588).",
+   "reviewed_against": [
+    "fl-rox-orlando"
+   ]
+  },
+  "fl-central-rock-tampa": {
+   "decision": "accept",
+   "reason": "Primary source read on 2026-10-06 (CRG): open, address and bouldering confirmed; pin from the gym's own OSM element node/14054013543."
+  },
+  "fl-cornerstone-rock-gym": {
+   "decision": "defer",
+   "reason": "Bouldering is only mentioned in visitor reviews quoted on the home page, not by the gym itself."
+  },
+  "fl-daytona-climbing-company": {
+   "decision": "accept",
+   "reason": "Primary source read on 2026-10-06 (DCC): open, address and bouldering confirmed; pin from a Nominatim house-number match of the official address."
+  },
+  "fl-dynoclimb-deland": {
+   "decision": "accept",
+   "reason": "Primary source read on 2026-10-06 (DYNO): open, address and bouldering confirmed; pin from a Nominatim house-number match of the official address."
+  },
+  "fl-edge-rock-gym-jacksonville": {
+   "decision": "accept",
+   "reason": "Primary source read on 2026-10-06 (EDGEJAX): open, address and bouldering confirmed; pin from the gym's own OSM element way/519270759."
+  },
+  "fl-edge-rock-gym-miami": {
+   "decision": "accept",
+   "reason": "Primary source read on 2026-10-06 (EDGEMIA): open, address and bouldering confirmed; pin from a Nominatim house-number match of the official address."
+  },
+  "fl-hexrock-sarasota": {
+   "decision": "accept",
+   "reason": "Primary source read on 2026-10-06 (HEXROCK): open, address and bouldering confirmed; pin from a Nominatim house-number match of the official address."
+  },
+  "fl-high-point-orlando": {
+   "decision": "accept",
+   "reason": "Primary source read on 2026-10-06 (HPC): open, address and bouldering confirmed; pin from a Nominatim house-number match of the official address."
+  },
+  "fl-las-rocas": {
+   "decision": "accept",
+   "reason": "Primary source read on 2026-10-06 (LASROCAS): open, address and bouldering confirmed; pin from a Nominatim house-number match of the official address."
+  },
+  "fl-on-the-edge-melbourne": {
+   "decision": "defer",
+   "reason": "The gym is open, but nothing on its own site establishes a bouldering offering."
+  },
+  "fl-projectrock": {
+   "decision": "accept",
+   "reason": "Primary source read on 2026-10-06 (PROJECTROCK): open, address and bouldering confirmed; pin from the gym's own OSM element node/10290261309."
+  },
+  "fl-rock-out-destin": {
+   "decision": "accept",
+   "reason": "Primary source read on 2026-10-06 (ROCKOUT): open, address and bouldering confirmed; pin from a Nominatim house-number match of the official address."
+  },
+  "fl-rox-orlando": {
+   "decision": "defer",
+   "reason": "Climbing gym inside a performance club; the pages found price classes for non-members but never state that non-members can buy a day pass."
+  },
+  "fl-stone-climbing-jacksonville": {
+   "decision": "accept",
+   "reason": "Primary source read on 2026-10-06 (STONE): open, address and bouldering confirmed; pin from a Nominatim house-number match of the official address."
+  },
+  "fl-the-knot-gainesville": {
+   "decision": "accept",
+   "reason": "Primary source read on 2026-10-06 (KNOT): open, address and bouldering confirmed; pin from the gym's own OSM element node/13413871275."
+  },
+  "fl-velocity-climbing": {
+   "decision": "accept",
+   "reason": "Primary source read on 2026-10-06 (VELOCITY): open, address and bouldering confirmed; pin from the gym's own OSM element node/12335926701."
+  },
+  "fl-vertical-ventures-st-pete": {
+   "decision": "accept",
+   "reason": "Primary source read on 2026-10-06 (VERTVENT): open, address and bouldering confirmed; pin from the gym's own OSM element node/6699140476."
+  },
+  "la-new-orleans-boulder-lounge": {
+   "decision": "accept",
+   "reason": "Primary source read on 2026-10-06 (NOBL): open, address and bouldering confirmed; pin from the gym's own OSM element node/4108850788."
+  },
+  "la-risen-rock-climbing-gym": {
+   "decision": "accept",
+   "reason": "Primary source read on 2026-10-06 (RISEN): open, address and bouldering confirmed; pin from the gym's own OSM element way/1027125211."
+  },
+  "la-southern-stone-indoor-climbing": {
+   "decision": "accept",
+   "reason": "Primary source read on 2026-10-06 (SSTONE): open, address and bouldering confirmed; pin from a Nominatim house-number match of the official address."
+  },
+  "la-uptown-climbing": {
+   "decision": "accept",
+   "reason": "Primary source read on 2026-10-06 (UPTOWN): open, address and bouldering confirmed; pin from the gym's own OSM element way/1180015306."
+  },
+  "nc-bigfoot-climbing-gym": {
+   "decision": "accept",
+   "reason": "Primary source read on 2026-10-06 (BIGFOOT): open, address and bouldering confirmed; pin from a Nominatim house-number match of the official address."
+  },
+  "nc-brevard-rock-gym": {
+   "decision": "accept",
+   "reason": "Primary source read on 2026-10-06 (BREVARD): open, address and bouldering confirmed; pin from a Nominatim house-number match of the official address."
+  },
+  "nc-center-45": {
+   "decision": "accept",
+   "reason": "Primary source read on 2026-10-06 (CENTER45): open, address and bouldering confirmed; pin from the gym's own OSM element node/11148611383."
+  },
+  "nc-cliff-hangers-mooresville": {
+   "decision": "accept",
+   "reason": "Primary source read on 2026-10-06 (CLIFFH): open, address and bouldering confirmed; pin from the gym's own OSM element way/617281530."
+  },
+  "nc-cultivate-foundy-street": {
+   "decision": "accept",
+   "reason": "Primary source read on 2026-10-06 (CULT): open, address and bouldering confirmed; pin from a Nominatim house-number match of the official address."
+  },
+  "nc-cultivate-the-bunker": {
+   "decision": "accept",
+   "reason": "Primary source read on 2026-10-06 (CULT): open, address and bouldering confirmed; pin from the gym's own OSM element node/13705778701."
+  },
+  "nc-firsthand-climbing": {
+   "decision": "defer",
+   "reason": "Ownership/name change (Rock Box Bouldering to FirstHand) with two sites online and a 2022 footer; current operating status is unclear."
+  },
+  "nc-inner-peaks-matthews": {
+   "decision": "accept",
+   "reason": "Primary source read on 2026-10-06 (IP): open, address and bouldering confirmed; pin from the gym's own OSM element way/323180113."
+  },
+  "nc-inner-peaks-noda": {
+   "decision": "accept",
+   "reason": "Sister location of the same operator: a separate site with its own page, address and hours, kilometres from the other candidate. Primary source read on 2026-10-06 (IP): open, address and bouldering confirmed; pin from the gym's own OSM element node/13051541868.",
+   "reviewed_against": [
+    "nc-inner-peaks-south-end"
+   ]
+  },
+  "nc-inner-peaks-south-end": {
+   "decision": "accept",
+   "reason": "Sister location of the same operator: a separate site with its own page, address and hours, kilometres from the other candidate. Primary source read on 2026-10-06 (IP): open, address and bouldering confirmed; pin from the gym's own OSM element way/432915335.",
+   "reviewed_against": [
+    "nc-inner-peaks-noda"
+   ]
+  },
+  "nc-progression-climbing": {
+   "decision": "accept",
+   "reason": "Primary source read on 2026-10-06 (PROGRESSION): open, address and bouldering confirmed; pin from the gym's own OSM element way/44323505."
+  },
+  "nc-ruckus-climbing-gym": {
+   "decision": "reject",
+   "reason_code": "closed",
+   "reason": "Official site: permanently closed as of 9/1/2026."
+  },
+  "nc-the-boulder-garden": {
+   "decision": "accept",
+   "reason": "Primary source read on 2026-10-06 (BGARDEN): open, address and bouldering confirmed; pin from the gym's own OSM element node/13039533001."
+  },
+  "nc-the-climbing-place": {
+   "decision": "accept",
+   "reason": "Primary source read on 2026-10-06 (CLIMBPLACE): open, address and bouldering confirmed; pin from the gym's own OSM element node/3687709714."
+  },
+  "nc-triangle-rock-club-durham": {
+   "decision": "accept",
+   "reason": "Primary source read on 2026-10-06 (TRC): open, address and bouldering confirmed; pin from the gym's own OSM element node/10604904232."
+  },
+  "nc-triangle-rock-club-fayetteville": {
+   "decision": "accept",
+   "reason": "Primary source read on 2026-10-06 (TRC): open, address and bouldering confirmed; pin from a Nominatim house-number match of the official address."
+  },
+  "nc-triangle-rock-club-morrisville": {
+   "decision": "accept",
+   "reason": "Primary source read on 2026-10-06 (TRC): open, address and bouldering confirmed; pin from the gym's own OSM element way/32076945."
+  },
+  "nc-triangle-rock-club-raleigh": {
+   "decision": "accept",
+   "reason": "Primary source read on 2026-10-06 (TRC): open, address and bouldering confirmed; pin from the gym's own OSM element way/47837097."
+  },
+  "nc-triangle-rock-club-salvage-yard": {
+   "decision": "accept",
+   "reason": "Primary source read on 2026-10-06 (TRC): open, address and bouldering confirmed; pin from the gym's own OSM element way/47838087."
+  },
+  "ok-blocworks-edmond": {
+   "decision": "accept",
+   "reason": "Two locations of one operator sharing a website; the site lists both with different addresses. Primary source read on 2026-10-06 (BLOCWORKS): open, address and bouldering confirmed; pin from the gym's own OSM element node/13515941516.",
+   "reviewed_against": [
+    "ok-blocworks-midtown"
+   ]
+  },
+  "ok-blocworks-midtown": {
+   "decision": "accept",
+   "reason": "Two locations of one operator sharing a website; the site lists both with different addresses. Primary source read on 2026-10-06 (BLOCWORKS): open, address and bouldering confirmed; pin from the gym's own OSM element way/1459660085.",
+   "reviewed_against": [
+    "ok-blocworks-edmond"
+   ]
+  },
+  "ok-climb-tulsa": {
+   "decision": "accept",
+   "reason": "Primary source read on 2026-10-06 (CLIMBTULSA): open, address and bouldering confirmed; pin from the gym's own OSM element way/1006327783."
+  },
+  "ok-gravity-bear-tulsa": {
+   "decision": "accept",
+   "reason": "Primary source read on 2026-10-06 (GBEAR): open, address and bouldering confirmed; pin from a Nominatim house-number match of the official address."
+  },
+  "ok-rose-rock-climbing": {
+   "decision": "defer",
+   "reason": "Only a street-level pin exists (Nominatim finds the road, Washington Drive, but not the building); a street-level pin is not good enough for a new gym."
+  },
+  "ok-the-silos-climbing": {
+   "decision": "defer",
+   "reason": "Only a directory lists it as open; the operator site's Silos pages are gone (404), so its current status is unknown."
+  },
+  "ok-threshold-climbing-okc": {
+   "decision": "accept",
+   "reason": "Primary source read on 2026-10-06 (THRESHOLD): open, address and bouldering confirmed; pin from a Nominatim house-number match of the official address."
+  },
+  "sc-blochaven-greenville": {
+   "decision": "accept",
+   "reason": "Primary source read on 2026-10-06 (BLOCHAVEN): open, address and bouldering confirmed; pin from the gym's own OSM element node/8482644094."
+  },
+  "sc-climb-at-blue-ridge": {
+   "decision": "accept",
+   "reason": "Primary source read on 2026-10-06 (CLIMBBR): open, address and bouldering confirmed; pin from the gym's own OSM element way/701573153."
+  },
+  "sc-coastal-climbing": {
+   "decision": "accept",
+   "reason": "Primary source read on 2026-10-06 (COASTAL): open, address and bouldering confirmed; pin from the gym's own OSM element node/13676574481."
+  },
+  "sc-projectrock-easley": {
+   "decision": "reject",
+   "reason_code": "closed",
+   "reason": "Official location page says projectROCK Easley has closed."
+  },
+  "wv-energy-rock-gym": {
+   "decision": "defer",
+   "reason": "The site's own text could not be read (script-rendered) so open status, hours and address are unverified."
+  },
+  "wv-gripped-fitness": {
+   "decision": "accept",
+   "reason": "Primary source read on 2026-10-06 (GRIPPED): open, address and bouldering confirmed; pin from a Nominatim house-number match of the official address."
+  },
+  "wv-outside-in-beckley": {
+   "decision": "accept",
+   "reason": "Primary source read on 2026-10-06 (OUTSIDEIN): open, address and bouldering confirmed; pin from the gym's own OSM element node/12851748920."
+  }
+ }
+}
