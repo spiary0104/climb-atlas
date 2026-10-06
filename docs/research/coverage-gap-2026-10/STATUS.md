@@ -2,12 +2,14 @@
 
 Branch `research/2026-10-06-coverage-gap` (no PR, nothing applied). Rankings: `ranking-countries.md`, `ranking-cities.md`; estimates: the four JSON files.
 
-Merged here (staged, validated, planned, read-only dry-run passed): de-south 67, us-south 60, us-midwest 58, us-west 53, london 18 = 256 new gyms.
+Merged here (staged, validated, planned, read-only dry-run passed): de-south 67, us-south 60, us-midwest 58, us-west 53, jp-kansai 32, london 18 = 288 new gyms.
 
 Still to merge (worker branches, pushed when each worker finishes): research/cg-us-northeast, cg-canada,
-cg-de-west-north, cg-spain-cities, cg-france-cities, cg-jp-kansai, cg-jp-chubu, cg-jp-kanto, cg-jp-kyushu-hokkaido, cg-kr-seoul,
+cg-de-west-north, cg-spain-cities, cg-france-cities, cg-jp-chubu, cg-jp-kanto, cg-jp-kyushu-hokkaido, cg-kr-seoul,
 cg-benelux, cg-at-cz, cg-poland. For each: merge, then re-plan ALL batches together (cross-batch duplicates), nearest-live-gym check.
 
 Next wave (not started): Italy, Brazil, Korea outside Seoul (Gyeonggi, Busan, Incheon, Daegu), Australia (Sydney, Melbourne),
 NY/LA metros, Russia. China blocked on the CN source decision.
 Tooling: WebSearch quota (200/session) ran out; Nominatim rate-limits the shared IP (use Photon/GSI/BAN/PDOK).
+
+Pin-fix follow-ups collected so far (for one final location batch): JP seed-414 Roca (1,757 m), seed-415 Gravity Research Umeda (408 m), WAGOMU (unverified ~4 km); DE Blockhelden Bubenreuth vs Erlangen (check).
