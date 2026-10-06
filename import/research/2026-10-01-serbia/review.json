@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-01-serbia",
+ "reviewer": "Spiar (owner); decisions drafted by Claude (AI) on the owner's instruction, pending owner sign-off",
+ "reviewed": "2026-10-06",
+ "decisions": {
+  "rs-001": {
+   "decision": "same-as",
+   "same_as": "seed-1668",
+   "reason": "Same gym: 'Sektor44' vs the existing 'Penjacki centar Sektor44', 0 m apart, identical address (Nehruova 51b, Novi Beograd) and the same OSM-based pin."
+  },
+  "rs-002": {
+   "decision": "same-as",
+   "same_as": "seed-1670",
+   "reason": "Importer same-name match, 152 m (Adrenalin Climbing Club, SPENS, Novi Sad)."
+  },
+  "rs-003": {
+   "decision": "defer",
+   "reason": "SKC Baza: last gym-specific post is from Oct 2025 (the 2026 posts are venue concerts and events); the bio says the boulder gym is open but this is unconfirmed for 2026. Kept out under the low-confidence rule. See MANUAL-CHECK.md."
+  },
+  "rs-004": {
+   "decision": "defer",
+   "reason": "Pulse Climbing Hub: no primary post states bouldering (own Instagram shows courses, routesetting highlights and kids programmes; directory pages give no discipline). Possible second address in Zemun unverified. See MANUAL-CHECK.md."
+  },
+  "rs-005": {
+   "decision": "defer",
+   "reason": "PAEK Nis: club-run hall in a school sports hall, bookable per session, but the last dated post on the club site is 21 Dec 2025 and the training page is undated, so there is no 2026 sign that the sessions still run. See MANUAL-CHECK.md."
+  }
+ }
+}

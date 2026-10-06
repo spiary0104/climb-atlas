@@ -3,8 +3,8 @@
  "section_id": "2026-10-01-peru",
  "inputs": {
   "section_sha256": "e2fa13d272e2445a006c99c83e7526f9a8d786cb6b0c27e98890ca290b1ba080",
-  "sources_sha256": "5ee6f42a8a215907513db0b9a13bb5202aba213edb1c344e336d00a3db7066af",
-  "candidates_sha256": "86e60bbc4b5596710760fce7700c2e1d94ce237b4bdf9e45a37994304130f2c5",
+  "sources_sha256": "d54aaddc490e7d2c30f1355751623fe4ee359c2406b019491d3a61b97e00736f",
+  "candidates_sha256": "cf411f684179258b090f474f0df74d17fb8174313ab37b3fee43cbc611f645fe",
   "index": {
    "sha256": "e50072d61b4cd2133f160099a4444c918e7cc2eb73e18f243e28f9117b29ceb6",
    "count": 2419
@@ -112,10 +112,6 @@
    },
    "flags": [
     {
-     "code": "single-source",
-     "detail": "all evidence comes from one source"
-    },
-    {
      "code": "weak-coordinates",
      "detail": "coordinates are street-level, not the building"
     }
@@ -211,5 +207,5 @@
    ]
   }
  ],
- "reconcile_sha256": "f216a5e531ad2b1fc2060f03e86863e9e49f7ee37da9633691118e4648e161c3"
+ "reconcile_sha256": "7e70f60963e0863f33dfe372843d2c26b7940a5a902f47ffc09c1e563adaaf09"
 }
