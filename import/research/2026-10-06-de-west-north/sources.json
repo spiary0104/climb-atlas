@@ -1,0 +1,474 @@
+{
+ "schema_version": 1,
+ "sources": {
+  "OSM": {
+   "kind": "map-data",
+   "title": "OpenStreetMap (gym element as returned by the Photon geocoder, photon.komoot.io)",
+   "url": "https://www.openstreetmap.org/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "PHOTON": {
+   "kind": "map-data",
+   "title": "Photon geocoder (OpenStreetMap address data)",
+   "url": "https://photon.komoot.io/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "UA": {
+   "kind": "chain-store-list",
+   "title": "urban apes - Boulderhallen (chain site, location pages)",
+   "url": "https://www.urbanapes.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "BPL": {
+   "kind": "official-site",
+   "title": "Boulderplanet Köln",
+   "url": "https://boulderplanet.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "EB": {
+   "kind": "chain-store-list",
+   "title": "ELEMENT Boulders (chain site, all locations)",
+   "url": "https://element-boulders.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "K11": {
+   "kind": "official-site",
+   "title": "K11 Boulderhalle Köln",
+   "url": "https://k11-koeln.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "SW": {
+   "kind": "chain-store-list",
+   "title": "Stuntwerk (chain site, all locations)",
+   "url": "https://stuntwerk.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "DHA": {
+   "kind": "official-site",
+   "title": "dieHalle Aachen (Kletteraixperten GmbH)",
+   "url": "https://www.diehalle-aachen.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "CBA": {
+   "kind": "official-site",
+   "title": "Campus Boulderhalle Aachen",
+   "url": "https://www.campusboulderhalle.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "GG": {
+   "kind": "official-site",
+   "title": "Glücksgriff Boulderhalle Dortmund",
+   "url": "https://www.gluecksgriff-boulderhalle.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "BW": {
+   "kind": "official-site",
+   "title": "Kletterhalle Bergwerk Dortmund",
+   "url": "https://kletterhalle-bergwerk.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "BHB": {
+   "kind": "official-site",
+   "title": "Boulderhalle Bootshaus (Naturfreunde Bielefeld)",
+   "url": "https://boulderhallebootshaus.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "COG": {
+   "kind": "official-site",
+   "title": "Center of Gravity Boulderhalle Bielefeld",
+   "url": "https://center-of-gravity-boulderhalle.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "BF": {
+   "kind": "official-site",
+   "title": "Boulder Factory Münster",
+   "url": "https://www.boulderfactory.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "KBM": {
+   "kind": "official-site",
+   "title": "KletterBar Münster",
+   "url": "https://kletterbar-muenster.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "PRI": {
+   "kind": "official-site",
+   "title": "Boulderhalle Prisma Wuppertal",
+   "url": "https://boulderhalle-prisma.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "BLO": {
+   "kind": "official-site",
+   "title": "Bahnhof Blo Bouldercafé Wuppertal",
+   "url": "https://bouldercafe-wuppertal.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "SBL": {
+   "kind": "official-site",
+   "title": "Superblock Boulderhalle Düsseldorf",
+   "url": "https://www.superblock.nrw/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "MSP": {
+   "kind": "chain-store-list",
+   "title": "Monkeyspot Boulderhalle (chain site)",
+   "url": "https://monkeyspot.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "KKI": {
+   "kind": "official-site",
+   "title": "Kletterkirche Mönchengladbach",
+   "url": "https://kletterkirche.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "BBP": {
+   "kind": "official-site",
+   "title": "BlocBuster Boulderhalle Paderborn/Bielefeld",
+   "url": "https://bb.blocbuster.net/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "FM": {
+   "kind": "official-site",
+   "title": "Felsmeister Boulderhalle Bad Oeynhausen",
+   "url": "https://felsmeister.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "BLX": {
+   "kind": "official-site",
+   "title": "BloX Boulderhalle Sauerland",
+   "url": "https://www.blox-boulderhalle.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "KWS": {
+   "kind": "official-site",
+   "title": "Kletterwelt Sauerland Altena",
+   "url": "https://www.kletterwelt-sauerland.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "SB": {
+   "kind": "chain-store-list",
+   "title": "Studio Bloc (Wiesbaden, Darmstadt, Mannheim)",
+   "url": "https://studiobloc.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "GAIA": {
+   "kind": "official-site",
+   "title": "Gaia Boulderhalle Marburg",
+   "url": "https://www.gaia-boulderhalle.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "DAVFFM": {
+   "kind": "official-site",
+   "title": "DAV Kletterzentrum Frankfurt am Main",
+   "url": "https://www.dav-klz-ffm.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "BWM": {
+   "kind": "official-site",
+   "title": "blockwerk Mainz",
+   "url": "https://www.blockwerk.info/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "BSC": {
+   "kind": "official-site",
+   "title": "Blocschokolade Trier",
+   "url": "https://blocschokolade.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "EIF": {
+   "kind": "chain-store-list",
+   "title": "Eifelblock Boulderhallen (Koblenz, Trier)",
+   "url": "https://www.eifelblock.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "GRI": {
+   "kind": "official-site",
+   "title": "GriffReich - DAV Kletterzentrum Hannover",
+   "url": "https://www.griffreich.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "ZEN": {
+   "kind": "official-site",
+   "title": "Zenit Boulderhalle Osnabrück",
+   "url": "https://www.zenit-klettern.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "OSN": {
+   "kind": "official-site",
+   "title": "OSNABLOC",
+   "url": "https://osnabloc.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "FLH": {
+   "kind": "official-site",
+   "title": "Fliegerhalle Braunschweig",
+   "url": "https://www.fliegerhalle-bs.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "GRH": {
+   "kind": "official-site",
+   "title": "Greifhaus Braunschweig",
+   "url": "https://www.greifhaus.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "BIG": {
+   "kind": "official-site",
+   "title": "BiG Bouldern in Göttingen",
+   "url": "https://boulderningoettingen.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "HRS": {
+   "kind": "official-site",
+   "title": "Höhenrausch Boulderhalle Stadthagen",
+   "url": "https://www.hoehenrausch-stadthagen.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "KBK": {
+   "kind": "official-site",
+   "title": "KletterBar Kiel",
+   "url": "https://kletterbar-kiel.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "NWH": {
+   "kind": "official-site",
+   "title": "Nordwandhalle Hamburg",
+   "url": "https://nordwandhalle.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "SST": {
+   "kind": "official-site",
+   "title": "Schlüsselstelle - Jung's Boulderhalle & Café Siegen",
+   "url": "https://boulderhalle-siegen.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "DAVSI": {
+   "kind": "official-site",
+   "title": "DAV Kletterzentrum Siegerland",
+   "url": "https://www.kletterzentrum-siegerland.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "2T": {
+   "kind": "official-site",
+   "title": "2T Kletter- und Boulderhalle Lindlar",
+   "url": "https://www.2tklettern.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "OWL": {
+   "kind": "official-site",
+   "title": "DAV Kletterzentrum OWL Brakel",
+   "url": "https://www.kletterzentrum-owl.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "GRV": {
+   "kind": "official-site",
+   "title": "Gravidrom Lippstadt",
+   "url": "https://gravidrom.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "KRB": {
+   "kind": "official-site",
+   "title": "Kraftraum Boulderhalle Bocholt",
+   "url": "http://kraftraum-bocholt.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "KLF": {
+   "kind": "official-site",
+   "title": "Kliff Boulderhalle Kleve",
+   "url": "https://kliff-boulderhalle.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "DABI": {
+   "kind": "official-site",
+   "title": "DAV Alpinzentrum Bielefeld",
+   "url": "https://alpinzentrum-bielefeld.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "VKM": {
+   "kind": "official-site",
+   "title": "Volksbank Kletterhalle Marburg (DAV Marburg)",
+   "url": "https://www.volksbank-kletterhalle-marburg.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "DAVGI": {
+   "kind": "official-site",
+   "title": "DAV Kletter- und Boulderzentrum Gießen",
+   "url": "https://www.kletterzentrum-giessen.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "CUW": {
+   "kind": "official-site",
+   "title": "Cube - DAV Kletterzentrum Wetzlar",
+   "url": "https://www.cube-kletterzentrum.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "DAVFD": {
+   "kind": "official-site",
+   "title": "DAV Kletter- und Boulderzentrum Fulda",
+   "url": "https://www.kletterzentrum-fulda.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "SPK": {
+   "kind": "official-site",
+   "title": "Sportpark Kelkheim",
+   "url": "https://www.sportpark-kelkheim.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "BCH": {
+   "kind": "official-site",
+   "title": "Boulder Church Bad Orb",
+   "url": "https://boulderchurch.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "DAVDA": {
+   "kind": "official-site",
+   "title": "DAV Kletterzentrum Darmstadt",
+   "url": "https://www.kletterzentrum-darmstadt.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "BWB": {
+   "kind": "official-site",
+   "title": "Kletterzentrum Buchholz (Blau-Weiss Buchholz e.V.)",
+   "url": "https://blau-weiss-buchholz.de/kletterzentrum/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "CP4": {
+   "kind": "official-site",
+   "title": "Camp4 Kletterzentrum Zweibrücken",
+   "url": "https://www.campvier.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "RT": {
+   "kind": "official-site",
+   "title": "RockTown Kaiserslautern",
+   "url": "https://www.rocktown.eu/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "PETZ": {
+   "kind": "official-site",
+   "title": "PETZ Boulderhalle Neustadt",
+   "url": "https://boulderhalle-neustadt.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "GKH": {
+   "kind": "official-site",
+   "title": "GRAVITY Boulderhalle Bad Kreuznach",
+   "url": "https://www.gravity-kh.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "FRB": {
+   "kind": "official-site",
+   "title": "Freiraum Basecamp Andernach",
+   "url": "https://www.freiraum-basecamp.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "HOT": {
+   "kind": "official-site",
+   "title": "Hold on Tide Boulderhalle Hedwigenkoog",
+   "url": "https://holdontide.com/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "CAV": {
+   "kind": "official-site",
+   "title": "The Cave Boulderhalle Wittlich",
+   "url": "https://www.cave-bouldern.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "RVA": {
+   "kind": "official-site",
+   "title": "Rockvibes Kletterhalle Ahlen",
+   "url": "https://rockvibes.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "BEC": {
+   "kind": "official-site",
+   "title": "BoulderEck Erftstadt",
+   "url": "https://bouldereck.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "PFR": {
+   "kind": "official-site",
+   "title": "DAV Kletterzentrum Pfalz Rock Frankenthal",
+   "url": "https://www.pfalz-rock.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "SPM": {
+   "kind": "official-site",
+   "title": "SportPoint Meckenheim",
+   "url": "https://sportpoint-meckenheim.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "FFL": {
+   "kind": "official-site",
+   "title": "Fingerfood Boulderhalle Lingen",
+   "url": "https://fingerfood-bouldern.com/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  }
+ }
+}
