@@ -8,22 +8,22 @@
  },
  "staged_batches_compared": [],
  "counts": {
-  "records": 3,
+  "records": 5,
   "new": 0,
   "existing": 0,
-  "update": 3,
+  "update": 5,
   "probable-duplicate": 0,
   "invalid": 0,
   "rejected": 0,
   "existing_identical": 0,
   "existing_content_differs": 0,
   "new_id_not_frozen": 0,
-  "warnings": 2
+  "warnings": 3
  },
  "importable": true,
  "blockers": [],
  "unused_decisions": [],
- "plan_sha256": "118962fd27d16f7fd0716ca507e3e91a696166d3a6074d961818a5d356d41ee2",
+ "plan_sha256": "86dedb95c1bf1122999b092a3fcf271c2d2448542cc6a7cf4431b19015c3a450",
  "records": [
   {
    "line": 1,
@@ -90,6 +90,56 @@
      "message": "moves the pin by 5307 m"
     }
    ]
+  },
+  {
+   "line": 4,
+   "class": "update",
+   "id": "seed-1702",
+   "changes": [
+    {
+     "field": "address",
+     "before": "8 Semyi Khokhlovykh Street, Kyiv, Ukraine",
+     "after": "Borshchahivska St 154, Marmelad mall, 6th floor, Kyiv"
+    },
+    {
+     "field": "lat",
+     "before": 50.4500336,
+     "after": 50.446569
+    },
+    {
+     "field": "lng",
+     "before": 30.5241361,
+     "after": 30.443545
+    }
+   ],
+   "expect_h": "83075d5dfdf6a6da",
+   "update_reason": "Tsekh moved (Nov 2018) to the Marmelad mall and now trades as Funattic (its own Instagram names Tsekh as the old name); the old pin was a central-Kyiv placeholder 5.7 km away (research 2026-10-01-ukraine ua-003)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 5719 m"
+    }
+   ]
+  },
+  {
+   "line": 5,
+   "class": "update",
+   "id": "seed-1706",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 49.8333201,
+     "after": 49.832186
+    },
+    {
+     "field": "lng",
+     "before": 24.0013405,
+     "after": 23.996523
+    }
+   ],
+   "expect_h": "098542be4bc96d68",
+   "update_reason": "Pin about 370 m from the gym at Heroes of UPA 72, Technopark business centre (OSM node of the gym; research 2026-10-01-ukraine ua-006)"
   }
  ]
 }
