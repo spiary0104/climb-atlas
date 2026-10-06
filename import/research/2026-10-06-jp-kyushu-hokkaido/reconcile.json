@@ -1,0 +1,696 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-06-jp-kyushu-hokkaido",
+ "inputs": {
+  "section_sha256": "01a5f111d901becb0729dcc9786753d99c7e6525678909ba54272c97cbf3b9ac",
+  "sources_sha256": "08762d911ac4ff2c4550b68cf6bcdbbcb457e6717888394b66ab6abae4612b43",
+  "candidates_sha256": "b04553a8c059baf816ff1d390fa34e38d8be7a6ff0d92692e8711d4347aaba0a",
+  "index": {
+   "sha256": "27073d25c2df373c17caef0c24ebfe759b8d457953a461c62786486d588e661d",
+   "count": 2438
+  },
+  "staged_batches_compared": [],
+  "other_sections_compared": []
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 48,
+  "ready": 38,
+  "review": 10,
+  "blocked": 0,
+  "existing": 0,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "jp-fk-001",
+   "line": 11,
+   "name": "Hoa-Hoa Bouldering Gym",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-747c204aeb"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp-fk-002",
+   "line": 12,
+   "name": "OD Kokura",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-d7400bf7af"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate jp-fk-003 \"OD Yahata\": related names \"クライミングジム＆ショップ OD 小倉店\" / \"クライミングジム＆ショップ OD 八幡店\" 13454 m apart",
+     "ids": [
+      "jp-fk-003"
+     ]
+    },
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": [
+    "jp-fk-003"
+   ]
+  },
+  {
+   "cid": "jp-fk-003",
+   "line": 13,
+   "name": "OD Yahata",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-89109c9954"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate jp-fk-002 \"OD Kokura\": related names \"クライミングジム＆ショップ OD 八幡店\" / \"クライミングジム＆ショップ OD 小倉店\" 13454 m apart",
+     "ids": [
+      "jp-fk-002"
+     ]
+    }
+   ],
+   "review_ids": [
+    "jp-fk-002"
+   ]
+  },
+  {
+   "cid": "jp-fk-004",
+   "line": 14,
+   "name": "OD1 Munakata",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-77f3668e62"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp-fk-005",
+   "line": 15,
+   "name": "JOYWALL Kurume",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-ae03c45606"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp-fk-006",
+   "line": 16,
+   "name": "MyWay Climbing Gym",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-9961a6ae9d"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp-fk-007",
+   "line": 17,
+   "name": "Jungle Gym Miyama",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-1ba9281e27"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp-fk-008",
+   "line": 18,
+   "name": "Favour Climbing",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-7742b9664d"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp-fk-009",
+   "line": 19,
+   "name": "Climbing Garden Ecole",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-97e70cb5b0"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp-fk-010",
+   "line": 20,
+   "name": "Panda Wall",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-1713ea105c"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "jp-fk-011",
+   "line": 21,
+   "name": "Climbing AT WALL",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-0b9f51404f"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp-fk-012",
+   "line": 22,
+   "name": "Climbing Sun Wall",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-ffb2b1a10d"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp-fk-013",
+   "line": 23,
+   "name": "ESCAPE Coffee & Climbing",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-7bfaef9476"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp-fk-014",
+   "line": 24,
+   "name": "Stump Climbing",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-63d4aca9ed"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp-fk-015",
+   "line": 25,
+   "name": "ATTIC Climbing",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-662e363fb7"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp-fk-016",
+   "line": 26,
+   "name": "Zip Rock Climbing Gym",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-b1c085146a"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp-hk-001",
+   "line": 27,
+   "name": "Akala Climb",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-5cafa49f4b"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp-hk-002",
+   "line": 28,
+   "name": "Whipper Snapper Gym",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-1385ed51d8"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp-hk-003",
+   "line": 29,
+   "name": "Signal Climbing Gym",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-247b828a07"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp-hk-004",
+   "line": 30,
+   "name": "Rainbow Cliff",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-fefc7f35b5"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp-hk-005",
+   "line": 31,
+   "name": "HOMIE",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-c03f1007a0"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp-hk-006",
+   "line": 32,
+   "name": "Bouldering Gym Xtreme",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-1f30d1fc23"
+   },
+   "flags": [
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "jp-hs-001",
+   "line": 7,
+   "name": "Spooky Climbing",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-7ffa816287"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp-hs-002",
+   "line": 8,
+   "name": "Bouldering Space Kokopelli",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-ab225e84f4"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp-hs-003",
+   "line": 9,
+   "name": "Climb Center CERO",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-54ec81f096"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp-hs-004",
+   "line": 10,
+   "name": "Climbing Park Higashihiroshima",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-8c64074d62"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp-km-001",
+   "line": 33,
+   "name": "Climbing Park Kikunan",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-396849a66f"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp-km-002",
+   "line": 34,
+   "name": "ROCKBAKKA",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-8c9f5fd47b"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp-km-003",
+   "line": 35,
+   "name": "The Ranch Climbing Gym",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-eb03d7e03e"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp-ks-002",
+   "line": 39,
+   "name": "Awesome Climbing Wall",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-4ad5b87911"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp-ks-003",
+   "line": 40,
+   "name": "Kironico Boulder Park",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-fe555a5e2d"
+   },
+   "flags": [
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "jp-my-001",
+   "line": 45,
+   "name": "B'nuts Osaki Furukawa",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-0e97233a22"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp-mz-001",
+   "line": 36,
+   "name": "Wow'd+ Bouldering & Gym Kiyotake",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-f2487797f6"
+   },
+   "flags": [
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "jp-mz-002",
+   "line": 37,
+   "name": "Press Factory",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-3b684f3688"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp-mz-003",
+   "line": 38,
+   "name": "Q-block Climbing Space",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-821bcf1f2e"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp-ng-001",
+   "line": 46,
+   "name": "Bravo Climbing Nagasaki",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-f6d3bee65b"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp-ng-002",
+   "line": 47,
+   "name": "Mono Climbing Studio Omura",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-51bd31bc6f"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate jp-ng-003 has the same website",
+     "ids": [
+      "jp-ng-003"
+     ]
+    }
+   ],
+   "review_ids": [
+    "jp-ng-003"
+   ]
+  },
+  {
+   "cid": "jp-ng-003",
+   "line": 48,
+   "name": "Mono Climbing Studio Sasebo",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-2f81b0e968"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate jp-ng-002 has the same website",
+     "ids": [
+      "jp-ng-002"
+     ]
+    }
+   ],
+   "review_ids": [
+    "jp-ng-002"
+   ]
+  },
+  {
+   "cid": "jp-ok-001",
+   "line": 41,
+   "name": "Boulbaka",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-5066b9c2e3"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "g-1c0ffa88fd \"BOULBAKA2\": related names \"Boulbaka\" / \"BOULBAKA2\" 5323 m apart",
+     "ids": [
+      "g-1c0ffa88fd"
+     ]
+    }
+   ],
+   "review_ids": [
+    "g-1c0ffa88fd"
+   ]
+  },
+  {
+   "cid": "jp-ok-002",
+   "line": 42,
+   "name": "BANJAT Bouldering",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-2dba59b028"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp-ok-003",
+   "line": 43,
+   "name": "Coral Rock Climbing Gym",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-b6ddf01640"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp-ok-004",
+   "line": 44,
+   "name": "Look Rock Bouldering Park",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-bc748309c8"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp-oy-001",
+   "line": 1,
+   "name": "Bouldergarden SaBo",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-0e72a3430e"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp-oy-002",
+   "line": 2,
+   "name": "Bon Climbing Gym",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-77b39d209b"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp-oy-003",
+   "line": 3,
+   "name": "Bouldering Room Nekonote",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-288fa03f8b"
+   },
+   "flags": [
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "jp-oy-004",
+   "line": 4,
+   "name": "rocks Bouldering Gym",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-6065117d7a"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp-oy-006",
+   "line": 5,
+   "name": "Climbing Space Lism",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-daea7cebe9"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp-oy-007",
+   "line": 6,
+   "name": "Belle Climbing Gym Kurashiki Hirae",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-07ba8f751e"
+   },
+   "review_ids": []
+  }
+ ],
+ "reconcile_sha256": "2a14d7523963bf1759d3b5a6a960e0dac450d34a08559ca5600f2b9c7c4232ed"
+}

@@ -1,0 +1,586 @@
+{
+ "schema_version": 1,
+ "sources": {
+  "GSI": {
+   "kind": "map-data",
+   "title": "GSI (Geospatial Information Authority of Japan) address search",
+   "url": "https://msearch.gsi.go.jp/address-search/AddressSearch",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "RG": {
+   "kind": "directory",
+   "title": "Rockgym.jp prefecture lists (names only; every gym re-checked on its own site)",
+   "url": "https://rockgym.jp/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "SABO": {
+   "kind": "official-site",
+   "title": "Bouldergarden SaBo (own site)",
+   "url": "https://www.bouldergardensabo.com/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "IG_sabo_bouldering": {
+   "kind": "official-social",
+   "title": "Instagram of Bouldergarden SaBo (own account, public embed read 2026-10-06)",
+   "url": "https://www.instagram.com/sabo_bouldering/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "BON": {
+   "kind": "official-site",
+   "title": "Bon climbing gym (own site)",
+   "url": "http://www.bonclimbinggym.com/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "IG_bon_climbing_gym": {
+   "kind": "official-social",
+   "title": "Instagram of Bon Climbing Gym (own account, public embed read 2026-10-06)",
+   "url": "https://www.instagram.com/bon_climbing_gym/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "NEKONOTE": {
+   "kind": "official-site",
+   "title": "Bouldering Room Nekonote (own site)",
+   "url": "https://www.boulderingroom-nekonote.jp/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "IG_boulderingroom_nekonote": {
+   "kind": "official-social",
+   "title": "Instagram of Bouldering Room Nekonote (own account, public embed read 2026-10-06)",
+   "url": "https://www.instagram.com/boulderingroom_nekonote/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "ROCKS": {
+   "kind": "official-site",
+   "title": "rocks Climbing Gym / rocks Bouldering Gym (own site, two venues)",
+   "url": "https://www.rocksclimbinggym.com/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "IG_rocksclimbinggym": {
+   "kind": "official-social",
+   "title": "Instagram of rocks Climbing Gym (own account, public embed read 2026-10-06)",
+   "url": "https://www.instagram.com/rocksclimbinggym/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "LISM": {
+   "kind": "official-site",
+   "title": "Climbing Space Lism (own site)",
+   "url": "http://lism-climb.lovepop.jp/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "IG_climbingspacelism": {
+   "kind": "official-social",
+   "title": "Instagram of Climbing Space Lism (own account, public embed read 2026-10-06)",
+   "url": "https://www.instagram.com/climbingspacelism/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "BELLE": {
+   "kind": "official-site",
+   "title": "Belle Climbing Gym (own site)",
+   "url": "https://belleclimbing.wixsite.com/hold",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "IG_belle_climbing": {
+   "kind": "official-social",
+   "title": "Instagram of Belle Climbing Gym (own account, public embed read 2026-10-06)",
+   "url": "https://www.instagram.com/belle_climbing/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "SPOOKY": {
+   "kind": "official-site",
+   "title": "Spooky Climbing (own site)",
+   "url": "https://spookyclimbing.jimdofree.com/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "IG_spooky_climbing": {
+   "kind": "official-social",
+   "title": "Instagram of Spooky Climbing (own account, public embed read 2026-10-06)",
+   "url": "https://www.instagram.com/spooky_climbing/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "KOKOPELLI": {
+   "kind": "official-site",
+   "title": "Bouldering Space Kokopelli (own site)",
+   "url": "http://kokopelliboulder.com/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "CERO": {
+   "kind": "official-site",
+   "title": "Climb Center CERO (own site)",
+   "url": "http://cero-climb.com/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "UBLCP_HHIRO": {
+   "kind": "official-site",
+   "title": "Climbing Park Higashihiroshima (own site)",
+   "url": "http://ubl-climbingpark.com/higashihiroshima/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "HOAHOA": {
+   "kind": "official-site",
+   "title": "Bouldering Gym Hoa-Hoa (own site)",
+   "url": "http://www.hoa-hoa.com/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "IG_boulderinggymhoahoa_o": {
+   "kind": "official-social",
+   "title": "Instagram of Hoa-Hoa (own account, public embed read 2026-10-06)",
+   "url": "https://www.instagram.com/boulderinggymhoahoa_o/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "OD": {
+   "kind": "official-site",
+   "title": "OD Climbing Gym & Shop (chain site, store pages)",
+   "url": "https://climbing-od.com/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "JOYWALL": {
+   "kind": "official-site",
+   "title": "Climbing Gym JOYWALL Kurume (own site)",
+   "url": "https://kurume.joywallclimbing.com/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "IG_joywall2005": {
+   "kind": "official-social",
+   "title": "Instagram of JOYWALL Kurume (own account, public embed read 2026-10-06)",
+   "url": "https://www.instagram.com/joywall2005/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "MYWAY": {
+   "kind": "official-site",
+   "title": "MyWay Climbing Gym (own site)",
+   "url": "https://www.mywayclimbinggym.com/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "IG_mywayclimbing": {
+   "kind": "official-social",
+   "title": "Instagram of MyWay Climbing Gym (own account, public embed read 2026-10-06)",
+   "url": "https://www.instagram.com/mywayclimbing/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "JUNGLE": {
+   "kind": "official-site",
+   "title": "Jungle Gym (own site)",
+   "url": "http://jungleclimb.com/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "FAVOUR": {
+   "kind": "official-site",
+   "title": "Favour climbing & yoga & bodywork (own site)",
+   "url": "https://www.favourclimbing.net/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "IG_favourclimbing": {
+   "kind": "official-social",
+   "title": "Instagram of Favour Climbing (own account, public embed read 2026-10-06)",
+   "url": "https://www.instagram.com/favourclimbing/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "ECOLE": {
+   "kind": "official-site",
+   "title": "Climbing Garden Ecole (own site)",
+   "url": "https://ecole-climbing.com/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "PANDA": {
+   "kind": "official-site",
+   "title": "Panda WALL (own site)",
+   "url": "https://pandawall.fun/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "ATWALL": {
+   "kind": "official-site",
+   "title": "Climbing AT WALL (own site, session.ne.jp/atwall)",
+   "url": "https://www.session.ne.jp/atwall/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "IG_climbingatwall": {
+   "kind": "official-social",
+   "title": "Instagram of Climbing AT WALL (own account, public embed read 2026-10-06)",
+   "url": "https://www.instagram.com/climbingatwall/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "SUNWALL": {
+   "kind": "official-site",
+   "title": "Climbing Sun Wall (own site)",
+   "url": "https://www.sunwall.jp/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "IG_sun_wall": {
+   "kind": "official-social",
+   "title": "Instagram of Climbing Sun Wall (own account, public embed read 2026-10-06)",
+   "url": "https://www.instagram.com/sun.wall/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "ESCAPE": {
+   "kind": "official-site",
+   "title": "ESCAPE coffee & climbing (own site)",
+   "url": "https://escapecandc.github.io/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "IG_escape_candc": {
+   "kind": "official-social",
+   "title": "Instagram of ESCAPE coffee & climbing (own account, public embed read 2026-10-06)",
+   "url": "https://www.instagram.com/escape_candc/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "STUMP": {
+   "kind": "official-site",
+   "title": "Stump Climbing (own site)",
+   "url": "https://stump-climbing.com/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "IG_stumpclimbing": {
+   "kind": "official-social",
+   "title": "Instagram of Stump Climbing (own account, public embed read 2026-10-06)",
+   "url": "https://www.instagram.com/stumpclimbing/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "ATTIC": {
+   "kind": "official-site",
+   "title": "ATTIC Climbing (own site)",
+   "url": "http://attic-climbing.mystrikingly.com/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "IG_atticclimbing": {
+   "kind": "official-social",
+   "title": "Instagram of ATTIC Climbing (own account, public embed read 2026-10-06)",
+   "url": "https://www.instagram.com/atticclimbing/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "ZIPROCK": {
+   "kind": "official-site",
+   "title": "Zip Rock Climbing Gym (own site)",
+   "url": "http://ziprockclimbing.com/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "IG_ziprockclimbing": {
+   "kind": "official-social",
+   "title": "Instagram of Zip Rock bouldering gym (own account, public embed read 2026-10-06)",
+   "url": "https://www.instagram.com/ziprockclimbing/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "AKALA": {
+   "kind": "official-site",
+   "title": "Akala Climb (own site)",
+   "url": "https://akalaclimb.com/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "IG_akalaclimb_sakaemachi": {
+   "kind": "official-social",
+   "title": "Instagram of Akala Climb (own account, public embed read 2026-10-06)",
+   "url": "https://www.instagram.com/akalaclimb.sakaemachi/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "WHIPPER": {
+   "kind": "official-site",
+   "title": "Whipper Snapper Gym (own site)",
+   "url": "http://whippersnappergym.com/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "IG_whippersnappergym": {
+   "kind": "official-social",
+   "title": "Instagram of Whipper Snapper Gym (own account, public embed read 2026-10-06)",
+   "url": "https://www.instagram.com/whippersnappergym/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "SIGNAL": {
+   "kind": "official-site",
+   "title": "Signal Climbing Gym (own site)",
+   "url": "https://www.signal-climbing.com/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "IG_signalclimbing": {
+   "kind": "official-social",
+   "title": "Instagram of Signal Climbing Gym (own account, public embed read 2026-10-06)",
+   "url": "https://www.instagram.com/signalclimbing/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "RAINBOW": {
+   "kind": "official-site",
+   "title": "Rainbow Cliff (own site)",
+   "url": "https://www.rainbow-cliff.co.jp/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "IG_rainbowcliff_official": {
+   "kind": "official-social",
+   "title": "Instagram of Rainbow Cliff (own account, public embed read 2026-10-06)",
+   "url": "https://www.instagram.com/rainbowcliff_official/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "HOMIE": {
+   "kind": "official-site",
+   "title": "HOMIE Hakodate bouldering gym (own site)",
+   "url": "http://www.homie.jp/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "IG_homie_redbrick_warehouse": {
+   "kind": "official-social",
+   "title": "Instagram of HOMIE Hakodate (own account, public embed read 2026-10-06)",
+   "url": "https://www.instagram.com/homie_redbrick_warehouse/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "XTREME": {
+   "kind": "official-site",
+   "title": "Bouldering Gym Xtreme (own site)",
+   "url": "https://www.xtreme-gym.com/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "UBLCP_KIKUNAN": {
+   "kind": "official-site",
+   "title": "Climbing Park Kikunan (own site)",
+   "url": "http://ubl-climbingpark.com/kikunan/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "IG_climbing_park_kikunan": {
+   "kind": "official-social",
+   "title": "Instagram of Climbing Park Kikunan (own account, public embed read 2026-10-06)",
+   "url": "https://www.instagram.com/climbing_park_kikunan/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "ROCKBAKKA": {
+   "kind": "official-site",
+   "title": "ROCKBAKKA (own site)",
+   "url": "https://rockbakka.web.fc2.com/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "IG_rockbakka": {
+   "kind": "official-social",
+   "title": "Instagram of ROCKBAKKA (own account, public embed read 2026-10-06)",
+   "url": "https://www.instagram.com/rockbakka/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "RANCH": {
+   "kind": "official-site",
+   "title": "The Ranch climbing gym and shop (own site)",
+   "url": "http://theranchgym.com/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "IG_theranchclimbinggym_shop": {
+   "kind": "official-social",
+   "title": "Instagram of The Ranch (own account, public embed read 2026-10-06)",
+   "url": "https://www.instagram.com/theranchclimbinggym.shop/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "WOWD": {
+   "kind": "official-site",
+   "title": "Wow'd+ Kiyotake Bouldering & Gym (own site)",
+   "url": "https://wowd-plus.com/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "IG_wowdplus_kiyotake": {
+   "kind": "official-social",
+   "title": "Instagram of Wow'd+ Kiyotake (own account, public embed read 2026-10-06)",
+   "url": "https://www.instagram.com/wowdplus_kiyotake/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "PRESSF": {
+   "kind": "official-site",
+   "title": "Press Factory (own site)",
+   "url": "https://pressfactory.website/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "IG_pressfactory_cg": {
+   "kind": "official-social",
+   "title": "Instagram of Press Factory (own account, public embed read 2026-10-06)",
+   "url": "https://www.instagram.com/pressfactory.cg/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "QBLOCK": {
+   "kind": "official-site",
+   "title": "Q-block Climbing Space (own site)",
+   "url": "https://www.q-block.jp/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "IG_q_block_climbing_space": {
+   "kind": "official-social",
+   "title": "Instagram of Q-block (own account, public embed read 2026-10-06)",
+   "url": "https://www.instagram.com/q_block_climbing_space/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "AWESOME": {
+   "kind": "official-site",
+   "title": "Awesome Climbing Wall (own site)",
+   "url": "https://awesomeclimbingwall.com/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "IG_awesome_climbing_wall": {
+   "kind": "official-social",
+   "title": "Instagram of Awesome Climbing Wall (own account, public embed read 2026-10-06)",
+   "url": "https://www.instagram.com/awesome_climbing_wall/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "KIRONICO": {
+   "kind": "official-site",
+   "title": "Kironico Boulder Park (own site)",
+   "url": "https://s-max-support.heteml.net/kironico/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "IG_kironico_bp": {
+   "kind": "official-social",
+   "title": "Instagram of Kironico Boulder Park (own account, public embed read 2026-10-06)",
+   "url": "https://www.instagram.com/kironico_bp/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "BOULBAKA": {
+   "kind": "official-site",
+   "title": "Bouldering gym BOULBAKA (own site, two stores)",
+   "url": "http://www.boulbaka.com/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "IG_boulbaka": {
+   "kind": "official-social",
+   "title": "Instagram of Bouldering gym BOULBAKA (own account, public embed read 2026-10-06)",
+   "url": "https://www.instagram.com/boulbaka/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "BANJAT": {
+   "kind": "official-site",
+   "title": "BANJAT bouldering (own site)",
+   "url": "https://banjat.com/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "IG_banjat_bouldering": {
+   "kind": "official-social",
+   "title": "Instagram of BANJAT bouldering (own account, public embed read 2026-10-06)",
+   "url": "https://www.instagram.com/banjat_bouldering/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "CORALROCK": {
+   "kind": "official-site",
+   "title": "Coral Rock climbing gym (own site)",
+   "url": "https://www.coralrock-okinawa.com/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "IG_coralrockokinawa": {
+   "kind": "official-social",
+   "title": "Instagram of Coral Rock (own account, public embed read 2026-10-06)",
+   "url": "https://www.instagram.com/coralrockokinawa/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "LOOKROCK": {
+   "kind": "official-site",
+   "title": "Look Rock Bouldering Park (own site)",
+   "url": "https://lookrock.okinawa/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "IG_lookrock_okinawa": {
+   "kind": "official-social",
+   "title": "Instagram of Look Rock Bouldering Park (own account, public embed read 2026-10-06)",
+   "url": "https://www.instagram.com/lookrock_okinawa/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "BNUTS_FURUKAWA": {
+   "kind": "official-site",
+   "title": "B'nuts Osaki Furukawa (own site)",
+   "url": "http://www.youyoukan.jp/gymfurukawa/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "BRAVO": {
+   "kind": "chain-store-list",
+   "title": "BRAVOCLIMBING (chain site; store list lists Nagasaki only)",
+   "url": "https://bravoclimbing.com/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "IG_bravoclimbing_ngs": {
+   "kind": "official-social",
+   "title": "Instagram of Bravo Climbing Nagasaki (own account, public embed read 2026-10-06)",
+   "url": "https://www.instagram.com/bravoclimbing_ngs/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "MONO": {
+   "kind": "chain-store-list",
+   "title": "Mono Climbing Studio (chain site: Hakata, Omura, Sasebo)",
+   "url": "https://mono-climbing.com/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "IG_monoclimbing2014": {
+   "kind": "official-social",
+   "title": "Instagram of Mono Climbing Studio (own account, public embed read 2026-10-06)",
+   "url": "https://www.instagram.com/monoclimbing2014/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  }
+ }
+}
