@@ -5,16 +5,16 @@
 | What would happen | Records |
 |---|---:|
 | Insert as NEW gyms | 0 |
-| Update existing gyms (explicit update records) | 5 |
+| Update existing gyms (explicit update records) | 6 |
 | Already exist — no action (identical content: 0; content differs, NOT applied: 0) | 0 |
 | Probable duplicates — need a human decision | 0 |
 | Invalid — rejected | 0 |
 | Rejected by a human decision | 0 |
-| **Total records in batch** | 5 |
+| **Total records in batch** | 6 |
 
-Index: 2419 known gyms (sha256 e50072d61b4c…). Plan: 86dedb95c1bf…
+Index: 2419 known gyms (sha256 e50072d61b4c…). Plan: 028c078b19ed… Also compared against staged batches: 2026-10-01-peru, 2026-10-01-slovakia, 2026-10-01-ukraine.
 
-## Updates to existing gyms (5)
+## Updates to existing gyms (6)
 
 - line 1 `seed-903` — Name capitalisation: the gym is White Spider (Spider Climbing group site)
   - CORRECTS identity (name; the stored slug and every other field stay as they are):
@@ -33,6 +33,10 @@ Index: 2419 known gyms (sha256 e50072d61b4c…). Plan: 86dedb95c1bf…
 - line 5 `seed-1706` — Pin about 370 m from the gym at Heroes of UPA 72, Technopark business centre (OSM node of the gym; research 2026-10-01-ukraine ua-006)
   - lat: 49.8333201 → 49.832186
   - lng: 24.0013405 → 23.996523
+- line 6 `seed-1712` — Wrong address (Dolné Jaseno 169) and a pin 479 m off: ovcin.sk gives Horné Jaseno 160 and its map pin matches the OSM node of the gym (research 2026-10-01-slovakia sk-016)
+  - address: "Dolné Jaseno 169, Turčianske Jaseno, Slovakia" → "Horné Jaseno 160, 038 02 Turčianske Jaseno"
+  - lat: 49.0311324 → 49.0286932
+  - lng: 18.9873906 → 18.9928054
 
 ## Warnings
 

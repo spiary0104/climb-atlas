@@ -12,7 +12,7 @@
 | Rejected by a human decision | 0 |
 | **Total records in batch** | 1 |
 
-Index: 2419 known gyms (sha256 e50072d61b4c…). Plan: 09acaf53d62e… Also compared against staged batches: 2026-10-01-serbia, 2026-10-01-ukraine.
+Index: 2419 known gyms (sha256 e50072d61b4c…). Plan: 09acaf53d62e… Also compared against staged batches: 2026-10-01-slovakia, 2026-10-01-ukraine.
 
 ## New gyms (1)
 

@@ -6,8 +6,9 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 (delete them; git keeps history). Keep this file under 60 lines.
 
 ## In progress
-### Small fixes (2026-10-06) — STAGED, awaiting the owner apply
-- White Spider name, High-east suburb, Up Escalada address + pin (`import/batches/2026-10-06-small-fixes/`).
+### Wave 3A + small fixes (PR, 2026-10-06) — STAGED, awaiting the owner apply
+- +19 gyms (Slovakia 13, Ukraine 5, Peru 1; Belarus and Serbia: all already listed or deferred). Fixes: White Spider name, High-east suburb,
+  Up Escalada, Funattic (ex-Tsekh: pin + rename), The Wall Lviv and Ovčín pins. Owner checks: `import/research/MANUAL-CHECKS-wave-3a.md` (17).
 
 ## Gym data
 ### Owner manual checks (2026-10-06)
@@ -22,7 +23,7 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 - Owner manual pin checks: 39 (`import/pin-check/2026-10-06/MANUAL-CHECK-{europe,rest-of-world}.md`). China: 138 gyms with unconfirmed pins
   or no address, waiting on the CN source decision.
 ### Regional expansion
-- Wave 3A (5 sections, PR #13) and 3C paused.
+- Wave 3C paused.
 
 ## Product
 ### Welcome after the first email confirmation
