@@ -1,0 +1,369 @@
+{
+ "schema_version": 1,
+ "sources": {
+  "OSM": {
+   "kind": "map-data",
+   "title": "OpenStreetMap (element pages and Overpass extract 2026-10-06)",
+   "url": "https://www.openstreetmap.org/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "NOM": {
+   "kind": "map-data",
+   "title": "OpenStreetMap Nominatim geocoder (house-number match of the official address)",
+   "url": "https://nominatim.openstreetmap.org/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "CIRCUIT": {
+   "kind": "chain-store-list",
+   "title": "The Circuit Bouldering Gym (chain site, all locations)",
+   "url": "https://www.thecircuitgym.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "MOVE": {
+   "kind": "chain-store-list",
+   "title": "Movement Climbing + Fitness (chain site, Portland)",
+   "url": "https://movementgyms.com/portland/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "SKY": {
+   "kind": "official-site",
+   "title": "Skyhook Bouldering",
+   "url": "https://www.skyhookbouldering.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "TOMO": {
+   "kind": "official-site",
+   "title": "Tomo Bouldering Club",
+   "url": "https://tomoboulderingclub.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "ROCKHAVEN": {
+   "kind": "official-site",
+   "title": "Rock Haven Climbing Gym",
+   "url": "https://www.rockhavenclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "STONEWORKS": {
+   "kind": "official-site",
+   "title": "Stoneworks Climbing Gym",
+   "url": "https://belay.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "PRG": {
+   "kind": "official-site",
+   "title": "Portland Rock Gym (two locations)",
+   "url": "https://www.portlandrockgym.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "CRUX": {
+   "kind": "official-site",
+   "title": "Crux Rock Gym",
+   "url": "https://cruxrock.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "ELEV": {
+   "kind": "official-site",
+   "title": "Elevation Bouldering Gym",
+   "url": "https://elevationgym.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "VRG": {
+   "kind": "official-site",
+   "title": "Valley Rock Gym",
+   "url": "https://valleyrockgym.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "ROGUE": {
+   "kind": "official-site",
+   "title": "Rogue Rock Gym",
+   "url": "https://www.roguerockgym.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "BOXX": {
+   "kind": "official-site",
+   "title": "The Rock Boxx",
+   "url": "https://www.therockboxx.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "BRIM": {
+   "kind": "official-site",
+   "title": "Brimstone Boulders",
+   "url": "https://brimstoneboulders.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "BRG": {
+   "kind": "official-site",
+   "title": "Bend Rock Gym",
+   "url": "https://www.bendrockgym.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "JUG": {
+   "kind": "official-site",
+   "title": "The Jug Rock Gym",
+   "url": "https://thejugrockgym.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "BP": {
+   "kind": "official-site",
+   "title": "Bouldering Project (Tempe location page)",
+   "url": "https://boulderingproject.com/location/tempe/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "PHXROCK": {
+   "kind": "official-site",
+   "title": "Phoenix Rock Gym",
+   "url": "https://phoenixrockgym.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "BLACKROCK": {
+   "kind": "official-site",
+   "title": "Black Rock Bouldering Gym",
+   "url": "https://blackrockboulderinggym.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "APE": {
+   "kind": "official-site",
+   "title": "Ape Index Climbing Gym",
+   "url": "https://climbapeindex.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "ALTA": {
+   "kind": "chain-store-list",
+   "title": "ALTA Climbing (chain site, all locations)",
+   "url": "https://www.altaclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "FLAG": {
+   "kind": "official-site",
+   "title": "Flagstaff Climbing (Downtown Crag + Main Street Boulders)",
+   "url": "https://www.flagstaffclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "BETA": {
+   "kind": "official-site",
+   "title": "Beta Bouldering Gym",
+   "url": "https://betaboulderinggym.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "RR": {
+   "kind": "official-site",
+   "title": "Rocks and Ropes / The BLOC",
+   "url": "https://rocksandropes.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "RSOLID": {
+   "kind": "official-site",
+   "title": "Rock Solid Climbing + Fitness",
+   "url": "https://www.rocksolidclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "STONEAGE": {
+   "kind": "official-site",
+   "title": "Stone Age Climbing Gym (Midtown and North)",
+   "url": "https://climbstoneage.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "SFCC": {
+   "kind": "official-site",
+   "title": "Santa Fe Climbing Center",
+   "url": "https://climbsantafe.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "ASANA": {
+   "kind": "official-site",
+   "title": "Asana Climbing Gym",
+   "url": "https://asanaclimbinggym.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "COMMONS": {
+   "kind": "official-site",
+   "title": "The Commons Climbing Gym",
+   "url": "https://www.commonsclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "VV": {
+   "kind": "official-site",
+   "title": "Vertical View Climbing Gym",
+   "url": "https://www.verticalview.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "EDGE": {
+   "kind": "official-site",
+   "title": "The Edge Climbing Gym",
+   "url": "https://edgeclimbinggym.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "STEEP": {
+   "kind": "official-site",
+   "title": "Steepworld Climbing & Fitness",
+   "url": "https://steepworld.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "SPIRE": {
+   "kind": "official-site",
+   "title": "Spire Climbing + Fitness",
+   "url": "https://www.spireclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "MPMT": {
+   "kind": "official-site",
+   "title": "The Mountain Project (Bozeman)",
+   "url": "https://www.mountainprojectmt.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "HILINE": {
+   "kind": "official-site",
+   "title": "The Hi-Line Climbing Center",
+   "url": "https://hilineclimbingcenter.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "STONETREE": {
+   "kind": "official-site",
+   "title": "Stonetree Climbing Center",
+   "url": "https://www.stonetreeclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "FREESTONE": {
+   "kind": "official-site",
+   "title": "Freestone Climbing",
+   "url": "https://freestoneclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "ROCKFISH": {
+   "kind": "official-site",
+   "title": "Rockfish Climbing & Fitness",
+   "url": "https://rockfishclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "VOLC": {
+   "kind": "official-site",
+   "title": "Volcanic Rock Gym",
+   "url": "https://www.volcanicrockgymhawaii.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "HICLIMB": {
+   "kind": "official-site",
+   "title": "HiClimb",
+   "url": "https://www.hawaiiclimb.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "OAHUB": {
+   "kind": "official-site",
+   "title": "Oahu Bouldering Gym",
+   "url": "https://www.oahubouldering.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "ALOHAROCK": {
+   "kind": "official-site",
+   "title": "Aloha Rock Gym",
+   "url": "https://www.aloharockgym.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "BIGISLAND": {
+   "kind": "official-site",
+   "title": "Big Island Climbing",
+   "url": "https://bigislandclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "AKROCK": {
+   "kind": "official-site",
+   "title": "Alaska Rock Gym",
+   "url": "https://www.alaskarockgym.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "ASC": {
+   "kind": "official-site",
+   "title": "Ascension Rock Club",
+   "url": "https://www.ascensionrockclub.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "ROCKDUMP": {
+   "kind": "official-site",
+   "title": "The Rock Dump Indoor Climbing Gym",
+   "url": "https://www.rockdump.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "TRG": {
+   "kind": "official-site",
+   "title": "Teton Rock Gym",
+   "url": "https://tetonrockgym.org/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "SOURCE": {
+   "kind": "other",
+   "title": "Source Bouldering Gym page on github.io (official status unconfirmed)",
+   "url": "https://lbring99.github.io/Source-Bouldering-Gym/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "KLIMB": {
+   "kind": "official-site",
+   "title": "Klimb Rock Gym",
+   "url": "http://klimbrockgym.org/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "GEMSTONE": {
+   "kind": "official-site",
+   "title": "Gemstone Climbing",
+   "url": "https://gemstoneclimbing.rocks/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "GMAPS": {
+   "kind": "map-data",
+   "title": "Google Maps place pin (public map listing of the gym)",
+   "url": "https://www.google.com/maps",
+   "language": "en",
+   "accessed": "2026-10-06"
+  }
+ }
+}
