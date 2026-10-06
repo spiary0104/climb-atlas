@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-06-de-west-north",
+  "description": "Regional research \"Germany: NRW, Hessen, Niedersachsen, Hamburg, Bremen, SH, RLP coverage gap\": 71 new gym(s) accepted of 76 candidate(s)",
+  "created": "2026-10-06",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-10-06-de-west-north",
+    "section_sha256": "258c05cc4935ea98abf65f1f7ffed4bdf5fb99c4b4c0f88a8734797bf6602b2d",
+    "sources_sha256": "cc6a32f638a1d0448ea1a2b467c23ef30ae9c6b212d7fb00fe62c2452a75bc9c",
+    "candidates_sha256": "3dd2b35f5041c3ffcececf7fb4b5db8c4c4df09c57eac3401b9356b58cc023ae",
+    "reconcile_sha256": "90c36428f713f824c69424b465f65434072a3405a66741cf7974007850ea82d5",
+    "review_sha256": "ab60df3dc02d64e97d21f790dfcc20f3c4eddcd68d6255be7ea5ff12702d96b1",
+    "candidates": 76,
+    "staged": 71,
+    "decisions": {
+      "accept": 71,
+      "defer": 4,
+      "reject": 1
+    }
+  },
+  "index_at_staging": {
+    "sha256": "27073d25c2df373c17caef0c24ebfe759b8d457953a461c62786486d588e661d",
+    "count": 2438
+  }
+}

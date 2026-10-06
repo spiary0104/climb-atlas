@@ -1,0 +1,1202 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-06-de-west-north",
+ "inputs": {
+  "section_sha256": "258c05cc4935ea98abf65f1f7ffed4bdf5fb99c4b4c0f88a8734797bf6602b2d",
+  "sources_sha256": "cc6a32f638a1d0448ea1a2b467c23ef30ae9c6b212d7fb00fe62c2452a75bc9c",
+  "candidates_sha256": "3dd2b35f5041c3ffcececf7fb4b5db8c4c4df09c57eac3401b9356b58cc023ae",
+  "index": {
+   "sha256": "27073d25c2df373c17caef0c24ebfe759b8d457953a461c62786486d588e661d",
+   "count": 2438
+  },
+  "staged_batches_compared": [],
+  "other_sections_compared": [
+   {
+    "id": "2026-10-05-germany-east-saar-berlin",
+    "candidates_sha256": "3d8ce4141e610ea206427a1828236611ca36c185fbdf09d67ae4878e05b099b6"
+   },
+   {
+    "id": "2026-10-05-germany-owner-checks",
+    "candidates_sha256": "64ec8550f0e70ea5f5165fbaa2d626aa9ab3a022e8af3416a618824d327bc522"
+   },
+   {
+    "id": "2026-10-06-germany-holds",
+    "candidates_sha256": "dbe14541976f26079126560fb8204597917ffe13fc44f8c3eac59718529ef314"
+   }
+  ]
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 76,
+  "ready": 52,
+  "review": 20,
+  "blocked": 4,
+  "existing": 0,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "dewn-2t-lindlar",
+   "line": 50,
+   "name": "2T Kletter+Boulderhalle",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-29800838af"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-bahnhof-blo-wuppertal",
+   "line": 24,
+   "name": "Bahnhof Blo",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-bb437cb06d"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-bergwerk-dortmund",
+   "line": 18,
+   "name": "Kletterhalle Bergwerk",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-1b962ba9f7"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-big-goettingen",
+   "line": 44,
+   "name": "BiG - Bouldern in Göttingen",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-d0319bcd25"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-blocbuster-paderborn",
+   "line": 28,
+   "name": "BlocBuster Paderborn",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-7af58d8d90"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-blockwerk-mainz",
+   "line": 36,
+   "name": "blockwerk Mainz",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-e10b321d4d"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-blocschokolade-trier",
+   "line": 37,
+   "name": "BLOCSCHOKOLADE",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-2afa0a4a82"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-blox-finnentrop",
+   "line": 30,
+   "name": "BloX Boulderhalle Sauerland",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-4e018e151b"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-bootshaus-bielefeld",
+   "line": 19,
+   "name": "Boulderhalle Bootshaus",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-8df81e2d06"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-boulder-factory-muenster",
+   "line": 21,
+   "name": "boulder factory",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-cd1e822644"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-boulderchurch-bad-orb",
+   "line": 61,
+   "name": "Boulderchurch",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-ae098fe6ba"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-bouldereck-erftstadt",
+   "line": 72,
+   "name": "BoulderEck Erftstadt",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-bc60086241"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-boulderplanet-koeln",
+   "line": 6,
+   "name": "Boulderplanet",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-6ba232bcb8"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-camp4-zweibruecken",
+   "line": 64,
+   "name": "Camp4 Kletterzentrum",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-6ea431c2ea"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-campus-boulderhalle-aachen",
+   "line": 16,
+   "name": "CAMPUS Boulderhalle",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-521a32b80f"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate dewn-diehalle-aachen \"dieHalle Aachen\": related names \"Campus Boulderhalle Aachen\" / \"MooVe Boulderhalle Aachen\" 1963 m apart",
+     "ids": [
+      "dewn-diehalle-aachen"
+     ]
+    }
+   ],
+   "review_ids": [
+    "dewn-diehalle-aachen"
+   ]
+  },
+  {
+   "cid": "dewn-cog-bielefeld",
+   "line": 20,
+   "name": "Center of Gravity Boulderhalle",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-7ea441787f"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-cube-wetzlar",
+   "line": 58,
+   "name": "Cube - DAV Kletterzentrum Wetzlar",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-34307158f3"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-dav-alpinzentrum-bielefeld",
+   "line": 55,
+   "name": "DAV Alpinzentrum Bielefeld",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-a970beed22"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-dav-kletterzentrum-darmstadt",
+   "line": 62,
+   "name": "DAV Kletterzentrum Darmstadt",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-aae35440aa"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-dav-kletterzentrum-frankfurt",
+   "line": 35,
+   "name": "DAV Kletterzentrum Frankfurt",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-695d0d2237"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-dav-kletterzentrum-fulda",
+   "line": 59,
+   "name": "DAV Kletter- und Boulderzentrum Fulda",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-7a7a3fba11"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-dav-kletterzentrum-giessen",
+   "line": 57,
+   "name": "DAV Kletter- und Boulderzentrum Gießen",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-401e7f2a37"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-dav-kletterzentrum-owl-brakel",
+   "line": 51,
+   "name": "DAV Kletterzentrum OWL",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-193fab179d"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-dav-kletterzentrum-siegerland",
+   "line": 49,
+   "name": "DAV Kletterzentrum Siegerland",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-5e3948db7d"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-diehalle-aachen",
+   "line": 15,
+   "name": "dieHalle Aachen",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-3246b8a261"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate dewn-campus-boulderhalle-aachen \"CAMPUS Boulderhalle\": related names \"MooVe Boulderhalle Aachen\" / \"Campus Boulderhalle Aachen\" 1963 m apart",
+     "ids": [
+      "dewn-campus-boulderhalle-aachen"
+     ]
+    }
+   ],
+   "review_ids": [
+    "dewn-campus-boulderhalle-aachen"
+   ]
+  },
+  {
+   "cid": "dewn-eifelblock-trier",
+   "line": 38,
+   "name": "Eifelblock Trier",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-d40f0429d7"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-element-essen",
+   "line": 8,
+   "name": "ELEMENT Boulders Essen",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-750f08f738"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-element-koeln-city",
+   "line": 7,
+   "name": "ELEMENT Boulders Köln City",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-8a645656b6"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate dewn-element-koeln-deutz \"ELEMENT Boulders Köln Deutz\": related names \"ELEMENT Boulders Köln City\" / \"ELEMENT Boulders Köln Deutz\" 2436 m apart",
+     "ids": [
+      "dewn-element-koeln-deutz"
+     ]
+    }
+   ],
+   "review_ids": [
+    "dewn-element-koeln-deutz"
+   ]
+  },
+  {
+   "cid": "dewn-element-koeln-deutz",
+   "line": 73,
+   "name": "ELEMENT Boulders Köln Deutz",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-522f0c6e30"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is opening-soon"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate dewn-element-koeln-city \"ELEMENT Boulders Köln City\": related names \"ELEMENT Boulders Köln Deutz\" / \"ELEMENT Boulders Köln City\" 2436 m apart",
+     "ids": [
+      "dewn-element-koeln-city"
+     ]
+    }
+   ],
+   "review_ids": [
+    "dewn-element-koeln-city"
+   ]
+  },
+  {
+   "cid": "dewn-felsmeister-bad-oeynhausen",
+   "line": 29,
+   "name": "Felsmeister Boulderhalle",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-12e74874cf"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-fingerfood-lingen",
+   "line": 76,
+   "name": "Fingerfood Boulderhalle",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-908d8c5b0a"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "no-bouldering-evidence",
+     "detail": "bouldering is \"yes\" but no primary source confirms it"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-fliegerhalle-braunschweig",
+   "line": 42,
+   "name": "Fliegerhalle",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-d752e3f0eb"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-freiraum-basecamp-andernach",
+   "line": 68,
+   "name": "Freiraum Basecamp",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-9d2cefa21d"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-gaia-marburg",
+   "line": 34,
+   "name": "Gaia Boulderhalle",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-9d088b3553"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-gluecksgriff-dortmund",
+   "line": 17,
+   "name": "Glücksgriff Boulderhalle",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-e72b2cee0b"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-gravidrom-lippstadt",
+   "line": 52,
+   "name": "Gravidrom",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-684adf6dc6"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-gravity-bad-kreuznach",
+   "line": 67,
+   "name": "GRAVITY Boulderhalle",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-f395200a2f"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-greifhaus-braunschweig",
+   "line": 43,
+   "name": "Greifhaus",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-709674a322"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-griffreich-hannover",
+   "line": 39,
+   "name": "GriffReich DAV Kletterzentrum Hannover",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-71b0312df0"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-hoehenrausch-stadthagen",
+   "line": 45,
+   "name": "HÖHENRAUSCH Boulderhalle",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-0662ce39bb"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-hold-on-tide-hedwigenkoog",
+   "line": 69,
+   "name": "Hold on Tide",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-35143927e5"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-k11-koeln",
+   "line": 9,
+   "name": "K11 Boulderhalle",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-a591c47fc6"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-kletterbar-kiel",
+   "line": 46,
+   "name": "KletterBar Kiel",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-18becdf608"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-kletterbar-muenster",
+   "line": 22,
+   "name": "KletterBar Münster",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-fed4c2fcd8"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-kletterkirche-moenchengladbach",
+   "line": 27,
+   "name": "Kletterkirche",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-680de65433"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-kletterwelt-sauerland-altena",
+   "line": 31,
+   "name": "Kletterwelt Sauerland",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-24d0663fc9"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-kletterzentrum-buchholz",
+   "line": 63,
+   "name": "Kletterzentrum Buchholz in der Nordheide",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-a74480d342"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-kliff-kleve",
+   "line": 54,
+   "name": "Kliff Boulderhalle",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-b95192b2bb"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-kraftraum-bocholt",
+   "line": 53,
+   "name": "Kraftraum Bocholt Boulderhalle",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-6fa37b5416"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-monkeyspot-moenchengladbach",
+   "line": 26,
+   "name": "Monkeyspot Mönchengladbach",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-b5d06dd15c"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-nordwandhalle-hamburg",
+   "line": 47,
+   "name": "Nordwandhalle",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-cfa1ef903a"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-osnabloc-osnabrueck",
+   "line": 41,
+   "name": "OSNABLOC",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-017c7465b8"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-petz-neustadt",
+   "line": 66,
+   "name": "PETZ Boulderhalle",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-df2a92bb49"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-pfalz-rock-frankenthal",
+   "line": 74,
+   "name": "DAV Kletterzentrum Pfalz Rock",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-7816aadc0d"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-prisma-wuppertal",
+   "line": 23,
+   "name": "Boulderhalle Prisma",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-efb631cced"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-rocktown-kaiserslautern",
+   "line": 65,
+   "name": "RockTown",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-1c16f1e80c"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-rockvibes-ahlen",
+   "line": 71,
+   "name": "Rockvibes Kletterhalle",
+   "class": "blocked",
+   "suggested": "reject closed",
+   "importer": {
+    "class": "new",
+    "id": "g-e61a877b46"
+   },
+   "blockers": [
+    {
+     "code": "closed",
+     "detail": "status_claim is closed"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-schluesselstelle-siegen",
+   "line": 48,
+   "name": "Schlüsselstelle - Jung's Boulderhalle & Café",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-fa2c07dbe8"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-sportpark-kelkheim",
+   "line": 60,
+   "name": "Sportpark Kelkheim Boulderhalle",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-7459d925b1"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-sportpoint-meckenheim",
+   "line": 75,
+   "name": "SportPoint Meckenheim",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-0b0b51027a"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-studio-bloc-darmstadt",
+   "line": 33,
+   "name": "Studio Bloc Darmstadt",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-7fc2e19bf7"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-studio-bloc-wiesbaden",
+   "line": 32,
+   "name": "Studio Bloc Wiesbaden",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-4a39ff5f97"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-stuntwerk-duisburg",
+   "line": 14,
+   "name": "Stuntwerk Duisburg",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-cbdbeec6e6"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-stuntwerk-essen",
+   "line": 11,
+   "name": "Stuntwerk Essen",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-9b2a52e695"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-stuntwerk-koeln-zollstock",
+   "line": 10,
+   "name": "Stuntwerk Köln Zollstock",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-01e07290ea"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-1060 \"Stuntwerk Köln\": related names \"Stuntwerk Köln Zollstock\" / \"Stuntwerk Köln\" 2562 m apart",
+     "ids": [
+      "seed-1060"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-1060"
+   ]
+  },
+  {
+   "cid": "dewn-stuntwerk-krefeld",
+   "line": 12,
+   "name": "Stuntwerk Krefeld",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-e06ca0f773"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-stuntwerk-troisdorf",
+   "line": 13,
+   "name": "Stuntwerk Troisdorf",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-f0e5c10b94"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-superblock-duesseldorf",
+   "line": 25,
+   "name": "Superblock",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-edad9249bc"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-the-cave-wittlich",
+   "line": 70,
+   "name": "The Cave",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-cc208b127b"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-ua-hamburg-ost",
+   "line": 1,
+   "name": "urban apes Hamburg Ost",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-d4b2d372f9"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate dewn-ua-hamburg-stpauli \"urban apes Hamburg St. Pauli\": related names \"urban apes Hamburg Ost\" / \"urban apes Hamburg St. Pauli\" 7646 m apart",
+     "ids": [
+      "dewn-ua-hamburg-stpauli"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate dewn-ua-hamburg-west \"urban apes Hamburg West\": related names \"urban apes Hamburg Ost\" / \"urban apes Hamburg West\" 11077 m apart",
+     "ids": [
+      "dewn-ua-hamburg-west"
+     ]
+    }
+   ],
+   "review_ids": [
+    "dewn-ua-hamburg-stpauli",
+    "dewn-ua-hamburg-west"
+   ]
+  },
+  {
+   "cid": "dewn-ua-hamburg-stpauli",
+   "line": 3,
+   "name": "urban apes Hamburg St. Pauli",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-e340987347"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate dewn-ua-hamburg-ost \"urban apes Hamburg Ost\": related names \"urban apes Hamburg St. Pauli\" / \"urban apes Hamburg Ost\" 7646 m apart",
+     "ids": [
+      "dewn-ua-hamburg-ost"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate dewn-ua-hamburg-west \"urban apes Hamburg West\": related names \"urban apes Hamburg St. Pauli\" / \"urban apes Hamburg West\" 5941 m apart",
+     "ids": [
+      "dewn-ua-hamburg-west"
+     ]
+    }
+   ],
+   "review_ids": [
+    "dewn-ua-hamburg-ost",
+    "dewn-ua-hamburg-west"
+   ]
+  },
+  {
+   "cid": "dewn-ua-hamburg-west",
+   "line": 2,
+   "name": "urban apes Hamburg West",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-05c3986098"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate dewn-ua-hamburg-ost \"urban apes Hamburg Ost\": related names \"urban apes Hamburg West\" / \"urban apes Hamburg Ost\" 11077 m apart",
+     "ids": [
+      "dewn-ua-hamburg-ost"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate dewn-ua-hamburg-stpauli \"urban apes Hamburg St. Pauli\": related names \"urban apes Hamburg West\" / \"urban apes Hamburg St. Pauli\" 5941 m apart",
+     "ids": [
+      "dewn-ua-hamburg-stpauli"
+     ]
+    }
+   ],
+   "review_ids": [
+    "dewn-ua-hamburg-ost",
+    "dewn-ua-hamburg-stpauli"
+   ]
+  },
+  {
+   "cid": "dewn-ua-hannover",
+   "line": 5,
+   "name": "urban apes Hannover",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-1a3b12436e"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-ua-norderstedt",
+   "line": 4,
+   "name": "urban apes Norderstedt",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-aebfb13ca1"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-volksbank-kletterhalle-marburg",
+   "line": 56,
+   "name": "Volksbank Kletterhalle Marburg",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-95211265ca"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "dewn-zenit-osnabrueck",
+   "line": 40,
+   "name": "Zenit Boulderhalle",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-84a999eb03"
+   },
+   "review_ids": []
+  }
+ ],
+ "reconcile_sha256": "f92dc39dca551befe8e7d1e2a52948ced3f30e681cc3f7eeeadb29cf7a659f71"
+}
