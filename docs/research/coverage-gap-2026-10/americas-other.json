@@ -1,0 +1,1221 @@
+{
+ "group": "americas-other",
+ "researched": "2026-10-06",
+ "countries": [
+  {
+   "cc": "US",
+   "name": "United States",
+   "bouldeer": 312,
+   "est_low": 700,
+   "est_mid": 850,
+   "est_high": 1100,
+   "confidence": "medium",
+   "method": "CBJ commercial count (~695-700, 2026) as floor; CBJ North America >870 (2024) +41 net (2025) = ~910 minus Canada/Mexico; USA Climbing 'more than 800 gyms'; indoorclimbinggym.com 779; Mountain Project 1,342 as loose ceiling (includes YMCA/rec/kids/school walls). Mid assumes commercial + public-access community/university walls with bouldering.",
+   "sources": [
+    {
+     "title": "Gyms and Trends 2025 - CBJ",
+     "url": "https://climbingbusinessjournal.com/gyms-and-trends-2025/",
+     "says": "2025: 40 US openings, 12 US closures, 28 net US; NA net 41 (+4.7%). Survey of 240 facilities. Totals paywalled."
+    },
+    {
+     "title": "Building a Gym? 5 Insights from CBJ's 2026 Market Report",
+     "url": "https://climbingbusinessjournal.com/building-a-gym-5-insights-from-cbjs-2026-climbing-gym-market-report-and-dashboard/",
+     "says": "'nearly 700 facilities' in the US; NYC-Newark-Jersey City ~40 gyms; Chicago 'more than a dozen'."
+    },
+    {
+     "title": "Number of Climbing Gyms Reaches All Time High - Gripped (CBJ 2021 data)",
+     "url": "https://gripped.com/indoor-climbing/number-of-climbing-gyms-reaches-all-time-high/",
+     "says": "2021: US 591, Canada 136, NA >700. 76 chains in NA."
+    },
+    {
+     "title": "Largest Climbing Gym Developers in America - CBJ",
+     "url": "https://climbingbusinessjournal.com/largest-climbing-gym-developers-in-america/",
+     "says": "Movement 34, Central Rock Gym 29, Touchstone 18, Gravity Vault 16, Bouldering Project 13, Hangar 18 11, Rock Spot 9, Climbing Collective 9, High Point 8, VITAL 8, Momentum 8."
+    },
+    {
+     "title": "USA Climbing - Visit your local climbing gym",
+     "url": "https://usaclimbing.org/visit-your-local-climbing-gym/",
+     "says": "'more than 800 gyms' in the USA Climbing network."
+    },
+    {
+     "title": "indoorclimbinggym.com by state",
+     "url": "https://www.indoorclimbinggym.com/states/",
+     "says": "779 gyms/51 states (CA 94, CO 46, NY 45, TX 44, WA 33, FL 29, MA 28, NC 28, IL 27, OR 26...). Known undercount (DC 1, MD 8)."
+    },
+    {
+     "title": "Mountain Project Climbing Gym Directory",
+     "url": "https://www.mountainproject.com/gyms",
+     "says": "US 1,342 listings (broad: includes YMCAs, campus walls, camps, closed). Canada 221."
+    }
+   ],
+   "cities": [
+    {
+     "city": "New York metro (40km)",
+     "est": 35,
+     "bouldeer": 15,
+     "notes": "CBJ: nearly 40 in NY-Newark-JC metro (wider than 40km, incl. NJ/LI). Bouldeer has no NJ."
+    },
+    {
+     "city": "Los Angeles (40km)",
+     "est": 40,
+     "bouldeer": 18,
+     "notes": "MP-derived LA+Orange County ~43 (summarised, rough). Hangar 18/Sender One/Touchstone/Movement heavy; Orange County partly outside 40km."
+    },
+    {
+     "city": "SF Bay Area (40km)",
+     "est": 30,
+     "bouldeer": 17,
+     "notes": "MP-derived ~28 (rough)."
+    },
+    {
+     "city": "Seattle (40km)",
+     "est": 25,
+     "bouldeer": 15,
+     "notes": "Edgeworks/Vertical World/SBP/Momentum; estimate from chain footprint, low-medium confidence."
+    },
+    {
+     "city": "Denver/Boulder (40km)",
+     "est": 28,
+     "bouldeer": 14,
+     "notes": "Movement, The Spot, Ascent, Climbing Collective; estimate from chain footprints."
+    },
+    {
+     "city": "Chicago (40km)",
+     "est": 20,
+     "bouldeer": 9,
+     "notes": "CBJ: 'more than a dozen' in Chicago; metro est higher (First Ascent x6, Movement, Vertical Endeavors, etc.)."
+    },
+    {
+     "city": "Boston (40km)",
+     "est": 22,
+     "bouldeer": 16,
+     "notes": "Central Rock Gym x9+ and Rock Spot/MetroRock; Bouldeer already strong."
+    },
+    {
+     "city": "Washington DC metro (40km)",
+     "est": 18,
+     "bouldeer": 0,
+     "notes": "Sportrock x4-5 (VA/MD), Movement Crystal City/Fairfax/Rockville/Columbia, Lifetime walls (not counted). Bouldeer has none."
+    },
+    {
+     "city": "Austin (40km)",
+     "est": 12,
+     "bouldeer": 6,
+     "notes": "MP list 9 (incl. UT wall, Main Event)."
+    },
+    {
+     "city": "Dallas-Fort Worth (40km)",
+     "est": 14,
+     "bouldeer": 5,
+     "notes": "MP list 11; Movement has 6 DFW branches."
+    },
+    {
+     "city": "Houston (40km)",
+     "est": 12,
+     "bouldeer": 5,
+     "notes": "MP list ~8-9."
+    },
+    {
+     "city": "Atlanta (40km)",
+     "est": 14,
+     "bouldeer": 7,
+     "notes": "Central Rock x4 etc."
+    },
+    {
+     "city": "Salt Lake City (40km)",
+     "est": 12,
+     "bouldeer": 7,
+     "notes": "Momentum x4, The Front x3, SLC Bouldering Project."
+    },
+    {
+     "city": "Portland OR (40km)",
+     "est": 14,
+     "bouldeer": 1,
+     "notes": "MP list 11: Circuit x4 (SW, NE, Tigard + Bend/Eugene elsewhere), Movement Portland, Portland Rock Gym x2, Tomo, Skyhook, Stoneworks. Bouldeer has 1."
+    },
+    {
+     "city": "Minneapolis-St Paul (40km)",
+     "est": 14,
+     "bouldeer": 0,
+     "notes": "MP list 16 (incl. YMCA/University walls). Bouldering Project Mpls + St Paul (opened 2025), Vertical Endeavors x3-4. Bouldeer has none."
+    },
+    {
+     "city": "Philadelphia (40km)",
+     "est": 10,
+     "bouldeer": 0,
+     "notes": "Philadelphia Rock Gyms x5, Movement Callowhill + Fishtown, Tufas, Gravity Vault Radnor. Bouldeer has none."
+    },
+    {
+     "city": "San Diego (40km)",
+     "est": 14,
+     "bouldeer": 7,
+     "notes": "MP-derived ~13 (rough); Mesa Rim x4, Vital Carlsbad/Oceanside etc."
+    },
+    {
+     "city": "Phoenix (40km)",
+     "est": 11,
+     "bouldeer": 0,
+     "notes": "MP list 10: Bouldering Project Tempe, Black Rock, Alta (Gilbert/Chandler), Climbmax, Phoenix Rock Gym, Gecko, Focus. Bouldeer has none."
+    }
+   ],
+   "chains_missing": [
+    {
+     "chain": "Bouldering Project (Minneapolis, St Paul, Tempe, etc.)",
+     "branches_est": 13,
+     "bouldeer_has": "9 (Somerville, Brooklyn, Austin x2, SLC, Seattle x4 approx)",
+     "url": "https://boulderingproject.com/"
+    },
+    {
+     "chain": "Philadelphia Rock Gyms",
+     "branches_est": 5,
+     "bouldeer_has": "0",
+     "url": "https://philarockgym.com/"
+    },
+    {
+     "chain": "Sportrock Climbing Centers",
+     "branches_est": 5,
+     "bouldeer_has": "0",
+     "url": "https://www.sportrock.com/"
+    },
+    {
+     "chain": "Vertical Endeavors (MN)",
+     "branches_est": 6,
+     "bouldeer_has": "1",
+     "url": "https://www.verticalendeavors.com/"
+    },
+    {
+     "chain": "The Circuit Bouldering Gym (OR)",
+     "branches_est": 5,
+     "bouldeer_has": "0",
+     "url": "https://www.thecircuitgym.com/"
+    },
+    {
+     "chain": "Triangle Rock Club (NC/VA)",
+     "branches_est": 4,
+     "bouldeer_has": "0",
+     "url": "https://trianglerockclub.com/"
+    },
+    {
+     "chain": "Central Rock Gym (FL, other)",
+     "branches_est": 29,
+     "bouldeer_has": "22",
+     "url": "https://centralrockgym.com/"
+    },
+    {
+     "chain": "Movement (PA, VA, MD, OR, DC area)",
+     "branches_est": 34,
+     "bouldeer_has": "~25 by name",
+     "url": "https://movementgyms.com/"
+    },
+    {
+     "chain": "Gravity Vault (NJ, PA, NY)",
+     "branches_est": 16,
+     "bouldeer_has": "3",
+     "url": "https://www.gravityvault.com/"
+    },
+    {
+     "chain": "Touchstone (CA; Bouldeer may hold some under branded names)",
+     "branches_est": 18,
+     "bouldeer_has": "unclear",
+     "url": "https://touchstoneclimbing.com/"
+    },
+    {
+     "chain": "Climbing Collective (CO)",
+     "branches_est": 9,
+     "bouldeer_has": "4",
+     "url": ""
+    }
+   ],
+   "leads": [
+    {
+     "name": "Minneapolis Bouldering Project",
+     "city": "Minneapolis, MN",
+     "url": "https://boulderingproject.com/location/minneapolis/"
+    },
+    {
+     "name": "St. Paul Bouldering Project",
+     "city": "Saint Paul, MN (opened 2025)",
+     "url": "https://boulderingproject.com/"
+    },
+    {
+     "name": "Vertical Endeavors - Twin Cities Bouldering",
+     "city": "Saint Paul, MN",
+     "url": "https://www.verticalendeavors.com/visit-us/hours-locations/twin-cities-bouldering-4/"
+    },
+    {
+     "name": "Vertical Endeavors Minneapolis / Bloomington",
+     "city": "Minneapolis, MN",
+     "url": "https://www.verticalendeavors.com/"
+    },
+    {
+     "name": "Philadelphia Rock Gym (Fishtown, East Falls, Oaks, Wyncote, Malvern)",
+     "city": "Philadelphia, PA",
+     "url": "https://philarockgym.com/"
+    },
+    {
+     "name": "Movement Callowhill / Movement Fishtown",
+     "city": "Philadelphia, PA",
+     "url": "https://movementgyms.com/"
+    },
+    {
+     "name": "Sportrock (Alexandria, Sterling, Lorton, Rio Gaithersburg)",
+     "city": "Washington DC area",
+     "url": "https://www.sportrock.com/"
+    },
+    {
+     "name": "Movement Crystal City / Fairfax / Rockville / Columbia",
+     "city": "Washington DC area",
+     "url": "https://movementgyms.com/"
+    },
+    {
+     "name": "Triangle Rock Club",
+     "city": "Morrisville, NC",
+     "url": "https://trianglerockclub.com/"
+    },
+    {
+     "name": "The Circuit Bouldering Gym (SW, NE, Tigard, Bend, Eugene)",
+     "city": "Portland, OR",
+     "url": "https://www.thecircuitgym.com/"
+    },
+    {
+     "name": "Movement Portland",
+     "city": "Portland, OR",
+     "url": "https://movementgyms.com/"
+    },
+    {
+     "name": "Black Rock Bouldering Gym",
+     "city": "Phoenix, AZ",
+     "url": "https://www.indoorclimbinggym.com/gyms/black-rock-bouldering-gym-phoenix/"
+    },
+    {
+     "name": "Alta Climbing and Fitness",
+     "city": "Gilbert, AZ",
+     "url": "https://altaclimbing.com/"
+    },
+    {
+     "name": "Bouldering Project Tempe",
+     "city": "Tempe, AZ",
+     "url": "https://boulderingproject.com/"
+    },
+    {
+     "name": "ASCEND Climbing (South Side, Point Breeze, Erie)",
+     "city": "Pittsburgh, PA",
+     "url": "https://www.ascendclimbing.com/"
+    },
+    {
+     "name": "Central Rock Gym Tampa / Orlando / Miami / Wynwood / Fort Myers",
+     "city": "Florida",
+     "url": "https://centralrockgym.com/"
+    },
+    {
+     "name": "Blue Swan Boulders",
+     "city": "Orlando, FL",
+     "url": ""
+    },
+    {
+     "name": "projectROCK",
+     "city": "Oakland Park, FL",
+     "url": ""
+    },
+    {
+     "name": "Aiguille Rock Climbing Center",
+     "city": "Longwood, FL",
+     "url": ""
+    },
+    {
+     "name": "Alchemy Climbing",
+     "city": "Tallahassee, FL",
+     "url": ""
+    }
+   ],
+   "notes": "Bouldeer covers only 12 states (CA, CO, MA, IL, TX, WA, NY, NV, GA, UT, TN, AL). In indoorclimbinggym.com the other 39 states+DC hold ~401 of 779 gyms (~51%): FL 29, NC 28, OR 26, PA 26, OH 23, NJ 23, VA 23, MI 20, MN 16, AZ 16, WI 14, IN 14, MO 12... Inside the 12 covered states Bouldeer 312 vs directory 378 (directory is a floor; CBJ-commercial suggests ~15-30% more). Biggest gap is geographic (whole states missing), not depth. Mountain Project figures came through a summarising fetch tool and are approximate. Definitions: CBJ counts commercial gyms (nearly all have bouldering); mid includes public community/university walls. Lead URLs are only those seen in search results; blank = not confirmed."
+  },
+  {
+   "cc": "CA",
+   "name": "Canada",
+   "bouldeer": 23,
+   "est_low": 160,
+   "est_mid": 190,
+   "est_high": 230,
+   "confidence": "medium",
+   "method": "CBJ: Canada 136 gyms (2021) and 11 net new in 2025 = 6.5% growth (implies base ~169, ~180 end-2025); NA >870 (2024) minus US ~700. Cross-checked with Redpoint (153) and Mountain Project (221, broad incl. rec-centre walls).",
+   "sources": [
+    {
+     "title": "Bouldering Gyms are Booming - Gripped",
+     "url": "https://gripped.com/profiles/bouldering-gyms-are-booming-being-community-hubs-is-one-reason-why/",
+     "says": "Canada 11 new gyms in 2025, 6.5% net growth (CBJ)."
+    },
+    {
+     "title": "Gripped: gym counts (CBJ 2021)",
+     "url": "https://gripped.com/indoor-climbing/number-of-climbing-gyms-reaches-all-time-high/",
+     "says": "Canada 136 gyms in 2021."
+    },
+    {
+     "title": "Redpoint gym directory Canada",
+     "url": "https://gyms.redpoint-app.com/region/CA",
+     "says": "153 gyms."
+    },
+    {
+     "title": "Mountain Project gym directory",
+     "url": "https://www.mountainproject.com/gyms",
+     "says": "Canada 221 (QC 62, ON 49, BC 46); broad."
+    },
+    {
+     "title": "Globe and Mail on indoor climbing",
+     "url": "https://www.theglobeandmail.com/life/article-whats-behind-canadas-indoor-climbing-craze/",
+     "says": "CEC: commercial gyms tripled over a decade (no count)."
+    }
+   ],
+   "cities": [
+    {
+     "city": "Toronto/GTA (25km)",
+     "est": 20,
+     "bouldeer": 7,
+     "notes": "Brocnbells lists 11 (incomplete); chains Boulderz x3, Basecamp x2, Hub, Rock On, Up the Bloc, True North, Rock Oasis, Joe Rockhead's, Boulder Parc, Ethos."
+    },
+    {
+     "city": "Montreal (25km)",
+     "est": 18,
+     "bouldeer": 5,
+     "notes": "mtl.org: 16 climbing/bouldering gyms. Bloc Shop x3, Allez Up x3, Cafe Bloc, Shakti, Nomad Bloc, Zero Gravite, Beta Bloc."
+    },
+    {
+     "city": "Vancouver (25km)",
+     "est": 14,
+     "bouldeer": 4,
+     "notes": "Hive (5+ sites), Cliffhanger, Progression, Base5, Project Climbing Cloverdale, Coastal Climbing Surrey, Richmond Oval."
+    },
+    {
+     "city": "Calgary (25km)",
+     "est": 10,
+     "bouldeer": 3,
+     "notes": "Calgary Climbing Centre x5 (Bouldeer 2), Bolder x2, Odyssey."
+    },
+    {
+     "city": "Ottawa (25km)",
+     "est": 8,
+     "bouldeer": 1,
+     "notes": "Altitude Kanata, Coyote Rock Gym, Klimat 2.0 (new 2025), more."
+    },
+    {
+     "city": "Edmonton (25km)",
+     "est": 7,
+     "bouldeer": 0,
+     "notes": "Blocs, Climb YEG, Factory, Niche, Rock Jungle, Vertically Inclined, Boulders Climbing."
+    }
+   ],
+   "chains_missing": [
+    {
+     "chain": "The Hive (BC/ON)",
+     "branches_est": 8,
+     "bouldeer_has": "2-3",
+     "url": "https://www.thehiveclimbing.com/"
+    },
+    {
+     "chain": "Allez Up (Montreal)",
+     "branches_est": 3,
+     "bouldeer_has": "1",
+     "url": ""
+    },
+    {
+     "chain": "Bloc Shop (Montreal)",
+     "branches_est": 3,
+     "bouldeer_has": "1",
+     "url": "https://blocshop.com/en/"
+    },
+    {
+     "chain": "Calgary Climbing Centre",
+     "branches_est": 5,
+     "bouldeer_has": "2",
+     "url": "https://www.calgaryclimbing.com/"
+    },
+    {
+     "chain": "Basecamp Climbing (Toronto)",
+     "branches_est": 2,
+     "bouldeer_has": "1",
+     "url": ""
+    },
+    {
+     "chain": "Boulderz Climbing Centre",
+     "branches_est": 3,
+     "bouldeer_has": "3",
+     "url": ""
+    }
+   ],
+   "leads": [
+    {
+     "name": "Bolder Elevated",
+     "city": "Calgary, AB",
+     "url": "https://bolderclimbing.com/"
+    },
+    {
+     "name": "Calgary Climbing Centre Hanger / Rocky Mountain / Stronghold",
+     "city": "Calgary, AB",
+     "url": "https://www.calgaryclimbing.com/"
+    },
+    {
+     "name": "Blocs",
+     "city": "Edmonton, AB",
+     "url": "https://blocsclimbing.com/"
+    },
+    {
+     "name": "Boulders Climbing",
+     "city": "Edmonton, AB",
+     "url": ""
+    },
+    {
+     "name": "Climb YEG",
+     "city": "Edmonton, AB",
+     "url": ""
+    },
+    {
+     "name": "Factory Climbing",
+     "city": "Edmonton, AB",
+     "url": ""
+    },
+    {
+     "name": "Niche Climbing / Rock Jungle",
+     "city": "Edmonton, AB",
+     "url": "https://www.nicheclimbing.ca/"
+    },
+    {
+     "name": "Vertically Inclined Rock Gym",
+     "city": "Edmonton, AB",
+     "url": "https://www.verticallyinclined.com/"
+    },
+    {
+     "name": "Bloc Shop Hochelaga / Mile-Ex",
+     "city": "Montreal, QC",
+     "url": "https://blocshop.com/en/"
+    },
+    {
+     "name": "Allez Up Mile End / Verdun",
+     "city": "Montreal, QC",
+     "url": ""
+    },
+    {
+     "name": "Nomad Bloc",
+     "city": "Montreal, QC",
+     "url": ""
+    },
+    {
+     "name": "Beta Bloc",
+     "city": "Dorval, QC",
+     "url": ""
+    },
+    {
+     "name": "Cliffhanger Vancouver",
+     "city": "Vancouver, BC",
+     "url": ""
+    },
+    {
+     "name": "Klimat 2.0",
+     "city": "Ottawa, ON",
+     "url": ""
+    },
+    {
+     "name": "Coyote Rock Gym",
+     "city": "Ottawa, ON",
+     "url": ""
+    }
+   ],
+   "notes": "Bouldeer is at ~12% of mid estimate; biggest absolute gap outside the US. Ottawa/Edmonton/Winnipeg/Quebec City/Victoria/Kelowna largely unrepresented."
+  },
+  {
+   "cc": "MX",
+   "name": "Mexico",
+   "bouldeer": 15,
+   "est_low": 30,
+   "est_mid": 40,
+   "est_high": 60,
+   "confidence": "low",
+   "method": "Redpoint lists 32 gyms (CDMX 11), Mountain Project 27; CBJ: Mexico 5 openings 2024 and 2 in 2025 (total not public). NA arithmetic (~910 - US ~700 - Canada ~180) leaves ~30 for Mexico.",
+   "sources": [
+    {
+     "title": "Redpoint gym directory Mexico",
+     "url": "https://gyms.redpoint-app.com/region/MX",
+     "says": "32 gyms in 14 cities; CDMX 11, Monterrey 2, Saltillo 2, Morelia 2."
+    },
+    {
+     "title": "Mountain Project Mexico",
+     "url": "https://www.mountainproject.com/gyms/mexico",
+     "says": "27 gyms; CDMX 9-10, Puebla 2."
+    },
+    {
+     "title": "CBJ Gyms & Trends 2025",
+     "url": "https://climbingbusinessjournal.com/gyms-and-trends-2025/",
+     "says": "Mexico 2 new gyms 2025 (5 in 2024)."
+    }
+   ],
+   "cities": [
+    {
+     "city": "Mexico City (25km)",
+     "est": 14,
+     "bouldeer": 7,
+     "notes": "Adamanta x2-3, Casa Boulder, Amanecer Climbing, Ascendum, Bloc E, Arena Boulder, 22kN missing."
+    },
+    {
+     "city": "Monterrey (25km)",
+     "est": 6,
+     "bouldeer": 4,
+     "notes": "Sierra Elevation, Casa de Piedra, CARE wall candidates."
+    },
+    {
+     "city": "Guadalajara (25km)",
+     "est": 5,
+     "bouldeer": 2,
+     "notes": "Motion Boulder x2 in Bouldeer; Rocodromo Ameyalli, Summit Escalada missing."
+    }
+   ],
+   "chains_missing": [
+    {
+     "chain": "Adamanta (CDMX, Satelite, Puebla, Monterrey)",
+     "branches_est": 5,
+     "bouldeer_has": "3",
+     "url": ""
+    }
+   ],
+   "leads": [
+    {
+     "name": "Adamanta Satelite",
+     "city": "Naucalpan",
+     "url": ""
+    },
+    {
+     "name": "Adamanta Puebla",
+     "city": "Puebla",
+     "url": ""
+    },
+    {
+     "name": "Casa Boulder",
+     "city": "Mexico City",
+     "url": ""
+    },
+    {
+     "name": "Amanecer Climbing",
+     "city": "Mexico City",
+     "url": ""
+    },
+    {
+     "name": "Ascendum",
+     "city": "Mexico City",
+     "url": ""
+    },
+    {
+     "name": "Bloc E Climbing Center",
+     "city": "Mexico City",
+     "url": ""
+    },
+    {
+     "name": "Arena Boulder",
+     "city": "Mexico City",
+     "url": "https://www.arenaboulder.com.mx/"
+    },
+    {
+     "name": "Moon Rock Boulder",
+     "city": "San Pedro Cholula, Puebla",
+     "url": ""
+    },
+    {
+     "name": "Rocodromo Ameyalli",
+     "city": "Guadalajara",
+     "url": "https://ameyalli.com.mx/"
+    },
+    {
+     "name": "Summit Escalada",
+     "city": "Zapopan",
+     "url": ""
+    },
+    {
+     "name": "Sierra Elevation",
+     "city": "Monterrey",
+     "url": ""
+    },
+    {
+     "name": "Boulder Grid",
+     "city": "Hermosillo",
+     "url": ""
+    },
+    {
+     "name": "Santuario Boulder",
+     "city": "Aguascalientes",
+     "url": ""
+    },
+    {
+     "name": "RockSolid Merida",
+     "city": "Merida",
+     "url": "https://www.rocksolid.mx/es"
+    },
+    {
+     "name": "Rock On Climbing Gym",
+     "city": "Mexicali",
+     "url": ""
+    }
+   ],
+   "notes": "No authoritative national count found; est is directory-based. Bouldeer already at ~40% of directory counts. Leads are from Redpoint/Mountain Project/search and need verification."
+  },
+  {
+   "cc": "BR",
+   "name": "Brazil",
+   "bouldeer": 14,
+   "est_low": 70,
+   "est_mid": 90,
+   "est_high": 130,
+   "confidence": "medium",
+   "method": "Brazilian Climbing Confederation (CBE) survey, reported Dec 2024: 68 indoor gyms mapped (SP state 25, MG 10, SC 8; 78% opened since 2018). Add 2025-26 growth and small boulder gyms outside CBE mapping.",
+   "sources": [
+    {
+     "title": "Go Outside: os 68 ginasios de escalada indoor do Brasil",
+     "url": "https://gooutside.com.br/mapa-dos-ginasios-de-escalada-indoor-do-brasil/",
+     "says": "CBE mapped 68 gyms (Dec 2024): Southeast 40, South 16, Centre-West 9, North 2, Northeast 1."
+    },
+    {
+     "title": "Top Climbing Rio listing",
+     "url": "https://topclimbing.com.br/academias/cidade/rio-de-janeiro",
+     "says": "Evolucao, CE Limite Vertical, Centro de Escalada JPA, Escalada Indoor Icarai (Niteroi) listed."
+    },
+    {
+     "title": "Desviantes list of gyms with climbing walls",
+     "url": "https://desviantes.com.br/blog/post/lista-parede-de-escalada-indoor/",
+     "says": "Directory of academies with walls (not counted)."
+    }
+   ],
+   "cities": [
+    {
+     "city": "Sao Paulo (25km)",
+     "est": 20,
+     "bouldeer": 5,
+     "notes": "CBE: 25 in SP state. Casa de Pedra x2, Fabrica x2, 90 Graus in Bouldeer."
+    },
+    {
+     "city": "Rio de Janeiro (25km)",
+     "est": 8,
+     "bouldeer": 1,
+     "notes": "Evolucao (Bouldeer), CE Limite Vertical, Centro de Escalada JPA, Niteroi Icarai (outside radius)."
+    }
+   ],
+   "chains_missing": [],
+   "leads": [
+    {
+     "name": "CE Limite Vertical",
+     "city": "Rio de Janeiro (Botafogo)",
+     "url": ""
+    },
+    {
+     "name": "Centro de Escalada JPA",
+     "city": "Rio de Janeiro (Jacarepagua)",
+     "url": ""
+    },
+    {
+     "name": "Escalada Indoor Icarai",
+     "city": "Niteroi",
+     "url": ""
+    }
+   ],
+   "notes": "SC (8 gyms), Brasilia/Centre-West (9), Porto Alegre, Campinas, Florianopolis not checked against Bouldeer (only Curitiba, BH, SP, Rio present). Likely 50+ gym gap vs CBE list but exact names not retrieved."
+  },
+  {
+   "cc": "AR",
+   "name": "Argentina",
+   "bouldeer": 19,
+   "est_low": 25,
+   "est_mid": 40,
+   "est_high": 60,
+   "confidence": "low",
+   "method": "BoulderingList 20 (BA 10); no federation count found. Bouldeer already roughly equals directory; many club/Club Andino walls make real count higher.",
+   "sources": [
+    {
+     "title": "BoulderingList Argentina",
+     "url": "https://boulderinglist.com/countries/Argentina",
+     "says": "20 gyms in 9 cities (BA 10)."
+    },
+    {
+     "title": "indoorclimbing.com Argentina",
+     "url": "https://www.indoorclimbing.com/argentina.html",
+     "says": "Older directory (not parsed)."
+    }
+   ],
+   "cities": [
+    {
+     "city": "Buenos Aires (25km)",
+     "est": 18,
+     "bouldeer": 7,
+     "notes": "BoulderingList 10 + Golem, Realization, Rustik, R.K.M, Punto Cumbre"
+    }
+   ],
+   "chains_missing": [],
+   "leads": [
+    {
+     "name": "Golem Escalada",
+     "city": "Buenos Aires",
+     "url": ""
+    },
+    {
+     "name": "Realization Escalada",
+     "city": "Buenos Aires",
+     "url": ""
+    },
+    {
+     "name": "Escalada Rustik",
+     "city": "Buenos Aires",
+     "url": ""
+    },
+    {
+     "name": "Punto Cumbre - En Punto",
+     "city": "Buenos Aires",
+     "url": ""
+    },
+    {
+     "name": "Club de Escaladores R.K.M",
+     "city": "Buenos Aires",
+     "url": ""
+    },
+    {
+     "name": "Mendoza gym (BoulderingList)",
+     "city": "Mendoza",
+     "url": ""
+    }
+   ],
+   "notes": "Lead names come from BoulderingList and a search result; some may duplicate Bouldeer entries under different names (Ahonikenk, V Once are present)."
+  },
+  {
+   "cc": "CL",
+   "name": "Chile",
+   "bouldeer": 15,
+   "est_low": 22,
+   "est_mid": 30,
+   "est_high": 45,
+   "confidence": "low",
+   "method": "BoulderingList 18 (Santiago 4); Malku Santiago list names 10 venues; no federation count.",
+   "sources": [
+    {
+     "title": "BoulderingList Chile",
+     "url": "https://boulderinglist.com/countries/Chile",
+     "says": "18 gyms, 12 cities."
+    },
+    {
+     "title": "Malku: Top 10 lugares para escalar en Santiago",
+     "url": "https://www.malku.cl/top-10-lugares-para-escalar-en-muro-en-santiago/",
+     "says": "El Muro, Muro Mall Sport, Bhanga, Casa Boulder, Hangar Boulder, Boulderec, Boulder Coffee, Star Gym, Los Silos, Muro Gabriela."
+    }
+   ],
+   "cities": [
+    {
+     "city": "Santiago (25km)",
+     "est": 14,
+     "bouldeer": 5,
+     "notes": "Missing: Hangar Boulder, Bhanga, Boulderec, Boulder Coffee, Star Gym, Muro Mall Sport, Ragni, Los Silos (free public)."
+    }
+   ],
+   "chains_missing": [],
+   "leads": [
+    {
+     "name": "Hangar Boulder",
+     "city": "San Miguel, Santiago",
+     "url": "https://www.malku.cl/hangar-boulder/"
+    },
+    {
+     "name": "Bhanga Climbing",
+     "city": "Santiago",
+     "url": ""
+    },
+    {
+     "name": "Boulderec",
+     "city": "Santiago",
+     "url": ""
+    },
+    {
+     "name": "Boulder Coffee",
+     "city": "Santiago",
+     "url": ""
+    },
+    {
+     "name": "Star Gym",
+     "city": "Santiago",
+     "url": ""
+    },
+    {
+     "name": "Muro Mall Sport",
+     "city": "Santiago",
+     "url": ""
+    },
+    {
+     "name": "Ragni Climbing",
+     "city": "Santiago",
+     "url": ""
+    },
+    {
+     "name": "Parque Los Silos (free public wall)",
+     "city": "Santiago",
+     "url": ""
+    },
+    {
+     "name": "Muro Gabriela (free wall)",
+     "city": "Santiago",
+     "url": ""
+    }
+   ],
+   "notes": "Los Silos and Muro Gabriela are free public parks, check whether they fit 'indoor'."
+  },
+  {
+   "cc": "CO",
+   "name": "Colombia",
+   "bouldeer": 18,
+   "est_low": 25,
+   "est_mid": 38,
+   "est_high": 55,
+   "confidence": "low",
+   "method": "BoulderingList 20; local search; no national count. Bouldeer roughly matches directory so real count likely larger.",
+   "sources": [
+    {
+     "title": "BoulderingList Colombia",
+     "url": "https://boulderinglist.com/countries/Colombia",
+     "says": "20 gyms across 12 cities (Bogota 3, Cali 3, Ibague 3)."
+    },
+    {
+     "title": "The Wandering Climber: Medellin gyms",
+     "url": "https://www.thewanderingclimber.com/escalada-medellin-rock-climbing-medellin-escalada-deportiva/",
+     "says": "Altitud and El Muro (boulder gym) in Medellin."
+    }
+   ],
+   "cities": [
+    {
+     "city": "Bogota (25km)",
+     "est": 10,
+     "bouldeer": 5,
+     "notes": "Gran Pared, Wazza, Zona de Bloque + Chia x2 in Bouldeer."
+    },
+    {
+     "city": "Medellin (25km)",
+     "est": 5,
+     "bouldeer": 1,
+     "notes": "Altitud, El Muro absent from Bouldeer; Mahalo (Envigado) present."
+    }
+   ],
+   "chains_missing": [],
+   "leads": [
+    {
+     "name": "Altitud",
+     "city": "Medellin (Laureles/Belen)",
+     "url": ""
+    },
+    {
+     "name": "El Muro",
+     "city": "Medellin (Laureles)",
+     "url": ""
+    },
+    {
+     "name": "Roca Solida",
+     "city": "Guatavita (near Bogota)",
+     "url": "https://www.facebook.com/gimnasiorocasolida/"
+    }
+   ],
+   "notes": "Leads limited; Colombian gyms are poorly indexed; local-language search would help (Cali, Barranquilla, Manizales, Pereira)."
+  },
+  {
+   "cc": "PE",
+   "name": "Peru",
+   "bouldeer": 6,
+   "est_low": 8,
+   "est_mid": 12,
+   "est_high": 18,
+   "confidence": "low",
+   "method": "Lima search results (Pirqa, Base Camp, Vertical, El Boulder) plus Cusco/Arequipa; no directory count.",
+   "sources": [
+    {
+     "title": "indoorclimbing.com Peru + search",
+     "url": "https://www.indoorclimbing.com/Peru.html",
+     "says": "Lima gyms: Pirqa, Base Camp Peru, Vertical, El Boulder (Barranco)."
+    }
+   ],
+   "cities": [
+    {
+     "city": "Lima (25km)",
+     "est": 8,
+     "bouldeer": 4,
+     "notes": "Bouldeer has Base Camp, Vertical, Pirqa, 'Bloque'. El Boulder (Casa Drama, Barranco) may be 'Bloque'; unverified."
+    }
+   ],
+   "chains_missing": [],
+   "leads": [
+    {
+     "name": "El Boulder (Casa Drama, Barranco)",
+     "city": "Lima",
+     "url": "https://toposperu.wordpress.com/palestras/lima/elboulder/"
+    }
+   ],
+   "notes": "Cusco, Trujillo, Huaraz walls unchecked."
+  },
+  {
+   "cc": "EC",
+   "name": "Ecuador",
+   "bouldeer": 11,
+   "est_low": 12,
+   "est_mid": 17,
+   "est_high": 25,
+   "confidence": "low",
+   "method": "Quito gym lists from Expreso and search results; no national count.",
+   "sources": [
+    {
+     "title": "Expreso: Escalada en Quito",
+     "url": "https://www.expreso.ec/quito/escalada-en-quito-los-mejores-gimnasios-para-practicar-este-deporte-en-la-capital-261958.html",
+     "says": "Lists Quito gyms (El Cap, Monodedo, Vertigo, La Colonia, Alpaca, La Cueva)."
+    }
+   ],
+   "cities": [
+    {
+     "city": "Quito (25km)",
+     "est": 8,
+     "bouldeer": 4,
+     "notes": "Bouldeer has El Rocodromo, La Cueva, Vertigo, Monodedo."
+    }
+   ],
+   "chains_missing": [],
+   "leads": [
+    {
+     "name": "El Cap Quito Escalada",
+     "city": "Quito",
+     "url": ""
+    },
+    {
+     "name": "La Colonia Centro Integral de Escalada",
+     "city": "Quito",
+     "url": ""
+    },
+    {
+     "name": "Alpaca Climbing",
+     "city": "Quito (La Magdalena)",
+     "url": "https://www.facebook.com/alpacaclimbing/"
+    }
+   ],
+   "notes": "Bouldeer's 11 already includes many provincial public walls (Puyo, Ibarra, Portoviejo); coverage looks decent."
+  },
+  {
+   "cc": "ZA",
+   "name": "South Africa",
+   "bouldeer": 12,
+   "est_low": 15,
+   "est_mid": 22,
+   "est_high": 32,
+   "confidence": "low",
+   "method": "Getaway and Hello Lifestyle lists (~10 named); Bouldeer already holds most; add unlisted smaller gyms.",
+   "sources": [
+    {
+     "title": "Getaway: best indoor climbing gyms in South Africa",
+     "url": "https://www.getaway.co.za/things-to-do/the-best-indoor-climbing-gyms-across-south-africa/",
+     "says": "CityROCK x2, INSIDEedge, Climbing Barn, Bloc 11 x2, HangTime, Southern Rock, be.UP Park Durban, Valley Crag."
+    }
+   ],
+   "cities": [
+    {
+     "city": "Cape Town (25km)",
+     "est": 7,
+     "bouldeer": 4,
+     "notes": "CityROCK, Bloc 11 x2, HangTime."
+    },
+    {
+     "city": "Johannesburg (25km)",
+     "est": 7,
+     "bouldeer": 2,
+     "notes": "CityROCK Jhb, Friends and Allies (Randburg) present; INSIDEedge missing; Pretoria Barn is outside radius."
+    }
+   ],
+   "chains_missing": [],
+   "leads": [
+    {
+     "name": "INSIDEedge Climbing",
+     "city": "Johannesburg",
+     "url": ""
+    },
+    {
+     "name": "be.UP Park",
+     "city": "Durban",
+     "url": ""
+    }
+   ],
+   "notes": "Only 2 verified leads; Pretoria/Durban/Gqeberha thinly checked."
+  },
+  {
+   "cc": "IL",
+   "name": "Israel",
+   "bouldeer": 15,
+   "est_low": 15,
+   "est_mid": 22,
+   "est_high": 30,
+   "confidence": "medium",
+   "method": "IMGA wiki lists 18 climbing walls (4 bouldering-only), Redpoint 9, BoulderingList 9; Bouldeer 15 already above directories. Mid adds recent boulder gyms; kids' walls excluded.",
+   "sources": [
+    {
+     "title": "IMGA wiki: climbing walls in Israel",
+     "url": "https://wiki.imga.org.il/index.php?title=%D7%A7%D7%99%D7%A8%D7%95%D7%AA_%D7%98%D7%99%D7%A4%D7%95%D7%A1_%D7%91%D7%99%D7%A9%D7%A8%D7%90%D7%9C",
+     "says": "18 facilities (older list; several are top-rope walls)."
+    },
+    {
+     "title": "Redpoint Israel",
+     "url": "https://gyms.redpoint-app.com/region/IL",
+     "says": "9 gyms."
+    },
+    {
+     "title": "BoulderingList Israel",
+     "url": "https://boulderinglist.com/countries/Israel",
+     "says": "9 gyms."
+    }
+   ],
+   "cities": [
+    {
+     "city": "Tel Aviv (25km)",
+     "est": 8,
+     "bouldeer": 8,
+     "notes": "VKing, Performance Rock, The Bloc, iClimb; Rokiz Holon and Kiryat Ono candidates."
+    }
+   ],
+   "chains_missing": [],
+   "leads": [
+    {
+     "name": "Rokiz",
+     "city": "Holon",
+     "url": ""
+    },
+    {
+     "name": "Haifa Boulder",
+     "city": "Haifa",
+     "url": ""
+    },
+    {
+     "name": "Yoav Nir Climbing Wall",
+     "city": "Haifa",
+     "url": ""
+    },
+    {
+     "name": "Sagi Wall",
+     "city": "Ramat Yishai",
+     "url": ""
+    },
+    {
+     "name": "Akko Wall",
+     "city": "Akko",
+     "url": ""
+    },
+    {
+     "name": "Lovin Wall",
+     "city": "Hadera",
+     "url": ""
+    },
+    {
+     "name": "Rogium",
+     "city": "Kiryat Shmona",
+     "url": ""
+    },
+    {
+     "name": "Top 94",
+     "city": "Eilat",
+     "url": ""
+    },
+    {
+     "name": "Desert climbing wall",
+     "city": "Sde Boker",
+     "url": ""
+    },
+    {
+     "name": "Kiryat Ono gym (BoulderingList)",
+     "city": "Kiryat Ono",
+     "url": ""
+    },
+    {
+     "name": "Kfar Blum gym (BoulderingList)",
+     "city": "Kfar Blum",
+     "url": ""
+    }
+   ],
+   "notes": "Several leads are older top-rope walls; check bouldering and public access. Bouldeer coverage ~70% of mid."
+  },
+  {
+   "cc": "TR",
+   "name": "Turkey",
+   "bouldeer": 6,
+   "est_low": 12,
+   "est_mid": 20,
+   "est_high": 35,
+   "confidence": "low",
+   "method": "Turkish lists name 6-8 boulder halls (Istanbul 3-4); no national count; mid assumes ~10 more in Ankara, Izmir, Antalya and other cities.",
+   "sources": [
+    {
+     "title": "macerita: Istanbul'daki boulder salonlari",
+     "url": "https://www.macerita.com/m-log/istanbuldaki-boulder-salonlari",
+     "says": "Boulderhane, DuvarX (Maltepe), Boulder Istanbul."
+    },
+    {
+     "title": "Bagisiklik: indoor tirmanis merkezleri",
+     "url": "https://bagisiklik.com/bagisiklik/en-iyi-indoor-tirmanis-merkezleri/",
+     "says": "Boulderhane, DuvarX, Climbinn (Izmir), Kisakaya (Ankara), Boulder Es, Boulder Istanbul."
+    }
+   ],
+   "cities": [
+    {
+     "city": "Istanbul (25km)",
+     "est": 6,
+     "bouldeer": 2,
+     "notes": "DuvarX Maltepe missing; Hupalupa listed with an 8 m wall (may be kids)."
+    }
+   ],
+   "chains_missing": [],
+   "leads": [
+    {
+     "name": "DuvarX",
+     "city": "Maltepe, Istanbul",
+     "url": ""
+    },
+    {
+     "name": "Climbinn (Boulderhane Izmir)",
+     "city": "Bornova, Izmir",
+     "url": ""
+    },
+    {
+     "name": "KisaKaya Boulder Evi",
+     "city": "Ankara",
+     "url": "https://lavarla.com/kisakaya-boulder-evi-tirmanisin-ankarada-acilan-rotasi/"
+    },
+    {
+     "name": "Hupalupa",
+     "city": "Istanbul (may be kids)",
+     "url": ""
+    }
+   ],
+   "notes": "Bouldeer has Tragos Boulder (Ankara) and Boulder Jungle (Antalya); KisaKaya may be recorded under another name."
+  },
+  {
+   "cc": "AE",
+   "name": "United Arab Emirates",
+   "bouldeer": 7,
+   "est_low": 8,
+   "est_mid": 11,
+   "est_high": 15,
+   "confidence": "medium",
+   "method": "GoClimb blog and search results list 5 Dubai and 3 Abu Dhabi venues; Bouldeer holds nearly all.",
+   "sources": [
+    {
+     "title": "GoClimb: climbing gyms in the UAE",
+     "url": "https://goclimb.ae/blog/rock-climbing-gyms-in-the-uae/",
+     "says": "Dubai: GoClimb, Boulder Zone, Mountain Extreme, Rock Republic, The Wall; Abu Dhabi: Clymb, Sorbonne University, Train Strength & Fitness."
+    }
+   ],
+   "cities": [
+    {
+     "city": "Dubai (25km)",
+     "est": 7,
+     "bouldeer": 3,
+     "notes": "Bouldeer has 5 in Dubai emirate (2 at Dubai Investment Park lie beyond 25km of centre)."
+    }
+   ],
+   "chains_missing": [],
+   "leads": [
+    {
+     "name": "Sorbonne University Abu Dhabi climbing wall (public access doubtful)",
+     "city": "Abu Dhabi",
+     "url": ""
+    }
+   ],
+   "notes": "Little missing; Sharjah/Al Ain/RAK unchecked."
+  }
+ ]
+}

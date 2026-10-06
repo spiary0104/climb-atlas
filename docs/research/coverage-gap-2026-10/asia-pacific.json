@@ -1,0 +1,1777 @@
+{
+ "group": "asia-pacific",
+ "researched": "2026-10-06",
+ "countries": [
+  {
+   "cc": "JP",
+   "name": "Japan",
+   "bouldeer": 107,
+   "est_low": 450,
+   "est_mid": 540,
+   "est_high": 650,
+   "confidence": "medium",
+   "method": "Sum of per-prefecture facility counts on rockgym.jp (579 in Nov 2025, all 47 prefecture pages fetched) cross-checked with trade press (500-600 in 2025) and older Google-Maps style counts (666 in 2020, ~800 JMSCA 2021 incl. sports-centre walls); mid discounts the directory total ~7% for lead-only/public-facility walls and closures.",
+   "sources": [
+    {
+     "title": "rockgym.jp - climbing facilities per prefecture (47 pages summed)",
+     "url": "https://rockgym.jp/gym-all/",
+     "says": "Sum of 47 prefecture pages = 579 facilities (Nov 2025): Tokyo 71, Kanagawa 38, Osaka 37, Aichi 35, Saitama 31, Fukuoka 25, Hyogo 24, Hokkaido 21, Chiba 17, Nagano 17. Includes some public-facility and lead-only walls."
+    },
+    {
+     "title": "CINC Capital - climbing gym M&A column (search-result summary)",
+     "url": "https://cinc-capital.co.jp/column/industry/climbing-gym-ma",
+     "says": "About 600 facilities nationwide in 2025; small old gyms consolidating into large high-value ones. Not fetched in full."
+    },
+    {
+     "title": "micki-pedia - number of climbing gyms nationwide (May 2020)",
+     "url": "https://micki-pedia.com/01-number-of-climbing-gym-2020.html",
+     "says": "666 gyms via Google Maps search incl. sports-centre walls; 2017 count 530; net closures in 2019-2020 (saturation)."
+    },
+    {
+     "title": "J-Net21 - sport climbing gym startup guide",
+     "url": "https://j-net21.smrj.go.jp/startup/guide/service/bouldering.html",
+     "says": "Cites JMSCA medium-term plan 2021-2025: about 800 climbing gym facilities nationwide (broad definition)."
+    },
+    {
+     "title": "POZNEN - 400+ gyms (2016)",
+     "url": "https://www.poznen.net/entry/bouldering-column-gym-400",
+     "says": "At least 419 bouldering gyms in 2016 (CLIMBING joy no.15); historical only."
+    }
+   ],
+   "cities": [
+    {
+     "city": "Tokyo (prefecture)",
+     "est": 71,
+     "bouldeer": 42,
+     "notes": "rockgym.jp 71 (Nov 2025). Bouldeer 42 by state; 54 within 30 km of centre incl. Kanagawa/Saitama fringe. Major chains (NOBOROCK, Base Camp, ROCKY, B-PUMP, D.Bouldering) are well covered; the gap is independents."
+    },
+    {
+     "city": "Kanagawa (Yokohama/Kawasaki)",
+     "est": 38,
+     "bouldeer": 9,
+     "notes": "rockgym.jp 38. Bouldeer 9 by state."
+    },
+    {
+     "city": "Saitama",
+     "est": 31,
+     "bouldeer": 8,
+     "notes": "rockgym.jp 31."
+    },
+    {
+     "city": "Chiba",
+     "est": 17,
+     "bouldeer": 6,
+     "notes": "rockgym.jp 17."
+    },
+    {
+     "city": "Osaka (prefecture)",
+     "est": 37,
+     "bouldeer": 6,
+     "notes": "rockgym.jp 37, about 20 in Osaka city. Bouldeer has Roca, TOBITO, GRAVITY RESEARCH Umeda, CAL-COLO Umeda, City Rock, D.Bouldering Plus Lead Namba."
+    },
+    {
+     "city": "Aichi (Nagoya)",
+     "est": 35,
+     "bouldeer": 4,
+     "notes": "rockgym.jp 35, 13 in Nagoya city. Bouldeer has Colorful Rock, Pinnacle 2 Sakae, Thumbs Up, D.Bouldering Plus Sengen-cho."
+    },
+    {
+     "city": "Fukuoka (prefecture)",
+     "est": 25,
+     "bouldeer": 3,
+     "notes": "rockgym.jp 25, about 10 in Fukuoka city. Bouldeer has Mono, Bare Hands, The Wall."
+    },
+    {
+     "city": "Hokkaido (Sapporo)",
+     "est": 21,
+     "bouldeer": 2,
+     "notes": "rockgym.jp 21, 6 in Sapporo city. Bouldeer has Club Sol Station Sapporo and D.Bouldering Kushiro."
+    },
+    {
+     "city": "Hyogo (Kobe)",
+     "est": 24,
+     "bouldeer": 3,
+     "notes": "rockgym.jp 24 (8 in Kobe city)."
+    },
+    {
+     "city": "Kyoto",
+     "est": 10,
+     "bouldeer": 6,
+     "notes": "rockgym.jp 10; Bouldeer near-complete."
+    },
+    {
+     "city": "Miyagi (Sendai)",
+     "est": 10,
+     "bouldeer": 5,
+     "notes": "rockgym.jp 10."
+    },
+    {
+     "city": "Hiroshima",
+     "est": 10,
+     "bouldeer": 3,
+     "notes": "rockgym.jp 10."
+    }
+   ],
+   "chains_missing": [
+    {
+     "chain": "Nakagai Climbing Gym (Osaka)",
+     "branches_est": 6,
+     "bouldeer_has": "0 (checked by name)",
+     "url": "https://rockgym.jp/nakagai-settsu/"
+    },
+    {
+     "chain": "Suhara Climbing Gym",
+     "branches_est": 2,
+     "bouldeer_has": "0",
+     "url": "https://rockgym.jp/suhara-ikeda/"
+    },
+    {
+     "chain": "Sunny Space Iwanchu (Aichi)",
+     "branches_est": 2,
+     "bouldeer_has": "0",
+     "url": "https://rockgym.jp/iwanchu-toyohashi/"
+    },
+    {
+     "chain": "Pinnacle 2 (Aichi)",
+     "branches_est": 4,
+     "bouldeer_has": "1 (Sakae)",
+     "url": "https://rockgym.jp/pinnacle-obu/"
+    },
+    {
+     "chain": "OD Climbing Gym & Shop (Fukuoka)",
+     "branches_est": 3,
+     "bouldeer_has": "0",
+     "url": "https://rockgym.jp/od-kokura/"
+    },
+    {
+     "chain": "Climbing Gym Siesta (Higashiosaka)",
+     "branches_est": 2,
+     "bouldeer_has": "0",
+     "url": "https://rockgym.jp/siesta-yoshida/"
+    },
+    {
+     "chain": "Play Mountain! (Aichi)",
+     "branches_est": 2,
+     "bouldeer_has": "0",
+     "url": "https://rockgym.jp/playmountain-nagoya/"
+    }
+   ],
+   "leads": [
+    {
+     "name": "Climbing Gym Galera",
+     "city": "Osaka",
+     "url": "https://rockgym.jp/galera/"
+    },
+    {
+     "name": "Bouldering Gym MUSHROOMING",
+     "city": "Osaka",
+     "url": "https://rockgym.jp/mushrooming/"
+    },
+    {
+     "name": "Urban Climbing Club Kawasemi",
+     "city": "Osaka",
+     "url": "https://rockgym.jp/kawasemi/"
+    },
+    {
+     "name": "Climbing Bum Osaka",
+     "city": "Osaka",
+     "url": "https://rockgym.jp/bum-osaka/"
+    },
+    {
+     "name": "Climbing Gym GANBA",
+     "city": "Nagoya",
+     "url": "https://rockgym.jp/ganba/"
+    },
+    {
+     "name": "Bouldering Gym N Rock",
+     "city": "Nagoya",
+     "url": "https://rockgym.jp/n-rock/"
+    },
+    {
+     "name": "Riot Climbing",
+     "city": "Nagoya",
+     "url": "https://rockgym.jp/riot/"
+    },
+    {
+     "name": "Bouldering House KNOT",
+     "city": "Nagoya",
+     "url": "https://rockgym.jp/knot/"
+    },
+    {
+     "name": "Climbing Gym MY WAY",
+     "city": "Fukuoka",
+     "url": "https://rockgym.jp/myway/"
+    },
+    {
+     "name": "Bouldering Gym HOA-HOA",
+     "city": "Fukuoka",
+     "url": "https://rockgym.jp/hoa-hoa/"
+    },
+    {
+     "name": "NOBOLT",
+     "city": "Fukuoka",
+     "url": "https://rockgym.jp/nobolt/"
+    },
+    {
+     "name": "CLIMBING AT WALL",
+     "city": "Fukuoka",
+     "url": "https://rockgym.jp/at-wall/"
+    },
+    {
+     "name": "North Cave Gym",
+     "city": "Sapporo",
+     "url": "https://rockgym.jp/north-cave/"
+    },
+    {
+     "name": "Rainbow Cliff",
+     "city": "Sapporo",
+     "url": "https://rockgym.jp/rainbow-cliff/"
+    },
+    {
+     "name": "Whipper Snapper Gym",
+     "city": "Sapporo",
+     "url": "https://rockgym.jp/whipper/"
+    }
+   ],
+   "notes": "Lead URLs are rockgym.jp directory pages, not official sites (official URL needs lookup). Directory counts include some public-facility walls and lead-only gyms, so est_mid is trimmed. Coverage: Tokyo area about 60%, rest of country about 10-15%. Many more leads are on rockgym.jp/gym-all/<prefecture>/ in a simple table (area|name|link)."
+  },
+  {
+   "cc": "KR",
+   "name": "South Korea",
+   "bouldeer": 135,
+   "est_low": 400,
+   "est_mid": 550,
+   "est_high": 750,
+   "confidence": "low",
+   "method": "No national census found. Anchors: Seoul about 60 gyms in 2020, then 140+ bouldering gyms on Kakao Map in Jan 2024 (Korea Herald); 285 nationwide in 2016 (Climbing Business Journal); Seoul metro assumed 25-30% of national, extrapolated to the 2026 boom. The MCST 2024 sports-facility statistics (artificial climbing wall category) exist as PDF but were not downloaded.",
+   "sources": [
+    {
+     "title": "Korea Herald - bouldering boom",
+     "url": "https://m.koreaherald.com/article/3313531",
+     "says": "Seoul had about 60 climbing gyms in 2020; over 140 bouldering gyms on Kakao Map as of Jan 2024."
+    },
+    {
+     "title": "Climbing Business Journal - Korea bouldering boom (Nov 2016)",
+     "url": "https://climbingbusinessjournal.com/koreas-bouldering-boom/",
+     "says": "285 climbing gyms nationwide in Nov 2016, 10 more opening; historical baseline only."
+    },
+    {
+     "title": "MCST - 2025 national registered/reported sports facility businesses (end 2024)",
+     "url": "https://mcst.go.kr/site/s_policy/dept/deptView.jsp?pDataCD=0417000000&pSeq=2115&pType=",
+     "says": "PDF/HWP report exists and covers the artificial-climbing-wall category since the 2020 law change. Count not read (needs download)."
+    },
+    {
+     "title": "Daum news summary on the 2030 climbing trend",
+     "url": "https://v.daum.net/v/2TaEK2Q9Wd",
+     "says": "Indoor gyms multiplying; KSPO named sport climbing a 2026 spring top-5 participation sport; no national gym count."
+    }
+   ],
+   "cities": [
+    {
+     "city": "Seoul",
+     "est": 150,
+     "bouldeer": 32,
+     "notes": "Kakao Map 140+ bouldering gyms (Jan 2024), est grown. Bouldeer 32 with state=SEOUL; 49 within 30 km incl. Gyeonggi/Incheon fringe."
+    },
+    {
+     "city": "Gyeonggi (excl. Seoul)",
+     "est": 130,
+     "bouldeer": 24,
+     "notes": "Derived by population ratio (13M people); no source."
+    },
+    {
+     "city": "Incheon",
+     "est": 30,
+     "bouldeer": 4,
+     "notes": "Derived by population ratio; Bouldeer 4 by state."
+    },
+    {
+     "city": "Busan",
+     "est": 45,
+     "bouldeer": 13,
+     "notes": "Derived (about 0.35x Seoul); low confidence."
+    },
+    {
+     "city": "Daegu",
+     "est": 30,
+     "bouldeer": 5,
+     "notes": "Derived; low confidence."
+    },
+    {
+     "city": "Daejeon",
+     "est": 18,
+     "bouldeer": 4,
+     "notes": "Derived; low confidence."
+    },
+    {
+     "city": "Gwangju",
+     "est": 18,
+     "bouldeer": 13,
+     "notes": "Derived; Bouldeer already strong."
+    }
+   ],
+   "chains_missing": [
+    {
+     "chain": "The Climb",
+     "branches_est": "12+ (Magok, Sillim, Hongdae, Yeonnam, Ilsan present; Seoul Univ, Sadang, Nonhyeon, Sinsa, Gangnam, Yangjae, Mullae missing)",
+     "bouldeer_has": "5",
+     "url": "https://spiri7.com/post/139468"
+    },
+    {
+     "chain": "Seoul Forest Climbing",
+     "branches_est": "5 (Ttukseom, Yeongdeungpo, Guro, Jamsil, Jongno)",
+     "bouldeer_has": "1",
+     "url": ""
+    },
+    {
+     "chain": "Climbing Park",
+     "branches_est": "5+ (Sinnonhyeon, Jongno, Hanti, Seongsu, Gangnam)",
+     "bouldeer_has": "2",
+     "url": ""
+    },
+    {
+     "chain": "Peakers (CGV)",
+     "branches_est": "3 (Jongno, Guro, Sinchon)",
+     "bouldeer_has": "1 (Jongno)",
+     "url": ""
+    },
+    {
+     "chain": "Son Sang-won Climbing",
+     "branches_est": "3 (Gangnam, Pangyo, Euljiro)",
+     "bouldeer_has": "1",
+     "url": "http://www.sswclimbing.co.kr/"
+    }
+   ],
+   "leads": [
+    {
+     "name": "The Climb Sadang",
+     "city": "Seoul",
+     "url": ""
+    },
+    {
+     "name": "The Climb Nonhyeon",
+     "city": "Seoul",
+     "url": ""
+    },
+    {
+     "name": "The Climb Sinsa",
+     "city": "Seoul",
+     "url": ""
+    },
+    {
+     "name": "The Climb Yangjae",
+     "city": "Seoul",
+     "url": ""
+    },
+    {
+     "name": "The Climb Mullae",
+     "city": "Seoul",
+     "url": ""
+    },
+    {
+     "name": "The Climb Seoul National Univ.",
+     "city": "Seoul",
+     "url": ""
+    },
+    {
+     "name": "Seoul Forest Climbing Yeongdeungpo",
+     "city": "Seoul",
+     "url": ""
+    },
+    {
+     "name": "Seoul Forest Climbing Guro",
+     "city": "Seoul",
+     "url": ""
+    },
+    {
+     "name": "Seoul Forest Climbing Jamsil",
+     "city": "Seoul",
+     "url": ""
+    },
+    {
+     "name": "Seoul Forest Climbing Jongno",
+     "city": "Seoul",
+     "url": ""
+    },
+    {
+     "name": "Climbing Park Sinnonhyeon",
+     "city": "Seoul",
+     "url": ""
+    },
+    {
+     "name": "Climbing Park Seongsu",
+     "city": "Seoul",
+     "url": ""
+    },
+    {
+     "name": "Peakers Guro",
+     "city": "Seoul",
+     "url": ""
+    },
+    {
+     "name": "Son Sang-won Climbing Pangyo",
+     "city": "Seongnam",
+     "url": "http://www.sswclimbing.co.kr/page/sub4_2"
+    },
+    {
+     "name": "Son Sang-won Climbing Euljiro",
+     "city": "Seoul",
+     "url": "http://www.sswclimbing.co.kr/"
+    }
+   ],
+   "notes": "Branch lists come from Korean blog/news summaries (jjiyo.com, spiri7.com, CGV press), not official sites; re-verify on Naver Place before import. Weakest-sourced estimate in this group: treat 400-750 as a wide band. Next step: download the MCST PDF (artificial climbing wall count by province) or count Naver/Kakao Map results per district."
+  },
+  {
+   "cc": "CN",
+   "name": "China",
+   "bouldeer": 377,
+   "est_low": 900,
+   "est_mid": 1050,
+   "est_high": 1250,
+   "confidence": "medium",
+   "method": "Trade-press series on commercial climbing gyms (636 in Dec 2023, 811 in Jan 2025, about 980 in Aug 2025, 25%+ growth) extrapolated modestly to Oct 2026; all share one upstream dataset, so they are not fully independent. Bouldering-only gyms are 52.8% of facilities, so almost all count.",
+   "sources": [
+    {
+     "title": "Gelonghui industry report",
+     "url": "https://m.gelonghui.com/p/1230303",
+     "says": "636 commercial gyms as of Dec 2023 (+31% vs 485 in early 2022); 136 cities; Shanghai about 70."
+    },
+    {
+     "title": "Zhiyan (chyxx) 2025 report",
+     "url": "https://www.chyxx.com/industry/1242866.html",
+     "says": "811 gyms as of Jan 2025 (+27.5%); Guangdong 108, Shanghai 103, Beijing 48, Shenzhen 35; Zhejiang and Jiangsu 50+; 159 cities; chains Banana 17, Aopan 9, Lantian 8."
+    },
+    {
+     "title": "163.com Outdoor Adventure injury report",
+     "url": "https://www.163.com/dy/article/KMQBCILH05249LSJ.html",
+     "says": "980 commercial gyms nationwide as of Aug 2025, growth above 25%; Beijing 60+ after adding 12 in 2025."
+    },
+    {
+     "title": "h33.top 2026 climbing gym report",
+     "url": "https://www.h33.top/report/20260924-f2f2",
+     "says": "811 (Jan 2025) and about 980 (Aug 2025); bouldering-only 52.8% of facilities; Beijing and Shanghai each above 80 (conflicts with 103 / 60+ above)."
+    }
+   ],
+   "cities": [
+    {
+     "city": "Shanghai",
+     "est": 115,
+     "bouldeer": 78,
+     "notes": "Sources disagree: about 70 (Dec 2023), 103 (Jan 2025), 80+ (2026 report). Est 105-130."
+    },
+    {
+     "city": "Beijing",
+     "est": 70,
+     "bouldeer": 55,
+     "notes": "48 (Jan 2025), 60+ (Aug 2025)."
+    },
+    {
+     "city": "Shenzhen",
+     "est": 50,
+     "bouldeer": 47,
+     "notes": "35 (Jan 2025); Bouldeer 47 exceeds that source, so source undercounts or Bouldeer includes public sports-centre walls."
+    },
+    {
+     "city": "Guangzhou",
+     "est": 32,
+     "bouldeer": 20,
+     "notes": "Guangdong 108 minus Shenzhen 35 = 73 across the province; huodong.com lists 23 Guangzhou venues, most already in Bouldeer."
+    },
+    {
+     "city": "Chengdu",
+     "est": 45,
+     "bouldeer": 30,
+     "notes": "22 in a 2023 survey (scol.com.cn), grown since; derived."
+    },
+    {
+     "city": "Hangzhou",
+     "est": 35,
+     "bouldeer": 21,
+     "notes": "Zhejiang 50+ (Jan 2025); Hangzhou called explosive growth; derived."
+    },
+    {
+     "city": "Chongqing",
+     "est": 40,
+     "bouldeer": 36,
+     "notes": "Fast-growth city; derived."
+    },
+    {
+     "city": "Wuhan",
+     "est": 28,
+     "bouldeer": 18,
+     "notes": "Derived; second-tier cities growing 35%+ in 2025."
+    },
+    {
+     "city": "Xian",
+     "est": 25,
+     "bouldeer": 19,
+     "notes": "Derived."
+    },
+    {
+     "city": "Nanjing",
+     "est": 25,
+     "bouldeer": 14,
+     "notes": "Jiangsu 50+ (Jan 2025); derived."
+    },
+    {
+     "city": "Suzhou",
+     "est": 22,
+     "bouldeer": 20,
+     "notes": "Jiangsu 50+; derived."
+    },
+    {
+     "city": "Kunming",
+     "est": 20,
+     "bouldeer": 0,
+     "notes": "Named explosive-growth city in the 2023 report; Bouldeer has zero. Derived."
+    },
+    {
+     "city": "Changsha",
+     "est": 20,
+     "bouldeer": 3,
+     "notes": "Named explosive-growth city; derived."
+    }
+   ],
+   "chains_missing": [
+    {
+     "chain": "Banana Climbing",
+     "branches_est": "17 per early-2025 report; Bouldeer already lists 27 branches",
+     "bouldeer_has": "27",
+     "url": ""
+    },
+    {
+     "chain": "Aopan",
+     "branches_est": "9",
+     "bouldeer_has": "9",
+     "url": ""
+    },
+    {
+     "chain": "Lantian / Blue Sky (Guangdong)",
+     "branches_est": "8",
+     "bouldeer_has": "6",
+     "url": ""
+    }
+   ],
+   "leads": [],
+   "notes": "Bouldeer covers only 14 cities. All of Guangdong outside Shenzhen/Guangzhou/Zhuhai, Zhejiang outside Hangzhou, Jiangsu outside Nanjing/Suzhou, plus Kunming, Changsha, Zhengzhou, Qingdao, Xiamen, Fuzhou, Hefei, Dongguan, Foshan etc. are essentially unmapped; with 159 cities having gyms, the long tail is the gap. No named leads because the sources gave counts, not gym names. Suggest Dianping/Amap city-by-city searches (attack-rock / bouldering)."
+  },
+  {
+   "cc": "TW",
+   "name": "Taiwan",
+   "bouldeer": 22,
+   "est_low": 40,
+   "est_mid": 55,
+   "est_high": 80,
+   "confidence": "low",
+   "method": "No census found. Curated guides list only 26-27 gyms (a floor); T-UP alone has 6 branches, and 2025-26 growth is fast (online climbing discussion volume +211% YoY). Estimate reasoned as guide floor x about 2 for unlisted independents and new openings.",
+   "sources": [
+    {
+     "title": "Twosevenths - 26 indoor bouldering gyms in Taiwan",
+     "url": "https://www.twosevenths.com/indoors/rockclimbing-taiwan-fun/",
+     "says": "26 recommended gyms: Taipei/New Taipei about 11, Taichung 3, Kaohsiung 4, Hsinchu 3, Taoyuan 3, Yilan 2, Tainan 1; no total."
+    },
+    {
+     "title": "UDN - Top 10 gyms in Taiwan (Mar 2026)",
+     "url": "https://udn.com/news/story/7266/9396580",
+     "says": "T-UP is largest chain (6 branches); social-media volume +211% YoY; no gym total."
+    }
+   ],
+   "cities": [
+    {
+     "city": "Taipei + New Taipei",
+     "est": 30,
+     "bouldeer": 12,
+     "notes": "Guides list about 11 curated; real number higher."
+    },
+    {
+     "city": "Kaohsiung",
+     "est": 10,
+     "bouldeer": 5,
+     "notes": ""
+    },
+    {
+     "city": "Taichung",
+     "est": 10,
+     "bouldeer": 1,
+     "notes": "Guides list B-plus, Dapro, Panna; Bouldeer has only 1."
+    },
+    {
+     "city": "Taoyuan + Hsinchu",
+     "est": 10,
+     "bouldeer": 1,
+     "notes": "Guides list Hsinchu x3, Taoyuan x3."
+    }
+   ],
+   "chains_missing": [
+    {
+     "chain": "T-UP Climbing",
+     "branches_est": 6,
+     "bouldeer_has": "3 (Wanhua, Nangang, Zhonghe)",
+     "url": "https://tupclimbing.tw/"
+    },
+    {
+     "chain": "CORNER Bouldering",
+     "branches_est": 2,
+     "bouldeer_has": "2",
+     "url": ""
+    }
+   ],
+   "leads": [
+    {
+     "name": "double8 Climbing Lab",
+     "city": "Taipei",
+     "url": ""
+    },
+    {
+     "name": "Camp4 Da Vinci Climbing Gym",
+     "city": "New Taipei",
+     "url": ""
+    },
+    {
+     "name": "Wusa Climbing Gym",
+     "city": "Taipei",
+     "url": ""
+    },
+    {
+     "name": "Dapro Indoor Climbing",
+     "city": "Taichung",
+     "url": ""
+    },
+    {
+     "name": "Panna Climbing Gym",
+     "city": "Taichung",
+     "url": ""
+    },
+    {
+     "name": "Hsinchu Fengcheng Climbing Gym (Victory)",
+     "city": "Hsinchu",
+     "url": ""
+    },
+    {
+     "name": "Hsinchu Fengcheng Climbing Gym (Chenggong)",
+     "city": "Hsinchu",
+     "url": ""
+    },
+    {
+     "name": "Hsinchu Red Rock",
+     "city": "Hsinchu",
+     "url": ""
+    },
+    {
+     "name": "T-UP Climbing A19",
+     "city": "Taoyuan",
+     "url": "https://tupclimbing.tw/"
+    },
+    {
+     "name": "T-UP Climbing Mingde",
+     "city": "Taipei",
+     "url": "https://tupclimbing.tw/branch/mingde"
+    },
+    {
+     "name": "Passion Climbing (Pasen)",
+     "city": "Taoyuan",
+     "url": ""
+    },
+    {
+     "name": "Qianshou Bouldering",
+     "city": "Taoyuan",
+     "url": ""
+    },
+    {
+     "name": "Rockdance Bouldering",
+     "city": "Yilan",
+     "url": ""
+    },
+    {
+     "name": "TitoRock",
+     "city": "Taiwan",
+     "url": ""
+    },
+    {
+     "name": "Photosynthesis Indoor Climbing",
+     "city": "Taiwan",
+     "url": ""
+    }
+   ],
+   "notes": "Guide-based; Bouldeer 22 against a 26-gym guide floor means coverage is probably 30-50%. Check map counts per city to firm up. English names are transliterations of the Chinese names from the guides."
+  },
+  {
+   "cc": "HK",
+   "name": "Hong Kong",
+   "bouldeer": 29,
+   "est_low": 33,
+   "est_mid": 40,
+   "est_high": 50,
+   "confidence": "medium",
+   "method": "Guides list 10-14 best gyms only; Bouldeer already has 29 incl. 7 Just Climb branches. Estimate = Bouldeer + recent openings and unlisted small gyms; no census exists.",
+   "sources": [
+    {
+     "title": "AndThen.hk - indoor bouldering guide",
+     "url": "https://www.andthen.hk/go/59395_%E5%AE%A4%E5%85%A7%E6%94%80%E7%9F%B3-%E6%8A%B1%E7%9F%B3%E5%A0%B4/",
+     "says": "Lists 10 gyms incl. new Kizuna Climbing (TKO), Raccoon Bouldering (To Kwa Wan), CRUX, n bouldering, Camp Four, Urban Stone."
+    },
+    {
+     "title": "Localiiz - 14 best gyms in Hong Kong",
+     "url": "https://www.localiiz.com/post/living-wellness-fitness-best-indoor-climbing-bouldering-gyms-hong-kong",
+     "says": "14 best gyms; scene growing, 5 new gyms opened in a 2-month period (HK01 summary); no total."
+    }
+   ],
+   "cities": [
+    {
+     "city": "Hong Kong",
+     "est": 40,
+     "bouldeer": 29,
+     "notes": "Near-saturated; remaining gaps are recent openings."
+    }
+   ],
+   "chains_missing": [
+    {
+     "chain": "Just Climb",
+     "branches_est": 7,
+     "bouldeer_has": "7",
+     "url": ""
+    }
+   ],
+   "leads": [
+    {
+     "name": "Kizuna Climbing",
+     "city": "Tseung Kwan O",
+     "url": ""
+    },
+    {
+     "name": "Raccoon Bouldering (check vs Tanuki Bouldering in To Kwa Wan - may be a rename)",
+     "city": "To Kwa Wan",
+     "url": ""
+    }
+   ],
+   "notes": "HK is essentially done; remaining work is new-opening monitoring."
+  },
+  {
+   "cc": "SG",
+   "name": "Singapore",
+   "bouldeer": 22,
+   "est_low": 36,
+   "est_mid": 42,
+   "est_high": 50,
+   "confidence": "medium",
+   "method": "Two independent directories: theamateurclimber (37 gyms, 2025) and lydiascapes (42 bouldering gyms, updated Oct 2024); mid sits near the higher list because outlets are counted per branch.",
+   "sources": [
+    {
+     "title": "The Amateur Climber - Singapore",
+     "url": "https://theamateurclimber.com/indoor-climbing-singapore/",
+     "says": "37 operating gyms; Climb Central 4 outlets, Boulder Movement 5, BFF 3, Fit Bloc 2, UpWall 2, Boulder+ 2, Boulder Planet 2."
+    },
+    {
+     "title": "LydiaScapes - 42 bouldering gyms in Singapore",
+     "url": "https://www.lydiascapes.com/ultimate-list-of-bouldering-gyms-in-singapore/",
+     "says": "Title: Top 42 bouldering gyms, updated 2024-10-09."
+    }
+   ],
+   "cities": [
+    {
+     "city": "Singapore",
+     "est": 42,
+     "bouldeer": 22,
+     "notes": "Bouldeer is missing roughly half."
+    }
+   ],
+   "chains_missing": [
+    {
+     "chain": "Climb Central",
+     "branches_est": 4,
+     "bouldeer_has": "0",
+     "url": ""
+    },
+    {
+     "chain": "UpWall Climbing",
+     "branches_est": 2,
+     "bouldeer_has": "0",
+     "url": ""
+    },
+    {
+     "chain": "Boulder Movement",
+     "branches_est": 5,
+     "bouldeer_has": "4 (Downtown, Tai Seng, Rochor, Bugis)",
+     "url": ""
+    }
+   ],
+   "leads": [
+    {
+     "name": "Climb Central Kallang Wave",
+     "city": "Singapore",
+     "url": ""
+    },
+    {
+     "name": "Climb Central Novena",
+     "city": "Singapore",
+     "url": ""
+    },
+    {
+     "name": "Climb Central Funan",
+     "city": "Singapore",
+     "url": ""
+    },
+    {
+     "name": "Climb Central Katong",
+     "city": "Singapore",
+     "url": ""
+    },
+    {
+     "name": "UpWall Climbing Pasir Ris",
+     "city": "Singapore",
+     "url": ""
+    },
+    {
+     "name": "UpWall Climbing Changi City Point",
+     "city": "Singapore",
+     "url": ""
+    },
+    {
+     "name": "Verticlimb Singapore",
+     "city": "Singapore",
+     "url": ""
+    },
+    {
+     "name": "b8a Climbing Gym",
+     "city": "Singapore",
+     "url": ""
+    },
+    {
+     "name": "Outpost Climbing",
+     "city": "Singapore",
+     "url": ""
+    },
+    {
+     "name": "boruda Climbing",
+     "city": "Singapore",
+     "url": ""
+    },
+    {
+     "name": "Ark Bloc",
+     "city": "Singapore",
+     "url": ""
+    },
+    {
+     "name": "Adventure HQ",
+     "city": "Singapore",
+     "url": ""
+    },
+    {
+     "name": "PAssion WaVe (Pasir Ris)",
+     "city": "Singapore",
+     "url": ""
+    },
+    {
+     "name": "Climb @ T3 (Changi Airport)",
+     "city": "Singapore",
+     "url": ""
+    },
+    {
+     "name": "The Cliff @ Snow City",
+     "city": "Singapore",
+     "url": ""
+    }
+   ],
+   "notes": "Some leads are top-rope/lead-led (Climb Central, The Cliff, Adventure HQ); verify a bouldering offer before import. Official URLs not verified."
+  },
+  {
+   "cc": "AU",
+   "name": "Australia",
+   "bouldeer": 66,
+   "est_low": 90,
+   "est_mid": 115,
+   "est_high": 150,
+   "confidence": "low",
+   "method": "openclimbing.org lists 100 Australian gyms (OSM-derived); my own OSM Overpass query for climbing sports centres/indoor climbing returned 114 tagged features (noisy, same data family); older 46 gyms in 2016 and 15-20 dedicated venues in Melbourne alone point the same direction. No federation census found.",
+   "sources": [
+    {
+     "title": "OpenClimbing.org gyms",
+     "url": "https://openclimbing.org/en/climbing-gyms",
+     "says": "100 climbing gyms listed for Australia (OSM-based)."
+    },
+    {
+     "title": "Climbing Business Journal - Australia buzzes with bouldering (2016)",
+     "url": "https://climbingbusinessjournal.com/australia-buzzes-with-bouldering/",
+     "says": "46 gyms in 2016; boom since. Historical."
+    },
+    {
+     "title": "Red Bull AU - Melbourne gyms (search summary)",
+     "url": "https://www.redbull.com/au-en/best-indoor-climbing-gyms-melbourne",
+     "says": "15 to 20 dedicated bouldering/mixed venues in Melbourne; article not fetched."
+    },
+    {
+     "title": "Australian Olympic Committee - sport climbing",
+     "url": "https://www.olympics.com.au/sports/sport-climbing/",
+     "says": "300,000+ Australians climb in gyms; competition membership tripled in 7 years."
+    }
+   ],
+   "cities": [
+    {
+     "city": "Sydney",
+     "est": 40,
+     "bouldeer": 20,
+     "notes": "9 Degrees, BlocHaus, Dynomite, PCYC walls etc.; Bouldeer NSW total 26 incl. Wollongong/Newcastle."
+    },
+    {
+     "city": "Melbourne",
+     "est": 30,
+     "bouldeer": 12,
+     "notes": "Red Bull: 15-20 dedicated; incl. mixed and outer suburbs about 30."
+    },
+    {
+     "city": "Brisbane + Gold Coast",
+     "est": 22,
+     "bouldeer": 6,
+     "notes": "indoorclimbing.com lists 14 in SE Queensland; Bouldeer QLD 13 total."
+    },
+    {
+     "city": "Perth",
+     "est": 12,
+     "bouldeer": 6,
+     "notes": ""
+    },
+    {
+     "city": "Adelaide",
+     "est": 8,
+     "bouldeer": 3,
+     "notes": "Beyond Bouldering Kent Town; Adelaide Bouldering Club Thebarton; Vertical Reality."
+    },
+    {
+     "city": "Canberra",
+     "est": 4,
+     "bouldeer": 3,
+     "notes": ""
+    }
+   ],
+   "chains_missing": [
+    {
+     "chain": "Urban Climb",
+     "branches_est": 6,
+     "bouldeer_has": "6",
+     "url": ""
+    },
+    {
+     "chain": "Northside Boulders",
+     "branches_est": 4,
+     "bouldeer_has": "2 listed",
+     "url": ""
+    },
+    {
+     "chain": "Lactic Factory (Melbourne)",
+     "branches_est": 3,
+     "bouldeer_has": "0 by name",
+     "url": ""
+    }
+   ],
+   "leads": [
+    {
+     "name": "Urban Xtreme",
+     "city": "Hendra, Brisbane",
+     "url": ""
+    },
+    {
+     "name": "Boulder Heads Indoor Climb",
+     "city": "Baringa QLD",
+     "url": ""
+    },
+    {
+     "name": "Wall Walkers Bouldering",
+     "city": "Capalaba QLD",
+     "url": ""
+    },
+    {
+     "name": "Flow Bouldering",
+     "city": "Forest Glen QLD",
+     "url": ""
+    },
+    {
+     "name": "ICP Boulder Hall",
+     "city": "Fortitude Valley QLD",
+     "url": ""
+    },
+    {
+     "name": "Climb Brisbane",
+     "city": "Parkinson QLD",
+     "url": ""
+    },
+    {
+     "name": "Rockface Indoor Climbing Centre",
+     "city": "Balcatta WA",
+     "url": ""
+    },
+    {
+     "name": "Adelaide Bouldering Club",
+     "city": "Thebarton SA",
+     "url": ""
+    },
+    {
+     "name": "Lactic Factory",
+     "city": "Melbourne",
+     "url": ""
+    },
+    {
+     "name": "Climb Oz",
+     "city": "Blacktown NSW",
+     "url": ""
+    },
+    {
+     "name": "Blue Mountains climbing gym",
+     "city": "Katoomba NSW",
+     "url": ""
+    },
+    {
+     "name": "Urban Jungle Jandakot (check vs Bouldeer Urban Jungle)",
+     "city": "Perth",
+     "url": ""
+    }
+   ],
+   "notes": "Several QLD leads come from an older indoorclimbing.com list and may be closed or renamed; verify each. Climbing Australia / Sport Climbing Australia publish no gym count I could find."
+  },
+  {
+   "cc": "NZ",
+   "name": "New Zealand",
+   "bouldeer": 17,
+   "est_low": 20,
+   "est_mid": 26,
+   "est_high": 35,
+   "confidence": "low",
+   "method": "boulderinglist.com lists exactly 17 (same number as Bouldeer but different membership); union of both plus other guides gives about 25. No census; ICP published a regional NZ gym analysis (Mar 2024) only as infographic.",
+   "sources": [
+    {
+     "title": "BoulderingList - New Zealand",
+     "url": "https://boulderinglist.com/countries/New%20Zealand",
+     "says": "17 gyms: Auckland x3, Hamilton, Christchurch, Dunedin, Wanaka x2, Frankton, Rotorua, Taupo, Turangi, Mt Maunganui, New Plymouth, Ohakune, Otorohanga."
+    },
+    {
+     "title": "ICP Climbing Walls global gym statistics",
+     "url": "https://climbicp.com/resource-hub/2024-global-indoor-climbing-gym-stats/",
+     "says": "NZ regional gym distribution analysis (Mar 2024) given as an infographic; no number in text."
+    }
+   ],
+   "cities": [
+    {
+     "city": "Auckland",
+     "est": 8,
+     "bouldeer": 4,
+     "notes": "Extreme Edge Panmure, Northern Rocks, Auckland Climbing Gym, Boulder Co; also Clip n Climb Glen Eden, Vertical Adventures Mt Eden."
+    },
+    {
+     "city": "Wellington",
+     "est": 4,
+     "bouldeer": 3,
+     "notes": ""
+    },
+    {
+     "city": "Christchurch",
+     "est": 5,
+     "bouldeer": 3,
+     "notes": ""
+    }
+   ],
+   "chains_missing": [
+    {
+     "chain": "Boulder Co",
+     "branches_est": 3,
+     "bouldeer_has": "3",
+     "url": ""
+    }
+   ],
+   "leads": [
+    {
+     "name": "Resistance Climbing",
+     "city": "Dunedin",
+     "url": ""
+    },
+    {
+     "name": "BaseCamp Wanaka / Basecamp Adventures",
+     "city": "Wanaka",
+     "url": ""
+    },
+    {
+     "name": "Queenstown Indoor Climbing Centre",
+     "city": "Frankton",
+     "url": "https://www.basecampadventures.co.nz/queenstown-indoor-climbing-centre/"
+    },
+    {
+     "name": "Vertigo Climbing Centre",
+     "city": "Ohakune",
+     "url": ""
+    },
+    {
+     "name": "The Wall",
+     "city": "Rotorua",
+     "url": ""
+    },
+    {
+     "name": "Clip n Climb",
+     "city": "Glen Eden, Auckland",
+     "url": ""
+    },
+    {
+     "name": "Vertical Adventures",
+     "city": "Mt Eden, Auckland",
+     "url": ""
+    },
+    {
+     "name": "Harvest Rock",
+     "city": "Otorohanga",
+     "url": ""
+    }
+   ],
+   "notes": "Several leads are small community/school/resort walls; check public access and a bouldering offer before import."
+  },
+  {
+   "cc": "TH",
+   "name": "Thailand",
+   "bouldeer": 15,
+   "est_low": 22,
+   "est_mid": 30,
+   "est_high": 45,
+   "confidence": "low",
+   "method": "Two directories: theamateurclimber lists 15 (Bangkok 9, Pattaya 2, Chiang Mai 2, Phuket, Koh Tao); Bouldeer already has 15 (partly different set). Union plus Bangkok boom reasoned to about 30.",
+   "sources": [
+    {
+     "title": "The Amateur Climber - Bangkok and Thailand",
+     "url": "https://theamateurclimber.com/climbing-gym-bangkok-thailand/",
+     "says": "15 gyms: Bangkok 9, others 6."
+    },
+    {
+     "title": "LydiaScapes - best climbing gyms in Thailand",
+     "url": "https://www.lydiascapes.com/best-rock-climbing-gyms-thailand/",
+     "says": "8 best gyms; search results add Climb Central Bangkok, F5, Professional Thailand Climbing, CMRCA, Powerbank."
+    }
+   ],
+   "cities": [
+    {
+     "city": "Bangkok",
+     "est": 20,
+     "bouldeer": 10,
+     "notes": ""
+    },
+    {
+     "city": "Chiang Mai",
+     "est": 4,
+     "bouldeer": 2,
+     "notes": "No Gravity and Progression Vertical in Bouldeer; Alpine Outpost, CMRCA not."
+    },
+    {
+     "city": "Phuket",
+     "est": 2,
+     "bouldeer": 1,
+     "notes": ""
+    },
+    {
+     "city": "Pattaya",
+     "est": 3,
+     "bouldeer": 0,
+     "notes": "DEEP, Bean Cow."
+    }
+   ],
+   "chains_missing": [
+    {
+     "chain": "Climb Central",
+     "branches_est": 1,
+     "bouldeer_has": "0",
+     "url": ""
+    }
+   ],
+   "leads": [
+    {
+     "name": "Urban Playground Climbing",
+     "city": "Bangkok",
+     "url": ""
+    },
+    {
+     "name": "Climb Central Bangkok",
+     "city": "Bangkok",
+     "url": ""
+    },
+    {
+     "name": "F5 Climbing Center",
+     "city": "Bangkok",
+     "url": ""
+    },
+    {
+     "name": "Professional Thailand Climbing (check vs Proclimber Gym)",
+     "city": "Bangkok",
+     "url": ""
+    },
+    {
+     "name": "DEEP Climbing Gym",
+     "city": "Pattaya",
+     "url": ""
+    },
+    {
+     "name": "Bean Cow Climbing Gym",
+     "city": "Pattaya",
+     "url": ""
+    },
+    {
+     "name": "Alpine Outpost",
+     "city": "Chiang Mai",
+     "url": ""
+    },
+    {
+     "name": "CMRCA Chiang Mai Rock Climbing Adventures",
+     "city": "Chiang Mai",
+     "url": ""
+    },
+    {
+     "name": "Powerbank Fitness climbing wall",
+     "city": "Chiang Mai",
+     "url": ""
+    }
+   ],
+   "notes": "Thin sourcing; candidate for a Thai-language pass."
+  },
+  {
+   "cc": "MY",
+   "name": "Malaysia",
+   "bouldeer": 15,
+   "est_low": 28,
+   "est_mid": 38,
+   "est_high": 50,
+   "confidence": "medium",
+   "method": "theamateurclimber lists 29 indoor gyms (2025); smartlocal/vulcanpost add more bouldering gyms in the Klang Valley; Bouldeer has 15.",
+   "sources": [
+    {
+     "title": "The Amateur Climber - Malaysia",
+     "url": "https://theamateurclimber.com/rock-climbing-malaysia/",
+     "says": "29 indoor gyms: KL 5, Selangor 5, PJ 4, Putrajaya 1, JB 5, Melaka 1, Penang 4-5, Sabah 1, Sarawak 3."
+    },
+    {
+     "title": "Vulcan Post - Klang Valley bouldering gyms",
+     "url": "https://vulcanpost.com/865511/bouldering-gyms-list-klang-valley-price-location/",
+     "says": "Additional Klang Valley bouldering gyms (search summary)."
+    }
+   ],
+   "cities": [
+    {
+     "city": "Kuala Lumpur / Klang Valley",
+     "est": 22,
+     "bouldeer": 9,
+     "notes": ""
+    },
+    {
+     "city": "Penang",
+     "est": 5,
+     "bouldeer": 3,
+     "notes": ""
+    },
+    {
+     "city": "Johor Bahru",
+     "est": 6,
+     "bouldeer": 2,
+     "notes": ""
+    },
+    {
+     "city": "Kuching / Sarawak",
+     "est": 3,
+     "bouldeer": 1,
+     "notes": ""
+    }
+   ],
+   "chains_missing": [
+    {
+     "chain": "Camp5",
+     "branches_est": 6,
+     "bouldeer_has": "3 (1Utama, Eco City, Jumpa)",
+     "url": "https://www.camp5.com/"
+    },
+    {
+     "chain": "Rocky BaseCamp",
+     "branches_est": 2,
+     "bouldeer_has": "0",
+     "url": ""
+    },
+    {
+     "chain": "Hangout Climbing Gym",
+     "branches_est": 2,
+     "bouldeer_has": "0",
+     "url": ""
+    },
+    {
+     "chain": "Project Rock",
+     "branches_est": 3,
+     "bouldeer_has": "3",
+     "url": ""
+    }
+   ],
+   "leads": [
+    {
+     "name": "Camp5 KL East",
+     "city": "Kuala Lumpur",
+     "url": "https://www.camp5.com/"
+    },
+    {
+     "name": "Camp5 Utropolis",
+     "city": "Shah Alam",
+     "url": "https://www.camp5.com/"
+    },
+    {
+     "name": "Camp5 Paradigm Mall JB",
+     "city": "Johor Bahru",
+     "url": "https://www.camp5.com/"
+    },
+    {
+     "name": "MadMonkeyz Climbing Gym",
+     "city": "Kuala Lumpur",
+     "url": ""
+    },
+    {
+     "name": "Rocky BaseCamp Shah Alam",
+     "city": "Shah Alam",
+     "url": ""
+    },
+    {
+     "name": "Rocky Basecamp AEON Tebrau City",
+     "city": "Johor Bahru",
+     "url": ""
+    },
+    {
+     "name": "Batuu Climbing",
+     "city": "Petaling Jaya",
+     "url": "https://www.batuuclimbing.com/"
+    },
+    {
+     "name": "Boulder Story Climbing Gym",
+     "city": "Petaling Jaya",
+     "url": ""
+    },
+    {
+     "name": "Hangout Climbing Gym The Palazzia",
+     "city": "Penang",
+     "url": ""
+    },
+    {
+     "name": "Hangout Climbing Gym Metro Avenue",
+     "city": "Penang",
+     "url": ""
+    },
+    {
+     "name": "Project Rock IKEA Batu Kawan",
+     "city": "Penang",
+     "url": ""
+    },
+    {
+     "name": "PAMPA Rock Climbing",
+     "city": "Melaka",
+     "url": ""
+    },
+    {
+     "name": "Sabah Indoor Climbing Centre",
+     "city": "Kota Kinabalu",
+     "url": ""
+    },
+    {
+     "name": "Altitude Climbing Gym",
+     "city": "Kuching",
+     "url": ""
+    },
+    {
+     "name": "Top Climb Climbing Gym",
+     "city": "Miri",
+     "url": ""
+    }
+   ],
+   "notes": "Verify names against Bouldeer entries before import."
+  },
+  {
+   "cc": "ID",
+   "name": "Indonesia",
+   "bouldeer": 14,
+   "est_low": 20,
+   "est_mid": 28,
+   "est_high": 45,
+   "confidence": "low",
+   "method": "indoorclimbing.com lists about 17 (Jakarta 6, Bandung 3, Bali 2, others), Bouldeer 14 with a partly different set; union plus mall-based gyms in Indonesian media suggests about 28.",
+   "sources": [
+    {
+     "title": "indoorclimbing.com Indonesia",
+     "url": "https://www.indoorclimbing.com/indonesia.html",
+     "says": "About 17 gyms in Bali, Bandung, Jakarta, Serpong, Surabaya, Sumatra, Sulawesi."
+    },
+    {
+     "title": "IDN Times - indoor climbing gyms in Jakarta",
+     "url": "https://www.idntimes.com/sport/arena/indoor-climbing-gym-di-jakarta-c1c2-01-fqpmn-s9ynnz",
+     "says": "Names Indoclimb FX/Lippo Kemang, Climb On (Plaza Semanggi), Boulder Climbing Gym (Bogor, Boxies 123)."
+    }
+   ],
+   "cities": [
+    {
+     "city": "Jakarta (+Bogor, Tangerang)",
+     "est": 12,
+     "bouldeer": 5,
+     "notes": ""
+    },
+    {
+     "city": "Bandung",
+     "est": 5,
+     "bouldeer": 4,
+     "notes": ""
+    },
+    {
+     "city": "Bali",
+     "est": 3,
+     "bouldeer": 1,
+     "notes": "Tokei Ubud missing."
+    },
+    {
+     "city": "Surabaya",
+     "est": 2,
+     "bouldeer": 1,
+     "notes": ""
+    }
+   ],
+   "chains_missing": [
+    {
+     "chain": "Indoclimb",
+     "branches_est": 3,
+     "bouldeer_has": "3",
+     "url": ""
+    },
+    {
+     "chain": "Dreamstone Boulders",
+     "branches_est": 2,
+     "bouldeer_has": "1 (Alam Sutera; Kelapa Gading missing)",
+     "url": ""
+    }
+   ],
+   "leads": [
+    {
+     "name": "Climb On (Plaza Semanggi)",
+     "city": "Jakarta",
+     "url": ""
+    },
+    {
+     "name": "Alpine Outpost",
+     "city": "Jakarta",
+     "url": ""
+    },
+    {
+     "name": "Dreamstone Kelapa Gading",
+     "city": "Jakarta",
+     "url": ""
+    },
+    {
+     "name": "Boulder Climbing Gym (Boxies 123)",
+     "city": "Bogor",
+     "url": ""
+    },
+    {
+     "name": "Bremgra Indoor Climbing Gym",
+     "city": "Serpong",
+     "url": ""
+    },
+    {
+     "name": "Tokei Ubud Climbing Gym",
+     "city": "Ubud",
+     "url": ""
+    },
+    {
+     "name": "Untar climbing wall",
+     "city": "Jakarta",
+     "url": ""
+    }
+   ],
+   "notes": "Some are university/club walls; verify public access."
+  },
+  {
+   "cc": "PH",
+   "name": "Philippines",
+   "bouldeer": 14,
+   "est_low": 28,
+   "est_mid": 36,
+   "est_high": 50,
+   "confidence": "medium",
+   "method": "climbphilippines.com directory lists 26 facilities (Metro Manila 9, other Luzon 4, Visayas 6, Mindanao 7); union with Bouldeer adds a few; Power Up chain alone is 5 branches.",
+   "sources": [
+    {
+     "title": "Climb Philippines gym directory",
+     "url": "https://www.climbphilippines.com/gym-directory.html",
+     "says": "26 climbing facilities; Power Up has 5 branches, The Bouldering Hive 2."
+    },
+    {
+     "title": "Spot.ph - best places for wall climbing in Metro Manila",
+     "url": "https://www.spot.ph/things-to-do/weekend-guides/89777/best-places-for-wall-climbing-and-bouldering-in-metro-manila-a5006-20220709-lfrm",
+     "says": "Climb Central Manila, Power Up, The Bouldering Hive, Camp Sandugo, Boulderworld, Maic's Gym."
+    }
+   ],
+   "cities": [
+    {
+     "city": "Metro Manila",
+     "est": 14,
+     "bouldeer": 7,
+     "notes": ""
+    },
+    {
+     "city": "Cebu",
+     "est": 3,
+     "bouldeer": 0,
+     "notes": "Rock On Boulder Gym (Cebu IT Park) missing."
+    },
+    {
+     "city": "Davao",
+     "est": 3,
+     "bouldeer": 0,
+     "notes": "Boulder24, Evolve Wall Fitness, Wolfpack (Digos)."
+    },
+    {
+     "city": "Iloilo",
+     "est": 3,
+     "bouldeer": 0,
+     "notes": "Pump Factory, Vertex Bouldering, Adventure Central."
+    }
+   ],
+   "chains_missing": [
+    {
+     "chain": "Power Up",
+     "branches_est": 5,
+     "bouldeer_has": "0",
+     "url": ""
+    }
+   ],
+   "leads": [
+    {
+     "name": "Power Up R.O.X. BGC",
+     "city": "Taguig",
+     "url": ""
+    },
+    {
+     "name": "Power Up Centro Cubao",
+     "city": "Quezon City",
+     "url": ""
+    },
+    {
+     "name": "Power Up Tandang Sora",
+     "city": "Quezon City",
+     "url": ""
+    },
+    {
+     "name": "Power Up Alabang",
+     "city": "Muntinlupa",
+     "url": ""
+    },
+    {
+     "name": "Power Up Lipa",
+     "city": "Lipa",
+     "url": ""
+    },
+    {
+     "name": "Boulderworld SM Mall of Asia",
+     "city": "Pasay",
+     "url": ""
+    },
+    {
+     "name": "Maic's Gym",
+     "city": "Marikina",
+     "url": ""
+    },
+    {
+     "name": "The Edge Climbing Gym by TUD",
+     "city": "Pasig",
+     "url": ""
+    },
+    {
+     "name": "Rock On Boulder Gym",
+     "city": "Cebu City",
+     "url": ""
+    },
+    {
+     "name": "Boulder24",
+     "city": "Davao City",
+     "url": ""
+    },
+    {
+     "name": "Pump Factory",
+     "city": "Iloilo City",
+     "url": ""
+    },
+    {
+     "name": "Vertex Bouldering",
+     "city": "Iloilo City",
+     "url": ""
+    },
+    {
+     "name": "Puroc Climbing",
+     "city": "Bacolod",
+     "url": ""
+    },
+    {
+     "name": "Urban Peak Rock Climbing",
+     "city": "Imus, Cavite",
+     "url": ""
+    },
+    {
+     "name": "Barnyard Boulders",
+     "city": "Indang, Cavite",
+     "url": ""
+    }
+   ],
+   "notes": "Camp Sandugo (BGC) appears in one guide but not in the directory; verify."
+  },
+  {
+   "cc": "VN",
+   "name": "Vietnam",
+   "bouldeer": 7,
+   "est_low": 10,
+   "est_mid": 14,
+   "est_high": 22,
+   "confidence": "low",
+   "method": "boulderinglist.com lists 7 (same as Bouldeer); travel guides add SkyWalk (HCMC) and Danang Climbing Gym; the scene is small but growing.",
+   "sources": [
+    {
+     "title": "BoulderingList - Vietnam",
+     "url": "https://boulderinglist.com/countries/Vietnam",
+     "says": "7 gyms."
+    },
+    {
+     "title": "i Tour Vietnam - climbing gyms in HCMC",
+     "url": "https://itourvn.com/blog/climbing-gyms-in-ho-chi-minh-city/",
+     "says": "Vertical Academy, Push Climbing, Crescent Wall, SkyWalk."
+    }
+   ],
+   "cities": [
+    {
+     "city": "Ho Chi Minh City",
+     "est": 6,
+     "bouldeer": 2,
+     "notes": "Crescent Wall and SkyWalk possibly missing (Bouldeer has Push Climbing - Crescent Wall; check if same)."
+    },
+    {
+     "city": "Hanoi",
+     "est": 5,
+     "bouldeer": 5,
+     "notes": "Covered."
+    },
+    {
+     "city": "Da Nang",
+     "est": 2,
+     "bouldeer": 0,
+     "notes": "Danang Climbing Gym."
+    }
+   ],
+   "chains_missing": [],
+   "leads": [
+    {
+     "name": "SkyWalk Climbing (Binh Thanh)",
+     "city": "Ho Chi Minh City",
+     "url": ""
+    },
+    {
+     "name": "Danang Climbing Gym (Hai Chau)",
+     "city": "Da Nang",
+     "url": ""
+    }
+   ],
+   "notes": "Candidate for a Vietnamese-language pass."
+  },
+  {
+   "cc": "IN",
+   "name": "India",
+   "bouldeer": 18,
+   "est_low": 25,
+   "est_mid": 38,
+   "est_high": 60,
+   "confidence": "low",
+   "method": "Directories list only about 14 (boulderinglist), Mountain Project is thin; Bouldeer already holds 18. Estimate reflects Bangalore / Delhi NCR / Mumbai / Pune growth; no census.",
+   "sources": [
+    {
+     "title": "BoulderingList - India",
+     "url": "https://boulderinglist.com/countries/India",
+     "says": "14 gyms across 10 cities."
+    },
+    {
+     "title": "LBB Pune - rock climbing in Pune",
+     "url": "https://lbb.in/pune/rock-climbing-in-pune/",
+     "says": "Pune gyms; with city guides naming Bangalore gyms Let's Play Climbing (Vasant Nagar), The Boulder Project (Sarjapur), Urban Climbers, Play Arena."
+    }
+   ],
+   "cities": [
+    {
+     "city": "Bangalore",
+     "est": 10,
+     "bouldeer": 2,
+     "notes": ""
+    },
+    {
+     "city": "Delhi NCR",
+     "est": 8,
+     "bouldeer": 4,
+     "notes": "Gurugram/Noida entries are in Bouldeer but outside the 30 km radius."
+    },
+    {
+     "city": "Mumbai + Navi Mumbai",
+     "est": 5,
+     "bouldeer": 3,
+     "notes": ""
+    },
+    {
+     "city": "Pune",
+     "est": 4,
+     "bouldeer": 1,
+     "notes": ""
+    },
+    {
+     "city": "Hyderabad",
+     "est": 3,
+     "bouldeer": 2,
+     "notes": ""
+    },
+    {
+     "city": "Chennai",
+     "est": 2,
+     "bouldeer": 2,
+     "notes": ""
+    }
+   ],
+   "chains_missing": [
+    {
+     "chain": "Equilibrium Climbing Station",
+     "branches_est": 3,
+     "bouldeer_has": "2 (Indiranagar, Goa)",
+     "url": ""
+    },
+    {
+     "chain": "Climb Central",
+     "branches_est": 2,
+     "bouldeer_has": "2 (Bengaluru, Gurugram)",
+     "url": ""
+    }
+   ],
+   "leads": [
+    {
+     "name": "Let's Play Climbing (Vasant Nagar)",
+     "city": "Bangalore",
+     "url": ""
+    },
+    {
+     "name": "The Boulder Project (Sarjapur)",
+     "city": "Bangalore",
+     "url": ""
+    },
+    {
+     "name": "Urban Climbers",
+     "city": "Bangalore",
+     "url": ""
+    },
+    {
+     "name": "Play Arena climbing wall",
+     "city": "Bangalore",
+     "url": ""
+    },
+    {
+     "name": "Rock Aliens Sports Climbing Gym (Shivaji Nagar)",
+     "city": "Pune",
+     "url": ""
+    },
+    {
+     "name": "Arun Samant Climbing Gym",
+     "city": "Mumbai",
+     "url": ""
+    }
+   ],
+   "notes": "Several are school/college or hotel walls; confirm public day entry."
+  }
+ ]
+}

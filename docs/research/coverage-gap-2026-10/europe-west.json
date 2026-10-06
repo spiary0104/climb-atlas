@@ -1,0 +1,471 @@
+{
+  "group": "europe-west",
+  "researched": "2026-10-06",
+  "countries": [
+    {
+      "cc": "DE", "name": "Germany", "bouldeer": 160,
+      "est_low": 400, "est_mid": 490, "est_high": 570, "confidence": "medium",
+      "method": "DAV counts ~570 publicly accessible bouldering/climbing facilities (222 DAV halls); boulderhallenfinder lists 266 pure boulder halls; most remaining rope halls have a real boulder area, a minority (small club/Turnhalle walls, token walls) do not, so mid = ~85% of the DAV total.",
+      "sources": [
+        {"title": "DAV: Zahlen und Fakten zum Klettersport in Deutschland", "url": "https://www.alpenverein.de/verband/presse/hintergrundinfos/zahlen-und-fakten-zum-klettersport-in-deutschland", "says": "rund 570 oeffentlich zugaengliche Boulder- und Kletteranlagen, davon 222 DAV-Hallen (page dated July 2026); ~2,500 school/Kita installations excluded; one passage says 'mehr als 550'."},
+        {"title": "Boulderhallenfinder.de Karte", "url": "https://boulderhallenfinder.de/karte", "says": "266 Boulderhallen in 171 cities (pure boulder halls only; Berlin 13, Muenchen 8, Koeln 7, Hamburg 7, Dresden 5, Karlsruhe 5, Leipzig 3)."},
+        {"title": "ISPO / press (search result summary)", "url": "https://www.ispo.com/en/markets/climbing-gyms-recession-looming-following-boom", "says": "Secondary: 566 climbing and bouldering gyms in Germany (2023 figure, from search snippet), ~500 by 2018."},
+        {"title": "Pofzak / boulderinglist directories", "url": "https://pofzak.de/alle-boulderhallen-in-deutschland/", "says": "Hobby lists: 50 and 20 halls respectively. Not usable as totals (shows how incomplete small directories are)."}
+      ],
+      "cities": [
+        {"city": "Berlin", "est": 22, "bouldeer": 11, "notes": "boulderhallenfinder 13 boulder-only + rope halls; topbouldering lists 10. Missing leads: Berta Block, Boulderworx, Cliffhanger."},
+        {"city": "Muenchen", "est": 14, "bouldeer": 5, "notes": "boulderhallenfinder 8 boulder halls plus DAV Thalkirchen/Freimann etc. Bouldeer has Boulderwelt x3, Einstein, High-east only."},
+        {"city": "Hamburg", "est": 11, "bouldeer": 4, "notes": "7 boulder halls per boulderhallenfinder (3 urban apes + Nordwandhalle missing) plus DAV halls."},
+        {"city": "Koeln", "est": 12, "bouldeer": 7, "notes": "7 boulder halls per boulderhallenfinder; K11 missing."},
+        {"city": "Frankfurt", "est": 8, "bouldeer": 3, "notes": "estimate; boulderhallenfinder only 2 boulder-only halls, plus DAV and rope halls. Low confidence."},
+        {"city": "Stuttgart", "est": 8, "bouldeer": 5, "notes": "estimate; Climbmax missing."},
+        {"city": "Duesseldorf", "est": 8, "bouldeer": 6, "notes": "Superblock, Halle Mensch, MOVE missing (kletterinsel/werkenntdenbesten)."},
+        {"city": "Leipzig", "est": 6, "bouldeer": 3, "notes": "estimate, low confidence."},
+        {"city": "Dresden", "est": 7, "bouldeer": 4, "notes": "boulderhallenfinder 5; Bouldercity missing."},
+        {"city": "Nuernberg", "est": 10, "bouldeer": 9, "notes": "well covered (Steinbock, Bambule, Cafe Kraft, E4, Climbing Factory, DAV...)."},
+        {"city": "Hannover", "est": 6, "bouldeer": 2, "notes": "escaladrome Bloc:Werk missing; estimate."},
+        {"city": "Ruhrgebiet (Essen)", "est": 20, "bouldeer": 9, "notes": "metro area; Citymonkey, Boulderbruecke Margaretenhoehe, Kletterputt (Essen), Bodenlos (Hattingen) missing."}
+      ],
+      "chains_missing": [
+        {"chain": "urban apes", "branches_est": 15, "bouldeer_has": 7, "url": "https://www.urban-apes.de"},
+        {"chain": "Boulderwelt", "branches_est": 11, "bouldeer_has": 8, "url": null},
+        {"chain": "Einstein Boulderhalle", "branches_est": 8, "bouldeer_has": 6, "url": null},
+        {"chain": "Boulders Habitat / Blockhelden / Kletterbar (partial)", "branches_est": null, "bouldeer_has": 4, "url": null}
+      ],
+      "leads": [
+        {"name": "Berta Block", "city": "Berlin", "url": "https://www.bertablock.de"},
+        {"name": "Boulderworx", "city": "Berlin", "url": "https://www.boulderworx.de"},
+        {"name": "Cliffhanger", "city": "Berlin", "url": "https://www.cliffhanger-berlin.de"},
+        {"name": "Nordwandhalle", "city": "Hamburg", "url": null},
+        {"name": "urban apes Hamburg Ost", "city": "Hamburg", "url": null},
+        {"name": "urban apes Hamburg St. Pauli", "city": "Hamburg", "url": null},
+        {"name": "urban apes Hamburg West", "city": "Hamburg", "url": null},
+        {"name": "K11 Boulderhalle", "city": "Koeln", "url": null},
+        {"name": "Superblock", "city": "Duesseldorf", "url": null},
+        {"name": "Halle Mensch", "city": "Duesseldorf", "url": null},
+        {"name": "MOVE Kletterhalle", "city": "Duesseldorf", "url": null},
+        {"name": "Citymonkey", "city": "Essen", "url": null},
+        {"name": "Climbmax", "city": "Stuttgart", "url": null},
+        {"name": "Bouldercity", "city": "Dresden", "url": null},
+        {"name": "escaladrome Bloc:Werk", "city": "Hannover", "url": null}
+      ],
+      "notes": "Bouldeer's 160 is concentrated in cities/West/East; DAV rope halls with boulder areas in small towns are the largest gap. No URLs were verified except those quoted from the directory pages."
+    },
+    {
+      "cc": "FR", "name": "France", "bouldeer": 138,
+      "est_low": 330, "est_mid": 420, "est_high": 550, "confidence": "medium",
+      "method": "291 private gyms (2025 FFME/UDSE study, ~85% with bloc) plus a share of ~1,070 FFME-affiliated structures 'accessible to the public' (municipal/club halls, many with small boulder rooms); only a minority of the latter qualify (open day entry + boulder).",
+      "sources": [
+        {"title": "PlanetGrimpe: Le boom des salles d'escalade marque une pause (etat des lieux 2025)", "url": "https://planetgrimpe.com/le-boom-des-salles-descalade-marque-une-pause-etat-des-lieux-2025/", "says": "291 private facilities; over 1,070 FFME structures accessible to the public; ~2M regular climbers."},
+        {"title": "La Fabrique Verticale: marche des salles en France 2024", "url": "https://lafabriqueverticale.com/fr/le-marche-des-salles-descalade-en-france-en-2024/", "says": "close to 300 private gyms, +10%/yr openings."},
+        {"title": "Search summary (France Info / Decideurs du Sport)", "url": "https://lafabriqueverticale.com/fr/quel-futur-pour-les-salles-descalade-en-france/", "says": "~250 private gyms (2024 snippet); 120 belong to 6 networks (Climb Up, Arkose, Altissimo, Block'Out, Vertical'Art, Bloc Session)."},
+        {"title": "Climbing Explorer", "url": "https://climbingexplorer.com/", "says": "214 gyms listed; Climb Up 29, Arkose 26, Bloc Session 20, Block'Out 13, Altissimo 11, Vertical'Art 11 (undercounts vs Bouldeer for Bloc Session)."},
+        {"title": "parc-attraction-loisirs.fr salle escalade bloc", "url": "https://www.parc-attraction-loisirs.fr/parcs-de-loisirs/salle-escalade-bloc/", "says": "130+ gyms listed, with ~50 independent names used as leads."}
+      ],
+      "cities": [
+        {"city": "Paris (Ile-de-France)", "est": 40, "bouldeer": 26, "notes": "Arkose runs 14 in IdF (Bouldeer has them); gaps: Climb World, Mourlon, MurMur Issy/Pantin, Blocbuster Courbevoie, Roc & Resine Thiais, Association Vincennoise, Hapik-type independents."},
+        {"city": "Lyon", "est": 16, "bouldeer": 11, "notes": "estimate; chain-dominated, fairly covered."},
+        {"city": "Marseille/Aix", "est": 16, "bouldeer": 12, "notes": "Altissimo Arnavaux, Boulder Zone La Garde (leads)."},
+        {"city": "Toulouse", "est": 12, "bouldeer": 7, "notes": "Altissimo x3, Block'Out, Solo, The Roof, Arkose; estimate."},
+        {"city": "Bordeaux", "est": 12, "bouldeer": 5, "notes": "Climb Up x3, Arkose, Block'Out; Ginko missing."},
+        {"city": "Lille", "est": 10, "bouldeer": 4, "notes": "Altissimo Lomme, Climb Up x4 (Bouldeer has 3), Arkose."},
+        {"city": "Nantes", "est": 10, "bouldeer": 2, "notes": "Altissimo Nantes, El Cap, Pic et Paroi x2, Block'Out(has), Vertical'Art(has). Largest metro gap."},
+        {"city": "Grenoble", "est": 12, "bouldeer": 1, "notes": "A Blok, Le Labo, Espace Vertical 2/3, Hapik, Vertical'Art (has 1). Big independent scene, mostly missing."},
+        {"city": "Strasbourg", "est": 8, "bouldeer": 2, "notes": "Hueco x2, Roc en Stock, Block'Out (has), Bloc Session (has)."},
+        {"city": "Montpellier", "est": 8, "bouldeer": 2, "notes": "Altissimo x2, Mad Monkey, Bloc Session x2 (has)."},
+        {"city": "Rennes", "est": 6, "bouldeer": 1, "notes": "Modjo Escalade, others."}
+      ],
+      "chains_missing": [
+        {"chain": "Altissimo", "branches_est": 11, "bouldeer_has": 4, "url": null},
+        {"chain": "Climb Up", "branches_est": 31, "bouldeer_has": 28, "url": null},
+        {"chain": "Vertical'Art", "branches_est": 14, "bouldeer_has": 12, "url": null},
+        {"chain": "MurMur / M'Roc / Hapik / Hueco / The Roof (small networks)", "branches_est": null, "bouldeer_has": 8, "url": null}
+      ],
+      "leads": [
+        {"name": "Altissimo Albi", "city": "Albi", "url": null},
+        {"name": "Altissimo Lille Lomme", "city": "Lille", "url": null},
+        {"name": "Altissimo Montpellier (x2)", "city": "Montpellier", "url": null},
+        {"name": "Altissimo Nantes", "city": "Nantes", "url": null},
+        {"name": "El Cap", "city": "Saint-Herblain/Nantes", "url": null},
+        {"name": "Pic et Paroi", "city": "Nantes", "url": null},
+        {"name": "A Blok", "city": "Grenoble", "url": null},
+        {"name": "Le Labo", "city": "Grenoble", "url": null},
+        {"name": "Espace Vertical 2 / 3", "city": "Grenoble", "url": null},
+        {"name": "Hueco", "city": "Strasbourg", "url": null},
+        {"name": "Karma", "city": "Fontainebleau", "url": null},
+        {"name": "Casamur", "city": "Clermont-Ferrand", "url": null},
+        {"name": "Edenwall", "city": "Macon", "url": null},
+        {"name": "Modjo Escalade", "city": "Rennes", "url": null},
+        {"name": "Blocbuster", "city": "Courbevoie", "url": null}
+      ],
+      "notes": "Bouldeer already holds most of the 6 big networks (chains ~125 of 138). The gap is independents (~150-170 private) and municipal/club halls with public access. Bloc Session count in Bouldeer (32) exceeds directory figure (20), so the chain has likely grown; check chain site."
+    },
+    {
+      "cc": "GB", "name": "United Kingdom", "bouldeer": 141,
+      "est_low": 270, "est_mid": 330, "est_high": 420, "confidence": "medium",
+      "method": "BMC says 400+ walls (includes leisure-centre/outdoor-centre walls, many rope-only); Beta Spot ranks 277 gyms (England 237, Scotland 26, Wales 12, NI 2); ABC says 46% of walls are boulder-only and ~62-67% of recent openings are boulder-only.",
+      "sources": [
+        {"title": "BMC Find a climbing wall / BMC articles (search summary)", "url": "https://www.thebmc.co.uk/en/find-a-climbing-wall-uk-map", "says": "'over 400 walls' in the UK; ~240 centres run NICAS."},
+        {"title": "Beta Spot: best climbing gyms", "url": "https://www.betaspot.co.uk/guides/best-climbing-gyms", "says": "277 venues: England 237, Scotland 26, Wales 12, Northern Ireland 2."},
+        {"title": "Association of British Climbing Walls 2025 market research", "url": "https://www.abcwalls.co.uk/2025-indoor-climbing-market-research-published/", "says": "ABC represents 200+ walls in UK and Ireland; 46% of surveyed walls boulder-only; 62% of walls opened in last four years boulder-only."},
+        {"title": "Climbing Business Journal: The Shifting UK Gym Scene", "url": "https://climbingbusinessjournal.com/the-shifting-uk-gym-scene/", "says": "386 public-access climbing walls in the UK (2017 figure)."},
+        {"title": "Country & Town House: London bouldering centres", "url": "https://www.countryandtownhouse.com/culture/bouldering-climbing-london/", "says": "London operators/sites: London Climbing Centres (7), The Arch (4), CityBouldering (3), Stronghold (2), The Font (2), Rise, Hang, Substation, Reach, Parthian etc."}
+      ],
+      "cities": [
+        {"city": "London", "est": 50, "bouldeer": 12, "notes": "londonclimbingguide lists 18 only; press lists show 40+ sites. Bouldeer lacks The Arch (4), CityBouldering (3), London Climbing Centres sites (Euston, Bethnal Green, Canary Wharf, Ravenscourt Park), Stronghold x2, The Font x2, Rise, Hang, Substation, Reach, Parthian Wandsworth, Hackney Wick Boulder Project."},
+        {"city": "Manchester", "est": 14, "bouldeer": 4, "notes": "Rock Over has 3 sites (Cheetham Hill, Bolton, Wythenshawe), Awesome Walls Stockport, The Ridge missing; estimate."},
+        {"city": "Sheffield", "est": 12, "bouldeer": 6, "notes": "estimate; Bouldeer has Foundry, Awesome Walls, Hangar, Depot, Climbing Works."},
+        {"city": "Leeds", "est": 14, "bouldeer": 9, "notes": "estimate; reasonably covered."},
+        {"city": "Bristol", "est": 12, "bouldeer": 4, "notes": "estimate; TCA x3, Redpoint, Flashpoint present; others missing."},
+        {"city": "Birmingham", "est": 10, "bouldeer": 3, "notes": "estimate."},
+        {"city": "Edinburgh", "est": 9, "bouldeer": 5, "notes": "estimate."},
+        {"city": "Glasgow", "est": 8, "bouldeer": 4, "notes": "estimate."},
+        {"city": "Newcastle", "est": 7, "bouldeer": 5, "notes": "estimate."},
+        {"city": "Liverpool", "est": 6, "bouldeer": 5, "notes": "estimate."},
+        {"city": "Nottingham", "est": 6, "bouldeer": 4, "notes": "estimate."}
+      ],
+      "chains_missing": [
+        {"chain": "The Arch Climbing", "branches_est": 4, "bouldeer_has": 0, "url": null},
+        {"chain": "CityBouldering", "branches_est": 3, "bouldeer_has": 0, "url": null},
+        {"chain": "London Climbing Centres", "branches_est": 7, "bouldeer_has": 1, "url": null},
+        {"chain": "Stronghold", "branches_est": 2, "bouldeer_has": 0, "url": null},
+        {"chain": "The Font", "branches_est": 2, "bouldeer_has": 0, "url": null},
+        {"chain": "Rock Over", "branches_est": 3, "bouldeer_has": 1, "url": null},
+        {"chain": "The Climbing Hangar (9+ sites per Substack)", "branches_est": 10, "bouldeer_has": 8, "url": null}
+      ],
+      "leads": [
+        {"name": "The Arch (Building One / Biscuit Factory / Acton / North)", "city": "London", "url": null},
+        {"name": "CityBouldering (Aldgate, White City, Stratford)", "city": "London", "url": null},
+        {"name": "Stronghold (London Fields, Tottenham Hale)", "city": "London", "url": null},
+        {"name": "The Font (Borough, Wandsworth)", "city": "London", "url": null},
+        {"name": "Rise Climbing", "city": "London (Canning Town)", "url": null},
+        {"name": "Substation", "city": "London (Brixton)", "url": null},
+        {"name": "The Reach", "city": "London (Woolwich)", "url": null},
+        {"name": "Hang", "city": "London (Hounslow)", "url": null},
+        {"name": "Parthian Climbing Wandsworth", "city": "London", "url": null},
+        {"name": "Hackney Wick Boulder Project", "city": "London", "url": null},
+        {"name": "Canary Wall / Climbing Co Fulham", "city": "London", "url": null},
+        {"name": "Rock Over Bolton / Wythenshawe", "city": "Manchester area", "url": null},
+        {"name": "Awesome Walls Stockport", "city": "Stockport", "url": null},
+        {"name": "The Ridge Climbing", "city": "Manchester", "url": "https://www.theridgeclimbing.co.uk/"},
+        {"name": "Fairlop Waters Boulder Park", "city": "London", "url": null}
+      ],
+      "notes": "Northern Ireland sits in the GB bucket: only Boulder World Belfast is in Bouldeer; Northern Ireland has ~3 gyms per CBJ/Substack. London is by far the biggest absolute gap. Walls inside leisure centres (Better.org.uk etc.) deliberately excluded from the low estimate."
+    },
+    {
+      "cc": "IE", "name": "Ireland", "bouldeer": 7,
+      "est_low": 10, "est_mid": 14, "est_high": 20, "confidence": "medium",
+      "method": "Two directories (indoorclimbing.com, boulderinglist) list 12 facilities on the island incl. Belfast and university/fitness-club walls; after removing NI and token fitness walls, then adding Galway/Clare/other facilities visible in the Mountaineering Ireland listing, 10-20 qualify.",
+      "sources": [
+        {"title": "Boulderinglist Ireland", "url": "https://boulderinglist.com/countries/Ireland", "says": "12 gyms in 9 cities; Dublin 4 (Awesome Walls, DCU, West Wood x2), Inchicore Gravity, Tallaght DCC, Cork Mardyke and Awesome Walls, Clare Shannon Leisure Centre, UCD, Belfast Boulder World."},
+        {"title": "indoorclimbing.com Ireland", "url": "https://indoorclimbing.com/ireland.html", "says": "Same 12-13 venues, including UCD/DCU sports centres and West Wood Club fitness walls."},
+        {"title": "Mountaineering Ireland indoor climbing", "url": "https://www.mountaineering.ie/content/IndoorClimbing/181", "says": "Directory of indoor walls (not parsed; mentions e.g. Galway Climbing Co-Op per search)."}
+      ],
+      "cities": [
+        {"city": "Dublin", "est": 8, "bouldeer": 4, "notes": "Bouldeer has Bloc, Gravity, DCC, Awesome Walls. Possible: The Wall Climbing Gym, DCU/UCD walls (public access to be checked)."},
+        {"city": "Cork", "est": 3, "bouldeer": 1, "notes": "Awesome Walls Cork in; Mardyke Arena UCC missing."}
+      ],
+      "chains_missing": [
+        {"chain": "Awesome Walls", "branches_est": 3, "bouldeer_has": 2, "url": "https://awesomewalls.ie/"}
+      ],
+      "leads": [
+        {"name": "Mardyke Arena climbing wall (UCC)", "city": "Cork", "url": null},
+        {"name": "Shannon Leisure Centre climbing wall", "city": "Shannon, Clare", "url": null},
+        {"name": "Galway Climbing Co-Op", "city": "Galway", "url": null},
+        {"name": "The Wall Climbing Gym", "city": "Dublin", "url": null},
+        {"name": "Kilfinane Outdoor Education Centre", "city": "Limerick", "url": null}
+      ],
+      "notes": "Small market; directories are thin and I could not find an independent total. Several leads may be outdoor-education or university walls (membership-only) and need access check."
+    },
+    {
+      "cc": "ES", "name": "Spain", "bouldeer": 61,
+      "est_low": 190, "est_mid": 235, "est_high": 300, "confidence": "medium",
+      "method": "Two directories agree on ~230-240 centres (rocodromos.com 239, a 2024 survey 227: Catalonia 48, Madrid 39, Valencia 24); 'almost 500' figure includes municipal/school/urban walls and is excluded; some listed items are outdoor urban walls so low is ~80%.",
+      "sources": [
+        {"title": "rocodromos.com directory", "url": "https://rocodromos.com/", "says": "239 centres in Spain."},
+        {"title": "rocodromos.com Madrid", "url": "https://rocodromos.com/provincias/madrid/", "says": "39 listed in Madrid province (incl. municipal and outdoor urban walls)."},
+        {"title": "rocodromos.com Barcelona", "url": "https://rocodromos.com/provincias/barcelona/", "says": "37 listed in Barcelona province."},
+        {"title": "Search summary (2024/2025 market data)", "url": "https://www.2playbook.com/fitness/comunidad-restauracion-fitness-es-escalada-rentabilidad-rocodromos_18349_102.html", "says": "227 operating indoor rocodromos in 2024; Catalonia 48, Madrid 39, Valencia 24; Madrid city 18, Barcelona 11, Valencia 8; chains (Indoorwall, Climbat, Sharma) doubled from 11 to 22 centres 2019-2025. (Figures from search snippet; page itself had no numbers.)"}
+      ],
+      "cities": [
+        {"city": "Madrid", "est": 28, "bouldeer": 16, "notes": "Missing: Arkose Carabanchel/Cuatro Caminos, Awesome Boulder Center, Honey Rock, Chango, Soul Climb (Leganes), Indoorwall Getafe, Boulder Zone Retiro/Alcala, Planet Vertical, Gorila Bulder, La Reunion."},
+        {"city": "Barcelona", "est": 30, "bouldeer": 12, "notes": "Missing: Kraken Bloc Granollers, Indoorwall Hospitalet/Manresa/Granollers/Vilanova/Vic, Kimera BCN, Blocat, El Gat Penjat, Flashh Barcelona, Freebloc, Ingravita, Batec Sant Quirze."},
+        {"city": "Valencia", "est": 14, "bouldeer": 2, "notes": "Region has 24 centres; city 8 per survey. Large gap."},
+        {"city": "Sevilla", "est": 6, "bouldeer": 3, "notes": "estimate."},
+        {"city": "Bilbao", "est": 8, "bouldeer": 3, "notes": "estimate (Basque Country is dense)."},
+        {"city": "Malaga", "est": 6, "bouldeer": 1, "notes": "estimate."},
+        {"city": "Zaragoza", "est": 6, "bouldeer": 3, "notes": "estimate."}
+      ],
+      "chains_missing": [
+        {"chain": "Indoorwall", "branches_est": 10, "bouldeer_has": 1, "url": null},
+        {"chain": "Climbat", "branches_est": 8, "bouldeer_has": 5, "url": null},
+        {"chain": "Sharma Climbing", "branches_est": 5, "bouldeer_has": 4, "url": null},
+        {"chain": "Arkose Spain", "branches_est": 3, "bouldeer_has": 1, "url": null}
+      ],
+      "leads": [
+        {"name": "Indoorwall Hospitalet de Llobregat", "city": "Barcelona area", "url": null},
+        {"name": "Indoorwall Granollers", "city": "Granollers", "url": null},
+        {"name": "Indoorwall Manresa", "city": "Manresa", "url": null},
+        {"name": "Indoorwall Vilanova", "city": "Vilanova i la Geltru", "url": null},
+        {"name": "Indoorwall Vic", "city": "Vic", "url": null},
+        {"name": "Indoorwall Getafe", "city": "Getafe", "url": null},
+        {"name": "Arkose Carabanchel", "city": "Madrid", "url": null},
+        {"name": "Arkose Cuatro Caminos", "city": "Madrid", "url": null},
+        {"name": "Boulder Zone Retiro / Alcala", "city": "Madrid", "url": null},
+        {"name": "Awesome Boulder Center", "city": "Madrid", "url": null},
+        {"name": "Kraken Bloc", "city": "Granollers", "url": null},
+        {"name": "Flashh Barcelona", "city": "Barcelona", "url": null},
+        {"name": "Kimera Climbing BCN", "city": "Barcelona", "url": null},
+        {"name": "Blocat Climbing", "city": "Barcelona area", "url": null},
+        {"name": "Honey Rock Climbing", "city": "Madrid", "url": null}
+      ],
+      "notes": "Bouldeer is strongest in Madrid/Barcelona/Asturias; Valencia, Andalucia, Canarias, Basque cities and Catalan towns are thin."
+    },
+    {
+      "cc": "IT", "name": "Italy", "bouldeer": 40,
+      "est_low": 120, "est_mid": 170, "est_high": 260, "confidence": "low",
+      "method": "No federation list of halls found. Anchors: 292 FASI-affiliated societies (2024; many operate halls, but some are club-only), 64 'specialised indoor climbing gyms' (older figure), 68 on indoorclimbing.com; mid assumes ~170 public halls with boulder offer, scaled from 97k FASI members and ~2.5x directory undercount seen in FR/ES.",
+      "sources": [
+        {"title": "Sherpa Gate: Sale di arrampicata, una crescita no stop (May 2025)", "url": "https://www.sherpa-gate.com/altrispazi/palestre-arrampicata/", "says": "292 societies affiliated to FASI in 2024 (Lombardia 48, Piemonte 35, Lazio 29, Emilia-R. 26, Trentino 26, Veneto 25); 97,000 members; Turin 16,000, Milan 13,000, Rome 6,000 practitioners."},
+        {"title": "indoorclimbing.com Italy", "url": "https://www.indoorclimbing.com/italy.html", "says": "68 climbing gyms listed (directory undercount)."},
+        {"title": "Search summary (older Italian source)", "url": "https://www.sherpa-gate.com/altrispazi/palestre-arrampicata/", "says": "'64 specialised indoor climbing gyms' plus walls in fitness centres (older/less reliable); another database cited 216 entries."}
+      ],
+      "cities": [
+        {"city": "Milano", "est": 14, "bouldeer": 4, "notes": "Urban Wall/Climbing District Pero, RockSpot (2 sites), Manga, Fantasy Climbing, Solid, Bigwalls Cernusco, Stone Age Uboldo; estimate."},
+        {"city": "Roma", "est": 12, "bouldeer": 5, "notes": "Climbing Side, Vertical Park, Rock&Walls Lanciani, Ecole Verticale Lungotevere missing."},
+        {"city": "Torino", "est": 12, "bouldeer": 5, "notes": "16,000 climbers; Palabraccini missing."},
+        {"city": "Bologna", "est": 8, "bouldeer": 5, "notes": "estimate."},
+        {"city": "Bolzano/Alto Adige", "est": 8, "bouldeer": 4, "notes": "Vertikale Brixen, Dolomitarena Sesto missing."},
+        {"city": "Verona", "est": 4, "bouldeer": 1, "notes": "estimate."},
+        {"city": "Firenze", "est": 5, "bouldeer": 3, "notes": "estimate."},
+        {"city": "Napoli", "est": 4, "bouldeer": 1, "notes": "estimate; DEMON Rock Wall listed."}
+      ],
+      "chains_missing": [
+        {"chain": "Salewa Cube / Oberalp network", "branches_est": 4, "bouldeer_has": 3, "url": null},
+        {"chain": "RockSpot", "branches_est": 3, "bouldeer_has": 1, "url": null}
+      ],
+      "leads": [
+        {"name": "Fantasy Climbing", "city": "Milano", "url": null},
+        {"name": "Bigwalls", "city": "Cernusco sul Naviglio", "url": null},
+        {"name": "Stone Age Climbing Park", "city": "Uboldo", "url": null},
+        {"name": "Boulder Factory", "city": "Prata Camportaccio", "url": null},
+        {"name": "Climbing Side", "city": "Roma", "url": null},
+        {"name": "Vertical Park", "city": "Roma", "url": null},
+        {"name": "Rock&Walls Lanciani Climbing", "city": "Roma", "url": null},
+        {"name": "Palabraccini", "city": "Torino", "url": null},
+        {"name": "Vertikale", "city": "Brixen", "url": null},
+        {"name": "Dolomitarena", "city": "Sesto", "url": null},
+        {"name": "Palarock", "city": "Trieste", "url": null},
+        {"name": "Sportler Climbing Center", "city": "Silea", "url": null},
+        {"name": "MACACO", "city": "Piacenza", "url": null},
+        {"name": "DEMON Rock Wall", "city": "Napoli", "url": null},
+        {"name": "Centro Gravita Permanente", "city": "Rovereto", "url": null}
+      ],
+      "notes": "Weakest estimate of the group. Recommend one deeper pass using FASI regional lists or Planetmountain's palestre database (blocked, HTTP 403)."
+    },
+    {
+      "cc": "CH", "name": "Switzerland", "bouldeer": 81,
+      "est_low": 90, "est_mid": 105, "est_high": 125, "confidence": "medium",
+      "method": "SAC directory lists ~90-94 publicly accessible halls (plus school walls); kletterportal.ch shows 3 pages of ~30; add recent openings since directory snapshot. Bouldeer already exceeds most directory counts.",
+      "sources": [
+        {"title": "SAC: Kletter- und Boulderhallen Schweiz a discretion", "url": "https://www.sac-cas.ch/de/die-alpen/kletter-und-boulderhallen-schweiz-a-discretion-15246/", "says": "ca. 90 publicly accessible climbing and boulder halls in Switzerland and border areas (SAC directory; page date unclear)."},
+        {"title": "kletterportal.ch Kletterhallen", "url": "https://www.kletterportal.ch/kletterhallen/", "says": "Directory with 3 result pages (30 per page); first page parsed."},
+        {"title": "Search summary (Berner Zeitung / NZZ)", "url": "https://www.bernerzeitung.ch/fuer-kletterhallen-betreiber-gehts-weiter-steil-nach-oben-835986071106", "says": "94 smaller and larger facilities in SAC directory; ~30 commercially operated (older article)."}
+      ],
+      "cities": [
+        {"city": "Zuerich (incl. Winterthur)", "est": 22, "bouldeer": 13, "notes": "Bouldeer 25km radius count 13 (Winterthur 10 mostly overlaps)."},
+        {"city": "Bern", "est": 9, "bouldeer": 7, "notes": "estimate."},
+        {"city": "Basel", "est": 8, "bouldeer": 4, "notes": "Birsmill Boulder Laufen missing."},
+        {"city": "Geneve", "est": 9, "bouldeer": 6, "notes": "Totem + Planet Climbing + Grimper.ch network covered."},
+        {"city": "Lausanne", "est": 8, "bouldeer": 7, "notes": "well covered."},
+        {"city": "Luzern", "est": 6, "bouldeer": 6, "notes": "well covered."},
+        {"city": "St. Gallen", "est": 4, "bouldeer": 3, "notes": "estimate."}
+      ],
+      "chains_missing": [
+        {"chain": "Kletterzentrum Gaswerk", "branches_est": 4, "bouldeer_has": 3, "url": null},
+        {"chain": "Boulderlounge", "branches_est": 3, "bouldeer_has": 2, "url": null}
+      ],
+      "leads": [
+        {"name": "9grad Boulderhalle", "city": "Thalwil", "url": null},
+        {"name": "Birsmill Boulder", "city": "Laufen", "url": null},
+        {"name": "BLOCKFELD Boulders und Kletterwand", "city": "Eschenz", "url": null},
+        {"name": "boulder-gade", "city": "Arth", "url": null},
+        {"name": "Boulderei Flums", "city": "Flums", "url": null},
+        {"name": "Boulderraum Altstadt Brugg", "city": "Brugg", "url": null},
+        {"name": "Boulderraum Sportzentrum Grindelwald", "city": "Grindelwald", "url": null},
+        {"name": "Crux bouldering", "city": "Biel", "url": null},
+        {"name": "Evolution Center", "city": "Taverne", "url": null},
+        {"name": "Freiruum Boulderhalle", "city": "Zug", "url": null},
+        {"name": "Kletterhalle der Academica Engiadina", "city": "Samedan", "url": null},
+        {"name": "Kletterwand Hirslen", "city": "Buelach", "url": null},
+        {"name": "Kletterzentrum Milandia", "city": "Greifensee", "url": null}
+      ],
+      "notes": "Best covered country; remaining gap is small-town and club halls (only page 1 of kletterportal parsed, so more leads exist on pages 2-3)."
+    },
+    {
+      "cc": "AT", "name": "Austria", "bouldeer": 22,
+      "est_low": 60, "est_mid": 80, "est_high": 110, "confidence": "medium",
+      "method": "climbing.plus lists 55 modern halls; Naturfreunde lists 100+ incl. small school/club walls; Alpenverein advertises '100 Kletter- und Boulderhallen'; qualified public halls with boulder offer put at 60-110.",
+      "sources": [
+        {"title": "climbing.plus Austria", "url": "https://climbing.plus/indoor/tag/country/at", "says": "55 halls listed (Wien, NOe, OOe, Stmk, Ktn, Tirol, Vbg, Sbg)."},
+        {"title": "Naturfreunde Kletterhallen & -waende", "url": "https://sportklettern.naturfreunde.at/klettereinrichtungen/kletterhallen/", "says": "approx. 100+ halls/walls (Ktn 11, OOe 27+, Stmk 7, Tirol 6, ...) incl. small school and club walls."},
+        {"title": "meinbezirk / Alpenverein (search summary)", "url": "https://www.meinbezirk.at/oberoesterreich/c-freizeit/kletter-und-boulderhallen-in-oberoesterreich_a5323882", "says": "Alpenverein presents itself with 100 Kletter- und Boulderhallen."},
+        {"title": "indoorclimbing.com Austria", "url": "https://www.indoorclimbing.com/austria.html", "says": "31 facilities (undercount)."}
+      ],
+      "cities": [
+        {"city": "Wien", "est": 22, "bouldeer": 13, "notes": "Missing: Edelweiss Floridsdorf, Edelweiss Suedstadt, Kraxlerei, Kletterzentrum Austria, Gebirgsverein, Boulderhalle Neuwaldegg, OGV Kletterzentrum, Suedwand."},
+        {"city": "Graz", "est": 8, "bouldeer": 4, "notes": "Newton Kapfenberg, Leoben, Leibnitz nearby also missing."},
+        {"city": "Linz", "est": 7, "bouldeer": 3, "notes": "boulderbar Linz, Mondsee, stoablock missing."},
+        {"city": "Salzburg", "est": 6, "bouldeer": 2, "notes": "BoulderTown Salzburg, Felsenfest Saalfelden missing."},
+        {"city": "Innsbruck", "est": 6, "bouldeer": 0, "notes": "Area 47 (Oetztal), Imst, Rapoldipark, Axams; Innsbruck has no Bouldeer coverage."},
+        {"city": "Klagenfurt/Villach", "est": 6, "bouldeer": 0, "notes": "FLAESH, Volume Villach, Kletterhalle Villach, Boulderama, Sportkletterarena Klagenfurt, Bouldergarage."}
+      ],
+      "chains_missing": [
+        {"chain": "boulderbar", "branches_est": 8, "bouldeer_has": 5, "url": null},
+        {"chain": "Edelweiss Boulder Center", "branches_est": 4, "bouldeer_has": 2, "url": null},
+        {"chain": "NEWTON Boulderhalle", "branches_est": 3, "bouldeer_has": 1, "url": null}
+      ],
+      "leads": [
+        {"name": "boulderbar St. Poelten", "city": "St. Poelten", "url": null},
+        {"name": "boulderbar Linz", "city": "Linz", "url": null},
+        {"name": "Edelweiss Floridsdorf", "city": "Wien", "url": null},
+        {"name": "Edelweiss Suedstadt", "city": "Maria Enzersdorf", "url": null},
+        {"name": "Kletterhalle Mondsee", "city": "Mondsee", "url": null},
+        {"name": "stoablock", "city": "Oberoesterreich", "url": null},
+        {"name": "NEWTON Boulderhalle Kapfenberg", "city": "Kapfenberg", "url": null},
+        {"name": "Volume Bouldern Villach", "city": "Villach", "url": null},
+        {"name": "BoulderTown Salzburg", "city": "Salzburg", "url": null},
+        {"name": "Die Klimmerei", "city": "Dornbirn/Vorarlberg", "url": null},
+        {"name": "K1 Kletterhalle Dornbirn", "city": "Dornbirn", "url": null},
+        {"name": "Area 47", "city": "Oetz, Tirol", "url": null},
+        {"name": "Kletterzentrum Imst", "city": "Imst", "url": null},
+        {"name": "Kraxlerei (Alpenverein Sektion Wien)", "city": "Wien", "url": "https://www.kraxlerei.at/"},
+        {"name": "Boulderpoint Leoben", "city": "Leoben", "url": null}
+      ],
+      "notes": "Bouldeer covers only Vienna, Graz, Linz, Salzburg; Tyrol, Vorarlberg, Carinthia and NOe are blank."
+    },
+    {
+      "cc": "NL", "name": "Netherlands", "bouldeer": 25,
+      "est_low": 70, "est_mid": 85, "est_high": 100, "confidence": "high",
+      "method": "NKBV counts 38 klimhallen + 53 boulderhallen in 42 cities (91 total) and separately 'circa 80 locations' incl. clubs; most rope halls have a boulder area, a few club-only ones excluded.",
+      "sources": [
+        {"title": "NKBV: Klimmen in Nederland", "url": "https://nkbv.nl/kenniscentrum/klimmen-in-nederland.html", "says": "circa 80 locations to boulder or climb, incl. club and student-association walls (interactive map)."},
+        {"title": "Search summary of nkbv.nl", "url": "https://nkbv.nl/kenniscentrum/klimmen-in-nederland.html", "says": "38 klimhallen and 53 boulderhallen across 42 unique cities; boulder halls +138% in five years to 37 (older figure)."},
+        {"title": "Resole: Alle boulderhallen en klimhallen in Nederland (2025)", "url": "https://resole.nl/en/blogs/news/alle-boulderhallen-en-klimhallen-in-nederland-2025", "says": "Per city: Amsterdam 10, Den Haag 6, Utrecht 7, Rotterdam 4, Eindhoven 4, Groningen 3."}
+      ],
+      "cities": [
+        {"city": "Amsterdam", "est": 11, "bouldeer": 8, "notes": "Resole lists 10; Klimhal Mountain Network, USC missing."},
+        {"city": "Den Haag", "est": 8, "bouldeer": 7, "notes": "well covered; De Uithof and Monte Cervino missing."},
+        {"city": "Utrecht", "est": 8, "bouldeer": 6, "notes": "Kalymnos missing."},
+        {"city": "Rotterdam", "est": 6, "bouldeer": 4, "notes": "in-city by suburb field (25 km radius would also catch Den Haag)."},
+        {"city": "Eindhoven", "est": 4, "bouldeer": 0, "notes": "Neoliet Noord/Zuid, Monk, Boulder Eindhoven."},
+        {"city": "Groningen", "est": 3, "bouldeer": 0, "notes": "Bjoeks, Gropo, Apex Boulders."}
+      ],
+      "chains_missing": [
+        {"chain": "Neoliet", "branches_est": 6, "bouldeer_has": 2, "url": null},
+        {"chain": "Beest Boulders", "branches_est": 6, "bouldeer_has": 5, "url": null},
+        {"chain": "Monk bouldergym", "branches_est": 4, "bouldeer_has": 2, "url": null}
+      ],
+      "leads": [
+        {"name": "Neoliet Eindhoven Noord / Zuid", "city": "Eindhoven", "url": null},
+        {"name": "Monk bouldergym Eindhoven", "city": "Eindhoven", "url": null},
+        {"name": "Boulder Eindhoven", "city": "Eindhoven", "url": null},
+        {"name": "Klimcentrum Bjoeks", "city": "Groningen", "url": null},
+        {"name": "Gropo", "city": "Groningen", "url": null},
+        {"name": "Apex Boulders", "city": "Groningen", "url": null},
+        {"name": "Kalymnos", "city": "Utrecht", "url": null},
+        {"name": "Klimhal Mountain Network", "city": "Amsterdam", "url": null},
+        {"name": "Monte Cervino", "city": "Bergschenhoek", "url": null},
+        {"name": "De Klimmuur Den Haag - De Uithof", "city": "Den Haag", "url": null}
+      ],
+      "notes": "Bouldeer covers only Amsterdam/Den Haag/Utrecht/Rotterdam; ~40 other cities (Eindhoven, Groningen, Leiden, Haarlem, Nijmegen, Arnhem, Breda, Tilburg, Zwolle, Maastricht etc.) missing."
+    },
+    {
+      "cc": "BE", "name": "Belgium", "bouldeer": 14,
+      "est_low": 50, "est_mid": 65, "est_high": 90, "confidence": "low",
+      "method": "RTBF says ~100 climbing halls and boulder gyms nationwide; Belclimb lists 50+ publicly accessible; the federation directory page showed only 12 on first (alphabetical) screen. Mid is the public-access qualified subset.",
+      "sources": [
+        {"title": "RTBF: Des salles aux sommets (search summary)", "url": "https://www.rtbf.be/article/des-salles-aux-sommets-quels-sont-les-spots-d-escalade-en-wallonie-et-a-bruxelles-11570614", "says": "Terres Neuves joined by about a hundred climbing halls and boulder gyms; Belclimb lists 50+ publicly accessible halls."},
+        {"title": "Klim- en Bergsportfederatie klimzalen", "url": "https://www.klimenbergsport.be/klimzalen", "says": "Directory (partial extract showed 12 entries A-W: Alpamayo, Altitude Sport, Arkose Canal, BeBloc, Beest Boulders, Black Box Boulder Kortrijk, BLDR Maritime, Boulder One, The Island, Topo, Brussels Monkey, Wallstreet)."},
+        {"title": "Club Alpin Belge", "url": "https://www.clubalpin.be/sites_escalade_indoor", "says": "About a dozen halls/schools affiliated (page timed out; figure from search snippet)."}
+      ],
+      "cities": [
+        {"city": "Bruxelles", "est": 10, "bouldeer": 2, "notes": "Missing: A Bloc (Anderlecht/Evere), Petite Ile, Le Camp de Base (Ixelles), New Rock (Auderghem), BLDR Maritime, Brussels Monkey Climbing, Forest new bloc gym."},
+        {"city": "Antwerpen", "est": 7, "bouldeer": 5, "notes": "estimate."},
+        {"city": "Gent", "est": 6, "bouldeer": 4, "notes": "Walden (largest) already in; estimate."},
+        {"city": "Liege", "est": 5, "bouldeer": 3, "notes": "Isatis possible additional."},
+        {"city": "Leuven", "est": 3, "bouldeer": 1, "notes": "Boulder One Herent; Entre Ciel et Terre in Louvain-la-Neuve."}
+      ],
+      "chains_missing": [
+        {"chain": "Maniak (Charleroi, Nivelles)", "branches_est": 2, "bouldeer_has": 0, "url": null},
+        {"chain": "Arkose Belgium", "branches_est": 2, "bouldeer_has": 1, "url": null}
+      ],
+      "leads": [
+        {"name": "A Bloc", "city": "Bruxelles (Anderlecht/Evere)", "url": null},
+        {"name": "Le Camp de Base", "city": "Bruxelles (Ixelles)", "url": "https://www.lecampdebase.be/en"},
+        {"name": "New Rock", "city": "Bruxelles (Auderghem)", "url": null},
+        {"name": "BLDR Maritime", "city": "Bruxelles", "url": null},
+        {"name": "Brussels Monkey Climbing", "city": "Bruxelles", "url": null},
+        {"name": "Petite Ile", "city": "Bruxelles (Midi)", "url": null},
+        {"name": "Boulder One", "city": "Herent", "url": null},
+        {"name": "BeBloc", "city": "Jambes/Namur", "url": null},
+        {"name": "Black Box Boulder", "city": "Kortrijk", "url": null},
+        {"name": "Alpamayo", "city": "Beringen", "url": null},
+        {"name": "Boulderzaal Topo", "city": "Tienen", "url": null},
+        {"name": "Maniak", "city": "Charleroi / Nivelles", "url": null},
+        {"name": "Face Nord", "city": "Mons", "url": null},
+        {"name": "Escal'pades", "city": "Arlon", "url": null}
+      ],
+      "notes": "Bouldeer has nothing outside Antwerp/Gent/Liege/Brussels. Directory total could not be read in full, hence low confidence."
+    },
+    {
+      "cc": "LU", "name": "Luxembourg", "bouldeer": 5,
+      "est_low": 5, "est_mid": 7, "est_high": 10, "confidence": "medium",
+      "method": "theCrag/directories list 2-5 gyms; luxtoday lists RedRock, Coque, Echternach hostel wall (indoor) plus outdoor Mamer; Bouldeer already has RedRock, BKL, Coque, D-Summit, BlocX.",
+      "sources": [
+        {"title": "Luxtoday: climbing centers in Luxembourg", "url": "https://luxtoday.lu/en/knowledge/climbing-centers-in-luxembourg-for", "says": "Indoor: Coque (Luxembourg City, 700 m2, bouldering area), RedRock (Soleuvre), Youth Hostel Echternach 14 m wall; Boulder Klub Mamer is outdoor, membership."},
+        {"title": "theCrag Luxembourg", "url": "https://www.thecrag.com/en/climbing/luxembourg", "says": "at least 5 gym facilities listed."},
+        {"title": "boulderinglist Luxembourg", "url": "https://boulderinglist.com/countries/Luxembourg", "says": "only 2 gyms (directory undercount)."}
+      ],
+      "cities": [
+        {"city": "Luxembourg City", "est": 5, "bouldeer": 5, "notes": "25km radius count includes Soleuvre/Dudelange/Esch."}
+      ],
+      "chains_missing": [],
+      "leads": [
+        {"name": "Kletterhalle Jugendherberge Echternach", "city": "Echternach", "url": null}
+      ],
+      "notes": "Essentially complete; possible small additions."
+    },
+    {
+      "cc": "PT", "name": "Portugal", "bouldeer": 14,
+      "est_low": 18, "est_mid": 26, "est_high": 35, "confidence": "low",
+      "method": "Directory shows 13 gyms; Decathlon/FPME text says 'more than thirty' climbing facilities incl. clubs, municipal and private parks; new Lisbon openings (Vertigo Oriente Dec) suggest growth. Mid = qualified public halls with boulder offer.",
+      "sources": [
+        {"title": "indoorclimbing.com Portugal", "url": "https://www.indoorclimbing.com/portugal.html", "says": "13 facilities: Coimbra upa!, Faro Vertical, Fermentelos, Guimaraes Bloco Bouldering, Lisboa Areeiro, Maia, Braga, Parede Boulder Spot, Porto de Mos Dolinas, Porto PROA and SaoRock, Setubal IN WALL, Torres Vedras Higia."},
+        {"title": "Decathlon PT: onde fazer escalada indoor", "url": "https://conselhos-desportivos.decathlon.pt/onde-fazer-escalada-indoor-em-portugal", "says": "More than thirty facilities (climbing gyms, walls, clubs, public and private parks) (from search snippet)."},
+        {"title": "Atlas Lisboa: Lisbon climbing gyms", "url": "https://www.atlaslisboa.com/lisbon-climbing-gyms/", "says": "Lisbon gyms: Vertigo, The Climb (Alcantara), Sharma Lisboa (Marvila), Altissimo, Vertical Wall."}
+      ],
+      "cities": [
+        {"city": "Lisboa", "est": 12, "bouldeer": 6, "notes": "The Climb (Alcantara), Rocodromo do Areeiro, Vertical Wall missing."},
+        {"city": "Porto", "est": 6, "bouldeer": 3, "notes": "PROA/Sao Rock/North Wall in; Maia, Braga and others nearby."},
+        {"city": "Coimbra", "est": 2, "bouldeer": 2, "notes": "covered."}
+      ],
+      "chains_missing": [
+        {"chain": "Vertigo / Sharma Lisboa", "branches_est": 3, "bouldeer_has": 3, "url": null}
+      ],
+      "leads": [
+        {"name": "The Climb", "city": "Lisboa (Alcantara)", "url": null},
+        {"name": "Rocodromo do Areeiro", "city": "Lisboa", "url": null},
+        {"name": "Vertical Wall", "city": "Lisboa", "url": null},
+        {"name": "Clube de Escalada de Braga", "city": "Braga", "url": null},
+        {"name": "Bloco Bouldering", "city": "Guimaraes", "url": null},
+        {"name": "Clube de Escalada da Maia", "city": "Maia", "url": null},
+        {"name": "Escola Marista de Escalada - Boulder Spot", "city": "Parede", "url": null},
+        {"name": "Dolinas Climbing Center", "city": "Porto de Mos", "url": null},
+        {"name": "Higia Climbing", "city": "Torres Vedras", "url": null},
+        {"name": "Vertical nucleo de escalada", "city": "Faro", "url": null}
+      ],
+      "notes": "No national count found; estimate rests on directory (13) vs 'thirty+' claim. Algarve and Azores coverage unknown."
+    }
+  ]
+}
