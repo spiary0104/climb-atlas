@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-06-london",
+  "description": "Regional research \"UK: Greater London coverage gap\": 18 new gym(s) accepted of 21 candidate(s)",
+  "created": "2026-10-06",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-10-06-london",
+    "section_sha256": "ef3eed37373dabf2e3daad24936fa731768ed67693fc836128cf79805ee13bb2",
+    "sources_sha256": "c2596138a3ca369f62ab86dbb379929d4acb4a5755d38bdefbdb470f1a0d2b63",
+    "candidates_sha256": "85cd3c455ade1b1bc25190dbfa33965342abe8d229082203e2d72d6bcbe6b299",
+    "reconcile_sha256": "837fef78afa7068faaf29f41fd79ba1ed905bd1dd2ffee0a2cbeb5ec54683fee",
+    "review_sha256": "00d8d7a24dbcd5986e8511a6fc2cd0bd9e4daf3c63f3b490cb693231e039a9f2",
+    "candidates": 21,
+    "staged": 18,
+    "decisions": {
+      "accept": 18,
+      "defer": 3
+    }
+  },
+  "index_at_staging": {
+    "sha256": "27073d25c2df373c17caef0c24ebfe759b8d457953a461c62786486d588e661d",
+    "count": 2438
+  }
+}
