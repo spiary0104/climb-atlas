@@ -1,0 +1,411 @@
+{
+ "schema_version": 1,
+ "sources": {
+  "CENSUS": {
+   "kind": "map-data",
+   "title": "US Census Bureau Geocoder (Public_AR_Current benchmark, queried 2026-10-06)",
+   "url": "https://geocoding.geo.census.gov/geocoder/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "OSM": {
+   "kind": "map-data",
+   "title": "OpenStreetMap (OSM elements and Nominatim geocoder, queried 2026-10-06)",
+   "url": "https://www.openstreetmap.org/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "BP": {
+   "kind": "chain-store-list",
+   "title": "Bouldering Project (chain site, Twin Cities market and location pages)",
+   "url": "https://boulderingproject.com/market/twin-cities-minnesota/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "VE": {
+   "kind": "official-site",
+   "title": "Vertical Endeavors (all locations)",
+   "url": "https://www.verticalendeavors.com/visit-us/locations-2/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "BIB": {
+   "kind": "official-site",
+   "title": "Big Island Bouldering",
+   "url": "https://www.bigislandbouldering.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "MNCC": {
+   "kind": "official-site",
+   "title": "Minnesota Climbing Cooperative",
+   "url": "https://mnclimbingcoop.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "ROCA": {
+   "kind": "official-site",
+   "title": "Roca Climbing & Fitness",
+   "url": "https://www.climbroca.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "BOULDERS": {
+   "kind": "official-site",
+   "title": "Boulders Climbing Gym (Madison)",
+   "url": "https://www.bouldersgym.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "ADROCK": {
+   "kind": "official-site",
+   "title": "Adventure Rock (Milwaukee, Brookfield, Walker's Point)",
+   "url": "https://adventurerock.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "TURNERS": {
+   "kind": "official-site",
+   "title": "Milwaukee Turners Rock Climbing",
+   "url": "https://milwaukeeturners.org/rock-climbing/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "ODY": {
+   "kind": "chain-store-list",
+   "title": "Odyssey Climbing + Fitness (Green Bay and Appleton)",
+   "url": "https://www.odysseyclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "GH": {
+   "kind": "official-site",
+   "title": "Greater Heights Climbing (Fitchburg)",
+   "url": "https://www.ghclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "LOOP": {
+   "kind": "official-site",
+   "title": "CLIMB @ The Loop (Burlington)",
+   "url": "https://www.theloopcommons.com/climbattheloop",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "SUMMITMAD": {
+   "kind": "official-site",
+   "title": "Summit Strength & Fitness (Madison)",
+   "url": "https://trainclimbsummit.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "WKOW": {
+   "kind": "news",
+   "title": "WKOW: Boulders Climbing Gym closing Madison East location",
+   "url": "https://www.wkow.com/news/boulders-climbing-gym-closing-madison-east-location/article_565ff69b-805a-4d1c-a893-86de13fd3d2d.html",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "PR": {
+   "kind": "chain-store-list",
+   "title": "Planet Rock Climbing Gyms (locations and hours)",
+   "url": "https://www.planet-rock.com/locations",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "DYNO": {
+   "kind": "official-site",
+   "title": "DYNO Detroit",
+   "url": "https://www.dynodetroit.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "TF": {
+   "kind": "chain-store-list",
+   "title": "Terra Firma Bouldering Co. (Grand Rapids and East Lansing)",
+   "url": "https://www.climbterrafirma.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "SCRAP": {
+   "kind": "official-site",
+   "title": "Scrapyard Climbing Collective (Holland)",
+   "url": "https://scrapyardclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "CKZ": {
+   "kind": "official-site",
+   "title": "Climb Kalamazoo",
+   "url": "https://www.climbkalamazoo.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "HG": {
+   "kind": "official-site",
+   "title": "Higher Ground Rock Climbing Centre (Grand Rapids)",
+   "url": "https://higround.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "CLEV": {
+   "kind": "official-site",
+   "title": "Climb Cleveland",
+   "url": "https://climb-cleveland.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "SHAKER": {
+   "kind": "official-site",
+   "title": "Shaker Rocks",
+   "url": "https://shakerrocksclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "KENDALL": {
+   "kind": "official-site",
+   "title": "Kendall Cliffs Climbing Gym",
+   "url": "https://www.kendallcliffs.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "ROCKMILL": {
+   "kind": "official-site",
+   "title": "Rock Mill (Akron)",
+   "url": "https://www.rockmillclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "CINCY": {
+   "kind": "official-site",
+   "title": "Climb Cincy",
+   "url": "https://www.climbcincy.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "CT": {
+   "kind": "chain-store-list",
+   "title": "Climb Time Cincinnati (Blue Ash and Oakley)",
+   "url": "https://www.ctoba.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "RQ": {
+   "kind": "official-site",
+   "title": "RockQuest Climbing Center",
+   "url": "https://www.rockquest.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "MOSAIC": {
+   "kind": "official-site",
+   "title": "Mosaic Climbing (Loveland)",
+   "url": "https://www.mosaicclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "KRAG": {
+   "kind": "official-site",
+   "title": "Urban Krag Climbing Center (Dayton)",
+   "url": "https://www.urbankrag.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "ADVENTUS": {
+   "kind": "official-site",
+   "title": "Adventus Climbing (Toledo)",
+   "url": "https://www.adventusclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "FIVELIFE": {
+   "kind": "official-site",
+   "title": "5.life (Bloc Garten and Chambers Purely Boulders, Columbus)",
+   "url": "https://5.life/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "HH": {
+   "kind": "chain-store-list",
+   "title": "Hoosier Heights (Indianapolis, Bloomington, Louisville, Cincinnati)",
+   "url": "https://hoosierheights.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "HHB": {
+   "kind": "official-site",
+   "title": "Hoosier Heights Bloomington",
+   "url": "https://hoosierheightsbloomington.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "HHI": {
+   "kind": "official-site",
+   "title": "Hoosier Heights Indianapolis",
+   "url": "https://www.hoosierheightsindianapolis.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "CTI": {
+   "kind": "official-site",
+   "title": "Climb Time Indy",
+   "url": "https://www.climbtimeindy.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "EPIC": {
+   "kind": "official-site",
+   "title": "EPIC Climbing and Fitness (Indianapolis)",
+   "url": "https://climbepic.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "NMB": {
+   "kind": "official-site",
+   "title": "North Mass Boulder (Indianapolis)",
+   "url": "https://www.northmassboulder.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "LAF": {
+   "kind": "official-site",
+   "title": "Climb Lafayette",
+   "url": "https://www.climblafayette.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "VXE": {
+   "kind": "official-site",
+   "title": "Vertical eXcape Evansville",
+   "url": "https://www.verticalexcape.com/evansville/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "EARTH": {
+   "kind": "official-site",
+   "title": "Earth Adventures Unlimited (Fort Wayne) bouldering gym",
+   "url": "https://www.earthadventures.com/bouldering-gym",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "SUMMITCITY": {
+   "kind": "official-site",
+   "title": "Summit City Climbing Co. (Fort Wayne)",
+   "url": "https://www.summitcityclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "WAREHOUSE": {
+   "kind": "official-site",
+   "title": "Warehouse Climbing Co. (Goshen)",
+   "url": "https://www.warehouseclimbingco.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "CCI": {
+   "kind": "chain-store-list",
+   "title": "Climb So iLL (St. Louis and St. Charles)",
+   "url": "https://climbsoill.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "UL": {
+   "kind": "chain-store-list",
+   "title": "Upper Limits Rock Gym (St. Louis area)",
+   "url": "https://www.upperlimits.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "ROKC": {
+   "kind": "chain-store-list",
+   "title": "RoKC Climbing (Kansas City area, all locations)",
+   "url": "https://www.climbkc.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "COMO": {
+   "kind": "official-site",
+   "title": "CoMo Rocks (Columbia)",
+   "url": "https://comorocks.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "IBEX": {
+   "kind": "official-site",
+   "title": "IBEX Climbing Gym (Blue Springs)",
+   "url": "https://www.climbibex.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "BLISS": {
+   "kind": "official-site",
+   "title": "Bliss Climbing and Fitness (Wichita)",
+   "url": "https://climbbliss.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "APEX": {
+   "kind": "official-site",
+   "title": "Apex Climbing Gym (Overland Park)",
+   "url": "https://www.apexclimbinggym.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "APPROACH": {
+   "kind": "official-site",
+   "title": "Approach Climbing Gym (Omaha)",
+   "url": "https://www.omaharockgym.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "MW": {
+   "kind": "chain-store-list",
+   "title": "MW Climbing (Lincoln and Omaha)",
+   "url": "https://www.mwclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "NULU": {
+   "kind": "official-site",
+   "title": "Climb NuLu (Louisville)",
+   "url": "https://www.climbnulu.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "LEF": {
+   "kind": "official-site",
+   "title": "LEF Climbing (Lexington)",
+   "url": "https://lefclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "CLIA": {
+   "kind": "chain-store-list",
+   "title": "Climb Iowa (Grimes and East Village, Des Moines)",
+   "url": "https://www.climbiowa.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "BLUESTEM": {
+   "kind": "official-site",
+   "title": "Bluestem Boulders (Ames)",
+   "url": "https://bluestemboulders.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "BHB": {
+   "kind": "official-site",
+   "title": "Black Hills Basecamp (Rapid City)",
+   "url": "https://www.bhbasecamp.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "FARGO": {
+   "kind": "official-site",
+   "title": "Fargo Climbing",
+   "url": "https://www.fargoclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  }
+ }
+}
