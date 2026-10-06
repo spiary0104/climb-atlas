@@ -1,0 +1,95 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-06-small-fixes",
+ "index": {
+  "sha256": "e50072d61b4cd2133f160099a4444c918e7cc2eb73e18f243e28f9117b29ceb6",
+  "count": 2419,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [],
+ "counts": {
+  "records": 3,
+  "new": 0,
+  "existing": 0,
+  "update": 3,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 2
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "118962fd27d16f7fd0716ca507e3e91a696166d3a6074d961818a5d356d41ee2",
+ "records": [
+  {
+   "line": 1,
+   "class": "update",
+   "id": "seed-903",
+   "changes": [
+    {
+     "field": "name",
+     "before": "white Spider",
+     "after": "White Spider"
+    }
+   ],
+   "expect_h": "e215ebd07996ac47",
+   "update_reason": "Name capitalisation: the gym is White Spider (Spider Climbing group site)",
+   "warnings": [
+    {
+     "code": "rename",
+     "field": "name",
+     "message": "renames \"white Spider\" -> \"White Spider\""
+    }
+   ]
+  },
+  {
+   "line": 2,
+   "class": "update",
+   "id": "seed-1028",
+   "changes": [
+    {
+     "field": "suburb",
+     "before": "München, Oberbayern",
+     "after": "Kirchheim bei München"
+    }
+   ],
+   "expect_h": "dbc420ccc045ec8c",
+   "update_reason": "The hall is in Kirchheim bei München (Heimstetten), not München: its own address Sonnenallee 2, 85551 Kirchheim bei München"
+  },
+  {
+   "line": 3,
+   "class": "update",
+   "id": "seed-1413",
+   "changes": [
+    {
+     "field": "address",
+     "before": "Rua Cristóvão Chiarada 155, Belo Horizonte, Brazil",
+     "after": "Avenida Deputado Cristovam Chiaradia 155, Buritis, Belo Horizonte, 30575-815"
+    },
+    {
+     "field": "lat",
+     "before": -19.9472962,
+     "after": -19.978388
+    },
+    {
+     "field": "lng",
+     "before": -43.9352098,
+     "after": -43.9737288
+    }
+   ],
+   "expect_h": "20733fee4e266ff9",
+   "update_reason": "Address typo (Rua Cristóvão Chiarada) and a pin shared with Das Pedras 4 km away; the gym is at Av. Dep. Cristovam Chiaradia 155, Buritis (CEP 30575-815); pin = that postcode block (street level)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 5307 m"
+    }
+   ]
+  }
+ ]
+}
