@@ -4,7 +4,7 @@
  "inputs": {
   "section_sha256": "f07d1f96c5e0c33a31f8ba2e65c1eaf62f81bb189dc19a6686463108c6a5b2bd",
   "sources_sha256": "52c7356f62c7ea30db37b90c0ef56c5e485557e30e4d60ded62c82ec44139083",
-  "candidates_sha256": "6a5bd119d5d2232ab47e97e5bf4acec67cead2bfc62afd29fb0cfb2eb92a30cf",
+  "candidates_sha256": "ed0f35f8b69fecc27d93cdb6aedbc76c16271d4b09142561175b24c82afc962a",
   "index": {
    "sha256": "27073d25c2df373c17caef0c24ebfe759b8d457953a461c62786486d588e661d",
    "count": 2438
@@ -19,9 +19,9 @@
  },
  "counts": {
   "candidates": 88,
-  "ready": 44,
+  "ready": 42,
   "review": 12,
-  "blocked": 32,
+  "blocked": 34,
   "existing": 0,
   "invalid": 0
  },
@@ -572,12 +572,18 @@
    "cid": "jp-fukui-ac-center",
    "line": 83,
    "name": "Fukui Prefectural Archery and Climbing Center",
-   "class": "ready",
-   "suggested": "accept",
+   "class": "blocked",
+   "suggested": "reject not-a-gym",
    "importer": {
     "class": "new",
     "id": "g-48c04d5223"
    },
+   "blockers": [
+    {
+     "code": "not-a-gym",
+     "detail": "category other"
+    }
+   ],
    "review_ids": []
   },
   {
@@ -818,12 +824,18 @@
    "cid": "jp-ikeda-wall",
    "line": 82,
    "name": "Ikeda Town Climbing Wall",
-   "class": "ready",
-   "suggested": "accept",
+   "class": "blocked",
+   "suggested": "reject not-a-gym",
    "importer": {
     "class": "new",
     "id": "g-1fd268a5c8"
    },
+   "blockers": [
+    {
+     "code": "not-a-gym",
+     "detail": "category other"
+    }
+   ],
    "review_ids": []
   },
   {
@@ -1725,5 +1737,5 @@
    "review_ids": []
   }
  ],
- "reconcile_sha256": "82a23920f5aac8e79cea085787b43cb60438b1a04d724c053fffa19f38d93ad9"
+ "reconcile_sha256": "6fe3b7b8b15313ab894a1b7f868c35da4c4cceb99dd27ff9c6556a4a43d2a8c3"
 }

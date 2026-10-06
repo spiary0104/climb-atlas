@@ -4,19 +4,19 @@
 
 | What would happen | Records |
 |---|---:|
-| Insert as NEW gyms | 56 |
+| Insert as NEW gyms | 54 |
 | Update existing gyms (explicit update records) | 0 |
 | Already exist — no action (identical content: 0; content differs, NOT applied: 0) | 0 |
 | Probable duplicates — need a human decision | 0 |
 | Invalid — rejected | 0 |
 | Rejected by a human decision | 0 |
-| **Total records in batch** | 56 |
+| **Total records in batch** | 54 |
 
-Index: 2438 known gyms (sha256 27073d25c2df…). Plan: 9a1c6970158d…
+Index: 2438 known gyms (sha256 27073d25c2df…). Plan: 6c34f25826fb…
 
-## New gyms (56)
+## New gyms (54)
 
-By country: JP 56
+By country: JP 54
 
 - line 1 `g-bd57e68e26` "ADDICT Climbing" (JP)
 - line 2 `g-cf024bfc36` "Blue Canyon Climbing Gym" (JP)
@@ -32,6 +32,6 @@ By country: JP 56
 - line 12 `g-fe2180137a` "Climbing Gym Cuore Imaike" (JP)
 - line 13 `g-24f1ccb686` "Climbing Gym Cuore Nakagawa" (JP)
 - line 14 `g-b547e83ccc` "Friction Freaks" (JP)
-- line 15 `g-48c04d5223` "Fukui Prefectural Archery and Climbing Center" (JP)
-- … and 41 more (see plan.json)
+- line 15 `g-6ab68768eb` "Funny Bone" (JP)
+- … and 39 more (see plan.json)
 

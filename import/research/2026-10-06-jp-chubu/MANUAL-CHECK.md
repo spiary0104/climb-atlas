@@ -136,22 +136,30 @@ Owner list for gyms kept OUT of the batch (decision `defer`): low confidence on 
 
 ## Fukui
 
-28. **Rock Scape** (ロックスケイプ), Fukui. 福井県福井市西開発4-701
+28. **Fukui Prefectural Archery and Climbing Center** (福井県立アーチェリー・クライミングセンター), Fukui. 福井県福井市合谷町1-1
+   - URL: https://www.fukui-accenter.jp/
+   - Question: Public facility: does it offer public drop-in bouldering, and should Bouldeer list it?
+   - Findings: Public municipal/prefectural facility (category other): open and bouldering confirmed on its own pages, but whether it offers public drop-in bouldering and belongs in Bouldeer is the owner policy call.
+29. **Ikeda Town Climbing Wall** (池田町立クライミングウォール), Ikeda. 福井県今立郡池田町菅生23-42
+   - URL: https://ikeda-climbing.jp/ ; Instagram: https://www.instagram.com/ikeda.climbing/
+   - Question: Public facility: does it offer public drop-in bouldering, and should Bouldeer list it?
+   - Findings: Public municipal/prefectural facility (category other): open and bouldering confirmed on its own pages, but whether it offers public drop-in bouldering and belongs in Bouldeer is the owner policy call.
+30. **Rock Scape** (ロックスケイプ), Fukui. 福井県福井市西開発4-701
    - URL: http://www.nelson.co.jp/web-content/rockscape/index.html
    - Question: Is Rock Scape (Fukui, Nelson) open, with a bouldering wall?
    - Findings: Page of the operator (Nelson) shows no bouldering wording and no hours.
 
 ## Yamanashi
 
-29. **Climbing Gym Activ-A** (アクティバ), Yamanashi. 山梨県山梨市小原東701
+31. **Climbing Gym Activ-A** (アクティバ), Yamanashi. 山梨県山梨市小原東701
    - URL: https://www.activ-a02.com/ ; Instagram: https://www.instagram.com/activ_a_climbing/
    - Question: Does Activ-A (Yamanashi) have a public bouldering wall (site has an About Bouldering page)?
    - Findings: Billed as a lead-climbing gym (11.5 m); a bouldering section exists on the site but its size and public access were not checked; no site dates, Instagram last 2026-06.
-30. **Bouldering Gym grappa** (ボルダリングジム grappa), Kai. 山梨県甲斐市竜王1106-3
+32. **Bouldering Gym grappa** (ボルダリングジム grappa), Kai. 山梨県甲斐市竜王1106-3
    - URL: https://www.grappa-bouldering.jp/
    - Question: Is grappa (Kai, Yamanashi) open again under a new operator after the 2025 closure notice?
    - Findings: Site news: closure notice dated 2025-06-07, then "takeover decided" on 2025-08-27; nothing after, so it is unclear whether it runs under a new operator.
-31. **Climbing Gym Pirania Minami-Alps** (クライミングジム ピラニア 南アルプス店), Minami-Alps. 山梨県南アルプス市十五所715-1
+33. **Climbing Gym Pirania Minami-Alps** (クライミングジム ピラニア 南アルプス店), Minami-Alps. 山梨県南アルプス市十五所715-1
    - URL: https://www.pirania.jp/
    - Question: Pin location only: where is Climbing Gym Pirania Minami-Alps (山梨県南アルプス市十五所715-1)? Everything else is confirmed (open, bouldering).
    - Findings: GSI resolves only the district (十五所) and OSM has no element: no building-level coordinate source.
