@@ -1,0 +1,1733 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-06-canada",
+ "inputs": {
+  "section_sha256": "33849718c06e0682f31917921d11bf3b8c18dce05dd62789fb9a3aeb985faa57",
+  "sources_sha256": "a69f07ac4125ede68017726c84a4df7daa1af98ae23bdd006ebd453d675540d8",
+  "candidates_sha256": "c2113d16720fbdecb1aafeaa07217f7ce4e2a23eacc9003481cc0d484d1cb17f",
+  "index": {
+   "sha256": "27073d25c2df373c17caef0c24ebfe759b8d457953a461c62786486d588e661d",
+   "count": 2438
+  },
+  "staged_batches_compared": [],
+  "other_sections_compared": []
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 97,
+  "ready": 63,
+  "review": 26,
+  "blocked": 5,
+  "existing": 3,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "ca-allezup-mile-end",
+   "line": 27,
+   "name": "Allez Up Mile End",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-0555135dcc"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "g-d850cd1110 co-located 50 m",
+     "ids": [
+      "ca-shakti-montreal"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "candidate ca-shakti-montreal \"Shakti Rock Gym\": co-located (\"Allez Up Mile End\" / \"Shakti Rock Gym\", 50 m)",
+     "ids": [
+      "ca-shakti-montreal"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-471 \"Allez Up\": related names \"Allez Up Mile End\" / \"Allez Up\" 5398 m apart",
+     "ids": [
+      "seed-471"
+     ]
+    }
+   ],
+   "review_ids": [
+    "ca-shakti-montreal",
+    "seed-471"
+   ]
+  },
+  {
+   "cid": "ca-allezup-pointe-st-charles",
+   "line": 29,
+   "name": "Allez Up Pointe-Saint-Charles",
+   "class": "existing",
+   "suggested": "same-as seed-471",
+   "importer": {
+    "class": "existing",
+    "id": "seed-471",
+    "match": {
+     "id": "seed-471",
+     "name": "Allez Up",
+     "reason": "same-address-related-name",
+     "dist_m": 0
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-471 but content differs (name, suburb, address, types); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-471 \"Allez Up\": same-address-related-name (\"Allez Up Pointe-Saint-Charles\" / \"Allez Up\", 0 m)",
+     "ids": [
+      "seed-471"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-471"
+   ]
+  },
+  {
+   "cid": "ca-allezup-verdun",
+   "line": 28,
+   "name": "Allez Up Verdun",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-989fdeebb6"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-471 \"Allez Up\": related names \"Allez Up Verdun\" / \"Allez Up\" 2726 m apart",
+     "ids": [
+      "seed-471"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-471"
+   ]
+  },
+  {
+   "cid": "ca-alt-rock-barrie",
+   "line": 16,
+   "name": "Alt. Rock",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-4aeec3b78c"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-altitude-gatineau",
+   "line": 39,
+   "name": "Altitude Gym Gatineau",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-9621bddb93"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-altitude-orleans",
+   "line": 40,
+   "name": "Altitude Gym Orléans",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-3c8448e3c9"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-aspire-milton",
+   "line": 4,
+   "name": "Aspire Climbing & Fitness Milton",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-e643fc0ec4"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-aspire-whitby",
+   "line": 5,
+   "name": "Aspire Climbing & Fitness Whitby",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-0ddf34a7e1"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-basecamp-queen",
+   "line": 11,
+   "name": "Basecamp Climbing Queen West",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-135135dfea"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-464 \"Basecamp Climbing\": related names \"Basecamp Climbing Queen West\" / \"Basecamp Climbing\" 2190 m apart",
+     "ids": [
+      "seed-464"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-464"
+   ]
+  },
+  {
+   "cid": "ca-beyond-the-crux-kelowna",
+   "line": 76,
+   "name": "Beyond the Crux Climbing Gym",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-5c07ce6546"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-bloc-981-gatineau",
+   "line": 38,
+   "name": "Bloc 9.81",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-fdd5de6e53"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-blocs-edmonton",
+   "line": 55,
+   "name": "BLOCS",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-7f837f0de5"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-blocshop-hochelaga",
+   "line": 30,
+   "name": "Bloc Shop Hochelaga",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-6c77b9dabc"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-470 \"Bloc Shop\": related names \"Bloc Shop Hochelaga\" / \"Bloc Shop\" 8925 m apart",
+     "ids": [
+      "seed-470"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-470"
+   ]
+  },
+  {
+   "cid": "ca-blocshop-mile-ex",
+   "line": 31,
+   "name": "Bloc Shop Mile-Ex",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-dab2ad7e68"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-470 \"Bloc Shop\": related names \"Bloc Shop Mile-Ex\" / \"Bloc Shop\" 3585 m apart",
+     "ids": [
+      "seed-470"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-470"
+   ]
+  },
+  {
+   "cid": "ca-boiler-room-kingston",
+   "line": 22,
+   "name": "The Boiler Room Climbing Gym",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-6d6338ee0c"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-bolder-elevated-calgary",
+   "line": 60,
+   "name": "Bolder Climbing Elevated",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-4d5b1c9f08"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-boulder-parc",
+   "line": 13,
+   "name": "Boulder Parc",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-d3a32615f3"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-boulderhouse-langford",
+   "line": 74,
+   "name": "BoulderHouse Langford",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-9c3f3ff7b3"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-boulderhouse-victoria",
+   "line": 73,
+   "name": "BoulderHouse Victoria",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-b9fbf86143"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-boulders-edmonton",
+   "line": 56,
+   "name": "Boulders Climbing",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-4f4d948dfb"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate ca-factory-climbing-edmonton \"Factory Climbing\": related names \"Rock Jungle Boulders\" / \"Rock Jungle Fitness\" 8911 m apart",
+     "ids": [
+      "ca-factory-climbing-edmonton"
+     ]
+    }
+   ],
+   "review_ids": [
+    "ca-factory-climbing-edmonton"
+   ]
+  },
+  {
+   "cid": "ca-boulderz-toronto-junction",
+   "line": 24,
+   "name": "Boulderz Climbing Centre The Junction",
+   "class": "existing",
+   "suggested": "same-as seed-462",
+   "importer": {
+    "class": "existing",
+    "id": "seed-462",
+    "match": {
+     "id": "seed-462",
+     "name": "Boulderz Climbing Centre",
+     "reason": "same-address-related-name",
+     "dist_m": 4334
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-462 but content differs (name, lat, lng, types); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-462 \"Boulderz Climbing Centre\": same-address-related-name (\"Boulderz Climbing Centre The Junction\" / \"Boulderz Climbing Centre\", 4334 m)",
+     "ids": [
+      "seed-462"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-462"
+   ]
+  },
+  {
+   "cid": "ca-campus-escalade-trois-rivieres",
+   "line": 42,
+   "name": "Campus Escalade",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-dd2156ed87"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-canyon-la-prairie",
+   "line": 50,
+   "name": "Canyon Escalade",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-b5493eef52"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-ccc-hanger",
+   "line": 62,
+   "name": "Calgary Climbing Centre Hanger",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-7f559f26dd"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-ccc-rocky-mountain",
+   "line": 61,
+   "name": "Calgary Climbing Centre Rocky Mountain",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-0c58174e04"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-ccc-stronghold",
+   "line": 63,
+   "name": "Calgary Climbing Centre Stronghold",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-42f1822db1"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-cliffside-kamloops",
+   "line": 77,
+   "name": "Cliffside Climbing Gym",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-8427f1ff07"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-climb-base5-coquitlam",
+   "line": 72,
+   "name": "Climb Base5 Coquitlam",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-cd2a49e9c8"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-climbarq-cranbrook",
+   "line": 96,
+   "name": "ClimbArq",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-9e3a40d3ed"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    },
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "ca-climbers-rock-burlington",
+   "line": 8,
+   "name": "Climber's Rock",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-bb9468f2fc"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-coastal-climbing-surrey",
+   "line": 68,
+   "name": "Coastal Climbing Centre",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-b9cbd6e663"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-conquer-brantford",
+   "line": 9,
+   "name": "Conquer Climbing Centre",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-d0c3996bec"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-core-cambridge",
+   "line": 17,
+   "name": "The Core Climbing",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-c6bc623707"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-crag-x-victoria",
+   "line": 95,
+   "name": "Crag X Climbing Centre",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-6d4a5748e6"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-crux-boisbriand",
+   "line": 45,
+   "name": "Le Crux Boisbriand",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-9e58ce39ed"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate ca-crux-laval \"Le Crux Laval\": related names \"Le Crux Boisbriand\" / \"Le Crux Laval\" 10450 m apart",
+     "ids": [
+      "ca-crux-laval"
+     ]
+    }
+   ],
+   "review_ids": [
+    "ca-crux-laval"
+   ]
+  },
+  {
+   "cid": "ca-crux-laval",
+   "line": 44,
+   "name": "Le Crux Laval",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-21d12f79f0"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate ca-crux-boisbriand \"Le Crux Boisbriand\": related names \"Le Crux Laval\" / \"Le Crux Boisbriand\" 10450 m apart",
+     "ids": [
+      "ca-crux-boisbriand"
+     ]
+    }
+   ],
+   "review_ids": [
+    "ca-crux-boisbriand"
+   ]
+  },
+  {
+   "cid": "ca-delire-levis",
+   "line": 36,
+   "name": "DÉLIRE Escalade Lévis",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-b5c4460b8e"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate ca-delire-pierre-bertrand has the same website",
+     "ids": [
+      "ca-delire-pierre-bertrand"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ca-delire-sainte-foy has the same website",
+     "ids": [
+      "ca-delire-sainte-foy"
+     ]
+    }
+   ],
+   "review_ids": [
+    "ca-delire-pierre-bertrand",
+    "ca-delire-sainte-foy"
+   ]
+  },
+  {
+   "cid": "ca-delire-pierre-bertrand",
+   "line": 34,
+   "name": "DÉLIRE Escalade Pierre-Bertrand",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-f02051389b"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate ca-delire-levis has the same website",
+     "ids": [
+      "ca-delire-levis"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ca-delire-sainte-foy has the same website",
+     "ids": [
+      "ca-delire-sainte-foy"
+     ]
+    }
+   ],
+   "review_ids": [
+    "ca-delire-levis",
+    "ca-delire-sainte-foy"
+   ]
+  },
+  {
+   "cid": "ca-delire-sainte-foy",
+   "line": 35,
+   "name": "DÉLIRE Escalade Sainte-Foy",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-b5c696f8f4"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate ca-delire-levis has the same website",
+     "ids": [
+      "ca-delire-levis"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ca-delire-pierre-bertrand has the same website",
+     "ids": [
+      "ca-delire-pierre-bertrand"
+     ]
+    }
+   ],
+   "review_ids": [
+    "ca-delire-levis",
+    "ca-delire-pierre-bertrand"
+   ]
+  },
+  {
+   "cid": "ca-east-peak-halifax",
+   "line": 89,
+   "name": "East Peak Indoor Climbing",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-93f228ed88"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-escarpe-drummondville",
+   "line": 43,
+   "name": "L'Escarpé",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-9d578db42a"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-ethos-toronto",
+   "line": 6,
+   "name": "Ethos Climbing",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-778d964775"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-factory-climbing-edmonton",
+   "line": 57,
+   "name": "Factory Climbing",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-66c8ca8f52"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate ca-boulders-edmonton \"Boulders Climbing\": related names \"Rock Jungle Fitness\" / \"Rock Jungle Boulders\" 8911 m apart",
+     "ids": [
+      "ca-boulders-edmonton"
+     ]
+    }
+   ],
+   "review_ids": [
+    "ca-boulders-edmonton"
+   ]
+  },
+  {
+   "cid": "ca-fitrocks-moncton",
+   "line": 92,
+   "name": "Fit Rocks Climbing Gym Moncton",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-03e5d51041"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-fitrocks-saint-john",
+   "line": 91,
+   "name": "FitRocks Saint John",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-22fddaa09b"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-flux-rossland",
+   "line": 97,
+   "name": "Flux Climbing",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-00061e52e0"
+   },
+   "blockers": [
+    {
+     "code": "no-bouldering-evidence",
+     "detail": "bouldering is \"yes\" but no primary source confirms it"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "ca-grip-it-caswell",
+   "line": 84,
+   "name": "Grip It Climbing Caswell",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-51a35f2f9a"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate ca-grip-it-nelson \"Grip It Climbing Nelson\": related names \"Grip It Climbing Caswell\" / \"Grip It Climbing Nelson\" 7626 m apart",
+     "ids": [
+      "ca-grip-it-nelson"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ca-grip-it-nelson has the same website",
+     "ids": [
+      "ca-grip-it-nelson"
+     ]
+    }
+   ],
+   "review_ids": [
+    "ca-grip-it-nelson"
+   ]
+  },
+  {
+   "cid": "ca-grip-it-nelson",
+   "line": 85,
+   "name": "Grip It Climbing Nelson",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-fc7e00665b"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate ca-grip-it-caswell \"Grip It Climbing Caswell\": related names \"Grip It Climbing Nelson\" / \"Grip It Climbing Caswell\" 7626 m apart",
+     "ids": [
+      "ca-grip-it-caswell"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ca-grip-it-caswell has the same website",
+     "ids": [
+      "ca-grip-it-caswell"
+     ]
+    }
+   ],
+   "review_ids": [
+    "ca-grip-it-caswell"
+   ]
+  },
+  {
+   "cid": "ca-ground-up-squamish",
+   "line": 78,
+   "name": "Ground Up Climbing Centre",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-041bbdebce"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-guelph-grotto",
+   "line": 21,
+   "name": "The Guelph Grotto Climbing Gym",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-8b2c045cff"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-hangar-sechelt",
+   "line": 82,
+   "name": "The Hangar Climbing Lounge",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-30a5b3277a"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-hive-north-shore",
+   "line": 66,
+   "name": "The Hive North Shore",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-4546cbabe5"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-466 \"The Hive Bouldering Gym\": related names \"The Hive North Shore\" / \"The Hive Bouldering Gym\" 7215 m apart",
+     "ids": [
+      "seed-466"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ca-hive-port-coquitlam has the same website",
+     "ids": [
+      "ca-hive-port-coquitlam"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ca-hive-surrey has the same website",
+     "ids": [
+      "ca-hive-surrey"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ca-hive-winnipeg has the same website",
+     "ids": [
+      "ca-hive-winnipeg"
+     ]
+    }
+   ],
+   "review_ids": [
+    "ca-hive-port-coquitlam",
+    "ca-hive-surrey",
+    "ca-hive-winnipeg",
+    "seed-466"
+   ]
+  },
+  {
+   "cid": "ca-hive-port-coquitlam",
+   "line": 65,
+   "name": "The Hive Port Coquitlam",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-d4fe5a6d61"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate ca-hive-north-shore has the same website",
+     "ids": [
+      "ca-hive-north-shore"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ca-hive-surrey has the same website",
+     "ids": [
+      "ca-hive-surrey"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ca-hive-winnipeg has the same website",
+     "ids": [
+      "ca-hive-winnipeg"
+     ]
+    }
+   ],
+   "review_ids": [
+    "ca-hive-north-shore",
+    "ca-hive-surrey",
+    "ca-hive-winnipeg"
+   ]
+  },
+  {
+   "cid": "ca-hive-surrey",
+   "line": 64,
+   "name": "The Hive Surrey",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-a3c7fdfd0d"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate ca-hive-north-shore has the same website",
+     "ids": [
+      "ca-hive-north-shore"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ca-hive-port-coquitlam has the same website",
+     "ids": [
+      "ca-hive-port-coquitlam"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ca-hive-winnipeg has the same website",
+     "ids": [
+      "ca-hive-winnipeg"
+     ]
+    }
+   ],
+   "review_ids": [
+    "ca-hive-north-shore",
+    "ca-hive-port-coquitlam",
+    "ca-hive-winnipeg"
+   ]
+  },
+  {
+   "cid": "ca-hive-winnipeg",
+   "line": 67,
+   "name": "The Hive Winnipeg",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-9593b9cff4"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate ca-hive-north-shore has the same website",
+     "ids": [
+      "ca-hive-north-shore"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ca-hive-port-coquitlam has the same website",
+     "ids": [
+      "ca-hive-port-coquitlam"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate ca-hive-surrey has the same website",
+     "ids": [
+      "ca-hive-surrey"
+     ]
+    }
+   ],
+   "review_ids": [
+    "ca-hive-north-shore",
+    "ca-hive-port-coquitlam",
+    "ca-hive-surrey"
+   ]
+  },
+  {
+   "cid": "ca-hogtown-boulders",
+   "line": 12,
+   "name": "Hogtown Boulders",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-f90116fa52"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-hook-sainte-julie",
+   "line": 41,
+   "name": "Hook Escalade",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-68887b81fd"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-hub-markham",
+   "line": 1,
+   "name": "Hub Climbing Markham",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-94799263cd"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-hub-mississauga",
+   "line": 2,
+   "name": "Hub Climbing Mississauga",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-d5b0ae0a62"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-j2-london",
+   "line": 18,
+   "name": "J2 Bouldering",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-0dc078d1e6"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-junction-london",
+   "line": 19,
+   "name": "Junction Climbing Centre",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-322ef52012"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-klimat-ottawa",
+   "line": 23,
+   "name": "Klimat Ottawa",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-5cc383113f"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-klimat-wakefield",
+   "line": 52,
+   "name": "Klimat Wakefield",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-4e5f3a47a6"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-laccroche-levis",
+   "line": 51,
+   "name": "L'Accroché",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-0eea3390b1"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-le-mouv-montreal",
+   "line": 33,
+   "name": "Le Mouv' espace bloc",
+   "class": "existing",
+   "suggested": "same-as seed-1749",
+   "importer": {
+    "class": "existing",
+    "id": "seed-1749",
+    "match": {
+     "id": "seed-1749",
+     "name": "Le Mouv' espace bloc",
+     "reason": "same-name",
+     "dist_m": 625
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-1749 but content differs (suburb, lat, lng, address, types); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1749 \"Le Mouv' espace bloc\": same-name (\"Le Mouv' espace bloc\" / \"Le Mouv' espace bloc\", 625 m)",
+     "ids": [
+      "seed-1749"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-1749"
+   ]
+  },
+  {
+   "cid": "ca-le-spot-joliette",
+   "line": 46,
+   "name": "Le Spot centre d'escalade",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-fcc273837c"
+   },
+   "flags": [
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "ca-mudra-rouyn-noranda",
+   "line": 48,
+   "name": "Mudra espace sportif",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-f46a2a025b"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-niche-climbing-edmonton",
+   "line": 58,
+   "name": "Niche Climbing",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-be125565d6"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "ca-obloc-granby",
+   "line": 47,
+   "name": "OBLOC Escalade",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-7adde14ca3"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-on-the-rocks-campbell-river",
+   "line": 79,
+   "name": "On the Rocks Climbing Gym",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-dfd4b59fa4"
+   },
+   "flags": [
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "ca-pinnacle-bowmanville",
+   "line": 10,
+   "name": "Pinnacle Indoor Climbing",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-6a18becc5d"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-project-abbotsford",
+   "line": 69,
+   "name": "Project Climbing Centre Abbotsford",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-422795e1ff"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-project-chilliwack",
+   "line": 71,
+   "name": "Project Climbing Chilliwack",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-09597cfa46"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-project-cloverdale",
+   "line": 70,
+   "name": "Project Climbing Cloverdale",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-074724bd20"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-roc-gyms-quebec",
+   "line": 37,
+   "name": "Roc Gyms",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-9a18a8ba90"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-rock-and-chalk-newmarket",
+   "line": 93,
+   "name": "Of Rock and Chalk",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-a5c9540e3e"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-rock-and-rope-peterborough",
+   "line": 94,
+   "name": "Rock and Rope Climbing Centre",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-222dd0edc8"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-rock-oasis-toronto",
+   "line": 25,
+   "name": "The Rock Oasis",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-12dd8a54dd"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-463 same-name-but-pin-differs 6527 m",
+     "ids": [
+      "seed-463"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-463 \"The Rock Oasis\": same-name-but-pin-differs (\"The Rock Oasis\" / \"The Rock Oasis\", 6527 m)",
+     "ids": [
+      "seed-463"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-463"
+   ]
+  },
+  {
+   "cid": "ca-rock-on-toronto",
+   "line": 14,
+   "name": "Rock On Climbing",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-ca972ddf7d"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-rockhaus-vaughan",
+   "line": 3,
+   "name": "RockHaus Climbing",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-3ee5338026"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-romper-room-nanaimo",
+   "line": 75,
+   "name": "Romper Room Indoor Rock Climbing Centre",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-f79ffff522"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-rose-bloc-brossard",
+   "line": 53,
+   "name": "Rose Bloc Brossard",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-50f659e41d"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate ca-rose-bloc-longueuil \"Rose Bloc Longueuil\": related names \"Rose Bloc Brossard\" / \"Rose Bloc Longueuil\" 8572 m apart",
+     "ids": [
+      "ca-rose-bloc-longueuil"
+     ]
+    }
+   ],
+   "review_ids": [
+    "ca-rose-bloc-longueuil"
+   ]
+  },
+  {
+   "cid": "ca-rose-bloc-longueuil",
+   "line": 54,
+   "name": "Rose Bloc Longueuil",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-8d992992fe"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate ca-rose-bloc-brossard \"Rose Bloc Brossard\": related names \"Rose Bloc Longueuil\" / \"Rose Bloc Brossard\" 8572 m apart",
+     "ids": [
+      "ca-rose-bloc-brossard"
+     ]
+    }
+   ],
+   "review_ids": [
+    "ca-rose-bloc-brossard"
+   ]
+  },
+  {
+   "cid": "ca-seven-bays-bayers-lake",
+   "line": 87,
+   "name": "Seven Bays Bouldering Bayers Lake",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-ebfdd3338b"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-seven-bays-dartmouth",
+   "line": 88,
+   "name": "Seven Bays Bouldering Dartmouth",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-479f9418a8"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate ca-seven-bays-gottingen \"Seven Bays Bouldering Gottingen\": related names \"Seven Bays Bouldering Dartmouth\" / \"Seven Bays Bouldering Gottingen\" 5268 m apart",
+     "ids": [
+      "ca-seven-bays-gottingen"
+     ]
+    }
+   ],
+   "review_ids": [
+    "ca-seven-bays-gottingen"
+   ]
+  },
+  {
+   "cid": "ca-seven-bays-gottingen",
+   "line": 86,
+   "name": "Seven Bays Bouldering Gottingen",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-9754015a69"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate ca-seven-bays-dartmouth \"Seven Bays Bouldering Dartmouth\": related names \"Seven Bays Bouldering Gottingen\" / \"Seven Bays Bouldering Dartmouth\" 5268 m apart",
+     "ids": [
+      "ca-seven-bays-dartmouth"
+     ]
+    }
+   ],
+   "review_ids": [
+    "ca-seven-bays-dartmouth"
+   ]
+  },
+  {
+   "cid": "ca-shakti-montreal",
+   "line": 26,
+   "name": "Shakti Rock Gym",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-d850cd1110"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "g-0555135dcc co-located 50 m",
+     "ids": [
+      "ca-allezup-mile-end"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "candidate ca-allezup-mile-end \"Allez Up Mile End\": co-located (\"Shakti Rock Gym\" / \"Allez Up Mile End\", 50 m)",
+     "ids": [
+      "ca-allezup-mile-end"
+     ]
+    }
+   ],
+   "review_ids": [
+    "ca-allezup-mile-end"
+   ]
+  },
+  {
+   "cid": "ca-spirit-rock-kimberley",
+   "line": 80,
+   "name": "Spirit Rock Climbing Centre",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-0983e8d7d2"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-toprock-brampton",
+   "line": 7,
+   "name": "Toprock Climbing",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-eda46f467d"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-toronto-climbing-academy",
+   "line": 15,
+   "name": "Toronto Climbing Academy",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-f466f5aa48"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-vertical-adventures-winnipeg",
+   "line": 83,
+   "name": "Vertical Adventures",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-4f36b21db0"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    },
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "ca-vertically-inclined-edmonton",
+   "line": 59,
+   "name": "Vertically Inclined Rock Gym",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-da4c3908ea"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-vertige-sherbrooke",
+   "line": 49,
+   "name": "Vertige escalade",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-9be8afb429"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-wallnuts-st-johns",
+   "line": 90,
+   "name": "Wallnuts Climbing Centre",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-e3f845b5e6"
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "far-from-country: nearest known CA gym is 1602 km away -- check coordinates/country"
+    },
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "ca-whistler-core",
+   "line": 81,
+   "name": "Whistler Core Climbing & Fitness",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-50d8ff3d8f"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-windsor-rock-gym",
+   "line": 20,
+   "name": "Windsor Rock Gym",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-8b16e12362"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ca-zero-gravite-montreal",
+   "line": 32,
+   "name": "Zéro Gravité",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-32dd894582"
+   },
+   "review_ids": []
+  }
+ ],
+ "reconcile_sha256": "a0923b96c5e14e3644cbd1fdc752efb9d622c7b61b7182f6fff6f7048a9081fc"
+}

@@ -1,0 +1,537 @@
+{
+ "schema_version": 1,
+ "sources": {
+  "OSM": {
+   "kind": "map-data",
+   "title": "OpenStreetMap (map data, element pages)",
+   "url": "https://www.openstreetmap.org/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "NOM": {
+   "kind": "map-data",
+   "title": "OpenStreetMap Nominatim (address geocoding, 2026-10-06)",
+   "url": "https://nominatim.openstreetmap.org/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "ALLEZUP": {
+   "kind": "official-site",
+   "title": "allezup.com",
+   "url": "https://allezup.com/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "ALTITUDEGYM": {
+   "kind": "official-site",
+   "title": "altitudegym.ca",
+   "url": "https://altitudegym.ca/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "ALTROCK": {
+   "kind": "official-site",
+   "title": "altrock.co",
+   "url": "https://altrock.co/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "ASPIRECLIMBING": {
+   "kind": "official-site",
+   "title": "aspireclimbing.com",
+   "url": "https://aspireclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "BASECAMPCLIMBING": {
+   "kind": "official-site",
+   "title": "basecampclimbing.ca",
+   "url": "https://basecampclimbing.ca/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "BEYONDTHECRUX": {
+   "kind": "official-site",
+   "title": "beyondthecrux.info",
+   "url": "https://beyondthecrux.info/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "BLOC981": {
+   "kind": "official-site",
+   "title": "bloc981.com",
+   "url": "https://bloc981.com/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "BLOCSCLIMBING": {
+   "kind": "official-site",
+   "title": "blocsclimbing.com",
+   "url": "https://blocsclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "BLOCSHOP": {
+   "kind": "official-site",
+   "title": "blocshop.com",
+   "url": "https://blocshop.com/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "BOILERROOM": {
+   "kind": "official-site",
+   "title": "boilerroom.ca",
+   "url": "https://boilerroom.ca/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "BOLDERCLIMBING": {
+   "kind": "official-site",
+   "title": "bolderclimbing.com",
+   "url": "https://bolderclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "BOULDERHOUSE": {
+   "kind": "official-site",
+   "title": "boulderhouse.ca",
+   "url": "https://boulderhouse.ca/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "BOULDERPARC": {
+   "kind": "official-site",
+   "title": "boulderparc.com",
+   "url": "https://boulderparc.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "BOULDERZCLIMBING": {
+   "kind": "official-site",
+   "title": "boulderzclimbing.com",
+   "url": "https://boulderzclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "CALGARYCLIMBING": {
+   "kind": "official-site",
+   "title": "calgaryclimbing.com",
+   "url": "https://calgaryclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "CAMPUSESCALADE": {
+   "kind": "official-site",
+   "title": "campusescalade.com",
+   "url": "https://campusescalade.com/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "CANYONESCALADE": {
+   "kind": "official-site",
+   "title": "canyonescalade.com",
+   "url": "https://canyonescalade.com/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "CLIFFSIDECLIMBING": {
+   "kind": "official-site",
+   "title": "cliffsideclimbing.com",
+   "url": "https://cliffsideclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "CLIMBARQ": {
+   "kind": "official-site",
+   "title": "climbarq.com",
+   "url": "https://climbarq.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "CLIMBBASE5": {
+   "kind": "official-site",
+   "title": "climbbase5.com",
+   "url": "https://climbbase5.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "CLIMBERSROCK": {
+   "kind": "official-site",
+   "title": "climbersrock.com",
+   "url": "https://climbersrock.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "CLIMBGROUNDUP": {
+   "kind": "official-site",
+   "title": "climbgroundup.com",
+   "url": "https://climbgroundup.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "CLIMBINGACADEMY": {
+   "kind": "official-site",
+   "title": "climbingacademy.com",
+   "url": "https://climbingacademy.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "CLIMBROMPERROOM": {
+   "kind": "official-site",
+   "title": "climbromperroom.com",
+   "url": "https://climbromperroom.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "COASTALCLIMBING": {
+   "kind": "official-site",
+   "title": "coastalclimbing.ca",
+   "url": "https://coastalclimbing.ca/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "CONQUERCLIMBING": {
+   "kind": "official-site",
+   "title": "conquerclimbing.ca",
+   "url": "https://conquerclimbing.ca/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "CRAGX": {
+   "kind": "official-site",
+   "title": "cragx.ca",
+   "url": "https://cragx.ca/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "DELIRESCALADE": {
+   "kind": "official-site",
+   "title": "delirescalade.com",
+   "url": "https://delirescalade.com/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "EASTPEAKCLIMBING": {
+   "kind": "official-site",
+   "title": "eastpeakclimbing.ca",
+   "url": "https://eastpeakclimbing.ca/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "ESCALADELESPOT": {
+   "kind": "official-site",
+   "title": "escaladelespot.ca",
+   "url": "https://escaladelespot.ca/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "ESCARPE": {
+   "kind": "official-site",
+   "title": "escarpe.ca",
+   "url": "https://escarpe.ca/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "ETHOSCLIMBING": {
+   "kind": "official-site",
+   "title": "ethosclimbing.ca",
+   "url": "https://ethosclimbing.ca/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "FITROCKS": {
+   "kind": "official-site",
+   "title": "saintjohn.fitrocks.ca",
+   "url": "https://saintjohn.fitrocks.ca/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "FITROCKSMONCTON": {
+   "kind": "official-site",
+   "title": "fitrocksmoncton.ca",
+   "url": "https://fitrocksmoncton.ca/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "FLUXCLIMBING": {
+   "kind": "official-site",
+   "title": "fluxclimbing.com",
+   "url": "https://fluxclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "GRIPITCLIMBING": {
+   "kind": "official-site",
+   "title": "gripitclimbing.com",
+   "url": "https://gripitclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "GUELPHGROTTO": {
+   "kind": "official-site",
+   "title": "guelphgrotto.com",
+   "url": "https://guelphgrotto.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "HANGARCLIMBING": {
+   "kind": "official-site",
+   "title": "hangarclimbing.com",
+   "url": "https://hangarclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "HIVECLIMBING": {
+   "kind": "official-site",
+   "title": "hiveclimbing.com",
+   "url": "https://hiveclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "HOGTOWNBOULDERS": {
+   "kind": "official-site",
+   "title": "hogtownboulders.com",
+   "url": "https://hogtownboulders.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "HOOKESCALADE": {
+   "kind": "official-site",
+   "title": "hookescalade.com",
+   "url": "https://hookescalade.com/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "HUBCLIMBING": {
+   "kind": "official-site",
+   "title": "hubclimbing.com",
+   "url": "https://hubclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "J2BOULDERING": {
+   "kind": "official-site",
+   "title": "j2bouldering.com",
+   "url": "https://j2bouldering.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "JUNCTIONCLIMBING": {
+   "kind": "official-site",
+   "title": "junctionclimbing.com",
+   "url": "https://junctionclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "KLIMAT": {
+   "kind": "official-site",
+   "title": "ottawa.klimat.ca",
+   "url": "https://ottawa.klimat.ca/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "KLIMAT2": {
+   "kind": "official-site",
+   "title": "wakefield.klimat.ca",
+   "url": "https://wakefield.klimat.ca/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "LACCROCHEESCALADE": {
+   "kind": "official-site",
+   "title": "laccrocheescalade.com",
+   "url": "https://laccrocheescalade.com/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "LECRUX": {
+   "kind": "official-site",
+   "title": "lecrux.com",
+   "url": "https://lecrux.com/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "LEMOUV": {
+   "kind": "official-site",
+   "title": "lemouv.ca",
+   "url": "https://lemouv.ca/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "MUDRAESPACESPORTIF": {
+   "kind": "official-site",
+   "title": "mudraespacesportif.com",
+   "url": "https://mudraespacesportif.com/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "OBLOCESCALADE": {
+   "kind": "official-site",
+   "title": "oblocescalade.com",
+   "url": "https://oblocescalade.com/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "PINNACLEINDOORCLIMBING": {
+   "kind": "official-site",
+   "title": "pinnacleindoorclimbing.com",
+   "url": "https://pinnacleindoorclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "PROJECTCLIMBING": {
+   "kind": "official-site",
+   "title": "projectclimbing.ca",
+   "url": "https://projectclimbing.ca/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "ROCGYMS": {
+   "kind": "official-site",
+   "title": "rocgyms.com",
+   "url": "https://rocgyms.com/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "ROCKANDCHALK": {
+   "kind": "official-site",
+   "title": "rockandchalk.com",
+   "url": "https://rockandchalk.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "ROCKANDROPE": {
+   "kind": "official-site",
+   "title": "rockandrope.com",
+   "url": "https://rockandrope.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "ROCKGYM": {
+   "kind": "official-site",
+   "title": "rockgym.ca",
+   "url": "https://rockgym.ca/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "ROCKHAUSCLIMBING": {
+   "kind": "official-site",
+   "title": "rockhausclimbing.com",
+   "url": "https://rockhausclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "ROCKJUNGLECLIMBING": {
+   "kind": "official-site",
+   "title": "rockjungleclimbing.ca",
+   "url": "https://rockjungleclimbing.ca/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "ROCKOASIS": {
+   "kind": "official-site",
+   "title": "rockoasis.com",
+   "url": "https://rockoasis.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "ROCKONCLIMBING": {
+   "kind": "official-site",
+   "title": "rockonclimbing.ca",
+   "url": "https://rockonclimbing.ca/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "ROSEBLOC": {
+   "kind": "official-site",
+   "title": "rosebloc.com",
+   "url": "https://rosebloc.com/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "SEVENBAYSBOULDERING": {
+   "kind": "official-site",
+   "title": "sevenbaysbouldering.com",
+   "url": "https://sevenbaysbouldering.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "SHAKTIROCKGYM": {
+   "kind": "official-site",
+   "title": "shaktirockgym.com",
+   "url": "https://shaktirockgym.com/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "SPIRITROCKCLIMBING": {
+   "kind": "official-site",
+   "title": "spiritrockclimbing.com",
+   "url": "https://spiritrockclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "THECORECLIMBING": {
+   "kind": "official-site",
+   "title": "thecoreclimbing.ca",
+   "url": "https://thecoreclimbing.ca/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "TOPROCKCLIMBING": {
+   "kind": "official-site",
+   "title": "toprockclimbing.ca",
+   "url": "https://toprockclimbing.ca/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "VERTICALADVENTURES": {
+   "kind": "official-site",
+   "title": "verticaladventures.ca",
+   "url": "https://verticaladventures.ca/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "VERTICALLYINCLINED": {
+   "kind": "official-site",
+   "title": "verticallyinclined.com",
+   "url": "https://verticallyinclined.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "VERTIGEESCALADE": {
+   "kind": "official-site",
+   "title": "vertige-escalade.com",
+   "url": "https://vertige-escalade.com/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "WALLNUTSCLIMBING": {
+   "kind": "official-site",
+   "title": "wallnutsclimbing.com",
+   "url": "https://wallnutsclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "WHISTLERCORE": {
+   "kind": "official-site",
+   "title": "whistlercore.com",
+   "url": "https://whistlercore.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "WINDSORROCKGYM": {
+   "kind": "official-site",
+   "title": "windsorrockgym.com",
+   "url": "https://windsorrockgym.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "ZEROGRAVITE": {
+   "kind": "official-site",
+   "title": "zero-gravite.ca",
+   "url": "https://zero-gravite.ca/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  }
+ }
+}
