@@ -1,7 +1,7 @@
 # Regional research: Serbia (Tier C, wave 3A) (2026-10-01-serbia)
 
 Scope: RS (whole country)
-Index: 2419 gyms, sha256 e50072d61b4c… | staged batches compared: 2026-10-01-peru | other sections compared: none
+Index: 2419 gyms, sha256 e50072d61b4c… | staged batches compared: 2026-10-01-peru, 2026-10-01-ukraine | other sections compared: none
 Review radii (stricter than the importer): any gym 150 m, related name 15 km, other country 2 km
 
 ## Summary
