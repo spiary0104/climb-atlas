@@ -1,0 +1,172 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-01-serbia",
+ "inputs": {
+  "section_sha256": "49b26fa26a999cd45f6e99a61390e6f92dd083e1fa84dc566878dbf80acd5362",
+  "sources_sha256": "402dc055464f286f73e8e53255439c4b9427b881fa90894bc7a80003a6a54fa8",
+  "candidates_sha256": "972a85a26a2e058397b67433349346ca9d82a49056aa912392536271fc2d4f2e",
+  "index": {
+   "sha256": "e50072d61b4cd2133f160099a4444c918e7cc2eb73e18f243e28f9117b29ceb6",
+   "count": 2419
+  },
+  "staged_batches_compared": [
+   "2026-10-01-peru",
+   "2026-10-01-ukraine"
+  ],
+  "other_sections_compared": []
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 5,
+  "ready": 1,
+  "review": 2,
+  "blocked": 1,
+  "existing": 1,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "rs-001",
+   "line": 1,
+   "name": "Sektor44",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-3fe7f0e0a4"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1668 renamed-or-related-name-nearby 0 m",
+     "ids": [
+      "seed-1668"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1668 \"Penjački centar Sektor44\": renamed-or-related-name-nearby (\"Sektor44\" / \"Penjački centar Sektor44\", 0 m)",
+     "ids": [
+      "seed-1668"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate rs-004 \"Pulse Climbing Hub\": related names \"Penjacki centar Sektor44\" / \"Penjacki centar PULS\" 4086 m apart",
+     "ids": [
+      "rs-004"
+     ]
+    }
+   ],
+   "review_ids": [
+    "rs-004",
+    "seed-1668"
+   ]
+  },
+  {
+   "cid": "rs-002",
+   "line": 2,
+   "name": "Adrenalin Climbing Club",
+   "class": "existing",
+   "suggested": "same-as seed-1670",
+   "importer": {
+    "class": "existing",
+    "id": "seed-1670",
+    "match": {
+     "id": "seed-1670",
+     "name": "Adrenalin Climbing Club",
+     "reason": "same-name",
+     "dist_m": 152
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-1670 but content differs (lat, lng, address, types); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1670 \"Adrenalin Climbing Club\": same-name (\"Adrenalin Climbing Club\" / \"Adrenalin Climbing Club\", 152 m)",
+     "ids": [
+      "seed-1670"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-1670"
+   ]
+  },
+  {
+   "cid": "rs-003",
+   "line": 3,
+   "name": "SKC Baza Boulder Gym",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-af4c4844b8"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "rs-004",
+   "line": 4,
+   "name": "Pulse Climbing Hub",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-82bc94a0d3"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate rs-001 \"Sektor44\": related names \"Penjacki centar PULS\" / \"Penjacki centar Sektor44\" 4086 m apart",
+     "ids": [
+      "rs-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-1668 \"Penjački centar Sektor44\": related names \"Penjacki centar PULS\" / \"Penjački centar Sektor44\" 4086 m apart",
+     "ids": [
+      "seed-1668"
+     ]
+    }
+   ],
+   "review_ids": [
+    "rs-001",
+    "seed-1668"
+   ]
+  },
+  {
+   "cid": "rs-005",
+   "line": 5,
+   "name": "PAEK Nis bouldering hall",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-de1b816d29"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    }
+   ],
+   "review_ids": []
+  }
+ ],
+ "reconcile_sha256": "49ec0a7581b2bfa76779c4e3b32cbfa002dccff28360457e351fa333ad13865d"
+}

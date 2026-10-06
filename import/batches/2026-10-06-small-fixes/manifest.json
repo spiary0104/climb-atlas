@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "updater_version": 1,
+  "kind": "update",
+  "batch_id": "2026-10-06-small-fixes",
+  "status": "updated",
+  "target": {
+    "kind": "production",
+    "host": "thayxaampaelvntoaido.supabase.co"
+  },
+  "coverage": "FULL",
+  "plan_sha256": "028c078b19ed6cdb1b7ae78731ac971f31e68763c9616146424247172edf6221",
+  "payload_sha256": "b2c52798e939d546f168fd4383028b1b40babced29cc4c8cd13a6910c135246c",
+  "confirm_token": "3f15927e75c90bdb",
+  "live_state_sha256": "d6e42edd507ca2ba1fb06582c04f4064acc7591a3c87874d4257284016d5d187",
+  "rows_updated": 4,
+  "approved_before": 2419,
+  "approved_after": 2419,
+  "changes": [
+    {
+      "id": "seed-1413",
+      "fields": [
+        "address",
+        "lat",
+        "lng"
+      ],
+      "expect_h": "20733fee4e266ff9",
+      "after_h": "e6c3c1d00ec683ff"
+    },
+    {
+      "id": "seed-1702",
+      "fields": [
+        "address",
+        "lat",
+        "lng"
+      ],
+      "expect_h": "83075d5dfdf6a6da",
+      "after_h": "541e2ad986637bc1"
+    },
+    {
+      "id": "seed-1706",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "098542be4bc96d68",
+      "after_h": "2cd89b3e83b3c993"
+    },
+    {
+      "id": "seed-1712",
+      "fields": [
+        "address",
+        "lat",
+        "lng"
+      ],
+      "expect_h": "79c17936b82f3552",
+      "after_h": "a56d7b09d28d7109"
+    }
+  ],
+  "rows_identity_changed": 2,
+  "identity_changed": [
+    {
+      "id": "seed-903",
+      "fields": [
+        "name"
+      ],
+      "expect_h": "e215ebd07996ac47",
+      "after_h": "d5da843957068dba"
+    },
+    {
+      "id": "seed-1028",
+      "fields": [
+        "suburb"
+      ],
+      "expect_h": "dbc420ccc045ec8c",
+      "after_h": "57d084c0b6172d9d"
+    }
+  ],
+  "verification": {
+    "ok": true,
+    "checked": 6,
+    "problems": []
+  },
+  "started_at": "2026-10-06T06:42:59.440Z",
+  "finished_at": "2026-10-06T06:43:03.442Z",
+  "ids": [
+    "seed-903",
+    "seed-1028",
+    "seed-1413",
+    "seed-1702",
+    "seed-1706",
+    "seed-1712"
+  ]
+}

@@ -1,0 +1,54 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-06-rename-funattic",
+ "index": {
+  "sha256": "36a565e680f1428308448257babd60fc5a636ce9bae6c5fb7f7ad1fb2c8be8ba",
+  "count": 2419,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-01-peru",
+  "2026-10-01-slovakia",
+  "2026-10-01-ukraine"
+ ],
+ "counts": {
+  "records": 1,
+  "new": 0,
+  "existing": 0,
+  "update": 1,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 1
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "0ae6c81f137e375517086c3942a2300568d1a075c442b9be10e33c09ae0af49f",
+ "records": [
+  {
+   "line": 1,
+   "class": "update",
+   "id": "seed-1702",
+   "changes": [
+    {
+     "field": "name",
+     "before": "Tsekh Climbing Gym",
+     "after": "Funattic"
+    }
+   ],
+   "expect_h": "541e2ad986637bc1",
+   "update_reason": "Tsekh now trades as Funattic (its own Instagram names Tsekh as the former name)",
+   "warnings": [
+    {
+     "code": "rename",
+     "field": "name",
+     "message": "renames \"Tsekh Climbing Gym\" -> \"Funattic\""
+    }
+   ]
+  }
+ ]
+}

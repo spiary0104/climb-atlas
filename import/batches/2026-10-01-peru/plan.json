@@ -1,0 +1,39 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-01-peru",
+ "index": {
+  "sha256": "e36a9020e6e5361554dd85f986bb69da00e2f48c1993bb5af5f0ae1ab703bf63",
+  "count": 2432,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-01-ukraine"
+ ],
+ "counts": {
+  "records": 1,
+  "new": 1,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "7594c5b2c3692bd798e421e36ed4687973c0d669d999059e319dba383d078647",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-020b112ed4",
+   "id_frozen": true,
+   "name": "Vertigo Valle Sagrado",
+   "country": "PE"
+  }
+ ]
+}

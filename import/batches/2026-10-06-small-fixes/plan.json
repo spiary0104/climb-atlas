@@ -1,0 +1,173 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-06-small-fixes",
+ "index": {
+  "sha256": "e50072d61b4cd2133f160099a4444c918e7cc2eb73e18f243e28f9117b29ceb6",
+  "count": 2419,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-01-peru",
+  "2026-10-01-slovakia",
+  "2026-10-01-ukraine"
+ ],
+ "counts": {
+  "records": 6,
+  "new": 0,
+  "existing": 0,
+  "update": 6,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 3
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "028c078b19ed6cdb1b7ae78731ac971f31e68763c9616146424247172edf6221",
+ "records": [
+  {
+   "line": 1,
+   "class": "update",
+   "id": "seed-903",
+   "changes": [
+    {
+     "field": "name",
+     "before": "white Spider",
+     "after": "White Spider"
+    }
+   ],
+   "expect_h": "e215ebd07996ac47",
+   "update_reason": "Name capitalisation: the gym is White Spider (Spider Climbing group site)",
+   "warnings": [
+    {
+     "code": "rename",
+     "field": "name",
+     "message": "renames \"white Spider\" -> \"White Spider\""
+    }
+   ]
+  },
+  {
+   "line": 2,
+   "class": "update",
+   "id": "seed-1028",
+   "changes": [
+    {
+     "field": "suburb",
+     "before": "München, Oberbayern",
+     "after": "Kirchheim bei München"
+    }
+   ],
+   "expect_h": "dbc420ccc045ec8c",
+   "update_reason": "The hall is in Kirchheim bei München (Heimstetten), not München: its own address Sonnenallee 2, 85551 Kirchheim bei München"
+  },
+  {
+   "line": 3,
+   "class": "update",
+   "id": "seed-1413",
+   "changes": [
+    {
+     "field": "address",
+     "before": "Rua Cristóvão Chiarada 155, Belo Horizonte, Brazil",
+     "after": "Avenida Deputado Cristovam Chiaradia 155, Buritis, Belo Horizonte, 30575-815"
+    },
+    {
+     "field": "lat",
+     "before": -19.9472962,
+     "after": -19.978388
+    },
+    {
+     "field": "lng",
+     "before": -43.9352098,
+     "after": -43.9737288
+    }
+   ],
+   "expect_h": "20733fee4e266ff9",
+   "update_reason": "Address typo (Rua Cristóvão Chiarada) and a pin shared with Das Pedras 4 km away; the gym is at Av. Dep. Cristovam Chiaradia 155, Buritis (CEP 30575-815); pin = that postcode block (street level)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 5307 m"
+    }
+   ]
+  },
+  {
+   "line": 4,
+   "class": "update",
+   "id": "seed-1702",
+   "changes": [
+    {
+     "field": "address",
+     "before": "8 Semyi Khokhlovykh Street, Kyiv, Ukraine",
+     "after": "Borshchahivska St 154, Marmelad mall, 6th floor, Kyiv"
+    },
+    {
+     "field": "lat",
+     "before": 50.4500336,
+     "after": 50.446569
+    },
+    {
+     "field": "lng",
+     "before": 30.5241361,
+     "after": 30.443545
+    }
+   ],
+   "expect_h": "83075d5dfdf6a6da",
+   "update_reason": "Tsekh moved (Nov 2018) to the Marmelad mall and now trades as Funattic (its own Instagram names Tsekh as the old name); the old pin was a central-Kyiv placeholder 5.7 km away (research 2026-10-01-ukraine ua-003)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 5719 m"
+    }
+   ]
+  },
+  {
+   "line": 5,
+   "class": "update",
+   "id": "seed-1706",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 49.8333201,
+     "after": 49.832186
+    },
+    {
+     "field": "lng",
+     "before": 24.0013405,
+     "after": 23.996523
+    }
+   ],
+   "expect_h": "098542be4bc96d68",
+   "update_reason": "Pin about 370 m from the gym at Heroes of UPA 72, Technopark business centre (OSM node of the gym; research 2026-10-01-ukraine ua-006)"
+  },
+  {
+   "line": 6,
+   "class": "update",
+   "id": "seed-1712",
+   "changes": [
+    {
+     "field": "address",
+     "before": "Dolné Jaseno 169, Turčianske Jaseno, Slovakia",
+     "after": "Horné Jaseno 160, 038 02 Turčianske Jaseno"
+    },
+    {
+     "field": "lat",
+     "before": 49.0311324,
+     "after": 49.0286932
+    },
+    {
+     "field": "lng",
+     "before": 18.9873906,
+     "after": 18.9928054
+    }
+   ],
+   "expect_h": "79c17936b82f3552",
+   "update_reason": "Wrong address (Dolné Jaseno 169) and a pin 479 m off: ovcin.sk gives Horné Jaseno 160 and its map pin matches the OSM node of the gym (research 2026-10-01-slovakia sk-016)"
+  }
+ ]
+}

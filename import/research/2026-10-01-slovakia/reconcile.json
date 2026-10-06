@@ -1,0 +1,542 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-01-slovakia",
+ "inputs": {
+  "section_sha256": "6f33b3fdd48cd06ca6689325f79b72289dc1011530c28f4edb91a081e648b6fa",
+  "sources_sha256": "97002e944482077ae4e793aefca46c48550989a3583f070671bda7de8d926db0",
+  "candidates_sha256": "3c6e23e6ad6d7fc7552af8563fc2b6104a654ddf4d37c1be6c3291c6d15a135a",
+  "index": {
+   "sha256": "e50072d61b4cd2133f160099a4444c918e7cc2eb73e18f243e28f9117b29ceb6",
+   "count": 2419
+  },
+  "staged_batches_compared": [],
+  "other_sections_compared": []
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 22,
+  "ready": 8,
+  "review": 9,
+  "blocked": 4,
+  "existing": 1,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "sk-001",
+   "line": 1,
+   "name": "Block Dock Rača",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-3af412946f"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1708 renamed-or-related-name-nearby 40 m",
+     "ids": [
+      "seed-1708"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1708 \"Block Dock\": renamed-or-related-name-nearby (\"Block Dock Rača\" / \"Block Dock\", 40 m)",
+     "ids": [
+      "seed-1708"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate sk-002 \"Block Dock Petržalka\": related names \"Block Dock Rača\" / \"Block Dock Petržalka\" 10370 m apart",
+     "ids": [
+      "sk-002"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-1708",
+    "sk-002"
+   ]
+  },
+  {
+   "cid": "sk-002",
+   "line": 2,
+   "name": "Block Dock Petržalka",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-ab860f9c18"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-1708 \"Block Dock\": related names \"Block Dock Petržalka\" / \"Block Dock\" 10344 m apart",
+     "ids": [
+      "seed-1708"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate sk-001 \"Block Dock Rača\": related names \"Block Dock Petržalka\" / \"Block Dock Rača\" 10370 m apart",
+     "ids": [
+      "sk-001"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-1708",
+    "sk-001"
+   ]
+  },
+  {
+   "cid": "sk-003",
+   "line": 3,
+   "name": "Spot Climbing Gym",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-cddd069398"
+   },
+   "blockers": [
+    {
+     "code": "coarse-coordinates",
+     "detail": "coordinates only locate the area, not the gym"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate sk-004 \"Fanatix\": related names \"Spot lezecká stena\" / \"Fanatix lezecká stena\" 10975 m apart",
+     "ids": [
+      "sk-004"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate sk-006 \"Lezecká stena K2 Bratislava\": related names \"Spot lezecká stena\" / \"Lezecká stena K2\" 13163 m apart",
+     "ids": [
+      "sk-006"
+     ]
+    }
+   ],
+   "review_ids": [
+    "sk-004",
+    "sk-006"
+   ]
+  },
+  {
+   "cid": "sk-004",
+   "line": 4,
+   "name": "Fanatix",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-daec33ffb4"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate sk-003 \"Spot Climbing Gym\": related names \"Fanatix lezecká stena\" / \"Spot lezecká stena\" 10975 m apart",
+     "ids": [
+      "sk-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate sk-006 \"Lezecká stena K2 Bratislava\": related names \"Fanatix lezecká stena\" / \"Lezecká stena K2\" 5204 m apart",
+     "ids": [
+      "sk-006"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "sk-003",
+    "sk-006"
+   ]
+  },
+  {
+   "cid": "sk-005",
+   "line": 5,
+   "name": "Vertigo Lezecké centrum",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-b75ce99214"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1709 renamed-or-related-name-nearby 20 m",
+     "ids": [
+      "seed-1709"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1709 \"Vertigo\": renamed-or-related-name-nearby (\"Vertigo Lezecké centrum\" / \"Vertigo\", 20 m)",
+     "ids": [
+      "seed-1709"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-1709"
+   ]
+  },
+  {
+   "cid": "sk-006",
+   "line": 6,
+   "name": "Lezecká stena K2 Bratislava",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-b3dbddb113"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate sk-003 \"Spot Climbing Gym\": related names \"Lezecká stena K2\" / \"Spot lezecká stena\" 13163 m apart",
+     "ids": [
+      "sk-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate sk-004 \"Fanatix\": related names \"Lezecká stena K2\" / \"Fanatix lezecká stena\" 5204 m apart",
+     "ids": [
+      "sk-004"
+     ]
+    }
+   ],
+   "review_ids": [
+    "sk-003",
+    "sk-004"
+   ]
+  },
+  {
+   "cid": "sk-007",
+   "line": 7,
+   "name": "Lezecká stena K2 Žilina",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-0fe68a0fd3"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1711 renamed-or-related-name-nearby 6 m",
+     "ids": [
+      "seed-1711"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1711 \"K2-Zilina Bouldering Climbing Gym\": renamed-or-related-name-nearby (\"Lezecká stena K2 Žilina\" / \"K2-Zilina Bouldering Climbing Gym\", 6 m)",
+     "ids": [
+      "seed-1711"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-1711"
+   ]
+  },
+  {
+   "cid": "sk-008",
+   "line": 8,
+   "name": "LA SKALA Lezecké centrum Žilina",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-7fcf690088"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "sk-009",
+   "line": 9,
+   "name": "LOZILLA",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-025610eaf1"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "sk-010",
+   "line": 10,
+   "name": "Brutalka Zvolen",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-327876a322"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "sk-011",
+   "line": 11,
+   "name": "Lezecká stena Rozlomity",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-c878c90a17"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate sk-013 \"Steam Factory Košice – lezecká stena\": related names \"Lezecká stena Košice\" / \"Steam Factory Košice – lezecká stena\" 5000 m apart",
+     "ids": [
+      "sk-013"
+     ]
+    }
+   ],
+   "review_ids": [
+    "sk-013"
+   ]
+  },
+  {
+   "cid": "sk-012",
+   "line": 12,
+   "name": "T2 Boulder Arena",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-c67af9fe1f"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "sk-013",
+   "line": 13,
+   "name": "Steam Factory Košice – lezecká stena",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-5cc8fb69c7"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate sk-011 \"Lezecká stena Rozlomity\": related names \"Steam Factory Košice – lezecká stena\" / \"Lezecká stena Košice\" 5000 m apart",
+     "ids": [
+      "sk-011"
+     ]
+    }
+   ],
+   "review_ids": [
+    "sk-011"
+   ]
+  },
+  {
+   "cid": "sk-014",
+   "line": 14,
+   "name": "WoodRock",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-9565fc6597"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate sk-015 \"Stienka\": related names \"Lezecká stena WoodRock\" / \"Rock Café Lezecká Stena\" 11750 m apart",
+     "ids": [
+      "sk-015"
+     ]
+    }
+   ],
+   "review_ids": [
+    "sk-015"
+   ]
+  },
+  {
+   "cid": "sk-015",
+   "line": 15,
+   "name": "Stienka",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-4968f40826"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate sk-014 \"WoodRock\": related names \"Rock Café Lezecká Stena\" / \"Lezecká stena WoodRock\" 11750 m apart",
+     "ids": [
+      "sk-014"
+     ]
+    }
+   ],
+   "review_ids": [
+    "sk-014"
+   ]
+  },
+  {
+   "cid": "sk-016",
+   "line": 16,
+   "name": "Ovčín – Boulder & Bistro",
+   "class": "existing",
+   "suggested": "same-as seed-1712",
+   "importer": {
+    "class": "existing",
+    "id": "seed-1712",
+    "match": {
+     "id": "seed-1712",
+     "name": "Ovčín Boulder & Bistro",
+     "reason": "same-name",
+     "dist_m": 479
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-1712 but content differs (name, lat, lng, address); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1712 \"Ovčín Boulder & Bistro\": same-name (\"Ovčín – Boulder & Bistro\" / \"Ovčín Boulder & Bistro\", 479 m)",
+     "ids": [
+      "seed-1712"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-1712"
+   ]
+  },
+  {
+   "cid": "sk-017",
+   "line": 17,
+   "name": "WallHalla",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-8377fc0297"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "sk-018",
+   "line": 18,
+   "name": "BouldroFka Trnava",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-7dbc7ac92b"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "sk-019",
+   "line": 19,
+   "name": "PRALEZ",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-3673d98980"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "sk-020",
+   "line": 20,
+   "name": "Lezecké centrum Trenčín",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-3930203ccc"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "sk-021",
+   "line": 21,
+   "name": "Bouldrovka Prešov (BOULDERFIT)",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-560fdbdd8f"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "sk-022",
+   "line": 22,
+   "name": "Športová hala Malina – lezecká stena",
+   "class": "blocked",
+   "suggested": "reject not-a-gym",
+   "importer": {
+    "class": "new",
+    "id": "g-14ef95e76c"
+   },
+   "blockers": [
+    {
+     "code": "not-a-gym",
+     "detail": "category other"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  }
+ ],
+ "reconcile_sha256": "52e99651b0c54a999000ae484eda11ec5d62034820f3adf2d5242f76f8c6c060"
+}

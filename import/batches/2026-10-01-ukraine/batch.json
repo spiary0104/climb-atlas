@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-01-ukraine",
+  "description": "Regional research \"Ukraine (Tier C, wave 3A)\": 5 new gym(s) accepted of 16 candidate(s)",
+  "created": "2026-10-06",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-10-01-ukraine",
+    "section_sha256": "01fe4ef167b830636a72e178bc8e184dd8f0cc1fae30cba1c4747804ff9d0d67",
+    "sources_sha256": "18f3dad8527c0b8ed2a88529d4dac04a70f7958d98578e181304336628597747",
+    "candidates_sha256": "76629ef84ba06337814ed9d1c00d36215cfbf5b6d82a2983f348055ac540b4d9",
+    "reconcile_sha256": "60888486cffd7a1f9bc99a4928e2b7615a939812ed7e98d429fa4fbef48d1651",
+    "review_sha256": "73f54a6ae80ffa4479e2b7efff6b915e6f596a951235cfa79052110a7d5a1cb1",
+    "candidates": 16,
+    "staged": 5,
+    "decisions": {
+      "accept": 5,
+      "defer": 7,
+      "same-as": 4
+    }
+  },
+  "index_at_staging": {
+    "sha256": "e50072d61b4cd2133f160099a4444c918e7cc2eb73e18f243e28f9117b29ceb6",
+    "count": 2419
+  }
+}

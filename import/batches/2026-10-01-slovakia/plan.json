@@ -1,0 +1,136 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-01-slovakia",
+ "index": {
+  "sha256": "b68bda98475996df9450502b4eea8485d33f7731610c7d7643474ccac3b1fb46",
+  "count": 2419,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-01-peru",
+  "2026-10-01-ukraine"
+ ],
+ "counts": {
+  "records": 13,
+  "new": 13,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "7706d8bb08476a208c36c0236a31ec9cbf981b194c4aa77d2dcb4c6c14b27923",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-ab860f9c18",
+   "id_frozen": true,
+   "name": "Block Dock Petržalka",
+   "country": "SK"
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-b3dbddb113",
+   "id_frozen": true,
+   "name": "Lezecká stena K2 Bratislava",
+   "country": "SK"
+  },
+  {
+   "line": 3,
+   "class": "new",
+   "id": "g-7fcf690088",
+   "id_frozen": true,
+   "name": "LA SKALA Lezecké centrum Žilina",
+   "country": "SK"
+  },
+  {
+   "line": 4,
+   "class": "new",
+   "id": "g-025610eaf1",
+   "id_frozen": true,
+   "name": "LOZILLA",
+   "country": "SK"
+  },
+  {
+   "line": 5,
+   "class": "new",
+   "id": "g-327876a322",
+   "id_frozen": true,
+   "name": "Brutalka Zvolen",
+   "country": "SK"
+  },
+  {
+   "line": 6,
+   "class": "new",
+   "id": "g-c878c90a17",
+   "id_frozen": true,
+   "name": "Lezecká stena Rozlomity",
+   "country": "SK"
+  },
+  {
+   "line": 7,
+   "class": "new",
+   "id": "g-c67af9fe1f",
+   "id_frozen": true,
+   "name": "T2 Boulder Arena",
+   "country": "SK"
+  },
+  {
+   "line": 8,
+   "class": "new",
+   "id": "g-5cc8fb69c7",
+   "id_frozen": true,
+   "name": "Steam Factory Košice – lezecká stena",
+   "country": "SK"
+  },
+  {
+   "line": 9,
+   "class": "new",
+   "id": "g-9565fc6597",
+   "id_frozen": true,
+   "name": "WoodRock",
+   "country": "SK"
+  },
+  {
+   "line": 10,
+   "class": "new",
+   "id": "g-8377fc0297",
+   "id_frozen": true,
+   "name": "WallHalla",
+   "country": "SK"
+  },
+  {
+   "line": 11,
+   "class": "new",
+   "id": "g-7dbc7ac92b",
+   "id_frozen": true,
+   "name": "BouldroFka Trnava",
+   "country": "SK"
+  },
+  {
+   "line": 12,
+   "class": "new",
+   "id": "g-3673d98980",
+   "id_frozen": true,
+   "name": "PRALEZ",
+   "country": "SK"
+  },
+  {
+   "line": 13,
+   "class": "new",
+   "id": "g-560fdbdd8f",
+   "id_frozen": true,
+   "name": "Bouldrovka Prešov (BOULDERFIT)",
+   "country": "SK"
+  }
+ ]
+}

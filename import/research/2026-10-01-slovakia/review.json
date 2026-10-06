@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "section_id": "2026-10-01-slovakia",
+  "reviewer": "Spiar (owner); decisions drafted by Claude (AI) on the owner's instruction, pending owner sign-off",
+  "reviewed": "2026-10-06",
+  "decisions": {
+    "sk-001": {
+      "decision": "same-as",
+      "same_as": "seed-1708",
+      "reason": "Block Dock Rača is the existing seed-1708 \"Block Dock\" (Púchovská 14, Rača): the same address, the pins are 40 m apart (OSM node/8933858827 is named \"Block Dock\"), and the gym's own site (blockdock.me/raca) describes one Rača hall. The sister hall in Petržalka (sk-002) is a separate gym, handled there."
+    },
+    "sk-002": {
+      "decision": "accept",
+      "reviewed_against": [
+        "seed-1708",
+        "sk-001"
+      ],
+      "reason": "Different gym from seed-1708 \"Block Dock\" (Rača) and sk-001: Block Dock's own site (blockdock.me/petrzalka, re-read 2026-10-06) lists a second hall in the EINPARK building, Einsteinova 33, Petržalka (Kilter Board, kids zone, cafe), a separate page, membership and pricing, and OSM node/13943631630 (BLOCK DOCK, with its own e-mail infopetrzalka@blockdock.me) sits 10.3 km from the Rača hall. Not a duplicate; the proximity flags are chain-branch names only. The related candidate sk-001 is a same-as of the Rača seed."
+    },
+    "sk-003": {
+      "decision": "defer",
+      "reason": "Low confidence in the pin: re-checked 2026-10-06, the gym-embedded Google map centre first used (48.2113 N, 16.9967 E) lies about 1.2 km west of the Squarebizz Bory estate beside a police school, so it is not the gym; OSM has no element for the gym, only the estate polygon (way/1011420885), so only an area-level position exists. The gym itself (boulderspot.sk, Nov 2024, events and courses on the 2026 homepage) looks open with bouldering. Candidate edited to area precision (blocked). See MANUAL-CHECK.md."
+    },
+    "sk-004": {
+      "decision": "defer",
+      "reason": "Low confidence that the bouldering wall is currently open: Fanatix's own site (fanatix.sk/boulder and home, re-read 2026-10-06) shows live prices and a boulder section but is a Wix site with a 2021 footer and no dated 2025-2026 post; the only other trace is a MultiSport partner listing (2024) and generic directories. The pin is fine (the site business location is about 30 m from OSM way/74739842 \"FanatiX Squash & Fitness Center\"). Needs one dated recent source from the gym's Facebook/Instagram or a call. See MANUAL-CHECK.md."
+    },
+    "sk-005": {
+      "decision": "same-as",
+      "same_as": "seed-1709",
+      "reason": "Same gym: seed-1709 \"Vertigo\" is at Trenčianska 47, Bratislava (identical address on lezeckecentrum.sk), the pins are 20 m apart, and OSM node/2654458764 is named \"Lezecké centrum Vertigo\"."
+    },
+    "sk-006": {
+      "decision": "accept",
+      "reviewed_against": [
+        "sk-003",
+        "sk-004"
+      ],
+      "reason": "Distinct from every listed gym: the K2 climbing wall in Bratislava (lezeckastena.sk, Stará Ivánska cesta 1/B; site news dated Aug-Sep 2026, a roughly 100 m2 boulder section next to rope lines) is a separate business and site from \"Lezecká stena K2 Žilina\" (seed-1711, a different city), and 5 to 14 km from Spot (sk-003, deferred) and Fanatix (sk-004, deferred). Pin is OSM way/69035830 (Stará Ivanská cesta 1B), which also matches the map embedded on the gym site."
+    },
+    "sk-007": {
+      "decision": "same-as",
+      "same_as": "seed-1711",
+      "reason": "Same gym: seed-1711 \"K2-Zilina Bouldering Climbing Gym\" is at Dolné Rudiny 7, Žilina, 6 m from the candidate pin (OSM node/11290824394, \"Lezecká stena K2 Žilina\"); k2zilina.sk gives the same address."
+    },
+    "sk-008": {
+      "decision": "accept",
+      "reviewed_against": [],
+      "reason": "Primary and current: laskala.sk (re-read 2026-10-01) shows a separate bouldering hall, hours, address (Centrálna 8919/2) and results of the La Skala Boulder Open dated 20.09.2026; the contact page publishes entrance GPS that agrees with OSM node/11002102792 (entrance precision). No gym within 150 m, no name match."
+    },
+    "sk-009": {
+      "decision": "accept",
+      "reviewed_against": [],
+      "reason": "Primary and current: lozilla.sk shows a bouldering-only gym (about 660 m2), daily hours 9-21, address (Štefánikova 2050) and news items through 2026 (summer league 7/21/26); pin is OSM way/118289067 \"Lozilla Climbing Gym\" (building)."
+    },
+    "sk-010": {
+      "decision": "accept",
+      "reviewed_against": [],
+      "reason": "Primary and current: brutalka.sk (re-read 2026-10-06) shows bouldering, a rope wall and outdoor boulder, weekly hours and a \"Boulderween\" bouldering event on 23.10 advertised on the home page; address from the CCCBBB contact page; pin is OSM node/13502783190 \"Brutálka\" (Zvolen). Not the same as seed-1707 \"Brutál Povala - cccbbb\" (Banská Bystrica, Dolná 22, 18 km away): a separate club and venue, opened in Zvolen in April 2022."
+    },
+    "sk-011": {
+      "decision": "accept",
+      "reviewed_against": [
+        "sk-013"
+      ],
+      "reason": "Distinct from sk-013 (Steam Factory, 5 km away, a leisure complex in the Optima mall); the flag is only the shared \"Lezecká stena Košice\" alias. Own site lezeckastenakosice.sk (re-read 2026-10-06) shows hours Mon-Fri 10-21, Sat-Sun 14-21, rope climbing and bouldering, a public price list and RozlomityFest 2025 held 22.11.2025; address Študentská 1, Galla centrum matches OSM way/169293906 (\"Rozlomity\", climbing:boulder=yes, building), which is within about 60 m of the Galla Centrum building polygon. No existing Bouldeer gym in Košice."
+    },
+    "sk-012": {
+      "decision": "accept",
+      "reviewed_against": [],
+      "reason": "Primary and current: t2boulder.sk (script-rendered; page title and structured data read 2026-10-06, page bundle read) shows a bouldering area plus rope walls, address Štúrova 22/44 and 2026 events (Slovak Cup bouldering round 18.4.2026 at T2, summer camps July-Aug 2026); pin is OSM node/3724742292 which carries climbing:boulder=yes."
+    },
+    "sk-013": {
+      "decision": "accept",
+      "reviewed_against": [
+        "sk-011"
+      ],
+      "reason": "Distinct from sk-011 (Rozlomity); the flag is only the shared \"Lezecká stena Košice\" name 5 km apart. Steam Factory's own page (steamfactory.sk/atrakcie/lezecka-stena, re-read 2026-10-06) gives hours, a 12 m rope wall and a bouldering zone of more than 120 m2, a public booking flow and address Moldavská cesta 32 (Optima mall). The pin was corrected on 2026-10-06 to OSM way/720922064 (Steam Factory inside Optima, building precision) after the earlier site-data coordinate proved about 280 m off; OSM is now a second source for the location."
+    },
+    "sk-014": {
+      "decision": "accept",
+      "reviewed_against": [
+        "sk-015"
+      ],
+      "reason": "Re-researched 2026-10-06 on the club's own site: the operating policy (lezeckastenatatry.sk/prevadzkovy-poriadok/) has a dedicated \"Bouldrovka\" section (mat entry only in climbing shoes, whole bouldrovka is a fall zone) and states that only those who have paid entry may climb (pay-per-entry plus season tickets, rules binding on all visitors), which describes a wall open to paying visitors rather than members only; the booking calendar (rezervacia) offers a \"Boulder\" category and shows October 2026; footer 2016-2026; hours 17-21 daily on the contact page; address Partizánska 4127/105 matches OSM node/9931570870 \"Hall WoodRock\". The 2024-25 insulation fundraiser is not a closure notice. Candidate edited from bouldering \"unknown\" to \"yes\" with these pages as evidence. The related-name flag (sk-015 Stienka, 11.7 km away, deferred) is a different venue."
+    },
+    "sk-015": {
+      "decision": "defer",
+      "reason": "Existence and bouldering are clear (stienka.sk, re-read 2026-10-06: 180 m2 wall with a 18 m2 boulder wall and a combined boulder/rope wall), but there is no primary evidence it is open now: the page has no opening hours or dated post, OSM tags only \"Tu 18:00-20:00\", and a travel site lists 16-21 daily, which conflicts. Seasonal or occasional opening is likely. Needs a dated Facebook/Instagram post or a call. See MANUAL-CHECK.md."
+    },
+    "sk-016": {
+      "decision": "same-as",
+      "same_as": "seed-1712",
+      "followup": "location-update",
+      "reason": "Same gym: seed-1712 \"Ovčín Boulder & Bistro\" (Turčianske Jaseno). The gym's own site ovcin.sk (re-read 2026-10-06) gives Horné Jaseno 160 and links a Google Maps place whose pin resolves to 49.02864 N, 18.99258 E, which matches the candidate (OSM node/11672455544, 49.02869 N, 18.99281 E). The seed pin (49.03113 N, 18.98739 E, address \"Dolné Jaseno 169\") is 479 m away, so the seed address and pin are wrong. A location update (and address correction) is needed in a separate batch."
+    },
+    "sk-017": {
+      "decision": "accept",
+      "reviewed_against": [],
+      "reason": "Primary and current: wallhalla.sk (re-read 2026-10-06) shows rope climbing, bouldering and a session board, weekly hours, address Levočská 53 and \"Lezecké tábory 2026\"; pin is OSM node/10976661073 \"Wallhalla\" (building)."
+    },
+    "sk-018": {
+      "decision": "accept",
+      "reviewed_against": [],
+      "reason": "Primary and current: bouldrofka.sk shows a bouldering wall (about 150 m2) on the first floor of OC Merkur, autumn hours from 21.9.2026 and a 2026 copyright; address Trstínska cesta 1 matches OSM node/13428681247 (floor 1, bouldering, Facebook BouldroFka Trnava)."
+    },
+    "sk-019": {
+      "decision": "accept",
+      "reviewed_against": [],
+      "reason": "Primary and current: pralez.me (re-read 2026-10-06) shows a bouldering centre (420 m2 main wall, weekly resets, 120+ boulders, KidZone), address Murgašova 8 and news items for Praloween 7 Nov 2026 and events 28 Mar and 20 Jun 2026; pin is OSM way/58226276 (Murgašova 8, Nitra), so the address is confirmed on the gym page and in OSM."
+    },
+    "sk-020": {
+      "decision": "defer",
+      "reason": "No primary evidence it is open now: lezectrencin.sk (re-read 2026-10-06) has a 2019 copyright, dated news from 2019 and 2021, 2023 holiday hours, and sends visitors to Facebook for current hours; no dated 2025-2026 content was found, and the 2026 hours that appear in a search snippet come from a third-party aggregator. Existence and a 130 m2 bouldering area are on the site. Needs a dated recent Facebook post or a call. See MANUAL-CHECK.md."
+    },
+    "sk-021": {
+      "decision": "accept",
+      "reviewed_against": [],
+      "reason": "Primary and current: bouldrovka.outdoorpark.sk (re-read 2026-10-06) shows an indoor bouldering hall in the Outdoor Park, price list valid from 1.2.2026, a report from 10 January (2026) and the autumn trimester 14 Sep to 18 Dec 2026, boulder open during cafe hours Mon-Sun 9-22; pin is OSM way/1042604226 (Tomášikova, Prešov, building). House number differs between sources (60 on tourism listings, 62 in OSM), the building is the same."
+    },
+    "sk-022": {
+      "decision": "reject",
+      "reason_code": "not-a-gym",
+      "reason": "A municipal multi-sport hall (Športová hala Malina, AD HOC Malacky): the hall page lists a climbing wall among handball, floorball and volleyball facilities, with no mention of bouldering or what type of wall it is, so there is no bouldering offering to list and it is not a climbing gym. Revisit only if a primary source shows a bouldering wall."
+    }
+  }
+}

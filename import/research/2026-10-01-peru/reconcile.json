@@ -1,0 +1,211 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-01-peru",
+ "inputs": {
+  "section_sha256": "e2fa13d272e2445a006c99c83e7526f9a8d786cb6b0c27e98890ca290b1ba080",
+  "sources_sha256": "d54aaddc490e7d2c30f1355751623fe4ee359c2406b019491d3a61b97e00736f",
+  "candidates_sha256": "cf411f684179258b090f474f0df74d17fb8174313ab37b3fee43cbc611f645fe",
+  "index": {
+   "sha256": "e50072d61b4cd2133f160099a4444c918e7cc2eb73e18f243e28f9117b29ceb6",
+   "count": 2419
+  },
+  "staged_batches_compared": [],
+  "other_sections_compared": []
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 6,
+  "ready": 0,
+  "review": 1,
+  "blocked": 3,
+  "existing": 2,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "pe-001",
+   "line": 1,
+   "name": "VERTICAL Gimnasio de Escalada",
+   "class": "existing",
+   "suggested": "same-as seed-1723",
+   "importer": {
+    "class": "existing",
+    "id": "seed-1723",
+    "match": {
+     "id": "seed-1723",
+     "name": "VERTICAL Gimnasio de Escalada",
+     "reason": "same-name",
+     "dist_m": 213
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-1723 but content differs (suburb, lat, lng, address); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1723 \"VERTICAL Gimnasio de Escalada\": same-name (\"VERTICAL Gimnasio de Escalada\" / \"VERTICAL Gimnasio de Escalada\", 213 m)",
+     "ids": [
+      "seed-1723"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "seed-1723"
+   ]
+  },
+  {
+   "cid": "pe-002",
+   "line": 2,
+   "name": "Pirqa",
+   "class": "existing",
+   "suggested": "same-as seed-1724",
+   "importer": {
+    "class": "existing",
+    "id": "seed-1724",
+    "match": {
+     "id": "seed-1724",
+     "name": "Pirqa",
+     "reason": "same-name",
+     "dist_m": 2
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-1724 but content differs (suburb, lat, lng, address, types); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1724 \"Pirqa\": same-name (\"Pirqa\" / \"Pirqa\", 2 m)",
+     "ids": [
+      "seed-1724"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "seed-1724"
+   ]
+  },
+  {
+   "cid": "pe-003",
+   "line": 3,
+   "name": "Vertigo Valle Sagrado",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-020b112ed4"
+   },
+   "flags": [
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "pe-004",
+   "line": 4,
+   "name": "Mono Blanco Climbing Gym",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-b2ec67d256"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate pe-006 \"Climbing Rooftop\": related names \"Indoor Climbing Arequipa\" / \"Climbing Rooftop Arequipa\" 1911 m apart",
+     "ids": [
+      "pe-006"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-1721 \"CCM Arequipa\": related names \"Indoor Climbing Arequipa\" / \"CCM Arequipa\" 1099 m apart",
+     "ids": [
+      "seed-1721"
+     ]
+    }
+   ],
+   "review_ids": [
+    "pe-006",
+    "seed-1721"
+   ]
+  },
+  {
+   "cid": "pe-005",
+   "line": 5,
+   "name": "Templo de los Monos",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-7a0edeb032"
+   },
+   "blockers": [
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "pe-006",
+   "line": 6,
+   "name": "Climbing Rooftop",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-e9cc8712ff"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate pe-004 \"Mono Blanco Climbing Gym\": related names \"Climbing Rooftop Arequipa\" / \"Indoor Climbing Arequipa\" 1911 m apart",
+     "ids": [
+      "pe-004"
+     ]
+    }
+   ],
+   "review_ids": [
+    "pe-004"
+   ]
+  }
+ ],
+ "reconcile_sha256": "7e70f60963e0863f33dfe372843d2c26b7940a5a902f47ffc09c1e563adaaf09"
+}
