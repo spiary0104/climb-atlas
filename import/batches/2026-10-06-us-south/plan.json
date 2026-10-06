@@ -1,0 +1,528 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-06-us-south",
+ "index": {
+  "sha256": "a908eb53b9409e52182c758701d78c3ec50fe1926b0169c99ccfb919159a0d2a",
+  "count": 2514,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-06-austria",
+  "2026-10-06-belgium",
+  "2026-10-06-canada",
+  "2026-10-06-czechia-gap",
+  "2026-10-06-de-south",
+  "2026-10-06-de-west-north",
+  "2026-10-06-france-cities",
+  "2026-10-06-jp-chubu",
+  "2026-10-06-jp-kansai",
+  "2026-10-06-jp-kanto",
+  "2026-10-06-jp-kyushu-hokkaido",
+  "2026-10-06-kr-seoul",
+  "2026-10-06-london",
+  "2026-10-06-netherlands",
+  "2026-10-06-poland",
+  "2026-10-06-spain-cities",
+  "2026-10-06-us-midwest",
+  "2026-10-06-us-west"
+ ],
+ "counts": {
+  "records": 60,
+  "new": 60,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "b3a50608fefde65fe233b4d2829c9339c66ac9cf3c0312392907d331f86940c2",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-3a2df6f38b",
+   "id_frozen": true,
+   "name": "Boulders and Brews: Climbing and Coffee",
+   "country": "US"
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-cfd8d60ae9",
+   "id_frozen": true,
+   "name": "Climb Bentonville",
+   "country": "US"
+  },
+  {
+   "line": 3,
+   "class": "new",
+   "id": "g-a9fd5d942d",
+   "id_frozen": true,
+   "name": "Climb Conway",
+   "country": "US"
+  },
+  {
+   "line": 4,
+   "class": "new",
+   "id": "g-2ae52cb7f9",
+   "id_frozen": true,
+   "name": "Little Rock Climbing Center",
+   "country": "US"
+  },
+  {
+   "line": 5,
+   "class": "new",
+   "id": "g-ef6f0389e0",
+   "id_frozen": true,
+   "name": "Ozark Climbing Gym",
+   "country": "US"
+  },
+  {
+   "line": 6,
+   "class": "new",
+   "id": "g-0bf586b230",
+   "id_frozen": true,
+   "name": "Vertical Horizons Climbing Gym",
+   "country": "US"
+  },
+  {
+   "line": 7,
+   "class": "new",
+   "id": "g-86ba9680ae",
+   "id_frozen": true,
+   "name": "Aiguille Climbing Gym",
+   "country": "US"
+  },
+  {
+   "line": 8,
+   "class": "new",
+   "id": "g-a365f2b47a",
+   "id_frozen": true,
+   "name": "Alchemy Climbing",
+   "country": "US"
+  },
+  {
+   "line": 9,
+   "class": "new",
+   "id": "g-bbffd01df7",
+   "id_frozen": true,
+   "name": "Beaches Rock Gym",
+   "country": "US"
+  },
+  {
+   "line": 10,
+   "class": "new",
+   "id": "g-3345dad57e",
+   "id_frozen": true,
+   "name": "Blocker Boulders",
+   "country": "US"
+  },
+  {
+   "line": 11,
+   "class": "new",
+   "id": "g-bb66536a97",
+   "id_frozen": true,
+   "name": "Blue Swan Boulders",
+   "country": "US"
+  },
+  {
+   "line": 12,
+   "class": "new",
+   "id": "g-7ffd0a810f",
+   "id_frozen": true,
+   "name": "Boulder Bloc Gym",
+   "country": "US"
+  },
+  {
+   "line": 13,
+   "class": "new",
+   "id": "g-5ce45b33c8",
+   "id_frozen": true,
+   "name": "Central Rock Gym – Citrus Park",
+   "country": "US"
+  },
+  {
+   "line": 14,
+   "class": "new",
+   "id": "g-b44e368e24",
+   "id_frozen": true,
+   "name": "Central Rock Gym – Fort Myers",
+   "country": "US"
+  },
+  {
+   "line": 15,
+   "class": "new",
+   "id": "g-cc9bdf12ab",
+   "id_frozen": true,
+   "name": "Central Rock Gym – Orlando",
+   "country": "US"
+  },
+  {
+   "line": 16,
+   "class": "new",
+   "id": "g-d235f59aea",
+   "id_frozen": true,
+   "name": "Central Rock Gym – Tampa",
+   "country": "US"
+  },
+  {
+   "line": 17,
+   "class": "new",
+   "id": "g-80b1db68b4",
+   "id_frozen": true,
+   "name": "Daytona Climbing Company",
+   "country": "US"
+  },
+  {
+   "line": 18,
+   "class": "new",
+   "id": "g-e3e0f197a6",
+   "id_frozen": true,
+   "name": "DynoClimb",
+   "country": "US"
+  },
+  {
+   "line": 19,
+   "class": "new",
+   "id": "g-b8a62fe579",
+   "id_frozen": true,
+   "name": "The Edge Rock Gym – Jacksonville",
+   "country": "US"
+  },
+  {
+   "line": 20,
+   "class": "new",
+   "id": "g-e5f92d09db",
+   "id_frozen": true,
+   "name": "The Edge Rock Gym – Miami",
+   "country": "US"
+  },
+  {
+   "line": 21,
+   "class": "new",
+   "id": "g-43260b83d3",
+   "id_frozen": true,
+   "name": "HEXROCK Climbing",
+   "country": "US"
+  },
+  {
+   "line": 22,
+   "class": "new",
+   "id": "g-8c098943d0",
+   "id_frozen": true,
+   "name": "High Point Climbing & Fitness – Orlando",
+   "country": "US"
+  },
+  {
+   "line": 23,
+   "class": "new",
+   "id": "g-da0b46ff43",
+   "id_frozen": true,
+   "name": "Las Rocas Climbing",
+   "country": "US"
+  },
+  {
+   "line": 24,
+   "class": "new",
+   "id": "g-39318a79cb",
+   "id_frozen": true,
+   "name": "projectROCK",
+   "country": "US"
+  },
+  {
+   "line": 25,
+   "class": "new",
+   "id": "g-c91e7bd02c",
+   "id_frozen": true,
+   "name": "Rock Out Climbing Gym",
+   "country": "US"
+  },
+  {
+   "line": 26,
+   "class": "new",
+   "id": "g-6de0ea4507",
+   "id_frozen": true,
+   "name": "Stone Climbing – Jacksonville",
+   "country": "US"
+  },
+  {
+   "line": 27,
+   "class": "new",
+   "id": "g-df8d5a97fa",
+   "id_frozen": true,
+   "name": "The Knot Climbing Gym",
+   "country": "US"
+  },
+  {
+   "line": 28,
+   "class": "new",
+   "id": "g-0ecd718597",
+   "id_frozen": true,
+   "name": "Velocity Climbing",
+   "country": "US"
+  },
+  {
+   "line": 29,
+   "class": "new",
+   "id": "g-9374dd90c7",
+   "id_frozen": true,
+   "name": "Vertical Ventures",
+   "country": "US"
+  },
+  {
+   "line": 30,
+   "class": "new",
+   "id": "g-d860013f2f",
+   "id_frozen": true,
+   "name": "New Orleans Boulder Lounge",
+   "country": "US"
+  },
+  {
+   "line": 31,
+   "class": "new",
+   "id": "g-992692de06",
+   "id_frozen": true,
+   "name": "Risen Rock Climbing Gym",
+   "country": "US"
+  },
+  {
+   "line": 32,
+   "class": "new",
+   "id": "g-2128925ed6",
+   "id_frozen": true,
+   "name": "Southern Stone Indoor Climbing",
+   "country": "US"
+  },
+  {
+   "line": 33,
+   "class": "new",
+   "id": "g-858db9a57b",
+   "id_frozen": true,
+   "name": "Uptown Climbing",
+   "country": "US"
+  },
+  {
+   "line": 34,
+   "class": "new",
+   "id": "g-825771ca52",
+   "id_frozen": true,
+   "name": "Bigfoot Climbing Gym",
+   "country": "US"
+  },
+  {
+   "line": 35,
+   "class": "new",
+   "id": "g-05e0c1e557",
+   "id_frozen": true,
+   "name": "Brevard Rock Gym",
+   "country": "US"
+  },
+  {
+   "line": 36,
+   "class": "new",
+   "id": "g-67b9785683",
+   "id_frozen": true,
+   "name": "Center 45 Climbing",
+   "country": "US"
+  },
+  {
+   "line": 37,
+   "class": "new",
+   "id": "g-3b3d7d1cef",
+   "id_frozen": true,
+   "name": "Cliff Hangers Climbing and Fitness",
+   "country": "US"
+  },
+  {
+   "line": 38,
+   "class": "new",
+   "id": "g-559897cf32",
+   "id_frozen": true,
+   "name": "Cultivate Climbing – Foundy Street",
+   "country": "US"
+  },
+  {
+   "line": 39,
+   "class": "new",
+   "id": "g-253268432a",
+   "id_frozen": true,
+   "name": "Cultivate Climbing – The Bunker",
+   "country": "US"
+  },
+  {
+   "line": 40,
+   "class": "new",
+   "id": "g-9679fde155",
+   "id_frozen": true,
+   "name": "Inner Peaks – Matthews",
+   "country": "US"
+  },
+  {
+   "line": 41,
+   "class": "new",
+   "id": "g-cc6ae437da",
+   "id_frozen": true,
+   "name": "Inner Peaks – NoDa",
+   "country": "US"
+  },
+  {
+   "line": 42,
+   "class": "new",
+   "id": "g-4a7882f6b0",
+   "id_frozen": true,
+   "name": "Inner Peaks – South End",
+   "country": "US"
+  },
+  {
+   "line": 43,
+   "class": "new",
+   "id": "g-28b4bfa1e6",
+   "id_frozen": true,
+   "name": "Progression Climbing",
+   "country": "US"
+  },
+  {
+   "line": 44,
+   "class": "new",
+   "id": "g-0dfe2a4119",
+   "id_frozen": true,
+   "name": "The Boulder Garden",
+   "country": "US"
+  },
+  {
+   "line": 45,
+   "class": "new",
+   "id": "g-16c06a619c",
+   "id_frozen": true,
+   "name": "The Climbing Place",
+   "country": "US"
+  },
+  {
+   "line": 46,
+   "class": "new",
+   "id": "g-97f314f31e",
+   "id_frozen": true,
+   "name": "Triangle Rock Club – Durham",
+   "country": "US"
+  },
+  {
+   "line": 47,
+   "class": "new",
+   "id": "g-c3281c4833",
+   "id_frozen": true,
+   "name": "Triangle Rock Club – Fayetteville",
+   "country": "US"
+  },
+  {
+   "line": 48,
+   "class": "new",
+   "id": "g-6c6ac002e4",
+   "id_frozen": true,
+   "name": "Triangle Rock Club – Morrisville",
+   "country": "US"
+  },
+  {
+   "line": 49,
+   "class": "new",
+   "id": "g-b8c730b3a7",
+   "id_frozen": true,
+   "name": "Triangle Rock Club – Raleigh",
+   "country": "US"
+  },
+  {
+   "line": 50,
+   "class": "new",
+   "id": "g-2d1d95c0a7",
+   "id_frozen": true,
+   "name": "Triangle Rock Club – Salvage Yard",
+   "country": "US"
+  },
+  {
+   "line": 51,
+   "class": "new",
+   "id": "g-4703549eef",
+   "id_frozen": true,
+   "name": "Blocworks – Edmond",
+   "country": "US"
+  },
+  {
+   "line": 52,
+   "class": "new",
+   "id": "g-bbad29dc93",
+   "id_frozen": true,
+   "name": "Blocworks – Midtown",
+   "country": "US"
+  },
+  {
+   "line": 53,
+   "class": "new",
+   "id": "g-d5b7c05b27",
+   "id_frozen": true,
+   "name": "Climb Tulsa",
+   "country": "US"
+  },
+  {
+   "line": 54,
+   "class": "new",
+   "id": "g-179440d317",
+   "id_frozen": true,
+   "name": "Gravity Bear Bouldering Gym",
+   "country": "US"
+  },
+  {
+   "line": 55,
+   "class": "new",
+   "id": "g-55c05fe217",
+   "id_frozen": true,
+   "name": "Threshold Climbing + Fitness + Yoga",
+   "country": "US"
+  },
+  {
+   "line": 56,
+   "class": "new",
+   "id": "g-3e1daf2704",
+   "id_frozen": true,
+   "name": "BlocHaven",
+   "country": "US"
+  },
+  {
+   "line": 57,
+   "class": "new",
+   "id": "g-c60bb027ad",
+   "id_frozen": true,
+   "name": "Climb @ Blue Ridge",
+   "country": "US"
+  },
+  {
+   "line": 58,
+   "class": "new",
+   "id": "g-7a32b4535f",
+   "id_frozen": true,
+   "name": "Coastal Climbing",
+   "country": "US"
+  },
+  {
+   "line": 59,
+   "class": "new",
+   "id": "g-8c84c5c4ea",
+   "id_frozen": true,
+   "name": "Gripped Fitness",
+   "country": "US"
+  },
+  {
+   "line": 60,
+   "class": "new",
+   "id": "g-196602369a",
+   "id_frozen": true,
+   "name": "Outside In Climbing Gym",
+   "country": "US"
+  }
+ ]
+}

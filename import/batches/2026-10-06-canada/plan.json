@@ -1,0 +1,733 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-06-canada",
+ "index": {
+  "sha256": "4cfd0bbfee412716d4273a69c8bc9e722f9e1f57d33797e70123bf14fa209e01",
+  "count": 2685,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-06-austria",
+  "2026-10-06-belgium",
+  "2026-10-06-czechia-gap",
+  "2026-10-06-de-south",
+  "2026-10-06-de-west-north",
+  "2026-10-06-france-cities",
+  "2026-10-06-jp-chubu",
+  "2026-10-06-jp-kansai",
+  "2026-10-06-jp-kanto",
+  "2026-10-06-jp-kyushu-hokkaido",
+  "2026-10-06-kr-seoul",
+  "2026-10-06-london",
+  "2026-10-06-netherlands",
+  "2026-10-06-poland",
+  "2026-10-06-spain-cities"
+ ],
+ "counts": {
+  "records": 85,
+  "new": 85,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "f6bf586ec4ded4b7b4b8e1e0dfa286bb3f4ea5aceb0a002e7ac468f6cd64c616",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-0555135dcc",
+   "id_frozen": true,
+   "name": "Allez Up Mile End",
+   "country": "CA",
+   "reviewed_distinct": {
+    "reason": "Distinct gym from Shakti Rock Gym (ca-shakti-montreal) although the importer flags both 50 m apart: Allez Up Mile End (5600 avenue de Gaspé, allezup.com, chain of three) and Shakti Rock Gym (175 rue Saint-Viateur Est, shaktirockgym.com) each have their own live site with own hours, prices and address; they are neighbouring venues at the Gaspé / Saint-Viateur corner. seed-471 is the Pointe-Saint-Charles gym of the same chain, 5.4 km away.",
+    "reviewer": "Spiar (owner); decisions drafted by Claude (AI) on the owner's instruction, pending owner sign-off"
+   }
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-989fdeebb6",
+   "id_frozen": true,
+   "name": "Allez Up Verdun",
+   "country": "CA"
+  },
+  {
+   "line": 3,
+   "class": "new",
+   "id": "g-4aeec3b78c",
+   "id_frozen": true,
+   "name": "Alt. Rock",
+   "country": "CA"
+  },
+  {
+   "line": 4,
+   "class": "new",
+   "id": "g-9621bddb93",
+   "id_frozen": true,
+   "name": "Altitude Gym Gatineau",
+   "country": "CA"
+  },
+  {
+   "line": 5,
+   "class": "new",
+   "id": "g-3c8448e3c9",
+   "id_frozen": true,
+   "name": "Altitude Gym Orléans",
+   "country": "CA"
+  },
+  {
+   "line": 6,
+   "class": "new",
+   "id": "g-e643fc0ec4",
+   "id_frozen": true,
+   "name": "Aspire Climbing & Fitness Milton",
+   "country": "CA"
+  },
+  {
+   "line": 7,
+   "class": "new",
+   "id": "g-0ddf34a7e1",
+   "id_frozen": true,
+   "name": "Aspire Climbing & Fitness Whitby",
+   "country": "CA"
+  },
+  {
+   "line": 8,
+   "class": "new",
+   "id": "g-135135dfea",
+   "id_frozen": true,
+   "name": "Basecamp Climbing Queen West",
+   "country": "CA"
+  },
+  {
+   "line": 9,
+   "class": "new",
+   "id": "g-5c07ce6546",
+   "id_frozen": true,
+   "name": "Beyond the Crux Climbing Gym",
+   "country": "CA"
+  },
+  {
+   "line": 10,
+   "class": "new",
+   "id": "g-fdd5de6e53",
+   "id_frozen": true,
+   "name": "Bloc 9.81",
+   "country": "CA"
+  },
+  {
+   "line": 11,
+   "class": "new",
+   "id": "g-7f837f0de5",
+   "id_frozen": true,
+   "name": "BLOCS",
+   "country": "CA"
+  },
+  {
+   "line": 12,
+   "class": "new",
+   "id": "g-6c77b9dabc",
+   "id_frozen": true,
+   "name": "Bloc Shop Hochelaga",
+   "country": "CA"
+  },
+  {
+   "line": 13,
+   "class": "new",
+   "id": "g-dab2ad7e68",
+   "id_frozen": true,
+   "name": "Bloc Shop Mile-Ex",
+   "country": "CA"
+  },
+  {
+   "line": 14,
+   "class": "new",
+   "id": "g-6d6338ee0c",
+   "id_frozen": true,
+   "name": "The Boiler Room Climbing Gym",
+   "country": "CA"
+  },
+  {
+   "line": 15,
+   "class": "new",
+   "id": "g-4d5b1c9f08",
+   "id_frozen": true,
+   "name": "Bolder Climbing Elevated",
+   "country": "CA"
+  },
+  {
+   "line": 16,
+   "class": "new",
+   "id": "g-d3a32615f3",
+   "id_frozen": true,
+   "name": "Boulder Parc",
+   "country": "CA"
+  },
+  {
+   "line": 17,
+   "class": "new",
+   "id": "g-9c3f3ff7b3",
+   "id_frozen": true,
+   "name": "BoulderHouse Langford",
+   "country": "CA"
+  },
+  {
+   "line": 18,
+   "class": "new",
+   "id": "g-b9fbf86143",
+   "id_frozen": true,
+   "name": "BoulderHouse Victoria",
+   "country": "CA"
+  },
+  {
+   "line": 19,
+   "class": "new",
+   "id": "g-4f4d948dfb",
+   "id_frozen": true,
+   "name": "Boulders Climbing",
+   "country": "CA"
+  },
+  {
+   "line": 20,
+   "class": "new",
+   "id": "g-dd2156ed87",
+   "id_frozen": true,
+   "name": "Campus Escalade",
+   "country": "CA"
+  },
+  {
+   "line": 21,
+   "class": "new",
+   "id": "g-b5493eef52",
+   "id_frozen": true,
+   "name": "Canyon Escalade",
+   "country": "CA"
+  },
+  {
+   "line": 22,
+   "class": "new",
+   "id": "g-7f559f26dd",
+   "id_frozen": true,
+   "name": "Calgary Climbing Centre Hanger",
+   "country": "CA"
+  },
+  {
+   "line": 23,
+   "class": "new",
+   "id": "g-0c58174e04",
+   "id_frozen": true,
+   "name": "Calgary Climbing Centre Rocky Mountain",
+   "country": "CA"
+  },
+  {
+   "line": 24,
+   "class": "new",
+   "id": "g-42f1822db1",
+   "id_frozen": true,
+   "name": "Calgary Climbing Centre Stronghold",
+   "country": "CA"
+  },
+  {
+   "line": 25,
+   "class": "new",
+   "id": "g-8427f1ff07",
+   "id_frozen": true,
+   "name": "Cliffside Climbing Gym",
+   "country": "CA"
+  },
+  {
+   "line": 26,
+   "class": "new",
+   "id": "g-cd2a49e9c8",
+   "id_frozen": true,
+   "name": "Climb Base5 Coquitlam",
+   "country": "CA"
+  },
+  {
+   "line": 27,
+   "class": "new",
+   "id": "g-9e3a40d3ed",
+   "id_frozen": true,
+   "name": "ClimbArq",
+   "country": "CA"
+  },
+  {
+   "line": 28,
+   "class": "new",
+   "id": "g-bb9468f2fc",
+   "id_frozen": true,
+   "name": "Climber's Rock",
+   "country": "CA"
+  },
+  {
+   "line": 29,
+   "class": "new",
+   "id": "g-b9cbd6e663",
+   "id_frozen": true,
+   "name": "Coastal Climbing Centre",
+   "country": "CA"
+  },
+  {
+   "line": 30,
+   "class": "new",
+   "id": "g-d0c3996bec",
+   "id_frozen": true,
+   "name": "Conquer Climbing Centre",
+   "country": "CA"
+  },
+  {
+   "line": 31,
+   "class": "new",
+   "id": "g-c6bc623707",
+   "id_frozen": true,
+   "name": "The Core Climbing",
+   "country": "CA"
+  },
+  {
+   "line": 32,
+   "class": "new",
+   "id": "g-6d4a5748e6",
+   "id_frozen": true,
+   "name": "Crag X Climbing Centre",
+   "country": "CA"
+  },
+  {
+   "line": 33,
+   "class": "new",
+   "id": "g-9e58ce39ed",
+   "id_frozen": true,
+   "name": "Le Crux Boisbriand",
+   "country": "CA"
+  },
+  {
+   "line": 34,
+   "class": "new",
+   "id": "g-21d12f79f0",
+   "id_frozen": true,
+   "name": "Le Crux Laval",
+   "country": "CA"
+  },
+  {
+   "line": 35,
+   "class": "new",
+   "id": "g-f02051389b",
+   "id_frozen": true,
+   "name": "DÉLIRE Escalade Pierre-Bertrand",
+   "country": "CA"
+  },
+  {
+   "line": 36,
+   "class": "new",
+   "id": "g-b5c696f8f4",
+   "id_frozen": true,
+   "name": "DÉLIRE Escalade Sainte-Foy",
+   "country": "CA"
+  },
+  {
+   "line": 37,
+   "class": "new",
+   "id": "g-93f228ed88",
+   "id_frozen": true,
+   "name": "East Peak Indoor Climbing",
+   "country": "CA"
+  },
+  {
+   "line": 38,
+   "class": "new",
+   "id": "g-9d578db42a",
+   "id_frozen": true,
+   "name": "L'Escarpé",
+   "country": "CA"
+  },
+  {
+   "line": 39,
+   "class": "new",
+   "id": "g-778d964775",
+   "id_frozen": true,
+   "name": "Ethos Climbing",
+   "country": "CA"
+  },
+  {
+   "line": 40,
+   "class": "new",
+   "id": "g-03e5d51041",
+   "id_frozen": true,
+   "name": "Fit Rocks Climbing Gym Moncton",
+   "country": "CA"
+  },
+  {
+   "line": 41,
+   "class": "new",
+   "id": "g-22fddaa09b",
+   "id_frozen": true,
+   "name": "FitRocks Saint John",
+   "country": "CA"
+  },
+  {
+   "line": 42,
+   "class": "new",
+   "id": "g-51a35f2f9a",
+   "id_frozen": true,
+   "name": "Grip It Climbing Caswell",
+   "country": "CA"
+  },
+  {
+   "line": 43,
+   "class": "new",
+   "id": "g-fc7e00665b",
+   "id_frozen": true,
+   "name": "Grip It Climbing Nelson",
+   "country": "CA"
+  },
+  {
+   "line": 44,
+   "class": "new",
+   "id": "g-041bbdebce",
+   "id_frozen": true,
+   "name": "Ground Up Climbing Centre",
+   "country": "CA"
+  },
+  {
+   "line": 45,
+   "class": "new",
+   "id": "g-8b2c045cff",
+   "id_frozen": true,
+   "name": "The Guelph Grotto Climbing Gym",
+   "country": "CA"
+  },
+  {
+   "line": 46,
+   "class": "new",
+   "id": "g-30a5b3277a",
+   "id_frozen": true,
+   "name": "The Hangar Climbing Lounge",
+   "country": "CA"
+  },
+  {
+   "line": 47,
+   "class": "new",
+   "id": "g-4546cbabe5",
+   "id_frozen": true,
+   "name": "The Hive North Shore",
+   "country": "CA"
+  },
+  {
+   "line": 48,
+   "class": "new",
+   "id": "g-d4fe5a6d61",
+   "id_frozen": true,
+   "name": "The Hive Port Coquitlam",
+   "country": "CA"
+  },
+  {
+   "line": 49,
+   "class": "new",
+   "id": "g-a3c7fdfd0d",
+   "id_frozen": true,
+   "name": "The Hive Surrey",
+   "country": "CA"
+  },
+  {
+   "line": 50,
+   "class": "new",
+   "id": "g-f90116fa52",
+   "id_frozen": true,
+   "name": "Hogtown Boulders",
+   "country": "CA"
+  },
+  {
+   "line": 51,
+   "class": "new",
+   "id": "g-68887b81fd",
+   "id_frozen": true,
+   "name": "Hook Escalade",
+   "country": "CA"
+  },
+  {
+   "line": 52,
+   "class": "new",
+   "id": "g-94799263cd",
+   "id_frozen": true,
+   "name": "Hub Climbing Markham",
+   "country": "CA"
+  },
+  {
+   "line": 53,
+   "class": "new",
+   "id": "g-d5b0ae0a62",
+   "id_frozen": true,
+   "name": "Hub Climbing Mississauga",
+   "country": "CA"
+  },
+  {
+   "line": 54,
+   "class": "new",
+   "id": "g-0dc078d1e6",
+   "id_frozen": true,
+   "name": "J2 Bouldering",
+   "country": "CA"
+  },
+  {
+   "line": 55,
+   "class": "new",
+   "id": "g-322ef52012",
+   "id_frozen": true,
+   "name": "Junction Climbing Centre",
+   "country": "CA"
+  },
+  {
+   "line": 56,
+   "class": "new",
+   "id": "g-5cc383113f",
+   "id_frozen": true,
+   "name": "Klimat Ottawa",
+   "country": "CA"
+  },
+  {
+   "line": 57,
+   "class": "new",
+   "id": "g-4e5f3a47a6",
+   "id_frozen": true,
+   "name": "Klimat Wakefield",
+   "country": "CA"
+  },
+  {
+   "line": 58,
+   "class": "new",
+   "id": "g-0eea3390b1",
+   "id_frozen": true,
+   "name": "L'Accroché",
+   "country": "CA"
+  },
+  {
+   "line": 59,
+   "class": "new",
+   "id": "g-f46a2a025b",
+   "id_frozen": true,
+   "name": "Mudra espace sportif",
+   "country": "CA"
+  },
+  {
+   "line": 60,
+   "class": "new",
+   "id": "g-7adde14ca3",
+   "id_frozen": true,
+   "name": "OBLOC Escalade",
+   "country": "CA"
+  },
+  {
+   "line": 61,
+   "class": "new",
+   "id": "g-6a18becc5d",
+   "id_frozen": true,
+   "name": "Pinnacle Indoor Climbing",
+   "country": "CA"
+  },
+  {
+   "line": 62,
+   "class": "new",
+   "id": "g-422795e1ff",
+   "id_frozen": true,
+   "name": "Project Climbing Centre Abbotsford",
+   "country": "CA"
+  },
+  {
+   "line": 63,
+   "class": "new",
+   "id": "g-09597cfa46",
+   "id_frozen": true,
+   "name": "Project Climbing Chilliwack",
+   "country": "CA"
+  },
+  {
+   "line": 64,
+   "class": "new",
+   "id": "g-074724bd20",
+   "id_frozen": true,
+   "name": "Project Climbing Cloverdale",
+   "country": "CA"
+  },
+  {
+   "line": 65,
+   "class": "new",
+   "id": "g-9a18a8ba90",
+   "id_frozen": true,
+   "name": "Roc Gyms",
+   "country": "CA"
+  },
+  {
+   "line": 66,
+   "class": "new",
+   "id": "g-a5c9540e3e",
+   "id_frozen": true,
+   "name": "Of Rock and Chalk",
+   "country": "CA"
+  },
+  {
+   "line": 67,
+   "class": "new",
+   "id": "g-222dd0edc8",
+   "id_frozen": true,
+   "name": "Rock and Rope Climbing Centre",
+   "country": "CA"
+  },
+  {
+   "line": 68,
+   "class": "new",
+   "id": "g-ca972ddf7d",
+   "id_frozen": true,
+   "name": "Rock On Climbing",
+   "country": "CA"
+  },
+  {
+   "line": 69,
+   "class": "new",
+   "id": "g-3ee5338026",
+   "id_frozen": true,
+   "name": "RockHaus Climbing",
+   "country": "CA"
+  },
+  {
+   "line": 70,
+   "class": "new",
+   "id": "g-f79ffff522",
+   "id_frozen": true,
+   "name": "Romper Room Indoor Rock Climbing Centre",
+   "country": "CA"
+  },
+  {
+   "line": 71,
+   "class": "new",
+   "id": "g-50f659e41d",
+   "id_frozen": true,
+   "name": "Rose Bloc Brossard",
+   "country": "CA"
+  },
+  {
+   "line": 72,
+   "class": "new",
+   "id": "g-8d992992fe",
+   "id_frozen": true,
+   "name": "Rose Bloc Longueuil",
+   "country": "CA"
+  },
+  {
+   "line": 73,
+   "class": "new",
+   "id": "g-ebfdd3338b",
+   "id_frozen": true,
+   "name": "Seven Bays Bouldering Bayers Lake",
+   "country": "CA"
+  },
+  {
+   "line": 74,
+   "class": "new",
+   "id": "g-479f9418a8",
+   "id_frozen": true,
+   "name": "Seven Bays Bouldering Dartmouth",
+   "country": "CA"
+  },
+  {
+   "line": 75,
+   "class": "new",
+   "id": "g-9754015a69",
+   "id_frozen": true,
+   "name": "Seven Bays Bouldering Gottingen",
+   "country": "CA"
+  },
+  {
+   "line": 76,
+   "class": "new",
+   "id": "g-d850cd1110",
+   "id_frozen": true,
+   "name": "Shakti Rock Gym",
+   "country": "CA",
+   "reviewed_distinct": {
+    "reason": "Distinct gym from Allez Up Mile End (ca-allezup-mile-end) although the importer flags both 50 m apart: Shakti (175 rue Saint-Viateur Est, own site shaktirockgym.com, 'centre d'escalade de bloc') and Allez Up (5600 avenue de Gaspé, allezup.com) are separate operators with separate live sites and hours at the same corner. Owner may want to confirm they are two venues (see MANUAL-CHECK).",
+    "reviewer": "Spiar (owner); decisions drafted by Claude (AI) on the owner's instruction, pending owner sign-off"
+   }
+  },
+  {
+   "line": 77,
+   "class": "new",
+   "id": "g-0983e8d7d2",
+   "id_frozen": true,
+   "name": "Spirit Rock Climbing Centre",
+   "country": "CA"
+  },
+  {
+   "line": 78,
+   "class": "new",
+   "id": "g-eda46f467d",
+   "id_frozen": true,
+   "name": "Toprock Climbing",
+   "country": "CA"
+  },
+  {
+   "line": 79,
+   "class": "new",
+   "id": "g-f466f5aa48",
+   "id_frozen": true,
+   "name": "Toronto Climbing Academy",
+   "country": "CA"
+  },
+  {
+   "line": 80,
+   "class": "new",
+   "id": "g-4f36b21db0",
+   "id_frozen": true,
+   "name": "Vertical Adventures",
+   "country": "CA"
+  },
+  {
+   "line": 81,
+   "class": "new",
+   "id": "g-da4c3908ea",
+   "id_frozen": true,
+   "name": "Vertically Inclined Rock Gym",
+   "country": "CA"
+  },
+  {
+   "line": 82,
+   "class": "new",
+   "id": "g-9be8afb429",
+   "id_frozen": true,
+   "name": "Vertige escalade",
+   "country": "CA"
+  },
+  {
+   "line": 83,
+   "class": "new",
+   "id": "g-50d8ff3d8f",
+   "id_frozen": true,
+   "name": "Whistler Core Climbing & Fitness",
+   "country": "CA"
+  },
+  {
+   "line": 84,
+   "class": "new",
+   "id": "g-8b16e12362",
+   "id_frozen": true,
+   "name": "Windsor Rock Gym",
+   "country": "CA"
+  },
+  {
+   "line": 85,
+   "class": "new",
+   "id": "g-32dd894582",
+   "id_frozen": true,
+   "name": "Zéro Gravité",
+   "country": "CA"
+  }
+ ]
+}

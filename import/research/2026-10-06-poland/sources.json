@@ -1,0 +1,124 @@
+{
+ "schema_version": 1,
+ "sources": {
+  "OSM": {
+   "kind": "map-data",
+   "title": "OpenStreetMap (element pages / API 2026-10-06)",
+   "url": "https://www.openstreetmap.org/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "PHOTON": {
+   "kind": "map-data",
+   "title": "Photon geocoder (OSM data), name/address lookups",
+   "url": "https://photon.komoot.io/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "MURALL": {
+   "kind": "chain-store-list",
+   "title": "Murall (chain site, location list: Gorczewska, Krakowska, Annopol, Gdansk)",
+   "url": "https://murall.pl/",
+   "language": "pl",
+   "accessed": "2026-10-06"
+  },
+  "MURALL_GDA": {
+   "kind": "official-site",
+   "title": "Murall Gdansk",
+   "url": "https://gdansk.murall.pl/",
+   "language": "pl",
+   "accessed": "2026-10-06"
+  },
+  "MURALL_GOR": {
+   "kind": "official-site",
+   "title": "Murall Gorczewska",
+   "url": "https://gorczewska.murall.pl/",
+   "language": "pl",
+   "accessed": "2026-10-06"
+  },
+  "PROBLEM": {
+   "kind": "official-site",
+   "title": "Problem Bouldering",
+   "url": "https://www.problembouldering.pl/",
+   "language": "pl",
+   "accessed": "2026-10-06"
+  },
+  "LIMBO": {
+   "kind": "official-site",
+   "title": "LIMBO Bouldering",
+   "url": "https://www.limbobouldering.pl/",
+   "language": "pl",
+   "accessed": "2026-10-06"
+  },
+  "BLO": {
+   "kind": "official-site",
+   "title": "BLO Katowice (by Avatar)",
+   "url": "https://www.blokatowice.pl/",
+   "language": "pl",
+   "accessed": "2026-10-06"
+  },
+  "P450": {
+   "kind": "official-site",
+   "title": "Poziom 450",
+   "url": "https://poziom450.pl/",
+   "language": "pl",
+   "accessed": "2026-10-06"
+  },
+  "BALD": {
+   "kind": "official-site",
+   "title": "Bald Port",
+   "url": "https://baldport.pl/",
+   "language": "pl",
+   "accessed": "2026-10-06"
+  },
+  "VOLT": {
+   "kind": "official-site",
+   "title": "VOLT Boulderownia (Warszawa, Lodz, Torun)",
+   "url": "https://voltboulderownia.pl/",
+   "language": "pl",
+   "accessed": "2026-10-06"
+  },
+  "SPIDER": {
+   "kind": "official-site",
+   "title": "Centrum Wspinaczkowe SPIDER",
+   "url": "http://cwspider.com/",
+   "language": "pl",
+   "accessed": "2026-10-06"
+  },
+  "FLASH": {
+   "kind": "official-site",
+   "title": "Centrum Wspinaczkowe Flash",
+   "url": "https://climbflash.com/",
+   "language": "pl",
+   "accessed": "2026-10-06"
+  },
+  "ONSIGHT": {
+   "kind": "official-site",
+   "title": "OnSight Obozowa (Warszawa)",
+   "url": "http://www.obozowa.waw.pl/",
+   "language": "pl",
+   "accessed": "2026-10-06"
+  },
+  "GRIMPADO": {
+   "kind": "official-site",
+   "title": "Grimpado Boulder Studio",
+   "url": "https://grimpado.pl/",
+   "language": "pl",
+   "accessed": "2026-10-06"
+  },
+  "STRATO": {
+   "kind": "official-site",
+   "title": "Stratosfera (Lodz)",
+   "url": "http://stratosfera.org/",
+   "language": "pl",
+   "accessed": "2026-10-06"
+  },
+  "ELEWATOR": {
+   "kind": "official-site",
+   "title": "Elewator (Gdansk)",
+   "url": "https://elewator.com/",
+   "language": "pl",
+   "accessed": "2026-10-06"
+  }
+ }
+}

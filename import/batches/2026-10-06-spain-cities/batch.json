@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-06-spain-cities",
+  "description": "Regional research \"Spain: Barcelona, Madrid, Valencia, Andalucía, País Vasco coverage gap\": 38 new gym(s) accepted of 43 candidate(s)",
+  "created": "2026-10-06",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-10-06-spain-cities",
+    "section_sha256": "443ac1e762ea2a9ea39a57aa5b683ed630f7d3031034080b2c0b1333121743bc",
+    "sources_sha256": "7ffbee930ee48272bbba7f36d7a666af718f0f0fba8a9ea214fd91959a881a21",
+    "candidates_sha256": "c0284e833a0992e156cd5680a9b7945adbd514fef526c8e7d26daec626f3162b",
+    "reconcile_sha256": "9beda44ee668c6806f92107cf3c651343688c85ecc585c2d0668705f98ba0dbf",
+    "review_sha256": "edbb2cb43343d970401c7bb5d91583ef58ddc455fb3ea075e3576920397ee417",
+    "candidates": 43,
+    "staged": 38,
+    "decisions": {
+      "accept": 38,
+      "defer": 5
+    }
+  },
+  "index_at_staging": {
+    "sha256": "27073d25c2df373c17caef0c24ebfe759b8d457953a461c62786486d588e661d",
+    "count": 2438
+  }
+}

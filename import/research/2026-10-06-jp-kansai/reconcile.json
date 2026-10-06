@@ -1,0 +1,1021 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-06-jp-kansai",
+ "inputs": {
+  "section_sha256": "62fab0bc0d1909521b247772cc294df42d231faceb9fb93f77ad8f09336a621d",
+  "sources_sha256": "07a3b38546772d7743e5db1231a6defdaf7411c5ef169f8ec322566c8206dfa0",
+  "candidates_sha256": "422563898a9fb3fffbebbe19482585f20b3c1b6c1d924cf51139d547cd11b938",
+  "index": {
+   "sha256": "27073d25c2df373c17caef0c24ebfe759b8d457953a461c62786486d588e661d",
+   "count": 2438
+  },
+  "staged_batches_compared": [],
+  "other_sections_compared": []
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 59,
+  "ready": 29,
+  "review": 4,
+  "blocked": 25,
+  "existing": 1,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "jpk-001",
+   "line": 1,
+   "name": "Nakagai Climbing Gym Takatsuki",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-077a804813"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jpk-002",
+   "line": 2,
+   "name": "Nakagai Climbing Gym Settsu",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-27eeeb010d"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jpk-003",
+   "line": 3,
+   "name": "Soleil Nakagai Climbing Gym",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-13d8142df5"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jpk-004",
+   "line": 4,
+   "name": "Nakagai Climbing Gym Sakai Shirasagi",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-3c9a318546"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jpk-005",
+   "line": 5,
+   "name": "Nakagai Climbing Gym Kashihara",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-3de670773a"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jpk-006",
+   "line": 6,
+   "name": "Climbing Gym Higurashi Nagahoribashi",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-b5f5e48508"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jpk-007",
+   "line": 7,
+   "name": "Climbing Park LUCLU",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-74f7253d34"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jpk-008",
+   "line": 8,
+   "name": "Rock On Climbing Gym",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-01407b34d2"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jpk-009",
+   "line": 9,
+   "name": "Bouldering Gym MUSHROOMING",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-c14ab0dc7c"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jpk-010",
+   "line": 10,
+   "name": "Luvrock Bouldering Spot",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-784b7693c0"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jpk-011",
+   "line": 11,
+   "name": "10 O'CLOCK Bouldering Space",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-dc0dd8f9a6"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jpk-012",
+   "line": 12,
+   "name": "Urban Climbing Club Kawasemi",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-c75b559ba6"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jpk-013",
+   "line": 13,
+   "name": "Climbing Bum Osaka",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-8d89ce1863"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jpk-014",
+   "line": 14,
+   "name": "&WALL",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-378676ed1d"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jpk-015",
+   "line": 15,
+   "name": "Climbing Gym Galera",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-da8d81cfbf"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "jpk-016",
+   "line": 16,
+   "name": "CRUX Osaka",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-6bd4395bad"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "jpk-017",
+   "line": 17,
+   "name": "Climbing Gym Siesta Yoshida",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-4bcd650d29"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate jpk-018 \"Climbing Gym Siesta Takaida\": related names \"クライミングジム シエスタ 吉田店\" / \"クライミングジム シエスタ 高井田店\" 4136 m apart",
+     "ids": [
+      "jpk-018"
+     ]
+    }
+   ],
+   "review_ids": [
+    "jpk-018"
+   ]
+  },
+  {
+   "cid": "jpk-018",
+   "line": 18,
+   "name": "Climbing Gym Siesta Takaida",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-85e111b92a"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate jpk-017 \"Climbing Gym Siesta Yoshida\": related names \"クライミングジム シエスタ 高井田店\" / \"クライミングジム シエスタ 吉田店\" 4136 m apart",
+     "ids": [
+      "jpk-017"
+     ]
+    }
+   ],
+   "review_ids": [
+    "jpk-017"
+   ]
+  },
+  {
+   "cid": "jpk-019",
+   "line": 19,
+   "name": "SAN Climbing Gym",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-8bdbdc8353"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "jpk-020",
+   "line": 20,
+   "name": "Sanyo Climbing Gym",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-1961917f83"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "jpk-021",
+   "line": 21,
+   "name": "MAHOROBA FOREST Bouldering Space",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-926b3e1032"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "jpk-022",
+   "line": 22,
+   "name": "Climbing Box FunC2",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-c60886defd"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "jpk-023",
+   "line": 23,
+   "name": "MINORITE",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-3be66d255a"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "jpk-024",
+   "line": 24,
+   "name": "Suhara Climbing Gym Ikeda",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-025306bb44"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "jpk-025",
+   "line": 25,
+   "name": "Climbing Gym LINKS",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-c0b64c8f2b"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "flags": [
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "jpk-026",
+   "line": 26,
+   "name": "Climbing Gym COCOMO Awaji",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-cec2ef3686"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jpk-027",
+   "line": 27,
+   "name": "Heimat berg Climbing Gym",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-314ad7a308"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jpk-028",
+   "line": 28,
+   "name": "Bouldering Space BaRock",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-3a5c4ccfce"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jpk-029",
+   "line": 29,
+   "name": "Bouldering Gym Rock Garden Kobe",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-85215580a6"
+   },
+   "flags": [
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "jpk-030",
+   "line": 30,
+   "name": "KIAORA BROS Climbing Gym Nishi-Akashi",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-8629fa45b1"
+   },
+   "flags": [
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "jpk-031",
+   "line": 31,
+   "name": "Noboriba SG",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-e46f91f527"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jpk-032",
+   "line": 32,
+   "name": "mont-bell Rokko Climbing Gym",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-89fef1815f"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jpk-033",
+   "line": 33,
+   "name": "Mizuno Sports Plaza Kobe Wadamisaki",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-0133f14328"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "jpk-034",
+   "line": 34,
+   "name": "Boulder Plus",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-dcf8dfad80"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "jpk-035",
+   "line": 35,
+   "name": "Bouldering Gym Style",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-f783223f33"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "jpk-036",
+   "line": 36,
+   "name": "DAWN Climbing Gym",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-bce7c51c22"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "jpk-037",
+   "line": 37,
+   "name": "Hinotama Wall Climbing Gym",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-4ffc91e832"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "jpk-038",
+   "line": 38,
+   "name": "Chargo Climbing Gym Hanada",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-be68ef6a1d"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "coarse-coordinates",
+     "detail": "coordinates only locate the area, not the gym"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "jpk-039",
+   "line": 39,
+   "name": "OLD BUT GOLD",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-a8e2e2cc6f"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "jpk-040",
+   "line": 40,
+   "name": "Gubboru Bouldering Cafe Hikone",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-64ee1e4fa0"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jpk-041",
+   "line": 41,
+   "name": "noah climbing & community",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-527f96ec93"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jpk-042",
+   "line": 42,
+   "name": "Climbing Gym Rocher Makishima",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-48a7352d5f"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jpk-043",
+   "line": 43,
+   "name": "Rock Mate Matsuiyamate",
+   "class": "blocked",
+   "suggested": "reject closed",
+   "importer": {
+    "class": "new",
+    "id": "g-07722a110e"
+   },
+   "blockers": [
+    {
+     "code": "closed",
+     "detail": "status_claim is closed"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "no-bouldering-evidence",
+     "detail": "bouldering is \"yes\" but no primary source confirms it"
+    }
+   ],
+   "flags": [
+    {
+     "code": "nearby-gym",
+     "detail": "g-6b181d6d0a \"D.Bouldering Plus Matsui-Yamate\": 88 m apart",
+     "ids": [
+      "g-6b181d6d0a"
+     ]
+    }
+   ],
+   "review_ids": [
+    "g-6b181d6d0a"
+   ]
+  },
+  {
+   "cid": "jpk-044",
+   "line": 44,
+   "name": "CAL-COLO Kizugawa",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-efc4436b0c"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "jpk-045",
+   "line": 45,
+   "name": "Climbing Gym Noboriko",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-8f859d4315"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jpk-046",
+   "line": 46,
+   "name": "Key Bouldering",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-60abe384d4"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jpk-047",
+   "line": 47,
+   "name": "GRANDWAZOO Climbing Gym Nara Kashihara",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-ad7f624fda"
+   },
+   "flags": [
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "jpk-048",
+   "line": 48,
+   "name": "GRANDWAZOO Climbing Gym Osaka Kashiwara",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-44efe3aa8b"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "no-bouldering-evidence",
+     "detail": "bouldering is \"yes\" but no primary source confirms it"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "jpk-049",
+   "line": 49,
+   "name": "City Rock Gym Yamatokoriyama",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-080f51d78b"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jpk-050",
+   "line": 50,
+   "name": "NEON CLIMBING GYM",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-4964c30905"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "jpk-051",
+   "line": 51,
+   "name": "KO-WALL Shiga Boulder",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-29ca640867"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jpk-052",
+   "line": 52,
+   "name": "Colors Climbing Gym",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-74c1963d86"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jpk-053",
+   "line": 53,
+   "name": "Rock Mate Otsu",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-e788e263fa"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "jpk-054",
+   "line": 54,
+   "name": "Titan Wall Climbing Gym",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-3c89f40f22"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jpk-055",
+   "line": 55,
+   "name": "bee mee nee WaBo Climbing Gym",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-72a2396ac2"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jpk-056",
+   "line": 56,
+   "name": "Bouldering Space APE",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-551b3342e7"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "jpk-057",
+   "line": 57,
+   "name": "GRAVITY RESEARCH Kishiwada",
+   "class": "blocked",
+   "suggested": "reject closed",
+   "importer": {
+    "class": "new",
+    "id": "g-e64c3e0530"
+   },
+   "blockers": [
+    {
+     "code": "closed",
+     "detail": "status_claim is closed"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "jpk-058",
+   "line": 58,
+   "name": "Bouldering Gym roca",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-aaee977740"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-414 same-name-but-pin-differs 1757 m",
+     "ids": [
+      "seed-414"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-414 \"Bouldering Gym Roca\": same-name-but-pin-differs (\"Bouldering Gym roca\" / \"Bouldering Gym Roca\", 1757 m)",
+     "ids": [
+      "seed-414"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-414"
+   ]
+  },
+  {
+   "cid": "jpk-059",
+   "line": 59,
+   "name": "GRAVITY RESEARCH UMEDA",
+   "class": "existing",
+   "suggested": "same-as seed-415",
+   "importer": {
+    "class": "existing",
+    "id": "seed-415",
+    "match": {
+     "id": "seed-415",
+     "name": "GRAVITY RESEARCH UMEDA",
+     "reason": "same-name",
+     "dist_m": 408
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-415 but content differs (suburb, lat, lng, address); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-415 \"GRAVITY RESEARCH UMEDA\": same-name (\"GRAVITY RESEARCH UMEDA\" / \"GRAVITY RESEARCH UMEDA\", 408 m)",
+     "ids": [
+      "seed-415"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-415"
+   ]
+  }
+ ],
+ "reconcile_sha256": "8c72c2a058e093a8920266ada264030ce64e878dc6b379bb3fd98b42e1a3b93a"
+}

@@ -1,0 +1,278 @@
+{
+ "schema_version": 1,
+ "sources": {
+  "OSM": {
+   "kind": "map-data",
+   "title": "OpenStreetMap (elements read through the Photon geocoder, photon.komoot.io)",
+   "url": "https://www.openstreetmap.org/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "ROCO": {
+   "kind": "directory",
+   "title": "rocodromos.com, Spanish climbing-gym directory (leads and cross-check only)",
+   "url": "https://rocodromos.com/",
+   "language": "es",
+   "accessed": "2026-10-06"
+  },
+  "IW": {
+   "kind": "chain-store-list",
+   "title": "Indoorwall Climbing Gyms, chain site (centre list and centre pages; direct fetch is blocked by Cloudflare, pages read as search-engine extracts)",
+   "url": "https://www.indoorwall.com/en/indoorwall-climbing-gyms/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "MB": {
+   "kind": "chain-store-list",
+   "title": "Monobloc, chain site (locations Reus, Sants, La Sagrera)",
+   "url": "https://www.monobloc.es/",
+   "language": "es",
+   "accessed": "2026-10-06"
+  },
+  "BDN": {
+   "kind": "official-site",
+   "title": "BDN Climb",
+   "url": "https://bdnclimb.com/",
+   "language": "es",
+   "accessed": "2026-10-06"
+  },
+  "KRAKEN": {
+   "kind": "official-site",
+   "title": "Kraken Bloc",
+   "url": "https://krakenbloc.com/",
+   "language": "es",
+   "accessed": "2026-10-06"
+  },
+  "FREEBLOC": {
+   "kind": "official-site",
+   "title": "Freebloc",
+   "url": "http://freebloc.com/",
+   "language": "es",
+   "accessed": "2026-10-06"
+  },
+  "GOLEM": {
+   "kind": "official-site",
+   "title": "Golem Arenys",
+   "url": "https://salagolem.com/",
+   "language": "ca",
+   "accessed": "2026-10-06"
+  },
+  "INGRA": {
+   "kind": "official-site",
+   "title": "Ingravita",
+   "url": "https://ingravita.cat/",
+   "language": "ca",
+   "accessed": "2026-10-06"
+  },
+  "BAUMA": {
+   "kind": "official-site",
+   "title": "La Bauma",
+   "url": "https://www.labauma.com/",
+   "language": "ca",
+   "accessed": "2026-10-06"
+  },
+  "PANXA": {
+   "kind": "official-site",
+   "title": "La Panxa del Bou",
+   "url": "https://lapanxadelbou.com/",
+   "language": "ca",
+   "accessed": "2026-10-06"
+  },
+  "FLASHH": {
+   "kind": "official-site",
+   "title": "FLASHH Barcelona",
+   "url": "https://www.flashh.es/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "BPLANET": {
+   "kind": "official-site",
+   "title": "Bulder Planet (Maresme and Vallès)",
+   "url": "https://bulderplanet.com/",
+   "language": "es",
+   "accessed": "2026-10-06"
+  },
+  "BLOQUERA": {
+   "kind": "official-site",
+   "title": "La Bloquera",
+   "url": "https://labloquera.cat/",
+   "language": "ca",
+   "accessed": "2026-10-06"
+  },
+  "ROCKART": {
+   "kind": "official-site",
+   "title": "Rockart Climbing & Coworking",
+   "url": "https://rockart.cat/",
+   "language": "ca",
+   "accessed": "2026-10-06"
+  },
+  "SLAB": {
+   "kind": "official-site",
+   "title": "SLAB Sala d'Escalada",
+   "url": "https://rocodromslab.com/",
+   "language": "es",
+   "accessed": "2026-10-06"
+  },
+  "FANATIC": {
+   "kind": "official-site",
+   "title": "Fanàtic Lleida",
+   "url": "https://fanaticlleida.com/",
+   "language": "es",
+   "accessed": "2026-10-06"
+  },
+  "BINDOOR": {
+   "kind": "official-site",
+   "title": "Boulder Indoor Lleida",
+   "url": "https://www.boulderindoor.com/",
+   "language": "ca",
+   "accessed": "2026-10-06"
+  },
+  "AGULLES": {
+   "kind": "official-site",
+   "title": "Rocòdrom Les Agulles",
+   "url": "https://www.lesagulles.cat/",
+   "language": "es",
+   "accessed": "2026-10-06"
+  },
+  "CLIMBBOX": {
+   "kind": "official-site",
+   "title": "Climbbox",
+   "url": "https://climbbox.es/",
+   "language": "es",
+   "accessed": "2026-10-06"
+  },
+  "ROCKBLOC": {
+   "kind": "official-site",
+   "title": "Rockandbloc",
+   "url": "https://rockandbloc.com/",
+   "language": "es",
+   "accessed": "2026-10-06"
+  },
+  "ARKOSE": {
+   "kind": "chain-store-list",
+   "title": "Arkose, chain site (Madrid Carabanchel page)",
+   "url": "https://arkose.com/es/madrid-carabanchel",
+   "language": "es",
+   "accessed": "2026-10-06"
+  },
+  "AWESOME": {
+   "kind": "official-site",
+   "title": "Awesome Boulder Center",
+   "url": "https://www.awesomebouldercenter.com/",
+   "language": "es",
+   "accessed": "2026-10-06"
+  },
+  "REUNION": {
+   "kind": "official-site",
+   "title": "La Reunión Escalada",
+   "url": "https://www.lareunionescala.com/",
+   "language": "es",
+   "accessed": "2026-10-06"
+  },
+  "PVERT": {
+   "kind": "official-site",
+   "title": "Planet Vertical",
+   "url": "https://planetvertical.com/",
+   "language": "es",
+   "accessed": "2026-10-06"
+  },
+  "THECLIMB": {
+   "kind": "official-site",
+   "title": "The Climb Madrid",
+   "url": "https://theclimb.es/",
+   "language": "es",
+   "accessed": "2026-10-06"
+  },
+  "LAIF": {
+   "kind": "official-site",
+   "title": "Laif Climbing Gym",
+   "url": "https://www.laifclimbinggym.com/",
+   "language": "es",
+   "accessed": "2026-10-06"
+  },
+  "VENTS": {
+   "kind": "official-site",
+   "title": "Vents de Muntanya (Vents Búlder)",
+   "url": "https://ventsdemuntanya.com/",
+   "language": "es",
+   "accessed": "2026-10-06"
+  },
+  "CLIMBPRO": {
+   "kind": "official-site",
+   "title": "ClimbPro Center Alicante",
+   "url": "https://climbpro.es/",
+   "language": "es",
+   "accessed": "2026-10-06"
+  },
+  "PIUGAZ": {
+   "kind": "official-site",
+   "title": "Piugaz",
+   "url": "https://www.piugaz.com/",
+   "language": "es",
+   "accessed": "2026-10-06"
+  },
+  "URBANB": {
+   "kind": "official-site",
+   "title": "Urban Boulder Vitoria-Gasteiz",
+   "url": "https://urbanboulder.net/",
+   "language": "es",
+   "accessed": "2026-10-06"
+  },
+  "ATARIA": {
+   "kind": "official-site",
+   "title": "AtariA Boulder",
+   "url": "https://www.atariaboulder.com/",
+   "language": "es",
+   "accessed": "2026-10-06"
+  },
+  "BAYYANA": {
+   "kind": "official-site",
+   "title": "Bayyana Climbing",
+   "url": "https://bayyanaclimbing.com/",
+   "language": "es",
+   "accessed": "2026-10-06"
+  },
+  "MP": {
+   "kind": "directory",
+   "title": "Mountain Project Spain gym directory (cross-check only)",
+   "url": "https://www.mountainproject.com/gyms/spain",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "C9": {
+   "kind": "official-site",
+   "title": "Rocòdrom 9C",
+   "url": "https://rocodrom9c.com/",
+   "language": "ca",
+   "accessed": "2026-10-06"
+  },
+  "CANBOMBO": {
+   "kind": "official-site",
+   "title": "Can Bombo",
+   "url": "https://www.canbombo.cat/",
+   "language": "ca",
+   "accessed": "2026-10-06"
+  },
+  "CALMICO": {
+   "kind": "official-site",
+   "title": "Cal Mico, Rocòdrom Girona",
+   "url": "http://www.calmico.cat/",
+   "language": "ca",
+   "accessed": "2026-10-06"
+  },
+  "KLIMB": {
+   "kind": "official-site",
+   "title": "Klimb Zarautz",
+   "url": "https://www.klimbzarautz.com/",
+   "language": "es",
+   "accessed": "2026-10-06"
+  },
+  "BVALLECAS": {
+   "kind": "official-site",
+   "title": "Boulder Vallecas",
+   "url": "https://bouldervallecas.com/",
+   "language": "es",
+   "accessed": "2026-10-06"
+  }
+ }
+}

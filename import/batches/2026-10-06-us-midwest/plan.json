@@ -1,0 +1,511 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-06-us-midwest",
+ "index": {
+  "sha256": "9060db53b0cdc9e01094734875ec4b172f224e0929ec99acfd3c4f36bb7e450d",
+  "count": 2574,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-06-austria",
+  "2026-10-06-belgium",
+  "2026-10-06-canada",
+  "2026-10-06-czechia-gap",
+  "2026-10-06-de-south",
+  "2026-10-06-de-west-north",
+  "2026-10-06-france-cities",
+  "2026-10-06-jp-chubu",
+  "2026-10-06-jp-kansai",
+  "2026-10-06-jp-kanto",
+  "2026-10-06-jp-kyushu-hokkaido",
+  "2026-10-06-kr-seoul",
+  "2026-10-06-london",
+  "2026-10-06-netherlands",
+  "2026-10-06-poland",
+  "2026-10-06-spain-cities",
+  "2026-10-06-us-west"
+ ],
+ "counts": {
+  "records": 58,
+  "new": 58,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "f636a55ced1054d86b1115b3cdbc64b598487b05c138dc3231857d959e808fda",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-9a638ef70b",
+   "id_frozen": true,
+   "name": "Climb Iowa East Village",
+   "country": "US"
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-58bf7a5e36",
+   "id_frozen": true,
+   "name": "Climb Iowa Grimes",
+   "country": "US"
+  },
+  {
+   "line": 3,
+   "class": "new",
+   "id": "g-c990216683",
+   "id_frozen": true,
+   "name": "Bluestem Boulders",
+   "country": "US"
+  },
+  {
+   "line": 4,
+   "class": "new",
+   "id": "g-cb57883cfb",
+   "id_frozen": true,
+   "name": "Hoosier Heights Indianapolis",
+   "country": "US"
+  },
+  {
+   "line": 5,
+   "class": "new",
+   "id": "g-44c1e96bd7",
+   "id_frozen": true,
+   "name": "Hoosier Heights Bloomington",
+   "country": "US"
+  },
+  {
+   "line": 6,
+   "class": "new",
+   "id": "g-fd63e4c7cc",
+   "id_frozen": true,
+   "name": "Climb Time Indy",
+   "country": "US"
+  },
+  {
+   "line": 7,
+   "class": "new",
+   "id": "g-901bfea17c",
+   "id_frozen": true,
+   "name": "EPIC Climbing and Fitness",
+   "country": "US"
+  },
+  {
+   "line": 8,
+   "class": "new",
+   "id": "g-2ae36de03f",
+   "id_frozen": true,
+   "name": "North Mass Boulder",
+   "country": "US"
+  },
+  {
+   "line": 9,
+   "class": "new",
+   "id": "g-11c9cb89fa",
+   "id_frozen": true,
+   "name": "Climb Lafayette",
+   "country": "US"
+  },
+  {
+   "line": 10,
+   "class": "new",
+   "id": "g-fa2e83643f",
+   "id_frozen": true,
+   "name": "Vertical eXcape Evansville",
+   "country": "US"
+  },
+  {
+   "line": 11,
+   "class": "new",
+   "id": "g-91ced70d42",
+   "id_frozen": true,
+   "name": "Earth Adventures Bouldering Gym",
+   "country": "US"
+  },
+  {
+   "line": 12,
+   "class": "new",
+   "id": "g-7e9e07f356",
+   "id_frozen": true,
+   "name": "Warehouse Climbing Co.",
+   "country": "US"
+  },
+  {
+   "line": 13,
+   "class": "new",
+   "id": "g-42a6cff062",
+   "id_frozen": true,
+   "name": "RoKC Olathe",
+   "country": "US"
+  },
+  {
+   "line": 14,
+   "class": "new",
+   "id": "g-f7c96cfe74",
+   "id_frozen": true,
+   "name": "Bliss Climbing and Fitness",
+   "country": "US"
+  },
+  {
+   "line": 15,
+   "class": "new",
+   "id": "g-1e95dd9047",
+   "id_frozen": true,
+   "name": "Climb NuLu",
+   "country": "US"
+  },
+  {
+   "line": 16,
+   "class": "new",
+   "id": "g-2fe637b486",
+   "id_frozen": true,
+   "name": "LEF Climbing",
+   "country": "US"
+  },
+  {
+   "line": 17,
+   "class": "new",
+   "id": "g-ed5d308462",
+   "id_frozen": true,
+   "name": "Planet Rock Ann Arbor",
+   "country": "US"
+  },
+  {
+   "line": 18,
+   "class": "new",
+   "id": "g-23f097018a",
+   "id_frozen": true,
+   "name": "Planet Rock Madison Heights",
+   "country": "US"
+  },
+  {
+   "line": 19,
+   "class": "new",
+   "id": "g-524594bd39",
+   "id_frozen": true,
+   "name": "Planet Rock Grand Rapids",
+   "country": "US"
+  },
+  {
+   "line": 20,
+   "class": "new",
+   "id": "g-d5687a4991",
+   "id_frozen": true,
+   "name": "DYNO Detroit",
+   "country": "US"
+  },
+  {
+   "line": 21,
+   "class": "new",
+   "id": "g-48b09ffb21",
+   "id_frozen": true,
+   "name": "Terra Firma Bouldering Co. Grand Rapids",
+   "country": "US"
+  },
+  {
+   "line": 22,
+   "class": "new",
+   "id": "g-36e678dee2",
+   "id_frozen": true,
+   "name": "Terra Firma Bouldering Co. East Lansing",
+   "country": "US"
+  },
+  {
+   "line": 23,
+   "class": "new",
+   "id": "g-7e38ac9045",
+   "id_frozen": true,
+   "name": "Scrapyard Climbing Collective",
+   "country": "US"
+  },
+  {
+   "line": 24,
+   "class": "new",
+   "id": "g-4eccedd2c1",
+   "id_frozen": true,
+   "name": "Climb Kalamazoo",
+   "country": "US"
+  },
+  {
+   "line": 25,
+   "class": "new",
+   "id": "g-d25f0aa6b6",
+   "id_frozen": true,
+   "name": "Bouldering Project Minneapolis",
+   "country": "US"
+  },
+  {
+   "line": 26,
+   "class": "new",
+   "id": "g-6e5b1b009b",
+   "id_frozen": true,
+   "name": "Bouldering Project St. Paul",
+   "country": "US"
+  },
+  {
+   "line": 27,
+   "class": "new",
+   "id": "g-45cf121b23",
+   "id_frozen": true,
+   "name": "Vertical Endeavors Twin Cities Bouldering",
+   "country": "US"
+  },
+  {
+   "line": 28,
+   "class": "new",
+   "id": "g-da17343f42",
+   "id_frozen": true,
+   "name": "Big Island Bouldering",
+   "country": "US"
+  },
+  {
+   "line": 29,
+   "class": "new",
+   "id": "g-f88a4d689b",
+   "id_frozen": true,
+   "name": "Minnesota Climbing Cooperative",
+   "country": "US"
+  },
+  {
+   "line": 30,
+   "class": "new",
+   "id": "g-c947d3124e",
+   "id_frozen": true,
+   "name": "Climb So iLL Power Plant",
+   "country": "US"
+  },
+  {
+   "line": 31,
+   "class": "new",
+   "id": "g-5398263af4",
+   "id_frozen": true,
+   "name": "Climb So iLL Steel Shop",
+   "country": "US"
+  },
+  {
+   "line": 32,
+   "class": "new",
+   "id": "g-0b00eb56f9",
+   "id_frozen": true,
+   "name": "Upper Limits Chesterfield",
+   "country": "US"
+  },
+  {
+   "line": 33,
+   "class": "new",
+   "id": "g-a3c56379d4",
+   "id_frozen": true,
+   "name": "RoKC North Kansas City",
+   "country": "US"
+  },
+  {
+   "line": 34,
+   "class": "new",
+   "id": "g-dc002b2042",
+   "id_frozen": true,
+   "name": "Fargo Climbing",
+   "country": "US"
+  },
+  {
+   "line": 35,
+   "class": "new",
+   "id": "g-4be05bc789",
+   "id_frozen": true,
+   "name": "Approach Climbing Gym",
+   "country": "US"
+  },
+  {
+   "line": 36,
+   "class": "new",
+   "id": "g-9ec90337ce",
+   "id_frozen": true,
+   "name": "MW Climbing Lincoln",
+   "country": "US"
+  },
+  {
+   "line": 37,
+   "class": "new",
+   "id": "g-34a0c5b0f7",
+   "id_frozen": true,
+   "name": "MW Climbing Omaha",
+   "country": "US"
+  },
+  {
+   "line": 38,
+   "class": "new",
+   "id": "g-36babe30ce",
+   "id_frozen": true,
+   "name": "Climb Cleveland",
+   "country": "US"
+  },
+  {
+   "line": 39,
+   "class": "new",
+   "id": "g-02fee2d4b4",
+   "id_frozen": true,
+   "name": "Kendall Cliffs Climbing Gym",
+   "country": "US"
+  },
+  {
+   "line": 40,
+   "class": "new",
+   "id": "g-36f3fd912d",
+   "id_frozen": true,
+   "name": "Rock Mill",
+   "country": "US"
+  },
+  {
+   "line": 41,
+   "class": "new",
+   "id": "g-5ed20223ae",
+   "id_frozen": true,
+   "name": "Climb Cincy",
+   "country": "US"
+  },
+  {
+   "line": 42,
+   "class": "new",
+   "id": "g-c5e291d2dd",
+   "id_frozen": true,
+   "name": "Climb Time Blue Ash",
+   "country": "US"
+  },
+  {
+   "line": 43,
+   "class": "new",
+   "id": "g-cfc9968f90",
+   "id_frozen": true,
+   "name": "Climb Time Oakley",
+   "country": "US"
+  },
+  {
+   "line": 44,
+   "class": "new",
+   "id": "g-259c7bfcc9",
+   "id_frozen": true,
+   "name": "RockQuest Climbing Center",
+   "country": "US"
+  },
+  {
+   "line": 45,
+   "class": "new",
+   "id": "g-6d9381b9fa",
+   "id_frozen": true,
+   "name": "Mosaic Climbing",
+   "country": "US"
+  },
+  {
+   "line": 46,
+   "class": "new",
+   "id": "g-b356d3dd64",
+   "id_frozen": true,
+   "name": "Urban Krag Climbing Center",
+   "country": "US"
+  },
+  {
+   "line": 47,
+   "class": "new",
+   "id": "g-b4fea55040",
+   "id_frozen": true,
+   "name": "Bloc Garten",
+   "country": "US"
+  },
+  {
+   "line": 48,
+   "class": "new",
+   "id": "g-7e98f7e7cd",
+   "id_frozen": true,
+   "name": "Chambers Purely Boulders",
+   "country": "US"
+  },
+  {
+   "line": 49,
+   "class": "new",
+   "id": "g-04ea957de6",
+   "id_frozen": true,
+   "name": "Black Hills Basecamp",
+   "country": "US"
+  },
+  {
+   "line": 50,
+   "class": "new",
+   "id": "g-312ff10a77",
+   "id_frozen": true,
+   "name": "Boulders Climbing Gym",
+   "country": "US"
+  },
+  {
+   "line": 51,
+   "class": "new",
+   "id": "g-0cacf06f06",
+   "id_frozen": true,
+   "name": "Adventure Rock Walker's Point",
+   "country": "US"
+  },
+  {
+   "line": 52,
+   "class": "new",
+   "id": "g-96bd50d2e9",
+   "id_frozen": true,
+   "name": "Adventure Rock Milwaukee",
+   "country": "US"
+  },
+  {
+   "line": 53,
+   "class": "new",
+   "id": "g-ed43d21553",
+   "id_frozen": true,
+   "name": "Adventure Rock Brookfield",
+   "country": "US"
+  },
+  {
+   "line": 54,
+   "class": "new",
+   "id": "g-35eb3b6d84",
+   "id_frozen": true,
+   "name": "Milwaukee Turners Rock Climbing",
+   "country": "US"
+  },
+  {
+   "line": 55,
+   "class": "new",
+   "id": "g-675e072a40",
+   "id_frozen": true,
+   "name": "Odyssey Climbing + Fitness Green Bay",
+   "country": "US"
+  },
+  {
+   "line": 56,
+   "class": "new",
+   "id": "g-2f938b5b82",
+   "id_frozen": true,
+   "name": "Odyssey Climbing + Fitness Appleton",
+   "country": "US"
+  },
+  {
+   "line": 57,
+   "class": "new",
+   "id": "g-3f9337be1c",
+   "id_frozen": true,
+   "name": "Greater Heights Climbing",
+   "country": "US"
+  },
+  {
+   "line": 58,
+   "class": "new",
+   "id": "g-af9b27ba85",
+   "id_frozen": true,
+   "name": "CLIMB @ The Loop",
+   "country": "US"
+  }
+ ]
+}

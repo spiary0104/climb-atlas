@@ -1,0 +1,600 @@
+{
+ "schema_version": 1,
+ "sources": {
+  "OSM": {
+   "kind": "map-data",
+   "title": "OpenStreetMap (element named in each candidate coord_source.ref)",
+   "url": "https://www.openstreetmap.org/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "PHOTON": {
+   "kind": "map-data",
+   "title": "Photon geocoder (Komoot; OpenStreetMap data), official address queried at house-number level",
+   "url": "https://photon.komoot.io/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "DAVI": {
+   "kind": "official-site",
+   "title": "DAV Sektion Ingolstadt",
+   "url": "https://www.dav-ingolstadt.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G01": {
+   "kind": "official-site",
+   "title": "DAV Kletter- und Boulderzentrum München-Süd (Thalkirchen) (official site)",
+   "url": "https://www.kbthalkirchen.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G02": {
+   "kind": "official-site",
+   "title": "DAV Kletter- und Boulderzentrum München-Nord (Freimann) (official site)",
+   "url": "https://www.kbfreimann.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G03": {
+   "kind": "official-site",
+   "title": "Heavens Gate Klettern & Bouldern (official site)",
+   "url": "https://heavensgate-muc.de",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G04": {
+   "kind": "official-site",
+   "title": "ELEMENT Boulders München (official site)",
+   "url": "https://muenchen.element-boulders.de/start.html",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G05": {
+   "kind": "official-site",
+   "title": "Kletter- und Boulderzentrum SVN München (Neuperlach) (official site)",
+   "url": "https://svn-muenchen.de/klettern",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G06": {
+   "kind": "official-site",
+   "title": "DAV Kletter- und Boulderzentrum München-West (Gilching) (official site)",
+   "url": "https://www.kbgilching.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G07": {
+   "kind": "official-site",
+   "title": "DAV Kletter- und Boulderzentrum Oberbayern Süd (Bad Tölz) (official site)",
+   "url": "https://www.kbtoelz.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G08": {
+   "kind": "official-site",
+   "title": "Schwerkraft Boulderhalle Ingolstadt (official site)",
+   "url": "https://www.boulderhalle-ingolstadt.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G09": {
+   "kind": "official-site",
+   "title": "DAV Kletterzentrum Ingolstadt (official site)",
+   "url": "https://www.dav-ringsee.de/kletterzentrum",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G10": {
+   "kind": "official-site",
+   "title": "JURABLOC DAV Kletterzentrum Eichstätt (official site)",
+   "url": "https://www.jurabloc.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G11": {
+   "kind": "official-site",
+   "title": "PAFRock DAV Kletterzentrum Pfaffenhofen (official site)",
+   "url": "https://dav-pfaffenhofen.de/pafrock/infos",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G12": {
+   "kind": "official-site",
+   "title": "DAV Kletterzentrum Freising (official site)",
+   "url": "https://www.kletterzentrum-freising.de/start.html",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G13": {
+   "kind": "official-site",
+   "title": "NaturFreunde Kletterhalle Dachau (official site)",
+   "url": "https://www.kletterhalle-dachau.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G14": {
+   "kind": "official-site",
+   "title": "Die Kletterei Kaufering (official site)",
+   "url": "https://die-kletterei.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G15": {
+   "kind": "official-site",
+   "title": "Kletterhalle Weilheim \"Under the Roof\" (official site)",
+   "url": "https://kletterhalle-weilheim.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G16": {
+   "kind": "official-site",
+   "title": "Kletterhalle Basislager (official site)",
+   "url": "https://kletterhalle-basislager.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G17": {
+   "kind": "official-site",
+   "title": "Kletterzentrum Berchtesgaden (official site)",
+   "url": "https://www.kletterzentrum-berchtesgaden.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G18": {
+   "kind": "official-site",
+   "title": "DAV Boulderhalle Garmisch-Partenkirchen (official site)",
+   "url": "https://boulderhalle-gapa.de",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G19": {
+   "kind": "official-site",
+   "title": "Bloc-Hütte Augsburg (official site)",
+   "url": "https://bloc-huette.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G20": {
+   "kind": "official-site",
+   "title": "DAV Kletterzentrum Augsburg (official site)",
+   "url": "https://www.dav-kletterzentrum-augsburg.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G21": {
+   "kind": "official-site",
+   "title": "EXUS Bouldercenter Gersthofen (official site)",
+   "url": "https://www.exus.de/aktivitaeten/bouldercenter-boulderhalle-klettern/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G22": {
+   "kind": "official-site",
+   "title": "Rock Inn Boulderhalle Würzburg (official site)",
+   "url": "https://rockinn-wuerzburg.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G23": {
+   "kind": "official-site",
+   "title": "DAV Kletterzentrum Würzburg (official site)",
+   "url": "https://www.dav-wuerzburg.de/kletterzentrum-wuerzburg",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G24": {
+   "kind": "official-site",
+   "title": "Sandstein Boulder Halle Aschaffenburg (official site)",
+   "url": "https://www.sandstein-aschaffenburg.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G25": {
+   "kind": "official-site",
+   "title": "DAV Kletter- und Boulderzentrum Aschaffenburg (official site)",
+   "url": "https://www.kbz-ab.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G26": {
+   "kind": "official-site",
+   "title": "Kletterzentrum Schweinfurt (official site)",
+   "url": "https://kletterzentrum-schweinfurt.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G27": {
+   "kind": "official-site",
+   "title": "DAV Kletterzentrum Neumarkt (official site)",
+   "url": "https://kletterzentrum-neumarkt.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G28": {
+   "kind": "official-site",
+   "title": "Zugzwang Boulderhalle Auerbach (official site)",
+   "url": "https://zugzwang-auerbach.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G29": {
+   "kind": "official-site",
+   "title": "PEAK7 Boulderhalle Landshut (official site)",
+   "url": "https://www.boulderhalle-landshut.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G30": {
+   "kind": "official-site",
+   "title": "ES-Vertikal DAV Kletterzentrum Deggendorf (official site)",
+   "url": "https://www.esvertikal.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G31": {
+   "kind": "official-site",
+   "title": "Boulderia (official site)",
+   "url": "https://boulderia.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G32": {
+   "kind": "official-site",
+   "title": "Frankenjura Academy (official site)",
+   "url": "https://www.frankenjura-academy.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G33": {
+   "kind": "official-site",
+   "title": "DAV Kletterzentrum Bayreuth (official site)",
+   "url": "https://kletterzentrum-bayreuth.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G34": {
+   "kind": "official-site",
+   "title": "DAV Kletter- und Boulderzentrum Bad Windsheim (official site)",
+   "url": "https://dav-aischtal.de/preise/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G35": {
+   "kind": "official-site",
+   "title": "Boulder Hall Burgoberbach (official site)",
+   "url": "https://boulderhall.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G36": {
+   "kind": "official-site",
+   "title": "Adventure Campus Treuchtlingen Boulder- und Kletterhalle (official site)",
+   "url": "https://www.adventure-campus.com/firmen-sportgruppen/kletter-boulderhalle/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G37": {
+   "kind": "official-site",
+   "title": "Boulderhalle Memmingen (official site)",
+   "url": "https://boulderhalle-memmingen.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G38": {
+   "kind": "official-site",
+   "title": "DAV Kletterzentrum Kaufbeuren (official site)",
+   "url": "https://www.alpenverein-kaufbeuren-gablonz.de/Kletterzentrum",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G39": {
+   "kind": "official-site",
+   "title": "Kraftwerk Boulderhalle Allgäu (official site)",
+   "url": "https://www.kraftwerk-climbing.com/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G40": {
+   "kind": "official-site",
+   "title": "sparkassendome DAV Kletterwelt Neu-Ulm (official site)",
+   "url": "https://www.dav-neu-ulm.de/kletterhalle",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G41": {
+   "kind": "official-site",
+   "title": "VELS Boulderhalle (official site)",
+   "url": "https://vels-stuttgart.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G42": {
+   "kind": "official-site",
+   "title": "Boulderhalle Steil (official site)",
+   "url": "https://boulderhalle-steil.com/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G43": {
+   "kind": "official-site",
+   "title": "THE ROCK Boulderhalle Karlsruhe (official site)",
+   "url": "https://www.boulderhallekarlsruhe.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G44": {
+   "kind": "official-site",
+   "title": "THE ROCK Kletterzentrum Karlsruhe (official site)",
+   "url": "https://www.kletterhalle-karlsruhe.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G45": {
+   "kind": "official-site",
+   "title": "DAV Kletter- und Boulderzentrum Karlsruhe (official site)",
+   "url": "https://www.dav-kletterzentrum-karlsruhe.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G46": {
+   "kind": "official-site",
+   "title": "Studio Bloc Mannheim (official site)",
+   "url": "https://mannheim.studiobloc.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G47": {
+   "kind": "official-site",
+   "title": "DAV Kletter- und Boulderzentrum Heidelberg (VertiGo) (official site)",
+   "url": "https://www.alpenverein-heidelberg.de/Kletter-%20und%20Boulderzentrum",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G48": {
+   "kind": "official-site",
+   "title": "Boulderhaus Reutlingen (official site)",
+   "url": "https://www.boulderhaus.net/reutlingen/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G49": {
+   "kind": "official-site",
+   "title": "B12 DAV Boulderzentrum Tübingen (official site)",
+   "url": "https://www.b12-tuebingen.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G50": {
+   "kind": "official-site",
+   "title": "ROX Boulder- und Kletterzentrum Herrenberg (official site)",
+   "url": "https://rox-herrenberg.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G51": {
+   "kind": "official-site",
+   "title": "Active Garden Waiblingen (official site)",
+   "url": "https://active-garden.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G52": {
+   "kind": "official-site",
+   "title": "TOP Boulder Malmsheim (official site)",
+   "url": "https://topboulder.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G53": {
+   "kind": "official-site",
+   "title": "TOP Boulder Kirchheim (official site)",
+   "url": "https://topboulder-kirchheim.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G54": {
+   "kind": "official-site",
+   "title": "NICE to Move Boulderhalle Eislingen (official site)",
+   "url": "https://boulderhalle-eislingen.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G55": {
+   "kind": "official-site",
+   "title": "GriP Kletterzentrum Göppingen (official site)",
+   "url": "https://www.dav-gp.de/grip-kletterzentrum",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G56": {
+   "kind": "official-site",
+   "title": "DAV Boulderzentrum Ostalb (official site)",
+   "url": "https://www.boulderzentrum-ostalb.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G57": {
+   "kind": "official-site",
+   "title": "DAV Kletterzentrum Ostalb (official site)",
+   "url": "https://www.kletterzentrum-ostalb.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G58": {
+   "kind": "official-site",
+   "title": "Kletterarena Heilbronn (official site)",
+   "url": "https://www.diekletterarena.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G59": {
+   "kind": "official-site",
+   "title": "BOULDERBOCK (official site)",
+   "url": "https://www.boulderbock.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G60": {
+   "kind": "official-site",
+   "title": "DAV Kletterzentrum Baden-Baden (official site)",
+   "url": "https://alpenverein-baden-baden.de/kletterzentrum/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G61": {
+   "kind": "official-site",
+   "title": "DAV Kletter- und Boulderhalle Pforzheim (official site)",
+   "url": "https://alpenverein-pforzheim.de/kletterhalle/sektionszentrum/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G62": {
+   "kind": "official-site",
+   "title": "Greifbar Bouldersport (official site)",
+   "url": "https://greifbar-bouldern.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G63": {
+   "kind": "official-site",
+   "title": "DAV Kletter- und Boulderzentrum Volksbank Vertical (official site)",
+   "url": "https://www.volksbank-vertical.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G64": {
+   "kind": "official-site",
+   "title": "DAV Kletterzentrum Freiburg (official site)",
+   "url": "https://kletterzentrum-freiburg.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G65": {
+   "kind": "official-site",
+   "title": "DAV Kletterzentrum Offenburg (official site)",
+   "url": "https://www.dav-offenburg.de/Kletterzentrum",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G66": {
+   "kind": "official-site",
+   "title": "Sparkassen Dome Biberach (DAV Kletterzentrum) (official site)",
+   "url": "https://sparkassen-dome-biberach.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G67": {
+   "kind": "official-site",
+   "title": "GriffKiste Boulderhalle (official site)",
+   "url": "https://www.griffkiste.com/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G68": {
+   "kind": "official-site",
+   "title": "MTV München Kletterhalle (official site)",
+   "url": "https://www.mtv-muenchen.de/Sportangebot/Klettern/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G69": {
+   "kind": "official-site",
+   "title": "Munich Action Park (Olympiapark) (official site)",
+   "url": "https://www.olympiapark.de/en/sport/munich-action-park",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G70": {
+   "kind": "official-site",
+   "title": "DAV Kletterzentrum Sonthofen (official site)",
+   "url": "https://www.kletterzentrum-sonthofen.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G71": {
+   "kind": "official-site",
+   "title": "Boulder Island Mannheim (official site)",
+   "url": "https://www.boulder-island.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G72": {
+   "kind": "official-site",
+   "title": "DAV Kletterzentrum Reutlingen (official site)",
+   "url": "https://www.kletterzentrum-reutlingen.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G73": {
+   "kind": "official-site",
+   "title": "Active Garden Korb (official site)",
+   "url": "https://active-garden.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G74": {
+   "kind": "official-site",
+   "title": "DAV Alpinzentrum Schorndorf (official site)",
+   "url": "https://www.dav-schorndorf.de/Alpinzentrum",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G75": {
+   "kind": "official-site",
+   "title": "K5 DAV Kletterzentrum Rottweil (official site)",
+   "url": "https://www.dav-obererneckar.de/K5/Halleninfos",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G76": {
+   "kind": "official-site",
+   "title": "BoulderCenter Grenzach-Wyhlen (LÖ bloc) (official site)",
+   "url": "https://bouldercenter-grenzach-wyhlen.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G77": {
+   "kind": "official-site",
+   "title": "imPULSIV Freizeitcenter Emmendingen (official site)",
+   "url": "https://www.impulsiv-emmendingen.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G78": {
+   "kind": "official-site",
+   "title": "imPULSIV Freizeitcenter Weil am Rhein (official site)",
+   "url": "https://www.impulsiv-weil.de/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G79": {
+   "kind": "official-site",
+   "title": "DAV Kletterzentrum Feucht (official site)",
+   "url": "https://www.dav-feucht.de/kletterhalle",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G80": {
+   "kind": "official-site",
+   "title": "DAV Kletterhalle Amberg (official site)",
+   "url": "https://dav-amberg.de/stuetzpunkte/kletterhalle/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G81": {
+   "kind": "official-site",
+   "title": "Boulderhalle Wasserburg (official site)",
+   "url": "https://www.alpenverein-wasserburg.de/boulderhalle/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "G82": {
+   "kind": "official-site",
+   "title": "Kletterschmiede Schwäbisch Gmünd (official site)",
+   "url": "https://www.kletterschmiede.com/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  }
+ }
+}

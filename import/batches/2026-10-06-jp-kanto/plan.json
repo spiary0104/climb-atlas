@@ -1,0 +1,442 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-06-jp-kanto",
+ "index": {
+  "sha256": "ba15697dae7571ed4009349532d9b12de02ac51c5a4b0ed4f4fb2ccf1654bf1c",
+  "count": 3110,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-06-jp-chubu",
+  "2026-10-06-jp-kansai",
+  "2026-10-06-jp-kyushu-hokkaido",
+  "2026-10-06-kr-seoul"
+ ],
+ "counts": {
+  "records": 51,
+  "new": 51,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "da3fee3095f9712f77f82b1981522efc23824fd50dfedca9036d8cba2ccdf76d",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-ce178e385e",
+   "id_frozen": true,
+   "name": "Be born Climbing Gym",
+   "country": "JP"
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-e70c70e764",
+   "id_frozen": true,
+   "name": "BEAR'S ROCK",
+   "country": "JP"
+  },
+  {
+   "line": 3,
+   "class": "new",
+   "id": "g-232da60cf5",
+   "id_frozen": true,
+   "name": "Blue Bird Bouldering Gym",
+   "country": "JP"
+  },
+  {
+   "line": 4,
+   "class": "new",
+   "id": "g-880f74656c",
+   "id_frozen": true,
+   "name": "BOULCOM Kawasaki",
+   "country": "JP"
+  },
+  {
+   "line": 5,
+   "class": "new",
+   "id": "g-e935c40916",
+   "id_frozen": true,
+   "name": "Bouldering Garage FUNNY",
+   "country": "JP"
+  },
+  {
+   "line": 6,
+   "class": "new",
+   "id": "g-c3801488f1",
+   "id_frozen": true,
+   "name": "Bouldering Gym Share",
+   "country": "JP"
+  },
+  {
+   "line": 7,
+   "class": "new",
+   "id": "g-4565b4e4df",
+   "id_frozen": true,
+   "name": "Bouldering Spot Landmark",
+   "country": "JP"
+  },
+  {
+   "line": 8,
+   "class": "new",
+   "id": "g-78d40d7f10",
+   "id_frozen": true,
+   "name": "Climbing Gym Cipher",
+   "country": "JP"
+  },
+  {
+   "line": 9,
+   "class": "new",
+   "id": "g-83c717cf0c",
+   "id_frozen": true,
+   "name": "Climbing Asuka",
+   "country": "JP"
+  },
+  {
+   "line": 10,
+   "class": "new",
+   "id": "g-334c558717",
+   "id_frozen": true,
+   "name": "Climbing Gym GooFee",
+   "country": "JP"
+  },
+  {
+   "line": 11,
+   "class": "new",
+   "id": "g-ee0dd4f008",
+   "id_frozen": true,
+   "name": "Climbing Gym MARU",
+   "country": "JP"
+  },
+  {
+   "line": 12,
+   "class": "new",
+   "id": "g-87a2158e52",
+   "id_frozen": true,
+   "name": "Climbing Gym prob",
+   "country": "JP"
+  },
+  {
+   "line": 13,
+   "class": "new",
+   "id": "g-b5f3bf8d3d",
+   "id_frozen": true,
+   "name": "Climbing Gym Sarukichi",
+   "country": "JP"
+  },
+  {
+   "line": 14,
+   "class": "new",
+   "id": "g-55d3620b69",
+   "id_frozen": true,
+   "name": "Climbing Gym TRIP",
+   "country": "JP"
+  },
+  {
+   "line": 15,
+   "class": "new",
+   "id": "g-ba8002f8cc",
+   "id_frozen": true,
+   "name": "Climbing Gym Wall Street",
+   "country": "JP"
+  },
+  {
+   "line": 16,
+   "class": "new",
+   "id": "g-a171039626",
+   "id_frozen": true,
+   "name": "D.Bouldering Plus Adachi Hokima",
+   "country": "JP"
+  },
+  {
+   "line": 17,
+   "class": "new",
+   "id": "g-fd446b6b39",
+   "id_frozen": true,
+   "name": "D.Bouldering Plus Nishi-Hachioji",
+   "country": "JP"
+  },
+  {
+   "line": 18,
+   "class": "new",
+   "id": "g-d897233391",
+   "id_frozen": true,
+   "name": "D.Bouldering Plus Yachiyo",
+   "country": "JP"
+  },
+  {
+   "line": 19,
+   "class": "new",
+   "id": "g-1eea804fa4",
+   "id_frozen": true,
+   "name": "D.Bouldering Shinkoiwa",
+   "country": "JP"
+  },
+  {
+   "line": 20,
+   "class": "new",
+   "id": "g-b935e0d7ef",
+   "id_frozen": true,
+   "name": "Energy Climbing Gym Kashiwa",
+   "country": "JP"
+  },
+  {
+   "line": 21,
+   "class": "new",
+   "id": "g-623cb8d6d7",
+   "id_frozen": true,
+   "name": "Fits Climbing Gym",
+   "country": "JP"
+  },
+  {
+   "line": 22,
+   "class": "new",
+   "id": "g-f1e2aa3c54",
+   "id_frozen": true,
+   "name": "folk bouldering gym",
+   "country": "JP"
+  },
+  {
+   "line": 23,
+   "class": "new",
+   "id": "g-2338a88cc8",
+   "id_frozen": true,
+   "name": "Forge bouldering",
+   "country": "JP"
+  },
+  {
+   "line": 24,
+   "class": "new",
+   "id": "g-34d80f2935",
+   "id_frozen": true,
+   "name": "Bouldering Space HAT",
+   "country": "JP"
+  },
+  {
+   "line": 25,
+   "class": "new",
+   "id": "g-d09420ac73",
+   "id_frozen": true,
+   "name": "J-WALL Climbing Gym",
+   "country": "JP"
+  },
+  {
+   "line": 26,
+   "class": "new",
+   "id": "g-2c709d5290",
+   "id_frozen": true,
+   "name": "Jam Session Mitaka",
+   "country": "JP"
+  },
+  {
+   "line": 27,
+   "class": "new",
+   "id": "g-0b95092888",
+   "id_frozen": true,
+   "name": "J&S Ikebukuro",
+   "country": "JP"
+  },
+  {
+   "line": 28,
+   "class": "new",
+   "id": "g-790419942b",
+   "id_frozen": true,
+   "name": "Fitness Climbing Studio LAGO",
+   "country": "JP"
+  },
+  {
+   "line": 29,
+   "class": "new",
+   "id": "g-3293e764e3",
+   "id_frozen": true,
+   "name": "Bouldering Gym Lamp+ (Aikoishida)",
+   "country": "JP"
+  },
+  {
+   "line": 30,
+   "class": "new",
+   "id": "g-a6e11a594a",
+   "id_frozen": true,
+   "name": "Climbing Space Ledge",
+   "country": "JP"
+  },
+  {
+   "line": 31,
+   "class": "new",
+   "id": "g-2370a85fa3",
+   "id_frozen": true,
+   "name": "LIMESTONE Climbing Club",
+   "country": "JP"
+  },
+  {
+   "line": 32,
+   "class": "new",
+   "id": "g-a2044b33e1",
+   "id_frozen": true,
+   "name": "Lutra Lutra",
+   "country": "JP"
+  },
+  {
+   "line": 33,
+   "class": "new",
+   "id": "g-dbb0efc532",
+   "id_frozen": true,
+   "name": "Climbing Gym MADROCK",
+   "country": "JP"
+  },
+  {
+   "line": 34,
+   "class": "new",
+   "id": "g-29586badd9",
+   "id_frozen": true,
+   "name": "Mitaka Gym",
+   "country": "JP"
+  },
+  {
+   "line": 35,
+   "class": "new",
+   "id": "g-4ea11241b3",
+   "id_frozen": true,
+   "name": "Climbing Gym OLIOLI",
+   "country": "JP"
+  },
+  {
+   "line": 36,
+   "class": "new",
+   "id": "g-6b5fb7ba4e",
+   "id_frozen": true,
+   "name": "Bouldering Gym OVERGROUND",
+   "country": "JP"
+  },
+  {
+   "line": 37,
+   "class": "new",
+   "id": "g-1ca71a08ef",
+   "id_frozen": true,
+   "name": "PIGLET Climbing Gym",
+   "country": "JP"
+  },
+  {
+   "line": 38,
+   "class": "new",
+   "id": "g-4b98f4fa36",
+   "id_frozen": true,
+   "name": "Climbing Gym POCKET",
+   "country": "JP"
+  },
+  {
+   "line": 39,
+   "class": "new",
+   "id": "g-71de9a026b",
+   "id_frozen": true,
+   "name": "Climbing Gym Project",
+   "country": "JP"
+  },
+  {
+   "line": 40,
+   "class": "new",
+   "id": "g-c1c0885df3",
+   "id_frozen": true,
+   "name": "Climbing Gym RISE",
+   "country": "JP"
+  },
+  {
+   "line": 41,
+   "class": "new",
+   "id": "g-31c6769fa9",
+   "id_frozen": true,
+   "name": "Bouldering Gym Rock&Wall",
+   "country": "JP"
+  },
+  {
+   "line": 42,
+   "class": "new",
+   "id": "g-1d32bd8573",
+   "id_frozen": true,
+   "name": "ROCK CUBE Climbing Gym",
+   "country": "JP"
+  },
+  {
+   "line": 43,
+   "class": "new",
+   "id": "g-dd4262fb1f",
+   "id_frozen": true,
+   "name": "ROCKCRAFT Kawagoe",
+   "country": "JP"
+  },
+  {
+   "line": 44,
+   "class": "new",
+   "id": "g-a192701840",
+   "id_frozen": true,
+   "name": "Climbing Gym RocKY'N",
+   "country": "JP"
+  },
+  {
+   "line": 45,
+   "class": "new",
+   "id": "g-32c1056120",
+   "id_frozen": true,
+   "name": "Rout f",
+   "country": "JP"
+  },
+  {
+   "line": 46,
+   "class": "new",
+   "id": "g-591009329a",
+   "id_frozen": true,
+   "name": "Climbing Gym SEA ROCK",
+   "country": "JP"
+  },
+  {
+   "line": 47,
+   "class": "new",
+   "id": "g-a3a5a38132",
+   "id_frozen": true,
+   "name": "Bouldering Gym SPEEDY",
+   "country": "JP"
+  },
+  {
+   "line": 48,
+   "class": "new",
+   "id": "g-45a6fd8427",
+   "id_frozen": true,
+   "name": "Spo-Dori! Bouldering (Tokyo Dome City)",
+   "country": "JP"
+  },
+  {
+   "line": 49,
+   "class": "new",
+   "id": "g-1b002dcbb2",
+   "id_frozen": true,
+   "name": "SPOLE Climbing Gym",
+   "country": "JP"
+  },
+  {
+   "line": 50,
+   "class": "new",
+   "id": "g-b96f50bf04",
+   "id_frozen": true,
+   "name": "SUNCUL",
+   "country": "JP"
+  },
+  {
+   "line": 51,
+   "class": "new",
+   "id": "g-01288a23a4",
+   "id_frozen": true,
+   "name": "Bouldering Gym Vortex",
+   "country": "JP"
+  }
+ ]
+}

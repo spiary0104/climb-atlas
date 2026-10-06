@@ -1,0 +1,322 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-06-jp-kanto",
+ "reviewer": "Spiar (owner); decisions drafted by Claude (AI) on the owner's instruction, pending owner sign-off",
+ "reviewed": "2026-10-06",
+ "decisions": {
+  "jp-arc-climbing-otawara": {
+   "decision": "defer",
+   "reason": "Open (notices dated 2026-09 and 2026-10) but the own site never says bouldering; is there a bouldering wall?"
+  },
+  "jp-be-born-koshigaya": {
+   "decision": "accept",
+   "reason": "Own site (read 2026-10-06) confirms exists, address, bouldering and current operation: Golden Week 2026 post dated 2026-05-01 and a feed item dated 2026-09-02."
+  },
+  "jp-bears-rock-katsushika": {
+   "decision": "accept",
+   "reason": "Own site (read 2026-10-06) confirms exists, address, bouldering and current operation: blog entry dated 2026-03-06 (hours/Golden Week notices)."
+  },
+  "jp-blue-bird-bouldering": {
+   "decision": "accept",
+   "reason": "Own site (read 2026-10-06) confirms exists, address, bouldering and current operation: notice dated 2026-09-21 (hours change and price revision)."
+  },
+  "jp-bolbol-hashimoto": {
+   "decision": "defer",
+   "reason": "Is it open now (2026)? Latest dated post on its own site is 2025-12-11 (copyright line says 2026)."
+  },
+  "jp-bonobo-ageo": {
+   "decision": "defer",
+   "reason": "Still open? Own site has hours and a calendar page but nothing dated."
+  },
+  "jp-boulcom-kawasaki": {
+   "decision": "accept",
+   "reason": "Own site (read 2026-10-06) confirms exists, address, bouldering and current operation: Kawasaki news dated 2026-08-30 (hours change) and 2026-08-15."
+  },
+  "jp-bouldering-deer-edogawa": {
+   "decision": "reject",
+   "reason_code": "closed",
+   "reason": "Own site closure notice (closed 2025-12-27)."
+  },
+  "jp-bouldering-garage-funny": {
+   "decision": "accept",
+   "reason": "Own site (read 2026-10-06) confirms exists, address, bouldering and current operation: news dated 2026-09-30, 2026-08-25 and 2026-07-26."
+  },
+  "jp-bouldering-gym-share": {
+   "decision": "accept",
+   "reason": "Own site (read 2026-10-06) confirms exists, address, bouldering and current operation: kids competition entries dated 2026-05-23 and event dates 2026-08-29/30."
+  },
+  "jp-bouldering-spot-landmark": {
+   "decision": "accept",
+   "reason": "Own site (read 2026-10-06) confirms exists, address, bouldering and current operation: news dated 2026-09-19 (Silver Week hours) and 2026-08-21; school started 2026-04."
+  },
+  "jp-cipher-climbing": {
+   "decision": "accept",
+   "reason": "Own site (read 2026-10-06) confirms exists, address, bouldering and current operation: notice that from June 2026 weekend closing is 19:00."
+  },
+  "jp-climbing-asuka-chiba": {
+   "decision": "accept",
+   "reason": "Own site (read 2026-10-06) confirms exists, address, bouldering and current operation: posts dated 2026-09-17, 2026-09-03 and 2026-08-20."
+  },
+  "jp-climbing-gym-goofee": {
+   "decision": "accept",
+   "reason": "Own site (read 2026-10-06) confirms exists, address, bouldering and current operation: posts dated 2026-09-29, 2026-09-26 and 2026-09-19."
+  },
+  "jp-climbing-gym-maru": {
+   "decision": "accept",
+   "reason": "Own site (read 2026-10-06) confirms exists, address, bouldering and current operation: notices dated 2026-10-02 and 2026-10-01."
+  },
+  "jp-climbing-gym-prob-sano": {
+   "decision": "accept",
+   "reason": "Own site (read 2026-10-06) confirms exists, address, bouldering and current operation: October 2026 schedule and social posts about the Silver Week 2026 weekend."
+  },
+  "jp-climbing-gym-sarukichi": {
+   "decision": "accept",
+   "reason": "Own site (read 2026-10-06) confirms exists, address, bouldering and current operation: blog feed item dated 2026-10-06."
+  },
+  "jp-climbing-gym-trip": {
+   "decision": "accept",
+   "reason": "Own site (read 2026-10-06) confirms exists, address, bouldering and current operation: notices dated 2026-10-01, 2026-08-28 and 2026-07-12."
+  },
+  "jp-climbing-gym-wall-street": {
+   "decision": "accept",
+   "reason": "Own site (read 2026-10-06) confirms exists, address, bouldering and current operation: news dated 2026-10-05 and a competition held 2026-04-05."
+  },
+  "jp-craze-bouldering-kawaguchi": {
+   "decision": "defer",
+   "reason": "Still open? Own site has hours/prices (175-degree wall) but nothing dated."
+  },
+  "jp-d-bouldering-plus-adachi-hokima": {
+   "decision": "accept",
+   "reason": "Own site (read 2026-10-06) confirms exists, address, bouldering and current operation: chain store list (store no. 25) with address and hours."
+  },
+  "jp-d-bouldering-plus-nishihachioji": {
+   "decision": "accept",
+   "reason": "Own site (read 2026-10-06) confirms exists, address, bouldering and current operation: chain store list (Nishi-Hachioji store) and store page with new unstaffed-hours pricing."
+  },
+  "jp-d-bouldering-plus-yachiyo": {
+   "decision": "accept",
+   "reason": "Own site (read 2026-10-06) confirms exists, address, bouldering and current operation: chain store list (store no. 20) and store page with current hours; latest store news 2025-06. Related-name flag is a different gym: g-4b4a986251 \"D.Bouldering Plus Funabashi\" is a separate gym with its own address and website (kilometres apart, not a duplicate). Related-name flag is a different gym: g-b6c0194546 \"D.Bouldering Plus Tsudanuma\" is a separate gym with its own address and website (kilometres apart, not a duplicate).",
+   "reviewed_against": [
+    "g-4b4a986251",
+    "g-b6c0194546"
+   ]
+  },
+  "jp-d-bouldering-shinkoiwa": {
+   "decision": "accept",
+   "reason": "Own site (read 2026-10-06) confirms exists, address, bouldering and current operation: chain store list (Shin-Koiwa store) and store page with hours; opened 2024-03-25."
+  },
+  "jp-dogwood-takatsu": {
+   "decision": "defer",
+   "reason": "Open (kids campaign dated 2026-04-26) but the own site never says bouldering; is there a bouldering wall?"
+  },
+  "jp-energy-climbing-kashiwa": {
+   "decision": "accept",
+   "reason": "Own site (read 2026-10-06) confirms exists, address, bouldering and current operation: site renewal notice dated 2026-02-06 and prices stated as of April 2026."
+  },
+  "jp-fits-climbing-gym": {
+   "decision": "accept",
+   "reason": "Own site (read 2026-10-06) confirms exists, address, bouldering and current operation: blog and calendar pages with items dated 2026-08."
+  },
+  "jp-folk-bouldering": {
+   "decision": "accept",
+   "reason": "Own site (read 2026-10-06) confirms exists, address, bouldering and current operation: news items dated 2026-10-02, 2026-08-23 and 2026-07-15."
+  },
+  "jp-forge-bouldering": {
+   "decision": "accept",
+   "reason": "Own site (read 2026-10-06) confirms exists, address, bouldering and current operation: event dated 2026-10-10 and a price change effective 2026-09-01."
+  },
+  "jp-fukagawa-sports-center": {
+   "decision": "defer",
+   "reason": "Public facility: does it offer public drop-in bouldering, and should Bouldeer list it?"
+  },
+  "jp-grimrock-yokohama": {
+   "decision": "defer",
+   "reason": "Does it offer bouldering? The own site never uses the word bouldering (only \"climbing\"); hours/calendar are given but not dated."
+  },
+  "jp-hat-bouldering": {
+   "decision": "accept",
+   "reason": "Own site (read 2026-10-06) confirms exists, address, bouldering and current operation: posts dated 2026-06-12 and 2026-03-22."
+  },
+  "jp-j-wall-fujisawa": {
+   "decision": "accept",
+   "reason": "Own site (read 2026-10-06) confirms exists, address, bouldering and current operation: news dated 2026-08-08 and 2026-07-03."
+  },
+  "jp-jam-session-mitaka": {
+   "decision": "accept",
+   "reason": "Own site (read 2026-10-06) confirms exists, address, bouldering and current operation: posts dated 2026-09-11, 2026-09-03 and a price revision dated 2026-08-10. Related-name flag is a different gym: candidate jp-mitaka-gym \"Mitaka Gym\" is a separate gym with its own address and website (kilometres apart, not a duplicate).",
+   "reviewed_against": [
+    "jp-mitaka-gym"
+   ]
+  },
+  "jp-js-ikebukuro": {
+   "decision": "accept",
+   "reason": "Own site (read 2026-10-06) confirms exists, address, bouldering and current operation: Golden Week 2026 notice dated 2026-05-02. Related-name flag is a different gym: seed-455 \"J&S Nakano\" is a separate gym with its own address and website (kilometres apart, not a duplicate).",
+   "reviewed_against": [
+    "seed-455"
+   ]
+  },
+  "jp-kachill-chigasaki": {
+   "decision": "defer",
+   "reason": "Is KaChill still open? Its own site shows hours and prices (closed Fridays) but no dated post; irregular closures are on a Google calendar/Instagram (@kachill_climbing)."
+  },
+  "jp-lago-fitness-climbing-studio": {
+   "decision": "accept",
+   "reason": "Own site (read 2026-10-06) confirms exists, address, bouldering and current operation: news updated 2026-06-02."
+  },
+  "jp-lamp-plus-bouldering": {
+   "decision": "accept",
+   "reason": "Own site (read 2026-10-06) confirms exists, address, bouldering and current operation: news posted 2026-09-30, 2026-09-20 and 2026-08-30. Related-name flag is a different gym: candidate jp-rock-and-wall \"Bouldering Gym Rock&Wall\" is a separate gym with its own address and website (kilometres apart, not a duplicate). Pin is the GSI address-search match at block level (the matched address has no house number); it lies within one city block of the gym and the street address is only from rockgym.jp, not on the official site.",
+   "reviewed_against": [
+    "jp-rock-and-wall"
+   ]
+  },
+  "jp-ledge-ebina": {
+   "decision": "accept",
+   "reason": "Own site (read 2026-10-06) confirms exists, address, bouldering and current operation: page updated 2026-09-09 and news dated 2026-09-05."
+  },
+  "jp-limestone-climbing-club": {
+   "decision": "accept",
+   "reason": "Own site (read 2026-10-06) confirms exists, address, bouldering and current operation: notices dated 2026-10-06, 2026-09-29 and 2026-09-09."
+  },
+  "jp-lost-canyon-utsunomiya": {
+   "decision": "defer",
+   "reason": "Still open? Latest own-site news found is dated 2025-10."
+  },
+  "jp-lutra-lutra-fukaya": {
+   "decision": "accept",
+   "reason": "Own site (read 2026-10-06) confirms exists, address, bouldering and current operation: blog posts dated 2026-08-20, 2026-06-20 and 2026-06-09."
+  },
+  "jp-madrock-climbing-gym": {
+   "decision": "accept",
+   "reason": "Own site (read 2026-10-06) confirms exists, address, bouldering and current operation: notice for 2026-11-15/16/17 opening-hours extension and current hours."
+  },
+  "jp-maghreb-est-tama": {
+   "decision": "defer",
+   "reason": "Is this a public bouldering gym or a members-oriented fitness/hot-yoga studio with a bouldering program? Site is current (2026-10-01)."
+  },
+  "jp-mitaka-gym": {
+   "decision": "accept",
+   "reason": "Own site (read 2026-10-06) confirms exists, address, bouldering and current operation: news dated 2026-09-30, 2026-08-22 and 2026-05-02. Related-name flag is a different gym: candidate jp-jam-session-mitaka \"Jam Session Mitaka\" is a separate gym with its own address and website (kilometres apart, not a duplicate).",
+   "reviewed_against": [
+    "jp-jam-session-mitaka"
+   ]
+  },
+  "jp-miyake-recreation-center-bouldering": {
+   "decision": "defer",
+   "reason": "Public facility: does it offer public drop-in bouldering, and should Bouldeer list it?"
+  },
+  "jp-monolithe-kawagoe": {
+   "decision": "defer",
+   "reason": "Still open? Own site (copyright 2020) shows hours and reviews but nothing dated."
+  },
+  "jp-next-gen-bouldering-niiza": {
+   "decision": "defer",
+   "reason": "Still open? Own site (copyright 2025) shows hours and a pass page but no dated post."
+  },
+  "jp-olioli-ichinomiya": {
+   "decision": "accept",
+   "reason": "Own site (read 2026-10-06) confirms exists, address, bouldering and current operation: October 2026 hours post (2026-09-29) and a 2026-06-19 post."
+  },
+  "jp-overground-kounosu": {
+   "decision": "accept",
+   "reason": "Own site (read 2026-10-06) confirms exists, address, bouldering and current operation: blog feed items dated 2026-08-10 and 2025-10-18, 2026 copyright."
+  },
+  "jp-parkers-tokyo-shinjuku": {
+   "decision": "defer",
+   "reason": "Is the bouldering gym open now? Own site has a bouldering page but is undated (copyright 2024); climbers-web lists news from 2026-06."
+  },
+  "jp-per-adra-yokohama": {
+   "decision": "defer",
+   "reason": "Is it open now (own site has no dated news; updates are on Instagram only)? Bouldering is only named in passing (visitors may enter without bouldering); confirm it offers a bouldering wall."
+  },
+  "jp-piglet-climbing-gym": {
+   "decision": "accept",
+   "reason": "Own site (read 2026-10-06) confirms exists, address, bouldering and current operation: posts dated 2026-09-12 and 2026-08-26 and an October 2026 lesson schedule."
+  },
+  "jp-pocket-climbing": {
+   "decision": "accept",
+   "reason": "Own site (read 2026-10-06) confirms exists, address, bouldering and current operation: news dated 2026-06-07 and a closure notice dated 2026-08-26 (hold change 8/31-9/1)."
+  },
+  "jp-project-climbing": {
+   "decision": "accept",
+   "reason": "Own site (read 2026-10-06) confirms exists, address, bouldering and current operation: news (book release dated 2026-09-26, October 2026 closed days listed, point-card routes updated 10/1-10/15)."
+  },
+  "jp-rise-climbing": {
+   "decision": "accept",
+   "reason": "Own site (read 2026-10-06) confirms exists, address, bouldering and current operation: news dated 2026-08-28 and an October 2026 calendar."
+  },
+  "jp-rock-and-wall": {
+   "decision": "accept",
+   "reason": "Own site (read 2026-10-06) confirms exists, address, bouldering and current operation: news dated 2026-09-25, 2026-08-27 and 2026-07-24. Related-name flag is a different gym: candidate jp-lamp-plus-bouldering \"Bouldering Gym Lamp+ (Aikoishida)\" is a separate gym with its own address and website (kilometres apart, not a duplicate). Related-name flag is a different gym: candidate jp-speedy-bouldering \"Bouldering Gym SPEEDY\" is a separate gym with its own address and website (kilometres apart, not a duplicate).",
+   "reviewed_against": [
+    "jp-lamp-plus-bouldering",
+    "jp-speedy-bouldering"
+   ]
+  },
+  "jp-rock-cube-koshigaya": {
+   "decision": "accept",
+   "reason": "Own site (read 2026-10-06) confirms exists, address, bouldering and current operation: news item dated October 2026."
+  },
+  "jp-rockcraft-kawagoe": {
+   "decision": "accept",
+   "reason": "Own site (read 2026-10-06) confirms exists, address, bouldering and current operation: posts dated 2026-07-24, 2026-06-01 and 2026-03-16."
+  },
+  "jp-rockyn-utsunomiya": {
+   "decision": "accept",
+   "reason": "Own site (read 2026-10-06) confirms exists, address, bouldering and current operation: monthly notices for 2026-07 and 2026-08 and an August 2026 school schedule."
+  },
+  "jp-rout-f-niiza": {
+   "decision": "accept",
+   "reason": "Own site (read 2026-10-06) confirms exists, address, bouldering and current operation: post dated 2026-09-25 announcing a renovation reopening on 2026-10-03, and a 2026-08-27 post."
+  },
+  "jp-sea-rock-yugawara": {
+   "decision": "accept",
+   "reason": "Own site (read 2026-10-06) confirms exists, address, bouldering and current operation: blog posts dated 2026-06-12 and a feed item dated 2026-10-06."
+  },
+  "jp-speedy-bouldering": {
+   "decision": "accept",
+   "reason": "Own site (read 2026-10-06) confirms exists, address, bouldering and current operation: post dated 2026-09-20 and calendar page. Related-name flag is a different gym: candidate jp-rock-and-wall \"Bouldering Gym Rock&Wall\" is a separate gym with its own address and website (kilometres apart, not a duplicate).",
+   "reviewed_against": [
+    "jp-rock-and-wall"
+   ]
+  },
+  "jp-spo-dori-tokyo-dome-bouldering": {
+   "decision": "accept",
+   "reason": "Own site (read 2026-10-06) confirms exists, address, bouldering and current operation: Tokyo Dome City page dated 2026-10-05 and a campaign running 2026-10-01 to 12-31."
+  },
+  "jp-spole-climbing-gym": {
+   "decision": "accept",
+   "reason": "Own site (read 2026-10-06) confirms exists, address, bouldering and current operation: posts dated 2026-09-29, 2026-08-30 and 2026-07-30."
+  },
+  "jp-stone-magic-sagamihara": {
+   "decision": "defer",
+   "reason": "Still open? Own site mentions a price revision from April 2025 and no 2026 post."
+  },
+  "jp-suncul-utsunomiya": {
+   "decision": "accept",
+   "reason": "Own site (read 2026-10-06) confirms exists, address, bouldering and current operation: posts dated 2026-08-03, 2026-06-29 and 2026-05-31."
+  },
+  "jp-the-stone-session-tokyo": {
+   "decision": "defer",
+   "reason": "Still open? Own site shows hours/prices but no dated post."
+  },
+  "jp-three-peaks-honjo": {
+   "decision": "reject",
+   "reason_code": "closed",
+   "reason": "Own site shows a closure notice (closed 2026-05-31)."
+  },
+  "jp-tohan-dojo-chiba": {
+   "decision": "defer",
+   "reason": "Still open? Own site shows hours/prices; no dated post (server Last-Modified 2026-10-01 only)."
+  },
+  "jp-villars-climbing-ariake": {
+   "decision": "reject",
+   "reason_code": "closed",
+   "reason": "Own site closure notice (closed 2024-06-30). Still listed on boulgym.com and climbers-web."
+  },
+  "jp-vortex-bouldering-kasama": {
+   "decision": "accept",
+   "reason": "Own site (read 2026-10-06) confirms exists, address, bouldering and current operation: posts dated 2026-09-01 (September schedule) and 2026-08-29."
+  }
+ }
+}

@@ -1,0 +1,174 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-06-belgium",
+ "index": {
+  "sha256": "e097ffa5ab0d67346c77809562a3c9eaef3a6e6e0533571ca08c0fd93f973a13",
+  "count": 3054,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-06-austria",
+  "2026-10-06-czechia-gap",
+  "2026-10-06-jp-chubu",
+  "2026-10-06-jp-kansai",
+  "2026-10-06-jp-kanto",
+  "2026-10-06-jp-kyushu-hokkaido",
+  "2026-10-06-kr-seoul",
+  "2026-10-06-poland"
+ ],
+ "counts": {
+  "records": 17,
+  "new": 17,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "284cf3caaffd2b22db09c5161a15707aff2aa090fcfeb2fa770b9f6d5f524b9e",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-be576e1384",
+   "id_frozen": true,
+   "name": "Klimzaal Banzai",
+   "country": "BE"
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-8d5c68d329",
+   "id_frozen": true,
+   "name": "Blackbox Boulder",
+   "country": "BE"
+  },
+  {
+   "line": 3,
+   "class": "new",
+   "id": "g-d91bb7acc2",
+   "id_frozen": true,
+   "name": "Klimzaal Boulder",
+   "country": "BE"
+  },
+  {
+   "line": 4,
+   "class": "new",
+   "id": "g-85c936f30a",
+   "id_frozen": true,
+   "name": "Crux Bouldergym",
+   "country": "BE"
+  },
+  {
+   "line": 5,
+   "class": "new",
+   "id": "g-4afaea7526",
+   "id_frozen": true,
+   "name": "Klimzaal De Stordeur",
+   "country": "BE"
+  },
+  {
+   "line": 6,
+   "class": "new",
+   "id": "g-c0ab118fcd",
+   "id_frozen": true,
+   "name": "Monk bouldergym Hasselt",
+   "country": "BE"
+  },
+  {
+   "line": 7,
+   "class": "new",
+   "id": "g-bcc441587f",
+   "id_frozen": true,
+   "name": "Pink Peaks",
+   "country": "BE"
+  },
+  {
+   "line": 8,
+   "class": "new",
+   "id": "g-23cbf3407a",
+   "id_frozen": true,
+   "name": "Hall9",
+   "country": "BE"
+  },
+  {
+   "line": 9,
+   "class": "new",
+   "id": "g-20f3d88ecf",
+   "id_frozen": true,
+   "name": "Bouldergym City Lizard",
+   "country": "BE"
+  },
+  {
+   "line": 10,
+   "class": "new",
+   "id": "g-7934dbc05b",
+   "id_frozen": true,
+   "name": "Gustaaf Klimt",
+   "country": "BE"
+  },
+  {
+   "line": 11,
+   "class": "new",
+   "id": "g-0045261756",
+   "id_frozen": true,
+   "name": "Petite Île",
+   "country": "BE"
+  },
+  {
+   "line": 12,
+   "class": "new",
+   "id": "g-b49956dc3b",
+   "id_frozen": true,
+   "name": "New Rock",
+   "country": "BE"
+  },
+  {
+   "line": 13,
+   "class": "new",
+   "id": "g-600590e6a2",
+   "id_frozen": true,
+   "name": "À BLOC",
+   "country": "BE"
+  },
+  {
+   "line": 14,
+   "class": "new",
+   "id": "g-aff3f21803",
+   "id_frozen": true,
+   "name": "Stone Age",
+   "country": "BE"
+  },
+  {
+   "line": 15,
+   "class": "new",
+   "id": "g-b384fc40d1",
+   "id_frozen": true,
+   "name": "L'Escale Arlon",
+   "country": "BE"
+  },
+  {
+   "line": 16,
+   "class": "new",
+   "id": "g-8e4e30c6ec",
+   "id_frozen": true,
+   "name": "Face Nord",
+   "country": "BE"
+  },
+  {
+   "line": 17,
+   "class": "new",
+   "id": "g-9425ab2e37",
+   "id_frozen": true,
+   "name": "BeBloc",
+   "country": "BE"
+  }
+ ]
+}

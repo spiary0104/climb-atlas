@@ -1,0 +1,392 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-06-poland",
+ "inputs": {
+  "section_sha256": "9d711033d6d9f706c67d409c1274532cc10fd3a33f719fff29f8042037a3d6c5",
+  "sources_sha256": "2d3ab9053c1aa6094c1486688e929b221474f0c37456aa956217c4e5732bb6c3",
+  "candidates_sha256": "3d5779cedf521d2b6ca625c5b5e8da357a3123ae383428d92671ab0e06ceb640",
+  "index": {
+   "sha256": "27073d25c2df373c17caef0c24ebfe759b8d457953a461c62786486d588e661d",
+   "count": 2438
+  },
+  "staged_batches_compared": [
+   "2026-10-06-de-south",
+   "2026-10-06-london",
+   "2026-10-06-us-midwest"
+  ],
+  "other_sections_compared": []
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 17,
+  "ready": 9,
+  "review": 1,
+  "blocked": 7,
+  "existing": 0,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "pl-001",
+   "line": 1,
+   "name": "Murall Gdańsk",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-330bee3957"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "pl-002",
+   "line": 2,
+   "name": "Murall Górczewska",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-8d95f7b16d"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-1304 \"Murall Centrum Wspinaczkowe + FunClimb\": related names \"Centrum Wspinaczkowe Murall Górczewska\" / \"Murall Centrum Wspinaczkowe + FunClimb\" 10436 m apart",
+     "ids": [
+      "seed-1304"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-1304"
+   ]
+  },
+  {
+   "cid": "pl-003",
+   "line": 3,
+   "name": "Problem Bouldering",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-8deb5db5eb"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "pl-004",
+   "line": 4,
+   "name": "LIMBO Bouldering",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-594ff774cf"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "pl-005",
+   "line": 5,
+   "name": "BLO Katowice",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-1716753043"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "pl-006",
+   "line": 6,
+   "name": "Poziom 450",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-374c9207ae"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "pl-007",
+   "line": 7,
+   "name": "Bald Port",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-02c591a744"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "pl-008",
+   "line": 8,
+   "name": "VOLT Boulderownia Łódź",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-4e5d3ef7e5"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "pl-009",
+   "line": 9,
+   "name": "Centrum Wspinaczkowe Spider",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-de64c0c99d"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "pl-010",
+   "line": 10,
+   "name": "Centrum Wspinaczkowe Flash",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-bf3e47bb00"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "pl-011",
+   "line": 11,
+   "name": "OnSight Centrum Wspinaczkowe",
+   "class": "blocked",
+   "suggested": "reject closed",
+   "importer": {
+    "class": "new",
+    "id": "g-d6cbaa59c6"
+   },
+   "blockers": [
+    {
+     "code": "closed",
+     "detail": "status_claim is closed"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "pl-012",
+   "line": 12,
+   "name": "Grimpado Boulder Studio",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-d1de042642"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "pl-013",
+   "line": 13,
+   "name": "Centrum Wspinaczkowe Stratosfera",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-b12796afa4"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "pl-014",
+   "line": 14,
+   "name": "Ściana Wspinaczkowa Elewator",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-be9c44cb1d"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate pl-015 \"Ściana Wspinaczkowa Mono\": related names \"Ściana Wspinaczkowa Elewator\" / \"Ściana Wspinaczkowa Mono\" 917 m apart",
+     "ids": [
+      "pl-015"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "pl-015"
+   ]
+  },
+  {
+   "cid": "pl-015",
+   "line": 15,
+   "name": "Ściana Wspinaczkowa Mono",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-85b5d75192"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate pl-014 \"Ściana Wspinaczkowa Elewator\": related names \"Ściana Wspinaczkowa Mono\" / \"Ściana Wspinaczkowa Elewator\" 917 m apart",
+     "ids": [
+      "pl-014"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "pl-014"
+   ]
+  },
+  {
+   "cid": "pl-016",
+   "line": 16,
+   "name": "Arête Bouldering",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-001fd731b7"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "pl-017",
+   "line": 17,
+   "name": "Spot Boulder Caffe",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-cec7add147"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  }
+ ],
+ "reconcile_sha256": "e2d819c2d8a68f59676de90fd8db1ce8dd82508fef6f2ddd6a0a59adef450062"
+}

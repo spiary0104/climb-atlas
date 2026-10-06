@@ -1,0 +1,649 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-06-spain-cities",
+ "inputs": {
+  "section_sha256": "443ac1e762ea2a9ea39a57aa5b683ed630f7d3031034080b2c0b1333121743bc",
+  "sources_sha256": "7ffbee930ee48272bbba7f36d7a666af718f0f0fba8a9ea214fd91959a881a21",
+  "candidates_sha256": "c0284e833a0992e156cd5680a9b7945adbd514fef526c8e7d26daec626f3162b",
+  "index": {
+   "sha256": "27073d25c2df373c17caef0c24ebfe759b8d457953a461c62786486d588e661d",
+   "count": 2438
+  },
+  "staged_batches_compared": [],
+  "other_sections_compared": [
+   {
+    "id": "2026-10-05-spain-asturias",
+    "candidates_sha256": "c72b1268303123549564cb5428982e998d6f70592d8652ce724604edc7ba56f8"
+   },
+   {
+    "id": "2026-10-05-spain-owner-checks",
+    "candidates_sha256": "d597a3a009e127d62197e63852ada80cbe055666817d16b2d076192de05685c0"
+   },
+   {
+    "id": "2026-10-06-spain-holds",
+    "candidates_sha256": "46467d7e5a0c3a074e8d7bc80a7e29d71f438d56122a77b1e636700bfbe3357a"
+   }
+  ]
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 43,
+  "ready": 33,
+  "review": 7,
+  "blocked": 3,
+  "existing": 0,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "es-001",
+   "line": 1,
+   "name": "Indoorwall Hospitalet de Llobregat",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-44e5cc575e"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "es-002",
+   "line": 2,
+   "name": "Indoorwall Manresa",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-8537623c7f"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "es-003",
+   "line": 3,
+   "name": "Indoorwall Vic",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-45826d62ab"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "es-004",
+   "line": 4,
+   "name": "Indoorwall Vilanova i la Geltrú",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-68b28fc08d"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "es-005",
+   "line": 5,
+   "name": "BDN Climb",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-dfe1048b5c"
+   },
+   "flags": [
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "es-006",
+   "line": 6,
+   "name": "Kraken Bloc Granollers",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-f791b814cd"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "es-007",
+   "line": 7,
+   "name": "Freebloc",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-23e95b8848"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "es-008",
+   "line": 8,
+   "name": "Golem Arenys",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-cfe126372f"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "es-009",
+   "line": 9,
+   "name": "Ingravita",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-28f158d2f9"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "es-010",
+   "line": 10,
+   "name": "La Bauma",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-9b0e7cca6f"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "es-011",
+   "line": 11,
+   "name": "La Panxa del Bou",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-554d9d9f07"
+   },
+   "flags": [
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "es-012",
+   "line": 12,
+   "name": "FLASHH Barcelona",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-895a437e1b"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "es-013",
+   "line": 13,
+   "name": "Búlder Planet Mataró",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-9ea0a82eb4"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "es-014",
+   "line": 14,
+   "name": "Búlder Planet Vallès",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-f5adc554a0"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "es-015",
+   "line": 15,
+   "name": "La Bloquera",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-0ba439ce08"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "es-016",
+   "line": 16,
+   "name": "Rockart Climbing & Coworking",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-ea022bf312"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "es-017",
+   "line": 17,
+   "name": "Monobloc Reus",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-c2853cbb56"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "es-018",
+   "line": 18,
+   "name": "SLAB Sala d'Escalada",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-51c4fb316f"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "es-019",
+   "line": 19,
+   "name": "Fanàtic Lleida",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-a6c9db394f"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate es-020 \"Boulder Indoor\": related names \"Fanàtic Lleida\" / \"Boulder Indoor Lleida\" 1978 m apart",
+     "ids": [
+      "es-020"
+     ]
+    }
+   ],
+   "review_ids": [
+    "es-020"
+   ]
+  },
+  {
+   "cid": "es-020",
+   "line": 20,
+   "name": "Boulder Indoor",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-91d3229d69"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate es-019 \"Fanàtic Lleida\": related names \"Boulder Indoor Lleida\" / \"Fanàtic Lleida\" 1978 m apart",
+     "ids": [
+      "es-019"
+     ]
+    }
+   ],
+   "review_ids": [
+    "es-019"
+   ]
+  },
+  {
+   "cid": "es-021",
+   "line": 21,
+   "name": "Rocòdrom Les Agulles",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-d3910c2fc0"
+   },
+   "flags": [
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "es-022",
+   "line": 22,
+   "name": "Climbbox",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-467aeb2a5b"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "es-023",
+   "line": 23,
+   "name": "Rockandbloc",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-eaf38da56c"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "es-024",
+   "line": 24,
+   "name": "Indoorwall Torrejón",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-33b8c34baf"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "es-025",
+   "line": 25,
+   "name": "Indoorwall Getafe",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-ee3706c567"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "es-026",
+   "line": 26,
+   "name": "Arkose Madrid Carabanchel",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-29bd2c8625"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-1241 \"Arkose - Madrid\": related names \"Arkose Madrid Carabanchel\" / \"Arkose - Madrid\" 7098 m apart",
+     "ids": [
+      "seed-1241"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-1242 \"Boulder Madrid\": related names \"Arkose Madrid Carabanchel\" / \"Boulder Madrid\" 5572 m apart",
+     "ids": [
+      "seed-1242"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-1241",
+    "seed-1242"
+   ]
+  },
+  {
+   "cid": "es-027",
+   "line": 27,
+   "name": "Awesome Boulder Center",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-ab41a4bb5c"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "es-028",
+   "line": 28,
+   "name": "La Reunión Escalada",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-51de64e903"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "es-029",
+   "line": 29,
+   "name": "Planet Vertical",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-e79b16a506"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "es-030",
+   "line": 30,
+   "name": "The Climb",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-fdcaf7d815"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "es-031",
+   "line": 31,
+   "name": "Indoorwall Alicante",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-76764ca659"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "es-032",
+   "line": 32,
+   "name": "Laif Climbing Gym",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-947f369511"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "es-033",
+   "line": 33,
+   "name": "Vents Búlder",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-58c3ca0ce2"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "es-034",
+   "line": 34,
+   "name": "ClimbPro Center",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-8cd75fe6cc"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "es-035",
+   "line": 35,
+   "name": "Piugaz",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-a21e09684e"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "es-036",
+   "line": 36,
+   "name": "Urban Boulder",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-9b06dd1215"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "es-037",
+   "line": 37,
+   "name": "AtariA Boulder",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-9aafcd8425"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "es-038",
+   "line": 38,
+   "name": "Bayyana Climbing",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-42f8062a7f"
+   },
+   "flags": [
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "es-039",
+   "line": 39,
+   "name": "Rocòdrom 9C",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-de4c11e36c"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "es-040",
+   "line": 40,
+   "name": "Can Bombo",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-a0092b5d0a"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "es-041",
+   "line": 41,
+   "name": "Cal Mico",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-5e5bc8e1ac"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "es-042",
+   "line": 42,
+   "name": "Klimb Zarautz",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-b5f67ffe7a"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "es-043",
+   "line": 43,
+   "name": "Boulder Vallecas",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-0a1cc86f10"
+   },
+   "review_ids": []
+  }
+ ],
+ "reconcile_sha256": "b77b6f0393294caaf5b5dfba6bf48cfd53d54d14df3a259d3a4236bc19bff984"
+}

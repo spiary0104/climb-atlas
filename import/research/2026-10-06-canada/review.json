@@ -1,0 +1,473 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-06-canada",
+ "reviewer": "Spiar (owner); decisions drafted by Claude (AI) on the owner's instruction, pending owner sign-off",
+ "reviewed": "2026-10-06",
+ "decisions": {
+  "ca-hub-markham": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. Chain home page describes Markham as an indoor climbing and bouldering gym (23 ft free bouldering challenge, auto-belay routes), lists 165 McIntosh Dr; page footer is dated 2026. OSM node has public hours."
+  },
+  "ca-hub-mississauga": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. Own page: 'more bouldering than any other gym in Mississauga', top rope, lead and auto-belay climbing, plan-your-visit and prices pages live. OSM node is tagged 3646 Hawkestone Rd (site says 3636, same plaza)."
+  },
+  "ca-rockhaus-vaughan": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. FAQ: 'an indoor boulder only gym with 2000 sqft'. Home page shows address and weekday/weekend hours; own map embed (43.79516,-79.54222) agrees with the OSM node within 7 m. Small gym."
+  },
+  "ca-aspire-milton": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. Chain home page: Milton offers bouldering, ninja warrior, fitness (no rope offer listed); rates page: all-access includes bouldering, ninja and fitness areas, day passes, 'Try-Us-Out' membership."
+  },
+  "ca-aspire-whitby": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. Visit page: 8,000 sq ft of climbing walls with auto-belays, top ropes, lead climbing and bouldering with new boulder problems each week; home page lists the Whitby address and hours."
+  },
+  "ca-ethos-toronto": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. Home page: 'we're a bouldering gym'; hours-location page lists weekday and weekend hours and 128 Queens Quay East; own map embed 43.64429,-79.36872 agrees with the OSM node (about 5 m)."
+  },
+  "ca-toprock-brampton": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. Home page: 6000 sq ft of bouldering, Moonboard, training area; opening hours listed. Directory listings carry an old number (84 Orenda Rd); the gym's own site says 284."
+  },
+  "ca-climbers-rock-burlington": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. Hours page lists 5155 Harvester Rd Unit 1 and weekday/weekend hours; the climbing page explains use of auto-belays and 'our boulder walls'. Rope offer not confirmed so types are bouldering only. Directory listings carry 5515 Harvester Rd (typo)."
+  },
+  "ca-conquer-brantford": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. Home page: address 34 Dalkeith Dr and weekly hours; Boulder League page and FAQ (just coming to boulder, auto belays, fitness area) show a bouldering offer."
+  },
+  "ca-pinnacle-bowmanville": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. Home page: 'Auto Belays, Top Rope, Lead Climbing & Bouldering', regular hours, address 330 Lake Rd."
+  },
+  "ca-basecamp-queen": {
+   "decision": "accept",
+   "reason": "Different branch of the same chain at a different address, not a duplicate of the existing record(s) seed-464 (distances in reconcile.md): Location page shows 186 Spadina Ave, hours and the bouldering programme (intro bouldering, Boulder 101/201, group boulder). Second Basecamp site; the existing Bouldeer record is the Bloor St W gym (677 Bloor St W).",
+   "reviewed_against": [
+    "seed-464"
+   ]
+  },
+  "ca-hogtown-boulders": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. Home page lists the address and daily hours; pricing page sells Intro to Bouldering courses and memberships. Home page also advertises a further 'location now open' (not identified, see MANUAL-CHECK)."
+  },
+  "ca-boulder-parc": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. Home and visit pages: address, opening hours, 'start having fun bouldering', intro bouldering class, pricing and memberships."
+  },
+  "ca-rock-on-toronto": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. Home page: 'New to Bouldering?', public staffed hours Mon-Fri 4-10 pm and Sat-Sun 10-8 with day pass $24, 24/7 member access. Address from the site listing/directory (474 Front St E Unit 4); home page does not repeat it."
+  },
+  "ca-toronto-climbing-academy": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. Home page: open 7 days a week, 'dramatic bouldering area with 60+ boulder problems', top rope, lead and 10 auto-belays since 1993."
+  },
+  "ca-alt-rock-barrie": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. Home page: 'Climb - bouldering', rates and address; FAQ explains bouldering. Rope offer not confirmed so types are bouldering only."
+  },
+  "ca-core-cambridge": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. Home page: 'a premier bouldering gym based in Cambridge', hours, address."
+  },
+  "ca-j2-london": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. Home page: hours, address, day-use prices, adult bouldering class; sister gym of Junction Climbing Centre."
+  },
+  "ca-junction-london": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. Home page: 'London's largest climbing gym, offering some of Ontario's best bouldering, top-roping and lead climbing'; operating hours listed."
+  },
+  "ca-windsor-rock-gym": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. Home page: 'designed specifically for bouldering', address 1215 Walker Road, hours Tue-Fri 2-11 pm, weekend noon-6 pm, Monday closed."
+  },
+  "ca-guelph-grotto": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. About page: 'massive bouldering areas', 45 lead routes and about 100 top-rope routes, Moon and Kilter boards; home page lists 199 Victoria Rd S and hours (own map embed agrees with the OSM node)."
+  },
+  "ca-boiler-room-kingston": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. First-visit page: 'five types of climbing including bouldering, auto-belays, top rope, lead and speed climbing'; prices and memberships page live. Address from directory (4 Cataraqui St) plus own site title."
+  },
+  "ca-klimat-ottawa": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. Home page: 'bouldering or training experience', gym hours Mon-Sat 7-23 and Sunday 7-22, cafe. Chain also has a Wakefield (QC) gym."
+  },
+  "ca-boulderz-toronto-junction": {
+   "decision": "same-as",
+   "same_as": "seed-462",
+   "reason": "Same gym: Boulderz Climbing Centre Toronto is The Junction (1444 Dupont St Unit 16); the chain lists exactly three gyms (Etobicoke, Toronto Junction, Mississauga) matching the three existing Boulderz records. The existing pin is 4.3 km from the candidate pin, which is OSM node 6268050078 tagged 1444 Dupont Street with the gym's website, so location-update is justified.",
+   "followup": "location-update"
+  },
+  "ca-rock-oasis-toronto": {
+   "decision": "same-as",
+   "same_as": "seed-463",
+   "reason": "Same gym: The Rock Oasis, own site gives 204-388 Carlaw Ave. The existing pin is 6.5 km from the candidate pin; the candidate pin agrees with the Nominatim house-number match for 388 Carlaw Ave (about 50 m from) the gym's OSM node 10863606071, so location-update is justified.",
+   "followup": "location-update"
+  },
+  "ca-shakti-montreal": {
+   "decision": "accept",
+   "reason": "Distinct gym from Allez Up Mile End (ca-allezup-mile-end) although the importer flags both 50 m apart: Shakti (175 rue Saint-Viateur Est, own site shaktirockgym.com, 'centre d'escalade de bloc') and Allez Up (5600 avenue de Gaspé, allezup.com) are separate operators with separate live sites and hours at the same corner. Owner may want to confirm they are two venues (see MANUAL-CHECK).",
+   "reviewed_against": [
+    "ca-allezup-mile-end"
+   ]
+  },
+  "ca-allezup-mile-end": {
+   "decision": "accept",
+   "reason": "Distinct gym from Shakti Rock Gym (ca-shakti-montreal) although the importer flags both 50 m apart: Allez Up Mile End (5600 avenue de Gaspé, allezup.com, chain of three) and Shakti Rock Gym (175 rue Saint-Viateur Est, shaktirockgym.com) each have their own live site with own hours, prices and address; they are neighbouring venues at the Gaspé / Saint-Viateur corner. seed-471 is the Pointe-Saint-Charles gym of the same chain, 5.4 km away.",
+   "reviewed_against": [
+    "ca-shakti-montreal",
+    "seed-471"
+   ]
+  },
+  "ca-allezup-verdun": {
+   "decision": "accept",
+   "reason": "Different branch of the same chain at a different address, not a duplicate of the existing record(s) seed-471 (distances in reconcile.md): Location page headed 'Bouldering | Training' with address and hours; 'Try bouldering' first-visit page.",
+   "reviewed_against": [
+    "seed-471"
+   ]
+  },
+  "ca-allezup-pointe-st-charles": {
+   "decision": "same-as",
+   "same_as": "seed-471",
+   "reason": "Importer match: Allez Up (Pointe-Saint-Charles), 0 m from seed-471, same chain and address (1555 Saint-Patrick). The chain home page lists three gyms; this is the existing one."
+  },
+  "ca-blocshop-hochelaga": {
+   "decision": "accept",
+   "reason": "Different branch of the same chain at a different address, not a duplicate of the existing record(s) seed-470 (distances in reconcile.md): Location page: address, regular hours (Mon-Fri 10-23, weekend 9-21); FAQ explains bouldering ('le bloc offre des défis pour tous les niveaux'). The existing Bouldeer record is Bloc Shop Chabanel.",
+   "reviewed_against": [
+    "seed-470"
+   ]
+  },
+  "ca-blocshop-mile-ex": {
+   "decision": "accept",
+   "reason": "Different branch of the same chain at a different address, not a duplicate of the existing record(s) seed-470 (distances in reconcile.md): Location page: 'Bloc Shop 3.0 ... Dark Room, a section for old-school blocs', Kilter Board, address 6595A Saint-Urbain, hours Mon-Fri 10-23.",
+   "reviewed_against": [
+    "seed-470"
+   ]
+  },
+  "ca-zero-gravite-montreal": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. Home page: 'Moulinette | Premier de cordée | Bloc', three climbing disciplines plus yoga studio; opening hours Mon-Fri 6:30-22:30. Climbing types page: 'Escalade sur bloc, ages 12+'."
+  },
+  "ca-le-mouv-montreal": {
+   "decision": "same-as",
+   "same_as": "seed-1749",
+   "reason": "Same gym: Le Mouv' espace bloc, same name, own site gives 3811 rue Everett. The existing pin is 625 m from the candidate pin, which is OSM node 9354573855 (tagged 3811 Rue Everett, sport=climbing), so location-update is justified.",
+   "followup": "location-update"
+  },
+  "ca-delire-pierre-bertrand": {
+   "decision": "accept",
+   "reason": "Different branch, not a duplicate: it has its own address and its own page on the operator's site (distances in reconcile.md), the importer finds no co-located gym. Flags reviewed: ca-delire-levis, ca-delire-sainte-foy. Contact page: succursale Pierre-Bertrand with hours Mon-Fri 8-23; About page: 'deux succursales de blocs à Sainte-Foy et Pierre-Bertrand'. OSM node tagged 955 boulevard Pierre-Bertrand.",
+   "reviewed_against": [
+    "ca-delire-levis",
+    "ca-delire-sainte-foy"
+   ]
+  },
+  "ca-delire-sainte-foy": {
+   "decision": "accept",
+   "reason": "Different branch, not a duplicate: it has its own address and its own page on the operator's site (distances in reconcile.md), the importer finds no co-located gym. Flags reviewed: ca-delire-levis, ca-delire-pierre-bertrand. Contact page: succursale Sainte-Foy with hours Mon/Fri 8-23; About page: 'deux succursales de blocs à Sainte-Foy et Pierre-Bertrand'. OSM node tagged 950 avenue Saint-Jean-Baptiste.",
+   "reviewed_against": [
+    "ca-delire-levis",
+    "ca-delire-pierre-bertrand"
+   ]
+  },
+  "ca-delire-levis": {
+   "decision": "defer",
+   "reason": "Bouldering not confirmed: contact page shows the Lévis site (hours, open-house 24-25 Oct) but no page says whether it has bouldering; About page only calls it the fifth succursale (2023). See MANUAL-CHECK."
+  },
+  "ca-roc-gyms-quebec": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. Home page: first climbing centre in Québec (since 1993), 2350 avenue du Colisée, tariffs 2026; first-visit page: '2 salles d'escalade de bloc' plus rope and ninja areas."
+  },
+  "ca-bloc-981-gatineau": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. Home page: 'Centre d'escalade de Bloc', 79 boul. de la Gappe, hours Mon-Fri 8-23, bistro; information and tarifs page live."
+  },
+  "ca-altitude-gatineau": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. Own page: 'Boulder, top-rope, lead', main room with 100+ routes, training area, outdoor bouldering park; business hours listed. The existing Bouldeer record is Altitude Gym Kanata."
+  },
+  "ca-altitude-orleans": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. Own site: Orléans branch opened March 2023, '17,000 square feet dedicated to bouldering and training', Kilter Board, bistro; address and hours (Mon-Fri 10-23) on the chain pages."
+  },
+  "ca-hook-sainte-julie": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. Home page: 'Escalade de bloc à Sainte-Julie', 2101 H-I rue Nobel, opening hours; own map embed (45.57774,-73.33712) agrees with the OSM node (about 10 m)."
+  },
+  "ca-campus-escalade-trois-rivieres": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. Home page: '+ de 100 blocs', 6,000 sq ft expansion, tiltable spray wall; FAQ: new blocs every week; tarifs page live."
+  },
+  "ca-escarpe-drummondville": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. Home page: 'centre de bloc à Drummondville depuis 2018', address 2250 rue Demers, weekly hours."
+  },
+  "ca-crux-laval": {
+   "decision": "accept",
+   "reason": "Different branch, not a duplicate: it has its own address and its own page on the operator's site (distances in reconcile.md), the importer finds no co-located gym. Flags reviewed: ca-crux-boisbriand. Chain home page lists Laval (Galeries Laval, 1850 St-Martin Ouest): blocs, auto-assureurs, moulinette, premier de cordée, ninja warrior; hours Mon-Fri 8:30-23. The Saint-Jérôme centre is 'infos à venir' (not open).",
+   "reviewed_against": [
+    "ca-crux-boisbriand"
+   ]
+  },
+  "ca-crux-boisbriand": {
+   "decision": "accept",
+   "reason": "Different branch, not a duplicate: it has its own address and its own page on the operator's site (distances in reconcile.md), the importer finds no co-located gym. Flags reviewed: ca-crux-laval. Chain page 'Le Crux Boisbriand': blocs, auto-assureurs, moulinette, premier de cordée, ninja; address 95-A boulevard des Entreprises; hours Mon-Fri 8:30-23.",
+   "reviewed_against": [
+    "ca-crux-laval"
+   ]
+  },
+  "ca-le-spot-joliette": {
+   "decision": "defer",
+   "reason": "Pin only street-level (Nominatim found Rue Champlain, not 545); gym itself is well evidenced (blocs, hours, address). Need a building-level pin. See MANUAL-CHECK."
+  },
+  "ca-obloc-granby": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. Home page: 'Escalade de bloc intérieur', new blocs every week, hours and address 645 rue Dufferin."
+  },
+  "ca-mudra-rouyn-noranda": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. Home page: training community combining 'escalade de bloc, yoga et mouvements'; schedule and tarifs pages live (2026). Address from directory (60 avenue Principale), not repeated on the pages read."
+  },
+  "ca-vertige-sherbrooke": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. First-visit page: 'les 3 types d'escalade offerts chez Vertige: le bloc, ...'; home page has birthday offers with bloc and voie; schedule page live. Address from directory (290 Brooks)."
+  },
+  "ca-canyon-la-prairie": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. Home page: indoor climbing centre with route climbing, supervised climbing and 'escalade en bloc', address 1775 chemin de St-Jean; own map embed (45.40782,-73.46974) agrees with the OSM node."
+  },
+  "ca-laccroche-levis": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. Tariff page: entry 'pour les grimpeurs de bloc, ou les grimpeurs accrédités en voie'; school lists bloc courses. OSM node tagged 345 rue Aubert, Lévis; own map embed agrees (46.77284,-71.14211)."
+  },
+  "ca-klimat-wakefield": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. Home page: 'a state of the art bouldering gym, fitness centre, studio & cafe' in Wakefield. Street address from directory (911 chemin Riverside), not shown on the page read."
+  },
+  "ca-rose-bloc-brossard": {
+   "decision": "accept",
+   "reason": "Different branch, not a duplicate: it has its own address and its own page on the operator's site (distances in reconcile.md), the importer finds no co-located gym. Flags reviewed: ca-rose-bloc-longueuil. Location page lists 1800 avenue Auguste and weekly hours; chain home page: 'Centre d'escalade de bloc Rive-Sud'. Called Brossard by the chain, in Greenfield Park (Longueuil borough).",
+   "reviewed_against": [
+    "ca-rose-bloc-longueuil"
+   ]
+  },
+  "ca-rose-bloc-longueuil": {
+   "decision": "accept",
+   "reason": "Different branch, not a duplicate: it has its own address and its own page on the operator's site (distances in reconcile.md), the importer finds no co-located gym. Flags reviewed: ca-rose-bloc-brossard. Location page lists 1100 boul. Marie-Victorin and weekly hours; chain home page: 'Centre d'escalade de bloc Rive-Sud'.",
+   "reviewed_against": [
+    "ca-rose-bloc-brossard"
+   ]
+  },
+  "ca-blocs-edmonton": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. Home page: 'your indoor climbing and bouldering gym in Edmonton', weekday/weekend hours, address 8761-51 Ave NW; pricing page live."
+  },
+  "ca-boulders-edmonton": {
+   "decision": "accept",
+   "reason": "Different branch, not a duplicate: it has its own address and its own page on the operator's site (distances in reconcile.md), the importer finds no co-located gym. Flags reviewed: ca-factory-climbing-edmonton. Rock Jungle chain site lists the Boulders location (10505 107 St NW, weekday 9-23 / weekend 8-22 hours); chain home page states age policies for bouldering. Bouldering is inferred for this site from its name and the OSM tags (sport=climbing), not from a location-specific sentence.",
+   "reviewed_against": [
+    "ca-factory-climbing-edmonton"
+   ]
+  },
+  "ca-factory-climbing-edmonton": {
+   "decision": "defer",
+   "reason": "Bouldering not confirmed: Rock Jungle pages list Factory (hours, address) without saying what climbing it offers. See MANUAL-CHECK."
+  },
+  "ca-niche-climbing-edmonton": {
+   "decision": "defer",
+   "reason": "Bouldering not confirmed: Rock Jungle page describes a 24 hr climbing gym without saying whether it has bouldering. See MANUAL-CHECK."
+  },
+  "ca-vertically-inclined-edmonton": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. Home page: 'great variety of boulder, auto-belay, top rope and lead climbs'; rates page sells Adult Boulder Pass."
+  },
+  "ca-bolder-elevated-calgary": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. Location page: 'your ultimate bouldering Calgary destination. Located at 12686 48th St SE'; about page lists Elevated staff. Second Bolder gym; the existing Bouldeer record is Bolder Climbing Community (5508 1 St SE)."
+  },
+  "ca-ccc-rocky-mountain": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. Location page: walls up to 65 ft, bouldering, speed wall, ClimbPark, workout area; hours Mon-Fri 6-23. The existing Bouldeer records are Chinook and SoCal."
+  },
+  "ca-ccc-hanger": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. Location page: 'tons of bouldering terrain and great climbing angles on our 40 ft walls'; OSM node tagged 588 Aero Drive NE with hours."
+  },
+  "ca-ccc-stronghold": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. Location page: renovated gym with all new climbing walls, bouldering terrain and workout area, 140 15th Ave NW; OSM way is tagged Bouldering and Rock_Climbing."
+  },
+  "ca-hive-surrey": {
+   "decision": "accept",
+   "reason": "Different branch, not a duplicate: it has its own address and its own page on the operator's site (distances in reconcile.md), the importer finds no co-located gym. Flags reviewed: ca-hive-north-shore, ca-hive-port-coquitlam, ca-hive-winnipeg. Chain location list shows Surrey as open with address; pricing page: 'Fresh boulders set weekly at our Vancouver, North Shore, Surrey, Port Coquitlam gyms'.",
+   "reviewed_against": [
+    "ca-hive-north-shore",
+    "ca-hive-port-coquitlam",
+    "ca-hive-winnipeg"
+   ]
+  },
+  "ca-hive-port-coquitlam": {
+   "decision": "accept",
+   "reason": "Different branch, not a duplicate: it has its own address and its own page on the operator's site (distances in reconcile.md), the importer finds no co-located gym. Flags reviewed: ca-hive-north-shore, ca-hive-surrey, ca-hive-winnipeg. Chain location list shows Port Coquitlam as open with address; pricing page names it among the gyms with fresh boulders weekly.",
+   "reviewed_against": [
+    "ca-hive-north-shore",
+    "ca-hive-surrey",
+    "ca-hive-winnipeg"
+   ]
+  },
+  "ca-hive-north-shore": {
+   "decision": "accept",
+   "reason": "Different branch, not a duplicate: it has its own address and its own page on the operator's site (distances in reconcile.md), the importer finds no co-located gym. Flags reviewed: ca-hive-port-coquitlam, ca-hive-surrey, ca-hive-winnipeg, seed-466. Chain location list shows North Shore as open with address; pricing page: fresh boulders set weekly at the North Shore gym, which also hosts studio classes.",
+   "reviewed_against": [
+    "ca-hive-port-coquitlam",
+    "ca-hive-surrey",
+    "ca-hive-winnipeg",
+    "seed-466"
+   ]
+  },
+  "ca-hive-winnipeg": {
+   "decision": "defer",
+   "reason": "Bouldering not confirmed: location page shows hours, Kilter board and hangboards but no page says Winnipeg is a bouldering gym (the chain's weekly-boulders sentence names only the BC gyms). See MANUAL-CHECK."
+  },
+  "ca-coastal-climbing-surrey": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. Facility page: 'top-rope climbing, lead climbing and bouldering'; location page: #202-7728 128 Street and business hours. Formerly Vertical Reality (directory)."
+  },
+  "ca-project-abbotsford": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. New-climbers page lists bouldering as the first way to start; contact page gives the address. Rates page live."
+  },
+  "ca-project-cloverdale": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. Home page: '8000 square feet of state of the art bouldering'; new-climbers page: 'We are a Bouldering Gym'; rates page lists bouldering drop-in $24."
+  },
+  "ca-project-chilliwack": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. New-climbers page: 'We are a Bouldering Gym!'; contact page: address and hours; rates page live."
+  },
+  "ca-climb-base5-coquitlam": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. Home page lists Coquitlam (98 Brigantine Dr) with hours and a 'start with bouldering and auto-belays' first visit; memberships page: both gyms have top-rope, lead, auto-belays and indoor bouldering. The existing Bouldeer record is Climb Base5 North Vancouver."
+  },
+  "ca-boulderhouse-victoria": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. Location page: climbing circuits, 2829 Quesnel St, weekly hours; 'bouldering explained' first-visit page."
+  },
+  "ca-boulderhouse-langford": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. Location page: 'BoulderHouse is excited to partner with the City of Langford to introduce bouldering', 1109 Langford Pkwy, hours Mon-Fri 10-22."
+  },
+  "ca-romper-room-nanaimo": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. Home page: top rope and lead complemented by 'a unique bouldering cave', auto-belays and a training area with two MoonBoards; address and weekly hours."
+  },
+  "ca-beyond-the-crux-kelowna": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. Home page: 'No experience required for top rope climbing or bouldering. Lead climbing is available', weekday hours, address #5-685 Finns Road."
+  },
+  "ca-cliffside-kamloops": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. Home page: memberships for 'both rope and bouldering'; about page: 'both top rope climbing and bouldering'; address 954B Laval Cres."
+  },
+  "ca-ground-up-squamish": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. Home page: 'Rock Climbing and Bouldering Gym in Squamish', hours, bouldering area set on Tuesdays; address 1201 Commercial Way #207."
+  },
+  "ca-on-the-rocks-campbell-river": {
+   "decision": "defer",
+   "reason": "Pin only street-level on a long highway (North Island Hwy); gym itself is well evidenced (climbing + boulder, hours). Need a building-level pin. See MANUAL-CHECK."
+  },
+  "ca-spirit-rock-kimberley": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. About page: kids' area, bouldering wall, Kilter training board, beginner routes and long overhanging technical climbs; home page lists a bouldering comp on 7 Nov 2026. Address from directory (110 Deer Park Ave)."
+  },
+  "ca-whistler-core": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. About page: climbing gym with bouldering, top-roping, auto-belays and a Tension training wall; location and general hours listed."
+  },
+  "ca-hangar-sechelt": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. Home page: 'a bouldering-only gym that provides members with 24/7 access'; public-hours page lists drop-in hours, shoe rental and pricing. Address from directory."
+  },
+  "ca-vertical-adventures-winnipeg": {
+   "decision": "accept",
+   "reason": "Street-level flag accepted: pin is the place pin of the Google map embed on the gym's own site, within 80 m of the Nominatim match for Paramount Road. Bouldering rests on the FAQ ('a large portion of the gym is bouldering'); the site is the only source."
+  },
+  "ca-grip-it-caswell": {
+   "decision": "accept",
+   "reason": "Different branch, not a duplicate: it has its own address and its own page on the operator's site (distances in reconcile.md), the importer finds no co-located gym. Flags reviewed: ca-grip-it-nelson. Home page: 'Saskatchewan's largest indoor climbing facility offering both route climbing and bouldering'; contact page: hours 10-22 daily.",
+   "reviewed_against": [
+    "ca-grip-it-nelson"
+   ]
+  },
+  "ca-grip-it-nelson": {
+   "decision": "accept",
+   "reason": "Different branch, not a duplicate: it has its own address and its own page on the operator's site (distances in reconcile.md), the importer finds no co-located gym. Flags reviewed: ca-grip-it-caswell. Home page: 'Grip It Nelson ... 125 linear feet of various bouldering terrain, 5 autobelay walls, Kilterboard'; hours 10-22 (to 23 Fridays).",
+   "reviewed_against": [
+    "ca-grip-it-caswell"
+   ]
+  },
+  "ca-seven-bays-gottingen": {
+   "decision": "accept",
+   "reason": "Different branch, not a duplicate: it has its own address and its own page on the operator's site (distances in reconcile.md), the importer finds no co-located gym. Flags reviewed: ca-seven-bays-dartmouth. Location page: 'a carefully curated bouldering experience and training facilities', address 2019 Gottingen St, weekly hours; first-visit page explains bouldering rules.",
+   "reviewed_against": [
+    "ca-seven-bays-dartmouth"
+   ]
+  },
+  "ca-seven-bays-bayers-lake": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. Location page: bouldering experience, address 114 Chain Lake Dr, hours Mon-Tue 8-23."
+  },
+  "ca-seven-bays-dartmouth": {
+   "decision": "accept",
+   "reason": "Different branch, not a duplicate: it has its own address and its own page on the operator's site (distances in reconcile.md), the importer finds no co-located gym. Flags reviewed: ca-seven-bays-gottingen. Location page: 'the newest Seven Bays location', gathering spot for bouldering and training; address 201 Brownlow, hours Mon-Wed 8-23.",
+   "reviewed_against": [
+    "ca-seven-bays-gottingen"
+   ]
+  },
+  "ca-east-peak-halifax": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. Home page: 'lots of top rope but also a dense bouldering wall'; contact page: 6408 Quinpool Rd, hours, 'unlimited access to bouldering and auto belays' pass; first-visit page embeds a map at 44.64435,-63.60055."
+  },
+  "ca-wallnuts-st-johns": {
+   "decision": "defer",
+   "reason": "Pin only street-level (Old Pennywell Rd, no house match) and the importer flags it far from other gyms; gym itself is well evidenced (bouldering walls, address). Need a building-level pin. See MANUAL-CHECK."
+  },
+  "ca-fitrocks-saint-john": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. Home page menu: Facility, Bouldering, Training Areas, Rope Walls; hours 24/7; address 40 Ashburn Lake Road, Unit 24; footer 2026. Access model for non-members (24/7) not checked."
+  },
+  "ca-fitrocks-moncton": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. First-visit page: 'Welcome to Fit Rocks Moncton ... bouldering is accessible to any level of climber'; rates page live. Street address from the directory (290 Baig Blvd), not repeated on the pages read."
+  },
+  "ca-rock-and-chalk-newmarket": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. Climb-and-pint page: after a class 'you are welcome to stay to use any of the auto belays and boulder'; home page lists address and phone; harness rental. Directory also lists the gym; own pages read show the bouldering line only once."
+  },
+  "ca-rock-and-rope-peterborough": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. Home page lists address and rates; the teen-club page mentions 'indoor rock climbing and bouldering'. Bouldering offer is only shown on that programme page; rope offer implied by the name but not stated."
+  },
+  "ca-crag-x-victoria": {
+   "decision": "accept",
+   "reason": "Official pages read 2026-10-06. Home page: 'two large bouldering areas and an overhanging lead-only wall', routes 2 m apart, all top-rope routes leadable; contact page: 769 Pandora Avenue."
+  },
+  "ca-climbarq-cranbrook": {
+   "decision": "accept",
+   "reason": "Street-level flag accepted: pin is the place pin of the Google map embed on the gym's own site (49.5342, -115.7647), marked street precision because the embed cannot be told apart from a viewport centre; Nominatim only finds Industrial Road 2. Bouldering rests on one sentence of the first-visit page ('autobelays ... as well as bouldering')."
+  },
+  "ca-flux-rossland": {
+   "decision": "defer",
+   "reason": "Bouldering rests only on blog posts about a boulder comp; no page describing the gym's walls. See MANUAL-CHECK."
+  }
+ }
+}

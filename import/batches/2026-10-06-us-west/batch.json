@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-06-us-west",
+  "description": "Regional research \"USA: West (states with no Bouldeer coverage)\": 53 new gym(s) accepted of 60 candidate(s)",
+  "created": "2026-10-06",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-10-06-us-west",
+    "section_sha256": "eeab58e40817d7f4d615915f7e806de8294b1888855fa5028b5513d2ecbc2837",
+    "sources_sha256": "b7eec67344d3699e25c28664ffb5db252fa6527bc402ba6b6b1a9d8c5e6ce0df",
+    "candidates_sha256": "522eadce51697d6499a8baf1c9eac33ee14d5acca57eece19b232854bdcb76b3",
+    "reconcile_sha256": "2322fca5b7178203b9fd75f90857db38aa16ca0266db4f9f9682ed07f16039ff",
+    "review_sha256": "82541fc241569eabe5035608ea5d1fd4175590309886904d35aad0b982b28094",
+    "candidates": 60,
+    "staged": 53,
+    "decisions": {
+      "accept": 53,
+      "defer": 6,
+      "reject": 1
+    }
+  },
+  "index_at_staging": {
+    "sha256": "27073d25c2df373c17caef0c24ebfe759b8d457953a461c62786486d588e661d",
+    "count": 2438
+  }
+}

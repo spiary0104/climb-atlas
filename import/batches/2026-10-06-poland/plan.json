@@ -1,0 +1,115 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-06-poland",
+ "index": {
+  "sha256": "0ac83e13fbb1933549808109d007775fe7c0be30913276b65751eac83d264b20",
+  "count": 3100,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-06-jp-chubu",
+  "2026-10-06-jp-kansai",
+  "2026-10-06-jp-kanto",
+  "2026-10-06-jp-kyushu-hokkaido",
+  "2026-10-06-kr-seoul"
+ ],
+ "counts": {
+  "records": 10,
+  "new": 10,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "8442f9363f4c981582565c785f3f1d9efc01f812532e259a37ed3acbe3df3206",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-330bee3957",
+   "id_frozen": true,
+   "name": "Murall Gdańsk",
+   "country": "PL"
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-8d95f7b16d",
+   "id_frozen": true,
+   "name": "Murall Górczewska",
+   "country": "PL"
+  },
+  {
+   "line": 3,
+   "class": "new",
+   "id": "g-8deb5db5eb",
+   "id_frozen": true,
+   "name": "Problem Bouldering",
+   "country": "PL"
+  },
+  {
+   "line": 4,
+   "class": "new",
+   "id": "g-594ff774cf",
+   "id_frozen": true,
+   "name": "LIMBO Bouldering",
+   "country": "PL"
+  },
+  {
+   "line": 5,
+   "class": "new",
+   "id": "g-1716753043",
+   "id_frozen": true,
+   "name": "BLO Katowice",
+   "country": "PL"
+  },
+  {
+   "line": 6,
+   "class": "new",
+   "id": "g-374c9207ae",
+   "id_frozen": true,
+   "name": "Poziom 450",
+   "country": "PL"
+  },
+  {
+   "line": 7,
+   "class": "new",
+   "id": "g-02c591a744",
+   "id_frozen": true,
+   "name": "Bald Port",
+   "country": "PL"
+  },
+  {
+   "line": 8,
+   "class": "new",
+   "id": "g-4e5d3ef7e5",
+   "id_frozen": true,
+   "name": "VOLT Boulderownia Łódź",
+   "country": "PL"
+  },
+  {
+   "line": 9,
+   "class": "new",
+   "id": "g-de64c0c99d",
+   "id_frozen": true,
+   "name": "Centrum Wspinaczkowe Spider",
+   "country": "PL"
+  },
+  {
+   "line": 10,
+   "class": "new",
+   "id": "g-bf3e47bb00",
+   "id_frozen": true,
+   "name": "Centrum Wspinaczkowe Flash",
+   "country": "PL"
+  }
+ ]
+}

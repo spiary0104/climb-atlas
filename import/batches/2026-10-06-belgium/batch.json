@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-06-belgium",
+  "description": "Regional research \"Belgium: coverage gap\": 17 new gym(s) accepted of 21 candidate(s)",
+  "created": "2026-10-06",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-10-06-belgium",
+    "section_sha256": "997cec7587b7a5d88482bf6a4b9f2cad19619c9c54948fa99e86ed97069e5827",
+    "sources_sha256": "2f7efb51d23cf82b202a2f200df294ab6d9864618980e22cc2b8b285e95ce1dc",
+    "candidates_sha256": "58634f23a4448ec4f73cedbb5cb540280ca46580c414e4e1c918b1a5f0eeb642",
+    "reconcile_sha256": "accec3eea4cca63927d199ced4afdad4316521515a8e4b59557d1c9f0ce9d644",
+    "review_sha256": "55fef65261737cdc86fc1780365a808b3ec9934d92002babefeaa72aa266b922",
+    "candidates": 21,
+    "staged": 17,
+    "decisions": {
+      "accept": 17,
+      "defer": 4
+    }
+  },
+  "index_at_staging": {
+    "sha256": "27073d25c2df373c17caef0c24ebfe759b8d457953a461c62786486d588e661d",
+    "count": 2438
+  }
+}

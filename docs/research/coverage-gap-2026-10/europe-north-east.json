@@ -1,0 +1,2233 @@
+{
+ "group": "europe-north-east",
+ "researched": "2026-10-06",
+ "countries": [
+  {
+   "cc": "SE",
+   "name": "Sweden",
+   "est_low": 50,
+   "est_mid": 62,
+   "est_high": 80,
+   "confidence": "low",
+   "method": "No national census exists (federation says most walls are not club-linked). Bottom-up: chain branch counts (Klattercentret 8, Klatterverket 2+) plus city guides plus small-town directory hits (Vaxjo, Karlstad, Eskilstuna, Visby, Hoganas, Skovde); ~80 federation clubs of which perhaps half run a public bouldering-capable hall. Directories are thin: climbing-gyms.com 28, indoorclimbing.com 18, boulderinglist 15 (all undercount).",
+   "sources": [
+    {
+     "title": "Svenska Klatterforbundet - clubs",
+     "url": "https://www.klatterforbundet.se/om-forbundet/klubbar/",
+     "says": "~80 member clubs, 16k+ members; federation has no insight into most non-club commercial walls"
+    },
+    {
+     "title": "Klattercentret",
+     "url": "https://www.klattercentret.se/",
+     "says": "8 sites: Solna, Telefonplan, Akalla, Malmo, Helsingborg, Uppsala, Vasteras, Partille (search also cites Gallerian Stockholm)"
+    },
+    {
+     "title": "Thatsup Stockholm guide",
+     "url": "https://thatsup.se/stockholm/guide/klattring-i-stockholm",
+     "says": "Stockholm: Klattercentret x3, BLX, Klatterverket x2, Bouldering Stockholm, Karbin, Moumo"
+    },
+    {
+     "title": "climbing-gyms.com Sweden",
+     "url": "https://climbing-gyms.com/browse/europe/sweden",
+     "says": "28 gyms in 20 cities incl. Skovde, Vaxjo, Stenkullen, Askim, Brastad; likely not independent of Bouldeer-style data"
+    },
+    {
+     "title": "indoorclimbing.com Sweden",
+     "url": "https://www.indoorclimbing.com/sweden.html",
+     "says": "18 gyms; adds Vaxjo (Idrottshuset, Wallride), Karlstad K3, Eskilstuna KK, Visby KK, Hoganas Boulder Park, Borgholm"
+    }
+   ],
+   "cities": [
+    {
+     "city": "Stockholm",
+     "est": 18,
+     "bouldeer": 9,
+     "notes": "Klattercentret x4 (Gallerian missing), Klatterverket x2, Moumo, BLX, Karbin, Bouldering Sthlm + suburban club halls"
+    },
+    {
+     "city": "Goteborg",
+     "est": 9,
+     "bouldeer": 6,
+     "notes": "Backa Boulder, Fysiken, Klatterdomen, Klatterfabriken, Klattercentret Partille, Klatterlabbet, Stenkullen/Askim area"
+    },
+    {
+     "city": "Malmo/Lund",
+     "est": 8,
+     "bouldeer": 4,
+     "notes": "Klattercentret Malmo, Beta Boulders, Malmo KK, Skanes KK + Hoganas/Helsingborg ring"
+    },
+    {
+     "city": "Uppsala",
+     "est": 3,
+     "bouldeer": 1,
+     "notes": "Klattercentret + club halls"
+    },
+    {
+     "city": "Linkoping/Norrkoping",
+     "est": 5,
+     "bouldeer": 3,
+     "notes": "Hangaren, Urban Boulders, Klatterhallen Norrkoping"
+    },
+    {
+     "city": "Vasteras",
+     "est": 2,
+     "bouldeer": 1,
+     "notes": "Klattercentret + club"
+    },
+    {
+     "city": "Umea",
+     "est": 3,
+     "bouldeer": 0,
+     "notes": "No source fetched - likely 2-3 halls, unverified"
+    },
+    {
+     "city": "Vaxjo",
+     "est": 3,
+     "bouldeer": 0,
+     "notes": "Idrottshuset + Wallride in indoorclimbing.com"
+    }
+   ],
+   "chains_missing": [
+    {
+     "chain": "Klattercentret",
+     "branches_est": 9,
+     "bouldeer_has": 7,
+     "url": "https://www.klattercentret.se/"
+    },
+    {
+     "chain": "Klatterverket",
+     "branches_est": 2,
+     "bouldeer_has": 2,
+     "url": "https://www.klatterverket.se/"
+    }
+   ],
+   "leads": [
+    {
+     "name": "Klattercentret Gallerian",
+     "city": "Stockholm",
+     "url": "https://www.klattercentret.se/"
+    },
+    {
+     "name": "Idrottshuset climbing",
+     "city": "Vaxjo",
+     "url": "https://www.indoorclimbing.com/sweden.html"
+    },
+    {
+     "name": "Wallride",
+     "city": "Vaxjo",
+     "url": "https://www.indoorclimbing.com/sweden.html"
+    },
+    {
+     "name": "Karlstad klatterklubb (K3)",
+     "city": "Karlstad",
+     "url": "https://www.indoorclimbing.com/sweden.html"
+    },
+    {
+     "name": "Eskilstuna Klatterklubb",
+     "city": "Eskilstuna",
+     "url": "https://www.indoorclimbing.com/sweden.html"
+    },
+    {
+     "name": "Visby Klatterklubb",
+     "city": "Visby",
+     "url": "https://www.indoorclimbing.com/sweden.html"
+    },
+    {
+     "name": "Hoganas Boulder Park",
+     "city": "Hoganas",
+     "url": "https://www.indoorclimbing.com/sweden.html"
+    },
+    {
+     "name": "Olands Klatterklubb",
+     "city": "Borgholm",
+     "url": "https://www.indoorclimbing.com/sweden.html"
+    },
+    {
+     "name": "Klatterlabbet (Chalmers)",
+     "city": "Goteborg",
+     "url": "https://www.goteborg.com/en/places/klatterlabbet-2"
+    },
+    {
+     "name": "unnamed gym listed in Skovde",
+     "city": "Skovde",
+     "url": "https://climbing-gyms.com/browse/europe/sweden"
+    }
+   ],
+   "notes": "Biggest uncertainty: small-town club halls. Bouldeer already has most chain branches; gaps are mid-size towns (Vaxjo, Karlstad, Umea, Skovde, Boras, Sundsvall, Kalmar etc., mostly unverified).",
+   "bouldeer": 37
+  },
+  {
+   "cc": "NO",
+   "name": "Norway",
+   "est_low": 45,
+   "est_mid": 55,
+   "est_high": 65,
+   "confidence": "medium",
+   "method": "friflyt.no states \"over 60 indoor halls\" nationwide (includes some club-only/small walls); chain tally (Klatreverket 5-6 incl. Loren 2026, Drammen, Kristiansand; Grip; Hoyt Under Taket; Bergen Klatresenter) agrees. Discounted ~10% for non-public/no-boulder walls.",
+   "sources": [
+    {
+     "title": "Friflyt - Klatring",
+     "url": "https://www.friflyt.no/klatring",
+     "says": "\"over 60 indoor climbing halls\" nationwide"
+    },
+    {
+     "title": "Klatreverket - Oslo",
+     "url": "https://klatreverket.no/oslo-klatresenter/",
+     "says": "Torshov, Lokka, Bryn (Buldreverket) + new Loren (Kanonhallen) opening summer 2026; Drammen and Kristiansand also run by chain"
+    },
+    {
+     "title": "Friflyt - klatresenter list",
+     "url": "https://www.friflyt.no/klatring/inneklatring/klatresenter",
+     "says": "Named: Grip Leangen/Sluppen (Trondheim), Vestveggen+Bryggeriet+Kokstad (Bergen), Buldreterminalen (Tromso), Hoyt Under Taket (Skien, Lorenskog), Krux Oppdal, Letohallen Eidsvoll, Oslo Mikrobuldreri"
+    },
+    {
+     "title": "Norsk-klatring - Stavanger og Sandnes",
+     "url": "https://www.norsk-klatring.no/inneklatring/klatring-i-stavanger-og-sandnes",
+     "says": "Sormarka Arena, SIS Sportssenter, Playground Forus, Bogafjellhallen (Sandnes)"
+    }
+   ],
+   "cities": [
+    {
+     "city": "Oslo",
+     "est": 14,
+     "bouldeer": 3,
+     "notes": "Klatreverket x4 (Loren new), Vulkan, Oslo Klatresenter, Mikrobuldreri, Kolsas/Baerum/Lorenskog halls"
+    },
+    {
+     "city": "Bergen",
+     "est": 7,
+     "bouldeer": 4,
+     "notes": "Vestveggen (Asane), Bryggeriet, Kokstad, Laksevag, Lehmkuhl, Bergenshallen"
+    },
+    {
+     "city": "Trondheim",
+     "est": 6,
+     "bouldeer": 3,
+     "notes": "Grip Leangen, Grip Sluppen, TKK, Buldresenter"
+    },
+    {
+     "city": "Stavanger/Sandnes",
+     "est": 5,
+     "bouldeer": 2,
+     "notes": "Sormarka Arena, SIS, Playground Forus, Klatrefabrikken"
+    },
+    {
+     "city": "Tromso",
+     "est": 3,
+     "bouldeer": 0,
+     "notes": "Buldreterminalen, Tromso Klatresenter, Tromso KK wall; Bouldeer 0"
+    },
+    {
+     "city": "Kristiansand",
+     "est": 2,
+     "bouldeer": 1,
+     "notes": "Klatreverket + Sorlandet Klatresenter"
+    },
+    {
+     "city": "Drammen",
+     "est": 2,
+     "bouldeer": 0,
+     "notes": "Klatreverket Drammen"
+    },
+    {
+     "city": "Bodo",
+     "est": 2,
+     "bouldeer": 2,
+     "notes": "Morkvedhallen, Buldrorado"
+    }
+   ],
+   "chains_missing": [
+    {
+     "chain": "Klatreverket",
+     "branches_est": 6,
+     "bouldeer_has": 2,
+     "url": "https://klatreverket.no/"
+    },
+    {
+     "chain": "Grip (Trondheim)",
+     "branches_est": 2,
+     "bouldeer_has": 0,
+     "url": ""
+    },
+    {
+     "chain": "Hoyt Under Taket",
+     "branches_est": 3,
+     "bouldeer_has": 0,
+     "url": ""
+    }
+   ],
+   "leads": [
+    {
+     "name": "Klatreverket Torshov",
+     "city": "Oslo",
+     "url": "https://klatreverket.no/torshov-klatresenter/"
+    },
+    {
+     "name": "Klatreverket Lokka",
+     "city": "Oslo",
+     "url": "https://klatreverket.no/lokka-klatresenter/"
+    },
+    {
+     "name": "Klatreverket Bryn / Buldreverket",
+     "city": "Oslo",
+     "url": "https://klatreverket.no/oslo-klatresenter/"
+    },
+    {
+     "name": "Klatreverket Loren (Kanonhallen)",
+     "city": "Oslo",
+     "url": "https://klatreverket.no/loren-klatresenter/"
+    },
+    {
+     "name": "Klatreverket Drammen",
+     "city": "Drammen",
+     "url": "https://klatreverket.no/"
+    },
+    {
+     "name": "Oslo Mikrobuldreri",
+     "city": "Oslo",
+     "url": ""
+    },
+    {
+     "name": "Vestveggen (Asane)",
+     "city": "Bergen",
+     "url": ""
+    },
+    {
+     "name": "Bryggeriet",
+     "city": "Bergen",
+     "url": ""
+    },
+    {
+     "name": "Grip Leangen",
+     "city": "Trondheim",
+     "url": ""
+    },
+    {
+     "name": "Grip Sluppen",
+     "city": "Trondheim",
+     "url": ""
+    },
+    {
+     "name": "Sormarka Arena",
+     "city": "Stavanger",
+     "url": ""
+    },
+    {
+     "name": "Playground Forus",
+     "city": "Stavanger",
+     "url": "https://playground.no/en/aktiviteter/klatring"
+    },
+    {
+     "name": "Sorlandet Klatresenter",
+     "city": "Kristiansand",
+     "url": "https://www.sorlandetklatresenter.no/"
+    },
+    {
+     "name": "Buldreterminalen",
+     "city": "Tromso",
+     "url": ""
+    },
+    {
+     "name": "Tromso Klatresenter",
+     "city": "Tromso",
+     "url": "https://www.tromsoklatresenter.no/"
+    }
+   ],
+   "notes": "Some leads may already exist in Bouldeer under other names (Trondheim Klatresenter may be Grip; Bergen Klatresenter Kokstad may be Hoyt Under Taket). Dedupe by address before importing. Bouldeer has one \"Klatreverket\" Oslo entry for a 4-5 branch chain.",
+   "bouldeer": 20
+  },
+  {
+   "cc": "DK",
+   "name": "Denmark",
+   "est_low": 30,
+   "est_mid": 38,
+   "est_high": 50,
+   "confidence": "medium",
+   "method": "Commercial chains are countable: Boulders 11 halls (+1 under construction), Beta Boulders 3, Blocs & Walls 1, plus independent boulder halls (Lillebaelt, Vejle...). Club halls: ~65 clubs claimed, about a third with public-access bouldering. betabuddy.dk lists ~30+ facilities; climbing-gyms.com 24.",
+   "sources": [
+    {
+     "title": "Boulders.dk gyms",
+     "url": "https://boulders.dk/gyms",
+     "says": "11 halls: Aarhus City/Nord/Syd/Aaby, Copenhagen Sydhavn/Valby/Hvidovre/Amager/Vanlose, Odense City, Aalborg; Odense Rosengard opening 2027"
+    },
+    {
+     "title": "BetaBuddy hall list",
+     "url": "https://www.betabuddy.dk/klatrehaller/",
+     "says": "30+ DK facilities incl. Blocs & Walls, Lillebaelt Bouldering, Vejle Bouldering, Esbjerg Boulderklub, Roskilde, Horsens, Viborg, Sonderborg clubs"
+    },
+    {
+     "title": "Fitnews - Boulders expansion",
+     "url": "https://www.fitnews.dk/klatring-i-vaekst-boulders.html",
+     "says": "Chain planned 5 to 20 halls over five years (older article)"
+    },
+    {
+     "title": "Outdoorhelte list (search snippet)",
+     "url": "https://outdoorhelte.dk/en-komplet-liste-over-klatre-klubber-i-danmark/",
+     "says": "~65 club halls and 12 commercial boulder halls (2024 snippet)"
+    }
+   ],
+   "cities": [
+    {
+     "city": "Kobenhavn",
+     "est": 14,
+     "bouldeer": 7,
+     "notes": "Boulders x5, Beta x3, Blocs&Walls, DBKK Sundholm, Norrebro KK, Roskilde/Lyngby ring"
+    },
+    {
+     "city": "Aarhus",
+     "est": 7,
+     "bouldeer": 2,
+     "notes": "Boulders x4, Aarhus Klatreklub"
+    },
+    {
+     "city": "Odense",
+     "est": 5,
+     "bouldeer": 4,
+     "notes": "Boulders Odense City + clubs"
+    },
+    {
+     "city": "Aalborg",
+     "est": 3,
+     "bouldeer": 1,
+     "notes": "Boulders Aalborg missing; Aalborg Klatreklub present"
+    },
+    {
+     "city": "Esbjerg",
+     "est": 1,
+     "bouldeer": 0,
+     "notes": "Esbjerg Boulderklub, Bramming KK"
+    },
+    {
+     "city": "Vejle/Kolding",
+     "est": 3,
+     "bouldeer": 0,
+     "notes": "Vejle Bouldering, Kolding hall"
+    }
+   ],
+   "chains_missing": [
+    {
+     "chain": "Boulders",
+     "branches_est": 11,
+     "bouldeer_has": 6,
+     "url": "https://boulders.dk/gyms"
+    },
+    {
+     "chain": "Beta Boulders",
+     "branches_est": 3,
+     "bouldeer_has": 3,
+     "url": ""
+    }
+   ],
+   "leads": [
+    {
+     "name": "Boulders Aarhus Syd",
+     "city": "Aarhus",
+     "url": "https://boulders.dk/gyms"
+    },
+    {
+     "name": "Boulders Aarhus Aaby",
+     "city": "Aarhus",
+     "url": "https://boulders.dk/gyms"
+    },
+    {
+     "name": "Boulders Hvidovre",
+     "city": "Copenhagen",
+     "url": "https://boulders.dk/gyms"
+    },
+    {
+     "name": "Boulders Vanlose",
+     "city": "Copenhagen",
+     "url": "https://boulders.dk/gyms"
+    },
+    {
+     "name": "Boulders Aalborg",
+     "city": "Aalborg",
+     "url": "https://boulders.dk/gyms"
+    },
+    {
+     "name": "Blocs & Walls",
+     "city": "Copenhagen (Refshaleoen)",
+     "url": ""
+    },
+    {
+     "name": "DBKK Sundholm",
+     "city": "Copenhagen",
+     "url": "https://www.dbkk.dk/faciliteter"
+    },
+    {
+     "name": "Lillebaelt Bouldering",
+     "city": "Middelfart",
+     "url": "https://www.betabuddy.dk/klatrehaller/"
+    },
+    {
+     "name": "Vejle Bouldering",
+     "city": "Vejle",
+     "url": "https://www.betabuddy.dk/klatrehaller/"
+    },
+    {
+     "name": "Esbjerg Boulderklub",
+     "city": "Esbjerg",
+     "url": "https://www.betabuddy.dk/klatrehaller/"
+    },
+    {
+     "name": "Roskilde Klatreklub",
+     "city": "Roskilde",
+     "url": "https://www.betabuddy.dk/klatrehaller/"
+    },
+    {
+     "name": "Aarhus Klatreklub",
+     "city": "Aarhus",
+     "url": "https://www.betabuddy.dk/klatrehaller/"
+    },
+    {
+     "name": "Ostjysk Klatreklub",
+     "city": "Horsens",
+     "url": "https://www.betabuddy.dk/klatrehaller/"
+    },
+    {
+     "name": "Viborg Klatreklub",
+     "city": "Viborg",
+     "url": "https://www.betabuddy.dk/klatrehaller/"
+    },
+    {
+     "name": "Sonderborg Klatreklub",
+     "city": "Sonderborg",
+     "url": "https://www.betabuddy.dk/klatrehaller/"
+    }
+   ],
+   "notes": "Bouldeer has 4 Odense club entries (OBK, OKK, Odense Sportsklatreklub) - club halls may have limited public access. Boulders.dk branch list is authoritative: 5 clear misses. A Bouldeer \"Boulders - Vanlose\"-type entry may exist under the old Beta Boulders Vanlose name - dedupe.",
+   "bouldeer": 14
+  },
+  {
+   "cc": "FI",
+   "name": "Finland",
+   "est_low": 34,
+   "est_mid": 40,
+   "est_high": 50,
+   "confidence": "medium",
+   "method": "Kiipeilyliitto lists 33 climbing centres (brands) in 15 cities; brands with several branches (Boulderkeskus 6 open, KiipeilyAreena 3, Tampere, Turku 5) add ~7 more sites. Cross-check: climbing-gyms.com 27 (weaker).",
+   "sources": [
+    {
+     "title": "Kiipeilyliitto - kiipeilykeskukset",
+     "url": "https://kiipeilyliitto.fi/kiipeilemaan/sisakiipeily/kiipeilykeskukset-ja-hallit-suomessa/",
+     "says": "33 centres in 15 cities; bouldering in Helsinki, Espoo, Hameenlinna, Joensuu, Jyvaskyla, Kuopio, Lahti, Lappeenranta, Mikkeli, Oulu, Porvoo, Riihimaki, Tampere, Turku, Vaasa"
+    },
+    {
+     "title": "Boulderkeskus - all locations",
+     "url": "https://www.boulderkeskus.com/en/content/9-all-locations",
+     "says": "Pasila, Konala, Herttoniemi, Espoo, Kino, Flash (kids), Turku (opening Oct 2026)"
+    },
+    {
+     "title": "climbing-gyms.com Finland",
+     "url": "https://climbing-gyms.com/browse/europe/finland",
+     "says": "27 gyms, 13 cities (not independent)"
+    }
+   ],
+   "cities": [
+    {
+     "city": "Helsinki/Espoo",
+     "est": 13,
+     "bouldeer": 8,
+     "notes": "BK x5-6, KiipeilyAreena x3, Helsinki Climbing Center, Kiipeilykeskus; Bouldeer misses BK Espoo/Flash"
+    },
+    {
+     "city": "Tampere",
+     "est": 4,
+     "bouldeer": 2,
+     "notes": "Tampereen Kiipeilykeskus, Kauppi Sports Center, Tampere Climbing Center"
+    },
+    {
+     "city": "Turku",
+     "est": 5,
+     "bouldeer": 0,
+     "notes": "Bouldertehdas, K2, Kiipeilypalatsi, Slouppi, BK Turku (Oct 2026)"
+    },
+    {
+     "city": "Oulu",
+     "est": 3,
+     "bouldeer": 2,
+     "notes": "Kaamos, Oulun Kiipeilykeskus"
+    },
+    {
+     "city": "Jyvaskyla",
+     "est": 2,
+     "bouldeer": 0,
+     "notes": "Kiipeilykeskus + Hutunki"
+    },
+    {
+     "city": "Lahti",
+     "est": 2,
+     "bouldeer": 2,
+     "notes": "Ladeo, yogaROCKS"
+    }
+   ],
+   "chains_missing": [
+    {
+     "chain": "Boulderkeskus",
+     "branches_est": 7,
+     "bouldeer_has": 4,
+     "url": "https://www.boulderkeskus.com/en/"
+    }
+   ],
+   "leads": [
+    {
+     "name": "Boulderkeskus Espoo",
+     "city": "Espoo",
+     "url": "https://www.boulderkeskus.com/en/"
+    },
+    {
+     "name": "BK Flash (kids)",
+     "city": "Espoo",
+     "url": "https://www.boulderkeskus.com/en/content/70-climbing-gym-for-kids-bk-flash"
+    },
+    {
+     "name": "Boulderkeskus Turku",
+     "city": "Turku",
+     "url": "https://www.boulderkeskus.com/en/"
+    },
+    {
+     "name": "Bouldertehdas",
+     "city": "Turku",
+     "url": ""
+    },
+    {
+     "name": "K2 Turku",
+     "city": "Turku",
+     "url": ""
+    },
+    {
+     "name": "Kiipeilypalatsi",
+     "city": "Turku",
+     "url": ""
+    },
+    {
+     "name": "Slouppi",
+     "city": "Turku",
+     "url": ""
+    },
+    {
+     "name": "Kauppi Sports Center",
+     "city": "Tampere",
+     "url": ""
+    },
+    {
+     "name": "Jyvaskylan Kiipeilykeskus",
+     "city": "Jyvaskyla",
+     "url": ""
+    },
+    {
+     "name": "Hutunki",
+     "city": "Jyvaskyla",
+     "url": ""
+    },
+    {
+     "name": "Vanaja Boulder",
+     "city": "Hameenlinna",
+     "url": ""
+    },
+    {
+     "name": "Ote",
+     "city": "Joensuu",
+     "url": ""
+    },
+    {
+     "name": "Voema",
+     "city": "Kuopio",
+     "url": ""
+    },
+    {
+     "name": "BoulderSaimaa",
+     "city": "Lappeenranta",
+     "url": ""
+    },
+    {
+     "name": "Wasaup",
+     "city": "Vaasa",
+     "url": ""
+    }
+   ],
+   "notes": "Also missing: Saimaa Stadiumi (Mikkeli), Boulder Porvoo, Rocklands (Riihimaki). Oulun Kiipeilykeskus may be Bouldeer \"Oulu Climbing Center\". URLs can be pulled from the Kiipeilyliitto page.",
+   "bouldeer": 14
+  },
+  {
+   "cc": "PL",
+   "name": "Poland",
+   "est_low": 85,
+   "est_mid": 110,
+   "est_high": 140,
+   "confidence": "medium",
+   "method": "sciany-wspinaczkowe.pl catalogues 86 walls (includes some rope-only/school walls); chain tallies (Murall, VOLT 3, Climbing Spot 2, Avatar, Groto, Bloco, Primaroca, Skarpa) and city guides add recent boulder-only openings the catalogue lacks. PZA publishes no count. Bouldeer file contains ONLY 4 cities (Warszawa, Wroclaw, Krakow, Poznan): entire Tricity, Silesia, Lodz, Szczecin, Lublin, Bialystok, Torun etc. absent.",
+   "sources": [
+    {
+     "title": "sciany-wspinaczkowe.pl",
+     "url": "https://sciany-wspinaczkowe.pl/",
+     "says": "86 climbing walls catalogued; Mazovia 8 cities, Silesia 8, Lower Silesia 5, Lesser Poland 4, W. Pomerania 3"
+    },
+    {
+     "title": "trojmiasto.pl climbing guide",
+     "url": "https://www.trojmiasto.pl/aktywne/Scianki-wspinaczkowe-2025-Gdzie-sa-w-Gdansku-Gdyni-Sopocie-Ile-kosztuja-n199308.html",
+     "says": "Tricity: Murall Gdansk (1500 m2), Triblok Gdynia, Grimpado, Elewator, Alfa, Aucca, BlokFit"
+    },
+    {
+     "title": "VOLT Boulderownia",
+     "url": "https://voltboulderownia.pl/",
+     "says": "Warsaw, Lodz, Torun"
+    },
+    {
+     "title": "BLOKatowice page",
+     "url": "https://sciany-wspinaczkowe.pl/scianka-wspinaczkowa-blokatowice/",
+     "says": "BLOKatowice 800 m2; search also surfaced Skarpa Bytom, Primaroca + Totem Bielsko-Biala, Poziom 450 Sosnowiec, Salewa Block Zabrze"
+    },
+    {
+     "title": "climbing-gyms.com Poland",
+     "url": "https://climbing-gyms.com/browse/europe/poland",
+     "says": "50 gyms in 15 cities (Warszawa 11, Wroclaw 8, Krakow 7, Poznan 5, Gdansk 4)"
+    },
+    {
+     "title": "indoorclimbing.com Poland",
+     "url": "https://www.indoorclimbing.com/poland.html",
+     "says": "17 gyms (undercount)"
+    }
+   ],
+   "cities": [
+    {
+     "city": "Warszawa",
+     "est": 18,
+     "bouldeer": 9,
+     "notes": "Murall x2-3, Makak, Volt, Bloco, Crux, Camp4, WEST, Wgore, Obiekto etc."
+    },
+    {
+     "city": "Krakow",
+     "est": 12,
+     "bouldeer": 7,
+     "notes": "Avatar, Cube, Fortress, Mood, Slab + newer boulder halls"
+    },
+    {
+     "city": "Wroclaw",
+     "est": 10,
+     "bouldeer": 8,
+     "notes": "Groto, Noise, Lokal32, WOW etc."
+    },
+    {
+     "city": "Poznan",
+     "est": 7,
+     "bouldeer": 5,
+     "notes": "Climbing Spot x2, Groto, Karma, Blok Line"
+    },
+    {
+     "city": "Trojmiasto (Gdansk/Gdynia/Sopot)",
+     "est": 9,
+     "bouldeer": 0,
+     "notes": "Murall Gdansk, Triblok, Grimpado, Elewator, Alfa, BlokFit; Bouldeer 0"
+    },
+    {
+     "city": "Katowice/Gornoslaskie",
+     "est": 10,
+     "bouldeer": 0,
+     "notes": "BLOKatowice, Skarpa Bytom, Poziom 450, Salewa Block Zabrze, Gliwice, Tychy; Bouldeer 0"
+    },
+    {
+     "city": "Lodz",
+     "est": 4,
+     "bouldeer": 0,
+     "notes": "VOLT Lodz + others; Bouldeer 0"
+    },
+    {
+     "city": "Szczecin",
+     "est": 3,
+     "bouldeer": 0,
+     "notes": "Big Wall Szczecin + others; Bouldeer 0"
+    }
+   ],
+   "chains_missing": [
+    {
+     "chain": "Murall",
+     "branches_est": 4,
+     "bouldeer_has": 2,
+     "url": "https://gdansk.murall.pl/"
+    },
+    {
+     "chain": "VOLT Boulderownia",
+     "branches_est": 3,
+     "bouldeer_has": 1,
+     "url": "https://voltboulderownia.pl/"
+    },
+    {
+     "chain": "Bloco",
+     "branches_est": 3,
+     "bouldeer_has": 0,
+     "url": "http://bloco.pl/"
+    },
+    {
+     "chain": "Climbing Spot",
+     "branches_est": 2,
+     "bouldeer_has": 2,
+     "url": "https://www.climbingspot.pl/"
+    }
+   ],
+   "leads": [
+    {
+     "name": "Murall Gdansk",
+     "city": "Gdansk",
+     "url": "https://gdansk.murall.pl/"
+    },
+    {
+     "name": "Triblok Gdynia",
+     "city": "Gdynia",
+     "url": ""
+    },
+    {
+     "name": "Grimpado",
+     "city": "Gdansk",
+     "url": ""
+    },
+    {
+     "name": "Elewator",
+     "city": "Gdansk",
+     "url": ""
+    },
+    {
+     "name": "BlokFit",
+     "city": "Gdansk",
+     "url": ""
+    },
+    {
+     "name": "BLOKatowice",
+     "city": "Katowice",
+     "url": "https://sciany-wspinaczkowe.pl/scianka-wspinaczkowa-blokatowice/"
+    },
+    {
+     "name": "Skarpa Bytom",
+     "city": "Bytom",
+     "url": ""
+    },
+    {
+     "name": "Primaroca (Baldpol)",
+     "city": "Bielsko-Biala",
+     "url": ""
+    },
+    {
+     "name": "Poziom 450",
+     "city": "Sosnowiec",
+     "url": ""
+    },
+    {
+     "name": "Salewa Block",
+     "city": "Zabrze",
+     "url": ""
+    },
+    {
+     "name": "VOLT Lodz",
+     "city": "Lodz",
+     "url": "https://voltboulderownia.pl/"
+    },
+    {
+     "name": "VOLT Torun",
+     "city": "Torun",
+     "url": "https://voltboulderownia.pl/"
+    },
+    {
+     "name": "Big Wall Szczecin",
+     "city": "Szczecin",
+     "url": "https://bigwall.szczecin.pl/"
+    },
+    {
+     "name": "Bloco Bialystok",
+     "city": "Bialystok",
+     "url": "http://bloco.pl/"
+    },
+    {
+     "name": "Szkola wspinania 9a",
+     "city": "Zawiercie",
+     "url": ""
+    }
+   ],
+   "notes": "LARGEST ABSOLUTE GAP in this group. Bouldeer Polish gyms cluster entirely in 4 cities. Also unchecked: Lublin, Rzeszow, Bydgoszcz, Olsztyn, Opole, Kielce, Czestochowa, Zakopane.",
+   "bouldeer": 29
+  },
+  {
+   "cc": "CZ",
+   "name": "Czechia",
+   "est_low": 60,
+   "est_mid": 80,
+   "est_high": 105,
+   "confidence": "medium",
+   "method": "lamaholds.cz list of freely accessible walls/boulders: 130+ entries (many rope-only, school, gym-with-wall). Applying ~60% with real boulder offer, cross-checked by city guides (Prague 14 listed incl. Jungle branches; Brno 6; Ostrava 5; Plzen 4). Horydoly map is authoritative but unreadable.",
+   "sources": [
+    {
+     "title": "Lamaholds - Lezecke steny v CR",
+     "url": "https://www.lamaholds.cz/blog/lezecke-steny-v-cr/",
+     "says": "130+ climbing walls/boulder gyms; Praha 14, Brno 6, Ostrava 5, Plzen 4, Olomouc 2, Liberec 2"
+    },
+    {
+     "title": "Horydoly - map of artificial walls CZ/SK",
+     "url": "https://www.horydoly.cz/horolezci/umele-lezecke-steny-v-cesku-a-na-slovensku.html",
+     "says": "Continuously updated map (count not readable)"
+    },
+    {
+     "title": "VARP - Bouldering Praha",
+     "url": "https://varp.cz/en/bouldering-praha/",
+     "says": "Prague: Smichoff BoulderOffka, HUDY Karlin, LOKAL BLOK (500 m2), FreeSolo, Boulder Bar, Boulder v siti"
+    },
+    {
+     "title": "climbing-gyms.com Czechia",
+     "url": "https://climbing-gyms.com/browse/europe/czech-republic",
+     "says": "0 entries - no use"
+    }
+   ],
+   "cities": [
+    {
+     "city": "Praha",
+     "est": 20,
+     "bouldeer": 8,
+     "notes": "Missing LOKAL BLOK, Free Solo, MyWay Cakovice, more Jungle branches, Gutovka"
+    },
+    {
+     "city": "Brno",
+     "est": 9,
+     "bouldeer": 4,
+     "notes": "Missing Flash Boulder Bar, Kotelna, Klajda, Rajce, Olympia"
+    },
+    {
+     "city": "Ostrava",
+     "est": 6,
+     "bouldeer": 2,
+     "notes": "Missing Hlubina, Eliass, BLOK CENTRUM, Druzba"
+    },
+    {
+     "city": "Plzen",
+     "est": 4,
+     "bouldeer": 1,
+     "notes": "Boulder Plechovka, Hannah, Koloseum, V16"
+    },
+    {
+     "city": "Olomouc",
+     "est": 3,
+     "bouldeer": 2,
+     "notes": "Flash Wall, Pajkland present"
+    },
+    {
+     "city": "Liberec",
+     "est": 3,
+     "bouldeer": 1,
+     "notes": "Harcov, Sutr"
+    },
+    {
+     "city": "Ceske Budejovice",
+     "est": 3,
+     "bouldeer": 2,
+     "notes": "Lanovka, Limit present"
+    }
+   ],
+   "chains_missing": [
+    {
+     "chain": "Jungle (boulder)",
+     "branches_est": 5,
+     "bouldeer_has": 1,
+     "url": ""
+    },
+    {
+     "chain": "HUDY lezecke steny",
+     "branches_est": 4,
+     "bouldeer_has": 3,
+     "url": ""
+    },
+    {
+     "chain": "Tendon",
+     "branches_est": 3,
+     "bouldeer_has": 2,
+     "url": ""
+    }
+   ],
+   "leads": [
+    {
+     "name": "LOKAL BLOK",
+     "city": "Praha",
+     "url": ""
+    },
+    {
+     "name": "Free Solo",
+     "city": "Praha",
+     "url": ""
+    },
+    {
+     "name": "Boulder MyWay Cakovice",
+     "city": "Praha",
+     "url": ""
+    },
+    {
+     "name": "Gutovka",
+     "city": "Praha",
+     "url": ""
+    },
+    {
+     "name": "Flash Boulder Bar",
+     "city": "Brno",
+     "url": ""
+    },
+    {
+     "name": "Lezecke centrum Kotelna",
+     "city": "Brno",
+     "url": ""
+    },
+    {
+     "name": "Lezecke centrum Klajda",
+     "city": "Brno",
+     "url": ""
+    },
+    {
+     "name": "Lezecke centrum Rajce",
+     "city": "Brno",
+     "url": ""
+    },
+    {
+     "name": "HS Tendon Hlubina",
+     "city": "Ostrava",
+     "url": ""
+    },
+    {
+     "name": "Horolezecka stena Eliass",
+     "city": "Ostrava",
+     "url": ""
+    },
+    {
+     "name": "BLOK CENTRUM",
+     "city": "Ostrava",
+     "url": ""
+    },
+    {
+     "name": "Boulder Plechovka",
+     "city": "Plzen",
+     "url": ""
+    },
+    {
+     "name": "Lezecka stena Harcov",
+     "city": "Liberec",
+     "url": ""
+    },
+    {
+     "name": "Sutr",
+     "city": "Liberec",
+     "url": ""
+    },
+    {
+     "name": "Lezecka stena Hradec Kralove",
+     "city": "Hradec Kralove",
+     "url": ""
+    }
+   ],
+   "notes": "Prague count of 20 is an estimate; several Bouldeer Prague entries (Boulder Bar, JamJam, Trinactka) are not in the lamaholds list, so real Prague may be higher.",
+   "bouldeer": 24
+  },
+  {
+   "cc": "SK",
+   "name": "Slovakia",
+   "est_low": 30,
+   "est_mid": 40,
+   "est_high": 55,
+   "confidence": "medium",
+   "method": "zagurami.eu (Dec 2025) lists 70+ artificial walls incl. rope, school and club walls; roughly half with a proper boulder section and public access. Cross-check: climb.sk lists 34.",
+   "sources": [
+    {
+     "title": "Zagurami - umele lezecke steny prehlad",
+     "url": "https://www.zagurami.eu/umele-lezecke-steny-slovensko-prehlad/",
+     "says": "70+ facilities (Dec 2025); boulder walls flagged in Bratislava, Nitra, Sala, Zvolen, Lipt. Mikulas, Poprad, Smizany, Presov, Kosice, Stara Lubovna, Zilina"
+    },
+    {
+     "title": "Climb.sk gyms",
+     "url": "https://www.climb.sk/gym/",
+     "says": "34 artificial walls listed"
+    }
+   ],
+   "cities": [
+    {
+     "city": "Bratislava",
+     "est": 10,
+     "bouldeer": 4,
+     "notes": "Vertigo, K2, Block Dock x2, Fanatix, Spot boulder, Pavucik, Pezinok"
+    },
+    {
+     "city": "Kosice",
+     "est": 6,
+     "bouldeer": 3,
+     "notes": "T2, Steam Factory, Rozlomity, Optima, Rokodromo"
+    },
+    {
+     "city": "Zilina",
+     "est": 3,
+     "bouldeer": 3,
+     "notes": "K2 Zilina, La Skala"
+    },
+    {
+     "city": "Banska Bystrica",
+     "est": 3,
+     "bouldeer": 2,
+     "notes": "Brutal Povala, Pavuk"
+    },
+    {
+     "city": "Nitra",
+     "est": 2,
+     "bouldeer": 1,
+     "notes": "Pralez + Krskan"
+    },
+    {
+     "city": "Poprad/Tatry",
+     "est": 3,
+     "bouldeer": 1,
+     "notes": "WoodRock, Climbeer Smizany, Max Poprad"
+    }
+   ],
+   "chains_missing": [],
+   "leads": [
+    {
+     "name": "Fanatix",
+     "city": "Bratislava",
+     "url": ""
+    },
+    {
+     "name": "Spot boulder",
+     "city": "Bratislava",
+     "url": ""
+    },
+    {
+     "name": "Pavucik boulder",
+     "city": "Chorvatsky Grob",
+     "url": ""
+    },
+    {
+     "name": "Rebel Board boulder",
+     "city": "Sala",
+     "url": ""
+    },
+    {
+     "name": "Climbeer boulder",
+     "city": "Smizany",
+     "url": ""
+    },
+    {
+     "name": "Optima Kosice",
+     "city": "Kosice",
+     "url": ""
+    },
+    {
+     "name": "Rokodromo Kosice",
+     "city": "Kosice",
+     "url": ""
+    },
+    {
+     "name": "Pavuk Banska Bystrica",
+     "city": "Banska Bystrica",
+     "url": ""
+    },
+    {
+     "name": "Lezecke centrum Trencin",
+     "city": "Trencin",
+     "url": ""
+    },
+    {
+     "name": "Boulder in Ziar nad Hronom",
+     "city": "Ziar nad Hronom",
+     "url": ""
+    },
+    {
+     "name": "Stena Squash Pezinok",
+     "city": "Pezinok",
+     "url": ""
+    },
+    {
+     "name": "Max Poprad",
+     "city": "Poprad",
+     "url": ""
+    }
+   ],
+   "notes": "Bouldeer SK is relatively well covered (~47% at mid). Possible duplicates: Block Dock x2, K2 Zilina x2, Brutalka/Brutal Povala.",
+   "bouldeer": 19
+  },
+  {
+   "cc": "HU",
+   "name": "Hungary",
+   "est_low": 38,
+   "est_mid": 45,
+   "est_high": 55,
+   "confidence": "high",
+   "method": "Hungarian Climbing Federation (MHSSZ) lists 43 climbing gyms nationwide, nearly all with boulder walls. Independent search results (Debrecen, Pecs, Gyor, Miskolc, Szeged) confirm provincial gyms and add a few not on the federation list.",
+   "sources": [
+    {
+     "title": "MHSSZ Maszoterem list",
+     "url": "https://mhssz.hu/versenymaszas/maszotermek/",
+     "says": "43 gyms: Budapest ~17, Gyor 3, Pecs 2, Szekesfehervar 2, Kecskemet 2, Veszprem 2, Eger, Erd, Miskolc, Zalaegerszeg, Debrecen, Bekescsaba, Szolnok..."
+    },
+    {
+     "title": "indoorclimbing.com Hungary",
+     "url": "https://www.indoorclimbing.com/hungary.html",
+     "says": "Search surfaced Unifit Boulder Debrecen, Camp One Gym, Beta Pecs, Ibex Gyor, Factory Arena Miskolc"
+    },
+    {
+     "title": "climbing-gyms.com Hungary",
+     "url": "https://climbing-gyms.com/browse/europe/hungary",
+     "says": "18 gyms in 4 cities (weak, not independent)"
+    }
+   ],
+   "cities": [
+    {
+     "city": "Budapest",
+     "est": 25,
+     "bouldeer": 15,
+     "notes": "Missing Climberry, Klebi, plus others"
+    },
+    {
+     "city": "Gyor",
+     "est": 3,
+     "bouldeer": 0,
+     "notes": "Ibex, Torony Climbing, Boulder Barlang"
+    },
+    {
+     "city": "Pecs",
+     "est": 2,
+     "bouldeer": 0,
+     "notes": "Camp One, Beta"
+    },
+    {
+     "city": "Szekesfehervar",
+     "est": 2,
+     "bouldeer": 0,
+     "notes": "Redrock, Hi5"
+    },
+    {
+     "city": "Debrecen",
+     "est": 2,
+     "bouldeer": 0,
+     "notes": "Csipi, Unifit"
+    },
+    {
+     "city": "Veszprem",
+     "est": 2,
+     "bouldeer": 1,
+     "notes": "Liget Boulder + university club"
+    }
+   ],
+   "chains_missing": [],
+   "leads": [
+    {
+     "name": "Climberry Boulder",
+     "city": "Budapest",
+     "url": ""
+    },
+    {
+     "name": "Klebi Maszoterem",
+     "city": "Budapest",
+     "url": ""
+    },
+    {
+     "name": "Redrock Falmaszoterem",
+     "city": "Szekesfehervar",
+     "url": ""
+    },
+    {
+     "name": "Hi5 Boulder",
+     "city": "Szekesfehervar",
+     "url": ""
+    },
+    {
+     "name": "Manimal Boulder",
+     "city": "Eger",
+     "url": ""
+    },
+    {
+     "name": "Unity Boulder",
+     "city": "Erd",
+     "url": ""
+    },
+    {
+     "name": "Camp One Gym",
+     "city": "Pecs",
+     "url": ""
+    },
+    {
+     "name": "Beta Climbing & Bouldering",
+     "city": "Pecs",
+     "url": ""
+    },
+    {
+     "name": "Ibex Sport Falmaszas",
+     "city": "Gyor",
+     "url": ""
+    },
+    {
+     "name": "Torony Climbing",
+     "city": "Gyor",
+     "url": ""
+    },
+    {
+     "name": "Boulder Barlang",
+     "city": "Gyor",
+     "url": ""
+    },
+    {
+     "name": "Csipi Boulder",
+     "city": "Debrecen",
+     "url": ""
+    },
+    {
+     "name": "Unifit Boulder",
+     "city": "Debrecen",
+     "url": ""
+    },
+    {
+     "name": "Factory Arena",
+     "city": "Miskolc",
+     "url": ""
+    },
+    {
+     "name": "Zenit Boulder",
+     "city": "Zalaegerszeg",
+     "url": ""
+    }
+   ],
+   "notes": "Also Goat Boulder + Yellowstone (Kecskemet), Batta Xtreme (Szazhalombatta), Bekescsaba M-Fit, Kreativ DSE (Szolnok), Focus Boulder (Alsopahok). All URLs findable via mhssz.hu list.",
+   "bouldeer": 17
+  },
+  {
+   "cc": "SI",
+   "name": "Slovenia",
+   "est_low": 18,
+   "est_mid": 23,
+   "est_high": 30,
+   "confidence": "low",
+   "method": "PZS register lists 170+ artificial walls but mostly school/club gymnasium walls. Public centres with boulder offer found by name: Ljubljana 3, Kranj 2, Celje 2, Maribor 1-2, Slovenska Bistrica, Verd, Koper, Novo mesto, Radovljica, Sempeter (all already in Bouldeer). Remainder is an estimate for unverified towns.",
+   "sources": [
+    {
+     "title": "PZS - umetne stene",
+     "url": "https://ksp.pzs.si/plezalisca.php?tip=3",
+     "says": "170+ entries, mostly school halls; no gym-level breakdown"
+    },
+    {
+     "title": "Balvanija",
+     "url": "https://balvanija.si/",
+     "says": "Bolder centre Ljubljana, 350 m2"
+    },
+    {
+     "title": "Bolder Scena",
+     "url": "https://bolderscena.si/en/",
+     "says": "Ljubljana Siska and Kranj"
+    },
+    {
+     "title": "PC Slovenska Bistrica",
+     "url": "https://pcsb.si/plezalni-center/prostori/",
+     "says": "2000 m2 incl. outdoor; already in Bouldeer"
+    }
+   ],
+   "cities": [
+    {
+     "city": "Ljubljana (+Kranj)",
+     "est": 9,
+     "bouldeer": 6,
+     "notes": "PCL, Bolder Scena x2, Balvanija, Plezarna, Verd + small ones"
+    },
+    {
+     "city": "Maribor",
+     "est": 3,
+     "bouldeer": 2,
+     "notes": "Klajmber + university walls"
+    },
+    {
+     "city": "Celje",
+     "est": 2,
+     "bouldeer": 2,
+     "notes": "PC Celje, Bolderaj"
+    },
+    {
+     "city": "Koper",
+     "est": 1,
+     "bouldeer": 1,
+     "notes": "Plus Climbing"
+    }
+   ],
+   "chains_missing": [],
+   "leads": [],
+   "notes": "Could not locate additional named gyms beyond the Bouldeer list. Bouldeer likely covers the major centres; remaining gap is small-town halls with no web footprint found.",
+   "bouldeer": 14
+  },
+  {
+   "cc": "HR",
+   "name": "Croatia",
+   "est_low": 15,
+   "est_mid": 19,
+   "est_high": 25,
+   "confidence": "medium",
+   "method": "HSPS (federation) lists 14 halls of which 12 have bouldering; adding halls found elsewhere (Marulianus & Lapis Split, Vulkan Rijeka, Mo fit Zagreb, Fothia Velika Gorica, Dom mladih Split boulder, Koprivnica) gives ~19.",
+   "sources": [
+    {
+     "title": "HSPS dvorane",
+     "url": "https://hsps-climbing.org/dvorane/",
+     "says": "14 halls, 12 with bouldering"
+    },
+    {
+     "title": "hr.wikipedia list",
+     "url": "https://hr.wikipedia.org/wiki/Popis_objekata_s_umjetnim_stijenama_za_%C5%A1portsko_penjanje_u_Hrvatskoj",
+     "says": "13 indoor sites; adds Rijeka Vulkan + Kantrida, Zagreb Mo fit, Sisak, Bjelovar, Ivanec"
+    },
+    {
+     "title": "Journal.hr Zagreb",
+     "url": "https://www.journal.hr/journal-man/journal-man-dvorane-za-sportsko-penjanje-zagreb/",
+     "says": "Fothia Velesajam, Fothia Zapad (rope), The Hive"
+    }
+   ],
+   "cities": [
+    {
+     "city": "Zagreb",
+     "est": 6,
+     "bouldeer": 3,
+     "notes": "Velesajam, Hive, Boulder Zona, Fothia Zapad, Mo fit, V. Gorica"
+    },
+    {
+     "city": "Split",
+     "est": 4,
+     "bouldeer": 3,
+     "notes": "Marulianus, Lapis, TNT, Dom mladih"
+    },
+    {
+     "city": "Rijeka",
+     "est": 4,
+     "bouldeer": 1,
+     "notes": "Tuhobic, Vulkan, Kantrida, Rirockclimbing"
+    },
+    {
+     "city": "Pula/Istria",
+     "est": 3,
+     "bouldeer": 1,
+     "notes": "Onsight, Hiperaktiv (Pazin), Muntravo (Rovinj)"
+    }
+   ],
+   "chains_missing": [],
+   "leads": [
+    {
+     "name": "SPK Tuhobic",
+     "city": "Rijeka",
+     "url": "https://hsps-climbing.org/dvorane/"
+    },
+    {
+     "name": "Tvornicka hala Vulkan",
+     "city": "Rijeka",
+     "url": ""
+    },
+    {
+     "name": "Atletska dvorana Kantrida wall",
+     "city": "Rijeka",
+     "url": "https://www.rijekasport.hr/hr/objekti/atletska-dvorana-kantrida/penjacka-stijena/"
+    },
+    {
+     "name": "SPK Hiperaktiv",
+     "city": "Pazin",
+     "url": "https://hsps-climbing.org/dvorane/"
+    },
+    {
+     "name": "SPK Muntravo",
+     "city": "Rovinj",
+     "url": "https://hsps-climbing.org/dvorane/"
+    },
+    {
+     "name": "SPK Vertikal",
+     "city": "Varazdin",
+     "url": "https://hsps-climbing.org/dvorane/"
+    },
+    {
+     "name": "SPK Bastion",
+     "city": "Osijek",
+     "url": "https://hsps-climbing.org/dvorane/"
+    },
+    {
+     "name": "SPK Direkt",
+     "city": "Lepoglava",
+     "url": "https://hsps-climbing.org/dvorane/"
+    },
+    {
+     "name": "SPK Bombina",
+     "city": "Karlovac",
+     "url": "https://hsps-climbing.org/dvorane/"
+    },
+    {
+     "name": "Fothia Velika Gorica",
+     "city": "Velika Gorica",
+     "url": ""
+    },
+    {
+     "name": "Dom mladih boulder dvorana",
+     "city": "Split",
+     "url": "https://dom-mladih.org/category/prostori/boulder-dvorana/"
+    },
+    {
+     "name": "SPK Vertical",
+     "city": "Roc",
+     "url": "https://hsps-climbing.org/dvorane/"
+    }
+   ],
+   "notes": "Several leads are club halls with limited public hours - verify public access.",
+   "bouldeer": 9
+  },
+  {
+   "cc": "RO",
+   "name": "Romania",
+   "est_low": 22,
+   "est_mid": 28,
+   "est_high": 38,
+   "confidence": "medium",
+   "method": "Tally of named halls: Bucharest 8 (Carpatic, Vertical Spirit, Galactic, Fabrica, BLOKX, Climb Again, Natural High, Ecran Club), Cluj 4-5, Timisoara 3, Brasov 2-3, plus Iasi, Constanta, Sibiu, Targu Mures, Bacau, Galati, Alba. No federation count found.",
+   "sources": [
+    {
+     "title": "Turistmania - sali de escalada",
+     "url": "https://www.turistmania.ro/articole/alpinism-si-escalada/sali-de-escalada.html",
+     "says": "Halls in Alba, Bacau, Brasov, Bucuresti (3), Cluj, Constanta, Galati, Iasi, Mehedinti, Sibiu, Timisoara (3)"
+    },
+    {
+     "title": "Climb Again Bucuresti",
+     "url": "https://climbagain.ro/climb-again-bucuresti/",
+     "says": "Bucharest: Carpatic, Vertical Spirit, Galactic Gym, Fabrica de Catarat, BLOKX, Climb Again"
+    },
+    {
+     "title": "bouldering.ro indoor",
+     "url": "https://www.bouldering.ro/indoor/31.html",
+     "says": "National indoor directory (not read in full)"
+    }
+   ],
+   "cities": [
+    {
+     "city": "Bucuresti",
+     "est": 9,
+     "bouldeer": 7,
+     "notes": "Missing Ecran Club"
+    },
+    {
+     "city": "Cluj-Napoca",
+     "est": 5,
+     "bouldeer": 4,
+     "notes": "Free Wall, Central, Gravity, SKAI"
+    },
+    {
+     "city": "Timisoara",
+     "est": 3,
+     "bouldeer": 1,
+     "notes": "One Move, Alternative TM, ASCENT (Iulius)"
+    },
+    {
+     "city": "Brasov",
+     "est": 3,
+     "bouldeer": 2,
+     "notes": "Natural High, Climb House"
+    },
+    {
+     "city": "Iasi",
+     "est": 2,
+     "bouldeer": 1,
+     "notes": "Climb Again"
+    }
+   ],
+   "chains_missing": [
+    {
+     "chain": "Climb Again",
+     "branches_est": 3,
+     "bouldeer_has": 2,
+     "url": "https://climbagain.ro/"
+    }
+   ],
+   "leads": [
+    {
+     "name": "Ecran Club",
+     "city": "Bucuresti",
+     "url": ""
+    },
+    {
+     "name": "Clubul Sportiv Alternative TM",
+     "city": "Timisoara",
+     "url": ""
+    },
+    {
+     "name": "ASCENT (Iulius Mall)",
+     "city": "Timisoara",
+     "url": ""
+    },
+    {
+     "name": "Gravity Park Climbing Wall",
+     "city": "Constanta",
+     "url": ""
+    },
+    {
+     "name": "Almontes",
+     "city": "Sibiu",
+     "url": ""
+    },
+    {
+     "name": "CUB indoor climbing club",
+     "city": "Galati",
+     "url": ""
+    },
+    {
+     "name": "Alpin Club",
+     "city": "Bacau",
+     "url": ""
+    }
+   ],
+   "notes": "Bouldeer RO coverage looks good; remaining gap small.",
+   "bouldeer": 18
+  },
+  {
+   "cc": "BG",
+   "name": "Bulgaria",
+   "est_low": 10,
+   "est_mid": 14,
+   "est_high": 18,
+   "confidence": "medium",
+   "method": "Sofia article lists 10 halls (some kids/fitness); Momentum has Sofia (2) + Plovdiv; Varna and Burgas 1-2 each. Rough tally.",
+   "sources": [
+    {
+     "title": "Lifestyle.bg - 10 climbing halls in Sofia",
+     "url": "https://lifestyle.bg/tendencies/10-zali-za-katerene-v-sofiya.html",
+     "says": "Walltopia, Climbing Center Europe (+Bons, Lulin), Balkan Climbing, NSA, Stiska li ti, Funtopia, Climb Academy, Athletic Climbing Fit"
+    },
+    {
+     "title": "Momentum Indoor Climbing",
+     "url": "https://sofia.momentumclimbing.com/",
+     "says": "Sofia (2020 m2, 170+ boulders) plus Plovdiv"
+    }
+   ],
+   "cities": [
+    {
+     "city": "Sofia",
+     "est": 10,
+     "bouldeer": 5,
+     "notes": "Sofia hall list"
+    },
+    {
+     "city": "Plovdiv",
+     "est": 2,
+     "bouldeer": 0,
+     "notes": "Momentum Plovdiv"
+    },
+    {
+     "city": "Varna",
+     "est": 2,
+     "bouldeer": 1,
+     "notes": "Varna Climbing + 1?"
+    },
+    {
+     "city": "Burgas",
+     "est": 1,
+     "bouldeer": 0,
+     "notes": "Unverified"
+    }
+   ],
+   "chains_missing": [
+    {
+     "chain": "Momentum",
+     "branches_est": 3,
+     "bouldeer_has": 1,
+     "url": "https://momentumclimbing.bg/"
+    },
+    {
+     "chain": "Climbing Center Europe",
+     "branches_est": 3,
+     "bouldeer_has": 2,
+     "url": ""
+    }
+   ],
+   "leads": [
+    {
+     "name": "Momentum Plovdiv",
+     "city": "Plovdiv",
+     "url": "https://momentumclimbing.bg/"
+    },
+    {
+     "name": "Climbing Center Europe Lulin",
+     "city": "Sofia",
+     "url": ""
+    },
+    {
+     "name": "Stiska li ti? bouldering",
+     "city": "Sofia",
+     "url": ""
+    },
+    {
+     "name": "Walltopia Climbing and Fitness",
+     "city": "Sofia",
+     "url": ""
+    },
+    {
+     "name": "Climb Academy",
+     "city": "Sofia",
+     "url": ""
+    },
+    {
+     "name": "Momentum Tsarigradsko shose",
+     "city": "Sofia",
+     "url": "https://momentumclimbing.bg/tsarigradsko-shose/"
+    }
+   ],
+   "notes": "Bouldeer \"Climbing center Europe\" and \"Bons - Europe climbing center\" may be the same hall - check duplicates.",
+   "bouldeer": 6
+  },
+  {
+   "cc": "GR",
+   "name": "Greece",
+   "est_low": 15,
+   "est_mid": 20,
+   "est_high": 28,
+   "confidence": "low",
+   "method": "Athens guide lists 8 gyms, Thessaloniki 3-4, Patras/Crete/Kalymnos/Rhodes few; no federation count found.",
+   "sources": [
+    {
+     "title": "Athinorama - Athens climbing gyms",
+     "url": "https://www.athinorama.gr/plus/3043711/pou-skarfalonoume-stin-athina/",
+     "says": "8 Athens facilities: Mono, Mamouna, Rockway, No Biggie, Redpoint, OAKA, The Wall, SNFCC wall"
+    },
+    {
+     "title": "Athens24 directory",
+     "url": "https://www.athens24.gr/directory/climbing-indoor",
+     "says": "Athens directory; Thessaloniki PXP, OALTH"
+    }
+   ],
+   "cities": [
+    {
+     "city": "Athens",
+     "est": 9,
+     "bouldeer": 6,
+     "notes": "Missing No Biggie (Ilioupoli), SNFCC wall (minor)"
+    },
+    {
+     "city": "Thessaloniki",
+     "est": 4,
+     "bouldeer": 3,
+     "notes": "Crux, PXP, X Climb + OALTH wall"
+    },
+    {
+     "city": "Patras",
+     "est": 2,
+     "bouldeer": 1,
+     "notes": "Block present"
+    },
+    {
+     "city": "Heraklion",
+     "est": 2,
+     "bouldeer": 0,
+     "notes": "Unverified"
+    }
+   ],
+   "chains_missing": [],
+   "leads": [
+    {
+     "name": "No Biggie",
+     "city": "Ilioupoli",
+     "url": "https://www.athinorama.gr/plus/3043711/pou-skarfalonoume-stin-athina/"
+    },
+    {
+     "name": "OALTH climbing wall",
+     "city": "Thessaloniki",
+     "url": "http://www.oalth.gr"
+    }
+   ],
+   "notes": "Low confidence: could not read Greek directories beyond Athens. Rhodes entry is a fitness club (City Fitness) and may not qualify.",
+   "bouldeer": 12
+  },
+  {
+   "cc": "RU",
+   "name": "Russia",
+   "est_low": 80,
+   "est_mid": 115,
+   "est_high": 170,
+   "confidence": "low",
+   "method": "Only Moscow (~25-30 per t-j.ru/mosclimbing lists incl. rope-only) and St Petersburg (~20 in KP list, ~12 with real boulders) quantified. Remaining regional cities extrapolated (Ekaterinburg, Kazan, Novosibirsk, Krasnodar, Nizhny, etc. ~3-6 each). No national count found.",
+   "sources": [
+    {
+     "title": "T-Journal: 25 Moscow climbing walls",
+     "url": "https://t-j.ru/list/climbing-wall-moscow/",
+     "says": "25 Moscow walls with bouldering (Climb Lab x2, Tengus x3, BigWall x4, Sportstation, Rock Zona, Atmosfera, Alfa, Skala-City, Red Point, CSKA, HighWall...)"
+    },
+    {
+     "title": "Mosclimbing map",
+     "url": "https://mosclimbing.ru/map",
+     "says": "20 Moscow walls listed"
+    },
+    {
+     "title": "KP: 20 climbing walls SPb",
+     "url": "https://www.kp.ru/afisha/spb/obzory/moj-gorod/luchshie-skalodromy-v-sankt-peterburge/",
+     "says": "20 SPb walls: Severnaya Stena, El Capitan, ATOM, Luch, Igels, Energy of Height, Neolit, Tramontana, Traverse, Climb Art ..."
+    }
+   ],
+   "cities": [
+    {
+     "city": "Moscow",
+     "est": 30,
+     "bouldeer": 15,
+     "notes": "Missing Climb Lab Butyrskaya, Sportstation, Alfa, Skala-City, Red Point, BigWall Luzhniki, HighWall, Skalodrom.ru Odintsovo"
+    },
+    {
+     "city": "Saint Petersburg",
+     "est": 16,
+     "bouldeer": 7,
+     "notes": "Missing El Capitan, ATOM, Traverse, Zhest"
+    },
+    {
+     "city": "Yekaterinburg",
+     "est": 6,
+     "bouldeer": 2,
+     "notes": "unverified extrapolation"
+    },
+    {
+     "city": "Novosibirsk",
+     "est": 5,
+     "bouldeer": 0,
+     "notes": "unverified"
+    },
+    {
+     "city": "Kazan",
+     "est": 4,
+     "bouldeer": 0,
+     "notes": "unverified"
+    },
+    {
+     "city": "Krasnodar",
+     "est": 3,
+     "bouldeer": 0,
+     "notes": "unverified"
+    },
+    {
+     "city": "Nizhny Novgorod",
+     "est": 3,
+     "bouldeer": 0,
+     "notes": "unverified"
+    }
+   ],
+   "chains_missing": [
+    {
+     "chain": "BigWall Sport",
+     "branches_est": 5,
+     "bouldeer_has": 3,
+     "url": ""
+    },
+    {
+     "chain": "Tengus",
+     "branches_est": 3,
+     "bouldeer_has": 3,
+     "url": ""
+    },
+    {
+     "chain": "Climb Lab",
+     "branches_est": 3,
+     "bouldeer_has": 2,
+     "url": ""
+    }
+   ],
+   "leads": [
+    {
+     "name": "Climb Lab Butyrskaya",
+     "city": "Moscow",
+     "url": ""
+    },
+    {
+     "name": "Sportstation",
+     "city": "Moscow",
+     "url": ""
+    },
+    {
+     "name": "Alfa climbing",
+     "city": "Moscow",
+     "url": ""
+    },
+    {
+     "name": "Skala-City",
+     "city": "Moscow",
+     "url": ""
+    },
+    {
+     "name": "Red Point",
+     "city": "Moscow",
+     "url": ""
+    },
+    {
+     "name": "BigWall Sport Luzhniki",
+     "city": "Moscow",
+     "url": ""
+    },
+    {
+     "name": "HighWall",
+     "city": "Moscow",
+     "url": ""
+    },
+    {
+     "name": "Skalodrom.ru",
+     "city": "Odintsovo",
+     "url": "https://gym-skalodrom.ru/"
+    },
+    {
+     "name": "El Capitan",
+     "city": "Saint Petersburg",
+     "url": ""
+    },
+    {
+     "name": "ATOM",
+     "city": "Saint Petersburg",
+     "url": ""
+    },
+    {
+     "name": "Traverse (bouldering)",
+     "city": "Saint Petersburg",
+     "url": ""
+    },
+    {
+     "name": "Zhest",
+     "city": "Saint Petersburg",
+     "url": ""
+    },
+    {
+     "name": "Baltiysky bereg",
+     "city": "Saint Petersburg",
+     "url": ""
+    }
+   ],
+   "notes": "Regional Russia is the main unknown; likely 40-70 gyms outside Moscow/SPb. Some listed Moscow walls may be rope-only or fitness-hosted.",
+   "bouldeer": 26
+  },
+  {
+   "cc": "UA",
+   "name": "Ukraine",
+   "est_low": 20,
+   "est_mid": 28,
+   "est_high": 40,
+   "confidence": "low",
+   "method": "City guides: Kyiv ~8-10 (Boulder Space, Climbing Space, Hyperion, UP!, Funattic, KPI club, KPIskala, Crazy Walls), Lviv 3, Kharkiv 3-4, Odesa 2-3, Dnipro 1-2; sportplace.in.ua lists 22 walls (incl. fitness clubs). War-time closures add uncertainty.",
+   "sources": [
+    {
+     "title": "Sportplace UA climbing",
+     "url": "https://sportplace.in.ua/places/f/category/skalodrom",
+     "says": "22 climbing locations nationwide incl. fitness clubs"
+    },
+    {
+     "title": "Nashkiev - Kyiv climbing",
+     "url": "https://nashkiev.ua/life/skeledromi-u-kievi-de-polaziti-ta-skilki-tse-koshtue",
+     "says": "Kyiv gym guide"
+    },
+    {
+     "title": "Boulder Space",
+     "url": "https://www.boulderspace.ua/contacts",
+     "says": "Largest bouldering gym in Ukraine"
+    }
+   ],
+   "cities": [
+    {
+     "city": "Kyiv",
+     "est": 9,
+     "bouldeer": 6,
+     "notes": "Missing KPIskala, Crazy Walls"
+    },
+    {
+     "city": "Lviv",
+     "est": 3,
+     "bouldeer": 1,
+     "notes": "The Wall, Bukta"
+    },
+    {
+     "city": "Kharkiv",
+     "est": 4,
+     "bouldeer": 2,
+     "notes": "Missing Vertykal"
+    },
+    {
+     "city": "Odesa",
+     "est": 3,
+     "bouldeer": 0,
+     "notes": "Alpklub Odesa, ShelRocks"
+    },
+    {
+     "city": "Dnipro",
+     "est": 3,
+     "bouldeer": 1,
+     "notes": "La Scala + Montana"
+    }
+   ],
+   "chains_missing": [],
+   "leads": [
+    {
+     "name": "KPIskala",
+     "city": "Kyiv",
+     "url": ""
+    },
+    {
+     "name": "Crazy Walls",
+     "city": "Kyiv",
+     "url": ""
+    },
+    {
+     "name": "Bukta",
+     "city": "Lviv",
+     "url": ""
+    },
+    {
+     "name": "Vertykal",
+     "city": "Kharkiv",
+     "url": ""
+    },
+    {
+     "name": "Alpklub Odesa",
+     "city": "Odesa",
+     "url": ""
+    },
+    {
+     "name": "ShelRocks",
+     "city": "Odesa",
+     "url": ""
+    },
+    {
+     "name": "La Scala",
+     "city": "Dnipro",
+     "url": ""
+    },
+    {
+     "name": "Skalodrom IF",
+     "city": "Ivano-Frankivsk",
+     "url": ""
+    }
+   ],
+   "notes": "Operating status uncertain for frontline cities (Kharkiv, Dnipro, Odesa) - verify before importing.",
+   "bouldeer": 11
+  },
+  {
+   "cc": "EE",
+   "name": "Estonia",
+   "est_low": 8,
+   "est_mid": 10,
+   "est_high": 13,
+   "confidence": "medium",
+   "method": "climbing.ee / elamus+ lists: Ronimisministeerium x3 in Tallinn, Kivi, Ronimistehas, Ronimaa (Parnu), Tuuletorn, plus Tartu halls.",
+   "sources": [
+    {
+     "title": "Ronimisministeerium gyms",
+     "url": "https://ronimisministeerium.ee/tallinn/en/gyms/",
+     "says": "Hipodroomi, T1, Mustika in Tallinn"
+    },
+    {
+     "title": "Elamus+ bouldering Eestis",
+     "url": "https://www.elamuspluss.ee/ronimine-eestis/bouldering",
+     "says": "Estonian bouldering venues (search snippet)"
+    }
+   ],
+   "cities": [
+    {
+     "city": "Tallinn",
+     "est": 5,
+     "bouldeer": 2,
+     "notes": "Ronimisministeerium x3, Kivi"
+    },
+    {
+     "city": "Tartu",
+     "est": 3,
+     "bouldeer": 3,
+     "notes": ""
+    },
+    {
+     "city": "Parnu",
+     "est": 1,
+     "bouldeer": 0,
+     "notes": "Ronimaa"
+    }
+   ],
+   "chains_missing": [
+    {
+     "chain": "Ronimisministeerium",
+     "branches_est": 3,
+     "bouldeer_has": 1,
+     "url": "https://ronimisministeerium.ee/tallinn/en/"
+    }
+   ],
+   "leads": [
+    {
+     "name": "Ronimisministeerium T1",
+     "city": "Tallinn",
+     "url": "https://ronimisministeerium.ee/tallinn/en/gyms/"
+    },
+    {
+     "name": "Ronimisministeerium Mustika",
+     "city": "Tallinn",
+     "url": "https://ronimisministeerium.ee/tallinn/en/gyms/"
+    },
+    {
+     "name": "Ronimaa ronimiskeskus",
+     "city": "Parnu",
+     "url": ""
+    }
+   ],
+   "notes": "Bouldeer entry \"Ronimisministeerium\" is presumably Hipodroomi; the other two branches are leads.",
+   "bouldeer": 6
+  },
+  {
+   "cc": "LV",
+   "name": "Latvia",
+   "est_low": 3,
+   "est_mid": 5,
+   "est_high": 8,
+   "confidence": "low",
+   "method": "Riga guide names two bouldering gyms (Falkors, Virsotne) and an outdoor tower; Jelgava (Remoss) and youth centres hold small walls. No federation count.",
+   "sources": [
+    {
+     "title": "Skydive.lv - bouldering in Riga",
+     "url": "https://skydive.lv/en/blogs/articles/bouldering-climbing-riga",
+     "says": "Riga has two indoor bouldering gyms (Falkors, Virsotne)"
+    },
+    {
+     "title": "Latvian climbing commission venues",
+     "url": "https://www.climbing.lv/komisijas/kapsanas-sporta-komisija/kur",
+     "says": "Venue list (not fetched)"
+    }
+   ],
+   "cities": [
+    {
+     "city": "Riga",
+     "est": 4,
+     "bouldeer": 2,
+     "notes": "Falkors, Virsotne, BJC Daugmale (youth wall)"
+    },
+    {
+     "city": "Jelgava",
+     "est": 1,
+     "bouldeer": 0,
+     "notes": "Remoss wall"
+    }
+   ],
+   "chains_missing": [],
+   "leads": [
+    {
+     "name": "Remoss climbing wall",
+     "city": "Jelgava",
+     "url": "http://www.remoss.lv"
+    }
+   ],
+   "notes": "Likely well covered; Latvia has few public bouldering gyms.",
+   "bouldeer": 2
+  },
+  {
+   "cc": "LT",
+   "name": "Lithuania",
+   "est_low": 9,
+   "est_mid": 11,
+   "est_high": 15,
+   "confidence": "medium",
+   "method": "Named gyms: Vilnius 4-5, Kaunas 2-3, Klaipeda 3, plus smaller towns. indoorclimbing.com lists 7.",
+   "sources": [
+    {
+     "title": "indoorclimbing.com Lithuania",
+     "url": "https://www.indoorclimbing.com/lithuania.html",
+     "says": "7 listings in Vilnius, Kaunas, Klaipeda"
+    },
+    {
+     "title": "Lithuanian Climbing Federation",
+     "url": "https://laipiojimofederacija.lt/laipiojimas-lietuvoje",
+     "says": "Hall list (not fully read)"
+    },
+    {
+     "title": "Kalnai.lt halls",
+     "url": "http://www.kalnai.lt/index.php?page=laipiojimo-sales-ir-sienos",
+     "says": "Halls and walls list"
+    }
+   ],
+   "cities": [
+    {
+     "city": "Vilnius",
+     "est": 5,
+     "bouldeer": 4,
+     "notes": "Bonobo, Vertical, Montis Magia x2"
+    },
+    {
+     "city": "Kaunas",
+     "est": 3,
+     "bouldeer": 2,
+     "notes": ""
+    },
+    {
+     "city": "Klaipeda",
+     "est": 3,
+     "bouldeer": 2,
+     "notes": "Includes Kalnu sporto klubas bouldering gym (Strevos g. 5)"
+    }
+   ],
+   "chains_missing": [],
+   "leads": [
+    {
+     "name": "Klaipeda Mountain Sports Club bouldering gym (Strevos g. 5)",
+     "city": "Klaipeda",
+     "url": ""
+    }
+   ],
+   "notes": "Educational-programme listing mentions Siauliai and Panevezys climbing centres - unverified.",
+   "bouldeer": 8
+  },
+  {
+   "cc": "RS",
+   "name": "Serbia",
+   "est_low": 9,
+   "est_mid": 12,
+   "est_high": 16,
+   "confidence": "medium",
+   "method": "serbianclimbing.com lists 9 artificial walls (3 bouldering halls); search adds SKC Baza and Stari Grad (Uzice). Bouldeer already has Sektor44, Adrenalin, Gekon, Belgrade Climbing Club.",
+   "sources": [
+    {
+     "title": "SerbianClimbing - vestacke stene",
+     "url": "https://serbianclimbing.com/penjalista/vestacke-stene/",
+     "says": "9 artificial walls: Gekon, Granit, PAEK (Nis), Adrenalin (Novi Sad), PULS, Sektor 44, Kosutnjak national centre, Ada Ciganlija, Utopia Silosi"
+    }
+   ],
+   "cities": [
+    {
+     "city": "Beograd",
+     "est": 8,
+     "bouldeer": 4,
+     "notes": "Granit, PULS, Kosutnjak, SKC Baza missing"
+    },
+    {
+     "city": "Novi Sad",
+     "est": 2,
+     "bouldeer": 1,
+     "notes": "Adrenalin"
+    },
+    {
+     "city": "Nis",
+     "est": 1,
+     "bouldeer": 0,
+     "notes": "PAEK bouldering"
+    }
+   ],
+   "chains_missing": [],
+   "leads": [
+    {
+     "name": "Bouldering sala Granit",
+     "city": "Beograd",
+     "url": "https://serbianclimbing.com/penjalista/vestacka/boulder-sala-granit-beograd/"
+    },
+    {
+     "name": "Penjacki centar PULS",
+     "city": "Beograd",
+     "url": "https://belgradeforkids.com/2023/01/30/penjacka-dvorana-puls-climbing-wall/"
+    },
+    {
+     "name": "Bouldering sala SKC Baza",
+     "city": "Beograd",
+     "url": "https://serbianclimbing.com/penjalista/vestacke-stene/"
+    },
+    {
+     "name": "Bouldering sala P.A.E.K.",
+     "city": "Nis",
+     "url": "https://serbianclimbing.com/penjalista/vestacke-stene/"
+    },
+    {
+     "name": "Bouldering sala Stari Grad",
+     "city": "Uzice",
+     "url": "https://serbianclimbing.com/penjalista/vestacke-stene/"
+    },
+    {
+     "name": "Nacionalni penjacki centar Kosutnjak",
+     "city": "Beograd",
+     "url": ""
+    }
+   ],
+   "notes": "Bouldeer includes \"Hala Sportova\" - check it is a real public bouldering offer.",
+   "bouldeer": 5
+  }
+ ]
+}

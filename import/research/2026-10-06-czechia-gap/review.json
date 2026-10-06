@@ -1,0 +1,50 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-06-czechia-gap",
+ "reviewer": "Spiar (owner); decisions drafted by Claude (AI) on the owner's instruction, pending owner sign-off",
+ "reviewed": "2026-10-06",
+ "decisions": {
+  "cz-lokal-blok": {
+   "decision": "accept",
+   "reason": "S LOKAL https://www.lokalblok.cz/lezecka-stena/ shows exists, open, address and bouldering (Climbing-wall page: hours Mo/We/Fr 12-22:30, Tu/Th 7-22:30, Sa-Su 14-22, monthly 'Bouldering session' with the October session on 2026-10-06, courses and children's boulder competitions; the restauran); pin is OSM node/2309326372. No flags and no Bouldeer record within the review radii."
+  },
+  "cz-freesolo": {
+   "decision": "accept",
+   "reason": "S FS https://freesolo.cz/vnitrni-boulder/ shows exists, open, address and bouldering (Own site: 'Vnitřní boulderovka' page and ticket list with separate Boulder price (CZK 200, CZK 150 before 16:00), wall open Mo-Su 9-22, address Donovalská 1662/38, Praha 11 Chodov; also an outdoor bou); pin is OSM node/3209821266. No flags and no Bouldeer record within the review radii."
+  },
+  "cz-jungle-letnany": {
+   "decision": "accept",
+   "reason": "S JL https://www.jungleletnany.cz/ shows exists, open, address and bouldering (Branch site: 'otevřeno každý den', Veselská 699, 'one of the largest climbing walls in Prague and a two-storey boulder wall' ('dvoupatrová boulderovka')); pin is OSM node/9377475599. No flags and no Bouldeer record within the review radii."
+  },
+  "cz-jungle-holesovice": {
+   "decision": "same-as",
+   "same_as": "seed-1451",
+   "reason": "Existing seed-1451 Boulder Bar is the same gym 6 m away: the old domain boulder.cz (still the website in OSM) now redirects to holesovice.jungle.cz, i.e. Boulder Bar Holešovice is now Jungle Holešovice. Suggest a follow-up identity correction (name) for seed-1451."
+  },
+  "cz-stena-ruzyne": {
+   "decision": "reject",
+   "reason_code": "duplicate",
+   "reason": "Same gym as candidate cz-008 'Lezecké centrum Ruzyně' of the section 2026-10-01-czechia (same address Ztracená 1132/1, 98 m apart per reconcile); that section already covers it, so it is not added a second time here. Evidence kept here: own site stena-ruzyne.com shows two boulder areas over 100 m2 and open hours."
+  },
+  "cz-flash-boulder-bar-brno": {
+   "decision": "accept",
+   "reason": "S FLASH http://www.flashbb.cz/kontakt shows exists, open, address and bouldering (Own site contact page: operating site Obchodní centrum Lerk, Rokytova 1, Brno - Židenice (first floor above OKEY), hours Mo-Fr 6-21, Sa-Su 8-20, entry CZK 150; spray wall, Moonboard and a boulder gym); pin is OSM node/296657887 (house-number geocode). No flags and no Bouldeer record within the review radii."
+  },
+  "cz-basecamp-boulder-brno": {
+   "decision": "accept",
+   "reason": "S BASEC https://basecampboulder.cz/ shows exists, open, address and bouldering (Own site: self-service boulder wall in the Basecamp expedition clubhouse, open to everyone after online registration, any day and time, single entry CZK 100, monthly CZK 500; bar staffed from 17:00; c); pin is OSM node/13555756219. No flags and no Bouldeer record within the review radii."
+  },
+  "cz-crux24-harrachov": {
+   "decision": "accept",
+   "reason": "S CRUX https://www.crux24.cz/ shows exists, open, address and bouldering (Own site: boulder walls, a Kilterboard, bar and shoe rental 'available 24/7', annual pass and day prices, address Nový Svět 102, Harrachov (operator Creatcom s); pin is OSM node/14026479902. No flags and no Bouldeer record within the review radii."
+  },
+  "cz-sutr-liberec": {
+   "decision": "defer",
+   "reason": "Has Šutr in Liberec (Hrazená 470) reopened after its reconstruction, and does the new hall have a boulder area? Findings: Home page: 'ŠUTR DOČASNĚ ZAVŘENÝ, PROBÍHÁ REKONSTRUKCE', reopening 'in September' in a completely new hall; opening hours 9-22 shown for the future."
+  },
+  "cz-stena-hradec-kralove": {
+   "decision": "defer",
+   "reason": "Is the 200 m2 boulder on the upper floor of the Hradec Králové wall (Brněnská 302) open today? Findings: Wall hours Mo-Fr 10-21, Sa 10-20, Su 12-21 and courses for October 2026; an article 'Uzavírka boulderu' is listed on the home page but its text could not be read, so the boulder status is unclear."
+  }
+ }
+}

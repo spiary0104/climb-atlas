@@ -1,0 +1,349 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-06-kr-seoul",
+ "index": {
+  "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
+  "count": 3294,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [],
+ "counts": {
+  "records": 40,
+  "new": 40,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "9b90f959c1206202701efb59fe5f72b1d1e07f0069afbd8c9df1b956dae43b69",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-8e602c80d8",
+   "id_frozen": true,
+   "name": "The Climb Gangnam (더클라임 강남점)",
+   "country": "KR"
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-d23d3b2a39",
+   "id_frozen": true,
+   "name": "The Climb Nonhyeon (더클라임 논현점)",
+   "country": "KR"
+  },
+  {
+   "line": 3,
+   "class": "new",
+   "id": "g-a3bfbcb6a9",
+   "id_frozen": true,
+   "name": "The Climb Mullae (더클라임 문래점)",
+   "country": "KR"
+  },
+  {
+   "line": 4,
+   "class": "new",
+   "id": "g-caf2ef113d",
+   "id_frozen": true,
+   "name": "The Climb Sadang (더클라임 사당점)",
+   "country": "KR"
+  },
+  {
+   "line": 5,
+   "class": "new",
+   "id": "g-06dbada5f4",
+   "id_frozen": true,
+   "name": "The Climb Seongsu (더클라임 성수점)",
+   "country": "KR"
+  },
+  {
+   "line": 6,
+   "class": "new",
+   "id": "g-b51e639690",
+   "id_frozen": true,
+   "name": "The Climb Yangjae (더클라임 양재점)",
+   "country": "KR"
+  },
+  {
+   "line": 7,
+   "class": "new",
+   "id": "g-6974cf12a5",
+   "id_frozen": true,
+   "name": "The Climb Isu (더클라임 이수점)",
+   "country": "KR"
+  },
+  {
+   "line": 8,
+   "class": "new",
+   "id": "g-00bf53c609",
+   "id_frozen": true,
+   "name": "Seoul Forest Climbing Guro (서울숲클라이밍 구로점)",
+   "country": "KR"
+  },
+  {
+   "line": 9,
+   "class": "new",
+   "id": "g-c0c296403d",
+   "id_frozen": true,
+   "name": "Seoul Forest Climbing Yeongdeungpo (서울숲클라이밍 영등포점)",
+   "country": "KR"
+  },
+  {
+   "line": 10,
+   "class": "new",
+   "id": "g-439263f703",
+   "id_frozen": true,
+   "name": "Seoul Forest Climbing Jongno (서울숲클라이밍 종로점)",
+   "country": "KR"
+  },
+  {
+   "line": 11,
+   "class": "new",
+   "id": "g-6731df4b0c",
+   "id_frozen": true,
+   "name": "Climbing Park Gangnam (클라이밍파크 강남점)",
+   "country": "KR"
+  },
+  {
+   "line": 12,
+   "class": "new",
+   "id": "g-df75e547f8",
+   "id_frozen": true,
+   "name": "Climbing Park Jongno (클라이밍파크 종로점)",
+   "country": "KR"
+  },
+  {
+   "line": 13,
+   "class": "new",
+   "id": "g-03dd8f9575",
+   "id_frozen": true,
+   "name": "Son Sang-won Climbing Gangnam Station (손상원 클라이밍짐 강남역점)",
+   "country": "KR"
+  },
+  {
+   "line": 14,
+   "class": "new",
+   "id": "g-5e19b30de5",
+   "id_frozen": true,
+   "name": "Son Sang-won Climbing Euljiro (손상원 클라이밍짐 을지로점)",
+   "country": "KR"
+  },
+  {
+   "line": 15,
+   "class": "new",
+   "id": "g-f97c14f87e",
+   "id_frozen": true,
+   "name": "Peakers Climbing Guro (피커스 클라이밍 구로)",
+   "country": "KR"
+  },
+  {
+   "line": 16,
+   "class": "new",
+   "id": "g-e8aaf5ebd1",
+   "id_frozen": true,
+   "name": "Peakers Climbing Sinchon (피커스 클라이밍 신촌)",
+   "country": "KR"
+  },
+  {
+   "line": 17,
+   "class": "new",
+   "id": "g-df37749f32",
+   "id_frozen": true,
+   "name": "Alé Climbing Yeongdeungpo (알레클라이밍 영등포점)",
+   "country": "KR"
+  },
+  {
+   "line": 18,
+   "class": "new",
+   "id": "g-4ca135ca76",
+   "id_frozen": true,
+   "name": "Alé Climbing Hyehwa (알레클라이밍 혜화점)",
+   "country": "KR"
+  },
+  {
+   "line": 19,
+   "class": "new",
+   "id": "g-ea601dcf8b",
+   "id_frozen": true,
+   "name": "Seoul Boulders Seonyu (서울볼더스 선유)",
+   "country": "KR"
+  },
+  {
+   "line": 20,
+   "class": "new",
+   "id": "g-195807ea52",
+   "id_frozen": true,
+   "name": "Climbing 88 (클라이밍88)",
+   "country": "KR"
+  },
+  {
+   "line": 21,
+   "class": "new",
+   "id": "g-9174484794",
+   "id_frozen": true,
+   "name": "Gangseo Climbing Center (강서클라이밍센터)",
+   "country": "KR"
+  },
+  {
+   "line": 22,
+   "class": "new",
+   "id": "g-4d4a311e8c",
+   "id_frozen": true,
+   "name": "August Climbing (어거스트클라이밍)",
+   "country": "KR"
+  },
+  {
+   "line": 23,
+   "class": "new",
+   "id": "g-8d264f9008",
+   "id_frozen": true,
+   "name": "Onfleek Climbing Gym Cheonho (온플릭클라이밍짐 천호점)",
+   "country": "KR"
+  },
+  {
+   "line": 24,
+   "class": "new",
+   "id": "g-8e31fe076a",
+   "id_frozen": true,
+   "name": "Onsedae Climbing (온세대클라이밍)",
+   "country": "KR"
+  },
+  {
+   "line": 25,
+   "class": "new",
+   "id": "g-90266b47aa",
+   "id_frozen": true,
+   "name": "In Climbing Center (인클라이밍센터)",
+   "country": "KR"
+  },
+  {
+   "line": 26,
+   "class": "new",
+   "id": "g-9ca1667360",
+   "id_frozen": true,
+   "name": "Stonz Climbing (스톤즈클라이밍)",
+   "country": "KR"
+  },
+  {
+   "line": 27,
+   "class": "new",
+   "id": "g-9eb49829f4",
+   "id_frozen": true,
+   "name": "Jo Gyu-bok Climbing Center Gangbyeon (조규복클라이밍센터 강변점)",
+   "country": "KR"
+  },
+  {
+   "line": 28,
+   "class": "new",
+   "id": "g-0819b5962e",
+   "id_frozen": true,
+   "name": "Vertigo Climbing Gym (버티고클라이밍짐)",
+   "country": "KR"
+  },
+  {
+   "line": 29,
+   "class": "new",
+   "id": "g-4e01760c07",
+   "id_frozen": true,
+   "name": "Dream Catcher Climbing Gym (드림캐처클라이밍짐)",
+   "country": "KR"
+  },
+  {
+   "line": 30,
+   "class": "new",
+   "id": "g-23ea921212",
+   "id_frozen": true,
+   "name": "Bishop Climbing (비숍 클라이밍)",
+   "country": "KR"
+  },
+  {
+   "line": 31,
+   "class": "new",
+   "id": "g-95f159a432",
+   "id_frozen": true,
+   "name": "Boulder Life Climbing Gym (볼더생활 클라이밍짐)",
+   "country": "KR"
+  },
+  {
+   "line": 32,
+   "class": "new",
+   "id": "g-2dafc40c9e",
+   "id_frozen": true,
+   "name": "Sinchon Damjang (신촌담장)",
+   "country": "KR"
+  },
+  {
+   "line": 33,
+   "class": "new",
+   "id": "g-e163b898be",
+   "id_frozen": true,
+   "name": "Groot Climbing (그루트 클라이밍)",
+   "country": "KR"
+  },
+  {
+   "line": 34,
+   "class": "new",
+   "id": "g-356c2e6114",
+   "id_frozen": true,
+   "name": "Bricks Climbing Gym (브릭스클라이밍짐)",
+   "country": "KR"
+  },
+  {
+   "line": 35,
+   "class": "new",
+   "id": "g-2efb55e5bf",
+   "id_frozen": true,
+   "name": "Mokdong Climbing Center (목동클라이밍센터)",
+   "country": "KR"
+  },
+  {
+   "line": 36,
+   "class": "new",
+   "id": "g-ce1bfad3b1",
+   "id_frozen": true,
+   "name": "YDP Oreum Indoor Climbing (YDP오름실내암벽장)",
+   "country": "KR"
+  },
+  {
+   "line": 37,
+   "class": "new",
+   "id": "g-343903ee22",
+   "id_frozen": true,
+   "name": "Off the Wall Climbing (오프더월클라이밍)",
+   "country": "KR"
+  },
+  {
+   "line": 38,
+   "class": "new",
+   "id": "g-8488a43907",
+   "id_frozen": true,
+   "name": "Hang Climb Gupabal (행클라임 클라이밍짐 구파발점)",
+   "country": "KR"
+  },
+  {
+   "line": 39,
+   "class": "new",
+   "id": "g-eb73fe5ef7",
+   "id_frozen": true,
+   "name": "Euljiro Damjang Climbing (을지로 담장 클라이밍)",
+   "country": "KR"
+  },
+  {
+   "line": 40,
+   "class": "new",
+   "id": "g-cb76b7786c",
+   "id_frozen": true,
+   "name": "Flash Boulders Climbing (플래시볼더스 클라이밍)",
+   "country": "KR"
+  }
+ ]
+}

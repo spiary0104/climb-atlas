@@ -1,0 +1,313 @@
+{
+ "schema_version": 1,
+ "sources": {
+  "OSM": {
+   "kind": "map-data",
+   "title": "OpenStreetMap (Photon/Overpass lookups 2026-10-06)",
+   "url": "https://www.openstreetmap.org/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "BAN": {
+   "kind": "map-data",
+   "title": "Base Adresse Nationale (api-adresse.data.gouv.fr)",
+   "url": "https://adresse.data.gouv.fr/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "ALTI": {
+   "kind": "chain-store-list",
+   "title": "Altissimo (chain site, all salles)",
+   "url": "https://www.altissimo.fr/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "EVERT": {
+   "kind": "official-site",
+   "title": "Espace Vertical (Grenoble)",
+   "url": "https://www.espacevertical.com/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "ABLOK": {
+   "kind": "official-site",
+   "title": "ABLOK (Grenoble, Annecy, Voiron)",
+   "url": "https://ablok.fr/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "ORANGERIE": {
+   "kind": "official-site",
+   "title": "L'Orangerie Perchee (Grenoble)",
+   "url": "https://orangerie-perchee.fr/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "PERCHOIR": {
+   "kind": "official-site",
+   "title": "Au Perchoir (Crolles)",
+   "url": "https://auperchoir.fr/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "ROOF": {
+   "kind": "chain-store-list",
+   "title": "THE ROOF France (network, all salles)",
+   "url": "https://theroof.fr/les-salles.html",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "HUECO": {
+   "kind": "official-site",
+   "title": "Hueco (Strasbourg)",
+   "url": "https://www.hueco.fr/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "CDIST": {
+   "kind": "official-site",
+   "title": "Climbing District",
+   "url": "https://climbingdistrict.com/nos-salles/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "VART": {
+   "kind": "official-site",
+   "title": "Vertical'Art (group site)",
+   "url": "https://www.vertical-art.fr/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "PICPAROI": {
+   "kind": "official-site",
+   "title": "Pic et Paroi (Nantes)",
+   "url": "https://www.picetparoi.fr/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "ELCAP": {
+   "kind": "official-site",
+   "title": "ELCAP (Saint-Herblain, Nantes)",
+   "url": "https://www.elcap.fr/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "UCPA": {
+   "kind": "official-site",
+   "title": "UCPA Sport Station",
+   "url": "https://www.ucpa.com/sport-station",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "BLOCBUSTER": {
+   "kind": "official-site",
+   "title": "Blocbuster (Courbevoie, La Defense, Versailles)",
+   "url": "https://blocbuster.fr/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "HARDBLOC": {
+   "kind": "official-site",
+   "title": "Hardbloc (Alfortville)",
+   "url": "https://www.hardbloc.fr/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "CLIMBARENA": {
+   "kind": "official-site",
+   "title": "Climb Arena (Cormeilles-en-Parisis)",
+   "url": "https://www.climbarena.fr/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "KARMA": {
+   "kind": "official-site",
+   "title": "Karma (FFME halls: La Villette, Fontainebleau)",
+   "url": "https://karma-escalade.fr/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "BLOCENSTOCK": {
+   "kind": "official-site",
+   "title": "Bloc en Stock (Strasbourg)",
+   "url": "https://bloc-en-stock.fr/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "MODJO": {
+   "kind": "official-site",
+   "title": "Modjo (Rennes)",
+   "url": "https://www.modjo-escalade.fr/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "BWALL": {
+   "kind": "official-site",
+   "title": "B'wall (Vannes, Lorient/Lanester, Quimper)",
+   "url": "https://www.b-wall.fr/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "BOULDERLINE": {
+   "kind": "official-site",
+   "title": "Boulder Line (Montpellier, Castelnau-le-Lez)",
+   "url": "https://boulderline.fr/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "STARTINBLOC": {
+   "kind": "official-site",
+   "title": "Start in Bloc (Quint-Fonsegrives, Toulouse)",
+   "url": "https://www.start-in-bloc.com/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "LAO": {
+   "kind": "official-site",
+   "title": "La O Escalade (Portet-sur-Garonne)",
+   "url": "https://la-o-escalade.fr/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "BLOCNROLL": {
+   "kind": "official-site",
+   "title": "Bloc'n Roll (L'Union, Toulouse)",
+   "url": "https://www.blocnroll.fr/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "BLOCABRAC": {
+   "kind": "official-site",
+   "title": "BlocaBrac (Saint-Etienne)",
+   "url": "https://blocabrac.fr/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "ZIPETTE": {
+   "kind": "official-site",
+   "title": "La Zipette (Voglans, Chambery)",
+   "url": "https://lazipette.fr/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "ALPABLOC": {
+   "kind": "official-site",
+   "title": "AlpAbloc (Bourgoin-Jallieu)",
+   "url": "https://www.alpabloc.fr/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "WATTABLOC": {
+   "kind": "official-site",
+   "title": "Wattabloc (Saint-Alban-Leysse, Chambery)",
+   "url": "https://www.wattabloc.com/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "TECHNOBLOC": {
+   "kind": "official-site",
+   "title": "Techno Bloc (Le Puy-en-Velay)",
+   "url": "https://www.technobloc.fr/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "ARCABLOC": {
+   "kind": "official-site",
+   "title": "Arcabloc (Vichy)",
+   "url": "https://www.arcabloc.fr/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "LETOPO": {
+   "kind": "official-site",
+   "title": "Le Topo Mont Blanc (Saint-Gervais-les-Bains)",
+   "url": "https://letopo.fr/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "MBESCALADE": {
+   "kind": "official-site",
+   "title": "Mont Blanc Escalade (Les Houches)",
+   "url": "https://www.montblancescalade.com/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "ESPACEESC": {
+   "kind": "official-site",
+   "title": "Espace Escalade (L'Arbresle)",
+   "url": "https://www.espace-escalade.fr/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "GRAVITY": {
+   "kind": "official-site",
+   "title": "Gravity Bouldering (Labenne)",
+   "url": "https://www.gravity-bouldering.fr/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "BETABLOC": {
+   "kind": "official-site",
+   "title": "Beta-Bloc (Pau)",
+   "url": "https://www.beta-bloc.com/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "GRAPPE": {
+   "kind": "official-site",
+   "title": "La Grappe Escalade (Perpignan)",
+   "url": "https://la-grappe-escalade.fr/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "CLIMBZONE": {
+   "kind": "official-site",
+   "title": "Climb'Zone (Montauban)",
+   "url": "https://www.climbzone.fr/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "INSTANT": {
+   "kind": "official-site",
+   "title": "Instant Grimpe (Molsheim)",
+   "url": "https://instantgrimpe.fr/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "SPACEBLOC": {
+   "kind": "official-site",
+   "title": "Space Bloc (Sillingy, Annecy)",
+   "url": "https://www.spacebloc.fr/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "BLOCZONE": {
+   "kind": "official-site",
+   "title": "Bloc Zone (Yzeure, Moulins)",
+   "url": "https://www.bloc-zone.fr/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "ATOME": {
+   "kind": "official-site",
+   "title": "Atome Climbing (Annecy)",
+   "url": "https://www.atome-annecy.fr/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "HABLOCK": {
+   "kind": "official-site",
+   "title": "Capt'N Hablock (Plescop, Vannes)",
+   "url": "https://captnhablock.com/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  },
+  "BLOCOURS": {
+   "kind": "official-site",
+   "title": "Le Bloc de l'Ours (Villard-de-Lans)",
+   "url": "https://www.blocdelours.com/",
+   "language": "fr",
+   "accessed": "2026-10-06"
+  }
+ }
+}

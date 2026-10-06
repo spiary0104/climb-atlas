@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-06-czechia-gap",
+  "description": "Regional research \"Czechia: Prague and Brno coverage gap\": 6 new gym(s) accepted of 10 candidate(s)",
+  "created": "2026-10-06",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-10-06-czechia-gap",
+    "section_sha256": "e7e943d182c6a633ccd1d575a10f55bbc82f144c0d9ecfba049c9b40413c4c5b",
+    "sources_sha256": "6e9c23c03a515f0d56191f921b59ed455617ab7104653c8d0e76b05da148a7fc",
+    "candidates_sha256": "b94f7bf15bad612280c93aebecf568f9abea1a8004ae8a4988684214153531e4",
+    "reconcile_sha256": "fac7404cfcd67e9d9d8fafc6b4b2b6ecafaf0379c8743a0f8909f15270359302",
+    "review_sha256": "0a15956a4040119733aa70cb0e3b9f6c3f6c0ed5472d126f833b6e72e1c826f6",
+    "candidates": 10,
+    "staged": 6,
+    "decisions": {
+      "accept": 6,
+      "defer": 2,
+      "reject": 1,
+      "same-as": 1
+    }
+  },
+  "index_at_staging": {
+    "sha256": "27073d25c2df373c17caef0c24ebfe759b8d457953a461c62786486d588e661d",
+    "count": 2438
+  }
+}

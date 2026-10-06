@@ -1,0 +1,10 @@
+# USA Midwest: real venues without a coordinate source or a readable site (2026-10-06)
+
+Each entry: why no candidate exists. Addresses are as published on the gym's own site unless noted.
+
+1. Zenith Climbing Center, Springfield MO. 3534 E Sunshine St, Suite 3, Springfield, MO 65804. Site https://zenithclimbing.com/ (open, hours). The US Census geocoder matched the street in ZIP 65809, not 65804, and Nominatim was rate-limited (HTTP 429), so no pin; also no bouldering statement (defer, see MANUAL-CHECK).
+2. Nosotros Climbing + Weights, Lakewood OH. 13000 Athens Ave, Lakewood, OH 44107. Site https://gonosotros.com/ (hours Mon-Fri 4-9pm, Sat-Sun 12-5pm). No geocode match and no bouldering statement (see MANUAL-CHECK).
+3. Duluth Climbing and Fitness Cooperative, Duluth MN. https://www.duluthclimbingandfitness.com/ . Public Wednesday open hours; the site gives only a Google Map link, no street address.
+4. Frontier Climbing and Fitness, Sioux Falls SD. https://frontierclimbing.com/climbing/ . 12,000 sq ft with three bouldering areas; the site lists two addresses (5045 Grant St East, 101 N Kiwanis Ave West) without saying which is the climbing gym.
+5. Kinetic Climbing & Fitness (Columbus OH), Vertical Adventures (Columbus OH), Paradiso Climbing Co-op (Eastlake OH), Rock Gem Climbing Center and Rocksport Climbing Gym (Louisville KY), The Bouldering Garden (Columbia MO), Climb Youngstown (OH): no readable primary source (certificate or DNS failures, a placeholder site, or no address) so none could be verified; see MANUAL-CHECK.md.
+6. Leads with no official site found (searching was unavailable): Bear Creek Climbing (Grand Rapids), Shift Climbing (Holland), ELEV8 Climbing and GT-ROCKS (Traverse City), Blockhouse Bouldering (Athens OH), Social Climber (Granville OH), Cleveland Rocks (OH), Sequence Climbing (Kansas City), The Workshop (Des Moines), The A (Minneapolis), Midwest Climbing Academy (Minneapolis; site would not load), The CRUX at Camptown (Indianapolis), Vertical Challenge (Indiana).

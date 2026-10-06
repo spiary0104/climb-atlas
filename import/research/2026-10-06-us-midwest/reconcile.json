@@ -1,0 +1,1358 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-06-us-midwest",
+ "inputs": {
+  "section_sha256": "8935a58effdb7f44e072c6565e2b72ce5cc1e92478c16276cb0bc4be3f8ca123",
+  "sources_sha256": "805d043a5d0e3043f61b5a296d5bb93d09d23582618efb8cfcb40e2896a9b655",
+  "candidates_sha256": "e43833ce065b3c6eab440916abdded116a7656160d40061c3110c4736ed1abbf",
+  "index": {
+   "sha256": "27073d25c2df373c17caef0c24ebfe759b8d457953a461c62786486d588e661d",
+   "count": 2438
+  },
+  "staged_batches_compared": [],
+  "other_sections_compared": []
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 74,
+  "ready": 42,
+  "review": 16,
+  "blocked": 16,
+  "existing": 0,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "us-ia-001",
+   "line": 70,
+   "name": "Climb Iowa East Village",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-9a638ef70b"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "us-ia-002",
+   "line": 71,
+   "name": "Climb Iowa Grimes",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-58bf7a5e36"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "us-ia-003",
+   "line": 72,
+   "name": "Bluestem Boulders",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-c990216683"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "us-in-001",
+   "line": 44,
+   "name": "Hoosier Heights Indianapolis",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-cb57883cfb"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "us-in-002",
+   "line": 45,
+   "name": "Hoosier Heights Bloomington",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-44c1e96bd7"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "us-in-003",
+   "line": 46,
+   "name": "Climb Time Indy",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-fd63e4c7cc"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "us-in-004",
+   "line": 47,
+   "name": "EPIC Climbing and Fitness",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-901bfea17c"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "us-in-005",
+   "line": 48,
+   "name": "North Mass Boulder",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-2ae36de03f"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "us-in-006",
+   "line": 49,
+   "name": "Climb Lafayette",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-11c9cb89fa"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    },
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "us-in-007",
+   "line": 50,
+   "name": "Vertical eXcape Evansville",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-fa2e83643f"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "us-in-008",
+   "line": 51,
+   "name": "Earth Adventures Bouldering Gym",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-91ced70d42"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "us-in-009",
+   "line": 52,
+   "name": "Warehouse Climbing Co.",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-7e9e07f356"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "us-in-d01",
+   "line": 53,
+   "name": "Summit City Climbing Co.",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-403465bd90"
+   },
+   "blockers": [
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "us-ks-001",
+   "line": 58,
+   "name": "RoKC Olathe",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-42a6cff062"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "us-ks-002",
+   "line": 59,
+   "name": "Bliss Climbing and Fitness",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-f7c96cfe74"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "us-ks-r01",
+   "line": 64,
+   "name": "Apex Climbing Gym",
+   "class": "blocked",
+   "suggested": "reject closed",
+   "importer": {
+    "class": "new",
+    "id": "g-331f1042d5"
+   },
+   "blockers": [
+    {
+     "code": "closed",
+     "detail": "status_claim is closed"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    },
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "us-ky-001",
+   "line": 68,
+   "name": "Climb NuLu",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-1e95dd9047"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "us-ky-002",
+   "line": 69,
+   "name": "LEF Climbing",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-2fe637b486"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "us-mi-001",
+   "line": 22,
+   "name": "Planet Rock Ann Arbor",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-ed5d308462"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate us-mi-002 has the same website",
+     "ids": [
+      "us-mi-002"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate us-mi-003 has the same website",
+     "ids": [
+      "us-mi-003"
+     ]
+    }
+   ],
+   "review_ids": [
+    "us-mi-002",
+    "us-mi-003"
+   ]
+  },
+  {
+   "cid": "us-mi-002",
+   "line": 23,
+   "name": "Planet Rock Madison Heights",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-23f097018a"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate us-mi-001 has the same website",
+     "ids": [
+      "us-mi-001"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate us-mi-003 has the same website",
+     "ids": [
+      "us-mi-003"
+     ]
+    }
+   ],
+   "review_ids": [
+    "us-mi-001",
+    "us-mi-003"
+   ]
+  },
+  {
+   "cid": "us-mi-003",
+   "line": 24,
+   "name": "Planet Rock Grand Rapids",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-524594bd39"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate us-mi-001 has the same website",
+     "ids": [
+      "us-mi-001"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate us-mi-002 has the same website",
+     "ids": [
+      "us-mi-002"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    },
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": [
+    "us-mi-001",
+    "us-mi-002"
+   ]
+  },
+  {
+   "cid": "us-mi-004",
+   "line": 25,
+   "name": "DYNO Detroit",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-d5687a4991"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "us-mi-005",
+   "line": 26,
+   "name": "Terra Firma Bouldering Co. Grand Rapids",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-48b09ffb21"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "us-mi-006",
+   "line": 27,
+   "name": "Terra Firma Bouldering Co. East Lansing",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-36e678dee2"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "us-mi-007",
+   "line": 28,
+   "name": "Scrapyard Climbing Collective",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-7e38ac9045"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "us-mi-008",
+   "line": 29,
+   "name": "Climb Kalamazoo",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-4eccedd2c1"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "us-mi-d01",
+   "line": 30,
+   "name": "Higher Ground Rock Climbing Centre",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-d97668a285"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "us-mn-001",
+   "line": 1,
+   "name": "Bouldering Project Minneapolis",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-d25f0aa6b6"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "us-mn-002",
+   "line": 2,
+   "name": "Bouldering Project St. Paul",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-6e5b1b009b"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "us-mn-003",
+   "line": 3,
+   "name": "Vertical Endeavors Twin Cities Bouldering",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-45cf121b23"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "us-mn-004",
+   "line": 4,
+   "name": "Big Island Bouldering",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-da17343f42"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "us-mn-005",
+   "line": 5,
+   "name": "Minnesota Climbing Cooperative",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-f88a4d689b"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "us-mn-d01",
+   "line": 6,
+   "name": "Vertical Endeavors Minneapolis",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-834160de68"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate us-mn-d02 \"Vertical Endeavors Bloomington\": related names \"Vertical Endeavors Minneapolis\" / \"Vertical Endeavors Bloomington\" 14218 m apart",
+     "ids": [
+      "us-mn-d02"
+     ]
+    }
+   ],
+   "review_ids": [
+    "us-mn-d02"
+   ]
+  },
+  {
+   "cid": "us-mn-d02",
+   "line": 7,
+   "name": "Vertical Endeavors Bloomington",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-a13e155d41"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate us-mn-d01 \"Vertical Endeavors Minneapolis\": related names \"Vertical Endeavors Bloomington\" / \"Vertical Endeavors Minneapolis\" 14218 m apart",
+     "ids": [
+      "us-mn-d01"
+     ]
+    }
+   ],
+   "review_ids": [
+    "us-mn-d01"
+   ]
+  },
+  {
+   "cid": "us-mn-d03",
+   "line": 8,
+   "name": "Vertical Endeavors St. Paul",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-b4d3232085"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "us-mn-d04",
+   "line": 9,
+   "name": "Vertical Endeavors Duluth",
+   "class": "blocked",
+   "suggested": "reject not-a-gym",
+   "importer": {
+    "class": "new",
+    "id": "g-1b435a7869"
+   },
+   "blockers": [
+    {
+     "code": "not-a-gym",
+     "detail": "category other"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "us-mn-d05",
+   "line": 10,
+   "name": "Roca Climbing & Fitness",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-7005a5171b"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "us-mo-001",
+   "line": 54,
+   "name": "Climb So iLL Power Plant",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-c947d3124e"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "us-mo-002",
+   "line": 55,
+   "name": "Climb So iLL Steel Shop",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-5398263af4"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "us-mo-003",
+   "line": 56,
+   "name": "Upper Limits Chesterfield",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-0b00eb56f9"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "us-mo-004",
+   "line": 57,
+   "name": "RoKC North Kansas City",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-a3c56379d4"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "us-mo-d01",
+   "line": 60,
+   "name": "RoKC Underground",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-9a391888ef"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "us-mo-d02",
+   "line": 61,
+   "name": "CoMo Rocks",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-df0722e05c"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "us-mo-d03",
+   "line": 62,
+   "name": "Upper Limits Maryland Heights",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-64bd104021"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "us-mo-d04",
+   "line": 63,
+   "name": "IBEX Climbing Gym",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-b5962badfb"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "us-nd-001",
+   "line": 74,
+   "name": "Fargo Climbing",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-dc002b2042"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "us-ne-001",
+   "line": 65,
+   "name": "Approach Climbing Gym",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-4be05bc789"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate us-ne-003 \"MW Climbing Omaha\": related names \"Omaha Rock Gym\" / \"MW Climbing Omaha\" 7579 m apart",
+     "ids": [
+      "us-ne-003"
+     ]
+    }
+   ],
+   "review_ids": [
+    "us-ne-003"
+   ]
+  },
+  {
+   "cid": "us-ne-002",
+   "line": 66,
+   "name": "MW Climbing Lincoln",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-9ec90337ce"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate us-ne-003 has the same website",
+     "ids": [
+      "us-ne-003"
+     ]
+    }
+   ],
+   "review_ids": [
+    "us-ne-003"
+   ]
+  },
+  {
+   "cid": "us-ne-003",
+   "line": 67,
+   "name": "MW Climbing Omaha",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-34a0c5b0f7"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate us-ne-001 \"Approach Climbing Gym\": related names \"MW Climbing Omaha\" / \"Omaha Rock Gym\" 7579 m apart",
+     "ids": [
+      "us-ne-001"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate us-ne-002 has the same website",
+     "ids": [
+      "us-ne-002"
+     ]
+    }
+   ],
+   "review_ids": [
+    "us-ne-001",
+    "us-ne-002"
+   ]
+  },
+  {
+   "cid": "us-oh-001",
+   "line": 31,
+   "name": "Climb Cleveland",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-36babe30ce"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "us-oh-002",
+   "line": 32,
+   "name": "Kendall Cliffs Climbing Gym",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-02fee2d4b4"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "us-oh-003",
+   "line": 33,
+   "name": "Rock Mill",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-36f3fd912d"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "us-oh-004",
+   "line": 34,
+   "name": "Climb Cincy",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-5ed20223ae"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "us-oh-005",
+   "line": 35,
+   "name": "Climb Time Blue Ash",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-c5e291d2dd"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "us-oh-006",
+   "line": 36,
+   "name": "Climb Time Oakley",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-cfc9968f90"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "us-oh-007",
+   "line": 37,
+   "name": "RockQuest Climbing Center",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-259c7bfcc9"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "us-oh-008",
+   "line": 38,
+   "name": "Mosaic Climbing",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-6d9381b9fa"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "us-oh-009",
+   "line": 39,
+   "name": "Urban Krag Climbing Center",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-b356d3dd64"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "us-oh-010",
+   "line": 40,
+   "name": "Bloc Garten",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-b4fea55040"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "us-oh-011",
+   "line": 41,
+   "name": "Chambers Purely Boulders",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-7e98f7e7cd"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "us-oh-d01",
+   "line": 42,
+   "name": "Shaker Rocks",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-c648b94b08"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "us-oh-d02",
+   "line": 43,
+   "name": "Adventus Climbing",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-5e87cd5057"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "us-sd-001",
+   "line": 73,
+   "name": "Black Hills Basecamp",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-04ea957de6"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "us-wi-001",
+   "line": 11,
+   "name": "Boulders Climbing Gym",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-312ff10a77"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate us-wi-r01 has the same website",
+     "ids": [
+      "us-wi-r01"
+     ]
+    }
+   ],
+   "review_ids": [
+    "us-wi-r01"
+   ]
+  },
+  {
+   "cid": "us-wi-002",
+   "line": 12,
+   "name": "Adventure Rock Walker's Point",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-0cacf06f06"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate us-wi-003 has the same website",
+     "ids": [
+      "us-wi-003"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate us-wi-004 has the same website",
+     "ids": [
+      "us-wi-004"
+     ]
+    }
+   ],
+   "review_ids": [
+    "us-wi-003",
+    "us-wi-004"
+   ]
+  },
+  {
+   "cid": "us-wi-003",
+   "line": 13,
+   "name": "Adventure Rock Milwaukee",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-96bd50d2e9"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate us-wi-002 has the same website",
+     "ids": [
+      "us-wi-002"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate us-wi-004 has the same website",
+     "ids": [
+      "us-wi-004"
+     ]
+    }
+   ],
+   "review_ids": [
+    "us-wi-002",
+    "us-wi-004"
+   ]
+  },
+  {
+   "cid": "us-wi-004",
+   "line": 14,
+   "name": "Adventure Rock Brookfield",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-ed43d21553"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate us-wi-002 has the same website",
+     "ids": [
+      "us-wi-002"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate us-wi-003 has the same website",
+     "ids": [
+      "us-wi-003"
+     ]
+    }
+   ],
+   "review_ids": [
+    "us-wi-002",
+    "us-wi-003"
+   ]
+  },
+  {
+   "cid": "us-wi-005",
+   "line": 15,
+   "name": "Milwaukee Turners Rock Climbing",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-35eb3b6d84"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    },
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "us-wi-006",
+   "line": 16,
+   "name": "Odyssey Climbing + Fitness Green Bay",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-675e072a40"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate us-wi-007 has the same website",
+     "ids": [
+      "us-wi-007"
+     ]
+    }
+   ],
+   "review_ids": [
+    "us-wi-007"
+   ]
+  },
+  {
+   "cid": "us-wi-007",
+   "line": 17,
+   "name": "Odyssey Climbing + Fitness Appleton",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-2f938b5b82"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate us-wi-006 has the same website",
+     "ids": [
+      "us-wi-006"
+     ]
+    }
+   ],
+   "review_ids": [
+    "us-wi-006"
+   ]
+  },
+  {
+   "cid": "us-wi-008",
+   "line": 18,
+   "name": "Greater Heights Climbing",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-3f9337be1c"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "us-wi-009",
+   "line": 19,
+   "name": "CLIMB @ The Loop",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-af9b27ba85"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "us-wi-d01",
+   "line": 20,
+   "name": "Summit Strength & Fitness",
+   "class": "blocked",
+   "suggested": "reject not-a-gym",
+   "importer": {
+    "class": "new",
+    "id": "g-72e6b926ae"
+   },
+   "blockers": [
+    {
+     "code": "not-a-gym",
+     "detail": "category other"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "us-wi-r01",
+   "line": 21,
+   "name": "Boulders Climbing Gym East",
+   "class": "blocked",
+   "suggested": "reject closed",
+   "importer": {
+    "class": "new",
+    "id": "g-8ec66d24f5"
+   },
+   "blockers": [
+    {
+     "code": "closed",
+     "detail": "status_claim is closed"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate us-wi-001 has the same website",
+     "ids": [
+      "us-wi-001"
+     ]
+    }
+   ],
+   "review_ids": [
+    "us-wi-001"
+   ]
+  }
+ ],
+ "reconcile_sha256": "c7525070459d1d180c86a42f0938a8b930d27de7238c72fba330b680da5d2322"
+}

@@ -1,0 +1,84 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-06-czechia-gap",
+ "index": {
+  "sha256": "acca236334f949e6c8cb5634600c2ea0d2906468630a2c17ceafe81c2322bdee",
+  "count": 3094,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-06-jp-chubu",
+  "2026-10-06-jp-kansai",
+  "2026-10-06-jp-kanto",
+  "2026-10-06-jp-kyushu-hokkaido",
+  "2026-10-06-kr-seoul",
+  "2026-10-06-poland"
+ ],
+ "counts": {
+  "records": 6,
+  "new": 6,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "40e82a0a733c1d3a922d39ff7860e08cdbe0ef455e485993015c351d68bc8fde",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-f1f1c8c476",
+   "id_frozen": true,
+   "name": "Basecamp boulder Brno",
+   "country": "CZ"
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-de272e83c6",
+   "id_frozen": true,
+   "name": "CRUX 24 Harrachov",
+   "country": "CZ"
+  },
+  {
+   "line": 3,
+   "class": "new",
+   "id": "g-be5da4691b",
+   "id_frozen": true,
+   "name": "Flash Boulder Bar",
+   "country": "CZ"
+  },
+  {
+   "line": 4,
+   "class": "new",
+   "id": "g-2d7816f43a",
+   "id_frozen": true,
+   "name": "FreeSolo",
+   "country": "CZ"
+  },
+  {
+   "line": 5,
+   "class": "new",
+   "id": "g-063a1815aa",
+   "id_frozen": true,
+   "name": "Jungle Letňany",
+   "country": "CZ"
+  },
+  {
+   "line": 6,
+   "class": "new",
+   "id": "g-b7d03849b6",
+   "id_frozen": true,
+   "name": "LOKAL BLOK",
+   "country": "CZ"
+  }
+ ]
+}
