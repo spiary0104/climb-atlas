@@ -1,0 +1,33 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-01-belarus",
+ "reviewer": "Spiar (owner); decisions drafted by Claude (AI) on the owner's instruction, pending owner sign-off",
+ "reviewed": "2026-10-06",
+ "decisions": {
+  "by-001": {
+   "decision": "same-as",
+   "same_as": "seed-1810",
+   "reason": "Importer same-name match, 114 m (Trapezia, Partizansky Prospect 2)."
+  },
+  "by-002": {
+   "decision": "same-as",
+   "same_as": "seed-1809",
+   "reason": "Importer same-name match, 29 m (Plato, Kuibysheva Street 22)."
+  },
+  "by-003": {
+   "decision": "same-as",
+   "same_as": "seed-1811",
+   "reason": "Importer same-name match, 178 m (Dinamo climbing wall, Kirova Street 8)."
+  },
+  "by-004": {
+   "decision": "same-as",
+   "same_as": "seed-1812",
+   "reason": "Importer same-name match, 19 m (Vershina, Moskovskaya Street 151, Brest)."
+  },
+  "by-005": {
+   "decision": "same-as",
+   "same_as": "seed-1813",
+   "reason": "The importer did not match it (351 m apart) but it is the same gym: both are GAGARIN at Volkova Street 10, Grodno. The existing pin (53.6304, 23.8128) agrees with the OSM node named Gagarin at 10 Volkava (53.63051, 23.81247, Nominatim 2026-10-06); the embed pin in this candidate is the one that is about 350 m off. The existing record is kept as is; whether the gym still operates is not established (its own site looks stale)."
+  }
+ }
+}

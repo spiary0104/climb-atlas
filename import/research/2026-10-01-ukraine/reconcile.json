@@ -3,13 +3,16 @@
  "section_id": "2026-10-01-ukraine",
  "inputs": {
   "section_sha256": "01fe4ef167b830636a72e178bc8e184dd8f0cc1fae30cba1c4747804ff9d0d67",
-  "sources_sha256": "b6b8d933f46513cbb33290530e53a868f6c28384893d88d9ce80948824a5cf3e",
-  "candidates_sha256": "b58947548e9625bff4a1f3d639c0413677834868ec3768b18680517fc4388902",
+  "sources_sha256": "18f3dad8527c0b8ed2a88529d4dac04a70f7958d98578e181304336628597747",
+  "candidates_sha256": "76629ef84ba06337814ed9d1c00d36215cfbf5b6d82a2983f348055ac540b4d9",
   "index": {
    "sha256": "e50072d61b4cd2133f160099a4444c918e7cc2eb73e18f243e28f9117b29ceb6",
    "count": 2419
   },
-  "staged_batches_compared": [],
+  "staged_batches_compared": [
+   "2026-10-01-peru",
+   "2026-10-01-serbia"
+  ],
   "other_sections_compared": []
  },
  "review_radii_m": {
@@ -19,9 +22,9 @@
  },
  "counts": {
   "candidates": 16,
-  "ready": 0,
+  "ready": 2,
   "review": 5,
-  "blocked": 9,
+  "blocked": 7,
   "existing": 2,
   "invalid": 0
  },
@@ -217,22 +220,12 @@
    "cid": "ua-008",
    "line": 8,
    "name": "MurawayNick",
-   "class": "blocked",
-   "suggested": "defer",
+   "class": "ready",
+   "suggested": "accept",
    "importer": {
     "class": "new",
     "id": "g-39090687fe"
    },
-   "blockers": [
-    {
-     "code": "status-not-open",
-     "detail": "status_claim is unknown"
-    },
-    {
-     "code": "insufficient-evidence",
-     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
-    }
-   ],
    "review_ids": []
   },
   {
@@ -257,18 +250,12 @@
    "cid": "ua-010",
    "line": 10,
    "name": "Montana",
-   "class": "review",
-   "suggested": "review",
+   "class": "ready",
+   "suggested": "accept",
    "importer": {
     "class": "new",
-    "id": "g-341116a928"
+    "id": "g-d0a5fe3997"
    },
-   "flags": [
-    {
-     "code": "weak-coordinates",
-     "detail": "coordinates are street-level, not the building"
-    }
-   ],
    "review_ids": []
   },
   {
@@ -375,30 +362,16 @@
    "cid": "ua-014",
    "line": 14,
    "name": "Climbing Room (Girska Maisternia)",
-   "class": "blocked",
-   "suggested": "defer",
+   "class": "review",
+   "suggested": "review",
    "importer": {
     "class": "new",
     "id": "g-e2d66e5d52"
    },
-   "blockers": [
-    {
-     "code": "status-not-open",
-     "detail": "status_claim is unknown"
-    },
-    {
-     "code": "insufficient-evidence",
-     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
-    }
-   ],
    "flags": [
     {
      "code": "limited-access",
      "detail": "club wall: check it is open to the public"
-    },
-    {
-     "code": "single-source",
-     "detail": "all evidence comes from one source"
     }
    ],
    "review_ids": []
@@ -462,5 +435,5 @@
    "review_ids": []
   }
  ],
- "reconcile_sha256": "bfc309dd6683c135276a9fcf6e58ff62c0c24dd87635efc56ee8ccc45612466a"
+ "reconcile_sha256": "2acde7f1704d96a8ee7fdcb40183635417c6ce6a38bf0b0ea1c6f3f01913d89a"
 }

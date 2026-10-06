@@ -1,0 +1,72 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-01-ukraine",
+ "index": {
+  "sha256": "e50072d61b4cd2133f160099a4444c918e7cc2eb73e18f243e28f9117b29ceb6",
+  "count": 2419,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-01-peru",
+  "2026-10-01-serbia"
+ ],
+ "counts": {
+  "records": 5,
+  "new": 5,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "61eb7e607d96ff2fdd59c011145b5aca8299143f9c4acca1ae45309673aeea38",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-26b7401a1f",
+   "id_frozen": true,
+   "name": "KPI Climbing Club",
+   "country": "UA"
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-39090687fe",
+   "id_frozen": true,
+   "name": "MurawayNick",
+   "country": "UA"
+  },
+  {
+   "line": 3,
+   "class": "new",
+   "id": "g-8ef7fc893a",
+   "id_frozen": true,
+   "name": "FormAT",
+   "country": "UA"
+  },
+  {
+   "line": 4,
+   "class": "new",
+   "id": "g-d0a5fe3997",
+   "id_frozen": true,
+   "name": "Montana",
+   "country": "UA"
+  },
+  {
+   "line": 5,
+   "class": "new",
+   "id": "g-e2d66e5d52",
+   "id_frozen": true,
+   "name": "Climbing Room (Girska Maisternia)",
+   "country": "UA"
+  }
+ ]
+}

@@ -13,7 +13,6 @@ Review radii (stricter than the importer): any gym 150 m, related name 15 km, ot
 
 ## Needs review (accept needs a reason and reviewed_against covering every listed id) (1)
 - pe-003 "Vertigo Valle Sagrado" [g-020b112ed4]
-  - single-source: all evidence comes from one source
   - weak-coordinates: coordinates are street-level, not the building
 
 ## Blocked: cannot be accepted (3)

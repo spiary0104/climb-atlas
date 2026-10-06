@@ -1,0 +1,81 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-01-ukraine",
+ "reviewer": "Spiar (owner); decisions drafted by Claude (AI) on the owner's instruction, pending owner sign-off",
+ "reviewed": "2026-10-06",
+ "decisions": {
+  "ua-001": {
+   "decision": "same-as",
+   "same_as": "seed-1705",
+   "reason": "Importer same-name match, 16 m (Hyperion, Kostiantynivska 73, Kyiv)."
+  },
+  "ua-002": {
+   "decision": "same-as",
+   "same_as": "seed-1701",
+   "reason": "Importer same-name match, 29 m (UP!, Holosiivskyi Avenue 27, Kyiv)."
+  },
+  "ua-003": {
+   "decision": "same-as",
+   "same_as": "seed-1702",
+   "reason": "Funattic is the former Tsekh (Cekh) climbing gym: the gym's own Instagram names 'Cekh / Tsekh' as the previous name, the Diti v Misti listing for Funattic still uses the slug 'skelelaznij-tsentr-tseh', and a directory comment says Tsekh moved on 1 Nov 2018 from Semyi Khokhlovykh 8 to Borshchahivska 154 (Marmelad). The existing record keeps the old address (5,719 m away). Same business, so not a new gym; the pin and address of seed-1702 should move to Marmelad (separate update batch). The gym is open: its own Instagram posts almost daily through 2 Oct 2026.",
+   "followup": "location-update"
+  },
+  "ua-004": {
+   "decision": "accept",
+   "reason": "Only flag: club wall. KPI Climbing Club's own site (copyright 2026, dated 2 Sept 2026) says it teaches bouldering and top rope, that enrolment for the adult section is open ('NABIR VIDKRYTO'), that no experience is needed and that you can come alone; it is a club run by group sessions rather than a drop-in gym, but any adult can enrol. Bouldering is named on the homepage; pin is OSM node 6947697253 (climbing:boulder=yes) at the KPI sports complex.",
+   "reviewed_against": []
+  },
+  "ua-005": {
+   "decision": "defer",
+   "reason": "The Wall Kyiv: official site describes 18 auto-belay lines up to 12 m, over 50 routes and an instructor on site (open daily 10:00-21:45, 2026) but never mentions bouldering, so it is not established (and looks roped). See MANUAL-CHECK.md."
+  },
+  "ua-006": {
+   "decision": "same-as",
+   "same_as": "seed-1706",
+   "reason": "Same gym as the existing 'TheWall': both are The Wall at Heroes of UPA Street 72, Lviv. The importer did not match them (368 m apart; the existing pin 49.8333, 24.0013 is off, the candidate's OSM node and the site's own business coordinates both lie near 49.8322-49.8314, 23.9965-23.9968). Not a new gym; the existing pin should move (separate update batch).",
+   "followup": "location-update"
+  },
+  "ua-007": {
+   "decision": "defer",
+   "reason": "Bukhta: the official site describes a 350 m2 bouldering zone but its newest content is from 2019 and prices are very old; no 2025-26 sign of operation from the gym itself (its Facebook page could not be read). The bukhta.com.ua domain is now a betting site. See MANUAL-CHECK.md."
+  },
+  "ua-008": {
+   "decision": "accept",
+   "reason": "Ready, no flags. Official site: bouldering is the main specialisation, 270 m2, open all year, independent (drop-in) training offered at Svobody Square 5 (Derzhprom); the gym's own Instagram posts almost daily through 30 Sept 2026 (re-checked 2026-10-06 twice), which settles the wartime status; pin is OSM node 13410542180 at the address. No existing Bouldeer gym in Kharkiv."
+  },
+  "ua-009": {
+   "decision": "accept",
+   "reason": "Only flag: club wall. FormAT's own site describes a bouldering school, trainings for adults and children, a price page and a 17 Jan 2026 festival; its own Instagram (@format_club) posts through 3 Oct 2026 (FORMAT Mini Fest on 10 Oct, free first visit for ages 3-5 on 7-13 Sept), so it is open to new members now. It is a club (phone sign-up, groups) rather than a drop-in gym, but anyone can join. Pin: OSM node 13272291485, matching the Google place link on the contacts page.",
+   "reviewed_against": []
+  },
+  "ua-010": {
+   "decision": "accept",
+   "reason": "Weak-coordinates flag fixed: the original pin was the centre of a zoomed-out embed and was about 1.9 km from the address; it is now the Nominatim building for 4 Hrushevskoho, Dnipro (way/81127806, geocoded-address, building). Official site: bouldering hall with soft mats, hours daily, prices; own Instagram (@montanaclimb) posts through Oct 2026 (recruitment post Aug 2026, route changes every two weeks)."
+  },
+  "ua-011": {
+   "decision": "defer",
+   "reason": "La Scala: own Instagram is active through 27 Sept 2026 and has a story highlight titled 'Trasy Bolder' (boulder routes), but no caption or page in readable text states a bouldering area, and the official site (rockcenter.dp.ua) is hijacked. Kept out until someone confirms the highlight. See MANUAL-CHECK.md."
+  },
+  "ua-012": {
+   "decision": "defer",
+   "reason": "Skala (Karavan mall): official page and Instagram (posts through 3 Oct 2026) never mention bouldering; only a Jan 2025 local news overview does. See MANUAL-CHECK.md."
+  },
+  "ua-013": {
+   "decision": "defer",
+   "reason": "Energy Wall: site offers belayed routes up to 8 m and never says bouldering; its Instagram (posts Sept-Oct 2026) has a story highlight 'Energy Boulder' that could not be opened. Kept out until confirmed. See MANUAL-CHECK.md."
+  },
+  "ua-014": {
+   "decision": "accept",
+   "reason": "Only flag: club wall. The mountaineering club's own page says bouldering and drytooling trainings at the Climbing Room are open to everyone who wants to join (Tue/Thu 17:00-20:00, Sun 12:00-15:00, donation), and the room's own Instagram (@climbing_room) posts climbing videos through 27 Sept 2026 from the Vatra sports complex (3rd floor), so it is operating. Pin: the club's own embedded map (building), with an unnamed OSM climbing node 20 m away.",
+   "reviewed_against": []
+  },
+  "ua-015": {
+   "decision": "defer",
+   "reason": "SK Dynamica: official page describes a new bouldering and climbing hall (4.3 m walls, mats, bookable 08:00-22:00) but there is no dated sign of operation (only a 2022-2026 footer) and the Instagram profile is restricted; the pin is also only street-level. See MANUAL-CHECK.md."
+  },
+  "ua-016": {
+   "decision": "defer",
+   "reason": "Ostriv: only an OSM object and an unreadable Facebook page; search snippets describe an open-air climbing tower on Trukhaniv Island (seasonal), the site domain does not resolve, and no indoor bouldering hall is confirmed. See MANUAL-CHECK.md."
+  }
+ }
+}
