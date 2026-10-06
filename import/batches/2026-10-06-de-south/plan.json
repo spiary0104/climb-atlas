@@ -1,0 +1,565 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-06-de-south",
+ "index": {
+  "sha256": "27073d25c2df373c17caef0c24ebfe759b8d457953a461c62786486d588e661d",
+  "count": 2438,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [],
+ "counts": {
+  "records": 67,
+  "new": 67,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "f3f00a7dc0b3fec71774a04cbd60084fdf0cf477f17975059b2b1ead98895aa5",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-56f82b06bd",
+   "id_frozen": true,
+   "name": "Active Garden Waiblingen",
+   "country": "DE"
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-932932f132",
+   "id_frozen": true,
+   "name": "Adventure Campus Treuchtlingen Boulder- und Kletterhalle",
+   "country": "DE"
+  },
+  {
+   "line": 3,
+   "class": "new",
+   "id": "g-ce17372a69",
+   "id_frozen": true,
+   "name": "B12 DAV Boulderzentrum Tübingen",
+   "country": "DE"
+  },
+  {
+   "line": 4,
+   "class": "new",
+   "id": "g-7cad2897b6",
+   "id_frozen": true,
+   "name": "Bloc-Hütte Augsburg",
+   "country": "DE"
+  },
+  {
+   "line": 5,
+   "class": "new",
+   "id": "g-7ae35368e3",
+   "id_frozen": true,
+   "name": "Boulder Hall Burgoberbach",
+   "country": "DE"
+  },
+  {
+   "line": 6,
+   "class": "new",
+   "id": "g-1223a96f22",
+   "id_frozen": true,
+   "name": "BOULDERBOCK",
+   "country": "DE"
+  },
+  {
+   "line": 7,
+   "class": "new",
+   "id": "g-754efdfec3",
+   "id_frozen": true,
+   "name": "Boulderhalle Memmingen",
+   "country": "DE"
+  },
+  {
+   "line": 8,
+   "class": "new",
+   "id": "g-e7030344b1",
+   "id_frozen": true,
+   "name": "Boulderhalle Steil",
+   "country": "DE"
+  },
+  {
+   "line": 9,
+   "class": "new",
+   "id": "g-83c8e972b5",
+   "id_frozen": true,
+   "name": "Boulderhaus Reutlingen",
+   "country": "DE"
+  },
+  {
+   "line": 10,
+   "class": "new",
+   "id": "g-4188a745ee",
+   "id_frozen": true,
+   "name": "Boulderia",
+   "country": "DE"
+  },
+  {
+   "line": 11,
+   "class": "new",
+   "id": "g-b03d3793ce",
+   "id_frozen": true,
+   "name": "DAV Kletter- und Boulderzentrum Bad Windsheim",
+   "country": "DE"
+  },
+  {
+   "line": 12,
+   "class": "new",
+   "id": "g-be8703cd08",
+   "id_frozen": true,
+   "name": "DAV Kletter- und Boulderzentrum Oberbayern Süd (Bad Tölz)",
+   "country": "DE"
+  },
+  {
+   "line": 13,
+   "class": "new",
+   "id": "g-06793d6e29",
+   "id_frozen": true,
+   "name": "DAV Boulderhalle Garmisch-Partenkirchen",
+   "country": "DE"
+  },
+  {
+   "line": 14,
+   "class": "new",
+   "id": "g-d40e058bd5",
+   "id_frozen": true,
+   "name": "DAV Boulderzentrum Ostalb",
+   "country": "DE"
+  },
+  {
+   "line": 15,
+   "class": "new",
+   "id": "g-f53ac6cb8d",
+   "id_frozen": true,
+   "name": "DAV Kletter- und Boulderzentrum Aschaffenburg",
+   "country": "DE"
+  },
+  {
+   "line": 16,
+   "class": "new",
+   "id": "g-d74af4b3a5",
+   "id_frozen": true,
+   "name": "DAV Kletter- und Boulderzentrum Heidelberg (VertiGo)",
+   "country": "DE"
+  },
+  {
+   "line": 17,
+   "class": "new",
+   "id": "g-1ae4b1819f",
+   "id_frozen": true,
+   "name": "DAV Kletter- und Boulderzentrum Karlsruhe",
+   "country": "DE"
+  },
+  {
+   "line": 18,
+   "class": "new",
+   "id": "g-9eb236234a",
+   "id_frozen": true,
+   "name": "DAV Kletter- und Boulderhalle Pforzheim",
+   "country": "DE"
+  },
+  {
+   "line": 19,
+   "class": "new",
+   "id": "g-bf1a7a2290",
+   "id_frozen": true,
+   "name": "DAV Kletterzentrum Augsburg",
+   "country": "DE"
+  },
+  {
+   "line": 20,
+   "class": "new",
+   "id": "g-1d4aec87a4",
+   "id_frozen": true,
+   "name": "DAV Kletterzentrum Baden-Baden",
+   "country": "DE"
+  },
+  {
+   "line": 21,
+   "class": "new",
+   "id": "g-7b9ccb401d",
+   "id_frozen": true,
+   "name": "DAV Kletterzentrum Bayreuth",
+   "country": "DE"
+  },
+  {
+   "line": 22,
+   "class": "new",
+   "id": "g-3f7050b866",
+   "id_frozen": true,
+   "name": "DAV Kletterzentrum Freiburg",
+   "country": "DE"
+  },
+  {
+   "line": 23,
+   "class": "new",
+   "id": "g-7bc37feee8",
+   "id_frozen": true,
+   "name": "DAV Kletterzentrum Freising",
+   "country": "DE"
+  },
+  {
+   "line": 24,
+   "class": "new",
+   "id": "g-de853397a1",
+   "id_frozen": true,
+   "name": "DAV Kletterzentrum Ingolstadt",
+   "country": "DE"
+  },
+  {
+   "line": 25,
+   "class": "new",
+   "id": "g-17f9a58b6c",
+   "id_frozen": true,
+   "name": "DAV Kletterzentrum Kaufbeuren",
+   "country": "DE"
+  },
+  {
+   "line": 26,
+   "class": "new",
+   "id": "g-cf67edecc5",
+   "id_frozen": true,
+   "name": "DAV Kletterzentrum Neumarkt",
+   "country": "DE"
+  },
+  {
+   "line": 27,
+   "class": "new",
+   "id": "g-c089fd982e",
+   "id_frozen": true,
+   "name": "DAV Kletterzentrum Offenburg",
+   "country": "DE"
+  },
+  {
+   "line": 28,
+   "class": "new",
+   "id": "g-5034de8b9d",
+   "id_frozen": true,
+   "name": "DAV Kletterzentrum Ostalb",
+   "country": "DE"
+  },
+  {
+   "line": 29,
+   "class": "new",
+   "id": "g-17ffb01d42",
+   "id_frozen": true,
+   "name": "DAV Kletterzentrum Würzburg",
+   "country": "DE"
+  },
+  {
+   "line": 30,
+   "class": "new",
+   "id": "g-853fd34b84",
+   "id_frozen": true,
+   "name": "DAV Kletter- und Boulderzentrum München-Nord (Freimann)",
+   "country": "DE"
+  },
+  {
+   "line": 31,
+   "class": "new",
+   "id": "g-9d04ea12dc",
+   "id_frozen": true,
+   "name": "DAV Kletter- und Boulderzentrum München-Süd (Thalkirchen)",
+   "country": "DE"
+  },
+  {
+   "line": 32,
+   "class": "new",
+   "id": "g-df3f8cb6c0",
+   "id_frozen": true,
+   "name": "DAV Kletter- und Boulderzentrum München-West (Gilching)",
+   "country": "DE"
+  },
+  {
+   "line": 33,
+   "class": "new",
+   "id": "g-da32d2afb4",
+   "id_frozen": true,
+   "name": "Die Kletterei Kaufering",
+   "country": "DE"
+  },
+  {
+   "line": 34,
+   "class": "new",
+   "id": "g-a03183f104",
+   "id_frozen": true,
+   "name": "ELEMENT Boulders München",
+   "country": "DE"
+  },
+  {
+   "line": 35,
+   "class": "new",
+   "id": "g-bfbcf8be4c",
+   "id_frozen": true,
+   "name": "ES-Vertikal DAV Kletterzentrum Deggendorf",
+   "country": "DE"
+  },
+  {
+   "line": 36,
+   "class": "new",
+   "id": "g-c1a097566f",
+   "id_frozen": true,
+   "name": "EXUS Bouldercenter Gersthofen",
+   "country": "DE"
+  },
+  {
+   "line": 37,
+   "class": "new",
+   "id": "g-35775d0d9a",
+   "id_frozen": true,
+   "name": "Frankenjura Academy",
+   "country": "DE"
+  },
+  {
+   "line": 38,
+   "class": "new",
+   "id": "g-e3708902ff",
+   "id_frozen": true,
+   "name": "Greifbar Bouldersport",
+   "country": "DE"
+  },
+  {
+   "line": 39,
+   "class": "new",
+   "id": "g-cedd4a3b5f",
+   "id_frozen": true,
+   "name": "GriffKiste Boulderhalle",
+   "country": "DE"
+  },
+  {
+   "line": 40,
+   "class": "new",
+   "id": "g-2b3fa7a2be",
+   "id_frozen": true,
+   "name": "GriP Kletterzentrum Göppingen",
+   "country": "DE"
+  },
+  {
+   "line": 41,
+   "class": "new",
+   "id": "g-958c24bd03",
+   "id_frozen": true,
+   "name": "Heavens Gate Klettern & Bouldern",
+   "country": "DE"
+  },
+  {
+   "line": 42,
+   "class": "new",
+   "id": "g-5ab7e17b48",
+   "id_frozen": true,
+   "name": "JURABLOC DAV Kletterzentrum Eichstätt",
+   "country": "DE"
+  },
+  {
+   "line": 43,
+   "class": "new",
+   "id": "g-688eb9cff8",
+   "id_frozen": true,
+   "name": "Kletterarena Heilbronn",
+   "country": "DE"
+  },
+  {
+   "line": 44,
+   "class": "new",
+   "id": "g-5b3890696b",
+   "id_frozen": true,
+   "name": "Kletterhalle Basislager",
+   "country": "DE"
+  },
+  {
+   "line": 45,
+   "class": "new",
+   "id": "g-9973f7e291",
+   "id_frozen": true,
+   "name": "Kletterhalle Weilheim \"Under the Roof\"",
+   "country": "DE"
+  },
+  {
+   "line": 46,
+   "class": "new",
+   "id": "g-dcd29956ad",
+   "id_frozen": true,
+   "name": "Kletterzentrum Berchtesgaden",
+   "country": "DE"
+  },
+  {
+   "line": 47,
+   "class": "new",
+   "id": "g-70c4079916",
+   "id_frozen": true,
+   "name": "Kletterzentrum Schweinfurt",
+   "country": "DE"
+  },
+  {
+   "line": 48,
+   "class": "new",
+   "id": "g-f681df20f4",
+   "id_frozen": true,
+   "name": "Kraftwerk Boulderhalle Allgäu",
+   "country": "DE"
+  },
+  {
+   "line": 49,
+   "class": "new",
+   "id": "g-60991652bc",
+   "id_frozen": true,
+   "name": "NaturFreunde Kletterhalle Dachau",
+   "country": "DE"
+  },
+  {
+   "line": 50,
+   "class": "new",
+   "id": "g-e55c3ea301",
+   "id_frozen": true,
+   "name": "NICE to Move Boulderhalle Eislingen",
+   "country": "DE"
+  },
+  {
+   "line": 51,
+   "class": "new",
+   "id": "g-d9f2e6f2fc",
+   "id_frozen": true,
+   "name": "PAFRock DAV Kletterzentrum Pfaffenhofen",
+   "country": "DE"
+  },
+  {
+   "line": 52,
+   "class": "new",
+   "id": "g-415ef70320",
+   "id_frozen": true,
+   "name": "PEAK7 Boulderhalle Landshut",
+   "country": "DE"
+  },
+  {
+   "line": 53,
+   "class": "new",
+   "id": "g-961023efa7",
+   "id_frozen": true,
+   "name": "Rock Inn Boulderhalle Würzburg",
+   "country": "DE"
+  },
+  {
+   "line": 54,
+   "class": "new",
+   "id": "g-c77118b89c",
+   "id_frozen": true,
+   "name": "ROX Boulder- und Kletterzentrum Herrenberg",
+   "country": "DE"
+  },
+  {
+   "line": 55,
+   "class": "new",
+   "id": "g-5d90436009",
+   "id_frozen": true,
+   "name": "Sandstein Boulder Halle Aschaffenburg",
+   "country": "DE"
+  },
+  {
+   "line": 56,
+   "class": "new",
+   "id": "g-acc5986d81",
+   "id_frozen": true,
+   "name": "Schwerkraft Boulderhalle Ingolstadt",
+   "country": "DE"
+  },
+  {
+   "line": 57,
+   "class": "new",
+   "id": "g-5b12ac1f92",
+   "id_frozen": true,
+   "name": "Sparkassen Dome Biberach (DAV Kletterzentrum)",
+   "country": "DE"
+  },
+  {
+   "line": 58,
+   "class": "new",
+   "id": "g-f74094f649",
+   "id_frozen": true,
+   "name": "sparkassendome DAV Kletterwelt Neu-Ulm",
+   "country": "DE"
+  },
+  {
+   "line": 59,
+   "class": "new",
+   "id": "g-e89c2e8098",
+   "id_frozen": true,
+   "name": "Studio Bloc Mannheim",
+   "country": "DE"
+  },
+  {
+   "line": 60,
+   "class": "new",
+   "id": "g-478643f0b1",
+   "id_frozen": true,
+   "name": "Kletter- und Boulderzentrum SVN München (Neuperlach)",
+   "country": "DE"
+  },
+  {
+   "line": 61,
+   "class": "new",
+   "id": "g-47d0ed5ed2",
+   "id_frozen": true,
+   "name": "THE ROCK Boulderhalle Karlsruhe",
+   "country": "DE"
+  },
+  {
+   "line": 62,
+   "class": "new",
+   "id": "g-18f1f9d51a",
+   "id_frozen": true,
+   "name": "THE ROCK Kletterzentrum Karlsruhe",
+   "country": "DE"
+  },
+  {
+   "line": 63,
+   "class": "new",
+   "id": "g-94c0660a6d",
+   "id_frozen": true,
+   "name": "TOP Boulder Kirchheim",
+   "country": "DE"
+  },
+  {
+   "line": 64,
+   "class": "new",
+   "id": "g-101337b916",
+   "id_frozen": true,
+   "name": "TOP Boulder Malmsheim",
+   "country": "DE"
+  },
+  {
+   "line": 65,
+   "class": "new",
+   "id": "g-7d253fa3e1",
+   "id_frozen": true,
+   "name": "VELS Boulderhalle",
+   "country": "DE"
+  },
+  {
+   "line": 66,
+   "class": "new",
+   "id": "g-07d83aaffe",
+   "id_frozen": true,
+   "name": "DAV Kletter- und Boulderzentrum Volksbank Vertical",
+   "country": "DE"
+  },
+  {
+   "line": 67,
+   "class": "new",
+   "id": "g-38d7d7998c",
+   "id_frozen": true,
+   "name": "Zugzwang Boulderhalle Auerbach",
+   "country": "DE"
+  }
+ ]
+}

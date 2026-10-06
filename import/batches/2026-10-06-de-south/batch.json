@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-06-de-south",
+  "description": "Regional research \"Germany: Bayern + Baden-Württemberg coverage gap\": 67 new gym(s) accepted of 82 candidate(s)",
+  "created": "2026-10-06",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-10-06-de-south",
+    "section_sha256": "3dd0cd10fbe1159df1ce1cda7a636b7f146dad103a450e17751cede7b3a8926c",
+    "sources_sha256": "488e3669daa0bad9c99fbfa2b9ef1adb794cef6ce91fa2299db45cf1b87f3eee",
+    "candidates_sha256": "00dffa715cef4952b43dce13db790509b311b25d70752fdf02ad79944dfae6f9",
+    "reconcile_sha256": "2eea20d4e6f64bbae7e8c07bf7609cde9d1405a314a2418af03cf8903efd432e",
+    "review_sha256": "5d1fc4eadc5462511b3f009c9cc22381fc981bfb92a35e0dff170bab6eb40fe1",
+    "candidates": 82,
+    "staged": 67,
+    "decisions": {
+      "accept": 67,
+      "defer": 15
+    }
+  },
+  "index_at_staging": {
+    "sha256": "27073d25c2df373c17caef0c24ebfe759b8d457953a461c62786486d588e661d",
+    "count": 2438
+  }
+}
