@@ -1,0 +1,243 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-06-france-cities",
+ "reviewer": "Spiar (owner); decisions drafted by Claude (AI) on the owner's instruction, pending owner sign-off",
+ "reviewed": "2026-10-06",
+ "decisions": {
+  "frc-001": {
+   "decision": "accept"
+  },
+  "frc-002": {
+   "decision": "accept"
+  },
+  "frc-003": {
+   "decision": "accept"
+  },
+  "frc-004": {
+   "decision": "accept",
+   "reason": "Two different Altissimo halls in the Montpellier area: Grabels (2 rue de la Treille) and Odysseum (allee d'Ulysse), 10.6 km apart, each with its own page, address and OSM element.",
+   "reviewed_against": [
+    "frc-005"
+   ]
+  },
+  "frc-005": {
+   "decision": "accept",
+   "reason": "Two different Altissimo halls in the Montpellier area: Odysseum (allee d'Ulysse) and Grabels (2 rue de la Treille), 10.6 km apart, each with its own page, address and OSM element.",
+   "reviewed_against": [
+    "frc-004"
+   ]
+  },
+  "frc-006": {
+   "decision": "accept"
+  },
+  "frc-007": {
+   "decision": "accept"
+  },
+  "frc-008": {
+   "decision": "defer",
+   "reason": "Only the page title says 'Salle de Bloc'; no bloc area, problem count or topo on the site (other Altissimo pages give counts). Owner to confirm a bloc area exists (MANUAL-CHECK.md)."
+  },
+  "frc-009": {
+   "decision": "accept"
+  },
+  "frc-010": {
+   "decision": "accept"
+  },
+  "frc-011": {
+   "decision": "accept"
+  },
+  "frc-012": {
+   "decision": "accept"
+  },
+  "frc-013": {
+   "decision": "accept"
+  },
+  "frc-014": {
+   "decision": "accept"
+  },
+  "frc-015": {
+   "decision": "accept"
+  },
+  "frc-016": {
+   "decision": "accept"
+  },
+  "frc-017": {
+   "decision": "accept"
+  },
+  "frc-018": {
+   "decision": "accept"
+  },
+  "frc-019": {
+   "decision": "accept"
+  },
+  "frc-020": {
+   "decision": "accept"
+  },
+  "frc-021": {
+   "decision": "accept"
+  },
+  "frc-022": {
+   "decision": "accept",
+   "reason": "Hueco City (11 rue Adele Riton, city centre) and Hueco Zenith (13 rue Ettore Bugatti, Eckbolsheim) are two halls about 4 km apart with separate pages, addresses and OSM nodes; only the website is shared.",
+   "reviewed_against": [
+    "frc-023"
+   ]
+  },
+  "frc-023": {
+   "decision": "accept",
+   "reason": "Hueco Zenith (13 rue Ettore Bugatti, Eckbolsheim) and Hueco City (11 rue Adele Riton, city centre) are two halls about 4 km apart with separate pages, addresses and OSM nodes; only the website is shared.",
+   "reviewed_against": [
+    "frc-022"
+   ]
+  },
+  "frc-024": {
+   "decision": "accept"
+  },
+  "frc-025": {
+   "decision": "reject",
+   "reason_code": "temporary",
+   "reason": "Own page header: 'Temporairement ferme pour cause d'incendie' (read 2026-10-06), no reopening date. Re-research when it reopens."
+  },
+  "frc-026": {
+   "decision": "accept"
+  },
+  "frc-027": {
+   "decision": "accept"
+  },
+  "frc-028": {
+   "decision": "accept"
+  },
+  "frc-029": {
+   "decision": "accept"
+  },
+  "frc-030": {
+   "decision": "accept"
+  },
+  "frc-031": {
+   "decision": "reject",
+   "reason_code": "closed",
+   "reason": "Own page: 'Fermeture definitive' after judicial liquidation (Nanterre court, 16 July)."
+  },
+  "frc-032": {
+   "decision": "reject",
+   "reason_code": "closed",
+   "reason": "Own page: 'Fermeture definitive' after judicial liquidation (Versailles court, 30 June)."
+  },
+  "frc-033": {
+   "decision": "accept"
+  },
+  "frc-034": {
+   "decision": "accept"
+  },
+  "frc-035": {
+   "decision": "accept"
+  },
+  "frc-036": {
+   "decision": "accept"
+  },
+  "frc-037": {
+   "decision": "accept"
+  },
+  "frc-038": {
+   "decision": "accept"
+  },
+  "frc-039": {
+   "decision": "accept"
+  },
+  "frc-040": {
+   "decision": "accept",
+   "reason": "Pin is the site's own JSON-LD coordinates, 175 m from the OSM node 'b'wall'; both lie in the same industrial estate and BAN only matches the street. The hall itself is clear (own page: bloc area, hours, address), so accepted with a street-level pin; optional satellite check in MANUAL-CHECK.md.",
+   "reviewed_against": []
+  },
+  "frc-041": {
+   "decision": "accept",
+   "reason": "Single source (own site, two pages) plus a BAN house-number point: the hall opened on 3 October 2026 and has no OSM element yet. Address, hours and bouldering are on its own page and its opening news item.",
+   "reviewed_against": []
+  },
+  "frc-042": {
+   "decision": "accept",
+   "reason": "Boulder Line 1 (400 avenue Marcel Dassault, Castelnau-le-Lez) and BL3 City (27 avenue de Toulouse, Montpellier) are two sites about 5 km apart with separate addresses and OSM elements; only the website is shared.",
+   "reviewed_against": [
+    "frc-043"
+   ]
+  },
+  "frc-043": {
+   "decision": "accept",
+   "reason": "Boulder Line 3 City (27 avenue de Toulouse, Montpellier) and BL1 (400 avenue Marcel Dassault, Castelnau-le-Lez) are two sites about 5 km apart with separate addresses and OSM elements; only the website is shared.",
+   "reviewed_against": [
+    "frc-042"
+   ]
+  },
+  "frc-044": {
+   "decision": "accept"
+  },
+  "frc-045": {
+   "decision": "accept"
+  },
+  "frc-046": {
+   "decision": "defer",
+   "reason": "Own site confirms a bouldering and rope hall at L'Union and that it was SOLO Escalade until 2018, but Bouldeer already has 'SOLO Escalade - Toulouse' 5.5 km away; same business or not could not be settled from the sources read (MANUAL-CHECK.md)."
+  },
+  "frc-047": {
+   "decision": "accept"
+  },
+  "frc-048": {
+   "decision": "accept"
+  },
+  "frc-049": {
+   "decision": "accept"
+  },
+  "frc-050": {
+   "decision": "accept"
+  },
+  "frc-051": {
+   "decision": "accept"
+  },
+  "frc-052": {
+   "decision": "accept"
+  },
+  "frc-053": {
+   "decision": "accept"
+  },
+  "frc-054": {
+   "decision": "accept"
+  },
+  "frc-055": {
+   "decision": "accept"
+  },
+  "frc-056": {
+   "decision": "accept"
+  },
+  "frc-057": {
+   "decision": "accept"
+  },
+  "frc-058": {
+   "decision": "accept"
+  },
+  "frc-059": {
+   "decision": "accept"
+  },
+  "frc-060": {
+   "decision": "accept"
+  },
+  "frc-061": {
+   "decision": "accept"
+  },
+  "frc-062": {
+   "decision": "defer",
+   "reason": "Rope hall with 20 auto-belays in the Annette K. venue; no bouldering area shown on its page, so bouldering is not established (MANUAL-CHECK.md)."
+  },
+  "frc-063": {
+   "decision": "accept"
+  },
+  "frc-064": {
+   "decision": "accept"
+  },
+  "frc-065": {
+   "decision": "accept"
+  },
+  "frc-066": {
+   "decision": "accept"
+  }
+ }
+}
