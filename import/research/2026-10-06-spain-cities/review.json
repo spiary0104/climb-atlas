@@ -1,0 +1,194 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-06-spain-cities",
+ "reviewer": "Spiar (owner); decisions drafted by Claude (AI) on the owner's instruction, pending owner sign-off",
+ "reviewed": "2026-10-06",
+ "decisions": {
+  "es-001": {
+   "decision": "accept",
+   "reason": "S IW (own/chain page) shows it exists, is open and offers bouldering; pin osm (way/756325068), precision building."
+  },
+  "es-002": {
+   "decision": "accept",
+   "reason": "S IW (own/chain page) shows it exists, is open and offers bouldering; pin osm (node/8434321271), precision building."
+  },
+  "es-003": {
+   "decision": "defer",
+   "reason": "Not accepted: the chain centre page was read only as a search-engine extract (direct fetch is blocked by Cloudflare) and it did not state a boulder area for this centre, so bouldering is not established for it. It is on the chain current centre list at the given address. Question for the owner is in MANUAL-CHECK.md."
+  },
+  "es-004": {
+   "decision": "defer",
+   "reason": "Not accepted: the chain centre page was read only as a search-engine extract (direct fetch is blocked by Cloudflare) and it did not state a boulder area for this centre, so bouldering is not established for it. It is on the chain current centre list at the given address. Question for the owner is in MANUAL-CHECK.md."
+  },
+  "es-005": {
+   "decision": "accept",
+   "reason": "Street-level pin accepted: no building-level coordinate source exists (house number not mapped in OSM, the gym publishes no map point), the pin is on the gym own street so the error is at most a few hundred metres, and precision is recorded as street. S BDN (own/chain page) shows it exists, is open and offers bouldering; pin geocoded-address (way/447424187 (Carrer del Torrent de Vallmajor, 08915 Badalona; house number 106 not mapped)), precision street.",
+   "reviewed_against": []
+  },
+  "es-006": {
+   "decision": "accept",
+   "reason": "S KRAKEN (own/chain page) shows it exists, is open and offers bouldering; pin official-map (Google Maps embed on https://krakenbloc.com/contacto/), precision building."
+  },
+  "es-007": {
+   "decision": "accept",
+   "reason": "S FREEBLOC (own/chain page) shows it exists, is open and offers bouldering; pin osm (node/2696668384), precision building."
+  },
+  "es-008": {
+   "decision": "accept",
+   "reason": "S GOLEM (own/chain page) shows it exists, is open and offers bouldering; pin official-map (Google Maps embed on https://salagolem.com/contacte/), precision building."
+  },
+  "es-009": {
+   "decision": "accept",
+   "reason": "S INGRA (own/chain page) shows it exists, is open and offers bouldering; pin osm (node/6349376787), precision building."
+  },
+  "es-010": {
+   "decision": "accept",
+   "reason": "S BAUMA (own/chain page) shows it exists, is open and offers bouldering; pin official-map (Google Maps place link on https://www.labauma.com/contacte/ (goo.gl/maps/zz6NjYHSRViHknrA6)), precision building."
+  },
+  "es-011": {
+   "decision": "accept",
+   "reason": "Street-level pin accepted: no building-level coordinate source exists (house number not mapped in OSM, the gym publishes no map point), the pin is on the gym own street so the error is at most a few hundred metres, and precision is recorded as street. The home page map embed and the contact page embed disagree by about 1 km, so only street precision is claimed. S PANXA (own/chain page) shows it exists, is open and offers bouldering; pin official-map (Google Maps embed on https://lapanxadelbou.com/ (the contact page embeds a different centre 41.5432,2.1099, so only street precision is claimed)), precision street.",
+   "reviewed_against": []
+  },
+  "es-012": {
+   "decision": "accept",
+   "reason": "S FLASHH (own/chain page) shows it exists, is open and offers bouldering; pin osm (node/11175170208), precision building."
+  },
+  "es-013": {
+   "decision": "accept",
+   "reason": "S BPLANET (own/chain page) shows it exists, is open and offers bouldering; pin official-map (Google Maps link on https://bulderplanet.com/maresme), precision building."
+  },
+  "es-014": {
+   "decision": "accept",
+   "reason": "S BPLANET (own/chain page) shows it exists, is open and offers bouldering; pin osm (node/10612051338), precision building."
+  },
+  "es-015": {
+   "decision": "accept",
+   "reason": "S BLOQUERA (own/chain page) shows it exists, is open and offers bouldering; pin official-map (Google Maps embed on https://labloquera.cat/), precision building."
+  },
+  "es-016": {
+   "decision": "accept",
+   "reason": "S ROCKART (own/chain page) shows it exists, is open and offers bouldering; pin official-map (Link google.com/maps/search/?api=1&query=42.0671,2.8097 on https://rockart.cat/contacte), precision building."
+  },
+  "es-017": {
+   "decision": "accept",
+   "reason": "S MB (own/chain page) shows it exists, is open and offers bouldering; pin osm (node/5226991921), precision building."
+  },
+  "es-018": {
+   "decision": "accept",
+   "reason": "S SLAB (own/chain page) shows it exists, is open and offers bouldering; pin osm (node/10137353834), precision building."
+  },
+  "es-019": {
+   "decision": "accept",
+   "reason": "Related-name flag is a different gym: Fanàtic Lleida (Avinguda de les Garrigues 107, own site fanaticlleida.com) and Boulder Indoor (Carrer de Tèrmens 3, nau G, boulderindoor.com) are separate businesses 1978 m apart with different names, addresses and sites. S FANATIC (own/chain page) shows it exists, is open and offers bouldering; pin osm (node/12202126582), precision building.",
+   "reviewed_against": [
+    "es-020"
+   ]
+  },
+  "es-020": {
+   "decision": "accept",
+   "reason": "Related-name flag is a different gym: Boulder Indoor (Carrer de Tèrmens 3, nau G, boulderindoor.com) and Fanàtic Lleida (Avinguda de les Garrigues 107, fanaticlleida.com) are separate businesses 1978 m apart. S BINDOOR (own/chain page) shows it exists, is open and offers bouldering; pin osm (node/12406637622), precision building.",
+   "reviewed_against": [
+    "es-019"
+   ]
+  },
+  "es-021": {
+   "decision": "accept",
+   "reason": "Street-level pin accepted: no building-level coordinate source exists (house number not mapped in OSM, the gym publishes no map point), the pin is on the gym own street so the error is at most a few hundred metres, and precision is recorded as street. S AGULLES (own/chain page) shows it exists, is open and offers bouldering; pin geocoded-address (way/133668366 (Carrer de la Premsa, Esparreguera; house number not mapped)), precision street.",
+   "reviewed_against": []
+  },
+  "es-022": {
+   "decision": "accept",
+   "reason": "S CLIMBBOX (own/chain page) shows it exists, is open and offers bouldering; pin official-map (Google Maps place link on https://climbbox.es/ (maps.app.goo.gl/iuKfzD2MRR1AmnMC8)), precision building."
+  },
+  "es-023": {
+   "decision": "accept",
+   "reason": "S ROCKBLOC (own/chain page) shows it exists, is open and offers bouldering; pin osm (node/3735763987), precision building."
+  },
+  "es-024": {
+   "decision": "accept",
+   "reason": "S IW (own/chain page) shows it exists, is open and offers bouldering; pin osm (node/13119911553), precision building."
+  },
+  "es-025": {
+   "decision": "defer",
+   "reason": "Not accepted: the chain centre page was read only as a search-engine extract (direct fetch is blocked by Cloudflare) and it did not state a boulder area for this centre, so bouldering is not established for it. It is on the chain current centre list at the given address. Question for the owner is in MANUAL-CHECK.md."
+  },
+  "es-026": {
+   "decision": "accept",
+   "reason": "Related-name flags are different gyms: Arkose Cuatro Caminos (seed-1241, a separate chain site 7.1 km away at a different address), and Boulder Madrid (seed-1242, an independent gym 5.6 km away); Carabanchel (Calle de Julia Nebot 4) is its own Arkose centre with its own page. S ARKOSE (own/chain page) shows it exists, is open and offers bouldering; pin osm (node/13160586901), precision building.",
+   "reviewed_against": [
+    "seed-1241",
+    "seed-1242"
+   ]
+  },
+  "es-027": {
+   "decision": "accept",
+   "reason": "S AWESOME (own/chain page) shows it exists, is open and offers bouldering; pin official-map (latitude/longitude published in the page structured data of https://www.awesomebouldercenter.com/), precision building."
+  },
+  "es-028": {
+   "decision": "accept",
+   "reason": "S REUNION (own/chain page) shows it exists, is open and offers bouldering; pin official-map (Google Maps place link on https://www.lareunionescala.com/ (goo.gl/maps/t4S1tpdQMhMaRoSc9); OSM node/10606729661 is 11 m away), precision building."
+  },
+  "es-029": {
+   "decision": "accept",
+   "reason": "S PVERT (own/chain page) shows it exists, is open and offers bouldering; pin geocoded-address (way/382496864 (another business at the same address, Calle Ceuta 9, 28805)), precision building."
+  },
+  "es-030": {
+   "decision": "accept",
+   "reason": "S THECLIMB (own/chain page) shows it exists, is open and offers bouldering; pin osm (way/528962811), precision building."
+  },
+  "es-031": {
+   "decision": "accept",
+   "reason": "S IW (own/chain page) shows it exists, is open and offers bouldering; pin osm (node/11327532270), precision building."
+  },
+  "es-032": {
+   "decision": "accept",
+   "reason": "S LAIF (own/chain page) shows it exists, is open and offers bouldering; pin osm (node/6127807413), precision building."
+  },
+  "es-033": {
+   "decision": "accept",
+   "reason": "S VENTS (own/chain page) shows it exists, is open and offers bouldering; pin geocoded-address (node/12826179601 (the Vents shop at the same address; the bouldering room is inside the Vents store building)), precision building."
+  },
+  "es-034": {
+   "decision": "accept",
+   "reason": "S CLIMBPRO (own/chain page) shows it exists, is open and offers bouldering; pin osm (node/13267544813), precision building."
+  },
+  "es-035": {
+   "decision": "accept",
+   "reason": "S PIUGAZ (own/chain page) shows it exists, is open and offers bouldering; pin osm (node/5582137421), precision building."
+  },
+  "es-036": {
+   "decision": "accept",
+   "reason": "S URBANB (own/chain page) shows it exists, is open and offers bouldering; pin geocoded-address (way/53801605 (building at Salburua bulebarra 4; the address 4 comes from the directory, the official site only says Salburua)), precision building."
+  },
+  "es-037": {
+   "decision": "accept",
+   "reason": "S ATARIA (own/chain page) shows it exists, is open and offers bouldering; pin geocoded-address (way/499466160 (building at Lazkaibar kalea 5, 20200 Beasain)), precision building."
+  },
+  "es-038": {
+   "decision": "accept",
+   "reason": "Street-level pin accepted: no building-level coordinate source exists (house number not mapped in OSM, the gym publishes no map point), the pin is on the gym own street so the error is at most a few hundred metres, and precision is recorded as street. S BAYYANA (own/chain page) shows it exists, is open and offers bouldering; pin geocoded-address (way/126901712 (Calle Vicente Piernagorda, Baena; house number 46 not mapped)), precision street.",
+   "reviewed_against": []
+  },
+  "es-039": {
+   "decision": "accept",
+   "reason": "S C9 (own/chain page) shows it exists, is open and offers bouldering; pin osm (node/9101563519 (named Roc, Carrer de l'Alba 33; the gym's own embedded map centres about 190 m further west)), precision building."
+  },
+  "es-040": {
+   "decision": "defer",
+   "reason": "Low confidence on open status: the own site shows hours, a 4-13 September closure notice and boulder sectors, but the last news post is 22 Nov 2024. Owner check in MANUAL-CHECK.md: is it open now (2026 posts or hours)?"
+  },
+  "es-041": {
+   "decision": "accept",
+   "reason": "S CALMICO (own/chain page) shows it exists, is open and offers bouldering; pin geocoded-address (node/4855433385 (house point Carrer d'Alacant 13, 17005 Girona)), precision building."
+  },
+  "es-042": {
+   "decision": "accept",
+   "reason": "S KLIMB (own/chain page) shows it exists, is open and offers bouldering; pin osm (node/11645022104), precision building."
+  },
+  "es-043": {
+   "decision": "defer",
+   "reason": "Low confidence on open status: the own site page is dated Apr 2025, offers only a monthly pass and shows no 2026 content. Owner check in MANUAL-CHECK.md: is it open now (2026 posts or hours)?"
+  }
+ }
+}

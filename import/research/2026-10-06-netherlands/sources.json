@@ -1,0 +1,201 @@
+{
+ "schema_version": 1,
+ "sources": {
+  "OSM": {
+   "kind": "map-data",
+   "title": "OpenStreetMap (via Photon, komoot)",
+   "url": "https://www.openstreetmap.org/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "PDOK": {
+   "kind": "map-data",
+   "title": "PDOK Locatieserver (Dutch government address geocoder)",
+   "url": "https://api.pdok.nl/bzk/locatieserver/search/v3_1/free",
+   "language": "nl",
+   "accessed": "2026-10-06"
+  },
+  "PHOTON": {
+   "kind": "map-data",
+   "title": "Photon geocoder (komoot, OpenStreetMap data)",
+   "url": "https://photon.komoot.io/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "S_boulderhalsendmast_nl": {
+   "kind": "official-site",
+   "title": "Boulderhal Sendmast (official site)",
+   "url": "https://boulderhalsendmast.nl/",
+   "language": "nl",
+   "accessed": "2026-10-06"
+  },
+  "S_impactboulderhal_nl": {
+   "kind": "official-site",
+   "title": "IMPACT Boulderhal (official site)",
+   "url": "https://impactboulderhal.nl/",
+   "language": "nl",
+   "accessed": "2026-10-06"
+  },
+  "S_keiboulderhal_nl": {
+   "kind": "chain-store-list",
+   "title": "keiboulderhal.nl (chain site, location pages)",
+   "url": "https://keiboulderhal.nl/",
+   "language": "nl",
+   "accessed": "2026-10-06"
+  },
+  "S_keiapeldoorn_nl": {
+   "kind": "chain-store-list",
+   "title": "keiapeldoorn.nl (chain site, location pages)",
+   "url": "https://keiapeldoorn.nl/",
+   "language": "nl",
+   "accessed": "2026-10-06"
+  },
+  "S_boulderhalbruut_nl": {
+   "kind": "official-site",
+   "title": "Boulderhal Bruut (official site)",
+   "url": "https://boulderhalbruut.nl/",
+   "language": "nl",
+   "accessed": "2026-10-06"
+  },
+  "S_beestboulders_com": {
+   "kind": "chain-store-list",
+   "title": "beestboulders.com (chain site, location pages)",
+   "url": "https://beestboulders.com/",
+   "language": "nl",
+   "accessed": "2026-10-06"
+  },
+  "S_revoltclimbing_com": {
+   "kind": "official-site",
+   "title": "Revolt Bouldering Gym (official site)",
+   "url": "https://revoltclimbing.com/",
+   "language": "nl",
+   "accessed": "2026-10-06"
+  },
+  "S_delftsbleau_nl": {
+   "kind": "official-site",
+   "title": "Bouldercentrum Delfts Bleau (official site)",
+   "url": "https://delftsbleau.nl/",
+   "language": "nl",
+   "accessed": "2026-10-06"
+  },
+  "S_climbingnetwork_nl": {
+   "kind": "chain-store-list",
+   "title": "climbingnetwork.nl (chain site, location pages)",
+   "url": "https://climbingnetwork.nl/",
+   "language": "nl",
+   "accessed": "2026-10-06"
+  },
+  "S_monoboulder_nl": {
+   "kind": "official-site",
+   "title": "MONO Boulder (official site)",
+   "url": "https://monoboulder.nl/",
+   "language": "nl",
+   "accessed": "2026-10-06"
+  },
+  "S_monk_nl": {
+   "kind": "chain-store-list",
+   "title": "monk.nl (chain site, location pages)",
+   "url": "https://monk.nl/",
+   "language": "nl",
+   "accessed": "2026-10-06"
+  },
+  "S_boulderneoliet_nl": {
+   "kind": "chain-store-list",
+   "title": "boulderneoliet.nl (chain site, location pages)",
+   "url": "https://boulderneoliet.nl/",
+   "language": "nl",
+   "accessed": "2026-10-06"
+  },
+  "S_block013_nl": {
+   "kind": "official-site",
+   "title": "Boulderhal Block013 (official site)",
+   "url": "https://block013.nl/",
+   "language": "nl",
+   "accessed": "2026-10-06"
+  },
+  "S_cubebouldergym_nl": {
+   "kind": "official-site",
+   "title": "Cube Bouldergym (official site)",
+   "url": "https://cubebouldergym.nl/",
+   "language": "nl",
+   "accessed": "2026-10-06"
+  },
+  "S_boulderhaldefabriek_nl": {
+   "kind": "chain-store-list",
+   "title": "boulderhaldefabriek.nl (chain site, location pages)",
+   "url": "https://boulderhaldefabriek.nl/",
+   "language": "nl",
+   "accessed": "2026-10-06"
+  },
+  "S_boulderhalkunststof_nl": {
+   "kind": "official-site",
+   "title": "Boulderhal Kunststof (official site)",
+   "url": "https://boulderhalkunststof.nl/",
+   "language": "nl",
+   "accessed": "2026-10-06"
+  },
+  "S_boulderhalkrachtstof_nl": {
+   "kind": "official-site",
+   "title": "Boulderhal Krachtstof (official site)",
+   "url": "https://boulderhalkrachtstof.nl/",
+   "language": "nl",
+   "accessed": "2026-10-06"
+  },
+  "S_radiumboulders_nl": {
+   "kind": "official-site",
+   "title": "Radium Boulders (official site)",
+   "url": "https://radiumboulders.nl/",
+   "language": "nl",
+   "accessed": "2026-10-06"
+  },
+  "S_gripnijmegen_nl": {
+   "kind": "official-site",
+   "title": "GRIP Boulderhal Nijmegen (official site)",
+   "url": "https://gripnijmegen.nl/",
+   "language": "nl",
+   "accessed": "2026-10-06"
+  },
+  "S_bosscheboulders_nl": {
+   "kind": "official-site",
+   "title": "Boulderhal Bossche Boulders (official site)",
+   "url": "https://bosscheboulders.nl/",
+   "language": "nl",
+   "accessed": "2026-10-06"
+  },
+  "S_boulderkerkvenlo_nl": {
+   "kind": "official-site",
+   "title": "Boulderkerk Venlo (official site)",
+   "url": "https://boulderkerkvenlo.nl/",
+   "language": "nl",
+   "accessed": "2026-10-06"
+  },
+  "S_bazbouldergym_nl": {
+   "kind": "official-site",
+   "title": "BAZ Bouldergym (official site)",
+   "url": "https://bazbouldergym.nl/",
+   "language": "nl",
+   "accessed": "2026-10-06"
+  },
+  "S_boulderhalroest_nl": {
+   "kind": "official-site",
+   "title": "Boulderhal Roest (official site)",
+   "url": "https://boulderhalroest.nl/",
+   "language": "nl",
+   "accessed": "2026-10-06"
+  },
+  "S_apexboulders_nl": {
+   "kind": "official-site",
+   "title": "Apex Boulders (official site)",
+   "url": "https://apexboulders.nl/",
+   "language": "nl",
+   "accessed": "2026-10-06"
+  },
+  "S_boulderhalvrijhaven_nl": {
+   "kind": "official-site",
+   "title": "Boulderhal Vrijhaven (official site)",
+   "url": "https://boulderhalvrijhaven.nl/",
+   "language": "nl",
+   "accessed": "2026-10-06"
+  }
+ }
+}

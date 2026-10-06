@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-06-jp-kyushu-hokkaido",
+  "description": "Regional research \"Japan: Kyushu, Okinawa, Hokkaido, Sendai, Hiroshima/Okayama coverage gap\": 47 new gym(s) accepted of 48 candidate(s)",
+  "created": "2026-10-06",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-10-06-jp-kyushu-hokkaido",
+    "section_sha256": "01a5f111d901becb0729dcc9786753d99c7e6525678909ba54272c97cbf3b9ac",
+    "sources_sha256": "08762d911ac4ff2c4550b68cf6bcdbbcb457e6717888394b66ab6abae4612b43",
+    "candidates_sha256": "b04553a8c059baf816ff1d390fa34e38d8be7a6ff0d92692e8711d4347aaba0a",
+    "reconcile_sha256": "faf4ee2f150c5a2fa6542d1c1c281ee17859afd6368728c3c2a0fef9d9551332",
+    "review_sha256": "a13e5aeb5e91a192f058c06f7434ec50601804899ea83082d2aacfaa500da196",
+    "candidates": 48,
+    "staged": 47,
+    "decisions": {
+      "accept": 47,
+      "defer": 1
+    }
+  },
+  "index_at_staging": {
+    "sha256": "27073d25c2df373c17caef0c24ebfe759b8d457953a461c62786486d588e661d",
+    "count": 2438
+  }
+}

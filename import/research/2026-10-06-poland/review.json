@@ -1,0 +1,80 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-06-poland",
+ "reviewer": "Spiar (owner); decisions drafted by Claude (AI) on the owner's instruction, pending owner sign-off",
+ "reviewed": "2026-10-06",
+ "decisions": {
+  "pl-001": {
+   "decision": "accept",
+   "reason": "Own page (MURALL_GDA, read 2026-10-06): ul. Hemara 23, daily 07-23, described as the largest bouldering gym in the Tricity; chain site lists it among four Murall locations; pin is OSM node 10572518923 (name, street, house number)."
+  },
+  "pl-002": {
+   "decision": "accept",
+   "reason": "Own page (MURALL_GOR): ul. Gorczewska 218, opened February 2025, daily 07-23, boulders; chain site lists it. Flag: related name to seed-1304 Murall Centrum Wspinaczkowe + FunClimb, which is the Annopol site (ul. Annopol 3) 10.4 km away; Gorczewska is a separate chain location with its own page, address and phone.",
+   "reviewed_against": [
+    "seed-1304"
+   ]
+  },
+  "pl-003": {
+   "decision": "accept",
+   "reason": "Own site (PROBLEM): address, hours Mon-Fri 08-22 and Sat-Sun 09-22, pass shop, bouldering classes; OSM node 12931655507 carries the same name, street and the site as website."
+  },
+  "pl-004": {
+   "decision": "accept",
+   "reason": "Own site (LIMBO): bouldering gym, price list valid from 01.10.2026; OSM node 9522025622 has the same name, website, phone and climbing:boulder=yes."
+  },
+  "pl-005": {
+   "decision": "accept",
+   "reason": "Own site (BLO): bouldering, routesetting news dated 29.08-25.09.2026, hours and prices; pin is the OSM building BLOKatowice at Karoliny 18 (Photon lookup)."
+  },
+  "pl-006": {
+   "decision": "accept",
+   "reason": "Own site (P450): weekly hours, 300 m2 bouldering area, price list; own embedded map within 15 m of OSM way 189308365. Single source and no dated news found; accepted because hours, prices and a voucher shop are live."
+  },
+  "pl-007": {
+   "decision": "accept",
+   "reason": "Own site (BALD): daily 12-22, 200+ problems, current price list; OSM node 13298405561 is 40 m from the own page coordinates inside the same building."
+  },
+  "pl-008": {
+   "decision": "accept",
+   "reason": "Own page (VOLT, 2026): 130+ boulders, address, phone and pass panel; OSM node 12386810442 matches name, address and website."
+  },
+  "pl-009": {
+   "decision": "accept",
+   "reason": "Own site (SPIDER): 2 bouldering halls plus rope wall, daily 10-22, 2026/27 section enrolment announced; OSM node matches name, street and website."
+  },
+  "pl-010": {
+   "decision": "accept",
+   "reason": "Own site (FLASH): bouldering centre, hours on the contact page, price list with 2026/27 dates; OSM node 11469089870 matches the address."
+  },
+  "pl-011": {
+   "decision": "reject",
+   "reason_code": "closed",
+   "reason": "Own site states the wall closed permanently on 29 April 2026."
+  },
+  "pl-012": {
+   "decision": "defer",
+   "reason": "Own site is stale (newest items 2017/2018, no hours); open status not shown. Listed in MANUAL-CHECK.md."
+  },
+  "pl-013": {
+   "decision": "defer",
+   "reason": "Own site is stale (results to 2014/2015, no hours); open status not shown. Listed in MANUAL-CHECK.md."
+  },
+  "pl-014": {
+   "decision": "defer",
+   "reason": "Gym is open (current site) but no bouldering offer found on its pages. Listed in MANUAL-CHECK.md."
+  },
+  "pl-015": {
+   "decision": "defer",
+   "reason": "Only an OSM node; no official page found. Listed in MANUAL-CHECK.md."
+  },
+  "pl-016": {
+   "decision": "defer",
+   "reason": "Official site blocked by a Cloudflare page; not read. Listed in MANUAL-CHECK.md."
+  },
+  "pl-017": {
+   "decision": "defer",
+   "reason": "Only an OSM node; no readable official page. Listed in MANUAL-CHECK.md."
+  }
+ }
+}

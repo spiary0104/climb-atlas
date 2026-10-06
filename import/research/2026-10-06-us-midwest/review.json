@@ -1,0 +1,353 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-06-us-midwest",
+ "reviewer": "Spiar (owner); decisions drafted by Claude (AI) on the owner's instruction, pending owner sign-off",
+ "reviewed": "2026-10-06",
+ "decisions": {
+  "us-mn-001": {
+   "decision": "accept",
+   "reason": "Primary source BP show the gym exists, is operating (published hours or pricing) and offers bouldering; pin is node/5752714903 (gym name or address match)."
+  },
+  "us-mn-002": {
+   "decision": "accept",
+   "reason": "Primary source BP show the gym exists, is operating (published hours or pricing) and offers bouldering; pin is node/13313615423 (gym name or address match)."
+  },
+  "us-mn-003": {
+   "decision": "accept",
+   "reason": "Primary source VE show the gym exists, is operating (published hours or pricing) and offers bouldering; pin is node/6329878282 (gym name or address match)."
+  },
+  "us-mn-004": {
+   "decision": "accept",
+   "reason": "Primary source BIB show the gym exists, is operating (published hours or pricing) and offers bouldering; pin is node/12752661501 (gym name or address match)."
+  },
+  "us-mn-005": {
+   "decision": "accept",
+   "reason": "Own site shows a volunteer-run bouldering gym in the Thorp Building with a public day pass during open hours (Sun 11am-3pm, Mon 5:30-9:30pm) and 24/7 fob access for members; accepted as a public bouldering gym with limited hours (limited-access flag checked).",
+   "reviewed_against": []
+  },
+  "us-mn-d01": {
+   "decision": "defer",
+   "reason": "Open (hours on chain list) but bouldering offering not confirmed: location list says ropes only and the \"Bouldering Areas\" field is a 0 placeholder."
+  },
+  "us-mn-d02": {
+   "decision": "defer",
+   "reason": "Bouldering offering not confirmed (chain list: ropes only; placeholder bouldering count)."
+  },
+  "us-mn-d03": {
+   "decision": "defer",
+   "reason": "Bouldering offering not confirmed (chain list: ropes only; placeholder bouldering count)."
+  },
+  "us-mn-d04": {
+   "decision": "defer",
+   "reason": "Bouldering offering not confirmed; a wall inside an amusement venue."
+  },
+  "us-mn-d05": {
+   "decision": "defer",
+   "reason": "Rope gym whose only boulder is a single freestanding boulder; owner rule requires a real boulder area."
+  },
+  "us-wi-001": {
+   "decision": "accept",
+   "reason": "Primary source BOULDERS show the gym exists, is operating (published hours or pricing) and offers bouldering; pin is node/6865260269 (gym name or address match). Same-website flag: the listed candidates are other branches of the same operator, each with its own address (or, for us-wi-r01, the closed East gym), not duplicates.",
+   "reviewed_against": [
+    "us-wi-r01"
+   ]
+  },
+  "us-wi-002": {
+   "decision": "accept",
+   "reason": "Primary source ADROCK show the gym exists, is operating (published hours or pricing) and offers bouldering; pin is way/778106113 (gym name or address match). Same-website flag: the listed candidates are other branches of the same operator, each with its own address (or, for us-wi-r01, the closed East gym), not duplicates.",
+   "reviewed_against": [
+    "us-wi-003",
+    "us-wi-004"
+   ]
+  },
+  "us-wi-003": {
+   "decision": "accept",
+   "reason": "Chain-wide statement of a ropeless bouldering area plus hours and address on the official site; pin is the gym's own OSM element. Same-website flag: the listed candidates are other branches of the same operator, each with its own address (or, for us-wi-r01, the closed East gym), not duplicates.",
+   "reviewed_against": [
+    "us-wi-002",
+    "us-wi-004"
+   ]
+  },
+  "us-wi-004": {
+   "decision": "accept",
+   "reason": "Chain-wide statement of a ropeless bouldering area plus hours and address on the official site; pin is the gym's own OSM element. Same-website flag: the listed candidates are other branches of the same operator, each with its own address (or, for us-wi-r01, the closed East gym), not duplicates.",
+   "reviewed_against": [
+    "us-wi-002",
+    "us-wi-003"
+   ]
+  },
+  "us-wi-005": {
+   "decision": "accept",
+   "reason": "Own page shows a public climbing gym in Turner Hall with 2 dedicated bouldering areas, top-rope and lead walls and a $10 day pass (limited-access flag: not a members-only club wall). Single-source flag: the Milwaukee Turners site itself states address, hours link and bouldering. Weak-coordinates flag: the pin is street-level (N Vel R. Phillips Ave); position is approximate.",
+   "reviewed_against": []
+  },
+  "us-wi-006": {
+   "decision": "accept",
+   "reason": "Primary source ODY show the gym exists, is operating (published hours or pricing) and offers bouldering; pin is way/1210598370 (gym name or address match). Same-website flag: the listed candidates are other branches of the same operator, each with its own address (or, for us-wi-r01, the closed East gym), not duplicates.",
+   "reviewed_against": [
+    "us-wi-007"
+   ]
+  },
+  "us-wi-007": {
+   "decision": "accept",
+   "reason": "Primary source ODY show the gym exists, is operating (published hours or pricing) and offers bouldering; pin is way/1429880063 (gym name or address match). Same-website flag: the listed candidates are other branches of the same operator, each with its own address (or, for us-wi-r01, the closed East gym), not duplicates.",
+   "reviewed_against": [
+    "us-wi-006"
+   ]
+  },
+  "us-wi-008": {
+   "decision": "accept",
+   "reason": "Primary source GH show the gym exists, is operating (published hours or pricing) and offers bouldering; pin is way/1459666083 (gym name or address match)."
+  },
+  "us-wi-009": {
+   "decision": "accept",
+   "reason": "Primary source LOOP show the gym exists, is operating (published hours or pricing) and offers bouldering; pin is a Nominatim house-number geocode of the official address (way/453954164)."
+  },
+  "us-wi-d01": {
+   "decision": "defer",
+   "reason": "Fitness gym with a small bouldering wall; public day-pass access not shown."
+  },
+  "us-wi-r01": {
+   "decision": "reject",
+   "reason_code": "closed",
+   "reason": "Closed: the official site lists only the downtown gym and local news reported the East closure."
+  },
+  "us-mi-001": {
+   "decision": "accept",
+   "reason": "Primary source PR show the gym exists, is operating (published hours or pricing) and offers bouldering; pin is node/3268760961 (gym name or address match). Same-website flag: the listed candidates are other branches of the same operator, each with its own address (or, for us-wi-r01, the closed East gym), not duplicates.",
+   "reviewed_against": [
+    "us-mi-002",
+    "us-mi-003"
+   ]
+  },
+  "us-mi-002": {
+   "decision": "accept",
+   "reason": "Primary source PR show the gym exists, is operating (published hours or pricing) and offers bouldering; pin is way/670017926 (gym name or address match). Same-website flag: the listed candidates are other branches of the same operator, each with its own address (or, for us-wi-r01, the closed East gym), not duplicates.",
+   "reviewed_against": [
+    "us-mi-001",
+    "us-mi-003"
+   ]
+  },
+  "us-mi-003": {
+   "decision": "accept",
+   "reason": "Planet Rock's own locations page shows this gym exists, its hours, address (3175 Union Ave SE) and a dedicated bouldering room plus top rope, lead and auto-belays. Same-website flags are the chain's two other gyms (Ann Arbor, Madison Heights) at their own addresses; single-source flag: the chain page is the primary source; weak-coordinates flag: the pin is street-level on Union Ave SE (coord_precision street), so the position is approximate.",
+   "reviewed_against": [
+    "us-mi-001",
+    "us-mi-002"
+   ]
+  },
+  "us-mi-004": {
+   "decision": "accept",
+   "reason": "Primary source DYNO show the gym exists, is operating (published hours or pricing) and offers bouldering; pin is node/12437319701 (gym name or address match)."
+  },
+  "us-mi-005": {
+   "decision": "accept",
+   "reason": "Primary source TF show the gym exists, is operating (published hours or pricing) and offers bouldering; pin is a Nominatim house-number geocode of the official address (way/17860738)."
+  },
+  "us-mi-006": {
+   "decision": "accept",
+   "reason": "Primary source TF show the gym exists, is operating (published hours or pricing) and offers bouldering; pin is a Nominatim house-number geocode of the official address (node/6958063992)."
+  },
+  "us-mi-007": {
+   "decision": "accept",
+   "reason": "Primary source SCRAP show the gym exists, is operating (published hours or pricing) and offers bouldering; pin is node/12545602435 (gym name or address match)."
+  },
+  "us-mi-008": {
+   "decision": "accept",
+   "reason": "Primary source CKZ show the gym exists, is operating (published hours or pricing) and offers bouldering; pin is node/6975261258 (gym name or address match)."
+  },
+  "us-mi-d01": {
+   "decision": "defer",
+   "reason": "Rope gym; bouldering not stated on its own pages."
+  },
+  "us-oh-001": {
+   "decision": "accept",
+   "reason": "Primary source CLEV show the gym exists, is operating (published hours or pricing) and offers bouldering; pin is a Nominatim house-number geocode of the official address (way/11805039)."
+  },
+  "us-oh-002": {
+   "decision": "accept",
+   "reason": "Primary source KENDALL show the gym exists, is operating (published hours or pricing) and offers bouldering; pin is a Nominatim house-number geocode of the official address (node/7142752927)."
+  },
+  "us-oh-003": {
+   "decision": "accept",
+   "reason": "Primary source ROCKMILL show the gym exists, is operating (published hours or pricing) and offers bouldering; pin is node/7844979648 (gym name or address match)."
+  },
+  "us-oh-004": {
+   "decision": "accept",
+   "reason": "Primary sources CINCY, HH show the gym exists, is operating (published hours or pricing) and offers bouldering; pin is way/157499954 (gym name or address match)."
+  },
+  "us-oh-005": {
+   "decision": "accept",
+   "reason": "Primary source CT show the gym exists, is operating (published hours or pricing) and offers bouldering; pin is a Nominatim house-number geocode of the official address (way/549117122)."
+  },
+  "us-oh-006": {
+   "decision": "accept",
+   "reason": "Primary source CT show the gym exists, is operating (published hours or pricing) and offers bouldering; pin is a Nominatim house-number geocode of the official address (way/754019410)."
+  },
+  "us-oh-007": {
+   "decision": "accept",
+   "reason": "Single-source flag: RockQuest's own site states the address (3475 E Kemper Rd), hours (Mon-Fri noon-9:30pm) and a first-visit orientation covering boulders and auto-belays; open since 1995 per its Our Story page.",
+   "reviewed_against": []
+  },
+  "us-oh-008": {
+   "decision": "accept",
+   "reason": "Primary source MOSAIC show the gym exists, is operating (published hours or pricing) and offers bouldering; pin is way/26346526 (gym name or address match)."
+  },
+  "us-oh-009": {
+   "decision": "accept",
+   "reason": "Primary source KRAG show the gym exists, is operating (published hours or pricing) and offers bouldering; pin is way/200406448 (gym name or address match)."
+  },
+  "us-oh-010": {
+   "decision": "accept",
+   "reason": "Primary source FIVELIFE show the gym exists, is operating (published hours or pricing) and offers bouldering; pin is node/12966840900 (gym name or address match)."
+  },
+  "us-oh-011": {
+   "decision": "accept",
+   "reason": "Primary source FIVELIFE show the gym exists, is operating (published hours or pricing) and offers bouldering; pin is node/9156596215 (gym name or address match)."
+  },
+  "us-oh-d01": {
+   "decision": "defer",
+   "reason": "Bouldering offering not stated by the gym itself."
+  },
+  "us-oh-d02": {
+   "decision": "defer",
+   "reason": "Bouldering not stated on the pages read."
+  },
+  "us-in-001": {
+   "decision": "accept",
+   "reason": "Primary sources HH, HHI show the gym exists, is operating (published hours or pricing) and offers bouldering; pin is way/258131390 (gym name or address match)."
+  },
+  "us-in-002": {
+   "decision": "accept",
+   "reason": "Primary source HHB show the gym exists, is operating (published hours or pricing) and offers bouldering; pin is way/589024436 (gym name or address match)."
+  },
+  "us-in-003": {
+   "decision": "accept",
+   "reason": "Primary source CTI show the gym exists, is operating (published hours or pricing) and offers bouldering; pin is node/2635335012 (gym name or address match)."
+  },
+  "us-in-004": {
+   "decision": "accept",
+   "reason": "Primary source EPIC show the gym exists, is operating (published hours or pricing) and offers bouldering; pin is way/315392335 (gym name or address match)."
+  },
+  "us-in-005": {
+   "decision": "accept",
+   "reason": "Primary source NMB show the gym exists, is operating (published hours or pricing) and offers bouldering; pin is node/10688533981 (gym name or address match)."
+  },
+  "us-in-006": {
+   "decision": "accept",
+   "reason": "Own site shows address (4650 Dale Drive), hours Tue-Sun, a day pass for \"the Bouldering and Top Rope Wall\" and a first-visit orientation with a bouldering fall. Weak-coordinates flag: no OSM element or Nominatim match exists for the address, so the pin is the US Census geocoder's address match (street-level, coord_precision street); the position is approximate. Single-source flag: the gym's own site is the source.",
+   "reviewed_against": []
+  },
+  "us-in-007": {
+   "decision": "accept",
+   "reason": "Primary source VXE show the gym exists, is operating (published hours or pricing) and offers bouldering; pin is way/1093497460 (gym name or address match)."
+  },
+  "us-in-008": {
+   "decision": "accept",
+   "reason": "Primary source EARTH show the gym exists, is operating (published hours or pricing) and offers bouldering; pin is a Nominatim house-number geocode of the official address (way/616034324)."
+  },
+  "us-in-009": {
+   "decision": "accept",
+   "reason": "Primary source WAREHOUSE show the gym exists, is operating (published hours or pricing) and offers bouldering; pin is node/6777800703 (gym name or address match)."
+  },
+  "us-in-d01": {
+   "decision": "defer",
+   "reason": "Bouldering gym per its own site, but no hours or dated notice of current operation were found."
+  },
+  "us-mo-001": {
+   "decision": "accept",
+   "reason": "Primary source CCI show the gym exists, is operating (published hours or pricing) and offers bouldering; pin is node/10962693749 (gym name or address match)."
+  },
+  "us-mo-002": {
+   "decision": "accept",
+   "reason": "Primary source CCI show the gym exists, is operating (published hours or pricing) and offers bouldering; pin is way/351122141 (gym name or address match)."
+  },
+  "us-mo-003": {
+   "decision": "accept",
+   "reason": "Primary source UL show the gym exists, is operating (published hours or pricing) and offers bouldering; pin is a Nominatim house-number geocode of the official address (node/7058529622)."
+  },
+  "us-mo-004": {
+   "decision": "accept",
+   "reason": "Primary source ROKC show the gym exists, is operating (published hours or pricing) and offers bouldering; pin is node/12727093701 (gym name or address match)."
+  },
+  "us-ks-001": {
+   "decision": "accept",
+   "reason": "Primary source ROKC show the gym exists, is operating (published hours or pricing) and offers bouldering; pin is node/11276073469 (gym name or address match)."
+  },
+  "us-ks-002": {
+   "decision": "accept",
+   "reason": "Primary source BLISS show the gym exists, is operating (published hours or pricing) and offers bouldering; pin is way/1302954137 (gym name or address match)."
+  },
+  "us-mo-d01": {
+   "decision": "defer",
+   "reason": "Open, but its own page does not say whether the gym is bouldering or ropes."
+  },
+  "us-mo-d02": {
+   "decision": "defer",
+   "reason": "Bouldering area not stated on the pages read."
+  },
+  "us-mo-d03": {
+   "decision": "defer",
+   "reason": "No bouldering offering stated for this site."
+  },
+  "us-mo-d04": {
+   "decision": "defer",
+   "reason": "Site unreadable (HTTP 403): neither open status nor bouldering confirmed."
+  },
+  "us-ks-r01": {
+   "decision": "reject",
+   "reason_code": "closed",
+   "reason": "Closed: the gym's own site says it has closed."
+  },
+  "us-ne-001": {
+   "decision": "accept",
+   "reason": "Primary source APPROACH show the gym exists, is operating (published hours or pricing) and offers bouldering; pin is a Nominatim house-number geocode of the official address (way/169409550). Related-name flag: Approach Climbing Gym and MW Climbing Omaha are different operators with different addresses and sites, 7.6 km apart.",
+   "reviewed_against": [
+    "us-ne-003"
+   ]
+  },
+  "us-ne-002": {
+   "decision": "accept",
+   "reason": "Primary source MW show the gym exists, is operating (published hours or pricing) and offers bouldering; pin is node/13231708885 (gym name or address match). Same-website flag: the listed candidates are other branches of the same operator, each with its own address (or, for us-wi-r01, the closed East gym), not duplicates.",
+   "reviewed_against": [
+    "us-ne-003"
+   ]
+  },
+  "us-ne-003": {
+   "decision": "accept",
+   "reason": "Primary source MW show the gym exists, is operating (published hours or pricing) and offers bouldering; pin is a Nominatim house-number geocode of the official address (way/175546737). Same-website flag: the listed candidates are other branches of the same operator, each with its own address (or, for us-wi-r01, the closed East gym), not duplicates. Related-name flag: Approach Climbing Gym and MW Climbing Omaha are different operators with different addresses and sites, 7.6 km apart.",
+   "reviewed_against": [
+    "us-ne-001",
+    "us-ne-002"
+   ]
+  },
+  "us-ky-001": {
+   "decision": "accept",
+   "reason": "Primary sources HH, NULU show the gym exists, is operating (published hours or pricing) and offers bouldering; pin is way/330579369 (gym name or address match)."
+  },
+  "us-ky-002": {
+   "decision": "accept",
+   "reason": "Primary source LEF show the gym exists, is operating (published hours or pricing) and offers bouldering; pin is way/985514371 (gym name or address match)."
+  },
+  "us-ia-001": {
+   "decision": "accept",
+   "reason": "Primary source CLIA show the gym exists, is operating (published hours or pricing) and offers bouldering; pin is way/436707339 (gym name or address match)."
+  },
+  "us-ia-002": {
+   "decision": "accept",
+   "reason": "Primary source CLIA show the gym exists, is operating (published hours or pricing) and offers bouldering; pin is way/614291823 (gym name or address match)."
+  },
+  "us-ia-003": {
+   "decision": "accept",
+   "reason": "Primary source BLUESTEM show the gym exists, is operating (published hours or pricing) and offers bouldering; pin is a Nominatim house-number geocode of the official address (way/16039065)."
+  },
+  "us-sd-001": {
+   "decision": "accept",
+   "reason": "Primary source BHB show the gym exists, is operating (published hours or pricing) and offers bouldering; pin is node/13475564801 (gym name or address match)."
+  },
+  "us-nd-001": {
+   "decision": "accept",
+   "reason": "Primary source FARGO show the gym exists, is operating (published hours or pricing) and offers bouldering; pin is way/276656158 (gym name or address match)."
+  }
+ }
+}

@@ -1,0 +1,350 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-06-london",
+ "inputs": {
+  "section_sha256": "ef3eed37373dabf2e3daad24936fa731768ed67693fc836128cf79805ee13bb2",
+  "sources_sha256": "c2596138a3ca369f62ab86dbb379929d4acb4a5755d38bdefbdb470f1a0d2b63",
+  "candidates_sha256": "85cd3c455ade1b1bc25190dbfa33965342abe8d229082203e2d72d6bcbe6b299",
+  "index": {
+   "sha256": "27073d25c2df373c17caef0c24ebfe759b8d457953a461c62786486d588e661d",
+   "count": 2438
+  },
+  "staged_batches_compared": [],
+  "other_sections_compared": [
+   {
+    "id": "2026-10-05-uk-holds-gaps",
+    "candidates_sha256": "f8f1f6cdb1f2fc74670363080b86d1650877358efe97fb50d5ca6a49b1567ec0"
+   },
+   {
+    "id": "2026-10-05-uk-owner-checks",
+    "candidates_sha256": "87986d5acd243b0b5c48856fbdedeaf2122ad770a1d98a7d9d21250b977d00db"
+   },
+   {
+    "id": "2026-10-05-uk-single-gym-towns",
+    "candidates_sha256": "9efd107c59669800da69a72115e752f13c332b8cd5c81efaf0d44908c5553033"
+   }
+  ]
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 21,
+  "ready": 18,
+  "review": 0,
+  "blocked": 3,
+  "existing": 0,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "arch-acton",
+   "line": 21,
+   "name": "The Arch Climbing Wall: Arch Acton",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-b065577163"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "arch-north-burnt-oak",
+   "line": 20,
+   "name": "The Arch Climbing Wall: Arch North",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-0756e26882"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "blocfit-brixton",
+   "line": 17,
+   "name": "BlocFit Brixton",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-3fc0852b2f"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "cb-aldgate",
+   "line": 7,
+   "name": "City Bouldering Aldgate",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-5c1f23c597"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "cb-stratford",
+   "line": 9,
+   "name": "City Bouldering Stratford",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-60cb81ef3f"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "cb-white-city",
+   "line": 8,
+   "name": "City Bouldering White City",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-fe74b7ba49"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "cd-building-one",
+   "line": 1,
+   "name": "Climbing District Building One",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-f6e53041ba"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "cd-london-fields",
+   "line": 2,
+   "name": "Climbing District London Fields",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-c802fb9f8d"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "cd-tottenham-hale",
+   "line": 3,
+   "name": "Climbing District Tottenham Hale",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-fc6a351a39"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "climbing-co-fulham",
+   "line": 10,
+   "name": "Climbing Co Fulham",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-025875152e"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "font-borough",
+   "line": 12,
+   "name": "The Font Borough",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-26671a9b9b"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "font-hounslow",
+   "line": 13,
+   "name": "The Font Hounslow",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-39e9863b9b"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "font-wandsworth",
+   "line": 11,
+   "name": "The Font Wandsworth",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-0aa33c91da"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "hackney-wick-boulder-project",
+   "line": 19,
+   "name": "Hackney Wick Boulder Project",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-a90f9d2fd1"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "lcc-bethwall",
+   "line": 4,
+   "name": "BethWall Climbing Centre",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-d1f4618d13"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "lcc-canarywall",
+   "line": 5,
+   "name": "CanaryWall Climbing Centre",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-d41cc4f3e9"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "lcc-eustonwall",
+   "line": 6,
+   "name": "EustonWall Climbing Centre",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-6ede02abab"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "rise-canning-town",
+   "line": 15,
+   "name": "Rise Climbing",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-5de3d2392c"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "substation-brixton",
+   "line": 14,
+   "name": "Substation Brixton",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-4c4f1d6c3d"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "the-reach-charlton",
+   "line": 16,
+   "name": "The Reach Climbing Wall",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-d56fba722d"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "westway-climbing-centre",
+   "line": 18,
+   "name": "Westway Climbing Centre",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-6b47dd6df9"
+   },
+   "review_ids": []
+  }
+ ],
+ "reconcile_sha256": "edc38e2ad69e1a8dffa7c92396d2cb3445a4c945cd7de3d7da16e8028daf93a9"
+}

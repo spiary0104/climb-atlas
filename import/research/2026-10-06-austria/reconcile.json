@@ -1,0 +1,562 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-06-austria",
+ "inputs": {
+  "section_sha256": "9185be345e6ec2cd5ec872a17069df030ab19063d452830632c88ff6ddccdb49",
+  "sources_sha256": "489d4805d094955a70d3b46ea258631ed8b554101424eb073c3ea53b618cf5d0",
+  "candidates_sha256": "33470e0114b3d7ced84929048f8189d47e14627dd7a16dca902e40a3e727e3f0",
+  "index": {
+   "sha256": "27073d25c2df373c17caef0c24ebfe759b8d457953a461c62786486d588e661d",
+   "count": 2438
+  },
+  "staged_batches_compared": [
+   "2026-10-06-de-south",
+   "2026-10-06-london"
+  ],
+  "other_sections_compared": []
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 33,
+  "ready": 23,
+  "review": 0,
+  "blocked": 10,
+  "existing": 0,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "at-atoll-achensee-boulder",
+   "line": 9,
+   "name": "BOULDER-Halle Atoll Achensee",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-b188ec2982"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "at-bergstation-telfs",
+   "line": 4,
+   "name": "Bergstation Boulder- & Kletterzentrum Telfs",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-a8216cf708"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "at-bigwall-wiener-neustadt",
+   "line": 23,
+   "name": "Bigwall Bouldering Wiener Neustadt",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-c8c6443dfc"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "at-blocbox-innsbruck",
+   "line": 8,
+   "name": "BlocBox Innsbruck",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-ff563d0a24"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "at-block-monkey-feldkirch",
+   "line": 13,
+   "name": "Block Monkey Feldkirch",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-8afe53cfb0"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "at-boulderama-klagenfurt",
+   "line": 15,
+   "name": "Boulderama Klagenfurt",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-dba4aca1fe"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "at-boulderbar-linz",
+   "line": 1,
+   "name": "Boulderbar - Linz",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-2f52d34bd5"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "at-boulderbar-st-poelten",
+   "line": 2,
+   "name": "Boulderbar - St. Pölten",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-80ca15492e"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "at-boulderhalle-hallein",
+   "line": 30,
+   "name": "ÖAV Boulderhalle Hallein",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-0f280d1ace"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "at-boulderhalle-klagenfurt-naturfreunde",
+   "line": 25,
+   "name": "Boulderhalle Klagenfurt (Naturfreunde)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-c01b6f90f1"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "at-boulderhalle-tarrenz",
+   "line": 7,
+   "name": "Boulderhalle Tarrenz",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-be26bd74c7"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "at-edelweiss-floridsdorf",
+   "line": 31,
+   "name": "Edelweiss Floridsdorf",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-5930998af1"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "at-edelweiss-suedstadt",
+   "line": 21,
+   "name": "Edelweiss Südstadt",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-22eda2ca87"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "at-greifbar-bregenz",
+   "line": 14,
+   "name": "Greifbar Bregenz",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-1ca12f9b1d"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "at-k1-dornbirn",
+   "line": 32,
+   "name": "K1 Kletterhalle Dornbirn",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-b029b53460"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "at-ki-innsbruck",
+   "line": 3,
+   "name": "KI Kletterzentrum Innsbruck",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-5e2d865d02"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "at-kletteranlage-klosterneuburg",
+   "line": 20,
+   "name": "Kletteranlage Klosterneuburg",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-b34dfdd3a8"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "at-kletterarena-wattens",
+   "line": 24,
+   "name": "Kletterarena Wattens",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-b84571c07a"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "at-klettercenter-rotpunkt",
+   "line": 22,
+   "name": "Klettercenter Rotpunkt",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-f285d770d5"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "at-kletterhalle-bad-ischl",
+   "line": 29,
+   "name": "Salzkammergut Kletterhalle Bad Ischl (K3)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-293da8b9f2"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "at-kletterhalle-gramastetten",
+   "line": 28,
+   "name": "Alpenverein Kletterhalle Gramastetten",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-37710f045d"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "at-kletterhalle-steyr",
+   "line": 27,
+   "name": "Naturfreunde Kletterhalle Steyr",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-88e68cf2b0"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "at-kletterhalle-villach",
+   "line": 17,
+   "name": "Kletterhalle Villach",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-53c14cf0ea"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "at-kletterhalle-wels",
+   "line": 26,
+   "name": "Kletterhalle Wels",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-0b492da356"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "at-kletterzentrum-imst",
+   "line": 5,
+   "name": "Kletterzentrum Imst",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-30f48a3f9f"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "at-klimmerei-buers",
+   "line": 12,
+   "name": "KLIMMEREI Boulder Park",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-6aae97ccdf"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "at-ogv-kletterzentrum-wien",
+   "line": 33,
+   "name": "Alpenverein-Gebirgsverein Kletterzentrum",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-c8a41117a8"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "at-steinblock-dornbirn",
+   "line": 10,
+   "name": "STEINBLOCK Boulderhalle Dornbirn",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-ab6b03f243"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "at-steinblock-imst",
+   "line": 6,
+   "name": "STEINBLOCK Boulderhalle Imst",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-0c1aaa5263"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "at-steinblock-rankweil",
+   "line": 11,
+   "name": "STEINBLOCK Boulderhalle Rankweil",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-c4fdb5bd4a"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "at-stoablock-gmunden",
+   "line": 18,
+   "name": "stoablock Boulderhalle Gmunden",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-c18a6c60bc"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "at-suedwand-perchtoldsdorf",
+   "line": 19,
+   "name": "ÖAV-Kletterzentrum Südwand Perchtoldsdorf",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-bb939f90c0"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "at-volume-villach",
+   "line": 16,
+   "name": "VOLUME Boulderhalle Villach",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-b9a29e084f"
+   },
+   "review_ids": []
+  }
+ ],
+ "reconcile_sha256": "1dc932bc32d028ce8928b73ef6406a96a94ed522840f4eb849d21bd33321ad54"
+}

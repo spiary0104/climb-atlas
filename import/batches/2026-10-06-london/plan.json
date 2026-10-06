@@ -1,0 +1,184 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-06-london",
+ "index": {
+  "sha256": "0ffaa46032ac925644ff8fb278ec80e0373a8f5d1030c51d4feb86c9c870b361",
+  "count": 3001,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-06-austria",
+  "2026-10-06-belgium",
+  "2026-10-06-czechia-gap",
+  "2026-10-06-jp-chubu",
+  "2026-10-06-jp-kansai",
+  "2026-10-06-jp-kanto",
+  "2026-10-06-jp-kyushu-hokkaido",
+  "2026-10-06-kr-seoul",
+  "2026-10-06-netherlands",
+  "2026-10-06-poland"
+ ],
+ "counts": {
+  "records": 18,
+  "new": 18,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "4c0a8733e283d3dcb75a0e57e9cb50b28275b68888cc91d47d90240b0d8f67ab",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-3fc0852b2f",
+   "id_frozen": true,
+   "name": "BlocFit Brixton",
+   "country": "GB"
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-5c1f23c597",
+   "id_frozen": true,
+   "name": "City Bouldering Aldgate",
+   "country": "GB"
+  },
+  {
+   "line": 3,
+   "class": "new",
+   "id": "g-60cb81ef3f",
+   "id_frozen": true,
+   "name": "City Bouldering Stratford",
+   "country": "GB"
+  },
+  {
+   "line": 4,
+   "class": "new",
+   "id": "g-fe74b7ba49",
+   "id_frozen": true,
+   "name": "City Bouldering White City",
+   "country": "GB"
+  },
+  {
+   "line": 5,
+   "class": "new",
+   "id": "g-f6e53041ba",
+   "id_frozen": true,
+   "name": "Climbing District Building One",
+   "country": "GB"
+  },
+  {
+   "line": 6,
+   "class": "new",
+   "id": "g-c802fb9f8d",
+   "id_frozen": true,
+   "name": "Climbing District London Fields",
+   "country": "GB"
+  },
+  {
+   "line": 7,
+   "class": "new",
+   "id": "g-fc6a351a39",
+   "id_frozen": true,
+   "name": "Climbing District Tottenham Hale",
+   "country": "GB"
+  },
+  {
+   "line": 8,
+   "class": "new",
+   "id": "g-025875152e",
+   "id_frozen": true,
+   "name": "Climbing Co Fulham",
+   "country": "GB"
+  },
+  {
+   "line": 9,
+   "class": "new",
+   "id": "g-26671a9b9b",
+   "id_frozen": true,
+   "name": "The Font Borough",
+   "country": "GB"
+  },
+  {
+   "line": 10,
+   "class": "new",
+   "id": "g-39e9863b9b",
+   "id_frozen": true,
+   "name": "The Font Hounslow",
+   "country": "GB"
+  },
+  {
+   "line": 11,
+   "class": "new",
+   "id": "g-0aa33c91da",
+   "id_frozen": true,
+   "name": "The Font Wandsworth",
+   "country": "GB"
+  },
+  {
+   "line": 12,
+   "class": "new",
+   "id": "g-d1f4618d13",
+   "id_frozen": true,
+   "name": "BethWall Climbing Centre",
+   "country": "GB"
+  },
+  {
+   "line": 13,
+   "class": "new",
+   "id": "g-d41cc4f3e9",
+   "id_frozen": true,
+   "name": "CanaryWall Climbing Centre",
+   "country": "GB"
+  },
+  {
+   "line": 14,
+   "class": "new",
+   "id": "g-6ede02abab",
+   "id_frozen": true,
+   "name": "EustonWall Climbing Centre",
+   "country": "GB"
+  },
+  {
+   "line": 15,
+   "class": "new",
+   "id": "g-5de3d2392c",
+   "id_frozen": true,
+   "name": "Rise Climbing",
+   "country": "GB"
+  },
+  {
+   "line": 16,
+   "class": "new",
+   "id": "g-4c4f1d6c3d",
+   "id_frozen": true,
+   "name": "Substation Brixton",
+   "country": "GB"
+  },
+  {
+   "line": 17,
+   "class": "new",
+   "id": "g-d56fba722d",
+   "id_frozen": true,
+   "name": "The Reach Climbing Wall",
+   "country": "GB"
+  },
+  {
+   "line": 18,
+   "class": "new",
+   "id": "g-6b47dd6df9",
+   "id_frozen": true,
+   "name": "Westway Climbing Centre",
+   "country": "GB"
+  }
+ ]
+}

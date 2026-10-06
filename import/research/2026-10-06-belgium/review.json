@@ -1,0 +1,113 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-06-belgium",
+ "reviewer": "Spiar (owner); decisions drafted by Claude (AI) on the owner's instruction, pending owner sign-off",
+ "reviewed": "2026-10-06",
+ "decisions": {
+  "be-001": {
+   "decision": "accept",
+   "reason": "Own site/chain page shows exists, open (hours), address and bouldering; the pin is the OSM element way/951638411; no flags from the duplicate checks.",
+   "reviewed_against": []
+  },
+  "be-003": {
+   "decision": "accept",
+   "reason": "Own site/chain page shows exists, open (hours), address and bouldering; the pin is the OSM element node/9328103323; no flags from the duplicate checks.",
+   "reviewed_against": []
+  },
+  "be-004": {
+   "decision": "accept",
+   "reason": "Klimzaal Boulder (Persilstraat 51, Herent; boulder.one) and Klimzaal De Stordeur (Aarschotsesteenweg 112, Leuven-Wilsele) are different halls 2.8 km apart with different sites, addresses and hours; the flag is only the shared word Klimzaal.",
+   "reviewed_against": [
+    "be-008"
+   ]
+  },
+  "be-005": {
+   "decision": "defer",
+   "reason": "No opening hours or dated news on the official site; low confidence that it is open. Listed in MANUAL-CHECK.md."
+  },
+  "be-006": {
+   "decision": "defer",
+   "reason": "No opening hours or dated news on the official site; low confidence that it is open. Listed in MANUAL-CHECK.md."
+  },
+  "be-007": {
+   "decision": "accept",
+   "reason": "Own site/chain page shows exists, open (hours), address and bouldering; the pin is the OSM element node/8074049222; no flags from the duplicate checks.",
+   "reviewed_against": []
+  },
+  "be-008": {
+   "decision": "accept",
+   "reason": "De Stordeur (own site, Walltopia boulder room) is a different hall from Klimzaal Boulder in Herent (boulder.one), 2.8 km apart; the flag is only the shared word Klimzaal.",
+   "reviewed_against": [
+    "be-004"
+   ]
+  },
+  "be-009": {
+   "decision": "accept",
+   "reason": "Own site/chain page shows exists, open (hours), address and bouldering; the pin is the OSM element node/11247664128; no flags from the duplicate checks.",
+   "reviewed_against": []
+  },
+  "be-010": {
+   "decision": "accept",
+   "reason": "Own site/chain page shows exists, open (hours), address and bouldering; the pin is the OSM element node/11261398867; no flags from the duplicate checks.",
+   "reviewed_against": []
+  },
+  "be-011": {
+   "decision": "accept",
+   "reason": "Own site/chain page shows exists, open (hours), address and bouldering; the pin is the OSM element node/11662424386; no flags from the duplicate checks.",
+   "reviewed_against": []
+  },
+  "be-012": {
+   "decision": "accept",
+   "reason": "Own site/chain page shows exists, open (hours), address and bouldering; the pin is the OSM element node/10615378061; no flags from the duplicate checks.",
+   "reviewed_against": []
+  },
+  "be-013": {
+   "decision": "accept",
+   "reason": "Own site/chain page shows exists, open (hours), address and bouldering; the pin is the OSM element node/268791755; no flags from the duplicate checks.",
+   "reviewed_against": []
+  },
+  "be-014": {
+   "decision": "defer",
+   "reason": "Club hall (BVKB) with a boulder room, but no public hours or day-entry information found. Listed in MANUAL-CHECK.md."
+  },
+  "be-015": {
+   "decision": "accept",
+   "reason": "Own site/chain page shows exists, open (hours), address and bouldering; the pin is a house-number geocode; no flags from the duplicate checks.",
+   "reviewed_against": []
+  },
+  "be-016": {
+   "decision": "accept",
+   "reason": "Own site/chain page shows exists, open (hours), address and bouldering; the pin is the OSM element way/260251624; no flags from the duplicate checks.",
+   "reviewed_against": []
+  },
+  "be-017": {
+   "decision": "accept",
+   "reason": "Own site gives address, hours and bouldering; the pin is street-level only (Avenue Leonard Mommaerts, a short street; no house-level point in Photon/OSM), so the real entrance is within roughly 100 m of it.",
+   "reviewed_against": []
+  },
+  "be-019": {
+   "decision": "accept",
+   "reason": "Club hall (Ecole d'escalade de la Woluwe) in the Woluwe sports centre, but its own site shows public opening hours, a bouldering room page, tariffs and dated 2026 events; accepted as publicly usable. OSM node (81) sits about 70 m from the official number 87.",
+   "reviewed_against": []
+  },
+  "be-023": {
+   "decision": "accept",
+   "reason": "Own site/chain page shows exists, open (hours), address and bouldering; the pin is the OSM element way/201506703; no flags from the duplicate checks.",
+   "reviewed_against": []
+  },
+  "be-024": {
+   "decision": "accept",
+   "reason": "Own site/chain page shows exists, open (hours), address and bouldering; the pin is the OSM element way/150126036; no flags from the duplicate checks.",
+   "reviewed_against": []
+  },
+  "be-025": {
+   "decision": "accept",
+   "reason": "Own site/chain page shows exists, open (hours), address and bouldering; the pin is the OSM element way/798786090; no flags from the duplicate checks.",
+   "reviewed_against": []
+  },
+  "be-028": {
+   "decision": "defer",
+   "reason": "The site still says \"Ouverture septembre 2026\" with no hours or confirmation that it opened. Listed in MANUAL-CHECK.md."
+  }
+ }
+}

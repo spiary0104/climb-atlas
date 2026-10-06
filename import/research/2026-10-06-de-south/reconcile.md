@@ -1,0 +1,216 @@
+# Regional research: Germany: Bayern + Baden-Württemberg coverage gap (2026-10-06-de-south)
+
+Scope: DE / BAYERN, BADEN_WURTTEMBERG
+Index: 2438 gyms, sha256 27073d25c2df… | staged batches compared: none | other sections compared: 2026-10-05-germany-east-saar-berlin, 2026-10-05-germany-owner-checks, 2026-10-06-germany-holds
+Review radii (stricter than the importer): any gym 150 m, related name 15 km, other country 2 km
+
+## Summary
+82 candidate(s): ready 0 | review 70 | blocked 12 | already in Bouldeer 0 | invalid 0
+
+## Needs review (accept needs a reason and reviewed_against covering every listed id) (70)
+- active-garden-waiblingen "Active Garden Waiblingen" [g-56f82b06bd] reviewed_against must include: active-garden-korb
+  - related-name-nearby: candidate active-garden-korb "Active Garden Korb": related names "Active Garden Waiblingen" / "Active Garden Korb" 5227 m apart
+  - same-website: candidate active-garden-korb has the same website
+  - single-source: all evidence comes from one source
+- adventure-campus-treuchtlingen "Adventure Campus Treuchtlingen Boulder- und Kletterhalle" [g-932932f132]
+  - limited-access: club wall: check it is open to the public
+  - single-source: all evidence comes from one source
+- b12-dav-boulderzentrum-tuebingen "B12 DAV Boulderzentrum Tübingen" [g-ce17372a69]
+  - limited-access: club wall: check it is open to the public
+  - single-source: all evidence comes from one source
+- bloc-huette-augsburg "Bloc-Hütte Augsburg" [g-7cad2897b6]
+  - single-source: all evidence comes from one source
+- boulder-center-grenzach-wyhlen "BoulderCenter Grenzach-Wyhlen (LÖ bloc)" [g-ba95607f7c] reviewed_against must include: g-f3f5ef1071
+  - other-country-nearby: g-f3f5ef1071 "B2 Boulders & Bar" (CH) 1648 m away
+  - single-source: all evidence comes from one source
+- boulder-hall-burgoberbach "Boulder Hall Burgoberbach" [g-7ae35368e3]
+  - single-source: all evidence comes from one source
+- boulderbock-wolpertshausen "BOULDERBOCK" [g-1223a96f22]
+  - single-source: all evidence comes from one source
+- boulderhalle-memmingen "Boulderhalle Memmingen" [g-754efdfec3]
+  - limited-access: club wall: check it is open to the public
+  - single-source: all evidence comes from one source
+- boulderhalle-steil-karlsruhe "Boulderhalle Steil" [g-e7030344b1]
+  - single-source: all evidence comes from one source
+- boulderhaus-reutlingen "Boulderhaus Reutlingen" [g-83c8e972b5]
+  - single-source: all evidence comes from one source
+- boulderia-neunkirchen-am-brand "Boulderia" [g-4188a745ee]
+  - single-source: all evidence comes from one source
+- dav-aischtal-bad-windsheim "DAV Kletter- und Boulderzentrum Bad Windsheim" [g-b03d3793ce]
+  - limited-access: club wall: check it is open to the public
+  - single-source: all evidence comes from one source
+- dav-bad-toelz "DAV Kletter- und Boulderzentrum Oberbayern Süd (Bad Tölz)" [g-be8703cd08]
+  - limited-access: club wall: check it is open to the public
+  - single-source: all evidence comes from one source
+- dav-boulderhalle-garmisch "DAV Boulderhalle Garmisch-Partenkirchen" [g-06793d6e29]
+  - limited-access: club wall: check it is open to the public
+  - single-source: all evidence comes from one source
+- dav-boulderzentrum-ostalb-essingen "DAV Boulderzentrum Ostalb" [g-d40e058bd5] reviewed_against must include: dav-kletterzentrum-ostalb-aalen
+  - limited-access: club wall: check it is open to the public
+  - related-name-nearby: candidate dav-kletterzentrum-ostalb-aalen "DAV Kletterzentrum Ostalb": related names "DAV Boulderzentrum Ostalb" / "DAV Kletterzentrum Ostalb" 4493 m apart
+  - single-source: all evidence comes from one source
+- dav-kbz-aschaffenburg "DAV Kletter- und Boulderzentrum Aschaffenburg" [g-f53ac6cb8d]
+  - limited-access: club wall: check it is open to the public
+  - single-source: all evidence comes from one source
+- dav-kletter-boulderzentrum-heidelberg "DAV Kletter- und Boulderzentrum Heidelberg (VertiGo)" [g-d74af4b3a5]
+  - limited-access: club wall: check it is open to the public
+  - single-source: all evidence comes from one source
+- dav-kletter-boulderzentrum-karlsruhe "DAV Kletter- und Boulderzentrum Karlsruhe" [g-1ae4b1819f]
+  - limited-access: club wall: check it is open to the public
+  - single-source: all evidence comes from one source
+- dav-kletterhalle-pforzheim "DAV Kletter- und Boulderhalle Pforzheim" [g-9eb236234a]
+  - limited-access: club wall: check it is open to the public
+  - single-source: all evidence comes from one source
+- dav-kletterzentrum-augsburg "DAV Kletterzentrum Augsburg" [g-bf1a7a2290]
+  - limited-access: club wall: check it is open to the public
+  - single-source: all evidence comes from one source
+- dav-kletterzentrum-baden-baden "DAV Kletterzentrum Baden-Baden" [g-1d4aec87a4]
+  - limited-access: club wall: check it is open to the public
+  - single-source: all evidence comes from one source
+- dav-kletterzentrum-bayreuth "DAV Kletterzentrum Bayreuth" [g-7b9ccb401d]
+  - limited-access: club wall: check it is open to the public
+  - single-source: all evidence comes from one source
+- dav-kletterzentrum-freiburg "DAV Kletterzentrum Freiburg" [g-3f7050b866]
+  - limited-access: club wall: check it is open to the public
+  - single-source: all evidence comes from one source
+- dav-kletterzentrum-freising "DAV Kletterzentrum Freising" [g-7bc37feee8]
+  - limited-access: club wall: check it is open to the public
+  - single-source: all evidence comes from one source
+- dav-kletterzentrum-ingolstadt "DAV Kletterzentrum Ingolstadt" [g-de853397a1]
+  - limited-access: club wall: check it is open to the public
+- dav-kletterzentrum-kaufbeuren "DAV Kletterzentrum Kaufbeuren" [g-17f9a58b6c]
+  - limited-access: club wall: check it is open to the public
+  - single-source: all evidence comes from one source
+- dav-kletterzentrum-neumarkt "DAV Kletterzentrum Neumarkt" [g-cf67edecc5]
+  - limited-access: club wall: check it is open to the public
+  - single-source: all evidence comes from one source
+- dav-kletterzentrum-offenburg "DAV Kletterzentrum Offenburg" [g-c089fd982e]
+  - limited-access: club wall: check it is open to the public
+  - single-source: all evidence comes from one source
+- dav-kletterzentrum-ostalb-aalen "DAV Kletterzentrum Ostalb" [g-5034de8b9d] reviewed_against must include: dav-boulderzentrum-ostalb-essingen
+  - limited-access: club wall: check it is open to the public
+  - related-name-nearby: candidate dav-boulderzentrum-ostalb-essingen "DAV Boulderzentrum Ostalb": related names "DAV Kletterzentrum Ostalb" / "DAV Boulderzentrum Ostalb" 4493 m apart
+  - single-source: all evidence comes from one source
+- dav-kletterzentrum-wuerzburg "DAV Kletterzentrum Würzburg" [g-17ffb01d42]
+  - limited-access: club wall: check it is open to the public
+  - single-source: all evidence comes from one source
+- dav-muenchen-nord-freimann "DAV Kletter- und Boulderzentrum München-Nord (Freimann)" [g-853fd34b84] reviewed_against must include: dav-muenchen-sued-thalkirchen, svn-kletter-boulderzentrum-neuperlach
+  - limited-access: club wall: check it is open to the public
+  - related-name-nearby: candidate dav-muenchen-sued-thalkirchen "DAV Kletter- und Boulderzentrum München-Süd (Thalkirchen)": related names "DAV Kletter- und Boulderzentrum München-Nord (Freimann)" / "DAV Kletter- und Boulderzentrum München-Süd (Thalkirchen)" 12319 m apart
+  - related-name-nearby: candidate svn-kletter-boulderzentrum-neuperlach "Kletter- und Boulderzentrum SVN München (Neuperlach)": related names "DAV Kletter- und Boulderzentrum München-Nord (Freimann)" / "Kletter- und Boulderzentrum SVN München (Neuperlach)" 11926 m apart
+  - single-source: all evidence comes from one source
+- dav-muenchen-sued-thalkirchen "DAV Kletter- und Boulderzentrum München-Süd (Thalkirchen)" [g-9d04ea12dc] reviewed_against must include: dav-muenchen-nord-freimann, svn-kletter-boulderzentrum-neuperlach
+  - limited-access: club wall: check it is open to the public
+  - related-name-nearby: candidate dav-muenchen-nord-freimann "DAV Kletter- und Boulderzentrum München-Nord (Freimann)": related names "DAV Kletter- und Boulderzentrum München-Süd (Thalkirchen)" / "DAV Kletter- und Boulderzentrum München-Nord (Freimann)" 12319 m apart
+  - related-name-nearby: candidate svn-kletter-boulderzentrum-neuperlach "Kletter- und Boulderzentrum SVN München (Neuperlach)": related names "DAV Kletter- und Boulderzentrum München-Süd (Thalkirchen)" / "Kletter- und Boulderzentrum SVN München (Neuperlach)" 7847 m apart
+  - single-source: all evidence comes from one source
+- dav-muenchen-west-gilching "DAV Kletter- und Boulderzentrum München-West (Gilching)" [g-df3f8cb6c0]
+  - limited-access: club wall: check it is open to the public
+  - single-source: all evidence comes from one source
+- die-kletterei-kaufering "Die Kletterei Kaufering" [g-da32d2afb4]
+  - single-source: all evidence comes from one source
+- element-boulders-muenchen "ELEMENT Boulders München" [g-a03183f104]
+  - single-source: all evidence comes from one source
+- es-vertikal-dav-kletterzentrum-deggendorf "ES-Vertikal DAV Kletterzentrum Deggendorf" [g-bfbcf8be4c]
+  - limited-access: club wall: check it is open to the public
+  - single-source: all evidence comes from one source
+- exus-bouldercenter-gersthofen "EXUS Bouldercenter Gersthofen" [g-c1a097566f]
+  - single-source: all evidence comes from one source
+- frankenjura-academy-forchheim "Frankenjura Academy" [g-35775d0d9a]
+  - single-source: all evidence comes from one source
+- greifbar-bouldersport-friedrichshafen "Greifbar Bouldersport" [g-e3708902ff]
+  - single-source: all evidence comes from one source
+- griffkiste-boulderhalle-mittelbiberach "GriffKiste Boulderhalle" [g-cedd4a3b5f]
+  - single-source: all evidence comes from one source
+- grip-kletterzentrum-goeppingen "GriP Kletterzentrum Göppingen" [g-2b3fa7a2be]
+  - limited-access: club wall: check it is open to the public
+  - single-source: all evidence comes from one source
+- heavens-gate-muenchen "Heavens Gate Klettern & Bouldern" [g-958c24bd03]
+  - single-source: all evidence comes from one source
+- jurabloc-eichstaett "JURABLOC DAV Kletterzentrum Eichstätt" [g-5ab7e17b48]
+  - limited-access: club wall: check it is open to the public
+  - single-source: all evidence comes from one source
+- kletterarena-heilbronn "Kletterarena Heilbronn" [g-688eb9cff8]
+  - limited-access: club wall: check it is open to the public
+  - single-source: all evidence comes from one source
+- kletterhalle-basislager-bad-aibling "Kletterhalle Basislager" [g-5b3890696b]
+  - single-source: all evidence comes from one source
+- kletterhalle-wasserburg-boulderhalle "Boulderhalle Wasserburg" [g-f7097e2d3b]
+  - limited-access: club wall: check it is open to the public
+  - single-source: all evidence comes from one source
+- kletterhalle-weilheim "Kletterhalle Weilheim "Under the Roof"" [g-9973f7e291]
+  - single-source: all evidence comes from one source
+- kletterschmiede-schwaebisch-gmuend "Kletterschmiede Schwäbisch Gmünd" [g-46beb5160a]
+  - single-source: all evidence comes from one source
+- kletterzentrum-berchtesgaden "Kletterzentrum Berchtesgaden" [g-dcd29956ad]
+  - limited-access: club wall: check it is open to the public
+  - single-source: all evidence comes from one source
+- kletterzentrum-schweinfurt "Kletterzentrum Schweinfurt" [g-70c4079916]
+  - limited-access: club wall: check it is open to the public
+  - single-source: all evidence comes from one source
+- kraftwerk-boulderhalle-allgaeu "Kraftwerk Boulderhalle Allgäu" [g-f681df20f4]
+  - single-source: all evidence comes from one source
+- naturfreunde-kletterhalle-dachau "NaturFreunde Kletterhalle Dachau" [g-60991652bc]
+  - single-source: all evidence comes from one source
+- nice-to-move-boulderhalle-eislingen "NICE to Move Boulderhalle Eislingen" [g-e55c3ea301]
+  - single-source: all evidence comes from one source
+- pafrock-pfaffenhofen "PAFRock DAV Kletterzentrum Pfaffenhofen" [g-d9f2e6f2fc]
+  - limited-access: club wall: check it is open to the public
+  - single-source: all evidence comes from one source
+- peak7-boulderhalle-landshut "PEAK7 Boulderhalle Landshut" [g-415ef70320]
+  - single-source: all evidence comes from one source
+- rock-inn-boulderhalle-wuerzburg "Rock Inn Boulderhalle Würzburg" [g-961023efa7]
+  - single-source: all evidence comes from one source
+- rox-boulder-kletterzentrum-herrenberg "ROX Boulder- und Kletterzentrum Herrenberg" [g-c77118b89c]
+  - single-source: all evidence comes from one source
+- sandstein-boulderhalle-aschaffenburg "Sandstein Boulder Halle Aschaffenburg" [g-5d90436009]
+  - single-source: all evidence comes from one source
+- schwerkraft-boulderhalle-ingolstadt "Schwerkraft Boulderhalle Ingolstadt" [g-acc5986d81]
+  - single-source: all evidence comes from one source
+- sparkassen-dome-biberach "Sparkassen Dome Biberach (DAV Kletterzentrum)" [g-5b12ac1f92]
+  - limited-access: club wall: check it is open to the public
+  - single-source: all evidence comes from one source
+- sparkassendome-dav-kletterwelt-neu-ulm "sparkassendome DAV Kletterwelt Neu-Ulm" [g-f74094f649]
+  - limited-access: club wall: check it is open to the public
+  - single-source: all evidence comes from one source
+- studio-bloc-mannheim "Studio Bloc Mannheim" [g-e89c2e8098]
+  - single-source: all evidence comes from one source
+- svn-kletter-boulderzentrum-neuperlach "Kletter- und Boulderzentrum SVN München (Neuperlach)" [g-478643f0b1] reviewed_against must include: dav-muenchen-nord-freimann, dav-muenchen-sued-thalkirchen
+  - limited-access: club wall: check it is open to the public
+  - related-name-nearby: candidate dav-muenchen-nord-freimann "DAV Kletter- und Boulderzentrum München-Nord (Freimann)": related names "Kletter- und Boulderzentrum SVN München (Neuperlach)" / "DAV Kletter- und Boulderzentrum München-Nord (Freimann)" 11926 m apart
+  - related-name-nearby: candidate dav-muenchen-sued-thalkirchen "DAV Kletter- und Boulderzentrum München-Süd (Thalkirchen)": related names "Kletter- und Boulderzentrum SVN München (Neuperlach)" / "DAV Kletter- und Boulderzentrum München-Süd (Thalkirchen)" 7847 m apart
+  - single-source: all evidence comes from one source
+- the-rock-boulderhalle-karlsruhe "THE ROCK Boulderhalle Karlsruhe" [g-47d0ed5ed2]
+  - single-source: all evidence comes from one source
+- the-rock-kletterzentrum-karlsruhe "THE ROCK Kletterzentrum Karlsruhe" [g-18f1f9d51a]
+  - single-source: all evidence comes from one source
+- top-boulder-kirchheim-teck "TOP Boulder Kirchheim" [g-94c0660a6d]
+  - single-source: all evidence comes from one source
+- top-boulder-malmsheim "TOP Boulder Malmsheim" [g-101337b916]
+  - single-source: all evidence comes from one source
+- vels-boulderhalle-stuttgart "VELS Boulderhalle" [g-7d253fa3e1]
+  - single-source: all evidence comes from one source
+- volksbank-vertical-ueberlingen "DAV Kletter- und Boulderzentrum Volksbank Vertical" [g-07d83aaffe]
+  - limited-access: club wall: check it is open to the public
+  - single-source: all evidence comes from one source
+- zugzwang-boulderhalle-auerbach "Zugzwang Boulderhalle Auerbach" [g-38d7d7998c]
+  - limited-access: club wall: check it is open to the public
+  - single-source: all evidence comes from one source
+
+## Blocked: cannot be accepted (12)
+- active-garden-korb "Active Garden Korb": no-bouldering-evidence (bouldering is "yes" but no primary source confirms it) -> suggested: defer
+- boulder-island-mannheim "Boulder Island Mannheim": insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough) -> suggested: defer
+- dav-alpinzentrum-schorndorf "DAV Alpinzentrum Schorndorf": insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough) -> suggested: defer
+- dav-kletterhalle-amberg "DAV Kletterhalle Amberg": no-bouldering-evidence (bouldering is "yes" but no primary source confirms it) -> suggested: defer
+- dav-kletterhalle-feucht "DAV Kletterzentrum Feucht": no-bouldering-evidence (bouldering is "yes" but no primary source confirms it) -> suggested: defer
+- dav-kletterzentrum-reutlingen "DAV Kletterzentrum Reutlingen": insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough) -> suggested: defer
+- dav-kletterzentrum-sonthofen "DAV Kletterzentrum Sonthofen": bouldering-unknown (bouldering offering not established (never assumed)) -> suggested: defer
+- impulsiv-emmendingen "imPULSIV Freizeitcenter Emmendingen": insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough); bouldering-unknown (bouldering offering not established (never assumed)) -> suggested: defer
+- impulsiv-weil-am-rhein "imPULSIV Freizeitcenter Weil am Rhein": insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough); bouldering-unknown (bouldering offering not established (never assumed)) -> suggested: defer
+- k5-dav-kletterzentrum-rottweil "K5 DAV Kletterzentrum Rottweil": no-bouldering-evidence (bouldering is "yes" but no primary source confirms it) -> suggested: defer
+- mtv-muenchen-kletterhalle "MTV München Kletterhalle": bouldering-unknown (bouldering offering not established (never assumed)) -> suggested: defer
+- munich-action-park "Munich Action Park (Olympiapark)": insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough) -> suggested: defer
+
+## Next
+Write review.json with one decision per candidate (docs/import-workflow.md, "Regional research"), then `node scripts/gym-import.js research stage 2026-10-06-de-south`.
+Nothing here touches production.

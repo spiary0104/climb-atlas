@@ -1,0 +1,522 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-06-france-cities",
+ "index": {
+  "sha256": "425f1593055bfe9fa572f843061b9f0f8307f0f811c375d84502d30010b4c223",
+  "count": 2903,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-06-austria",
+  "2026-10-06-belgium",
+  "2026-10-06-czechia-gap",
+  "2026-10-06-jp-chubu",
+  "2026-10-06-jp-kansai",
+  "2026-10-06-jp-kanto",
+  "2026-10-06-jp-kyushu-hokkaido",
+  "2026-10-06-kr-seoul",
+  "2026-10-06-london",
+  "2026-10-06-netherlands",
+  "2026-10-06-poland",
+  "2026-10-06-spain-cities"
+ ],
+ "counts": {
+  "records": 60,
+  "new": 60,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "8d30d8e762add6bf1700933719fce62c08a44ffec18282352f04fd0b9ae1bcbc",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-42161cb45e",
+   "id_frozen": true,
+   "name": "Altissimo Albi",
+   "country": "FR"
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-787c4d3a6a",
+   "id_frozen": true,
+   "name": "Altissimo Metz Haut Gazon",
+   "country": "FR"
+  },
+  {
+   "line": 3,
+   "class": "new",
+   "id": "g-51adae9d61",
+   "id_frozen": true,
+   "name": "Altissimo Metz Loisirama",
+   "country": "FR"
+  },
+  {
+   "line": 4,
+   "class": "new",
+   "id": "g-dc36370043",
+   "id_frozen": true,
+   "name": "Altissimo Montpellier Grabels",
+   "country": "FR"
+  },
+  {
+   "line": 5,
+   "class": "new",
+   "id": "g-5d084ba73c",
+   "id_frozen": true,
+   "name": "Altissimo Montpellier Odysseum",
+   "country": "FR"
+  },
+  {
+   "line": 6,
+   "class": "new",
+   "id": "g-c5bc9cbcbf",
+   "id_frozen": true,
+   "name": "Altissimo Nantes",
+   "country": "FR"
+  },
+  {
+   "line": 7,
+   "class": "new",
+   "id": "g-7fa2bfce6a",
+   "id_frozen": true,
+   "name": "Altissimo Perpignan",
+   "country": "FR"
+  },
+  {
+   "line": 8,
+   "class": "new",
+   "id": "g-7c3105fa67",
+   "id_frozen": true,
+   "name": "Espace Vertical 3",
+   "country": "FR"
+  },
+  {
+   "line": 9,
+   "class": "new",
+   "id": "g-5dd31eb55c",
+   "id_frozen": true,
+   "name": "Le Labo (Espace Vertical)",
+   "country": "FR"
+  },
+  {
+   "line": 10,
+   "class": "new",
+   "id": "g-f08fa97671",
+   "id_frozen": true,
+   "name": "ABLOK Grenoble",
+   "country": "FR"
+  },
+  {
+   "line": 11,
+   "class": "new",
+   "id": "g-d9a8224398",
+   "id_frozen": true,
+   "name": "ABLOK Voiron",
+   "country": "FR"
+  },
+  {
+   "line": 12,
+   "class": "new",
+   "id": "g-28a763e4c3",
+   "id_frozen": true,
+   "name": "L'Orangerie Perchée",
+   "country": "FR"
+  },
+  {
+   "line": 13,
+   "class": "new",
+   "id": "g-f70a8a56dd",
+   "id_frozen": true,
+   "name": "Au Perchoir",
+   "country": "FR"
+  },
+  {
+   "line": 14,
+   "class": "new",
+   "id": "g-855ccfbf00",
+   "id_frozen": true,
+   "name": "The Roof Brest",
+   "country": "FR"
+  },
+  {
+   "line": 15,
+   "class": "new",
+   "id": "g-1e11a562a5",
+   "id_frozen": true,
+   "name": "The Roof Rennes",
+   "country": "FR"
+  },
+  {
+   "line": 16,
+   "class": "new",
+   "id": "g-8363ecdc78",
+   "id_frozen": true,
+   "name": "The Roof Poitiers",
+   "country": "FR"
+  },
+  {
+   "line": 17,
+   "class": "new",
+   "id": "g-f2d04e371e",
+   "id_frozen": true,
+   "name": "The Roof Albi",
+   "country": "FR"
+  },
+  {
+   "line": 18,
+   "class": "new",
+   "id": "g-c092799ed8",
+   "id_frozen": true,
+   "name": "The Roof Pays Basque (Bayonne)",
+   "country": "FR"
+  },
+  {
+   "line": 19,
+   "class": "new",
+   "id": "g-d366767cf8",
+   "id_frozen": true,
+   "name": "The Roof Vercors",
+   "country": "FR"
+  },
+  {
+   "line": 20,
+   "class": "new",
+   "id": "g-a39fe4d585",
+   "id_frozen": true,
+   "name": "The Roof Saint-Brieuc",
+   "country": "FR"
+  },
+  {
+   "line": 21,
+   "class": "new",
+   "id": "g-9c96d10277",
+   "id_frozen": true,
+   "name": "Hueco City",
+   "country": "FR"
+  },
+  {
+   "line": 22,
+   "class": "new",
+   "id": "g-c29b2de354",
+   "id_frozen": true,
+   "name": "Hueco Zenith",
+   "country": "FR"
+  },
+  {
+   "line": 23,
+   "class": "new",
+   "id": "g-f04cb9c92a",
+   "id_frozen": true,
+   "name": "Climbing District - Pont-de-Neuilly",
+   "country": "FR"
+  },
+  {
+   "line": 24,
+   "class": "new",
+   "id": "g-95d87582e6",
+   "id_frozen": true,
+   "name": "Pic et Paroi - Le Bloc",
+   "country": "FR"
+  },
+  {
+   "line": 25,
+   "class": "new",
+   "id": "g-59c668af00",
+   "id_frozen": true,
+   "name": "ELCAP",
+   "country": "FR"
+  },
+  {
+   "line": 26,
+   "class": "new",
+   "id": "g-ac83b743a2",
+   "id_frozen": true,
+   "name": "UCPA Sport Station Nantes",
+   "country": "FR"
+  },
+  {
+   "line": 27,
+   "class": "new",
+   "id": "g-a758a05a2d",
+   "id_frozen": true,
+   "name": "UCPA Sport Station Bordeaux",
+   "country": "FR"
+  },
+  {
+   "line": 28,
+   "class": "new",
+   "id": "g-9a323d05e0",
+   "id_frozen": true,
+   "name": "Blocbuster Courbevoie",
+   "country": "FR"
+  },
+  {
+   "line": 29,
+   "class": "new",
+   "id": "g-f860d7675f",
+   "id_frozen": true,
+   "name": "Hardbloc",
+   "country": "FR"
+  },
+  {
+   "line": 30,
+   "class": "new",
+   "id": "g-e89f6dff5d",
+   "id_frozen": true,
+   "name": "Climb Arena",
+   "country": "FR"
+  },
+  {
+   "line": 31,
+   "class": "new",
+   "id": "g-5e8807310d",
+   "id_frozen": true,
+   "name": "Karma La Villette",
+   "country": "FR"
+  },
+  {
+   "line": 32,
+   "class": "new",
+   "id": "g-7c79384ac7",
+   "id_frozen": true,
+   "name": "Karma Fontainebleau",
+   "country": "FR"
+  },
+  {
+   "line": 33,
+   "class": "new",
+   "id": "g-02f57d3060",
+   "id_frozen": true,
+   "name": "Bloc en Stock",
+   "country": "FR"
+  },
+  {
+   "line": 34,
+   "class": "new",
+   "id": "g-cc2534030c",
+   "id_frozen": true,
+   "name": "Modjo",
+   "country": "FR"
+  },
+  {
+   "line": 35,
+   "class": "new",
+   "id": "g-22ab3b0cc3",
+   "id_frozen": true,
+   "name": "B'wall Vannes",
+   "country": "FR"
+  },
+  {
+   "line": 36,
+   "class": "new",
+   "id": "g-d5d10db939",
+   "id_frozen": true,
+   "name": "B'wall Lorient (Lanester)",
+   "country": "FR"
+  },
+  {
+   "line": 37,
+   "class": "new",
+   "id": "g-66d3a3d442",
+   "id_frozen": true,
+   "name": "B'wall Quimper",
+   "country": "FR"
+  },
+  {
+   "line": 38,
+   "class": "new",
+   "id": "g-b45e6000fb",
+   "id_frozen": true,
+   "name": "Boulder Line 1 (Castelnau-le-Lez)",
+   "country": "FR"
+  },
+  {
+   "line": 39,
+   "class": "new",
+   "id": "g-1b48f454c4",
+   "id_frozen": true,
+   "name": "Boulder Line 3 City (Montpellier)",
+   "country": "FR"
+  },
+  {
+   "line": 40,
+   "class": "new",
+   "id": "g-4cea3626ba",
+   "id_frozen": true,
+   "name": "Start in Bloc",
+   "country": "FR"
+  },
+  {
+   "line": 41,
+   "class": "new",
+   "id": "g-5e2011916f",
+   "id_frozen": true,
+   "name": "Là Ô Escalade",
+   "country": "FR"
+  },
+  {
+   "line": 42,
+   "class": "new",
+   "id": "g-7d4776dabd",
+   "id_frozen": true,
+   "name": "BlocaBrac",
+   "country": "FR"
+  },
+  {
+   "line": 43,
+   "class": "new",
+   "id": "g-a691df794f",
+   "id_frozen": true,
+   "name": "La Zipette",
+   "country": "FR"
+  },
+  {
+   "line": 44,
+   "class": "new",
+   "id": "g-cbbbe4c2c5",
+   "id_frozen": true,
+   "name": "AlpAbloc",
+   "country": "FR"
+  },
+  {
+   "line": 45,
+   "class": "new",
+   "id": "g-bd2116952e",
+   "id_frozen": true,
+   "name": "Wattabloc",
+   "country": "FR"
+  },
+  {
+   "line": 46,
+   "class": "new",
+   "id": "g-e89c51ffc1",
+   "id_frozen": true,
+   "name": "Techno Bloc",
+   "country": "FR"
+  },
+  {
+   "line": 47,
+   "class": "new",
+   "id": "g-26f7e3f0f4",
+   "id_frozen": true,
+   "name": "Arcabloc",
+   "country": "FR"
+  },
+  {
+   "line": 48,
+   "class": "new",
+   "id": "g-a2ee1d22e1",
+   "id_frozen": true,
+   "name": "Le Topo Mont Blanc",
+   "country": "FR"
+  },
+  {
+   "line": 49,
+   "class": "new",
+   "id": "g-0f4ddd5fa0",
+   "id_frozen": true,
+   "name": "Mont Blanc Escalade",
+   "country": "FR"
+  },
+  {
+   "line": 50,
+   "class": "new",
+   "id": "g-cd04629c5d",
+   "id_frozen": true,
+   "name": "Espace Escalade L'Arbresle",
+   "country": "FR"
+  },
+  {
+   "line": 51,
+   "class": "new",
+   "id": "g-ba194580b7",
+   "id_frozen": true,
+   "name": "Gravity Bouldering",
+   "country": "FR"
+  },
+  {
+   "line": 52,
+   "class": "new",
+   "id": "g-a84ea13ce7",
+   "id_frozen": true,
+   "name": "Bêta-Bloc",
+   "country": "FR"
+  },
+  {
+   "line": 53,
+   "class": "new",
+   "id": "g-796dbcb8b1",
+   "id_frozen": true,
+   "name": "La Grappe Escalade",
+   "country": "FR"
+  },
+  {
+   "line": 54,
+   "class": "new",
+   "id": "g-45f2fdf677",
+   "id_frozen": true,
+   "name": "Climb'Zone",
+   "country": "FR"
+  },
+  {
+   "line": 55,
+   "class": "new",
+   "id": "g-2f3d152c17",
+   "id_frozen": true,
+   "name": "Instant Grimpe",
+   "country": "FR"
+  },
+  {
+   "line": 56,
+   "class": "new",
+   "id": "g-12ae91dc0f",
+   "id_frozen": true,
+   "name": "Space Bloc",
+   "country": "FR"
+  },
+  {
+   "line": 57,
+   "class": "new",
+   "id": "g-948232783a",
+   "id_frozen": true,
+   "name": "Bloc Zone",
+   "country": "FR"
+  },
+  {
+   "line": 58,
+   "class": "new",
+   "id": "g-8d782dbac1",
+   "id_frozen": true,
+   "name": "Atome Climbing",
+   "country": "FR"
+  },
+  {
+   "line": 59,
+   "class": "new",
+   "id": "g-b52bf427e7",
+   "id_frozen": true,
+   "name": "Capt'N Hablock",
+   "country": "FR"
+  },
+  {
+   "line": 60,
+   "class": "new",
+   "id": "g-7d0df92ee4",
+   "id_frozen": true,
+   "name": "Le Bloc de l'Ours",
+   "country": "FR"
+  }
+ ]
+}

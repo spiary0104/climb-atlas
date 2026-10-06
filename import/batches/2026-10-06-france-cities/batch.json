@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-06-france-cities",
+  "description": "Regional research \"France: independents and missing chains in the big cities\": 60 new gym(s) accepted of 66 candidate(s)",
+  "created": "2026-10-06",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-10-06-france-cities",
+    "section_sha256": "f6a15ae8fb72dd1192f0d06e1c50b37de26a98cdf393a6cc5aa81303aa7978ec",
+    "sources_sha256": "883e40c8b777bbefe1ec70dd233788dfb36011ad2fd9e0efc9a2558472f0b836",
+    "candidates_sha256": "f9beece7486ebc3cb31cc16bd39559e0c3f4c9fe208d54305ad6b21a1747d48a",
+    "reconcile_sha256": "b07584e34a17cb75fe16a63583a38fed6d8e3e7ea19d3a6f9a4797c34a1e3eb8",
+    "review_sha256": "5c9ec056f8f83af02dc823e433d2f1e9588011b44f13370f6f7cff26df41a5ed",
+    "candidates": 66,
+    "staged": 60,
+    "decisions": {
+      "accept": 60,
+      "defer": 3,
+      "reject": 3
+    }
+  },
+  "index_at_staging": {
+    "sha256": "27073d25c2df373c17caef0c24ebfe759b8d457953a461c62786486d588e661d",
+    "count": 2438
+  }
+}

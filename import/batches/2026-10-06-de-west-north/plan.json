@@ -1,0 +1,571 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-06-de-west-north",
+ "index": {
+  "sha256": "51db4ae637f229f6ec813d290c26570b7e7f0c5283752452a88ffe289c9271c0",
+  "count": 2837,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-06-austria",
+  "2026-10-06-belgium",
+  "2026-10-06-czechia-gap",
+  "2026-10-06-france-cities",
+  "2026-10-06-jp-chubu",
+  "2026-10-06-jp-kansai",
+  "2026-10-06-jp-kanto",
+  "2026-10-06-jp-kyushu-hokkaido",
+  "2026-10-06-kr-seoul",
+  "2026-10-06-london",
+  "2026-10-06-netherlands",
+  "2026-10-06-poland",
+  "2026-10-06-spain-cities"
+ ],
+ "counts": {
+  "records": 66,
+  "new": 66,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "755d125c259e456d96258f032c95e744f17a2bbda8826ae4ddbf9557d6587b13",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-29800838af",
+   "id_frozen": true,
+   "name": "2T Kletter+Boulderhalle",
+   "country": "DE"
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-bb437cb06d",
+   "id_frozen": true,
+   "name": "Bahnhof Blo",
+   "country": "DE"
+  },
+  {
+   "line": 3,
+   "class": "new",
+   "id": "g-1b962ba9f7",
+   "id_frozen": true,
+   "name": "Kletterhalle Bergwerk",
+   "country": "DE"
+  },
+  {
+   "line": 4,
+   "class": "new",
+   "id": "g-d0319bcd25",
+   "id_frozen": true,
+   "name": "BiG - Bouldern in Göttingen",
+   "country": "DE"
+  },
+  {
+   "line": 5,
+   "class": "new",
+   "id": "g-7af58d8d90",
+   "id_frozen": true,
+   "name": "BlocBuster Paderborn",
+   "country": "DE"
+  },
+  {
+   "line": 6,
+   "class": "new",
+   "id": "g-e10b321d4d",
+   "id_frozen": true,
+   "name": "blockwerk Mainz",
+   "country": "DE"
+  },
+  {
+   "line": 7,
+   "class": "new",
+   "id": "g-2afa0a4a82",
+   "id_frozen": true,
+   "name": "BLOCSCHOKOLADE",
+   "country": "DE"
+  },
+  {
+   "line": 8,
+   "class": "new",
+   "id": "g-4e018e151b",
+   "id_frozen": true,
+   "name": "BloX Boulderhalle Sauerland",
+   "country": "DE"
+  },
+  {
+   "line": 9,
+   "class": "new",
+   "id": "g-8df81e2d06",
+   "id_frozen": true,
+   "name": "Boulderhalle Bootshaus",
+   "country": "DE"
+  },
+  {
+   "line": 10,
+   "class": "new",
+   "id": "g-cd1e822644",
+   "id_frozen": true,
+   "name": "boulder factory",
+   "country": "DE"
+  },
+  {
+   "line": 11,
+   "class": "new",
+   "id": "g-ae098fe6ba",
+   "id_frozen": true,
+   "name": "Boulderchurch",
+   "country": "DE"
+  },
+  {
+   "line": 12,
+   "class": "new",
+   "id": "g-6ea431c2ea",
+   "id_frozen": true,
+   "name": "Camp4 Kletterzentrum",
+   "country": "DE"
+  },
+  {
+   "line": 13,
+   "class": "new",
+   "id": "g-521a32b80f",
+   "id_frozen": true,
+   "name": "CAMPUS Boulderhalle",
+   "country": "DE"
+  },
+  {
+   "line": 14,
+   "class": "new",
+   "id": "g-7ea441787f",
+   "id_frozen": true,
+   "name": "Center of Gravity Boulderhalle",
+   "country": "DE"
+  },
+  {
+   "line": 15,
+   "class": "new",
+   "id": "g-34307158f3",
+   "id_frozen": true,
+   "name": "Cube - DAV Kletterzentrum Wetzlar",
+   "country": "DE"
+  },
+  {
+   "line": 16,
+   "class": "new",
+   "id": "g-a970beed22",
+   "id_frozen": true,
+   "name": "DAV Alpinzentrum Bielefeld",
+   "country": "DE"
+  },
+  {
+   "line": 17,
+   "class": "new",
+   "id": "g-aae35440aa",
+   "id_frozen": true,
+   "name": "DAV Kletterzentrum Darmstadt",
+   "country": "DE"
+  },
+  {
+   "line": 18,
+   "class": "new",
+   "id": "g-695d0d2237",
+   "id_frozen": true,
+   "name": "DAV Kletterzentrum Frankfurt",
+   "country": "DE"
+  },
+  {
+   "line": 19,
+   "class": "new",
+   "id": "g-7a7a3fba11",
+   "id_frozen": true,
+   "name": "DAV Kletter- und Boulderzentrum Fulda",
+   "country": "DE"
+  },
+  {
+   "line": 20,
+   "class": "new",
+   "id": "g-401e7f2a37",
+   "id_frozen": true,
+   "name": "DAV Kletter- und Boulderzentrum Gießen",
+   "country": "DE"
+  },
+  {
+   "line": 21,
+   "class": "new",
+   "id": "g-193fab179d",
+   "id_frozen": true,
+   "name": "DAV Kletterzentrum OWL",
+   "country": "DE"
+  },
+  {
+   "line": 22,
+   "class": "new",
+   "id": "g-5e3948db7d",
+   "id_frozen": true,
+   "name": "DAV Kletterzentrum Siegerland",
+   "country": "DE"
+  },
+  {
+   "line": 23,
+   "class": "new",
+   "id": "g-3246b8a261",
+   "id_frozen": true,
+   "name": "dieHalle Aachen",
+   "country": "DE"
+  },
+  {
+   "line": 24,
+   "class": "new",
+   "id": "g-d40f0429d7",
+   "id_frozen": true,
+   "name": "Eifelblock Trier",
+   "country": "DE"
+  },
+  {
+   "line": 25,
+   "class": "new",
+   "id": "g-750f08f738",
+   "id_frozen": true,
+   "name": "ELEMENT Boulders Essen",
+   "country": "DE"
+  },
+  {
+   "line": 26,
+   "class": "new",
+   "id": "g-8a645656b6",
+   "id_frozen": true,
+   "name": "ELEMENT Boulders Köln City",
+   "country": "DE"
+  },
+  {
+   "line": 27,
+   "class": "new",
+   "id": "g-12e74874cf",
+   "id_frozen": true,
+   "name": "Felsmeister Boulderhalle",
+   "country": "DE"
+  },
+  {
+   "line": 28,
+   "class": "new",
+   "id": "g-d752e3f0eb",
+   "id_frozen": true,
+   "name": "Fliegerhalle",
+   "country": "DE"
+  },
+  {
+   "line": 29,
+   "class": "new",
+   "id": "g-9d2cefa21d",
+   "id_frozen": true,
+   "name": "Freiraum Basecamp",
+   "country": "DE"
+  },
+  {
+   "line": 30,
+   "class": "new",
+   "id": "g-9d088b3553",
+   "id_frozen": true,
+   "name": "Gaia Boulderhalle",
+   "country": "DE"
+  },
+  {
+   "line": 31,
+   "class": "new",
+   "id": "g-e72b2cee0b",
+   "id_frozen": true,
+   "name": "Glücksgriff Boulderhalle",
+   "country": "DE"
+  },
+  {
+   "line": 32,
+   "class": "new",
+   "id": "g-684adf6dc6",
+   "id_frozen": true,
+   "name": "Gravidrom",
+   "country": "DE"
+  },
+  {
+   "line": 33,
+   "class": "new",
+   "id": "g-f395200a2f",
+   "id_frozen": true,
+   "name": "GRAVITY Boulderhalle",
+   "country": "DE"
+  },
+  {
+   "line": 34,
+   "class": "new",
+   "id": "g-709674a322",
+   "id_frozen": true,
+   "name": "Greifhaus",
+   "country": "DE"
+  },
+  {
+   "line": 35,
+   "class": "new",
+   "id": "g-71b0312df0",
+   "id_frozen": true,
+   "name": "GriffReich DAV Kletterzentrum Hannover",
+   "country": "DE"
+  },
+  {
+   "line": 36,
+   "class": "new",
+   "id": "g-0662ce39bb",
+   "id_frozen": true,
+   "name": "HÖHENRAUSCH Boulderhalle",
+   "country": "DE"
+  },
+  {
+   "line": 37,
+   "class": "new",
+   "id": "g-35143927e5",
+   "id_frozen": true,
+   "name": "Hold on Tide",
+   "country": "DE"
+  },
+  {
+   "line": 38,
+   "class": "new",
+   "id": "g-18becdf608",
+   "id_frozen": true,
+   "name": "KletterBar Kiel",
+   "country": "DE"
+  },
+  {
+   "line": 39,
+   "class": "new",
+   "id": "g-fed4c2fcd8",
+   "id_frozen": true,
+   "name": "KletterBar Münster",
+   "country": "DE"
+  },
+  {
+   "line": 40,
+   "class": "new",
+   "id": "g-680de65433",
+   "id_frozen": true,
+   "name": "Kletterkirche",
+   "country": "DE"
+  },
+  {
+   "line": 41,
+   "class": "new",
+   "id": "g-24d0663fc9",
+   "id_frozen": true,
+   "name": "Kletterwelt Sauerland",
+   "country": "DE"
+  },
+  {
+   "line": 42,
+   "class": "new",
+   "id": "g-a74480d342",
+   "id_frozen": true,
+   "name": "Kletterzentrum Buchholz in der Nordheide",
+   "country": "DE"
+  },
+  {
+   "line": 43,
+   "class": "new",
+   "id": "g-b95192b2bb",
+   "id_frozen": true,
+   "name": "Kliff Boulderhalle",
+   "country": "DE"
+  },
+  {
+   "line": 44,
+   "class": "new",
+   "id": "g-b5d06dd15c",
+   "id_frozen": true,
+   "name": "Monkeyspot Mönchengladbach",
+   "country": "DE"
+  },
+  {
+   "line": 45,
+   "class": "new",
+   "id": "g-cfa1ef903a",
+   "id_frozen": true,
+   "name": "Nordwandhalle",
+   "country": "DE"
+  },
+  {
+   "line": 46,
+   "class": "new",
+   "id": "g-017c7465b8",
+   "id_frozen": true,
+   "name": "OSNABLOC",
+   "country": "DE"
+  },
+  {
+   "line": 47,
+   "class": "new",
+   "id": "g-df2a92bb49",
+   "id_frozen": true,
+   "name": "PETZ Boulderhalle",
+   "country": "DE"
+  },
+  {
+   "line": 48,
+   "class": "new",
+   "id": "g-efb631cced",
+   "id_frozen": true,
+   "name": "Boulderhalle Prisma",
+   "country": "DE"
+  },
+  {
+   "line": 49,
+   "class": "new",
+   "id": "g-fa2c07dbe8",
+   "id_frozen": true,
+   "name": "Schlüsselstelle - Jung's Boulderhalle & Café",
+   "country": "DE"
+  },
+  {
+   "line": 50,
+   "class": "new",
+   "id": "g-7459d925b1",
+   "id_frozen": true,
+   "name": "Sportpark Kelkheim Boulderhalle",
+   "country": "DE"
+  },
+  {
+   "line": 51,
+   "class": "new",
+   "id": "g-7fc2e19bf7",
+   "id_frozen": true,
+   "name": "Studio Bloc Darmstadt",
+   "country": "DE"
+  },
+  {
+   "line": 52,
+   "class": "new",
+   "id": "g-4a39ff5f97",
+   "id_frozen": true,
+   "name": "Studio Bloc Wiesbaden",
+   "country": "DE"
+  },
+  {
+   "line": 53,
+   "class": "new",
+   "id": "g-cbdbeec6e6",
+   "id_frozen": true,
+   "name": "Stuntwerk Duisburg",
+   "country": "DE"
+  },
+  {
+   "line": 54,
+   "class": "new",
+   "id": "g-9b2a52e695",
+   "id_frozen": true,
+   "name": "Stuntwerk Essen",
+   "country": "DE"
+  },
+  {
+   "line": 55,
+   "class": "new",
+   "id": "g-01e07290ea",
+   "id_frozen": true,
+   "name": "Stuntwerk Köln Zollstock",
+   "country": "DE"
+  },
+  {
+   "line": 56,
+   "class": "new",
+   "id": "g-e06ca0f773",
+   "id_frozen": true,
+   "name": "Stuntwerk Krefeld",
+   "country": "DE"
+  },
+  {
+   "line": 57,
+   "class": "new",
+   "id": "g-f0e5c10b94",
+   "id_frozen": true,
+   "name": "Stuntwerk Troisdorf",
+   "country": "DE"
+  },
+  {
+   "line": 58,
+   "class": "new",
+   "id": "g-edad9249bc",
+   "id_frozen": true,
+   "name": "Superblock",
+   "country": "DE"
+  },
+  {
+   "line": 59,
+   "class": "new",
+   "id": "g-cc208b127b",
+   "id_frozen": true,
+   "name": "The Cave",
+   "country": "DE"
+  },
+  {
+   "line": 60,
+   "class": "new",
+   "id": "g-d4b2d372f9",
+   "id_frozen": true,
+   "name": "urban apes Hamburg Ost",
+   "country": "DE"
+  },
+  {
+   "line": 61,
+   "class": "new",
+   "id": "g-e340987347",
+   "id_frozen": true,
+   "name": "urban apes Hamburg St. Pauli",
+   "country": "DE"
+  },
+  {
+   "line": 62,
+   "class": "new",
+   "id": "g-05c3986098",
+   "id_frozen": true,
+   "name": "urban apes Hamburg West",
+   "country": "DE"
+  },
+  {
+   "line": 63,
+   "class": "new",
+   "id": "g-1a3b12436e",
+   "id_frozen": true,
+   "name": "urban apes Hannover",
+   "country": "DE"
+  },
+  {
+   "line": 64,
+   "class": "new",
+   "id": "g-aebfb13ca1",
+   "id_frozen": true,
+   "name": "urban apes Norderstedt",
+   "country": "DE"
+  },
+  {
+   "line": 65,
+   "class": "new",
+   "id": "g-95211265ca",
+   "id_frozen": true,
+   "name": "Volksbank Kletterhalle Marburg",
+   "country": "DE"
+  },
+  {
+   "line": 66,
+   "class": "new",
+   "id": "g-84a999eb03",
+   "id_frozen": true,
+   "name": "Zenit Boulderhalle",
+   "country": "DE"
+  }
+ ]
+}

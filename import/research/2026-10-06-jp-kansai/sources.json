@@ -1,0 +1,383 @@
+{
+ "schema_version": 1,
+ "sources": {
+  "GSI": {
+   "kind": "map-data",
+   "title": "GSI address search (Geospatial Information Authority of Japan)",
+   "url": "https://msearch.gsi.go.jp/address-search/AddressSearch",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "RG": {
+   "kind": "directory",
+   "title": "Rockgym (rockgym.jp) prefecture gym tables and store pages: names and addresses only",
+   "url": "https://rockgym.jp/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "DBC": {
+   "kind": "official-site",
+   "title": "D.Bouldering (chain site) Matsui-yamate store page",
+   "url": "https://www.d-b-c.jp/top/matsui-yamate/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "NKG": {
+   "kind": "chain-store-list",
+   "title": "Nakagai Climbing Gym (chain site, store pages)",
+   "url": "https://nakagaiclimbing.jp/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "HIGU": {
+   "kind": "official-site",
+   "title": "Climbing Gym Higurashi Nagahoribashi (official site)",
+   "url": "https://climbing-higurashi.com/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "LUCLU": {
+   "kind": "official-site",
+   "title": "Climbing Park LUCLU (official site)",
+   "url": "https://www.luclu.net/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "ROCKON": {
+   "kind": "official-site",
+   "title": "Rock On Climbing Gym (official site)",
+   "url": "https://www.rockongym.com/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "MUSH": {
+   "kind": "official-site",
+   "title": "Bouldering Gym MUSHROOMING (official site)",
+   "url": "https://mushrooming.co/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "LUVROCK": {
+   "kind": "official-site",
+   "title": "Luvrock Bouldering Spot (official site)",
+   "url": "https://luvrock.jp/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "TENOC": {
+   "kind": "official-site",
+   "title": "10 O'CLOCK Bouldering Space (official site)",
+   "url": "https://www.10-oclock.com/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "KAWA": {
+   "kind": "official-site",
+   "title": "Urban Climbing Club Kawasemi (official site)",
+   "url": "https://club-kawasemi.com/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "BUM": {
+   "kind": "official-site",
+   "title": "Climbing Bum Osaka (official site)",
+   "url": "https://climbingbum.jp/osaka/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "ANDWALL": {
+   "kind": "official-site",
+   "title": "&WALL (official site)",
+   "url": "https://and-wall.com/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "GALERA": {
+   "kind": "official-site",
+   "title": "Climbing Gym Galera (official site)",
+   "url": "https://galera-climbing.com/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "CRUX": {
+   "kind": "official-site",
+   "title": "CRUX Osaka (official site)",
+   "url": "https://www.crux-jp.com/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "SIESTA": {
+   "kind": "official-site",
+   "title": "Climbing Gym Siesta Yoshida (official site)",
+   "url": "https://www.siesta-climbing.com/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "SAN": {
+   "kind": "official-site",
+   "title": "SAN Climbing Gym (official site)",
+   "url": "https://www.san-climbing-gym.com/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "SANYO": {
+   "kind": "official-site",
+   "title": "Sanyo Climbing Gym (official site)",
+   "url": "https://sanyoclimbinggym2008.jimdofree.com/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "MAHO": {
+   "kind": "official-site",
+   "title": "MAHOROBA FOREST Bouldering Space (official site)",
+   "url": "https://www.mahorobaforest.com/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "FUNC2": {
+   "kind": "official-site",
+   "title": "Climbing Box FunC2 (official site)",
+   "url": "https://func2.jp/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "MINO": {
+   "kind": "official-site",
+   "title": "MINORITE (official site)",
+   "url": "https://minorite.jp/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "SUHARA": {
+   "kind": "official-site",
+   "title": "Suhara Climbing Gym Ikeda (official site)",
+   "url": "http://suharagym.com/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "LINKS": {
+   "kind": "official-site",
+   "title": "Climbing Gym LINKS (official site)",
+   "url": "http://www.climbing-links.com/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "COCOMO": {
+   "kind": "official-site",
+   "title": "Climbing Gym COCOMO Awaji (official site)",
+   "url": "https://www.cocomo-climbing.com/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "HEIMAT": {
+   "kind": "official-site",
+   "title": "Heimat berg Climbing Gym (official site)",
+   "url": "https://heimatberg-climbing.work/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "BAROCK": {
+   "kind": "official-site",
+   "title": "Bouldering Space BaRock (official site)",
+   "url": "https://barock-climbing.com/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "ROCKGARDEN": {
+   "kind": "official-site",
+   "title": "Bouldering Gym Rock Garden Kobe (official site)",
+   "url": "https://www.rockgarden.jp/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "KIAORA": {
+   "kind": "official-site",
+   "title": "KIAORA BROS Climbing Gym Nishi-Akashi (official site)",
+   "url": "http://kiaorabros.com/nishiakashi-top",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "NOBORIBA": {
+   "kind": "official-site",
+   "title": "Noboriba SG (official site)",
+   "url": "http://noboriba-sg.com/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "MONTBELL": {
+   "kind": "chain-store-list",
+   "title": "mont-bell store list (Rokko store page)",
+   "url": "https://store.montbell.jp/search/shopinfo/?shop_no=679918",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "MIZUNO": {
+   "kind": "official-site",
+   "title": "Mizuno Sports Plaza Kobe Wadamisaki (official site)",
+   "url": "https://shisetsu.mizuno.jp/MSS-7365",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "BPLUS": {
+   "kind": "official-site",
+   "title": "Boulder Plus (official site)",
+   "url": "https://www.boulderplus.net/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "STYLE": {
+   "kind": "official-site",
+   "title": "Bouldering Gym Style (official site)",
+   "url": "https://boulderingstyle.com/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "DAWN": {
+   "kind": "official-site",
+   "title": "DAWN Climbing Gym (official site)",
+   "url": "https://www.dawn-cgym.com/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "HINOTAMA": {
+   "kind": "official-site",
+   "title": "Hinotama Wall Climbing Gym (official site)",
+   "url": "https://www.hinotamawall.com/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "CHARGO": {
+   "kind": "official-site",
+   "title": "Chargo Climbing Gym Hanada (official site)",
+   "url": "http://chargo.info/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "OBG": {
+   "kind": "official-site",
+   "title": "OLD BUT GOLD (official site)",
+   "url": "https://oldbutgold-gym.com/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "GOODBOL": {
+   "kind": "official-site",
+   "title": "Gubboru Bouldering Cafe Hikone (official site)",
+   "url": "https://goodbouldering.com/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "NOAH": {
+   "kind": "official-site",
+   "title": "noah climbing & community (official site)",
+   "url": "https://www.cc-noah.com/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "ROCHER": {
+   "kind": "official-site",
+   "title": "Climbing Gym Rocher Makishima (official site)",
+   "url": "https://www.rocher.kyoto.jp/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "ROCKMATE": {
+   "kind": "official-site",
+   "title": "Rock Mate Matsuiyamate (official site)",
+   "url": "http://rockmate.jp/shop.html",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "CALCOLO": {
+   "kind": "official-site",
+   "title": "CAL-COLO Kizugawa (official site)",
+   "url": "https://cal-colo.com/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "NOBORIKO": {
+   "kind": "official-site",
+   "title": "Climbing Gym Noboriko (official site)",
+   "url": "https://noboriko.jp/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "KEYB": {
+   "kind": "official-site",
+   "title": "Key Bouldering (official site)",
+   "url": "https://keyboulderingnara.com/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "WAZOO": {
+   "kind": "official-site",
+   "title": "GRANDWAZOO Climbing Gym Nara Kashihara (official site)",
+   "url": "https://grandwazoo-climbing.com/nara",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "CITYROCK": {
+   "kind": "official-site",
+   "title": "City Rock Gym Yamatokoriyama (official site)",
+   "url": "https://cityrockgym.com/yamato_koriyama/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "NEON": {
+   "kind": "official-site",
+   "title": "NEON CLIMBING GYM (official site)",
+   "url": "https://neon-climbinggym.com/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "KOWALL": {
+   "kind": "official-site",
+   "title": "KO-WALL Shiga Boulder (official site)",
+   "url": "https://ko-wall.jp/shiga",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "COLORS": {
+   "kind": "official-site",
+   "title": "Colors Climbing Gym (official site)",
+   "url": "https://colors-climbing-gym.com/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "TITAN": {
+   "kind": "official-site",
+   "title": "Titan Wall Climbing Gym (official site)",
+   "url": "http://titan-wall.com/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "WABO": {
+   "kind": "official-site",
+   "title": "bee mee nee WaBo Climbing Gym (official site)",
+   "url": "https://waboclimbing.com/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "APE": {
+   "kind": "official-site",
+   "title": "Bouldering Space APE (official site)",
+   "url": "https://tooll.jp/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "GRLIST": {
+   "kind": "chain-store-list",
+   "title": "GRAVITY RESEARCH (chain store list)",
+   "url": "https://www.gravity-research.jp/shop/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  },
+  "ROCA": {
+   "kind": "official-site",
+   "title": "Bouldering Gym roca (official site)",
+   "url": "https://roca-gym.com/",
+   "language": "ja",
+   "accessed": "2026-10-06"
+  }
+ }
+}

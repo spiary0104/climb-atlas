@@ -1,0 +1,1886 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-06-de-south",
+ "inputs": {
+  "section_sha256": "3dd0cd10fbe1159df1ce1cda7a636b7f146dad103a450e17751cede7b3a8926c",
+  "sources_sha256": "488e3669daa0bad9c99fbfa2b9ef1adb794cef6ce91fa2299db45cf1b87f3eee",
+  "candidates_sha256": "00dffa715cef4952b43dce13db790509b311b25d70752fdf02ad79944dfae6f9",
+  "index": {
+   "sha256": "27073d25c2df373c17caef0c24ebfe759b8d457953a461c62786486d588e661d",
+   "count": 2438
+  },
+  "staged_batches_compared": [],
+  "other_sections_compared": [
+   {
+    "id": "2026-10-05-germany-east-saar-berlin",
+    "candidates_sha256": "3d8ce4141e610ea206427a1828236611ca36c185fbdf09d67ae4878e05b099b6"
+   },
+   {
+    "id": "2026-10-05-germany-owner-checks",
+    "candidates_sha256": "64ec8550f0e70ea5f5165fbaa2d626aa9ab3a022e8af3416a618824d327bc522"
+   },
+   {
+    "id": "2026-10-06-germany-holds",
+    "candidates_sha256": "dbe14541976f26079126560fb8204597917ffe13fc44f8c3eac59718529ef314"
+   }
+  ]
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 82,
+  "ready": 0,
+  "review": 70,
+  "blocked": 12,
+  "existing": 0,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "active-garden-korb",
+   "line": 73,
+   "name": "Active Garden Korb",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-be6bd448f0"
+   },
+   "blockers": [
+    {
+     "code": "no-bouldering-evidence",
+     "detail": "bouldering is \"yes\" but no primary source confirms it"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate active-garden-waiblingen \"Active Garden Waiblingen\": related names \"Active Garden Korb\" / \"Active Garden Waiblingen\" 5227 m apart",
+     "ids": [
+      "active-garden-waiblingen"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate active-garden-waiblingen has the same website",
+     "ids": [
+      "active-garden-waiblingen"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "active-garden-waiblingen"
+   ]
+  },
+  {
+   "cid": "active-garden-waiblingen",
+   "line": 51,
+   "name": "Active Garden Waiblingen",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-56f82b06bd"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate active-garden-korb \"Active Garden Korb\": related names \"Active Garden Waiblingen\" / \"Active Garden Korb\" 5227 m apart",
+     "ids": [
+      "active-garden-korb"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate active-garden-korb has the same website",
+     "ids": [
+      "active-garden-korb"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "active-garden-korb"
+   ]
+  },
+  {
+   "cid": "adventure-campus-treuchtlingen",
+   "line": 36,
+   "name": "Adventure Campus Treuchtlingen Boulder- und Kletterhalle",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-932932f132"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "b12-dav-boulderzentrum-tuebingen",
+   "line": 49,
+   "name": "B12 DAV Boulderzentrum Tübingen",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-ce17372a69"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "bloc-huette-augsburg",
+   "line": 19,
+   "name": "Bloc-Hütte Augsburg",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-7cad2897b6"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "boulder-center-grenzach-wyhlen",
+   "line": 76,
+   "name": "BoulderCenter Grenzach-Wyhlen (LÖ bloc)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-ba95607f7c"
+   },
+   "flags": [
+    {
+     "code": "other-country-nearby",
+     "detail": "g-f3f5ef1071 \"B2 Boulders & Bar\" (CH) 1648 m away",
+     "ids": [
+      "g-f3f5ef1071"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "g-f3f5ef1071"
+   ]
+  },
+  {
+   "cid": "boulder-hall-burgoberbach",
+   "line": 35,
+   "name": "Boulder Hall Burgoberbach",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-7ae35368e3"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "boulder-island-mannheim",
+   "line": 71,
+   "name": "Boulder Island Mannheim",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-2191872d65"
+   },
+   "blockers": [
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "boulderbock-wolpertshausen",
+   "line": 59,
+   "name": "BOULDERBOCK",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-1223a96f22"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "boulderhalle-memmingen",
+   "line": 37,
+   "name": "Boulderhalle Memmingen",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-754efdfec3"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "boulderhalle-steil-karlsruhe",
+   "line": 42,
+   "name": "Boulderhalle Steil",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-e7030344b1"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "boulderhaus-reutlingen",
+   "line": 48,
+   "name": "Boulderhaus Reutlingen",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-83c8e972b5"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "boulderia-neunkirchen-am-brand",
+   "line": 31,
+   "name": "Boulderia",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-4188a745ee"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "dav-aischtal-bad-windsheim",
+   "line": 34,
+   "name": "DAV Kletter- und Boulderzentrum Bad Windsheim",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-b03d3793ce"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "dav-alpinzentrum-schorndorf",
+   "line": 74,
+   "name": "DAV Alpinzentrum Schorndorf",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-0e2314c7a5"
+   },
+   "blockers": [
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "dav-bad-toelz",
+   "line": 7,
+   "name": "DAV Kletter- und Boulderzentrum Oberbayern Süd (Bad Tölz)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-be8703cd08"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "dav-boulderhalle-garmisch",
+   "line": 18,
+   "name": "DAV Boulderhalle Garmisch-Partenkirchen",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-06793d6e29"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "dav-boulderzentrum-ostalb-essingen",
+   "line": 56,
+   "name": "DAV Boulderzentrum Ostalb",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-d40e058bd5"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate dav-kletterzentrum-ostalb-aalen \"DAV Kletterzentrum Ostalb\": related names \"DAV Boulderzentrum Ostalb\" / \"DAV Kletterzentrum Ostalb\" 4493 m apart",
+     "ids": [
+      "dav-kletterzentrum-ostalb-aalen"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "dav-kletterzentrum-ostalb-aalen"
+   ]
+  },
+  {
+   "cid": "dav-kbz-aschaffenburg",
+   "line": 25,
+   "name": "DAV Kletter- und Boulderzentrum Aschaffenburg",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-f53ac6cb8d"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "dav-kletter-boulderzentrum-heidelberg",
+   "line": 47,
+   "name": "DAV Kletter- und Boulderzentrum Heidelberg (VertiGo)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-d74af4b3a5"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "dav-kletter-boulderzentrum-karlsruhe",
+   "line": 45,
+   "name": "DAV Kletter- und Boulderzentrum Karlsruhe",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-1ae4b1819f"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "dav-kletterhalle-amberg",
+   "line": 80,
+   "name": "DAV Kletterhalle Amberg",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-bcafce1317"
+   },
+   "blockers": [
+    {
+     "code": "no-bouldering-evidence",
+     "detail": "bouldering is \"yes\" but no primary source confirms it"
+    }
+   ],
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "dav-kletterhalle-feucht",
+   "line": 79,
+   "name": "DAV Kletterzentrum Feucht",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-97a697ca56"
+   },
+   "blockers": [
+    {
+     "code": "no-bouldering-evidence",
+     "detail": "bouldering is \"yes\" but no primary source confirms it"
+    }
+   ],
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "dav-kletterhalle-pforzheim",
+   "line": 61,
+   "name": "DAV Kletter- und Boulderhalle Pforzheim",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-9eb236234a"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "dav-kletterzentrum-augsburg",
+   "line": 20,
+   "name": "DAV Kletterzentrum Augsburg",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-bf1a7a2290"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "dav-kletterzentrum-baden-baden",
+   "line": 60,
+   "name": "DAV Kletterzentrum Baden-Baden",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-1d4aec87a4"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "dav-kletterzentrum-bayreuth",
+   "line": 33,
+   "name": "DAV Kletterzentrum Bayreuth",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-7b9ccb401d"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "dav-kletterzentrum-freiburg",
+   "line": 64,
+   "name": "DAV Kletterzentrum Freiburg",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-3f7050b866"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "dav-kletterzentrum-freising",
+   "line": 12,
+   "name": "DAV Kletterzentrum Freising",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-7bc37feee8"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "dav-kletterzentrum-ingolstadt",
+   "line": 9,
+   "name": "DAV Kletterzentrum Ingolstadt",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-de853397a1"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "dav-kletterzentrum-kaufbeuren",
+   "line": 38,
+   "name": "DAV Kletterzentrum Kaufbeuren",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-17f9a58b6c"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "dav-kletterzentrum-neumarkt",
+   "line": 27,
+   "name": "DAV Kletterzentrum Neumarkt",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-cf67edecc5"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "dav-kletterzentrum-offenburg",
+   "line": 65,
+   "name": "DAV Kletterzentrum Offenburg",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-c089fd982e"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "dav-kletterzentrum-ostalb-aalen",
+   "line": 57,
+   "name": "DAV Kletterzentrum Ostalb",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-5034de8b9d"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate dav-boulderzentrum-ostalb-essingen \"DAV Boulderzentrum Ostalb\": related names \"DAV Kletterzentrum Ostalb\" / \"DAV Boulderzentrum Ostalb\" 4493 m apart",
+     "ids": [
+      "dav-boulderzentrum-ostalb-essingen"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "dav-boulderzentrum-ostalb-essingen"
+   ]
+  },
+  {
+   "cid": "dav-kletterzentrum-reutlingen",
+   "line": 72,
+   "name": "DAV Kletterzentrum Reutlingen",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-a5dca78cb1"
+   },
+   "blockers": [
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "dav-kletterzentrum-sonthofen",
+   "line": 70,
+   "name": "DAV Kletterzentrum Sonthofen",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-b37745294c"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "dav-kletterzentrum-wuerzburg",
+   "line": 23,
+   "name": "DAV Kletterzentrum Würzburg",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-17ffb01d42"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "dav-muenchen-nord-freimann",
+   "line": 2,
+   "name": "DAV Kletter- und Boulderzentrum München-Nord (Freimann)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-853fd34b84"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate dav-muenchen-sued-thalkirchen \"DAV Kletter- und Boulderzentrum München-Süd (Thalkirchen)\": related names \"DAV Kletter- und Boulderzentrum München-Nord (Freimann)\" / \"DAV Kletter- und Boulderzentrum München-Süd (Thalkirchen)\" 12319 m apart",
+     "ids": [
+      "dav-muenchen-sued-thalkirchen"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate svn-kletter-boulderzentrum-neuperlach \"Kletter- und Boulderzentrum SVN München (Neuperlach)\": related names \"DAV Kletter- und Boulderzentrum München-Nord (Freimann)\" / \"Kletter- und Boulderzentrum SVN München (Neuperlach)\" 11926 m apart",
+     "ids": [
+      "svn-kletter-boulderzentrum-neuperlach"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "dav-muenchen-sued-thalkirchen",
+    "svn-kletter-boulderzentrum-neuperlach"
+   ]
+  },
+  {
+   "cid": "dav-muenchen-sued-thalkirchen",
+   "line": 1,
+   "name": "DAV Kletter- und Boulderzentrum München-Süd (Thalkirchen)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-9d04ea12dc"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate dav-muenchen-nord-freimann \"DAV Kletter- und Boulderzentrum München-Nord (Freimann)\": related names \"DAV Kletter- und Boulderzentrum München-Süd (Thalkirchen)\" / \"DAV Kletter- und Boulderzentrum München-Nord (Freimann)\" 12319 m apart",
+     "ids": [
+      "dav-muenchen-nord-freimann"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate svn-kletter-boulderzentrum-neuperlach \"Kletter- und Boulderzentrum SVN München (Neuperlach)\": related names \"DAV Kletter- und Boulderzentrum München-Süd (Thalkirchen)\" / \"Kletter- und Boulderzentrum SVN München (Neuperlach)\" 7847 m apart",
+     "ids": [
+      "svn-kletter-boulderzentrum-neuperlach"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "dav-muenchen-nord-freimann",
+    "svn-kletter-boulderzentrum-neuperlach"
+   ]
+  },
+  {
+   "cid": "dav-muenchen-west-gilching",
+   "line": 6,
+   "name": "DAV Kletter- und Boulderzentrum München-West (Gilching)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-df3f8cb6c0"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "die-kletterei-kaufering",
+   "line": 14,
+   "name": "Die Kletterei Kaufering",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-da32d2afb4"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "element-boulders-muenchen",
+   "line": 4,
+   "name": "ELEMENT Boulders München",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-a03183f104"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "es-vertikal-dav-kletterzentrum-deggendorf",
+   "line": 30,
+   "name": "ES-Vertikal DAV Kletterzentrum Deggendorf",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-bfbcf8be4c"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "exus-bouldercenter-gersthofen",
+   "line": 21,
+   "name": "EXUS Bouldercenter Gersthofen",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-c1a097566f"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "frankenjura-academy-forchheim",
+   "line": 32,
+   "name": "Frankenjura Academy",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-35775d0d9a"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "greifbar-bouldersport-friedrichshafen",
+   "line": 62,
+   "name": "Greifbar Bouldersport",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-e3708902ff"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "griffkiste-boulderhalle-mittelbiberach",
+   "line": 67,
+   "name": "GriffKiste Boulderhalle",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-cedd4a3b5f"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "grip-kletterzentrum-goeppingen",
+   "line": 55,
+   "name": "GriP Kletterzentrum Göppingen",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-2b3fa7a2be"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "heavens-gate-muenchen",
+   "line": 3,
+   "name": "Heavens Gate Klettern & Bouldern",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-958c24bd03"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "impulsiv-emmendingen",
+   "line": 77,
+   "name": "imPULSIV Freizeitcenter Emmendingen",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-c175e78fdd"
+   },
+   "blockers": [
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "impulsiv-weil-am-rhein",
+   "line": 78,
+   "name": "imPULSIV Freizeitcenter Weil am Rhein",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-4da611ea0b"
+   },
+   "blockers": [
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "jurabloc-eichstaett",
+   "line": 10,
+   "name": "JURABLOC DAV Kletterzentrum Eichstätt",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-5ab7e17b48"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "k5-dav-kletterzentrum-rottweil",
+   "line": 75,
+   "name": "K5 DAV Kletterzentrum Rottweil",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-2ce2285dcf"
+   },
+   "blockers": [
+    {
+     "code": "no-bouldering-evidence",
+     "detail": "bouldering is \"yes\" but no primary source confirms it"
+    }
+   ],
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "kletterarena-heilbronn",
+   "line": 58,
+   "name": "Kletterarena Heilbronn",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-688eb9cff8"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "kletterhalle-basislager-bad-aibling",
+   "line": 16,
+   "name": "Kletterhalle Basislager",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-5b3890696b"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "kletterhalle-wasserburg-boulderhalle",
+   "line": 81,
+   "name": "Boulderhalle Wasserburg",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-f7097e2d3b"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "kletterhalle-weilheim",
+   "line": 15,
+   "name": "Kletterhalle Weilheim \"Under the Roof\"",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-9973f7e291"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "kletterschmiede-schwaebisch-gmuend",
+   "line": 82,
+   "name": "Kletterschmiede Schwäbisch Gmünd",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-46beb5160a"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "kletterzentrum-berchtesgaden",
+   "line": 17,
+   "name": "Kletterzentrum Berchtesgaden",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-dcd29956ad"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "kletterzentrum-schweinfurt",
+   "line": 26,
+   "name": "Kletterzentrum Schweinfurt",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-70c4079916"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "kraftwerk-boulderhalle-allgaeu",
+   "line": 39,
+   "name": "Kraftwerk Boulderhalle Allgäu",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-f681df20f4"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "mtv-muenchen-kletterhalle",
+   "line": 68,
+   "name": "MTV München Kletterhalle",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-b95c6e2a1e"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "munich-action-park",
+   "line": 69,
+   "name": "Munich Action Park (Olympiapark)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-f94f778e2e"
+   },
+   "blockers": [
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "naturfreunde-kletterhalle-dachau",
+   "line": 13,
+   "name": "NaturFreunde Kletterhalle Dachau",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-60991652bc"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "nice-to-move-boulderhalle-eislingen",
+   "line": 54,
+   "name": "NICE to Move Boulderhalle Eislingen",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-e55c3ea301"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "pafrock-pfaffenhofen",
+   "line": 11,
+   "name": "PAFRock DAV Kletterzentrum Pfaffenhofen",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-d9f2e6f2fc"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "peak7-boulderhalle-landshut",
+   "line": 29,
+   "name": "PEAK7 Boulderhalle Landshut",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-415ef70320"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "rock-inn-boulderhalle-wuerzburg",
+   "line": 22,
+   "name": "Rock Inn Boulderhalle Würzburg",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-961023efa7"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "rox-boulder-kletterzentrum-herrenberg",
+   "line": 50,
+   "name": "ROX Boulder- und Kletterzentrum Herrenberg",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-c77118b89c"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "sandstein-boulderhalle-aschaffenburg",
+   "line": 24,
+   "name": "Sandstein Boulder Halle Aschaffenburg",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-5d90436009"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "schwerkraft-boulderhalle-ingolstadt",
+   "line": 8,
+   "name": "Schwerkraft Boulderhalle Ingolstadt",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-acc5986d81"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "sparkassen-dome-biberach",
+   "line": 66,
+   "name": "Sparkassen Dome Biberach (DAV Kletterzentrum)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-5b12ac1f92"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "sparkassendome-dav-kletterwelt-neu-ulm",
+   "line": 40,
+   "name": "sparkassendome DAV Kletterwelt Neu-Ulm",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-f74094f649"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "studio-bloc-mannheim",
+   "line": 46,
+   "name": "Studio Bloc Mannheim",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-e89c2e8098"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "svn-kletter-boulderzentrum-neuperlach",
+   "line": 5,
+   "name": "Kletter- und Boulderzentrum SVN München (Neuperlach)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-478643f0b1"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate dav-muenchen-nord-freimann \"DAV Kletter- und Boulderzentrum München-Nord (Freimann)\": related names \"Kletter- und Boulderzentrum SVN München (Neuperlach)\" / \"DAV Kletter- und Boulderzentrum München-Nord (Freimann)\" 11926 m apart",
+     "ids": [
+      "dav-muenchen-nord-freimann"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate dav-muenchen-sued-thalkirchen \"DAV Kletter- und Boulderzentrum München-Süd (Thalkirchen)\": related names \"Kletter- und Boulderzentrum SVN München (Neuperlach)\" / \"DAV Kletter- und Boulderzentrum München-Süd (Thalkirchen)\" 7847 m apart",
+     "ids": [
+      "dav-muenchen-sued-thalkirchen"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "dav-muenchen-nord-freimann",
+    "dav-muenchen-sued-thalkirchen"
+   ]
+  },
+  {
+   "cid": "the-rock-boulderhalle-karlsruhe",
+   "line": 43,
+   "name": "THE ROCK Boulderhalle Karlsruhe",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-47d0ed5ed2"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "the-rock-kletterzentrum-karlsruhe",
+   "line": 44,
+   "name": "THE ROCK Kletterzentrum Karlsruhe",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-18f1f9d51a"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "top-boulder-kirchheim-teck",
+   "line": 53,
+   "name": "TOP Boulder Kirchheim",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-94c0660a6d"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "top-boulder-malmsheim",
+   "line": 52,
+   "name": "TOP Boulder Malmsheim",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-101337b916"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "vels-boulderhalle-stuttgart",
+   "line": 41,
+   "name": "VELS Boulderhalle",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-7d253fa3e1"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "volksbank-vertical-ueberlingen",
+   "line": 63,
+   "name": "DAV Kletter- und Boulderzentrum Volksbank Vertical",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-07d83aaffe"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "zugzwang-boulderhalle-auerbach",
+   "line": 28,
+   "name": "Zugzwang Boulderhalle Auerbach",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-38d7d7998c"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  }
+ ],
+ "reconcile_sha256": "51a7cecf57b03e3479c04d0e592a7e0827b6c31c417dd94135cda9458b28ed46"
+}

@@ -1,0 +1,418 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-06-de-south",
+ "reviewer": "Spiar (owner); decisions drafted by Claude (AI) on the owner's instruction, pending owner sign-off",
+ "reviewed": "2026-10-06",
+ "decisions": {
+  "active-garden-korb": {
+   "decision": "defer",
+   "reason": "Listed as Klettern/Bouldern/Fitness; boulder area size not confirmed. Owner check: Does the Korb site have a boulder area of its own (listed as \"Klettern Bouldern Fitness\", size unknown)?"
+  },
+  "active-garden-waiblingen": {
+   "decision": "accept",
+   "reason": "Official site active-garden.de read 2026-10-06 (https://active-garden.de/active-garden-oeffnungszeiten) shows: exists, open, bouldering, address, name. Pin: Düsseldorfer Straße 18, 71332 Waiblingen -> OSM way/121268756, building=commercial. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Related-name flag: the listed candidates are separate halls at different addresses (kilometres apart), not duplicates; each has its own official page, address and OSM element. Listed as Bouldern/Ninja; hours differ slightly between pages; new autumn schedule from October 2026.",
+   "reviewed_against": [
+    "active-garden-korb"
+   ]
+  },
+  "adventure-campus-treuchtlingen": {
+   "decision": "accept",
+   "reason": "Official site www.adventure-campus.com read 2026-10-06 (https://www.adventure-campus.com/firmen-sportgruppen/kletter-boulderhalle/) shows: exists, open, bouldering, address, name. Pin: Hahnenkammstraße 19, 91757 Treuchtlingen -> OSM relation/4000382 (Fachhochschule für angewandtes Management „Adventure Campus“), building=school. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Limited-access check: club or section hall; public non-member entry is stated or priced on the official site (details in research_notes), not members-only. Over 160 m2 boulder area; public sessions Tue/Thu/Fri evenings and Sunday; day entry about EUR 7.",
+   "reviewed_against": []
+  },
+  "b12-dav-boulderzentrum-tuebingen": {
+   "decision": "accept",
+   "reason": "Official site www.b12-tuebingen.de read 2026-10-06 (https://www.b12-tuebingen.de/) shows: exists, open, bouldering, address, name. Pin: way/282867302 (B12 – DAV Boulderzentrum Tübingen), Bismarckstraße 142. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Limited-access check: club or section hall; public non-member entry is stated or priced on the official site (details in research_notes), not members-only. DAV sections Tübingen and Reutlingen; about 180 defined boulders; temporarily altered hours for a ceremony, no dates.",
+   "reviewed_against": []
+  },
+  "bloc-huette-augsburg": {
+   "decision": "accept",
+   "reason": "Official site bloc-huette.de read 2026-10-06 (https://bloc-huette.de/) shows: exists, open, bouldering, address, name. Pin: way/1144593247 (Bloc-Hütte Augsburg), Austraße 35. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Over 1,650 m2 climbing surface, open 365 days.",
+   "reviewed_against": []
+  },
+  "boulder-center-grenzach-wyhlen": {
+   "decision": "defer",
+   "reason": "Open today but the site announces permanent closure after Saturday 31 Oct 2026. Owner check: Add a gym that closes for good after Saturday 31 Oct 2026 (open today; Sweden Solna was handled the same way)?"
+  },
+  "boulder-hall-burgoberbach": {
+   "decision": "accept",
+   "reason": "Official site boulderhall.de read 2026-10-06 (https://boulderhall.de/) shows: exists, open, bouldering, address, name. Pin: way/514164235 (Boulderhall Burgoberbach), Im Herrmannshof 38. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Daily 10-22 including holidays; MoonBoard and TopLogger; sector closures Monday mornings.",
+   "reviewed_against": []
+  },
+  "boulder-island-mannheim": {
+   "decision": "defer",
+   "reason": "Regular hours shown, but the only dated notices on the home page are from Dec 2025-Jan 2026 (Winter opening 08.11.25); site may be stale. Owner check: Is the hall still open (home page shows regular hours but its only dated notices are from Dec 2025 / Jan 2026)?"
+  },
+  "boulderbock-wolpertshausen": {
+   "decision": "accept",
+   "reason": "Official site www.boulderbock.de read 2026-10-06 (https://www.boulderbock.de/) shows: exists, open, bouldering, address, name. Pin: way/196913092 (Boulderbock), Haller Straße 1/5. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Cooperative, opened April 2024; app entry; day tickets listed.",
+   "reviewed_against": []
+  },
+  "boulderhalle-memmingen": {
+   "decision": "accept",
+   "reason": "Official site boulderhalle-memmingen.de read 2026-10-06 (https://boulderhalle-memmingen.de/) shows: exists, open, bouldering, address, name. Pin: way/245264212 (Alpenverein), Allgäuer Straße 24. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Limited-access check: club or section hall; public non-member entry is stated or priced on the official site (details in research_notes), not members-only. Run with DAV Memmingen; over 600 m2 bouldering; day entry available.",
+   "reviewed_against": []
+  },
+  "boulderhalle-steil-karlsruhe": {
+   "decision": "accept",
+   "reason": "Official site boulderhalle-steil.com read 2026-10-06 (https://boulderhalle-steil.com/) shows: exists, open, bouldering, address, name. Pin: Hardeckstraße 8, 76185 Karlsruhe -> OSM way/122164758, building=detached. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). New opening hours as of October (notice of 18 Sep 2026).",
+   "reviewed_against": []
+  },
+  "boulderhaus-reutlingen": {
+   "decision": "accept",
+   "reason": "Official site www.boulderhaus.net read 2026-10-06 (https://www.boulderhaus.net/reutlingen/) shows: exists, open, bouldering, address, name. Pin: node/10649408463 (Boulderhaus Reutlingen), Schieferstraße 8. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Page live with an autumn 2026 event; official footer prints postcode 72076 (a Tübingen code), directories 72760; hours only from third-party snippets.",
+   "reviewed_against": []
+  },
+  "boulderia-neunkirchen-am-brand": {
+   "decision": "accept",
+   "reason": "Official site boulderia.de read 2026-10-06 (https://boulderia.de/ ; https://www.boulderia.de/preise/) shows: exists, open, bouldering, name, address. Pin: way/166198384 (Boulderia), Gräfenberger Straße 36. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Daily 9-22, day entry listed.",
+   "reviewed_against": []
+  },
+  "dav-aischtal-bad-windsheim": {
+   "decision": "accept",
+   "reason": "Official site dav-aischtal.de read 2026-10-06 (https://dav-aischtal.de/preise/) shows: exists, open, bouldering, address, name. Pin: way/1212467748 (Kletterzentrum Bad Windsheim), Sporthallenweg 12. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Limited-access check: club or section hall; public non-member entry is stated or priced on the official site (details in research_notes), not members-only. DAV Sektion Aischtal; guest bouldering day entry listed; counter staffed Wed/Fri 17-20 and Sun/holidays 13-16, extended access for members.",
+   "reviewed_against": []
+  },
+  "dav-alpinzentrum-schorndorf": {
+   "decision": "defer",
+   "reason": "Opened June 2026, 335 m2 indoor bouldering; opening hours and non-member prices not seen on the official pages. Owner check: Are non-members admitted, and what are the hours (opened June 2026; hours and prices not seen on the official pages)?"
+  },
+  "dav-bad-toelz": {
+   "decision": "accept",
+   "reason": "Official site www.kbtoelz.de read 2026-10-06 (https://www.kbtoelz.de/) shows: exists, open, bouldering, address, name. Pin: node/1080157449 (DAV Kletterzentrum Oberbayern Süd), Am Sportpark 5. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Limited-access check: club or section hall; public non-member entry is stated or priced on the official site (details in research_notes), not members-only. DAV Sektion Oberland; dedicated bouldering area, day passes.",
+   "reviewed_against": []
+  },
+  "dav-boulderhalle-garmisch": {
+   "decision": "accept",
+   "reason": "Official site boulderhalle-gapa.de read 2026-10-06 (https://boulderhalle-gapa.de) shows: exists, open, bouldering, address, name. Pin: node/12206367601 (DAV-Boulderhalle), Hausberg 5. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Limited-access check: club or section hall; public non-member entry is stated or priced on the official site (details in research_notes), not members-only. DAV Sektion Garmisch-Partenkirchen; 600 m2, opened March 2024; first-time visitors register online.",
+   "reviewed_against": []
+  },
+  "dav-boulderzentrum-ostalb-essingen": {
+   "decision": "accept",
+   "reason": "Official site www.boulderzentrum-ostalb.de read 2026-10-06 (https://www.boulderzentrum-ostalb.de/ ; https://www.boulderzentrum-ostalb.de/oeffnungszeiten ; https://www.boulderzentrum-ostalb.de/preise) shows: exists, bouldering, address, name, open. Pin: way/261402363 (DAV Boulderzentrum Ostalb), Schnaitbergstraße 3. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Limited-access check: club or section hall; public non-member entry is stated or priced on the official site (details in research_notes), not members-only. Related-name flag: the listed candidates are separate halls at different addresses (kilometres apart), not duplicates; each has its own official page, address and OSM element. DAV Sektion Schwaben; guest day entry EUR 15.",
+   "reviewed_against": [
+    "dav-kletterzentrum-ostalb-aalen"
+   ]
+  },
+  "dav-kbz-aschaffenburg": {
+   "decision": "accept",
+   "reason": "Official site www.kbz-ab.de read 2026-10-06 (https://www.kbz-ab.de/) shows: exists, open, bouldering, address, name. Pin: node/3379971927 (Kletterzentrum Aschaffenburg), Wendelbergstraße 36. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Limited-access check: club or section hall; public non-member entry is stated or priced on the official site (details in research_notes), not members-only. Day entry passes available; hours as of 1 Aug 2026.",
+   "reviewed_against": []
+  },
+  "dav-kletter-boulderzentrum-heidelberg": {
+   "decision": "accept",
+   "reason": "Official site www.alpenverein-heidelberg.de read 2026-10-06 (https://www.alpenverein-heidelberg.de/Kletter-%20und%20Boulderzentrum ; https://www.alpenverein-heidelberg.de/Kletter-%20und%20Boulderzentrum/%C3%96ffnungszeiten%20und%20Kontakt) shows: exists, bouldering, address, name, open. Pin: way/150636850 (DAV Kletter- und Boulderzentrum), Harbigweg 20. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Limited-access check: club or section hall; public non-member entry is stated or priced on the official site (details in research_notes), not members-only. 200 m2 boulder area plus 800 m2 rope hall.",
+   "reviewed_against": []
+  },
+  "dav-kletter-boulderzentrum-karlsruhe": {
+   "decision": "accept",
+   "reason": "Official site www.dav-kletterzentrum-karlsruhe.de read 2026-10-06 (https://www.dav-kletterzentrum-karlsruhe.de/) shows: exists, open, bouldering, address, name. Pin: way/435026679 (DAV Kletter Boulder Zentrum Karlsruhe), Am Fächerbad 2. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Limited-access check: club or section hall; public non-member entry is stated or priced on the official site (details in research_notes), not members-only. Separate climbing and bouldering halls, one entry; single-day admission.",
+   "reviewed_against": []
+  },
+  "dav-kletterhalle-amberg": {
+   "decision": "defer",
+   "reason": "Boulder room; public climbing only Tue/Thu evening and Sunday afternoon when a supervisor is scheduled. Owner check: Is the boulder room open to the public (only Tue/Thu evening and Sunday afternoon when a supervisor is scheduled)?"
+  },
+  "dav-kletterhalle-feucht": {
+   "decision": "defer",
+   "reason": "Only about 40 m2 bouldering with a Kilterboard; public day entry EUR 14. Owner check: Is a 40 m2 boulder area with a Kilterboard enough to list (public day entry EUR 14)?"
+  },
+  "dav-kletterhalle-pforzheim": {
+   "decision": "accept",
+   "reason": "Official site alpenverein-pforzheim.de read 2026-10-06 (https://alpenverein-pforzheim.de/kletterhalle/sektionszentrum/) shows: exists, open, bouldering, address, name. Pin: way/241973853 (Walter-Witzenmann-Haus), Heidenheimer Straße 3. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Limited-access check: club or section hall; public non-member entry is stated or priced on the official site (details in research_notes), not members-only. Seasonal: weekends only (Sat 15-20, Sun 10-20) from 10 Oct 2026 to April 2027; closed in summer; non-members EUR 5-9.50.",
+   "reviewed_against": []
+  },
+  "dav-kletterzentrum-augsburg": {
+   "decision": "accept",
+   "reason": "Official site www.dav-kletterzentrum-augsburg.de read 2026-10-06 (https://www.dav-kletterzentrum-augsburg.de/de/die-halle/halleninfo.html) shows: exists, open, bouldering, address, name. Pin: way/70534218 (DAV Kletterzentrum Augsburg), Ilsungstraße 15b. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Limited-access check: club or section hall; public non-member entry is stated or priced on the official site (details in research_notes), not members-only. 190 m2 indoor plus 360 m2 outdoor bouldering. A new boulder hall is planned for 2027; no effect now. Official page: all climbers are welcome besides members (day price not seen).",
+   "reviewed_against": []
+  },
+  "dav-kletterzentrum-baden-baden": {
+   "decision": "accept",
+   "reason": "Official site alpenverein-baden-baden.de read 2026-10-06 (https://alpenverein-baden-baden.de/kletterzentrum/ ; https://alpenverein-baden-baden.de/kletterzentrum/bouldern/) shows: exists, open, address, name, bouldering. Pin: way/129194730 (DAV Kletterzentrum Baden-Baden), Flugstraße 17. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Limited-access check: club or section hall; public non-member entry is stated or priced on the official site (details in research_notes), not members-only. Rope hall with a 160 m2 boulder room, over 100 boulders; non-member price not seen on official pages.",
+   "reviewed_against": []
+  },
+  "dav-kletterzentrum-bayreuth": {
+   "decision": "accept",
+   "reason": "Official site kletterzentrum-bayreuth.de read 2026-10-06 (https://kletterzentrum-bayreuth.de/) shows: exists, open, bouldering, address, name. Pin: way/127207807 (Kletterzentrum Bayreuth), Schwabenstraße 27. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Limited-access check: club or section hall; public non-member entry is stated or priced on the official site (details in research_notes), not members-only. About 420 m2 bouldering up to 4.5 m.",
+   "reviewed_against": []
+  },
+  "dav-kletterzentrum-freiburg": {
+   "decision": "accept",
+   "reason": "Official site kletterzentrum-freiburg.de read 2026-10-06 (https://kletterzentrum-freiburg.de/ ; https://kletterzentrum-freiburg.de/infos) shows: exists, open, address, name, bouldering. Pin: way/156439468 (DAV-Kletterzentrum Freiburg), Lörracher Straße 20a. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Limited-access check: club or section hall; public non-member entry is stated or priced on the official site (details in research_notes), not members-only. Dedicated bouldering section with non-member bouldering entry; construction on Lörracher Straße may temporarily limit access.",
+   "reviewed_against": []
+  },
+  "dav-kletterzentrum-freising": {
+   "decision": "accept",
+   "reason": "Official site www.kletterzentrum-freising.de read 2026-10-06 (https://www.kletterzentrum-freising.de/start.html) shows: exists, open, bouldering, address, name. Pin: way/931380580 (Kletterzentrum Freising), Seilerbrücklstraße 3. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Limited-access check: club or section hall; public non-member entry is stated or priced on the official site (details in research_notes), not members-only. Climbing wall area and a bouldering section; day passes for non-members.",
+   "reviewed_against": []
+  },
+  "dav-kletterzentrum-ingolstadt": {
+   "decision": "accept",
+   "reason": "Official site www.dav-ringsee.de read 2026-10-06 (https://www.dav-ringsee.de/%C3%B6ffnungszeiten ; https://www.dav-ringsee.de/anfahrt ; https://www.dav-ingolstadt.de/kletteranlagen-und-gebiete/kletterzentrum) shows: exists, open, name, address, bouldering. Pin: way/33639922 (DAV Kletterzentrum), Baggerweg 2. Limited-access check: club or section hall; public non-member entry is stated or priced on the official site (details in research_notes), not members-only. Two DAV sections (Ringsee, Ingolstadt) describe the hall; 300 m2 boulder area, open to non-members at standard rates.",
+   "reviewed_against": []
+  },
+  "dav-kletterzentrum-kaufbeuren": {
+   "decision": "accept",
+   "reason": "Official site www.alpenverein-kaufbeuren-gablonz.de read 2026-10-06 (https://www.alpenverein-kaufbeuren-gablonz.de/Kletterzentrum) shows: exists, open, bouldering, address, name. Pin: Buronstraße 99, 87600 Kaufbeuren -> OSM way/243471435, building=yes. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Limited-access check: club or section hall; public non-member entry is stated or priced on the official site (details in research_notes), not members-only. 365 days a year; indoor boulder area 168 m2 (official).",
+   "reviewed_against": []
+  },
+  "dav-kletterzentrum-neumarkt": {
+   "decision": "accept",
+   "reason": "Official site kletterzentrum-neumarkt.de read 2026-10-06 (https://kletterzentrum-neumarkt.de/Kletterhalle/%C3%96ffnungszeiten ; https://kletterzentrum-neumarkt.de/Kletterhalle/Preise) shows: exists, open, address, name, bouldering. Pin: way/624273819 (DAV-Kletterzentrum Neumarkt), Dreichlingerstraße 40. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Limited-access check: club or section hall; public non-member entry is stated or priced on the official site (details in research_notes), not members-only. Non-member bouldering-only day ticket listed.",
+   "reviewed_against": []
+  },
+  "dav-kletterzentrum-offenburg": {
+   "decision": "accept",
+   "reason": "Official site www.dav-offenburg.de read 2026-10-06 (https://www.dav-offenburg.de/ ; https://www.dav-offenburg.de/Kletterzentrum) shows: exists, open, address, bouldering, name. Pin: way/1547638090 (DAV Kletterzentrum Offenburg), Rammersweierstraße 9. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Limited-access check: club or section hall; public non-member entry is stated or priced on the official site (details in research_notes), not members-only. Volunteer-run; short-term closures possible; separate non-member bouldering day ticket (search extract).",
+   "reviewed_against": []
+  },
+  "dav-kletterzentrum-ostalb-aalen": {
+   "decision": "accept",
+   "reason": "Official site www.kletterzentrum-ostalb.de read 2026-10-06 (https://www.kletterzentrum-ostalb.de/ ; https://www.kletterzentrum-ostalb.de/oeffnungszeiten ; https://www.kletterzentrum-ostalb.de/preise) shows: exists, bouldering, address, name, open. Pin: way/82513380 (Reiner-Schwebel-Kletterhalle), Parkstraße 17. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Limited-access check: club or section hall; public non-member entry is stated or priced on the official site (details in research_notes), not members-only. Related-name flag: the listed candidates are separate halls at different addresses (kilometres apart), not duplicates; each has its own official page, address and OSM element. Rope hall with a 240 m2 bouldering area (renovated Nov 2024); guest day entry EUR 14.",
+   "reviewed_against": [
+    "dav-boulderzentrum-ostalb-essingen"
+   ]
+  },
+  "dav-kletterzentrum-reutlingen": {
+   "decision": "defer",
+   "reason": "Hours page valid from 17 Mar 2024 (stale); boulder section size unknown. Owner check: What are the current hours and how large is the boulder section (the hours page on the club site is dated 2024)?"
+  },
+  "dav-kletterzentrum-sonthofen": {
+   "decision": "defer",
+   "reason": "Official pages give hours but describe \"800 m2 climbing area with about 100 routes\"; no explicit boulder wording seen. Owner check: Does the hall have a separate boulder area (the official pages say \"800 m2 climbing area, about 100 routes\" and show no boulder wording)?"
+  },
+  "dav-kletterzentrum-wuerzburg": {
+   "decision": "accept",
+   "reason": "Official site www.dav-wuerzburg.de read 2026-10-06 (https://www.dav-wuerzburg.de/kletterzentrum-wuerzburg) shows: exists, open, bouldering, address, name. Pin: way/162350431 (DAV Kletterzentrum Würzburg), Weißenburgstraße 55. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Limited-access check: club or section hall; public non-member entry is stated or priced on the official site (details in research_notes), not members-only. Over 330 m2 indoor boulder area; non-member bouldering day ticket; notice of changed hours dated 28 Sep 2026.",
+   "reviewed_against": []
+  },
+  "dav-muenchen-nord-freimann": {
+   "decision": "accept",
+   "reason": "Official site www.kbfreimann.de read 2026-10-06 (https://www.kbfreimann.de/) shows: exists, open, bouldering, address, name. Pin: way/338687752 (DAV Kletter- und Boulderzentrum München Nord (Freimann)), Werner-Heisenberg-Allee 5. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Limited-access check: club or section hall; public non-member entry is stated or priced on the official site (details in research_notes), not members-only. Related-name flag: the listed candidates are separate halls at different addresses (kilometres apart), not duplicates; each has its own official page, address and OSM element. DAV Sektion München & Oberland; rope and bouldering areas; public pricing page.",
+   "reviewed_against": [
+    "dav-muenchen-sued-thalkirchen",
+    "svn-kletter-boulderzentrum-neuperlach"
+   ]
+  },
+  "dav-muenchen-sued-thalkirchen": {
+   "decision": "accept",
+   "reason": "Official site www.kbthalkirchen.de read 2026-10-06 (https://www.kbthalkirchen.de/) shows: exists, open, bouldering, address, name. Pin: Thalkirchner Straße 207, 81371 München -> OSM way/24433239, building=sports_centre. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Limited-access check: club or section hall; public non-member entry is stated or priced on the official site (details in research_notes), not members-only. Related-name flag: the listed candidates are separate halls at different addresses (kilometres apart), not duplicates; each has its own official page, address and OSM element. DAV Sektion München & Oberland / Münchner Sektionen; bouldering hall plus 200 m2 outdoor boulder area; public day entry with rates page.",
+   "reviewed_against": [
+    "dav-muenchen-nord-freimann",
+    "svn-kletter-boulderzentrum-neuperlach"
+   ]
+  },
+  "dav-muenchen-west-gilching": {
+   "decision": "accept",
+   "reason": "Official site www.kbgilching.de read 2026-10-06 (https://www.kbgilching.de/) shows: exists, open, bouldering, address, name. Pin: way/121543439 (DAV Kletter- und Boulderzentrum), Frühlingstraße 18. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Limited-access check: club or section hall; public non-member entry is stated or priced on the official site (details in research_notes), not members-only. DAV Sektion München & Oberland; a new boulder hall is under construction (due Feb 2027), the hall stays open.",
+   "reviewed_against": []
+  },
+  "die-kletterei-kaufering": {
+   "decision": "accept",
+   "reason": "Official site die-kletterei.de read 2026-10-06 (https://die-kletterei.de/ ; https://die-kletterei.de/impressum) shows: exists, open, bouldering, name, address. Pin: node/12121855028 (Kletterei), Viktor-Frankl-Straße 5a. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Daily 7:00-22:30; climbing and bouldering areas.",
+   "reviewed_against": []
+  },
+  "element-boulders-muenchen": {
+   "decision": "accept",
+   "reason": "Official site muenchen.element-boulders.de read 2026-10-06 (https://muenchen.element-boulders.de/start.html ; https://muenchen.element-boulders.de/kontakt.html) shows: exists, open, bouldering, name, address. Pin: node/9696918138 (Element Boulders), Zielstattstraße 23. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). About 2,500 m2 boulder hall; online ticket shop and current offers on the official site; opening hours are on a prices page not retrievable (hours not seen).",
+   "reviewed_against": []
+  },
+  "es-vertikal-dav-kletterzentrum-deggendorf": {
+   "decision": "accept",
+   "reason": "Official site www.esvertikal.de read 2026-10-06 (https://www.esvertikal.de/) shows: exists, open, bouldering, address, name. Pin: way/440156868 (DAV Kletterzentrum Deggendorf), Sandnerhofweg 5. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Limited-access check: club or section hall; public non-member entry is stated or priced on the official site (details in research_notes), not members-only. Boulder area on the ground floor; summer hours shown; non-member day rate not seen.",
+   "reviewed_against": []
+  },
+  "exus-bouldercenter-gersthofen": {
+   "decision": "accept",
+   "reason": "Official site www.exus.de read 2026-10-06 (https://www.exus.de/aktivitaeten/bouldercenter-boulderhalle-klettern/ ; https://www.exus.de/impressum/) shows: exists, open, bouldering, name, address. Pin: node/9412819084 (Exus Sporterlebniswelt), Röntgenstraße 2. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Boulder hall inside the EXUS Sporterlebniswelt; day tickets and Wed/Thu happy hour advertised; opening hours are not on the official page.",
+   "reviewed_against": []
+  },
+  "frankenjura-academy-forchheim": {
+   "decision": "accept",
+   "reason": "Official site www.frankenjura-academy.de read 2026-10-06 (https://www.frankenjura-academy.de/) shows: exists, open, bouldering, address, name. Pin: node/10724289593 (Frankenjura Academy), Trettlachstraße 1. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Lead and bouldering areas; bouldering-only day ticket. Not the former Magnesia hall (closed 2021).",
+   "reviewed_against": []
+  },
+  "greifbar-bouldersport-friedrichshafen": {
+   "decision": "accept",
+   "reason": "Official site greifbar-bouldern.de read 2026-10-06 (https://greifbar-bouldern.de/) shows: exists, open, bouldering, address, name. Pin: node/8930754494 (Greifbar), Anton-Sommer-Straße 8. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Press report (May 2025): owner fears competition from a DAV Alpincenter planned in Friedrichshafen (opening about 2027).",
+   "reviewed_against": []
+  },
+  "griffkiste-boulderhalle-mittelbiberach": {
+   "decision": "accept",
+   "reason": "Official site www.griffkiste.com read 2026-10-06 (https://www.griffkiste.com/) shows: exists, open, bouldering, address, name. Pin: Ziegeleistraße 37, 88441 Mittelbiberach -> OSM way/477083824 (Esszimmer), amenity=restaurant. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Press reported insolvency in May 2025 and a restart as \"Griffkiste 2.0\" at the same site; official site shows hours and no notice.",
+   "reviewed_against": []
+  },
+  "grip-kletterzentrum-goeppingen": {
+   "decision": "accept",
+   "reason": "Official site www.dav-gp.de read 2026-10-06 (https://www.dav-gp.de/grip-kletterzentrum ; https://www.dav-gp.de/grip-kletterzentrum/oeffnungszeiten-preise) shows: exists, bouldering, address, name, open. Pin: way/1393122297 (GriP Kletterzentrum), John-F.-Kennedy-Straße 3. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Limited-access check: club or section hall; public non-member entry is stated or priced on the official site (details in research_notes), not members-only. DAV Hohenstaufen Göppingen; 500 m2 boulder zone; first-time visitors register beforehand.",
+   "reviewed_against": []
+  },
+  "heavens-gate-muenchen": {
+   "decision": "accept",
+   "reason": "Official site heavensgate-muc.de read 2026-10-06 (https://heavensgate-muc.de) shows: exists, open, bouldering, address, name. Pin: node/4335122768 (Heavens Gate), Speicherstraße 21. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Werksviertel hall; page mentions \"Einschränkungen im Hallenbetrieb\" without detail (not a closure notice).",
+   "reviewed_against": []
+  },
+  "impulsiv-emmendingen": {
+   "decision": "defer",
+   "reason": "Leisure centre with rope halls; bouldering rules published but boulder area size not confirmed. Owner check: Is there a genuine boulder area (leisure centre with rope halls; directories say 360 m2, unconfirmed)?"
+  },
+  "impulsiv-weil-am-rhein": {
+   "decision": "defer",
+   "reason": "Rope-centred hall; small boulder area per a directory; not confirmed on the official site. Owner check: Is there a genuine boulder area (rope-centred; directories call it small)?"
+  },
+  "jurabloc-eichstaett": {
+   "decision": "accept",
+   "reason": "Official site www.jurabloc.de read 2026-10-06 (https://www.jurabloc.de/) shows: exists, open, bouldering, address, name. Pin: way/513847242 (Kletterhalle Eichstätt DAV), Jurastraße 6. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Limited-access check: club or section hall; public non-member entry is stated or priced on the official site (details in research_notes), not members-only. DAV Sektion Eichstätt-Neuburg; 160 m2 boulder section, day visitors accepted; \"winter hours from 28 Sep 2026\" announced, exact hours not read.",
+   "reviewed_against": []
+  },
+  "k5-dav-kletterzentrum-rottweil": {
+   "decision": "defer",
+   "reason": "Official page shows hours and a bouldering section image; no description of the boulder area or non-member day entry. Owner check: Is there a real boulder area and day entry for non-members (page shows only a boulder section image and hours)?"
+  },
+  "kletterarena-heilbronn": {
+   "decision": "accept",
+   "reason": "Official site www.diekletterarena.de read 2026-10-06 (https://www.diekletterarena.de/) shows: exists, open, bouldering, address, name. Pin: way/35336638 (Kletterarena Heilbronn), Lichtenbergerstraße 17. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Limited-access check: club or section hall; public non-member entry is stated or priced on the official site (details in research_notes), not members-only. DAV Sektion Heilbronn; boulder areas listed; hours from 1 Sep 2026.",
+   "reviewed_against": []
+  },
+  "kletterhalle-basislager-bad-aibling": {
+   "decision": "accept",
+   "reason": "Official site kletterhalle-basislager.de read 2026-10-06 (https://kletterhalle-basislager.de/anfahrt-und-oeffnungszeiten/ ; https://kletterhalle-basislager.de/zahlen-daten-fakten/) shows: exists, open, address, name, bouldering. Pin: way/1086217448 (Kletterhalle Basislager), Otto-Wels-Straße 8. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Inclusive climbing hall; 600 m2 bouldering hall; online booking.",
+   "reviewed_against": []
+  },
+  "kletterhalle-wasserburg-boulderhalle": {
+   "decision": "defer",
+   "reason": "DAV Wasserburg; 110 m2; open only Tue and Thu 15-18. Owner check: Is a hall that is open only Tue and Thu 15-18 worth listing (public tickets are sold)?"
+  },
+  "kletterhalle-weilheim": {
+   "decision": "accept",
+   "reason": "Official site kletterhalle-weilheim.de read 2026-10-06 (https://kletterhalle-weilheim.de/) shows: exists, open, bouldering, address, name. Pin: Trifthofstraße 58, 82362 Weilheim in Oberbayern -> OSM way/147735643, building=yes. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Bouldering-only adult day entry offered; about 250 m2 boulder area.",
+   "reviewed_against": []
+  },
+  "kletterschmiede-schwaebisch-gmuend": {
+   "decision": "defer",
+   "reason": "Address from directories; official contact and imprint pages returned 404. Owner check: Is the address Nepperbergstrasse 21 correct (only from directories; the official contact pages gave 404)?"
+  },
+  "kletterzentrum-berchtesgaden": {
+   "decision": "accept",
+   "reason": "Official site www.kletterzentrum-berchtesgaden.de read 2026-10-06 (https://www.kletterzentrum-berchtesgaden.de/infos/preiseoeffnungszeiten) shows: exists, open, bouldering, address, name. Pin: way/233269367 (Kletterzentrum Bergsteigerhaus GANZ), Watzmannstraße 4. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Limited-access check: club or section hall; public non-member entry is stated or priced on the official site (details in research_notes), not members-only. DAV Sektion Berchtesgaden; rope and bouldering in separate halls; separate bouldering single-entry price.",
+   "reviewed_against": []
+  },
+  "kletterzentrum-schweinfurt": {
+   "decision": "accept",
+   "reason": "Official site kletterzentrum-schweinfurt.de read 2026-10-06 (https://kletterzentrum-schweinfurt.de/) shows: exists, open, bouldering, address, name. Pin: way/345178715 (Kletterzentrum Schweinfurt), Albin-Kitzinger-Straße 1. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Limited-access check: club or section hall; public non-member entry is stated or priced on the official site (details in research_notes), not members-only. About 200 m2 bouldering, 60+ problems; day entry listed; operation limited 9-24 Oct 2026 for route renovation.",
+   "reviewed_against": []
+  },
+  "kraftwerk-boulderhalle-allgaeu": {
+   "decision": "accept",
+   "reason": "Official site www.kraftwerk-climbing.com read 2026-10-06 (https://www.kraftwerk-climbing.com/) shows: exists, open, bouldering, address, name. Pin: Kreenerstraße 14, 87640 Biessenhofen -> OSM way/176337175, building=yes. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Pure boulder hall, open daily 6-23 via online ticket shop, staffed Tue/Fri/Sun.",
+   "reviewed_against": []
+  },
+  "mtv-muenchen-kletterhalle": {
+   "decision": "defer",
+   "reason": "Mainly a 250 m2 rope hall; boulder area wording only from a search snippet. Owner check: Does the 250 m2 MTV hall have a real boulder area that day guests can use (the official page was seen only for hours)?"
+  },
+  "munich-action-park": {
+   "decision": "defer",
+   "reason": "Action-sports centre with a bouldering area; hours on the official page (Wed-Thu 15-22) disagree with a snippet (Mon-Fri 15-22, Sat/Sun 11-20). Owner check: What are the current public hours (official page: Wed-Thu 15-22 only; a snippet: Mon-Fri 15-22, Sat/Sun 11-20) and is the bouldering area open to day guests?"
+  },
+  "naturfreunde-kletterhalle-dachau": {
+   "decision": "accept",
+   "reason": "Official site www.kletterhalle-dachau.de read 2026-10-06 (https://www.kletterhalle-dachau.de/) shows: exists, open, bouldering, address, name. Pin: way/1080971765 (Naturfreunde Kletterhalle Dachau), Wettersteinring 14. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Operated by NaturFreunde Kletterhalle GmbH; boulder area and day tickets; hours differ slightly between pages.",
+   "reviewed_against": []
+  },
+  "nice-to-move-boulderhalle-eislingen": {
+   "decision": "accept",
+   "reason": "Official site boulderhalle-eislingen.de read 2026-10-06 (https://boulderhalle-eislingen.de/) shows: exists, open, bouldering, address, name. Pin: node/5237607917 (NICE to Move - Boulderhalle Eislingen), Kornbergstraße 6. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Formerly Steinzeit Boulderhalle (old domain now an unrelated site); 1,300 m2, over 280 routes.",
+   "reviewed_against": []
+  },
+  "pafrock-pfaffenhofen": {
+   "decision": "accept",
+   "reason": "Official site dav-pfaffenhofen.de read 2026-10-06 (https://dav-pfaffenhofen.de/pafrock/infos) shows: exists, open, bouldering, address, name. Pin: node/8062784148 (PAFRock DAV-Kletterzentrum), Ingolstädter Straße 68. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Limited-access check: club or section hall; public non-member entry is stated or priced on the official site (details in research_notes), not members-only. Separate bouldering fee; adult rates cover members and non-members.",
+   "reviewed_against": []
+  },
+  "peak7-boulderhalle-landshut": {
+   "decision": "accept",
+   "reason": "Official site www.boulderhalle-landshut.de read 2026-10-06 (https://www.boulderhalle-landshut.de/) shows: exists, open, bouldering, address, name. Pin: node/10209926172 (Peak7), Untere Sonnenstraße 7. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Commercial boulder hall in Ergolding, not the DAV hall in Landshut (already in Bouldeer); a search snippet gave house number 40, the official site 7.",
+   "reviewed_against": []
+  },
+  "rock-inn-boulderhalle-wuerzburg": {
+   "decision": "accept",
+   "reason": "Official site rockinn-wuerzburg.de read 2026-10-06 (https://rockinn-wuerzburg.de/info) shows: exists, open, bouldering, address, name. Pin: way/108344319 (ROCK INN Boulderhalle), Ohmstraße 6. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Open now; a move to a former church in Sanderau is planned for summer 2027 (press report), so the address will change then.",
+   "reviewed_against": []
+  },
+  "rox-boulder-kletterzentrum-herrenberg": {
+   "decision": "accept",
+   "reason": "Official site rox-herrenberg.de read 2026-10-06 (https://rox-herrenberg.de/oeffnungszeiten/ ; https://rox-herrenberg.de/ueber-uns/) shows: exists, open, address, bouldering, name. Pin: way/653690012 (ROX Boulder- und Kletterhalle), Ohmstraße 6. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Hours updated 5 Oct 2026.",
+   "reviewed_against": []
+  },
+  "sandstein-boulderhalle-aschaffenburg": {
+   "decision": "accept",
+   "reason": "Official site www.sandstein-aschaffenburg.de read 2026-10-06 (https://www.sandstein-aschaffenburg.de/) shows: exists, open, bouldering, address, name. Pin: node/6171856650 (Sandstein), Mainaschaffer Straße 113. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Same address as the former Monkey Cage (predecessor; its domain is for sale).",
+   "reviewed_against": []
+  },
+  "schwerkraft-boulderhalle-ingolstadt": {
+   "decision": "accept",
+   "reason": "Official site www.boulderhalle-ingolstadt.de read 2026-10-06 (https://www.boulderhalle-ingolstadt.de/kontakt) shows: exists, open, bouldering, address, name. Pin: way/738153709 (Schwerkraft Ingolstadt), Marie-Curie-Straße 10. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Pure bouldering hall.",
+   "reviewed_against": []
+  },
+  "sparkassen-dome-biberach": {
+   "decision": "accept",
+   "reason": "Official site sparkassen-dome-biberach.de read 2026-10-06 (https://sparkassen-dome-biberach.de/ ; https://sparkassen-dome-biberach.de/oeffnungszeiten-und-preise) shows: exists, open, address, name, bouldering. Pin: way/947614851 (Sparkassen Dome Biberach), Hans-Liebherr-Straße 17. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Limited-access check: club or section hall; public non-member entry is stated or priced on the official site (details in research_notes), not members-only. DAV Sektion Biberach; separate bouldering-only non-member ticket; October opening-restriction notice (image only, details unreadable).",
+   "reviewed_against": []
+  },
+  "sparkassendome-dav-kletterwelt-neu-ulm": {
+   "decision": "accept",
+   "reason": "Official site www.dav-neu-ulm.de read 2026-10-06 (https://www.dav-neu-ulm.de/kletterhalle) shows: exists, open, bouldering, address, name. Pin: way/131225383 (DAV Sparkassendome), Nelsonallee 17. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Limited-access check: club or section hall; public non-member entry is stated or priced on the official site (details in research_notes), not members-only. DAV Sektion Neu-Ulm; dedicated bouldering area in 2,900 m2; different from Einstein Neu-Ulm.",
+   "reviewed_against": []
+  },
+  "studio-bloc-mannheim": {
+   "decision": "accept",
+   "reason": "Official site mannheim.studiobloc.de read 2026-10-06 (https://mannheim.studiobloc.de/) shows: exists, open, bouldering, address, name. Pin: way/154982889 (Studio Bloc GmbH Mannheim), Christian-Friedrich-Schwan-Straße 14. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). 2,800 m2, about 250 boulder routes; the site mentions ongoing roof renovation work without closure dates.",
+   "reviewed_against": []
+  },
+  "svn-kletter-boulderzentrum-neuperlach": {
+   "decision": "accept",
+   "reason": "Official site svn-muenchen.de read 2026-10-06 (https://svn-muenchen.de/klettern ; https://svn-muenchen.de/klettern/beitrag-eintrittspreise/) shows: exists, bouldering, address, name, open. Pin: node/5552132522 (SVN Kletter- und Boulderzentrum), Fritz-Erler-Straße 3. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Limited-access check: club or section hall; public non-member entry is stated or priced on the official site (details in research_notes), not members-only. Related-name flag: the listed candidates are separate halls at different addresses (kilometres apart), not duplicates; each has its own official page, address and OSM element. SV Neuperlach club hall; price page states no membership needed, hours Mon-Fri 8-23, Sat/Sun 8-22.",
+   "reviewed_against": [
+    "dav-muenchen-nord-freimann",
+    "dav-muenchen-sued-thalkirchen"
+   ]
+  },
+  "the-rock-boulderhalle-karlsruhe": {
+   "decision": "accept",
+   "reason": "Official site www.boulderhallekarlsruhe.de read 2026-10-06 (https://www.boulderhallekarlsruhe.de/) shows: exists, open, bouldering, address, name. Pin: Erlachseeweg 1, 76227 Karlsruhe -> OSM way/104990127, building=yes. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). 1,250 m2 boulder area (Durlach).",
+   "reviewed_against": []
+  },
+  "the-rock-kletterzentrum-karlsruhe": {
+   "decision": "accept",
+   "reason": "Official site www.kletterhalle-karlsruhe.de read 2026-10-06 (https://www.kletterhalle-karlsruhe.de/) shows: exists, open, bouldering, address, name. Pin: node/27133301 (The Rock), Ziegelstraße 1. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Mainly a rope hall with a 180 m2 bouldering gallery plus campus board.",
+   "reviewed_against": []
+  },
+  "top-boulder-kirchheim-teck": {
+   "decision": "accept",
+   "reason": "Official site topboulder-kirchheim.de read 2026-10-06 (https://topboulder-kirchheim.de/) shows: exists, open, bouldering, address, name. Pin: way/222045782 (TOP Boulder), Stuttgarter Straße 49. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Formerly Stuntwerk Kirchheim (same address).",
+   "reviewed_against": []
+  },
+  "top-boulder-malmsheim": {
+   "decision": "accept",
+   "reason": "Official site topboulder.de read 2026-10-06 (https://topboulder.de/) shows: exists, open, bouldering, address, name. Pin: node/13763544674 (TOP boulder Malmsheim), Perouser Straße 76. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Site writes Malmsheim (Renningen).",
+   "reviewed_against": []
+  },
+  "vels-boulderhalle-stuttgart": {
+   "decision": "accept",
+   "reason": "Official site vels-stuttgart.de read 2026-10-06 (https://vels-stuttgart.de/) shows: exists, open, bouldering, address, name. Pin: way/117965360 (VELS Boulderhalle), Handwerkstraße 21. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Bouldering-specialised gym, daily 8-23.",
+   "reviewed_against": []
+  },
+  "volksbank-vertical-ueberlingen": {
+   "decision": "accept",
+   "reason": "Official site www.volksbank-vertical.de read 2026-10-06 (https://www.volksbank-vertical.de/ ; https://www.volksbank-vertical.de/preise-formulare) shows: exists, open, bouldering, address, name. Pin: way/1029244403 (Volksbank Vertical - DAV Boulder- und Kletterzentrum Überlingen), Sankt-Johann-Straße 15. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Limited-access check: club or section hall; public non-member entry is stated or priced on the official site (details in research_notes), not members-only. DAV Sektion Überlingen; 140 boulders; non-member day entry EUR 15.",
+   "reviewed_against": []
+  },
+  "zugzwang-boulderhalle-auerbach": {
+   "decision": "accept",
+   "reason": "Official site zugzwang-auerbach.de read 2026-10-06 (https://zugzwang-auerbach.de/) shows: exists, open, bouldering, address, name. Pin: node/5330108077 (Boulderhalle Zugzwang), Neuhauser Straße 1b. Single source accepted: the gym's own site is the primary source for existence, opening hours or booking, bouldering and address (a directory was not relied on for open status). Limited-access check: club or section hall; public non-member entry is stated or priced on the official site (details in research_notes), not members-only. Volunteer-run club hall; public sessions Wed/Fri evenings and Sunday afternoon in winter; non-member day entry listed.",
+   "reviewed_against": []
+  }
+ }
+}

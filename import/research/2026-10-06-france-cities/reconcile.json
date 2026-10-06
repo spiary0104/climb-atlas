@@ -1,0 +1,966 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-06-france-cities",
+ "inputs": {
+  "section_sha256": "f6a15ae8fb72dd1192f0d06e1c50b37de26a98cdf393a6cc5aa81303aa7978ec",
+  "sources_sha256": "883e40c8b777bbefe1ec70dd233788dfb36011ad2fd9e0efc9a2558472f0b836",
+  "candidates_sha256": "f9beece7486ebc3cb31cc16bd39559e0c3f4c9fe208d54305ad6b21a1747d48a",
+  "index": {
+   "sha256": "27073d25c2df373c17caef0c24ebfe759b8d457953a461c62786486d588e661d",
+   "count": 2438
+  },
+  "staged_batches_compared": [],
+  "other_sections_compared": [
+   {
+    "id": "2026-10-05-france-chains",
+    "candidates_sha256": "4f69658a1eff5a5c61b387894c1fbf1d95a91c9b20d6585c7a0ef3e762379fcd"
+   },
+   {
+    "id": "2026-10-06-france-holds",
+    "candidates_sha256": "53e389b78dd116efa617b95d7c752d3c28f19353efd2d0a82b4697cbb925cace"
+   }
+  ]
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 66,
+  "ready": 53,
+  "review": 8,
+  "blocked": 5,
+  "existing": 0,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "frc-001",
+   "line": 1,
+   "name": "Altissimo Albi",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-42161cb45e"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "frc-002",
+   "line": 2,
+   "name": "Altissimo Metz Haut Gazon",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-787c4d3a6a"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "frc-003",
+   "line": 3,
+   "name": "Altissimo Metz Loisirama",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-51adae9d61"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "frc-004",
+   "line": 4,
+   "name": "Altissimo Montpellier Grabels",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-dc36370043"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate frc-005 \"Altissimo Montpellier Odysseum\": related names \"Altissimo Montpellier Grabels\" / \"Altissimo Montpellier Odysseum\" 10593 m apart",
+     "ids": [
+      "frc-005"
+     ]
+    }
+   ],
+   "review_ids": [
+    "frc-005"
+   ]
+  },
+  {
+   "cid": "frc-005",
+   "line": 5,
+   "name": "Altissimo Montpellier Odysseum",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-5d084ba73c"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate frc-004 \"Altissimo Montpellier Grabels\": related names \"Altissimo Montpellier Odysseum\" / \"Altissimo Montpellier Grabels\" 10593 m apart",
+     "ids": [
+      "frc-004"
+     ]
+    }
+   ],
+   "review_ids": [
+    "frc-004"
+   ]
+  },
+  {
+   "cid": "frc-006",
+   "line": 6,
+   "name": "Altissimo Nantes",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-c5bc9cbcbf"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "frc-007",
+   "line": 7,
+   "name": "Altissimo Perpignan",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-7fa2bfce6a"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "frc-008",
+   "line": 8,
+   "name": "Altissimo Landes",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-e700184f00"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "frc-009",
+   "line": 9,
+   "name": "Espace Vertical 3",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-7c3105fa67"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "frc-010",
+   "line": 10,
+   "name": "Le Labo (Espace Vertical)",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-5dd31eb55c"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "frc-011",
+   "line": 11,
+   "name": "ABLOK Grenoble",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-f08fa97671"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "frc-012",
+   "line": 12,
+   "name": "ABLOK Voiron",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-d9a8224398"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "frc-013",
+   "line": 13,
+   "name": "L'Orangerie Perchée",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-28a763e4c3"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "frc-014",
+   "line": 14,
+   "name": "Au Perchoir",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-f70a8a56dd"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "frc-015",
+   "line": 15,
+   "name": "The Roof Brest",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-855ccfbf00"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "frc-016",
+   "line": 16,
+   "name": "The Roof Rennes",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-1e11a562a5"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "frc-017",
+   "line": 17,
+   "name": "The Roof Poitiers",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-8363ecdc78"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "frc-018",
+   "line": 18,
+   "name": "The Roof Albi",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-f2d04e371e"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "frc-019",
+   "line": 19,
+   "name": "The Roof Pays Basque (Bayonne)",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-c092799ed8"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "frc-020",
+   "line": 20,
+   "name": "The Roof Vercors",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-d366767cf8"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "frc-021",
+   "line": 21,
+   "name": "The Roof Saint-Brieuc",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-a39fe4d585"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "frc-022",
+   "line": 22,
+   "name": "Hueco City",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-9c96d10277"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate frc-023 has the same website",
+     "ids": [
+      "frc-023"
+     ]
+    }
+   ],
+   "review_ids": [
+    "frc-023"
+   ]
+  },
+  {
+   "cid": "frc-023",
+   "line": 23,
+   "name": "Hueco Zenith",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-c29b2de354"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate frc-022 has the same website",
+     "ids": [
+      "frc-022"
+     ]
+    }
+   ],
+   "review_ids": [
+    "frc-022"
+   ]
+  },
+  {
+   "cid": "frc-024",
+   "line": 24,
+   "name": "Climbing District - Pont-de-Neuilly",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-f04cb9c92a"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "frc-025",
+   "line": 25,
+   "name": "Vertical'Art - Lille",
+   "class": "blocked",
+   "suggested": "reject temporary",
+   "importer": {
+    "class": "new",
+    "id": "g-6e988bb7ca"
+   },
+   "blockers": [
+    {
+     "code": "temporary",
+     "detail": "status_claim is temporary"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "frc-026",
+   "line": 26,
+   "name": "Pic et Paroi - Le Bloc",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-95d87582e6"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "frc-027",
+   "line": 27,
+   "name": "ELCAP",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-59c668af00"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "frc-028",
+   "line": 28,
+   "name": "UCPA Sport Station Nantes",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-ac83b743a2"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "frc-029",
+   "line": 29,
+   "name": "UCPA Sport Station Bordeaux",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-a758a05a2d"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "frc-030",
+   "line": 30,
+   "name": "Blocbuster Courbevoie",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-9a323d05e0"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "frc-031",
+   "line": 31,
+   "name": "Blocbuster La Défense",
+   "class": "blocked",
+   "suggested": "reject closed",
+   "importer": {
+    "class": "new",
+    "id": "g-2d0d5a3688"
+   },
+   "blockers": [
+    {
+     "code": "closed",
+     "detail": "status_claim is closed"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "no-bouldering-evidence",
+     "detail": "bouldering is \"yes\" but no primary source confirms it"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "frc-032",
+   "line": 32,
+   "name": "Blocbuster Versailles",
+   "class": "blocked",
+   "suggested": "reject closed",
+   "importer": {
+    "class": "new",
+    "id": "g-aecff17f2e"
+   },
+   "blockers": [
+    {
+     "code": "closed",
+     "detail": "status_claim is closed"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "no-bouldering-evidence",
+     "detail": "bouldering is \"yes\" but no primary source confirms it"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "frc-033",
+   "line": 33,
+   "name": "Hardbloc",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-f860d7675f"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "frc-034",
+   "line": 34,
+   "name": "Climb Arena",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-e89f6dff5d"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "frc-035",
+   "line": 35,
+   "name": "Karma La Villette",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-5e8807310d"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "frc-036",
+   "line": 36,
+   "name": "Karma Fontainebleau",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-7c79384ac7"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "frc-037",
+   "line": 37,
+   "name": "Bloc en Stock",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-02f57d3060"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "frc-038",
+   "line": 38,
+   "name": "Modjo",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-cc2534030c"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "frc-039",
+   "line": 39,
+   "name": "B'wall Vannes",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-22ab3b0cc3"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "frc-040",
+   "line": 40,
+   "name": "B'wall Lorient (Lanester)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-d5d10db939"
+   },
+   "flags": [
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "frc-041",
+   "line": 41,
+   "name": "B'wall Quimper",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-66d3a3d442"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "frc-042",
+   "line": 42,
+   "name": "Boulder Line 1 (Castelnau-le-Lez)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-b45e6000fb"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate frc-043 has the same website",
+     "ids": [
+      "frc-043"
+     ]
+    }
+   ],
+   "review_ids": [
+    "frc-043"
+   ]
+  },
+  {
+   "cid": "frc-043",
+   "line": 43,
+   "name": "Boulder Line 3 City (Montpellier)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-1b48f454c4"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate frc-042 has the same website",
+     "ids": [
+      "frc-042"
+     ]
+    }
+   ],
+   "review_ids": [
+    "frc-042"
+   ]
+  },
+  {
+   "cid": "frc-044",
+   "line": 44,
+   "name": "Start in Bloc",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-4cea3626ba"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "frc-045",
+   "line": 45,
+   "name": "Là Ô Escalade",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-5e2011916f"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "frc-046",
+   "line": 46,
+   "name": "Bloc'n Roll",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-b4563f186e"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "frc-047",
+   "line": 47,
+   "name": "BlocaBrac",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-7d4776dabd"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "frc-048",
+   "line": 48,
+   "name": "La Zipette",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-a691df794f"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "frc-049",
+   "line": 49,
+   "name": "AlpAbloc",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-cbbbe4c2c5"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "frc-050",
+   "line": 50,
+   "name": "Wattabloc",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-bd2116952e"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "frc-051",
+   "line": 51,
+   "name": "Techno Bloc",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-e89c51ffc1"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "frc-052",
+   "line": 52,
+   "name": "Arcabloc",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-26f7e3f0f4"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "frc-053",
+   "line": 53,
+   "name": "Le Topo Mont Blanc",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-a2ee1d22e1"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "frc-054",
+   "line": 54,
+   "name": "Mont Blanc Escalade",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-0f4ddd5fa0"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "frc-055",
+   "line": 55,
+   "name": "Espace Escalade L'Arbresle",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-cd04629c5d"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "frc-056",
+   "line": 56,
+   "name": "Gravity Bouldering",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-ba194580b7"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "frc-057",
+   "line": 57,
+   "name": "Bêta-Bloc",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-a84ea13ce7"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "frc-058",
+   "line": 58,
+   "name": "La Grappe Escalade",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-796dbcb8b1"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "frc-059",
+   "line": 59,
+   "name": "Climb'Zone",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-45f2fdf677"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "frc-060",
+   "line": 60,
+   "name": "Instant Grimpe",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-2f3d152c17"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "frc-061",
+   "line": 61,
+   "name": "Space Bloc",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-12ae91dc0f"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "frc-062",
+   "line": 62,
+   "name": "Annette K. (Climbing District, Paris 6e)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-97b87e5ac2"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "frc-063",
+   "line": 63,
+   "name": "Bloc Zone",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-948232783a"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "frc-064",
+   "line": 64,
+   "name": "Atome Climbing",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-8d782dbac1"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "frc-065",
+   "line": 65,
+   "name": "Capt'N Hablock",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-b52bf427e7"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "frc-066",
+   "line": 66,
+   "name": "Le Bloc de l'Ours",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-7d0df92ee4"
+   },
+   "review_ids": []
+  }
+ ],
+ "reconcile_sha256": "edfb1ab966b9d044f01df49fbccfa57aad58f41cd86fddacf94e12101e9bcb1a"
+}

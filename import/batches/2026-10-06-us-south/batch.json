@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-06-us-south",
+  "description": "Regional research \"USA: South (states with no Bouldeer coverage)\": 60 new gym(s) accepted of 69 candidate(s)",
+  "created": "2026-10-06",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-10-06-us-south",
+    "section_sha256": "edfccfd4e2b7f1a267273f2b9e6a2777ae5810329d853f2f1ceb652dc1acbe94",
+    "sources_sha256": "006cd290a1cc45e9db18dd01c7573d60db62bbc6bfb9d6d153d25a26eed2a54c",
+    "candidates_sha256": "0970aae878d6abc42a0634c5964cde388688d391639dac2685d81fb40a687327",
+    "reconcile_sha256": "fe1faac68a02fcde32e3d6361b9d28fcf38bfe2529cc30d999c0c0af7e8d89ce",
+    "review_sha256": "333a6b3b552fecdc6e935d6ea88de69c719b5ca75cd28dd80676bcd3d06d0419",
+    "candidates": 69,
+    "staged": 60,
+    "decisions": {
+      "accept": 60,
+      "defer": 7,
+      "reject": 2
+    }
+  },
+  "index_at_staging": {
+    "sha256": "27073d25c2df373c17caef0c24ebfe759b8d457953a461c62786486d588e661d",
+    "count": 2438
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-06-jp-chubu",
+  "description": "Regional research \"Japan: Chūbu (Nagoya and region) coverage gap\": 54 new gym(s) accepted of 88 candidate(s)",
+  "created": "2026-10-06",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-10-06-jp-chubu",
+    "section_sha256": "f07d1f96c5e0c33a31f8ba2e65c1eaf62f81bb189dc19a6686463108c6a5b2bd",
+    "sources_sha256": "52c7356f62c7ea30db37b90c0ef56c5e485557e30e4d60ded62c82ec44139083",
+    "candidates_sha256": "ed0f35f8b69fecc27d93cdb6aedbc76c16271d4b09142561175b24c82afc962a",
+    "reconcile_sha256": "f71521058761c251d2a00539677ba86f1c5bd79c2c1f087cfbf07184f320104c",
+    "review_sha256": "07ef0895f033bde35524ec9160b708a37b2eb1bc0697dd0e10fc9e7be08b7dda",
+    "candidates": 88,
+    "staged": 54,
+    "decisions": {
+      "accept": 54,
+      "defer": 33,
+      "reject": 1
+    }
+  },
+  "index_at_staging": {
+    "sha256": "27073d25c2df373c17caef0c24ebfe759b8d457953a461c62786486d588e661d",
+    "count": 2438
+  }
+}

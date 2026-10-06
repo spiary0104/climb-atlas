@@ -1,0 +1,217 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-06-czechia-gap",
+ "inputs": {
+  "section_sha256": "e7e943d182c6a633ccd1d575a10f55bbc82f144c0d9ecfba049c9b40413c4c5b",
+  "sources_sha256": "6e9c23c03a515f0d56191f921b59ed455617ab7104653c8d0e76b05da148a7fc",
+  "candidates_sha256": "b94f7bf15bad612280c93aebecf568f9abea1a8004ae8a4988684214153531e4",
+  "index": {
+   "sha256": "27073d25c2df373c17caef0c24ebfe759b8d457953a461c62786486d588e661d",
+   "count": 2438
+  },
+  "staged_batches_compared": [
+   "2026-10-06-austria",
+   "2026-10-06-de-south",
+   "2026-10-06-london"
+  ],
+  "other_sections_compared": [
+   {
+    "id": "2026-10-01-czechia",
+    "candidates_sha256": "9bfec783adb9ac357a6204c800f1ff85ef58403c903faa82ce575eb7fb9c81f0"
+   },
+   {
+    "id": "2026-10-03-czechia-pins",
+    "candidates_sha256": "89114bea79fadd19d23294fa6001f79922084787e00e0cd738438493d9ad836f"
+   }
+  ]
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 10,
+  "ready": 6,
+  "review": 2,
+  "blocked": 2,
+  "existing": 0,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "cz-basecamp-boulder-brno",
+   "line": 7,
+   "name": "Basecamp boulder Brno",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-f1f1c8c476"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "cz-crux24-harrachov",
+   "line": 8,
+   "name": "CRUX 24 Harrachov",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-de272e83c6"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "cz-flash-boulder-bar-brno",
+   "line": 6,
+   "name": "Flash Boulder Bar",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-be5da4691b"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "cz-freesolo",
+   "line": 2,
+   "name": "FreeSolo",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-2d7816f43a"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "cz-jungle-holesovice",
+   "line": 4,
+   "name": "Jungle Holešovice",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-b0f3258d1d"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1451 co-located 6 m",
+     "ids": [
+      "seed-1451"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1451 \"Boulder Bar\": co-located (\"Jungle Holešovice\" / \"Boulder Bar\", 6 m)",
+     "ids": [
+      "seed-1451"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-1451"
+   ]
+  },
+  {
+   "cid": "cz-jungle-letnany",
+   "line": 3,
+   "name": "Jungle Letňany",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-063a1815aa"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "cz-lokal-blok",
+   "line": 1,
+   "name": "LOKAL BLOK",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-b7d03849b6"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "cz-stena-hradec-kralove",
+   "line": 10,
+   "name": "Lezecká stěna Hradec Králové",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-7e28cf8398"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "cz-stena-ruzyne",
+   "line": 5,
+   "name": "Lezecká stěna Praha Ruzyně",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-e7b0a9b8dd"
+   },
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-01-czechia#cz-008 \"Lezecké centrum Ruzyně\": name-match same-address-different-name (\"Lezecká stěna Praha Ruzyně\" / \"Lezecké centrum Ruzyně\", 98 m)",
+     "ids": [
+      "2026-10-01-czechia#cz-008"
+     ]
+    }
+   ],
+   "review_ids": [
+    "2026-10-01-czechia#cz-008"
+   ]
+  },
+  {
+   "cid": "cz-sutr-liberec",
+   "line": 9,
+   "name": "Šutr",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-62fdc1be03"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  }
+ ],
+ "reconcile_sha256": "e030569dc8c5054c1440ba10f170b546cf6a743e60b50d3b76d4f66ddb09397f"
+}

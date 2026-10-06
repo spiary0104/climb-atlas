@@ -1,0 +1,21 @@
+{
+  "decisions": {
+    "g-0555135dcc": {
+      "decision": "distinct",
+      "reason": "Distinct gym from Shakti Rock Gym (ca-shakti-montreal) although the importer flags both 50 m apart: Allez Up Mile End (5600 avenue de Gaspé, allezup.com, chain of three) and Shakti Rock Gym (175 rue Saint-Viateur Est, shaktirockgym.com) each have their own live site with own hours, prices and address; they are neighbouring venues at the Gaspé / Saint-Viateur corner. seed-471 is the Pointe-Saint-Charles gym of the same chain, 5.4 km away.",
+      "reviewed_against": [
+        "g-d850cd1110",
+        "seed-471"
+      ],
+      "reviewer": "Spiar (owner); decisions drafted by Claude (AI) on the owner's instruction, pending owner sign-off"
+    },
+    "g-d850cd1110": {
+      "decision": "distinct",
+      "reason": "Distinct gym from Allez Up Mile End (ca-allezup-mile-end) although the importer flags both 50 m apart: Shakti (175 rue Saint-Viateur Est, own site shaktirockgym.com, 'centre d'escalade de bloc') and Allez Up (5600 avenue de Gaspé, allezup.com) are separate operators with separate live sites and hours at the same corner. Owner may want to confirm they are two venues (see MANUAL-CHECK).",
+      "reviewed_against": [
+        "g-0555135dcc"
+      ],
+      "reviewer": "Spiar (owner); decisions drafted by Claude (AI) on the owner's instruction, pending owner sign-off"
+    }
+  }
+}

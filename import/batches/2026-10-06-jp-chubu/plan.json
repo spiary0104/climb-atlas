@@ -1,0 +1,465 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-06-jp-chubu",
+ "index": {
+  "sha256": "b933a30bf74cd38a0a96a52e95bbd7730a049d46ff56d299dd016fb5a26252ce",
+  "count": 3161,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-06-jp-kansai",
+  "2026-10-06-jp-kyushu-hokkaido",
+  "2026-10-06-kr-seoul"
+ ],
+ "counts": {
+  "records": 54,
+  "new": 54,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "7798bc3d3aa71e92ccead496299f1c92dfbabe42fdab42e94df69e8272fa48d4",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-bd57e68e26",
+   "id_frozen": true,
+   "name": "ADDICT Climbing",
+   "country": "JP"
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-cf024bfc36",
+   "id_frozen": true,
+   "name": "Blue Canyon Climbing Gym",
+   "country": "JP"
+  },
+  {
+   "line": 3,
+   "class": "new",
+   "id": "g-924474d561",
+   "id_frozen": true,
+   "name": "bolsta Climbing Gym",
+   "country": "JP"
+  },
+  {
+   "line": 4,
+   "class": "new",
+   "id": "g-2b0d0e567e",
+   "id_frozen": true,
+   "name": "Boulder Honpo",
+   "country": "JP"
+  },
+  {
+   "line": 5,
+   "class": "new",
+   "id": "g-a5d879ed9c",
+   "id_frozen": true,
+   "name": "Bouldering Park Bu-Rock",
+   "country": "JP"
+  },
+  {
+   "line": 6,
+   "class": "new",
+   "id": "g-1e4c418718",
+   "id_frozen": true,
+   "name": "BUBU Gifu",
+   "country": "JP"
+  },
+  {
+   "line": 7,
+   "class": "new",
+   "id": "g-6f3234693b",
+   "id_frozen": true,
+   "name": "BUBU Gifu-Nishi",
+   "country": "JP"
+  },
+  {
+   "line": 8,
+   "class": "new",
+   "id": "g-a1d4cce677",
+   "id_frozen": true,
+   "name": "C-HOLIQ",
+   "country": "JP"
+  },
+  {
+   "line": 9,
+   "class": "new",
+   "id": "g-a17131bf4c",
+   "id_frozen": true,
+   "name": "Cactus 2 Jinnoshinden",
+   "country": "JP"
+  },
+  {
+   "line": 10,
+   "class": "new",
+   "id": "g-6200b381f1",
+   "id_frozen": true,
+   "name": "Cloud Nine",
+   "country": "JP"
+  },
+  {
+   "line": 11,
+   "class": "new",
+   "id": "g-f6dd0d1d84",
+   "id_frozen": true,
+   "name": "Climbing Box CUBE",
+   "country": "JP"
+  },
+  {
+   "line": 12,
+   "class": "new",
+   "id": "g-fe2180137a",
+   "id_frozen": true,
+   "name": "Climbing Gym Cuore Imaike",
+   "country": "JP"
+  },
+  {
+   "line": 13,
+   "class": "new",
+   "id": "g-24f1ccb686",
+   "id_frozen": true,
+   "name": "Climbing Gym Cuore Nakagawa",
+   "country": "JP"
+  },
+  {
+   "line": 14,
+   "class": "new",
+   "id": "g-b547e83ccc",
+   "id_frozen": true,
+   "name": "Friction Freaks",
+   "country": "JP"
+  },
+  {
+   "line": 15,
+   "class": "new",
+   "id": "g-6ab68768eb",
+   "id_frozen": true,
+   "name": "Funny Bone",
+   "country": "JP"
+  },
+  {
+   "line": 16,
+   "class": "new",
+   "id": "g-7064a41023",
+   "id_frozen": true,
+   "name": "Gyodo Climbing Gym Ichinomiya",
+   "country": "JP"
+  },
+  {
+   "line": 17,
+   "class": "new",
+   "id": "g-de9e931d62",
+   "id_frozen": true,
+   "name": "Gyodo Climbing Gym Kakamigahara",
+   "country": "JP"
+  },
+  {
+   "line": 18,
+   "class": "new",
+   "id": "g-9b2a2fecf0",
+   "id_frozen": true,
+   "name": "HANA's Rock",
+   "country": "JP"
+  },
+  {
+   "line": 19,
+   "class": "new",
+   "id": "g-1ec8c7942d",
+   "id_frozen": true,
+   "name": "Climbing Gym HANDJAM",
+   "country": "JP"
+  },
+  {
+   "line": 20,
+   "class": "new",
+   "id": "g-6005c55bf7",
+   "id_frozen": true,
+   "name": "Hut Wall",
+   "country": "JP"
+  },
+  {
+   "line": 21,
+   "class": "new",
+   "id": "g-bd4e4838e6",
+   "id_frozen": true,
+   "name": "Sunny Space Iwanchu Toyohashi",
+   "country": "JP"
+  },
+  {
+   "line": 22,
+   "class": "new",
+   "id": "g-d48ebec327",
+   "id_frozen": true,
+   "name": "Sunny Space Iwanchu Toyokawa",
+   "country": "JP"
+  },
+  {
+   "line": 23,
+   "class": "new",
+   "id": "g-10e6e2115b",
+   "id_frozen": true,
+   "name": "Climbing JAM 2 Hamamatsu",
+   "country": "JP"
+  },
+  {
+   "line": 24,
+   "class": "new",
+   "id": "g-9c09cf4908",
+   "id_frozen": true,
+   "name": "Climbing JAM Shizuoka",
+   "country": "JP"
+  },
+  {
+   "line": 25,
+   "class": "new",
+   "id": "g-85250f6dbb",
+   "id_frozen": true,
+   "name": "Climbing JAM Yaizu",
+   "country": "JP"
+  },
+  {
+   "line": 26,
+   "class": "new",
+   "id": "g-e62451917b",
+   "id_frozen": true,
+   "name": "KLIM Climbing",
+   "country": "JP"
+  },
+  {
+   "line": 27,
+   "class": "new",
+   "id": "g-76c4934610",
+   "id_frozen": true,
+   "name": "Bouldering House KNOT",
+   "country": "JP"
+  },
+  {
+   "line": 28,
+   "class": "new",
+   "id": "g-49a2459647",
+   "id_frozen": true,
+   "name": "KO-WALL Mie",
+   "country": "JP"
+  },
+  {
+   "line": 29,
+   "class": "new",
+   "id": "g-4854e24bc6",
+   "id_frozen": true,
+   "name": "Lacontento",
+   "country": "JP"
+  },
+  {
+   "line": 30,
+   "class": "new",
+   "id": "g-320b539d30",
+   "id_frozen": true,
+   "name": "NO LIMIT",
+   "country": "JP"
+  },
+  {
+   "line": 31,
+   "class": "new",
+   "id": "g-82293f791c",
+   "id_frozen": true,
+   "name": "Obuse Open Oasis",
+   "country": "JP"
+  },
+  {
+   "line": 32,
+   "class": "new",
+   "id": "g-4da23ca2de",
+   "id_frozen": true,
+   "name": "Omoshirock",
+   "country": "JP"
+  },
+  {
+   "line": 33,
+   "class": "new",
+   "id": "g-af514073dd",
+   "id_frozen": true,
+   "name": "ORCO Climbing Gym",
+   "country": "JP"
+  },
+  {
+   "line": 34,
+   "class": "new",
+   "id": "g-2c37df287f",
+   "id_frozen": true,
+   "name": "OWL Line & Wall",
+   "country": "JP"
+  },
+  {
+   "line": 35,
+   "class": "new",
+   "id": "g-839ccd7028",
+   "id_frozen": true,
+   "name": "Climbing Garage Pentagon",
+   "country": "JP"
+  },
+  {
+   "line": 36,
+   "class": "new",
+   "id": "g-6ed1468467",
+   "id_frozen": true,
+   "name": "Picco+Roccia",
+   "country": "JP"
+  },
+  {
+   "line": 37,
+   "class": "new",
+   "id": "g-fc47752145",
+   "id_frozen": true,
+   "name": "Pinnacle 2 Risora Obu",
+   "country": "JP"
+  },
+  {
+   "line": 38,
+   "class": "new",
+   "id": "g-460a253882",
+   "id_frozen": true,
+   "name": "Pinnacle 2 Toyota",
+   "country": "JP"
+  },
+  {
+   "line": 39,
+   "class": "new",
+   "id": "g-00c0c540fb",
+   "id_frozen": true,
+   "name": "Climbing Gym Pirania Isawa",
+   "country": "JP"
+  },
+  {
+   "line": 40,
+   "class": "new",
+   "id": "g-175ba47b14",
+   "id_frozen": true,
+   "name": "Planet Climbing Gym Fukuroi",
+   "country": "JP"
+  },
+  {
+   "line": 41,
+   "class": "new",
+   "id": "g-b158de335f",
+   "id_frozen": true,
+   "name": "Play Mountain Okazaki",
+   "country": "JP"
+  },
+  {
+   "line": 42,
+   "class": "new",
+   "id": "g-6e5ad9b767",
+   "id_frozen": true,
+   "name": "Bouldering World QRiMo",
+   "country": "JP"
+  },
+  {
+   "line": 43,
+   "class": "new",
+   "id": "g-2e11b2d5d0",
+   "id_frozen": true,
+   "name": "Climbing Gym RAY",
+   "country": "JP"
+  },
+  {
+   "line": 44,
+   "class": "new",
+   "id": "g-27754ee295",
+   "id_frozen": true,
+   "name": "Ridge Line Bouldering Gym",
+   "country": "JP"
+  },
+  {
+   "line": 45,
+   "class": "new",
+   "id": "g-16737a2c21",
+   "id_frozen": true,
+   "name": "Riot Climbing",
+   "country": "JP"
+  },
+  {
+   "line": 46,
+   "class": "new",
+   "id": "g-e5ebcdb1c6",
+   "id_frozen": true,
+   "name": "Rock Gym Horie",
+   "country": "JP"
+  },
+  {
+   "line": 47,
+   "class": "new",
+   "id": "g-f566a09f47",
+   "id_frozen": true,
+   "name": "RockDrunkard",
+   "country": "JP"
+  },
+  {
+   "line": 48,
+   "class": "new",
+   "id": "g-c7dc10e005",
+   "id_frozen": true,
+   "name": "Climbing Gym Soleil",
+   "country": "JP"
+  },
+  {
+   "line": 49,
+   "class": "new",
+   "id": "g-dfcd790cc1",
+   "id_frozen": true,
+   "name": "Square Climbing Center",
+   "country": "JP"
+  },
+  {
+   "line": 50,
+   "class": "new",
+   "id": "g-a5f4bba97a",
+   "id_frozen": true,
+   "name": "Step Bouldering",
+   "country": "JP"
+  },
+  {
+   "line": 51,
+   "class": "new",
+   "id": "g-800cb91b0f",
+   "id_frozen": true,
+   "name": "Sunny Dipper Climbing Ise",
+   "country": "JP"
+  },
+  {
+   "line": 52,
+   "class": "new",
+   "id": "g-862a181065",
+   "id_frozen": true,
+   "name": "Sunny Rock Fuji",
+   "country": "JP"
+  },
+  {
+   "line": 53,
+   "class": "new",
+   "id": "g-e3b3a523df",
+   "id_frozen": true,
+   "name": "Sunny Rock Numazu",
+   "country": "JP"
+  },
+  {
+   "line": 54,
+   "class": "new",
+   "id": "g-54adbad906",
+   "id_frozen": true,
+   "name": "Bould TO9 Shinshiro",
+   "country": "JP"
+  }
+ ]
+}

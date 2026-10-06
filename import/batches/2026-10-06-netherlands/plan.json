@@ -1,0 +1,319 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-06-netherlands",
+ "index": {
+  "sha256": "61fea2d029491140cdfae93151376ca3f8bfebe6248578ff51530db333f2d55d",
+  "count": 3019,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-06-austria",
+  "2026-10-06-belgium",
+  "2026-10-06-czechia-gap",
+  "2026-10-06-jp-chubu",
+  "2026-10-06-jp-kansai",
+  "2026-10-06-jp-kanto",
+  "2026-10-06-jp-kyushu-hokkaido",
+  "2026-10-06-kr-seoul",
+  "2026-10-06-poland"
+ ],
+ "counts": {
+  "records": 35,
+  "new": 35,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "3db3bf32cb8c8e4ba618bf62f4203068993b2430f6e07f1381d465746f4bba00",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-e82deff66f",
+   "id_frozen": true,
+   "name": "Boulderhal Sendmast",
+   "country": "NL"
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-7401362b20",
+   "id_frozen": true,
+   "name": "IMPACT Boulderhal",
+   "country": "NL"
+  },
+  {
+   "line": 3,
+   "class": "new",
+   "id": "g-a3dd2c31de",
+   "id_frozen": true,
+   "name": "Kei Boulderhal Wagenwerkplaats",
+   "country": "NL"
+  },
+  {
+   "line": 4,
+   "class": "new",
+   "id": "g-20d7a4b9b6",
+   "id_frozen": true,
+   "name": "Kei Boulderhal De Hoef",
+   "country": "NL"
+  },
+  {
+   "line": 5,
+   "class": "new",
+   "id": "g-e9b6ef9e98",
+   "id_frozen": true,
+   "name": "Kei Boulderhal Zwitsal",
+   "country": "NL"
+  },
+  {
+   "line": 6,
+   "class": "new",
+   "id": "g-d51055862f",
+   "id_frozen": true,
+   "name": "Boulderhal Bruut",
+   "country": "NL"
+  },
+  {
+   "line": 7,
+   "class": "new",
+   "id": "g-ed331f1849",
+   "id_frozen": true,
+   "name": "Beest Boulders Breda",
+   "country": "NL"
+  },
+  {
+   "line": 8,
+   "class": "new",
+   "id": "g-7bac17a411",
+   "id_frozen": true,
+   "name": "Beest Boulders Delft",
+   "country": "NL"
+  },
+  {
+   "line": 9,
+   "class": "new",
+   "id": "g-95c6137bce",
+   "id_frozen": true,
+   "name": "Revolt Bouldering Gym",
+   "country": "NL"
+  },
+  {
+   "line": 10,
+   "class": "new",
+   "id": "g-e04a57cbac",
+   "id_frozen": true,
+   "name": "Bouldercentrum Delfts Bleau",
+   "country": "NL"
+  },
+  {
+   "line": 11,
+   "class": "new",
+   "id": "g-18edb2b711",
+   "id_frozen": true,
+   "name": "Climbing Center Dordrecht",
+   "country": "NL"
+  },
+  {
+   "line": 12,
+   "class": "new",
+   "id": "g-e4db5956ce",
+   "id_frozen": true,
+   "name": "Climbing Center Heerenveen",
+   "country": "NL"
+  },
+  {
+   "line": 13,
+   "class": "new",
+   "id": "g-ac222cae95",
+   "id_frozen": true,
+   "name": "Climbing Center Leeuwarden",
+   "country": "NL"
+  },
+  {
+   "line": 14,
+   "class": "new",
+   "id": "g-b88e496c76",
+   "id_frozen": true,
+   "name": "Boulder Gym Arnhem Rijnhal",
+   "country": "NL"
+  },
+  {
+   "line": 15,
+   "class": "new",
+   "id": "g-233b499de5",
+   "id_frozen": true,
+   "name": "MONO Boulder",
+   "country": "NL"
+  },
+  {
+   "line": 16,
+   "class": "new",
+   "id": "g-75dcd02a7c",
+   "id_frozen": true,
+   "name": "Monk bouldergym Eindhoven",
+   "country": "NL"
+  },
+  {
+   "line": 17,
+   "class": "new",
+   "id": "g-059d37135a",
+   "id_frozen": true,
+   "name": "Monk bouldergym Hilversum",
+   "country": "NL"
+  },
+  {
+   "line": 18,
+   "class": "new",
+   "id": "g-641fe95b09",
+   "id_frozen": true,
+   "name": "Boulder Neoliet Eindhoven",
+   "country": "NL"
+  },
+  {
+   "line": 19,
+   "class": "new",
+   "id": "g-1e4ae46246",
+   "id_frozen": true,
+   "name": "Boulder Neoliet Veldhoven",
+   "country": "NL"
+  },
+  {
+   "line": 20,
+   "class": "new",
+   "id": "g-54558b2b15",
+   "id_frozen": true,
+   "name": "Boulder Neoliet Tilburg",
+   "country": "NL"
+  },
+  {
+   "line": 21,
+   "class": "new",
+   "id": "g-b696dd357f",
+   "id_frozen": true,
+   "name": "Boulder Neoliet Apeldoorn",
+   "country": "NL"
+  },
+  {
+   "line": 22,
+   "class": "new",
+   "id": "g-65452f1874",
+   "id_frozen": true,
+   "name": "Boulderhal Block013",
+   "country": "NL"
+  },
+  {
+   "line": 23,
+   "class": "new",
+   "id": "g-9f43eb1687",
+   "id_frozen": true,
+   "name": "Cube Bouldergym",
+   "country": "NL"
+  },
+  {
+   "line": 24,
+   "class": "new",
+   "id": "g-ba778a89fb",
+   "id_frozen": true,
+   "name": "Boulderhal de Fabriek Haarlem",
+   "country": "NL"
+  },
+  {
+   "line": 25,
+   "class": "new",
+   "id": "g-996f029d81",
+   "id_frozen": true,
+   "name": "Boulderhal de Fabriek Hoofddorp",
+   "country": "NL"
+  },
+  {
+   "line": 26,
+   "class": "new",
+   "id": "g-cf5892e880",
+   "id_frozen": true,
+   "name": "Boulderhal Kunststof",
+   "country": "NL"
+  },
+  {
+   "line": 27,
+   "class": "new",
+   "id": "g-92147da66b",
+   "id_frozen": true,
+   "name": "Boulderhal Krachtstof",
+   "country": "NL"
+  },
+  {
+   "line": 28,
+   "class": "new",
+   "id": "g-38eb6656c8",
+   "id_frozen": true,
+   "name": "Radium Boulders",
+   "country": "NL"
+  },
+  {
+   "line": 29,
+   "class": "new",
+   "id": "g-ab0ecb28fb",
+   "id_frozen": true,
+   "name": "GRIP Boulderhal Nijmegen",
+   "country": "NL"
+  },
+  {
+   "line": 30,
+   "class": "new",
+   "id": "g-980c904b70",
+   "id_frozen": true,
+   "name": "Boulderhal Bossche Boulders",
+   "country": "NL"
+  },
+  {
+   "line": 31,
+   "class": "new",
+   "id": "g-583828e63d",
+   "id_frozen": true,
+   "name": "Boulderkerk Venlo",
+   "country": "NL"
+  },
+  {
+   "line": 32,
+   "class": "new",
+   "id": "g-d22028992c",
+   "id_frozen": true,
+   "name": "BAZ Bouldergym",
+   "country": "NL"
+  },
+  {
+   "line": 33,
+   "class": "new",
+   "id": "g-e4b28507c0",
+   "id_frozen": true,
+   "name": "Boulderhal Roest",
+   "country": "NL"
+  },
+  {
+   "line": 34,
+   "class": "new",
+   "id": "g-79c2641f03",
+   "id_frozen": true,
+   "name": "Apex Boulders",
+   "country": "NL"
+  },
+  {
+   "line": 35,
+   "class": "new",
+   "id": "g-b7ac4de1fd",
+   "id_frozen": true,
+   "name": "Boulderhal Vrijhaven",
+   "country": "NL"
+  }
+ ]
+}
