@@ -27,11 +27,11 @@
 ## Main sources
 - Chain location pages: The Circuit (5 sites, each location page read), Movement Portland, ALTA (3 locations), Flagstaff Climbing, Stone Age (2), Rocks and Ropes.
 - Each gym's own site, read in a rendered browser (hours, address, bouldering wording); a few (Crux, Brimstone, Elevation, Beta) were first read through a page summary tool and then re-read in the browser.
-- Coordinates: of the 53 accepted: the gym's own OSM element (44), Nominatim house-number match on the official address (5: Circuit Eugene, Main Street Boulders, Beta, Ascension, Rock Dump), the gym's own Google Maps link (Edge), Google Maps place pins (Volcanic, Aloha Rock Gym), the OSM building at the address (Rockfish). Overpass extract of climbing sports centres in the eight states was used to find gyms not named elsewhere (Rock Haven, The Jug, Vertical View, Gemstone, Klimb).
+- Coordinates: of the 53 accepted: the gym's own OSM element (44), Nominatim house-number match on the official address (5: Circuit Eugene, Main Street Boulders, Beta, Ascension, Rock Dump), the gym's own Google Maps link (Edge), the OSM building at the address (Rockfish), and OSM street ways only for Volcanic and Aloha Rock Gym (street precision, owner pin check listed). Overpass extract of climbing sports centres in the eight states was used to find gyms not named elsewhere (Rock Haven, The Jug, Vertical View, Gemstone, Klimb).
 - Directory lists (99boulders state lists) were used only as leads, never as evidence.
 
 ## Notes and uncertainties
-- Web search quota was exhausted partway; later discovery used a public HTML search endpoint, and Nominatim rate-limited (HTTP 429) after about 60 requests, so the last few pins use OSM address data or Google Maps pins instead.
+- Web search quota was exhausted partway; later discovery used a public HTML search endpoint, and Nominatim rate-limited (HTTP 429) after about 60 requests, so the last few pins use OSM address data (two Hawaii gyms are street-level only; Photon also had no house-number point).
 - Teton Rock Gym (Driggs ID) is rejected as closed (own site notice). AZ on the Rocks is not a candidate (domain parked; ALTA Scottsdale is at the same suite).
 - Bouldering evidence is weakest for Rogue Rock Gym, The Edge, Stone Age Midtown (see MANUAL-CHECK.md, "optional spot check").
 - Wyoming has no accepted gym; the only leads are listed in unlocated.md and MANUAL-CHECK.md.

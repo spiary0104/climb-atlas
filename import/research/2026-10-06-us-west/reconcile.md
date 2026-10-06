@@ -16,16 +16,18 @@ Review radii (stricter than the importer): any gym 150 m, related name 15 km, ot
   - same-website: candidate us-az-flagstaff-climbing-main-street-boulders has the same website
 - us-az-flagstaff-climbing-main-street-boulders "Main Street Boulders" [g-d3fa9a169d] reviewed_against must include: us-az-flagstaff-climbing-downtown-crag
   - same-website: candidate us-az-flagstaff-climbing-downtown-crag has the same website
-- us-hi-aloha-rock-gym "Aloha Rock Gym" [g-126ac536c6]
+- us-hi-aloha-rock-gym "Aloha Rock Gym" [g-5d315f4633]
   - importer-warning: far-from-country: nearest known US gym is 3762 km away -- check coordinates/country
+  - weak-coordinates: coordinates are street-level, not the building
 - us-hi-big-island-climbing "Big Island Climbing" [g-25479c204a]
   - importer-warning: far-from-country: nearest known US gym is 3732 km away -- check coordinates/country
 - us-hi-hiclimb "HiClimb" [g-bc8b938464]
   - importer-warning: far-from-country: nearest known US gym is 3845 km away -- check coordinates/country
 - us-hi-oahu-bouldering-gym "Oahu Bouldering Gym" [g-62d3069b55]
   - importer-warning: far-from-country: nearest known US gym is 3847 km away -- check coordinates/country
-- us-hi-volcanic-rock-gym "Volcanic Rock Gym" [g-f4264291bf]
+- us-hi-volcanic-rock-gym "Volcanic Rock Gym" [g-86cb7509a9]
   - importer-warning: far-from-country: nearest known US gym is 3829 km away -- check coordinates/country
+  - weak-coordinates: coordinates are street-level, not the building
 - us-nm-stone-age-midtown "Stone Age Climbing Gym Midtown" [g-9a43178011] reviewed_against must include: us-nm-stone-age-north
   - related-name-nearby: candidate us-nm-stone-age-north "Stone Age Climbing Gym North": related names "Stone Age Climbing Gym Midtown" / "Stone Age Climbing Gym North" 9037 m apart
 - us-nm-stone-age-north "Stone Age Climbing Gym North" [g-db115f8a1b] reviewed_against must include: us-nm-stone-age-midtown

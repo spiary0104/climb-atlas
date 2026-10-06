@@ -12,7 +12,7 @@
 | Rejected by a human decision | 0 |
 | **Total records in batch** | 53 |
 
-Index: 2438 known gyms (sha256 27073d25c2df…). Plan: d988b8e184ed…
+Index: 2438 known gyms (sha256 27073d25c2df…). Plan: d6880b3efb0d…
 
 ## New gyms (53)
 
@@ -32,7 +32,7 @@ By country: US 53
 - line 12 `g-e62a1b3b70` "Phoenix Rock Gym" (US)
 - line 13 `g-f4a9cc62d2` "Rock Solid Climbing + Fitness" (US)
 - line 14 `g-1ddda54c84` "The BLOC Climbing + Fitness" (US)
-- line 15 `g-126ac536c6` "Aloha Rock Gym" (US)
+- line 15 `g-5d315f4633` "Aloha Rock Gym" (US)
 - … and 38 more (see plan.json)
 
 ## Warnings

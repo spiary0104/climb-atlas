@@ -82,7 +82,7 @@
   },
   "us-hi-aloha-rock-gym": {
    "decision": "accept",
-   "reason": "Far-from-country warning is expected: Maui, Hawaii. Own site address 72 Lauo Loop, Kahului; Google Maps place pin for the gym at 20.886 N -156.450 W.",
+   "reason": "Far-from-country warning is expected: Maui, Hawaii (Kahului). Weak-coordinates flag: the pin is the OSM street way Lauo Loop (no house-number point or gym element is mapped for 72 Lauo Loop), so it is street-level, within the short loop the gym is on; accepted so the gym is listed, with an owner pin check in MANUAL-CHECK.md.",
    "reviewed_against": []
   },
   "us-hi-big-island-climbing": {
@@ -102,7 +102,7 @@
   },
   "us-hi-volcanic-rock-gym": {
    "decision": "accept",
-   "reason": "Far-from-country warning is expected: Kailua, Oahu, Hawaii. Own site address 161 Hamakua Dr; pin from the gym's Google Maps place (21.391 N -157.742 W).",
+   "reason": "Far-from-country warning is expected: Kailua, Oahu, Hawaii. Weak-coordinates flag: the pin is the OSM street way Hamakua Drive (OSM, Nominatim and Photon map no house-number point for 161 Hamakua Dr), so it is street-level and a few hundred metres from the building; accepted so the gym is listed, with an owner pin check in MANUAL-CHECK.md.",
    "reviewed_against": []
   },
   "us-id-asana-climbing-gym": {

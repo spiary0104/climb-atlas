@@ -4,7 +4,7 @@
  "inputs": {
   "section_sha256": "eeab58e40817d7f4d615915f7e806de8294b1888855fa5028b5513d2ecbc2837",
   "sources_sha256": "b7eec67344d3699e25c28664ffb5db252fa6527bc402ba6b6b1a9d8c5e6ce0df",
-  "candidates_sha256": "a3176502dfcdc417324d7138d4ab75c92375e6451275c7459d1fa977f61c655f",
+  "candidates_sha256": "522eadce51697d6499a8baf1c9eac33ee14d5acca57eece19b232854bdcb76b3",
   "index": {
    "sha256": "27073d25c2df373c17caef0c24ebfe759b8d457953a461c62786486d588e661d",
    "count": 2438
@@ -304,12 +304,16 @@
    "suggested": "review",
    "importer": {
     "class": "new",
-    "id": "g-126ac536c6"
+    "id": "g-5d315f4633"
    },
    "flags": [
     {
      "code": "importer-warning",
      "detail": "far-from-country: nearest known US gym is 3762 km away -- check coordinates/country"
+    },
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
     }
    ],
    "review_ids": []
@@ -376,12 +380,16 @@
    "suggested": "review",
    "importer": {
     "class": "new",
-    "id": "g-f4264291bf"
+    "id": "g-86cb7509a9"
    },
    "flags": [
     {
      "code": "importer-warning",
      "detail": "far-from-country: nearest known US gym is 3829 km away -- check coordinates/country"
+    },
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
     }
    ],
    "review_ids": []
@@ -963,5 +971,5 @@
    "review_ids": []
   }
  ],
- "reconcile_sha256": "c1a610b52f18efef5a7190e1ad65bc358f83f1c1b93e61505955dc2f912f5eac"
+ "reconcile_sha256": "479bf4da6d08a94c91fc0c025393c4c6668f980d15f1b9633044934eccbbefa2"
 }

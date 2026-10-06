@@ -5,7 +5,7 @@ Reviewer: Claude (AI) on the owner's instruction; owner sign-off pending. Tally:
 ## Accept (53)
 - 36 unflagged: primary source (own site or chain location page) shows the gym exists, is operating (hours or dated 2026 activity), the address and a bouldering offer; pin from the gym's own OSM element or an address match.
 - 17 flagged, accepted with a reason and `reviewed_against`:
-  - Alaska and Hawaii far-from-country warnings (Alaska Rock Gym, Ascension, HiClimb, Volcanic, Oahu Bouldering, Aloha Rock Gym, Big Island Climbing): the pins were checked on their own island/city and agree with the official addresses.
+  - Alaska and Hawaii far-from-country warnings (Alaska Rock Gym, Ascension, HiClimb, Volcanic, Oahu Bouldering, Aloha Rock Gym, Big Island Climbing): the pins were checked on their own island/city; Volcanic and Aloha Rock Gym are street-level only (OSM street way, no Google-derived coordinates) and have an owner pin check in MANUAL-CHECK.md.
   - Same-chain pairs flagged as related or same website, 3-9 km apart with separate addresses: Flagstaff Climbing Downtown Crag / Main Street Boulders; Stone Age Midtown / North.
   - Different businesses flagged as related-name or nearby: The Circuit Bend / Bend Rock Gym; Crux Rock Gym / Elevation (82 m, downtown Eugene); Movement Portland / Tomo (116 m, Pearl District).
   - The Edge Climbing Gym: single-source flag cleared by adding the Google Maps place as a second location source; bouldering shown only by its own boulder league/competition pages (see MANUAL-CHECK.md).
