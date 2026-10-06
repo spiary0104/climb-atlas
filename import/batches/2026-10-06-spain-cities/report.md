@@ -4,19 +4,19 @@
 
 | What would happen | Records |
 |---|---:|
-| Insert as NEW gyms | 40 |
+| Insert as NEW gyms | 38 |
 | Update existing gyms (explicit update records) | 0 |
 | Already exist — no action (identical content: 0; content differs, NOT applied: 0) | 0 |
 | Probable duplicates — need a human decision | 0 |
 | Invalid — rejected | 0 |
 | Rejected by a human decision | 0 |
-| **Total records in batch** | 40 |
+| **Total records in batch** | 38 |
 
-Index: 2438 known gyms (sha256 27073d25c2df…). Plan: 5404f7c2aa35…
+Index: 2438 known gyms (sha256 27073d25c2df…). Plan: d3c8f0f07c17…
 
-## New gyms (40)
+## New gyms (38)
 
-By country: ES 40
+By country: ES 38
 
 - line 1 `g-44e5cc575e` "Indoorwall Hospitalet de Llobregat" (ES)
 - line 2 `g-8537623c7f` "Indoorwall Manresa" (ES)
@@ -33,5 +33,5 @@ By country: ES 40
 - line 13 `g-0ba439ce08` "La Bloquera" (ES)
 - line 14 `g-ea022bf312` "Rockart Climbing & Coworking" (ES)
 - line 15 `g-c2853cbb56` "Monobloc Reus" (ES)
-- … and 25 more (see plan.json)
+- … and 23 more (see plan.json)
 

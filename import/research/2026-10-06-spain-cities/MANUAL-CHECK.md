@@ -1,14 +1,16 @@
 # Manual check: Spain cities (2026-10-06-spain-cities)
 
-Low-confidence gyms are kept out of the batch. The first table is three real candidates (decision `defer`); the second lists gyms found but not made candidates (no bouldering evidence on the gym's own site, no coordinate source, or no readable site). Nothing here is staged.
+Low-confidence gyms are kept out of the batch. The first table is five real candidates (decision `defer`); the second lists gyms found but not made candidates (no bouldering evidence on the gym's own site, no coordinate source, or no readable site). Nothing here is staged.
 
-## Candidates deferred (3)
+## Candidates deferred (5)
 
 | Gym | Town | URL(s) | The ONE question | Found so far |
 |---|---|---|---|---|
 | Indoorwall Vic (es-003) | Vic | https://www.indoorwall.com/en/indoorwall-climbing-gyms/ | Does the Vic centre have a boulder area? | On the chain's current centre list (Carrer de Santiago Ramón y Cajal 87). indoorwall.com blocks direct fetches (Cloudflare 403), so only a search-engine extract of the list was seen, with no boulder statement for Vic. Pin is street-level (house number not in OSM). If yes: accept. |
 | Indoorwall Vilanova i la Geltrú (es-004) | Vilanova i la Geltrú | https://www.indoorwall.com/en/indoorwall-climbing-gyms/indoorwall-vilanova/ | Does the Vilanova centre have a boulder area? | Same as above. Pin is the gym's own OSM node 10312159320 (Carrer de la Masia del Notari 27; the chain prints "Avinguda en Notari 27"). |
 | Indoorwall Getafe (es-025) | Getafe | https://www.indoorwall.com/centros-indoorwall-rocodromos/indoorwall-getafe/ | Does the Getafe centre have a boulder area? | Hours (Mon-Fri 9:30-23), day pass 13.50 EUR, hosted the Copa de España de Dificultad 2025 (lead climbing); no boulder statement seen. Pin is OSM node 13160572602. |
+| Can Bombo (es-040) | Olot | https://www.canbombo.cat/horaris-tarifes/ ; https://www.instagram.com/can_bombo/ | Is it open now (2026 posts or hours)? | Own site has weekly hours, adult entry 9 EUR, blocs in its sectors and a closure notice for 4-13 September (year not stated), but the last news post is 22 Nov 2024. Pin is OSM node 6558072102. If open: accept. |
+| Boulder Vallecas (es-043) | Madrid | https://bouldervallecas.com/ | Is it open now (2026 posts or hours)? | Own site page dated Apr 2025: bouldering gym since 2010, free climbing 50 EUR/month, weekday slots 7:00-17:30, no single-day price; no 2026 content seen. Pin is OSM node 9724951067 (Camino de las Hormigueras 174; site says 175). If open: accept. |
 
 ## Found but not candidates
 
