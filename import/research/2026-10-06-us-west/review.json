@@ -1,0 +1,287 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-06-us-west",
+ "reviewer": "Spiar (owner); decisions drafted by Claude (AI) on the owner's instruction, pending owner sign-off",
+ "reviewed": "2026-10-06",
+ "decisions": {
+  "us-ak-alaska-rock-gym": {
+   "decision": "accept",
+   "reason": "Far-from-country warning is expected: the gym is in Anchorage, Alaska (own site address 665 E 33rd Ave; OSM way \"Alaska Rock Gym\" at the same address), 61.19 N -149.87 W. First Bouldeer gym in Alaska.",
+   "reviewed_against": []
+  },
+  "us-ak-ascension-rock-club": {
+   "decision": "accept",
+   "reason": "Far-from-country warning is expected: the gym is in Fairbanks, Alaska (own site 195 Alta Way; Nominatim house match 64.81 N -147.71 W). First Bouldeer gym in Fairbanks.",
+   "reviewed_against": []
+  },
+  "us-ak-the-rock-dump": {
+   "decision": "accept",
+   "reason": "Primary source (own site or chain location page) read 2026-10-06 confirms the gym exists, is operating, has the address, and offers bouldering; the pin is the gym's own OSM element or an OSM/Nominatim house-number match; no importer or review flags."
+  },
+  "us-az-alta-boulders-chandler": {
+   "decision": "accept",
+   "reason": "Primary source (own site or chain location page) read 2026-10-06 confirms the gym exists, is operating, has the address, and offers bouldering; the pin is the gym's own OSM element or an OSM/Nominatim house-number match; no importer or review flags."
+  },
+  "us-az-alta-climbing-gilbert": {
+   "decision": "accept",
+   "reason": "Primary source (own site or chain location page) read 2026-10-06 confirms the gym exists, is operating, has the address, and offers bouldering; the pin is the gym's own OSM element or an OSM/Nominatim house-number match; no importer or review flags."
+  },
+  "us-az-alta-climbing-scottsdale": {
+   "decision": "defer",
+   "reason": "The Scottsdale location page shows hours but never mentions bouldering; only the chain-wide page says every ALTA gym has bouldering. Owner check listed in MANUAL-CHECK.md."
+  },
+  "us-az-ape-index-climbing-gym": {
+   "decision": "accept",
+   "reason": "Primary source (own site or chain location page) read 2026-10-06 confirms the gym exists, is operating, has the address, and offers bouldering; the pin is the gym's own OSM element or an OSM/Nominatim house-number match; no importer or review flags."
+  },
+  "us-az-beta-bouldering-gym": {
+   "decision": "accept",
+   "reason": "Primary source (own site or chain location page) read 2026-10-06 confirms the gym exists, is operating, has the address, and offers bouldering; the pin is the gym's own OSM element or an OSM/Nominatim house-number match; no importer or review flags."
+  },
+  "us-az-black-rock-bouldering-gym": {
+   "decision": "accept",
+   "reason": "Primary source (own site or chain location page) read 2026-10-06 confirms the gym exists, is operating, has the address, and offers bouldering; the pin is the gym's own OSM element or an OSM/Nominatim house-number match; no importer or review flags."
+  },
+  "us-az-bouldering-project-tempe": {
+   "decision": "accept",
+   "reason": "Primary source (own site or chain location page) read 2026-10-06 confirms the gym exists, is operating, has the address, and offers bouldering; the pin is the gym's own OSM element or an OSM/Nominatim house-number match; no importer or review flags."
+  },
+  "us-az-flagstaff-climbing-downtown-crag": {
+   "decision": "accept",
+   "reason": "Same website as Main Street Boulders, which is a different gym: Downtown Crag is at 205 S San Francisco St (downtown, rope + bouldering) and Main Street Boulders at 1519 N Main St (bouldering/training center), 3 km apart; the chain's own contact page lists both with separate phone numbers.",
+   "reviewed_against": [
+    "us-az-flagstaff-climbing-main-street-boulders"
+   ]
+  },
+  "us-az-flagstaff-climbing-main-street-boulders": {
+   "decision": "accept",
+   "reason": "Same website as Downtown Crag, which is a different gym: Main Street Boulders is at 1519 N Main St Suite 107, Downtown Crag at 205 S San Francisco St, about 3 km apart, with separate phone numbers and hours on the chain's contact page.",
+   "reviewed_against": [
+    "us-az-flagstaff-climbing-downtown-crag"
+   ]
+  },
+  "us-az-focus-climbing-center": {
+   "decision": "defer",
+   "reason": "Official site is geo-blocked from the research network, so open status and a bouldering offer could not be read. Owner check listed in MANUAL-CHECK.md."
+  },
+  "us-az-phoenix-rock-gym": {
+   "decision": "accept",
+   "reason": "Primary source (own site or chain location page) read 2026-10-06 confirms the gym exists, is operating, has the address, and offers bouldering; the pin is the gym's own OSM element or an OSM/Nominatim house-number match; no importer or review flags."
+  },
+  "us-az-rock-solid-climbing": {
+   "decision": "accept",
+   "reason": "Primary source (own site or chain location page) read 2026-10-06 confirms the gym exists, is operating, has the address, and offers bouldering; the pin is the gym's own OSM element or an OSM/Nominatim house-number match; no importer or review flags."
+  },
+  "us-az-rocks-and-ropes-downtown": {
+   "decision": "defer",
+   "reason": "The site describes bouldering walls only for The BLOC; no page says the Downtown gym has a bouldering area. Owner check listed in MANUAL-CHECK.md."
+  },
+  "us-az-the-bloc-tucson": {
+   "decision": "accept",
+   "reason": "Primary source (own site or chain location page) read 2026-10-06 confirms the gym exists, is operating, has the address, and offers bouldering; the pin is the gym's own OSM element or an OSM/Nominatim house-number match; no importer or review flags."
+  },
+  "us-hi-aloha-rock-gym": {
+   "decision": "accept",
+   "reason": "Far-from-country warning is expected: Maui, Hawaii. Own site address 72 Lauo Loop, Kahului; Google Maps place pin for the gym at 20.886 N -156.450 W.",
+   "reviewed_against": []
+  },
+  "us-hi-big-island-climbing": {
+   "decision": "accept",
+   "reason": "Far-from-country warning is expected: Hilo, Hawaii. Own site address 126 Keawe St; OSM node named \"Big Island Climbing\" at the same address.",
+   "reviewed_against": []
+  },
+  "us-hi-hiclimb": {
+   "decision": "accept",
+   "reason": "Far-from-country warning is expected: Honolulu, Hawaii. Own site address 825 Ilaniwai St; OSM node \"HiClimb\" at the same address.",
+   "reviewed_against": []
+  },
+  "us-hi-oahu-bouldering-gym": {
+   "decision": "accept",
+   "reason": "Far-from-country warning is expected: Waipahu, Oahu, Hawaii. Own site address 94-503 Uke'e St; OSM node \"Oahu Bouldering Gym\" at the same address.",
+   "reviewed_against": []
+  },
+  "us-hi-volcanic-rock-gym": {
+   "decision": "accept",
+   "reason": "Far-from-country warning is expected: Kailua, Oahu, Hawaii. Own site address 161 Hamakua Dr; pin from the gym's Google Maps place (21.391 N -157.742 W).",
+   "reviewed_against": []
+  },
+  "us-id-asana-climbing-gym": {
+   "decision": "accept",
+   "reason": "Primary source (own site or chain location page) read 2026-10-06 confirms the gym exists, is operating, has the address, and offers bouldering; the pin is the gym's own OSM element or an OSM/Nominatim house-number match; no importer or review flags."
+  },
+  "us-id-gemstone-climbing": {
+   "decision": "defer",
+   "reason": "Site states bouldering and gives an address, but shows no hours or dated activity (hours \"on Facebook/Instagram\"). Open status not confirmed from a primary page. Owner check listed in MANUAL-CHECK.md."
+  },
+  "us-id-teton-rock-gym": {
+   "decision": "reject",
+   "reason_code": "closed",
+   "reason": "Own home page (read 2026-10-06): final day of operation in the Driggs Recreation Center was Thursday 28 May after the city council ended its lease; memberships refunded."
+  },
+  "us-id-the-commons-climbing-gym": {
+   "decision": "accept",
+   "reason": "Primary source (own site or chain location page) read 2026-10-06 confirms the gym exists, is operating, has the address, and offers bouldering; the pin is the gym's own OSM element or an OSM/Nominatim house-number match; no importer or review flags."
+  },
+  "us-id-the-edge-climbing-gym": {
+   "decision": "accept",
+   "reason": "Single-source flag cleared: the gym's own site gives the address and hours (both the site and its embedded Google Maps place agree with the 2844 E 14th N, Ammon pin); a second source (Google Maps place) was added for the location. Bouldering shown by its own Boulder League and boulder competition event pages.",
+   "reviewed_against": []
+  },
+  "us-id-vertical-view-climbing-gym": {
+   "decision": "accept",
+   "reason": "Primary source (own site or chain location page) read 2026-10-06 confirms the gym exists, is operating, has the address, and offers bouldering; the pin is the gym's own OSM element or an OSM/Nominatim house-number match; no importer or review flags."
+  },
+  "us-mt-freestone-climbing": {
+   "decision": "accept",
+   "reason": "Primary source (own site or chain location page) read 2026-10-06 confirms the gym exists, is operating, has the address, and offers bouldering; the pin is the gym's own OSM element or an OSM/Nominatim house-number match; no importer or review flags."
+  },
+  "us-mt-hi-line-climbing-center": {
+   "decision": "accept",
+   "reason": "Primary source (own site or chain location page) read 2026-10-06 confirms the gym exists, is operating, has the address, and offers bouldering; the pin is the gym's own OSM element or an OSM/Nominatim house-number match; no importer or review flags."
+  },
+  "us-mt-rockfish-climbing-fitness": {
+   "decision": "accept",
+   "reason": "Primary source (own site or chain location page) read 2026-10-06 confirms the gym exists, is operating, has the address, and offers bouldering; the pin is the gym's own OSM element or an OSM/Nominatim house-number match; no importer or review flags."
+  },
+  "us-mt-spire-climbing-fitness": {
+   "decision": "accept",
+   "reason": "Primary source (own site or chain location page) read 2026-10-06 confirms the gym exists, is operating, has the address, and offers bouldering; the pin is the gym's own OSM element or an OSM/Nominatim house-number match; no importer or review flags."
+  },
+  "us-mt-steepworld": {
+   "decision": "accept",
+   "reason": "Primary source (own site or chain location page) read 2026-10-06 confirms the gym exists, is operating, has the address, and offers bouldering; the pin is the gym's own OSM element or an OSM/Nominatim house-number match; no importer or review flags."
+  },
+  "us-mt-stonetree-climbing-center": {
+   "decision": "accept",
+   "reason": "Primary source (own site or chain location page) read 2026-10-06 confirms the gym exists, is operating, has the address, and offers bouldering; the pin is the gym's own OSM element or an OSM/Nominatim house-number match; no importer or review flags."
+  },
+  "us-mt-the-mountain-project-bozeman": {
+   "decision": "accept",
+   "reason": "Primary source (own site or chain location page) read 2026-10-06 confirms the gym exists, is operating, has the address, and offers bouldering; the pin is the gym's own OSM element or an OSM/Nominatim house-number match; no importer or review flags."
+  },
+  "us-nm-santa-fe-climbing-center": {
+   "decision": "accept",
+   "reason": "Primary source (own site or chain location page) read 2026-10-06 confirms the gym exists, is operating, has the address, and offers bouldering; the pin is the gym's own OSM element or an OSM/Nominatim house-number match; no importer or review flags."
+  },
+  "us-nm-stone-age-midtown": {
+   "decision": "accept",
+   "reason": "Related name is the same chain's second gym: Stone Age North (6200 Alameda Blvd NE) is 9 km from Midtown (4130 Cutler Ave NE); the home page lists both with their own addresses, phones and hours.",
+   "reviewed_against": [
+    "us-nm-stone-age-north"
+   ]
+  },
+  "us-nm-stone-age-north": {
+   "decision": "accept",
+   "reason": "Related name is the same chain's second gym: Stone Age Midtown (4130 Cutler Ave NE) is 9 km from North (6200 Alameda Blvd NE); the home page lists both with their own addresses, phones and hours.",
+   "reviewed_against": [
+    "us-nm-stone-age-midtown"
+   ]
+  },
+  "us-or-bend-rock-gym": {
+   "decision": "accept",
+   "reason": "Related name is a different gym: The Circuit Bouldering Gym Bend (63051 NE Corporate Pl) is 5.8 km from Bend Rock Gym (1182 SE Centennial Ct); separate businesses, sites and addresses.",
+   "reviewed_against": [
+    "us-or-circuit-bend"
+   ]
+  },
+  "us-or-brimstone-boulders": {
+   "decision": "accept",
+   "reason": "Primary source (own site or chain location page) read 2026-10-06 confirms the gym exists, is operating, has the address, and offers bouldering; the pin is the gym's own OSM element or an OSM/Nominatim house-number match; no importer or review flags."
+  },
+  "us-or-circuit-bend": {
+   "decision": "accept",
+   "reason": "Related name is a different gym: Bend Rock Gym (1182 SE Centennial Ct) is 5.8 km from The Circuit Bend (63051 NE Corporate Pl); separate businesses, sites and addresses.",
+   "reviewed_against": [
+    "us-or-bend-rock-gym"
+   ]
+  },
+  "us-or-circuit-eugene": {
+   "decision": "accept",
+   "reason": "Primary source (own site or chain location page) read 2026-10-06 confirms the gym exists, is operating, has the address, and offers bouldering; the pin is the gym's own OSM element or an OSM/Nominatim house-number match; no importer or review flags."
+  },
+  "us-or-circuit-northeast": {
+   "decision": "accept",
+   "reason": "Primary source (own site or chain location page) read 2026-10-06 confirms the gym exists, is operating, has the address, and offers bouldering; the pin is the gym's own OSM element or an OSM/Nominatim house-number match; no importer or review flags."
+  },
+  "us-or-circuit-southwest": {
+   "decision": "accept",
+   "reason": "Primary source (own site or chain location page) read 2026-10-06 confirms the gym exists, is operating, has the address, and offers bouldering; the pin is the gym's own OSM element or an OSM/Nominatim house-number match; no importer or review flags."
+  },
+  "us-or-circuit-tigard": {
+   "decision": "accept",
+   "reason": "Primary source (own site or chain location page) read 2026-10-06 confirms the gym exists, is operating, has the address, and offers bouldering; the pin is the gym's own OSM element or an OSM/Nominatim house-number match; no importer or review flags."
+  },
+  "us-or-crux-rock-gym": {
+   "decision": "accept",
+   "reason": "Nearby gym is a different business: Elevation Bouldering Gym (348 Lincoln St) is 82 m from Crux Rock Gym (401 W 3rd Ave) in downtown Eugene; each has its own site, hours and OSM element.",
+   "reviewed_against": [
+    "us-or-elevation-bouldering-gym"
+   ]
+  },
+  "us-or-elevation-bouldering-gym": {
+   "decision": "accept",
+   "reason": "Nearby gym is a different business: Crux Rock Gym (401 W 3rd Ave) is 82 m from Elevation (348 Lincoln St) in downtown Eugene; each has its own site, hours and OSM element.",
+   "reviewed_against": [
+    "us-or-crux-rock-gym"
+   ]
+  },
+  "us-or-klimb-rock-gym": {
+   "decision": "defer",
+   "reason": "Site shows hours and memberships but no page describing a bouldering area (only an OSM tag). Owner check listed in MANUAL-CHECK.md."
+  },
+  "us-or-movement-portland": {
+   "decision": "accept",
+   "reason": "Nearby gym is a different business: Tomo Bouldering Club (1315 NW Overton St) is 116 m from Movement Portland (1405 NW 14th Ave) in the Pearl District; separate sites, addresses and OSM elements.",
+   "reviewed_against": [
+    "us-or-tomo-bouldering-club"
+   ]
+  },
+  "us-or-portland-rock-gym-beaverton": {
+   "decision": "accept",
+   "reason": "Primary source (own site or chain location page) read 2026-10-06 confirms the gym exists, is operating, has the address, and offers bouldering; the pin is the gym's own OSM element or an OSM/Nominatim house-number match; no importer or review flags."
+  },
+  "us-or-portland-rock-gym-northeast": {
+   "decision": "accept",
+   "reason": "Primary source (own site or chain location page) read 2026-10-06 confirms the gym exists, is operating, has the address, and offers bouldering; the pin is the gym's own OSM element or an OSM/Nominatim house-number match; no importer or review flags."
+  },
+  "us-or-rock-haven-climbing": {
+   "decision": "accept",
+   "reason": "Primary source (own site or chain location page) read 2026-10-06 confirms the gym exists, is operating, has the address, and offers bouldering; the pin is the gym's own OSM element or an OSM/Nominatim house-number match; no importer or review flags."
+  },
+  "us-or-rogue-rock-gym": {
+   "decision": "accept",
+   "reason": "Primary source (own site or chain location page) read 2026-10-06 confirms the gym exists, is operating, has the address, and offers bouldering; the pin is the gym's own OSM element or an OSM/Nominatim house-number match; no importer or review flags."
+  },
+  "us-or-skyhook-bouldering": {
+   "decision": "accept",
+   "reason": "Primary source (own site or chain location page) read 2026-10-06 confirms the gym exists, is operating, has the address, and offers bouldering; the pin is the gym's own OSM element or an OSM/Nominatim house-number match; no importer or review flags."
+  },
+  "us-or-stoneworks-climbing-gym": {
+   "decision": "accept",
+   "reason": "Primary source (own site or chain location page) read 2026-10-06 confirms the gym exists, is operating, has the address, and offers bouldering; the pin is the gym's own OSM element or an OSM/Nominatim house-number match; no importer or review flags."
+  },
+  "us-or-the-jug-rock-gym": {
+   "decision": "accept",
+   "reason": "Primary source (own site or chain location page) read 2026-10-06 confirms the gym exists, is operating, has the address, and offers bouldering; the pin is the gym's own OSM element or an OSM/Nominatim house-number match; no importer or review flags."
+  },
+  "us-or-the-rock-boxx": {
+   "decision": "accept",
+   "reason": "Primary source (own site or chain location page) read 2026-10-06 confirms the gym exists, is operating, has the address, and offers bouldering; the pin is the gym's own OSM element or an OSM/Nominatim house-number match; no importer or review flags."
+  },
+  "us-or-tomo-bouldering-club": {
+   "decision": "accept",
+   "reason": "Nearby gym is a different business: Movement Portland (1405 NW 14th Ave) is 116 m from Tomo Bouldering Club (1315 NW Overton St) in the Pearl District; separate sites, addresses and OSM elements.",
+   "reviewed_against": [
+    "us-or-movement-portland"
+   ]
+  },
+  "us-or-valley-rock-gym": {
+   "decision": "accept",
+   "reason": "Primary source (own site or chain location page) read 2026-10-06 confirms the gym exists, is operating, has the address, and offers bouldering; the pin is the gym's own OSM element or an OSM/Nominatim house-number match; no importer or review flags."
+  },
+  "us-wy-source-bouldering-gym": {
+   "decision": "defer",
+   "reason": "Only a github.io page found (no confirmed official site); it states bouldering and hours. Owner check listed in MANUAL-CHECK.md."
+  }
+ }
+}
