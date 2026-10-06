@@ -31,7 +31,9 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 ### Community publishing (Phase 4)
 - Publish-then-review for edits, photos and confirm points are not built (gym-information edits still wait for moderation).
 ### Map performance
-- MapLibre blocks first paint; the next step is architectural (lazy map or static first view).
+- Lazy map done on `perf/lazy-map` (2026-10-06): MapLibre loads after the first list render, modulepreload, parallel gym pages.
+  Next if needed: Fraunces (118 KB) still competes with the list on slow phones; on desktop the bare basemap now shows ~1 s
+  later (pins sooner); a static snapshot first view (option B) was not taken.
 
 ## Blocked
 - _(none)_

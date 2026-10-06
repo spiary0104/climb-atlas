@@ -1,13 +1,34 @@
 // MapLibre map (DESIGN.md sec. 7.7-7.8): globe setup, supercluster clusters, type-colour pins, region/country/continent
 // labels, the locate control. Knows nothing about the list: explore.js registers handlers (setMapHandlers) and drives
 // selection through refreshPin().
+// MapLibre itself (270 KB) loads after the gym list (startMap, from main.js), so it never delays the list or a page.
+// Until it is there, `map` below stands in for it: it holds the camera, answers getZoom/getCenter/viewBounds from it and
+// queues event listeners; from then on every call goes to the real map.
 import { CONTINENT_LABEL_ZOOM, COUNTRY_FLY_TARGETS, COUNTRY_LABELS, COUNTRY_LABEL_ZOOM, COUNTRY_TO_REGION, HOLD_ICON_ZOOM, PIN_DOT_MAX_ZOOM, REGION_FLY_TARGETS, REGION_LABELS, TYPE_LABELS, motion } from './constants.js';
-import { boundsOf, decodeExploreState, stackOffsets } from './geo.js';
+import { boundsOf, decodeExploreState, fitCamera, stackOffsets, viewBox } from './geo.js';
 import { pinSvg } from './pin-html.js';
 import { STATES_BY_COUNTRY } from './regions.js';
 import { appState } from './state.js';
 
 export const LAST_CAMERA_KEY = 'bouldeer_last_camera';
+
+// Pinned like the stylesheet in index.html (same version; tests/perf-load.test.js checks both).
+const MAPLIBRE_SRC = 'https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.js';
+const MAPLIBRE_SRI = 'sha384-5+cfbwT0iiub6VsQAdn6yz16nr6sDiQoHx6tm4O8OVYXHYOxcffFmCJBL0dgdvGp';
+let libraryLoad = null;
+// The MapLibre library, loaded once on first use (Explore after the list, a page's mini map, /add). Rejects when it cannot
+// be downloaded (offline before it was ever cached); a later call tries again.
+export function mapLibrary(){
+  if(window.maplibregl) return Promise.resolve(window.maplibregl);
+  if(!libraryLoad) libraryLoad = new Promise((resolve, reject) => {
+    const s = document.createElement('script');
+    s.src = MAPLIBRE_SRC; s.integrity = MAPLIBRE_SRI; s.crossOrigin = 'anonymous';
+    s.onload = () => window.maplibregl ? resolve(window.maplibregl) : reject(new Error('MapLibre did not define maplibregl'));
+    s.onerror = () => { libraryLoad = null; s.remove(); reject(new Error('Could not download MapLibre')); };
+    document.head.appendChild(s);
+  });
+  return libraryLoad;
+}
 
 // Landing (sec. 19 decision 5): the camera in the URL, else the last camera on this device. The home-country fallback
 // needs the gym data, so explore.js applies it after loading; until then the globe is framed as a world view.
@@ -34,13 +55,38 @@ export function worldZoom(){
 export const BASEMAP_STYLE = 'https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json';
 // Document pages (gym, region, city) show small maps on paper: CARTO Positron recoloured to the paper tokens (paperBasemap).
 export const PAPER_STYLE = 'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json';
-export const map = new maplibregl.Map({
-  container: 'map',
-  style: BASEMAP_STYLE,
-  center: landingCamera ? [landingCamera.lng, landingCamera.lat] : [-162, 10],
-  zoom: landingCamera ? landingCamera.zoom : worldZoom(),
-  attributionControl: {compact: true}
-});
+
+let gl = null;                                   // the MapLibre map, once startMap has made it
+const listeners = [];                            // [type, fn] registered through map.on, attached to the real map too
+const waiting = [];                              // whenMap callbacks
+// The camera before the map exists. zoom null = the world view, sized to the map element when it is first read.
+const cam = landingCamera ? { lng: landingCamera.lng, lat: landingCamera.lat, zoom: landingCamera.zoom } : { lng: -162, lat: 10, zoom: null };
+const camZoom = () => cam.zoom ?? worldZoom();
+const mapSize = () => { const el = document.getElementById('map'); return [el.clientWidth, el.clientHeight]; };
+// A camera move before the map exists lands at once (no animation to show) and reports 'moveend', as MapLibre's jumpTo does.
+function moveCam(o){
+  if(o.center){ const [lng, lat] = Array.isArray(o.center) ? o.center : [o.center.lng, o.center.lat]; Object.assign(cam, { lng, lat }); }
+  if(Number.isFinite(o.zoom)) cam.zoom = o.zoom;
+  listeners.filter(([type]) => type === 'moveend').forEach(([, fn]) => fn({}));
+}
+export const map = {
+  getZoom: () => gl ? gl.getZoom() : camZoom(),
+  getCenter: () => gl ? gl.getCenter() : { lng: cam.lng, lat: cam.lat },
+  jumpTo: o => gl ? gl.jumpTo(o) : moveCam(o),
+  flyTo: o => gl ? gl.flyTo(o) : moveCam(o),
+  easeTo: o => gl ? gl.easeTo(o) : moveCam(o),
+  fitBounds(b, o = {}){
+    if(gl) return gl.fitBounds(b, o);
+    const [w, h] = mapSize(), c = fitCamera({ west: b[0][0], south: b[0][1], east: b[1][0], north: b[1][1] }, w, h,
+      { minZoom: 0, maxZoom: o.maxZoom ?? 22, padding: Number.isFinite(o.padding) ? o.padding : 0, tileSize: 512 });
+    moveCam({ center: [c.lng, c.lat], zoom: c.zoom });
+  },
+  resize(){ if(gl) gl.resize(); },
+  getContainer: () => document.getElementById('map'),
+  on(type, fn){ listeners.push([type, fn]); if(gl) gl.on(type, fn); },
+};
+// fn(realMap) once the MapLibre map exists (at once if it already does).
+export function whenMap(fn){ if(gl) fn(gl); else waiting.push(fn); }
 
 // explore.js supplies these; defaults keep the map usable on its own.
 const handlers = {
@@ -50,7 +96,8 @@ const handlers = {
 export function setMapHandlers(h){ Object.assign(handlers, h); }
 
 export function viewBounds(){
-  const b = map.getBounds();
+  if(!gl){ const [w, h] = mapSize(); return viewBox({ lng: cam.lng, lat: cam.lat, zoom: camZoom() }, w, h); }
+  const b = gl.getBounds();
   return boundsOf(b.getWest(), b.getSouth(), b.getEast(), b.getNorth());
 }
 
@@ -113,11 +160,11 @@ function clearPaintedMarkers(){
 const pinKindAt = zoom => Math.floor(zoom) <= PIN_DOT_MAX_ZOOM ? 'dot' : 'teardrop';
 
 export function paintMarkers(){
-  if(!appState.supercluster) return;
-  const b = map.getBounds();
+  if(!appState.supercluster || !gl) return;     // startMap paints once the map exists
+  const b = gl.getBounds();
   const bbox = [b.getWest(), b.getSouth(), b.getEast(), b.getNorth()];
-  const zoom = Math.floor(map.getZoom());
-  const kind = pinKindAt(map.getZoom());
+  const zoom = Math.floor(gl.getZoom());
+  const kind = pinKindAt(gl.getZoom());
   if(kind !== appState.lastPinKind){
     // Crossed the dot/teardrop threshold: every painted pin has the wrong shape and anchor now.
     Object.values(appState.markerEls).forEach(e=>e.marker.remove());
@@ -173,7 +220,7 @@ function paintRegionLabels(bbox, zoom){
     const source = showContinentTier ? appState.continentCentroids : showCountryTier ? appState.countryCentroids : appState.regionCentroids;
     const candidates = Object.entries(source)
       .filter(([,c])=> !(c.lng < bbox[0] || c.lng > bbox[2] || c.lat < bbox[1] || c.lat > bbox[3]))
-      .map(([key,c])=>({key, c, pt: map.project([c.lng, c.lat])}))
+      .map(([key,c])=>({key, c, pt: gl.project([c.lng, c.lat])}))
       .sort((a,b)=> b.c.count - a.c.count);
     const accepted = [];
     candidates.forEach(cand=>{
@@ -199,7 +246,7 @@ function paintRegionLabels(bbox, zoom){
         el.classList.add('state-tier-label');
       }
       // Offset below the cluster disc that usually sits at this same point.
-      appState.regionLabelMarkers[cand.key] = new maplibregl.Marker({element: el, offset: [0, 24]}).setLngLat([cand.c.lng, cand.c.lat]).addTo(map);
+      appState.regionLabelMarkers[cand.key] = new maplibregl.Marker({element: el, offset: [0, 24]}).setLngLat([cand.c.lng, cand.c.lat]).addTo(gl);
     });
   }
   Object.keys(appState.regionLabelMarkers).forEach(key=>{
@@ -215,7 +262,7 @@ function buildClusterMarker(clusterId, count, lngLat){
   el.setAttribute('role', 'img');
   el.setAttribute('aria-label', count + ' gyms');
   el.addEventListener('click', ()=> handlers.onClusterClick({clusterId, lngLat, count}));
-  return new maplibregl.Marker({element: el}).setLngLat(lngLat).addTo(map);
+  return new maplibregl.Marker({element: el}).setLngLat(lngLat).addTo(gl);
 }
 
 function pinState(id){
@@ -251,7 +298,7 @@ function buildPin(g, kind){
   el.addEventListener('mouseenter', ()=> handlers.onPinHover(g.id));
   el.addEventListener('mouseleave', ()=> handlers.onPinHover(null));
   const offset = appState.stackOffsets.get(g.id) || [0, 0];
-  const marker = new maplibregl.Marker({element: el, anchor: kind === 'dot' ? 'center' : 'bottom', offset}).setLngLat([g.lng, g.lat]).addTo(map);
+  const marker = new maplibregl.Marker({element: el, anchor: kind === 'dot' ? 'center' : 'bottom', offset}).setLngLat([g.lng, g.lat]).addTo(gl);
   const entry = {marker, el, kind};
   paintPin(entry, g);
   return entry;
@@ -298,7 +345,7 @@ function toHsla(colour){
   const h = d === 0 ? 0 : max === r ? 60 * (((g - b) / d) % 6) : max === g ? 60 * ((b - r) / d + 2) : 60 * ((r - g) / d + 4);
   return {h: (h + 360) % 360, s, l, a};
 }
-export function warmBasemap(target = map){
+export function warmBasemap(target = gl){
   const tint = toHsla(cssToken('--map-tint')), floor = toHsla(cssToken('--map-canvas')).l;
   const warm = c => {
     if(typeof c !== 'string' || c === 'transparent') return c;
@@ -345,20 +392,51 @@ export function paperBasemap(target){
   }
 }
 
+// Listeners that do not need the real map yet: pins repaint on every move, an empty-map click clears the selection.
 export function initMap(){
-  map.addControl(new maplibregl.NavigationControl({showCompass:false}), 'bottom-right');
+  map.on('moveend', paintMarkers);
+  // A click on empty map clears the selection (sec. 7.3). Clicks on pins/clusters/labels bubble here too: ignore them.
+  map.on('click', (e)=>{
+    if(appState.isPlacing) return;
+    const t = e.originalEvent && e.originalEvent.target;
+    if(t && t.closest && t.closest('.pin, .cluster-marker, .region-label')) return;
+    handlers.onMapClick();
+  });
+}
+
+// Loads MapLibre and makes the Explore map at the camera held so far (main.js calls it once the gym list is in).
+export function startMap(){
+  return mapLibrary().then(lib => {
+    if(gl) return;
+    gl = new lib.Map({
+      container: 'map',
+      style: BASEMAP_STYLE,
+      center: [cam.lng, cam.lat],
+      zoom: camZoom(),
+      attributionControl: {compact: true}
+    });
+    setUpMap(lib);
+    listeners.forEach(([type, fn]) => gl.on(type, fn));
+    clearPaintedMarkers();
+    paintMarkers();
+    waiting.splice(0).forEach(fn => fn(gl));
+  }).catch(err => console.warn('The map could not load; the list still works', err));
+}
+
+function setUpMap(lib){
+  gl.addControl(new lib.NavigationControl({showCompass:false}), 'bottom-right');
   // Location is never requested on load (sec. 19 decision 5); this control asks when the visitor taps it.
-  const locate = new maplibregl.GeolocateControl({positionOptions:{enableHighAccuracy:false, timeout:10000}, trackUserLocation:false, showAccuracyCircle:false});
-  map.addControl(locate, 'bottom-right');
+  const locate = new lib.GeolocateControl({positionOptions:{enableHighAccuracy:false, timeout:10000}, trackUserLocation:false, showAccuracyCircle:false});
+  gl.addControl(locate, 'bottom-right');
   locate.on('geolocate', (e)=> handlers.onLocate({lat: e.coords.latitude, lng: e.coords.longitude}));
   locate.on('error', ()=> handlers.onLocateError());
 
-  map.once('style.load', ()=>{
-    map.setProjection({type:'globe'});
+  gl.once('style.load', ()=>{
+    gl.setProjection({type:'globe'});
     try{ warmBasemap(); }catch(err){ console.warn('Could not warm the basemap colours', err); }
     try{
       // Atmosphere tinted to the rock palette rather than the default sky blue.
-      map.setSky({
+      gl.setSky({
         'sky-color': cssToken('--map-sky'),
         'sky-horizon-blend': 0.5,
         'horizon-color': cssToken('--map-horizon'),
@@ -373,27 +451,19 @@ export function initMap(){
     try{
       // CARTO's Dark Matter ships "roadname_major" at a near-black #383838 on a #111 halo -- the one road-label tier that
       // is unreadable (checked against map.getStyle().layers). Brightened to match the other tiers.
-      map.setPaintProperty('roadname_major', 'text-color', cssToken('--map-road-label'));
+      gl.setPaintProperty('roadname_major', 'text-color', cssToken('--map-road-label'));
     }catch(err){
       console.warn('roadname_major layer not found in this basemap style', err);
     }
     try{
       // The basemap's continent/country/state labels duplicate the app's own label tiers (paintRegionLabels): hide the
       // continent layer and push the country/state layers past the zooms where the app's equivalents show.
-      map.setLayoutProperty('place_continent', 'visibility', 'none');
-      map.setLayerZoomRange('place_country_1', COUNTRY_LABEL_ZOOM, 7);
-      map.setLayerZoomRange('place_country_2', COUNTRY_LABEL_ZOOM, 10);
-      map.setLayerZoomRange('place_state', HOLD_ICON_ZOOM, 10);
+      gl.setLayoutProperty('place_continent', 'visibility', 'none');
+      gl.setLayerZoomRange('place_country_1', COUNTRY_LABEL_ZOOM, 7);
+      gl.setLayerZoomRange('place_country_2', COUNTRY_LABEL_ZOOM, 10);
+      gl.setLayerZoomRange('place_state', HOLD_ICON_ZOOM, 10);
     }catch(err){
       console.warn('Basemap place-label layers not found in this style', err);
     }
-  });
-  map.on('moveend', paintMarkers);
-  // A click on empty map clears the selection (sec. 7.3). Clicks on pins/clusters/labels bubble here too: ignore them.
-  map.on('click', (e)=>{
-    if(appState.isPlacing) return;
-    const t = e.originalEvent && e.originalEvent.target;
-    if(t && t.closest && t.closest('.pin, .cluster-marker, .region-label')) return;
-    handlers.onMapClick();
   });
 }

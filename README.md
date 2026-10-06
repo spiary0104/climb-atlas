@@ -24,8 +24,8 @@ supabase/geocode.html    Maintenance tool — re-geocodes spot addresses against
 
 Script load order in `index.html` matters: the Supabase JS CDN script, then
 `supabase-init.js` (defines `window.sb`), then `auth.js` (defines `window.auth`), then
-`spots-prefetch.js` (starts the gym-list read before MapLibre downloads), then MapLibre and Supercluster, then
-`js/main.js` (an ES module, so the site must be served over HTTP), which depends on both.
+`spots-prefetch.js` (starts the gym-list read early), then Supercluster, then
+`js/main.js` (an ES module, so the site must be served over HTTP). MapLibre loads lazily from `js/modules/map.js` after the first list render.
 `data/spots-fallback.json` (~1.1MB) is not loaded on page load — `js/modules/data-load.js` fetches it on demand (`ensureFallbackData()`) only when
 Supabase is unreachable (the offline fallback). It is an id-correct export of the approved gyms from production (the Explore list columns), written by
 `node scripts/build-sitemap.js`, which is run after each data batch; do not edit it by hand. The legacy original dataset (the old `data/gyms.json`, whose ids

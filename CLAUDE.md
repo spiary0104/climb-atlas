@@ -44,7 +44,7 @@ design/mascot/deer/     The owner's deer renders: source of the character (DESIG
 design/tools/           Dev-only Python: mascot tracer + seal generator (not part of the app; README)
 js/supabase-init.js     window.sb (classic script)
 js/auth.js              window.auth (classic script)
-js/spots-prefetch.js    Starts the gym-list read before MapLibre loads (classic script; loadSpots takes it once)
+js/spots-prefetch.js    Starts the gym-list read before the app runs (classic script; loadSpots takes it once)
 js/main.js              Entry ES module: init*() in order, then boot
 js/sw-register.js       Service-worker registration
 js/modules/state.js     appState — ALL shared mutable state
@@ -83,7 +83,8 @@ docs/archive/           Old long-form docs — NEVER read
 ```
 
 Load order in `index.html`: Supabase CDN → `supabase-init.js` → `auth.js` →
-`spots-prefetch.js` → MapLibre → Supercluster → `main.js` (module) → `sw-register.js`.
+`spots-prefetch.js` → Supercluster → modulepreload links → `main.js` (module) → `sw-register.js`. MapLibre is not in
+the shell: map.js loads it after the first list render (`mapLibrary`/`startMap`).
 Keep every module under 800 lines; write shared state only via `appState`.
 
 ## Before modifying code
