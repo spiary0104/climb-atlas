@@ -1,0 +1,381 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-06-us-northeast",
+ "reviewer": "Spiar (owner); decisions drafted by Claude (AI) on the owner's instruction, pending owner sign-off",
+ "reviewed": "2026-10-06",
+ "decisions": {
+  "movement-callowhill": {
+   "decision": "accept",
+   "reason": "S MV (https://movementgyms.com/callowhill/, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own OSM element (node/9380749033). No flags (no gym within 150 m, no related name nearby, not in Bouldeer)."
+  },
+  "movement-fishtown": {
+   "decision": "accept",
+   "reason": "S MV (https://movementgyms.com/fishtown/, read 2026-10-06) confirms exists, open, address, bouldering; pin from the chain's own location list (Movement locations page, Fishtown record). No flags (no gym within 150 m, no related name nearby, not in Bouldeer)."
+  },
+  "movement-columbia": {
+   "decision": "accept",
+   "reason": "S MV (https://movementgyms.com/columbia/, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own OSM element (node/3347174412). No flags (no gym within 150 m, no related name nearby, not in Bouldeer)."
+  },
+  "movement-hampden": {
+   "decision": "accept",
+   "reason": "S MV (https://movementgyms.com/hampden/, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own OSM element (node/10179926308). Movement Timonium (1930 Greenspring Dr) is another site of the same chain, 10.8 km away at a different address; separate gyms, not a duplicate.",
+   "reviewed_against": [
+    "movement-timonium"
+   ]
+  },
+  "movement-rockville": {
+   "decision": "accept",
+   "reason": "S MV (https://movementgyms.com/rockville/, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own OSM element (node/1230207589). No flags (no gym within 150 m, no related name nearby, not in Bouldeer)."
+  },
+  "movement-timonium": {
+   "decision": "accept",
+   "reason": "S MV (https://movementgyms.com/timonium/, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own OSM element (node/10720317457). Movement Hampden (1700 W 41st St) is another site of the same chain, 10.8 km away at a different address; separate gyms, not a duplicate.",
+   "reviewed_against": [
+    "movement-hampden"
+   ]
+  },
+  "movement-crystal-city": {
+   "decision": "accept",
+   "reason": "S MV (https://movementgyms.com/crystal-city/, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own OSM element (node/4451251069). No flags (no gym within 150 m, no related name nearby, not in Bouldeer)."
+  },
+  "sportrock-lorton": {
+   "decision": "accept",
+   "reason": "S SR (https://www.sportrock.com/lorton, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own published map coordinate (schema.org LocalBusiness geo). Single-source flag: the gym's own site is the only evidence read, but it is a primary source for open status (hours, events or booking pages), address and bouldering; pin: the gym's own published map coordinate (schema.org LocalBusiness geo).",
+   "reviewed_against": []
+  },
+  "sportrock-rio": {
+   "decision": "accept",
+   "reason": "S SR (https://www.sportrock.com/rio, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own OSM element (node/11506692344). No flags (no gym within 150 m, no related name nearby, not in Bouldeer)."
+  },
+  "sportrock-sterling": {
+   "decision": "accept",
+   "reason": "S SR (https://www.sportrock.com/sterling, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own OSM element (way/964395942). No flags (no gym within 150 m, no related name nearby, not in Bouldeer)."
+  },
+  "sportrock-alexandria": {
+   "decision": "accept",
+   "reason": "S SR (https://www.sportrock.com/alexandria, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own OSM element (node/5910435788). No flags (no gym within 150 m, no related name nearby, not in Bouldeer)."
+  },
+  "bp-dc-eckington": {
+   "decision": "accept",
+   "reason": "S BP (https://boulderingproject.com/location/eckington/, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own OSM element (node/9325110517). No flags (no gym within 150 m, no related name nearby, not in Bouldeer)."
+  },
+  "prg-east-falls": {
+   "decision": "accept",
+   "reason": "S PRG (https://philarockgym.com/prg-east-falls/, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own published map coordinate (Google Maps place pin). Single-source flag: the gym's own site is the only evidence read, but it is a primary source for open status (hours, events or booking pages), address and bouldering; pin: the gym's own published map coordinate (Google Maps place pin).",
+   "reviewed_against": []
+  },
+  "prg-fishtown": {
+   "decision": "accept",
+   "reason": "S PRG (https://philarockgym.com/prg-fishtown/, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own published map coordinate (Google Maps place pin). Single-source flag: the gym's own site is the only evidence read, but it is a primary source for open status (hours, events or booking pages), address and bouldering; pin: the gym's own published map coordinate (Google Maps place pin).",
+   "reviewed_against": []
+  },
+  "prg-malvern": {
+   "decision": "accept",
+   "reason": "S PRG (https://philarockgym.com/prg-malvern/, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own published map coordinate (Google Maps place pin). Single-source flag: the gym's own site is the only evidence read, but it is a primary source for open status (hours, events or booking pages), address and bouldering; pin: the gym's own published map coordinate (Google Maps place pin).",
+   "reviewed_against": []
+  },
+  "prg-oaks": {
+   "decision": "accept",
+   "reason": "S PRG (https://philarockgym.com/prg-oaks/, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own published map coordinate (Google Maps place pin). Single-source flag: the gym's own site is the only evidence read, but it is a primary source for open status (hours, events or booking pages), address and bouldering; pin: the gym's own published map coordinate (Google Maps place pin).",
+   "reviewed_against": []
+  },
+  "prg-wyncote": {
+   "decision": "accept",
+   "reason": "S PRG (https://philarockgym.com/prg-wyncote/, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own published map coordinate (Google Maps place pin). Single-source flag: the gym's own site is the only evidence read, but it is a primary source for open status (hours, events or booking pages), address and bouldering; pin: the gym's own published map coordinate (Google Maps place pin).",
+   "reviewed_against": []
+  },
+  "tufas-philadelphia": {
+   "decision": "accept",
+   "reason": "S TUFAS (https://www.tufasboulderlounge.com/about, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own OSM element (node/13403525808). No flags (no gym within 150 m, no related name nearby, not in Bouldeer)."
+  },
+  "ascend-south-side": {
+   "decision": "accept",
+   "reason": "S ASC (https://www.ascendclimbing.com/locations/south-side-pittsburgh, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own OSM element (node/8270550325). No flags (no gym within 150 m, no related name nearby, not in Bouldeer)."
+  },
+  "ascend-point-breeze": {
+   "decision": "accept",
+   "reason": "S ASC (https://www.ascendclimbing.com/locations/point-breeze-pittsburgh, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own OSM element (way/533654915). No flags (no gym within 150 m, no related name nearby, not in Bouldeer)."
+  },
+  "ascend-erie": {
+   "decision": "accept",
+   "reason": "S ASC (https://www.ascendclimbing.com/locations/erie, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own OSM element (node/13808848544). No flags (no gym within 150 m, no related name nearby, not in Bouldeer)."
+  },
+  "iron-city-boulders": {
+   "decision": "accept",
+   "reason": "S ICB (https://ironcityboulders.com/, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own OSM element (node/11392943269). No flags (no gym within 150 m, no related name nearby, not in Bouldeer)."
+  },
+  "gv-brick": {
+   "decision": "accept",
+   "reason": "S GV (https://gravityvault.com/locations/brick-nj, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own OSM element (node/12188889865). No flags (no gym within 150 m, no related name nearby, not in Bouldeer)."
+  },
+  "gv-chatham": {
+   "decision": "accept",
+   "reason": "S GV (https://gravityvault.com/locations/chatham-nj, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own OSM element (node/13136482090). No flags (no gym within 150 m, no related name nearby, not in Bouldeer)."
+  },
+  "gv-flemington": {
+   "decision": "accept",
+   "reason": "S GV (https://gravityvault.com/locations/flemington-nj, read 2026-10-06) confirms exists, open, address, bouldering; no named gym element in OSM, pin is the Nominatim address match (way/533069139). No flags (no gym within 150 m, no related name nearby, not in Bouldeer)."
+  },
+  "gv-hoboken": {
+   "decision": "accept",
+   "reason": "S GV (https://gravityvault.com/locations/hoboken-nj, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own OSM element (way/665154078). No flags (no gym within 150 m, no related name nearby, not in Bouldeer)."
+  },
+  "gv-middletown": {
+   "decision": "accept",
+   "reason": "S GV (https://gravityvault.com/locations/middletown-nj, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own OSM element (node/13429327103). No flags (no gym within 150 m, no related name nearby, not in Bouldeer)."
+  },
+  "gv-montclair": {
+   "decision": "accept",
+   "reason": "S GV (https://gravityvault.com/locations/montclair-nj, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own OSM element (node/11233131476). No flags (no gym within 150 m, no related name nearby, not in Bouldeer)."
+  },
+  "gv-plainsboro": {
+   "decision": "accept",
+   "reason": "S GV (https://gravityvault.com/locations/princeton-nj, read 2026-10-06) confirms exists, open, address, bouldering; no named gym element in OSM, pin is the Nominatim address match (way/172452898). Street-level flag: the address is a shared shopping-centre address (10 Schalks Crossing Rd, several tenants) and the gym page only says it is next to the Asian Food Market, so the pin is a neighbouring tenant, about 100 m at most from the gym; accepted at street precision, to be refined with a location update if the owner wants it.",
+   "reviewed_against": []
+  },
+  "gv-upper-saddle-river": {
+   "decision": "accept",
+   "reason": "S GV (https://gravityvault.com/locations/upper-saddle-river-nj, read 2026-10-06) confirms exists, open, address, bouldering; no named gym element in OSM, pin is the Nominatim address match (way/27320377). No flags (no gym within 150 m, no related name nearby, not in Bouldeer)."
+  },
+  "gv-voorhees": {
+   "decision": "accept",
+   "reason": "S GV (https://gravityvault.com/locations/voorhees-nj, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own OSM element (node/5065657423). No flags (no gym within 150 m, no related name nearby, not in Bouldeer)."
+  },
+  "gv-lehigh-valley": {
+   "decision": "accept",
+   "reason": "S GV (https://gravityvault.com/locations/lehigh-valley-pa, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own OSM element (node/5160211552). No flags (no gym within 150 m, no related name nearby, not in Bouldeer)."
+  },
+  "gv-radnor": {
+   "decision": "defer",
+   "reason": "Owner rule: keep low-confidence gyms out. Official page lists \"100+ Rope Stations (78 Top-Rope Stations)\", lead areas, rappel tower, auto-belays and, under bouldering, only \"Bouldering (Moon Board)\" (a training board); no square footage or problem count. The other ten Gravity Vault gyms in this section state their bouldering area. Two OSM positions for 175 King of Prussia Rd differ by 510 m (gym node vs address polygon)."
+  },
+  "crg-glastonbury": {
+   "decision": "accept",
+   "reason": "S CRG (https://centralrockgym.com/glastonbury/, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own OSM element (node/14189458101). No flags (no gym within 150 m, no related name nearby, not in Bouldeer)."
+  },
+  "crg-west-hartford": {
+   "decision": "accept",
+   "reason": "S CRG (https://centralrockgym.com/west-hartford/, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own published map coordinate (Google Maps pin). Single-source flag: the gym's own site is the only evidence read, but it is a primary source for open status (hours, events or booking pages), address and bouldering; pin: the gym's own published map coordinate (Google Maps pin).",
+   "reviewed_against": []
+  },
+  "crg-warwick": {
+   "decision": "accept",
+   "reason": "S CRG (https://centralrockgym.com/warwick/, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own OSM element (node/13647533201). No flags (no gym within 150 m, no related name nearby, not in Bouldeer)."
+  },
+  "rsc-providence": {
+   "decision": "accept",
+   "reason": "S RSC (https://rockspotclimbing.com/locations/ri/providence/, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own OSM element (node/12838477101). No flags (no gym within 150 m, no related name nearby, not in Bouldeer)."
+  },
+  "rsc-lincoln": {
+   "decision": "accept",
+   "reason": "S RSC (https://rockspotclimbing.com/locations/ri/lincoln/, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own OSM element (node/13070103656). No flags (no gym within 150 m, no related name nearby, not in Bouldeer)."
+  },
+  "rsc-peace-dale": {
+   "decision": "accept",
+   "reason": "S RSC (https://rockspotclimbing.com/locations/ri/peacedale/, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own published map coordinate (Google Maps pin). Single-source flag: the gym's own site is the only evidence read, but it is a primary source for open status (hours, events or booking pages), address and bouldering; pin: the gym's own published map coordinate (Google Maps pin).",
+   "reviewed_against": []
+  },
+  "rsc-wallingford": {
+   "decision": "accept",
+   "reason": "S RSC (https://rockspotclimbing.com/locations/ct/wallingford/, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own published map coordinate (Google Maps pin). Single-source flag: the gym's own site is the only evidence read, but it is a primary source for open status (hours, events or booking pages), address and bouldering; pin: the gym's own published map coordinate (Google Maps pin).",
+   "reviewed_against": []
+  },
+  "rsc-new-haven": {
+   "decision": "accept",
+   "reason": "S RSC (https://rockspotclimbing.com/locations/ct/newhaven/, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own published map coordinate (Google Maps pin). Ascent Climbing Gym (470 James St, Suite 004) is a different gym 1.9 km away with a different owner and website. Single-source flag: the gym's own site is the only evidence read, but it is a primary source for open status (hours, events or booking pages), address and bouldering; pin: the gym's own published map coordinate (Google Maps pin).",
+   "reviewed_against": [
+    "ascent-new-haven"
+   ]
+  },
+  "reach-bridgeport": {
+   "decision": "accept",
+   "reason": "S REACH (https://reachclimbing.com/visit, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own OSM element (way/1346420359). No flags (no gym within 150 m, no related name nearby, not in Bouldeer)."
+  },
+  "downingtown-rock-gym": {
+   "decision": "accept",
+   "reason": "S DRG (https://downingtownrockgym.com/, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own OSM element (way/554321788). No flags (no gym within 150 m, no related name nearby, not in Bouldeer)."
+  },
+  "doylestown-rock-gym": {
+   "decision": "accept",
+   "reason": "S DOYRG (https://doylestownrockgym.com/, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own OSM element (way/554738524). No flags (no gym within 150 m, no related name nearby, not in Bouldeer)."
+  },
+  "method-newark": {
+   "decision": "accept",
+   "reason": "S METHOD (https://methodclimb.com/, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own OSM element (node/8205009342). No flags (no gym within 150 m, no related name nearby, not in Bouldeer)."
+  },
+  "randolph-climbing-center": {
+   "decision": "accept",
+   "reason": "S RCC (https://randolphclimbingcenter.com/, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own OSM element (node/14156567966). No flags (no gym within 150 m, no related name nearby, not in Bouldeer)."
+  },
+  "vr-manassas": {
+   "decision": "accept",
+   "reason": "S VR (https://climb-va.com/manassas/, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own OSM element (node/9984967217). No flags (no gym within 150 m, no related name nearby, not in Bouldeer)."
+  },
+  "vr-tysons": {
+   "decision": "accept",
+   "reason": "S VR (https://climb-va.com/tysons/, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own OSM element (node/10932018011). No flags (no gym within 150 m, no related name nearby, not in Bouldeer)."
+  },
+  "boulder-yard-frederick": {
+   "decision": "accept",
+   "reason": "S BYMD (https://www.theboulderyardmd.com/, read 2026-10-06) confirms exists, open, address, bouldering; no named gym element in OSM, pin is the Nominatim address match (way/239526876). No flags (no gym within 150 m, no related name nearby, not in Bouldeer)."
+  },
+  "petra-cliffs-burlington": {
+   "decision": "accept",
+   "reason": "S PETRA (https://www.petracliffs.com/, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own OSM element (way/185357292). No flags (no gym within 150 m, no related name nearby, not in Bouldeer)."
+  },
+  "salt-pump-scarborough": {
+   "decision": "accept",
+   "reason": "S SALTP (https://www.saltpumpclimbing.com/scarborough-maine/plan-a-visit, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own OSM element (way/862155827). No flags (no gym within 150 m, no related name nearby, not in Bouldeer)."
+  },
+  "salt-pump-portsmouth": {
+   "decision": "accept",
+   "reason": "S SALTP (https://www.saltpumpclimbing.com/portsmouth-new-hampshire/, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own OSM element (node/12526993765). No flags (no gym within 150 m, no related name nearby, not in Bouldeer)."
+  },
+  "evo-portland": {
+   "decision": "accept",
+   "reason": "S EVO (https://www.evorock.com/portland-me/info-membership/facility, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own OSM element (way/697572559). No flags (no gym within 150 m, no related name nearby, not in Bouldeer)."
+  },
+  "vertical-dreams-manchester": {
+   "decision": "defer",
+   "reason": "Owner rule: keep low-confidence gyms out. Own site says \"New Hampshire's tallest climbing wall with top roping, lead climbing, bouldering\" and lists hours (Mon-Fri 3-9pm, Sat 11-8, Sun 11-7) at 250 Commercial St, 5th floor of the Waumbec Mill, but the footer is 2017, the Nashua page redirects into an \"oldwebsitearchive\" path and no dated content was found. Bouldering extent not stated. Nashua has no candidate record (no coordinate source)."
+  },
+  "goat-hackensack": {
+   "decision": "defer",
+   "reason": "Owner rule: keep low-confidence gyms out. Own home page (read through the fetch tool; plain requests get a bot check) gives 77 River Street, hours Mon-Fri 10am-10pm, Sat 10am-8pm, Sun 10am-6pm and describes \"roped climbing options on state-of-the-art walls ranging from 25-60 ft\"; no bouldering is mentioned on the page read. Other pages were not checked."
+  },
+  "peak-richmond": {
+   "decision": "accept",
+   "reason": "S PEAK (https://www.peakexperiences.com/locations, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own OSM element (node/12461479458). Peak Midlothian (11421 Polo Cir) and Peak Richmond (1375 Overbrook Rd) are the two sites of one company that share a website; 14.2 km apart, different addresses and hours, so separate gyms.",
+   "reviewed_against": [
+    "peak-midlothian"
+   ]
+  },
+  "peak-midlothian": {
+   "decision": "accept",
+   "reason": "S PEAK (https://www.peakexperiences.com/locations, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own OSM element (way/718148129). Peak Richmond (1375 Overbrook Rd) and Peak Midlothian (11421 Polo Cir) are the two sites of one company that share a website; 14.2 km apart, different addresses and hours, so separate gyms.",
+   "reviewed_against": [
+    "peak-richmond"
+   ]
+  },
+  "latitude-virginia-beach": {
+   "decision": "accept",
+   "reason": "S LAT (https://latitudeclimbing.com/, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own OSM element (node/9101685334). No flags (no gym within 150 m, no related name nearby, not in Bouldeer)."
+  },
+  "latitude-norfolk": {
+   "decision": "accept",
+   "reason": "S LAT (https://latitudeclimbing.com/, read 2026-10-06) confirms exists, open, address, bouldering; no named gym element in OSM, pin is the Nominatim address match (node/11715608258). No flags (no gym within 150 m, no related name nearby, not in Bouldeer)."
+  },
+  "latitude-hampton": {
+   "decision": "accept",
+   "reason": "S LAT (https://latitudeclimbing.com/hampton, read 2026-10-06) confirms exists, open, address, bouldering; no named gym element in OSM, pin is the Nominatim address match (node/9448430867). No flags (no gym within 150 m, no related name nearby, not in Bouldeer)."
+  },
+  "rocky-top-charlottesville": {
+   "decision": "accept",
+   "reason": "S ROCKYTOP (https://www.rockytopclimbing.com/, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own OSM element (way/396518862). No flags (no gym within 150 m, no related name nearby, not in Bouldeer)."
+  },
+  "rise-up-lynchburg": {
+   "decision": "accept",
+   "reason": "S RISEUP (https://www.riseupclimbing.com/visit, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own OSM element (way/619907421). No flags (no gym within 150 m, no related name nearby, not in Bouldeer)."
+  },
+  "state-climb-culpeper": {
+   "decision": "accept",
+   "reason": "S STATECLIMB (https://stateclimb.com/, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own OSM element (node/11608828727). No flags (no gym within 150 m, no related name nearby, not in Bouldeer)."
+  },
+  "river-rock-roanoke": {
+   "decision": "accept",
+   "reason": "S RIVERROCK (https://riverrockclimbing.com/about-the-gym, read 2026-10-06) confirms exists, open, address, bouldering; no named gym element in OSM, pin is the Nominatim address match (way/1119496563). No flags (no gym within 150 m, no related name nearby, not in Bouldeer)."
+  },
+  "climbnasium-mechanicsburg": {
+   "decision": "accept",
+   "reason": "S CLIMBNASIUM (https://www.climbnasium.net/, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own OSM element (way/1374183265). No flags (no gym within 150 m, no related name nearby, not in Bouldeer)."
+  },
+  "north-summit-wind-gap": {
+   "decision": "accept",
+   "reason": "S NSUM (https://www.northsummitclimbing.com/, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own published map coordinate (Business location coordinates). Single-source flag: the gym's own site is the only evidence read, but it is a primary source for open status (hours, events or booking pages), address and bouldering; pin: the gym's own published map coordinate (Business location coordinates).",
+   "reviewed_against": []
+  },
+  "garden-state-rocks-morganville": {
+   "decision": "accept",
+   "reason": "S GSR (https://www.gardenstaterocks.com/, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own OSM element (node/13133988896). No flags (no gym within 150 m, no related name nearby, not in Bouldeer)."
+  },
+  "rockville-climbing-center-hamilton": {
+   "decision": "accept",
+   "reason": "S ROCKVILLE (https://www.rockvilleclimbing.com/, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own published map coordinate (mapLat/mapLng in the site's own location block). Single-source flag: the gym's own site is the only evidence read, but it is a primary source for open status (hours, events or booking pages), address and bouldering; pin: the gym's own published map coordinate (mapLat/mapLng in the site's own location block).",
+   "reviewed_against": []
+  },
+  "new-jersey-rock-gym-fairfield": {
+   "decision": "accept",
+   "reason": "S NJRG (https://njrockgym.com/, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own published map coordinate (schema.org geo). Single-source flag: the gym's own site is the only evidence read, but it is a primary source for open status (hours, events or booking pages), address and bouldering; pin: the gym's own published map coordinate (schema.org geo).",
+   "reviewed_against": []
+  },
+  "rock-climb-fairfield": {
+   "decision": "accept",
+   "reason": "S RCF (https://www.rockclimbfairfield.com/, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own OSM element (node/13850766701). No flags (no gym within 150 m, no related name nearby, not in Bouldeer)."
+  },
+  "ascent-new-haven": {
+   "decision": "accept",
+   "reason": "S ASCNH (https://ascentclimbinggym.com/, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own OSM element (node/11667621941). Rock Spot Climbing New Haven (44 Olive St, Wooster Square) is a different gym 1.9 km away; Ascent is at 470 James St, Suite 004, and the two sites have different owners and websites.",
+   "reviewed_against": [
+    "rsc-new-haven"
+   ]
+  },
+  "metrorock-vermont": {
+   "decision": "accept",
+   "reason": "S METROVT (https://vt.metrorock.com/vermont-home, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own published map coordinate (mapLat/mapLng in the site's own location block). Single-source flag: the gym's own site is the only evidence read, but it is a primary source for open status (hours, events or booking pages), address and bouldering; pin: the gym's own published map coordinate (mapLat/mapLng in the site's own location block).",
+   "reviewed_against": []
+  },
+  "volta-trenton": {
+   "decision": "accept",
+   "reason": "S VOLTA (https://voltaclimbing.com/, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own published map coordinate (mapLat/mapLng in the site's own location block). Single-source flag: the gym's own site is the only evidence read, but it is a primary source for open status (hours, events or booking pages), address and bouldering; pin: the gym's own published map coordinate (mapLat/mapLng in the site's own location block).",
+   "reviewed_against": []
+  },
+  "elite-climbing-maple-shade": {
+   "decision": "accept",
+   "reason": "S ELITE (https://eliteclimbing.com/, read 2026-10-06) confirms exists, open, address, bouldering; no named gym element in OSM, pin is the Nominatim address match (way/51535541). No flags (no gym within 150 m, no related name nearby, not in Bouldeer)."
+  },
+  "rapp-rocks-fredericksburg": {
+   "decision": "accept",
+   "reason": "S RAPP (https://www.rapprocksclimbing.com/about, read 2026-10-06) confirms exists, open, address, bouldering; no named gym element in OSM, pin is the Nominatim address match (way/846046253). No flags (no gym within 150 m, no related name nearby, not in Bouldeer)."
+  },
+  "nh-climbing-fitness-concord": {
+   "decision": "accept",
+   "reason": "S NHCF (https://www.nhclimbinggym.com/visit, read 2026-10-06) confirms exists, open, address, bouldering; no named gym element in OSM, pin is the Nominatim address match (way/263302649). No flags (no gym within 150 m, no related name nearby, not in Bouldeer)."
+  },
+  "notch-lebanon": {
+   "decision": "accept",
+   "reason": "S NOTCH (https://www.thenotchclimbing.com/, read 2026-10-06) confirms exists, open, address, bouldering; no named gym element in OSM, pin is the Nominatim address match (way/18848735). No flags (no gym within 150 m, no related name nearby, not in Bouldeer)."
+  },
+  "delaware-rock-gym-bear": {
+   "decision": "accept",
+   "reason": "S DERG (https://www.derockgym.com/, read 2026-10-06) confirms exists, open, address, bouldering; pin is the gym's own OSM element (node/9062967317). No flags (no gym within 150 m, no related name nearby, not in Bouldeer)."
+  },
+  "gmrcc-rutland": {
+   "decision": "accept",
+   "reason": "S GMRCC (https://www.vermontclimbing.com/first-time-here, read 2026-10-06) confirms exists, open, address, bouldering; no named gym element in OSM, pin is the Nominatim address match (way/983100206). No flags (no gym within 150 m, no related name nearby, not in Bouldeer)."
+  },
+  "warehouse-rocks-abbottstown": {
+   "decision": "defer",
+   "reason": "Owner rule: keep low-confidence gyms out. Own site has a detailed About page (80-100 bouldering routes, 14 ft walls, 100-120 roped routes, Kilter Board), hours (Mon-Fri 5-9pm, Sat 12-9pm, Sun 12-3pm) and 301 Pleasant Street, but the footer reads \"Copyright 2021\" and no 2026 event, news or price date was found. The indoorclimbinggym.com directory lists it, which is not enough for open status."
+  },
+  "diamond-rock-gym-east-hanover": {
+   "decision": "defer",
+   "reason": "Owner rule: keep low-confidence gyms out. Own site: 3,000 sq ft of rope walls (25-33 ft) inside Diamond City Sports plus \"a bouldering area ... between 12-15 boulder problems VB-V4\", but the climbing-options page says \"ALL CLIMBING IS BY APPOINTMENT ONLY. Please call ahead (973-560-0413)\". No hours or day-pass page found."
+  },
+  "brattcave-brattleboro": {
+   "decision": "defer",
+   "reason": "Owner rule: keep low-confidence gyms out. Own site describes a bouldering-only community gym in the Cotton Mill building (74 Cotton Mill Hill, Suite A-252) with an October 2026 calendar, but a notice says it is closed Mon Oct 5 and Tue Oct 6 because of a \"temporary bump in the process of Changing hands\". Bouldering is clear; current operation is not. The Nominatim address returns two nodes 80 m apart, so the pin also needs a look."
+  },
+  "fa-climbing-station-square": {
+   "decision": "defer",
+   "reason": "Owner rule: keep low-confidence gyms out. Official page (faclimbing.com/pittsburgh/station-square) returns HTTP 403 to plain requests and to the fetch tool, so no primary text was read. A directory lists it at 195 W Station Square Dr; OSM has an element at 125 West Station Square Drive carrying that URL. No claim about open status or bouldering is made."
+  },
+  "triangle-rock-club-richmond": {
+   "decision": "defer",
+   "reason": "Owner rule: keep low-confidence gyms out. The gym page (trianglerockclub.com/richmond) returns 404 to the fetch tool and 403 to plain requests; the indoorclimbinggym.com directory still lists 4700 Thalbro St and OSM has a gym element there. No primary source could be read for open status or bouldering."
+  },
+  "city-climb-new-haven": {
+   "decision": "defer",
+   "reason": "Owner rule: keep low-confidence gyms out. Own site is clearly open (hours Mon-Fri 2-10pm, Sat-Sun 10am-8pm, classes, camps, 342 Winchester Ave). The only bouldering text is the FAQ line that new climbers without a reservation can \"come in an boulder (shorter climbs without ropes)\"; no bouldering area, wall height or problem count is given. OSM places the gym on Gibbs Street, 350 m from the pin on the gym's own map."
+  }
+ }
+}

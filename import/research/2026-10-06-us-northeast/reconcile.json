@@ -1,0 +1,1307 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-06-us-northeast",
+ "inputs": {
+  "section_sha256": "5a600effaf912844d95ca932efbd469ee48c72f257cec12d8257dc0a2204603a",
+  "sources_sha256": "914272856f4c234ca045c235fcf9a6624b8b0f0c16daeb9659a060c0ba13b43d",
+  "candidates_sha256": "4c9a7e2c3dccd4177279b92e7aacd810837a5ba728388f5b6df8bb9d0fcea38c",
+  "index": {
+   "sha256": "27073d25c2df373c17caef0c24ebfe759b8d457953a461c62786486d588e661d",
+   "count": 2438
+  },
+  "staged_batches_compared": [],
+  "other_sections_compared": []
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 85,
+  "ready": 56,
+  "review": 21,
+  "blocked": 8,
+  "existing": 0,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "ascend-erie",
+   "line": 21,
+   "name": "ASCEND Erie",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-87c3d44f76"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ascend-point-breeze",
+   "line": 20,
+   "name": "ASCEND Point Breeze",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-a82d4b2d1d"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ascend-south-side",
+   "line": 19,
+   "name": "ASCEND South Side",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-cbc82c6f80"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ascent-new-haven",
+   "line": 71,
+   "name": "Ascent Climbing Gym New Haven",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-4260371011"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate rsc-new-haven \"Rock Spot Climbing New Haven\": related names \"Ascent Climbing Gym New Haven\" / \"Rock Spot Climbing New Haven\" 1933 m apart",
+     "ids": [
+      "rsc-new-haven"
+     ]
+    }
+   ],
+   "review_ids": [
+    "rsc-new-haven"
+   ]
+  },
+  {
+   "cid": "boulder-yard-frederick",
+   "line": 49,
+   "name": "The Boulder Yard",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-29a42976be"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "bp-dc-eckington",
+   "line": 12,
+   "name": "DC Bouldering Project (Eckington)",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-af5bfaf816"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "brattcave-brattleboro",
+   "line": 82,
+   "name": "BrattCave Bouldering Gym",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-0173a66159"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "city-climb-new-haven",
+   "line": 85,
+   "name": "City Climb Gym",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-588eda591d"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "climbnasium-mechanicsburg",
+   "line": 65,
+   "name": "Climbnasium",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-db009918d3"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "crg-glastonbury",
+   "line": 34,
+   "name": "Central Rock Gym Glastonbury",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-a4b7d5df5a"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "crg-warwick",
+   "line": 36,
+   "name": "Central Rock Gym Warwick",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-2b442ff003"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "crg-west-hartford",
+   "line": 35,
+   "name": "Central Rock Gym West Hartford",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-53ee9d4039"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "delaware-rock-gym-bear",
+   "line": 78,
+   "name": "The Delaware Rock Gym",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-562339feca"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "diamond-rock-gym-east-hanover",
+   "line": 81,
+   "name": "Diamond Rock Gym",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-e34fb153f1"
+   },
+   "blockers": [
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "downingtown-rock-gym",
+   "line": 43,
+   "name": "Downingtown Rock Gym",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-ebb5c15528"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "doylestown-rock-gym",
+   "line": 44,
+   "name": "Doylestown Rock Gym & Adventure Center",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-9485a7db4d"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "elite-climbing-maple-shade",
+   "line": 74,
+   "name": "Elite Climbing",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-c8ad94eac7"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "evo-portland",
+   "line": 53,
+   "name": "EVO Rock + Fitness Portland",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-16ff5289b4"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "fa-climbing-station-square",
+   "line": 83,
+   "name": "First Ascent Station Square",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-fb9d181c68"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "garden-state-rocks-morganville",
+   "line": 67,
+   "name": "Garden State Rocks",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-5d099a25a0"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "gmrcc-rutland",
+   "line": 79,
+   "name": "Green Mountain Rock Climbing Center",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-a27e00571c"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "goat-hackensack",
+   "line": 55,
+   "name": "GOAT Climbing Gym",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-05364e73e0"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "gv-brick",
+   "line": 23,
+   "name": "The Gravity Vault Brick",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-8af5a4ccf0"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "gv-chatham",
+   "line": 24,
+   "name": "The Gravity Vault Chatham",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-5f6da6cb74"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "gv-flemington",
+   "line": 25,
+   "name": "The Gravity Vault Flemington",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-ba5f04ffb2"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "gv-hoboken",
+   "line": 26,
+   "name": "The Gravity Vault Hoboken",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-732a02e965"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "gv-lehigh-valley",
+   "line": 32,
+   "name": "The Gravity Vault Lehigh Valley (Whitehall)",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-b171f6e09c"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "gv-middletown",
+   "line": 27,
+   "name": "The Gravity Vault Middletown",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-f794c64b4f"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "gv-montclair",
+   "line": 28,
+   "name": "The Gravity Vault Montclair",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-501f122240"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "gv-plainsboro",
+   "line": 29,
+   "name": "The Gravity Vault Princeton (Plainsboro)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-87f9eeef70"
+   },
+   "flags": [
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "gv-radnor",
+   "line": 33,
+   "name": "The Gravity Vault Radnor",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-95b2c3bf5c"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "gv-upper-saddle-river",
+   "line": 30,
+   "name": "The Gravity Vault Upper Saddle River",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-9e238aa61f"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "gv-voorhees",
+   "line": 31,
+   "name": "The Gravity Vault Voorhees",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-f466f0ad1b"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "iron-city-boulders",
+   "line": 22,
+   "name": "Iron City Boulders",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-bcca4dc01a"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "latitude-hampton",
+   "line": 60,
+   "name": "Latitude Climbing and Fitness Hampton",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-4cf4058e86"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "latitude-norfolk",
+   "line": 59,
+   "name": "Latitude Climbing and Fitness Norfolk",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-9c978532b0"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "latitude-virginia-beach",
+   "line": 58,
+   "name": "Latitude Climbing and Fitness Virginia Beach",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-ebd14f4357"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "method-newark",
+   "line": 45,
+   "name": "Method Climbing",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-f10b4991df"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "metrorock-vermont",
+   "line": 72,
+   "name": "MetroRock Vermont",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-fd52b20bc5"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "movement-callowhill",
+   "line": 1,
+   "name": "Movement Callowhill",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-c432ac435a"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "movement-columbia",
+   "line": 3,
+   "name": "Movement Columbia",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-b754b42b1e"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "movement-crystal-city",
+   "line": 7,
+   "name": "Movement Crystal City",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-0457e68e62"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "movement-fishtown",
+   "line": 2,
+   "name": "Movement Fishtown",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-5b590dea54"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "movement-hampden",
+   "line": 4,
+   "name": "Movement Hampden",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-45345fb0c5"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate movement-timonium \"Movement Timonium\": related names \"Earth Treks Hampden\" / \"Earth Treks Timonium\" 10772 m apart",
+     "ids": [
+      "movement-timonium"
+     ]
+    }
+   ],
+   "review_ids": [
+    "movement-timonium"
+   ]
+  },
+  {
+   "cid": "movement-rockville",
+   "line": 5,
+   "name": "Movement Rockville",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-653934814e"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "movement-timonium",
+   "line": 6,
+   "name": "Movement Timonium",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-0da862988b"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate movement-hampden \"Movement Hampden\": related names \"Earth Treks Timonium\" / \"Earth Treks Hampden\" 10772 m apart",
+     "ids": [
+      "movement-hampden"
+     ]
+    }
+   ],
+   "review_ids": [
+    "movement-hampden"
+   ]
+  },
+  {
+   "cid": "new-jersey-rock-gym-fairfield",
+   "line": 69,
+   "name": "New Jersey Rock Gym",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-b3eb9516e2"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "nh-climbing-fitness-concord",
+   "line": 76,
+   "name": "NH Climbing & Fitness",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-58f777d036"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "north-summit-wind-gap",
+   "line": 66,
+   "name": "North Summit Climbing Gym",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-5fcefcf39d"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "notch-lebanon",
+   "line": 77,
+   "name": "The Notch Climbing Gym",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-1e1e481950"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "peak-midlothian",
+   "line": 57,
+   "name": "Peak Experiences Midlothian (Peak Midlo)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-d0cd33c30c"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate peak-richmond \"Peak Experiences Richmond (Peak RVA)\": related names \"Peak Experiences Midlothian (Peak Midlo)\" / \"Peak Experiences Richmond (Peak RVA)\" 14212 m apart",
+     "ids": [
+      "peak-richmond"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate peak-richmond has the same website",
+     "ids": [
+      "peak-richmond"
+     ]
+    }
+   ],
+   "review_ids": [
+    "peak-richmond"
+   ]
+  },
+  {
+   "cid": "peak-richmond",
+   "line": 56,
+   "name": "Peak Experiences Richmond (Peak RVA)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-44e36401ba"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate peak-midlothian \"Peak Experiences Midlothian (Peak Midlo)\": related names \"Peak Experiences Richmond (Peak RVA)\" / \"Peak Experiences Midlothian (Peak Midlo)\" 14212 m apart",
+     "ids": [
+      "peak-midlothian"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate peak-midlothian has the same website",
+     "ids": [
+      "peak-midlothian"
+     ]
+    }
+   ],
+   "review_ids": [
+    "peak-midlothian"
+   ]
+  },
+  {
+   "cid": "petra-cliffs-burlington",
+   "line": 50,
+   "name": "Petra Cliffs Climbing Center",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-af1ef56407"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "prg-east-falls",
+   "line": 13,
+   "name": "PRG East Falls",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-cbe6440d07"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "prg-fishtown",
+   "line": 14,
+   "name": "PRG Fishtown",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-8d36f85e1d"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "prg-malvern",
+   "line": 15,
+   "name": "PRG Malvern",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-fc4da48f01"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "prg-oaks",
+   "line": 16,
+   "name": "PRG Oaks",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-21ef272712"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "prg-wyncote",
+   "line": 17,
+   "name": "PRG Wyncote",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-5af10a33de"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "randolph-climbing-center",
+   "line": 46,
+   "name": "Randolph Climbing Center",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-c2096aac03"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "rapp-rocks-fredericksburg",
+   "line": 75,
+   "name": "Rapp Rocks Climbing Gym",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-14654a7fa8"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "reach-bridgeport",
+   "line": 42,
+   "name": "Reach Climbing & Fitness",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-1a7e5322bb"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "rise-up-lynchburg",
+   "line": 62,
+   "name": "Rise Up Climbing",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-8a8b76ad8a"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "river-rock-roanoke",
+   "line": 64,
+   "name": "The River Rock Climbing Gym",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-c73223d617"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "rock-climb-fairfield",
+   "line": 70,
+   "name": "Rock Climb Fairfield",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-7eca034c96"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "rockville-climbing-center-hamilton",
+   "line": 68,
+   "name": "Rockville Climbing Center",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-bc3a64a8c9"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "rocky-top-charlottesville",
+   "line": 61,
+   "name": "Rocky Top Climbing",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-214f78f469"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "rsc-lincoln",
+   "line": 38,
+   "name": "Rock Spot Climbing Lincoln",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-872ed2fa23"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "rsc-new-haven",
+   "line": 41,
+   "name": "Rock Spot Climbing New Haven",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-c794c4cc80"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate ascent-new-haven \"Ascent Climbing Gym New Haven\": related names \"Rock Spot Climbing New Haven\" / \"Ascent Climbing Gym New Haven\" 1933 m apart",
+     "ids": [
+      "ascent-new-haven"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "ascent-new-haven"
+   ]
+  },
+  {
+   "cid": "rsc-peace-dale",
+   "line": 39,
+   "name": "Rock Spot Climbing Peace Dale",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-cbea01008a"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "rsc-providence",
+   "line": 37,
+   "name": "Rock Spot Climbing Providence",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-4db85bedc1"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "rsc-wallingford",
+   "line": 40,
+   "name": "Rock Spot Climbing Wallingford",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-c50c5bc950"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "salt-pump-portsmouth",
+   "line": 52,
+   "name": "Salt Pump Portsmouth (The Donut Factory)",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-f0167e0bfc"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "salt-pump-scarborough",
+   "line": 51,
+   "name": "Salt Pump Scarborough",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-a3a2fe1749"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "sportrock-alexandria",
+   "line": 11,
+   "name": "Sportrock Alexandria",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-0ac95f6449"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "sportrock-lorton",
+   "line": 8,
+   "name": "Sportrock Lorton",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-db1d9479a2"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "sportrock-rio",
+   "line": 9,
+   "name": "Sportrock Rio (Gaithersburg)",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-b4ae887869"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "sportrock-sterling",
+   "line": 10,
+   "name": "Sportrock Sterling",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-ae66a649b1"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "state-climb-culpeper",
+   "line": 63,
+   "name": "State Climb",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-38c15fa8d0"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "triangle-rock-club-richmond",
+   "line": 84,
+   "name": "Triangle Rock Club Richmond",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-9207fa23e1"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "tufas-philadelphia",
+   "line": 18,
+   "name": "Tufas Boulder Lounge",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-a159c7a336"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "vertical-dreams-manchester",
+   "line": 54,
+   "name": "Vertical Dreams Manchester",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-dd2af44ed0"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "volta-trenton",
+   "line": 73,
+   "name": "Volta Climbing Gym",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-2fed1e9638"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "vr-manassas",
+   "line": 47,
+   "name": "Vertical Rock Manassas",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-cbfbb6faed"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "vr-tysons",
+   "line": 48,
+   "name": "Vertical Rock Tysons",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-b74d4e830b"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "warehouse-rocks-abbottstown",
+   "line": 80,
+   "name": "Warehouse ROCKS Climbing and Fitness",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-7a3b05c232"
+   },
+   "review_ids": []
+  }
+ ],
+ "reconcile_sha256": "667b578df643cdaa3218591eb982953e945bdf4c5b6d49b9be2e13719f64e51c"
+}
