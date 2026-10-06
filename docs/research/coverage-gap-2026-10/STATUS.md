@@ -2,9 +2,9 @@
 
 Branch `research/2026-10-06-coverage-gap` (no PR, nothing applied). Rankings: `ranking-countries.md`, `ranking-cities.md`; estimates: the four JSON files.
 
-Merged here (staged, validated, planned, read-only dry-run passed): de-south 67, us-midwest 58, us-west 53, london 18 = 196 new gyms.
+Merged here (staged, validated, planned, read-only dry-run passed): de-south 67, us-south 60, us-midwest 58, us-west 53, london 18 = 256 new gyms.
 
-Still to merge (worker branches, pushed when each worker finishes): research/cg-us-northeast, cg-us-south, cg-canada,
+Still to merge (worker branches, pushed when each worker finishes): research/cg-us-northeast, cg-canada,
 cg-de-west-north, cg-spain-cities, cg-france-cities, cg-jp-kansai, cg-jp-chubu, cg-jp-kanto, cg-jp-kyushu-hokkaido, cg-kr-seoul,
 cg-benelux, cg-at-cz, cg-poland. For each: merge, then re-plan ALL batches together (cross-batch duplicates), nearest-live-gym check.
 
