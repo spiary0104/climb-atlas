@@ -1,7 +1,7 @@
 # Regional research: Ukraine (Tier C, wave 3A) (2026-10-01-ukraine)
 
 Scope: UA (whole country)
-Index: 2127 gyms, sha256 8dbddf7924c2… | staged batches compared: none | other sections compared: none
+Index: 2419 gyms, sha256 e50072d61b4c… | staged batches compared: none | other sections compared: none
 Review radii (stricter than the importer): any gym 150 m, related name 15 km, other country 2 km
 
 ## Summary
