@@ -139,7 +139,6 @@ function checkEditFormReady(){
   if(!suburb) missing.push('a suburb');
   if(!country || !state) missing.push('a country and state');
   if(selectedEditTypes().length === 0) missing.push('at least one climbing type');
-  if(!document.getElementById('eNote').value.trim()) missing.push('what changed and how you know');
   renderFormHint('eFormHint', missing);
   document.getElementById('eSaveBtn').disabled = missing.length > 0;
 }
@@ -225,7 +224,7 @@ export function initForms(){
     startPlacing('edit');
   });
 
-  ['eName','eSuburb','eNote'].forEach(id=>{
+  ['eName','eSuburb'].forEach(id=>{
     document.getElementById(id).addEventListener('input', checkEditFormReady);
   });
   ['eTypeIndoor','eTypeTopRope','eTypeLead'].forEach(id=>{
@@ -260,7 +259,7 @@ export function initForms(){
       description: info.description, website: info.website, day_pass: info.day_pass, hours: info.hours, facilities: info.facilities,
       lat: appState.currentEditPin.lat,
       lng: appState.currentEditPin.lng,
-      edit_note: document.getElementById('eNote').value.trim().slice(0, 200),
+      edit_note: document.getElementById('eNote').value.trim().slice(0, 200) || null,   // optional
       review_requested: document.getElementById('eReview').checked
     };
     const saveBtn = document.getElementById('eSaveBtn');
