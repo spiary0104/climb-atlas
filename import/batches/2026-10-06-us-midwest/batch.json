@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-06-us-midwest",
+  "description": "Regional research \"USA: Midwest (states with no Bouldeer coverage)\": 58 new gym(s) accepted of 74 candidate(s)",
+  "created": "2026-10-06",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-10-06-us-midwest",
+    "section_sha256": "8935a58effdb7f44e072c6565e2b72ce5cc1e92478c16276cb0bc4be3f8ca123",
+    "sources_sha256": "805d043a5d0e3043f61b5a296d5bb93d09d23582618efb8cfcb40e2896a9b655",
+    "candidates_sha256": "e43833ce065b3c6eab440916abdded116a7656160d40061c3110c4736ed1abbf",
+    "reconcile_sha256": "c3a450ef43cf972d24198e318de2f580afea5c72a853f8be689311a4e5515ebf",
+    "review_sha256": "b99b75158bd4c6b92c74c8ce3a134802365c70cc41fb851e2a994ea86a1c9b9f",
+    "candidates": 74,
+    "staged": 58,
+    "decisions": {
+      "accept": 58,
+      "defer": 14,
+      "reject": 2
+    }
+  },
+  "index_at_staging": {
+    "sha256": "27073d25c2df373c17caef0c24ebfe759b8d457953a461c62786486d588e661d",
+    "count": 2438
+  }
+}
