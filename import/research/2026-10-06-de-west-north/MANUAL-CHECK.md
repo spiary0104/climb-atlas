@@ -17,4 +17,11 @@ Low-confidence gyms kept out of the batch (decision `defer` in review.json). One
 7. **Boulderhalle Bochum (Blockwerk)**, Bochum. boulderhalle-bochum.de is an unconfigured domain.
    Question: does Blockwerk Bochum still exist? Not added.
 
-Weak-freshness accepts the owner may want to eyeball: K11 Köln (static site, latest year 2024), Kraftraum Bocholt (last site edit Dec 2024, feed Sep 2025), RockTown Kaiserslautern (no dated content), BoulderEck Erftstadt (2024).
+8. **K11 Boulderhalle**, Köln. https://k11-koeln.de/
+   Question: is it open now (2026 posts/hours)? Static site, latest dated content 2024; hours and prices shown. (Candidate dewn-k11-koeln.)
+9. **Kraftraum Bocholt Boulderhalle**, Bocholt. http://kraftraum-bocholt.de/
+   Question: is it open now (2026 posts/hours)? Home page last modified Dec 2024, last feed item Sep 2025. (Candidate dewn-kraftraum-bocholt.)
+10. **RockTown**, Kaiserslautern. https://www.rocktown.eu/boulderhalle-infos/offnungszeiten-and-preise/
+    Question: is it open now (2026 posts/hours)? Static site, no dated content; hours table shown. (Candidate dewn-rocktown-kaiserslautern.)
+11. **BoulderEck Erftstadt**, Erftstadt. https://bouldereck.de/
+    Question: is it open now (2026 posts/hours)? Latest dated content 2024; hours shown. (Candidate dewn-bouldereck-erftstadt.)

@@ -4,19 +4,19 @@
 
 | What would happen | Records |
 |---|---:|
-| Insert as NEW gyms | 71 |
+| Insert as NEW gyms | 67 |
 | Update existing gyms (explicit update records) | 0 |
 | Already exist — no action (identical content: 0; content differs, NOT applied: 0) | 0 |
 | Probable duplicates — need a human decision | 0 |
 | Invalid — rejected | 0 |
 | Rejected by a human decision | 0 |
-| **Total records in batch** | 71 |
+| **Total records in batch** | 67 |
 
-Index: 2438 known gyms (sha256 27073d25c2df…). Plan: 676f530822fe…
+Index: 2438 known gyms (sha256 27073d25c2df…). Plan: 7dc42b1633b8…
 
-## New gyms (71)
+## New gyms (67)
 
-By country: DE 71
+By country: DE 67
 
 - line 1 `g-29800838af` "2T Kletter+Boulderhalle" (DE)
 - line 2 `g-bb437cb06d` "Bahnhof Blo" (DE)
@@ -29,9 +29,9 @@ By country: DE 71
 - line 9 `g-8df81e2d06` "Boulderhalle Bootshaus" (DE)
 - line 10 `g-cd1e822644` "boulder factory" (DE)
 - line 11 `g-ae098fe6ba` "Boulderchurch" (DE)
-- line 12 `g-bc60086241` "BoulderEck Erftstadt" (DE)
-- line 13 `g-6ba232bcb8` "Boulderplanet" (DE)
-- line 14 `g-6ea431c2ea` "Camp4 Kletterzentrum" (DE)
-- line 15 `g-521a32b80f` "CAMPUS Boulderhalle" (DE)
-- … and 56 more (see plan.json)
+- line 12 `g-6ba232bcb8` "Boulderplanet" (DE)
+- line 13 `g-6ea431c2ea` "Camp4 Kletterzentrum" (DE)
+- line 14 `g-521a32b80f` "CAMPUS Boulderhalle" (DE)
+- line 15 `g-7ea441787f` "Center of Gravity Boulderhalle" (DE)
+- … and 52 more (see plan.json)
 
