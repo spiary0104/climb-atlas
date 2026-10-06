@@ -1,0 +1,376 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-06-belgium",
+ "inputs": {
+  "section_sha256": "997cec7587b7a5d88482bf6a4b9f2cad19619c9c54948fa99e86ed97069e5827",
+  "sources_sha256": "2f7efb51d23cf82b202a2f200df294ab6d9864618980e22cc2b8b285e95ce1dc",
+  "candidates_sha256": "58634f23a4448ec4f73cedbb5cb540280ca46580c414e4e1c918b1a5f0eeb642",
+  "index": {
+   "sha256": "27073d25c2df373c17caef0c24ebfe759b8d457953a461c62786486d588e661d",
+   "count": 2438
+  },
+  "staged_batches_compared": [
+   "2026-10-06-de-south",
+   "2026-10-06-netherlands"
+  ],
+  "other_sections_compared": []
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 21,
+  "ready": 13,
+  "review": 4,
+  "blocked": 4,
+  "existing": 0,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "be-001",
+   "line": 1,
+   "name": "Klimzaal Banzai",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-be576e1384"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "be-003",
+   "line": 2,
+   "name": "Blackbox Boulder",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-8d5c68d329"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "be-004",
+   "line": 3,
+   "name": "Klimzaal Boulder",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-d91bb7acc2"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate be-008 \"Klimzaal De Stordeur\": related names \"Klimzaal Boulder\" / \"Klimzaal De Stordeur\" 2835 m apart",
+     "ids": [
+      "be-008"
+     ]
+    }
+   ],
+   "review_ids": [
+    "be-008"
+   ]
+  },
+  {
+   "cid": "be-005",
+   "line": 4,
+   "name": "Klimkaffee Mechelen",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-485b9a12d7"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    }
+   ],
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate be-006 has the same website",
+     "ids": [
+      "be-006"
+     ]
+    }
+   ],
+   "review_ids": [
+    "be-006"
+   ]
+  },
+  {
+   "cid": "be-006",
+   "line": 5,
+   "name": "Klimkaffee Herentals",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-1047cc529a"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    }
+   ],
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate be-005 has the same website",
+     "ids": [
+      "be-005"
+     ]
+    }
+   ],
+   "review_ids": [
+    "be-005"
+   ]
+  },
+  {
+   "cid": "be-007",
+   "line": 6,
+   "name": "Crux Bouldergym",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-85c936f30a"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "be-008",
+   "line": 7,
+   "name": "Klimzaal De Stordeur",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-4afaea7526"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate be-004 \"Klimzaal Boulder\": related names \"Klimzaal De Stordeur\" / \"Klimzaal Boulder\" 2835 m apart",
+     "ids": [
+      "be-004"
+     ]
+    }
+   ],
+   "review_ids": [
+    "be-004"
+   ]
+  },
+  {
+   "cid": "be-009",
+   "line": 8,
+   "name": "Monk bouldergym Hasselt",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-c0ab118fcd"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "be-010",
+   "line": 9,
+   "name": "Pink Peaks",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-bcc441587f"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "be-011",
+   "line": 10,
+   "name": "Hall9",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-23cbf3407a"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "be-012",
+   "line": 11,
+   "name": "Bouldergym City Lizard",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-20f3d88ecf"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "be-013",
+   "line": 12,
+   "name": "Gustaaf Klimt",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-7934dbc05b"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "be-014",
+   "line": 13,
+   "name": "Klimax (BVKB)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-32242d509b"
+   },
+   "blockers": [
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "be-015",
+   "line": 14,
+   "name": "Petite Île",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-0045261756"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "be-016",
+   "line": 15,
+   "name": "New Rock",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-b49956dc3b"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "be-017",
+   "line": 16,
+   "name": "À BLOC",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-600590e6a2"
+   },
+   "flags": [
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "be-019",
+   "line": 17,
+   "name": "Stone Age",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-aff3f21803"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "be-023",
+   "line": 18,
+   "name": "L'Escale Arlon",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-b384fc40d1"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "be-024",
+   "line": 19,
+   "name": "Face Nord",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-8e4e30c6ec"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "be-025",
+   "line": 20,
+   "name": "BeBloc",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-9425ab2e37"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "be-028",
+   "line": 21,
+   "name": "Le Camp de Base Ixelles",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-fe26594284"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is opening-soon"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "review_ids": []
+  }
+ ],
+ "reconcile_sha256": "f85fae4178300b4cc11045df96019c19eb6c7466e9d209d7244c89dfc439e8df"
+}

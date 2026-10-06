@@ -1,0 +1,511 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-06-netherlands",
+ "inputs": {
+  "section_sha256": "2fb4f6bf594ae79ed54e4f776fcb90b568e9465b7201983b7b0e9727c6543983",
+  "sources_sha256": "fddaa76f322a63f6dc2eb9da69b580ac43e954a883f16a152114ba4c6c14ff43",
+  "candidates_sha256": "67c8c9fe38794d28a7f31c520e038ee264e3df9ab881392eaa66e24da0174343",
+  "index": {
+   "sha256": "27073d25c2df373c17caef0c24ebfe759b8d457953a461c62786486d588e661d",
+   "count": 2438
+  },
+  "staged_batches_compared": [
+   "2026-10-06-de-south"
+  ],
+  "other_sections_compared": []
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 36,
+  "ready": 33,
+  "review": 2,
+  "blocked": 1,
+  "existing": 0,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "nl-001",
+   "line": 1,
+   "name": "Boulderhal Sendmast",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-e82deff66f"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "nl-002",
+   "line": 2,
+   "name": "IMPACT Boulderhal",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-7401362b20"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "nl-003",
+   "line": 3,
+   "name": "Kei Boulderhal Wagenwerkplaats",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-a3dd2c31de"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "nl-004",
+   "line": 4,
+   "name": "Kei Boulderhal De Hoef",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-20d7a4b9b6"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "nl-005",
+   "line": 5,
+   "name": "Kei Boulderhal Zwitsal",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-e9b6ef9e98"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "nl-006",
+   "line": 6,
+   "name": "Boulderhal Bruut",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-d51055862f"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "nl-007",
+   "line": 7,
+   "name": "Beest Boulders Breda",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-ed331f1849"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "nl-008",
+   "line": 8,
+   "name": "Beest Boulders Delft",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-7bac17a411"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "nl-009",
+   "line": 9,
+   "name": "Revolt Bouldering Gym",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-95c6137bce"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "nl-010",
+   "line": 10,
+   "name": "Bouldercentrum Delfts Bleau",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-e04a57cbac"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "nl-011",
+   "line": 11,
+   "name": "Climbing Center Dordrecht",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-18edb2b711"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "nl-012",
+   "line": 12,
+   "name": "Climbing Center Heerenveen",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-e4db5956ce"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "nl-013",
+   "line": 13,
+   "name": "Climbing Center Leeuwarden",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-ac222cae95"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "nl-014",
+   "line": 14,
+   "name": "Boulder Gym Arnhem Rijnhal",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-b88e496c76"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "nl-015",
+   "line": 15,
+   "name": "National Climbing Center Nieuwegein",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-ca00606792"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is opening-soon"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "nl-016",
+   "line": 16,
+   "name": "MONO Boulder",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-233b499de5"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "nl-017",
+   "line": 17,
+   "name": "Monk bouldergym Eindhoven",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-75dcd02a7c"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "nl-018",
+   "line": 18,
+   "name": "Monk bouldergym Hilversum",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-059d37135a"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "nl-019",
+   "line": 19,
+   "name": "Boulder Neoliet Eindhoven",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-641fe95b09"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "nl-020",
+   "line": 20,
+   "name": "Boulder Neoliet Veldhoven",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-1e4ae46246"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "nl-021",
+   "line": 21,
+   "name": "Boulder Neoliet Tilburg",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-54558b2b15"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "nl-022",
+   "line": 22,
+   "name": "Boulder Neoliet Apeldoorn",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-b696dd357f"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "nl-023",
+   "line": 23,
+   "name": "Boulderhal Block013",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-65452f1874"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "nl-024",
+   "line": 24,
+   "name": "Cube Bouldergym",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-9f43eb1687"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "nl-025",
+   "line": 25,
+   "name": "Boulderhal de Fabriek Haarlem",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-ba778a89fb"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate nl-026 \"Boulderhal de Fabriek Hoofddorp\": related names \"Boulderhal de Fabriek Haarlem\" / \"Boulderhal de Fabriek Hoofddorp\" 9253 m apart",
+     "ids": [
+      "nl-026"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate nl-026 has the same website",
+     "ids": [
+      "nl-026"
+     ]
+    }
+   ],
+   "review_ids": [
+    "nl-026"
+   ]
+  },
+  {
+   "cid": "nl-026",
+   "line": 26,
+   "name": "Boulderhal de Fabriek Hoofddorp",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-996f029d81"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate nl-025 \"Boulderhal de Fabriek Haarlem\": related names \"Boulderhal de Fabriek Hoofddorp\" / \"Boulderhal de Fabriek Haarlem\" 9253 m apart",
+     "ids": [
+      "nl-025"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate nl-025 has the same website",
+     "ids": [
+      "nl-025"
+     ]
+    }
+   ],
+   "review_ids": [
+    "nl-025"
+   ]
+  },
+  {
+   "cid": "nl-027",
+   "line": 27,
+   "name": "Boulderhal Kunststof",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-cf5892e880"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "nl-028",
+   "line": 28,
+   "name": "Boulderhal Krachtstof",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-92147da66b"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "nl-029",
+   "line": 29,
+   "name": "Radium Boulders",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-38eb6656c8"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "nl-030",
+   "line": 30,
+   "name": "GRIP Boulderhal Nijmegen",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-ab0ecb28fb"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "nl-031",
+   "line": 31,
+   "name": "Boulderhal Bossche Boulders",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-980c904b70"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "nl-032",
+   "line": 32,
+   "name": "Boulderkerk Venlo",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-583828e63d"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "nl-033",
+   "line": 33,
+   "name": "BAZ Bouldergym",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-d22028992c"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "nl-034",
+   "line": 34,
+   "name": "Boulderhal Roest",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-e4b28507c0"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "nl-035",
+   "line": 35,
+   "name": "Apex Boulders",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-79c2641f03"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "nl-036",
+   "line": 36,
+   "name": "Boulderhal Vrijhaven",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-b7ac4de1fd"
+   },
+   "review_ids": []
+  }
+ ],
+ "reconcile_sha256": "23fb79cf06dee7684f6413867de514171dbde759ff44eec968949e439127f4e4"
+}
