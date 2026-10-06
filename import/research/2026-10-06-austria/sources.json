@@ -1,0 +1,215 @@
+{
+ "schema_version": 1,
+ "sources": {
+  "OSM": {
+   "kind": "map-data",
+   "title": "OpenStreetMap (Overpass extract and API, 2026-10-06)",
+   "url": "https://www.openstreetmap.org/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "BB": {
+   "kind": "chain-store-list",
+   "title": "boulderbar (chain site, all locations)",
+   "url": "https://boulderbar.net/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "KI": {
+   "kind": "official-site",
+   "title": "KI Kletterzentrum Innsbruck",
+   "url": "https://www.kletterzentrum-innsbruck.at/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "BERG": {
+   "kind": "official-site",
+   "title": "Bergstation Boulder- & Kletterzentrum Telfs",
+   "url": "https://bergstation.tirol/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "IMST": {
+   "kind": "official-site",
+   "title": "Kletterzentrum Imst",
+   "url": "https://kletterhalle.com/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "SB": {
+   "kind": "chain-store-list",
+   "title": "STEINBLOCK Boulderhallen (Dornbirn, Imst, Rankweil)",
+   "url": "https://steinblock.at/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "TARR": {
+   "kind": "official-site",
+   "title": "Boulderhalle Tarrenz (Gemeinde)",
+   "url": "http://www.tarrenz.at/Boulderhalle_Tarrenz",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "BLOCBOX": {
+   "kind": "official-site",
+   "title": "BlocBox-Training Innsbruck",
+   "url": "https://blocbox-training.com/",
+   "language": "en",
+   "accessed": "2026-10-06"
+  },
+  "ATOLL": {
+   "kind": "official-site",
+   "title": "Atoll Achensee, BOULDER-Halle",
+   "url": "https://www.atoll-achensee.com/de/boulder-halle/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "KLIMM": {
+   "kind": "official-site",
+   "title": "KLIMMEREI Boulder Park",
+   "url": "https://www.klimmerei.at/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "BMONK": {
+   "kind": "official-site",
+   "title": "Block Monkey",
+   "url": "https://www.blockmonkey.at/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "GREIF": {
+   "kind": "official-site",
+   "title": "Greifbar Bregenz",
+   "url": "https://greifbar-bouldern.at/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "BOULDERAMA": {
+   "kind": "official-site",
+   "title": "Boulderama Klagenfurt",
+   "url": "https://boulderama.at/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "VOLUME": {
+   "kind": "official-site",
+   "title": "VOLUME Bouldern Villach",
+   "url": "https://volume.wtf/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "KHVIL": {
+   "kind": "official-site",
+   "title": "Kletterhalle Villach",
+   "url": "https://kletterhallevillach.at/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "STOA": {
+   "kind": "official-site",
+   "title": "stoablock Boulderhalle Gmunden",
+   "url": "https://stoablock.com/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "SUEDW": {
+   "kind": "official-site",
+   "title": "Kletterzentrum Suedwand Perchtoldsdorf",
+   "url": "https://www.suedwand.at/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "KLOST": {
+   "kind": "official-site",
+   "title": "Kletteranlage Klosterneuburg",
+   "url": "https://www.kletteranlage-klosterneuburg.at/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "EDEL": {
+   "kind": "official-site",
+   "title": "Alpenverein Edelweiss (Standorte)",
+   "url": "https://alpenverein-edelweiss.at/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "ROTP": {
+   "kind": "official-site",
+   "title": "Klettercenter Rotpunkt",
+   "url": "https://www.klettercenter.at/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "BIGW": {
+   "kind": "official-site",
+   "title": "Bigwall Bouldering Wiener Neustadt",
+   "url": "https://www.bigwall-bouldering.at/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "WATT": {
+   "kind": "official-site",
+   "title": "Kletterarena Wattens",
+   "url": "https://www.kletterarena-wattens.at/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "NFK": {
+   "kind": "federation",
+   "title": "Naturfreunde Kaernten, Boulderhalle Klagenfurt",
+   "url": "https://kaernten.naturfreunde.at/service/kletterhallen-waende/boulderhalle-klagenfurt/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "WELS": {
+   "kind": "official-site",
+   "title": "Kletterhalle Wels",
+   "url": "https://kletterhallewels.at/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "STEYR": {
+   "kind": "official-site",
+   "title": "Naturfreunde Kletterhalle Steyr",
+   "url": "https://www.kletterhalle-steyr.at/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "GRAMA": {
+   "kind": "official-site",
+   "title": "Alpenverein TK Linz, Kletterhalle Gramastetten",
+   "url": "https://www.alpenverein.at/tk-linz-urfahr-west/kletterhalle/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "K3": {
+   "kind": "official-site",
+   "title": "Salzkammergut Kletterhalle Bad Ischl",
+   "url": "https://www.kletterhalle-badischl.at/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "HALLEIN": {
+   "kind": "official-site",
+   "title": "OeAV Boulderhalle Hallein",
+   "url": "https://www.boulderhallein.com/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "K1": {
+   "kind": "official-site",
+   "title": "K1 Kletterhalle Dornbirn",
+   "url": "https://www.k1-dornbirn.at/",
+   "language": "de",
+   "accessed": "2026-10-06"
+  },
+  "OGV": {
+   "kind": "official-site",
+   "title": "Alpenverein-Gebirgsverein Kletterzentrum Wien",
+   "url": "https://www.alpenverein.at/gebirgsverein/kletterzentrum/index.php",
+   "language": "de",
+   "accessed": "2026-10-06"
+  }
+ }
+}
