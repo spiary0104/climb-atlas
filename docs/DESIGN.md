@@ -368,7 +368,7 @@ Component tokens (the short list that earns them):
 ```
 --pin-size-city 16px      --pin-size-dot 6px      --pin-zoom-dot-max 11
 --cluster-size 32px       --cluster-max-zoom 15   (force individual pins above)
---sheet-snap-peek 18%     --sheet-snap-half 52%   --sheet-snap-full 92%
+--sheet-snap-peek count line     --sheet-snap-half 52%   --sheet-snap-full 92%
 --card-photo-ratio 4 / 3  --hero-photo-ratio 16 / 9
 ```
 
@@ -562,7 +562,7 @@ supercluster with radius 48, `maxZoom` 15 so individual pins are guaranteed abov
 
 Full-bleed map behind everything. Over the map: the search field (paper pill, `shadow.raised`, 48px tall, 16px from the top safe-area) with a locate icon on its right; below it the chip row (horizontal scroll, padding 16px). The control stack (locate, style) sits right, above the sheet's peek edge.
 
-The **bottom sheet** is paper, radius 20 top corners, 1px top hairline, a 36 × 4px grabber, and it never dismisses. Snap points: **peek** 18% (status line + first row visible), **half** 52% (default after a search or region selection), **full** 92% (tab bar hides; a close-chevron appears top-right). Dragging down collapses only when the inner list is scrolled to top. Tapping a pin sets the sheet to peek and shows a horizontal carousel of photo cards for the tapped cluster or the single tapped gym; swiping the carousel changes the selected pin; tapping the card opens the gym page. The list inside the sheet defaults to dense rows; the first four items after a fresh search render as photo cards, then rows.
+The **bottom sheet** is paper, radius 20 top corners, 1px top hairline, a 36 × 4px grabber, and it never dismisses. Snap points: **peek** (grabber and the "N gyms in view" line only, so the map is free), **half** 52% (default after a search or region selection), **full** 92% (tab bar hides; a close-chevron appears top-right). Dragging down collapses only when the inner list is scrolled to top. Panning or pinching the map puts the sheet down to peek, and tapping the grabber goes peek → half → peek (full → half) (owner request 2026-10-06: the sheet blocked the map on phones). Tapping a pin sets the sheet to peek and shows a horizontal carousel of photo cards for the tapped cluster or the single tapped gym; swiping the carousel changes the selected pin; tapping the card opens the gym page. The list inside the sheet defaults to dense rows; the first four items after a fresh search render as photo cards, then rows.
 
 A "Map / List" pill toggle is not used; the sheet's snap points do that job.
 

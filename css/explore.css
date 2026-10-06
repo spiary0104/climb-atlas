@@ -370,6 +370,7 @@
     will-change:transform;
   }
   .list-pane.is-dragging{transition:none;}
+  .list-pane.is-low .list-tools{visibility:hidden;}
   .sheet-inner{flex:none;height:var(--sheet-visible, 18dvh);}
   .sheet-handle{touch-action:none;cursor:grab;}
   .sheet-grabber-btn{display:flex;justify-content:center;width:100%;padding:0;background:none;border:0;cursor:grab;}

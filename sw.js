@@ -41,7 +41,7 @@
 // v37: the legacy seed file is retired from the runtime: offline list from data/spots-fallback.json (fetched on demand, not precached);
 //      "Revert to original" removed from the edit form (modals.js, index.html, style.css).
 // v39: MapLibre is no longer in the shell: map.js loads it after the first list render; modulepreload; parallel gym pages.
-const CACHE_VERSION = 'v40';
+const CACHE_VERSION = 'v41';
 const SHELL_CACHE = 'climbatlas-shell-' + CACHE_VERSION;
 const RUNTIME_CACHE = 'climbatlas-runtime-' + CACHE_VERSION;
 const TILE_CACHE = 'climbatlas-tiles-' + CACHE_VERSION;

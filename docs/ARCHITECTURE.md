@@ -47,7 +47,7 @@ Line refs drift: re-grep function names rather than trusting numbers.
 | `js/modules/list.js` | Scoped list: `renderList` (scope → sort → cap 400), status line, skeletons, empty states, carousel, row keyboard |
 | `js/modules/filters.js` | `matches`/`applyFilters`, chip row, applied pills, All filters sheet (draft + live count), URL filter half; "Open now" (`open=1`, no sign-in; chip hidden below 10% readable hours in the area, `updateHoursChip`) |
 | `js/modules/search.js` | Search combobox (desktop popover / mobile full height), recent searches, Regions browse |
-| `js/modules/sheet.js` | Mobile bottom sheet: snaps 18/52/92%, drag rules, tab bar hides at full |
+| `js/modules/sheet.js` | Mobile bottom sheet: snaps peek (count line)/52/92%, drag rules, map pan puts it down, tab bar hides at full |
 | `js/modules/marks.js` | `toggleMark` (Supabase `marks`, optimistic + rollback); explore.js listens |
 | `js/modules/nav.js`, `icons.js` | Top bar/tab bar (`[data-nav]` → explore, `/in`, `/log`, START, `/me`, add-gym); `icon(name)` (unknown names throw) |
 | `js/modules/modals.js` | Modal focus/Escape handling, edit (required note + review toggle) and report forms; `startAddGym` → `/add` |
