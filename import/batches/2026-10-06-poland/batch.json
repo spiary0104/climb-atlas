@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-06-poland",
+  "description": "Regional research \"Poland: coverage gap\": 10 new gym(s) accepted of 17 candidate(s)",
+  "created": "2026-10-06",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-10-06-poland",
+    "section_sha256": "9d711033d6d9f706c67d409c1274532cc10fd3a33f719fff29f8042037a3d6c5",
+    "sources_sha256": "2d3ab9053c1aa6094c1486688e929b221474f0c37456aa956217c4e5732bb6c3",
+    "candidates_sha256": "3d5779cedf521d2b6ca625c5b5e8da357a3123ae383428d92671ab0e06ceb640",
+    "reconcile_sha256": "6fcc398c0c3e9506e047afb5ea668652db7c31f8126b9c7dd52a6c981e900df7",
+    "review_sha256": "20c929fc7b1d53fd513b3572b35551e645a3de9f8cfd555caa28bbc3c6ad3d70",
+    "candidates": 17,
+    "staged": 10,
+    "decisions": {
+      "accept": 10,
+      "defer": 6,
+      "reject": 1
+    }
+  },
+  "index_at_staging": {
+    "sha256": "27073d25c2df373c17caef0c24ebfe759b8d457953a461c62786486d588e661d",
+    "count": 2438
+  }
+}
