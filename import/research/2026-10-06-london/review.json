@@ -1,0 +1,92 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-06-london",
+ "reviewer": "Spiar (owner); decisions drafted by Claude (AI) on the owner's instruction, pending owner sign-off",
+ "reviewed": "2026-10-06",
+ "decisions": {
+  "cd-building-one": {
+   "decision": "accept",
+   "reason": "Chain page CD (Building One) shows exists, open (hours, pricing live), address and bouldering (15,000 sq ft hall, \"original bouldering hub\"); pin is OSM way 736488881. Old Arch brand, now Climbing District. No flags, no Bouldeer record within range."
+  },
+  "cd-london-fields": {
+   "decision": "accept",
+   "reason": "Chain page CD (London Fields) shows exists, open, address (Unit 30 Canal Place) and bouldering (200+ problems V0-V11, Kilter board); pin is OSM node 9031636962 with the same street and postcode."
+  },
+  "cd-tottenham-hale": {
+   "decision": "accept",
+   "reason": "Chain page CD (Tottenham Hale) shows exists, open, address (The Old Archives, N15 4BE) and bouldering (200+ problems); pin is OSM node 9967520716, same postcode (former Stronghold site). Street name is from OSM only."
+  },
+  "lcc-bethwall": {
+   "decision": "accept",
+   "reason": "Chain list LCC lists BethWall among its 8 centres; its own page shows exists, open (opening times, classes), address (Arches 243-247 Hollybush Place, E2 9QX) and \"Premium bouldering\"; pin is OSM node 5392665527 carrying the LCC page as website. Not a duplicate of the five LCC centres already in Bouldeer (CroyWall, HarroWall, RavensWall, VauxEast, VauxWest)."
+  },
+  "lcc-canarywall": {
+   "decision": "accept",
+   "reason": "Chain list LCC lists CanaryWall; its page shows exists, open, address (21-23 Trinidad Street, E14 8AA) and \"Premium bouldering\"; pin is OSM node 9515319794 (the node with the official house number; two other Canary Wall OSM nodes are within 40 m)."
+  },
+  "lcc-eustonwall": {
+   "decision": "accept",
+   "reason": "Chain list LCC lists EustonWall; its page shows exists, open, address (350 Euston Road, NW1 3AX) and \"Premium bouldering in central London\"; pin is OSM node 10552592178."
+  },
+  "cb-aldgate": {
+   "decision": "accept",
+   "reason": "Chain site CB: Aldgate page shows exists, open (hours Mon-Fri 06:30-23:00), address and a dedicated bouldering gym (100+ problems VB-V9, Kilter board); pin is OSM node 9425765774."
+  },
+  "cb-white-city": {
+   "decision": "accept",
+   "reason": "Chain site CB: White City page shows exists, open (hours), address and a bouldering arena plus 9 auto-belay routes; pin is OSM node 11343785902 (postcode printed as W12 7GF on the page, W12 7HB in the footer, W12 7RY in OSM, same spot beside Westfield)."
+  },
+  "cb-stratford": {
+   "decision": "accept",
+   "reason": "Chain site CB: Stratford page shows live hours, address and contact; bouldering drop-in sessions (\"Book Bouldering - Stratford\") and an Autumn League social on Wednesday 14th (14 Oct 2026) show it is operating, despite an old pre-launch mailing-list blurb; pin is OSM way 107024158 (name and address agree)."
+  },
+  "climbing-co-fulham": {
+   "decision": "accept",
+   "reason": "Chain site CB lists Climbing Co Fulham under \"Our Central London Bouldering Locations\"; its page shows address (Parsons Green Depot), hours, weekly resets, problems of all styles and live memberships; pin is OSM node 3662281657 (name and address agree). Bouldering London directory also lists it as a bouldering gym."
+  },
+  "font-wandsworth": {
+   "decision": "accept",
+   "reason": "Own site FONT (Wandsworth) shows exists, open (new 25,000 sq ft space, hours), address (52-58 Garratt Lane, SW18 4TF), bouldering and rope climbing; pin is OSM way 1189858234 (Parthian Climbing Wandsworth). The old Lydden Road site is not used."
+  },
+  "font-borough": {
+   "decision": "accept",
+   "reason": "Own site FONT (Borough) shows exists, open (hours), address (Triptych Place, SE1 9BL) and a 9,000 sq ft bouldering facility; pin is OSM node 11042290163 (same postcode), about 15 m from the official map pin."
+  },
+  "font-hounslow": {
+   "decision": "accept",
+   "reason": "Own site FONT (Hounslow) shows exists, open (hours), address (9 Smithy Lane, TW3 1EH) and a 5,400 sq ft bouldering facility; pin is OSM node 10199103147."
+  },
+  "substation-brixton": {
+   "decision": "accept",
+   "reason": "Own site SUB shows exists, open (hours), bouldering (title \"Bouldering & Fitness centre\", bouldering FAQ) and the contact page gives Unit 13, Ellerslie Square, SW2 5DZ; pin is OSM way 837838755."
+  },
+  "rise-canning-town": {
+   "decision": "accept",
+   "reason": "Own site RISE shows an independent bouldering gym with address (Unit 6 Caxton Works, Hoy St, E16 1ZA), opening hours and registration; pin is OSM node 10106134387 (same address, edited 2026-10-01)."
+  },
+  "the-reach-charlton": {
+   "decision": "accept",
+   "reason": "Own site REACH shows 6 bouldering walls, rope walls, auto belays and lead roof, opening hours and the Unit 6 Mellish Estate address (SE18 5NR); pin is OSM way 1100871919 (building point). Bouldeer has no Woolwich/Charlton gym."
+  },
+  "blocfit-brixton": {
+   "decision": "accept",
+   "reason": "Own site BLOC shows the address (Arch 266, 241 Coldharbour Lane), hours and first-visit info; its Facilities page states \"75+ climbs ... in our bouldering floor\"; pin is OSM node 11747234586 (same address)."
+  },
+  "westway-climbing-centre": {
+   "decision": "accept",
+   "reason": "Operator page EA (Everyone Active) shows hours, up to 150 boulder problems reset monthly, 110 rope lines and 8 auto-belays; address 1 Crowthorne Road, W10 6RP; pin is the OSM sports-centre building (way 20206484), so the pin is the whole centre."
+  },
+  "hackney-wick-boulder-project": {
+   "decision": "defer",
+   "reason": "Only a directory (Bouldering London) describes it (bouldering-only wall at 117 Wallis Road, hours unconfirmed); the gym site hackneywickboulder.co.uk did not resolve and Instagram needs a login, so no primary source could be read. See MANUAL-CHECK.md."
+  },
+  "arch-north-burnt-oak": {
+   "decision": "defer",
+   "reason": "Only an OSM node (edited 2026-02-14). The current Climbing District site lists three London centres and not Arch North; no primary source shows the Burnt Oak site open under any name. See MANUAL-CHECK.md."
+  },
+  "arch-acton": {
+   "decision": "defer",
+   "reason": "Only an OSM way (check_date 2024-01-20). The current Climbing District site lists three London centres and not Arch Acton; no primary source shows it open. See MANUAL-CHECK.md."
+  }
+ }
+}
