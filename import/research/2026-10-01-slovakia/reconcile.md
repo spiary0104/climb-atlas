@@ -18,32 +18,29 @@ Review radii (stricter than the importer): any gym 150 m, related name 15 km, ot
 - sk-002 "Block Dock Petržalka" [g-ab860f9c18] reviewed_against must include: seed-1708, sk-001
   - related-name-nearby: seed-1708 "Block Dock": related names "Block Dock Petržalka" / "Block Dock" 10344 m apart
   - related-name-nearby: candidate sk-001 "Block Dock Rača": related names "Block Dock Petržalka" / "Block Dock Rača" 10370 m apart
-- sk-003 "Spot Climbing Gym" [g-8db1852f11] reviewed_against must include: sk-004, sk-006
-  - related-name-nearby: candidate sk-004 "Fanatix": related names "Spot lezecká stena" / "Fanatix lezecká stena" 11613 m apart
-  - related-name-nearby: candidate sk-006 "Lezecká stena K2 Bratislava": related names "Spot lezecká stena" / "Lezecká stena K2" 14139 m apart
-  - single-source: all evidence comes from one source
-  - weak-coordinates: coordinates are street-level, not the building
 - sk-004 "Fanatix" [g-daec33ffb4] reviewed_against must include: sk-003, sk-006
-  - related-name-nearby: candidate sk-003 "Spot Climbing Gym": related names "Fanatix lezecká stena" / "Spot lezecká stena" 11613 m apart
+  - related-name-nearby: candidate sk-003 "Spot Climbing Gym": related names "Fanatix lezecká stena" / "Spot lezecká stena" 10975 m apart
   - related-name-nearby: candidate sk-006 "Lezecká stena K2 Bratislava": related names "Fanatix lezecká stena" / "Lezecká stena K2" 5204 m apart
   - single-source: all evidence comes from one source
 - sk-005 "Vertigo Lezecké centrum" [g-b75ce99214] reviewed_against must include: seed-1709
   - importer-probable-duplicate: seed-1709 renamed-or-related-name-nearby 20 m
   - name-match: seed-1709 "Vertigo": renamed-or-related-name-nearby ("Vertigo Lezecké centrum" / "Vertigo", 20 m)
 - sk-006 "Lezecká stena K2 Bratislava" [g-b3dbddb113] reviewed_against must include: sk-003, sk-004
-  - related-name-nearby: candidate sk-003 "Spot Climbing Gym": related names "Lezecká stena K2" / "Spot lezecká stena" 14139 m apart
+  - related-name-nearby: candidate sk-003 "Spot Climbing Gym": related names "Lezecká stena K2" / "Spot lezecká stena" 13163 m apart
   - related-name-nearby: candidate sk-004 "Fanatix": related names "Lezecká stena K2" / "Fanatix lezecká stena" 5204 m apart
 - sk-007 "Lezecká stena K2 Žilina" [g-0fe68a0fd3] reviewed_against must include: seed-1711
   - importer-probable-duplicate: seed-1711 renamed-or-related-name-nearby 6 m
   - name-match: seed-1711 "K2-Zilina Bouldering Climbing Gym": renamed-or-related-name-nearby ("Lezecká stena K2 Žilina" / "K2-Zilina Bouldering Climbing Gym", 6 m)
 - sk-011 "Lezecká stena Rozlomity" [g-c878c90a17] reviewed_against must include: sk-013
-  - related-name-nearby: candidate sk-013 "Steam Factory Košice – lezecká stena": related names "Lezecká stena Košice" / "Steam Factory Košice – lezecká stena" 5030 m apart
-- sk-013 "Steam Factory Košice – lezecká stena" [g-51644a3953] reviewed_against must include: sk-011
-  - related-name-nearby: candidate sk-011 "Lezecká stena Rozlomity": related names "Steam Factory Košice – lezecká stena" / "Lezecká stena Košice" 5030 m apart
-  - single-source: all evidence comes from one source
+  - related-name-nearby: candidate sk-013 "Steam Factory Košice – lezecká stena": related names "Lezecká stena Košice" / "Steam Factory Košice – lezecká stena" 5000 m apart
+- sk-013 "Steam Factory Košice – lezecká stena" [g-5cc8fb69c7] reviewed_against must include: sk-011
+  - related-name-nearby: candidate sk-011 "Lezecká stena Rozlomity": related names "Steam Factory Košice – lezecká stena" / "Lezecká stena Košice" 5000 m apart
+- sk-014 "WoodRock" [g-9565fc6597] reviewed_against must include: sk-015
+  - limited-access: club wall: check it is open to the public
+  - related-name-nearby: candidate sk-015 "Stienka": related names "Lezecká stena WoodRock" / "Rock Café Lezecká Stena" 11750 m apart
 
 ## Blocked: cannot be accepted (4)
-- sk-014 "WoodRock": bouldering-unknown (bouldering offering not established (never assumed)) -> suggested: defer
+- sk-003 "Spot Climbing Gym": coarse-coordinates (coordinates only locate the area, not the gym) -> suggested: defer
 - sk-015 "Stienka": status-not-open (status_claim is unknown); insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough) -> suggested: defer
 - sk-020 "Lezecké centrum Trenčín": status-not-open (status_claim is unknown); insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough) -> suggested: defer
 - sk-022 "Športová hala Malina – lezecká stena": not-a-gym (category other); bouldering-unknown (bouldering offering not established (never assumed)) -> suggested: reject not-a-gym
