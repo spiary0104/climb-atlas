@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "updater_version": 1,
+  "kind": "update",
+  "batch_id": "2026-10-06-rename-funattic",
+  "status": "updated",
+  "target": {
+    "kind": "production",
+    "host": "thayxaampaelvntoaido.supabase.co"
+  },
+  "coverage": "FULL",
+  "plan_sha256": "0ae6c81f137e375517086c3942a2300568d1a075c442b9be10e33c09ae0af49f",
+  "payload_sha256": "eb1cfc6c4c7385d6ae41a2917cf6c4174b90cf2b28386b8c13e4825390727b8d",
+  "confirm_token": "ab08a3d9130dceea",
+  "live_state_sha256": "faf8ae7404dd00852c4edc628f18355697e466446867411adaf70b7b3122d9d4",
+  "rows_updated": 0,
+  "approved_before": 2419,
+  "approved_after": 2419,
+  "changes": [],
+  "rows_identity_changed": 1,
+  "identity_changed": [
+    {
+      "id": "seed-1702",
+      "fields": [
+        "name"
+      ],
+      "expect_h": "541e2ad986637bc1",
+      "after_h": "8007888442c7ea85"
+    }
+  ],
+  "verification": {
+    "ok": true,
+    "checked": 1,
+    "problems": []
+  },
+  "started_at": "2026-10-06T06:43:19.209Z",
+  "finished_at": "2026-10-06T06:43:22.254Z",
+  "ids": [
+    "seed-1702"
+  ]
+}

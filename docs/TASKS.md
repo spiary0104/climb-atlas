@@ -6,12 +6,11 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 (delete them; git keeps history). Keep this file under 60 lines.
 
 ## In progress
-### Wave 3A + small fixes (PR, 2026-10-06) — STAGED, awaiting the owner apply
-- +19 gyms (Slovakia 13, Ukraine 5, Peru 1; Belarus and Serbia: all already listed or deferred). Fixes: White Spider name, High-east suburb,
-  Up Escalada, Funattic (ex-Tsekh: pin + rename), The Wall Lviv and Ovčín pins. Owner checks: `import/research/MANUAL-CHECKS-wave-3a.md` (17).
+- _(none; Wave 3A + small fixes live 2026-10-06: 2,438 gyms)_
 
 ## Gym data
-### Owner manual checks (2026-10-06)
+### Owner manual checks
+- Wave 3A: 17 gyms (`import/research/MANUAL-CHECKS-wave-3a.md`).
 - Done: 8 gyms added, 1 tag fix, the rest declined (`import/research/MANUAL-CHECKS-2026-10-06.md`). Open: CAT Torino (bouldering for day visitors?);
   re-check later: Kletterhütte Ilmenau (not open yet), Hwang Pyeong-ju (unsure).
 - Decisions: the merged Jeonnam-Gwangju region name in Korean addresses.
