@@ -1,6 +1,9 @@
 # Coverage-gap sprint 2026-10-06: status and follow-ups
 
-Branch `research/2026-10-06-coverage-gap` (PR open, nothing applied). Rankings: `ranking-countries.md`, `ranking-cities.md`; estimates: the four JSON files.
+**Applied 2026-10-06 (23:12-23:18), verified per batch:** all except kr-seoul, i.e. 19 batches, +856 gyms (production 3,294). The run
+stopped at kr-seoul before writing it; on 2026-10-07 it still plans clean (40 new, 0 duplicates) and the dry run passes. Re-run that batch alone.
+
+Branch `research/2026-10-06-coverage-gap` (PR #79). Rankings: `ranking-countries.md`, `ranking-cities.md`; estimates: the four JSON files.
 
 Merged here (staged, validated, planned, read-only dry-run passed): de-south 67, us-south 60, us-midwest 58, us-west 53, jp-kansai 32, france-cities 60, us-northeast 76, jp-chubu 54, canada 85, spain-cities 38, jp-kyushu-hokkaido 47, jp-kanto 51, de-west-north 66, kr-seoul 40, poland 10, netherlands 35, belgium 17, austria 23, czechia-gap 6, london 18 = 896 new gyms.
 

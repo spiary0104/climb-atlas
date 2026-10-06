@@ -6,7 +6,9 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 (delete them; git keeps history). Keep this file under 60 lines.
 
 ## In progress
-### Coverage-gap sprint 2026-10-06 — STAGED (20 sections, +896 gyms), awaiting owner sign-off + apply
+### Coverage-gap sprint 2026-10-06 — 19/20 APPLIED + verified (+856 gyms, live 3,294); kr-seoul (40) NOT applied
+- The 2026-10-06 apply run stopped at kr-seoul with nothing written for it; it plans and dry-runs clean (2026-10-07). Owner re-runs:
+  `powershell -ExecutionPolicy Bypass -File scriptspply-batch.ps1 2026-10-06-kr-seoul`
 - `docs/research/coverage-gap-2026-10/REPORT.md` (country/city gap rankings, next wave, tooling notes). 187 owner checks: `MANUAL-CHECKS.md`.
   Follow-ups (pin fixes, Seoul duplicates): `STATUS.md`. Next wave: Korea outside Seoul, US covered-state metros, FR/DE long tail, Italy, UK cities.
 
