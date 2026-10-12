@@ -1,0 +1,202 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-12-kr-fixes",
+ "index": {
+  "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
+  "count": 3294,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-06-kr-seoul"
+ ],
+ "counts": {
+  "records": 7,
+  "new": 0,
+  "existing": 0,
+  "update": 4,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "retire": 3,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 2
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "2dbb68c7ef065fd6c6ade98f7bd0f616e56ecdc46d768fbbd60b27ead7b6e87c",
+ "records": [
+  {
+   "line": 1,
+   "class": "update",
+   "id": "seed-1199",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 37.5749615,
+     "after": 37.570909
+    },
+    {
+     "field": "lng",
+     "before": 126.990828,
+     "after": 126.991399
+    }
+   ],
+   "expect_h": "297eb3f90033f2f2",
+   "update_reason": "Pin moved to the gym's own Naver Place pin (PEAKERS Jongno, Piccadilly1958 B4F, ~453 m from the old pin)"
+  },
+  {
+   "line": 2,
+   "class": "update",
+   "id": "seed-1168",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 37.5286707,
+     "after": 37.525842
+    },
+    {
+     "field": "lng",
+     "before": 126.9079258,
+     "after": 126.908892
+    },
+    {
+     "field": "address",
+     "before": "117 Beodeunaru-ro, Yeongdeungpo-gu, Seoul, South Korea",
+     "after": "B1F, 85 Beodeunaru-ro, Yeongdeungpo-gu, Seoul, South Korea"
+    }
+   ],
+   "expect_h": "298c1e3b261ab71f",
+   "update_reason": "Pin and address moved to the gym's own Naver Place listing (Climb Works, 85 Beodeunaru-ro, B1F; ~326 m from the old pin)"
+  },
+  {
+   "line": 3,
+   "class": "update",
+   "id": "seed-1188",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 37.5117457,
+     "after": 37.509837
+    },
+    {
+     "field": "lng",
+     "before": 127.1234105,
+     "after": 127.125525
+    }
+   ],
+   "expect_h": "2daa1ead467b56c7",
+   "update_reason": "Pin moved to the gym's own Naver Place pin (Route Climbing, Yangjae-daero 71-gil 5-14 B1F, ~283 m from the old pin)"
+  },
+  {
+   "line": 4,
+   "class": "update",
+   "id": "seed-1202",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 37.5417887,
+     "after": 37.533699
+    },
+    {
+     "field": "lng",
+     "before": 127.161123,
+     "after": 127.142278
+    }
+   ],
+   "expect_h": "d1df98e40e18f8a1",
+   "update_reason": "Same gym as the Naver Place listing at Cheonho-daero 1178 B1F (Aleso Building); pin moved there, ~1.9 km from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1889 m"
+    }
+   ]
+  },
+  {
+   "line": 5,
+   "class": "retire",
+   "id": "g-7e30006a3e",
+   "name": "Alé Climbing Gangdong (알레클라이밍 강동점)",
+   "country": "KR",
+   "expect_h": "4bde269c8a081dd1",
+   "reason_code": "duplicate",
+   "retire_reason": "Duplicate of Allez Climb Gangdong (g-707b731ba7): same gym, the Naver/Kakao listing is at Cheonho-daero 177-gil 39 B2F; this record has a vague address and a pin 801 m away",
+   "duplicate_of": "g-707b731ba7",
+   "entry": {
+    "id": "g-7e30006a3e",
+    "name": "Alé Climbing Gangdong (알레클라이밍 강동점)",
+    "country": "KR",
+    "state": "SEOUL",
+    "suburb": "Gangdong-gu, Seoul",
+    "lat": 37.539616142479,
+    "lng": 127.14592898659,
+    "address": "서울 강동구 길동",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "4bde269c8a081dd1"
+   },
+   "warnings": [
+    {
+     "code": "duplicate-far-apart",
+     "field": "duplicate_of",
+     "message": "g-7e30006a3e and g-707b731ba7 are 780 m apart; check they are the same gym"
+    }
+   ]
+  },
+  {
+   "line": 6,
+   "class": "retire",
+   "id": "g-97ac649c15",
+   "name": "SEOULBOULDERS Mokdong",
+   "country": "KR",
+   "expect_h": "773c86f2a4e136d2",
+   "reason_code": "duplicate",
+   "retire_reason": "Duplicate of Seoul Boulders Mokdong (g-f975eb0b04): same address (Sinmok-ro 53), the other record's pin matches the gym's own Naver pin within 25 m, this one is about 250 m off",
+   "duplicate_of": "g-f975eb0b04",
+   "entry": {
+    "id": "g-97ac649c15",
+    "name": "SEOULBOULDERS Mokdong",
+    "country": "KR",
+    "state": "SEOUL",
+    "suburb": "Sinjeong-dong, Yangcheon-gu, Seoul",
+    "lat": 37.5223821,
+    "lng": 126.8744848,
+    "address": "53 Sinmok-ro, Yangcheon-gu, Seoul, South Korea",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "773c86f2a4e136d2"
+   }
+  },
+  {
+   "line": 7,
+   "class": "retire",
+   "id": "seed-1191",
+   "name": "The Climb Hongdae",
+   "country": "KR",
+   "expect_h": "7a3a9085646f09fc",
+   "reason_code": "duplicate",
+   "retire_reason": "Duplicate of THE CLIMB Yeonnam (seed-1759): the chain lists no Hongdae branch and the Hongdae-area branch is Yeonnam; no climbing gym at the old address/pin",
+   "duplicate_of": "seed-1759",
+   "entry": {
+    "id": "seed-1191",
+    "name": "The Climb Hongdae",
+    "country": "KR",
+    "state": "SEOUL",
+    "suburb": "Mapo-gu, Seoul",
+    "lat": 37.5550711,
+    "lng": 126.9238244,
+    "address": "353-5 Seogyo-dong, Mapo-gu, Seoul, South Korea",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "7a3a9085646f09fc"
+   }
+  }
+ ]
+}
