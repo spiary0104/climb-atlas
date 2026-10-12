@@ -10,10 +10,10 @@
   "2026-10-06-kr-seoul"
  ],
  "counts": {
-  "records": 7,
+  "records": 8,
   "new": 0,
   "existing": 0,
-  "update": 4,
+  "update": 5,
   "probable-duplicate": 0,
   "invalid": 0,
   "rejected": 0,
@@ -21,12 +21,12 @@
   "existing_identical": 0,
   "existing_content_differs": 0,
   "new_id_not_frozen": 0,
-  "warnings": 2
+  "warnings": 3
  },
  "importable": true,
  "blockers": [],
  "unused_decisions": [],
- "plan_sha256": "2dbb68c7ef065fd6c6ade98f7bd0f616e56ecdc46d768fbbd60b27ead7b6e87c",
+ "plan_sha256": "e02c929e58eb336fbd73cdd52cc44dbf11d1dbce35b1ed7c7f6245e30f67d4fc",
  "records": [
   {
    "line": 1,
@@ -197,6 +197,32 @@
     ],
     "h": "7a3a9085646f09fc"
    }
+  },
+  {
+   "line": 8,
+   "class": "update",
+   "id": "seed-1200",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 37.5262,
+     "after": 37.542178
+    },
+    {
+     "field": "lng",
+     "before": 126.8959,
+     "after": 126.891024
+    }
+   ],
+   "expect_h": "6f24e02bf17239db",
+   "update_reason": "Same gym as Seoul Boulders Seonyu (same address, 3F 7 Yangpyeong-ro 28-ma-gil); pin moved to the gym's own Naver Place pin, 1.8 km from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1828 m"
+    }
+   ]
   }
  ]
 }

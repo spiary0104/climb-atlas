@@ -5,17 +5,17 @@
 | What would happen | Records |
 |---|---:|
 | Insert as NEW gyms | 0 |
-| Update existing gyms (explicit update records) | 4 |
+| Update existing gyms (explicit update records) | 5 |
 | Retire existing gyms (closed / duplicate: status becomes rejected, record kept) | 3 |
 | Already exist — no action (identical content: 0; content differs, NOT applied: 0) | 0 |
 | Probable duplicates — need a human decision | 0 |
 | Invalid — rejected | 0 |
 | Rejected by a human decision | 0 |
-| **Total records in batch** | 7 |
+| **Total records in batch** | 8 |
 
-Index: 3294 known gyms (sha256 2f47cb53e74b…). Plan: 2dbb68c7ef06… Also compared against staged batches: 2026-10-06-kr-seoul.
+Index: 3294 known gyms (sha256 2f47cb53e74b…). Plan: e02c929e58eb… Also compared against staged batches: 2026-10-06-kr-seoul.
 
-## Updates to existing gyms (4)
+## Updates to existing gyms (5)
 
 - line 1 `seed-1199` — Pin moved to the gym's own Naver Place pin (PEAKERS Jongno, Piccadilly1958 B4F, ~453 m from the old pin)
   - lat: 37.5749615 → 37.570909
@@ -30,6 +30,9 @@ Index: 3294 known gyms (sha256 2f47cb53e74b…). Plan: 2dbb68c7ef06… Also comp
 - line 4 `seed-1202` — Same gym as the Naver Place listing at Cheonho-daero 1178 B1F (Aleso Building); pin moved there, ~1.9 km from the old pin
   - lat: 37.5417887 → 37.533699
   - lng: 127.161123 → 127.142278
+- line 8 `seed-1200` — Same gym as Seoul Boulders Seonyu (same address, 3F 7 Yangpyeong-ro 28-ma-gil); pin moved to the gym's own Naver Place pin, 1.8 km from the old pin
+  - lat: 37.5262 → 37.542178
+  - lng: 126.8959 → 126.891024
 
 ## Retirements of existing gyms (3)
 
@@ -42,5 +45,5 @@ Each gym is set to `rejected` with the reason below (the moderator UI's own deci
 ## Warnings
 
 - `duplicate-far-apart` × 1: lines 5
-- `large-pin-move` × 1: lines 4
+- `large-pin-move` × 2: lines 4, 8
 
