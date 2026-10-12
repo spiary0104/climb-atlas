@@ -6,7 +6,7 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 (delete them; git keeps history). Keep this file under 60 lines.
 
 ## In progress
-### Korea 2026-10-12 — STAGED, not applied (PR on `research/2026-10-12-korea`): +120 gyms, 23+ pin fixes, 4 duplicate retirements
+### Korea 2026-10-12 — STAGED, not applied (PR on `research/2026-10-12-korea`): +120 gyms, 28 pin fixes, 4 duplicate retirements
 - Batches: kr-fixes (updates + retirements) and kr-seoul (39 new; Seonyu is same-as seed-1200), then kr-incheon 6, kr-busan-gyeongnam 10,
   kr-daegu-gyeongbuk 12, kr-gyeonggi-west 8, kr-gyeonggi-south 17, kr-gyeonggi-north 13, kr-central-regions 15. All plan clean together.
 - Apply in that order (kr-fixes first). Afterwards stage the identity batch (seed-1200, seed-1177, seed-1235 names).
