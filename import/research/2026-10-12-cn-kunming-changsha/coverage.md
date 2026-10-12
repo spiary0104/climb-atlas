@@ -30,5 +30,6 @@ Amap lists about 20 venues (queries 攀岩馆, 抱石, 攀岩, 岩馆, 香蕉攀
 | Zaoan, Xiangpan | deferred |
 | V9 Climbing (Xingsha) | left out: one visitor note (2026-08-27) only; small gym (two rooms of walls plus one high wall) |
 | Jiu'er Climbing (Helong) | left out: rope-based older gym (opened 2011), account posts instructor courses |
-| Daxi x4 (Yanghu, Wuyue, Poly Tianxi, Changsha South), Xiangshang Pan x2 (Xingsha, Ningxiang), Caixing x2, Wupeng, Panxing (children) | left out: no usable 2026 evidence found, or children / rope focus; leads |
+| Daxi x4 (Yanghu, Wuyue, Poly Tianxi, Changsha South), Xiangshang Pan x2 (Xingsha, Ningxiang), Caixing x2 | left out: searched, no usable 2026 evidence found (Daxi: two visitor notes, one about children) |
+| Wupeng, Panxing (children) | listed, not examined |
 | Jungle activity park, Shiyanhu park wall, Daweishan base | outdoor / activity parks |

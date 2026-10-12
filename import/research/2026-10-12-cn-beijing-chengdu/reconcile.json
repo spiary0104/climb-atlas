@@ -1,0 +1,348 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-12-cn-beijing-chengdu",
+ "inputs": {
+  "section_sha256": "a5f921f889320a7543550a1c3c8228658f3f0888ec6200e5198e87e2b53990c9",
+  "sources_sha256": "b5666cd07301b0d3b83d75c30ed330f9201af1ad23e67dc321d15307dece19d9",
+  "candidates_sha256": "1d2f7b800771adbafe399ecf877f6b8a0f3e7ae43779d02d32a7dcfd5a28d72b",
+  "index": {
+   "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
+   "count": 3294
+  },
+  "staged_batches_compared": [
+   "2026-10-06-kr-seoul",
+   "2026-10-12-cn-kunming-changsha",
+   "2026-10-12-cn-shanghai"
+  ],
+  "other_sections_compared": [
+   {
+    "id": "2026-10-12-cn-kunming-changsha",
+    "candidates_sha256": "0d864d1da8b9056771d840c55fe0622203ce0b0bf027522a546705c4985a2bc7"
+   },
+   {
+    "id": "2026-10-12-cn-shanghai",
+    "candidates_sha256": "50d68e713907b009021d0c95484c6350c28f3f6fdb190f1bdebf4271e475b844"
+   }
+  ]
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 16,
+  "ready": 7,
+  "review": 6,
+  "blocked": 3,
+  "existing": 0,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "cn-bj-001",
+   "line": 1,
+   "name": "BLOC1 Climbing [BLOC1攀岩]",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-d38f2a5e4d"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "cn-bj-002",
+   "line": 2,
+   "name": "EDGE Climbing (Sanyuanqiao) [EDGE一直攀岩]",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-474e548220"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "cn-bj-003",
+   "line": 3,
+   "name": "Superbox Climbing (Happy Valley) [SUPERBOX超级秀场攀岩馆欢乐谷店]",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-1ea116bacd"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "cn-bj-004",
+   "line": 4,
+   "name": "ZOO Climb [ZOO攀岩馆]",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-894e6ef315"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "cn-bj-005",
+   "line": 5,
+   "name": "Qingshan Climbing Stone (Weigongcun) [青山攀石魏公村店]",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-1d927b2104"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-682 \"Qingshan Climbing Stone (Qinghe)\": related names \"Qingshan Climbing Stone (Weigongcun) [青山攀石魏公村店]\" / \"Qingshan Climbing Stone (Qinghe)\" 9066 m apart",
+     "ids": [
+      "seed-682"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-682"
+   ]
+  },
+  {
+   "cid": "cn-bj-006",
+   "line": 6,
+   "name": "Banana Climbing (Xiaoyuehe) [香蕉攀岩小月河店]",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-1436556fe0"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-637 \"Banana Climbing (Shangdi)\": related names \"Banana Climbing (Xiaoyuehe) [香蕉攀岩小月河店]\" / \"Banana Climbing (Shangdi)\" 5472 m apart",
+     "ids": [
+      "seed-637"
+     ]
+    },
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": [
+    "seed-637"
+   ]
+  },
+  {
+   "cid": "cn-bj-007",
+   "line": 7,
+   "name": "Wo Pan Climbing (Guangqu) [我攀攀岩广渠东路店]",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-bb74ed73f6"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "cn-bj-008",
+   "line": 8,
+   "name": "Qingteng Climbing [青藤攀岩]",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-fde5f38e02"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "cn-bj-009",
+   "line": 9,
+   "name": "Cishan Climbing (Yizhuang Tongminghu) [此山攀岩亦庄通明湖商业港店]",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-210cab65bb"
+   },
+   "flags": [
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "cn-bj-010",
+   "line": 10,
+   "name": "Surmount Climbing [SURMOUNT山迈攀岩]",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-52c5fa2b26"
+   },
+   "flags": [
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "cn-bj-011",
+   "line": 11,
+   "name": "Feline Climbing (Jijiamiao) [飞猫攀岩纪家庙店]",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-eefe533a0f"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-642 \"Feline Climbing Gym\": related names \"Feline Climbing (Jijiamiao) [飞猫攀岩纪家庙店]\" / \"Feline Climbing Gym\" 12153 m apart",
+     "ids": [
+      "seed-642"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-642"
+   ]
+  },
+  {
+   "cid": "cn-bj-012",
+   "line": 12,
+   "name": "Renren Climbing (Happy Valley) [人人攀岩欢乐谷店]",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-137c20a789"
+   },
+   "blockers": [
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "no-bouldering-evidence",
+     "detail": "bouldering is \"yes\" but no primary source confirms it"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "cn-bj-013",
+   "line": 13,
+   "name": "Climb On Gym (Shougang) [Climb On Gym攀岩馆COG首钢店]",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-73b5ef6a85"
+   },
+   "blockers": [
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "no-bouldering-evidence",
+     "detail": "bouldering is \"yes\" but no primary source confirms it"
+    }
+   ],
+   "flags": [
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "cn-cd-001",
+   "line": 14,
+   "name": "SOFA Climbing [SOFA攀岩]",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-fb88f1ad7d"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "cn-cd-002",
+   "line": 15,
+   "name": "Banana Climbing (Youfang) [香蕉攀岩悠方店]",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-a5c1164e7e"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-606 \"Banana Climbing (COSMO)\": related names \"Banana Climbing (Youfang) [香蕉攀岩悠方店]\" / \"Banana Climbing (COSMO)\" 7407 m apart",
+     "ids": [
+      "seed-606"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-607 \"Banana Climbing (ICD)\": related names \"Banana Climbing (Youfang) [香蕉攀岩悠方店]\" / \"Banana Climbing (ICD)\" 5670 m apart",
+     "ids": [
+      "seed-607"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-608 \"Banana Climbing (CapitaLand Tianfu)\": related names \"Banana Climbing (Youfang) [香蕉攀岩悠方店]\" / \"Banana Climbing (CapitaLand Tianfu)\" 2523 m apart",
+     "ids": [
+      "seed-608"
+     ]
+    },
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": [
+    "seed-606",
+    "seed-607",
+    "seed-608"
+   ]
+  },
+  {
+   "cid": "cn-cd-003",
+   "line": 16,
+   "name": "Yanxuan Climbing (Donghu) [岩选攀岩]",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-d82ee0739c"
+   },
+   "blockers": [
+    {
+     "code": "no-bouldering-evidence",
+     "detail": "bouldering is \"yes\" but no primary source confirms it"
+    }
+   ],
+   "review_ids": []
+  }
+ ],
+ "reconcile_sha256": "b042b956db99d7ad94f815f816bca38334b381d520369f1433bda1126ca3de08"
+}
