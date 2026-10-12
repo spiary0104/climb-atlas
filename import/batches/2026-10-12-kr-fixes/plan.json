@@ -16,23 +16,23 @@
   "2026-10-12-kr-incheon"
  ],
  "counts": {
-  "records": 8,
+  "records": 27,
   "new": 0,
   "existing": 0,
-  "update": 5,
+  "update": 23,
   "probable-duplicate": 0,
   "invalid": 0,
   "rejected": 0,
-  "retire": 3,
+  "retire": 4,
   "existing_identical": 0,
   "existing_content_differs": 0,
   "new_id_not_frozen": 0,
-  "warnings": 3
+  "warnings": 18
  },
  "importable": true,
  "blockers": [],
  "unused_decisions": [],
- "plan_sha256": "e02c929e58eb336fbd73cdd52cc44dbf11d1dbce35b1ed7c7f6245e30f67d4fc",
+ "plan_sha256": "49fd9d6c812526f1c71c79fb166d7a866405fe745ce1ad6ed7d31781930b039c",
  "records": [
   {
    "line": 1,
@@ -227,6 +227,483 @@
      "code": "large-pin-move",
      "field": "lat",
      "message": "moves the pin by 1828 m"
+    }
+   ]
+  },
+  {
+   "line": 9,
+   "class": "update",
+   "id": "seed-1215",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 37.545,
+     "after": 37.597803
+    },
+    {
+     "field": "lng",
+     "before": 126.676,
+     "after": 126.667369
+    }
+   ],
+   "expect_h": "11999005deb09dcc",
+   "update_reason": "Pin moved to the gym's own Naver Place pin (Discovery Climbing Square ICN), 5920 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 5920 m"
+    }
+   ]
+  },
+  {
+   "line": 10,
+   "class": "update",
+   "id": "seed-1216",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 37.4735389,
+     "after": 37.488839
+    },
+    {
+     "field": "lng",
+     "before": 126.6214081,
+     "after": 126.561209
+    }
+   ],
+   "expect_h": "faa75ca08f8e0d34",
+   "update_reason": "Pin moved to the gym's own Naver Place pin (B.bloc Climbing Yeongjong), 5578 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 5578 m"
+    }
+   ]
+  },
+  {
+   "line": 11,
+   "class": "update",
+   "id": "seed-1164",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 37.3851499,
+     "after": 37.38022
+    },
+    {
+     "field": "lng",
+     "before": 126.6457433,
+     "after": 126.663704
+    },
+    {
+     "field": "address",
+     "before": "#101 149 Songdo2-dong, Art center-daero, Yeonsu-gu, Incheon, South Korea",
+     "after": "107, 13-39 Songdo-gwahak-ro 16beon-gil, Yeonsu-gu, Incheon, South Korea"
+    }
+   ],
+   "expect_h": "7d529a9b54311762",
+   "update_reason": "Pin moved to the gym's own Naver Place pin (B.bloc Climbing Songdo), 1679 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1679 m"
+    }
+   ]
+  },
+  {
+   "line": 12,
+   "class": "update",
+   "id": "seed-1217",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 37.5450276,
+     "after": 37.542784
+    },
+    {
+     "field": "lng",
+     "before": 126.7119217,
+     "after": 126.73426
+    }
+   ],
+   "expect_h": "660e9f25aab8c7a1",
+   "update_reason": "Pin moved to the gym's own Naver Place pin (Incheon Gyeyang Climbing Center), 1985 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1985 m"
+    }
+   ]
+  },
+  {
+   "line": 13,
+   "class": "update",
+   "id": "seed-1165",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 35.12398,
+     "after": 35.131692
+    },
+    {
+     "field": "lng",
+     "before": 128.11082,
+     "after": 128.100583
+    }
+   ],
+   "expect_h": "92753770dd15122c",
+   "update_reason": "Pin moved to the gym's own Naver Place pin (Big Climbing Gym (Jinju)), 1266 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1266 m"
+    }
+   ]
+  },
+  {
+   "line": 14,
+   "class": "update",
+   "id": "seed-1161",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 35.56212,
+     "after": 35.555374
+    },
+    {
+     "field": "lng",
+     "before": 129.31018,
+     "after": 129.314914
+    }
+   ],
+   "expect_h": "717dc579c86b42ed",
+   "update_reason": "Pin moved to the gym's own Naver Place pin (9 Climbing Gym (Ulsan)), 864 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 864 m"
+    }
+   ]
+  },
+  {
+   "line": 15,
+   "class": "update",
+   "id": "seed-1196",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 35.2294147,
+     "after": 35.229611
+    },
+    {
+     "field": "lng",
+     "before": 129.0835901,
+     "after": 129.088957
+    }
+   ],
+   "expect_h": "c93174b6cb22ff94",
+   "update_reason": "Pin moved to the gym's own Naver Place pin (Waverock Pusan National University), 488 m from the old pin"
+  },
+  {
+   "line": 16,
+   "class": "update",
+   "id": "seed-1218",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 35.8703453,
+     "after": 35.870447
+    },
+    {
+     "field": "lng",
+     "before": 128.7268532,
+     "after": 128.69139
+    }
+   ],
+   "expect_h": "142f75d80813d688",
+   "update_reason": "Pin moved to the gym's own Naver Place pin (Dino Cat Climbing Gym), 3195 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 3195 m"
+    }
+   ]
+  },
+  {
+   "line": 17,
+   "class": "update",
+   "id": "seed-1220",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 35.8259379,
+     "after": 35.860223
+    },
+    {
+     "field": "lng",
+     "before": 128.6189734,
+     "after": 128.618079
+    }
+   ],
+   "expect_h": "d8948bb1b3f605fd",
+   "update_reason": "Pin moved to the gym's own Naver Place pin (Daegu Power Climbing Center), 3813 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 3813 m"
+    }
+   ]
+  },
+  {
+   "line": 18,
+   "class": "update",
+   "id": "seed-1221",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 35.8702998,
+     "after": 35.867766
+    },
+    {
+     "field": "lng",
+     "before": 128.5959336,
+     "after": 128.594693
+    }
+   ],
+   "expect_h": "6c543495688527f2",
+   "update_reason": "Pin moved to the gym's own Naver Place pin (Dongseong-ro Climbing Gym), 303 m from the old pin"
+  },
+  {
+   "line": 19,
+   "class": "update",
+   "id": "seed-1179",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 37.2825292,
+     "after": 37.27672
+    },
+    {
+     "field": "lng",
+     "before": 127.0199808,
+     "after": 127.030868
+    }
+   ],
+   "expect_h": "ff5c4c7f7bc3ee7b",
+   "update_reason": "Pin moved to the gym's own Naver Place pin (King Kong Climbing (Suwon)), 1160 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1160 m"
+    }
+   ]
+  },
+  {
+   "line": 20,
+   "class": "update",
+   "id": "g-69b158b889",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 37.3627699,
+     "after": 37.37874
+    },
+    {
+     "field": "lng",
+     "before": 127.1098529,
+     "after": 127.11311
+    }
+   ],
+   "expect_h": "95095391dd423674",
+   "update_reason": "Pin moved to the gym's own Naver Place pin (Rocktree Climbing Bundang), 1799 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1799 m"
+    }
+   ]
+  },
+  {
+   "line": 21,
+   "class": "update",
+   "id": "g-79e1f1b07b",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 37.433434,
+     "after": 37.443434
+    },
+    {
+     "field": "lng",
+     "before": 127.163912,
+     "after": 127.154572
+    }
+   ],
+   "expect_h": "fd7c2c15cb113ee0",
+   "update_reason": "Pin moved to the gym's own Naver Place pin (Rock Face Climbing), 1384 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1384 m"
+    }
+   ]
+  },
+  {
+   "line": 22,
+   "class": "update",
+   "id": "seed-1189",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 37.4017255,
+     "after": 37.402069
+    },
+    {
+     "field": "lng",
+     "before": 127.1019907,
+     "after": 127.106651
+    }
+   ],
+   "expect_h": "66636cc20384f92c",
+   "update_reason": "Pin moved to the gym's own Naver Place pin (Son Sang Won Climbing Gym Pangyo), 413 m from the old pin"
+  },
+  {
+   "line": 23,
+   "class": "update",
+   "id": "seed-1193",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 36.9885512,
+     "after": 36.991594
+    },
+    {
+     "field": "lng",
+     "before": 127.101767,
+     "after": 127.093769
+    }
+   ],
+   "expect_h": "9eef9e8154eeed2a",
+   "update_reason": "Pin moved to the gym's own Naver Place pin (Twin Climbing Center), 787 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 787 m"
+    }
+   ]
+  },
+  {
+   "line": 24,
+   "class": "update",
+   "id": "g-e52dfc621f",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 37.328983,
+     "after": 37.325738
+    },
+    {
+     "field": "lng",
+     "before": 127.104802,
+     "after": 127.105538
+    }
+   ],
+   "expect_h": "f01959133fd27ef0",
+   "update_reason": "Pin moved to the gym's own Naver Place pin (Suji Climbing), 367 m from the old pin"
+  },
+  {
+   "line": 25,
+   "class": "update",
+   "id": "g-53afac8faa",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 37.855592,
+     "after": 37.712007
+    },
+    {
+     "field": "lng",
+     "before": 126.809411,
+     "after": 126.744499
+    }
+   ],
+   "expect_h": "e8c59c7df737101b",
+   "update_reason": "Pin moved to the gym's own Naver Place pin (AstroMan Climbing Center Paju), 16954 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 16954 m"
+    }
+   ]
+  },
+  {
+   "line": 26,
+   "class": "update",
+   "id": "seed-1182",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 37.5965336,
+     "after": 37.591908
+    },
+    {
+     "field": "lng",
+     "before": 127.1369672,
+     "after": 127.138149
+    }
+   ],
+   "expect_h": "a67c5dbecab1d7ca",
+   "update_reason": "Pin moved to the gym's own Naver Place pin (Mountain Star (Guri)), 525 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 525 m"
+    }
+   ]
+  },
+  {
+   "line": 27,
+   "class": "retire",
+   "id": "g-5eec475af0",
+   "name": "Climb A Clock (클라임어클락)",
+   "country": "KR",
+   "expect_h": "1094781a556548f4",
+   "reason_code": "duplicate",
+   "retire_reason": "Duplicate of Climb O'Clock (g-e227233b91): same address (Dongtangiheung-ro 257beonga-gil 33); that record's pin matches the gym's own Naver pin within 10 m, this one is 905 m off",
+   "duplicate_of": "g-e227233b91",
+   "entry": {
+    "id": "g-5eec475af0",
+    "name": "Climb A Clock (클라임어클락)",
+    "country": "KR",
+    "state": "GYEONGGI",
+    "suburb": "Hwaseong-si, Gyeonggi-do",
+    "lat": 37.172729,
+    "lng": 127.088118,
+    "address": "경기도 화성시 동탄기흥로257번가길 33 (방교동)",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "1094781a556548f4"
+   },
+   "warnings": [
+    {
+     "code": "duplicate-far-apart",
+     "field": "duplicate_of",
+     "message": "g-5eec475af0 and g-e227233b91 are 911 m apart; check they are the same gym"
     }
    ]
   }
