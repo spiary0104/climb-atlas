@@ -4,7 +4,7 @@
  "inputs": {
   "section_sha256": "7e46f5f6849c82db49d29a1fa071c46932c6662648131e9d923f36ef0560f116",
   "sources_sha256": "4f5aa50fd6b275dbe58f9366bf7646805d1bd67dd7c6367ec132e283c0fbb200",
-  "candidates_sha256": "b9fa6de474d7760e826836b7720f7c628225586846ba2188fc0021026e17f6c7",
+  "candidates_sha256": "0d864d1da8b9056771d840c55fe0622203ce0b0bf027522a546705c4985a2bc7",
   "index": {
    "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
    "count": 3294
@@ -21,8 +21,8 @@
  },
  "counts": {
   "candidates": 12,
-  "ready": 5,
-  "review": 2,
+  "ready": 4,
+  "review": 3,
   "blocked": 5,
   "existing": 0,
   "invalid": 0
@@ -36,7 +36,7 @@
    "suggested": "accept",
    "importer": {
     "class": "new",
-    "id": "g-2e2bdca33f"
+    "id": "g-51e02d6afa"
    },
    "review_ids": []
   },
@@ -44,12 +44,18 @@
    "cid": "cn-cs-002",
    "line": 8,
    "name": "TBW Climbing (Longji Base) [TBW攀岩龙脊基地店]",
-   "class": "ready",
-   "suggested": "accept",
+   "class": "review",
+   "suggested": "review",
    "importer": {
     "class": "new",
-    "id": "g-bad56b372d"
+    "id": "g-82d7bf530e"
    },
+   "flags": [
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
    "review_ids": []
   },
   {
@@ -60,7 +66,7 @@
    "suggested": "defer",
    "importer": {
     "class": "new",
-    "id": "g-45b68e4d07"
+    "id": "g-11a4b563ca"
    },
    "blockers": [
     {
@@ -90,6 +96,12 @@
      "detail": "bouldering is \"yes\" but no primary source confirms it"
     }
    ],
+   "flags": [
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
    "review_ids": []
   },
   {
@@ -100,7 +112,7 @@
    "suggested": "defer",
    "importer": {
     "class": "new",
-    "id": "g-bf3186132c"
+    "id": "g-777c8f7cee"
    },
    "blockers": [
     {
@@ -111,31 +123,35 @@
    "flags": [
     {
      "code": "related-name-nearby",
-     "detail": "candidate cn-cs-006 \"Banana Climbing (Yuefang ID Mall) [香蕉攀岩悦方ID MALL店]\": related names \"Banana Climbing (Zhujiang Star Ring) [香蕉攀岩珠江星环店]\" / \"香蕉攀岩(悦方ID MALL店)\" 7198 m apart",
+     "detail": "candidate cn-cs-006 \"Banana Climbing (Yuefang ID Mall) [香蕉攀岩悦方ID MALL店]\": related names \"Banana Climbing (Zhujiang Star Ring) [香蕉攀岩珠江星环店]\" / \"香蕉攀岩(悦方ID MALL店)\" 7190 m apart",
      "ids": [
       "cn-cs-006"
      ]
     },
     {
      "code": "related-name-nearby",
-     "detail": "seed-711 \"Banana Climbing (Zhujiang Star Ring)\": related names \"Banana Climbing (Zhujiang Star Ring) [香蕉攀岩珠江星环店]\" / \"Banana Climbing (Zhujiang Star Ring)\" 3272 m apart",
+     "detail": "seed-711 \"Banana Climbing (Zhujiang Star Ring)\": related names \"Banana Climbing (Zhujiang Star Ring) [香蕉攀岩珠江星环店]\" / \"Banana Climbing (Zhujiang Star Ring)\" 3271 m apart",
      "ids": [
       "seed-711"
      ]
     },
     {
      "code": "related-name-nearby",
-     "detail": "seed-712 \"Banana Climbing (Yuefang ID Mall)\": related names \"Banana Climbing (Zhujiang Star Ring) [香蕉攀岩珠江星环店]\" / \"Banana Climbing (Yuefang ID Mall)\" 7247 m apart",
+     "detail": "seed-712 \"Banana Climbing (Yuefang ID Mall)\": related names \"Banana Climbing (Zhujiang Star Ring) [香蕉攀岩珠江星环店]\" / \"Banana Climbing (Yuefang ID Mall)\" 7209 m apart",
      "ids": [
       "seed-712"
      ]
     },
     {
      "code": "related-name-nearby",
-     "detail": "seed-713 \"Banana Climbing (CapitaLand One)\": related names \"Banana Climbing (Zhujiang Star Ring) [香蕉攀岩珠江星环店]\" / \"Banana Climbing (CapitaLand One)\" 7444 m apart",
+     "detail": "seed-713 \"Banana Climbing (CapitaLand One)\": related names \"Banana Climbing (Zhujiang Star Ring) [香蕉攀岩珠江星环店]\" / \"Banana Climbing (CapitaLand One)\" 7450 m apart",
      "ids": [
       "seed-713"
      ]
+    },
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
     }
    ],
    "review_ids": [
@@ -153,7 +169,7 @@
    "suggested": "defer",
    "importer": {
     "class": "probable-duplicate",
-    "id": "g-c66b08200d"
+    "id": "g-60a93f58cc"
    },
    "blockers": [
     {
@@ -164,35 +180,35 @@
    "flags": [
     {
      "code": "importer-probable-duplicate",
-     "detail": "seed-712 renamed-or-related-name-nearby 55 m",
+     "detail": "seed-712 similar-name-nearby 104 m",
      "ids": [
       "seed-712"
      ]
     },
     {
      "code": "name-match",
-     "detail": "seed-712 \"Banana Climbing (Yuefang ID Mall)\": renamed-or-related-name-nearby (\"Banana Climbing (Yuefang ID Mall) [香蕉攀岩悦方ID MALL店]\" / \"Banana Climbing (Yuefang ID Mall)\", 55 m)",
+     "detail": "seed-712 \"Banana Climbing (Yuefang ID Mall)\": similar-name-nearby (\"Banana Climbing (Yuefang ID Mall) [香蕉攀岩悦方ID MALL店]\" / \"Banana Climbing (Yuefang ID Mall)\", 104 m)",
      "ids": [
       "seed-712"
      ]
     },
     {
      "code": "related-name-nearby",
-     "detail": "candidate cn-cs-005 \"Banana Climbing (Zhujiang Star Ring) [香蕉攀岩珠江星环店]\": related names \"Banana Climbing (Yuefang ID Mall) [香蕉攀岩悦方ID MALL店]\" / \"香蕉攀岩(珠江星环店)\" 7198 m apart",
+     "detail": "candidate cn-cs-005 \"Banana Climbing (Zhujiang Star Ring) [香蕉攀岩珠江星环店]\": related names \"Banana Climbing (Yuefang ID Mall) [香蕉攀岩悦方ID MALL店]\" / \"香蕉攀岩(珠江星环店)\" 7190 m apart",
      "ids": [
       "cn-cs-005"
      ]
     },
     {
      "code": "related-name-nearby",
-     "detail": "seed-711 \"Banana Climbing (Zhujiang Star Ring)\": related names \"Banana Climbing (Yuefang ID Mall) [香蕉攀岩悦方ID MALL店]\" / \"Banana Climbing (Zhujiang Star Ring)\" 4727 m apart",
+     "detail": "seed-711 \"Banana Climbing (Zhujiang Star Ring)\": related names \"Banana Climbing (Yuefang ID Mall) [香蕉攀岩悦方ID MALL店]\" / \"Banana Climbing (Zhujiang Star Ring)\" 4726 m apart",
      "ids": [
       "seed-711"
      ]
     },
     {
      "code": "related-name-nearby",
-     "detail": "seed-713 \"Banana Climbing (CapitaLand One)\": related names \"Banana Climbing (Yuefang ID Mall) [香蕉攀岩悦方ID MALL店]\" / \"Banana Climbing (CapitaLand One)\" 4821 m apart",
+     "detail": "seed-713 \"Banana Climbing (CapitaLand One)\": related names \"Banana Climbing (Yuefang ID Mall) [香蕉攀岩悦方ID MALL店]\" / \"Banana Climbing (CapitaLand One)\" 4755 m apart",
      "ids": [
       "seed-713"
      ]
@@ -213,7 +229,7 @@
    "suggested": "accept",
    "importer": {
     "class": "new",
-    "id": "g-3c379a71cd"
+    "id": "g-db739e1765"
    },
    "review_ids": []
   },
@@ -225,7 +241,7 @@
    "suggested": "accept",
    "importer": {
     "class": "new",
-    "id": "g-b9cf0baa54"
+    "id": "g-75dc4fbf55"
    },
    "review_ids": []
   },
@@ -237,12 +253,12 @@
    "suggested": "review",
    "importer": {
     "class": "new",
-    "id": "g-25e8f068df"
+    "id": "g-d915cda237"
    },
    "flags": [
     {
      "code": "related-name-nearby",
-     "detail": "candidate cn-km-004 \"Xiaoxiong Climbing (Hailer World) [昆明小熊攀岩俱乐部海乐世界馆]\": related names \"Xiaoxiong Climbing (Yunling Tianjiao) [昆明小熊攀岩俱乐部云岭天骄馆]\" / \"小熊攀岩(海乐世界)\" 12769 m apart",
+     "detail": "candidate cn-km-004 \"Xiaoxiong Climbing (Hailer World) [昆明小熊攀岩俱乐部海乐世界馆]\": related names \"Xiaoxiong Climbing (Yunling Tianjiao) [昆明小熊攀岩俱乐部云岭天骄馆]\" / \"小熊攀岩(海乐世界)\" 12887 m apart",
      "ids": [
       "cn-km-004"
      ]
@@ -260,15 +276,19 @@
    "suggested": "review",
    "importer": {
     "class": "new",
-    "id": "g-f1a070e85b"
+    "id": "g-db082c1502"
    },
    "flags": [
     {
      "code": "related-name-nearby",
-     "detail": "candidate cn-km-003 \"Xiaoxiong Climbing (Yunling Tianjiao) [昆明小熊攀岩俱乐部云岭天骄馆]\": related names \"Xiaoxiong Climbing (Hailer World) [昆明小熊攀岩俱乐部海乐世界馆]\" / \"昆明小熊攀岩俱乐部(云岭天骄馆)\" 12769 m apart",
+     "detail": "candidate cn-km-003 \"Xiaoxiong Climbing (Yunling Tianjiao) [昆明小熊攀岩俱乐部云岭天骄馆]\": related names \"Xiaoxiong Climbing (Hailer World) [昆明小熊攀岩俱乐部海乐世界馆]\" / \"昆明小熊攀岩俱乐部(云岭天骄馆)\" 12887 m apart",
      "ids": [
       "cn-km-003"
      ]
+    },
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
     }
    ],
    "review_ids": [
@@ -283,7 +303,7 @@
    "suggested": "accept",
    "importer": {
     "class": "new",
-    "id": "g-adba51f99f"
+    "id": "g-957b283ccf"
    },
    "review_ids": []
   },
@@ -295,7 +315,7 @@
    "suggested": "defer",
    "importer": {
     "class": "new",
-    "id": "g-1ebec596e6"
+    "id": "g-d5f7334f6c"
    },
    "blockers": [
     {
@@ -310,5 +330,5 @@
    "review_ids": []
   }
  ],
- "reconcile_sha256": "498de19970a753be9e1e78a9170828f8a3721711c39f99b8be267964f872233a"
+ "reconcile_sha256": "ce0b281fe8168e5a14a138fb476fe92ca77a651546abbcccd47d7e4eb255571e"
 }
