@@ -6,16 +6,18 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 (delete them; git keeps history). Keep this file under 60 lines.
 
 ## In progress
-### Korea 2026-10-12 — STAGED, not applied (PR on `research/2026-10-12-korea`): +120 gyms, 28 pin fixes, 4 duplicate retirements
+### Korea 2026-10-12 — STAGED, not applied (PR #83, branch `research/2026-10-12-korea`): +120 gyms, 28 pin fixes, 4 duplicate retirements
 - Batches: kr-fixes (updates + retirements) and kr-seoul (39 new; Seonyu is same-as seed-1200), then kr-incheon 6, kr-busan-gyeongnam 10,
   kr-daegu-gyeongbuk 12, kr-gyeonggi-west 8, kr-gyeonggi-south 17, kr-gyeonggi-north 13, kr-central-regions 15. All plan clean together.
 - Apply in that order (kr-fixes first). Afterwards stage the identity batch (seed-1200, seed-1177, seed-1235 names).
 - 73 owner checks + existing records to look at: `import/research/MANUAL-CHECKS-korea-2026-10-12.md`.
 ### Coverage-gap sprint 2026-10-06 — 19/20 APPLIED (+856 gyms, live 3,294); kr-seoul moved into the Korea PR above
 - `docs/research/coverage-gap-2026-10/REPORT.md` (rankings, next wave, tooling). 187 owner checks: `MANUAL-CHECKS.md`; follow-ups `STATUS.md`.
-### China via RedNote — waiting for the owner to log in to xiaohongshu.com in Chrome (OpenCLI)
-- Owner decisions 2026-10-12: RedNote (read-only search) is a source for China (exists / open / bouldering); pins come from the gym's own
-  Amap or Dianping listing, converted from GCJ-02 to WGS-84 and cross-checked with OSM; no listing pin = defer. Never log in for the owner.
+### China 2026-10-12 — STAGED in the same PR: +25 gyms (Kunming/Changsha 5, Shanghai 11, Beijing/Chengdu 9), not applied
+- Sources (owner 2026-10-12): RedNote read-only via the owner's logged-in rednote.com tab (OpenCLI session `xhs`, never new tabs, never
+  login/creator pages); pins = the gym's own Amap listing entrance (GCJ-02 -> WGS-84), cross-checked with OSM; no entrance = defer.
+- 17 owner checks + retire/pin follow-ups (incl. many Shanghai/Beijing seeds 1-2.6 km off): `import/research/MANUAL-CHECKS-china-2026-10-12.md`.
+- Next: China pin-fix batch; Guangzhou, Shenzhen, Hangzhou, Nanjing, Wuhan, Xi'an and cities with no gyms yet.
 
 ## Gym data
 ### Owner manual checks

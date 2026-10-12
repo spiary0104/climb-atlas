@@ -1,0 +1,80 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-12-cn-kunming-changsha",
+ "index": {
+  "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
+  "count": 3294,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-06-kr-seoul",
+  "2026-10-12-cn-beijing-chengdu",
+  "2026-10-12-cn-shanghai",
+  "2026-10-12-kr-busan-gyeongnam",
+  "2026-10-12-kr-central-regions",
+  "2026-10-12-kr-daegu-gyeongbuk",
+  "2026-10-12-kr-gyeonggi-north",
+  "2026-10-12-kr-gyeonggi-south",
+  "2026-10-12-kr-gyeonggi-west",
+  "2026-10-12-kr-incheon"
+ ],
+ "counts": {
+  "records": 5,
+  "new": 5,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "ddf52b2010390118ef37ec72f58e25fcc847bfa20ff432ebaeb0842701403abb",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-51e02d6afa",
+   "id_frozen": true,
+   "name": "CAMP4 Climbing (Changsha Xihu Park) [CAMP4岩肆长沙西湖公园店]",
+   "country": "CN"
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-db739e1765",
+   "id_frozen": true,
+   "name": "Nayan Climbing (Tuodong) [那岩拓东攀岩馆]",
+   "country": "CN"
+  },
+  {
+   "line": 3,
+   "class": "new",
+   "id": "g-75dc4fbf55",
+   "id_frozen": true,
+   "name": "Nayan Climbing (0871) [那岩0871攀岩俱乐部]",
+   "country": "CN"
+  },
+  {
+   "line": 4,
+   "class": "new",
+   "id": "g-d915cda237",
+   "id_frozen": true,
+   "name": "Xiaoxiong Climbing (Yunling Tianjiao) [昆明小熊攀岩俱乐部云岭天骄馆]",
+   "country": "CN"
+  },
+  {
+   "line": 5,
+   "class": "new",
+   "id": "g-957b283ccf",
+   "id_frozen": true,
+   "name": "Panyang Climbing Gym (Chenggong) [攀羊岩馆]",
+   "country": "CN"
+  }
+ ]
+}
