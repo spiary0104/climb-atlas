@@ -5,9 +5,9 @@ Index: 3294 gyms, sha256 2f47cb53e74b… | staged batches compared: 2026-10-06-k
 Review radii (stricter than the importer): any gym 150 m, related name 15 km, other country 2 km
 
 ## Summary
-17 candidate(s): ready 6 | review 9 | blocked 2 | already in Bouldeer 0 | invalid 0
+17 candidate(s): ready 6 | review 10 | blocked 1 | already in Bouldeer 0 | invalid 0
 
-## Needs review (accept needs a reason and reviewed_against covering every listed id) (9)
+## Needs review (accept needs a reason and reviewed_against covering every listed id) (10)
 - cn-sh-002 "YS Climbing (Xintiandi Dongtai Li) [岩时攀岩新天地东台里店]" [g-1e0e1780e6] reviewed_against must include: cn-sh-003, seed-541
   - related-name-nearby: candidate cn-sh-003 "YS Climbing (Luyue Tiandi) [岩时攀岩陆悦天地店]": related names "YS Climbing (Xintiandi Dongtai Li) [岩时攀岩新天地东台里店]" / "岩时攀岩(陆悦天地店)" 13655 m apart
   - related-name-nearby: seed-541 "YS Climbing (Gate M West Bund Dream Center)": related names "YS Climbing (Xintiandi Dongtai Li) [岩时攀岩新天地东台里店]" / "YS Climbing (Gate M West Bund Dream Center)" 7438 m apart
@@ -31,9 +31,11 @@ Review radii (stricter than the importer): any gym 150 m, related name 15 km, ot
 - cn-sh-014 "Academy of Bouldering (AOB Chuangzhi Tiandi) [AOB攀研学院创智天地店]" [g-8bf27017bb] reviewed_against must include: seed-1760
   - related-name-nearby: seed-1760 "Academy of Bouldering (AOB)": related names "Academy of Bouldering (AOB Chuangzhi Tiandi) [AOB攀研学院创智天地店]" / "Academy of Bouldering (AOB)" 6439 m apart
   - weak-coordinates: coordinates are street-level, not the building
+- cn-sh-015 "Cishan Climbing (FFC Binjiang Yueli) [此山攀岩FFC滨江悦里店]" [g-fc56809b97] reviewed_against must include: cn-sh-011
+  - related-name-nearby: candidate cn-sh-011 "Cishan Climbing (Longfor Hongqiao Tiandi) [此山攀岩龙湖虹桥天街店]": related names "Cishan Climbing (FFC Binjiang Yueli) [此山攀岩FFC滨江悦里店]" / "THE WALL 此山攀岩" 14885 m apart
+  - weak-coordinates: coordinates are street-level, not the building
 
-## Blocked: cannot be accepted (2)
-- cn-sh-015 "Cishan Climbing (FFC Binjiang Yueli) [此山攀岩FFC滨江悦里店]": insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough); no-bouldering-evidence (bouldering is "yes" but no primary source confirms it) -> suggested: defer
+## Blocked: cannot be accepted (1)
 - cn-sh-016 "ViperClimb (Minhang) [ViperClimb攀岩馆]": insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough); no-bouldering (confirmed rope-only (new additions need a bouldering offering)) -> suggested: defer
 
 ## Ready (no flags; still needs an explicit accept) (6)

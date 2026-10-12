@@ -1,20 +1,19 @@
 # Review notes: China Shanghai coverage gap (2026-10-12-cn-shanghai)
 
-Reviewer: Claude (AI) on the owner's instruction; owner sign-off pending. Tally: accept 15 | same-as 0 | defer 1 | reject 1 (17 candidates).
+Reviewer: Claude (AI) on the owner's instruction; owner sign-off pending. Tally: accept 16 | same-as 0 | defer 0 | reject 1 (17 candidates).
 
 ## Method
 Same as the Kunming and Changsha section (`2026-10-12-cn-kunming-changsha/review-notes.md`): the Amap listing list for Shanghai (queries 攀岩馆, 抱石馆, 攀岩, 抱石, 攀岩俱乐部, 岩馆, 室内攀岩, about 120 climbing-named listings) was compared with the 78 Shanghai gyms already in Bouldeer by name, address and approximate position; every listing that is not in Bouldeer, is not a children's school, public wall or school wall and has an own RedNote account (or visitor notes) was examined. Accept rule: the gym's own RedNote account has a 2026 post about this gym, bouldering is shown in the gym's own text (bio, V-graded route posts, bouldering zones, resets) and the Amap listing is live. Note dates come from the note id timestamp. Names: `English (Branch) [中文]` as in the Kunming section. Pins: see below.
 
-## accept (15)
-- New bouldering gyms with a clear own account: CAMP4 Shanghai (8 Hao Qiao), YS Climbing Xintiandi Dongtai Li and Luyue Tiandi (YS = 岩时; the rope gym YS Gate M is already seed-541), Banana Longfeng PRSCO (opened 2026-09-28, the fourth Shanghai Banana), Roc811, Pink Bouldering (sister of HEY BOULDERING), Wo Pan Shanghai (Moon Bay, beta opening 2026-06), DOME Qianwan MEGA (own account posts the "攀石区ABC" zones of this store), HEY BOULDERING MixC (the Bund store is seed-561), BLOC (Changning), Cishan Longfor Hongqiao Tiandi (1/F 85 m bouldering wall), SIZER Kangheng Lu, AOB Chuangzhi Tiandi (second Academy of Bouldering, official opening 2026-09-05).
+## accept (16)
+- New bouldering gyms with a clear own account: CAMP4 Shanghai (8 Hao Qiao), YS Climbing Xintiandi Dongtai Li and Luyue Tiandi (YS = 岩时; the rope gym YS Gate M is already seed-541), Banana Longfeng PRSCO (opened 2026-09-28, the fourth Shanghai Banana), Roc811, Pink Bouldering (sister of HEY BOULDERING), Wo Pan Shanghai (Moon Bay, beta opening 2026-06), DOME Qianwan MEGA (own account posts the "攀石区ABC" zones of this store), HEY BOULDERING MixC (the Bund store is seed-561), BLOC (Changning), Cishan Longfor Hongqiao Tiandi (1/F 85 m bouldering wall), Cishan FFC Binjiang Yueli (the brand's own note of 2026-09-15 says the store has been open for almost a month and lists 30 designated bouldering routes per store; street-level pin), SIZER Kangheng Lu, AOB Chuangzhi Tiandi (second Academy of Bouldering, official opening 2026-09-05).
 - Weaker accepts: Benchmark 3.0 Livat (the own account is brand-wide; bio lists this store and posts carry the bouldering hashtag; eight visitor notes about this store), Infinite Climbing Changning (lead-centred gym; the own notice of 2026-09-17 says the bouldering area stays open), Wo Pan (account last posted 2026-09-19), Banana Longfeng (new gym; bouldering from route-setting posts and hashtags, not from a wall photo).
 
-## defer (1), reject (1)
-- Cishan Climbing FFC Binjiang Yueli (cn-sh-015): third Cishan store, open since September 2026 by three visitor notes; the importer's primary-source gate blocks it (only a hiring post of the brand account). MANUAL-CHECK.md.
+## reject (1)
 - ViperClimb Minhang (cn-sh-016): rope-only (two visitor notes, 15 m wall, auto-belay, speed, lead, top rope): reject no-bouldering.
 
 ## Pins (read the Kunming notes first)
-Amap returns POI pins jittered by about 100 m (different in different reading sessions) but the listing's entrance coordinate is fixed. Rule used: entrance coordinate where the listing has one (`coord_precision: building`, 11 of 17 candidates), otherwise the single Amap pin reading, `coord_precision: street` (flagged weak-coordinates in reconcile, accepted with the reason in the decision): Banana Longfeng, Roc811, Wo Pan and AOB Chuangzhi Tiandi (accepted, so four street-level pins in the staged batch), Cishan FFC and ViperClimb (not staged). With one reading only the error of a street-level pin can be up to about 150 m.
+Amap returns POI pins jittered by about 100 m (different in different reading sessions) but the listing's entrance coordinate is fixed. Rule used: entrance coordinate where the listing has one (`coord_precision: building`, 11 of 17 candidates), otherwise the single Amap pin reading, `coord_precision: street` (flagged weak-coordinates in reconcile, accepted with the reason in the decision): Banana Longfeng, Roc811, Wo Pan, AOB Chuangzhi Tiandi and Cishan FFC (accepted, so five street-level pins in the staged batch) and ViperClimb (not staged). With one reading only the error of a street-level pin can be up to about 150 m.
 
 ## Follow-ups (not part of this section)
 - Retire: seed-605 Jibi Storm Climbing (Bailian Xijiao) is most likely the Amap listing "极壁风暴攀岩馆(长宁店)(暂停营业)" (business suspended), 仙霞西路88号 (Bailian Xijiao Shopping Mall address), about 1.3 km from the stored pin. Verify before retiring.

@@ -3,8 +3,8 @@
  "section_id": "2026-10-12-cn-shanghai",
  "inputs": {
   "section_sha256": "9b474aa0d681b00932b9476a8506bae50f864753efc60857511518ad27925751",
-  "sources_sha256": "db18c2a8a3e7da179b50925dab5f9b70c1400f4b720db7eae15aeea36f933503",
-  "candidates_sha256": "7bd0b4a678b5b50a488f9e437e80b71e6824cbed914c1161eac8a62ce2e81b92",
+  "sources_sha256": "8eefd6b7ce520848728d04a723153fa08fc95911a2259d1d851ce1a5cb57dfe6",
+  "candidates_sha256": "50d68e713907b009021d0c95484c6350c28f3f6fdb190f1bdebf4271e475b844",
   "index": {
    "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
    "count": 3294
@@ -28,8 +28,8 @@
  "counts": {
   "candidates": 17,
   "ready": 6,
-  "review": 9,
-  "blocked": 2,
+  "review": 10,
+  "blocked": 1,
   "existing": 0,
   "invalid": 0
  },
@@ -327,22 +327,12 @@
    "cid": "cn-sh-015",
    "line": 16,
    "name": "Cishan Climbing (FFC Binjiang Yueli) [此山攀岩FFC滨江悦里店]",
-   "class": "blocked",
-   "suggested": "defer",
+   "class": "review",
+   "suggested": "review",
    "importer": {
     "class": "new",
     "id": "g-fc56809b97"
    },
-   "blockers": [
-    {
-     "code": "insufficient-evidence",
-     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
-    },
-    {
-     "code": "no-bouldering-evidence",
-     "detail": "bouldering is \"yes\" but no primary source confirms it"
-    }
-   ],
    "flags": [
     {
      "code": "related-name-nearby",
@@ -401,5 +391,5 @@
    "review_ids": []
   }
  ],
- "reconcile_sha256": "3406837c55239cb0db89b421686f3d4a23ddadb754a0bf440be8b696cc36e0c9"
+ "reconcile_sha256": "2d55dcf1f16984dfde780aab1650833b97a9a15ff1072b70623bb6ad0bffcb13"
 }

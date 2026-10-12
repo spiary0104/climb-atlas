@@ -4,19 +4,19 @@
 
 | What would happen | Records |
 |---|---:|
-| Insert as NEW gyms | 15 |
+| Insert as NEW gyms | 16 |
 | Update existing gyms (explicit update records) | 0 |
 | Already exist — no action (identical content: 0; content differs, NOT applied: 0) | 0 |
 | Probable duplicates — need a human decision | 0 |
 | Invalid — rejected | 0 |
 | Rejected by a human decision | 0 |
-| **Total records in batch** | 15 |
+| **Total records in batch** | 16 |
 
-Index: 3294 known gyms (sha256 2f47cb53e74b…). Plan: fa0e13118a3d… Also compared against staged batches: 2026-10-06-kr-seoul, 2026-10-12-cn-kunming-changsha.
+Index: 3294 known gyms (sha256 2f47cb53e74b…). Plan: 7bacf4082a05… Also compared against staged batches: 2026-10-06-kr-seoul, 2026-10-12-cn-kunming-changsha.
 
-## New gyms (15)
+## New gyms (16)
 
-By country: CN 15
+By country: CN 16
 
 - line 1 `g-4562d140ca` "CAMP4 Climbing (Shanghai 8 Hao Qiao) [CAMP4岩肆上海店]" (CN)
 - line 2 `g-1e0e1780e6` "YS Climbing (Xintiandi Dongtai Li) [岩时攀岩新天地东台里店]" (CN)
@@ -32,5 +32,6 @@ By country: CN 15
 - line 12 `g-6d4f06724b` "SIZER Climbing (Kangheng Lu) [SIZER抱石攀岩馆康恒路]" (CN)
 - line 13 `g-8433519a90` "Benchmark 3.0 (Livat Hub) [Benchmark攀岩馆荟聚中心]" (CN)
 - line 14 `g-8bf27017bb` "Academy of Bouldering (AOB Chuangzhi Tiandi) [AOB攀研学院创智天地店]" (CN)
-- line 15 `g-40c7268586` "Infinite Climbing (Changning KiNG88) [无界攀岩长宁八八中心店]" (CN)
+- line 15 `g-fc56809b97` "Cishan Climbing (FFC Binjiang Yueli) [此山攀岩FFC滨江悦里店]" (CN)
+- … and 1 more (see plan.json)
 
