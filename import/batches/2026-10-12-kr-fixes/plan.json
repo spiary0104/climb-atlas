@@ -17,10 +17,10 @@
   "2026-10-12-kr-incheon"
  ],
  "counts": {
-  "records": 27,
+  "records": 32,
   "new": 0,
   "existing": 0,
-  "update": 23,
+  "update": 28,
   "probable-duplicate": 0,
   "invalid": 0,
   "rejected": 0,
@@ -28,12 +28,12 @@
   "existing_identical": 0,
   "existing_content_differs": 0,
   "new_id_not_frozen": 0,
-  "warnings": 18
+  "warnings": 22
  },
  "importable": true,
  "blockers": [],
  "unused_decisions": [],
- "plan_sha256": "49fd9d6c812526f1c71c79fb166d7a866405fe745ce1ad6ed7d31781930b039c",
+ "plan_sha256": "6e2adc9a746e5e69d62efb38d81476fd9debd28c589c91a526a927993a9f8f93",
  "records": [
   {
    "line": 1,
@@ -705,6 +705,134 @@
      "code": "duplicate-far-apart",
      "field": "duplicate_of",
      "message": "g-5eec475af0 and g-e227233b91 are 911 m apart; check they are the same gym"
+    }
+   ]
+  },
+  {
+   "line": 28,
+   "class": "update",
+   "id": "g-10ab743a85",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 37.0171499,
+     "after": 36.982809
+    },
+    {
+     "field": "lng",
+     "before": 127.9347153,
+     "after": 127.928559
+    }
+   ],
+   "expect_h": "7beb6a8e71d55e75",
+   "update_reason": "Pin moved to the gym's own Naver Place listing (Neongkul Climbing Center), 3857 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 3857 m"
+    }
+   ]
+  },
+  {
+   "line": 29,
+   "class": "update",
+   "id": "seed-1209",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 36.3512856,
+     "after": 36.351886
+    },
+    {
+     "field": "lng",
+     "before": 127.3982663,
+     "after": 127.375715
+    }
+   ],
+   "expect_h": "e84afaae1dfc3a4a",
+   "update_reason": "Pin moved to the gym's own Naver Place listing (Awake Climbing Timeworld), 2021 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 2021 m"
+    }
+   ]
+  },
+  {
+   "line": 30,
+   "class": "update",
+   "id": "seed-1187",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 36.7918624,
+     "after": 36.789986
+    },
+    {
+     "field": "lng",
+     "before": 127.1002598,
+     "after": 127.107793
+    }
+   ],
+   "expect_h": "cf515499a770fea4",
+   "update_reason": "Pin moved to the gym's own Naver Place listing (Rocktree Climbing Center (Asan)), 703 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 703 m"
+    }
+   ]
+  },
+  {
+   "line": 31,
+   "class": "update",
+   "id": "seed-1212",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 33.4897793,
+     "after": 33.490213
+    },
+    {
+     "field": "lng",
+     "before": 126.4945122,
+     "after": 126.49122
+    }
+   ],
+   "expect_h": "5327f7a4994bd700",
+   "update_reason": "Pin moved to the gym's own Naver Place listing (Fix Boulder Yeondong), 309 m from the old pin"
+  },
+  {
+   "line": 32,
+   "class": "update",
+   "id": "seed-1214",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 33.4998289,
+     "after": 33.499602
+    },
+    {
+     "field": "lng",
+     "before": 126.5313902,
+     "after": 126.521556
+    },
+    {
+     "field": "address",
+     "before": "Seogwang-ro 2-gil, Ora-dong, Jeju-si, Jeju, South Korea",
+     "after": "2F, 236 Seogwang-ro, Jeju-si, Jeju, South Korea"
+    }
+   ],
+   "expect_h": "d00935a7afaebb93",
+   "update_reason": "Pin and address moved to the gym's own Naver Place listing (Jeju Climbing School), 912 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 912 m"
     }
    ]
   }

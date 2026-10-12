@@ -5,17 +5,17 @@
 | What would happen | Records |
 |---|---:|
 | Insert as NEW gyms | 0 |
-| Update existing gyms (explicit update records) | 23 |
+| Update existing gyms (explicit update records) | 28 |
 | Retire existing gyms (closed / duplicate: status becomes rejected, record kept) | 4 |
 | Already exist — no action (identical content: 0; content differs, NOT applied: 0) | 0 |
 | Probable duplicates — need a human decision | 0 |
 | Invalid — rejected | 0 |
 | Rejected by a human decision | 0 |
-| **Total records in batch** | 27 |
+| **Total records in batch** | 32 |
 
-Index: 3294 known gyms (sha256 2f47cb53e74b…). Plan: 49fd9d6c8125… Also compared against staged batches: 2026-10-06-kr-seoul, 2026-10-12-kr-busan-gyeongnam, 2026-10-12-kr-central-regions, 2026-10-12-kr-daegu-gyeongbuk, 2026-10-12-kr-gyeonggi-north, 2026-10-12-kr-gyeonggi-south, 2026-10-12-kr-gyeonggi-west, 2026-10-12-kr-incheon.
+Index: 3294 known gyms (sha256 2f47cb53e74b…). Plan: 6e2adc9a746e… Also compared against staged batches: 2026-10-06-kr-seoul, 2026-10-12-kr-busan-gyeongnam, 2026-10-12-kr-central-regions, 2026-10-12-kr-daegu-gyeongbuk, 2026-10-12-kr-gyeonggi-north, 2026-10-12-kr-gyeonggi-south, 2026-10-12-kr-gyeonggi-west, 2026-10-12-kr-incheon.
 
-## Updates to existing gyms (23)
+## Updates to existing gyms (28)
 
 - line 1 `seed-1199` — Pin moved to the gym's own Naver Place pin (PEAKERS Jongno, Piccadilly1958 B4F, ~453 m from the old pin)
   - lat: 37.5749615 → 37.570909
@@ -88,6 +88,13 @@ Index: 3294 known gyms (sha256 2f47cb53e74b…). Plan: 49fd9d6c8125… Also comp
 - line 26 `seed-1182` — Pin moved to the gym's own Naver Place pin (Mountain Star (Guri)), 525 m from the old pin
   - lat: 37.5965336 → 37.591908
   - lng: 127.1369672 → 127.138149
+- line 28 `g-10ab743a85` — Pin moved to the gym's own Naver Place listing (Neongkul Climbing Center), 3857 m from the old pin
+  - lat: 37.0171499 → 36.982809
+  - lng: 127.9347153 → 127.928559
+- line 29 `seed-1209` — Pin moved to the gym's own Naver Place listing (Awake Climbing Timeworld), 2021 m from the old pin
+  - lat: 36.3512856 → 36.351886
+  - lng: 127.3982663 → 127.375715
+- … and 3 more (see plan.json)
 
 ## Retirements of existing gyms (4)
 
@@ -101,5 +108,5 @@ Each gym is set to `rejected` with the reason below (the moderator UI's own deci
 ## Warnings
 
 - `duplicate-far-apart` × 2: lines 5, 27
-- `large-pin-move` × 16: lines 4, 8, 9, 10, 11, 12, 13, 14, 16, 17, 19, 20, …
+- `large-pin-move` × 20: lines 4, 8, 9, 10, 11, 12, 13, 14, 16, 17, 19, 20, …
 
