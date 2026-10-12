@@ -1,0 +1,20 @@
+# Files Vercel never needs to upload or serve (each deployment counts toward the free plan's 10 GB Deployment Storage;
+# without this file every deployment carried the whole repo, ~37 MB). The site needs only the root pages, css/, js/,
+# assets/, icons/, api/ (seo.mjs reads index.html, js/supabase-init.js, js/modules/seo-meta.js, api/_places.json),
+# data/spots-fallback.json, sitemap.xml, robots.txt, manifest.json, sw.js and vercel.json.
+.claude
+.claudeignore
+CLAUDE.md
+README.md
+Rules.md
+WORKFLOW_GUIDE.md
+serve.json
+design
+docs
+import
+scripts
+supabase
+tests
+data/reconciliation
+data/backups
+data/gyms.reconciled.json
