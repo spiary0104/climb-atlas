@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-12-kr-daegu-gyeongbuk",
+  "description": "Regional research \"Korea: Daegu and Gyeongsangbuk-do\": 14 new gym(s) accepted of 39 candidate(s)",
+  "created": "2026-10-12",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-10-12-kr-daegu-gyeongbuk",
+    "section_sha256": "dcf9f443d6945c6e66ee95596bd3fcdafd699f101b4f2d86662d84d09ae36cab",
+    "sources_sha256": "043b86704369c6a4eefad004b360fb694b0ab84e8fb5f56417bd8e7b5c78f285",
+    "candidates_sha256": "fad820c102695c3e95313cc9571e31ee860689e0a89af30206b8b30c8e8d869a",
+    "reconcile_sha256": "724b9ac5bf8c562e4099c1f051d0c04217ef761995d8185e4c805fee20b17bca",
+    "review_sha256": "ab3e87d7154e324fb1c9d475797658175a107dd147d0bf0784dfeee298c362a6",
+    "candidates": 39,
+    "staged": 14,
+    "decisions": {
+      "accept": 14,
+      "defer": 15,
+      "reject": 3,
+      "same-as": 7
+    }
+  },
+  "index_at_staging": {
+    "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
+    "count": 3294
+  }
+}

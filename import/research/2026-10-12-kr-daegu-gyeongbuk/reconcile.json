@@ -1,0 +1,4478 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-12-kr-daegu-gyeongbuk",
+ "inputs": {
+  "section_sha256": "dcf9f443d6945c6e66ee95596bd3fcdafd699f101b4f2d86662d84d09ae36cab",
+  "sources_sha256": "043b86704369c6a4eefad004b360fb694b0ab84e8fb5f56417bd8e7b5c78f285",
+  "candidates_sha256": "fad820c102695c3e95313cc9571e31ee860689e0a89af30206b8b30c8e8d869a",
+  "index": {
+   "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
+   "count": 3294
+  },
+  "staged_batches_compared": [
+   "2026-10-06-kr-seoul"
+  ],
+  "other_sections_compared": [
+   {
+    "id": "2026-10-05-korea-gwangju-jeollanam",
+    "candidates_sha256": "f4858cc28d4f7eb5ff4a243da82dea80ec3fe7700505d83ec1d3bd869a1aacb7"
+   },
+   {
+    "id": "2026-10-05-korea-holds",
+    "candidates_sha256": "5d20a4add212fcf30638867628a92a2c7721187d7f8e1870e937e6f0a1fabe06"
+   },
+   {
+    "id": "2026-10-05-korea-owner-checks",
+    "candidates_sha256": "d6d0aa289502fce33cd00c4b695f65d41053095ab60e020beb4fad9f3cccf227"
+   },
+   {
+    "id": "2026-10-06-kr-seoul",
+    "candidates_sha256": "f78315198a507d6235619c81ff4be71a037392dfbb0c6658a6d40cee9b000487"
+   }
+  ]
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 39,
+  "ready": 1,
+  "review": 15,
+  "blocked": 18,
+  "existing": 5,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "kr-dg-001",
+   "line": 1,
+   "name": "Boulder Lounge Flip Daegu (볼더라운지 플립 대구점)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-dbd8d9bd5b"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-002 \"Newbie Climbing Suseong (뉴비클라이밍 수성점)\": related names \"볼더라운지 플립 대구점\" / \"뉴비클라이밍 수성점\" 4719 m apart",
+     "ids": [
+      "kr-dg-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-003 \"Chalk Up The Boulder (초크업 더 볼더 클라이밍)\": related names \"볼더라운지 플립 대구점\" / \"초크업 더 볼더 클라이밍\" 6481 m apart",
+     "ids": [
+      "kr-dg-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-004 \"Sonsedong Climbing Duryu (손세동 클라이밍 두류점)\": related names \"볼더라운지 플립 대구점\" / \"손세동 클라이밍 두류점\" 2351 m apart",
+     "ids": [
+      "kr-dg-004"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-005 \"Noru Climbing Jincheon (노루클라이밍 진천)\": related names \"볼더라운지 플립 대구점\" / \"노루클라이밍 진천\" 8102 m apart",
+     "ids": [
+      "kr-dg-005"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-006 \"Hands Climbing Gym (핸즈 클라이밍짐)\": related names \"볼더라운지 플립 대구점\" / \"핸즈 클라이밍짐\" 3498 m apart",
+     "ids": [
+      "kr-dg-006"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-007 \"Byeok Climbing (벽 클라이밍)\": related names \"볼더라운지 플립 대구점\" / \"벽 클라이밍\" 2515 m apart",
+     "ids": [
+      "kr-dg-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-008 \"Gwangjang Climbing Center (광장클라이밍센터)\": related names \"볼더라운지 플립 대구점\" / \"광장클라이밍센터\" 2841 m apart",
+     "ids": [
+      "kr-dg-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-009 \"Chalk Up Climbing Gyeongdae (초크업클라이밍 경대점)\": related names \"볼더라운지 플립 대구점\" / \"초크업클라이밍 경대점\" 4471 m apart",
+     "ids": [
+      "kr-dg-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-010 \"Jump Climbing Gym Bondong (점프 클라이밍짐)\": related names \"볼더라운지 플립 대구점\" / \"점프 클라이밍짐\" 4729 m apart",
+     "ids": [
+      "kr-dg-010"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-015 \"Dongseong-ro Climbing Gym (동성로클라이밍짐)\": related names \"볼더라운지 플립 대구점\" / \"동성로클라이밍짐\" 1464 m apart",
+     "ids": [
+      "kr-dg-015"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-016 \"Dyno Cat Climbing (다이노캣 클라이밍)\": related names \"볼더라운지 플립 대구점\" / \"다이노캣 클라이밍\" 10123 m apart",
+     "ids": [
+      "kr-dg-016"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-017 \"Daegu Power Climbing Center (대구 파워클라이밍 센터)\": related names \"볼더라운지 플립 대구점\" / \"대구 파워클라이밍 센터\" 3727 m apart",
+     "ids": [
+      "kr-dg-017"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-024 \"Daegu Climbing Center (대구클라이밍센터)\": related names \"Boulder Lounge Flip Daegu (볼더라운지 플립 대구점)\" / \"Daegu Climbing Center (대구클라이밍센터)\" 7708 m apart",
+     "ids": [
+      "kr-dg-024"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-025 \"Chalk Up Climbing Wolseong (초크업클라이밍 월성점)\": related names \"볼더라운지 플립 대구점\" / \"초크업클라이밍 월성점\" 7071 m apart",
+     "ids": [
+      "kr-dg-025"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-026 \"Chalk Up Climbing Chimsan (초크업 클라이밍 침산점)\": related names \"볼더라운지 플립 대구점\" / \"초크업 클라이밍 침산점\" 2068 m apart",
+     "ids": [
+      "kr-dg-026"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-027 \"King Kong Climbing (킹콩클라이밍)\": related names \"볼더라운지 플립 대구점\" / \"킹콩클라이밍\" 8697 m apart",
+     "ids": [
+      "kr-dg-027"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-030 \"Jump Climbing Gym Jangi-ro (점프클라이밍짐 장기점)\": related names \"볼더라운지 플립 대구점\" / \"점프클라이밍짐 장기점\" 5208 m apart",
+     "ids": [
+      "kr-dg-030"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-031 \"Climbing High (클라이밍하이)\": related names \"볼더라운지 플립 대구점\" / \"클라이밍하이\" 7988 m apart",
+     "ids": [
+      "kr-dg-031"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-032 \"Rock Climbing Nowon (락클라이밍)\": related names \"볼더라운지 플립 대구점\" / \"락클라이밍\" 2011 m apart",
+     "ids": [
+      "kr-dg-032"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-035 \"Nam-gu International Sports Climbing Center (남구국제스포츠클라이밍장)\": related names \"볼더라운지 플립 대구점\" / \"남구국제스포츠클라이밍장\" 4701 m apart",
+     "ids": [
+      "kr-dg-035"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-dg-002",
+    "kr-dg-003",
+    "kr-dg-004",
+    "kr-dg-005",
+    "kr-dg-006",
+    "kr-dg-007",
+    "kr-dg-008",
+    "kr-dg-009",
+    "kr-dg-010",
+    "kr-dg-015",
+    "kr-dg-016",
+    "kr-dg-017",
+    "kr-dg-024",
+    "kr-dg-025",
+    "kr-dg-026",
+    "kr-dg-027",
+    "kr-dg-030",
+    "kr-dg-031",
+    "kr-dg-032",
+    "kr-dg-035"
+   ]
+  },
+  {
+   "cid": "kr-dg-002",
+   "line": 2,
+   "name": "Newbie Climbing Suseong (뉴비클라이밍 수성점)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-4ceec3e435"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-001 \"Boulder Lounge Flip Daegu (볼더라운지 플립 대구점)\": related names \"뉴비클라이밍 수성점\" / \"볼더라운지 플립 대구점\" 4719 m apart",
+     "ids": [
+      "kr-dg-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-003 \"Chalk Up The Boulder (초크업 더 볼더 클라이밍)\": related names \"뉴비클라이밍 수성점\" / \"초크업 더 볼더 클라이밍\" 9402 m apart",
+     "ids": [
+      "kr-dg-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-004 \"Sonsedong Climbing Duryu (손세동 클라이밍 두류점)\": related names \"뉴비클라이밍 수성점\" / \"손세동 클라이밍 두류점\" 5274 m apart",
+     "ids": [
+      "kr-dg-004"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-005 \"Noru Climbing Jincheon (노루클라이밍 진천)\": related names \"뉴비클라이밍 수성점\" / \"노루클라이밍 진천\" 8638 m apart",
+     "ids": [
+      "kr-dg-005"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-006 \"Hands Climbing Gym (핸즈 클라이밍짐)\": related names \"뉴비클라이밍 수성점\" / \"핸즈 클라이밍짐\" 1392 m apart",
+     "ids": [
+      "kr-dg-006"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-007 \"Byeok Climbing (벽 클라이밍)\": related names \"뉴비클라이밍 수성점\" / \"벽 클라이밍\" 5638 m apart",
+     "ids": [
+      "kr-dg-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-008 \"Gwangjang Climbing Center (광장클라이밍센터)\": related names \"뉴비클라이밍 수성점\" / \"광장클라이밍센터\" 5689 m apart",
+     "ids": [
+      "kr-dg-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-009 \"Chalk Up Climbing Gyeongdae (초크업클라이밍 경대점)\": related names \"뉴비클라이밍 수성점\" / \"초크업클라이밍 경대점\" 6057 m apart",
+     "ids": [
+      "kr-dg-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-010 \"Jump Climbing Gym Bondong (점프 클라이밍짐)\": related names \"뉴비클라이밍 수성점\" / \"점프 클라이밍짐\" 5761 m apart",
+     "ids": [
+      "kr-dg-010"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-015 \"Dongseong-ro Climbing Gym (동성로클라이밍짐)\": related names \"뉴비클라이밍 수성점\" / \"동성로클라이밍짐\" 3617 m apart",
+     "ids": [
+      "kr-dg-015"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-016 \"Dyno Cat Climbing (다이노캣 클라이밍)\": related names \"뉴비클라이밍 수성점\" / \"다이노캣 클라이밍\" 7963 m apart",
+     "ids": [
+      "kr-dg-016"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-017 \"Daegu Power Climbing Center (대구 파워클라이밍 센터)\": related names \"뉴비클라이밍 수성점\" / \"대구 파워클라이밍 센터\" 2468 m apart",
+     "ids": [
+      "kr-dg-017"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-024 \"Daegu Climbing Center (대구클라이밍센터)\": related names \"뉴비클라이밍 수성점\" / \"대구클라이밍센터\" 8598 m apart",
+     "ids": [
+      "kr-dg-024"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-025 \"Chalk Up Climbing Wolseong (초크업클라이밍 월성점)\": related names \"뉴비클라이밍 수성점\" / \"초크업클라이밍 월성점\" 7853 m apart",
+     "ids": [
+      "kr-dg-025"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-026 \"Chalk Up Climbing Chimsan (초크업 클라이밍 침산점)\": related names \"뉴비클라이밍 수성점\" / \"초크업 클라이밍 침산점\" 6107 m apart",
+     "ids": [
+      "kr-dg-026"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-027 \"King Kong Climbing (킹콩클라이밍)\": related names \"뉴비클라이밍 수성점\" / \"킹콩클라이밍\" 11522 m apart",
+     "ids": [
+      "kr-dg-027"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-030 \"Jump Climbing Gym Jangi-ro (점프클라이밍짐 장기점)\": related names \"뉴비클라이밍 수성점\" / \"점프클라이밍짐 장기점\" 7235 m apart",
+     "ids": [
+      "kr-dg-030"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-031 \"Climbing High (클라이밍하이)\": related names \"뉴비클라이밍 수성점\" / \"클라이밍하이\" 7669 m apart",
+     "ids": [
+      "kr-dg-031"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-032 \"Rock Climbing Nowon (락클라이밍)\": related names \"뉴비클라이밍 수성점\" / \"락클라이밍\" 6637 m apart",
+     "ids": [
+      "kr-dg-032"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-035 \"Nam-gu International Sports Climbing Center (남구국제스포츠클라이밍장)\": related names \"뉴비클라이밍 수성점\" / \"남구국제스포츠클라이밍장\" 1534 m apart",
+     "ids": [
+      "kr-dg-035"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-1219 \"Newbie Climbing\": related names \"Newbie Climbing Suseong (뉴비클라이밍 수성점)\" / \"Newbie Climbing\" 5156 m apart",
+     "ids": [
+      "seed-1219"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-dg-001",
+    "kr-dg-003",
+    "kr-dg-004",
+    "kr-dg-005",
+    "kr-dg-006",
+    "kr-dg-007",
+    "kr-dg-008",
+    "kr-dg-009",
+    "kr-dg-010",
+    "kr-dg-015",
+    "kr-dg-016",
+    "kr-dg-017",
+    "kr-dg-024",
+    "kr-dg-025",
+    "kr-dg-026",
+    "kr-dg-027",
+    "kr-dg-030",
+    "kr-dg-031",
+    "kr-dg-032",
+    "kr-dg-035",
+    "seed-1219"
+   ]
+  },
+  {
+   "cid": "kr-dg-003",
+   "line": 3,
+   "name": "Chalk Up The Boulder (초크업 더 볼더 클라이밍)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-3369d87b3f"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-001 \"Boulder Lounge Flip Daegu (볼더라운지 플립 대구점)\": related names \"초크업 더 볼더 클라이밍\" / \"볼더라운지 플립 대구점\" 6481 m apart",
+     "ids": [
+      "kr-dg-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-002 \"Newbie Climbing Suseong (뉴비클라이밍 수성점)\": related names \"초크업 더 볼더 클라이밍\" / \"뉴비클라이밍 수성점\" 9402 m apart",
+     "ids": [
+      "kr-dg-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-004 \"Sonsedong Climbing Duryu (손세동 클라이밍 두류점)\": related names \"초크업 더 볼더 클라이밍\" / \"손세동 클라이밍 두류점\" 4418 m apart",
+     "ids": [
+      "kr-dg-004"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-005 \"Noru Climbing Jincheon (노루클라이밍 진천)\": related names \"초크업 더 볼더 클라이밍\" / \"노루클라이밍 진천\" 4452 m apart",
+     "ids": [
+      "kr-dg-005"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-006 \"Hands Climbing Gym (핸즈 클라이밍짐)\": related names \"초크업 더 볼더 클라이밍\" / \"핸즈 클라이밍짐\" 8065 m apart",
+     "ids": [
+      "kr-dg-006"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-007 \"Byeok Climbing (벽 클라이밍)\": related names \"초크업 더 볼더 클라이밍\" / \"벽 클라이밍\" 8734 m apart",
+     "ids": [
+      "kr-dg-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-008 \"Gwangjang Climbing Center (광장클라이밍센터)\": related names \"초크업 더 볼더 클라이밍\" / \"광장클라이밍센터\" 3904 m apart",
+     "ids": [
+      "kr-dg-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-009 \"Chalk Up Climbing Gyeongdae (초크업클라이밍 경대점)\": related names \"Chalk Up The Boulder (초크업 더 볼더 클라이밍)\" / \"Chalk Up Climbing Gyeongdae (초크업클라이밍 경대점)\" 10854 m apart",
+     "ids": [
+      "kr-dg-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-010 \"Jump Climbing Gym Bondong (점프 클라이밍짐)\": related names \"초크업 더 볼더 클라이밍\" / \"점프 클라이밍짐\" 4016 m apart",
+     "ids": [
+      "kr-dg-010"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-015 \"Dongseong-ro Climbing Gym (동성로클라이밍짐)\": related names \"초크업 더 볼더 클라이밍\" / \"동성로클라이밍짐\" 7763 m apart",
+     "ids": [
+      "kr-dg-015"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-017 \"Daegu Power Climbing Center (대구 파워클라이밍 센터)\": related names \"초크업 더 볼더 클라이밍\" / \"대구 파워클라이밍 센터\" 9758 m apart",
+     "ids": [
+      "kr-dg-017"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-024 \"Daegu Climbing Center (대구클라이밍센터)\": related names \"초크업 더 볼더 클라이밍\" / \"대구클라이밍센터\" 3786 m apart",
+     "ids": [
+      "kr-dg-024"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-025 \"Chalk Up Climbing Wolseong (초크업클라이밍 월성점)\": related names \"Chalk Up The Boulder (초크업 더 볼더 클라이밍)\" / \"Chalk Up Climbing Wolseong (초크업클라이밍 월성점)\" 3821 m apart",
+     "ids": [
+      "kr-dg-025"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-026 \"Chalk Up Climbing Chimsan (초크업 클라이밍 침산점)\": related names \"Chalk Up The Boulder (초크업 더 볼더 클라이밍)\" / \"Chalk Up Climbing Chimsan (초크업 클라이밍 침산점)\" 7810 m apart",
+     "ids": [
+      "kr-dg-026"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-027 \"King Kong Climbing (킹콩클라이밍)\": related names \"초크업 더 볼더 클라이밍\" / \"킹콩클라이밍\" 2230 m apart",
+     "ids": [
+      "kr-dg-027"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-030 \"Jump Climbing Gym Jangi-ro (점프클라이밍짐 장기점)\": related names \"초크업 더 볼더 클라이밍\" / \"점프클라이밍짐 장기점\" 2369 m apart",
+     "ids": [
+      "kr-dg-030"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-031 \"Climbing High (클라이밍하이)\": related names \"초크업 더 볼더 클라이밍\" / \"클라이밍하이\" 5645 m apart",
+     "ids": [
+      "kr-dg-031"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-032 \"Rock Climbing Nowon (락클라이밍)\": related names \"초크업 더 볼더 클라이밍\" / \"락클라이밍\" 6705 m apart",
+     "ids": [
+      "kr-dg-032"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-035 \"Nam-gu International Sports Climbing Center (남구국제스포츠클라이밍장)\": related names \"초크업 더 볼더 클라이밍\" / \"남구국제스포츠클라이밍장\" 8299 m apart",
+     "ids": [
+      "kr-dg-035"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-dg-001",
+    "kr-dg-002",
+    "kr-dg-004",
+    "kr-dg-005",
+    "kr-dg-006",
+    "kr-dg-007",
+    "kr-dg-008",
+    "kr-dg-009",
+    "kr-dg-010",
+    "kr-dg-015",
+    "kr-dg-017",
+    "kr-dg-024",
+    "kr-dg-025",
+    "kr-dg-026",
+    "kr-dg-027",
+    "kr-dg-030",
+    "kr-dg-031",
+    "kr-dg-032",
+    "kr-dg-035"
+   ]
+  },
+  {
+   "cid": "kr-dg-004",
+   "line": 4,
+   "name": "Sonsedong Climbing Duryu (손세동 클라이밍 두류점)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-0d7608c4c4"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-001 \"Boulder Lounge Flip Daegu (볼더라운지 플립 대구점)\": related names \"손세동 클라이밍 두류점\" / \"볼더라운지 플립 대구점\" 2351 m apart",
+     "ids": [
+      "kr-dg-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-002 \"Newbie Climbing Suseong (뉴비클라이밍 수성점)\": related names \"손세동 클라이밍 두류점\" / \"뉴비클라이밍 수성점\" 5274 m apart",
+     "ids": [
+      "kr-dg-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-003 \"Chalk Up The Boulder (초크업 더 볼더 클라이밍)\": related names \"손세동 클라이밍 두류점\" / \"초크업 더 볼더 클라이밍\" 4418 m apart",
+     "ids": [
+      "kr-dg-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-005 \"Noru Climbing Jincheon (노루클라이밍 진천)\": related names \"손세동 클라이밍 두류점\" / \"노루클라이밍 진천\" 5802 m apart",
+     "ids": [
+      "kr-dg-005"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-006 \"Hands Climbing Gym (핸즈 클라이밍짐)\": related names \"손세동 클라이밍 두류점\" / \"핸즈 클라이밍짐\" 3883 m apart",
+     "ids": [
+      "kr-dg-006"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-007 \"Byeok Climbing (벽 클라이밍)\": related names \"손세동 클라이밍 두류점\" / \"벽 클라이밍\" 4855 m apart",
+     "ids": [
+      "kr-dg-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-008 \"Gwangjang Climbing Center (광장클라이밍센터)\": related names \"손세동 클라이밍 두류점\" / \"광장클라이밍센터\" 526 m apart",
+     "ids": [
+      "kr-dg-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-009 \"Chalk Up Climbing Gyeongdae (초크업클라이밍 경대점)\": related names \"손세동 클라이밍 두류점\" / \"초크업클라이밍 경대점\" 6809 m apart",
+     "ids": [
+      "kr-dg-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-010 \"Jump Climbing Gym Bondong (점프 클라이밍짐)\": related names \"손세동 클라이밍 두류점\" / \"점프 클라이밍짐\" 2531 m apart",
+     "ids": [
+      "kr-dg-010"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-015 \"Dongseong-ro Climbing Gym (동성로클라이밍짐)\": related names \"손세동 클라이밍 두류점\" / \"동성로클라이밍짐\" 3408 m apart",
+     "ids": [
+      "kr-dg-015"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-016 \"Dyno Cat Climbing (다이노캣 클라이밍)\": related names \"손세동 클라이밍 두류점\" / \"다이노캣 클라이밍\" 12022 m apart",
+     "ids": [
+      "kr-dg-016"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-017 \"Daegu Power Climbing Center (대구 파워클라이밍 센터)\": related names \"손세동 클라이밍 두류점\" / \"대구 파워클라이밍 센터\" 5341 m apart",
+     "ids": [
+      "kr-dg-017"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-024 \"Daegu Climbing Center (대구클라이밍센터)\": related names \"손세동 클라이밍 두류점\" / \"대구클라이밍센터\" 5376 m apart",
+     "ids": [
+      "kr-dg-024"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-025 \"Chalk Up Climbing Wolseong (초크업클라이밍 월성점)\": related names \"손세동 클라이밍 두류점\" / \"초크업클라이밍 월성점\" 4765 m apart",
+     "ids": [
+      "kr-dg-025"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-026 \"Chalk Up Climbing Chimsan (초크업 클라이밍 침산점)\": related names \"손세동 클라이밍 두류점\" / \"초크업 클라이밍 침산점\" 4232 m apart",
+     "ids": [
+      "kr-dg-026"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-027 \"King Kong Climbing (킹콩클라이밍)\": related names \"손세동 클라이밍 두류점\" / \"킹콩클라이밍\" 6643 m apart",
+     "ids": [
+      "kr-dg-027"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-030 \"Jump Climbing Gym Jangi-ro (점프클라이밍짐 장기점)\": related names \"손세동 클라이밍 두류점\" / \"점프클라이밍짐 장기점\" 2864 m apart",
+     "ids": [
+      "kr-dg-030"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-031 \"Climbing High (클라이밍하이)\": related names \"손세동 클라이밍 두류점\" / \"클라이밍하이\" 5859 m apart",
+     "ids": [
+      "kr-dg-031"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-032 \"Rock Climbing Nowon (락클라이밍)\": related names \"손세동 클라이밍 두류점\" / \"락클라이밍\" 3595 m apart",
+     "ids": [
+      "kr-dg-032"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-035 \"Nam-gu International Sports Climbing Center (남구국제스포츠클라이밍장)\": related names \"손세동 클라이밍 두류점\" / \"남구국제스포츠클라이밍장\" 4532 m apart",
+     "ids": [
+      "kr-dg-035"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-dg-001",
+    "kr-dg-002",
+    "kr-dg-003",
+    "kr-dg-005",
+    "kr-dg-006",
+    "kr-dg-007",
+    "kr-dg-008",
+    "kr-dg-009",
+    "kr-dg-010",
+    "kr-dg-015",
+    "kr-dg-016",
+    "kr-dg-017",
+    "kr-dg-024",
+    "kr-dg-025",
+    "kr-dg-026",
+    "kr-dg-027",
+    "kr-dg-030",
+    "kr-dg-031",
+    "kr-dg-032",
+    "kr-dg-035"
+   ]
+  },
+  {
+   "cid": "kr-dg-005",
+   "line": 5,
+   "name": "Noru Climbing Jincheon (노루클라이밍 진천)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-a5df2c5875"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-001 \"Boulder Lounge Flip Daegu (볼더라운지 플립 대구점)\": related names \"노루클라이밍 진천\" / \"볼더라운지 플립 대구점\" 8102 m apart",
+     "ids": [
+      "kr-dg-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-002 \"Newbie Climbing Suseong (뉴비클라이밍 수성점)\": related names \"노루클라이밍 진천\" / \"뉴비클라이밍 수성점\" 8638 m apart",
+     "ids": [
+      "kr-dg-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-003 \"Chalk Up The Boulder (초크업 더 볼더 클라이밍)\": related names \"노루클라이밍 진천\" / \"초크업 더 볼더 클라이밍\" 4452 m apart",
+     "ids": [
+      "kr-dg-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-004 \"Sonsedong Climbing Duryu (손세동 클라이밍 두류점)\": related names \"노루클라이밍 진천\" / \"손세동 클라이밍 두류점\" 5802 m apart",
+     "ids": [
+      "kr-dg-004"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-006 \"Hands Climbing Gym (핸즈 클라이밍짐)\": related names \"노루클라이밍 진천\" / \"핸즈 클라이밍짐\" 7681 m apart",
+     "ids": [
+      "kr-dg-006"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-007 \"Byeok Climbing (벽 클라이밍)\": related names \"노루클라이밍 진천\" / \"벽 클라이밍\" 10616 m apart",
+     "ids": [
+      "kr-dg-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-008 \"Gwangjang Climbing Center (광장클라이밍센터)\": related names \"노루클라이밍 진천\" / \"광장클라이밍센터\" 5396 m apart",
+     "ids": [
+      "kr-dg-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-009 \"Chalk Up Climbing Gyeongdae (초크업클라이밍 경대점)\": related names \"노루클라이밍 진천\" / \"초크업클라이밍 경대점\" 12438 m apart",
+     "ids": [
+      "kr-dg-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-010 \"Jump Climbing Gym Bondong (점프 클라이밍짐)\": related names \"노루클라이밍 진천\" / \"점프 클라이밍짐\" 3413 m apart",
+     "ids": [
+      "kr-dg-010"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-015 \"Dongseong-ro Climbing Gym (동성로클라이밍짐)\": related names \"노루클라이밍 진천\" / \"동성로클라이밍짐\" 8819 m apart",
+     "ids": [
+      "kr-dg-015"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-017 \"Daegu Power Climbing Center (대구 파워클라이밍 센터)\": related names \"노루클라이밍 진천\" / \"대구 파워클라이밍 센터\" 10071 m apart",
+     "ids": [
+      "kr-dg-017"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-024 \"Daegu Climbing Center (대구클라이밍센터)\": related names \"노루클라이밍 진천\" / \"대구클라이밍센터\" 667 m apart",
+     "ids": [
+      "kr-dg-024"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-025 \"Chalk Up Climbing Wolseong (초크업클라이밍 월성점)\": related names \"노루클라이밍 진천\" / \"초크업클라이밍 월성점\" 1037 m apart",
+     "ids": [
+      "kr-dg-025"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-026 \"Chalk Up Climbing Chimsan (초크업 클라이밍 침산점)\": related names \"노루클라이밍 진천\" / \"초크업 클라이밍 침산점\" 10033 m apart",
+     "ids": [
+      "kr-dg-026"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-027 \"King Kong Climbing (킹콩클라이밍)\": related names \"노루클라이밍 진천\" / \"킹콩클라이밍\" 5101 m apart",
+     "ids": [
+      "kr-dg-027"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-029 \"Monster Climbing Techno (몬스터클라이밍)\": related names \"노루클라이밍 진천\" / \"몬스터클라이밍\" 14696 m apart",
+     "ids": [
+      "kr-dg-029"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-030 \"Jump Climbing Gym Jangi-ro (점프클라이밍짐 장기점)\": related names \"노루클라이밍 진천\" / \"점프클라이밍짐 장기점\" 3269 m apart",
+     "ids": [
+      "kr-dg-030"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-031 \"Climbing High (클라이밍하이)\": related names \"노루클라이밍 진천\" / \"클라이밍하이\" 1572 m apart",
+     "ids": [
+      "kr-dg-031"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-032 \"Rock Climbing Nowon (락클라이밍)\": related names \"노루클라이밍 진천\" / \"락클라이밍\" 9295 m apart",
+     "ids": [
+      "kr-dg-032"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-035 \"Nam-gu International Sports Climbing Center (남구국제스포츠클라이밍장)\": related names \"노루클라이밍 진천\" / \"남구국제스포츠클라이밍장\" 7148 m apart",
+     "ids": [
+      "kr-dg-035"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-dg-001",
+    "kr-dg-002",
+    "kr-dg-003",
+    "kr-dg-004",
+    "kr-dg-006",
+    "kr-dg-007",
+    "kr-dg-008",
+    "kr-dg-009",
+    "kr-dg-010",
+    "kr-dg-015",
+    "kr-dg-017",
+    "kr-dg-024",
+    "kr-dg-025",
+    "kr-dg-026",
+    "kr-dg-027",
+    "kr-dg-029",
+    "kr-dg-030",
+    "kr-dg-031",
+    "kr-dg-032",
+    "kr-dg-035"
+   ]
+  },
+  {
+   "cid": "kr-dg-006",
+   "line": 6,
+   "name": "Hands Climbing Gym (핸즈 클라이밍짐)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-aa8e6fd492"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-001 \"Boulder Lounge Flip Daegu (볼더라운지 플립 대구점)\": related names \"핸즈 클라이밍짐\" / \"볼더라운지 플립 대구점\" 3498 m apart",
+     "ids": [
+      "kr-dg-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-002 \"Newbie Climbing Suseong (뉴비클라이밍 수성점)\": related names \"핸즈 클라이밍짐\" / \"뉴비클라이밍 수성점\" 1392 m apart",
+     "ids": [
+      "kr-dg-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-003 \"Chalk Up The Boulder (초크업 더 볼더 클라이밍)\": related names \"핸즈 클라이밍짐\" / \"초크업 더 볼더 클라이밍\" 8065 m apart",
+     "ids": [
+      "kr-dg-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-004 \"Sonsedong Climbing Duryu (손세동 클라이밍 두류점)\": related names \"핸즈 클라이밍짐\" / \"손세동 클라이밍 두류점\" 3883 m apart",
+     "ids": [
+      "kr-dg-004"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-005 \"Noru Climbing Jincheon (노루클라이밍 진천)\": related names \"핸즈 클라이밍짐\" / \"노루클라이밍 진천\" 7681 m apart",
+     "ids": [
+      "kr-dg-005"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-007 \"Byeok Climbing (벽 클라이밍)\": related names \"핸즈 클라이밍짐\" / \"벽 클라이밍\" 4875 m apart",
+     "ids": [
+      "kr-dg-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-008 \"Gwangjang Climbing Center (광장클라이밍센터)\": related names \"핸즈 클라이밍짐\" / \"광장클라이밍센터\" 4305 m apart",
+     "ids": [
+      "kr-dg-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-009 \"Chalk Up Climbing Gyeongdae (초크업클라이밍 경대점)\": related names \"핸즈 클라이밍짐\" / \"초크업클라이밍 경대점\" 5766 m apart",
+     "ids": [
+      "kr-dg-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-010 \"Jump Climbing Gym Bondong (점프 클라이밍짐)\": related names \"핸즈 클라이밍짐\" / \"점프 클라이밍짐\" 4581 m apart",
+     "ids": [
+      "kr-dg-010"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-015 \"Dongseong-ro Climbing Gym (동성로클라이밍짐)\": related names \"핸즈 클라이밍짐\" / \"동성로클라이밍짐\" 2657 m apart",
+     "ids": [
+      "kr-dg-015"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-016 \"Dyno Cat Climbing (다이노캣 클라이밍)\": related names \"핸즈 클라이밍짐\" / \"다이노캣 클라이밍\" 8876 m apart",
+     "ids": [
+      "kr-dg-016"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-017 \"Daegu Power Climbing Center (대구 파워클라이밍 센터)\": related names \"핸즈 클라이밍짐\" / \"대구 파워클라이밍 센터\" 2522 m apart",
+     "ids": [
+      "kr-dg-017"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-024 \"Daegu Climbing Center (대구클라이밍센터)\": related names \"핸즈 클라이밍짐\" / \"대구클라이밍센터\" 7561 m apart",
+     "ids": [
+      "kr-dg-024"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-025 \"Chalk Up Climbing Wolseong (초크업클라이밍 월성점)\": related names \"핸즈 클라이밍짐\" / \"초크업클라이밍 월성점\" 6816 m apart",
+     "ids": [
+      "kr-dg-025"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-026 \"Chalk Up Climbing Chimsan (초크업 클라이밍 침산점)\": related names \"핸즈 클라이밍짐\" / \"초크업 클라이밍 침산점\" 5134 m apart",
+     "ids": [
+      "kr-dg-026"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-027 \"King Kong Climbing (킹콩클라이밍)\": related names \"핸즈 클라이밍짐\" / \"킹콩클라이밍\" 10213 m apart",
+     "ids": [
+      "kr-dg-027"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-030 \"Jump Climbing Gym Jangi-ro (점프클라이밍짐 장기점)\": related names \"핸즈 클라이밍짐\" / \"점프클라이밍짐 장기점\" 5962 m apart",
+     "ids": [
+      "kr-dg-030"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-031 \"Climbing High (클라이밍하이)\": related names \"핸즈 클라이밍짐\" / \"클라이밍하이\" 6896 m apart",
+     "ids": [
+      "kr-dg-031"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-032 \"Rock Climbing Nowon (락클라이밍)\": related names \"핸즈 클라이밍짐\" / \"락클라이밍\" 5484 m apart",
+     "ids": [
+      "kr-dg-032"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-035 \"Nam-gu International Sports Climbing Center (남구국제스포츠클라이밍장)\": related names \"핸즈 클라이밍짐\" / \"남구국제스포츠클라이밍장\" 1370 m apart",
+     "ids": [
+      "kr-dg-035"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-dg-001",
+    "kr-dg-002",
+    "kr-dg-003",
+    "kr-dg-004",
+    "kr-dg-005",
+    "kr-dg-007",
+    "kr-dg-008",
+    "kr-dg-009",
+    "kr-dg-010",
+    "kr-dg-015",
+    "kr-dg-016",
+    "kr-dg-017",
+    "kr-dg-024",
+    "kr-dg-025",
+    "kr-dg-026",
+    "kr-dg-027",
+    "kr-dg-030",
+    "kr-dg-031",
+    "kr-dg-032",
+    "kr-dg-035"
+   ]
+  },
+  {
+   "cid": "kr-dg-007",
+   "line": 7,
+   "name": "Byeok Climbing (벽 클라이밍)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-804f338c91"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-001 \"Boulder Lounge Flip Daegu (볼더라운지 플립 대구점)\": related names \"벽 클라이밍\" / \"볼더라운지 플립 대구점\" 2515 m apart",
+     "ids": [
+      "kr-dg-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-002 \"Newbie Climbing Suseong (뉴비클라이밍 수성점)\": related names \"벽 클라이밍\" / \"뉴비클라이밍 수성점\" 5638 m apart",
+     "ids": [
+      "kr-dg-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-003 \"Chalk Up The Boulder (초크업 더 볼더 클라이밍)\": related names \"벽 클라이밍\" / \"초크업 더 볼더 클라이밍\" 8734 m apart",
+     "ids": [
+      "kr-dg-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-004 \"Sonsedong Climbing Duryu (손세동 클라이밍 두류점)\": related names \"벽 클라이밍\" / \"손세동 클라이밍 두류점\" 4855 m apart",
+     "ids": [
+      "kr-dg-004"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-005 \"Noru Climbing Jincheon (노루클라이밍 진천)\": related names \"벽 클라이밍\" / \"노루클라이밍 진천\" 10616 m apart",
+     "ids": [
+      "kr-dg-005"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-006 \"Hands Climbing Gym (핸즈 클라이밍짐)\": related names \"벽 클라이밍\" / \"핸즈 클라이밍짐\" 4875 m apart",
+     "ids": [
+      "kr-dg-006"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-008 \"Gwangjang Climbing Center (광장클라이밍센터)\": related names \"벽 클라이밍\" / \"광장클라이밍센터\" 5326 m apart",
+     "ids": [
+      "kr-dg-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-009 \"Chalk Up Climbing Gyeongdae (초크업클라이밍 경대점)\": related names \"벽 클라이밍\" / \"초크업클라이밍 경대점\" 2151 m apart",
+     "ids": [
+      "kr-dg-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-010 \"Jump Climbing Gym Bondong (점프 클라이밍짐)\": related names \"벽 클라이밍\" / \"점프 클라이밍짐\" 7232 m apart",
+     "ids": [
+      "kr-dg-010"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-015 \"Dongseong-ro Climbing Gym (동성로클라이밍짐)\": related names \"벽 클라이밍\" / \"동성로클라이밍짐\" 2259 m apart",
+     "ids": [
+      "kr-dg-015"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-016 \"Dyno Cat Climbing (다이노캣 클라이밍)\": related names \"벽 클라이밍\" / \"다이노캣 클라이밍\" 8632 m apart",
+     "ids": [
+      "kr-dg-016"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-017 \"Daegu Power Climbing Center (대구 파워클라이밍 센터)\": related names \"벽 클라이밍\" / \"대구 파워클라이밍 센터\" 3569 m apart",
+     "ids": [
+      "kr-dg-017"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-024 \"Daegu Climbing Center (대구클라이밍센터)\": related names \"벽 클라이밍\" / \"대구클라이밍센터\" 10222 m apart",
+     "ids": [
+      "kr-dg-024"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-025 \"Chalk Up Climbing Wolseong (초크업클라이밍 월성점)\": related names \"벽 클라이밍\" / \"초크업클라이밍 월성점\" 9586 m apart",
+     "ids": [
+      "kr-dg-025"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-026 \"Chalk Up Climbing Chimsan (초크업 클라이밍 침산점)\": related names \"벽 클라이밍\" / \"초크업 클라이밍 침산점\" 1109 m apart",
+     "ids": [
+      "kr-dg-026"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-027 \"King Kong Climbing (킹콩클라이밍)\": related names \"벽 클라이밍\" / \"킹콩클라이밍\" 10896 m apart",
+     "ids": [
+      "kr-dg-027"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-030 \"Jump Climbing Gym Jangi-ro (점프클라이밍짐 장기점)\": related names \"벽 클라이밍\" / \"점프클라이밍짐 장기점\" 7691 m apart",
+     "ids": [
+      "kr-dg-030"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-031 \"Climbing High (클라이밍하이)\": related names \"벽 클라이밍\" / \"클라이밍하이\" 10450 m apart",
+     "ids": [
+      "kr-dg-031"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-032 \"Rock Climbing Nowon (락클라이밍)\": related names \"벽 클라이밍\" / \"락클라이밍\" 2352 m apart",
+     "ids": [
+      "kr-dg-032"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-035 \"Nam-gu International Sports Climbing Center (남구국제스포츠클라이밍장)\": related names \"벽 클라이밍\" / \"남구국제스포츠클라이밍장\" 6242 m apart",
+     "ids": [
+      "kr-dg-035"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-dg-001",
+    "kr-dg-002",
+    "kr-dg-003",
+    "kr-dg-004",
+    "kr-dg-005",
+    "kr-dg-006",
+    "kr-dg-008",
+    "kr-dg-009",
+    "kr-dg-010",
+    "kr-dg-015",
+    "kr-dg-016",
+    "kr-dg-017",
+    "kr-dg-024",
+    "kr-dg-025",
+    "kr-dg-026",
+    "kr-dg-027",
+    "kr-dg-030",
+    "kr-dg-031",
+    "kr-dg-032",
+    "kr-dg-035"
+   ]
+  },
+  {
+   "cid": "kr-dg-008",
+   "line": 8,
+   "name": "Gwangjang Climbing Center (광장클라이밍센터)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-699bb90091"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-001 \"Boulder Lounge Flip Daegu (볼더라운지 플립 대구점)\": related names \"광장클라이밍센터\" / \"볼더라운지 플립 대구점\" 2841 m apart",
+     "ids": [
+      "kr-dg-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-002 \"Newbie Climbing Suseong (뉴비클라이밍 수성점)\": related names \"광장클라이밍센터\" / \"뉴비클라이밍 수성점\" 5689 m apart",
+     "ids": [
+      "kr-dg-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-003 \"Chalk Up The Boulder (초크업 더 볼더 클라이밍)\": related names \"광장클라이밍센터\" / \"초크업 더 볼더 클라이밍\" 3904 m apart",
+     "ids": [
+      "kr-dg-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-004 \"Sonsedong Climbing Duryu (손세동 클라이밍 두류점)\": related names \"광장클라이밍센터\" / \"손세동 클라이밍 두류점\" 526 m apart",
+     "ids": [
+      "kr-dg-004"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-005 \"Noru Climbing Jincheon (노루클라이밍 진천)\": related names \"광장클라이밍센터\" / \"노루클라이밍 진천\" 5396 m apart",
+     "ids": [
+      "kr-dg-005"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-006 \"Hands Climbing Gym (핸즈 클라이밍짐)\": related names \"광장클라이밍센터\" / \"핸즈 클라이밍짐\" 4305 m apart",
+     "ids": [
+      "kr-dg-006"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-007 \"Byeok Climbing (벽 클라이밍)\": related names \"광장클라이밍센터\" / \"벽 클라이밍\" 5326 m apart",
+     "ids": [
+      "kr-dg-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-009 \"Chalk Up Climbing Gyeongdae (초크업클라이밍 경대점)\": related names \"광장클라이밍센터\" / \"초크업클라이밍 경대점\" 7309 m apart",
+     "ids": [
+      "kr-dg-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-010 \"Jump Climbing Gym Bondong (점프 클라이밍짐)\": related names \"광장클라이밍센터\" / \"점프 클라이밍짐\" 2249 m apart",
+     "ids": [
+      "kr-dg-010"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-015 \"Dongseong-ro Climbing Gym (동성로클라이밍짐)\": related names \"광장클라이밍센터\" / \"동성로클라이밍짐\" 3934 m apart",
+     "ids": [
+      "kr-dg-015"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-016 \"Dyno Cat Climbing (다이노캣 클라이밍)\": related names \"광장클라이밍센터\" / \"다이노캣 클라이밍\" 12542 m apart",
+     "ids": [
+      "kr-dg-016"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-017 \"Daegu Power Climbing Center (대구 파워클라이밍 센터)\": related names \"광장클라이밍센터\" / \"대구 파워클라이밍 센터\" 5855 m apart",
+     "ids": [
+      "kr-dg-017"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-024 \"Daegu Climbing Center (대구클라이밍센터)\": related names \"광장클라이밍센터\" / \"대구클라이밍센터\" 4941 m apart",
+     "ids": [
+      "kr-dg-024"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-025 \"Chalk Up Climbing Wolseong (초크업클라이밍 월성점)\": related names \"광장클라이밍센터\" / \"초크업클라이밍 월성점\" 4359 m apart",
+     "ids": [
+      "kr-dg-025"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-026 \"Chalk Up Climbing Chimsan (초크업 클라이밍 침산점)\": related names \"광장클라이밍센터\" / \"초크업 클라이밍 침산점\" 4651 m apart",
+     "ids": [
+      "kr-dg-026"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-027 \"King Kong Climbing (킹콩클라이밍)\": related names \"광장클라이밍센터\" / \"킹콩클라이밍\" 6125 m apart",
+     "ids": [
+      "kr-dg-027"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-030 \"Jump Climbing Gym Jangi-ro (점프클라이밍짐 장기점)\": related names \"광장클라이밍센터\" / \"점프클라이밍짐 장기점\" 2368 m apart",
+     "ids": [
+      "kr-dg-030"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-031 \"Climbing High (클라이밍하이)\": related names \"광장클라이밍센터\" / \"클라이밍하이\" 5560 m apart",
+     "ids": [
+      "kr-dg-031"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-032 \"Rock Climbing Nowon (락클라이밍)\": related names \"광장클라이밍센터\" / \"락클라이밍\" 3919 m apart",
+     "ids": [
+      "kr-dg-032"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-035 \"Nam-gu International Sports Climbing Center (남구국제스포츠클라이밍장)\": related names \"광장클라이밍센터\" / \"남구국제스포츠클라이밍장\" 4849 m apart",
+     "ids": [
+      "kr-dg-035"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-dg-001",
+    "kr-dg-002",
+    "kr-dg-003",
+    "kr-dg-004",
+    "kr-dg-005",
+    "kr-dg-006",
+    "kr-dg-007",
+    "kr-dg-009",
+    "kr-dg-010",
+    "kr-dg-015",
+    "kr-dg-016",
+    "kr-dg-017",
+    "kr-dg-024",
+    "kr-dg-025",
+    "kr-dg-026",
+    "kr-dg-027",
+    "kr-dg-030",
+    "kr-dg-031",
+    "kr-dg-032",
+    "kr-dg-035"
+   ]
+  },
+  {
+   "cid": "kr-dg-009",
+   "line": 9,
+   "name": "Chalk Up Climbing Gyeongdae (초크업클라이밍 경대점)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-1c032d639a"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-001 \"Boulder Lounge Flip Daegu (볼더라운지 플립 대구점)\": related names \"초크업클라이밍 경대점\" / \"볼더라운지 플립 대구점\" 4471 m apart",
+     "ids": [
+      "kr-dg-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-002 \"Newbie Climbing Suseong (뉴비클라이밍 수성점)\": related names \"초크업클라이밍 경대점\" / \"뉴비클라이밍 수성점\" 6057 m apart",
+     "ids": [
+      "kr-dg-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-003 \"Chalk Up The Boulder (초크업 더 볼더 클라이밍)\": related names \"Chalk Up Climbing Gyeongdae (초크업클라이밍 경대점)\" / \"Chalk Up The Boulder (초크업 더 볼더 클라이밍)\" 10854 m apart",
+     "ids": [
+      "kr-dg-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-004 \"Sonsedong Climbing Duryu (손세동 클라이밍 두류점)\": related names \"초크업클라이밍 경대점\" / \"손세동 클라이밍 두류점\" 6809 m apart",
+     "ids": [
+      "kr-dg-004"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-005 \"Noru Climbing Jincheon (노루클라이밍 진천)\": related names \"초크업클라이밍 경대점\" / \"노루클라이밍 진천\" 12438 m apart",
+     "ids": [
+      "kr-dg-005"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-006 \"Hands Climbing Gym (핸즈 클라이밍짐)\": related names \"초크업클라이밍 경대점\" / \"핸즈 클라이밍짐\" 5766 m apart",
+     "ids": [
+      "kr-dg-006"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-007 \"Byeok Climbing (벽 클라이밍)\": related names \"초크업클라이밍 경대점\" / \"벽 클라이밍\" 2151 m apart",
+     "ids": [
+      "kr-dg-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-008 \"Gwangjang Climbing Center (광장클라이밍센터)\": related names \"초크업클라이밍 경대점\" / \"광장클라이밍센터\" 7309 m apart",
+     "ids": [
+      "kr-dg-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-010 \"Jump Climbing Gym Bondong (점프 클라이밍짐)\": related names \"초크업클라이밍 경대점\" / \"점프 클라이밍짐\" 9025 m apart",
+     "ids": [
+      "kr-dg-010"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-015 \"Dongseong-ro Climbing Gym (동성로클라이밍짐)\": related names \"초크업클라이밍 경대점\" / \"동성로클라이밍짐\" 3645 m apart",
+     "ids": [
+      "kr-dg-015"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-016 \"Dyno Cat Climbing (다이노캣 클라이밍)\": related names \"초크업클라이밍 경대점\" / \"다이노캣 클라이밍\" 6781 m apart",
+     "ids": [
+      "kr-dg-016"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-017 \"Daegu Power Climbing Center (대구 파워클라이밍 센터)\": related names \"초크업클라이밍 경대점\" / \"대구 파워클라이밍 센터\" 3602 m apart",
+     "ids": [
+      "kr-dg-017"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-024 \"Daegu Climbing Center (대구클라이밍센터)\": related names \"초크업클라이밍 경대점\" / \"대구클라이밍센터\" 12098 m apart",
+     "ids": [
+      "kr-dg-024"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-025 \"Chalk Up Climbing Wolseong (초크업클라이밍 월성점)\": related names \"Chalk Up Climbing Gyeongdae (초크업클라이밍 경대점)\" / \"Chalk Up Climbing Wolseong (초크업클라이밍 월성점)\" 11426 m apart",
+     "ids": [
+      "kr-dg-025"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-026 \"Chalk Up Climbing Chimsan (초크업 클라이밍 침산점)\": related names \"Chalk Up Climbing Gyeongdae (초크업클라이밍 경대점)\" / \"Chalk Up Climbing Chimsan (초크업 클라이밍 침산점)\" 3213 m apart",
+     "ids": [
+      "kr-dg-026"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-027 \"King Kong Climbing (킹콩클라이밍)\": related names \"초크업클라이밍 경대점\" / \"킹콩클라이밍\" 13031 m apart",
+     "ids": [
+      "kr-dg-027"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-030 \"Jump Climbing Gym Jangi-ro (점프클라이밍짐 장기점)\": related names \"초크업클라이밍 경대점\" / \"점프클라이밍짐 장기점\" 9673 m apart",
+     "ids": [
+      "kr-dg-030"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-031 \"Climbing High (클라이밍하이)\": related names \"초크업클라이밍 경대점\" / \"클라이밍하이\" 12100 m apart",
+     "ids": [
+      "kr-dg-031"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-032 \"Rock Climbing Nowon (락클라이밍)\": related names \"초크업클라이밍 경대점\" / \"락클라이밍\" 4463 m apart",
+     "ids": [
+      "kr-dg-032"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-035 \"Nam-gu International Sports Climbing Center (남구국제스포츠클라이밍장)\": related names \"초크업클라이밍 경대점\" / \"남구국제스포츠클라이밍장\" 7087 m apart",
+     "ids": [
+      "kr-dg-035"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-dg-001",
+    "kr-dg-002",
+    "kr-dg-003",
+    "kr-dg-004",
+    "kr-dg-005",
+    "kr-dg-006",
+    "kr-dg-007",
+    "kr-dg-008",
+    "kr-dg-010",
+    "kr-dg-015",
+    "kr-dg-016",
+    "kr-dg-017",
+    "kr-dg-024",
+    "kr-dg-025",
+    "kr-dg-026",
+    "kr-dg-027",
+    "kr-dg-030",
+    "kr-dg-031",
+    "kr-dg-032",
+    "kr-dg-035"
+   ]
+  },
+  {
+   "cid": "kr-dg-010",
+   "line": 10,
+   "name": "Jump Climbing Gym Bondong (점프 클라이밍짐)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-39865335b1"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-001 \"Boulder Lounge Flip Daegu (볼더라운지 플립 대구점)\": related names \"점프 클라이밍짐\" / \"볼더라운지 플립 대구점\" 4729 m apart",
+     "ids": [
+      "kr-dg-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-002 \"Newbie Climbing Suseong (뉴비클라이밍 수성점)\": related names \"점프 클라이밍짐\" / \"뉴비클라이밍 수성점\" 5761 m apart",
+     "ids": [
+      "kr-dg-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-003 \"Chalk Up The Boulder (초크업 더 볼더 클라이밍)\": related names \"점프 클라이밍짐\" / \"초크업 더 볼더 클라이밍\" 4016 m apart",
+     "ids": [
+      "kr-dg-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-004 \"Sonsedong Climbing Duryu (손세동 클라이밍 두류점)\": related names \"점프 클라이밍짐\" / \"손세동 클라이밍 두류점\" 2531 m apart",
+     "ids": [
+      "kr-dg-004"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-005 \"Noru Climbing Jincheon (노루클라이밍 진천)\": related names \"점프 클라이밍짐\" / \"노루클라이밍 진천\" 3413 m apart",
+     "ids": [
+      "kr-dg-005"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-006 \"Hands Climbing Gym (핸즈 클라이밍짐)\": related names \"점프 클라이밍짐\" / \"핸즈 클라이밍짐\" 4581 m apart",
+     "ids": [
+      "kr-dg-006"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-007 \"Byeok Climbing (벽 클라이밍)\": related names \"점프 클라이밍짐\" / \"벽 클라이밍\" 7232 m apart",
+     "ids": [
+      "kr-dg-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-008 \"Gwangjang Climbing Center (광장클라이밍센터)\": related names \"점프 클라이밍짐\" / \"광장클라이밍센터\" 2249 m apart",
+     "ids": [
+      "kr-dg-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-009 \"Chalk Up Climbing Gyeongdae (초크업클라이밍 경대점)\": related names \"점프 클라이밍짐\" / \"초크업클라이밍 경대점\" 9025 m apart",
+     "ids": [
+      "kr-dg-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-015 \"Dongseong-ro Climbing Gym (동성로클라이밍짐)\": related names \"점프 클라이밍짐\" / \"동성로클라이밍짐\" 5409 m apart",
+     "ids": [
+      "kr-dg-015"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-016 \"Dyno Cat Climbing (다이노캣 클라이밍)\": related names \"점프 클라이밍짐\" / \"다이노캣 클라이밍\" 13418 m apart",
+     "ids": [
+      "kr-dg-016"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-017 \"Daegu Power Climbing Center (대구 파워클라이밍 센터)\": related names \"점프 클라이밍짐\" / \"대구 파워클라이밍 센터\" 6798 m apart",
+     "ids": [
+      "kr-dg-017"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-024 \"Daegu Climbing Center (대구클라이밍센터)\": related names \"점프 클라이밍짐\" / \"대구클라이밍센터\" 3117 m apart",
+     "ids": [
+      "kr-dg-024"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-025 \"Chalk Up Climbing Wolseong (초크업클라이밍 월성점)\": related names \"점프 클라이밍짐\" / \"초크업클라이밍 월성점\" 2412 m apart",
+     "ids": [
+      "kr-dg-025"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-026 \"Chalk Up Climbing Chimsan (초크업 클라이밍 침산점)\": related names \"점프 클라이밍짐\" / \"초크업 클라이밍 침산점\" 6722 m apart",
+     "ids": [
+      "kr-dg-026"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-027 \"King Kong Climbing (킹콩클라이밍)\": related names \"점프 클라이밍짐\" / \"킹콩클라이밍\" 5913 m apart",
+     "ids": [
+      "kr-dg-027"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-030 \"Jump Climbing Gym Jangi-ro (점프클라이밍짐 장기점)\": related names \"점프 클라이밍짐\" / \"점프클라이밍짐 장기점\" 1649 m apart",
+     "ids": [
+      "kr-dg-030"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-031 \"Climbing High (클라이밍하이)\": related names \"점프 클라이밍짐\" / \"클라이밍하이\" 3328 m apart",
+     "ids": [
+      "kr-dg-031"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-032 \"Rock Climbing Nowon (락클라이밍)\": related names \"점프 클라이밍짐\" / \"락클라이밍\" 6124 m apart",
+     "ids": [
+      "kr-dg-032"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-035 \"Nam-gu International Sports Climbing Center (남구국제스포츠클라이밍장)\": related names \"점프 클라이밍짐\" / \"남구국제스포츠클라이밍장\" 4456 m apart",
+     "ids": [
+      "kr-dg-035"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-dg-001",
+    "kr-dg-002",
+    "kr-dg-003",
+    "kr-dg-004",
+    "kr-dg-005",
+    "kr-dg-006",
+    "kr-dg-007",
+    "kr-dg-008",
+    "kr-dg-009",
+    "kr-dg-015",
+    "kr-dg-016",
+    "kr-dg-017",
+    "kr-dg-024",
+    "kr-dg-025",
+    "kr-dg-026",
+    "kr-dg-027",
+    "kr-dg-030",
+    "kr-dg-031",
+    "kr-dg-032",
+    "kr-dg-035"
+   ]
+  },
+  {
+   "cid": "kr-dg-011",
+   "line": 11,
+   "name": "4Seasons Climbing Sandong (포시즌클라이밍 산동점)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-d897bd8cb4"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-018 \"Norbo Climbing (노보클라이밍)\": related names \"포시즌클라이밍 산동점\" / \"노보클라이밍\" 6369 m apart",
+     "ids": [
+      "kr-dg-018"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-034 \"4Seasons Climbing Indong (인동 포시즌클라이밍짐)\": related names \"포시즌클라이밍 산동점\" / \"인동 포시즌클라이밍짐\" 5088 m apart",
+     "ids": [
+      "kr-dg-034"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-dg-018",
+    "kr-dg-034"
+   ]
+  },
+  {
+   "cid": "kr-dg-012",
+   "line": 12,
+   "name": "Woody Climbing (우디클라이밍)",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-62ebc72238"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "kr-dg-013",
+   "line": 13,
+   "name": "Kim Dae-woo Climbing School (김대우암벽교실)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-d9348b215b"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-020 \"Pohang Spider Climbing (포항 스파이더 클라이밍)\": related names \"김대우암벽교실\" / \"포항 스파이더 클라이밍\" 12550 m apart",
+     "ids": [
+      "kr-dg-020"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-028 \"Atti Climbing (아띠클라이밍)\": related names \"김대우암벽교실\" / \"아띠클라이밍\" 3971 m apart",
+     "ids": [
+      "kr-dg-028"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-037 \"Pohang International Climbing Center (포항국제클라이밍센터)\": related names \"김대우암벽교실\" / \"포항국제클라이밍센터\" 9207 m apart",
+     "ids": [
+      "kr-dg-037"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-dg-020",
+    "kr-dg-028",
+    "kr-dg-037"
+   ]
+  },
+  {
+   "cid": "kr-dg-014",
+   "line": 14,
+   "name": "Gyeongju Climbing Center (경주클라이밍센터)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-a0da46face"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-019 \"Flow Climb (플로우클라임)\": related names \"경주클라이밍센터\" / \"플로우클라임\" 1005 m apart",
+     "ids": [
+      "kr-dg-019"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-dg-019"
+   ]
+  },
+  {
+   "cid": "kr-dg-015",
+   "line": 15,
+   "name": "Dongseong-ro Climbing Gym (동성로클라이밍짐)",
+   "class": "existing",
+   "suggested": "same-as seed-1221",
+   "importer": {
+    "class": "existing",
+    "id": "seed-1221",
+    "match": {
+     "id": "seed-1221",
+     "name": "Dongseong-ro Climbing Gym",
+     "reason": "same-name",
+     "dist_m": 303
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-1221 but content differs (name, lat, lng, address); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1221 \"Dongseong-ro Climbing Gym\": same-name (\"Dongseong-ro Climbing Gym (동성로클라이밍짐)\" / \"Dongseong-ro Climbing Gym\", 303 m)",
+     "ids": [
+      "seed-1221"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-001 \"Boulder Lounge Flip Daegu (볼더라운지 플립 대구점)\": related names \"동성로클라이밍짐\" / \"볼더라운지 플립 대구점\" 1464 m apart",
+     "ids": [
+      "kr-dg-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-002 \"Newbie Climbing Suseong (뉴비클라이밍 수성점)\": related names \"동성로클라이밍짐\" / \"뉴비클라이밍 수성점\" 3617 m apart",
+     "ids": [
+      "kr-dg-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-003 \"Chalk Up The Boulder (초크업 더 볼더 클라이밍)\": related names \"동성로클라이밍짐\" / \"초크업 더 볼더 클라이밍\" 7763 m apart",
+     "ids": [
+      "kr-dg-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-004 \"Sonsedong Climbing Duryu (손세동 클라이밍 두류점)\": related names \"동성로클라이밍짐\" / \"손세동 클라이밍 두류점\" 3408 m apart",
+     "ids": [
+      "kr-dg-004"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-005 \"Noru Climbing Jincheon (노루클라이밍 진천)\": related names \"동성로클라이밍짐\" / \"노루클라이밍 진천\" 8819 m apart",
+     "ids": [
+      "kr-dg-005"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-006 \"Hands Climbing Gym (핸즈 클라이밍짐)\": related names \"동성로클라이밍짐\" / \"핸즈 클라이밍짐\" 2657 m apart",
+     "ids": [
+      "kr-dg-006"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-007 \"Byeok Climbing (벽 클라이밍)\": related names \"동성로클라이밍짐\" / \"벽 클라이밍\" 2259 m apart",
+     "ids": [
+      "kr-dg-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-008 \"Gwangjang Climbing Center (광장클라이밍센터)\": related names \"동성로클라이밍짐\" / \"광장클라이밍센터\" 3934 m apart",
+     "ids": [
+      "kr-dg-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-009 \"Chalk Up Climbing Gyeongdae (초크업클라이밍 경대점)\": related names \"동성로클라이밍짐\" / \"초크업클라이밍 경대점\" 3645 m apart",
+     "ids": [
+      "kr-dg-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-010 \"Jump Climbing Gym Bondong (점프 클라이밍짐)\": related names \"동성로클라이밍짐\" / \"점프 클라이밍짐\" 5409 m apart",
+     "ids": [
+      "kr-dg-010"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-016 \"Dyno Cat Climbing (다이노캣 클라이밍)\": related names \"동성로클라이밍짐\" / \"다이노캣 클라이밍\" 8718 m apart",
+     "ids": [
+      "kr-dg-016"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-017 \"Daegu Power Climbing Center (대구 파워클라이밍 센터)\": related names \"동성로클라이밍짐\" / \"대구 파워클라이밍 센터\" 2268 m apart",
+     "ids": [
+      "kr-dg-017"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-024 \"Daegu Climbing Center (대구클라이밍센터)\": related names \"동성로클라이밍짐\" / \"대구클라이밍센터\" 8511 m apart",
+     "ids": [
+      "kr-dg-024"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-025 \"Chalk Up Climbing Wolseong (초크업클라이밍 월성점)\": related names \"동성로클라이밍짐\" / \"초크업클라이밍 월성점\" 7820 m apart",
+     "ids": [
+      "kr-dg-025"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-026 \"Chalk Up Climbing Chimsan (초크업 클라이밍 침산점)\": related names \"동성로클라이밍짐\" / \"초크업 클라이밍 침산점\" 2502 m apart",
+     "ids": [
+      "kr-dg-026"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-027 \"King Kong Climbing (킹콩클라이밍)\": related names \"동성로클라이밍짐\" / \"킹콩클라이밍\" 9992 m apart",
+     "ids": [
+      "kr-dg-027"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-030 \"Jump Climbing Gym Jangi-ro (점프클라이밍짐 장기점)\": related names \"동성로클라이밍짐\" / \"점프클라이밍짐 장기점\" 6223 m apart",
+     "ids": [
+      "kr-dg-030"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-031 \"Climbing High (클라이밍하이)\": related names \"동성로클라이밍짐\" / \"클라이밍하이\" 8456 m apart",
+     "ids": [
+      "kr-dg-031"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-032 \"Rock Climbing Nowon (락클라이밍)\": related names \"동성로클라이밍짐\" / \"락클라이밍\" 3082 m apart",
+     "ids": [
+      "kr-dg-032"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-035 \"Nam-gu International Sports Climbing Center (남구국제스포츠클라이밍장)\": related names \"동성로클라이밍짐\" / \"남구국제스포츠클라이밍장\" 4011 m apart",
+     "ids": [
+      "kr-dg-035"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-dg-001",
+    "kr-dg-002",
+    "kr-dg-003",
+    "kr-dg-004",
+    "kr-dg-005",
+    "kr-dg-006",
+    "kr-dg-007",
+    "kr-dg-008",
+    "kr-dg-009",
+    "kr-dg-010",
+    "kr-dg-016",
+    "kr-dg-017",
+    "kr-dg-024",
+    "kr-dg-025",
+    "kr-dg-026",
+    "kr-dg-027",
+    "kr-dg-030",
+    "kr-dg-031",
+    "kr-dg-032",
+    "kr-dg-035",
+    "seed-1221"
+   ]
+  },
+  {
+   "cid": "kr-dg-016",
+   "line": 16,
+   "name": "Dyno Cat Climbing (다이노캣 클라이밍)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-95d6e96abe"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-001 \"Boulder Lounge Flip Daegu (볼더라운지 플립 대구점)\": related names \"다이노캣 클라이밍\" / \"볼더라운지 플립 대구점\" 10123 m apart",
+     "ids": [
+      "kr-dg-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-002 \"Newbie Climbing Suseong (뉴비클라이밍 수성점)\": related names \"다이노캣 클라이밍\" / \"뉴비클라이밍 수성점\" 7963 m apart",
+     "ids": [
+      "kr-dg-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-004 \"Sonsedong Climbing Duryu (손세동 클라이밍 두류점)\": related names \"다이노캣 클라이밍\" / \"손세동 클라이밍 두류점\" 12022 m apart",
+     "ids": [
+      "kr-dg-004"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-006 \"Hands Climbing Gym (핸즈 클라이밍짐)\": related names \"다이노캣 클라이밍\" / \"핸즈 클라이밍짐\" 8876 m apart",
+     "ids": [
+      "kr-dg-006"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-007 \"Byeok Climbing (벽 클라이밍)\": related names \"다이노캣 클라이밍\" / \"벽 클라이밍\" 8632 m apart",
+     "ids": [
+      "kr-dg-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-008 \"Gwangjang Climbing Center (광장클라이밍센터)\": related names \"다이노캣 클라이밍\" / \"광장클라이밍센터\" 12542 m apart",
+     "ids": [
+      "kr-dg-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-009 \"Chalk Up Climbing Gyeongdae (초크업클라이밍 경대점)\": related names \"다이노캣 클라이밍\" / \"초크업클라이밍 경대점\" 6781 m apart",
+     "ids": [
+      "kr-dg-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-010 \"Jump Climbing Gym Bondong (점프 클라이밍짐)\": related names \"다이노캣 클라이밍\" / \"점프 클라이밍짐\" 13418 m apart",
+     "ids": [
+      "kr-dg-010"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-015 \"Dongseong-ro Climbing Gym (동성로클라이밍짐)\": related names \"다이노캣 클라이밍\" / \"동성로클라이밍짐\" 8718 m apart",
+     "ids": [
+      "kr-dg-015"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-017 \"Daegu Power Climbing Center (대구 파워클라이밍 센터)\": related names \"다이노캣 클라이밍\" / \"대구 파워클라이밍 센터\" 6703 m apart",
+     "ids": [
+      "kr-dg-017"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-021 \"Olla Climbing Center (올라클라이밍센터)\": related names \"다이노캣 클라이밍\" / \"올라클라이밍센터\" 11999 m apart",
+     "ids": [
+      "kr-dg-021"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-026 \"Chalk Up Climbing Chimsan (초크업 클라이밍 침산점)\": related names \"다이노캣 클라이밍\" / \"초크업 클라이밍 침산점\" 9735 m apart",
+     "ids": [
+      "kr-dg-026"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-030 \"Jump Climbing Gym Jangi-ro (점프클라이밍짐 장기점)\": related names \"다이노캣 클라이밍\" / \"점프클라이밍짐 장기점\" 14641 m apart",
+     "ids": [
+      "kr-dg-030"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-032 \"Rock Climbing Nowon (락클라이밍)\": related names \"다이노캣 클라이밍\" / \"락클라이밍\" 10947 m apart",
+     "ids": [
+      "kr-dg-032"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-035 \"Nam-gu International Sports Climbing Center (남구국제스포츠클라이밍장)\": related names \"다이노캣 클라이밍\" / \"남구국제스포츠클라이밍장\" 9495 m apart",
+     "ids": [
+      "kr-dg-035"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-036 \"Gyeongsan International Climbing Park (경산국제클라이밍파크)\": related names \"다이노캣 클라이밍\" / \"경산국제클라이밍파크\" 12352 m apart",
+     "ids": [
+      "kr-dg-036"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-dg-001",
+    "kr-dg-002",
+    "kr-dg-004",
+    "kr-dg-006",
+    "kr-dg-007",
+    "kr-dg-008",
+    "kr-dg-009",
+    "kr-dg-010",
+    "kr-dg-015",
+    "kr-dg-017",
+    "kr-dg-021",
+    "kr-dg-026",
+    "kr-dg-030",
+    "kr-dg-032",
+    "kr-dg-035",
+    "kr-dg-036"
+   ]
+  },
+  {
+   "cid": "kr-dg-017",
+   "line": 17,
+   "name": "Daegu Power Climbing Center (대구 파워클라이밍 센터)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-b5135c2dc1"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1220 same-name-but-pin-differs 3813 m",
+     "ids": [
+      "seed-1220"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1220 \"Daegu Power Climbing Center\": same-name-but-pin-differs (\"Daegu Power Climbing Center (대구 파워클라이밍 센터)\" / \"Daegu Power Climbing Center\", 3813 m)",
+     "ids": [
+      "seed-1220"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-001 \"Boulder Lounge Flip Daegu (볼더라운지 플립 대구점)\": related names \"대구 파워클라이밍 센터\" / \"볼더라운지 플립 대구점\" 3727 m apart",
+     "ids": [
+      "kr-dg-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-002 \"Newbie Climbing Suseong (뉴비클라이밍 수성점)\": related names \"대구 파워클라이밍 센터\" / \"뉴비클라이밍 수성점\" 2468 m apart",
+     "ids": [
+      "kr-dg-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-003 \"Chalk Up The Boulder (초크업 더 볼더 클라이밍)\": related names \"대구 파워클라이밍 센터\" / \"초크업 더 볼더 클라이밍\" 9758 m apart",
+     "ids": [
+      "kr-dg-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-004 \"Sonsedong Climbing Duryu (손세동 클라이밍 두류점)\": related names \"대구 파워클라이밍 센터\" / \"손세동 클라이밍 두류점\" 5341 m apart",
+     "ids": [
+      "kr-dg-004"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-005 \"Noru Climbing Jincheon (노루클라이밍 진천)\": related names \"대구 파워클라이밍 센터\" / \"노루클라이밍 진천\" 10071 m apart",
+     "ids": [
+      "kr-dg-005"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-006 \"Hands Climbing Gym (핸즈 클라이밍짐)\": related names \"대구 파워클라이밍 센터\" / \"핸즈 클라이밍짐\" 2522 m apart",
+     "ids": [
+      "kr-dg-006"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-007 \"Byeok Climbing (벽 클라이밍)\": related names \"대구 파워클라이밍 센터\" / \"벽 클라이밍\" 3569 m apart",
+     "ids": [
+      "kr-dg-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-008 \"Gwangjang Climbing Center (광장클라이밍센터)\": related names \"대구 파워클라이밍 센터\" / \"광장클라이밍센터\" 5855 m apart",
+     "ids": [
+      "kr-dg-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-009 \"Chalk Up Climbing Gyeongdae (초크업클라이밍 경대점)\": related names \"대구 파워클라이밍 센터\" / \"초크업클라이밍 경대점\" 3602 m apart",
+     "ids": [
+      "kr-dg-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-010 \"Jump Climbing Gym Bondong (점프 클라이밍짐)\": related names \"대구 파워클라이밍 센터\" / \"점프 클라이밍짐\" 6798 m apart",
+     "ids": [
+      "kr-dg-010"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-015 \"Dongseong-ro Climbing Gym (동성로클라이밍짐)\": related names \"대구 파워클라이밍 센터\" / \"동성로클라이밍짐\" 2268 m apart",
+     "ids": [
+      "kr-dg-015"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-016 \"Dyno Cat Climbing (다이노캣 클라이밍)\": related names \"대구 파워클라이밍 센터\" / \"다이노캣 클라이밍\" 6703 m apart",
+     "ids": [
+      "kr-dg-016"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-024 \"Daegu Climbing Center (대구클라이밍센터)\": related names \"Daegu Power Climbing Center (대구 파워클라이밍 센터)\" / \"Daegu Climbing Center (대구클라이밍센터)\" 9885 m apart",
+     "ids": [
+      "kr-dg-024"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-025 \"Chalk Up Climbing Wolseong (초크업클라이밍 월성점)\": related names \"대구 파워클라이밍 센터\" / \"초크업클라이밍 월성점\" 9151 m apart",
+     "ids": [
+      "kr-dg-025"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-026 \"Chalk Up Climbing Chimsan (초크업 클라이밍 침산점)\": related names \"대구 파워클라이밍 센터\" / \"초크업 클라이밍 침산점\" 4331 m apart",
+     "ids": [
+      "kr-dg-026"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-027 \"King Kong Climbing (킹콩클라이밍)\": related names \"대구 파워클라이밍 센터\" / \"킹콩클라이밍\" 11980 m apart",
+     "ids": [
+      "kr-dg-027"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-030 \"Jump Climbing Gym Jangi-ro (점프클라이밍짐 장기점)\": related names \"대구 파워클라이밍 센터\" / \"점프클라이밍짐 장기점\" 7944 m apart",
+     "ids": [
+      "kr-dg-030"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-031 \"Climbing High (클라이밍하이)\": related names \"대구 파워클라이밍 센터\" / \"클라이밍하이\" 9386 m apart",
+     "ids": [
+      "kr-dg-031"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-032 \"Rock Climbing Nowon (락클라이밍)\": related names \"대구 파워클라이밍 센터\" / \"락클라이밍\" 5210 m apart",
+     "ids": [
+      "kr-dg-032"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-035 \"Nam-gu International Sports Climbing Center (남구국제스포츠클라이밍장)\": related names \"대구 파워클라이밍 센터\" / \"남구국제스포츠클라이밍장\" 3670 m apart",
+     "ids": [
+      "kr-dg-035"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-dg-001",
+    "kr-dg-002",
+    "kr-dg-003",
+    "kr-dg-004",
+    "kr-dg-005",
+    "kr-dg-006",
+    "kr-dg-007",
+    "kr-dg-008",
+    "kr-dg-009",
+    "kr-dg-010",
+    "kr-dg-015",
+    "kr-dg-016",
+    "kr-dg-024",
+    "kr-dg-025",
+    "kr-dg-026",
+    "kr-dg-027",
+    "kr-dg-030",
+    "kr-dg-031",
+    "kr-dg-032",
+    "kr-dg-035",
+    "seed-1220"
+   ]
+  },
+  {
+   "cid": "kr-dg-018",
+   "line": 18,
+   "name": "Norbo Climbing (노보클라이밍)",
+   "class": "existing",
+   "suggested": "same-as seed-1233",
+   "importer": {
+    "class": "existing",
+    "id": "seed-1233",
+    "match": {
+     "id": "seed-1233",
+     "name": "Norbo Climbing (노보클라이밍)",
+     "reason": "same-name",
+     "dist_m": 3
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-1233 but content differs (lat, lng, address); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1233 \"Norbo Climbing (노보클라이밍)\": same-name (\"Norbo Climbing (노보클라이밍)\" / \"Norbo Climbing (노보클라이밍)\", 3 m)",
+     "ids": [
+      "seed-1233"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-011 \"4Seasons Climbing Sandong (포시즌클라이밍 산동점)\": related names \"노보클라이밍\" / \"포시즌클라이밍 산동점\" 6369 m apart",
+     "ids": [
+      "kr-dg-011"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-034 \"4Seasons Climbing Indong (인동 포시즌클라이밍짐)\": related names \"노보클라이밍\" / \"인동 포시즌클라이밍짐\" 1588 m apart",
+     "ids": [
+      "kr-dg-034"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-dg-011",
+    "kr-dg-034",
+    "seed-1233"
+   ]
+  },
+  {
+   "cid": "kr-dg-019",
+   "line": 19,
+   "name": "Flow Climb (플로우클라임)",
+   "class": "existing",
+   "suggested": "same-as seed-1231",
+   "importer": {
+    "class": "existing",
+    "id": "seed-1231",
+    "match": {
+     "id": "seed-1231",
+     "name": "Flow Climb (플로우클라임)",
+     "reason": "same-name",
+     "dist_m": 0
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-1231 but content differs (lat, lng, address); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1231 \"Flow Climb (플로우클라임)\": same-name (\"Flow Climb (플로우클라임)\" / \"Flow Climb (플로우클라임)\", 0 m)",
+     "ids": [
+      "seed-1231"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-014 \"Gyeongju Climbing Center (경주클라이밍센터)\": related names \"플로우클라임\" / \"경주클라이밍센터\" 1005 m apart",
+     "ids": [
+      "kr-dg-014"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-dg-014",
+    "seed-1231"
+   ]
+  },
+  {
+   "cid": "kr-dg-020",
+   "line": 20,
+   "name": "Pohang Spider Climbing (포항 스파이더 클라이밍)",
+   "class": "existing",
+   "suggested": "same-as seed-1234",
+   "importer": {
+    "class": "existing",
+    "id": "seed-1234",
+    "match": {
+     "id": "seed-1234",
+     "name": "Pohang Spider Climbing (포항 스파이더 클라이밍)",
+     "reason": "same-name",
+     "dist_m": 2
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-1234 but content differs (lat, lng); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1234 \"Pohang Spider Climbing (포항 스파이더 클라이밍)\": same-name (\"Pohang Spider Climbing (포항 스파이더 클라이밍)\" / \"Pohang Spider Climbing (포항 스파이더 클라이밍)\", 2 m)",
+     "ids": [
+      "seed-1234"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-013 \"Kim Dae-woo Climbing School (김대우암벽교실)\": related names \"포항 스파이더 클라이밍\" / \"김대우암벽교실\" 12550 m apart",
+     "ids": [
+      "kr-dg-013"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-028 \"Atti Climbing (아띠클라이밍)\": related names \"포항 스파이더 클라이밍\" / \"아띠클라이밍\" 10258 m apart",
+     "ids": [
+      "kr-dg-028"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-037 \"Pohang International Climbing Center (포항국제클라이밍센터)\": related names \"포항 스파이더 클라이밍\" / \"포항국제클라이밍센터\" 5685 m apart",
+     "ids": [
+      "kr-dg-037"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-dg-013",
+    "kr-dg-028",
+    "kr-dg-037",
+    "seed-1234"
+   ]
+  },
+  {
+   "cid": "kr-dg-021",
+   "line": 21,
+   "name": "Olla Climbing Center (올라클라이밍센터)",
+   "class": "existing",
+   "suggested": "same-as seed-1232",
+   "importer": {
+    "class": "existing",
+    "id": "seed-1232",
+    "match": {
+     "id": "seed-1232",
+     "name": "Olla Climbing Center (올라클라이밍센터)",
+     "reason": "same-name",
+     "dist_m": 0
+    }
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-1232 but content differs (lat, lng, address, types); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1232 \"Olla Climbing Center (올라클라이밍센터)\": same-name (\"Olla Climbing Center (올라클라이밍센터)\" / \"Olla Climbing Center (올라클라이밍센터)\", 0 m)",
+     "ids": [
+      "seed-1232"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-016 \"Dyno Cat Climbing (다이노캣 클라이밍)\": related names \"올라클라이밍센터\" / \"다이노캣 클라이밍\" 11999 m apart",
+     "ids": [
+      "kr-dg-016"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-036 \"Gyeongsan International Climbing Park (경산국제클라이밍파크)\": related names \"올라클라이밍센터\" / \"경산국제클라이밍파크\" 12569 m apart",
+     "ids": [
+      "kr-dg-036"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-dg-016",
+    "kr-dg-036",
+    "seed-1232"
+   ]
+  },
+  {
+   "cid": "kr-dg-022",
+   "line": 22,
+   "name": "M Climbing Chilgok (M클라이밍 칠곡점)",
+   "class": "blocked",
+   "suggested": "reject no-bouldering",
+   "importer": {
+    "class": "new",
+    "id": "g-daa4ffbd30"
+   },
+   "blockers": [
+    {
+     "code": "no-bouldering",
+     "detail": "confirmed rope-only (new additions need a bouldering offering)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-023 \"M Climbing Nam-Daegu (M클라이밍 남대구점)\": related names \"M Climbing Chilgok (M클라이밍 칠곡점)\" / \"M클라이밍 남대구점\" 13765 m apart",
+     "ids": [
+      "kr-dg-023"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-dg-023"
+   ]
+  },
+  {
+   "cid": "kr-dg-023",
+   "line": 23,
+   "name": "M Climbing Nam-Daegu (M클라이밍 남대구점)",
+   "class": "blocked",
+   "suggested": "reject no-bouldering",
+   "importer": {
+    "class": "new",
+    "id": "g-eb7d32e126"
+   },
+   "blockers": [
+    {
+     "code": "no-bouldering",
+     "detail": "confirmed rope-only (new additions need a bouldering offering)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-022 \"M Climbing Chilgok (M클라이밍 칠곡점)\": related names \"M클라이밍 남대구점\" / \"M Climbing Chilgok (M클라이밍 칠곡점)\" 13765 m apart",
+     "ids": [
+      "kr-dg-022"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-024 \"Daegu Climbing Center (대구클라이밍센터)\": related names \"M Climbing Nam-Daegu (M클라이밍 남대구점)\" / \"Daegu Climbing Center (대구클라이밍센터)\" 1400 m apart",
+     "ids": [
+      "kr-dg-024"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-dg-022",
+    "kr-dg-024"
+   ]
+  },
+  {
+   "cid": "kr-dg-024",
+   "line": 24,
+   "name": "Daegu Climbing Center (대구클라이밍센터)",
+   "class": "blocked",
+   "suggested": "reject temporary",
+   "importer": {
+    "class": "new",
+    "id": "g-86956ba06e"
+   },
+   "blockers": [
+    {
+     "code": "temporary",
+     "detail": "status_claim is temporary"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-001 \"Boulder Lounge Flip Daegu (볼더라운지 플립 대구점)\": related names \"Daegu Climbing Center (대구클라이밍센터)\" / \"Boulder Lounge Flip Daegu (볼더라운지 플립 대구점)\" 7708 m apart",
+     "ids": [
+      "kr-dg-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-002 \"Newbie Climbing Suseong (뉴비클라이밍 수성점)\": related names \"대구클라이밍센터\" / \"뉴비클라이밍 수성점\" 8598 m apart",
+     "ids": [
+      "kr-dg-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-003 \"Chalk Up The Boulder (초크업 더 볼더 클라이밍)\": related names \"대구클라이밍센터\" / \"초크업 더 볼더 클라이밍\" 3786 m apart",
+     "ids": [
+      "kr-dg-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-004 \"Sonsedong Climbing Duryu (손세동 클라이밍 두류점)\": related names \"대구클라이밍센터\" / \"손세동 클라이밍 두류점\" 5376 m apart",
+     "ids": [
+      "kr-dg-004"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-005 \"Noru Climbing Jincheon (노루클라이밍 진천)\": related names \"대구클라이밍센터\" / \"노루클라이밍 진천\" 667 m apart",
+     "ids": [
+      "kr-dg-005"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-006 \"Hands Climbing Gym (핸즈 클라이밍짐)\": related names \"대구클라이밍센터\" / \"핸즈 클라이밍짐\" 7561 m apart",
+     "ids": [
+      "kr-dg-006"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-007 \"Byeok Climbing (벽 클라이밍)\": related names \"대구클라이밍센터\" / \"벽 클라이밍\" 10222 m apart",
+     "ids": [
+      "kr-dg-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-008 \"Gwangjang Climbing Center (광장클라이밍센터)\": related names \"대구클라이밍센터\" / \"광장클라이밍센터\" 4941 m apart",
+     "ids": [
+      "kr-dg-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-009 \"Chalk Up Climbing Gyeongdae (초크업클라이밍 경대점)\": related names \"대구클라이밍센터\" / \"초크업클라이밍 경대점\" 12098 m apart",
+     "ids": [
+      "kr-dg-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-010 \"Jump Climbing Gym Bondong (점프 클라이밍짐)\": related names \"대구클라이밍센터\" / \"점프 클라이밍짐\" 3117 m apart",
+     "ids": [
+      "kr-dg-010"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-015 \"Dongseong-ro Climbing Gym (동성로클라이밍짐)\": related names \"대구클라이밍센터\" / \"동성로클라이밍짐\" 8511 m apart",
+     "ids": [
+      "kr-dg-015"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-017 \"Daegu Power Climbing Center (대구 파워클라이밍 센터)\": related names \"Daegu Climbing Center (대구클라이밍센터)\" / \"Daegu Power Climbing Center (대구 파워클라이밍 센터)\" 9885 m apart",
+     "ids": [
+      "kr-dg-017"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-023 \"M Climbing Nam-Daegu (M클라이밍 남대구점)\": related names \"Daegu Climbing Center (대구클라이밍센터)\" / \"M Climbing Nam-Daegu (M클라이밍 남대구점)\" 1400 m apart",
+     "ids": [
+      "kr-dg-023"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-025 \"Chalk Up Climbing Wolseong (초크업클라이밍 월성점)\": related names \"대구클라이밍센터\" / \"초크업클라이밍 월성점\" 747 m apart",
+     "ids": [
+      "kr-dg-025"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-026 \"Chalk Up Climbing Chimsan (초크업 클라이밍 침산점)\": related names \"대구클라이밍센터\" / \"초크업 클라이밍 침산점\" 9592 m apart",
+     "ids": [
+      "kr-dg-026"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-027 \"King Kong Climbing (킹콩클라이밍)\": related names \"대구클라이밍센터\" / \"킹콩클라이밍\" 4517 m apart",
+     "ids": [
+      "kr-dg-027"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-030 \"Jump Climbing Gym Jangi-ro (점프클라이밍짐 장기점)\": related names \"대구클라이밍센터\" / \"점프클라이밍짐 장기점\" 2713 m apart",
+     "ids": [
+      "kr-dg-030"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-031 \"Climbing High (클라이밍하이)\": related names \"대구클라이밍센터\" / \"클라이밍하이\" 2078 m apart",
+     "ids": [
+      "kr-dg-031"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-032 \"Rock Climbing Nowon (락클라이밍)\": related names \"대구클라이밍센터\" / \"락클라이밍\" 8803 m apart",
+     "ids": [
+      "kr-dg-032"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-035 \"Nam-gu International Sports Climbing Center (남구국제스포츠클라이밍장)\": related names \"대구클라이밍센터\" / \"남구국제스포츠클라이밍장\" 7144 m apart",
+     "ids": [
+      "kr-dg-035"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-1220 \"Daegu Power Climbing Center\": related names \"Daegu Climbing Center (대구클라이밍센터)\" / \"Daegu Power Climbing Center\" 9009 m apart",
+     "ids": [
+      "seed-1220"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-dg-001",
+    "kr-dg-002",
+    "kr-dg-003",
+    "kr-dg-004",
+    "kr-dg-005",
+    "kr-dg-006",
+    "kr-dg-007",
+    "kr-dg-008",
+    "kr-dg-009",
+    "kr-dg-010",
+    "kr-dg-015",
+    "kr-dg-017",
+    "kr-dg-023",
+    "kr-dg-025",
+    "kr-dg-026",
+    "kr-dg-027",
+    "kr-dg-030",
+    "kr-dg-031",
+    "kr-dg-032",
+    "kr-dg-035",
+    "seed-1220"
+   ]
+  },
+  {
+   "cid": "kr-dg-025",
+   "line": 25,
+   "name": "Chalk Up Climbing Wolseong (초크업클라이밍 월성점)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-b9c78e6b9a"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-001 \"Boulder Lounge Flip Daegu (볼더라운지 플립 대구점)\": related names \"초크업클라이밍 월성점\" / \"볼더라운지 플립 대구점\" 7071 m apart",
+     "ids": [
+      "kr-dg-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-002 \"Newbie Climbing Suseong (뉴비클라이밍 수성점)\": related names \"초크업클라이밍 월성점\" / \"뉴비클라이밍 수성점\" 7853 m apart",
+     "ids": [
+      "kr-dg-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-003 \"Chalk Up The Boulder (초크업 더 볼더 클라이밍)\": related names \"Chalk Up Climbing Wolseong (초크업클라이밍 월성점)\" / \"Chalk Up The Boulder (초크업 더 볼더 클라이밍)\" 3821 m apart",
+     "ids": [
+      "kr-dg-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-004 \"Sonsedong Climbing Duryu (손세동 클라이밍 두류점)\": related names \"초크업클라이밍 월성점\" / \"손세동 클라이밍 두류점\" 4765 m apart",
+     "ids": [
+      "kr-dg-004"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-005 \"Noru Climbing Jincheon (노루클라이밍 진천)\": related names \"초크업클라이밍 월성점\" / \"노루클라이밍 진천\" 1037 m apart",
+     "ids": [
+      "kr-dg-005"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-006 \"Hands Climbing Gym (핸즈 클라이밍짐)\": related names \"초크업클라이밍 월성점\" / \"핸즈 클라이밍짐\" 6816 m apart",
+     "ids": [
+      "kr-dg-006"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-007 \"Byeok Climbing (벽 클라이밍)\": related names \"초크업클라이밍 월성점\" / \"벽 클라이밍\" 9586 m apart",
+     "ids": [
+      "kr-dg-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-008 \"Gwangjang Climbing Center (광장클라이밍센터)\": related names \"초크업클라이밍 월성점\" / \"광장클라이밍센터\" 4359 m apart",
+     "ids": [
+      "kr-dg-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-009 \"Chalk Up Climbing Gyeongdae (초크업클라이밍 경대점)\": related names \"Chalk Up Climbing Wolseong (초크업클라이밍 월성점)\" / \"Chalk Up Climbing Gyeongdae (초크업클라이밍 경대점)\" 11426 m apart",
+     "ids": [
+      "kr-dg-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-010 \"Jump Climbing Gym Bondong (점프 클라이밍짐)\": related names \"초크업클라이밍 월성점\" / \"점프 클라이밍짐\" 2412 m apart",
+     "ids": [
+      "kr-dg-010"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-015 \"Dongseong-ro Climbing Gym (동성로클라이밍짐)\": related names \"초크업클라이밍 월성점\" / \"동성로클라이밍짐\" 7820 m apart",
+     "ids": [
+      "kr-dg-015"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-017 \"Daegu Power Climbing Center (대구 파워클라이밍 센터)\": related names \"초크업클라이밍 월성점\" / \"대구 파워클라이밍 센터\" 9151 m apart",
+     "ids": [
+      "kr-dg-017"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-024 \"Daegu Climbing Center (대구클라이밍센터)\": related names \"초크업클라이밍 월성점\" / \"대구클라이밍센터\" 747 m apart",
+     "ids": [
+      "kr-dg-024"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-026 \"Chalk Up Climbing Chimsan (초크업 클라이밍 침산점)\": related names \"Chalk Up Climbing Wolseong (초크업클라이밍 월성점)\" / \"Chalk Up Climbing Chimsan (초크업 클라이밍 침산점)\" 8996 m apart",
+     "ids": [
+      "kr-dg-026"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-027 \"King Kong Climbing (킹콩클라이밍)\": related names \"초크업클라이밍 월성점\" / \"킹콩클라이밍\" 4897 m apart",
+     "ids": [
+      "kr-dg-027"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-030 \"Jump Climbing Gym Jangi-ro (점프클라이밍짐 장기점)\": related names \"초크업클라이밍 월성점\" / \"점프클라이밍짐 장기점\" 2289 m apart",
+     "ids": [
+      "kr-dg-030"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-031 \"Climbing High (클라이밍하이)\": related names \"초크업클라이밍 월성점\" / \"클라이밍하이\" 1824 m apart",
+     "ids": [
+      "kr-dg-031"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-032 \"Rock Climbing Nowon (락클라이밍)\": related names \"초크업클라이밍 월성점\" / \"락클라이밍\" 8262 m apart",
+     "ids": [
+      "kr-dg-032"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-035 \"Nam-gu International Sports Climbing Center (남구국제스포츠클라이밍장)\": related names \"초크업클라이밍 월성점\" / \"남구국제스포츠클라이밍장\" 6403 m apart",
+     "ids": [
+      "kr-dg-035"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-dg-001",
+    "kr-dg-002",
+    "kr-dg-003",
+    "kr-dg-004",
+    "kr-dg-005",
+    "kr-dg-006",
+    "kr-dg-007",
+    "kr-dg-008",
+    "kr-dg-009",
+    "kr-dg-010",
+    "kr-dg-015",
+    "kr-dg-017",
+    "kr-dg-024",
+    "kr-dg-026",
+    "kr-dg-027",
+    "kr-dg-030",
+    "kr-dg-031",
+    "kr-dg-032",
+    "kr-dg-035"
+   ]
+  },
+  {
+   "cid": "kr-dg-026",
+   "line": 26,
+   "name": "Chalk Up Climbing Chimsan (초크업 클라이밍 침산점)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-efc0dd0837"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-001 \"Boulder Lounge Flip Daegu (볼더라운지 플립 대구점)\": related names \"초크업 클라이밍 침산점\" / \"볼더라운지 플립 대구점\" 2068 m apart",
+     "ids": [
+      "kr-dg-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-002 \"Newbie Climbing Suseong (뉴비클라이밍 수성점)\": related names \"초크업 클라이밍 침산점\" / \"뉴비클라이밍 수성점\" 6107 m apart",
+     "ids": [
+      "kr-dg-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-003 \"Chalk Up The Boulder (초크업 더 볼더 클라이밍)\": related names \"Chalk Up Climbing Chimsan (초크업 클라이밍 침산점)\" / \"Chalk Up The Boulder (초크업 더 볼더 클라이밍)\" 7810 m apart",
+     "ids": [
+      "kr-dg-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-004 \"Sonsedong Climbing Duryu (손세동 클라이밍 두류점)\": related names \"초크업 클라이밍 침산점\" / \"손세동 클라이밍 두류점\" 4232 m apart",
+     "ids": [
+      "kr-dg-004"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-005 \"Noru Climbing Jincheon (노루클라이밍 진천)\": related names \"초크업 클라이밍 침산점\" / \"노루클라이밍 진천\" 10033 m apart",
+     "ids": [
+      "kr-dg-005"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-006 \"Hands Climbing Gym (핸즈 클라이밍짐)\": related names \"초크업 클라이밍 침산점\" / \"핸즈 클라이밍짐\" 5134 m apart",
+     "ids": [
+      "kr-dg-006"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-007 \"Byeok Climbing (벽 클라이밍)\": related names \"초크업 클라이밍 침산점\" / \"벽 클라이밍\" 1109 m apart",
+     "ids": [
+      "kr-dg-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-008 \"Gwangjang Climbing Center (광장클라이밍센터)\": related names \"초크업 클라이밍 침산점\" / \"광장클라이밍센터\" 4651 m apart",
+     "ids": [
+      "kr-dg-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-009 \"Chalk Up Climbing Gyeongdae (초크업클라이밍 경대점)\": related names \"Chalk Up Climbing Chimsan (초크업 클라이밍 침산점)\" / \"Chalk Up Climbing Gyeongdae (초크업클라이밍 경대점)\" 3213 m apart",
+     "ids": [
+      "kr-dg-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-010 \"Jump Climbing Gym Bondong (점프 클라이밍짐)\": related names \"초크업 클라이밍 침산점\" / \"점프 클라이밍짐\" 6722 m apart",
+     "ids": [
+      "kr-dg-010"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-015 \"Dongseong-ro Climbing Gym (동성로클라이밍짐)\": related names \"초크업 클라이밍 침산점\" / \"동성로클라이밍짐\" 2502 m apart",
+     "ids": [
+      "kr-dg-015"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-016 \"Dyno Cat Climbing (다이노캣 클라이밍)\": related names \"초크업 클라이밍 침산점\" / \"다이노캣 클라이밍\" 9735 m apart",
+     "ids": [
+      "kr-dg-016"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-017 \"Daegu Power Climbing Center (대구 파워클라이밍 센터)\": related names \"초크업 클라이밍 침산점\" / \"대구 파워클라이밍 센터\" 4331 m apart",
+     "ids": [
+      "kr-dg-017"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-024 \"Daegu Climbing Center (대구클라이밍센터)\": related names \"초크업 클라이밍 침산점\" / \"대구클라이밍센터\" 9592 m apart",
+     "ids": [
+      "kr-dg-024"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-025 \"Chalk Up Climbing Wolseong (초크업클라이밍 월성점)\": related names \"Chalk Up Climbing Chimsan (초크업 클라이밍 침산점)\" / \"Chalk Up Climbing Wolseong (초크업클라이밍 월성점)\" 8996 m apart",
+     "ids": [
+      "kr-dg-025"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-027 \"King Kong Climbing (킹콩클라이밍)\": related names \"초크업 클라이밍 침산점\" / \"킹콩클라이밍\" 9934 m apart",
+     "ids": [
+      "kr-dg-027"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-030 \"Jump Climbing Gym Jangi-ro (점프클라이밍짐 장기점)\": related names \"초크업 클라이밍 침산점\" / \"점프클라이밍짐 장기점\" 6973 m apart",
+     "ids": [
+      "kr-dg-030"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-031 \"Climbing High (클라이밍하이)\": related names \"초크업 클라이밍 침산점\" / \"클라이밍하이\" 10018 m apart",
+     "ids": [
+      "kr-dg-031"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-032 \"Rock Climbing Nowon (락클라이밍)\": related names \"초크업 클라이밍 침산점\" / \"락클라이밍\" 1252 m apart",
+     "ids": [
+      "kr-dg-032"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-035 \"Nam-gu International Sports Climbing Center (남구국제스포츠클라이밍장)\": related names \"초크업 클라이밍 침산점\" / \"남구국제스포츠클라이밍장\" 6460 m apart",
+     "ids": [
+      "kr-dg-035"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-dg-001",
+    "kr-dg-002",
+    "kr-dg-003",
+    "kr-dg-004",
+    "kr-dg-005",
+    "kr-dg-006",
+    "kr-dg-007",
+    "kr-dg-008",
+    "kr-dg-009",
+    "kr-dg-010",
+    "kr-dg-015",
+    "kr-dg-016",
+    "kr-dg-017",
+    "kr-dg-024",
+    "kr-dg-025",
+    "kr-dg-027",
+    "kr-dg-030",
+    "kr-dg-031",
+    "kr-dg-032",
+    "kr-dg-035"
+   ]
+  },
+  {
+   "cid": "kr-dg-027",
+   "line": 27,
+   "name": "King Kong Climbing (킹콩클라이밍)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-085dcce2aa"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-001 \"Boulder Lounge Flip Daegu (볼더라운지 플립 대구점)\": related names \"킹콩클라이밍\" / \"볼더라운지 플립 대구점\" 8697 m apart",
+     "ids": [
+      "kr-dg-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-002 \"Newbie Climbing Suseong (뉴비클라이밍 수성점)\": related names \"킹콩클라이밍\" / \"뉴비클라이밍 수성점\" 11522 m apart",
+     "ids": [
+      "kr-dg-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-003 \"Chalk Up The Boulder (초크업 더 볼더 클라이밍)\": related names \"킹콩클라이밍\" / \"초크업 더 볼더 클라이밍\" 2230 m apart",
+     "ids": [
+      "kr-dg-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-004 \"Sonsedong Climbing Duryu (손세동 클라이밍 두류점)\": related names \"킹콩클라이밍\" / \"손세동 클라이밍 두류점\" 6643 m apart",
+     "ids": [
+      "kr-dg-004"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-005 \"Noru Climbing Jincheon (노루클라이밍 진천)\": related names \"킹콩클라이밍\" / \"노루클라이밍 진천\" 5101 m apart",
+     "ids": [
+      "kr-dg-005"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-006 \"Hands Climbing Gym (핸즈 클라이밍짐)\": related names \"킹콩클라이밍\" / \"핸즈 클라이밍짐\" 10213 m apart",
+     "ids": [
+      "kr-dg-006"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-007 \"Byeok Climbing (벽 클라이밍)\": related names \"킹콩클라이밍\" / \"벽 클라이밍\" 10896 m apart",
+     "ids": [
+      "kr-dg-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-008 \"Gwangjang Climbing Center (광장클라이밍센터)\": related names \"킹콩클라이밍\" / \"광장클라이밍센터\" 6125 m apart",
+     "ids": [
+      "kr-dg-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-009 \"Chalk Up Climbing Gyeongdae (초크업클라이밍 경대점)\": related names \"킹콩클라이밍\" / \"초크업클라이밍 경대점\" 13031 m apart",
+     "ids": [
+      "kr-dg-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-010 \"Jump Climbing Gym Bondong (점프 클라이밍짐)\": related names \"킹콩클라이밍\" / \"점프 클라이밍짐\" 5913 m apart",
+     "ids": [
+      "kr-dg-010"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-015 \"Dongseong-ro Climbing Gym (동성로클라이밍짐)\": related names \"킹콩클라이밍\" / \"동성로클라이밍짐\" 9992 m apart",
+     "ids": [
+      "kr-dg-015"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-017 \"Daegu Power Climbing Center (대구 파워클라이밍 센터)\": related names \"킹콩클라이밍\" / \"대구 파워클라이밍 센터\" 11980 m apart",
+     "ids": [
+      "kr-dg-017"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-024 \"Daegu Climbing Center (대구클라이밍센터)\": related names \"킹콩클라이밍\" / \"대구클라이밍센터\" 4517 m apart",
+     "ids": [
+      "kr-dg-024"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-025 \"Chalk Up Climbing Wolseong (초크업클라이밍 월성점)\": related names \"킹콩클라이밍\" / \"초크업클라이밍 월성점\" 4897 m apart",
+     "ids": [
+      "kr-dg-025"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-026 \"Chalk Up Climbing Chimsan (초크업 클라이밍 침산점)\": related names \"킹콩클라이밍\" / \"초크업 클라이밍 침산점\" 9934 m apart",
+     "ids": [
+      "kr-dg-026"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-030 \"Jump Climbing Gym Jangi-ro (점프클라이밍짐 장기점)\": related names \"킹콩클라이밍\" / \"점프클라이밍짐 장기점\" 4311 m apart",
+     "ids": [
+      "kr-dg-030"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-031 \"Climbing High (클라이밍하이)\": related names \"킹콩클라이밍\" / \"클라이밍하이\" 6593 m apart",
+     "ids": [
+      "kr-dg-031"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-032 \"Rock Climbing Nowon (락클라이밍)\": related names \"킹콩클라이밍\" / \"락클라이밍\" 8779 m apart",
+     "ids": [
+      "kr-dg-032"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-035 \"Nam-gu International Sports Climbing Center (남구국제스포츠클라이밍장)\": related names \"킹콩클라이밍\" / \"남구국제스포츠클라이밍장\" 10335 m apart",
+     "ids": [
+      "kr-dg-035"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-dg-001",
+    "kr-dg-002",
+    "kr-dg-003",
+    "kr-dg-004",
+    "kr-dg-005",
+    "kr-dg-006",
+    "kr-dg-007",
+    "kr-dg-008",
+    "kr-dg-009",
+    "kr-dg-010",
+    "kr-dg-015",
+    "kr-dg-017",
+    "kr-dg-024",
+    "kr-dg-025",
+    "kr-dg-026",
+    "kr-dg-030",
+    "kr-dg-031",
+    "kr-dg-032",
+    "kr-dg-035"
+   ]
+  },
+  {
+   "cid": "kr-dg-028",
+   "line": 28,
+   "name": "Atti Climbing (아띠클라이밍)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-f9557f0de5"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-013 \"Kim Dae-woo Climbing School (김대우암벽교실)\": related names \"아띠클라이밍\" / \"김대우암벽교실\" 3971 m apart",
+     "ids": [
+      "kr-dg-013"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-020 \"Pohang Spider Climbing (포항 스파이더 클라이밍)\": related names \"아띠클라이밍\" / \"포항 스파이더 클라이밍\" 10258 m apart",
+     "ids": [
+      "kr-dg-020"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-037 \"Pohang International Climbing Center (포항국제클라이밍센터)\": related names \"아띠클라이밍\" / \"포항국제클라이밍센터\" 5733 m apart",
+     "ids": [
+      "kr-dg-037"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-dg-013",
+    "kr-dg-020",
+    "kr-dg-037"
+   ]
+  },
+  {
+   "cid": "kr-dg-029",
+   "line": 29,
+   "name": "Monster Climbing Techno (몬스터클라이밍)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-20dbf9da84"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-005 \"Noru Climbing Jincheon (노루클라이밍 진천)\": related names \"몬스터클라이밍\" / \"노루클라이밍 진천\" 14696 m apart",
+     "ids": [
+      "kr-dg-005"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-031 \"Climbing High (클라이밍하이)\": related names \"몬스터클라이밍\" / \"클라이밍하이\" 14535 m apart",
+     "ids": [
+      "kr-dg-031"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-dg-005",
+    "kr-dg-031"
+   ]
+  },
+  {
+   "cid": "kr-dg-030",
+   "line": 30,
+   "name": "Jump Climbing Gym Jangi-ro (점프클라이밍짐 장기점)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-b94f7c0b7f"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-001 \"Boulder Lounge Flip Daegu (볼더라운지 플립 대구점)\": related names \"점프클라이밍짐 장기점\" / \"볼더라운지 플립 대구점\" 5208 m apart",
+     "ids": [
+      "kr-dg-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-002 \"Newbie Climbing Suseong (뉴비클라이밍 수성점)\": related names \"점프클라이밍짐 장기점\" / \"뉴비클라이밍 수성점\" 7235 m apart",
+     "ids": [
+      "kr-dg-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-003 \"Chalk Up The Boulder (초크업 더 볼더 클라이밍)\": related names \"점프클라이밍짐 장기점\" / \"초크업 더 볼더 클라이밍\" 2369 m apart",
+     "ids": [
+      "kr-dg-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-004 \"Sonsedong Climbing Duryu (손세동 클라이밍 두류점)\": related names \"점프클라이밍짐 장기점\" / \"손세동 클라이밍 두류점\" 2864 m apart",
+     "ids": [
+      "kr-dg-004"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-005 \"Noru Climbing Jincheon (노루클라이밍 진천)\": related names \"점프클라이밍짐 장기점\" / \"노루클라이밍 진천\" 3269 m apart",
+     "ids": [
+      "kr-dg-005"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-006 \"Hands Climbing Gym (핸즈 클라이밍짐)\": related names \"점프클라이밍짐 장기점\" / \"핸즈 클라이밍짐\" 5962 m apart",
+     "ids": [
+      "kr-dg-006"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-007 \"Byeok Climbing (벽 클라이밍)\": related names \"점프클라이밍짐 장기점\" / \"벽 클라이밍\" 7691 m apart",
+     "ids": [
+      "kr-dg-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-008 \"Gwangjang Climbing Center (광장클라이밍센터)\": related names \"점프클라이밍짐 장기점\" / \"광장클라이밍센터\" 2368 m apart",
+     "ids": [
+      "kr-dg-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-009 \"Chalk Up Climbing Gyeongdae (초크업클라이밍 경대점)\": related names \"점프클라이밍짐 장기점\" / \"초크업클라이밍 경대점\" 9673 m apart",
+     "ids": [
+      "kr-dg-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-010 \"Jump Climbing Gym Bondong (점프 클라이밍짐)\": related names \"점프클라이밍짐 장기점\" / \"점프 클라이밍짐\" 1649 m apart",
+     "ids": [
+      "kr-dg-010"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-015 \"Dongseong-ro Climbing Gym (동성로클라이밍짐)\": related names \"점프클라이밍짐 장기점\" / \"동성로클라이밍짐\" 6223 m apart",
+     "ids": [
+      "kr-dg-015"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-016 \"Dyno Cat Climbing (다이노캣 클라이밍)\": related names \"점프클라이밍짐 장기점\" / \"다이노캣 클라이밍\" 14641 m apart",
+     "ids": [
+      "kr-dg-016"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-017 \"Daegu Power Climbing Center (대구 파워클라이밍 센터)\": related names \"점프클라이밍짐 장기점\" / \"대구 파워클라이밍 센터\" 7944 m apart",
+     "ids": [
+      "kr-dg-017"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-024 \"Daegu Climbing Center (대구클라이밍센터)\": related names \"점프클라이밍짐 장기점\" / \"대구클라이밍센터\" 2713 m apart",
+     "ids": [
+      "kr-dg-024"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-025 \"Chalk Up Climbing Wolseong (초크업클라이밍 월성점)\": related names \"점프클라이밍짐 장기점\" / \"초크업클라이밍 월성점\" 2289 m apart",
+     "ids": [
+      "kr-dg-025"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-026 \"Chalk Up Climbing Chimsan (초크업 클라이밍 침산점)\": related names \"점프클라이밍짐 장기점\" / \"초크업 클라이밍 침산점\" 6973 m apart",
+     "ids": [
+      "kr-dg-026"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-027 \"King Kong Climbing (킹콩클라이밍)\": related names \"점프클라이밍짐 장기점\" / \"킹콩클라이밍\" 4311 m apart",
+     "ids": [
+      "kr-dg-027"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-031 \"Climbing High (클라이밍하이)\": related names \"점프클라이밍짐 장기점\" / \"클라이밍하이\" 3911 m apart",
+     "ids": [
+      "kr-dg-031"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-032 \"Rock Climbing Nowon (락클라이밍)\": related names \"점프클라이밍짐 장기점\" / \"락클라이밍\" 6118 m apart",
+     "ids": [
+      "kr-dg-032"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-035 \"Nam-gu International Sports Climbing Center (남구국제스포츠클라이밍장)\": related names \"점프클라이밍짐 장기점\" / \"남구국제스포츠클라이밍장\" 6024 m apart",
+     "ids": [
+      "kr-dg-035"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "kr-dg-001",
+    "kr-dg-002",
+    "kr-dg-003",
+    "kr-dg-004",
+    "kr-dg-005",
+    "kr-dg-006",
+    "kr-dg-007",
+    "kr-dg-008",
+    "kr-dg-009",
+    "kr-dg-010",
+    "kr-dg-015",
+    "kr-dg-016",
+    "kr-dg-017",
+    "kr-dg-024",
+    "kr-dg-025",
+    "kr-dg-026",
+    "kr-dg-027",
+    "kr-dg-031",
+    "kr-dg-032",
+    "kr-dg-035"
+   ]
+  },
+  {
+   "cid": "kr-dg-031",
+   "line": 31,
+   "name": "Climbing High (클라이밍하이)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-17dc4c9cd2"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-001 \"Boulder Lounge Flip Daegu (볼더라운지 플립 대구점)\": related names \"클라이밍하이\" / \"볼더라운지 플립 대구점\" 7988 m apart",
+     "ids": [
+      "kr-dg-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-002 \"Newbie Climbing Suseong (뉴비클라이밍 수성점)\": related names \"클라이밍하이\" / \"뉴비클라이밍 수성점\" 7669 m apart",
+     "ids": [
+      "kr-dg-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-003 \"Chalk Up The Boulder (초크업 더 볼더 클라이밍)\": related names \"클라이밍하이\" / \"초크업 더 볼더 클라이밍\" 5645 m apart",
+     "ids": [
+      "kr-dg-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-004 \"Sonsedong Climbing Duryu (손세동 클라이밍 두류점)\": related names \"클라이밍하이\" / \"손세동 클라이밍 두류점\" 5859 m apart",
+     "ids": [
+      "kr-dg-004"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-005 \"Noru Climbing Jincheon (노루클라이밍 진천)\": related names \"클라이밍하이\" / \"노루클라이밍 진천\" 1572 m apart",
+     "ids": [
+      "kr-dg-005"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-006 \"Hands Climbing Gym (핸즈 클라이밍짐)\": related names \"클라이밍하이\" / \"핸즈 클라이밍짐\" 6896 m apart",
+     "ids": [
+      "kr-dg-006"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-007 \"Byeok Climbing (벽 클라이밍)\": related names \"클라이밍하이\" / \"벽 클라이밍\" 10450 m apart",
+     "ids": [
+      "kr-dg-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-008 \"Gwangjang Climbing Center (광장클라이밍센터)\": related names \"클라이밍하이\" / \"광장클라이밍센터\" 5560 m apart",
+     "ids": [
+      "kr-dg-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-009 \"Chalk Up Climbing Gyeongdae (초크업클라이밍 경대점)\": related names \"클라이밍하이\" / \"초크업클라이밍 경대점\" 12100 m apart",
+     "ids": [
+      "kr-dg-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-010 \"Jump Climbing Gym Bondong (점프 클라이밍짐)\": related names \"클라이밍하이\" / \"점프 클라이밍짐\" 3328 m apart",
+     "ids": [
+      "kr-dg-010"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-015 \"Dongseong-ro Climbing Gym (동성로클라이밍짐)\": related names \"클라이밍하이\" / \"동성로클라이밍짐\" 8456 m apart",
+     "ids": [
+      "kr-dg-015"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-017 \"Daegu Power Climbing Center (대구 파워클라이밍 센터)\": related names \"클라이밍하이\" / \"대구 파워클라이밍 센터\" 9386 m apart",
+     "ids": [
+      "kr-dg-017"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-024 \"Daegu Climbing Center (대구클라이밍센터)\": related names \"클라이밍하이\" / \"대구클라이밍센터\" 2078 m apart",
+     "ids": [
+      "kr-dg-024"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-025 \"Chalk Up Climbing Wolseong (초크업클라이밍 월성점)\": related names \"클라이밍하이\" / \"초크업클라이밍 월성점\" 1824 m apart",
+     "ids": [
+      "kr-dg-025"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-026 \"Chalk Up Climbing Chimsan (초크업 클라이밍 침산점)\": related names \"클라이밍하이\" / \"초크업 클라이밍 침산점\" 10018 m apart",
+     "ids": [
+      "kr-dg-026"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-027 \"King Kong Climbing (킹콩클라이밍)\": related names \"클라이밍하이\" / \"킹콩클라이밍\" 6593 m apart",
+     "ids": [
+      "kr-dg-027"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-029 \"Monster Climbing Techno (몬스터클라이밍)\": related names \"클라이밍하이\" / \"몬스터클라이밍\" 14535 m apart",
+     "ids": [
+      "kr-dg-029"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-030 \"Jump Climbing Gym Jangi-ro (점프클라이밍짐 장기점)\": related names \"클라이밍하이\" / \"점프클라이밍짐 장기점\" 3911 m apart",
+     "ids": [
+      "kr-dg-030"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-032 \"Rock Climbing Nowon (락클라이밍)\": related names \"클라이밍하이\" / \"락클라이밍\" 9453 m apart",
+     "ids": [
+      "kr-dg-032"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-035 \"Nam-gu International Sports Climbing Center (남구국제스포츠클라이밍장)\": related names \"클라이밍하이\" / \"남구국제스포츠클라이밍장\" 6139 m apart",
+     "ids": [
+      "kr-dg-035"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-dg-001",
+    "kr-dg-002",
+    "kr-dg-003",
+    "kr-dg-004",
+    "kr-dg-005",
+    "kr-dg-006",
+    "kr-dg-007",
+    "kr-dg-008",
+    "kr-dg-009",
+    "kr-dg-010",
+    "kr-dg-015",
+    "kr-dg-017",
+    "kr-dg-024",
+    "kr-dg-025",
+    "kr-dg-026",
+    "kr-dg-027",
+    "kr-dg-029",
+    "kr-dg-030",
+    "kr-dg-032",
+    "kr-dg-035"
+   ]
+  },
+  {
+   "cid": "kr-dg-032",
+   "line": 32,
+   "name": "Rock Climbing Nowon (락클라이밍)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-64e9b62a9a"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-001 \"Boulder Lounge Flip Daegu (볼더라운지 플립 대구점)\": related names \"락클라이밍\" / \"볼더라운지 플립 대구점\" 2011 m apart",
+     "ids": [
+      "kr-dg-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-002 \"Newbie Climbing Suseong (뉴비클라이밍 수성점)\": related names \"락클라이밍\" / \"뉴비클라이밍 수성점\" 6637 m apart",
+     "ids": [
+      "kr-dg-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-003 \"Chalk Up The Boulder (초크업 더 볼더 클라이밍)\": related names \"락클라이밍\" / \"초크업 더 볼더 클라이밍\" 6705 m apart",
+     "ids": [
+      "kr-dg-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-004 \"Sonsedong Climbing Duryu (손세동 클라이밍 두류점)\": related names \"락클라이밍\" / \"손세동 클라이밍 두류점\" 3595 m apart",
+     "ids": [
+      "kr-dg-004"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-005 \"Noru Climbing Jincheon (노루클라이밍 진천)\": related names \"락클라이밍\" / \"노루클라이밍 진천\" 9295 m apart",
+     "ids": [
+      "kr-dg-005"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-006 \"Hands Climbing Gym (핸즈 클라이밍짐)\": related names \"락클라이밍\" / \"핸즈 클라이밍짐\" 5484 m apart",
+     "ids": [
+      "kr-dg-006"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-007 \"Byeok Climbing (벽 클라이밍)\": related names \"락클라이밍\" / \"벽 클라이밍\" 2352 m apart",
+     "ids": [
+      "kr-dg-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-008 \"Gwangjang Climbing Center (광장클라이밍센터)\": related names \"락클라이밍\" / \"광장클라이밍센터\" 3919 m apart",
+     "ids": [
+      "kr-dg-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-009 \"Chalk Up Climbing Gyeongdae (초크업클라이밍 경대점)\": related names \"락클라이밍\" / \"초크업클라이밍 경대점\" 4463 m apart",
+     "ids": [
+      "kr-dg-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-010 \"Jump Climbing Gym Bondong (점프 클라이밍짐)\": related names \"락클라이밍\" / \"점프 클라이밍짐\" 6124 m apart",
+     "ids": [
+      "kr-dg-010"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-015 \"Dongseong-ro Climbing Gym (동성로클라이밍짐)\": related names \"락클라이밍\" / \"동성로클라이밍짐\" 3082 m apart",
+     "ids": [
+      "kr-dg-015"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-016 \"Dyno Cat Climbing (다이노캣 클라이밍)\": related names \"락클라이밍\" / \"다이노캣 클라이밍\" 10947 m apart",
+     "ids": [
+      "kr-dg-016"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-017 \"Daegu Power Climbing Center (대구 파워클라이밍 센터)\": related names \"락클라이밍\" / \"대구 파워클라이밍 센터\" 5210 m apart",
+     "ids": [
+      "kr-dg-017"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-024 \"Daegu Climbing Center (대구클라이밍센터)\": related names \"락클라이밍\" / \"대구클라이밍센터\" 8803 m apart",
+     "ids": [
+      "kr-dg-024"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-025 \"Chalk Up Climbing Wolseong (초크업클라이밍 월성점)\": related names \"락클라이밍\" / \"초크업클라이밍 월성점\" 8262 m apart",
+     "ids": [
+      "kr-dg-025"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-026 \"Chalk Up Climbing Chimsan (초크업 클라이밍 침산점)\": related names \"락클라이밍\" / \"초크업 클라이밍 침산점\" 1252 m apart",
+     "ids": [
+      "kr-dg-026"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-027 \"King Kong Climbing (킹콩클라이밍)\": related names \"락클라이밍\" / \"킹콩클라이밍\" 8779 m apart",
+     "ids": [
+      "kr-dg-027"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-030 \"Jump Climbing Gym Jangi-ro (점프클라이밍짐 장기점)\": related names \"락클라이밍\" / \"점프클라이밍짐 장기점\" 6118 m apart",
+     "ids": [
+      "kr-dg-030"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-031 \"Climbing High (클라이밍하이)\": related names \"락클라이밍\" / \"클라이밍하이\" 9453 m apart",
+     "ids": [
+      "kr-dg-031"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-035 \"Nam-gu International Sports Climbing Center (남구국제스포츠클라이밍장)\": related names \"락클라이밍\" / \"남구국제스포츠클라이밍장\" 6711 m apart",
+     "ids": [
+      "kr-dg-035"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-dg-001",
+    "kr-dg-002",
+    "kr-dg-003",
+    "kr-dg-004",
+    "kr-dg-005",
+    "kr-dg-006",
+    "kr-dg-007",
+    "kr-dg-008",
+    "kr-dg-009",
+    "kr-dg-010",
+    "kr-dg-015",
+    "kr-dg-016",
+    "kr-dg-017",
+    "kr-dg-024",
+    "kr-dg-025",
+    "kr-dg-026",
+    "kr-dg-027",
+    "kr-dg-030",
+    "kr-dg-031",
+    "kr-dg-035"
+   ]
+  },
+  {
+   "cid": "kr-dg-033",
+   "line": 33,
+   "name": "CC Climbing Center (CC클라이밍센터)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-f4a6653da1"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "kr-dg-034",
+   "line": 34,
+   "name": "4Seasons Climbing Indong (인동 포시즌클라이밍짐)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-a4333b14b3"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-011 \"4Seasons Climbing Sandong (포시즌클라이밍 산동점)\": related names \"인동 포시즌클라이밍짐\" / \"포시즌클라이밍 산동점\" 5088 m apart",
+     "ids": [
+      "kr-dg-011"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-018 \"Norbo Climbing (노보클라이밍)\": related names \"인동 포시즌클라이밍짐\" / \"노보클라이밍\" 1588 m apart",
+     "ids": [
+      "kr-dg-018"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "kr-dg-011",
+    "kr-dg-018"
+   ]
+  },
+  {
+   "cid": "kr-dg-035",
+   "line": 35,
+   "name": "Nam-gu International Sports Climbing Center (남구국제스포츠클라이밍장)",
+   "class": "blocked",
+   "suggested": "reject not-a-gym",
+   "importer": {
+    "class": "new",
+    "id": "g-05607d9c04"
+   },
+   "blockers": [
+    {
+     "code": "not-a-gym",
+     "detail": "category other"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-001 \"Boulder Lounge Flip Daegu (볼더라운지 플립 대구점)\": related names \"남구국제스포츠클라이밍장\" / \"볼더라운지 플립 대구점\" 4701 m apart",
+     "ids": [
+      "kr-dg-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-002 \"Newbie Climbing Suseong (뉴비클라이밍 수성점)\": related names \"남구국제스포츠클라이밍장\" / \"뉴비클라이밍 수성점\" 1534 m apart",
+     "ids": [
+      "kr-dg-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-003 \"Chalk Up The Boulder (초크업 더 볼더 클라이밍)\": related names \"남구국제스포츠클라이밍장\" / \"초크업 더 볼더 클라이밍\" 8299 m apart",
+     "ids": [
+      "kr-dg-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-004 \"Sonsedong Climbing Duryu (손세동 클라이밍 두류점)\": related names \"남구국제스포츠클라이밍장\" / \"손세동 클라이밍 두류점\" 4532 m apart",
+     "ids": [
+      "kr-dg-004"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-005 \"Noru Climbing Jincheon (노루클라이밍 진천)\": related names \"남구국제스포츠클라이밍장\" / \"노루클라이밍 진천\" 7148 m apart",
+     "ids": [
+      "kr-dg-005"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-006 \"Hands Climbing Gym (핸즈 클라이밍짐)\": related names \"남구국제스포츠클라이밍장\" / \"핸즈 클라이밍짐\" 1370 m apart",
+     "ids": [
+      "kr-dg-006"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-007 \"Byeok Climbing (벽 클라이밍)\": related names \"남구국제스포츠클라이밍장\" / \"벽 클라이밍\" 6242 m apart",
+     "ids": [
+      "kr-dg-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-008 \"Gwangjang Climbing Center (광장클라이밍센터)\": related names \"남구국제스포츠클라이밍장\" / \"광장클라이밍센터\" 4849 m apart",
+     "ids": [
+      "kr-dg-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-009 \"Chalk Up Climbing Gyeongdae (초크업클라이밍 경대점)\": related names \"남구국제스포츠클라이밍장\" / \"초크업클라이밍 경대점\" 7087 m apart",
+     "ids": [
+      "kr-dg-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-010 \"Jump Climbing Gym Bondong (점프 클라이밍짐)\": related names \"남구국제스포츠클라이밍장\" / \"점프 클라이밍짐\" 4456 m apart",
+     "ids": [
+      "kr-dg-010"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-015 \"Dongseong-ro Climbing Gym (동성로클라이밍짐)\": related names \"남구국제스포츠클라이밍장\" / \"동성로클라이밍짐\" 4011 m apart",
+     "ids": [
+      "kr-dg-015"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-016 \"Dyno Cat Climbing (다이노캣 클라이밍)\": related names \"남구국제스포츠클라이밍장\" / \"다이노캣 클라이밍\" 9495 m apart",
+     "ids": [
+      "kr-dg-016"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-017 \"Daegu Power Climbing Center (대구 파워클라이밍 센터)\": related names \"남구국제스포츠클라이밍장\" / \"대구 파워클라이밍 센터\" 3670 m apart",
+     "ids": [
+      "kr-dg-017"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-024 \"Daegu Climbing Center (대구클라이밍센터)\": related names \"남구국제스포츠클라이밍장\" / \"대구클라이밍센터\" 7144 m apart",
+     "ids": [
+      "kr-dg-024"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-025 \"Chalk Up Climbing Wolseong (초크업클라이밍 월성점)\": related names \"남구국제스포츠클라이밍장\" / \"초크업클라이밍 월성점\" 6403 m apart",
+     "ids": [
+      "kr-dg-025"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-026 \"Chalk Up Climbing Chimsan (초크업 클라이밍 침산점)\": related names \"남구국제스포츠클라이밍장\" / \"초크업 클라이밍 침산점\" 6460 m apart",
+     "ids": [
+      "kr-dg-026"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-027 \"King Kong Climbing (킹콩클라이밍)\": related names \"남구국제스포츠클라이밍장\" / \"킹콩클라이밍\" 10335 m apart",
+     "ids": [
+      "kr-dg-027"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-030 \"Jump Climbing Gym Jangi-ro (점프클라이밍짐 장기점)\": related names \"남구국제스포츠클라이밍장\" / \"점프클라이밍짐 장기점\" 6024 m apart",
+     "ids": [
+      "kr-dg-030"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-031 \"Climbing High (클라이밍하이)\": related names \"남구국제스포츠클라이밍장\" / \"클라이밍하이\" 6139 m apart",
+     "ids": [
+      "kr-dg-031"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-032 \"Rock Climbing Nowon (락클라이밍)\": related names \"남구국제스포츠클라이밍장\" / \"락클라이밍\" 6711 m apart",
+     "ids": [
+      "kr-dg-032"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-dg-001",
+    "kr-dg-002",
+    "kr-dg-003",
+    "kr-dg-004",
+    "kr-dg-005",
+    "kr-dg-006",
+    "kr-dg-007",
+    "kr-dg-008",
+    "kr-dg-009",
+    "kr-dg-010",
+    "kr-dg-015",
+    "kr-dg-016",
+    "kr-dg-017",
+    "kr-dg-024",
+    "kr-dg-025",
+    "kr-dg-026",
+    "kr-dg-027",
+    "kr-dg-030",
+    "kr-dg-031",
+    "kr-dg-032"
+   ]
+  },
+  {
+   "cid": "kr-dg-036",
+   "line": 36,
+   "name": "Gyeongsan International Climbing Park (경산국제클라이밍파크)",
+   "class": "blocked",
+   "suggested": "reject not-a-gym",
+   "importer": {
+    "class": "new",
+    "id": "g-9ebecd901d"
+   },
+   "blockers": [
+    {
+     "code": "not-a-gym",
+     "detail": "category other"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-016 \"Dyno Cat Climbing (다이노캣 클라이밍)\": related names \"경산국제클라이밍파크\" / \"다이노캣 클라이밍\" 12352 m apart",
+     "ids": [
+      "kr-dg-016"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-021 \"Olla Climbing Center (올라클라이밍센터)\": related names \"경산국제클라이밍파크\" / \"올라클라이밍센터\" 12569 m apart",
+     "ids": [
+      "kr-dg-021"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-dg-016",
+    "kr-dg-021"
+   ]
+  },
+  {
+   "cid": "kr-dg-037",
+   "line": 37,
+   "name": "Pohang International Climbing Center (포항국제클라이밍센터)",
+   "class": "blocked",
+   "suggested": "reject not-a-gym",
+   "importer": {
+    "class": "new",
+    "id": "g-933c3d8761"
+   },
+   "blockers": [
+    {
+     "code": "not-a-gym",
+     "detail": "category other"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-013 \"Kim Dae-woo Climbing School (김대우암벽교실)\": related names \"포항국제클라이밍센터\" / \"김대우암벽교실\" 9207 m apart",
+     "ids": [
+      "kr-dg-013"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-020 \"Pohang Spider Climbing (포항 스파이더 클라이밍)\": related names \"포항국제클라이밍센터\" / \"포항 스파이더 클라이밍\" 5685 m apart",
+     "ids": [
+      "kr-dg-020"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-dg-028 \"Atti Climbing (아띠클라이밍)\": related names \"포항국제클라이밍센터\" / \"아띠클라이밍\" 5733 m apart",
+     "ids": [
+      "kr-dg-028"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-dg-013",
+    "kr-dg-020",
+    "kr-dg-028"
+   ]
+  },
+  {
+   "cid": "kr-dg-038",
+   "line": 38,
+   "name": "Andong Climbing Gym (안동클라이밍짐)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-396ea642c6"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "kr-dg-039",
+   "line": 39,
+   "name": "Mungyeong International Climbing Center (문경국제클라이밍센터)",
+   "class": "blocked",
+   "suggested": "reject not-a-gym",
+   "importer": {
+    "class": "new",
+    "id": "g-4d493317e0"
+   },
+   "blockers": [
+    {
+     "code": "not-a-gym",
+     "detail": "category other"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  }
+ ],
+ "reconcile_sha256": "03a72330544a63870334863bdf5683f9e08be0cf3d1b0118724fd9db774722c7"
+}
