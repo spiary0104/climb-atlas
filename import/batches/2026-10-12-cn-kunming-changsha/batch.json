@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-12-cn-kunming-changsha",
+  "description": "Regional research \"China: Kunming and Changsha coverage gap\": 7 new gym(s) accepted of 12 candidate(s)",
+  "created": "2026-10-12",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-10-12-cn-kunming-changsha",
+    "section_sha256": "7e46f5f6849c82db49d29a1fa071c46932c6662648131e9d923f36ef0560f116",
+    "sources_sha256": "4f5aa50fd6b275dbe58f9366bf7646805d1bd67dd7c6367ec132e283c0fbb200",
+    "candidates_sha256": "b9fa6de474d7760e826836b7720f7c628225586846ba2188fc0021026e17f6c7",
+    "reconcile_sha256": "275c227f2fbb4a89df91f7762d17b47b7c387a6cd17a0e27b8aeb94d4abe7a95",
+    "review_sha256": "996dd9fdb299984847877e2fac01579dc2d6dd6547fee638711ccdb0a37189a0",
+    "candidates": 12,
+    "staged": 7,
+    "decisions": {
+      "accept": 7,
+      "defer": 3,
+      "same-as": 2
+    }
+  },
+  "index_at_staging": {
+    "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
+    "count": 3294
+  }
+}

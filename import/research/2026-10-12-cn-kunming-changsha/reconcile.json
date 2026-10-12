@@ -1,0 +1,314 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-12-cn-kunming-changsha",
+ "inputs": {
+  "section_sha256": "7e46f5f6849c82db49d29a1fa071c46932c6662648131e9d923f36ef0560f116",
+  "sources_sha256": "4f5aa50fd6b275dbe58f9366bf7646805d1bd67dd7c6367ec132e283c0fbb200",
+  "candidates_sha256": "b9fa6de474d7760e826836b7720f7c628225586846ba2188fc0021026e17f6c7",
+  "index": {
+   "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
+   "count": 3294
+  },
+  "staged_batches_compared": [
+   "2026-10-06-kr-seoul"
+  ],
+  "other_sections_compared": []
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 12,
+  "ready": 5,
+  "review": 2,
+  "blocked": 5,
+  "existing": 0,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "cn-cs-001",
+   "line": 7,
+   "name": "CAMP4 Climbing (Changsha Xihu Park) [CAMP4岩肆长沙西湖公园店]",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-2e2bdca33f"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "cn-cs-002",
+   "line": 8,
+   "name": "TBW Climbing (Longji Base) [TBW攀岩龙脊基地店]",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-bad56b372d"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "cn-cs-003",
+   "line": 9,
+   "name": "Zaoan Climbing [早安攀岩馆]",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-45b68e4d07"
+   },
+   "blockers": [
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "no-bouldering-evidence",
+     "detail": "bouldering is \"yes\" but no primary source confirms it"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "cn-cs-004",
+   "line": 10,
+   "name": "Xiangpan Climbing (Yinpenling Wanda) [湘攀攀岩银盆岭万达店]",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-c1bc258468"
+   },
+   "blockers": [
+    {
+     "code": "no-bouldering-evidence",
+     "detail": "bouldering is \"yes\" but no primary source confirms it"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "cn-cs-005",
+   "line": 11,
+   "name": "Banana Climbing (Zhujiang Star Ring) [香蕉攀岩珠江星环店]",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-bf3186132c"
+   },
+   "blockers": [
+    {
+     "code": "no-bouldering-evidence",
+     "detail": "bouldering is \"yes\" but no primary source confirms it"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate cn-cs-006 \"Banana Climbing (Yuefang ID Mall) [香蕉攀岩悦方ID MALL店]\": related names \"Banana Climbing (Zhujiang Star Ring) [香蕉攀岩珠江星环店]\" / \"香蕉攀岩(悦方ID MALL店)\" 7198 m apart",
+     "ids": [
+      "cn-cs-006"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-711 \"Banana Climbing (Zhujiang Star Ring)\": related names \"Banana Climbing (Zhujiang Star Ring) [香蕉攀岩珠江星环店]\" / \"Banana Climbing (Zhujiang Star Ring)\" 3272 m apart",
+     "ids": [
+      "seed-711"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-712 \"Banana Climbing (Yuefang ID Mall)\": related names \"Banana Climbing (Zhujiang Star Ring) [香蕉攀岩珠江星环店]\" / \"Banana Climbing (Yuefang ID Mall)\" 7247 m apart",
+     "ids": [
+      "seed-712"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-713 \"Banana Climbing (CapitaLand One)\": related names \"Banana Climbing (Zhujiang Star Ring) [香蕉攀岩珠江星环店]\" / \"Banana Climbing (CapitaLand One)\" 7444 m apart",
+     "ids": [
+      "seed-713"
+     ]
+    }
+   ],
+   "review_ids": [
+    "cn-cs-006",
+    "seed-711",
+    "seed-712",
+    "seed-713"
+   ]
+  },
+  {
+   "cid": "cn-cs-006",
+   "line": 12,
+   "name": "Banana Climbing (Yuefang ID Mall) [香蕉攀岩悦方ID MALL店]",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-c66b08200d"
+   },
+   "blockers": [
+    {
+     "code": "no-bouldering-evidence",
+     "detail": "bouldering is \"yes\" but no primary source confirms it"
+    }
+   ],
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-712 renamed-or-related-name-nearby 55 m",
+     "ids": [
+      "seed-712"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-712 \"Banana Climbing (Yuefang ID Mall)\": renamed-or-related-name-nearby (\"Banana Climbing (Yuefang ID Mall) [香蕉攀岩悦方ID MALL店]\" / \"Banana Climbing (Yuefang ID Mall)\", 55 m)",
+     "ids": [
+      "seed-712"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate cn-cs-005 \"Banana Climbing (Zhujiang Star Ring) [香蕉攀岩珠江星环店]\": related names \"Banana Climbing (Yuefang ID Mall) [香蕉攀岩悦方ID MALL店]\" / \"香蕉攀岩(珠江星环店)\" 7198 m apart",
+     "ids": [
+      "cn-cs-005"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-711 \"Banana Climbing (Zhujiang Star Ring)\": related names \"Banana Climbing (Yuefang ID Mall) [香蕉攀岩悦方ID MALL店]\" / \"Banana Climbing (Zhujiang Star Ring)\" 4727 m apart",
+     "ids": [
+      "seed-711"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-713 \"Banana Climbing (CapitaLand One)\": related names \"Banana Climbing (Yuefang ID Mall) [香蕉攀岩悦方ID MALL店]\" / \"Banana Climbing (CapitaLand One)\" 4821 m apart",
+     "ids": [
+      "seed-713"
+     ]
+    }
+   ],
+   "review_ids": [
+    "cn-cs-005",
+    "seed-711",
+    "seed-712",
+    "seed-713"
+   ]
+  },
+  {
+   "cid": "cn-km-001",
+   "line": 1,
+   "name": "Nayan Climbing (Tuodong) [那岩拓东攀岩馆]",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-3c379a71cd"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "cn-km-002",
+   "line": 2,
+   "name": "Nayan Climbing (0871) [那岩0871攀岩俱乐部]",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-b9cf0baa54"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "cn-km-003",
+   "line": 3,
+   "name": "Xiaoxiong Climbing (Yunling Tianjiao) [昆明小熊攀岩俱乐部云岭天骄馆]",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-25e8f068df"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate cn-km-004 \"Xiaoxiong Climbing (Hailer World) [昆明小熊攀岩俱乐部海乐世界馆]\": related names \"Xiaoxiong Climbing (Yunling Tianjiao) [昆明小熊攀岩俱乐部云岭天骄馆]\" / \"小熊攀岩(海乐世界)\" 12769 m apart",
+     "ids": [
+      "cn-km-004"
+     ]
+    }
+   ],
+   "review_ids": [
+    "cn-km-004"
+   ]
+  },
+  {
+   "cid": "cn-km-004",
+   "line": 4,
+   "name": "Xiaoxiong Climbing (Hailer World) [昆明小熊攀岩俱乐部海乐世界馆]",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-f1a070e85b"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate cn-km-003 \"Xiaoxiong Climbing (Yunling Tianjiao) [昆明小熊攀岩俱乐部云岭天骄馆]\": related names \"Xiaoxiong Climbing (Hailer World) [昆明小熊攀岩俱乐部海乐世界馆]\" / \"昆明小熊攀岩俱乐部(云岭天骄馆)\" 12769 m apart",
+     "ids": [
+      "cn-km-003"
+     ]
+    }
+   ],
+   "review_ids": [
+    "cn-km-003"
+   ]
+  },
+  {
+   "cid": "cn-km-005",
+   "line": 5,
+   "name": "Panyang Climbing Gym (Chenggong) [攀羊岩馆]",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-adba51f99f"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "cn-km-006",
+   "line": 6,
+   "name": "Jinri Climbing Life Gym (Jianshe Lu) [今日攀岩生活馆(建设路店)]",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-1ebec596e6"
+   },
+   "blockers": [
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "no-bouldering-evidence",
+     "detail": "bouldering is \"yes\" but no primary source confirms it"
+    }
+   ],
+   "review_ids": []
+  }
+ ],
+ "reconcile_sha256": "498de19970a753be9e1e78a9170828f8a3721711c39f99b8be267964f872233a"
+}
