@@ -1,0 +1,2711 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-12-kr-busan-gyeongnam",
+ "inputs": {
+  "section_sha256": "7931ff5b727f758e2372d7918248b744e1ca25d39a6c6a4ca0b22ae70cac22de",
+  "sources_sha256": "6d3612e9bc12e5306a3fefbef6eaeb999325950170da89f6b038e21c6ba1b2c1",
+  "candidates_sha256": "0bca4015aa37d426d6c4dc4681299927e887914fc21a2cb194940851eb0b6836",
+  "index": {
+   "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
+   "count": 3294
+  },
+  "staged_batches_compared": [
+   "2026-10-06-kr-seoul"
+  ],
+  "other_sections_compared": [
+   {
+    "id": "2026-10-05-korea-gwangju-jeollanam",
+    "candidates_sha256": "f4858cc28d4f7eb5ff4a243da82dea80ec3fe7700505d83ec1d3bd869a1aacb7"
+   },
+   {
+    "id": "2026-10-05-korea-holds",
+    "candidates_sha256": "5d20a4add212fcf30638867628a92a2c7721187d7f8e1870e937e6f0a1fabe06"
+   },
+   {
+    "id": "2026-10-05-korea-owner-checks",
+    "candidates_sha256": "d6d0aa289502fce33cd00c4b695f65d41053095ab60e020beb4fad9f3cccf227"
+   },
+   {
+    "id": "2026-10-06-kr-seoul",
+    "candidates_sha256": "f78315198a507d6235619c81ff4be71a037392dfbb0c6658a6d40cee9b000487"
+   }
+  ]
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 34,
+  "ready": 0,
+  "review": 14,
+  "blocked": 17,
+  "existing": 3,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "kr-bg-001",
+   "line": 1,
+   "name": "Dolmenge Climbing Jeonpo (돌멩이클라이밍)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-c1863c80ff"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-002 \"Pogo Climb Sasang (포고클라임)\": related names \"돌멩이클라이밍\" / \"포고클라임\" 8030 m apart",
+     "ids": [
+      "kr-bg-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-003 \"Rock Climbing Gym Deokcheon (락클라이밍짐)\": related names \"돌멩이클라이밍\" / \"락클라이밍짐\" 8577 m apart",
+     "ids": [
+      "kr-bg-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-011 \"Waverock Climbing Seomyeon (웨이브락 클라이밍 서면점)\": related names \"돌멩이클라이밍\" / \"웨이브락 클라이밍 서면점\" 936 m apart",
+     "ids": [
+      "kr-bg-011"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-012 \"Waverock Climbing Namcheon (웨이브락 클라이밍 남천점)\": related names \"돌멩이클라이밍\" / \"웨이브락 클라이밍 남천점\" 3894 m apart",
+     "ids": [
+      "kr-bg-012"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-013 \"Waverock Climbing Pusan National University (웨이브락 클라이밍 부산대점)\": related names \"돌멩이클라이밍\" / \"웨이브락 클라이밍 부산대점\" 8974 m apart",
+     "ids": [
+      "kr-bg-013"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-014 \"Rock Odyssey Climbing Dongnae (락오디세이 클라이밍 동래점)\": related names \"돌멩이클라이밍\" / \"락오디세이 클라이밍 동래점\" 5543 m apart",
+     "ids": [
+      "kr-bg-014"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-015 \"Club Spider Climbing Sasang (클럽 스파이더 클라이밍 사상점)\": related names \"돌멩이클라이밍\" / \"클럽 스파이더 클라이밍 사상점\" 6554 m apart",
+     "ids": [
+      "kr-bg-015"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-022 \"Otter Climbing Hadan (오터클라이밍)\": related names \"돌멩이클라이밍\" / \"오터클라이밍\" 10132 m apart",
+     "ids": [
+      "kr-bg-022"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-023 \"Family Climbing Center Sajik (패밀리클라이밍센터)\": related names \"돌멩이클라이밍\" / \"패밀리클라이밍센터\" 5444 m apart",
+     "ids": [
+      "kr-bg-023"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-025 \"Jjang Climbing Dadae (짱클라이밍)\": related names \"돌멩이클라이밍\" / \"짱클라이밍\" 12384 m apart",
+     "ids": [
+      "kr-bg-025"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-bg-002",
+    "kr-bg-003",
+    "kr-bg-011",
+    "kr-bg-012",
+    "kr-bg-013",
+    "kr-bg-014",
+    "kr-bg-015",
+    "kr-bg-022",
+    "kr-bg-023",
+    "kr-bg-025"
+   ]
+  },
+  {
+   "cid": "kr-bg-002",
+   "line": 2,
+   "name": "Pogo Climb Sasang (포고클라임)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-c6c03455cd"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-001 \"Dolmenge Climbing Jeonpo (돌멩이클라이밍)\": related names \"포고클라임\" / \"돌멩이클라이밍\" 8030 m apart",
+     "ids": [
+      "kr-bg-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-003 \"Rock Climbing Gym Deokcheon (락클라이밍짐)\": related names \"포고클라임\" / \"락클라이밍짐\" 4170 m apart",
+     "ids": [
+      "kr-bg-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-009 \"Boulder Surfer Climbing Mulgeum (볼더서퍼클라이밍)\": related names \"포고클라임\" / \"볼더서퍼클라이밍\" 14178 m apart",
+     "ids": [
+      "kr-bg-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-011 \"Waverock Climbing Seomyeon (웨이브락 클라이밍 서면점)\": related names \"포고클라임\" / \"웨이브락 클라이밍 서면점\" 7320 m apart",
+     "ids": [
+      "kr-bg-011"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-012 \"Waverock Climbing Namcheon (웨이브락 클라이밍 남천점)\": related names \"포고클라임\" / \"웨이브락 클라이밍 남천점\" 11906 m apart",
+     "ids": [
+      "kr-bg-012"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-013 \"Waverock Climbing Pusan National University (웨이브락 클라이밍 부산대점)\": related names \"포고클라임\" / \"웨이브락 클라이밍 부산대점\" 10787 m apart",
+     "ids": [
+      "kr-bg-013"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-014 \"Rock Odyssey Climbing Dongnae (락오디세이 클라이밍 동래점)\": related names \"포고클라임\" / \"락오디세이 클라이밍 동래점\" 10117 m apart",
+     "ids": [
+      "kr-bg-014"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-015 \"Club Spider Climbing Sasang (클럽 스파이더 클라이밍 사상점)\": related names \"포고클라임\" / \"클럽 스파이더 클라이밍 사상점\" 3308 m apart",
+     "ids": [
+      "kr-bg-015"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-019 \"Do Climbing Gimhae (두클라이밍 김해점)\": related names \"포고클라임\" / \"두클라이밍 김해점\" 12406 m apart",
+     "ids": [
+      "kr-bg-019"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-022 \"Otter Climbing Hadan (오터클라이밍)\": related names \"포고클라임\" / \"오터클라이밍\" 8283 m apart",
+     "ids": [
+      "kr-bg-022"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-023 \"Family Climbing Center Sajik (패밀리클라이밍센터)\": related names \"포고클라임\" / \"패밀리클라이밍센터\" 7414 m apart",
+     "ids": [
+      "kr-bg-023"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-025 \"Jjang Climbing Dadae (짱클라이밍)\": related names \"포고클라임\" / \"짱클라이밍\" 13048 m apart",
+     "ids": [
+      "kr-bg-025"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-028 \"First Climbing Gym Samgye (퍼스트 클라이밍 짐)\": related names \"포고클라임\" / \"퍼스트 클라이밍 짐\" 13396 m apart",
+     "ids": [
+      "kr-bg-028"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-032 \"Hold Yummy Climbing Gimhae (홀드야미클라이밍)\": related names \"포고클라임\" / \"홀드야미클라이밍\" 11600 m apart",
+     "ids": [
+      "kr-bg-032"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-bg-001",
+    "kr-bg-003",
+    "kr-bg-009",
+    "kr-bg-011",
+    "kr-bg-012",
+    "kr-bg-013",
+    "kr-bg-014",
+    "kr-bg-015",
+    "kr-bg-019",
+    "kr-bg-022",
+    "kr-bg-023",
+    "kr-bg-025",
+    "kr-bg-028",
+    "kr-bg-032"
+   ]
+  },
+  {
+   "cid": "kr-bg-003",
+   "line": 3,
+   "name": "Rock Climbing Gym Deokcheon (락클라이밍짐)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-8bd18a4f56"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-001 \"Dolmenge Climbing Jeonpo (돌멩이클라이밍)\": related names \"락클라이밍짐\" / \"돌멩이클라이밍\" 8577 m apart",
+     "ids": [
+      "kr-bg-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-002 \"Pogo Climb Sasang (포고클라임)\": related names \"락클라이밍짐\" / \"포고클라임\" 4170 m apart",
+     "ids": [
+      "kr-bg-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-009 \"Boulder Surfer Climbing Mulgeum (볼더서퍼클라이밍)\": related names \"락클라이밍짐\" / \"볼더서퍼클라이밍\" 10875 m apart",
+     "ids": [
+      "kr-bg-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-011 \"Waverock Climbing Seomyeon (웨이브락 클라이밍 서면점)\": related names \"락클라이밍짐\" / \"웨이브락 클라이밍 서면점\" 7656 m apart",
+     "ids": [
+      "kr-bg-011"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-012 \"Waverock Climbing Namcheon (웨이브락 클라이밍 남천점)\": related names \"락클라이밍짐\" / \"웨이브락 클라이밍 남천점\" 11961 m apart",
+     "ids": [
+      "kr-bg-012"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-013 \"Waverock Climbing Pusan National University (웨이브락 클라이밍 부산대점)\": related names \"락클라이밍짐\" / \"웨이브락 클라이밍 부산대점\" 7384 m apart",
+     "ids": [
+      "kr-bg-013"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-014 \"Rock Odyssey Climbing Dongnae (락오디세이 클라이밍 동래점)\": related names \"락클라이밍짐\" / \"락오디세이 클라이밍 동래점\" 8078 m apart",
+     "ids": [
+      "kr-bg-014"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-015 \"Club Spider Climbing Sasang (클럽 스파이더 클라이밍 사상점)\": related names \"락클라이밍짐\" / \"클럽 스파이더 클라이밍 사상점\" 6922 m apart",
+     "ids": [
+      "kr-bg-015"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-019 \"Do Climbing Gimhae (두클라이밍 김해점)\": related names \"락클라이밍짐\" / \"두클라이밍 김해점\" 13309 m apart",
+     "ids": [
+      "kr-bg-019"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-020 \"Awesome Climbing Mulgeum (어썸클라이밍짐)\": related names \"락클라이밍짐\" / \"어썸클라이밍짐\" 11310 m apart",
+     "ids": [
+      "kr-bg-020"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-022 \"Otter Climbing Hadan (오터클라이밍)\": related names \"락클라이밍짐\" / \"오터클라이밍\" 12279 m apart",
+     "ids": [
+      "kr-bg-022"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-023 \"Family Climbing Center Sajik (패밀리클라이밍센터)\": related names \"락클라이밍짐\" / \"패밀리클라이밍센터\" 5127 m apart",
+     "ids": [
+      "kr-bg-023"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-028 \"First Climbing Gym Samgye (퍼스트 클라이밍 짐)\": related names \"락클라이밍짐\" / \"퍼스트 클라이밍 짐\" 13497 m apart",
+     "ids": [
+      "kr-bg-028"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-032 \"Hold Yummy Climbing Gimhae (홀드야미클라이밍)\": related names \"락클라이밍짐\" / \"홀드야미클라이밍\" 12646 m apart",
+     "ids": [
+      "kr-bg-032"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-bg-001",
+    "kr-bg-002",
+    "kr-bg-009",
+    "kr-bg-011",
+    "kr-bg-012",
+    "kr-bg-013",
+    "kr-bg-014",
+    "kr-bg-015",
+    "kr-bg-019",
+    "kr-bg-020",
+    "kr-bg-022",
+    "kr-bg-023",
+    "kr-bg-028",
+    "kr-bg-032"
+   ]
+  },
+  {
+   "cid": "kr-bg-004",
+   "line": 4,
+   "name": "Raon Climbing Gym Samsan (라온클라이밍짐)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-ab32983e64"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-005 \"Mong Climbing Center Hogye (몽클라이밍센터)\": related names \"라온클라이밍짐\" / \"몽클라이밍센터\" 11941 m apart",
+     "ids": [
+      "kr-bg-005"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-017 \"Walldam Climbing Samsan (월담클라이밍)\": related names \"라온클라이밍짐\" / \"월담클라이밍\" 2227 m apart",
+     "ids": [
+      "kr-bg-017"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-018 \"9 Climbing Gym (구클라이밍짐)\": related names \"라온클라이밍짐\" / \"구클라이밍짐\" 2451 m apart",
+     "ids": [
+      "kr-bg-018"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-027 \"Climbing World Choi Byeong-ho Center (등반세계 최병호클라이밍센터)\": related names \"라온클라이밍짐\" / \"등반세계 최병호클라이밍센터\" 2490 m apart",
+     "ids": [
+      "kr-bg-027"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-034 \"Ulsan Artificial Climbing Center (Seonam Lake Park) (울산인공암벽센터)\": related names \"라온클라이밍짐\" / \"울산인공암벽센터\" 2412 m apart",
+     "ids": [
+      "kr-bg-034"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-bg-005",
+    "kr-bg-017",
+    "kr-bg-018",
+    "kr-bg-027",
+    "kr-bg-034"
+   ]
+  },
+  {
+   "cid": "kr-bg-005",
+   "line": 5,
+   "name": "Mong Climbing Center Hogye (몽클라이밍센터)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-30500db2e6"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-004 \"Raon Climbing Gym Samsan (라온클라이밍짐)\": related names \"몽클라이밍센터\" / \"라온클라이밍짐\" 11941 m apart",
+     "ids": [
+      "kr-bg-004"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-017 \"Walldam Climbing Samsan (월담클라이밍)\": related names \"몽클라이밍센터\" / \"월담클라이밍\" 10807 m apart",
+     "ids": [
+      "kr-bg-017"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-018 \"9 Climbing Gym (구클라이밍짐)\": related names \"몽클라이밍센터\" / \"구클라이밍짐\" 9627 m apart",
+     "ids": [
+      "kr-bg-018"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-027 \"Climbing World Choi Byeong-ho Center (등반세계 최병호클라이밍센터)\": related names \"몽클라이밍센터\" / \"등반세계 최병호클라이밍센터\" 11098 m apart",
+     "ids": [
+      "kr-bg-027"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-034 \"Ulsan Artificial Climbing Center (Seonam Lake Park) (울산인공암벽센터)\": related names \"몽클라이밍센터\" / \"울산인공암벽센터\" 13784 m apart",
+     "ids": [
+      "kr-bg-034"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-bg-004",
+    "kr-bg-017",
+    "kr-bg-018",
+    "kr-bg-027",
+    "kr-bg-034"
+   ]
+  },
+  {
+   "cid": "kr-bg-006",
+   "line": 6,
+   "name": "B-star Climbing Changwon (창원 비스타클라이밍)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-0d2a8b3fb3"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-007 \"The Coa Climbing Jangyu (더코아클라이밍)\": related names \"창원 비스타클라이밍\" / \"더코아클라이밍\" 12101 m apart",
+     "ids": [
+      "kr-bg-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-008 \"Climb Zone Changwon (클라임존)\": related names \"창원 비스타클라이밍\" / \"클라임존\" 3266 m apart",
+     "ids": [
+      "kr-bg-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-010 \"Crux Climbing Masan (크럭스클라이밍)\": related names \"창원 비스타클라이밍\" / \"크럭스클라이밍\" 11812 m apart",
+     "ids": [
+      "kr-bg-010"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-029 \"B-star Climbing Masan (비스타클라이밍)\": related names \"B-star Climbing Changwon (창원 비스타클라이밍)\" / \"B-star Climbing Masan (비스타클라이밍)\" 8621 m apart",
+     "ids": [
+      "kr-bg-029"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-030 \"Gwang Climbing Jinhae (광클라이밍)\": related names \"창원 비스타클라이밍\" / \"광클라이밍\" 8273 m apart",
+     "ids": [
+      "kr-bg-030"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-031 \"Hot Climbing Gym Changwon University (핫클라이밍)\": related names \"창원 비스타클라이밍\" / \"핫클라이밍\" 2357 m apart",
+     "ids": [
+      "kr-bg-031"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-bg-007",
+    "kr-bg-008",
+    "kr-bg-010",
+    "kr-bg-029",
+    "kr-bg-030",
+    "kr-bg-031"
+   ]
+  },
+  {
+   "cid": "kr-bg-007",
+   "line": 7,
+   "name": "The Coa Climbing Jangyu (더코아클라이밍)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-858efb6f7e"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-006 \"B-star Climbing Changwon (창원 비스타클라이밍)\": related names \"더코아클라이밍\" / \"창원 비스타클라이밍\" 12101 m apart",
+     "ids": [
+      "kr-bg-006"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-008 \"Climb Zone Changwon (클라임존)\": related names \"더코아클라이밍\" / \"클라임존\" 8939 m apart",
+     "ids": [
+      "kr-bg-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-019 \"Do Climbing Gimhae (두클라이밍 김해점)\": related names \"더코아클라이밍\" / \"두클라이밍 김해점\" 6367 m apart",
+     "ids": [
+      "kr-bg-019"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-028 \"First Climbing Gym Samgye (퍼스트 클라이밍 짐)\": related names \"더코아클라이밍\" / \"퍼스트 클라이밍 짐\" 8469 m apart",
+     "ids": [
+      "kr-bg-028"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-030 \"Gwang Climbing Jinhae (광클라이밍)\": related names \"더코아클라이밍\" / \"광클라이밍\" 10203 m apart",
+     "ids": [
+      "kr-bg-030"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-031 \"Hot Climbing Gym Changwon University (핫클라이밍)\": related names \"더코아클라이밍\" / \"핫클라이밍\" 11829 m apart",
+     "ids": [
+      "kr-bg-031"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-032 \"Hold Yummy Climbing Gimhae (홀드야미클라이밍)\": related names \"더코아클라이밍\" / \"홀드야미클라이밍\" 6513 m apart",
+     "ids": [
+      "kr-bg-032"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-bg-006",
+    "kr-bg-008",
+    "kr-bg-019",
+    "kr-bg-028",
+    "kr-bg-030",
+    "kr-bg-031",
+    "kr-bg-032"
+   ]
+  },
+  {
+   "cid": "kr-bg-008",
+   "line": 8,
+   "name": "Climb Zone Changwon (클라임존)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-6445726e67"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-006 \"B-star Climbing Changwon (창원 비스타클라이밍)\": related names \"클라임존\" / \"창원 비스타클라이밍\" 3266 m apart",
+     "ids": [
+      "kr-bg-006"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-007 \"The Coa Climbing Jangyu (더코아클라이밍)\": related names \"클라임존\" / \"더코아클라이밍\" 8939 m apart",
+     "ids": [
+      "kr-bg-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-010 \"Crux Climbing Masan (크럭스클라이밍)\": related names \"클라임존\" / \"크럭스클라이밍\" 14195 m apart",
+     "ids": [
+      "kr-bg-010"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-019 \"Do Climbing Gimhae (두클라이밍 김해점)\": related names \"클라임존\" / \"두클라이밍 김해점\" 14343 m apart",
+     "ids": [
+      "kr-bg-019"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-029 \"B-star Climbing Masan (비스타클라이밍)\": related names \"클라임존\" / \"비스타클라이밍\" 11810 m apart",
+     "ids": [
+      "kr-bg-029"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-030 \"Gwang Climbing Jinhae (광클라이밍)\": related names \"클라임존\" / \"광클라이밍\" 6343 m apart",
+     "ids": [
+      "kr-bg-030"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-031 \"Hot Climbing Gym Changwon University (핫클라이밍)\": related names \"클라임존\" / \"핫클라이밍\" 4034 m apart",
+     "ids": [
+      "kr-bg-031"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-032 \"Hold Yummy Climbing Gimhae (홀드야미클라이밍)\": related names \"클라임존\" / \"홀드야미클라이밍\" 14798 m apart",
+     "ids": [
+      "kr-bg-032"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-bg-006",
+    "kr-bg-007",
+    "kr-bg-010",
+    "kr-bg-019",
+    "kr-bg-029",
+    "kr-bg-030",
+    "kr-bg-031",
+    "kr-bg-032"
+   ]
+  },
+  {
+   "cid": "kr-bg-009",
+   "line": 9,
+   "name": "Boulder Surfer Climbing Mulgeum (볼더서퍼클라이밍)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-72fe0605b9"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-002 \"Pogo Climb Sasang (포고클라임)\": related names \"볼더서퍼클라이밍\" / \"포고클라임\" 14178 m apart",
+     "ids": [
+      "kr-bg-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-003 \"Rock Climbing Gym Deokcheon (락클라이밍짐)\": related names \"볼더서퍼클라이밍\" / \"락클라이밍짐\" 10875 m apart",
+     "ids": [
+      "kr-bg-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-013 \"Waverock Climbing Pusan National University (웨이브락 클라이밍 부산대점)\": related names \"볼더서퍼클라이밍\" / \"웨이브락 클라이밍 부산대점\" 12898 m apart",
+     "ids": [
+      "kr-bg-013"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-019 \"Do Climbing Gimhae (두클라이밍 김해점)\": related names \"볼더서퍼클라이밍\" / \"두클라이밍 김해점\" 13597 m apart",
+     "ids": [
+      "kr-bg-019"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-020 \"Awesome Climbing Mulgeum (어썸클라이밍짐)\": related names \"볼더서퍼클라이밍\" / \"어썸클라이밍짐\" 2486 m apart",
+     "ids": [
+      "kr-bg-020"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-023 \"Family Climbing Center Sajik (패밀리클라이밍센터)\": related names \"볼더서퍼클라이밍\" / \"패밀리클라이밍센터\" 14071 m apart",
+     "ids": [
+      "kr-bg-023"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-028 \"First Climbing Gym Samgye (퍼스트 클라이밍 짐)\": related names \"볼더서퍼클라이밍\" / \"퍼스트 클라이밍 짐\" 11742 m apart",
+     "ids": [
+      "kr-bg-028"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-032 \"Hold Yummy Climbing Gimhae (홀드야미클라이밍)\": related names \"볼더서퍼클라이밍\" / \"홀드야미클라이밍\" 13569 m apart",
+     "ids": [
+      "kr-bg-032"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-bg-002",
+    "kr-bg-003",
+    "kr-bg-013",
+    "kr-bg-019",
+    "kr-bg-020",
+    "kr-bg-023",
+    "kr-bg-028",
+    "kr-bg-032"
+   ]
+  },
+  {
+   "cid": "kr-bg-010",
+   "line": 10,
+   "name": "Crux Climbing Masan (크럭스클라이밍)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-e174c061c2"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-006 \"B-star Climbing Changwon (창원 비스타클라이밍)\": related names \"크럭스클라이밍\" / \"창원 비스타클라이밍\" 11812 m apart",
+     "ids": [
+      "kr-bg-006"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-008 \"Climb Zone Changwon (클라임존)\": related names \"크럭스클라이밍\" / \"클라임존\" 14195 m apart",
+     "ids": [
+      "kr-bg-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-029 \"B-star Climbing Masan (비스타클라이밍)\": related names \"크럭스클라이밍\" / \"비스타클라이밍\" 6655 m apart",
+     "ids": [
+      "kr-bg-029"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-030 \"Gwang Climbing Jinhae (광클라이밍)\": related names \"크럭스클라이밍\" / \"광클라이밍\" 14145 m apart",
+     "ids": [
+      "kr-bg-030"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-031 \"Hot Climbing Gym Changwon University (핫클라이밍)\": related names \"크럭스클라이밍\" / \"핫클라이밍\" 13658 m apart",
+     "ids": [
+      "kr-bg-031"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-bg-006",
+    "kr-bg-008",
+    "kr-bg-029",
+    "kr-bg-030",
+    "kr-bg-031"
+   ]
+  },
+  {
+   "cid": "kr-bg-011",
+   "line": 11,
+   "name": "Waverock Climbing Seomyeon (웨이브락 클라이밍 서면점)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-4dfdbed86e"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1197 renamed-or-related-name-nearby 95 m",
+     "ids": [
+      "seed-1197"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1197 \"Waverock Seomyeon\": renamed-or-related-name-nearby (\"Waverock Climbing Seomyeon (웨이브락 클라이밍 서면점)\" / \"Waverock Seomyeon\", 95 m)",
+     "ids": [
+      "seed-1197"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-001 \"Dolmenge Climbing Jeonpo (돌멩이클라이밍)\": related names \"웨이브락 클라이밍 서면점\" / \"돌멩이클라이밍\" 936 m apart",
+     "ids": [
+      "kr-bg-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-002 \"Pogo Climb Sasang (포고클라임)\": related names \"웨이브락 클라이밍 서면점\" / \"포고클라임\" 7320 m apart",
+     "ids": [
+      "kr-bg-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-003 \"Rock Climbing Gym Deokcheon (락클라이밍짐)\": related names \"웨이브락 클라이밍 서면점\" / \"락클라이밍짐\" 7656 m apart",
+     "ids": [
+      "kr-bg-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-012 \"Waverock Climbing Namcheon (웨이브락 클라이밍 남천점)\": related names \"웨이브락 클라이밍 서면점\" / \"웨이브락 클라이밍 남천점\" 4602 m apart",
+     "ids": [
+      "kr-bg-012"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-013 \"Waverock Climbing Pusan National University (웨이브락 클라이밍 부산대점)\": related names \"웨이브락 클라이밍 서면점\" / \"웨이브락 클라이밍 부산대점\" 8280 m apart",
+     "ids": [
+      "kr-bg-013"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-014 \"Rock Odyssey Climbing Dongnae (락오디세이 클라이밍 동래점)\": related names \"웨이브락 클라이밍 서면점\" / \"락오디세이 클라이밍 동래점\" 5082 m apart",
+     "ids": [
+      "kr-bg-014"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-015 \"Club Spider Climbing Sasang (클럽 스파이더 클라이밍 사상점)\": related names \"웨이브락 클라이밍 서면점\" / \"클럽 스파이더 클라이밍 사상점\" 6170 m apart",
+     "ids": [
+      "kr-bg-015"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-022 \"Otter Climbing Hadan (오터클라이밍)\": related names \"웨이브락 클라이밍 서면점\" / \"오터클라이밍\" 10194 m apart",
+     "ids": [
+      "kr-bg-022"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-023 \"Family Climbing Center Sajik (패밀리클라이밍센터)\": related names \"웨이브락 클라이밍 서면점\" / \"패밀리클라이밍센터\" 4613 m apart",
+     "ids": [
+      "kr-bg-023"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-025 \"Jjang Climbing Dadae (짱클라이밍)\": related names \"웨이브락 클라이밍 서면점\" / \"짱클라이밍\" 12802 m apart",
+     "ids": [
+      "kr-bg-025"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-bg-001",
+    "kr-bg-002",
+    "kr-bg-003",
+    "kr-bg-012",
+    "kr-bg-013",
+    "kr-bg-014",
+    "kr-bg-015",
+    "kr-bg-022",
+    "kr-bg-023",
+    "kr-bg-025",
+    "seed-1197"
+   ]
+  },
+  {
+   "cid": "kr-bg-012",
+   "line": 12,
+   "name": "Waverock Climbing Namcheon (웨이브락 클라이밍 남천점)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-362bbdd376"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1195 renamed-or-related-name-nearby 36 m",
+     "ids": [
+      "seed-1195"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1195 \"Waverock Namcheon\": renamed-or-related-name-nearby (\"Waverock Climbing Namcheon (웨이브락 클라이밍 남천점)\" / \"Waverock Namcheon\", 36 m)",
+     "ids": [
+      "seed-1195"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-001 \"Dolmenge Climbing Jeonpo (돌멩이클라이밍)\": related names \"웨이브락 클라이밍 남천점\" / \"돌멩이클라이밍\" 3894 m apart",
+     "ids": [
+      "kr-bg-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-002 \"Pogo Climb Sasang (포고클라임)\": related names \"웨이브락 클라이밍 남천점\" / \"포고클라임\" 11906 m apart",
+     "ids": [
+      "kr-bg-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-003 \"Rock Climbing Gym Deokcheon (락클라이밍짐)\": related names \"웨이브락 클라이밍 남천점\" / \"락클라이밍짐\" 11961 m apart",
+     "ids": [
+      "kr-bg-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-011 \"Waverock Climbing Seomyeon (웨이브락 클라이밍 서면점)\": related names \"웨이브락 클라이밍 남천점\" / \"웨이브락 클라이밍 서면점\" 4602 m apart",
+     "ids": [
+      "kr-bg-011"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-013 \"Waverock Climbing Pusan National University (웨이브락 클라이밍 부산대점)\": related names \"웨이브락 클라이밍 남천점\" / \"웨이브락 클라이밍 부산대점\" 10073 m apart",
+     "ids": [
+      "kr-bg-013"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-014 \"Rock Odyssey Climbing Dongnae (락오디세이 클라이밍 동래점)\": related names \"웨이브락 클라이밍 남천점\" / \"락오디세이 클라이밍 동래점\" 6116 m apart",
+     "ids": [
+      "kr-bg-014"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-015 \"Club Spider Climbing Sasang (클럽 스파이더 클라이밍 사상점)\": related names \"웨이브락 클라이밍 남천점\" / \"클럽 스파이더 클라이밍 사상점\" 10343 m apart",
+     "ids": [
+      "kr-bg-015"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-022 \"Otter Climbing Hadan (오터클라이밍)\": related names \"웨이브락 클라이밍 남천점\" / \"오터클라이밍\" 13139 m apart",
+     "ids": [
+      "kr-bg-022"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-023 \"Family Climbing Center Sajik (패밀리클라이밍센터)\": related names \"웨이브락 클라이밍 남천점\" / \"패밀리클라이밍센터\" 7695 m apart",
+     "ids": [
+      "kr-bg-023"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-025 \"Jjang Climbing Dadae (짱클라이밍)\": related names \"웨이브락 클라이밍 남천점\" / \"짱클라이밍\" 14228 m apart",
+     "ids": [
+      "kr-bg-025"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-bg-001",
+    "kr-bg-002",
+    "kr-bg-003",
+    "kr-bg-011",
+    "kr-bg-013",
+    "kr-bg-014",
+    "kr-bg-015",
+    "kr-bg-022",
+    "kr-bg-023",
+    "kr-bg-025",
+    "seed-1195"
+   ]
+  },
+  {
+   "cid": "kr-bg-013",
+   "line": 13,
+   "name": "Waverock Climbing Pusan National University (웨이브락 클라이밍 부산대점)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-51912b9f13"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-001 \"Dolmenge Climbing Jeonpo (돌멩이클라이밍)\": related names \"웨이브락 클라이밍 부산대점\" / \"돌멩이클라이밍\" 8974 m apart",
+     "ids": [
+      "kr-bg-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-002 \"Pogo Climb Sasang (포고클라임)\": related names \"웨이브락 클라이밍 부산대점\" / \"포고클라임\" 10787 m apart",
+     "ids": [
+      "kr-bg-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-003 \"Rock Climbing Gym Deokcheon (락클라이밍짐)\": related names \"웨이브락 클라이밍 부산대점\" / \"락클라이밍짐\" 7384 m apart",
+     "ids": [
+      "kr-bg-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-009 \"Boulder Surfer Climbing Mulgeum (볼더서퍼클라이밍)\": related names \"웨이브락 클라이밍 부산대점\" / \"볼더서퍼클라이밍\" 12898 m apart",
+     "ids": [
+      "kr-bg-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-011 \"Waverock Climbing Seomyeon (웨이브락 클라이밍 서면점)\": related names \"웨이브락 클라이밍 부산대점\" / \"웨이브락 클라이밍 서면점\" 8280 m apart",
+     "ids": [
+      "kr-bg-011"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-012 \"Waverock Climbing Namcheon (웨이브락 클라이밍 남천점)\": related names \"웨이브락 클라이밍 부산대점\" / \"웨이브락 클라이밍 남천점\" 10073 m apart",
+     "ids": [
+      "kr-bg-012"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-014 \"Rock Odyssey Climbing Dongnae (락오디세이 클라이밍 동래점)\": related names \"웨이브락 클라이밍 부산대점\" / \"락오디세이 클라이밍 동래점\" 3957 m apart",
+     "ids": [
+      "kr-bg-014"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-015 \"Club Spider Climbing Sasang (클럽 스파이더 클라이밍 사상점)\": related names \"웨이브락 클라이밍 부산대점\" / \"클럽 스파이더 클라이밍 사상점\" 12171 m apart",
+     "ids": [
+      "kr-bg-015"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-016 \"Reverse Rock Climbing Jeonggwan (리버스락 클라이밍)\": related names \"웨이브락 클라이밍 부산대점\" / \"리버스락 클라이밍\" 13111 m apart",
+     "ids": [
+      "kr-bg-016"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-020 \"Awesome Climbing Mulgeum (어썸클라이밍짐)\": related names \"웨이브락 클라이밍 부산대점\" / \"어썸클라이밍짐\" 11802 m apart",
+     "ids": [
+      "kr-bg-020"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-023 \"Family Climbing Center Sajik (패밀리클라이밍센터)\": related names \"웨이브락 클라이밍 부산대점\" / \"패밀리클라이밍센터\" 3981 m apart",
+     "ids": [
+      "kr-bg-023"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-1196 \"Waverock Pusan National University\": related names \"Waverock Climbing Pusan National University (웨이브락 클라이밍 부산대점)\" / \"Waverock Pusan National University\" 488 m apart",
+     "ids": [
+      "seed-1196"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-bg-001",
+    "kr-bg-002",
+    "kr-bg-003",
+    "kr-bg-009",
+    "kr-bg-011",
+    "kr-bg-012",
+    "kr-bg-014",
+    "kr-bg-015",
+    "kr-bg-016",
+    "kr-bg-020",
+    "kr-bg-023",
+    "seed-1196"
+   ]
+  },
+  {
+   "cid": "kr-bg-014",
+   "line": 14,
+   "name": "Rock Odyssey Climbing Dongnae (락오디세이 클라이밍 동래점)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-736064d276"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1185 similar-name-nearby 105 m",
+     "ids": [
+      "seed-1185"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1185 \"Rock Odyssey Dongnae\": similar-name-nearby (\"Rock Odyssey Climbing Dongnae (락오디세이 클라이밍 동래점)\" / \"Rock Odyssey Dongnae\", 105 m)",
+     "ids": [
+      "seed-1185"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-001 \"Dolmenge Climbing Jeonpo (돌멩이클라이밍)\": related names \"락오디세이 클라이밍 동래점\" / \"돌멩이클라이밍\" 5543 m apart",
+     "ids": [
+      "kr-bg-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-002 \"Pogo Climb Sasang (포고클라임)\": related names \"락오디세이 클라이밍 동래점\" / \"포고클라임\" 10117 m apart",
+     "ids": [
+      "kr-bg-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-003 \"Rock Climbing Gym Deokcheon (락클라이밍짐)\": related names \"락오디세이 클라이밍 동래점\" / \"락클라이밍짐\" 8078 m apart",
+     "ids": [
+      "kr-bg-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-011 \"Waverock Climbing Seomyeon (웨이브락 클라이밍 서면점)\": related names \"락오디세이 클라이밍 동래점\" / \"웨이브락 클라이밍 서면점\" 5082 m apart",
+     "ids": [
+      "kr-bg-011"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-012 \"Waverock Climbing Namcheon (웨이브락 클라이밍 남천점)\": related names \"락오디세이 클라이밍 동래점\" / \"웨이브락 클라이밍 남천점\" 6116 m apart",
+     "ids": [
+      "kr-bg-012"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-013 \"Waverock Climbing Pusan National University (웨이브락 클라이밍 부산대점)\": related names \"락오디세이 클라이밍 동래점\" / \"웨이브락 클라이밍 부산대점\" 3957 m apart",
+     "ids": [
+      "kr-bg-013"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-015 \"Club Spider Climbing Sasang (클럽 스파이더 클라이밍 사상점)\": related names \"락오디세이 클라이밍 동래점\" / \"클럽 스파이더 클라이밍 사상점\" 10391 m apart",
+     "ids": [
+      "kr-bg-015"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-023 \"Family Climbing Center Sajik (패밀리클라이밍센터)\": related names \"락오디세이 클라이밍 동래점\" / \"패밀리클라이밍센터\" 2957 m apart",
+     "ids": [
+      "kr-bg-023"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-bg-001",
+    "kr-bg-002",
+    "kr-bg-003",
+    "kr-bg-011",
+    "kr-bg-012",
+    "kr-bg-013",
+    "kr-bg-015",
+    "kr-bg-023",
+    "seed-1185"
+   ]
+  },
+  {
+   "cid": "kr-bg-015",
+   "line": 15,
+   "name": "Club Spider Climbing Sasang (클럽 스파이더 클라이밍 사상점)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-8a5fba153a"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1170 renamed-or-related-name-nearby 81 m",
+     "ids": [
+      "seed-1170"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1170 \"Club Spider Sasang\": renamed-or-related-name-nearby (\"Club Spider Climbing Sasang (클럽 스파이더 클라이밍 사상점)\" / \"Club Spider Sasang\", 81 m)",
+     "ids": [
+      "seed-1170"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-001 \"Dolmenge Climbing Jeonpo (돌멩이클라이밍)\": related names \"클럽 스파이더 클라이밍 사상점\" / \"돌멩이클라이밍\" 6554 m apart",
+     "ids": [
+      "kr-bg-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-002 \"Pogo Climb Sasang (포고클라임)\": related names \"클럽 스파이더 클라이밍 사상점\" / \"포고클라임\" 3308 m apart",
+     "ids": [
+      "kr-bg-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-003 \"Rock Climbing Gym Deokcheon (락클라이밍짐)\": related names \"클럽 스파이더 클라이밍 사상점\" / \"락클라이밍짐\" 6922 m apart",
+     "ids": [
+      "kr-bg-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-011 \"Waverock Climbing Seomyeon (웨이브락 클라이밍 서면점)\": related names \"클럽 스파이더 클라이밍 사상점\" / \"웨이브락 클라이밍 서면점\" 6170 m apart",
+     "ids": [
+      "kr-bg-011"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-012 \"Waverock Climbing Namcheon (웨이브락 클라이밍 남천점)\": related names \"클럽 스파이더 클라이밍 사상점\" / \"웨이브락 클라이밍 남천점\" 10343 m apart",
+     "ids": [
+      "kr-bg-012"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-013 \"Waverock Climbing Pusan National University (웨이브락 클라이밍 부산대점)\": related names \"클럽 스파이더 클라이밍 사상점\" / \"웨이브락 클라이밍 부산대점\" 12171 m apart",
+     "ids": [
+      "kr-bg-013"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-014 \"Rock Odyssey Climbing Dongnae (락오디세이 클라이밍 동래점)\": related names \"클럽 스파이더 클라이밍 사상점\" / \"락오디세이 클라이밍 동래점\" 10391 m apart",
+     "ids": [
+      "kr-bg-014"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-019 \"Do Climbing Gimhae (두클라이밍 김해점)\": related names \"클럽 스파이더 클라이밍 사상점\" / \"두클라이밍 김해점\" 14808 m apart",
+     "ids": [
+      "kr-bg-019"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-022 \"Otter Climbing Hadan (오터클라이밍)\": related names \"클럽 스파이더 클라이밍 사상점\" / \"오터클라이밍\" 5446 m apart",
+     "ids": [
+      "kr-bg-022"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-023 \"Family Climbing Center Sajik (패밀리클라이밍센터)\": related names \"클럽 스파이더 클라이밍 사상점\" / \"패밀리클라이밍센터\" 8295 m apart",
+     "ids": [
+      "kr-bg-023"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-025 \"Jjang Climbing Dadae (짱클라이밍)\": related names \"클럽 스파이더 클라이밍 사상점\" / \"짱클라이밍\" 9886 m apart",
+     "ids": [
+      "kr-bg-025"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-032 \"Hold Yummy Climbing Gimhae (홀드야미클라이밍)\": related names \"클럽 스파이더 클라이밍 사상점\" / \"홀드야미클라이밍\" 13960 m apart",
+     "ids": [
+      "kr-bg-032"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-bg-001",
+    "kr-bg-002",
+    "kr-bg-003",
+    "kr-bg-011",
+    "kr-bg-012",
+    "kr-bg-013",
+    "kr-bg-014",
+    "kr-bg-019",
+    "kr-bg-022",
+    "kr-bg-023",
+    "kr-bg-025",
+    "kr-bg-032",
+    "seed-1170"
+   ]
+  },
+  {
+   "cid": "kr-bg-016",
+   "line": 16,
+   "name": "Reverse Rock Climbing Jeonggwan (리버스락 클라이밍)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-5da9e168be"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1183 renamed-or-related-name-nearby 20 m",
+     "ids": [
+      "seed-1183"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1183 \"Reverse Rock\": renamed-or-related-name-nearby (\"Reverse Rock Climbing Jeonggwan (리버스락 클라이밍)\" / \"Reverse Rock\", 20 m)",
+     "ids": [
+      "seed-1183"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-013 \"Waverock Climbing Pusan National University (웨이브락 클라이밍 부산대점)\": related names \"리버스락 클라이밍\" / \"웨이브락 클라이밍 부산대점\" 13111 m apart",
+     "ids": [
+      "kr-bg-013"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-bg-013",
+    "seed-1183"
+   ]
+  },
+  {
+   "cid": "kr-bg-017",
+   "line": 17,
+   "name": "Walldam Climbing Samsan (월담클라이밍)",
+   "class": "existing",
+   "suggested": "same-as g-63200c2995",
+   "importer": {
+    "class": "existing",
+    "id": "g-63200c2995",
+    "match": {
+     "id": "g-63200c2995",
+     "name": "Walldam Climbing Samsan",
+     "reason": "same-name",
+     "dist_m": 27
+    }
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing g-63200c2995 but content differs (name, suburb, lat, lng, address, types); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "g-63200c2995 \"Walldam Climbing Samsan\": same-name (\"Walldam Climbing Samsan (월담클라이밍)\" / \"Walldam Climbing Samsan\", 27 m)",
+     "ids": [
+      "g-63200c2995"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-004 \"Raon Climbing Gym Samsan (라온클라이밍짐)\": related names \"월담클라이밍\" / \"라온클라이밍짐\" 2227 m apart",
+     "ids": [
+      "kr-bg-004"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-005 \"Mong Climbing Center Hogye (몽클라이밍센터)\": related names \"월담클라이밍\" / \"몽클라이밍센터\" 10807 m apart",
+     "ids": [
+      "kr-bg-005"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-018 \"9 Climbing Gym (구클라이밍짐)\": related names \"월담클라이밍\" / \"구클라이밍짐\" 2752 m apart",
+     "ids": [
+      "kr-bg-018"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-027 \"Climbing World Choi Byeong-ho Center (등반세계 최병호클라이밍센터)\": related names \"월담클라이밍\" / \"등반세계 최병호클라이밍센터\" 480 m apart",
+     "ids": [
+      "kr-bg-027"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-034 \"Ulsan Artificial Climbing Center (Seonam Lake Park) (울산인공암벽센터)\": related names \"월담클라이밍\" / \"울산인공암벽센터\" 3032 m apart",
+     "ids": [
+      "kr-bg-034"
+     ]
+    }
+   ],
+   "review_ids": [
+    "g-63200c2995",
+    "kr-bg-004",
+    "kr-bg-005",
+    "kr-bg-018",
+    "kr-bg-027",
+    "kr-bg-034"
+   ]
+  },
+  {
+   "cid": "kr-bg-018",
+   "line": 18,
+   "name": "9 Climbing Gym (구클라이밍짐)",
+   "class": "existing",
+   "suggested": "same-as seed-1161",
+   "importer": {
+    "class": "existing",
+    "id": "seed-1161",
+    "match": {
+     "id": "seed-1161",
+     "name": "9 Climbing Gym",
+     "reason": "same-name",
+     "dist_m": 864
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-1161 but content differs (name, lat, lng, address); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1161 \"9 Climbing Gym\": same-name (\"9 Climbing Gym (구클라이밍짐)\" / \"9 Climbing Gym\", 864 m)",
+     "ids": [
+      "seed-1161"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-004 \"Raon Climbing Gym Samsan (라온클라이밍짐)\": related names \"구클라이밍짐\" / \"라온클라이밍짐\" 2451 m apart",
+     "ids": [
+      "kr-bg-004"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-005 \"Mong Climbing Center Hogye (몽클라이밍센터)\": related names \"구클라이밍짐\" / \"몽클라이밍센터\" 9627 m apart",
+     "ids": [
+      "kr-bg-005"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-017 \"Walldam Climbing Samsan (월담클라이밍)\": related names \"구클라이밍짐\" / \"월담클라이밍\" 2752 m apart",
+     "ids": [
+      "kr-bg-017"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-027 \"Climbing World Choi Byeong-ho Center (등반세계 최병호클라이밍센터)\": related names \"구클라이밍짐\" / \"등반세계 최병호클라이밍센터\" 3231 m apart",
+     "ids": [
+      "kr-bg-027"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-034 \"Ulsan Artificial Climbing Center (Seonam Lake Park) (울산인공암벽센터)\": related names \"구클라이밍짐\" / \"울산인공암벽센터\" 4733 m apart",
+     "ids": [
+      "kr-bg-034"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-bg-004",
+    "kr-bg-005",
+    "kr-bg-017",
+    "kr-bg-027",
+    "kr-bg-034",
+    "seed-1161"
+   ]
+  },
+  {
+   "cid": "kr-bg-019",
+   "line": 19,
+   "name": "Do Climbing Gimhae (두클라이밍 김해점)",
+   "class": "existing",
+   "suggested": "same-as seed-1171",
+   "importer": {
+    "class": "existing",
+    "id": "seed-1171",
+    "match": {
+     "id": "seed-1171",
+     "name": "Do Climbing Gimhae",
+     "reason": "same-name",
+     "dist_m": 33
+    }
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-1171 but content differs (name, lat, lng, address, types); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1171 \"Do Climbing Gimhae\": same-name (\"Do Climbing Gimhae (두클라이밍 김해점)\" / \"Do Climbing Gimhae\", 33 m)",
+     "ids": [
+      "seed-1171"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-002 \"Pogo Climb Sasang (포고클라임)\": related names \"두클라이밍 김해점\" / \"포고클라임\" 12406 m apart",
+     "ids": [
+      "kr-bg-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-003 \"Rock Climbing Gym Deokcheon (락클라이밍짐)\": related names \"두클라이밍 김해점\" / \"락클라이밍짐\" 13309 m apart",
+     "ids": [
+      "kr-bg-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-007 \"The Coa Climbing Jangyu (더코아클라이밍)\": related names \"두클라이밍 김해점\" / \"더코아클라이밍\" 6367 m apart",
+     "ids": [
+      "kr-bg-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-008 \"Climb Zone Changwon (클라임존)\": related names \"두클라이밍 김해점\" / \"클라임존\" 14343 m apart",
+     "ids": [
+      "kr-bg-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-009 \"Boulder Surfer Climbing Mulgeum (볼더서퍼클라이밍)\": related names \"두클라이밍 김해점\" / \"볼더서퍼클라이밍\" 13597 m apart",
+     "ids": [
+      "kr-bg-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-015 \"Club Spider Climbing Sasang (클럽 스파이더 클라이밍 사상점)\": related names \"두클라이밍 김해점\" / \"클럽 스파이더 클라이밍 사상점\" 14808 m apart",
+     "ids": [
+      "kr-bg-015"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-028 \"First Climbing Gym Samgye (퍼스트 클라이밍 짐)\": related names \"두클라이밍 김해점\" / \"퍼스트 클라이밍 짐\" 2618 m apart",
+     "ids": [
+      "kr-bg-028"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-032 \"Hold Yummy Climbing Gimhae (홀드야미클라이밍)\": related names \"두클라이밍 김해점\" / \"홀드야미클라이밍\" 864 m apart",
+     "ids": [
+      "kr-bg-032"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-bg-002",
+    "kr-bg-003",
+    "kr-bg-007",
+    "kr-bg-008",
+    "kr-bg-009",
+    "kr-bg-015",
+    "kr-bg-028",
+    "kr-bg-032",
+    "seed-1171"
+   ]
+  },
+  {
+   "cid": "kr-bg-020",
+   "line": 20,
+   "name": "Awesome Climbing Mulgeum (어썸클라이밍짐)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-ff3725c3a7"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1162 renamed-or-related-name-nearby 9 m",
+     "ids": [
+      "seed-1162"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1162 \"Awesome Climbing\": renamed-or-related-name-nearby (\"Awesome Climbing Mulgeum (어썸클라이밍짐)\" / \"Awesome Climbing\", 9 m)",
+     "ids": [
+      "seed-1162"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-003 \"Rock Climbing Gym Deokcheon (락클라이밍짐)\": related names \"어썸클라이밍짐\" / \"락클라이밍짐\" 11310 m apart",
+     "ids": [
+      "kr-bg-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-009 \"Boulder Surfer Climbing Mulgeum (볼더서퍼클라이밍)\": related names \"어썸클라이밍짐\" / \"볼더서퍼클라이밍\" 2486 m apart",
+     "ids": [
+      "kr-bg-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-013 \"Waverock Climbing Pusan National University (웨이브락 클라이밍 부산대점)\": related names \"어썸클라이밍짐\" / \"웨이브락 클라이밍 부산대점\" 11802 m apart",
+     "ids": [
+      "kr-bg-013"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-023 \"Family Climbing Center Sajik (패밀리클라이밍센터)\": related names \"어썸클라이밍짐\" / \"패밀리클라이밍센터\" 13641 m apart",
+     "ids": [
+      "kr-bg-023"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-028 \"First Climbing Gym Samgye (퍼스트 클라이밍 짐)\": related names \"어썸클라이밍짐\" / \"퍼스트 클라이밍 짐\" 14174 m apart",
+     "ids": [
+      "kr-bg-028"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-bg-003",
+    "kr-bg-009",
+    "kr-bg-013",
+    "kr-bg-023",
+    "kr-bg-028",
+    "seed-1162"
+   ]
+  },
+  {
+   "cid": "kr-bg-021",
+   "line": 21,
+   "name": "Big Climbing Gym (빅클라이밍)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-00245292fa"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1165 same-name-but-pin-differs 1266 m",
+     "ids": [
+      "seed-1165"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1165 \"Big Climbing Gym\": same-name-but-pin-differs (\"Big Climbing Gym (빅클라이밍)\" / \"Big Climbing Gym\", 1266 m)",
+     "ids": [
+      "seed-1165"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-033 \"Yeti Climbing Gym Jinju (예티클라이밍짐)\": related names \"빅클라이밍\" / \"예티클라이밍짐\" 6570 m apart",
+     "ids": [
+      "kr-bg-033"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-bg-033",
+    "seed-1165"
+   ]
+  },
+  {
+   "cid": "kr-bg-022",
+   "line": 22,
+   "name": "Otter Climbing Hadan (오터클라이밍)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-9a04160c9a"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-001 \"Dolmenge Climbing Jeonpo (돌멩이클라이밍)\": related names \"오터클라이밍\" / \"돌멩이클라이밍\" 10132 m apart",
+     "ids": [
+      "kr-bg-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-002 \"Pogo Climb Sasang (포고클라임)\": related names \"오터클라이밍\" / \"포고클라임\" 8283 m apart",
+     "ids": [
+      "kr-bg-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-003 \"Rock Climbing Gym Deokcheon (락클라이밍짐)\": related names \"오터클라이밍\" / \"락클라이밍짐\" 12279 m apart",
+     "ids": [
+      "kr-bg-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-011 \"Waverock Climbing Seomyeon (웨이브락 클라이밍 서면점)\": related names \"오터클라이밍\" / \"웨이브락 클라이밍 서면점\" 10194 m apart",
+     "ids": [
+      "kr-bg-011"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-012 \"Waverock Climbing Namcheon (웨이브락 클라이밍 남천점)\": related names \"오터클라이밍\" / \"웨이브락 클라이밍 남천점\" 13139 m apart",
+     "ids": [
+      "kr-bg-012"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-015 \"Club Spider Climbing Sasang (클럽 스파이더 클라이밍 사상점)\": related names \"오터클라이밍\" / \"클럽 스파이더 클라이밍 사상점\" 5446 m apart",
+     "ids": [
+      "kr-bg-015"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-023 \"Family Climbing Center Sajik (패밀리클라이밍센터)\": related names \"오터클라이밍\" / \"패밀리클라이밍센터\" 13449 m apart",
+     "ids": [
+      "kr-bg-023"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-025 \"Jjang Climbing Dadae (짱클라이밍)\": related names \"오터클라이밍\" / \"짱클라이밍\" 5074 m apart",
+     "ids": [
+      "kr-bg-025"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-bg-001",
+    "kr-bg-002",
+    "kr-bg-003",
+    "kr-bg-011",
+    "kr-bg-012",
+    "kr-bg-015",
+    "kr-bg-023",
+    "kr-bg-025"
+   ]
+  },
+  {
+   "cid": "kr-bg-023",
+   "line": 23,
+   "name": "Family Climbing Center Sajik (패밀리클라이밍센터)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-631c86bd5e"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-001 \"Dolmenge Climbing Jeonpo (돌멩이클라이밍)\": related names \"패밀리클라이밍센터\" / \"돌멩이클라이밍\" 5444 m apart",
+     "ids": [
+      "kr-bg-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-002 \"Pogo Climb Sasang (포고클라임)\": related names \"패밀리클라이밍센터\" / \"포고클라임\" 7414 m apart",
+     "ids": [
+      "kr-bg-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-003 \"Rock Climbing Gym Deokcheon (락클라이밍짐)\": related names \"패밀리클라이밍센터\" / \"락클라이밍짐\" 5127 m apart",
+     "ids": [
+      "kr-bg-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-009 \"Boulder Surfer Climbing Mulgeum (볼더서퍼클라이밍)\": related names \"패밀리클라이밍센터\" / \"볼더서퍼클라이밍\" 14071 m apart",
+     "ids": [
+      "kr-bg-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-011 \"Waverock Climbing Seomyeon (웨이브락 클라이밍 서면점)\": related names \"패밀리클라이밍센터\" / \"웨이브락 클라이밍 서면점\" 4613 m apart",
+     "ids": [
+      "kr-bg-011"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-012 \"Waverock Climbing Namcheon (웨이브락 클라이밍 남천점)\": related names \"패밀리클라이밍센터\" / \"웨이브락 클라이밍 남천점\" 7695 m apart",
+     "ids": [
+      "kr-bg-012"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-013 \"Waverock Climbing Pusan National University (웨이브락 클라이밍 부산대점)\": related names \"패밀리클라이밍센터\" / \"웨이브락 클라이밍 부산대점\" 3981 m apart",
+     "ids": [
+      "kr-bg-013"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-014 \"Rock Odyssey Climbing Dongnae (락오디세이 클라이밍 동래점)\": related names \"패밀리클라이밍센터\" / \"락오디세이 클라이밍 동래점\" 2957 m apart",
+     "ids": [
+      "kr-bg-014"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-015 \"Club Spider Climbing Sasang (클럽 스파이더 클라이밍 사상점)\": related names \"패밀리클라이밍센터\" / \"클럽 스파이더 클라이밍 사상점\" 8295 m apart",
+     "ids": [
+      "kr-bg-015"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-020 \"Awesome Climbing Mulgeum (어썸클라이밍짐)\": related names \"패밀리클라이밍센터\" / \"어썸클라이밍짐\" 13641 m apart",
+     "ids": [
+      "kr-bg-020"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-022 \"Otter Climbing Hadan (오터클라이밍)\": related names \"패밀리클라이밍센터\" / \"오터클라이밍\" 13449 m apart",
+     "ids": [
+      "kr-bg-022"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-bg-001",
+    "kr-bg-002",
+    "kr-bg-003",
+    "kr-bg-009",
+    "kr-bg-011",
+    "kr-bg-012",
+    "kr-bg-013",
+    "kr-bg-014",
+    "kr-bg-015",
+    "kr-bg-020",
+    "kr-bg-022"
+   ]
+  },
+  {
+   "cid": "kr-bg-024",
+   "line": 24,
+   "name": "SO Climbing Gym Hwamyeong (SO클라이밍짐)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-a3ded81499"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "kr-bg-025",
+   "line": 25,
+   "name": "Jjang Climbing Dadae (짱클라이밍)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-454b3908d5"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-001 \"Dolmenge Climbing Jeonpo (돌멩이클라이밍)\": related names \"짱클라이밍\" / \"돌멩이클라이밍\" 12384 m apart",
+     "ids": [
+      "kr-bg-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-002 \"Pogo Climb Sasang (포고클라임)\": related names \"짱클라이밍\" / \"포고클라임\" 13048 m apart",
+     "ids": [
+      "kr-bg-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-011 \"Waverock Climbing Seomyeon (웨이브락 클라이밍 서면점)\": related names \"짱클라이밍\" / \"웨이브락 클라이밍 서면점\" 12802 m apart",
+     "ids": [
+      "kr-bg-011"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-012 \"Waverock Climbing Namcheon (웨이브락 클라이밍 남천점)\": related names \"짱클라이밍\" / \"웨이브락 클라이밍 남천점\" 14228 m apart",
+     "ids": [
+      "kr-bg-012"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-015 \"Club Spider Climbing Sasang (클럽 스파이더 클라이밍 사상점)\": related names \"짱클라이밍\" / \"클럽 스파이더 클라이밍 사상점\" 9886 m apart",
+     "ids": [
+      "kr-bg-015"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-022 \"Otter Climbing Hadan (오터클라이밍)\": related names \"짱클라이밍\" / \"오터클라이밍\" 5074 m apart",
+     "ids": [
+      "kr-bg-022"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-bg-001",
+    "kr-bg-002",
+    "kr-bg-011",
+    "kr-bg-012",
+    "kr-bg-015",
+    "kr-bg-022"
+   ]
+  },
+  {
+   "cid": "kr-bg-026",
+   "line": 26,
+   "name": "UP Climbing Gym Mugeo (UP 클라이밍짐)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-476bd0e857"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "kr-bg-027",
+   "line": 27,
+   "name": "Climbing World Choi Byeong-ho Center (등반세계 최병호클라이밍센터)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-7f8988a9a8"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-004 \"Raon Climbing Gym Samsan (라온클라이밍짐)\": related names \"등반세계 최병호클라이밍센터\" / \"라온클라이밍짐\" 2490 m apart",
+     "ids": [
+      "kr-bg-004"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-005 \"Mong Climbing Center Hogye (몽클라이밍센터)\": related names \"등반세계 최병호클라이밍센터\" / \"몽클라이밍센터\" 11098 m apart",
+     "ids": [
+      "kr-bg-005"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-017 \"Walldam Climbing Samsan (월담클라이밍)\": related names \"등반세계 최병호클라이밍센터\" / \"월담클라이밍\" 480 m apart",
+     "ids": [
+      "kr-bg-017"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-018 \"9 Climbing Gym (구클라이밍짐)\": related names \"등반세계 최병호클라이밍센터\" / \"구클라이밍짐\" 3231 m apart",
+     "ids": [
+      "kr-bg-018"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-034 \"Ulsan Artificial Climbing Center (Seonam Lake Park) (울산인공암벽센터)\": related names \"등반세계 최병호클라이밍센터\" / \"울산인공암벽센터\" 2873 m apart",
+     "ids": [
+      "kr-bg-034"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-bg-004",
+    "kr-bg-005",
+    "kr-bg-017",
+    "kr-bg-018",
+    "kr-bg-034"
+   ]
+  },
+  {
+   "cid": "kr-bg-028",
+   "line": 28,
+   "name": "First Climbing Gym Samgye (퍼스트 클라이밍 짐)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-7f6a705ef1"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-002 \"Pogo Climb Sasang (포고클라임)\": related names \"퍼스트 클라이밍 짐\" / \"포고클라임\" 13396 m apart",
+     "ids": [
+      "kr-bg-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-003 \"Rock Climbing Gym Deokcheon (락클라이밍짐)\": related names \"퍼스트 클라이밍 짐\" / \"락클라이밍짐\" 13497 m apart",
+     "ids": [
+      "kr-bg-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-007 \"The Coa Climbing Jangyu (더코아클라이밍)\": related names \"퍼스트 클라이밍 짐\" / \"더코아클라이밍\" 8469 m apart",
+     "ids": [
+      "kr-bg-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-009 \"Boulder Surfer Climbing Mulgeum (볼더서퍼클라이밍)\": related names \"퍼스트 클라이밍 짐\" / \"볼더서퍼클라이밍\" 11742 m apart",
+     "ids": [
+      "kr-bg-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-019 \"Do Climbing Gimhae (두클라이밍 김해점)\": related names \"퍼스트 클라이밍 짐\" / \"두클라이밍 김해점\" 2618 m apart",
+     "ids": [
+      "kr-bg-019"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-020 \"Awesome Climbing Mulgeum (어썸클라이밍짐)\": related names \"퍼스트 클라이밍 짐\" / \"어썸클라이밍짐\" 14174 m apart",
+     "ids": [
+      "kr-bg-020"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-032 \"Hold Yummy Climbing Gimhae (홀드야미클라이밍)\": related names \"퍼스트 클라이밍 짐\" / \"홀드야미클라이밍\" 3214 m apart",
+     "ids": [
+      "kr-bg-032"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-bg-002",
+    "kr-bg-003",
+    "kr-bg-007",
+    "kr-bg-009",
+    "kr-bg-019",
+    "kr-bg-020",
+    "kr-bg-032"
+   ]
+  },
+  {
+   "cid": "kr-bg-029",
+   "line": 29,
+   "name": "B-star Climbing Masan (비스타클라이밍)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-d33aed1852"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-006 \"B-star Climbing Changwon (창원 비스타클라이밍)\": related names \"B-star Climbing Masan (비스타클라이밍)\" / \"B-star Climbing Changwon (창원 비스타클라이밍)\" 8621 m apart",
+     "ids": [
+      "kr-bg-006"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-008 \"Climb Zone Changwon (클라임존)\": related names \"비스타클라이밍\" / \"클라임존\" 11810 m apart",
+     "ids": [
+      "kr-bg-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-010 \"Crux Climbing Masan (크럭스클라이밍)\": related names \"비스타클라이밍\" / \"크럭스클라이밍\" 6655 m apart",
+     "ids": [
+      "kr-bg-010"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-030 \"Gwang Climbing Jinhae (광클라이밍)\": related names \"비스타클라이밍\" / \"광클라이밍\" 14729 m apart",
+     "ids": [
+      "kr-bg-030"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-031 \"Hot Climbing Gym Changwon University (핫클라이밍)\": related names \"비스타클라이밍\" / \"핫클라이밍\" 9489 m apart",
+     "ids": [
+      "kr-bg-031"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-bg-006",
+    "kr-bg-008",
+    "kr-bg-010",
+    "kr-bg-030",
+    "kr-bg-031"
+   ]
+  },
+  {
+   "cid": "kr-bg-030",
+   "line": 30,
+   "name": "Gwang Climbing Jinhae (광클라이밍)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-fd383505f9"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-006 \"B-star Climbing Changwon (창원 비스타클라이밍)\": related names \"광클라이밍\" / \"창원 비스타클라이밍\" 8273 m apart",
+     "ids": [
+      "kr-bg-006"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-007 \"The Coa Climbing Jangyu (더코아클라이밍)\": related names \"광클라이밍\" / \"더코아클라이밍\" 10203 m apart",
+     "ids": [
+      "kr-bg-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-008 \"Climb Zone Changwon (클라임존)\": related names \"광클라이밍\" / \"클라임존\" 6343 m apart",
+     "ids": [
+      "kr-bg-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-010 \"Crux Climbing Masan (크럭스클라이밍)\": related names \"광클라이밍\" / \"크럭스클라이밍\" 14145 m apart",
+     "ids": [
+      "kr-bg-010"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-029 \"B-star Climbing Masan (비스타클라이밍)\": related names \"광클라이밍\" / \"비스타클라이밍\" 14729 m apart",
+     "ids": [
+      "kr-bg-029"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-031 \"Hot Climbing Gym Changwon University (핫클라이밍)\": related names \"광클라이밍\" / \"핫클라이밍\" 10059 m apart",
+     "ids": [
+      "kr-bg-031"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-bg-006",
+    "kr-bg-007",
+    "kr-bg-008",
+    "kr-bg-010",
+    "kr-bg-029",
+    "kr-bg-031"
+   ]
+  },
+  {
+   "cid": "kr-bg-031",
+   "line": 31,
+   "name": "Hot Climbing Gym Changwon University (핫클라이밍)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-552e2029ae"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-006 \"B-star Climbing Changwon (창원 비스타클라이밍)\": related names \"핫클라이밍\" / \"창원 비스타클라이밍\" 2357 m apart",
+     "ids": [
+      "kr-bg-006"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-007 \"The Coa Climbing Jangyu (더코아클라이밍)\": related names \"핫클라이밍\" / \"더코아클라이밍\" 11829 m apart",
+     "ids": [
+      "kr-bg-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-008 \"Climb Zone Changwon (클라임존)\": related names \"핫클라이밍\" / \"클라임존\" 4034 m apart",
+     "ids": [
+      "kr-bg-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-010 \"Crux Climbing Masan (크럭스클라이밍)\": related names \"핫클라이밍\" / \"크럭스클라이밍\" 13658 m apart",
+     "ids": [
+      "kr-bg-010"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-029 \"B-star Climbing Masan (비스타클라이밍)\": related names \"핫클라이밍\" / \"비스타클라이밍\" 9489 m apart",
+     "ids": [
+      "kr-bg-029"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-030 \"Gwang Climbing Jinhae (광클라이밍)\": related names \"핫클라이밍\" / \"광클라이밍\" 10059 m apart",
+     "ids": [
+      "kr-bg-030"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-bg-006",
+    "kr-bg-007",
+    "kr-bg-008",
+    "kr-bg-010",
+    "kr-bg-029",
+    "kr-bg-030"
+   ]
+  },
+  {
+   "cid": "kr-bg-032",
+   "line": 32,
+   "name": "Hold Yummy Climbing Gimhae (홀드야미클라이밍)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-d6322c6221"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-002 \"Pogo Climb Sasang (포고클라임)\": related names \"홀드야미클라이밍\" / \"포고클라임\" 11600 m apart",
+     "ids": [
+      "kr-bg-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-003 \"Rock Climbing Gym Deokcheon (락클라이밍짐)\": related names \"홀드야미클라이밍\" / \"락클라이밍짐\" 12646 m apart",
+     "ids": [
+      "kr-bg-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-007 \"The Coa Climbing Jangyu (더코아클라이밍)\": related names \"홀드야미클라이밍\" / \"더코아클라이밍\" 6513 m apart",
+     "ids": [
+      "kr-bg-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-008 \"Climb Zone Changwon (클라임존)\": related names \"홀드야미클라이밍\" / \"클라임존\" 14798 m apart",
+     "ids": [
+      "kr-bg-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-009 \"Boulder Surfer Climbing Mulgeum (볼더서퍼클라이밍)\": related names \"홀드야미클라이밍\" / \"볼더서퍼클라이밍\" 13569 m apart",
+     "ids": [
+      "kr-bg-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-015 \"Club Spider Climbing Sasang (클럽 스파이더 클라이밍 사상점)\": related names \"홀드야미클라이밍\" / \"클럽 스파이더 클라이밍 사상점\" 13960 m apart",
+     "ids": [
+      "kr-bg-015"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-019 \"Do Climbing Gimhae (두클라이밍 김해점)\": related names \"홀드야미클라이밍\" / \"두클라이밍 김해점\" 864 m apart",
+     "ids": [
+      "kr-bg-019"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-028 \"First Climbing Gym Samgye (퍼스트 클라이밍 짐)\": related names \"홀드야미클라이밍\" / \"퍼스트 클라이밍 짐\" 3214 m apart",
+     "ids": [
+      "kr-bg-028"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "kr-bg-002",
+    "kr-bg-003",
+    "kr-bg-007",
+    "kr-bg-008",
+    "kr-bg-009",
+    "kr-bg-015",
+    "kr-bg-019",
+    "kr-bg-028"
+   ]
+  },
+  {
+   "cid": "kr-bg-033",
+   "line": 33,
+   "name": "Yeti Climbing Gym Jinju (예티클라이밍짐)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-21dd926791"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-021 \"Big Climbing Gym (빅클라이밍)\": related names \"예티클라이밍짐\" / \"빅클라이밍\" 6570 m apart",
+     "ids": [
+      "kr-bg-021"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "kr-bg-021"
+   ]
+  },
+  {
+   "cid": "kr-bg-034",
+   "line": 34,
+   "name": "Ulsan Artificial Climbing Center (Seonam Lake Park) (울산인공암벽센터)",
+   "class": "blocked",
+   "suggested": "reject not-a-gym",
+   "importer": {
+    "class": "new",
+    "id": "g-ab0fdc3525"
+   },
+   "blockers": [
+    {
+     "code": "not-a-gym",
+     "detail": "category other"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-004 \"Raon Climbing Gym Samsan (라온클라이밍짐)\": related names \"울산인공암벽센터\" / \"라온클라이밍짐\" 2412 m apart",
+     "ids": [
+      "kr-bg-004"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-005 \"Mong Climbing Center Hogye (몽클라이밍센터)\": related names \"울산인공암벽센터\" / \"몽클라이밍센터\" 13784 m apart",
+     "ids": [
+      "kr-bg-005"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-017 \"Walldam Climbing Samsan (월담클라이밍)\": related names \"울산인공암벽센터\" / \"월담클라이밍\" 3032 m apart",
+     "ids": [
+      "kr-bg-017"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-018 \"9 Climbing Gym (구클라이밍짐)\": related names \"울산인공암벽센터\" / \"구클라이밍짐\" 4733 m apart",
+     "ids": [
+      "kr-bg-018"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-bg-027 \"Climbing World Choi Byeong-ho Center (등반세계 최병호클라이밍센터)\": related names \"울산인공암벽센터\" / \"등반세계 최병호클라이밍센터\" 2873 m apart",
+     "ids": [
+      "kr-bg-027"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "kr-bg-004",
+    "kr-bg-005",
+    "kr-bg-017",
+    "kr-bg-018",
+    "kr-bg-027"
+   ]
+  }
+ ],
+ "reconcile_sha256": "6049c84cd0f77e84fe51f42dc93593b9ae95152e11a5583913eb60efa4147327"
+}
