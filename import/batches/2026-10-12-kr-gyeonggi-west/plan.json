@@ -1,0 +1,103 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-12-kr-gyeonggi-west",
+ "index": {
+  "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
+  "count": 3294,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-06-kr-seoul"
+ ],
+ "counts": {
+  "records": 9,
+  "new": 9,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "8a061f03ac12a72696d6f29bf91ee0d6d045eb97d79353eaafb318f191989f47",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-d6c02f8b81",
+   "id_frozen": true,
+   "name": "Catchstone Climbing Bucheon Station (캐치스톤클라이밍짐 부천역점)",
+   "country": "KR"
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-4fe255bb99",
+   "id_frozen": true,
+   "name": "Climbing Treackle (클라이밍 트리클)",
+   "country": "KR"
+  },
+  {
+   "line": 3,
+   "class": "new",
+   "id": "g-0502c72bc6",
+   "id_frozen": true,
+   "name": "Club Climbing Ansan (클럽클라이밍)",
+   "country": "KR"
+  },
+  {
+   "line": 4,
+   "class": "new",
+   "id": "g-cbf5ff6963",
+   "id_frozen": true,
+   "name": "Ayers Rock Climbing Beomgye (에어즈락 클라이밍 범계점)",
+   "country": "KR"
+  },
+  {
+   "line": 5,
+   "class": "new",
+   "id": "g-0a9469872d",
+   "id_frozen": true,
+   "name": "The Ledge Climbing (더렛지 클라이밍)",
+   "country": "KR"
+  },
+  {
+   "line": 6,
+   "class": "new",
+   "id": "g-a26b8e9715",
+   "id_frozen": true,
+   "name": "Fun Climb Gym (펀클라임짐)",
+   "country": "KR"
+  },
+  {
+   "line": 7,
+   "class": "new",
+   "id": "g-a6212892f0",
+   "id_frozen": true,
+   "name": "Sanbon Climbing Center (산본클라이밍센터)",
+   "country": "KR"
+  },
+  {
+   "line": 8,
+   "class": "new",
+   "id": "g-de2d4ade41",
+   "id_frozen": true,
+   "name": "Rock Climbing Sanbon (락클라이밍 산본)",
+   "country": "KR"
+  },
+  {
+   "line": 9,
+   "class": "new",
+   "id": "g-8e8ec7ad2c",
+   "id_frozen": true,
+   "name": "Spicy Climbing (스파이시 클라이밍)",
+   "country": "KR"
+  }
+ ]
+}
