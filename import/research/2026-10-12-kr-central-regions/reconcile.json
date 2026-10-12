@@ -1,0 +1,2730 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-12-kr-central-regions",
+ "inputs": {
+  "section_sha256": "7c8818d424c4b960d8488bb6f88574b75689d8a0fedc7e9f72209a7ecd947941",
+  "sources_sha256": "0a80ce15b50c952145f7a13e542c8627b4ff8e13fc5845b886c459746fb49890",
+  "candidates_sha256": "f1ead80b85b213b6da4769a405e31791433e1aacf86264a3f402969cefc3e469",
+  "index": {
+   "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
+   "count": 3294
+  },
+  "staged_batches_compared": [
+   "2026-10-06-kr-seoul",
+   "2026-10-12-kr-busan-gyeongnam",
+   "2026-10-12-kr-daegu-gyeongbuk",
+   "2026-10-12-kr-gyeonggi-north",
+   "2026-10-12-kr-gyeonggi-south",
+   "2026-10-12-kr-gyeonggi-west",
+   "2026-10-12-kr-incheon"
+  ],
+  "other_sections_compared": [
+   {
+    "id": "2026-10-05-korea-gwangju-jeollanam",
+    "candidates_sha256": "f4858cc28d4f7eb5ff4a243da82dea80ec3fe7700505d83ec1d3bd869a1aacb7"
+   },
+   {
+    "id": "2026-10-05-korea-holds",
+    "candidates_sha256": "5d20a4add212fcf30638867628a92a2c7721187d7f8e1870e937e6f0a1fabe06"
+   },
+   {
+    "id": "2026-10-05-korea-owner-checks",
+    "candidates_sha256": "d6d0aa289502fce33cd00c4b695f65d41053095ab60e020beb4fad9f3cccf227"
+   },
+   {
+    "id": "2026-10-06-kr-seoul",
+    "candidates_sha256": "f78315198a507d6235619c81ff4be71a037392dfbb0c6658a6d40cee9b000487"
+   },
+   {
+    "id": "2026-10-12-kr-busan-gyeongnam",
+    "candidates_sha256": "0bca4015aa37d426d6c4dc4681299927e887914fc21a2cb194940851eb0b6836"
+   },
+   {
+    "id": "2026-10-12-kr-daegu-gyeongbuk",
+    "candidates_sha256": "fad820c102695c3e95313cc9571e31ee860689e0a89af30206b8b30c8e8d869a"
+   },
+   {
+    "id": "2026-10-12-kr-gyeonggi-north",
+    "candidates_sha256": "708251f8989853c6999c022124830c9fba8762568a02f5318365b04505d1c93f"
+   },
+   {
+    "id": "2026-10-12-kr-gyeonggi-south",
+    "candidates_sha256": "6439e3e858747f6f3536e740c7fdcb3aa5d771c49fcdef78bcdd2d42806b6dd8"
+   },
+   {
+    "id": "2026-10-12-kr-gyeonggi-west",
+    "candidates_sha256": "4d037f6195a38f8dca699ccecade187cea203aa16f3f6642c4b43c2079a525a7"
+   },
+   {
+    "id": "2026-10-12-kr-incheon",
+    "candidates_sha256": "129e7abc9b5c9703ba61feab40224d8297dfd412a61aab2f3a9379dfc819f089"
+   }
+  ]
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 54,
+  "ready": 2,
+  "review": 26,
+  "blocked": 19,
+  "existing": 7,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "kr-cr-001",
+   "line": 1,
+   "name": "Awake Climbing Timeworld (어웨이크클라이밍 타임월드점)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-9c8c9f0879"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1209 same-name-but-pin-differs 2021 m",
+     "ids": [
+      "seed-1209"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1209 \"Awake Climbing Timeworld\": same-name-but-pin-differs (\"Awake Climbing Timeworld (어웨이크클라이밍 타임월드점)\" / \"Awake Climbing Timeworld\", 2021 m)",
+     "ids": [
+      "seed-1209"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-002 \"Hana Climbing Gym (하나클라이밍짐)\": related names \"어웨이크클라이밍 타임월드점\" / \"하나클라이밍짐\" 4820 m apart",
+     "ids": [
+      "kr-cr-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-003 \"Daejeon Climbing Center (대전클라이밍센터)\": related names \"어웨이크클라이밍 타임월드점\" / \"대전클라이밍센터\" 1387 m apart",
+     "ids": [
+      "kr-cr-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-004 \"Climbing Zim Lead Yuseong (클라이밍짐 리드 유성점)\": related names \"어웨이크클라이밍 타임월드점\" / \"클라이밍짐 리드 유성점\" 2755 m apart",
+     "ids": [
+      "kr-cr-004"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-005 \"Climbing Zim Lead Chungdae (클라이밍짐 리드 충대점)\": related names \"어웨이크클라이밍 타임월드점\" / \"클라이밍짐 리드 충대점\" 2759 m apart",
+     "ids": [
+      "kr-cr-005"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-cr-002",
+    "kr-cr-003",
+    "kr-cr-004",
+    "kr-cr-005",
+    "seed-1209"
+   ]
+  },
+  {
+   "cid": "kr-cr-002",
+   "line": 2,
+   "name": "Hana Climbing Gym (하나클라이밍짐)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-c74dbacb84"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-001 \"Awake Climbing Timeworld (어웨이크클라이밍 타임월드점)\": related names \"하나클라이밍짐\" / \"어웨이크클라이밍 타임월드점\" 4820 m apart",
+     "ids": [
+      "kr-cr-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-003 \"Daejeon Climbing Center (대전클라이밍센터)\": related names \"하나클라이밍짐\" / \"대전클라이밍센터\" 5344 m apart",
+     "ids": [
+      "kr-cr-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-004 \"Climbing Zim Lead Yuseong (클라이밍짐 리드 유성점)\": related names \"하나클라이밍짐\" / \"클라이밍짐 리드 유성점\" 2250 m apart",
+     "ids": [
+      "kr-cr-004"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-005 \"Climbing Zim Lead Chungdae (클라이밍짐 리드 충대점)\": related names \"하나클라이밍짐\" / \"클라이밍짐 리드 충대점\" 2068 m apart",
+     "ids": [
+      "kr-cr-005"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-cr-001",
+    "kr-cr-003",
+    "kr-cr-004",
+    "kr-cr-005"
+   ]
+  },
+  {
+   "cid": "kr-cr-003",
+   "line": 3,
+   "name": "Daejeon Climbing Center (대전클라이밍센터)",
+   "class": "existing",
+   "suggested": "same-as seed-1207",
+   "importer": {
+    "class": "existing",
+    "id": "seed-1207",
+    "match": {
+     "id": "seed-1207",
+     "name": "Daejeon Climbing Center",
+     "reason": "same-name",
+     "dist_m": 139
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-1207 but content differs (name, lat, lng, address); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1207 \"Daejeon Climbing Center\": same-name (\"Daejeon Climbing Center (대전클라이밍센터)\" / \"Daejeon Climbing Center\", 139 m)",
+     "ids": [
+      "seed-1207"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-001 \"Awake Climbing Timeworld (어웨이크클라이밍 타임월드점)\": related names \"대전클라이밍센터\" / \"어웨이크클라이밍 타임월드점\" 1387 m apart",
+     "ids": [
+      "kr-cr-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-002 \"Hana Climbing Gym (하나클라이밍짐)\": related names \"대전클라이밍센터\" / \"하나클라이밍짐\" 5344 m apart",
+     "ids": [
+      "kr-cr-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-004 \"Climbing Zim Lead Yuseong (클라이밍짐 리드 유성점)\": related names \"대전클라이밍센터\" / \"클라이밍짐 리드 유성점\" 3099 m apart",
+     "ids": [
+      "kr-cr-004"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-005 \"Climbing Zim Lead Chungdae (클라이밍짐 리드 충대점)\": related names \"대전클라이밍센터\" / \"클라이밍짐 리드 충대점\" 3441 m apart",
+     "ids": [
+      "kr-cr-005"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-cr-001",
+    "kr-cr-002",
+    "kr-cr-004",
+    "kr-cr-005",
+    "seed-1207"
+   ]
+  },
+  {
+   "cid": "kr-cr-004",
+   "line": 4,
+   "name": "Climbing Zim Lead Yuseong (클라이밍짐 리드 유성점)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-0ad708b192"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1208 renamed-or-related-name-nearby 70 m",
+     "ids": [
+      "seed-1208"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1208 \"Climbing Gym Lead Yuseong\": renamed-or-related-name-nearby (\"Climbing Zim Lead Yuseong (클라이밍짐 리드 유성점)\" / \"Climbing Gym Lead Yuseong\", 70 m)",
+     "ids": [
+      "seed-1208"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-001 \"Awake Climbing Timeworld (어웨이크클라이밍 타임월드점)\": related names \"클라이밍짐 리드 유성점\" / \"어웨이크클라이밍 타임월드점\" 2755 m apart",
+     "ids": [
+      "kr-cr-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-002 \"Hana Climbing Gym (하나클라이밍짐)\": related names \"클라이밍짐 리드 유성점\" / \"하나클라이밍짐\" 2250 m apart",
+     "ids": [
+      "kr-cr-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-003 \"Daejeon Climbing Center (대전클라이밍센터)\": related names \"클라이밍짐 리드 유성점\" / \"대전클라이밍센터\" 3099 m apart",
+     "ids": [
+      "kr-cr-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-005 \"Climbing Zim Lead Chungdae (클라이밍짐 리드 충대점)\": related names \"Climbing Zim Lead Yuseong (클라이밍짐 리드 유성점)\" / \"Climbing Zim Lead Chungdae (클라이밍짐 리드 충대점)\" 808 m apart",
+     "ids": [
+      "kr-cr-005"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-cr-001",
+    "kr-cr-002",
+    "kr-cr-003",
+    "kr-cr-005",
+    "seed-1208"
+   ]
+  },
+  {
+   "cid": "kr-cr-005",
+   "line": 5,
+   "name": "Climbing Zim Lead Chungdae (클라이밍짐 리드 충대점)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-20214cf1ad"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-001 \"Awake Climbing Timeworld (어웨이크클라이밍 타임월드점)\": related names \"클라이밍짐 리드 충대점\" / \"어웨이크클라이밍 타임월드점\" 2759 m apart",
+     "ids": [
+      "kr-cr-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-002 \"Hana Climbing Gym (하나클라이밍짐)\": related names \"클라이밍짐 리드 충대점\" / \"하나클라이밍짐\" 2068 m apart",
+     "ids": [
+      "kr-cr-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-003 \"Daejeon Climbing Center (대전클라이밍센터)\": related names \"클라이밍짐 리드 충대점\" / \"대전클라이밍센터\" 3441 m apart",
+     "ids": [
+      "kr-cr-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-004 \"Climbing Zim Lead Yuseong (클라이밍짐 리드 유성점)\": related names \"Climbing Zim Lead Chungdae (클라이밍짐 리드 충대점)\" / \"Climbing Zim Lead Yuseong (클라이밍짐 리드 유성점)\" 808 m apart",
+     "ids": [
+      "kr-cr-004"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-cr-001",
+    "kr-cr-002",
+    "kr-cr-003",
+    "kr-cr-004"
+   ]
+  },
+  {
+   "cid": "kr-cr-006",
+   "line": 6,
+   "name": "Star Climbing Sejong (별클라이밍)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-57709c6497"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "g-5d4ecfb092 co-located 3 m",
+     "ids": [
+      "g-5d4ecfb092"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "g-5d4ecfb092 \"Byeol Climbing\": co-located (\"Star Climbing Sejong (별클라이밍)\" / \"Byeol Climbing\", 3 m)",
+     "ids": [
+      "g-5d4ecfb092"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-023 \"Gongju Forest Climbing Gym (공주숲클라이밍짐)\": related names \"별클라이밍\" / \"공주숲클라이밍짐\" 9945 m apart",
+     "ids": [
+      "kr-cr-023"
+     ]
+    }
+   ],
+   "review_ids": [
+    "g-5d4ecfb092",
+    "kr-cr-023"
+   ]
+  },
+  {
+   "cid": "kr-cr-007",
+   "line": 7,
+   "name": "Sports Island Climbing Ochang (스포츠아일랜드 클라이밍 오창)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-40e47f6547"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-008 \"Cheongju Rock Climbing Center (청주 락 클라이밍 센터)\": related names \"스포츠아일랜드 클라이밍 오창\" / \"청주 락 클라이밍 센터\" 7654 m apart",
+     "ids": [
+      "kr-cr-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-009 \"Cheongju Tagi Climbing Center (청주 타기클라이밍센터)\": related names \"스포츠아일랜드 클라이밍 오창\" / \"청주 타기클라이밍센터\" 13257 m apart",
+     "ids": [
+      "kr-cr-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-013 \"Daoreum Climbing (다오름클라이밍)\": related names \"스포츠아일랜드 클라이밍 오창\" / \"다오름클라이밍\" 6814 m apart",
+     "ids": [
+      "kr-cr-013"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-014 \"Maru Climbing Center (마루클라이밍센터)\": related names \"스포츠아일랜드 클라이밍 오창\" / \"마루클라이밍센터\" 9853 m apart",
+     "ids": [
+      "kr-cr-014"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-015 \"Cheongju International Sport Climbing Center (청주국제스포츠클라이밍센터)\": related names \"스포츠아일랜드 클라이밍 오창\" / \"청주국제스포츠클라이밍센터\" 9118 m apart",
+     "ids": [
+      "kr-cr-015"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-cr-008",
+    "kr-cr-009",
+    "kr-cr-013",
+    "kr-cr-014",
+    "kr-cr-015"
+   ]
+  },
+  {
+   "cid": "kr-cr-008",
+   "line": 8,
+   "name": "Cheongju Rock Climbing Center (청주 락 클라이밍 센터)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-fbd98627ef"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1227 renamed-or-related-name-nearby 0 m",
+     "ids": [
+      "seed-1227"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1227 \"Cheongju Rak Climbing Center (청주락클라이밍센터)\": renamed-or-related-name-nearby (\"Cheongju Rock Climbing Center (청주 락 클라이밍 센터)\" / \"Cheongju Rak Climbing Center (청주락클라이밍센터)\", 0 m)",
+     "ids": [
+      "seed-1227"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-007 \"Sports Island Climbing Ochang (스포츠아일랜드 클라이밍 오창)\": related names \"청주 락 클라이밍 센터\" / \"스포츠아일랜드 클라이밍 오창\" 7654 m apart",
+     "ids": [
+      "kr-cr-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-009 \"Cheongju Tagi Climbing Center (청주 타기클라이밍센터)\": related names \"Cheongju Rock Climbing Center (청주 락 클라이밍 센터)\" / \"Cheongju Tagi Climbing Center (청주 타기클라이밍센터)\" 6862 m apart",
+     "ids": [
+      "kr-cr-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-013 \"Daoreum Climbing (다오름클라이밍)\": related names \"청주 락 클라이밍 센터\" / \"다오름클라이밍\" 1058 m apart",
+     "ids": [
+      "kr-cr-013"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-014 \"Maru Climbing Center (마루클라이밍센터)\": related names \"청주 락 클라이밍 센터\" / \"마루클라이밍센터\" 6831 m apart",
+     "ids": [
+      "kr-cr-014"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-015 \"Cheongju International Sport Climbing Center (청주국제스포츠클라이밍센터)\": related names \"Cheongju Rock Climbing Center (청주 락 클라이밍 센터)\" / \"Cheongju International Sport Climbing Center (청주국제스포츠클라이밍센터)\" 7987 m apart",
+     "ids": [
+      "kr-cr-015"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-1230 \"Cheongju International Sports Climbing Center (청주국제스포츠클라이밍센터)\": related names \"Cheongju Rock Climbing Center (청주 락 클라이밍 센터)\" / \"Cheongju International Sports Climbing Center (청주국제스포츠클라이밍센터)\" 7904 m apart",
+     "ids": [
+      "seed-1230"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-cr-007",
+    "kr-cr-009",
+    "kr-cr-013",
+    "kr-cr-014",
+    "kr-cr-015",
+    "seed-1227",
+    "seed-1230"
+   ]
+  },
+  {
+   "cid": "kr-cr-009",
+   "line": 9,
+   "name": "Cheongju Tagi Climbing Center (청주 타기클라이밍센터)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-48f0f562dd"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1228 co-located 7 m",
+     "ids": [
+      "seed-1228"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1228 \"Tagy Climbing Center (타기클라이밍센터)\": co-located (\"Cheongju Tagi Climbing Center (청주 타기클라이밍센터)\" / \"Tagy Climbing Center (타기클라이밍센터)\", 7 m)",
+     "ids": [
+      "seed-1228"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-007 \"Sports Island Climbing Ochang (스포츠아일랜드 클라이밍 오창)\": related names \"청주 타기클라이밍센터\" / \"스포츠아일랜드 클라이밍 오창\" 13257 m apart",
+     "ids": [
+      "kr-cr-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-008 \"Cheongju Rock Climbing Center (청주 락 클라이밍 센터)\": related names \"Cheongju Tagi Climbing Center (청주 타기클라이밍센터)\" / \"Cheongju Rock Climbing Center (청주 락 클라이밍 센터)\" 6862 m apart",
+     "ids": [
+      "kr-cr-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-013 \"Daoreum Climbing (다오름클라이밍)\": related names \"청주 타기클라이밍센터\" / \"다오름클라이밍\" 7068 m apart",
+     "ids": [
+      "kr-cr-013"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-014 \"Maru Climbing Center (마루클라이밍센터)\": related names \"청주 타기클라이밍센터\" / \"마루클라이밍센터\" 5385 m apart",
+     "ids": [
+      "kr-cr-014"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-015 \"Cheongju International Sport Climbing Center (청주국제스포츠클라이밍센터)\": related names \"청주 타기클라이밍센터\" / \"청주국제스포츠클라이밍센터\" 14550 m apart",
+     "ids": [
+      "kr-cr-015"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-cr-007",
+    "kr-cr-008",
+    "kr-cr-013",
+    "kr-cr-014",
+    "kr-cr-015",
+    "seed-1228"
+   ]
+  },
+  {
+   "cid": "kr-cr-010",
+   "line": 10,
+   "name": "Neongkul Climbing Center (넝쿨클라이밍센터)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-6c41493165"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "g-10ab743a85 same-name-but-pin-differs 3857 m",
+     "ids": [
+      "g-10ab743a85"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "g-10ab743a85 \"Neongkul Climbing Center\": same-name-but-pin-differs (\"Neongkul Climbing Center (넝쿨클라이밍센터)\" / \"Neongkul Climbing Center\", 3857 m)",
+     "ids": [
+      "g-10ab743a85"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-011 \"Orarak Climbing Gym (오르락클라이밍짐)\": related names \"넝쿨클라이밍센터\" / \"오르락클라이밍짐\" 2804 m apart",
+     "ids": [
+      "kr-cr-011"
+     ]
+    }
+   ],
+   "review_ids": [
+    "g-10ab743a85",
+    "kr-cr-011"
+   ]
+  },
+  {
+   "cid": "kr-cr-011",
+   "line": 11,
+   "name": "Orarak Climbing Gym (오르락클라이밍짐)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-14157553c1"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1229 co-located 2 m",
+     "ids": [
+      "seed-1229"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1229 \"Oullac Climbing Gym (오르락클라이밍짐)\": co-located (\"Orarak Climbing Gym (오르락클라이밍짐)\" / \"Oullac Climbing Gym (오르락클라이밍짐)\", 2 m)",
+     "ids": [
+      "seed-1229"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-010 \"Neongkul Climbing Center (넝쿨클라이밍센터)\": related names \"오르락클라이밍짐\" / \"넝쿨클라이밍센터\" 2804 m apart",
+     "ids": [
+      "kr-cr-010"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-cr-010",
+    "seed-1229"
+   ]
+  },
+  {
+   "cid": "kr-cr-012",
+   "line": 12,
+   "name": "Tokha Climbing Center (톺아클라이밍센터)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-963372e03a"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "kr-cr-013",
+   "line": 13,
+   "name": "Daoreum Climbing (다오름클라이밍)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-089cfbbf5f"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-007 \"Sports Island Climbing Ochang (스포츠아일랜드 클라이밍 오창)\": related names \"다오름클라이밍\" / \"스포츠아일랜드 클라이밍 오창\" 6814 m apart",
+     "ids": [
+      "kr-cr-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-008 \"Cheongju Rock Climbing Center (청주 락 클라이밍 센터)\": related names \"다오름클라이밍\" / \"청주 락 클라이밍 센터\" 1058 m apart",
+     "ids": [
+      "kr-cr-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-009 \"Cheongju Tagi Climbing Center (청주 타기클라이밍센터)\": related names \"다오름클라이밍\" / \"청주 타기클라이밍센터\" 7068 m apart",
+     "ids": [
+      "kr-cr-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-014 \"Maru Climbing Center (마루클라이밍센터)\": related names \"다오름클라이밍\" / \"마루클라이밍센터\" 6214 m apart",
+     "ids": [
+      "kr-cr-014"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-015 \"Cheongju International Sport Climbing Center (청주국제스포츠클라이밍센터)\": related names \"다오름클라이밍\" / \"청주국제스포츠클라이밍센터\" 8344 m apart",
+     "ids": [
+      "kr-cr-015"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-cr-007",
+    "kr-cr-008",
+    "kr-cr-009",
+    "kr-cr-014",
+    "kr-cr-015"
+   ]
+  },
+  {
+   "cid": "kr-cr-014",
+   "line": 14,
+   "name": "Maru Climbing Center (마루클라이밍센터)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-dd9c285c03"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-007 \"Sports Island Climbing Ochang (스포츠아일랜드 클라이밍 오창)\": related names \"마루클라이밍센터\" / \"스포츠아일랜드 클라이밍 오창\" 9853 m apart",
+     "ids": [
+      "kr-cr-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-008 \"Cheongju Rock Climbing Center (청주 락 클라이밍 센터)\": related names \"마루클라이밍센터\" / \"청주 락 클라이밍 센터\" 6831 m apart",
+     "ids": [
+      "kr-cr-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-009 \"Cheongju Tagi Climbing Center (청주 타기클라이밍센터)\": related names \"마루클라이밍센터\" / \"청주 타기클라이밍센터\" 5385 m apart",
+     "ids": [
+      "kr-cr-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-013 \"Daoreum Climbing (다오름클라이밍)\": related names \"마루클라이밍센터\" / \"다오름클라이밍\" 6214 m apart",
+     "ids": [
+      "kr-cr-013"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-015 \"Cheongju International Sport Climbing Center (청주국제스포츠클라이밍센터)\": related names \"마루클라이밍센터\" / \"청주국제스포츠클라이밍센터\" 14518 m apart",
+     "ids": [
+      "kr-cr-015"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-cr-007",
+    "kr-cr-008",
+    "kr-cr-009",
+    "kr-cr-013",
+    "kr-cr-015"
+   ]
+  },
+  {
+   "cid": "kr-cr-015",
+   "line": 15,
+   "name": "Cheongju International Sport Climbing Center (청주국제스포츠클라이밍센터)",
+   "class": "blocked",
+   "suggested": "reject not-a-gym",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-ac0733502c"
+   },
+   "blockers": [
+    {
+     "code": "not-a-gym",
+     "detail": "category other"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1230 similar-name-nearby 177 m",
+     "ids": [
+      "seed-1230"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1230 \"Cheongju International Sports Climbing Center (청주국제스포츠클라이밍센터)\": similar-name-nearby (\"Cheongju International Sport Climbing Center (청주국제스포츠클라이밍센터)\" / \"Cheongju International Sports Climbing Center (청주국제스포츠클라이밍센터)\", 177 m)",
+     "ids": [
+      "seed-1230"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-007 \"Sports Island Climbing Ochang (스포츠아일랜드 클라이밍 오창)\": related names \"청주국제스포츠클라이밍센터\" / \"스포츠아일랜드 클라이밍 오창\" 9118 m apart",
+     "ids": [
+      "kr-cr-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-008 \"Cheongju Rock Climbing Center (청주 락 클라이밍 센터)\": related names \"Cheongju International Sport Climbing Center (청주국제스포츠클라이밍센터)\" / \"Cheongju Rock Climbing Center (청주 락 클라이밍 센터)\" 7987 m apart",
+     "ids": [
+      "kr-cr-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-009 \"Cheongju Tagi Climbing Center (청주 타기클라이밍센터)\": related names \"청주국제스포츠클라이밍센터\" / \"청주 타기클라이밍센터\" 14550 m apart",
+     "ids": [
+      "kr-cr-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-013 \"Daoreum Climbing (다오름클라이밍)\": related names \"청주국제스포츠클라이밍센터\" / \"다오름클라이밍\" 8344 m apart",
+     "ids": [
+      "kr-cr-013"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-014 \"Maru Climbing Center (마루클라이밍센터)\": related names \"청주국제스포츠클라이밍센터\" / \"마루클라이밍센터\" 14518 m apart",
+     "ids": [
+      "kr-cr-014"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-cr-007",
+    "kr-cr-008",
+    "kr-cr-009",
+    "kr-cr-013",
+    "kr-cr-014",
+    "seed-1230"
+   ]
+  },
+  {
+   "cid": "kr-cr-016",
+   "line": 16,
+   "name": "ClimbMax Cheonan (클라임맥스 클라이밍)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-2594f77ef7"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "g-8fd6e3893b similar-name-nearby 185 m",
+     "ids": [
+      "g-8fd6e3893b"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "g-8fd6e3893b \"Climbmax\": similar-name-nearby (\"ClimbMax Cheonan (클라임맥스 클라이밍)\" / \"Climbmax\", 185 m)",
+     "ids": [
+      "g-8fd6e3893b"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-017 \"Rocktree Climbing Center (락트리 클라이밍 센터)\": related names \"클라임맥스 클라이밍\" / \"락트리 클라이밍 센터\" 1331 m apart",
+     "ids": [
+      "kr-cr-017"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-018 \"Wa Climbing Asan (와클라이밍 아산)\": related names \"클라임맥스 클라이밍\" / \"와클라이밍 아산\" 12580 m apart",
+     "ids": [
+      "kr-cr-018"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-019 \"Wa Climbing Cheonan (와클라이밍 천안)\": related names \"클라임맥스 클라이밍\" / \"와클라이밍 천안\" 8028 m apart",
+     "ids": [
+      "kr-cr-019"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-025 \"Kiclimb (키클라임)\": related names \"클라임맥스 클라이밍\" / \"키클라임\" 10387 m apart",
+     "ids": [
+      "kr-cr-025"
+     ]
+    }
+   ],
+   "review_ids": [
+    "g-8fd6e3893b",
+    "kr-cr-017",
+    "kr-cr-018",
+    "kr-cr-019",
+    "kr-cr-025"
+   ]
+  },
+  {
+   "cid": "kr-cr-017",
+   "line": 17,
+   "name": "Rocktree Climbing Center (락트리 클라이밍 센터)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-f49fe6545c"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-016 \"ClimbMax Cheonan (클라임맥스 클라이밍)\": related names \"락트리 클라이밍 센터\" / \"클라임맥스 클라이밍\" 1331 m apart",
+     "ids": [
+      "kr-cr-016"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-018 \"Wa Climbing Asan (와클라이밍 아산)\": related names \"락트리 클라이밍 센터\" / \"와클라이밍 아산\" 11351 m apart",
+     "ids": [
+      "kr-cr-018"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-019 \"Wa Climbing Cheonan (와클라이밍 천안)\": related names \"락트리 클라이밍 센터\" / \"와클라이밍 천안\" 9358 m apart",
+     "ids": [
+      "kr-cr-019"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-025 \"Kiclimb (키클라임)\": related names \"락트리 클라이밍 센터\" / \"키클라임\" 10455 m apart",
+     "ids": [
+      "kr-cr-025"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-1187 \"Rock Tree\": related names \"Rocktree Climbing Center (락트리 클라이밍 센터)\" / \"Rock Tree\" 702 m apart",
+     "ids": [
+      "seed-1187"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-cr-016",
+    "kr-cr-018",
+    "kr-cr-019",
+    "kr-cr-025",
+    "seed-1187"
+   ]
+  },
+  {
+   "cid": "kr-cr-018",
+   "line": 18,
+   "name": "Wa Climbing Asan (와클라이밍 아산)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-aa5e14b7d8"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-016 \"ClimbMax Cheonan (클라임맥스 클라이밍)\": related names \"와클라이밍 아산\" / \"클라임맥스 클라이밍\" 12580 m apart",
+     "ids": [
+      "kr-cr-016"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-017 \"Rocktree Climbing Center (락트리 클라이밍 센터)\": related names \"와클라이밍 아산\" / \"락트리 클라이밍 센터\" 11351 m apart",
+     "ids": [
+      "kr-cr-017"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-cr-016",
+    "kr-cr-017"
+   ]
+  },
+  {
+   "cid": "kr-cr-019",
+   "line": 19,
+   "name": "Wa Climbing Cheonan (와클라이밍 천안)",
+   "class": "existing",
+   "suggested": "same-as g-4e2d507f03",
+   "importer": {
+    "class": "existing",
+    "id": "g-4e2d507f03",
+    "match": {
+     "id": "g-4e2d507f03",
+     "name": "Wa Climbing Cheonan",
+     "reason": "same-name",
+     "dist_m": 33
+    }
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing g-4e2d507f03 but content differs (name, suburb, lat, lng, address, types); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "g-4e2d507f03 \"Wa Climbing Cheonan\": same-name (\"Wa Climbing Cheonan (와클라이밍 천안)\" / \"Wa Climbing Cheonan\", 33 m)",
+     "ids": [
+      "g-4e2d507f03"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-016 \"ClimbMax Cheonan (클라임맥스 클라이밍)\": related names \"와클라이밍 천안\" / \"클라임맥스 클라이밍\" 8028 m apart",
+     "ids": [
+      "kr-cr-016"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-017 \"Rocktree Climbing Center (락트리 클라이밍 센터)\": related names \"와클라이밍 천안\" / \"락트리 클라이밍 센터\" 9358 m apart",
+     "ids": [
+      "kr-cr-017"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-025 \"Kiclimb (키클라임)\": related names \"와클라이밍 천안\" / \"키클라임\" 13039 m apart",
+     "ids": [
+      "kr-cr-025"
+     ]
+    }
+   ],
+   "review_ids": [
+    "g-4e2d507f03",
+    "kr-cr-016",
+    "kr-cr-017",
+    "kr-cr-025"
+   ]
+  },
+  {
+   "cid": "kr-cr-020",
+   "line": 20,
+   "name": "Seosan Climbing (서산클라이밍)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-1f3bb5cefc"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-021 \"Edgewalk Climbing Gym (엣지워크 클라이밍)\": related names \"서산클라이밍\" / \"엣지워크 클라이밍\" 827 m apart",
+     "ids": [
+      "kr-cr-021"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-cr-021"
+   ]
+  },
+  {
+   "cid": "kr-cr-021",
+   "line": 21,
+   "name": "Edgewalk Climbing Gym (엣지워크 클라이밍)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-949cfddde8"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-020 \"Seosan Climbing (서산클라이밍)\": related names \"엣지워크 클라이밍\" / \"서산클라이밍\" 827 m apart",
+     "ids": [
+      "kr-cr-020"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-cr-020"
+   ]
+  },
+  {
+   "cid": "kr-cr-022",
+   "line": 22,
+   "name": "Hongseong Climbing Center (홍성클라이밍센터)",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-e96ed2889c"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "kr-cr-023",
+   "line": 23,
+   "name": "Gongju Forest Climbing Gym (공주숲클라이밍짐)",
+   "class": "existing",
+   "suggested": "same-as g-4a5777b022",
+   "importer": {
+    "class": "existing",
+    "id": "g-4a5777b022",
+    "match": {
+     "id": "g-4a5777b022",
+     "name": "Gongju Forest Climbing Gym",
+     "reason": "same-name",
+     "dist_m": 170
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing g-4a5777b022 but content differs (name, suburb, lat, lng, address); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "g-4a5777b022 \"Gongju Forest Climbing Gym\": same-name (\"Gongju Forest Climbing Gym (공주숲클라이밍짐)\" / \"Gongju Forest Climbing Gym\", 170 m)",
+     "ids": [
+      "g-4a5777b022"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-006 \"Star Climbing Sejong (별클라이밍)\": related names \"공주숲클라이밍짐\" / \"별클라이밍\" 9945 m apart",
+     "ids": [
+      "kr-cr-006"
+     ]
+    }
+   ],
+   "review_ids": [
+    "g-4a5777b022",
+    "kr-cr-006"
+   ]
+  },
+  {
+   "cid": "kr-cr-024",
+   "line": 24,
+   "name": "Nonsan Climbing (논산 클라이밍)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-a824583cef"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "kr-cr-025",
+   "line": 25,
+   "name": "Kiclimb (키클라임)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-eff64d3077"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-south#kr-gs-041 \"Heel & Toe Climbing (힐앤토클라이밍)\": related-name-nearby related names \"키클라임\" / \"힐앤토클라이밍\" 12385 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-south#kr-gs-041"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-south#kr-gs-042 \"Hong Jong-yeol Climbing Pyeongtaek Bijeon (홍종열클라이밍짐 평택비전점)\": related-name-nearby related names \"키클라임\" / \"홍종열클라이밍짐 평택비전점\" 14341 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-south#kr-gs-042"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-south#kr-gs-043 \"Twin Climbing Gym (트윈클라이밍짐)\": related-name-nearby related names \"키클라임\" / \"트윈클라이밍짐\" 13770 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-south#kr-gs-043"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-south#kr-gs-044 \"Wonderwall Climbing (원더월클라이밍)\": related-name-nearby related names \"키클라임\" / \"원더월클라이밍\" 12190 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-south#kr-gs-044"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-016 \"ClimbMax Cheonan (클라임맥스 클라이밍)\": related names \"키클라임\" / \"클라임맥스 클라이밍\" 10387 m apart",
+     "ids": [
+      "kr-cr-016"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-017 \"Rocktree Climbing Center (락트리 클라이밍 센터)\": related names \"키클라임\" / \"락트리 클라이밍 센터\" 10455 m apart",
+     "ids": [
+      "kr-cr-017"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-019 \"Wa Climbing Cheonan (와클라이밍 천안)\": related names \"키클라임\" / \"와클라이밍 천안\" 13039 m apart",
+     "ids": [
+      "kr-cr-019"
+     ]
+    }
+   ],
+   "review_ids": [
+    "2026-10-12-kr-gyeonggi-south#kr-gs-041",
+    "2026-10-12-kr-gyeonggi-south#kr-gs-042",
+    "2026-10-12-kr-gyeonggi-south#kr-gs-043",
+    "2026-10-12-kr-gyeonggi-south#kr-gs-044",
+    "kr-cr-016",
+    "kr-cr-017",
+    "kr-cr-019"
+   ]
+  },
+  {
+   "cid": "kr-cr-026",
+   "line": 26,
+   "name": "Dangjin Artificial Climbing Wall (당진인공암벽장)",
+   "class": "blocked",
+   "suggested": "reject not-a-gym",
+   "importer": {
+    "class": "new",
+    "id": "g-bc57a9318e"
+   },
+   "blockers": [
+    {
+     "code": "not-a-gym",
+     "detail": "category other"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "kr-cr-027",
+   "line": 27,
+   "name": "Climb House Chuncheon (클라임 하우스)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-45784173d3"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1223 renamed-or-related-name-nearby 0 m",
+     "ids": [
+      "seed-1223"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1223 \"Climb House (클라임 하우스)\": renamed-or-related-name-nearby (\"Climb House Chuncheon (클라임 하우스)\" / \"Climb House (클라임 하우스)\", 0 m)",
+     "ids": [
+      "seed-1223"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-028 \"Chuncheon Climbing Center (춘천 클라이밍센터)\": related names \"Climb House Chuncheon (클라임 하우스)\" / \"Chuncheon Climbing Center (춘천 클라이밍센터)\" 742 m apart",
+     "ids": [
+      "kr-cr-028"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-029 \"Nam-Chuncheon Climbing (남춘천클라이밍)\": related names \"클라임 하우스\" / \"남춘천클라이밍\" 491 m apart",
+     "ids": [
+      "kr-cr-029"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-1222 \"Chuncheon Climbing Center (춘천클라이밍센터)\": related names \"Climb House Chuncheon (클라임 하우스)\" / \"Chuncheon Climbing Center (춘천클라이밍센터)\" 740 m apart",
+     "ids": [
+      "seed-1222"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-cr-028",
+    "kr-cr-029",
+    "seed-1222",
+    "seed-1223"
+   ]
+  },
+  {
+   "cid": "kr-cr-028",
+   "line": 28,
+   "name": "Chuncheon Climbing Center (춘천 클라이밍센터)",
+   "class": "existing",
+   "suggested": "same-as seed-1222",
+   "importer": {
+    "class": "existing",
+    "id": "seed-1222",
+    "match": {
+     "id": "seed-1222",
+     "name": "Chuncheon Climbing Center (춘천클라이밍센터)",
+     "reason": "same-name",
+     "dist_m": 7
+    }
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-1222 but content differs (name, suburb, lat, lng, types); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1222 \"Chuncheon Climbing Center (춘천클라이밍센터)\": same-name (\"Chuncheon Climbing Center (춘천 클라이밍센터)\" / \"Chuncheon Climbing Center (춘천클라이밍센터)\", 7 m)",
+     "ids": [
+      "seed-1222"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-027 \"Climb House Chuncheon (클라임 하우스)\": related names \"Chuncheon Climbing Center (춘천 클라이밍센터)\" / \"Climb House Chuncheon (클라임 하우스)\" 742 m apart",
+     "ids": [
+      "kr-cr-027"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-029 \"Nam-Chuncheon Climbing (남춘천클라이밍)\": related names \"Chuncheon Climbing Center (춘천 클라이밍센터)\" / \"Nam-Chuncheon Climbing (남춘천클라이밍)\" 441 m apart",
+     "ids": [
+      "kr-cr-029"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-cr-027",
+    "kr-cr-029",
+    "seed-1222"
+   ]
+  },
+  {
+   "cid": "kr-cr-029",
+   "line": 29,
+   "name": "Nam-Chuncheon Climbing (남춘천클라이밍)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-883522d32c"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-027 \"Climb House Chuncheon (클라임 하우스)\": related names \"남춘천클라이밍\" / \"클라임 하우스\" 491 m apart",
+     "ids": [
+      "kr-cr-027"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-028 \"Chuncheon Climbing Center (춘천 클라이밍센터)\": related names \"Nam-Chuncheon Climbing (남춘천클라이밍)\" / \"Chuncheon Climbing Center (춘천 클라이밍센터)\" 441 m apart",
+     "ids": [
+      "kr-cr-028"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-1222 \"Chuncheon Climbing Center (춘천클라이밍센터)\": related names \"Nam-Chuncheon Climbing (남춘천클라이밍)\" / \"Chuncheon Climbing Center (춘천클라이밍센터)\" 444 m apart",
+     "ids": [
+      "seed-1222"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-cr-027",
+    "kr-cr-028",
+    "seed-1222"
+   ]
+  },
+  {
+   "cid": "kr-cr-030",
+   "line": 30,
+   "name": "Climb Together Wonju (클라임투게더 원주점)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-b900288066"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1224 renamed-or-related-name-nearby 11 m",
+     "ids": [
+      "seed-1224"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1224 \"Climb Together (클라임 투게더)\": renamed-or-related-name-nearby (\"Climb Together Wonju (클라임투게더 원주점)\" / \"Climb Together (클라임 투게더)\", 11 m)",
+     "ids": [
+      "seed-1224"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-031 \"Climbing Amigo (클라이밍아미고)\": related names \"클라임투게더 원주점\" / \"클라이밍아미고\" 9104 m apart",
+     "ids": [
+      "kr-cr-031"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-032 \"Gogo Climbing Musildangu (고고클라이밍 무실단구점)\": related names \"클라임투게더 원주점\" / \"고고클라이밍 무실단구점\" 8064 m apart",
+     "ids": [
+      "kr-cr-032"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-033 \"Gogo Climbing Ilsan (고고클라이밍 일산점)\": related names \"클라임투게더 원주점\" / \"고고클라이밍 일산점\" 9386 m apart",
+     "ids": [
+      "kr-cr-033"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-034 \"Cha Climbing Dangye (차클라이밍 단계점)\": related names \"클라임투게더 원주점\" / \"차클라이밍 단계점\" 7973 m apart",
+     "ids": [
+      "kr-cr-034"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-035 \"The Sen Climbing (더쎈클라이밍)\": related names \"클라임투게더 원주점\" / \"더쎈클라이밍\" 9241 m apart",
+     "ids": [
+      "kr-cr-035"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-cr-031",
+    "kr-cr-032",
+    "kr-cr-033",
+    "kr-cr-034",
+    "kr-cr-035",
+    "seed-1224"
+   ]
+  },
+  {
+   "cid": "kr-cr-031",
+   "line": 31,
+   "name": "Climbing Amigo (클라이밍아미고)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-f115757447"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-030 \"Climb Together Wonju (클라임투게더 원주점)\": related names \"클라이밍아미고\" / \"클라임투게더 원주점\" 9104 m apart",
+     "ids": [
+      "kr-cr-030"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-032 \"Gogo Climbing Musildangu (고고클라이밍 무실단구점)\": related names \"클라이밍아미고\" / \"고고클라이밍 무실단구점\" 1393 m apart",
+     "ids": [
+      "kr-cr-032"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-033 \"Gogo Climbing Ilsan (고고클라이밍 일산점)\": related names \"클라이밍아미고\" / \"고고클라이밍 일산점\" 2032 m apart",
+     "ids": [
+      "kr-cr-033"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-034 \"Cha Climbing Dangye (차클라이밍 단계점)\": related names \"클라이밍아미고\" / \"차클라이밍 단계점\" 3426 m apart",
+     "ids": [
+      "kr-cr-034"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-035 \"The Sen Climbing (더쎈클라이밍)\": related names \"클라이밍아미고\" / \"더쎈클라이밍\" 468 m apart",
+     "ids": [
+      "kr-cr-035"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-cr-030",
+    "kr-cr-032",
+    "kr-cr-033",
+    "kr-cr-034",
+    "kr-cr-035"
+   ]
+  },
+  {
+   "cid": "kr-cr-032",
+   "line": 32,
+   "name": "Gogo Climbing Musildangu (고고클라이밍 무실단구점)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-6a3baa2509"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-030 \"Climb Together Wonju (클라임투게더 원주점)\": related names \"고고클라이밍 무실단구점\" / \"클라임투게더 원주점\" 8064 m apart",
+     "ids": [
+      "kr-cr-030"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-031 \"Climbing Amigo (클라이밍아미고)\": related names \"고고클라이밍 무실단구점\" / \"클라이밍아미고\" 1393 m apart",
+     "ids": [
+      "kr-cr-031"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-033 \"Gogo Climbing Ilsan (고고클라이밍 일산점)\": related names \"고고클라이밍 무실단구점\" / \"고고클라이밍 일산점\" 3120 m apart",
+     "ids": [
+      "kr-cr-033"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-034 \"Cha Climbing Dangye (차클라이밍 단계점)\": related names \"고고클라이밍 무실단구점\" / \"차클라이밍 단계점\" 3891 m apart",
+     "ids": [
+      "kr-cr-034"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-035 \"The Sen Climbing (더쎈클라이밍)\": related names \"고고클라이밍 무실단구점\" / \"더쎈클라이밍\" 1794 m apart",
+     "ids": [
+      "kr-cr-035"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-cr-030",
+    "kr-cr-031",
+    "kr-cr-033",
+    "kr-cr-034",
+    "kr-cr-035"
+   ]
+  },
+  {
+   "cid": "kr-cr-033",
+   "line": 33,
+   "name": "Gogo Climbing Ilsan (고고클라이밍 일산점)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-e358a0a6cf"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-030 \"Climb Together Wonju (클라임투게더 원주점)\": related names \"고고클라이밍 일산점\" / \"클라임투게더 원주점\" 9386 m apart",
+     "ids": [
+      "kr-cr-030"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-031 \"Climbing Amigo (클라이밍아미고)\": related names \"고고클라이밍 일산점\" / \"클라이밍아미고\" 2032 m apart",
+     "ids": [
+      "kr-cr-031"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-032 \"Gogo Climbing Musildangu (고고클라이밍 무실단구점)\": related names \"고고클라이밍 일산점\" / \"고고클라이밍 무실단구점\" 3120 m apart",
+     "ids": [
+      "kr-cr-032"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-034 \"Cha Climbing Dangye (차클라이밍 단계점)\": related names \"고고클라이밍 일산점\" / \"차클라이밍 단계점\" 2000 m apart",
+     "ids": [
+      "kr-cr-034"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-035 \"The Sen Climbing (더쎈클라이밍)\": related names \"고고클라이밍 일산점\" / \"더쎈클라이밍\" 1582 m apart",
+     "ids": [
+      "kr-cr-035"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-cr-030",
+    "kr-cr-031",
+    "kr-cr-032",
+    "kr-cr-034",
+    "kr-cr-035"
+   ]
+  },
+  {
+   "cid": "kr-cr-034",
+   "line": 34,
+   "name": "Cha Climbing Dangye (차클라이밍 단계점)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-c7004f2f27"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-030 \"Climb Together Wonju (클라임투게더 원주점)\": related names \"차클라이밍 단계점\" / \"클라임투게더 원주점\" 7973 m apart",
+     "ids": [
+      "kr-cr-030"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-031 \"Climbing Amigo (클라이밍아미고)\": related names \"차클라이밍 단계점\" / \"클라이밍아미고\" 3426 m apart",
+     "ids": [
+      "kr-cr-031"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-032 \"Gogo Climbing Musildangu (고고클라이밍 무실단구점)\": related names \"차클라이밍 단계점\" / \"고고클라이밍 무실단구점\" 3891 m apart",
+     "ids": [
+      "kr-cr-032"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-033 \"Gogo Climbing Ilsan (고고클라이밍 일산점)\": related names \"차클라이밍 단계점\" / \"고고클라이밍 일산점\" 2000 m apart",
+     "ids": [
+      "kr-cr-033"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-035 \"The Sen Climbing (더쎈클라이밍)\": related names \"차클라이밍 단계점\" / \"더쎈클라이밍\" 3115 m apart",
+     "ids": [
+      "kr-cr-035"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-cr-030",
+    "kr-cr-031",
+    "kr-cr-032",
+    "kr-cr-033",
+    "kr-cr-035"
+   ]
+  },
+  {
+   "cid": "kr-cr-035",
+   "line": 35,
+   "name": "The Sen Climbing (더쎈클라이밍)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-5d0044a3a9"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-030 \"Climb Together Wonju (클라임투게더 원주점)\": related names \"더쎈클라이밍\" / \"클라임투게더 원주점\" 9241 m apart",
+     "ids": [
+      "kr-cr-030"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-031 \"Climbing Amigo (클라이밍아미고)\": related names \"더쎈클라이밍\" / \"클라이밍아미고\" 468 m apart",
+     "ids": [
+      "kr-cr-031"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-032 \"Gogo Climbing Musildangu (고고클라이밍 무실단구점)\": related names \"더쎈클라이밍\" / \"고고클라이밍 무실단구점\" 1794 m apart",
+     "ids": [
+      "kr-cr-032"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-033 \"Gogo Climbing Ilsan (고고클라이밍 일산점)\": related names \"더쎈클라이밍\" / \"고고클라이밍 일산점\" 1582 m apart",
+     "ids": [
+      "kr-cr-033"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-034 \"Cha Climbing Dangye (차클라이밍 단계점)\": related names \"더쎈클라이밍\" / \"차클라이밍 단계점\" 3115 m apart",
+     "ids": [
+      "kr-cr-034"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-cr-030",
+    "kr-cr-031",
+    "kr-cr-032",
+    "kr-cr-033",
+    "kr-cr-034"
+   ]
+  },
+  {
+   "cid": "kr-cr-036",
+   "line": 36,
+   "name": "Imnotboulder (아임낫볼더)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-4b7d4d7b96"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1225 co-located 47 m",
+     "ids": [
+      "seed-1225"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1225 \"I'm Not Boulder (아임낫 볼더)\": co-located (\"Imnotboulder (아임낫볼더)\" / \"I'm Not Boulder (아임낫 볼더)\", 47 m)",
+     "ids": [
+      "seed-1225"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-037 \"A-Gym Climbing (에이짐클라이밍)\": related names \"아임낫볼더\" / \"에이짐클라이밍\" 1399 m apart",
+     "ids": [
+      "kr-cr-037"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-038 \"Sokcho Climbing Gym (속초클라이밍짐)\": related names \"아임낫볼더\" / \"속초클라이밍짐\" 1151 m apart",
+     "ids": [
+      "kr-cr-038"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-cr-037",
+    "kr-cr-038",
+    "seed-1225"
+   ]
+  },
+  {
+   "cid": "kr-cr-037",
+   "line": 37,
+   "name": "A-Gym Climbing (에이짐클라이밍)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-3909e430ca"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-036 \"Imnotboulder (아임낫볼더)\": related names \"에이짐클라이밍\" / \"아임낫볼더\" 1399 m apart",
+     "ids": [
+      "kr-cr-036"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-038 \"Sokcho Climbing Gym (속초클라이밍짐)\": related names \"에이짐클라이밍\" / \"속초클라이밍짐\" 1033 m apart",
+     "ids": [
+      "kr-cr-038"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-cr-036",
+    "kr-cr-038"
+   ]
+  },
+  {
+   "cid": "kr-cr-038",
+   "line": 38,
+   "name": "Sokcho Climbing Gym (속초클라이밍짐)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-e5dfe9fc2b"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-036 \"Imnotboulder (아임낫볼더)\": related names \"속초클라이밍짐\" / \"아임낫볼더\" 1151 m apart",
+     "ids": [
+      "kr-cr-036"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-037 \"A-Gym Climbing (에이짐클라이밍)\": related names \"속초클라이밍짐\" / \"에이짐클라이밍\" 1033 m apart",
+     "ids": [
+      "kr-cr-037"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-cr-036",
+    "kr-cr-037"
+   ]
+  },
+  {
+   "cid": "kr-cr-039",
+   "line": 39,
+   "name": "Gangneung Climbing (강릉클라이밍)",
+   "class": "existing",
+   "suggested": "same-as seed-1226",
+   "importer": {
+    "class": "existing",
+    "id": "seed-1226",
+    "match": {
+     "id": "seed-1226",
+     "name": "Gangneung Climbing (강릉클라이밍)",
+     "reason": "same-name",
+     "dist_m": 4
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-1226 but content differs (suburb, lat, lng); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1226 \"Gangneung Climbing (강릉클라이밍)\": same-name (\"Gangneung Climbing (강릉클라이밍)\" / \"Gangneung Climbing (강릉클라이밍)\", 4 m)",
+     "ids": [
+      "seed-1226"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-1226"
+   ]
+  },
+  {
+   "cid": "kr-cr-040",
+   "line": 40,
+   "name": "Hongcheon Sport Climbing Center (홍천스포츠클라이밍센터)",
+   "class": "blocked",
+   "suggested": "reject not-a-gym",
+   "importer": {
+    "class": "new",
+    "id": "g-df0170680c"
+   },
+   "blockers": [
+    {
+     "code": "not-a-gym",
+     "detail": "category other"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "kr-cr-041",
+   "line": 41,
+   "name": "Ascent Climbing Manseong (어센트클라이밍 만성)",
+   "class": "existing",
+   "suggested": "same-as seed-1240",
+   "importer": {
+    "class": "existing",
+    "id": "seed-1240",
+    "match": {
+     "id": "seed-1240",
+     "name": "Ascent Climbing Manseong (Jeonju) (어센트클라이밍 만성점)",
+     "reason": "same-name",
+     "dist_m": 0
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-1240 but content differs (name, suburb, lat, lng); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1240 \"Ascent Climbing Manseong (Jeonju) (어센트클라이밍 만성점)\": same-name (\"Ascent Climbing Manseong (어센트클라이밍 만성)\" / \"Ascent Climbing Manseong (Jeonju) (어센트클라이밍 만성점)\", 0 m)",
+     "ids": [
+      "seed-1240"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-042 \"Ascent Climbing Jeonbuk National University (어센트클라이밍 전북대)\": related names \"어센트클라이밍 만성\" / \"어센트클라이밍 전북대\" 4219 m apart",
+     "ids": [
+      "kr-cr-042"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-043 \"Boulder Den (볼더덴)\": related names \"어센트클라이밍 만성\" / \"볼더덴\" 4363 m apart",
+     "ids": [
+      "kr-cr-043"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-044 \"Hard Rock Climbing Center (하드락 클라이밍센터)\": related names \"어센트클라이밍 만성\" / \"하드락 클라이밍센터\" 3619 m apart",
+     "ids": [
+      "kr-cr-044"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-046 \"Jeonju Bawi Oreum Climbing (전주바위오름 클라이밍)\": related names \"어센트클라이밍 만성\" / \"전주바위오름 클라이밍\" 4519 m apart",
+     "ids": [
+      "kr-cr-046"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-cr-042",
+    "kr-cr-043",
+    "kr-cr-044",
+    "kr-cr-046",
+    "seed-1240"
+   ]
+  },
+  {
+   "cid": "kr-cr-042",
+   "line": 42,
+   "name": "Ascent Climbing Jeonbuk National University (어센트클라이밍 전북대)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-a8664d7f99"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-041 \"Ascent Climbing Manseong (어센트클라이밍 만성)\": related names \"어센트클라이밍 전북대\" / \"어센트클라이밍 만성\" 4219 m apart",
+     "ids": [
+      "kr-cr-041"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-043 \"Boulder Den (볼더덴)\": related names \"어센트클라이밍 전북대\" / \"볼더덴\" 1786 m apart",
+     "ids": [
+      "kr-cr-043"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-044 \"Hard Rock Climbing Center (하드락 클라이밍센터)\": related names \"어센트클라이밍 전북대\" / \"하드락 클라이밍센터\" 3934 m apart",
+     "ids": [
+      "kr-cr-044"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-046 \"Jeonju Bawi Oreum Climbing (전주바위오름 클라이밍)\": related names \"어센트클라이밍 전북대\" / \"전주바위오름 클라이밍\" 3233 m apart",
+     "ids": [
+      "kr-cr-046"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-cr-041",
+    "kr-cr-043",
+    "kr-cr-044",
+    "kr-cr-046"
+   ]
+  },
+  {
+   "cid": "kr-cr-043",
+   "line": 43,
+   "name": "Boulder Den (볼더덴)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-bc7b87a892"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1235 co-located 1 m",
+     "ids": [
+      "seed-1235"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1235 \"Jeonju Hola Climbing Center (전주올라클라이밍센터)\": co-located (\"Boulder Den (볼더덴)\" / \"Jeonju Hola Climbing Center (전주올라클라이밍센터)\", 1 m)",
+     "ids": [
+      "seed-1235"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-041 \"Ascent Climbing Manseong (어센트클라이밍 만성)\": related names \"볼더덴\" / \"어센트클라이밍 만성\" 4363 m apart",
+     "ids": [
+      "kr-cr-041"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-042 \"Ascent Climbing Jeonbuk National University (어센트클라이밍 전북대)\": related names \"볼더덴\" / \"어센트클라이밍 전북대\" 1786 m apart",
+     "ids": [
+      "kr-cr-042"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-044 \"Hard Rock Climbing Center (하드락 클라이밍센터)\": related names \"볼더덴\" / \"하드락 클라이밍센터\" 5350 m apart",
+     "ids": [
+      "kr-cr-044"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-046 \"Jeonju Bawi Oreum Climbing (전주바위오름 클라이밍)\": related names \"볼더덴\" / \"전주바위오름 클라이밍\" 4918 m apart",
+     "ids": [
+      "kr-cr-046"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-cr-041",
+    "kr-cr-042",
+    "kr-cr-044",
+    "kr-cr-046",
+    "seed-1235"
+   ]
+  },
+  {
+   "cid": "kr-cr-044",
+   "line": 44,
+   "name": "Hard Rock Climbing Center (하드락 클라이밍센터)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-03543abbf0"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-041 \"Ascent Climbing Manseong (어센트클라이밍 만성)\": related names \"하드락 클라이밍센터\" / \"어센트클라이밍 만성\" 3619 m apart",
+     "ids": [
+      "kr-cr-041"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-042 \"Ascent Climbing Jeonbuk National University (어센트클라이밍 전북대)\": related names \"하드락 클라이밍센터\" / \"어센트클라이밍 전북대\" 3934 m apart",
+     "ids": [
+      "kr-cr-042"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-043 \"Boulder Den (볼더덴)\": related names \"하드락 클라이밍센터\" / \"볼더덴\" 5350 m apart",
+     "ids": [
+      "kr-cr-043"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-046 \"Jeonju Bawi Oreum Climbing (전주바위오름 클라이밍)\": related names \"하드락 클라이밍센터\" / \"전주바위오름 클라이밍\" 1463 m apart",
+     "ids": [
+      "kr-cr-046"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-cr-041",
+    "kr-cr-042",
+    "kr-cr-043",
+    "kr-cr-046"
+   ]
+  },
+  {
+   "cid": "kr-cr-045",
+   "line": 45,
+   "name": "Han's Climbing Center (한'S 클라이밍센터)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-bcbcc2aabd"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1236 co-located 7 m",
+     "ids": [
+      "seed-1236"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1236 \"Hans Climbing (Jeonju) (한스클라이밍 전주점)\": co-located (\"Han's Climbing Center (한'S 클라이밍센터)\" / \"Hans Climbing (Jeonju) (한스클라이밍 전주점)\", 7 m)",
+     "ids": [
+      "seed-1236"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-1236"
+   ]
+  },
+  {
+   "cid": "kr-cr-046",
+   "line": 46,
+   "name": "Jeonju Bawi Oreum Climbing (전주바위오름 클라이밍)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-e13a0399e8"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-041 \"Ascent Climbing Manseong (어센트클라이밍 만성)\": related names \"전주바위오름 클라이밍\" / \"어센트클라이밍 만성\" 4519 m apart",
+     "ids": [
+      "kr-cr-041"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-042 \"Ascent Climbing Jeonbuk National University (어센트클라이밍 전북대)\": related names \"전주바위오름 클라이밍\" / \"어센트클라이밍 전북대\" 3233 m apart",
+     "ids": [
+      "kr-cr-042"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-043 \"Boulder Den (볼더덴)\": related names \"전주바위오름 클라이밍\" / \"볼더덴\" 4918 m apart",
+     "ids": [
+      "kr-cr-043"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-044 \"Hard Rock Climbing Center (하드락 클라이밍센터)\": related names \"전주바위오름 클라이밍\" / \"하드락 클라이밍센터\" 1463 m apart",
+     "ids": [
+      "kr-cr-044"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-cr-041",
+    "kr-cr-042",
+    "kr-cr-043",
+    "kr-cr-044"
+   ]
+  },
+  {
+   "cid": "kr-cr-047",
+   "line": 47,
+   "name": "BK Climbing Gym (BK클라이밍)",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-ff7b49148c"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "kr-cr-048",
+   "line": 48,
+   "name": "Climb Farm (클라임팜)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-d2f41d0d33"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1239 renamed-or-related-name-nearby 14 m",
+     "ids": [
+      "seed-1239"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1239 \"ClimbFarm (Iksan) (클라임팜)\": renamed-or-related-name-nearby (\"Climb Farm (클라임팜)\" / \"ClimbFarm (Iksan) (클라임팜)\", 14 m)",
+     "ids": [
+      "seed-1239"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-051 \"Iksan Sport Climbing Hall (익산시스포츠클라이밍장)\": related names \"클라임팜\" / \"익산시스포츠클라이밍장\" 3034 m apart",
+     "ids": [
+      "kr-cr-051"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-cr-051",
+    "seed-1239"
+   ]
+  },
+  {
+   "cid": "kr-cr-049",
+   "line": 49,
+   "name": "Hold On Climbing (홀드온클라이밍)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-3c7ec86df5"
+   },
+   "flags": [
+    {
+     "code": "nearby-gym",
+     "detail": "seed-1238 \"Gunsan Sports Climbing Center (군산스포츠클라이밍센타)\": 149 m apart",
+     "ids": [
+      "seed-1238"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-050 \"Gunsan Sport Climbing Center (군산스포츠클라이밍센터)\": related names \"홀드온클라이밍\" / \"군산스포츠클라이밍센터\" 150 m apart",
+     "ids": [
+      "kr-cr-050"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-cr-050",
+    "seed-1238"
+   ]
+  },
+  {
+   "cid": "kr-cr-050",
+   "line": 50,
+   "name": "Gunsan Sport Climbing Center (군산스포츠클라이밍센터)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-ee05c9b8f2"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1238 renamed-or-related-name-nearby 1 m",
+     "ids": [
+      "seed-1238"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1238 \"Gunsan Sports Climbing Center (군산스포츠클라이밍센타)\": renamed-or-related-name-nearby (\"Gunsan Sport Climbing Center (군산스포츠클라이밍센터)\" / \"Gunsan Sports Climbing Center (군산스포츠클라이밍센타)\", 1 m)",
+     "ids": [
+      "seed-1238"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-049 \"Hold On Climbing (홀드온클라이밍)\": related names \"군산스포츠클라이밍센터\" / \"홀드온클라이밍\" 150 m apart",
+     "ids": [
+      "kr-cr-049"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-1237 \"Gunsan Climbing Center ((사)군산클라이밍스포츠클럽)\": related names \"Gunsan Sport Climbing Center (군산스포츠클라이밍센터)\" / \"Gunsan Climbing Center ((사)군산클라이밍스포츠클럽)\" 2845 m apart",
+     "ids": [
+      "seed-1237"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-cr-049",
+    "seed-1237",
+    "seed-1238"
+   ]
+  },
+  {
+   "cid": "kr-cr-051",
+   "line": 51,
+   "name": "Iksan Sport Climbing Hall (익산시스포츠클라이밍장)",
+   "class": "blocked",
+   "suggested": "reject not-a-gym",
+   "importer": {
+    "class": "new",
+    "id": "g-79ce22dfcf"
+   },
+   "blockers": [
+    {
+     "code": "not-a-gym",
+     "detail": "category other"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-048 \"Climb Farm (클라임팜)\": related names \"익산시스포츠클라이밍장\" / \"클라임팜\" 3034 m apart",
+     "ids": [
+      "kr-cr-048"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-cr-048"
+   ]
+  },
+  {
+   "cid": "kr-cr-052",
+   "line": 52,
+   "name": "Fix Boulder Yeondong (픽스볼더 연동점)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-b048332f6d"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-053 \"Fix Boulder Ara (픽스볼더 아라점)\": related names \"픽스볼더 연동점\" / \"픽스볼더 아라점\" 6684 m apart",
+     "ids": [
+      "kr-cr-053"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-054 \"Jeju Climbing School (제주클라이밍스쿨)\": related names \"픽스볼더 연동점\" / \"제주클라이밍스쿨\" 3001 m apart",
+     "ids": [
+      "kr-cr-054"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-1212 \"Fix Boulder\": related names \"Fix Boulder Yeondong (픽스볼더 연동점)\" / \"Fix Boulder\" 309 m apart",
+     "ids": [
+      "seed-1212"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-cr-053",
+    "kr-cr-054",
+    "seed-1212"
+   ]
+  },
+  {
+   "cid": "kr-cr-053",
+   "line": 53,
+   "name": "Fix Boulder Ara (픽스볼더 아라점)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-ad70919754"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-052 \"Fix Boulder Yeondong (픽스볼더 연동점)\": related names \"픽스볼더 아라점\" / \"픽스볼더 연동점\" 6684 m apart",
+     "ids": [
+      "kr-cr-052"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-054 \"Jeju Climbing School (제주클라이밍스쿨)\": related names \"픽스볼더 아라점\" / \"제주클라이밍스쿨\" 5528 m apart",
+     "ids": [
+      "kr-cr-054"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-1212 \"Fix Boulder\": related names \"Fix Boulder Ara (픽스볼더 아라점)\" / \"Fix Boulder\" 6406 m apart",
+     "ids": [
+      "seed-1212"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-cr-052",
+    "kr-cr-054",
+    "seed-1212"
+   ]
+  },
+  {
+   "cid": "kr-cr-054",
+   "line": 54,
+   "name": "Jeju Climbing School (제주클라이밍스쿨)",
+   "class": "existing",
+   "suggested": "same-as seed-1214",
+   "importer": {
+    "class": "existing",
+    "id": "seed-1214",
+    "match": {
+     "id": "seed-1214",
+     "name": "Jeju Climbing School",
+     "reason": "same-name",
+     "dist_m": 912
+    }
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-1214 but content differs (name, lat, lng, address, types); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1214 \"Jeju Climbing School\": same-name (\"Jeju Climbing School (제주클라이밍스쿨)\" / \"Jeju Climbing School\", 912 m)",
+     "ids": [
+      "seed-1214"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-052 \"Fix Boulder Yeondong (픽스볼더 연동점)\": related names \"제주클라이밍스쿨\" / \"픽스볼더 연동점\" 3001 m apart",
+     "ids": [
+      "kr-cr-052"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-cr-053 \"Fix Boulder Ara (픽스볼더 아라점)\": related names \"제주클라이밍스쿨\" / \"픽스볼더 아라점\" 5528 m apart",
+     "ids": [
+      "kr-cr-053"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-cr-052",
+    "kr-cr-053",
+    "seed-1214"
+   ]
+  }
+ ],
+ "reconcile_sha256": "cedf07bde00de11fbee351061be9862900b3d8f19798251d75056c2d2a75f0c8"
+}

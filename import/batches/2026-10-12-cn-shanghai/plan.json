@@ -1,0 +1,128 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-12-cn-shanghai",
+ "index": {
+  "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
+  "count": 3294,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-06-kr-seoul",
+  "2026-10-12-cn-beijing-chengdu",
+  "2026-10-12-cn-kunming-changsha",
+  "2026-10-12-kr-busan-gyeongnam",
+  "2026-10-12-kr-central-regions",
+  "2026-10-12-kr-daegu-gyeongbuk",
+  "2026-10-12-kr-gyeonggi-north",
+  "2026-10-12-kr-gyeonggi-south",
+  "2026-10-12-kr-gyeonggi-west",
+  "2026-10-12-kr-incheon"
+ ],
+ "counts": {
+  "records": 11,
+  "new": 11,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "2a831748ffa4b0a4747c50dac14c0d59f2d02cd18edd15d425a50244b421cecd",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-4562d140ca",
+   "id_frozen": true,
+   "name": "CAMP4 Climbing (Shanghai 8 Hao Qiao) [CAMP4岩肆上海店]",
+   "country": "CN"
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-1e0e1780e6",
+   "id_frozen": true,
+   "name": "YS Climbing (Xintiandi Dongtai Li) [岩时攀岩新天地东台里店]",
+   "country": "CN"
+  },
+  {
+   "line": 3,
+   "class": "new",
+   "id": "g-3e1e180a6a",
+   "id_frozen": true,
+   "name": "YS Climbing (Luyue Tiandi) [岩时攀岩陆悦天地店]",
+   "country": "CN"
+  },
+  {
+   "line": 4,
+   "class": "new",
+   "id": "g-b4993a5489",
+   "id_frozen": true,
+   "name": "Pink Bouldering [PINK BOULDERING粉抱攀岩馆]",
+   "country": "CN"
+  },
+  {
+   "line": 5,
+   "class": "new",
+   "id": "g-cac758ee08",
+   "id_frozen": true,
+   "name": "DOME Climbing Camp (Qianwan MEGA) [DOME攀岩营地闵行前湾印象城店]",
+   "country": "CN"
+  },
+  {
+   "line": 6,
+   "class": "new",
+   "id": "g-f4af64c291",
+   "id_frozen": true,
+   "name": "HEY BOULDERING (MixC Shanghai) [HEY BOULDERING嘿抱万象城店]",
+   "country": "CN"
+  },
+  {
+   "line": 7,
+   "class": "new",
+   "id": "g-cc1b394184",
+   "id_frozen": true,
+   "name": "BLOC Climbing [BLOC攀岩]",
+   "country": "CN"
+  },
+  {
+   "line": 8,
+   "class": "new",
+   "id": "g-309bc8bd1e",
+   "id_frozen": true,
+   "name": "Cishan Climbing (Longfor Hongqiao Tiandi) [此山攀岩龙湖虹桥天街店]",
+   "country": "CN"
+  },
+  {
+   "line": 9,
+   "class": "new",
+   "id": "g-6d4f06724b",
+   "id_frozen": true,
+   "name": "SIZER Climbing (Kangheng Lu) [SIZER抱石攀岩馆康恒路]",
+   "country": "CN"
+  },
+  {
+   "line": 10,
+   "class": "new",
+   "id": "g-8433519a90",
+   "id_frozen": true,
+   "name": "Benchmark 3.0 (Livat Hub) [Benchmark攀岩馆荟聚中心]",
+   "country": "CN"
+  },
+  {
+   "line": 11,
+   "class": "new",
+   "id": "g-40c7268586",
+   "id_frozen": true,
+   "name": "Infinite Climbing (Changning KiNG88) [无界攀岩长宁八八中心店]",
+   "country": "CN"
+  }
+ ]
+}

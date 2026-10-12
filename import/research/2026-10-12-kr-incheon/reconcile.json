@@ -1,0 +1,2837 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-12-kr-incheon",
+ "inputs": {
+  "section_sha256": "74415b48a071c13379eff11185e831e1eae5b1be3f534d3c004b00682270de10",
+  "sources_sha256": "979268f2c3fefa51a7963dfd24e65f76d64b5a6626be4db51ed54ff1bf9d29a3",
+  "candidates_sha256": "129e7abc9b5c9703ba61feab40224d8297dfd412a61aab2f3a9379dfc819f089",
+  "index": {
+   "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
+   "count": 3294
+  },
+  "staged_batches_compared": [
+   "2026-10-06-kr-seoul"
+  ],
+  "other_sections_compared": [
+   {
+    "id": "2026-10-05-korea-gwangju-jeollanam",
+    "candidates_sha256": "f4858cc28d4f7eb5ff4a243da82dea80ec3fe7700505d83ec1d3bd869a1aacb7"
+   },
+   {
+    "id": "2026-10-05-korea-holds",
+    "candidates_sha256": "5d20a4add212fcf30638867628a92a2c7721187d7f8e1870e937e6f0a1fabe06"
+   },
+   {
+    "id": "2026-10-05-korea-owner-checks",
+    "candidates_sha256": "d6d0aa289502fce33cd00c4b695f65d41053095ab60e020beb4fad9f3cccf227"
+   },
+   {
+    "id": "2026-10-06-kr-seoul",
+    "candidates_sha256": "f78315198a507d6235619c81ff4be71a037392dfbb0c6658a6d40cee9b000487"
+   },
+   {
+    "id": "2026-10-12-kr-busan-gyeongnam",
+    "candidates_sha256": "0bca4015aa37d426d6c4dc4681299927e887914fc21a2cb194940851eb0b6836"
+   },
+   {
+    "id": "2026-10-12-kr-daegu-gyeongbuk",
+    "candidates_sha256": "fad820c102695c3e95313cc9571e31ee860689e0a89af30206b8b30c8e8d869a"
+   },
+   {
+    "id": "2026-10-12-kr-gyeonggi-north",
+    "candidates_sha256": "708251f8989853c6999c022124830c9fba8762568a02f5318365b04505d1c93f"
+   },
+   {
+    "id": "2026-10-12-kr-gyeonggi-south",
+    "candidates_sha256": "6439e3e858747f6f3536e740c7fdcb3aa5d771c49fcdef78bcdd2d42806b6dd8"
+   },
+   {
+    "id": "2026-10-12-kr-gyeonggi-west",
+    "candidates_sha256": "4d037f6195a38f8dca699ccecade187cea203aa16f3f6642c4b43c2079a525a7"
+   }
+  ]
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 15,
+  "ready": 0,
+  "review": 9,
+  "blocked": 6,
+  "existing": 0,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "kr-ic-001",
+   "line": 1,
+   "name": "Discovery Climb Square ICN (디스커버리클라이밍 클라임스퀘어 ICN)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-84f2028f12"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-002 \"Discovery Climb Square Cheongna (디스커버리클라이밍 클라임스퀘어 청라점)\": related names \"Discovery Climb Square ICN (디스커버리클라이밍 클라임스퀘어 ICN)\" / \"Discovery Climb Square Cheongna (디스커버리클라이밍 클라임스퀘어 청라점)\" 7215 m apart",
+     "ids": [
+      "kr-ic-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-1215 \"Discovery Climbing Square ICN\": related names \"Discovery Climb Square ICN (디스커버리클라이밍 클라임스퀘어 ICN)\" / \"Discovery Climbing Square ICN\" 5920 m apart",
+     "ids": [
+      "seed-1215"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-ic-002",
+    "seed-1215"
+   ]
+  },
+  {
+   "cid": "kr-ic-002",
+   "line": 2,
+   "name": "Discovery Climb Square Cheongna (디스커버리클라이밍 클라임스퀘어 청라점)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-23f992cafd"
+   },
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-north#kr-gn-009 \"Pick Climbing Gimpo (픽 클라이밍)\": related-name-nearby related names \"디스커버리클라이밍 클라임스퀘어 청라점\" / \"픽 클라이밍\" 12673 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-north#kr-gn-009"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-north#kr-gn-018 \"Jam Climbing Gimpo (잼클라이밍)\": related-name-nearby related names \"디스커버리클라이밍 클라임스퀘어 청라점\" / \"잼클라이밍\" 11873 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-north#kr-gn-018"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-north#kr-gn-019 \"Kikl Climbing Pungmu (키클 클라이밍 풍무점)\": related-name-nearby related names \"디스커버리클라이밍 클라임스퀘어 청라점\" / \"키클 클라이밍 풍무점\" 10286 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-north#kr-gn-019"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-001 \"Catchstone Climbing Bucheon Station (캐치스톤클라이밍짐 부천역점)\": related-name-nearby related names \"디스커버리클라이밍 클라임스퀘어 청라점\" / \"캐치스톤클라이밍짐 부천역점\" 12618 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-001"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-010 \"World Climbing (월드클라이밍)\": related-name-nearby related names \"디스커버리클라이밍 클라임스퀘어 청라점\" / \"월드클라이밍\" 9470 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-010"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-018 \"Bucheon Climbing Center (부천클라이밍센터)\": related-name-nearby related names \"디스커버리클라이밍 클라임스퀘어 청라점\" / \"부천클라이밍센터\" 11002 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-018"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-019 \"Pax Climbing Center (팍스클라이밍)\": related-name-nearby related names \"디스커버리클라이밍 클라임스퀘어 청라점\" / \"팍스클라이밍\" 13496 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-019"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-001 \"Discovery Climb Square ICN (디스커버리클라이밍 클라임스퀘어 ICN)\": related names \"Discovery Climb Square Cheongna (디스커버리클라이밍 클라임스퀘어 청라점)\" / \"Discovery Climb Square ICN (디스커버리클라이밍 클라임스퀘어 ICN)\" 7215 m apart",
+     "ids": [
+      "kr-ic-001"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-004 \"B-bloc Climbing Yeongjong Hanul-city (비블럭클라이밍 영종하늘도시점)\": related names \"디스커버리클라이밍 클라임스퀘어 청라점\" / \"비블럭클라이밍 영종하늘도시점\" 9518 m apart",
+     "ids": [
+      "kr-ic-004"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-005 \"Climbing Zoom (클라이밍줌)\": related names \"디스커버리클라이밍 클라임스퀘어 청라점\" / \"클라이밍줌\" 13293 m apart",
+     "ids": [
+      "kr-ic-005"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-007 \"Boly Climbing (볼리 클라이밍)\": related names \"디스커버리클라이밍 클라임스퀘어 청라점\" / \"볼리 클라이밍\" 14983 m apart",
+     "ids": [
+      "kr-ic-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-008 \"Bupyeong Climbing Center (부평클라이밍센터)\": related names \"디스커버리클라이밍 클라임스퀘어 청라점\" / \"부평클라이밍센터\" 6582 m apart",
+     "ids": [
+      "kr-ic-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-009 \"Ganseok Climbing (간석클라이밍)\": related names \"디스커버리클라이밍 클라임스퀘어 청라점\" / \"간석클라이밍\" 9019 m apart",
+     "ids": [
+      "kr-ic-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-011 \"Incheon Best Climbing Center (인천베스트클라이밍센타)\": related names \"디스커버리클라이밍 클라임스퀘어 청라점\" / \"인천베스트클라이밍센타\" 6711 m apart",
+     "ids": [
+      "kr-ic-011"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-012 \"Seo-Incheon Climbing (서인천 클라이밍)\": related names \"디스커버리클라이밍 클라임스퀘어 청라점\" / \"서인천 클라이밍\" 2493 m apart",
+     "ids": [
+      "kr-ic-012"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-013 \"Incheon Gyeyang Climbing Center (인천계양클라이밍센터)\": related names \"디스커버리클라이밍 클라임스퀘어 청라점\" / \"인천계양클라이밍센터\" 7239 m apart",
+     "ids": [
+      "kr-ic-013"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-014 \"Incheon Munhak Stadium Climbing Wall (인천문학경기장암벽장)\": related names \"디스커버리클라이밍 클라임스퀘어 청라점\" / \"인천문학경기장암벽장\" 11671 m apart",
+     "ids": [
+      "kr-ic-014"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-015 \"Incheon Indoor Climbing Wall (인천실내암장)\": related names \"디스커버리클라이밍 클라임스퀘어 청라점\" / \"인천실내암장\" 13018 m apart",
+     "ids": [
+      "kr-ic-015"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-1215 \"Discovery Climbing Square ICN\": related names \"Discovery Climb Square Cheongna (디스커버리클라이밍 클라임스퀘어 청라점)\" / \"Discovery Climbing Square ICN\" 2378 m apart",
+     "ids": [
+      "seed-1215"
+     ]
+    }
+   ],
+   "review_ids": [
+    "2026-10-12-kr-gyeonggi-north#kr-gn-009",
+    "2026-10-12-kr-gyeonggi-north#kr-gn-018",
+    "2026-10-12-kr-gyeonggi-north#kr-gn-019",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-001",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-010",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-018",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-019",
+    "kr-ic-001",
+    "kr-ic-004",
+    "kr-ic-005",
+    "kr-ic-007",
+    "kr-ic-008",
+    "kr-ic-009",
+    "kr-ic-011",
+    "kr-ic-012",
+    "kr-ic-013",
+    "kr-ic-014",
+    "kr-ic-015",
+    "seed-1215"
+   ]
+  },
+  {
+   "cid": "kr-ic-003",
+   "line": 3,
+   "name": "B-bloc Climbing Songdo (비블럭 클라이밍 송도점)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-ce91413609"
+   },
+   "flags": [
+    {
+     "code": "alias-match",
+     "detail": "candidate kr-ic-010 \"Discovery Climb Square Songdo (디스커버리클라이밍 클라임스퀘어 송도점)\": similar-name-nearby (\"B-bloc Climbing Songdo (비블럭 클라이밍 송도점)\" / \"Climb Square Songdo\", 247 m)",
+     "ids": [
+      "kr-ic-010"
+     ]
+    },
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1164 same-name-but-pin-differs 1679 m",
+     "ids": [
+      "seed-1164"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1164 \"B.bloc Climbing Songdo\": same-name-but-pin-differs (\"B-bloc Climbing Songdo (비블럭 클라이밍 송도점)\" / \"B.bloc Climbing Songdo\", 1679 m)",
+     "ids": [
+      "seed-1164"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-013 \"Ansan Seonbu Climbing (안산 선부 클라이밍)\": related-name-nearby related names \"비블럭 클라이밍 송도점\" / \"안산 선부 클라이밍\" 14099 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-013"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-014 \"Siheung Catch Climbing Gym (시흥캐치클라이밍짐)\": related-name-nearby related names \"비블럭 클라이밍 송도점\" / \"시흥캐치클라이밍짐\" 11098 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-014"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-016 \"Siheung Sports Climbing Center (시흥스포츠클라이밍센터)\": related-name-nearby related names \"비블럭 클라이밍 송도점\" / \"시흥스포츠클라이밍센터\" 13089 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-016"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-017 \"Bouldergarden Siheung (볼더가든클라이밍)\": related-name-nearby related names \"비블럭 클라이밍 송도점\" / \"볼더가든클라이밍\" 14234 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-017"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-018 \"Bucheon Climbing Center (부천클라이밍센터)\": related-name-nearby related names \"비블럭 클라이밍 송도점\" / \"부천클라이밍센터\" 14897 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-018"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-021 \"Just Climbing Center (저스트클라이밍센타)\": related-name-nearby related names \"비블럭 클라이밍 송도점\" / \"저스트클라이밍센타\" 13553 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-021"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-005 \"Climbing Zoom (클라이밍줌)\": related names \"비블럭 클라이밍 송도점\" / \"클라이밍줌\" 4053 m apart",
+     "ids": [
+      "kr-ic-005"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-006 \"Hub Climbing (허브클라이밍)\": related names \"비블럭 클라이밍 송도점\" / \"허브클라이밍\" 5762 m apart",
+     "ids": [
+      "kr-ic-006"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-007 \"Boly Climbing (볼리 클라이밍)\": related names \"비블럭 클라이밍 송도점\" / \"볼리 클라이밍\" 8908 m apart",
+     "ids": [
+      "kr-ic-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-008 \"Bupyeong Climbing Center (부평클라이밍센터)\": related names \"비블럭 클라이밍 송도점\" / \"부평클라이밍센터\" 12917 m apart",
+     "ids": [
+      "kr-ic-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-009 \"Ganseok Climbing (간석클라이밍)\": related names \"비블럭 클라이밍 송도점\" / \"간석클라이밍\" 9430 m apart",
+     "ids": [
+      "kr-ic-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-014 \"Incheon Munhak Stadium Climbing Wall (인천문학경기장암벽장)\": related names \"비블럭 클라이밍 송도점\" / \"인천문학경기장암벽장\" 6522 m apart",
+     "ids": [
+      "kr-ic-014"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-015 \"Incheon Indoor Climbing Wall (인천실내암장)\": related names \"비블럭 클라이밍 송도점\" / \"인천실내암장\" 5836 m apart",
+     "ids": [
+      "kr-ic-015"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-1216 \"B.bloc Climbing Yeongjong\": related names \"B-bloc Climbing Songdo (비블럭 클라이밍 송도점)\" / \"B.bloc Climbing Yeongjong\" 11028 m apart",
+     "ids": [
+      "seed-1216"
+     ]
+    }
+   ],
+   "review_ids": [
+    "2026-10-12-kr-gyeonggi-west#kr-gw-013",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-014",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-016",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-017",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-018",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-021",
+    "kr-ic-005",
+    "kr-ic-006",
+    "kr-ic-007",
+    "kr-ic-008",
+    "kr-ic-009",
+    "kr-ic-010",
+    "kr-ic-014",
+    "kr-ic-015",
+    "seed-1164",
+    "seed-1216"
+   ]
+  },
+  {
+   "cid": "kr-ic-004",
+   "line": 4,
+   "name": "B-bloc Climbing Yeongjong Hanul-city (비블럭클라이밍 영종하늘도시점)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-9717a6e0ac"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-002 \"Discovery Climb Square Cheongna (디스커버리클라이밍 클라임스퀘어 청라점)\": related names \"비블럭클라이밍 영종하늘도시점\" / \"디스커버리클라이밍 클라임스퀘어 청라점\" 9518 m apart",
+     "ids": [
+      "kr-ic-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-005 \"Climbing Zoom (클라이밍줌)\": related names \"비블럭클라이밍 영종하늘도시점\" / \"클라이밍줌\" 12901 m apart",
+     "ids": [
+      "kr-ic-005"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-008 \"Bupyeong Climbing Center (부평클라이밍센터)\": related names \"비블럭클라이밍 영종하늘도시점\" / \"부평클라이밍센터\" 12702 m apart",
+     "ids": [
+      "kr-ic-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-009 \"Ganseok Climbing (간석클라이밍)\": related names \"비블럭클라이밍 영종하늘도시점\" / \"간석클라이밍\" 12389 m apart",
+     "ids": [
+      "kr-ic-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-011 \"Incheon Best Climbing Center (인천베스트클라이밍센타)\": related names \"비블럭클라이밍 영종하늘도시점\" / \"인천베스트클라이밍센타\" 14900 m apart",
+     "ids": [
+      "kr-ic-011"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-012 \"Seo-Incheon Climbing (서인천 클라이밍)\": related names \"비블럭클라이밍 영종하늘도시점\" / \"서인천 클라이밍\" 10413 m apart",
+     "ids": [
+      "kr-ic-012"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-014 \"Incheon Munhak Stadium Climbing Wall (인천문학경기장암벽장)\": related names \"비블럭클라이밍 영종하늘도시점\" / \"인천문학경기장암벽장\" 13155 m apart",
+     "ids": [
+      "kr-ic-014"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-015 \"Incheon Indoor Climbing Wall (인천실내암장)\": related names \"비블럭클라이밍 영종하늘도시점\" / \"인천실내암장\" 14355 m apart",
+     "ids": [
+      "kr-ic-015"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-1164 \"B.bloc Climbing Songdo\": related names \"b.bloc Yeongjong\" / \"B.bloc Climbing Songdo\" 13735 m apart",
+     "ids": [
+      "seed-1164"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-1216 \"B.bloc Climbing Yeongjong\": related names \"B-bloc Climbing Yeongjong Hanul-city (비블럭클라이밍 영종하늘도시점)\" / \"B.bloc Climbing Yeongjong\" 5578 m apart",
+     "ids": [
+      "seed-1216"
+     ]
+    }
+   ],
+   "review_ids": [
+    "kr-ic-002",
+    "kr-ic-005",
+    "kr-ic-008",
+    "kr-ic-009",
+    "kr-ic-011",
+    "kr-ic-012",
+    "kr-ic-014",
+    "kr-ic-015",
+    "seed-1164",
+    "seed-1216"
+   ]
+  },
+  {
+   "cid": "kr-ic-005",
+   "line": 5,
+   "name": "Climbing Zoom (클라이밍줌)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-367f5a066f"
+   },
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-001 \"Catchstone Climbing Bucheon Station (캐치스톤클라이밍짐 부천역점)\": related-name-nearby related names \"클라이밍줌\" / \"캐치스톤클라이밍짐 부천역점\" 12284 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-001"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-010 \"World Climbing (월드클라이밍)\": related-name-nearby related names \"클라이밍줌\" / \"월드클라이밍\" 12144 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-010"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-014 \"Siheung Catch Climbing Gym (시흥캐치클라이밍짐)\": related-name-nearby related names \"클라이밍줌\" / \"시흥캐치클라이밍짐\" 10926 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-014"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-016 \"Siheung Sports Climbing Center (시흥스포츠클라이밍센터)\": related-name-nearby related names \"클라이밍줌\" / \"시흥스포츠클라이밍센터\" 10382 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-016"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-017 \"Bouldergarden Siheung (볼더가든클라이밍)\": related-name-nearby related names \"클라이밍줌\" / \"볼더가든클라이밍\" 11746 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-017"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-018 \"Bucheon Climbing Center (부천클라이밍센터)\": related-name-nearby related names \"클라이밍줌\" / \"부천클라이밍센터\" 11260 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-018"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-021 \"Just Climbing Center (저스트클라이밍센타)\": related-name-nearby related names \"클라이밍줌\" / \"저스트클라이밍센타\" 10934 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-021"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-002 \"Discovery Climb Square Cheongna (디스커버리클라이밍 클라임스퀘어 청라점)\": related names \"클라이밍줌\" / \"디스커버리클라이밍 클라임스퀘어 청라점\" 13293 m apart",
+     "ids": [
+      "kr-ic-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-003 \"B-bloc Climbing Songdo (비블럭 클라이밍 송도점)\": related names \"클라이밍줌\" / \"비블럭 클라이밍 송도점\" 4053 m apart",
+     "ids": [
+      "kr-ic-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-004 \"B-bloc Climbing Yeongjong Hanul-city (비블럭클라이밍 영종하늘도시점)\": related names \"클라이밍줌\" / \"비블럭클라이밍 영종하늘도시점\" 12901 m apart",
+     "ids": [
+      "kr-ic-004"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-006 \"Hub Climbing (허브클라이밍)\": related names \"클라이밍줌\" / \"허브클라이밍\" 4554 m apart",
+     "ids": [
+      "kr-ic-006"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-007 \"Boly Climbing (볼리 클라이밍)\": related names \"클라이밍줌\" / \"볼리 클라이밍\" 6626 m apart",
+     "ids": [
+      "kr-ic-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-008 \"Bupyeong Climbing Center (부평클라이밍센터)\": related names \"클라이밍줌\" / \"부평클라이밍센터\" 8871 m apart",
+     "ids": [
+      "kr-ic-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-009 \"Ganseok Climbing (간석클라이밍)\": related names \"클라이밍줌\" / \"간석클라이밍\" 5398 m apart",
+     "ids": [
+      "kr-ic-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-010 \"Discovery Climb Square Songdo (디스커버리클라이밍 클라임스퀘어 송도점)\": related names \"클라이밍줌\" / \"디스커버리클라이밍 클라임스퀘어 송도점\" 4300 m apart",
+     "ids": [
+      "kr-ic-010"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-011 \"Incheon Best Climbing Center (인천베스트클라이밍센타)\": related names \"클라이밍줌\" / \"인천베스트클라이밍센타\" 12217 m apart",
+     "ids": [
+      "kr-ic-011"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-012 \"Seo-Incheon Climbing (서인천 클라이밍)\": related names \"클라이밍줌\" / \"서인천 클라이밍\" 11422 m apart",
+     "ids": [
+      "kr-ic-012"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-014 \"Incheon Munhak Stadium Climbing Wall (인천문학경기장암벽장)\": related names \"클라이밍줌\" / \"인천문학경기장암벽장\" 2622 m apart",
+     "ids": [
+      "kr-ic-014"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-015 \"Incheon Indoor Climbing Wall (인천실내암장)\": related names \"클라이밍줌\" / \"인천실내암장\" 2514 m apart",
+     "ids": [
+      "kr-ic-015"
+     ]
+    }
+   ],
+   "review_ids": [
+    "2026-10-12-kr-gyeonggi-west#kr-gw-001",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-010",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-014",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-016",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-017",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-018",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-021",
+    "kr-ic-002",
+    "kr-ic-003",
+    "kr-ic-004",
+    "kr-ic-006",
+    "kr-ic-007",
+    "kr-ic-008",
+    "kr-ic-009",
+    "kr-ic-010",
+    "kr-ic-011",
+    "kr-ic-012",
+    "kr-ic-014",
+    "kr-ic-015"
+   ]
+  },
+  {
+   "cid": "kr-ic-006",
+   "line": 6,
+   "name": "Hub Climbing (허브클라이밍)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-bd1d07c14e"
+   },
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-001 \"Catchstone Climbing Bucheon Station (캐치스톤클라이밍짐 부천역점)\": related-name-nearby related names \"허브클라이밍\" / \"캐치스톤클라이밍짐 부천역점\" 10693 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-001"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-002 \"Climbing Treackle (클라이밍 트리클)\": related-name-nearby related names \"허브클라이밍\" / \"클라이밍 트리클\" 13202 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-002"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-003 \"Club Climbing Ansan (클럽클라이밍)\": related-name-nearby related names \"허브클라이밍\" / \"클럽클라이밍\" 13501 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-003"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-010 \"World Climbing (월드클라이밍)\": related-name-nearby related names \"허브클라이밍\" / \"월드클라이밍\" 11795 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-010"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-012 \"Ansan Basecamp Climbing (안산베이스캠프클라이밍)\": related-name-nearby related names \"허브클라이밍\" / \"안산베이스캠프클라이밍\" 13855 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-012"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-013 \"Ansan Seonbu Climbing (안산 선부 클라이밍)\": related-name-nearby related names \"허브클라이밍\" / \"안산 선부 클라이밍\" 10961 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-013"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-014 \"Siheung Catch Climbing Gym (시흥캐치클라이밍짐)\": related-name-nearby related names \"허브클라이밍\" / \"시흥캐치클라이밍짐\" 6378 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-014"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-016 \"Siheung Sports Climbing Center (시흥스포츠클라이밍센터)\": related-name-nearby related names \"허브클라이밍\" / \"시흥스포츠클라이밍센터\" 7503 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-016"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-017 \"Bouldergarden Siheung (볼더가든클라이밍)\": related-name-nearby related names \"허브클라이밍\" / \"볼더가든클라이밍\" 8532 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-017"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-018 \"Bucheon Climbing Center (부천클라이밍센터)\": related-name-nearby related names \"허브클라이밍\" / \"부천클라이밍센터\" 10264 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-018"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-019 \"Pax Climbing Center (팍스클라이밍)\": related-name-nearby related names \"허브클라이밍\" / \"팍스클라이밍\" 14657 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-019"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-020 \"ClimbIt Climbing Mokgam (클라임잇 클라이밍 목감점)\": related-name-nearby related names \"허브클라이밍\" / \"클라임잇 클라이밍 목감점\" 12542 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-020"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-021 \"Just Climbing Center (저스트클라이밍센타)\": related-name-nearby related names \"허브클라이밍\" / \"저스트클라이밍센타\" 7912 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-021"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-003 \"B-bloc Climbing Songdo (비블럭 클라이밍 송도점)\": related names \"허브클라이밍\" / \"비블럭 클라이밍 송도점\" 5762 m apart",
+     "ids": [
+      "kr-ic-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-005 \"Climbing Zoom (클라이밍줌)\": related names \"허브클라이밍\" / \"클라이밍줌\" 4554 m apart",
+     "ids": [
+      "kr-ic-005"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-007 \"Boly Climbing (볼리 클라이밍)\": related names \"허브클라이밍\" / \"볼리 클라이밍\" 3290 m apart",
+     "ids": [
+      "kr-ic-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-008 \"Bupyeong Climbing Center (부평클라이밍센터)\": related names \"허브클라이밍\" / \"부평클라이밍센터\" 10127 m apart",
+     "ids": [
+      "kr-ic-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-009 \"Ganseok Climbing (간석클라이밍)\": related names \"허브클라이밍\" / \"간석클라이밍\" 6961 m apart",
+     "ids": [
+      "kr-ic-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-010 \"Discovery Climb Square Songdo (디스커버리클라이밍 클라임스퀘어 송도점)\": related names \"허브클라이밍\" / \"디스커버리클라이밍 클라임스퀘어 송도점\" 5906 m apart",
+     "ids": [
+      "kr-ic-010"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-011 \"Incheon Best Climbing Center (인천베스트클라이밍센타)\": related names \"허브클라이밍\" / \"인천베스트클라이밍센타\" 12891 m apart",
+     "ids": [
+      "kr-ic-011"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-012 \"Seo-Incheon Climbing (서인천 클라이밍)\": related names \"허브클라이밍\" / \"서인천 클라이밍\" 13697 m apart",
+     "ids": [
+      "kr-ic-012"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-014 \"Incheon Munhak Stadium Climbing Wall (인천문학경기장암벽장)\": related names \"허브클라이밍\" / \"인천문학경기장암벽장\" 4453 m apart",
+     "ids": [
+      "kr-ic-014"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-015 \"Incheon Indoor Climbing Wall (인천실내암장)\": related names \"허브클라이밍\" / \"인천실내암장\" 3079 m apart",
+     "ids": [
+      "kr-ic-015"
+     ]
+    }
+   ],
+   "review_ids": [
+    "2026-10-12-kr-gyeonggi-west#kr-gw-001",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-002",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-003",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-010",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-012",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-013",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-014",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-016",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-017",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-018",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-019",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-020",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-021",
+    "kr-ic-003",
+    "kr-ic-005",
+    "kr-ic-007",
+    "kr-ic-008",
+    "kr-ic-009",
+    "kr-ic-010",
+    "kr-ic-011",
+    "kr-ic-012",
+    "kr-ic-014",
+    "kr-ic-015"
+   ]
+  },
+  {
+   "cid": "kr-ic-007",
+   "line": 7,
+   "name": "Boly Climbing (볼리 클라이밍)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-3681919a66"
+   },
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-06-kr-seoul#kr-se-008 \"Seoul Forest Climbing Guro (서울숲클라이밍 구로점)\": related-name-nearby related names \"볼리 클라이밍\" / \"서울숲클라이밍 구로점\" 14696 m apart",
+     "ids": [
+      "2026-10-06-kr-seoul#kr-se-008"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-001 \"Catchstone Climbing Bucheon Station (캐치스톤클라이밍짐 부천역점)\": related-name-nearby related names \"볼리 클라이밍\" / \"캐치스톤클라이밍짐 부천역점\" 7563 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-001"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-002 \"Climbing Treackle (클라이밍 트리클)\": related-name-nearby related names \"볼리 클라이밍\" / \"클라이밍 트리클\" 13529 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-002"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-003 \"Club Climbing Ansan (클럽클라이밍)\": related-name-nearby related names \"볼리 클라이밍\" / \"클럽클라이밍\" 13823 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-003"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-010 \"World Climbing (월드클라이밍)\": related-name-nearby related names \"볼리 클라이밍\" / \"월드클라이밍\" 9131 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-010"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-012 \"Ansan Basecamp Climbing (안산베이스캠프클라이밍)\": related-name-nearby related names \"볼리 클라이밍\" / \"안산베이스캠프클라이밍\" 14348 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-012"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-013 \"Ansan Seonbu Climbing (안산 선부 클라이밍)\": related-name-nearby related names \"볼리 클라이밍\" / \"안산 선부 클라이밍\" 11456 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-013"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-014 \"Siheung Catch Climbing Gym (시흥캐치클라이밍짐)\": related-name-nearby related names \"볼리 클라이밍\" / \"시흥캐치클라이밍짐\" 6048 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-014"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-016 \"Siheung Sports Climbing Center (시흥스포츠클라이밍센터)\": related-name-nearby related names \"볼리 클라이밍\" / \"시흥스포츠클라이밍센터\" 4218 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-016"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-017 \"Bouldergarden Siheung (볼더가든클라이밍)\": related-name-nearby related names \"볼리 클라이밍\" / \"볼더가든클라이밍\" 5332 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-017"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-018 \"Bucheon Climbing Center (부천클라이밍센터)\": related-name-nearby related names \"볼리 클라이밍\" / \"부천클라이밍센터\" 7377 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-018"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-019 \"Pax Climbing Center (팍스클라이밍)\": related-name-nearby related names \"볼리 클라이밍\" / \"팍스클라이밍\" 11509 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-019"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-020 \"ClimbIt Climbing Mokgam (클라임잇 클라이밍 목감점)\": related-name-nearby related names \"볼리 클라이밍\" / \"클라임잇 클라이밍 목감점\" 10961 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-020"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-021 \"Just Climbing Center (저스트클라이밍센타)\": related-name-nearby related names \"볼리 클라이밍\" / \"저스트클라이밍센타\" 4651 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-021"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-002 \"Discovery Climb Square Cheongna (디스커버리클라이밍 클라임스퀘어 청라점)\": related names \"볼리 클라이밍\" / \"디스커버리클라이밍 클라임스퀘어 청라점\" 14983 m apart",
+     "ids": [
+      "kr-ic-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-003 \"B-bloc Climbing Songdo (비블럭 클라이밍 송도점)\": related names \"볼리 클라이밍\" / \"비블럭 클라이밍 송도점\" 8908 m apart",
+     "ids": [
+      "kr-ic-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-005 \"Climbing Zoom (클라이밍줌)\": related names \"볼리 클라이밍\" / \"클라이밍줌\" 6626 m apart",
+     "ids": [
+      "kr-ic-005"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-006 \"Hub Climbing (허브클라이밍)\": related names \"볼리 클라이밍\" / \"허브클라이밍\" 3290 m apart",
+     "ids": [
+      "kr-ic-006"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-008 \"Bupyeong Climbing Center (부평클라이밍센터)\": related names \"볼리 클라이밍\" / \"부평클라이밍센터\" 8573 m apart",
+     "ids": [
+      "kr-ic-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-009 \"Ganseok Climbing (간석클라이밍)\": related names \"볼리 클라이밍\" / \"간석클라이밍\" 6232 m apart",
+     "ids": [
+      "kr-ic-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-010 \"Discovery Climb Square Songdo (디스커버리클라이밍 클라임스퀘어 송도점)\": related names \"볼리 클라이밍\" / \"디스커버리클라이밍 클라임스퀘어 송도점\" 9076 m apart",
+     "ids": [
+      "kr-ic-010"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-011 \"Incheon Best Climbing Center (인천베스트클라이밍센타)\": related names \"볼리 클라이밍\" / \"인천베스트클라이밍센타\" 10723 m apart",
+     "ids": [
+      "kr-ic-011"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-012 \"Seo-Incheon Climbing (서인천 클라이밍)\": related names \"볼리 클라이밍\" / \"서인천 클라이밍\" 12549 m apart",
+     "ids": [
+      "kr-ic-012"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-013 \"Incheon Gyeyang Climbing Center (인천계양클라이밍센터)\": related names \"볼리 클라이밍\" / \"인천계양클라이밍센터\" 13398 m apart",
+     "ids": [
+      "kr-ic-013"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-014 \"Incheon Munhak Stadium Climbing Wall (인천문학경기장암벽장)\": related names \"볼리 클라이밍\" / \"인천문학경기장암벽장\" 5081 m apart",
+     "ids": [
+      "kr-ic-014"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-015 \"Incheon Indoor Climbing Wall (인천실내암장)\": related names \"볼리 클라이밍\" / \"인천실내암장\" 4214 m apart",
+     "ids": [
+      "kr-ic-015"
+     ]
+    }
+   ],
+   "review_ids": [
+    "2026-10-06-kr-seoul#kr-se-008",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-001",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-002",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-003",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-010",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-012",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-013",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-014",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-016",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-017",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-018",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-019",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-020",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-021",
+    "kr-ic-002",
+    "kr-ic-003",
+    "kr-ic-005",
+    "kr-ic-006",
+    "kr-ic-008",
+    "kr-ic-009",
+    "kr-ic-010",
+    "kr-ic-011",
+    "kr-ic-012",
+    "kr-ic-013",
+    "kr-ic-014",
+    "kr-ic-015"
+   ]
+  },
+  {
+   "cid": "kr-ic-008",
+   "line": 8,
+   "name": "Bupyeong Climbing Center (부평클라이밍센터)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-dbcd7c689d"
+   },
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-06-kr-seoul#kr-se-022 \"Gangseo Climbing Center (강서클라이밍센터)\": related-name-nearby related names \"부평클라이밍센터\" / \"강서클라이밍센터\" 13933 m apart",
+     "ids": [
+      "2026-10-06-kr-seoul#kr-se-022"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-06-kr-seoul#kr-se-055 \"The Climb Magok (더클라임 마곡점)\": related-name-nearby related names \"부평클라이밍센터\" / \"더클라임 마곡점\" 13699 m apart",
+     "ids": [
+      "2026-10-06-kr-seoul#kr-se-055"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-north#kr-gn-019 \"Kikl Climbing Pungmu (키클 클라이밍 풍무점)\": related-name-nearby related names \"부평클라이밍센터\" / \"키클 클라이밍 풍무점\" 12958 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-north#kr-gn-019"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-001 \"Catchstone Climbing Bucheon Station (캐치스톤클라이밍짐 부천역점)\": related-name-nearby related names \"부평클라이밍센터\" / \"캐치스톤클라이밍짐 부천역점\" 6844 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-001"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-010 \"World Climbing (월드클라이밍)\": related-name-nearby related names \"부평클라이밍센터\" / \"월드클라이밍\" 4545 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-010"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-014 \"Siheung Catch Climbing Gym (시흥캐치클라이밍짐)\": related-name-nearby related names \"부평클라이밍센터\" / \"시흥캐치클라이밍짐\" 14576 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-014"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-016 \"Siheung Sports Climbing Center (시흥스포츠클라이밍센터)\": related-name-nearby related names \"부평클라이밍센터\" / \"시흥스포츠클라이밍센터\" 8553 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-016"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-017 \"Bouldergarden Siheung (볼더가든클라이밍)\": related-name-nearby related names \"부평클라이밍센터\" / \"볼더가든클라이밍\" 9953 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-017"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-018 \"Bucheon Climbing Center (부천클라이밍센터)\": related-name-nearby related names \"부평클라이밍센터\" / \"부천클라이밍센터\" 5168 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-018"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-019 \"Pax Climbing Center (팍스클라이밍)\": related-name-nearby related names \"부평클라이밍센터\" / \"팍스클라이밍\" 9186 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-019"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-021 \"Just Climbing Center (저스트클라이밍센타)\": related-name-nearby related names \"부평클라이밍센터\" / \"저스트클라이밍센타\" 9102 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-021"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-002 \"Discovery Climb Square Cheongna (디스커버리클라이밍 클라임스퀘어 청라점)\": related names \"부평클라이밍센터\" / \"디스커버리클라이밍 클라임스퀘어 청라점\" 6582 m apart",
+     "ids": [
+      "kr-ic-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-003 \"B-bloc Climbing Songdo (비블럭 클라이밍 송도점)\": related names \"부평클라이밍센터\" / \"비블럭 클라이밍 송도점\" 12917 m apart",
+     "ids": [
+      "kr-ic-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-004 \"B-bloc Climbing Yeongjong Hanul-city (비블럭클라이밍 영종하늘도시점)\": related names \"부평클라이밍센터\" / \"비블럭클라이밍 영종하늘도시점\" 12702 m apart",
+     "ids": [
+      "kr-ic-004"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-005 \"Climbing Zoom (클라이밍줌)\": related names \"부평클라이밍센터\" / \"클라이밍줌\" 8871 m apart",
+     "ids": [
+      "kr-ic-005"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-006 \"Hub Climbing (허브클라이밍)\": related names \"부평클라이밍센터\" / \"허브클라이밍\" 10127 m apart",
+     "ids": [
+      "kr-ic-006"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-007 \"Boly Climbing (볼리 클라이밍)\": related names \"부평클라이밍센터\" / \"볼리 클라이밍\" 8573 m apart",
+     "ids": [
+      "kr-ic-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-009 \"Ganseok Climbing (간석클라이밍)\": related names \"부평클라이밍센터\" / \"간석클라이밍\" 3504 m apart",
+     "ids": [
+      "kr-ic-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-010 \"Discovery Climb Square Songdo (디스커버리클라이밍 클라임스퀘어 송도점)\": related names \"부평클라이밍센터\" / \"디스커버리클라이밍 클라임스퀘어 송도점\" 13163 m apart",
+     "ids": [
+      "kr-ic-010"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-011 \"Incheon Best Climbing Center (인천베스트클라이밍센타)\": related names \"부평클라이밍센터\" / \"인천베스트클라이밍센타\" 3431 m apart",
+     "ids": [
+      "kr-ic-011"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-012 \"Seo-Incheon Climbing (서인천 클라이밍)\": related names \"부평클라이밍센터\" / \"서인천 클라이밍\" 4090 m apart",
+     "ids": [
+      "kr-ic-012"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-013 \"Incheon Gyeyang Climbing Center (인천계양클라이밍센터)\": related names \"부평클라이밍센터\" / \"인천계양클라이밍센터\" 6241 m apart",
+     "ids": [
+      "kr-ic-013"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-014 \"Incheon Munhak Stadium Climbing Wall (인천문학경기장암벽장)\": related names \"부평클라이밍센터\" / \"인천문학경기장암벽장\" 6497 m apart",
+     "ids": [
+      "kr-ic-014"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-015 \"Incheon Indoor Climbing Wall (인천실내암장)\": related names \"부평클라이밍센터\" / \"인천실내암장\" 7601 m apart",
+     "ids": [
+      "kr-ic-015"
+     ]
+    }
+   ],
+   "review_ids": [
+    "2026-10-06-kr-seoul#kr-se-022",
+    "2026-10-06-kr-seoul#kr-se-055",
+    "2026-10-12-kr-gyeonggi-north#kr-gn-019",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-001",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-010",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-014",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-016",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-017",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-018",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-019",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-021",
+    "kr-ic-002",
+    "kr-ic-003",
+    "kr-ic-004",
+    "kr-ic-005",
+    "kr-ic-006",
+    "kr-ic-007",
+    "kr-ic-009",
+    "kr-ic-010",
+    "kr-ic-011",
+    "kr-ic-012",
+    "kr-ic-013",
+    "kr-ic-014",
+    "kr-ic-015"
+   ]
+  },
+  {
+   "cid": "kr-ic-009",
+   "line": 9,
+   "name": "Ganseok Climbing (간석클라이밍)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-23960218a1"
+   },
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-001 \"Catchstone Climbing Bucheon Station (캐치스톤클라이밍짐 부천역점)\": related-name-nearby related names \"간석클라이밍\" / \"캐치스톤클라이밍짐 부천역점\" 8012 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-001"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-010 \"World Climbing (월드클라이밍)\": related-name-nearby related names \"간석클라이밍\" / \"월드클라이밍\" 7013 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-010"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-014 \"Siheung Catch Climbing Gym (시흥캐치클라이밍짐)\": related-name-nearby related names \"간석클라이밍\" / \"시흥캐치클라이밍짐\" 12219 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-014"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-016 \"Siheung Sports Climbing Center (시흥스포츠클라이밍센터)\": related-name-nearby related names \"간석클라이밍\" / \"시흥스포츠클라이밍센터\" 7883 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-016"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-017 \"Bouldergarden Siheung (볼더가든클라이밍)\": related-name-nearby related names \"간석클라이밍\" / \"볼더가든클라이밍\" 9414 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-017"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-018 \"Bucheon Climbing Center (부천클라이밍센터)\": related-name-nearby related names \"간석클라이밍\" / \"부천클라이밍센터\" 6612 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-018"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-019 \"Pax Climbing Center (팍스클라이밍)\": related-name-nearby related names \"간석클라이밍\" / \"팍스클라이밍\" 11323 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-019"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-021 \"Just Climbing Center (저스트클라이밍센타)\": related-name-nearby related names \"간석클라이밍\" / \"저스트클라이밍센타\" 8497 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-021"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-002 \"Discovery Climb Square Cheongna (디스커버리클라이밍 클라임스퀘어 청라점)\": related names \"간석클라이밍\" / \"디스커버리클라이밍 클라임스퀘어 청라점\" 9019 m apart",
+     "ids": [
+      "kr-ic-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-003 \"B-bloc Climbing Songdo (비블럭 클라이밍 송도점)\": related names \"간석클라이밍\" / \"비블럭 클라이밍 송도점\" 9430 m apart",
+     "ids": [
+      "kr-ic-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-004 \"B-bloc Climbing Yeongjong Hanul-city (비블럭클라이밍 영종하늘도시점)\": related names \"간석클라이밍\" / \"비블럭클라이밍 영종하늘도시점\" 12389 m apart",
+     "ids": [
+      "kr-ic-004"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-005 \"Climbing Zoom (클라이밍줌)\": related names \"간석클라이밍\" / \"클라이밍줌\" 5398 m apart",
+     "ids": [
+      "kr-ic-005"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-006 \"Hub Climbing (허브클라이밍)\": related names \"간석클라이밍\" / \"허브클라이밍\" 6961 m apart",
+     "ids": [
+      "kr-ic-006"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-007 \"Boly Climbing (볼리 클라이밍)\": related names \"간석클라이밍\" / \"볼리 클라이밍\" 6232 m apart",
+     "ids": [
+      "kr-ic-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-008 \"Bupyeong Climbing Center (부평클라이밍센터)\": related names \"간석클라이밍\" / \"부평클라이밍센터\" 3504 m apart",
+     "ids": [
+      "kr-ic-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-010 \"Discovery Climb Square Songdo (디스커버리클라이밍 클라임스퀘어 송도점)\": related names \"간석클라이밍\" / \"디스커버리클라이밍 클라임스퀘어 송도점\" 9675 m apart",
+     "ids": [
+      "kr-ic-010"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-011 \"Incheon Best Climbing Center (인천베스트클라이밍센타)\": related names \"간석클라이밍\" / \"인천베스트클라이밍센타\" 6819 m apart",
+     "ids": [
+      "kr-ic-011"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-012 \"Seo-Incheon Climbing (서인천 클라이밍)\": related names \"간석클라이밍\" / \"서인천 클라이밍\" 6737 m apart",
+     "ids": [
+      "kr-ic-012"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-013 \"Incheon Gyeyang Climbing Center (인천계양클라이밍센터)\": related names \"간석클라이밍\" / \"인천계양클라이밍센터\" 9691 m apart",
+     "ids": [
+      "kr-ic-013"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-014 \"Incheon Munhak Stadium Climbing Wall (인천문학경기장암벽장)\": related names \"간석클라이밍\" / \"인천문학경기장암벽장\" 3000 m apart",
+     "ids": [
+      "kr-ic-014"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-015 \"Incheon Indoor Climbing Wall (인천실내암장)\": related names \"간석클라이밍\" / \"인천실내암장\" 4179 m apart",
+     "ids": [
+      "kr-ic-015"
+     ]
+    }
+   ],
+   "review_ids": [
+    "2026-10-12-kr-gyeonggi-west#kr-gw-001",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-010",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-014",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-016",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-017",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-018",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-019",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-021",
+    "kr-ic-002",
+    "kr-ic-003",
+    "kr-ic-004",
+    "kr-ic-005",
+    "kr-ic-006",
+    "kr-ic-007",
+    "kr-ic-008",
+    "kr-ic-010",
+    "kr-ic-011",
+    "kr-ic-012",
+    "kr-ic-013",
+    "kr-ic-014",
+    "kr-ic-015"
+   ]
+  },
+  {
+   "cid": "kr-ic-010",
+   "line": 10,
+   "name": "Discovery Climb Square Songdo (디스커버리클라이밍 클라임스퀘어 송도점)",
+   "class": "blocked",
+   "suggested": "reject closed",
+   "importer": {
+    "class": "new",
+    "id": "g-653aafcfbe"
+   },
+   "blockers": [
+    {
+     "code": "closed",
+     "detail": "status_claim is closed"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-013 \"Ansan Seonbu Climbing (안산 선부 클라이밍)\": related-name-nearby related names \"디스커버리클라이밍 클라임스퀘어 송도점\" / \"안산 선부 클라이밍\" 14050 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-013"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-014 \"Siheung Catch Climbing Gym (시흥캐치클라이밍짐)\": related-name-nearby related names \"디스커버리클라이밍 클라임스퀘어 송도점\" / \"시흥캐치클라이밍짐\" 11142 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-014"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-016 \"Siheung Sports Climbing Center (시흥스포츠클라이밍센터)\": related-name-nearby related names \"디스커버리클라이밍 클라임스퀘어 송도점\" / \"시흥스포츠클라이밍센터\" 13266 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-016"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-017 \"Bouldergarden Siheung (볼더가든클라이밍)\": related-name-nearby related names \"디스커버리클라이밍 클라임스퀘어 송도점\" / \"볼더가든클라이밍\" 14397 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-017"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-021 \"Just Climbing Center (저스트클라이밍센타)\": related-name-nearby related names \"디스커버리클라이밍 클라임스퀘어 송도점\" / \"저스트클라이밍센타\" 13724 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-021"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-003 \"B-bloc Climbing Songdo (비블럭 클라이밍 송도점)\": related names \"디스커버리클라이밍 클라임스퀘어 송도점\" / \"비블럭 클라이밍 송도점\" 247 m apart",
+     "ids": [
+      "kr-ic-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-005 \"Climbing Zoom (클라이밍줌)\": related names \"디스커버리클라이밍 클라임스퀘어 송도점\" / \"클라이밍줌\" 4300 m apart",
+     "ids": [
+      "kr-ic-005"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-006 \"Hub Climbing (허브클라이밍)\": related names \"디스커버리클라이밍 클라임스퀘어 송도점\" / \"허브클라이밍\" 5906 m apart",
+     "ids": [
+      "kr-ic-006"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-007 \"Boly Climbing (볼리 클라이밍)\": related names \"디스커버리클라이밍 클라임스퀘어 송도점\" / \"볼리 클라이밍\" 9076 m apart",
+     "ids": [
+      "kr-ic-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-008 \"Bupyeong Climbing Center (부평클라이밍센터)\": related names \"디스커버리클라이밍 클라임스퀘어 송도점\" / \"부평클라이밍센터\" 13163 m apart",
+     "ids": [
+      "kr-ic-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-009 \"Ganseok Climbing (간석클라이밍)\": related names \"디스커버리클라이밍 클라임스퀘어 송도점\" / \"간석클라이밍\" 9675 m apart",
+     "ids": [
+      "kr-ic-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-014 \"Incheon Munhak Stadium Climbing Wall (인천문학경기장암벽장)\": related names \"디스커버리클라이밍 클라임스퀘어 송도점\" / \"인천문학경기장암벽장\" 6763 m apart",
+     "ids": [
+      "kr-ic-014"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-015 \"Incheon Indoor Climbing Wall (인천실내암장)\": related names \"디스커버리클라이밍 클라임스퀘어 송도점\" / \"인천실내암장\" 6062 m apart",
+     "ids": [
+      "kr-ic-015"
+     ]
+    }
+   ],
+   "review_ids": [
+    "2026-10-12-kr-gyeonggi-west#kr-gw-013",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-014",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-016",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-017",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-021",
+    "kr-ic-003",
+    "kr-ic-005",
+    "kr-ic-006",
+    "kr-ic-007",
+    "kr-ic-008",
+    "kr-ic-009",
+    "kr-ic-014",
+    "kr-ic-015"
+   ]
+  },
+  {
+   "cid": "kr-ic-011",
+   "line": 11,
+   "name": "Incheon Best Climbing Center (인천베스트클라이밍센타)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-1516509dec"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-06-kr-seoul#kr-se-003 \"The Climb Mullae (더클라임 문래점)\": related-name-nearby related names \"인천베스트클라이밍센타\" / \"더클라임 문래점\" 14891 m apart",
+     "ids": [
+      "2026-10-06-kr-seoul#kr-se-003"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-06-kr-seoul#kr-se-020 \"Seoul Boulders Seonyu (서울볼더스 선유)\": related-name-nearby related names \"인천베스트클라이밍센타\" / \"서울볼더스 선유\" 14791 m apart",
+     "ids": [
+      "2026-10-06-kr-seoul#kr-se-020"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-06-kr-seoul#kr-se-022 \"Gangseo Climbing Center (강서클라이밍센터)\": related-name-nearby related names \"인천베스트클라이밍센타\" / \"강서클라이밍센터\" 10923 m apart",
+     "ids": [
+      "2026-10-06-kr-seoul#kr-se-022"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-06-kr-seoul#kr-se-023 \"August Climbing (어거스트클라이밍)\": related-name-nearby related names \"인천베스트클라이밍센타\" / \"어거스트클라이밍\" 12214 m apart",
+     "ids": [
+      "2026-10-06-kr-seoul#kr-se-023"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-06-kr-seoul#kr-se-037 \"Mokdong Climbing Center (목동클라이밍센터)\": related-name-nearby related names \"인천베스트클라이밍센타\" / \"목동클라이밍센터\" 13185 m apart",
+     "ids": [
+      "2026-10-06-kr-seoul#kr-se-037"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-06-kr-seoul#kr-se-043 \"2 Years Climb House (투이얼즈클라임하우스)\": related-name-nearby related names \"인천베스트클라이밍센타\" / \"투이얼즈클라임하우스\" 13668 m apart",
+     "ids": [
+      "2026-10-06-kr-seoul#kr-se-043"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-06-kr-seoul#kr-se-053 \"Seoul Boulders Mokdong (서울볼더스 클라이밍 목동점)\": related-name-nearby related names \"인천베스트클라이밍센타\" / \"서울볼더스 클라이밍 목동점\" 12930 m apart",
+     "ids": [
+      "2026-10-06-kr-seoul#kr-se-053"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-06-kr-seoul#kr-se-055 \"The Climb Magok (더클라임 마곡점)\": related-name-nearby related names \"인천베스트클라이밍센타\" / \"더클라임 마곡점\" 10631 m apart",
+     "ids": [
+      "2026-10-06-kr-seoul#kr-se-055"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-06-kr-seoul#kr-se-061 \"Ace Climbing Center (에이스클라이밍센터)\": related-name-nearby related names \"인천베스트클라이밍센타\" / \"에이스클라이밍센터\" 14769 m apart",
+     "ids": [
+      "2026-10-06-kr-seoul#kr-se-061"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-06-kr-seoul#kr-se-065 \"Seoul Mountain Culture Experience Center (서울특별시산악문화체험센터)\": related-name-nearby related names \"인천베스트클라이밍센타\" / \"서울특별시산악문화체험센터\" 14725 m apart",
+     "ids": [
+      "2026-10-06-kr-seoul#kr-se-065"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-north#kr-gn-018 \"Jam Climbing Gimpo (잼클라이밍)\": related-name-nearby related names \"인천베스트클라이밍센타\" / \"잼클라이밍\" 14273 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-north#kr-gn-018"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-north#kr-gn-019 \"Kikl Climbing Pungmu (키클 클라이밍 풍무점)\": related-name-nearby related names \"인천베스트클라이밍센타\" / \"키클 클라이밍 풍무점\" 9965 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-north#kr-gn-019"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-001 \"Catchstone Climbing Bucheon Station (캐치스톤클라이밍짐 부천역점)\": related-name-nearby related names \"인천베스트클라이밍센타\" / \"캐치스톤클라이밍짐 부천역점\" 6100 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-001"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-010 \"World Climbing (월드클라이밍)\": related-name-nearby related names \"인천베스트클라이밍센타\" / \"월드클라이밍\" 2820 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-010"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-016 \"Siheung Sports Climbing Center (시흥스포츠클라이밍센터)\": related-name-nearby related names \"인천베스트클라이밍센타\" / \"시흥스포츠클라이밍센터\" 9316 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-016"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-017 \"Bouldergarden Siheung (볼더가든클라이밍)\": related-name-nearby related names \"인천베스트클라이밍센타\" / \"볼더가든클라이밍\" 10411 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-017"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-018 \"Bucheon Climbing Center (부천클라이밍센터)\": related-name-nearby related names \"인천베스트클라이밍센타\" / \"부천클라이밍센터\" 4640 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-018"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-019 \"Pax Climbing Center (팍스클라이밍)\": related-name-nearby related names \"인천베스트클라이밍센타\" / \"팍스클라이밍\" 6899 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-019"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-021 \"Just Climbing Center (저스트클라이밍센타)\": related-name-nearby related names \"인천베스트클라이밍센타\" / \"저스트클라이밍센타\" 9728 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-021"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-002 \"Discovery Climb Square Cheongna (디스커버리클라이밍 클라임스퀘어 청라점)\": related names \"인천베스트클라이밍센타\" / \"디스커버리클라이밍 클라임스퀘어 청라점\" 6711 m apart",
+     "ids": [
+      "kr-ic-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-004 \"B-bloc Climbing Yeongjong Hanul-city (비블럭클라이밍 영종하늘도시점)\": related names \"인천베스트클라이밍센타\" / \"비블럭클라이밍 영종하늘도시점\" 14900 m apart",
+     "ids": [
+      "kr-ic-004"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-005 \"Climbing Zoom (클라이밍줌)\": related names \"인천베스트클라이밍센타\" / \"클라이밍줌\" 12217 m apart",
+     "ids": [
+      "kr-ic-005"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-006 \"Hub Climbing (허브클라이밍)\": related names \"인천베스트클라이밍센타\" / \"허브클라이밍\" 12891 m apart",
+     "ids": [
+      "kr-ic-006"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-007 \"Boly Climbing (볼리 클라이밍)\": related names \"인천베스트클라이밍센타\" / \"볼리 클라이밍\" 10723 m apart",
+     "ids": [
+      "kr-ic-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-008 \"Bupyeong Climbing Center (부평클라이밍센터)\": related names \"인천베스트클라이밍센타\" / \"부평클라이밍센터\" 3431 m apart",
+     "ids": [
+      "kr-ic-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-009 \"Ganseok Climbing (간석클라이밍)\": related names \"인천베스트클라이밍센타\" / \"간석클라이밍\" 6819 m apart",
+     "ids": [
+      "kr-ic-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-012 \"Seo-Incheon Climbing (서인천 클라이밍)\": related names \"인천베스트클라이밍센타\" / \"서인천 클라이밍\" 4670 m apart",
+     "ids": [
+      "kr-ic-012"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-013 \"Incheon Gyeyang Climbing Center (인천계양클라이밍센터)\": related names \"인천베스트클라이밍센타\" / \"인천계양클라이밍센터\" 2891 m apart",
+     "ids": [
+      "kr-ic-013"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-014 \"Incheon Munhak Stadium Climbing Wall (인천문학경기장암벽장)\": related names \"인천베스트클라이밍센타\" / \"인천문학경기장암벽장\" 9741 m apart",
+     "ids": [
+      "kr-ic-014"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-015 \"Incheon Indoor Climbing Wall (인천실내암장)\": related names \"Incheon Best Climbing Center (인천베스트클라이밍센타)\" / \"Incheon Indoor Climbing Wall (인천실내암장)\" 10705 m apart",
+     "ids": [
+      "kr-ic-015"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "2026-10-06-kr-seoul#kr-se-003",
+    "2026-10-06-kr-seoul#kr-se-020",
+    "2026-10-06-kr-seoul#kr-se-022",
+    "2026-10-06-kr-seoul#kr-se-023",
+    "2026-10-06-kr-seoul#kr-se-037",
+    "2026-10-06-kr-seoul#kr-se-043",
+    "2026-10-06-kr-seoul#kr-se-053",
+    "2026-10-06-kr-seoul#kr-se-055",
+    "2026-10-06-kr-seoul#kr-se-061",
+    "2026-10-06-kr-seoul#kr-se-065",
+    "2026-10-12-kr-gyeonggi-north#kr-gn-018",
+    "2026-10-12-kr-gyeonggi-north#kr-gn-019",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-001",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-010",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-016",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-017",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-018",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-019",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-021",
+    "kr-ic-002",
+    "kr-ic-004",
+    "kr-ic-005",
+    "kr-ic-006",
+    "kr-ic-007",
+    "kr-ic-008",
+    "kr-ic-009",
+    "kr-ic-012",
+    "kr-ic-013",
+    "kr-ic-014",
+    "kr-ic-015"
+   ]
+  },
+  {
+   "cid": "kr-ic-012",
+   "line": 12,
+   "name": "Seo-Incheon Climbing (서인천 클라이밍)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-8a06341ce4"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-06-kr-seoul#kr-se-055 \"The Climb Magok (더클라임 마곡점)\": related-name-nearby related names \"서인천 클라이밍\" / \"더클라임 마곡점\" 14922 m apart",
+     "ids": [
+      "2026-10-06-kr-seoul#kr-se-055"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-north#kr-gn-009 \"Pick Climbing Gimpo (픽 클라이밍)\": related-name-nearby related names \"서인천 클라이밍\" / \"픽 클라이밍\" 14768 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-north#kr-gn-009"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-north#kr-gn-018 \"Jam Climbing Gimpo (잼클라이밍)\": related-name-nearby related names \"서인천 클라이밍\" / \"잼클라이밍\" 13451 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-north#kr-gn-018"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-north#kr-gn-019 \"Kikl Climbing Pungmu (키클 클라이밍 풍무점)\": related-name-nearby related names \"서인천 클라이밍\" / \"키클 클라이밍 풍무점\" 10852 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-north#kr-gn-019"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-001 \"Catchstone Climbing Bucheon Station (캐치스톤클라이밍짐 부천역점)\": related-name-nearby related names \"서인천 클라이밍\" / \"캐치스톤클라이밍짐 부천역점\" 10289 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-001"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-010 \"World Climbing (월드클라이밍)\": related-name-nearby related names \"서인천 클라이밍\" / \"월드클라이밍\" 7266 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-010"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-016 \"Siheung Sports Climbing Center (시흥스포츠클라이밍센터)\": related-name-nearby related names \"서인천 클라이밍\" / \"시흥스포츠클라이밍센터\" 12583 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-016"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-017 \"Bouldergarden Siheung (볼더가든클라이밍)\": related-name-nearby related names \"서인천 클라이밍\" / \"볼더가든클라이밍\" 13932 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-017"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-018 \"Bucheon Climbing Center (부천클라이밍센터)\": related-name-nearby related names \"서인천 클라이밍\" / \"부천클라이밍센터\" 8641 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-018"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-019 \"Pax Climbing Center (팍스클라이밍)\": related-name-nearby related names \"서인천 클라이밍\" / \"팍스클라이밍\" 11569 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-019"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-021 \"Just Climbing Center (저스트클라이밍센타)\": related-name-nearby related names \"서인천 클라이밍\" / \"저스트클라이밍센타\" 13110 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-021"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-002 \"Discovery Climb Square Cheongna (디스커버리클라이밍 클라임스퀘어 청라점)\": related names \"서인천 클라이밍\" / \"디스커버리클라이밍 클라임스퀘어 청라점\" 2493 m apart",
+     "ids": [
+      "kr-ic-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-004 \"B-bloc Climbing Yeongjong Hanul-city (비블럭클라이밍 영종하늘도시점)\": related names \"서인천 클라이밍\" / \"비블럭클라이밍 영종하늘도시점\" 10413 m apart",
+     "ids": [
+      "kr-ic-004"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-005 \"Climbing Zoom (클라이밍줌)\": related names \"서인천 클라이밍\" / \"클라이밍줌\" 11422 m apart",
+     "ids": [
+      "kr-ic-005"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-006 \"Hub Climbing (허브클라이밍)\": related names \"서인천 클라이밍\" / \"허브클라이밍\" 13697 m apart",
+     "ids": [
+      "kr-ic-006"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-007 \"Boly Climbing (볼리 클라이밍)\": related names \"서인천 클라이밍\" / \"볼리 클라이밍\" 12549 m apart",
+     "ids": [
+      "kr-ic-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-008 \"Bupyeong Climbing Center (부평클라이밍센터)\": related names \"서인천 클라이밍\" / \"부평클라이밍센터\" 4090 m apart",
+     "ids": [
+      "kr-ic-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-009 \"Ganseok Climbing (간석클라이밍)\": related names \"서인천 클라이밍\" / \"간석클라이밍\" 6737 m apart",
+     "ids": [
+      "kr-ic-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-011 \"Incheon Best Climbing Center (인천베스트클라이밍센타)\": related names \"서인천 클라이밍\" / \"인천베스트클라이밍센타\" 4670 m apart",
+     "ids": [
+      "kr-ic-011"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-013 \"Incheon Gyeyang Climbing Center (인천계양클라이밍센터)\": related names \"서인천 클라이밍\" / \"인천계양클라이밍센터\" 6028 m apart",
+     "ids": [
+      "kr-ic-013"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-014 \"Incheon Munhak Stadium Climbing Wall (인천문학경기장암벽장)\": related names \"서인천 클라이밍\" / \"인천문학경기장암벽장\" 9546 m apart",
+     "ids": [
+      "kr-ic-014"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-015 \"Incheon Indoor Climbing Wall (인천실내암장)\": related names \"Seo-Incheon Climbing (서인천 클라이밍)\" / \"Incheon Indoor Climbing Wall (인천실내암장)\" 10850 m apart",
+     "ids": [
+      "kr-ic-015"
+     ]
+    }
+   ],
+   "review_ids": [
+    "2026-10-06-kr-seoul#kr-se-055",
+    "2026-10-12-kr-gyeonggi-north#kr-gn-009",
+    "2026-10-12-kr-gyeonggi-north#kr-gn-018",
+    "2026-10-12-kr-gyeonggi-north#kr-gn-019",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-001",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-010",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-016",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-017",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-018",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-019",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-021",
+    "kr-ic-002",
+    "kr-ic-004",
+    "kr-ic-005",
+    "kr-ic-006",
+    "kr-ic-007",
+    "kr-ic-008",
+    "kr-ic-009",
+    "kr-ic-011",
+    "kr-ic-013",
+    "kr-ic-014",
+    "kr-ic-015"
+   ]
+  },
+  {
+   "cid": "kr-ic-013",
+   "line": 13,
+   "name": "Incheon Gyeyang Climbing Center (인천계양클라이밍센터)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-e984948404"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1217 same-name-but-pin-differs 1985 m",
+     "ids": [
+      "seed-1217"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1217 \"Incheon Gyeyang Climbing Center\": same-name-but-pin-differs (\"Incheon Gyeyang Climbing Center (인천계양클라이밍센터)\" / \"Incheon Gyeyang Climbing Center\", 1985 m)",
+     "ids": [
+      "seed-1217"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-06-kr-seoul#kr-se-003 \"The Climb Mullae (더클라임 문래점)\": related-name-nearby related names \"인천계양클라이밍센터\" / \"더클라임 문래점\" 14387 m apart",
+     "ids": [
+      "2026-10-06-kr-seoul#kr-se-003"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-06-kr-seoul#kr-se-009 \"Seoul Forest Climbing Yeongdeungpo (서울숲클라이밍 영등포점)\": related-name-nearby related names \"인천계양클라이밍센터\" / \"서울숲클라이밍 영등포점\" 14855 m apart",
+     "ids": [
+      "2026-10-06-kr-seoul#kr-se-009"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-06-kr-seoul#kr-se-020 \"Seoul Boulders Seonyu (서울볼더스 선유)\": related-name-nearby related names \"인천계양클라이밍센터\" / \"서울볼더스 선유\" 13822 m apart",
+     "ids": [
+      "2026-10-06-kr-seoul#kr-se-020"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-06-kr-seoul#kr-se-022 \"Gangseo Climbing Center (강서클라이밍센터)\": related-name-nearby related names \"인천계양클라이밍센터\" / \"강서클라이밍센터\" 9390 m apart",
+     "ids": [
+      "2026-10-06-kr-seoul#kr-se-022"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-06-kr-seoul#kr-se-023 \"August Climbing (어거스트클라이밍)\": related-name-nearby related names \"인천계양클라이밍센터\" / \"어거스트클라이밍\" 10645 m apart",
+     "ids": [
+      "2026-10-06-kr-seoul#kr-se-023"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-06-kr-seoul#kr-se-037 \"Mokdong Climbing Center (목동클라이밍센터)\": related-name-nearby related names \"인천계양클라이밍센터\" / \"목동클라이밍센터\" 12060 m apart",
+     "ids": [
+      "2026-10-06-kr-seoul#kr-se-037"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-06-kr-seoul#kr-se-043 \"2 Years Climb House (투이얼즈클라임하우스)\": related-name-nearby related names \"인천계양클라이밍센터\" / \"투이얼즈클라임하우스\" 12530 m apart",
+     "ids": [
+      "2026-10-06-kr-seoul#kr-se-043"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-06-kr-seoul#kr-se-053 \"Seoul Boulders Mokdong (서울볼더스 클라이밍 목동점)\": related-name-nearby related names \"인천계양클라이밍센터\" / \"서울볼더스 클라이밍 목동점\" 12462 m apart",
+     "ids": [
+      "2026-10-06-kr-seoul#kr-se-053"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-06-kr-seoul#kr-se-055 \"The Climb Magok (더클라임 마곡점)\": related-name-nearby related names \"인천계양클라이밍센터\" / \"더클라임 마곡점\" 9002 m apart",
+     "ids": [
+      "2026-10-06-kr-seoul#kr-se-055"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-06-kr-seoul#kr-se-061 \"Ace Climbing Center (에이스클라이밍센터)\": related-name-nearby related names \"인천계양클라이밍센터\" / \"에이스클라이밍센터\" 14765 m apart",
+     "ids": [
+      "2026-10-06-kr-seoul#kr-se-061"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-06-kr-seoul#kr-se-065 \"Seoul Mountain Culture Experience Center (서울특별시산악문화체험센터)\": related-name-nearby related names \"인천계양클라이밍센터\" / \"서울특별시산악문화체험센터\" 13176 m apart",
+     "ids": [
+      "2026-10-06-kr-seoul#kr-se-065"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-06-kr-seoul#kr-se-066 \"Koala Climbing Sangam (코알라클라이밍 상암)\": related-name-nearby related names \"인천계양클라이밍센터\" / \"코알라클라이밍 상암\" 14409 m apart",
+     "ids": [
+      "2026-10-06-kr-seoul#kr-se-066"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-north#kr-gn-001 \"Koala Climbing Kintex (코알라클라이밍 킨텍스점)\": related-name-nearby related names \"인천계양클라이밍센터\" / \"코알라클라이밍 킨텍스점\" 14949 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-north#kr-gn-001"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-north#kr-gn-002 \"The Climb Ilsan (더클라임 일산점)\": related-name-nearby related names \"인천계양클라이밍센터\" / \"더클라임 일산점\" 12657 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-north#kr-gn-002"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-north#kr-gn-009 \"Pick Climbing Gimpo (픽 클라이밍)\": related-name-nearby related names \"인천계양클라이밍센터\" / \"픽 클라이밍\" 14847 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-north#kr-gn-009"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-north#kr-gn-018 \"Jam Climbing Gimpo (잼클라이밍)\": related-name-nearby related names \"인천계양클라이밍센터\" / \"잼클라이밍\" 11944 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-north#kr-gn-018"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-north#kr-gn-019 \"Kikl Climbing Pungmu (키클 클라이밍 풍무점)\": related-name-nearby related names \"인천계양클라이밍센터\" / \"키클 클라이밍 풍무점\" 7216 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-north#kr-gn-019"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-north#kr-gn-021 \"Ilsan Climbing Center (일산클라이밍센터)\": related-name-nearby related names \"인천계양클라이밍센터\" / \"일산클라이밍센터\" 12329 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-north#kr-gn-021"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-001 \"Catchstone Climbing Bucheon Station (캐치스톤클라이밍짐 부천역점)\": related-name-nearby related names \"인천계양클라이밍센터\" / \"캐치스톤클라이밍짐 부천역점\" 7646 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-001"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-010 \"World Climbing (월드클라이밍)\": related-name-nearby related names \"인천계양클라이밍센터\" / \"월드클라이밍\" 4554 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-010"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-016 \"Siheung Sports Climbing Center (시흥스포츠클라이밍센터)\": related-name-nearby related names \"인천계양클라이밍센터\" / \"시흥스포츠클라이밍센터\" 11452 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-016"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-017 \"Bouldergarden Siheung (볼더가든클라이밍)\": related-name-nearby related names \"인천계양클라이밍센터\" / \"볼더가든클라이밍\" 12324 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-017"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-018 \"Bucheon Climbing Center (부천클라이밍센터)\": related-name-nearby related names \"인천계양클라이밍센터\" / \"부천클라이밍센터\" 6595 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-018"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-019 \"Pax Climbing Center (팍스클라이밍)\": related-name-nearby related names \"인천계양클라이밍센터\" / \"팍스클라이밍\" 6836 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-019"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-021 \"Just Climbing Center (저스트클라이밍센타)\": related-name-nearby related names \"인천계양클라이밍센터\" / \"저스트클라이밍센타\" 11770 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-021"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-002 \"Discovery Climb Square Cheongna (디스커버리클라이밍 클라임스퀘어 청라점)\": related names \"인천계양클라이밍센터\" / \"디스커버리클라이밍 클라임스퀘어 청라점\" 7239 m apart",
+     "ids": [
+      "kr-ic-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-007 \"Boly Climbing (볼리 클라이밍)\": related names \"인천계양클라이밍센터\" / \"볼리 클라이밍\" 13398 m apart",
+     "ids": [
+      "kr-ic-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-008 \"Bupyeong Climbing Center (부평클라이밍센터)\": related names \"인천계양클라이밍센터\" / \"부평클라이밍센터\" 6241 m apart",
+     "ids": [
+      "kr-ic-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-009 \"Ganseok Climbing (간석클라이밍)\": related names \"인천계양클라이밍센터\" / \"간석클라이밍\" 9691 m apart",
+     "ids": [
+      "kr-ic-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-011 \"Incheon Best Climbing Center (인천베스트클라이밍센타)\": related names \"인천계양클라이밍센터\" / \"인천베스트클라이밍센타\" 2891 m apart",
+     "ids": [
+      "kr-ic-011"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-012 \"Seo-Incheon Climbing (서인천 클라이밍)\": related names \"인천계양클라이밍센터\" / \"서인천 클라이밍\" 6028 m apart",
+     "ids": [
+      "kr-ic-012"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-014 \"Incheon Munhak Stadium Climbing Wall (인천문학경기장암벽장)\": related names \"인천계양클라이밍센터\" / \"인천문학경기장암벽장\" 12629 m apart",
+     "ids": [
+      "kr-ic-014"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-015 \"Incheon Indoor Climbing Wall (인천실내암장)\": related names \"Incheon Gyeyang Climbing Center (인천계양클라이밍센터)\" / \"Incheon Indoor Climbing Wall (인천실내암장)\" 13595 m apart",
+     "ids": [
+      "kr-ic-015"
+     ]
+    }
+   ],
+   "review_ids": [
+    "2026-10-06-kr-seoul#kr-se-003",
+    "2026-10-06-kr-seoul#kr-se-009",
+    "2026-10-06-kr-seoul#kr-se-020",
+    "2026-10-06-kr-seoul#kr-se-022",
+    "2026-10-06-kr-seoul#kr-se-023",
+    "2026-10-06-kr-seoul#kr-se-037",
+    "2026-10-06-kr-seoul#kr-se-043",
+    "2026-10-06-kr-seoul#kr-se-053",
+    "2026-10-06-kr-seoul#kr-se-055",
+    "2026-10-06-kr-seoul#kr-se-061",
+    "2026-10-06-kr-seoul#kr-se-065",
+    "2026-10-06-kr-seoul#kr-se-066",
+    "2026-10-12-kr-gyeonggi-north#kr-gn-001",
+    "2026-10-12-kr-gyeonggi-north#kr-gn-002",
+    "2026-10-12-kr-gyeonggi-north#kr-gn-009",
+    "2026-10-12-kr-gyeonggi-north#kr-gn-018",
+    "2026-10-12-kr-gyeonggi-north#kr-gn-019",
+    "2026-10-12-kr-gyeonggi-north#kr-gn-021",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-001",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-010",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-016",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-017",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-018",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-019",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-021",
+    "kr-ic-002",
+    "kr-ic-007",
+    "kr-ic-008",
+    "kr-ic-009",
+    "kr-ic-011",
+    "kr-ic-012",
+    "kr-ic-014",
+    "kr-ic-015",
+    "seed-1217"
+   ]
+  },
+  {
+   "cid": "kr-ic-014",
+   "line": 14,
+   "name": "Incheon Munhak Stadium Climbing Wall (인천문학경기장암벽장)",
+   "class": "blocked",
+   "suggested": "reject not-a-gym",
+   "importer": {
+    "class": "new",
+    "id": "g-c3e4f1a3e9"
+   },
+   "blockers": [
+    {
+     "code": "not-a-gym",
+     "detail": "category other"
+    },
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-001 \"Catchstone Climbing Bucheon Station (캐치스톤클라이밍짐 부천역점)\": related-name-nearby related names \"인천문학경기장암벽장\" / \"캐치스톤클라이밍짐 부천역점\" 9731 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-001"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-010 \"World Climbing (월드클라이밍)\": related-name-nearby related names \"인천문학경기장암벽장\" / \"월드클라이밍\" 9530 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-010"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-014 \"Siheung Catch Climbing Gym (시흥캐치클라이밍짐)\": related-name-nearby related names \"인천문학경기장암벽장\" / \"시흥캐치클라이밍짐\" 10465 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-014"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-016 \"Siheung Sports Climbing Center (시흥스포츠클라이밍센터)\": related-name-nearby related names \"인천문학경기장암벽장\" / \"시흥스포츠클라이밍센터\" 8240 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-016"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-017 \"Bouldergarden Siheung (볼더가든클라이밍)\": related-name-nearby related names \"인천문학경기장암벽장\" / \"볼더가든클라이밍\" 9696 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-017"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-018 \"Bucheon Climbing Center (부천클라이밍센터)\": related-name-nearby related names \"인천문학경기장암벽장\" / \"부천클라이밍센터\" 8653 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-018"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-019 \"Pax Climbing Center (팍스클라이밍)\": related-name-nearby related names \"인천문학경기장암벽장\" / \"팍스클라이밍\" 13439 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-019"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-021 \"Just Climbing Center (저스트클라이밍센타)\": related-name-nearby related names \"인천문학경기장암벽장\" / \"저스트클라이밍센타\" 8828 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-021"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-002 \"Discovery Climb Square Cheongna (디스커버리클라이밍 클라임스퀘어 청라점)\": related names \"인천문학경기장암벽장\" / \"디스커버리클라이밍 클라임스퀘어 청라점\" 11671 m apart",
+     "ids": [
+      "kr-ic-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-003 \"B-bloc Climbing Songdo (비블럭 클라이밍 송도점)\": related names \"인천문학경기장암벽장\" / \"비블럭 클라이밍 송도점\" 6522 m apart",
+     "ids": [
+      "kr-ic-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-004 \"B-bloc Climbing Yeongjong Hanul-city (비블럭클라이밍 영종하늘도시점)\": related names \"인천문학경기장암벽장\" / \"비블럭클라이밍 영종하늘도시점\" 13155 m apart",
+     "ids": [
+      "kr-ic-004"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-005 \"Climbing Zoom (클라이밍줌)\": related names \"인천문학경기장암벽장\" / \"클라이밍줌\" 2622 m apart",
+     "ids": [
+      "kr-ic-005"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-006 \"Hub Climbing (허브클라이밍)\": related names \"인천문학경기장암벽장\" / \"허브클라이밍\" 4453 m apart",
+     "ids": [
+      "kr-ic-006"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-007 \"Boly Climbing (볼리 클라이밍)\": related names \"인천문학경기장암벽장\" / \"볼리 클라이밍\" 5081 m apart",
+     "ids": [
+      "kr-ic-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-008 \"Bupyeong Climbing Center (부평클라이밍센터)\": related names \"인천문학경기장암벽장\" / \"부평클라이밍센터\" 6497 m apart",
+     "ids": [
+      "kr-ic-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-009 \"Ganseok Climbing (간석클라이밍)\": related names \"인천문학경기장암벽장\" / \"간석클라이밍\" 3000 m apart",
+     "ids": [
+      "kr-ic-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-010 \"Discovery Climb Square Songdo (디스커버리클라이밍 클라임스퀘어 송도점)\": related names \"인천문학경기장암벽장\" / \"디스커버리클라이밍 클라임스퀘어 송도점\" 6763 m apart",
+     "ids": [
+      "kr-ic-010"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-011 \"Incheon Best Climbing Center (인천베스트클라이밍센타)\": related names \"인천문학경기장암벽장\" / \"인천베스트클라이밍센타\" 9741 m apart",
+     "ids": [
+      "kr-ic-011"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-012 \"Seo-Incheon Climbing (서인천 클라이밍)\": related names \"인천문학경기장암벽장\" / \"서인천 클라이밍\" 9546 m apart",
+     "ids": [
+      "kr-ic-012"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-013 \"Incheon Gyeyang Climbing Center (인천계양클라이밍센터)\": related names \"인천문학경기장암벽장\" / \"인천계양클라이밍센터\" 12629 m apart",
+     "ids": [
+      "kr-ic-013"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-015 \"Incheon Indoor Climbing Wall (인천실내암장)\": related names \"Incheon Munhak Stadium Climbing Wall (인천문학경기장암벽장)\" / \"Incheon Indoor Climbing Wall (인천실내암장)\" 1381 m apart",
+     "ids": [
+      "kr-ic-015"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "2026-10-12-kr-gyeonggi-west#kr-gw-001",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-010",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-014",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-016",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-017",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-018",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-019",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-021",
+    "kr-ic-002",
+    "kr-ic-003",
+    "kr-ic-004",
+    "kr-ic-005",
+    "kr-ic-006",
+    "kr-ic-007",
+    "kr-ic-008",
+    "kr-ic-009",
+    "kr-ic-010",
+    "kr-ic-011",
+    "kr-ic-012",
+    "kr-ic-013",
+    "kr-ic-015"
+   ]
+  },
+  {
+   "cid": "kr-ic-015",
+   "line": 15,
+   "name": "Incheon Indoor Climbing Wall (인천실내암장)",
+   "class": "blocked",
+   "suggested": "reject not-a-gym",
+   "importer": {
+    "class": "new",
+    "id": "g-0385ea5196"
+   },
+   "blockers": [
+    {
+     "code": "not-a-gym",
+     "detail": "category other"
+    },
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-001 \"Catchstone Climbing Bucheon Station (캐치스톤클라이밍짐 부천역점)\": related-name-nearby related names \"인천실내암장\" / \"캐치스톤클라이밍짐 부천역점\" 9946 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-001"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-010 \"World Climbing (월드클라이밍)\": related-name-nearby related names \"인천실내암장\" / \"월드클라이밍\" 10184 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-010"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-013 \"Ansan Seonbu Climbing (안산 선부 클라이밍)\": related-name-nearby related names \"인천실내암장\" / \"안산 선부 클라이밍\" 14022 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-013"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-014 \"Siheung Catch Climbing Gym (시흥캐치클라이밍짐)\": related-name-nearby related names \"인천실내암장\" / \"시흥캐치클라이밍짐\" 9210 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-014"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-016 \"Siheung Sports Climbing Center (시흥스포츠클라이밍센터)\": related-name-nearby related names \"인천실내암장\" / \"시흥스포츠클라이밍센터\" 7868 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-016"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-017 \"Bouldergarden Siheung (볼더가든클라이밍)\": related-name-nearby related names \"인천실내암장\" / \"볼더가든클라이밍\" 9237 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-017"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-018 \"Bucheon Climbing Center (부천클라이밍센터)\": related-name-nearby related names \"인천실내암장\" / \"부천클라이밍센터\" 9064 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-018"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-019 \"Pax Climbing Center (팍스클라이밍)\": related-name-nearby related names \"인천실내암장\" / \"팍스클라이밍\" 13792 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-019"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-020 \"ClimbIt Climbing Mokgam (클라임잇 클라이밍 목감점)\": related-name-nearby related names \"인천실내암장\" / \"클라임잇 클라이밍 목감점\" 14949 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-020"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-021 \"Just Climbing Center (저스트클라이밍센타)\": related-name-nearby related names \"인천실내암장\" / \"저스트클라이밍센타\" 8420 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-021"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-002 \"Discovery Climb Square Cheongna (디스커버리클라이밍 클라임스퀘어 청라점)\": related names \"인천실내암장\" / \"디스커버리클라이밍 클라임스퀘어 청라점\" 13018 m apart",
+     "ids": [
+      "kr-ic-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-003 \"B-bloc Climbing Songdo (비블럭 클라이밍 송도점)\": related names \"인천실내암장\" / \"비블럭 클라이밍 송도점\" 5836 m apart",
+     "ids": [
+      "kr-ic-003"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-004 \"B-bloc Climbing Yeongjong Hanul-city (비블럭클라이밍 영종하늘도시점)\": related names \"인천실내암장\" / \"비블럭클라이밍 영종하늘도시점\" 14355 m apart",
+     "ids": [
+      "kr-ic-004"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-005 \"Climbing Zoom (클라이밍줌)\": related names \"인천실내암장\" / \"클라이밍줌\" 2514 m apart",
+     "ids": [
+      "kr-ic-005"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-006 \"Hub Climbing (허브클라이밍)\": related names \"Incheon Indoor Climbing Wall (인천실내암장)\" / \"Hub Climbing Incheon\" 3079 m apart",
+     "ids": [
+      "kr-ic-006"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-007 \"Boly Climbing (볼리 클라이밍)\": related names \"인천실내암장\" / \"볼리 클라이밍\" 4214 m apart",
+     "ids": [
+      "kr-ic-007"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-008 \"Bupyeong Climbing Center (부평클라이밍센터)\": related names \"인천실내암장\" / \"부평클라이밍센터\" 7601 m apart",
+     "ids": [
+      "kr-ic-008"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-009 \"Ganseok Climbing (간석클라이밍)\": related names \"인천실내암장\" / \"간석클라이밍\" 4179 m apart",
+     "ids": [
+      "kr-ic-009"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-010 \"Discovery Climb Square Songdo (디스커버리클라이밍 클라임스퀘어 송도점)\": related names \"인천실내암장\" / \"디스커버리클라이밍 클라임스퀘어 송도점\" 6062 m apart",
+     "ids": [
+      "kr-ic-010"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-011 \"Incheon Best Climbing Center (인천베스트클라이밍센타)\": related names \"Incheon Indoor Climbing Wall (인천실내암장)\" / \"Incheon Best Climbing Center (인천베스트클라이밍센타)\" 10705 m apart",
+     "ids": [
+      "kr-ic-011"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-012 \"Seo-Incheon Climbing (서인천 클라이밍)\": related names \"Incheon Indoor Climbing Wall (인천실내암장)\" / \"Seo-Incheon Climbing (서인천 클라이밍)\" 10850 m apart",
+     "ids": [
+      "kr-ic-012"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-013 \"Incheon Gyeyang Climbing Center (인천계양클라이밍센터)\": related names \"Incheon Indoor Climbing Wall (인천실내암장)\" / \"Incheon Gyeyang Climbing Center (인천계양클라이밍센터)\" 13595 m apart",
+     "ids": [
+      "kr-ic-013"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate kr-ic-014 \"Incheon Munhak Stadium Climbing Wall (인천문학경기장암벽장)\": related names \"Incheon Indoor Climbing Wall (인천실내암장)\" / \"Incheon Munhak Stadium Climbing Wall (인천문학경기장암벽장)\" 1381 m apart",
+     "ids": [
+      "kr-ic-014"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-1217 \"Incheon Gyeyang Climbing Center\": related names \"Incheon Indoor Climbing Wall (인천실내암장)\" / \"Incheon Gyeyang Climbing Center\" 13562 m apart",
+     "ids": [
+      "seed-1217"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "2026-10-12-kr-gyeonggi-west#kr-gw-001",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-010",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-013",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-014",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-016",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-017",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-018",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-019",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-020",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-021",
+    "kr-ic-002",
+    "kr-ic-003",
+    "kr-ic-004",
+    "kr-ic-005",
+    "kr-ic-006",
+    "kr-ic-007",
+    "kr-ic-008",
+    "kr-ic-009",
+    "kr-ic-010",
+    "kr-ic-011",
+    "kr-ic-012",
+    "kr-ic-013",
+    "kr-ic-014",
+    "seed-1217"
+   ]
+  }
+ ],
+ "reconcile_sha256": "2a1813d04304411efa8cb227575fb30e8b95d3758d886d7e26a346c73009b2db"
+}

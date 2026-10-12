@@ -6,10 +6,21 @@
   "count": 3294,
   "meta_matches": true
  },
- "staged_batches_compared": [],
+ "staged_batches_compared": [
+  "2026-10-12-cn-beijing-chengdu",
+  "2026-10-12-cn-kunming-changsha",
+  "2026-10-12-cn-shanghai",
+  "2026-10-12-kr-busan-gyeongnam",
+  "2026-10-12-kr-central-regions",
+  "2026-10-12-kr-daegu-gyeongbuk",
+  "2026-10-12-kr-gyeonggi-north",
+  "2026-10-12-kr-gyeonggi-south",
+  "2026-10-12-kr-gyeonggi-west",
+  "2026-10-12-kr-incheon"
+ ],
  "counts": {
-  "records": 40,
-  "new": 40,
+  "records": 39,
+  "new": 39,
   "existing": 0,
   "update": 0,
   "probable-duplicate": 0,
@@ -23,7 +34,7 @@
  "importable": true,
  "blockers": [],
  "unused_decisions": [],
- "plan_sha256": "9b90f959c1206202701efb59fe5f72b1d1e07f0069afbd8c9df1b956dae43b69",
+ "plan_sha256": "f1f0c0370c0484fdc2b86066857a19b0109235c27a4e85bdbf8ebd8a583f231e",
  "records": [
   {
    "line": 1,
@@ -172,21 +183,13 @@
   {
    "line": 19,
    "class": "new",
-   "id": "g-ea601dcf8b",
-   "id_frozen": true,
-   "name": "Seoul Boulders Seonyu (서울볼더스 선유)",
-   "country": "KR"
-  },
-  {
-   "line": 20,
-   "class": "new",
    "id": "g-195807ea52",
    "id_frozen": true,
    "name": "Climbing 88 (클라이밍88)",
    "country": "KR"
   },
   {
-   "line": 21,
+   "line": 20,
    "class": "new",
    "id": "g-9174484794",
    "id_frozen": true,
@@ -194,7 +197,7 @@
    "country": "KR"
   },
   {
-   "line": 22,
+   "line": 21,
    "class": "new",
    "id": "g-4d4a311e8c",
    "id_frozen": true,
@@ -202,7 +205,7 @@
    "country": "KR"
   },
   {
-   "line": 23,
+   "line": 22,
    "class": "new",
    "id": "g-8d264f9008",
    "id_frozen": true,
@@ -210,7 +213,7 @@
    "country": "KR"
   },
   {
-   "line": 24,
+   "line": 23,
    "class": "new",
    "id": "g-8e31fe076a",
    "id_frozen": true,
@@ -218,7 +221,7 @@
    "country": "KR"
   },
   {
-   "line": 25,
+   "line": 24,
    "class": "new",
    "id": "g-90266b47aa",
    "id_frozen": true,
@@ -226,7 +229,7 @@
    "country": "KR"
   },
   {
-   "line": 26,
+   "line": 25,
    "class": "new",
    "id": "g-9ca1667360",
    "id_frozen": true,
@@ -234,7 +237,7 @@
    "country": "KR"
   },
   {
-   "line": 27,
+   "line": 26,
    "class": "new",
    "id": "g-9eb49829f4",
    "id_frozen": true,
@@ -242,7 +245,7 @@
    "country": "KR"
   },
   {
-   "line": 28,
+   "line": 27,
    "class": "new",
    "id": "g-0819b5962e",
    "id_frozen": true,
@@ -250,7 +253,7 @@
    "country": "KR"
   },
   {
-   "line": 29,
+   "line": 28,
    "class": "new",
    "id": "g-4e01760c07",
    "id_frozen": true,
@@ -258,7 +261,7 @@
    "country": "KR"
   },
   {
-   "line": 30,
+   "line": 29,
    "class": "new",
    "id": "g-23ea921212",
    "id_frozen": true,
@@ -266,7 +269,7 @@
    "country": "KR"
   },
   {
-   "line": 31,
+   "line": 30,
    "class": "new",
    "id": "g-95f159a432",
    "id_frozen": true,
@@ -274,7 +277,7 @@
    "country": "KR"
   },
   {
-   "line": 32,
+   "line": 31,
    "class": "new",
    "id": "g-2dafc40c9e",
    "id_frozen": true,
@@ -282,7 +285,7 @@
    "country": "KR"
   },
   {
-   "line": 33,
+   "line": 32,
    "class": "new",
    "id": "g-e163b898be",
    "id_frozen": true,
@@ -290,7 +293,7 @@
    "country": "KR"
   },
   {
-   "line": 34,
+   "line": 33,
    "class": "new",
    "id": "g-356c2e6114",
    "id_frozen": true,
@@ -298,7 +301,7 @@
    "country": "KR"
   },
   {
-   "line": 35,
+   "line": 34,
    "class": "new",
    "id": "g-2efb55e5bf",
    "id_frozen": true,
@@ -306,7 +309,7 @@
    "country": "KR"
   },
   {
-   "line": 36,
+   "line": 35,
    "class": "new",
    "id": "g-ce1bfad3b1",
    "id_frozen": true,
@@ -314,7 +317,7 @@
    "country": "KR"
   },
   {
-   "line": 37,
+   "line": 36,
    "class": "new",
    "id": "g-343903ee22",
    "id_frozen": true,
@@ -322,7 +325,7 @@
    "country": "KR"
   },
   {
-   "line": 38,
+   "line": 37,
    "class": "new",
    "id": "g-8488a43907",
    "id_frozen": true,
@@ -330,7 +333,7 @@
    "country": "KR"
   },
   {
-   "line": 39,
+   "line": 38,
    "class": "new",
    "id": "g-eb73fe5ef7",
    "id_frozen": true,
@@ -338,7 +341,7 @@
    "country": "KR"
   },
   {
-   "line": 40,
+   "line": 39,
    "class": "new",
    "id": "g-cb76b7786c",
    "id_frozen": true,
