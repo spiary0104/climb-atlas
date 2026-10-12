@@ -1,7 +1,7 @@
 # Regional research: China: Shanghai coverage gap (2026-10-12-cn-shanghai)
 
 Scope: CN / SHANGHAI
-Index: 3294 gyms, sha256 2f47cb53e74b… | staged batches compared: 2026-10-06-kr-seoul, 2026-10-12-cn-kunming-changsha | other sections compared: 2026-10-12-cn-kunming-changsha
+Index: 3294 gyms, sha256 2f47cb53e74b… | staged batches compared: 2026-10-06-kr-seoul, 2026-10-12-cn-kunming-changsha | other sections compared: 2026-10-12-cn-beijing-chengdu, 2026-10-12-cn-kunming-changsha
 Review radii (stricter than the importer): any gym 150 m, related name 15 km, other country 2 km
 
 ## Summary

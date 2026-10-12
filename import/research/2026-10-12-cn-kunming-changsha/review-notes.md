@@ -34,3 +34,6 @@ Candidates were found with RedNote searches (city + 攀岩馆 / 抱石 / 探馆,
 - Panyang: one Amap rating only; the own account carries the open evidence.
 - TBW: opened in summer 2026; one visitor note (2026-10-10) complains about pricing but is about a live gym.
 - Xiaoxiong Hailer World and TBW Longji Base: street-level pins (about 100 m), no entrance coordinate on the listing.
+
+## Brain review (2026-10-12)
+Street-level pins (no Amap entrance coordinate) moved from accept to defer: cn-km-004, cn-cs-002. Owner rule: no reliable pin = defer; each is on MANUAL-CHECK.md with "drop a pin".

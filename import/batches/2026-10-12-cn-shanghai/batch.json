@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "batch_id": "2026-10-12-cn-shanghai",
-  "description": "Regional research \"China: Shanghai coverage gap\": 16 new gym(s) accepted of 17 candidate(s)",
+  "description": "Regional research \"China: Shanghai coverage gap\": 11 new gym(s) accepted of 17 candidate(s)",
   "created": "2026-10-12",
   "source": {
     "kind": "regional-research",
@@ -9,12 +9,13 @@
     "section_sha256": "9b474aa0d681b00932b9476a8506bae50f864753efc60857511518ad27925751",
     "sources_sha256": "8eefd6b7ce520848728d04a723153fa08fc95911a2259d1d851ce1a5cb57dfe6",
     "candidates_sha256": "50d68e713907b009021d0c95484c6350c28f3f6fdb190f1bdebf4271e475b844",
-    "reconcile_sha256": "0fddbd0aff7278b56a846bf8a93f68556c0746d83bedc200ea4e05aae779b00c",
-    "review_sha256": "329bcec0ec55b588447758d48df2e80965ef99aa12f86956b91956c1e9e121fc",
+    "reconcile_sha256": "4542d9dd0b26aa41726e9b29dd554e595133e0ea54e0f90d3f7ef3819ab72e29",
+    "review_sha256": "ad53c10bcacb092e64ea16603022eca314aa3aff32fdc986d9ab4fdc1a7b4c44",
     "candidates": 17,
-    "staged": 16,
+    "staged": 11,
     "decisions": {
-      "accept": 16,
+      "accept": 11,
+      "defer": 5,
       "reject": 1
     }
   },

@@ -9,3 +9,12 @@ Three gyms I could not settle; all stay `defer` in review.json and are not in th
 | Yanxuan Climbing, Donghu (岩选攀岩, cn-cd-003) | Chengdu | https://www.amap.com/place/B0MBNSSJKO ; RedNote account 678776e00000000008018fe1 ; note 6a59935b0000000001033b1e | Does the first store (Erhuan Lu Dongwuduan, 3/F) have a bouldering area? | Own posts 2026-05 to 2026-10-01 (zone D routes, a dyno route, announcement of a second store opening in November with an indoor bouldering area); one visitor note calls it a favourite bouldering gym; Amap live (4.6, 10 ratings). |
 
 Policy decision behind two of the three: if the owner wants visitor notes (two or more independent 2026 notes plus a live Amap listing) to count as evidence, the importer needs a new primary source kind (a code change in scripts/lib/gym-import/research.js, PRIMARY_KINDS); until then such gyms cannot be staged.
+
+## Added by the brain review (2026-10-12): pin needed
+
+| Gym | Question |
+|---|---|
+| Banana Climbing (Xiaoyuehe) [香蕉攀岩小月河店] | Drop a pin on the entrance (its Amap listing has no entrance coordinate; the search pin is only street-level, ±150 m). Gym itself passes: open in 2026 with bouldering. |
+| Cishan Climbing (Yizhuang Tongminghu) [此山攀岩亦庄通明湖商业港店] | Drop a pin on the entrance (its Amap listing has no entrance coordinate; the search pin is only street-level, ±150 m). Gym itself passes: open in 2026 with bouldering. |
+| Surmount Climbing [SURMOUNT山迈攀岩] | Drop a pin on the entrance (its Amap listing has no entrance coordinate; the search pin is only street-level, ±150 m). Gym itself passes: open in 2026 with bouldering. |
+| Banana Climbing (Youfang) [香蕉攀岩悠方店] | Drop a pin on the entrance (its Amap listing has no entrance coordinate; the search pin is only street-level, ±150 m). Gym itself passes: open in 2026 with bouldering. |

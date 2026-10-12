@@ -1,7 +1,7 @@
 # Regional research: China: Kunming and Changsha coverage gap (2026-10-12-cn-kunming-changsha)
 
 Scope: CN / KUNMING, CHANGSHA
-Index: 3294 gyms, sha256 2f47cb53e74b… | staged batches compared: 2026-10-06-kr-seoul | other sections compared: none
+Index: 3294 gyms, sha256 2f47cb53e74b… | staged batches compared: 2026-10-06-kr-seoul | other sections compared: 2026-10-12-cn-beijing-chengdu, 2026-10-12-cn-shanghai
 Review radii (stricter than the importer): any gym 150 m, related name 15 km, other country 2 km
 
 ## Summary

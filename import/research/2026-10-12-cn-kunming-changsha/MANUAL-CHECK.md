@@ -9,3 +9,10 @@ Three gyms I could not settle; all stay `defer` in review.json and are not in th
 | Xiangpan Climbing, Yinpenling Wanda (湘攀攀岩银盆岭万达店, cn-cs-004) | Changsha | https://www.amap.com/place/B0J0NZ9CJ7 ; RedNote account 64c88350000000000e026744 | Can adults walk in and boulder (own account: youth competition gym; one adult group class post 2026-09-30)? | One visitor note 2026-08-24: weekend bouldering, few people, many children, hard problems. |
 
 Policy decision behind two of the three: if the owner wants visitor notes (two or more independent 2026 notes plus a live Amap listing) to count as evidence, the importer needs a new primary source kind (a code change in scripts/lib/gym-import/research.js, PRIMARY_KINDS); until then such gyms cannot be staged.
+
+## Added by the brain review (2026-10-12): pin needed
+
+| Gym | Question |
+|---|---|
+| Xiaoxiong Climbing (Hailer World) [昆明小熊攀岩俱乐部海乐世界馆] | Drop a pin on the entrance (its Amap listing has no entrance coordinate; the search pin is only street-level, ±150 m). Gym itself passes: open in 2026 with bouldering. |
+| TBW Climbing (Longji Base) [TBW攀岩龙脊基地店] | Drop a pin on the entrance (its Amap listing has no entrance coordinate; the search pin is only street-level, ±150 m). Gym itself passes: open in 2026 with bouldering. |

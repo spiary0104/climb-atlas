@@ -12,7 +12,16 @@
   "staged_batches_compared": [
    "2026-10-06-kr-seoul"
   ],
-  "other_sections_compared": []
+  "other_sections_compared": [
+   {
+    "id": "2026-10-12-cn-beijing-chengdu",
+    "candidates_sha256": "1d2f7b800771adbafe399ecf877f6b8a0f3e7ae43779d02d32a7dcfd5a28d72b"
+   },
+   {
+    "id": "2026-10-12-cn-shanghai",
+    "candidates_sha256": "50d68e713907b009021d0c95484c6350c28f3f6fdb190f1bdebf4271e475b844"
+   }
+  ]
  },
  "review_radii_m": {
   "NEARBY_ANY_M": 150,
@@ -330,5 +339,5 @@
    "review_ids": []
   }
  ],
- "reconcile_sha256": "ce0b281fe8168e5a14a138fb476fe92ca77a651546abbcccd47d7e4eb255571e"
+ "reconcile_sha256": "f1901c2c98cbcd75a35e234356a9237b495a00746d0fef5b0deddd03c71d8b2c"
 }
