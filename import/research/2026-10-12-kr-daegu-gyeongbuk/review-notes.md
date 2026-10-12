@@ -30,3 +30,6 @@ M Climbing Chilgok and M Climbing Nam-Daegu: rope-only (owner photos show only r
 
 ## Related-name flags
 Every related-name flag between accepted candidates is a shared word ("Climbing") or the chain name between branches at different addresses (km apart); 4Seasons Sandong vs Indong are two branches 13 km apart (one accepted, one deferred).
+
+## Brain review (2026-10-12)
+Moved from accept to defer (owner rule: low-confidence gyms stay out): kr-dg-002, kr-dg-013. Reasons in review.json; questions in MANUAL-CHECK.md.

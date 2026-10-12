@@ -10,7 +10,9 @@
    "count": 3294
   },
   "staged_batches_compared": [
-   "2026-10-06-kr-seoul"
+   "2026-10-06-kr-seoul",
+   "2026-10-12-kr-busan-gyeongnam",
+   "2026-10-12-kr-incheon"
   ],
   "other_sections_compared": [
    {
@@ -28,6 +30,26 @@
    {
     "id": "2026-10-06-kr-seoul",
     "candidates_sha256": "f78315198a507d6235619c81ff4be71a037392dfbb0c6658a6d40cee9b000487"
+   },
+   {
+    "id": "2026-10-12-kr-busan-gyeongnam",
+    "candidates_sha256": "0bca4015aa37d426d6c4dc4681299927e887914fc21a2cb194940851eb0b6836"
+   },
+   {
+    "id": "2026-10-12-kr-gyeonggi-north",
+    "candidates_sha256": "708251f8989853c6999c022124830c9fba8762568a02f5318365b04505d1c93f"
+   },
+   {
+    "id": "2026-10-12-kr-gyeonggi-south",
+    "candidates_sha256": "6439e3e858747f6f3536e740c7fdcb3aa5d771c49fcdef78bcdd2d42806b6dd8"
+   },
+   {
+    "id": "2026-10-12-kr-gyeonggi-west",
+    "candidates_sha256": "4d037f6195a38f8dca699ccecade187cea203aa16f3f6642c4b43c2079a525a7"
+   },
+   {
+    "id": "2026-10-12-kr-incheon",
+    "candidates_sha256": "129e7abc9b5c9703ba61feab40224d8297dfd412a61aab2f3a9379dfc819f089"
    }
   ]
  },
@@ -4474,5 +4496,5 @@
    "review_ids": []
   }
  ],
- "reconcile_sha256": "03a72330544a63870334863bdf5683f9e08be0cf3d1b0118724fd9db774722c7"
+ "reconcile_sha256": "c0b31a8c7e334e9f58df006208eccea29e186484d0bf3137bea5fda9b38f7a96"
 }

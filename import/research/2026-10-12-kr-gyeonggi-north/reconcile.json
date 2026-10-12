@@ -10,7 +10,12 @@
    "count": 3294
   },
   "staged_batches_compared": [
-   "2026-10-06-kr-seoul"
+   "2026-10-06-kr-seoul",
+   "2026-10-12-kr-busan-gyeongnam",
+   "2026-10-12-kr-daegu-gyeongbuk",
+   "2026-10-12-kr-gyeonggi-south",
+   "2026-10-12-kr-gyeonggi-west",
+   "2026-10-12-kr-incheon"
   ],
   "other_sections_compared": [
    {
@@ -28,6 +33,26 @@
    {
     "id": "2026-10-06-kr-seoul",
     "candidates_sha256": "f78315198a507d6235619c81ff4be71a037392dfbb0c6658a6d40cee9b000487"
+   },
+   {
+    "id": "2026-10-12-kr-busan-gyeongnam",
+    "candidates_sha256": "0bca4015aa37d426d6c4dc4681299927e887914fc21a2cb194940851eb0b6836"
+   },
+   {
+    "id": "2026-10-12-kr-daegu-gyeongbuk",
+    "candidates_sha256": "fad820c102695c3e95313cc9571e31ee860689e0a89af30206b8b30c8e8d869a"
+   },
+   {
+    "id": "2026-10-12-kr-gyeonggi-south",
+    "candidates_sha256": "6439e3e858747f6f3536e740c7fdcb3aa5d771c49fcdef78bcdd2d42806b6dd8"
+   },
+   {
+    "id": "2026-10-12-kr-gyeonggi-west",
+    "candidates_sha256": "4d037f6195a38f8dca699ccecade187cea203aa16f3f6642c4b43c2079a525a7"
+   },
+   {
+    "id": "2026-10-12-kr-incheon",
+    "candidates_sha256": "129e7abc9b5c9703ba61feab40224d8297dfd412a61aab2f3a9379dfc819f089"
    }
   ]
  },
@@ -61,6 +86,13 @@
      "detail": "2026-10-06-kr-seoul#kr-se-055 \"The Climb Magok (더클라임 마곡점)\": related-name-nearby related names \"코알라클라이밍 킨텍스점\" / \"더클라임 마곡점\" 14992 m apart",
      "ids": [
       "2026-10-06-kr-seoul#kr-se-055"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-incheon#kr-ic-013 \"Incheon Gyeyang Climbing Center (인천계양클라이밍센터)\": related-name-nearby related names \"코알라클라이밍 킨텍스점\" / \"인천계양클라이밍센터\" 14949 m apart",
+     "ids": [
+      "2026-10-12-kr-incheon#kr-ic-013"
      ]
     },
     {
@@ -150,6 +182,7 @@
    ],
    "review_ids": [
     "2026-10-06-kr-seoul#kr-se-055",
+    "2026-10-12-kr-incheon#kr-ic-013",
     "kr-gn-002",
     "kr-gn-003",
     "kr-gn-004",
@@ -263,6 +296,13 @@
      ]
     },
     {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-incheon#kr-ic-013 \"Incheon Gyeyang Climbing Center (인천계양클라이밍센터)\": related-name-nearby related names \"더클라임 일산점\" / \"인천계양클라이밍센터\" 12657 m apart",
+     "ids": [
+      "2026-10-12-kr-incheon#kr-ic-013"
+     ]
+    },
+    {
      "code": "related-name-nearby",
      "detail": "candidate kr-gn-001 \"Koala Climbing Kintex (코알라클라이밍 킨텍스점)\": related names \"더클라임 일산점\" / \"코알라클라이밍 킨텍스점\" 3973 m apart",
      "ids": [
@@ -356,6 +396,7 @@
     "2026-10-06-kr-seoul#kr-se-055",
     "2026-10-06-kr-seoul#kr-se-065",
     "2026-10-06-kr-seoul#kr-se-066",
+    "2026-10-12-kr-incheon#kr-ic-013",
     "kr-gn-001",
     "kr-gn-003",
     "kr-gn-004",
@@ -1351,6 +1392,27 @@
    },
    "flags": [
     {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-incheon#kr-ic-002 \"Discovery Climb Square Cheongna (디스커버리클라이밍 클라임스퀘어 청라점)\": related-name-nearby related names \"픽 클라이밍\" / \"디스커버리클라이밍 클라임스퀘어 청라점\" 12673 m apart",
+     "ids": [
+      "2026-10-12-kr-incheon#kr-ic-002"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-incheon#kr-ic-012 \"Seo-Incheon Climbing (서인천 클라이밍)\": related-name-nearby related names \"픽 클라이밍\" / \"서인천 클라이밍\" 14768 m apart",
+     "ids": [
+      "2026-10-12-kr-incheon#kr-ic-012"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-incheon#kr-ic-013 \"Incheon Gyeyang Climbing Center (인천계양클라이밍센터)\": related-name-nearby related names \"픽 클라이밍\" / \"인천계양클라이밍센터\" 14847 m apart",
+     "ids": [
+      "2026-10-12-kr-incheon#kr-ic-013"
+     ]
+    },
+    {
      "code": "related-name-nearby",
      "detail": "candidate kr-gn-001 \"Koala Climbing Kintex (코알라클라이밍 킨텍스점)\": related names \"픽 클라이밍\" / \"코알라클라이밍 킨텍스점\" 11112 m apart",
      "ids": [
@@ -1415,6 +1477,9 @@
     }
    ],
    "review_ids": [
+    "2026-10-12-kr-incheon#kr-ic-002",
+    "2026-10-12-kr-incheon#kr-ic-012",
+    "2026-10-12-kr-incheon#kr-ic-013",
     "kr-gn-001",
     "kr-gn-002",
     "kr-gn-003",
@@ -2515,6 +2580,13 @@
      ]
     },
     {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-south#kr-gs-015 \"Grippick Climbing Gym (그립픽클라이밍짐)\": related-name-nearby related names \"마운틴스타 클라이밍짐\" / \"그립픽클라이밍짐\" 13219 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-south#kr-gs-015"
+     ]
+    },
+    {
      "code": "related-name-nearby",
      "detail": "candidate kr-gn-013 \"Puzzle Climbing Dasan (퍼즐클라이밍)\": related names \"마운틴스타 클라이밍짐\" / \"퍼즐클라이밍\" 2854 m apart",
      "ids": [
@@ -2592,6 +2664,7 @@
     "2026-10-06-kr-seoul#kr-se-060",
     "2026-10-06-kr-seoul#kr-se-062",
     "2026-10-06-kr-seoul#kr-se-064",
+    "2026-10-12-kr-gyeonggi-south#kr-gs-015",
     "kr-gn-013",
     "kr-gn-014",
     "kr-gn-015",
@@ -2738,6 +2811,20 @@
      ]
     },
     {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-south#kr-gs-015 \"Grippick Climbing Gym (그립픽클라이밍짐)\": related-name-nearby related names \"클라임어스 미사점\" / \"그립픽클라이밍짐\" 10909 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-south#kr-gs-015"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-south#kr-gs-018 \"Rock Face Climbing (락페이스클라이밍)\": related-name-nearby related names \"클라임어스 미사점\" / \"락페이스클라이밍\" 13635 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-south#kr-gs-018"
+     ]
+    },
+    {
      "code": "related-name-nearby",
      "detail": "candidate kr-gn-013 \"Puzzle Climbing Dasan (퍼즐클라이밍)\": related names \"클라임어스 미사점\" / \"퍼즐클라이밍\" 6714 m apart",
      "ids": [
@@ -2785,6 +2872,8 @@
     "2026-10-06-kr-seoul#kr-se-060",
     "2026-10-06-kr-seoul#kr-se-062",
     "2026-10-06-kr-seoul#kr-se-064",
+    "2026-10-12-kr-gyeonggi-south#kr-gs-015",
+    "2026-10-12-kr-gyeonggi-south#kr-gs-018",
     "kr-gn-013",
     "kr-gn-014",
     "kr-gn-016",
@@ -2808,6 +2897,34 @@
     }
    ],
    "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-incheon#kr-ic-002 \"Discovery Climb Square Cheongna (디스커버리클라이밍 클라임스퀘어 청라점)\": related-name-nearby related names \"잼클라이밍\" / \"디스커버리클라이밍 클라임스퀘어 청라점\" 11873 m apart",
+     "ids": [
+      "2026-10-12-kr-incheon#kr-ic-002"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-incheon#kr-ic-011 \"Incheon Best Climbing Center (인천베스트클라이밍센타)\": related-name-nearby related names \"잼클라이밍\" / \"인천베스트클라이밍센타\" 14273 m apart",
+     "ids": [
+      "2026-10-12-kr-incheon#kr-ic-011"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-incheon#kr-ic-012 \"Seo-Incheon Climbing (서인천 클라이밍)\": related-name-nearby related names \"잼클라이밍\" / \"서인천 클라이밍\" 13451 m apart",
+     "ids": [
+      "2026-10-12-kr-incheon#kr-ic-012"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-incheon#kr-ic-013 \"Incheon Gyeyang Climbing Center (인천계양클라이밍센터)\": related-name-nearby related names \"잼클라이밍\" / \"인천계양클라이밍센터\" 11944 m apart",
+     "ids": [
+      "2026-10-12-kr-incheon#kr-ic-013"
+     ]
+    },
     {
      "code": "related-name-nearby",
      "detail": "candidate kr-gn-001 \"Koala Climbing Kintex (코알라클라이밍 킨텍스점)\": related names \"잼클라이밍\" / \"코알라클라이밍 킨텍스점\" 7654 m apart",
@@ -2873,6 +2990,10 @@
     }
    ],
    "review_ids": [
+    "2026-10-12-kr-incheon#kr-ic-002",
+    "2026-10-12-kr-incheon#kr-ic-011",
+    "2026-10-12-kr-incheon#kr-ic-012",
+    "2026-10-12-kr-incheon#kr-ic-013",
     "kr-gn-001",
     "kr-gn-002",
     "kr-gn-003",
@@ -2941,6 +3062,69 @@
      "detail": "2026-10-06-kr-seoul#kr-se-065 \"Seoul Mountain Culture Experience Center (서울특별시산악문화체험센터)\": related-name-nearby related names \"키클 클라이밍 풍무점\" / \"서울특별시산악문화체험센터\" 14356 m apart",
      "ids": [
       "2026-10-06-kr-seoul#kr-se-065"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-001 \"Catchstone Climbing Bucheon Station (캐치스톤클라이밍짐 부천역점)\": related-name-nearby related names \"키클 클라이밍 풍무점\" / \"캐치스톤클라이밍짐 부천역점\" 14463 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-001"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-010 \"World Climbing (월드클라이밍)\": related-name-nearby related names \"키클 클라이밍 풍무점\" / \"월드클라이밍\" 11671 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-010"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-018 \"Bucheon Climbing Center (부천클라이밍센터)\": related-name-nearby related names \"키클 클라이밍 풍무점\" / \"부천클라이밍센터\" 13676 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-018"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-019 \"Pax Climbing Center (팍스클라이밍)\": related-name-nearby related names \"키클 클라이밍 풍무점\" / \"팍스클라이밍\" 12306 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-019"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-incheon#kr-ic-002 \"Discovery Climb Square Cheongna (디스커버리클라이밍 클라임스퀘어 청라점)\": related-name-nearby related names \"키클 클라이밍 풍무점\" / \"디스커버리클라이밍 클라임스퀘어 청라점\" 10286 m apart",
+     "ids": [
+      "2026-10-12-kr-incheon#kr-ic-002"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-incheon#kr-ic-008 \"Bupyeong Climbing Center (부평클라이밍센터)\": related-name-nearby related names \"키클 클라이밍 풍무점\" / \"부평클라이밍센터\" 12958 m apart",
+     "ids": [
+      "2026-10-12-kr-incheon#kr-ic-008"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-incheon#kr-ic-011 \"Incheon Best Climbing Center (인천베스트클라이밍센타)\": related-name-nearby related names \"키클 클라이밍 풍무점\" / \"인천베스트클라이밍센타\" 9965 m apart",
+     "ids": [
+      "2026-10-12-kr-incheon#kr-ic-011"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-incheon#kr-ic-012 \"Seo-Incheon Climbing (서인천 클라이밍)\": related-name-nearby related names \"키클 클라이밍 풍무점\" / \"서인천 클라이밍\" 10852 m apart",
+     "ids": [
+      "2026-10-12-kr-incheon#kr-ic-012"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-incheon#kr-ic-013 \"Incheon Gyeyang Climbing Center (인천계양클라이밍센터)\": related-name-nearby related names \"키클 클라이밍 풍무점\" / \"인천계양클라이밍센터\" 7216 m apart",
+     "ids": [
+      "2026-10-12-kr-incheon#kr-ic-013"
      ]
     },
     {
@@ -3021,6 +3205,15 @@
     "2026-10-06-kr-seoul#kr-se-043",
     "2026-10-06-kr-seoul#kr-se-055",
     "2026-10-06-kr-seoul#kr-se-065",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-001",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-010",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-018",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-019",
+    "2026-10-12-kr-incheon#kr-ic-002",
+    "2026-10-12-kr-incheon#kr-ic-008",
+    "2026-10-12-kr-incheon#kr-ic-011",
+    "2026-10-12-kr-incheon#kr-ic-012",
+    "2026-10-12-kr-incheon#kr-ic-013",
     "kr-gn-001",
     "kr-gn-002",
     "kr-gn-003",
@@ -3367,6 +3560,20 @@
      ]
     },
     {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-019 \"Pax Climbing Center (팍스클라이밍)\": related-name-nearby related names \"일산클라이밍센터\" / \"팍스클라이밍\" 14617 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-019"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-incheon#kr-ic-013 \"Incheon Gyeyang Climbing Center (인천계양클라이밍센터)\": related-name-nearby related names \"일산클라이밍센터\" / \"인천계양클라이밍센터\" 12329 m apart",
+     "ids": [
+      "2026-10-12-kr-incheon#kr-ic-013"
+     ]
+    },
+    {
      "code": "related-name-nearby",
      "detail": "candidate kr-gn-001 \"Koala Climbing Kintex (코알라클라이밍 킨텍스점)\": related names \"일산클라이밍센터\" / \"코알라클라이밍 킨텍스점\" 4519 m apart",
      "ids": [
@@ -3467,6 +3674,8 @@
     "2026-10-06-kr-seoul#kr-se-055",
     "2026-10-06-kr-seoul#kr-se-065",
     "2026-10-06-kr-seoul#kr-se-066",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-019",
+    "2026-10-12-kr-incheon#kr-ic-013",
     "kr-gn-001",
     "kr-gn-002",
     "kr-gn-003",
@@ -3669,5 +3878,5 @@
    ]
   }
  ],
- "reconcile_sha256": "1684dff069bc100614bef1333ee406b9573fb7cae86878eec5aa6348223ae2e1"
+ "reconcile_sha256": "12b63295e3fdafc404d9a8f4bff43c9e1f40c57151bb8331df9c69fbfffdec8d"
 }

@@ -1,7 +1,7 @@
 # Regional research: Korea: Gyeonggi north and east (2026-10-12-kr-gyeonggi-north)
 
 Scope: KR / GYEONGGI
-Index: 3294 gyms, sha256 2f47cb53e74b… | staged batches compared: 2026-10-06-kr-seoul | other sections compared: 2026-10-05-korea-gwangju-jeollanam, 2026-10-05-korea-holds, 2026-10-05-korea-owner-checks, 2026-10-06-kr-seoul
+Index: 3294 gyms, sha256 2f47cb53e74b… | staged batches compared: 2026-10-06-kr-seoul, 2026-10-12-kr-busan-gyeongnam, 2026-10-12-kr-daegu-gyeongbuk, 2026-10-12-kr-gyeonggi-south, 2026-10-12-kr-gyeonggi-west, 2026-10-12-kr-incheon | other sections compared: 2026-10-05-korea-gwangju-jeollanam, 2026-10-05-korea-holds, 2026-10-05-korea-owner-checks, 2026-10-06-kr-seoul, 2026-10-12-kr-busan-gyeongnam, 2026-10-12-kr-daegu-gyeongbuk, 2026-10-12-kr-gyeonggi-south, 2026-10-12-kr-gyeonggi-west, 2026-10-12-kr-incheon
 Review radii (stricter than the importer): any gym 150 m, related name 15 km, other country 2 km
 
 ## Summary
@@ -12,8 +12,9 @@ Review radii (stricter than the importer): any gym 150 m, related name 15 km, ot
 - kr-gn-011 "Chamonix Climbing (샤모니클라이밍)" -> g-e8a005400e "Chamonix Climbing (샤모니클라이밍)" (same-name, 0 m) | also: status-not-open, insufficient-evidence, bouldering-unknown
 
 ## Needs review (accept needs a reason and reviewed_against covering every listed id) (13)
-- kr-gn-001 "Koala Climbing Kintex (코알라클라이밍 킨텍스점)" [g-99d67e9712] reviewed_against must include: 2026-10-06-kr-seoul#kr-se-055, kr-gn-002, kr-gn-003, kr-gn-004, kr-gn-005, kr-gn-006, kr-gn-007, kr-gn-008, kr-gn-009, kr-gn-018, kr-gn-019, kr-gn-021, kr-gn-022
+- kr-gn-001 "Koala Climbing Kintex (코알라클라이밍 킨텍스점)" [g-99d67e9712] reviewed_against must include: 2026-10-06-kr-seoul#kr-se-055, 2026-10-12-kr-incheon#kr-ic-013, kr-gn-002, kr-gn-003, kr-gn-004, kr-gn-005, kr-gn-006, kr-gn-007, kr-gn-008, kr-gn-009, kr-gn-018, kr-gn-019, kr-gn-021, kr-gn-022
   - other-section: 2026-10-06-kr-seoul#kr-se-055 "The Climb Magok (더클라임 마곡점)": related-name-nearby related names "코알라클라이밍 킨텍스점" / "더클라임 마곡점" 14992 m apart
+  - other-section: 2026-10-12-kr-incheon#kr-ic-013 "Incheon Gyeyang Climbing Center (인천계양클라이밍센터)": related-name-nearby related names "코알라클라이밍 킨텍스점" / "인천계양클라이밍센터" 14949 m apart
   - related-name-nearby: candidate kr-gn-002 "The Climb Ilsan (더클라임 일산점)": related names "코알라클라이밍 킨텍스점" / "더클라임 일산점" 3973 m apart
   - related-name-nearby: candidate kr-gn-003 "Up the Wall Climbing Ilsan (클라이밍 업더월 일산)": related names "코알라클라이밍 킨텍스점" / "클라이밍 업더월 일산" 1715 m apart
   - related-name-nearby: candidate kr-gn-004 "Highflex Climbing Center (하이프렉스 클라이밍센터)": related names "코알라클라이밍 킨텍스점" / "하이프렉스 클라이밍센터" 1672 m apart
@@ -127,7 +128,10 @@ Review radii (stricter than the importer): any gym 150 m, related name 15 km, ot
   - related-name-nearby: candidate kr-gn-007 "AstroMan Climbing Center Paju (애스트로맨 클라이밍센터)": related names "Paju Climbing Center (파주클라이밍센터)" / "AstroMan Climbing Center Paju (애스트로맨 클라이밍센터)" 6376 m apart
   - related-name-nearby: candidate kr-gn-021 "Ilsan Climbing Center (일산클라이밍센터)": related names "파주클라이밍센터" / "일산클라이밍센터" 12992 m apart
   - related-name-nearby: candidate kr-gn-022 "Goyang Artificial Climbing Wall (고양인공암벽장)": related names "파주클라이밍센터" / "고양인공암벽장" 9932 m apart
-- kr-gn-009 "Pick Climbing Gimpo (픽 클라이밍)" [g-983da67055] reviewed_against must include: kr-gn-001, kr-gn-002, kr-gn-003, kr-gn-004, kr-gn-007, kr-gn-018, kr-gn-019, kr-gn-021, kr-gn-022
+- kr-gn-009 "Pick Climbing Gimpo (픽 클라이밍)" [g-983da67055] reviewed_against must include: 2026-10-12-kr-incheon#kr-ic-002, 2026-10-12-kr-incheon#kr-ic-012, 2026-10-12-kr-incheon#kr-ic-013, kr-gn-001, kr-gn-002, kr-gn-003, kr-gn-004, kr-gn-007, kr-gn-018, kr-gn-019, kr-gn-021, kr-gn-022
+  - other-section: 2026-10-12-kr-incheon#kr-ic-002 "Discovery Climb Square Cheongna (디스커버리클라이밍 클라임스퀘어 청라점)": related-name-nearby related names "픽 클라이밍" / "디스커버리클라이밍 클라임스퀘어 청라점" 12673 m apart
+  - other-section: 2026-10-12-kr-incheon#kr-ic-012 "Seo-Incheon Climbing (서인천 클라이밍)": related-name-nearby related names "픽 클라이밍" / "서인천 클라이밍" 14768 m apart
+  - other-section: 2026-10-12-kr-incheon#kr-ic-013 "Incheon Gyeyang Climbing Center (인천계양클라이밍센터)": related-name-nearby related names "픽 클라이밍" / "인천계양클라이밍센터" 14847 m apart
   - related-name-nearby: candidate kr-gn-001 "Koala Climbing Kintex (코알라클라이밍 킨텍스점)": related names "픽 클라이밍" / "코알라클라이밍 킨텍스점" 11112 m apart
   - related-name-nearby: candidate kr-gn-002 "The Climb Ilsan (더클라임 일산점)": related names "픽 클라이밍" / "더클라임 일산점" 13334 m apart
   - related-name-nearby: candidate kr-gn-003 "Up the Wall Climbing Ilsan (클라이밍 업더월 일산)": related names "픽 클라이밍" / "클라이밍 업더월 일산" 12529 m apart
@@ -223,7 +227,7 @@ Review radii (stricter than the importer): any gym 150 m, related name 15 km, ot
   - related-name-nearby: candidate kr-gn-016 "Mountain Star Climbing (마운틴스타 클라이밍짐)": related names "무브온클라이밍" / "마운틴스타 클라이밍짐" 13708 m apart
   - related-name-nearby: candidate kr-gn-020 "M2 Climbing Dasan (엠투클라이밍)": related names "무브온클라이밍" / "엠투클라이밍" 9716 m apart
   - related-name-nearby: candidate kr-gn-023 "Soheul National Sports Center Indoor Climbing Wall (소흘국민체육센터 실내인공암벽장)": related names "무브온클라이밍" / "소흘국민체육센터 실내인공암벽장" 13639 m apart
-- kr-gn-017 "Climb Us Misa (클라임어스 미사점)" [g-0cf4d6d5c2] reviewed_against must include: 2026-10-06-kr-seoul#kr-se-005, 2026-10-06-kr-seoul#kr-se-011, 2026-10-06-kr-seoul#kr-se-024, 2026-10-06-kr-seoul#kr-se-025, 2026-10-06-kr-seoul#kr-se-028, 2026-10-06-kr-seoul#kr-se-029, 2026-10-06-kr-seoul#kr-se-035, 2026-10-06-kr-seoul#kr-se-036, 2026-10-06-kr-seoul#kr-se-044, 2026-10-06-kr-seoul#kr-se-045, 2026-10-06-kr-seoul#kr-se-046, 2026-10-06-kr-seoul#kr-se-050, 2026-10-06-kr-seoul#kr-se-052, 2026-10-06-kr-seoul#kr-se-058, 2026-10-06-kr-seoul#kr-se-059, 2026-10-06-kr-seoul#kr-se-060, 2026-10-06-kr-seoul#kr-se-062, 2026-10-06-kr-seoul#kr-se-064, kr-gn-013, kr-gn-014, kr-gn-016, kr-gn-020
+- kr-gn-017 "Climb Us Misa (클라임어스 미사점)" [g-0cf4d6d5c2] reviewed_against must include: 2026-10-06-kr-seoul#kr-se-005, 2026-10-06-kr-seoul#kr-se-011, 2026-10-06-kr-seoul#kr-se-024, 2026-10-06-kr-seoul#kr-se-025, 2026-10-06-kr-seoul#kr-se-028, 2026-10-06-kr-seoul#kr-se-029, 2026-10-06-kr-seoul#kr-se-035, 2026-10-06-kr-seoul#kr-se-036, 2026-10-06-kr-seoul#kr-se-044, 2026-10-06-kr-seoul#kr-se-045, 2026-10-06-kr-seoul#kr-se-046, 2026-10-06-kr-seoul#kr-se-050, 2026-10-06-kr-seoul#kr-se-052, 2026-10-06-kr-seoul#kr-se-058, 2026-10-06-kr-seoul#kr-se-059, 2026-10-06-kr-seoul#kr-se-060, 2026-10-06-kr-seoul#kr-se-062, 2026-10-06-kr-seoul#kr-se-064, 2026-10-12-kr-gyeonggi-south#kr-gs-015, 2026-10-12-kr-gyeonggi-south#kr-gs-018, kr-gn-013, kr-gn-014, kr-gn-016, kr-gn-020
   - other-section: 2026-10-06-kr-seoul#kr-se-005 "The Climb Seongsu (더클라임 성수점)": related-name-nearby related names "클라임어스 미사점" / "더클라임 성수점" 11368 m apart
   - other-section: 2026-10-06-kr-seoul#kr-se-011 "Seoul Forest Climbing Jamsil (서울숲클라이밍 잠실점)": related-name-nearby related names "클라임어스 미사점" / "서울숲클라이밍 잠실점" 11143 m apart
   - other-section: 2026-10-06-kr-seoul#kr-se-024 "Onfleek Climbing Gym Cheonho (온플릭클라이밍짐 천호점)": related-name-nearby related names "클라임어스 미사점" / "온플릭클라이밍짐 천호점" 6461 m apart
@@ -242,6 +246,8 @@ Review radii (stricter than the importer): any gym 150 m, related name 15 km, ot
   - other-section: 2026-10-06-kr-seoul#kr-se-060 "Hook Climbing Wangsimni (훅클라이밍 왕십리점)": related-name-nearby related names "클라임어스 미사점" / "훅클라이밍 왕십리점" 13851 m apart
   - other-section: 2026-10-06-kr-seoul#kr-se-062 "Cracker Climbing (크래커클라이밍)": related-name-nearby related names "클라임어스 미사점" / "크래커클라이밍" 9963 m apart
   - other-section: 2026-10-06-kr-seoul#kr-se-064 "Route Climbing (루트클라이밍)": related-name-nearby related names "클라임어스 미사점" / "루트클라이밍" 8313 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-015 "Grippick Climbing Gym (그립픽클라이밍짐)": related-name-nearby related names "클라임어스 미사점" / "그립픽클라이밍짐" 10909 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-018 "Rock Face Climbing (락페이스클라이밍)": related-name-nearby related names "클라임어스 미사점" / "락페이스클라이밍" 13635 m apart
   - related-name-nearby: candidate kr-gn-013 "Puzzle Climbing Dasan (퍼즐클라이밍)": related names "클라임어스 미사점" / "퍼즐클라이밍" 6714 m apart
   - related-name-nearby: candidate kr-gn-014 "Dino Climbing Center Dasan (다이노 클라이밍센터)": related names "클라임어스 미사점" / "다이노 클라이밍센터" 7758 m apart
   - related-name-nearby: candidate kr-gn-016 "Mountain Star Climbing (마운틴스타 클라이밍짐)": related names "클라임어스 미사점" / "마운틴스타 클라이밍짐" 5833 m apart

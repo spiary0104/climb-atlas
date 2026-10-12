@@ -39,3 +39,6 @@ Closed: Climb Up Suwon (own closure post 2026-05-23), Climb Bounce Icheon Bubal 
 
 ## Related-name flags
 All are the shared word "Climbing", the chain name between sibling branches (Boulder Mate, Mountain Ground) or other gyms at distinct addresses, kilometres apart. Boulder Mate Giheung vs existing Boulder Mate Suji (g-a9259f155b): 5 km apart, different branches. Grippick and Climb Us Moran also flag candidates of the staged Seoul batch (6 to 15 km away, different gyms). Raon carries a "club wall" flag, hence its defer.
+
+## Brain review (2026-10-12)
+Moved from accept to defer (owner rule: low-confidence gyms stay out): kr-gs-015. Reasons in review.json; questions in MANUAL-CHECK.md.

@@ -35,3 +35,6 @@ Bouldergarden Siheung (closed): the gym's own notice of 2026-06-15 says it stopp
 
 ## Related-name flags
 All flags are the shared word "Climbing", the chain name, or nearby gyms at different addresses (Club Climbing vs Climbing Treackle: 299 m apart, different buildings; Club Climbing vs the existing Ansan Climbing: 1.1 km). Catchstone is not Bucheon Climbing Center (1.7 km). The accepted gyms are also flagged against the staged-but-unapplied 2026-10-06-kr-seoul section (distinct gyms in Seoul, 8 to 15 km away).
+
+## Brain review (2026-10-12)
+Moved from accept to defer (owner rule: low-confidence gyms stay out): kr-gw-003. Reasons in review.json; questions in MANUAL-CHECK.md.

@@ -17,3 +17,9 @@ Eleven gyms I could not settle; all stay `defer` in review.json and are not in t
 | Eight Peaks Climbing (에잇 픽스 클라이밍, kr-gs-055) | Uiwang (계원대학로 22 오남프라자 6F) | https://m.place.naver.com/place/38322574/home ; https://cafe.daum.net/eightpeaksclimbing | Is it still open in 2026? | Owner photos show mat-floored boulder walls and a price table with day passes. Newest post 2019-08, newest visitor review 2025-03-03, no booking. The only gym found in Uiwang. |
 
 Weakest of the 18 accepts (veto if you want extra confidence): see review-notes.md "Weaker accepts".
+
+## Added by the brain review (2026-10-12): accepts moved to defer
+
+| Gym | City | Question |
+|---|---|---|
+| Grippick Climbing Gym (그립픽클라이밍짐) | Seongnam | Is it open in 2026? No gym post since 2023 and only one visitor review since 2025-11. |

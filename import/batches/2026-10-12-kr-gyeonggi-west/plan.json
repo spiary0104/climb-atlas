@@ -7,11 +7,16 @@
   "meta_matches": true
  },
  "staged_batches_compared": [
-  "2026-10-06-kr-seoul"
+  "2026-10-06-kr-seoul",
+  "2026-10-12-kr-busan-gyeongnam",
+  "2026-10-12-kr-daegu-gyeongbuk",
+  "2026-10-12-kr-gyeonggi-north",
+  "2026-10-12-kr-gyeonggi-south",
+  "2026-10-12-kr-incheon"
  ],
  "counts": {
-  "records": 9,
-  "new": 9,
+  "records": 8,
+  "new": 8,
   "existing": 0,
   "update": 0,
   "probable-duplicate": 0,
@@ -25,7 +30,7 @@
  "importable": true,
  "blockers": [],
  "unused_decisions": [],
- "plan_sha256": "8a061f03ac12a72696d6f29bf91ee0d6d045eb97d79353eaafb318f191989f47",
+ "plan_sha256": "3972a68cf28955bf821a04f1b4a0b52426fa1563d0833581f74010ba887788fc",
  "records": [
   {
    "line": 1,
@@ -46,21 +51,13 @@
   {
    "line": 3,
    "class": "new",
-   "id": "g-0502c72bc6",
-   "id_frozen": true,
-   "name": "Club Climbing Ansan (클럽클라이밍)",
-   "country": "KR"
-  },
-  {
-   "line": 4,
-   "class": "new",
    "id": "g-cbf5ff6963",
    "id_frozen": true,
    "name": "Ayers Rock Climbing Beomgye (에어즈락 클라이밍 범계점)",
    "country": "KR"
   },
   {
-   "line": 5,
+   "line": 4,
    "class": "new",
    "id": "g-0a9469872d",
    "id_frozen": true,
@@ -68,7 +65,7 @@
    "country": "KR"
   },
   {
-   "line": 6,
+   "line": 5,
    "class": "new",
    "id": "g-a26b8e9715",
    "id_frozen": true,
@@ -76,7 +73,7 @@
    "country": "KR"
   },
   {
-   "line": 7,
+   "line": 6,
    "class": "new",
    "id": "g-a6212892f0",
    "id_frozen": true,
@@ -84,7 +81,7 @@
    "country": "KR"
   },
   {
-   "line": 8,
+   "line": 7,
    "class": "new",
    "id": "g-de2d4ade41",
    "id_frozen": true,
@@ -92,7 +89,7 @@
    "country": "KR"
   },
   {
-   "line": 9,
+   "line": 8,
    "class": "new",
    "id": "g-8e8ec7ad2c",
    "id_frozen": true,

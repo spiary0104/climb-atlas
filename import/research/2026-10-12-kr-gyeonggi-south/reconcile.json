@@ -10,7 +10,11 @@
    "count": 3294
   },
   "staged_batches_compared": [
-   "2026-10-06-kr-seoul"
+   "2026-10-06-kr-seoul",
+   "2026-10-12-kr-busan-gyeongnam",
+   "2026-10-12-kr-daegu-gyeongbuk",
+   "2026-10-12-kr-gyeonggi-west",
+   "2026-10-12-kr-incheon"
   ],
   "other_sections_compared": [
    {
@@ -28,6 +32,26 @@
    {
     "id": "2026-10-06-kr-seoul",
     "candidates_sha256": "f78315198a507d6235619c81ff4be71a037392dfbb0c6658a6d40cee9b000487"
+   },
+   {
+    "id": "2026-10-12-kr-busan-gyeongnam",
+    "candidates_sha256": "0bca4015aa37d426d6c4dc4681299927e887914fc21a2cb194940851eb0b6836"
+   },
+   {
+    "id": "2026-10-12-kr-daegu-gyeongbuk",
+    "candidates_sha256": "fad820c102695c3e95313cc9571e31ee860689e0a89af30206b8b30c8e8d869a"
+   },
+   {
+    "id": "2026-10-12-kr-gyeonggi-north",
+    "candidates_sha256": "708251f8989853c6999c022124830c9fba8762568a02f5318365b04505d1c93f"
+   },
+   {
+    "id": "2026-10-12-kr-gyeonggi-west",
+    "candidates_sha256": "4d037f6195a38f8dca699ccecade187cea203aa16f3f6642c4b43c2079a525a7"
+   },
+   {
+    "id": "2026-10-12-kr-incheon",
+    "candidates_sha256": "129e7abc9b5c9703ba61feab40224d8297dfd412a61aab2f3a9379dfc819f089"
    }
   ]
  },
@@ -56,6 +80,48 @@
     "id": "g-f66cad8cc6"
    },
    "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-004 \"Ayers Rock Climbing Beomgye (에어즈락 클라이밍 범계점)\": related-name-nearby related names \"킨디클라이밍\" / \"에어즈락 클라이밍 범계점\" 14745 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-004"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-005 \"The Ledge Climbing (더렛지 클라이밍)\": related-name-nearby related names \"킨디클라이밍\" / \"더렛지 클라이밍\" 14511 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-005"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-007 \"Sanbon Climbing Center (산본클라이밍센터)\": related-name-nearby related names \"킨디클라이밍\" / \"산본클라이밍센터\" 13283 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-007"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-008 \"Rock Climbing Sanbon (락클라이밍 산본)\": related-name-nearby related names \"킨디클라이밍\" / \"락클라이밍 산본\" 12147 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-008"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-009 \"Spicy Climbing (스파이시 클라이밍)\": related-name-nearby related names \"킨디클라이밍\" / \"스파이시클라이밍\" 13172 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-009"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-015 \"Anyang Kim Jong-heon Climbing (안양김종헌클라이밍)\": related-name-nearby related names \"킨디클라이밍\" / \"안양김종헌클라이밍\" 14172 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-015"
+     ]
+    },
     {
      "code": "related-name-nearby",
      "detail": "candidate kr-gs-002 \"Picnic Climbing (피크닉클라이밍)\": related names \"킨디클라이밍\" / \"피크닉클라이밍\" 2944 m apart",
@@ -254,6 +320,12 @@
     }
    ],
    "review_ids": [
+    "2026-10-12-kr-gyeonggi-west#kr-gw-004",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-005",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-007",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-008",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-009",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-015",
     "kr-gs-002",
     "kr-gs-003",
     "kr-gs-004",
@@ -295,6 +367,20 @@
     "id": "g-d6dabf391e"
    },
    "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-008 \"Rock Climbing Sanbon (락클라이밍 산본)\": related-name-nearby related names \"피크닉클라이밍\" / \"락클라이밍 산본\" 14093 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-008"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-009 \"Spicy Climbing (스파이시 클라이밍)\": related-name-nearby related names \"피크닉클라이밍\" / \"스파이시클라이밍\" 14779 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-009"
+     ]
+    },
     {
      "code": "related-name-nearby",
      "detail": "candidate kr-gs-001 \"Kindy Climbing (킨디클라이밍)\": related names \"피크닉클라이밍\" / \"킨디클라이밍\" 2944 m apart",
@@ -514,6 +600,8 @@
     }
    ],
    "review_ids": [
+    "2026-10-12-kr-gyeonggi-west#kr-gw-008",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-009",
     "kr-gs-001",
     "kr-gs-003",
     "kr-gs-004",
@@ -1655,6 +1743,62 @@
      ]
     },
     {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-004 \"Ayers Rock Climbing Beomgye (에어즈락 클라이밍 범계점)\": related-name-nearby related names \"킹콩클라이밍\" / \"에어즈락 클라이밍 범계점\" 14568 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-004"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-005 \"The Ledge Climbing (더렛지 클라이밍)\": related-name-nearby related names \"킹콩클라이밍\" / \"더렛지 클라이밍\" 14429 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-005"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-006 \"Fun Climb Gym (펀클라임짐)\": related-name-nearby related names \"킹콩클라이밍\" / \"펀클라임짐 클라이밍\" 14485 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-006"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-007 \"Sanbon Climbing Center (산본클라이밍센터)\": related-name-nearby related names \"킹콩클라이밍\" / \"산본클라이밍센터\" 13558 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-007"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-008 \"Rock Climbing Sanbon (락클라이밍 산본)\": related-name-nearby related names \"킹콩클라이밍\" / \"락클라이밍 산본\" 12705 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-008"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-009 \"Spicy Climbing (스파이시 클라이밍)\": related-name-nearby related names \"킹콩클라이밍\" / \"스파이시클라이밍\" 13249 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-009"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-011 \"Climbholic Indeogwon (실내암벽 클라임홀릭)\": related-name-nearby related names \"킹콩클라이밍\" / \"실내암벽 클라임홀릭\" 14753 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-011"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-015 \"Anyang Kim Jong-heon Climbing (안양김종헌클라이밍)\": related-name-nearby related names \"킹콩클라이밍\" / \"안양김종헌클라이밍\" 14016 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-015"
+     ]
+    },
+    {
      "code": "related-name-nearby",
      "detail": "candidate kr-gs-001 \"Kindy Climbing (킨디클라이밍)\": related names \"킹콩클라이밍\" / \"킨디클라이밍\" 3126 m apart",
      "ids": [
@@ -1866,6 +2010,14 @@
     }
    ],
    "review_ids": [
+    "2026-10-12-kr-gyeonggi-west#kr-gw-004",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-005",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-006",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-007",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-008",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-009",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-011",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-015",
     "kr-gs-001",
     "kr-gs-002",
     "kr-gs-003",
@@ -1920,6 +2072,41 @@
     }
    ],
    "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-005 \"The Ledge Climbing (더렛지 클라이밍)\": related-name-nearby related names \"크럭스존\" / \"더렛지 클라이밍\" 14889 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-005"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-007 \"Sanbon Climbing Center (산본클라이밍센터)\": related-name-nearby related names \"크럭스존\" / \"산본클라이밍센터\" 13910 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-007"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-008 \"Rock Climbing Sanbon (락클라이밍 산본)\": related-name-nearby related names \"크럭스존\" / \"락클라이밍 산본\" 12967 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-008"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-009 \"Spicy Climbing (스파이시 클라이밍)\": related-name-nearby related names \"크럭스존\" / \"스파이시클라이밍\" 13657 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-009"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-015 \"Anyang Kim Jong-heon Climbing (안양김종헌클라이밍)\": related-name-nearby related names \"크럭스존\" / \"안양김종헌클라이밍\" 14494 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-015"
+     ]
+    },
     {
      "code": "related-name-nearby",
      "detail": "candidate kr-gs-001 \"Kindy Climbing (킨디클라이밍)\": related names \"크럭스존\" / \"킨디클라이밍\" 2319 m apart",
@@ -2132,6 +2319,11 @@
     }
    ],
    "review_ids": [
+    "2026-10-12-kr-gyeonggi-west#kr-gw-005",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-007",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-008",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-009",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-015",
     "kr-gs-001",
     "kr-gs-002",
     "kr-gs-003",
@@ -2178,6 +2370,27 @@
     {
      "code": "limited-access",
      "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-007 \"Sanbon Climbing Center (산본클라이밍센터)\": related-name-nearby related names \"수원라온클라이밍\" / \"산본클라이밍센터\" 14461 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-007"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-008 \"Rock Climbing Sanbon (락클라이밍 산본)\": related-name-nearby related names \"수원라온클라이밍\" / \"락클라이밍 산본\" 13372 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-008"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-009 \"Spicy Climbing (스파이시 클라이밍)\": related-name-nearby related names \"수원라온클라이밍\" / \"스파이시클라이밍\" 14309 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-009"
+     ]
     },
     {
      "code": "related-name-nearby",
@@ -2377,6 +2590,9 @@
     }
    ],
    "review_ids": [
+    "2026-10-12-kr-gyeonggi-west#kr-gw-007",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-008",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-009",
     "kr-gs-001",
     "kr-gs-002",
     "kr-gs-003",
@@ -2428,6 +2644,27 @@
     }
    ],
    "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-007 \"Sanbon Climbing Center (산본클라이밍센터)\": related-name-nearby related names \"클라임업 수원점\" / \"산본클라이밍센터\" 14490 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-007"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-008 \"Rock Climbing Sanbon (락클라이밍 산본)\": related-name-nearby related names \"클라임업 수원점\" / \"락클라이밍 산본\" 13571 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-008"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-009 \"Spicy Climbing (스파이시 클라이밍)\": related-name-nearby related names \"클라임업 수원점\" / \"스파이시클라이밍\" 14219 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-009"
+     ]
+    },
     {
      "code": "related-name-nearby",
      "detail": "candidate kr-gs-001 \"Kindy Climbing (킨디클라이밍)\": related names \"클라임업 수원점\" / \"킨디클라이밍\" 2835 m apart",
@@ -2644,6 +2881,9 @@
     }
    ],
    "review_ids": [
+    "2026-10-12-kr-gyeonggi-west#kr-gw-007",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-008",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-009",
     "kr-gs-001",
     "kr-gs-002",
     "kr-gs-003",
@@ -2701,6 +2941,97 @@
     }
    ],
    "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-002 \"Climbing Treackle (클라이밍 트리클)\": related-name-nearby related names \"서수원클라이밍센터\" / \"클라이밍 트리클\" 12700 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-002"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-003 \"Club Climbing Ansan (클럽클라이밍)\": related-name-nearby related names \"서수원클라이밍센터\" / \"클럽클라이밍\" 12461 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-003"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-004 \"Ayers Rock Climbing Beomgye (에어즈락 클라이밍 범계점)\": related-name-nearby related names \"서수원클라이밍센터\" / \"에어즈락 클라이밍 범계점\" 10007 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-004"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-005 \"The Ledge Climbing (더렛지 클라이밍)\": related-name-nearby related names \"서수원클라이밍센터\" / \"더렛지 클라이밍\" 9742 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-005"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-006 \"Fun Climb Gym (펀클라임짐)\": related-name-nearby related names \"서수원클라이밍센터\" / \"펀클라임짐 클라이밍\" 10465 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-006"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-007 \"Sanbon Climbing Center (산본클라이밍센터)\": related-name-nearby related names \"서수원클라이밍센터\" / \"산본클라이밍센터\" 8446 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-007"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-008 \"Rock Climbing Sanbon (락클라이밍 산본)\": related-name-nearby related names \"서수원클라이밍센터\" / \"락클라이밍 산본\" 7314 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-008"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-009 \"Spicy Climbing (스파이시 클라이밍)\": related-name-nearby related names \"서수원클라이밍센터\" / \"스파이시클라이밍\" 8370 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-009"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-011 \"Climbholic Indeogwon (실내암벽 클라임홀릭)\": related-name-nearby related names \"서수원클라이밍센터\" / \"실내암벽 클라임홀릭\" 11019 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-011"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-012 \"Ansan Basecamp Climbing (안산베이스캠프클라이밍)\": related-name-nearby related names \"서수원클라이밍센터\" / \"안산베이스캠프클라이밍\" 12662 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-012"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-013 \"Ansan Seonbu Climbing (안산 선부 클라이밍)\": related-name-nearby related names \"서수원클라이밍센터\" / \"안산 선부 클라이밍\" 14767 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-013"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-015 \"Anyang Kim Jong-heon Climbing (안양김종헌클라이밍)\": related-name-nearby related names \"서수원클라이밍센터\" / \"안양김종헌클라이밍\" 9433 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-015"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-020 \"ClimbIt Climbing Mokgam (클라임잇 클라이밍 목감점)\": related-name-nearby related names \"서수원클라이밍센터\" / \"클라임잇 클라이밍 목감점\" 13372 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-020"
+     ]
+    },
     {
      "code": "related-name-nearby",
      "detail": "candidate kr-gs-001 \"Kindy Climbing (킨디클라이밍)\": related names \"서수원클라이밍센터\" / \"킨디클라이밍\" 4842 m apart",
@@ -2871,6 +3202,19 @@
     }
    ],
    "review_ids": [
+    "2026-10-12-kr-gyeonggi-west#kr-gw-002",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-003",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-004",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-005",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-006",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-007",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-008",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-009",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-011",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-012",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-013",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-015",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-020",
     "kr-gs-001",
     "kr-gs-002",
     "kr-gs-003",
@@ -2918,6 +3262,83 @@
     }
    ],
    "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-002 \"Climbing Treackle (클라이밍 트리클)\": related-name-nearby related names \"트리플레잉\" / \"클라이밍 트리클\" 14673 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-002"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-003 \"Club Climbing Ansan (클럽클라이밍)\": related-name-nearby related names \"트리플레잉\" / \"클럽클라이밍\" 14399 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-003"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-004 \"Ayers Rock Climbing Beomgye (에어즈락 클라이밍 범계점)\": related-name-nearby related names \"트리플레잉\" / \"에어즈락 클라이밍 범계점\" 13731 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-004"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-005 \"The Ledge Climbing (더렛지 클라이밍)\": related-name-nearby related names \"트리플레잉\" / \"더렛지 클라이밍\" 13469 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-005"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-006 \"Fun Climb Gym (펀클라임짐)\": related-name-nearby related names \"트리플레잉\" / \"펀클라임짐 클라이밍\" 14128 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-006"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-007 \"Sanbon Climbing Center (산본클라이밍센터)\": related-name-nearby related names \"트리플레잉\" / \"산본클라이밍센터\" 12148 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-007"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-008 \"Rock Climbing Sanbon (락클라이밍 산본)\": related-name-nearby related names \"트리플레잉\" / \"락클라이밍 산본\" 10948 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-008"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-009 \"Spicy Climbing (스파이시 클라이밍)\": related-name-nearby related names \"트리플레잉\" / \"스파이시클라이밍\" 12096 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-009"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-011 \"Climbholic Indeogwon (실내암벽 클라임홀릭)\": related-name-nearby related names \"트리플레잉\" / \"실내암벽 클라임홀릭\" 14633 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-011"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-012 \"Ansan Basecamp Climbing (안산베이스캠프클라이밍)\": related-name-nearby related names \"트리플레잉\" / \"안산베이스캠프클라이밍\" 14396 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-012"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-015 \"Anyang Kim Jong-heon Climbing (안양김종헌클라이밍)\": related-name-nearby related names \"트리플레잉\" / \"안양김종헌클라이밍\" 13157 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-015"
+     ]
+    },
     {
      "code": "related-name-nearby",
      "detail": "candidate kr-gs-001 \"Kindy Climbing (킨디클라이밍)\": related names \"트리플레잉\" / \"킨디클라이밍\" 1397 m apart",
@@ -3113,6 +3534,17 @@
     }
    ],
    "review_ids": [
+    "2026-10-12-kr-gyeonggi-west#kr-gw-002",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-003",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-004",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-005",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-006",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-007",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-008",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-009",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-011",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-012",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-015",
     "kr-gs-001",
     "kr-gs-002",
     "kr-gs-003",
@@ -3163,6 +3595,20 @@
     }
    ],
    "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-008 \"Rock Climbing Sanbon (락클라이밍 산본)\": related-name-nearby related names \"광교스포츠클라이밍장\" / \"락클라이밍 산본\" 14726 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-008"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-009 \"Spicy Climbing (스파이시 클라이밍)\": related-name-nearby related names \"광교스포츠클라이밍장\" / \"스파이시클라이밍\" 14801 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-009"
+     ]
+    },
     {
      "code": "related-name-nearby",
      "detail": "candidate kr-gs-001 \"Kindy Climbing (킨디클라이밍)\": related names \"광교스포츠클라이밍장\" / \"킨디클라이밍\" 6657 m apart",
@@ -3389,6 +3835,8 @@
     }
    ],
    "review_ids": [
+    "2026-10-12-kr-gyeonggi-west#kr-gw-008",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-009",
     "kr-gs-001",
     "kr-gs-002",
     "kr-gs-003",
@@ -3523,6 +3971,48 @@
      "detail": "2026-10-06-kr-seoul#kr-se-064 \"Route Climbing (루트클라이밍)\": related-name-nearby related names \"락트리클라이밍 분당\" / \"루트클라이밍\" 14618 m apart",
      "ids": [
       "2026-10-06-kr-seoul#kr-se-064"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-004 \"Ayers Rock Climbing Beomgye (에어즈락 클라이밍 범계점)\": related-name-nearby related names \"락트리클라이밍 분당\" / \"에어즈락 클라이밍 범계점\" 14542 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-004"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-005 \"The Ledge Climbing (더렛지 클라이밍)\": related-name-nearby related names \"락트리클라이밍 분당\" / \"더렛지 클라이밍\" 14839 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-005"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-006 \"Fun Climb Gym (펀클라임짐)\": related-name-nearby related names \"락트리클라이밍 분당\" / \"펀클라임짐 클라이밍\" 13063 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-006"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-009 \"Spicy Climbing (스파이시 클라이밍)\": related-name-nearby related names \"락트리클라이밍 분당\" / \"스파이시클라이밍\" 14872 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-009"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-011 \"Climbholic Indeogwon (실내암벽 클라임홀릭)\": related-name-nearby related names \"락트리클라이밍 분당\" / \"실내암벽 클라임홀릭\" 12439 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-011"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-015 \"Anyang Kim Jong-heon Climbing (안양김종헌클라이밍)\": related-name-nearby related names \"락트리클라이밍 분당\" / \"안양김종헌클라이밍\" 14361 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-015"
      ]
     },
     {
@@ -3711,6 +4201,12 @@
     "2026-10-06-kr-seoul#kr-se-045",
     "2026-10-06-kr-seoul#kr-se-046",
     "2026-10-06-kr-seoul#kr-se-064",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-004",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-005",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-006",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-009",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-011",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-015",
     "g-69b158b889",
     "kr-gs-002",
     "kr-gs-004",
@@ -3947,6 +4443,20 @@
      ]
     },
     {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-north#kr-gn-016 \"Mountain Star Climbing (마운틴스타 클라이밍짐)\": related-name-nearby related names \"그립픽클라이밍짐\" / \"마운틴스타 클라이밍짐\" 13219 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-north#kr-gn-016"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-north#kr-gn-017 \"Climb Us Misa (클라임어스 미사점)\": related-name-nearby related names \"그립픽클라이밍짐\" / \"클라임어스 미사점\" 10909 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-north#kr-gn-017"
+     ]
+    },
+    {
      "code": "related-name-nearby",
      "detail": "candidate kr-gs-014 \"Rocktree Climbing Bundang (락트리클라이밍 분당)\": related names \"그립픽클라이밍짐\" / \"락트리클라이밍 분당\" 10778 m apart",
      "ids": [
@@ -4046,6 +4556,8 @@
     "2026-10-06-kr-seoul#kr-se-060",
     "2026-10-06-kr-seoul#kr-se-062",
     "2026-10-06-kr-seoul#kr-se-064",
+    "2026-10-12-kr-gyeonggi-north#kr-gn-016",
+    "2026-10-12-kr-gyeonggi-north#kr-gn-017",
     "kr-gs-014",
     "kr-gs-016",
     "kr-gs-017",
@@ -4252,6 +4764,20 @@
      ]
     },
     {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-006 \"Fun Climb Gym (펀클라임짐)\": related-name-nearby related names \"클라임 어스 모란점\" / \"펀클라임짐 클라이밍\" 14864 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-006"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-011 \"Climbholic Indeogwon (실내암벽 클라임홀릭)\": related-name-nearby related names \"클라임 어스 모란점\" / \"실내암벽 클라임홀릭\" 14010 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-011"
+     ]
+    },
+    {
      "code": "related-name-nearby",
      "detail": "candidate kr-gs-014 \"Rocktree Climbing Bundang (락트리클라이밍 분당)\": related names \"클라임 어스 모란점\" / \"락트리클라이밍 분당\" 5920 m apart",
      "ids": [
@@ -4370,6 +4896,8 @@
     "2026-10-06-kr-seoul#kr-se-051",
     "2026-10-06-kr-seoul#kr-se-052",
     "2026-10-06-kr-seoul#kr-se-064",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-006",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-011",
     "kr-gs-014",
     "kr-gs-015",
     "kr-gs-017",
@@ -4558,6 +5086,48 @@
      ]
     },
     {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-004 \"Ayers Rock Climbing Beomgye (에어즈락 클라이밍 범계점)\": related-name-nearby related names \"손상원 클라이밍짐 판교점\" / \"에어즈락 클라이밍 범계점\" 13970 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-004"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-005 \"The Ledge Climbing (더렛지 클라이밍)\": related-name-nearby related names \"손상원 클라이밍짐 판교점\" / \"더렛지 클라이밍\" 14329 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-005"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-006 \"Fun Climb Gym (펀클라임짐)\": related-name-nearby related names \"손상원 클라이밍짐 판교점\" / \"펀클라임짐 클라이밍\" 12352 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-006"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-009 \"Spicy Climbing (스파이시 클라이밍)\": related-name-nearby related names \"손상원 클라이밍짐 판교점\" / \"스파이시클라이밍\" 14621 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-009"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-011 \"Climbholic Indeogwon (실내암벽 클라임홀릭)\": related-name-nearby related names \"손상원 클라이밍짐 판교점\" / \"실내암벽 클라임홀릭\" 11599 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-011"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-015 \"Anyang Kim Jong-heon Climbing (안양김종헌클라이밍)\": related-name-nearby related names \"손상원 클라이밍짐 판교점\" / \"안양김종헌클라이밍\" 13892 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-015"
+     ]
+    },
+    {
      "code": "related-name-nearby",
      "detail": "candidate kr-gs-013 \"Gwanggyo Sports Climbing Center (광교스포츠클라이밍장)\": related names \"손상원 클라이밍짐 판교점\" / \"광교스포츠클라이밍장\" 13371 m apart",
      "ids": [
@@ -4692,6 +5262,12 @@
     "2026-10-06-kr-seoul#kr-se-050",
     "2026-10-06-kr-seoul#kr-se-051",
     "2026-10-06-kr-seoul#kr-se-064",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-004",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-005",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-006",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-009",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-011",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-015",
     "kr-gs-013",
     "kr-gs-014",
     "kr-gs-015",
@@ -4897,6 +5473,13 @@
      ]
     },
     {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-north#kr-gn-017 \"Climb Us Misa (클라임어스 미사점)\": related-name-nearby related names \"락페이스클라이밍\" / \"클라임어스 미사점\" 13635 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-north#kr-gn-017"
+     ]
+    },
+    {
      "code": "related-name-nearby",
      "detail": "candidate kr-gs-014 \"Rocktree Climbing Bundang (락트리클라이밍 분당)\": related names \"락페이스클라이밍\" / \"락트리클라이밍 분당\" 8072 m apart",
      "ids": [
@@ -5003,6 +5586,7 @@
     "2026-10-06-kr-seoul#kr-se-051",
     "2026-10-06-kr-seoul#kr-se-052",
     "2026-10-06-kr-seoul#kr-se-064",
+    "2026-10-12-kr-gyeonggi-north#kr-gn-017",
     "g-79e1f1b07b",
     "kr-gs-014",
     "kr-gs-015",
@@ -5219,6 +5803,20 @@
      ]
     },
     {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-006 \"Fun Climb Gym (펀클라임짐)\": related-name-nearby related names \"성남스파이더클라이밍\" / \"펀클라임짐 클라이밍\" 14902 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-006"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-011 \"Climbholic Indeogwon (실내암벽 클라임홀릭)\": related-name-nearby related names \"성남스파이더클라이밍\" / \"실내암벽 클라임홀릭\" 14051 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-011"
+     ]
+    },
+    {
      "code": "related-name-nearby",
      "detail": "candidate kr-gs-014 \"Rocktree Climbing Bundang (락트리클라이밍 분당)\": related names \"성남스파이더클라이밍\" / \"락트리클라이밍 분당\" 5812 m apart",
      "ids": [
@@ -5336,6 +5934,8 @@
     "2026-10-06-kr-seoul#kr-se-051",
     "2026-10-06-kr-seoul#kr-se-052",
     "2026-10-06-kr-seoul#kr-se-064",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-006",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-011",
     "kr-gs-014",
     "kr-gs-015",
     "kr-gs-016",
@@ -5559,6 +6159,20 @@
      ]
     },
     {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-006 \"Fun Climb Gym (펀클라임짐)\": related-name-nearby related names \"성남스포츠클라이밍\" / \"펀클라임짐 클라이밍\" 14750 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-006"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-011 \"Climbholic Indeogwon (실내암벽 클라임홀릭)\": related-name-nearby related names \"성남스포츠클라이밍\" / \"실내암벽 클라임홀릭\" 13891 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-011"
+     ]
+    },
+    {
      "code": "related-name-nearby",
      "detail": "candidate kr-gs-014 \"Rocktree Climbing Bundang (락트리클라이밍 분당)\": related names \"성남스포츠클라이밍\" / \"락트리클라이밍 분당\" 6033 m apart",
      "ids": [
@@ -5677,6 +6291,8 @@
     "2026-10-06-kr-seoul#kr-se-051",
     "2026-10-06-kr-seoul#kr-se-052",
     "2026-10-06-kr-seoul#kr-se-064",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-006",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-011",
     "kr-gs-014",
     "kr-gs-015",
     "kr-gs-016",
@@ -5743,6 +6359,48 @@
      "detail": "2026-10-06-kr-seoul#kr-se-045 \"Dot Climbing Gym (닷 클라이밍짐)\": related-name-nearby related names \"비클라이밍\" / \"닷 클라이밍짐\" 12572 m apart",
      "ids": [
       "2026-10-06-kr-seoul#kr-se-045"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-004 \"Ayers Rock Climbing Beomgye (에어즈락 클라이밍 범계점)\": related-name-nearby related names \"비클라이밍\" / \"에어즈락 클라이밍 범계점\" 14561 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-004"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-005 \"The Ledge Climbing (더렛지 클라이밍)\": related-name-nearby related names \"비클라이밍\" / \"더렛지 클라이밍\" 14836 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-005"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-006 \"Fun Climb Gym (펀클라임짐)\": related-name-nearby related names \"비클라이밍\" / \"펀클라임짐 클라이밍\" 13135 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-006"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-009 \"Spicy Climbing (스파이시 클라이밍)\": related-name-nearby related names \"비클라이밍\" / \"스파이시클라이밍\" 14792 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-009"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-011 \"Climbholic Indeogwon (실내암벽 클라임홀릭)\": related-name-nearby related names \"비클라이밍\" / \"실내암벽 클라임홀릭\" 12554 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-011"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-015 \"Anyang Kim Jong-heon Climbing (안양김종헌클라이밍)\": related-name-nearby related names \"비클라이밍\" / \"안양김종헌클라이밍\" 14350 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-015"
      ]
     },
     {
@@ -5933,6 +6591,12 @@
     "2026-10-06-kr-seoul#kr-se-036",
     "2026-10-06-kr-seoul#kr-se-044",
     "2026-10-06-kr-seoul#kr-se-045",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-004",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-005",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-006",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-009",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-011",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-015",
     "kr-gs-002",
     "kr-gs-004",
     "kr-gs-005",
@@ -5982,6 +6646,41 @@
     }
    ],
    "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-004 \"Ayers Rock Climbing Beomgye (에어즈락 클라이밍 범계점)\": related-name-nearby related names \"더볼더\" / \"에어즈락 클라이밍 범계점\" 14972 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-004"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-006 \"Fun Climb Gym (펀클라임짐)\": related-name-nearby related names \"더볼더\" / \"펀클라임짐 클라이밍\" 13731 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-006"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-009 \"Spicy Climbing (스파이시 클라이밍)\": related-name-nearby related names \"더볼더\" / \"스파이시클라이밍\" 14896 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-009"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-011 \"Climbholic Indeogwon (실내암벽 클라임홀릭)\": related-name-nearby related names \"더볼더\" / \"실내암벽 클라임홀릭\" 13293 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-011"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-015 \"Anyang Kim Jong-heon Climbing (안양김종헌클라이밍)\": related-name-nearby related names \"더볼더\" / \"안양김종헌클라이밍\" 14675 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-015"
+     ]
+    },
     {
      "code": "related-name-nearby",
      "detail": "g-69b158b889 \"Rocktree Climbing Bundang\": related names \"The Boulder Bundang (더볼더)\" / \"Rocktree Climbing Bundang\" 1497 m apart",
@@ -6205,6 +6904,11 @@
     }
    ],
    "review_ids": [
+    "2026-10-12-kr-gyeonggi-west#kr-gw-004",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-006",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-009",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-011",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-015",
     "g-69b158b889",
     "kr-gs-001",
     "kr-gs-002",
@@ -6549,6 +7253,34 @@
      ]
     },
     {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-006 \"Fun Climb Gym (펀클라임짐)\": related-name-nearby related names \"볼더메이트 클라이밍 수지점\" / \"펀클라임짐 클라이밍\" 14112 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-006"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-009 \"Spicy Climbing (스파이시 클라이밍)\": related-name-nearby related names \"볼더메이트 클라이밍 수지점\" / \"스파이시클라이밍\" 14574 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-009"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-011 \"Climbholic Indeogwon (실내암벽 클라임홀릭)\": related-name-nearby related names \"볼더메이트 클라이밍 수지점\" / \"실내암벽 클라임홀릭\" 13881 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-011"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-015 \"Anyang Kim Jong-heon Climbing (안양김종헌클라이밍)\": related-name-nearby related names \"볼더메이트 클라이밍 수지점\" / \"안양김종헌클라이밍\" 14655 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-015"
+     ]
+    },
+    {
      "code": "related-name-nearby",
      "detail": "g-e52dfc621f \"Suji Climbing (수지클라이밍)\": related names \"Boulder Mate Suji (볼더메이트 클라이밍 수지점)\" / \"Suji Climbing (수지클라이밍)\" 1098 m apart",
      "ids": [
@@ -6781,6 +7513,10 @@
     }
    ],
    "review_ids": [
+    "2026-10-12-kr-gyeonggi-west#kr-gw-006",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-009",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-011",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-015",
     "g-a9259f155b",
     "g-e52dfc621f",
     "kr-gs-001",
@@ -7370,6 +8106,20 @@
      ]
     },
     {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-006 \"Fun Climb Gym (펀클라임짐)\": related-name-nearby related names \"수지클라이밍\" / \"펀클라임짐 클라이밍\" 14566 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-006"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-011 \"Climbholic Indeogwon (실내암벽 클라임홀릭)\": related-name-nearby related names \"수지클라이밍\" / \"실내암벽 클라임홀릭\" 14282 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-011"
+     ]
+    },
+    {
      "code": "related-name-nearby",
      "detail": "candidate kr-gs-001 \"Kindy Climbing (킨디클라이밍)\": related names \"수지클라이밍\" / \"킨디클라이밍\" 11633 m apart",
      "ids": [
@@ -7599,6 +8349,8 @@
     }
    ],
    "review_ids": [
+    "2026-10-12-kr-gyeonggi-west#kr-gw-006",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-011",
     "g-e52dfc621f",
     "kr-gs-001",
     "kr-gs-002",
@@ -9609,6 +10361,34 @@
    ],
    "flags": [
     {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-002 \"Climbing Treackle (클라이밍 트리클)\": related-name-nearby related names \"홀드앤락클라이밍\" / \"클라이밍 트리클\" 13452 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-002"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-003 \"Club Climbing Ansan (클럽클라이밍)\": related-name-nearby related names \"홀드앤락클라이밍\" / \"클럽클라이밍\" 13246 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-003"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-012 \"Ansan Basecamp Climbing (안산베이스캠프클라이밍)\": related-name-nearby related names \"홀드앤락클라이밍\" / \"안산베이스캠프클라이밍\" 12438 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-012"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-013 \"Ansan Seonbu Climbing (안산 선부 클라이밍)\": related-name-nearby related names \"홀드앤락클라이밍\" / \"안산 선부 클라이밍\" 14828 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-013"
+     ]
+    },
+    {
      "code": "related-name-nearby",
      "detail": "candidate kr-gs-036 \"Hwaseong Climbing Club (화성클라이밍클럽)\": related names \"홀드앤락클라이밍\" / \"화성클라이밍클럽\" 13166 m apart",
      "ids": [
@@ -9617,6 +10397,10 @@
     }
    ],
    "review_ids": [
+    "2026-10-12-kr-gyeonggi-west#kr-gw-002",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-003",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-012",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-013",
     "kr-gs-036"
    ]
   },
@@ -11331,6 +12115,90 @@
      ]
     },
     {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-002 \"Climbing Treackle (클라이밍 트리클)\": related-name-nearby related names \"에잇 픽스 클라이밍\" / \"클라이밍 트리클\" 14085 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-002"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-003 \"Club Climbing Ansan (클럽클라이밍)\": related-name-nearby related names \"에잇 픽스 클라이밍\" / \"클럽클라이밍\" 14001 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-003"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-004 \"Ayers Rock Climbing Beomgye (에어즈락 클라이밍 범계점)\": related-name-nearby related names \"에잇 픽스 클라이밍\" / \"에어즈락 클라이밍 범계점\" 2521 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-004"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-005 \"The Ledge Climbing (더렛지 클라이밍)\": related-name-nearby related names \"에잇 픽스 클라이밍\" / \"더렛지 클라이밍\" 2666 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-005"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-006 \"Fun Climb Gym (펀클라임짐)\": related-name-nearby related names \"에잇 픽스 클라이밍\" / \"펀클라임짐 클라이밍\" 2039 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-006"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-007 \"Sanbon Climbing Center (산본클라이밍센터)\": related-name-nearby related names \"에잇 픽스 클라이밍\" / \"산본클라이밍센터\" 3491 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-007"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-008 \"Rock Climbing Sanbon (락클라이밍 산본)\": related-name-nearby related names \"에잇 픽스 클라이밍\" / \"락클라이밍 산본\" 4435 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-008"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-009 \"Spicy Climbing (스파이시 클라이밍)\": related-name-nearby related names \"에잇 픽스 클라이밍\" / \"스파이시클라이밍\" 2620 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-009"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-011 \"Climbholic Indeogwon (실내암벽 클라임홀릭)\": related-name-nearby related names \"에잇 픽스 클라이밍\" / \"실내암벽 클라임홀릭\" 2522 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-011"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-012 \"Ansan Basecamp Climbing (안산베이스캠프클라이밍)\": related-name-nearby related names \"에잇 픽스 클라이밍\" / \"안산베이스캠프클라이밍\" 14650 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-012"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-015 \"Anyang Kim Jong-heon Climbing (안양김종헌클라이밍)\": related-name-nearby related names \"에잇 픽스 클라이밍\" / \"안양김종헌클라이밍\" 2159 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-015"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-10-12-kr-gyeonggi-west#kr-gw-020 \"ClimbIt Climbing Mokgam (클라임잇 클라이밍 목감점)\": related-name-nearby related names \"에잇 픽스 클라이밍\" / \"클라임잇 클라이밍 목감점\" 9782 m apart",
+     "ids": [
+      "2026-10-12-kr-gyeonggi-west#kr-gw-020"
+     ]
+    },
+    {
      "code": "related-name-nearby",
      "detail": "candidate kr-gs-001 \"Kindy Climbing (킨디클라이밍)\": related names \"에잇 픽스 클라이밍\" / \"킨디클라이밍\" 12999 m apart",
      "ids": [
@@ -11487,6 +12355,18 @@
     "2026-10-06-kr-seoul#kr-se-047",
     "2026-10-06-kr-seoul#kr-se-051",
     "2026-10-06-kr-seoul#kr-se-056",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-002",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-003",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-004",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-005",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-006",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-007",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-008",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-009",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-011",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-012",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-015",
+    "2026-10-12-kr-gyeonggi-west#kr-gw-020",
     "kr-gs-001",
     "kr-gs-002",
     "kr-gs-004",
@@ -11510,5 +12390,5 @@
    ]
   }
  ],
- "reconcile_sha256": "982633362c965c158356ff975b356ce544d15ef04d1630e65d78d38c3f4e77ee"
+ "reconcile_sha256": "4bdee8e46c7766a6e94ae19261299443f42ef65c561dd2bd7e4dea864111ad90"
 }

@@ -7,11 +7,16 @@
   "meta_matches": true
  },
  "staged_batches_compared": [
-  "2026-10-06-kr-seoul"
+  "2026-10-06-kr-seoul",
+  "2026-10-12-kr-busan-gyeongnam",
+  "2026-10-12-kr-daegu-gyeongbuk",
+  "2026-10-12-kr-gyeonggi-north",
+  "2026-10-12-kr-gyeonggi-west",
+  "2026-10-12-kr-incheon"
  ],
  "counts": {
-  "records": 18,
-  "new": 18,
+  "records": 17,
+  "new": 17,
   "existing": 0,
   "update": 0,
   "probable-duplicate": 0,
@@ -25,7 +30,7 @@
  "importable": true,
  "blockers": [],
  "unused_decisions": [],
- "plan_sha256": "e722f6c0decd2ec07e9a8840d56205ab0225b92fa7f4b982166aeacb83c19927",
+ "plan_sha256": "cda51a81302a2bd15ec2de66e5cf528c0158e8f165a1fad32e5dfad3de6cf542",
  "records": [
   {
    "line": 1,
@@ -70,21 +75,13 @@
   {
    "line": 6,
    "class": "new",
-   "id": "g-ee790825e6",
-   "id_frozen": true,
-   "name": "Grippick Climbing Gym (그립픽클라이밍짐)",
-   "country": "KR"
-  },
-  {
-   "line": 7,
-   "class": "new",
    "id": "g-e76514fdac",
    "id_frozen": true,
    "name": "Climb Us Moran (클라임 어스 모란점)",
    "country": "KR"
   },
   {
-   "line": 8,
+   "line": 7,
    "class": "new",
    "id": "g-bc470a6f70",
    "id_frozen": true,
@@ -92,7 +89,7 @@
    "country": "KR"
   },
   {
-   "line": 9,
+   "line": 8,
    "class": "new",
    "id": "g-c24bafd15a",
    "id_frozen": true,
@@ -100,7 +97,7 @@
    "country": "KR"
   },
   {
-   "line": 10,
+   "line": 9,
    "class": "new",
    "id": "g-a69f3c3d8f",
    "id_frozen": true,
@@ -108,7 +105,7 @@
    "country": "KR"
   },
   {
-   "line": 11,
+   "line": 10,
    "class": "new",
    "id": "g-ca2ca3b250",
    "id_frozen": true,
@@ -116,7 +113,7 @@
    "country": "KR"
   },
   {
-   "line": 12,
+   "line": 11,
    "class": "new",
    "id": "g-bbc8555049",
    "id_frozen": true,
@@ -124,7 +121,7 @@
    "country": "KR"
   },
   {
-   "line": 13,
+   "line": 12,
    "class": "new",
    "id": "g-3a443739ef",
    "id_frozen": true,
@@ -132,7 +129,7 @@
    "country": "KR"
   },
   {
-   "line": 14,
+   "line": 13,
    "class": "new",
    "id": "g-b0d5bf5412",
    "id_frozen": true,
@@ -140,7 +137,7 @@
    "country": "KR"
   },
   {
-   "line": 15,
+   "line": 14,
    "class": "new",
    "id": "g-2b3c4620e0",
    "id_frozen": true,
@@ -148,7 +145,7 @@
    "country": "KR"
   },
   {
-   "line": 16,
+   "line": 15,
    "class": "new",
    "id": "g-de4992830a",
    "id_frozen": true,
@@ -156,7 +153,7 @@
    "country": "KR"
   },
   {
-   "line": 17,
+   "line": 16,
    "class": "new",
    "id": "g-60101f7379",
    "id_frozen": true,
@@ -164,7 +161,7 @@
    "country": "KR"
   },
   {
-   "line": 18,
+   "line": 17,
    "class": "new",
    "id": "g-72b11913cd",
    "id_frozen": true,

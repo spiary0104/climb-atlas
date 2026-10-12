@@ -13,3 +13,9 @@ Seven gyms I could not settle; all stay `defer` in review.json and are not in th
 | Siheung Sports Climbing Center (시흥스포츠클라이밍센터, kr-gw-016) | Siheung (소래산길 11) | https://m.place.naver.com/place/985209367/home ; https://www.shsports.or.kr/ | Does this municipal centre have a bouldering wall (photos show only tall rope walls)? If yes it could be added as a public facility (category other), not a commercial gym. | Open in 2026 (posts 2026-06-29); day entry 3,000 weekdays / 4,000 holidays for 4 hours. |
 
 Weaker accepts among the nine staged gyms (veto if you want extra confidence): see review-notes.md "Weaker accepts" (Catchstone Bucheon, Club Climbing Ansan, The Ledge).
+
+## Added by the brain review (2026-10-12): accepts moved to defer
+
+| Gym | City | Question |
+|---|---|---|
+| Club Climbing Ansan (클럽클라이밍) | Ansan | Does it have mat-floored bouldering walls open to day visitors (photos show no clear crash mats; one rope wall)? |

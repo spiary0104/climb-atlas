@@ -1,7 +1,7 @@
 # Regional research: Korea: Incheon (2026-10-12-kr-incheon)
 
 Scope: KR / INCHEON
-Index: 3294 gyms, sha256 2f47cb53e74b… | staged batches compared: 2026-10-06-kr-seoul | other sections compared: 2026-10-05-korea-gwangju-jeollanam, 2026-10-05-korea-holds, 2026-10-05-korea-owner-checks, 2026-10-06-kr-seoul
+Index: 3294 gyms, sha256 2f47cb53e74b… | staged batches compared: 2026-10-06-kr-seoul | other sections compared: 2026-10-05-korea-gwangju-jeollanam, 2026-10-05-korea-holds, 2026-10-05-korea-owner-checks, 2026-10-06-kr-seoul, 2026-10-12-kr-busan-gyeongnam, 2026-10-12-kr-daegu-gyeongbuk, 2026-10-12-kr-gyeonggi-north, 2026-10-12-kr-gyeonggi-south, 2026-10-12-kr-gyeonggi-west
 Review radii (stricter than the importer): any gym 150 m, related name 15 km, other country 2 km
 
 ## Summary
@@ -11,7 +11,14 @@ Review radii (stricter than the importer): any gym 150 m, related name 15 km, ot
 - kr-ic-001 "Discovery Climb Square ICN (디스커버리클라이밍 클라임스퀘어 ICN)" [g-84f2028f12] reviewed_against must include: kr-ic-002, seed-1215
   - related-name-nearby: candidate kr-ic-002 "Discovery Climb Square Cheongna (디스커버리클라이밍 클라임스퀘어 청라점)": related names "Discovery Climb Square ICN (디스커버리클라이밍 클라임스퀘어 ICN)" / "Discovery Climb Square Cheongna (디스커버리클라이밍 클라임스퀘어 청라점)" 7215 m apart
   - related-name-nearby: seed-1215 "Discovery Climbing Square ICN": related names "Discovery Climb Square ICN (디스커버리클라이밍 클라임스퀘어 ICN)" / "Discovery Climbing Square ICN" 5920 m apart
-- kr-ic-002 "Discovery Climb Square Cheongna (디스커버리클라이밍 클라임스퀘어 청라점)" [g-23f992cafd] reviewed_against must include: kr-ic-001, kr-ic-004, kr-ic-005, kr-ic-007, kr-ic-008, kr-ic-009, kr-ic-011, kr-ic-012, kr-ic-013, kr-ic-014, kr-ic-015, seed-1215
+- kr-ic-002 "Discovery Climb Square Cheongna (디스커버리클라이밍 클라임스퀘어 청라점)" [g-23f992cafd] reviewed_against must include: 2026-10-12-kr-gyeonggi-north#kr-gn-009, 2026-10-12-kr-gyeonggi-north#kr-gn-018, 2026-10-12-kr-gyeonggi-north#kr-gn-019, 2026-10-12-kr-gyeonggi-west#kr-gw-001, 2026-10-12-kr-gyeonggi-west#kr-gw-010, 2026-10-12-kr-gyeonggi-west#kr-gw-018, 2026-10-12-kr-gyeonggi-west#kr-gw-019, kr-ic-001, kr-ic-004, kr-ic-005, kr-ic-007, kr-ic-008, kr-ic-009, kr-ic-011, kr-ic-012, kr-ic-013, kr-ic-014, kr-ic-015, seed-1215
+  - other-section: 2026-10-12-kr-gyeonggi-north#kr-gn-009 "Pick Climbing Gimpo (픽 클라이밍)": related-name-nearby related names "디스커버리클라이밍 클라임스퀘어 청라점" / "픽 클라이밍" 12673 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-north#kr-gn-018 "Jam Climbing Gimpo (잼클라이밍)": related-name-nearby related names "디스커버리클라이밍 클라임스퀘어 청라점" / "잼클라이밍" 11873 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-north#kr-gn-019 "Kikl Climbing Pungmu (키클 클라이밍 풍무점)": related-name-nearby related names "디스커버리클라이밍 클라임스퀘어 청라점" / "키클 클라이밍 풍무점" 10286 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-001 "Catchstone Climbing Bucheon Station (캐치스톤클라이밍짐 부천역점)": related-name-nearby related names "디스커버리클라이밍 클라임스퀘어 청라점" / "캐치스톤클라이밍짐 부천역점" 12618 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-010 "World Climbing (월드클라이밍)": related-name-nearby related names "디스커버리클라이밍 클라임스퀘어 청라점" / "월드클라이밍" 9470 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-018 "Bucheon Climbing Center (부천클라이밍센터)": related-name-nearby related names "디스커버리클라이밍 클라임스퀘어 청라점" / "부천클라이밍센터" 11002 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-019 "Pax Climbing Center (팍스클라이밍)": related-name-nearby related names "디스커버리클라이밍 클라임스퀘어 청라점" / "팍스클라이밍" 13496 m apart
   - related-name-nearby: candidate kr-ic-001 "Discovery Climb Square ICN (디스커버리클라이밍 클라임스퀘어 ICN)": related names "Discovery Climb Square Cheongna (디스커버리클라이밍 클라임스퀘어 청라점)" / "Discovery Climb Square ICN (디스커버리클라이밍 클라임스퀘어 ICN)" 7215 m apart
   - related-name-nearby: candidate kr-ic-004 "B-bloc Climbing Yeongjong Hanul-city (비블럭클라이밍 영종하늘도시점)": related names "디스커버리클라이밍 클라임스퀘어 청라점" / "비블럭클라이밍 영종하늘도시점" 9518 m apart
   - related-name-nearby: candidate kr-ic-005 "Climbing Zoom (클라이밍줌)": related names "디스커버리클라이밍 클라임스퀘어 청라점" / "클라이밍줌" 13293 m apart
@@ -24,10 +31,16 @@ Review radii (stricter than the importer): any gym 150 m, related name 15 km, ot
   - related-name-nearby: candidate kr-ic-014 "Incheon Munhak Stadium Climbing Wall (인천문학경기장암벽장)": related names "디스커버리클라이밍 클라임스퀘어 청라점" / "인천문학경기장암벽장" 11671 m apart
   - related-name-nearby: candidate kr-ic-015 "Incheon Indoor Climbing Wall (인천실내암장)": related names "디스커버리클라이밍 클라임스퀘어 청라점" / "인천실내암장" 13018 m apart
   - related-name-nearby: seed-1215 "Discovery Climbing Square ICN": related names "Discovery Climb Square Cheongna (디스커버리클라이밍 클라임스퀘어 청라점)" / "Discovery Climbing Square ICN" 2378 m apart
-- kr-ic-003 "B-bloc Climbing Songdo (비블럭 클라이밍 송도점)" [g-ce91413609] reviewed_against must include: kr-ic-005, kr-ic-006, kr-ic-007, kr-ic-008, kr-ic-009, kr-ic-010, kr-ic-014, kr-ic-015, seed-1164, seed-1216
+- kr-ic-003 "B-bloc Climbing Songdo (비블럭 클라이밍 송도점)" [g-ce91413609] reviewed_against must include: 2026-10-12-kr-gyeonggi-west#kr-gw-013, 2026-10-12-kr-gyeonggi-west#kr-gw-014, 2026-10-12-kr-gyeonggi-west#kr-gw-016, 2026-10-12-kr-gyeonggi-west#kr-gw-017, 2026-10-12-kr-gyeonggi-west#kr-gw-018, 2026-10-12-kr-gyeonggi-west#kr-gw-021, kr-ic-005, kr-ic-006, kr-ic-007, kr-ic-008, kr-ic-009, kr-ic-010, kr-ic-014, kr-ic-015, seed-1164, seed-1216
   - alias-match: candidate kr-ic-010 "Discovery Climb Square Songdo (디스커버리클라이밍 클라임스퀘어 송도점)": similar-name-nearby ("B-bloc Climbing Songdo (비블럭 클라이밍 송도점)" / "Climb Square Songdo", 247 m)
   - importer-probable-duplicate: seed-1164 same-name-but-pin-differs 1679 m
   - name-match: seed-1164 "B.bloc Climbing Songdo": same-name-but-pin-differs ("B-bloc Climbing Songdo (비블럭 클라이밍 송도점)" / "B.bloc Climbing Songdo", 1679 m)
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-013 "Ansan Seonbu Climbing (안산 선부 클라이밍)": related-name-nearby related names "비블럭 클라이밍 송도점" / "안산 선부 클라이밍" 14099 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-014 "Siheung Catch Climbing Gym (시흥캐치클라이밍짐)": related-name-nearby related names "비블럭 클라이밍 송도점" / "시흥캐치클라이밍짐" 11098 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-016 "Siheung Sports Climbing Center (시흥스포츠클라이밍센터)": related-name-nearby related names "비블럭 클라이밍 송도점" / "시흥스포츠클라이밍센터" 13089 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-017 "Bouldergarden Siheung (볼더가든클라이밍)": related-name-nearby related names "비블럭 클라이밍 송도점" / "볼더가든클라이밍" 14234 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-018 "Bucheon Climbing Center (부천클라이밍센터)": related-name-nearby related names "비블럭 클라이밍 송도점" / "부천클라이밍센터" 14897 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-021 "Just Climbing Center (저스트클라이밍센타)": related-name-nearby related names "비블럭 클라이밍 송도점" / "저스트클라이밍센타" 13553 m apart
   - related-name-nearby: candidate kr-ic-005 "Climbing Zoom (클라이밍줌)": related names "비블럭 클라이밍 송도점" / "클라이밍줌" 4053 m apart
   - related-name-nearby: candidate kr-ic-006 "Hub Climbing (허브클라이밍)": related names "비블럭 클라이밍 송도점" / "허브클라이밍" 5762 m apart
   - related-name-nearby: candidate kr-ic-007 "Boly Climbing (볼리 클라이밍)": related names "비블럭 클라이밍 송도점" / "볼리 클라이밍" 8908 m apart
@@ -47,7 +60,14 @@ Review radii (stricter than the importer): any gym 150 m, related name 15 km, ot
   - related-name-nearby: candidate kr-ic-015 "Incheon Indoor Climbing Wall (인천실내암장)": related names "비블럭클라이밍 영종하늘도시점" / "인천실내암장" 14355 m apart
   - related-name-nearby: seed-1164 "B.bloc Climbing Songdo": related names "b.bloc Yeongjong" / "B.bloc Climbing Songdo" 13735 m apart
   - related-name-nearby: seed-1216 "B.bloc Climbing Yeongjong": related names "B-bloc Climbing Yeongjong Hanul-city (비블럭클라이밍 영종하늘도시점)" / "B.bloc Climbing Yeongjong" 5578 m apart
-- kr-ic-005 "Climbing Zoom (클라이밍줌)" [g-367f5a066f] reviewed_against must include: kr-ic-002, kr-ic-003, kr-ic-004, kr-ic-006, kr-ic-007, kr-ic-008, kr-ic-009, kr-ic-010, kr-ic-011, kr-ic-012, kr-ic-014, kr-ic-015
+- kr-ic-005 "Climbing Zoom (클라이밍줌)" [g-367f5a066f] reviewed_against must include: 2026-10-12-kr-gyeonggi-west#kr-gw-001, 2026-10-12-kr-gyeonggi-west#kr-gw-010, 2026-10-12-kr-gyeonggi-west#kr-gw-014, 2026-10-12-kr-gyeonggi-west#kr-gw-016, 2026-10-12-kr-gyeonggi-west#kr-gw-017, 2026-10-12-kr-gyeonggi-west#kr-gw-018, 2026-10-12-kr-gyeonggi-west#kr-gw-021, kr-ic-002, kr-ic-003, kr-ic-004, kr-ic-006, kr-ic-007, kr-ic-008, kr-ic-009, kr-ic-010, kr-ic-011, kr-ic-012, kr-ic-014, kr-ic-015
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-001 "Catchstone Climbing Bucheon Station (캐치스톤클라이밍짐 부천역점)": related-name-nearby related names "클라이밍줌" / "캐치스톤클라이밍짐 부천역점" 12284 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-010 "World Climbing (월드클라이밍)": related-name-nearby related names "클라이밍줌" / "월드클라이밍" 12144 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-014 "Siheung Catch Climbing Gym (시흥캐치클라이밍짐)": related-name-nearby related names "클라이밍줌" / "시흥캐치클라이밍짐" 10926 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-016 "Siheung Sports Climbing Center (시흥스포츠클라이밍센터)": related-name-nearby related names "클라이밍줌" / "시흥스포츠클라이밍센터" 10382 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-017 "Bouldergarden Siheung (볼더가든클라이밍)": related-name-nearby related names "클라이밍줌" / "볼더가든클라이밍" 11746 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-018 "Bucheon Climbing Center (부천클라이밍센터)": related-name-nearby related names "클라이밍줌" / "부천클라이밍센터" 11260 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-021 "Just Climbing Center (저스트클라이밍센타)": related-name-nearby related names "클라이밍줌" / "저스트클라이밍센타" 10934 m apart
   - related-name-nearby: candidate kr-ic-002 "Discovery Climb Square Cheongna (디스커버리클라이밍 클라임스퀘어 청라점)": related names "클라이밍줌" / "디스커버리클라이밍 클라임스퀘어 청라점" 13293 m apart
   - related-name-nearby: candidate kr-ic-003 "B-bloc Climbing Songdo (비블럭 클라이밍 송도점)": related names "클라이밍줌" / "비블럭 클라이밍 송도점" 4053 m apart
   - related-name-nearby: candidate kr-ic-004 "B-bloc Climbing Yeongjong Hanul-city (비블럭클라이밍 영종하늘도시점)": related names "클라이밍줌" / "비블럭클라이밍 영종하늘도시점" 12901 m apart
@@ -60,7 +80,20 @@ Review radii (stricter than the importer): any gym 150 m, related name 15 km, ot
   - related-name-nearby: candidate kr-ic-012 "Seo-Incheon Climbing (서인천 클라이밍)": related names "클라이밍줌" / "서인천 클라이밍" 11422 m apart
   - related-name-nearby: candidate kr-ic-014 "Incheon Munhak Stadium Climbing Wall (인천문학경기장암벽장)": related names "클라이밍줌" / "인천문학경기장암벽장" 2622 m apart
   - related-name-nearby: candidate kr-ic-015 "Incheon Indoor Climbing Wall (인천실내암장)": related names "클라이밍줌" / "인천실내암장" 2514 m apart
-- kr-ic-006 "Hub Climbing (허브클라이밍)" [g-bd1d07c14e] reviewed_against must include: kr-ic-003, kr-ic-005, kr-ic-007, kr-ic-008, kr-ic-009, kr-ic-010, kr-ic-011, kr-ic-012, kr-ic-014, kr-ic-015
+- kr-ic-006 "Hub Climbing (허브클라이밍)" [g-bd1d07c14e] reviewed_against must include: 2026-10-12-kr-gyeonggi-west#kr-gw-001, 2026-10-12-kr-gyeonggi-west#kr-gw-002, 2026-10-12-kr-gyeonggi-west#kr-gw-003, 2026-10-12-kr-gyeonggi-west#kr-gw-010, 2026-10-12-kr-gyeonggi-west#kr-gw-012, 2026-10-12-kr-gyeonggi-west#kr-gw-013, 2026-10-12-kr-gyeonggi-west#kr-gw-014, 2026-10-12-kr-gyeonggi-west#kr-gw-016, 2026-10-12-kr-gyeonggi-west#kr-gw-017, 2026-10-12-kr-gyeonggi-west#kr-gw-018, 2026-10-12-kr-gyeonggi-west#kr-gw-019, 2026-10-12-kr-gyeonggi-west#kr-gw-020, 2026-10-12-kr-gyeonggi-west#kr-gw-021, kr-ic-003, kr-ic-005, kr-ic-007, kr-ic-008, kr-ic-009, kr-ic-010, kr-ic-011, kr-ic-012, kr-ic-014, kr-ic-015
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-001 "Catchstone Climbing Bucheon Station (캐치스톤클라이밍짐 부천역점)": related-name-nearby related names "허브클라이밍" / "캐치스톤클라이밍짐 부천역점" 10693 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-002 "Climbing Treackle (클라이밍 트리클)": related-name-nearby related names "허브클라이밍" / "클라이밍 트리클" 13202 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-003 "Club Climbing Ansan (클럽클라이밍)": related-name-nearby related names "허브클라이밍" / "클럽클라이밍" 13501 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-010 "World Climbing (월드클라이밍)": related-name-nearby related names "허브클라이밍" / "월드클라이밍" 11795 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-012 "Ansan Basecamp Climbing (안산베이스캠프클라이밍)": related-name-nearby related names "허브클라이밍" / "안산베이스캠프클라이밍" 13855 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-013 "Ansan Seonbu Climbing (안산 선부 클라이밍)": related-name-nearby related names "허브클라이밍" / "안산 선부 클라이밍" 10961 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-014 "Siheung Catch Climbing Gym (시흥캐치클라이밍짐)": related-name-nearby related names "허브클라이밍" / "시흥캐치클라이밍짐" 6378 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-016 "Siheung Sports Climbing Center (시흥스포츠클라이밍센터)": related-name-nearby related names "허브클라이밍" / "시흥스포츠클라이밍센터" 7503 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-017 "Bouldergarden Siheung (볼더가든클라이밍)": related-name-nearby related names "허브클라이밍" / "볼더가든클라이밍" 8532 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-018 "Bucheon Climbing Center (부천클라이밍센터)": related-name-nearby related names "허브클라이밍" / "부천클라이밍센터" 10264 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-019 "Pax Climbing Center (팍스클라이밍)": related-name-nearby related names "허브클라이밍" / "팍스클라이밍" 14657 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-020 "ClimbIt Climbing Mokgam (클라임잇 클라이밍 목감점)": related-name-nearby related names "허브클라이밍" / "클라임잇 클라이밍 목감점" 12542 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-021 "Just Climbing Center (저스트클라이밍센타)": related-name-nearby related names "허브클라이밍" / "저스트클라이밍센타" 7912 m apart
   - related-name-nearby: candidate kr-ic-003 "B-bloc Climbing Songdo (비블럭 클라이밍 송도점)": related names "허브클라이밍" / "비블럭 클라이밍 송도점" 5762 m apart
   - related-name-nearby: candidate kr-ic-005 "Climbing Zoom (클라이밍줌)": related names "허브클라이밍" / "클라이밍줌" 4554 m apart
   - related-name-nearby: candidate kr-ic-007 "Boly Climbing (볼리 클라이밍)": related names "허브클라이밍" / "볼리 클라이밍" 3290 m apart
@@ -71,8 +104,21 @@ Review radii (stricter than the importer): any gym 150 m, related name 15 km, ot
   - related-name-nearby: candidate kr-ic-012 "Seo-Incheon Climbing (서인천 클라이밍)": related names "허브클라이밍" / "서인천 클라이밍" 13697 m apart
   - related-name-nearby: candidate kr-ic-014 "Incheon Munhak Stadium Climbing Wall (인천문학경기장암벽장)": related names "허브클라이밍" / "인천문학경기장암벽장" 4453 m apart
   - related-name-nearby: candidate kr-ic-015 "Incheon Indoor Climbing Wall (인천실내암장)": related names "허브클라이밍" / "인천실내암장" 3079 m apart
-- kr-ic-007 "Boly Climbing (볼리 클라이밍)" [g-3681919a66] reviewed_against must include: 2026-10-06-kr-seoul#kr-se-008, kr-ic-002, kr-ic-003, kr-ic-005, kr-ic-006, kr-ic-008, kr-ic-009, kr-ic-010, kr-ic-011, kr-ic-012, kr-ic-013, kr-ic-014, kr-ic-015
+- kr-ic-007 "Boly Climbing (볼리 클라이밍)" [g-3681919a66] reviewed_against must include: 2026-10-06-kr-seoul#kr-se-008, 2026-10-12-kr-gyeonggi-west#kr-gw-001, 2026-10-12-kr-gyeonggi-west#kr-gw-002, 2026-10-12-kr-gyeonggi-west#kr-gw-003, 2026-10-12-kr-gyeonggi-west#kr-gw-010, 2026-10-12-kr-gyeonggi-west#kr-gw-012, 2026-10-12-kr-gyeonggi-west#kr-gw-013, 2026-10-12-kr-gyeonggi-west#kr-gw-014, 2026-10-12-kr-gyeonggi-west#kr-gw-016, 2026-10-12-kr-gyeonggi-west#kr-gw-017, 2026-10-12-kr-gyeonggi-west#kr-gw-018, 2026-10-12-kr-gyeonggi-west#kr-gw-019, 2026-10-12-kr-gyeonggi-west#kr-gw-020, 2026-10-12-kr-gyeonggi-west#kr-gw-021, kr-ic-002, kr-ic-003, kr-ic-005, kr-ic-006, kr-ic-008, kr-ic-009, kr-ic-010, kr-ic-011, kr-ic-012, kr-ic-013, kr-ic-014, kr-ic-015
   - other-section: 2026-10-06-kr-seoul#kr-se-008 "Seoul Forest Climbing Guro (서울숲클라이밍 구로점)": related-name-nearby related names "볼리 클라이밍" / "서울숲클라이밍 구로점" 14696 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-001 "Catchstone Climbing Bucheon Station (캐치스톤클라이밍짐 부천역점)": related-name-nearby related names "볼리 클라이밍" / "캐치스톤클라이밍짐 부천역점" 7563 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-002 "Climbing Treackle (클라이밍 트리클)": related-name-nearby related names "볼리 클라이밍" / "클라이밍 트리클" 13529 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-003 "Club Climbing Ansan (클럽클라이밍)": related-name-nearby related names "볼리 클라이밍" / "클럽클라이밍" 13823 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-010 "World Climbing (월드클라이밍)": related-name-nearby related names "볼리 클라이밍" / "월드클라이밍" 9131 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-012 "Ansan Basecamp Climbing (안산베이스캠프클라이밍)": related-name-nearby related names "볼리 클라이밍" / "안산베이스캠프클라이밍" 14348 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-013 "Ansan Seonbu Climbing (안산 선부 클라이밍)": related-name-nearby related names "볼리 클라이밍" / "안산 선부 클라이밍" 11456 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-014 "Siheung Catch Climbing Gym (시흥캐치클라이밍짐)": related-name-nearby related names "볼리 클라이밍" / "시흥캐치클라이밍짐" 6048 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-016 "Siheung Sports Climbing Center (시흥스포츠클라이밍센터)": related-name-nearby related names "볼리 클라이밍" / "시흥스포츠클라이밍센터" 4218 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-017 "Bouldergarden Siheung (볼더가든클라이밍)": related-name-nearby related names "볼리 클라이밍" / "볼더가든클라이밍" 5332 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-018 "Bucheon Climbing Center (부천클라이밍센터)": related-name-nearby related names "볼리 클라이밍" / "부천클라이밍센터" 7377 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-019 "Pax Climbing Center (팍스클라이밍)": related-name-nearby related names "볼리 클라이밍" / "팍스클라이밍" 11509 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-020 "ClimbIt Climbing Mokgam (클라임잇 클라이밍 목감점)": related-name-nearby related names "볼리 클라이밍" / "클라임잇 클라이밍 목감점" 10961 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-021 "Just Climbing Center (저스트클라이밍센타)": related-name-nearby related names "볼리 클라이밍" / "저스트클라이밍센타" 4651 m apart
   - related-name-nearby: candidate kr-ic-002 "Discovery Climb Square Cheongna (디스커버리클라이밍 클라임스퀘어 청라점)": related names "볼리 클라이밍" / "디스커버리클라이밍 클라임스퀘어 청라점" 14983 m apart
   - related-name-nearby: candidate kr-ic-003 "B-bloc Climbing Songdo (비블럭 클라이밍 송도점)": related names "볼리 클라이밍" / "비블럭 클라이밍 송도점" 8908 m apart
   - related-name-nearby: candidate kr-ic-005 "Climbing Zoom (클라이밍줌)": related names "볼리 클라이밍" / "클라이밍줌" 6626 m apart
@@ -85,9 +131,18 @@ Review radii (stricter than the importer): any gym 150 m, related name 15 km, ot
   - related-name-nearby: candidate kr-ic-013 "Incheon Gyeyang Climbing Center (인천계양클라이밍센터)": related names "볼리 클라이밍" / "인천계양클라이밍센터" 13398 m apart
   - related-name-nearby: candidate kr-ic-014 "Incheon Munhak Stadium Climbing Wall (인천문학경기장암벽장)": related names "볼리 클라이밍" / "인천문학경기장암벽장" 5081 m apart
   - related-name-nearby: candidate kr-ic-015 "Incheon Indoor Climbing Wall (인천실내암장)": related names "볼리 클라이밍" / "인천실내암장" 4214 m apart
-- kr-ic-008 "Bupyeong Climbing Center (부평클라이밍센터)" [g-dbcd7c689d] reviewed_against must include: 2026-10-06-kr-seoul#kr-se-022, 2026-10-06-kr-seoul#kr-se-055, kr-ic-002, kr-ic-003, kr-ic-004, kr-ic-005, kr-ic-006, kr-ic-007, kr-ic-009, kr-ic-010, kr-ic-011, kr-ic-012, kr-ic-013, kr-ic-014, kr-ic-015
+- kr-ic-008 "Bupyeong Climbing Center (부평클라이밍센터)" [g-dbcd7c689d] reviewed_against must include: 2026-10-06-kr-seoul#kr-se-022, 2026-10-06-kr-seoul#kr-se-055, 2026-10-12-kr-gyeonggi-north#kr-gn-019, 2026-10-12-kr-gyeonggi-west#kr-gw-001, 2026-10-12-kr-gyeonggi-west#kr-gw-010, 2026-10-12-kr-gyeonggi-west#kr-gw-014, 2026-10-12-kr-gyeonggi-west#kr-gw-016, 2026-10-12-kr-gyeonggi-west#kr-gw-017, 2026-10-12-kr-gyeonggi-west#kr-gw-018, 2026-10-12-kr-gyeonggi-west#kr-gw-019, 2026-10-12-kr-gyeonggi-west#kr-gw-021, kr-ic-002, kr-ic-003, kr-ic-004, kr-ic-005, kr-ic-006, kr-ic-007, kr-ic-009, kr-ic-010, kr-ic-011, kr-ic-012, kr-ic-013, kr-ic-014, kr-ic-015
   - other-section: 2026-10-06-kr-seoul#kr-se-022 "Gangseo Climbing Center (강서클라이밍센터)": related-name-nearby related names "부평클라이밍센터" / "강서클라이밍센터" 13933 m apart
   - other-section: 2026-10-06-kr-seoul#kr-se-055 "The Climb Magok (더클라임 마곡점)": related-name-nearby related names "부평클라이밍센터" / "더클라임 마곡점" 13699 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-north#kr-gn-019 "Kikl Climbing Pungmu (키클 클라이밍 풍무점)": related-name-nearby related names "부평클라이밍센터" / "키클 클라이밍 풍무점" 12958 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-001 "Catchstone Climbing Bucheon Station (캐치스톤클라이밍짐 부천역점)": related-name-nearby related names "부평클라이밍센터" / "캐치스톤클라이밍짐 부천역점" 6844 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-010 "World Climbing (월드클라이밍)": related-name-nearby related names "부평클라이밍센터" / "월드클라이밍" 4545 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-014 "Siheung Catch Climbing Gym (시흥캐치클라이밍짐)": related-name-nearby related names "부평클라이밍센터" / "시흥캐치클라이밍짐" 14576 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-016 "Siheung Sports Climbing Center (시흥스포츠클라이밍센터)": related-name-nearby related names "부평클라이밍센터" / "시흥스포츠클라이밍센터" 8553 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-017 "Bouldergarden Siheung (볼더가든클라이밍)": related-name-nearby related names "부평클라이밍센터" / "볼더가든클라이밍" 9953 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-018 "Bucheon Climbing Center (부천클라이밍센터)": related-name-nearby related names "부평클라이밍센터" / "부천클라이밍센터" 5168 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-019 "Pax Climbing Center (팍스클라이밍)": related-name-nearby related names "부평클라이밍센터" / "팍스클라이밍" 9186 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-021 "Just Climbing Center (저스트클라이밍센타)": related-name-nearby related names "부평클라이밍센터" / "저스트클라이밍센타" 9102 m apart
   - related-name-nearby: candidate kr-ic-002 "Discovery Climb Square Cheongna (디스커버리클라이밍 클라임스퀘어 청라점)": related names "부평클라이밍센터" / "디스커버리클라이밍 클라임스퀘어 청라점" 6582 m apart
   - related-name-nearby: candidate kr-ic-003 "B-bloc Climbing Songdo (비블럭 클라이밍 송도점)": related names "부평클라이밍센터" / "비블럭 클라이밍 송도점" 12917 m apart
   - related-name-nearby: candidate kr-ic-004 "B-bloc Climbing Yeongjong Hanul-city (비블럭클라이밍 영종하늘도시점)": related names "부평클라이밍센터" / "비블럭클라이밍 영종하늘도시점" 12702 m apart
@@ -101,7 +156,15 @@ Review radii (stricter than the importer): any gym 150 m, related name 15 km, ot
   - related-name-nearby: candidate kr-ic-013 "Incheon Gyeyang Climbing Center (인천계양클라이밍센터)": related names "부평클라이밍센터" / "인천계양클라이밍센터" 6241 m apart
   - related-name-nearby: candidate kr-ic-014 "Incheon Munhak Stadium Climbing Wall (인천문학경기장암벽장)": related names "부평클라이밍센터" / "인천문학경기장암벽장" 6497 m apart
   - related-name-nearby: candidate kr-ic-015 "Incheon Indoor Climbing Wall (인천실내암장)": related names "부평클라이밍센터" / "인천실내암장" 7601 m apart
-- kr-ic-009 "Ganseok Climbing (간석클라이밍)" [g-23960218a1] reviewed_against must include: kr-ic-002, kr-ic-003, kr-ic-004, kr-ic-005, kr-ic-006, kr-ic-007, kr-ic-008, kr-ic-010, kr-ic-011, kr-ic-012, kr-ic-013, kr-ic-014, kr-ic-015
+- kr-ic-009 "Ganseok Climbing (간석클라이밍)" [g-23960218a1] reviewed_against must include: 2026-10-12-kr-gyeonggi-west#kr-gw-001, 2026-10-12-kr-gyeonggi-west#kr-gw-010, 2026-10-12-kr-gyeonggi-west#kr-gw-014, 2026-10-12-kr-gyeonggi-west#kr-gw-016, 2026-10-12-kr-gyeonggi-west#kr-gw-017, 2026-10-12-kr-gyeonggi-west#kr-gw-018, 2026-10-12-kr-gyeonggi-west#kr-gw-019, 2026-10-12-kr-gyeonggi-west#kr-gw-021, kr-ic-002, kr-ic-003, kr-ic-004, kr-ic-005, kr-ic-006, kr-ic-007, kr-ic-008, kr-ic-010, kr-ic-011, kr-ic-012, kr-ic-013, kr-ic-014, kr-ic-015
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-001 "Catchstone Climbing Bucheon Station (캐치스톤클라이밍짐 부천역점)": related-name-nearby related names "간석클라이밍" / "캐치스톤클라이밍짐 부천역점" 8012 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-010 "World Climbing (월드클라이밍)": related-name-nearby related names "간석클라이밍" / "월드클라이밍" 7013 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-014 "Siheung Catch Climbing Gym (시흥캐치클라이밍짐)": related-name-nearby related names "간석클라이밍" / "시흥캐치클라이밍짐" 12219 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-016 "Siheung Sports Climbing Center (시흥스포츠클라이밍센터)": related-name-nearby related names "간석클라이밍" / "시흥스포츠클라이밍센터" 7883 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-017 "Bouldergarden Siheung (볼더가든클라이밍)": related-name-nearby related names "간석클라이밍" / "볼더가든클라이밍" 9414 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-018 "Bucheon Climbing Center (부천클라이밍센터)": related-name-nearby related names "간석클라이밍" / "부천클라이밍센터" 6612 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-019 "Pax Climbing Center (팍스클라이밍)": related-name-nearby related names "간석클라이밍" / "팍스클라이밍" 11323 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-west#kr-gw-021 "Just Climbing Center (저스트클라이밍센타)": related-name-nearby related names "간석클라이밍" / "저스트클라이밍센타" 8497 m apart
   - related-name-nearby: candidate kr-ic-002 "Discovery Climb Square Cheongna (디스커버리클라이밍 클라임스퀘어 청라점)": related names "간석클라이밍" / "디스커버리클라이밍 클라임스퀘어 청라점" 9019 m apart
   - related-name-nearby: candidate kr-ic-003 "B-bloc Climbing Songdo (비블럭 클라이밍 송도점)": related names "간석클라이밍" / "비블럭 클라이밍 송도점" 9430 m apart
   - related-name-nearby: candidate kr-ic-004 "B-bloc Climbing Yeongjong Hanul-city (비블럭클라이밍 영종하늘도시점)": related names "간석클라이밍" / "비블럭클라이밍 영종하늘도시점" 12389 m apart

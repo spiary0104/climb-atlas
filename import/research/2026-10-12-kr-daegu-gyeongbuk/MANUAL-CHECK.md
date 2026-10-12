@@ -21,3 +21,10 @@ Fifteen places I could not settle; all stay `defer` in review.json and are not i
 | Mungyeong International Climbing Center (문경국제클라이밍센터, kr-dg-039) | Mungyeong (영강공원길 115) | https://m.place.naver.com/place/1264846727/home | Public competition venue: is there a boulder hall open to walk-ins? | Kakao open (22 reviews); no photos, price list or posts on Naver. Category `other`. |
 
 Weakest of the 14 accepts (veto if you want extra confidence): see review-notes.md "accept".
+
+## Added by the brain review (2026-10-12): accepts moved to defer
+
+| Gym | City | Question |
+|---|---|---|
+| Newbie Climbing Suseong (뉴비클라이밍 수성점) | Daegu Suseong-gu | Is this the existing Bouldeer gym seed-1219 'Newbie Climbing' (Sinam-dong) after a move, or a separate branch? Is it open in 2026 (newest gym post 2024-02)? |
+| Kim Dae-woo Climbing School (김대우암벽교실) | Pohang | Can walk-in climbers buy a day pass for the 2nd-floor bouldering area, or is it lessons only? |
