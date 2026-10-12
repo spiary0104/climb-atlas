@@ -1,0 +1,79 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-12-kr-incheon",
+ "index": {
+  "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
+  "count": 3294,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-06-kr-seoul"
+ ],
+ "counts": {
+  "records": 6,
+  "new": 6,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "1426ed31af168141682d0a4aa062679032a823e94068ede10838d8632dd9bd44",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-23f992cafd",
+   "id_frozen": true,
+   "name": "Discovery Climb Square Cheongna (디스커버리클라이밍 클라임스퀘어 청라점)",
+   "country": "KR"
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-367f5a066f",
+   "id_frozen": true,
+   "name": "Climbing Zoom (클라이밍줌)",
+   "country": "KR"
+  },
+  {
+   "line": 3,
+   "class": "new",
+   "id": "g-bd1d07c14e",
+   "id_frozen": true,
+   "name": "Hub Climbing (허브클라이밍)",
+   "country": "KR"
+  },
+  {
+   "line": 4,
+   "class": "new",
+   "id": "g-3681919a66",
+   "id_frozen": true,
+   "name": "Boly Climbing (볼리 클라이밍)",
+   "country": "KR"
+  },
+  {
+   "line": 5,
+   "class": "new",
+   "id": "g-dbcd7c689d",
+   "id_frozen": true,
+   "name": "Bupyeong Climbing Center (부평클라이밍센터)",
+   "country": "KR"
+  },
+  {
+   "line": 6,
+   "class": "new",
+   "id": "g-23960218a1",
+   "id_frozen": true,
+   "name": "Ganseok Climbing (간석클라이밍)",
+   "country": "KR"
+  }
+ ]
+}
