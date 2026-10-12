@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-12-kr-gyeonggi-west",
+  "description": "Regional research \"Korea: Gyeonggi west\": 9 new gym(s) accepted of 21 candidate(s)",
+  "created": "2026-10-12",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-10-12-kr-gyeonggi-west",
+    "section_sha256": "fbd4116740f863973b937a538b4a74f28f261287af9772aab75c890901090b48",
+    "sources_sha256": "55afc5ac60b9f9d3e67a2e3aed0f25d5444ab719bd2edf84672a60238147bbe3",
+    "candidates_sha256": "4d037f6195a38f8dca699ccecade187cea203aa16f3f6642c4b43c2079a525a7",
+    "reconcile_sha256": "c7004b2bd6ec9e2b5eaebb8dc5b79f6d6ef0cb276209674cf63d263e2918f296",
+    "review_sha256": "41b98b863dc456175da94d9ede8c4e77475b6e537dc90228738f2480aa10526a",
+    "candidates": 21,
+    "staged": 9,
+    "decisions": {
+      "accept": 9,
+      "defer": 7,
+      "reject": 1,
+      "same-as": 4
+    }
+  },
+  "index_at_staging": {
+    "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
+    "count": 3294
+  }
+}
