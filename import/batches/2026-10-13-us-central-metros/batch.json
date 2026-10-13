@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-13-us-central-metros",
+  "description": "Regional research \"USA: Chicago, Denver/Front Range and Texas metros\": 6 new gym(s) accepted of 11 candidate(s)",
+  "created": "2026-10-13",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-10-13-us-central-metros",
+    "section_sha256": "74c6187dc8605e852ccabbd81f941a1e1b6de95eb614faed404b83e32437559d",
+    "sources_sha256": "e9c72c353fc7a42f40f0e9eb2d81effe005cf413ec14962b7eeb069483619dee",
+    "candidates_sha256": "b1730695104c91975d9fafb0be964eacfb427ab9c1fc40188283ce18b591a9e7",
+    "reconcile_sha256": "60391a4ad74cad6e7b31ddbf8ea23d0af6d33f67fb6d116bc87b27571be48b98",
+    "review_sha256": "fbdb9c61da346abb9d1f34c7827519fbfd8356450f3f8c2904c18781fe9bc1f0",
+    "candidates": 11,
+    "staged": 6,
+    "decisions": {
+      "accept": 6,
+      "defer": 3,
+      "same-as": 2
+    }
+  },
+  "index_at_staging": {
+    "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
+    "count": 3294
+  }
+}
