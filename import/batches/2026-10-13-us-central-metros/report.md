@@ -12,7 +12,7 @@
 | Rejected by a human decision | 0 |
 | **Total records in batch** | 6 |
 
-Index: 3294 known gyms (sha256 2f47cb53e74b…). Plan: a7e635ec5551… Also compared against staged batches: 2026-10-06-kr-seoul.
+Index: 3294 known gyms (sha256 2f47cb53e74b…). Plan: a7e635ec5551… Also compared against staged batches: 2026-10-06-kr-seoul, 2026-10-13-australia, 2026-10-13-italy-cities, 2026-10-13-us-ny-boston-metros.
 
 ## New gyms (6)
 
