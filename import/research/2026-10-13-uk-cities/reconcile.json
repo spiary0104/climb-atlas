@@ -1,0 +1,659 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-13-uk-cities",
+ "inputs": {
+  "section_sha256": "b8ce569d95704584b04cd8e39ea7e579bf1062f2e2da71e69e9409b584e1482e",
+  "sources_sha256": "67c793ecd851c61c0a85e870201a76569a837a7251d3c6b20bfca8f738ec1911",
+  "candidates_sha256": "73819159739ee60b3086ed2de56863056009fd912b966b45d5e77ad40acd06cf",
+  "index": {
+   "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
+   "count": 3294
+  },
+  "staged_batches_compared": [
+   "2026-10-06-kr-seoul"
+  ],
+  "other_sections_compared": [
+   {
+    "id": "2026-10-05-uk-holds-gaps",
+    "candidates_sha256": "f8f1f6cdb1f2fc74670363080b86d1650877358efe97fb50d5ca6a49b1567ec0"
+   },
+   {
+    "id": "2026-10-05-uk-owner-checks",
+    "candidates_sha256": "87986d5acd243b0b5c48856fbdedeaf2122ad770a1d98a7d9d21250b977d00db"
+   },
+   {
+    "id": "2026-10-05-uk-single-gym-towns",
+    "candidates_sha256": "9efd107c59669800da69a72115e752f13c332b8cd5c81efaf0d44908c5553033"
+   },
+   {
+    "id": "2026-10-06-london",
+    "candidates_sha256": "85cd3c455ade1b1bc25190dbfa33965342abe8d229082203e2d72d6bcbe6b299"
+   }
+  ]
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 30,
+  "ready": 15,
+  "review": 8,
+  "blocked": 6,
+  "existing": 1,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "270-climbing-gloucester",
+   "line": 9,
+   "name": "270 Climbing Park",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-b6878ffb88"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "alter-rock-derby",
+   "line": 16,
+   "name": "Alter Rock Climbing Centre",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-d0f7bc3292"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "awesome-walls-stockport",
+   "line": 1,
+   "name": "Awesome Walls Stockport",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-5bb84dd833"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "awesome-walls-stoke",
+   "line": 2,
+   "name": "Awesome Walls Stoke",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-3b95a00c44"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "barn-climbing-wall-tavistock",
+   "line": 28,
+   "name": "The Barn Climbing Wall",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-34cd2f57d0"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "birmingham-bouldering-centre",
+   "line": 13,
+   "name": "Birmingham Bouldering Centre",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-4f4476f87f"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate redpoint-birmingham \"Redpoint Climbing Centre Birmingham\": related names \"Birmingham Bouldering Centre\" / \"Redpoint Climbing Centre Birmingham\" 567 m apart",
+     "ids": [
+      "redpoint-birmingham"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-918 \"Depot Climbing Birmingham\": related names \"Birmingham Bouldering Centre\" / \"Depot Climbing Birmingham\" 1727 m apart",
+     "ids": [
+      "seed-918"
+     ]
+    }
+   ],
+   "review_ids": [
+    "redpoint-birmingham",
+    "seed-918"
+   ]
+  },
+  {
+   "cid": "boathouse-climbing-llandudno",
+   "line": 21,
+   "name": "Boathouse Climbing Centre",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-cad50368cb"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "boatyard-boulders-nottingham",
+   "line": 23,
+   "name": "Boatyard Boulders",
+   "class": "blocked",
+   "suggested": "reject not-a-gym",
+   "importer": {
+    "class": "new",
+    "id": "g-e4d7627940"
+   },
+   "blockers": [
+    {
+     "code": "not-a-gym",
+     "detail": "category other"
+    }
+   ],
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-05-uk-single-gym-towns#boatyard-boulders-nottingham \"Boatyard Boulders\": name-match same-name (\"Boatyard Boulders\" / \"Boatyard Boulders\", 0 m)",
+     "ids": [
+      "2026-10-05-uk-single-gym-towns#boatyard-boulders-nottingham"
+     ]
+    }
+   ],
+   "review_ids": [
+    "2026-10-05-uk-single-gym-towns#boatyard-boulders-nottingham"
+   ]
+  },
+  {
+   "cid": "boulder-barn-hereford",
+   "line": 18,
+   "name": "The Boulder Barn",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-88189f6154"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "boulder-brighton",
+   "line": 7,
+   "name": "Boulder Brighton",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-61ca434f8b"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "boulder-world-belfast",
+   "line": 30,
+   "name": "Boulder World Belfast",
+   "class": "existing",
+   "suggested": "same-as seed-958",
+   "importer": {
+    "class": "existing",
+    "id": "seed-958",
+    "match": {
+     "id": "seed-958",
+     "name": "Boulder World Belfast",
+     "reason": "same-name",
+     "dist_m": 436
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-958 but content differs (lat, lng); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-958 \"Boulder World Belfast\": same-name (\"Boulder World Belfast\" / \"Boulder World Belfast\", 436 m)",
+     "ids": [
+      "seed-958"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-958"
+   ]
+  },
+  {
+   "cid": "boulders-cardiff",
+   "line": 10,
+   "name": "Boulders Newport Road (Cardiff)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-ace6844f69"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate flashpoint-cardiff \"Flashpoint Cardiff\": related names \"Boulders Cardiff\" / \"Flashpoint Cardiff\" 5231 m apart",
+     "ids": [
+      "flashpoint-cardiff"
+     ]
+    }
+   ],
+   "review_ids": [
+    "flashpoint-cardiff"
+   ]
+  },
+  {
+   "cid": "climb-rochdale",
+   "line": 29,
+   "name": "Climb Rochdale",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-b6446c71b1"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "climbing-hangar-bristol",
+   "line": 19,
+   "name": "The Climbing Hangar Bristol",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-cea9c9bac7"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "climbing-unit-derby",
+   "line": 15,
+   "name": "The Climbing Unit",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-92ad6c6ce5"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "flashpoint-bristol-easton",
+   "line": 12,
+   "name": "Flashpoint Bristol - Easton",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-5f969ec7fc"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-870 \"Flashpoint Bristol\": related names \"Flashpoint Bristol - Easton\" / \"Flashpoint Bristol\" 2658 m apart",
+     "ids": [
+      "seed-870"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-870"
+   ]
+  },
+  {
+   "cid": "flashpoint-cardiff",
+   "line": 11,
+   "name": "Flashpoint Cardiff",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-07d957a8e0"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate boulders-cardiff \"Boulders Newport Road (Cardiff)\": related names \"Flashpoint Cardiff\" / \"Boulders Cardiff\" 5231 m apart",
+     "ids": [
+      "boulders-cardiff"
+     ]
+    }
+   ],
+   "review_ids": [
+    "boulders-cardiff"
+   ]
+  },
+  {
+   "cid": "friction-bouldering-gateshead",
+   "line": 20,
+   "name": "Friction Bouldering",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-d4eb37b5bb"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "gallery-bouldering-oxford",
+   "line": 8,
+   "name": "Gallery Bouldering",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-e4b7038738"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "kendalwall",
+   "line": 3,
+   "name": "KendalWall (Lakeland Climbing Centre Kendal)",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-5df6ee668e"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "last-sun-dance-leeds",
+   "line": 22,
+   "name": "Last Sun Dance",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-06a93f3fac"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "parthian-manchester",
+   "line": 25,
+   "name": "Parthian Climbing Manchester",
+   "class": "blocked",
+   "suggested": "reject closed",
+   "importer": {
+    "class": "new",
+    "id": "g-0461df11f5"
+   },
+   "blockers": [
+    {
+     "code": "closed",
+     "detail": "status_claim is closed"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "no-bouldering-evidence",
+     "detail": "bouldering is \"yes\" but no primary source confirms it"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-896 \"The Depot Climbing Centre Manchester\": related names \"Manchester Climbing Centre\" / \"The Depot Climbing Centre Manchester\" 7763 m apart",
+     "ids": [
+      "seed-896"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-916 \"Big Depot Manchester\": related names \"Manchester Climbing Centre\" / \"Big Depot Manchester\" 10145 m apart",
+     "ids": [
+      "seed-916"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-896",
+    "seed-916"
+   ]
+  },
+  {
+   "cid": "quay-climbing-centre-exeter",
+   "line": 27,
+   "name": "Quay Climbing Centre",
+   "class": "blocked",
+   "suggested": "reject not-a-gym",
+   "importer": {
+    "class": "new",
+    "id": "g-6947c326af"
+   },
+   "blockers": [
+    {
+     "code": "not-a-gym",
+     "detail": "category other"
+    },
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "rainbow-rocket-central-cambridge",
+   "line": 24,
+   "name": "Rainbow Rocket Central",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-aa57148142"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-927 \"Rainbow Rocket North\": related names \"Rainbow Rocket Central\" / \"Rainbow Rocket North\" 2907 m apart",
+     "ids": [
+      "seed-927"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-927"
+   ]
+  },
+  {
+   "cid": "redpoint-birmingham",
+   "line": 14,
+   "name": "Redpoint Climbing Centre Birmingham",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-e0e63ea28b"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate birmingham-bouldering-centre \"Birmingham Bouldering Centre\": related names \"Redpoint Climbing Centre Birmingham\" / \"Birmingham Bouldering Centre\" 567 m apart",
+     "ids": [
+      "birmingham-bouldering-centre"
+     ]
+    }
+   ],
+   "review_ids": [
+    "birmingham-bouldering-centre"
+   ]
+  },
+  {
+   "cid": "redpoint-worcester",
+   "line": 17,
+   "name": "Redpoint Worcester",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-d114642968"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "rock-over-bolton",
+   "line": 4,
+   "name": "Rock Over Climbing Bolton",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-d5fc9f4865"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate rock-over-sharston has the same website",
+     "ids": [
+      "rock-over-sharston"
+     ]
+    }
+   ],
+   "review_ids": [
+    "rock-over-sharston"
+   ]
+  },
+  {
+   "cid": "rock-over-sharston",
+   "line": 5,
+   "name": "Rock Over Climbing Sharston",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-748fb420d6"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-915 \"Rock Over Climbing\": related names \"Rock Over Climbing Sharston\" / \"Rock Over Climbing\" 10515 m apart",
+     "ids": [
+      "seed-915"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate rock-over-bolton has the same website",
+     "ids": [
+      "rock-over-bolton"
+     ]
+    }
+   ],
+   "review_ids": [
+    "rock-over-bolton",
+    "seed-915"
+   ]
+  },
+  {
+   "cid": "social-climbing-leicester",
+   "line": 26,
+   "name": "Social Climbing Leicester",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-319e3235ff"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "summit-up-oldham",
+   "line": 6,
+   "name": "Summit Up Climbing Centre",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-412a34cb08"
+   },
+   "review_ids": []
+  }
+ ],
+ "reconcile_sha256": "5de860e164ce7caac39e1953d6c9d6140200d071e278ef66594f5ff9e954d760"
+}
