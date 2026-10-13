@@ -1,0 +1,39 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-13-us-california-metros",
+ "index": {
+  "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
+  "count": 3294,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-06-kr-seoul"
+ ],
+ "counts": {
+  "records": 1,
+  "new": 1,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "84a3fb2bd2fbd227157d9e4913af6e5f34401cc4a233849ab765c73f2d6b395f",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-b19ec7f397",
+   "id_frozen": true,
+   "name": "Rock City Climbing",
+   "country": "US"
+  }
+ ]
+}
