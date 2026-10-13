@@ -1,0 +1,367 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-13-jp-remaining",
+ "inputs": {
+  "section_sha256": "4e2e8ec9bb4bddf4cd521278ab47f03ee95e963197aefaee0c50de0878863ac5",
+  "sources_sha256": "b8874f5339c29d6bb531c632859e63148097e6e9197de6c8f27b225fd7aa99d3",
+  "candidates_sha256": "81354031feef8b6a7ca8ce0dd072ebb390508433ed2960a66bba8e4f7465052a",
+  "index": {
+   "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
+   "count": 3294
+  },
+  "staged_batches_compared": [
+   "2026-10-06-kr-seoul"
+  ],
+  "other_sections_compared": [
+   {
+    "id": "2026-10-06-jp-chubu",
+    "candidates_sha256": "ed0f35f8b69fecc27d93cdb6aedbc76c16271d4b09142561175b24c82afc962a"
+   },
+   {
+    "id": "2026-10-06-jp-kansai",
+    "candidates_sha256": "422563898a9fb3fffbebbe19482585f20b3c1b6c1d924cf51139d547cd11b938"
+   },
+   {
+    "id": "2026-10-06-jp-kanto",
+    "candidates_sha256": "80db339a2fc86a29899aea6363361180608316f1fc37b990010998aa056b94aa"
+   },
+   {
+    "id": "2026-10-06-jp-kyushu-hokkaido",
+    "candidates_sha256": "b04553a8c059baf816ff1d390fa34e38d8be7a6ff0d92692e8711d4347aaba0a"
+   }
+  ]
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 24,
+  "ready": 22,
+  "review": 2,
+  "blocked": 0,
+  "existing": 0,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "jp-2nd-wally-bouldering",
+   "line": 2,
+   "name": "2ND WALLY Bouldering",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-4983e7ce49"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp-boulderbase",
+   "line": 15,
+   "name": "BoulderBase",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-8f44d0e169"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp-bouldering-gym-babaanz",
+   "line": 13,
+   "name": "Bouldering Gym Babaanz",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-733c3b1404"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp-bouldering-gym-labo-yamaguchi",
+   "line": 21,
+   "name": "Bouldering Gym Labo Yamaguchi",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-bc6f5b9fad"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp-bouldering-gym-trans",
+   "line": 14,
+   "name": "Bouldering Gym Trans",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-592605c84d"
+   },
+   "flags": [
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "jp-bouldering-gym-unity",
+   "line": 19,
+   "name": "Bouldering Gym Unity",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-6e8f55f551"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp-bouldering-gym-varappe",
+   "line": 12,
+   "name": "Bouldering Gym Varappe",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-0dfb9c8371"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp-bouldering-house-358",
+   "line": 8,
+   "name": "Bouldering House 358",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-044729335a"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp-bouldering-spot-9a",
+   "line": 20,
+   "name": "Bouldering Spot 9A",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-9fbac95b15"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp-camp-climbing-freaky",
+   "line": 7,
+   "name": "Camp & Climbing Freaky",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-6c90e3469c"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp-clambon-climbing",
+   "line": 4,
+   "name": "Clambon Climbing",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-c8c4f84fad"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp-climbing-gym-allez",
+   "line": 24,
+   "name": "Climbing Gym Allez!",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-cd0e5c899d"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp-climbing-gym-nanashino",
+   "line": 11,
+   "name": "Climbing Gym Nanashino",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-84340b2366"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp-climbing-park-drop-in",
+   "line": 9,
+   "name": "Climbing Park Drop in",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-bc9fc739df"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp-ehime-climbing-gym-itte",
+   "line": 23,
+   "name": "Ehime Climbing Gym iTTE",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-684391a35d"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp-glide-climbing",
+   "line": 1,
+   "name": "glide climbing",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-3dc466613b"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp-join-climbing-gym",
+   "line": 22,
+   "name": "Join Climbing Gym",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-a0ad7bf613"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp-k-climb-matsue",
+   "line": 17,
+   "name": "K Climb Matsue",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-59b4395df0"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp-m-wall-matsue",
+   "line": 16,
+   "name": "M Wall Matsue",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-177c5a2f85"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp-movement-climbing-space",
+   "line": 10,
+   "name": "Movement Climbing Space",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-93ff261ed2"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp-north-rock",
+   "line": 3,
+   "name": "Climbing Gym North Rock",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-61ea19e555"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp-rocks-climbing-gym-kurashiki",
+   "line": 18,
+   "name": "rocks Climbing Gym Kurashiki",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-de63934d95"
+   },
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-06-jp-kyushu-hokkaido#jp-oy-004 \"rocks Bouldering Gym\": related-name-nearby related names \"rocks Climbing Gym Kurashiki\" / \"rocks Bouldering Gym\" 11321 m apart",
+     "ids": [
+      "2026-10-06-jp-kyushu-hokkaido#jp-oy-004"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "g-6065117d7a \"rocks Bouldering Gym\": related names \"rocks Climbing Gym Kurashiki\" / \"rocks Bouldering Gym\" 11321 m apart",
+     "ids": [
+      "g-6065117d7a"
+     ]
+    },
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": [
+    "2026-10-06-jp-kyushu-hokkaido#jp-oy-004",
+    "g-6065117d7a"
+   ]
+  },
+  {
+   "cid": "jp-to-do-climbing",
+   "line": 5,
+   "name": "TO-DO Climbing",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-5735bc19a1"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp-un-rocher",
+   "line": 6,
+   "name": "Climbing & Cafe Warehouse Un Rocher",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-2855a184b5"
+   },
+   "review_ids": []
+  }
+ ],
+ "reconcile_sha256": "6085bc483abb948b84c623dc82ff8008de78dc80d83984c8acbcc0ebb70f2de6"
+}
