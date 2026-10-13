@@ -1,7 +1,7 @@
 # Regional research: Japan: Tohoku, Chugoku, Shikoku, Okinawa (2026-10-13-jp-remaining)
 
 Scope: JP / AOMORI, IWATE, MIYAGI, AKITA, YAMAGATA, FUKUSHIMA, TOTTORI, SHIMANE, OKAYAMA, HIROSHIMA, YAMAGUCHI, TOKUSHIMA, KAGAWA, EHIME, KOCHI, OKINAWA
-Index: 3294 gyms, sha256 2f47cb53e74b… | staged batches compared: 2026-10-06-kr-seoul | other sections compared: 2026-10-06-jp-chubu, 2026-10-06-jp-kansai, 2026-10-06-jp-kanto, 2026-10-06-jp-kyushu-hokkaido
+Index: 3294 gyms, sha256 2f47cb53e74b… | staged batches compared: 2026-10-06-kr-seoul, 2026-10-13-australia, 2026-10-13-brazil, 2026-10-13-italy-cities, 2026-10-13-uk-cities, 2026-10-13-us-central-metros, 2026-10-13-us-ny-boston-metros | other sections compared: 2026-10-06-jp-chubu, 2026-10-06-jp-kansai, 2026-10-06-jp-kanto, 2026-10-06-jp-kyushu-hokkaido
 Review radii (stricter than the importer): any gym 150 m, related name 15 km, other country 2 km
 
 ## Summary

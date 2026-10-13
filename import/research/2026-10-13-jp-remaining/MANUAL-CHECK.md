@@ -50,3 +50,10 @@ Low-confidence gyms are kept out of the staged batch (owner's rule); none of the
 ## D. No readable own source, possibly closed
 RAT Aomori Boulder / RAT Wall Hirosaki [rat-aomori, ratwall-hirosaki] (Facebook only; IG embed broken), Garapaka Akita [garapaka] (site 404, no IG; OSM has a node of the name at 寺内, 39.73396,140.09949, 2 km from the listed address), Monkeypod Yonago [monkeypod], Romanov Kitakata [romanov], Rock & Fiddle Shirakawa [rock-fiddle], Stone LAV Kochi [stone-lav-minamikawazoe] (site page hidden, IG embed broken), Kotih Natori (site 403), Matsu Ishinomaki [matsu] (shop with a wall, site 2023), Moment Sendai-Minami Natori and Key Stone Mikawa/Sakata (OSM names only), BOLZ Nakanosakae (school), Ascent Ray Matsuyama (domain expired), Solae Hatsukaichi (athletic park, not a gym), TOPOUT Ishigaki and KORUPIKI Ginowan (closed, not candidates).
 Also seen: BoulderBase (accepted) announced a new gym "CLIMBING BASE ROOTS" opening 2026-10-31 on its Instagram (@b.base.izm): lead for a later section.
+
+## Added by the brain review (2026-10-13): pin needed
+
+| Gym | Question |
+|---|---|
+| Bouldering Gym Trans | Drop a pin on the building (only a street-level pin from the centre of the gym's own map embed). The gym passes otherwise. |
+| rocks Climbing Gym Kurashiki | Drop a pin on the building (only a street-level pin from the centre of the gym's own map embed). The gym passes otherwise. |

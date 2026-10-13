@@ -19,3 +19,6 @@ Everything uncertain was kept out of candidates.ndjson and listed in MANUAL-CHEC
 1. TAiiKU Towada, P-SPO24 Daino: fitness gyms with a bouldering wall (as Wow'd+ Kiyotake earlier): add?
 2. Municipal facilities (Mutsu Maeda Arena, Iwate Kenei, Kurayoshi, Yamaguchi Seminar Park, Uwajima, Ishizuchi Climbing Park SAIJO, Motoyama, Yuhara, Genki Field Sendai): add any (category not commercial-gym)?
 3. Pins for the open gyms in MANUAL-CHECK.md section B (FLAT, Nobaria, Home, Roots, Lion, MINA. UTARI, iTTE Takamatsu, STANCE, BRAVE).
+
+## Brain review (2026-10-13)
+Street-level pins moved from accept to defer: jp-bouldering-gym-trans, jp-rocks-climbing-gym-kurashiki.
