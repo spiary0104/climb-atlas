@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-13-us-ny-boston-metros",
+  "description": "Regional research \"USA: New York and Boston metros\": 6 new gym(s) accepted of 8 candidate(s)",
+  "created": "2026-10-13",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-10-13-us-ny-boston-metros",
+    "section_sha256": "bd5544c4cd18ca49e4858df64be20e03625db6fd4e1a3331a51b1e7329828397",
+    "sources_sha256": "f40e25e13e6bf17d002e203dbe24a645358bb45b82cfcebb2feb51965bf9ab1a",
+    "candidates_sha256": "ff8f8fdaf2dc02d06d8a0d9ee9d2357fd88bff5a36924f5dc5e2edede27ce13b",
+    "reconcile_sha256": "cad4d8e943e0c2b050326804f73098c5cfde06fc3ff048a39c52faf65bd3242b",
+    "review_sha256": "0273804455afd07ef3c0cc4e26ef09d5ed0c2f9ec8103f7b13cf4f3f45f060a6",
+    "candidates": 8,
+    "staged": 6,
+    "decisions": {
+      "accept": 6,
+      "defer": 2
+    }
+  },
+  "index_at_staging": {
+    "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
+    "count": 3294
+  }
+}
