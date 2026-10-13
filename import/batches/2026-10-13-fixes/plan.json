@@ -1,0 +1,345 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-13-fixes",
+ "index": {
+  "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
+  "count": 3294,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-06-kr-seoul",
+  "2026-10-13-australia"
+ ],
+ "counts": {
+  "records": 14,
+  "new": 0,
+  "existing": 0,
+  "update": 14,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 6
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "d5f2f705ce266403a33afd97b4b221a0717e71e7770715bdf0905a2cfa38113b",
+ "records": [
+  {
+   "line": 1,
+   "class": "update",
+   "id": "seed-0",
+   "changes": [
+    {
+     "field": "lat",
+     "before": -33.9042,
+     "after": -33.918649
+    },
+    {
+     "field": "lng",
+     "before": 151.1968,
+     "after": 151.191512
+    }
+   ],
+   "expect_h": "70e62fbf89f9af2d",
+   "update_reason": "Pin moved to the OSM element / gym map of the same street address (~1679 m from the old pin)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1679 m"
+    }
+   ]
+  },
+  {
+   "line": 2,
+   "class": "update",
+   "id": "seed-48",
+   "changes": [
+    {
+     "field": "lat",
+     "before": -27.4888048,
+     "after": -27.477254
+    },
+    {
+     "field": "lng",
+     "before": 152.9998006,
+     "after": 153.008132
+    }
+   ],
+   "expect_h": "4269cf14c68a6821",
+   "update_reason": "Pin moved to the OSM element / gym map of the same street address (~1525 m from the old pin)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1525 m"
+    }
+   ]
+  },
+  {
+   "line": 3,
+   "class": "update",
+   "id": "seed-39",
+   "changes": [
+    {
+     "field": "lat",
+     "before": -37.8817,
+     "after": -37.883634
+    },
+    {
+     "field": "lng",
+     "before": 145.2836,
+     "after": 145.269294
+    }
+   ],
+   "expect_h": "eb4c0a4a8f2601de",
+   "update_reason": "Pin moved to the OSM element / gym map of the same street address (~1274 m from the old pin)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1274 m"
+    }
+   ]
+  },
+  {
+   "line": 4,
+   "class": "update",
+   "id": "seed-5",
+   "changes": [
+    {
+     "field": "lat",
+     "before": -33.8332,
+     "after": -33.823816
+    },
+    {
+     "field": "lng",
+     "before": 151.1276,
+     "after": 151.122547
+    }
+   ],
+   "expect_h": "385fdb004f7528ea",
+   "update_reason": "Pin moved to the OSM element / gym map of the same street address (~1143 m from the old pin)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1143 m"
+    }
+   ]
+  },
+  {
+   "line": 5,
+   "class": "update",
+   "id": "seed-6",
+   "changes": [
+    {
+     "field": "lat",
+     "before": -33.9098,
+     "after": -33.910319
+    },
+    {
+     "field": "lng",
+     "before": 151.1804,
+     "after": 151.17417
+    }
+   ],
+   "expect_h": "5d34eefd3f7821b5",
+   "update_reason": "Pin moved to the OSM element / gym map of the same street address (~578 m from the old pin)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 578 m"
+    }
+   ]
+  },
+  {
+   "line": 6,
+   "class": "update",
+   "id": "seed-12",
+   "changes": [
+    {
+     "field": "lat",
+     "before": -33.7274309,
+     "after": -33.731564
+    },
+    {
+     "field": "lng",
+     "before": 150.975305,
+     "after": 150.973532
+    }
+   ],
+   "expect_h": "8a726b734abecd96",
+   "update_reason": "Pin moved to the OSM element / gym map of the same street address (~488 m from the old pin)"
+  },
+  {
+   "line": 7,
+   "class": "update",
+   "id": "seed-7",
+   "changes": [
+    {
+     "field": "lat",
+     "before": -33.8823,
+     "after": -33.879303
+    },
+    {
+     "field": "lng",
+     "before": 150.9757,
+     "after": 150.978606
+    }
+   ],
+   "expect_h": "bf68b67e3cf8bf51",
+   "update_reason": "Pin moved to the OSM element / gym map of the same street address (~428 m from the old pin)"
+  },
+  {
+   "line": 8,
+   "class": "update",
+   "id": "seed-4",
+   "changes": [
+    {
+     "field": "lat",
+     "before": -33.8853,
+     "after": -33.885089
+    },
+    {
+     "field": "lng",
+     "before": 151.1706,
+     "after": 151.174879
+    }
+   ],
+   "expect_h": "c90738ffcccfb063",
+   "update_reason": "Pin moved to the OSM element / gym map of the same street address (~396 m from the old pin)"
+  },
+  {
+   "line": 9,
+   "class": "update",
+   "id": "seed-1",
+   "changes": [
+    {
+     "field": "lat",
+     "before": -33.8109146,
+     "after": -33.807992
+    },
+    {
+     "field": "lng",
+     "before": 151.1490018,
+     "after": 151.150509
+    }
+   ],
+   "expect_h": "846778f0715c40f0",
+   "update_reason": "Pin moved to the OSM element / gym map of the same street address (~354 m from the old pin)"
+  },
+  {
+   "line": 10,
+   "class": "update",
+   "id": "seed-43",
+   "changes": [
+    {
+     "field": "lat",
+     "before": -37.8311918,
+     "after": -37.832135
+    },
+    {
+     "field": "lng",
+     "before": 144.8216048,
+     "after": 144.825248
+    }
+   ],
+   "expect_h": "535de3e3a4b8b44e",
+   "update_reason": "Pin moved to the OSM element / gym map of the same street address (~337 m from the old pin)"
+  },
+  {
+   "line": 11,
+   "class": "update",
+   "id": "seed-45",
+   "changes": [
+    {
+     "field": "lat",
+     "before": -27.4191485,
+     "after": -27.419927
+    },
+    {
+     "field": "lng",
+     "before": 152.9918792,
+     "after": 152.994851
+    }
+   ],
+   "expect_h": "26b3049abd1120b6",
+   "update_reason": "Pin moved to the OSM element / gym map of the same street address (~306 m from the old pin)"
+  },
+  {
+   "line": 12,
+   "class": "update",
+   "id": "seed-8",
+   "changes": [
+    {
+     "field": "lat",
+     "before": -33.8166651,
+     "after": -33.818605
+    },
+    {
+     "field": "lng",
+     "before": 151.1911127,
+     "after": 151.189683
+    }
+   ],
+   "expect_h": "dd14ab957de2f1a3",
+   "update_reason": "Pin moved to the OSM element / gym map of the same street address (~253 m from the old pin)"
+  },
+  {
+   "line": 13,
+   "class": "update",
+   "id": "seed-29",
+   "changes": [
+    {
+     "field": "lat",
+     "before": -35.3224961,
+     "after": -35.323109
+    },
+    {
+     "field": "lng",
+     "before": 149.1676387,
+     "after": 149.165218
+    }
+   ],
+   "expect_h": "17d00bae65f2518b",
+   "update_reason": "Pin moved to the OSM element / gym map of the same street address (~230 m from the old pin)"
+  },
+  {
+   "line": 14,
+   "class": "update",
+   "id": "seed-322",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 34.1361,
+     "after": 34.1545321
+    },
+    {
+     "field": "lng",
+     "before": -118.8059,
+     "after": -118.8315087
+    },
+    {
+     "field": "address",
+     "before": "880 Hampshire Rd Suite A, Westlake Village, CA 91361",
+     "after": "880 Hampshire Rd Suite A, Thousand Oaks, CA 91361"
+    }
+   ],
+   "expect_h": "af3b152d1c006cd5",
+   "update_reason": "Pin and address moved to the gym's Thousand Oaks location, 880 Hampshire Rd Suite A (~3123 m from the old pin)",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 3123 m"
+    }
+   ]
+  }
+ ]
+}
