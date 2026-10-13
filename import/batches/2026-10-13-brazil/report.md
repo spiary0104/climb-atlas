@@ -4,19 +4,19 @@
 
 | What would happen | Records |
 |---|---:|
-| Insert as NEW gyms | 7 |
+| Insert as NEW gyms | 6 |
 | Update existing gyms (explicit update records) | 0 |
 | Already exist — no action (identical content: 0; content differs, NOT applied: 0) | 0 |
 | Probable duplicates — need a human decision | 0 |
 | Invalid — rejected | 0 |
 | Rejected by a human decision | 0 |
-| **Total records in batch** | 7 |
+| **Total records in batch** | 6 |
 
-Index: 3294 known gyms (sha256 2f47cb53e74b…). Plan: b46e9a227312… Also compared against staged batches: 2026-10-06-kr-seoul.
+Index: 3294 known gyms (sha256 2f47cb53e74b…). Plan: b7f170531341… Also compared against staged batches: 2026-10-06-kr-seoul, 2026-10-13-australia, 2026-10-13-italy-cities, 2026-10-13-uk-cities, 2026-10-13-us-central-metros, 2026-10-13-us-ny-boston-metros.
 
-## New gyms (7)
+## New gyms (6)
 
-By country: BR 7
+By country: BR 6
 
 - line 1 `g-36fb40b6c2` "PowerBloc" (BR)
 - line 2 `g-a17ba67941` "Geometrik Escalada" (BR)
@@ -24,7 +24,6 @@ By country: BR 7
 - line 4 `g-4f246e9a6e` "Toca Escalada Indoor" (BR)
 - line 5 `g-b6eb3eec53` "Café com Magnésio" (BR)
 - line 6 `g-6922e37b19` "Campo Base Ginásio de Escalada" (BR)
-- line 7 `g-b2917fcfdc` "Eleva Escalada" (BR)
 
 ## Warnings
 

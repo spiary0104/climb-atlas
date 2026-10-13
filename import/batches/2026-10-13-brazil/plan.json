@@ -7,11 +7,16 @@
   "meta_matches": true
  },
  "staged_batches_compared": [
-  "2026-10-06-kr-seoul"
+  "2026-10-06-kr-seoul",
+  "2026-10-13-australia",
+  "2026-10-13-italy-cities",
+  "2026-10-13-uk-cities",
+  "2026-10-13-us-central-metros",
+  "2026-10-13-us-ny-boston-metros"
  ],
  "counts": {
-  "records": 7,
-  "new": 7,
+  "records": 6,
+  "new": 6,
   "existing": 0,
   "update": 0,
   "probable-duplicate": 0,
@@ -25,7 +30,7 @@
  "importable": true,
  "blockers": [],
  "unused_decisions": [],
- "plan_sha256": "b46e9a2273120573598a97ebb1d1acd1587389a2d7e0d72991a0dd95a93f2f6d",
+ "plan_sha256": "b7f170531341f46effa7395e396deeb2ae0e3a7e584ab3af0738ea19311ceb80",
  "records": [
   {
    "line": 1,
@@ -80,14 +85,6 @@
    "id": "g-6922e37b19",
    "id_frozen": true,
    "name": "Campo Base Ginásio de Escalada",
-   "country": "BR"
-  },
-  {
-   "line": 7,
-   "class": "new",
-   "id": "g-b2917fcfdc",
-   "id_frozen": true,
-   "name": "Eleva Escalada",
    "country": "BR"
   }
  ]

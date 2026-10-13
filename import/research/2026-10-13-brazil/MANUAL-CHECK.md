@@ -34,3 +34,9 @@ Low-confidence gyms are kept out of the batch. The first table is three candidat
 - Rio Grande do Sul: Climbing Wall (Porto Alegre; agarrascw.com.br not resolving), AGM (mountaineering association, club), Venga and V10 (Caxias do Sul).
 - Goiás and others: Vertical Escalada, Escale (site is empty), Adrena Gyn (Goiânia), Block Rock (Anápolis); Kasa da Escalada (Brasília); El Montés and Zion (Campo Grande); Cablocs (Manaus); Muriki (Belém); Escalada UFRN (Natal, university); Aloha Aventuras (Juazeiro do Norte); Moddev (Vitória).
 - Salvador and Recife: no climbing gym surfaced in any accessible source.
+
+## Added by the brain review (2026-10-13)
+
+| Gym | City | Question |
+|---|---|---|
+| Eleva Escalada | Brasília | Can a visitor buy a day pass to boulder, or is entry only through the R$30 trial class / membership? |

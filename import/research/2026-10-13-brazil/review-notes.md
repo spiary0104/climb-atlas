@@ -37,3 +37,6 @@ seed-1404, 1405, 1407, 1408, 1409, 1410, 1414, 1416, 1417, 1418. All pins verifi
 5. Fabrica Escalada Itaim appears on older lists (Rua Dr. Renato Paes de Barros 484) but not on the gym's own units page (two units: Chácara, Vila Madalena); not in Bouldeer, nothing to retire.
 6. Caverna Escalada (seed-1416): own site prints Rua Tibagi 674 and the Bouldeer pin matches; older lists give Rua Treze de Maio 102. No action.
 7. Rio de Janeiro city has only one gym in Bouldeer (Evolução). No other Rio gym had a readable site.
+
+## Brain review (2026-10-13)
+Eleva Escalada moved from accept to defer: no day pass (trial class only).
