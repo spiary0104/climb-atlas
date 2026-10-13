@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "section_id": "2026-10-13-us-california-metros",
+  "reviewer": "Spiar (owner); decisions drafted by Claude (AI) on the owner's instruction, pending owner sign-off",
+  "reviewed": "2026-10-13",
+  "decisions": {
+    "us-ca-aisle-19": {
+      "decision": "defer",
+      "reason": "Touchstone's Aisle 19 (2900 Alemany Blvd, San Francisco) is still headed \"Coming Soon\" on its own page on 2026-10-13. Revisit when it opens; the pin (OSM address building) is ready."
+    },
+    "us-ca-bladium-rock-wall": {
+      "decision": "defer",
+      "reason": "Bladium Sports & Fitness Club (Alameda) is a private sports club with a 5,000 sq ft rock wall and bouldering area per a camp listing, but its websites refuse connections, so open status and public day-visit access are unverified. See MANUAL-CHECK.md."
+    },
+    "us-ca-boulderdash-sfv": {
+      "decision": "same-as",
+      "same_as": "seed-323",
+      "reason": "Boulderdash San Fernando Valley, 19801 Nordhoff Pl, Chatsworth: own site read 2026-10-13, open, bouldering listed. The OSM building \"Boulderdash San Fernando Valley\" is at the existing pin (about 10 m), so no location update."
+    },
+    "us-ca-boulderdash-thousand-oaks": {
+      "decision": "same-as",
+      "same_as": "seed-322",
+      "followup": "location-update",
+      "reason": "Existing seed-322 \"Boulderdash Indoor Rock Climbing\" (Westlake Village, 34.1361,-118.8059) is this gym at 880 Hampshire Rd, Thousand Oaks; the gym's own embedded map and the OSM address building agree at about 34.1545,-118.8315, 3.1 km from the stored pin. Location-update follow-up to 34.1545321,-118.8315087."
+    },
+    "us-ca-boulderdash-ventura": {
+      "decision": "same-as",
+      "same_as": "seed-324",
+      "reason": "Boulderdash Ventura, 2879 Seaborg Ave: own site read 2026-10-13, open, bouldering section on the walk-ins page. The OSM address building is at the existing pin (0 m), so no location update."
+    },
+    "us-ca-desert-rocks": {
+      "decision": "defer",
+      "reason": "OSM maps Desert Rocks Indoor Climbing Gym at 19160 McLane St, North Palm Springs, but its domain is now a spam blog and nothing current could be read; open status and bouldering unverified. See MANUAL-CHECK.md."
+    },
+    "us-ca-rock-city-climbing": {
+      "decision": "defer",
+      "reason": "Brain review 2026-10-13: deferred. Now a training center; its own site never says bouldering, says access is limited by staffing and team practice, has a 2024 footer, and the 2026 evidence is only a site asset upload and a third-party guide. Owner rule: low-confidence gyms stay out. See MANUAL-CHECK.md."
+    },
+    "us-ca-touchstone-team-training-center": {
+      "decision": "defer",
+      "reason": "Touchstone calls it a Members-Only gym (Team Touchstone training) with public access only during select hours via Ironworks check-in; not accepted as a day-visit bouldering gym. 89 m from Berkeley Ironworks (seed-352). See MANUAL-CHECK.md."
+    }
+  }
+}

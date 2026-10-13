@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-13-brazil",
+  "description": "Regional research \"Brazil: city coverage gap\": 6 new gym(s) accepted of 21 candidate(s)",
+  "created": "2026-10-13",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-10-13-brazil",
+    "section_sha256": "6e62f97403dd6772aef876ba5e1a19b0bb2fd7022d7a466f129a91b7e7a7cb87",
+    "sources_sha256": "3706494d6821f2b64e0967004c895f01ca00c555b1910533a0c15e5a2a579eb0",
+    "candidates_sha256": "dc0a3d4588029fab1c1563ffbf878364156a7ac8c2ac7828f01a495e567760bd",
+    "reconcile_sha256": "53301eda57e06aa408fb8af84ce881abca7e5703623ba76575ebed744c6a9633",
+    "review_sha256": "1afdf3970c1e9c732acd2f812dd96c2297fba5909d52375689d56d8433914bb3",
+    "candidates": 21,
+    "staged": 6,
+    "decisions": {
+      "accept": 6,
+      "defer": 4,
+      "reject": 1,
+      "same-as": 10
+    }
+  },
+  "index_at_staging": {
+    "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
+    "count": 3294
+  }
+}

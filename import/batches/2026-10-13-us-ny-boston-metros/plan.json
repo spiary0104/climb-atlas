@@ -1,0 +1,85 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-13-us-ny-boston-metros",
+ "index": {
+  "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
+  "count": 3294,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-06-kr-seoul",
+  "2026-10-13-australia",
+  "2026-10-13-brazil",
+  "2026-10-13-italy-cities",
+  "2026-10-13-jp-remaining",
+  "2026-10-13-uk-cities",
+  "2026-10-13-us-central-metros"
+ ],
+ "counts": {
+  "records": 6,
+  "new": 6,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "c880d810c354b6f97bdebe0be99e71fde15a0757ff6627208e70a3de22a686aa",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-4215c8d0a9",
+   "id_frozen": true,
+   "name": "Boulder Union Climbing and Fitness",
+   "country": "US"
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-a8270660d0",
+   "id_frozen": true,
+   "name": "Challenge Rocks",
+   "country": "US"
+  },
+  {
+   "line": 3,
+   "class": "new",
+   "id": "g-05364e73e0",
+   "id_frozen": true,
+   "name": "GOAT Climbing Gym",
+   "country": "US"
+  },
+  {
+   "line": 4,
+   "class": "new",
+   "id": "g-9a06308527",
+   "id_frozen": true,
+   "name": "The Gravity Vault Westbury",
+   "country": "US"
+  },
+  {
+   "line": 5,
+   "class": "new",
+   "id": "g-9a7e582e35",
+   "id_frozen": true,
+   "name": "MetroRock Tyngsborough",
+   "country": "US"
+  },
+  {
+   "line": 6,
+   "class": "new",
+   "id": "g-3ba2c7540c",
+   "id_frozen": true,
+   "name": "Rocksteady Climbing",
+   "country": "US"
+  }
+ ]
+}

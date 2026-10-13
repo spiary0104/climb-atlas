@@ -1,0 +1,474 @@
+{
+ "schema_version": 1,
+ "sources": {
+  "RG": {
+   "kind": "directory",
+   "title": "Rockgym.jp prefecture lists and gym pages (names, addresses, links only; every gym re-checked on its own site or Instagram)",
+   "url": "https://rockgym.jp/gym-all/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "GSI": {
+   "kind": "map-data",
+   "title": "GSI (Geospatial Information Authority of Japan) address search",
+   "url": "https://msearch.gsi.go.jp/address-search/AddressSearch",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "OSM": {
+   "kind": "map-data",
+   "title": "OpenStreetMap (via Photon geocoder)",
+   "url": "https://www.openstreetmap.org/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "RG_glide-climbing": {
+   "kind": "directory",
+   "title": "Rockgym.jp page for glide climbing",
+   "url": "https://rockgym.jp/glide-climbing/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "S_glide-climbing": {
+   "kind": "official-site",
+   "title": "glide climbing (own site)",
+   "url": "http://glideclimbing.jp/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "RG_2nd-wally-bouldering": {
+   "kind": "directory",
+   "title": "Rockgym.jp page for 2ND WALLY Bouldering",
+   "url": "https://rockgym.jp/2nd-wally/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "S_2nd-wally-bouldering": {
+   "kind": "official-site",
+   "title": "2ND WALLY Bouldering (own site)",
+   "url": "https://wallysan.jimdofree.com/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "IG_2nd-wally-bouldering": {
+   "kind": "official-social",
+   "title": "Instagram of 2ND WALLY Bouldering (own account, public embed read 2026-10-13)",
+   "url": "https://www.instagram.com/2ndwally_bouldering/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "RG_north-rock": {
+   "kind": "directory",
+   "title": "Rockgym.jp page for Climbing Gym North Rock",
+   "url": "https://rockgym.jp/north-rock/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "S_north-rock": {
+   "kind": "official-site",
+   "title": "Climbing Gym North Rock (own site)",
+   "url": "https://www.north-rock.net/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "IG_north-rock": {
+   "kind": "official-social",
+   "title": "Instagram of Climbing Gym North Rock (own account, public embed read 2026-10-13)",
+   "url": "https://www.instagram.com/climbing_gym_northrock/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "RG_clambon-climbing": {
+   "kind": "directory",
+   "title": "Rockgym.jp page for Clambon Climbing",
+   "url": "https://rockgym.jp/clambon-climbing/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "S_clambon-climbing": {
+   "kind": "official-site",
+   "title": "Clambon Climbing (own site)",
+   "url": "https://clambonclimbing.kitakamicity.com/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "IG_clambon-climbing": {
+   "kind": "official-social",
+   "title": "Instagram of Clambon Climbing (own account, public embed read 2026-10-13)",
+   "url": "https://www.instagram.com/clambon.climbing/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "RG_to-do-climbing": {
+   "kind": "directory",
+   "title": "Rockgym.jp page for TO-DO Climbing",
+   "url": "https://rockgym.jp/todo/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "S_to-do-climbing": {
+   "kind": "official-site",
+   "title": "TO-DO Climbing (own site)",
+   "url": "https://www.matsumoto-car.com/todoclimbing",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "IG_to-do-climbing": {
+   "kind": "official-social",
+   "title": "Instagram of TO-DO Climbing (own account, public embed read 2026-10-13)",
+   "url": "https://www.instagram.com/todoclimbing/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "RG_un-rocher": {
+   "kind": "directory",
+   "title": "Rockgym.jp page for Climbing & Cafe Warehouse Un Rocher",
+   "url": "https://rockgym.jp/un-rocher/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "S_un-rocher": {
+   "kind": "official-site",
+   "title": "Climbing & Cafe Warehouse Un Rocher (own site)",
+   "url": "https://www.un-rocher.com/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "IG_un-rocher": {
+   "kind": "official-social",
+   "title": "Instagram of Climbing & Cafe Warehouse Un Rocher (own account, public embed read 2026-10-13)",
+   "url": "https://www.instagram.com/un_rocher/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "RG_camp-climbing-freaky": {
+   "kind": "directory",
+   "title": "Rockgym.jp page for Camp & Climbing Freaky",
+   "url": "https://rockgym.jp/freaky/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "S_camp-climbing-freaky": {
+   "kind": "official-site",
+   "title": "Camp & Climbing Freaky (own site)",
+   "url": "https://www.freaky-odate.com/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "IG_camp-climbing-freaky": {
+   "kind": "official-social",
+   "title": "Instagram of Camp & Climbing Freaky (own account, public embed read 2026-10-13)",
+   "url": "https://www.instagram.com/freaky_odate/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "RG_bouldering-house-358": {
+   "kind": "directory",
+   "title": "Rockgym.jp page for Bouldering House 358",
+   "url": "https://rockgym.jp/bouldering-house-358/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "S_bouldering-house-358": {
+   "kind": "official-site",
+   "title": "Bouldering House 358 (own site)",
+   "url": "https://bouldering358.com/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "IG_bouldering-house-358": {
+   "kind": "official-social",
+   "title": "Instagram of Bouldering House 358 (own account, public embed read 2026-10-13)",
+   "url": "https://www.instagram.com/bouldering.house.358/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "RG_climbing-park-drop-in": {
+   "kind": "directory",
+   "title": "Rockgym.jp page for Climbing Park Drop in",
+   "url": "https://rockgym.jp/drop-in/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "IG_climbing-park-drop-in": {
+   "kind": "official-social",
+   "title": "Instagram of Climbing Park Drop in (own account, public embed read 2026-10-13)",
+   "url": "https://www.instagram.com/dropin6969/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "RG_movement-climbing-space": {
+   "kind": "directory",
+   "title": "Rockgym.jp page for Movement Climbing Space",
+   "url": "https://rockgym.jp/movement/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "S_movement-climbing-space": {
+   "kind": "official-site",
+   "title": "Movement Climbing Space (own site)",
+   "url": "https://movementclimbingsp.wixsite.com/movement",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "IG_movement-climbing-space": {
+   "kind": "official-social",
+   "title": "Instagram of Movement Climbing Space (own account, public embed read 2026-10-13)",
+   "url": "https://www.instagram.com/movement_0909/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "RG_climbing-gym-nanashino": {
+   "kind": "directory",
+   "title": "Rockgym.jp page for Climbing Gym Nanashino",
+   "url": "https://rockgym.jp/nanashino/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "S_climbing-gym-nanashino": {
+   "kind": "official-site",
+   "title": "Climbing Gym Nanashino (own site)",
+   "url": "https://nanashino.net/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "IG_climbing-gym-nanashino": {
+   "kind": "official-social",
+   "title": "Instagram of Climbing Gym Nanashino (own account, public embed read 2026-10-13)",
+   "url": "https://www.instagram.com/nanashino_1123/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "RG_bouldering-gym-varappe": {
+   "kind": "directory",
+   "title": "Rockgym.jp page for Bouldering Gym Varappe",
+   "url": "https://rockgym.jp/varappe/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "IG_bouldering-gym-varappe": {
+   "kind": "official-social",
+   "title": "Instagram of Bouldering Gym Varappe (own account, public embed read 2026-10-13)",
+   "url": "https://www.instagram.com/varappe2014/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "RG_bouldering-gym-babaanz": {
+   "kind": "directory",
+   "title": "Rockgym.jp page for Bouldering Gym Babaanz",
+   "url": "https://rockgym.jp/babaanz/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "IG_bouldering-gym-babaanz": {
+   "kind": "official-social",
+   "title": "Instagram of Bouldering Gym Babaanz (own account, public embed read 2026-10-13)",
+   "url": "https://www.instagram.com/bouldering_babaanz/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "RG_bouldering-gym-trans": {
+   "kind": "directory",
+   "title": "Rockgym.jp page for Bouldering Gym Trans",
+   "url": "https://rockgym.jp/trans/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "S_bouldering-gym-trans": {
+   "kind": "official-site",
+   "title": "Bouldering Gym Trans (own site)",
+   "url": "http://climbgymtrans.com/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "RG_boulderbase": {
+   "kind": "directory",
+   "title": "Rockgym.jp page for BoulderBase",
+   "url": "https://rockgym.jp/boulder-base/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "S_boulderbase": {
+   "kind": "official-site",
+   "title": "BoulderBase (own site)",
+   "url": "https://boulderbase-izumo.com/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "IG_boulderbase": {
+   "kind": "official-social",
+   "title": "Instagram of BoulderBase (own account, public embed read 2026-10-13)",
+   "url": "https://www.instagram.com/b.base.izm/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "RG_m-wall-matsue": {
+   "kind": "directory",
+   "title": "Rockgym.jp page for M Wall Matsue",
+   "url": "https://rockgym.jp/m-wall/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "S_m-wall-matsue": {
+   "kind": "official-site",
+   "title": "M Wall Matsue (own site)",
+   "url": "https://matsue-freeclimbing.com/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "IG_m-wall-matsue": {
+   "kind": "official-social",
+   "title": "Instagram of M Wall Matsue (own account, public embed read 2026-10-13)",
+   "url": "https://www.instagram.com/mwallmatsue/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "RG_k-climb-matsue": {
+   "kind": "directory",
+   "title": "Rockgym.jp page for K Climb Matsue",
+   "url": "https://rockgym.jp/k-climb/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "S_k-climb-matsue": {
+   "kind": "official-site",
+   "title": "K Climb Matsue (own site)",
+   "url": "https://k-climb.matsue-freeclimbing.com/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "IG_k-climb-matsue": {
+   "kind": "official-social",
+   "title": "Instagram of K Climb Matsue (own account, public embed read 2026-10-13)",
+   "url": "https://www.instagram.com/kclimb_matsue/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "RG_rocks-climbing-gym-kurashiki": {
+   "kind": "directory",
+   "title": "Rockgym.jp page for rocks Climbing Gym Kurashiki",
+   "url": "https://rockgym.jp/rocks-climbing/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "S_rocks-climbing-gym-kurashiki": {
+   "kind": "official-site",
+   "title": "rocks Climbing Gym Kurashiki (own site)",
+   "url": "https://www.rocksclimbinggym.com/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "IG_rocks-climbing-gym-kurashiki": {
+   "kind": "official-social",
+   "title": "Instagram of rocks Climbing Gym Kurashiki (own account, public embed read 2026-10-13)",
+   "url": "https://www.instagram.com/rocksclimbinggym/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "RG_bouldering-gym-unity": {
+   "kind": "directory",
+   "title": "Rockgym.jp page for Bouldering Gym Unity",
+   "url": "https://rockgym.jp/unity/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "IG_bouldering-gym-unity": {
+   "kind": "official-social",
+   "title": "Instagram of Bouldering Gym Unity (own account, public embed read 2026-10-13)",
+   "url": "https://www.instagram.com/boulderinggymunity/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "RG_bouldering-spot-9a": {
+   "kind": "directory",
+   "title": "Rockgym.jp page for Bouldering Spot 9A",
+   "url": "https://rockgym.jp/9a/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "IG_bouldering-spot-9a": {
+   "kind": "official-social",
+   "title": "Instagram of Bouldering Spot 9A (own account, public embed read 2026-10-13)",
+   "url": "https://www.instagram.com/hofu9a/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "RG_bouldering-gym-labo-yamaguchi": {
+   "kind": "directory",
+   "title": "Rockgym.jp page for Bouldering Gym Labo Yamaguchi",
+   "url": "https://rockgym.jp/labo-yamaguchi/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "S_bouldering-gym-labo-yamaguchi": {
+   "kind": "official-site",
+   "title": "Bouldering Gym Labo Yamaguchi (own site)",
+   "url": "https://www.boulderinggym-labo.com/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "IG_bouldering-gym-labo-yamaguchi": {
+   "kind": "official-social",
+   "title": "Instagram of Bouldering Gym Labo Yamaguchi (own account, public embed read 2026-10-13)",
+   "url": "https://www.instagram.com/boulderinggym_labo/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "RG_join-climbing-gym": {
+   "kind": "directory",
+   "title": "Rockgym.jp page for Join Climbing Gym",
+   "url": "https://rockgym.jp/join-climbing-gym/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "IG_join-climbing-gym": {
+   "kind": "official-social",
+   "title": "Instagram of Join Climbing Gym (own account, public embed read 2026-10-13)",
+   "url": "https://www.instagram.com/join_climbing_gym/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "RG_ehime-climbing-gym-itte": {
+   "kind": "directory",
+   "title": "Rockgym.jp page for Ehime Climbing Gym iTTE",
+   "url": "https://rockgym.jp/itte-ehime/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "S_ehime-climbing-gym-itte": {
+   "kind": "official-site",
+   "title": "Ehime Climbing Gym iTTE (own site)",
+   "url": "http://itte-climbing.com/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "IG_ehime-climbing-gym-itte": {
+   "kind": "official-social",
+   "title": "Instagram of Ehime Climbing Gym iTTE (own account, public embed read 2026-10-13)",
+   "url": "https://www.instagram.com/itte_climbing_ehime/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "RG_climbing-gym-allez": {
+   "kind": "directory",
+   "title": "Rockgym.jp page for Climbing Gym Allez!",
+   "url": "https://rockgym.jp/allez/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "S_climbing-gym-allez": {
+   "kind": "official-site",
+   "title": "Climbing Gym Allez! (own site)",
+   "url": "https://allez-kochi.com/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  },
+  "IG_climbing-gym-allez": {
+   "kind": "official-social",
+   "title": "Instagram of Climbing Gym Allez! (own account, public embed read 2026-10-13)",
+   "url": "https://www.instagram.com/climbinggym_allez/",
+   "language": "ja",
+   "accessed": "2026-10-13"
+  }
+ }
+}

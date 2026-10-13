@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-13-uk-cities",
+  "description": "Regional research \"UK: regional cities coverage gap\": 21 new gym(s) accepted of 30 candidate(s)",
+  "created": "2026-10-13",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-10-13-uk-cities",
+    "section_sha256": "b8ce569d95704584b04cd8e39ea7e579bf1062f2e2da71e69e9409b584e1482e",
+    "sources_sha256": "67c793ecd851c61c0a85e870201a76569a837a7251d3c6b20bfca8f738ec1911",
+    "candidates_sha256": "73819159739ee60b3086ed2de56863056009fd912b966b45d5e77ad40acd06cf",
+    "reconcile_sha256": "6e4b7258af01a3a04c9296ba98dea25efb50c41b1ad5fbed3e41704ea3134f21",
+    "review_sha256": "fba2d6caf4aa3ddad653c0a13bf74fe8614e1802b147553f7d43437ea8455e14",
+    "candidates": 30,
+    "staged": 21,
+    "decisions": {
+      "accept": 21,
+      "defer": 6,
+      "reject": 2,
+      "same-as": 1
+    }
+  },
+  "index_at_staging": {
+    "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
+    "count": 3294
+  }
+}

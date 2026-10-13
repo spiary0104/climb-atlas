@@ -6,6 +6,11 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 (delete them; git keeps history). Keep this file under 60 lines.
 
 ## In progress
+### Research wave 2026-10-13 — STAGED, not applied (branch `research/2026-10-13-wave`): +108 gyms, 49 pin fixes
+- Batches: 2026-10-13-fixes (13 AU pins + Boulderdash), 2026-10-13-cn-pin-fixes (35 CN pins, Amap entrance coordinates), then new gyms:
+  us-ny-boston-metros 6, us-central-metros 6, italy-cities 23, uk-cities 21, australia 24, jp-remaining 22, brazil 6. California and the
+  big US metros turned out almost fully covered already. Independent of the Korea/China PR. Owner checks: `import/research/MANUAL-CHECKS-wave-2026-10-13.md`.
+- China new cities (Guangzhou/Shenzhen, Hangzhou/Nanjing, Wuhan/Xi'an) wait for the owner's rednote.com + Amap tab (Chrome was closed).
 ### Coverage-gap sprint 2026-10-06 — 19/20 APPLIED + verified (+856 gyms, live 3,294); kr-seoul (40) NOT applied
 - The 2026-10-06 apply run stopped at kr-seoul with nothing written for it; it plans and dry-runs clean (2026-10-07). Owner re-runs:
   `powershell -ExecutionPolicy Bypass -File scriptspply-batch.ps1 2026-10-06-kr-seoul`

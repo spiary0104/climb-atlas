@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-13-australia",
+  "description": "Regional research \"Australia: city coverage gap\": 24 new gym(s) accepted of 47 candidate(s)",
+  "created": "2026-10-13",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-10-13-australia",
+    "section_sha256": "ec6f4fabed78563b1ea039cf1ef18ed3812b5dd8d22c69eb833aa9f79c6b6209",
+    "sources_sha256": "04c6ba9b549969b090881dbe0a7e17dae153ad579368a801449dd180e500c31d",
+    "candidates_sha256": "137e8dfe82dffef3c261c9fd29edc745f2f65ca85e3e7bcbda4c546c1e3aee95",
+    "reconcile_sha256": "7757973978b551921a68b76674f8e28510321224064b974976486d9b73e46008",
+    "review_sha256": "6bc27f93e7acd419a698a4add5fc184acced64d114d3ca75dc0cb576adcbcb0e",
+    "candidates": 47,
+    "staged": 24,
+    "decisions": {
+      "accept": 24,
+      "defer": 7,
+      "reject": 3,
+      "same-as": 13
+    }
+  },
+  "index_at_staging": {
+    "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
+    "count": 3294
+  }
+}

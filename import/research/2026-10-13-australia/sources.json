@@ -1,0 +1,236 @@
+{
+ "schema_version": 1,
+ "sources": {
+  "OSM": {
+   "kind": "map-data",
+   "title": "OpenStreetMap (map data, element pages; Overpass sport=climbing sweep of Australia, 2026-10-13)",
+   "url": "https://www.openstreetmap.org/",
+   "language": "en",
+   "accessed": "2026-10-13"
+  },
+  "PHOTON": {
+   "kind": "map-data",
+   "title": "Photon geocoder (OpenStreetMap data, 2026-10-13)",
+   "url": "https://photon.komoot.io/",
+   "language": "en",
+   "accessed": "2026-10-13"
+  },
+  "NINEDEG": {
+   "kind": "official-site",
+   "title": "9degrees.com.au (locations page)",
+   "url": "https://www.9degrees.com.au/locations",
+   "language": "en",
+   "accessed": "2026-10-13"
+  },
+  "NOMAD": {
+   "kind": "official-site",
+   "title": "nomadbouldering.com.au",
+   "url": "https://www.nomadbouldering.com.au/",
+   "language": "en",
+   "accessed": "2026-10-13"
+  },
+  "CBR": {
+   "kind": "official-site",
+   "title": "cbr.blochaus.com.au",
+   "url": "https://cbr.blochaus.com.au/",
+   "language": "en",
+   "accessed": "2026-10-13"
+  },
+  "PULSE": {
+   "kind": "official-site",
+   "title": "pulseclimbing.com.au",
+   "url": "https://pulseclimbing.com.au/",
+   "language": "en",
+   "accessed": "2026-10-13"
+  },
+  "FLOWCLIMB": {
+   "kind": "official-site",
+   "title": "flowclimbing.com.au",
+   "url": "https://flowclimbing.com.au/",
+   "language": "en",
+   "accessed": "2026-10-13"
+  },
+  "NORTHSIDE": {
+   "kind": "official-site",
+   "title": "northsideboulders.com",
+   "url": "https://www.northsideboulders.com/",
+   "language": "en",
+   "accessed": "2026-10-13"
+  },
+  "BOULDERLAB": {
+   "kind": "official-site",
+   "title": "boulderlab.com.au",
+   "url": "https://boulderlab.com.au/",
+   "language": "en",
+   "accessed": "2026-10-13"
+  },
+  "CLIMBWEST": {
+   "kind": "official-site",
+   "title": "climbwestmelbourne.com.au",
+   "url": "https://climbwestmelbourne.com.au/",
+   "language": "en",
+   "accessed": "2026-10-13"
+  },
+  "CRUX": {
+   "kind": "official-site",
+   "title": "thecrux.com.au",
+   "url": "https://thecrux.com.au/",
+   "language": "en",
+   "accessed": "2026-10-13"
+  },
+  "INDUSTRY": {
+   "kind": "official-site",
+   "title": "industryboulders.com.au",
+   "url": "https://industryboulders.com.au/",
+   "language": "en",
+   "accessed": "2026-10-13"
+  },
+  "URBANCLIMB": {
+   "kind": "official-site",
+   "title": "urbanclimb.com.au (location pages, rendered in a browser)",
+   "url": "https://urbanclimb.com.au/",
+   "language": "en",
+   "accessed": "2026-10-13"
+  },
+  "GECKO": {
+   "kind": "official-site",
+   "title": "geckoclimb.com.au",
+   "url": "https://geckoclimb.com.au/",
+   "language": "en",
+   "accessed": "2026-10-13"
+  },
+  "ALPINE": {
+   "kind": "official-site",
+   "title": "alpineindoorclimbing.com",
+   "url": "https://alpineindoorclimbing.com/locations/",
+   "language": "en",
+   "accessed": "2026-10-13"
+  },
+  "CUTLOOSE": {
+   "kind": "official-site",
+   "title": "cutlooseindoorclimbing.com.au",
+   "url": "https://cutlooseindoorclimbing.com.au/",
+   "language": "en",
+   "accessed": "2026-10-13"
+  },
+  "PORTSIDE": {
+   "kind": "official-site",
+   "title": "portsideboulders.com.au",
+   "url": "https://www.portsideboulders.com.au/",
+   "language": "en",
+   "accessed": "2026-10-13"
+  },
+  "ADRENVAULT": {
+   "kind": "official-site",
+   "title": "adrenalinevault.com.au",
+   "url": "https://adrenalinevault.com.au/",
+   "language": "en",
+   "accessed": "2026-10-13"
+  },
+  "ROCKIT": {
+   "kind": "official-site",
+   "title": "rockitbouldering.com.au (Derwent Park) and rockitclimbing.com.au (Hobart)",
+   "url": "https://www.rockitbouldering.com.au/",
+   "language": "en",
+   "accessed": "2026-10-13"
+  },
+  "LANEWAY": {
+   "kind": "official-site",
+   "title": "lanewayboulders.com.au",
+   "url": "https://lanewayboulders.com.au/",
+   "language": "en",
+   "accessed": "2026-10-13"
+  },
+  "BEYOND": {
+   "kind": "official-site",
+   "title": "beyondbouldering.com.au",
+   "url": "https://beyondbouldering.com.au/",
+   "language": "en",
+   "accessed": "2026-10-13"
+  },
+  "BUFFALO": {
+   "kind": "official-site",
+   "title": "buffaloboulders.com.au",
+   "url": "https://buffaloboulders.com.au/",
+   "language": "en",
+   "accessed": "2026-10-13"
+  },
+  "SICG": {
+   "kind": "official-site",
+   "title": "indoorclimbing.com.au (Sydney Indoor Climbing Gym)",
+   "url": "https://indoorclimbing.com.au/stpeters/",
+   "language": "en",
+   "accessed": "2026-10-13"
+  },
+  "EDGE": {
+   "kind": "official-site",
+   "title": "edgerockclimbing.com.au",
+   "url": "https://www.edgerockclimbing.com.au/",
+   "language": "en",
+   "accessed": "2026-10-13"
+  },
+  "ELEVATE": {
+   "kind": "official-site",
+   "title": "elevateclimbing.com.au",
+   "url": "https://www.elevateclimbing.com.au/",
+   "language": "en",
+   "accessed": "2026-10-13"
+  },
+  "CLIMBFIT": {
+   "kind": "official-site",
+   "title": "climbfit.com.au",
+   "url": "https://www.climbfit.com.au/",
+   "language": "en",
+   "accessed": "2026-10-13"
+  },
+  "CLIFFHANGER": {
+   "kind": "official-site",
+   "title": "cliffhanger.com.au",
+   "url": "https://cliffhanger.com.au/",
+   "language": "en",
+   "accessed": "2026-10-13"
+  },
+  "CLIPNCLIMB": {
+   "kind": "official-site",
+   "title": "Clip n Climb Berwick / Williamstown / Activate by Hardrock sites",
+   "url": "https://clipnclimbberwick.com.au/",
+   "language": "en",
+   "accessed": "2026-10-13"
+  },
+  "FLOWBOULD": {
+   "kind": "official-site",
+   "title": "flowbouldering.com.au",
+   "url": "https://flowbouldering.com.au/",
+   "language": "en",
+   "accessed": "2026-10-13"
+  },
+  "MANDURAH": {
+   "kind": "official-site",
+   "title": "mandurahrockclimbing.com",
+   "url": "https://www.mandurahrockclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-13"
+  },
+  "THEHOLD": {
+   "kind": "official-site",
+   "title": "thehold.studio",
+   "url": "https://thehold.studio/",
+   "language": "en",
+   "accessed": "2026-10-13"
+  },
+  "WALLWALKERS": {
+   "kind": "official-site",
+   "title": "wallwalkers.com.au",
+   "url": "https://wallwalkers.com.au/locations",
+   "language": "en",
+   "accessed": "2026-10-13"
+  },
+  "FRICTION": {
+   "kind": "other",
+   "title": "frictionbouldering.com.au (domain parked page, 2026-10-13)",
+   "url": "https://frictionbouldering.com.au/",
+   "language": "en",
+   "accessed": "2026-10-13"
+  }
+ }
+}
