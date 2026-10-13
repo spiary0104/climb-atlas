@@ -1,0 +1,230 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-13-australia",
+ "index": {
+  "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
+  "count": 3294,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-06-kr-seoul"
+ ],
+ "counts": {
+  "records": 24,
+  "new": 24,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 1
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "d0fbc448268031968af72e1ba6740cfe7ad5c71cb1d955619487d2f1bac51483",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-f7aa31ce25",
+   "id_frozen": true,
+   "name": "9 Degrees Chatswood",
+   "country": "AU"
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-8b059b0d5f",
+   "id_frozen": true,
+   "name": "9 Degrees Morningside",
+   "country": "AU"
+  },
+  {
+   "line": 3,
+   "class": "new",
+   "id": "g-03802d1aff",
+   "id_frozen": true,
+   "name": "Adrenaline Vault Cockburn",
+   "country": "AU"
+  },
+  {
+   "line": 4,
+   "class": "new",
+   "id": "g-aed46bfd1f",
+   "id_frozen": true,
+   "name": "Alpine Indoor Climbing Currumbin",
+   "country": "AU"
+  },
+  {
+   "line": 5,
+   "class": "new",
+   "id": "g-9ed1081190",
+   "id_frozen": true,
+   "name": "Beyond Bouldering Thebarton",
+   "country": "AU"
+  },
+  {
+   "line": 6,
+   "class": "new",
+   "id": "g-68345668f5",
+   "id_frozen": true,
+   "name": "Boulder Lab Brunswick",
+   "country": "AU"
+  },
+  {
+   "line": 7,
+   "class": "new",
+   "id": "g-6bcdf294bb",
+   "id_frozen": true,
+   "name": "Boulder Lab Clayton South",
+   "country": "AU"
+  },
+  {
+   "line": 8,
+   "class": "new",
+   "id": "g-c7b3a9fb57",
+   "id_frozen": true,
+   "name": "Buffalo Boulders",
+   "country": "AU"
+  },
+  {
+   "line": 9,
+   "class": "new",
+   "id": "g-bda97e516f",
+   "id_frozen": true,
+   "name": "Climb West Melbourne",
+   "country": "AU"
+  },
+  {
+   "line": 10,
+   "class": "new",
+   "id": "g-daa4827f2e",
+   "id_frozen": true,
+   "name": "The Crux",
+   "country": "AU"
+  },
+  {
+   "line": 11,
+   "class": "new",
+   "id": "g-1e29dae7a9",
+   "id_frozen": true,
+   "name": "Cutloose Indoor Climbing",
+   "country": "AU"
+  },
+  {
+   "line": 12,
+   "class": "new",
+   "id": "g-67b4a1edee",
+   "id_frozen": true,
+   "name": "Flow Climbing",
+   "country": "AU"
+  },
+  {
+   "line": 13,
+   "class": "new",
+   "id": "g-2b85808c1a",
+   "id_frozen": true,
+   "name": "Gecko Climb",
+   "country": "AU",
+   "warnings": [
+    {
+     "code": "far-from-country",
+     "field": "lat",
+     "message": "nearest known AU gym is 1660 km away -- check coordinates/country"
+    }
+   ]
+  },
+  {
+   "line": 14,
+   "class": "new",
+   "id": "g-9ef74d79e9",
+   "id_frozen": true,
+   "name": "Industry Boulders",
+   "country": "AU"
+  },
+  {
+   "line": 15,
+   "class": "new",
+   "id": "g-856872334e",
+   "id_frozen": true,
+   "name": "Laneway Boulders",
+   "country": "AU"
+  },
+  {
+   "line": 16,
+   "class": "new",
+   "id": "g-d0b029f9cb",
+   "id_frozen": true,
+   "name": "Northside Boulders Abbotsford",
+   "country": "AU"
+  },
+  {
+   "line": 17,
+   "class": "new",
+   "id": "g-ab649f812b",
+   "id_frozen": true,
+   "name": "Portside Boulders Willetton",
+   "country": "AU"
+  },
+  {
+   "line": 18,
+   "class": "new",
+   "id": "g-1f3e61433b",
+   "id_frozen": true,
+   "name": "Pulse Climbing Gosford",
+   "country": "AU"
+  },
+  {
+   "line": 19,
+   "class": "new",
+   "id": "g-93f1c3eee7",
+   "id_frozen": true,
+   "name": "Pulse Climbing Maitland",
+   "country": "AU"
+  },
+  {
+   "line": 20,
+   "class": "new",
+   "id": "g-19a0e2d570",
+   "id_frozen": true,
+   "name": "Rock It Derwent Park",
+   "country": "AU"
+  },
+  {
+   "line": 21,
+   "class": "new",
+   "id": "g-2695ea3daa",
+   "id_frozen": true,
+   "name": "The Hold Bendigo",
+   "country": "AU"
+  },
+  {
+   "line": 22,
+   "class": "new",
+   "id": "g-828aff2eeb",
+   "id_frozen": true,
+   "name": "Urban Climb Adelaide",
+   "country": "AU"
+  },
+  {
+   "line": 23,
+   "class": "new",
+   "id": "g-82a080d0e6",
+   "id_frozen": true,
+   "name": "Urban Climb Townsville",
+   "country": "AU"
+  },
+  {
+   "line": 24,
+   "class": "new",
+   "id": "g-f881cbcfbb",
+   "id_frozen": true,
+   "name": "Wall Walkers Bouldering",
+   "country": "AU"
+  }
+ ]
+}
