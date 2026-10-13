@@ -1,0 +1,742 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-13-brazil",
+ "inputs": {
+  "section_sha256": "6e62f97403dd6772aef876ba5e1a19b0bb2fd7022d7a466f129a91b7e7a7cb87",
+  "sources_sha256": "3706494d6821f2b64e0967004c895f01ca00c555b1910533a0c15e5a2a579eb0",
+  "candidates_sha256": "dc0a3d4588029fab1c1563ffbf878364156a7ac8c2ac7828f01a495e567760bd",
+  "index": {
+   "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
+   "count": 3294
+  },
+  "staged_batches_compared": [
+   "2026-10-06-kr-seoul"
+  ],
+  "other_sections_compared": []
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 21,
+  "ready": 0,
+  "review": 11,
+  "blocked": 6,
+  "existing": 4,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "br-001",
+   "line": 1,
+   "name": "PowerBloc",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-36fb40b6c2"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "br-002",
+   "line": 2,
+   "name": "Geometrik Escalada",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-a17ba67941"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "br-003",
+   "line": 3,
+   "name": "UBT Escalada Brasília",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-0555cd2aa8"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "br-004",
+   "line": 4,
+   "name": "Toca Escalada Indoor",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-4f246e9a6e"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "br-005",
+   "line": 5,
+   "name": "Café com Magnésio",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-b6eb3eec53"
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "far-from-country: nearest known BR gym is 1884 km away -- check coordinates/country"
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "br-006",
+   "line": 6,
+   "name": "Campo Base Ginásio de Escalada",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-6922e37b19"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "br-007",
+   "line": 7,
+   "name": "Eleva Escalada",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-b2917fcfdc"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "br-008",
+   "line": 8,
+   "name": "TreeLab",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-882b3a2abf"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "br-009",
+   "line": 9,
+   "name": "República dos Macacos",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-f12099e732"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "br-010",
+   "line": 10,
+   "name": "Meru C3",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-ce9315de2b"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    },
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "br-011",
+   "line": 11,
+   "name": "IpeRocks",
+   "class": "blocked",
+   "suggested": "reject outdoor-area",
+   "importer": {
+    "class": "new",
+    "id": "g-5748b60024"
+   },
+   "blockers": [
+    {
+     "code": "outdoor-area",
+     "detail": "outdoor climbing areas are not gyms"
+    },
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    },
+    {
+     "code": "coarse-coordinates",
+     "detail": "coordinates only locate the area, not the gym"
+    }
+   ],
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "br-012",
+   "line": 12,
+   "name": "90 Graus Escalada Esportiva",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-ffed170f88"
+   },
+   "blockers": [
+    {
+     "code": "no-bouldering-evidence",
+     "detail": "bouldering is \"yes\" but no primary source confirms it"
+    }
+   ],
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1409 similar-name-nearby 211 m",
+     "ids": [
+      "seed-1409"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1409 \"90 Graus\": similar-name-nearby (\"90 Graus Escalada Esportiva\" / \"90 Graus\", 211 m)",
+     "ids": [
+      "seed-1409"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "seed-1409"
+   ]
+  },
+  {
+   "cid": "br-013",
+   "line": 13,
+   "name": "Casa de Pedra Moema",
+   "class": "existing",
+   "suggested": "same-as seed-1405",
+   "importer": {
+    "class": "existing",
+    "id": "seed-1405",
+    "match": {
+     "id": "seed-1405",
+     "name": "Casa de Pedra - Moema",
+     "reason": "same-name",
+     "dist_m": 0
+    }
+   },
+   "blockers": [
+    {
+     "code": "no-bouldering-evidence",
+     "detail": "bouldering is \"yes\" but no primary source confirms it"
+    }
+   ],
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-1405 but content differs (name, lat, lng, address); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1405 \"Casa de Pedra - Moema\": same-name (\"Casa de Pedra Moema\" / \"Casa de Pedra - Moema\", 0 m)",
+     "ids": [
+      "seed-1405"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate br-014 \"Casa de Pedra Perdizes\": related names \"Casa de Pedra Moema\" / \"Casa de Pedra Perdizes\" 9210 m apart",
+     "ids": [
+      "br-014"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-1404 \"Casa de Pedra - Perdizes\": related names \"Casa de Pedra Moema\" / \"Casa de Pedra - Perdizes\" 9210 m apart",
+     "ids": [
+      "seed-1404"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate br-014 has the same website",
+     "ids": [
+      "br-014"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "br-014",
+    "seed-1404",
+    "seed-1405"
+   ]
+  },
+  {
+   "cid": "br-014",
+   "line": 14,
+   "name": "Casa de Pedra Perdizes",
+   "class": "existing",
+   "suggested": "same-as seed-1404",
+   "importer": {
+    "class": "existing",
+    "id": "seed-1404",
+    "match": {
+     "id": "seed-1404",
+     "name": "Casa de Pedra - Perdizes",
+     "reason": "same-name",
+     "dist_m": 1
+    }
+   },
+   "blockers": [
+    {
+     "code": "no-bouldering-evidence",
+     "detail": "bouldering is \"yes\" but no primary source confirms it"
+    }
+   ],
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-1404 but content differs (name, lat, lng, address, types); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1404 \"Casa de Pedra - Perdizes\": same-name (\"Casa de Pedra Perdizes\" / \"Casa de Pedra - Perdizes\", 1 m)",
+     "ids": [
+      "seed-1404"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate br-013 \"Casa de Pedra Moema\": related names \"Casa de Pedra Perdizes\" / \"Casa de Pedra Moema\" 9210 m apart",
+     "ids": [
+      "br-013"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-1405 \"Casa de Pedra - Moema\": related names \"Casa de Pedra Perdizes\" / \"Casa de Pedra - Moema\" 9210 m apart",
+     "ids": [
+      "seed-1405"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate br-013 has the same website",
+     "ids": [
+      "br-013"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "br-013",
+    "seed-1404",
+    "seed-1405"
+   ]
+  },
+  {
+   "cid": "br-015",
+   "line": 15,
+   "name": "Fabrica Escalada Chácara Santo Antônio",
+   "class": "existing",
+   "suggested": "same-as seed-1407",
+   "importer": {
+    "class": "existing",
+    "id": "seed-1407",
+    "match": {
+     "id": "seed-1407",
+     "name": "FABRICA Escalada - Chácara Santo Antônio",
+     "reason": "same-name",
+     "dist_m": 21
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-1407 but content differs (name, lat, lng, address); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1407 \"FABRICA Escalada - Chácara Santo Antônio\": same-name (\"Fabrica Escalada Chácara Santo Antônio\" / \"FABRICA Escalada - Chácara Santo Antônio\", 21 m)",
+     "ids": [
+      "seed-1407"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate br-016 has the same website",
+     "ids": [
+      "br-016"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "br-016",
+    "seed-1407"
+   ]
+  },
+  {
+   "cid": "br-016",
+   "line": 16,
+   "name": "Fabrica Escalada Vila Madalena",
+   "class": "existing",
+   "suggested": "same-as seed-1408",
+   "importer": {
+    "class": "existing",
+    "id": "seed-1408",
+    "match": {
+     "id": "seed-1408",
+     "name": "FABRICA Escalada - Vila Madalena",
+     "reason": "same-name",
+     "dist_m": 7
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-1408 but content differs (name, lat, lng, address); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1408 \"FABRICA Escalada - Vila Madalena\": same-name (\"Fabrica Escalada Vila Madalena\" / \"FABRICA Escalada - Vila Madalena\", 7 m)",
+     "ids": [
+      "seed-1408"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate br-015 has the same website",
+     "ids": [
+      "br-015"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "br-015",
+    "seed-1408"
+   ]
+  },
+  {
+   "cid": "br-017",
+   "line": 17,
+   "name": "Evolução Escalada Indoor",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-8be6250f39"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1410 renamed-or-related-name-nearby 13 m",
+     "ids": [
+      "seed-1410"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1410 \"Evolução Escalada Indoor - Botafogo\": renamed-or-related-name-nearby (\"Evolução Escalada Indoor\" / \"Evolução Escalada Indoor - Botafogo\", 13 m)",
+     "ids": [
+      "seed-1410"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "seed-1410"
+   ]
+  },
+  {
+   "cid": "br-018",
+   "line": 18,
+   "name": "UBT Escalada Curitiba",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-511833ee0d"
+   },
+   "blockers": [
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1417 renamed-or-related-name-nearby 0 m",
+     "ids": [
+      "seed-1417"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1417 \"UBT Escalada\": renamed-or-related-name-nearby (\"UBT Escalada Curitiba\" / \"UBT Escalada\", 0 m)",
+     "ids": [
+      "seed-1417"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "seed-1417"
+   ]
+  },
+  {
+   "cid": "br-019",
+   "line": 19,
+   "name": "Caverna Escalada",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-0562012555"
+   },
+   "blockers": [
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "no-bouldering-evidence",
+     "detail": "bouldering is \"yes\" but no primary source confirms it"
+    }
+   ],
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1416 renamed-or-related-name-nearby 0 m",
+     "ids": [
+      "seed-1416"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1416 \"Caverna Boulder\": renamed-or-related-name-nearby (\"Caverna Escalada\" / \"Caverna Boulder\", 0 m)",
+     "ids": [
+      "seed-1416"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "seed-1416"
+   ]
+  },
+  {
+   "cid": "br-020",
+   "line": 20,
+   "name": "Via AltaMontanha",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-44aacb0476"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1418 co-located 4 m",
+     "ids": [
+      "seed-1418"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1418 \"Via Aventura\": co-located (\"Via AltaMontanha\" / \"Via Aventura\", 4 m)",
+     "ids": [
+      "seed-1418"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "seed-1418"
+   ]
+  },
+  {
+   "cid": "br-021",
+   "line": 21,
+   "name": "ROKAZ Escalada Savassi",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-d596bcced0"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-1414 co-located 0 m; seed-1415 co-located 0 m",
+     "ids": [
+      "seed-1414",
+      "seed-1415"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1414 \"ROKAZ Academy Climbing and Fitness\": co-located (\"ROKAZ Escalada Savassi\" / \"ROKAZ Academy Climbing and Fitness\", 0 m)",
+     "ids": [
+      "seed-1414"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1415 \"ROKAZ Unidade Buritis\": co-located (\"ROKAZ Escalada Savassi\" / \"ROKAZ Unidade Buritis\", 0 m)",
+     "ids": [
+      "seed-1415"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "seed-1414",
+    "seed-1415"
+   ]
+  }
+ ],
+ "reconcile_sha256": "5808be0e12b01f6e129b9d8e42a92a2859abe7f2186ea99537ff7d741cbca833"
+}
