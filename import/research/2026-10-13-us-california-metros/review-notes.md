@@ -26,3 +26,6 @@ Reviewer: Claude (AI) on the owner's instruction; owner sign-off pending. Tally:
 - Out by rule: Oaktown Boulders (kids-only), Rocktopia (children's climbing inside a gymnastics club, now in Walnut Creek), The Bullet Hole (kickboxing), Gymnastics World, school and university walls (CSULB, CSUF, UCI, CSUSB, Caltech, UCSF, SJSU), municipal walls (Agoura Hills Community Center, Glen Park Rec Center, Torrance YMCA), ClubSport Pleasanton (fitness club).
 - Domains gone or redirecting to spam, treated as closed and not researched further: ClimbX (Huntington Beach), The Factory Bouldering (Orange), Arcadia Rock Climbing.
 - Announced only: Sender One Thousand Oaks (site says 2027); Sender One Huntington Beach (old trade-press article, not on Sender One's current location list).
+
+## Brain review (2026-10-13)
+Rock City Climbing (Huntington Beach) moved from accept to defer: thin 2026 evidence and bouldering not stated by the gym. The section therefore stages no batch; it stands as a verification pass (LA and the Bay Area are essentially fully covered).
