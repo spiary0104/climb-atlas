@@ -1,0 +1,271 @@
+{
+ "schema_version": 1,
+ "sources": {
+  "OSM": {
+   "kind": "map-data",
+   "title": "OpenStreetMap (Overpass API query for sport=climbing facilities in Italy; elements read 2026-10-13)",
+   "url": "https://www.openstreetmap.org/",
+   "language": "en",
+   "accessed": "2026-10-13"
+  },
+  "PHOTON": {
+   "kind": "map-data",
+   "title": "Photon geocoder (photon.komoot.io) over OpenStreetMap house-number nodes",
+   "url": "https://photon.komoot.io/",
+   "language": "en",
+   "accessed": "2026-10-13"
+  },
+  "IB": {
+   "kind": "directory",
+   "title": "InfoBoulder.com, Italian boulder-hall directory (leads only; list per region)",
+   "url": "https://infoboulder.com/?mod=plastic",
+   "language": "it",
+   "accessed": "2026-10-13"
+  },
+  "BCO": {
+   "kind": "official-site",
+   "title": "Boulder&Co. (Agrate Brianza)",
+   "url": "https://www.bouldereco.com/",
+   "language": "it",
+   "accessed": "2026-10-13"
+  },
+  "BW": {
+   "kind": "official-site",
+   "title": "Big Walls Brugherio",
+   "url": "https://www.bigwalls.it/",
+   "language": "it",
+   "accessed": "2026-10-13"
+  },
+  "AKI": {
+   "kind": "official-site",
+   "title": "Akira Climbing Center (Carate Brianza)",
+   "url": "https://www.akiraclimbing.it/",
+   "language": "it",
+   "accessed": "2026-10-13"
+  },
+  "ORO": {
+   "kind": "official-site",
+   "title": "Orobia Climbing (Curno)",
+   "url": "https://orobiaclimbing.it/",
+   "language": "it",
+   "accessed": "2026-10-13"
+  },
+  "INV": {
+   "kind": "official-site",
+   "title": "InVert Climb (Gessate)",
+   "url": "https://www.invertclimb.com/",
+   "language": "it",
+   "accessed": "2026-10-13"
+  },
+  "LEZ": {
+   "kind": "official-site",
+   "title": "Lezard Climbing (Mozzate)",
+   "url": "https://www.lezardclimb.it/",
+   "language": "it",
+   "accessed": "2026-10-13"
+  },
+  "STA": {
+   "kind": "official-site",
+   "title": "Stone Age Climbing Park (Uboldo)",
+   "url": "https://stoneageclimb.it/",
+   "language": "it",
+   "accessed": "2026-10-13"
+  },
+  "GAM": {
+   "kind": "official-site",
+   "title": "GAM Climbing (Mirano)",
+   "url": "https://gamclimbing.eu/",
+   "language": "it",
+   "accessed": "2026-10-13"
+  },
+  "VIB": {
+   "kind": "official-site",
+   "title": "Vi-Block Climb Park (Vicenza)",
+   "url": "https://www.viblock.it/",
+   "language": "it",
+   "accessed": "2026-10-13"
+  },
+  "OPV": {
+   "kind": "official-site",
+   "title": "Opera Verticale (Scorze)",
+   "url": "https://operaverticale.it/",
+   "language": "it",
+   "accessed": "2026-10-13"
+  },
+  "INT": {
+   "kind": "official-site",
+   "title": "Intellighenzia Project (Padova)",
+   "url": "https://intellighenziaproject.it/",
+   "language": "it",
+   "accessed": "2026-10-13"
+  },
+  "ARE": {
+   "kind": "official-site",
+   "title": "Arena Boulder (Arco)",
+   "url": "https://www.arenaboulder.it/",
+   "language": "it",
+   "accessed": "2026-10-13"
+  },
+  "B3": {
+   "kind": "official-site",
+   "title": "Block al Cubo (Rovereto)",
+   "url": "https://www.block3.it/",
+   "language": "it",
+   "accessed": "2026-10-13"
+  },
+  "PLR": {
+   "kind": "official-site",
+   "title": "Plastic Rock (Rovereto)",
+   "url": "https://www.plasticrock.com/",
+   "language": "it",
+   "accessed": "2026-10-13"
+  },
+  "CF4": {
+   "kind": "official-site",
+   "title": "Campfour Boulder (Pietramurata)",
+   "url": "https://www.campfourboulder.it/",
+   "language": "it",
+   "accessed": "2026-10-13"
+  },
+  "HEL": {
+   "kind": "official-site",
+   "title": "Heliks Kletterzentrum Bruneck",
+   "url": "https://heliks.it/",
+   "language": "de",
+   "accessed": "2026-10-13"
+  },
+  "VER": {
+   "kind": "official-site",
+   "title": "Vertikale Kletterzentrum Brixen",
+   "url": "https://vertikale.it/",
+   "language": "de",
+   "accessed": "2026-10-13"
+  },
+  "RGF": {
+   "kind": "official-site",
+   "title": "Ravenna Gravity Fighters",
+   "url": "https://www.ravennagravityfighters.com/",
+   "language": "it",
+   "accessed": "2026-10-13"
+  },
+  "VFO": {
+   "kind": "official-site",
+   "title": "Vertical Forli",
+   "url": "https://verticalclimb.it/",
+   "language": "it",
+   "accessed": "2026-10-13"
+  },
+  "PSC": {
+   "kind": "official-site",
+   "title": "Pareti Sport Center (Parma)",
+   "url": "https://paretisportcenter.com/",
+   "language": "it",
+   "accessed": "2026-10-13"
+  },
+  "K2": {
+   "kind": "official-site",
+   "title": "K2 Indoor (Putignano)",
+   "url": "https://www.k2indoor.it/",
+   "language": "it",
+   "accessed": "2026-10-13"
+  },
+  "K3": {
+   "kind": "official-site",
+   "title": "K3 Palestra di Arrampicata (Ivrea)",
+   "url": "https://www.k3indoor.it/",
+   "language": "it",
+   "accessed": "2026-10-13"
+  },
+  "FRG": {
+   "kind": "official-site",
+   "title": "The ForGe Climb (Genova)",
+   "url": "https://theforgeclimb.it/",
+   "language": "it",
+   "accessed": "2026-10-13"
+  },
+  "CCZ": {
+   "kind": "official-site",
+   "title": "Crazy Center (Firenze and Prato)",
+   "url": "https://www.crazycenter.it/",
+   "language": "it",
+   "accessed": "2026-10-13"
+  },
+  "RTC": {
+   "kind": "official-site",
+   "title": "Rock Time Center (Pistoia)",
+   "url": "https://rocktimecenter.it/",
+   "language": "it",
+   "accessed": "2026-10-13"
+  },
+  "MAD": {
+   "kind": "official-site",
+   "title": "Mad Climbers (Brescia)",
+   "url": "https://www.madclimbers.com/",
+   "language": "it",
+   "accessed": "2026-10-13"
+  },
+  "DEV": {
+   "kind": "official-site",
+   "title": "Deva Wall (Ferrara)",
+   "url": "https://www.devawall.com/",
+   "language": "it",
+   "accessed": "2026-10-13"
+  },
+  "GVE": {
+   "kind": "official-site",
+   "title": "Gioco Verticale (Treviso)",
+   "url": "https://giocoverticale.it/",
+   "language": "it",
+   "accessed": "2026-10-13"
+  },
+  "OVM": {
+   "kind": "official-site",
+   "title": "Orizzonti Verticali (Montebelluna)",
+   "url": "https://www.orizzontiverticali.tv.it/",
+   "language": "it",
+   "accessed": "2026-10-13"
+  },
+  "KRO": {
+   "kind": "official-site",
+   "title": "Kro Climb (Sala Bolognese)",
+   "url": "https://www.kroclimb.it/",
+   "language": "it",
+   "accessed": "2026-10-13"
+  },
+  "OVR": {
+   "kind": "official-site",
+   "title": "Orizzonte Verticale (Ronco Briantino)",
+   "url": "https://www.ovclimb.it/",
+   "language": "it",
+   "accessed": "2026-10-13"
+  },
+  "BBM": {
+   "kind": "official-site",
+   "title": "BlockBusters Climbing Gym (Mondovi)",
+   "url": "https://www.blockbustersclimb.com/",
+   "language": "it",
+   "accessed": "2026-10-13"
+  },
+  "VPO": {
+   "kind": "official-site",
+   "title": "Vertigo Climbing Village (Pollenzo)",
+   "url": "https://www.vertigoclimb.com/",
+   "language": "it",
+   "accessed": "2026-10-13"
+  },
+  "SPL": {
+   "kind": "official-site",
+   "title": "Sportler Climbing Center (Silea)",
+   "url": "https://www.sportlerclimbingcenter.it/",
+   "language": "it",
+   "accessed": "2026-10-13"
+  },
+  "PRC": {
+   "kind": "official-site",
+   "title": "Pro Recco Arrampicata",
+   "url": "https://www.proreccoarrampicata.it/",
+   "language": "it",
+   "accessed": "2026-10-13"
+  }
+ }
+}

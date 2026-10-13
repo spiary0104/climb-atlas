@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-13-italy-cities",
+  "description": "Regional research \"Italy: city coverage gap (Milano, Veneto, Trentino-Alto Adige, Emilia-Romagna, Genova, Puglia)\": 23 new gym(s) accepted of 35 candidate(s)",
+  "created": "2026-10-13",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-10-13-italy-cities",
+    "section_sha256": "3548a2ec944735994a7fce066a06da8c8efdf1b1a73b2f8e69d23d2e42846bb9",
+    "sources_sha256": "035e43e052ee61cac94d84047ca181e6865815860f07e8df0484e4addd0fc6a5",
+    "candidates_sha256": "36d47b3c8731e6ab6af4354f141cace733984eb77f35ab3208d78991a69282a8",
+    "reconcile_sha256": "8b6ed2f180c8da328897e167b00861d82df5ba57566b6e8591ec86826b44e914",
+    "review_sha256": "82626368372254bc4dbeb82942c65ebbadb868c66e155b5278b82d21575960d8",
+    "candidates": 35,
+    "staged": 23,
+    "decisions": {
+      "accept": 23,
+      "defer": 11,
+      "reject": 1
+    }
+  },
+  "index_at_staging": {
+    "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
+    "count": 3294
+  }
+}

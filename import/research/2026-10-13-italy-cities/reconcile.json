@@ -1,0 +1,550 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-13-italy-cities",
+ "inputs": {
+  "section_sha256": "3548a2ec944735994a7fce066a06da8c8efdf1b1a73b2f8e69d23d2e42846bb9",
+  "sources_sha256": "035e43e052ee61cac94d84047ca181e6865815860f07e8df0484e4addd0fc6a5",
+  "candidates_sha256": "36d47b3c8731e6ab6af4354f141cace733984eb77f35ab3208d78991a69282a8",
+  "index": {
+   "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
+   "count": 3294
+  },
+  "staged_batches_compared": [
+   "2026-10-06-kr-seoul"
+  ],
+  "other_sections_compared": [
+   {
+    "id": "2026-10-05-italy-city-gaps",
+    "candidates_sha256": "8af9380b03f755505790d7bb22c1805a59dde1db03ab7bca637128c4bb3c357e"
+   },
+   {
+    "id": "2026-10-05-italy-owner-checks",
+    "candidates_sha256": "6782170b772a351ded1cd54ba9fc3ad95c0e2ac87358412064cef881c5b15b8c"
+   },
+   {
+    "id": "2026-10-06-italy-holds-napoli",
+    "candidates_sha256": "479a19d4cb2f1eaca9733043e7030d22a93d7a485db8758b4b0ac5ad29590449"
+   }
+  ]
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 35,
+  "ready": 24,
+  "review": 7,
+  "blocked": 4,
+  "existing": 0,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "ic-001",
+   "line": 1,
+   "name": "Boulder&Co",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-c20daab68b"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ic-002",
+   "line": 2,
+   "name": "Big Walls Brugherio",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-1208df3c99"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ic-003",
+   "line": 3,
+   "name": "Akira Climbing Center",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-66ef535d16"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ic-004",
+   "line": 4,
+   "name": "Orobia Climbing",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-37f5fe89b5"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ic-005",
+   "line": 5,
+   "name": "InVert Climb",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-d59d7e11cd"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ic-006",
+   "line": 6,
+   "name": "Lezard Climbing",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-d866344724"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ic-007",
+   "line": 7,
+   "name": "Stone Age Climbing Park",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-c34951aa53"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ic-008",
+   "line": 8,
+   "name": "GAM Climbing",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-adc20c05ff"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ic-009",
+   "line": 9,
+   "name": "Vi-Block Climb Park",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-bd1219f0ad"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "ic-010",
+   "line": 10,
+   "name": "Opera Verticale",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-8fec7c2d7e"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ic-011",
+   "line": 11,
+   "name": "Intellighenzia Project",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-ec88a6f54f"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ic-012",
+   "line": 12,
+   "name": "Arena Boulder",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-be02773dfe"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ic-013",
+   "line": 13,
+   "name": "Block al Cubo",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-899c91ab2d"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ic-014",
+   "line": 14,
+   "name": "Plastic Rock",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-e1ac5f7194"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ic-015",
+   "line": 15,
+   "name": "Campfour Boulder",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-5d05f1578b"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ic-016",
+   "line": 16,
+   "name": "Heliks Kletterzentrum Bruneck",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-746b12b1fb"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ic-017",
+   "line": 17,
+   "name": "Vertikale Kletterzentrum Brixen",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-2ec5d8247d"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ic-018",
+   "line": 18,
+   "name": "Ravenna Gravity Fighters",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-bafede8b88"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ic-019",
+   "line": 19,
+   "name": "Vertical Forlì",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-3fe2835d69"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ic-020",
+   "line": 20,
+   "name": "Pareti Sport Center",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-2006dba61a"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ic-021",
+   "line": 21,
+   "name": "K2 Indoor",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-36564e0e13"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ic-022",
+   "line": 22,
+   "name": "K3 Palestra di Arrampicata",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-5c98a80031"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ic-023",
+   "line": 23,
+   "name": "The ForGe Climb",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-bf5c4d83ac"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ic-024",
+   "line": 24,
+   "name": "Crazy Center Firenze",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-0a54638b58"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "ic-025",
+   "line": 25,
+   "name": "Crazy Center Prato",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-a60b8c377f"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "ic-026",
+   "line": 26,
+   "name": "Rock Time Center",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-fbfbd893a9"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "ic-027",
+   "line": 27,
+   "name": "Mad Climbers",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-bc7f432563"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "ic-028",
+   "line": 28,
+   "name": "Deva Wall",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-187bb38f18"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "ic-029",
+   "line": 29,
+   "name": "Gioco Verticale",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-fee44747b4"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "ic-030",
+   "line": 30,
+   "name": "Orizzonti Verticali",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-1be54ff4f7"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "ic-031",
+   "line": 31,
+   "name": "Kro Climb",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-fcb05da568"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "ic-032",
+   "line": 32,
+   "name": "Orizzonte Verticale",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-3f02b1f8fe"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "ic-033",
+   "line": 33,
+   "name": "BlockBusters Mondovì",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-95c1950f90"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ic-034",
+   "line": 34,
+   "name": "Vertigo Climbing Village",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-d8f2c90dbb"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "ic-035",
+   "line": 35,
+   "name": "Sportler Climbing Center",
+   "class": "blocked",
+   "suggested": "reject closed",
+   "importer": {
+    "class": "new",
+    "id": "g-089d1c61c3"
+   },
+   "blockers": [
+    {
+     "code": "closed",
+     "detail": "status_claim is closed"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  }
+ ],
+ "reconcile_sha256": "fc9c4c172028ec452d66aa08c1209b53f3da4766042a0e3af488e57280f347df"
+}
