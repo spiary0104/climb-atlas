@@ -67,3 +67,21 @@ For scale only: Guangzhou has 43 Amap climbing listings vs 20 Bouldeer gyms (31 
 | Beijing | 78 | 11 | 67 | 55 |
 
 Priority for the next research sections (missing gyms x traveller relevance): Hangzhou, Guangzhou (continue), Beijing, Shanghai (pins first: PR #84), Chongqing, Shenzhen. RedNote research paused 2026-11-01 at a security check (owner to clear it).
+
+## Existing-gym audit 2026-11-02 (supersedes the older "issues" lists above for Hangzhou, Guangzhou, Beijing, Shanghai, Chongqing, Shenzhen)
+Full per-gym tables: `import/research/2026-11-02-cn-pins/verification.md`. Batches (not applied; dry-run PASSED with PARTIAL coverage):
+`import/batches/2026-11-02-cn-pins` (57 pin updates + 2 retirements) and `2026-11-02-cn-pins-2` (72 pin updates). PR #84 gyms were skipped.
+RedNote loads used this run: about 14 (no security check hit); Amap: no limit hit.
+
+Retired (closed, with evidence): seed-638 Rock Time Dawanglu (official closure notice, closed 2026-08-08), seed-751 Super Extreme SCUT (walls removed; two user notes, not on Amap, not in the brand's branch count).
+
+Manual checks (owner or a later pass):
+- Suspended on Amap (暂停营业), pin fixed in the batch but status unresolved: seed-729 Hangzhou (a new gym "攀岩梦工厂开元店" opened nearby 2026-09), seed-684 Beijing Zhongpan Alps. Suspended and not fixed: seed-668 Beijing Yaoyan Shahe (same compound as seed-667).
+- Same address, other brand on Amap (rebrand, closure or wrong brand): seed-657 Aopan Xihongmen (魔王攀岩), seed-680 Climbing Orangutan (岚山攀岩), seed-564 Shanghai High Five (酸爽攀岩), seed-581 Pake (无界攀岩).
+- Pin cannot be fixed with confidence: seed-723 Hangzhou Go Link (entrance and listing coordinate 400 m apart), seed-734, seed-735 Banana Grantral (transliteration match only), seed-640, 649, 681, 583, 601, 835, 842.
+- No Amap listing found (may be closed or just not in the capped searches): Hangzhou 725, 731, 733; Beijing 641, 643 (family play venue found at the address), 660, 662, 670, 675, 688; Shanghai 21 gyms; Chongqing 791, 795, 818, 834, 836, 837, 841; Shenzhen 17 gyms. See the tables.
+- Duplicates suspected: seed-499 and seed-510 (same address), seed-662/others sharing pins.
+- Children-only by name (adult access unknown; not retired, pins untouched): Shanghai 554, 586, 588; Chongqing 817, 821, 828, 831, 838, 839; Shenzhen 507, 515, 518, 519, 525, 529.
+- Not done: RedNote open/closed checks for gyms with a normal Amap listing (Amap "listed, not flagged closed" is weak evidence), and Amap searches per remaining brand for Shanghai/Shenzhen.
+
+New gyms: section `import/research/2026-11-02-cn-hangzhou` (reconciled, not staged): cn-hz-001 Luna Binjiang Yintai (pure bouldering per its own account; review), cn-hz-002 Banana+ Hangzhou Center (opened 2026-10-28; bouldering not stated, blocked). China new-gym batches stay on hold for the local-name schema (PR #88).

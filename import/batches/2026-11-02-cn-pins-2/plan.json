@@ -1,0 +1,1735 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-11-02-cn-pins-2",
+ "index": {
+  "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
+  "count": 3294,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-06-kr-seoul"
+ ],
+ "counts": {
+  "records": 72,
+  "new": 0,
+  "existing": 0,
+  "update": 72,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 48
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "3d4121d1d171ff064cdaf9e51909a462a24633821731c3dadd73bf1d99deae05",
+ "records": [
+  {
+   "line": 1,
+   "class": "update",
+   "id": "seed-1760",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 31.25065,
+     "after": 31.252161
+    },
+    {
+     "field": "lng",
+     "before": 121.4908,
+     "after": 121.492214
+    }
+   ],
+   "expect_h": "7c2887f2b8176867",
+   "update_reason": "Pin moved to the listing coordinate of the gym's own Amap listing (AOB攀岩馆), ~215 m from the old pin"
+  },
+  {
+   "line": 2,
+   "class": "update",
+   "id": "seed-1761",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 31.25234,
+     "after": 31.251342
+    },
+    {
+     "field": "lng",
+     "before": 121.48199,
+     "after": 121.478099
+    }
+   ],
+   "expect_h": "cc74b550a918f2ed",
+   "update_reason": "Pin moved to the entrance coordinate of the gym's own Amap listing (Benchmark攀岩馆(滨港商业中心店)), ~386 m from the old pin"
+  },
+  {
+   "line": 3,
+   "class": "update",
+   "id": "seed-1763",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 31.17554,
+     "after": 31.173781
+    },
+    {
+     "field": "lng",
+     "before": 121.44902,
+     "after": 121.448439
+    }
+   ],
+   "expect_h": "fcd35636a769a690",
+   "update_reason": "Pin moved to the entrance coordinate of the gym's own Amap listing (Stonehaven攀岩馆), ~203 m from the old pin"
+  },
+  {
+   "line": 4,
+   "class": "update",
+   "id": "seed-537",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 31.24,
+     "after": 31.243896
+    },
+    {
+     "field": "lng",
+     "before": 121.437,
+     "after": 121.436056
+    }
+   ],
+   "expect_h": "abbbc886c5483515",
+   "update_reason": "Pin moved to the listing coordinate of the gym's own Amap listing (尽峰攀岩(189弄购物中心店)), ~442 m from the old pin"
+  },
+  {
+   "line": 5,
+   "class": "update",
+   "id": "seed-541",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 31.1578,
+     "after": 31.160496
+    },
+    {
+     "field": "lng",
+     "before": 121.4575,
+     "after": 121.459815
+    }
+   ],
+   "expect_h": "c9265b97dbdf1a4f",
+   "update_reason": "Pin moved to the entrance coordinate of the gym's own Amap listing (岩时攀岩(Gate M西岸梦中心)), ~372 m from the old pin"
+  },
+  {
+   "line": 6,
+   "class": "update",
+   "id": "seed-543",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 30.877,
+     "after": 30.893854
+    },
+    {
+     "field": "lng",
+     "before": 121.9002,
+     "after": 121.810216
+    }
+   ],
+   "expect_h": "b8e07f0a28d8b3c5",
+   "update_reason": "Pin moved to the listing coordinate of the gym's own Amap listing (岩舞空间攀岩(临港万达店)), ~8789 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 8789 m"
+    }
+   ]
+  },
+  {
+   "line": 7,
+   "class": "update",
+   "id": "seed-544",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 31.1473,
+     "after": 31.159603
+    },
+    {
+     "field": "lng",
+     "before": 121.4123,
+     "after": 121.427139
+    }
+   ],
+   "expect_h": "1b9cdd30a3ce2943",
+   "update_reason": "Pin moved to the listing coordinate of the gym's own Amap listing (DOME 攀岩营地(徐汇万科广场)), ~1966 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1966 m"
+    }
+   ]
+  },
+  {
+   "line": 8,
+   "class": "update",
+   "id": "seed-545",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 31.1969,
+     "after": 31.195063
+    },
+    {
+     "field": "lng",
+     "before": 121.4363,
+     "after": 121.434144
+    }
+   ],
+   "expect_h": "620105db3d00c3fe",
+   "update_reason": "Pin moved to the entrance coordinate of the gym's own Amap listing (GOAT攀岩俱乐部(徐家汇TPY中心店)), ~289 m from the old pin"
+  },
+  {
+   "line": 9,
+   "class": "update",
+   "id": "seed-546",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 31.1578,
+     "after": 31.1603
+    },
+    {
+     "field": "lng",
+     "before": 121.4575,
+     "after": 121.458346
+    }
+   ],
+   "expect_h": "73e9407f557084f3",
+   "update_reason": "Pin moved to the entrance coordinate of the gym's own Amap listing (乐动力尽峰攀岩西岸馆), ~289 m from the old pin"
+  },
+  {
+   "line": 10,
+   "class": "update",
+   "id": "seed-548",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 31.2674,
+     "after": 31.272989
+    },
+    {
+     "field": "lng",
+     "before": 121.4765,
+     "after": 121.475806
+    }
+   ],
+   "expect_h": "00f1e1757ac42d3a",
+   "update_reason": "Pin moved to the listing coordinate of the gym's own Amap listing (小树攀岩馆SHU Climbing GYM(虹口馆)), ~625 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 625 m"
+    }
+   ]
+  },
+  {
+   "line": 11,
+   "class": "update",
+   "id": "seed-549",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 31.289,
+     "after": 31.272547
+    },
+    {
+     "field": "lng",
+     "before": 121.3546,
+     "after": 121.370225
+    }
+   ],
+   "expect_h": "eceef5cda6949f2c",
+   "update_reason": "Pin moved to the listing coordinate of the gym's own Amap listing (GOAT攀岩俱乐部(普陀TopOne店)), ~2356 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 2356 m"
+    }
+   ]
+  },
+  {
+   "line": 12,
+   "class": "update",
+   "id": "seed-550",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 31.2682,
+     "after": 31.245804
+    },
+    {
+     "field": "lng",
+     "before": 121.6071,
+     "after": 121.605254
+    }
+   ],
+   "expect_h": "6da5fa645402800e",
+   "update_reason": "Pin moved to the listing coordinate of the gym's own Amap listing (优石攀岩UROCK CLIMBING), ~2496 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 2496 m"
+    }
+   ]
+  },
+  {
+   "line": 13,
+   "class": "update",
+   "id": "seed-551",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 31.1259,
+     "after": 31.123674
+    },
+    {
+     "field": "lng",
+     "before": 121.4156,
+     "after": 121.409639
+    }
+   ],
+   "expect_h": "8fdcdd551a90dcb5",
+   "update_reason": "Pin moved to the entrance coordinate of the gym's own Amap listing (尽峰攀岩), ~619 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 619 m"
+    }
+   ]
+  },
+  {
+   "line": 14,
+   "class": "update",
+   "id": "seed-555",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 31.2286,
+     "after": 31.218534
+    },
+    {
+     "field": "lng",
+     "before": 121.4232,
+     "after": 121.40916
+    }
+   ],
+   "expect_h": "840b70f7e15f2b1a",
+   "update_reason": "Pin moved to the listing coordinate of the gym's own Amap listing (LAPUT攀岩(长宁来福士)), ~1742 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1742 m"
+    }
+   ]
+  },
+  {
+   "line": 15,
+   "class": "update",
+   "id": "seed-562",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 31.1897,
+     "after": 31.215365
+    },
+    {
+     "field": "lng",
+     "before": 121.5201,
+     "after": 121.53042
+    }
+   ],
+   "expect_h": "fd6b3ca3c7a302e5",
+   "update_reason": "Pin moved to the entrance coordinate of the gym's own Amap listing (极壁风暴攀岩馆(浦东店)), ~3018 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 3018 m"
+    }
+   ]
+  },
+  {
+   "line": 16,
+   "class": "update",
+   "id": "seed-565",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 31.1834,
+     "after": 31.182095
+    },
+    {
+     "field": "lng",
+     "before": 121.453,
+     "after": 121.457075
+    }
+   ],
+   "expect_h": "cc7c84a91ba3c05c",
+   "update_reason": "Pin moved to the entrance coordinate of the gym's own Amap listing (STAR星岩攀岩俱乐部), ~414 m from the old pin"
+  },
+  {
+   "line": 17,
+   "class": "update",
+   "id": "seed-567",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 31.3473,
+     "after": 31.355503
+    },
+    {
+     "field": "lng",
+     "before": 121.2409,
+     "after": 121.257562
+    }
+   ],
+   "expect_h": "7e82e0114ca43ba7",
+   "update_reason": "Pin moved to the entrance coordinate of the gym's own Amap listing (尽峰攀岩(嘉定馆)), ~1826 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1826 m"
+    }
+   ]
+  },
+  {
+   "line": 18,
+   "class": "update",
+   "id": "seed-569",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 31.298,
+     "after": 31.301236
+    },
+    {
+     "field": "lng",
+     "before": 121.3203,
+     "after": 121.320842
+    }
+   ],
+   "expect_h": "7e53d2372a4e73b8",
+   "update_reason": "Pin moved to the listing coordinate of the gym's own Amap listing (5+攀岩南翔黑钻馆(上海南翔太茂商业广场店)), ~363 m from the old pin"
+  },
+  {
+   "line": 19,
+   "class": "update",
+   "id": "seed-579",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 31.2877,
+     "after": 31.289691
+    },
+    {
+     "field": "lng",
+     "before": 121.1588,
+     "after": 121.157191
+    }
+   ],
+   "expect_h": "e1fa4883bbabf14f",
+   "update_reason": "Pin moved to the listing coordinate of the gym's own Amap listing (啸岩攀岩(嘉亭荟店)), ~269 m from the old pin"
+  },
+  {
+   "line": 20,
+   "class": "update",
+   "id": "seed-585",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 31.1362,
+     "after": 31.146008
+    },
+    {
+     "field": "lng",
+     "before": 121.0774,
+     "after": 121.090468
+    }
+   ],
+   "expect_h": "43d447ffc7c8a1a5",
+   "update_reason": "Pin moved to the listing coordinate of the gym's own Amap listing (攀猩·攀岩拓展(上海青浦吾悦广场店)), ~1654 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1654 m"
+    }
+   ]
+  },
+  {
+   "line": 21,
+   "class": "update",
+   "id": "seed-589",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 31.128,
+     "after": 31.123817
+    },
+    {
+     "field": "lng",
+     "before": 121.5024,
+     "after": 121.493919
+    }
+   ],
+   "expect_h": "05a49443ee22bebf",
+   "update_reason": "Pin moved to the listing coordinate of the gym's own Amap listing (1778CLIMBING攀岩馆(三林印象汇店)), ~932 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 932 m"
+    }
+   ]
+  },
+  {
+   "line": 22,
+   "class": "update",
+   "id": "seed-591",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 31.2079,
+     "after": 31.205267
+    },
+    {
+     "field": "lng",
+     "before": 121.2806,
+     "after": 121.277056
+    }
+   ],
+   "expect_h": "ac4fd5d533cca201",
+   "update_reason": "Pin moved to the listing coordinate of the gym's own Amap listing (岩顶攀岩Rock Summit Climbing Gym(丰尚国际广场店)), ~446 m from the old pin"
+  },
+  {
+   "line": 23,
+   "class": "update",
+   "id": "seed-592",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 31.2428,
+     "after": 31.244825
+    },
+    {
+     "field": "lng",
+     "before": 121.555,
+     "after": 121.552338
+    }
+   ],
+   "expect_h": "cca0dbc93f72df6e",
+   "update_reason": "Pin moved to the entrance coordinate of the gym's own Amap listing (Vmore攀岩馆), ~339 m from the old pin"
+  },
+  {
+   "line": 24,
+   "class": "update",
+   "id": "seed-593",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 31.2564,
+     "after": 31.254153
+    },
+    {
+     "field": "lng",
+     "before": 121.4364,
+     "after": 121.437969
+    }
+   ],
+   "expect_h": "5054e01ff155a895",
+   "update_reason": "Pin moved to the listing coordinate of the gym's own Amap listing (Rock攀岩俱乐部), ~291 m from the old pin"
+  },
+  {
+   "line": 25,
+   "class": "update",
+   "id": "seed-597",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 31.3384,
+     "after": 31.344209
+    },
+    {
+     "field": "lng",
+     "before": 121.4342,
+     "after": 121.432391
+    }
+   ],
+   "expect_h": "60bdab1c54e1934a",
+   "update_reason": "Pin moved to the listing coordinate of the gym's own Amap listing (智慧湾南桥空间攀岩场), ~668 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 668 m"
+    }
+   ]
+  },
+  {
+   "line": 26,
+   "class": "update",
+   "id": "seed-598",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 30.7509,
+     "after": 30.787402
+    },
+    {
+     "field": "lng",
+     "before": 121.3383,
+     "after": 121.325851
+    }
+   ],
+   "expect_h": "dc48ec50f14f51dc",
+   "update_reason": "Pin moved to the entrance coordinate of the gym's own Amap listing (金山户外体育中心攀岩馆), ~4230 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 4230 m"
+    }
+   ]
+  },
+  {
+   "line": 27,
+   "class": "update",
+   "id": "seed-600",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 31.152,
+     "after": 31.134523
+    },
+    {
+     "field": "lng",
+     "before": 121.1195,
+     "after": 121.076932
+    }
+   ],
+   "expect_h": "92fd69d880a49001",
+   "update_reason": "Pin moved to the listing coordinate of the gym's own Amap listing (J.Climbing攀岩运动馆), ~4493 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 4493 m"
+    }
+   ]
+  },
+  {
+   "line": 28,
+   "class": "update",
+   "id": "seed-602",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 31.2079,
+     "after": 31.207382
+    },
+    {
+     "field": "lng",
+     "before": 121.5556,
+     "after": 121.557497
+    }
+   ],
+   "expect_h": "694e7452eda7650c",
+   "update_reason": "Pin moved to the entrance coordinate of the gym's own Amap listing (DYNOPARK攀岩馆), ~189 m from the old pin"
+  },
+  {
+   "line": 29,
+   "class": "update",
+   "id": "seed-603",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 31.152,
+     "after": 31.155699
+    },
+    {
+     "field": "lng",
+     "before": 121.1195,
+     "after": 121.148462
+    }
+   ],
+   "expect_h": "daa30f10eb0e2ff8",
+   "update_reason": "Pin moved to the listing coordinate of the gym's own Amap listing (J.Climbing攀岩青立方馆), ~2787 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 2787 m"
+    }
+   ]
+  },
+  {
+   "line": 30,
+   "class": "update",
+   "id": "seed-604",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 30.7448,
+     "after": 30.770405
+    },
+    {
+     "field": "lng",
+     "before": 121.3373,
+     "after": 121.355347
+    }
+   ],
+   "expect_h": "883629b2d21442b2",
+   "update_reason": "Pin moved to the entrance coordinate of the gym's own Amap listing (琪朋户外攀岩馆), ~3329 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 3329 m"
+    }
+   ]
+  },
+  {
+   "line": 31,
+   "class": "update",
+   "id": "seed-535",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 31.223,
+     "after": 31.211046
+    },
+    {
+     "field": "lng",
+     "before": 121.402,
+     "after": 121.397311
+    }
+   ],
+   "expect_h": "d536f4e5618e35e4",
+   "update_reason": "Pin moved to the listing coordinate of the gym's own Amap listing (香蕉攀岩(金虹桥店)), ~1402 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1402 m"
+    }
+   ]
+  },
+  {
+   "line": 32,
+   "class": "update",
+   "id": "seed-571",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 31.1987,
+     "after": 31.18572
+    },
+    {
+     "field": "lng",
+     "before": 121.4464,
+     "after": 121.453172
+    }
+   ],
+   "expect_h": "cd027abd7784b622",
+   "update_reason": "Pin moved to the listing coordinate of the gym's own Amap listing (GYM攀岩馆(绿地缤纷城店)), ~1581 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1581 m"
+    }
+   ]
+  },
+  {
+   "line": 33,
+   "class": "update",
+   "id": "seed-582",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 31.3408,
+     "after": 31.402271
+    },
+    {
+     "field": "lng",
+     "before": 121.443,
+     "after": 121.480209
+    }
+   ],
+   "expect_h": "8780bc3edb5e31a1",
+   "update_reason": "Pin moved to the listing coordinate of the gym's own Amap listing (攀猩攀岩馆(宝乐汇印象城店)), ~7694 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 7694 m"
+    }
+   ]
+  },
+  {
+   "line": 34,
+   "class": "update",
+   "id": "seed-793",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 29.695,
+     "after": 29.620416
+    },
+    {
+     "field": "lng",
+     "before": 106.535,
+     "after": 106.498831
+    }
+   ],
+   "expect_h": "6466d33c7ec4308b",
+   "update_reason": "Pin moved to the entrance coordinate of the gym's own Amap listing (尖叫攀岩(光电园店)), ~9000 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 9000 m"
+    }
+   ]
+  },
+  {
+   "line": 35,
+   "class": "update",
+   "id": "seed-794",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 29.543,
+     "after": 29.538897
+    },
+    {
+     "field": "lng",
+     "before": 106.578,
+     "after": 106.581897
+    }
+   ],
+   "expect_h": "1ebde69a9bbe91a5",
+   "update_reason": "Pin moved to the entrance coordinate of the gym's own Amap listing (重庆黑公羊攀岩馆Black Ram Climbing), ~592 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 592 m"
+    }
+   ]
+  },
+  {
+   "line": 36,
+   "class": "update",
+   "id": "seed-815",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 29.7187,
+     "after": 29.719009
+    },
+    {
+     "field": "lng",
+     "before": 106.6275,
+     "after": 106.629735
+    }
+   ],
+   "expect_h": "f03a4ab46d04bd14",
+   "update_reason": "Pin moved to the listing coordinate of the gym's own Amap listing (极道攀岩(金港国际购物中心店)), ~219 m from the old pin"
+  },
+  {
+   "line": 37,
+   "class": "update",
+   "id": "seed-819",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 29.5325,
+     "after": 29.536699
+    },
+    {
+     "field": "lng",
+     "before": 106.4778,
+     "after": 106.487061
+    }
+   ],
+   "expect_h": "991861df5c4038bb",
+   "update_reason": "Pin moved to the entrance coordinate of the gym's own Amap listing (山石攀岩馆), ~1010 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1010 m"
+    }
+   ]
+  },
+  {
+   "line": 38,
+   "class": "update",
+   "id": "seed-820",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 29.6568,
+     "after": 29.648813
+    },
+    {
+     "field": "lng",
+     "before": 106.5498,
+     "after": 106.562955
+    }
+   ],
+   "expect_h": "847eac8d14e49aaf",
+   "update_reason": "Pin moved to the entrance coordinate of the gym's own Amap listing (雨岩攀岩(汽博中心店)), ~1551 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1551 m"
+    }
+   ]
+  },
+  {
+   "line": 39,
+   "class": "update",
+   "id": "seed-825",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 29.6949,
+     "after": 29.598194
+    },
+    {
+     "field": "lng",
+     "before": 106.6182,
+     "after": 106.54407
+    }
+   ],
+   "expect_h": "63e23f9fe5ab58fc",
+   "update_reason": "Pin moved to the entrance coordinate of the gym's own Amap listing (酷基攀岩(天江里店)), ~12921 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 12921 m"
+    }
+   ]
+  },
+  {
+   "line": 40,
+   "class": "update",
+   "id": "seed-822",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 29.1522,
+     "after": 29.164774
+    },
+    {
+     "field": "lng",
+     "before": 107.1828,
+     "after": 107.081445
+    }
+   ],
+   "expect_h": "b9bd0074dd62947d",
+   "update_reason": "Pin moved to the listing coordinate of the gym's own Amap listing (萌客攀岩运动馆), ~9941 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 9941 m"
+    }
+   ]
+  },
+  {
+   "line": 41,
+   "class": "update",
+   "id": "seed-824",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 29.5029,
+     "after": 29.550707
+    },
+    {
+     "field": "lng",
+     "before": 106.6425,
+     "after": 106.586303
+    }
+   ],
+   "expect_h": "5271ee6ddf0174ec",
+   "update_reason": "Pin moved to the entrance coordinate of the gym's own Amap listing (极道攀岩运动馆(重庆东原1891时光道)), ~7604 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 7604 m"
+    }
+   ]
+  },
+  {
+   "line": 42,
+   "class": "update",
+   "id": "seed-826",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 29.5419,
+     "after": 29.53667
+    },
+    {
+     "field": "lng",
+     "before": 106.5066,
+     "after": 106.50833
+    }
+   ],
+   "expect_h": "ea8e0937d12381b6",
+   "update_reason": "Pin moved to the entrance coordinate of the gym's own Amap listing (尖叫趣攀攀岩馆), ~605 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 605 m"
+    }
+   ]
+  },
+  {
+   "line": 43,
+   "class": "update",
+   "id": "seed-827",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 29.5436,
+     "after": 29.556701
+    },
+    {
+     "field": "lng",
+     "before": 106.4535,
+     "after": 106.45586
+    }
+   ],
+   "expect_h": "2b7f4419e21ac609",
+   "update_reason": "Pin moved to the listing coordinate of the gym's own Amap listing (山石攀岩(龙湖重庆金沙天街A馆店)), ~1475 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1475 m"
+    }
+   ]
+  },
+  {
+   "line": 44,
+   "class": "update",
+   "id": "seed-829",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 29.4855,
+     "after": 29.483292
+    },
+    {
+     "field": "lng",
+     "before": 106.4811,
+     "after": 106.481371
+    }
+   ],
+   "expect_h": "eb45814e4803b48b",
+   "update_reason": "Pin moved to the entrance coordinate of the gym's own Amap listing (心象攀岩(万象汇A馆店)), ~247 m from the old pin"
+  },
+  {
+   "line": 45,
+   "class": "update",
+   "id": "seed-830",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 29.5997,
+     "after": 29.61405
+    },
+    {
+     "field": "lng",
+     "before": 106.374,
+     "after": 106.304173
+    }
+   ],
+   "expect_h": "329008effcbec2b9",
+   "update_reason": "Pin moved to the entrance coordinate of the gym's own Amap listing (TNT攀岩馆(富力坊店)), ~6937 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 6937 m"
+    }
+   ]
+  },
+  {
+   "line": 46,
+   "class": "update",
+   "id": "seed-833",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 29.61,
+     "after": 29.606191
+    },
+    {
+     "field": "lng",
+     "before": 106.3051,
+     "after": 106.298128
+    }
+   ],
+   "expect_h": "854bf2bc4feafce9",
+   "update_reason": "Pin moved to the listing coordinate of the gym's own Amap listing (重庆大学城熙街攀岩场), ~796 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 796 m"
+    }
+   ]
+  },
+  {
+   "line": 47,
+   "class": "update",
+   "id": "seed-840",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 29.56,
+     "after": 29.632706
+    },
+    {
+     "field": "lng",
+     "before": 106.5601,
+     "after": 106.559776
+    }
+   ],
+   "expect_h": "77b12d0aee7c69d0",
+   "update_reason": "Pin moved to the listing coordinate of the gym's own Amap listing (Hi攀攀岩(重庆MSG汇星店)), ~8085 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 8085 m"
+    }
+   ]
+  },
+  {
+   "line": 48,
+   "class": "update",
+   "id": "seed-843",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 29.554,
+     "after": 29.635581
+    },
+    {
+     "field": "lng",
+     "before": 106.5401,
+     "after": 106.569012
+    }
+   ],
+   "expect_h": "c575ee92f26d1634",
+   "update_reason": "Pin moved to the entrance coordinate of the gym's own Amap listing (山石攀岩(C33店)), ~9492 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 9492 m"
+    }
+   ]
+  },
+  {
+   "line": 49,
+   "class": "update",
+   "id": "seed-844",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 29.575,
+     "after": 29.600441
+    },
+    {
+     "field": "lng",
+     "before": 106.5551,
+     "after": 106.48869
+    }
+   ],
+   "expect_h": "87abffb6e439d9d6",
+   "update_reason": "Pin moved to the listing coordinate of the gym's own Amap listing (WoodClimbing我的攀岩), ~7017 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 7017 m"
+    }
+   ]
+  },
+  {
+   "line": 50,
+   "class": "update",
+   "id": "seed-845",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 29.5615,
+     "after": 29.561593
+    },
+    {
+     "field": "lng",
+     "before": 106.5471,
+     "after": 106.523018
+    }
+   ],
+   "expect_h": "d4bc8035c7d005d1",
+   "update_reason": "Pin moved to the entrance coordinate of the gym's own Amap listing (大石头攀岩(Boulder)), ~2329 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 2329 m"
+    }
+   ]
+  },
+  {
+   "line": 51,
+   "class": "update",
+   "id": "seed-792",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 29.755,
+     "after": 29.686466
+    },
+    {
+     "field": "lng",
+     "before": 106.63,
+     "after": 106.829482
+    }
+   ],
+   "expect_h": "0bbc157853d8c789",
+   "update_reason": "Pin moved to the entrance coordinate of the gym's own Amap listing (际华园极限运动中心), ~20716 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 20716 m"
+    }
+   ]
+  },
+  {
+   "line": 52,
+   "class": "update",
+   "id": "seed-486",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 22.533,
+     "after": 22.546271
+    },
+    {
+     "field": "lng",
+     "before": 113.931,
+     "after": 113.982653
+    }
+   ],
+   "expect_h": "142c8914825d131e",
+   "update_reason": "Pin moved to the listing coordinate of the gym's own Amap listing (香蕉攀岩(华侨城欢乐时光店)), ~5506 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 5506 m"
+    }
+   ]
+  },
+  {
+   "line": 53,
+   "class": "update",
+   "id": "seed-487",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 22.548,
+     "after": 22.571848
+    },
+    {
+     "field": "lng",
+     "before": 114.057,
+     "after": 114.055605
+    }
+   ],
+   "expect_h": "321c28d210dea5ea",
+   "update_reason": "Pin moved to the listing coordinate of the gym's own Amap listing (香蕉攀岩(上梅林卓悦汇店)), ~2656 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 2656 m"
+    }
+   ]
+  },
+  {
+   "line": 54,
+   "class": "update",
+   "id": "seed-489",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 22.515,
+     "after": 22.518459
+    },
+    {
+     "field": "lng",
+     "before": 113.945,
+     "after": 113.935409
+    }
+   ],
+   "expect_h": "d7fb70303250b0b5",
+   "update_reason": "Pin moved to the listing coordinate of the gym's own Amap listing (香蕉攀岩(深圳湾后海汇店)), ~1058 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1058 m"
+    }
+   ]
+  },
+  {
+   "line": 55,
+   "class": "update",
+   "id": "seed-491",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 22.535,
+     "after": 22.537852
+    },
+    {
+     "field": "lng",
+     "before": 114.061,
+     "after": 114.054339
+    }
+   ],
+   "expect_h": "49ea4c9707834b48",
+   "update_reason": "Pin moved to the listing coordinate of the gym's own Amap listing (香蕉攀岩(领展中心城)), ~754 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 754 m"
+    }
+   ]
+  },
+  {
+   "line": 56,
+   "class": "update",
+   "id": "seed-493",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 22.555,
+     "after": 22.559232
+    },
+    {
+     "field": "lng",
+     "before": 113.883,
+     "after": 113.885204
+    }
+   ],
+   "expect_h": "cf1872457fbf0c11",
+   "update_reason": "Pin moved to the listing coordinate of the gym's own Amap listing (香蕉攀岩Banana Climbing Gym(宝安中心店)), ~522 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 522 m"
+    }
+   ]
+  },
+  {
+   "line": 57,
+   "class": "update",
+   "id": "seed-495",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 22.5271214,
+     "after": 22.527457
+    },
+    {
+     "field": "lng",
+     "before": 113.9190166,
+     "after": 113.921154
+    }
+   ],
+   "expect_h": "479d20554ab0f869",
+   "update_reason": "Pin moved to the entrance coordinate of the gym's own Amap listing (nerdcave攀岩馆(向南瑞峰商业广场店)), ~223 m from the old pin"
+  },
+  {
+   "line": 58,
+   "class": "update",
+   "id": "seed-497",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 22.5427932,
+     "after": 22.543475
+    },
+    {
+     "field": "lng",
+     "before": 114.0628443,
+     "after": 114.059039
+    }
+   ],
+   "expect_h": "c89e8e7512cca44f",
+   "update_reason": "Pin moved to the entrance coordinate of the gym's own Amap listing (闪电攀岩Lightning Climbing GYM), ~398 m from the old pin"
+  },
+  {
+   "line": 59,
+   "class": "update",
+   "id": "seed-514",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 22.5427932,
+     "after": 22.542227
+    },
+    {
+     "field": "lng",
+     "before": 114.0628443,
+     "after": 114.064607
+    }
+   ],
+   "expect_h": "a8bbe200e7394617",
+   "update_reason": "Pin moved to the entrance coordinate of the gym's own Amap listing (呢度有家攀岩馆), ~192 m from the old pin"
+  },
+  {
+   "line": 60,
+   "class": "update",
+   "id": "seed-522",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 22.6900903,
+     "after": 22.720508
+    },
+    {
+     "field": "lng",
+     "before": 114.2094974,
+     "after": 114.243243
+    }
+   ],
+   "expect_h": "db1b8d1b3d4374a7",
+   "update_reason": "Pin moved to the listing coordinate of the gym's own Amap listing (一就攀岩馆(红立方青少年宫店)), ~4840 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 4840 m"
+    }
+   ]
+  },
+  {
+   "line": 61,
+   "class": "update",
+   "id": "seed-510",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 22.6900903,
+     "after": 22.695604
+    },
+    {
+     "field": "lng",
+     "before": 114.2094974,
+     "after": 114.210847
+    }
+   ],
+   "expect_h": "c2645827cfc2f597",
+   "update_reason": "Pin moved to the entrance coordinate of the gym's own Amap listing (征岩攀岩馆(大运店)), ~629 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 629 m"
+    }
+   ]
+  },
+  {
+   "line": 62,
+   "class": "update",
+   "id": "seed-502",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 22.7662899,
+     "after": 22.751183
+    },
+    {
+     "field": "lng",
+     "before": 113.942646,
+     "after": 113.942299
+    }
+   ],
+   "expect_h": "ec1d04b273084e7b",
+   "update_reason": "Pin moved to the entrance coordinate of the gym's own Amap listing (光明区群众体育中心攀岩馆), ~1680 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1680 m"
+    }
+   ]
+  },
+  {
+   "line": 63,
+   "class": "update",
+   "id": "seed-526",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 22.5550812,
+     "after": 22.558256
+    },
+    {
+     "field": "lng",
+     "before": 114.1462979,
+     "after": 114.145197
+    }
+   ],
+   "expect_h": "b01824a550137add",
+   "update_reason": "Pin moved to the entrance coordinate of the gym's own Amap listing (蓝天攀岩(罗湖政务中心店)), ~371 m from the old pin"
+  },
+  {
+   "line": 64,
+   "class": "update",
+   "id": "seed-513",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 22.5078509,
+     "after": 22.504052
+    },
+    {
+     "field": "lng",
+     "before": 113.9365227,
+     "after": 113.935211
+    }
+   ],
+   "expect_h": "940e00054d045eb8",
+   "update_reason": "Pin moved to the entrance coordinate of the gym's own Amap listing (DynoClimbing攀岩馆), ~443 m from the old pin"
+  },
+  {
+   "line": 65,
+   "class": "update",
+   "id": "seed-516",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 22.4910127,
+     "after": 22.503954
+    },
+    {
+     "field": "lng",
+     "before": 113.9224821,
+     "after": 113.918547
+    }
+   ],
+   "expect_h": "508ca581f47347ae",
+   "update_reason": "Pin moved to the entrance coordinate of the gym's own Amap listing (博昇攀岩(蛇口店)), ~1495 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1495 m"
+    }
+   ]
+  },
+  {
+   "line": 66,
+   "class": "update",
+   "id": "seed-517",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 22.7230369,
+     "after": 22.721653
+    },
+    {
+     "field": "lng",
+     "before": 114.2426561,
+     "after": 114.232274
+    }
+   ],
+   "expect_h": "8375df67fe7b0312",
+   "update_reason": "Pin moved to the listing coordinate of the gym's own Amap listing (形动力跑酷·攀岩馆(龙岗金基吉祥广场店)), ~1076 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1076 m"
+    }
+   ]
+  },
+  {
+   "line": 67,
+   "class": "update",
+   "id": "seed-527",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 22.711323,
+     "after": 22.719768
+    },
+    {
+     "field": "lng",
+     "before": 114.2381952,
+     "after": 114.246031
+    }
+   ],
+   "expect_h": "29afdf5901c198a5",
+   "update_reason": "Pin moved to the listing coordinate of the gym's own Amap listing (岩舞空间攀岩), ~1236 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1236 m"
+    }
+   ]
+  },
+  {
+   "line": 68,
+   "class": "update",
+   "id": "seed-521",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 22.6790011,
+     "after": 22.681105
+    },
+    {
+     "field": "lng",
+     "before": 113.9893016,
+     "after": 113.990241
+    }
+   ],
+   "expect_h": "aeeaa48a079ac925",
+   "update_reason": "Pin moved to the entrance coordinate of the gym's own Amap listing (Rock 0755跃壁攀岩户外拓展馆), ~253 m from the old pin"
+  },
+  {
+   "line": 69,
+   "class": "update",
+   "id": "seed-523",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 22.6948818,
+     "after": 22.678161
+    },
+    {
+     "field": "lng",
+     "before": 114.1195271,
+     "after": 114.125992
+    }
+   ],
+   "expect_h": "ad0a82a13cd61d7d",
+   "update_reason": "Pin moved to the entrance coordinate of the gym's own Amap listing (星光攀岩(万达广场店)), ~1974 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1974 m"
+    }
+   ]
+  },
+  {
+   "line": 70,
+   "class": "update",
+   "id": "seed-528",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 22.5576049,
+     "after": 22.560327
+    },
+    {
+     "field": "lng",
+     "before": 114.135889,
+     "after": 114.135513
+    }
+   ],
+   "expect_h": "4d1f3a9d7ed7a1d9",
+   "update_reason": "Pin moved to the listing coordinate of the gym's own Amap listing (阿叻综合攀岩馆Allez Climbing Gym(动漫大厦店)), ~305 m from the old pin"
+  },
+  {
+   "line": 71,
+   "class": "update",
+   "id": "seed-532",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 22.5377498,
+     "after": 22.526728
+    },
+    {
+     "field": "lng",
+     "before": 113.8932599,
+     "after": 113.893153
+    }
+   ],
+   "expect_h": "ccc90daafa80b1b1",
+   "update_reason": "Pin moved to the listing coordinate of the gym's own Amap listing (征岩攀岩馆(桂湾店)), ~1226 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 1226 m"
+    }
+   ]
+  },
+  {
+   "line": 72,
+   "class": "update",
+   "id": "seed-498",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 22.5095353,
+     "after": 22.508413
+    },
+    {
+     "field": "lng",
+     "before": 114.0443414,
+     "after": 114.048127
+    }
+   ],
+   "expect_h": "04263dbdeb30976e",
+   "update_reason": "Pin moved to the listing coordinate of the gym's own Amap listing (XONE潮玩运动中心(福田店)), ~408 m from the old pin"
+  }
+ ]
+}

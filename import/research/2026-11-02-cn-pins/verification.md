@@ -2,7 +2,7 @@
 Sources: Amap search + listing detail (`/place/<POI id>`), read in the owner's signed-in tab 2026-10-31/11-01 (detail pages read twice, identical;
 GCJ-02 -> WGS-84; entrance coordinate where Amap has one, else the listing coordinate); RedNote read-only 2026-11-01; Bouldeer live data
 (fetchLive, 2026-11-01). Matching is by brand/name AND address (street and number or mall), never by distance alone.
-Distances: live pin vs the coordinate used. Batch: `import/batches/2026-11-02-cn-pins` (location updates only where the pin is more than 150 m off and the match is certain).
+Distances: live pin vs the coordinate used. Batches: `import/batches/2026-11-02-cn-pins` (Hangzhou, Guangzhou, Beijing: 57 pin updates + 2 retirements) and `import/batches/2026-11-02-cn-pins-2` (Shanghai, Chongqing, Shenzhen: 72 pin updates); the importer allows 100 records per batch (location updates only where the pin is more than 150 m off and the match is certain).
 "Amap: listed" = a current listing not flagged closed (weak evidence of being open; no official RedNote check unless stated).
 
 ## Hangzhou (21 gyms; none was in PR #84)
@@ -108,3 +108,166 @@ Amap listings not matching an existing gym (new-gym candidates): see section `im
 | seed-691 | Demon King Zhonghe Rd | Amap: listed (魔王攀岩(富丰桥) B0LB5H2AGX, 中核路11号(栋能魔王运动空间内) = same) | 363 m (entrance) | pin update |
 
 Summary: 44 audited; 29 pin updates (incl. seed-684, whose status stays a manual check); 1 ok (682); 1 retired (638, closed); 13 manual (640, 641, 643, 649, 657, 660, 662, 668, 670, 675, 680, 681, 688).
+
+## Shanghai (78 gyms; 17 skipped because PR #84 already fixed them; 61 audited)
+Amap here comes from the gathered search results plus 6 extra brand searches; many Shanghai gyms are not in those results and stay manual. "hold" = children-only venue by name, pin untouched.
+| id | gym | status (evidence) | pin vs Amap | action |
+|---|---|---|---|---|
+| seed-535 | Banana Climbing (Jinhongqiao) | Amap: listed (香蕉攀岩(金虹桥店) B0MASSG447, 长宁区茅台路179号2层L222-L228号) | 1402 m (listing) | pin update |
+| seed-537 | Jinfeng Climbing 189 | Amap: listed (尽峰攀岩(189弄购物中心店) B0JKRBS8FJ, 普陀区长寿路街道长寿路189号189弄购物中心1幢L5层L501) | 442 m (listing) | pin update |
+| seed-541 | YS Climbing (Gate M West Bund Dream Center) | Amap: listed (岩时攀岩(Gate M西岸梦中心) B0K1GHR662, 徐汇区龙华街道龙腾大道2266号Gate M西岸梦中心12号楼201单元) | 372 m (entrance) | pin update |
+| seed-543 | Yanwu Kongjian (Lingang Wanda) | Amap: listed (岩舞空间攀岩(临港万达店) B0KGY7ALDE, 浦东新区临港万达广场1层) | 8789 m (listing) | pin update |
+| seed-544 | DOME Climbing Camp (Xuhui Vanke Plaza) | Amap: listed (DOME 攀岩营地(徐汇万科广场) B0KUG9I2C1, 徐汇区沪闵路9191号(上海南站地铁站8号口步行420米)徐汇万科广场L2层(12号门扶梯附近)) | 1966 m (listing) | pin update |
+| seed-545 | GOAT Climbing Club (Xujiahui TPY Center) | Amap: listed (GOAT攀岩俱乐部(徐家汇TPY中心店) B0LUL7AXNI, 徐汇区肇嘉浜路1117号TPY中心八楼) | 289 m (entrance) | pin update |
+| seed-546 | Ledongli Jinfeng Climbing (West Bund) | Amap: listed (乐动力尽峰攀岩西岸馆 B0LGNURLIS, 徐汇区龙腾大道众腾大厦南侧约50米(自驾请导航到众腾大厦地下车库)) | 289 m (entrance) | pin update |
+| seed-547 | Panzhuxia Climbing (Jiangqiao Wanda) | no matching Amap listing found in the gathered results (searches are capped at 60 per keyword); not confirmed or refuted | - | MANUAL |
+| seed-548 | SHU Climbing Gym (Hongkou Stadium) | Amap: listed (小树攀岩馆SHU Climbing GYM(虹口馆) B0H2FOLEDC, 虹口区东江湾路444号虹口足球场4楼21号看台) | 625 m (listing) | pin update |
+| seed-549 | GOAT Climbing Club (Putuo TopOne) | Amap: listed (GOAT攀岩俱乐部(普陀TopOne店) B0KANH30UR, 普陀区真南路1199弄19号桃浦湾TopOne地下一层商业区B1025) | 2356 m (listing) | pin update |
+| seed-550 | UROCK Climbing | Amap: listed (优石攀岩UROCK CLIMBING B0IRUM2GRR, 浦东新区金湘路1000号优石攀岩馆) | 2496 m (listing) | pin update |
+| seed-551 | Jinfeng Climbing (Meilong) | Amap: listed (尽峰攀岩 B0FFKHAC4R, 闵行区梅陇镇罗锦路218号游悉谷文体产业园5号楼) | 619 m (entrance) | pin update |
+| seed-553 | TBW Extreme Sports Center (Parkour & Bouldering) | no matching Amap listing found in the gathered results (searches are capped at 60 per keyword); not confirmed or refuted | - | MANUAL |
+| seed-554 | Panxing Kids Climbing (Baoshan Riyueguang) | children's gym: Amap 攀猩儿童攀岩馆(宝山日月光店) B0K3U6NTPL, 沪太路1933号日月光中心宝山店L1; adult access unknown | - | on hold (children's venues) |
+| seed-555 | LAPUTA Climbing | Amap: listed (LAPUT攀岩(长宁来福士) B0LBNRNTU4, 长宁区长宁路1193号来福士广场西区一楼中庭) | 1742 m (listing) | pin update |
+| seed-557 | Ribbon Climbing / Yeyan Climbing (Wujiaochang) | Amap: listed (共绘攀岩馆 B0MR1CDWIU, 杨浦区国顺东路800号西楼212A室); Amap name 共绘攀岩馆, same address as Bouldeer's Ribbon/Yeyan (rename?) | 45 m (listing), ok | none |
+| seed-558 | DOME Climber's Camp (Dingxi Rd) | Amap: listed (DOME Climber's Camp(定西路店) B0G064LKMH, 长宁区定西路759号上海映巷创意工场4楼4B) | 78 m (entrance), ok | none |
+| seed-559 | Panxing Climbing (Nanqiao Bailian) | no matching Amap listing found in the gathered results (searches are capped at 60 per keyword); not confirmed or refuted | - | MANUAL |
+| seed-560 | Panzhuxia Climbing (Kangqiao New Field 360) | no matching Amap listing found in the gathered results (searches are capped at 60 per keyword); not confirmed or refuted | - | MANUAL |
+| seed-562 | Jibi Storm Climbing (Pudong) | Amap: listed (极壁风暴攀岩馆(浦东店) B0KUAZDQ8K, 浦东新区杨高南路729号1幢101室) | 3018 m (entrance) | pin update |
+| seed-564 | High Five Climbing Center (Jing'an) | Amap: listed (酸爽攀岩 B0G27BDYVG, 静安区永和东路643号2幢L180室); brand differs: Amap lists 酸爽攀岩 at the identical address (永和东路643号2幢L180) while Bouldeer says High Five; rebrand or wrong brand | 804 m (entrance) | MANUAL |
+| seed-565 | STAR Climbing Club | Amap: listed (STAR星岩攀岩俱乐部 B0ID6AXTII, 徐汇区凯滨路38号尚湾里沉式广场地下一层A03-3室) | 414 m (entrance) | pin update |
+| seed-567 | Jinfeng Climbing (Jiading) | Amap: listed (尽峰攀岩(嘉定馆) B0HDJUVLEX, 嘉定区白银路288弄莘潮国际家居东门(外街1楼)) | 1826 m (entrance) | pin update |
+| seed-568 | Panxing Climbing (Zhonghuan Bailian) | no matching Amap listing found in the gathered results (searches are capped at 60 per keyword); not confirmed or refuted | - | MANUAL |
+| seed-569 | 5+ Climbing (Nanxiang Black Diamond Hall) | Amap: listed (5+攀岩南翔黑钻馆(上海南翔太茂商业广场店) B0J3LMAI5N, 嘉定区丰翔路3168号1幢三楼307B) | 363 m (listing) | pin update |
+| seed-570 | LE MONT Climbing Gym | Amap lists Le Mont Climbing Gym B0LGGU0N6Z at 西营南路555号2层217室 (Sanlin), a different address from Bouldeer (Changqing Rd 1200 Senghong Plaza); same venue not confirmed | about 2.6 km between the two points | MANUAL |
+| seed-571 | GYM Climbing (Greenland Bingfen City) | Amap: listed (GYM攀岩馆(绿地缤纷城店) B0J3TXH23Z, 徐汇区东安路562号绿地缤纷城东区绿地中心2期店B1层); Amap name GYM攀岩馆(绿地缤纷城店), 东安路52号绿地缤纷城 B1 = same mall | 1581 m (listing) | pin update |
+| seed-572 | Moyan Climbing (Huangpu Civic Fitness Center) | Amap: listed (魔岩攀岩馆(黄浦市民健身中心A楼店) B0FFIJUSKG, 黄浦区汉口路340号黄浦市民健身中心A楼3层(近山东中路)) | 115 m (listing), ok | none |
+| seed-575 | Jungle Berry Camp | no matching Amap listing found in the gathered results (searches are capped at 60 per keyword); not confirmed or refuted | - | MANUAL |
+| seed-577 | Beta Boulders (Jing'an) | no matching Amap listing found in the gathered results (searches are capped at 60 per keyword); not confirmed or refuted | - | MANUAL |
+| seed-578 | Glacier Sports Climbing (Wanduhui) | no matching Amap listing found in the gathered results (searches are capped at 60 per keyword); not confirmed or refuted | - | MANUAL |
+| seed-579 | Xiaoyan Climbing (Jiating Hui) | Amap: listed (啸岩攀岩(嘉亭荟店) B0KDDL9C4O, 嘉定区墨玉南路1055嘉亭荟城市生活广场F1层) | 269 m (listing) | pin update |
+| seed-580 | Panqing Sports (Jing'an) | no matching Amap listing found in the gathered results (searches are capped at 60 per keyword); not confirmed or refuted | - | MANUAL |
+| seed-581 | Pake Climbing (Changning Rd) | Amap: listed (无界攀岩INFINITE CLIMBING B0LU35A3ZU, 长宁区长宁路88号KiNG88商业广场-长宁八八中心F3层); same mall (长宁路88号 KiNG88 F3) but another brand (无界攀岩 INFINITE CLIMBING) than Bouldeer's Pake; rebrand? | 4680 m (entrance) | MANUAL |
+| seed-582 | Panxing Climbing (Baole Impression City) | Amap: listed (攀猩攀岩馆(宝乐汇印象城店) B0JU6AQ2TF, 宝山区宝乐汇印象城B1西侧); Amap name 攀猩攀岩馆(宝乐汇印象城店), B1 = same mall | 7694 m (listing) | pin update |
+| seed-583 | Dengtuo Climbing (Chunshen) | Amap: listed (登拓攀岩馆 B0MABMS7OL, 闵行区春申路1899号); match by brand and area only (Bouldeer address has no number); 4233 m away | 4233 m (listing) | MANUAL |
+| seed-584 | Kaiyuan Mediterranean Panxing Climbing | no matching Amap listing found in the gathered results (searches are capped at 60 per keyword); not confirmed or refuted | - | MANUAL |
+| seed-585 | Panxing Climbing Expansion (Qingpu Wuyue Plaza) | Amap: listed (攀猩·攀岩拓展(上海青浦吾悦广场店) B0JK0YJH26, 青浦区淀山湖大道218号吾悦广场上海青浦店BM层) | 1654 m (listing) | pin update |
+| seed-586 | Panxing Climbing (Xindahui Sanlin) | Amap: listed (攀猩儿童攀岩馆(新达汇·三林店) B0JDRRTDS8, 浦东新区永泰路1058弄1-26号B1层中庭); children's gym (Amap name 儿童攀岩馆), adult access unknown; pin not changed | 1724 m (listing) | on hold (children's venues) |
+| seed-587 | Red Gorilla Climbing | no matching Amap listing found in the gathered results (searches are capped at 60 per keyword); not confirmed or refuted | - | MANUAL |
+| seed-588 | Panxing Kids Climbing (Xinye Future Center) | children's gym by name (Panxing Kids); not looked up on Amap | - | on hold (children's venues) |
+| seed-589 | 1778 Climbing (Sanlin Impression Hui) | Amap: listed (1778CLIMBING攀岩馆(三林印象汇店) B0KDT9GIQ5, 浦东新区懿行路188号5层503-1) | 932 m (listing) | pin update |
+| seed-590 | HIGH5 Extreme Sports Center | no matching Amap listing found in the gathered results (searches are capped at 60 per keyword); not confirmed or refuted | - | MANUAL |
+| seed-591 | Rock Summit Climbing Gym (Fengshang International Plaza) | Amap: listed (岩顶攀岩Rock Summit Climbing Gym(丰尚国际广场店) B0JAVDRC65, 闵行区华漕镇运乐路569弄丰尚国际广场3号楼311号) | 446 m (listing) | pin update |
+| seed-592 | Vmore Climbing (Gushan Rd) | Amap: listed (Vmore攀岩馆 B0JR1URZ26, 浦东新区洋泾街道崮山路500号明悦大厦508室) | 339 m (entrance) | pin update |
+| seed-593 | Rock Climbing Club (Putuo) | Amap: listed (Rock攀岩俱乐部 B0HUAUAQJ5, 普陀区中潭路65号2F-205) | 291 m (listing) | pin update |
+| seed-594 | U+ Climbing (Hengsheng Wanli Plaza) | no matching Amap listing found in the gathered results (searches are capped at 60 per keyword); not confirmed or refuted | - | MANUAL |
+| seed-595 | Little Champion Climbing (Bubugao) | no matching Amap listing found in the gathered results (searches are capped at 60 per keyword); not confirmed or refuted | - | MANUAL |
+| seed-597 | Zhihui Bay Nanqiao Climbing Space | Amap: listed (智慧湾南桥空间攀岩场 B0J2XSN1HD, 宝山区共和新路5895号(呼兰路地铁站1号口步行210米)) | 668 m (listing) | pin update |
+| seed-598 | Jinshan Outdoor Sports Center Climbing Gym | Amap: listed (金山户外体育中心攀岩馆 B0JBBHY7JI, 金山区杭州湾大道4100号4扶梯旁) | 4230 m (entrance) | pin update |
+| seed-600 | J Climbing Gym (Dianshan Lake Ave) | Amap: listed (J.Climbing攀岩运动馆 B0IKNR90AI, 青浦区盈浦街道淀山湖大道1079弄53号万达茂A区一楼) | 4493 m (listing) | pin update |
+| seed-601 | Fengxian Sports Center Climbing Gym | Amap: listed (奉贤体育中心攀岩馆 B00156ZIJJ, 奉贤区南桥镇古华南路100号上海市奉贤区体育中心); match by name and district only (Bouldeer gives a cross-road description); 2003 m away | 2003 m (entrance) | MANUAL |
+| seed-602 | DYNO Park Climbing (Yingfeng Tiandi) | Amap: listed (DYNOPARK攀岩馆 B0I61A7B5W, 浦东新区龙阳路2233号盈丰天地B1层B1010) | 189 m (entrance) | pin update |
+| seed-603 | J.Climbing Club (Qinglifang Sports Center) | Amap: listed (J.Climbing攀岩青立方馆 B0K2O6VTPK, 青浦区秀泽路与汇金路交叉口东100米) | 2786 m (listing) | pin update |
+| seed-604 | Qipeng Outdoor Climbing Gym | Amap: listed (琪朋户外攀岩馆 B0KGGZ70Y0, 金山区南阳港东路438号) | 3329 m (entrance) | pin update |
+| seed-605 | Jibi Storm Climbing (Bailian Xijiao) | no matching Amap listing found in the gathered results (searches are capped at 60 per keyword); not confirmed or refuted | - | MANUAL |
+| seed-1760 | Academy of Bouldering (AOB) | Amap: listed (AOB攀岩馆 B0K6OBTGVD, 虹口区北外滩街道东长治路399号双狮汇大厦双狮汇大厦B座B1) | 215 m (listing) | pin update |
+| seed-1761 | Benchmark 2.0 | Amap: listed (Benchmark攀岩馆(滨港商业中心店) B0L65AB794, 虹口区四川北路939号滨港商业中心4楼1423单元) | 386 m (entrance) | pin update |
+| seed-1762 | 1778 Climbing (Haichao Lu) | Amap: listed (1778CLIMBING攀岩馆 B0I6HMNZMM, 黄浦区半淞园路街道海潮路133号潮荟生活广场B1层A801) | 102 m (entrance), ok | none |
+| seed-1763 | Stonehaven | Amap: listed (Stonehaven攀岩馆 B0L0A7CJ70, 徐汇区龙华路2778号上海龙华会C5L2层) | 203 m (entrance) | pin update |
+| seed-1764 | Howl Shanghai | no matching Amap listing found in the gathered results (searches are capped at 60 per keyword); not confirmed or refuted | - | MANUAL |
+
+Summary: 61 audited; 33 pin updates; 21 MANUAL; 3 on hold (children's venues); 4 ok (none).
+
+## Chongqing (36 gyms; none in PR #84)
+| id | gym | status (evidence) | pin vs Amap | action |
+|---|---|---|---|---|
+| seed-791 | Bashan Tiger Climbing Club | no matching Amap listing found in the gathered results (searches are capped at 60 per keyword); not confirmed or refuted | - | MANUAL |
+| seed-792 | Jihuayuan Extreme Sports Center | Amap: listed (际华园极限运动中心 B0FFHWFFDG, 两江新区际华园南路188号重庆际华园) | 20716 m (entrance) | pin update |
+| seed-793 | Scream Climbing (Guangdian Park) | Amap: listed (尖叫攀岩(光电园店) B0JKX7SQ5Q, 两江新区黄山大道中段6号星汇两江艺术中心停车场出口处) | 9000 m (entrance) | pin update |
+| seed-794 | Black Ram Climbing Gym | Amap: listed (重庆黑公羊攀岩馆Black Ram Climbing B0G2UC55FZ, 南岸区烟雨路1号(海棠溪地铁站2A口步行310米)) | 592 m (entrance) | pin update |
+| seed-795 | Zhongti · Bihuwang Climbing Gym | no matching Amap listing found in the gathered results (searches are capped at 60 per keyword); not confirmed or refuted | - | MANUAL |
+| seed-815 | Jidao Climbing (Jingang International) | Amap: listed (极道攀岩(金港国际购物中心店) B0FFL7BAEJ, 两江新区胜利路194号喜地山·金港国际L1层) | 219 m (listing) | pin update |
+| seed-816 | Pandengxia Kids Climbing (Qijiang Wanda) | Amap: listed (攀登侠攀岩馆(綦江万达店) B0JAGSARV2, 綦江区万达广场1号门右手扶梯下行负一楼); Amap name 攀登侠攀岩馆 (not marked children); Bouldeer name says Kids | 107 m (listing), ok | none |
+| seed-817 | Pandengxia Kids Climbing (Yongchuan) | children's gym: Amap 攀登侠儿童攀岩馆(永川万达店) B0KRXM3V1M; adult access unknown | - | on hold (children's venues) |
+| seed-818 | Yichen Climbing (Beibei Wuyue Plaza) | no matching Amap listing found in the gathered results (searches are capped at 60 per keyword); not confirmed or refuted | - | MANUAL |
+| seed-819 | STONE Climbing (Shiqiao Plaza) | Amap: listed (山石攀岩馆 B0G1FZLCFU, 九龙坡区石桥广场2层) | 1010 m (entrance) | pin update |
+| seed-820 | Yuyan Climbing (Qibo Center) | Amap: listed (雨岩攀岩(汽博中心店) B0LRA714C3, 两江新区金渝大道85号汉国中心B座商业街1楼) | 1551 m (entrance) | pin update |
+| seed-821 | Pandengxia Kids Climbing (Yubei Shuita Yunxuan) | children's gym: Amap 攀登侠儿童攀岩馆(渝北区水獭云选店) B0L67ZS3EA; adult access unknown | - | on hold (children's venues) |
+| seed-822 | Mengke Climbing | Amap: listed (萌客攀岩运动馆 B0G1GZNVOT, 南川区文化艺术中心4号门) | 9941 m (listing) | pin update |
+| seed-823 | Jidao Climbing (Lanting Xinduhui) | Amap: listed (极道攀岩(蘭亭·新都汇店) B0JUABJVHT, 两江新区兴科大道322号蘭亭·新都汇B1层) | 140 m (listing), ok | none |
+| seed-824 | Jidao Climbing Sports (Dongyuan 1891) | Amap: listed (极道攀岩运动馆(重庆东原1891时光道) B0FFIGF67W, 南岸区南滨路东原1891一楼C馆D馆中间) | 7604 m (entrance) | pin update |
+| seed-825 | Kuji Climbing (Tianjiangli) | Amap: listed (酷基攀岩(天江里店) B0KA6ULX80, 两江新区文慧路88号附33号) | 12921 m (entrance) | pin update |
+| seed-826 | Scream Fun Climbing (Times Square) | Amap: listed (尖叫趣攀攀岩馆 B0L66K5FWT, 渝中区长江二路174号龙湖重庆时代天街D馆L4层) | 605 m (entrance) | pin update |
+| seed-827 | STONE Climbing (Longhu Jinsha Tianjie) | Amap: listed (山石攀岩(龙湖重庆金沙天街A馆店) B0IA3MRGNT, 沙坪坝区北站东路188号龙湖重庆金沙天街A馆F2层) | 1475 m (listing) | pin update |
+| seed-828 | Pandengxia Kids Climbing (Changshou Kaiyi) | children's gym: Amap 攀登侠儿童攀岩馆(长寿凯谊店) B0LD6XBNJ2; adult access unknown | - | on hold (children's venues) |
+| seed-829 | Xinxiang Climbing (Wanxianghui A Hall) | Amap: listed (心象攀岩(万象汇A馆店) B0HKKDI4AZ, 大渡口区万象汇A馆LG层(AB连廊处)) | 247 m (entrance) | pin update |
+| seed-830 | TNT Climbing (University City) | Amap: listed (TNT攀岩馆(富力坊店) B0KBLZWD33, 沙坪坝区沙坪坝区大学城至德路西城富力坊一层L113L115) | 6937 m (entrance) | pin update |
+| seed-831 | Pandengxia Kids Climbing (Shapingba Rongchuangmao) | Amap: listed (攀登侠儿童攀岩馆(沙坪坝融创茂店) B0MGJ7CVQU, 沙坪坝区西林大道84号融创茂F2层); children's gym (Amap name 攀登侠儿童攀岩馆); adult access unknown | 183 m (listing) | on hold (children's venues) |
+| seed-832 | Lepan Jungle Climbing (Yinxiangcheng) | Amap: listed (乐攀攀岩户外馆(重庆印象城店) B0J2VHCU1A, 渝中区印象城四楼(九号线一号口接驳)(化龙桥地铁站出入口旁)) | 28 m (listing), ok | none |
+| seed-833 | Chongqing University City Xijie Climbing Field | Amap: listed (重庆大学城熙街攀岩场 B0FFGACUU3, 沙坪坝区景苑路与沙坪坝区大学城熙街商业街交叉口北40米) | 796 m (listing) | pin update |
+| seed-834 | Songshu Climbing | no matching Amap listing found in the gathered results (searches are capped at 60 per keyword); not confirmed or refuted | - | MANUAL |
+| seed-835 | Monkey Hill Bouldering Gym | Amap: listed (猴山攀岩馆(重庆悦荟购物中心店) B0MU57TCNI, 两江新区东原D7区3期ug层35号); match by name only (Bouldeer has no address); 5215 m away | 5215 m (listing) | MANUAL |
+| seed-836 | Lichuan Climbing Gym | no matching Amap listing found in the gathered results (searches are capped at 60 per keyword); not confirmed or refuted | - | MANUAL |
+| seed-837 | Gulang Climbing (Huanlehui) | no matching Amap listing found in the gathered results (searches are capped at 60 per keyword); not confirmed or refuted | - | MANUAL |
+| seed-838 | Pandengxia Kids Climbing (Shuangfu Wuyue) | children's gym: Amap 攀登侠儿童攀岩馆(双福吾悦店) B0L2G5TDFD; adult access unknown | - | on hold (children's venues) |
+| seed-839 | Pandengxia Kids Climbing (Liangjiang Xingyueli) | children's gym: Amap 攀登侠儿童攀岩馆(两江新区兴悦里店) B0MGALFPS2; adult access unknown | - | on hold (children's venues) |
+| seed-840 | Hi Pan Climbing (MSG Huixing) | Amap: listed (Hi攀攀岩(重庆MSG汇星店) B0MAJX4DJ5, 两江新区两江新区MSG汇星商场1号门一楼中庭) | 8085 m (listing) | pin update |
+| seed-841 | Xiao Songshu Climbing | no matching Amap listing found in the gathered results (searches are capped at 60 per keyword); not confirmed or refuted | - | MANUAL |
+| seed-842 | Lepan Jungle Climbing (Yubei) | Amap: listed (乐攀丛林攀岩体验馆(SKLP新光里+) B0FFIZS4TT, 两江新区红锦大道99号新光城B区5层(嘉州路地铁站1号口步行60米)); match by name and district only (Bouldeer has no address); 17267 m away | 17267 m (entrance) | MANUAL |
+| seed-843 | STONE Climbing Gym (C33) | Amap: listed (山石攀岩(C33店) B0MBSUE4GD, 两江新区两江新区重庆市两江新区鸳鸯街道极佳大道102号附5号2-18) | 9492 m (entrance) | pin update |
+| seed-844 | WoodClimbing | Amap: listed (WoodClimbing我的攀岩 B0MAD7J1B0, 两江新区凯德广场2层56号) | 7017 m (listing) | pin update |
+| seed-845 | Big Rock Climbing (Boulder) | Amap: listed (大石头攀岩(Boulder) B0LKNLR9PF, 两江新区金源路49号) | 2329 m (entrance) | pin update |
+
+Summary: 36 audited; 9 MANUAL; 18 pin updates; 3 ok (none); 6 on hold (children's venues).
+
+## Shenzhen (47 gyms; none in PR #84)
+| id | gym | status (evidence) | pin vs Amap | action |
+|---|---|---|---|---|
+| seed-486 | Banana Climbing (OCT PARK Happy Time) | Amap: listed (香蕉攀岩(华侨城欢乐时光店) B0MUPRFGYM, 南山区沙河街道香山街社区香山东街260号天鹅湖三期欢乐时光商场L1019) | 5506 m (listing) | pin update |
+| seed-487 | Banana Climbing (Shangmeilin Zhuoyuehui) | Amap: listed (香蕉攀岩(上梅林卓悦汇店) B0MGAHEDZL, 福田区梅林街道梅都社区中康路126号卓悦汇购物中心L2-26) | 2656 m (listing) | pin update |
+| seed-488 | Banana Climbing (Joyful Ave) | no Banana listing found for it; the nearest Amap listing (369 m) is 博昇攀岩俱乐部(粤海文体中心店), a different brand | - | MANUAL |
+| seed-489 | Banana Climbing (Nanshan Houhai) | Amap: listed (香蕉攀岩(深圳湾后海汇店) B0I0OZ3Y0B, 南山区后海滨路3288号深圳湾后海汇B2-01商铺及山系广场(后海地铁站A2出口下至B2层直达)) | 1058 m (listing) | pin update |
+| seed-490 | Banana Climbing (iN City Plaza) | no matching Amap listing found in the gathered results (searches are capped at 60 per keyword); not confirmed or refuted | - | MANUAL |
+| seed-491 | Banana Climbing (Link Plaza) | Amap: listed (香蕉攀岩(领展中心城) B0JD97VZ2A, 福田区福华一路3号领展中心城L层(西大门进入直行50m,扶梯附近)) | 754 m (listing) | pin update |
+| seed-492 | Banana Climbing (Kingdee) | no matching Amap listing found in the gathered results (searches are capped at 60 per keyword); not confirmed or refuted | - | MANUAL |
+| seed-493 | Banana Climbing (Bao'an Center) | Amap: listed (香蕉攀岩Banana Climbing Gym(宝安中心店) B0J2V5FA91, 宝安区创业一路1006号丽晶国际B栋3楼304号) | 522 m (listing) | pin update |
+| seed-494 | KL Sport Fun Sports Arena (Bantian Vanke Plaza) | Amap: listed (KL Sport潮玩运动超乐场(坂田万科广场店) B0K2VL9L7S, 龙岗区坂田万科广场4楼L4-51(星巴克向上四楼)) | 48 m (listing), ok | none |
+| seed-495 | nerdcave Climbing Gym | Amap: listed (nerdcave攀岩馆(向南瑞峰商业广场店) B0FFIWBBN2, 南山区桂庙路22号向南瑞峰商业中心B区4楼4033) | 223 m (entrance) | pin update |
+| seed-496 | Blue Sky Climbing (Nanshan) | no matching Amap listing found in the gathered results (searches are capped at 60 per keyword); not confirmed or refuted | - | MANUAL |
+| seed-497 | Lightning Climbing Gym | Amap: listed (闪电攀岩Lightning Climbing GYM B0KGHDY55T, 福田区岗厦北地铁站B2层商业西区最西端(近3号口)) | 398 m (entrance) | pin update |
+| seed-498 | XONE Fitness Center (Futian) | Amap: listed (XONE潮玩运动中心(福田店) B0FFJM6FOX, 福田区市花路9号泰福仓储大厦102座) | 408 m (listing) | pin update |
+| seed-499 | Longgang Universiade Center Climbing Gym | same address as seed-510 (Universiade Center Gate 26) and the same pin: duplicate or closed; Amap shows only 征岩攀岩馆(大运店) there | - | MANUAL |
+| seed-500 | Pulan Sports (Shenzhen) | no matching Amap listing found in the gathered results (searches are capped at 60 per keyword); not confirmed or refuted | - | MANUAL |
+| seed-501 | Bengbei Trendy Play (Longhua) | no matching Amap listing found in the gathered results (searches are capped at 60 per keyword); not confirmed or refuted | - | MANUAL |
+| seed-502 | Guangming District Public Sports Center Climbing Gym | Amap: listed (光明区群众体育中心攀岩馆 B0I2Y7UN2Y, 光明区光明街道光明群众体育中心) | 1680 m (entrance) | pin update |
+| seed-503 | Blue Sky Climbing (Futian Sports Park) | Amap: listed (蓝天攀岩(福田体育公园店) B0FFMBF8EJ, 福田区福强路3030号福田体育公园) | 141 m (entrance), ok | none |
+| seed-504 | Yijiu Climbing Gym (Longhua Bookstore) | no matching Amap listing found in the gathered results (searches are capped at 60 per keyword); not confirmed or refuted | - | MANUAL |
+| seed-505 | Blue Sky Climbing (Luohu Yitian Holiday Plaza) | no matching Amap listing found in the gathered results (searches are capped at 60 per keyword); not confirmed or refuted | - | MANUAL |
+| seed-506 | Blue Sky Climbing (Shenye Shangcheng) | no matching Amap listing found in the gathered results (searches are capped at 60 per keyword); not confirmed or refuted | - | MANUAL |
+| seed-507 | Climbing Orangutan (Pingshan) | Amap: listed (攀猩儿童攀岩馆(深圳坪山悦阾店) B0LG5SO573, 坪山区马峦山街道悦阾SPACE购物中心三楼攀猩攀岩馆); children's gym (Amap name 攀猩儿童攀岩馆), adult access unknown | 616 m (entrance) | on hold (children's venues) |
+| seed-508 | Triple Top Climbing Gym | no matching Amap listing found in the gathered results (searches are capped at 60 per keyword); not confirmed or refuted | - | MANUAL |
+| seed-509 | Blue Sky Climbing (Ledongli Cuiyuan Huafu) | no matching Amap listing found in the gathered results (searches are capped at 60 per keyword); not confirmed or refuted | - | MANUAL |
+| seed-510 | Zhengyan Climbing Gym (Dayun) | Amap: listed (征岩攀岩馆(大运店) B0FFK7MW6R, 龙岗区龙城街道龙翔大道大运中心体育场26号门); entrance 629 m, listing point 894 m away; seed-499 has the same address (duplicate suspected) | 629 m (entrance) | pin update |
+| seed-511 | Climbing Orangutan (Longhua) | no matching Amap listing found in the gathered results (searches are capped at 60 per keyword); not confirmed or refuted | - | MANUAL |
+| seed-512 | Godo Yaugaa Climbing Gym | Amap: listed (有家攀岩馆(卓悦汇购物中心) B0LDL5RGCB, 福田区梅康路与梅林路交叉口西北100米卓悦汇购物中心B2层) | 98 m (entrance), ok | none |
+| seed-513 | DynoClimbing Gym | Amap: listed (DynoClimbing攀岩馆 B0LGXLDCGK, 南山区蛇口街道中心路2233号宝能太古城北区负二楼GD203DYNO Climbing攀岩馆) | 443 m (entrance) | pin update |
+| seed-514 | Nedo Yaugaa Climbing Gym | Amap: listed (呢度有家攀岩馆 B0KG910RYP, 福田区华富街道岗厦北地铁站13号出口下沉广场负二楼) | 192 m (entrance) | pin update |
+| seed-515 | Captain Ryder Kids Sports Center (Poly Yuedu) | children's venue by name; not looked up on Amap | - | on hold (children's venues) |
+| seed-516 | Boshen Climbing (Shekou) | Amap: listed (博昇攀岩(蛇口店) B0FFF2OO4D, 南山区深圳蛇口招商花园城南门旁(四海地铁站D口步行110米)) | 1495 m (entrance) | pin update |
+| seed-517 | Formpower Climbing & Parkour Gym | Amap: listed (形动力跑酷·攀岩馆(龙岗金基吉祥广场店) B0J1O5EORG, 龙岗区金基吉祥广场5层) | 1076 m (listing) | pin update |
+| seed-518 | Little Player Dream Factory (Shiyan Main Store) | children's venue by name; not looked up on Amap | - | on hold (children's venues) |
+| seed-519 | Little Player Dream Factory (Honwan) | children's venue by name; not looked up on Amap | - | on hold (children's venues) |
+| seed-520 | Yanwu Kongjian Climbing (Jiayanghui) | no matching Amap listing found in the gathered results (searches are capped at 60 per keyword); not confirmed or refuted | - | MANUAL |
+| seed-521 | rock0755 Climbing Gym | Amap: listed (Rock 0755跃壁攀岩户外拓展馆 B0IAB7K2UE, 龙华区大浪商业中心后浪新天地7栋3楼7307室) | 253 m (entrance) | pin update |
+| seed-522 | Yijiu Climbing Gym (Honglifang Youth Center) | Amap: listed (一就攀岩馆(红立方青少年宫店) B0H6JUD47U, 龙岗区龙翔大道8028号青少年宫一楼) | 4840 m (listing) | pin update |
+| seed-523 | Starlight Climbing | Amap: listed (星光攀岩(万达广场店) B0KRU733XU, 龙岗区万达广场南3号门旁边B1-次组一) | 1974 m (entrance) | pin update |
+| seed-524 | Yijiu Climbing Gym (Honghuashan Sports Center) | no matching Amap listing found in the gathered results (searches are capped at 60 per keyword); not confirmed or refuted | - | MANUAL |
+| seed-525 | Little Warrior Climbing Challenge | children's venue by name; not looked up on Amap | - | on hold (children's venues) |
+| seed-526 | Blue Sky Climbing (Luohu Government Service Center) | Amap: listed (蓝天攀岩(罗湖政务中心店) B0FFKNXZ7V, 罗湖区经二路48号罗湖区政务服务中心2层) | 371 m (entrance) | pin update |
+| seed-527 | Yanwu Kongjian Climbing (flagship) | Amap: listed (岩舞空间攀岩 B0LU966XVE, 龙岗区龙城街道尚景社区龙岗大道3999号万科里B1层) | 1236 m (listing) | pin update |
+| seed-528 | Allez Climbing Gym (Donghua Building) | Amap: listed (阿叻综合攀岩馆Allez Climbing Gym(动漫大厦店) B0H0USJ906, 罗湖区怡景路2013号动漫大厦4F401) | 305 m (listing) | pin update |
+| seed-529 | Little Warrior Climbing Challenge Explorer Camp (Xixiang) | children's venue by name; not looked up on Amap | - | on hold (children's venues) |
+| seed-530 | Yijiu Climbing (Manfen Tiandi Shanshan Outlets) | no matching Amap listing found in the gathered results (searches are capped at 60 per keyword); not confirmed or refuted | - | MANUAL |
+| seed-531 | Climbing Orangutan (Shuiwan) | no matching Amap listing found in the gathered results (searches are capped at 60 per keyword); not confirmed or refuted | - | MANUAL |
+| seed-532 | Zhengyan Climbing Gym (Guiwan) | Amap: listed (征岩攀岩馆(桂湾店) B0K63CN1BZ, 南山区听海大道桂湾公园P2停车场左边100米) | 1226 m (listing) | pin update |
+
+Summary: 47 audited; 21 pin updates; 17 MANUAL; 3 ok (none); 6 on hold (children's venues).
