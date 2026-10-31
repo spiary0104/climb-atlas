@@ -1,0 +1,202 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-11-01-cn-guangzhou",
+ "inputs": {
+  "section_sha256": "cff987eb57f9bc5e6f3367812acbd0f7deba722992b2fffe4a057dcf5ff9fab1",
+  "sources_sha256": "c1b53a78f58ff6abd86fbd6f625f0a53ebd9f3cc9566120e9ce4096134c5b09f",
+  "candidates_sha256": "f1d6750918703d8c7060acf2e91053919e9672d7e5bfb4ba804f74580e462b47",
+  "index": {
+   "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
+   "count": 3294
+  },
+  "staged_batches_compared": [
+   "2026-10-06-kr-seoul"
+  ],
+  "other_sections_compared": []
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 5,
+  "ready": 0,
+  "review": 4,
+  "blocked": 0,
+  "existing": 1,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "cn-gz-001",
+   "line": 1,
+   "name": "Mars Climbing Gym (Yuehuicheng)",
+   "class": "existing",
+   "suggested": "same-as seed-750",
+   "importer": {
+    "class": "existing",
+    "id": "seed-750",
+    "match": {
+     "id": "seed-750",
+     "name": "Mars Climbing Gym (Liwan)",
+     "reason": "same-name",
+     "dist_m": 691
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-750 but content differs (name, lat, lng, address, types); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-750 \"Mars Climbing Gym (Liwan)\": same-name (\"Mars Climbing Gym (Yuehuicheng)\" / \"Mars Climbing Gym (Liwan)\", 691 m)",
+     "ids": [
+      "seed-750"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-750"
+   ]
+  },
+  {
+   "cid": "cn-gz-002",
+   "line": 2,
+   "name": "Mars Climbing Gym (Qiaonanhui)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-989e80b049"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-741 same-name-but-pin-differs 1805 m",
+     "ids": [
+      "seed-741"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-741 \"Mars Climbing Gym (Qiaonanhui)\": same-name-but-pin-differs (\"Mars Climbing Gym (Qiaonanhui)\" / \"Mars Climbing Gym (Qiaonanhui)\", 1805 m)",
+     "ids": [
+      "seed-741"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-741"
+   ]
+  },
+  {
+   "cid": "cn-gz-003",
+   "line": 3,
+   "name": "BoulderDash Climbing Gym (Jiankanggang)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-1ce87d50a4"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-736 same-name-but-pin-differs 8149 m",
+     "ids": [
+      "seed-736"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "candidate cn-gz-004 \"BoulderDash Climbing Gym (Wanbo)\": same-name-but-pin-differs (\"BoulderDash Climbing Gym (Jiankanggang)\" / \"BoulderDash Climbing Gym (Wanbo)\", 10764 m)",
+     "ids": [
+      "cn-gz-004"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-736 \"BoulderDash Climbing Gym (Sijitiandi)\": same-name-but-pin-differs (\"BoulderDash Climbing Gym (Jiankanggang)\" / \"BoulderDash Climbing Gym (Sijitiandi)\", 8149 m)",
+     "ids": [
+      "seed-736"
+     ]
+    }
+   ],
+   "review_ids": [
+    "cn-gz-004",
+    "seed-736"
+   ]
+  },
+  {
+   "cid": "cn-gz-004",
+   "line": 4,
+   "name": "BoulderDash Climbing Gym (Wanbo)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-a9f7f45c84"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-736 same-name-but-pin-differs 10594 m",
+     "ids": [
+      "seed-736"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "candidate cn-gz-003 \"BoulderDash Climbing Gym (Jiankanggang)\": same-name-but-pin-differs (\"BoulderDash Climbing Gym (Wanbo)\" / \"BoulderDash Climbing Gym (Jiankanggang)\", 10764 m)",
+     "ids": [
+      "cn-gz-003"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-736 \"BoulderDash Climbing Gym (Sijitiandi)\": same-name-but-pin-differs (\"BoulderDash Climbing Gym (Wanbo)\" / \"BoulderDash Climbing Gym (Sijitiandi)\", 10594 m)",
+     "ids": [
+      "seed-736"
+     ]
+    }
+   ],
+   "review_ids": [
+    "cn-gz-003",
+    "seed-736"
+   ]
+  },
+  {
+   "cid": "cn-gz-005",
+   "line": 5,
+   "name": "Unfollow Climbing Gym (Liuhua Center)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-47165537dd"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-745 same-name-but-pin-differs 9101 m",
+     "ids": [
+      "seed-745"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-745 \"Unfollow Climbing Gym (Haizhu Shixi)\": same-name-but-pin-differs (\"Unfollow Climbing Gym (Liuhua Center)\" / \"Unfollow Climbing Gym (Haizhu Shixi)\", 9101 m)",
+     "ids": [
+      "seed-745"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-745"
+   ]
+  }
+ ],
+ "reconcile_sha256": "24b58e98980d0ad8f0de25652ca19aa5ae30161ea17004e164ecd58d4c2f8cfd"
+}
