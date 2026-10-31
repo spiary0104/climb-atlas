@@ -57,3 +57,16 @@ export function placeSeo({ kind, name, within = '', count = 0 }){
   const gyms = count === 1 ? '1 climbing gym' : count > 1 ? count.toLocaleString('en-US') + ' climbing gyms' : 'Climbing gyms';
   return { title, description: clean(gyms + ' in ' + where + ': bouldering, top rope and lead. Browse them on Bouldeer, the community-sourced climbing map.', DESC_MAX) };
 }
+
+// A region page that lists exactly the same gyms as one of its city pages (a region and its only city sharing a name,
+// e.g. /in/cn/shanghai and /in/cn/shanghai/shanghai) duplicates that page, so its canonical points at the city page and
+// the sitemap lists only the city (Search Console 2026-10-15: "Duplicate, Google chose different canonical than user").
+// ids: the region's gym ids; candidates: [{path, ids}] for the city pages that could duplicate it. Returns the city
+// path, or null when no city page holds exactly the region's gyms. Ties resolve to the first path in sort order.
+export function duplicatePlacePath(ids, candidates){
+  const key = list => [...new Set((list || []).map(String))].sort().join('\n');
+  const want = key(ids);
+  if(!want) return null;
+  const hit = [...(candidates || [])].sort((a, b) => (a.path < b.path ? -1 : a.path > b.path ? 1 : 0)).find(c => key(c.ids) === want);
+  return hit ? hit.path : null;
+}

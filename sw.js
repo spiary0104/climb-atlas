@@ -41,7 +41,8 @@
 // v37: the legacy seed file is retired from the runtime: offline list from data/spots-fallback.json (fetched on demand, not precached);
 //      "Revert to original" removed from the edit form (modals.js, index.html, style.css).
 // v39: MapLibre is no longer in the shell: map.js loads it after the first list render; modulepreload; parallel gym pages.
-const CACHE_VERSION = 'v41';
+// v42: a region page that lists exactly one city's gyms names that city page as its canonical (place-canonical.js).
+const CACHE_VERSION = 'v42';
 const SHELL_CACHE = 'climbatlas-shell-' + CACHE_VERSION;
 const RUNTIME_CACHE = 'climbatlas-runtime-' + CACHE_VERSION;
 const TILE_CACHE = 'climbatlas-tiles-' + CACHE_VERSION;
@@ -103,6 +104,7 @@ const SHELL_FILES = [
   'js/modules/gym-page.js',
   'js/modules/mini-map.js',
   'js/modules/region-page.js',
+  'js/modules/place-canonical.js',
   'js/modules/log-page.js',
   'js/modules/me-page.js',
   'js/modules/provenance.js',
