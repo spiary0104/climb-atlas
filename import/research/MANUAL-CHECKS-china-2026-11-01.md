@@ -53,3 +53,17 @@ Kids-named venues (adult access unknown): seed-515, 518, 519, 525, 529 (Shenzhen
 ## Shanghai / Beijing gap assessment
 Not done: needed Amap counts for Shanghai (310000) and Beijing (110000) and browser work had stopped. Bouldeer has 78 (Shanghai) and 55 (Beijing).
 For scale only: Guangzhou has 43 Amap climbing listings vs 20 Bouldeer gyms (31 not near an existing gym); Hangzhou 55 vs 21 (47 not near one).
+
+## Amap gap estimate (Amap read 2026-11-01, signed-in tab; search 攀岩/攀岩馆/抱石, 3 pages each)
+"Unmatched" = an Amap climbing listing with no Bouldeer pin within 400 m: a missing gym OR an existing gym whose pin is wrong (many CN pins are 0.5-3 km off; PR #84 fixes 35). Search is capped at 60 results per keyword, and children's, school, ice and shoe-repair listings are filtered by name only. Upper bounds, not candidates.
+
+| City | Amap climbing listings | within 400 m of Bouldeer | unmatched | Bouldeer today |
+|---|---|---|---|---|
+| Guangzhou | 39 | 10 | 29 | 20 |
+| Hangzhou | 48 | 7 | 41 | 21 |
+| Shenzhen | 58 | 12 | 46 | 47 |
+| Chongqing | 38 | 5 | 33 | 36 |
+| Shanghai | 80 | 15 | 65 | 78 |
+| Beijing | 78 | 11 | 67 | 55 |
+
+Priority for the next research sections (missing gyms x traveller relevance): Hangzhou, Guangzhou (continue), Beijing, Shanghai (pins first: PR #84), Chongqing, Shenzhen. RedNote research paused 2026-11-01 at a security check (owner to clear it).
