@@ -5,17 +5,17 @@
 | What would happen | Records |
 |---|---:|
 | Insert as NEW gyms | 0 |
-| Update existing gyms (explicit update records) | 28 |
-| Retire existing gyms (closed / duplicate: status becomes rejected, record kept) | 1 |
+| Update existing gyms (explicit update records) | 57 |
+| Retire existing gyms (closed / duplicate: status becomes rejected, record kept) | 2 |
 | Already exist — no action (identical content: 0; content differs, NOT applied: 0) | 0 |
 | Probable duplicates — need a human decision | 0 |
 | Invalid — rejected | 0 |
 | Rejected by a human decision | 0 |
-| **Total records in batch** | 29 |
+| **Total records in batch** | 59 |
 
-Index: 3294 known gyms (sha256 2f47cb53e74b…). Plan: 0c1c4e7c24ec… Also compared against staged batches: 2026-10-06-kr-seoul.
+Index: 3294 known gyms (sha256 2f47cb53e74b…). Plan: baf43095f2f5… Also compared against staged batches: 2026-10-06-kr-seoul.
 
-## Updates to existing gyms (28)
+## Updates to existing gyms (57)
 
 - line 1 `seed-714` — Pin moved to the listing coordinate of the gym's own Amap listing (香蕉攀岩(来福士店)), ~2544 m from the old pin
   - lat: 30.245 → 30.2512
@@ -92,15 +92,16 @@ Index: 3294 known gyms (sha256 2f47cb53e74b…). Plan: 0c1c4e7c24ec… Also comp
 - line 25 `seed-750` — Pin moved to the entrance coordinate of the gym's own Amap listing (火星攀岩馆), ~675 m from the old pin
   - lat: 23.1458231 → 23.151614
   - lng: 113.2370294 → 113.238999
-- … and 3 more (see plan.json)
+- … and 32 more (see plan.json)
 
-## Retirements of existing gyms (1)
+## Retirements of existing gyms (2)
 
 Each gym is set to `rejected` with the reason below (the moderator UI's own decision format); the row is kept, never deleted. Listed apart from location changes.
 
-- line 29 `seed-751` "Super Extreme Climbing (SCUT East Campus)" (CN) — closed: Closed: the lease ended and the walls were removed (user note 2026-07-02); not on Amap; the brand bio counts 4 branches, none the SCUT venue
+- line 58 `seed-751` "Super Extreme Climbing (SCUT East Campus)" (CN) — closed: Closed: the lease ended and the walls were removed (user note 2026-07-02); not on Amap; the brand bio counts 4 branches, none the SCUT venue
+- line 59 `seed-638` "Rock Time Climbing (Dawanglu)" (CN) — closed: Closed on 2026-08-08: the gym official RedNote account announced the closure of its Dawanglu branch; Amap marks the listing as suspended
 
 ## Warnings
 
-- `large-pin-move` × 18: lines 1, 2, 3, 5, 6, 7, 9, 10, 11, 14, 15, 16, …
+- `large-pin-move` × 36: lines 1, 2, 3, 5, 6, 7, 9, 10, 11, 14, 15, 16, …
 

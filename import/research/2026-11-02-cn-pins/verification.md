@@ -58,3 +58,53 @@ Summary: 21 audited; 14 pin updates; 2 ok (720, 727); 5 manual (723, 725, 731, 7
 
 Summary: 20 audited; 14 pin updates; 4 ok (736, 740, 744, 746); 1 manual (735); 1 retired (751).
 Amap listings not matching an existing gym (new-gym candidates): see section `import/research/2026-11-01-cn-guangzhou` and MANUAL-CHECKS-china-2026-11-01.md.
+
+## Beijing (55 gyms; 11 skipped because PR #84 already fixed them: seed-637, 644, 645, 648, 650, 653, 661, 669, 678, 687, 689; 44 audited)
+| id | gym | status (evidence) | pin vs Amap | action |
+|---|---|---|---|---|
+| seed-638 | Rock Time Dawanglu | CLOSED 2026-08-08: official account 岩时攀岩 closure notice (note 6a6d33310000000005028c5f, 2026-07-31), farewell notes 2026-08/10; Amap 岩时攀岩馆(暂停营业) B0FFI0SZE7, 西大望路27号院74栋 = same address | 1894 m | retire (closed) |
+| seed-639 | Climbing Favorite Changying | Amap: listed (攀岩最爱常营馆 B0FFLFPXRW, 首开畅心园东南门旁 = same) | 1209 m (entrance) | pin update |
+| seed-640 | Aopan Sijiqing | Amap 奥攀攀岩(四季青校区) B0LB2CRGXQ (中关村军民融合产业园商业街C座); Bouldeer says "Sijiqing Innovation Center Building C", name of the complex differs | 6055 m | MANUAL |
+| seed-641 | Haoshi Lantao Center | no Amap listing found (浩石 search shows Jiuxianqiao and Shunyi only) | - | MANUAL |
+| seed-642 | Feline Galaxy SOHO | Amap: listed (飞猫攀岩 B0LBO76J7I, 银河SOHO C座F3 = same) | 232 m (entrance) | pin update |
+| seed-643 | BE1ST Wukesong Wanda | the only listing at that address (复兴路69号五棵松万达广场3F) is 一工元运动空间·五棵松店 B0J3K7SQFK, a Nickelodeon-style family play venue; BE1ST = that brand is not confirmed | 1875 m (listing) | MANUAL (maybe a children's venue) |
+| seed-646 | Red Pine Nut Sports Center | Amap: listed (红松果运动中心 B0FFHSRLWS, 永大路32号 = same; two more listings at the same address) | 1004 m (entrance) | pin update |
+| seed-647 | Climb On Laiguangying | Amap: listed (Climb On Gym(来广营店COL) B0LAJRUGBR, 香宾路66号保利广场东区L6 = same) | 505 m (entrance) | pin update |
+| seed-649 | Rock Time Guanzhuang | Amap 岩时攀岩(管庄店) B0H647JDIC, 管庄南街3号; Bouldeer address is "1 Guanzhuang Rd, Xinguanzhuang Science Park", different street name | 1692 m (entrance) | MANUAL |
+| seed-651 | Pioneer Dongba Wanda | Amap: listed (北京先锋攀岩馆(朝阳东坝店) B0J2S6L107, 东坝万达广场6F = same) | 398 m (listing) | pin update |
+| seed-652 | Fun Wild Longhu Beiyuan | Amap: listed (趣野攀岩(龙湖北苑天街店) B0J1XUPZWM, 北苑东路19号 5F = same) | 2732 m (listing) | pin update |
+| seed-654 | Geometry | Amap: listed (几何攀岩俱乐部 B0FFIDCS6L, 新奥购物中心西B门 = same) | 182 m (entrance) | pin update |
+| seed-655 | Aopan Wangfujing Outlets | Amap: listed (奥攀攀岩(王府井奥莱店) B0JKT5D2S2, 久敬庄路丙57号 = same) | 456 m (listing) | pin update |
+| seed-656 | Rock Time Huilongguan | Amap: listed (岩时攀岩(回龙观店) B0M23ZD4MH, 文华东路57号乐动力体育中心B1 = same; few reviews) | 856 m (listing) | pin update |
+| seed-657 | Aopan Xihongmen | Amap lists 魔王攀岩(西红门店) B0FFI90L0E at the same address (鸿坤广场 F1), another brand; no Aopan listing there | 485 m (listing) | MANUAL (rebrand or closed) |
+| seed-658 | Climb On COG Shougang | Amap: listed (Climb On Gym(COG首钢店) B0KRNUFURH, 首钢园六工购物广场1层 = same) | 3649 m (listing) | pin update |
+| seed-659 | Extreme Experience | Amap: listed (极度体验攀岩馆 B0FFJRIHNF, 远大路1号世纪金源购物中心西区L1 = same) | 278 m (listing) | pin update |
+| seed-660 | Yueshi Huamao Tiandi | no Amap listing found | - | MANUAL |
+| seed-662 | Planet Fitness Climbing | no Amap listing found | - | MANUAL |
+| seed-663 | CAMP4 Jiuxianqiao Xinchenli | Amap: listed (CAMP4攀岩馆(酒仙桥新辰里店) B0J15PV7ZM, 酒仙桥路12号新辰里 F2-005 = same); it shared one pin with seed-666 | 1425 m (listing) | pin update |
+| seed-664 | Jindianshi Ritan | Amap: listed (北京金点石日坛攀岩场 B0FFJ9XO8Q, 日坛公园内 = same) | 259 m (entrance) | pin update |
+| seed-665 | Aopan World Park | Amap: listed (奥攀攀岩(世界公园店) B0IRD5OPF0, 葆台路188号7号馆 = same); seed-688 has the same pin | 1041 m (entrance) | pin update |
+| seed-666 | Haoshi Jiulong Life Plaza | Amap: listed (浩石运动攀岩空间(久隆生活广场店) B0IUC76G3Q, 酒仙桥路39号 = same) | 202 m (listing) | pin update |
+| seed-667 | Super Rabbit Sports Hub | Amap: listed (Super Rabbit运动汇 B0FFM8WIWZ, 沙河镇于辛庄村西 E区103 = same) | 2184 m (entrance) | pin update |
+| seed-668 | Yaoyan Shahe | Amap: 耀岩攀岩(沙河店)(暂停营业) B0G32UH666, 1983创意产业园内 (suspended); its entrance is within 60 m of seed-667's new pin (same compound) | 644 m (entrance) | MANUAL (suspended; possibly the same compound as 667) |
+| seed-670 | Sports Club Beiqijia | no Amap listing found | - | MANUAL |
+| seed-671 | Haoshi Shunyi | Amap: listed (浩石运动攀岩空间(顺义店) B0J1VN7YEC, 安平北街3号; Bouldeer says 5 Anping St; the brand has one Shunyi branch) | 561 m (entrance) | pin update |
+| seed-672 | Fun Wild Fangshan | Amap: listed (趣野攀岩馆(北京房山印象城) B0H0KUMJII, 广阳新路9号院1号楼 F2 = same) | 1108 m (listing) | pin update |
+| seed-673 | Wanyan Fangtianxia | Amap: listed (顽岩攀岩馆(房天下大厦A座店) B0J0XAB119, 郭公庄中街20号房天下大厦A座 = same) | 3391 m (listing) | pin update |
+| seed-674 | Aopan Jiaomen | Amap: listed (奥攀攀岩(角门店) B0I2CCF2PE, 大红门西路19号物美2层 = same) | 1033 m (listing) | pin update |
+| seed-675 | Aopan Beijing Sport University | no Amap listing found (search shows the university only) | - | MANUAL |
+| seed-676 | Aopan Wukesong | Amap: listed (奥攀攀岩(五棵松店) B0K2FUNSV4, 华熙LIVE五棵松B1 = same) | 290 m (entrance) | pin update |
+| seed-677 | Aopan Yuquanying | Amap: listed (奥攀攀岩(玉泉营校区) B0FFLHVZW6, 玉泉营博瑞体育园 = same) | 1360 m (entrance) | pin update |
+| seed-679 | I Climb | Amap: listed (我攀攀岩 B0KUZ5HV3S, 广渠东路北京商业储运公司35幢双跨库 = same address); the live pin is in north Chaoyang | 20740 m (entrance) | pin update |
+| seed-680 | Climbing Orangutan | Amap lists 岚山攀岩 B0LRUGCKDD at the identical unit (果园8号楼1-101-K-04), other brand name, no reviews | 1708 m (entrance) | MANUAL (rebrand?) |
+| seed-681 | Yaoyan Jinhui Port | Amap 耀岩攀岩馆 B0MB2U153K is at 裕满路 (Shunyi), a different address | 9430 m | MANUAL |
+| seed-682 | Qingshan Qinghe | Amap: listed (青山攀石(清河店) B0LAACO45O, same) | 5 m, ok | none |
+| seed-683 | Climb Together | Amap: listed (17ALKAKO一起攀岩(崇文门店) B0L14R21GY, 正仁大厦B1 = same) | 600 m (entrance) | pin update |
+| seed-684 | Zhongpan Alps | Amap: 中攀Alps攀岩中心 B0I1JUBCF8 (暂停营业), 姚家园路甲1号汽车交易市场20幢1层A21 = same address; no RedNote closure notice found (notes to 2026-06) | 755 m (entrance) | pin update; status MANUAL (suspended on Amap) |
+| seed-685 | Manhe Aopan | Amap: listed (缦合·奥攀攀岩 B0KA11P8DT, 东四环北路辅路与芳园南街交叉口西南220米; Bouldeer says 320 m) | 492 m (entrance) | pin update |
+| seed-686 | Fun Wild Tencent | Amap: listed (趣野攀岩(回龙观店) B0FFJNPYLC, 腾讯众创空间338号 = same) | 1377 m (entrance) | pin update |
+| seed-688 | Vitality Zone Sports Center | shares the pin of seed-665 (188 Baotai Rd); no Amap listing found under this name | - | MANUAL |
+| seed-690 | Dingshi | Amap: listed (鼎石攀岩 B0JA753FSM, 成寿寺路甲12号9幢1层18B = same) | 430 m (entrance) | pin update |
+| seed-691 | Demon King Zhonghe Rd | Amap: listed (魔王攀岩(富丰桥) B0LB5H2AGX, 中核路11号(栋能魔王运动空间内) = same) | 363 m (entrance) | pin update |
+
+Summary: 44 audited; 29 pin updates (incl. seed-684, whose status stays a manual check); 1 ok (682); 1 retired (638, closed); 13 manual (640, 641, 643, 649, 657, 660, 662, 668, 670, 675, 680, 681, 688).
