@@ -1,0 +1,120 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-12-kr-busan-gyeongnam",
+ "index": {
+  "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
+  "count": 3294,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-06-kr-seoul",
+  "2026-10-12-cn-beijing-chengdu",
+  "2026-10-12-cn-kunming-changsha",
+  "2026-10-12-cn-shanghai",
+  "2026-10-12-kr-central-regions",
+  "2026-10-12-kr-daegu-gyeongbuk",
+  "2026-10-12-kr-gyeonggi-north",
+  "2026-10-12-kr-gyeonggi-south",
+  "2026-10-12-kr-gyeonggi-west",
+  "2026-10-12-kr-incheon"
+ ],
+ "counts": {
+  "records": 10,
+  "new": 10,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "a9cfad691e2bbfc4085a18661e631f6d7db28ce3d4e3a342330d82f0ec23dcea",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-c1863c80ff",
+   "id_frozen": true,
+   "name": "Dolmenge Climbing Jeonpo (돌멩이클라이밍)",
+   "country": "KR"
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-c6c03455cd",
+   "id_frozen": true,
+   "name": "Pogo Climb Sasang (포고클라임)",
+   "country": "KR"
+  },
+  {
+   "line": 3,
+   "class": "new",
+   "id": "g-8bd18a4f56",
+   "id_frozen": true,
+   "name": "Rock Climbing Gym Deokcheon (락클라이밍짐)",
+   "country": "KR"
+  },
+  {
+   "line": 4,
+   "class": "new",
+   "id": "g-ab32983e64",
+   "id_frozen": true,
+   "name": "Raon Climbing Gym Samsan (라온클라이밍짐)",
+   "country": "KR"
+  },
+  {
+   "line": 5,
+   "class": "new",
+   "id": "g-30500db2e6",
+   "id_frozen": true,
+   "name": "Mong Climbing Center Hogye (몽클라이밍센터)",
+   "country": "KR"
+  },
+  {
+   "line": 6,
+   "class": "new",
+   "id": "g-0d2a8b3fb3",
+   "id_frozen": true,
+   "name": "B-star Climbing Changwon (창원 비스타클라이밍)",
+   "country": "KR"
+  },
+  {
+   "line": 7,
+   "class": "new",
+   "id": "g-858efb6f7e",
+   "id_frozen": true,
+   "name": "The Coa Climbing Jangyu (더코아클라이밍)",
+   "country": "KR"
+  },
+  {
+   "line": 8,
+   "class": "new",
+   "id": "g-6445726e67",
+   "id_frozen": true,
+   "name": "Climb Zone Changwon (클라임존)",
+   "country": "KR"
+  },
+  {
+   "line": 9,
+   "class": "new",
+   "id": "g-72fe0605b9",
+   "id_frozen": true,
+   "name": "Boulder Surfer Climbing Mulgeum (볼더서퍼클라이밍)",
+   "country": "KR"
+  },
+  {
+   "line": 10,
+   "class": "new",
+   "id": "g-e174c061c2",
+   "id_frozen": true,
+   "name": "Crux Climbing Masan (크럭스클라이밍)",
+   "country": "KR"
+  }
+ ]
+}

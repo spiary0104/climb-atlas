@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-12-kr-busan-gyeongnam",
+  "description": "Regional research \"Korea: Busan, Ulsan, Gyeongsangnam-do\": 10 new gym(s) accepted of 34 candidate(s)",
+  "created": "2026-10-12",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-10-12-kr-busan-gyeongnam",
+    "section_sha256": "7931ff5b727f758e2372d7918248b744e1ca25d39a6c6a4ca0b22ae70cac22de",
+    "sources_sha256": "6d3612e9bc12e5306a3fefbef6eaeb999325950170da89f6b038e21c6ba1b2c1",
+    "candidates_sha256": "0bca4015aa37d426d6c4dc4681299927e887914fc21a2cb194940851eb0b6836",
+    "reconcile_sha256": "9f6c95bf6e6f13649c88af24ded438017f79d1cc538fd64f6362573e5782ac22",
+    "review_sha256": "aa700a2b05585e1a97dc7e368f8fbdb01ccef713e64b71056624aa5c1286f474",
+    "candidates": 34,
+    "staged": 10,
+    "decisions": {
+      "accept": 10,
+      "defer": 12,
+      "same-as": 12
+    }
+  },
+  "index_at_staging": {
+    "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
+    "count": 3294
+  }
+}
