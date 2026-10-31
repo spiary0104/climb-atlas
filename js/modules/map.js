@@ -51,10 +51,9 @@ export function worldZoom(){
   const side = Math.min(el.clientWidth, el.clientHeight) || 600;
   return Math.min(2.4, Math.max(0.6, 1.3 + Math.log2(side * 0.85 / 490)));
 }
-// Style is CARTO's free, keyless "Dark Matter" vector basemap (kept per sec. 16.1; the rock theme sits on it).
-export const BASEMAP_STYLE = 'https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json';
-// Document pages (gym, region, city) show small maps on paper: CARTO Positron recoloured to the paper tokens (paperBasemap).
-export const PAPER_STYLE = 'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json';
+// One light basemap for every map in the app: CARTO's free, keyless "Positron" vector style, recoloured to the paper tokens
+// by paperBasemap (map readability decision 2026-10-31; the dark Dark Matter map it replaced was hard to read on phones).
+export const BASEMAP_STYLE = 'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json';
 
 let gl = null;                                   // the MapLibre map, once startMap has made it
 const listeners = [];                            // [type, fn] registered through map.on, attached to the real map too
@@ -329,9 +328,6 @@ function cssToken(name){
   return getComputedStyle(document.getElementById('main')).getPropertyValue(name).trim();
 }
 
-// Warm dark basemap (owner decision 2026-09-26, sec. 0.4 optional enhancement): CARTO Dark Matter is neutral grey with
-// blue water and roads. Every fill/line/background colour keeps its lightness and alpha but takes the hue and saturation
-// of --map-tint; nothing gets darker than --map-canvas. The map stays rock-dark (DNA #1); labels are untouched.
 const colourCtx = document.createElement('canvas').getContext('2d');
 function toHsla(colour){
   colourCtx.fillStyle = 'transparent'; colourCtx.fillStyle = colour;   // the canvas normalises any CSS colour (an invalid one leaves the reset)
@@ -345,26 +341,10 @@ function toHsla(colour){
   const h = d === 0 ? 0 : max === r ? 60 * (((g - b) / d) % 6) : max === g ? 60 * ((b - r) / d + 2) : 60 * ((r - g) / d + 4);
   return {h: (h + 360) % 360, s, l, a};
 }
-export function warmBasemap(target = gl){
-  const tint = toHsla(cssToken('--map-tint')), floor = toHsla(cssToken('--map-canvas')).l;
-  const warm = c => {
-    if(typeof c !== 'string' || c === 'transparent') return c;
-    const {l, a} = toHsla(c);
-    if(a === 0) return c;
-    return `hsla(${tint.h.toFixed(1)}, ${(tint.s * 100).toFixed(1)}%, ${(Math.max(l, floor) * 100).toFixed(1)}%, ${a})`;
-  };
-  for(const layer of target.getStyle().layers){
-    if(!['background', 'fill', 'line'].includes(layer.type)) continue;
-    const prop = layer.type + '-color';
-    const v = target.getPaintProperty(layer.id, prop);
-    if(typeof v === 'string') target.setPaintProperty(layer.id, prop, warm(v));
-    else if(v && Array.isArray(v.stops)) target.setPaintProperty(layer.id, prop, {...v, stops: v.stops.map(([z, c]) => [z, warm(c)])});
-  }
-}
 
-// Paper-toned basemap for the mini maps on document pages (Brand Pass, sec. 8): Positron's light greys take the warm hue
+// Paper-toned basemap, used by every map (Explore, mini maps, /add): Positron's light greys take the warm hue
 // of --map-paper-tint and sit just under --map-paper-land; white roads become --map-paper-road, water --map-paper-water,
-// labels --map-paper-label on a land-coloured halo. Explore keeps the dark map (warmBasemap).
+// labels --map-paper-label on a land-coloured halo.
 export function paperBasemap(target){
   const tint = toHsla(cssToken('--map-paper-tint')), land = toHsla(cssToken('--map-paper-land')).l;
   const road = cssToken('--map-paper-road'), water = cssToken('--map-paper-water');
@@ -374,7 +354,7 @@ export function paperBasemap(target){
     const {l, a} = toHsla(c);
     if(a === 0) return c;
     if(l > 0.995) return road;
-    return `hsla(${tint.h.toFixed(1)}, ${Math.min(tint.s * 100, 35).toFixed(1)}%, ${(Math.max(0, land - (1 - l) * 0.9) * 100).toFixed(1)}%, ${a})`;
+    return `hsla(${tint.h.toFixed(1)}, ${Math.min(tint.s * 100, 35).toFixed(1)}%, ${(Math.max(0, land - (1 - l) * 1.6) * 100).toFixed(1)}%, ${a})`;
   };
   const each = (v, f) => typeof v === 'string' ? f(v) : (v && Array.isArray(v.stops) ? {...v, stops: v.stops.map(([z, c]) => [z, f(c)])} : v);
   for(const layer of target.getStyle().layers){
@@ -433,9 +413,9 @@ function setUpMap(lib){
 
   gl.once('style.load', ()=>{
     gl.setProjection({type:'globe'});
-    try{ warmBasemap(); }catch(err){ console.warn('Could not warm the basemap colours', err); }
+    try{ paperBasemap(gl); }catch(err){ console.warn('Could not tone the basemap colours', err); }
     try{
-      // Atmosphere tinted to the rock palette rather than the default sky blue.
+      // Atmosphere tinted to the paper palette rather than the default sky blue.
       gl.setSky({
         'sky-color': cssToken('--map-sky'),
         'sky-horizon-blend': 0.5,
@@ -447,13 +427,6 @@ function setUpMap(lib){
       });
     }catch(err){
       console.warn('Sky/atmosphere not supported in this MapLibre build', err);
-    }
-    try{
-      // CARTO's Dark Matter ships "roadname_major" at a near-black #383838 on a #111 halo -- the one road-label tier that
-      // is unreadable (checked against map.getStyle().layers). Brightened to match the other tiers.
-      gl.setPaintProperty('roadname_major', 'text-color', cssToken('--map-road-label'));
-    }catch(err){
-      console.warn('roadname_major layer not found in this basemap style', err);
     }
     try{
       // The basemap's continent/country/state labels duplicate the app's own label tiers (paintRegionLabels): hide the

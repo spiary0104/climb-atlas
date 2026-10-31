@@ -21,7 +21,7 @@ export function breadcrumbHtml(crumbs){
   return `<nav class="breadcrumb" aria-label="Breadcrumb"><ol>${items.join('')}</ol></nav>`;
 }
 
-// A static map: a slot the page fills with a small non-interactive map (mini-map.js; the same warm dark basemap as
+// A static map: a slot the page fills with a small non-interactive map (mini-map.js; the same light basemap as
 // Explore, which is keyless as vector tiles -- CARTO's raster tiles need an API key), the pin, a link to Explore and the
 // basemap credit. Coordinates travel as numbers in data-* attributes, never as markup.
 // wide: fills its column (region pages) instead of a fixed square; points: the page passes its gyms as dots.

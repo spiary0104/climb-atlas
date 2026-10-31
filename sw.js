@@ -42,7 +42,7 @@
 //      "Revert to original" removed from the edit form (modals.js, index.html, style.css).
 // v39: MapLibre is no longer in the shell: map.js loads it after the first list render; modulepreload; parallel gym pages.
 // v42: a region page that lists exactly one city's gyms names that city page as its canonical (place-canonical.js).
-const CACHE_VERSION = 'v42';
+const CACHE_VERSION = 'v43';
 const SHELL_CACHE = 'climbatlas-shell-' + CACHE_VERSION;
 const RUNTIME_CACHE = 'climbatlas-runtime-' + CACHE_VERSION;
 const TILE_CACHE = 'climbatlas-tiles-' + CACHE_VERSION;

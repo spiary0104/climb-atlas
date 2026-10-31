@@ -113,7 +113,7 @@ Points (`contribution_points`, own row or moderator): 15 per approved gym, 5 per
 Pins: dots ≤ zoom 11, teardrops above (type colour: boulder > top rope > lead; rings selected > saved > climbed).
 Clusters: supercluster radius 48, maxZoom 15; identical coordinates get fixed pixel offsets (`stackOffsets`).
 Labels: continent < 3.5 ≤ country < 5 ≤ state/city < `HOLD_ICON_ZOOM` (9); basemap place labels suppressed below.
-Basemap: CARTO Dark Matter, warmed at style load (`warmBasemap`: each colour takes `--map-tint`'s hue, keeps its lightness).
+Basemap: ONE light map everywhere (Explore, mini maps, /add): CARTO Positron, recoloured at style load by `paperBasemap` to the `--map-paper-*` tokens; no scheme toggle, `prefers-color-scheme` is not read. Clusters are dark discs, pins ink-outlined.
 
 ## Design system (docs/DESIGN.md)
 Components use semantic roles only (`--color-text-secondary`, `--radius-md`, `--shadow-overlay`), never
