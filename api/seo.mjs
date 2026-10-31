@@ -79,7 +79,8 @@ async function gymMeta(a, slug){
 
 function placeMeta(a, pathname){
   const p = a.places.places[pathname];
-  return p ? { title: a.meta.fullTitle(p.title), description: p.description, url: ORIGIN + pathname } : null;
+  // A region page that duplicates its city page names the city page as canonical (api/_places.json, place-canonical.js).
+  return p ? { title: a.meta.fullTitle(p.title), description: p.description, url: ORIGIN + (p.canonical || pathname) } : null;
 }
 
 function html(body, status = 200){
