@@ -236,6 +236,7 @@
 .pin{cursor:pointer;line-height:0;}
 .pin-svg{display:block;overflow:visible;transition:transform var(--motion-fast) var(--ease-standard);}
 .pin--teardrop .pin-svg{transform-origin:50% 100%;}
+.pin--dot .pin-svg{width:var(--pin-size-dot-map);height:var(--pin-size-dot-map);}
 .pin.is-selected,.pin.is-hover{z-index:2;}
 .pin.is-selected .pin-svg,.pin.is-hover .pin-svg{transform:scale(var(--pin-scale-selected));}
 .pin-body{stroke:var(--map-pin-outline);}
@@ -285,7 +286,7 @@
   .pin--teardrop::before{top:40%;}
 }
 
-/* Region labels over the map: Inter only on rock (sec. 1.2), text + halo, no accent colour. */
+/* Region labels over the map: Inter, ink text + paper halo, no accent colour. */
 .region-label{
   color:var(--map-label-text);
   font-family:var(--font-text);
