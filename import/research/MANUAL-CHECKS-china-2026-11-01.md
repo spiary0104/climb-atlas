@@ -85,3 +85,16 @@ Manual checks (owner or a later pass):
 - Not done: RedNote open/closed checks for gyms with a normal Amap listing (Amap "listed, not flagged closed" is weak evidence), and Amap searches per remaining brand for Shanghai/Shenzhen.
 
 New gyms: section `import/research/2026-11-02-cn-hangzhou` (reconciled, not staged): cn-hz-001 Luna Binjiang Yintai (pure bouldering per its own account; review), cn-hz-002 Banana+ Hangzhou Center (opened 2026-10-28; bouldering not stated, blocked). China new-gym batches stay on hold for the local-name schema (PR #88).
+
+## 2026-11-02 second pass: new-gym research with RedNote (about 30 page loads) and saved Amap data
+Amap was not used after its anti-abuse dialog appeared. Section created: `2026-11-01-cn-jinan` (2 accept, 1 defer; not staged).
+**Region codes missing in the app** (candidates cannot be created until `js/modules/regions.js` CN has them): Dali, Lijiang, Foshan, Dongguan, Zhongshan, Wenzhou, Sanya, Taiyuan, Hohhot, Wuxi, Changzhou, Lanzhou, Xining, Yinchuan, Urumqi, Lhasa. Existing codes include Jinan, Kunming, Qingdao, Xiamen, Ningbo, Changsha, Zhuhai.
+Primary evidence found (own RedNote account), but not turned into a candidate:
+- Dali 行山攀岩馆 (大理店, 小院子中区; Amap B0I2FZFHQO, stable entrance 25.663220,100.171914): own account (1K followers) says 难度抱石 (bouldering), hours 10:00-20:00, posts to 2026-09-02; also a Mile (弥勒) branch. Blocked only by the missing Dali region code.
+- Wenzhou 芭乐攀岩: own account (1.2K) says 室内攀石2800㎡ at the 瓯联馆; branches 龙湾, 瑞安新湖银泰, 鹿城 (opening). The Amap listing B0LU24O9C4 (龙湾区蒲州街道上江路185号) cannot be tied to one branch, and Wenzhou has no region code.
+- Zhuhai 香蕉攀岩 旺角荟店 (Amap B0M2ZL3WCE, coordinate pending Amap detail read): brand account 香蕉攀岩珠海 (809 followers) posts to 2026-10-28; bouldering not stated in the notes read.
+- Zhuhai 蓝天攀岩 (青少年活动中心店 B0FFGBAJ4K, 城市客厅店 B0I3KS9MBJ): youth-focused education account, bouldering/adult access not stated.
+- Jinan 515 世茂芯环店: in the section as deferred (bouldering unknown).
+- Foshan/Shunde HELLO MAX攀岩 (Amap B0K26PV0KP, account 95852275487) and 擎天攀岩 (account 63869137369, city not stated): active accounts, bouldering and branch not tied to a listing; no Foshan region code.
+- Changsha 九二攀岩馆(贺龙店) (Amap B0FFGZP0SQ, stable entrance): own account, youth training and private coaching only, last post 2026-03-01, bouldering not stated. Changsha 大曦 / 向上攀 / 湘攀 / TBW / CAMP4: no own account found in the one search made; coordinates not read (search reads UNSTABLE). Needs an Amap detail read.
+- Xiamen, Kunming, Qingdao, Ningbo: no RedNote reads made this pass (all saved search coordinates were UNSTABLE and no listing-detail coordinate was saved, so no candidate could be built).
