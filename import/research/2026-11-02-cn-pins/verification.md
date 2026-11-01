@@ -271,3 +271,138 @@ Summary: 36 audited; 9 MANUAL; 18 pin updates; 3 ok (none); 6 on hold (children'
 | seed-532 | Zhengyan Climbing Gym (Guiwan) | Amap: listed (征岩攀岩馆(桂湾店) B0K63CN1BZ, 南山区听海大道桂湾公园P2停车场左边100米) | 1226 m (listing) | pin update |
 
 Summary: 47 audited; 21 pin updates; 17 MANUAL; 3 ok (none); 6 on hold (children's venues).
+
+# Part 3 (2026-11-02): Wuhan, Changsha, Zhuhai, Suzhou, Tianjin, Xi'an, Nanjing
+Batch `import/batches/2026-11-02-cn-pins-3` (44 pin updates; validate + plan + `import --dry-run` pass, PARTIAL coverage = no service-role key). Same method as above (brand/name AND address; entrance coordinate, else listing-detail coordinate; GCJ-02 -> WGS-84; update only when more than 150 m off). The Amap browser tab stopped answering (CDP timeouts) during the listing-detail reads, so **Xi'an (12 gyms) and Nanjing (11 gyms) are matched but held**: their pin updates need the detail read (resume: `node detail.js <ids>`, ids in the rows below). Garbled characters in Amap detail text were ignored; names/addresses below come from the search results.
+
+## Wuhan (18 gyms)
+| id | gym | status (evidence) | pin vs Amap | action |
+|---|---|---|---|---|
+| seed-692 | Banana Climbing (Huafa Midtown) | Amap: listed (BANANA+ 香蕉攀岩 (华发中城商都店) B0L3MLOP8Z, 青年路299号华发中城商都B1栋1F层1号); the listing is BANANA+ in the same mall (Huafa Midtown / 华发中城商都); Bouldeer address Huaihai Rd 6 vs Amap Qingnian Rd, same mall | 1907 m (entrance) | pin update |
+| seed-693 | Banana Climbing (Qincheng MixC World) | Amap: listed (香蕉攀岩(亲橙万象汇店) B0K05SUPE9, 徐家棚街道亲橙万象汇L501号) | 6237 m (listing) | pin update |
+| seed-694 | Banana Climbing (Hang Lung Plaza) | Amap: listed (香蕉攀岩馆(恒隆广场店) B0LDUDA9RB, 恒隆广场座501B) | 148 m (entrance), ok | none |
+| seed-695 | Banana Climbing (Optics Valley K11) | Amap: listed (香蕉攀岩(光谷K11店) B0MDCD3NA0, 关山大道35号) | 1384 m (entrance) | pin update |
+| seed-696 | Yousheng Meiyan Climbing Gym (Jinhe Center) | Amap: listed (优胜美岩运动攀岩馆(金禾中心店) B0FFIDTTNL, 徐东大街181号岳家嘴金禾中心124号) | 576 m (entrance) | pin update |
+| seed-697 | CUG Outdoor Climbing Gym | Amap: listed (地大户外攀岩馆 B0LG4YCFKM, 和平大道1278号武汉青山印象城F层); shares one pin with seed-708 (Snow Leopard, same mall) | 2286 m (listing) | pin update |
+| seed-699 | Wuyan Liuse Climbing Gym | Amap: listed (五岩六色攀岩馆 B0KDC7O6EO, 欧亚达汉口生活MALL负二层B2-13) | 4331 m (entrance) | pin update |
+| seed-700 | New Starting Point Climbing (Gaoxin) | Amap: listed (新起点攀岩(高新馆) B0M3K9OGGZ, 壹为邻商五楼); Amap address has no road number (壹为邻商场五楼); match by brand + branch name 高新馆 | 2107 m (listing) | pin update |
+| seed-701 | New Starting Point Climbing (Hankou) | Amap: listed (新起点攀岩(汉口馆) B0KR9CILFF, 新华街道解放道1381号大洋中心A座1楼) | 43 m (listing), ok | none |
+| seed-702 | SU328 Climbing & Combat Sports Center | Amap: listed (SUB328攀岩拳击运动中心(漫时区店) B0KBOL8JRQ, 3号楼3楼) | 2438 m (listing) | pin update |
+| seed-703 | Yanwu Kongjian Climbing (Wuhan Livat) | Amap: listed (岩舞空间(武汉荟聚店) B0JBU7JZMB, 园博大道1号武汉荟聚L1层(12号门进入向右走10m,扶梯附近)) | 1896 m (listing) | pin update |
+| seed-704 | K-PRO Climbing Center | Amap: listed (K-PRO快意攀岩中心 B0M6MCUQCM, 解放大道武汉K11购物艺术中心II馆1层S101、S104-1) | 489 m (entrance) | pin update |
+| seed-705 | Rock Climbing (Dongxihu) | no Amap climbing listing at Bishui Ave / Hongtu 2nd Rd (nearest listing is 岩舞·空间金银潭店, 2.9 km away, a different mall); status unknown | - | MANUAL |
+| seed-706 | Yanwu Kongjian Climbing (CapitaMall 1818) | Amap: listed (岩舞空间(凯德1818店) B0J1PD42T8, 中北路109号凯德1818 F1层) | 1643 m (listing) | pin update |
+| seed-707 | MTC Summit Climbing | Amap: listed (MTC顶峰攀岩 B0LGZCVW1D, B座) | 6214 m (entrance) | pin update |
+| seed-708 | Snow Leopard Climbing Gym | Amap lists two 雪豹 gyms (大夹街203号 B0FFF67QV6; 汉商银座 B0FFI30L6Z), neither at Qingshan Impression City; the only Amap climbing listing there is seed-697 地大户外 (F-level); shares one pin with seed-697 | - | MANUAL |
+| seed-709 | HICOME Climbing (Jiangteng) | no Amap listing for HICOME / 江腾广场 (a search found only Hicome in Hong Kong); status unknown | - | MANUAL |
+| seed-710 | Fire Dance Climbing Leisure Fitness Hall | Amap: listed (火舞攀岩休闲健身馆 B0K1CUM3JW, 吴家街阡那广场1中庭) | 323 m (entrance) | pin update |
+
+Summary: 18 audited; 13 pin updates; 2 none; 3 MANUAL.
+
+## Changsha (3 gyms)
+| id | gym | status (evidence) | pin vs Amap | action |
+|---|---|---|---|---|
+| seed-711 | Banana Climbing (Zhujiang Star Ring) | Amap: listed (香蕉攀岩(珠江星环店) B0J01U438Y, 福元西路109号珠江星环购物中心L3层) | 3454 m (listing) | pin update |
+| seed-712 | Banana Climbing (Yuefang ID Mall) | Amap: listed (香蕉攀岩(悦方ID MALL店) B0L0ZAE3OC, 坡子街216号悦方IDMALL L4层香蕉攀岩L455) | 104 m (entrance), ok | none |
+| seed-713 | Banana Climbing (CapitaLand One) | Amap: **暂停营业** (香蕉攀岩馆(凯德·壹中心店)(暂停营业) B0IULAR3ZB, 茶子山东路112号凯德·壹中心B2层); Amap marks this listing **暂停营业** (temporarily closed): pin fixed from the listing, status MANUAL (not retired) | 8642 m (listing) | pin update |
+
+Summary: 3 audited; 2 pin updates; 1 none.
+
+## Zhuhai (1 gyms)
+| id | gym | status (evidence) | pin vs Amap | action |
+|---|---|---|---|---|
+| seed-755 | Banana Climbing (Le Shi) | Amap: listed (香蕉攀岩(珠海乐士店) B0G0YSLO8W, 1栋第一层南侧TE1三5) | 6984 m (entrance) | pin update |
+
+Summary: 1 audited; 1 pin.
+
+## Suzhou (20 gyms)
+| id | gym | status (evidence) | pin vs Amap | action |
+|---|---|---|---|---|
+| seed-756 | HOLDZ Climbing Monkey Climbing (Kunshan) | Amap: listed (HOLDZClimbing猴子攀岩昆山店 B0M16AMZYM, 玉山镇长江中路); Bouldeer has no address; match by brand + city (the only HOLDZ in Kunshan) | 974 m (listing) | pin update |
+| seed-757 | HOLDZ Climbing Monkey Climbing (Wuzhong) | Amap: listed (HOLDZ Climbing猴子攀岩吴中店 B0MUFHGRTO, 南溪江路88号801号); the only HOLDZ in Wuzhong; Bouldeer has no address | 5879 m (listing) | pin update |
+| seed-758 | Koala Climbing (Wangfujing) | Amap: listed (考拉攀岩(王府井购物中心) B0MDSOJLER, 嘉元路188号王府井生活广场2层东侧); the only 考拉 in Suzhou city; Bouldeer has no address | 7155 m (listing) | pin update |
+| seed-759 | Koala Climbing (New District) | Koala (考拉) New District: the only Amap 考拉 in the Hi-Tech/New District is B0LBZRMJ5V (狮山下沉广场B1), but Bouldeer has no address to confirm the branch | - | MANUAL |
+| seed-760 | TBW Extreme Sports Center (Kunshan) | Amap: listed (TBW极限运动中心(昆山城西店) B0M6A5ZERH, 前进西路1850号(保利影城1层)) | 7080 m (entrance) | pin update |
+| seed-761 | Climbing Orangutan (Xinglanhui) | Amap: listed (攀猩攀岩馆(星斓荟店) B0M6TR6NTP, 南榭雨街55号星斓荟·路劲广场) | 251 m (entrance) | pin update |
+| seed-762 | Star Rock Climbing (Gaoxin Culture & Sports Center) | Amap: listed (星空攀岩文体中心店 B0HUJC0J9T, 太湖大道999文体中心健身中心楼综合馆vip网球室) | 7561 m (entrance) | pin update |
+| seed-763 | Star Rock Climbing (Meiluo) | Amap: listed (星空攀岩(超级星空美罗店) B0MRFRTZ3S, 长江路211号天都广场1幢102室二楼2006(玉山路地铁1号口旁)); branch name Meiluo = 美罗; Bouldeer has no address; shares one placeholder pin with seed-758 and seed-774 | 7862 m (listing) | pin update |
+| seed-764 | Star Rock Climbing (Mudu Youfang) | Amap: listed (星空攀岩(悠方店) B0FFJ1NBEV, 木渎悠方六楼星空攀岩(金枫路地铁站出入口步行50米)); Bouldeer has no address; Mudu Youfang = 木渎悠方 | 2338 m (listing) | pin update |
+| seed-765 | Star Rock Climbing (HSR Wuyue Plaza) | Amap: listed (星空攀岩(吾悦广场苏州高铁店) B0LD5L6RHU, 相城大道3188号吾悦广场苏州高铁店F4层); Bouldeer has no address; HSR Wuyue Plaza = 吾悦广场苏州高铁店 | 3132 m (entrance) | pin update |
+| seed-766 | Star Rock Climbing (Suzhou Bay Gulin Park) | Amap: listed (运动社&星空攀岩(苏州湾歌林公园店) B0GUU6Y0AA, 天鹅荡路1-1号F4); Bouldeer has no address; Suzhou Bay Gulin Park = 苏州湾歌林公园; shares a placeholder pin with seed-768 | 11340 m (entrance) | pin update |
+| seed-767 | Sports Club & Star Rock Climbing (Yinshan Lake Gulin Park) | Amap: listed (运动社&星空攀岩(尹山湖歌林公园店) B0KDXHD13B, 8号楼负一楼)) | 617 m (entrance) | pin update |
+| seed-768 | Liu Changzhong Climbing (Sasseur) | Amap: listed (刘常忠攀岩馆(砂之船店) B0H3SCMBBA, 开平路3688号); Bouldeer has no address; Sasseur = 砂之船 | 5144 m (listing) | pin update |
+| seed-769 | Liu Changzhong Climbing (Olympic Sports Center) | Amap: listed (刘常忠攀岩馆(奥体中心店) B0FFKE2AT8, 中新大道东999号苏州奥林匹克体育中心游泳馆一楼) | 8996 m (entrance) | pin update |
+| seed-770 | Liu Changzhong Climbing (Dushu Lake) | no Amap listing for a Liu Changzhong (刘常忠) gym at Dushu Lake (Amap lists only the Olympic Center and Sasseur branches); status unknown | - | MANUAL |
+| seed-771 | Panyue Climbing (Caohu Culture & Sports Center) | Amap: listed (攀月攀岩漕湖文体中心店 B0MB271IJ5, 永昌泾路19号文体中心二楼) | 1072 m (entrance) | pin update |
+| seed-772 | Panyue Climbing (Xiangcheng Tianjie) | Amap: listed (攀月攀岩 (相城天街店) B0LAJ7P0ZQ, 天街B馆(OPARK活力汇)5F-3) | 497 m (entrance) | pin update |
+| seed-773 | Panyue Climbing (SIP Xinghu) | Amap: listed (攀月攀岩(园区星湖店) B0LDTX8GWA, 工业园区星湖龙湖天街A馆5F-03); Bouldeer has no address; Xinghu = 星湖 | 5594 m (entrance) | pin update |
+| seed-774 | Loong Climbing (Jiuguang) | Amap: listed (九星龙国际攀岩LOONG CLIMBING B0J13DN5PD, 工业园区久光百货三层黄区3B-01(a+c)九星龙国际攀岩); Bouldeer has no address; Jiuguang = 久光百货, listing address 久光百货三层 | 8493 m (listing) | pin update |
+| seed-775 | Loong Climbing (Suzhou MixC World) | Amap 九星龙国际攀岩(万象天地店) B0LKSMHMXR is at 金阊 枫桥路36号 (MixC World / 万象天地) but Bouldeer says 338 Liuyuan Rd (outside Changmen); address does not match | 708 m (listing, unverified match) | MANUAL |
+
+Summary: 20 audited; 17 pin updates; 3 MANUAL.
+
+## Tianjin (15 gyms)
+| id | gym | status (evidence) | pin vs Amap | action |
+|---|---|---|---|---|
+| seed-776 | Dianfeng Climbing Gym | Dianfeng (Wuqing/Binhai area pin 39.303,117.416 shared with seed-781 and seed-790): no matching Amap listing; status unknown | - | MANUAL |
+| seed-777 | Mango Climbing (Binhai Wuyue Plaza) | Amap: listed (芒果攀岩(滨海吾悦广场店) B0L16GRVCE, 滨海吾悦广场2号门二楼001) | 1973 m (entrance) | pin update |
+| seed-778 | Bolonghu Sports Fitness Center Climbing Gym | Amap: listed (渤龙湖体育健身中心攀岩馆 B0K2L7PPZG, 高新六路与惠仁道交叉口东北160米) | 1295 m (entrance) | pin update |
+| seed-779 | Mango Climbing (Ninghe Wuyue Plaza) | Amap: listed (芒果攀岩(宁河吾悦广场店) B0K0HSB27G, 桥北街道光明路58号吾悦广场2楼多经204号) | 1486 m (entrance) | pin update |
+| seed-780 | Fengmang Climbing (Gulou New World) | Amap: listed (锋芒攀岩(新世界百货店) B0FFM19YI3, 鼓楼街道东马路新世界百货负一层) | 26 m (listing), ok | none |
+| seed-781 | Rockway Climbing (Shuicheng) | Rockway (岩途): two Amap listings, B0J2955XZE (武清体育中心A馆) and B0M11A13LR (卉康道, Xiqing); Bouldeer branch names Shuicheng/Cuitong Rd and no address do not decide which is which; shares one pin with seed-776 and seed-790 | - | MANUAL |
+| seed-782 | Xingkong Climbing Gym (Liuyuan) | Xingkong (行空) Liuyuan, Chenchang Rd: Amap lists only 行空攀岩运动馆(陆家嘴店) in Hongqiao district, a different branch; status unknown | - | MANUAL |
+| seed-783 | Fun Wild Climbing (Meijiang Convention Center) | Amap: listed (趣野攀岩(梅江会展中心店) B0KDGGBQVF, 梅江会展中心二期S3馆3楼) | 933 m (entrance) | pin update |
+| seed-784 | Mango Climbing (Binhai Jinyu Jiapin) | Amap: listed (芒果攀岩(金隅嘉品Mall店) B0J0BLVYVJ, 金隅嘉品mall四楼) | 1183 m (listing) | pin update |
+| seed-785 | Benpan Climbing Gym | Amap: listed (本攀攀岩馆(天津店) B0LK2URD9O, 南泥湾路6-10底商熙悦汇悦动广场B1); Bouldeer has no address; the only 本攀 in Tianjin | 2488 m (entrance) | pin update |
+| seed-786 | Tianjin Top Climbing (Hexi) | Amap: listed (天津TOP climbing攀岩俱乐部(河西店) B0FFGHAWE7, 太湖路17号通达尚城体育馆2楼); address number differs (33 vs 17/12) but same venue, 通达尚城体育馆 | 68 m (entrance), ok | none |
+| seed-787 | Tianjin Top Climbing (Huanghe Rd) | Amap: listed (天津Top climbing 攀岩馆(黄河道店) B0L1OUOIIY, 黄河道519号,幢号24-102-1号); Bouldeer has no address; branch name Huanghe Rd = 黄河道店 | 2535 m (entrance) | pin update |
+| seed-788 | Tianjin Over Rock Climbing Gym | Amap: listed (天津OverRock攀岩馆 B0FFJ01V67, 兴华四支路11号) | 1222 m (entrance) | pin update |
+| seed-789 | Tianjin Top Climbing (Ling'ao) | Amap: listed (天津TOP攀岩俱乐部(凌奥馆) B0FFMG06AT, 凌奥创意产业园2期2号); branch name Ling'ao = 凌奥 | 8146 m (entrance) | pin update |
+| seed-790 | Rockway Climbing (Cuitong Rd) | Rockway (岩途) Cuitong Rd: see seed-781 | - | MANUAL |
+
+Summary: 15 audited; 4 MANUAL; 9 pin updates; 2 none.
+
+## Xi'an (19 gyms)
+| id | gym | status (evidence) | pin vs Amap | action |
+|---|---|---|---|---|
+| seed-796 | Huoshi Climbing (Provincial Stadium) | Amap: listed (西安火石攀岩运动馆(省体店) B0FFG7Z5RP, 绿锐商城内负一层) | 206 m (listing) | pin update |
+| seed-797 | Laoshan Climbing Co-creation Club | Amap: listed (老陕攀登共创俱乐部 B0I395YOFL, 含光北路96号公路设计院家属院13号楼) | 1022 m (entrance) | pin update |
+| seed-798 | Yan13 Climbing Gym | Amap: listed (岩十三攀岩(高新店) B0KBK4BFT5, 高新技术产业开发区高新路76号天地源丹轩坊13栋负一楼) | 147 m (entrance), ok | none |
+| seed-799 | DC Climbing | DC (攀岩): Amap has 2 DC listings (B0L2OCWLQG 立工丰城, B0MD1CTBBD 西体店); Bouldeer has no branch or address | - | MANUAL |
+| seed-800 | Huoshi Climbing (Rainbow Valley) | matched to Amap B0K35D36FY by brand/name and address; listing-detail read not done (browser stopped) | - | hold (detail read pending) |
+| seed-801 | Lingzhongli Climbing (Taiyicheng) | matched to Amap B0KBLZYFR9 by brand/name and address; listing-detail read not done (browser stopped) | - | hold (detail read pending) |
+| seed-802 | Duote Climbing (Dazhai Rd) | matched to Amap B0HRPA4TUA by brand/name and address; listing-detail read not done (browser stopped) | - | hold (detail read pending) |
+| seed-803 | Muyan Climbing | Muyan: no matching Amap listing (a 牧岩 search found none) | - | MANUAL |
+| seed-804 | Jianshan Climbing | matched to Amap B0MBORXMS1 by brand/name and address; listing-detail read not done (browser stopped) | - | hold (detail read pending) |
+| seed-805 | Red Point Climbing (Longhu Changle Tianjie) | matched to Amap B0LDU6ABXT by brand/name and address; listing-detail read not done (browser stopped) | - | hold (detail read pending) |
+| seed-806 | Daren Climbing | matched to Amap B0JAOCUYWE by brand/name and address; listing-detail read not done (browser stopped) | - | hold (detail read pending) |
+| seed-807 | Duote Climbing (Dayuecheng) | matched to Amap B0J3D7LS0C by brand/name and address; listing-detail read not done (browser stopped) | - | hold (detail read pending) |
+| seed-808 | Duote Climbing (Minleyuan) | matched to Amap B0KRTHXPL0 by brand/name and address; listing-detail read not done (browser stopped) | - | hold (detail read pending) |
+| seed-809 | Red Point Climbing (Datang West Market) | matched to Amap B0IULUT6MP by brand/name and address; listing-detail read not done (browser stopped) | - | hold (detail read pending) |
+| seed-810 | Climbing Dream Factory (Lijiacun) | matched to Amap B0FFJI10HW by brand/name and address; listing-detail read not done (browser stopped) | - | hold (detail read pending) |
+| seed-811 | Xi'an Seeyou Climbing Gym | Seeyou: no certain Amap match (西柚攀岩 B0LAARDDIK exists but the names are not the same word) | - | MANUAL |
+| seed-812 | Xi'an Zebra Climbing | matched to Amap B0K3HL0B2F by brand/name and address; listing-detail read not done (browser stopped) | - | hold (detail read pending) |
+| seed-813 | Wopan Xi'an Climbing Gym | matched to Amap B0LURN1BJB by brand/name and address; listing-detail read not done (browser stopped) | - | hold (detail read pending) |
+| seed-814 | Peter Rabbit Climbing (Damao City) | Peter Rabbit (彼德兔) Damao City: Amap lists 彼德兔 at Zhaoyangmen, Huaqing, Taibai, Xixian and Chang'an malls; none at Damao City (大茂城) | - | MANUAL |
+
+Summary: 19 audited; 2 pin updates; 1 none; 4 MANUAL; 12 hold.
+
+## Nanjing (14 gyms)
+| id | gym | status (evidence) | pin vs Amap | action |
+|---|---|---|---|---|
+| seed-846 | MR.B X PARK Extreme Sports (Boulder) | MR.B X PARK Extreme Sports: no Amap climbing listing found; status unknown | - | MANUAL |
+| seed-847 | SEEK ROCK CLIMBING (Xinyao Gemdale Plaza) | matched to Amap B0LDX59QE2 by brand/name and address; listing-detail read not done (browser stopped) | - | hold (detail read pending) |
+| seed-848 | Blue Whale Climbing (Sun City) | matched to Amap B0K357KDES by brand/name and address; listing-detail read not done (browser stopped) | - | hold (detail read pending) |
+| seed-849 | Blue Whale Climbing (Jiqingmen) | matched to Amap B0FFKO03Y0 by brand/name and address; listing-detail read not done (browser stopped) | - | hold (detail read pending) |
+| seed-850 | Blue Whale Climbing (Hexi Zhongsheng) | matched to Amap B0IR05RTIK by brand/name and address; listing-detail read not done (browser stopped) | - | hold (detail read pending) |
+| seed-851 | Kuanrun Climbing Gym | Kuanrun (宽润): no Amap listing found (the only Gulou hits are 傅抱石 museums); status unknown | - | MANUAL |
+| seed-852 | MOJO Climbing | matched to Amap B0K25KHYAH by brand/name and address; listing-detail read not done (browser stopped) | - | hold (detail read pending) |
+| seed-853 | Blue Whale Climbing (Yuejie Fantasy City) | matched to Amap B0MDCL3UC1 by brand/name and address; listing-detail read not done (browser stopped) | - | hold (detail read pending) |
+| seed-854 | SEEK ROCK CLIMBING (Jiangbei Yinxianghui) | matched to Amap B0MBZXDE46 by brand/name and address; listing-detail read not done (browser stopped) | - | hold (detail read pending) |
+| seed-855 | Outdoor Dream Factory Climbing Center | Outdoor Dream Factory (户外梦工厂): no Amap listing found; status unknown | - | MANUAL |
+| seed-856 | Elephant Climbing | matched to Amap B0MUT7LCP7 by brand/name and address; listing-detail read not done (browser stopped) | - | hold (detail read pending) |
+| seed-857 | Koolah Climbing | matched to Amap B0L6HHPPM5 by brand/name and address; listing-detail read not done (browser stopped) | - | hold (detail read pending) |
+| seed-858 | Pulse Climbing | matched to Amap B0L0NUSJHY by brand/name and address; listing-detail read not done (browser stopped) | - | hold (detail read pending) |
+| seed-859 | SEEK ROCK CLIMBING (Nanyou Plaza/Xianlin) | matched to Amap B0LAARPS0G by brand/name and address; listing-detail read not done (browser stopped) | - | hold (detail read pending) |
+
+Summary: 14 audited; 3 MANUAL; 11 hold.
