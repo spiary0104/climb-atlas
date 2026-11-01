@@ -12,7 +12,7 @@
 // for every country, not just NL. China (CN) is the one deliberate exception
 // to "real administrative divisions": it intentionally lists major cities,
 // not China's 34 provincial-level divisions (see `docs/architecture.md`
-// "Data model" for why) — expanded here from 10 to 31 major/provincial-
+// "Data model" for why) — expanded here from 10 to 31, then 47 (2026-11-02) major/provincial-
 // capital cities, still not exhaustive (China has 300+ prefecture-level
 // cities), just a much wider practical set than before.
 export const STATES_BY_COUNTRY = {
@@ -46,14 +46,17 @@ export const STATES_BY_COUNTRY = {
        ['MARLBOROUGH','Marlborough'],['NELSON','Nelson'],['NORTHLAND','Northland'],['OTAGO','Otago'],
        ['SOUTHLAND','Southland'],['TARANAKI','Taranaki'],['TASMAN','Tasman'],['WAIKATO','Waikato'],
        ['WELLINGTON','Wellington'],['WEST_COAST','West Coast']],
-  CN: [['BEIJING','Beijing'],['CHANGCHUN','Changchun'],['CHANGSHA','Changsha'],['CHENGDU','Chengdu'],
-       ['CHONGQING','Chongqing'],['DALIAN','Dalian'],['FUZHOU','Fuzhou'],['GUANGZHOU','Guangzhou'],
+  CN: [['BEIJING','Beijing'],['CHANGCHUN','Changchun'],['CHANGSHA','Changsha'],['CHANGZHOU','Changzhou'],
+       ['CHENGDU','Chengdu'],['CHONGQING','Chongqing'],['DALI','Dali'],['DALIAN','Dalian'],
+       ['DONGGUAN','Dongguan'],['FOSHAN','Foshan'],['FUZHOU','Fuzhou'],['GUANGZHOU','Guangzhou'],
        ['GUIYANG','Guiyang'],['HAIKOU','Haikou'],['HANGZHOU','Hangzhou'],['HARBIN','Harbin'],['HEFEI','Hefei'],
-       ['JINAN','Jinan'],['KUNMING','Kunming'],['NANCHANG','Nanchang'],['NANJING','Nanjing'],
-       ['NANNING','Nanning'],['NINGBO','Ningbo'],['QINGDAO','Qingdao'],['SHANGHAI','Shanghai'],
+       ['HOHHOT','Hohhot'],['JINAN','Jinan'],['KUNMING','Kunming'],['LANZHOU','Lanzhou'],['LHASA','Lhasa'],
+       ['LIJIANG','Lijiang'],['NANCHANG','Nanchang'],['NANJING','Nanjing'],['NANNING','Nanning'],
+       ['NINGBO','Ningbo'],['QINGDAO','Qingdao'],['SANYA','Sanya'],['SHANGHAI','Shanghai'],
        ['SHENYANG','Shenyang'],['SHENZHEN','Shenzhen'],['SHIJIAZHUANG','Shijiazhuang'],['SUZHOU','Suzhou'],
-       ['TIANJIN','Tianjin'],['WUHAN','Wuhan'],['XIAMEN','Xiamen'],['XIAN',"Xi'an"],['ZHENGZHOU','Zhengzhou'],
-       ['ZHUHAI','Zhuhai']],
+       ['TAIYUAN','Taiyuan'],['TIANJIN','Tianjin'],['URUMQI','Urumqi'],['WENZHOU','Wenzhou'],['WUHAN','Wuhan'],
+       ['WUXI','Wuxi'],['XIAMEN','Xiamen'],['XIAN',"Xi'an"],['XINING','Xining'],['YINCHUAN','Yinchuan'],
+       ['ZHENGZHOU','Zhengzhou'],['ZHONGSHAN','Zhongshan'],['ZHUHAI','Zhuhai']],
   GB: [['ENGLAND','England'],['SCOTLAND','Scotland'],['WALES','Wales'],['NORTHERN_IRELAND','Northern Ireland']],
   DE: [['BAYERN','Bayern'],['BERLIN','Berlin'],['NORDRHEIN_WESTFALEN','Nordrhein-Westfalen'],['HESSEN','Hessen'],
        ['BADEN_WURTTEMBERG','Baden-Württemberg'],['BREMEN','Bremen'],['SCHLESWIG_HOLSTEIN','Schleswig-Holstein'],
