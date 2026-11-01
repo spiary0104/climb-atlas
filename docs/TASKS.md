@@ -17,6 +17,15 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 - `docs/research/coverage-gap-2026-10/REPORT.md` (country/city gap rankings, next wave, tooling notes). 187 owner checks: `MANUAL-CHECKS.md`.
   Follow-ups (pin fixes, Seoul duplicates): `STATUS.md`. Next wave: Korea outside Seoul, US covered-state metros, FR/DE long tail, Italy, UK cities.
 
+### China (Chengdu) pilot — Gate 0 done 2026-10-31; Gate 1 approved 2026-11-01
+- Network (Gate 0): no mainland hosting now (Supabase ~28% reachable on mainland networks; ICP needs a Chinese entity); roaming/eSIM
+  guidance + a minimal offline "download a city" mode later. Plan: https://claude.ai/artifact/GVHNLJWVT6gdQyQCVSM4Lm
+- Data: 14 verified pilot gyms + batch `2026-11-01-chengdu` (needs apply approval): `import/research/2026-11-01-chengdu/verification.md`.
+  Visitor info: WeChat checks by someone with WeChat (owner note 2026-11-01). Hold PR #83's CN batches until the name_local schema.
+- Next: Gate 1 PR 1 (name_local + visitor fields, local branch only), then the importer.
+- Map tiles: CARTO used keyless under its non-commercial terms (owner 2026-11-01); if use turns commercial or CARTO limits it,
+  fall back to OpenFreeMap (measured reachable in mainland China too).
+
 ## Gym data
 ### Owner manual checks
 - Wave 3A: 17 gyms (`import/research/MANUAL-CHECKS-wave-3a.md`).

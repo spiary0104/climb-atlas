@@ -1,0 +1,248 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-11-01-chengdu",
+ "index": {
+  "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
+  "count": 3294,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-06-kr-seoul"
+ ],
+ "counts": {
+  "records": 9,
+  "new": 0,
+  "existing": 0,
+  "update": 4,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "retire": 5,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 2
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "58219cf029c7c1cdd4f6a7c32aaf2a14904e587b89cafb2cc9709ac57a332ea7",
+ "records": [
+  {
+   "line": 1,
+   "class": "update",
+   "id": "seed-608",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 30.6044452,
+     "after": 30.605158
+    },
+    {
+     "field": "lng",
+     "before": 104.0698452,
+     "after": 104.066451
+    }
+   ],
+   "expect_h": "67201ba797c59235",
+   "update_reason": "Pin moved to the entrance coordinate of the gym's own Amap listing (香蕉攀岩(凯德天府店)), ~334 m from the old pin"
+  },
+  {
+   "line": 2,
+   "class": "update",
+   "id": "seed-622",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 30.665222,
+     "after": 30.667772
+    },
+    {
+     "field": "lng",
+     "before": 104.0683039,
+     "after": 104.068091
+    }
+   ],
+   "expect_h": "5bf0cd03e3bc213c",
+   "update_reason": "Pin moved to the entrance coordinate of the gym's own Amap listing (熊猫攀岩生活馆ClimbingPanda(富力店)), ~284 m from the old pin"
+  },
+  {
+   "line": 3,
+   "class": "update",
+   "id": "seed-619",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 30.4370442,
+     "after": 30.436733
+    },
+    {
+     "field": "lng",
+     "before": 104.0820738,
+     "after": 104.087334
+    }
+   ],
+   "expect_h": "ee79c6b8533c96b2",
+   "update_reason": "Pin moved to the listing coordinate of the gym's own Amap listing (熊猫攀岩生活馆(天府大悦城店)), ~505 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 505 m"
+    }
+   ]
+  },
+  {
+   "line": 4,
+   "class": "update",
+   "id": "seed-629",
+   "changes": [
+    {
+     "field": "lat",
+     "before": 30.7052468,
+     "after": 30.686576
+    },
+    {
+     "field": "lng",
+     "before": 103.8294689,
+     "after": 103.857762
+    }
+   ],
+   "expect_h": "532ff0cc7268b1e9",
+   "update_reason": "Pin moved to the listing coordinate of the gym's own Amap listing (熊猫攀岩生活馆ClimbingPanda(温江店)), ~3410 m from the old pin",
+   "warnings": [
+    {
+     "code": "large-pin-move",
+     "field": "lat",
+     "message": "moves the pin by 3410 m"
+    }
+   ]
+  },
+  {
+   "line": 5,
+   "class": "retire",
+   "id": "seed-617",
+   "name": "Climbing Panda (CapitaLand Jinniu)",
+   "country": "CN",
+   "expect_h": "3a2dbc184c5bc357",
+   "reason_code": "closed",
+   "retire_reason": "Closed on 2026-01-14: the official RedNote account of Climbing Panda announced the closure of its Jinniu CapitaLand branch",
+   "entry": {
+    "id": "seed-617",
+    "name": "Climbing Panda (CapitaLand Jinniu)",
+    "country": "CN",
+    "state": "CHENGDU",
+    "suburb": "Jinniu District, Chengdu",
+    "lat": 30.6991299,
+    "lng": 104.0458585,
+    "address": "1834 Jiaoda Rd, CapitaLand Plaza Jinniu Floor 6, Jinniu District, Chengdu",
+    "types": [
+     "indoor-bouldering",
+     "lead-climbing",
+     "top-rope"
+    ],
+    "h": "3a2dbc184c5bc357"
+   }
+  },
+  {
+   "line": 6,
+   "class": "retire",
+   "id": "seed-623",
+   "name": "Flying Frog Climbing (Emerald Park Vanke Li)",
+   "country": "CN",
+   "expect_h": "c3b5fa3e52d00b3a",
+   "reason_code": "closed",
+   "retire_reason": "Closed in September 2026: climbers posted farewells to the branch (2023.5-2026.9); its official account is silent since May 2026",
+   "entry": {
+    "id": "seed-623",
+    "name": "Flying Frog Climbing (Emerald Park Vanke Li)",
+    "country": "CN",
+    "state": "CHENGDU",
+    "suburb": "Shuangliu District, Chengdu",
+    "lat": 30.4729768,
+    "lng": 104.044936,
+    "address": "33 Shenyang Rd West Section, Chengdu Tianfu Yixinhui Floor 1 Unit 113, Shuangliu District, Chengdu",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "c3b5fa3e52d00b3a"
+   }
+  },
+  {
+   "line": 7,
+   "class": "retire",
+   "id": "seed-618",
+   "name": "Climbing Panda (Chengzhonghui South District)",
+   "country": "CN",
+   "expect_h": "5a752bfdf708ca28",
+   "reason_code": "insufficient-evidence",
+   "retire_reason": "Not on the brand official store list and no Amap listing for this branch (checked 2026-10-31 and 2026-11-01)",
+   "entry": {
+    "id": "seed-618",
+    "name": "Climbing Panda (Chengzhonghui South District)",
+    "country": "CN",
+    "state": "CHENGDU",
+    "suburb": "Jinniu District, Chengdu",
+    "lat": 30.689505,
+    "lng": 104.0836413,
+    "address": "119 Jiefang Rd Section 1, Chengzhonghui Shopping Center South District Floor 3, Jinniu District, Chengdu",
+    "types": [
+     "indoor-bouldering",
+     "lead-climbing",
+     "top-rope"
+    ],
+    "h": "5a752bfdf708ca28"
+   }
+  },
+  {
+   "line": 8,
+   "class": "retire",
+   "id": "seed-613",
+   "name": "Tandong Gongchang Climbing (Global Center Flagship)",
+   "country": "CN",
+   "expect_h": "2c046c09ae6321fa",
+   "reason_code": "insufficient-evidence",
+   "retire_reason": "Not confirmed as a climbing gym: the venue at this address is a children's cave-exploration play centre",
+   "entry": {
+    "id": "seed-613",
+    "name": "Tandong Gongchang Climbing (Global Center Flagship)",
+    "country": "CN",
+    "state": "CHENGDU",
+    "suburb": "Wuhou District, Chengdu",
+    "lat": 30.5857198,
+    "lng": 104.0656957,
+    "address": "1700 Tianfu Ave North Section, Building 9 Unit 1 Floor 1 101, Wuhou District, Chengdu",
+    "types": [
+     "indoor-bouldering",
+     "top-rope"
+    ],
+    "h": "2c046c09ae6321fa"
+   }
+  },
+  {
+   "line": 9,
+   "class": "retire",
+   "id": "seed-621",
+   "name": "Super Panda Fitness Studio",
+   "country": "CN",
+   "expect_h": "7189fd583d65d9ee",
+   "reason_code": "insufficient-evidence",
+   "retire_reason": "No climbing gym of this name found; the address is the building and floor of Bear Bear Climbing (seed-635)",
+   "entry": {
+    "id": "seed-621",
+    "name": "Super Panda Fitness Studio",
+    "country": "CN",
+    "state": "CHENGDU",
+    "suburb": "Jinjiang District, Chengdu",
+    "lat": 30.6420653,
+    "lng": 104.118723,
+    "address": "Zhongzhou Central City Commercial Building Floor 4, Wuguiqiao, Jinjiang District, Chengdu",
+    "types": [
+     "indoor-bouldering",
+     "top-rope"
+    ],
+    "h": "7189fd583d65d9ee"
+   }
+  }
+ ]
+}
