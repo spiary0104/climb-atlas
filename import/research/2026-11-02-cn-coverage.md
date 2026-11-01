@@ -55,3 +55,10 @@ Source availability = whether the chain/gym has its own RedNote account listing 
 
 ## Not yet: why most regions are not "covered"
 A listing is only a candidate. The importer needs a primary source (official site, official social account or a chain store list) that the gym exists, is open and offers bouldering. In China that source is almost always the gym's own RedNote account, read one account per gym (about 20 s apart, about 60 page loads per run). Official sites with store lists were checked and do not exist for the main chain (bananaclimbing.com shows only a title). Map-only venues therefore go to `import/research/MANUAL-CHECKS-china-2026-11-01.md` with their Amap id.
+
+Listings that are not near an existing pin, per city, with Amap ids: `import/research/2026-11-02-cn-coverage-listings.md`.
+
+## Where this run stopped and how to resume
+- Browser: the Amap tab stopped answering during listing-detail reads (CDP `Runtime.evaluate` timed out after 115 s, "page may be blocked by a native dialog", twice in a row). Per the run rules, all browser work stopped. Owner: check the tab for a dialog or verification prompt.
+- Resume 1 (Amap detail, no RedNote): `node detail.js <ids>` for the 12 Xi'an and 11 Nanjing gyms listed as `hold (detail read pending)` in `2026-11-02-cn-pins/verification.md`; then regenerate pins-3 (add them) and re-run validate/plan/dry-run.
+- Resume 2 (new gyms, RedNote): sections Changsha, Xiamen, Kunming/Dali/Lijiang, Qingdao/Jinan, GBA cities, Ningbo/Wenzhou in the order above. No RedNote page was loaded in this run; no new-gym section was created beyond the existing Guangzhou and Hangzhou.
