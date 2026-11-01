@@ -1,0 +1,54 @@
+{
+ "schema_version": 1,
+ "sources": {
+  "OSM": {
+   "kind": "map-data",
+   "title": "OpenStreetMap (element pages and Overpass extracts of climbing sports centres, 2026-10-13)",
+   "url": "https://www.openstreetmap.org/",
+   "language": "en",
+   "accessed": "2026-10-13"
+  },
+  "NOM": {
+   "kind": "map-data",
+   "title": "OpenStreetMap Nominatim geocoder (house-number match of the official address)",
+   "url": "https://nominatim.openstreetmap.org/",
+   "language": "en",
+   "accessed": "2026-10-13"
+  },
+  "BDASH": {
+   "kind": "official-site",
+   "title": "Boulderdash Climbing (chain site and Thousand Oaks, Ventura and San Fernando Valley location sites)",
+   "url": "https://www.boulderdashclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-13"
+  },
+  "ROCKCITY": {
+   "kind": "official-site",
+   "title": "Rock City Climbing (Huntington Beach training center)",
+   "url": "https://www.rockcityclimbing.com/",
+   "language": "en",
+   "accessed": "2026-10-13"
+  },
+  "TOUCH": {
+   "kind": "chain-store-list",
+   "title": "Touchstone Climbing (chain location list and location pages)",
+   "url": "https://touchstoneclimbing.com/locations/",
+   "language": "en",
+   "accessed": "2026-10-13"
+  },
+  "CALCOM": {
+   "kind": "news",
+   "title": "California.com: Where to Go Rock Climbing in SoCal: Top Indoor Venues (30 June 2026)",
+   "url": "https://www.california.com/where-to-go-rock-climbing-in-socal-top-indoor-venues/",
+   "language": "en",
+   "accessed": "2026-10-13"
+  },
+  "PSLIFE": {
+   "kind": "news",
+   "title": "Palm Springs Life: Cool Climbing Haven (Desert Rocks profile, undated)",
+   "url": "https://www.palmspringslife.com/cool-climbing-haven/",
+   "language": "en",
+   "accessed": "2026-10-13"
+  }
+}
+}

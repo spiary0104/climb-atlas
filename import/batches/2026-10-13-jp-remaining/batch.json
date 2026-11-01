@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-13-jp-remaining",
+  "description": "Regional research \"Japan: Tohoku, Chugoku, Shikoku, Okinawa\": 22 new gym(s) accepted of 24 candidate(s)",
+  "created": "2026-10-13",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-10-13-jp-remaining",
+    "section_sha256": "4e2e8ec9bb4bddf4cd521278ab47f03ee95e963197aefaee0c50de0878863ac5",
+    "sources_sha256": "b8874f5339c29d6bb531c632859e63148097e6e9197de6c8f27b225fd7aa99d3",
+    "candidates_sha256": "81354031feef8b6a7ca8ce0dd072ebb390508433ed2960a66bba8e4f7465052a",
+    "reconcile_sha256": "ccd85f4f1622550bb57d2402a97ee89cf4fb214f1697dc4573adf368dd6f2c79",
+    "review_sha256": "315f8c1c85d34a5848f74012ebd8f24d0364a4c80851699e8154d5f38b9d5bfa",
+    "candidates": 24,
+    "staged": 22,
+    "decisions": {
+      "accept": 22,
+      "defer": 2
+    }
+  },
+  "index_at_staging": {
+    "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
+    "count": 3294
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "section_id": "2026-10-13-brazil",
+  "reviewer": "Spiar (owner); decisions drafted by Claude (AI) on the owner instruction, pending owner sign-off",
+  "reviewed": "2026-10-13",
+  "decisions": {
+    "br-001": {
+      "decision": "accept",
+      "reason": "S PB (own site): boulder-only gym, weekly hours, online session booking, Festival PowerBloc 2026 page and a 26 Sep 2026 notice; pin is the gym own OSM node (Rua Rafael Sampaio 187), 5 m from the coordinate in the gym own Google Maps link. Single source flag accepted: the gym site is the primary source and the pin is cross-checked against OSM."
+    },
+    "br-002": {
+      "decision": "accept",
+      "reason": "S GEO (own site): \"ginasio de boulder em Votorantim\", walk-in pay-by-the-day, weekly hours and prices, footer (c) 2026; pin is the marker of the gym own embedded Google map. Single source flag accepted: primary source, pin from the gym own map."
+    },
+    "br-003": {
+      "decision": "accept",
+      "reason": "S UBT (own site): unit page lists \"Boulders para todos os niveis\" and guided climbing, weekly hours, single sessions sold online; pages edited Feb-Aug 2026; pin is the gym OSM building way, 45 m from the marker of its own embedded map. Single source flag accepted (primary source)."
+    },
+    "br-004": {
+      "decision": "accept",
+      "reason": "S TOCA (own site, Oct 2026): weekly hours, TRB 2026 boulder ranking and the Copa Brasil boulder final on 31 Oct 2026, anniversary notice, address; pin is the gym OSM node on the building at Rua Neves Armond 399. Single source flag accepted (primary source). No day-pass price printed."
+    },
+    "br-005": {
+      "decision": "accept",
+      "reason": "S CCM (own site, pages edited 2026-10-09): day pass from R$ 50, weekly hours, classes on \"boulders do ginasio\", Boulder Fest; pin is the gym OSM node on the building at Av. Eduardo Girao 526, 3 m from the marker of its own Google Maps link. The importer far-from-country warning is expected: Fortaleza is 1,884 km from the nearest Bouldeer gym in Brazil, and the coordinates are verified against two independent map sources. Single source flag accepted (primary source)."
+    },
+    "br-006": {
+      "decision": "accept",
+      "reason": "Weaker open evidence, accepted: S CB (own site) shows live online sale of single sessions (R$ 65), weekly hours with a boulder timetable and a statement that it has one of the largest boulder structures in Brazil; the page carries no 2026 date (footer 2024). Pin is the OSM address node for Av. Presidente Kennedy 35 (building level, geocoded). Single source flag accepted."
+    },
+    "br-007": {
+      "decision": "defer",
+      "reason": "Brain review 2026-10-13: deferred. No stand-alone day pass: the only way in for a visitor is a R$30 trial class, and bouldering is stated only on the about page. Owner rule: day visitors must be able to climb. See MANUAL-CHECK.md."
+    },
+    "br-008": {
+      "decision": "defer",
+      "reason": "treelab.com.br is a script-only page with no readable text, so neither \"open in 2026\" nor the bouldering offer could be read from the gym own site. Question in MANUAL-CHECK.md."
+    },
+    "br-009": {
+      "decision": "defer",
+      "reason": "Boulder gym with day passes and hours, but the own site was last edited in Jan 2025 and has no 2026 content, so \"open in 2026\" is not shown. Question in MANUAL-CHECK.md."
+    },
+    "br-010": {
+      "decision": "defer",
+      "reason": "Circus, yoga and climbing studio where \"Escalada Livre - Boulder e esportiva\" is one bookable service; no dated 2026 content and the size of the boulder area is unknown; pin is a street-level business location from the site data. Question in MANUAL-CHECK.md."
+    },
+    "br-011": {
+      "decision": "reject",
+      "reason_code": "outdoor-area",
+      "reason": "IpeRocks is an outdoor boulder area (menu item \"Croqui - Iperocks V4\"); the iperocks.com domain now serves unrelated promotional content. Not an indoor gym."
+    },
+    "br-012": {
+      "decision": "same-as",
+      "same_as": "seed-1409",
+      "followup": "location-update",
+      "reason": "90 Graus, Av. Joao Pedro Cardoso 107, Parque Jabaquara (own site 90grausescalada.com.br; the OSM node with this address is 90graus.com.br, now a tech blog). Seed-1409 pin is about 210 m from the OSM node for the same address: location-update follow-up."
+    },
+    "br-013": {
+      "decision": "same-as",
+      "same_as": "seed-1405",
+      "reason": "Casa de Pedra Moema; seed-1405 pin matches the Av. Irai 634 address node (0 m). The Guaramomis 256 address on the 2024 CBEscalada list is a former location."
+    },
+    "br-014": {
+      "decision": "same-as",
+      "same_as": "seed-1404",
+      "reason": "Casa de Pedra Perdizes, Rua Venancio Aires 31; seed-1404 pin 1 m from the OSM building."
+    },
+    "br-015": {
+      "decision": "same-as",
+      "same_as": "seed-1407",
+      "reason": "Fabrica Escalada Chacara Santo Antonio, Rua da Paz 1823; seed-1407 pin 21 m from the OSM building."
+    },
+    "br-016": {
+      "decision": "same-as",
+      "same_as": "seed-1408",
+      "reason": "Fabrica Escalada Vila Madalena, Rua Girassol 323; seed-1408 pin 7 m from the OSM node."
+    },
+    "br-017": {
+      "decision": "same-as",
+      "same_as": "seed-1410",
+      "reviewed_against": [
+        "seed-1410"
+      ],
+      "reason": "Evolucao Escalada Indoor, Botafogo (Travessa Dona Mariana 31); seed-1410 is the same gym, 13 m from the OSM node."
+    },
+    "br-018": {
+      "decision": "same-as",
+      "same_as": "seed-1417",
+      "reason": "UBT Curitiba, Av. Anita Garibaldi 1874 (Ahu); seed-1417 pin is within 10 m of the OSM address node."
+    },
+    "br-019": {
+      "decision": "same-as",
+      "same_as": "seed-1416",
+      "reason": "Caverna Escalada, Rua Tibagi 674 (address on its own site); seed-1416 pin equals the OSM address node for that street number."
+    },
+    "br-020": {
+      "decision": "same-as",
+      "same_as": "seed-1418",
+      "reason": "Via AltaMontanha is the rebrand of Via Aventura (same address, Av. Candido Hartmann 1377); seed-1418 pin is within 5 m of the OSM node (Via Ventura)."
+    },
+    "br-021": {
+      "decision": "same-as",
+      "same_as": "seed-1414",
+      "reviewed_against": [
+        "seed-1414",
+        "seed-1415"
+      ],
+      "reason": "ROKAZ Savassi (Rua Antonio de Albuquerque 189) is seed-1414. Seed-1415 (ROKAZ Unidade Buritis, Rua Olympio Teixeira Guimaraes 47) is a different unit that sits at the identical coordinate: it needs its own location update, see review-notes.md."
+    }
+  }
+}

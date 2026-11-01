@@ -1,0 +1,43 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-13-us-ny-boston-metros",
+ "reviewer": "Claude (AI) on the owner's instruction; owner sign-off pending",
+ "reviewed": "2026-10-13",
+ "decisions": {
+  "gv-westbury": {
+   "decision": "accept",
+   "reason": "S GVW (https://gravityvault.com/locations/westbury-ny, with its events and pricing pages, read 2026-10-13) confirms exists, open (hours, dated October 2026 classes and day-pass specials, copyright 2026), address, bouldering (16-ft walls, 160+ problems, cave, slab, spray wall). Pin: Photon geocode of 1500 Old Country Rd lands on the Samanea New York Mall building polygon (way/240673103), building precision only. No flags (no gym within 150 m, no related name within 15 km; Gravity Vault Melville is another Long Island site of the same chain about 25 km away)."
+  },
+  "rocksteady-setauket": {
+   "decision": "accept",
+   "reason": "S RS (https://www.rocksteadyclimb.com/ about, pricing and home pages, read 2026-10-13) confirms exists, open (hours, day pass $27, flyers uploaded October 2026), address, bouldering (\"Long Island's Premier Indoor Bouldering Space\"); S CBJ (2026-07-08) says it was about to open. Pin: Photon geocode of 4016 Nesconset Highway lands on that building (way/464210772); the Google embed on the gym site is centred about 800 m away and is not used. No flags."
+  },
+  "goat-hackensack": {
+   "decision": "accept",
+   "reason": "Resolves the 2026-10-06-us-northeast deferral (that pass read only the home page). S GOAT (https://goatclimbinggym.com/, read 2026-10-13 through the fetch tool) confirms exists, open (hours, copyright 2026, post dated 2026-10-03), address; the gym's own Bouldering Classes page teaches Bouldering 101 and \"Boulder 201 ... best for those climbing V4 to V6\" and the pricing page sells day passes ($28) and a boulder gear bundle, so graded boulder problems exist; Climbing Business Journal also describes two floors of bouldering. No bouldering area size is stated, noted as a weaker accept. Pin is the gym's own OSM node (node/13753948618). The only flag is the other-section candidate of the same gym, which that section deferred and which is not staged.",
+   "reviewed_against": [
+    "2026-10-06-us-northeast#goat-hackensack"
+   ]
+  },
+  "metrorock-tyngsborough": {
+   "decision": "accept",
+   "reason": "S MRT (https://www.tyngsboro.metrorock.com/, read 2026-10-13) confirms exists, open (hours, day-pass prices, chain list at metrorock.com names it), address (440 Middlesex Rd), bouldering (amenities line \"Bouldering | 7 Auto Belays | Top Ropes | Lead ...\"). No page carried a 2026 date, so open status rests on current hours and prices only (weaker accept). Pin is the gym's own OSM way (way/1537600531). No flags."
+  },
+  "challenge-rocks-hingham": {
+   "decision": "accept",
+   "reason": "S CHR (https://www.challengerocks.com/ faqs, pricing and upcoming-events pages, read 2026-10-13) confirms exists, open (Halloween party on 23 October and other current dates), address, bouldering (day pass $25 includes bouldering; FAQ: bouldering walls and cave, V-scale, walk-ins). Youth-oriented gym but it sells a public day pass and adult classes, so not kids-only. Pin: Photon geocode of 3 Pond Park Road lands on the building (way/77889633). No flags."
+  },
+  "boulder-union-new-bedford": {
+   "decision": "accept",
+   "reason": "S BU (https://www.boulderunion.com/ day-pass, location and home pages, read 2026-10-13) confirms exists, open (hours, day pass $29, fall-semester membership ending in December), address, bouldering (3,500 sq ft of bouldering, walls about 15 ft). Pin: Nominatim address polygon for 174 Union Street (way/664957838). Outside the 40 km Boston radius (about 85 km) but inside the section bounding box. No flags (Carabiner's Climbing & Fitness, seed-293, is 1.3 km away at another address and is not related)."
+  },
+  "la-vida-wenham": {
+   "decision": "defer",
+   "reason": "Owner rule: keep low-confidence gyms out. College rock gym with a public Open Gym (Mon-Thu 6-9 pm, day pass, V0-V6 problems, copyright 2026), but the only coordinate found is campus-level (precision area) and no OSM element for the rock gym could be found; a search snippet also described Open Gym as temporarily closed."
+  },
+  "everyday-athlete-brooklyn-heights": {
+   "decision": "defer",
+   "reason": "Owner rule: keep low-confidence gyms out. Fitness club with a 2,500 sq ft climbing wall and kids programs, known only from 2017-2019 news; its own site refuses non-browser requests, so open status and a bouldering offering for adult day visitors are unverified."
+  }
+ }
+}

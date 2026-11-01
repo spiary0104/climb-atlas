@@ -1,0 +1,259 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-13-us-california-metros",
+ "inputs": {
+  "section_sha256": "37336312e78e0f16c3935d697bcd9588eb81530f9c0fffc74ecbd2cc19841f40",
+  "sources_sha256": "346953fae014833b591bcb516b84480fb895a988be9701ea88352d48c474d8d3",
+  "candidates_sha256": "c4929c606b5ceffdf7e09975e5dd8a4df7f20856188867bc85df72ec39b19703",
+  "index": {
+   "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
+   "count": 3294
+  },
+  "staged_batches_compared": [
+   "2026-10-06-kr-seoul"
+  ],
+  "other_sections_compared": [
+   {
+    "id": "2026-10-06-us-midwest",
+    "candidates_sha256": "e43833ce065b3c6eab440916abdded116a7656160d40061c3110c4736ed1abbf"
+   },
+   {
+    "id": "2026-10-06-us-northeast",
+    "candidates_sha256": "4c9a7e2c3dccd4177279b92e7aacd810837a5ba728388f5b6df8bb9d0fcea38c"
+   },
+   {
+    "id": "2026-10-06-us-south",
+    "candidates_sha256": "0970aae878d6abc42a0634c5964cde388688d391639dac2685d81fb40a687327"
+   },
+   {
+    "id": "2026-10-06-us-west",
+    "candidates_sha256": "522eadce51697d6499a8baf1c9eac33ee14d5acca57eece19b232854bdcb76b3"
+   }
+  ]
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 8,
+  "ready": 1,
+  "review": 3,
+  "blocked": 3,
+  "existing": 1,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "us-ca-aisle-19",
+   "line": 5,
+   "name": "Aisle 19",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-0f4e2b54ff"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is opening-soon"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "us-ca-bladium-rock-wall",
+   "line": 8,
+   "name": "Bladium Sports & Fitness Club (Rock Wall and Bouldering Gym)",
+   "class": "blocked",
+   "suggested": "reject not-a-gym",
+   "importer": {
+    "class": "new",
+    "id": "g-c80a044849"
+   },
+   "blockers": [
+    {
+     "code": "not-a-gym",
+     "detail": "category other"
+    },
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "us-ca-boulderdash-sfv",
+   "line": 3,
+   "name": "Boulderdash Climbing San Fernando Valley",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-9cf5387283"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-323 co-located 0 m",
+     "ids": [
+      "seed-323"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-323 \"Boulderdash SFV\": co-located (\"Boulderdash Climbing San Fernando Valley\" / \"Boulderdash SFV\", 0 m)",
+     "ids": [
+      "seed-323"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-323"
+   ]
+  },
+  {
+   "cid": "us-ca-boulderdash-thousand-oaks",
+   "line": 1,
+   "name": "Boulderdash Climbing Thousand Oaks",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-e8457c60ad"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-322 \"Boulderdash Indoor Rock Climbing\": related names \"Boulderdash Climbing Thousand Oaks\" / \"Boulderdash Indoor Rock Climbing\" 3123 m apart",
+     "ids": [
+      "seed-322"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-322"
+   ]
+  },
+  {
+   "cid": "us-ca-boulderdash-ventura",
+   "line": 2,
+   "name": "Boulderdash Climbing Ventura",
+   "class": "existing",
+   "suggested": "same-as seed-324",
+   "importer": {
+    "class": "existing",
+    "id": "seed-324",
+    "match": {
+     "id": "seed-324",
+     "name": "Boulderdash Ventura",
+     "reason": "same-address-related-name",
+     "dist_m": 0
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-324 but content differs (name, types); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-324 \"Boulderdash Ventura\": same-address-related-name (\"Boulderdash Climbing Ventura\" / \"Boulderdash Ventura\", 0 m)",
+     "ids": [
+      "seed-324"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-324"
+   ]
+  },
+  {
+   "cid": "us-ca-desert-rocks",
+   "line": 7,
+   "name": "Desert Rocks Indoor Climbing Gym",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-42d2a2ecec"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "us-ca-rock-city-climbing",
+   "line": 4,
+   "name": "Rock City Climbing",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-b19ec7f397"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "us-ca-touchstone-team-training-center",
+   "line": 6,
+   "name": "Touchstone Team Training Center",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-4a1cde74ee"
+   },
+   "flags": [
+    {
+     "code": "limited-access",
+     "detail": "club wall: check it is open to the public"
+    },
+    {
+     "code": "nearby-gym",
+     "detail": "seed-352 \"Ironworks\": 89 m apart",
+     "ids": [
+      "seed-352"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-352"
+   ]
+  }
+ ],
+ "reconcile_sha256": "3e55b58d08042199f46eddc5f4088d3ae774ebee727d9df1e5efb99ec2dba85d"
+}
