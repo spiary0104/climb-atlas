@@ -187,5 +187,12 @@
     "api/seo.mjs": {
       "includeFiles": "{index.html,js/supabase-init.js,js/modules/seo-meta.js,api/_places.json}"
     }
+  },
+  "git": {
+    "deploymentEnabled": {
+      "research/*": false,
+      "pr-assets/*": false,
+      "worktree-*": false
+    }
   }
 }
