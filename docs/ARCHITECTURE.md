@@ -9,7 +9,7 @@ Line refs drift: re-grep function names rather than trusting numbers.
   step, no package.json. Must be served over HTTP (modules + fetch + Auth).
 - Map: MapLibre GL 5 (globe; loaded lazily by map.js after the first list render) + Supercluster, both from CDN.
 - Backend: Supabase (Postgres + Auth + RLS), client from CDN.
-- Hosting: Vercel (`vercel.json`), www.bouldeer.com. The old climbatlas.org was detached from Vercel 2026-10-05 (redirects removed; Supabase/Google auth list bouldeer.com only). Sign-in test builds: preview.bouldeer.com = the `preview` branch, the only preview origin Supabase allows; noindex. Push a branch with an empty commit on top (Vercel skips a commit it already built, leaving "No Deployment"): PowerShell `$b="<branch>"; git fetch origin; $c = git commit-tree -p "origin/$b" -m "preview build" "origin/$b^{tree}"; git push -f origin "${c}:refs/heads/preview"`. PWA via `sw.js`.
+- Hosting: Vercel (`vercel.json`), www.bouldeer.com; `.vercelignore` keeps repo-only folders (design, docs, import, scripts, supabase, tests, data/reconciliation) out of every deployment (~4 MB instead of ~37 MB; free plan: 10 GB Deployment Storage, 30-day retention). The old climbatlas.org was detached from Vercel 2026-10-05 (redirects removed; Supabase/Google auth list bouldeer.com only). Sign-in test builds: preview.bouldeer.com = the `preview` branch, the only preview origin Supabase allows; noindex. Push a branch with an empty commit on top (Vercel skips a commit it already built, leaving "No Deployment"): PowerShell `$b="<branch>"; git fetch origin; $c = git commit-tree -p "origin/$b" -m "preview build" "origin/$b^{tree}"; git push -f origin "${c}:refs/heads/preview"`. PWA via `sw.js`.
 
 ## File map
 | Path | What it is |
