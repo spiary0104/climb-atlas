@@ -86,7 +86,7 @@ function locationProblems(rec) {
     if ('address' in set && (typeof set.address !== 'string' || !set.address.trim())) out.push('address can be corrected, never cleared (a non-empty text)');
   }
   if (typeof rec.expect_h !== 'string' || !V.EXPECT_H.test(rec.expect_h)) out.push('expect_h (the gym\'s content hash when researched) is required');
-  if (typeof rec.source !== 'string' || !rec.source.trim() || rec.source.length > 400) out.push(`source (where the new ${V.isInfoSet(set) ? 'information' : V.isIdentitySet(set) ? 'name / suburb / type tags' : 'location'} comes from${V.isInfoSet(set) || V.isIdentitySet(set) ? ': the gym\'s official site' : ''}) is required, max 400 chars`);
+  if (typeof rec.source !== 'string' || !rec.source.trim() || rec.source.length > 400) out.push(`source (where the new ${V.isInfoSet(set) ? 'information' : V.isIdentitySet(set) ? 'name / suburb / type tags' : 'location'} comes from${V.isInfoSet(set) ? ': the gym\'s official site, or its official social page with info_source_kind official-social; never a map or directory' : V.isIdentitySet(set) ? ': the gym\'s official site' : ''}) is required, max 400 chars`);
   return out;
 }
 
@@ -95,7 +95,8 @@ const emptyInfo = (f, v) => v === null || v === undefined
   || (f === 'hours' && !!v && typeof v === 'object' && !Array.isArray(v) && !Object.keys(v).length)
   || (f === 'day_pass' && v === '')
   || (f === 'facilities' && Array.isArray(v) && !v.length)
-  || (f === 'notes' && v === '');
+  || (['notes', 'name_local', 'address_local'].includes(f) && v === '')
+  || (f === 'visitor' && !!v && typeof v === 'object' && !Array.isArray(v) && !Object.keys(v).length);
 // `notes` is the one info field that IS in the content hash. For a record that sets notes the "content unchanged" test therefore uses h0, the hash of the row
 // with notes removed: in the before state notes is empty, so h0 equals the live hash (= expect_h, which the researcher takes from the index); in the after state
 // h0 is still expect_h while the live hash `h` (reported in the manifest as after_h) is the new one. Records without notes compare the live hash, as always.
@@ -104,8 +105,10 @@ function stateOfInfo(live, rec) {
   if (live.status !== 'approved') return { state: 'not-approved' };
   const h = S.toEntry(live).h, fields = Object.keys(rec.set), hashOk = (fields.includes('notes') ? S.toEntry({ ...live, notes: null }).h : h) === rec.expect_h;
   if (hashOk && fields.every(f => isDeepStrictEqual(live[f], rec.set[f]))) return { state: 'after', h, updatedAt: live.updated_at };
-  if (hashOk && fields.every(f => emptyInfo(f, live[f]))) return { state: 'before', h, updatedAt: live.updated_at };
-  return { state: 'changed', h, filled: fields.filter(f => !emptyInfo(f, live[f]) && !isDeepStrictEqual(live[f], rec.set[f])) };
+  // The provenance trio is fill-only too: a held trio is accepted only when it is exactly the record's (another fill of the same source), never replaced.
+  const free = f => emptyInfo(f, live[f]) || (V.PROVENANCE_FIELDS.includes(f) && isDeepStrictEqual(live[f], rec.set[f]));
+  if (hashOk && fields.every(free)) return { state: 'before', h, updatedAt: live.updated_at };
+  return { state: 'changed', h, filled: fields.filter(f => !free(f) && !isDeepStrictEqual(live[f], rec.set[f])) };
 }
 
 // State of one identity-update target (name/suburb/types). The fields are in the content hash, so: before = hash is expect_h; after = the fields hold exactly the
@@ -272,6 +275,13 @@ async function runUpdate(opts) {
       res.coverage = 'PARTIAL';
     }
     if (fails().length) return refuse();
+    // Columns added by migration 20261101000100: a batch that fills one must not run against a database that does not have it yet (a missing column would read as "empty").
+    const usedCols = V.NEW_COLUMNS.filter(c => res.updates.some(u => c in u.set));
+    if (usedCols.length) {
+      const missing = await api.missingColumns(usedCols, { service: !!target.serviceKey });
+      if (missing.length) { add('FAIL', `migration ${V.MIGRATION_LOCAL} applied`, `migration ${V.MIGRATION_LOCAL} not applied: production has no column ${missing.join(', ')} (this batch fills ${usedCols.join(', ')}); apply the migration first. Nothing was written.`); return refuse(); }
+      add('PASS', `migration ${V.MIGRATION_LOCAL} applied`, `production has ${usedCols.join(', ')} (read check)`);
+    }
     const snap = await snapshot();
     res.approvedCount = snap.approved.length;
     const st = snap.states;

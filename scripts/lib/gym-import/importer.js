@@ -28,6 +28,8 @@ function toRow(r, safeUrl) {
   return {
     id: r.id, name: r.name, suburb: r.suburb, state: r.state, country: r.country, lat: r.lat, lng: r.lng, types: [...r.types],
     notes: N.emptyToNull(r.notes), photo: r.photo ? (safeUrl(r.photo) || null) : null, address: N.emptyToNull(r.address),
+    // name_local / address_local (migration 20261101000100) only when the record has them, so the rows -- and the payload hash and token -- of every batch without them are unchanged.
+    ...(N.emptyToNull(r.name_local) ? { name_local: N.emptyToNull(r.name_local) } : {}), ...(N.emptyToNull(r.address_local) ? { address_local: N.emptyToNull(r.address_local) } : {}),
     community: false, edited: false, status: 'approved',
   };
 }
@@ -48,6 +50,7 @@ function diffRow(row, db) {
   for (const f of ['lat', 'lng']) if (!N.sameCoord(row[f], db[f])) d.push(f);   // REST reads back 15 significant digits
   if (JSON.stringify([...row.types].sort()) !== JSON.stringify([...(db.types || [])].sort())) d.push('types');
   for (const f of ['notes', 'photo', 'address']) if (N.emptyToNull(row[f]) !== N.emptyToNull(db[f])) d.push(f);
+  for (const f of ['name_local', 'address_local']) if (f in row && row[f] !== db[f]) d.push(f);
   if (db.status !== 'approved') d.push('status');
   if (db.community !== false) d.push('community');
   if (db.edited !== false) d.push('edited');
@@ -185,6 +188,13 @@ async function runImport(opts) {
       res.coverage = 'PARTIAL';
     }
     if (fails().length) return refuse();
+    // name_local / address_local exist only once migration 20261101000100 is applied: refuse before anything is written if a record carries one and the column is missing.
+    const usedCols = V.NEW_COLUMNS.filter(c => recs.some(x => N.emptyToNull(x.rec[c])));
+    if (usedCols.length) {
+      const missing = await api.missingColumns(usedCols, { service: keyOk });
+      if (missing.length) { add('FAIL', `migration ${V.MIGRATION_LOCAL} applied`, `migration ${V.MIGRATION_LOCAL} not applied: production has no column ${missing.join(', ')} (this batch inserts ${usedCols.join(', ')}); apply the migration first. Nothing was written.`); return refuse(); }
+      add('PASS', `migration ${V.MIGRATION_LOCAL} applied`, `production has ${usedCols.join(', ')} (read check)`);
+    }
     const snap = await snapshot();
     res.liveApprovedCount = snap.approved.length;
 

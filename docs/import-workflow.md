@@ -52,14 +52,14 @@ node scripts/gym-import.js freeze-ids <batch>     # once the report is clean; th
 ```
 `<batch>` is a directory or just its name under `import/batches/`. Read `report.md` (small, capped), not `records.ndjson`.
 
-**Record (new gym):** `name, suburb, state, country, lat, lng, types` required; `address, notes, photo` optional; `id` only
+**Record (new gym):** `name, suburb, state, country, lat, lng, types` required; `address, notes, photo` optional; `name_local, address_local` optional (see below); `id` only
 after `freeze-ids`; `source` (free text, not stored) recommended. `country` = 2-letter code; `state` must be a code from
 `js/modules/regions.js`; `types` ⊆ `indoor-bouldering | top-rope | lead-climbing`; `lat/lng` JSON numbers; `photo` a plain
 http(s) URL (same `safeUrl` rule as the app). Any other field (`status`, `community: true`, `edited`, typos…) is an error.
 **Record (update existing gym):** `{"intent":"update","id":"<existing id>","reason":"why","set":{"types":[...]}}` — only
 `name, suburb, state, lat, lng, types, address, notes, photo, website, hours, day_pass, facilities` may be set for *planning*; a full record that differs from an existing
 gym is never treated as an update. Optional `expect_h` (the gym's content hash when researched): the plan marks the record invalid
-if the index no longer has that content. **Only location updates, gym-information fills (`website`, `hours`, `day_pass`, `facilities`, `notes`) and identity corrections (`name`, `suburb`, `types`) can be written** (see "Updating the location of existing gyms", "Filling gym information (website, hours, day pass, facilities, notes)" and "Correcting gym identity (name, suburb, type tags)").
+if the index no longer has that content. **Only location updates, gym-information fills (`website`, `hours`, `day_pass`, `facilities`, `notes`, `name_local`, `address_local`, `visitor` + the provenance trio) and identity corrections (`name`, `suburb`, `types`) can be written** (see "Updating the location of existing gyms", "Filling gym information (website, hours, day pass, facilities, notes)" and "Correcting gym identity (name, suburb, type tags)").
 
 ### Staging records that already exist as a JSON array
 `node scripts/gym-import.js stage-from-file <source.json> --slug <slug> --date YYYY-MM-DD --description "..." [--decisions <decisions.json>]`
@@ -86,7 +86,7 @@ node scripts/gym-import.js research stage <section>       # needs a current reco
 | `reconcile.json` / `.md` | generated, deterministic; bound to the hashes of section/sources/candidates, the index, staged batches and the other research sections **of the same country** (another country's section never makes it stale) |
 | `review.json` | `{schema_version, section_id, reviewer, reviewed, decisions:{<cid>: {...}}}`, written by a human |
 
-**Candidate:** `cid` (unique, not `seed-`/`community-`/`g-`), `name`, `name_local`, `aliases[]`, `chain`, `country`, `state`, `suburb`, `address`,
+**Candidate:** `cid` (unique, not `seed-`/`community-`/`g-`), `name`, `name_local`, `address_local`, `aliases[]`, `chain`, `country`, `state`, `suburb`, `address`,
 `lat`, `lng`, `coord_source{source, method: osm|official-map|chain-store-list|geocoded-address|map-service-pin, ref}`, `coord_precision`
 (`entrance|building|street|area`), `types`, `website`, `category` (`commercial-gym|university|club|outdoor-area|shop|other`), `status_claim`
 (`open|closed|opening-soon|temporary|unknown`), `bouldering` (`yes|no|unknown`), `evidence[{source, url, accessed, supports[]}]`, `research_notes`, `notes`,
@@ -331,12 +331,19 @@ every verified batch after the first import (location updates and inserts) with 
 manifest's `finished_at`, it undoes each batch's recorded changes or removes its inserted ids (its committed `plan.json`) and requires the
 result to hash to the index that batch was planned against; any unexplained difference (e.g. a gym approved outside the pipeline) throws.
 
+### Local name and address of NEW gyms (`name_local`, `address_local`)
+Migration `20261101000100` adds nullable `name_local` / `address_local` to `spots`. A new-gym record (and a research candidate, whose `toImportRecord` copies them) may carry them: `name_local` 1-120 and `address_local` 1-300
+characters, already trimmed, no control characters, tabs or line breaks (= `spots_name_local_check` / `spots_address_local_check`, mirrored in `validate.js INFO_LIMITS` so a bad value fails offline). They reach the inserted
+row only when present (`importer.js toRow` omits the keys otherwise, so the payload, token and manifest of every batch without them are unchanged); `diffRow` verifies them after the insert. They are **not** in the content hash
+(`normalize.js contentHash` is unchanged) and **not** in the index (`index-store` FIELDS unchanged). Duplicate matching still uses `name`/location only; matching on `name_local` is a later step. An insert batch that carries one
+first reads production (`select=name_local,...&limit=1`, GET only) and is refused with `migration 20261101000100 not applied` if a column is missing (dry-run reports it too); batches without them never ask.
+
 ### Filling gym information (website, hours, day pass, facilities, notes)
 A maintenance batch can also **fill** the public gym-information fields `website`, `hours`, `day_pass`, `facilities` (migration `20261004000100`) and `notes` on existing approved gyms, through the
 same updater, gates and verification as a location update. It only ever fills empty fields; nothing is overwritten.
 
 Record: `{"intent":"update","id":"seed-884","expect_h":"<16 hex>","reason":"why (>= 8 chars)","source":"<official URL>","set":{"website":"https://…","hours":{"mon":"6am–10pm","sat":"8am–6pm"},"day_pass":"A$28 adult, A$22 concession","facilities":["cafe","shoe-hire","parking"]}}`
-- `set` holds any of `website`, `hours`, `day_pass`, `facilities` (an *info update*) **or** `address/lat/lng` (a location update), never both families in one record; one record per gym (so a gym
+- `set` holds any of `website`, `hours`, `day_pass`, `facilities`, `notes`, `name_local`, `address_local`, `visitor`, `info_source`, `info_source_kind`, `info_checked_on` (an *info update*) **or** `address/lat/lng` (a location update), never both families in one record; one record per gym (so a gym
   that needs both goes in two batches), at most 100 records; a batch may mix info updates, location updates and retirements across different gyms.
 - `website`: a string matching `^https?://\S+$`, parseable as an http(s) URL without credentials, at most 300 characters. `hours`: a plain object with at least one key,
   keys ⊆ `mon tue wed thu fri sat sun`, each value a string of 1–40 characters that is already trimmed and on one line. Anything else is invalid (never silently cleaned), so the
@@ -351,8 +358,20 @@ Record: `{"intent":"update","id":"seed-884","expect_h":"<16 hex>","reason":"why 
   equals the record byte for byte). Empty, null, a non-string, untrimmed, multi-line or longer is invalid (never silently cleaned). It may be combined with the other info fields in one record
   (`{"notes":"Temporarily closed (last checked 5 October 2026).","hours":{…}}`). **Notes are public**: the gym page shows them (`js/modules/provenance.js` `publicNotes` hides research-style
   sentences), so a notes fill must read as a visitor-facing sentence (what a climber should know), never as research ("per the gym's site…", sources, confidence).
-- **Sources: the gym's official website only** (put its URL in `source`); no aggregators, maps or social posts. Hours are written as the gym states them.
-- `website`/`hours`/`day_pass`/`facilities` are not part of the content hash, so `expect_h` stays valid after such a fill. **`notes` IS in the hash**, so a notes fill moves the gym's real hash: for a record that
+- **Sources: the gym's official website** (put its URL in `source`), or -- only with `info_source_kind` `official-social` -- an official social profile/post the gym controls (RedNote, WeChat, Instagram, ...); never maps,
+  directories or review sites. A `source` that contains an amap/dianping/Google-Maps/Baidu-Maps/OSM/Tripadvisor/Yelp/... URL (`validate.js INFO_DENY_HOSTS`) is refused for every information fill. Hours are written as the gym states them.
+- **Local names and visitor facts (migration `20261101000100`):** `name_local` (1-120) and `address_local` (1-300): trimmed text, no control characters, tabs or line breaks. `visitor`: a non-empty object whose only keys are
+  `booking payment english_help id_required shoe_hire note`, each a non-empty trimmed single-line string of at most 160 characters (`spots_visitor_check`). All three are **fill-only** like the other fields (empty = `null`, `''`, or
+  `{}` for visitor; a held value is never overwritten and refuses the batch), are not in the content hash or the index, and the PATCH body is exactly the approved set.
+- **Provenance trio:** `info_source` (an `https://` URL, max 400, no credentials/whitespace), `info_source_kind` (`official-site` | `official-social`; `map`, `directory` and everything else are refused) and
+  `info_checked_on` (a real `YYYY-MM-DD`, not before 2020-01-01, not in the future) are set **together** in the same `set`. A record whose `set` contains `hours`, `day_pass` or `visitor` **must** carry the whole trio; the trio
+  alone, or two of its three fields, is refused. `name_local`, `address_local`, `website`, `facilities` and `notes` may be filled without it (they keep the record-level `source`). With the trio, `source` must be exactly
+  `info_source`; `official-social` needs a host from `validate.js SOCIAL_HOSTS` (xiaohongshu.com, mp.weixin.qq.com, instagram.com, ...) and `official-site` must not be one (use `official-social`); `info_source` on a map /
+  directory host is refused. The trio is **fill-only**: if production already holds a trio, a record that sets one is refused (naming the field) unless it is identical (then the other fields are still filled). Community
+  paths never write provenance (the database trigger clears it); only this importer does.
+- **Preflight:** a batch that sets any of these six columns first reads production (`select=<columns>&limit=1`, GET only; `Api.missingColumns`) and is refused with `migration 20261101000100 not applied: production has no column ...`
+  before anything is written (the dry-run reports it as a failed check; any other read failure also refuses). A batch using only the older fields never asks.
+- `website`/`hours`/`day_pass`/`facilities` (and the new `name_local`/`address_local`/`visitor`/trio) are not part of the content hash, so `expect_h` stays valid after such a fill. **`notes` IS in the hash**, so a notes fill moves the gym's real hash: for a record that
   sets `notes` the updater uses **h0**, the hash of the live row *with notes removed* (`contentHash({...live, notes: null})`), wherever it compares against `expect_h`. Before the fill notes is empty,
   so h0 equals the live hash and `expect_h` is still simply the gym's `h` from the current index; after it, h0 is still `expect_h` while the manifest's `after_h` is the real new hash. Another hashed
   field changed (name, pin, photo, …) makes h0 differ = **changed**. After applying, run `build-index --live` (the gym's index `h` changes; `history.js` restores it from `expect_h` when looking back, and a
