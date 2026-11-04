@@ -1,0 +1,205 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-13-uk-cities",
+ "index": {
+  "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
+  "count": 3294,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-06-kr-seoul",
+  "2026-10-13-australia",
+  "2026-10-13-brazil",
+  "2026-10-13-italy-cities",
+  "2026-10-13-jp-remaining",
+  "2026-10-13-us-central-metros",
+  "2026-10-13-us-ny-boston-metros"
+ ],
+ "counts": {
+  "records": 21,
+  "new": 21,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "e592167d473149bec9eef69a267e3c84f57f145b6b39e80f9f173dc2a2eec59f",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-b6878ffb88",
+   "id_frozen": true,
+   "name": "270 Climbing Park",
+   "country": "GB"
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-d0f7bc3292",
+   "id_frozen": true,
+   "name": "Alter Rock Climbing Centre",
+   "country": "GB"
+  },
+  {
+   "line": 3,
+   "class": "new",
+   "id": "g-5bb84dd833",
+   "id_frozen": true,
+   "name": "Awesome Walls Stockport",
+   "country": "GB"
+  },
+  {
+   "line": 4,
+   "class": "new",
+   "id": "g-3b95a00c44",
+   "id_frozen": true,
+   "name": "Awesome Walls Stoke",
+   "country": "GB"
+  },
+  {
+   "line": 5,
+   "class": "new",
+   "id": "g-4f4476f87f",
+   "id_frozen": true,
+   "name": "Birmingham Bouldering Centre",
+   "country": "GB"
+  },
+  {
+   "line": 6,
+   "class": "new",
+   "id": "g-cad50368cb",
+   "id_frozen": true,
+   "name": "Boathouse Climbing Centre",
+   "country": "GB"
+  },
+  {
+   "line": 7,
+   "class": "new",
+   "id": "g-88189f6154",
+   "id_frozen": true,
+   "name": "The Boulder Barn",
+   "country": "GB"
+  },
+  {
+   "line": 8,
+   "class": "new",
+   "id": "g-61ca434f8b",
+   "id_frozen": true,
+   "name": "Boulder Brighton",
+   "country": "GB"
+  },
+  {
+   "line": 9,
+   "class": "new",
+   "id": "g-ace6844f69",
+   "id_frozen": true,
+   "name": "Boulders Newport Road (Cardiff)",
+   "country": "GB"
+  },
+  {
+   "line": 10,
+   "class": "new",
+   "id": "g-cea9c9bac7",
+   "id_frozen": true,
+   "name": "The Climbing Hangar Bristol",
+   "country": "GB"
+  },
+  {
+   "line": 11,
+   "class": "new",
+   "id": "g-92ad6c6ce5",
+   "id_frozen": true,
+   "name": "The Climbing Unit",
+   "country": "GB"
+  },
+  {
+   "line": 12,
+   "class": "new",
+   "id": "g-5f969ec7fc",
+   "id_frozen": true,
+   "name": "Flashpoint Bristol - Easton",
+   "country": "GB"
+  },
+  {
+   "line": 13,
+   "class": "new",
+   "id": "g-07d957a8e0",
+   "id_frozen": true,
+   "name": "Flashpoint Cardiff",
+   "country": "GB"
+  },
+  {
+   "line": 14,
+   "class": "new",
+   "id": "g-d4eb37b5bb",
+   "id_frozen": true,
+   "name": "Friction Bouldering",
+   "country": "GB"
+  },
+  {
+   "line": 15,
+   "class": "new",
+   "id": "g-e4b7038738",
+   "id_frozen": true,
+   "name": "Gallery Bouldering",
+   "country": "GB"
+  },
+  {
+   "line": 16,
+   "class": "new",
+   "id": "g-5df6ee668e",
+   "id_frozen": true,
+   "name": "KendalWall (Lakeland Climbing Centre Kendal)",
+   "country": "GB"
+  },
+  {
+   "line": 17,
+   "class": "new",
+   "id": "g-e0e63ea28b",
+   "id_frozen": true,
+   "name": "Redpoint Climbing Centre Birmingham",
+   "country": "GB"
+  },
+  {
+   "line": 18,
+   "class": "new",
+   "id": "g-d114642968",
+   "id_frozen": true,
+   "name": "Redpoint Worcester",
+   "country": "GB"
+  },
+  {
+   "line": 19,
+   "class": "new",
+   "id": "g-d5fc9f4865",
+   "id_frozen": true,
+   "name": "Rock Over Climbing Bolton",
+   "country": "GB"
+  },
+  {
+   "line": 20,
+   "class": "new",
+   "id": "g-748fb420d6",
+   "id_frozen": true,
+   "name": "Rock Over Climbing Sharston",
+   "country": "GB"
+  },
+  {
+   "line": 21,
+   "class": "new",
+   "id": "g-412a34cb08",
+   "id_frozen": true,
+   "name": "Summit Up Climbing Centre",
+   "country": "GB"
+  }
+ ]
+}

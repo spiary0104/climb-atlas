@@ -1,0 +1,22 @@
+# Manual check list: UK regional cities (2026-10-13-uk-cities)
+
+Gyms that could NOT be settled from a readable primary source. All six are `defer` in review.json (nothing here is staged; the other 24 candidates are accepted (21), same-as (1) or rejected (2)). Open the links and answer the one question; a follow-up section can finish them.
+
+| # | Gym | Town | Open these | The ONE question | Found so far |
+|---|---|---|---|---|---|
+| 1 | Last Sun Dance (cid `last-sun-dance-leeds`) | Leeds LS9 0TN | https://www.lastsundance.com/ ; https://www.lastsundance.com/contact | Can a non-member pay for a single visit (day pass) to climb? | Bouldering and fitness gym at 21 Felnex Close, open now (Mon-Fri 7-22, Sat-Sun 9-20, "Northern Gyms LTD, 2026"). The pages read show only monthly membership from 35 GBP and "JOIN TODAY"; no day price. OSM way w1063423092 has climbing:boulder=yes. If day entry exists it is ready to accept (pin on the building). |
+| 2 | Boatyard Boulders (cid `boatyard-boulders-nottingham`) | Nottingham NG2 3HF | https://boatyardboulders.co.uk/ ; https://boatyardboulders.co.uk/find-us | Is it an indoor gym (roofed building) or an outdoor/covered bouldering park, and is it open to day visitors? | CIC under railway arches ("the UK's first ultra realistic bouldering park"), pre-booked slots only from 4 Aug 2026, site copyright 2026. Deferred for the same reason in 2026-10-05-uk-single-gym-towns. |
+| 3 | Social Climbing Leicester (cid `social-climbing-leicester`); also Coventry (Ironmonger Row) and Solihull, which have no candidate | Leicester LE1 4SX | https://www.visitleicester.info/see-and-do/rock-up-and-climb-without-ropes-at-leicesters-social-climbing-bouldering-centre-p838931 ; https://www.openstreetmap.org/node/7986030100 | Is Social Climbing (bouldering, Highcross, 24-28 East Bond Street) still open, and where is its current website or Instagram? | socialclimbing.co.uk is a parked page, socialclimbing.com says "Launching Soon". Visit Leicester (January 2026 article, not a primary source) calls it a top attraction with no booking needed. Coventry/Solihull branches could not be located in OSM or on any official page. |
+| 4 | Quay Climbing Centre (cid `quay-climbing-centre-exeter`) | Exeter, Haven Road | https://www.exeter.gov.uk/leisure-and-culture/exeter-quay-climbing-centre/ (403 to scripts); https://www.openstreetmap.org/way/193688745 | Does the Quay Climbing Centre have a bouldering area open to day visitors, and who runs it (council)? | OSM way: hours Mo-Fr 10-22, Sa-Su 12:15-20 (last edited 2021). Not readable from here. If council-run it should be added with a leisure-centre style category, not as a commercial gym. |
+| 5 | The Barn Climbing Wall (cid `barn-climbing-wall-tavistock`) | Tavistock PL19 0QP | https://www.barnclimbingwall.co.uk/ ; https://www.barnclimbingwall.co.uk/pricesand-booking | What are its public opening hours, its street address, and is it open now? | Independent wall; beginners course covers "the top rope and Bouldering areas", monthly passes, hire prices. No hours, street or dated item on the pages read. OSM way w168769084. |
+| 6 | Climb Rochdale (cid `climb-rochdale`) | Rochdale OL16 1QP | https://www.openstreetmap.org/way/202829118 | Is Climb Rochdale (School Lane) still open, with bouldering? | climbrochdale.com no longer resolves; only 2012-era listings found. Probably closed. |
+
+## Leads with no candidate (no pin or no readable page)
+| Lead | Why not a candidate |
+|---|---|
+| Ice Factor, Kinlochleven (climbing + ice) | Site blocks scripts and the headless browser (Cloudflare 403); bouldering not confirmed. |
+| The Peak, Stirling (leisure centre wall, OSM w216742546) | Council/trust leisure centre; official site not found. |
+| Rock Face, Dunfermline; Perth College Climbing Centre; McLaren Leisure Centre (Callander); Inverness Leisure | Listed by Mountaineering Scotland's wall list; leisure-centre or college walls, not researched. |
+| The Wall, Ulverston (OSM w407977315, climbing:boulder=yes) | Facebook page only; OSM check_date 2020. |
+| Broomhill Climbing Works, Sheffield (OSM node, Broomhill Methodist Church) | OSM stub only; The Climbing Works' own site lists only the S8 0UJ site. |
+| Hengrove Park Leisure Centre climbing wall (Bristol), Blackpool Sports Centre, West View Leisure Centre (Preston), Huddersfield Leisure Centre and similar council centres | Council leisure-centre walls (OSM only, no bouldering evidence on a primary page). |

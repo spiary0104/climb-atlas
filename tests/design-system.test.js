@@ -168,9 +168,9 @@ test('shadows: exactly two; raised only on objects floating over the map, overla
   assert.ok(!/gradient\(/.test(COMPONENT_CSS.map(read).join('')), 'no gradients on surfaces (sec. 4.4)');
 });
 
-test('themes: the map region is rock, and every floating object inside it is paper', () => {
+test('themes: the map region is paper (light map), and every floating object inside it is paper', () => {
   const html = read('index.html');
-  assert.match(html, /<main class="map-wrap"[^>]*data-theme="rock"/);
+  assert.match(html, /<main class="map-wrap"[^>]*data-theme="paper"/);
   const main = html.slice(html.indexOf('<main class="map-wrap"'), html.indexOf('</main>'));
   const floats = [...main.matchAll(/<(div|button)\b[^>]*>/g)].map(m => m[0]).filter(t => ['map-toggle', 'placing-banner'].some(c => classesOf(t).includes(c)) || /id="searchThisArea"/.test(t));
   assert.equal(floats.length, 3, '"Search as I move", "Search this area" and the placing banner found');
@@ -345,7 +345,7 @@ test('field guide: chrome and the list sit on the cream canvas; cards, chips, fi
   assert.equal(decl(head, 'font-family'), 'var(--font-display)', 'the count line is the Fraunces section hero (sec. 3)');
   assert.equal(decl(rules(read('css/explore.css')).find(r => r.selector === '.peek.map-float').body, 'border-color'), 'var(--color-border-strong)', 'peek card ink hairline (sec. 4.2)');
   assert.deepEqual([...read('index.html').matchAll(/<meta name="theme-color" content="([^"]+)"/g)].map(m => m[1]), [T.parseTokensCss(read('css/tokens.css')).base['--palette-paper-2']], 'browser chrome is cream');
-  assert.match(read('js/modules/map.js'), /cssToken\('--map-tint'\)/, 'the basemap is warmed from a token');
+  assert.match(read('js/modules/map.js'), /cssToken\('--map-paper-tint'\)/, 'the basemap is toned from a token');
 });
 
 test('START reads "Check in", never the Log tab\'s word; its visible label is inside its accessible name (WCAG 2.5.3)', () => {

@@ -58,8 +58,9 @@ function setMeta(title, path){
   if(link) link.href = CANONICAL_ORIGIN + path;
 }
 
-// Pages call this once they know their title (e.g. the gym name).
-export function setPageTitle(title){ setMeta(title ? title + ' · Bouldeer' : 'Bouldeer — community-sourced climbing map', current ? currentPath() : '/'); }
+// Pages call this once they know their title (e.g. the gym name). canonicalPath: when this page duplicates another
+// (a region page listing exactly one city's gyms, place-canonical.js), the path of the page search engines should index.
+export function setPageTitle(title, canonicalPath){ setMeta(title ? title + ' · Bouldeer' : 'Bouldeer — community-sourced climbing map', canonicalPath || (current ? currentPath() : '/')); }
 
 function markNav(area){
   document.querySelectorAll('[data-nav]').forEach(el => {

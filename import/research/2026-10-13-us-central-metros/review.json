@@ -1,0 +1,64 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-13-us-central-metros",
+ "reviewer": "Spiar (owner); decisions drafted by Claude (AI) on the owner's instruction, pending owner sign-off",
+ "reviewed": "2026-10-13",
+ "decisions": {
+  "us-il-001": {
+   "decision": "accept",
+   "reason": "Official First Ascent page (2026 Wayback captures) shows an open gym with bouldering and roped climbing at 100 S Morgan St; pin is the OSM building way 210268961 at that address. The former Brooklyn Boulders West Loop, now run by First Ascent.",
+   "reviewed_against": []
+  },
+  "us-tx-001": {
+   "decision": "accept",
+   "reason": "Momentum's own page says the Memorial gym is now open (2026), a 36,000 sq ft bouldering gym with current hours; pin is the place marker in the gym's own embedded map (OSM node 53 m away).",
+   "reviewed_against": []
+  },
+  "us-tx-002": {
+   "decision": "accept",
+   "reason": "Own site shows an open family-owned bouldering gym with walk-in hours (10am-8pm daily) and a first-visit bouldering class; a 10 Jul 2026 capture shows current operation; pin is the OSM building way for 5252 W Vickery Blvd.",
+   "reviewed_against": []
+  },
+  "us-tx-003": {
+   "decision": "accept",
+   "reason": "Crux's own Houston page says \"we are open\" with hours and bouldering (a 2026 opening, grand opening 10 Oct 2026); pin is the OSM building way for 3100 Canal St in The Plant.",
+   "reviewed_against": []
+  },
+  "us-tx-004": {
+   "decision": "accept",
+   "reason": "Own site (2026) shows an open bouldering gym with a $20 day pass and hours; CBJ reports the July 2025 opening; pin is the OSM building way for 2004 N Frazier St. Conroe is outside Houston city but inside the Houston-area scope of this section (Texas).",
+   "reviewed_against": []
+  },
+  "us-tx-005": {
+   "decision": "accept",
+   "reason": "Crux's own page and a dated 8 Aug 2026 capture show the new South Austin gym open with hours at 220 Ralph Ablanedo Dr; CBJ (Jun 2026) describes the bouldering and rope walls (opened 4 May 2026). Weaker point: the gym-specific bouldering statement is the CBJ article, the Crux site speaks of bouldering only chain-wide. Pin is the OSM building way at that address. The old Pickle Road Crux (seed-141) is closed: retire follow-up.",
+   "reviewed_against": [
+    "seed-141"
+   ]
+  },
+  "us-tx-d01": {
+   "decision": "defer",
+   "reason": "Not open yet by its own site (\"Coming Soon\", pre-send pricing; CBJ expected April 2026): has it opened?"
+  },
+  "us-co-s01": {
+   "decision": "same-as",
+   "same_as": "seed-94",
+   "followup": "location-update",
+   "reason": "Same gym; Movement's own map data is 156 m from the Bouldeer pin."
+  },
+  "us-tx-s01": {
+   "decision": "same-as",
+   "same_as": "seed-157",
+   "followup": "location-update",
+   "reason": "Same gym; Movement's own map data is 155 m from the Bouldeer pin."
+  },
+  "us-co-d01": {
+   "decision": "defer",
+   "reason": "Domain denverboulderingclub.com now shows \"Website Expired\" (last live capture 21 May 2026): still open? Same question for DBC South (Sheridan), which has no pin."
+  },
+  "us-co-d02": {
+   "decision": "defer",
+   "reason": "Open with day pass, but its own pages never say whether the climbing is bouldering (walls, boards, circuit routes); one question for the owner."
+  }
+ }
+}

@@ -5,7 +5,7 @@
 import { addDoneHtml, addPageHtml, addStepHtml, areaFor, areaMissing, countryState, nearHtml, PIN_ZOOM, stepOneMissing } from './add-html.js';
 import { openAuthModal } from './auth-ui.js';
 import { ALL_TYPES } from './geo.js';
-import { BASEMAP_STYLE, map as exploreMap, mapLibrary, warmBasemap } from './map.js';
+import { BASEMAP_STYLE, map as exploreMap, mapLibrary, paperBasemap } from './map.js';
 import { currentRoute, registerView, setPageTitle } from './router.js';
 import { gymPath } from './slug.js';
 import { appState } from './state.js';
@@ -99,7 +99,7 @@ function makePinMap(maplibregl, el){
     attributionControl: { compact: true }, fadeDuration: 0 });
   pinMap.touchZoomRotate.disableRotation();
   pinMap.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-right');
-  pinMap.once('style.load', () => { try{ warmBasemap(pinMap); }catch(err){ console.warn('Could not warm the pin map', err); } });
+  pinMap.once('style.load', () => { try{ paperBasemap(pinMap); }catch(err){ console.warn('Could not tone the pin map', err); } });
   pinMap.on('moveend', onMove);
   pinMap.once('load', onMove);
 }

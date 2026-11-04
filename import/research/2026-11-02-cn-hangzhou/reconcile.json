@@ -1,0 +1,113 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-11-02-cn-hangzhou",
+ "inputs": {
+  "section_sha256": "729433e4aa28e6a8e99ac878967dc4bd840cee5160f929355428cfcaa8bfea97",
+  "sources_sha256": "ed2e2020f1044db0e1dd84683108d56ca9c2c202d8d97f63691d3fdfb7f88942",
+  "candidates_sha256": "935f313217f60a9f8730a31a25c3b6a6d047e8dae18f97887412880340264a98",
+  "index": {
+   "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
+   "count": 3294
+  },
+  "staged_batches_compared": [
+   "2026-10-06-kr-seoul"
+  ],
+  "other_sections_compared": [
+   {
+    "id": "2026-11-01-cn-guangzhou",
+    "candidates_sha256": "f1d6750918703d8c7060acf2e91053919e9672d7e5bfb4ba804f74580e462b47"
+   }
+  ]
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 2,
+  "ready": 0,
+  "review": 1,
+  "blocked": 1,
+  "existing": 0,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "cn-hz-001",
+   "line": 1,
+   "name": "Luna Climbing (Binjiang Yintai)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-63296cf543"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-722 same-name-but-pin-differs 1556 m",
+     "ids": [
+      "seed-722"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-722 \"Luna Climbing (Hualian Xingguang Ave Phase 2)\": same-name-but-pin-differs (\"Luna Climbing (Binjiang Yintai)\" / \"Luna Climbing (Hualian Xingguang Ave Phase 2)\", 1556 m)",
+     "ids": [
+      "seed-722"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-722"
+   ]
+  },
+  {
+   "cid": "cn-hz-002",
+   "line": 2,
+   "name": "Banana+ Climbing (Hangzhou Center)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-1d0fe1a519"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-714 same-name-but-pin-differs 3874 m; seed-715 same-name-but-pin-differs 4660 m",
+     "ids": [
+      "seed-714",
+      "seed-715"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-714 \"Banana Climbing (Raffles City)\": same-name-but-pin-differs (\"Banana+ Climbing (Hangzhou Center)\" / \"Banana Climbing (Raffles City)\", 3874 m)",
+     "ids": [
+      "seed-714"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-715 \"Banana Climbing (Xixi Tianjie)\": same-name-but-pin-differs (\"Banana+ Climbing (Hangzhou Center)\" / \"Banana Climbing (Xixi Tianjie)\", 4660 m)",
+     "ids": [
+      "seed-715"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-714",
+    "seed-715"
+   ]
+  }
+ ],
+ "reconcile_sha256": "aeb9e4340ff0408657e1d3a42597ee949a5eaf38ad0dd31c72e29681c03f81c5"
+}

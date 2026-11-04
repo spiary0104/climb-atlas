@@ -1,0 +1,286 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-13-us-central-metros",
+ "inputs": {
+  "section_sha256": "74c6187dc8605e852ccabbd81f941a1e1b6de95eb614faed404b83e32437559d",
+  "sources_sha256": "e9c72c353fc7a42f40f0e9eb2d81effe005cf413ec14962b7eeb069483619dee",
+  "candidates_sha256": "b1730695104c91975d9fafb0be964eacfb427ab9c1fc40188283ce18b591a9e7",
+  "index": {
+   "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
+   "count": 3294
+  },
+  "staged_batches_compared": [
+   "2026-10-06-kr-seoul"
+  ],
+  "other_sections_compared": [
+   {
+    "id": "2026-10-06-us-midwest",
+    "candidates_sha256": "e43833ce065b3c6eab440916abdded116a7656160d40061c3110c4736ed1abbf"
+   },
+   {
+    "id": "2026-10-06-us-northeast",
+    "candidates_sha256": "4c9a7e2c3dccd4177279b92e7aacd810837a5ba728388f5b6df8bb9d0fcea38c"
+   },
+   {
+    "id": "2026-10-06-us-south",
+    "candidates_sha256": "0970aae878d6abc42a0634c5964cde388688d391639dac2685d81fb40a687327"
+   },
+   {
+    "id": "2026-10-06-us-west",
+    "candidates_sha256": "522eadce51697d6499a8baf1c9eac33ee14d5acca57eece19b232854bdcb76b3"
+   }
+  ]
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 11,
+  "ready": 5,
+  "review": 1,
+  "blocked": 3,
+  "existing": 2,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "us-co-d01",
+   "line": 10,
+   "name": "Denver Bouldering Club",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-70ef04a599"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-103 \"The Spot – Denver\": related names \"Denver Bouldering Club\" / \"The Spot – Denver\" 2644 m apart",
+     "ids": [
+      "seed-103"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-103"
+   ]
+  },
+  {
+   "cid": "us-co-d02",
+   "line": 11,
+   "name": "The Campus Climbing and Training",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-a7979a4c3f"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "us-co-s01",
+   "line": 8,
+   "name": "Movement Centennial",
+   "class": "existing",
+   "suggested": "same-as seed-94",
+   "importer": {
+    "class": "existing",
+    "id": "seed-94",
+    "match": {
+     "id": "seed-94",
+     "name": "Movement Centennial",
+     "reason": "same-name",
+     "dist_m": 156
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-94 but content differs (lat, lng, address, types); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-94 \"Movement Centennial\": same-name (\"Movement Centennial\" / \"Movement Centennial\", 156 m)",
+     "ids": [
+      "seed-94"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "seed-94"
+   ]
+  },
+  {
+   "cid": "us-il-001",
+   "line": 1,
+   "name": "First Ascent West Loop",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-5649d0bd95"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "us-tx-001",
+   "line": 2,
+   "name": "Momentum Memorial",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-3552a25b4e"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "us-tx-002",
+   "line": 3,
+   "name": "The Blok Climbing Co",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-83401ef7c6"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "us-tx-003",
+   "line": 4,
+   "name": "Crux Climbing Center Houston",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-652c2c75bf"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "us-tx-004",
+   "line": 5,
+   "name": "MoCo Bouldering",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-412805facb"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "us-tx-005",
+   "line": 6,
+   "name": "Crux Climbing Center South Austin",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-13c6a3645d"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-141 \"Crux Climbing Center\": related names \"Crux Climbing Center South Austin\" / \"Crux Climbing Center\" 6387 m apart",
+     "ids": [
+      "seed-141"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-141"
+   ]
+  },
+  {
+   "cid": "us-tx-d01",
+   "line": 7,
+   "name": "Lake Travis Bouldering",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-e557eebc56"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is opening-soon"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "us-tx-s01",
+   "line": 9,
+   "name": "Movement Plano",
+   "class": "existing",
+   "suggested": "same-as seed-157",
+   "importer": {
+    "class": "existing",
+    "id": "seed-157",
+    "match": {
+     "id": "seed-157",
+     "name": "Movement Plano",
+     "reason": "same-name",
+     "dist_m": 155
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-157 but content differs (lat, lng, types); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-157 \"Movement Plano\": same-name (\"Movement Plano\" / \"Movement Plano\", 155 m)",
+     "ids": [
+      "seed-157"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "seed-157"
+   ]
+  }
+ ],
+ "reconcile_sha256": "e6ad7400842db7e908735ea0767c848f4e472fca0a22eebbc3fe6e285a2f84b5"
+}

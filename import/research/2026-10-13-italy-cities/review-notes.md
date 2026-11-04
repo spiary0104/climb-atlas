@@ -1,0 +1,14 @@
+# Review notes: Italy cities (2026-10-13-italy-cities)
+
+Reviewer: Claude (AI) on the owner's instruction; owner sign-off pending. Tally: accept 23 | same-as 0 | defer 11 | reject 1.
+
+- Accepts: ic-001 to ic-023. All 23 are indoor gyms with a bouldering offering stated on the gym's own site, a day-visitor path (published single-entry price, or a membership sold at the gym), a sign of operation in 2026 and a building-level pin. Types follow the site: indoor-bouldering always, lead-climbing only where "lead" is stated, top-rope only for Big Walls and Vertikale (OSM climbing:toprope=yes plus the site).
+- Pins: 19 are OSM elements of the gym itself (name, website or address agree), Vi-Block is the gym's own Google embed, and InVert, Plastic Rock and ForGe are Photon house-number nodes of the printed address (no gym element in OSM). Vi-Block's review flag (single source) was accepted with `reviewed_against: []`.
+- Weaker accepts, called out so the brain can drop them: ic-013 Block al Cubo (live booking system, hours on Google, footer 2021), ic-006 Lezard (publication stamp Sep 2026 only), ic-018 Ravenna Gravity Fighters ("only card holders", but a 10 EUR single entry is priced), ic-014 Plastic Rock (open since Nov 2025 at this address, house node in a shared industrial building). Details in MANUAL-CHECK.md.
+- ic-002 Big Walls: the OSM node and the site are the Brugherio gym; the infoboulder entry "Bigwalls - Camp 4, Cernusco" redirects to the same site, so Cernusco is not a separate gym. ic-005 InVert: vertclimb.com redirects to invertclimb.com. ic-015 Campfour Boulder is the gym infoboulder calls "Boulder City" (Pietramurata). ic-014 Plastic Rock may be the successor of the infoboulder listing "Plastic Rock / Centro Gravità Permanente" (Via Zeni 8); not confirmed.
+- Defers: ic-024, ic-025, ic-031 (bouldering not stated, so blocked by the importer anyway), ic-026, ic-027 (membership plus medical certificate, no day price), ic-028 (no 2025/2026 content), ic-029, ic-030, ic-032, ic-033, ic-034 (no 2026-dated content). Each has one question in MANUAL-CHECK.md.
+- Reject: ic-035 Sportler Climbing Center (Silea) has a closure notice on its own site; it is not in Bouldeer, so there is no retire follow-up.
+- Existing-gym follow-ups: none. No candidate matched an existing gym and no existing Italian gym was seen to be closed. (The 2026-10-05 sections' deferred gyms were not re-examined here.)
+- No location-update follow-ups: none of the 40 existing Italian gyms was re-pinned.
+- Municipal/club walls: school halls, CAI club walls and comunale facilities (Sciorba Genova, Sanbàpolis Trento, Arco Climbing, Nives) were left out of candidates; none was labelled commercial-gym.
+- Scope note: Ivrea (K3) is in the Torino metropolitan city; Mondovì and Pollenzo (deferred) are in Cuneo province and were only looked at because they appeared in the Piemonte lists.

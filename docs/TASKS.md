@@ -6,11 +6,25 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 (delete them; git keeps history). Keep this file under 60 lines.
 
 ## In progress
+### Research wave 2026-10-13 — STAGED, not applied (branch `research/2026-10-13-wave`): +108 gyms, 49 pin fixes
+- Batches: 2026-10-13-fixes (13 AU pins + Boulderdash), 2026-10-13-cn-pin-fixes (35 CN pins, Amap entrance coordinates), then new gyms:
+  us-ny-boston-metros 6, us-central-metros 6, italy-cities 23, uk-cities 21, australia 24, jp-remaining 22, brazil 6. California and the
+  big US metros turned out almost fully covered already. Independent of the Korea/China PR. Owner checks: `import/research/MANUAL-CHECKS-wave-2026-10-13.md`.
+- China new cities (Guangzhou/Shenzhen, Hangzhou/Nanjing, Wuhan/Xi'an) wait for the owner's rednote.com + Amap tab (Chrome was closed).
 ### Coverage-gap sprint 2026-10-06 — 19/20 APPLIED + verified (+856 gyms, live 3,294); kr-seoul (40) NOT applied
 - The 2026-10-06 apply run stopped at kr-seoul with nothing written for it; it plans and dry-runs clean (2026-10-07). Owner re-runs:
   `powershell -ExecutionPolicy Bypass -File scripts\apply-batch.ps1 2026-10-06-kr-seoul`
 - `docs/research/coverage-gap-2026-10/REPORT.md` (country/city gap rankings, next wave, tooling notes). 187 owner checks: `MANUAL-CHECKS.md`.
   Follow-ups (pin fixes, Seoul duplicates): `STATUS.md`. Next wave: Korea outside Seoul, US covered-state metros, FR/DE long tail, Italy, UK cities.
+
+### China (Chengdu) pilot — Gate 0 done 2026-10-31; Gate 1 approved 2026-11-01
+- Network (Gate 0): no mainland hosting now (Supabase ~28% reachable on mainland networks; ICP needs a Chinese entity); roaming/eSIM
+  guidance + a minimal offline "download a city" mode later. Plan: https://claude.ai/artifact/GVHNLJWVT6gdQyQCVSM4Lm
+- Data: 14 verified pilot gyms + batch `2026-11-01-chengdu` (needs apply approval): `import/research/2026-11-01-chengdu/verification.md`.
+  Visitor info: WeChat checks by someone with WeChat (owner note 2026-11-01). Hold PR #83's CN batches until the name_local schema.
+- Next: Gate 1 PR 1 (name_local + visitor fields, local branch only), then the importer.
+- Map tiles: CARTO used keyless under its non-commercial terms (owner 2026-11-01); if use turns commercial or CARTO limits it,
+  fall back to OpenFreeMap (measured reachable in mainland China too).
 
 ## Gym data
 ### Owner manual checks

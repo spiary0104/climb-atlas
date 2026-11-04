@@ -40,7 +40,7 @@
 }
 .panel-row{margin:0;font-size:var(--type-text-md-size);line-height:var(--type-text-md-line);}
 
-/* Static map thumbnail: raster tiles of the dark basemap (a rock object on paper), the gym's pin in the middle */
+/* Static map thumbnail: the light basemap, the gym's pin in the middle */
 .map-thumb-figure{margin:0;flex:none;}
 .map-thumb{position:relative;display:block;overflow:hidden;border-radius:var(--radius-sm);background:var(--map-paper-land);border:var(--border-width) solid var(--color-border-subtle);}
 .map-thumb .maplibregl-canvas-container,.map-thumb canvas{pointer-events:none;}

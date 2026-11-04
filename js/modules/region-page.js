@@ -9,6 +9,7 @@ import { destroyMiniMaps, mountMiniMaps } from './mini-map.js';
 import { metroByPath, metroKey, metroOf, metrosForRegion } from './metros.js';
 import { notFoundHtml, pageSkeletonHtml, placePageHtml, regionMeta, regionSearchResultsHtml, regionsIndexHtml } from './page-html.js';
 import { registerView, setPageTitle } from './router.js';
+import { regionCanonicalPath } from './place-canonical.js';
 import { buildSearchIndex, placeKey, querySearchIndex } from './search-index.js';
 import { placeSeo } from './seo-meta.js';
 import { citySegment, cityPath, countryPath, gymPath, metroPath, regionPath, regionSegment } from './slug.js';
@@ -44,10 +45,10 @@ function groupTiles(gyms, keyOf, labelOf, hrefOf){
 const gymItems = gyms => gyms.slice().sort((a, b) => a.name.localeCompare(b.name))
   .map(g => ({ g, ctx: { region: stateLabel(g.country, g.state), href: gymPath(g) } }));
 
-function render(view, html, gyms, title){
+function render(view, html, gyms, title, canonicalPath){
   destroyMiniMaps();
   view.innerHTML = html;
-  setPageTitle(title);
+  setPageTitle(title, canonicalPath);
   mountMiniMaps(view, { points: gyms.map(g => ({ lat: g.lat, lng: g.lng, types: g.types })) });
 }
 
@@ -116,7 +117,7 @@ function regionView({ country, region }, view){
       { title: metros.length ? 'Other areas' : 'Areas', tiles: areas.length > 1 && areas.length < loose.length ? areas : [] }],   // area tiles only when one holds more than one gym
     gymsTitle: 'Gyms', gyms: gymItems(gyms),
     map: mapFor(gyms, placeKey(cc, state), name),
-  }), gyms, placeSeo({ kind: 'region', name, within: COUNTRY_LABELS[cc], count: gyms.length }).title);
+  }), gyms, placeSeo({ kind: 'region', name, within: COUNTRY_LABELS[cc], count: gyms.length }).title, regionCanonicalPath(appState.spots, cc, state));
 }
 
 // A metro page (metros.js): every gym within the metro's radius, wherever its region code points.

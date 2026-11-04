@@ -1,0 +1,155 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-13-uk-cities",
+ "reviewer": "Spiar (owner); decisions drafted by Claude (AI) on the owner's instruction, pending owner sign-off",
+ "reviewed": "2026-10-13",
+ "decisions": {
+  "awesome-walls-stockport": {
+   "decision": "accept",
+   "reason": "Chain page (modified 2026-10-12) shows exists, open (prices, bouldering problems, auto-belays), address Pear Mill SK6 2BP and bouldering; pin is the OSM node of the centre (same address, chain page as website), 44 m from the postcode centroid. No flags."
+  },
+  "awesome-walls-stoke": {
+   "decision": "accept",
+   "reason": "Chain page (modified 2026-09-21): one of England's largest dedicated bouldering centres, 150+ problems, prices; pin is the OSM way (edited 2026-09-29) with the same Sefton Road ST3 5LW address. No flags."
+  },
+  "kendalwall": {
+   "decision": "accept",
+   "reason": "Operator centre page (read through a page reader; 403 to scripts): roped climbing and bouldering, drop-in, hours, 2026 news (Boulder League 12 Oct 2026); OSM way has climbing:boulder=yes and the same hours. No flags."
+  },
+  "rock-over-bolton": {
+   "decision": "accept",
+   "reason": "Flag is the shared chain website with rock-over-sharston: two distinct centres (Bolton BL6 4BL and Sharston M22 4RW, about 24 km apart) listed separately on the chain locations page with their own hours; bouldering and walk-in climbing per the first-visit page. Pin is the OSM way (UPRN-tagged, edited 2026-03-20).",
+   "reviewed_against": [
+    "rock-over-sharston"
+   ]
+  },
+  "rock-over-sharston": {
+   "decision": "accept",
+   "reason": "Flags: shared website with rock-over-bolton (distinct centre, about 24 km away) and the related name of the existing Rock Over Climbing (seed-915, Park Garage, Cheviot St, M3 1LW, 10.5 km away): the chain locations page lists Central, Bolton and Sharston as three separate centres. Pin is the OSM way \"Rock Over Climbing\" (sports_hall, edited 2026-07-19), 94 m from the M22 4RW centroid; it carries no address of its own, so the match rests on postcode proximity (Leestone Road/Shentonfield Road industrial area).",
+   "reviewed_against": [
+    "rock-over-bolton",
+    "seed-915"
+   ]
+  },
+  "summit-up-oldham": {
+   "decision": "accept",
+   "reason": "Own site shows bouldering and roped climbing, hours and 2026 news (Summer Passport 2026, January 2026 offers); charity-funded stand-alone centre, not a council leisure centre; pin is the OSM node (same postcode OL1 3SE, 43 m from centroid). No flags."
+  },
+  "boulder-brighton": {
+   "decision": "accept",
+   "reason": "Own site: news posts dated 30 Sep and 2 Oct 2026, live hours, bouldering sessions; address Victoria Road Trading Estate, Portslade BN41 1XQ. Pin is the OSM node, about 25 m from the gym's own embedded map point (50.835381, -0.211403). Not in Bouldeer. No flags."
+  },
+  "gallery-bouldering-oxford": {
+   "decision": "accept",
+   "reason": "Own site: open 8am-10pm daily, day-pass prices, calendar entries on 4 Sep, 29 Oct and 26 Nov 2026, 100 m of bouldering wall; the homepage <title> (\"coming to Oxford\") is stale. Pin is the OSM node on Marston Street OX4 1LF (20 m from the centroid). No flags."
+  },
+  "270-climbing-gloucester": {
+   "decision": "accept",
+   "reason": "Own site: bouldering section, hours page, news dated 15 Sep 2026 and a 2026 Boulder League; Bentham Lane GL3 4UD; pin is the OSM way. No flags."
+  },
+  "boulders-cardiff": {
+   "decision": "accept",
+   "reason": "Flag: related name of flashpoint-cardiff (another chain, 5 km away, different address); the two are unrelated gyms. Own page: roped, lead and bouldering, day pass with no booking, hours, St Catherines Park CF24 2RZ, 2026 map data. Pin is the OSM node (website bouldersuk.com/cardiff).",
+   "reviewed_against": [
+    "flashpoint-cardiff"
+   ]
+  },
+  "flashpoint-cardiff": {
+   "decision": "accept",
+   "reason": "Flag: related name of boulders-cardiff (unrelated gym, 5 km away). Own site (copyright 2026): bouldering centre and cafe, hours Mon-Fri 10-22 and weekends 10-19, Freemans Parc CF11 8EQ; also on the Flashpoint group page. Pin is the OSM way.",
+   "reviewed_against": [
+    "boulders-cardiff"
+   ]
+  },
+  "flashpoint-bristol-easton": {
+   "decision": "accept",
+   "reason": "Flag: related name of the existing Flashpoint Bristol (seed-870, Temple Meads BS3 4RP, 2.7 km away). The group site lists Flashpoint Bristol - Temple Meads and Flashpoint Bristol - Easton as separate centres; Easton (formerly Bloc Climbing, New Gatton Road BS2 9SH) has its own site, hours and bouldering. Pin is the OSM way \"Bloc Climbing\" with the same postcode.",
+   "reviewed_against": [
+    "seed-870"
+   ]
+  },
+  "birmingham-bouldering-centre": {
+   "decision": "accept",
+   "reason": "Flags: related names with redpoint-birmingham (a different gym 567 m away: Redpoint is on Cecil Street, B19) and the existing Depot Climbing Birmingham (seed-918, 1.7 km away). Own site: Arch 30 & 31 Water Street B3 1HL, hours, bookings, opened 2012; OSM node edited 2026-10-05 with the same hours.",
+   "reviewed_against": [
+    "redpoint-birmingham",
+    "seed-918"
+   ]
+  },
+  "redpoint-birmingham": {
+   "decision": "accept",
+   "reason": "Flag: related name with birmingham-bouldering-centre (different gym, 567 m away). Own site read in a browser: bouldering in four areas, roped and lead walls, hours, online taster booking. Weaker open-evidence: no dated 2026 item on the pages read; accepted on live hours and booking, like earlier UK passes.",
+   "reviewed_against": [
+    "birmingham-bouldering-centre"
+   ]
+  },
+  "climbing-unit-derby": {
+   "decision": "accept",
+   "reason": "Own site: prices \"as of Monday 4th May 2026\", Easter Opening Times 2026, hours, 1100 m2 of bouldering; pin is the OSM way (DE21 6YZ, 1 m from the centroid; the site's own map query agrees). Street address from OSM. No flags."
+  },
+  "alter-rock-derby": {
+   "decision": "accept",
+   "reason": "Own bouldering page: adult drop-in at any time, hours, lead climbing in the menu; the church-conversion building matches the OSM way (DE23 8LU, 3 m from the centroid). Weaker open-evidence: only a 2026 copyright footer, no dated news. No flags."
+  },
+  "redpoint-worcester": {
+   "decision": "accept",
+   "reason": "Own site: 500 m2 bouldering area, all-day access with no pre-booking, 2026 prices and hours, BLOCTOBERFEST 2026; Midland Road WR5 1DS; pin is the OSM way \"Redpoint Climbing Centte\" (typo in OSM). No flags."
+  },
+  "boulder-barn-hereford": {
+   "decision": "accept",
+   "reason": "Own site: bouldering centre and cafe with listed hours; its WordPress feed has a post dated 23 Jul 2026; address Holmer Trading Estate HR1 1JS; pin is the OSM node (9 m from the centroid). Not the existing Green Spider. No flags."
+  },
+  "climbing-hangar-bristol": {
+   "decision": "accept",
+   "reason": "Chain location page: bouldering gym at 15-29 Union Street BS1 2DF, day price, hours, PCL Open 2026 competition booked for 7 Nov 2026; the chain menu lists nine Hangars and Bristol is the only one missing from Bouldeer. Pin is the OSM way (edited 2026-08-17, chain page as website). No flags."
+  },
+  "friction-bouldering-gateshead": {
+   "decision": "accept",
+   "reason": "Own site: Gateshead's dedicated bouldering gym, hours, day pass 10.50 GBP, intro lessons; 1b Saltmeadows Road NE8 3AH; pin is the OSM way with the same address and website. Weaker open-evidence: no dated 2026 item on the pages read. No flags."
+  },
+  "boathouse-climbing-llandudno": {
+   "decision": "accept",
+   "reason": "Own site: bouldering wall plus roped tower in the old lifeboat station, registration for bouldering-only climbers, public hours with 2026/2027 term dates, copyright 2026; pin is the OSM way (LL30 2YG, 56 m from the centroid). Wales; small centre. No flags."
+  },
+  "boulder-world-belfast": {
+   "decision": "same-as",
+   "same_as": "seed-958",
+   "reason": "Importer same-name match (436 m). The existing pin (54.58203, -5.95803) is about 440 m from the building: the gym's own Google place link (41 Boucher Rd) and the OSM way \"Boulderworld Climbing Gym\" both put it at about 54.5794, -5.9629. Same gym; location update suggested as a separate update batch.",
+   "followup": "location-update"
+  },
+  "parthian-manchester": {
+   "decision": "reject",
+   "reason_code": "closed",
+   "reason": "The Parthian group site no longer lists Manchester and the OSM way is tagged disused=yes / opening_hours=closed (edited 2026-10-02). Not in Bouldeer, so no retire follow-up."
+  },
+  "rainbow-rocket-central-cambridge": {
+   "decision": "reject",
+   "reason_code": "closed",
+   "reason": "Operator notice of 9 Sep 2026: the centre closes after 15 Nov 2026 (demolition for East West Rail). Not worth adding; Rainbow Rocket North (seed-927) stays. Existing-gym retirement is not applicable (this one is not in Bouldeer)."
+  },
+  "last-sun-dance-leeds": {
+   "decision": "defer",
+   "reason": "Open and bouldering is confirmed by OSM and the site, but the pages read only sell monthly membership (from 35 GBP) and never show a day price. Owner to confirm day visitors can pay per visit. See MANUAL-CHECK.md."
+  },
+  "boatyard-boulders-nottingham": {
+   "decision": "defer",
+   "reason": "Pre-booked-slot \"bouldering park\" under railway arches (CIC); unclear it is an indoor gym. Deferred again, as in 2026-10-05-uk-single-gym-towns. See MANUAL-CHECK.md."
+  },
+  "social-climbing-leicester": {
+   "decision": "defer",
+   "reason": "Highcross bouldering centre reported open by Visit Leicester (January 2026) but the brand's own domains give no information, so no primary source. See MANUAL-CHECK.md."
+  },
+  "quay-climbing-centre-exeter": {
+   "decision": "defer",
+   "reason": "Public quayside climbing centre, probably council-run; the council page was unreadable and nothing shows a bouldering offer. Leisure-centre style wall, not a commercial gym. See MANUAL-CHECK.md."
+  },
+  "barn-climbing-wall-tavistock": {
+   "decision": "defer",
+   "reason": "Own site shows a wall with top-rope and bouldering areas and passes, but no opening hours, street address or dated item. See MANUAL-CHECK.md."
+  },
+  "climb-rochdale": {
+   "decision": "defer",
+   "reason": "OSM building only; climbrochdale.com no longer resolves and only 2012-era listings exist. Probably closed. See MANUAL-CHECK.md."
+  }
+ }
+}

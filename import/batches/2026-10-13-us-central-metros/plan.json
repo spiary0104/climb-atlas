@@ -1,0 +1,85 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-13-us-central-metros",
+ "index": {
+  "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
+  "count": 3294,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-06-kr-seoul",
+  "2026-10-13-australia",
+  "2026-10-13-brazil",
+  "2026-10-13-italy-cities",
+  "2026-10-13-jp-remaining",
+  "2026-10-13-uk-cities",
+  "2026-10-13-us-ny-boston-metros"
+ ],
+ "counts": {
+  "records": 6,
+  "new": 6,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "a7e635ec55510825464d1b3f1242a85ef61d2c77af4e73da7975b06da02dd604",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-5649d0bd95",
+   "id_frozen": true,
+   "name": "First Ascent West Loop",
+   "country": "US"
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-3552a25b4e",
+   "id_frozen": true,
+   "name": "Momentum Memorial",
+   "country": "US"
+  },
+  {
+   "line": 3,
+   "class": "new",
+   "id": "g-83401ef7c6",
+   "id_frozen": true,
+   "name": "The Blok Climbing Co",
+   "country": "US"
+  },
+  {
+   "line": 4,
+   "class": "new",
+   "id": "g-652c2c75bf",
+   "id_frozen": true,
+   "name": "Crux Climbing Center Houston",
+   "country": "US"
+  },
+  {
+   "line": 5,
+   "class": "new",
+   "id": "g-412805facb",
+   "id_frozen": true,
+   "name": "MoCo Bouldering",
+   "country": "US"
+  },
+  {
+   "line": 6,
+   "class": "new",
+   "id": "g-13c6a3645d",
+   "id_frozen": true,
+   "name": "Crux Climbing Center South Austin",
+   "country": "US"
+  }
+ ]
+}

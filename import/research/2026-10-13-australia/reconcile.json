@@ -1,0 +1,1383 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-13-australia",
+ "inputs": {
+  "section_sha256": "ec6f4fabed78563b1ea039cf1ef18ed3812b5dd8d22c69eb833aa9f79c6b6209",
+  "sources_sha256": "04c6ba9b549969b090881dbe0a7e17dae153ad579368a801449dd180e500c31d",
+  "candidates_sha256": "137e8dfe82dffef3c261c9fd29edc745f2f65ca85e3e7bcbda4c546c1e3aee95",
+  "index": {
+   "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
+   "count": 3294
+  },
+  "staged_batches_compared": [
+   "2026-10-06-kr-seoul"
+  ],
+  "other_sections_compared": []
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 47,
+  "ready": 12,
+  "review": 19,
+  "blocked": 8,
+  "existing": 8,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "au-9d-alexandria",
+   "line": 23,
+   "name": "9 Degrees Alexandria",
+   "class": "existing",
+   "suggested": "same-as seed-0",
+   "importer": {
+    "class": "existing",
+    "id": "seed-0",
+    "match": {
+     "id": "seed-0",
+     "name": "9 Degrees Alexandria",
+     "reason": "same-address-related-name",
+     "dist_m": 1679
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-0 but content differs (lat, lng); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-0 \"9 Degrees Alexandria\": same-address-related-name (\"9 Degrees Alexandria\" / \"9 Degrees Alexandria\", 1679 m)",
+     "ids": [
+      "seed-0"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate au-9d-chatswood \"9 Degrees Chatswood\": related names \"9 Degrees Alexandria\" / \"9 Degrees Chatswood\" 14891 m apart",
+     "ids": [
+      "au-9d-chatswood"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-3 \"9 Degrees Waterloo\": related names \"9 Degrees Alexandria\" / \"9 Degrees Waterloo\" 2942 m apart",
+     "ids": [
+      "seed-3"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate au-9d-chatswood has the same website",
+     "ids": [
+      "au-9d-chatswood"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate au-9d-enoggera has the same website",
+     "ids": [
+      "au-9d-enoggera"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate au-9d-lane-cove has the same website",
+     "ids": [
+      "au-9d-lane-cove"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate au-9d-morningside has the same website",
+     "ids": [
+      "au-9d-morningside"
+     ]
+    }
+   ],
+   "review_ids": [
+    "au-9d-chatswood",
+    "au-9d-enoggera",
+    "au-9d-lane-cove",
+    "au-9d-morningside",
+    "seed-0",
+    "seed-3"
+   ]
+  },
+  {
+   "cid": "au-9d-chatswood",
+   "line": 1,
+   "name": "9 Degrees Chatswood",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-f7aa31ce25"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate au-9d-alexandria \"9 Degrees Alexandria\": related names \"9 Degrees Chatswood\" / \"9 Degrees Alexandria\" 14891 m apart",
+     "ids": [
+      "au-9d-alexandria"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-0 \"9 Degrees Alexandria\": related names \"9 Degrees Chatswood\" / \"9 Degrees Alexandria\" 13267 m apart",
+     "ids": [
+      "seed-0"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-3 \"9 Degrees Waterloo\": related names \"9 Degrees Chatswood\" / \"9 Degrees Waterloo\" 12639 m apart",
+     "ids": [
+      "seed-3"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate au-9d-alexandria has the same website",
+     "ids": [
+      "au-9d-alexandria"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate au-9d-enoggera has the same website",
+     "ids": [
+      "au-9d-enoggera"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate au-9d-lane-cove has the same website",
+     "ids": [
+      "au-9d-lane-cove"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate au-9d-morningside has the same website",
+     "ids": [
+      "au-9d-morningside"
+     ]
+    }
+   ],
+   "review_ids": [
+    "au-9d-alexandria",
+    "au-9d-enoggera",
+    "au-9d-lane-cove",
+    "au-9d-morningside",
+    "seed-0",
+    "seed-3"
+   ]
+  },
+  {
+   "cid": "au-9d-enoggera",
+   "line": 25,
+   "name": "9 Degrees Bouldering Enoggera",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-a032b4ddfa"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate au-9d-morningside \"9 Degrees Morningside\": related names \"9 Degrees Bouldering Enoggera\" / \"9 Degrees Morningside\" 9953 m apart",
+     "ids": [
+      "au-9d-morningside"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-45 \"9 Degrees Bouldering\": related names \"9 Degrees Bouldering Enoggera\" / \"9 Degrees Bouldering\" 306 m apart",
+     "ids": [
+      "seed-45"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate au-9d-alexandria has the same website",
+     "ids": [
+      "au-9d-alexandria"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate au-9d-chatswood has the same website",
+     "ids": [
+      "au-9d-chatswood"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate au-9d-lane-cove has the same website",
+     "ids": [
+      "au-9d-lane-cove"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate au-9d-morningside has the same website",
+     "ids": [
+      "au-9d-morningside"
+     ]
+    }
+   ],
+   "review_ids": [
+    "au-9d-alexandria",
+    "au-9d-chatswood",
+    "au-9d-lane-cove",
+    "au-9d-morningside",
+    "seed-45"
+   ]
+  },
+  {
+   "cid": "au-9d-lane-cove",
+   "line": 24,
+   "name": "9 Degrees Lane Cove",
+   "class": "existing",
+   "suggested": "same-as seed-1",
+   "importer": {
+    "class": "existing",
+    "id": "seed-1",
+    "match": {
+     "id": "seed-1",
+     "name": "9 Degrees Lane Cove",
+     "reason": "same-name",
+     "dist_m": 354
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-1 but content differs (lat, lng); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-1 \"9 Degrees Lane Cove\": same-name (\"9 Degrees Lane Cove\" / \"9 Degrees Lane Cove\", 354 m)",
+     "ids": [
+      "seed-1"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate au-9d-alexandria has the same website",
+     "ids": [
+      "au-9d-alexandria"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate au-9d-chatswood has the same website",
+     "ids": [
+      "au-9d-chatswood"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate au-9d-enoggera has the same website",
+     "ids": [
+      "au-9d-enoggera"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate au-9d-morningside has the same website",
+     "ids": [
+      "au-9d-morningside"
+     ]
+    }
+   ],
+   "review_ids": [
+    "au-9d-alexandria",
+    "au-9d-chatswood",
+    "au-9d-enoggera",
+    "au-9d-morningside",
+    "seed-1"
+   ]
+  },
+  {
+   "cid": "au-9d-morningside",
+   "line": 2,
+   "name": "9 Degrees Morningside",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-8b059b0d5f"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "candidate au-9d-enoggera \"9 Degrees Bouldering Enoggera\": related names \"9 Degrees Morningside\" / \"9 Degrees Bouldering Enoggera\" 9953 m apart",
+     "ids": [
+      "au-9d-enoggera"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-45 \"9 Degrees Bouldering\": related names \"9 Degrees Morningside\" / \"9 Degrees Bouldering\" 10256 m apart",
+     "ids": [
+      "seed-45"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate au-9d-alexandria has the same website",
+     "ids": [
+      "au-9d-alexandria"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate au-9d-chatswood has the same website",
+     "ids": [
+      "au-9d-chatswood"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate au-9d-enoggera has the same website",
+     "ids": [
+      "au-9d-enoggera"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate au-9d-lane-cove has the same website",
+     "ids": [
+      "au-9d-lane-cove"
+     ]
+    }
+   ],
+   "review_ids": [
+    "au-9d-alexandria",
+    "au-9d-chatswood",
+    "au-9d-enoggera",
+    "au-9d-lane-cove",
+    "seed-45"
+   ]
+  },
+  {
+   "cid": "au-activate-hardrock-heatherton",
+   "line": 40,
+   "name": "Activate by Hardrock (Clip n Climb Heatherton)",
+   "class": "blocked",
+   "suggested": "reject no-bouldering",
+   "importer": {
+    "class": "new",
+    "id": "g-d3b0dc8bd3"
+   },
+   "blockers": [
+    {
+     "code": "no-bouldering",
+     "detail": "confirmed rope-only (new additions need a bouldering offering)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "au-adrenaline-vault-cockburn",
+   "line": 18,
+   "name": "Adrenaline Vault Cockburn",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-03802d1aff"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "au-albury-indoor-rock-climbing",
+   "line": 46,
+   "name": "Albury Indoor Rock Climbing",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-3a251d392c"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "au-alpine-currumbin",
+   "line": 15,
+   "name": "Alpine Indoor Climbing Currumbin",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-aed46bfd1f"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-53 \"Alpine Indoor Climbing\": related names \"Alpine Indoor Climbing Currumbin\" / \"Alpine Indoor Climbing\" 11375 m apart",
+     "ids": [
+      "seed-53"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-53"
+   ]
+  },
+  {
+   "cid": "au-beyond-bouldering-thebarton",
+   "line": 21,
+   "name": "Beyond Bouldering Thebarton",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-9ed1081190"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-67 \"Beyond Bouldering\": related names \"Beyond Bouldering Thebarton\" / \"Beyond Bouldering\" 4287 m apart",
+     "ids": [
+      "seed-67"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-68 \"Beyond Bouldering\": related names \"Beyond Bouldering Thebarton\" / \"Beyond Bouldering\" 3285 m apart",
+     "ids": [
+      "seed-68"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "seed-67",
+    "seed-68"
+   ]
+  },
+  {
+   "cid": "au-blochaus-fyshwick",
+   "line": 30,
+   "name": "BlocHaus Bouldering Canberra",
+   "class": "existing",
+   "suggested": "same-as seed-29",
+   "importer": {
+    "class": "existing",
+    "id": "seed-29",
+    "match": {
+     "id": "seed-29",
+     "name": "BlocHaus Bouldering Canberra",
+     "reason": "same-name",
+     "dist_m": 230
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-29 but content differs (lat, lng, address); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-29 \"BlocHaus Bouldering Canberra\": same-name (\"BlocHaus Bouldering Canberra\" / \"BlocHaus Bouldering Canberra\", 230 m)",
+     "ids": [
+      "seed-29"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-29"
+   ]
+  },
+  {
+   "cid": "au-boulder-lab-brunswick",
+   "line": 7,
+   "name": "Boulder Lab Brunswick",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-68345668f5"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate au-boulder-lab-clayton-south has the same website",
+     "ids": [
+      "au-boulder-lab-clayton-south"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate au-boulder-lab-ferntree-gully has the same website",
+     "ids": [
+      "au-boulder-lab-ferntree-gully"
+     ]
+    }
+   ],
+   "review_ids": [
+    "au-boulder-lab-clayton-south",
+    "au-boulder-lab-ferntree-gully"
+   ]
+  },
+  {
+   "cid": "au-boulder-lab-clayton-south",
+   "line": 8,
+   "name": "Boulder Lab Clayton South",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-6bcdf294bb"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate au-boulder-lab-brunswick has the same website",
+     "ids": [
+      "au-boulder-lab-brunswick"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate au-boulder-lab-ferntree-gully has the same website",
+     "ids": [
+      "au-boulder-lab-ferntree-gully"
+     ]
+    }
+   ],
+   "review_ids": [
+    "au-boulder-lab-brunswick",
+    "au-boulder-lab-ferntree-gully"
+   ]
+  },
+  {
+   "cid": "au-boulder-lab-ferntree-gully",
+   "line": 28,
+   "name": "Boulder Lab Ferntree Gully",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-69f61e2832"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate au-boulder-lab-brunswick has the same website",
+     "ids": [
+      "au-boulder-lab-brunswick"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate au-boulder-lab-clayton-south has the same website",
+     "ids": [
+      "au-boulder-lab-clayton-south"
+     ]
+    }
+   ],
+   "review_ids": [
+    "au-boulder-lab-brunswick",
+    "au-boulder-lab-clayton-south"
+   ]
+  },
+  {
+   "cid": "au-buffalo-boulders-myrtleford",
+   "line": 22,
+   "name": "Buffalo Boulders",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-c7b3a9fb57"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "au-camp-street-katoomba",
+   "line": 45,
+   "name": "Camp Street Climbing",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-135d936134"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "au-cliffhanger-altona-north",
+   "line": 29,
+   "name": "Cliffhanger Climbing Gym",
+   "class": "existing",
+   "suggested": "same-as seed-43",
+   "importer": {
+    "class": "existing",
+    "id": "seed-43",
+    "match": {
+     "id": "seed-43",
+     "name": "Cliffhanger Climbing Gym",
+     "reason": "same-name",
+     "dist_m": 337
+    }
+   },
+   "blockers": [
+    {
+     "code": "no-bouldering-evidence",
+     "detail": "bouldering is \"yes\" but no primary source confirms it"
+    }
+   ],
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-43 but content differs (lat, lng, types); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-43 \"Cliffhanger Climbing Gym\": same-name (\"Cliffhanger Climbing Gym\" / \"Cliffhanger Climbing Gym\", 337 m)",
+     "ids": [
+      "seed-43"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-43"
+   ]
+  },
+  {
+   "cid": "au-climb-west-altona",
+   "line": 9,
+   "name": "Climb West Melbourne",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-bda97e516f"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "au-climbfit-st-leonards",
+   "line": 35,
+   "name": "Climb Fit St Leonards",
+   "class": "existing",
+   "suggested": "same-as seed-8",
+   "importer": {
+    "class": "existing",
+    "id": "seed-8",
+    "match": {
+     "id": "seed-8",
+     "name": "Climb Fit St Leonards",
+     "reason": "same-name",
+     "dist_m": 253
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-8 but content differs (lat, lng, address); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-8 \"Climb Fit St Leonards\": same-name (\"Climb Fit St Leonards\" / \"Climb Fit St Leonards\", 253 m)",
+     "ids": [
+      "seed-8"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-8"
+   ]
+  },
+  {
+   "cid": "au-clipnclimb-berwick",
+   "line": 38,
+   "name": "Clip 'n Climb Berwick",
+   "class": "blocked",
+   "suggested": "reject no-bouldering",
+   "importer": {
+    "class": "new",
+    "id": "g-6c1615b809"
+   },
+   "blockers": [
+    {
+     "code": "no-bouldering",
+     "detail": "confirmed rope-only (new additions need a bouldering offering)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "au-clipnclimb-williamstown",
+   "line": 39,
+   "name": "Clip 'n Climb Williamstown",
+   "class": "blocked",
+   "suggested": "reject no-bouldering",
+   "importer": {
+    "class": "new",
+    "id": "g-2ad8f83d7b"
+   },
+   "blockers": [
+    {
+     "code": "no-bouldering",
+     "detail": "confirmed rope-only (new additions need a bouldering offering)"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "au-crux-coburg-north",
+   "line": 10,
+   "name": "The Crux",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-daa4827f2e"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "au-cutloose-upper-coomera",
+   "line": 16,
+   "name": "Cutloose Indoor Climbing",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-1e29dae7a9"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "au-edge-castle-hill",
+   "line": 32,
+   "name": "The Edge Rock Climbing Centre",
+   "class": "existing",
+   "suggested": "same-as seed-12",
+   "importer": {
+    "class": "existing",
+    "id": "seed-12",
+    "match": {
+     "id": "seed-12",
+     "name": "The Edge Rock Climbing Centre",
+     "reason": "same-name",
+     "dist_m": 488
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-12 but content differs (lat, lng); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-12 \"The Edge Rock Climbing Centre\": same-name (\"The Edge Rock Climbing Centre\" / \"The Edge Rock Climbing Centre\", 488 m)",
+     "ids": [
+      "seed-12"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-12"
+   ]
+  },
+  {
+   "cid": "au-elevate-villawood",
+   "line": 33,
+   "name": "Elevate Climbing Villawood",
+   "class": "existing",
+   "suggested": "same-as seed-7",
+   "importer": {
+    "class": "existing",
+    "id": "seed-7",
+    "match": {
+     "id": "seed-7",
+     "name": "Elevate Climbing Villawood",
+     "reason": "same-name",
+     "dist_m": 428
+    }
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-7 but content differs (lat, lng, address); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-7 \"Elevate Climbing Villawood\": same-name (\"Elevate Climbing Villawood\" / \"Elevate Climbing Villawood\", 428 m)",
+     "ids": [
+      "seed-7"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-7"
+   ]
+  },
+  {
+   "cid": "au-flow-bouldering-forest-glen",
+   "line": 41,
+   "name": "Flow Bouldering",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-93e2583a2a"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "au-flow-climbing-cheltenham",
+   "line": 5,
+   "name": "Flow Climbing",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-67b4a1edee"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "au-friction-bouldering-delacombe",
+   "line": 47,
+   "name": "Friction Bouldering",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-f7fee218d9"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "no-bouldering-evidence",
+     "detail": "bouldering is \"yes\" but no primary source confirms it"
+    }
+   ],
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "au-gecko-climb-darwin",
+   "line": 14,
+   "name": "Gecko Climb",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-2b85808c1a"
+   },
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "far-from-country: nearest known AU gym is 1660 km away -- check coordinates/country"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "au-industry-boulders-grovedale",
+   "line": 11,
+   "name": "Industry Boulders",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-9ef74d79e9"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "au-laneway-boulders-stepney",
+   "line": 20,
+   "name": "Laneway Boulders",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-856872334e"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "au-mandurah-indoor-rock-climbing",
+   "line": 42,
+   "name": "Mandurah Indoor Rock Climbing",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-52dc337175"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "au-nomad-annandale",
+   "line": 26,
+   "name": "NOMAD Bouldering Annandale",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-cb0d9cf9c5"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-4 \"NOMAD Bouldering\": related names \"NOMAD Bouldering Annandale\" / \"NOMAD Bouldering\" 396 m apart",
+     "ids": [
+      "seed-4"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate au-nomad-gladesville has the same website",
+     "ids": [
+      "au-nomad-gladesville"
+     ]
+    }
+   ],
+   "review_ids": [
+    "au-nomad-gladesville",
+    "seed-4"
+   ]
+  },
+  {
+   "cid": "au-nomad-gladesville",
+   "line": 27,
+   "name": "NOMAD Bouldering Gladesville",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-24d9659607"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-5 same-name-but-pin-differs 1143 m",
+     "ids": [
+      "seed-5"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-5 \"NOMAD Bouldering Gladesville\": same-name-but-pin-differs (\"NOMAD Bouldering Gladesville\" / \"NOMAD Bouldering Gladesville\", 1143 m)",
+     "ids": [
+      "seed-5"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-4 \"NOMAD Bouldering\": related names \"NOMAD Bouldering Gladesville\" / \"NOMAD Bouldering\" 8150 m apart",
+     "ids": [
+      "seed-4"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate au-nomad-annandale has the same website",
+     "ids": [
+      "au-nomad-annandale"
+     ]
+    }
+   ],
+   "review_ids": [
+    "au-nomad-annandale",
+    "seed-4",
+    "seed-5"
+   ]
+  },
+  {
+   "cid": "au-northside-abbotsford",
+   "line": 6,
+   "name": "Northside Boulders Abbotsford",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-d0b029f9cb"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-35 \"Northside Boulders\": related names \"Northside Boulders Abbotsford\" / \"Northside Boulders\" 4865 m apart",
+     "ids": [
+      "seed-35"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-36 \"Northside Boulders\": related names \"Northside Boulders Abbotsford\" / \"Northside Boulders\" 3560 m apart",
+     "ids": [
+      "seed-36"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-35",
+    "seed-36"
+   ]
+  },
+  {
+   "cid": "au-portside-joondalup",
+   "line": 44,
+   "name": "Portside Boulders Joondalup",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-ed75d33d82"
+   },
+   "flags": [
+    {
+     "code": "same-website",
+     "detail": "candidate au-portside-willetton has the same website",
+     "ids": [
+      "au-portside-willetton"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    },
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": [
+    "au-portside-willetton"
+   ]
+  },
+  {
+   "cid": "au-portside-willetton",
+   "line": 17,
+   "name": "Portside Boulders Willetton",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-ab649f812b"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-61 \"Portside Boulders\": related names \"Portside Boulders Willetton\" / \"Portside Boulders\" 9725 m apart",
+     "ids": [
+      "seed-61"
+     ]
+    },
+    {
+     "code": "same-website",
+     "detail": "candidate au-portside-joondalup has the same website",
+     "ids": [
+      "au-portside-joondalup"
+     ]
+    }
+   ],
+   "review_ids": [
+    "au-portside-joondalup",
+    "seed-61"
+   ]
+  },
+  {
+   "cid": "au-pulse-adamstown",
+   "line": 43,
+   "name": "Pulse Climbing Adamstown",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-2ede6ba2bf"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-23 \"Pulse Climbing\": related names \"Pulse Climbing Adamstown\" / \"Pulse Climbing\" 6233 m apart",
+     "ids": [
+      "seed-23"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    },
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": [
+    "seed-23"
+   ]
+  },
+  {
+   "cid": "au-pulse-gosford",
+   "line": 3,
+   "name": "Pulse Climbing Gosford",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-1f3e61433b"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "au-pulse-maitland",
+   "line": 4,
+   "name": "Pulse Climbing Maitland",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-93f1c3eee7"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "au-rockit-derwent-park",
+   "line": 19,
+   "name": "Rock It Derwent Park",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-19a0e2d570"
+   },
+   "flags": [
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-73 \"Rock It Climbing Centre\": related names \"Rock It Derwent Park\" / \"Rock It Climbing Centre\" 5820 m apart",
+     "ids": [
+      "seed-73"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "seed-73"
+   ]
+  },
+  {
+   "cid": "au-sicg-st-peters",
+   "line": 31,
+   "name": "Sydney Indoor Climbing Gym St Peters",
+   "class": "existing",
+   "suggested": "same-as seed-6",
+   "importer": {
+    "class": "existing",
+    "id": "seed-6",
+    "match": {
+     "id": "seed-6",
+     "name": "Sydney Indoor Climbing Gym – St Peters",
+     "reason": "same-name",
+     "dist_m": 578
+    }
+   },
+   "blockers": [
+    {
+     "code": "no-bouldering-evidence",
+     "detail": "bouldering is \"yes\" but no primary source confirms it"
+    }
+   ],
+   "flags": [
+    {
+     "code": "importer-warning",
+     "detail": "content-differs: matches existing seed-6 but content differs (name, lat, lng, address); NOT applied. Use an explicit update record if this change is intended."
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-6 \"Sydney Indoor Climbing Gym – St Peters\": same-name (\"Sydney Indoor Climbing Gym St Peters\" / \"Sydney Indoor Climbing Gym – St Peters\", 578 m)",
+     "ids": [
+      "seed-6"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-6"
+   ]
+  },
+  {
+   "cid": "au-the-hold-bendigo",
+   "line": 36,
+   "name": "The Hold Bendigo",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-2695ea3daa"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "au-urban-climb-adelaide",
+   "line": 12,
+   "name": "Urban Climb Adelaide",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-828aff2eeb"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "au-urban-climb-townsville",
+   "line": 13,
+   "name": "Urban Climb Townsville",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-82a080d0e6"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "au-urban-climb-west-end",
+   "line": 34,
+   "name": "Urban Climb West End",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-cc50127703"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-48 same-name-but-pin-differs 1525 m",
+     "ids": [
+      "seed-48"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-48 \"Urban Climb West End\": same-name-but-pin-differs (\"Urban Climb West End\" / \"Urban Climb West End\", 1525 m)",
+     "ids": [
+      "seed-48"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-48"
+   ]
+  },
+  {
+   "cid": "au-wall-walkers-capalaba",
+   "line": 37,
+   "name": "Wall Walkers Bouldering",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-f881cbcfbb"
+   },
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  }
+ ],
+ "reconcile_sha256": "41983b1b1a4d5464b4371ce2f710945c6af7ff9bdb47fb1907995eb5e6378733"
+}

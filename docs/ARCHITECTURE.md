@@ -56,7 +56,7 @@ Line refs drift: re-grep function names rather than trusting numbers.
 | `data/gyms.reconciled.json` | FROZEN reconciliation/provenance dataset (2,127 records = production at the first import). Not a runtime file |
 | `supabase/migrations/` | Source of truth for the schema (`docs/migrations.md`); `…_add_spot_slugs.sql` (stored `spots.slug`), `…_community_provenance.sql` (Phase 4) |
 | `import/`, `scripts/gym-import.js`, `scripts/lib/gym-import/` | Gym import pipeline (`docs/import-workflow.md`); new locations via regional research sections (`import/research/`, `research.js`) |
-| `sitemap.xml`, `scripts/build-sitemap.js`, `api/seo.mjs` | Sitemap generated from production (read-only; area pages only with 2+ gyms, metros always); the same run writes `api/_places.json` and `data/spots-fallback.json`. `api/seo.mjs` (Vercel Function, `.mjs`, no package.json): crawler/unfurler user agents on `/gym/*`, `/in/*` (vercel.json `has` rewrites) get the shell with per-page title/description/canonical/OG; people get the static shell. Re-run after data batches; `robots.txt` points to the sitemap |
+| `sitemap.xml`, `scripts/build-sitemap.js`, `api/seo.mjs` | Sitemap generated from production (read-only; area pages only with 2+ gyms, metros always; a region page listing exactly one city page's gyms is left out and names that city as canonical in the app, `api/_places.json` and `api/seo.mjs`: `place-canonical.js`); the same run writes `api/_places.json` and `data/spots-fallback.json`. `api/seo.mjs` (Vercel Function, `.mjs`, no package.json): crawler/unfurler user agents on `/gym/*`, `/in/*` (vercel.json `has` rewrites) get the shell with per-page title/description/canonical/OG; people get the static shell. Re-run after data batches; `robots.txt` points to the sitemap |
 | `sw.js`, `js/sw-register.js` | Service worker (`SHELL_FILES` — add every new JS/CSS/asset file; bump `CACHE_VERSION`) · registrar (classic script): dispatches `bouldeer:sw-updated` once per installed update (not on first install), `registration.update()` on tab visible; main.js shows the "Bouldeer has finished a climb, please refresh the page" / Refresh toast (`showActionToast`, utils.js), reload only on Refresh |
 | `docs/TASKS.md` / `docs/archive/` | Open work only / old long-form docs (**never read**) |
 
@@ -78,7 +78,7 @@ Supercluster → `modulepreload` of main.js's whole graph (`fetchpriority="low"`
 owner-only; user/time pinned by trigger; one per gym per 12 h, 30/day, checked in the trigger under a per-person lock; adds the `climbed` mark).
 Spot shape: `id` (`seed-N` legacy, `community-<uuid>`, or frozen `g-<hex>` for imported gyms), `name`, `suburb`, `state`,
 `country`, `lat`, `lng`, `address`, `types[]` (`indoor-bouldering` | `top-rope` | `lead-climbing`), `notes` (research remark, not shown), `photo`,
-`description`, `website`, `hours` (jsonb mon..sun), `day_pass`, `facilities[]` (gym information, `gym-info.js`; same columns on `pending_edits`),
+`description`, `website`, `hours` (jsonb mon..sun), `day_pass`, `facilities[]` (gym information, `gym-info.js`; same columns on `pending_edits`), `name_local`, `address_local`, `visitor` (jsonb booking/payment/english_help/id_required/shoe_hire/note), `info_source` + `_kind` + `_checked_on` (null = unknown; provenance importer-only, migration `20261101000100`, not yet in production),
 `community`, `edited`, `created_at`, `slug` (stored, unique, set on insert, never changed), `verified_at`, `rejection_reason`. `state` codes collide across
 countries — always key on `country:state`.
 
@@ -113,7 +113,7 @@ Points (`contribution_points`, own row or moderator): 15 per approved gym, 5 per
 Pins: dots ≤ zoom 11, teardrops above (type colour: boulder > top rope > lead; rings selected > saved > climbed).
 Clusters: supercluster radius 48, maxZoom 15; identical coordinates get fixed pixel offsets (`stackOffsets`).
 Labels: continent < 3.5 ≤ country < 5 ≤ state/city < `HOLD_ICON_ZOOM` (9); basemap place labels suppressed below.
-Basemap: CARTO Dark Matter, warmed at style load (`warmBasemap`: each colour takes `--map-tint`'s hue, keeps its lightness).
+Basemap: ONE light map everywhere (Explore, mini maps, /add): CARTO Positron, recoloured at style load by `paperBasemap` to the `--map-paper-*` tokens; no scheme toggle, `prefers-color-scheme` is not read. Clusters are dark discs, pins ink-outlined.
 
 ## Design system (docs/DESIGN.md)
 Components use semantic roles only (`--color-text-secondary`, `--radius-md`, `--shadow-overlay`), never
