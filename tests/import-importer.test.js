@@ -770,7 +770,7 @@ test('static: exactly five write call sites -- a plain INSERT (importer.js), a l
   assert.match(info, /id=eq\.\$\{encodeURIComponent\(u\.id\)\}&status=eq\.approved&updated_at=eq\.\$\{encodeURIComponent\(u\.updatedAt\)\}/);
   assert.match(info, /body: JSON\.stringify\(u\.set\) \}\);\s*\}/, 'the info PATCH body is exactly the approved set');
   assert.match(info, /keys\.some\(k => !INFO_FIELDS\.includes\(k\)\)/);
-  assert.ok(/INFO_FIELDS = Object\.freeze\(\['website', 'hours', 'day_pass', 'facilities', 'notes'\]\)/.test(src('validate.js')), 'the information fields are exactly website, hours, day_pass, facilities and notes');
+  assert.ok(/INFO_FIELDS = Object\.freeze\(\['website', 'hours', 'day_pass', 'facilities', 'notes', 'name_local', 'address_local', 'visitor', 'info_source', 'info_source_kind', 'info_checked_on'\]\)/.test(src('validate.js')), 'the information fields are exactly website, hours, day_pass, facilities, notes and the migration 20261101000100 fields');
   assert.ok(!/body: JSON\.stringify\(\{ \.\.\./.test(t), 'no PATCH body is built by spreading');
   // the identity PATCH is pinned the same way; its body is exactly the approved {name?, suburb?, types?}, it only accepts those fields, and the slug never appears in it
   const ident = t.slice(t.indexOf('async updateSpotIdentity('), t.indexOf("_send('PATCH'", t.indexOf('async updateSpotIdentity(')) + 400);
