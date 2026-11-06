@@ -2,12 +2,17 @@
  "plan_version": 1,
  "batch_id": "2026-11-02-cn-pins-3",
  "index": {
-  "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
-  "count": 3294,
+  "sha256": "48f8439b4c71fb6d80ddef21f8b93c504b099dbc2f0ccb6c4c9b9163668c28b5",
+  "count": 3395,
   "meta_matches": true
  },
  "staged_batches_compared": [
-  "2026-10-06-kr-seoul"
+  "2026-10-06-kr-seoul",
+  "2026-11-06-jp-chubu-recheck",
+  "2026-11-06-jp-kansai-recheck",
+  "2026-11-06-jp-kanto-recheck",
+  "2026-11-06-jp-kitakanto-recheck",
+  "2026-11-06-jp-kyushu-recheck"
  ],
  "counts": {
   "records": 44,
@@ -25,7 +30,7 @@
  "importable": true,
  "blockers": [],
  "unused_decisions": [],
- "plan_sha256": "4cef6a2c93972aae760e5c97cbb75b536232639658f662d69f1b6c73ee5486bd",
+ "plan_sha256": "5730c05749079b1c0921ce17f4bab7a31f1ce7417eb4a177acf0b2d693036258",
  "records": [
   {
    "line": 1,

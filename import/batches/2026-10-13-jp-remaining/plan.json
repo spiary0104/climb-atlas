@@ -2,18 +2,21 @@
  "plan_version": 1,
  "batch_id": "2026-10-13-jp-remaining",
  "index": {
-  "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
-  "count": 3294,
+  "sha256": "6975640839bfccb8d711db48640b3789066dab1e3fac10a6da53e1424f690c78",
+  "count": 3341,
   "meta_matches": true
  },
  "staged_batches_compared": [
   "2026-10-06-kr-seoul",
-  "2026-10-13-australia",
   "2026-10-13-brazil",
-  "2026-10-13-italy-cities",
   "2026-10-13-uk-cities",
   "2026-10-13-us-central-metros",
-  "2026-10-13-us-ny-boston-metros"
+  "2026-10-13-us-ny-boston-metros",
+  "2026-11-06-jp-chubu-recheck",
+  "2026-11-06-jp-kansai-recheck",
+  "2026-11-06-jp-kanto-recheck",
+  "2026-11-06-jp-kitakanto-recheck",
+  "2026-11-06-jp-kyushu-recheck"
  ],
  "counts": {
   "records": 22,
@@ -31,7 +34,7 @@
  "importable": true,
  "blockers": [],
  "unused_decisions": [],
- "plan_sha256": "52221ba34ba0ceebd1e58942c109e2d6d731a0680b13679ce8f24dd57ae44dde",
+ "plan_sha256": "3876dab46381a3401dac501a67cdb1a8b8a9b220340ace119c38bd2792c08f31",
  "records": [
   {
    "line": 1,

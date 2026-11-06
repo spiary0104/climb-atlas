@@ -2,12 +2,17 @@
  "plan_version": 1,
  "batch_id": "2026-11-01-chengdu",
  "index": {
-  "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
-  "count": 3294,
+  "sha256": "87b9174621b9302711717e0c5b78728ff64d464eaf629c1113649006381e128a",
+  "count": 3402,
   "meta_matches": true
  },
  "staged_batches_compared": [
-  "2026-10-06-kr-seoul"
+  "2026-10-06-kr-seoul",
+  "2026-11-06-jp-chubu-recheck",
+  "2026-11-06-jp-kansai-recheck",
+  "2026-11-06-jp-kanto-recheck",
+  "2026-11-06-jp-kitakanto-recheck",
+  "2026-11-06-jp-kyushu-recheck"
  ],
  "counts": {
   "records": 9,
@@ -26,7 +31,7 @@
  "importable": true,
  "blockers": [],
  "unused_decisions": [],
- "plan_sha256": "58219cf029c7c1cdd4f6a7c32aaf2a14904e587b89cafb2cc9709ac57a332ea7",
+ "plan_sha256": "91151fad0b1108b2b6daa203ea950bf61749c56c08cc1cae0b8f8bd5b56927a6",
  "records": [
   {
    "line": 1,
