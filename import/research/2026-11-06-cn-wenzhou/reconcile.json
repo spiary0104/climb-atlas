@@ -1,0 +1,81 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-11-06-cn-wenzhou",
+ "inputs": {
+  "section_sha256": "b026aeaaa3cc6810ced7590635bdef429dd51a9f70e36a2b654de1ed636bae0a",
+  "sources_sha256": "fdbe69260c0f7cea36dd8f73e88ddc712f23bf128903d6e59c5b59755cd2b3cc",
+  "candidates_sha256": "c7be0b950f78f85139f5d84236d1e9812d2a21d755467bf1c9803af5f06be9c3",
+  "index": {
+   "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
+   "count": 3294
+  },
+  "staged_batches_compared": [
+   "2026-10-06-kr-seoul",
+   "2026-10-13-australia",
+   "2026-10-13-brazil",
+   "2026-10-13-italy-cities",
+   "2026-10-13-jp-remaining",
+   "2026-10-13-uk-cities",
+   "2026-10-13-us-central-metros",
+   "2026-10-13-us-ny-boston-metros"
+  ],
+  "other_sections_compared": [
+   {
+    "id": "2026-11-01-cn-guangzhou",
+    "candidates_sha256": "f1d6750918703d8c7060acf2e91053919e9672d7e5bfb4ba804f74580e462b47"
+   },
+   {
+    "id": "2026-11-01-cn-jinan",
+    "candidates_sha256": "1d133eee1ad38381df03e11c09a5b00f1d31bf934ea382425c7c9346dd21c3ad"
+   },
+   {
+    "id": "2026-11-02-cn-hangzhou",
+    "candidates_sha256": "935f313217f60a9f8730a31a25c3b6a6d047e8dae18f97887412880340264a98"
+   },
+   {
+    "id": "2026-11-06-cn-dali",
+    "candidates_sha256": "4d9f48af97680b566539f7017750c604aa1f3fe3d108a624026f09ab035490a5"
+   }
+  ]
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 2,
+  "ready": 2,
+  "review": 0,
+  "blocked": 0,
+  "existing": 0,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "cn-wz-001",
+   "line": 1,
+   "name": "Bale Climbing (Longwan)",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-fc7d33c12c"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "cn-wz-002",
+   "line": 2,
+   "name": "Bale Climbing (Rui'an Xinhu Yintai)",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-3cad064e8d"
+   },
+   "review_ids": []
+  }
+ ],
+ "reconcile_sha256": "5c438ba973ed7c0422159f4ded5bec2d3da3cafb365c9597b93d86708e15feaf"
+}
