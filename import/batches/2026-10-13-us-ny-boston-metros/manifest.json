@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "importer_version": 2,
+  "batch_id": "2026-10-13-us-ny-boston-metros",
+  "status": "imported",
+  "target": {
+    "kind": "production",
+    "host": "thayxaampaelvntoaido.supabase.co"
+  },
+  "coverage": "FULL",
+  "plan_sha256": "510130a05023aec91feb6cf932785fe50f10757fd206776c2d99942a6ac4cba5",
+  "payload_sha256": "df1cbecd51e21259a14fb3b51058a6f92ccb8f460175eaf1f21d59a7d89ca52f",
+  "confirm_token": "d531f093a27539bd",
+  "live_state_sha256": "f611277994c866d8f53f7da510eb468f7f27fe07004545b19b7366a727afef75",
+  "rows_inserted": 6,
+  "approved_before": 3384,
+  "approved_after": 3390,
+  "verification": {
+    "ok": true,
+    "checked": 6,
+    "problems": []
+  },
+  "started_at": "2026-11-06T11:34:13.550Z",
+  "finished_at": "2026-11-06T11:34:17.287Z",
+  "ids": [
+    "g-4215c8d0a9",
+    "g-a8270660d0",
+    "g-05364e73e0",
+    "g-9a06308527",
+    "g-9a7e582e35",
+    "g-3ba2c7540c"
+  ]
+}

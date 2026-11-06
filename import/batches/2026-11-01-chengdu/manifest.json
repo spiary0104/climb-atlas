@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "updater_version": 1,
+  "kind": "update",
+  "batch_id": "2026-11-01-chengdu",
+  "status": "updated",
+  "target": {
+    "kind": "production",
+    "host": "thayxaampaelvntoaido.supabase.co"
+  },
+  "coverage": "FULL",
+  "plan_sha256": "91151fad0b1108b2b6daa203ea950bf61749c56c08cc1cae0b8f8bd5b56927a6",
+  "payload_sha256": "3de8b5070fff42e555147709421d6819c58e7e4ed43224b8338cdb69e3050286",
+  "confirm_token": "5c5b7c1bda5e3753",
+  "live_state_sha256": "9638884c57c11e6e03a77ae6648e61716f47d3bf1a681a161d3acc608284a6c6",
+  "rows_updated": 4,
+  "approved_before": 3402,
+  "approved_after": 3397,
+  "changes": [
+    {
+      "id": "seed-608",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "67201ba797c59235",
+      "after_h": "ad2453a89a1fa8e0"
+    },
+    {
+      "id": "seed-622",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "5bf0cd03e3bc213c",
+      "after_h": "e4faf0925e79eb1c"
+    },
+    {
+      "id": "seed-619",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "ee79c6b8533c96b2",
+      "after_h": "853e1e52dfb521fd"
+    },
+    {
+      "id": "seed-629",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "532ff0cc7268b1e9",
+      "after_h": "4c32a76f748d113a"
+    }
+  ],
+  "rows_retired": 5,
+  "retired": [
+    "seed-617",
+    "seed-623",
+    "seed-618",
+    "seed-613",
+    "seed-621"
+  ],
+  "retirements": [
+    {
+      "id": "seed-617",
+      "reason_code": "closed",
+      "reason": "Closed on 2026-01-14: the official RedNote account of Climbing Panda announced the closure of its Jinniu CapitaLand branch",
+      "expect_h": "3a2dbc184c5bc357"
+    },
+    {
+      "id": "seed-623",
+      "reason_code": "closed",
+      "reason": "Closed in September 2026: climbers posted farewells to the branch (2023.5-2026.9); its official account is silent since May 2026",
+      "expect_h": "c3b5fa3e52d00b3a"
+    },
+    {
+      "id": "seed-618",
+      "reason_code": "insufficient-evidence",
+      "reason": "Not on the brand official store list and no Amap listing for this branch (checked 2026-10-31 and 2026-11-01)",
+      "expect_h": "5a752bfdf708ca28"
+    },
+    {
+      "id": "seed-613",
+      "reason_code": "insufficient-evidence",
+      "reason": "Not confirmed as a climbing gym: the venue at this address is a children's cave-exploration play centre",
+      "expect_h": "2c046c09ae6321fa"
+    },
+    {
+      "id": "seed-621",
+      "reason_code": "insufficient-evidence",
+      "reason": "No climbing gym of this name found; the address is the building and floor of Bear Bear Climbing (seed-635)",
+      "expect_h": "7189fd583d65d9ee"
+    }
+  ],
+  "verification": {
+    "ok": true,
+    "checked": 9,
+    "problems": []
+  },
+  "started_at": "2026-11-06T11:35:18.082Z",
+  "finished_at": "2026-11-06T11:35:23.918Z",
+  "ids": [
+    "seed-608",
+    "seed-622",
+    "seed-619",
+    "seed-629",
+    "seed-617",
+    "seed-623",
+    "seed-618",
+    "seed-613",
+    "seed-621"
+  ]
+}
