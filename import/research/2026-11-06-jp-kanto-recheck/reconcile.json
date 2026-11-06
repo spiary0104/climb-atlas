@@ -1,0 +1,312 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-11-06-jp-kanto-recheck",
+ "inputs": {
+  "section_sha256": "dbd31c8cb1f1789a6dff5ebc0c7018ebc149eb5e12b413e0a7f8fd394af62563",
+  "sources_sha256": "def340b2f3661ac0c08aad2e65079958de285fce241e1c40c3b4b74c5082b980",
+  "candidates_sha256": "8979b1a8cd27e9cb457334b7d43d3d654761ce7dcaeb32a3f7874d348b726083",
+  "index": {
+   "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
+   "count": 3294
+  },
+  "staged_batches_compared": [
+   "2026-10-06-kr-seoul",
+   "2026-10-13-australia",
+   "2026-10-13-brazil",
+   "2026-10-13-italy-cities",
+   "2026-10-13-jp-remaining",
+   "2026-10-13-uk-cities",
+   "2026-10-13-us-central-metros",
+   "2026-10-13-us-ny-boston-metros"
+  ],
+  "other_sections_compared": [
+   {
+    "id": "2026-10-06-jp-chubu",
+    "candidates_sha256": "ed0f35f8b69fecc27d93cdb6aedbc76c16271d4b09142561175b24c82afc962a"
+   },
+   {
+    "id": "2026-10-06-jp-kansai",
+    "candidates_sha256": "422563898a9fb3fffbebbe19482585f20b3c1b6c1d924cf51139d547cd11b938"
+   },
+   {
+    "id": "2026-10-06-jp-kanto",
+    "candidates_sha256": "80db339a2fc86a29899aea6363361180608316f1fc37b990010998aa056b94aa"
+   },
+   {
+    "id": "2026-10-06-jp-kyushu-hokkaido",
+    "candidates_sha256": "b04553a8c059baf816ff1d390fa34e38d8be7a6ff0d92692e8711d4347aaba0a"
+   },
+   {
+    "id": "2026-10-13-jp-remaining",
+    "candidates_sha256": "81354031feef8b6a7ca8ce0dd072ebb390508433ed2960a66bba8e4f7465052a"
+   }
+  ]
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 14,
+  "ready": 6,
+  "review": 8,
+  "blocked": 0,
+  "existing": 0,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "jp2-beaks",
+   "line": 9,
+   "name": "BEAKS Climbing Studio",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-21d55d1630"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp2-bonobo",
+   "line": 3,
+   "name": "BONOBO bouldering space",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-1000c0efa0"
+   },
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-06-jp-kanto#jp-bonobo-ageo \"BONOBO bouldering space\": name-match same-name (\"BONOBO bouldering space\" / \"BONOBO bouldering space\", 0 m)",
+     "ids": [
+      "2026-10-06-jp-kanto#jp-bonobo-ageo"
+     ]
+    }
+   ],
+   "review_ids": [
+    "2026-10-06-jp-kanto#jp-bonobo-ageo"
+   ]
+  },
+  {
+   "cid": "jp2-grimrock",
+   "line": 5,
+   "name": "GRIMROCK Climbing Gym",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-67bc972191"
+   },
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-06-jp-kanto#jp-grimrock-yokohama \"GRIMROCK Climbing Gym\": name-match same-name (\"GRIMROCK Climbing Gym\" / \"GRIMROCK Climbing Gym\", 0 m)",
+     "ids": [
+      "2026-10-06-jp-kanto#jp-grimrock-yokohama"
+     ]
+    }
+   ],
+   "review_ids": [
+    "2026-10-06-jp-kanto#jp-grimrock-yokohama"
+   ]
+  },
+  {
+   "cid": "jp2-hann2",
+   "line": 7,
+   "name": "HANN2 Bouldering Gym Atsugi",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-dffcff5a6c"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp2-hutte",
+   "line": 12,
+   "name": "Climbing Gym Hutte",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-a5d53d65ff"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp2-jet-set",
+   "line": 14,
+   "name": "JET SET Climbing Gym",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-8205ae1532"
+   },
+   "flags": [
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "jp2-monolithe",
+   "line": 4,
+   "name": "Monolithe Bouldering Gym Kawagoe",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-e68ff30606"
+   },
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-06-jp-kanto#jp-monolithe-kawagoe \"Monolithe Bouldering Gym Kawagoe\": name-match same-name (\"Monolithe Bouldering Gym Kawagoe\" / \"Monolithe Bouldering Gym Kawagoe\", 0 m)",
+     "ids": [
+      "2026-10-06-jp-kanto#jp-monolithe-kawagoe"
+     ]
+    }
+   ],
+   "review_ids": [
+    "2026-10-06-jp-kanto#jp-monolithe-kawagoe"
+   ]
+  },
+  {
+   "cid": "jp2-next-gen",
+   "line": 1,
+   "name": "Next Gen Bouldering",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-4e763802f9"
+   },
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-06-jp-kanto#jp-next-gen-bouldering-niiza \"Next Gen Bouldering\": name-match same-name (\"Next Gen Bouldering\" / \"Next Gen Bouldering\", 0 m)",
+     "ids": [
+      "2026-10-06-jp-kanto#jp-next-gen-bouldering-niiza"
+     ]
+    }
+   ],
+   "review_ids": [
+    "2026-10-06-jp-kanto#jp-next-gen-bouldering-niiza"
+   ]
+  },
+  {
+   "cid": "jp2-okku-rock",
+   "line": 2,
+   "name": "OKKU ROCK",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-6d0f4a0dc5"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp2-q-roche",
+   "line": 11,
+   "name": "Climbing Park Q-Roche",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-d155b43ca0"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "jp2-stone-magic",
+   "line": 6,
+   "name": "Climbing Park STONE MAGIC",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-992b71e463"
+   },
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-06-jp-kanto#jp-stone-magic-sagamihara \"STONE MAGIC Climbing Park\": name-match same-address-related-name (\"Climbing Park STONE MAGIC\" / \"STONE MAGIC Climbing Park\", 0 m)",
+     "ids": [
+      "2026-10-06-jp-kanto#jp-stone-magic-sagamihara"
+     ]
+    }
+   ],
+   "review_ids": [
+    "2026-10-06-jp-kanto#jp-stone-magic-sagamihara"
+   ]
+  },
+  {
+   "cid": "jp2-tohan-dojo",
+   "line": 10,
+   "name": "Tohan Dojo Bouldering Gym",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-d0c21b435e"
+   },
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-06-jp-kanto#jp-tohan-dojo-chiba \"Tohan Dojo Bouldering Gym\": name-match same-name (\"Tohan Dojo Bouldering Gym\" / \"Tohan Dojo Bouldering Gym\", 0 m)",
+     "ids": [
+      "2026-10-06-jp-kanto#jp-tohan-dojo-chiba"
+     ]
+    }
+   ],
+   "review_ids": [
+    "2026-10-06-jp-kanto#jp-tohan-dojo-chiba"
+   ]
+  },
+  {
+   "cid": "jp2-tss-tokyo",
+   "line": 13,
+   "name": "THE STONE SESSION TOKYO",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-338a4fe373"
+   },
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-06-jp-kanto#jp-the-stone-session-tokyo \"THE STONE SESSION TOKYO\": name-match same-name (\"THE STONE SESSION TOKYO\" / \"THE STONE SESSION TOKYO\", 0 m)",
+     "ids": [
+      "2026-10-06-jp-kanto#jp-the-stone-session-tokyo"
+     ]
+    }
+   ],
+   "review_ids": [
+    "2026-10-06-jp-kanto#jp-the-stone-session-tokyo"
+   ]
+  },
+  {
+   "cid": "jp2-wisteria",
+   "line": 8,
+   "name": "Climbing Wisteria",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-a9fdc19416"
+   },
+   "review_ids": []
+  }
+ ],
+ "reconcile_sha256": "34f043f0113c2ab104c100399c40dfa6139e64d7647a30ddb37a258fea8bd21c"
+}

@@ -1,0 +1,58 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-11-06-jp-chubu-recheck",
+ "index": {
+  "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
+  "count": 3294,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-06-kr-seoul",
+  "2026-10-13-australia",
+  "2026-10-13-brazil",
+  "2026-10-13-italy-cities",
+  "2026-10-13-jp-remaining",
+  "2026-10-13-uk-cities",
+  "2026-10-13-us-central-metros",
+  "2026-10-13-us-ny-boston-metros",
+  "2026-11-06-jp-kansai-recheck",
+  "2026-11-06-jp-kanto-recheck",
+  "2026-11-06-jp-kitakanto-recheck",
+  "2026-11-06-jp-kyushu-recheck"
+ ],
+ "counts": {
+  "records": 2,
+  "new": 2,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "d68aa8ec35b1bc191ceeb340791094f83c5a05adee9743014c71e85e9fe1e024",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-8c85fcfd69",
+   "id_frozen": true,
+   "name": "Climbing Gym J Plus",
+   "country": "JP"
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-071f89d860",
+   "id_frozen": true,
+   "name": "Bouldering Takibi",
+   "country": "JP"
+  }
+ ]
+}

@@ -1,0 +1,306 @@
+{
+  "schema_version": 1,
+  "sources": {
+    "RG": {
+      "kind": "directory",
+      "title": "Rockgym.jp prefecture lists and gym pages (names, addresses, links only; every gym re-checked on its own site or Instagram)",
+      "url": "https://rockgym.jp/gym-all/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "GSI": {
+      "kind": "map-data",
+      "title": "GSI (Geospatial Information Authority of Japan) address search",
+      "url": "https://msearch.gsi.go.jp/address-search/AddressSearch",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "S_next-gen": {
+      "kind": "official-site",
+      "title": "Next Gen Bouldering (own site)",
+      "url": "https://www.nextgen-bouldering.com/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "IG_next-gen": {
+      "kind": "official-social",
+      "title": "Instagram of Next Gen Bouldering (own account, public embed read 2026-11-06)",
+      "url": "https://www.instagram.com/nextgen_information/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "RG_next-gen": {
+      "kind": "directory",
+      "title": "Rockgym.jp page for Next Gen Bouldering",
+      "url": "https://rockgym.jp/next-gen/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "S_okku-rock": {
+      "kind": "official-site",
+      "title": "OKKU ROCK (own site)",
+      "url": "https://okkurock.com/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "IG_okku-rock": {
+      "kind": "official-social",
+      "title": "Instagram of OKKU ROCK (own account, public embed read 2026-11-06)",
+      "url": "https://www.instagram.com/okkurock/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "RG_okku-rock": {
+      "kind": "directory",
+      "title": "Rockgym.jp page for OKKU ROCK",
+      "url": "https://rockgym.jp/okku-rock/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "S_bonobo": {
+      "kind": "official-site",
+      "title": "BONOBO bouldering space (own site)",
+      "url": "https://bonobo-bs.com/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "IG_bonobo": {
+      "kind": "official-social",
+      "title": "Instagram of BONOBO bouldering space (own account, public embed read 2026-11-06)",
+      "url": "https://www.instagram.com/bonobo_bs/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "RG_bonobo": {
+      "kind": "directory",
+      "title": "Rockgym.jp page for BONOBO bouldering space",
+      "url": "https://rockgym.jp/bonobo/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "S_monolithe": {
+      "kind": "official-site",
+      "title": "Monolithe Bouldering Gym Kawagoe (own site)",
+      "url": "https://boulderinggym.jp/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "IG_monolithe": {
+      "kind": "official-social",
+      "title": "Instagram of Monolithe Bouldering Gym Kawagoe (own account, public embed read 2026-11-06)",
+      "url": "https://www.instagram.com/monolithe.254/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "RG_monolithe": {
+      "kind": "directory",
+      "title": "Rockgym.jp page for Monolithe Bouldering Gym Kawagoe",
+      "url": "https://rockgym.jp/monolithe/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "S_grimrock": {
+      "kind": "official-site",
+      "title": "GRIMROCK Climbing Gym (own site)",
+      "url": "https://grimrock-climbing.com/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "IG_grimrock": {
+      "kind": "official-social",
+      "title": "Instagram of GRIMROCK Climbing Gym (own account, public embed read 2026-11-06)",
+      "url": "https://www.instagram.com/grimrockclimbing/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "RG_grimrock": {
+      "kind": "directory",
+      "title": "Rockgym.jp page for GRIMROCK Climbing Gym",
+      "url": "https://rockgym.jp/grimrock/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "S_stone-magic": {
+      "kind": "official-site",
+      "title": "Climbing Park STONE MAGIC (own site)",
+      "url": "https://stonemagic.jp/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "IG_stone-magic": {
+      "kind": "official-social",
+      "title": "Instagram of Climbing Park STONE MAGIC (own account, public embed read 2026-11-06)",
+      "url": "https://www.instagram.com/stonemagic_climbingpark/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "RG_stone-magic": {
+      "kind": "directory",
+      "title": "Rockgym.jp page for Climbing Park STONE MAGIC",
+      "url": "https://rockgym.jp/stone-magic/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "S_hann2": {
+      "kind": "official-site",
+      "title": "HANN2 Bouldering Gym Atsugi (own site)",
+      "url": "https://www.hann-hann2.com/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "IG_hann2": {
+      "kind": "official-social",
+      "title": "Instagram of HANN2 Bouldering Gym Atsugi (own account, public embed read 2026-11-06)",
+      "url": "https://www.instagram.com/hann2atsugi/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "RG_hann2": {
+      "kind": "directory",
+      "title": "Rockgym.jp page for HANN2 Bouldering Gym Atsugi",
+      "url": "https://rockgym.jp/hann2/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "S_wisteria": {
+      "kind": "official-site",
+      "title": "Climbing Wisteria (own site)",
+      "url": "https://www.climbing-wisteria.com/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "IG_wisteria": {
+      "kind": "official-social",
+      "title": "Instagram of Climbing Wisteria (own account, public embed read 2026-11-06)",
+      "url": "https://www.instagram.com/climbing_wisteria/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "RG_wisteria": {
+      "kind": "directory",
+      "title": "Rockgym.jp page for Climbing Wisteria",
+      "url": "https://rockgym.jp/wisteria/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "S_beaks": {
+      "kind": "official-site",
+      "title": "BEAKS Climbing Studio (own site)",
+      "url": "https://beaksc.wixsite.com/beaks",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "IG_beaks": {
+      "kind": "official-social",
+      "title": "Instagram of BEAKS Climbing Studio (own account, public embed read 2026-11-06)",
+      "url": "https://www.instagram.com/beaks.climbing/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "RG_beaks": {
+      "kind": "directory",
+      "title": "Rockgym.jp page for BEAKS Climbing Studio",
+      "url": "https://rockgym.jp/beaks/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "S_tohan-dojo": {
+      "kind": "official-site",
+      "title": "Tohan Dojo Bouldering Gym (own site)",
+      "url": "https://xn--rlsr11attnfmy.com/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "IG_tohan-dojo": {
+      "kind": "official-social",
+      "title": "Instagram of Tohan Dojo Bouldering Gym (own account, public embed read 2026-11-06)",
+      "url": "https://www.instagram.com/bouldering_gym_tohandoujou/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "RG_tohan-dojo": {
+      "kind": "directory",
+      "title": "Rockgym.jp page for Tohan Dojo Bouldering Gym",
+      "url": "https://rockgym.jp/tohan-dojo/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "S_q-roche": {
+      "kind": "official-site",
+      "title": "Climbing Park Q-Roche (own site)",
+      "url": "https://www.q-roche.com/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "RG_q-roche": {
+      "kind": "directory",
+      "title": "Rockgym.jp page for Climbing Park Q-Roche",
+      "url": "https://rockgym.jp/q-roche/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "S_hutte": {
+      "kind": "official-site",
+      "title": "Climbing Gym Hutte (own site)",
+      "url": "https://www.climb-hutte.com/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "IG_hutte": {
+      "kind": "official-social",
+      "title": "Instagram of Climbing Gym Hutte (own account, public embed read 2026-11-06)",
+      "url": "https://www.instagram.com/climbinggym_hutte/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "RG_hutte": {
+      "kind": "directory",
+      "title": "Rockgym.jp page for Climbing Gym Hutte",
+      "url": "https://rockgym.jp/hutte/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "S_tss-tokyo": {
+      "kind": "official-site",
+      "title": "THE STONE SESSION TOKYO (own site)",
+      "url": "http://the-stone-session.tokyo",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "IG_tss-tokyo": {
+      "kind": "official-social",
+      "title": "Instagram of THE STONE SESSION TOKYO (own account, public embed read 2026-11-06)",
+      "url": "https://www.instagram.com/tsstokyo/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "RG_tss-tokyo": {
+      "kind": "directory",
+      "title": "Rockgym.jp page for THE STONE SESSION TOKYO",
+      "url": "https://rockgym.jp/tss-tokyo/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "S_jet-set": {
+      "kind": "official-site",
+      "title": "JET SET Climbing Gym (own site)",
+      "url": "https://www.jetsetclimbing.com/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "IG_jet-set": {
+      "kind": "official-social",
+      "title": "Instagram of JET SET Climbing Gym (own account, public embed read 2026-11-06)",
+      "url": "https://www.instagram.com/jetsetclimbing/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "RG_jet-set": {
+      "kind": "directory",
+      "title": "Rockgym.jp page for JET SET Climbing Gym",
+      "url": "https://rockgym.jp/jet-set/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    }
+  }
+}

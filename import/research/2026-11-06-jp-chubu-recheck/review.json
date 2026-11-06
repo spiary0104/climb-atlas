@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "section_id": "2026-11-06-jp-chubu-recheck",
+  "reviewer": "Claude (AI) on the owner's instruction; owner sign-off pending",
+  "reviewed": "2026-11-06",
+  "decisions": {
+    "jp2-cloud-nine": {
+      "decision": "same-as",
+      "same_as": "g-6200b381f1",
+      "reason": "Already in Bouldeer as Cloud Nine (same address, 0 m); nothing to add."
+    },
+    "jp2-friction-freaks": {
+      "decision": "same-as",
+      "same_as": "g-b547e83ccc",
+      "reason": "Already in Bouldeer as Friction Freaks (same name, 0 m); nothing to add."
+    },
+    "jp2-jplus": {
+      "decision": "accept",
+      "reason": "Primary sources read 2026-11-06: Own site: bouldering wall (without harness or rope) with 2026-dated news (2026.11.02, 2026.08.04); own map embed within 80 m of the GSI parcel. Own Instagram @jplusclimbing (public embed read 2026-11-06): newest post 2026-11-05. Address from the own page/rockgym.jp: 新潟県上越市富岡539-7. Coordinates: GSI AddressSearch 新潟県上越市富岡539-7 -> 新潟県上越市富岡５３９番地."
+    },
+    "jp2-omoshirock": {
+      "decision": "same-as",
+      "same_as": "g-4da23ca2de",
+      "reason": "Already in Bouldeer as Omoshirock (same name; the existing pin is 985 m from the pin read on the gym's own map embed). Existing gyms are not changed from here; pin question recorded in the manual-checks file."
+    },
+    "jp2-sorani": {
+      "decision": "same-as",
+      "same_as": "g-5e6f270e19",
+      "followup": "location-update",
+      "reason": "Already in Bouldeer as Climbing Gym SORANI (same name). Its pin is 1,242 m from the GSI house-level result for the address 長野県佐久市根々井49-1 (36.258038,138.468414); candidate for a separate location-update batch."
+    },
+    "jp2-takibi": {
+      "decision": "accept",
+      "reason": "Primary sources read 2026-11-06: Own site (bouldering; news dated 2026.11.06); street-level pin (block). Own Instagram @boulderingtakibi (public embed read 2026-11-06): newest post 2026-11-05. Address from the own page/rockgym.jp: 静岡県島田市大津通14-6. Coordinates: GSI AddressSearch 静岡県島田市大津通14-6 -> 静岡県島田市大津通１４番. Flagged street-level pin accepted: the block-level GSI result is within about 100 m of the entrance; no building-level source exists."
+    }
+  }
+}

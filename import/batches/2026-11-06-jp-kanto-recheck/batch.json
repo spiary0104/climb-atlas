@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-11-06-jp-kanto-recheck",
+  "description": "Regional research \"Japan: Kanto re-check of deferred gyms\": 14 new gym(s) accepted of 14 candidate(s)",
+  "created": "2026-11-06",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-11-06-jp-kanto-recheck",
+    "section_sha256": "dbd31c8cb1f1789a6dff5ebc0c7018ebc149eb5e12b413e0a7f8fd394af62563",
+    "sources_sha256": "def340b2f3661ac0c08aad2e65079958de285fce241e1c40c3b4b74c5082b980",
+    "candidates_sha256": "8979b1a8cd27e9cb457334b7d43d3d654761ce7dcaeb32a3f7874d348b726083",
+    "reconcile_sha256": "40b94a20aed26760fcc33690ca3ebf16cace075ec4bf563f60518b7a4afd2829",
+    "review_sha256": "51c59183f95fcf4841c2d91b279bb936151986be7e5dc82fc068c73285307c63",
+    "candidates": 14,
+    "staged": 14,
+    "decisions": {
+      "accept": 14
+    }
+  },
+  "index_at_staging": {
+    "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
+    "count": 3294
+  }
+}

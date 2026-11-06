@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "sources": {
+    "RG": {
+      "kind": "directory",
+      "title": "Rockgym.jp prefecture lists and gym pages (names, addresses, links only; every gym re-checked on its own site or Instagram)",
+      "url": "https://rockgym.jp/gym-all/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "GSI": {
+      "kind": "map-data",
+      "title": "GSI (Geospatial Information Authority of Japan) address search",
+      "url": "https://msearch.gsi.go.jp/address-search/AddressSearch",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "S_833-wall": {
+      "kind": "official-site",
+      "title": "833 WALL Bouldering Studio (own site)",
+      "url": "https://www.833wall.net/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "IG_833-wall": {
+      "kind": "official-social",
+      "title": "Instagram of 833 WALL Bouldering Studio (own account, public embed read 2026-11-06)",
+      "url": "https://www.instagram.com/833wall.hasami/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "RG_833-wall": {
+      "kind": "directory",
+      "title": "Rockgym.jp page for 833 WALL Bouldering Studio",
+      "url": "https://rockgym.jp/833-wall/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    }
+  }
+}

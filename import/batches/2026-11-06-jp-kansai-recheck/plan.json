@@ -1,0 +1,146 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-11-06-jp-kansai-recheck",
+ "index": {
+  "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
+  "count": 3294,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-06-kr-seoul",
+  "2026-10-13-australia",
+  "2026-10-13-brazil",
+  "2026-10-13-italy-cities",
+  "2026-10-13-jp-remaining",
+  "2026-10-13-uk-cities",
+  "2026-10-13-us-central-metros",
+  "2026-10-13-us-ny-boston-metros",
+  "2026-11-06-jp-chubu-recheck",
+  "2026-11-06-jp-kanto-recheck",
+  "2026-11-06-jp-kitakanto-recheck",
+  "2026-11-06-jp-kyushu-recheck"
+ ],
+ "counts": {
+  "records": 13,
+  "new": 13,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "e8e391031840bcdbefac26bff32499fcdf5904eb8bd0131a0414cdaf6e40e1cb",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-33998ed831",
+   "id_frozen": true,
+   "name": "Boulder plus",
+   "country": "JP"
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-0e72fd3230",
+   "id_frozen": true,
+   "name": "Bouldering Gym Cronico",
+   "country": "JP"
+  },
+  {
+   "line": 3,
+   "class": "new",
+   "id": "g-dc33278097",
+   "id_frozen": true,
+   "name": "CRUX Osaka",
+   "country": "JP"
+  },
+  {
+   "line": 4,
+   "class": "new",
+   "id": "g-e06bc8d571",
+   "id_frozen": true,
+   "name": "DAWN Climbing Gym",
+   "country": "JP"
+  },
+  {
+   "line": 5,
+   "class": "new",
+   "id": "g-c1a1dcfcdd",
+   "id_frozen": true,
+   "name": "Climbing Box FunC2",
+   "country": "JP"
+  },
+  {
+   "line": 6,
+   "class": "new",
+   "id": "g-d3969ef4bd",
+   "id_frozen": true,
+   "name": "Climbing Gym Galera",
+   "country": "JP"
+  },
+  {
+   "line": 7,
+   "class": "new",
+   "id": "g-2153431a15",
+   "id_frozen": true,
+   "name": "Hinotama Wall Climbing Gym",
+   "country": "JP"
+  },
+  {
+   "line": 8,
+   "class": "new",
+   "id": "g-e64151e094",
+   "id_frozen": true,
+   "name": "MAHOROBA FOREST Bouldering Space",
+   "country": "JP"
+  },
+  {
+   "line": 9,
+   "class": "new",
+   "id": "g-4c4134cef6",
+   "id_frozen": true,
+   "name": "OLD BUT GOLD",
+   "country": "JP"
+  },
+  {
+   "line": 10,
+   "class": "new",
+   "id": "g-d8f4c67cfa",
+   "id_frozen": true,
+   "name": "Rock Mate Otsu",
+   "country": "JP"
+  },
+  {
+   "line": 11,
+   "class": "new",
+   "id": "g-784a9c7b7c",
+   "id_frozen": true,
+   "name": "SAN Climbing Gym",
+   "country": "JP"
+  },
+  {
+   "line": 12,
+   "class": "new",
+   "id": "g-f0fab4b902",
+   "id_frozen": true,
+   "name": "Suhara Climbing Gym Ikeda",
+   "country": "JP"
+  },
+  {
+   "line": 13,
+   "class": "new",
+   "id": "g-a2936cf7f9",
+   "id_frozen": true,
+   "name": "Suhara Climbing Gym Takarazuka",
+   "country": "JP"
+  }
+ ]
+}
