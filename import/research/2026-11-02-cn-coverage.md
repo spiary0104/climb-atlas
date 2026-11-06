@@ -67,3 +67,8 @@ Listings that are not near an existing pin, per city, with Amap ids: `import/res
 - Amap showed its anti-abuse dialog ("哎呀，有异常情况，请稍后再试"); no Amap request was made afterwards. Next Amap session: wait/clear the dialog, then read details for Xi'an (12) and Nanjing (11) gyms (pins-3 holds), and details for the new-gym listings below.
 - RedNote this pass: about 30 page loads, no verification wall. New section `2026-11-01-cn-jinan` (2 accept, 1 defer). Everything else with primary evidence is in `MANUAL-CHECKS-china-2026-11-01.md` (second-pass section), including the **CN region codes missing in the app** (Dali, Lijiang, Foshan, Dongguan, Zhongshan, Wenzhou, Sanya, Taiyuan, ...): adding those codes to `js/modules/regions.js` unblocks Dali (行山 has primary bouldering evidence) and Wenzhou.
 - Still to do in order: Changsha (needs Amap detail coordinates; own accounts for 大曦/向上攀/湘攀/TBW not yet found), Xiamen, Kunming, Qingdao, Foshan/Dongguan/Zhongshan, Ningbo, Wenzhou.
+
+## Update 2026-11-06 (run 3)
+- pins-3 holds done: batch `2026-11-06-cn-pins-4` (21 updates; Xi'an, Nanjing, Suzhou Koala New District). Part 4 table in `2026-11-02-cn-pins/verification.md`.
+- New-gym sections (not staged; wait for PR #91 + production migration): Dali 1, Wenzhou 2, Changsha 1, Xiamen 4, Kunming 2, Qingdao 1 (`2026-11-06-cn-*`). Open items: `MANUAL-CHECKS-china-2026-11-06.md`.
+- Resume: the `xhs` OpenCLI session stopped answering (unknown command); restore it first. Then Foshan/Dongguan/Zhongshan, Ningbo, Wuxi/Changzhou, Sanya, Taiyuan, Hohhot, Lanzhou, Xining, Yinchuan, Urumqi, Lijiang, Lhasa; Changsha 大曦/湘攀; Xiamen/Qingdao/Kunming remaining brands (list in the manual checks).

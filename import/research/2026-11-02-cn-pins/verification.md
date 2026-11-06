@@ -406,3 +406,37 @@ Summary: 19 audited; 2 pin updates; 1 none; 4 MANUAL; 12 hold.
 | seed-859 | SEEK ROCK CLIMBING (Nanyou Plaza/Xianlin) | matched to Amap B0LAARPS0G by brand/name and address; listing-detail read not done (browser stopped) | - | hold (detail read pending) |
 
 Summary: 14 audited; 3 MANUAL; 11 hold.
+
+# Part 4 (2026-11-06): the Xi'an and Nanjing holds, plus Suzhou Koala New District
+Batch `import/batches/2026-11-06-cn-pins-4` (21 pin updates; validate + plan + `import --dry-run` pass, PARTIAL coverage = no service-role key). Listing-detail reads (two identical reads each) were done for the 23 matched Xi'an/Nanjing ids and for Suzhou B0LBZRMJ5V; coordinate = search entrance when the search read was stable, else the listing-detail point (GCJ-02 to WGS-84); update only when more than 150 m off. Where Bouldeer has no address the match is brand + branch/mall name and the brand has one listing in that city in our saved searches (stated per row).
+
+| id | gym | Amap listing | Bouldeer address | pin vs Amap | action |
+|---|---|---|---|---|---|
+| seed-759 | Koala Climbing (New District) | 考拉攀岩 B0LBZRMJ5V, 虎丘区狮山下沉广场B1(沙金桥地铁站出入口旁) | none; name/branch match | 9324 m (listing) | pin update |
+| seed-800 | Huoshi Climbing (Rainbow Valley) | 火石攀岩运动馆(正荣彩虹谷店) B0K35D36FY, 雁塔区观风路66号正荣彩虹谷 | none; name/branch match | 9045 m (listing) | pin update |
+| seed-801 | Lingzhongli Climbing (Taiyicheng) | 零重力攀岩(西安太乙城生活中心店) B0KBLZYFR9, 太乙城生活中心南区1楼 | matches (see listing) | 34 m (entrance), ok | none |
+| seed-802 | Duote Climbing (Dazhai Rd) | 都特攀岩(大寨路店) B0HRPA4TUA, 大寨路与昆明池路交叉口西南320米 | matches (see listing) | 1852 m (entrance) | pin update |
+| seed-804 | Jianshan Climbing | 见山攀岩 B0MBORXMS1, 小寨西路mo0mopar阳k吉祥村地铁站A2口下地铁站层 | none; name/branch match | 5107 m (entrance) | pin update |
+| seed-805 | Red Point Climbing (Longhu Changle Tianjie) | 红点攀岩(龙湖长乐店) B0LDU6ABXT, 龙湖西安长乐天街B馆4F西南角 | matches (see listing) | 897 m (entrance) | pin update |
+| seed-806 | Daren Climbing | 大仁攀岩 B0JAOCUYWE, 长安区郭杜街道纬三十街大仁遗址公园(东南角) | matches (see listing) | 2890 m (listing) | pin update |
+| seed-807 | Duote Climbing (Dayuecheng) | 都特攀岩(大悦城店) B0J3D7LS0C, 雁塔区慈恩西路66号西安大悦城3F层 | matches (see listing) | 247 m (listing) | pin update |
+| seed-808 | Duote Climbing (Minleyuan) | 都特攀岩(民乐园店) B0KRTHXPL0, 新城区解放路111号西安民乐园万达广场B1层 | none; name/branch match | 1651 m (listing) | pin update |
+| seed-809 | Red Point Climbing (Datang West Market) | 红点攀岩(大唐西市店) B0IULUT6MP, 南路虹天上市1号楼5层 | matches (see listing) | 875 m (entrance) | pin update |
+| seed-810 | Climbing Dream Factory (Lijiacun) | 攀岩梦工厂 B0FFJI10HW, 建西街3号(和平门地铁站B西南口步行410米) | matches (see listing) | 266 m (entrance) | pin update |
+| seed-812 | Xi'an Zebra Climbing | 斑马攀岩 B0K3HL0B2F, 大兴东路16号光化里F3层 | none; name/branch match | 7279 m (entrance) | pin update |
+| seed-813 | Wopan Xi'an Climbing Gym | 我攀·西安 B0LURN1BJB, 唐延南路辅路东侧逸翠园i都会广场2号楼西南角 | none; name/branch match | 9682 m (entrance) | pin update |
+| seed-847 | SEEK ROCK CLIMBING (Xinyao Gemdale Plaza) | 石刻攀岩(新尧金地广场店) B0LDX59QE2, 栖霞区新尧金地广场5楼(2号电梯附近欧兔健身旁) | matches (see listing) | 7 m (listing), ok | none |
+| seed-848 | Blue Whale Climbing (Sun City) | 蓝鲸攀岩(太阳城旗舰店) B0K357KDES, 江宁区双龙大道1539号21世纪太阳城购物中心3楼c区h3-12 | matches (see listing) | 4158 m (listing) | pin update |
+| seed-849 | Blue Whale Climbing (Jiqingmen) | 蓝鲸攀岩(集庆门店) B0FFKO03Y0, 秦淮区凤游寺路52号悦动新门西16号楼蓝鲸攀岩馆 | matches (see listing) | 435 m (listing) | pin update |
+| seed-850 | Blue Whale Climbing (Hexi Zhongsheng) | 蓝鲸攀岩(河西中胜店) B0IR05RTIK, 建邺区康文路18号舜禹研发中心F24层 | matches (see listing) | 44 m (listing), ok | none |
+| seed-852 | MOJO Climbing | MOJO攀岩馆 B0K25KHYAH, 秦淮区66号国创园7幢301-2室 | matches (see listing) | 174 m (listing) | pin update |
+| seed-853 | Blue Whale Climbing (Yuejie Fantasy City) | 蓝鲸攀岩(越界梦幻城店) B0MDCL3UC1, 秦淮区莫愁路329号 | matches (see listing) | 367 m (listing) | pin update |
+| seed-854 | SEEK ROCK CLIMBING (Jiangbei Yinxianghui) | 石刻攀岩(印象汇馆) B0MBZXDE46, 浦口区泰山街道大桥北路58号印象汇3楼 | none; name/branch match | 6860 m (listing) | pin update |
+| seed-856 | Elephant Climbing | 大象攀岩 B0MUT7LCP7, 玄武区腾子路34号 | none; name/branch match | 5583 m (listing) | pin update |
+| seed-857 | Koolah Climbing | 考拉攀岩 B0L6HHPPM5, 玄武区太阳宫广场2楼 | none; name/branch match | 4635 m (listing) | pin update |
+| seed-858 | Pulse Climbing | 心跳攀岩PulseClimbing B0L0NUSJHY, 长江路101号文化馆东门2楼 | none; name match | 662 m (entrance) | pin update |
+| seed-859 | SEEK ROCK CLIMBING (Nanyou Plaza/Xianlin) | 南京石刻·攀岩馆(南邮广场店) B0LAARPS0G, 栖霞区学海路与文澜路交叉口北200米 | none; name/branch match | 7501 m (listing) | pin update |
+
+Summary: 24 audited; 21 pin updates; 3 none.
+
+Manual-check gyms in Wuhan/Suzhou/Tianjin/Xi'an re-examined against the saved Amap data and one fresh Suzhou brand search (the search answers turned UNSTABLE, so the Amap source was not pushed further): **only seed-759 resolved** (Amap lists exactly two 考拉攀岩 in the Suzhou urban area; seed-758 is the Wangfujing one, the other is in the Hi-Tech/New District at Shishan, 320505). Still MANUAL: seed-775 (Loong MixC: mall and floor match B0LKSMHMXR 万象天地 L1 but the road differs, 338 Liuyuan Rd vs 枫桥路36号, 708 m), seed-770 (no Dushu Lake listing), seed-781/790 Rockway (two Amap listings, the Bouldeer branch names do not decide), seed-782, seed-776, seed-799, seed-803, seed-811, seed-814, seed-705, seed-708, seed-709 (no new evidence this run).

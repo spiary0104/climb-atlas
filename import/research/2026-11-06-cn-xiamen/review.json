@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-11-06-cn-xiamen",
+ "reviewer": "Claude (AI) research worker; decisions drafted, pending owner sign-off",
+ "reviewed": "2026-11-06",
+ "decisions": {
+  "cn-xm-001": {
+   "decision": "accept",
+   "reason": "Own branch RedNote account states a 1000 sqm bouldering hall at the Baolong One City store, gives the location and posts to 2026-10-30; Amap lists the same store; coordinate is the stable listing-detail point. No existing or related gym within the review radii."
+  },
+  "cn-xm-002": {
+   "decision": "accept",
+   "reason": "The brand's own account lists the Jimei store with 攀石 (bouldering) and posts to 2026-11-05; Amap lists the same store; coordinate is the stable listing-detail point. No existing or related gym within the review radii."
+  },
+  "cn-xm-003": {
+   "decision": "accept",
+   "reason": "The brand's own account lists the Caitang store (逆熵力量店) with 攀石 and the store has its own active account; Amap lists it at the Caitang Plaza address. Separate store from cn-xm-004 (Tapu, 3.6 km away); the flag is the shared brand name only.",
+   "reviewed_against": [
+    "cn-xm-004"
+   ]
+  },
+  "cn-xm-004": {
+   "decision": "accept",
+   "reason": "The brand's own account lists the Tapu store with 攀石 and the store has its own account; Amap lists it at 航空塔埔天地. Separate store from cn-xm-003 (Caitang, 3.6 km away); the flag is the shared brand name only.",
+   "reviewed_against": [
+    "cn-xm-003"
+   ]
+  }
+ }
+}
