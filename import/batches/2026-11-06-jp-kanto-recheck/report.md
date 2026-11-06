@@ -12,7 +12,7 @@
 | Rejected by a human decision | 0 |
 | **Total records in batch** | 14 |
 
-Index: 3294 known gyms (sha256 2f47cb53e74b…). Plan: 371cd8c3bdb8… Also compared against staged batches: 2026-10-06-kr-seoul, 2026-10-13-australia, 2026-10-13-brazil, 2026-10-13-italy-cities, 2026-10-13-jp-remaining, 2026-10-13-uk-cities, 2026-10-13-us-central-metros, 2026-10-13-us-ny-boston-metros.
+Index: 3294 known gyms (sha256 2f47cb53e74b…). Plan: 371cd8c3bdb8… Also compared against staged batches: 2026-10-06-kr-seoul, 2026-10-13-australia, 2026-10-13-brazil, 2026-10-13-italy-cities, 2026-10-13-jp-remaining, 2026-10-13-uk-cities, 2026-10-13-us-central-metros, 2026-10-13-us-ny-boston-metros, 2026-11-06-jp-chubu-recheck, 2026-11-06-jp-kansai-recheck, 2026-11-06-jp-kitakanto-recheck, 2026-11-06-jp-kyushu-recheck.
 
 ## New gyms (14)
 
