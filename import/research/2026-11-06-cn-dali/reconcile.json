@@ -1,0 +1,65 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-11-06-cn-dali",
+ "inputs": {
+  "section_sha256": "1994d36dd425df680a8adf3cd1b5008d0ddcba2cb5db2edc2d28d6e8cda56b85",
+  "sources_sha256": "0c88570e35dfc86c26beadb37fc69446cc507a2351726eb988428e96688f6ad8",
+  "candidates_sha256": "4d9f48af97680b566539f7017750c604aa1f3fe3d108a624026f09ab035490a5",
+  "index": {
+   "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
+   "count": 3294
+  },
+  "staged_batches_compared": [
+   "2026-10-06-kr-seoul",
+   "2026-10-13-australia",
+   "2026-10-13-brazil",
+   "2026-10-13-italy-cities",
+   "2026-10-13-jp-remaining",
+   "2026-10-13-uk-cities",
+   "2026-10-13-us-central-metros",
+   "2026-10-13-us-ny-boston-metros"
+  ],
+  "other_sections_compared": [
+   {
+    "id": "2026-11-01-cn-guangzhou",
+    "candidates_sha256": "f1d6750918703d8c7060acf2e91053919e9672d7e5bfb4ba804f74580e462b47"
+   },
+   {
+    "id": "2026-11-01-cn-jinan",
+    "candidates_sha256": "1d133eee1ad38381df03e11c09a5b00f1d31bf934ea382425c7c9346dd21c3ad"
+   },
+   {
+    "id": "2026-11-02-cn-hangzhou",
+    "candidates_sha256": "935f313217f60a9f8730a31a25c3b6a6d047e8dae18f97887412880340264a98"
+   }
+  ]
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 1,
+  "ready": 1,
+  "review": 0,
+  "blocked": 0,
+  "existing": 0,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "cn-dl-001",
+   "line": 1,
+   "name": "Xingshan Climbing Gym (Dali)",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-74ca65437d"
+   },
+   "review_ids": []
+  }
+ ],
+ "reconcile_sha256": "b3a0b69295963cc63cd7098142c066a00cf4323c93e4b3f7a9cab67fd317a248"
+}
