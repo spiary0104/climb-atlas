@@ -1,0 +1,49 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-11-06-jp-kyushu-recheck",
+ "index": {
+  "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
+  "count": 3294,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-06-kr-seoul",
+  "2026-10-13-australia",
+  "2026-10-13-brazil",
+  "2026-10-13-italy-cities",
+  "2026-10-13-jp-remaining",
+  "2026-10-13-uk-cities",
+  "2026-10-13-us-central-metros",
+  "2026-10-13-us-ny-boston-metros",
+  "2026-11-06-jp-chubu-recheck",
+  "2026-11-06-jp-kansai-recheck",
+  "2026-11-06-jp-kanto-recheck"
+ ],
+ "counts": {
+  "records": 1,
+  "new": 1,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "20edece2d0030655fa301783d5bd00d7e7741b91d205a27de04b17c873e57fd5",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-5d7a3ff576",
+   "id_frozen": true,
+   "name": "833 WALL Bouldering Studio",
+   "country": "JP"
+  }
+ ]
+}

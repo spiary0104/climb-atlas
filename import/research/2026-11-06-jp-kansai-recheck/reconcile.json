@@ -1,0 +1,354 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-11-06-jp-kansai-recheck",
+ "inputs": {
+  "section_sha256": "0e76cad746bf30f364f36f242e79cbe335abee3be48e2ab5c88efd8bfba5f894",
+  "sources_sha256": "810c1bc0497d7be30cc4bb919a5487a24150a88b07e71f0189ab379a1c70c84d",
+  "candidates_sha256": "e6dc9ac2a19b4cbbb39c3571bd9a204e58fdfa56dfaaa92e451632dc0bfac231",
+  "index": {
+   "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
+   "count": 3294
+  },
+  "staged_batches_compared": [
+   "2026-10-06-kr-seoul",
+   "2026-10-13-australia",
+   "2026-10-13-brazil",
+   "2026-10-13-italy-cities",
+   "2026-10-13-jp-remaining",
+   "2026-10-13-uk-cities",
+   "2026-10-13-us-central-metros",
+   "2026-10-13-us-ny-boston-metros",
+   "2026-11-06-jp-chubu-recheck",
+   "2026-11-06-jp-kanto-recheck"
+  ],
+  "other_sections_compared": [
+   {
+    "id": "2026-10-06-jp-chubu",
+    "candidates_sha256": "ed0f35f8b69fecc27d93cdb6aedbc76c16271d4b09142561175b24c82afc962a"
+   },
+   {
+    "id": "2026-10-06-jp-kansai",
+    "candidates_sha256": "422563898a9fb3fffbebbe19482585f20b3c1b6c1d924cf51139d547cd11b938"
+   },
+   {
+    "id": "2026-10-06-jp-kanto",
+    "candidates_sha256": "80db339a2fc86a29899aea6363361180608316f1fc37b990010998aa056b94aa"
+   },
+   {
+    "id": "2026-10-06-jp-kyushu-hokkaido",
+    "candidates_sha256": "b04553a8c059baf816ff1d390fa34e38d8be7a6ff0d92692e8711d4347aaba0a"
+   },
+   {
+    "id": "2026-10-13-jp-remaining",
+    "candidates_sha256": "81354031feef8b6a7ca8ce0dd072ebb390508433ed2960a66bba8e4f7465052a"
+   },
+   {
+    "id": "2026-11-06-jp-chubu-recheck",
+    "candidates_sha256": "8dff2b871296f05d060b7ce7183f9168a26a0a9a33d2a9dd0fc3548920dde7a3"
+   },
+   {
+    "id": "2026-11-06-jp-kanto-recheck",
+    "candidates_sha256": "8979b1a8cd27e9cb457334b7d43d3d654761ce7dcaeb32a3f7874d348b726083"
+   }
+  ]
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 13,
+  "ready": 1,
+  "review": 12,
+  "blocked": 0,
+  "existing": 0,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "jp2-boulder-plus",
+   "line": 11,
+   "name": "Boulder plus",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-33998ed831"
+   },
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-06-jp-kansai#jpk-034 \"Boulder Plus\": name-match same-name (\"Boulder plus\" / \"Boulder Plus\", 0 m)",
+     "ids": [
+      "2026-10-06-jp-kansai#jpk-034"
+     ]
+    }
+   ],
+   "review_ids": [
+    "2026-10-06-jp-kansai#jpk-034"
+   ]
+  },
+  {
+   "cid": "jp2-cronico",
+   "line": 7,
+   "name": "Bouldering Gym Cronico",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-0e72fd3230"
+   },
+   "flags": [
+    {
+     "code": "weak-coordinates",
+     "detail": "coordinates are street-level, not the building"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "jp2-crux-osaka",
+   "line": 4,
+   "name": "CRUX Osaka",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-dc33278097"
+   },
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-06-jp-kansai#jpk-016 \"CRUX Osaka\": name-match same-name (\"CRUX Osaka\" / \"CRUX Osaka\", 0 m)",
+     "ids": [
+      "2026-10-06-jp-kansai#jpk-016"
+     ]
+    }
+   ],
+   "review_ids": [
+    "2026-10-06-jp-kansai#jpk-016"
+   ]
+  },
+  {
+   "cid": "jp2-dawn",
+   "line": 8,
+   "name": "DAWN Climbing Gym",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-e06bc8d571"
+   },
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-06-jp-kansai#jpk-036 \"DAWN Climbing Gym\": name-match same-name (\"DAWN Climbing Gym\" / \"DAWN Climbing Gym\", 0 m)",
+     "ids": [
+      "2026-10-06-jp-kansai#jpk-036"
+     ]
+    }
+   ],
+   "review_ids": [
+    "2026-10-06-jp-kansai#jpk-036"
+   ]
+  },
+  {
+   "cid": "jp2-func2",
+   "line": 3,
+   "name": "Climbing Box FunC2",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-c1a1dcfcdd"
+   },
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-06-jp-kansai#jpk-022 \"Climbing Box FunC2\": name-match same-name (\"Climbing Box FunC2\" / \"Climbing Box FunC2\", 0 m)",
+     "ids": [
+      "2026-10-06-jp-kansai#jpk-022"
+     ]
+    }
+   ],
+   "review_ids": [
+    "2026-10-06-jp-kansai#jpk-022"
+   ]
+  },
+  {
+   "cid": "jp2-galera",
+   "line": 2,
+   "name": "Climbing Gym Galera",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-d3969ef4bd"
+   },
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-06-jp-kansai#jpk-015 \"Climbing Gym Galera\": name-match same-name (\"Climbing Gym Galera\" / \"Climbing Gym Galera\", 0 m)",
+     "ids": [
+      "2026-10-06-jp-kansai#jpk-015"
+     ]
+    }
+   ],
+   "review_ids": [
+    "2026-10-06-jp-kansai#jpk-015"
+   ]
+  },
+  {
+   "cid": "jp2-hinotama",
+   "line": 10,
+   "name": "Hinotama Wall Climbing Gym",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-2153431a15"
+   },
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-06-jp-kansai#jpk-037 \"Hinotama Wall Climbing Gym\": name-match same-name (\"Hinotama Wall Climbing Gym\" / \"Hinotama Wall Climbing Gym\", 0 m)",
+     "ids": [
+      "2026-10-06-jp-kansai#jpk-037"
+     ]
+    }
+   ],
+   "review_ids": [
+    "2026-10-06-jp-kansai#jpk-037"
+   ]
+  },
+  {
+   "cid": "jp2-mahoroba-forest",
+   "line": 1,
+   "name": "MAHOROBA FOREST Bouldering Space",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-e64151e094"
+   },
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-06-jp-kansai#jpk-021 \"MAHOROBA FOREST Bouldering Space\": name-match same-name (\"MAHOROBA FOREST Bouldering Space\" / \"MAHOROBA FOREST Bouldering Space\", 0 m)",
+     "ids": [
+      "2026-10-06-jp-kansai#jpk-021"
+     ]
+    }
+   ],
+   "review_ids": [
+    "2026-10-06-jp-kansai#jpk-021"
+   ]
+  },
+  {
+   "cid": "jp2-old-but-gold",
+   "line": 9,
+   "name": "OLD BUT GOLD",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-4c4134cef6"
+   },
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-06-jp-kansai#jpk-039 \"OLD BUT GOLD\": name-match same-name (\"OLD BUT GOLD\" / \"OLD BUT GOLD\", 0 m)",
+     "ids": [
+      "2026-10-06-jp-kansai#jpk-039"
+     ]
+    }
+   ],
+   "review_ids": [
+    "2026-10-06-jp-kansai#jpk-039"
+   ]
+  },
+  {
+   "cid": "jp2-rock-mate-otsu",
+   "line": 13,
+   "name": "Rock Mate Otsu",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-d8f4c67cfa"
+   },
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-06-jp-kansai#jpk-053 \"Rock Mate Otsu\": name-match same-name (\"Rock Mate Otsu\" / \"Rock Mate Otsu\", 0 m)",
+     "ids": [
+      "2026-10-06-jp-kansai#jpk-053"
+     ]
+    }
+   ],
+   "review_ids": [
+    "2026-10-06-jp-kansai#jpk-053"
+   ]
+  },
+  {
+   "cid": "jp2-san-climbing",
+   "line": 6,
+   "name": "SAN Climbing Gym",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-784a9c7b7c"
+   },
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-06-jp-kansai#jpk-019 \"SAN Climbing Gym\": name-match same-name (\"SAN Climbing Gym\" / \"SAN Climbing Gym\", 0 m)",
+     "ids": [
+      "2026-10-06-jp-kansai#jpk-019"
+     ]
+    }
+   ],
+   "review_ids": [
+    "2026-10-06-jp-kansai#jpk-019"
+   ]
+  },
+  {
+   "cid": "jp2-suhara-ikeda",
+   "line": 5,
+   "name": "Suhara Climbing Gym Ikeda",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-f0fab4b902"
+   },
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-10-06-jp-kansai#jpk-024 \"Suhara Climbing Gym Ikeda\": name-match same-name (\"Suhara Climbing Gym Ikeda\" / \"Suhara Climbing Gym Ikeda\", 0 m)",
+     "ids": [
+      "2026-10-06-jp-kansai#jpk-024"
+     ]
+    }
+   ],
+   "review_ids": [
+    "2026-10-06-jp-kansai#jpk-024"
+   ]
+  },
+  {
+   "cid": "jp2-suhara-takarazuka",
+   "line": 12,
+   "name": "Suhara Climbing Gym Takarazuka",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-a2936cf7f9"
+   },
+   "review_ids": []
+  }
+ ],
+ "reconcile_sha256": "e333e80afb3329a384e89426a44da372e64d05e5f02c8411433ca75ea979503d"
+}
