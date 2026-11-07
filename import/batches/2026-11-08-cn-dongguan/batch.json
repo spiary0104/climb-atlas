@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-11-08-cn-dongguan",
+  "description": "Regional research \"China: Dongguan\": 2 new gym(s) accepted of 4 candidate(s)",
+  "created": "2026-11-08",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-11-08-cn-dongguan",
+    "section_sha256": "87fbfd9b423da4e32e2339bd6ef4a886b3b31ee7490fc42fc3505eed1f3dcb92",
+    "sources_sha256": "9f630318477575159387395ef780007e38ac97f9ad13d1b546a2b8b8fd6fd6b1",
+    "candidates_sha256": "9b624e8272b5e01bcd6c3f6f5feb534821ebc651cc9cd1a059681746807b6d9c",
+    "reconcile_sha256": "557d47f4325238be85440938b1c631cf3303e49496f0add647e9c59fd120096c",
+    "review_sha256": "5c8ff4d5d8bdf0c5eb16a5d267628b554e5841a077f3f00bd5a22df70d74c601",
+    "candidates": 4,
+    "staged": 2,
+    "decisions": {
+      "accept": 2,
+      "defer": 2
+    }
+  },
+  "index_at_staging": {
+    "sha256": "ad459783ea351fd0a85662824778a0ef8ddbb1e5c89ee095cf6c306f78a3c641",
+    "count": 3433
+  }
+}

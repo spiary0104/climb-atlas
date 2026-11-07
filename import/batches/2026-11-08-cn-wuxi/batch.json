@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-11-08-cn-wuxi",
+  "description": "Regional research \"China: Wuxi\": 3 new gym(s) accepted of 6 candidate(s)",
+  "created": "2026-11-08",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-11-08-cn-wuxi",
+    "section_sha256": "ad36ddf5f72e69864bcd455539c730ef7291224dd93501b97905a3c5bd08d29f",
+    "sources_sha256": "e4e2b8427518de9e1340de63b2c8259816be8b3a2cf0ca25504f0785d4826a14",
+    "candidates_sha256": "ed30d026001e1ea5e541dbccd29dba973e6dd4f484c1c8b56bfbeeb522ff3713",
+    "reconcile_sha256": "3bb5c5a0711175ec75dc95aeaaa043bd1b5e2dbb4d9d6990c1c4645064e037d7",
+    "review_sha256": "c45cbf2466d5f8c571b6a10f27ee1d48ea36cd054be75b74de152db5cd696bcb",
+    "candidates": 6,
+    "staged": 3,
+    "decisions": {
+      "accept": 3,
+      "defer": 3
+    }
+  },
+  "index_at_staging": {
+    "sha256": "ad459783ea351fd0a85662824778a0ef8ddbb1e5c89ee095cf6c306f78a3c641",
+    "count": 3433
+  }
+}
