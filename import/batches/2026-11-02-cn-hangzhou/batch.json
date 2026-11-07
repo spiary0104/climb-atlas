@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-11-02-cn-hangzhou",
+  "description": "Regional research \"China: Hangzhou\": 1 new gym(s) accepted of 2 candidate(s)",
+  "created": "2026-11-02",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-11-02-cn-hangzhou",
+    "section_sha256": "729433e4aa28e6a8e99ac878967dc4bd840cee5160f929355428cfcaa8bfea97",
+    "sources_sha256": "ed2e2020f1044db0e1dd84683108d56ca9c2c202d8d97f63691d3fdfb7f88942",
+    "candidates_sha256": "935f313217f60a9f8730a31a25c3b6a6d047e8dae18f97887412880340264a98",
+    "reconcile_sha256": "a646ef1c2e04df7f76befeb01eed91a433d67b33f3a74e7492038c5cf53b5e82",
+    "review_sha256": "c69885253c6d08a981465bf785d3fc4bba9b6de4e8b0673da7fc6e3b08bb43ac",
+    "candidates": 2,
+    "staged": 1,
+    "decisions": {
+      "accept": 1,
+      "defer": 1
+    }
+  },
+  "index_at_staging": {
+    "sha256": "ad459783ea351fd0a85662824778a0ef8ddbb1e5c89ee095cf6c306f78a3c641",
+    "count": 3433
+  }
+}

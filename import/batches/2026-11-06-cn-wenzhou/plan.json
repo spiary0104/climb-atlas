@@ -1,0 +1,54 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-11-06-cn-wenzhou",
+ "index": {
+  "sha256": "ad459783ea351fd0a85662824778a0ef8ddbb1e5c89ee095cf6c306f78a3c641",
+  "count": 3433,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-06-kr-seoul",
+  "2026-11-01-cn-guangzhou",
+  "2026-11-01-cn-jinan",
+  "2026-11-02-cn-hangzhou",
+  "2026-11-06-cn-changsha",
+  "2026-11-06-cn-dali",
+  "2026-11-06-cn-kunming",
+  "2026-11-06-cn-xiamen"
+ ],
+ "counts": {
+  "records": 2,
+  "new": 2,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "2ebb27547ecfe73b5607ab3d690f293e184727e535fa5e517bb427b8c09593f1",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-fc7d33c12c",
+   "id_frozen": true,
+   "name": "Bale Climbing (Longwan)",
+   "country": "CN"
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-3cad064e8d",
+   "id_frozen": true,
+   "name": "Bale Climbing (Rui'an Xinhu Yintai)",
+   "country": "CN"
+  }
+ ]
+}

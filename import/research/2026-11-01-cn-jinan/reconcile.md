@@ -1,7 +1,7 @@
 # Regional research: China: Jinan (2026-11-01-cn-jinan)
 
 Scope: CN / JINAN
-Index: 3294 gyms, sha256 2f47cb53e74b… | staged batches compared: 2026-10-06-kr-seoul | other sections compared: 2026-11-01-cn-guangzhou, 2026-11-02-cn-hangzhou
+Index: 3433 gyms, sha256 ad459783ea35… | staged batches compared: 2026-10-06-kr-seoul, 2026-11-01-cn-guangzhou | other sections compared: 2026-11-01-cn-guangzhou, 2026-11-02-cn-hangzhou, 2026-11-06-cn-changsha, 2026-11-06-cn-dali, 2026-11-06-cn-kunming, 2026-11-06-cn-qingdao, 2026-11-06-cn-wenzhou, 2026-11-06-cn-xiamen
 Review radii (stricter than the importer): any gym 150 m, related name 15 km, other country 2 km
 
 ## Summary
