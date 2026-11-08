@@ -1,0 +1,60 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-11-08-cn-zhengzhou",
+ "index": {
+  "sha256": "39a2073843434f86764687342310f4cb7d0ff6d410fe2e798bd4ddd1635fd537",
+  "count": 3457,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-06-kr-seoul",
+  "2026-11-08-cn-changzhou",
+  "2026-11-08-cn-dalian",
+  "2026-11-08-cn-shenyang",
+  "2026-11-08-cn-zhongshan",
+  "2026-11-08-cn-zhuhai"
+ ],
+ "counts": {
+  "records": 3,
+  "new": 3,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "04bcc7ddec566fbdb071f526d1442ca527bf003e7320bdc08f49251f6fb6afe6",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-a16cd0eb4a",
+   "id_frozen": true,
+   "name": "OBX Climbing",
+   "country": "CN"
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-c4fff01184",
+   "id_frozen": true,
+   "name": "Ruoke Climbing (Park Mall)",
+   "country": "CN"
+  },
+  {
+   "line": 3,
+   "class": "new",
+   "id": "g-b2ea05fd83",
+   "id_frozen": true,
+   "name": "Yanjiusuo Climbing Space (Zhenghong)",
+   "country": "CN"
+  }
+ ]
+}
