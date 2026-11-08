@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-11-08-cn-yinchuan",
+  "description": "Regional research \"China: Yinchuan\": 1 new gym(s) accepted of 5 candidate(s)",
+  "created": "2026-11-08",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-11-08-cn-yinchuan",
+    "section_sha256": "e474a818a01f12ada3548d933146c308c4d9220786ae850ab853d9966155d389",
+    "sources_sha256": "5351d9a102df2bff4827d0c2f8f3a5bd11d1e65dc6ba9015d94399c710092e1c",
+    "candidates_sha256": "ad649ba8eca3a69bb32620953c5906e7c1d78a8396fa7c4be439c4be2b7adce1",
+    "reconcile_sha256": "9f42bc481ac78c110284f2850c8e92425df08eb5ef3e721c91275255fe30ba85",
+    "review_sha256": "2c0b414ab24728ae62ed5caafea151c7677a67c7b10d2e8034bc87f54bde2418",
+    "candidates": 5,
+    "staged": 1,
+    "decisions": {
+      "accept": 1,
+      "defer": 4
+    }
+  },
+  "index_at_staging": {
+    "sha256": "39a2073843434f86764687342310f4cb7d0ff6d410fe2e798bd4ddd1635fd537",
+    "count": 3457
+  }
+}
