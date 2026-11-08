@@ -1,0 +1,57 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-11-06-cn-kunming",
+ "index": {
+  "sha256": "28410ce9af9117020e7e4009e5457a9eb36fbe75550e83c054c6b0db67158918",
+  "count": 3441,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-06-kr-seoul",
+  "2026-11-06-cn-wenzhou",
+  "2026-11-06-cn-xiamen"
+ ],
+ "counts": {
+  "records": 2,
+  "new": 2,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "8a698475572e10c5e59a5e89c5c3127c9797155bc152aae4cb89c3662849f3b9",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-5cd08d937f",
+   "id_frozen": true,
+   "name": "Nayan Climbing (Tuodong)",
+   "country": "CN",
+   "reviewed_distinct": {
+    "reason": "Own RedNote account describes the 拓东馆 as a 1000 sqm bouldering hall and posts to 2026-11-06 (the competition closure ended 2026-11-02); Amap lists the same store. Separate store from cn-km-002 (0871, 11 km away); the flag is the shared brand name only.",
+    "reviewer": "Claude (AI) research worker; decisions drafted, pending owner sign-off"
+   }
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-9c56253b23",
+   "id_frozen": true,
+   "name": "Nayan Climbing (0871)",
+   "country": "CN",
+   "reviewed_distinct": {
+    "reason": "Same own account lists the 0871馆 with a 4.9 m bouldering wall and MoonBoard; Amap lists the same store. Separate store from cn-km-001 (Tuodong, 11 km away); the flag is the shared brand name only.",
+    "reviewer": "Claude (AI) research worker; decisions drafted, pending owner sign-off"
+   }
+  }
+ ]
+}

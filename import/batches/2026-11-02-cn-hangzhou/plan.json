@@ -1,0 +1,48 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-11-02-cn-hangzhou",
+ "index": {
+  "sha256": "e7fda4409c74155f25a090d0fdafd376f4ea6ac2967c64c2236c14e18195b2f9",
+  "count": 3438,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-06-kr-seoul",
+  "2026-11-06-cn-changsha",
+  "2026-11-06-cn-dali",
+  "2026-11-06-cn-kunming",
+  "2026-11-06-cn-wenzhou",
+  "2026-11-06-cn-xiamen"
+ ],
+ "counts": {
+  "records": 1,
+  "new": 1,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "f11a569247db4398e641cba0c7d3fb80ff742d3c766e01f46190dd85c9cf95d6",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-63296cf543",
+   "id_frozen": true,
+   "name": "Luna Climbing (Binjiang Yintai)",
+   "country": "CN",
+   "reviewed_distinct": {
+    "reason": "Separate store from seed-722: seed-722 is Luna's Hualian Xingguang Ave Phase 2 store (Amap B0LRRHK2XX, 星光大道二期4F); this one is the fifth Luna store at Binjiang Yintai block C 5F 512 (Amap B0MURUDN2C), 1.5 km away on the other side of the river, with its own RedNote account stating pure bouldering and posting to 2026-10-30. The flag is the shared brand name only.",
+    "reviewer": "Claude (AI) research worker; decisions drafted on the owner's instruction, pending owner sign-off"
+   }
+  }
+ ]
+}

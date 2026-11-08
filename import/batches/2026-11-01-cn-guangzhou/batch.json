@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-11-01-cn-guangzhou",
+  "description": "Regional research \"China: Guangzhou\": 3 new gym(s) accepted of 5 candidate(s)",
+  "created": "2026-11-01",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-11-01-cn-guangzhou",
+    "section_sha256": "cff987eb57f9bc5e6f3367812acbd0f7deba722992b2fffe4a057dcf5ff9fab1",
+    "sources_sha256": "c1b53a78f58ff6abd86fbd6f625f0a53ebd9f3cc9566120e9ce4096134c5b09f",
+    "candidates_sha256": "f1d6750918703d8c7060acf2e91053919e9672d7e5bfb4ba804f74580e462b47",
+    "reconcile_sha256": "76e41f96d8da377376a39f6ab86f863bf4fca4a9517bbeb269f50bccaa69aad9",
+    "review_sha256": "e92f32b4a0fde8ed9ab8068b42a753eaa5036fd89e06dafed4e431dee6d81af9",
+    "candidates": 5,
+    "staged": 3,
+    "decisions": {
+      "accept": 3,
+      "same-as": 2
+    }
+  },
+  "index_at_staging": {
+    "sha256": "ad459783ea351fd0a85662824778a0ef8ddbb1e5c89ee095cf6c306f78a3c641",
+    "count": 3433
+  }
+}

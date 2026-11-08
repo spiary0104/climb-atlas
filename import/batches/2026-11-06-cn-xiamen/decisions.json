@@ -1,0 +1,20 @@
+{
+  "decisions": {
+    "g-f5417945bd": {
+      "decision": "distinct",
+      "reason": "The brand's own account lists the Caitang store (逆熵力量店) with 攀石 and the store has its own active account; Amap lists it at the Caitang Plaza address. Separate store from cn-xm-004 (Tapu, 3.6 km away); the flag is the shared brand name only.",
+      "reviewed_against": [
+        "g-3ab3d2e57a"
+      ],
+      "reviewer": "Claude (AI) research worker; decisions drafted, pending owner sign-off"
+    },
+    "g-3ab3d2e57a": {
+      "decision": "distinct",
+      "reason": "The brand's own account lists the Tapu store with 攀石 and the store has its own account; Amap lists it at 航空塔埔天地. Separate store from cn-xm-003 (Caitang, 3.6 km away); the flag is the shared brand name only.",
+      "reviewed_against": [
+        "g-f5417945bd"
+      ],
+      "reviewer": "Claude (AI) research worker; decisions drafted, pending owner sign-off"
+    }
+  }
+}

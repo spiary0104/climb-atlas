@@ -159,3 +159,7 @@ and `facilities[]` (fixed list) on `spots` and `pending_edits`, with checks; no 
 Applied with `supabase db push --linked`; verified: listed as applied, the columns readable (null / `{}`), 2,348 approved,
 `gym-import.js verify-index --live` up to date (content hashes unaffected).
 
+
+2026-11-07 (owner ran `supabase db push --linked` after a dry run listing exactly this file): `20261101000100_local_names_visitor_info`
+(China pilot: name_local, address_local, visitor, info_source/_kind/_checked_on; tested locally: test-rls-local.js 106/106 and constraint
+cases). Verified afterwards (read-only REST): all six columns readable, null on existing rows; the public gym list unchanged.

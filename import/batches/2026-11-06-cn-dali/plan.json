@@ -1,0 +1,42 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-11-06-cn-dali",
+ "index": {
+  "sha256": "0ac15135a46a1d3ba251a88c31578a6967f90fc5bdc8de4a794b411491fd13d9",
+  "count": 3440,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-06-kr-seoul",
+  "2026-11-06-cn-kunming",
+  "2026-11-06-cn-wenzhou",
+  "2026-11-06-cn-xiamen"
+ ],
+ "counts": {
+  "records": 1,
+  "new": 1,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "d30c6a316cea730e2989ec080ccb0503ea2f55de4814a9ff36f0a1118b52564c",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-74ca65437d",
+   "id_frozen": true,
+   "name": "Xingshan Climbing Gym (Dali)",
+   "country": "CN"
+  }
+ ]
+}
