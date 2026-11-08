@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-11-08-cn-shenyang",
+  "description": "Regional research \"China: Shenyang\": 3 new gym(s) accepted of 12 candidate(s)",
+  "created": "2026-11-08",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-11-08-cn-shenyang",
+    "section_sha256": "60917fbdfc675bb59cbed9d49c6ca2390d3a8e356ae9aed98b076ec253a37870",
+    "sources_sha256": "4184f2b3ecf98dda5a0e398a66ad0b2b2fafb24327798ed327fd35b6b0b74b45",
+    "candidates_sha256": "70af2bf822a0aaeefe5ff915ef0aeccf84ec253955cdc40f975e53b512f99d82",
+    "reconcile_sha256": "04e21bb80d9b5dee0f18856c5673f6fc63f80bd2402f8975d28d8515ce67907a",
+    "review_sha256": "a9676e049e01f7cebf830bb11a59a02215237e5510f75390fec7c285afcf8cd9",
+    "candidates": 12,
+    "staged": 3,
+    "decisions": {
+      "accept": 3,
+      "defer": 9
+    }
+  },
+  "index_at_staging": {
+    "sha256": "39a2073843434f86764687342310f4cb7d0ff6d410fe2e798bd4ddd1635fd537",
+    "count": 3457
+  }
+}

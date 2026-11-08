@@ -1,0 +1,71 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-11-08-cn-zhuhai",
+ "index": {
+  "sha256": "39a2073843434f86764687342310f4cb7d0ff6d410fe2e798bd4ddd1635fd537",
+  "count": 3457,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-06-kr-seoul",
+  "2026-11-08-cn-changzhou",
+  "2026-11-08-cn-dalian",
+  "2026-11-08-cn-shenyang",
+  "2026-11-08-cn-zhongshan"
+ ],
+ "counts": {
+  "records": 4,
+  "new": 4,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "c51440d8e4dc0d0e83b065e40fbbd268b3e1cabeae9c89761f6a15b64abf7689",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-16b049d31f",
+   "id_frozen": true,
+   "name": "Banana Climbing (Wangjiaohui)",
+   "country": "CN",
+   "reviewed_distinct": {
+    "reason": "Own account 香蕉攀岩珠海 posted this store's route reset (74 routes, #室内抱石) on 2026-10-23 and its reopening after the reset; Amap listing at 心华路旺角荟L2. seed-755 is the brand's other Zhuhai store (Le Shi, 岱山路70号) 3.4 km away: same brand, different store.",
+    "reviewer": "Claude (AI) research worker; decisions drafted, pending owner sign-off"
+   }
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-75b3b0ef60",
+   "id_frozen": true,
+   "name": "Matter Climbing Gym (Hengqin)",
+   "country": "CN"
+  },
+  {
+   "line": 3,
+   "class": "new",
+   "id": "g-8053f03c7e",
+   "id_frozen": true,
+   "name": "Lishi Climbing",
+   "country": "CN"
+  },
+  {
+   "line": 4,
+   "class": "new",
+   "id": "g-20cb064993",
+   "id_frozen": true,
+   "name": "Equation Climbing",
+   "country": "CN"
+  }
+ ]
+}
