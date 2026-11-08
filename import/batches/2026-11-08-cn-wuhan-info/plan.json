@@ -1,0 +1,149 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-11-08-cn-wuhan-info",
+ "index": {
+  "sha256": "39a2073843434f86764687342310f4cb7d0ff6d410fe2e798bd4ddd1635fd537",
+  "count": 3457,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-06-kr-seoul"
+ ],
+ "counts": {
+  "records": 7,
+  "new": 0,
+  "existing": 0,
+  "update": 7,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "f4e57848b89c916e282aeb7c4a0c184e6391908425aaddbbcf6f01f116ed7956",
+ "records": [
+  {
+   "line": 1,
+   "class": "update",
+   "id": "seed-693",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "香蕉攀岩(亲橙万象汇店)"
+    },
+    {
+     "field": "address_local",
+     "before": null,
+     "after": "武汉市徐家棚街道亲橙万象汇L501号"
+    }
+   ],
+   "expect_h": "19f9eafe77ac3c06",
+   "update_reason": "Chinese name and address from the brand's own RedNote account 武汉香蕉攀岩 (store list in its bio: 热干蕉—武汉市徐家棚街道亲橙万象汇L501号), read 2026-11-08"
+  },
+  {
+   "line": 2,
+   "class": "update",
+   "id": "seed-694",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "香蕉攀岩(恒隆广场店)"
+    },
+    {
+     "field": "address_local",
+     "before": null,
+     "after": "武汉市恒隆广场西座501B"
+    }
+   ],
+   "expect_h": "ac8f7d67989c4d02",
+   "update_reason": "Chinese name and address from the brand's own RedNote account 武汉香蕉攀岩 (store list in its bio: 糯米蕉—武汉市恒隆广场西座501B), read 2026-11-08"
+  },
+  {
+   "line": 3,
+   "class": "update",
+   "id": "seed-692",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "香蕉攀岩(华发中城商都店)"
+    },
+    {
+     "field": "address_local",
+     "before": null,
+     "after": "武汉市华发中城商都B1栋B1-L1-1号"
+    }
+   ],
+   "expect_h": "029808efe6926e5a",
+   "update_reason": "Chinese name and address from the brand's own RedNote account 武汉香蕉攀岩 (store list in its bio: 斑马蕉—武汉市华发中城商都B1栋B1-L1-1号), read 2026-11-08"
+  },
+  {
+   "line": 4,
+   "class": "update",
+   "id": "seed-695",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "香蕉攀岩(光谷K11店)"
+    },
+    {
+     "field": "address_local",
+     "before": null,
+     "after": "武汉市光谷K11购物艺术中心外街"
+    }
+   ],
+   "expect_h": "27128fdd079b448a",
+   "update_reason": "Chinese name and address from the brand's own RedNote account 武汉香蕉攀岩 (store list in its bio: 极光蕉—武汉市光谷K11购物艺术中心外街), read 2026-11-08"
+  },
+  {
+   "line": 5,
+   "class": "update",
+   "id": "seed-699",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "五岩六色攀岩馆"
+    }
+   ],
+   "expect_h": "a17b145028a1cfb7",
+   "update_reason": "Chinese name from the gym's own RedNote account (五岩六色攀岩馆: difficulty, speed and bouldering walls, 850 m2 of climbing), read 2026-11-08"
+  },
+  {
+   "line": 6,
+   "class": "update",
+   "id": "seed-704",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "K-PRO快意攀岩"
+    }
+   ],
+   "expect_h": "9ff3945e160ed3b4",
+   "update_reason": "Chinese name from the gym's own RedNote account (K-PRO快意攀岩: difficulty, speed and bouldering), read 2026-11-08"
+  },
+  {
+   "line": 7,
+   "class": "update",
+   "id": "seed-696",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "优胜美岩"
+    }
+   ],
+   "expect_h": "62d2944fc39e3daf",
+   "update_reason": "Chinese name from the gym's own RedNote account (优胜美岩, Wuhan), read 2026-11-08"
+  }
+ ]
+}

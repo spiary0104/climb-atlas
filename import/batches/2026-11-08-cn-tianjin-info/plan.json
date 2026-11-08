@@ -1,0 +1,45 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-11-08-cn-tianjin-info",
+ "index": {
+  "sha256": "39a2073843434f86764687342310f4cb7d0ff6d410fe2e798bd4ddd1635fd537",
+  "count": 3457,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-06-kr-seoul"
+ ],
+ "counts": {
+  "records": 1,
+  "new": 0,
+  "existing": 0,
+  "update": 1,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "1e4fa1b83892ba07038b2188e749aeac61075252bf1a81be3c106f9a4946863a",
+ "records": [
+  {
+   "line": 1,
+   "class": "update",
+   "id": "seed-784",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "芒果攀岩(金隅嘉品Mall店)"
+    }
+   ],
+   "expect_h": "77d61b49b8f697ff",
+   "update_reason": "Chinese name from the gym's own RedNote account (芒果攀岩, bio: 位置在金隅嘉品mall, 天津滨海新区), read 2026-11-08"
+  }
+ ]
+}
