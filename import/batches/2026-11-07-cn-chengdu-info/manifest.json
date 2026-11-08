@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "updater_version": 1,
+  "kind": "update",
+  "batch_id": "2026-11-07-cn-chengdu-info",
+  "status": "updated",
+  "target": {
+    "kind": "production",
+    "host": "thayxaampaelvntoaido.supabase.co"
+  },
+  "coverage": "FULL",
+  "plan_sha256": "99434e5d2e6263ddc94757964ac6613d9bdc7da5bd971fbfc568ea8107ec1ab6",
+  "payload_sha256": "f17954bd3721add50a0b73a1342ef496ce7bf932bce26b740ee4da9f47331da8",
+  "confirm_token": "ec7fa30ac84da6b2",
+  "live_state_sha256": "73c44b436e29dd4e00393d760b626d29c568190d61e564c6e20bfaf8f49e2b48",
+  "rows_updated": 0,
+  "approved_before": 3457,
+  "approved_after": 3457,
+  "changes": [],
+  "rows_info_filled": 8,
+  "info_filled": [
+    {
+      "id": "seed-606",
+      "fields": [
+        "name_local",
+        "address_local"
+      ],
+      "expect_h": "ad86c5956e8d6b37",
+      "after_h": "ad86c5956e8d6b37"
+    },
+    {
+      "id": "seed-607",
+      "fields": [
+        "name_local",
+        "address_local",
+        "hours",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "c1a85329d5051a93",
+      "after_h": "c1a85329d5051a93"
+    },
+    {
+      "id": "seed-608",
+      "fields": [
+        "name_local",
+        "address_local",
+        "hours",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "ad2453a89a1fa8e0",
+      "after_h": "ad2453a89a1fa8e0"
+    },
+    {
+      "id": "seed-614",
+      "fields": [
+        "name_local",
+        "address_local",
+        "hours",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "9d63e2aa25fca360",
+      "after_h": "9d63e2aa25fca360"
+    },
+    {
+      "id": "seed-611",
+      "fields": [
+        "name_local",
+        "address_local",
+        "visitor",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "47866f3d6eb6b0eb",
+      "after_h": "47866f3d6eb6b0eb"
+    },
+    {
+      "id": "seed-619",
+      "fields": [
+        "name_local",
+        "address_local",
+        "visitor",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "853e1e52dfb521fd",
+      "after_h": "853e1e52dfb521fd"
+    },
+    {
+      "id": "seed-622",
+      "fields": [
+        "name_local",
+        "address_local",
+        "hours",
+        "visitor",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "e4faf0925e79eb1c",
+      "after_h": "e4faf0925e79eb1c"
+    },
+    {
+      "id": "seed-629",
+      "fields": [
+        "name_local",
+        "address_local",
+        "hours",
+        "visitor",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "4c32a76f748d113a",
+      "after_h": "4c32a76f748d113a"
+    }
+  ],
+  "verification": {
+    "ok": true,
+    "checked": 8,
+    "problems": []
+  },
+  "started_at": "2026-11-08T13:01:35.876Z",
+  "finished_at": "2026-11-08T13:01:40.388Z",
+  "ids": [
+    "seed-606",
+    "seed-607",
+    "seed-608",
+    "seed-614",
+    "seed-611",
+    "seed-619",
+    "seed-622",
+    "seed-629"
+  ]
+}

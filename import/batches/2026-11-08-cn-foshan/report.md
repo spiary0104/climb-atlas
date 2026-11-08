@@ -12,7 +12,7 @@
 | Rejected by a human decision | 0 |
 | **Total records in batch** | 2 |
 
-Index: 3433 known gyms (sha256 ad459783ea35…). Plan: 3817cb969157… Also compared against staged batches: 2026-10-06-kr-seoul, 2026-11-08-cn-dongguan, 2026-11-08-cn-ningbo, 2026-11-08-cn-wuxi.
+Index: 3449 known gyms (sha256 61c44029c296…). Plan: 784ecf3390a9… Also compared against staged batches: 2026-10-06-kr-seoul, 2026-11-08-cn-dongguan, 2026-11-08-cn-ningbo, 2026-11-08-cn-wuxi.
 
 ## New gyms (2)
 
