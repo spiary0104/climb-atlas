@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-11-08-cn-ningbo",
+  "description": "Regional research \"China: Ningbo\": 1 new gym(s) accepted of 8 candidate(s)",
+  "created": "2026-11-08",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-11-08-cn-ningbo",
+    "section_sha256": "7eba5ccda7fd0ba669186901f1803235d776845f49578b8649e665a8e5df7944",
+    "sources_sha256": "00af994b92f41854337efaefe920df4e39f46dd8de5a96af1d103f4ad1df4949",
+    "candidates_sha256": "ecdf2238e915d564d4bc4a533c335b5c3f540a4cd1928488641dd8863873774c",
+    "reconcile_sha256": "f3b9a770b1457cf2e287cf81c08e990d1fd82d2950e8615971e1186862f59100",
+    "review_sha256": "dd1e0a97e4250f9b8691706fc323bce13a94ae1f70e3dac76915da80cada976f",
+    "candidates": 8,
+    "staged": 1,
+    "decisions": {
+      "accept": 1,
+      "defer": 7
+    }
+  },
+  "index_at_staging": {
+    "sha256": "ad459783ea351fd0a85662824778a0ef8ddbb1e5c89ee095cf6c306f78a3c641",
+    "count": 3433
+  }
+}

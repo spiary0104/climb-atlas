@@ -22,6 +22,8 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
   guidance + a minimal offline "download a city" mode later. Plan: https://claude.ai/artifact/GVHNLJWVT6gdQyQCVSM4Lm
 - Data: 14 verified pilot gyms + batch `2026-11-01-chengdu` (needs apply approval): `import/research/2026-11-01-chengdu/verification.md`.
   Visitor info: WeChat checks by someone with WeChat (owner note 2026-11-01). Hold PR #83's CN batches until the name_local schema.
+- Source (2026-11-08): the owner's WeChat desktop, read-only. A gym's own 公众号 article = official-social (URL via "Open in default browser");
+  Mini Programs/channels have no citable URL; 攀搭攀岩/岩馆探索 = community directory (supporting only). Never accept privacy prompts.
 - Next: Gate 1 PR 1 (name_local + visitor fields, local branch only), then the importer.
 - Map tiles: CARTO used keyless under its non-commercial terms (owner 2026-11-01); if use turns commercial or CARTO limits it,
   fall back to OpenFreeMap (measured reachable in mainland China too).

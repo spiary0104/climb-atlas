@@ -1,0 +1,31 @@
+{
+  "decisions": {
+    "g-23edc251e8": {
+      "decision": "distinct",
+      "reason": "Verified account HiRock嗨岩 (~2026-10-20) lists three stores with addresses; this one has a bouldering area. cn-wx-002/003 are the chain's other stores 5.0 and 9.8 km away.",
+      "reviewed_against": [
+        "g-4c551585a4",
+        "g-ce3fd5a6da"
+      ],
+      "reviewer": "Claude (AI) research worker; decisions drafted, pending owner sign-off"
+    },
+    "g-ce3fd5a6da": {
+      "decision": "distinct",
+      "reason": "Same verified HiRock post: Bodu River store (opened 2025-05) has a large bouldering wall; cn-wx-001/003 are separate stores 5.0 and 12.8 km away.",
+      "reviewed_against": [
+        "g-23edc251e8",
+        "g-4c551585a4"
+      ],
+      "reviewer": "Claude (AI) research worker; decisions drafted, pending owner sign-off"
+    },
+    "g-4c551585a4": {
+      "decision": "distinct",
+      "reason": "Same verified HiRock post: Red Star Macalline store (opened 2026-08) has a bouldering area; cn-wx-001/002 are separate stores 9.8 and 12.8 km away.",
+      "reviewed_against": [
+        "g-23edc251e8",
+        "g-ce3fd5a6da"
+      ],
+      "reviewer": "Claude (AI) research worker; decisions drafted, pending owner sign-off"
+    }
+  }
+}
