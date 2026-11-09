@@ -1,0 +1,72 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-11-08-cn-guiyang",
+ "index": {
+  "sha256": "39a2073843434f86764687342310f4cb7d0ff6d410fe2e798bd4ddd1635fd537",
+  "count": 3457,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-06-kr-seoul",
+  "2026-11-08-cn-changzhou",
+  "2026-11-08-cn-dalian",
+  "2026-11-08-cn-fuzhou",
+  "2026-11-08-cn-hefei",
+  "2026-11-08-cn-nanning",
+  "2026-11-08-cn-shenyang",
+  "2026-11-08-cn-zhengzhou",
+  "2026-11-08-cn-zhongshan",
+  "2026-11-08-cn-zhuhai"
+ ],
+ "counts": {
+  "records": 4,
+  "new": 4,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "6cde08ec3d28491450e20937ee4e2a045893391a5a1e4c6565bd1d7c968777e0",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-5e8a95f93e",
+   "id_frozen": true,
+   "name": "BBH Climbing Gym (Aha Lake)",
+   "country": "CN"
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-3024d10931",
+   "id_frozen": true,
+   "name": "Reyan Climbing",
+   "country": "CN"
+  },
+  {
+   "line": 3,
+   "class": "new",
+   "id": "g-6b9d2449ab",
+   "id_frozen": true,
+   "name": "Shankaka Climbing (CC PARK)",
+   "country": "CN"
+  },
+  {
+   "line": 4,
+   "class": "new",
+   "id": "g-df5297a59e",
+   "id_frozen": true,
+   "name": "Boiling Point Climbing (MixC)",
+   "country": "CN"
+  }
+ ]
+}
