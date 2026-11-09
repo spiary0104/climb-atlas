@@ -1,0 +1,51 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-11-08-cn-zhongshan",
+ "index": {
+  "sha256": "39a2073843434f86764687342310f4cb7d0ff6d410fe2e798bd4ddd1635fd537",
+  "count": 3457,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-06-kr-seoul",
+  "2026-11-08-cn-changzhou",
+  "2026-11-08-cn-dalian",
+  "2026-11-08-cn-shenyang",
+  "2026-11-08-cn-zhuhai"
+ ],
+ "counts": {
+  "records": 2,
+  "new": 2,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "864ae7912c7c7375e863965715a9fc719b903db3c1f262c027913856d960f2a2",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-a5c8d2ff93",
+   "id_frozen": true,
+   "name": "Hello Max Climbing (Tianyue City)",
+   "country": "CN"
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-a730cc985f",
+   "id_frozen": true,
+   "name": "Catree Climbing Gym",
+   "country": "CN"
+  }
+ ]
+}
