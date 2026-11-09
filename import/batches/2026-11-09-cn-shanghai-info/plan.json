@@ -1,0 +1,297 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-11-09-cn-shanghai-info",
+ "index": {
+  "sha256": "39a2073843434f86764687342310f4cb7d0ff6d410fe2e798bd4ddd1635fd537",
+  "count": 3457,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-06-kr-seoul",
+  "2026-11-08-cn-changzhou",
+  "2026-11-08-cn-dalian",
+  "2026-11-08-cn-fuzhou",
+  "2026-11-08-cn-guiyang",
+  "2026-11-08-cn-harbin",
+  "2026-11-08-cn-hefei",
+  "2026-11-08-cn-nanchang",
+  "2026-11-08-cn-nanning",
+  "2026-11-08-cn-shenyang",
+  "2026-11-08-cn-xining",
+  "2026-11-08-cn-yinchuan",
+  "2026-11-08-cn-zhengzhou",
+  "2026-11-08-cn-zhongshan",
+  "2026-11-08-cn-zhuhai"
+ ],
+ "counts": {
+  "records": 10,
+  "new": 0,
+  "existing": 0,
+  "update": 10,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "eabd6aa7dae0087998cefef12ebc46bfa70e113d217e401fe068f458e7b46dce",
+ "records": [
+  {
+   "line": 1,
+   "class": "update",
+   "id": "seed-535",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "香蕉攀岩(金虹桥店)"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "7am–11pm",
+      "tue": "7am–11pm",
+      "wed": "7am–11pm",
+      "thu": "7am–11pm",
+      "fri": "7am–11pm",
+      "sat": "7am–11pm",
+      "sun": "7am–11pm"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.xiaohongshu.com/user/profile/64dceae2000000000200f284"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-social"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-09"
+    }
+   ],
+   "expect_h": "d300ea0873216669",
+   "update_reason": "Chinese store name and hours from the brand's own RedNote bio (香蕉攀岩上海: 金虹桥店 07:00-23:00), read 2026-11-09"
+  },
+  {
+   "line": 2,
+   "class": "update",
+   "id": "seed-541",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "岩时攀岩(西岸梦中心店)"
+    }
+   ],
+   "expect_h": "081f83f43fab71f1",
+   "update_reason": "Chinese store name from the brand's own RedNote bio (岩时攀岩上海: 西岸梦中心店 营业中（难度）), read 2026-11-09"
+  },
+  {
+   "line": 3,
+   "class": "update",
+   "id": "seed-537",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "尽峰攀岩(189馆)"
+    }
+   ],
+   "expect_h": "041ffd7bc4d2a5ea",
+   "update_reason": "Chinese name from the brand's own RedNote bio (尽峰攀岩Acme Climbing: 在上海设有闵行、嘉定、189三家分馆), read 2026-11-09"
+  },
+  {
+   "line": 4,
+   "class": "update",
+   "id": "seed-567",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "尽峰攀岩(嘉定馆)"
+    }
+   ],
+   "expect_h": "9811a435b2c9b392",
+   "update_reason": "Chinese name from the brand's own RedNote bio (尽峰攀岩Acme Climbing: 闵行、嘉定、189三家分馆) and its 尽峰攀岩嘉定馆 assistant account, read 2026-11-09"
+  },
+  {
+   "line": 5,
+   "class": "update",
+   "id": "seed-551",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "尽峰攀岩(闵行馆)"
+    }
+   ],
+   "expect_h": "0795335750c7ed31",
+   "update_reason": "Chinese name from the brand's own RedNote bio (尽峰攀岩Acme Climbing: 闵行、嘉定、189三家分馆; Meilong is the Minhang branch), read 2026-11-09"
+  },
+  {
+   "line": 6,
+   "class": "update",
+   "id": "seed-544",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "DOME攀岩营地(徐汇万科店)"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–11pm",
+      "tue": "10am–11pm",
+      "wed": "10am–11pm",
+      "thu": "10am–11pm",
+      "fri": "10am–11pm",
+      "sat": "10am–11pm",
+      "sun": "10am–11pm"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.xiaohongshu.com/user/profile/59e5730e4eacab274753f290"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-social"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-09"
+    }
+   ],
+   "expect_h": "2f48af73097b3a02",
+   "update_reason": "Chinese store name and hours from the brand's own RedNote bio (DOME攀岩营地: 徐汇万科店【全年10:00-23:00】), read 2026-11-09"
+  },
+  {
+   "line": 7,
+   "class": "update",
+   "id": "seed-558",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "DOME攀岩营地(长宁定西路店)"
+    }
+   ],
+   "expect_h": "32d7f1cd88a61e4b",
+   "update_reason": "Chinese store name from the brand's own RedNote bio (DOME攀岩营地: 长宁定西路店; hours given as weekdays/holidays, left empty), read 2026-11-09"
+  },
+  {
+   "line": 8,
+   "class": "update",
+   "id": "seed-591",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "岩顶攀岩 Rock Summit"
+    }
+   ],
+   "expect_h": "0389c7a5e25da330",
+   "update_reason": "Chinese name from the gym's own RedNote account (岩顶攀岩Rock Summit, Shanghai; posts 2026-10/11), read 2026-11-09"
+  },
+  {
+   "line": 9,
+   "class": "update",
+   "id": "seed-593",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "Rock攀岩俱乐部"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "1pm–10pm",
+      "tue": "1pm–10pm",
+      "wed": "1pm–10pm",
+      "thu": "1pm–10pm",
+      "fri": "1pm–10pm",
+      "sat": "11am–9pm",
+      "sun": "11am–9pm"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.xiaohongshu.com/user/profile/662baabf0000000003033557"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-social"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-09"
+    }
+   ],
+   "expect_h": "f42d00e4fd8627fa",
+   "update_reason": "Chinese name and hours from the gym's own RedNote bio (Rock攀岩俱乐部, 上海普陀; Mon-Fri 13:00-22:00, weekends 11:00-21:00), read 2026-11-09"
+  },
+  {
+   "line": 10,
+   "class": "update",
+   "id": "seed-569",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "五加攀岩南翔馆"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "10am–10pm",
+      "sun": "10am–10pm"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.xiaohongshu.com/user/profile/653e5bec0000000030032251"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-social"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-09"
+    }
+   ],
+   "expect_h": "c4d376ca64d2c6cb",
+   "update_reason": "Chinese name and hours from the gym's own RedNote bio (五加攀岩南翔馆, 南翔太茂广场店; weekdays and holidays 10:00-22:00), read 2026-11-09"
+  }
+ ]
+}
