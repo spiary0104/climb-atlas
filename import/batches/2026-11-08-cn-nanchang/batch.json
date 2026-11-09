@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-11-08-cn-nanchang",
+  "description": "Regional research \"China: Nanchang\": 1 new gym(s) accepted of 5 candidate(s)",
+  "created": "2026-11-08",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-11-08-cn-nanchang",
+    "section_sha256": "70e39be99a00e9a63291a7badd871e670a045a9e3248a4aeb881406c77ab2e30",
+    "sources_sha256": "64f23c23665954a5a56ede8be69176c97d6b8bc9f44b6d409b7d079fa060870d",
+    "candidates_sha256": "043c8679d89c68f814c6ce0434105dc8f4088de60e68e91a1c096b67fffc11bf",
+    "reconcile_sha256": "ec049dd88eb8b5c170ae433809d1fd8eaa7299b6eda19b73456abe95e7d3fa62",
+    "review_sha256": "f3718bef92c99c2209f6de8428f78808fb4ba17624a4ade8ad5407c83f61b208",
+    "candidates": 5,
+    "staged": 1,
+    "decisions": {
+      "accept": 1,
+      "defer": 4
+    }
+  },
+  "index_at_staging": {
+    "sha256": "39a2073843434f86764687342310f4cb7d0ff6d410fe2e798bd4ddd1635fd537",
+    "count": 3457
+  }
+}
