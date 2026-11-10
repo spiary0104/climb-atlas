@@ -21,3 +21,12 @@ Deferred by the "keep low-confidence gyms out" rule. None is in the staged batch
    - URL: https://www.hapik.com/ (could not be fetched)
    - Question: Does this family auto-belay "fun climbing" centre have a real bouldering area? The indoorclimbinggym.com directory tags it "bouldering" and "lead", but describes 150+ auto-belay routes.
    - Findings: Directory only; the gym's own site could not be fetched.
+
+## Follow-up 2026-11-11 (public-source verification)
+
+Method: checked by Claude (AI) on public sources; ChatGPT leads re-verified; nothing written to production. No row was settled by a later commit or review file (only the section commit itself mentions these gyms), so none is ALREADY RESOLVED unless stated.
+
+- **La Vida Rock Gym (Gordon College), Wenham MA**: STATUS: RESOLVED: eligible, accept through the import pipeline (confidence H). Gordon's own page says 'Open Gym currently runs Monday through Thursday from 6-9 p.m., and ages 3 through adult can boulder and climb', open to the general public (day pass $18, no reservation), at La Vida Center, 255 Grapevine Road, Wenham MA 01984. The page gives no term dates; phone 978-867-4111 can confirm this term. Sources: https://www.gordon.edu/lavida/rock-gym (checked 2026-11-11). Next: stage through the import pipeline.
+- **Everyday Athlete, Brooklyn Heights**: STATUS: OPEN (confidence L). everydayathlete.com returned HTTP 403. A MapQuest listing shows 130 Clinton St as closed and directories describe it as kid-oriented; no adult drop-in evidence. Sources: https://startpage.mapquest.com/us/new-york/everyday-athlete-26840574 (checked 2026-11-11). Next: owner opens the site in a browser; keep out until adult drop-in is shown.
+- **Beta Climbing & Fitness, Stamford CT**: STATUS: CONFLICTING (confidence L). Directories list 45 Harbor Drive, Stamford (203-580-9963) and an old Groupon with 20,000 sq ft of terrain, but an Airbnb listing shows it permanently closed; no official site or news found. Conflicting third-party signals only. Sources: https://99boulders.com/connecticut-climbing-gyms ; https://www.airbnb.com/things-to-do/places/12710122 (checked 2026-11-11). Next: phone 203-580-9963; keep out until confirmed.
+- **Hapik Yonkers, Yonkers NY**: STATUS: OPEN (confidence L). hapik.com failed with a certificate error; not verified. Sources: https://www.hapik.com/ (checked 2026-11-11). Next: owner opens in a browser.

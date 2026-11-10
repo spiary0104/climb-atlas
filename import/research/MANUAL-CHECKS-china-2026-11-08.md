@@ -23,3 +23,18 @@ Method as in the 2026-11-08 sections: Amap search (`攀岩`, 1 page) in the owne
 | Taiyuan | (see the 2026-11-08 five-city notes: 新途, 可以, 昱攀) | - | deferred earlier |
 
 Deferred gyms inside the cities that do have sections are listed with reasons in each section's `review.json`.
+
+## Follow-up 2026-11-11 (public-source verification)
+Method: checked by Claude (AI) on public sources; ChatGPT leads re-verified; nothing written to production. Every row needs a gym's own RedNote/WeChat read, which is out of bounds here; amap.com/place pages return no place data and web search (e.g. 78山丘抱石 Shijiazhuang) returned only unrelated mall news.
+- **Changchun 魔崖攀岩 (B0FFKUNFK4)**: STATUS: OPEN (confidence Low). Last own post 2026-03; no newer source. Next: own account.
+- **Changchun A+攀岩 (B0MBAK8AS6)**: STATUS: OPEN (confidence Low). Bouldering not stated. Next: own account.
+- **Changchun 长春乐豹攀岩 (B0KDHSIINX, CN-029)**: STATUS: OPEN (confidence Low). ChatGPT agrees: do not infer bouldering from a league round. Sources: https://www.amap.com/place/B0KDHSIINX (no data returned, checked 2026-11-11). Next: own photos / league format.
+- **Shijiazhuang 78山丘抱石 (B0K0S57AM7)**: STATUS: OPEN (confidence Low). Bouldering-only brand; which store is open is unconfirmed; no web source found. Next: owner confirms the open store's address (likely addable then).
+- **Shijiazhuang 厘米攀岩 (B0M1UH91BB); 丘山, 运动茂, 溜溜猴**: STATUS: OPEN (confidence Low). Nothing new.
+- **Haikou 道博攀岩馆 (B0FFHLSCSD, CN-033)**: STATUS: OPEN (confidence Low). ChatGPT cites a different Amap POI B0LBXUJHI5 for 王府井海垦店; not verifiable (page returned no data), identity and status stay unreconciled; last own post 2024-12. Sources: https://www.amap.com/place/B0LBXUJHI5 (checked 2026-11-11). Next: compare the two POIs in Amap.
+- **Haikou 采星攀岩 (吾悦店, CN-034; ChatGPT gives B0IR1ZUK6N)**: STATUS: OPEN (confidence Low). Only an old (2022) review is reported; no current source. Next: owner-controlled 2026 notice.
+- **Sanya 微澜攀岩俱乐部 (B0MACLWPWC)**: STATUS: OPEN (confidence Low). No account; nothing public.
+- **Urumqi 橘攀 (B0L6UAR5RN), 岩咖, 变色龙 (B0MBUXN2X5)**: STATUS: OPEN (confidence Low). Nothing new. 岩咖's last bouldering post is 2025-04, older than 12 months, so not eligible on that evidence.
+- **Hohhot 蒙攀 (B0FFKF000S)**: STATUS: OPEN (confidence Low). Last post 2025-03, youth focus; not eligible on this evidence.
+- **Lanzhou 马牙club, 大圣, 脆脆鲨, 瑞德摩尔**: STATUS: OPEN (confidence Low). Nothing new.
+- **Taiyuan 新途, 可以, 昱攀**: STATUS: OPEN (confidence Low). Commit 59aefd7: "Taiyuan checked, nothing confirmed"; the 昱攀 brand's Yinchuan stores were deferred (no current post, 2026-11-08-cn-yinchuan). Next: own accounts.

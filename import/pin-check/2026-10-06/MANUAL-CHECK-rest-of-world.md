@@ -234,3 +234,31 @@ Gyms I could not settle from a readable primary source. For each: open the URL(s
 - Found: No official source found. The database address is only block level; GSI places 大谷地西1丁目2番 at 43.027988,141.446198 (9.6 km from the pin 43.07,141.345 which is in central Sapporo), but no gou-level address or evidence of the gym itself.
 - Current pin: 43.07, 141.345 | address: 1-2 Ooyachinishi, Atsubetsu Ward, Sapporo, Hokkaido 004-0042
 
+
+
+## Follow-up 2026-11-11 (public-source verification)
+
+Checked by Claude (AI) on public sources; ChatGPT leads re-verified; nothing written to production.
+
+- **Fit Rock Arena Chetpet (g-974370b036)**: STATUS: NEEDS HUMAN (confidence M). Pin/entrance needs a map inspection; a street address alone does not fix a pin. The earlier note puts the park's entrance 400-570 m from the current pin. Sources: none new (checked 2026-11-11). Next: owner drops a pin on the entrance.
+- **Discovery Climbing Square ICN (seed-1215)**: STATUS: NEEDS HUMAN (confidence M). Pin/entrance needs a map inspection; a street address alone does not fix a pin. The official address (Wanjeong-ro 70, 5F) is verified by the earlier note. Sources: none new (checked 2026-11-11). Next: owner drops a pin on the entrance.
+- **The Climbing Centre, Penrith (seed-13)**: STATUS: NEEDS HUMAN (confidence M). Pin/entrance needs a map inspection; a street address alone does not fix a pin. Official address 3/16-24 Borec Rd per its contact page. Sources: none new (checked 2026-11-11). Next: owner drops a pin on the entrance.
+- **Das Pedras (seed-1412)**: STATUS: NEEDS HUMAN (confidence M). Pin/entrance needs a map inspection; a street address alone does not fix a pin. Address on the gym's own site (Rua Cristina 1318). Sources: none new (checked 2026-11-11). Next: owner drops a pin on the entrance.
+- **Up Escalada (seed-1413)**: STATUS: NEEDS HUMAN (confidence M). Pin/entrance needs a map inspection; a street address alone does not fix a pin. Address correction (Av. Dep. Cristovam Chiaradia 155, Buritis) is from directories, not official. Sources: none new (checked 2026-11-11). Next: owner drops a pin on the entrance.
+- **ROKAZ Buritis (seed-1415)**: STATUS: NEEDS HUMAN (confidence M). Pin/entrance needs a map inspection; a street address alone does not fix a pin. Address on rokaz.com.br. Sources: none new (checked 2026-11-11). Next: owner drops a pin on the entrance.
+- **Skale Muro de Escalada, Chia (seed-1543)**: STATUS: OPEN (confidence L). No address in any readable source. Sources: none new (checked 2026-11-11). Next: owner finds an address.
+- **Geko Escalada, Yumbo (seed-1545)**: STATUS: OPEN (confidence L). Earlier note: only outdoor Geko Vertical found; indoor wall unknown. Sources: none new (checked 2026-11-11). Next: owner confirms or retires.
+- **Extrema Aventura, Cucuta (seed-1546)**: STATUS: NEEDS HUMAN (confidence M). Pin/entrance needs a map inspection; a street address alone does not fix a pin. Sources: none new (checked 2026-11-11). Next: owner drops a pin on the entrance.
+- **Norte Extremo, Cucuta (seed-1547)**: STATUS: NEEDS HUMAN (confidence M). Pin/entrance needs a map inspection; a street address alone does not fix a pin. Sources: none new (checked 2026-11-11). Next: owner drops a pin on the entrance.
+- **Aventuras Positivas - Comfatolima, Ibague (seed-1549)**: STATUS: OPEN (confidence L). Whether it still operates was not researched this pass. Sources: none new (checked 2026-11-11). Next: owner answer (retire if closed).
+- **La Ecopared, Pasto (seed-1552)**: STATUS: NEEDS HUMAN (confidence M). Pin/entrance needs a map inspection; a street address alone does not fix a pin. Sources: none new (checked 2026-11-11). Next: owner drops a pin on the entrance.
+- **Boulder, Rubio (seed-1575) / Cueva de Escalada Alain (seed-1576) / Psicoblock En Piscina (seed-1577) / Jose Daniel Arciniegas Contreras (seed-1578)**: STATUS: NEEDS HUMAN (confidence L). Venezuelan entries with no readable source; need a pin or a duplicate/identity decision. Sources: none new (checked 2026-11-11). Next: owner.
+- **PCMC Wall, Pimpri Chinchwad (seed-1589)**: STATUS: NEEDS HUMAN (confidence L). Two candidate venues; owner chooses and pins. Sources: none new (checked 2026-11-11). Next: owner.
+- **BR 135 Climbing Club, Palu (seed-1604) / Bungo Boulder (seed-1606) / Muro de Puyo (seed-1652)**: STATUS: NEEDS HUMAN (confidence L). Need an address/pin; not researched beyond the earlier note. Sources: none new (checked 2026-11-11). Next: owner.
+- **Bloque, Lima (seed-1725)**: STATUS: OPEN (confidence L). Existence not established; placeholder pin. Sources: none new (checked 2026-11-11). Next: owner or retire.
+- **Butterfly Climbing Gym (seed-1850) and Urban Stone (seed-1851), Kwai Chung**: STATUS: NEEDS HUMAN (confidence M). Pin/entrance needs a map inspection; a street address alone does not fix a pin. Both share the building at 38-42 Kwai Fung Crescent. Sources: none new (checked 2026-11-11). Next: owner drops a pin on the entrance.
+- **CLIMB Partner, Ulaanbaatar (seed-1876)**: STATUS: NEEDS HUMAN (confidence M). Pin/entrance needs a map inspection; a street address alone does not fix a pin. Sources: none new (checked 2026-11-11). Next: owner drops a pin on the entrance.
+- **Nevada Climbing Center (seed-236)**: STATUS: NEEDS HUMAN (confidence M). Pin/entrance needs a map inspection; a street address alone does not fix a pin. Address 3065 E Patrick Ln STE 4. Sources: none new (checked 2026-11-11). Next: owner drops a pin on the entrance.
+- **Escalade Rock Climbing Gym, Kennesaw (seed-248)**: STATUS: NEEDS HUMAN (confidence M). Pin/entrance needs a map inspection; a street address alone does not fix a pin. Address 3694 Kennesaw South Industrial Dr. Sources: none new (checked 2026-11-11). Next: owner drops a pin on the entrance.
+- **The Climb'n Shop, Carrollton (seed-251)**: STATUS: OPEN (confidence L). Only a Mountain Project directory name listing found; no wall details or recent source. Sources: https://www.mountainproject.com/gyms/georgia (checked 2026-11-11). Next: owner phone check or retire.
+- **Club Sol Station Sapporo (seed-434)**: STATUS: OPEN (confidence L). No official source; the block-level address plots about 9.6 km from the pin (earlier note). Sources: https://rockgym.jp/gym-all/hokkaido/ (checked 2026-11-11). Next: owner finds the gym or retires.

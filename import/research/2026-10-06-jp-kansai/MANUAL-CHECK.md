@@ -55,3 +55,27 @@ Owner rule applied: low-confidence gyms are kept out. Each line below needs one 
 | 40 | Nishikita Climbing Wall | Nishinomiya | https://nisikita.exblog.jp/ | Self-service wall (500 yen/day, post 2026-02-01): does it have bouldering? |
 | 41 | UP Climbing Gym | Iwade, Wakayama | https://www.climbing-net.com/gym_detail/up-climbing-gym/ | A source says closed; open? |
 | 42 | WAGOMU Climbing Gym (existing seed) | Nagata, Kobe | https://www.wagomu.jp/ | The Bouldeer pin is about 4 km from the address rockgym.jp lists; site does not connect. Where is it? |
+
+
+## Follow-up 2026-11-11 (public-source verification)
+Checked by Claude (AI) on public sources; ChatGPT leads re-verified (none concerned this file); nothing written to production. Own sites were fetched with a text fetcher; Instagram and X are not readable without login. The 2026-11-06 jp-kansai-recheck batch (Boulder plus, Cronico, CRUX Osaka, DAWN, FunC2, Galera, Hinotama, MAHOROBA FOREST, OLD BUT GOLD, Rock Mate Otsu, SAN, Suhara Ikeda and Takarazuka) staged none of the gyms below, so none is ALREADY RESOLVED. Numbers are the row order of the checklist.
+
+- **Climbing Gym LINKS, Daito (1)**: STATUS: OPEN (L). Site fetch failed with a TLS error; X not readable. Sources: http://www.climbing-links.com/ (checked 2026-11-11). Next: browser read of the site/X.
+- **Chargo Climbing Gym Hanada, Himeji (2)**: STATUS: OPEN (L). TLS error, site not read; the entrance pin question also needs a map. Sources: http://chargo.info/ (checked 2026-11-11). Next: browser read; owner drops pin.
+- **CAL-COLO Kizugawa (3)**: STATUS: OPEN (M). Site states "opened 2023-04-22", describes a bouldering gym (spray wall, Kilter and Moon boards, kids wall) with regular hours, but shows no dated news. Sources: https://cal-colo.com/ (checked 2026-11-11). Next: a 2026 post or phone.
+- **GRANDWAZOO Osaka Kashiwara (4)**: STATUS: OPEN (M). The chain's site has a "Nara-Kashiwara" store page (奈良県橿原市五位堂町255-4; Tuesday closed) with hours and news items about Golden Week, year-end hours and "November 1-2", but no Osaka Kashiwara page and the fetch could not show years. Whether the dataset's "Osaka Kashiwara" is this Nara store is not established. Sources: https://grandwazoo-climbing.com/ (checked 2026-11-11). Next: compare the record's address with 橿原市五位堂町255-4; read the page in a browser.
+- **LUCLU Kyoto (5)**: STATUS: OPEN (M). The official site announces "OPEN" for 2026-09-19 (already past) and describes a bouldering concept, but the only address on the page is the Neyagawa (Osaka) store, 大阪府寝屋川市松屋町1-13; the Kyoto address is not printed. Sources: https://www.luclu.net/ (checked 2026-11-11). Next: obtain the Kyoto store address (store page, IG or phone 072-395-1900); then accept through the pipeline.
+- **6.spider (Rock Spider), Tennoji (6)**: STATUS: OPEN (L). Not researched in this pass (directory-only lead). Sources: none. Next: own site/IG search.
+- **Fellows Climbing, Kashiba (7)**: STATUS: OPEN (L). Not researched in this pass (site gave 403 earlier). Sources: none. Next: browser read.
+- **Aogaki, Yamatokoriyama (8)**: STATUS: OPEN (L). Not researched in this pass. Sources: none. Next: browser read.
+- **Community Park OTSUKYO, Otsu (9)**: STATUS: OPEN (L). Not researched in this pass. Sources: none. Next: browser read.
+- **cocomo, Sumoto (10)**: STATUS: OPEN (L). Not researched in this pass. Sources: none. Next: browser read.
+- **Bouldering Life, Himeji (11)**: STATUS: OPEN (L). Not researched in this pass. Sources: none. Next: IG search.
+- **RIVERSTONE, Sumoto (12)**: STATUS: OPEN (L). Not researched in this pass. Sources: none. Next: IG search.
+- **Freeze's Cave Tanba (13)**: STATUS: OPEN (L). Not researched in this pass (domain taken over by spam per the earlier pass). Sources: none. Next: IG search.
+- **milnorte, Kyoto (14)**: STATUS: OPEN (L). Not researched in this pass. Sources: none. Next: browser read.
+- **FUSHIMITTO, Kyoto (15)**: STATUS: OPEN (L). Not researched; also a category-policy question (fitness club with a wall). Sources: none. Next: owner policy.
+- **You-Rock Bouldering Gym, Maizuru (16)**: STATUS: OPEN (L). Site's one full-year dated post is 2023-05-24; the embedded Instagram feed is broken (expired token) and shows month/day only; hours are in a Google Calendar not readable here. Sources: https://you-rock-bouldering.com/ (checked 2026-11-11). Next: phone 0773-63-5677 or IG in a browser.
+- **Nishikita Climbing Wall, Nishinomiya (17)**: STATUS: OPEN (M). Blog's newest post is 2026-02-01 (usage guide); the wall is self-service, open daily about 10:00-23:00, and uses 課題 (set problems) but the text never says bouldering. Sources: https://nisikita.exblog.jp/ (checked 2026-11-11). Next: a gym source that says bouldering; municipal/self-service category check.
+- **UP Climbing Gym, Iwade (18)**: STATUS: OPEN (L). The directory page returned HTTP 503; the "closed" claim remains unverified either way. Sources: https://www.climbing-net.com/gym_detail/up-climbing-gym/ (checked 2026-11-11). Next: own source or phone.
+- **WAGOMU Climbing Gym pin (19)**: STATUS: NEEDS HUMAN (H). The operator site did not resolve (DNS) on 2026-11-11, so no entrance was read. Sources: https://www.wagomu.jp/ (checked 2026-11-11). Next: owner compares the Bouldeer pin with the rockgym.jp address on a map (about 4 km off).

@@ -57,3 +57,44 @@ Also seen: BoulderBase (accepted) announced a new gym "CLIMBING BASE ROOTS" open
 |---|---|
 | Bouldering Gym Trans | Drop a pin on the building (only a street-level pin from the centre of the gym's own map embed). The gym passes otherwise. |
 | rocks Climbing Gym Kurashiki | Drop a pin on the building (only a street-level pin from the centre of the gym's own map embed). The gym passes otherwise. |
+
+
+## Follow-up 2026-11-11 (public-source verification)
+Checked by Claude (AI) on public sources; ChatGPT leads re-verified (none concerned this file); nothing written to production. Own sites were fetched with a text fetcher; Instagram is not readable without login. None of these gyms was staged in the 2026-11-06 re-check batches (those covered Chubu, Kansai, Kanto, Kita-Kanto and Nagasaki only), so none is ALREADY RESOLVED. Numbers are the row order of the checklist. Municipal and fitness-club rows also depend on the owner's category policy (see MANUAL-CHECKS-japan-2026-11-06.md section D).
+
+- **TAiiKU, Towada (1)**: STATUS: OPEN (M). Official page confirms a bouldering area with a full wall (visitor 1,500 yen, shoes/chalk 300 yen, weekdays 9-21, Wednesday closed, weekends 10-19) and a kids class; the page itself has no date (earlier pass: site news 2026-08-20). A general sports gym, so category policy applies. Sources: https://loco-siki.co.jp/taiiku/ (checked 2026-11-11). Next: owner policy; if yes, eligible on this evidence.
+- **P-SPO24 DAINO, Matsuyama (2)**: STATUS: CONFLICTING (M). The official page lists a bouldering section on floors 5-6 with visitor fees (1,500 yen, first visit 500 yen) and, on the same page, says the DAINO store is members-only and non-members cannot enter even with a member. Sources: https://pspo.jp/daino/ (checked 2026-11-11). Next: phone 070-3166-7123 to learn whether walk-in visitors are allowed; keep out until then.
+- **Mutsu Maeda Arena (3)**: STATUS: OPEN (M). Official guide: bouldering room open for individual hourly use (300 yen adults, 150 yen students; whole room 3,000 yen/h; facility 9-21, Tuesday closed). Page undated (IG 2026-10-09 per earlier pass). Municipal. Sources: https://www.mutsu-arena.jp/hp/guide/ (checked 2026-11-11). Next: owner policy.
+- **Iwate Prefectural Athletic Park wall (4)**: STATUS: OPEN (L). Page names the sport climbing venue but gives no public hours, fees or bouldering detail. Sources: https://www.iwate-sc.jp/facilities/iwate-undou-climbing (checked 2026-11-11). Next: office 019-641-1127 or the prefecture facility page.
+- **Kurayoshi Sports Climbing Centre (5)**: STATUS: OPEN (M). Site news shows a bouldering experience event (2026-07-22); facility use is by reservation through a prefectural booking service; no regular public bouldering hours read. Sources: https://kuratai.jp/ (checked 2026-11-11). Next: owner policy; confirm drop-in vs reservation-only.
+- **Yamaguchi Seminar Park climbing wall (6)**: STATUS: RESOLVED: keep out (M). The operator page (copyright 2022) lists bouldering houses and lead walls but restricts use to foundation-certified users, Kokutai-expected participants and certified instructors, i.e. not general public. Sources: https://www.hito21.jp/seminarpark/park/climbing/ (checked 2026-11-11). Next: none.
+- **Uwajima Sports Exchange Centre, Ishizuchi Climbing Park, Motoyama Yoshino, Yuhara (7)**: STATUS: OPEN (L). Not researched in this pass. Sources: none. Next: per-facility check and owner policy.
+- **Genki Field Sendai (8)**: STATUS: OPEN (L). The old URL redirects to genkifieldsendai.com, which lists a bouldering room in its facility menu but the 2026 public-use notice read (10/31-11/13) covers other sports; no bouldering hours read. Sources: https://www.genkifieldsendai.com/ (checked 2026-11-11). Next: read the facility page's bouldering section; owner policy.
+- **FLAT bouldering, Yamagata (9)**: STATUS: NEEDS HUMAN (H). Pin for 北町2-1-30. Sources: https://flatbouldering.com/. Next: owner drops pin.
+- **NOBARIA CLIMBING GYM, Sagae (10)**: STATUS: NEEDS HUMAN (H). Pin for 中央工業団地158-10. Sources: https://k-kaisei.com/nobaria_facility/. Next: owner drops pin.
+- **Climbing Park HOME, Izumo (11)**: STATUS: NEEDS HUMAN (H). Pin for 姫原2-9-9. Sources: https://bouldering-gym-home.amebaownd.com/. Next: owner drops pin.
+- **Roots, Aizumi (12)**: STATUS: NEEDS HUMAN (H). Pin for 奥野矢上前95-2. Sources: https://www.roots.tips/. Next: owner drops pin.
+- **Lion Bouldering Space, Komatsushima (13)**: STATUS: NEEDS HUMAN (H). Pin for 菖蒲田16-3. Sources: IG only. Next: owner drops pin.
+- **MINA. UTARI, Tonosho (14)**: STATUS: NEEDS HUMAN (H). Pin for 伊喜末2470-1. Sources: https://minautari.com/. Next: owner drops pin.
+- **iTTE Kagawa, Takamatsu (15)**: STATUS: NEEDS HUMAN (H). Pin for 上天神町272-3. Sources: https://www.itteclimbing.com/. Next: owner drops pin.
+- **STANCE, Takamatsu (16)**: STATUS: NEEDS HUMAN (H). Embed vs GSI 330 m apart. Sources: http://stance-bouldering.com/. Next: owner picks pin.
+- **Climbing Studio BRAVE Himehara, Matsuyama (17)**: STATUS: NEEDS HUMAN (H). Embed vs GSI 3.4 km apart. Sources: https://www.climbingstudio-brave.com/. Next: owner picks pin.
+- **Crager's Oshu Mizusawa (18)**: STATUS: OPEN (L). TLS error, site not read. Sources: http://www.cragers.jp/crgers_om.html (checked 2026-11-11). Next: browser read or IG caption.
+- **THE STONE SESSION, Morioka (19)**: STATUS: OPEN (L). Instagram only; not fetched. Sources: none. Next: owner glance at IG.
+- **ONE MOVE, Morioka (20)**: STATUS: RESOLVED: eligible, accept through the import pipeline (M). Own site describes bouldering walls plus an 8 m x 12 m lead wall, kids school and trial lessons, with hours that changed under new management and a November 2026 calendar (no closures listed); phone 019-656-3110. The Instagram handle question is not settled (the site links Facebook ClimbingSpotONEMOVE and no IG handle), so use the website as the source. Sources: http://www.onemove-climbing.com/ (checked 2026-11-11). Next: stage with the site as source; pin per pipeline.
+- **Diverse Rock Climbing, Fukushima (21)**: STATUS: OPEN (L). Not researched in this pass. Sources: none. Next: IG.
+- **Kabeya, Izumo (22)**: STATUS: OPEN (L). Not researched in this pass. Sources: none. Next: IG.
+- **Rub a Dub, Hikari (23)**: STATUS: OPEN (L). Not researched in this pass. Sources: none. Next: IG.
+- **Climbing field High-Land, Zentsuji (24)**: STATUS: OPEN (L). Not researched in this pass. Sources: none. Next: IG.
+- **Jumbo, Takamatsu (25)**: STATUS: OPEN (L). Not researched in this pass. Sources: none. Next: IG.
+- **CROSSPOINT, Shikokuchuo (26)**: STATUS: OPEN (L), leaning keep out. Shop page lists hours and phone only and never mentions a bouldering wall. Sources: https://crosspoint-mt.com/ (checked 2026-11-11). Next: phone 0897-58-6373.
+- **Healthpia Kurashiki (27)**: STATUS: OPEN (L). Not researched in this pass. Sources: none. Next: IG/phone.
+- **Fortune Takakura, Tsuyama (28)**: STATUS: OPEN (L). Not researched in this pass. Sources: none. Next: IG/phone.
+- **indoor sports park SUNBOW, Daisen (29)**: STATUS: OPEN (L). Not researched in this pass. Sources: none. Next: IG/phone.
+- **Youzan Wall, Yonezawa (30)**: STATUS: OPEN (L). NPO activity-park page names climbing only as one of its sports, no bouldering statement, no wall hours or fees. Sources: http://actionparkyonezawa.jp/ (checked 2026-11-11). Next: phone or IG.
+- **Skypia Adatara Active Park and Hale Rock (31)**: STATUS: OPEN (L). Not researched in this pass. Sources: none. Next: owner policy plus per-site check.
+- **Taka, Trailrock, Gens d'armes Iwaki, LABO Kudamatsu, OWL, Uwajima Climbing Gym (32)**: STATUS: OPEN (L). Not researched in this pass. Sources: none. Next: per-gym check.
+- **Possibly closed list: RAT Aomori/Hirosaki, Garapaka, Monkeypod, Romanov, Rock & Fiddle, Stone LAV, Matsu, Moment, Key Stone, Ascent Ray (33)**: STATUS: OPEN (L). Not researched in this pass; stay out. Sources: none. Next: per-gym check.
+- **CLIMBING BASE ROOTS (34)**: STATUS: OPEN (L). A web search for the gym name and the announced 2026-10-31 opening returned nothing relevant; opening is unverified. Sources: web search (checked 2026-11-11); @b.base.izm not readable. Next: owner glance at the IG post; then a new research item.
+- **Bouldering Gym Trans (35)**: STATUS: NEEDS HUMAN (H). Building-level pin needed. Sources: none. Next: owner drops pin.
+- **rocks Climbing Gym Kurashiki (36)**: STATUS: NEEDS HUMAN (H). Building-level pin for 平田260-1 needed. Sources: https://www.rocksclimbinggym.com/access/ (not re-fetched). Next: owner drops pin.
