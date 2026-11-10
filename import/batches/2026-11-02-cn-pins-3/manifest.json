@@ -1,0 +1,470 @@
+{
+  "schema_version": 1,
+  "updater_version": 1,
+  "kind": "update",
+  "batch_id": "2026-11-02-cn-pins-3",
+  "status": "updated",
+  "target": {
+    "kind": "production",
+    "host": "thayxaampaelvntoaido.supabase.co"
+  },
+  "coverage": "FULL",
+  "plan_sha256": "5730c05749079b1c0921ce17f4bab7a31f1ce7417eb4a177acf0b2d693036258",
+  "payload_sha256": "d3f17a06b8007d3b718f05839dc2de173caf2f5035826a46a1cb98c1cc76b5fe",
+  "confirm_token": "788ebee6b2004a1b",
+  "live_state_sha256": "e73ddf97995f3819bb584da34d2cfed5c3f9ec1ffdb3eff20a75876241d5e269",
+  "rows_updated": 44,
+  "approved_before": 3395,
+  "approved_after": 3395,
+  "changes": [
+    {
+      "id": "seed-692",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "1d9c904f1a5f95ed",
+      "after_h": "029808efe6926e5a"
+    },
+    {
+      "id": "seed-693",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "e97067623d94b666",
+      "after_h": "19f9eafe77ac3c06"
+    },
+    {
+      "id": "seed-695",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "87efe344e50022a1",
+      "after_h": "27128fdd079b448a"
+    },
+    {
+      "id": "seed-696",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "b266879ec7f26a49",
+      "after_h": "62d2944fc39e3daf"
+    },
+    {
+      "id": "seed-697",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "b2fb12bdf5f00404",
+      "after_h": "acff1ffedd2f0765"
+    },
+    {
+      "id": "seed-699",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "230641f01396ce3a",
+      "after_h": "a17b145028a1cfb7"
+    },
+    {
+      "id": "seed-700",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "630097193853a16e",
+      "after_h": "e404363c863c30de"
+    },
+    {
+      "id": "seed-702",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "bcfbde9d267f47c5",
+      "after_h": "7561e22ed5219b59"
+    },
+    {
+      "id": "seed-703",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "de7faed241950cf7",
+      "after_h": "a068b23eb292ba4b"
+    },
+    {
+      "id": "seed-704",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "fa81f12dc600155c",
+      "after_h": "9ff3945e160ed3b4"
+    },
+    {
+      "id": "seed-706",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "0e73727c93dd9dc2",
+      "after_h": "914917c0284e1448"
+    },
+    {
+      "id": "seed-707",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "f98ccfd60f600909",
+      "after_h": "322cc99694b6d35c"
+    },
+    {
+      "id": "seed-710",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "36ca8cbb15f4e85d",
+      "after_h": "767bd8f05fdf643d"
+    },
+    {
+      "id": "seed-711",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "8c155b3ba2d865c3",
+      "after_h": "4b5dbb9943c5395b"
+    },
+    {
+      "id": "seed-713",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "0519b20409b222f8",
+      "after_h": "2b1af61ad9ccac60"
+    },
+    {
+      "id": "seed-755",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "cad533f6f3f20f33",
+      "after_h": "4b5b25b65bed6e89"
+    },
+    {
+      "id": "seed-756",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "4b68809882d149b4",
+      "after_h": "3e71152efdaa112b"
+    },
+    {
+      "id": "seed-757",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "2d66c097bdcd4753",
+      "after_h": "301763d1c869fa56"
+    },
+    {
+      "id": "seed-758",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "0b02e9a76c951b43",
+      "after_h": "b01d9f2a189f00f7"
+    },
+    {
+      "id": "seed-760",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "d359b3bee6477bc9",
+      "after_h": "97a472808be9e262"
+    },
+    {
+      "id": "seed-761",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "c2348d0b77f0b5c9",
+      "after_h": "03d47bde4d6c472b"
+    },
+    {
+      "id": "seed-762",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "72dbcf7e3e040a21",
+      "after_h": "9aac91d40b5bd5a9"
+    },
+    {
+      "id": "seed-763",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "2a6bbb6ef6a9a605",
+      "after_h": "ebd02c6eb4520aa9"
+    },
+    {
+      "id": "seed-764",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "fd20840b75be38ea",
+      "after_h": "faba8aa764f44806"
+    },
+    {
+      "id": "seed-765",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "ce0de047739fe628",
+      "after_h": "6c9a15f8773baaca"
+    },
+    {
+      "id": "seed-766",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "362f6377cc2dd443",
+      "after_h": "58860b33c7a834b9"
+    },
+    {
+      "id": "seed-767",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "21d2d7f6afdfdeeb",
+      "after_h": "401080ee910321bd"
+    },
+    {
+      "id": "seed-768",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "092e51ddaa5e9fa5",
+      "after_h": "de48920b967b96d3"
+    },
+    {
+      "id": "seed-769",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "cf86aeaa815e7782",
+      "after_h": "49429ba50ea3b4c3"
+    },
+    {
+      "id": "seed-771",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "e70845002e7c502b",
+      "after_h": "846bf5bfed571c30"
+    },
+    {
+      "id": "seed-772",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "6f468eab6490ee35",
+      "after_h": "4e702fe5912259e3"
+    },
+    {
+      "id": "seed-773",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "b8d35b29b0ab38ed",
+      "after_h": "e763774e7efa581d"
+    },
+    {
+      "id": "seed-774",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "f85a8efc6204a9cb",
+      "after_h": "fd45d2445544b64a"
+    },
+    {
+      "id": "seed-777",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "b01b1cdb662077d0",
+      "after_h": "39a5953ea9d68d09"
+    },
+    {
+      "id": "seed-778",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "d1b2a9b7b60719c3",
+      "after_h": "97562c5e39592eb4"
+    },
+    {
+      "id": "seed-779",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "73222224b21d5105",
+      "after_h": "a3a151174cef2821"
+    },
+    {
+      "id": "seed-783",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "37992be80e2406cf",
+      "after_h": "8984b969c0f45a9c"
+    },
+    {
+      "id": "seed-784",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "eb93f695b2703dc9",
+      "after_h": "77d61b49b8f697ff"
+    },
+    {
+      "id": "seed-785",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "e05fbde2aa3c0a23",
+      "after_h": "06520a0eb8e69404"
+    },
+    {
+      "id": "seed-787",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "fa965f4d04ae6b40",
+      "after_h": "674f9f0b81b0110d"
+    },
+    {
+      "id": "seed-788",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "720c0193832b0387",
+      "after_h": "bcb2983ba042a092"
+    },
+    {
+      "id": "seed-789",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "382ef2c2f0315afb",
+      "after_h": "fe0380b1268ca76f"
+    },
+    {
+      "id": "seed-796",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "131ec7f83b760f36",
+      "after_h": "bf19cd8ebec288c0"
+    },
+    {
+      "id": "seed-797",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "bfc738b88285eea3",
+      "after_h": "25010552dcec1ede"
+    }
+  ],
+  "verification": {
+    "ok": true,
+    "checked": 44,
+    "problems": []
+  },
+  "started_at": "2026-11-06T11:36:53.374Z",
+  "finished_at": "2026-11-06T11:37:07.246Z",
+  "ids": [
+    "seed-692",
+    "seed-693",
+    "seed-695",
+    "seed-696",
+    "seed-697",
+    "seed-699",
+    "seed-700",
+    "seed-702",
+    "seed-703",
+    "seed-704",
+    "seed-706",
+    "seed-707",
+    "seed-710",
+    "seed-711",
+    "seed-713",
+    "seed-755",
+    "seed-756",
+    "seed-757",
+    "seed-758",
+    "seed-760",
+    "seed-761",
+    "seed-762",
+    "seed-763",
+    "seed-764",
+    "seed-765",
+    "seed-766",
+    "seed-767",
+    "seed-768",
+    "seed-769",
+    "seed-771",
+    "seed-772",
+    "seed-773",
+    "seed-774",
+    "seed-777",
+    "seed-778",
+    "seed-779",
+    "seed-783",
+    "seed-784",
+    "seed-785",
+    "seed-787",
+    "seed-788",
+    "seed-789",
+    "seed-796",
+    "seed-797"
+  ]
+}

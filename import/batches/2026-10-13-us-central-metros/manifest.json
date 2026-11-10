@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "importer_version": 2,
+  "batch_id": "2026-10-13-us-central-metros",
+  "status": "imported",
+  "target": {
+    "kind": "production",
+    "host": "thayxaampaelvntoaido.supabase.co"
+  },
+  "coverage": "FULL",
+  "plan_sha256": "3e24550f5ec160b24de2487009dac1f1af3a2fa908e18601cd3199cbf45b746c",
+  "payload_sha256": "e0387a4da96e97b78a36e6c29ce9cf6d12521308ed7e1aa8fbf39ee65444ca9e",
+  "confirm_token": "1f0defb524bb8401",
+  "live_state_sha256": "f53f4328def6d947badb9f82ce4023a739c1802a5bf7593083fb259e8b9a5cc2",
+  "rows_inserted": 6,
+  "approved_before": 3390,
+  "approved_after": 3396,
+  "verification": {
+    "ok": true,
+    "checked": 6,
+    "problems": []
+  },
+  "started_at": "2026-11-06T11:34:34.903Z",
+  "finished_at": "2026-11-06T11:34:38.424Z",
+  "ids": [
+    "g-5649d0bd95",
+    "g-3552a25b4e",
+    "g-83401ef7c6",
+    "g-652c2c75bf",
+    "g-412805facb",
+    "g-13c6a3645d"
+  ]
+}

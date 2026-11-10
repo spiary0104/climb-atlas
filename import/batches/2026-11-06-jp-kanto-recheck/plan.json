@@ -1,0 +1,147 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-11-06-jp-kanto-recheck",
+ "index": {
+  "sha256": "0fc2200f365cd11cee57b91677b616317a39359cf2509a5f904f54722d487ea3",
+  "count": 3395,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-06-kr-seoul",
+  "2026-11-06-jp-chubu-recheck",
+  "2026-11-06-jp-kansai-recheck",
+  "2026-11-06-jp-kitakanto-recheck",
+  "2026-11-06-jp-kyushu-recheck"
+ ],
+ "counts": {
+  "records": 14,
+  "new": 14,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "8179f9806108d1733f4569938f949eb77856178d8c171f5309f010510898cb57",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-21d55d1630",
+   "id_frozen": true,
+   "name": "BEAKS Climbing Studio",
+   "country": "JP"
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-1000c0efa0",
+   "id_frozen": true,
+   "name": "BONOBO bouldering space",
+   "country": "JP"
+  },
+  {
+   "line": 3,
+   "class": "new",
+   "id": "g-67bc972191",
+   "id_frozen": true,
+   "name": "GRIMROCK Climbing Gym",
+   "country": "JP"
+  },
+  {
+   "line": 4,
+   "class": "new",
+   "id": "g-dffcff5a6c",
+   "id_frozen": true,
+   "name": "HANN2 Bouldering Gym Atsugi",
+   "country": "JP"
+  },
+  {
+   "line": 5,
+   "class": "new",
+   "id": "g-a5d53d65ff",
+   "id_frozen": true,
+   "name": "Climbing Gym Hutte",
+   "country": "JP"
+  },
+  {
+   "line": 6,
+   "class": "new",
+   "id": "g-8205ae1532",
+   "id_frozen": true,
+   "name": "JET SET Climbing Gym",
+   "country": "JP"
+  },
+  {
+   "line": 7,
+   "class": "new",
+   "id": "g-e68ff30606",
+   "id_frozen": true,
+   "name": "Monolithe Bouldering Gym Kawagoe",
+   "country": "JP"
+  },
+  {
+   "line": 8,
+   "class": "new",
+   "id": "g-4e763802f9",
+   "id_frozen": true,
+   "name": "Next Gen Bouldering",
+   "country": "JP"
+  },
+  {
+   "line": 9,
+   "class": "new",
+   "id": "g-6d0f4a0dc5",
+   "id_frozen": true,
+   "name": "OKKU ROCK",
+   "country": "JP"
+  },
+  {
+   "line": 10,
+   "class": "new",
+   "id": "g-d155b43ca0",
+   "id_frozen": true,
+   "name": "Climbing Park Q-Roche",
+   "country": "JP"
+  },
+  {
+   "line": 11,
+   "class": "new",
+   "id": "g-992b71e463",
+   "id_frozen": true,
+   "name": "Climbing Park STONE MAGIC",
+   "country": "JP"
+  },
+  {
+   "line": 12,
+   "class": "new",
+   "id": "g-d0c21b435e",
+   "id_frozen": true,
+   "name": "Tohan Dojo Bouldering Gym",
+   "country": "JP"
+  },
+  {
+   "line": 13,
+   "class": "new",
+   "id": "g-338a4fe373",
+   "id_frozen": true,
+   "name": "THE STONE SESSION TOKYO",
+   "country": "JP"
+  },
+  {
+   "line": 14,
+   "class": "new",
+   "id": "g-a9fdc19416",
+   "id_frozen": true,
+   "name": "Climbing Wisteria",
+   "country": "JP"
+  }
+ ]
+}

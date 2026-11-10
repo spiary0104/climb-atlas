@@ -37,7 +37,7 @@ const R = Object.freeze({
 });
 if (R.NEARBY_ANY_M < M.T.PROBABLE_COLOCATED_M || R.RELATED_NAME_M < M.T.PROBABLE_RENAMED_M) throw new Error('research review radii must not be looser than match.js');
 
-const CANDIDATE_KEYS = ['cid', 'name', 'name_local', 'aliases', 'chain', 'country', 'state', 'suburb', 'address', 'lat', 'lng', 'coord_source', 'coord_precision',
+const CANDIDATE_KEYS = ['cid', 'name', 'name_local', 'address_local', 'aliases', 'chain', 'country', 'state', 'suburb', 'address', 'lat', 'lng', 'coord_source', 'coord_precision',
   'types', 'website', 'category', 'status_claim', 'bouldering', 'evidence', 'research_notes', 'notes', 'photo'];
 const REQUIRED = ['cid', 'name', 'country', 'state', 'suburb', 'lat', 'lng', 'coord_source', 'coord_precision', 'types', 'category', 'status_claim', 'bouldering', 'evidence'];
 const CID = /^[a-z0-9][a-z0-9-]{1,59}$/;
@@ -126,6 +126,8 @@ const toImportRecord = (c, sectionId) => ({
   name: c.name, suburb: c.suburb, state: c.state, country: c.country, lat: c.lat, lng: c.lng, types: c.types,
   address: c.address == null || c.address === '' ? null : c.address, notes: c.notes == null || c.notes === '' ? null : c.notes,
   photo: c.photo == null || c.photo === '' ? null : c.photo, source: `research:${sectionId}#${c.cid}`,
+  // the local-language name / address reach the inserted row (migration 20261101000100); keys are omitted when empty, so records of candidates without them are unchanged
+  ...(c.name_local ? { name_local: c.name_local } : {}), ...(c.address_local ? { address_local: c.address_local } : {}),
 });
 const SOURCE_REF = /^research:(\d{4}-\d{2}-\d{2}-[a-z0-9][a-z0-9-]{1,60})#([a-z0-9][a-z0-9-]{1,59})$/;
 
@@ -137,7 +139,7 @@ async function checkCandidate(c, { section, sources, sectionId }) {
   Object.keys(c).filter(k => !CANDIDATE_KEYS.includes(k)).forEach(k => err('unknown-field', `unknown field "${k}"`));
   REQUIRED.filter(k => c[k] === undefined || c[k] === null || c[k] === '').forEach(k => err('required', `${k} is required`));
   if (c.cid !== undefined && (typeof c.cid !== 'string' || !CID.test(c.cid) || RESERVED_CID.test(c.cid))) err('bad-cid', 'cid must be lower-case letters/digits/hyphens (2-60) and must not start with seed-, community- or g-');
-  for (const k of ['name_local', 'chain', 'research_notes']) if (c[k] != null && !isStr(c[k])) err('bad-text', `${k} must be text or null`);
+  for (const k of ['name_local', 'address_local', 'chain', 'research_notes']) if (c[k] != null && !isStr(c[k])) err('bad-text', `${k} must be text or null`);
   if (c.aliases != null && (!Array.isArray(c.aliases) || c.aliases.some(a => !isStr(a)))) err('bad-aliases', 'aliases must be a list of names');
   if (c.website != null && !isHttpUrl(c.website)) err('bad-url', 'website must be a plain http(s) URL or null');
   if (c.category !== undefined && !CATEGORIES.has(c.category)) err('bad-enum', `category must be one of ${[...CATEGORIES].join(', ')}`);

@@ -1,0 +1,53 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-11-01-cn-jinan",
+ "index": {
+  "sha256": "390c154fdd94ffb1c413eff84f38fa6fb0fc5e74719d4962667d1d0755523b32",
+  "count": 3436,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-06-kr-seoul",
+  "2026-11-02-cn-hangzhou",
+  "2026-11-06-cn-changsha",
+  "2026-11-06-cn-dali",
+  "2026-11-06-cn-kunming",
+  "2026-11-06-cn-wenzhou",
+  "2026-11-06-cn-xiamen"
+ ],
+ "counts": {
+  "records": 2,
+  "new": 2,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "0826f5f285b1ec9fa3ac8226755be309bab86aeb7e014ebeb2f3c0376f201f55",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-70c16a57b3",
+   "id_frozen": true,
+   "name": "Flow Climbing",
+   "country": "CN"
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-581042d942",
+   "id_frozen": true,
+   "name": "515 Climbing (Eurasia Plaza)",
+   "country": "CN"
+  }
+ ]
+}

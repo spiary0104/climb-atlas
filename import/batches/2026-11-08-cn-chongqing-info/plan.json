@@ -1,0 +1,255 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-11-08-cn-chongqing-info",
+ "index": {
+  "sha256": "39a2073843434f86764687342310f4cb7d0ff6d410fe2e798bd4ddd1635fd537",
+  "count": 3457,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-06-kr-seoul"
+ ],
+ "counts": {
+  "records": 10,
+  "new": 0,
+  "existing": 0,
+  "update": 10,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "3d7ef4a0ce35c3d68ef73fa1fe41a768026a57b263b20c4db71b349ea934b8bf",
+ "records": [
+  {
+   "line": 1,
+   "class": "update",
+   "id": "seed-820",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "重庆雨岩攀岩馆"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "11:30am–10pm",
+      "tue": "11:30am–10pm",
+      "wed": "11:30am–10pm",
+      "thu": "11:30am–10pm",
+      "fri": "11:30am–10pm",
+      "sat": "10am–10pm",
+      "sun": "10am–10pm"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.xiaohongshu.com/user/profile/685d2f3f000000001e00b8b5"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-social"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-08"
+    }
+   ],
+   "expect_h": "bad8a72926b16b2a",
+   "update_reason": "Chinese name and hours from the gym's own RedNote bio (重庆雨岩攀岩馆, 渝北区汽博中心; weekdays 11:30-22:00, weekends 10:00-22:00), read 2026-11-08"
+  },
+  {
+   "line": 2,
+   "class": "update",
+   "id": "seed-830",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "TNT攀岩"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "1pm–10pm",
+      "tue": "1pm–10pm",
+      "wed": "1pm–10pm",
+      "thu": "1pm–10pm",
+      "fri": "1pm–10pm",
+      "sat": "10:30am–9:30pm",
+      "sun": "10:30am–9:30pm"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.xiaohongshu.com/user/profile/6780d258000000000302f91a"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-social"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-08"
+    }
+   ],
+   "expect_h": "ae27a901b6554fd7",
+   "update_reason": "Chinese name and hours from the gym's own RedNote bio (重庆TNT攀岩, Shapingba; 13:00-22:00, weekends 10:30-21:30), read 2026-11-08"
+  },
+  {
+   "line": 3,
+   "class": "update",
+   "id": "seed-840",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "Hi攀攀岩"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "1pm–9pm",
+      "tue": "1pm–9pm",
+      "wed": "1pm–9pm",
+      "thu": "1pm–9pm",
+      "fri": "1pm–9pm",
+      "sat": "10am–9:30pm",
+      "sun": "10am–9:30pm"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.xiaohongshu.com/user/profile/696a28d30000000003010bf1"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-social"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-08"
+    }
+   ],
+   "expect_h": "c1a00a1c97d7e882",
+   "update_reason": "Chinese name and hours from the gym's own RedNote bio (Hi攀攀岩, Jiulongpo; midweek 13:00-21:00, weekends 10:00-21:30), read 2026-11-08"
+  },
+  {
+   "line": 4,
+   "class": "update",
+   "id": "seed-793",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "尖叫攀岩(光电园店)"
+    }
+   ],
+   "expect_h": "35cf560f08b3b1c9",
+   "update_reason": "Chinese store name from the brand's own RedNote bio (重庆尖叫攀岩: 尖叫攀岩（光电园店）), read 2026-11-08"
+  },
+  {
+   "line": 5,
+   "class": "update",
+   "id": "seed-826",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "尖叫趣攀攀岩(时代天街店)"
+    }
+   ],
+   "expect_h": "a5d071680e876f3b",
+   "update_reason": "Chinese store name from the brand's own RedNote bio (重庆尖叫攀岩: 尖叫趣攀攀岩（时代天街店）), read 2026-11-08"
+  },
+  {
+   "line": 6,
+   "class": "update",
+   "id": "seed-845",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "大石头攀岩(BOULDER)"
+    }
+   ],
+   "expect_h": "eaabaf6179940309",
+   "update_reason": "Chinese name from the gym's own RedNote account name and bio (大石头攀岩（BOULDER）, Chongqing combined gym), read 2026-11-08"
+  },
+  {
+   "line": 7,
+   "class": "update",
+   "id": "seed-829",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "DDK心象攀岩"
+    }
+   ],
+   "expect_h": "481c3507ac25f53f",
+   "update_reason": "Chinese name from the gym's own RedNote account (DDK心象攀岩, Dadukou; 15 m walls, kids' intro, speed training), read 2026-11-08"
+  },
+  {
+   "line": 8,
+   "class": "update",
+   "id": "seed-825",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "酷基攀岩"
+    }
+   ],
+   "expect_h": "fbe0c0b819823ff9",
+   "update_reason": "Chinese name from the gym's own RedNote account (酷基攀岩, a small training gym in Chongqing), read 2026-11-08"
+  },
+  {
+   "line": 9,
+   "class": "update",
+   "id": "seed-822",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "萌客攀岩"
+    }
+   ],
+   "expect_h": "5fa88fe596ea4965",
+   "update_reason": "Chinese name from the gym's own RedNote account (萌客攀岩, bio: 坐标重庆南川), read 2026-11-08"
+  },
+  {
+   "line": 10,
+   "class": "update",
+   "id": "seed-844",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "Wood Climbing 我的攀岩馆"
+    }
+   ],
+   "expect_h": "9c195fa0de9d9600",
+   "update_reason": "Chinese name from the gym's own RedNote bio (Wood Climbing「我的」攀岩馆, 凯德广场2层56号), read 2026-11-08"
+  }
+ ]
+}

@@ -14,18 +14,36 @@ const ROOT = path.resolve(__dirname, '..', '..');
 async function loadRules() {
   if (typeof globalThis.window === 'undefined') globalThis.window = { matchMedia: () => ({ matches: false }) };
   const load = f => import(pathToFileURL(path.join(ROOT, 'js', 'modules', f)).href);
-  const [slug, constants, metros, regions, seo] = await Promise.all([load('slug.js'), load('constants.js'), load('metros.js'), load('regions.js'), load('seo-meta.js')]);
+  const [slug, constants, metros, regions, seo, canon] = await Promise.all([load('slug.js'), load('constants.js'), load('metros.js'), load('regions.js'), load('seo-meta.js'), load('place-canonical.js')]);
   // map.js builds the map at import, so its stateLabel rule is repeated here (code -> display name, else the code).
   const stateLabel = (cc, state) => { const e = (regions.STATES_BY_COUNTRY[cc] || []).find(([code]) => code === state); return e ? e[1] : state; };
-  return { slug, COUNTRY_LABELS: constants.COUNTRY_LABELS, metroOf: metros.metroOf, stateLabel, placeSeo: seo.placeSeo };
+  return { slug, COUNTRY_LABELS: constants.COUNTRY_LABELS, metroOf: metros.metroOf, stateLabel, placeSeo: seo.placeSeo, regionCanonicalPath: canon.regionCanonicalPath };
 }
 
 const xmlEscape = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&apos;');
 
-// rows: approved spots ({slug, country, state, suburb}). Returns {urls: [{path, type}], skipped: {...}}; deterministic order.
+// Region pages that duplicate one of their city pages (place-canonical.js, the rule region-page.js applies): Map(region
+// path -> city path). The sitemap leaves those region pages out and the link-preview data gives them the city canonical.
+async function duplicateRegions(rows) {
+  const { slug, COUNTRY_LABELS, regionCanonicalPath } = await loadRules();
+  const spots = rows.map(g => ({ ...g, id: g.id != null ? g.id : g.slug }));
+  const seen = new Map(), out = new Map();
+  for (const g of spots) {
+    const cc = String(g.country || '').toUpperCase();
+    if (!COUNTRY_LABELS[cc] || !slug.regionSegment(g.state)) continue;
+    const p = slug.regionPath(cc, g.state);
+    if (!seen.has(p)) seen.set(p, { cc, state: g.state });
+  }
+  for (const [p, { cc, state }] of seen) { const c = regionCanonicalPath(spots, cc, state); if (c) out.set(p, c); }
+  return out;
+}
+
+// rows: approved spots ({slug, country, state, suburb}). Region pages that duplicate a city page are left out.
+// Returns {urls: [{path, type}], skipped: {...}}; deterministic order.
 async function collectUrls(rows) {
   const { slug, COUNTRY_LABELS, metroOf } = await loadRules();
-  const skipped = { noSlug: 0, unknownCountry: 0, noRegion: 0, noCity: 0, singleGymArea: 0 };
+  const skipped = { noSlug: 0, unknownCountry: 0, noRegion: 0, noCity: 0, singleGymArea: 0, duplicateRegion: 0 };
+  const dupes = await duplicateRegions(rows);
   const gyms = new Set(), countries = new Set(), regions = new Set(), metros = new Set(), areaCounts = new Map();
   for (const g of rows) {
     const cc = String(g.country || '').toUpperCase();
@@ -50,7 +68,7 @@ async function collectUrls(rows) {
   const urls = [
     ...STATIC_PAGES.map(p => ({ path: p, type: 'static' })),
     ...sorted(countries).map(p => ({ path: p, type: 'country' })),
-    ...sorted(regions).map(p => ({ path: p, type: 'region' })),
+    ...sorted(regions).filter(p => !dupes.has(p) || !(++skipped.duplicateRegion)).map(p => ({ path: p, type: 'region' })),
     ...sorted(cities).map(p => ({ path: p, type: 'city' })),
     ...sorted(gyms).map(p => ({ path: p, type: 'gym' })),
   ];
@@ -71,6 +89,7 @@ async function buildSitemap(rows, { origin = ORIGIN } = {}) {
 async function buildPlaces(rows) {
   const { slug, COUNTRY_LABELS, metroOf, stateLabel, placeSeo } = await loadRules();
   const countries = {}, regions = {}, counts = new Map(), meta = new Map();
+  const dupes = await duplicateRegions(rows);
   // Keyed by kind + path: a metro and a suburb can share a URL (Sydney), and their counts must not mix.
   const bump = (path, info) => { const k = (info.metro ? 'metro|' : 'place|') + path; counts.set(k, (counts.get(k) || 0) + 1); if (!meta.has(k)) meta.set(k, { path, info }); };
   for (const g of rows) {
@@ -92,9 +111,9 @@ async function buildPlaces(rows) {
   const entries = [...meta.entries()].sort(([a], [b]) => (a < b ? -1 : 1));
   for (const [k, { path, info }] of [...entries.filter(([k]) => k.startsWith('place|')), ...entries.filter(([k]) => k.startsWith('metro|'))]) {
     const { title, description } = placeSeo({ ...info, count: counts.get(k) });
-    places[path] = { title, description };
+    places[path] = dupes.has(path) && info.kind === 'region' ? { title, description, canonical: dupes.get(path) } : { title, description };
   }
   return { generated: 'scripts/build-sitemap.js', countries, regions, places };
 }
 
-module.exports = { ORIGIN, STATIC_PAGES, xmlEscape, collectUrls, buildSitemap, buildPlaces };
+module.exports = { ORIGIN, STATIC_PAGES, xmlEscape, collectUrls, buildSitemap, buildPlaces, duplicateRegions };

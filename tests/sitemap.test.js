@@ -38,7 +38,7 @@ test('builder: every URL the app routes to, absolute on www.bouldeer.com, no dup
   assert.equal(counts.static, 5);
   assert.equal(counts.country, 3);   // AU, GB, JP (ZZ has no label: its place pages 404)
   assert.equal(counts.gym, 8);       // the row without a slug is skipped
-  assert.deepEqual(skipped, { noSlug: 1, unknownCountry: 1, noRegion: 1, noCity: 2, singleGymArea: 1 });
+  assert.deepEqual(skipped, { noSlug: 1, unknownCountry: 1, noRegion: 1, noCity: 2, singleGymArea: 1, duplicateRegion: 0 });
 });
 
 test('builder: never emits a URL the router could not match (empty segments, unknown countries)', async () => {

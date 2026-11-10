@@ -1,0 +1,621 @@
+{
+  "schema_version": 1,
+  "updater_version": 1,
+  "kind": "update",
+  "batch_id": "2026-11-02-cn-pins",
+  "status": "updated",
+  "target": {
+    "kind": "production",
+    "host": "thayxaampaelvntoaido.supabase.co"
+  },
+  "coverage": "FULL",
+  "plan_sha256": "b4ee037ca869d2a2615f9742ad60a1d342b30e5f091a2d11bbba80c353100ccc",
+  "payload_sha256": "f5a53f548e16ac76f2351e0b7bd57b0bed2e54848e37d59c2bedc65ba40bba69",
+  "confirm_token": "8c9a656bbb282f12",
+  "live_state_sha256": "df52a1eef0962850a16f804fbf76a46fb8da945b2a173e0e279920969749ee64",
+  "rows_updated": 57,
+  "approved_before": 3397,
+  "approved_after": 3395,
+  "changes": [
+    {
+      "id": "seed-714",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "c80b188341f09bec",
+      "after_h": "14d8c1db75ff2322"
+    },
+    {
+      "id": "seed-715",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "61b304aa9391fe73",
+      "after_h": "e64fcac918a725bb"
+    },
+    {
+      "id": "seed-716",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "2c0eb2e1d35cb221",
+      "after_h": "e6b2835ba9b2bf9b"
+    },
+    {
+      "id": "seed-717",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "9726217ccb147e8a",
+      "after_h": "a1e5c4a86441743d"
+    },
+    {
+      "id": "seed-718",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "a4b677c587ab9fbe",
+      "after_h": "b3c54491b1ce213f"
+    },
+    {
+      "id": "seed-719",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "b1112e5904b92273",
+      "after_h": "f967752c26a95149"
+    },
+    {
+      "id": "seed-721",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "62c99e7d8d47458b",
+      "after_h": "bdb0ba86c81ea88c"
+    },
+    {
+      "id": "seed-722",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "5173bca38732a4d8",
+      "after_h": "2febf283c83d80d5"
+    },
+    {
+      "id": "seed-724",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "9e5a6b0e078c634a",
+      "after_h": "045e836d3cd22ac2"
+    },
+    {
+      "id": "seed-726",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "f2552a8c565b3937",
+      "after_h": "c8a6c9d0ac4b0a49"
+    },
+    {
+      "id": "seed-728",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "3b650bcce3168902",
+      "after_h": "9da6f598f730dccd"
+    },
+    {
+      "id": "seed-729",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "983ec24d75f57010",
+      "after_h": "bab3df7c83274b70"
+    },
+    {
+      "id": "seed-730",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "d586eb8e695f863c",
+      "after_h": "31707c84e82c4a42"
+    },
+    {
+      "id": "seed-732",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "a66e392ae16edf24",
+      "after_h": "fac40a48a9768587"
+    },
+    {
+      "id": "seed-737",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "7b13d482da1a240e",
+      "after_h": "7a19b98d528b1aa6"
+    },
+    {
+      "id": "seed-738",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "d98bec3b4eb7ad29",
+      "after_h": "b8da499ffaefa810"
+    },
+    {
+      "id": "seed-739",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "aecd21e283bcea1e",
+      "after_h": "5bf63e3da35ee0ba"
+    },
+    {
+      "id": "seed-741",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "1d058797e93ef33b",
+      "after_h": "68994cebaf334b55"
+    },
+    {
+      "id": "seed-742",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "6cf7b39b87e8ef30",
+      "after_h": "879acfd626871fa2"
+    },
+    {
+      "id": "seed-743",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "72811fd7cbeb88ae",
+      "after_h": "197c3c2fcae03438"
+    },
+    {
+      "id": "seed-745",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "1cb8069d9a135c1b",
+      "after_h": "d45d4ec853c8bbb9"
+    },
+    {
+      "id": "seed-747",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "8b61ea1b4349722a",
+      "after_h": "9c1c99527fcd829e"
+    },
+    {
+      "id": "seed-748",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "2fe1be5ea2f53e44",
+      "after_h": "5015dce301907045"
+    },
+    {
+      "id": "seed-749",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "39cefa7d6a99ff88",
+      "after_h": "4e45b28e71515180"
+    },
+    {
+      "id": "seed-750",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "4e2ba7012a779f9c",
+      "after_h": "a1ea796ef1ee8bfd"
+    },
+    {
+      "id": "seed-752",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "5b71b73c7062b398",
+      "after_h": "d0efe02007fc959e"
+    },
+    {
+      "id": "seed-753",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "d6cf9f5f84fbca76",
+      "after_h": "503c2b4153718114"
+    },
+    {
+      "id": "seed-754",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "8e580aa36c4f9376",
+      "after_h": "d3c3ad82204b794e"
+    },
+    {
+      "id": "seed-639",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "c361e384b076a09f",
+      "after_h": "9a30a7b29f5f1128"
+    },
+    {
+      "id": "seed-642",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "21d4d7cde6ce1443",
+      "after_h": "0a0d7da15128d0be"
+    },
+    {
+      "id": "seed-646",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "02259ffb8f5e3b37",
+      "after_h": "d347182b98013383"
+    },
+    {
+      "id": "seed-647",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "8e4dc205782ec18d",
+      "after_h": "3af4a9a2d6bde777"
+    },
+    {
+      "id": "seed-651",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "30d1e9593ab406e9",
+      "after_h": "e6a90b9cd7700b29"
+    },
+    {
+      "id": "seed-652",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "eeec3106c8504e1d",
+      "after_h": "e294160130b847c6"
+    },
+    {
+      "id": "seed-654",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "64d09235d05c555b",
+      "after_h": "8e9fe22669e8a7b3"
+    },
+    {
+      "id": "seed-655",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "7bcde938b471d5b2",
+      "after_h": "73776b0469128ac7"
+    },
+    {
+      "id": "seed-656",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "100537dc0304edd9",
+      "after_h": "5b97942c729873ab"
+    },
+    {
+      "id": "seed-658",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "1e28284407fafcc8",
+      "after_h": "6cf1d52ae8f01c77"
+    },
+    {
+      "id": "seed-659",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "d4a0ccb416ef78b3",
+      "after_h": "41a133584a09758e"
+    },
+    {
+      "id": "seed-663",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "3c411f2868497bcd",
+      "after_h": "b46977cdf084d9ec"
+    },
+    {
+      "id": "seed-664",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "b7ac5884bb628b55",
+      "after_h": "e1622ef47974dac3"
+    },
+    {
+      "id": "seed-665",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "da6bbef6c95f4e85",
+      "after_h": "23e9b62222fc2d6b"
+    },
+    {
+      "id": "seed-666",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "ad3646a19061fa4a",
+      "after_h": "00983afcb4d0d24a"
+    },
+    {
+      "id": "seed-667",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "b4bd284f3a0eb1e7",
+      "after_h": "e846a9145b552bed"
+    },
+    {
+      "id": "seed-671",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "b1751ca391740a02",
+      "after_h": "f514973454f93822"
+    },
+    {
+      "id": "seed-672",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "9b173edd8bce92a5",
+      "after_h": "f08107c897b1e0bb"
+    },
+    {
+      "id": "seed-673",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "8b4e8ced5e56c564",
+      "after_h": "b641df45a4aa43e5"
+    },
+    {
+      "id": "seed-674",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "3ece5b911483a898",
+      "after_h": "9f9ea4ffd0f6b3fb"
+    },
+    {
+      "id": "seed-676",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "79a8dffef6366090",
+      "after_h": "4d9efdd76920a0d7"
+    },
+    {
+      "id": "seed-677",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "85438ada385aa5e1",
+      "after_h": "c3c445f4bd417941"
+    },
+    {
+      "id": "seed-679",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "fbd44ad08a95bbad",
+      "after_h": "5b2d8ef75869329b"
+    },
+    {
+      "id": "seed-683",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "288c44ba65c0dfd9",
+      "after_h": "a62bcefd52715ecb"
+    },
+    {
+      "id": "seed-684",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "16ca723ae2e64650",
+      "after_h": "f7af186b0ae493b1"
+    },
+    {
+      "id": "seed-685",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "aaef30fa70f4614c",
+      "after_h": "a9a478f240c1d5ca"
+    },
+    {
+      "id": "seed-686",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "62d0f785189aac8e",
+      "after_h": "f3a1beb15e0af533"
+    },
+    {
+      "id": "seed-690",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "4ba1200fe0b66d02",
+      "after_h": "c3ecd3e4030af51a"
+    },
+    {
+      "id": "seed-691",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "216196db7ea103d4",
+      "after_h": "b750ea8fa28cd6ff"
+    }
+  ],
+  "rows_retired": 2,
+  "retired": [
+    "seed-751",
+    "seed-638"
+  ],
+  "retirements": [
+    {
+      "id": "seed-751",
+      "reason_code": "closed",
+      "reason": "Closed: the lease ended and the walls were removed (user note 2026-07-02); not on Amap; the brand bio counts 4 branches, none the SCUT venue",
+      "expect_h": "f4d19f92b0504fbb"
+    },
+    {
+      "id": "seed-638",
+      "reason_code": "closed",
+      "reason": "Closed on 2026-08-08: the gym official RedNote account announced the closure of its Dawanglu branch; Amap marks the listing as suspended",
+      "expect_h": "fefbb8bb086864ca"
+    }
+  ],
+  "verification": {
+    "ok": true,
+    "checked": 59,
+    "problems": []
+  },
+  "started_at": "2026-11-06T11:35:41.539Z",
+  "finished_at": "2026-11-06T11:35:58.551Z",
+  "ids": [
+    "seed-714",
+    "seed-715",
+    "seed-716",
+    "seed-717",
+    "seed-718",
+    "seed-719",
+    "seed-721",
+    "seed-722",
+    "seed-724",
+    "seed-726",
+    "seed-728",
+    "seed-729",
+    "seed-730",
+    "seed-732",
+    "seed-737",
+    "seed-738",
+    "seed-739",
+    "seed-741",
+    "seed-742",
+    "seed-743",
+    "seed-745",
+    "seed-747",
+    "seed-748",
+    "seed-749",
+    "seed-750",
+    "seed-752",
+    "seed-753",
+    "seed-754",
+    "seed-639",
+    "seed-642",
+    "seed-646",
+    "seed-647",
+    "seed-651",
+    "seed-652",
+    "seed-654",
+    "seed-655",
+    "seed-656",
+    "seed-658",
+    "seed-659",
+    "seed-663",
+    "seed-664",
+    "seed-665",
+    "seed-666",
+    "seed-667",
+    "seed-671",
+    "seed-672",
+    "seed-673",
+    "seed-674",
+    "seed-676",
+    "seed-677",
+    "seed-679",
+    "seed-683",
+    "seed-684",
+    "seed-685",
+    "seed-686",
+    "seed-690",
+    "seed-691",
+    "seed-751",
+    "seed-638"
+  ]
+}

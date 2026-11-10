@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-11-06-jp-chubu-recheck",
+  "description": "Regional research \"Japan: Chubu/Tokai re-check of deferred gyms\": 2 new gym(s) accepted of 6 candidate(s)",
+  "created": "2026-11-06",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-11-06-jp-chubu-recheck",
+    "section_sha256": "8db7715d912b03f0455a7719274db7fa9a5677953bcc565319b4ed7724e49af7",
+    "sources_sha256": "3f7a14c16d552866e62c4161ba42fe36460eeb1548ce1b9202265c0eaf35f83f",
+    "candidates_sha256": "8dff2b871296f05d060b7ce7183f9168a26a0a9a33d2a9dd0fc3548920dde7a3",
+    "reconcile_sha256": "714306be926cd41ca628e266560a0f070d6a8e9dda83f59b27bd0e92c0a744bd",
+    "review_sha256": "2dc2726278f34b53f5b9dbb3cff808d084015195ec15c005a1400e16cdfd62bf",
+    "candidates": 6,
+    "staged": 2,
+    "decisions": {
+      "accept": 2,
+      "same-as": 4
+    }
+  },
+  "index_at_staging": {
+    "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
+    "count": 3294
+  }
+}

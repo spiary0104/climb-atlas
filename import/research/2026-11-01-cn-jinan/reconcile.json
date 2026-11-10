@@ -1,0 +1,145 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-11-01-cn-jinan",
+ "inputs": {
+  "section_sha256": "2524c3615fd731823a45e7270c5e1092ba6e1cac73b714876ee3ca5283e5e657",
+  "sources_sha256": "4e7b923ac7633d7988fe52db7842df9121acb0b7518d4881774b112921d5fda1",
+  "candidates_sha256": "1d133eee1ad38381df03e11c09a5b00f1d31bf934ea382425c7c9346dd21c3ad",
+  "index": {
+   "sha256": "ad459783ea351fd0a85662824778a0ef8ddbb1e5c89ee095cf6c306f78a3c641",
+   "count": 3433
+  },
+  "staged_batches_compared": [
+   "2026-10-06-kr-seoul",
+   "2026-11-01-cn-guangzhou"
+  ],
+  "other_sections_compared": [
+   {
+    "id": "2026-11-01-cn-guangzhou",
+    "candidates_sha256": "f1d6750918703d8c7060acf2e91053919e9672d7e5bfb4ba804f74580e462b47"
+   },
+   {
+    "id": "2026-11-02-cn-hangzhou",
+    "candidates_sha256": "935f313217f60a9f8730a31a25c3b6a6d047e8dae18f97887412880340264a98"
+   },
+   {
+    "id": "2026-11-06-cn-changsha",
+    "candidates_sha256": "4d940331a2979d6a808638ac95f0d21c64453267ab721f57d1aa5f182a6a45e0"
+   },
+   {
+    "id": "2026-11-06-cn-dali",
+    "candidates_sha256": "4d9f48af97680b566539f7017750c604aa1f3fe3d108a624026f09ab035490a5"
+   },
+   {
+    "id": "2026-11-06-cn-kunming",
+    "candidates_sha256": "a89aeedc830d397ee6216fa46a9c886c1250f1fa953bfe559f5f1ba408ed0e38"
+   },
+   {
+    "id": "2026-11-06-cn-qingdao",
+    "candidates_sha256": "8027c939efa4d955a91317a3c51fb1faa632227a8abf4fd91bc811603fe290a1"
+   },
+   {
+    "id": "2026-11-06-cn-wenzhou",
+    "candidates_sha256": "c7be0b950f78f85139f5d84236d1e9812d2a21d755467bf1c9803af5f06be9c3"
+   },
+   {
+    "id": "2026-11-06-cn-xiamen",
+    "candidates_sha256": "b3fdc7df0df146dc75e9dc18d0362f3a29499e41e5b4da95765ac031e024456b"
+   }
+  ]
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 3,
+  "ready": 1,
+  "review": 1,
+  "blocked": 1,
+  "existing": 0,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "cn-jn-001",
+   "line": 1,
+   "name": "Flow Climbing",
+   "class": "ready",
+   "suggested": "accept",
+   "importer": {
+    "class": "new",
+    "id": "g-70c16a57b3"
+   },
+   "review_ids": []
+  },
+  {
+   "cid": "cn-jn-002",
+   "line": 2,
+   "name": "515 Climbing (Eurasia Plaza)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-581042d942"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "g-dfe643fd9a same-name-but-pin-differs 14002 m",
+     "ids": [
+      "cn-jn-003"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "candidate cn-jn-003 \"515 Climbing (Shimao Xinhuan)\": same-name-but-pin-differs (\"515 Climbing (Eurasia Plaza)\" / \"515 Climbing (Shimao Xinhuan)\", 14002 m)",
+     "ids": [
+      "cn-jn-003"
+     ]
+    }
+   ],
+   "review_ids": [
+    "cn-jn-003"
+   ]
+  },
+  {
+   "cid": "cn-jn-003",
+   "line": 3,
+   "name": "515 Climbing (Shimao Xinhuan)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-dfe643fd9a"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "g-581042d942 same-name-but-pin-differs 14002 m",
+     "ids": [
+      "cn-jn-002"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "candidate cn-jn-002 \"515 Climbing (Eurasia Plaza)\": same-name-but-pin-differs (\"515 Climbing (Shimao Xinhuan)\" / \"515 Climbing (Eurasia Plaza)\", 14002 m)",
+     "ids": [
+      "cn-jn-002"
+     ]
+    }
+   ],
+   "review_ids": [
+    "cn-jn-002"
+   ]
+  }
+ ],
+ "reconcile_sha256": "5b02da4106ceeb283c37ca013594e188f6be3742a849629149418902dde5fdfe"
+}

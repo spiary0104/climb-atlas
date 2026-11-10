@@ -1,0 +1,67 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-11-08-cn-wuxi",
+ "index": {
+  "sha256": "21061ca3068cd049c1497bc4cdf65a755f90ad259e56c241779727788e65c4ee",
+  "count": 3454,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-06-kr-seoul"
+ ],
+ "counts": {
+  "records": 3,
+  "new": 3,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "b4030894f26932f8fb171e4e1914b2f7daef4be915bdb3e996783af223e54b67",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-23edc251e8",
+   "id_frozen": true,
+   "name": "HiRock Climbing (Easyhome)",
+   "country": "CN",
+   "reviewed_distinct": {
+    "reason": "Verified account HiRock嗨岩 (~2026-10-20) lists three stores with addresses; this one has a bouldering area. cn-wx-002/003 are the chain's other stores 5.0 and 9.8 km away.",
+    "reviewer": "Claude (AI) research worker; decisions drafted, pending owner sign-off"
+   }
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-ce3fd5a6da",
+   "id_frozen": true,
+   "name": "HiRock Climbing (Bodu River Sports Center)",
+   "country": "CN",
+   "reviewed_distinct": {
+    "reason": "Same verified HiRock post: Bodu River store (opened 2025-05) has a large bouldering wall; cn-wx-001/003 are separate stores 5.0 and 12.8 km away.",
+    "reviewer": "Claude (AI) research worker; decisions drafted, pending owner sign-off"
+   }
+  },
+  {
+   "line": 3,
+   "class": "new",
+   "id": "g-4c551585a4",
+   "id_frozen": true,
+   "name": "HiRock Climbing (Red Star Macalline)",
+   "country": "CN",
+   "reviewed_distinct": {
+    "reason": "Same verified HiRock post: Red Star Macalline store (opened 2026-08) has a bouldering area; cn-wx-001/002 are separate stores 9.8 and 12.8 km away.",
+    "reviewer": "Claude (AI) research worker; decisions drafted, pending owner sign-off"
+   }
+  }
+ ]
+}

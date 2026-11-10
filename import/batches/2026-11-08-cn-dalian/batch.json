@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-11-08-cn-dalian",
+  "description": "Regional research \"China: Dalian\": 2 new gym(s) accepted of 6 candidate(s)",
+  "created": "2026-11-08",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-11-08-cn-dalian",
+    "section_sha256": "639e4d064cfd196b17e4a1059fe30d358a1e6e3377d6222f1292c932d3a2407d",
+    "sources_sha256": "68075c9ad1a69f79075657f99911477e02aa278866b242c9739047b52eea25da",
+    "candidates_sha256": "f84096528345a09109cc672a5e5d7f95772018160fad914e8c9f9d8668c76dde",
+    "reconcile_sha256": "c98589b68b97d26d5a9e908d04c7da0572759eb5686e19c92ad6c8feb0294a9f",
+    "review_sha256": "c90b08a3004e075acdff9415cfd27797c8ee8bc09103b3d11da3e89a51e55c75",
+    "candidates": 6,
+    "staged": 2,
+    "decisions": {
+      "accept": 2,
+      "defer": 4
+    }
+  },
+  "index_at_staging": {
+    "sha256": "39a2073843434f86764687342310f4cb7d0ff6d410fe2e798bd4ddd1635fd537",
+    "count": 3457
+  }
+}

@@ -1,0 +1,381 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-11-07-cn-chengdu-info",
+ "index": {
+  "sha256": "39a2073843434f86764687342310f4cb7d0ff6d410fe2e798bd4ddd1635fd537",
+  "count": 3457,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-06-kr-seoul"
+ ],
+ "counts": {
+  "records": 8,
+  "new": 0,
+  "existing": 0,
+  "update": 8,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "99434e5d2e6263ddc94757964ac6613d9bdc7da5bd971fbfc568ea8107ec1ab6",
+ "records": [
+  {
+   "line": 1,
+   "class": "update",
+   "id": "seed-606",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "香蕉抱石BANANA+(COSMO店)"
+    },
+    {
+     "field": "address_local",
+     "before": null,
+     "after": "成都市锦江区大业路6号COSMO 5F"
+    }
+   ],
+   "expect_h": "ad86c5956e8d6b37",
+   "update_reason": "Chinese name and address from the gym's own WeChat store guide (2025-12-27); hours left empty (WeChat and RedNote state different weekend hours)"
+  },
+  {
+   "line": 2,
+   "class": "update",
+   "id": "seed-607",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "香蕉攀岩(环贸ICD店)"
+    },
+    {
+     "field": "address_local",
+     "before": null,
+     "after": "成都市锦江区环贸ICD二层L201"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "10am–10pm",
+      "sun": "10am–10pm"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://mp.weixin.qq.com/s/gBbfLO_QbcBWolDlSJx6vA"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-social"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-07"
+    }
+   ],
+   "expect_h": "c1a85329d5051a93",
+   "update_reason": "Chinese name, address and hours from the gym's own WeChat store guide (2025-09-26); the brand's RedNote bio gives the same 10:00-22:00"
+  },
+  {
+   "line": 3,
+   "class": "update",
+   "id": "seed-608",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "香蕉攀岩(凯德天府店)"
+    },
+    {
+     "field": "address_local",
+     "before": null,
+     "after": "成都市武侯区天仁路388号凯德天府L5-15铺"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "10am–10pm",
+      "sun": "10am–10pm"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://mp.weixin.qq.com/s/-0bgQFs0HK8mdfGa7ZAoWQ"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-social"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-07"
+    }
+   ],
+   "expect_h": "ad2453a89a1fa8e0",
+   "update_reason": "Chinese name, address and hours from the gym's own WeChat store guide (2025-09-28); the brand's RedNote bio gives the same 10:00-22:00"
+  },
+  {
+   "line": 4,
+   "class": "update",
+   "id": "seed-614",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "飞蛙攀岩(成都339购物中心店)"
+    },
+    {
+     "field": "address_local",
+     "before": null,
+     "after": "成都市成华区猛追湾街94号成都339购物中心负一楼"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "10am–10pm",
+      "sun": "10am–10pm"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://mp.weixin.qq.com/s/fql3nJLh6XYiNa_Neh2wCg"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-social"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-07"
+    }
+   ],
+   "expect_h": "9d63e2aa25fca360",
+   "update_reason": "Chinese name, address and hours from the store's own WeChat account (乐动飞蛙339店, post 2026-10-27)"
+  },
+  {
+   "line": 5,
+   "class": "update",
+   "id": "seed-611",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "熊猫攀岩生活馆(武侯成都大悦城店)"
+    },
+    {
+     "field": "address_local",
+     "before": null,
+     "after": "成都市武侯区大悦路成都大悦城商场冬中庭5F-002B"
+    },
+    {
+     "field": "visitor",
+     "before": null,
+     "after": {
+      "shoe_hire": "Climbing shoes and harness are included free with the ticket"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.xiaohongshu.com/explore/67e2adae000000001201c6e3"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-social"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-07"
+    }
+   ],
+   "expect_h": "47866f3d6eb6b0eb",
+   "update_reason": "Chinese name, address and shoe/harness policy from the brand's own pinned RedNote store guide; hours left empty (guide and 2026-02 WeChat notice differ)"
+  },
+  {
+   "line": 6,
+   "class": "update",
+   "id": "seed-619",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "熊猫攀岩生活馆(天府大悦城城市旗舰店)"
+    },
+    {
+     "field": "address_local",
+     "before": null,
+     "after": "成都市天府新区夔州大道天府大悦城L7楼08/08a"
+    },
+    {
+     "field": "visitor",
+     "before": null,
+     "after": {
+      "shoe_hire": "Climbing shoes and harness are included free with the ticket"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.xiaohongshu.com/explore/67e2adae000000001201c6e3"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-social"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-07"
+    }
+   ],
+   "expect_h": "853e1e52dfb521fd",
+   "update_reason": "Chinese name, address and shoe/harness policy from the brand's own pinned RedNote store guide; hours left empty (guide and 2026-02 WeChat notice differ)"
+  },
+  {
+   "line": 7,
+   "class": "update",
+   "id": "seed-622",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "熊猫攀岩生活馆(青羊富力广场店)"
+    },
+    {
+     "field": "address_local",
+     "before": null,
+     "after": "成都市青羊区顺城大街289号富力天汇中庭6楼"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "2pm–10pm",
+      "tue": "2pm–10pm",
+      "wed": "2pm–10pm",
+      "thu": "2pm–10pm",
+      "fri": "2pm–10pm",
+      "sat": "10am–10pm",
+      "sun": "10am–10pm"
+     }
+    },
+    {
+     "field": "visitor",
+     "before": null,
+     "after": {
+      "shoe_hire": "Climbing shoes and harness are included free with the ticket"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.xiaohongshu.com/explore/67e2adae000000001201c6e3"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-social"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-07"
+    }
+   ],
+   "expect_h": "e4faf0925e79eb1c",
+   "update_reason": "Name, address, hours and shoe/harness policy from the brand's own RedNote store guide; hours match its WeChat notice of 2026-02-06"
+  },
+  {
+   "line": 8,
+   "class": "update",
+   "id": "seed-629",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "熊猫攀岩生活馆(温江新光天地店)"
+    },
+    {
+     "field": "address_local",
+     "before": null,
+     "after": "成都市温江区光华大道三段1599号新光天地(A区)6楼"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10am–10pm",
+      "tue": "10am–10pm",
+      "wed": "10am–10pm",
+      "thu": "10am–10pm",
+      "fri": "10am–10pm",
+      "sat": "10am–10pm",
+      "sun": "10am–10pm"
+     }
+    },
+    {
+     "field": "visitor",
+     "before": null,
+     "after": {
+      "shoe_hire": "Climbing shoes and harness are included free with the ticket"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.xiaohongshu.com/explore/67e2adae000000001201c6e3"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-social"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-07"
+    }
+   ],
+   "expect_h": "4c32a76f748d113a",
+   "update_reason": "Name, address, hours and shoe/harness policy from the brand's own RedNote store guide; hours match its WeChat notice of 2026-02-06"
+  }
+ ]
+}

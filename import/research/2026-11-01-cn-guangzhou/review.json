@@ -1,0 +1,43 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-11-01-cn-guangzhou",
+ "reviewer": "Claude (AI) research worker; decisions drafted on the owner's instruction, pending owner sign-off",
+ "reviewed": "2026-11-01",
+ "decisions": {
+  "cn-gz-001": {
+   "decision": "same-as",
+   "same_as": "seed-750",
+   "followup": "location-update",
+   "reason": "Amap shows exactly one Mars (火星攀岩馆) in Liwan, at Yuehuicheng east gate (Xiwan Rd 150); seed-750 \"Mars Climbing Gym (Liwan)\" is the only existing Mars in Liwan, 691 m from the listing. Same gym; the production pin needs a location-update (not verified against seed-750 own address, which this task may not read)."
+  },
+  "cn-gz-002": {
+   "decision": "same-as",
+   "same_as": "seed-741",
+   "followup": "location-update",
+   "reason": "Identical name (Qiaonanhui branch) as seed-741; production pin is 1805 m from the Amap listing and the branch RedNote account (Nancheng Rd 181, Qiaonanhui) , so a location-update is needed."
+  },
+  "cn-gz-003": {
+   "decision": "accept",
+   "reason": "Own branch RedNote account (650 m2 bouldering gym, hours, posts to 2026-10-27). Separate store from the Sijitiandi store seed-736 (8.1 km) and the Wanbo store cn-gz-004 (10.8 km): three BoulderDash stores named on the brand account. The flags are the shared brand name only.",
+   "reviewed_against": [
+    "cn-gz-004",
+    "seed-736"
+   ]
+  },
+  "cn-gz-004": {
+   "decision": "accept",
+   "reason": "Brand account names the south store at Nancun Wanbo Index Home L3 and posted a reset on 2026-10-29. Separate from seed-736 (10.6 km) and cn-gz-003 (10.8 km); flags are the shared brand name only.",
+   "reviewed_against": [
+    "cn-gz-003",
+    "seed-736"
+   ]
+  },
+  "cn-gz-005": {
+   "decision": "accept",
+   "reason": "Own brand account says the Liuhua Center store is pure bouldering and posted 2026-10-31. Separate from seed-745 (Haizhu Shixi, 9.1 km); the brand account lists the stores separately.",
+   "reviewed_against": [
+    "seed-745"
+   ]
+  }
+ }
+}

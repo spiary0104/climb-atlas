@@ -1,0 +1,20 @@
+{
+  "decisions": {
+    "g-5cd08d937f": {
+      "decision": "distinct",
+      "reason": "Own RedNote account describes the 拓东馆 as a 1000 sqm bouldering hall and posts to 2026-11-06 (the competition closure ended 2026-11-02); Amap lists the same store. Separate store from cn-km-002 (0871, 11 km away); the flag is the shared brand name only.",
+      "reviewed_against": [
+        "g-9c56253b23"
+      ],
+      "reviewer": "Claude (AI) research worker; decisions drafted, pending owner sign-off"
+    },
+    "g-9c56253b23": {
+      "decision": "distinct",
+      "reason": "Same own account lists the 0871馆 with a 4.9 m bouldering wall and MoonBoard; Amap lists the same store. Separate store from cn-km-001 (Tuodong, 11 km away); the flag is the shared brand name only.",
+      "reviewed_against": [
+        "g-5cd08d937f"
+      ],
+      "reviewer": "Claude (AI) research worker; decisions drafted, pending owner sign-off"
+    }
+  }
+}

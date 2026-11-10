@@ -1,0 +1,389 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-11-08-cn-ningbo",
+ "inputs": {
+  "section_sha256": "7eba5ccda7fd0ba669186901f1803235d776845f49578b8649e665a8e5df7944",
+  "sources_sha256": "00af994b92f41854337efaefe920df4e39f46dd8de5a96af1d103f4ad1df4949",
+  "candidates_sha256": "ecdf2238e915d564d4bc4a533c335b5c3f540a4cd1928488641dd8863873774c",
+  "index": {
+   "sha256": "ad459783ea351fd0a85662824778a0ef8ddbb1e5c89ee095cf6c306f78a3c641",
+   "count": 3433
+  },
+  "staged_batches_compared": [
+   "2026-10-06-kr-seoul",
+   "2026-11-08-cn-dongguan",
+   "2026-11-08-cn-foshan"
+  ],
+  "other_sections_compared": [
+   {
+    "id": "2026-11-01-cn-guangzhou",
+    "candidates_sha256": "f1d6750918703d8c7060acf2e91053919e9672d7e5bfb4ba804f74580e462b47"
+   },
+   {
+    "id": "2026-11-01-cn-jinan",
+    "candidates_sha256": "1d133eee1ad38381df03e11c09a5b00f1d31bf934ea382425c7c9346dd21c3ad"
+   },
+   {
+    "id": "2026-11-02-cn-hangzhou",
+    "candidates_sha256": "935f313217f60a9f8730a31a25c3b6a6d047e8dae18f97887412880340264a98"
+   },
+   {
+    "id": "2026-11-06-cn-changsha",
+    "candidates_sha256": "4d940331a2979d6a808638ac95f0d21c64453267ab721f57d1aa5f182a6a45e0"
+   },
+   {
+    "id": "2026-11-06-cn-dali",
+    "candidates_sha256": "4d9f48af97680b566539f7017750c604aa1f3fe3d108a624026f09ab035490a5"
+   },
+   {
+    "id": "2026-11-06-cn-kunming",
+    "candidates_sha256": "a89aeedc830d397ee6216fa46a9c886c1250f1fa953bfe559f5f1ba408ed0e38"
+   },
+   {
+    "id": "2026-11-06-cn-qingdao",
+    "candidates_sha256": "8027c939efa4d955a91317a3c51fb1faa632227a8abf4fd91bc811603fe290a1"
+   },
+   {
+    "id": "2026-11-06-cn-wenzhou",
+    "candidates_sha256": "c7be0b950f78f85139f5d84236d1e9812d2a21d755467bf1c9803af5f06be9c3"
+   },
+   {
+    "id": "2026-11-06-cn-xiamen",
+    "candidates_sha256": "b3fdc7df0df146dc75e9dc18d0362f3a29499e41e5b4da95765ac031e024456b"
+   },
+   {
+    "id": "2026-11-08-cn-dongguan",
+    "candidates_sha256": "9b624e8272b5e01bcd6c3f6f5feb534821ebc651cc9cd1a059681746807b6d9c"
+   },
+   {
+    "id": "2026-11-08-cn-foshan",
+    "candidates_sha256": "9b38497a66aa6f8291a0005ec91083f786c82a70d4a2f4030bb5c97e8f74e93a"
+   },
+   {
+    "id": "2026-11-08-cn-wuxi",
+    "candidates_sha256": "ed30d026001e1ea5e541dbccd29dba973e6dd4f484c1c8b56bfbeeb522ff3713"
+   }
+  ]
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 8,
+  "ready": 0,
+  "review": 1,
+  "blocked": 7,
+  "existing": 0,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "cn-nb-001",
+   "line": 1,
+   "name": "ROCKPLUS Climbing (Hongtai)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-c5eb3a2fd2"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "g-df01641c02 same-name-but-pin-differs 1329 m; g-5f4517f01e same-name-but-pin-differs 6120 m",
+     "ids": [
+      "cn-nb-102",
+      "cn-nb-101"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "candidate cn-nb-101 \"ROCKPLUS Climbing (Global Harbor)\": same-name-but-pin-differs (\"ROCKPLUS Climbing (Hongtai)\" / \"ROCKPLUS Climbing (Global Harbor)\", 6120 m)",
+     "ids": [
+      "cn-nb-101"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "candidate cn-nb-102 \"ROCKPLUS Climbing (Wuyi Plaza)\": same-name-but-pin-differs (\"ROCKPLUS Climbing (Hongtai)\" / \"ROCKPLUS Climbing (Wuyi Plaza)\", 1329 m)",
+     "ids": [
+      "cn-nb-102"
+     ]
+    }
+   ],
+   "review_ids": [
+    "cn-nb-101",
+    "cn-nb-102"
+   ]
+  },
+  {
+   "cid": "cn-nb-101",
+   "line": 2,
+   "name": "ROCKPLUS Climbing (Global Harbor)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-5f4517f01e"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "g-c5eb3a2fd2 same-name-but-pin-differs 6120 m; g-df01641c02 same-name-but-pin-differs 7280 m",
+     "ids": [
+      "cn-nb-001",
+      "cn-nb-102"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "candidate cn-nb-001 \"ROCKPLUS Climbing (Hongtai)\": same-name-but-pin-differs (\"ROCKPLUS Climbing (Global Harbor)\" / \"ROCKPLUS Climbing (Hongtai)\", 6120 m)",
+     "ids": [
+      "cn-nb-001"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "candidate cn-nb-102 \"ROCKPLUS Climbing (Wuyi Plaza)\": same-name-but-pin-differs (\"ROCKPLUS Climbing (Global Harbor)\" / \"ROCKPLUS Climbing (Wuyi Plaza)\", 7280 m)",
+     "ids": [
+      "cn-nb-102"
+     ]
+    }
+   ],
+   "review_ids": [
+    "cn-nb-001",
+    "cn-nb-102"
+   ]
+  },
+  {
+   "cid": "cn-nb-102",
+   "line": 3,
+   "name": "ROCKPLUS Climbing (Wuyi Plaza)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-df01641c02"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "g-c5eb3a2fd2 same-name-but-pin-differs 1329 m; g-5f4517f01e same-name-but-pin-differs 7280 m",
+     "ids": [
+      "cn-nb-001",
+      "cn-nb-101"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "candidate cn-nb-001 \"ROCKPLUS Climbing (Hongtai)\": same-name-but-pin-differs (\"ROCKPLUS Climbing (Wuyi Plaza)\" / \"ROCKPLUS Climbing (Hongtai)\", 1329 m)",
+     "ids": [
+      "cn-nb-001"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "candidate cn-nb-101 \"ROCKPLUS Climbing (Global Harbor)\": same-name-but-pin-differs (\"ROCKPLUS Climbing (Wuyi Plaza)\" / \"ROCKPLUS Climbing (Global Harbor)\", 7280 m)",
+     "ids": [
+      "cn-nb-101"
+     ]
+    }
+   ],
+   "review_ids": [
+    "cn-nb-001",
+    "cn-nb-101"
+   ]
+  },
+  {
+   "cid": "cn-nb-103",
+   "line": 4,
+   "name": "Ningbo Baoyi Climbing Club (Eastern New City)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-bf98086d2d"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "cn-nb-104",
+   "line": 5,
+   "name": "V8 Fitness Climbing Club",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-3c541219b9"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "cn-nb-105",
+   "line": 6,
+   "name": "Lai Climbing (Ly climb)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-49ac99101c"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "cn-nb-106",
+   "line": 7,
+   "name": "XTALE Climbing",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-28c706a6bc"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "cn-nb-107",
+   "line": 8,
+   "name": "Yiyi Gaosheng Climbing",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-14bca942a3"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  }
+ ],
+ "reconcile_sha256": "49ff52f665d8753e9dd2be545ad63077bf379d254b534d64a367cf0dcc1ed217"
+}

@@ -1,0 +1,54 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-11-08-cn-foshan",
+ "index": {
+  "sha256": "61c44029c2967709d98a5eafc9dd2d5987b4a6ecc0f8c7ac5d18c60c579bf966",
+  "count": 3449,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-06-kr-seoul",
+  "2026-11-08-cn-dongguan",
+  "2026-11-08-cn-ningbo",
+  "2026-11-08-cn-wuxi"
+ ],
+ "counts": {
+  "records": 2,
+  "new": 2,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "784ecf3390a9cb7f78a3a6483ee091bdfcec41fd1d370316666bed5eeaa17b08",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-af2155fa8a",
+   "id_frozen": true,
+   "name": "Qingtian Climbing (Huangqi)",
+   "country": "CN",
+   "reviewed_distinct": {
+    "reason": "Own account 佛山擎天攀岩馆 posted a bouldering route reset at this store on 2026-10-14 with the address = Amap listing; verified chain account sold passes for this store 2026-09. seed-746 is the chain's Guangzhou Caofangwei store 10.3 km away (same brand, different store).",
+    "reviewer": "Claude (AI) research worker; decisions drafted, pending owner sign-off"
+   }
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-7a53b80a91",
+   "id_frozen": true,
+   "name": "King Climbing (Nanhai Yinxianghui)",
+   "country": "CN"
+  }
+ ]
+}

@@ -1,0 +1,285 @@
+{
+  "schema_version": 1,
+  "sources": {
+    "RG": {
+      "kind": "directory",
+      "title": "Rockgym.jp prefecture lists and gym pages (names, addresses, links only; every gym re-checked on its own site or Instagram)",
+      "url": "https://rockgym.jp/gym-all/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "GSI": {
+      "kind": "map-data",
+      "title": "GSI (Geospatial Information Authority of Japan) address search",
+      "url": "https://msearch.gsi.go.jp/address-search/AddressSearch",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "S_mahoroba-forest": {
+      "kind": "official-site",
+      "title": "MAHOROBA FOREST Bouldering Space (own site)",
+      "url": "https://www.mahorobaforest.com/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "IG_mahoroba-forest": {
+      "kind": "official-social",
+      "title": "Instagram of MAHOROBA FOREST Bouldering Space (own account, public embed read 2026-11-06)",
+      "url": "https://www.instagram.com/mahorobaforest/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "RG_mahoroba-forest": {
+      "kind": "directory",
+      "title": "Rockgym.jp page for MAHOROBA FOREST Bouldering Space",
+      "url": "https://rockgym.jp/mahoroba-forest/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "S_galera": {
+      "kind": "official-site",
+      "title": "Climbing Gym Galera (own site)",
+      "url": "https://www.galera-climbing.jp/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "IG_galera": {
+      "kind": "official-social",
+      "title": "Instagram of Climbing Gym Galera (own account, public embed read 2026-11-06)",
+      "url": "https://www.instagram.com/galera_climb/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "RG_galera": {
+      "kind": "directory",
+      "title": "Rockgym.jp page for Climbing Gym Galera",
+      "url": "https://rockgym.jp/galera/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "S_func2": {
+      "kind": "official-site",
+      "title": "Climbing Box FunC2 (own site)",
+      "url": "http://func2.jp/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "IG_func2": {
+      "kind": "official-social",
+      "title": "Instagram of Climbing Box FunC2 (own account, public embed read 2026-11-06)",
+      "url": "https://www.instagram.com/func2_/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "RG_func2": {
+      "kind": "directory",
+      "title": "Rockgym.jp page for Climbing Box FunC2",
+      "url": "https://rockgym.jp/func2/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "S_crux-osaka": {
+      "kind": "official-site",
+      "title": "CRUX Osaka (own site)",
+      "url": "https://www.crux-jp.com/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "IG_crux-osaka": {
+      "kind": "official-social",
+      "title": "Instagram of CRUX Osaka (own account, public embed read 2026-11-06)",
+      "url": "https://www.instagram.com/crux_osaka/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "RG_crux-osaka": {
+      "kind": "directory",
+      "title": "Rockgym.jp page for CRUX Osaka",
+      "url": "https://rockgym.jp/crux-osaka/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "S_suhara-ikeda": {
+      "kind": "official-site",
+      "title": "Suhara Climbing Gym Ikeda (own site)",
+      "url": "http://suharagym.com/access_i/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "IG_suhara-ikeda": {
+      "kind": "official-social",
+      "title": "Instagram of Suhara Climbing Gym Ikeda (own account, public embed read 2026-11-06)",
+      "url": "https://www.instagram.com/suharagymikeda/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "RG_suhara-ikeda": {
+      "kind": "directory",
+      "title": "Rockgym.jp page for Suhara Climbing Gym Ikeda",
+      "url": "https://rockgym.jp/suhara-ikeda/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "S_san-climbing": {
+      "kind": "official-site",
+      "title": "SAN Climbing Gym (own site)",
+      "url": "https://www.san-climbing-gym.com/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "IG_san-climbing": {
+      "kind": "official-social",
+      "title": "Instagram of SAN Climbing Gym (own account, public embed read 2026-11-06)",
+      "url": "https://www.instagram.com/sanclimbinggym/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "RG_san-climbing": {
+      "kind": "directory",
+      "title": "Rockgym.jp page for SAN Climbing Gym",
+      "url": "https://rockgym.jp/san-climbing/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "S_cronico": {
+      "kind": "official-site",
+      "title": "Bouldering Gym Cronico (own site)",
+      "url": "https://cronico.jp/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "IG_cronico": {
+      "kind": "official-social",
+      "title": "Instagram of Bouldering Gym Cronico (own account, public embed read 2026-11-06)",
+      "url": "https://www.instagram.com/cronicoclimbing/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "RG_cronico": {
+      "kind": "directory",
+      "title": "Rockgym.jp page for Bouldering Gym Cronico",
+      "url": "https://rockgym.jp/cronico/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "S_dawn": {
+      "kind": "official-site",
+      "title": "DAWN Climbing Gym (own site)",
+      "url": "https://www.dawn-cgym.com/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "IG_dawn": {
+      "kind": "official-social",
+      "title": "Instagram of DAWN Climbing Gym (own account, public embed read 2026-11-06)",
+      "url": "https://www.instagram.com/dawn_climbing_gym/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "RG_dawn": {
+      "kind": "directory",
+      "title": "Rockgym.jp page for DAWN Climbing Gym",
+      "url": "https://rockgym.jp/dawn/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "S_old-but-gold": {
+      "kind": "official-site",
+      "title": "OLD BUT GOLD (own site)",
+      "url": "http://oldbutgold-gym.com/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "IG_old-but-gold": {
+      "kind": "official-social",
+      "title": "Instagram of OLD BUT GOLD (own account, public embed read 2026-11-06)",
+      "url": "https://www.instagram.com/oldbutgold.gym/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "RG_old-but-gold": {
+      "kind": "directory",
+      "title": "Rockgym.jp page for OLD BUT GOLD",
+      "url": "https://rockgym.jp/old-but-gold/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "S_hinotama": {
+      "kind": "official-site",
+      "title": "Hinotama Wall Climbing Gym (own site)",
+      "url": "https://www.hinotamawall.com/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "IG_hinotama": {
+      "kind": "official-social",
+      "title": "Instagram of Hinotama Wall Climbing Gym (own account, public embed read 2026-11-06)",
+      "url": "https://www.instagram.com/hinotamawall/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "RG_hinotama": {
+      "kind": "directory",
+      "title": "Rockgym.jp page for Hinotama Wall Climbing Gym",
+      "url": "https://rockgym.jp/hinotama/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "S_boulder-plus": {
+      "kind": "official-site",
+      "title": "Boulder plus (own site)",
+      "url": "https://www.boulderplus.net/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "IG_boulder-plus": {
+      "kind": "official-social",
+      "title": "Instagram of Boulder plus (own account, public embed read 2026-11-06)",
+      "url": "https://www.instagram.com/boulderplus2020/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "RG_boulder-plus": {
+      "kind": "directory",
+      "title": "Rockgym.jp page for Boulder plus",
+      "url": "https://rockgym.jp/boulder-plus/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "S_suhara-takarazuka": {
+      "kind": "official-site",
+      "title": "Suhara Climbing Gym Takarazuka (own site)",
+      "url": "http://suharagym.com/access_t/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "IG_suhara-takarazuka": {
+      "kind": "official-social",
+      "title": "Instagram of Suhara Climbing Gym Takarazuka (own account, public embed read 2026-11-06)",
+      "url": "https://www.instagram.com/suharagym/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "RG_suhara-takarazuka": {
+      "kind": "directory",
+      "title": "Rockgym.jp page for Suhara Climbing Gym Takarazuka",
+      "url": "https://rockgym.jp/suhara-takarazuka/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "IG_rock-mate-otsu": {
+      "kind": "official-social",
+      "title": "Instagram of Rock Mate Otsu (own account, public embed read 2026-11-06)",
+      "url": "https://www.instagram.com/rockmate.otsu/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    },
+    "RG_rock-mate-otsu": {
+      "kind": "directory",
+      "title": "Rockgym.jp page for Rock Mate Otsu",
+      "url": "https://rockgym.jp/rock-mate-otsu/",
+      "language": "ja",
+      "accessed": "2026-11-06"
+    }
+  }
+}

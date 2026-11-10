@@ -1,0 +1,266 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-10-13-australia",
+ "reviewer": "Spiar (owner); decisions drafted by Claude (AI) on the owner's instruction, pending owner sign-off",
+ "reviewed": "2026-10-13",
+ "decisions": {
+  "au-9d-alexandria": {
+   "decision": "same-as",
+   "same_as": "seed-0",
+   "followup": "location-update",
+   "reason": "Locations page lists Alexandria, Building 3/85 O'Riordan St. OSM node at 85 O'Riordan Street. Existing seed-0 pin is about 1.7 km from it."
+  },
+  "au-9d-chatswood": {
+   "decision": "accept",
+   "reason": "Locations page lists Chatswood (7/372 Eastern Valley Way, Mon-Sun hours, new climbs every Tuesday) and a Winter Boulder Series partial closure on 26-29 August (2026 event). OSM node \"9 degrees Chatswood\" carries the same street address.",
+   "reviewed_against": [
+    "au-9d-alexandria",
+    "au-9d-enoggera",
+    "au-9d-lane-cove",
+    "au-9d-morningside",
+    "seed-0",
+    "seed-3"
+   ]
+  },
+  "au-9d-enoggera": {
+   "decision": "same-as",
+   "same_as": "seed-45",
+   "followup": "location-update",
+   "reason": "Locations page lists Enoggera, 72 Pickering St. OSM node at 72 Pickering Street. Existing seed-45 pin is about 300 m from it."
+  },
+  "au-9d-lane-cove": {
+   "decision": "same-as",
+   "same_as": "seed-1",
+   "followup": "location-update",
+   "reason": "Locations page lists Lane Cove, 1a/21 Mars Rd. OSM node tagged climbing;bouldering at 21 Mars Road. Existing seed-1 pin is about 350 m from it."
+  },
+  "au-9d-morningside": {
+   "decision": "accept",
+   "reason": "Locations page lists Morningside (3/500 Lytton Rd, open 9am-10pm every day, new climbs Mon and Wed). Pin: OSM node N11908889369 \"9 Degrees Bouldering\" at 500 Lytton Road (Photon).",
+   "reviewed_against": [
+    "au-9d-alexandria",
+    "au-9d-chatswood",
+    "au-9d-enoggera",
+    "au-9d-lane-cove",
+    "seed-45"
+   ]
+  },
+  "au-activate-hardrock-heatherton": {
+   "decision": "reject",
+   "reason_code": "no-bouldering",
+   "reason": "Site (copyright 2026, June 2026 news) is a Clip 'n Climb auto-belay venue; the word boulder does not appear. Not related to the Hardrock CBD gym."
+  },
+  "au-adrenaline-vault-cockburn": {
+   "decision": "accept",
+   "reason": "Site lists Cockburn (443 Yangebup Rd) with hours, bouldering/top rope/lead services and a Halloween 2026 event on 30 October. OSM node \"Adrenaline Vault Cockburn\" at the same address."
+  },
+  "au-albury-indoor-rock-climbing": {
+   "decision": "defer",
+   "reason": "OSM-only; the listed website page returned 404; bouldering and opening status unconfirmed. MANUAL-CHECK A4."
+  },
+  "au-alpine-currumbin": {
+   "decision": "accept",
+   "reason": "Locations page: Currumbin 1 Stewart Rd with hours, Kilter, Tension 2 and spray walls, weekly resets; first-time page explains bouldering (no ropes); copyright 2026, news lists Alpine Vision 2026. OSM node agrees with the gym's own Google Maps link (-28.14560,153.47753) within 5 m.",
+   "reviewed_against": [
+    "seed-53"
+   ]
+  },
+  "au-beyond-bouldering-thebarton": {
+   "decision": "accept",
+   "reason": "Home page lists three locations (Keswick, Kent Town, Thebarton 27 Walsh Street); Thebarton page copyright 2026. No OSM element exists for it; the pin is the centre of the gym's own embedded place map. Weaker pin.",
+   "reviewed_against": [
+    "seed-67",
+    "seed-68"
+   ]
+  },
+  "au-blochaus-fyshwick": {
+   "decision": "same-as",
+   "same_as": "seed-29",
+   "followup": "location-update",
+   "reason": "Canberra site (copyright 2026) lists 1 Dairy Road, Fyshwick. OSM node at 1 Dairy Road. Existing seed-29 pin is about 230 m away."
+  },
+  "au-boulder-lab-brunswick": {
+   "decision": "accept",
+   "reason": "Home page lists Brunswick 260-266 Barkly Street with hours and phone; page shows Lab Masters 2026. OSM node \"Boulder Lab\" on Barkly Street, Brunswick.",
+   "reviewed_against": [
+    "au-boulder-lab-clayton-south",
+    "au-boulder-lab-ferntree-gully"
+   ]
+  },
+  "au-boulder-lab-clayton-south": {
+   "decision": "accept",
+   "reason": "Home page lists Clayton South 1418a Centre Rd with hours, phone and Kinder Lab; Lab Masters 2026. OSM node \"Boulder Lab Clayton\" at 1418A Centre Road.",
+   "reviewed_against": [
+    "au-boulder-lab-brunswick",
+    "au-boulder-lab-ferntree-gully"
+   ]
+  },
+  "au-boulder-lab-ferntree-gully": {
+   "decision": "same-as",
+   "same_as": "seed-39",
+   "followup": "location-update",
+   "reason": "Home page lists Ferntree Gully 8/1821 Ferntree Gully Road. OSM way \"Boulder Lab\" at 1821 Ferntree Gully Road. Existing seed-39 pin is about 1.3 km away."
+  },
+  "au-buffalo-boulders-myrtleford": {
+   "decision": "accept",
+   "reason": "Site: \"indoor bouldering facility for anyone 5 years and over\", walk-ins, hours labelled \"Sept School Holidays\". The site gives 190 Myrtle Street; OSM node is tagged 81 Prince Street but sits within 3 m of the gym's own Google Maps place marker (-36.55822,146.72012). Weaker open evidence (no year)."
+  },
+  "au-camp-street-katoomba": {
+   "decision": "defer",
+   "reason": "Website did not load from this connection; bouldering and opening status unconfirmed. MANUAL-CHECK A3."
+  },
+  "au-cliffhanger-altona-north": {
+   "decision": "same-as",
+   "same_as": "seed-43",
+   "followup": "location-update",
+   "reason": "Site (copyright 2026): rope gym with hours; Westgate Sports Centre, 61-65 Dohertys Rd. The site's own map (-37.83209,144.82506) agrees with the OSM node (499 Grieve Parade) within 30 m. Existing seed-43 pin is about 340 m away."
+  },
+  "au-climb-west-altona": {
+   "decision": "accept",
+   "reason": "Home page: indoor bouldering gym, address 193 Maidstone Street, hours Mon-Sun, bouldering holiday program 7 and 9 July (2026 week days), Womxn's Night every Monday. Sitchu (8 May 2026) lists it. OSM way \"Climb West\" at 193 Maidstone Street."
+  },
+  "au-climbfit-st-leonards": {
+   "decision": "same-as",
+   "same_as": "seed-8",
+   "followup": "location-update",
+   "reason": "Chain site lists Kirrawee, St Leonards and Macquarie (bouldering, rope and lead). OSM node \"Climb Fit\" at 12 Frederick Street. Existing seed-8 pin is about 250 m away."
+  },
+  "au-clipnclimb-berwick": {
+   "decision": "reject",
+   "reason_code": "no-bouldering",
+   "reason": "Home page (copyright 2026) is an auto-belay \"Clip n Climb\" attraction with holiday programs; the word boulder does not appear. Auto-belay only."
+  },
+  "au-clipnclimb-williamstown": {
+   "decision": "reject",
+   "reason_code": "no-bouldering",
+   "reason": "Site (copyright 2026) is a Clip n Climb auto-belay centre; no bouldering mentioned."
+  },
+  "au-crux-coburg-north": {
+   "decision": "accept",
+   "reason": "Site: \"a bouldering gym in Coburg, Melbourne\", current pricing and $49 first-timer offer (same offer quoted by Sitchu on 8 May 2026), events page live. The site prints no copyright year; address 20 Louvain Street from Sitchu and OSM way \"Crux Bouldering\". Weaker open evidence."
+  },
+  "au-cutloose-upper-coomera": {
+   "decision": "accept",
+   "reason": "Home page: \"Northern Gold Coast's only indoor bouldering gym\", hours Mon-Sun, current membership prices, phone and address; page metadata modified 2026-03-01. No dated 2026 event found. Weaker open evidence."
+  },
+  "au-edge-castle-hill": {
+   "decision": "same-as",
+   "same_as": "seed-12",
+   "followup": "location-update",
+   "reason": "Site: indoor top rope, bouldering, lead climbing; 9/10 Hudson Ave, hours listed. OSM node and Photon building at 10 Hudson Avenue. Existing seed-12 pin is about 490 m away."
+  },
+  "au-elevate-villawood": {
+   "decision": "same-as",
+   "same_as": "seed-7",
+   "followup": "location-update",
+   "reason": "Site: 400 m2 of bouldering with over 100 problems plus lead routes; Unit 5, 850 Woodville Road. OSM way at 850 Woodville Road. Existing seed-7 pin is about 430 m away."
+  },
+  "au-flow-bouldering-forest-glen": {
+   "decision": "defer",
+   "reason": "Open status unconfirmed: site copyright 2024, last blog post 2021, no 2026 sign of life. MANUAL-CHECK A1."
+  },
+  "au-flow-climbing-cheltenham": {
+   "decision": "accept",
+   "reason": "Home page \"Try Bouldering at Flow Climbing\", day passes, memberships, hours Mon-Sun, copyright 2026. OSM way \"Flow Climbing\" at 89 Argus Street."
+  },
+  "au-friction-bouldering-delacombe": {
+   "decision": "defer",
+   "reason": "Own domain shows a parked page; the gym may have closed. MANUAL-CHECK A5."
+  },
+  "au-gecko-climb-darwin": {
+   "decision": "accept",
+   "reason": "Home page: 300 sqm of bouldering walls plus 290 sqm of roped climbing (top-rope and autobelay), hours listed, upcoming events 8 and 15 October and Reel Rock 20 on 26 November. Contact page: 2 Snell St, Woolner. OSM node \"Gecko Climb\" at 2 Snell Street."
+  },
+  "au-industry-boulders-grovedale": {
+   "decision": "accept",
+   "reason": "Site: ropes do not exist, bouldering to 4.3 m, pricing and calendar, copyright 2026. OSM way \"Industry Boulders\" at 8 Lewalan Street; the site's own embedded map centre (-38.1980,144.3431) agrees within about 30 m."
+  },
+  "au-laneway-boulders-stepney": {
+   "decision": "accept",
+   "reason": "Site: \"Bouldering for all\", hours (ages 8+), pricing and memberships live, footer 2025; no dated 2026 event found. OSM node and the gym's own Google map link (-34.91357,138.62827) agree. Weaker open evidence."
+  },
+  "au-mandurah-indoor-rock-climbing": {
+   "decision": "defer",
+   "reason": "Open status unconfirmed: site copyright 2024 and no dated 2026 event or post found. MANUAL-CHECK A2."
+  },
+  "au-nomad-annandale": {
+   "decision": "same-as",
+   "same_as": "seed-4",
+   "followup": "location-update",
+   "reason": "Home page: two Sydney locations, Take Two 2026 competition. The gym's own Google Maps link (-33.88513,151.17484) agrees with the OSM way (12 Chester Street) within 25 m. Existing seed-4 pin is about 400 m away."
+  },
+  "au-nomad-gladesville": {
+   "decision": "same-as",
+   "same_as": "seed-5",
+   "followup": "location-update",
+   "reason": "Home page: \"Gladesville - Now Open!\". The gym's own Google Maps link (-33.82395,151.12293) agrees with the OSM node within 60 m. Existing seed-5 pin is about 1.1 km away."
+  },
+  "au-northside-abbotsford": {
+   "decision": "accept",
+   "reason": "Northside locations: Abbotsford (The Lactic Factory) 1 Studley Street, Mon-Fri 4:30-9:30pm, Sat-Sun 11am-6pm, new sets Fridays; trial covers all three gyms. Sitchu (8 May 2026) also lists Abbotsford. OSM building way W260729883 \"The Lactic Factory\" at 1 Studley Street. Limited weekday hours.",
+   "reviewed_against": [
+    "seed-35",
+    "seed-36"
+   ]
+  },
+  "au-portside-joondalup": {
+   "decision": "defer",
+   "reason": "Open with bouldering (established 2025), but the site prints only \"Royce Court\" and only a street-level pin exists. MANUAL-CHECK A7."
+  },
+  "au-portside-willetton": {
+   "decision": "accept",
+   "reason": "Chain home page (copyright 2026) lists Willetton 8 Kembla Way with hours; Portside is a bouldering chain. OSM way \"Portside Boulders Willetton\" at 8 Kembla Way.",
+   "reviewed_against": [
+    "au-portside-joondalup",
+    "seed-61"
+   ]
+  },
+  "au-pulse-adamstown": {
+   "decision": "defer",
+   "reason": "Open with bouldering, but only a street-level pin exists for 10/122 Garden Grove Parade. MANUAL-CHECK A6."
+  },
+  "au-pulse-gosford": {
+   "decision": "accept",
+   "reason": "Gosford page: \"awesome bouldering gym\", opening hours listed, site footer 2026. OSM building way W688083573 named Pulse Climbing at 8 Grieve Road (the site writes Grieve Cl)."
+  },
+  "au-pulse-maitland": {
+   "decision": "accept",
+   "reason": "Maitland page: \"awesome bouldering gym\", over 100 bouldering routes, hours listed, site footer 2026. OSM node \"Pulse Climbing Maitland\" at the same address."
+  },
+  "au-rockit-derwent-park": {
+   "decision": "accept",
+   "reason": "Rock It Hobart site: \"Derwent Park: bouldering-only facility with gym and training\". Derwent Park site: hours, 4-6 Elmsleigh Rd, Winter Sector Series '26. Pin is the map marker the gym set on its own page.",
+   "reviewed_against": [
+    "seed-73"
+   ]
+  },
+  "au-sicg-st-peters": {
+   "decision": "same-as",
+   "same_as": "seed-6",
+   "followup": "location-update",
+   "reason": "Site (copyright 2026) gives Unit 4C/1-7 Unwins Bridge Road; OSM node at 1-7 Unwins Bridge Road. Existing seed-6 pin is about 580 m away. Bouldering not restated on the home page; existing record already lists it."
+  },
+  "au-the-hold-bendigo": {
+   "decision": "accept",
+   "reason": "Site: \"Indoor bouldering, kids classes and a proper cafe-bar\", no ropes, hours weekdays 8:30am-9pm and weekends 9am-9pm, pricing and shop live. Walltopia lists the 347 m2 fit-out (2025). No dated 2026 post found. Pin is the OSM address point for 80 Hattam Street (a new building without its own OSM element). Weaker open and pin evidence."
+  },
+  "au-urban-climb-adelaide": {
+   "decision": "accept",
+   "reason": "Location page (rendered 2026-10-13): upcoming boulder resets from 13/10/2026 to 06/11/2026, bouldering hours (ages 5+), 128 Hindley Street. OSM node \"Urban Climb\" at 128 Hindley Street."
+  },
+  "au-urban-climb-townsville": {
+   "decision": "accept",
+   "reason": "Location page (rendered 2026-10-13): \"All ages bouldering gym\", boulder resets 13/10/2026 to 27/10/2026, hours, 1 Darcy Dr Idalia. OSM node \"Urban Climb\" on D'Arcy Drive, Idalia."
+  },
+  "au-urban-climb-west-end": {
+   "decision": "same-as",
+   "same_as": "seed-48",
+   "followup": "location-update",
+   "reason": "Location page (rendered 2026-10-13): bouldering gym with 6 walls and a ropes gym, resets through 21/10/2026. OSM nodes \"Urban Climb West End Boulder Hall\" and \"Ropes\" at 220 Montague Road. Existing seed-48 pin is about 1.4 km away."
+  },
+  "au-wall-walkers-capalaba": {
+   "decision": "accept",
+   "reason": "Site (copyright 2026): boutique bouldering gym, casual pass, V0 to V10+, hours Mon-Wed/Fri 3-8pm and Sat-Sun 9am-7pm, 24/7 member access. Pin is the OSM address point at 6 Jones Road (a neighbouring business in the same building)."
+  }
+ }
+}

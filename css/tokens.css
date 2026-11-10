@@ -176,6 +176,7 @@
   --size-textarea-min:72px;
 
   /* ===== 3. Component tokens (the short list that earns them) ==================================================== */
+  --pin-size-dot-map:10px;   /* map dots (zoom <= 11): larger than the 6px row dot so gyms stand out on the light map */
   --pin-size-city:16px;  --pin-size-dot:6px;  --pin-zoom-dot-max:11;
   --cluster-size:32px;   --cluster-size-large:40px; --cluster-max-zoom:15;
   --pin-scale-selected:1.25;   /* 16px -> 20px when selected or hovered (sec. 7.3) */
@@ -192,28 +193,26 @@
   --placeholder-hold-b:var(--palette-mustard-3);
   --placeholder-letter:var(--palette-bark-5);
 
-  --map-canvas:var(--palette-rock-0);
+  --map-canvas:var(--palette-paper-4);      /* the light map: globe space and tile gaps */
   --map-pin-outline:var(--palette-ink-12);
-  --map-pin-selected-ring:var(--palette-forest-5);
-  --map-pin-saved-ring:var(--palette-mustard-5);
+  --map-pin-selected-ring:var(--palette-forest-9);   /* ring colours >= 4.5:1 on the light land */
+  --map-pin-saved-ring:var(--palette-mustard-7);
   --map-pin-climbed-ring:var(--palette-forest-6);
   --map-pin-checkedin-fill:var(--palette-forest-7);
   --map-pin-dot:var(--palette-paper-0);
   --map-pin-other:var(--palette-paper-6);      /* gyms with no known climb type */
-  --map-cluster-fill:var(--palette-paper-0);
-  --map-cluster-text:var(--palette-ink-12);
-  --map-cluster-border:var(--palette-ink-12);
-  --map-label-text:var(--palette-rock-8);
-  --map-label-halo:var(--palette-rock-0);
+  --map-cluster-fill:var(--palette-ink-12);      /* dark disc on the light map: 3:1+ against land, roads and water */
+  --map-cluster-text:var(--palette-paper-0);      /* 13.3:1 on the disc */
+  --map-cluster-border:var(--palette-paper-0);    /* cream ring separates the disc from dark road casings */
+  --map-label-text:var(--palette-ink-12);
+  --map-label-halo:var(--palette-paper-1);
   --map-control-surface:var(--palette-paper-0);
   --map-control-text:var(--palette-ink-9);   /* text on paper map controls inside the rock map region (5.3:1) */
-  --map-control-border:var(--palette-ink-alpha-20);
+  --map-control-border:var(--palette-ink-9);   /* control edge on the light map: 5.3:1 on the control surface */
   /* Globe atmosphere and basemap label fix (read by js/modules/map.js at style.load) */
-  --map-sky:var(--palette-rock-0);
-  --map-horizon:var(--palette-rock-3);
-  --map-fog:var(--palette-rock-0);
-  --map-road-label:var(--palette-rock-8);
-  --map-tint:var(--palette-rock-4);   /* hue/saturation given to every basemap fill/line (warm dark basemap, sec. 0.4) */
+  --map-sky:var(--palette-paper-4);
+  --map-horizon:var(--palette-paper-5);
+  --map-fog:var(--palette-paper-4);
   /* Paper-toned mini maps on document pages (gym, region, city); Explore stays dark (sec. 8, Brand Pass) */
   --map-paper-land:var(--palette-paper-1);
   --map-paper-line:var(--palette-paper-5);

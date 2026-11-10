@@ -1,0 +1,518 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-11-08-cn-foshan",
+ "inputs": {
+  "section_sha256": "bd845a8191735d47988841b66f4e20ae97c4a46c3762a64e9e8db5c78c30bcef",
+  "sources_sha256": "f965dfb7b7b0c8b34cd1439ad4f36b505837f654c10f6202df26c58b13ea89f6",
+  "candidates_sha256": "9b38497a66aa6f8291a0005ec91083f786c82a70d4a2f4030bb5c97e8f74e93a",
+  "index": {
+   "sha256": "ad459783ea351fd0a85662824778a0ef8ddbb1e5c89ee095cf6c306f78a3c641",
+   "count": 3433
+  },
+  "staged_batches_compared": [
+   "2026-10-06-kr-seoul"
+  ],
+  "other_sections_compared": [
+   {
+    "id": "2026-11-01-cn-guangzhou",
+    "candidates_sha256": "f1d6750918703d8c7060acf2e91053919e9672d7e5bfb4ba804f74580e462b47"
+   },
+   {
+    "id": "2026-11-01-cn-jinan",
+    "candidates_sha256": "1d133eee1ad38381df03e11c09a5b00f1d31bf934ea382425c7c9346dd21c3ad"
+   },
+   {
+    "id": "2026-11-02-cn-hangzhou",
+    "candidates_sha256": "935f313217f60a9f8730a31a25c3b6a6d047e8dae18f97887412880340264a98"
+   },
+   {
+    "id": "2026-11-06-cn-changsha",
+    "candidates_sha256": "4d940331a2979d6a808638ac95f0d21c64453267ab721f57d1aa5f182a6a45e0"
+   },
+   {
+    "id": "2026-11-06-cn-dali",
+    "candidates_sha256": "4d9f48af97680b566539f7017750c604aa1f3fe3d108a624026f09ab035490a5"
+   },
+   {
+    "id": "2026-11-06-cn-kunming",
+    "candidates_sha256": "a89aeedc830d397ee6216fa46a9c886c1250f1fa953bfe559f5f1ba408ed0e38"
+   },
+   {
+    "id": "2026-11-06-cn-qingdao",
+    "candidates_sha256": "8027c939efa4d955a91317a3c51fb1faa632227a8abf4fd91bc811603fe290a1"
+   },
+   {
+    "id": "2026-11-06-cn-wenzhou",
+    "candidates_sha256": "c7be0b950f78f85139f5d84236d1e9812d2a21d755467bf1c9803af5f06be9c3"
+   },
+   {
+    "id": "2026-11-06-cn-xiamen",
+    "candidates_sha256": "b3fdc7df0df146dc75e9dc18d0362f3a29499e41e5b4da95765ac031e024456b"
+   },
+   {
+    "id": "2026-11-08-cn-dongguan",
+    "candidates_sha256": "9b624e8272b5e01bcd6c3f6f5feb534821ebc651cc9cd1a059681746807b6d9c"
+   },
+   {
+    "id": "2026-11-08-cn-ningbo",
+    "candidates_sha256": "ecdf2238e915d564d4bc4a533c335b5c3f540a4cd1928488641dd8863873774c"
+   },
+   {
+    "id": "2026-11-08-cn-wuxi",
+    "candidates_sha256": "ed30d026001e1ea5e541dbccd29dba973e6dd4f484c1c8b56bfbeeb522ff3713"
+   }
+  ]
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 12,
+  "ready": 0,
+  "review": 2,
+  "blocked": 10,
+  "existing": 0,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "cn-fs-001",
+   "line": 1,
+   "name": "Qingtian Climbing (Huangqi)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-af2155fa8a"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "seed-746 same-name-but-pin-differs 10327 m",
+     "ids": [
+      "seed-746"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "seed-746 \"Qingtian Climbing (Caofangwei)\": same-name-but-pin-differs (\"Qingtian Climbing (Huangqi)\" / \"Qingtian Climbing (Caofangwei)\", 10327 m)",
+     "ids": [
+      "seed-746"
+     ]
+    }
+   ],
+   "review_ids": [
+    "seed-746"
+   ]
+  },
+  {
+   "cid": "cn-fs-002",
+   "line": 2,
+   "name": "King Climbing (Nanhai Yinxianghui)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-7a53b80a91"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "g-390b434274 same-name 205 m",
+     "ids": [
+      "cn-fs-102"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "candidate cn-fs-102 \"King Climbing (Yuehui Plaza)\": same-name (\"King Climbing (Nanhai Yinxianghui)\" / \"King Climbing (Yuehui Plaza)\", 205 m)",
+     "ids": [
+      "cn-fs-102"
+     ]
+    }
+   ],
+   "review_ids": [
+    "cn-fs-102"
+   ]
+  },
+  {
+   "cid": "cn-fs-101",
+   "line": 3,
+   "name": "K2 Climbing (Foshan Poly Mall)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-03946210ff"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "cn-fs-102",
+   "line": 4,
+   "name": "King Climbing (Yuehui Plaza)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-390b434274"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "g-7a53b80a91 same-name 205 m",
+     "ids": [
+      "cn-fs-002"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "candidate cn-fs-002 \"King Climbing (Nanhai Yinxianghui)\": same-name (\"King Climbing (Yuehui Plaza)\" / \"King Climbing (Nanhai Yinxianghui)\", 205 m)",
+     "ids": [
+      "cn-fs-002"
+     ]
+    },
+    {
+     "code": "related-name-nearby",
+     "detail": "seed-753 \"King Climbing Club (Liwan)\": related names \"King Climbing (Yuehui Plaza)\" / \"King Climbing Club (Liwan)\" 14957 m apart",
+     "ids": [
+      "seed-753"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "cn-fs-002",
+    "seed-753"
+   ]
+  },
+  {
+   "cid": "cn-fs-103",
+   "line": 5,
+   "name": "Tuobili Climbing Club (Dongfang Xintiandi)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-1b4df325ab"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "cn-fs-104",
+   "line": 6,
+   "name": "Hello Max Climbing (Shunde Daxin)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-1a066f3298"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "cn-fs-105",
+   "line": 7,
+   "name": "Super Extreme Climbing (Beijiao)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-b3169b5ba7"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "cn-fs-106",
+   "line": 8,
+   "name": "Zhanxiang Climbing Club (Aoyuan Plaza)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-5c8e898265"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "g-f622c22d61 same-name-same-suburb-far-pin 21027 m",
+     "ids": [
+      "cn-fs-107"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "candidate cn-fs-107 \"Zhanxiang Climbing Club (Foshan New City)\": same-name-same-suburb-far-pin (\"Zhanxiang Climbing Club (Aoyuan Plaza)\" / \"Zhanxiang Climbing Club (Foshan New City)\", 21027 m)",
+     "ids": [
+      "cn-fs-107"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "cn-fs-107"
+   ]
+  },
+  {
+   "cid": "cn-fs-107",
+   "line": 9,
+   "name": "Zhanxiang Climbing Club (Foshan New City)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-f622c22d61"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "g-5c8e898265 same-name-same-suburb-far-pin 21027 m",
+     "ids": [
+      "cn-fs-106"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "candidate cn-fs-106 \"Zhanxiang Climbing Club (Aoyuan Plaza)\": same-name-same-suburb-far-pin (\"Zhanxiang Climbing Club (Foshan New City)\" / \"Zhanxiang Climbing Club (Aoyuan Plaza)\", 21027 m)",
+     "ids": [
+      "cn-fs-106"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "cn-fs-106"
+   ]
+  },
+  {
+   "cid": "cn-fs-108",
+   "line": 10,
+   "name": "Moment Climbing (Daliang Qinghuiyuan)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-178fd66ef4"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "cn-fs-109",
+   "line": 11,
+   "name": "Mars Climbing (Shunlian Park)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-8884e44b27"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  },
+  {
+   "cid": "cn-fs-110",
+   "line": 12,
+   "name": "Crag4yard Climbing x Fitness",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-51942f2b39"
+   },
+   "blockers": [
+    {
+     "code": "status-not-open",
+     "detail": "status_claim is unknown"
+    },
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": []
+  }
+ ],
+ "reconcile_sha256": "f0821b40210e9e59d3ca9ab8561e06bdbbd15d1eb328b74fbff385a55a7e8bd2"
+}

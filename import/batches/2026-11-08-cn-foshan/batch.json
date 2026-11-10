@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-11-08-cn-foshan",
+  "description": "Regional research \"China: Foshan\": 2 new gym(s) accepted of 12 candidate(s)",
+  "created": "2026-11-08",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-11-08-cn-foshan",
+    "section_sha256": "bd845a8191735d47988841b66f4e20ae97c4a46c3762a64e9e8db5c78c30bcef",
+    "sources_sha256": "f965dfb7b7b0c8b34cd1439ad4f36b505837f654c10f6202df26c58b13ea89f6",
+    "candidates_sha256": "9b38497a66aa6f8291a0005ec91083f786c82a70d4a2f4030bb5c97e8f74e93a",
+    "reconcile_sha256": "2b79f4969dfa8e2288d0acb14c2f44a917530e8fa3447a65b02080663e73d8f6",
+    "review_sha256": "3bc43ff35e25fff09459b89867ec222bd83d9b99c4984e6672e72cd283efdaba",
+    "candidates": 12,
+    "staged": 2,
+    "decisions": {
+      "accept": 2,
+      "defer": 10
+    }
+  },
+  "index_at_staging": {
+    "sha256": "ad459783ea351fd0a85662824778a0ef8ddbb1e5c89ee095cf6c306f78a3c641",
+    "count": 3433
+  }
+}

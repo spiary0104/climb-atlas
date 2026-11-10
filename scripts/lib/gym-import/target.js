@@ -110,6 +110,19 @@ class Api {
     return rows;
   }
   async probe({ service = false } = {}) { return this._send('GET', '/rest/v1/spots?select=id&limit=1', { service }); }
+  // Read-only. Which of `cols` does the spots table not have yet? One GET selecting them with limit=1: PostgREST answers 400 (42703, undefined column) when one is missing, so the
+  // missing ones are then found one by one. Any other failure (network, 401, 5xx) throws -- an unknown state is never read as "present". Used before any batch writes a column
+  // added by a migration that may not be applied yet (validate.js NEW_COLUMNS).
+  async missingColumns(cols, { service = false } = {}) {
+    const get = c => this._send('GET', `/rest/v1/spots?select=${c.join(',')}&limit=1`, { service });
+    const r = await get(cols);
+    if (r.ok) return [];
+    if (r.status !== 400) throw new Error(`column check failed: HTTP ${r.status}`);
+    const missing = [];
+    for (const c of cols) { const one = await get([c]); if (one.ok) continue; if (one.status !== 400) throw new Error(`column check failed: HTTP ${one.status}`); missing.push(c); }
+    if (!missing.length) throw new Error('column check failed: HTTP 400 although every column is individually readable');
+    return missing;
+  }
 
   // THE ONLY WRITE in the importer: one atomic INSERT of new rows into spots. Plain insert: if any id already exists the whole
   // statement fails and nothing is written; existing rows can never be changed by it.

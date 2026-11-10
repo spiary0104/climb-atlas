@@ -13,15 +13,25 @@ const ID_ANY = /^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$/;
 const LIMITS = { name: 200, suburb: 200, state: 100, address: 400, notes: 4000 };
 // Fields a batch record may carry. Everything else (status, community=true, edited, submitted_by, created_at, ...) is
 // decided by the importer, never by research data, so it is rejected instead of silently ignored.
-const RECORD_KEYS = new Set(['id', 'intent', 'name', 'suburb', 'state', 'country', 'lat', 'lng', 'types', 'address', 'notes', 'photo', 'community', 'source']);
-const UPDATABLE = ['name', 'suburb', 'state', 'lat', 'lng', 'types', 'address', 'notes', 'photo', 'website', 'hours', 'day_pass', 'facilities'];
+const RECORD_KEYS = new Set(['id', 'intent', 'name', 'suburb', 'state', 'country', 'lat', 'lng', 'types', 'address', 'notes', 'photo', 'community', 'source', 'name_local', 'address_local']);
+const UPDATABLE = ['name', 'suburb', 'state', 'lat', 'lng', 'types', 'address', 'notes', 'photo', 'website', 'hours', 'day_pass', 'facilities', 'name_local', 'address_local', 'visitor', 'info_source', 'info_source_kind', 'info_checked_on'];
 // Gym-information fields (migration 20261004000100) plus `notes`. An "info update" only FILLS them on a gym that has none (updater.js enforces
 // fill-only against production); it never carries any other field, so a record never mixes them with the location fields.
 // website/hours/day_pass/facilities are not in the content hash; `notes` IS (normalize.js contentHash), so updater.js reads a notes fill's state from
 // the hash of the row with notes removed (see stateOfInfo there). The index carries none of the five.
-const INFO_FIELDS = Object.freeze(['website', 'hours', 'day_pass', 'facilities', 'notes']);
+// Migration 20261101000100 adds name_local, address_local, visitor and the provenance trio info_source / info_source_kind / info_checked_on to the fill-only fields (also outside the
+// content hash and the index). hours, day_pass and visitor must come with the full trio (provenanceProblems below); the trio itself is fill-only too (updater.js stateOfInfo).
+const INFO_FIELDS = Object.freeze(['website', 'hours', 'day_pass', 'facilities', 'notes', 'name_local', 'address_local', 'visitor', 'info_source', 'info_source_kind', 'info_checked_on']);
+const MIGRATION_LOCAL = '20261101000100';
+const NEW_COLUMNS = Object.freeze(['name_local', 'address_local', 'visitor', 'info_source', 'info_source_kind', 'info_checked_on']);   // exist only once MIGRATION_LOCAL is applied
+const PROVENANCE_FIELDS = Object.freeze(['info_source', 'info_source_kind', 'info_checked_on']);
+const NEEDS_PROVENANCE = Object.freeze(['hours', 'day_pass', 'visitor']);
+const INFO_SOURCE_KINDS = Object.freeze(['official-site', 'official-social']);
+const VISITOR_KEYS = Object.freeze(['booking', 'payment', 'english_help', 'id_required', 'shoe_hire', 'note']);
+const MIN_CHECKED_ON = '2020-01-01';   // = spots_info_source_check
 const HOUR_DAYS = Object.freeze(['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']);
-const INFO_LIMITS = Object.freeze({ website: 300, hour: 40, day_pass: 120, notes: 2000 });   // = spots_website_check / spots_hours_check / spots_day_pass_len_check and js/modules/gym-info.js LIMITS; notes 2000 = the text-length cap (migration 20261002000200)
+// name_local / address_local / visitor_value / info_source = spots_name_local_check / spots_address_local_check / spots_visitor_check / spots_info_source_check (migration 20261101000100)
+const INFO_LIMITS = Object.freeze({ website: 300, hour: 40, day_pass: 120, notes: 2000, name_local: 120, address_local: 300, visitor_value: 160, info_source: 400 });  // = spots_website_check / spots_hours_check / spots_day_pass_len_check and js/modules/gym-info.js LIMITS; notes 2000 = the text-length cap (migration 20261002000200)
 // = spots_facilities_check and the keys of js/modules/gym-info.js FACILITIES, in that file's order: a record must list them in this
 // canonical order, so the database value equals the record byte for byte (compared with deep equality, never as a set).
 const FACILITY_KEYS = Object.freeze(['cafe', 'training', 'kids', 'shoe-hire', 'shop', 'showers', 'parking', 'yoga']);
@@ -43,6 +53,42 @@ const EXPECT_H = /^[0-9a-f]{16}$/;
 const RETIRE_KEYS = new Set(['id', 'intent', 'expect_h', 'reason_code', 'reason', 'source', 'duplicate_of']);
 const REASON_CODES = ['closed', 'duplicate', 'insufficient-evidence'];
 const REASON_MIN = 8, REASON_MAX = 200;   // spots_rejection_reason_check allows 200; moderation.js rejectSpot slices to 200
+
+// ---- sources of information fills --------------------------------------------------------------------------------------------------------------
+// An info fill is sourced from the gym's own website or, with info_source_kind 'official-social', from a profile/post the gym itself controls. Maps, directories and review
+// sites are never a source. The lists are explicit on purpose: official-social needs a host from SOCIAL_HOSTS; official-site accepts any host that is not denied or social.
+const INFO_DENY_HOSTS = Object.freeze(['amap.com', 'gaode.com', 'autonavi.com', 'dianping.com', 'meituan.com', 'baidu.com', 'map.qq.com', 'openstreetmap.org', 'osm.org', 'mapcarta.com', 'wikimapia.org',
+  'maps.apple.com', 'maps.google.com', 'maps.app.goo.gl', 'goo.gl', 'g.page', 'bing.com', 'here.com', 'tripadvisor.com', 'yelp.com', 'foursquare.com', 'mafengwo.cn', 'ctrip.com', 'trip.com', 'wikipedia.org']);
+const SOCIAL_HOSTS = Object.freeze(['xiaohongshu.com', 'xhslink.com', 'weixin.qq.com', 'weibo.com', 'weibo.cn', 'douyin.com', 'tiktok.com', 'bilibili.com', 'instagram.com', 'facebook.com', 'fb.com', 'x.com',
+  'twitter.com', 'youtube.com', 'youtu.be', 'threads.net', 'line.me']);
+const hostIn = (host, list) => list.some(d => host === d || host.endsWith('.' + d));
+const deniedUrl = u => hostIn(u.hostname, INFO_DENY_HOSTS) || (/(^|\.)google\.[a-z.]+$/.test(u.hostname) && /^\/maps\b/.test(u.pathname));
+const urlsIn = text => (String(text).match(/https?:\/\/[^\s)]+/gi) || []).map(u => { try { return new URL(u); } catch (e) { return null; } }).filter(Boolean);
+const httpsUrl = v => { if (!/^https:\/\/\S+$/.test(String(v))) return null; try { const u = new URL(v); return !u.username && !u.password ? u : null; } catch (e) { return null; } };
+const cpLen = v => [...v].length;   // the database counts characters (code points), not UTF-16 units
+const CTRL_DB = /[\u0000-\u001f\u007f-\u009f]/;   // Postgres [[:cntrl:]]: includes tab and line breaks
+const isRealDate = v => { const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(v); if (!m) return false; const d = new Date(Date.UTC(+m[1], +m[2] - 1, +m[3])); return d.getUTCFullYear() === +m[1] && d.getUTCMonth() === +m[2] - 1 && d.getUTCDate() === +m[3]; };
+
+// Set-level rules of an info "set" that span fields: the provenance trio is all or none, hours / day_pass / visitor need it, a trio alone is meaningless, and its URL must be an
+// official source. `source` = the record's own source text; undefined at the write gate (target.js), which only sees the set. Returns [{code, field, message}].
+function provenanceProblems(set, source) {
+  const out = [], has = k => set[k] !== undefined, err = (code, field, message) => out.push({ code, field, message });
+  const trio = PROVENANCE_FIELDS.filter(has), needs = NEEDS_PROVENANCE.filter(has);
+  if (trio.length && trio.length < PROVENANCE_FIELDS.length) err('provenance-incomplete', PROVENANCE_FIELDS.find(k => !has(k)), `${PROVENANCE_FIELDS.join(' + ')} are set together or not at all (missing ${PROVENANCE_FIELDS.filter(k => !has(k)).join(', ')})`);
+  if (needs.length && !trio.length) err('provenance-required', needs[0], `${needs.join(' / ')} must come with ${PROVENANCE_FIELDS.join(' + ')} (kind official-site or official-social, the source URL and the date it was read)`);
+  if (trio.length && !needs.length) err('provenance-orphan', trio[0], `${PROVENANCE_FIELDS.join(' + ')} say where ${NEEDS_PROVENANCE.join(' / ')} came from; they cannot be set without one of those fields`);
+  if (trio.length === PROVENANCE_FIELDS.length) {
+    const u = httpsUrl(set.info_source);
+    if (u && deniedUrl(u)) err('bad-info-source', 'info_source', `info_source ${u.hostname} is a map / directory / review site; information comes from the gym's own site or its official social account only`);
+    else if (u && INFO_SOURCE_KINDS.includes(set.info_source_kind)) {
+      const social = hostIn(u.hostname, SOCIAL_HOSTS);
+      if (set.info_source_kind === 'official-social' && !social) err('bad-info-source', 'info_source', `info_source_kind official-social needs a social profile/post URL (${SOCIAL_HOSTS.join(', ')}); ${u.hostname} is not one (use official-site for the gym's own website)`);
+      if (set.info_source_kind === 'official-site' && social) err('bad-info-source', 'info_source_kind', `${u.hostname} is a social platform: use info_source_kind official-social`);
+    }
+    if (source !== undefined && u && source !== set.info_source) err('source-mismatch', 'source', 'source must be exactly the info_source URL (the official page the facts were read from)');
+  }
+  return out;
+}
 
 let _deps = null;
 async function deps() {
@@ -145,8 +191,49 @@ function checkNotesFill(v, out) {
   if (v !== v.trim()) err('untrimmed', 'notes has leading/trailing whitespace (the database value must equal the record exactly)');
   if (CTRL.test(v) || /[\r\n\t]/.test(v)) err('control-chars', 'notes must be single-line text without control characters, tabs or line breaks');
 }
+// name_local / address_local (new records: optional; info fills: required): trimmed text of 1-N characters without control characters (= spots_name_local_check / spots_address_local_check),
+// so the database value equals the record byte for byte.
+function checkLocalText(field, v, out) {
+  const err = (code, message) => out.push({ code, field, message });
+  if (!isStr(v) || !v.length) return err('bad-local-text', `${field} must be non-empty text (the gym's own ${field === 'name_local' ? 'name' : 'address'} in the local language); never null or empty`);
+  if (cpLen(v) > INFO_LIMITS[field]) err('too-long', `${field} is ${cpLen(v)} chars (max ${INFO_LIMITS[field]})`);
+  if (v !== v.trim()) err('untrimmed', `${field} has leading/trailing whitespace (the database value must equal the record exactly)`);
+  if (CTRL_DB.test(v)) err('control-chars', `${field} contains control characters, tabs or line breaks`);
+}
+// visitor: an object whose only keys are VISITOR_KEYS and whose values are non-empty, trimmed, single-line strings of at most 160 characters (= spots_visitor_check).
+function checkVisitor(v, out) {
+  const err = (code, message) => out.push({ code, field: 'visitor', message });
+  if (!v || typeof v !== 'object' || Array.isArray(v)) return err('bad-visitor', `visitor must be an object like {"booking":"..."} with keys from: ${VISITOR_KEYS.join(', ')}`);
+  const keys = Object.keys(v);
+  if (!keys.length) return err('bad-visitor', 'visitor must have at least one key');
+  const unknown = keys.filter(k => !VISITOR_KEYS.includes(k));
+  if (unknown.length) err('bad-visitor', `unknown visitor key(s) ${JSON.stringify(unknown)}; allowed: ${VISITOR_KEYS.join(', ')}`);
+  for (const k of keys.filter(k => VISITOR_KEYS.includes(k))) {
+    const t = v[k];
+    if (!isStr(t) || !t.length || cpLen(t) > INFO_LIMITS.visitor_value) err('bad-visitor', `visitor.${k} must be text of 1-${INFO_LIMITS.visitor_value} characters`);
+    else if (t !== t.trim() || CTRL_DB.test(t)) err('bad-visitor', `visitor.${k} must be trimmed single-line text without control characters`);
+  }
+}
+// info_source / info_source_kind / info_checked_on values (= spots_info_source_check); that the URL is an official one is provenanceProblems' job.
+function checkProvenanceValue(field, v, out) {
+  const err = (code, message) => out.push({ code, field, message });
+  if (field === 'info_source') {
+    if (!isStr(v) || !httpsUrl(v)) err('bad-info-source', 'info_source must be a plain https URL without whitespace or credentials');
+    else if (v.length > INFO_LIMITS.info_source) err('too-long', `info_source is ${v.length} chars (max ${INFO_LIMITS.info_source})`);
+  } else if (field === 'info_source_kind') {
+    if (!INFO_SOURCE_KINDS.includes(v)) err('bad-info-source-kind', `info_source_kind must be one of ${INFO_SOURCE_KINDS.join(', ')} (maps, directories and other kinds are not accepted for gym information)`);
+  } else if (!isStr(v) || !isRealDate(v)) err('bad-info-date', 'info_checked_on must be a real date, YYYY-MM-DD');
+  else if (v < MIN_CHECKED_ON) err('bad-info-date', `info_checked_on ${v} is before ${MIN_CHECKED_ON}`);
+  else if (v > new Date().toISOString().slice(0, 10)) err('bad-info-date', `info_checked_on ${v} is in the future`);
+}
 // Field check inside an UPDATE record's "set": same as checkField, except `notes` (always an info fill there) is held to checkNotesFill.
-const checkUpdateField = (field, v, full, d, out) => (field === 'notes' ? checkNotesFill(v, out) : checkField(field, v, full, d, out));
+const checkUpdateField = (field, v, full, d, out) => {
+  if (field === 'notes') return checkNotesFill(v, out);
+  if (field === 'name_local' || field === 'address_local') return checkLocalText(field, v, out);
+  if (field === 'visitor') return checkVisitor(v, out);
+  if (PROVENANCE_FIELDS.includes(field)) return checkProvenanceValue(field, v, out);
+  return checkField(field, v, full, d, out);
+};
 
 // Validate a "new gym" record (intent omitted or "new").
 async function validateNewRecord(rec) {
@@ -159,6 +246,7 @@ async function validateNewRecord(rec) {
   }
   for (const f of ['name', 'suburb', 'state', 'country', 'lat', 'lng', 'types']) checkField(f, rec[f], rec, d, errors);
   for (const f of ['address', 'notes', 'photo']) checkField(f, rec[f], rec, d, errors);
+  for (const f of ['name_local', 'address_local']) if (rec[f] !== undefined && rec[f] !== null && rec[f] !== '') checkLocalText(f, rec[f], errors);   // optional on a new gym; written to the inserted row, not part of the content hash
   if (rec.source !== undefined && !isStr(rec.source)) errors.push({ code: 'bad-text', field: 'source', message: 'source must be text' });
   if (!errors.some(e => e.field === 'lat' || e.field === 'lng') && rec.lat === 0 && rec.lng === 0) errors.push({ code: 'bad-coordinate', field: 'lat', message: 'coordinates are 0,0 (null island) -- geocoding placeholder?' });
   if (isStr(rec.country) && /^[A-Z]{2}$/.test(rec.country) && isStr(rec.state)) {
@@ -183,6 +271,12 @@ async function validateUpdateRecord(rec) {
     const nonInfo = Object.keys(rec.set).filter(k => !INFO_FIELDS.includes(k));
     if (isInfoSet(rec.set) && nonInfo.length) errors.push({ code: 'mixed-families', field: 'set', message: `an info update (${INFO_FIELDS.join('/')}) cannot also change ${nonInfo.join(', ')}; one record per gym, so put the other change in a separate batch` });
     else if (isIdentitySet(rec.set) && Object.keys(rec.set).some(k => !IDENTITY_FIELDS.includes(k))) errors.push({ code: 'mixed-families', field: 'set', message: `an identity update (${IDENTITY_FIELDS.join('/')}) cannot also change ${Object.keys(rec.set).filter(k => !IDENTITY_FIELDS.includes(k)).join(', ')}; one record per gym, so put the other change in a separate batch` });
+    if (isInfoSet(rec.set) && !nonInfo.length) {
+      errors.push(...provenanceProblems(rec.set, isStr(rec.source) ? rec.source.trim() : ''));
+      // any URL in an information fill's source must not be a map / directory / review site (older records give a URL plus a note; the text is not parsed further)
+      const bad = isStr(rec.source) ? [...new Set(rec.source.match(/https?:\/\/[^\s)]+/gi) || [])].filter(x => { try { return deniedUrl(new URL(x)); } catch (e) { return false; } }) : [];
+      if (bad.length) errors.push({ code: 'bad-source', field: 'source', message: `source ${bad[0]} is a map / directory / review site; gym information comes from the gym's own site or its official social account` });
+    }
     if (typesOutOfOrder(rec.set.types)) errors.push({ code: 'bad-types', field: 'types', message: `types must be listed in the canonical order: ${TYPES.join(', ')}` });
     for (const k of Object.keys(rec.set)) {
       if (!UPDATABLE.includes(k)) errors.push({ code: 'field-not-updatable', field: k, message: `"${k}" cannot be changed by an import (updatable: ${UPDATABLE.join(', ')}); country/id/status/community are not import-editable` });
@@ -197,15 +291,18 @@ function describeInfoSet(set) {
   const host = u => { try { return new URL(u).hostname.replace(/^www\./, ''); } catch (e) { return '?'; } };
   return [set.website !== undefined && `website ${host(set.website)}`, set.hours && typeof set.hours === 'object' && `hours ${HOUR_DAYS.filter(k => k in set.hours).join(',')}`,
     set.day_pass !== undefined && 'day pass', Array.isArray(set.facilities) && `facilities (${set.facilities.length})`,
+    typeof set.name_local === 'string' && 'name_local', typeof set.address_local === 'string' && 'address_local', set.visitor && typeof set.visitor === 'object' && `visitor ${VISITOR_KEYS.filter(k => k in set.visitor).join(',')}`,
+    typeof set.info_source_kind === 'string' && `source ${set.info_source_kind} ${host(set.info_source)} ${set.info_checked_on}`,
     typeof set.notes === 'string' && `notes "${set.notes.length > 140 ? set.notes.slice(0, 137) + '...' : set.notes}"`].filter(Boolean).join(' + ');
 }
 
 // Problems (plain strings) of an info "set" ({website?, hours?, day_pass?, facilities?}): the same field rules as the record validator, reused by the write
 // gate in target.js so a hand-built payload can never carry a value the validator would have refused.
 async function infoSetProblems(set) {
-  if (!set || typeof set !== 'object' || Array.isArray(set) || !Object.keys(set).length) return ['"set" must list website, hours, day_pass, facilities and/or notes'];
+  if (!set || typeof set !== 'object' || Array.isArray(set) || !Object.keys(set).length) return [`"set" must list gym-information fields (${INFO_FIELDS.join(', ')})`];
   const d = await deps(), errs = [];
   for (const k of Object.keys(set)) { if (INFO_FIELDS.includes(k)) checkUpdateField(k, set[k], set, d, errs); else errs.push({ message: `${k} is not a gym-information field` }); }
+  errs.push(...provenanceProblems(set));
   return errs.map(e => e.message);
 }
 
@@ -238,4 +335,4 @@ async function validateRetireRecord(rec) {
   return { errors, warnings };
 }
 
-module.exports = { TYPES, UPDATABLE, INFO_FIELDS, IDENTITY_FIELDS, isIdentitySet, typesOutOfOrder, sameIdentityValue, identitySetProblems, HOUR_DAYS, INFO_LIMITS, FACILITY_KEYS, isInfoSet, infoSetProblems, describeInfoSet, RECORD_KEYS, EXPECT_H, REASON_CODES, validateNewRecord, validateUpdateRecord, validateRetireRecord, deps };
+module.exports = { MIGRATION_LOCAL, NEW_COLUMNS, PROVENANCE_FIELDS, NEEDS_PROVENANCE, INFO_SOURCE_KINDS, VISITOR_KEYS, MIN_CHECKED_ON, provenanceProblems, TYPES, UPDATABLE, INFO_FIELDS, IDENTITY_FIELDS, isIdentitySet, typesOutOfOrder, sameIdentityValue, identitySetProblems, HOUR_DAYS, INFO_LIMITS, FACILITY_KEYS, isInfoSet, infoSetProblems, describeInfoSet, RECORD_KEYS, EXPECT_H, REASON_CODES, validateNewRecord, validateUpdateRecord, validateRetireRecord, deps };

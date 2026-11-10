@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-11-08-cn-zhuhai",
+  "description": "Regional research \"China: Zhuhai\": 4 new gym(s) accepted of 6 candidate(s)",
+  "created": "2026-11-08",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-11-08-cn-zhuhai",
+    "section_sha256": "e6f0f683979cb596aa45f39b8cfbc9e94ee3b05f02ec1fdba9228ac22b203eeb",
+    "sources_sha256": "449b6d1e44630962891484f0da9653eae0e295d6aee12a582fabb45d213d1d93",
+    "candidates_sha256": "8e190ee575245236eddb35ab30a06f307adbb0dca387ac0173673193826e4e8a",
+    "reconcile_sha256": "f63782ce5871e3f451ad8a95ced4b1e39a8043d3c48af7f96f5f92596a754142",
+    "review_sha256": "76f9a2aa13a6d9ec9cb1f4e8967ffbc32290a732191b1054fa960bd7a0f46662",
+    "candidates": 6,
+    "staged": 4,
+    "decisions": {
+      "accept": 4,
+      "defer": 2
+    }
+  },
+  "index_at_staging": {
+    "sha256": "39a2073843434f86764687342310f4cb7d0ff6d410fe2e798bd4ddd1635fd537",
+    "count": 3457
+  }
+}

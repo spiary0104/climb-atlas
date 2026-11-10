@@ -1,0 +1,52 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-11-08-cn-xining",
+ "index": {
+  "sha256": "39a2073843434f86764687342310f4cb7d0ff6d410fe2e798bd4ddd1635fd537",
+  "count": 3457,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-06-kr-seoul",
+  "2026-11-08-cn-changzhou",
+  "2026-11-08-cn-dalian",
+  "2026-11-08-cn-fuzhou",
+  "2026-11-08-cn-guiyang",
+  "2026-11-08-cn-harbin",
+  "2026-11-08-cn-hefei",
+  "2026-11-08-cn-nanchang",
+  "2026-11-08-cn-nanning",
+  "2026-11-08-cn-shenyang",
+  "2026-11-08-cn-yinchuan",
+  "2026-11-08-cn-zhengzhou",
+  "2026-11-08-cn-zhongshan",
+  "2026-11-08-cn-zhuhai"
+ ],
+ "counts": {
+  "records": 1,
+  "new": 1,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "b02be57e765c183b5cd681b1aa28376601fe71891bcbbe173efe59209109f355",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-9d740431e7",
+   "id_frozen": true,
+   "name": "Flash 2261 Bouldering",
+   "country": "CN"
+  }
+ ]
+}

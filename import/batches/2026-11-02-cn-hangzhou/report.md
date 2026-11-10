@@ -1,0 +1,22 @@
+# Import dry-run: 2026-11-02-cn-hangzhou
+
+**Result: READY for review/import** — this report is a dry-run; nothing was written anywhere except this batch directory.
+
+| What would happen | Records |
+|---|---:|
+| Insert as NEW gyms | 1 |
+| Update existing gyms (explicit update records) | 0 |
+| Already exist — no action (identical content: 0; content differs, NOT applied: 0) | 0 |
+| Probable duplicates — need a human decision | 0 |
+| Invalid — rejected | 0 |
+| Rejected by a human decision | 0 |
+| **Total records in batch** | 1 |
+
+Index: 3438 known gyms (sha256 e7fda4409c74…). Plan: f11a569247db… Also compared against staged batches: 2026-10-06-kr-seoul, 2026-11-06-cn-changsha, 2026-11-06-cn-dali, 2026-11-06-cn-kunming, 2026-11-06-cn-wenzhou, 2026-11-06-cn-xiamen.
+
+## New gyms (1)
+
+By country: CN 1
+
+- line 1 `g-63296cf543` "Luna Climbing (Binjiang Yintai)" (CN) — reviewed as distinct
+
