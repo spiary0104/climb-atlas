@@ -33,8 +33,8 @@
   "2026-11-08-cn-zhuhai"
  ],
  "counts": {
-  "records": 39,
-  "new": 39,
+  "records": 38,
+  "new": 38,
   "existing": 0,
   "update": 0,
   "probable-duplicate": 0,
@@ -48,7 +48,7 @@
  "importable": true,
  "blockers": [],
  "unused_decisions": [],
- "plan_sha256": "adcff1db18bd81310439c8eda67a32cf315f10174ed4356448462da03559699f",
+ "plan_sha256": "f40ac518ef1d1886a66c0d1f74093bcdba932029b4bb1dab6e14e09ef60b5641",
  "records": [
   {
    "line": 1,
@@ -130,8 +130,8 @@
    "name": "Seoul Forest Climbing Jongno (서울숲클라이밍 종로점)",
    "country": "KR",
    "reviewed_distinct": {
-    "reason": "Different gyms and brands in different buildings: Seoul Forest Climbing Jongno is at 서울 종로구 수표로 96 지하1층 (B1); PEAKERS Jongno (seed-1199) is at Piccadilly1958 B4F, Donhwamun-ro 5ga-gil 1 (its own Naver Place pin, set by 2026-10-12-kr-fixes). About 198 m apart.",
-    "reviewer": "drafted by Claude (AI) 2026-11-10 from the two records' sources; owner sign-off pending"
+    "reason": "Owner photos show bouldering walls with SECTOR3 labels. Naver booking and price list; own Instagram linked; no gym-authored post visible; visitor reviews to 2026-10-06. Flags reviewed: related-name flags against other candidates are other gyms or branches at distinct addresses (shared words such as \"Climbing\" or the chain name only); seed-1758 \"Seoul Forest Climbing\" is the Seongsu flagship (several km away), a different branch; importer probable-duplicate is the Peakers Jongno candidate kr-se-054 (198 m, different building: Seoul Forest at Supyo-ro 96 B1, Peakers at Donhwamun-ro5ga-gil 1 B4). Re-review 2026-11-11 (drafted by Claude (AI), owner sign-off pending): flags against later Korean sections are differently named gyms 2.9 km or more apart sharing only the word 클라이밍 (climbing); distinct. seed-1199 PEAKERS Jongno: different gym in a different building (수표로 96 B1 vs Piccadilly1958 B4F, 198 m apart).",
+    "reviewer": "Spiar (owner); decisions drafted by Claude (AI) on the owner's instruction, pending owner sign-off"
    }
   },
   {
@@ -193,21 +193,13 @@
   {
    "line": 18,
    "class": "new",
-   "id": "g-4ca135ca76",
-   "id_frozen": true,
-   "name": "Alé Climbing Hyehwa (알레클라이밍 혜화점)",
-   "country": "KR"
-  },
-  {
-   "line": 19,
-   "class": "new",
    "id": "g-195807ea52",
    "id_frozen": true,
    "name": "Climbing 88 (클라이밍88)",
    "country": "KR"
   },
   {
-   "line": 20,
+   "line": 19,
    "class": "new",
    "id": "g-9174484794",
    "id_frozen": true,
@@ -215,7 +207,7 @@
    "country": "KR"
   },
   {
-   "line": 21,
+   "line": 20,
    "class": "new",
    "id": "g-4d4a311e8c",
    "id_frozen": true,
@@ -223,7 +215,7 @@
    "country": "KR"
   },
   {
-   "line": 22,
+   "line": 21,
    "class": "new",
    "id": "g-8d264f9008",
    "id_frozen": true,
@@ -231,7 +223,7 @@
    "country": "KR"
   },
   {
-   "line": 23,
+   "line": 22,
    "class": "new",
    "id": "g-8e31fe076a",
    "id_frozen": true,
@@ -239,7 +231,7 @@
    "country": "KR"
   },
   {
-   "line": 24,
+   "line": 23,
    "class": "new",
    "id": "g-90266b47aa",
    "id_frozen": true,
@@ -247,7 +239,7 @@
    "country": "KR"
   },
   {
-   "line": 25,
+   "line": 24,
    "class": "new",
    "id": "g-9ca1667360",
    "id_frozen": true,
@@ -255,7 +247,7 @@
    "country": "KR"
   },
   {
-   "line": 26,
+   "line": 25,
    "class": "new",
    "id": "g-9eb49829f4",
    "id_frozen": true,
@@ -263,7 +255,7 @@
    "country": "KR"
   },
   {
-   "line": 27,
+   "line": 26,
    "class": "new",
    "id": "g-0819b5962e",
    "id_frozen": true,
@@ -271,7 +263,7 @@
    "country": "KR"
   },
   {
-   "line": 28,
+   "line": 27,
    "class": "new",
    "id": "g-4e01760c07",
    "id_frozen": true,
@@ -279,7 +271,7 @@
    "country": "KR"
   },
   {
-   "line": 29,
+   "line": 28,
    "class": "new",
    "id": "g-23ea921212",
    "id_frozen": true,
@@ -287,7 +279,7 @@
    "country": "KR"
   },
   {
-   "line": 30,
+   "line": 29,
    "class": "new",
    "id": "g-95f159a432",
    "id_frozen": true,
@@ -295,7 +287,7 @@
    "country": "KR"
   },
   {
-   "line": 31,
+   "line": 30,
    "class": "new",
    "id": "g-2dafc40c9e",
    "id_frozen": true,
@@ -303,7 +295,7 @@
    "country": "KR"
   },
   {
-   "line": 32,
+   "line": 31,
    "class": "new",
    "id": "g-e163b898be",
    "id_frozen": true,
@@ -311,7 +303,7 @@
    "country": "KR"
   },
   {
-   "line": 33,
+   "line": 32,
    "class": "new",
    "id": "g-356c2e6114",
    "id_frozen": true,
@@ -319,7 +311,7 @@
    "country": "KR"
   },
   {
-   "line": 34,
+   "line": 33,
    "class": "new",
    "id": "g-2efb55e5bf",
    "id_frozen": true,
@@ -327,7 +319,7 @@
    "country": "KR"
   },
   {
-   "line": 35,
+   "line": 34,
    "class": "new",
    "id": "g-ce1bfad3b1",
    "id_frozen": true,
@@ -335,7 +327,7 @@
    "country": "KR"
   },
   {
-   "line": 36,
+   "line": 35,
    "class": "new",
    "id": "g-343903ee22",
    "id_frozen": true,
@@ -343,7 +335,7 @@
    "country": "KR"
   },
   {
-   "line": 37,
+   "line": 36,
    "class": "new",
    "id": "g-8488a43907",
    "id_frozen": true,
@@ -351,7 +343,7 @@
    "country": "KR"
   },
   {
-   "line": 38,
+   "line": 37,
    "class": "new",
    "id": "g-eb73fe5ef7",
    "id_frozen": true,
@@ -359,7 +351,7 @@
    "country": "KR"
   },
   {
-   "line": 39,
+   "line": 38,
    "class": "new",
    "id": "g-cb76b7786c",
    "id_frozen": true,
