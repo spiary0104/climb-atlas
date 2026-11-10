@@ -6,27 +6,23 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 (delete them; git keeps history). Keep this file under 60 lines.
 
 ## In progress
-### Research wave 2026-10-13 — STAGED, not applied (branch `research/2026-10-13-wave`): +108 gyms, 49 pin fixes
-- Batches: 2026-10-13-fixes (13 AU pins + Boulderdash), 2026-10-13-cn-pin-fixes (35 CN pins, Amap entrance coordinates), then new gyms:
-  us-ny-boston-metros 6, us-central-metros 6, italy-cities 23, uk-cities 21, australia 24, jp-remaining 22, brazil 6. California and the
-  big US metros turned out almost fully covered already. Independent of the Korea/China PR. Owner checks: `import/research/MANUAL-CHECKS-wave-2026-10-13.md`.
-- China 2026-11-09: PRs 99-105 merged; 31 new gyms (14 cities) + 12 info-fill batches awaiting apply (last: 2026-11-09-cn-mixed-info, 14 gyms). ~270 gyms still lack a Chinese name: mostly kids' or sports-centre walls with no account, or brands whose accounts list no stores (RedNote reads 30 s apart avoid captchas).
-### Korea 2026-10-12 — merged (PR #83), NOT applied: +120 gyms, 28 pin fixes, 4 duplicate retirements
-- Apply order: kr-fixes, 2026-10-06-kr-seoul (39), kr-incheon, kr-busan-gyeongnam, kr-daegu-gyeongbuk, kr-gyeonggi-west/south/north,
-  kr-central-regions. Plans date from 2026-10-12: re-plan before applying. 73 owner checks: `import/research/MANUAL-CHECKS-korea-2026-10-12.md`.
-- PR #83 also holds 2026-10-12-cn-* (25 China gyms), planned before the Nov China imports: re-plan for duplicates first.
-- Coverage-gap sprint 2026-10-06: 19/20 applied; reports and owner checks in `docs/research/coverage-gap-2026-10/`.
-
-### China (Chengdu) pilot — Gate 0 done 2026-10-31; Gate 1 approved 2026-11-01
-- Network (Gate 0): no mainland hosting now (Supabase ~28% reachable on mainland networks; ICP needs a Chinese entity); roaming/eSIM
+### Apply queue (checked 2026-11-10 by dry run; index = production, 3,457 gyms) — owner runs scriptsapply-batch.ps1
+- Korea: 2026-10-12-kr-fixes (28 pins, 4 retirements) first, then 2026-10-06-kr-seoul 39, kr-incheon 6, kr-busan-gyeongnam 10,
+  kr-daegu-gyeongbuk 12, kr-gyeonggi-west 8, kr-gyeonggi-south 17, kr-gyeonggi-north 13, kr-central-regions 15 (+120). Owner checks: 73 (`import/research/MANUAL-CHECKS-korea-2026-10-12.md`).
+- China new gyms: 2026-10-12-cn-kunming-changsha 3, cn-shanghai 11, cn-beijing-chengdu 8 (3 same-as decisions drafted 2026-11-10, owner sign-off
+  pending); 2026-11-08 cn-{changzhou,dalian,fuzhou,guiyang,harbin,hefei,nanchang,nanning,shenyang,xining,yinchuan,zhengzhou,zhongshan,zhuhai} (+31).
+- China info fills: 2026-11-08-cn-{chongqing,nanjing,tianjin,wuhan,xian}-info, 2026-11-09-cn-{suzhou,shanghai,beijing,shenzhen,guangzhou,hangzhou,mixed}-info.
+- apply-batch.ps1 rebuilds the index and re-plans each batch itself, so committed plan.json files going stale is expected.
+### China data
+- ~270 gyms still lack a Chinese name: mostly kids' or sports-centre walls with no account, or brands whose accounts list no stores
+  (RedNote read-only, 30 s between reads avoids captchas). Owner checks: `import/research/MANUAL-CHECKS-china-2026-10-12.md`.
+- Sources: RedNote/Amap/WeChat read-only (WeChat: a gym's own 公众号 article = official-social; mini programs have no citable URL).
+### China (Chengdu) pilot — Gate 0 done 2026-10-31; Gate 1 approved 2026-11-01; pilot data and name_local schema live
+- Network: no mainland hosting now (Supabase ~28% reachable on mainland networks; ICP needs a Chinese entity); roaming/eSIM
   guidance + a minimal offline "download a city" mode later. Plan: https://claude.ai/artifact/GVHNLJWVT6gdQyQCVSM4Lm
-- Data: 14 verified pilot gyms + batch `2026-11-01-chengdu` (needs apply approval): `import/research/2026-11-01-chengdu/verification.md`.
-  Visitor info: WeChat checks by someone with WeChat (owner note 2026-11-01). Hold PR #83's CN batches until the name_local schema.
-- Source (2026-11-08): the owner's WeChat desktop, read-only. A gym's own 公众号 article = official-social (URL via "Open in default browser");
-  Mini Programs/channels have no citable URL; 攀搭攀岩/岩馆探索 = community directory (supporting only). Never accept privacy prompts.
-- Next: Gate 1 PR 1 (name_local + visitor fields, local branch only), then the importer.
-- Map tiles: CARTO used keyless under its non-commercial terms (owner 2026-11-01); if use turns commercial or CARTO limits it,
-  fall back to OpenFreeMap (measured reachable in mainland China too).
+- Next: the app does not read name_local/address_local/visitor yet (grep js/, 2026-11-10), so the China fills are stored but not shown.
+  Visitor info: WeChat checks by someone with WeChat (owner note 2026-11-01).
+- Map tiles: CARTO keyless under its non-commercial terms (owner 2026-11-01); if use turns commercial, fall back to OpenFreeMap.
 
 ## Gym data
 ### Owner manual checks
@@ -37,10 +33,10 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 ### Chain expansions
 - Camp5 MY (~6), Hive CA (~4), Boulderwelt DE (~4), B-PUMP JP (~3), 9 Degrees AU (~2), Boulder Co NZ (~1). Verify each branch.
 ### Gym information (website, hours, day pass, facilities)
-- 456 gyms in countries not yet researched; CN/KR need a source decision. Seed website + hours for the top metros.
+- 456 gyms in countries not yet researched; KR: Naver Place; CN: RedNote/Amap/WeChat (decided). Seed website + hours for the top metros.
 ### Locations and addresses
 - Owner manual pin checks: 39 (`import/pin-check/2026-10-06/MANUAL-CHECK-{europe,rest-of-world}.md`). China: 138 gyms with unconfirmed pins
-  or no address, waiting on the CN source decision.
+  or no address (Amap pins, GCJ-02 -> WGS-84; several pin batches already applied).
 ### Regional expansion
 - Wave 3C paused. Global gap ranking (58 countries, 2026-10-06): `docs/research/coverage-gap-2026-10/ranking-countries.md`.
 
