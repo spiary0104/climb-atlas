@@ -10,7 +10,7 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 - Batches: 2026-10-13-fixes (13 AU pins + Boulderdash), 2026-10-13-cn-pin-fixes (35 CN pins, Amap entrance coordinates), then new gyms:
   us-ny-boston-metros 6, us-central-metros 6, italy-cities 23, uk-cities 21, australia 24, jp-remaining 22, brazil 6. California and the
   big US metros turned out almost fully covered already. Independent of the Korea/China PR. Owner checks: `import/research/MANUAL-CHECKS-wave-2026-10-13.md`.
-- China 2026-11-09: PRs 99-103 merged; 31 new gyms (14 cities) + 5 city info fills awaiting apply. PR 104: info fills Suzhou 3, Shanghai 19, Beijing 8, Shenzhen 11, Guangzhou 2, Hangzhou 2. Next: remaining gyms there whose brand accounts list no stores (RedNote reads 30 s apart avoid captchas).
+- China 2026-11-09: PRs 99-104 merged; 31 new gyms (14 cities) + 11 city info fills awaiting apply. Round-2 PR: 14 fills across 9 cities (cn-mixed-info). ~270 gyms still lack a Chinese name: mostly kids' or sports-centre walls with no account, or brands whose accounts list no stores (RedNote reads 30 s apart avoid captchas).
 ### Coverage-gap sprint 2026-10-06 — 19/20 APPLIED + verified (+856 gyms, live 3,294); kr-seoul (40) NOT applied
 - The 2026-10-06 apply run stopped at kr-seoul with nothing written for it; it plans and dry-runs clean (2026-10-07). Owner re-runs:
   `powershell -ExecutionPolicy Bypass -File scripts\apply-batch.ps1 2026-10-06-kr-seoul`
