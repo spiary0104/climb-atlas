@@ -8,9 +8,17 @@ import { essentialsRowsHtml, facilitiesHtml, hasPracticalInfo } from './gym-info
 import { escapeHtml, safeUrl } from './html-safe.js';
 import { directionsUrl } from './utils.js';
 import { icon } from './icons.js';
-import { provenanceMarkHtml, thumbHtml, typeTagsHtml } from './list-html.js';
+import { localLang, localNameHtml, provenanceMarkHtml, thumbHtml, typeTagsHtml } from './list-html.js';
 import { pinSvg } from './pin-html.js';
 import { publicNotes } from './provenance.js';
+
+// The address in the local script (address_local) above the English one, on the gym page only (the list read does not carry it).
+const localAddressHtml = g => {
+  const s = typeof g.address_local === 'string' ? g.address_local.trim() : '';
+  if(!s || s === String(g.address || '').trim()) return '';
+  const lang = localLang(g);
+  return `<p class="panel-row local-address"${lang ? ` lang="${lang}"` : ''}>${escapeHtml(s)}</p>`;
+};
 
 const link = (href, text, cls = 'link link-quiet') => `<a class="${cls}" href="${escapeHtml(href)}" data-link>${escapeHtml(text)}</a>`;
 
@@ -39,7 +47,7 @@ export function mapThumbHtml({ lat, lng, zoom = 14, size = 120, href, label, typ
 export function pageCardHtml(g, ctx = {}){
   const meta = [[g.suburb, ctx.region].filter(Boolean).join(', '), ctx.distance].filter(Boolean).join(' · ');
   return `<a class="gym-card page-card" href="${escapeHtml(ctx.href)}" data-link>${thumbHtml(g, 'card')}`
-    + `<span class="gym-card-body"><span class="gym-card-name">${escapeHtml(g.name)}</span>`
+    + `<span class="gym-card-body"><span class="gym-card-name">${escapeHtml(g.name)}</span>${localNameHtml(g, 'local-name--block')}`
     + `<span class="gym-card-meta tnum">${escapeHtml(meta)}</span><span class="gym-card-tags">${typeTagsHtml(g.types)}</span></span></a>`;
 }
 
@@ -47,7 +55,7 @@ export function pageCardHtml(g, ctx = {}){
 export function pageRowHtml(g, ctx = {}){
   const place = [g.suburb, ctx.region].filter(Boolean).join(' · ');
   return `<a class="page-row" href="${escapeHtml(ctx.href)}" data-link>${thumbHtml(g, 'row')}`
-    + `<span class="gym-row-text"><span class="gym-row-title">${escapeHtml(g.name)}</span><span class="gym-row-meta">${escapeHtml(place)}</span></span>`
+    + `<span class="gym-row-text"><span class="gym-row-name"><span class="gym-row-title">${escapeHtml(g.name)}</span>${localNameHtml(g, 'local-name--inline')}</span><span class="gym-row-meta">${escapeHtml(place)}</span></span>`
     + `${ctx.distance ? `<span class="gym-row-distance tnum">${escapeHtml(ctx.distance)}</span>` : ''}</a>`;
 }
 
@@ -91,7 +99,7 @@ export function gymPageHtml(g, ctx = {}){
     + breadcrumbHtml(ctx.crumbs || [])
     // Share sits beside the name, not in the action row: four actions are what fits a phone (the tab bar's round Check in
     // covers a fifth, middle one). A compact icon button with the 44px hit area .btn-icon carries; no sign-in needed.
-    + `<header class="gym-header"><div class="gym-heading"><div class="gym-title-row"><h1 class="page-title">${escapeHtml(g.name)}</h1>`
+    + `<header class="gym-header"><div class="gym-heading"><div class="gym-title-row"><h1 class="page-title">${escapeHtml(g.name)}${localNameHtml(g, 'local-name--block local-name--title')}</h1>`
     + `<button type="button" class="btn btn-secondary btn-icon gym-share" data-page-action="share" data-spot-id="${id}" aria-label="Share ${escapeHtml(g.name)}" title="Share">${icon('share-network', {size:'sm'})}</button></div>`
     + `<p class="gym-meta"><span class="gym-meta-tags">${typeTagsHtml(g.types)}</span><span>${escapeHtml(where)}</span>${ctx.distance ? `<span class="tnum">${escapeHtml(ctx.distance)}</span>` : ''}</p>`
     + provenance + prompt + `</div></header>`
@@ -108,7 +116,7 @@ export function gymPageHtml(g, ctx = {}){
     + `${ctx.isModerator ? `<button type="button" class="btn btn-tertiary btn-sm" data-page-action="${g.verified_at ? 'unverify' : 'verify'}" data-spot-id="${id}">${icon('check-circle', {size:'sm'})}${g.verified_at ? 'Remove verification' : 'Mark verified'}</button>` : ''}</div></section>`
     + `</div><aside class="gym-aside"><section class="panel essentials" aria-labelledby="essentialsTitle"><h2 class="panel-title" id="essentialsTitle">Essentials</h2>`
     + essentialsRowsHtml(g, ctx.hours || {})
-    + `<div class="essentials-address"><p class="panel-row">${escapeHtml(g.address || where)}</p>`
+    + `<div class="essentials-address">${localAddressHtml(g)}<p class="panel-row">${escapeHtml(g.address || where)}</p>`
     + mapThumbHtml({ lat: g.lat, lng: g.lng, zoom: 14, size: 120, href: ctx.exploreHref || '/', label: 'Show ' + (g.name || 'this gym') + ' on the map', types: g.types })
     + `</div></section>${history}</aside></div>${actions}</article>`;   // actions last: beside the title on desktop, sticky at the bottom on phones
 }

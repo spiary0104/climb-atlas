@@ -129,6 +129,9 @@ const SAFE_EXPR = [
   // gym-picker.js (Log a session): text/none/groups are assembled in the same builder from escapeHtml()ed names, places,
   // labels and codes, Number()ed counts and literal icon names
   /^(text|none|groups)$/,
+  // list-html.js / page-html.js local-script names: localNameHtml and localAddressHtml escape the value themselves and take
+  // only literal class names; `lang` is read from the fixed LOCAL_LANG country table, never from the database
+  /^localNameHtml\(g, '[a-z -]+'\)$/, /^localAddressHtml\(g\)$/, /^lang$/,
 ];
 // A conditional is safe when every branch that can be rendered is safe: a fixed string literal, a template whose own
 // interpolations are all safe, or a nested conditional (checked recursively). The condition itself is never rendered.
