@@ -2,8 +2,8 @@
  "plan_version": 1,
  "batch_id": "2026-10-12-cn-beijing-chengdu",
  "index": {
-  "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
-  "count": 3294,
+  "sha256": "39a2073843434f86764687342310f4cb7d0ff6d410fe2e798bd4ddd1635fd537",
+  "count": 3457,
   "meta_matches": true
  },
  "staged_batches_compared": [
@@ -16,25 +16,39 @@
   "2026-10-12-kr-gyeonggi-north",
   "2026-10-12-kr-gyeonggi-south",
   "2026-10-12-kr-gyeonggi-west",
-  "2026-10-12-kr-incheon"
+  "2026-10-12-kr-incheon",
+  "2026-11-08-cn-changzhou",
+  "2026-11-08-cn-dalian",
+  "2026-11-08-cn-fuzhou",
+  "2026-11-08-cn-guiyang",
+  "2026-11-08-cn-harbin",
+  "2026-11-08-cn-hefei",
+  "2026-11-08-cn-nanchang",
+  "2026-11-08-cn-nanning",
+  "2026-11-08-cn-shenyang",
+  "2026-11-08-cn-xining",
+  "2026-11-08-cn-yinchuan",
+  "2026-11-08-cn-zhengzhou",
+  "2026-11-08-cn-zhongshan",
+  "2026-11-08-cn-zhuhai"
  ],
  "counts": {
   "records": 9,
-  "new": 9,
-  "existing": 0,
+  "new": 8,
+  "existing": 1,
   "update": 0,
   "probable-duplicate": 0,
   "invalid": 0,
   "rejected": 0,
   "existing_identical": 0,
-  "existing_content_differs": 0,
+  "existing_content_differs": 1,
   "new_id_not_frozen": 0,
-  "warnings": 0
+  "warnings": 1
  },
  "importable": true,
  "blockers": [],
  "unused_decisions": [],
- "plan_sha256": "54936977334c7cd516e670cff0679f122e77be074e941e866b31b7ada09d3b4a",
+ "plan_sha256": "7fc55b69264928050c0456470b730f5468dc3bfc085ab1fb756fc962635cb841",
  "records": [
   {
    "line": 1,
@@ -78,11 +92,29 @@
   },
   {
    "line": 6,
-   "class": "new",
-   "id": "g-bb74ed73f6",
-   "id_frozen": true,
+   "class": "existing",
+   "id": "seed-679",
    "name": "Wo Pan Climbing (Guangqu) [我攀攀岩广渠东路店]",
-   "country": "CN"
+   "country": "CN",
+   "match": {
+    "id": "seed-679",
+    "name": "I Climb Climbing",
+    "reason": "human-reviewed: co-located",
+    "dist_m": 0
+   },
+   "same_content": false,
+   "differing": [
+    "name",
+    "address",
+    "types"
+   ],
+   "warnings": [
+    {
+     "code": "content-differs",
+     "field": null,
+     "message": "matches existing seed-679 but content differs (name, address, types); NOT applied. Use an explicit update record if this change is intended."
+    }
+   ]
   },
   {
    "line": 7,

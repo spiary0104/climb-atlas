@@ -2,8 +2,8 @@
  "plan_version": 1,
  "batch_id": "2026-10-12-cn-kunming-changsha",
  "index": {
-  "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
-  "count": 3294,
+  "sha256": "39a2073843434f86764687342310f4cb7d0ff6d410fe2e798bd4ddd1635fd537",
+  "count": 3457,
   "meta_matches": true
  },
  "staged_batches_compared": [
@@ -16,25 +16,39 @@
   "2026-10-12-kr-gyeonggi-north",
   "2026-10-12-kr-gyeonggi-south",
   "2026-10-12-kr-gyeonggi-west",
-  "2026-10-12-kr-incheon"
+  "2026-10-12-kr-incheon",
+  "2026-11-08-cn-changzhou",
+  "2026-11-08-cn-dalian",
+  "2026-11-08-cn-fuzhou",
+  "2026-11-08-cn-guiyang",
+  "2026-11-08-cn-harbin",
+  "2026-11-08-cn-hefei",
+  "2026-11-08-cn-nanchang",
+  "2026-11-08-cn-nanning",
+  "2026-11-08-cn-shenyang",
+  "2026-11-08-cn-xining",
+  "2026-11-08-cn-yinchuan",
+  "2026-11-08-cn-zhengzhou",
+  "2026-11-08-cn-zhongshan",
+  "2026-11-08-cn-zhuhai"
  ],
  "counts": {
   "records": 5,
-  "new": 5,
-  "existing": 0,
+  "new": 3,
+  "existing": 2,
   "update": 0,
   "probable-duplicate": 0,
   "invalid": 0,
   "rejected": 0,
   "existing_identical": 0,
-  "existing_content_differs": 0,
+  "existing_content_differs": 2,
   "new_id_not_frozen": 0,
-  "warnings": 0
+  "warnings": 2
  },
  "importable": true,
  "blockers": [],
  "unused_decisions": [],
- "plan_sha256": "ddf52b2010390118ef37ec72f58e25fcc847bfa20ff432ebaeb0842701403abb",
+ "plan_sha256": "3e215787d265c4d506baba18e92b558078ebf3b8b6821f6caa98a95c8226f6fe",
  "records": [
   {
    "line": 1,
@@ -46,19 +60,59 @@
   },
   {
    "line": 2,
-   "class": "new",
-   "id": "g-db739e1765",
-   "id_frozen": true,
+   "class": "existing",
+   "id": "g-5cd08d937f",
    "name": "Nayan Climbing (Tuodong) [那岩拓东攀岩馆]",
-   "country": "CN"
+   "country": "CN",
+   "match": {
+    "id": "g-5cd08d937f",
+    "name": "Nayan Climbing (Tuodong)",
+    "reason": "human-reviewed: renamed-or-related-name-nearby",
+    "dist_m": 9
+   },
+   "same_content": false,
+   "differing": [
+    "name",
+    "lat",
+    "lng",
+    "address"
+   ],
+   "pin_moved_m": 9,
+   "warnings": [
+    {
+     "code": "content-differs",
+     "field": null,
+     "message": "matches existing g-5cd08d937f but content differs (name, lat, lng, address); NOT applied. Use an explicit update record if this change is intended."
+    }
+   ]
   },
   {
    "line": 3,
-   "class": "new",
-   "id": "g-75dc4fbf55",
-   "id_frozen": true,
+   "class": "existing",
+   "id": "g-9c56253b23",
    "name": "Nayan Climbing (0871) [那岩0871攀岩俱乐部]",
-   "country": "CN"
+   "country": "CN",
+   "match": {
+    "id": "g-9c56253b23",
+    "name": "Nayan Climbing (0871)",
+    "reason": "human-reviewed: renamed-or-related-name-nearby",
+    "dist_m": 15
+   },
+   "same_content": false,
+   "differing": [
+    "name",
+    "lat",
+    "lng",
+    "address"
+   ],
+   "pin_moved_m": 15,
+   "warnings": [
+    {
+     "code": "content-differs",
+     "field": null,
+     "message": "matches existing g-9c56253b23 but content differs (name, lat, lng, address); NOT applied. Use an explicit update record if this change is intended."
+    }
+   ]
   },
   {
    "line": 4,
