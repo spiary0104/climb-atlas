@@ -22,6 +22,23 @@ export function thumbHtml(g, size){
     + `${photo ? `<img class="gym-photo" src="${escapeHtml(photo)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">` : ''}</span>`;
 }
 
+// The gym's own name in its local script (name_local, e.g. 香蕉攀岩(上地店)) shown with the English name. Empty when unknown or
+// the same as the name. lang lets the browser pick the right CJK glyphs; the display face has none, so it is set in the body face.
+const LOCAL_LANG = { CN: 'zh-Hans', TW: 'zh-Hant', HK: 'zh-Hant', MO: 'zh-Hant', JP: 'ja', KR: 'ko' };
+export const localLang = g => LOCAL_LANG[g && g.country] || '';
+export function localName(g){
+  const s = g && typeof g.name_local === 'string' ? g.name_local.trim() : '';
+  return s && s !== String(g.name || '').trim() ? s : '';
+}
+export function localNameHtml(g, cls = ''){
+  const s = localName(g);
+  if(!s) return '';
+  const lang = localLang(g);
+  return `<span class="local-name ${escapeHtml(cls)}"${lang ? ` lang="${lang}"` : ''}>${escapeHtml(s)}</span>`;
+}
+// "Banana Climbing (Shangdi), 香蕉攀岩(上地店)" for an accessible label.
+const spokenName = g => [g.name, localName(g)].filter(Boolean).join(', ');
+
 export const typeDotsHtml = types => knownTypes(types).map(t => `<span class="type-dot type-dot--${TYPE_CLASS[t]}" aria-hidden="true"></span>`).join('');
 export const typeTagsHtml = types => knownTypes(types).map(t => `<span class="type-tag type-tag--${TYPE_CLASS[t]}">${escapeHtml(TYPE_LABELS[t])}</span>`).join('');
 const typeText = types => knownTypes(types).map(t => TYPE_LABELS[t]).join(', ');
@@ -62,9 +79,9 @@ function saveButton(g, saved, extraClass){
 // Dense row (56px): thumb · name + provenance · type dots + "Suburb · Region" · distance + save toggle.
 export function rowHtml(g, ctx = {}){
   return `<div class="gym-row${ctx.selected ? ' is-selected' : ''}" data-id="${escapeHtml(g.id)}" role="listitem">`
-    + `<button type="button" class="gym-row-main" data-gym-action="open" data-spot-id="${escapeHtml(g.id)}" aria-label="${escapeHtml(g.name)}, ${escapeHtml(typeText(g.types))}, ${escapeHtml(placeLine(g, ctx))}${hoursOf(ctx) ? ', ' + escapeHtml(hoursOf(ctx).text) : ''}">`
+    + `<button type="button" class="gym-row-main" data-gym-action="open" data-spot-id="${escapeHtml(g.id)}" aria-label="${escapeHtml(spokenName(g))}, ${escapeHtml(typeText(g.types))}, ${escapeHtml(placeLine(g, ctx))}${hoursOf(ctx) ? ', ' + escapeHtml(hoursOf(ctx).text) : ''}">`
     + thumbHtml(g, 'row')
-    + `<span class="gym-row-text"><span class="gym-row-name"><span class="gym-row-title">${escapeHtml(g.name)}</span>${provenanceMarkHtml(ctx.provenance)}</span>`
+    + `<span class="gym-row-text"><span class="gym-row-name"><span class="gym-row-title">${escapeHtml(g.name)}</span>${localNameHtml(g, 'local-name--inline')}${provenanceMarkHtml(ctx.provenance)}</span>`
     + `<span class="gym-row-meta">${typeDotsHtml(g.types)}<span class="gym-row-place">${escapeHtml(placeLine(g, ctx))}</span>${hoursHtml(g, ctx, 'span', 'gym-row-hours')}</span></span></button>`
     + `<span class="gym-row-side">${ctx.distance ? `<span class="gym-row-distance tnum">${escapeHtml(ctx.distance)}</span>` : ''}${saveButton(g, ctx.saved, 'gym-row-save')}</span></div>`;
 }
@@ -75,7 +92,7 @@ export function cardHtml(g, ctx = {}){
   return `<div class="gym-card${ctx.selected ? ' is-selected' : ''}" data-id="${escapeHtml(g.id)}" role="listitem">`
     + `<button type="button" class="gym-card-main" data-gym-action="open" data-spot-id="${escapeHtml(g.id)}">`
     + thumbHtml(g, 'card')
-    + `<span class="gym-card-body"><span class="gym-card-name">${escapeHtml(g.name)}${provenanceMarkHtml(ctx.provenance)}</span>`
+    + `<span class="gym-card-body"><span class="gym-card-name">${escapeHtml(g.name)}${provenanceMarkHtml(ctx.provenance)}</span>${localNameHtml(g, 'local-name--block')}`
     + `<span class="gym-card-meta tnum">${escapeHtml(meta)}</span>${hoursHtml(g, ctx, 'span', 'gym-card-hours')}<span class="gym-card-tags">${typeTagsHtml(g.types)}</span></span></button>`
     + saveButton(g, ctx.saved, 'gym-card-save') + `</div>`;
 }
@@ -84,7 +101,7 @@ export function cardHtml(g, ctx = {}){
 export function carouselCardHtml(g, ctx = {}){
   return `<button type="button" class="carousel-card${ctx.selected ? ' is-selected' : ''}" data-gym-action="details" data-spot-id="${escapeHtml(g.id)}">`
     + thumbHtml(g, 'row')
-    + `<span class="carousel-card-body"><span class="carousel-card-name">${escapeHtml(g.name)}</span>`
+    + `<span class="carousel-card-body"><span class="carousel-card-name">${escapeHtml(g.name)}</span>${localNameHtml(g, 'local-name--block local-name--clip')}`
     + `<span class="carousel-card-meta">${typeDotsHtml(g.types)}${escapeHtml(placeLine(g, ctx))}</span>${hoursHtml(g, ctx, 'span', 'carousel-card-hours')}`
     + `${ctx.distance ? `<span class="carousel-card-distance tnum">${escapeHtml(ctx.distance)}</span>` : ''}</span></button>`;
 }
@@ -96,7 +113,7 @@ export function peekHtml(g, ctx = {}){
   const where = [g.suburb, ctx.region, ctx.country && ctx.country !== ctx.region ? ctx.country : ''].filter(Boolean).join(', ');
   // The public description (in the list read); legacy research notes only when the whole row has been loaded.
   const notes = (typeof g.description === 'string' && g.description.trim()) || publicNotes(g.notes);
-  return `<div class="peek-head"><h2 class="peek-name" id="peekTitle">${escapeHtml(g.name)}</h2>`
+  return `<div class="peek-head"><h2 class="peek-name" id="peekTitle">${escapeHtml(g.name)}${localNameHtml(g, 'local-name--block local-name--heading')}</h2>`
     + `<button type="button" class="btn btn-tertiary btn-icon btn-sm peek-close" data-gym-action="close" aria-label="Close">${icon('x', {size:'sm'})}</button></div>`
     + `${photo ? `<img class="gym-photo peek-photo" src="${escapeHtml(photo)}" alt="${escapeHtml(g.name)}" loading="lazy" referrerpolicy="no-referrer">` : ''}`
     + `<div class="peek-tags">${typeTagsHtml(g.types)}</div>`

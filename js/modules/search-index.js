@@ -8,6 +8,19 @@
 import { fold, wordStarts } from './geo.js';
 import { isMetroName, metroKey, metroOf } from './metros.js';
 
+// Chinese and Japanese names have no spaces between words, so every position in a run of CJK characters is a word start
+// ("攀岩" finds 香蕉攀岩(上地店)). Other scripts in the local name split on word boundaries as usual.
+const CJK = /[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Hangul}]/u;
+export function cjkStarts(s){
+  const out = [];
+  for(const w of wordStarts(s)){
+    out.push(w);
+    const chars = [...w];
+    for(let i = 1; i < chars.length; i++) if(CJK.test(chars[i])) out.push(chars.slice(i).join(''));
+  }
+  return out;
+}
+
 export const GROUP_LIMITS = Object.freeze({ city: 5, region: 3, country: 2, gym: 8 });
 
 function extend(b, g){
@@ -41,12 +54,13 @@ export function buildSearchIndex(spots, { countryLabels = {}, stateLabel = (c, s
       if(!e) continue;
       e.count++; e.bounds = extend(e.bounds, g);
     }
-    gyms.push({ kind: 'gym', key: g.id, id: g.id, label: g.name || '', secondary: [g.suburb, region].filter(Boolean).join(' · '),
-      words: [...wordStarts(g.name), ...wordStarts(g.suburb), ...wordStarts(g.address)], codes: [], count: 0, lat: g.lat, lng: g.lng });
+    gyms.push({ kind: 'gym', key: g.id, id: g.id, label: g.name || '', secondary: [g.name_local && String(g.name_local).trim() !== String(g.name || '').trim() ? String(g.name_local).trim() : '', g.suburb, region].filter(Boolean).join(' · '),
+      local: typeof g.name_local === 'string' ? g.name_local.trim() : '',
+      words: [...wordStarts(g.name), ...wordStarts(g.suburb), ...wordStarts(g.address), ...cjkStarts(g.name_local)], codes: [], count: 0, lat: g.lat, lng: g.lng });
   }
   const places = [...metros.values(), ...cities.values(), ...regions.values(), ...countries.values()];
   for(const e of places) e.words = wordStarts([e.label, ...(e.metro ? e.codes : [])].join(' '));   // a metro's aliases match like its name
-  for(const e of gyms) e.nameWords = wordStarts(e.label);
+  for(const e of gyms){ e.nameWords = [...wordStarts(e.label), ...cjkStarts(e.local)]; delete e.local; }
   return { places, gyms };
 }
 

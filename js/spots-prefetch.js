@@ -14,7 +14,7 @@
 
 window.spotsPrefetch = (function () {
   if (!window.sb) return null;
-  const columns = 'id,name,suburb,state,country,lat,lng,types,address,photo,slug,community,edited,verified_at,created_at,submitted_by,description,hours';
+  const columns = 'id,name,suburb,state,country,lat,lng,types,address,photo,slug,community,edited,verified_at,created_at,submitted_by,description,hours,name_local';
   const PAGE = 1000, BATCH = 3;   // 2,419 gyms in October 2026: one round trip up to 3,000
   const page = from => window.sb.from('spots').select(columns).eq('status', 'approved')
     .order('id').range(from, from + PAGE - 1);

@@ -449,3 +449,13 @@ input[type="checkbox"][role="switch"]{accent-color:var(--color-accent-solid);}
 .mascot--spot{width:var(--size-mascot-spot);height:var(--size-mascot-spot);}
 .empty-state .mascot--spot{display:block;margin:0 auto var(--space-3);}
 .mascot--milestone{width:var(--size-mascot-milestone);height:var(--size-mascot-milestone);}
+
+/* Local-script name (name_local, e.g. 香蕉攀岩(上地店)) beside the English name: rows, cards, carousel, peek, gym page.
+   Body face, secondary ink: the display face has no CJK glyphs, and the English name stays the primary line. */
+.local-name{font-family:var(--font-text);font-weight:var(--font-weight-regular);letter-spacing:0;color:var(--color-text-secondary);}
+.local-name--inline{flex:0 1 auto;min-width:min(5.5em,45%);max-width:55%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:var(--type-text-sm-size);line-height:var(--type-text-md-line);}
+.local-name--block{display:block;font-size:var(--type-text-sm-size);line-height:var(--type-text-sm-line);}
+.local-name--clip{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.local-name--heading{margin-top:var(--space-1);font-size:var(--type-text-md-size);line-height:var(--type-text-md-line);}
+.local-name--title{margin-top:var(--space-1);font-size:var(--type-text-lg-size);line-height:var(--type-text-lg-line);}
+.local-address{margin-bottom:var(--space-1);}
