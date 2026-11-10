@@ -2,8 +2,8 @@
  "plan_version": 1,
  "batch_id": "2026-10-06-kr-seoul",
  "index": {
-  "sha256": "39a2073843434f86764687342310f4cb7d0ff6d410fe2e798bd4ddd1635fd537",
-  "count": 3457,
+  "sha256": "4eeacfad3c590d9684b0bf873bb4d00ac4ec15ef5eb1ad6742e271192a3b3fdf",
+  "count": 3453,
   "meta_matches": true
  },
  "staged_batches_compared": [
@@ -48,7 +48,7 @@
  "importable": true,
  "blockers": [],
  "unused_decisions": [],
- "plan_sha256": "9a9af20aead244a094a6ac08ddfe8e0952c5fc923858709af272956281bd6388",
+ "plan_sha256": "adcff1db18bd81310439c8eda67a32cf315f10174ed4356448462da03559699f",
  "records": [
   {
    "line": 1,
@@ -128,7 +128,11 @@
    "id": "g-439263f703",
    "id_frozen": true,
    "name": "Seoul Forest Climbing Jongno (서울숲클라이밍 종로점)",
-   "country": "KR"
+   "country": "KR",
+   "reviewed_distinct": {
+    "reason": "Different gyms and brands in different buildings: Seoul Forest Climbing Jongno is at 서울 종로구 수표로 96 지하1층 (B1); PEAKERS Jongno (seed-1199) is at Piccadilly1958 B4F, Donhwamun-ro 5ga-gil 1 (its own Naver Place pin, set by 2026-10-12-kr-fixes). About 198 m apart.",
+    "reviewer": "drafted by Claude (AI) 2026-11-10 from the two records' sources; owner sign-off pending"
+   }
   },
   {
    "line": 11,

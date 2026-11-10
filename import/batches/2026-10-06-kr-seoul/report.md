@@ -12,7 +12,7 @@
 | Rejected by a human decision | 0 |
 | **Total records in batch** | 39 |
 
-Index: 3457 known gyms (sha256 39a207384343…). Plan: 9a9af20aead2… Also compared against staged batches: 2026-10-12-cn-beijing-chengdu, 2026-10-12-cn-kunming-changsha, 2026-10-12-cn-shanghai, 2026-10-12-kr-busan-gyeongnam, 2026-10-12-kr-central-regions, 2026-10-12-kr-daegu-gyeongbuk, 2026-10-12-kr-gyeonggi-north, 2026-10-12-kr-gyeonggi-south, 2026-10-12-kr-gyeonggi-west, 2026-10-12-kr-incheon, 2026-11-08-cn-changzhou, 2026-11-08-cn-dalian, 2026-11-08-cn-fuzhou, 2026-11-08-cn-guiyang, 2026-11-08-cn-harbin, 2026-11-08-cn-hefei, 2026-11-08-cn-nanchang, 2026-11-08-cn-nanning, 2026-11-08-cn-shenyang, 2026-11-08-cn-xining, 2026-11-08-cn-yinchuan, 2026-11-08-cn-zhengzhou, 2026-11-08-cn-zhongshan, 2026-11-08-cn-zhuhai.
+Index: 3453 known gyms (sha256 4eeacfad3c59…). Plan: adcff1db18bd… Also compared against staged batches: 2026-10-12-cn-beijing-chengdu, 2026-10-12-cn-kunming-changsha, 2026-10-12-cn-shanghai, 2026-10-12-kr-busan-gyeongnam, 2026-10-12-kr-central-regions, 2026-10-12-kr-daegu-gyeongbuk, 2026-10-12-kr-gyeonggi-north, 2026-10-12-kr-gyeonggi-south, 2026-10-12-kr-gyeonggi-west, 2026-10-12-kr-incheon, 2026-11-08-cn-changzhou, 2026-11-08-cn-dalian, 2026-11-08-cn-fuzhou, 2026-11-08-cn-guiyang, 2026-11-08-cn-harbin, 2026-11-08-cn-hefei, 2026-11-08-cn-nanchang, 2026-11-08-cn-nanning, 2026-11-08-cn-shenyang, 2026-11-08-cn-xining, 2026-11-08-cn-yinchuan, 2026-11-08-cn-zhengzhou, 2026-11-08-cn-zhongshan, 2026-11-08-cn-zhuhai.
 
 ## New gyms (39)
 
@@ -27,7 +27,7 @@ By country: KR 39
 - line 7 `g-6974cf12a5` "The Climb Isu (더클라임 이수점)" (KR)
 - line 8 `g-00bf53c609` "Seoul Forest Climbing Guro (서울숲클라이밍 구로점)" (KR)
 - line 9 `g-c0c296403d` "Seoul Forest Climbing Yeongdeungpo (서울숲클라이밍 영등포점)" (KR)
-- line 10 `g-439263f703` "Seoul Forest Climbing Jongno (서울숲클라이밍 종로점)" (KR)
+- line 10 `g-439263f703` "Seoul Forest Climbing Jongno (서울숲클라이밍 종로점)" (KR) — reviewed as distinct
 - line 11 `g-6731df4b0c` "Climbing Park Gangnam (클라이밍파크 강남점)" (KR)
 - line 12 `g-df75e547f8` "Climbing Park Jongno (클라이밍파크 종로점)" (KR)
 - line 13 `g-03dd8f9575` "Son Sang-won Climbing Gangnam Station (손상원 클라이밍짐 강남역점)" (KR)

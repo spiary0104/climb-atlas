@@ -1,0 +1,354 @@
+{
+  "schema_version": 1,
+  "updater_version": 1,
+  "kind": "update",
+  "batch_id": "2026-10-12-kr-fixes",
+  "status": "updated",
+  "target": {
+    "kind": "production",
+    "host": "thayxaampaelvntoaido.supabase.co"
+  },
+  "coverage": "FULL",
+  "plan_sha256": "e6f74ad906103788efc148bc5dfef33c704e91215d67d4d5dc6c52b170699ca8",
+  "payload_sha256": "73df23be01dc18d3fcfa5ee4f77ff9846dd6973c7e8286efd6e08a8bba9b8494",
+  "confirm_token": "d21397dc81e58101",
+  "live_state_sha256": "73c44b436e29dd4e00393d760b626d29c568190d61e564c6e20bfaf8f49e2b48",
+  "rows_updated": 28,
+  "approved_before": 3457,
+  "approved_after": 3453,
+  "changes": [
+    {
+      "id": "seed-1199",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "297eb3f90033f2f2",
+      "after_h": "bdfe5900ea12d629"
+    },
+    {
+      "id": "seed-1168",
+      "fields": [
+        "lat",
+        "lng",
+        "address"
+      ],
+      "expect_h": "298c1e3b261ab71f",
+      "after_h": "2afb242faaa5f1a3"
+    },
+    {
+      "id": "seed-1188",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "2daa1ead467b56c7",
+      "after_h": "504e9191bcc02a57"
+    },
+    {
+      "id": "seed-1202",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "d1df98e40e18f8a1",
+      "after_h": "4cde51a01ad0cc21"
+    },
+    {
+      "id": "seed-1200",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "6f24e02bf17239db",
+      "after_h": "376b71fc3aeddd81"
+    },
+    {
+      "id": "seed-1215",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "11999005deb09dcc",
+      "after_h": "f226df5bfd6cfd32"
+    },
+    {
+      "id": "seed-1216",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "faa75ca08f8e0d34",
+      "after_h": "fba207e7e4c65543"
+    },
+    {
+      "id": "seed-1164",
+      "fields": [
+        "lat",
+        "lng",
+        "address"
+      ],
+      "expect_h": "7d529a9b54311762",
+      "after_h": "d90f9412b1e7ca97"
+    },
+    {
+      "id": "seed-1217",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "660e9f25aab8c7a1",
+      "after_h": "69d086e2e0d1d1c3"
+    },
+    {
+      "id": "seed-1165",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "92753770dd15122c",
+      "after_h": "bfcb5d4a0ebd51ea"
+    },
+    {
+      "id": "seed-1161",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "717dc579c86b42ed",
+      "after_h": "37a15e2aed83d559"
+    },
+    {
+      "id": "seed-1196",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "c93174b6cb22ff94",
+      "after_h": "594d13632549655d"
+    },
+    {
+      "id": "seed-1218",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "142f75d80813d688",
+      "after_h": "57893b0ad870fdb1"
+    },
+    {
+      "id": "seed-1220",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "d8948bb1b3f605fd",
+      "after_h": "c6518b070cfcbe4e"
+    },
+    {
+      "id": "seed-1221",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "6c543495688527f2",
+      "after_h": "df28c10def1d9a56"
+    },
+    {
+      "id": "seed-1179",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "ff5c4c7f7bc3ee7b",
+      "after_h": "a2fdd41c1babd881"
+    },
+    {
+      "id": "g-69b158b889",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "95095391dd423674",
+      "after_h": "145305470c9dc818"
+    },
+    {
+      "id": "g-79e1f1b07b",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "fd7c2c15cb113ee0",
+      "after_h": "68819cb593e2858e"
+    },
+    {
+      "id": "seed-1189",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "66636cc20384f92c",
+      "after_h": "988092979e03bf23"
+    },
+    {
+      "id": "seed-1193",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "9eef9e8154eeed2a",
+      "after_h": "fe2b707013e99e8b"
+    },
+    {
+      "id": "g-e52dfc621f",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "f01959133fd27ef0",
+      "after_h": "289c96d68068646c"
+    },
+    {
+      "id": "g-53afac8faa",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "e8c59c7df737101b",
+      "after_h": "da7cf27d7c921234"
+    },
+    {
+      "id": "seed-1182",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "a67c5dbecab1d7ca",
+      "after_h": "1a7aa84ed4803c97"
+    },
+    {
+      "id": "g-10ab743a85",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "7beb6a8e71d55e75",
+      "after_h": "823c98dcf5be5ea3"
+    },
+    {
+      "id": "seed-1209",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "e84afaae1dfc3a4a",
+      "after_h": "bdd85f5be7c71979"
+    },
+    {
+      "id": "seed-1187",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "cf515499a770fea4",
+      "after_h": "87e4c60e6b2a866e"
+    },
+    {
+      "id": "seed-1212",
+      "fields": [
+        "lat",
+        "lng"
+      ],
+      "expect_h": "5327f7a4994bd700",
+      "after_h": "17412f2d032b1bb2"
+    },
+    {
+      "id": "seed-1214",
+      "fields": [
+        "lat",
+        "lng",
+        "address"
+      ],
+      "expect_h": "d00935a7afaebb93",
+      "after_h": "3a67d47474440e42"
+    }
+  ],
+  "rows_retired": 4,
+  "retired": [
+    "g-7e30006a3e",
+    "g-97ac649c15",
+    "seed-1191",
+    "g-5eec475af0"
+  ],
+  "retirements": [
+    {
+      "id": "g-7e30006a3e",
+      "reason_code": "duplicate",
+      "reason": "Duplicate of Allez Climb Gangdong (g-707b731ba7): same gym, the Naver/Kakao listing is at Cheonho-daero 177-gil 39 B2F; this record has a vague address and a pin 801 m away",
+      "duplicate_of": "g-707b731ba7",
+      "expect_h": "4bde269c8a081dd1"
+    },
+    {
+      "id": "g-97ac649c15",
+      "reason_code": "duplicate",
+      "reason": "Duplicate of Seoul Boulders Mokdong (g-f975eb0b04): same address (Sinmok-ro 53), the other record's pin matches the gym's own Naver pin within 25 m, this one is about 250 m off",
+      "duplicate_of": "g-f975eb0b04",
+      "expect_h": "773c86f2a4e136d2"
+    },
+    {
+      "id": "seed-1191",
+      "reason_code": "duplicate",
+      "reason": "Duplicate of THE CLIMB Yeonnam (seed-1759): the chain lists no Hongdae branch and the Hongdae-area branch is Yeonnam; no climbing gym at the old address/pin",
+      "duplicate_of": "seed-1759",
+      "expect_h": "7a3a9085646f09fc"
+    },
+    {
+      "id": "g-5eec475af0",
+      "reason_code": "duplicate",
+      "reason": "Duplicate of Climb O'Clock (g-e227233b91): same address (Dongtangiheung-ro 257beonga-gil 33); that record's pin matches the gym's own Naver pin within 10 m, this one is 905 m off",
+      "duplicate_of": "g-e227233b91",
+      "expect_h": "1094781a556548f4"
+    }
+  ],
+  "verification": {
+    "ok": true,
+    "checked": 32,
+    "problems": []
+  },
+  "started_at": "2026-11-10T00:31:53.752Z",
+  "finished_at": "2026-11-10T00:32:03.630Z",
+  "ids": [
+    "seed-1199",
+    "seed-1168",
+    "seed-1188",
+    "seed-1202",
+    "g-7e30006a3e",
+    "g-97ac649c15",
+    "seed-1191",
+    "seed-1200",
+    "seed-1215",
+    "seed-1216",
+    "seed-1164",
+    "seed-1217",
+    "seed-1165",
+    "seed-1161",
+    "seed-1196",
+    "seed-1218",
+    "seed-1220",
+    "seed-1221",
+    "seed-1179",
+    "g-69b158b889",
+    "g-79e1f1b07b",
+    "seed-1189",
+    "seed-1193",
+    "g-e52dfc621f",
+    "g-53afac8faa",
+    "seed-1182",
+    "g-5eec475af0",
+    "g-10ab743a85",
+    "seed-1209",
+    "seed-1187",
+    "seed-1212",
+    "seed-1214"
+  ]
+}
